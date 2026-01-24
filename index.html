@@ -32,7 +32,6 @@
            transition: all 0.3s; 
        }
 
-       /* Mode Selection */
        #mode-selection { 
            text-align: center; 
            max-width: 600px; 
@@ -55,7 +54,6 @@
        }
        .mode-btn:hover { background: #9b59b6; }
 
-       /* Daily Office Section (Hidden Initially) */
        #daily-office-section { display: none; flex-direction: row; width: 100%; height: 100vh; }
        #settings-panel { 
            width: 300px; 
@@ -91,7 +89,6 @@
            margin-top: 10px; 
        }
 
-       /* Main Content Area */
        #main-content { 
            flex-grow: 1; 
            padding: 40px; 
@@ -109,7 +106,6 @@
            border-left: 5px solid var(--accent); 
        }
 
-       /* Typography */
        h1 { font-size: 2.5em; letter-spacing: 0.05em; margin-bottom: 0.5em; color: var(--text-color); }
        h2 { font-size: 2em; color: var(--accent); border-bottom: 1px solid var(--gold); padding-bottom: 10px; margin-top: 0; }
 
@@ -138,24 +134,20 @@
            overflow: visible; 
        }
 
-       /* Psalms */
        .psalm-header { color: var(--accent); text-align: center; margin-top: 40px; margin-bottom: 20px; font-size: 1.6em; border-bottom: 2px solid var(--gold); padding-bottom: 10px; }
        .psalm-verse { display: block; margin-bottom: 8px; font-size: 1.15em; }
        .verse-num { font-size: 0.65em; color: var(--gold); vertical-align: super; margin-right: 8px; opacity: 0.8; }
 
-       /* Saints & Ordo */
        .saint-section { margin-top: 60px; border-top: 2px double var(--accent); padding-top: 40px; }
        .saint-grid { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; }
        .saint-box { background: var(--container-bg); border-top: 5px solid var(--gold); padding: 20px; width: 240px; box-shadow: 0 4px 12px rgba(0,0,0,0.15); text-align: left; border-radius: 0 0 6px 6px; }
 
-       /* Controls */
        .ordo-control { background: #222; border: 1px solid var(--gold); padding: 15px; border-radius: 4px; margin-bottom: 20px; text-align: center; }
        .ordo-date { display: block; color: var(--gold); font-weight: bold; margin: 10px 0; font-size: 1.1em; }
        .ordo-btn { background: none; border: 1px solid var(--gold); color: var(--gold); padding: 5px 15px; cursor: pointer; margin: 0 5px; transition: background 0.2s; }
        .ordo-btn:hover { background: rgba(212, 175, 55, 0.2); }
        select { width: 100%; padding: 10px; background: #333; color: white; border: 1px solid #555; border-radius: 4px; }
 
-       /* Individual Prayers Section (Hidden Initially) */
        #individual-prayers-section { display: none; text-align: center; max-width: 800px; padding: 40px; width: 100%; }
        #prayer-selection { margin-bottom: 40px; }
        #prayer-display { background: var(--container-bg); padding: 40px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); text-align: left; }
@@ -198,7 +190,7 @@
             </div>
             <div class="setting-group">
                 <strong>Officiant:</strong>
-                <label><input type="radio" name="minister" value="priest" onchange="renderOffice()"> Priest/Deacon</label>
+                <label><input type="radio" name="minister" value="priest" onchange="renderOffice()"> Priest</label>
                 <label><input type="radio" name="minister" value="lay" onchange="renderOffice()" checked> Layperson</label>
             </div>
             <div class="setting-group">
@@ -226,7 +218,6 @@
             </div>
             <div class="setting-group">
                 <strong>Ordo Components:</strong>
-                <label><input type="checkbox" id="toggle-confession" onchange="renderOffice()" checked> Show Confession</label>
                 <label><input type="checkbox" id="toggle-litany" onchange="renderOffice()"> The Great Litany</label>
                 <label><input type="checkbox" id="toggle-suffrages" onchange="renderOffice()" checked> Suffrages</label>
             </div>
@@ -345,7 +336,7 @@
         const includeAssyrianBlessing = document.getElementById('toggle-assyrian-blessing')?.checked || false;
         const includeAgpeyaOpening = document.getElementById('toggle-agpeya-opening')?.checked || false;
 
-        console.log('renderOffice called', { officeId, rite, minister, creedSelection, confessionChecked: document.getElementById('toggle-confession')?.checked });
+        console.log('renderOffice called', { officeId, rite, minister, creedSelection });
 
         const activeRubric = appData.rubrics.find(r => r.id === officeId);
         const dailyData = appData.propers[todayKey] || appData.propers["DEFAULT"];
@@ -360,94 +351,26 @@
         let officeHtml = `<div class="office-container"><h2>${activeRubric?.officeName || "Office"}</h2>`;
         officeHtml += `<p style="color:var(--gold); font-variant:small-caps; font-weight:bold;">${dailyData.title}</p>`;
 
-        // === SUPPLEMENTAL DEVOTIONS ===
-        let supplementsHtml = '';
-        console.log("Angelus toggle:", includeAngelus);
-        console.log("Trisagion toggle:", includeTrisagion);
-        console.log("Theotokion toggle:", includeTheotokion);
-        console.log("Jesus Prayer toggle:", includeJesusPrayer);
-        console.log("Assyrian Blessing toggle:", includeAssyrianBlessing);
-        console.log("Agpeya Opening toggle:", includeAgpeyaOpening);
-
-        if (marianPos !== 'none') {
-            const marianId = 'latin-marian-alma';
-            const marianComp = appData.components.find(c => c.id === marianId);
-            if (marianComp) {
-                supplementsHtml += `<span class="rubric-text">${marianComp.title}</span>`;
-                supplementsHtml += `<span class="component-text">${marianComp.text}</span>`;
-            } else {
-                console.warn(`Missing Marian Antiphon for ${marianPos} (ID: ${marianId})`);
-            }
-        }
-
-        if (includeTrisagion) {
-            const trisagion = appData.components.find(c => c.id === "trisagion-byzantine");
-            console.log("Trisagion component found?", !!trisagion);
-            if (trisagion) supplementsHtml += `<span class="rubric-text">${trisagion.title}</span><span class="component-text">${trisagion.text}</span>`;
-        }
-
-        if (includeTheotokion) {
-            const theotokion = appData.components.find(c => c.id === "coptic-theotokion");
-            console.log("Theotokion component found?", !!theotokion);
-            if (theotokion) supplementsHtml += `<span class="rubric-text">${theotokion.title}</span><span class="component-text">${theotokion.text}</span>`;
-        }
-
-        if (includeJesusPrayer) {
-            const jesusPrayer = appData.components.find(c => c.id === "jesus-prayer");
-            console.log("Jesus Prayer component found?", !!jesusPrayer);
-            if (jesusPrayer) supplementsHtml += `<span class="rubric-text">${jesusPrayer.title} (Orthodox)</span><span class="component-text">${jesusPrayer.text}</span>`;
-        }
-
-        if (includeAngelus) {
-            const angelus = appData.components.find(c => c.id === "angelus");
-            console.log("Angelus component found?", !!angelus);
-            if (angelus) supplementsHtml += `<span class="rubric-text">${angelus.title} (Catholic)</span><span class="component-text">${angelus.text}</span>`;
-        }
-
-        if (includeAgpeyaOpening) {
-            const agpeya = appData.components.find(c => c.id === "agpeya-opening");
-            console.log("Agpeya Opening component found?", !!agpeya);
-            if (agpeya) supplementsHtml += `<span class="rubric-text">${agpeya.title} (Coptic)</span><span class="component-text">${agpeya.text}</span>`;
-        }
-
-        if (includeAssyrianBlessing) {
-            const assyrianBlessing = appData.components.find(c => c.id === "assyrian-blessing");
-            console.log("Assyrian Blessing component found?", !!assyrianBlessing);
-            if (assyrianBlessing) supplementsHtml += `<span class="rubric-text">${assyrianBlessing.title} (Assyrian)</span><span class="component-text">${assyrianBlessing.text}</span>`;
-        }
-
-        if (supplementsHtml) {
-            officeHtml += `<h2 style="margin-top:40px; color:var(--accent);">Supplemental Devotions</h2>`;
-            officeHtml += supplementsHtml;
-        }
-
-        // === MAIN OFFICE SEQUENCE ===
         activeRubric?.sequence?.forEach(item => {
             if (item === "bcp-confession-toggle") {
-                if (document.getElementById('toggle-confession')?.checked) {
-                    const confId = (rite === 'rite1') ? 'bcp-confession-rite1' : 'bcp-confession-rite2';
-                    const comp = appData.components.find(c => c.id === confId);
-                    if (comp) officeHtml += `<span class="rubric-text">${comp.title}</span><span class="component-text">${comp.text}</span>`;
+                const confId = (rite === 'rite1') ? 'bcp-confession-rite1' : 'bcp-confession-rite2';
+                const comp = appData.components.find(c => c.id === confId);
+                if (comp) {
+                    officeHtml += `<span class="rubric-text">${comp.title}</span><span class="component-text">${comp.text}</span>`;
+                } else {
+                    console.warn("Missing confession component");
                 }
                 return;
             }
 
             if (item === "bcp-absolution-slot") {
-                if (document.getElementById('toggle-confession')?.checked) {
-                    const isPriest = (minister === 'priest');
-                    let absId;
-                    if (rite === 'rite1') {
-                        absId = isPriest ? 'bcp-absolution-r1-priest' : 'bcp-absolution-r1-lay';
-                    } else {
-                        absId = isPriest ? 'bcp-absolution-r2-priest' : 'bcp-absolution-r2-lay';
-                    }
-                    const comp = appData.components.find(c => c.id === absId);
-                    if (comp) {
-                        officeHtml += `<span class="rubric-text">${comp.title}</span><span class="component-text">${comp.text}</span>`;
-                    } else {
-                        console.warn(`Missing absolution component for ID: ${absId}`);
-                    }
-                }
+                const isPriest = (minister === 'priest');
+                let title = isPriest ? "The Absolution" : "A Declaration of Forgiveness";
+                let text = isPriest 
+                    ? "Almighty God have mercy on you, forgive you all your sins through our Lord Jesus Christ, strengthen you in all goodness, and by the power of the Holy Spirit keep you in eternal life. Amen."
+                    : "Almighty God have mercy on us, forgive us all our sins through our Lord Jesus Christ, strengthen us in all goodness, and by the power of the Holy Spirit keep us in eternal life. Amen.";
+                officeHtml += `<span class="rubric-text">${title}</span>`;
+                officeHtml += `<span class="component-text">${text}</span>`;
                 return;
             }
 
@@ -474,6 +397,17 @@
                 if (openingComp) {
                     officeHtml += `<span class="rubric-text">${openingComp.title}</span><span class="component-text">${openingComp.text}</span>`;
                 }
+
+                if (includeTrisagion) {
+                    const trisagion = appData.components.find(c => c.id === "trisagion-byzantine");
+                    if (trisagion) officeHtml += `<span class="rubric-text">${trisagion.title}</span><span class="component-text">${trisagion.text}</span>`;
+                }
+
+                if (includeAgpeyaOpening) {
+                    const agpeya = appData.components.find(c => c.id === "agpeya-opening");
+                    if (agpeya) officeHtml += `<span class="rubric-text">${agpeya.title}</span><span class="component-text">${agpeya.text}</span>`;
+                }
+
                 return;
             }
 
@@ -525,69 +459,188 @@
                 const psEntry = appData.psalter[dayOfMonth];
                 let rawText = (psEntry && psEntry.text) ? psEntry.text : "No text found for this day.";
                 let psalmHtml = "";
+                let psalmCount = 0;
                 let currentPsalmNum = null;
+                let currentPsalmText = "";
 
                 const lines = rawText.split(/\r?\n/);
                 lines.forEach(line => {
                     line = line.trim();
                     if (!line) return;
+
                     const match = line.match(/^(?:Psalm\s+)?(\d+):(\d+)\s+(.*)/i);
                     if (match) {
                         const psalmNum = match[1];
                         const verseNum = match[2];
                         const verseText = match[3];
+
+                        if (psalmNum !== currentPsalmNum && currentPsalmNum !== null) {
+                            if (document.getElementById('toggle-gloria-patri')?.checked) {
+                                const gloria = appData.components.find(c => c.id === "bcp-gloria-patri");
+                                let gloriaText = "(Gloria text not found)";
+                                if (gloria && gloria.text) {
+                                    const textObj = gloria.text;
+                                    const selectedRite = rite || 'rite2';
+                                    gloriaText = textObj[selectedRite] || textObj['rite2'] || textObj['rite1'] || "(No Gloria for this rite)";
+                                }
+                                currentPsalmText += `<span class="component-text"><i>${gloriaText}</i></span>`;
+                            }
+
+                            psalmHtml += currentPsalmText;
+                            currentPsalmText = "";
+                            psalmCount++;
+                        }
+
                         if (psalmNum !== currentPsalmNum) {
-                            psalmHtml += `<h3 class="psalm-header">Psalm ${psalmNum}</h3>`;
+                            currentPsalmText += `<h3 class="psalm-header">Psalm ${psalmNum}</h3>`;
                             currentPsalmNum = psalmNum;
                         }
-                        psalmHtml += `<span class="psalm-verse"><span class="verse-num">${verseNum}</span>${verseText}</span>`;
+
+                        currentPsalmText += `<span class="psalm-verse"><span class="verse-num">${verseNum}</span>${verseText}</span>`;
                     } else {
-                        psalmHtml += `<p>${line}</p>`;
+                        currentPsalmText += `<p>${line}</p>`;
                     }
                 });
 
+                if (currentPsalmNum !== null) {
+                    if (document.getElementById('toggle-gloria-patri')?.checked) {
+                        const gloria = appData.components.find(c => c.id === "bcp-gloria-patri");
+                        let gloriaText = "(Gloria text not found)";
+                        if (gloria && gloria.text) {
+                            const textObj = gloria.text;
+                            const selectedRite = rite || 'rite2';
+                            gloriaText = textObj[selectedRite] || textObj['rite2'] || textObj['rite1'] || "(No Gloria for this rite)";
+                        }
+                        currentPsalmText += `<span class="component-text"><i>${gloriaText}</i></span>`;
+                    }
+                    psalmHtml += currentPsalmText;
+                    psalmCount++;
+                }
+
+                const showAngelus = (officeId === 'morning-office' || officeId === 'noonday-office' || officeId === 'evening-office') && includeAngelus;
+                if (showAngelus) {
+                    const angelus = appData.components.find(c => c.id === "angelus");
+                    if (angelus) {
+                        psalmHtml = `<span class="rubric-text">${angelus.title} (Catholic)</span><span class="component-text">${angelus.text}</span>` + psalmHtml;
+                    }
+                }
+
                 officeHtml += `<div class="component-text">${psalmHtml}</div>`;
 
-                // Gloria Patri - only if toggle is checked
-                if (document.getElementById('toggle-gloria-patri')?.checked) {
-                    const gloria = appData.components.find(c => c.id === "bcp-gloria-patri");
-                    console.log("Gloria component:", gloria);
-
-                    if (gloria && gloria.text) {
-                        const textObj = gloria.text;
-                        const selectedRite = rite || 'rite2';
-
-                        console.log("Selected rite for Gloria:", selectedRite);
-                        console.log("Available text keys:", Object.keys(textObj || {}));
-
-                        let finalText = textObj[selectedRite] || textObj['rite2'] || textObj['rite1'] || "No Gloria text for this rite";
-
-                        console.log("Final Gloria text:", finalText);
-
-                        officeHtml += `<span class="rubric-text">GLORIA PATRI</span>`;
-                        officeHtml += `<span class="component-text"><i>${finalText}</i></span>`;
-                    } else {
-                        console.warn("Gloria Patri missing or no text");
-                        officeHtml += `<span class="rubric-text">GLORIA PATRI</span>`;
-                        officeHtml += `<span class="component-text"><i>(Gloria text not found in components.json)</i></span>`;
+                if ((officeId === 'morning-office' || officeId === 'evening-office') && includeJesusPrayer && psalmCount >= 2) {
+                    const jesusPrayer = appData.components.find(c => c.id === "jesus-prayer");
+                    if (jesusPrayer) {
+                        officeHtml += `<span class="rubric-text">${jesusPrayer.title} (Eastern Orthodox)</span>`;
+                        officeHtml += `<span class="component-text">${jesusPrayer.text}</span>`;
                     }
                 }
 
                 return;
             }
 
+            if (item === "VARIABLE_PSALM_2") {
+                const psEntry = appData.psalter[dayOfMonth];
+                let rawText = (psEntry && psEntry.text) ? psEntry.text : "No text found for this day.";
+                let psalmHtml = "";
+                let psalmCount = 0;
+                let currentPsalmNum = null;
+                let currentPsalmText = "";
+
+                const lines = rawText.split(/\r?\n/);
+                const midPoint = Math.floor(lines.length / 2);
+                const secondHalfLines = lines.slice(midPoint);
+
+                secondHalfLines.forEach(line => {
+                    line = line.trim();
+                    if (!line) return;
+
+                    const match = line.match(/^(?:Psalm\s+)?(\d+):(\d+)\s+(.*)/i);
+                    if (match) {
+                        const psalmNum = match[1];
+                        const verseNum = match[2];
+                        const verseText = match[3];
+
+                        if (psalmNum !== currentPsalmNum && currentPsalmNum !== null) {
+                            if (document.getElementById('toggle-gloria-patri')?.checked) {
+                                const gloria = appData.components.find(c => c.id === "bcp-gloria-patri");
+                                let gloriaText = "(Gloria text not found)";
+                                if (gloria && gloria.text) {
+                                    const textObj = gloria.text;
+                                    const selectedRite = rite || 'rite2';
+                                    gloriaText = textObj[selectedRite] || textObj['rite2'] || textObj['rite1'] || "(No Gloria for this rite)";
+                                }
+                                currentPsalmText += `<span class="component-text"><i>${gloriaText}</i></span>`;
+                            }
+
+                            psalmHtml += currentPsalmText;
+                            currentPsalmText = "";
+                            psalmCount++;
+                        }
+
+                        if (psalmNum !== currentPsalmNum) {
+                            currentPsalmText += `<h3 class="psalm-header">Psalm ${psalmNum}</h3>`;
+                            currentPsalmNum = psalmNum;
+                        }
+
+                        currentPsalmText += `<span class="psalm-verse"><span class="verse-num">${verseNum}</span>${verseText}</span>`;
+                    } else {
+                        currentPsalmText += `<p>${line}</p>`;
+                    }
+                });
+
+                if (currentPsalmNum !== null) {
+                    if (document.getElementById('toggle-gloria-patri')?.checked) {
+                        const gloria = appData.components.find(c => c.id === "bcp-gloria-patri");
+                        let gloriaText = "(Gloria text not found)";
+                        if (gloria && gloria.text) {
+                            const textObj = gloria.text;
+                            const selectedRite = rite || 'rite2';
+                            gloriaText = textObj[selectedRite] || textObj['rite2'] || textObj['rite1'] || "(No Gloria for this rite)";
+                        }
+                        currentPsalmText += `<span class="component-text"><i>${gloriaText}</i></span>`;
+                    }
+                    psalmHtml += currentPsalmText;
+                    psalmCount++;
+                }
+
+                officeHtml += `<div class="component-text">${psalmHtml}</div>`;
+                return;
+            }
+
             if (item === "VARIABLE_COLLECT") {
                 officeHtml += `<span class="rubric-text">The Collect of the Day</span><span class="component-text">${dailyData.collect}</span>`;
+
+                if (includeTheotokion) {
+                    const theotokion = appData.components.find(c => c.id === "coptic-theotokion");
+                    if (theotokion) {
+                        officeHtml += `<span class="rubric-text">${theotokion.title}</span>`;
+                        officeHtml += `<span class="component-text">${theotokion.text}</span>`;
+                    }
+                }
+
+                if (marianPos !== 'none') {
+                    const marianId = 'latin-marian-alma';
+                    const marianComp = appData.components.find(c => c.id === marianId);
+                    if (marianComp) {
+                        officeHtml += `<span class="rubric-text">${marianComp.title}</span>`;
+                        officeHtml += `<span class="component-text">${marianComp.text}</span>`;
+                    }
+                }
+
+                if (includeAssyrianBlessing) {
+                    const assyrianBlessing = appData.components.find(c => c.id === "assyrian-blessing");
+                    if (assyrianBlessing) {
+                        officeHtml += `<span class="rubric-text">${assyrianBlessing.title} (Dismissal)</span>`;
+                        officeHtml += `<span class="component-text">${assyrianBlessing.text}</span>`;
+                    }
+                }
+
                 return;
             }
 
             let compId = (typeof item === 'object') ? item[rite] : item;
-            if (compId === "trisagion-byzantine" && !document.getElementById('toggle-trisagion')?.checked) return;
-            if (compId === "coptic-theotokion" && !document.getElementById('toggle-theotokion')?.checked) return;
-            
             const comp = appData.components.find(c => c.id === compId);
             if (comp) {
-                // Skip Gloria Patri here — it's already handled specially in VARIABLE_PSALM
                 if (compId === "bcp-gloria-patri") return;
 
                 let displayText = comp.text;
@@ -641,7 +694,7 @@
 
         document.getElementById('prayer-display').style.display = 'block';
         document.getElementById('prayer-selection').style.display = 'none';
-    }
+ git    }
 
     function backToPrayerDropdown() {
         document.getElementById('prayer-display').style.display = 'none';

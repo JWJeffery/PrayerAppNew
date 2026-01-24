@@ -1,152 +1,629 @@
-[
-    {
-        "id": "PSA 25",
-        "source_ref": "Psalm 25",
-        "tags": ["morning-prayer", "psalm"],
-        "text": {
-            "NRSV": "To you, O Lord, I lift up my soul.\nO my God, in you I trust;\ndo not let me be put to shame;\ndo not let my enemies exult over me.\nDo not let those who wait for you be put to shame;\nlet them be ashamed who are wantonly treacherous.\n\nMake me to know your ways, O Lord;\nteach me your paths.\nLead me in your truth, and teach me,\nfor you are the God of my salvation;\nfor you I wait all day long.\n\nBe mindful of your mercy, O Lord, and of your steadfast love,\nfor they have been from of old.\nDo not remember the sins of my youth or my transgressions;\naccording to your steadfast love remember me,\nfor your goodness’ sake, O Lord!\n\nGood and upright is the Lord;\ntherefore he instructs sinners in the way.\nHe leads the humble in what is right,\nand teaches the humble his way.\nAll the paths of the Lord are steadfast love and faithfulness,\nfor those who keep his covenant and his decrees.\n\nFor your name’s sake, O Lord,\npardon my guilt, for it is great.\nWho are they that fear the Lord?\nHe will teach them the way that they should choose.\nThey will abide in prosperity,\nand their children shall possess the land.\nThe friendship of the Lord is for those who fear him,\nand he makes his covenant known to them.\nMy eyes are ever toward the Lord,\nfor he will pluck my feet out of the net.\n\nTurn to me and be gracious to me,\nfor I am lonely and afflicted.\nRelieve the troubles of my heart,\nand bring me out of my distress.\nConsider my affliction and my trouble,\nand forgive all my sins.\n\nConsider how many are my foes,\nand with what violent hatred they hate me.\nO guard my life, and deliver me;\ndo not let me be put to shame, for I take refuge in you.\nMay integrity and uprightness preserve me,\nfor I wait for you.\n\nRedeem Israel, O God,\nout of all its troubles.",
-            "KJV": "Unto thee, O LORD, do I lift up my soul. O my God, I trust in thee: let me not be ashamed, let not mine enemies triumph over me. Yea, let none that wait on thee be ashamed: let them be ashamed which transgress without cause. Shew me thy ways, O LORD; teach me thy paths. Lead me in thy truth, and teach me: for thou art the God of my salvation; on thee do I wait all the day. Remember, O LORD, thy tender mercies and thy lovingkindnesses; for they have been ever of old. Remember not the sins of my youth, nor my transgressions: according to thy mercy remember thou me for thy goodness' sake, O LORD. Good and upright is the LORD: therefore will he teach sinners in the way. The meek will he guide in judgment: and the meek will he teach his way. All the paths of the LORD are mercy and truth unto such as keep his covenant and his testimonies. For thy name's sake, O LORD, pardon mine iniquity; for it is great. What man is he that feareth the LORD? him shall he teach in the way that he shall choose. His soul shall dwell at ease; and his seed shall inherit the earth. The secret of the LORD is with them that fear him; and he will shew them his covenant. Mine eyes are ever toward the LORD; for he shall pluck my feet out of the net. Turn thee unto me, and have mercy upon me; for I am desolate and afflicted. The troubles of my heart are enlarged: O bring thou me out of my distresses. Look upon mine affliction and my pain; and forgive all my sins. Consider mine enemies; for they are many; and they hate me with cruel hatred. O keep my soul, and deliver me: let me not be ashamed; for I put my trust in thee. Let integrity and uprightness preserve me; for I wait on thee. Redeem Israel, O God, out of all his troubles.",
-            "LATIN": "Ad te, Domine, levavi animam meam: Deus meus in te confido, non erubescam. Neque irrideant me inimici mei: etenim universi qui te exspectant non confundentur. Confundantur omnes iniqui agentes vana. Vias tuas Domine demonstra mihi, et semitas tuas edoce me. Dirige me in veritate tua, et doce me: quia tu es Deus salvator meus, et te sustinui tota die. Reminiscere miserationum tuarum Domine, et misericordiarum tuarum quae a saeculo sunt. Delicta iuventutis meae, et ignorantias meas ne memineris. Secundum misericordiam tuam recordare mei tu, propter bonitatem tuam Domine. Dulcis et rectus Dominus: propter hoc legem dabit delinquentibus in via. Diriget mansuetos in iudicio, docebit mites vias suas. Universae viae Domini misericordia et veritas, requirentibus testamentum eius et testimonia eius. Propter nomen tuum Domine propitiaberis peccato meo: multum est enim. Quis est homo qui timet Dominum? Legem statuit ei in via quam elegit. Anima eius in bonis demorabitur: et semen eius hereditabit terram. Firmamentum est Dominus timentibus eum: et testamentum eius ut manifestetur illis. Oculi mei semper ad Dominum: quoniam ipse evellet de laqueo pedes meos. Miserere mei quoniam solitarius et pauper sum. Tribulationes cordis mei multiplicatae sunt: de necessitatibus meis erue me. Vide humilitatem meam et laborem meum: et dimitte omnia peccata mea. Respice inimicos meos quoniam multiplicati sunt: et odio iniquo oderunt me. Custodi animam meam, et erue me: non erubescam quoniam speravi in te. Innocentes et recti adhaeserunt mihi: quia sustinui te. Libera Deus Israel ex omnibus tribulationibus suis."
-        }
-    },
-    {
-        "id": "ISA 48:12-21",
-        "source_ref": "Isaiah 48:12-21",
-        "tags": ["morning-prayer", "ot-lesson", "epiphany"],
-        "text": {
-            "NRSV": "Listen to me, O Jacob, and Israel, whom I called: I am he; I am the first, and I am the last. My hand laid the foundation of the earth, and my right hand spread out the heavens; when I summon them, they stand at attention. Assemble, all of you, and hear! Who among them has declared these things? The LORD loves him; he shall perform his purpose on Babylon, and his arm shall be against the Chaldeans. I, even I, have spoken; I have called him, I have brought him, and he will prosper in his way. Draw near to me, hear this! From the beginning I have not spoken in secret, from the time it came to be I have been there. And now the Lord GOD has sent me and his spirit. Thus says the LORD, your Redeemer, the Holy One of Israel: I am the LORD your God, who teaches you for your own good, who leads you in the way you should go. O that you had paid attention to my commandments! Then your prosperity would have been like a river, and your success like the waves of the sea; your offspring would have been like the sand, and your descendants like its grains; their name would never be cut off or destroyed from before me. Go out from Babylon, flee from Chaldea! Declare this with a shout of joy, proclaim it, send it out to the end of the earth; say, “The LORD has redeemed his servant Jacob!” They do not thirst when he leads them through the deserts; he makes water flow for them from the rock; he splits open the rock and the water gushes out.",
-            "KJV": "Hearken unto me, O Jacob and Israel, my called; I am he; I am the first, I also am the last. Mine hand also hath laid the foundation of the earth, and my right hand hath spanned the heavens: when I call unto them, they stand up together. Assemble ye all, and hear; which among them hath declared these things? The LORD hath loved him: he will do his pleasure on Babylon, and his arm shall be on the Chaldeans. I, even I, have spoken it: yea, I have called him: I have brought him, and he shall make his way prosperous. Come ye near unto me, hear ye this; I have not spoken in secret from the beginning; from the time that it was, there am I: and now the Lord GOD, and his Spirit, hath sent me. Thus saith the LORD, thy Redeemer, the Holy One of Israel; I am the LORD thy God which teacheth thee to profit, which leadeth thee by the way that thou shouldest go. O that thou hadst hearkened to my commandments! then had thy peace been as a river, and thy righteousness as the waves of the sea: Thy seed also had been as the sand, and the offspring of thy bowels like the gravel thereof; his name should not have been cut off nor destroyed from before me. Go ye forth of Babylon, flee ye from the Chaldeans, with a voice of singing declare ye, tell this, utter it even to the end of the earth; say ye, The LORD hath redeemed his servant Jacob. And they thirsted not when he led them through the deserts: he caused the waters to flow out of the rock for them: he clave the rock also, and the waters gushed out.",
-            "LATIN": "N/A"
-        }
-    },
-    {
-        "id": "GAL 1:18-2:10",
-        "source_ref": "Galatians 1:18-2:10",
-        "tags": ["morning-prayer", "nt-lesson", "epiphany"],
-        "text": {
-            "NRSV": "Then after three years I did go up to Jerusalem to visit Cephas and stayed with him fifteen days; but I did not see any other apostle except James the Lord’s brother. (In what I am writing to you, before God, I do not lie!) Then I went into the regions of Syria and Cilicia. And I was still unknown by sight to the churches of Judea that are in Christ; they only heard it said, “The one who formerly was persecuting us is now proclaiming the faith he once tried to destroy.” And they glorified God because of me.\n\nThen after fourteen years I went up again to Jerusalem with Barnabas, taking Titus along with me. I went up in response to a revelation. Then I laid before them (though only in a private meeting with the acknowledged leaders) the gospel that I proclaim among the Gentiles, in order to make sure that I was not running, or had not run, in vain. But even Titus, who was with me, was not compelled to be circumcised, though he was a Greek. But because of false believers secretly brought in, who slipped in to spy on the freedom we have in Christ Jesus, so that they might enslave us— we did not submit to them even for a moment, so that the truth of the gospel might continue with you. And from those who were supposed to be acknowledged leaders (what they actually were makes no difference to me; God does not judge by human standards)—those leaders contributed nothing to me. On the contrary, when they saw that I had been entrusted with the gospel for the uncircumcised, just as Peter had been entrusted with the gospel for the circumcised (for he who worked through Peter making him an apostle to the circumcised also worked through me in sending me to the Gentiles), and when James and Cephas and John, who were acknowledged pillars, recognized the grace that had been given to me, they gave to Barnabas and me the right hand of fellowship, agreeing that we should go to the Gentiles and they to the circumcised. They asked only one thing, that we remember the poor, which was actually what I was eager to do.",
-            "KJV": "Then after three years I went up to Jerusalem to see Peter, and abode with him fifteen days. But other of the apostles saw I none, save James the Lord's brother. Now the things which I write unto you, behold, before God, I lie not. Afterwards I came into the regions of Syria and Cilicia; And was unknown by face unto the churches of Judaea which were in Christ: But they had heard only, That he which persecuted us in times past now preacheth the faith which once he destroyed. And they glorified God in me. Then fourteen years after I went up again to Jerusalem with Barnabas, and took Titus with me also. And I went up by revelation, and communicated unto them that gospel which I preach among the Gentiles, but privately to them which were of reputation, lest by any means I should run, or had run, in vain. But neither Titus, who was with me, being a Greek, was compelled to be circumcised: And that because of false brethren unawares brought in, who came in privily to spy out our liberty which we have in Christ Jesus, that they might bring us into bondage: To whom we gave place by subjection, no, not for an hour; that the truth of the gospel might continue with you. But of these who seemed to be somewhat, (whatsoever they were, it maketh no matter to me: God accepteth no man's person:) for they who seemed to be somewhat in conference added nothing to me: But contrariwise, when they saw that the gospel of the uncircumcision was committed unto me, as the gospel of the circumcision was unto Peter; (For he that wrought effectually in Peter to the apostleship of the circumcision, the same was mighty in me toward the Gentiles:) And when James, Cephas, and John, who seemed to be pillars, perceived the grace that was given unto me, they gave to me and Barnabas the right hands of fellowship; that we should go unto the heathen, and they unto the circumcision. Only they would that we should remember the poor; the same which I also was forward to do.",
-            "LATIN": "N/A"
-        }
-    },
-    {
-        "id": "MRK 5:21-43",
-        "source_ref": "Mark 5:21-43",
-        "tags": ["evening-prayer", "gospel-lesson", "epiphany"],
-        "text": {
-            "NRSV": "When Jesus had crossed again in the boat to the other side, a great crowd gathered around him; and he was by the sea. Then one of the leaders of the synagogue named Jairus came and, when he saw him, fell at his feet and begged him repeatedly, “My little daughter is at the point of death. Come and lay your hands on her, so that she may be made well, and live.” So he went with him. And a large crowd followed him and pressed in on him. Now there was a woman who had been suffering from hemorrhages for twelve years. She had endured much under many physicians, and had spent all that she had; and she was no better, but rather grew worse. She had heard about Jesus, and came up behind him in the crowd and touched his cloak, for she said, “If I but touch his clothes, I will be made well.” Immediately her hemorrhage stopped; and she felt in her body that she was healed of her disease. Immediately aware that power had gone forth from him, Jesus turned about in the crowd and said, “Who touched my clothes?” And his disciples said to him, “You see the crowd pressing in on you; how can you say, ‘Who touched me?’” He looked all around to see who had done it. But the woman, knowing what had happened to her, came in fear and trembling, fell down before him, and told him the whole truth. He said to her, “Daughter, your faith has made you well; go in peace, and be healed of your disease.” While he was still speaking, some people came from the leader’s house to say, “Your daughter is dead. Why trouble the teacher any further?” But overhearing what they said, Jesus said to the leader of the synagogue, “Do not fear, only believe.” He allowed no one to follow him except Peter, James, and John the brother of James. When they came to the house of the leader of the synagogue, he saw a commotion, people weeping and wailing loudly. When he had entered, he said to them, “Why do you make a commotion and weep? The child is not dead but sleeping.” And they laughed at him. Then he put them all outside, and took the child’s father and mother and those who were with him, and went in where the child was. He took her by the hand and said to her, “Talitha cum,” which means, “Little girl, get up!” And immediately the girl got up and began to walk about (she was twelve years of age). At this they were overcome with amazement. He strictly ordered them that no one should know this, and told them to give her something to eat.",
-            "KJV": "And when Jesus was passed over again by ship unto the other side, much people gathered unto him: and he was nigh unto the sea. And, behold, there cometh one of the rulers of the synagogue, Jairus by name; and when he saw him, he fell at his feet, And besought him greatly, saying, My little daughter lieth at the point of death: I pray thee, come and lay thy hands on her, that she may be healed; and she shall live. And Jesus went with him; and much people followed him, and thronged him. And a certain woman, which had an issue of blood twelve years, And had suffered many things of many physicians, and had spent all that she had, and was nothing bettered, but rather grew worse, When she had heard of Jesus, came in the press behind, and touched his garment. For she said, If I may touch but his clothes, I shall be whole. And straightway the fountain of her blood was dried up; and she felt in her body that she was healed of that plague. And Jesus, immediately knowing in himself that virtue had gone out of him, turned him about in the press, and said, Who touched my clothes? And his disciples said unto him, Thou seest the multitude thronging thee, and sayest thou, Who touched me? And he looked round about to see her that had done this thing. But the woman fearing and trembling, knowing what was done in her, came and fell down before him, and told him all the truth. And he said unto her, Daughter, thy faith hath made thee whole; go in peace, and be whole of thy plague. While he yet spake, there came from the ruler of the synagogue's house certain which said, Thy daughter is dead: why troublest thou the Master any further? As soon as Jesus heard the word that was spoken, he saith unto the ruler of the synagogue, Be not afraid, only believe. And he suffered no man to follow him, save Peter, and James, and John the brother of James. And he cometh to the house of the ruler of the synagogue, and seeth the tumult, and them that wept and wailed greatly. And when he was come in, he saith unto them, Why make ye this ado, and weep? the damsel is not dead, but sleepeth. And they laughed him to scorn. But when he had put them all out, he taketh the father and the mother of the damsel, and them that were with him, and entereth in where the damsel was lying. And he took the damsel by the hand, and said unto her, Talitha cumi; which is, being interpreted, Damsel, I say unto thee, arise. And straightway the damsel arose, and walked; for she was of the age of twelve years. And they were astonished with a great astonishment. And he charged them straitly that no man should know it; and commanded that something should be given her to eat.",
-            "LATIN": "N/A"
-        }
-    },
-    {
-        "id": "ISA 51:1-8",
-        "source_ref": "Isaiah 51:1-8",
-        "tags": ["morning-prayer", "ot-lesson", "epiphany"],
-        "text": {
-            "NRSV": "Listen to me, you that pursue deliverance, you that seek the Lord. Look to the rock from which you were hewn, and to the quarry from which you were dug. Look to Abraham your father and to Sarah who bore you; for he was but one when I called him, but I blessed him and made him many. For the Lord will comfort Zion; he will comfort all her waste places, and make her wilderness like Eden, her desert like the garden of the Lord; joy and gladness will be found in her, thanksgiving and the voice of song. Listen to me, my people; give heed to me, my nation; for a teaching will go out from me, and my justice for a light to the peoples. I will bring near my deliverance swiftly, my salvation has gone out and my arms will judge the peoples; the coastlands wait for me, and for my arm they hope. Lift up your eyes to the heavens, and look at the earth beneath; for the heavens vanish like smoke, the earth will wear out like a garment, and those who live on it will die like gnats; but my salvation will be forever, and my deliverance will never be ended. Listen to me, you who know righteousness, you people who have my teaching in your hearts; do not fear the reproach of others, and do not be dismayed when they revile you. For the moth will eat them up like a garment, and the worm will eat them like wool; but my deliverance will be forever, and my salvation to all generations.",
-            "KJV": "Hearken to me, ye that follow after righteousness, ye that seek the LORD: look unto the rock whence ye are hewn, and to the hole of the pit whence ye are digged. Look unto Abraham your father, and unto Sarah that bare you: for I called him alone, and blessed him, and increased him. For the LORD shall comfort Zion: he will comfort all her waste places; and he will make her wilderness like Eden, and her desert like the garden of the LORD; joy and gladness shall be found therein, thanksgiving, and the voice of melody. Hearken unto me, my people; and give ear unto me, O my nation: for a law shall proceed from me, and I will make my judgment to rest for a light of the people. My righteousness is near; my salvation is gone forth, and mine arms shall judge the people; the isles shall wait upon me, and on mine arm shall they trust. Lift up your eyes to the heavens, and look upon the earth beneath: for the heavens shall vanish away like smoke, and the earth shall wax old like a garment, and they that dwell therein shall die in like manner: but my salvation shall be for ever, and my righteousness shall not be abolished. Hearken unto me, ye that know righteousness, the people in whose heart is my law; fear ye not the reproach of men, neither be ye afraid of their revilings. For the moth shall eat them up like a garment, and the worm shall eat them like wool: but my righteousness shall be for ever, and my salvation from generation to generation.",
-            "LATIN": "N/A"
-        }
-    },
-    {
-        "id": "GAL 3:23-29",
-        "source_ref": "Galatians 3:23-29",
-        "tags": ["morning-prayer", "nt-lesson", "epiphany"],
-        "text": {
-            "NRSV": "Now before faith came, we were imprisoned and guarded under the law until faith would be revealed. Therefore the law was our disciplinarian until Christ came, that we might be justified by faith. But now that faith has come, we are no longer subject to a disciplinarian, for in Christ Jesus you are all children of God through faith. As many of you as were baptized into Christ have clothed yourselves with Christ. There is no longer Jew or Greek, there is no longer slave or free, there is no longer male and female; for all of you are one in Christ Jesus. And if you belong to Christ, then you are Abraham’s offspring, heirs according to the promise.",
-            "KJV": "But before faith came, we were kept under the law, shut up unto the faith which should afterwards be revealed. Wherefore the law was our schoolmaster to bring us unto Christ, that we might be justified by faith. But after that faith is come, we are no longer under a schoolmaster. For ye are all the children of God by faith in Christ Jesus. For as many of you as have been baptized into Christ have put on Christ. There is neither Jew nor Greek, there is neither bond nor free, there is neither male nor female: for ye are all one in Christ Jesus. And if ye be Christ's, then are ye Abraham's seed, and heirs according to the promise.",
-            "LATIN": "N/A"
-        }
-    },
-    {
-        "id": "MRK 7:1-23",
-        "source_ref": "Mark 7:1-23",
-        "tags": ["evening-prayer", "gospel-lesson", "epiphany"],
-        "text": {
-            "NRSV": "Now when the Pharisees and some of the scribes who had come from Jerusalem gathered around him, they noticed that some of his disciples were eating with defiled hands, that is, without washing them. (For the Pharisees, and all the Jews, do not eat unless they thoroughly wash their hands, thus observing the tradition of the elders; they do not eat anything from the market unless they wash it; and there are also many other traditions that they observe, the washing of cups, pots, and bronze kettles.) So the Pharisees and the scribes asked him, “Why do your disciples not live according to the tradition of the elders, but eat with defiled hands?” He said to them, “Isaiah prophesied rightly about you hypocrites, as it is written, ‘This people honors me with their lips, but their hearts are far from me; in vain do they worship me, teaching human precepts as doctrines.’ You abandon the commandment of God and hold to human tradition.” Then he called the crowd again and said to them, “Listen to me, all of you, and understand: there is nothing outside a person that by going in can defile, but the things that come out are what defile.” When he had left the crowd and entered the house, his disciples asked him about the parable. He said to them, “Then do you also fail to understand? Do you not see that whatever goes into a person from outside cannot defile, since it enters, not the heart but the stomach, and goes out into the sewer?” (Thus he declared all foods clean.) And he said, “It is what comes out of a person that defiles. For it is from within, from the human heart, that evil intentions come: fornication, theft, murder, adultery, avarice, wickedness, deceit, licentiousness, envy, slander, pride, folly. All these evil things come from within, and they defile a person.”",
-            "KJV": "Then came together unto him the Pharisees, and certain of the scribes, which came from Jerusalem. And when they saw some of his disciples eat bread with defiled, that is to say, with unwashen, hands, they found fault. For the Pharisees, and all the Jews, except they wash their hands oft, eat not, holding the tradition of the elders. And when they come from the market, except they wash, they eat not. And many other things there be, which they have received to hold, as the washing of cups, and pots, brasen vessels, and of tables. Then the Pharisees and scribes asked him, Why walk not thy disciples according to the tradition of the elders, but eat bread with unwashen hands? He answered and said unto them, Well hath Esaias prophesied of you hypocrites, as it is written, This people honoureth me with their lips, but their heart is far from me. Howbeit in vain do they worship me, teaching for doctrines the commandments of men. For laying aside the commandment of God, ye hold the tradition of men, as the washing of pots and cups: and many other such like things ye do. And when he had called all the people unto him, he said unto them, Hearken unto me every one of you, and understand: There is nothing from without a man, that entering into him can defile him: but the things which come out of him, those are they that defile the man. If any man have ears to hear, let him hear. And when he was entered into the house from the people, his disciples asked him concerning the parable. And he saith unto them, Are ye so without understanding also? Do ye not perceive, that whatsoever thing from without entereth into the man, it cannot defile him; Because it entereth not into his heart, but into the belly, and goeth out into the draught, purging all meats? And he said, That which cometh out of the man, that defileth the man. For from within, out of the heart of men, proceed evil thoughts, adulteries, fornications, murders, Thefts, covetousness, wickedness, deceit, lasciviousness, an evil eye, blasphemy, pride, foolishness: All these evil things come from within, and defile the man.",
-            "LATIN": "N/A"
-        }
-    },
-    {
-        "id": "ISA 51:9-16",
-        "source_ref": "Isaiah 51:9-16",
-        "tags": ["morning-prayer", "ot-lesson", "epiphany"],
-        "text": {
-            "NRSV": "Awake, awake, put on strength, O arm of the Lord! Awake, as in days of old, the generations of long ago! Was it not you who cut Rahab in pieces, who pierced the dragon? Was it not you who dried up the sea, the waters of the great deep; who made the depths of the sea a way for the redeemed to cross over? So the ransomed of the Lord shall return, and come to Zion with singing; everlasting joy shall be upon their heads; they shall obtain joy and gladness, and sorrow and sighing shall flee away. I, I am he who comforts you; why then are you afraid of a mere mortal who must die, a human being who fades like grass? You have forgotten the Lord, your Maker, who stretched out the heavens and laid the foundations of the earth, and you fear continually all day long because of the fury of the oppressor, who is bent on destruction. The oppressor plans to destroy, but where is the fury of the oppressor? The captive leans in haste to be free, and does not die in the pit, nor is his bread lacking. For I am the Lord your God, who stirs up the sea so that its waves roar— the Lord of hosts is his name. I have put my words in your mouth, and hidden you in the shadow of my hand, stretching out the heavens and laying the foundations of the earth, and saying to Zion, “You are my people.”",
-            "KJV": "Awake, awake, put on strength, O arm of the LORD; awake, as in the ancient days, in the generations of old. Art thou not it that hath cut Rahab, and wounded the dragon? Art thou not it which hath dried the sea, the waters of the great deep; that hath made the depths of the sea a way for the ransomed to pass over? Therefore the redeemed of the LORD shall return, and come with singing unto Zion; and everlasting joy shall be upon their head: they shall obtain gladness and joy; and sorrow and mourning shall flee away. I, even I, am he that comforteth you: who art thou, that thou shouldest be afraid of a man that shall die, and of the son of man which shall be made as grass; And forgettest the LORD thy maker, that hath stretched forth the heavens, and laid the foundations of the earth; and hast feared continually every day because of the fury of the oppressor, as if he were ready to destroy? and where is the fury of the oppressor? The captive exile hasteneth that he may be loosed, and that he should not die in the pit, nor that his bread should fail. But I am the LORD thy God, that divided the sea, whose waves roared: The LORD of hosts is his name. And I have put my words in thy mouth, and I have covered thee in the shadow of mine hand, that I may plant the heavens, and lay the foundations of the earth, and say unto Zion, Thou art my people.",
-            "LATIN": "N/A"
-        }
-    },
-    {
-        "id": "HEB 11:8-16",
-        "source_ref": "Hebrews 11:8-16",
-        "tags": ["morning-prayer", "nt-lesson", "epiphany"],
-        "text": {
-            "NRSV": "By faith Abraham obeyed when he was called to set out for a place that he was to receive as an inheritance; and he set out, not knowing where he was going. By faith he stayed for a time in the land he had been promised, as in a foreign land, living in tents, as did Isaac and Jacob, who were heirs with him of the same promise. For he looked forward to the city that has foundations, whose architect and builder is God. By faith he received power of procreation, even though he was too old—and Sarah herself was barren—because he considered him faithful who had promised. Therefore from one person, and this one as good as dead, descendants were born, “as many as the stars of heaven and as the innumerable grains of sand by the seashore.” All of these died in faith without having received the promises, but from a distance they saw and greeted them. They confessed that they were strangers and foreigners on the earth, for those who speak in this way make it clear that they are seeking a homeland. If they had been thinking of the land that they had left behind, they would have had opportunity to return. But as it is, they desire a better country, that is, a heavenly one. Therefore God is not ashamed to be called their God; indeed, he has prepared a city for them.",
-            "KJV": "By faith Abraham, when he was called to go out into a place which he should after receive for an inheritance, obeyed; and he went out, not knowing whither he went. By faith he sojourned in the land of promise, as in a strange country, dwelling in tabernacles with Isaac and Jacob, the heirs with him of the same promise: For he looked for a city which hath foundations, whose builder and maker is God. Through faith also Sara herself received strength to conceive seed, and was delivered of a child when she was past age, because she judged him faithful who had promised. Therefore sprang there even of one, and him as good as dead, so many as the stars of the sky in multitude, and as the sand which is by the sea shore innumerable. These all died in faith, not having received the promises, but having seen them afar off, and were persuaded of them, and embraced them, and confessed that they were strangers and pilgrims on the earth. For they that say such things declare plainly that they seek a country. And truly, if they had been mindful of that country from whence they came out, they might have had opportunity to have returned. But now they desire a better country, that is, an heavenly: wherefore God is not ashamed to be called their God: for he hath prepared for them a city.",
-            "LATIN": "N/A"
-        }
-    },
-    {
-        "id": "JHN 7:14-31",
-        "source_ref": "John 7:14-31",
-        "tags": ["evening-prayer", "gospel-lesson", "epiphany"],
-        "text": {
-            "NRSV": "About the middle of the festival Jesus went up into the temple and began to teach. The Jews were astonished at it, saying, “How does this man have such learning, when he has never been taught?” Then Jesus answered them, “My teaching is not mine but his who sent me. Anyone who resolves to do the will of God will know whether the teaching is from God or whether I am speaking on my own. Those who speak on their own seek their own glory; but the one who seeks the glory of him who sent him is true, and there is nothing false in him. Did not Moses give you the law? Yet none of you keeps the law. Why are you looking for an opportunity to kill me?” The crowd answered, “You have a demon! Who is trying to kill you?” Jesus answered them, “I performed one work, and all of you are astonished. Moses gave you circumcision (it is not from Moses, but from the patriarchs), and you circumcise a man on the sabbath. If a man receives circumcision on the sabbath in order that the law of Moses may not be broken, are you angry with me because I made a man’s whole body well on the sabbath? Do not judge by appearances, but judge with right judgment.” Now some of the people of Jerusalem were saying, “Is not this the man whom they are trying to kill? And here he is, speaking openly, but they say nothing to him! Can it be that the authorities really know that this is the Messiah? Yet we know where this man is from; but when the Messiah comes, no one will know where he is from.” Then Jesus cried out as he was teaching in the temple, “You know me, and you know where I am from. I have not come on my own. But the one who sent me is true, and him you do not know. I know him, because I am from him, and he sent me.” Then they tried to arrest him, but no one laid hands on him, because his hour had not yet come. Yet many in the crowd believed in him and were saying, “When the Messiah comes, will he do more signs than this man has done?”",
-            "KJV": "Now about the midst of the feast Jesus went up into the temple, and taught. And the Jews marvelled, saying, How knoweth this man letters, having never learned? Jesus answered them, and said, My doctrine is not mine, but his that sent me. If any man will do his will, he shall know of the doctrine, whether it be of God, or whether I speak of myself. He that speaketh of himself seeketh his own glory: but he that seeketh his glory that sent him, the same is true, and no unrighteousness is in him. Did not Moses give you the law, and yet none of you keepeth the law? Why go ye about to kill me? The people answered and said, Thou hast a devil: who goeth about to kill thee? Jesus answered and said unto them, I have done one work, and ye all marvel. Moses therefore gave unto you circumcision; (not because it is of Moses, but of the fathers;) and ye on the sabbath day circumcise a man. If a man on the sabbath day receive circumcision, that the law of Moses should not be broken; are ye angry at me, because I have made a man every whit whole on the sabbath day? Judge not according to the appearance, but judge righteous judgment. Then said some of them of Jerusalem, Is not this he, whom they seek to kill? But, lo, he speaketh boldly, and they say nothing unto him. Do the rulers know indeed that this is the very Christ? Howbeit we know this man whence he is: but when Christ cometh, no man knoweth whence he is. Then cried Jesus in the temple as he taught, saying, Ye both know me, and ye know whence I am: and I am not come of myself, but he that sent me is true, whom ye know not. But I know him: for I am from him, and he hath sent me. Then they sought to take him: but no man laid hands on him, because his hour was not yet come. And many of the people believed on him, and said, When Christ cometh, will he do more miracles than these which this man hath done?",
-            "LATIN": "N/A"
-        }
-    },
-    {
-        "id": "ISA 52:1-12",
-        "source_ref": "Isaiah 52:1-12",
-        "tags": ["morning-prayer", "ot-lesson", "epiphany"],
-        "text": {
-            "NRSV": "Awake, awake, put on your strength, O Zion! Put on your beautiful garments, O Jerusalem, the holy city; for the uncircumcised and the unclean shall enter you no more. Shake yourself from the dust, rise up, O captive Jerusalem; loose the bonds from your neck, O captive daughter Zion! For thus says the Lord: You were sold for nothing, and you shall be redeemed without money. For thus says the Lord God: My people went down at first into Egypt to reside there as aliens, but the Assyrian has oppressed them without cause. Now therefore what am I doing here, says the Lord, seeing that my people are taken away without cause? Their rulers wail, says the Lord, and continually all day my name is despised. Therefore my people shall know my name; therefore they shall know on that day that it is I who speak; here am I. How beautiful upon the mountains are the feet of the messenger who announces peace, who brings good news, who announces salvation, who says to Zion, “Your God reigns.” Listen! Your sentinels lift up their voices, together they sing for joy; for in plain sight they see the return of the Lord to Zion. Break forth together into singing, you ruins of Jerusalem; for the Lord has comforted his people, he has redeemed Jerusalem. The Lord has bared his holy arm before the eyes of all the nations; and all the ends of the earth shall see the salvation of our God.",
-            "KJV": "Awake, awake; put on thy strength, O Zion; put on thy beautiful garments, O Jerusalem, the holy city: for henceforth there shall no more come into thee the uncircumcised and the unclean. Shake thyself from the dust; arise, and sit down, O Jerusalem: loose thyself from the bands of thy neck, O captive daughter of Zion. For thus saith the LORD, Ye have sold yourselves for nought; and ye shall be redeemed without money. For thus saith the Lord GOD, My people went down aforetime into Egypt to sojourn there; and the Assyrian oppressed them without cause. Now therefore, what have I here, saith the LORD, that my people is taken away for nought? they that rule over them make them to howl, saith the LORD; and my name continually every day is blasphemed. Therefore my people shall know my name: therefore they shall know in that day that I am he that doth speak: behold, it is I. How beautiful upon the mountains are the feet of him that bringeth good tidings, that publisheth peace; that bringeth good tidings of good, that publisheth salvation; that saith unto Zion, Thy God reigneth! Thy watchmen shall lift up the voice; with the voice together shall they sing: for they shall see eye to eye, when the LORD shall bring again Zion. Break forth into joy, sing together, ye waste places of Jerusalem: for the LORD hath comforted his people, he hath redeemed Jerusalem. The LORD hath made bare his holy arm in the eyes of all the nations; and all the ends of the earth shall see the salvation of our God.",
-            "LATIN": "N/A"
-        }
-    },
-    {
-        "id": "GAL 4:21-31",
-        "source_ref": "Galatians 4:21-31",
-        "tags": ["morning-prayer", "nt-lesson", "epiphany"],
-        "text": {
-            "NRSV": "Tell me, you who desire to be subject to the law, will you not listen to the law? For it is written that Abraham had two sons, one by a slave woman and the other by a free woman. One, the child of the slave, was born according to the flesh; the other, the child of the free woman, was born through the promise. Now this is an allegory: these women are two covenants. One woman, in fact, is Hagar, from Mount Sinai, bearing children for slavery. Now Hagar is Mount Sinai in Arabia and corresponds to the present Jerusalem, for she is in slavery with her children. But the other woman corresponds to the Jerusalem above; she is free, and she is our mother. For it is written, “Rejoice, you childless one, you who bear no children, burst into song and shout, you who endure no birth pangs; for the children of the desolate woman are more numerous than the children of the one who is married.” Now you, my friends, like Isaac, are children of promise. But just as at that time the child who was born according to the flesh persecuted the child who was born according to the Spirit, so it is now also. But what does the scripture say? “Drive out the slave and her child; for the child of the slave will not share the inheritance with the child of the free woman.” So then, friends, we are children, not of the slave but of the free woman.",
-            "KJV": "Tell me, ye that desire to be under the law, do ye not hear the law? For it is written, that Abraham had two sons, the one by a bondmaid, the other by a freewoman. But he who was of the bondwoman was born after the flesh; but he of the freewoman was by promise. Which things are an allegory: for these are the two covenants; the one from the mount Sinai, which gendereth to bondage, which is Agar. For this Agar is mount Sinai in Arabia, and answereth to Jerusalem which now is, and is in bondage with her children. But Jerusalem which is above is free, which is the mother of us all. For it is written, Rejoice, thou barren that bearest not; break forth and cry, thou that travailest not: for the desolate hath many more children than she which hath an husband. Now we, brethren, as Isaac was, are the children of promise. But as then he that was born after the flesh persecuted him that was born after the Spirit, even so it is now. Nevertheless what saith the scripture? Cast out the bondwoman and her son: for the son of the bondwoman shall not be heir with the son of the freewoman. So then, brethren, we are not children of the bondwoman, but of the free.",
-            "LATIN": "N/A"
-        }
-    },
-    {
-        "id": "MRK 8:11-26",
-        "source_ref": "Mark 8:11-26",
-        "tags": ["evening-prayer", "gospel-lesson", "epiphany"],
-        "text": {
-            "NRSV": "The Pharisees came and began to argue with him, asking him for a sign from heaven, to test him. And he sighed deeply in his spirit and said, “Why does this generation ask for a sign? Truly I tell you, no sign will be given to this generation.” Then he left them, and getting into the boat again, he went across to the other side. Now the disciples had forgotten to bring any bread; and they had only one loaf with them in the boat. And he cautioned them, saying, “Watch out—beware of the yeast of the Pharisees and the yeast of Herod.” They said to one another, “It is because we have no bread.” And becoming aware of it, Jesus said to them, “Why are you talking about having no bread? Do you still not perceive or understand? Are your hearts hardened? Do you have eyes, and fail to see? Do you have ears, and fail to hear? And do you not remember? When I broke the five loaves for the five thousand, how many baskets full of broken pieces did you collect?” They said to him, “Twelve.” “And the seven for the four thousand, how many baskets full of broken pieces did you collect?” And they said to him, “Seven.” Then he said to them, “Do you not yet understand?” They came to Bethsaida. Some people brought a blind man to him and begged him to touch him. He took the blind man by the hand and led him out of the village. He put saliva on his eyes and laid his hands on him, and asked him, “Can you see anything?” And the man looked up and said, “I can see people, but they look like trees, walking.” Then Jesus laid his hands on his eyes again; and he looked intently and his sight was restored, and he saw everything clearly. Then he sent him away to his home, saying, “Do not even go into the village.”",
-            "KJV": "And the Pharisees came forth, and began to question with him, seeking of him a sign from heaven, tempting him. And he sighed deeply in his spirit, and saith, Why doth this generation seek after a sign? verily I say unto you, There shall no sign be given unto this generation. And he left them, and entering into the ship again departed to the other side. Now the disciples had forgotten to take bread, neither had they in the ship with them more than one loaf. And he charged them, saying, Take heed, beware of the leaven of the Pharisees, and of the leaven of Herod. And they reasoned among themselves, saying, It is because we have no bread. And when Jesus knew it, he saith unto them, Why reason ye, because ye have no bread? perceive ye not yet, neither understand? have ye your heart yet hardened? Having eyes, see ye not? and having ears, hear ye not? and do ye not remember? When I brake the five loaves among five thousand, how many baskets full of fragments took ye up? They say unto him, Twelve. And when the seven among four thousand, how many baskets full of fragments took ye up? And they said, Seven. And he said unto them, How is it that ye do not understand? And he cometh to Bethsaida; and they bring a blind man unto him, and besought him to touch him. And he took the blind man by the hand, and led him out of the town; and when he had spit on his eyes, and put his hands upon him, he asked him if he saw ought. And he looked up, and said, I see men as trees, walking. After that he put his hands again upon his eyes, and made him look up: and he was restored, and saw every man clearly. And he sent him away to his house, saying, Neither go into the town, nor tell it to any in the town.",
-            "LATIN": "N/A"
-        }
-    },
-    {
-        "id": "SIR 39:1-10",
-        "source_ref": "Sirach 39:1-10",
-        "tags": ["morning-prayer", "ot-lesson", "conversion-st-paul"],
-        "text": {
-            "NRSV": "He seeks out the wisdom of all the ancients, and is concerned with prophecies; he preserves the sayings of the famous and penetrates the subtleties of parables; he seeks out the hidden meanings of proverbs and is at home with the obscurities of parables. He serves among the great and appears before rulers; he travels in foreign lands and learns what is good and evil in the human lot. He sets his heart to rise early to seek the Lord who made him, and to petition the Most High, and he opens his mouth in prayer and asks pardon for his sins. If the great Lord is willing, he will be filled with the spirit of understanding; he will pour forth wisdom and give thanks in prayer to the Lord, who will direct his will and complete his understanding; he will give him sound judgment and knowledge of his power. He will glory in the name of the Lord, and will sing the Lord’s praise. He will tell of the Lord’s mighty works and will recount the wonders he has seen.",
-            "KJV": "But he that giveth his mind to the law of the most High, and is occupied in the meditation thereof, will seek out the wisdom of all the ancient, and be occupied in prophecies. He will keep the sayings of the renowned men: and where subtil parables are, he will be occupied withal. He will seek out the secrets of grave sentences, and be conversant in dark parables. He shall serve among great men, and appear before princes: he will travel through strange countries; for he hath tried the good and the evil among men. His mind shall be filled with the fear of the Lord: and in the days of his prayer he will seek the Lord his maker, and will beseech the most High, and will open his mouth in prayer, and make supplication for his sins. If the great Lord be willing, he shall be filled with the spirit of understanding: he shall pour out wise sentences, and give thanks unto the Lord in his prayer. He shall direct his counsel and knowledge, and in his secrets shall he meditate. He shall shew forth that which he hath learned, and glory in the law of the covenant of the Lord.",
-            "LATIN": "N/A"
-        }
-    },
-    {
-        "id": "ACT 9:1-22",
-        "source_ref": "Acts 9:1-22",
-        "tags": ["morning-prayer", "nt-lesson", "conversion-st-paul"],
-        "text": {
-            "NRSV": "Meanwhile Saul, still breathing threats and murder against the disciples of the Lord, went to the high priest and asked him for letters to the synagogues at Damascus, so that if he found any who belonged to the Way, men or women, he might bring them bound to Jerusalem. Now as he was going along and approaching Damascus, suddenly a light from heaven flashed around him. He fell to the ground and heard a voice saying to him, “Saul, Saul, why do you persecute me?” He asked, “Who are you, Lord?” The reply came, “I am Jesus, whom you are persecuting. But get up and enter the city, and you will be told what you are to do.” The men who were traveling with him stood speechless because they heard the voice but saw no one. Saul got up from the ground, and though his eyes were open, he could see nothing; so they led him by the hand and brought him into Damascus. For three days he was without sight, and neither ate nor drank. Now there was a disciple in Damascus named Ananias. The Lord said to him in a vision, “Ananias.” He answered, “Here I am, Lord.” The Lord said to him, “Get up and go to the street called Straight, and at the house of Judas look for a man of Tarsus named Saul. At this moment he is praying, and he has seen in a vision a man named Ananias come in and lay his hands on him so that he might regain his sight.” But Ananias answered, “Lord, I have heard from many about this man, how much evil he has done to your saints in Jerusalem; and here he has authority from the chief priests to bind all who invoke your name.” But the Lord said to him, “Go, for he is an instrument whom I have chosen to bring my name before Gentiles and kings and before the people of Israel; I myself will show him how much he must suffer for the sake of my name.” So Ananias went and entered the house. He laid his hands on Saul and said, “Brother Saul, the Lord Jesus, who appeared to you on the road by which you came, has sent me so that you may regain your sight and be filled with the Holy Spirit.” And immediately something like scales fell from his eyes, and his sight was restored. Then he got up and was baptized, and after taking some food, he regained his strength. For several days he was with the disciples in Damascus, and immediately he began to proclaim Jesus in the synagogues, saying, “He is the Son of God.” All who heard him were amazed and said, “Is not this the man who made havoc in Jerusalem among those who invoke this name? And has he not come here for the purpose of bringing them bound before the chief priests?” Saul became increasingly more powerful and confounded the Jews who lived in Damascus by proving that Jesus was the Messiah.",
-            "KJV": "And Saul, yet breathing out threatenings and slaughter against the disciples of the Lord, went unto the high priest, And desired of him letters to Damascus to the synagogues, that if he found any of this way, whether they were men or women, he might bring them bound unto Jerusalem. And as he journeyed, he came near Damascus: and suddenly there shined round about him a light from heaven: And he fell to the earth, and heard a voice saying unto him, Saul, Saul, why persecutest thou me? And he said, Who art thou, Lord? And the Lord said, I am Jesus whom thou persecutest: it is hard for thee to kick against the pricks. And he trembling and astonished said, Lord, what wilt thou have me to do? And the Lord said unto him, Arise, and go into the city, and it shall be told thee what thou must do. And the men which journeyed with him stood speechless, hearing a voice, but seeing no man. And Saul arose from the earth; and when his eyes were opened, he saw no man: but they led him by the hand, and brought him into Damascus. And he was three days without sight, and neither did eat nor drink. And there was a certain disciple at Damascus, named Ananias; and to him said the Lord in a vision, Ananias. And he said, Behold, I am here, Lord. And the Lord said unto him, Arise, and go into the street which is called Straight, and enquire in the house of Judas for one called Saul, of Tarsus: for, behold, he prayeth, And hath seen in a vision a man named Ananias coming in, and putting his hand on him, that he might receive his sight. Then Ananias answered, Lord, I have heard by many of this man, how much evil he hath done to thy saints at Jerusalem: And here he hath authority from the chief priests to bind all that call on thy name. But the Lord said unto him, Go thy way: for he is a chosen vessel unto me, to bear my name before the Gentiles, and kings, and the children of Israel: For I will shew him how great things he must suffer for my name's sake. And Ananias went his way, and entered into the house; and putting his hands on him said, Brother Saul, the Lord, even Jesus, that appeared unto thee in the way as thou camest, hath sent me, that thou mightest receive thy sight, and be filled with the Holy Ghost. And immediately there fell from his eyes as it had been scales: and he received sight forthwith, and arose, and was baptized. And when he had received meat, he was strengthened. Then was Saul certain days with the disciples which were at Damascus. And straightway he preached Christ in the synagogues, that he is the Son of God. But all that heard him were amazed, and said; Is not this he that destroyed them which called on this name in Jerusalem, and came hither for that intent, that he might bring them bound unto the chief priests? But Saul increased the more in strength, and confounded the Jews which dwelt at Damascus, proving that this is very Christ.",
-            "LATIN": "N/A"
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Universal Office</title>
+    <style>
+       :root { 
+           --bg-color: #f4f1ea; 
+           --text-color: #2c3e50; 
+           --container-bg: #ffffff; 
+           --accent: #8e44ad; 
+           --gold: #d4af37; 
+           --sidebar-bg: #1a1a1a; 
+       }
+       body.dark-mode { 
+           --bg-color: #121212; 
+           --text-color: #e0e0e0; 
+           --container-bg: #1e1e1e; 
+           --sidebar-bg: #000000; 
+       }
+       body { 
+           font-family: 'Georgia', serif; 
+           background-color: var(--bg-color); 
+           color: var(--text-color); 
+           margin: 0; 
+           display: flex; 
+           flex-direction: column; 
+           align-items: center; 
+           justify-content: center; 
+           height: 100vh; 
+           transition: all 0.3s; 
+       }
+
+       /* Mode Selection */
+       #mode-selection { 
+           text-align: center; 
+           max-width: 600px; 
+           padding: 40px; 
+           background: var(--container-bg); 
+           border-radius: 8px; 
+           box-shadow: 0 4px 15px rgba(0,0,0,0.1); 
+       }
+       #mode-selection h1 { font-size: 2.5em; margin-bottom: 20px; }
+       .mode-btn { 
+           background: var(--accent); 
+           color: white; 
+           border: none; 
+           padding: 15px 30px; 
+           margin: 10px; 
+           cursor: pointer; 
+           font-size: 1.2em; 
+           border-radius: 4px; 
+           transition: background 0.2s; 
+       }
+       .mode-btn:hover { background: #9b59b6; }
+
+       /* Daily Office Section (Hidden Initially) */
+       #daily-office-section { display: none; flex-direction: row; width: 100%; height: 100vh; }
+       #settings-panel { 
+           width: 300px; 
+           background: var(--sidebar-bg); 
+           color: #e0e0e0; 
+           padding: 25px; 
+           height: 100vh; 
+           position: sticky; 
+           top: 0; 
+           overflow-y: auto; 
+           border-right: 2px solid var(--gold); 
+       }
+       .setting-group { 
+           margin-bottom: 25px; 
+           text-align: left; 
+       }
+       .setting-group strong { 
+           display: block; 
+           margin-bottom: 10px; 
+           color: var(--gold); 
+           text-transform: uppercase; 
+           letter-spacing: 1px; 
+           font-size: 0.8em; 
+       }
+       .setting-group label { 
+           display: block; 
+           margin-bottom: 10px; 
+           cursor: pointer; 
+           font-size: 0.95em; 
+       }
+       .nested-group { 
+           margin-left: 15px; 
+           margin-top: 10px; 
+       }
+
+       /* Main Content Area */
+       #main-content { 
+           flex-grow: 1; 
+           padding: 40px; 
+           text-align: center; 
+           overflow-y: auto; 
+       }
+       .office-container { 
+           background: var(--container-bg); 
+           max-width: 800px; 
+           margin: 0 auto; 
+           padding: 60px; 
+           border-radius: 8px; 
+           box-shadow: 0 4px 15px rgba(0,0,0,0.1); 
+           text-align: left; 
+           border-left: 5px solid var(--accent); 
+       }
+
+       /* Typography */
+       h1 { font-size: 2.5em; letter-spacing: 0.05em; margin-bottom: 0.5em; color: var(--text-color); }
+       h2 { font-size: 2em; color: var(--accent); border-bottom: 1px solid var(--gold); padding-bottom: 10px; margin-top: 0; }
+
+       .rubric-text { 
+           color: var(--accent); 
+           font-family: 'Georgia', serif; 
+           font-variant: small-caps; 
+           font-weight: 700; 
+           font-size: 1.4em; 
+           letter-spacing: 0.02em; 
+           display: block; 
+           margin-top: 35px; 
+           margin-bottom: 10px; 
+           border-bottom: 1px dotted var(--gold); 
+           padding-bottom: 2px; 
+           width: 100%; 
+       }
+
+       .component-text { 
+           font-size: 1.2em; 
+           line-height: 1.7; 
+           margin-bottom: 30px; 
+           display: block; 
+           white-space: pre-wrap; 
+           word-wrap: break-word; 
+           overflow: visible; 
+       }
+
+       /* Psalms */
+       .psalm-header { color: var(--accent); text-align: center; margin-top: 40px; margin-bottom: 20px; font-size: 1.6em; border-bottom: 2px solid var(--gold); padding-bottom: 10px; }
+       .psalm-verse { display: block; margin-bottom: 8px; font-size: 1.15em; }
+       .verse-num { font-size: 0.65em; color: var(--gold); vertical-align: super; margin-right: 8px; opacity: 0.8; }
+
+       /* Saints & Ordo */
+       .saint-section { margin-top: 60px; border-top: 2px double var(--accent); padding-top: 40px; }
+       .saint-grid { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; }
+       .saint-box { background: var(--container-bg); border-top: 5px solid var(--gold); padding: 20px; width: 240px; box-shadow: 0 4px 12px rgba(0,0,0,0.15); text-align: left; border-radius: 0 0 6px 6px; }
+
+       /* Controls */
+       .ordo-control { background: #222; border: 1px solid var(--gold); padding: 15px; border-radius: 4px; margin-bottom: 20px; text-align: center; }
+       .ordo-date { display: block; color: var(--gold); font-weight: bold; margin: 10px 0; font-size: 1.1em; }
+       .ordo-btn { background: none; border: 1px solid var(--gold); color: var(--gold); padding: 5px 15px; cursor: pointer; margin: 0 5px; transition: background 0.2s; }
+       .ordo-btn:hover { background: rgba(212, 175, 55, 0.2); }
+       select { width: 100%; padding: 10px; background: #333; color: white; border: 1px solid #555; border-radius: 4px; }
+
+       /* Individual Prayers Section (Hidden Initially) */
+       #individual-prayers-section { display: none; text-align: center; max-width: 800px; padding: 40px; width: 100%; }
+       #prayer-selection { margin-bottom: 40px; }
+       #prayer-display { background: var(--container-bg); padding: 40px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); text-align: left; }
+    </style>
+</head>
+<body id="app-body">
+    <div id="mode-selection">
+        <h1>Welcome to The Universal Office</h1>
+        <p>Select your mode:</p>
+        <button class="mode-btn" onclick="selectMode('daily')">Daily Office</button>
+        <button class="mode-btn" onclick="selectMode('prayers')">Individual Prayers</button>
+    </div>
+
+    <div id="daily-office-section">
+        <div id="settings-panel">
+            <h3 style="color:var(--gold)">Office Settings</h3>
+            <div class="ordo-control">
+                <strong>Liturgical Ordo</strong>
+                <div class="ordo-date" id="display-date">Loading...</div>
+                <button class="ordo-btn" onclick="changeDate(-1)">Prev</button>
+                <button class="ordo-btn" onclick="resetDate()">Today</button>
+                <button class="ordo-btn" onclick="changeDate(1)">Next</button>
+                <div id="calendar-info" style="font-size: 0.7em; color: var(--gold); margin-top:10px;">Exploring the Ordo...</div>
+            </div>
+            <div class="setting-group">
+                <strong>Time of Day:</strong>
+                <label><input type="radio" name="office-time" value="morning-office" onchange="renderOffice()" checked> Morning Prayer</label>
+                <label><input type="radio" name="office-time" value="noonday-office" onchange="renderOffice()"> Noonday Prayer</label>
+                <label><input type="radio" name="office-time" value="evening-office" onchange="renderOffice()"> Evening Prayer</label>
+                <label><input type="radio" name="office-time" value="compline-office" onchange="renderOffice()"> Compline</label>
+            </div>
+            <div class="setting-group">
+                <strong>Appearance:</strong>
+                <label><input type="checkbox" id="toggle-dark" onchange="updateUI()" checked> Dark Mode</label>
+            </div>
+            <div class="setting-group">
+                <strong>Language & Rite:</strong>
+                <label><input type="radio" name="rite" value="rite1" onchange="renderOffice()"> Rite I (Traditional)</label>
+                <label><input type="radio" name="rite" value="rite2" onchange="renderOffice()" checked> Rite II (Contemporary)</label>
+            </div>
+            <div class="setting-group">
+                <strong>Officiant:</strong>
+                <label><input type="radio" name="minister" value="priest" onchange="renderOffice()"> Priest</label>
+                <label><input type="radio" name="minister" value="lay" onchange="renderOffice()" checked> Layperson</label>
+            </div>
+            <div class="setting-group">
+                <strong>Tradition Devotions:</strong>
+                <div class="nested-group">
+                    <strong>Marian Antiphon:</strong>
+                    <label><input type="radio" name="marian-antiphon-pos" value="none" onchange="renderOffice()" checked> None</label>
+                    <label><input type="radio" name="marian-antiphon-pos" value="before" onchange="renderOffice()"> Before</label>
+                    <label><input type="radio" name="marian-antiphon-pos" value="after" onchange="renderOffice()"> After</label>
+                </div>
+                <label style="margin-top:10px;"><input type="checkbox" id="toggle-gloria-patri" onchange="renderOffice()" checked> Gloria Patri (after Psalm)</label>
+                <label><input type="checkbox" id="toggle-angelus" onchange="renderOffice()" checked> Angelus (Catholic)</label>
+                <label><input type="checkbox" id="toggle-trisagion" onchange="renderOffice()" checked> Trisagion (Eastern Orthodox)</label>
+                <label><input type="checkbox" id="toggle-theotokion" onchange="renderOffice()" checked> Theotokion (Oriental Orthodox)</label>
+                <label><input type="checkbox" id="toggle-jesus-prayer" onchange="renderOffice()" checked> Jesus Prayer (Eastern Orthodox)</label>
+                <label><input type="checkbox" id="toggle-assyrian-blessing" onchange="renderOffice()" checked> Assyrian Blessing (Church of the East)</label>
+                <label><input type="checkbox" id="toggle-agpeya-opening" onchange="renderOffice()" checked> Agpeya Opening (Coptic)</label>
+            </div>
+            <div class="setting-group">
+                <strong>Creed Selection:</strong>
+                <select id="creed-type" onchange="renderOffice()">
+                    <option value="bcp-creed-apostles">Apostles' Creed</option>
+                    <option value="bcp-creed-nicene">Nicene Creed</option>
+                </select>
+            </div>
+            <div class="setting-group">
+                <strong>Ordo Components:</strong>
+                <label><input type="checkbox" id="toggle-litany" onchange="renderOffice()"> The Great Litany</label>
+                <label><input type="checkbox" id="toggle-suffrages" onchange="renderOffice()" checked> Suffrages</label>
+            </div>
+        </div>
+
+        <div id="main-content">
+            <h1>The Universal Office</h1>
+            <div id="office-display"></div>
+            <div class="saint-section">
+                <h2 id="date-header">Commemorations</h2>
+                <div id="saint-display" class="saint-grid"></div>
+            </div>
+        </div>
+    </div>
+
+    <div id="individual-prayers-section">
+        <h1>Individual Prayers</h1>
+        <select id="prayer-dropdown" style="width: 300px; padding: 10px; background: #333; color: white; border: 1px solid #555; border-radius: 4px;">
+            <option value="">Select a Prayer</option>
+            <option value="prayer-for-the-sick">Prayer for the Sick</option>
+            <option value="prayer-for-peace">Prayer for Peace</option>
+            <option value="prayer-for-unity">Prayer for Unity</option>
+            <option value="prayer-for-mission">Prayer for Mission</option>
+            <option value="prayer-for-guidance">Prayer for Guidance</option>
+            <option value="prayer-for-the-church">Prayer for the Church</option>
+            <option value="prayer-for-the-world">Prayer for the World</option>
+        </select>
+        <button class="mode-btn" onclick="showSinglePrayer()">Display Prayer</button>
+    </div>
+    <div id="prayer-display" style="display:none; margin-top:40px;">
+        <div class="office-container" id="single-prayer-content"></div>
+        <button class="mode-btn" onclick="backToPrayerDropdown()" style="margin-top:20px;">Back to Selection</button>
+    </div>
+
+    <script>
+    let appData = null;
+    let currentDate = new Date();
+    let selectedMode = null;
+
+    async function init() {
+        try {
+            appData = {};
+            const files = ['components', 'rubrics', 'saints', 'propers', 'psalter'];
+            for (const file of files) {
+                const res = await fetch(`data/${file}.json`);
+                if (!res.ok) throw new Error(`Missing: data/${file}.json`);
+                appData[file] = await res.json();
+            }
+
+            try {
+                const bibleRes = await fetch('data/bible/scripture.json');
+                if (bibleRes.ok) {
+                    appData['scripture'] = await bibleRes.json();
+                    console.log("Scripture library loaded successfully.");
+                }
+            } catch (e) {
+                console.warn("Scripture library not initialized yet.");
+                appData['scripture'] = [];
+            }
+
+            updateUI();
+        } catch (err) {
+            document.getElementById('office-display').innerHTML = `<div class="office-container"><h3>System Error</h3><p>${err.message}</p></div>`;
         }
     }
-]
+
+    function selectMode(mode) {
+        selectedMode = mode;
+        document.getElementById('mode-selection').style.display = 'none';
+        document.body.style.height = 'auto';
+        document.body.style.justifyContent = 'flex-start';
+        if (mode === 'daily') {
+            document.getElementById('daily-office-section').style.display = 'flex';
+            renderOffice();
+        } else if (mode === 'prayers') {
+            document.getElementById('individual-prayers-section').style.display = 'block';
+        }
+    }
+
+    function changeDate(days) { currentDate.setDate(currentDate.getDate() + days); renderOffice(); }
+    function resetDate() { currentDate = new Date(); renderOffice(); }
+
+    function updateUI() {
+        const isDark = document.getElementById('toggle-dark')?.checked || false;
+        if (isDark) document.body.classList.add('dark-mode');
+        else document.body.classList.remove('dark-mode');
+        if (selectedMode === 'daily') renderOffice();
+    }
+
+    function getScriptureText(refId, version = "NRSV") {
+        if (!appData.scripture) return null;
+        const entry = appData.scripture.find(s => s.id === refId);
+        if (!entry) return null;
+        if (entry.text[version] && entry.text[version].length > 0) return entry.text[version];
+        if (entry.text["KJV"]) return entry.text["KJV"];
+        return null;
+    }
+
+    function renderOffice() {
+        if (!appData) return;
+
+        const todayKey = currentDate.toLocaleDateString('en-US', { month: 'long', day: 'numeric' });
+        const dayOfMonth = currentDate.getDate().toString();
+        document.getElementById('display-date').innerText = todayKey;
+
+        const officeId = document.querySelector('input[name="office-time"]:checked')?.value;
+        const rite = document.querySelector('input[name="rite"]:checked')?.value;
+        const minister = document.querySelector('input[name="minister"]:checked')?.value;
+        const marianPos = document.querySelector('input[name="marian-antiphon-pos"]:checked')?.value || 'none';
+        const creedSelection = document.getElementById('creed-type')?.value;
+
+        const includeAngelus = document.getElementById('toggle-angelus')?.checked || false;
+        const includeTrisagion = document.getElementById('toggle-trisagion')?.checked || false;
+        const includeTheotokion = document.getElementById('toggle-theotokion')?.checked || false;
+        const includeJesusPrayer = document.getElementById('toggle-jesus-prayer')?.checked || false;
+        const includeAssyrianBlessing = document.getElementById('toggle-assyrian-blessing')?.checked || false;
+        const includeAgpeyaOpening = document.getElementById('toggle-agpeya-opening')?.checked || false;
+
+        console.log('renderOffice called', { officeId, rite, minister, creedSelection });
+
+        const activeRubric = appData.rubrics.find(r => r.id === officeId);
+        const dailyData = appData.propers[todayKey] || appData.propers["DEFAULT"];
+        document.getElementById('calendar-info').innerText = dailyData.title;
+
+        let isEvening = (officeId === 'evening-office');
+        let readingOT = isEvening ? (dailyData.reading_ot_evening || dailyData.reading_ot) : dailyData.reading_ot;
+        let readingEpistle = isEvening ? (dailyData.reading_epistle_evening || dailyData.reading_epistle) : dailyData.reading_epistle;
+        let readingGospel = isEvening ? (dailyData.reading_gospel_evening || dailyData.reading_gospel) : dailyData.reading_gospel;
+        if (!readingOT) readingOT = dailyData.reading;
+
+        let officeHtml = `<div class="office-container"><h2>${activeRubric?.officeName || "Office"}</h2>`;
+        officeHtml += `<p style="color:var(--gold); font-variant:small-caps; font-weight:bold;">${dailyData.title}</p>`;
+
+        activeRubric?.sequence?.forEach(item => {
+            if (item === "bcp-confession-toggle") {
+                const confId = (rite === 'rite1') ? 'bcp-confession-rite1' : 'bcp-confession-rite2';
+                const comp = appData.components.find(c => c.id === confId);
+                if (comp) {
+                    officeHtml += `<span class="rubric-text">${comp.title}</span><span class="component-text">${comp.text}</span>`;
+                } else {
+                    console.warn("Missing confession component");
+                }
+                return;
+            }
+
+            if (item === "bcp-absolution-slot") {
+                const isPriest = (minister === 'priest');
+                let title = isPriest ? "The Absolution" : "A Declaration of Forgiveness";
+                let text = isPriest 
+                    ? "Almighty God have mercy on you, forgive you all your sins through our Lord Jesus Christ, strengthen you in all goodness, and by the power of the Holy Spirit keep you in eternal life. Amen."
+                    : "Almighty God have mercy on us, forgive us all our sins through our Lord Jesus Christ, strengthen us in all goodness, and by the power of the Holy Spirit keep us in eternal life. Amen.";
+                officeHtml += `<span class="rubric-text">${title}</span>`;
+                officeHtml += `<span class="component-text">${text}</span>`;
+                return;
+            }
+
+            if (item === "bcp-invitatory") {
+                let veniteText = getScriptureText("PSA 95:1-7", "NRSV");
+                const invComponent = appData.components.find(c => c.id === "bcp-invitatory");
+                if (!veniteText && invComponent) veniteText = invComponent.text;
+                const title = invComponent ? invComponent.title : "Venite";
+
+                if (veniteText) {
+                    if (dailyData.antiphon) {
+                        officeHtml += `<span class="rubric-text">Antiphon</span><span class="component-text"><i>${dailyData.antiphon}</i></span>`;
+                    }
+                    officeHtml += `<span class="rubric-text">${title}</span><span class="component-text">${veniteText}</span>`;
+                    if (dailyData.antiphon) {
+                        officeHtml += `<span class="component-text"><i>${dailyData.antiphon}</i></span>`;
+                    }
+                }
+                return;
+            }
+
+            if (item === "bcp-opening-1") {
+                const openingComp = appData.components.find(c => c.id === "bcp-opening-1");
+                if (openingComp) {
+                    officeHtml += `<span class="rubric-text">${openingComp.title}</span><span class="component-text">${openingComp.text}</span>`;
+                }
+
+                // Early devotions: Trisagion, Agpeya Opening (Angelus moved to before psalm)
+                if (includeTrisagion) {
+                    const trisagion = appData.components.find(c => c.id === "trisagion-byzantine");
+                    if (trisagion) officeHtml += `<span class="rubric-text">${trisagion.title}</span><span class="component-text">${trisagion.text}</span>`;
+                }
+
+                if (includeAgpeyaOpening) {
+                    const agpeya = appData.components.find(c => c.id === "agpeya-opening");
+                    if (agpeya) officeHtml += `<span class="rubric-text">${agpeya.title}</span><span class="component-text">${agpeya.text}</span>`;
+                }
+
+                return;
+            }
+
+            if (item === "bcp-litany") {
+                if (document.getElementById('toggle-litany')?.checked) {
+                    const comp = appData.components.find(c => c.id === "bcp-litany");
+                    if (comp) officeHtml += `<span class="rubric-text">${comp.title}</span><span class="component-text">${comp.text}</span>`;
+                }
+                return;
+            }
+
+            if (item === "bcp-suffrages-slot") {
+                if (document.getElementById('toggle-suffrages')?.checked) {
+                    const suffId = `bcp-suffrages-${rite}`;
+                    const comp = appData.components.find(c => c.id === suffId);
+                    if (comp) officeHtml += `<span class="rubric-text">${comp.title}</span><span class="component-text">${comp.text}</span>`;
+                }
+                return;
+            }
+
+            if (item === "bcp-creed-slot") {
+                const comp = appData.components.find(c => c.id === creedSelection);
+                if (comp) {
+                    let finalText = comp.text;
+                    if (typeof finalText === 'object' && finalText !== null) {
+                        finalText = finalText[rite] || finalText['rite2'] || finalText['rite1'] || "Creed text not found";
+                    }
+                    officeHtml += `<span class="rubric-text">${comp.title}</span><span class="component-text">${finalText}</span>`;
+                }
+                return;
+            }
+
+            if (item === "VARIABLE_READING_OT") {
+                if (readingOT) officeHtml += `<span class="rubric-text">The Old Testament Lesson</span><span class="component-text">${readingOT}</span>`;
+                return;
+            }
+
+            if (item === "VARIABLE_READING_EPISTLE") {
+                if (readingEpistle) officeHtml += `<span class="rubric-text">The Epistle</span><span class="component-text">${readingEpistle}</span>`;
+                return;
+            }
+
+            if (item === "VARIABLE_READING_GOSPEL") {
+                if (readingGospel) officeHtml += `<span class="rubric-text">The Holy Gospel</span><span class="component-text">${readingGospel}</span>`;
+                return;
+            }
+
+            if (item === "VARIABLE_PSALM") {
+                const psEntry = appData.psalter[dayOfMonth];
+                let rawText = (psEntry && psEntry.text) ? psEntry.text : "No text found for this day.";
+                let psalmHtml = "";
+                let currentPsalmNum = null;
+
+                const lines = rawText.split(/\r?\n/);
+                lines.forEach(line => {
+                    line = line.trim();
+                    if (!line) return;
+                    const match = line.match(/^(?:Psalm\s+)?(\d+):(\d+)\s+(.*)/i);
+                    if (match) {
+                        const psalmNum = match[1];
+                        const verseNum = match[2];
+                        const verseText = match[3];
+                        if (psalmNum !== currentPsalmNum) {
+                            psalmHtml += `<h3 class="psalm-header">Psalm ${psalmNum}</h3>`;
+                            currentPsalmNum = psalmNum;
+                        }
+                        psalmHtml += `<span class="psalm-verse"><span class="verse-num">${verseNum}</span>${verseText}</span>`;
+                    } else {
+                        psalmHtml += `<p>${line}</p>`;
+                    }
+                });
+
+                // Angelus - right before the first psalm
+                const showAngelus = (officeId === 'morning-office' || officeId === 'noonday-office' || officeId === 'evening-office') && includeAngelus;
+                if (showAngelus) {
+                    const angelus = appData.components.find(c => c.id === "angelus");
+                    if (angelus) {
+                        officeHtml += `<span class="rubric-text">${angelus.title} (Catholic)</span>`;
+                        officeHtml += `<span class="component-text">${angelus.text}</span>`;
+                    }
+                }
+
+                officeHtml += `<div class="component-text">${psalmHtml}</div>`;
+
+                // Gloria Patri
+                if (document.getElementById('toggle-gloria-patri')?.checked) {
+                    const gloria = appData.components.find(c => c.id === "bcp-gloria-patri");
+                    if (gloria && gloria.text) {
+                        const textObj = gloria.text;
+                        const selectedRite = rite || 'rite2';
+                        let finalText = textObj[selectedRite] || textObj['rite2'] || textObj['rite1'] || "No Gloria text for this rite";
+                        officeHtml += `<span class="rubric-text">GLORIA PATRI</span>`;
+                        officeHtml += `<span class="component-text"><i>${finalText}</i></span>`;
+                    } else {
+                        officeHtml += `<span class="rubric-text">GLORIA PATRI</span>`;
+                        officeHtml += `<span class="component-text"><i>(Gloria text not found in components.json)</i></span>`;
+                    }
+                }
+
+                // Jesus Prayer - after Gloria (or directly after psalm if Gloria off)
+                if ((officeId === 'morning-office' || officeId === 'evening-office') && includeJesusPrayer) {
+                    const jesusPrayer = appData.components.find(c => c.id === "jesus-prayer");
+                    if (jesusPrayer) {
+                        officeHtml += `<span class="rubric-text">${jesusPrayer.title} (Eastern Orthodox)</span>`;
+                        officeHtml += `<span class="component-text">${jesusPrayer.text}</span>`;
+                    }
+                }
+
+                return;
+            }
+
+            if (item === "VARIABLE_COLLECT") {
+                officeHtml += `<span class="rubric-text">The Collect of the Day</span><span class="component-text">${dailyData.collect}</span>`;
+
+                // End-of-office devotions
+                if (includeTheotokion) {
+                    const theotokion = appData.components.find(c => c.id === "coptic-theotokion");
+                    if (theotokion) {
+                        officeHtml += `<span class="rubric-text">${theotokion.title}</span>`;
+                        officeHtml += `<span class="component-text">${theotokion.text}</span>`;
+                    }
+                }
+
+                if (marianPos !== 'none') {
+                    const marianId = 'latin-marian-alma';
+                    const marianComp = appData.components.find(c => c.id === marianId);
+                    if (marianComp) {
+                        officeHtml += `<span class="rubric-text">${marianComp.title}</span>`;
+                        officeHtml += `<span class="component-text">${marianComp.text}</span>`;
+                    }
+                }
+
+                if (includeAssyrianBlessing) {
+                    const assyrianBlessing = appData.components.find(c => c.id === "assyrian-blessing");
+                    if (assyrianBlessing) {
+                        officeHtml += `<span class="rubric-text">${assyrianBlessing.title} (Dismissal)</span>`;
+                        officeHtml += `<span class="component-text">${assyrianBlessing.text}</span>`;
+                    }
+                }
+
+                return;
+            }
+
+            let compId = (typeof item === 'object') ? item[rite] : item;
+            const comp = appData.components.find(c => c.id === compId);
+            if (comp) {
+                if (compId === "bcp-gloria-patri") return; // handled in psalm
+
+                let displayText = comp.text;
+                if (typeof displayText === 'object' && displayText !== null) {
+                    displayText = displayText[rite] || displayText['rite2'] || displayText['rite1'] || "Text not found";
+                }
+                officeHtml += `<span class="rubric-text">${comp.title}</span><span class="component-text">${displayText}</span>`;
+            }
+        });
+
+        document.getElementById('office-display').innerHTML = officeHtml + `</div>`;
+
+        document.getElementById('date-header').innerText = `Commemorations for ${todayKey}`;
+        const todayKeyLower = todayKey.toLowerCase();
+
+        document.getElementById('saint-display').innerHTML = appData.saints
+            .filter(s => s.day && s.day.toLowerCase().includes(todayKeyLower))
+            .map(s => `
+                <div class="saint-box">
+                    <small style="color:var(--accent); font-weight:bold; text-transform:uppercase;">${s.tradition || 'Unknown'}</small>
+                    <strong>${s.name || 'Unknown'}</strong>
+                    <p>${s.description || 'No description'}</p>
+                </div>
+            `).join('') || '<p>No commemorations for today.</p>';
+    }
+
+    function showSinglePrayer() {
+        const prayerId = document.getElementById('prayer-dropdown').value;
+        if (!prayerId) {
+            alert("Please select a prayer first.");
+            return;
+        }
+
+        const prayers = {
+            "prayer-for-the-sick": "O Father of mercies, and God of all comfort, our only help in time of need: We humbly beseech thee to behold, visit, and relieve thy sick servant [Name] for whom our prayers are desired. Look upon him with the eyes of thy mercy; comfort him with a sense of thy goodness; preserve him from the temptations of the enemy; and give him patience under his affliction. In thy good time, restore him to health, and enable him to lead the residue of his life in thy fear, and to thy glory; and grant that finally he may dwell with thee in life everlasting; through Jesus Christ our Lord. Amen.",
+            "prayer-for-peace": "O God, the source of all holy desires, all good counsels, and all just works: Give to thy servants that peace which the world cannot give; that our hearts may be set to obey thy commandments, and also that by thee, we, being defended from the fear of our enemies, may pass our time in rest and quietness; through the merits of Jesus Christ our Savior. Amen.",
+            "prayer-for-unity": "O God the Father of our Lord Jesus Christ, in whom thou art well pleased, grant, we beseech thee, that being knit together in the same mind and in the same judgment, we may all speak the same thing, and be of one accord, of one mind, and that there be no divisions among us; but that we be perfectly joined together in the same mind and in the same judgment. Amen.",
+            "prayer-for-mission": "Lord Jesus Christ, who didst stretch out thy loving arms on the hard wood of the Cross that everyone might come within the reach of thy saving embrace: So clothe us in thy Spirit that we, reaching forth our hands in love, may bring those who do not know thee to the knowledge and love of thee; for the honor of thy Name. Amen.",
+            "prayer-for-guidance": "O God, by whom the meek are guided in judgment, and light riseth up in darkness for the godly: Grant us, in all our doubts and uncertainties, the grace to ask what thou wouldest have us to do, that the Spirit of wisdom may save us from all false choices; that we may find the right path, and walk in it; through Jesus Christ our Lord. Amen.",
+            "prayer-for-the-church": "Gracious Father, we pray for thy holy Catholic Church. Fill it with all truth, in all truth with all peace. Where it is corrupt, purify it; where it is in error, direct it; where in any thing it is amiss, reform it. Where it is right, strengthen it; where it is in want, provide for it; where it is divided, reunite it; for the sake of Jesus Christ thy Son our Savior. Amen.",
+            "prayer-for-the-world": "Almighty God, from whom all thoughts of truth and peace proceed: Kindle, we pray, in the hearts of all people the true love of peace, and guide with thy pure and peaceable wisdom those who take counsel for the nations of the earth; that in tranquillity thy kingdom may go forward, till the earth is filled with the knowledge of thy love; through Jesus Christ our Lord. Amen."
+        };
+
+        const prayerText = prayers[prayerId] || "Prayer text not found. Please add it to the prayers object.";
+
+        const dropdown = document.getElementById('prayer-dropdown');
+        const selectedOption = dropdown.options[dropdown.selectedIndex];
+        const prayerTitle = selectedOption ? selectedOption.text : 'Selected Prayer';
+
+        document.getElementById('single-prayer-content').innerHTML = `<div class="office-container"><h2>${prayerTitle}</h2><p class="component-text">${prayerText}</p></div>`;
+
+        document.getElementById('prayer-display').style.display = 'block';
+        document.getElementById('prayer-selection').style.display = 'none';
+    }
+
+    function backToPrayerDropdown() {
+        document.getElementById('prayer-display').style.display = 'none';
+        document.getElementById('prayer-selection').style.display = 'block';
+    }
+
+    init();
+    </script>
+</body>
+</html>
