@@ -1,0 +1,205 @@
+[
+  {
+    "id": "bcp-opening-1",
+    "title": "Opening Sentence",
+    "text": "Send out your light and your truth, that they may lead me; let them bring me to your holy hill and to your dwelling.",
+    "type": "Opening"
+  },
+  {
+    "id": "bcp-opening-rite1",
+    "title": "Opening Sentence (Traditional)",
+    "text": "The Lord is in his holy temple: let all the earth keep silence before him.",
+    "type": "Opening"
+  },
+  {
+    "id": "bcp-invitatory",
+    "title": "The Invitatory",
+    "text": "Lord, open our lips.\nAnd our mouth shall proclaim your praise.",
+    "type": "Versicle"
+  },
+  {
+    "id": "ant-advent",
+    "title": "Advent Antiphon",
+    "text": "Our King and Savior now draws near: Come let us adore him.",
+    "type": "Antiphon"
+  },
+  {
+    "id": "ant-christmas",
+    "title": "Christmas Antiphon",
+    "text": "Alleluia, to us a child is born: Come let us adore him. Alleluia.",
+    "type": "Antiphon"
+  },
+  {
+    "id": "ant-epiphany",
+    "title": "Epiphany Antiphon",
+    "text": "The Lord has shown forth his glory: Come let us adore him.",
+    "type": "Antiphon"
+  },
+  {
+    "id": "ant-lent",
+    "title": "Lent Antiphon",
+    "text": "The Lord is full of compassion and mercy: Come let us adore him.",
+    "type": "Antiphon"
+  },
+  {
+    "id": "ant-easter",
+    "title": "Easter Antiphon",
+    "text": "Alleluia. The Lord is risen indeed: Come let us adore him. Alleluia.",
+    "type": "Antiphon"
+  },
+  {
+    "id": "ant-ascension",
+    "title": "Ascension Antiphon",
+    "text": "Alleluia. Christ the Lord has ascended into heaven: Come let us adore him. Alleluia.",
+    "type": "Antiphon"
+  },
+  {
+    "id": "ant-pentecost",
+    "title": "Pentecost Antiphon",
+    "text": "Alleluia. The Spirit of the Lord renews the face of the earth: Come let us adore him. Alleluia.",
+    "type": "Antiphon"
+  },
+  {
+    "id": "ant-trinity",
+    "title": "Trinity Sunday Antiphon",
+    "text": "Father, Son, and Holy Spirit, one God: Come let us adore him.",
+    "type": "Antiphon"
+  },
+  {
+    "id": "ant-default",
+    "title": "Ordinary Time Antiphon",
+    "text": "The earth is the Lord's for he made it: Come let us adore him.",
+    "type": "Antiphon"
+  },
+  {
+    "id": "bcp-venite",
+    "title": "Venite",
+    "text": "Come, let us sing to the Lord; *\nlet us shout for joy to the Rock of our salvation.\nLet us come before his presence with thanksgiving *\nand raise a loud shout to him with psalms.\nFor the Lord is a great God, *\nand a great King above all gods.\nIn his hand are the caverns of the earth, *\nand the heights of the hills are his also.\nThe sea is his, for he made it, *\nand his hands have molded the dry land.\nCome, let us bow down, and bend the knee, *\nand kneel before the Lord our Maker.\nFor he is our God,\nand we are the people of his pasture and the sheep of his hand. *\nOh, that today you would hearken to his voice!",
+    "type": "Canticle"
+  },
+  {
+    "id": "bcp-jubilate",
+    "title": "Jubilate",
+    "text": "Be joyful in the Lord, all you lands; *\nserve the Lord with gladness\nand come before his presence with a song.\nKnow this: The Lord himself is God; *\nhe himself has made us, and we are his;\nwe are his people and the sheep of his pasture.\nEnter his gates with thanksgiving;\ngo into his courts with praise; *\ngive thanks to him and call upon his Name.\nFor the Lord is good;\nhis mercy is everlasting; *\nand his faithfulness endures from age to age.",
+    "type": "Canticle"
+  },
+  {
+    "id": "trisagion-byzantine",
+    "title": "The Trisagion",
+    "text": "Holy God, Holy Mighty, Holy Immortal, have mercy on us.",
+    "type": "Hymn"
+  },
+  {
+    "id": "coptic-theotokion",
+    "title": "Theotokion",
+    "text": "O Mother of the True Light, we glorify thee as the Mother of God, for thou hast borne for us the Savior of all.",
+    "type": "Hymn"
+  },
+  {
+    "id": "bcp-gloria-patri",
+    "title": "Gloria Patri",
+    "text": {
+      "rite1": "Glory to the Father, and to the Son, and to the Holy Ghost: as it was in the beginning, is now, and ever shall be, world without end. Amen.",
+      "rite2": "Glory to the Father, and to the Son, and to the Holy Spirit: as it was in the beginning, is now, and will be for ever. Amen."
+    },
+    "type": "Doxology"
+  },
+  {
+    "id": "latin-marian-alma",
+    "title": "Marian Antiphon: Alma Redemptoris Mater",
+    "text": "Mother of Christ! Hear thou thy people's cry, Star of the deep and Portal of the sky!",
+    "type": "Antiphon"
+  },
+  {
+    "id": "bcp-confession-rite1",
+    "title": "Confession of Sin (Rite I)",
+    "text": "Almighty and most merciful Father, we have erred and strayed from thy ways like lost sheep, we have followed too much the devices and desires of our own hearts, we have offended against thy holy laws, we have left undone those things which we ought to have done, and we have done those things which we ought not to have done. But thou, O Lord, have mercy upon us, spare thou those who confess their faults, restore thou those who are penitent, according to thy promises declared unto mankind in Christ Jesus our Lord; and grant, O most merciful Father, for his sake, that we may hereafter live a godly, righteous, and sober life, to the glory of thy holy Name. Amen.",
+    "type": "Penitential"
+  },
+  {
+    "id": "bcp-confession-rite2",
+    "title": "Confession of Sin",
+    "text": "Most merciful God, we confess that we have sinned against you in thought, word, and deed, by what we have done, and by what we have left undone. We have not loved you with our whole heart; we have not loved our neighbors as ourselves. We are truly sorry and we humbly repent. For the sake of your Son Jesus Christ, have mercy on us and forgive us; that we may delight in your will, and walk in your ways, to the glory of your Name. Amen.",
+    "type": "Penitential"
+  },
+  {
+    "id": "bcp-absolution-r1-priest",
+    "title": "Absolution",
+    "text": "The Almighty and merciful Lord grant you absolution and remission of all your sins, true repentance, amendment of life, and the grace and consolation of his Holy Spirit. Amen.",
+    "type": "Absolution"
+  },
+  {
+    "id": "bcp-absolution-r1-lay",
+    "title": "Prayer for Forgiveness",
+    "text": "The Almighty and merciful Lord grant us absolution and remission of all our sins, true repentance, amendment of life, and the grace and consolation of his Holy Spirit. Amen.",
+    "type": "Absolution"
+  },
+  {
+    "id": "bcp-absolution-r2-priest",
+    "title": "Absolution",
+    "text": "Almighty God have mercy on you, forgive you all your sins through our Lord Jesus Christ, strengthen you in all goodness, and by the power of the Holy Spirit keep you in eternal life. Amen.",
+    "type": "Absolution"
+  },
+  {
+    "id": "bcp-absolution-r2-lay",
+    "title": "Prayer for Forgiveness",
+    "text": "Almighty God have mercy on us, forgive us all our sins through our Lord Jesus Christ, strengthen us in all goodness, and by the power of the Holy Spirit keep us in eternal life. Amen.",
+    "type": "Absolution"
+  },
+  {
+    "id": "bcp-litany",
+    "title": "The Great Litany",
+    "text": "O God the Father, Creator of heaven and earth, Have mercy upon us.\nO God the Son, Redeemer of the world, Have mercy upon us.\nO God the Holy Ghost, Sanctifier of the faithful, Have mercy upon us.\nO holy, blessed, and glorious Trinity, one God, Have mercy upon us.\n\nRemember not, Lord Christ, our offenses, nor the offenses of our forefathers; neither reward us according to our sins. Spare us, good Lord, spare thy people, whom thou hast redeemed with thy most precious blood, and by thy mercy preserve us, for ever.\nSpare us, good Lord.\n\nFrom all evil and wickedness; from sin; from the crafts and assaults of the devil; and from everlasting damnation,\nGood Lord, deliver us.\n\nFrom all blindness of heart; from pride, vainglory, and hypocrisy; from envy, hatred, and malice; and from all want of charity,\nGood Lord, deliver us.\n\nFrom all inordinate and sinful affections; and from all the deceits of the world, the flesh, and the devil,\nGood Lord, deliver us.\n\nFrom all false doctrine, heresy, and schism; from hardness of heart, and contempt of thy Word and commandment,\nGood Lord, deliver us.\n\nFrom lightning and tempest; from earthquake, fire, and flood; from plague, pestilence, and famine,\nGood Lord, deliver us.\n\nFrom all oppression, conspiracy, and rebellion; from violence, battle, and murder; and from dying suddenly and unprepared,\nGood Lord, deliver us.\n\nBy the mystery of thy holy Incarnation; by thy holy Nativity and submission to the Law; by thy Baptism, Fasting, and Temptation,\nGood Lord, deliver us.\n\nBy thine Agony and Bloody Sweat; by thy Cross and Passion; by thy precious Death and Burial; by thy glorious Resurrection and Ascension; and by the Coming of the Holy Ghost,\nGood Lord, deliver us.\n\nIn all time of our tribulation; in all time of our prosperity; in the hour of death, and in the day of judgment,\nGood Lord, deliver us.\n\nWe sinners do beseech thee to hear us, O Lord God; and that it may please thee to rule and govern thy holy Church Universal in the right way,\nWe beseech thee to hear us, good Lord.",
+    "type": "Litany"
+  },
+  {
+    "id": "bcp-suffrages-rite1",
+    "title": "The Suffrages (Rite I)",
+    "text": "V. O Lord, show thy mercy upon us;\nR. And grant us thy salvation.\nV. Endue thy ministers with righteousness;\nR. And make thy chosen people joyful.\nV. Give peace, O Lord, in all the world;\nR. For only in thee can we live in safety.\nV. Lord, keep this nation under thy care;\nR. And guide us in the way of justice and truth.\nV. Let thy way be known upon earth;\nR. Thy saving health among all nations.\nV. Let not the needy, O Lord, be forgotten;\nR. Nor the hope of the poor be taken away.\nV. Create in us clean hearts, O God;\nR. And sustain us with thy Holy Spirit.",
+    "type": "Versicle"
+  },
+  {
+    "id": "bcp-suffrages-rite2",
+    "title": "The Suffrages (Rite II)",
+    "text": "V. Show us your mercy, O Lord;\nR. And grant us your salvation.\nV. Clothe your ministers with righteousness;\nR. Let your people sing with joy.\nV. Give peace, O Lord, in all the world;\nR. For only in you can we live in safety.\nV. Lord, keep this nation under your care;\nR. And guide us in the way of justice and truth.\nV. Let your way be known upon earth;\nR. Your saving health among all nations.\nV. Let not the needy, O Lord, be forgotten;\nR. Nor the hope of the poor be taken away.\nV. Create in us clean hearts, O God;\nR. And sustain us with your Holy Spirit.",
+    "type": "Versicle"
+  },
+  {
+    "id": "bcp-creed-apostles",
+    "title": "The Apostles' Creed",
+    "text": {
+      "rite1": "I believe in God, the Father Almighty, maker of heaven and earth;\nAnd in Jesus Christ his only Son our Lord; who was conceived by the Holy Ghost, born of the Virgin Mary, suffered under Pontius Pilate, was crucified, dead, and buried. He descended into hell. The third day he rose again from the dead. He ascended into heaven, and sitteth on the right hand of God the Father Almighty. From thence he shall come to judge the quick and the dead.\nI believe in the Holy Ghost, the holy catholic Church, the communion of saints, the forgiveness of sins, the resurrection of the body, and the life everlasting. Amen.",
+      "rite2": "I believe in God, the Father almighty, creator of heaven and earth.\nI believe in Jesus Christ, his only Son, our Lord. He was conceived by the power of the Holy Spirit and born of the Virgin Mary. He suffered under Pontius Pilate, was crucified, died, and was buried. He descended to the dead. On the third day he rose again. He ascended into heaven, and is seated at the right hand of the Father. He will come again to judge the living and the dead.\nI believe in the Holy Spirit, the holy catholic Church, the communion of saints, the forgiveness of sins, the resurrection of the body, and the life everlasting. Amen."
+    },
+    "type": "Creed"
+  },
+  {
+    "id": "bcp-creed-nicene",
+    "title": "The Nicene Creed",
+    "text": {
+      "rite1": "I believe in one God, the Father Almighty, maker of heaven and earth, and of all things visible and invisible;\n\nAnd in one Lord Jesus Christ, the only-begotten Son of God, begotten of his Father before all worlds, God of God, Light of Light, very God of very God, begotten, not made, being of one substance with the Father; by whom all things were made; who for us men and for our salvation came down from heaven, and was incarnate by the Holy Ghost of the Virgin Mary, and was made man; and was crucified also for us under Pontius Pilate; he suffered and was buried; and the third day he rose again according to the Scriptures, and ascended into heaven, and sitteth on the right hand of the Father; and he shall come again, with glory, to judge both the quick and the dead; whose kingdom shall have no end.\n\nAnd I believe in the Holy Ghost the Lord, and Giver of Life, who proceedeth from the Father and the Son; who with the Father and the Son together is worshipped and glorified; who spake by the Prophets. And I believe one holy Catholic and Apostolic Church; I acknowledge one Baptism for the remission of sins; and I look for the resurrection of the dead, and the life of the world to come. Amen.",
+      "rite2": "We believe in one God, the Father, the Almighty, maker of heaven and earth, of all that is, seen and unseen.\n\nWe believe in one Lord, Jesus Christ, the only Son of God, eternally begotten of the Father, God from God, Light from Light, true God from true God, begotten, not made, of one Being with the Father. Through him all things were made. For us and for our salvation he came down from heaven: by the power of the Holy Spirit he became incarnate from the Virgin Mary, and was made man. For our sake he was crucified under Pontius Pilate; he suffered death and was buried. On the third day he rose again in accordance with the Scriptures; he ascended into heaven and is seated at the right hand of the Father. He will come again in glory to judge the living and the dead, and his kingdom will have no end.\n\nWe believe in the Holy Spirit, the Lord, the giver of life, who proceeds from the Father and the Son. With the Father and the Son he is worshiped and glorified. He has spoken through the Prophets. We believe in one holy catholic and apostolic Church. We acknowledge one baptism for the forgiveness of sins. We look for the resurrection of the dead, and the life of the world to come. Amen."
+    },
+    "type": "Creed"
+  },
+  {
+    "id": "angelus",
+    "title": "Angelus",
+    "text": "The Angel of the Lord declared unto Mary.\nAnd she conceived of the Holy Spirit.\nHail Mary, full of grace, The Lord is with Thee; Blessed art thou among women, And blessed is the fruit of thy womb, Jesus.\nHoly Mary, Mother of God, Pray for us sinners, Now and at the hour of our death. Amen\nBehold the handmaid of the Lord.\nBe it done unto me according to thy word.\nHail Mary...\nAnd the Word was made Flesh.\nAnd dwelt among us.\nHail Mary...\nPray for us, O holy Mother of God.\nThat we may be made worthy of the promises of Christ.\nLet us pray: Pour forth, we beseech Thee, O Lord, Thy grace into our hearts, that we to whom the Incarnation of Christ Thy Son was made known by the message of an angel, may by His Passion and Cross be brought to the glory of His Resurrection. Through the same Christ Our Lord. Amen."
+  },
+  {
+    "id": "jesus-prayer",
+    "title": "Jesus Prayer",
+    "text": "Lord Jesus Christ, Son of God, have mercy on me, a sinner."
+  },
+  {
+    "id": "assyrian-blessing",
+    "title": "Assyrian Blessing",
+    "text": "May the grace of our Lord Jesus Christ be with us all, now and forever. Amen."
+  },
+  {
+    "id": "agpeya-opening",
+    "title": "Agpeya Opening",
+    "text": "O come, let us worship. O come, let us worship. O come, let us worship the Holy Trinity, our God and Savior."
+  }
+]

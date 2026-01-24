@@ -1,0 +1,326 @@
+[
+  {
+    "day": "January 1",
+    "tradition": "Anglican",
+    "name": "Holy Name of Jesus",
+    "description": "Feast of the Circumcision and Naming of Christ."
+  },
+  {
+    "day": "January 1",
+    "tradition": "Catholic",
+    "name": "Mary, Mother of God",
+    "description": "Solemnity honoring Mary as Theotokos."
+  },
+  {
+    "day": "January 1",
+    "tradition": "Orthodox",
+    "name": "Circumcision of Christ; St. Basil the Great",
+    "description": "Feast of the Lord's Circumcision and memory of St. Basil."
+  },
+  {
+    "day": "January 1",
+    "tradition": "Coptic",
+    "name": "Circumcision of the Lord",
+    "description": "Commemoration of Christ's circumcision."
+  },
+  {
+    "day": "January 1",
+    "tradition": "ChurchOfEast",
+    "name": "New Year; St. Basil",
+    "description": "Beginning of the year and memory of Doctor of the Church."
+  },
+  {
+    "day": "January 2",
+    "tradition": "Anglican",
+    "name": "Vedanayagam Samuel Azariah, Bishop",
+    "description": "First Indian Anglican bishop, evangelist."
+  },
+  {
+    "day": "January 2",
+    "tradition": "Catholic",
+    "name": "Sts. Basil the Great and Gregory Nazianzen",
+    "description": "Doctors of the Church, Cappadocian Fathers."
+  },
+  {
+    "day": "January 2",
+    "tradition": "Orthodox",
+    "name": "St. Seraphim of Sarov",
+    "description": "Russian monk and mystic."
+  },
+  {
+    "day": "January 2",
+    "tradition": "Coptic",
+    "name": "St. Abraam the Bishop",
+    "description": "Bishop known for charity and miracles."
+  },
+  {
+    "day": "January 2",
+    "tradition": "ChurchOfEast",
+    "name": "St. Cosmas of Constantinople",
+    "description": "Archbishop and hymnographer."
+  },
+  {
+    "day": "January 18",
+    "tradition": "Anglican",
+    "name": "Confession of St. Peter",
+    "description": "Peter's recognition of Christ as Messiah."
+  },
+  {
+    "day": "January 18",
+    "tradition": "Catholic",
+    "name": "St. Prisca",
+    "description": "Early Roman martyr."
+  },
+  {
+    "day": "January 18",
+    "tradition": "Orthodox",
+    "name": "Sts. Athanasius and Cyril",
+    "description": "Archbishops of Alexandria, defenders of faith."
+  },
+  {
+    "day": "January 18",
+    "tradition": "Coptic",
+    "name": "St. Bashnouna",
+    "description": "Monk and martyr."
+  },
+  {
+    "day": "January 18",
+    "tradition": "ChurchOfEast",
+    "name": "Mar Narsai",
+    "description": "The 'Harp of the Spirit,' theologian."
+  },
+  {
+    "day": "January 19",
+    "tradition": "Anglican",
+    "name": "Wulfstan of Worcester",
+    "description": "Anglo-Saxon bishop."
+  },
+  {
+    "day": "January 19",
+    "tradition": "Catholic",
+    "name": "St. Wulfstan",
+    "description": "Bishop of Worcester."
+  },
+  {
+    "day": "January 19",
+    "tradition": "Orthodox",
+    "name": "St. Macarius the Great",
+    "description": "Egyptian desert father."
+  },
+  {
+    "day": "January 19",
+    "tradition": "Coptic",
+    "name": "St. Mark of Ephesus",
+    "description": "Defender of Orthodoxy (shared with Eastern)."
+  },
+  {
+    "day": "January 19",
+    "tradition": "ChurchOfEast",
+    "name": "St. Jacob of Nisibis",
+    "description": "Bishop and confessor."
+  },
+  {
+    "day": "February 2",
+    "tradition": "Anglican",
+    "name": "Presentation of Our Lord",
+    "description": "Jesus presented in the temple."
+  },
+  {
+    "day": "July 6",
+    "tradition": "Coptic",
+    "name": "Abouna Mina Aboud",
+    "description": "Coptic priest martyred on July 6, 2013, by extremists while serving his community in El Arish, Egypt. Known for his dedication to youth ministry and charity."
+  },
+  {
+    "day": "January 1",
+    "tradition": "Anglican",
+    "name": "Holy Name of Our Lord Jesus Christ",
+    "description": "Feast of the Circumcision and Naming of Jesus."
+  },
+  {
+    "day": "January 18",
+    "tradition": "Anglican",
+    "name": "Confession of St. Peter",
+    "description": "Apostle, martyr, and first bishop of Rome."
+  },
+  {
+    "day": "January 19",
+    "tradition": "Anglican",
+    "name": "Wulfstan, Bishop of Worcester",
+    "description": "Pre-Schism bishop known for pastoral care (kept as holiness-focused)."
+  },
+  {
+    "day": "February 2",
+    "tradition": "Anglican",
+    "name": "Presentation of Our Lord",
+    "description": "Jesus presented in the temple."
+  },
+  {
+    "day": "February 14",
+    "tradition": "Anglican",
+    "name": "St. Cyril and St. Methodius",
+    "description": "Missionaries to the Slavs, pre-Schism."
+  },
+  {
+    "day": "March 17",
+    "tradition": "Anglican",
+    "name": "St. Patrick, Bishop and Missionary of Ireland",
+    "description": "Pre-Schism apostle to Ireland."
+  },
+  {
+    "day": "March 19",
+    "tradition": "Anglican",
+    "name": "St. Joseph",
+    "description": "Spouse of the Blessed Virgin Mary."
+  },
+  {
+    "day": "March 25",
+    "tradition": "Anglican",
+    "name": "Annunciation of Our Lord to the Blessed Virgin Mary",
+    "description": "Gabriel's announcement to Mary."
+  },
+  {
+    "day": "April 25",
+    "tradition": "Anglican",
+    "name": "St. Mark the Evangelist",
+    "description": "Apostle and author of the Gospel."
+  },
+  {
+    "day": "May 1",
+    "tradition": "Anglican",
+    "name": "St. Philip and St. James, Apostles",
+    "description": "Apostles and martyrs."
+  },
+  {
+    "day": "May 31",
+    "tradition": "Anglican",
+    "name": "The Visitation of the Blessed Virgin Mary",
+    "description": "Mary visits Elizabeth."
+  },
+  {
+    "day": "June 11",
+    "tradition": "Anglican",
+    "name": "St. Barnabas the Apostle",
+    "description": "Companion of St. Paul."
+  },
+  {
+    "day": "June 24",
+    "tradition": "Anglican",
+    "name": "Nativity of St. John the Baptist",
+    "description": "Precursor to Christ."
+  },
+  {
+    "day": "June 29",
+    "tradition": "Anglican",
+    "name": "St. Peter and St. Paul, Apostles",
+    "description": "Martyrs and pillars of the Church."
+  },
+  {
+    "day": "July 22",
+    "tradition": "Anglican",
+    "name": "St. Mary Magdalene",
+    "description": "Apostle to the Apostles."
+  },
+  {
+    "day": "July 25",
+    "tradition": "Anglican",
+    "name": "St. James the Apostle",
+    "description": "Martyr and brother of John."
+  },
+  {
+    "day": "August 6",
+    "tradition": "Anglican",
+    "name": "The Transfiguration of Our Lord Jesus Christ",
+    "description": "Christ's glory revealed."
+  },
+  {
+    "day": "August 15",
+    "tradition": "Anglican",
+    "name": "St. Mary the Virgin, Mother of Our Lord Jesus Christ",
+    "description": "Theotokos."
+  },
+  {
+    "day": "August 24",
+    "tradition": "Anglican",
+    "name": "St. Bartholomew the Apostle",
+    "description": "Martyr."
+  },
+  {
+    "day": "September 14",
+    "tradition": "Anglican",
+    "name": "Holy Cross Day",
+    "description": "Exaltation of the Holy Cross."
+  },
+  {
+    "day": "September 21",
+    "tradition": "Anglican",
+    "name": "St. Matthew, Apostle and Evangelist",
+    "description": "Tax collector turned apostle."
+  },
+  {
+    "day": "September 29",
+    "tradition": "Anglican",
+    "name": "St. Michael and All Angels",
+    "description": "Michaelmas."
+  },
+  {
+    "day": "October 18",
+    "tradition": "Anglican",
+    "name": "St. Luke the Evangelist",
+    "description": "Physician and author of the Gospel."
+  },
+  {
+    "day": "October 23",
+    "tradition": "Anglican",
+    "name": "St. James of Jerusalem",
+    "description": "Brother of Our Lord and martyr."
+  },
+  {
+    "day": "October 28",
+    "tradition": "Anglican",
+    "name": "St. Simon and St. Jude, Apostles",
+    "description": "Martyrs."
+  },
+  {
+    "day": "November 1",
+    "tradition": "Anglican",
+    "name": "All Saints' Day",
+    "description": "Commemoration of all saints."
+  },
+  {
+    "day": "November 30",
+    "tradition": "Anglican",
+    "name": "St. Andrew the Apostle",
+    "description": "Martyr and brother of Peter."
+  },
+  {
+    "day": "December 21",
+    "tradition": "Anglican",
+    "name": "St. Thomas the Apostle",
+    "description": "Doubting Thomas."
+  },
+  {
+    "day": "December 26",
+    "tradition": "Anglican",
+    "name": "St. Stephen, Deacon and Martyr",
+    "description": "First martyr."
+  },
+  {
+    "day": "December 27",
+    "tradition": "Anglican",
+    "name": "St. John, Apostle and Evangelist",
+    "description": "Beloved disciple."
+  },
+  {
+    "day": "December 28",
+    "tradition": "Anglican",
+    "name": "The Holy Innocents",
+    "description": "Martyrs of Bethlehem."
+  },
+  {
+    "day": "January 23",
+    "name": "Phillips Brooks, Bishop of Massachusetts",
+    "tradition": "Anglican / Episcopal",
+    "description": "Phillips Brooks (1835–1893) was an American Episcopal clergyman and bishop. He is best known for writing the Christmas carol 'O Little Town of Bethlehem' and for his eloquent preaching."
+  }
+]

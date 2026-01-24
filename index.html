@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Universal Office</title>
+    <style>
+       :root { 
+           --bg-color: #f4f1ea; 
+           --text-color: #2c3e50; 
+           --container-bg: #ffffff; 
+           --accent: #8e44ad; 
+           --gold: #d4af37; 
+           --sidebar-bg: #1a1a1a; 
+       }
+       body.dark-mode { 
+           --bg-color: #121212; 
+           --text-color: #e0e0e0; 
+           --container-bg: #1e1e1e; 
+           --sidebar-bg: #000000; 
+       }
+       body { 
+           font-family: 'Georgia', serif; 
+           background-color: var(--bg-color); 
+           color: var(--text-color); 
+           margin: 0; 
+           display: flex; 
+           flex-direction: column; 
+           align-items: center; 
+           justify-content: center; 
+           height: 100vh; 
+           transition: all 0.3s; 
+       }
+
+       /* Mode Selection */
+       #mode-selection { 
+           text-align: center; 
+           max-width: 600px; 
+           padding: 40px; 
+           background: var(--container-bg); 
+           border-radius: 8px; 
+           box-shadow: 0 4px 15px rgba(0,0,0,0.1); 
+       }
+       #mode-selection h1 { font-size: 2.5em; margin-bottom: 20px; }
+       .mode-btn { 
+           background: var(--accent); 
+           color: white; 
+           border: none; 
+           padding: 15px 30px; 
+           margin: 10px; 
+           cursor: pointer; 
+           font-size: 1.2em; 
+           border-radius: 4px; 
+           transition: background 0.2s; 
+       }
+       .mode-btn:hover { background: #9b59b6; }
+
+       /* Daily Office Section (Hidden Initially) */
+       #daily-office-section { display: none; flex-direction: row; width: 100%; height: 100vh; }
+       #settings-panel { 
+           width: 300px; 
+           background: var(--sidebar-bg); 
+           color: #e0e0e0; 
+           padding: 25px; 
+           height: 100vh; 
+           position: sticky; 
+           top: 0; 
+           overflow-y: auto; 
+           border-right: 2px solid var(--gold); 
+       }
+       .setting-group { 
+           margin-bottom: 25px; 
+           text-align: left; 
+       }
+       .setting-group strong { 
+           display: block; 
+           margin-bottom: 10px; 
+           color: var(--gold); 
+           text-transform: uppercase; 
+           letter-spacing: 1px; 
+           font-size: 0.8em; 
+       }
+       .setting-group label { 
+           display: block; 
+           margin-bottom: 10px; 
+           cursor: pointer; 
+           font-size: 0.95em; 
+       }
+       .nested-group { 
+           margin-left: 15px; 
+           margin-top: 10px; 
+       }
+
+       /* Main Content Area */
+       #main-content { 
+           flex-grow: 1; 
+           padding: 40px; 
+           text-align: center; 
+           overflow-y: auto; 
+       }
+       .office-container { 
+           background: var(--container-bg); 
+           max-width: 800px; 
+           margin: 0 auto; 
+           padding: 60px; 
+           border-radius: 8px; 
+           box-shadow: 0 4px 15px rgba(0,0,0,0.1); 
+           text-align: left; 
+           border-left: 5px solid var(--accent); 
+       }
+
+       /* Typography */
+       h1 { font-size: 2.5em; letter-spacing: 0.05em; margin-bottom: 0.5em; color: var(--text-color); }
+       h2 { font-size: 2em; color: var(--accent); border-bottom: 1px solid var(--gold); padding-bottom: 10px; margin-top: 0; }
+
+       .rubric-text { 
+           color: var(--accent); 
+           font-family: 'Georgia', serif; 
+           font-variant: small-caps; 
+           font-weight: 700; 
+           font-size: 1.4em; 
+           letter-spacing: 0.02em; 
+           display: block; 
+           margin-top: 35px; 
+           margin-bottom: 10px; 
+           border-bottom: 1px dotted var(--gold); 
+           padding-bottom: 2px; 
+           width: 100%; 
+       }
+
+       .component-text { 
+           font-size: 1.2em; 
+           line-height: 1.7; 
+           margin-bottom: 30px; 
+           display: block; 
+           white-space: pre-wrap; 
+           word-wrap: break-word; 
+           overflow: visible; 
+       }
+
+       /* Psalms */
+       .psalm-header { color: var(--accent); text-align: center; margin-top: 40px; margin-bottom: 20px; font-size: 1.6em; border-bottom: 2px solid var(--gold); padding-bottom: 10px; }
+       .psalm-verse { display: block; margin-bottom: 8px; font-size: 1.15em; }
+       .verse-num { font-size: 0.65em; color: var(--gold); vertical-align: super; margin-right: 8px; opacity: 0.8; }
+
+       /* Saints & Ordo */
+       .saint-section { margin-top: 60px; border-top: 2px double var(--accent); padding-top: 40px; }
+       .saint-grid { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; }
+       .saint-box { background: var(--container-bg); border-top: 5px solid var(--gold); padding: 20px; width: 240px; box-shadow: 0 4px 12px rgba(0,0,0,0.15); text-align: left; border-radius: 0 0 6px 6px; }
+
+       /* Controls */
+       .ordo-control { background: #222; border: 1px solid var(--gold); padding: 15px; border-radius: 4px; margin-bottom: 20px; text-align: center; }
+       .ordo-date { display: block; color: var(--gold); font-weight: bold; margin: 10px 0; font-size: 1.1em; }
+       .ordo-btn { background: none; border: 1px solid var(--gold); color: var(--gold); padding: 5px 15px; cursor: pointer; margin: 0 5px; transition: background 0.2s; }
+       .ordo-btn:hover { background: rgba(212, 175, 55, 0.2); }
+       select { width: 100%; padding: 10px; background: #333; color: white; border: 1px solid #555; border-radius: 4px; }
+
+       /* Individual Prayers Section (Hidden Initially) */
+       #individual-prayers-section { display: none; text-align: center; max-width: 800px; padding: 40px; width: 100%; }
+       #prayer-selection { margin-bottom: 40px; }
+       #prayer-display { background: var(--container-bg); padding: 40px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); text-align: left; }
+    </style>
+</head>
+<body id="app-body">
+    <div id="mode-selection">
+        <h1>Welcome to The Universal Office</h1>
+        <p>Select your mode:</p>
+        <button class="mode-btn" onclick="selectMode('daily')">Daily Office</button>
+        <button class="mode-btn" onclick="selectMode('prayers')">Individual Prayers</button>
+    </div>
+
+    <div id="daily-office-section">
+        <div id="settings-panel">
+            <h3 style="color:var(--gold)">Office Settings</h3>
+            <div class="ordo-control">
+                <strong>Liturgical Ordo</strong>
+                <div class="ordo-date" id="display-date">Loading...</div>
+                <button class="ordo-btn" onclick="changeDate(-1)">Prev</button>
+                <button class="ordo-btn" onclick="resetDate()">Today</button>
+                <button class="ordo-btn" onclick="changeDate(1)">Next</button>
+                <div id="calendar-info" style="font-size: 0.7em; color: var(--gold); margin-top:10px;">Exploring the Ordo...</div>
+            </div>
+            <div class="setting-group">
+                <strong>Time of Day:</strong>
+                <label><input type="radio" name="office-time" value="morning-office" onchange="renderOffice()" checked> Morning Prayer</label>
+                <label><input type="radio" name="office-time" value="noonday-office" onchange="renderOffice()"> Noonday Prayer</label>
+                <label><input type="radio" name="office-time" value="evening-office" onchange="renderOffice()"> Evening Prayer</label>
+                <label><input type="radio" name="office-time" value="compline-office" onchange="renderOffice()"> Compline</label>
+            </div>
+            <div class="setting-group">
+                <strong>Appearance:</strong>
+                <label><input type="checkbox" id="toggle-dark" onchange="updateUI()" checked> Dark Mode</label>
+            </div>
+            <div class="setting-group">
+                <strong>Language & Rite:</strong>
+                <label><input type="radio" name="rite" value="rite1" onchange="renderOffice()"> Rite I (Traditional)</label>
+                <label><input type="radio" name="rite" value="rite2" onchange="renderOffice()" checked> Rite II (Contemporary)</label>
+            </div>
+            <div class="setting-group">
+                <strong>Officiant:</strong>
+                <label><input type="radio" name="minister" value="priest" onchange="renderOffice()"> Priest/Deacon</label>
+                <label><input type="radio" name="minister" value="lay" onchange="renderOffice()" checked> Layperson</label>
+            </div>
+            <div class="setting-group">
+                <strong>Tradition Devotions:</strong>
+                <div class="nested-group">
+                    <strong>Marian Antiphon:</strong>
+                    <label><input type="radio" name="marian-antiphon-pos" value="none" onchange="renderOffice()" checked> None</label>
+                    <label><input type="radio" name="marian-antiphon-pos" value="before" onchange="renderOffice()"> Before</label>
+                    <label><input type="radio" name="marian-antiphon-pos" value="after" onchange="renderOffice()"> After</label>
+                </div>
+                <label style="margin-top:10px;"><input type="checkbox" id="toggle-gloria-patri" onchange="renderOffice()" checked> Gloria Patri (after Psalm)</label>
+                <label><input type="checkbox" id="toggle-angelus" onchange="renderOffice()" checked> Angelus (Catholic)</label>
+                <label><input type="checkbox" id="toggle-trisagion" onchange="renderOffice()" checked> Trisagion (Eastern Orthodox)</label>
+                <label><input type="checkbox" id="toggle-theotokion" onchange="renderOffice()" checked> Theotokion (Oriental Orthodox)</label>
+                <label><input type="checkbox" id="toggle-jesus-prayer" onchange="renderOffice()" checked> Jesus Prayer (Eastern Orthodox)</label>
+                <label><input type="checkbox" id="toggle-assyrian-blessing" onchange="renderOffice()" checked> Assyrian Blessing (Church of the East)</label>
+                <label><input type="checkbox" id="toggle-agpeya-opening" onchange="renderOffice()" checked> Agpeya Opening (Coptic)</label>
+            </div>
+            <div class="setting-group">
+                <strong>Creed Selection:</strong>
+                <select id="creed-type" onchange="renderOffice()">
+                    <option value="bcp-creed-apostles">Apostles' Creed</option>
+                    <option value="bcp-creed-nicene">Nicene Creed</option>
+                </select>
+            </div>
+            <div class="setting-group">
+                <strong>Ordo Components:</strong>
+                <label><input type="checkbox" id="toggle-confession" onchange="renderOffice()" checked> Show Confession</label>
+                <label><input type="checkbox" id="toggle-litany" onchange="renderOffice()"> The Great Litany</label>
+                <label><input type="checkbox" id="toggle-suffrages" onchange="renderOffice()" checked> Suffrages</label>
+            </div>
+        </div>
+
+        <div id="main-content">
+            <h1>The Universal Office</h1>
+            <div id="office-display"></div>
+            <div class="saint-section">
+                <h2 id="date-header">Commemorations</h2>
+                <div id="saint-display" class="saint-grid"></div>
+            </div>
+        </div>
+    </div>
+
+    <div id="individual-prayers-section">
+        <h1>Individual Prayers</h1>
+        <select id="prayer-dropdown" style="width: 300px; padding: 10px; background: #333; color: white; border: 1px solid #555; border-radius: 4px;">
+            <option value="">Select a Prayer</option>
+            <option value="prayer-for-the-sick">Prayer for the Sick</option>
+            <option value="prayer-for-peace">Prayer for Peace</option>
+            <option value="prayer-for-unity">Prayer for Unity</option>
+            <option value="prayer-for-mission">Prayer for Mission</option>
+            <option value="prayer-for-guidance">Prayer for Guidance</option>
+            <option value="prayer-for-the-church">Prayer for the Church</option>
+            <option value="prayer-for-the-world">Prayer for the World</option>
+        </select>
+        <button class="mode-btn" onclick="showSinglePrayer()">Display Prayer</button>
+    </div>
+    <div id="prayer-display" style="display:none; margin-top:40px;">
+        <div class="office-container" id="single-prayer-content"></div>
+        <button class="mode-btn" onclick="backToPrayerDropdown()" style="margin-top:20px;">Back to Selection</button>
+    </div>
+
+    <script>
+    let appData = null;
+    let currentDate = new Date();
+    let selectedMode = null;
+
+    async function init() {
+        try {
+            appData = {};
+            const files = ['components', 'rubrics', 'saints', 'propers', 'psalter'];
+            for (const file of files) {
+                const res = await fetch(`data/${file}.json`);
+                if (!res.ok) throw new Error(`Missing: data/${file}.json`);
+                appData[file] = await res.json();
+            }
+
+            try {
+                const bibleRes = await fetch('data/bible/scripture.json');
+                if (bibleRes.ok) {
+                    appData['scripture'] = await bibleRes.json();
+                    console.log("Scripture library loaded successfully.");
+                }
+            } catch (e) {
+                console.warn("Scripture library not initialized yet.");
+                appData['scripture'] = [];
+            }
+
+            updateUI();
+        } catch (err) {
+            document.getElementById('office-display').innerHTML = `<div class="office-container"><h3>System Error</h3><p>${err.message}</p></div>`;
+        }
+    }
+
+    function selectMode(mode) {
+        selectedMode = mode;
+        document.getElementById('mode-selection').style.display = 'none';
+        document.body.style.height = 'auto';
+        document.body.style.justifyContent = 'flex-start';
+        if (mode === 'daily') {
+            document.getElementById('daily-office-section').style.display = 'flex';
+            renderOffice();
+        } else if (mode === 'prayers') {
+            document.getElementById('individual-prayers-section').style.display = 'block';
+        }
+    }
+
+    function changeDate(days) { currentDate.setDate(currentDate.getDate() + days); renderOffice(); }
+    function resetDate() { currentDate = new Date(); renderOffice(); }
+
+    function updateUI() {
+        const isDark = document.getElementById('toggle-dark')?.checked || false;
+        if (isDark) document.body.classList.add('dark-mode');
+        else document.body.classList.remove('dark-mode');
+        if (selectedMode === 'daily') renderOffice();
+    }
+
+    function getScriptureText(refId, version = "NRSV") {
+        if (!appData.scripture) return null;
+        const entry = appData.scripture.find(s => s.id === refId);
+        if (!entry) return null;
+        if (entry.text[version] && entry.text[version].length > 0) return entry.text[version];
+        if (entry.text["KJV"]) return entry.text["KJV"];
+        return null;
+    }
+
+    function renderOffice() {
+        if (!appData) return;
+
+        const todayKey = currentDate.toLocaleDateString('en-US', { month: 'long', day: 'numeric' });
+        const dayOfMonth = currentDate.getDate().toString();
+        document.getElementById('display-date').innerText = todayKey;
+
+        const officeId = document.querySelector('input[name="office-time"]:checked')?.value;
+        const rite = document.querySelector('input[name="rite"]:checked')?.value;
+        const minister = document.querySelector('input[name="minister"]:checked')?.value;
+        const marianPos = document.querySelector('input[name="marian-antiphon-pos"]:checked')?.value || 'none';
+        const creedSelection = document.getElementById('creed-type')?.value;
+
+        const includeAngelus = document.getElementById('toggle-angelus')?.checked || false;
+        const includeTrisagion = document.getElementById('toggle-trisagion')?.checked || false;
+        const includeTheotokion = document.getElementById('toggle-theotokion')?.checked || false;
+        const includeJesusPrayer = document.getElementById('toggle-jesus-prayer')?.checked || false;
+        const includeAssyrianBlessing = document.getElementById('toggle-assyrian-blessing')?.checked || false;
+        const includeAgpeyaOpening = document.getElementById('toggle-agpeya-opening')?.checked || false;
+
+        console.log('renderOffice called', { officeId, rite, minister, creedSelection, confessionChecked: document.getElementById('toggle-confession')?.checked });
+
+        const activeRubric = appData.rubrics.find(r => r.id === officeId);
+        const dailyData = appData.propers[todayKey] || appData.propers["DEFAULT"];
+        document.getElementById('calendar-info').innerText = dailyData.title;
+
+        let isEvening = (officeId === 'evening-office');
+        let readingOT = isEvening ? (dailyData.reading_ot_evening || dailyData.reading_ot) : dailyData.reading_ot;
+        let readingEpistle = isEvening ? (dailyData.reading_epistle_evening || dailyData.reading_epistle) : dailyData.reading_epistle;
+        let readingGospel = isEvening ? (dailyData.reading_gospel_evening || dailyData.reading_gospel) : dailyData.reading_gospel;
+        if (!readingOT) readingOT = dailyData.reading;
+
+        let officeHtml = `<div class="office-container"><h2>${activeRubric?.officeName || "Office"}</h2>`;
+        officeHtml += `<p style="color:var(--gold); font-variant:small-caps; font-weight:bold;">${dailyData.title}</p>`;
+
+        // === SUPPLEMENTAL DEVOTIONS ===
+        let supplementsHtml = '';
+        console.log("Angelus toggle:", includeAngelus);
+        console.log("Trisagion toggle:", includeTrisagion);
+        console.log("Theotokion toggle:", includeTheotokion);
+        console.log("Jesus Prayer toggle:", includeJesusPrayer);
+        console.log("Assyrian Blessing toggle:", includeAssyrianBlessing);
+        console.log("Agpeya Opening toggle:", includeAgpeyaOpening);
+
+        if (marianPos !== 'none') {
+            const marianId = 'latin-marian-alma';
+            const marianComp = appData.components.find(c => c.id === marianId);
+            if (marianComp) {
+                supplementsHtml += `<span class="rubric-text">${marianComp.title}</span>`;
+                supplementsHtml += `<span class="component-text">${marianComp.text}</span>`;
+            } else {
+                console.warn(`Missing Marian Antiphon for ${marianPos} (ID: ${marianId})`);
+            }
+        }
+
+        if (includeTrisagion) {
+            const trisagion = appData.components.find(c => c.id === "trisagion-byzantine");
+            console.log("Trisagion component found?", !!trisagion);
+            if (trisagion) supplementsHtml += `<span class="rubric-text">${trisagion.title}</span><span class="component-text">${trisagion.text}</span>`;
+        }
+
+        if (includeTheotokion) {
+            const theotokion = appData.components.find(c => c.id === "coptic-theotokion");
+            console.log("Theotokion component found?", !!theotokion);
+            if (theotokion) supplementsHtml += `<span class="rubric-text">${theotokion.title}</span><span class="component-text">${theotokion.text}</span>`;
+        }
+
+        if (includeJesusPrayer) {
+            const jesusPrayer = appData.components.find(c => c.id === "jesus-prayer");
+            console.log("Jesus Prayer component found?", !!jesusPrayer);
+            if (jesusPrayer) supplementsHtml += `<span class="rubric-text">${jesusPrayer.title} (Orthodox)</span><span class="component-text">${jesusPrayer.text}</span>`;
+        }
+
+        if (includeAngelus) {
+            const angelus = appData.components.find(c => c.id === "angelus");
+            console.log("Angelus component found?", !!angelus);
+            if (angelus) supplementsHtml += `<span class="rubric-text">${angelus.title} (Catholic)</span><span class="component-text">${angelus.text}</span>`;
+        }
+
+        if (includeAgpeyaOpening) {
+            const agpeya = appData.components.find(c => c.id === "agpeya-opening");
+            console.log("Agpeya Opening component found?", !!agpeya);
+            if (agpeya) supplementsHtml += `<span class="rubric-text">${agpeya.title} (Coptic)</span><span class="component-text">${agpeya.text}</span>`;
+        }
+
+        if (includeAssyrianBlessing) {
+            const assyrianBlessing = appData.components.find(c => c.id === "assyrian-blessing");
+            console.log("Assyrian Blessing component found?", !!assyrianBlessing);
+            if (assyrianBlessing) supplementsHtml += `<span class="rubric-text">${assyrianBlessing.title} (Assyrian)</span><span class="component-text">${assyrianBlessing.text}</span>`;
+        }
+
+        if (supplementsHtml) {
+            officeHtml += `<h2 style="margin-top:40px; color:var(--accent);">Supplemental Devotions</h2>`;
+            officeHtml += supplementsHtml;
+        }
+
+        // === MAIN OFFICE SEQUENCE ===
+        activeRubric?.sequence?.forEach(item => {
+            if (item === "bcp-confession-toggle") {
+                if (document.getElementById('toggle-confession')?.checked) {
+                    const confId = (rite === 'rite1') ? 'bcp-confession-rite1' : 'bcp-confession-rite2';
+                    const comp = appData.components.find(c => c.id === confId);
+                    if (comp) officeHtml += `<span class="rubric-text">${comp.title}</span><span class="component-text">${comp.text}</span>`;
+                }
+                return;
+            }
+
+            if (item === "bcp-absolution-slot") {
+                if (document.getElementById('toggle-confession')?.checked) {
+                    const isPriest = (minister === 'priest');
+                    let absId;
+                    if (rite === 'rite1') {
+                        absId = isPriest ? 'bcp-absolution-r1-priest' : 'bcp-absolution-r1-lay';
+                    } else {
+                        absId = isPriest ? 'bcp-absolution-r2-priest' : 'bcp-absolution-r2-lay';
+                    }
+                    const comp = appData.components.find(c => c.id === absId);
+                    if (comp) {
+                        officeHtml += `<span class="rubric-text">${comp.title}</span><span class="component-text">${comp.text}</span>`;
+                    } else {
+                        console.warn(`Missing absolution component for ID: ${absId}`);
+                    }
+                }
+                return;
+            }
+
+            if (item === "bcp-invitatory") {
+                let veniteText = getScriptureText("PSA 95:1-7", "NRSV");
+                const invComponent = appData.components.find(c => c.id === "bcp-invitatory");
+                if (!veniteText && invComponent) veniteText = invComponent.text;
+                const title = invComponent ? invComponent.title : "Venite";
+
+                if (veniteText) {
+                    if (dailyData.antiphon) {
+                        officeHtml += `<span class="rubric-text">Antiphon</span><span class="component-text"><i>${dailyData.antiphon}</i></span>`;
+                    }
+                    officeHtml += `<span class="rubric-text">${title}</span><span class="component-text">${veniteText}</span>`;
+                    if (dailyData.antiphon) {
+                        officeHtml += `<span class="component-text"><i>${dailyData.antiphon}</i></span>`;
+                    }
+                }
+                return;
+            }
+
+            if (item === "bcp-opening-1") {
+                const openingComp = appData.components.find(c => c.id === "bcp-opening-1");
+                if (openingComp) {
+                    officeHtml += `<span class="rubric-text">${openingComp.title}</span><span class="component-text">${openingComp.text}</span>`;
+                }
+                return;
+            }
+
+            if (item === "bcp-litany") {
+                if (document.getElementById('toggle-litany')?.checked) {
+                    const comp = appData.components.find(c => c.id === "bcp-litany");
+                    if (comp) officeHtml += `<span class="rubric-text">${comp.title}</span><span class="component-text">${comp.text}</span>`;
+                }
+                return;
+            }
+
+            if (item === "bcp-suffrages-slot") {
+                if (document.getElementById('toggle-suffrages')?.checked) {
+                    const suffId = `bcp-suffrages-${rite}`;
+                    const comp = appData.components.find(c => c.id === suffId);
+                    if (comp) officeHtml += `<span class="rubric-text">${comp.title}</span><span class="component-text">${comp.text}</span>`;
+                }
+                return;
+            }
+
+            if (item === "bcp-creed-slot") {
+                const comp = appData.components.find(c => c.id === creedSelection);
+                if (comp) {
+                    let finalText = comp.text;
+                    if (typeof finalText === 'object' && finalText !== null) {
+                        finalText = finalText[rite] || finalText['rite2'] || finalText['rite1'] || "Creed text not found";
+                    }
+                    officeHtml += `<span class="rubric-text">${comp.title}</span><span class="component-text">${finalText}</span>`;
+                }
+                return;
+            }
+
+            if (item === "VARIABLE_READING_OT") {
+                if (readingOT) officeHtml += `<span class="rubric-text">The Old Testament Lesson</span><span class="component-text">${readingOT}</span>`;
+                return;
+            }
+
+            if (item === "VARIABLE_READING_EPISTLE") {
+                if (readingEpistle) officeHtml += `<span class="rubric-text">The Epistle</span><span class="component-text">${readingEpistle}</span>`;
+                return;
+            }
+
+            if (item === "VARIABLE_READING_GOSPEL") {
+                if (readingGospel) officeHtml += `<span class="rubric-text">The Holy Gospel</span><span class="component-text">${readingGospel}</span>`;
+                return;
+            }
+
+            if (item === "VARIABLE_PSALM") {
+                const psEntry = appData.psalter[dayOfMonth];
+                let rawText = (psEntry && psEntry.text) ? psEntry.text : "No text found for this day.";
+                let psalmHtml = "";
+                let currentPsalmNum = null;
+
+                const lines = rawText.split(/\r?\n/);
+                lines.forEach(line => {
+                    line = line.trim();
+                    if (!line) return;
+                    const match = line.match(/^(?:Psalm\s+)?(\d+):(\d+)\s+(.*)/i);
+                    if (match) {
+                        const psalmNum = match[1];
+                        const verseNum = match[2];
+                        const verseText = match[3];
+                        if (psalmNum !== currentPsalmNum) {
+                            psalmHtml += `<h3 class="psalm-header">Psalm ${psalmNum}</h3>`;
+                            currentPsalmNum = psalmNum;
+                        }
+                        psalmHtml += `<span class="psalm-verse"><span class="verse-num">${verseNum}</span>${verseText}</span>`;
+                    } else {
+                        psalmHtml += `<p>${line}</p>`;
+                    }
+                });
+
+                officeHtml += `<div class="component-text">${psalmHtml}</div>`;
+
+                // Gloria Patri - only if toggle is checked
+                if (document.getElementById('toggle-gloria-patri')?.checked) {
+                    const gloria = appData.components.find(c => c.id === "bcp-gloria-patri");
+                    console.log("Gloria component:", gloria);
+
+                    if (gloria && gloria.text) {
+                        const textObj = gloria.text;
+                        const selectedRite = rite || 'rite2';
+
+                        console.log("Selected rite for Gloria:", selectedRite);
+                        console.log("Available text keys:", Object.keys(textObj || {}));
+
+                        let finalText = textObj[selectedRite] || textObj['rite2'] || textObj['rite1'] || "No Gloria text for this rite";
+
+                        console.log("Final Gloria text:", finalText);
+
+                        officeHtml += `<span class="rubric-text">GLORIA PATRI</span>`;
+                        officeHtml += `<span class="component-text"><i>${finalText}</i></span>`;
+                    } else {
+                        console.warn("Gloria Patri missing or no text");
+                        officeHtml += `<span class="rubric-text">GLORIA PATRI</span>`;
+                        officeHtml += `<span class="component-text"><i>(Gloria text not found in components.json)</i></span>`;
+                    }
+                }
+
+                return;
+            }
+
+            if (item === "VARIABLE_COLLECT") {
+                officeHtml += `<span class="rubric-text">The Collect of the Day</span><span class="component-text">${dailyData.collect}</span>`;
+                return;
+            }
+
+            let compId = (typeof item === 'object') ? item[rite] : item;
+            if (compId === "trisagion-byzantine" && !document.getElementById('toggle-trisagion')?.checked) return;
+            if (compId === "coptic-theotokion" && !document.getElementById('toggle-theotokion')?.checked) return;
+            
+            const comp = appData.components.find(c => c.id === compId);
+            if (comp) {
+                // Skip Gloria Patri here — it's already handled specially in VARIABLE_PSALM
+                if (compId === "bcp-gloria-patri") return;
+
+                let displayText = comp.text;
+                if (typeof displayText === 'object' && displayText !== null) {
+                    displayText = displayText[rite] || displayText['rite2'] || displayText['rite1'] || "Text not found";
+                }
+                officeHtml += `<span class="rubric-text">${comp.title}</span><span class="component-text">${displayText}</span>`;
+            }
+        });
+
+        document.getElementById('office-display').innerHTML = officeHtml + `</div>`;
+
+        document.getElementById('date-header').innerText = `Commemorations for ${todayKey}`;
+        const todayKeyLower = todayKey.toLowerCase();
+
+        document.getElementById('saint-display').innerHTML = appData.saints
+            .filter(s => s.day && s.day.toLowerCase().includes(todayKeyLower))
+            .map(s => `
+                <div class="saint-box">
+                    <small style="color:var(--accent); font-weight:bold; text-transform:uppercase;">${s.tradition || 'Unknown'}</small>
+                    <strong>${s.name || 'Unknown'}</strong>
+                    <p>${s.description || 'No description'}</p>
+                </div>
+            `).join('') || '<p>No commemorations for today.</p>';
+    }
+
+    function showSinglePrayer() {
+        const prayerId = document.getElementById('prayer-dropdown').value;
+        if (!prayerId) {
+            alert("Please select a prayer first.");
+            return;
+        }
+
+        const prayers = {
+            "prayer-for-the-sick": "O Father of mercies, and God of all comfort, our only help in time of need: We humbly beseech thee to behold, visit, and relieve thy sick servant [Name] for whom our prayers are desired. Look upon him with the eyes of thy mercy; comfort him with a sense of thy goodness; preserve him from the temptations of the enemy; and give him patience under his affliction. In thy good time, restore him to health, and enable him to lead the residue of his life in thy fear, and to thy glory; and grant that finally he may dwell with thee in life everlasting; through Jesus Christ our Lord. Amen.",
+            "prayer-for-peace": "O God, the source of all holy desires, all good counsels, and all just works: Give to thy servants that peace which the world cannot give; that our hearts may be set to obey thy commandments, and also that by thee, we, being defended from the fear of our enemies, may pass our time in rest and quietness; through the merits of Jesus Christ our Savior. Amen.",
+            "prayer-for-unity": "O God the Father of our Lord Jesus Christ, in whom thou art well pleased, grant, we beseech thee, that being knit together in the same mind and in the same judgment, we may all speak the same thing, and be of one accord, of one mind, and that there be no divisions among us; but that we be perfectly joined together in the same mind and in the same judgment. Amen.",
+            "prayer-for-mission": "Lord Jesus Christ, who didst stretch out thy loving arms on the hard wood of the Cross that everyone might come within the reach of thy saving embrace: So clothe us in thy Spirit that we, reaching forth our hands in love, may bring those who do not know thee to the knowledge and love of thee; for the honor of thy Name. Amen.",
+            "prayer-for-guidance": "O God, by whom the meek are guided in judgment, and light riseth up in darkness for the godly: Grant us, in all our doubts and uncertainties, the grace to ask what thou wouldest have us to do, that the Spirit of wisdom may save us from all false choices; that we may find the right path, and walk in it; through Jesus Christ our Lord. Amen.",
+            "prayer-for-the-church": "Gracious Father, we pray for thy holy Catholic Church. Fill it with all truth, in all truth with all peace. Where it is corrupt, purify it; where it is in error, direct it; where in any thing it is amiss, reform it. Where it is right, strengthen it; where it is in want, provide for it; where it is divided, reunite it; for the sake of Jesus Christ thy Son our Savior. Amen.",
+            "prayer-for-the-world": "Almighty God, from whom all thoughts of truth and peace proceed: Kindle, we pray, in the hearts of all people the true love of peace, and guide with thy pure and peaceable wisdom those who take counsel for the nations of the earth; that in tranquillity thy kingdom may go forward, till the earth is filled with the knowledge of thy love; through Jesus Christ our Lord. Amen."
+        };
+
+        const prayerText = prayers[prayerId] || "Prayer text not found. Please add it to the prayers object.";
+
+        const dropdown = document.getElementById('prayer-dropdown');
+        const selectedOption = dropdown.options[dropdown.selectedIndex];
+        const prayerTitle = selectedOption ? selectedOption.text : 'Selected Prayer';
+
+        document.getElementById('single-prayer-content').innerHTML = `<div class="office-container"><h2>${prayerTitle}</h2><p class="component-text">${prayerText}</p></div>`;
+
+        document.getElementById('prayer-display').style.display = 'block';
+        document.getElementById('prayer-selection').style.display = 'none';
+    }
+
+    function backToPrayerDropdown() {
+        document.getElementById('prayer-display').style.display = 'none';
+        document.getElementById('prayer-selection').style.display = 'block';
+    }
+
+    init();
+    </script>
+</body>
+</html>

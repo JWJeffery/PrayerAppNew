@@ -1,0 +1,60 @@
+[
+  {
+    "id": "morning-office",
+    "officeName": "Morning Prayer",
+    "sequence": [
+      "bcp-opening-1",
+      "bcp-confession-toggle",
+      "bcp-absolution-slot",
+      "bcp-invitatory",
+      "bcp-venite",
+      "VARIABLE_PSALM",
+      "bcp-gloria-patri",
+      "VARIABLE_READING_OT",
+      "VARIABLE_READING_EPISTLE",
+      "VARIABLE_READING_GOSPEL",
+      "VARIABLE_COLLECT",
+      "bcp-suffrages-slot",
+      "bcp-creed-slot",
+      "bcp-litany"
+    ]
+  },
+  {
+    "id": "evening-office",
+    "officeName": "Evening Prayer",
+    "sequence": [
+      "bcp-opening-1",
+      "bcp-confession-toggle",
+      "bcp-absolution-slot",
+      "VARIABLE_PSALM",
+      "bcp-gloria-patri",
+      "VARIABLE_READING_OT",
+      "VARIABLE_READING_EPISTLE",
+      "VARIABLE_READING_GOSPEL",
+      "VARIABLE_COLLECT",
+      "bcp-suffrages-slot",
+      "bcp-creed-slot",
+      "bcp-litany"
+    ]
+  },
+  {
+    "id": "noonday-office",
+    "officeName": "Noonday Prayer",
+    "sequence": [
+      "bcp-opening-1",
+      "VARIABLE_PSALM",
+      "VARIABLE_READING_OT",
+      "VARIABLE_COLLECT"
+    ]
+  },
+  {
+    "id": "compline-office",
+    "officeName": "Compline",
+    "sequence": [
+      "bcp-opening-1",
+      "bcp-confession-toggle",
+      "VARIABLE_PSALM",
+      "VARIABLE_COLLECT"
+    ]
+  }
+]
