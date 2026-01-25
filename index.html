@@ -389,6 +389,18 @@
                         officeHtml += `<span class="component-text"><i>${dailyData.antiphon}</i></span>`;
                     }
                 }
+
+                officeHtml += '<br>';
+                officeHtml += '<span class="rubric-text" style="border-bottom: 1px dotted var(--gold); height: 1px; margin: 20px 0; display: block;"></span>';
+
+                const showAngelus = (officeId === 'morning-office' || officeId === 'noonday-office' || officeId === 'evening-office') && includeAngelus;
+                if (showAngelus) {
+                    const angelus = appData.components.find(c => c.id === "angelus");
+                    if (angelus) {
+                        officeHtml += `<span class="rubric-text">${angelus.title} (Catholic)</span><span class="component-text">${angelus.text}</span>`;
+                    }
+                }
+
                 return;
             }
 
@@ -437,21 +449,50 @@
                     }
                     officeHtml += `<span class="rubric-text">${comp.title}</span><span class="component-text">${finalText}</span>`;
                 }
+
+                if (marianPos === 'after') {
+                    const marianId = 'latin-marian-alma';
+                    const marianComp = appData.components.find(c => c.id === marianId);
+                    if (marianComp) {
+                        officeHtml += `<span class="rubric-text">${marianComp.title}</span>`;
+                        officeHtml += `<span class="component-text">${marianComp.text}</span>`;
+                    }
+                }
+
                 return;
             }
 
             if (item === "VARIABLE_READING_OT") {
-                if (readingOT) officeHtml += `<span class="rubric-text">The Old Testament Lesson</span><span class="component-text">${readingOT}</span>`;
+                if (readingOT) {
+                    // Updated regex to handle newline and commas for non-consecutive verses
+                    const refMatch = readingOT.match(/^([A-Za-z0-9 ]+\s+\d+:\d+(?:-\d+)?(?:,\s*\d+:\d+(?:-\d+)?)*)/m);
+                    const refId = refMatch ? refMatch[1].trim().toUpperCase() : null;
+                    const fullText = refId ? getScriptureText(refId) : null;
+                    const displayText = fullText || readingOT;
+                    officeHtml += `<span class="rubric-text">The Old Testament Lesson</span><span class="component-text">${displayText}</span>`;
+                }
                 return;
             }
 
             if (item === "VARIABLE_READING_EPISTLE") {
-                if (readingEpistle) officeHtml += `<span class="rubric-text">The Epistle</span><span class="component-text">${readingEpistle}</span>`;
+                if (readingEpistle) {
+                    const refMatch = readingEpistle.match(/^([A-Za-z0-9 ]+\s+\d+:\d+(?:-\d+)?(?:,\s*\d+:\d+(?:-\d+)?)*)/m);
+                    const refId = refMatch ? refMatch[1].trim().toUpperCase() : null;
+                    const fullText = refId ? getScriptureText(refId) : null;
+                    const displayText = fullText || readingEpistle;
+                    officeHtml += `<span class="rubric-text">The Epistle</span><span class="component-text">${displayText}</span>`;
+                }
                 return;
             }
 
             if (item === "VARIABLE_READING_GOSPEL") {
-                if (readingGospel) officeHtml += `<span class="rubric-text">The Holy Gospel</span><span class="component-text">${readingGospel}</span>`;
+                if (readingGospel) {
+                    const refMatch = readingGospel.match(/^([A-Za-z0-9 ]+\s+\d+:\d+(?:-\d+)?(?:,\s*\d+:\d+(?:-\d+)?)*)/m);
+                    const refId = refMatch ? refMatch[1].trim().toUpperCase() : null;
+                    const fullText = refId ? getScriptureText(refId) : null;
+                    const displayText = fullText || readingGospel;
+                    officeHtml += `<span class="rubric-text">The Holy Gospel</span><span class="component-text">${displayText}</span>`;
+                }
                 return;
             }
 
@@ -517,14 +558,6 @@
                     psalmCount++;
                 }
 
-                const showAngelus = (officeId === 'morning-office' || officeId === 'noonday-office' || officeId === 'evening-office') && includeAngelus;
-                if (showAngelus) {
-                    const angelus = appData.components.find(c => c.id === "angelus");
-                    if (angelus) {
-                        psalmHtml = `<span class="rubric-text">${angelus.title} (Catholic)</span><span class="component-text">${angelus.text}</span>` + psalmHtml;
-                    }
-                }
-
                 officeHtml += `<div class="component-text">${psalmHtml}</div>`;
 
                 if ((officeId === 'morning-office' || officeId === 'evening-office') && includeJesusPrayer && psalmCount >= 2) {
@@ -538,75 +571,6 @@
                 return;
             }
 
-            if (item === "VARIABLE_PSALM_2") {
-                const psEntry = appData.psalter[dayOfMonth];
-                let rawText = (psEntry && psEntry.text) ? psEntry.text : "No text found for this day.";
-                let psalmHtml = "";
-                let psalmCount = 0;
-                let currentPsalmNum = null;
-                let currentPsalmText = "";
-
-                const lines = rawText.split(/\r?\n/);
-                const midPoint = Math.floor(lines.length / 2);
-                const secondHalfLines = lines.slice(midPoint);
-
-                secondHalfLines.forEach(line => {
-                    line = line.trim();
-                    if (!line) return;
-
-                    const match = line.match(/^(?:Psalm\s+)?(\d+):(\d+)\s+(.*)/i);
-                    if (match) {
-                        const psalmNum = match[1];
-                        const verseNum = match[2];
-                        const verseText = match[3];
-
-                        if (psalmNum !== currentPsalmNum && currentPsalmNum !== null) {
-                            if (document.getElementById('toggle-gloria-patri')?.checked) {
-                                const gloria = appData.components.find(c => c.id === "bcp-gloria-patri");
-                                let gloriaText = "(Gloria text not found)";
-                                if (gloria && gloria.text) {
-                                    const textObj = gloria.text;
-                                    const selectedRite = rite || 'rite2';
-                                    gloriaText = textObj[selectedRite] || textObj['rite2'] || textObj['rite1'] || "(No Gloria for this rite)";
-                                }
-                                currentPsalmText += `<span class="component-text"><i>${gloriaText}</i></span>`;
-                            }
-
-                            psalmHtml += currentPsalmText;
-                            currentPsalmText = "";
-                            psalmCount++;
-                        }
-
-                        if (psalmNum !== currentPsalmNum) {
-                            currentPsalmText += `<h3 class="psalm-header">Psalm ${psalmNum}</h3>`;
-                            currentPsalmNum = psalmNum;
-                        }
-
-                        currentPsalmText += `<span class="psalm-verse"><span class="verse-num">${verseNum}</span>${verseText}</span>`;
-                    } else {
-                        currentPsalmText += `<p>${line}</p>`;
-                    }
-                });
-
-                if (currentPsalmNum !== null) {
-                    if (document.getElementById('toggle-gloria-patri')?.checked) {
-                        const gloria = appData.components.find(c => c.id === "bcp-gloria-patri");
-                        let gloriaText = "(Gloria text not found)";
-                        if (gloria && gloria.text) {
-                            const textObj = gloria.text;
-                            const selectedRite = rite || 'rite2';
-                            gloriaText = textObj[selectedRite] || textObj['rite2'] || textObj['rite1'] || "(No Gloria for this rite)";
-                        }
-                        currentPsalmText += `<span class="component-text"><i>${gloriaText}</i></span>`;
-                    }
-                    psalmHtml += currentPsalmText;
-                    psalmCount++;
-                }
-
-                officeHtml += `<div class="component-text">${psalmHtml}</div>`;
-                return;
-            }
-
             if (item === "VARIABLE_COLLECT") {
                 officeHtml += `<span class="rubric-text">The Collect of the Day</span><span class="component-text">${dailyData.collect}</span>`;
 
@@ -615,15 +579,6 @@
                     if (theotokion) {
                         officeHtml += `<span class="rubric-text">${theotokion.title}</span>`;
                         officeHtml += `<span class="component-text">${theotokion.text}</span>`;
-                    }
-                }
-
-                if (marianPos !== 'none') {
-                    const marianId = 'latin-marian-alma';
-                    const marianComp = appData.components.find(c => c.id === marianId);
-                    if (marianComp) {
-                        officeHtml += `<span class="rubric-text">${marianComp.title}</span>`;
-                        officeHtml += `<span class="component-text">${marianComp.text}</span>`;
                     }
                 }
 
@@ -694,7 +649,7 @@
 
         document.getElementById('prayer-display').style.display = 'block';
         document.getElementById('prayer-selection').style.display = 'none';
- git    }
+    }
 
     function backToPrayerDropdown() {
         document.getElementById('prayer-display').style.display = 'none';
