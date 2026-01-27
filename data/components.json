@@ -201,5 +201,52 @@
     "id": "agpeya-opening",
     "title": "Agpeya Opening",
     "text": "O come, let us worship. O come, let us worship. O come, let us worship the Holy Trinity, our God and Savior."
-  }
-]
+  },
+  {
+  "id": "collect-default-ferial",
+  "title": "Collect for a Ferial Day",
+  "text": "Lord God, almighty and everlasting Father, you have brought us in safety to this new day: Preserve us with your mighty power, that we may not fall into sin, nor be overcome by adversity; and in all we do, direct us to the fulfilling of your purpose; through Jesus Christ our Lord. Amen.",
+  "type": "Collect"
+},
+{
+  "id": "collect-jan19-epiphany-week2",
+  "title": "Collect for Monday of the Second Week after Epiphany",
+  "text": "Almighty God, whose Son our Savior Jesus Christ is the light of the world: Grant that your people, illumined by your Word and Sacraments, may shine with the radiance of Christ's glory, that he may be known, worshiped, and obeyed to the ends of the earth; through Jesus Christ our Lord, who with you and the Holy Spirit lives and reigns, one God, now and for ever. Amen.",
+  "type": "Collect"
+},
+{
+  "id": "collect-jan20-fabian",
+  "title": "Collect for Fabian, Bishop and Martyr of Rome, 250",
+  "text": "Almighty God, you called Fabian to be a faithful pastor and servant of your people, and to lay down his life in witness to your Son: Grant that we, strengthened by his example and aided by his prayers, may persevere in faith to the end; through Jesus Christ our Lord. Amen.",
+  "type": "Collect"
+},
+{
+  "id": "collect-jan21-agnes",
+  "title": "Collect for Agnes, Martyr at Rome, 304",
+  "text": "Almighty and everlasting God, who chose the weak things of the world to confound the wise: Mercifully grant that we, celebrating the feast of your servant Agnes, may remain constant in the faith; through Jesus Christ our Lord. Amen.",
+  "type": "Collect"
+},
+{
+  "id": "collect-jan22-vincent",
+  "title": "Collect for Vincent, Deacon of Saragossa and Martyr, 304",
+  "text": "Almighty God, whose deacon Vincent, upheld by you, was not terrified by threats nor overcome by torments: Grant us to endure all adversity with invincible steadfastness; through Jesus Christ our Lord. Amen.",
+  "type": "Collect"
+},
+{
+  "id": "collect-jan23-phillips-brooks",
+  "title": "Collect for Phillips Brooks, Bishop of Massachusetts, 1893",
+  "text": "O everlasting God, who revealed truth to your servant Phillips Brooks, and so formed and molded his mind and heart that he was able to mediate that truth with grace and power: Grant, we pray, that all whom you call to preach the Gospel may steward the wisdom of your majesty poured out upon them; through Jesus Christ our Lord, who lives and reigns with you and the Holy Spirit, one God, for ever and ever. Amen.",
+  "type": "Collect"
+},
+{
+  "id": "collect-jan24-florence-li-tim-oi",
+  "title": "Collect for Ordination of Florence Li Tim-Oi, 1944",
+  "text": "Gracious God, who called Florence Li Tim-Oi to be the first woman ordained to the priesthood in the Anglican Communion: Grant that we may be faithful to your call, breaking down barriers and serving you with courage and love"
+},
+{
+  "id": "collect-jan25-conversion-paul",
+  "title": "Collect for the Conversion of Saint Paul the Apostle",
+  "text": "O God, who by the preaching of your apostle Paul has caused the light of the Gospel to shine throughout the world: Grant, we pray, that we, having his wonderful conversion in remembrance, may show ourselves thankful to you by following his holy teaching; through Jesus Christ our Lord, who lives and reigns with you, in the unity of the Holy Spirit, one God, now and for ever. Amen.",
+  "type": "Collect"
+}
+  ]

@@ -126,7 +126,7 @@
 
        .component-text { 
            font-size: 1.2em; 
-           line-height: 1.7; 
+           line-height: 1.6; 
            margin-bottom: 30px; 
            display: block; 
            white-space: pre-wrap; 
@@ -260,23 +260,22 @@
     async function init() {
         try {
             appData = {};
-            const files = ['components', 'rubrics', 'saints', 'propers', 'psalter'];
+            const files = ['components', 'rubrics', 'saints', 'propers'];
             for (const file of files) {
                 const res = await fetch(`data/${file}.json`);
                 if (!res.ok) throw new Error(`Missing: data/${file}.json`);
                 appData[file] = await res.json();
             }
 
-            try {
-                const bibleRes = await fetch('data/bible/scripture.json');
-                if (bibleRes.ok) {
-                    appData['scripture'] = await bibleRes.json();
-                    console.log("Scripture library loaded successfully.");
-                }
-            } catch (e) {
-                console.warn("Scripture library not initialized yet.");
-                appData['scripture'] = [];
-            }
+            // Load split Bible files
+            const otRes = await fetch('data/bible/old-testament.json');
+            if (otRes.ok) appData['oldTestament'] = await otRes.json();
+            const ntRes = await fetch('data/bible/new-testament.json');
+            if (ntRes.ok) appData['newTestament'] = await ntRes.json();
+            console.log("NT Contents:", appData['newTestament']);
+            const psalmsRes = await fetch('data/bible/psalms.json');
+            if (psalmsRes.ok) appData['psalms'] = await psalmsRes.json();
+            console.log("Split Bible libraries loaded.");
 
             updateUI();
         } catch (err) {
@@ -308,12 +307,28 @@
     }
 
     function getScriptureText(refId, version = "NRSV") {
-        if (!appData.scripture) return null;
-        const entry = appData.scripture.find(s => s.id === refId);
+        if (!refId) return null;
+        let source = null;
+        if (refId.startsWith("PSA")) {
+            source = appData['psalms'];
+        } else if (refId.startsWith("ACTS") || refId.startsWith("JOHN") || refId.startsWith("EPH") || refId.startsWith("MARK") || refId.startsWith("ROM") || refId.startsWith("HEB") || refId.startsWith("1 JOHN") || refId.startsWith("2 COR") || refId.startsWith("MATT") || refId.startsWith("GALATIANS")) {
+            source = appData['newTestament'];
+        } else {
+            source = appData['oldTestament'];
+        }
+        if (!source) return null;
+        const entry = source.find(s => s.id === refId);
         if (!entry) return null;
-        if (entry.text[version] && entry.text[version].length > 0) return entry.text[version];
-        if (entry.text["KJV"]) return entry.text["KJV"];
-        return null;
+        let text = entry.text[version] || entry.text["KJV"] || null;
+        if (text) {
+            // Strip citation from text
+            const citationRegex = new RegExp(`^${refId.replace(/([:\\-])/g, '\\$1')} `, 'i');
+            text = text.replace(citationRegex, '').trim();
+            text = text.replace(/^\d+:\d+(-\d+)? /gm, '').trim(); // Remove verse numbers
+            text = text.replace(/\n/g, ' '); // Replace line breaks with spaces for paragraph flow
+            text = text.replace(/^["“‘]/, '').trim(); // Remove leading quotation marks if present
+        }
+        return text;
     }
 
     function renderOffice() {
@@ -385,13 +400,13 @@
                         officeHtml += `<span class="rubric-text">Antiphon</span><span class="component-text"><i>${dailyData.antiphon}</i></span>`;
                     }
                     officeHtml += `<span class="rubric-text">${title}</span><span class="component-text">${veniteText}</span>`;
-                    if (dailyData.antiphon) {
-                        officeHtml += `<span class="component-text"><i>${dailyData.antiphon}</i></span>`;
-                    }
+                } else {
+                    officeHtml += `<span class="rubric-text">${title}</span><span class="component-text">Loading...</span>`;
                 }
 
                 officeHtml += '<br>';
                 officeHtml += '<span class="rubric-text" style="border-bottom: 1px dotted var(--gold); height: 1px; margin: 20px 0; display: block;"></span>';
+                officeHtml += '<br><hr style="border: 1px solid var(--gold); margin: 20px 0;">';
 
                 const showAngelus = (officeId === 'morning-office' || officeId === 'noonday-office' || officeId === 'evening-office') && includeAngelus;
                 if (showAngelus) {
@@ -464,12 +479,19 @@
 
             if (item === "VARIABLE_READING_OT") {
                 if (readingOT) {
-                    // Updated regex to handle newline and commas for non-consecutive verses
                     const refMatch = readingOT.match(/^([A-Za-z0-9 ]+\s+\d+:\d+(?:-\d+)?(?:,\s*\d+:\d+(?:-\d+)?)*)/m);
                     const refId = refMatch ? refMatch[1].trim().toUpperCase() : null;
+                    console.log("Extracted OT ref:", refId);
                     const fullText = refId ? getScriptureText(refId) : null;
-                    const displayText = fullText || readingOT;
-                    officeHtml += `<span class="rubric-text">The Old Testament Lesson</span><span class="component-text">${displayText}</span>`;
+                    console.log("Full OT text found?", !!fullText);
+                    const formattedRef = refId ? refId.toLowerCase().replace(/\b\w/g, c => c.toUpperCase()) : null;
+                    let displayText = fullText || 'Ref: ' + readingOT; // Fallback for null
+                    if (fullText) {
+                        const citationRegex = new RegExp(`^${refId.replace(/([:\\-])/g, '\\$1')} `, 'i');
+                        displayText = displayText.replace(citationRegex, '').trim();
+                    }
+                    officeHtml += `<span class="rubric-text">The Old Testament Lesson (${formattedRef})</span><span class="component-text">${displayText}</span>`;
+                    officeHtml += '<br><hr style="border: 1px solid var(--gold); margin: 10px 0;">'; // Separator
                 }
                 return;
             }
@@ -478,9 +500,17 @@
                 if (readingEpistle) {
                     const refMatch = readingEpistle.match(/^([A-Za-z0-9 ]+\s+\d+:\d+(?:-\d+)?(?:,\s*\d+:\d+(?:-\d+)?)*)/m);
                     const refId = refMatch ? refMatch[1].trim().toUpperCase() : null;
+                    console.log("Extracted Epistle ref:", refId);
                     const fullText = refId ? getScriptureText(refId) : null;
-                    const displayText = fullText || readingEpistle;
-                    officeHtml += `<span class="rubric-text">The Epistle</span><span class="component-text">${displayText}</span>`;
+                    console.log("Full Epistle text found?", !!fullText);
+                    const formattedRef = refId ? refId.toLowerCase().replace(/\b\w/g, c => c.toUpperCase()) : null;
+                    let displayText = fullText || 'Ref: ' + readingEpistle; // Fallback for null
+                    if (fullText) {
+                        const citationRegex = new RegExp(`^${refId.replace(/([:\\-])/g, '\\$1')} `, 'i');
+                        displayText = displayText.replace(citationRegex, '').trim();
+                    }
+                    officeHtml += `<span class="rubric-text">The Epistle (${formattedRef})</span><span class="component-text">${displayText}</span>`;
+                    officeHtml += '<br><hr style="border: 1px solid var(--gold); margin: 10px 0;">'; // Separator
                 }
                 return;
             }
@@ -489,78 +519,50 @@
                 if (readingGospel) {
                     const refMatch = readingGospel.match(/^([A-Za-z0-9 ]+\s+\d+:\d+(?:-\d+)?(?:,\s*\d+:\d+(?:-\d+)?)*)/m);
                     const refId = refMatch ? refMatch[1].trim().toUpperCase() : null;
+                    console.log("Extracted Gospel ref:", refId);
                     const fullText = refId ? getScriptureText(refId) : null;
-                    const displayText = fullText || readingGospel;
-                    officeHtml += `<span class="rubric-text">The Holy Gospel</span><span class="component-text">${displayText}</span>`;
+                    console.log("Full Gospel text found?", !!fullText);
+                    const formattedRef = refId ? refId.toLowerCase().replace(/\b\w/g, c => c.toUpperCase()) : null;
+                    let displayText = fullText || 'Ref: ' + readingGospel; // Fallback for null
+                    if (fullText) {
+                        const citationRegex = new RegExp(`^${refId.replace(/([:\\-])/g, '\\$1')} `, 'i');
+                        displayText = displayText.replace(citationRegex, '').trim();
+                    }
+                    officeHtml += `<span class="rubric-text">The Holy Gospel (${formattedRef})</span><span class="component-text">${displayText}</span>`;
+                    officeHtml += '<br><hr style="border: 1px solid var(--gold); margin: 10px 0;">'; // Separator
                 }
                 return;
             }
 
             if (item === "VARIABLE_PSALM") {
-                const psEntry = appData.psalter[dayOfMonth];
-                let rawText = (psEntry && psEntry.text) ? psEntry.text : "No text found for this day.";
+                let psalmRefs = dailyData.psalms.split(', ').map(p => {
+                    p = p.trim().toUpperCase();
+                    if (!p.startsWith('PSALM ')) p = 'PSALM ' + p;
+                    return p;
+                });
                 let psalmHtml = "";
-                let psalmCount = 0;
-                let currentPsalmNum = null;
-                let currentPsalmText = "";
-
-                const lines = rawText.split(/\r?\n/);
-                lines.forEach(line => {
-                    line = line.trim();
-                    if (!line) return;
-
-                    const match = line.match(/^(?:Psalm\s+)?(\d+):(\d+)\s+(.*)/i);
-                    if (match) {
-                        const psalmNum = match[1];
-                        const verseNum = match[2];
-                        const verseText = match[3];
-
-                        if (psalmNum !== currentPsalmNum && currentPsalmNum !== null) {
-                            if (document.getElementById('toggle-gloria-patri')?.checked) {
-                                const gloria = appData.components.find(c => c.id === "bcp-gloria-patri");
-                                let gloriaText = "(Gloria text not found)";
-                                if (gloria && gloria.text) {
-                                    const textObj = gloria.text;
-                                    const selectedRite = rite || 'rite2';
-                                    gloriaText = textObj[selectedRite] || textObj['rite2'] || textObj['rite1'] || "(No Gloria for this rite)";
-                                }
-                                currentPsalmText += `<span class="component-text"><i>${gloriaText}</i></span>`;
+                psalmRefs.forEach(psalmId => {
+                    const fullText = getScriptureText(psalmId);
+                    if (fullText) {
+                        const formattedPsalm = psalmId.replace('PSALM ', 'Psalm ');
+                        psalmHtml += `<h3 class="psalm-header">${formattedPsalm}</h3><span class="component-text">${fullText}</span>`;
+                        if (document.getElementById('toggle-gloria-patri')?.checked) {
+                            const gloria = appData.components.find(c => c.id === "bcp-gloria-patri");
+                            let gloriaText = "(Gloria text not found)";
+                            if (gloria && gloria.text) {
+                                const textObj = gloria.text;
+                                const selectedRite = rite || 'rite2';
+                                gloriaText = textObj[selectedRite] || textObj['rite2'] || textObj['rite1'] || "(No Gloria for this rite)";
                             }
-
-                            psalmHtml += currentPsalmText;
-                            currentPsalmText = "";
-                            psalmCount++;
+                            psalmHtml += `<span class="component-text"><i>${gloriaText}</i></span>`;
                         }
-
-                        if (psalmNum !== currentPsalmNum) {
-                            currentPsalmText += `<h3 class="psalm-header">Psalm ${psalmNum}</h3>`;
-                            currentPsalmNum = psalmNum;
-                        }
-
-                        currentPsalmText += `<span class="psalm-verse"><span class="verse-num">${verseNum}</span>${verseText}</span>`;
                     } else {
-                        currentPsalmText += `<p>${line}</p>`;
+                        psalmHtml += `<p>No text found for ${psalmId}.</p>`;
                     }
                 });
-
-                if (currentPsalmNum !== null) {
-                    if (document.getElementById('toggle-gloria-patri')?.checked) {
-                        const gloria = appData.components.find(c => c.id === "bcp-gloria-patri");
-                        let gloriaText = "(Gloria text not found)";
-                        if (gloria && gloria.text) {
-                            const textObj = gloria.text;
-                            const selectedRite = rite || 'rite2';
-                            gloriaText = textObj[selectedRite] || textObj['rite2'] || textObj['rite1'] || "(No Gloria for this rite)";
-                        }
-                        currentPsalmText += `<span class="component-text"><i>${gloriaText}</i></span>`;
-                    }
-                    psalmHtml += currentPsalmText;
-                    psalmCount++;
-                }
-
                 officeHtml += `<div class="component-text">${psalmHtml}</div>`;
 
-                if ((officeId === 'morning-office' || officeId === 'evening-office') && includeJesusPrayer && psalmCount >= 2) {
+                if ((officeId === 'morning-office' || officeId === 'evening-office') && includeJesusPrayer && psalmRefs.length >= 2) {
                     const jesusPrayer = appData.components.find(c => c.id === "jesus-prayer");
                     if (jesusPrayer) {
                         officeHtml += `<span class="rubric-text">${jesusPrayer.title} (Eastern Orthodox)</span>`;
@@ -572,7 +574,9 @@
             }
 
             if (item === "VARIABLE_COLLECT") {
-                officeHtml += `<span class="rubric-text">The Collect of the Day</span><span class="component-text">${dailyData.collect}</span>`;
+                const collectId = `collect-${todayKey.toLowerCase().replace(/ /g, '-')}`;
+                const collectComp = appData.components.find(c => c.id === collectId);
+                officeHtml += `<span class="rubric-text">The Collect of the Day</span><span class="component-text">${collectComp ? collectComp.text : 'Collect not found'}</span>`;
 
                 if (includeTheotokion) {
                     const theotokion = appData.components.find(c => c.id === "coptic-theotokion");
@@ -638,8 +642,6 @@
             "prayer-for-the-church": "Gracious Father, we pray for thy holy Catholic Church. Fill it with all truth, in all truth with all peace. Where it is corrupt, purify it; where it is in error, direct it; where in any thing it is amiss, reform it. Where it is right, strengthen it; where it is in want, provide for it; where it is divided, reunite it; for the sake of Jesus Christ thy Son our Savior. Amen.",
             "prayer-for-the-world": "Almighty God, from whom all thoughts of truth and peace proceed: Kindle, we pray, in the hearts of all people the true love of peace, and guide with thy pure and peaceable wisdom those who take counsel for the nations of the earth; that in tranquillity thy kingdom may go forward, till the earth is filled with the knowledge of thy love; through Jesus Christ our Lord. Amen."
         };
-
-        const prayerText = prayers[prayerId] || "Prayer text not found. Please add it to the prayers object.";
 
         const dropdown = document.getElementById('prayer-dropdown');
         const selectedOption = dropdown.options[dropdown.selectedIndex];

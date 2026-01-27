@@ -19,9 +19,21 @@
   },
   {
     "day": "January 1",
-    "tradition": "Coptic",
+    "tradition": "Oriental Orthodox",
     "name": "Circumcision of the Lord",
     "description": "Commemoration of Christ's circumcision."
+  },
+  {
+    "day": "January 1",
+    "tradition": "Oriental Orthodox",
+    "name": "St. Basil the Great (Armenian)",
+    "description": "Church father, celebrated in Armenian tradition."
+  },
+  {
+    "day": "January 1",
+    "tradition": "Oriental Orthodox",
+    "name": "Circumcision of the Lord (Ethiopian)",
+    "description": "Commemoration of Christ's circumcision in Ethiopian calendar."
   },
   {
     "day": "January 1",
@@ -49,9 +61,15 @@
   },
   {
     "day": "January 2",
-    "tradition": "Coptic",
+    "tradition": "Oriental Orthodox",
     "name": "St. Abraam the Bishop",
     "description": "Bishop known for charity and miracles."
+  },
+  {
+    "day": "January 2",
+    "tradition": "Oriental Orthodox",
+    "name": "St. Abraam the Bishop (Syrian Jacobite)",
+    "description": "Bishop known for charity, shared in Syrian tradition."
   },
   {
     "day": "January 2",
@@ -79,9 +97,15 @@
   },
   {
     "day": "January 18",
-    "tradition": "Coptic",
+    "tradition": "Oriental Orthodox",
     "name": "St. Bashnouna",
     "description": "Monk and martyr."
+  },
+  {
+    "day": "January 18",
+    "tradition": "Oriental Orthodox",
+    "name": "St. Bashnouna (Armenian)",
+    "description": "Monk and martyr, venerated in Armenian branch."
   },
   {
     "day": "January 18",
@@ -109,9 +133,15 @@
   },
   {
     "day": "January 19",
-    "tradition": "Coptic",
+    "tradition": "Oriental Orthodox",
     "name": "St. Mark of Ephesus",
     "description": "Defender of Orthodoxy (shared with Eastern)."
+  },
+  {
+    "day": "January 19",
+    "tradition": "Oriental Orthodox",
+    "name": "St. Mark of Ephesus (Ethiopian)",
+    "description": "Defender of Orthodoxy, shared in Ethiopian tradition."
   },
   {
     "day": "January 19",
@@ -120,40 +150,166 @@
     "description": "Bishop and confessor."
   },
   {
+    "day": "January 23",
+    "tradition": "Anglican / Episcopal",
+    "name": "Phillips Brooks, Bishop of Massachusetts",
+    "description": "Phillips Brooks (1835–1893) was an American Episcopal clergyman and bishop. He is best known for writing the Christmas carol 'O Little Town of Bethlehem' and for his eloquent preaching."
+  },
+  {
+    "day": "January 23",
+    "tradition": "Catholic",
+    "name": "St. John the Almsgiver",
+    "description": "Patriarch of Alexandria, renowned for charity to the poor."
+  },
+  {
+    "day": "January 23",
+    "tradition": "Orthodox",
+    "name": "St. Clement of Ancyra",
+    "description": "Hieromartyr and bishop, endured torture for the faith."
+  },
+  {
+    "day": "January 23",
+    "tradition": "Oriental Orthodox",
+    "name": "St. Demiana",
+    "description": "Virgin martyr, dedicated to Christ from youth."
+  },
+  {
+    "day": "January 23",
+    "tradition": "Oriental Orthodox",
+    "name": "St. Demiana (Syrian Jacobite)",
+    "description": "Virgin martyr in Syrian tradition."
+  },
+  {
+    "day": "January 23",
+    "tradition": "ChurchOfEast",
+    "name": "Rogation of the Ninevites",
+    "description": "Fasting period commemorating Jonah's preaching to Nineveh."
+  },
+  {
+    "day": "January 24",
+    "tradition": "Anglican / Episcopal",
+    "name": "Florence Li Tim-Oi",
+    "description": "Florence Li Tim-Oi (1907–1992) was the first woman to be ordained to the priesthood in the Anglican Communion on January 25, 1944, during World War II. She is commemorated on January 24 in some calendars. Known for her courage and dedication to ministry under difficult circumstances, she served in China and Canada. She is remembered for breaking barriers in the church and for her faithful service."
+  },
+  {
+    "day": "January 24",
+    "tradition": "Catholic",
+    "name": "St. Francis de Sales",
+    "description": "Doctor of the Church, known for gentle evangelism."
+  },
+  {
+    "day": "January 24",
+    "tradition": "Orthodox",
+    "name": "St. Xenia of Rome",
+    "description": "Virgin and deaconess, fled to live ascetically."
+  },
+  {
+    "day": "January 24",
+    "tradition": "Oriental Orthodox",
+    "name": "St. Maximus and St. Domatius",
+    "description": "Martyrs and brothers, known for ascetic life."
+  },
+  {
+    "day": "January 24",
+    "tradition": "Oriental Orthodox",
+    "name": "St. Maximus and St. Domatius (Armenian)",
+    "description": "Martyrs and brothers in Armenian tradition."
+  },
+  {
+    "day": "January 24",
+    "tradition": "ChurchOfEast",
+    "name": "Rogation of the Ninevites",
+    "description": "Continued fasting in preparation for repentance."
+  },
+  {
+    "day": "January 25",
+    "tradition": "Anglican",
+    "name": "The Conversion of Saint Paul the Apostle",
+    "description": "Paul's dramatic encounter with Christ on the road to Damascus, leading to his transformation from persecutor to apostle to the Gentiles."
+  },
+  {
+    "day": "January 25",
+    "tradition": "Catholic",
+    "name": "Conversion of St. Paul",
+    "description": "Paul's transformation on the road to Damascus."
+  },
+  {
+    "day": "January 25",
+    "tradition": "Orthodox",
+    "name": "St. Gregory the Theologian",
+    "description": "Church father, archbishop of Constantinople."
+  },
+  {
+    "day": "January 25",
+    "tradition": "Oriental Orthodox",
+    "name": "St. Abraam the Bishop",
+    "description": "Bishop known for charity and miracles."
+  },
+  {
+    "day": "January 25",
+    "tradition": "Oriental Orthodox",
+    "name": "St. Abraam the Bishop (Ethiopian)",
+    "description": "Bishop known for charity in Ethiopian tradition."
+  },
+  {
+    "day": "January 25",
+    "tradition": "ChurchOfEast",
+    "name": "St. Mar Babai the Great",
+    "description": "Theologian and monk, defended the faith."
+  },
+  {
     "day": "February 2",
     "tradition": "Anglican",
     "name": "Presentation of Our Lord",
     "description": "Jesus presented in the temple."
   },
   {
-    "day": "July 6",
-    "tradition": "Coptic",
-    "name": "Abouna Mina Aboud",
-    "description": "Coptic priest martyred on July 6, 2013, by extremists while serving his community in El Arish, Egypt. Known for his dedication to youth ministry and charity."
-  },
-  {
-    "day": "January 1",
-    "tradition": "Anglican",
-    "name": "Holy Name of Our Lord Jesus Christ",
-    "description": "Feast of the Circumcision and Naming of Jesus."
-  },
-  {
-    "day": "January 18",
-    "tradition": "Anglican",
-    "name": "Confession of St. Peter",
-    "description": "Apostle, martyr, and first bishop of Rome."
-  },
-  {
-    "day": "January 19",
-    "tradition": "Anglican",
-    "name": "Wulfstan, Bishop of Worcester",
-    "description": "Pre-Schism bishop known for pastoral care (kept as holiness-focused)."
+    "day": "February 2",
+    "tradition": "Catholic",
+    "name": "Presentation of the Lord",
+    "description": "Jesus presented in the temple, also called Candlemas."
   },
   {
     "day": "February 2",
-    "tradition": "Anglican",
-    "name": "Presentation of Our Lord",
-    "description": "Jesus presented in the temple."
+    "tradition": "Catholic",
+    "name": "St. Joan de Lestonnac",
+    "description": "Founder of religious order, devoted to education."
+  },
+  {
+    "day": "February 2",
+    "tradition": "Orthodox",
+    "name": "Meeting of the Lord",
+    "description": "Christ's presentation in the temple, with Simeon's prophecy."
+  },
+  {
+    "day": "February 2",
+    "tradition": "Orthodox",
+    "name": "St. Theodosius of Chernigov",
+    "description": "Archbishop and wonderworker."
+  },
+  {
+    "day": "February 2",
+    "tradition": "Oriental Orthodox",
+    "name": "Entry of Christ into the Temple",
+    "description": "Commemoration of Christ's presentation."
+  },
+  {
+    "day": "February 2",
+    "tradition": "Oriental Orthodox",
+    "name": "St. Longinus the Soldier",
+    "description": "Centurion at the crucifixion, converted martyr."
+  },
+  {
+    "day": "February 2",
+    "tradition": "ChurchOfEast",
+    "name": "Presentation of Christ in the Temple",
+    "description": "Feast of Christ's presentation and purification of Mary."
+  },
+  {
+    "day": "February 2",
+    "tradition": "ChurchOfEast",
+    "name": "St. Simeon the Elder",
+    "description": "Righteous elder who received Christ in the temple."
   },
   {
     "day": "February 14",
@@ -162,10 +318,106 @@
     "description": "Missionaries to the Slavs, pre-Schism."
   },
   {
+    "day": "February 14",
+    "tradition": "Catholic",
+    "name": "Sts. Cyril and Methodius",
+    "description": "Brothers and missionaries to the Slavs, co-patrons of Europe."
+  },
+  {
+    "day": "February 14",
+    "tradition": "Catholic",
+    "name": "St. Valentine",
+    "description": "Martyr and patron of love, associated with charitable acts."
+  },
+  {
+    "day": "February 14",
+    "tradition": "Orthodox",
+    "name": "St. Auxentius of Bithynia",
+    "description": "Hermit and defender of Orthodoxy, lived in solitude."
+  },
+  {
+    "day": "February 14",
+    "tradition": "Orthodox",
+    "name": "St. Maron",
+    "description": "Hermit and founder of Maronite tradition."
+  },
+  {
+    "day": "February 14",
+    "tradition": "Oriental Orthodox",
+    "name": "St. Abraham the Hermit",
+    "description": "Ascetic and disciple of St. Pachomius, known for humility."
+  },
+  {
+    "day": "February 14",
+    "tradition": "Oriental Orthodox",
+    "name": "St. Abraham of Carrhae",
+    "description": "Bishop and hermit in Syrian tradition."
+  },
+  {
+    "day": "February 14",
+    "tradition": "ChurchOfEast",
+    "name": "St. Maron of Syria",
+    "description": "Hermit and founder of the Maronite tradition."
+  },
+  {
+    "day": "February 14",
+    "tradition": "ChurchOfEast",
+    "name": "St. Abraham of Carrhae",
+    "description": "Bishop and hermit, known for ascetic life."
+  },
+  {
     "day": "March 17",
     "tradition": "Anglican",
     "name": "St. Patrick, Bishop and Missionary of Ireland",
     "description": "Pre-Schism apostle to Ireland."
+  },
+  {
+    "day": "March 17",
+    "tradition": "Catholic",
+    "name": "St. Patrick",
+    "description": "Missionary bishop, patron of Ireland."
+  },
+  {
+    "day": "March 17",
+    "tradition": "Catholic",
+    "name": "St. Gertrude of Nivelles",
+    "description": "Abbess, known for hospitality and visions."
+  },
+  {
+    "day": "March 17",
+    "tradition": "Orthodox",
+    "name": "St. Alexius the Man of God",
+    "description": "Ascetic who lived in anonymity as a beggar."
+  },
+  {
+    "day": "March 17",
+    "tradition": "Orthodox",
+    "name": "St. Theoctistus the Confessor",
+    "description": "Monk and defender against iconoclasm."
+  },
+  {
+    "day": "March 17",
+    "tradition": "Oriental Orthodox",
+    "name": "St. Patricius",
+    "description": "Bishop and apostle to Ireland (same as St. Patrick)."
+  },
+  {
+    "day": "March 17",
+    "tradition": "Oriental Orthodox",
+    "name": "St. Lul the Monk",
+    "description": "Martyr in Syrian tradition."
+  },
+  {
+    "day": "March 17",
+    "tradition": "ChurchOfEast",
+    "name": "St. Gertrude of Nivelles",
+    "description": "Abbess and patroness of travelers."
+  },
+  {
+    "day": "March 17",
+    "tradition": "ChurchOfEast",
+    "name": "St. Joseph of Arimathea",
+    "description": "Disciple who buried Christ (date varies)."
   },
   {
     "day": "March 19",
@@ -174,10 +426,106 @@
     "description": "Spouse of the Blessed Virgin Mary."
   },
   {
+    "day": "March 19",
+    "tradition": "Catholic",
+    "name": "St. Joseph",
+    "description": "Spouse of the Blessed Virgin Mary, patron of workers."
+  },
+  {
+    "day": "March 19",
+    "tradition": "Catholic",
+    "name": "St. Quinctus the Wonderworker",
+    "description": "Martyr and healer."
+  },
+  {
+    "day": "March 19",
+    "tradition": "Orthodox",
+    "name": "Martyrs Chrysanthus and Daria",
+    "description": "Husband and wife martyrs in Rome."
+  },
+  {
+    "day": "March 19",
+    "tradition": "Orthodox",
+    "name": "St. Innocent of Alaska",
+    "description": "Missionary bishop to America."
+  },
+  {
+    "day": "March 19",
+    "tradition": "Oriental Orthodox",
+    "name": "St. Joseph the Carpenter",
+    "description": "Guardian of Jesus and spouse of Mary."
+  },
+  {
+    "day": "March 19",
+    "tradition": "Oriental Orthodox",
+    "name": "St. Joseph (Armenian)",
+    "description": "Spouse of Mary, venerated in Armenian tradition."
+  },
+  {
+    "day": "March 19",
+    "tradition": "ChurchOfEast",
+    "name": "St. Joseph",
+    "description": "Guardian of Jesus."
+  },
+  {
+    "day": "March 19",
+    "tradition": "ChurchOfEast",
+    "name": "St. Abdisho",
+    "description": "Martyr and bishop."
+  },
+  {
     "day": "March 25",
     "tradition": "Anglican",
     "name": "Annunciation of Our Lord to the Blessed Virgin Mary",
     "description": "Gabriel's announcement to Mary."
+  },
+  {
+    "day": "March 25",
+    "tradition": "Catholic",
+    "name": "Annunciation of the Lord",
+    "description": "Gabriel's announcement to Mary, incarnation of Christ."
+  },
+  {
+    "day": "March 25",
+    "tradition": "Catholic",
+    "name": "St. Dismas",
+    "description": "The good thief crucified with Christ."
+  },
+  {
+    "day": "March 25",
+    "tradition": "Orthodox",
+    "name": "Annunciation of the Theotokos",
+    "description": "Gabriel's announcement to the Virgin Mary."
+  },
+  {
+    "day": "March 25",
+    "tradition": "Orthodox",
+    "name": "St. Tikhon of Moscow",
+    "description": "Patriarch during revolution, confessor."
+  },
+  {
+    "day": "March 25",
+    "tradition": "Oriental Orthodox",
+    "name": "Annunciation",
+    "description": "Gabriel's announcement to Mary."
+  },
+  {
+    "day": "March 25",
+    "tradition": "Oriental Orthodox",
+    "name": "St. Dismas the Good Thief (Syrian Jacobite)",
+    "description": "Repentant thief on the cross."
+  },
+  {
+    "day": "March 25",
+    "tradition": "ChurchOfEast",
+    "name": "Annunciation to the Blessed Virgin Mary",
+    "description": "Gabriel's announcement, start of incarnation."
+  },
+  {
+    "day": "March 25",
+    "tradition": "ChurchOfEast",
+    "name": "St. Mari the Bishop",
+    "description": "Early bishop and disciple of Addai."
   },
   {
     "day": "April 25",
@@ -186,10 +534,106 @@
     "description": "Apostle and author of the Gospel."
   },
   {
+    "day": "April 25",
+    "tradition": "Catholic",
+    "name": "St. Mark the Evangelist",
+    "description": "Apostle and author of the Gospel, patron of Venice."
+  },
+  {
+    "day": "April 25",
+    "tradition": "Catholic",
+    "name": "St. Franca Visalta",
+    "description": "Abbess and mystic."
+  },
+  {
+    "day": "April 25",
+    "tradition": "Orthodox",
+    "name": "St. Mark the Evangelist",
+    "description": "Apostle and author of the Gospel."
+  },
+  {
+    "day": "April 25",
+    "tradition": "Orthodox",
+    "name": "St. Sylvester of Obnora",
+    "description": "Hermit and wonderworker."
+  },
+  {
+    "day": "April 25",
+    "tradition": "Oriental Orthodox",
+    "name": "St. Mark the Evangelist",
+    "description": "Founder of the Coptic Church, martyr."
+  },
+  {
+    "day": "April 25",
+    "tradition": "Oriental Orthodox",
+    "name": "St. Mark the Evangelist (Ethiopian)",
+    "description": "Apostle and evangelist in Ethiopian tradition."
+  },
+  {
+    "day": "April 25",
+    "tradition": "ChurchOfEast",
+    "name": "St. Mark the Evangelist",
+    "description": "Apostle and author of the Gospel."
+  },
+  {
+    "day": "April 25",
+    "tradition": "ChurchOfEast",
+    "name": "St. Milius",
+    "description": "Martyr in Persia."
+  },
+  {
     "day": "May 1",
     "tradition": "Anglican",
     "name": "St. Philip and St. James, Apostles",
     "description": "Apostles and martyrs."
+  },
+  {
+    "day": "May 1",
+    "tradition": "Catholic",
+    "name": "St. Joseph the Worker",
+    "description": "Patron of workers, spouse of Mary."
+  },
+  {
+    "day": "May 1",
+    "tradition": "Catholic",
+    "name": "St. Jeremiah the Prophet",
+    "description": "Old Testament prophet (shared with Orthodox)."
+  },
+  {
+    "day": "May 1",
+    "tradition": "Orthodox",
+    "name": "St. Jeremiah the Prophet",
+    "description": "Prophet known for lamentations."
+  },
+  {
+    "day": "May 1",
+    "tradition": "Orthodox",
+    "name": "St. Paphnutius of Egypt",
+    "description": "Monk and confessor."
+  },
+  {
+    "day": "May 1",
+    "tradition": "Oriental Orthodox",
+    "name": "St. George",
+    "description": "Prince of martyrs, soldier saint."
+  },
+  {
+    "day": "May 1",
+    "tradition": "Oriental Orthodox",
+    "name": "St. Jeremiah the Prophet (Armenian)",
+    "description": "Prophet in Armenian tradition."
+  },
+  {
+    "day": "May 1",
+    "tradition": "ChurchOfEast",
+    "name": "St. Jeremiah the Prophet",
+    "description": "Old Testament prophet."
+  },
+  {
+    "day": "May 1",
+    "tradition": "ChurchOfEast",
+    "name": "St. Addai the Apostle",
+    "description": "Apostle to Edessa."
   },
   {
     "day": "May 31",
@@ -198,10 +642,106 @@
     "description": "Mary visits Elizabeth."
   },
   {
+    "day": "May 31",
+    "tradition": "Catholic",
+    "name": "Visitation of the Blessed Virgin Mary",
+    "description": "Mary's visit to Elizabeth, Magnificat."
+  },
+  {
+    "day": "May 31",
+    "tradition": "Catholic",
+    "name": "St. Petronilla",
+    "description": "Virgin martyr."
+  },
+  {
+    "day": "May 31",
+    "tradition": "Orthodox",
+    "name": "St. Hermias of Comana",
+    "description": "Martyr in Cappadocia."
+  },
+  {
+    "day": "May 31",
+    "tradition": "Orthodox",
+    "name": "St. Eustathius of Constantinople",
+    "description": "Patriarch and confessor."
+  },
+  {
+    "day": "May 31",
+    "tradition": "Oriental Orthodox",
+    "name": "St. Colluthus of Antinoe",
+    "description": "Martyr and physician."
+  },
+  {
+    "day": "May 31",
+    "tradition": "Oriental Orthodox",
+    "name": "St. Coluthus of Antinoe (Syrian Jacobite)",
+    "description": "Martyr in Syrian tradition."
+  },
+  {
+    "day": "May 31",
+    "tradition": "ChurchOfEast",
+    "name": "St. Hermias",
+    "description": "Martyr."
+  },
+  {
+    "day": "May 31",
+    "tradition": "ChurchOfEast",
+    "name": "St. Ahudemmeh",
+    "description": "Bishop and missionary to Arabs."
+  },
+  {
     "day": "June 11",
     "tradition": "Anglican",
     "name": "St. Barnabas the Apostle",
     "description": "Companion of St. Paul."
+  },
+  {
+    "day": "June 11",
+    "tradition": "Catholic",
+    "name": "St. Barnabas the Apostle",
+    "description": "Missionary companion of Paul."
+  },
+  {
+    "day": "June 11",
+    "tradition": "Catholic",
+    "name": "St. Rembert of Hamburg",
+    "description": "Archbishop and missionary (date varies)."
+  },
+  {
+    "day": "June 11",
+    "tradition": "Orthodox",
+    "name": "St. Barnabas the Apostle",
+    "description": "Apostle and companion of Paul."
+  },
+  {
+    "day": "June 11",
+    "tradition": "Orthodox",
+    "name": "St. Bartholomew of Rossano",
+    "description": "Abbot and hymnographer."
+  },
+  {
+    "day": "June 11",
+    "tradition": "Oriental Orthodox",
+    "name": "St. Shenousi",
+    "description": "Martyr."
+  },
+  {
+    "day": "June 11",
+    "tradition": "Oriental Orthodox",
+    "name": "St. Shenousi (Ethiopian)",
+    "description": "Martyr in Ethiopian tradition."
+  },
+  {
+    "day": "June 11",
+    "tradition": "ChurchOfEast",
+    "name": "St. Barnabas the Apostle",
+    "description": "Apostle and companion of Paul."
+  },
+  {
+    "day": "June 11",
+    "tradition": "ChurchOfEast",
+    "name": "St. Mari the Persian",
+    "description": "Martyr under Sapor II."
   },
   {
     "day": "June 24",
@@ -210,10 +750,142 @@
     "description": "Precursor to Christ."
   },
   {
+    "day": "June 24",
+    "tradition": "Catholic",
+    "name": "Nativity of St. John the Baptist",
+    "description": "Birth of the precursor to Christ."
+  },
+  {
+    "day": "June 24",
+    "tradition": "Catholic",
+    "name": "St. John of Tuy",
+    "description": "Hermit and confessor."
+  },
+  {
+    "day": "June 24",
+    "tradition": "Orthodox",
+    "name": "Nativity of St. John the Baptist",
+    "description": "Birth of the forerunner."
+  },
+  {
+    "day": "June 24",
+    "tradition": "Orthodox",
+    "name": "St. Athanasius of Paros",
+    "description": "Theologian and defender against modernism."
+  },
+  {
+    "day": "June 24",
+    "tradition": "Oriental Orthodox",
+    "name": "Nativity of St. John the Baptist",
+    "description": "Birth of the forerunner."
+  },
+  {
+    "day": "June 24",
+    "tradition": "Oriental Orthodox",
+    "name": "St. Tekle Haymanot (Ethiopian)",
+    "description": "Monk and founder, known for miracles (date varies)."
+  },
+  {
+    "day": "June 24",
+    "tradition": "ChurchOfEast",
+    "name": "Nativity of St. John the Baptist",
+    "description": "Birth of the precursor."
+  },
+  {
+    "day": "June 24",
+    "tradition": "ChurchOfEast",
+    "name": "St. George of Iraq",
+    "description": "Martyr."
+  },
+  {
     "day": "June 29",
     "tradition": "Anglican",
     "name": "St. Peter and St. Paul, Apostles",
     "description": "Martyrs and pillars of the Church."
+  },
+  {
+    "day": "June 29",
+    "tradition": "Catholic",
+    "name": "Sts. Peter and Paul",
+    "description": "Apostles and martyrs, pillars of the Church."
+  },
+  {
+    "day": "June 29",
+    "tradition": "Catholic",
+    "name": "St. Emma",
+    "description": "Widow and benefactress."
+  },
+  {
+    "day": "June 29",
+    "tradition": "Orthodox",
+    "name": "Sts. Peter and Paul",
+    "description": "Chief apostles and martyrs."
+  },
+  {
+    "day": "June 29",
+    "tradition": "Orthodox",
+    "name": "St. Joanna the Myrrhbearer",
+    "description": "Disciple of Christ."
+  },
+  {
+    "day": "June 29",
+    "tradition": "Oriental Orthodox",
+    "name": "Sts. Peter and Paul",
+    "description": "Apostles and martyrs."
+  },
+  {
+    "day": "June 29",
+    "tradition": "Oriental Orthodox",
+    "name": "Sts. Peter and Paul (Armenian)",
+    "description": "Apostles in Armenian tradition."
+  },
+  {
+    "day": "June 29",
+    "tradition": "ChurchOfEast",
+    "name": "Sts. Peter and Paul",
+    "description": "Apostles and pillars of the Church."
+  },
+  {
+    "day": "June 29",
+    "tradition": "ChurchOfEast",
+    "name": "St. Mari of Qardu",
+    "description": "Martyr."
+  },
+  {
+    "day": "July 6",
+    "tradition": "Oriental Orthodox",
+    "name": "Abouna Mina Aboud",
+    "description": "Coptic priest martyred on July 6, 2013, by extremists while serving his community in El Arish, Egypt. Known for his dedication to youth ministry and charity."
+  },
+  {
+    "day": "July 6",
+    "tradition": "Anglican",
+    "name": "St. Thomas More",
+    "description": "Martyr and chancellor, known for conscience."
+  },
+  {
+    "day": "July 6",
+    "tradition": "Catholic",
+    "name": "St. Maria Goretti",
+    "description": "Virgin martyr, patron of youth."
+  },
+  {
+    "day": "July 6",
+    "tradition": "Orthodox",
+    "name": "St. Sisoes the Great",
+    "description": "Desert father and ascetic."
+  },
+  {
+    "day": "July 6",
+    "tradition": "Oriental Orthodox",
+    "name": "St. Thomas of Maleon (Syrian Jacobite)",
+    "description": "Hermit and wonderworker."
+  },
+  {
+    "day": "July 6",
+    "tradition": "ChurchOfEast",
+    "name": "St. Isaiah the Prophet",
+    "description": "Old Testament prophet."
   },
   {
     "day": "July 22",
@@ -222,10 +894,106 @@
     "description": "Apostle to the Apostles."
   },
   {
+    "day": "July 22",
+    "tradition": "Catholic",
+    "name": "St. Mary Magdalene",
+    "description": "Disciple and witness to the Resurrection."
+  },
+  {
+    "day": "July 22",
+    "tradition": "Catholic",
+    "name": "St. Bridget of Sweden",
+    "description": "Mystic and founder (date varies)."
+  },
+  {
+    "day": "July 22",
+    "tradition": "Orthodox",
+    "name": "St. Mary Magdalene",
+    "description": "Myrrhbearer and equal-to-the-apostles."
+  },
+  {
+    "day": "July 22",
+    "tradition": "Orthodox",
+    "name": "St. Marcella of Chios",
+    "description": "Virgin martyr."
+  },
+  {
+    "day": "July 22",
+    "tradition": "Oriental Orthodox",
+    "name": "St. Mary Magdalene",
+    "description": "Witness to the Resurrection."
+  },
+  {
+    "day": "July 22",
+    "tradition": "Oriental Orthodox",
+    "name": "St. Joseph of Palestine (Armenian)",
+    "description": "Confessor and count."
+  },
+  {
+    "day": "July 22",
+    "tradition": "ChurchOfEast",
+    "name": "St. Mary Magdalene",
+    "description": "Disciple and witness to Christ."
+  },
+  {
+    "day": "July 22",
+    "tradition": "ChurchOfEast",
+    "name": "St. Patiens of Metz",
+    "description": "Bishop and confessor."
+  },
+  {
     "day": "July 25",
     "tradition": "Anglican",
     "name": "St. James the Apostle",
     "description": "Martyr and brother of John."
+  },
+  {
+    "day": "July 25",
+    "tradition": "Catholic",
+    "name": "St. James the Apostle",
+    "description": "Apostle and martyr, patron of pilgrims."
+  },
+  {
+    "day": "July 25",
+    "tradition": "Catholic",
+    "name": "St. Christopher",
+    "description": "Martyr and patron of travelers."
+  },
+  {
+    "day": "July 25",
+    "tradition": "Orthodox",
+    "name": "Dormition of St. Anna",
+    "description": "Mother of the Theotokos."
+  },
+  {
+    "day": "July 25",
+    "tradition": "Orthodox",
+    "name": "St. Olympias the Deaconess",
+    "description": "Friend of St. John Chrysostom."
+  },
+  {
+    "day": "July 25",
+    "tradition": "Oriental Orthodox",
+    "name": "St. Maximus and St. Domatius",
+    "description": "Martyrs and brothers."
+  },
+  {
+    "day": "July 25",
+    "tradition": "Oriental Orthodox",
+    "name": "St. James the Apostle (Ethiopian)",
+    "description": "Apostle and martyr in Ethiopian tradition."
+  },
+  {
+    "day": "July 25",
+    "tradition": "ChurchOfEast",
+    "name": "St. James the Apostle",
+    "description": "Apostle and martyr."
+  },
+  {
+    "day": "July 25",
+    "tradition": "ChurchOfEast",
+    "name": "St. Narsai the Doctor",
+    "description": "Theologian and poet."
   },
   {
     "day": "August 6",
@@ -234,10 +1002,106 @@
     "description": "Christ's glory revealed."
   },
   {
+    "day": "August 6",
+    "tradition": "Catholic",
+    "name": "Transfiguration of the Lord",
+    "description": "Revelation of Christ's divine glory."
+  },
+  {
+    "day": "August 6",
+    "tradition": "Catholic",
+    "name": "St. Hormisdas",
+    "description": "Pope and peacemaker."
+  },
+  {
+    "day": "August 6",
+    "tradition": "Orthodox",
+    "name": "Transfiguration of the Lord",
+    "description": "Christ's transfiguration on Mount Tabor."
+  },
+  {
+    "day": "August 6",
+    "tradition": "Orthodox",
+    "name": "St. Dometius the Martyr",
+    "description": "Persian martyr."
+  },
+  {
+    "day": "August 6",
+    "tradition": "Oriental Orthodox",
+    "name": "Transfiguration of the Lord",
+    "description": "Christ's glory revealed to apostles."
+  },
+  {
+    "day": "August 6",
+    "tradition": "Oriental Orthodox",
+    "name": "St. Afra (Syrian Jacobite)",
+    "description": "Martyr in Augsburg."
+  },
+  {
+    "day": "August 6",
+    "tradition": "ChurchOfEast",
+    "name": "Transfiguration of Christ",
+    "description": "Revelation of Christ's divinity."
+  },
+  {
+    "day": "August 6",
+    "tradition": "ChurchOfEast",
+    "name": "St. Hardut",
+    "description": "Martyr."
+  },
+  {
     "day": "August 15",
     "tradition": "Anglican",
     "name": "St. Mary the Virgin, Mother of Our Lord Jesus Christ",
     "description": "Theotokos."
+  },
+  {
+    "day": "August 15",
+    "tradition": "Catholic",
+    "name": "Assumption of the Blessed Virgin Mary",
+    "description": "Mary assumed into heaven."
+  },
+  {
+    "day": "August 15",
+    "tradition": "Catholic",
+    "name": "St. Tarcisius",
+    "description": "Martyr and acolyte."
+  },
+  {
+    "day": "August 15",
+    "tradition": "Orthodox",
+    "name": "Dormition of the Theotokos",
+    "description": "Falling asleep of the Virgin Mary."
+  },
+  {
+    "day": "August 15",
+    "tradition": "Orthodox",
+    "name": "St. Macarius the Roman",
+    "description": "Ascetic and wonderworker."
+  },
+  {
+    "day": "August 15",
+    "tradition": "Oriental Orthodox",
+    "name": "Assumption of the Virgin Mary",
+    "description": "Mary's body taken to heaven."
+  },
+  {
+    "day": "August 15",
+    "tradition": "Oriental Orthodox",
+    "name": "St. Mary the Virgin (Armenian)",
+    "description": "Feast of the Assumption in Armenian tradition."
+  },
+  {
+    "day": "August 15",
+    "tradition": "ChurchOfEast",
+    "name": "Dormition of the Mother of God",
+    "description": "Falling asleep of Mary."
+  },
+  {
+    "day": "August 15",
+    "tradition": "ChurchOfEast",
+    "name": "St. Shamuni and Sons",
+    "description": "Martyrs from Maccabees."
   },
   {
     "day": "August 24",
@@ -246,10 +1110,106 @@
     "description": "Martyr."
   },
   {
+    "day": "August 24",
+    "tradition": "Catholic",
+    "name": "St. Bartholomew the Apostle",
+    "description": "Apostle and martyr."
+  },
+  {
+    "day": "August 24",
+    "tradition": "Catholic",
+    "name": "St. Emily de Vialar",
+    "description": "Founder of religious order."
+  },
+  {
+    "day": "August 24",
+    "tradition": "Orthodox",
+    "name": "St. Eutychius",
+    "description": "Hieromartyr and disciple of John."
+  },
+  {
+    "day": "August 24",
+    "tradition": "Orthodox",
+    "name": "St. Tation",
+    "description": "Martyr."
+  },
+  {
+    "day": "August 24",
+    "tradition": "Oriental Orthodox",
+    "name": "St. Verena",
+    "description": "Virgin and healer."
+  },
+  {
+    "day": "August 24",
+    "tradition": "Oriental Orthodox",
+    "name": "St. Verena (Syrian Jacobite)",
+    "description": "Virgin and healer in Syrian tradition."
+  },
+  {
+    "day": "August 24",
+    "tradition": "ChurchOfEast",
+    "name": "St. Bartholomew the Apostle",
+    "description": "Apostle and martyr."
+  },
+  {
+    "day": "August 24",
+    "tradition": "ChurchOfEast",
+    "name": "St. Ya'qub of Nisibis",
+    "description": "Bishop and confessor."
+  },
+  {
     "day": "September 14",
     "tradition": "Anglican",
     "name": "Holy Cross Day",
     "description": "Exaltation of the Holy Cross."
+  },
+  {
+    "day": "September 14",
+    "tradition": "Catholic",
+    "name": "Exaltation of the Holy Cross",
+    "description": "Commemoration of the True Cross."
+  },
+  {
+    "day": "September 14",
+    "tradition": "Catholic",
+    "name": "St. Notburga",
+    "description": "Patron of servants."
+  },
+  {
+    "day": "September 14",
+    "tradition": "Orthodox",
+    "name": "Exaltation of the Holy Cross",
+    "description": "Elevation of the Life-Giving Cross."
+  },
+  {
+    "day": "September 14",
+    "tradition": "Orthodox",
+    "name": "St. Placide",
+    "description": "Disciple of St. Benedict."
+  },
+  {
+    "day": "September 14",
+    "tradition": "Oriental Orthodox",
+    "name": "Feast of the Cross",
+    "description": "Commemoration of the Holy Cross."
+  },
+  {
+    "day": "September 14",
+    "tradition": "Oriental Orthodox",
+    "name": "St. Placide (Armenian)",
+    "description": "Disciple of St. Benedict in Armenian tradition."
+  },
+  {
+    "day": "September 14",
+    "tradition": "ChurchOfEast",
+    "name": "Exaltation of the Holy Cross",
+    "description": "Feast of the Holy Cross."
+  },
+  {
+    "day": "September 14",
+    "tradition": "ChurchOfEast",
+    "name": "St. Cyprian of Carthage",
+    "description": "Bishop and martyr (shared with others)."
   },
   {
     "day": "September 21",
@@ -258,10 +1218,106 @@
     "description": "Tax collector turned apostle."
   },
   {
+    "day": "September 21",
+    "tradition": "Catholic",
+    "name": "St. Matthew the Apostle",
+    "description": "Apostle and evangelist."
+  },
+  {
+    "day": "September 21",
+    "tradition": "Catholic",
+    "name": "St. Maura of Troyes",
+    "description": "Virgin."
+  },
+  {
+    "day": "September 21",
+    "tradition": "Orthodox",
+    "name": "St. Quadratus of the Seventy",
+    "description": "Apostle and bishop."
+  },
+  {
+    "day": "September 21",
+    "tradition": "Orthodox",
+    "name": "St. Jonah the Prophet",
+    "description": "Old Testament prophet."
+  },
+  {
+    "day": "September 21",
+    "tradition": "Oriental Orthodox",
+    "name": "St. Quadratus",
+    "description": "Apostle."
+  },
+  {
+    "day": "September 21",
+    "tradition": "Oriental Orthodox",
+    "name": "St. Jonah the Prophet (Ethiopian)",
+    "description": "Prophet to Nineveh in Ethiopian tradition."
+  },
+  {
+    "day": "September 21",
+    "tradition": "ChurchOfEast",
+    "name": "St. Matthew the Apostle",
+    "description": "Apostle and evangelist."
+  },
+  {
+    "day": "September 21",
+    "tradition": "ChurchOfEast",
+    "name": "St. Jonah the Prophet",
+    "description": "Prophet to Nineveh."
+  },
+  {
     "day": "September 29",
     "tradition": "Anglican",
     "name": "St. Michael and All Angels",
     "description": "Michaelmas."
+  },
+  {
+    "day": "September 29",
+    "tradition": "Catholic",
+    "name": "Sts. Michael, Gabriel, Raphael",
+    "description": "Archangels."
+  },
+  {
+    "day": "September 29",
+    "tradition": "Catholic",
+    "name": "St. Dedier",
+    "description": "Bishop and martyr."
+  },
+  {
+    "day": "September 29",
+    "tradition": "Orthodox",
+    "name": "St. Kyriakos the Hermit",
+    "description": "Ascetic and anchorite."
+  },
+  {
+    "day": "September 29",
+    "tradition": "Orthodox",
+    "name": "St. Chariton the Confessor",
+    "description": "Abbot and founder of monasteries."
+  },
+  {
+    "day": "September 29",
+    "tradition": "Oriental Orthodox",
+    "name": "St. Verena",
+    "description": "Virgin and healer (date varies)."
+  },
+  {
+    "day": "September 29",
+    "tradition": "Oriental Orthodox",
+    "name": "St. Gregory the Illuminator (Armenian)",
+    "description": "Apostle of Armenia (date varies)."
+  },
+  {
+    "day": "September 29",
+    "tradition": "ChurchOfEast",
+    "name": "Sts. Michael and Gabriel",
+    "description": "Archangels."
+  },
+  {
+    "day": "September 29",
+    "tradition": "ChurchOfEast",
+    "name": "St. Dada the Martyr",
+    "description": "Martyr under Shapur II."
   },
   {
     "day": "October 18",
@@ -270,10 +1326,106 @@
     "description": "Physician and author of the Gospel."
   },
   {
+    "day": "October 18",
+    "tradition": "Catholic",
+    "name": "St. Luke the Evangelist",
+    "description": "Physician and author of the Gospel and Acts."
+  },
+  {
+    "day": "October 18",
+    "tradition": "Catholic",
+    "name": "St. Paul of the Cross",
+    "description": "Founder of Passionists."
+  },
+  {
+    "day": "October 18",
+    "tradition": "Orthodox",
+    "name": "St. Luke the Evangelist",
+    "description": "Apostle and evangelist."
+  },
+  {
+    "day": "October 18",
+    "tradition": "Orthodox",
+    "name": "St. Marinus the Martyr",
+    "description": "Martyr in Anazarbus."
+  },
+  {
+    "day": "October 18",
+    "tradition": "Oriental Orthodox",
+    "name": "St. Luke the Evangelist",
+    "description": "Author of the Gospel."
+  },
+  {
+    "day": "October 18",
+    "tradition": "Oriental Orthodox",
+    "name": "St. Luke the Evangelist (Syrian Jacobite)",
+    "description": "Evangelist in Syrian tradition."
+  },
+  {
+    "day": "October 18",
+    "tradition": "ChurchOfEast",
+    "name": "St. Luke the Evangelist",
+    "description": "Physician and evangelist."
+  },
+  {
+    "day": "October 18",
+    "tradition": "ChurchOfEast",
+    "name": "St. Julian the Hermit",
+    "description": "Ascetic."
+  },
+  {
     "day": "October 23",
     "tradition": "Anglican",
     "name": "St. James of Jerusalem",
     "description": "Brother of Our Lord and martyr."
+  },
+  {
+    "day": "October 23",
+    "tradition": "Catholic",
+    "name": "St. John of Capistrano",
+    "description": "Franciscan missionary."
+  },
+  {
+    "day": "October 23",
+    "tradition": "Catholic",
+    "name": "St. Anthony Mary Claret",
+    "description": "Bishop and founder."
+  },
+  {
+    "day": "October 23",
+    "tradition": "Orthodox",
+    "name": "St. James the Brother of the Lord",
+    "description": "Apostle and first bishop of Jerusalem."
+  },
+  {
+    "day": "October 23",
+    "tradition": "Orthodox",
+    "name": "St. Ignatius of Constantinople",
+    "description": "Patriarch and confessor."
+  },
+  {
+    "day": "October 23",
+    "tradition": "Oriental Orthodox",
+    "name": "St. James the Brother of the Lord",
+    "description": "Apostle and martyr."
+  },
+  {
+    "day": "October 23",
+    "tradition": "Oriental Orthodox",
+    "name": "St. James the Brother of the Lord (Armenian)",
+    "description": "Apostle in Armenian tradition."
+  },
+  {
+    "day": "October 23",
+    "tradition": "ChurchOfEast",
+    "name": "St. James the Brother of the Lord",
+    "description": "Apostle and martyr."
+  },
+  {
+    "day": "October 23",
+    "tradition": "ChurchOfEast",
+    "name": "St. Boethius",
+    "description": "Philosopher and martyr (shared)."
   },
   {
     "day": "October 28",
@@ -282,10 +1434,106 @@
     "description": "Martyrs."
   },
   {
+    "day": "October 28",
+    "tradition": "Catholic",
+    "name": "Sts. Simon and Jude",
+    "description": "Apostles and martyrs."
+  },
+  {
+    "day": "October 28",
+    "tradition": "Catholic",
+    "name": "St. Abdias",
+    "description": "Apostle."
+  },
+  {
+    "day": "October 28",
+    "tradition": "Orthodox",
+    "name": "St. Terence and Eunice",
+    "description": "Martyrs."
+  },
+  {
+    "day": "October 28",
+    "tradition": "Orthodox",
+    "name": "St. Stephen Milutin of Serbia",
+    "description": "King and monk."
+  },
+  {
+    "day": "October 28",
+    "tradition": "Oriental Orthodox",
+    "name": "St. Simon the Apostle",
+    "description": "Apostle and martyr."
+  },
+  {
+    "day": "October 28",
+    "tradition": "Oriental Orthodox",
+    "name": "St. Simon the Apostle (Ethiopian)",
+    "description": "Apostle in Ethiopian tradition."
+  },
+  {
+    "day": "October 28",
+    "tradition": "ChurchOfEast",
+    "name": "Sts. Simon and Jude",
+    "description": "Apostles and martyrs."
+  },
+  {
+    "day": "October 28",
+    "tradition": "ChurchOfEast",
+    "name": "St. Faraj of Shiraz",
+    "description": "Martyr."
+  },
+  {
     "day": "November 1",
     "tradition": "Anglican",
     "name": "All Saints' Day",
     "description": "Commemoration of all saints."
+  },
+  {
+    "day": "November 1",
+    "tradition": "Catholic",
+    "name": "All Saints' Day",
+    "description": "Honoring all saints known and unknown."
+  },
+  {
+    "day": "November 1",
+    "tradition": "Catholic",
+    "name": "St. Mathurin",
+    "description": "Exorcist and missionary."
+  },
+  {
+    "day": "November 1",
+    "tradition": "Orthodox",
+    "name": "Sts. Cosmas and Damian",
+    "description": "Unmercenary healers and martyrs."
+  },
+  {
+    "day": "November 1",
+    "tradition": "Orthodox",
+    "name": "St. David of Euboea",
+    "description": "Wonderworker."
+  },
+  {
+    "day": "November 1",
+    "tradition": "Oriental Orthodox",
+    "name": "Sts. Cosmas and Damian",
+    "description": "Physicians and martyrs."
+  },
+  {
+    "day": "November 1",
+    "tradition": "Oriental Orthodox",
+    "name": "Sts. Cosmas and Damian (Syrian Jacobite)",
+    "description": "Healers in Syrian tradition."
+  },
+  {
+    "day": "November 1",
+    "tradition": "ChurchOfEast",
+    "name": "All Saints' Day",
+    "description": "Commemoration of all saints."
+  },
+  {
+    "day": "November 1",
+    "tradition": "ChurchOfEast",
+    "name": "St. George of Amastris",
+    "description": "Bishop and confessor."
   },
   {
     "day": "November 30",
@@ -294,10 +1542,94 @@
     "description": "Martyr and brother of Peter."
   },
   {
+    "day": "November 30",
+    "tradition": "Catholic",
+    "name": "St. Andrew the Apostle",
+    "description": "Apostle and martyr, patron of Scotland."
+  },
+  {
+    "day": "November 30",
+    "tradition": "Catholic",
+    "name": "St. Cuthbert Mayne",
+    "description": "Martyr."
+  },
+  {
+    "day": "November 30",
+    "tradition": "Orthodox",
+    "name": "St. Andrew the Apostle",
+    "description": "First-called apostle."
+  },
+  {
+    "day": "November 30",
+    "tradition": "Orthodox",
+    "name": "St. Frumentius of Ethiopia",
+    "description": "Enlightener of Ethiopia."
+  },
+  {
+    "day": "November 30",
+    "tradition": "Oriental Orthodox",
+    "name": "St. Andrew the Apostle",
+    "description": "Apostle and martyr."
+  },
+  {
+    "day": "November 30",
+    "tradition": "Oriental Orthodox",
+    "name": "St. Frumentius (Ethiopian)",
+    "description": "Apostle to Ethiopia."
+  },
+  {
     "day": "December 21",
     "tradition": "Anglican",
     "name": "St. Thomas the Apostle",
     "description": "Doubting Thomas."
+  },
+  {
+    "day": "December 21",
+    "tradition": "Catholic",
+    "name": "St. Peter Canisius",
+    "description": "Doctor of the Church, catechist."
+  },
+  {
+    "day": "December 21",
+    "tradition": "Catholic",
+    "name": "St. Micah the Prophet",
+    "description": "Old Testament prophet (date varies)."
+  },
+  {
+    "day": "December 21",
+    "tradition": "Orthodox",
+    "name": "St. Juliana of Nicomedia",
+    "description": "Virgin martyr."
+  },
+  {
+    "day": "December 21",
+    "tradition": "Orthodox",
+    "name": "St. Peter of Kiev",
+    "description": "Metropolitan and wonderworker."
+  },
+  {
+    "day": "December 21",
+    "tradition": "Oriental Orthodox",
+    "name": "St. Juliana of Nicomedia",
+    "description": "Virgin martyr."
+  },
+  {
+    "day": "December 21",
+    "tradition": "Oriental Orthodox",
+    "name": "St. Juliana of Nicomedia (Syrian Jacobite)",
+    "description": "Virgin martyr in Syrian tradition."
+  },
+  {
+    "day": "December 21",
+    "tradition": "ChurchOfEast",
+    "name": "St. Juliana",
+    "description": "Martyr."
+  },
+  {
+    "day": "December 21",
+    "tradition": "ChurchOfEast",
+    "name": "St. Zeno of Maiuma",
+    "description": "Bishop and confessor."
   },
   {
     "day": "December 26",
@@ -306,10 +1638,106 @@
     "description": "First martyr."
   },
   {
+    "day": "December 26",
+    "tradition": "Catholic",
+    "name": "St. Stephen the First Martyr",
+    "description": "Deacon and first martyr."
+  },
+  {
+    "day": "December 26",
+    "tradition": "Catholic",
+    "name": "St. Dionysius",
+    "description": "Pope and confessor."
+  },
+  {
+    "day": "December 26",
+    "tradition": "Orthodox",
+    "name": "St. Stephen the Protomartyr",
+    "description": "First martyr and deacon."
+  },
+  {
+    "day": "December 26",
+    "tradition": "Orthodox",
+    "name": "St. Theodore the Grapt",
+    "description": "Confessor against iconoclasm."
+  },
+  {
+    "day": "December 26",
+    "tradition": "Oriental Orthodox",
+    "name": "St. Stephen the Protomartyr",
+    "description": "First martyr."
+  },
+  {
+    "day": "December 26",
+    "tradition": "Oriental Orthodox",
+    "name": "St. Stephen (Armenian)",
+    "description": "Protomartyr in Armenian tradition."
+  },
+  {
+    "day": "December 26",
+    "tradition": "ChurchOfEast",
+    "name": "St. Stephen the Protomartyr",
+    "description": "First martyr."
+  },
+  {
+    "day": "December 26",
+    "tradition": "ChurchOfEast",
+    "name": "St. Archelaus",
+    "description": "Bishop and martyr."
+  },
+  {
     "day": "December 27",
     "tradition": "Anglican",
     "name": "St. John, Apostle and Evangelist",
     "description": "Beloved disciple."
+  },
+  {
+    "day": "December 27",
+    "tradition": "Catholic",
+    "name": "St. John the Apostle",
+    "description": "Apostle and evangelist."
+  },
+  {
+    "day": "December 27",
+    "tradition": "Catholic",
+    "name": "St. Fabiola",
+    "description": "Widow and benefactress."
+  },
+  {
+    "day": "December 27",
+    "tradition": "Orthodox",
+    "name": "St. Stephen the Protomartyr",
+    "description": "First martyr (continued)."
+  },
+  {
+    "day": "December 27",
+    "tradition": "Orthodox",
+    "name": "St. Theodore the Grapt",
+    "description": "Confessor."
+  },
+  {
+    "day": "December 27",
+    "tradition": "Oriental Orthodox",
+    "name": "St. John the Apostle",
+    "description": "Beloved disciple."
+  },
+  {
+    "day": "December 27",
+    "tradition": "Oriental Orthodox",
+    "name": "St. John the Apostle (Ethiopian)",
+    "description": "Evangelist in Ethiopian tradition."
+  },
+  {
+    "day": "December 27",
+    "tradition": "ChurchOfEast",
+    "name": "St. John the Apostle",
+    "description": "Beloved disciple."
+  },
+  {
+    "day": "December 27",
+    "tradition": "ChurchOfEast",
+    "name": "St. Archelaus",
+    "description": "Bishop (continued)."
   },
   {
     "day": "December 28",
@@ -318,15 +1746,51 @@
     "description": "Martyrs of Bethlehem."
   },
   {
-    "day": "January 23",
-    "name": "Phillips Brooks, Bishop of Massachusetts",
-    "tradition": "Anglican / Episcopal",
-    "description": "Phillips Brooks (1835–1893) was an American Episcopal clergyman and bishop. He is best known for writing the Christmas carol 'O Little Town of Bethlehem' and for his eloquent preaching."
+    "day": "December 28",
+    "tradition": "Catholic",
+    "name": "Holy Innocents",
+    "description": "Martyrs killed by Herod."
   },
   {
-"day": "January 24",
-"tradition": "Anglican / Episcopal",
-"name": "Florence Li Tim-Oi",
-"description": "Florence Li Tim-Oi (1907–1992) was the first woman to be ordained to the priesthood in the Anglican Communion on January 25, 1944, during World War II. She is commemorated on January 24 in some calendars. Known for her courage and dedication to ministry under difficult circumstances, she served in China and Canada. She is remembered for breaking barriers in the church and for her faithful service."
-}
+    "day": "December 28",
+    "tradition": "Catholic",
+    "name": "St. Gaspar del Bufalo",
+    "description": "Founder and missionary."
+  },
+  {
+    "day": "December 28",
+    "tradition": "Orthodox",
+    "name": "Holy Innocents",
+    "description": "Martyrs of Bethlehem."
+  },
+  {
+    "day": "December 28",
+    "tradition": "Orthodox",
+    "name": "St. Simon the Myrrhgusher",
+    "description": "Founder of Simonopetra Monastery."
+  },
+  {
+    "day": "December 28",
+    "tradition": "Oriental Orthodox",
+    "name": "Holy Innocents",
+    "description": "Martyrs of Bethlehem."
+  },
+  {
+    "day": "December 28",
+    "tradition": "Oriental Orthodox",
+    "name": "Holy Innocents (Syrian Jacobite)",
+    "description": "Martyrs in Syrian tradition."
+  },
+  {
+    "day": "December 28",
+    "tradition": "ChurchOfEast",
+    "name": "Holy Innocents",
+    "description": "Martyrs of Bethlehem."
+  },
+  {
+    "day": "December 28",
+    "tradition": "ChurchOfEast",
+    "name": "St. Simon the Stylite",
+    "description": "Ascetic and pillar saint."
+  }
 ]
