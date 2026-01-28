@@ -102,5 +102,17 @@
     "reading_gospel_evening": "Luke 21:10-19",
     "season": "epiphany",
     "liturgicalColor": "white"
+  },     "January 27": {
+    "title": "Ferial Day",
+    "antiphon": "The Lord is glorious in his saints: Come let us adore him.",
+    "psalms": "Psalm 25, Psalm 9, Psalm 15",
+    "reading_ot": "Isaiah 48:1-11",
+    "reading_epistle": "Galatians 1:1-17",
+    "reading_gospel": "Mark 5:21-43",
+    "reading_ot_evening": "Isaiah 48:12-22",
+    "reading_epistle_evening": "Hebrews 1:1-14",
+    "reading_gospel_evening": "John 1:1-18",
+    "season": "ordinary",
+    "liturgicalColor": "green"
   }
 }
