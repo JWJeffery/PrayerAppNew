@@ -1,74 +1,89 @@
 {
-  "app_overview": "The Universal Office is a prayer app for web and mobile, designed primarily for Anglicans and those in Communion with them, but open to all. As a theologian, the creator believes the Anglican Communion is part of 'the one, holy, catholic, and apostolic Church.' Drawing from the Holy Fathers, the app aims to help users become more like Jesus through sacraments and prayer. It provides an in-depth, customizable Divine/Daily Office experience incorporating elements from Anglican, Catholic (including Old Catholic), Eastern Orthodox, Oriental Orthodox, and Church of the East monastic and parish prayer services.",
+  "project_manifest": {
+    "name": "Universal Office (Prayer App New)",
+    "version": "1.2.0",
+    "description": "A comprehensive digital Daily Office and Psalter designed for Anglicans and those in communion with them. It incorporates elements from Anglican, Catholic, Eastern Orthodox, Oriental Orthodox, and Church of the East monastic and parish prayer services.",
+    "theological_vision": "As part of 'the one, holy, catholic, and apostolic Church,' the app aims to help users become more like Jesus through sacraments and prayer, drawing from the Holy Fathers.",
+    "current_phase": "Phase 3: Liturgical Logic & Content Integration"
+  },
   "goals": [
-    "Offer customizable prayer experiences drawing from multiple Christian traditions to deepen users' spiritual lives. (Partial: Components.json now includes multi-tradition elements like Trisagion and Theotokion.)",
+    "Offer customizable prayer experiences drawing from multiple Christian traditions to deepen users' spiritual lives.",
     "Facilitate immersion in worship, bringing 'heaven to earth' through visual, auditory, and sensory elements.",
-    "Include a saints section with a curated kalendar based on Lesser Feasts and Fasts and the Book of Common Prayer, reviewed for marks of holiness and intercession.",
+    "Include a saints section with a curated kalendar based on Lesser Feasts and Fasts and the BCP, reviewed for marks of holiness and intercession.",
     "Ensure the app is beautiful and engaging, changing with liturgical seasons to enhance the prayer experience."
   ],
   "immersive_features": {
-    "visual": "Icons of saints, background colors and themes that change with liturgical seasons. (Recommendation: Implement dynamic CSS updates based on propers.json season/color for full seasonality.)",
+    "visual": "Icons of saints, background colors, and themes that change with liturgical seasons based on propers.json.",
     "auditory": "Light background music or sounds to evoke a sacred atmosphere.",
-    "sensory": "Design elements that might make users imagine smelling incense during prayer.",
-    "ui": "Immersive interface for web and mobile to create a heavenly worship experience."
+    "sensory": "Design elements that evoke the atmosphere of traditional worship (e.g., imagery of incense).",
+    "ui": "Immersive interface for web and mobile to create a 'heavenly worship' experience."
   },
-  "saints_kalendar": "Use Lesser Feasts and Fasts and the Book of Common Prayer as the baseline. Not all LFF saints will be included; review for proper marks of saints such as holiness, intercession, etc. Incorporate saints from Anglican, Catholic, Eastern Orthodox, Oriental Orthodox, and Church of the East traditions.",
-  "overview": "Centralize Bible data into split files for efficiency. Eliminate previews in propers.json. Delete unnecessary files. Update index.html to use new structure.",
+  "technical_architecture": {
+    "frontend": "Vanilla JavaScript with Tailwind CSS for utility-first styling",
+    "data_format": "Modular JSON structures for high-performance client-side rendering",
+    "state_management": "In-memory session state for navigation and liturgical context",
+    "entry_point": "index.html with consolidated logic in app.js"
+  },
+  "content_status": {
+    "psalter": {
+      "canonical_psalms": "1-150 (Completed)",
+      "historical_psalms": "151-155 (Completed)",
+      "total_entries": 155,
+      "source_text": "NRSV / Traditional liturgical translations",
+      "status": "Fully verified and integrated into psalms.json"
+    },
+    "liturgy": {
+      "morning_prayer": "Structural framework defined; logic for Invitatories pending",
+      "evening_prayer": "Structural framework defined; logic for Phos Hilaron pending",
+      "compline": "Initial template drafted",
+      "midday_prayer": "To be implemented"
+    },
+    "collects_and_special": {
+      "daily_collects": "In progress (mapping to liturgical calendar required)",
+      "seasonal_antiphons": "Pending development",
+      "canticles": "Structure defined for Magnificat, Nunc Dimittis, and Te Deum"
+    },
+    "saints_kalendar": "Expanded to multi-tradition (Anglican, Catholic, Eastern/Oriental Orthodox, Church of the East). Covers 5-8 saints per day."
+  },
   "files_structure": {
     "keep": [
       "index.html",
       "package.json",
-      "data/components.json (Now verified: Contains openings, creeds, collects, etc., with rite variations.)",
+      "data/components.json (Verified: Contains openings, creeds, collects, etc.)",
       "data/rubrics.json",
       "data/saints.json",
-      "data/propers.json (slimmed to refs only)"
+      "data/propers.json (Slimmed to refs only)"
     ],
     "new": [
-      "data/bible/old-testament.json (OT readings)",
-      "data/bible/new-testament.json (NT readings)",
-      "data/bible/psalms.json (all psalms—now verified; partial coverage of 150, plus Orthodox extras)"
+      "data/bible/old-testament.json (OT readings - needs truncation fix at Jeremiah 8)",
+      "data/bible/new-testament.json (NT readings - duplicate MATT 18:1-7 identified)",
+      "data/bible/psalms.json (Completed: 1-155)"
     ],
     "delete": [
-      "data/psalter.json (after moving to psalms.json)",
-      "README.md (empty)"
+      "data/psalter.json (Deprecated)",
+      "data/scripture.json (Deprecated)",
+      "README.md (Empty)"
     ]
   },
-  "steps": [
-    "Create the three Bible files, move data from scripture.json. (Completed: OT/NT present, but OT truncated.)",
-    "Edit propers.json: Remove previews, leave refs only. (Completed: Slimmed, but truncation in document may hide issues.)",
-    "Move psalms from psalter.json to psalms.json. (Completed: Now shared and verified.)",
-    "Delete psalter.json and README.md. (Pending: Confirm deletions in Git.)",
-    "Update index.html: In init(), load new Bible files. In renderOffice(), use refs directly; for psalms, pull from psalms.json using daily refs. (Completed: Code handles this, with regex for verse stripping.)"
-  ],
-  "efficiency_gains": "Smaller files for faster loads, no duplications, lazy loading possible in future, single Bible source.",
   "identified_issues": [
-    "Repeated/duplicated phrases in some prayer sections (e.g., opening or litany, like 'Good Lord, deliver us.' repeating—check render logic for loops).",
-    "Blank/empty sections under headers (e.g., after Venite or lessons—likely from null returns in getScriptureText()). (Partial: Fallbacks like 'Loading...' or 'Ref: ' added in code.)",
-    "Formatting errors: Inconsistent line breaks, missing separators (review CSS and HTML generation in renderOffice()).",
-    "Potential ref formatting issues: Code assumes uppercase IDs like 'PSALM 67', 'ACTS 26:9-23'—ensure consistency with propers.json refs. (Error found: Some mismatches, e.g., 'Acts 26:9-23' vs. 'ACTS 26:9-23'.)",
-    "General: Verify all Bible splits from scripture.json; add error handling for missing data. (Error found: Truncation in old-testament.json at Jeremiah 8; duplicates in new-testament.json like MATT 18:1-7 twice.)",
-    "Duplicated Marian Antiphon: Appears multiple times due to conditional logic in index.html (e.g., in creed-slot and elsewhere—consolidate rendering).",
-    "Rite-switching issues: Ensure code handles rite1/rite2 texts correctly in components like creeds (e.g., verify lines 426-434 in index.html). (Partial: Components.json has good rite objects, code falls back properly.)",
-    "Verse numbers and line breaks in Scripture text break flow—strip verse numbers and replace \n with spaces for continuous paragraph display. [Completed: Added regex in getScriptureText() to remove leading verses and line breaks; texts now flow cleanly.]",
-    "Implement 30-day Psalm cycle: Update propers.json to include multiple Psalms per day (e.g., 'Psalm 67, Psalm 68' or ranges); code supports splitting by ', ', but add range parsing if needed for blocks. (Partial: Splitting works, but no range support yet.)",
-    "Expanded saints.json to include multi-tradition and Oriental subsets for inclusivity. [Completed: Added saints from all traditions for each days, broadened 'Coptic' to 'Oriental Orthodox' with Armenian/Ethiopian/etc.]",
-    "Collect ID mismatches: In components.json, IDs like 'collect-jan25-conversion-paul' don't match dynamic collectId in index.html (e.g., 'collect-january-25'), causing 'Collect not found'. (Recommendation: Add collect_ref to propers.json or standardize IDs to date-based.)",
-    "Truncations in merged document: old-testament.json cuts off; propers.json truncated after saints array (possible merge error mixing with saints.json). (Recommendation: Verify full files locally.)",
-    "Git commit issues: Some files (e.g., components.json, psalms.json) not committing—check .gitignore or staging. (Partial: Files present locally, but not in repo.)",
-    "Psalms incompleteness: psalms.json covers only select Psalms (e.g., missing 6-8, 12-14, etc.); refs to missing ones cause 'No text found'. (Recommendation: Fill with NRSV texts.)"
+    "Repeated/duplicated phrases in some prayer sections (e.g., litany loops).",
+    "Blank/empty sections under headers caused by null returns in getScriptureText().",
+    "Formatting: Inconsistent line breaks and missing separators.",
+    "Ref formatting: Case-sensitivity issues between propers.json and Bible IDs.",
+    "Collect ID mismatches: Dynamic IDs in index.html don't match components.json (e.g., 'collect-january-25' vs 'collect-jan25-conversion-paul').",
+    "Duplicated Marian Antiphon appearing multiple times in the render flow.",
+    "OT truncation at Jeremiah 8 and NT duplicates in Bible files."
   ],
   "fix_plan": [
-    "Step 1: Fill gaps in psalms.json - Add missing Psalms (e.g., PSALM 67 with NRSV text from sources). Why: Fixes 'No text found' errors in VARIABLE_PSALM sections. Cohesion: Propers.json refs like 'Psalm 67' will now pull full text via getScriptureText(). Verify by pasting updated psalms.json, then refresh app for Jan 25. [Completed: File shared; PSALM 67 present. But add missing ones like 6-8 for full coverage.]",
-    "Step 2: Fill gaps in new-testament.json - Add missing NT readings (e.g., ACTS 26:9-23, GALATIANS 1:11-24, MATTHEW 10:16-22 from scripture.json or NRSV sources). Why: Fixes refs-only display for epistle/gospel. Cohesion: Similar to Step 1 for VARIABLE_READING_EPISTLE/GOSPEL. [Completed: All lessons now loading full texts after file updates, server restarts, and routing fix for GALATIANS; added verse/line break stripping for clean paragraph flow. Error fixed: Remove duplicate MATT 18:1-7.]",
-    "Step 3: Fill gaps in old-testament.json - Add any missing OT (though current gaps are NT-heavy; cross-check propers.json refs). Why: Ensures all OT lessons load. Cohesion: Similar to Step 2 for VARIABLE_READING_OT. [Partial: All OT refs already present in old-testament.json — no additions needed, but fix truncation at Jeremiah 8.]",
-    "Step 4: Add missing dates to saints.json - Add entry for 'January 25' (e.g., Conversion of St. Paul with tradition/description). Why: Fixes 'No commemorations'. Cohesion: Code filters by day.includes('january 25')—matches format. Verify display at bottom. [Completed: Expanded to multi-tradition for all days, broadened Oriental Orthodox with subsets like Armenian/Ethiopian; now displays 5-8 per day.]",
-    "Step 5: Slim propers.json to refs only - Remove 'collect' full text (move to components.json if needed), keep only psalms/reading refs, season, color. Why: Per original steps for efficiency; reduces duplication. Cohesion: RenderOffice() pulls collects from components instead (update code if needed). [Partial: Done, but add collect_ref per date to point to components.json IDs like 'collect-jan25-conversion-paul' to fix mismatches.]",
-    "Step 6: Fix duplicates/formatting in index.html - In renderOffice(), consolidate Marian logic (e.g., render once based on marianPos); add error handling (e.g., if text null, show 'Loading...' or ref); improve HTML (e.g., add <br> or CSS for breaks/separators). Why: Eliminates repeats/blanks/inconsistencies. Cohesion: Ties data files to clean UI. Reference specific lines (e.g., 432 for Marian). [Partial: Regex helps formatting; add console logs for debugging.]",
-    "Step 7: Standardize refs/formats - Ensure propers.json refs match Bible IDs (e.g., 'Acts 26:9-23' to 'ACTS 26:9-23'); update code if needed for case-insensitivity. Why: Prevents lookup failures. Cohesion: Full data flow from propers to Bible. [Partial: Uppercase consistent, but fix collect IDs as in Step 5.]",
-    "Step 8: Add rite/error handling - In index.html (e.g., lines 426-434), verify rite1/rite2 fallback; add console logs or UI messages for missing data. Why: Improves robustness. Cohesion: Handles all settings combos. [Completed: Components.json supports this well.]",
-    "Step 9: Verify/delete unneeded files - Confirm psalter.json/scripture.json deprecated (delete after data move); README.md empty (delete). Why: Cleanup per steps. Cohesion: Streamlines project. [Pending: Address Git commit issues for missing files.]",
-    "Step 10: Test holistically - After all edits, test Jan 25 Morning Prayer: Full Psalms/readings, no duplicates/blanks, saints show, formatting clean. Iterate if needed. [Recommendation: Run npm start, check 'Collect not found'—if persists, proceed to new Step 11.]",
-    "Step 11 (New): Fix collect mismatches - Update index.html line ~450 to use a new collect_ref from propers.json (e.g., add to each day: 'collect_ref': 'collect-jan25-conversion-paul'). Or rename components.json IDs to date-based (e.g., 'collect-january-25'). Why: Resolves 'Collect not found'. Cohesion: Ensures VARIABLE_COLLECT pulls correctly from components.json.",
-    "Step 12 (New): Complete psalms.json - Add missing Psalms (e.g., 6-8) with NRSV texts from sources. Why: Prevents 'No text found' for unlisted refs. Cohesion: Full coverage for 30-day cycle in propers.json."
-  ]
+    "Step 1: Verify all 155 Psalms in psalms.json are pulling correctly via getScriptureText(). [Completed]",
+    "Step 2: Clean new-testament.json - Remove duplicates like MATT 18:1-7 and ensure all lesson refs load full text.",
+    "Step 3: Fix old-testament.json truncation - Restore data after Jeremiah 8.",
+    "Step 4: Standardize Collect IDs - Link propers.json date-based keys to components.json specific collect IDs.",
+    "Step 5: Consolidate Marian logic - Render once based on marianPos in index.html.",
+    "Step 6: Refine Scripture Rendering - Ensure regex continues to strip verse numbers and replace line breaks for paragraph flow.",
+    "Step 7: Implement 30-day Psalm cycle - Add range parsing logic for blocks like 'Psalm 67, Psalm 68'.",
+    "Step 8: Finalize Office Logic - Implement automatic time-based selection for Morning/Evening prayer.",
+    "Step 9: Cleanup - Delete deprecated psalter.json and scripture.json files."
+  ],
+  "last_updated": "2026-01-27"
 }
