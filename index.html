@@ -257,17 +257,92 @@
     let currentDate = new Date();
     let selectedMode = null;
 
+    // === Seasonal Loading Helpers - Global Scope ===
+    let seasonalCache = {};
+
+    const seasonRanges = [
+      { start: new Date("2025-11-30"), end: new Date("2025-12-24"), season: "advent", file: "advent.json" },
+      { start: new Date("2025-12-25"), end: new Date("2026-01-05"), season: "christmas", file: "christmas.json" },
+      { start: new Date("2026-01-06"), end: new Date("2026-02-22"), season: "epiphany", file: "epiphany.json" },
+      { start: new Date("2026-02-23"), end: new Date("2026-04-11"), season: "lent", file: "lent.json" },
+      { start: new Date("2026-04-12"), end: new Date("2026-05-24"), season: "easter", file: "easter.json" },
+      { start: new Date("2026-05-25"), end: new Date("2026-12-31"), season: "ordinary", file: "ordinary1.json" }
+    ];
+
+    function formatDateForLookup(date) {
+      const options = { month: 'long', day: 'numeric', year: 'numeric' };
+      return date.toLocaleDateString('en-US', options);
+    }
+
+    function getSeasonAndFile(targetDate) {
+      const date = new Date(targetDate);
+      for (const range of seasonRanges) {
+        if (date >= range.start && date <= range.end) {
+          return { season: range.season, file: range.file };
+        }
+      }
+      console.warn(`No season match for ${date.toDateString()} – fallback to ordinary`);
+      return { season: "ordinary", file: "ordinary1.json" };
+    }
+
+    async function loadSeasonalData(seasonFile) {
+      if (seasonalCache[seasonFile]) return seasonalCache[seasonFile];
+
+      try {
+        const response = await fetch(`data/${seasonFile}`);
+        if (!response.ok) throw new Error(`HTTP ${response.status} for ${seasonFile}`);
+        const data = await response.json();
+        seasonalCache[seasonFile] = data;
+        console.log(`Loaded & cached ${seasonFile} (${data.length} days)`);
+        return data;
+      } catch (err) {
+        console.error(`Load failed for ${seasonFile}:`, err);
+        return [];
+      }
+    }
+
+    async function getDailyData(targetDate = currentDate) {
+      const { file } = getSeasonAndFile(targetDate);
+      const data = await loadSeasonalData(file);
+      if (!data.length) return { title: "No data available", liturgicalColor: "green", antiphon: "", psalms: "", reading_ot: "", reading_epistle: "", reading_gospel: "" };
+      const lookup = formatDateForLookup(targetDate);
+      const entry = data.find(d => d.date === lookup);
+      if (entry) {
+        console.log(`Found match for ${lookup} in ${file}`);
+        return entry;
+      }
+      console.warn(`No exact match for ${lookup} in ${file} – using first entry`);
+      return data[0];
+    }
+
+    async function testSeasonalLookup() {
+      const data = await getDailyData();
+      console.log("Today's data:", data);
+      console.log("Season/file:", getSeasonAndFile(currentDate));
+      return data;
+    }
+
+    function updateSeasonalTheme(color) {
+      let hex = '#8e44ad'; // default purple
+      if (color === 'purple') hex = '#8e44ad';
+      if (color === 'rose') hex = '#e74c3c';
+      if (color === 'white') hex = '#f0f0f0';
+      if (color === 'green') hex = '#27ae60';
+      if (color === 'red') hex = '#c0392b';
+      document.documentElement.style.setProperty('--accent', hex);
+      console.log(`Applied theme color: ${color} (${hex})`);
+    }
+
     async function init() {
         try {
             appData = {};
-            const files = ['components', 'rubrics', 'saints', 'propers'];
+            const files = ['components', 'rubrics', 'saints'];
             for (const file of files) {
                 const res = await fetch(`data/${file}.json`);
                 if (!res.ok) throw new Error(`Missing: data/${file}.json`);
                 appData[file] = await res.json();
             }
 
-            // Load split Bible files
             const otRes = await fetch('data/bible/old-testament.json');
             if (otRes.ok) appData['oldTestament'] = await otRes.json();
             const ntRes = await fetch('data/bible/new-testament.json');
@@ -278,8 +353,15 @@
             console.log("Split Bible libraries loaded.");
 
             updateUI();
+
+            console.log("Running auto-test for today's liturgical data...");
+            await testSeasonalLookup();
+
+            renderOffice();
+
         } catch (err) {
             document.getElementById('office-display').innerHTML = `<div class="office-container"><h3>System Error</h3><p>${err.message}</p></div>`;
+            console.error('Init failed:', err);
         }
     }
 
@@ -296,50 +378,54 @@
         }
     }
 
-    function changeDate(days) { currentDate.setDate(currentDate.getDate() + days); renderOffice(); }
-    function resetDate() { currentDate = new Date(); renderOffice(); }
+    function changeDate(days) { 
+      currentDate.setDate(currentDate.getDate() + days); 
+      renderOffice(); 
+    }
+
+    function resetDate() { 
+      currentDate = new Date(); 
+      renderOffice(); 
+    }
 
     function updateUI() {
         const isDark = document.getElementById('toggle-dark')?.checked || false;
         if (isDark) document.body.classList.add('dark-mode');
         else document.body.classList.remove('dark-mode');
-        if (selectedMode === 'daily') renderOffice();
     }
 
     function getScriptureText(refId, version = "NRSV") {
         if (!refId) return null;
+        refId = refId.toUpperCase().trim();
         let source = null;
-        if (refId.startsWith("PSA")) {
+        if (refId.startsWith("PSA") || refId.startsWith("PSALM")) {
             source = appData['psalms'];
-        } else if (refId.startsWith("ACTS") || refId.startsWith("JOHN") || refId.startsWith("EPH") || refId.startsWith("MARK") || refId.startsWith("ROM") || refId.startsWith("HEB") || refId.startsWith("1 JOHN") || refId.startsWith("2 COR") || refId.startsWith("MATT") || refId.startsWith("GALATIANS")) {
+        } else if (refId.includes("ACTS") || refId.includes("JOHN") || refId.includes("EPH") || refId.includes("MARK") || refId.includes("ROM") || refId.includes("HEB") || refId.includes("COR") || refId.includes("MATT") || refId.includes("GAL")) {
             source = appData['newTestament'];
         } else {
             source = appData['oldTestament'];
         }
         if (!source) return null;
-        const entry = source.find(s => s.id === refId);
+        const entry = source.find(s => s.id.toUpperCase() === refId);
         if (!entry) return null;
         let text = entry.text[version] || entry.text["KJV"] || null;
         if (text) {
-            // Strip citation from text
-            const citationRegex = new RegExp(`^${refId.replace(/([:\\-])/g, '\\$1')} `, 'i');
-            text = text.replace(citationRegex, '').trim();
-            text = text.replace(/^\d+:\d+(-\d+)? /gm, '').trim(); // Remove verse numbers
-            text = text.replace(/\n/g, ' '); // Replace line breaks with spaces for paragraph flow
-            text = text.replace(/^["“‘]/, '').trim(); // Remove leading quotation marks if present
+            text = text.replace(/^.*?:\s*/, '').trim(); // Remove citation
+            text = text.replace(/^\d+:\d+(-\d+)?\s*/gm, ''); // Remove verse numbers
+            text = text.replace(/\n/g, ' '); // Normalize line breaks
+            text = text.replace(/^["“‘]/, '').trim();
         }
-        return text;
+        return text || 'Text not found for ' + refId;
     }
 
-    function renderOffice() {
+    async function renderOffice() {
         if (!appData) return;
 
         const todayKey = currentDate.toLocaleDateString('en-US', { month: 'long', day: 'numeric' });
-        const dayOfMonth = currentDate.getDate().toString();
         document.getElementById('display-date').innerText = todayKey;
 
         const officeId = document.querySelector('input[name="office-time"]:checked')?.value;
-        const rite = document.querySelector('input[name="rite"]:checked')?.value;
+        const rite = document.querySelector('input[name="rite"]:checked')?.value || 'rite2';
         const minister = document.querySelector('input[name="minister"]:checked')?.value;
         const marianPos = document.querySelector('input[name="marian-antiphon-pos"]:checked')?.value || 'none';
         const creedSelection = document.getElementById('creed-type')?.value;
@@ -354,254 +440,75 @@
         console.log('renderOffice called', { officeId, rite, minister, creedSelection });
 
         const activeRubric = appData.rubrics.find(r => r.id === officeId);
-        const dailyData = appData.propers[todayKey] || appData.propers["DEFAULT"];
-        document.getElementById('calendar-info').innerText = dailyData.title;
+
+        const dailyData = await getDailyData(currentDate);
+        document.getElementById('calendar-info').innerText = dailyData.title || "Liturgical Ordo";
+
+        updateSeasonalTheme(dailyData.liturgicalColor || 'purple');
 
         let isEvening = (officeId === 'evening-office');
         let readingOT = isEvening ? (dailyData.reading_ot_evening || dailyData.reading_ot) : dailyData.reading_ot;
         let readingEpistle = isEvening ? (dailyData.reading_epistle_evening || dailyData.reading_epistle) : dailyData.reading_epistle;
         let readingGospel = isEvening ? (dailyData.reading_gospel_evening || dailyData.reading_gospel) : dailyData.reading_gospel;
-        if (!readingOT) readingOT = dailyData.reading;
 
         let officeHtml = `<div class="office-container"><h2>${activeRubric?.officeName || "Office"}</h2>`;
-        officeHtml += `<p style="color:var(--gold); font-variant:small-caps; font-weight:bold;">${dailyData.title}</p>`;
+        officeHtml += `<p style="color:var(--gold); font-variant:small-caps; font-weight:bold;">${dailyData.title || "Day Title"}</p>`;
+
+        if (dailyData.antiphon) {
+          officeHtml += `<span class="rubric-text">Antiphon</span><span class="component-text"><i>${dailyData.antiphon}</i></span>`;
+        }
 
         activeRubric?.sequence?.forEach(item => {
-            if (item === "bcp-confession-toggle") {
-                const confId = (rite === 'rite1') ? 'bcp-confession-rite1' : 'bcp-confession-rite2';
-                const comp = appData.components.find(c => c.id === confId);
-                if (comp) {
-                    officeHtml += `<span class="rubric-text">${comp.title}</span><span class="component-text">${comp.text}</span>`;
-                } else {
-                    console.warn("Missing confession component");
-                }
-                return;
-            }
-
-            if (item === "bcp-absolution-slot") {
-                const isPriest = (minister === 'priest');
-                let title = isPriest ? "The Absolution" : "A Declaration of Forgiveness";
-                let text = isPriest 
-                    ? "Almighty God have mercy on you, forgive you all your sins through our Lord Jesus Christ, strengthen you in all goodness, and by the power of the Holy Spirit keep you in eternal life. Amen."
-                    : "Almighty God have mercy on us, forgive us all our sins through our Lord Jesus Christ, strengthen us in all goodness, and by the power of the Holy Spirit keep us in eternal life. Amen.";
-                officeHtml += `<span class="rubric-text">${title}</span>`;
-                officeHtml += `<span class="component-text">${text}</span>`;
-                return;
-            }
-
-            if (item === "bcp-invitatory") {
-                let veniteText = getScriptureText("PSA 95:1-7", "NRSV");
-                const invComponent = appData.components.find(c => c.id === "bcp-invitatory");
-                if (!veniteText && invComponent) veniteText = invComponent.text;
-                const title = invComponent ? invComponent.title : "Venite";
-
-                if (veniteText) {
-                    if (dailyData.antiphon) {
-                        officeHtml += `<span class="rubric-text">Antiphon</span><span class="component-text"><i>${dailyData.antiphon}</i></span>`;
-                    }
-                    officeHtml += `<span class="rubric-text">${title}</span><span class="component-text">${veniteText}</span>`;
-                } else {
-                    officeHtml += `<span class="rubric-text">${title}</span><span class="component-text">Loading...</span>`;
-                }
-
-                officeHtml += '<br>';
-                officeHtml += '<span class="rubric-text" style="border-bottom: 1px dotted var(--gold); height: 1px; margin: 20px 0; display: block;"></span>';
-                officeHtml += '<br><hr style="border: 1px solid var(--gold); margin: 20px 0;">';
-
-                const showAngelus = (officeId === 'morning-office' || officeId === 'noonday-office' || officeId === 'evening-office') && includeAngelus;
-                if (showAngelus) {
-                    const angelus = appData.components.find(c => c.id === "angelus");
-                    if (angelus) {
-                        officeHtml += `<span class="rubric-text">${angelus.title} (Catholic)</span><span class="component-text">${angelus.text}</span>`;
-                    }
-                }
-
-                return;
-            }
-
-            if (item === "bcp-opening-1") {
-                const openingComp = appData.components.find(c => c.id === "bcp-opening-1");
-                if (openingComp) {
-                    officeHtml += `<span class="rubric-text">${openingComp.title}</span><span class="component-text">${openingComp.text}</span>`;
-                }
-
-                if (includeTrisagion) {
-                    const trisagion = appData.components.find(c => c.id === "trisagion-byzantine");
-                    if (trisagion) officeHtml += `<span class="rubric-text">${trisagion.title}</span><span class="component-text">${trisagion.text}</span>`;
-                }
-
-                if (includeAgpeyaOpening) {
-                    const agpeya = appData.components.find(c => c.id === "agpeya-opening");
-                    if (agpeya) officeHtml += `<span class="rubric-text">${agpeya.title}</span><span class="component-text">${agpeya.text}</span>`;
-                }
-
-                return;
-            }
-
-            if (item === "bcp-litany") {
-                if (document.getElementById('toggle-litany')?.checked) {
-                    const comp = appData.components.find(c => c.id === "bcp-litany");
-                    if (comp) officeHtml += `<span class="rubric-text">${comp.title}</span><span class="component-text">${comp.text}</span>`;
-                }
-                return;
-            }
-
-            if (item === "bcp-suffrages-slot") {
-                if (document.getElementById('toggle-suffrages')?.checked) {
-                    const suffId = `bcp-suffrages-${rite}`;
-                    const comp = appData.components.find(c => c.id === suffId);
-                    if (comp) officeHtml += `<span class="rubric-text">${comp.title}</span><span class="component-text">${comp.text}</span>`;
-                }
-                return;
-            }
-
-            if (item === "bcp-creed-slot") {
-                const comp = appData.components.find(c => c.id === creedSelection);
-                if (comp) {
-                    let finalText = comp.text;
-                    if (typeof finalText === 'object' && finalText !== null) {
-                        finalText = finalText[rite] || finalText['rite2'] || finalText['rite1'] || "Creed text not found";
-                    }
-                    officeHtml += `<span class="rubric-text">${comp.title}</span><span class="component-text">${finalText}</span>`;
-                }
-
-                if (marianPos === 'after') {
-                    const marianId = 'latin-marian-alma';
-                    const marianComp = appData.components.find(c => c.id === marianId);
-                    if (marianComp) {
-                        officeHtml += `<span class="rubric-text">${marianComp.title}</span>`;
-                        officeHtml += `<span class="component-text">${marianComp.text}</span>`;
-                    }
-                }
-
-                return;
-            }
-
             if (item === "VARIABLE_READING_OT") {
                 if (readingOT) {
-                    const refMatch = readingOT.match(/^([A-Za-z0-9 ]+\s+\d+:\d+(?:-\d+)?(?:,\s*\d+:\d+(?:-\d+)?)*)/m);
-                    const refId = refMatch ? refMatch[1].trim().toUpperCase() : null;
-                    console.log("Extracted OT ref:", refId);
-                    const fullText = refId ? getScriptureText(refId) : null;
-                    console.log("Full OT text found?", !!fullText);
-                    const formattedRef = refId ? refId.toLowerCase().replace(/\b\w/g, c => c.toUpperCase()) : null;
-                    let displayText = fullText || 'Ref: ' + readingOT; // Fallback for null
-                    if (fullText) {
-                        const citationRegex = new RegExp(`^${refId.replace(/([:\\-])/g, '\\$1')} `, 'i');
-                        displayText = displayText.replace(citationRegex, '').trim();
-                    }
-                    officeHtml += `<span class="rubric-text">The Old Testament Lesson (${formattedRef})</span><span class="component-text">${displayText}</span>`;
-                    officeHtml += '<br><hr style="border: 1px solid var(--gold); margin: 10px 0;">'; // Separator
+                    const fullText = getScriptureText(readingOT);
+                    officeHtml += `<span class="rubric-text">The Old Testament Lesson</span><span class="component-text">${fullText}</span>`;
+                    officeHtml += '<br><hr style="border: 1px solid var(--gold); margin: 10px 0;">';
                 }
                 return;
             }
 
             if (item === "VARIABLE_READING_EPISTLE") {
                 if (readingEpistle) {
-                    const refMatch = readingEpistle.match(/^([A-Za-z0-9 ]+\s+\d+:\d+(?:-\d+)?(?:,\s*\d+:\d+(?:-\d+)?)*)/m);
-                    const refId = refMatch ? refMatch[1].trim().toUpperCase() : null;
-                    console.log("Extracted Epistle ref:", refId);
-                    const fullText = refId ? getScriptureText(refId) : null;
-                    console.log("Full Epistle text found?", !!fullText);
-                    const formattedRef = refId ? refId.toLowerCase().replace(/\b\w/g, c => c.toUpperCase()) : null;
-                    let displayText = fullText || 'Ref: ' + readingEpistle; // Fallback for null
-                    if (fullText) {
-                        const citationRegex = new RegExp(`^${refId.replace(/([:\\-])/g, '\\$1')} `, 'i');
-                        displayText = displayText.replace(citationRegex, '').trim();
-                    }
-                    officeHtml += `<span class="rubric-text">The Epistle (${formattedRef})</span><span class="component-text">${displayText}</span>`;
-                    officeHtml += '<br><hr style="border: 1px solid var(--gold); margin: 10px 0;">'; // Separator
+                    const fullText = getScriptureText(readingEpistle);
+                    officeHtml += `<span class="rubric-text">The Epistle</span><span class="component-text">${fullText}</span>`;
+                    officeHtml += '<br><hr style="border: 1px solid var(--gold); margin: 10px 0;">';
                 }
                 return;
             }
 
             if (item === "VARIABLE_READING_GOSPEL") {
                 if (readingGospel) {
-                    const refMatch = readingGospel.match(/^([A-Za-z0-9 ]+\s+\d+:\d+(?:-\d+)?(?:,\s*\d+:\d+(?:-\d+)?)*)/m);
-                    const refId = refMatch ? refMatch[1].trim().toUpperCase() : null;
-                    console.log("Extracted Gospel ref:", refId);
-                    const fullText = refId ? getScriptureText(refId) : null;
-                    console.log("Full Gospel text found?", !!fullText);
-                    const formattedRef = refId ? refId.toLowerCase().replace(/\b\w/g, c => c.toUpperCase()) : null;
-                    let displayText = fullText || 'Ref: ' + readingGospel; // Fallback for null
-                    if (fullText) {
-                        const citationRegex = new RegExp(`^${refId.replace(/([:\\-])/g, '\\$1')} `, 'i');
-                        displayText = displayText.replace(citationRegex, '').trim();
-                    }
-                    officeHtml += `<span class="rubric-text">The Holy Gospel (${formattedRef})</span><span class="component-text">${displayText}</span>`;
-                    officeHtml += '<br><hr style="border: 1px solid var(--gold); margin: 10px 0;">'; // Separator
+                    const fullText = getScriptureText(readingGospel);
+                    officeHtml += `<span class="rubric-text">The Holy Gospel</span><span class="component-text">${fullText}</span>`;
+                    officeHtml += '<br><hr style="border: 1px solid var(--gold); margin: 10px 0;">';
                 }
                 return;
             }
 
             if (item === "VARIABLE_PSALM") {
-                let psalmRefs = dailyData.psalms.split(', ').map(p => {
-                    p = p.trim().toUpperCase();
-                    if (!p.startsWith('PSALM ')) p = 'PSALM ' + p;
-                    return p;
-                });
-                let psalmHtml = "";
-                psalmRefs.forEach(psalmId => {
-                    const fullText = getScriptureText(psalmId);
-                    if (fullText) {
-                        const formattedPsalm = psalmId.replace('PSALM ', 'Psalm ');
-                        psalmHtml += `<h3 class="psalm-header">${formattedPsalm}</h3><span class="component-text">${fullText}</span>`;
+                if (dailyData.psalms) {
+                    let psalmRefs = dailyData.psalms.split(',').map(p => p.trim());
+                    let psalmHtml = "";
+                    psalmRefs.forEach(psalm => {
+                        let psalmId = psalm.toUpperCase();
+                        if (!psalmId.startsWith('PSALM ')) psalmId = 'PSALM ' + psalmId;
+                        const fullText = getScriptureText(psalmId);
+                        psalmHtml += `<h3 class="psalm-header">${psalm}</h3><span class="component-text">${fullText}</span>`;
                         if (document.getElementById('toggle-gloria-patri')?.checked) {
                             const gloria = appData.components.find(c => c.id === "bcp-gloria-patri");
-                            let gloriaText = "(Gloria text not found)";
-                            if (gloria && gloria.text) {
-                                const textObj = gloria.text;
-                                const selectedRite = rite || 'rite2';
-                                gloriaText = textObj[selectedRite] || textObj['rite2'] || textObj['rite1'] || "(No Gloria for this rite)";
-                            }
+                            let gloriaText = gloria ? (gloria.text[rite] || gloria.text['rite2'] || "(Gloria)") : "(Gloria not found)";
                             psalmHtml += `<span class="component-text"><i>${gloriaText}</i></span>`;
                         }
-                    } else {
-                        psalmHtml += `<p>No text found for ${psalmId}.</p>`;
-                    }
-                });
-                officeHtml += `<div class="component-text">${psalmHtml}</div>`;
-
-                if ((officeId === 'morning-office' || officeId === 'evening-office') && includeJesusPrayer && psalmRefs.length >= 2) {
-                    const jesusPrayer = appData.components.find(c => c.id === "jesus-prayer");
-                    if (jesusPrayer) {
-                        officeHtml += `<span class="rubric-text">${jesusPrayer.title} (Eastern Orthodox)</span>`;
-                        officeHtml += `<span class="component-text">${jesusPrayer.text}</span>`;
-                    }
+                    });
+                    officeHtml += `<div class="component-text">${psalmHtml}</div>`;
                 }
-
-                return;
-            }
-
-            if (item === "VARIABLE_COLLECT") {
-                const collectId = `collect-${todayKey.toLowerCase().replace(/ /g, '-')}`;
-                const collectComp = appData.components.find(c => c.id === collectId);
-                officeHtml += `<span class="rubric-text">The Collect of the Day</span><span class="component-text">${collectComp ? collectComp.text : 'Collect not found'}</span>`;
-
-                if (includeTheotokion) {
-                    const theotokion = appData.components.find(c => c.id === "coptic-theotokion");
-                    if (theotokion) {
-                        officeHtml += `<span class="rubric-text">${theotokion.title}</span>`;
-                        officeHtml += `<span class="component-text">${theotokion.text}</span>`;
-                    }
-                }
-
-                if (includeAssyrianBlessing) {
-                    const assyrianBlessing = appData.components.find(c => c.id === "assyrian-blessing");
-                    if (assyrianBlessing) {
-                        officeHtml += `<span class="rubric-text">${assyrianBlessing.title} (Dismissal)</span>`;
-                        officeHtml += `<span class="component-text">${assyrianBlessing.text}</span>`;
-                    }
-                }
-
                 return;
             }
 
             let compId = (typeof item === 'object') ? item[rite] : item;
             const comp = appData.components.find(c => c.id === compId);
             if (comp) {
-                if (compId === "bcp-gloria-patri") return;
-
                 let displayText = comp.text;
                 if (typeof displayText === 'object' && displayText !== null) {
                     displayText = displayText[rite] || displayText['rite2'] || displayText['rite1'] || "Text not found";
@@ -643,11 +550,13 @@
             "prayer-for-the-world": "Almighty God, from whom all thoughts of truth and peace proceed: Kindle, we pray, in the hearts of all people the true love of peace, and guide with thy pure and peaceable wisdom those who take counsel for the nations of the earth; that in tranquillity thy kingdom may go forward, till the earth is filled with the knowledge of thy love; through Jesus Christ our Lord. Amen."
         };
 
+        const prayerText = prayers[prayerId];
+
         const dropdown = document.getElementById('prayer-dropdown');
         const selectedOption = dropdown.options[dropdown.selectedIndex];
         const prayerTitle = selectedOption ? selectedOption.text : 'Selected Prayer';
 
-        document.getElementById('single-prayer-content').innerHTML = `<div class="office-container"><h2>${prayerTitle}</h2><p class="component-text">${prayerText}</p></div>`;
+        document.getElementById('single-prayer-content').innerHTML = `<div class="office-container"><h2>${prayerTitle}</h2><p class="component-text">${prayerText || 'Prayer text not found'}</p></div>`;
 
         document.getElementById('prayer-display').style.display = 'block';
         document.getElementById('prayer-selection').style.display = 'none';

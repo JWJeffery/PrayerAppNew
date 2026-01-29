@@ -4,7 +4,7 @@
     "version": "1.2.0",
     "description": "A comprehensive digital Daily Office and Psalter designed for Anglicans and those in communion with them. It incorporates elements from Anglican, Catholic, Eastern Orthodox, Oriental Orthodox, and Church of the East monastic and parish prayer services.",
     "theological_vision": "As part of 'the one, holy, catholic, and apostolic Church,' the app aims to help users become more like Jesus through sacraments and prayer, drawing from the Holy Fathers.",
-    "current_phase": "Phase 3: Liturgical Logic & Content Integration"
+    "current_phase": "Phase 3: Liturgical Logic & Content Integration (Seasonal Migration in Progress)"
   },
   "goals": [
     "Offer customizable prayer experiences drawing from multiple Christian traditions to deepen users' spiritual lives.",
@@ -13,8 +13,8 @@
     "Ensure the app is beautiful and engaging, changing with liturgical seasons to enhance the prayer experience."
   ],
   "immersive_features": {
-    "visual": "Icons of saints, background colors, and themes that change with liturgical seasons based on propers.json.",
-    "auditory": "Light background music or sounds to evoke a sacred atmosphere.",
+    "visual": "Icons of saints, background colors, and themes that change with liturgical seasons based on seasonal JSON files (advent.json, christmas.json, etc.) and liturgicalColor field.",
+    "auditory": "Light background music or sounds to evoke a sacred atmosphere (pending implementation).",
     "sensory": "Design elements that evoke the atmosphere of traditional worship (e.g., imagery of incense).",
     "ui": "Immersive interface for web and mobile to create a 'heavenly worship' experience."
   },
@@ -30,7 +30,7 @@
       "historical_psalms": "151-155 (Completed)",
       "total_entries": 155,
       "source_text": "NRSV / Traditional liturgical translations",
-      "status": "Fully verified and integrated into psalms.json"
+      "status": "Fully verified and integrated into psalms.json (updated and confirmed complete)"
     },
     "liturgy": {
       "morning_prayer": "Structural framework defined; logic for Invitatories pending",
@@ -39,11 +39,12 @@
       "midday_prayer": "To be implemented"
     },
     "collects_and_special": {
-      "daily_collects": "In progress (mapping to liturgical calendar required)",
-      "seasonal_antiphons": "Pending development",
-      "canticles": "Structure defined for Magnificat, Nunc Dimittis, and Te Deum"
+      "daily_collects": "In progress – collect IDs standardized across seasonal files and linked to components.json",
+      "seasonal_antiphons": "Implemented via antiphon field in seasonal JSONs",
+      "canticles": "Structure defined for Magnificat, Nunc Dimittis, and Te Deum (pending full integration)"
     },
-    "saints_kalendar": "Expanded to multi-tradition (Anglican, Catholic, Eastern/Oriental Orthodox, Church of the East). Covers 5-8 saints per day."
+    "saints_kalendar": "Expanded to multi-tradition (Anglican, Catholic, Eastern/Oriental Orthodox, Church of the East). Covers 5-8 saints per day.",
+    "seasonal_propers": "Complete for liturgical year A (2025–2026): advent.json, christmas.json, epiphany.json, lent.json, easter.json, ordinary1.json, ordinary2.json, ordinary3.json"
   },
   "files_structure": {
     "keep": [
@@ -52,7 +53,14 @@
       "data/components.json (Verified: Contains openings, creeds, collects, etc.)",
       "data/rubrics.json",
       "data/saints.json",
-      "data/propers.json (Slimmed to refs only)"
+      "data/advent.json",
+      "data/christmas.json",
+      "data/epiphany.json",
+      "data/lent.json",
+      "data/easter.json",
+      "data/ordinary1.json",
+      "data/ordinary2.json",
+      "data/ordinary3.json"
     ],
     "new": [
       "data/bible/old-testament.json (OT readings - needs truncation fix at Jeremiah 8)",
@@ -62,28 +70,31 @@
     "delete": [
       "data/psalter.json (Deprecated)",
       "data/scripture.json (Deprecated)",
+      "data/propers.json (Deprecated – fully replaced by seasonal JSONs)",
       "README.md (Empty)"
     ]
   },
   "identified_issues": [
-    "Repeated/duplicated phrases in some prayer sections (e.g., litany loops).",
-    "Blank/empty sections under headers caused by null returns in getScriptureText().",
-    "Formatting: Inconsistent line breaks and missing separators.",
-    "Ref formatting: Case-sensitivity issues between propers.json and Bible IDs.",
-    "Collect ID mismatches: Dynamic IDs in index.html don't match components.json (e.g., 'collect-january-25' vs 'collect-jan25-conversion-paul').",
-    "Duplicated Marian Antiphon appearing multiple times in the render flow.",
-    "OT truncation at Jeremiah 8 and NT duplicates in Bible files."
+    "Repeated/duplicated phrases in some prayer sections (e.g., litany loops) – review pending",
+    "Blank/empty sections under headers caused by null returns in getScriptureText() – fix in progress",
+    "Formatting: Inconsistent line breaks and missing separators in scripture rendering",
+    "Ref formatting: Case-sensitivity issues between seasonal JSONs and Bible IDs",
+    "Collect ID mismatches: Dynamic IDs in index.html don't match components.json (e.g., 'collect-january-25' vs 'collect-jan25-conversion-paul') – to be resolved with seasonal collect fields",
+    "Duplicated Marian Antiphon appearing multiple times in the render flow",
+    "OT truncation at Jeremiah 8 and NT duplicates in Bible files (next priority after seasonal migration)"
   ],
   "fix_plan": [
     "Step 1: Verify all 155 Psalms in psalms.json are pulling correctly via getScriptureText(). [Completed]",
-    "Step 2: Clean new-testament.json - Remove duplicates like MATT 18:1-7 and ensure all lesson refs load full text.",
-    "Step 3: Fix old-testament.json truncation - Restore data after Jeremiah 8.",
-    "Step 4: Standardize Collect IDs - Link propers.json date-based keys to components.json specific collect IDs.",
-    "Step 5: Consolidate Marian logic - Render once based on marianPos in index.html.",
-    "Step 6: Refine Scripture Rendering - Ensure regex continues to strip verse numbers and replace line breaks for paragraph flow.",
-    "Step 7: Implement 30-day Psalm cycle - Add range parsing logic for blocks like 'Psalm 67, Psalm 68'.",
-    "Step 8: Finalize Office Logic - Implement automatic time-based selection for Morning/Evening prayer.",
-    "Step 9: Cleanup - Delete deprecated psalter.json and scripture.json files."
+    "Step 2: Migrate from deprecated propers.json to seasonal JSON files (advent.json through ordinary3.json) – in progress",
+    "Step 3: Implement liturgicalColor field from seasonal JSONs to dynamically update UI (CSS variables, themes) – planned next",
+    "Step 4: Clean new-testament.json - Remove duplicates like MATT 18:1-7 and ensure all lesson refs load full text.",
+    "Step 5: Fix old-testament.json truncation - Restore data after Jeremiah 8.",
+    "Step 6: Standardize Collect IDs - Link seasonal JSON collect fields to components.json entries.",
+    "Step 7: Consolidate Marian logic - Render once based on marianPos in index.html.",
+    "Step 8: Refine Scripture Rendering - Ensure regex continues to strip verse numbers and replace line breaks for paragraph flow.",
+    "Step 9: Implement 30-day Psalm cycle - Add range parsing logic for blocks like 'Psalm 67, Psalm 68'.",
+    "Step 10: Finalize Office Logic - Implement automatic time-based selection for Morning/Evening prayer.",
+    "Step 11: Cleanup - Delete deprecated psalter.json, scripture.json, and propers.json files."
   ],
-  "last_updated": "2026-01-27"
+  "last_updated": "2026-01-28"
 }
