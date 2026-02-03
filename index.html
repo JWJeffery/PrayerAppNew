@@ -425,7 +425,7 @@
 
         const officeId = document.querySelector('input[name="office-time"]:checked')?.value;
         const rite = document.querySelector('input[name="rite"]:checked')?.value || 'rite2';
-        const minister = document.querySelector('input[name="minister"]:checked')?.value;
+        const minister = document.querySelector('input[name="minister"]:checked')?.value || 'lay';
         const marianPos = document.querySelector('input[name="marian-antiphon-pos"]:checked')?.value || 'none';
         const creedSelection = document.getElementById('creed-type')?.value;
         const greatLitanyChecked = document.getElementById('toggle-litany')?.checked || false;
@@ -465,6 +465,8 @@
           let marianText = marianComp.text;
           if (typeof marianText === 'object' && marianText !== null) {
             marianText = marianText[rite] || marianText['rite2'] || marianText['rite1'] || "Marian Antiphon text not found";
+          } else {
+            marianText = marianText || "Marian Antiphon text not found";
           }
           officeHtml += `<span class="rubric-text">Marian Antiphon</span><span class="component-text"><i>${marianText}</i></span>`;
         }
@@ -474,6 +476,13 @@
         }
 
         activeRubric?.sequence?.forEach(item => {
+            if (item === 'bcp-confession-toggle') {
+              item = `bcp-confession-${rite}`;
+            }
+            if (item === 'bcp-absolution-slot') {
+              const ritePrefix = rite.replace('ite', '');
+              item = `bcp-absolution-${ritePrefix}-${minister}`;
+            }
             if (item === 'bcp-gloria-patri' && !document.getElementById('toggle-gloria-patri').checked) {
               return;
             }
@@ -555,6 +564,8 @@
                 let displayText = comp.text;
                 if (typeof displayText === 'object' && displayText !== null) {
                     displayText = displayText[rite] || displayText['rite2'] || displayText['rite1'] || "Text not found";
+                } else {
+                    displayText = displayText || "Text not found";
                 }
                 officeHtml += `<span class="rubric-text">${comp.title}</span><span class="component-text">${displayText}</span>`;
             }
@@ -564,6 +575,8 @@
           let marianText = marianComp.text;
           if (typeof marianText === 'object' && marianText !== null) {
             marianText = marianText[rite] || marianText['rite2'] || marianText['rite1'] || "Marian Antiphon text not found";
+          } else {
+            marianText = marianText || "Marian Antiphon text not found";
           }
           officeHtml += `<span class="rubric-text">Marian Antiphon</span><span class="component-text"><i>${marianText}</i></span>`;
         }
@@ -576,6 +589,8 @@
               let displayText = comp.text;
               if (typeof displayText === 'object' && displayText !== null) {
                 displayText = displayText[rite] || displayText['rite2'] || displayText['rite1'] || "Text not found";
+              } else {
+                displayText = displayText || "Text not found";
               }
               officeHtml += `<span class="rubric-text">${comp.title}</span><span class="component-text">${displayText}</span>`;
             }
