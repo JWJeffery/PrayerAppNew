@@ -124,6 +124,14 @@
            width: 100%; 
        }
 
+       .passage-reference {
+           font-size: 1.1em;
+           font-style: italic;
+           color: var(--gold);
+           margin: 8px 0 12px 0;
+           font-weight: normal;
+       }
+
        .component-text { 
            font-size: 1.2em; 
            line-height: 1.6; 
@@ -134,7 +142,6 @@
            overflow: visible; 
        }
 
-       .psalm-header { color: var(--accent); text-align: center; margin-top: 40px; margin-bottom: 20px; font-size: 1.6em; border-bottom: 2px solid var(--gold); padding-bottom: 10px; }
        .psalm-verse { display: block; margin-bottom: 8px; font-size: 1.15em; }
        .verse-num { font-size: 0.65em; color: var(--gold); vertical-align: super; margin-right: 8px; opacity: 0.8; }
 
@@ -257,7 +264,6 @@
     let currentDate = new Date();
     let selectedMode = null;
 
-    // === Seasonal Loading Helpers - Global Scope ===
     let seasonalCache = {};
 
     const seasonRanges = [
@@ -304,7 +310,7 @@
     async function getDailyData(targetDate = currentDate) {
       const { file } = getSeasonAndFile(targetDate);
       const data = await loadSeasonalData(file);
-      if (!data.length) return { title: "No data available", liturgicalColor: "green", antiphon: "", psalms: "", reading_ot: "", reading_epistle: "", reading_gospel: "" };
+      if (!data.length) return { title: "No data available", liturgicalColor: "green", antiphon: "", psalms_morning: "", reading_ot_morning: "", reading_epistle_morning: "", reading_gospel_morning: "", psalms_evening: "", reading_ot_evening: "", reading_epistle_evening: "", reading_gospel_evening: "" };
       const lookup = formatDateForLookup(targetDate);
       const entry = data.find(d => d.date === lookup);
       if (entry) {
@@ -315,22 +321,14 @@
       return data[0];
     }
 
-    async function testSeasonalLookup() {
-      const data = await getDailyData();
-      console.log("Today's data:", data);
-      console.log("Season/file:", getSeasonAndFile(currentDate));
-      return data;
-    }
-
     function updateSeasonalTheme(color) {
-      let hex = '#8e44ad'; // default purple
+      let hex = '#8e44ad';
       if (color === 'purple') hex = '#8e44ad';
       if (color === 'rose') hex = '#e74c3c';
       if (color === 'white') hex = '#f0f0f0';
       if (color === 'green') hex = '#27ae60';
       if (color === 'red') hex = '#c0392b';
       document.documentElement.style.setProperty('--accent', hex);
-      console.log(`Applied theme color: ${color} (${hex})`);
     }
 
     async function init() {
@@ -350,12 +348,10 @@
             console.log("NT Contents:", appData['newTestament']);
             const psalmsRes = await fetch('data/bible/psalms.json');
             if (psalmsRes.ok) appData['psalms'] = await psalmsRes.json();
-            console.log("Split Bible libraries loaded.");
 
             updateUI();
 
-            console.log("Running auto-test for today's liturgical data...");
-            await testSeasonalLookup();
+            await getDailyData();
 
             renderOffice();
 
@@ -395,31 +391,34 @@
     }
 
     function getScriptureText(refId, version = "NRSV") {
-        if (!refId) return null;
+        if (!refId) return "No reference provided";
         refId = refId.toUpperCase().trim();
         let source = null;
         if (refId.startsWith("PSA") || refId.startsWith("PSALM")) {
             source = appData['psalms'];
-        } else if (refId.includes("ACTS") || refId.includes("JOHN") || refId.includes("EPH") || refId.includes("MARK") || refId.includes("ROM") || refId.includes("HEB") || refId.includes("COR") || refId.includes("MATT") || refId.includes("GAL")) {
+        } else if (refId.includes("ACTS") || refId.includes("JOHN") || refId.includes("EPH") || refId.includes("MARK") || refId.includes("ROM") || refId.includes("HEB") || refId.includes("COR") || refId.includes("MATT") || refId.includes("GAL") || refId.includes("HEBREWS")) {
             source = appData['newTestament'];
         } else {
             source = appData['oldTestament'];
         }
-        if (!source) return null;
-        const entry = source.find(s => s.id.toUpperCase() === refId);
-        if (!entry) return null;
+        if (!source) return "Bible library not loaded";
+        const entry = source.find(s => s.id.toUpperCase().trim() === refId);
+        if (!entry) return "Text not found for " + refId;
         let text = entry.text[version] || entry.text["KJV"] || null;
         if (text) {
-            text = text.replace(/^.*?:\s*/, '').trim(); // Remove citation
-            text = text.replace(/^\d+:\d+(-\d+)?\s*/gm, ''); // Remove verse numbers
-            text = text.replace(/\n/g, ' '); // Normalize line breaks
+            text = text.replace(/^.*?:\s*/, '').trim();
+            text = text.replace(/^\d+:\d+(-\d+)?\s*/gm, '');
+            text = text.replace(/\n/g, ' ');
             text = text.replace(/^["“‘]/, '').trim();
         }
-        return text || 'Text not found for ' + refId;
+        return text || "Text not found for " + refId;
     }
 
     async function renderOffice() {
-        if (!appData) return;
+        if (!appData || !appData.rubrics || !Array.isArray(appData.rubrics)) {
+            document.getElementById('office-display').innerHTML = `<div class="office-container"><h3>Loading...</h3><p>Data still loading.</p></div>`;
+            return;
+        }
 
         const todayKey = currentDate.toLocaleDateString('en-US', { month: 'long', day: 'numeric' });
         document.getElementById('display-date').innerText = todayKey;
@@ -430,15 +429,6 @@
         const marianPos = document.querySelector('input[name="marian-antiphon-pos"]:checked')?.value || 'none';
         const creedSelection = document.getElementById('creed-type')?.value;
 
-        const includeAngelus = document.getElementById('toggle-angelus')?.checked || false;
-        const includeTrisagion = document.getElementById('toggle-trisagion')?.checked || false;
-        const includeTheotokion = document.getElementById('toggle-theotokion')?.checked || false;
-        const includeJesusPrayer = document.getElementById('toggle-jesus-prayer')?.checked || false;
-        const includeAssyrianBlessing = document.getElementById('toggle-assyrian-blessing')?.checked || false;
-        const includeAgpeyaOpening = document.getElementById('toggle-agpeya-opening')?.checked || false;
-
-        console.log('renderOffice called', { officeId, rite, minister, creedSelection });
-
         const activeRubric = appData.rubrics.find(r => r.id === officeId);
 
         const dailyData = await getDailyData(currentDate);
@@ -446,10 +436,13 @@
 
         updateSeasonalTheme(dailyData.liturgicalColor || 'purple');
 
-        let isEvening = (officeId === 'evening-office');
-        let readingOT = isEvening ? (dailyData.reading_ot_evening || dailyData.reading_ot) : dailyData.reading_ot;
-        let readingEpistle = isEvening ? (dailyData.reading_epistle_evening || dailyData.reading_epistle) : dailyData.reading_epistle;
-        let readingGospel = isEvening ? (dailyData.reading_gospel_evening || dailyData.reading_gospel) : dailyData.reading_gospel;
+        const isEvening = (officeId === 'evening-office') || (officeId === 'compline-office');
+        const suffix = isEvening ? '_evening' : '_morning';
+
+        let psalms = dailyData[`psalms${suffix}`] || "";
+        let readingOT = dailyData[`reading_ot${suffix}`] || "";
+        let readingEpistle = dailyData[`reading_epistle${suffix}`] || "";
+        let readingGospel = dailyData[`reading_gospel${suffix}`] || "";
 
         let officeHtml = `<div class="office-container"><h2>${activeRubric?.officeName || "Office"}</h2>`;
         officeHtml += `<p style="color:var(--gold); font-variant:small-caps; font-weight:bold;">${dailyData.title || "Day Title"}</p>`;
@@ -460,44 +453,56 @@
 
         activeRubric?.sequence?.forEach(item => {
             if (item === "VARIABLE_READING_OT") {
+                officeHtml += `<span class="rubric-text">The Old Testament Lesson</span>`;
                 if (readingOT) {
+                    officeHtml += `<h4 class="passage-reference">${readingOT}</h4>`;
                     const fullText = getScriptureText(readingOT);
-                    officeHtml += `<span class="rubric-text">The Old Testament Lesson</span><span class="component-text">${fullText}</span>`;
-                    officeHtml += '<br><hr style="border: 1px solid var(--gold); margin: 10px 0;">';
+                    officeHtml += `<span class="component-text">${fullText || "No reading appointed"}</span>`;
+                } else {
+                    officeHtml += `<span class="component-text">No reading appointed</span>`;
                 }
+                officeHtml += '<br><hr style="border: 1px solid var(--gold); margin: 10px 0;">';
                 return;
             }
 
             if (item === "VARIABLE_READING_EPISTLE") {
+                officeHtml += `<span class="rubric-text">The Epistle</span>`;
                 if (readingEpistle) {
+                    officeHtml += `<h4 class="passage-reference">${readingEpistle}</h4>`;
                     const fullText = getScriptureText(readingEpistle);
-                    officeHtml += `<span class="rubric-text">The Epistle</span><span class="component-text">${fullText}</span>`;
-                    officeHtml += '<br><hr style="border: 1px solid var(--gold); margin: 10px 0;">';
+                    officeHtml += `<span class="component-text">${fullText || "No reading appointed"}</span>`;
+                } else {
+                    officeHtml += `<span class="component-text">No reading appointed</span>`;
                 }
+                officeHtml += '<br><hr style="border: 1px solid var(--gold); margin: 10px 0;">';
                 return;
             }
 
             if (item === "VARIABLE_READING_GOSPEL") {
+                officeHtml += `<span class="rubric-text">The Holy Gospel</span>`;
                 if (readingGospel) {
+                    officeHtml += `<h4 class="passage-reference">${readingGospel}</h4>`;
                     const fullText = getScriptureText(readingGospel);
-                    officeHtml += `<span class="rubric-text">The Holy Gospel</span><span class="component-text">${fullText}</span>`;
-                    officeHtml += '<br><hr style="border: 1px solid var(--gold); margin: 10px 0;">';
+                    officeHtml += `<span class="component-text">${fullText || "No reading appointed"}</span>`;
+                } else {
+                    officeHtml += `<span class="component-text">No reading appointed</span>`;
                 }
+                officeHtml += '<br><hr style="border: 1px solid var(--gold); margin: 10px 0;">';
                 return;
             }
 
             if (item === "VARIABLE_PSALM") {
-                if (dailyData.psalms) {
-                    let psalmRefs = dailyData.psalms.split(',').map(p => p.trim());
+                if (psalms) {
+                    let psalmRefs = psalms.split(',').map(p => p.trim());
                     let psalmHtml = "";
                     psalmRefs.forEach(psalm => {
                         let psalmId = psalm.toUpperCase();
                         if (!psalmId.startsWith('PSALM ')) psalmId = 'PSALM ' + psalmId;
                         const fullText = getScriptureText(psalmId);
-                        psalmHtml += `<h3 class="psalm-header">${psalm}</h3><span class="component-text">${fullText}</span>`;
-                        if (document.getElementById('toggle-gloria-patri')?.checked) {
+                        psalmHtml += `<h4 class="passage-reference">${psalm}</h4><span class="component-text">${fullText || "No psalm text found"}</span>`;
+                        if (document.getElementById('toggle-gloria-patri').checked) {
                             const gloria = appData.components.find(c => c.id === "bcp-gloria-patri");
-                            let gloriaText = gloria ? (gloria.text[rite] || gloria.text['rite2'] || "(Gloria)") : "(Gloria not found)";
+                            let gloriaText = gloria ? (gloria.text[rite] || gloria.text['rite2'] || "(Gloria Patri)") : "(Gloria Patri not found)";
                             psalmHtml += `<span class="component-text"><i>${gloriaText}</i></span>`;
                         }
                     });
