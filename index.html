@@ -428,6 +428,20 @@
         const minister = document.querySelector('input[name="minister"]:checked')?.value;
         const marianPos = document.querySelector('input[name="marian-antiphon-pos"]:checked')?.value || 'none';
         const creedSelection = document.getElementById('creed-type')?.value;
+        const greatLitanyChecked = document.getElementById('toggle-litany')?.checked || false;
+        const suffragesChecked = document.getElementById('toggle-suffrages')?.checked || false;
+
+        const devotions = [];
+        if (document.getElementById('toggle-angelus').checked) devotions.push('bcp-angelus');
+        if (document.getElementById('toggle-trisagion').checked) devotions.push('bcp-trisagion');
+        if (document.getElementById('toggle-theotokion').checked) devotions.push('bcp-theotokion');
+        if (document.getElementById('toggle-jesus-prayer').checked) devotions.push('bcp-jesus-prayer');
+        if (document.getElementById('toggle-assyrian-blessing').checked) devotions.push('bcp-assyrian-blessing');
+        if (document.getElementById('toggle-agpeya-opening').checked) devotions.push('bcp-agpeya-opening');
+
+        const { season } = getSeasonAndFile(currentDate);
+        const marianId = `bcp-marian-antiphon-${season}`;
+        const marianComp = appData.components.find(c => c.id === marianId);
 
         const activeRubric = appData.rubrics.find(r => r.id === officeId);
 
@@ -447,11 +461,29 @@
         let officeHtml = `<div class="office-container"><h2>${activeRubric?.officeName || "Office"}</h2>`;
         officeHtml += `<p style="color:var(--gold); font-variant:small-caps; font-weight:bold;">${dailyData.title || "Day Title"}</p>`;
 
+        if (marianPos === 'before' && marianComp) {
+          let marianText = marianComp.text[rite] || marianComp.text['rite2'] || "Marian Antiphon text not found";
+          officeHtml += `<span class="rubric-text">Marian Antiphon</span><span class="component-text"><i>${marianText}</i></span>`;
+        }
+
         if (dailyData.antiphon) {
           officeHtml += `<span class="rubric-text">Antiphon</span><span class="component-text"><i>${dailyData.antiphon}</i></span>`;
         }
 
         activeRubric?.sequence?.forEach(item => {
+            if (item === 'bcp-litany' && !greatLitanyChecked) {
+              return;
+            }
+            if (item === 'bcp-suffrages-slot' && !suffragesChecked) {
+              return;
+            }
+            if (item === 'bcp-suffrages-slot') {
+              item = `bcp-suffrages-${rite}`;
+            }
+            if (item === 'bcp-creed-slot') {
+              item = creedSelection;
+            }
+
             if (item === "VARIABLE_READING_OT") {
                 officeHtml += `<span class="rubric-text">The Old Testament Lesson</span>`;
                 if (readingOT) {
@@ -521,6 +553,22 @@
                 officeHtml += `<span class="rubric-text">${comp.title}</span><span class="component-text">${displayText}</span>`;
             }
         });
+
+        if (marianPos === 'after' && marianComp) {
+          let marianText = marianComp.text[rite] || marianComp.text['rite2'] || "Marian Antiphon text not found";
+          officeHtml += `<span class="rubric-text">Marian Antiphon</span><span class="component-text"><i>${marianText}</i></span>`;
+        }
+
+        if (devotions.length > 0) {
+          officeHtml += `<span class="rubric-text">Tradition Devotions</span>`;
+          devotions.forEach(devId => {
+            const comp = appData.components.find(c => c.id === devId);
+            if (comp) {
+              let displayText = comp.text[rite] || comp.text['rite2'] || "Text not found";
+              officeHtml += `<span class="rubric-text">${comp.title}</span><span class="component-text">${displayText}</span>`;
+            }
+          });
+        }
 
         document.getElementById('office-display').innerHTML = officeHtml + `</div>`;
 
