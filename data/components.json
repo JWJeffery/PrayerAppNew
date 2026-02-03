@@ -254,5 +254,58 @@
     "title": "Collect for John Chrysostom, Bishop of Constantinople, 407",
     "text": "O God, who gave your servant John Chrysostom grace eloquently to proclaim your righteousness in the great congregation, and fearlessly to bear reproach for the honor of your Name: Mercifully grant to all bishops and pastors such excellence in preaching, and faithfulness in ministering your Word, that your people shall be partakers of the divine wisdom; through Jesus Christ our Lord, who lives and reigns with you and the Holy Spirit, one God, for ever and ever. Amen.",
     "type": "Collect"
+  },  {
+    "id": "bcp-marian-antiphon-advent",
+    "title": "Alma Redemptoris Mater (Advent/Christmas)",
+    "text": {
+      "rite1": "Alma Redemptoris Mater, quae pervia caeli porta manes, et stella maris, succurre cadenti, surgere qui curat, populo: tu quae genuisti, natura mirante, tuum sanctum Genitorem Virgo prius ac posterius, Gabrielis ab ore sumens illud Ave, peccatorum miserere.",
+      "rite2": "Loving Mother of the Redeemer, who remains the gate by which we mortals enter heaven, and star of the sea, help your fallen people who strive to rise: You who gave birth, amazing nature, to your sacred Creator while still remaining a virgin. Help us who call to you as Gabriel once did, receiving from you that Hail Mary: be merciful to us sinners."
+    },
+    "type": "Antiphon"
+  },
+  {
+    "id": "bcp-marian-antiphon-christmas",
+    "title": "Alma Redemptoris Mater (Advent/Christmas)",
+    "text": {
+      "rite1": "Alma Redemptoris Mater, quae pervia caeli porta manes, et stella maris, succurre cadenti, surgere qui curat, populo: tu quae genuisti, natura mirante, tuum sanctum Genitorem Virgo prius ac posterius, Gabrielis ab ore sumens illud Ave, peccatorum miserere.",
+      "rite2": "Loving Mother of the Redeemer, who remains the gate by which we mortals enter heaven, and star of the sea, help your fallen people who strive to rise: You who gave birth, amazing nature, to your sacred Creator while still remaining a virgin. Help us who call to you as Gabriel once did, receiving from you that Hail Mary: be merciful to us sinners."
+    },
+    "type": "Antiphon"
+  },
+  {
+    "id": "bcp-marian-antiphon-epiphany",
+    "title": "Ave Regina Caelorum (Epiphany/Lent)",
+    "text": {
+      "rite1": "Ave, Regina caelorum, Ave, Domina Angelorum: Salve, radix, salve, porta Ex qua mundo lux est orta: Gaude, Virgo gloriosa, Super omnes speciosa, Vale, o valde decora, Et pro nobis Christum exora.",
+      "rite2": "Hail, O Queen of Heaven. Hail, O Lady of Angels. Hail! thou root, hail! thou gate From whom unto the world a light has arisen: Rejoice, O glorious Virgin, Lovely beyond all others, Farewell, most beautiful maiden, And pray for us to Christ."
+    },
+    "type": "Antiphon"
+  },
+  {
+    "id": "bcp-marian-antiphon-lent",
+    "title": "Ave Regina Caelorum (Epiphany/Lent)",
+    "text": {
+      "rite1": "Ave, Regina caelorum, Ave, Domina Angelorum: Salve, radix, salve, porta Ex qua mundo lux est orta: Gaude, Virgo gloriosa, Super omnes speciosa, Vale, o valde decora, Et pro nobis Christum exora.",
+      "rite2": "Hail, O Queen of Heaven. Hail, O Lady of Angels. Hail! thou root, hail! thou gate From whom unto the world a light has arisen: Rejoice, O glorious Virgin, Lovely beyond all others, Farewell, most beautiful maiden, And pray for us to Christ."
+    },
+    "type": "Antiphon"
+  },
+  {
+    "id": "bcp-marian-antiphon-easter",
+    "title": "Regina Caeli (Easter)",
+    "text": {
+      "rite1": "Regina caeli, laetare, alleluia: Quia quem meruisti portare, alleluia. Resurrexit sicut dixit, alleluia. Ora pro nobis Deum, alleluia.",
+      "rite2": "Queen of Heaven, rejoice, alleluia. For He whom you did merit to bear, alleluia. Has risen, as he said, alleluia. Pray for us to God, alleluia. Rejoice and be glad, O Virgin Mary, alleluia. For the Lord has truly risen, alleluia."
+    },
+    "type": "Antiphon"
+  },
+  {
+    "id": "bcp-marian-antiphon-ordinary",
+    "title": "Salve Regina (Ordinary Time)",
+    "text": {
+      "rite1": "Salve, Regina, Mater misericordiae: vita, dulcedo, et spes nostra, salve. Ad te clamamus exsules filii Hevae. Ad te suspiramus, gementes et flentes in hac lacrimarum valle. Eia ergo, Advocata nostra, illos tuos misericordes oculos ad nos converte. Et Iesum, benedictum fructum ventris tui, nobis post hoc exsilium ostende. O clemens, o pia, o dulcis Virgo Maria.",
+      "rite2": "Hail, holy Queen, Mother of Mercy, our life, our sweetness and our hope. To thee do we cry, poor banished children of Eve; to thee do we send up our sighs, mourning and weeping in this valley of tears. Turn then, most gracious advocate, thine eyes of mercy toward us; and after this our exile show unto us the blessed fruit of thy womb, Jesus. O clement, O loving, O sweet Virgin Mary."
+    },
+    "type": "Antiphon"
   }
 ]

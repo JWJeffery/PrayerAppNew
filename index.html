@@ -432,12 +432,12 @@
         const suffragesChecked = document.getElementById('toggle-suffrages')?.checked || false;
 
         const devotions = [];
-        if (document.getElementById('toggle-angelus').checked) devotions.push('bcp-angelus');
-        if (document.getElementById('toggle-trisagion').checked) devotions.push('bcp-trisagion');
-        if (document.getElementById('toggle-theotokion').checked) devotions.push('bcp-theotokion');
-        if (document.getElementById('toggle-jesus-prayer').checked) devotions.push('bcp-jesus-prayer');
-        if (document.getElementById('toggle-assyrian-blessing').checked) devotions.push('bcp-assyrian-blessing');
-        if (document.getElementById('toggle-agpeya-opening').checked) devotions.push('bcp-agpeya-opening');
+        if (document.getElementById('toggle-angelus').checked) devotions.push('angelus');
+        if (document.getElementById('toggle-trisagion').checked) devotions.push('trisagion-byzantine');
+        if (document.getElementById('toggle-theotokion').checked) devotions.push('coptic-theotokion');
+        if (document.getElementById('toggle-jesus-prayer').checked) devotions.push('jesus-prayer');
+        if (document.getElementById('toggle-assyrian-blessing').checked) devotions.push('assyrian-blessing');
+        if (document.getElementById('toggle-agpeya-opening').checked) devotions.push('agpeya-opening');
 
         const { season } = getSeasonAndFile(currentDate);
         const marianId = `bcp-marian-antiphon-${season}`;
@@ -462,7 +462,10 @@
         officeHtml += `<p style="color:var(--gold); font-variant:small-caps; font-weight:bold;">${dailyData.title || "Day Title"}</p>`;
 
         if (marianPos === 'before' && marianComp) {
-          let marianText = marianComp.text[rite] || marianComp.text['rite2'] || "Marian Antiphon text not found";
+          let marianText = marianComp.text;
+          if (typeof marianText === 'object' && marianText !== null) {
+            marianText = marianText[rite] || marianText['rite2'] || marianText['rite1'] || "Marian Antiphon text not found";
+          }
           officeHtml += `<span class="rubric-text">Marian Antiphon</span><span class="component-text"><i>${marianText}</i></span>`;
         }
 
@@ -558,7 +561,10 @@
         });
 
         if (marianPos === 'after' && marianComp) {
-          let marianText = marianComp.text[rite] || marianComp.text['rite2'] || "Marian Antiphon text not found";
+          let marianText = marianComp.text;
+          if (typeof marianText === 'object' && marianText !== null) {
+            marianText = marianText[rite] || marianText['rite2'] || marianText['rite1'] || "Marian Antiphon text not found";
+          }
           officeHtml += `<span class="rubric-text">Marian Antiphon</span><span class="component-text"><i>${marianText}</i></span>`;
         }
 
@@ -567,7 +573,10 @@
           devotions.forEach(devId => {
             const comp = appData.components.find(c => c.id === devId);
             if (comp) {
-              let displayText = comp.text[rite] || comp.text['rite2'] || "Text not found";
+              let displayText = comp.text;
+              if (typeof displayText === 'object' && displayText !== null) {
+                displayText = displayText[rite] || displayText['rite2'] || displayText['rite1'] || "Text not found";
+              }
               officeHtml += `<span class="rubric-text">${comp.title}</span><span class="component-text">${displayText}</span>`;
             }
           });
