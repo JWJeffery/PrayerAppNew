@@ -396,7 +396,7 @@
         let source = null;
         if (refId.startsWith("PSA") || refId.startsWith("PSALM")) {
             source = appData['psalms'];
-        } else if (refId.includes("ACTS") || refId.includes("JOHN") || refId.includes("EPH") || refId.includes("MARK") || refId.includes("ROM") || refId.includes("HEB") || refId.includes("COR") || refId.includes("MATT") || refId.includes("GAL") || refId.includes("HEBREWS")) {
+        } else if (refId.includes("ACTS") || refId.includes("JOHN") || refId.includes("EPH") || refId.includes("MARK") || refId.includes("ROM") || refId.includes("HEB") || refId.includes("COR") || refId.includes("MATT") || refId.includes("GAL") || refId.includes("HEBREWS") || refId.includes("TIMOTHY") || refId.includes("TIM") || refId.includes("TITUS") || refId.includes("PHILEMON") || refId.includes("JAMES") || refId.includes("PETER") || refId.includes("PET") || refId.includes("JUDE") || refId.includes("REVELATION") || refId.includes("REV") || refId.includes("PHILIPPIANS") || refId.includes("PHIL") || refId.includes("COLOSSIANS") || refId.includes("COL") || refId.includes("THESSALONIANS") || refId.includes("THESS")) {
             source = appData['newTestament'];
         } else {
             source = appData['oldTestament'];
@@ -471,6 +471,9 @@
         }
 
         activeRubric?.sequence?.forEach(item => {
+            if (item === 'bcp-gloria-patri' && !document.getElementById('toggle-gloria-patri').checked) {
+              return;
+            }
             if (item === 'bcp-litany' && !greatLitanyChecked) {
               return;
             }
