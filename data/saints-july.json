@@ -1,0 +1,728 @@
+[
+  {
+    "day": "July 1",
+    "tradition": "Catholic",
+    "name": "Saint Junípero Serra",
+    "description": "Franciscan missionary and founder of California missions."
+  },
+  {
+    "day": "July 1",
+    "tradition": "Eastern Orthodox",
+    "name": "Saints Cosmas and Damian of Rome",
+    "description": "Unmercenary physicians who healed without charge."
+  },
+  {
+    "day": "July 1",
+    "tradition": "Oriental Orthodox",
+    "name": "Saint Pishoy (Bishoy)",
+    "description": "The 'Star of the Desert' and beloved Coptic monastic father."
+  },
+  {
+    "day": "July 1",
+    "tradition": "Anglican",
+    "name": "Saint Oliver Plunkett",
+    "description": "Archbishop of Armagh and martyr, died 1681."
+  },
+  {
+    "day": "July 1",
+    "tradition": "Church of the East",
+    "name": "Mar Mari the Apostle",
+    "description": "Evangelist of Mesopotamia and the Far East."
+  },
+  {
+    "day": "July 2",
+    "tradition": "Catholic",
+    "name": "Saint Processus and Saint Martinian",
+    "description": "Martyrs of Rome, traditionally the jailers of St. Peter."
+  },
+  {
+    "day": "July 2",
+    "tradition": "Oriental Orthodox",
+    "name": "Feast of the Visitation",
+    "description": "Commemoration of Mary visiting Elizabeth (Syriac/Coptic tradition)."
+  },
+  {
+    "day": "July 2",
+    "tradition": "Anglican",
+    "name": "Saint Otto of Bamberg",
+    "description": "Bishop and missionary to Pomerania, died 1139."
+  },
+  {
+    "day": "July 2",
+    "tradition": "Church of the East",
+    "name": "Mar Addai",
+    "description": "Apostle of the Seventy and teacher of Edessa."
+  },
+  {
+    "day": "July 3",
+    "tradition": "Catholic, Oriental Orthodox, Church of the East",
+    "name": "Saint Thomas the Apostle",
+    "description": "Feast of the Apostle who confessed 'My Lord and my God'."
+  },
+  {
+    "day": "July 3",
+    "tradition": "Eastern Orthodox",
+    "name": "Martyr Hyacinth of Caesarea",
+    "description": "A youth in the court of Trajan who died for the faith."
+  },
+  {
+    "day": "July 3",
+    "tradition": "Anglican",
+    "name": "John Coleridge Patteson",
+    "description": "Bishop of Melanesia and Martyr, 1871."
+  },
+  {
+    "day": "July 4",
+    "tradition": "Catholic",
+    "name": "Saint Elizabeth of Portugal",
+    "description": "Queen who dedicated her life to the poor and peacemaking."
+  },
+  {
+    "day": "July 4",
+    "tradition": "Eastern Orthodox",
+    "name": "Saint Andrew of Crete",
+    "description": "Archbishop and author of the Great Canon of Repentance."
+  },
+  {
+    "day": "July 4",
+    "tradition": "Oriental Orthodox",
+    "name": "The Holy Royal Martyrs of Russia",
+    "description": "Nicholas II and his family (venerated in many jurisdictions)."
+  },
+  {
+    "day": "July 4",
+    "tradition": "Anglican",
+    "name": "Saint Andrew of Crete",
+    "description": "Bishop and hymnographer, died 740."
+  },
+  {
+    "day": "July 4",
+    "tradition": "Church of the East",
+    "name": "Mar Papa bar Aggai",
+    "description": "Catholicos during the early organization of the Church."
+  },
+  {
+    "day": "July 5",
+    "tradition": "Catholic",
+    "name": "Saint Anthony Mary Zaccaria",
+    "description": "Priest and founder of the Barnabites."
+  },
+  {
+    "day": "July 5",
+    "tradition": "Eastern Orthodox",
+    "name": "Venerable Athanasius of Mount Athos",
+    "description": "Founder of the Great Lavra and Athonite monasticism."
+  },
+  {
+    "day": "July 5",
+    "tradition": "Oriental Orthodox",
+    "name": "Saint Lampad",
+    "description": "Hermit and miracle-worker of Irenopolis."
+  },
+  {
+    "day": "July 5",
+    "tradition": "Anglican",
+    "name": "Saint Cyril of Alexandria",
+    "description": "Bishop and Doctor of the Church, died 444."
+  },
+  {
+    "day": "July 5",
+    "tradition": "Church of the East",
+    "name": "Mar Shalita",
+    "description": "Disciple of Mar Augin and renowned healer."
+  },
+  {
+    "day": "July 6",
+    "tradition": "Catholic",
+    "name": "Saint Maria Goretti",
+    "description": "Virgin and martyr; patroness of forgiveness."
+  },
+  {
+    "day": "July 6",
+    "tradition": "Eastern Orthodox",
+    "name": "Saint Sisoes the Great",
+    "description": "Famous Desert Father and ascetic."
+  },
+  {
+    "day": "July 6",
+    "tradition": "Oriental Orthodox",
+    "name": "Abouna Mina Aboud",
+    "description": "Modern Coptic martyr of the Sinai, 2013."
+  },
+  {
+    "day": "July 6",
+    "tradition": "Anglican",
+    "name": "Thomas More",
+    "description": "Scholar and martyr for conscience."
+  },
+  {
+    "day": "July 6",
+    "tradition": "Church of the East",
+    "name": "Saint Isaiah the Prophet",
+    "description": "Old Testament prophet (Eastern Syriac commemoration)."
+  },
+  {
+    "day": "July 7",
+    "tradition": "Catholic",
+    "name": "Saint Palladius",
+    "description": "First bishop sent to the Christians of Ireland."
+  },
+  {
+    "day": "July 7",
+    "tradition": "Eastern Orthodox",
+    "name": "Saint Kyriaki (Cyriaca) of Nicomedia",
+    "description": "Great Martyr who suffered under Diocletian."
+  },
+  {
+    "day": "July 7",
+    "tradition": "Oriental Orthodox",
+    "name": "Saint Thomas of Mount Maleon",
+    "description": "Ascetic who lived in solitude on the mountain."
+  },
+  {
+    "day": "July 7",
+    "tradition": "Anglican",
+    "name": "Thomas Cranmer",
+    "description": "Archbishop and compiler of the Prayer Book, martyr, died 1556."
+  },
+  {
+    "day": "July 7",
+    "tradition": "Church of the East",
+    "name": "Mar Augin (Commemoration)",
+    "description": "Founder of the Egyptian monastic tradition in Mesopotamia."
+  },
+  {
+    "day": "July 8",
+    "tradition": "Catholic",
+    "name": "Saints Adrian III",
+    "description": "Pope and peacemaker."
+  },
+  {
+    "day": "July 8",
+    "tradition": "Eastern Orthodox, Oriental Orthodox",
+    "name": "Great Martyr Procopius",
+    "description": "Military commander who converted and was martyred."
+  },
+  {
+    "day": "July 8",
+    "tradition": "Anglican",
+    "name": "Saints Aquila and Priscilla",
+    "description": "The tentmakers and friends of St. Paul."
+  },
+  {
+    "day": "July 8",
+    "tradition": "Church of the East",
+    "name": "Mar Pethion",
+    "description": "Evangelist and martyr of the Persian Empire."
+  },
+  {
+    "day": "July 9",
+    "tradition": "Catholic",
+    "name": "Saint Augustine Zhao Rong and Companions",
+    "description": "Martyrs of China."
+  },
+  {
+    "day": "July 9",
+    "tradition": "Eastern Orthodox, Oriental Orthodox",
+    "name": "Hieromartyr Pancratius of Taormina",
+    "description": "Disciple of Peter and Bishop of Sicily."
+  },
+  {
+    "day": "July 9",
+    "tradition": "Anglican",
+    "name": "Saint Leo the Great",
+    "description": "Pope and Doctor of the Church, died 461."
+  },
+  {
+    "day": "July 9",
+    "tradition": "Church of the East",
+    "name": "Mar Shimon Bar Sabbae (Commemoration)",
+    "description": "Relics and witness of the Catholicos."
+  },
+  {
+    "day": "July 10",
+    "tradition": "Catholic",
+    "name": "Saint Veronica Giuliani",
+    "description": "Capuchin nun and mystic."
+  },
+  {
+    "day": "July 10",
+    "tradition": "Eastern Orthodox",
+    "name": "The 45 Martyrs of Nikopolis",
+    "description": "Martyred in Armenia under Emperor Licinius."
+  },
+  {
+    "day": "July 10",
+    "tradition": "Oriental Orthodox",
+    "name": "Venerable Anthony of the Kiev Caves",
+    "description": "Father of Russian/Ukrainian monasticism."
+  },
+  {
+    "day": "July 10",
+    "tradition": "Anglican",
+    "name": "Saint Benedict of Nursia (Eve)",
+    "description": "Preparation for the Feast of the Abbot."
+  },
+  {
+    "day": "July 10",
+    "tradition": "Church of the East",
+    "name": "Mar Babai the Great",
+    "description": "Guardian of the faith and monastic reformer."
+  },
+  {
+    "day": "July 11",
+    "tradition": "Catholic, Anglican",
+    "name": "Saint Benedict of Nursia",
+    "description": "Abbot and patron of Europe."
+  },
+  {
+    "day": "July 11",
+    "tradition": "Eastern Orthodox",
+    "name": "Great Martyr Euphemia",
+    "description": "The 'All-Praised' martyr of Chalcedon."
+  },
+  {
+    "day": "July 11",
+    "tradition": "Oriental Orthodox",
+    "name": "Saint Olga of Kiev",
+    "description": "Princess and Equal-to-the-Apostles."
+  },
+  {
+    "day": "July 11",
+    "tradition": "Church of the East",
+    "name": "Mar Isaac of Nineveh",
+    "description": "Mystic and teacher of the spiritual life."
+  },
+  {
+    "day": "July 12",
+    "tradition": "Catholic",
+    "name": "Saint Veronica",
+    "description": "The woman who wiped the Holy Face of Jesus."
+  },
+  {
+    "day": "July 12",
+    "tradition": "Eastern Orthodox",
+    "name": "Martyrs Proclus and Hilary",
+    "description": "Martyrs of Ancyra."
+  },
+  {
+    "day": "July 12",
+    "tradition": "Oriental Orthodox",
+    "name": "Saint Paisios the Athonite",
+    "description": "Modern saint and elder of Mount Athos."
+  },
+  {
+    "day": "July 12",
+    "tradition": "Anglican",
+    "name": "Saint John Cassian",
+    "description": "Abbot and theologian, died 435."
+  },
+  {
+    "day": "July 12",
+    "tradition": "Church of the East",
+    "name": "Mar Abraham of Kashkar",
+    "description": "Reviver of the community and abbot."
+  },
+  {
+    "day": "July 13",
+    "tradition": "Catholic",
+    "name": "Saint Henry",
+    "description": "Holy Roman Emperor and just ruler."
+  },
+  {
+    "day": "July 13",
+    "tradition": "Eastern Orthodox, Oriental Orthodox",
+    "name": "Archangel Gabriel",
+    "description": "The messenger of the Incarnation."
+  },
+  {
+    "day": "July 13",
+    "tradition": "Anglican",
+    "name": "Saint Silas",
+    "description": "Companion of St. Paul."
+  },
+  {
+    "day": "July 13",
+    "tradition": "Church of the East",
+    "name": "Mar Narsai",
+    "description": "The Harp of the Spirit and poet."
+  },
+  {
+    "day": "July 14",
+    "tradition": "Catholic",
+    "name": "Saint Kateri Tekakwitha",
+    "description": "The Lily of the Mohawks; first Native American saint."
+  },
+  {
+    "day": "July 14",
+    "tradition": "Eastern Orthodox, Oriental Orthodox",
+    "name": "Saint Aquila",
+    "description": "New Testament witness."
+  },
+  {
+    "day": "July 14",
+    "tradition": "Anglican",
+    "name": "Samson Occom",
+    "description": "Mohegan priest and missionary, 1792."
+  },
+  {
+    "day": "July 14",
+    "tradition": "Church of the East",
+    "name": "Mar Awa",
+    "description": "Catholicos and defender of the East."
+  },
+  {
+    "day": "July 15",
+    "tradition": "Catholic",
+    "name": "Saint Bonaventure",
+    "description": "Seraphic Doctor and Bishop."
+  },
+  {
+    "day": "July 15",
+    "tradition": "Eastern Orthodox",
+    "name": "Saint Vladimir of Kiev",
+    "description": "Baptizer of Rus' and Prince."
+  },
+  {
+    "day": "July 15",
+    "tradition": "Oriental Orthodox",
+    "name": "Saint Cyricus and Saint Julitta",
+    "description": "Mother and child martyrs."
+  },
+  {
+    "day": "July 15",
+    "tradition": "Anglican",
+    "name": "Swithun of Winchester",
+    "description": "Bishop and teacher, c. 862."
+  },
+  {
+    "day": "July 15",
+    "tradition": "Church of the East",
+    "name": "Mar Saba",
+    "description": "The holy monk and worker of signs."
+  },
+  {
+    "day": "July 16",
+    "tradition": "Catholic",
+    "name": "Our Lady of Mount Carmel",
+    "description": "Patroness of the Carmelite Order."
+  },
+  {
+    "day": "July 16",
+    "tradition": "Eastern Orthodox, Oriental Orthodox",
+    "name": "Saint Athenogenes",
+    "description": "Martyr and bishop."
+  },
+  {
+    "day": "July 16",
+    "tradition": "Anglican",
+    "name": "Anne Askew",
+    "description": "Poet and martyr, 1546."
+  },
+  {
+    "day": "July 16",
+    "tradition": "Church of the East",
+    "name": "Mar Zeia",
+    "description": "The traveler and miracle worker."
+  },
+  {
+    "day": "July 17",
+    "tradition": "Catholic",
+    "name": "Saint Leo IV",
+    "description": "Pope who defended Rome from invasion."
+  },
+  {
+    "day": "July 17",
+    "tradition": "Eastern Orthodox, Oriental Orthodox",
+    "name": "Saint Marina",
+    "description": "Witness to Christ under the pagan governor."
+  },
+  {
+    "day": "July 17",
+    "tradition": "Anglican",
+    "name": "William White",
+    "description": "Bishop of Pennsylvania, 1836."
+  },
+  {
+    "day": "July 17",
+    "tradition": "Church of the East",
+    "name": "Mar Yohannan",
+    "description": "Bishop and tireless confessor."
+  },
+  {
+    "day": "July 18",
+    "tradition": "Catholic",
+    "name": "Saint Camillus de Lellis",
+    "description": "Patron of hospitals and the sick."
+  },
+  {
+    "day": "July 18",
+    "tradition": "Eastern Orthodox, Oriental Orthodox",
+    "name": "Saint Emilian",
+    "description": "Martyr who destroyed pagan idols."
+  },
+  {
+    "day": "July 18",
+    "tradition": "Anglican",
+    "name": "Elizabeth Ferard",
+    "description": "First Deaconess of the Church of England, 1883."
+  },
+  {
+    "day": "July 18",
+    "tradition": "Church of the East",
+    "name": "Mar Sabrisho",
+    "description": "Commemoration of the Catholicos and monk."
+  },
+  {
+    "day": "July 19",
+    "tradition": "Catholic",
+    "name": "Saint Arsenius the Great",
+    "description": "Desert Father and tutor to emperors."
+  },
+  {
+    "day": "July 19",
+    "tradition": "Eastern Orthodox, Oriental Orthodox, Anglican",
+    "name": "Saint Macrina the Younger",
+    "description": "Sister of St. Basil and St. Gregory."
+  },
+  {
+    "day": "July 19",
+    "tradition": "Church of the East",
+    "name": "Mar Mushi",
+    "description": "Teacher and writer of the East."
+  },
+  {
+    "day": "July 20",
+    "tradition": "Catholic",
+    "name": "Saint Apollinaris",
+    "description": "Bishop and Martyr."
+  },
+  {
+    "day": "July 20",
+    "tradition": "Eastern Orthodox, Oriental Orthodox, Church of the East",
+    "name": "Prophet Elias (Elijah)",
+    "description": "Old Testament prophet taken up in the chariot."
+  },
+  {
+    "day": "July 20",
+    "tradition": "Anglican",
+    "name": "Prophet Elijah",
+    "description": "Old Testament prophet."
+  },
+  {
+    "day": "July 21",
+    "tradition": "Catholic",
+    "name": "Saint Lawrence of Brindisi",
+    "description": "Doctor of the Church and Capuchin."
+  },
+  {
+    "day": "July 21",
+    "tradition": "Eastern Orthodox, Oriental Orthodox",
+    "name": "Prophet Ezekiel",
+    "description": "The prophet who saw the valley of dry bones."
+  },
+  {
+    "day": "July 21",
+    "tradition": "Anglican",
+    "name": "Saint Lawrence of Brindisi",
+    "description": "Priest and Teacher."
+  },
+  {
+    "day": "July 21",
+    "tradition": "Church of the East",
+    "name": "Mar Sliwa",
+    "description": "The Martyr of the Cross."
+  },
+  {
+    "day": "July 22",
+    "tradition": "Catholic, Eastern Orthodox, Oriental Orthodox, Anglican",
+    "name": "Saint Mary Magdalene",
+    "description": "Disciple and first witness of the Resurrection."
+  },
+  {
+    "day": "July 22",
+    "tradition": "Church of the East",
+    "name": "Mar Mari (Translation of Relics)",
+    "description": "Commemoration of the Apostle."
+  },
+  {
+    "day": "July 23",
+    "tradition": "Catholic, Anglican",
+    "name": "Saint Bridget of Sweden",
+    "description": "Foundress and mystic."
+  },
+  {
+    "day": "July 23",
+    "tradition": "Eastern Orthodox, Oriental Orthodox",
+    "name": "Saint Phocas",
+    "description": "Martyr."
+  },
+  {
+    "day": "July 23",
+    "tradition": "Church of the East",
+    "name": "Mar Qardagh",
+    "description": "The Martyr Prince."
+  },
+  {
+    "day": "July 24",
+    "tradition": "Catholic",
+    "name": "Saint Sharbel Makhlouf",
+    "description": "Maronite monk and miracle worker."
+  },
+  {
+    "day": "July 24",
+    "tradition": "Eastern Orthodox, Oriental Orthodox",
+    "name": "Saint Christina",
+    "description": "Witness to Christ."
+  },
+  {
+    "day": "July 24",
+    "tradition": "Anglican",
+    "name": "Thomas à Kempis",
+    "description": "Priest and author of The Imitation of Christ, 1471."
+  },
+  {
+    "day": "July 24",
+    "tradition": "Church of the East",
+    "name": "Mar Addai (Secondary Feast)",
+    "description": "Commemoration of the teacher."
+  },
+  {
+    "day": "July 25",
+    "tradition": "Catholic, Oriental Orthodox, Anglican",
+    "name": "Saint James the Apostle",
+    "description": "The Son of Zebedee."
+  },
+  {
+    "day": "July 25",
+    "tradition": "Eastern Orthodox",
+    "name": "Dormition of Saint Anna",
+    "description": "Falling asleep of the mother of the Theotokos."
+  },
+  {
+    "day": "July 25",
+    "tradition": "Church of the East",
+    "name": "Mar Ya'qub (Saint James)",
+    "description": "The Apostle."
+  },
+  {
+    "day": "July 26",
+    "tradition": "Catholic, Eastern Orthodox, Oriental Orthodox, Anglican",
+    "name": "Saint Joachim and Saint Anne",
+    "description": "Parents of the Blessed Virgin Mary."
+  },
+  {
+    "day": "July 26",
+    "tradition": "Church of the East",
+    "name": "Mar Mari (Synaxis)",
+    "description": "Assembly in honor of the Apostle."
+  },
+  {
+    "day": "July 27",
+    "tradition": "Catholic",
+    "name": "Saint Pantaleon",
+    "description": "Physician and martyr."
+  },
+  {
+    "day": "July 27",
+    "tradition": "Eastern Orthodox, Oriental Orthodox",
+    "name": "Saint Panteleimon",
+    "description": "Healer and martyr."
+  },
+  {
+    "day": "July 27",
+    "tradition": "Anglican",
+    "name": "William Reed Huntington",
+    "description": "Priest and Ecumenist, 1909."
+  },
+  {
+    "day": "July 27",
+    "tradition": "Church of the East",
+    "name": "Mar Augustine (Commemoration)",
+    "description": "Teacher of the faith."
+  },
+  {
+    "day": "July 28",
+    "tradition": "Catholic",
+    "name": "Saint Samson of Dol",
+    "description": "Abbot and Bishop."
+  },
+  {
+    "day": "July 28",
+    "tradition": "Eastern Orthodox, Oriental Orthodox",
+    "name": "Apostles of the Seventy Prochorus and Nicanor",
+    "description": "Disciples of the Seventy."
+  },
+  {
+    "day": "July 28",
+    "tradition": "Anglican",
+    "name": "Saint Victor I",
+    "description": "Pope and martyr, died 199."
+  },
+  {
+    "day": "July 28",
+    "tradition": "Church of the East",
+    "name": "Mar Papa (Commemoration)",
+    "description": "Catholicos."
+  },
+  {
+    "day": "July 29",
+    "tradition": "Catholic, Eastern Orthodox, Oriental Orthodox, Anglican",
+    "name": "Saints Mary, Martha, and Lazarus of Bethany",
+    "description": "Friends of Jesus."
+  },
+  {
+    "day": "July 29",
+    "tradition": "Church of the East",
+    "name": "Mar Addai and Mar Mari",
+    "description": "Founders of the Church of the East."
+  },
+  {
+    "day": "July 30",
+    "tradition": "Catholic",
+    "name": "Saint Peter Chrysologus",
+    "description": "Bishop and Doctor."
+  },
+  {
+    "day": "July 30",
+    "tradition": "Eastern Orthodox, Oriental Orthodox",
+    "name": "Saint Silas",
+    "description": "Apostle and martyr."
+  },
+  {
+    "day": "July 30",
+    "tradition": "Anglican",
+    "name": "William Wilberforce",
+    "description": "Prophetic witness and abolitionist, 1833."
+  },
+  {
+    "day": "July 30",
+    "tradition": "Church of the East",
+    "name": "Mar Shimun bar Sabbae",
+    "description": "The Good Shepherd Catholicos."
+  },
+  {
+    "day": "July 31",
+    "tradition": "Catholic",
+    "name": "Saint Ignatius of Loyola",
+    "description": "Founder of the Society of Jesus."
+  },
+  {
+    "day": "July 31",
+    "tradition": "Eastern Orthodox, Oriental Orthodox",
+    "name": "Saint Eudocimus",
+    "description": "Saint of charity."
+  },
+  {
+    "day": "July 31",
+    "tradition": "Anglican",
+    "name": "Joseph of Arimathea",
+    "description": "The disciple who provided the tomb."
+  },
+  {
+    "day": "July 31",
+    "tradition": "Church of the East",
+    "name": "Mar Toma (Feast of Relics)",
+    "description": "Commemoration of the Apostle."
+  }
+]

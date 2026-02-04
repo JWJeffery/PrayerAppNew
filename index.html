@@ -227,7 +227,7 @@
                 <strong>Ordo Components:</strong>
                 <label><input type="checkbox" id="toggle-litany" onchange="renderOffice()"> The Great Litany</label>
                 <label><input type="checkbox" id="toggle-suffrages" onchange="renderOffice()" checked> Suffrages</label>
-                <label><input type="checkbox" id="toggle-30day-psalter" onchange="renderOffice()"> 30-Day Psalter</label>
+                <label><input type="checkbox" id="toggle-30day-psalter" onchange="renderOffice()" checked> 30-Day Psalter</label>
             </div>
         </div>
 
@@ -579,25 +579,27 @@
                 return;
             }
 
-            if (item === "VARIABLE_PSALM") {
-                if (psalms) {
-                    let psalmRefs = psalms.split(',').map(p => p.trim());
-                    let psalmHtml = "";
-                    psalmRefs.forEach(psalm => {
-                        let psalmId = psalm.toUpperCase();
-                        if (!psalmId.startsWith('PSALM ')) psalmId = 'PSALM ' + psalmId;
-                        const fullText = getScriptureText(psalmId);
-                        psalmHtml += `<h4 class="passage-reference">${psalm}</h4><span class="component-text">${fullText || "No psalm text found"}</span>`;
-                        if (document.getElementById('toggle-gloria-patri').checked) {
-                            const gloria = appData.components.find(c => c.id === "bcp-gloria-patri");
-                            let gloriaText = gloria ? (gloria.text[rite] || gloria.text['rite2'] || "(Gloria Patri)") : "(Gloria Patri not found)";
-                            psalmHtml += `<span class="component-text"><i>${gloriaText}</i></span>`;
-                        }
-                    });
-                    officeHtml += `<div class="component-text">${psalmHtml}</div>`;
+   if (item === "VARIABLE_PSALM") {
+        if (psalms) {
+            let psalmRefs = psalms.split(',').map(p => p.trim());
+            let psalmHtml = "";
+            const rubricTitle = psalmRefs.length > 1 ? "The Psalms" : "The Psalm";
+            psalmHtml += `<span class="rubric-text">${rubricTitle}</span>`;
+            psalmRefs.forEach(psalm => {
+                let psalmId = psalm.toUpperCase().trim();
+                if (!psalmId.startsWith('PSALM ')) psalmId = 'PSALM ' + psalmId;
+                const fullText = getScriptureText(psalmId);
+                psalmHtml += `<h4 class="passage-reference">Psalm ${psalm}</h4><span class="component-text">${fullText || "No psalm text found"}</span>`;
+                if (document.getElementById('toggle-gloria-patri').checked) {
+                    const gloria = appData.components.find(c => c.id === "bcp-gloria-patri");
+                    let gloriaText = gloria ? (gloria.text[rite] || gloria.text['rite2'] || "(Gloria Patri)") : "(Gloria Patri not found)";
+                    psalmHtml += `<span class="component-text"><i>${gloriaText}</i></span>`;
                 }
-                return;
-            }
+            });
+            officeHtml += psalmHtml;
+        }
+        return;
+    }
 
             let compId = (typeof item === 'object') ? item[rite] : item;
             const comp = appData.components.find(c => c.id === compId);

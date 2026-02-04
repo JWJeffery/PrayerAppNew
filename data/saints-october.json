@@ -1,0 +1,896 @@
+[
+  {
+    "day": "October 1",
+    "tradition": "Catholic",
+    "name": "Saint Thérèse of Lisieux",
+    "description": "Virgin and Doctor of the Church, known for her 'Little Way'."
+  },
+  {
+    "day": "October 1",
+    "tradition": "Eastern Orthodox",
+    "name": "Holy Protection of the Theotokos",
+    "description": "Feast of the Virgin's intercession."
+  },
+  {
+    "day": "October 1",
+    "tradition": "Oriental Orthodox",
+    "name": "Intercession of the Theotokos",
+    "description": "Commemoration of Mary's protection."
+  },
+  {
+    "day": "October 1",
+    "tradition": "Church of the East",
+    "name": "Saint Romanos the Melodist",
+    "description": "Deacon and hymnographer, died 556."
+  },
+  {
+    "day": "October 2",
+    "tradition": "Catholic",
+    "name": "Guardian Angels",
+    "description": "Memorial of the holy angels."
+  },
+  {
+    "day": "October 2",
+    "tradition": "Eastern Orthodox",
+    "name": "Saints Cyprian and Justina",
+    "description": "Martyr and virgin martyr."
+  },
+  {
+    "day": "October 2",
+    "tradition": "Oriental Orthodox",
+    "name": "Saint Justina",
+    "description": "Virgin martyr."
+  },
+  {
+    "day": "October 2",
+    "tradition": "Anglican",
+    "name": "Remigius",
+    "description": "Bishop of Rheims, 530."
+  },
+  {
+    "day": "October 2",
+    "tradition": "Church of the East",
+    "name": "Saint Cyprian",
+    "description": "Martyr and confessor."
+  },
+  {
+    "day": "October 3",
+    "tradition": "Catholic",
+    "name": "Mother Théodore Guérin",
+    "description": "Religious and educator."
+  },
+  {
+    "day": "October 3",
+    "tradition": "Eastern Orthodox",
+    "name": "Saint Dionysius the Areopagite",
+    "description": "Bishop and martyr."
+  },
+  {
+    "day": "October 3",
+    "tradition": "Oriental Orthodox",
+    "name": "Saint Dionysius the Areopagite",
+    "description": "Convert of St. Paul."
+  },
+  {
+    "day": "October 3",
+    "tradition": "Anglican",
+    "name": "George Bell",
+    "description": "Bishop of Chichester, Ecumenist, 1958."
+  },
+  {
+    "day": "October 3",
+    "tradition": "Church of the East",
+    "name": "Saint Dionysius",
+    "description": "Bishop and martyr."
+  },
+  {
+    "day": "October 4",
+    "tradition": "Catholic",
+    "name": "Saint Francis of Assisi",
+    "description": "Friar and founder."
+  },
+  {
+    "day": "October 4",
+    "tradition": "Eastern Orthodox",
+    "name": "Saint Hierotheos of Athens",
+    "description": "Bishop and disciple of St. Paul."
+  },
+  {
+    "day": "October 4",
+    "tradition": "Oriental Orthodox",
+    "name": "Saint Hierotheos",
+    "description": "Bishop of Athens."
+  },
+  {
+    "day": "October 4",
+    "tradition": "Anglican",
+    "name": "Francis of Assisi",
+    "description": "Friar, Deacon, Founder of the Friars Minor, 1226."
+  },
+  {
+    "day": "October 4",
+    "tradition": "Church of the East",
+    "name": "Saint Francis of Assisi",
+    "description": "Friar and saint."
+  },
+  {
+    "day": "October 5",
+    "tradition": "Catholic",
+    "name": "Saint Faustina Kowalska",
+    "description": "Virgin and apostle of Divine Mercy."
+  },
+  {
+    "day": "October 5",
+    "tradition": "Eastern Orthodox",
+    "name": "Holy Martyr Charitina",
+    "description": "Martyr under Diocletian."
+  },
+  {
+    "day": "October 5",
+    "tradition": "Oriental Orthodox",
+    "name": "Saint Charitina",
+    "description": "Virgin martyr."
+  },
+  {
+    "day": "October 5",
+    "tradition": "Anglican",
+    "name": "Faustina Kowalska",
+    "description": "Virgin and mystic."
+  },
+  {
+    "day": "October 5",
+    "tradition": "Church of the East",
+    "name": "Saint Charitina",
+    "description": "Martyr."
+  },
+  {
+    "day": "October 6",
+    "tradition": "Catholic",
+    "name": "Saint Bruno",
+    "description": "Founder of the Carthusians."
+  },
+  {
+    "day": "October 6",
+    "tradition": "Eastern Orthodox",
+    "name": "Holy Apostle Thomas",
+    "description": "Apostle and martyr."
+  },
+  {
+    "day": "October 6",
+    "tradition": "Oriental Orthodox",
+    "name": "Saint Thomas the Apostle",
+    "description": "Apostle to India."
+  },
+  {
+    "day": "October 6",
+    "tradition": "Anglican",
+    "name": "William Tyndale",
+    "description": "Translator of the Scriptures, Martyr, 1536."
+  },
+  {
+    "day": "October 6",
+    "tradition": "Church of the East",
+    "name": "Saint Thomas the Apostle",
+    "description": "Apostle and patron."
+  },
+  {
+    "day": "October 7",
+    "tradition": "Catholic",
+    "name": "Our Lady of the Rosary",
+    "description": "Memorial of the Blessed Virgin Mary."
+  },
+  {
+    "day": "October 7",
+    "tradition": "Eastern Orthodox",
+    "name": "Martyrs Sergius and Bacchus",
+    "description": "Martyrs under Maximian."
+  },
+  {
+    "day": "October 7",
+    "tradition": "Oriental Orthodox",
+    "name": "Saint Sergius and Bacchus",
+    "description": "Soldier martyrs."
+  },
+  {
+    "day": "October 7",
+    "tradition": "Anglican",
+    "name": "Birgitta of Sweden",
+    "description": "Mystic, 1373."
+  },
+  {
+    "day": "October 7",
+    "tradition": "Church of the East",
+    "name": "Saints Sergius and Bacchus",
+    "description": "Martyrs."
+  },
+  {
+    "day": "October 8",
+    "tradition": "Catholic",
+    "name": "Saint Thaïs",
+    "description": "Penitent."
+  },
+  {
+    "day": "October 8",
+    "tradition": "Eastern Orthodox",
+    "name": "Venerable Pelagia the Penitent",
+    "description": "Repentant sinner and ascetic."
+  },
+  {
+    "day": "October 8",
+    "tradition": "Oriental Orthodox",
+    "name": "Saint Pelagia",
+    "description": "Virgin martyr."
+  },
+  {
+    "day": "October 8",
+    "tradition": "Anglican",
+    "name": "Robert Grosseteste",
+    "description": "Bishop of Lincoln, 1253."
+  },
+  {
+    "day": "October 8",
+    "tradition": "Church of the East",
+    "name": "Saint Pelagia",
+    "description": "Penitent."
+  },
+  {
+    "day": "October 9",
+    "tradition": "Catholic",
+    "name": "Saint John Leonardi",
+    "description": "Founder of the Clerks Regular of the Mother of God."
+  },
+  {
+    "day": "October 9",
+    "tradition": "Eastern Orthodox",
+    "name": "Holy Apostle James, son of Alphaeus",
+    "description": "Apostle and martyr."
+  },
+  {
+    "day": "October 9",
+    "tradition": "Oriental Orthodox",
+    "name": "Saint James son of Alphaeus",
+    "description": "Apostle."
+  },
+  {
+    "day": "October 9",
+    "tradition": "Anglican",
+    "name": "Denys",
+    "description": "Bishop of Paris, Martyrs, c.250."
+  },
+  {
+    "day": "October 9",
+    "tradition": "Church of the East",
+    "name": "Saint James son of Alphaeus",
+    "description": "Apostle."
+  },
+  {
+    "day": "October 10",
+    "tradition": "Catholic",
+    "name": "Saint Francis Borgia",
+    "description": "Jesuit and administrator."
+  },
+  {
+    "day": "October 10",
+    "tradition": "Eastern Orthodox",
+    "name": "Martyrs Eulampius and Eulampia",
+    "description": "Brother and sister martyrs."
+  },
+  {
+    "day": "October 10",
+    "tradition": "Oriental Orthodox",
+    "name": "Saint Eulampia",
+    "description": "Martyr."
+  },
+  {
+    "day": "October 10",
+    "tradition": "Anglican",
+    "name": "Paulinus",
+    "description": "Bishop of York, Missionary, 644."
+  },
+  {
+    "day": "October 10",
+    "tradition": "Church of the East",
+    "name": "Martyrs Eulampius and Eulampia",
+    "description": "Siblings martyred."
+  },
+  {
+    "day": "October 11",
+    "tradition": "Catholic",
+    "name": "Saint John XXIII",
+    "description": "Pope and convener of Vatican II."
+  },
+  {
+    "day": "October 11",
+    "tradition": "Eastern Orthodox",
+    "name": "Holy Apostle Philip",
+    "description": "One of the Seven Deacons."
+  },
+  {
+    "day": "October 11",
+    "tradition": "Oriental Orthodox",
+    "name": "Saint Philip the Deacon",
+    "description": "One of the Seven."
+  },
+  {
+    "day": "October 11",
+    "tradition": "Anglican",
+    "name": "Philip",
+    "description": "Deacon and Evangelist."
+  },
+  {
+    "day": "October 11",
+    "tradition": "Church of the East",
+    "name": "Saint Philip the Deacon",
+    "description": "Evangelist."
+  },
+  {
+    "day": "October 12",
+    "tradition": "Catholic",
+    "name": "Saint Seraphin of Montegranaro",
+    "description": "Capuchin lay brother."
+  },
+  {
+    "day": "October 12",
+    "tradition": "Eastern Orthodox",
+    "name": "Martyrs Probus, Tarachus, and Andronicus",
+    "description": "Martyrs at Anazarbus."
+  },
+  {
+    "day": "October 12",
+    "tradition": "Oriental Orthodox",
+    "name": "Saint Cosmas of Maiuma",
+    "description": "Hymnographer."
+  },
+  {
+    "day": "October 12",
+    "tradition": "Anglican",
+    "name": "Edward the Confessor",
+    "description": "King of England, 1066."
+  },
+  {
+    "day": "October 12",
+    "tradition": "Church of the East",
+    "name": "Saint Cosmas of Maiuma",
+    "description": "Bishop and hymnographer."
+  },
+  {
+    "day": "October 13",
+    "tradition": "Catholic",
+    "name": "Saint Edward the Confessor",
+    "description": "King of England."
+  },
+  {
+    "day": "October 13",
+    "tradition": "Eastern Orthodox",
+    "name": "Martyrs Carpus, Papylus, Agathodorus, and Agathonica",
+    "description": "Martyrs at Pergamus."
+  },
+  {
+    "day": "October 13",
+    "tradition": "Oriental Orthodox",
+    "name": "Saint Carpus",
+    "description": "Bishop and martyr."
+  },
+  {
+    "day": "October 13",
+    "tradition": "Anglican",
+    "name": "Edward the Confessor",
+    "description": "King of England, 1066."
+  },
+  {
+    "day": "October 13",
+    "tradition": "Church of the East",
+    "name": "Saint Carpus",
+    "description": "Martyr."
+  },
+  {
+    "day": "October 14",
+    "tradition": "Catholic",
+    "name": "Saint Callistus I",
+    "description": "Pope and martyr."
+  },
+  {
+    "day": "October 14",
+    "tradition": "Eastern Orthodox",
+    "name": "Martyrs Nazarius, Gervasius, Protasius, and Celsus",
+    "description": "Martyrs of Milan."
+  },
+  {
+    "day": "October 14",
+    "tradition": "Oriental Orthodox",
+    "name": "Saint Nazarius",
+    "description": "Martyr."
+  },
+  {
+    "day": "October 14",
+    "tradition": "Anglican",
+    "name": "Samuel Schereschewsky",
+    "description": "Bishop of Shanghai, 1906."
+  },
+  {
+    "day": "October 14",
+    "tradition": "Church of the East",
+    "name": "Martyrs Nazarius and Companions",
+    "description": "Martyrs."
+  },
+  {
+    "day": "October 15",
+    "tradition": "Catholic",
+    "name": "Saint Teresa of Jesus",
+    "description": "Virgin and Doctor."
+  },
+  {
+    "day": "October 15",
+    "tradition": "Eastern Orthodox",
+    "name": "Venerable Euthymius the New",
+    "description": "Monk of Thessalonica."
+  },
+  {
+    "day": "October 15",
+    "tradition": "Oriental Orthodox",
+    "name": "Saint Euthymius",
+    "description": "Ascetic."
+  },
+  {
+    "day": "October 15",
+    "tradition": "Anglican",
+    "name": "Teresa of Avila",
+    "description": "Mystic, 1582."
+  },
+  {
+    "day": "October 15",
+    "tradition": "Church of the East",
+    "name": "Saint Teresa of Avila",
+    "description": "Mystic and doctor."
+  },
+  {
+    "day": "October 16",
+    "tradition": "Catholic",
+    "name": "Saint Hedwig",
+    "description": "Religious."
+  },
+  {
+    "day": "October 16",
+    "tradition": "Eastern Orthodox",
+    "name": "Martyr Longinus the Centurion",
+    "description": "Soldier at the Crucifixion."
+  },
+  {
+    "day": "October 16",
+    "tradition": "Oriental Orthodox",
+    "name": "Saint Longinus",
+    "description": "Centurion martyr."
+  },
+  {
+    "day": "October 16",
+    "tradition": "Anglican",
+    "name": "Hugh Latimer and Nicholas Ridley",
+    "description": "Bishops and Martyrs, 1555."
+  },
+  {
+    "day": "October 16",
+    "tradition": "Church of the East",
+    "name": "Saint Longinus",
+    "description": "Centurion at the Cross."
+  },
+  {
+    "day": "October 17",
+    "tradition": "Catholic",
+    "name": "Saint Ignatius of Antioch",
+    "description": "Bishop and martyr."
+  },
+  {
+    "day": "October 17",
+    "tradition": "Eastern Orthodox",
+    "name": "Prophet Hosea",
+    "description": "Old Testament prophet."
+  },
+  {
+    "day": "October 17",
+    "tradition": "Oriental Orthodox",
+    "name": "Saint Hosea",
+    "description": "Prophet."
+  },
+  {
+    "day": "October 17",
+    "tradition": "Anglican",
+    "name": "Ignatius of Antioch",
+    "description": "Bishop and Martyr, c. 107."
+  },
+  {
+    "day": "October 17",
+    "tradition": "Church of the East",
+    "name": "Saint Ignatius of Antioch",
+    "description": "Bishop and martyr."
+  },
+  {
+    "day": "October 18",
+    "tradition": "Universal",
+    "name": "Saint Luke the Evangelist",
+    "description": "Physician and author of the Gospel and Acts."
+  },
+  {
+    "day": "October 18",
+    "tradition": "Eastern Orthodox",
+    "name": "Saint Marinus the Martyr",
+    "description": "Martyr in Anazarbus."
+  },
+  {
+    "day": "October 18",
+    "tradition": "Oriental Orthodox",
+    "name": "Saint Luke the Evangelist",
+    "description": "Author of the Gospel."
+  },
+  {
+    "day": "October 18",
+    "tradition": "Church of the East",
+    "name": "Saint Julian the Hermit",
+    "description": "Ascetic."
+  },
+  {
+    "day": "October 19",
+    "tradition": "Catholic",
+    "name": "Saint Isaac Jogues and Companions",
+    "description": "Jesuit martyrs of North America."
+  },
+  {
+    "day": "October 19",
+    "tradition": "Eastern Orthodox",
+    "name": "Prophet Joel",
+    "description": "Old Testament prophet."
+  },
+  {
+    "day": "October 19",
+    "tradition": "Oriental Orthodox",
+    "name": "Saint Joel",
+    "description": "Prophet."
+  },
+  {
+    "day": "October 19",
+    "tradition": "Anglican",
+    "name": "Henry Martyn",
+    "description": "Priest and Missionary to India and Persia, 1812."
+  },
+  {
+    "day": "October 19",
+    "tradition": "Church of the East",
+    "name": "Prophet Joel",
+    "description": "Old Testament prophet."
+  },
+  {
+    "day": "October 20",
+    "tradition": "Catholic",
+    "name": "Saint Paul of the Cross",
+    "description": "Founder of the Passionists."
+  },
+  {
+    "day": "October 20",
+    "tradition": "Eastern Orthodox",
+    "name": "Greatmartyr Artemius at Antioch",
+    "description": "Martyr under Julian."
+  },
+  {
+    "day": "October 20",
+    "tradition": "Oriental Orthodox",
+    "name": "Saint Artemius",
+    "description": "Martyr."
+  },
+  {
+    "day": "October 20",
+    "tradition": "Anglican",
+    "name": "Paul of the Cross",
+    "description": "Priest and Mystic, 1775."
+  },
+  {
+    "day": "October 20",
+    "tradition": "Church of the East",
+    "name": "Saint Artemius",
+    "description": "Martyr."
+  },
+  {
+    "day": "October 21",
+    "tradition": "Catholic",
+    "name": "Saint Hilarion",
+    "description": "Hermit."
+  },
+  {
+    "day": "October 21",
+    "tradition": "Eastern Orthodox",
+    "name": "Venerable Hilarion the Great",
+    "description": "Hermit of Palestine."
+  },
+  {
+    "day": "October 21",
+    "tradition": "Oriental Orthodox",
+    "name": "Saint Hilarion",
+    "description": "Ascetic."
+  },
+  {
+    "day": "October 21",
+    "tradition": "Anglican",
+    "name": "Ursula and Companions",
+    "description": "Virgins and Martyrs, c. 453."
+  },
+  {
+    "day": "October 21",
+    "tradition": "Church of the East",
+    "name": "Saint Hilarion",
+    "description": "Hermit."
+  },
+  {
+    "day": "October 22",
+    "tradition": "Catholic",
+    "name": "Saint John Paul II",
+    "description": "Pope."
+  },
+  {
+    "day": "October 22",
+    "tradition": "Eastern Orthodox",
+    "name": "Equal-to-the-Apostles Abercius",
+    "description": "Bishop of Hierapolis."
+  },
+  {
+    "day": "October 22",
+    "tradition": "Oriental Orthodox",
+    "name": "Saint Abercius",
+    "description": "Bishop."
+  },
+  {
+    "day": "October 22",
+    "tradition": "Anglican",
+    "name": "Donatus",
+    "description": "Bishop of Fiesole, 876."
+  },
+  {
+    "day": "October 22",
+    "tradition": "Church of the East",
+    "name": "Saint Abercius",
+    "description": "Bishop and missionary."
+  },
+  {
+    "day": "October 23",
+    "tradition": "Universal",
+    "name": "Saint James the Brother of the Lord",
+    "description": "Apostle and martyr."
+  },
+  {
+    "day": "October 23",
+    "tradition": "Eastern Orthodox",
+    "name": "Saint Ignatius of Constantinople",
+    "description": "Patriarch and confessor."
+  },
+  {
+    "day": "October 23",
+    "tradition": "Church of the East",
+    "name": "Saint Boethius",
+    "description": "Philosopher and martyr."
+  },
+  {
+    "day": "October 24",
+    "tradition": "Catholic",
+    "name": "Saint Anthony Mary Claret",
+    "description": "Bishop and founder."
+  },
+  {
+    "day": "October 24",
+    "tradition": "Eastern Orthodox",
+    "name": "Martyr Arethas and companions",
+    "description": "Martyrs in Ethiopia."
+  },
+  {
+    "day": "October 24",
+    "tradition": "Oriental Orthodox",
+    "name": "Saint Arethas",
+    "description": "Martyr."
+  },
+  {
+    "day": "October 24",
+    "tradition": "Anglican",
+    "name": "Saint Magloire",
+    "description": "Bishop of Dol, 575."
+  },
+  {
+    "day": "October 24",
+    "tradition": "Church of the East",
+    "name": "Saint Arethas",
+    "description": "Martyr."
+  },
+  {
+    "day": "October 25",
+    "tradition": "Catholic",
+    "name": "Saints Crispin and Crispinian",
+    "description": "Martyrs."
+  },
+  {
+    "day": "October 25",
+    "tradition": "Eastern Orthodox",
+    "name": "Martyrs Marcian and Martyrius",
+    "description": "Notaries of Constantinople."
+  },
+  {
+    "day": "October 25",
+    "tradition": "Oriental Orthodox",
+    "name": "Saint Marcian",
+    "description": "Martyr."
+  },
+  {
+    "day": "October 25",
+    "tradition": "Anglican",
+    "name": "Crispin and Crispinian",
+    "description": "Martyrs at Rome, c.287."
+  },
+  {
+    "day": "October 25",
+    "tradition": "Church of the East",
+    "name": "Saint Marcian",
+    "description": "Martyr."
+  },
+  {
+    "day": "October 26",
+    "tradition": "Catholic",
+    "name": "Saint Cedd",
+    "description": "Bishop of the East Saxons."
+  },
+  {
+    "day": "October 26",
+    "tradition": "Eastern Orthodox",
+    "name": "Greatmartyr Demetrius the Myrrh-streamer",
+    "description": "Martyr of Thessalonica."
+  },
+  {
+    "day": "October 26",
+    "tradition": "Oriental Orthodox",
+    "name": "Saint Demetrius",
+    "description": "Martyr."
+  },
+  {
+    "day": "October 26",
+    "tradition": "Anglican",
+    "name": "Alfred the Great",
+    "description": "King of the West Saxons, 899."
+  },
+  {
+    "day": "October 26",
+    "tradition": "Church of the East",
+    "name": "Saint Demetrius",
+    "description": "Martyr."
+  },
+  {
+    "day": "October 27",
+    "tradition": "Catholic",
+    "name": "Saint Frumentius",
+    "description": "Apostle of Ethiopia."
+  },
+  {
+    "day": "October 27",
+    "tradition": "Eastern Orthodox",
+    "name": "Martyr Nestor of Thessalonica",
+    "description": "Martyr under Maximian."
+  },
+  {
+    "day": "October 27",
+    "tradition": "Oriental Orthodox",
+    "name": "Saint Nestor",
+    "description": "Martyr."
+  },
+  {
+    "day": "October 27",
+    "tradition": "Anglican",
+    "name": "Saint Frumentius",
+    "description": "Bishop and Missionary to Ethiopia, 383."
+  },
+  {
+    "day": "October 27",
+    "tradition": "Church of the East",
+    "name": "Saint Nestor",
+    "description": "Martyr."
+  },
+  {
+    "day": "October 28",
+    "tradition": "Universal",
+    "name": "Saints Simon and Jude",
+    "description": "Apostles and martyrs."
+  },
+  {
+    "day": "October 28",
+    "tradition": "Eastern Orthodox",
+    "name": "Saint Terence and Eunice",
+    "description": "Martyrs."
+  },
+  {
+    "day": "October 28",
+    "tradition": "Oriental Orthodox",
+    "name": "Saint Simon the Apostle",
+    "description": "Apostle and martyr."
+  },
+  {
+    "day": "October 28",
+    "tradition": "Church of the East",
+    "name": "Saint Faraj of Shiraz",
+    "description": "Martyr."
+  },
+  {
+    "day": "October 29",
+    "tradition": "Catholic",
+    "name": "Saint Narcissus of Jerusalem",
+    "description": "Bishop."
+  },
+  {
+    "day": "October 29",
+    "tradition": "Eastern Orthodox",
+    "name": "Venerable Abramius the Recluse",
+    "description": "Hermit."
+  },
+  {
+    "day": "October 29",
+    "tradition": "Oriental Orthodox",
+    "name": "Saint Abramius",
+    "description": "Recluse."
+  },
+  {
+    "day": "October 29",
+    "tradition": "Anglican",
+    "name": "James Hannington",
+    "description": "Bishop of Eastern Equatorial Africa, Martyr, 1885."
+  },
+  {
+    "day": "October 29",
+    "tradition": "Church of the East",
+    "name": "Saint Abramius",
+    "description": "Hermit."
+  },
+  {
+    "day": "October 30",
+    "tradition": "Catholic",
+    "name": "Saint Marcellus of Tangier",
+    "description": "Martyr."
+  },
+  {
+    "day": "October 30",
+    "tradition": "Eastern Orthodox",
+    "name": "Hieromartyr Zenobius and Zenobia",
+    "description": "Bishop and his sister, martyrs."
+  },
+  {
+    "day": "October 30",
+    "tradition": "Oriental Orthodox",
+    "name": "Saint Zenobius",
+    "description": "Martyr."
+  },
+  {
+    "day": "October 30",
+    "tradition": "Anglican",
+    "name": "Saint Alphonsus Rodriguez",
+    "description": "Jesuit lay brother, 1617."
+  },
+  {
+    "day": "October 30",
+    "tradition": "Church of the East",
+    "name": "Saint Zenobius",
+    "description": "Bishop and martyr."
+  },
+  {
+    "day": "October 31",
+    "tradition": "Catholic",
+    "name": "Saint Wolfgang of Regensburg",
+    "description": "Bishop."
+  },
+  {
+    "day": "October 31",
+    "tradition": "Eastern Orthodox",
+    "name": "Apostles Stachys, Apellos, Amplias, Urban, Narcissus, and Aristobulus",
+    "description": "Of the Seventy."
+  },
+  {
+    "day": "October 31",
+    "tradition": "Oriental Orthodox",
+    "name": "Saint Stachys",
+    "description": "Apostle."
+  },
+  {
+    "day": "October 31",
+    "tradition": "Church of the East",
+    "name": "Saint Stachys",
+    "description": "Apostle."
+  }
+]

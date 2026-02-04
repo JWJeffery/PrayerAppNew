@@ -1,0 +1,794 @@
+[
+  {
+    "day": "September 1",
+    "tradition": "Catholic",
+    "name": "Saint Giles",
+    "description": "Benedictine abbot and one of the Fourteen Holy Helpers."
+  },
+  {
+    "day": "September 1",
+    "tradition": "Eastern Orthodox",
+    "name": "Saint Simeon Stylites",
+    "description": "The first 'pillar-saint' who lived for decades atop a column."
+  },
+  {
+    "day": "September 1",
+    "tradition": "Oriental Orthodox",
+    "name": "Saint Verena",
+    "description": "A member of the Theban Legion who taught hygiene in Switzerland."
+  },
+  {
+    "day": "September 1",
+    "tradition": "Anglican",
+    "name": "David Pendleton Oakerhater",
+    "description": "Cheyenne warrior and deacon; missionary to his people."
+  },
+  {
+    "day": "September 1",
+    "tradition": "Church of the East",
+    "name": "Mar Mari",
+    "description": "The Apostle of Mesopotamia and disciple of Addai."
+  },
+  {
+    "day": "September 2",
+    "tradition": "Catholic",
+    "name": "Saint Agricola of Avignon",
+    "description": "Bishop known for his charity and protection against misfortune."
+  },
+  {
+    "day": "September 2",
+    "tradition": "Eastern Orthodox",
+    "name": "Saint John the Faster",
+    "description": "Patriarch of Constantinople known for his extreme asceticism."
+  },
+  {
+    "day": "September 2",
+    "tradition": "Oriental Orthodox",
+    "name": "Saint Mammas",
+    "description": "A shepherd martyr who lived among wild beasts."
+  },
+  {
+    "day": "September 2",
+    "tradition": "Anglican",
+    "name": "The Martyrs of New Guinea",
+    "description": "Missionaries and local Christians martyred during WWII."
+  },
+  {
+    "day": "September 2",
+    "tradition": "Church of the East",
+    "name": "Mar Papa bar Aggai",
+    "description": "Early primate of Seleucia-Ctesiphon."
+  },
+  {
+    "day": "September 3",
+    "tradition": "Catholic",
+    "name": "Saint Gregory the Great",
+    "description": "Pope and Doctor; 'Father of Christian Worship'."
+  },
+  {
+    "day": "September 3",
+    "tradition": "Eastern Orthodox",
+    "name": "Hieromartyr Anthimus",
+    "description": "Bishop of Nicomedia martyred under Diocletian."
+  },
+  {
+    "day": "September 3",
+    "tradition": "Oriental Orthodox",
+    "name": "Saint Anba Ruwais",
+    "description": "Coptic mystic who lived in extreme poverty and humility."
+  },
+  {
+    "day": "September 3",
+    "tradition": "Anglican",
+    "name": "Saint Phoebe",
+    "description": "Deacon of the church at Cenchreae, mentioned by Paul."
+  },
+  {
+    "day": "September 3",
+    "tradition": "Church of the East",
+    "name": "Mar Babai the Great",
+    "description": "Theologian who defined East Syriac christology."
+  },
+  {
+    "day": "September 4",
+    "tradition": "Catholic",
+    "name": "Saint Rosalia",
+    "description": "Hermitess and patroness against plagues."
+  },
+  {
+    "day": "September 4",
+    "tradition": "Eastern Orthodox",
+    "name": "Holy Prophet Moses",
+    "description": "The Law-giver who beheld God on Mount Sinai."
+  },
+  {
+    "day": "September 4",
+    "tradition": "Oriental Orthodox",
+    "name": "Saint Isaac of Sadmant",
+    "description": "Coptic writer and monk of the 13th century."
+  },
+  {
+    "day": "September 4",
+    "tradition": "Anglican",
+    "name": "Paul Jones",
+    "description": "Episcopal Bishop and pacifist advocate."
+  },
+  {
+    "day": "September 4",
+    "tradition": "Church of the East",
+    "name": "Mar Shalita",
+    "description": "A healer and monk who evangelized the northern mountains."
+  },
+  {
+    "day": "September 5",
+    "tradition": "Catholic",
+    "name": "Saint Teresa of Calcutta",
+    "description": "Foundress of the Missionaries of Charity."
+  },
+  {
+    "day": "September 5",
+    "tradition": "Eastern Orthodox",
+    "name": "Prophet Zachariah",
+    "description": "Father of the Forerunner; martyred in the Temple."
+  },
+  {
+    "day": "September 5",
+    "tradition": "Oriental Orthodox",
+    "name": "Righteous Elizabeth",
+    "description": "Mother of John the Baptist."
+  },
+  {
+    "day": "September 5",
+    "tradition": "Anglican",
+    "name": "Gregorio Aglipay",
+    "description": "Founder of the Philippine Independent Church."
+  },
+  {
+    "day": "September 5",
+    "tradition": "Church of the East",
+    "name": "Mar Narsai",
+    "description": "The 'Harp of the Spirit' and poet of the School of Nisibis."
+  },
+  {
+    "day": "September 6",
+    "tradition": "Catholic",
+    "name": "Saint Begga",
+    "description": "Abbess and daughter of Pepin of Landen."
+  },
+  {
+    "day": "September 6",
+    "tradition": "Eastern Orthodox",
+    "name": "Miracle of Archangel Michael at Colossae",
+    "description": "The saving of a church from a diverted river."
+  },
+  {
+    "day": "September 6",
+    "tradition": "Oriental Orthodox",
+    "name": "Saint Dioscorus",
+    "description": "Patriarch of Alexandria and champion of the Miaphysite faith."
+  },
+  {
+    "day": "September 6",
+    "tradition": "Anglican",
+    "name": "Hannah More",
+    "description": "Religious writer and abolitionist."
+  },
+  {
+    "day": "September 6",
+    "tradition": "Church of the East",
+    "name": "Mar Addai",
+    "description": "Apostle who brought the Gospel to Edessa."
+  },
+  {
+    "day": "September 7",
+    "tradition": "Catholic",
+    "name": "Saint Cloud",
+    "description": "Frankish prince who became a hermit and priest."
+  },
+  {
+    "day": "September 7",
+    "tradition": "Eastern Orthodox",
+    "name": "Saint Sozon",
+    "description": "Shepherd martyr of Cilicia who destroyed a gold idol."
+  },
+  {
+    "day": "September 7",
+    "tradition": "Oriental Orthodox",
+    "name": "Saint John the Little",
+    "description": "Famous Desert Father of Scetis."
+  },
+  {
+    "day": "September 7",
+    "tradition": "Church of the East",
+    "name": "Mar Awa I",
+    "description": "Catholicos and reformer of the 6th century."
+  },
+  {
+    "day": "September 8",
+    "tradition": "Universal",
+    "name": "Nativity of the Blessed Virgin Mary",
+    "description": "Feast of the birth of the Mother of God."
+  },
+  {
+    "day": "September 9",
+    "tradition": "Catholic",
+    "name": "Saint Peter Claver",
+    "description": "Missionary and patron of African missions."
+  },
+  {
+    "day": "September 9",
+    "tradition": "Eastern Orthodox",
+    "name": "Holy Ancestors Joachim and Anna",
+    "description": "Synaxis of the parents of the Theotokos."
+  },
+  {
+    "day": "September 9",
+    "tradition": "Oriental Orthodox",
+    "name": "Saint Severus of Antioch",
+    "description": "Patriarch and great defender of Miaphysitism."
+  },
+  {
+    "day": "September 9",
+    "tradition": "Anglican",
+    "name": "Constance and her Companions",
+    "description": "The Martyrs of Memphis during yellow fever."
+  },
+  {
+    "day": "September 9",
+    "tradition": "Church of the East",
+    "name": "Mar Saba",
+    "description": "Ascetic monk of the Persian church."
+  },
+  {
+    "day": "September 10",
+    "tradition": "Catholic",
+    "name": "Saint Nicholas of Tolentino",
+    "description": "Augustinian priest and mystic."
+  },
+  {
+    "day": "September 10",
+    "tradition": "Eastern Orthodox",
+    "name": "Martyrs Menodora, Metrodora, and Nymphodora",
+    "description": "Three virgin sisters martyred in Bithynia."
+  },
+  {
+    "day": "September 10",
+    "tradition": "Oriental Orthodox",
+    "name": "Saint Cyriacus",
+    "description": "Anchorite of the Jordan desert."
+  },
+  {
+    "day": "September 10",
+    "tradition": "Anglican",
+    "name": "Alexander Crummell",
+    "description": "African-American priest and scholar."
+  },
+  {
+    "day": "September 10",
+    "tradition": "Church of the East",
+    "name": "Mar Zeia",
+    "description": "The 'Traveler' and wonderworker."
+  },
+  {
+    "day": "September 11",
+    "tradition": "Catholic",
+    "name": "Saint Paphnutius",
+    "description": "Bishop and witness to the faith during persecutions."
+  },
+  {
+    "day": "September 11",
+    "tradition": "Eastern Orthodox",
+    "name": "Saint Theodora of Alexandria",
+    "description": "Ascetic who lived as a monk to repent."
+  },
+  {
+    "day": "September 11",
+    "tradition": "Oriental Orthodox",
+    "name": "Saint Macarius of Alexandria",
+    "description": "Desert Father known for his severe austerities."
+  },
+  {
+    "day": "September 11",
+    "tradition": "Anglican",
+    "name": "Harry Thacker Burleigh",
+    "description": "Composer and singer of spirituals."
+  },
+  {
+    "day": "September 11",
+    "tradition": "Church of the East",
+    "name": "Mar Yohannan",
+    "description": "Holy bishop and witness of the East."
+  },
+  {
+    "day": "September 12",
+    "tradition": "Catholic",
+    "name": "The Holy Name of Mary",
+    "description": "Feast of the name of the Virgin."
+  },
+  {
+    "day": "September 12",
+    "tradition": "Eastern Orthodox",
+    "name": "Hieromartyr Autonomus",
+    "description": "Bishop who fled Italy and was martyred in Bithynia."
+  },
+  {
+    "day": "September 12",
+    "tradition": "Oriental Orthodox",
+    "name": "Saint Samuel the Confessor",
+    "description": "Abbot of the Monastery of Kalamun."
+  },
+  {
+    "day": "September 12",
+    "tradition": "Anglican",
+    "name": "John Henry Hobart",
+    "description": "Bishop of New York and church reformer."
+  },
+  {
+    "day": "September 12",
+    "tradition": "Church of the East",
+    "name": "Mar Sabrisho",
+    "description": "Catholicos and monastic father."
+  },
+  {
+    "day": "September 13",
+    "tradition": "Catholic",
+    "name": "Saint John Chrysostom",
+    "description": "Patriarch of Constantinople and Doctor; 'Golden-Mouthed'."
+  },
+  {
+    "day": "September 13",
+    "tradition": "Eastern Orthodox",
+    "name": "Encaenia of the Temple of the Resurrection",
+    "description": "Dedication of the Holy Sepulchre."
+  },
+  {
+    "day": "September 13",
+    "tradition": "Oriental Orthodox",
+    "name": "Saint Basil of Caesarea",
+    "description": "The Great; author of the Divine Liturgy (commemoration)."
+  },
+  {
+    "day": "September 13",
+    "tradition": "Church of the East",
+    "name": "Mar Mushi",
+    "description": "Monastic teacher and scholar."
+  },
+  {
+    "day": "September 14",
+    "tradition": "Universal",
+    "name": "Exaltation of the Holy Cross",
+    "description": "Major liturgical feast celebrating the triumph and recovery of the True Cross."
+  },
+  {
+    "day": "September 15",
+    "tradition": "Catholic",
+    "name": "Our Lady of Sorrows",
+    "description": "Feast of the Seven Sorrows of Mary."
+  },
+  {
+    "day": "September 15",
+    "tradition": "Eastern Orthodox",
+    "name": "Great Martyr Nicetas",
+    "description": "A Goth who suffered for Christ by fire."
+  },
+  {
+    "day": "September 15",
+    "tradition": "Oriental Orthodox",
+    "name": "Saint Philoxenus of Mabbug",
+    "description": "Syriac father and theologian."
+  },
+  {
+    "day": "September 15",
+    "tradition": "Anglican",
+    "name": "Saint Cyprian of Carthage",
+    "description": "Bishop and Martyr, 258."
+  },
+  {
+    "day": "September 15",
+    "tradition": "Church of the East",
+    "name": "Mar Sliwa",
+    "description": "The Martyr of the Cross."
+  },
+  {
+    "day": "September 16",
+    "tradition": "Catholic",
+    "name": "Saint Cornelius",
+    "description": "Pope and martyr who fought for church reconciliation."
+  },
+  {
+    "day": "September 16",
+    "tradition": "Eastern Orthodox",
+    "name": "Great Martyr Euphemia",
+    "description": "The 'All-Praised' martyr of Chalcedon."
+  },
+  {
+    "day": "September 16",
+    "tradition": "Oriental Orthodox",
+    "name": "Saint Gayane",
+    "description": "Abbess and Armenian martyr."
+  },
+  {
+    "day": "September 16",
+    "tradition": "Anglican",
+    "name": "Saint Ninian",
+    "description": "Bishop and Apostle to the Picts."
+  },
+  {
+    "day": "September 16",
+    "tradition": "Church of the East",
+    "name": "Mar Qardagh",
+    "description": "The Martyr-Prince of the Persians."
+  },
+  {
+    "day": "September 17",
+    "tradition": "Catholic",
+    "name": "Saint Robert Bellarmine",
+    "description": "Cardinal, Jesuit, and Doctor."
+  },
+  {
+    "day": "September 17",
+    "tradition": "Eastern Orthodox",
+    "name": "Sophia, Faith, Hope, and Charity",
+    "description": "Mother and daughters martyred in Rome."
+  },
+  {
+    "day": "September 17",
+    "tradition": "Oriental Orthodox",
+    "name": "Saint Tekle Haymanot",
+    "description": "Beloved Ethiopian monk and wonderworker."
+  },
+  {
+    "day": "September 17",
+    "tradition": "Anglican",
+    "name": "Saint Hildegard of Bingen",
+    "description": "Visionary, Abbess, and Doctor."
+  },
+  {
+    "day": "September 17",
+    "tradition": "Church of the East",
+    "name": "Mar Addai (Relics)",
+    "description": "Translation of the Apostle's remains."
+  },
+  {
+    "day": "September 18",
+    "tradition": "Catholic",
+    "name": "Saint Joseph of Cupertino",
+    "description": "Mystic and patron of students."
+  },
+  {
+    "day": "September 18",
+    "tradition": "Eastern Orthodox",
+    "name": "Saint Eumenius of Gortyna",
+    "description": "Bishop and wonderworker."
+  },
+  {
+    "day": "September 18",
+    "tradition": "Oriental Orthodox",
+    "name": "Saint Isaac of Nineveh",
+    "description": "Mystic father of the East Syriac tradition."
+  },
+  {
+    "day": "September 18",
+    "tradition": "Anglican",
+    "name": "Edward Bouverie Pusey",
+    "description": "Priest and leader of the Oxford Movement."
+  },
+  {
+    "day": "September 18",
+    "tradition": "Church of the East",
+    "name": "Mar Mari (Synaxis)",
+    "description": "Liturgical assembly honoring the Evangelist."
+  },
+  {
+    "day": "September 19",
+    "tradition": "Catholic",
+    "name": "Saint Januarius",
+    "description": "Bishop and martyr of Naples."
+  },
+  {
+    "day": "September 19",
+    "tradition": "Eastern Orthodox",
+    "name": "Martyrs Trophimus, Sabbatius, and Dorymedon",
+    "description": "Witnesses to the faith in Antioch."
+  },
+  {
+    "day": "September 19",
+    "tradition": "Oriental Orthodox",
+    "name": "Saint Pisenti",
+    "description": "Coptic Bishop and worker of signs."
+  },
+  {
+    "day": "September 19",
+    "tradition": "Anglican",
+    "name": "Theodore of Tarsus",
+    "description": "Archbishop of Canterbury who organized the English church."
+  },
+  {
+    "day": "September 19",
+    "tradition": "Church of the East",
+    "name": "Mar Augustine",
+    "description": "Monastic teacher and ascetic."
+  },
+  {
+    "day": "September 20",
+    "tradition": "Catholic",
+    "name": "Saint Andrew Kim Taegon",
+    "description": "First native Korean priest and martyr."
+  },
+  {
+    "day": "September 20",
+    "tradition": "Eastern Orthodox",
+    "name": "Great Martyr Eustathius",
+    "description": "General martyred with his family."
+  },
+  {
+    "day": "September 20",
+    "tradition": "Oriental Orthodox",
+    "name": "Saint Mesrop Mashtots",
+    "description": "Creator of the Armenian alphabet."
+  },
+  {
+    "day": "September 20",
+    "tradition": "Anglican",
+    "name": "John Coleridge Patteson",
+    "description": "Bishop and Martyr of Melanesia."
+  },
+  {
+    "day": "September 20",
+    "tradition": "Church of the East",
+    "name": "Mar Papa (Secondary)",
+    "description": "Feast of the foundations of the See."
+  },
+  {
+    "day": "September 21",
+    "tradition": "Universal",
+    "name": "Saint Matthew the Apostle",
+    "description": "Tax collector and Evangelist."
+  },
+  {
+    "day": "September 22",
+    "tradition": "Catholic",
+    "name": "Saint Maurice",
+    "description": "Leader of the Theban Legion."
+  },
+  {
+    "day": "September 22",
+    "tradition": "Eastern Orthodox",
+    "name": "Hieromartyr Phocas",
+    "description": "Bishop and gardener of Sinope."
+  },
+  {
+    "day": "September 22",
+    "tradition": "Oriental Orthodox",
+    "name": "Saint Shenouda the Archimandrite",
+    "description": "Great Coptic reformer and abbot."
+  },
+  {
+    "day": "September 22",
+    "tradition": "Anglican",
+    "name": "Philander Chase",
+    "description": "Pioneer Bishop of Ohio."
+  },
+  {
+    "day": "September 22",
+    "tradition": "Church of the East",
+    "name": "Mar Addai and Mar Mari",
+    "description": "Joint feast of the founders."
+  },
+  {
+    "day": "September 23",
+    "tradition": "Catholic",
+    "name": "Saint Pius of Pietrelcina",
+    "description": "Padre Pio; Capuchin mystic."
+  },
+  {
+    "day": "September 23",
+    "tradition": "Eastern Orthodox",
+    "name": "Conception of Saint John the Baptist",
+    "description": "Announcement to Zachariah."
+  },
+  {
+    "day": "September 23",
+    "tradition": "Oriental Orthodox",
+    "name": "Saint Jacob of Nisibis",
+    "description": "Bishop and father of the Syriac church."
+  },
+  {
+    "day": "September 23",
+    "tradition": "Anglican",
+    "name": "Thecla of Iconium",
+    "description": "Companion of Paul."
+  },
+  {
+    "day": "September 23",
+    "tradition": "Church of the East",
+    "name": "Mar Shimun bar Sabbae",
+    "description": "The Good Shepherd Catholicos-Martyr."
+  },
+  {
+    "day": "September 24",
+    "tradition": "Catholic",
+    "name": "Our Lady of Walsingham",
+    "description": "Shrine of the Annunciation in England."
+  },
+  {
+    "day": "September 24",
+    "tradition": "Eastern Orthodox",
+    "name": "Saint Thecla the Protomartyr",
+    "description": "First female martyr."
+  },
+  {
+    "day": "September 24",
+    "tradition": "Church of the East",
+    "name": "Mar Toma (Relics)",
+    "description": "Commemoration of the relics of Thomas."
+  },
+  {
+    "day": "September 25",
+    "tradition": "Catholic",
+    "name": "Saint Finbarr",
+    "description": "Bishop of Cork."
+  },
+  {
+    "day": "September 25",
+    "tradition": "Eastern Orthodox",
+    "name": "Saint Euphrosyne of Alexandria",
+    "description": "Virgin who lived as a monk."
+  },
+  {
+    "day": "September 25",
+    "tradition": "Oriental Orthodox",
+    "name": "Saint Anthony the Great (Relics)",
+    "description": "Translation of the father of monks."
+  },
+  {
+    "day": "September 25",
+    "tradition": "Anglican",
+    "name": "Sergius of Radonezh",
+    "description": "Abbot and patron of Russia."
+  },
+  {
+    "day": "September 25",
+    "tradition": "Church of the East",
+    "name": "Mar Mari the Evangelist",
+    "description": "Apostolic laborer in the East."
+  },
+  {
+    "day": "September 26",
+    "tradition": "Catholic",
+    "name": "Saints Cosmas and Damian",
+    "description": "Physicians who took no money."
+  },
+  {
+    "day": "September 26",
+    "tradition": "Eastern Orthodox",
+    "name": "Repose of Apostle John the Theologian",
+    "description": "Beloved disciple's passing."
+  },
+  {
+    "day": "September 26",
+    "tradition": "Anglican",
+    "name": "Lancelot Andrewes",
+    "description": "Bishop and Bible translator."
+  },
+  {
+    "day": "September 27",
+    "tradition": "Catholic",
+    "name": "Saint Vincent de Paul",
+    "description": "Priest of the poor."
+  },
+  {
+    "day": "September 27",
+    "tradition": "Eastern Orthodox",
+    "name": "Saint Callistratus",
+    "description": "Soldier and martyr."
+  },
+  {
+    "day": "September 27",
+    "tradition": "Oriental Orthodox",
+    "name": "Saint Barsoum the Naked",
+    "description": "Coptic saint of Cairo."
+  },
+  {
+    "day": "September 27",
+    "tradition": "Anglican",
+    "name": "Vincent de Paul",
+    "description": "Priest and worker for charity."
+  },
+  {
+    "day": "September 27",
+    "tradition": "Church of the East",
+    "name": "Mar Augin",
+    "description": "The Pearl of the East."
+  },
+  {
+    "day": "September 28",
+    "tradition": "Catholic",
+    "name": "Saint Wenceslaus",
+    "description": "Duke and martyr of Bohemia."
+  },
+  {
+    "day": "September 28",
+    "tradition": "Eastern Orthodox",
+    "name": "Saint Chariton",
+    "description": "Founder of the Old Lavra."
+  },
+  {
+    "day": "September 28",
+    "tradition": "Oriental Orthodox",
+    "name": "Saint Abba Pishoy (Relics)",
+    "description": "The Star of the Desert."
+  },
+  {
+    "day": "September 28",
+    "tradition": "Anglican",
+    "name": "Richard Rolle",
+    "description": "Mystic and hermit."
+  },
+  {
+    "day": "September 28",
+    "tradition": "Church of the East",
+    "name": "Mar Pethion",
+    "description": "Martyr and missionary."
+  },
+  {
+    "day": "September 29",
+    "tradition": "Catholic",
+    "name": "Saint Michael Archangel",
+    "description": "Feast of the Prince of the Heavenly Host."
+  },
+  {
+    "day": "September 29",
+    "tradition": "Eastern Orthodox",
+    "name": "Saint Kyriakos",
+    "description": "Hermit of the Jordan."
+  },
+  {
+    "day": "September 29",
+    "tradition": "Oriental Orthodox",
+    "name": "Saint Gregory the Illuminator (Main)",
+    "description": "Enlightener of Armenia."
+  },
+  {
+    "day": "September 29",
+    "tradition": "Anglican",
+    "name": "Saint Michael and All Angels",
+    "description": "Michaelmas."
+  },
+  {
+    "day": "September 29",
+    "tradition": "Church of the East",
+    "name": "Mar Gabriel Archangel",
+    "description": "The holy messenger and protector."
+  },
+  {
+    "day": "September 30",
+    "tradition": "Catholic",
+    "name": "Saint Jerome",
+    "description": "Translator of the Vulgate."
+  },
+  {
+    "day": "September 30",
+    "tradition": "Eastern Orthodox",
+    "name": "Hieromartyr Gregory of Armenia",
+    "description": "Enlightener of Armenia."
+  },
+  {
+    "day": "September 30",
+    "tradition": "Oriental Orthodox",
+    "name": "Saint Sahak Partiev",
+    "description": "Catholicos and scholar."
+  },
+  {
+    "day": "September 30",
+    "tradition": "Anglican",
+    "name": "Jerome",
+    "description": "Priest and Scholar, 420."
+  },
+  {
+    "day": "September 30",
+    "tradition": "Church of the East",
+    "name": "Mar Shimun Bar Sabbae (Secondary)",
+    "description": "Martyrs of Seleucia."
+  }
+]

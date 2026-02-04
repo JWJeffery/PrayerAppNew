@@ -1,0 +1,662 @@
+[
+  {
+    "day": "February 1",
+    "tradition": "Universal",
+    "name": "Saint Brigid of Kildare",
+    "description": "Abbess and patroness of Ireland, venerated in Catholic, Anglican Communion, and Oriental Orthodox traditions."
+  },
+  {
+    "day": "February 1",
+    "tradition": "Eastern Orthodox",
+    "name": "Martyr Tryphon of Lampsacus",
+    "description": "Martyr near Apamea in Syria."
+  },
+  {
+    "day": "February 1",
+    "tradition": "Church of the East",
+    "name": "5th Epiphany Sunday",
+    "description": "Liturgical commemoration in the season of Epiphany."
+  },
+  {
+    "day": "February 2",
+    "tradition": "Universal",
+    "name": "Presentation of the Lord (Candlemas)",
+    "description": "Feast of Christ's presentation in the Temple and the Purification of Mary, venerated in Catholic, Eastern Orthodox, Oriental Orthodox, and Anglican traditions."
+  },
+  {
+    "day": "February 2",
+    "tradition": "Catholic",
+    "name": "Saint Joan de Lestonnac",
+    "description": "Founder of religious order, devoted to education."
+  },
+  {
+    "day": "February 2",
+    "tradition": "Eastern Orthodox",
+    "name": "Saint Theodosius of Chernigov",
+    "description": "Archbishop and wonderworker."
+  },
+  {
+    "day": "February 2",
+    "tradition": "Oriental Orthodox",
+    "name": "Saint Longinus the Soldier",
+    "description": "Centurion at the crucifixion, converted martyr."
+  },
+  {
+    "day": "February 2",
+    "tradition": "Church of the East",
+    "name": "Saint Simeon the Elder",
+    "description": "Righteous elder who received Christ in the temple."
+  },
+  {
+    "day": "February 3",
+    "tradition": "Catholic",
+    "name": "Saint Blaise",
+    "description": "Bishop and martyr, patron against throat ailments."
+  },
+  {
+    "day": "February 3",
+    "tradition": "Catholic",
+    "name": "Saint Ansgar",
+    "description": "Bishop and missionary to Denmark and Sweden."
+  },
+  {
+    "day": "February 3",
+    "tradition": "Eastern Orthodox",
+    "name": "Saints Symeon the God-receiver and Anna the Prophetess",
+    "description": "Those who met Christ in the Temple."
+  },
+  {
+    "day": "February 3",
+    "tradition": "Eastern Orthodox",
+    "name": "Prophet Azariah",
+    "description": "Old Testament prophet."
+  },
+  {
+    "day": "February 3",
+    "tradition": "Universal",
+    "name": "Saint Ansgar (Anskar)",
+    "description": "Bishop and missionary to Denmark and Sweden, venerated in Oriental Orthodox and Anglican Communion traditions, 865."
+  },
+  {
+    "day": "February 3",
+    "tradition": "Church of the East",
+    "name": "Saint Malachi",
+    "description": "Old Testament prophet (shared commemoration)."
+  },
+  {
+    "day": "February 4",
+    "tradition": "Catholic",
+    "name": "Saint John de Britto",
+    "description": "Jesuit missionary and martyr in India."
+  },
+  {
+    "day": "February 4",
+    "tradition": "Universal",
+    "name": "Venerable Isidore of Pelusium",
+    "description": "Monk, ascetic, and correspondent with church fathers, venerated in Eastern Orthodox and Oriental Orthodox traditions."
+  },
+  {
+    "day": "February 4",
+    "tradition": "Church of the East",
+    "name": "Commemoration of St. Sawrisho of Beth Garmi",
+    "description": "Saint and bishop."
+  },
+  {
+    "day": "February 4",
+    "tradition": "Anglican Communion",
+    "name": "Cornelius the Centurion",
+    "description": "First Gentile convert to Christianity."
+  },
+  {
+    "day": "February 5",
+    "tradition": "Universal",
+    "name": "Saint Agatha",
+    "description": "Virgin martyr of Sicily, venerated in Catholic, Eastern Orthodox, and Oriental Orthodox traditions."
+  },
+  {
+    "day": "February 5",
+    "tradition": "Church of the East",
+    "name": "Commemoration of St. Awa Catholicos",
+    "description": "Patriarch of the Church of the East."
+  },
+  {
+    "day": "February 5",
+    "tradition": "Anglican Communion",
+    "name": "Martyrs of Japan",
+    "description": "Christian martyrs, 1597."
+  },
+  {
+    "day": "February 6",
+    "tradition": "Universal",
+    "name": "Saints Paul Miki and Companions (Martyrs of Japan)",
+    "description": "Jesuit and Franciscan martyrs at Nagasaki, venerated in Catholic and Anglican Communion traditions."
+  },
+  {
+    "day": "February 6",
+    "tradition": "Eastern Orthodox",
+    "name": "Saint Bucolus of Smyrna",
+    "description": "Early bishop."
+  },
+  {
+    "day": "February 6",
+    "tradition": "Eastern Orthodox",
+    "name": "Saint Photius of Constantinople",
+    "description": "Defender of icons."
+  },
+  {
+    "day": "February 6",
+    "tradition": "Oriental Orthodox",
+    "name": "Saint Barsanuphius the Great",
+    "description": "Ascetic and writer."
+  },
+  {
+    "day": "February 7",
+    "tradition": "Catholic",
+    "name": "Blessed Pius IX",
+    "description": "Pope who defined the Immaculate Conception."
+  },
+  {
+    "day": "February 7",
+    "tradition": "Universal",
+    "name": "Venerable Parthenius of Lampsacus",
+    "description": "Wonderworker and healer, venerated in Eastern Orthodox and Oriental Orthodox traditions."
+  },
+  {
+    "day": "February 7",
+    "tradition": "Anglican Communion",
+    "name": "Cornelius the Centurion",
+    "description": "Shared commemoration."
+  },
+  {
+    "day": "February 8",
+    "tradition": "Universal",
+    "name": "Saint Josephine Bakhita",
+    "description": "Former slave and religious sister (Sudanese), venerated in Catholic and Anglican Communion traditions."
+  },
+  {
+    "day": "February 8",
+    "tradition": "Universal",
+    "name": "Great Martyr Theodore Stratelates (Theodore the General)",
+    "description": "Martyr and general, venerated in Eastern Orthodox and Oriental Orthodox traditions."
+  },
+  {
+    "day": "February 9",
+    "tradition": "Catholic",
+    "name": "Saint Apollonia",
+    "description": "Virgin and martyr, patron of dentistry."
+  },
+  {
+    "day": "February 9",
+    "tradition": "Universal",
+    "name": "Martyr Nicephorus of Antioch",
+    "description": "Martyr who reconciled with a friend, venerated in Eastern Orthodox and Oriental Orthodox traditions."
+  },
+  {
+    "day": "February 9",
+    "tradition": "Anglican Communion",
+    "name": "Cyril and Methodius",
+    "description": "Missionaries to the Slavs, 869 and 885."
+  },
+  {
+    "day": "February 10",
+    "tradition": "Universal",
+    "name": "Saint Scholastica",
+    "description": "Virgin and sister of Saint Benedict, venerated in Catholic and Anglican Communion traditions."
+  },
+  {
+    "day": "February 10",
+    "tradition": "Universal",
+    "name": "Hieromartyr Charalampus of Magnesia",
+    "description": "Martyr and wonderworker, venerated in Eastern Orthodox and Oriental Orthodox traditions."
+  },
+  {
+    "day": "February 10",
+    "tradition": "Church of the East",
+    "name": "Commemoration of Mar Benyamin Shimun XXI",
+    "description": "Modern martyr and patriarch."
+  },
+  {
+    "day": "February 11",
+    "tradition": "Catholic",
+    "name": "Our Lady of Lourdes",
+    "description": "Apparition of the Blessed Virgin Mary."
+  },
+  {
+    "day": "February 11",
+    "tradition": "Eastern Orthodox",
+    "name": "Hieromartyr Blaise of Sebaste",
+    "description": "Martyr and healer."
+  },
+  {
+    "day": "February 11",
+    "tradition": "Oriental Orthodox",
+    "name": "Saint Theodora the Empress",
+    "description": "Empress and defender of icons."
+  },
+  {
+    "day": "February 11",
+    "tradition": "Anglican Communion",
+    "name": "Fanny Crosby",
+    "description": "Hymn Writer, 1915."
+  },
+  {
+    "day": "February 11",
+    "tradition": "Church of the East",
+    "name": "Saint Blaise",
+    "description": "Bishop and martyr (shared commemoration)."
+  },
+  {
+    "day": "February 12",
+    "tradition": "Catholic",
+    "name": "Saint Julian the Hospitaller",
+    "description": "Layman and patron of travelers."
+  },
+  {
+    "day": "February 12",
+    "tradition": "Universal",
+    "name": "Saint Meletius of Antioch",
+    "description": "Theologian and bishop, venerated in Eastern Orthodox and Oriental Orthodox traditions."
+  },
+  {
+    "day": "February 12",
+    "tradition": "Anglican Communion",
+    "name": "Charles Freer Andrews",
+    "description": "Priest and Friend of the Poor in India, 1940."
+  },
+  {
+    "day": "February 12",
+    "tradition": "Church of the East",
+    "name": "Saint Meletius",
+    "description": "Bishop (shared commemoration)."
+  },
+  {
+    "day": "February 13",
+    "tradition": "Catholic",
+    "name": "Saint Catherine de' Ricci",
+    "description": "Virgin and mystic."
+  },
+  {
+    "day": "February 13",
+    "tradition": "Eastern Orthodox",
+    "name": "Venerable Martinian of Caesarea",
+    "description": "Hermit."
+  },
+  {
+    "day": "February 13",
+    "tradition": "Eastern Orthodox",
+    "name": "Saints Aquila and Priscilla",
+    "description": "Missionary couple."
+  },
+  {
+    "day": "February 13",
+    "tradition": "Oriental Orthodox",
+    "name": "Saints Aquila and Priscilla",
+    "description": "Helpers of Saint Paul."
+  },
+  {
+    "day": "February 13",
+    "tradition": "Church of the East",
+    "name": "Friday of the Deceased",
+    "description": "Commemoration for the faithful departed."
+  },
+  {
+    "day": "February 13",
+    "tradition": "Anglican Communion",
+    "name": "Absalom Jones",
+    "description": "First African-American priest, 1818."
+  },
+  {
+    "day": "February 14",
+    "tradition": "Universal",
+    "name": "Saints Cyril and Methodius",
+    "description": "Patrons of Europe and missionaries to the Slavs, venerated in Catholic and Anglican Communion traditions."
+  },
+  {
+    "day": "February 14",
+    "tradition": "Catholic",
+    "name": "Saint Valentine",
+    "description": "Martyr."
+  },
+  {
+    "day": "February 14",
+    "tradition": "Eastern Orthodox",
+    "name": "Saint Auxentius of Bithynia",
+    "description": "Hermit."
+  },
+  {
+    "day": "February 14",
+    "tradition": "Eastern Orthodox",
+    "name": "Saint Maron",
+    "description": "Hermit founder."
+  },
+  {
+    "day": "February 14",
+    "tradition": "Oriental Orthodox",
+    "name": "Saint Abraham the Hermit",
+    "description": "Ascetic."
+  },
+  {
+    "day": "February 14",
+    "tradition": "Oriental Orthodox",
+    "name": "Saint Abraham of Carrhae",
+    "description": "Syrian bishop."
+  },
+  {
+    "day": "February 14",
+    "tradition": "Church of the East",
+    "name": "Saint Maron of Syria",
+    "description": "Hermit founder."
+  },
+  {
+    "day": "February 14",
+    "tradition": "Church of the East",
+    "name": "Saint Abraham of Carrhae",
+    "description": "Ascetic bishop."
+  },
+  {
+    "day": "February 15",
+    "tradition": "Catholic",
+    "name": "Saint Claude de la Colombière",
+    "description": "Jesuit priest, confessor."
+  },
+  {
+    "day": "February 15",
+    "tradition": "Eastern Orthodox",
+    "name": "Apostle Onesimus of the Seventy",
+    "description": "Disciple of Saint Paul."
+  },
+  {
+    "day": "February 15",
+    "tradition": "Oriental Orthodox",
+    "name": "Entrance of the Lord into the Temple",
+    "description": "Commemoration of the Presentation."
+  },
+  {
+    "day": "February 15",
+    "tradition": "Church of the East",
+    "name": "First Sunday of Great Fast",
+    "description": "Beginning of the Lenten season."
+  },
+  {
+    "day": "February 15",
+    "tradition": "Anglican Communion",
+    "name": "Thomas Bray",
+    "description": "Priest and missionary founder, 1730."
+  },
+  {
+    "day": "February 16",
+    "tradition": "Catholic",
+    "name": "Saint Juliana of Nicomedia",
+    "description": "Virgin and martyr."
+  },
+  {
+    "day": "February 16",
+    "tradition": "Eastern Orthodox",
+    "name": "Holy Martyrs Pamphilus and Companions",
+    "description": "Martyrs at Caesarea."
+  },
+  {
+    "day": "February 16",
+    "tradition": "Oriental Orthodox",
+    "name": "Beginning of Great Lent",
+    "description": "Start of the Lenten fast."
+  },
+  {
+    "day": "February 16",
+    "tradition": "Church of the East",
+    "name": "Monday of Great Lent",
+    "description": "Lenten observance."
+  },
+  {
+    "day": "February 16",
+    "tradition": "Anglican Communion",
+    "name": "Charles Todd Quintard",
+    "description": "Bishop of Tennessee, 1898."
+  },
+  {
+    "day": "February 17",
+    "tradition": "Catholic",
+    "name": "Seven Holy Founders of the Servite Order",
+    "description": "Founders of the Servites."
+  },
+  {
+    "day": "February 17",
+    "tradition": "Eastern Orthodox",
+    "name": "Holy Great Martyr Theodore the Recruit",
+    "description": "Martyr."
+  },
+  {
+    "day": "February 17",
+    "tradition": "Oriental Orthodox",
+    "name": "Martyrdom of Saint James the Apostle",
+    "description": "Son of Alphaeus."
+  },
+  {
+    "day": "February 17",
+    "tradition": "Anglican Communion",
+    "name": "Janani Luwum",
+    "description": "Archbishop of Uganda and martyr, 1977."
+  },
+  {
+    "day": "February 18",
+    "tradition": "Catholic",
+    "name": "Saint Simeon of Jerusalem",
+    "description": "Bishop and martyr."
+  },
+  {
+    "day": "February 18",
+    "tradition": "Eastern Orthodox",
+    "name": "Saint Leo the Great, Pope of Rome",
+    "description": "Pope known for the Council of Chalcedon."
+  },
+  {
+    "day": "February 18",
+    "tradition": "Oriental Orthodox",
+    "name": "Martyrdom of Saint Fabian, Pope of Rome",
+    "description": "Pope and martyr."
+  },
+  {
+    "day": "February 18",
+    "tradition": "Church of the East",
+    "name": "Ash Wednesday",
+    "description": "Beginning of Lent."
+  },
+  {
+    "day": "February 19",
+    "tradition": "Catholic",
+    "name": "Saint Mesrop Mashtots",
+    "description": "Inventor of the Armenian alphabet."
+  },
+  {
+    "day": "February 19",
+    "tradition": "Eastern Orthodox",
+    "name": "Saint Bucolus, Bishop of Smyrna",
+    "description": "Disciple of Saint John."
+  },
+  {
+    "day": "February 19",
+    "tradition": "Oriental Orthodox",
+    "name": "Saint Quodvultdeus",
+    "description": "Bishop of Carthage."
+  },
+  {
+    "day": "February 19",
+    "tradition": "Anglican Communion",
+    "name": "Agnes Tsao Kou Ying",
+    "description": "Catechist and martyr, 1856."
+  },
+  {
+    "day": "February 19",
+    "tradition": "Church of the East",
+    "name": "Saint Bucolus",
+    "description": "Bishop (shared commemoration)."
+  },
+  {
+    "day": "February 20",
+    "tradition": "Catholic",
+    "name": "Saints Jacinta and Francisco Marto",
+    "description": "Children of Fatima."
+  },
+  {
+    "day": "February 20",
+    "tradition": "Eastern Orthodox",
+    "name": "Saint Leo of Catania",
+    "description": "Wonderworker."
+  },
+  {
+    "day": "February 20",
+    "tradition": "Oriental Orthodox",
+    "name": "Saint Sergius of Atripe",
+    "description": "Martyr with his family."
+  },
+  {
+    "day": "February 20",
+    "tradition": "Church of the East",
+    "name": "Friday of the Deceased",
+    "description": "Commemoration of the faithful departed."
+  },
+  {
+    "day": "February 20",
+    "tradition": "Anglican Communion",
+    "name": "Frederick Douglass",
+    "description": "Prophetic witness, 1895."
+  },
+  {
+    "day": "February 21",
+    "tradition": "Catholic",
+    "name": "Saint Peter Damian",
+    "description": "Bishop and Doctor of the Church."
+  },
+  {
+    "day": "February 21",
+    "tradition": "Eastern Orthodox",
+    "name": "Venerable Timothy of Symbola",
+    "description": "Monk."
+  },
+  {
+    "day": "February 21",
+    "tradition": "Oriental Orthodox",
+    "name": "Saint Eustathius of Antioch",
+    "description": "Bishop and confessor."
+  },
+  {
+    "day": "February 21",
+    "tradition": "Anglican Communion",
+    "name": "John Henry Newman",
+    "description": "Priest and theologian, 1890."
+  },
+  {
+    "day": "February 21",
+    "tradition": "Church of the East",
+    "name": "Saint Timothy of Symbola",
+    "description": "Monk (shared commemoration)."
+  },
+  {
+    "day": "February 22",
+    "tradition": "Universal",
+    "name": "Chair of Saint Peter",
+    "description": "Commemoration of the primacy of Peter, venerated in Catholic and Anglican Communion traditions."
+  },
+  {
+    "day": "February 22",
+    "tradition": "Eastern Orthodox",
+    "name": "Finding of the Relics of the Holy Martyrs at Eugenius",
+    "description": "Discovery of relics in Constantinople."
+  },
+  {
+    "day": "February 22",
+    "tradition": "Oriental Orthodox",
+    "name": "Saint Polycarp of Smyrna",
+    "description": "Bishop and martyr."
+  },
+  {
+    "day": "February 22",
+    "tradition": "Church of the East",
+    "name": "Second Sunday of Great Lent",
+    "description": "Liturgical Sunday."
+  },
+  {
+    "day": "February 23",
+    "tradition": "Universal",
+    "name": "Saint Polycarp of Smyrna",
+    "description": "Apostolic father, bishop, and martyr, venerated in Catholic, Eastern Orthodox, and Oriental Orthodox traditions."
+  },
+  {
+    "day": "February 24",
+    "tradition": "Universal",
+    "name": "Saint Matthias the Apostle",
+    "description": "Apostle chosen to replace Judas, venerated in Catholic, Eastern Orthodox, Oriental Orthodox, and Anglican traditions."
+  },
+  {
+    "day": "February 25",
+    "tradition": "Universal",
+    "name": "Saint Tarasius of Constantinople",
+    "description": "Patriarch and defender of icons, venerated in Catholic, Eastern Orthodox, and Oriental Orthodox traditions."
+  },
+  {
+    "day": "February 25",
+    "tradition": "Church of the East",
+    "name": "Wednesday of Mid-Lent",
+    "description": "Mid-point of Lent."
+  },
+  {
+    "day": "February 25",
+    "tradition": "Anglican Communion",
+    "name": "John Roberts",
+    "description": "Priest, 1949."
+  },
+  {
+    "day": "February 26",
+    "tradition": "Universal",
+    "name": "Saint Porphyry of Gaza",
+    "description": "Bishop and evangelizer, venerated in Catholic, Eastern Orthodox, and Oriental Orthodox traditions."
+  },
+  {
+    "day": "February 26",
+    "tradition": "Anglican Communion",
+    "name": "Emily Malbone Morgan",
+    "description": "Prophetic witness, 1937."
+  },
+  {
+    "day": "February 27",
+    "tradition": "Catholic",
+    "name": "Saint Gabriel of Our Lady of Sorrows",
+    "description": "Passionist cleric."
+  },
+  {
+    "day": "February 27",
+    "tradition": "Eastern Orthodox",
+    "name": "Saint Raphael of Brooklyn",
+    "description": "Bishop."
+  },
+  {
+    "day": "February 27",
+    "tradition": "Oriental Orthodox",
+    "name": "Saint Cyril of Jerusalem",
+    "description": "Bishop and doctor."
+  },
+  {
+    "day": "February 27",
+    "tradition": "Anglican Communion",
+    "name": "George Herbert",
+    "description": "Priest and poet, 1633."
+  },
+  {
+    "day": "February 28",
+    "tradition": "Universal",
+    "name": "Saint Oswald of Worcester",
+    "description": "Bishop, venerated in Catholic and Oriental Orthodox traditions."
+  },
+  {
+    "day": "February 28",
+    "tradition": "Eastern Orthodox",
+    "name": "Venerable Basil the Confessor",
+    "description": "Companion of Saint Procopius."
+  },
+  {
+    "day": "February 28",
+    "tradition": "Anglican Communion",
+    "name": "Anna Julia Haywood Cooper and Elizabeth Evelyn Wright",
+    "description": "Educators, 1964 and 1906."
+  }
+]

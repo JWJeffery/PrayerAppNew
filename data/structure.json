@@ -4,7 +4,7 @@
     "version": "1.2.0",
     "description": "A comprehensive digital Daily Office and Psalter designed for Anglicans and those in communion with them. It incorporates elements from Anglican, Catholic, Eastern Orthodox, Oriental Orthodox, and Church of the East monastic and parish prayer services.",
     "theological_vision": "As part of 'the one, holy, catholic, and apostolic Church,' the app aims to help users become more like Jesus through sacraments and prayer, drawing from the Holy Fathers.",
-    "current_phase": "Phase 3: Liturgical Logic & Content Integration (Seasonal Migration in Progress)"
+    "current_phase": "Phase 3: Liturgical Logic & Content Integration (Seasonal Migration Completed)"
   },
   "goals": [
     "Offer customizable prayer experiences drawing from multiple Christian traditions to deepen users' spiritual lives.",
@@ -43,7 +43,10 @@
       "seasonal_antiphons": "Implemented via antiphon field in seasonal JSONs",
       "canticles": "Structure defined for Magnificat, Nunc Dimittis, and Te Deum (pending full integration)"
     },
-    "saints_kalendar": "Expanded to multi-tradition (Anglican, Catholic, Eastern/Oriental Orthodox, Church of the East). Covers 5-8 saints per day.",
+    "saints_kalendar": {
+      "status": "Complete for January through December. Covers 5-8 saints/feasts per day from multi-tradition sources (Anglican, Catholic, Eastern/Orient Orthodox, Church of the East). Duplicates removed, gaps filled, modern Anglicans vetted for holiness/intercession marks, feasts kept. Files: saints-january.json through saints-december.json.",
+      "notes": "Current system still loads saints.json for daily commemorations. Future step: update index.html logic to load correct saints-<month>.json file based on current month to speed loading and reduce payload size."
+    },
     "seasonal_propers": "Complete for liturgical year A (2025–2026): advent.json, christmas.json, epiphany.json, lent.json, easter.json, ordinary1.json, ordinary2.json, ordinary3.json"
   },
   "files_structure": {
@@ -60,7 +63,19 @@
       "data/easter.json",
       "data/ordinary1.json",
       "data/ordinary2.json",
-      "data/ordinary3.json"
+      "data/ordinary3.json",
+      "data/saints-january.json",
+      "data/saints-february.json",
+      "data/saints-march.json",
+      "data/saints-april.json",
+      "data/saints-may.json",
+      "data/saints-june.json",
+      "data/saints-july.json",
+      "data/saints-august.json",
+      "data/saints-september.json",
+      "data/saints-october.json",
+      "data/saints-november.json",
+      "data/saints-december.json"
     ],
     "new": [
       "data/bible/old-testament.json (OT readings - needs truncation fix at Jeremiah 8)",
@@ -81,20 +96,44 @@
     "Ref formatting: Case-sensitivity issues between seasonal JSONs and Bible IDs",
     "Collect ID mismatches: Dynamic IDs in index.html don't match components.json (e.g., 'collect-january-25' vs 'collect-jan25-conversion-paul') – to be resolved with seasonal collect fields",
     "Duplicated Marian Antiphon appearing multiple times in the render flow",
-    "OT truncation at Jeremiah 8 and NT duplicates in Bible files (next priority after seasonal migration)"
+    "OT truncation at Jeremiah 8 and NT duplicates in Bible files (next priority after seasonal migration)",
+    "Saints JSON loading: Currently using single saints.json file; needs update to load month-specific saints-<month>.json for performance"
   ],
   "fix_plan": [
     "Step 1: Verify all 155 Psalms in psalms.json are pulling correctly via getScriptureText(). [Completed]",
-    "Step 2: Migrate from deprecated propers.json to seasonal JSON files (advent.json through ordinary3.json) – in progress",
+    "Step 2: Migrate from deprecated propers.json to seasonal JSON files (advent.json through ordinary3.json) – [Completed]",
     "Step 3: Implement liturgicalColor field from seasonal JSONs to dynamically update UI (CSS variables, themes) – planned next",
-    "Step 4: Clean new-testament.json - Remove duplicates like MATT 18:1-7 and ensure all lesson refs load full text.",
-    "Step 5: Fix old-testament.json truncation - Restore data after Jeremiah 8.",
-    "Step 6: Standardize Collect IDs - Link seasonal JSON collect fields to components.json entries.",
-    "Step 7: Consolidate Marian logic - Render once based on marianPos in index.html.",
-    "Step 8: Refine Scripture Rendering - Ensure regex continues to strip verse numbers and replace line breaks for paragraph flow.",
-    "Step 9: Implement 30-day Psalm cycle - Add range parsing logic for blocks like 'Psalm 67, Psalm 68'.",
-    "Step 10: Finalize Office Logic - Implement automatic time-based selection for Morning/Evening prayer.",
-    "Step 11: Cleanup - Delete deprecated psalter.json, scripture.json, and propers.json files."
+    "Step 4: Clean new-testament.json - Remove duplicates like MATT 18:1-7 and ensure all lesson refs load full text. [Pending]",
+    "Step 5: Fix old-testament.json truncation - Restore data after Jeremiah 8. [Pending]",
+    "Step 6: Standardize Collect IDs - Link seasonal JSON collect fields to components.json entries. [Pending]",
+    "Step 7: Consolidate Marian logic - Render once based on marianPos in index.html. [Pending]",
+    "Step 8: Refine Scripture Rendering - Ensure regex continues to strip verse numbers and replace line breaks for paragraph flow. [Pending]",
+    "Step 9: Implement 30-day Psalm cycle - Add range parsing logic for blocks like 'Psalm 67, Psalm 68'. [Completed]",
+    "Step 10: Finalize Office Logic - Implement automatic time-based selection for Morning/Evening prayer. [Pending]",
+    "Step 11: Cleanup - Delete deprecated psalter.json, scripture.json, and propers.json files. [Pending]",
+    "Step 12: Update index.html to load correct saints-<month>.json file based on current month (instead of saints.json) to speed loading and reduce payload size. [Planned next after liturgicalColor implementation]"
   ],
-  "last_updated": "2026-01-28"
+  "lessons_learned": [
+    {
+      "lesson": "Consolidation of shared saints/feasts",
+      "description": "When a saint or feast is shared across traditions (especially Universal ones like All Saints, Saint Nicholas, Saint Ambrose, etc.), consolidate to a single entry with 'tradition': 'Universal'. Do not repeat the same saint multiple times on the same day under each tradition. This reduces file size, eliminates redundancy, and improves performance."
+    },
+    {
+      "lesson": "Anglican saint selection/removal process",
+      "description": "Anglican entries are vetted using these criteria: 1) Holiness evidence (martyrdom, miracles, veneration in official Anglican calendars like Lesser Feasts and Fasts or BCP). 2) Pre-Reformation or post-Reformation with strong marks of sanctity (e.g., bishops/martyrs kept). 3) Explicit Protestant reformers (e.g., John Knox) removed unless user overrides. 4) Modern figures kept only if user specifically approves (e.g., Oakerhater, Crummell, bishops, martyrs, Kamehameha). Process involved user feedback loops and manual review for each month."
+    },
+    {
+      "lesson": "No simulations",
+      "description": "Simulations lead to errors in research-heavy tasks (missed dupes, incomplete fills). Always use real tool calls (web_search, browse_page, code_execution) for verification and filling. Never simulate to save time."
+    },
+    {
+      "lesson": "User preferences for code output",
+      "description": "Provide full file text in code blocks when editing. Walk through step-by-step for non-coders. Verify user consent before long code blocks. Ask for current file text if unsure. Never assume or guess file contents."
+    },
+    {
+      "lesson": "Month-specific files",
+      "description": "Using one saints.json is inefficient for loading. Future update to load saints-<month>.json based on current month will reduce payload and speed up app. This is now planned as a priority step."
+    }
+  ],
+  "last_updated": "2026-02-04"
 }

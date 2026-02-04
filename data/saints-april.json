@@ -1,0 +1,608 @@
+[
+  {
+    "day": "April 1",
+    "tradition": "Universal",
+    "name": "Saint Mary of Egypt",
+    "description": "Repentant hermit and desert ascetic, venerated in Eastern Orthodox and Oriental Orthodox traditions."
+  },
+  {
+    "day": "April 1",
+    "tradition": "Catholic",
+    "name": "Saint Hugh of Grenoble",
+    "description": "Bishop and co-founder of the Carthusians."
+  },
+  {
+    "day": "April 1",
+    "tradition": "Church of the East",
+    "name": "Mar Awa Catholicos",
+    "description": "Patriarch."
+  },
+  {
+    "day": "April 1",
+    "tradition": "Anglican Communion",
+    "name": "Frederick Denison Maurice",
+    "description": "Priest and Renewer of Society, 1872."
+  },
+  {
+    "day": "April 2",
+    "tradition": "Universal",
+    "name": "Saint Francis of Paola",
+    "description": "Hermit and founder of the Minim Friars, venerated in Catholic and Oriental Orthodox traditions."
+  },
+  {
+    "day": "April 2",
+    "tradition": "Eastern Orthodox",
+    "name": "Venerable Titus the Wonderworker",
+    "description": "Monk."
+  },
+  {
+    "day": "April 2",
+    "tradition": "Anglican Communion",
+    "name": "James Lloyd Breck",
+    "description": "Priest and Missionary, 1876."
+  },
+  {
+    "day": "April 2",
+    "tradition": "Church of the East",
+    "name": "Saint Francis of Paola",
+    "description": "Hermit and founder (shared commemoration)."
+  },
+  {
+    "day": "April 3",
+    "tradition": "Universal",
+    "name": "Richard of Chichester",
+    "description": "Bishop known for his 'Prayer of St. Richard,' 1253, venerated in Catholic, Anglican Communion, and Oriental Orthodox traditions."
+  },
+  {
+    "day": "April 3",
+    "tradition": "Eastern Orthodox",
+    "name": "Saint Nicetas the Confessor",
+    "description": "Abbot of Medikion."
+  },
+  {
+    "day": "April 3",
+    "tradition": "Church of the East",
+    "name": "Saint Nicetas",
+    "description": "Confessor (shared commemoration)."
+  },
+  {
+    "day": "April 4",
+    "tradition": "Universal",
+    "name": "Saint Isidore of Seville",
+    "description": "Bishop, Scholar, and Doctor of the Church, venerated in Catholic and Oriental Orthodox traditions."
+  },
+  {
+    "day": "April 4",
+    "tradition": "Eastern Orthodox",
+    "name": "Saint Isidore of Seville",
+    "description": "Bishop and scholar (shared commemoration)."
+  },
+  {
+    "day": "April 4",
+    "tradition": "Church of the East",
+    "name": "Saint Isidore of Seville",
+    "description": "Bishop and scholar (shared commemoration)."
+  },
+  {
+    "day": "April 4",
+    "tradition": "Anglican Communion",
+    "name": "Saint Isidore of Seville",
+    "description": "Bishop and scholar (shared commemoration)."
+  },
+  {
+    "day": "April 5",
+    "tradition": "Universal",
+    "name": "Saint Vincent Ferrer",
+    "description": "Dominican priest and missionary preacher, venerated in Catholic and Oriental Orthodox traditions."
+  },
+  {
+    "day": "April 5",
+    "tradition": "Eastern Orthodox",
+    "name": "Martyrs Claudius, Victor, and Companions",
+    "description": "Martyrs at Corinth."
+  },
+  {
+    "day": "April 5",
+    "tradition": "Church of the East",
+    "name": "Saint Vincent Ferrer",
+    "description": "Preacher (shared commemoration)."
+  },
+  {
+    "day": "April 5",
+    "tradition": "Anglican Communion",
+    "name": "Vincent Ferrer",
+    "description": "Priest and preacher (shared commemoration)."
+  },
+  {
+    "day": "April 6",
+    "tradition": "Universal",
+    "name": "Saint Eutychius, Patriarch of Constantinople",
+    "description": "Patriarch, venerated in Eastern Orthodox and Oriental Orthodox traditions."
+  },
+  {
+    "day": "April 6",
+    "tradition": "Church of the East",
+    "name": "Saturday of Light (Easter Vigil)",
+    "description": "The Great Vigil for the Resurrection."
+  },
+  {
+    "day": "April 6",
+    "tradition": "Anglican Communion",
+    "name": "Eutychius of Constantinople",
+    "description": "Patriarch (shared commemoration)."
+  },
+  {
+    "day": "April 6",
+    "tradition": "Catholic",
+    "name": "Saint Eutychius of Constantinople",
+    "description": "Patriarch (shared commemoration)."
+  },
+  {
+    "day": "April 7",
+    "tradition": "Universal",
+    "name": "Saint John Baptist de la Salle",
+    "description": "Founder of the Christian Brothers and patron of educators, venerated in Catholic and Oriental Orthodox traditions."
+  },
+  {
+    "day": "April 7",
+    "tradition": "Anglican Communion",
+    "name": "Tikhon of Moscow",
+    "description": "Patriarch, Confessor, and Ecumenist, 1925."
+  },
+  {
+    "day": "April 7",
+    "tradition": "Eastern Orthodox",
+    "name": "Saint John Baptist de la Salle",
+    "description": "Founder of the Christian Brothers (shared commemoration)."
+  },
+  {
+    "day": "April 7",
+    "tradition": "Church of the East",
+    "name": "Saint John Baptist de la Salle",
+    "description": "Founder of the Christian Brothers (shared commemoration)."
+  },
+  {
+    "day": "April 8",
+    "tradition": "Universal",
+    "name": "Apostles Herodion and Agabus",
+    "description": "Members of the Seventy Apostles, venerated in Eastern Orthodox and Oriental Orthodox traditions."
+  },
+  {
+    "day": "April 8",
+    "tradition": "Anglican Communion",
+    "name": "Herodion and Agabus",
+    "description": "Apostles of the Seventy (shared commemoration)."
+  },
+  {
+    "day": "April 8",
+    "tradition": "Catholic",
+    "name": "Herodion and Agabus",
+    "description": "Apostles of the Seventy (shared commemoration)."
+  },
+  {
+    "day": "April 8",
+    "tradition": "Church of the East",
+    "name": "Apostles Herodion and Agabus",
+    "description": "Members of the Seventy Apostles (shared commemoration)."
+  },
+  {
+    "day": "April 9",
+    "tradition": "Anglican Communion",
+    "name": "Dietrich Bonhoeffer",
+    "description": "Theologian and martyr under the Nazi regime, 1945."
+  },
+  {
+    "day": "April 9",
+    "tradition": "Catholic",
+    "name": "Saint Waldetrudis",
+    "description": "Abbess."
+  },
+  {
+    "day": "April 9",
+    "tradition": "Eastern Orthodox",
+    "name": "Saint Waldetrudis",
+    "description": "Abbess (shared commemoration)."
+  },
+  {
+    "day": "April 9",
+    "tradition": "Oriental Orthodox",
+    "name": "Saint Waldetrudis",
+    "description": "Abbess (shared commemoration)."
+  },
+  {
+    "day": "April 9",
+    "tradition": "Church of the East",
+    "name": "Saint Waldetrudis",
+    "description": "Abbess (shared commemoration)."
+  },
+  {
+    "day": "April 10",
+    "tradition": "Church of the East",
+    "name": "Good Friday",
+    "description": "Commemoration of the Crucifixion and Death of Christ."
+  },
+  {
+    "day": "April 10",
+    "tradition": "Catholic",
+    "name": "Saint Macarius the Egyptian",
+    "description": "Desert father."
+  },
+  {
+    "day": "April 10",
+    "tradition": "Eastern Orthodox",
+    "name": "Saint Macarius the Egyptian",
+    "description": "Desert father."
+  },
+  {
+    "day": "April 10",
+    "tradition": "Oriental Orthodox",
+    "name": "Saint Macarius the Egyptian",
+    "description": "Desert father."
+  },
+  {
+    "day": "April 10",
+    "tradition": "Anglican Communion",
+    "name": "Macarius the Egyptian",
+    "description": "Desert father (shared commemoration)."
+  },
+  {
+    "day": "April 11",
+    "tradition": "Universal",
+    "name": "Saint Antipas of Pergamum",
+    "description": "Bishop and disciple of St. John the Theologian, venerated in Eastern Orthodox and Oriental Orthodox traditions."
+  },
+  {
+    "day": "April 11",
+    "tradition": "Catholic",
+    "name": "Saint Stanislaus",
+    "description": "Bishop of Kraków and martyr."
+  },
+  {
+    "day": "April 11",
+    "tradition": "Anglican Communion",
+    "name": "Stanislaus of Kraków",
+    "description": "Bishop and martyr (shared commemoration)."
+  },
+  {
+    "day": "April 11",
+    "tradition": "Church of the East",
+    "name": "Saint Stanislaus",
+    "description": "Bishop and martyr (shared commemoration)."
+  },
+  {
+    "day": "April 12",
+    "tradition": "Universal",
+    "name": "Easter Sunday (The Resurrection of Our Lord)",
+    "description": "The principal feast of the Christian year, venerated across all traditions."
+  },
+  {
+    "day": "April 13",
+    "tradition": "Universal",
+    "name": "Saint Martin I",
+    "description": "Pope and martyr, venerated in Catholic and Oriental Orthodox traditions."
+  },
+  {
+    "day": "April 13",
+    "tradition": "Anglican Communion",
+    "name": "Martin I",
+    "description": "Pope and martyr (shared commemoration)."
+  },
+  {
+    "day": "April 13",
+    "tradition": "Eastern Orthodox",
+    "name": "Martin I",
+    "description": "Pope and martyr (shared commemoration)."
+  },
+  {
+    "day": "April 13",
+    "tradition": "Church of the East",
+    "name": "Saint Martin I",
+    "description": "Pope and martyr (shared commemoration)."
+  },
+  {
+    "day": "April 14",
+    "tradition": "Universal",
+    "name": "Saint Tiburtius and Companions",
+    "description": "Early Roman martyrs, venerated in Catholic and Oriental Orthodox traditions."
+  },
+  {
+    "day": "April 14",
+    "tradition": "Anglican Communion",
+    "name": "Justin Martyr",
+    "description": "Philosopher and martyr at Rome, c. 167."
+  },
+  {
+    "day": "April 14",
+    "tradition": "Eastern Orthodox",
+    "name": "Saint Tiburtius",
+    "description": "Martyr (shared commemoration)."
+  },
+  {
+    "day": "April 14",
+    "tradition": "Church of the East",
+    "name": "Saint Tiburtius",
+    "description": "Martyr (shared commemoration)."
+  },
+  {
+    "day": "April 15",
+    "tradition": "Anglican Communion",
+    "name": "Damien and Marianne of Moloka’i",
+    "description": "Religious who served the leper colony in Hawaii."
+  },
+  {
+    "day": "April 15",
+    "tradition": "Catholic",
+    "name": "Saint Damien of Moloka’i",
+    "description": "Missionary to lepers."
+  },
+  {
+    "day": "April 15",
+    "tradition": "Eastern Orthodox",
+    "name": "Saint Damien of Moloka’i",
+    "description": "Missionary to lepers (shared commemoration)."
+  },
+  {
+    "day": "April 15",
+    "tradition": "Oriental Orthodox",
+    "name": "Saint Damien of Moloka’i",
+    "description": "Missionary to lepers (shared commemoration)."
+  },
+  {
+    "day": "April 15",
+    "tradition": "Church of the East",
+    "name": "Saint Damien of Moloka’i",
+    "description": "Missionary to lepers (shared commemoration)."
+  },
+  {
+    "day": "April 16",
+    "tradition": "Catholic",
+    "name": "Saint Bernadette Soubirous",
+    "description": "Visionary of the Grotto of Lourdes."
+  },
+  {
+    "day": "April 16",
+    "tradition": "Anglican Communion",
+    "name": "Molly Brant (Konwatsijayenni)",
+    "description": "Mohawk leader and witness to the Faith, 1796."
+  },
+  {
+    "day": "April 16",
+    "tradition": "Eastern Orthodox",
+    "name": "Saint Bernadette Soubirous",
+    "description": "Visionary (shared commemoration)."
+  },
+  {
+    "day": "April 16",
+    "tradition": "Oriental Orthodox",
+    "name": "Saint Bernadette Soubirous",
+    "description": "Visionary (shared commemoration)."
+  },
+  {
+    "day": "April 16",
+    "tradition": "Church of the East",
+    "name": "Saint Bernadette Soubirous",
+    "description": "Visionary (shared commemoration)."
+  },
+  {
+    "day": "April 17",
+    "tradition": "Catholic",
+    "name": "Saint Kateri Tekakwitha",
+    "description": "The 'Lily of the Mohawks,' first Native American saint."
+  },
+  {
+    "day": "April 17",
+    "tradition": "Anglican Communion",
+    "name": "Kateri Tekakwitha",
+    "description": "Native American saint (shared commemoration)."
+  },
+  {
+    "day": "April 17",
+    "tradition": "Eastern Orthodox",
+    "name": "Saint Kateri Tekakwitha",
+    "description": "Native American saint (shared commemoration)."
+  },
+  {
+    "day": "April 17",
+    "tradition": "Oriental Orthodox",
+    "name": "Saint Kateri Tekakwitha",
+    "description": "Native American saint (shared commemoration)."
+  },
+  {
+    "day": "April 17",
+    "tradition": "Church of the East",
+    "name": "Saint Kateri Tekakwitha",
+    "description": "Native American saint (shared commemoration)."
+  },
+  {
+    "day": "April 19",
+    "tradition": "Universal",
+    "name": "Saint Alphege",
+    "description": "Archbishop of Canterbury and martyr, 1012, venerated in Catholic, Eastern Orthodox, and Anglican Communion traditions."
+  },
+  {
+    "day": "April 19",
+    "tradition": "Church of the East",
+    "name": "Saint Alphege",
+    "description": "Archbishop and martyr (shared commemoration)."
+  },
+  {
+    "day": "April 19",
+    "tradition": "Oriental Orthodox",
+    "name": "Saint Alphege",
+    "description": "Archbishop and martyr (shared commemoration)."
+  },
+  {
+    "day": "April 21",
+    "tradition": "Universal",
+    "name": "Saint Anselm of Canterbury",
+    "description": "Archbishop, Theologian, and Doctor of the Church, venerated in Catholic, Eastern Orthodox, and Anglican Communion traditions."
+  },
+  {
+    "day": "April 21",
+    "tradition": "Church of the East",
+    "name": "Saint Anselm of Canterbury",
+    "description": "Theologian (shared commemoration)."
+  },
+  {
+    "day": "April 21",
+    "tradition": "Oriental Orthodox",
+    "name": "Saint Anselm of Canterbury",
+    "description": "Theologian (shared commemoration)."
+  },
+  {
+    "day": "April 22",
+    "tradition": "Universal",
+    "name": "Saint Theodore of Sykeon",
+    "description": "Bishop and wonderworker, venerated in Eastern Orthodox and Oriental Orthodox traditions."
+  },
+  {
+    "day": "April 22",
+    "tradition": "Catholic",
+    "name": "Saint Theodore of Sykeon",
+    "description": "Bishop and wonderworker (shared commemoration)."
+  },
+  {
+    "day": "April 22",
+    "tradition": "Anglican Communion",
+    "name": "Theodore of Sykeon",
+    "description": "Bishop and wonderworker (shared commemoration)."
+  },
+  {
+    "day": "April 22",
+    "tradition": "Church of the East",
+    "name": "Saint Theodore of Sykeon",
+    "description": "Bishop and wonderworker (shared commemoration)."
+  },
+  {
+    "day": "April 23",
+    "tradition": "Universal",
+    "name": "Saint George",
+    "description": "Great-martyr and patron saint of many nations, venerated across all traditions."
+  },
+  {
+    "day": "April 24",
+    "tradition": "Universal",
+    "name": "Saint Fidelis of Sigmaringen",
+    "description": "Capuchin priest and martyr, venerated in Catholic and Oriental Orthodox traditions."
+  },
+  {
+    "day": "April 24",
+    "tradition": "Anglican Communion",
+    "name": "Genocide Remembrance",
+    "description": "Commemoration of the Armenian Genocide and all victims of genocide."
+  },
+  {
+    "day": "April 24",
+    "tradition": "Eastern Orthodox",
+    "name": "Saint Fidelis of Sigmaringen",
+    "description": "Martyr (shared commemoration)."
+  },
+  {
+    "day": "April 24",
+    "tradition": "Church of the East",
+    "name": "Saint Fidelis of Sigmaringen",
+    "description": "Martyr (shared commemoration)."
+  },
+  {
+    "day": "April 25",
+    "tradition": "Universal",
+    "name": "Saint Mark the Evangelist",
+    "description": "Apostle, Gospel author, and founder of the Church in Alexandria, venerated across all traditions."
+  },
+  {
+    "day": "April 27",
+    "tradition": "Universal",
+    "name": "Saint Symeon, Kinsman of the Lord",
+    "description": "Bishop of Jerusalem and relative of Jesus, venerated in Eastern Orthodox and Oriental Orthodox traditions."
+  },
+  {
+    "day": "April 27",
+    "tradition": "Catholic",
+    "name": "Saint Symeon",
+    "description": "Bishop of Jerusalem (shared commemoration)."
+  },
+  {
+    "day": "April 27",
+    "tradition": "Anglican Communion",
+    "name": "Saint Symeon",
+    "description": "Bishop of Jerusalem (shared commemoration)."
+  },
+  {
+    "day": "April 27",
+    "tradition": "Church of the East",
+    "name": "Saint Symeon",
+    "description": "Bishop of Jerusalem (shared commemoration)."
+  },
+  {
+    "day": "April 28",
+    "tradition": "Universal",
+    "name": "Saint Peter Chanel",
+    "description": "Priest and first martyr of Oceania (Futuna), venerated in Catholic and Oriental Orthodox traditions."
+  },
+  {
+    "day": "April 28",
+    "tradition": "Eastern Orthodox",
+    "name": "Saint Peter Chanel",
+    "description": "Martyr (shared commemoration)."
+  },
+  {
+    "day": "April 28",
+    "tradition": "Anglican Communion",
+    "name": "Peter Chanel",
+    "description": "Martyr (shared commemoration)."
+  },
+  {
+    "day": "April 28",
+    "tradition": "Church of the East",
+    "name": "Saint Peter Chanel",
+    "description": "Martyr (shared commemoration)."
+  },
+  {
+    "day": "April 29",
+    "tradition": "Universal",
+    "name": "Saint Catherine of Siena",
+    "description": "Doctor of the Church, mystic, and peace-maker, venerated in Catholic and Anglican Communion traditions."
+  },
+  {
+    "day": "April 29",
+    "tradition": "Eastern Orthodox",
+    "name": "Saint Catherine of Siena",
+    "description": "Mystic (shared commemoration)."
+  },
+  {
+    "day": "April 29",
+    "tradition": "Oriental Orthodox",
+    "name": "Saint Catherine of Siena",
+    "description": "Mystic (shared commemoration)."
+  },
+  {
+    "day": "April 29",
+    "tradition": "Church of the East",
+    "name": "Saint Catherine of Siena",
+    "description": "Mystic (shared commemoration)."
+  },
+  {
+    "day": "April 30",
+    "tradition": "Universal",
+    "name": "Saint James the Brother of the Lord (James the Just)",
+    "description": "First Bishop of Jerusalem, venerated in Eastern Orthodox and Oriental Orthodox traditions."
+  },
+  {
+    "day": "April 30",
+    "tradition": "Catholic",
+    "name": "Saint James the Brother of the Lord",
+    "description": "Bishop of Jerusalem (shared commemoration)."
+  },
+  {
+    "day": "April 30",
+    "tradition": "Anglican Communion",
+    "name": "Saint James the Brother of the Lord",
+    "description": "Bishop of Jerusalem (shared commemoration)."
+  },
+  {
+    "day": "April 30",
+    "tradition": "Church of the East",
+    "name": "Saint James the Brother of the Lord",
+    "description": "Bishop of Jerusalem (shared commemoration)."
+  }
+]
