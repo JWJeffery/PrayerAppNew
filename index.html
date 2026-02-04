@@ -227,6 +227,7 @@
                 <strong>Ordo Components:</strong>
                 <label><input type="checkbox" id="toggle-litany" onchange="renderOffice()"> The Great Litany</label>
                 <label><input type="checkbox" id="toggle-suffrages" onchange="renderOffice()" checked> Suffrages</label>
+                <label><input type="checkbox" id="toggle-30day-psalter" onchange="renderOffice()"> 30-Day Psalter</label>
             </div>
         </div>
 
@@ -273,6 +274,40 @@
       { start: new Date("2026-02-23"), end: new Date("2026-04-11"), season: "lent", file: "lent.json" },
       { start: new Date("2026-04-12"), end: new Date("2026-05-24"), season: "easter", file: "easter.json" },
       { start: new Date("2026-05-25"), end: new Date("2026-12-31"), season: "ordinary", file: "ordinary1.json" }
+    ];
+
+    const psalterCycle = [
+      {day: 1, morning: '1,2,3,4,5', evening: '6,7,8'},
+      {day: 2, morning: '9,10,11', evening: '12,13,14'},
+      {day: 3, morning: '15,16,17', evening: '18'},
+      {day: 4, morning: '19,20,21', evening: '22,23'},
+      {day: 5, morning: '24,25,26', evening: '27,28,29'},
+      {day: 6, morning: '30,31', evening: '32,33,34'},
+      {day: 7, morning: '35,36', evening: '37'},
+      {day: 8, morning: '38', evening: '39,40'},
+      {day: 9, morning: '41,42,43', evening: '44,45,46'},
+      {day: 10, morning: '47,48,49', evening: '50,51,52'},
+      {day: 11, morning: '53,54,55', evening: '56,57,58'},
+      {day: 12, morning: '59,60', evening: '61,62'},
+      {day: 13, morning: '63,64', evening: '65,66,67'},
+      {day: 14, morning: '68', evening: '69,70'},
+      {day: 15, morning: '71,72', evening: '73,74'},
+      {day: 16, morning: '75,76', evening: '77'},
+      {day: 17, morning: '78', evening: '79,80'},
+      {day: 18, morning: '81,82', evening: '83,84,85'},
+      {day: 19, morning: '86,87,88', evening: '89'},
+      {day: 20, morning: '90,91,92', evening: '93,94'},
+      {day: 21, morning: '95,96,97,98', evening: '99,100,101'},
+      {day: 22, morning: '102,103', evening: '104'},
+      {day: 23, morning: '105', evening: '106'},
+      {day: 24, morning: '107', evening: '108,109'},
+      {day: 25, morning: '110,111,112,113', evening: '114,115'},
+      {day: 26, morning: '116,117,118', evening: '119:1-32'},
+      {day: 27, morning: '119:33-72', evening: '119:73-104'},
+      {day: 28, morning: '119:105-144', evening: '119:145-176'},
+      {day: 29, morning: '120,121,122,123,124,125', evening: '126,127,128,129,130,131'},
+      {day: 30, morning: '132,133,134,135', evening: '136,137,138'},
+      {day: 31, morning: '139,140', evening: '141,142,143'}
     ];
 
     function formatDateForLookup(date) {
@@ -406,8 +441,8 @@
         if (!entry) return "Text not found for " + refId;
         let text = entry.text[version] || entry.text["KJV"] || null;
         if (text) {
+            text = text.replace(/\d+:\d+ /g, ''); // Remove verse numbers like "1:1 "
             text = text.replace(/^.*?:\s*/, '').trim();
-            text = text.replace(/^\d+:\d+(-\d+)?\s*/gm, '');
             text = text.replace(/\n/g, ' ');
             text = text.replace(/^["“‘]/, '').trim();
         }
@@ -454,6 +489,12 @@
         const suffix = isEvening ? '_evening' : '_morning';
 
         let psalms = dailyData[`psalms${suffix}`] || "";
+        const use30Day = document.getElementById('toggle-30day-psalter')?.checked || false;
+        if (use30Day) {
+          const dayOfMonth = currentDate.getDate();
+          const psalterDay = (dayOfMonth % 30) || 30;
+          psalms = psalterCycle[psalterDay - 1][isEvening ? 'evening' : 'morning'];
+        }
         let readingOT = dailyData[`reading_ot${suffix}`] || "";
         let readingEpistle = dailyData[`reading_epistle${suffix}`] || "";
         let readingGospel = dailyData[`reading_gospel${suffix}`] || "";
@@ -480,7 +521,7 @@
               item = `bcp-confession-${rite}`;
             }
             if (item === 'bcp-absolution-slot') {
-              const ritePrefix = rite.replace('ite', '');
+              const ritePrefix = rite === 'rite1' ? 'r1' : 'r2';
               item = `bcp-absolution-${ritePrefix}-${minister}`;
             }
             if (item === 'bcp-gloria-patri' && !document.getElementById('toggle-gloria-patri').checked) {
