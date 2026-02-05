@@ -267,6 +267,8 @@
 
     let seasonalCache = {};
 
+    const monthNames = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+
     const seasonRanges = [
       { start: new Date("2025-11-30"), end: new Date("2025-12-24"), season: "advent", file: "advent.json" },
       { start: new Date("2025-12-25"), end: new Date("2026-01-05"), season: "christmas", file: "christmas.json" },
@@ -369,7 +371,7 @@
     async function init() {
         try {
             appData = {};
-            const files = ['components', 'rubrics', 'saints'];
+            const files = ['components', 'rubrics'];
             for (const file of files) {
                 const res = await fetch(`data/${file}.json`);
                 if (!res.ok) throw new Error(`Missing: data/${file}.json`);
@@ -644,6 +646,23 @@
 
         document.getElementById('date-header').innerText = `Commemorations for ${todayKey}`;
         const todayKeyLower = todayKey.toLowerCase();
+
+        // Dynamically load saints for the current month
+        const monthIndex = currentDate.getMonth();
+        const month = monthNames[monthIndex];
+        if (!appData.saints || appData.saintsMonth !== month) {
+          try {
+            const file = `saints-${month.toLowerCase()}.json`;
+            const res = await fetch(`data/${file}`);
+            if (!res.ok) throw new Error(`Failed to load ${file}`);
+            appData.saints = await res.json();
+            appData.saintsMonth = month;
+          } catch (err) {
+            console.error('Saints load failed:', err);
+            document.getElementById('saint-display').innerHTML = '<p>No commemorations for today.</p>';
+            return;
+          }
+        }
 
         document.getElementById('saint-display').innerHTML = appData.saints
             .filter(s => s.day && s.day.toLowerCase().includes(todayKeyLower))
