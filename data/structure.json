@@ -39,7 +39,7 @@
       "midday_prayer": "To be implemented"
     },
     "collects_and_special": {
-      "daily_collects": "In progress – collect IDs standardized across seasonal files and linked to components.json",
+      "daily_collects": "In progress – collect IDs standardized across seasonal files and linked to components.json (partial implementation in index.html with VARIABLE_COLLECT; full linking pending)",
       "seasonal_antiphons": "Implemented via antiphon field in seasonal JSONs",
       "canticles": "Structure defined for Magnificat, Nunc Dimittis, and Te Deum (pending full integration)"
     },
@@ -47,7 +47,7 @@
       "status": "Complete for January through December. Covers 5-8 saints/feasts per day from multi-tradition sources (Anglican, Catholic, Eastern/Orient Orthodox, Church of the East). Duplicates removed, gaps filled, modern Anglicans vetted for holiness/intercession marks, feasts kept. Files: saints-january.json through saints-december.json.",
       "notes": "System updated to load correct saints-<month>.json file based on current month, improving loading speed and reducing payload size."
     },
-    "seasonal_propers": "Complete for liturgical year A (2025–2026): advent.json, christmas.json, epiphany.json, lent.json, easter.json, ordinary1.json, ordinary2.json, ordinary3.json"
+    "seasonal_propers": "Complete for liturgical year A (2025–2026): advent.json, christmas.json, epiphany.json, lent.json, easter.json, ordinary1.json, ordinary2.json, ordinary3.json. Future: Expand to Years B and C for full three-year RCL cycle alignment (including updated collects and scripture lessons)."
   },
   "files_structure": {
     "keep": [
@@ -82,11 +82,11 @@
       "data/bible/psalms.json (Completed: 1-155)"
     ],
     "delete": [
-      "data/psalter.json (Deprecated)",
-      "data/scripture.json (Deprecated)",
-      "data/propers.json (Deprecated – fully replaced by seasonal JSONs)",
-      "README.md (Empty)",
-      "data/saints.json (Deprecated - replaced by month-specific files)"
+      "data/psalter.json (Deprecated) [Deleted]",
+      "data/scripture.json (Deprecated) [Deleted]",
+      "data/propers.json (Deprecated – fully replaced by seasonal JSONs) [Deleted]",
+      "README.md (Empty) [Deleted if confirmed empty]",
+      "data/saints.json (Deprecated - replaced by month-specific files) [Deleted]"
     ]
   },
   "identified_issues": [
@@ -103,13 +103,19 @@
     "Step 3: Implement liturgicalColor field from seasonal JSONs to dynamically update UI (CSS variables, themes) – planned next",
     "Step 4: Clean new-testament.json - Remove duplicates like MATT 18:1-7 and ensure all lesson refs load full text. [Completed]",
     "Step 5: Fix old-testament.json truncation - Restore data after Jeremiah 8. [Completed]",
-    "Step 6: Standardize Collect IDs - Link seasonal JSON collect fields to components.json entries. [Pending]",
+    "Step 6: Standardize Collect IDs - Link seasonal JSON collect fields to components.json entries. [Pending - Partial: VARIABLE_COLLECT added to index.html render loop]",
     "Step 7: Consolidate Marian logic - Render once based on marianPos in index.html. [Pending]",
     "Step 8: Refine Scripture Rendering - Ensure regex continues to strip verse numbers and replace line breaks for paragraph flow. [Pending]",
     "Step 9: Implement 30-day Psalm cycle - Add range parsing logic for blocks like 'Psalm 67, Psalm 68'. [Completed]",
     "Step 10: Finalize Office Logic - Implement automatic time-based selection for Morning/Evening prayer. [Pending]",
-    "Step 11: Cleanup - Delete deprecated psalter.json, scripture.json, and propers.json files. [Completed]",
+    "Step 11: Cleanup - Delete deprecated psalter.json, scripture.json, and propers.json files. [Completed - Confirmed deleted]",
     "Step 12: Update index.html to load correct saints-<month>.json file based on current month (instead of saints.json) to speed loading and reduce payload size. [Completed]"
+  ],
+  "future_plans": [
+    "Implement dynamic calculation for movable feasts (e.g., Easter date algorithm) to generate seasonal data beyond hardcoded 2025-2026 years.",
+    "Migrate individual prayers from hardcoded in index.html to components.json (or new prayers.json), and add 'Return to Main Screen' buttons in individual prayers section and daily office (e.g., from settings or main content).",
+    "Expand seasonal JSONs and bible files to include full scripture lessons and collects for Years B and C (three-year RCL cycle).",
+    "Migrate styling to Tailwind CSS (utility-first) after core functionality is complete, before adding immersive audio/graphics."
   ],
   "lessons_learned": [
     {
@@ -133,5 +139,5 @@
       "description": "Using one saints.json is inefficient for loading. Future update to load saints-<month>.json based on current month will reduce payload and speed up app. This is now planned as a priority step."
     }
   ],
-  "last_updated": "2026-02-04"
+  "last_updated": "2026-02-05"
 }
