@@ -359,12 +359,12 @@ async function getDailyData(targetDate = currentDate) {
 }
 
 function updateSeasonalTheme(color) {
-  let hex = '#8e44ad';
-  if (color === 'purple') hex = '#8e44ad';
-  if (color === 'rose') hex = '#e74c3c';
-  if (color === 'white') hex = '#f0f0f0';
-  if (color === 'green') hex = '#27ae60';
-  if (color === 'red') hex = '#c0392b';
+  let hex = '#27ae60'; // Default to green for Ordinary
+  if (color === 'purple') hex = '#8e44ad'; // Advent/Lent
+  if (color === 'rose') hex = '#e74c3c'; // Gaudete/Laetare
+  if (color === 'white') hex = '#f0f0f0'; // Christmas/Epiphany
+  if (color === 'green') hex = '#27ae60'; // Ordinary
+  if (color === 'red') hex = '#c0392b'; // Pentecost/Martyrs
   document.documentElement.style.setProperty('--accent', hex);
 }
 
@@ -485,7 +485,7 @@ async function renderOffice() {
     const dailyData = await getDailyData(currentDate);
     document.getElementById('calendar-info').innerText = dailyData.title || "Liturgical Ordo";
 
-    updateSeasonalTheme(dailyData.liturgicalColor || 'purple');
+    updateSeasonalTheme(dailyData.liturgicalColor || 'green');
 
     const isEvening = (officeId === 'evening-office') || (officeId === 'compline-office');
     const suffix = isEvening ? '_evening' : '_morning';
