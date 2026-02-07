@@ -111,13 +111,15 @@
     "Step 6: Implement 30-day Psalm cycle - Add range parsing logic for blocks like 'Psalm 67, Psalm 68'. [Completed]",
     "Step 7: Cleanup - Delete deprecated psalter.json, scripture.json, and propers.json files. [Completed - Confirmed deleted]",
     "Step 8: Update index.html to load correct saints-<month>.json file based on current month (instead of saints.json) to speed loading and reduce payload size. [Completed]",
-    "Step 9: Implement liturgicalColor field from seasonal JSONs to dynamically update UI (CSS variables, themes) – [Completed]"
+    "Step 9: Implement liturgicalColor field from seasonal JSONs to dynamically update UI (CSS variables, themes) – [Completed]",
+    "Step 10: Add fixed width to Ordo box and date entry selection option. [Completed]"
   ],
   "future_plans": [
     "Implement dynamic calculation for movable feasts (e.g., Easter date algorithm) to generate seasonal data beyond hardcoded 2025-2026 years.",
     "Migrate individual prayers from hardcoded in index.html to components.json (or new prayers.json), and add 'Return to Main Screen' buttons in individual prayers section and daily office (e.g., from settings or main content).",
     "Expand seasonal JSONs and bible files to include full scripture lessons and collects for Years B and C (three-year RCL cycle).",
-    "Migrate styling to Tailwind CSS (utility-first) after core functionality is complete, before adding immersive audio/graphics."
+    "Migrate styling to Tailwind CSS (utility-first) after core functionality is complete, before adding immersive audio/graphics.",
+    "Implement hidden sidebar triggered by options button to replace always-visible sidebar, with slide-in animation and main content adjustment."
   ],
   "lessons_learned": [
     {

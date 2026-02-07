@@ -25,10 +25,10 @@
            color: var(--text-color); 
            margin: 0; 
            display: flex; 
-           flex-direction: column; 
            align-items: center; 
            justify-content: center; 
            height: 100vh; 
+           overflow-y: hidden; 
            transition: all 0.3s; 
        }
 
@@ -54,14 +54,15 @@
        }
        .mode-btn:hover { background: #9b59b6; }
 
-       #daily-office-section { display: none; flex-direction: row; width: 100%; height: 100vh; }
+       #daily-office-section { display: none; position: absolute; top: 0; left: 0; width: 100%; height: 100vh; flex-direction: row; }
        #settings-panel { 
            width: 300px; 
            background: var(--sidebar-bg); 
            color: #e0e0e0; 
            padding: 25px; 
            height: 100vh; 
-           position: sticky; 
+           position: fixed; 
+           left: 0; 
            top: 0; 
            overflow-y: auto; 
            border-right: 2px solid var(--gold); 
@@ -90,10 +91,24 @@
        }
 
        #main-content { 
-           flex-grow: 1; 
+           margin-left: 300px; 
            padding: 40px; 
-           text-align: center; 
+           height: 100vh; 
            overflow-y: auto; 
+           text-align: center; 
+           -webkit-overflow-scrolling: touch; 
+           scrollbar-width: thin; 
+           width: calc(100% - 300px); 
+       }
+       #main-content::-webkit-scrollbar { 
+           width: 8px; 
+       }
+       #main-content::-webkit-scrollbar-thumb { 
+           background: var(--gold); 
+           border-radius: 4px; 
+       }
+       #main-content::-webkit-scrollbar-track { 
+           background: #222; 
        }
        .office-container { 
            background: var(--container-bg); 
@@ -149,9 +164,10 @@
        .saint-grid { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; }
        .saint-box { background: var(--container-bg); border-top: 5px solid var(--gold); padding: 20px; width: 240px; box-shadow: 0 4px 12px rgba(0,0,0,0.15); text-align: left; border-radius: 0 0 6px 6px; }
 
-       .ordo-control { background: #222; border: 1px solid var(--gold); padding: 15px; border-radius: 4px; margin-bottom: 20px; text-align: center; }
-       .ordo-date { display: block; color: var(--gold); font-weight: bold; margin: 10px 0; font-size: 1.1em; }
-       .ordo-btn { background: none; border: 1px solid var(--gold); color: var(--gold); padding: 5px 15px; cursor: pointer; margin: 0 5px; transition: background 0.2s; }
+       .ordo-control { background: #222; border: 1px solid var(--gold); padding: 15px; border-radius: 4px; margin-bottom: 20px; text-align: center; width: 250px; box-sizing: border-box; }
+       .ordo-date { display: block; color: var(--gold); font-weight: bold; margin: 10px 0; font-size: 1.1em; white-space: normal; word-break: break-word; }
+       .ordo-buttons { display: flex; justify-content: center; gap: 5px; }
+       .ordo-btn { background: none; border: 1px solid var(--gold); color: var(--gold); padding: 5px 15px; cursor: pointer; transition: background 0.2s; }
        .ordo-btn:hover { background: rgba(212, 175, 55, 0.2); }
        select { width: 100%; padding: 10px; background: #333; color: white; border: 1px solid #555; border-radius: 4px; }
 
@@ -174,9 +190,13 @@
             <div class="ordo-control">
                 <strong>Liturgical Ordo</strong>
                 <div class="ordo-date" id="display-date">Loading...</div>
-                <button class="ordo-btn" onclick="changeDate(-1)">Prev</button>
-                <button class="ordo-btn" onclick="resetDate()">Today</button>
-                <button class="ordo-btn" onclick="changeDate(1)">Next</button>
+                <div class="ordo-buttons">
+                    <button class="ordo-btn" onclick="changeDate(-1)">Prev</button>
+                    <button class="ordo-btn" onclick="resetDate()">Today</button>
+                    <button class="ordo-btn" onclick="changeDate(1)">Next</button>
+                </div>
+                <label for="date-picker" style="display:block; color:var(--gold); font-size:0.8em; margin-top:10px;">Select Date:</label>
+                <input type="date" id="date-picker" style="margin-top:5px; width:100%; padding:5px; background:#333; color:white; border:1px solid #555; border-radius:4px; box-sizing: border-box;" onchange="setCustomDate(this.value)">
                 <div id="calendar-info" style="font-size: 0.7em; color: var(--gold); margin-top:10px;">Exploring the Ordo...</div>
             </div>
             <div class="setting-group">
@@ -392,6 +412,9 @@ async function init() {
 
         renderOffice();
 
+        // Log sidebar width
+        console.log(`Distance to gold line (sidebar width): ${document.getElementById('settings-panel').offsetWidth}px`);
+
     } catch (err) {
         document.getElementById('office-display').innerHTML = `<div class="office-container"><h3>System Error</h3><p>${err.message}</p></div>`;
         console.error('Init failed:', err);
@@ -403,6 +426,8 @@ function selectMode(mode) {
     document.getElementById('mode-selection').style.display = 'none';
     document.body.style.height = 'auto';
     document.body.style.justifyContent = 'flex-start';
+    document.body.style.alignItems = 'flex-start'; // Adjust for office mode
+    document.body.style.display = 'block'; // Switch to block for stability
     if (mode === 'daily') {
         document.getElementById('daily-office-section').style.display = 'flex';
         renderOffice();
@@ -418,6 +443,11 @@ function changeDate(days) {
 
 function resetDate() { 
   currentDate = new Date(); 
+  renderOffice(); 
+}
+
+function setCustomDate(dateStr) { 
+  if (dateStr) { currentDate = new Date(dateStr); } 
   renderOffice(); 
 }
 
