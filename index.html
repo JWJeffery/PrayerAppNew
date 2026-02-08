@@ -171,9 +171,29 @@
        .ordo-btn:hover { background: rgba(212, 175, 55, 0.2); }
        select { width: 100%; padding: 10px; background: #333; color: white; border: 1px solid #555; border-radius: 4px; }
 
-       #individual-prayers-section { display: none; text-align: center; max-width: 800px; padding: 40px; width: 100%; }
+       #individual-prayers-section { 
+           display: none; 
+           text-align: center; 
+           max-width: 800px; 
+           padding: 40px; 
+           width: 100%; 
+           margin: 0 auto; /* Center horizontally */
+       }
        #prayer-selection { margin-bottom: 40px; }
-       #prayer-display { background: var(--container-bg); padding: 40px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); text-align: left; }
+       #prayer-display { 
+           background: var(--container-bg); 
+           padding: 40px; 
+           border-radius: 8px; 
+           box-shadow: 0 4px 15px rgba(0,0,0,0.1); 
+           text-align: left; 
+           display: none; 
+           margin: 40px auto 0; /* Center horizontally with top margin */
+           max-width: 800px; 
+           width: 100%; 
+       }
+       #prayer-display .office-container {
+           border-left: none; /* Remove left border for prayers mode */
+       }
     </style>
 </head>
 <body id="app-body">
@@ -247,11 +267,12 @@
                 <strong>Ordo Components:</strong>
                 <label><input type="checkbox" id="toggle-litany" onchange="renderOffice()"> The Great Litany</label>
                 <label><input type="checkbox" id="toggle-suffrages" onchange="renderOffice()" checked> Suffrages</label>
-                <label><input type="checkbox" id="toggle-30day-psalter" onchange="renderOffice()" checked> 30-Day Psalter</label>
+                <label><input type="checkbox" id="toggle-30day-psalter" onchange="renderOffice()"> 30-Day Psalter</label>
             </div>
         </div>
 
         <div id="main-content">
+            <button class="mode-btn" onclick="backToSplash()" style="position:absolute; top:10px; left:10px;">Back to Modes</button>
             <h1>The Universal Office</h1>
             <div id="office-display"></div>
             <div class="saint-section">
@@ -274,6 +295,7 @@
             <option value="prayer-for-the-world">Prayer for the World</option>
         </select>
         <button class="mode-btn" onclick="showSinglePrayer()">Display Prayer</button>
+        <button class="mode-btn" onclick="backToSplash()" style="margin-top:20px;">Back to Modes</button>
     </div>
     <div id="prayer-display" style="display:none; margin-top:40px;">
         <div class="office-container" id="single-prayer-content"></div>
@@ -425,13 +447,17 @@ function selectMode(mode) {
     selectedMode = mode;
     document.getElementById('mode-selection').style.display = 'none';
     document.body.style.height = 'auto';
-    document.body.style.justifyContent = 'flex-start';
-    document.body.style.alignItems = 'flex-start'; // Adjust for office mode
-    document.body.style.display = 'block'; // Switch to block for stability
+    document.body.style.overflowY = 'auto'; // Allow scrolling
     if (mode === 'daily') {
+        document.body.style.display = 'flex';
+        document.body.style.justifyContent = 'flex-start';
+        document.body.style.alignItems = 'flex-start';
         document.getElementById('daily-office-section').style.display = 'flex';
         renderOffice();
     } else if (mode === 'prayers') {
+        document.body.style.display = 'flex';
+        document.body.style.justifyContent = 'center';
+        document.body.style.alignItems = 'center';
         document.getElementById('individual-prayers-section').style.display = 'block';
     }
 }
@@ -757,6 +783,19 @@ function showSinglePrayer() {
 function backToPrayerDropdown() {
     document.getElementById('prayer-display').style.display = 'none';
     document.getElementById('prayer-selection').style.display = 'block';
+}
+
+function backToSplash() {
+    document.getElementById('daily-office-section').style.display = 'none';
+    document.getElementById('individual-prayers-section').style.display = 'none';
+    document.getElementById('prayer-display').style.display = 'none';
+    document.body.style.display = 'flex';
+    document.body.style.alignItems = 'center';
+    document.body.style.justifyContent = 'center';
+    document.body.style.height = '100vh';
+    document.body.style.overflowY = 'hidden';
+    document.getElementById('mode-selection').style.display = 'block';
+    selectedMode = null;
 }
 
 init();

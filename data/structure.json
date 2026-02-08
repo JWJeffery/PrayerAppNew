@@ -4,7 +4,7 @@
     "version": "1.2.0",
     "description": "A comprehensive digital Daily Office and Psalter designed for Anglicans and those in communion with them. It incorporates elements from Anglican, Catholic, Eastern Orthodox, Oriental Orthodox, and Church of the East monastic and parish prayer services.",
     "theological_vision": "As part of 'the one, holy, catholic, and apostolic Church,' the app aims to help users become more like Jesus through sacraments and prayer, drawing from the Holy Fathers.",
-    "current_phase": "Phase 3: Liturgical Logic & Content Integration (Seasonal Migration Completed, Bible Files Cleaned)"
+    "current_phase": "Phase 3: Liturgical Logic & Content Integration (Seasonal Migration Completed, Bible Files Cleaned, UI Fixes Applied)"
   },
   "goals": [
     "Offer customizable prayer experiences drawing from multiple Christian traditions to deepen users' spiritual lives.",
@@ -47,7 +47,7 @@
       "status": "Complete for January through December. Covers 5-8 saints/feasts per day from multi-tradition sources (Anglican, Catholic, Eastern/Orient Orthodox, Church of the East). Duplicates removed, gaps filled, modern Anglicans vetted for holiness/intercession marks, feasts kept. Files: saints-january.json through saints-december.json.",
       "notes": "System updated to load correct saints-<month>.json file based on current month, improving loading speed and reducing payload size."
     },
-    "seasonal_propers": "Complete for liturgical year A (2025–2026): advent.json, christmas.json, epiphany.json, lent.json, easter.json, ordinary1.json, ordinary2.json, ordinary3.json. Future: Expand to Years B and C for full three-year RCL cycle alignment (including updated collects and scripture lessons)."
+    "seasonal_propers": "advent.json updated to 1979 BCP Daily Office Lectionary Year Two with correct readings, psalms, and non-suffixed keys (reading_ot, reading_epistle, reading_gospel). Other seasonal files pending similar updates. Future: Implement dynamic year detection for Year One/Two switching and lesson distribution options."
   },
   "files_structure": {
     "keep": [
@@ -95,12 +95,18 @@
     "Formatting: Inconsistent line breaks and missing separators in scripture rendering",
     "Ref formatting: Case-sensitivity issues between seasonal JSONs and Bible IDs",
     "Collect ID mismatches: Dynamic IDs in index.html don't match components.json (e.g., 'collect-january-25' vs 'collect-jan25-conversion-paul') – to be resolved with seasonal collect fields",
-    "Duplicated Marian Antiphon appearing multiple times in the render flow"
+    "Duplicated Marian Antiphon appearing multiple times in the render flow",
+    "Lesson rendering not handling BCP three-lesson structure flexibly; needs option for Gospel placement",
+    "Individual Prayers mode misalignment/skew due to body styles and borders"
   ],
   "fix_plan": [
     "Step 1: Consolidate Marian logic - Render once based on marianPos in index.html. [Pending]",
     "Step 2: Refine Scripture Rendering - Ensure regex continues to strip verse numbers and replace line breaks for paragraph flow. [Pending]",
-    "Step 3: Finalize Office Logic - Implement automatic time-based selection for Morning/Evening prayer. [Pending]"
+    "Step 3: Finalize Office Logic - Implement automatic time-based selection for Morning/Evening prayer. [Pending]",
+    "Step 5: Update seasonal JSON keys to 'reading_ot', 'reading_epistle', 'reading_gospel' (remove per-office suffixes). [Completed for advent.json; pending for others]",
+    "Step 6: Add settings radio for Gospel placement ('morning', 'evening', 'both') and update renderOffice() logic accordingly. [Pending]",
+    "Step 7: Add back navigation buttons to Individual Prayers and Daily Office modes. [Completed]",
+    "Step 8: Center Individual Prayers content and remove skew/border. [Completed]"
   ],
   "completed_fixes": [
     "Step 1: Verify all 155 Psalms in psalms.json are pulling correctly via getScriptureText(). [Completed]",
@@ -112,12 +118,16 @@
     "Step 7: Cleanup - Delete deprecated psalter.json, scripture.json, and propers.json files. [Completed - Confirmed deleted]",
     "Step 8: Update index.html to load correct saints-<month>.json file based on current month (instead of saints.json) to speed loading and reduce payload size. [Completed]",
     "Step 9: Implement liturgicalColor field from seasonal JSONs to dynamically update UI (CSS variables, themes) – [Completed]",
-    "Step 10: Add fixed width to Ordo box and date entry selection option. [Completed]"
+    "Step 10: Add fixed width to Ordo box and date entry selection option. [Completed]",
+    "Step 11: Update advent.json to correct BCP Year Two data with proper reading keys. [Completed]",
+    "Step 12: Remove 'checked' from 30-day Psalter toggle in index.html to default to daily Psalms. [Completed]",
+    "Step 13: Center Individual Prayers mode and remove left skew/border. [Completed]",
+    "Step 14: Add 'Back to Modes' buttons in Individual Prayers (main page) and Daily Office for navigation to splash screen. [Completed]"
   ],
   "future_plans": [
     "Implement dynamic calculation for movable feasts (e.g., Easter date algorithm) to generate seasonal data beyond hardcoded 2025-2026 years.",
-    "Migrate individual prayers from hardcoded in index.html to components.json (or new prayers.json), and add 'Return to Main Screen' buttons in individual prayers section and daily office (e.g., from settings or main content).",
-    "Expand seasonal JSONs and bible files to include full scripture lessons and collects for Years B and C (three-year RCL cycle).",
+    "Migrate individual prayers from hardcoded in index.html to components.json (or new prayers.json).",
+    "Expand seasonal JSONs and bible files to include full scripture lessons and collects for Years B and C (three-year RCL cycle alignment).",
     "Migrate styling to Tailwind CSS (utility-first) after core functionality is complete, before adding immersive audio/graphics.",
     "Implement hidden sidebar triggered by options button to replace always-visible sidebar, with slide-in animation and main content adjustment."
   ],
@@ -141,7 +151,27 @@
     {
       "lesson": "Month-specific files",
       "description": "Using one saints.json is inefficient for loading. Future update to load saints-<month>.json based on current month will reduce payload and speed up app. This is now planned as a priority step."
+    },
+    {
+      "lesson": "Lectionary adherence",
+      "description": "Strictly use 1979 BCP Daily Office Lectionary (two-year cycle: Year One for odd civil years preceding, Year Two for even). No RCL or other lectionaries. Verify readings against BCP sources; correct errors like Year One data in Year Two files."
+    },
+    {
+      "lesson": "Psalter options",
+      "description": "BCP allows 7-week or 30-day Psalter cycles. Default to daily (7-week) assignments from seasonal JSONs; keep 30-day as unchecked toggle option in settings."
+    },
+    {
+      "lesson": "Lesson distribution",
+      "description": "BCP assigns three daily lessons (OT, Epistle/NT, Gospel) for flexible use across offices (typically OT + NT in MP, Gospel in EP). Add user option for Gospel placement: morning, evening, both."
+    },
+    {
+      "lesson": "Code presentation",
+      "description": "Always print code/JSON in proper code blocks for readability. Do not output partial files; provide full updated content when requested."
+    },
+    {
+      "lesson": "Step-by-step confirmation",
+      "description": "Address reported issues fully before moving on. Confirm user readiness for next steps, especially code edits."
     }
   ],
-  "last_updated": "2026-02-05"
+  "last_updated": "2026-02-08"
 }
