@@ -3,56 +3,86 @@
     "id": "morning-office",
     "officeName": "Morning Prayer",
     "sequence": [
-      "bcp-opening-1",
-      "bcp-confession-toggle",
+      "VARIABLE_OPENING",
+      "bcp-confession-[rite]",  
       "bcp-absolution-slot",
-      "bcp-invitatory",
-      "bcp-venite",
+      "bcp-invitatory-full",
       "VARIABLE_PSALM",
       "VARIABLE_READING_OT",
+      "VARIABLE_CANTICLE1",
       "VARIABLE_READING_EPISTLE",
-      "VARIABLE_READING_GOSPEL",
-      "VARIABLE_COLLECT",
-      "bcp-suffrages-slot",
+      "VARIABLE_CANTICLE2",
+      "VARIABLE_READING_GOSPEL",  
       "bcp-creed-slot",
-      "bcp-litany"
+      "bcp-salutation",
+      "bcp-lords-prayer",
+      "bcp-suffrages-slot",
+      "VARIABLE_COLLECT", 
+      "VARIABLE_WEEKDAY_COLLECT", 
+      "VARIABLE_MISSION_PRAYER",
+      "bcp-litany",  
+      "bcp-general-thanksgiving",  
+      "bcp-chrysostom",  
+      "bcp-closing"
     ]
   },
   {
     "id": "evening-office",
     "officeName": "Evening Prayer",
     "sequence": [
-      "bcp-opening-1",
-      "bcp-confession-toggle",
+      "VARIABLE_OPENING",
+      "bcp-confession-[rite]",  
       "bcp-absolution-slot",
+      "bcp-invitatory-full",
+      "bcp-phos-hilaron",
       "VARIABLE_PSALM",
       "VARIABLE_READING_OT",
+      "VARIABLE_CANTICLE1",  
       "VARIABLE_READING_EPISTLE",
+      "VARIABLE_CANTICLE2", 
       "VARIABLE_READING_GOSPEL",
-      "VARIABLE_COLLECT",
-      "bcp-suffrages-slot",
       "bcp-creed-slot",
-      "bcp-litany"
+      "bcp-salutation",
+      "bcp-lords-prayer",
+      "bcp-suffrages-slot",
+      "VARIABLE_COLLECT",
+      "VARIABLE_WEEKDAY_COLLECT", 
+      "VARIABLE_MISSION_PRAYER",
+      "bcp-litany",
+      "bcp-general-thanksgiving",
+      "bcp-chrysostom",
+      "bcp-closing"
     ]
   },
   {
     "id": "noonday-office",
     "officeName": "Noonday Prayer",
     "sequence": [
-      "bcp-opening-1",
+      "bcp-invitatory-full",
       "VARIABLE_PSALM",
       "VARIABLE_READING_OT",
-      "VARIABLE_COLLECT"
+      "bcp-kyrie",
+      "bcp-lords-prayer",
+      "VARIABLE_COLLECT",
+      "bcp-closing"
     ]
   },
   {
     "id": "compline-office",
     "officeName": "Compline",
     "sequence": [
-      "bcp-opening-1",
-      "bcp-confession-toggle",
+      "bcp-opening-blessing",
+      "bcp-confession-[rite]",
+      "bcp-absolution-slot",
+      "bcp-invitatory-full",
       "VARIABLE_PSALM",
-      "VARIABLE_COLLECT"
+      "VARIABLE_READING_OT",  
+      "bcp-versicles-before-prayers",
+      "bcp-kyrie",
+      "bcp-lords-prayer",
+      "VARIABLE_COLLECT",
+      "bcp-nunc-dimittis",
+      "bcp-closing"
     ]
   }
 ]
