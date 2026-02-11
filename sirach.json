@@ -1,0 +1,738 @@
+{
+  "meta": {
+    "name": "Sirach (Ecclesiasticus)",
+    "id": "SIR",
+    "version": "NRSV",
+    "copyright": "New Revised Standard Version Bible, copyright © 1989 National Council of the Churches of Christ in the United States of America. Used by permission. All rights reserved worldwide."
+  },
+  "chapters": [
+    {
+      "num": 1,
+      "verses": [
+        { "num": 1, "text": "All wisdom is from the Lord, and with him it remains forever." },
+        { "num": 2, "text": "The sand of the sea, the drops of rain, and the days of eternity—who can count them?" },
+        { "num": 3, "text": "The height of heaven, the breadth of the earth, the abyss, and wisdom—who can search them out?" },
+        { "num": 4, "text": "Wisdom was created before all other things, and prudent understanding from eternity." },
+        { "num": 6, "text": "The root of wisdom—to whom has it been revealed? Her subtleties—who knows them?" },
+        { "num": 8, "text": "There is but one who is wise, greatly to be feared, seated upon his throne—the Lord." },
+        { "num": 9, "text": "It is he who created her; he saw her and took her measure; he poured her out upon all his works," },
+        { "num": 10, "text": "upon all the living according to his gift; he lavished her upon those who love him." },
+        { "num": 11, "text": "The fear of the Lord is glory and exultation, and gladness and a crown of rejoicing." },
+        { "num": 12, "text": "The fear of the Lord delights the heart, and gives gladness and joy and long life." },
+        { "num": 14, "text": "To fear the Lord is the beginning of wisdom; she is created with the faithful in the womb." },
+        { "num": 18, "text": "The fear of the Lord is the crown of wisdom, making peace and perfect health to flourish." },
+        { "num": 20, "text": "To fear the Lord is the root of wisdom, and her branches are long life." },
+        { "num": 22, "text": "Unjust anger cannot be justified, for anger tips the scale to one’s ruin." },
+        { "num": 26, "text": "If you desire wisdom, keep the commandments, and the Lord will lavish her upon you." },
+        { "num": 27, "text": "For the fear of the Lord is wisdom and discipline; faithfulness and humility are his delight." },
+        { "num": 28, "text": "Do not disobey the fear of the Lord; do not approach him with a divided mind." },
+        { "num": 30, "text": "Do not exalt yourself, or you may fall and bring dishonor upon yourself." }
+      ]
+    },
+    {
+      "num": 2,
+      "verses": [
+        { "num": 1, "text": "My child, when you come to serve the Lord, prepare yourself for testing." },
+        { "num": 2, "text": "Set your heart right and be steadfast, and do not be impetuous in time of calamity." },
+        { "num": 3, "text": "Cling to him and do not depart, so that your last days may be prosperous." },
+        { "num": 4, "text": "Accept whatever befalls you, and in times of humiliation be patient." },
+        { "num": 5, "text": "For gold is tested in the fire, and those found acceptable, in the furnace of humiliation." },
+        { "num": 6, "text": "Trust in him, and he will help you; make your ways straight, and hope in him." },
+        { "num": 7, "text": "You who fear the Lord, wait for his mercy; do not stray, or you may fall." },
+        { "num": 8, "text": "You who fear the Lord, trust in him, and your reward will not be lost." },
+        { "num": 9, "text": "You who fear the Lord, hope for good things, for lasting joy and mercy." },
+        { "num": 10, "text": "Consider the ancient generations and see: who ever trusted in the Lord and was put to shame? Or who ever persevered in the fear of the Lord and was forsaken? Or who ever called upon him and was overlooked?" },
+        { "num": 11, "text": "For the Lord is compassionate and merciful; he forgives sins and saves in time of distress." },
+        { "num": 12, "text": "Woe to timid hearts and to slack hands, and to the sinner who walks a double path!" },
+        { "num": 13, "text": "Woe to the fainthearted who have no trust! Therefore they will have no shelter." },
+        { "num": 14, "text": "Woe to you who have lost your nerve! What will you do when the Lord’s reckoning comes?" },
+        { "num": 15, "text": "Those who fear the Lord do not disobey his words, and those who love him keep his ways." },
+        { "num": 17, "text": "Those who fear the Lord prepare their hearts, and humble themselves before him." },
+        { "num": 18, "text": "Let us fall into the hands of the Lord, but not into the hands of mortals; for equal to his majesty is his mercy, and equal to his name are his works." }
+      ]
+    },
+    {
+      "num": 3,
+      "verses": [
+        { "num": 1, "text": "Listen to me your father, O children; act accordingly, that you may be kept in safety." },
+        { "num": 2, "text": "For the Lord honors a father above his children, and he confirms a mother’s right over her sons." },
+        { "num": 3, "text": "Those who honor their father atone for sins," },
+        { "num": 4, "text": "and those who respect their mother are like those who lay up treasure." },
+        { "num": 8, "text": "Honor your father by word and deed, that his blessing may come upon you." },
+        { "num": 9, "text": "For a father’s blessing strengthens the houses of the children, but a mother’s curse uproots their foundations." },
+        { "num": 12, "text": "My child, help your father in his old age, and do not grieve him as long as he lives;" },
+        { "num": 13, "text": "even if his mind fails, be patient with him; because you have all your faculties do not despise him." },
+        { "num": 17, "text": "My child, perform your tasks with humility; then you will be loved by those whom God accepts." },
+        { "num": 18, "text": "The greater you are, the more you must humble yourself; so you will find favor in the sight of the Lord." },
+        { "num": 21, "text": "Neither seek what is too difficult for you, nor investigate what is beyond your power." },
+        { "num": 22, "text": "Reflect upon what has been assigned to you, for you do not need what is hidden." },
+        { "num": 26, "text": "A stubborn mind will fare badly at the end, and whoever loves danger will perish in it." },
+        { "num": 30, "text": "As water extinguishes a blazing fire, so almsgiving atones for sin." }
+      ]
+    },
+    {
+      "num": 4,
+      "verses": [
+        { "num": 1, "text": "My child, do not cheat the poor of their living, and do not keep needy eyes waiting." },
+        { "num": 2, "text": "Do not grieve the hungry, or anger one in need." },
+        { "num": 6, "text": "For if in bitterness of soul some should curse you, their Creator will hear their prayer." },
+        { "num": 7, "text": "Endear yourself to the congregation; bow your head low to the great." },
+        { "num": 8, "text": "Give a hearing to the poor, and return their greeting politely." },
+        { "num": 10, "text": "Be like a father to orphans, and like a husband to their mother; you will then be like a son of the Most High, and he will love you more than your mother does." },
+        { "num": 11, "text": "Wisdom teaches her children and gives help to those who seek her." },
+        { "num": 12, "text": "Whoever loves her loves life, and those who seek her from early morning are filled with joy." },
+        { "num": 17, "text": "For at first she will walk with them on tortuous paths; she will bring fear and dread upon them, and will torment them by her discipline until she trusts them." },
+        { "num": 20, "text": "Watch for the opportune time, and beware of evil, and do not be ashamed to be yourself." },
+        { "num": 21, "text": "For there is a shame that leads to sin, and there is a shame that is glory and favor." },
+        { "num": 26, "text": "Do not be ashamed to confess your sins, and do not try to stop the current of a river." },
+        { "num": 28, "text": "Fight to the death for truth, and the Lord God will fight for you." }
+      ]
+    },
+    {
+      "num": 5,
+      "verses": [
+        { "num": 1, "text": "Do not rely on your wealth, or say, “I have enough.”" },
+        { "num": 2, "text": "Do not follow your inclination and strength in pursuing the desires of your heart." },
+        { "num": 4, "text": "Do not say, “I sinned, yet what has happened to me?” for the Lord is slow to anger." },
+        { "num": 5, "text": "Do not be so confident of forgiveness that you add sin to sin." },
+        { "num": 7, "text": "Do not delay to return to the Lord, and do not postpone it from day to day;" },
+        { "num": 8, "text": "for suddenly the wrath of the Lord will come upon you, and at the time of punishment you will perish." },
+        { "num": 10, "text": "Be steadfast in your understanding, and let your speech be consistent." },
+        { "num": 11, "text": "Be quick to hear, but be deliberate in answering." },
+        { "num": 12, "text": "If you know what to say, answer your neighbor; but if not, put your hand over your mouth." },
+        { "num": 13, "text": "Honor and dishonor come from speaking, and the tongue of mortals may be their downfall." }
+      ]
+    },
+    {
+      "num": 6,
+      "verses": [
+        { "num": 5, "text": "Pleasant speech multiplies friends, and a gracious tongue multiplies courtesies." },
+        { "num": 6, "text": "Let those who are at peace with you be many, but let your advisers be one in a thousand." },
+        { "num": 7, "text": "When you gain friends, gain them through testing, and do not trust them hastily." },
+        { "num": 8, "text": "For there are friends who are such when it suits them, but they will not stand by you in time of trouble." },
+        { "num": 13, "text": "Separate yourself from your enemies, and be on the watch where your friends are concerned." },
+        { "num": 14, "text": "Faithful friends are a sturdy shelter; whoever finds one has found a treasure." },
+        { "num": 15, "text": "Faithful friends are beyond price; no amount can be weighed out against their worth." },
+        { "num": 16, "text": "Faithful friends are life-saving medicine; and those who fear the Lord will find them." },
+        { "num": 18, "text": "My child, from your youth choose discipline, and when you have gray hair you will still find wisdom." },
+        { "num": 19, "text": "Come to her like one who plows and sows, and wait for her good harvest." },
+        { "num": 27, "text": "Search her out and seek her, and she will become known to you; and when you get hold of her, do not let her go." },
+        { "num": 28, "text": "For at last you will find the rest she gives, and she will be changed into joy for you." },
+        { "num": 36, "text": "If you see an intelligent person, rise early to visit him; let your foot wear out his doorstep." },
+        { "num": 37, "text": "Reflect on the statutes of the Lord, and meditate at all times on his commandments. It is he who will give insight to your mind, and your desire for wisdom will be granted." }
+      ]
+    },
+    {
+      "num": 7,
+      "verses": [
+        { "num": 1, "text": "Do no evil, and evil will never overtake you." },
+        { "num": 2, "text": "Stay away from wrong, and it will turn away from you." },
+        { "num": 3, "text": "Do not sow in the furrows of injustice, or you may reap a sevenfold harvest." },
+        { "num": 6, "text": "Do not seek to become a judge, or you may be unable to root out injustice;" },
+        { "num": 8, "text": "Do not commit a sin twice, for not even once will you go unpunished." },
+        { "num": 10, "text": "Do not grow weary in prayer; do not neglect to give alms." },
+        { "num": 11, "text": "Do not ridicule a person who is embittered in spirit, for there is One who humbles and exalts." },
+        { "num": 14, "text": "Do not prattle in the assembly of the elders, and do not repeat yourself in your prayer." },
+        { "num": 15, "text": "Do not hate hard-working labor or farm work, which was created by the Most High." },
+        { "num": 18, "text": "Do not exchange a friend for money, or a real brother for the gold of Ophir." },
+        { "num": 19, "text": "Do not miss out on a wise and good wife, for her charm is worth more than gold." },
+        { "num": 21, "text": "Love a wise slave like yourself; do not withhold from him his freedom." },
+        { "num": 23, "text": "If you have children, discipline them, and make them obedient from their youth." },
+        { "num": 27, "text": "With all your heart honor your father, and do not forget the birth pangs of your mother." },
+        { "num": 28, "text": "Remember that it was of your parents you were born; how can you repay what they have given to you?" },
+        { "num": 32, "text": "Stretch out your hand to the poor, so that your blessing may be complete." },
+        { "num": 33, "text": "Give graciously to all the living; do not withhold your kindness even from the dead." },
+        { "num": 34, "text": "Do not avoid those who weep, but mourn with those who mourn." },
+        { "num": 35, "text": "Do not hesitate to visit the sick, because for such deeds you will be loved." },
+        { "num": 36, "text": "In all you do, remember the end of your life, and then you will never sin." }
+      ]
+    },
+    {
+      "num": 8,
+      "verses": [
+        { "num": 1, "text": "Do not contend with a powerful person, or you may fall into his hands." },
+        { "num": 2, "text": "Do not quarrel with the rich, in case their resources outweigh yours; for gold has ruined many, and has perverted the minds of kings." },
+        { "num": 3, "text": "Do not argue with a loud-mouthed person, and do not heap wood on his fire." },
+        { "num": 5, "text": "Do not reproach one who is turning away from sin; remember that we all are deserving of punishment." },
+        { "num": 6, "text": "Do not dishonor an old person, for some of us are growing old." },
+        { "num": 7, "text": "Do not rejoice over anyone’s death; remember that we all must die." },
+        { "num": 8, "text": "Do not slight the discourse of the sages, but busy yourself with their maxims; because from them you will learn discipline and how to serve princes." },
+        { "num": 9, "text": "Do not reject the tradition of the elders, which they learned from their ancestors; for from it you will learn how to understand and how to give an answer in time of need." },
+        { "num": 10, "text": "Do not kindle the coals of a sinner, or you may be burned in his flaming fire." },
+        { "num": 15, "text": "Do not travel with a reckless person, or he will be a burden to you; for he will do as he pleases, and through his folly you will perish with him." }
+      ]
+    },
+    {
+      "num": 9,
+      "verses": [
+        { "num": 1, "text": "Do not be jealous of the wife of your bosom, or you will teach her an evil lesson to your own hurt." },
+        { "num": 2, "text": "Do not give yourself to a woman and let her trample down your strength." },
+        { "num": 3, "text": "Do not go near a loose woman, or you will fall into her snares." },
+        { "num": 8, "text": "Turn away your eyes from a shapely woman, and do not gaze at beauty belonging to another; many have been seduced by a woman’s beauty, and by it passion is kindled like a fire." },
+        { "num": 10, "text": "Do not abandon old friends, for new ones cannot equal them. A new friend is like new wine; when it has aged, you can drink it with pleasure." },
+        { "num": 11, "text": "Do not envy the success of sinners, for you do not know what their end will be." },
+        { "num": 13, "text": "Keep far from those who have power to kill, and you will not be haunted by the fear of death." },
+        { "num": 15, "text": "Reason with the intelligent, and let all your argument be about the law of the Most High." },
+        { "num": 17, "text": "A work is praised for the skill of the artisan, so a people’s leader is proved wise by his words." }
+      ]
+    },
+    {
+      "num": 10,
+      "verses": [
+        { "num": 1, "text": "A wise magistrate educates his people, and the government of an intelligent person is well ordered." },
+        { "num": 2, "text": "As the people’s judge is, so are his officials; and as the ruler of the city is, so are all its inhabitants." },
+        { "num": 3, "text": "An untrained king ruins his people, but a city prospers through the intelligence of its rulers." },
+        { "num": 4, "text": "The government of the earth is in the hand of the Lord, and over it he will raise up the right leader for the time." },
+        { "num": 7, "text": "Arrogance is hateful to the Lord and to mortals, and injustice is outrageous to both." },
+        { "num": 8, "text": "Sovereignty passes from nation to nation because of injustice and insolence and wealth." },
+        { "num": 9, "text": "How can dust and ashes be proud? Even in life the human body decays." },
+        { "num": 12, "text": "The beginning of human pride is to forsake the Lord; the heart has withdrawn from its Maker." },
+        { "num": 14, "text": "The Lord overthrows the thrones of rulers, and enthrones the lowly in their place." },
+        { "num": 18, "text": "Pride was not created for human beings, or violent anger for those born of women." },
+        { "num": 24, "text": "The great, the judge, and the ruler are honored, but none of them is greater than the one who fears the Lord." },
+        { "num": 27, "text": "Better are those who work and have an abundance of everything, than those who go about boasting of their rank but lack food." },
+        { "num": 28, "text": "My child, honor yourself with humility, and give yourself the esteem you deserve." }
+      ]
+    },
+    {
+      "num": 11,
+      "verses": [
+        { "num": 1, "text": "The wisdom of the lowly lifts up their heads, and seats them among the great." },
+        { "num": 2, "text": "Do not praise individuals for their good looks, or loathe anyone because of appearance." },
+        { "num": 3, "text": "The bee is small among flying creatures, but her product is the best of sweet things." },
+        { "num": 4, "text": "Do not boast about your clothing, or lift yourself up on the day you are honored; for the works of the Lord are wonderful, and his activities are hidden from mortals." },
+        { "num": 7, "text": "Do not find fault before you investigate; examine first, and then criticize." },
+        { "num": 8, "text": "Do not answer before you listen, and do not interrupt when another is speaking." },
+        { "num": 9, "text": "Do not argue about a matter that does not concern you, and do not sit with sinners when they judge a case." },
+        { "num": 10, "text": "My child, do not busy yourself with many matters; if you multiply activities, you will not go unpunished." },
+        { "num": 14, "text": "Good things and bad, life and death, poverty and wealth, come from the Lord." },
+        { "num": 21, "text": "Do not wonder at the works of a sinner, but trust in the Lord and keep at your job; for it is easy in the sight of the Lord to make the poor rich suddenly, in a moment." },
+        { "num": 26, "text": "It is easy for the Lord on the day of death to reward individuals according to their conduct." },
+        { "num": 28, "text": "Call no one happy before his death; by how he ends, a person becomes known." }
+      ]
+    },
+    {
+      "num": 12,
+      "verses": [
+        { "num": 1, "text": "If you do good, know to whom you do it, and you will be thanked for your good deeds." },
+        { "num": 2, "text": "Do good to the devout, and you will be repaid—if not by them, certainly by the Most High." },
+        { "num": 4, "text": "Give to the devout, but do not help the sinner." },
+        { "num": 8, "text": "A friend is not known in prosperity, nor is an enemy hidden in adversity." },
+        { "num": 10, "text": "Never trust your enemy, for like corrosion in copper, so is his wickedness." },
+        { "num": 13, "text": "Who pities a snake charmer when he is bitten, or all those who go near wild animals?" },
+        { "num": 14, "text": "So no one pities a person who associates with a sinner and becomes involved in his sins." },
+        { "num": 16, "text": "An enemy has sweetness on his lips, but in his heart he plans to throw you into a pit; an enemy may have tears in his eyes, but if he finds an opportunity he will never have enough of your blood." }
+      ]
+    },
+    {
+      "num": 13,
+      "verses": [
+        { "num": 1, "text": "Whoever touches pitch will be defiled, and whoever associates with the proud will become like them." },
+        { "num": 2, "text": "Do not lift a weight beyond your strength, or associate with one who is mightier and richer than you." },
+        { "num": 3, "text": "A rich person does a wrong, and even adds insults; a poor person suffers a wrong, and must add apologies." },
+        { "num": 10, "text": "Do not push forward, or you may be repulsed; and do not keep too far away, or you may be forgotten." },
+        { "num": 15, "text": "Every creature loves its like, and every person his neighbor." },
+        { "num": 16, "text": "All living beings associate with their own kind, and people stick to those like themselves." },
+        { "num": 18, "text": "What peace is there between a hyena and a dog? And what peace between the rich and the poor?" },
+        { "num": 19, "text": "Wild asses in the wilderness are the prey of lions; likewise the poor are feeding grounds for the rich." },
+        { "num": 24, "text": "Wealth is good if it is free from sin; poverty is evil only in the opinion of the ungodly." },
+        { "num": 25, "text": "The heart changes the face, either for good or for evil." }
+      ]
+    },
+    {
+      "num": 14,
+      "verses": [
+        { "num": 1, "text": "Happy are those who do not blunder with their lips, and need not suffer remorse for sin." },
+        { "num": 2, "text": "Happy are those whose hearts do not condemn them, and who have not given up their hope." },
+        { "num": 3, "text": "Riches are not appropriate for a small-minded person; and of what use is wealth to a miser?" },
+        { "num": 5, "text": "He who is evil to himself, to whom will he be good? He will not enjoy his own riches." },
+        { "num": 11, "text": "My child, if you have anything, do good to yourself, and bring worthy offerings to the Lord." },
+        { "num": 12, "text": "Remember that death does not tarry, and the decree of Hades has not been shown to you." },
+        { "num": 13, "text": "Do good to friends before you die, and reach out and give to them as much as you can." },
+        { "num": 17, "text": "All living beings grow old like a garment; for the decree from of old is, “You must surely die!”" },
+        { "num": 18, "text": "Like abundant leaves on a spreading tree that sheds some and puts forth others, so are the generations of flesh and blood: one dies and another is born." },
+        { "num": 20, "text": "Happy is the person who meditates on wisdom and reasons with intelligent understanding," },
+        { "num": 22, "text": "who pursues her like a hunter, and lies in wait on her paths;" },
+        { "num": 26, "text": "he will place his children under her shelter, and will dwell under her branches;" },
+        { "num": 27, "text": "he will be sheltered by her from the heat, and will dwell in the midst of her glory." }
+      ]
+    },
+    {
+      "num": 15,
+      "verses": [
+        { "num": 1, "text": "Whoever fears the Lord will do this, and whoever holds to the law will obtain wisdom." },
+        { "num": 2, "text": "She will come to meet him like a mother, and like a young bride she will welcome him." },
+        { "num": 3, "text": "She will feed him with the bread of learning, and give him the water of wisdom to drink." },
+        { "num": 6, "text": "He will find gladness and a crown of rejoicing, and will acquire an everlasting name." },
+        { "num": 11, "text": "Do not say, “It was the Lord’s doing that I fell away”; for he does not do what he hates." },
+        { "num": 12, "text": "Do not say, “It was he who led me astray”; for he has no need of the sinful." },
+        { "num": 13, "text": "The Lord hates all abominations; such things are not loved by those who fear him." },
+        { "num": 14, "text": "It was he who created humankind in the beginning, and he left them in the power of their own free choice." },
+        { "num": 15, "text": "If you choose, you can keep the commandments, and to act faithfully is a matter of your own choice." },
+        { "num": 16, "text": "He has placed before you fire and water; stretch out your hand for whichever you choose." },
+        { "num": 17, "text": "Before each person are life and death, and whichever one chooses will be given." },
+        { "num": 18, "text": "For great is the wisdom of the Lord; he is mighty in power and sees everything;" },
+        { "num": 19, "text": "his eyes are on those who fear him, and he knows every human action." },
+        { "num": 20, "text": "He has not commanded anyone to be wicked, and he has not given anyone permission to sin." }
+      ]
+    },
+    {
+      "num": 16,
+      "verses": [
+        { "num": 1, "text": "Do not desire a multitude of worthless children, and do not rejoice in ungodly offspring." },
+        { "num": 2, "text": "If they multiply, do not rejoice in them, unless the fear of the Lord is in them." },
+        { "num": 6, "text": "In a gathering of sinners a fire is kindled, and in a disobedient nation wrath blazes up." },
+        { "num": 7, "text": "He did not forgive the ancient giants who revolted in their might." },
+        { "num": 11, "text": "And if there is even one stubborn person, it is a wonder if he could go unpunished. For mercy and wrath are with the Lord; he is mighty to forgive, and he pours out wrath." },
+        { "num": 12, "text": "As great as is his mercy, so also is his chastisement; he judges a person according to one’s deeds." },
+        { "num": 17, "text": "Do not say, “I am hidden from the Lord, and who from on high has me in mind? Among so many people I am unknown, for what am I in a boundless creation?”" },
+        { "num": 18, "text": "Behold, heaven and the highest heaven, the abyss and the earth, tremble at his visitation!" },
+        { "num": 26, "text": "When the Lord created his works from the beginning, and, in making them, determined their boundaries," },
+        { "num": 27, "text": "he arranged his works in an eternal order, and their dominion for all generations of them. They neither hunger nor grow weary, and they do not abandon their tasks." }
+      ]
+    },
+    {
+      "num": 17,
+      "verses": [
+        { "num": 1, "text": "The Lord created human beings out of earth, and makes them return to it again." },
+        { "num": 3, "text": "He endowed them with strength like his own, and made them in his own image." },
+        { "num": 7, "text": "He filled them with knowledge and understanding, and showed them good and evil." },
+        { "num": 11, "text": "He bestowed upon them knowledge, and gave them the law of life as a heritage." },
+        { "num": 12, "text": "He established with them an eternal covenant, and revealed to them his decrees." },
+        { "num": 15, "text": "Their ways are always before him; they will not be hidden from his eyes." },
+        { "num": 19, "text": "All their works are as the sun before him, and his eyes are continually upon their ways." },
+        { "num": 24, "text": "But to those who repent he grants a return, and he encourages those who are losing their hope." },
+        { "num": 25, "text": "Turn to the Lord and forsake your sins; pray in his presence and lessen your offense." },
+        { "num": 26, "text": "Return to the Most High and turn away from iniquity, and hate intensely what he abhors." },
+        { "num": 28, "text": "How great is the mercy of the Lord, and his forgiveness for those who return to him!" }
+      ]
+    },
+    {
+      "num": 18,
+      "verses": [
+        { "num": 1, "text": "He who lives forever created the whole universe." },
+        { "num": 8, "text": "What are mortals, and of what use are they? What is their good and what is their evil?" },
+        { "num": 9, "text": "The number of their days is great if they reach a hundred years." },
+        { "num": 10, "text": "Like a drop of water from the sea and a grain of sand, so are a few years among the days of eternity." },
+        { "num": 11, "text": "Therefore the Lord is patient with them and pours out his mercy upon them." },
+        { "num": 13, "text": "The compassion of human beings is for their neighbors, but the compassion of the Lord is for every living thing." },
+        { "num": 15, "text": "My child, do not mix reproach with your good deeds, or bitter words with any gift." },
+        { "num": 19, "text": "Before you speak, learn; and before you fall sick, take care of yourself." },
+        { "num": 20, "text": "Before judgment comes, examine yourself; and at the time of scrutiny you will find forgiveness." },
+        { "num": 30, "text": "Do not follow your base desires, but restrain your appetites." }
+      ]
+    },
+    {
+      "num": 19,
+      "verses": [
+        { "num": 1, "text": "A worker who is a drunkard will never become rich; one who despises small things will fail little by little." },
+        { "num": 2, "text": "Wine and women lead intelligent men astray, and the man who consorts with prostitutes is reckless." },
+        { "num": 4, "text": "One who trusts others too quickly is light-minded, and one who sins does wrong to himself." },
+        { "num": 13, "text": "Question a friend; perhaps he did not do it; or if he did, so that he may not do it again." },
+        { "num": 14, "text": "Question a neighbor; perhaps he did not say it; or if he said it, so that he may not repeat it." },
+        { "num": 15, "text": "Question a friend, for often it is only slander; do not believe everything you hear." },
+        { "num": 20, "text": "All wisdom is the fear of the Lord, and in all wisdom there is the fulfillment of the law." },
+        { "num": 24, "text": "Better are the God-fearing who lack understanding than the highly intelligent who transgress the law." }
+      ]
+    },
+    {
+      "num": 20,
+      "verses": [
+        { "num": 1, "text": "There is a rebuke that is untimely, and there is the person who is wise enough to keep silent." },
+        { "num": 2, "text": "How much better it is to rebuke than to fume!" },
+        { "num": 5, "text": "One person keeps silent and is found to be wise; another is detested for being talkative." },
+        { "num": 7, "text": "A wise person will keep silent until the right moment, but a boasting fool misses the right moment." },
+        { "num": 18, "text": "A slip on the pavement is better than a slip of the tongue; so the downfall of the wicked will come speedily." },
+        { "num": 24, "text": "A lie is a foul blot on a person; it is continually on the mouth of the ignorant." },
+        { "num": 27, "text": "The wise person advances himself by his words, and one who is sensible pleases the great." },
+        { "num": 30, "text": "Hidden wisdom and unseen treasure, of what value is either?" },
+        { "num": 31, "text": "Better is the person who hides his folly than the one who hides his wisdom." }
+      ]
+    },
+    {
+      "num": 21,
+      "verses": [
+        { "num": 1, "text": "Have you sinned, my child? Do so no more, but ask forgiveness for your past sins." },
+        { "num": 2, "text": "Flee from sin as from a snake; for if you approach it, it will bite you; its teeth are lion’s teeth, and can destroy human lives." },
+        { "num": 3, "text": "All lawlessness is like a two-edged sword; there is no healing for the wound it inflicts." },
+        { "num": 5, "text": "The prayer of the poor goes from their lips to the ears of God, and his judgment comes speedily." },
+        { "num": 10, "text": "The way of sinners is paved with smooth stones, but at its end is the pit of Hades." },
+        { "num": 15, "text": "When an intelligent person hears a wise saying, he praises it and adds to it;" },
+        { "num": 16, "text": "The chatter of a fool is like a burden on a journey, but delight is found in the speech of the intelligent." },
+        { "num": 20, "text": "A fool raises his voice when he laughs, but a clever person smiles quietly." },
+        { "num": 26, "text": "The heart of fools is in their mouths, but the mouth of the wise is in their heart." }
+      ]
+    },
+    {
+      "num": 22,
+      "verses": [
+        { "num": 1, "text": "The sluggard is like a filthy stone, and everyone hisses at his disgrace." },
+        { "num": 3, "text": "It is a disgrace to be the father of an undisciplined son, and the birth of a daughter is a loss." },
+        { "num": 4, "text": "A sensible daughter obtains a husband of her own, but one who acts shamefully is a grief to her father." },
+        { "num": 7, "text": "To teach a fool is like gluing a broken pot, or like waking a sleeper from a deep slumber." },
+        { "num": 11, "text": "Weep for the dead, for he has left the light behind; and weep for the fool, for he has left intelligence behind." },
+        { "num": 12, "text": "Mourning for the dead lasts seven days, but for a fool or an ungodly person it lasts all the days of their lives." },
+        { "num": 22, "text": "If you have opened your mouth against a friend, do not worry, for reconciliation is possible. But as for reviling, arrogance, disclosure of secrets, or a treacherous blow—in these cases any friend will flee." },
+        { "num": 27, "text": "Who will set a guard over my mouth, and an effective seal upon my lips, so that I may not fall because of them, and my tongue may not destroy me?" }
+      ]
+    },
+    {
+      "num": 23,
+      "verses": [
+        { "num": 1, "text": "O Lord, Father and Master of my life, do not abandon me to their designs, and do not let me fall because of them!" },
+        { "num": 7, "text": "Listen, my children, to instruction about the mouth; the one who keeps it will not be caught." },
+        { "num": 9, "text": "Do not accustom your mouth to oaths, nor habitually utter the name of the Holy One." },
+        { "num": 18, "text": "A man who violates his marriage bed says to himself, “Who can see me? Darkness surrounds me, the walls hide me, and no one sees me; why should I fear? The Most High will not remember my sins.”" },
+        { "num": 19, "text": "His fear is confined to human eyes, and he does not realize that the eyes of the Lord are ten thousand times brighter than the sun." },
+        { "num": 22, "text": "So it is with a woman who leaves her husband and presents him with an heir by another man." },
+        { "num": 27, "text": "Those who survive will know that nothing is better than the fear of the Lord, and nothing sweeter than to heed the Lord’s commandments." }
+      ]
+    },
+    {
+      "num": 24,
+      "verses": [
+        { "num": 1, "text": "Wisdom praises herself, and tells of her glory in the midst of her people." },
+        { "num": 2, "text": "In the assembly of the Most High she opens her mouth, and in the presence of his hosts she tells of her glory:" },
+        { "num": 3, "text": "“I came forth from the mouth of the Most High, and covered the earth like a mist.”" },
+        { "num": 8, "text": "“Then the Creator of all things gave me a command, and my Creator chose the place for my tent. He said, ‘Make your dwelling in Jacob, and in Israel receive your inheritance.’”" },
+        { "num": 9, "text": "“Before the ages, in the beginning, he created me, and for all the ages I shall not cease to be.”" },
+        { "num": 19, "text": "“Come to me, you who desire me, and eat your fill of my fruits.”" },
+        { "num": 20, "text": "“For the memory of me is sweeter than honey, and the possession of me sweeter than the honeycomb.”" },
+        { "num": 21, "text": "“Those who eat of me will hunger for more, and those who drink of me will thirst for more.”" },
+        { "num": 23, "text": "All this is the book of the covenant of the Most High God, the law that Moses commanded us as an inheritance for the congregations of Jacob." }
+      ]
+    },
+    {
+      "num": 25,
+      "verses": [
+        { "num": 1, "text": "I take pleasure in three things, and they are beautiful in the sight of God and of mortals: agreement among brothers and sisters, friendship among neighbors, and a wife and a husband who live in harmony." },
+        { "num": 2, "text": "I detest three kinds of people... a beggar who is proud, a rich man who is a liar, and an adulterous old man who lacks good sense." },
+        { "num": 7, "text": "I can think of nine whom I would call blessed, and a tenth my tongue proclaims: a man who can rejoice in his children; a man who lives to see the downfall of his enemies." },
+        { "num": 8, "text": "Happy is the one who lives with a sensible wife, and the one who does not plow with ox and ass together. Happy is the one who does not slip with the tongue, and the one who has not served a man inferior to himself." },
+        { "num": 9, "text": "Happy is the one who finds a friend, and the one who speaks to attentive listeners." },
+        { "num": 10, "text": "How great is the one who finds wisdom! But none is superior to the one who fears the Lord." },
+        { "num": 24, "text": "From a woman sin had its beginning, and because of her we all die." }
+      ]
+    },
+    {
+      "num": 26,
+      "verses": [
+        { "num": 1, "text": "Happy is the husband of a good wife; the number of his days will be doubled." },
+        { "num": 2, "text": "A loyal wife brings joy to her husband, and he will finish his years in peace." },
+        { "num": 3, "text": "A good wife is a great blessing; she will be granted among the blessings of the man who fears the Lord." },
+        { "num": 13, "text": "A wife’s charm delights her husband, and her skill puts fat on his bones." },
+        { "num": 14, "text": "A silent wife is a gift from the Lord, and nothing is so precious as her self-discipline." },
+        { "num": 28, "text": "Two things grieve my heart, and a third makes me angry: a warrior in want through poverty, intelligent men who are treated with contempt, and a man who turns back from righteousness to sin—the Lord will prepare him for the sword!" },
+        { "num": 29, "text": "A merchant can hardly keep from wrongdoing, nor is a tradesman innocent of sin." }
+      ]
+    },
+    {
+      "num": 27,
+      "verses": [
+        { "num": 1, "text": "Many have sinned for the sake of profit, and one who seeks to grow rich must turn away his eyes." },
+        { "num": 2, "text": "As a stake is driven firmly into a fissure between stones, so sin is wedged in between selling and buying." },
+        { "num": 3, "text": "Unless a person holds zealously to the fear of the Lord, his house will be quickly overthrown." },
+        { "num": 4, "text": "When a sieve is shaken, the refuse appears; so do a person’s faults when he speaks." },
+        { "num": 5, "text": "The kiln tests the potter’s vessels; so the test of a person is in his conversation." },
+        { "num": 6, "text": "Its fruit discloses the cultivation of a tree; so a person’s speech discloses the cultivation of his mind." },
+        { "num": 16, "text": "One who discloses secrets destroys confidence, and will never find a congenial friend." },
+        { "num": 17, "text": "Love your friend and keep faith with him; but if you disclose his secrets, do not follow after him." },
+        { "num": 22, "text": "Whoever winks with the eye plots mischief, and those who know him will keep their distance." }
+      ]
+    },
+    {
+      "num": 28,
+      "verses": [
+        { "num": 1, "text": "The vengeful will face the Lord’s vengeance, for he keeps a strict account of their sins." },
+        { "num": 2, "text": "Forgive your neighbor the wrong he has done, and then your sins will be pardoned when you pray." },
+        { "num": 3, "text": "Does anyone harbor anger against another, and expect healing from the Lord?" },
+        { "num": 4, "text": "If one has no mercy toward another like himself, can he then beg for pardon of his own sins?" },
+        { "num": 6, "text": "Remember the end of your life, and set enmity aside; remember corruption and death, and be true to the commandments." },
+        { "num": 12, "text": "If you blow on a spark, it will glow; if you spit on it, it will be put out; yet both come out of your mouth." },
+        { "num": 13, "text": "Curse the whisperer and the double-tongued, for they have destroyed many who were at peace." },
+        { "num": 18, "text": "Many have fallen by the edge of the sword, but not as many as have fallen because of the tongue." }
+      ]
+    },
+    {
+      "num": 29,
+      "verses": [
+        { "num": 1, "text": "The merciful lend to their neighbors; by holding out a helping hand they keep the commandments." },
+        { "num": 2, "text": "Lend to your neighbor in his time of need; pay your neighbor back at the appointed time." },
+        { "num": 8, "text": "Be patient with someone in humble circumstances, and do not keep him waiting for your alms." },
+        { "num": 10, "text": "Lose your silver for the sake of a brother or a friend, and do not let it rust under a stone and be lost." },
+        { "num": 11, "text": "Lay up your treasure according to the commandments of the Most High, and it will profit you more than gold." },
+        { "num": 21, "text": "The essentials of life are water and bread and clothing, and a house to provide privacy." },
+        { "num": 22, "text": "Better is the life of a poor person under the shelter of his own roof than sumptuous food in another’s house." },
+        { "num": 28, "text": "To a sensible person these things are intolerable: expression of grievance from a household, and the insults of a moneylender." }
+      ]
+    },
+    {
+      "num": 30,
+      "verses": [
+        { "num": 1, "text": "He who loves his son will whip him often, so that he may rejoice at the way he turns out." },
+        { "num": 2, "text": "He who disciplines his son will profit by him, and will boast of him among acquaintances." },
+        { "num": 8, "text": "A horse untamed grows stubborn, and a son left to himself grows headstrong." },
+        { "num": 13, "text": "Discipline your son and make his yoke heavy, so that you may not be offended by his shamelessness." },
+        { "num": 14, "text": "Better off is a poor man who is well and strong in constitution than a rich man who is severely afflicted in body." },
+        { "num": 15, "text": "Health and vigor are better than any gold, and a robust body than countless riches." },
+        { "num": 17, "text": "Death is better than a miserable life, and eternal rest than chronic sickness." },
+        { "num": 21, "text": "Do not give yourself over to sorrow, and do not distress yourself deliberately." },
+        { "num": 23, "text": "Beguile yourself and comfort your heart, and drive sorrow far from you, for sorrow has destroyed many, and there is no profit in it." },
+        { "num": 24, "text": "Jealousy and anger shorten life, and anxiety brings on premature old age." }
+      ]
+    },
+    {
+      "num": 31,
+      "verses": [
+        { "num": 1, "text": "Wakefulness over wealth wastes the flesh, and anxiety about it drives away sleep." },
+        { "num": 12, "text": "Are you seated at a great table? Do not be greedy at it, and do not say, “How much food there is here!”" },
+        { "num": 13, "text": "Remember that a greedy eye is a bad thing; what has been created more greedy than an eye? Therefore it sheds tears from every face." },
+        { "num": 16, "text": "Eat like a human being what is set before you, and do not chew greedily, or you will be despised." },
+        { "num": 17, "text": "Be the first to stop, as befits good manners, and do not be insatiable, or you will give offense." },
+        { "num": 25, "text": "Do not try to prove your strength by wine-drinking, for wine has destroyed many." },
+        { "num": 27, "text": "Wine is very life to human beings if drunk in moderation. What is life to one who is without wine? It has been created to make people happy." },
+        { "num": 28, "text": "Wine drunk at the proper time and in moderation is rejoicing of heart and gladness of soul." },
+        { "num": 30, "text": "Drunkenness increases the anger of a fool to his own injury, reducing his strength and adding wounds." }
+      ]
+    },
+    {
+      "num": 32,
+      "verses": [
+        { "num": 1, "text": "If they make you master of the feast, do not promote yourself; be among them as one of them." },
+        { "num": 2, "text": "When you have performed all your duties, take your place, so that you may be merry along with them and receive a wreath for your efficiency." },
+        { "num": 3, "text": "Speak, you who are older, for it is your right, but with accurate knowledge, and do not interrupt the music." },
+        { "num": 7, "text": "Speak, young man, if you are indispensable, but no more than twice, and only if asked." },
+        { "num": 14, "text": "The one who seeks God will accept his discipline, and those who rise early to seek him will find favor." },
+        { "num": 23, "text": "In all that you do trust your own soul, for this is the keeping of the commandments." }
+      ]
+    },
+    {
+      "num": 33,
+      "verses": [
+        { "num": 1, "text": "No evil will befall the one who fears the Lord, but in trials such a one will be delivered again and again." },
+        { "num": 2, "text": "The wise person will not hate the law, but the one who is hypocritical about it is like a boat in a storm." },
+        { "num": 7, "text": "Why is one day more important than another, when all the daylight in the year is from the sun?" },
+        { "num": 8, "text": "By the Lord’s knowledge they were kept distinct, and he appointed the different seasons and festivals." },
+        { "num": 10, "text": "All human beings come from the ground, and humankind was created out of the dust." },
+        { "num": 11, "text": "In the fullness of his knowledge the Lord distinguished them and made their ways diverse." },
+        { "num": 13, "text": "Like clay in the hand of the potter, to be molded just as he pleases, so all are in the hand of their Maker, to be given whatever he decides." },
+        { "num": 24, "text": "Fodder and a stick and burdens for a donkey; bread and discipline and work for a slave." },
+        { "num": 27, "text": "Put him to work, so that he may not be idle, for idleness teaches much evil." }
+      ]
+    },
+    {
+      "num": 34,
+      "verses": [
+        { "num": 1, "text": "The senseless have vain and false hopes, and dreams give wings to fools." },
+        { "num": 2, "text": "As one who catches at a shadow and pursues the wind, so is anyone who believes in dreams." },
+        { "num": 14, "text": "The one who fears the Lord will not be timid, or play the coward, for the Lord is his hope." },
+        { "num": 15, "text": "Happy is the soul of the one who fears the Lord! To whom does he look? And who is his support?" },
+        { "num": 18, "text": "If one sacrifices from what has been wrongfully acquired, the offering is blemished; the gifts of the lawless are not acceptable." },
+        { "num": 19, "text": "The Most High is not pleased with the offerings of the ungodly, nor for a multitude of sacrifices does he forgive sins." },
+        { "num": 25, "text": "If one washes after touching a corpse, and touches it again, what has been gained by washing?" },
+        { "num": 26, "text": "So if a person fasts for his sins, and goes again and does the same things, who will listen to his prayer? And what has he gained by humbling himself?" }
+      ]
+    },
+    {
+      "num": 35,
+      "verses": [
+        { "num": 1, "text": "The one who keeps the law makes many offerings; one who heeds the commandments sacrifices a peace offering." },
+        { "num": 2, "text": "The one who returns a kindness offers choice flour, and one who gives alms sacrifices a thank offering." },
+        { "num": 3, "text": "To keep from wickedness is pleasing to the Lord, and to forsake unrighteousness is an atonement." },
+        { "num": 4, "text": "Do not appear before the Lord empty-handed," },
+        { "num": 5, "text": "for all these things are to be done because of the commandment." },
+        { "num": 10, "text": "Give to the Most High as he has given to you, and as generously as you can afford." },
+        { "num": 11, "text": "For the Lord is the one who repays, and he will repay you sevenfold." },
+        { "num": 15, "text": "Do not the tears of the widow run down her cheek as she cries out against the one who causes them to fall?" },
+        { "num": 17, "text": "The prayer of the humble pierces the clouds, and it will not rest until it reaches its goal." }
+      ]
+    },
+    {
+      "num": 36,
+      "verses": [
+        { "num": 1, "text": "Have mercy upon us, O Lord, the God of all, and look upon us," },
+        { "num": 2, "text": "and put the fear of you upon all the nations." },
+        { "num": 16, "text": "Reward those who wait for you, and let your prophets be found trustworthy." },
+        { "num": 21, "text": "A woman will accept any man, but one girl is better than another." },
+        { "num": 22, "text": "A woman’s beauty gladdens the countenance, and a man desires nothing more." },
+        { "num": 24, "text": "The man who acquires a wife gets his best possession, a helper fit for him and a pillar of support." },
+        { "num": 25, "text": "Where there is no fence, the property will be plundered; and where there is no wife, a man will become a fugitive and a wanderer." }
+      ]
+    },
+    {
+      "num": 37,
+      "verses": [
+        { "num": 1, "text": "Every friend says, “I too am a friend”; but some friends are friends only in name." },
+        { "num": 2, "text": "Is it not a sorrow like that for death itself when a dear friend turns into an enemy?" },
+        { "num": 12, "text": "But stay constantly with a God-fearing person whom you know to keep the commandments," },
+        { "num": 13, "text": "And heed the counsel of your own heart, for no one is more faithful to you than it is." },
+        { "num": 14, "text": "For a person’s soul sometimes keeps him better informed than seven sentinels sitting high on a watchtower." },
+        { "num": 27, "text": "My child, test your soul while you live; see what is bad for it and do not give it that." },
+        { "num": 28, "text": "For not everything is good for everyone, and no one enjoys everything." },
+        { "num": 30, "text": "For overeating brings sickness, and gluttony leads to nausea." }
+      ]
+    },
+    {
+      "num": 38,
+      "verses": [
+        { "num": 1, "text": "Honor physicians for their services, for the Lord created them;" },
+        { "num": 2, "text": "for their gift of healing comes from the Most High, and they are rewarded by the king." },
+        { "num": 4, "text": "The Lord created medicines out of the earth, and the sensible will not despise them." },
+        { "num": 9, "text": "My child, when you are ill, do not delay, but pray to the Lord, and he will heal you." },
+        { "num": 10, "text": "Give up your faults and direct your hands rightly, and cleanse your heart from all sin." },
+        { "num": 12, "text": "Then give the physician his place, for the Lord created him; and do not let him leave you, for you need him." },
+        { "num": 16, "text": "My child, let your tears fall for the dead, and as one who is suffering terribly begin the lament." },
+        { "num": 21, "text": "Do not give your heart to sorrow; drive it away, and remember your own end." },
+        { "num": 24, "text": "The wisdom of the scribe comes through opportunity of leisure; the one who has little business can become wise." }
+      ]
+    },
+    {
+      "num": 39,
+      "verses": [
+        { "num": 1, "text": "How different is the one who devotes himself to the study of the law of the Most High! He seeks out the wisdom of all the ancients, and is concerned with prophecies;" },
+        { "num": 2, "text": "he preserves the sayings of the famous and penetrates the subtleties of parables;" },
+        { "num": 6, "text": "If the great Lord is willing, he will be filled with the spirit of understanding; he will pour forth his words of wisdom and in prayer give thanks to the Lord." },
+        { "num": 16, "text": "“All the works of the Lord are very good, and whatever he commands will be done at the appointed time.”" },
+        { "num": 26, "text": "Basic to all the needs of human life are water and fire and iron and salt and wheat flour and milk and honey, the blood of the grape, and oil and clothing." },
+        { "num": 27, "text": "All these are good for the godly, but for sinners they turn into evils." }
+      ]
+    },
+    {
+      "num": 40,
+      "verses": [
+        { "num": 1, "text": "Hard work was created for everyone, and a heavy yoke is laid on the children of Adam, from the day they come forth from their mother’s womb until the day they return to the mother of all the living." },
+        { "num": 11, "text": "All that is of earth returns to earth, and what is from the waters returns to the sea." },
+        { "num": 17, "text": "Kindness is like a garden of blessings, and almsgiving endures forever." },
+        { "num": 18, "text": "To be self-sufficient and to be a worker—both are sweet, but better than both is the one who finds a treasure." },
+        { "num": 20, "text": "Wine and music gladden the heart, but the love of wisdom is better than both." },
+        { "num": 21, "text": "Flute and harp make pleasant melody, but a gentle tongue is better than both." },
+        { "num": 23, "text": "A friend and a companion encounter each other at the opportune moment, but better than both is a wife with her husband." }
+      ]
+    },
+    {
+      "num": 41,
+      "verses": [
+        { "num": 1, "text": "O death, how bitter is the thought of you to the one who lives at peace among his possessions," },
+        { "num": 2, "text": "O death, how welcome is your sentence to one who is in need and is failing in strength," },
+        { "num": 3, "text": "Do not fear the sentence of death; remember those who went before you and those who will come after." },
+        { "num": 12, "text": "Have regard for your name, since it will remain for you longer than a thousand great treasures of gold." },
+        { "num": 13, "text": "The days of a good life are numbered, but a good name lasts forever." }
+      ]
+    },
+    {
+      "num": 42,
+      "verses": [
+        { "num": 1, "text": "Of the following things do not be ashamed, and do not let partiality lead you to sin:" },
+        { "num": 2, "text": "of the law of the Most High and his covenant, and of justice to acquit the ungodly;" },
+        { "num": 15, "text": "I will now call to mind the works of the Lord, and will declare what I have seen. By the words of the Lord his works are done." },
+        { "num": 18, "text": "He searches out the abyss and the human heart; he understands their innermost secrets." },
+        { "num": 24, "text": "All things are in pairs, one opposite the other, and he has made nothing incomplete." }
+      ]
+    },
+    {
+      "num": 43,
+      "verses": [
+        { "num": 1, "text": "The pride of the higher realms is the clear firmament, the appearance of heaven in a spectacle of glory." },
+        { "num": 2, "text": "The sun, when it appears, proclaims as it rises what a marvelous instrument it is, the work of the Most High." },
+        { "num": 6, "text": "The moon also, at its correct time, is the guide of the seasons and an everlasting sign." },
+        { "num": 11, "text": "Look at the rainbow, and praise him who made it; it is exceedingly beautiful in its brightness." },
+        { "num": 13, "text": "By his command he sends the driving snow and speeds the lightnings of his judgment." },
+        { "num": 27, "text": "We could say more but could never say enough; let the final word be, “He is the all.”" },
+        { "num": 30, "text": "Exalt him as much as you can, for he will surpass even that; and when you exalt him, summon all your strength, and do not grow weary, for you can never exalt him enough." }
+      ]
+    },
+    {
+      "num": 44,
+      "verses": [
+        { "num": 1, "text": "Let us now sing the praises of famous men, our ancestors in their generations." },
+        { "num": 2, "text": "The Lord apportioned to them great glory, his majesty from the beginning." },
+        { "num": 9, "text": "But of others there is no memory; they have perished as though they had never existed;" },
+        { "num": 10, "text": "But these also were godly men, whose righteous deeds have not been forgotten;" },
+        { "num": 13, "text": "Their offspring will continue forever, and their glory will never be blotted out." },
+        { "num": 14, "text": "Their bodies are buried in peace, but their name lives on to generation after generation." },
+        { "num": 16, "text": "Enoch pleased the Lord and was taken up, an example of repentance to all generations." },
+        { "num": 17, "text": "Noah was found perfect and righteous; in the time of wrath he kept the race alive." },
+        { "num": 19, "text": "Abraham was the great father of a multitude of nations, and no one has been found like him in glory." }
+      ]
+    },
+    {
+      "num": 45,
+      "verses": [
+        { "num": 1, "text": "From Abraham’s descendants the Lord brought forth a godly man, who found favor in the sight of all and was beloved by God and people, Moses, whose memory is blessed." },
+        { "num": 2, "text": "He made him equal in glory to the holy ones, and made him great, to the terror of his enemies." },
+        { "num": 5, "text": "He allowed him to hear his voice, and led him into the thick darkness, and gave him the commandments face to face." },
+        { "num": 6, "text": "He exalted Aaron, a holy man like Moses who was his brother, of the tribe of Levi." },
+        { "num": 15, "text": "Moses ordained him and anointed him with holy oil; this was an everlasting covenant for him and for his descendants as long as the heavens endure." }
+      ]
+    },
+    {
+      "num": 46,
+      "verses": [
+        { "num": 1, "text": "Joshua son of Nun was mighty in war, and was the successor of Moses in prophesying. He became, in accordance with his name, a great savior of God’s elect." },
+        { "num": 7, "text": "In the days of Moses also he did a loyal deed, he and Caleb son of Jephunneh: they withstood the congregation, restrained the people from sin, and stilled the wicked grumbling." },
+        { "num": 11, "text": "The judges also, with their respective names, whose hearts did not fall into idolatry and who did not turn away from the Lord—may their memory be blessed!" },
+        { "num": 13, "text": "Samuel was beloved by his Lord; a prophet of the Lord, he established the kingdom and anointed rulers over his people." },
+        { "num": 20, "text": "Even after he had fallen asleep, he prophesied and foretold to the king his death, and lifted up his voice from the ground in prophecy, to blot out the wickedness of the people." }
+      ]
+    },
+    {
+      "num": 47,
+      "verses": [
+        { "num": 1, "text": "After him Nathan rose up to prophesy in the days of David." },
+        { "num": 2, "text": "As the fat is set apart from the offering of well-being, so David was set apart from the Israelites." },
+        { "num": 8, "text": "In all that he did he gave thanks to the Holy One, the Most High, with ascriptions of glory; he sang praise with all his heart, and he loved his Maker." },
+        { "num": 11, "text": "The Lord took away his sins, and exalted his power forever; he gave him a covenant of kingship and a glorious throne in Israel." },
+        { "num": 12, "text": "After him a wise son rose up who because of him lived in security." },
+        { "num": 13, "text": "Solomon reigned in an age of peace, because God gave him rest on every side, so that he might build a house for his name and prepare a sanctuary to stand forever." },
+        { "num": 14, "text": "How wise you were when you were young! You overflowed like the Nile with understanding." }
+      ]
+    },
+    {
+      "num": 48,
+      "verses": [
+        { "num": 1, "text": "Then Elijah arose, a prophet like fire, and his word burned like a torch." },
+        { "num": 4, "text": "How glorious you were, Elijah, in your wondrous deeds! Whose glory is equal to yours?" },
+        { "num": 11, "text": "Happy are those who saw you and were adorned with your love! For we also shall surely live." },
+        { "num": 12, "text": "When Elijah was enveloped in the whirlwind, Elisha was filled with his spirit; he performed twice as many signs, and marvels with every utterance of his mouth." },
+        { "num": 13, "text": "Nothing was too hard for him, and when he was dead, his body prophesied." },
+        { "num": 20, "text": "But they called upon the Lord who is merciful, spreading out their hands toward him. The Holy One quickly heard them from heaven, and delivered them by the hand of Isaiah." },
+        { "num": 22, "text": "For Hezekiah did what was pleasing to the Lord, and he kept firmly to the ways of his ancestor David, as he was commanded by the prophet Isaiah, who was great and trustworthy in his visions." }
+      ]
+    },
+    {
+      "num": 49,
+      "verses": [
+        { "num": 1, "text": "The memory of Josiah is like a blending of incense prepared by the art of the perfumer; it is sweet as honey to every mouth, and like music at a banquet of wine." },
+        { "num": 4, "text": "Except for David and Hezekiah and Josiah, all of them were great sinners, for they abandoned the law of the Most High; the kings of Judah came to an end." },
+        { "num": 8, "text": "It was Ezekiel who saw the vision of glory, which God showed him above the chariot of the cherubim." },
+        { "num": 10, "text": "May the bones of the twelve prophets send forth new life from where they lie, for they comforted the people of Jacob and delivered them with confident hope." },
+        { "num": 11, "text": "How shall we magnify Zerubbabel? He was like a signet ring on the right hand;" },
+        { "num": 12, "text": "so too was Joshua son of Jozadak; in their days they built the house and raised a temple holy to the Lord, prepared for everlasting glory." },
+        { "num": 13, "text": "The memory of Nehemiah also is lasting; he raised our fallen walls, and set up gates and bars, and rebuilt our ruined houses." }
+      ]
+    },
+    {
+      "num": 50,
+      "verses": [
+        { "num": 1, "text": "The leader of his brothers and the pride of his people was the high priest, Simon son of Onias, who in his life repaired the house, and in his time fortified the temple." },
+        { "num": 5, "text": "How glorious he was, surrounded by the people, as he came out of the house of the curtain." },
+        { "num": 22, "text": "And now bless the God of all, who everywhere works great wonders, who fosters our growth from birth, and deals with us according to his mercy." },
+        { "num": 23, "text": "May he give us gladness of heart, and may there be peace in our days in Israel, as in the days of old." },
+        { "num": 27, "text": "Instruction in understanding and knowledge I have written in this book, I, Jesus son of Eleazar son of Sirach of Jerusalem, whose heart poured forth wisdom." }
+      ]
+    },
+    {
+      "num": 51,
+      "verses": [
+        { "num": 1, "text": "I will give thanks to you, O Lord and King, and praise you, O God my Savior. I give thanks to your name;" },
+        { "num": 2, "text": "for you have been my protector and helper and have delivered me from destruction." },
+        { "num": 13, "text": "While I was still young, before I went on my travels, I sought wisdom openly in my prayer." },
+        { "num": 17, "text": "I made progress in her; to him who gives me wisdom I will give glory." },
+        { "num": 23, "text": "Draw near to me, you who are uneducated, and lodge in the house of instruction." },
+        { "num": 26, "text": "Put your neck under her yoke, and let your souls receive instruction; it is to be found close by." },
+        { "num": 27, "text": "See with your own eyes that I have labored but little and found for myself much serenity." },
+        { "num": 30, "text": "Do your work in good time, and in his own time God will give you your reward." }
+      ]
+    }   
+    ]
+    }
