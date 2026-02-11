@@ -1,0 +1,55 @@
+{
+  "meta": {
+    "name": "The Epistles of Clement (Qalëmentos) - Book 6",
+    "id": "6CLEM_ET",
+    "version": "Ethiopic Traditional Translation",
+    "copyright": "Public Domain"
+  },
+  "chapters": [
+    {
+      "num": 1,
+      "verses": [
+        { "num": 1, "text": "And on the sixth day, Peter spoke to Clement regarding the sanctity of the Holy Place, saying: 'My son, the altar of the Lord is the table of life, and it must be approached with a heart that is purified from all earthly thoughts.'" },
+        { "num": 2, "text": "'Let the sanctuary be set apart and veiled from the eyes of the curious, for the mysteries which are celebrated therein are not for the mockery of the world but for the salvation of the faithful.'" },
+        { "num": 3, "text": "'When the Priest entereth the veil, let him remember that he standeth where the angels tremble, and let his prayer be for the whole world, from the rising of the sun unto the going down thereof.'" },
+        { "num": 4, "text": "'For the sanctuary is the image of the heaven of heavens, and the light that burneth there is the symbol of the Presence which never fadeth.'" }
+      ]
+    },
+    {
+      "num": 2,
+      "verses": [
+        { "num": 1, "text": "Peter spake of the ministers of the lower degrees: 'Besides the Bishops, Priests, and Deacons, let there be appointed Sub-deacons to guard the doors and Readers to proclaim the words of the prophets.'" },
+        { "num": 2, "text": "'Let the Reader stand in a high place so that all the people may hear, and let him not read with a proud voice but with a heart that understandeth the spirit of the word.'" },
+        { "num": 3, "text": "'Let the Sub-deacons see that no man remaineth in the assembly who is under the power of the enemy, and let them keep the vessels of the altar in great purity.'" },
+        { "num": 4, "text": "'For in the house of God, even the smallest service is great in the eyes of the King, if it be done with love and obedience.'" }
+      ]
+    },
+    {
+      "num": 3,
+      "verses": [
+        { "num": 1, "text": "And regarding the Mystery of the Bread and Wine, Peter taught: 'When the elements are placed upon the altar, they are but the fruits of the earth; but when the Priest calleth upon the Holy Spirit, the power of God descendeth.'" },
+        { "num": 2, "text": "'In that moment, the bread is changed into the Body of the Beloved, and the wine into His precious Blood, through a mystery which no tongue can fully declare.'" },
+        { "num": 3, "text": "'It is a spiritual food for spiritual men, and a medicine of immortality for those who receive it with faith.'" },
+        { "num": 4, "text": "'But let no man draw near who hath bitterness in his heart against his brother, lest he eat and drink to his own condemnation.'" }
+      ]
+    },
+    {
+      "num": 4,
+      "verses": [
+        { "num": 1, "text": "Peter spake of the Kiss of Peace: 'Before the offering is made, let the faithful greet one another with a holy kiss, the men with the men and the women with the women.'" },
+        { "num": 2, "text": "'This is the sign that we are one body in Christ, and that all malice and envy have been cast out from our midst.'" },
+        { "num": 3, "text": "'For the Lord said: \"If thou bring thy gift to the altar and rememberest that thy brother hath ought against thee, leave thy gift and first be reconciled.\"' " },
+        { "num": 4, "text": "'Peace is the foundation of the house of God, and without it, our sacrifices are not acceptable in His sight.'" }
+      ]
+    },
+    {
+      "num": 5,
+      "verses": [
+        { "num": 1, "text": "Finally, Peter said: 'My son Clement, I have showed thee the order of the service of the Lord. Observe these things and teach them to the priests of the nations.'" },
+        { "num": 2, "text": "'Let the liturgy be celebrated with fear and with joy, and let the people be taught to lift up their hearts to the heavens where Christ sitteth at the right hand of the Father.'" },
+        { "num": 3, "text": "'For the day of the Lord is drawing nigh, and we must be found ready, with our lamps burning and our souls prepared for the wedding feast.'" },
+        { "num": 4, "text": "'May the blessing of the Holy Trinity be upon all who keep the laws of this instruction. Amen.'" }
+      ]
+    }
+  ]
+}

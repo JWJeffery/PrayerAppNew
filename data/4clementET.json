@@ -1,0 +1,55 @@
+{
+  "meta": {
+    "name": "The Epistles of Clement (Qalëmentos) - Book 4",
+    "id": "4CLEM_ET",
+    "version": "Ethiopic Traditional Translation",
+    "copyright": "Public Domain"
+  },
+  "chapters": [
+    {
+      "num": 1,
+      "verses": [
+        { "num": 1, "text": "And it came to pass on the fourth day, that Peter took Clement to a high place apart, and he said: 'My son, the Lord hath opened the eyes of my spirit to see the secret things of the heavens and the times which are appointed for the children of men.'" },
+        { "num": 2, "text": "'Know that the world is divided into seven times, and each time hath its own purpose and its own measure of light and darkness.'" },
+        { "num": 3, "text": "'For as there are seven days in the week and seven heavens above us, so are there seven ages through which the soul of man must pass until it finds rest in the Great Sabbath.'" },
+        { "num": 4, "text": "'The first time was from the beginning until the flood, and the second was from the flood until the giving of the law; and now we are in the time of the visitation of the Son of God.'" }
+      ]
+    },
+    {
+      "num": 2,
+      "verses": [
+        { "num": 1, "text": "Peter spake regarding the spiritual warfare: 'Clement, my son, do not think that the air is empty, for it is filled with the hosts of the prince of this world, who fight against the angels of light.'" },
+        { "num": 2, "text": "'They seek to hinder the prayers of the saints as they ascend, and they cast shadows of doubt upon the hearts of those who are weak in faith.'" },
+        { "num": 3, "text": "'But the Lord hath given us the shield of faith and the sword of the Word, and He hath appointed Michael the Archangel to lead the heavenly host on our behalf.'" },
+        { "num": 4, "text": "'When thou prayest, see with the eyes of thy spirit the light of the Lord breaking through the darkness, for the power of the enemy is limited by the command of the Most High.'" }
+      ]
+    },
+    {
+      "num": 3,
+      "verses": [
+        { "num": 1, "text": "And regarding the mystery of the seasons, Peter taught: 'Observe the sun and the moon, for they are signs of the times of the Lord.'" },
+        { "num": 2, "text": "'When the days grow long and the earth bringeth forth its fruit, remember the mercy of God; and when the nights grow long and the frost covereth the ground, remember the trials of the soul.'" },
+        { "num": 3, "text": "'For as the seasons change, so do the hearts of men; and as the sun returneth after the winter, so shall the Beloved return to His people after the time of tribulation.'" },
+        { "num": 4, "text": "'Be thou like the earth that waiteth for the early and the late rain, for the grace of God shall surely visit the thirsty soul.'" }
+      ]
+    },
+    {
+      "num": 4,
+      "verses": [
+        { "num": 1, "text": "Peter spake of the coming of the Lawless One: 'In the latter days, there shall come a man of sin, who shall claim for himself the glory of the Christ.'" },
+        { "num": 2, "text": "'He shall work lying wonders and shall deceive even some of the chosen, for he speaketh with the tongue of a serpent and hath the heart of a wolf.'" },
+        { "num": 3, "text": "'But the Lord shall consume him with the breath of His mouth, and his kingdom shall vanish like a dream when one awaketh.'" },
+        { "num": 4, "text": "'Therefore, my son, let not thy heart be troubled by the rumors of wars and the falling away of many, for the truth of God abideth for ever.'" }
+      ]
+    },
+    {
+      "num": 5,
+      "verses": [
+        { "num": 1, "text": "And Peter said: 'Clement, keep the treasure of this knowledge secret from the mockers and the unbelievers, but deliver it to those who are worthy of the mystery.'" },
+        { "num": 2, "text": "'For the wisdom of God is a stumbling block to the proud, but to the humble it is the path of life.'" },
+        { "num": 3, "text": "'And may the Spirit of Truth keep thee in all thy ways, and may He seal thy heart until the day of the revelation of the King of Glory.'" },
+        { "num": 4, "text": "And Clement said: 'Amen. I have received the word, and I will keep it in my soul.' And thus ended the instruction of the fourth day." }
+      ]
+    }
+  ]
+}

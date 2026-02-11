@@ -1,0 +1,245 @@
+{
+  "meta": {
+    "name": "Mazaheta (The Book of Hymns and Prayers)",
+    "id": "MAZAHETA_COMPLETE",
+    "version": "Ethiopic Liturgical Tradition",
+    "copyright": "Public Domain"
+  },
+  "sections": [
+    {
+      "name": "Kidane (Covenant Prayer) - Morning",
+      "id": "KIDANE_MORN",
+      "chapters": [
+        {
+          "num": 1,
+          "verses": [
+            { "num": 1, "text": "Holy, Holy, Holy, Lord God of Hosts; heaven and earth are full of the holiness of Thy glory." },
+            { "num": 2, "text": "We worship Thee, O Christ, with Thy Good Heavenly Father and Thy Holy Spirit, the Life-giver, for Thou hast come and saved us." },
+            { "num": 3, "text": "O Lord, save Thy people and bless Thine inheritance; shepherd them and lift them up for ever." },
+            { "num": 4, "text": "Keep our Church in peace and unity, and preserve our shepherds, the Bishops and the Priests, in righteousness and truth." },
+            { "num": 5, "text": "Grant Thy peace to the world, and turn the hearts of the rulers toward justice, that we may lead a quiet and peaceable life in all godliness." },
+            { "num": 6, "text": "Remember, O Lord, those who are sick and afflicted, those who are in prison and in exile, and all those who have asked us to remember them in our prayers." },
+            { "num": 7, "text": "For Thine is the kingdom, the power, and the glory, of the Father, and of the Son, and of the Holy Spirit, now and for ever. Amen." }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Weddase Maryam (Praise of Mary) - Full Week",
+      "id": "WED_MARY_WEEK",
+      "chapters": [
+        {
+          "num": 1,
+          "name": "Monday",
+          "verses": [
+            { "num": 1, "text": "The gate of the East is Mary the Virgin, the sealed treasure-house of our salvation, the mother of the Light who rose upon us from on high." },
+            { "num": 2, "text": "Thou art the second heaven upon the earth, O daughter of David; for in thee the Sun of Righteousness appeared, healing the wounds of our nature." },
+            { "num": 3, "text": "The Father looked down from heaven and found none like unto thee; He sent His Only-Begotten Son, and He took flesh from thee and became man." },
+            { "num": 4, "text": "O Virgin, thou art the rod of Aaron which budded without being planted; even so didst thou bring forth the Christ without the seed of man." },
+            { "num": 5, "text": "The angels glorify thee in the heights, and the children of men praise thee upon the earth; for thou hast become the bridge that leadeth us from death unto life." },
+            { "num": 6, "text": "Rejoice, O full of grace, the Lord is with thee; blessed art thou among women, and blessed is the fruit of thy womb, Jesus Christ." },
+            { "num": 7, "text": "Intercede for us, O Holy Mother of God, that He may forgive us our sins and grant rest to the souls of our fathers and brothers." }
+          ]
+        },
+        {
+          "num": 2,
+          "name": "Tuesday",
+          "verses": [
+            { "num": 1, "text": "The crown of our glory and the beginning of our salvation is Mary the Virgin, who brought forth for us God the Word." },
+            { "num": 2, "text": "After He became man for our sake, He was yet God, and He chose her out of all the world to be His mother." },
+            { "num": 3, "text": "He rested in her womb as a king rests upon his throne; and He was born of her without breaking the seal of her virginity." },
+            { "num": 4, "text": "Ezekiel the prophet witnessed concerning her, saying: 'I saw a closed gate in the East, and the Lord God of Israel entered by it and passed through it, and the gate remained shut.'" },
+            { "num": 5, "text": "This gate is the Virgin who brought forth the Savior; she is the bush that Moses saw in the mount, which burned with fire and was not consumed." },
+            { "num": 6, "text": "The fire is the Godhead, and the bush is Mary; she bore the fire of the Divinity in her womb and was not burned." }
+          ]
+        },
+        {
+          "num": 3,
+          "name": "Wednesday",
+          "verses": [
+            { "num": 1, "text": "Every tongue praises thee, O Mother of the Light, and every heart glorifies thee, for thou art the tabernacle which God prepared for His dwelling." },
+            { "num": 2, "text": "Thou art the golden censer which carried the coal of fire; the coal is the Godhead, and the gold is thy purity." },
+            { "num": 3, "text": "Thou art the ladder which reached from earth to heaven, which Jacob saw in his dream, and the angels of God were ascending and descending upon it." },
+            { "num": 4, "text": "Thou art the fleece of Gideon upon which the dew of heaven descended; for the Word of the Father came down into thee silently like the rain upon the mown grass." },
+            { "num": 5, "text": "We pray thee, O Virgin, to ask for us before the throne of thy Son, that He may grant us mercy and the forgiveness of our sins." }
+          ]
+        },
+        {
+          "num": 4,
+          "name": "Thursday",
+          "verses": [
+            { "num": 1, "text": "Thou art the bush which Moses saw in the desert, which the fire did not consume; the Son of God dwelt in thee and the fire of His Godhead did not burn thee." },
+            { "num": 2, "text": "Thou art the mountain which Daniel saw, from which a stone was cut without hands, which smote the image of the pride of this world." },
+            { "num": 3, "text": "The stone is our Lord Jesus Christ, and the mountain is the Virgin Mary, who brought Him forth without the seed of man." },
+            { "num": 4, "text": "Thou art the ark which was covered with gold within and without; the gold is thy virginity of soul and body." },
+            { "num": 5, "text": "Blessed art thou among women, for the Lord who created the world chose thee to be His dwelling place." }
+          ]
+        },
+        {
+          "num": 5,
+          "name": "Friday",
+          "verses": [
+            { "num": 1, "text": "Rejoice, O Mother of God, for thou hast brought forth the Joy of all the world! Rejoice, for thou art the ship that carried the Merchant of the Pearl of Great Price." },
+            { "num": 2, "text": "Rejoice, O mother of the Light, for thy Son hath scattered the darkness of our ignorance and hath given us the light of the knowledge of His glory." },
+            { "num": 3, "text": "Thou art the vessel of gold which held the manna; the manna is the Word of God who came down from heaven to give life unto all." },
+            { "num": 4, "text": "Through thee, the gate of Paradise is opened to us again, and the sword of the cherubim is turned away from the tree of life." }
+          ]
+        },
+        {
+          "num": 6,
+          "name": "Saturday",
+          "verses": [
+            { "num": 1, "text": "The holiness of the saints is not like unto thy holiness, O Virgin Mary, for thou art the Mother of the Holy of Holies." },
+            { "num": 2, "text": "Thou art the cloud of light which the prophets foretold; the Sun of Righteousness arose from thee and gave light to those who sat in darkness." },
+            { "num": 3, "text": "The heavens cannot contain Him, yet He was contained in thy womb; the angels serve Him with fear, yet thou didst carry Him in thine arms." },
+            { "num": 4, "text": "O Virgin, thou art the hope of the faithful and the refuge of the weary; intercede for us before thy Son, that He may have mercy upon us." }
+          ]
+        },
+        {
+          "num": 7,
+          "name": "Sunday",
+          "verses": [
+            { "num": 1, "text": "Thou art the mother of the King of Glory, and the glory of the saints is through thee; thou art the garden of the Spirit and the fountain of the water of life." },
+            { "num": 2, "text": "The Father chose thee, the Holy Spirit overshadowed thee, and the Son dwelt in thee and took flesh from thee." },
+            { "num": 3, "text": "Therefore, the Church celebrates thy memory in every generation, for thou art the cause of our joy and the mother of our Life." },
+            { "num": 4, "text": "Grant us, O Lord, to follow her example in purity and humility, that we may be found worthy of the kingdom which Thou hast prepared for those who love Thee. Amen." }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Anqaşa Birhān (The Gate of Light)",
+      "id": "ANQASA_BIRHAN",
+      "chapters": [
+        {
+          "num": 1,
+          "verses": [
+            { "num": 1, "text": "O Holy and blessed, ever-virgin, Mother of God, Mother of Christ, offer up our prayer on high to thy beloved Son, that He may forgive us our sins." },
+            { "num": 2, "text": "Thou art the true Gate of Light, through whom the Sun of Righteousness arose upon the whole world, giving light to those who sat in the shadow of death." },
+            { "num": 3, "text": "The Father in His wisdom looked upon the earth and found none like unto thee; He sent His Word and He took flesh from thee, and the Tabernacle of the Godhead was established in thy womb." },
+            { "num": 4, "text": "Thou art the golden ladder which the patriarch Jacob saw, upon which the Lord of Glory rested, and the angels of God ascended and descended to minister unto the children of men." },
+            { "num": 5, "text": "O Virgin, thou art the spiritual mountain of which the prophet Habakkuk spoke, from which the Holy One came forth to save His people from the hand of the enemy." },
+            { "num": 6, "text": "Thou art the cloud of incense that arose from the desert, carrying the sweet savor of the knowledge of God to all the nations of the earth." },
+            { "num": 7, "text": "We glorify thee, O Mother of God, and we exalt thy name; for through thee the curse was lifted from the earth, and the path to the Tree of Life was made plain to the faithful." }
+          ]
+        },
+        {
+          "num": 2,
+          "verses": [
+            { "num": 1, "text": "Behold, the prophets foretold thy glory in ancient times; David called thee the City of God, and Solomon called thee the Garden of Delights." },
+            { "num": 2, "text": "Isaiah saw thee as the rod that should spring from the root of Jesse, and Ezekiel saw thee as the East Gate that should never be opened." },
+            { "num": 3, "text": "All these mysteries were fulfilled in thee, O Mary, for thou hast brought forth the Savior without the seed of man, and remained a virgin after His birth as thou wast before." },
+            { "num": 4, "text": "Therefore, we fall down before thee and entreat thy mercy; intercede for us, O full of grace, that the Lord may grant us the peace which passeth understanding." },
+            { "num": 5, "text": "Bless our land and our people, and keep the Church in the unity of the Spirit; and may the blessing of the Holy Trinity be upon all who celebrate thy memory in truth." }
+          ]
+        },
+        {
+          "num": 3,
+          "verses": [
+            { "num": 1, "text": "O Gate of Life, the angels stand in awe of thy purity, and the cherubim hide their faces from the glory of Him whom thou didst carry in thy womb." },
+            { "num": 2, "text": "Thou art the ship of gold that carried the great Pearl, and the field that brought forth the Bread of Life without being sown." },
+            { "num": 3, "text": "Thou art the spiritual vine that bore the cluster of grapes, the juice of which is the Blood of Christ that redeems the world." },
+            { "num": 4, "text": "Through thee, the lowly are exalted and the proud are brought down; for thou didst bear the King of Kings while yet being the handmaid of the Lord." }
+          ]
+        },
+        {
+          "num": 4,
+          "verses": [
+            { "num": 1, "text": "O Lady, protect the priests who minister at the altar, and the deacons who serve the holy mysteries, and the readers who proclaim the Word of Truth." },
+            { "num": 2, "text": "Grant wisdom to our rulers and peace to our borders; and let the light of thy Son shine in the hearts of those who are in darkness." },
+            { "num": 3, "text": "Remember the orphans and the widows, the sick and the afflicted, and let thy motherly care be a shield to them in their hour of need." },
+            { "num": 4, "text": "For we have no other refuge but thee, and no other hope but in the mercy of Him who was born of thee." }
+          ]
+        },
+        {
+          "num": 5,
+          "verses": [
+            { "num": 1, "text": "Holy, Holy, Holy is the Lord God of Hosts, who chose thee to be His dwelling place and magnified thee above the heavens." },
+            { "num": 2, "text": "Glory be to the Father who loved thee, and to the Son who dwelt in thee, and to the Holy Spirit who overshadowed thee." },
+            { "num": 3, "text": "And now, O Mother of God, receive our praise and our petitions, and present them before the throne of the Savior." },
+            { "num": 4, "text": "That we may be found worthy to join with the saints in the kingdom of light, singing praises to the Holy Trinity for ever and ever. Amen." }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Sa'atat (The Horologium - Book of Hours)",
+      "id": "SAATAT_FULL",
+      "chapters": [
+        {
+          "num": 1,
+          "name": "The Night Office (Mahlet)",
+          "verses": [
+            { "num": 1, "text": "Arise, ye children of the Light, and let us glorify the Lord who hath kept us during the darkness of the night." },
+            { "num": 2, "text": "O Lord, open my lips, and my mouth shall show forth Thy praise; for Thou art the Light that dispelleth the darkness of our souls." },
+            { "num": 3, "text": "We thank Thee, O King Eternal, for Thou hast brought us to the beginning of this day; grant that we may spend it without sin and without stumbling." },
+            { "num": 4, "text": "Remember Thy Church which Thou hast purchased from of old, and let Thy peace dwell within the walls of Thy sanctuary." }
+          ]
+        },
+        {
+          "num": 2,
+          "name": "The First Hour (Neqat)",
+          "verses": [
+            { "num": 1, "text": "At the dawn of the day, we offer unto Thee, O Lord, the first-fruits of our thoughts and the labor of our hands." },
+            { "num": 2, "text": "Guide our steps in the path of Thy commandments, and let the light of Thy countenance shine upon us throughout this hour." },
+            { "num": 3, "text": "Blessed art Thou, O God of our fathers, who hast given us the sun to rule the day and the moon to rule the night." }
+          ]
+        },
+        {
+          "num": 3,
+          "name": "The Third Hour (Sallest)",
+          "verses": [
+            { "num": 1, "text": "O Holy Spirit, who didst descend upon the apostles at the third hour, do not take Thy grace from us, but renew it within our hearts." },
+            { "num": 2, "text": "Cleanse our consciences from dead works, that we may serve the living God with a pure heart and a willing mind." }
+          ]
+        },
+        {
+          "num": 4,
+          "name": "The Sixth Hour (Qatru)",
+          "verses": [
+            { "num": 1, "text": "Thou who wast nailed to the Cross at the sixth hour for the salvation of the world, nail our sins to Thy Cross and deliver us from the power of the enemy." },
+            { "num": 2, "text": "Let Thy mercy come upon us, O Lord, as we have hoped in Thee; for Thou art our refuge and our strength in the heat of the day." }
+          ]
+        },
+        {
+          "num": 5,
+          "name": "The Ninth Hour (Tes'atu)",
+          "verses": [
+            { "num": 1, "text": "At the ninth hour, Thou didst taste death in the flesh to give life unto us; kill our earthly members and quicken us by Thy Spirit." },
+            { "num": 2, "text": "Accept our prayers as the evening sacrifice, and let the lifting up of our hands be an incense well-pleasing in Thy sight." }
+          ]
+        },
+        {
+          "num": 6,
+          "name": "The Eleventh Hour (Serka)",
+          "verses": [
+            { "num": 1, "text": "The day is far spent and the evening is at hand; abide with us, O Lord, for the shadows have lengthened." },
+            { "num": 2, "text": "Forgive us the sins of this day, whether in word, deed, or thought, and grant us a peaceful evening and a night without blemish." }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Me’erāf (Common Hymns and Antiphons)",
+      "id": "MEERAF_HIMM",
+      "chapters": [
+        {
+          "num": 1,
+          "name": "Hymn for the Resurrection",
+          "verses": [
+            { "num": 1, "text": "Christ is risen from the dead! He hath trampled down death by death, and upon those in the tombs He hath bestowed life." },
+            { "num": 2, "text": "The angels in heaven sing for joy, and the earth is filled with the light of His glory; for the Lord of Life hath conquered the grave." }
+          ]
+        },
+        {
+          "num": 2,
+          "name": "Hymn of the Archangels",
+          "verses": [
+            { "num": 1, "text": "Michael the Archangel, the prince of the heavenly host, pray for us before the throne of the Most High." },
+            { "num": 2, "text": "Gabriel, the messenger of joy, who brought the good news to the Virgin, enlighten our hearts with the knowledge of the Truth." }
+          ]
+        }
+      ]
+    }
+  ]
+}

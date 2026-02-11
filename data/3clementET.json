@@ -1,0 +1,70 @@
+{
+  "meta": {
+    "name": "The Epistles of Clement (Qalëmentos) - Book 3",
+    "id": "3CLEM_ET",
+    "version": "Ethiopic Traditional Translation",
+    "copyright": "Public Domain"
+  },
+  "chapters": [
+    {
+      "num": 1,
+      "verses": [
+        { "num": 1, "text": "And on the third day, Peter called Clement and said: 'My son, the Lord hath built His Church upon the rock of faith, and He hath appointed shepherds to watch over His flock.'" },
+        { "num": 2, "text": "'Therefore, it is necessary that thou shouldst know the laws of the priesthood, that the house of God may be governed in holiness and order.'" },
+        { "num": 3, "text": "'For a priest is an ambassador of the Most High, and he must be found without blemish in the sight of God and man.'" },
+        { "num": 4, "text": "'He must not be a lover of money, nor a striker, nor given to much wine, but he should be patient and a teacher of good things.'" }
+      ]
+    },
+    {
+      "num": 2,
+      "verses": [
+        { "num": 1, "text": "Peter spake regarding the election of a Bishop: 'When a city requireth a shepherd, let the people gather with the priests and deacons on the Lord's Day.'" },
+        { "num": 2, "text": "'Let them choose a man who is well-reported of by all, one who hath governed his own house well and is full of the Holy Spirit.'" },
+        { "num": 3, "text": "'When he is chosen, let the other Bishops lay their hands upon him, and let the prayer of consecration be offered, that the grace of the apostleship may rest upon him.'" },
+        { "num": 4, "text": "'From 그 day, he shall be the father of the orphans and the judge of the widows, and he shall hold the keys of the kingdom in 그 place.'" }
+      ]
+    },
+    {
+      "num": 3,
+      "verses": [
+        { "num": 1, "text": "Concerning the Deacons, Peter taught: 'The Deacons are the eyes and ears of the Bishop; they must go about and seek out the sick and the needy.'" },
+        { "num": 2, "text": "'They must be pure in heart and body, for they carry the holy vessels and minister at the altar of the Lord.'" },
+        { "num": 3, "text": "'Let them not be double-tongued or seekers of filthy lucre, but let them be found faithful in all their ministrations.'" },
+        { "num": 4, "text": "'For those who serve well as deacons purchase to themselves a good degree and great boldness in the faith.'" }
+      ]
+    },
+    {
+      "num": 4,
+      "verses": [
+        { "num": 1, "text": "And Peter spoke of the Liturgy: 'When ye assemble to offer the Sacrifice of Praise, let the doors be shut, and let no unbeliever remain in your midst.'" },
+        { "num": 2, "text": "'Let the Bishop or the Priest offer the bread and the wine with thanksgiving, according to the pattern which the Lord showed us at the Supper.'" },
+        { "num": 3, "text": "'For this is the Body which was broken for you, and this is the Blood which was shed for the remission of sins.'" },
+        { "num": 4, "text": "'Let all the people say Amen, and let them receive the Holy Mysteries with fear and trembling, that they may be joined to the life of Christ.'" }
+      ]
+    },
+    {
+      "num": 5,
+      "verses": [
+        { "num": 1, "text": "Regarding the fasts and the festivals, Peter said: 'Observe the fourth day and the Friday of every week, for on these days the Lord was betrayed and crucified.'" },
+        { "num": 2, "text": "'But on the Sabbath and the Lord's Day, let there be joy and celebration, for on the one He rested from His works, and on the other He rose from the dead.'" },
+        { "num": 3, "text": "'Observe also the seasons of the year as the Church hath received them, that ye may walk in the footsteps of the Savior from His birth unto His ascension.'" }
+      ]
+    },
+    {
+      "num": 6,
+      "verses": [
+        { "num": 1, "text": "Peter taught Clement regarding the widows and virgins: 'Let the widows who are old and of good report be honored and supported by the church.'" },
+        { "num": 2, "text": "'Let the virgins who have dedicated themselves to the Lord be vigilant in prayer and modesty, for they are the handmaidens of the King.'" },
+        { "num": 3, "text": "'But let them not be proud of their state, for humility is the crown of all virtue.'" }
+      ]
+    },
+    {
+      "num": 7,
+      "verses": [
+        { "num": 1, "text": "Finally, Peter said: 'My son Clement, I have delivered unto thee the mysteries of the house of God.'" },
+        { "num": 2, "text": "'Keep these laws and do not change them, for they are the foundation of the peace of the Church.'" },
+        { "num": 3, "text": "'May the Lord grant thee wisdom to govern His people, and may thy reward be with the saints in light. Amen.'" }
+      ]
+    }
+  ]
+}

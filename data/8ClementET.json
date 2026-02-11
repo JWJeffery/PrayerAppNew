@@ -1,0 +1,54 @@
+{
+  "meta": {
+    "name": "The Epistles of Clement (Qalëmentos) - Book 8",
+    "id": "8CLEM_ET",
+    "version": "Ethiopic Traditional Translation",
+    "copyright": "Public Domain"
+  },
+  "chapters": [
+    {
+      "num": 1,
+      "verses": [
+        { "num": 1, "text": "And on the eighth day, which is the day of completion, Peter stood before Clement and the elders, and he said: 'My time is come to be offered as a sacrifice for the name of the Lord, as He Himself showed me by the sea of Tiberias.'" },
+        { "num": 2, "text": "'Therefore, I have delivered unto thee, my son Clement, the mysteries of the heavens and the laws of the house of God, which I received from the lips of the Beloved.'" },
+        { "num": 3, "text": "'Keep these words as a precious treasure, for they are the life of the Church and the light of the faithful throughout all generations.'" },
+        { "num": 4, "text": "'Be not afraid of the kings of the earth who kill the body, for they have no power over the soul; but trust in Him who is able to raise the dead and give eternal life.'" }
+      ]
+    },
+    {
+      "num": 2,
+      "verses": [
+        { "num": 1, "text": "And Peter took Clement by the hand and led him before the altar, and he laid his hands upon his head, saying: 'I ordain thee this day to be the Bishop of the City of Rome, and to sit in my seat to shepherd the flock of Christ.'" },
+        { "num": 2, "text": "'Be a father to the poor and a guide to the wandering, and let thy life be a pattern of holiness for all the people to follow.'" },
+        { "num": 3, "text": "'Govern the Church with wisdom and patience, and do not turn aside from the commandments which I have taught thee, neither to the right hand nor to the left.'" },
+        { "num": 4, "text": "'And I give thee power to bind and to loose upon the earth, that what thou bindest here may be bound in heaven, according to the will of the Father.'" }
+      ]
+    },
+    {
+      "num": 3,
+      "verses": [
+        { "num": 1, "text": "Peter spake regarding his own departure: 'I go now to follow my Master, to be crucified as He was crucified, for the cross is the glory of the apostles and the path to the throne of Light.'" },
+        { "num": 2, "text": "'Do not weep for me, my children, but rejoice that I have finished my course and kept the faith.'" },
+        { "num": 3, "text": "'For when I have put off this tabernacle of the flesh, I shall be with the Lord in the seventh heaven, and I will not cease to pray for you and for the whole world.'" },
+        { "num": 4, "text": "'Peace be unto this house, and unto all who call upon the name of Jesus Christ in every place.'" }
+      ]
+    },
+    {
+      "num": 4,
+      "verses": [
+        { "num": 1, "text": "Then Peter looked toward the heavens and said: 'O Lord God Almighty, Father of our Lord Jesus Christ, I thank Thee that Thou hast counted me worthy to serve Thy people and to deliver Thy mysteries unto this Thy servant.'" },
+        { "num": 2, "text": "'Keep him in Thy name, and let the Holy Spirit dwell in him, that he may finish his work with joy and be found without blemish in the day of Thy coming.'" },
+        { "num": 3, "text": "'Bless all the nations who shall hear these words, and grant that the light of the Gospel may shine in the darkness until the restoration of all things.'" }
+      ]
+    },
+    {
+      "num": 5,
+      "verses": [
+        { "num": 1, "text": "And Peter finished his prayer, and he kissed Clement and the elders, and he went forth with a joyful heart to his martyrdom." },
+        { "num": 2, "text": "And Clement wrote down all these eight books as Peter had commanded him, and he kept them for the Church as an eternal ordinance." },
+        { "num": 3, "text": "Now unto Him that is able to keep you from falling, and to present you faultless before the presence of His glory with exceeding joy," },
+        { "num": 4, "text": "To the only wise God our Saviour, be glory and majesty, dominion and power, both now and ever. Amen and Amen.'" }
+      ]
+    }
+  ]
+}

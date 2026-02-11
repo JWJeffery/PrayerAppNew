@@ -1,0 +1,55 @@
+{
+  "meta": {
+    "name": "The Epistles of Clement (Qalëmentos) - Book 7",
+    "id": "7CLEM_ET",
+    "version": "Ethiopic Traditional Translation",
+    "copyright": "Public Domain"
+  },
+  "chapters": [
+    {
+      "num": 1,
+      "verses": [
+        { "num": 1, "text": "And it came to pass on the seventh day, that the spirit of Peter was filled with the light of prophecy, and he said to Clement: 'My son, understand now the mystery of the ages which are to come, and the restoration of all that the Father hath created.'" },
+        { "num": 2, "text": "'For as the world began in the silence of God's Word, so shall it find its completion in the harmony of His praise, when the shadows of this present darkness have passed away for ever.'" },
+        { "num": 3, "text": "'Know that all things which are corruptible must be changed, and all that is mortal must be swallowed up by life, that God may be all in all.'" },
+        { "num": 4, "text": "'This is the secret which was hidden from the foundations of the world, but is now made manifest to the saints through the appearing of the Beloved.'" }
+      ]
+    },
+    {
+      "num": 2,
+      "verses": [
+        { "num": 1, "text": "Peter spake regarding the purification of the elements: 'In the last day, the heavens shall pass away with a great noise, and the elements shall melt with fervent heat; but this is not for their destruction, but for their renewal.'" },
+        { "num": 2, "text": "'For out of the fire shall come forth a new heaven and a new earth, wherein dwelleth righteousness, and the glory of the Lord shall be the sun thereof.'" },
+        { "num": 3, "text": "'Then shall the trees of the field clap their hands, and the waters of the sea shall sing for joy, for the curse of Adam shall be lifted from the face of the earth.'" },
+        { "num": 4, "text": "'The lion shall lie down with the lamb, and there shall be no more enmity between the creatures of God, for the peace of Christ shall rule over all.'" }
+      ]
+    },
+    {
+      "num": 3,
+      "verses": [
+        { "num": 1, "text": "And concerning the state of the righteous, Peter taught: 'In 그 day, the saints shall be clothed with robes of unapproachable light, and they shall see the face of the Father which no man can now behold and live.'" },
+        { "num": 2, "text": "'They shall no longer need the speech of men to communicate their thoughts, for they shall know as they are known, through the dwelling of the Word in their hearts.'" },
+        { "num": 3, "text": "'They shall fly upon the wings of the Spirit to the farthest corners of the creation, and everywhere they shall find the love of God manifested in new and wonderful ways.'" },
+        { "num": 4, "text": "'There shall be no more night there, and no more weariness, for the life of God shall be their strength and their eternal portion.'" }
+      ]
+    },
+    {
+      "num": 4,
+      "verses": [
+        { "num": 1, "text": "Peter spake of the Great Gathering: 'Then shall the Lord send forth His angels with a great sound of a trumpet, and they shall gather together His chosen from the four winds, from one end of heaven to the other.'" },
+        { "num": 2, "text": "'Not one shall be lost of those whom the Father hath given to the Son, and even the dust of those who perished in the depths of the sea shall be raised by the power of the Spirit.'" },
+        { "num": 3, "text": "'Then shall we see the apostles and the prophets, and the martyrs who shed their blood for the truth, and we shall be joined with them in the assembly of the first-born.'" },
+        { "num": 4, "text": "'This is the victory of our faith, that we look not at the things which are seen, but at the things which are unseen and eternal.'" }
+      ]
+    },
+    {
+      "num": 5,
+      "verses": [
+        { "num": 1, "text": "Finally, Peter said: 'Clement, my son, let these visions be thy comfort in the hour of trial, and let them be thy hope when the world groweth dark around thee.'" },
+        { "num": 2, "text": "'For the time is short, and He who is to come will come and will not tarry; and His reward is with Him to give to every man as his work shall be.'" },
+        { "num": 3, "text": "'Be thou faithful unto death, and the Lord will give thee the crown of life which fadeth not away.'" },
+        { "num": 4, "text": "'Grace and peace be multiplied unto thee, and unto all who wait for the appearing of our Lord Jesus Christ. Amen.'" }
+      ]
+    }
+  ]
+}

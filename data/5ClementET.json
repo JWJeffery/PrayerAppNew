@@ -1,0 +1,55 @@
+{
+  "meta": {
+    "name": "The Epistles of Clement (Qalëmentos) - Book 5",
+    "id": "5CLEM_ET",
+    "version": "Ethiopic Traditional Translation",
+    "copyright": "Public Domain"
+  },
+  "chapters": [
+    {
+      "num": 1,
+      "verses": [
+        { "num": 1, "text": "And on the fifth day, Peter sat with Clement and said: 'My son, let us speak of the mystery of the Beloved, how He who is the Word of the Father came down to dwell among the children of men.'" },
+        { "num": 2, "text": "'He who established the heavens by His command took upon Himself the form of a servant, and He who clotheth the lilies of the field was wrapped in swaddling clothes.'" },
+        { "num": 3, "text": "'This is the great humility of our God, that He should visit His creation in such a lowly estate, to show us the path of meekness which leadeth to the kingdom.'" },
+        { "num": 4, "text": "'For the pride of Adam was the cause of our fall, but the humility of Christ is the cause of our rising again.'" }
+      ]
+    },
+    {
+      "num": 2,
+      "verses": [
+        { "num": 1, "text": "Peter spake regarding the dual nature of the Savior: 'Understand, Clement, that He is both the Son of God and the Son of Man; God in His power and Man in His suffering.'" },
+        { "num": 2, "text": "'As God, He commanded the winds and they obeyed Him; as Man, He wept at the grave of His friend.'" },
+        { "num": 3, "text": "'As God, He multiplied the bread for the multitude; as Man, He hungered in the desert.'" },
+        { "num": 4, "text": "'He united the earthly with the heavenly in His own person, that we might be joined to the Father through His flesh and His blood.'" }
+      ]
+    },
+    {
+      "num": 3,
+      "verses": [
+        { "num": 1, "text": "And regarding the disciples of the Lord, Peter said: 'The Lord chose not only the Twelve to be with Him, but He also appointed Seventy and Two others and sent them before His face.'" },
+        { "num": 2, "text": "'He gave them power to heal the sick and to cast out demons, and He commanded them to speak of the peace which passeth all understanding.'" },
+        { "num": 3, "text": "'For the harvest is great and the laborers are few, and the word of the kingdom must reach every corner of the earth.'" },
+        { "num": 4, "text": "'Be thou also a laborer in this vineyard, and let thy life be a testimony to the power of the Gospel.'" }
+      ]
+    },
+    {
+      "num": 4,
+      "verses": [
+        { "num": 1, "text": "Peter spake of the armor of the Spirit: 'Since we wrestle not against flesh and blood, but against the hidden powers of wickedness, let us put on the armor which the Lord hath provided.'" },
+        { "num": 2, "text": "'Let truth be thy belt and righteousness thy breastplate, and let thy feet be shod with the preparation of the gospel of peace.'" },
+        { "num": 3, "text": "'Above all, take the shield of faith, wherewith thou shalt be able to quench all the fiery darts of the wicked one.'" },
+        { "num": 4, "text": "'For he who is armed with the grace of God can stand against the whole world, and he shall not be moved.'" }
+      ]
+    },
+    {
+      "num": 5,
+      "verses": [
+        { "num": 1, "text": "Finally, Peter said: 'My son, keep these words in thy mind and do not let them depart from thy heart.'" },
+        { "num": 2, "text": "'For the time is coming when the love of many shall wax cold, and the knowledge of these mysteries shall be hidden from the eyes of the worldly.'" },
+        { "num": 3, "text": "'But to thee it is given to know the secrets of the kingdom, that thou mayest be a light in the midst of a crooked generation.'" },
+        { "num": 4, "text": "'And may the peace of God, which passeth all understanding, keep thy heart and mind through Christ Jesus. Amen.'" }
+      ]
+    }
+  ]
+}
