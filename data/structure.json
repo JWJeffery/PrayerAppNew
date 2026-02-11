@@ -89,24 +89,22 @@
       "data/saints.json (Deprecated - replaced by month-specific files) [Deleted]"
     ]
   },
-  "identified_issues": [
-    "Repeated/duplicated phrases in some prayer sections (e.g., litany loops) – review pending",
-    "Blank/empty sections under headers caused by null returns in getScriptureText() – fix in progress",
-    "Formatting: Inconsistent line breaks and missing separators in scripture rendering",
-    "Ref formatting: Case-sensitivity issues between seasonal JSONs and Bible IDs",
-    "Collect ID mismatches: Dynamic IDs in index.html don't match components.json (e.g., 'collect-january-25' vs 'collect-jan25-conversion-paul') – to be resolved with seasonal collect fields",
-    "Duplicated Marian Antiphon appearing multiple times in the render flow",
-    "Lesson rendering not handling BCP three-lesson structure flexibly; needs option for Gospel placement",
-    "Individual Prayers mode misalignment/skew due to body styles and borders"
-  ],
   "fix_plan": [
-    "Step 1: Consolidate Marian logic - Render once based on marianPos in index.html. [Pending]",
-    "Step 2: Refine Scripture Rendering - Ensure regex continues to strip verse numbers and replace line breaks for paragraph flow. [Pending]",
+    "Step 1: Consolidate Marian logic - Render once based on marianPos in index.html. [Completed]",
+    "Step 2: Refine Scripture Rendering - Ensure regex continues to strip verse numbers and replace line breaks for paragraph flow. [Completed]",
     "Step 3: Finalize Office Logic - Implement automatic time-based selection for Morning/Evening prayer. [Pending]",
     "Step 5: Update seasonal JSON keys to 'reading_ot', 'reading_epistle', 'reading_gospel' (remove per-office suffixes). [Completed for advent.json; pending for others]",
-    "Step 6: Add settings radio for Gospel placement ('morning', 'evening', 'both') and update renderOffice() logic accordingly. [Pending]",
+    "Step 6: Add settings radio for Gospel placement ('morning', 'evening', 'both') and update renderOffice() logic accordingly. [Completed]",
     "Step 7: Add back navigation buttons to Individual Prayers and Daily Office modes. [Completed]",
-    "Step 8: Center Individual Prayers content and remove skew/border. [Completed]"
+    "Step 8: Center Individual Prayers content and remove skew/border. [Completed]",
+    "Step 9: Repeated/duplicated phrases in some prayer sections (e.g., litany loops) – review pending [Pending]",
+    "Step 10: Blank/empty sections under headers caused by null returns in getScriptureText() – fix in progress [In Progress]",
+    "Step 11: Formatting: Inconsistent line breaks and missing separators in scripture rendering [Pending]",
+    "Step 12: Ref formatting: Case-sensitivity issues between seasonal JSONs and Bible IDs [Completed]",
+    "Step 13: Collect ID mismatches: Dynamic IDs in index.html don't match components.json (e.g., 'collect-january-25' vs 'collect-jan25-conversion-paul') – to be resolved with seasonal collect fields [Pending]",
+    "Step 14: Duplicated Marian Antiphon appearing multiple times in the render flow [Completed]",
+    "Step 15: Lesson rendering not handling BCP three-lesson structure flexibly; needs option for Gospel placement [Completed]",
+    "Step 16: Individual Prayers mode misalignment/skew due to body styles and borders [Completed]"
   ],
   "completed_fixes": [
     "Step 1: Verify all 155 Psalms in psalms.json are pulling correctly via getScriptureText(). [Completed]",
@@ -171,7 +169,11 @@
     {
       "lesson": "Step-by-step confirmation",
       "description": "Address reported issues fully before moving on. Confirm user readiness for next steps, especially code edits."
+    },
+    {
+      "lesson": "Lectionary shorthand and choice handling",
+      "description": "For BCP lectionary references listed as shorthands like 'Isaiah 58:1-9A(9B-12)', always use the full reading (e.g., Isaiah 58:1-12), not the short alternative. This notation indicates two options: the short version (58:1-9A) and the full (58:1-12). We will not use short alternatives. When the BCP offers a choice of texts (e.g., to avoid deuterocanonicals for evangelicals), select the first one listed. Prioritize full canonical readings for Anglo-Catholics and catholic traditions. If there's a question on a specific case, ask for clarification."
     }
   ],
-  "last_updated": "2026-02-08"
+  "last_updated": "2026-02-09"
 }
