@@ -1,0 +1,76 @@
+{
+  "meta": {
+    "name": "Sirate Tsion (The Order of Zion)",
+    "id": "SIR_TSION_ET",
+    "version": "Ethiopic Traditional Church Order",
+    "copyright": "Public Domain",
+    "description": "The first book of the Ethiopic New Testament Church Order, detailing the statutes of the Apostolic community."
+  },
+  "chapters": [
+    {
+      "num": 1,
+      "name": "The Statute of the Church",
+      "verses": [
+        { "num": 1, "text": "This is the order of the Church of Zion, the mother of all churches, as delivered by the Apostles of our Lord Jesus Christ." },
+        { "num": 2, "text": "Let the house of God be holy, and let no man enter it with a divided heart or with malice toward his brother." },
+        { "num": 3, "text": "The Bishop shall be the head, representing Christ; and the Priests shall be as the Apostles; and the Deacons as the angels who serve the throne." }
+      ]
+    },
+    {
+      "num": 2,
+      "name": "On the Ordination of the Clergy",
+      "verses": [
+        { "num": 1, "text": "When a man is to be made a Priest, let the Bishop lay hands upon him in the presence of the congregation, and let all the people say: 'He is worthy.'" },
+        { "num": 2, "text": "He shall be taught the mysteries of the Law and the Gospel, and he shall be a man who ruleth his own house with gravity and peace." }
+      ]
+    },
+    {
+      "num": 3,
+      "name": "Regarding the Holy Mysteries",
+      "verses": [
+        { "num": 1, "text": "The bread of the offering shall be made by clean hands, and the wine shall be of the fruit of the vine, unmixed with any defilement." },
+        { "num": 2, "text": "Let the Deacons guard the doors that no unbeliever may enter, and let the faithful stand in silence during the prayer of the Anaphora." }
+      ]
+    },
+    {
+      "num": 4,
+      "name": "The Conduct of the Deacons",
+      "verses": [
+        { "num": 1, "text": "The Deacon shall be the voice of the Bishop and the servant of the poor; he shall seek out those who are in affliction and report their needs." },
+        { "num": 2, "text": "He shall not be a lover of gain, nor a speaker of double words, but a pillar of truth in the house of the Lord." }
+      ]
+    },
+    {
+      "num": 5,
+      "name": "On the Service of the Widows",
+      "verses": [
+        { "num": 1, "text": "Let the widows be chosen who have lived a life of prayer and fasting, and let them be sustained by the charity of the faithful." },
+        { "num": 2, "text": "They shall pray for the peace of the world and for the stability of the Church, for their prayers are as incense before the Father." }
+      ]
+    },
+    {
+      "num": 6,
+      "name": "The Gathering of the Faithful",
+      "verses": [
+        { "num": 1, "text": "When the sun rises, let the faithful gather for the morning prayer; and at the time of the evening, let them return to give thanks for the day." },
+        { "num": 2, "text": "Let no man forsake the assembly on the Sabbath or on the Lord’s Day, for these are the days of rest and resurrection." }
+      ]
+    },
+    {
+      "num": 7,
+      "name": "Against Pride and Contention",
+      "verses": [
+        { "num": 1, "text": "If any man contend with his neighbor, let him not approach the altar until he be reconciled." },
+        { "num": 2, "text": "For God is love, and he who dwelleth in love dwelleth in God, and God in him." }
+      ]
+    },
+    {
+      "num": 8,
+      "name": "The Final Statute of Zion",
+      "verses": [
+        { "num": 1, "text": "These are the laws of Zion, established for the order of the saints. Keep them, and you shall find life in the kingdom of heaven." },
+        { "num": 2, "text": "Grace be with all who love our Lord Jesus Christ in sincerity. Amen." }
+      ]
+    }
+  ]
+}

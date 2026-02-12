@@ -1,0 +1,88 @@
+{
+  "meta": {
+    "name": "Guba’e Kana (The Council of Nicaea)",
+    "id": "NICAEA_ET",
+    "version": "Ethiopic Traditional Canonical Collection",
+    "copyright": "Public Domain",
+    "description": "The proceedings, canons, and faith of the 318 Holy Fathers at the Council of Nicaea."
+  },
+  "chapters": [
+    {
+      "num": 1,
+      "name": "The Confession of the 318 Holy Fathers",
+      "verses": [
+        { "num": 1, "text": "We believe in one God, the Father Almighty, Maker of all things visible and invisible." },
+        { "num": 2, "text": "And in one Lord Jesus Christ, the Son of God, begotten of the Father, the Only-begotten; that is, of the essence of the Father." },
+        { "num": 3, "text": "God of God, Light of Light, very God of very God, begotten, not made, being of one substance with the Father." },
+        { "num": 4, "text": "By whom all things were made, both in heaven and on earth; who for us men and for our salvation came down and was incarnate and was made man." },
+        { "num": 5, "text": "He suffered, and the third day He rose again, ascended into heaven; from thence He shall come to judge the quick and the dead." },
+        { "num": 6, "text": "And in the Holy Spirit, the Lord and Giver of Life, who proceedeth from the Father." }
+      ]
+    },
+    {
+      "num": 2,
+      "name": "On the Unity of the Godhead",
+      "verses": [
+        { "num": 1, "text": "The Father is the Begetter, the Son is the Begotten, and the Holy Spirit is the Proceeder; yet they are not three Gods, but one Power and one Essence." },
+        { "num": 2, "text": "As the sun, its light, and its heat are one sun, so is the Trinity one God in three Persons, undivided and inseparable." }
+      ]
+    },
+    {
+      "num": 3,
+      "name": "Canons Regarding the Clergy",
+      "verses": [
+        { "num": 1, "text": "No man who hath castrated himself shall be ordained to the priesthood; but if a man be made a eunuch by the violence of men or by disease, he may be received if he be worthy." },
+        { "num": 2, "text": "A Bishop shall not be ordained by fewer than three Bishops, and let the election be confirmed by the Metropolitan." },
+        { "num": 3, "text": "No Priest or Deacon shall move from his own church to another for the sake of gain; he who doth so shall be returned to his own place." }
+      ]
+    },
+    {
+      "num": 4,
+      "name": "On the Dignity of the Patriarchates",
+      "verses": [
+        { "num": 1, "text": "The ancient customs shall prevail: let the Bishop of Alexandria have authority over all the provinces of Egypt, Libya, and Pentapolis." },
+        { "num": 2, "text": "Likewise, let the Bishop of Rome and the Bishop of Antioch maintain their ancient honors in their respective regions." }
+      ]
+    },
+    {
+      "num": 5,
+      "name": "On the Lapsed and the Penitent",
+      "verses": [
+        { "num": 1, "text": "Those who denied the faith during the time of persecution shall be received back only after a long trial of repentance." },
+        { "num": 2, "text": "Let them remain as hearers for three years, and prostrate themselves for seven years, before they are admitted to the prayers of the faithful." }
+      ]
+    },
+    {
+      "num": 6,
+      "name": "Regarding Heretics",
+      "verses": [
+        { "num": 1, "text": "If any man say that there was a time when the Son was not, or that He was made of things that were not, let him be anathema." },
+        { "num": 2, "text": "The Church of God receiveth only the truth which was delivered by the Apostles and confirmed by the Holy Fathers." }
+      ]
+    },
+    {
+      "num": 7,
+      "name": "On the Celebration of Pascha",
+      "verses": [
+        { "num": 1, "text": "All the brethren in the East who formerly followed the custom of the Jews shall henceforth celebrate the most holy feast of Easter at the same time as the Romans and the Egyptians." },
+        { "num": 2, "text": "For it is unseemly that on the same day some should be fasting while others are feasting on the Resurrection." }
+      ]
+    },
+    {
+      "num": 8,
+      "name": "On Prayer Standing",
+      "verses": [
+        { "num": 1, "text": "Because there are some who kneel on the Lord's Day and during the days of Pentecost, the Holy Synod decrees that all shall offer their prayers standing." },
+        { "num": 2, "text": "For the standing posture is a sign of our rising with Christ and our hope in the kingdom to come." }
+      ]
+    },
+    {
+      "num": 9,
+      "name": "The Final Blessing of the Fathers",
+      "verses": [
+        { "num": 1, "text": "May the grace of our Lord Jesus Christ and the love of God the Father be with all who keep the faith of this Synod." },
+        { "num": 2, "text": "Unto the King of the Ages, immortal and invisible, be honor and glory for ever and ever. Amen." }
+      ]
+    }
+  ]
+}

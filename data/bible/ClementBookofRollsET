@@ -1,0 +1,34 @@
+{
+  "meta": {
+    "name": "Qalëmentos - The Book of the Rolls",
+    "id": "QALEMENTOS_ROLLS_ET",
+    "version": "Ethiopic Canonical New Testament",
+    "description": "The secret history revealed to Clement regarding the origins of the world and the heavenly priesthood."
+  },
+  "chapters": [
+    {
+      "num": 6,
+      "name": "The Mystery of the First Created",
+      "verses": [
+        { "num": 1, "text": "Peter said: 'Clement, my son, know that before the world was, the Word was with the Father, and by Him all things were established in the light.'" },
+        { "num": 2, "text": "When Adam was formed, he was given the priesthood of the spirit, and he offered pure prayer in the garden as a sweet-smelling savor." }
+      ]
+    },
+    {
+      "num": 7,
+      "name": "The Fall of the Watchers",
+      "verses": [
+        { "num": 1, "text": "And Peter revealed how the angels who were the guardians of the clouds looked upon the daughters of men and fell from their high estate." },
+        { "num": 2, "text": "They taught men the arts of war and the mining of metals, and the earth was filled with violence until the days of the flood." }
+      ]
+    },
+    {
+      "num": 8,
+      "name": "The Priesthood of Melchizedek",
+      "verses": [
+        { "num": 1, "text": "Behold the mystery of Melchizedek, who was without father or mother, for he was the keeper of the bones of Adam." },
+        { "num": 2, "text": "He served the Bread and the Wine in the mountain of the center of the earth, prefiguring the sacrifice of our Lord." }
+      ]
+    }
+  ]
+}

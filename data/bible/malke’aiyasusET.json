@@ -1,0 +1,85 @@
+{
+  "meta": {
+    "name": "Malke’a Iyasus (Hymn of Likeness to Jesus)",
+    "id": "MALKEA_IYASUS_ET",
+    "version": "Ethiopic Traditional Hymnody",
+    "copyright": "Public Domain",
+    "description": "The complete rhythmic poetic salutation to the members of the body of our Lord Jesus Christ, used in the Night Hours and Daily Office."
+  },
+  "hymn_structure": {
+    "meter": "Rhythmic Ge'ez Verse (Sene-Seliit)",
+    "use_case": "Daily Office / Night Vigil (Sa'atat)"
+  },
+  "stanzas": [
+    {
+      "num": 1,
+      "target": "Salutation to the Name",
+      "text": "Peace be unto Thy name, Iyasus (Jesus), which is the medicine of life and the light of the soul. O Thou who art the Word of the Father, write Thy name upon the tablets of my heart that I may never wander from Thy truth."
+    },
+    {
+      "num": 2,
+      "target": "Salutation to the Hair",
+      "text": "Peace be unto Thy hair, which is white like wool and pure like the snow of the mountains. O Eternal King, cover me with the mantle of Thy righteousness and keep me from the shame of sin."
+    },
+    {
+      "num": 3,
+      "target": "Salutation to the Head",
+      "text": "Peace be unto Thy head, which was crowned with thorns for our sake. O Thou who art the Head of the Church, may Thy crown of suffering become for me a crown of glory in the day of Thy coming."
+    },
+    {
+      "num": 4,
+      "target": "Salutation to the Face",
+      "text": "Peace be unto Thy face, which was spat upon by the lawless, but which shines brighter than the sun before the angels. O Lord, let the light of Thy countenance shine upon me and grant me Thy peace."
+    },
+    {
+      "num": 5,
+      "target": "Salutation to the Eyes",
+      "text": "Peace be unto Thine eyes, which wept over Jerusalem and saw the hidden depths of the heart. O Shepherd of the sheep, look upon my tears and lead me to the waters of rest."
+    },
+    {
+      "num": 6,
+      "target": "Salutation to the Ears",
+      "text": "Peace be unto Thine ears, which hear the petitions of the poor and the songs of the Seraphim. Hearken unto my cry in this hour of prayer and deliver me from the snares of the enemy."
+    },
+    {
+      "num": 7,
+      "target": "Salutation to the Lips",
+      "text": "Peace be unto Thy lips, which spoke the parables of life and breathed the Holy Spirit upon the Apostles. May my tongue be filled with Thy praise and my heart with the sweetness of Thy word."
+    },
+    {
+      "num": 8,
+      "target": "Salutation to the Neck",
+      "text": "Peace be unto Thy neck, which bore the yoke of the Cross for the salvation of the world. O Thou who art the Strength of Israel, break the yoke of sin from my neck and grant me the freedom of the sons of God."
+    },
+    {
+      "num": 9,
+      "target": "Salutation to the Shoulders",
+      "text": "Peace be unto Thy shoulders, upon which Thou didst carry the lost sheep. Carry me, O Lord, when I am weary, and bring me home to the fold of the righteous."
+    },
+    {
+      "num": 10,
+      "target": "Salutation to the Hands",
+      "text": "Peace be unto Thy hands, which were stretched out upon the Cross and pierced with nails. O Creator of all, by the wounds of Thy hands, heal the wounds of my soul."
+    },
+    {
+      "num": 11,
+      "target": "Salutation to the Side",
+      "text": "Peace be unto Thy side, which was opened by the spear, and from which flowed blood and water. O Fountain of Life, wash me in the blood of the Lamb and cleanse me from all unrighteousness."
+    },
+    {
+      "num": 12,
+      "target": "Salutation to the Knees",
+      "text": "Peace be unto Thy knees, which bowed in the Garden of Gethsemane under the weight of our sins. Grant me the spirit of prayer, O Lord, that I may bow before Thee in spirit and in truth."
+    },
+    {
+      "num": 13,
+      "target": "Salutation to the Feet",
+      "text": "Peace be unto Thy feet, which were nailed to the wood and which walked upon the waves of the sea. Guide my feet in the narrow way that leads to the kingdom of heaven."
+    },
+    {
+      "num": 14,
+      "target": "Salutation to the Resurrection",
+      "text": "Peace be unto Thy glorious Resurrection, by which Thou hast trampled down death and opened the gates of Paradise. O Victorious King, raise me up with Thee at the last day. Amen."
+    }
+  ]
+}

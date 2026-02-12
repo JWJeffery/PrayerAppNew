@@ -1,0 +1,68 @@
+{
+  "meta": {
+    "name": "Gitsiw (The Admonitions)",
+    "id": "GITSIW_ET",
+    "version": "Ethiopic Traditional Church Order",
+    "copyright": "Public Domain",
+    "description": "The third book of the Ethiopic New Testament Church Order, containing warnings and corrections for the faithful."
+  },
+  "chapters": [
+    {
+      "num": 1,
+      "name": "Admonition to the Priests",
+      "verses": [
+        { "num": 1, "text": "Listen, O Priests, who stand before the altar of the Most High; take heed to your ways, lest you offer the sacrifice with unwashed souls." },
+        { "num": 2, "text": "If a Priest be found in drunkenness or in the lusts of the world, let him be rebuked; and if he repent not, let him be cast out from the sanctuary." },
+        { "num": 3, "text": "For the fire of the altar is holy, and it shall consume those who approach it with a profane heart." }
+      ]
+    },
+    {
+      "num": 2,
+      "name": "Regarding the Purity of the Altar",
+      "verses": [
+        { "num": 1, "text": "Let no man touch the vessels of the sanctuary who is not clean of body and spirit." },
+        { "num": 2, "text": "If any man bring an offering to the church, let him do so with a joyful heart; but if he bring it out of pride or for the praise of men, it shall not be accepted before God." }
+      ]
+    },
+    {
+      "num": 3,
+      "name": "Admonition Against Hypocrisy",
+      "verses": [
+        { "num": 1, "text": "Woe to him who weareth the garment of a monk but hath the heart of a wolf; for he deceiveth men, but he cannot deceive the Almighty." },
+        { "num": 2, "text": "Let your prayer be in secret, and your fasting be hidden, that your Father who seeth in secret may reward you openly." }
+      ]
+    },
+    {
+      "num": 4,
+      "name": "On the Correction of Brothers",
+      "verses": [
+        { "num": 1, "text": "If thy brother trespass against thee, admonish him with gentleness; and if he hear thee, thou hast gained a soul." },
+        { "num": 2, "text": "But if he remaineth in his stubbornness, let the elders judge him, that the root of bitterness may not spread among the flock." }
+      ]
+    },
+    {
+      "num": 5,
+      "name": "Against the Love of Money",
+      "verses": [
+        { "num": 1, "text": "The love of silver is the root of all destruction in the Church; it blindeth the eyes of the wise and perverteth the judgment of the righteous." },
+        { "num": 2, "text": "Let the clergy be content with what is sufficient for their bread and their raiment, seeking first the treasures of the kingdom." }
+      ]
+    },
+    {
+      "num": 6,
+      "name": "On the Fear of the Lord",
+      "verses": [
+        { "num": 1, "text": "The beginning of wisdom is the fear of God. Walk in fear all the days of your life, for you know not the hour when the Bridegroom cometh." },
+        { "num": 2, "text": "Blessed is that servant whom the Lord, when He cometh, shall find watching." }
+      ]
+    },
+    {
+      "num": 7,
+      "name": "Final Warning of the Apostles",
+      "verses": [
+        { "num": 1, "text": "These are the admonitions delivered unto you, that you may be found faultless in the day of judgment." },
+        { "num": 2, "text": "He that hath ears to hear, let him hear what the Spirit saith unto the churches. Amen." }
+      ]
+    }
+  ]
+}

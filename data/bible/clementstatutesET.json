@@ -1,0 +1,26 @@
+{
+  "meta": {
+    "name": "Qalëmentos - The Statutes",
+    "id": "QALEMENTOS_STATUTES_ET",
+    "version": "Ethiopic Canonical New Testament",
+    "description": "The specific apostolic decrees regarding the order of the bishops and the celebration of the Eucharist."
+  },
+  "chapters": [
+    {
+      "num": 9,
+      "name": "The Election of the Seven",
+      "verses": [
+        { "num": 1, "text": "When the number of the faithful increased, the Apostles chose seven men of good report to serve the tables of the widows." },
+        { "num": 2, "text": "This is the order of the diaconate, which shall endure until the Lord returns in His glory." }
+      ]
+    },
+    {
+      "num": 10,
+      "name": "The Great Prayer of the Night",
+      "verses": [
+        { "num": 1, "text": "At the hour of midnight, let the faithful arise and wash their hands and pray, for at this hour the heavenly hosts give praise." },
+        { "num": 2, "text": "If thou art in the company of thy wife, pray together; for you are one flesh and one spirit in the Lord." }
+      ]
+    }
+  ]
+}

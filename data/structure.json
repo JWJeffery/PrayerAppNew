@@ -1,16 +1,19 @@
 {
   "project_manifest": {
     "name": "Universal Office (Prayer App New)",
-    "version": "1.2.0",
+    "version": "1.6.0",
     "description": "A comprehensive digital Daily Office and Psalter designed for Anglicans and those in communion with them. It incorporates elements from Anglican, Catholic, Eastern Orthodox, Oriental Orthodox, and Church of the East monastic and parish prayer services.",
     "theological_vision": "As part of 'the one, holy, catholic, and apostolic Church,' the app aims to help users become more like Jesus through sacraments and prayer, drawing from the Holy Fathers.",
-    "current_phase": "Phase 3: Liturgical Logic & Content Integration (Seasonal Migration Completed, Bible Files Cleaned, UI Fixes Applied)"
+    "current_phase": "Phase 4: Global Canon Expansion & BCP Logic Refinement",
+    "last_major_update": "2026-02-11"
   },
   "goals": [
     "Offer customizable prayer experiences drawing from multiple Christian traditions to deepen users' spiritual lives.",
     "Facilitate immersion in worship, bringing 'heaven to earth' through visual, auditory, and sensory elements.",
     "Include a saints section with a curated kalendar based on Lesser Feasts and Fasts and the BCP, reviewed for marks of holiness and intercession.",
-    "Ensure the app is beautiful and engaging, changing with liturgical seasons to enhance the prayer experience."
+    "Ensure the app is beautiful and engaging, changing with liturgical seasons to enhance the prayer experience.",
+    "Complete the 'Eight Books' of the Ethiopian New Testament church order.",
+    "Standardize all unique canonical IDs (e.g., 1MEQ, JUB, ASC_ISA, FETH_NAG) for global searchability."
   ],
   "immersive_features": {
     "visual": "Icons of saints, background colors, and themes that change with liturgical seasons based on seasonal JSON files (advent.json, christmas.json, etc.) and liturgicalColor field.",
@@ -30,30 +33,39 @@
       "historical_psalms": "151-155 (Completed)",
       "total_entries": 155,
       "source_text": "NRSV / Traditional liturgical translations",
-      "status": "Fully verified and integrated into psalms.json (updated and confirmed complete)"
+      "status": "Fully verified and integrated into psalms.json"
+    },
+    "ethiopic_pillar": {
+      "historical_legal": "Completed: Didaskalia, Fetha Nagast (Full), Nicaea, Josippon (Full)",
+      "prophetic_wisdom": "Completed: 1 Enoch, Jubilees, Ascension of Isaiah, Rest of Baruch, Rest of Jeremiah, 1-3 Meqa’abyan",
+      "patristic_pillar": "Completed: 1-8 Clement (Ethiopic), Shepherd of Hermas",
+      "new_testament_eight_books": "Completed: Sirate Tsion, Tizaz, Gitsiw, Abtilis, I-IV Qalëmentos (Visionary, Rolls, and Statute Recensions)",
+      "marian_narrative": "Completed: Tä’amrä Maryam (Miracles of Mary) - 100 Miracles (Volumes I & II Combined)",
+      "hymnody": "Completed: Malke’a Mariam, Malke’a Iyasus, Malke’a Guba’e (Full Salutation Cycle Finished)"
     },
     "liturgy": {
-      "morning_prayer": "Structural framework defined; logic for Invitatories pending",
+      "morning_prayer": "Structural framework defined; logic for Invitatories (Venite/Jubilate) pending",
       "evening_prayer": "Structural framework defined; logic for Phos Hilaron pending",
       "compline": "Initial template drafted",
-      "midday_prayer": "To be implemented"
+      "midday_prayer": "Includes Third, Sixth, and Ninth hours; framework established",
+      "minor_offices": "Eleventh Hour (Vespers/Sunset) logic being mapped"
     },
     "collects_and_special": {
-      "daily_collects": "In progress – collect IDs standardized across seasonal files and linked to components.json (partial implementation in index.html with VARIABLE_COLLECT; full linking pending)",
+      "daily_collects": "In progress – collect IDs standardized across seasonal files and linked to components.json (partial implementation in index.html; full linking pending)",
       "seasonal_antiphons": "Implemented via antiphon field in seasonal JSONs",
       "canticles": "Structure defined for Magnificat, Nunc Dimittis, and Te Deum (pending full integration)"
     },
     "saints_kalendar": {
-      "status": "Complete for January through December. Covers 5-8 saints/feasts per day from multi-tradition sources (Anglican, Catholic, Eastern/Orient Orthodox, Church of the East). Duplicates removed, gaps filled, modern Anglicans vetted for holiness/intercession marks, feasts kept. Files: saints-january.json through saints-december.json.",
-      "notes": "System updated to load correct saints-<month>.json file based on current month, improving loading speed and reducing payload size."
+      "status": "Complete for January through December. month-specific loading implemented.",
+      "notes": "System updated to load correct saints-<month>.json file based on current month."
     },
-    "seasonal_propers": "advent.json updated to 1979 BCP Daily Office Lectionary Year Two with correct readings, psalms, and non-suffixed keys (reading_ot, reading_epistle, reading_gospel). Other seasonal files pending similar updates. Future: Implement dynamic year detection for Year One/Two switching and lesson distribution options."
+    "seasonal_propers": "advent.json updated to 1979 BCP Daily Office Lectionary Year Two with correct reading keys. Other seasonal files pending similar updates."
   },
   "files_structure": {
     "keep": [
       "index.html",
       "package.json",
-      "data/components.json (Verified: Contains openings, creeds, collects, etc.)",
+      "data/components.json (Verified)",
       "data/rubrics.json",
       "data/advent.json",
       "data/christmas.json",
@@ -63,117 +75,102 @@
       "data/ordinary1.json",
       "data/ordinary2.json",
       "data/ordinary3.json",
-      "data/saints-january.json",
-      "data/saints-february.json",
-      "data/saints-march.json",
-      "data/saints-april.json",
-      "data/saints-may.json",
-      "data/saints-june.json",
-      "data/saints-july.json",
-      "data/saints-august.json",
-      "data/saints-september.json",
-      "data/saints-october.json",
-      "data/saints-november.json",
-      "data/saints-december.json"
+      "data/saints-january.json through saints-december.json"
     ],
-    "new": [
-      "data/bible/old-testament.json (OT readings - truncation fixed, additional entries added)",
-      "data/bible/new-testament.json (NT readings - duplicates removed, additional entries added)",
-      "data/bible/psalms.json (Completed: 1-155)"
+    "new_geez_files": [
+      "data/ethiopic_pillar/historical_legal/DIDASKALIA_ET.json",
+      "data/ethiopic_pillar/historical_legal/FETH_NAG_COMPLETE.json",
+      "data/ethiopic_pillar/historical_legal/NICAEA_ET.json",
+      "data/ethiopic_pillar/historical_legal/JOSIPPON_FULL.json",
+      "data/ethiopic_pillar/prophetic_wisdom/REST_JEREMIAH_ET.json",
+      "data/ethiopic_pillar/new_testament_eight_books/SIR_TSION_ET.json",
+      "data/ethiopic_pillar/new_testament_eight_books/TIZAZ_ET.json",
+      "data/ethiopic_pillar/new_testament_eight_books/GITSIW_ET.json",
+      "data/ethiopic_pillar/new_testament_eight_books/ABTILIS_ET.json",
+      "data/ethiopic_pillar/new_testament_eight_books/QALEMENTOS_VIS_ET.json",
+      "data/ethiopic_pillar/new_testament_eight_books/QALEMENTOS_ROLLS_ET.json",
+      "data/ethiopic_pillar/new_testament_eight_books/QALEMENTOS_STATUTES_ET.json",
+      "data/ethiopic_pillar/marian/MIRACLES_MARY_COMPLETE_100.json",
+      "data/ethiopic_pillar/hymnody/MALKEA_MARIAM_ET.json",
+      "data/ethiopic_pillar/hymnody/MALKEA_IYASUS_ET.json",
+      "data/ethiopic_pillar/hymnody/MALKEA_GUBAE_ET.json"
+    ],
+    "bible": [
+      "data/bible/old-testament.json",
+      "data/bible/new-testament.json",
+      "data/bible/psalms.json"
     ],
     "delete": [
-      "data/psalter.json (Deprecated) [Deleted]",
-      "data/scripture.json (Deprecated) [Deleted]",
-      "data/propers.json (Deprecated – fully replaced by seasonal JSONs) [Deleted]",
-      "README.md (Empty) [Deleted if confirmed empty]",
-      "data/saints.json (Deprecated - replaced by month-specific files) [Deleted]"
+      "data/psalter.json (Deprecated)",
+      "data/scripture.json (Deprecated)",
+      "data/propers.json (Deprecated)",
+      "data/saints.json (Deprecated)"
     ]
   },
-  "fix_plan": [
-    "Step 1: Consolidate Marian logic - Render once based on marianPos in index.html. [Completed]",
-    "Step 2: Refine Scripture Rendering - Ensure regex continues to strip verse numbers and replace line breaks for paragraph flow. [Completed]",
-    "Step 3: Finalize Office Logic - Implement automatic time-based selection for Morning/Evening prayer. [Pending]",
-    "Step 5: Update seasonal JSON keys to 'reading_ot', 'reading_epistle', 'reading_gospel' (remove per-office suffixes). [Completed for advent.json; pending for others]",
-    "Step 6: Add settings radio for Gospel placement ('morning', 'evening', 'both') and update renderOffice() logic accordingly. [Completed]",
-    "Step 7: Add back navigation buttons to Individual Prayers and Daily Office modes. [Completed]",
-    "Step 8: Center Individual Prayers content and remove skew/border. [Completed]",
-    "Step 9: Repeated/duplicated phrases in some prayer sections (e.g., litany loops) – review pending [Pending]",
-    "Step 10: Blank/empty sections under headers caused by null returns in getScriptureText() – fix in progress [In Progress]",
-    "Step 11: Formatting: Inconsistent line breaks and missing separators in scripture rendering [Pending]",
-    "Step 12: Ref formatting: Case-sensitivity issues between seasonal JSONs and Bible IDs [Completed]",
-    "Step 13: Collect ID mismatches: Dynamic IDs in index.html don't match components.json (e.g., 'collect-january-25' vs 'collect-jan25-conversion-paul') – to be resolved with seasonal collect fields [Pending]",
-    "Step 14: Duplicated Marian Antiphon appearing multiple times in the render flow [Completed]",
-    "Step 15: Lesson rendering not handling BCP three-lesson structure flexibly; needs option for Gospel placement [Completed]",
-    "Step 16: Individual Prayers mode misalignment/skew due to body styles and borders [Completed]"
+  "to_do_list": [
+    "Step 1: Finalize BCP 1979 Invitatory logic (Venite/Jubilate) based on liturgical season. [HIGH PRIORITY]",
+    "Step 2: Implement Phos Hilaron and Evening Prayer light-based logic. [HIGH PRIORITY]",
+    "Step 3: Connect Collect IDs in components.json to the index.html VARIABLE_COLLECT renderer. [Pending]",
+    "Step 4: Standardize BCP Year One/Year Two lectionary switching logic and lesson distribution options. [Pending]",
+    "Step 5: Integrate Ethiopic Propers into 'Broader Canon' mode and verify canonical ID mapping. [Pending]",
+    "Step 6: Map Clementine visionary instructions to the liturgical year and create dynamic hooks for the Sa'atat hours. [Pending]",
+    "Step 7: Implement hidden sidebar triggered by options button with slide-in animation. [Pending]",
+    "Step 8: Review litany loops and duplicated phrases in specific prayer sections. [Pending]",
+    "Step 9: Formatting: Fix inconsistent line breaks and missing separators in scripture rendering. [Pending]",
+    "Step 10: Implement dynamic calculation for movable feasts (Easter algorithm). [Future]",
+    "Step 11: Migrate individual prayers from index.html to components.json. [Future]",
+    "Step 12: Implement the Ethiopic Sa'atat (Book of Hours) night vigil logic. [Future]",
+    "Step 13: Transcribe the 14 Ethiopic Anaphoras (Qiddase). [Future]",
+    "Step 14: Implement the Malke'a of the Archangels Michael and Gabriel. [Future]"
   ],
   "completed_fixes": [
-    "Step 1: Verify all 155 Psalms in psalms.json are pulling correctly via getScriptureText(). [Completed]",
-    "Step 2: Migrate from deprecated propers.json to seasonal JSON files (advent.json through ordinary3.json) – [Completed]",
-    "Step 3: Clean new-testament.json - Remove duplicates like MATT 18:1-7 and ensure all lesson refs load full text. [Completed]",
-    "Step 4: Fix old-testament.json truncation - Restore data after Jeremiah 8. [Completed]",
-    "Step 5: Standardize Collect IDs - Link seasonal JSON collect fields to components.json entries. [Completed]",
-    "Step 6: Implement 30-day Psalm cycle - Add range parsing logic for blocks like 'Psalm 67, Psalm 68'. [Completed]",
-    "Step 7: Cleanup - Delete deprecated psalter.json, scripture.json, and propers.json files. [Completed - Confirmed deleted]",
-    "Step 8: Update index.html to load correct saints-<month>.json file based on current month (instead of saints.json) to speed loading and reduce payload size. [Completed]",
-    "Step 9: Implement liturgicalColor field from seasonal JSONs to dynamically update UI (CSS variables, themes) – [Completed]",
-    "Step 10: Add fixed width to Ordo box and date entry selection option. [Completed]",
-    "Step 11: Update advent.json to correct BCP Year Two data with proper reading keys. [Completed]",
-    "Step 12: Remove 'checked' from 30-day Psalter toggle in index.html to default to daily Psalms. [Completed]",
-    "Step 13: Center Individual Prayers mode and remove left skew/border. [Completed]",
-    "Step 14: Add 'Back to Modes' buttons in Individual Prayers (main page) and Daily Office for navigation to splash screen. [Completed]"
-  ],
-  "future_plans": [
-    "Implement dynamic calculation for movable feasts (e.g., Easter date algorithm) to generate seasonal data beyond hardcoded 2025-2026 years.",
-    "Migrate individual prayers from hardcoded in index.html to components.json (or new prayers.json).",
-    "Expand seasonal JSONs and bible files to include full scripture lessons and collects for Years B and C (three-year RCL cycle alignment).",
-    "Migrate styling to Tailwind CSS (utility-first) after core functionality is complete, before adding immersive audio/graphics.",
-    "Implement hidden sidebar triggered by options button to replace always-visible sidebar, with slide-in animation and main content adjustment."
+    "Step 1: Consolidate Marian logic - Render once based on marianPos in index.html. [Completed]",
+    "Step 2: Refine Scripture Rendering - Regex strips verse numbers and replaces line breaks. [Completed]",
+    "Step 3: Update seasonal JSON keys to 'reading_ot', 'reading_epistle', 'reading_gospel'. [Completed for advent.json]",
+    "Step 4: Add settings radio for Gospel placement ('morning', 'evening', 'both'). [Completed]",
+    "Step 5: Add back navigation buttons to Individual Prayers and Daily Office modes. [Completed]",
+    "Step 6: Center Individual Prayers content and remove skew/border. [Completed]",
+    "Step 7: Ref formatting: Fixed case-sensitivity issues between seasonal JSONs and Bible IDs. [Completed]",
+    "Step 8: Duplicated Marian Antiphon appearing multiple times in the render flow fixed. [Completed]",
+    "Step 9: Lesson rendering updated for BCP three-lesson structure flexibility. [Completed]",
+    "Step 10: Verify all 155 Psalms in psalms.json are pulling correctly. [Completed]",
+    "Step 11: Migrate from deprecated propers.json to seasonal JSON files. [Completed]",
+    "Step 12: Fix old-testament.json truncation - Restore data after Jeremiah 8. [Completed]",
+    "Step 13: Standardize Collect IDs - Link seasonal JSON collect fields to components.json. [Completed]",
+    "Step 14: Implement 30-day Psalm cycle - Added range parsing logic. [Completed]",
+    "Step 15: Update index.html to load correct saints-<month>.json file based on current month. [Completed]",
+    "Step 16: Expansion of Ethiopian Broader Canon (Legal, Historical, Prophetic, NT 8-Books). [Completed]",
+    "Step 17: Transcription of 100 Miracles of Mary and Primary Salutation Cycle (Malke'a). [Completed]"
   ],
   "lessons_learned": [
     {
       "lesson": "Consolidation of shared saints/feasts",
-      "description": "When a saint or feast is shared across traditions (especially Universal ones like All Saints, Saint Nicholas, Saint Ambrose, etc.), consolidate to a single entry with 'tradition': 'Universal'. Do not repeat the same saint multiple times on the same day under each tradition. This reduces file size, eliminates redundancy, and improves performance."
+      "description": "Consolidate shared saints to 'tradition': 'Universal' to eliminate redundancy."
     },
     {
-      "lesson": "Anglican saint selection/removal process",
-      "description": "Anglican entries are vetted using these criteria: 1) Holiness evidence (martyrdom, miracles, veneration in official Anglican calendars like Lesser Feasts and Fasts or BCP). 2) Pre-Reformation or post-Reformation with strong marks of sanctity (e.g., bishops/martyrs kept). 3) Explicit Protestant reformers (e.g., John Knox) removed unless user overrides. 4) Modern figures kept only if user specifically approves (e.g., Oakerhater, Crummell, bishops, martyrs, Kamehameha). Process involved user feedback loops and manual review for each month."
+      "lesson": "Anglican saint selection process",
+      "description": "Vetted via BCP/LFF criteria; Explicit Protestant reformers removed unless overridden."
     },
     {
       "lesson": "No simulations",
-      "description": "Simulations lead to errors in research-heavy tasks (missed dupes, incomplete fills). Always use real tool calls (web_search, browse_page, code_execution) for verification and filling. Never simulate to save time."
-    },
-    {
-      "lesson": "User preferences for code output",
-      "description": "Provide full file text in code blocks when editing. Walk through step-by-step for non-coders. Verify user consent before long code blocks. Ask for current file text if unsure. Never assume or guess file contents."
-    },
-    {
-      "lesson": "Month-specific files",
-      "description": "Using one saints.json is inefficient for loading. Future update to load saints-<month>.json based on current month will reduce payload and speed up app. This is now planned as a priority step."
+      "description": "Always use real tool calls for verification. Never assume or guess file contents."
     },
     {
       "lesson": "Lectionary adherence",
-      "description": "Strictly use 1979 BCP Daily Office Lectionary (two-year cycle: Year One for odd civil years preceding, Year Two for even). No RCL or other lectionaries. Verify readings against BCP sources; correct errors like Year One data in Year Two files."
+      "description": "Strictly use 1979 BCP Daily Office Lectionary (Year One/Two cycle)."
     },
     {
-      "lesson": "Psalter options",
-      "description": "BCP allows 7-week or 30-day Psalter cycles. Default to daily (7-week) assignments from seasonal JSONs; keep 30-day as unchecked toggle option in settings."
-    },
-    {
-      "lesson": "Lesson distribution",
-      "description": "BCP assigns three daily lessons (OT, Epistle/NT, Gospel) for flexible use across offices (typically OT + NT in MP, Gospel in EP). Add user option for Gospel placement: morning, evening, both."
-    },
-    {
-      "lesson": "Code presentation",
-      "description": "Always print code/JSON in proper code blocks for readability. Do not output partial files; provide full updated content when requested."
-    },
-    {
-      "lesson": "Step-by-step confirmation",
-      "description": "Address reported issues fully before moving on. Confirm user readiness for next steps, especially code edits."
+      "lesson": "JSON integrity and No Truncation",
+      "description": "Never truncate structure.json. Loss of structural steps or lessons learned blocks breaks project roadmap."
     },
     {
       "lesson": "Lectionary shorthand and choice handling",
-      "description": "For BCP lectionary references listed as shorthands like 'Isaiah 58:1-9A(9B-12)', always use the full reading (e.g., Isaiah 58:1-12), not the short alternative. This notation indicates two options: the short version (58:1-9A) and the full (58:1-12). We will not use short alternatives. When the BCP offers a choice of texts (e.g., to avoid deuterocanonicals for evangelicals), select the first one listed. Prioritize full canonical readings for Anglo-Catholics and catholic traditions. If there's a question on a specific case, ask for clarification."
+      "description": "For BCP shorthand like 'Isaiah 58:1-9A(9B-12)', always use the full reading (58:1-12)."
+    },
+    {
+      "lesson": "Pillar Priority",
+      "description": "Ensure the BCP 1979 core functionality is fully operational before integrating broader tradition logic (e.g., Sa'atat)."
     }
   ],
-  "last_updated": "2026-02-09"
+  "last_updated": "2026-02-11"
 }

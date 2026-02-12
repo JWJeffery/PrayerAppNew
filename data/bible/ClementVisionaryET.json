@@ -1,0 +1,52 @@
+{
+  "meta": {
+    "name": "Qalëmentos (The Visionary Revelation)",
+    "id": "QALEMENTOS_VIS_ET",
+    "version": "Ethiopic Canonical New Testament",
+    "copyright": "Public Domain",
+    "description": "The visionary conclusion to the Eight Books of the New Testament, containing the revelations of Peter to Clement."
+  },
+  "chapters": [
+    {
+      "num": 1,
+      "name": "The Gathering on the Mount of Olives",
+      "verses": [
+        { "num": 1, "text": "After the resurrection of our Lord, Peter took Clement aside upon the Mount of Olives, that he might reveal to him the things which were hidden from the foundation of the world." },
+        { "num": 2, "text": "Clement asked: 'My father, tell me of the end of the age, and of the signs which shall precede the coming of the Son of Glory.'" },
+        { "num": 3, "text": "Peter answered: 'Listen, my son, for these words are for the faithful who shall endure unto the end, when the love of many shall wax cold.'" }
+      ]
+    },
+    {
+      "num": 2,
+      "name": "The Mystery of the Seven Heavens",
+      "verses": [
+        { "num": 1, "text": "The Lord showed us the seven heavens, each with its own glory and its own angels who cry: \"Holy, Holy, Holy\" without ceasing." },
+        { "num": 2, "text": "In the third heaven are the storehouses of the dew and the rain; and in the sixth are the spirits of the righteous who wait for the day of restoration." }
+      ]
+    },
+    {
+      "num": 3,
+      "name": "The Rise of the Lawless One",
+      "verses": [
+        { "num": 1, "text": "In the last days, there shall arise one who speaks great things against the Most High, and he shall deceive many by the wonders of his hands." },
+        { "num": 2, "text": "He shall say: \"I am the Christ,\" but he is a liar and the son of perdition. Let the saints flee to the mountains when they see the abomination standing in the holy place." }
+      ]
+    },
+    {
+      "num": 4,
+      "name": "The Sign of the Son of Man",
+      "verses": [
+        { "num": 1, "text": "Then shall appear the sign of the Cross in the heavens, and it shall shine brighter than the sun from the east unto the west." },
+        { "num": 2, "text": "The Trumpet shall sound, and the dust of the earth shall give up the dead; and we who are alive shall be caught up to meet the Lord in the air." }
+      ]
+    },
+    {
+      "num": 5,
+      "name": "The Admonition to Clement",
+      "verses": [
+        { "num": 1, "text": "Write these things in a book, Clement, and seal them up for the generations to come, for the time is at hand." },
+        { "num": 2, "text": "Blessed is he who readeth and they who keep the words of this prophecy, for their names are written in the Book of Life." }
+      ]
+    }
+  ]
+}

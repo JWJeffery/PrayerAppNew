@@ -1,0 +1,67 @@
+{
+  "meta": {
+    "name": "Abtilis (The Sentences of the Apostles)",
+    "id": "ABTILIS_ET",
+    "version": "Ethiopic Traditional Church Order",
+    "copyright": "Public Domain",
+    "description": "The fourth book of the Ethiopic New Testament Church Order, detailing apostolic sentences and disciplinary decrees."
+  },
+  "chapters": [
+    {
+      "num": 1,
+      "name": "The Authority of the Sentences",
+      "verses": [
+        { "num": 1, "text": "These are the sentences established by the holy Apostles in the city of Jerusalem, that the flock of Christ may be kept from the tares of the enemy." },
+        { "num": 2, "text": "Let no man think these decrees are light; for what is bound on earth by the mouth of the Church is bound in the heavens." }
+      ]
+    },
+    {
+      "num": 2,
+      "name": "On the Discipline of the Bishop",
+      "verses": [
+        { "num": 1, "text": "If a Bishop be found in a matter of shame, or if he pervert the justice of the poor, he shall be judged by a council of his peers." },
+        { "num": 2, "text": "He shall be suspended from the mysteries for a season of forty days; and if he repent not, let him be deposed from his throne." }
+      ]
+    },
+    {
+      "num": 3,
+      "name": "Regarding Theft and Sacrilege",
+      "verses": [
+        { "num": 1, "text": "If any man steal that which belongeth to the Church, whether it be gold, silver, or raiment, he shall restore it sevenfold and do penance for a year." },
+        { "num": 2, "text": "He shall be barred from the bread of the offering until he hath shown the fruits of true repentance." }
+      ]
+    },
+    {
+      "num": 4,
+      "name": "On False Accusations",
+      "verses": [
+        { "num": 1, "text": "If a man bear false witness against a Priest, he shall suffer the same penalty which the Priest would have suffered if found guilty." },
+        { "num": 2, "text": "Let the mouth that speaketh lies be silenced by the fasting of forty days and nights." }
+      ]
+    },
+    {
+      "num": 5,
+      "name": "The Sentence for Sorcery",
+      "verses": [
+        { "num": 1, "text": "Whoever consulteth a diviner or a maker of charms shall be separated from the congregation for seven years." },
+        { "num": 2, "text": "They have forsaken the light of Christ for the darkness of the demons; let them not approach the holy things until their time be fulfilled." }
+      ]
+    },
+    {
+      "num": 6,
+      "name": "On the Neglect of the Sabbath",
+      "verses": [
+        { "num": 1, "text": "If a man willfully neglect the gathering on the Lord's Day for three consecutive weeks, let him be rebuked by the Deacon." },
+        { "num": 2, "text": "If he persists in his negligence, he shall be counted as one who is lukewarm and separated for a season." }
+      ]
+    },
+    {
+      "num": 7,
+      "name": "The Finality of the Apostolic Word",
+      "verses": [
+        { "num": 1, "text": "These sentences are firm and shall not be moved. Let the Church walk in the narrow way, that she may enter the gate of life." },
+        { "num": 2, "text": "The peace of our Lord Jesus Christ be with you all. Amen." }
+      ]
+    }
+  ]
+}

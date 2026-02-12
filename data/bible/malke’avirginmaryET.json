@@ -1,0 +1,85 @@
+{
+  "meta": {
+    "name": "Malke’a Mariam (Hymn of Likeness to the Virgin)",
+    "id": "MALKEA_MARIAM_ET",
+    "version": "Ethiopic Traditional Hymnody",
+    "copyright": "Public Domain",
+    "description": "A rhythmic poetic salutation to the members of the body of the Virgin Mary, used in the Sa'atat and Daily Office."
+  },
+  "hymn_structure": {
+    "meter": "Rhythmic Ge'ez Verse (Sene-Seliit)",
+    "use_case": "Daily Office / Commemoration of the Virgin"
+  },
+  "stanzas": [
+    {
+      "num": 1,
+      "target": "Salutation to the Name",
+      "text": "Peace be unto thy name, Mary, which is sweeter than the scent of the field and the blossoms of the spring. O thou who art the pride of the house of David, be thou a fortress for my soul against the arrows of the enemy."
+    },
+    {
+      "num": 2,
+      "target": "Salutation to the Hair",
+      "text": "Peace be unto thy hair, which is dark as the clouds of the mountains and more fragrant than the incense of the sanctuary. O Mother of the Light, cover me with the shadow of thy grace."
+    },
+    {
+      "num": 3,
+      "target": "Salutation to the Head",
+      "text": "Peace be unto thy head, which is the throne of wisdom and the crown of the daughters of Zion. O thou who didst carry the King of Glory, may thy prayers be a crown of life upon my head."
+    },
+    {
+      "num": 4,
+      "target": "Salutation to the Face",
+      "text": "Peace be unto thy face, which shines with the radiance of the sun and the purity of the moon. O Virgin, turn not thy face away from me in the day of my trouble."
+    },
+    {
+      "num": 5,
+      "target": "Salutation to the Eyes",
+      "text": "Peace be unto thine eyes, which are like the eyes of the dove and the stars of the morning. Look upon me with the eye of mercy and guide my feet in the path of peace."
+    },
+    {
+      "num": 6,
+      "target": "Salutation to the Ears",
+      "text": "Peace be unto thine ears, which heard the voice of the Archangel Gabriel and the mysteries of the Kingdom. Hearken unto the voice of my prayer and bring my request before the throne of thy Son."
+    },
+    {
+      "num": 7,
+      "target": "Salutation to the Lips",
+      "text": "Peace be unto thy lips, which dropped honey and the words of the Magnificat. May the words of my mouth be acceptable in thy sight, O Mother of Life."
+    },
+    {
+      "num": 8,
+      "target": "Salutation to the Neck",
+      "text": "Peace be unto thy neck, which is like the tower of ivory and the pillar of the sanctuary. O thou who didst support the Lord of the Universe, support my weakness in the hour of trial."
+    },
+    {
+      "num": 9,
+      "target": "Salutation to the Hands",
+      "text": "Peace be unto thy hands, which held the Child Jesus and offered Him in the Temple. O Virgin, stretch out thy hand to save me as thou didst save the painter from the fall."
+    },
+    {
+      "num": 10,
+      "target": "Salutation to the Womb",
+      "text": "Peace be unto thy womb, which was wider than the heavens and contained the Uncontainable. O Gate of the East, lead me into the sanctuary of the Most High."
+    },
+    {
+      "num": 11,
+      "target": "Salutation to the Knees",
+      "text": "Peace be unto thy knees, upon which the King of Kings sat in His infancy. O Mother of Mercy, may I bow my knees in true repentance before the Cross of thy Son."
+    },
+    {
+      "num": 12,
+      "target": "Salutation to the Feet",
+      "text": "Peace be unto thy feet, which walked the path of Egypt and stood at the foot of the Cross. Guide my steps, O Virgin, that I may not stumble in the darkness of this world."
+    },
+    {
+      "num": 13,
+      "target": "Salutation to the Soul",
+      "text": "Peace be unto thy soul, which magnified the Lord and rejoiced in God thy Savior. May my soul find rest in the kingdom of the saints through thine intercession."
+    },
+    {
+      "num": 14,
+      "target": "Salutation to the Departure",
+      "text": "Peace be unto thy departure from this world, which was attended by the Apostles and the angels of light. In the hour of my death, be thou my advocate and my guide. Amen."
+    }
+  ]
+}

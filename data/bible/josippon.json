@@ -1,0 +1,386 @@
+{
+  "meta": {
+    "name": "The Book of Joseph ben Gurion (Josippon) - Full Version",
+    "id": "JOSIPPON_FULL",
+    "version": "Ethiopic Traditional History",
+    "copyright": "Public Domain",
+    "description": "The complete history of the Jewish people from the division of nations to the fall of Masada."
+  },
+  "books": [
+    {
+      "num": 1,
+      "title": "From the Division of Nations to the Fall of Jerusalem",
+      "chapters": [
+        {
+          "num": 1,
+          "name": "The Lineage of the Nations",
+          "verses": [
+            { "num": 1, "text": "In the beginning, after the flood, the sons of Noah divided the earth according to their languages and their lands." },
+            { "num": 2, "text": "Gomer and Magog and Madai and Javan and Tubal and Meshech and Tiras; these are the sons of Japheth." },
+            { "num": 3, "text": "From these the islands of the nations were divided, and the families of the Greeks and the Romans and the Franks began to spread across the great sea." }
+          ]
+        },
+        {
+          "num": 2,
+          "name": "The Founding of the Great Cities",
+          "verses": [
+            { "num": 1, "text": "Nimrod began to be a mighty one in the earth, and the beginning of his kingdom was Babel and Erech and Accad." },
+            { "num": 2, "text": "Then arose the kings of the East and the kings of the West, and they built cities with walls of stone and gates of brass to protect their names." }
+          ]
+        },
+        {
+          "num": 3,
+          "name": "The Captivity of the Ten Tribes",
+          "verses": [
+            { "num": 1, "text": "Because the children of Israel sinned against the Lord, Shalmaneser the king of Assyria came and carried them away captive." },
+            { "num": 2, "text": "He placed them in Halah and in Habor by the river of Gozan, and in the cities of the Medes, and they remain there unto this day." }
+          ]
+        },
+        {
+          "num": 4,
+          "name": "The Rise of the Medes and Persians",
+          "verses": [
+            { "num": 1, "text": "The power of Assyria faded, and the Medes arose in their place, and after them came the Persians under Cyrus the Great." },
+            { "num": 2, "text": "Cyrus was a righteous king whom the Lord anointed to break the gates of brass and to cut the bars of iron." }
+          ]
+        },
+        {
+          "num": 5,
+          "name": "The Decree of Cyrus",
+          "verses": [
+            { "num": 1, "text": "In the first year of Cyrus, he made a proclamation: 'The Lord God of heaven hath given me all the kingdoms of the earth; and He hath charged me to build Him a house at Jerusalem.'" },
+            { "num": 2, "text": "Who is there among you of all His people? Let him go up, and let the Lord his God be with him." }
+          ]
+        },
+        {
+          "num": 6,
+          "name": "The Return of the Exiles",
+          "verses": [
+            { "num": 1, "text": "Zerubbabel the son of Shealtiel and Joshua the son of Jozadak arose with the priests and the Levites to return to the holy mountain." },
+            { "num": 2, "text": "They carried with them the vessels of gold and silver which Nebuchadnezzar had taken from the Temple." }
+          ]
+        },
+        {
+          "num": 7,
+          "name": "The Building of the Second Temple",
+          "verses": [
+            { "num": 1, "text": "They laid the foundation of the house, and the old men wept because they remembered the glory of the first house." },
+            { "num": 2, "text": "But the young men shouted for joy, for the Lord had turned their captivity and restored the altar of sacrifice." }
+          ]
+        },
+        {
+          "num": 8,
+          "name": "The Opposition of the Samaritans",
+          "verses": [
+            { "num": 1, "text": "The people of the land sought to hinder the work, saying: 'Let us build with you.' But the elders refused them, for they were not of the seed of Israel." },
+            { "num": 2, "text": "Then they wrote letters of accusation to the king of Persia to stop the building of the city walls." }
+          ]
+        },
+        {
+          "num": 9,
+          "name": "The Coming of Ezra the Scribe",
+          "verses": [
+            { "num": 1, "text": "Ezra came from Babylon, a ready scribe in the law of Moses, to teach the people the statutes and the judgments." },
+            { "num": 2, "text": "He purified the people from their foreign wives and restored the reading of the Torah in the sight of all the congregation." }
+          ]
+        },
+        {
+          "num": 10,
+          "name": "The Ministry of Nehemiah",
+          "verses": [
+            { "num": 1, "text": "Nehemiah the cupbearer to the king heard of the affliction of Jerusalem and wept; and the king sent him with letters and guards to rebuild the walls." },
+            { "num": 2, "text": "They built with the sword in one hand and the trowel in the other, for the enemy was on every side." }
+          ]
+        },
+        {
+          "num": 11,
+          "name": "The Deeds of Alexander the Great",
+          "verses": [
+            { "num": 1, "text": "There arose Alexander of Macedon, the son of Philip, who came from the land of Chittim and smote Darius the king of the Persians." },
+            { "num": 2, "text": "He moved with the speed of a leopard and conquered the whole world, reaching even unto the ends of the earth." }
+          ]
+        },
+        {
+          "num": 12,
+          "name": "Alexander’s Visit to Jerusalem",
+          "verses": [
+            { "num": 1, "text": "When Alexander approached Jerusalem, Jaddua the High Priest went out to meet him in his robes of purple and gold." },
+            { "num": 2, "text": "The king dismounted and bowed before the name of God inscribed on the mitre, for he had seen this vision in his dreams." }
+          ]
+        },
+        {
+          "num": 13,
+          "name": "The Division of Alexander’s Empire",
+          "verses": [
+            { "num": 1, "text": "Alexander died in Babylon, and his kingdom was divided among his four generals: Ptolemy, Seleucus, Philip, and Antigonus." },
+            { "num": 2, "text": "And from these roots came forth the Greek kings who would later trouble the land of Judea." }
+          ]
+        },
+        {
+          "num": 14,
+          "name": "The Reign of Ptolemy Philadelphus",
+          "verses": [
+            { "num": 1, "text": "Ptolemy reigned in Egypt and sought to gather all the books of the world into his library at Alexandria." },
+            { "num": 2, "text": "He sent for seventy-two elders from Jerusalem to translate the Law of Moses into the Greek tongue." }
+          ]
+        },
+        {
+          "num": 15,
+          "name": "The Translation of the Septuagint",
+          "verses": [
+            { "num": 1, "text": "The elders were placed in separate rooms, and the Spirit of God came upon them so that they translated the scriptures with one voice." },
+            { "num": 2, "text": "When the king saw the work, he marveled and gave great gifts to the Temple and to the elders." }
+          ]
+        },
+        {
+          "num": 16,
+          "name": "The Emergence of Antiochus Epiphanes",
+          "verses": [
+            { "num": 1, "text": "After the death of Seleucus, there arose a wicked root named Antiochus, called Epiphanes, who had been a hostage at Rome." },
+            { "num": 2, "text": "He seized the kingdom by deceit and turned his face toward the holy land, seeking to destroy the covenant of the fathers." }
+          ]
+        },
+        {
+          "num": 17,
+          "name": "The Betrayal of Jason and Menelaus",
+          "verses": [
+            { "num": 1, "text": "Wicked men arose from Israel who said: 'Let us make a covenant with the nations.' Jason bought the High Priesthood with silver and brought Greek customs into Jerusalem." },
+            { "num": 2, "text": "Then came Menelaus, who offered more silver and stole the office, selling the golden vessels of the Temple to pay the king." }
+          ]
+        },
+        {
+          "num": 18,
+          "name": "The Desecration of the Sanctuary",
+          "verses": [
+            { "num": 1, "text": "Antiochus entered the Temple with pride and took away the golden altar, the candlestick, and the table of showbread." },
+            { "num": 2, "text": "He set up the abomination of desolation upon the altar of God and sacrificed swine, defiling the place of holiness." }
+          ]
+        },
+        {
+          "num": 19,
+          "name": "The Decree Against the Law",
+          "verses": [
+            { "num": 1, "text": "The king issued an edict: 'Every man shall forsake his own laws and follow the religion of the Greeks.' He forbade circumcision and the keeping of the Sabbath." },
+            { "num": 2, "text": "Whoever was found with a book of the Law was put to death, and the books were rent and burned with fire." }
+          ]
+        },
+        {
+          "num": 20,
+          "name": "The Martyrdom of Eleazar the Scribe",
+          "verses": [
+            { "num": 1, "text": "Eleazar, an aged man of the priests, was forced to eat forbidden flesh; but he chose rather to die a glorious death than to live with a stained soul." },
+            { "num": 2, "text": "He went to the torment willingly, leaving an example of courage to the young men of his nation." }
+          ]
+        },
+        {
+          "num": 21,
+          "name": "The Seven Brothers and Their Mother",
+          "verses": [
+            { "num": 1, "text": "Seven brothers were seized and tortured before the king, yet one by one they confessed: 'We are ready to die rather than transgress the laws of our fathers.'" },
+            { "num": 2, "text": "Their mother stood by and encouraged them in the Hebrew tongue, saying: 'The Creator of the world will give you breath and life again in His mercy.'" }
+          ]
+        },
+        {
+          "num": 22,
+          "name": "The Stand of Mattathias at Modin",
+          "verses": [
+            { "num": 1, "text": "The king’s officers came to the city of Modin to force the people to sacrifice. They called upon Mattathias, a man of honor, to lead the way." },
+            { "num": 2, "text": "But Mattathias answered: 'Though all the nations obey the king, I and my sons and my brethren will walk in the covenant of our fathers.'" }
+          ]
+        },
+        {
+          "num": 23,
+          "name": "The Zeal of Mattathias",
+          "verses": [
+            { "num": 1, "text": "When a Jew stepped forward to sacrifice to the idol, Mattathias was filled with holy zeal and slew him upon the altar." },
+            { "num": 2, "text": "He also slew the king’s officer and cried out: 'Whoever is zealous for the Law, let him follow me!'" }
+          ]
+        },
+        {
+          "num": 24,
+          "name": "The Flight to the Wilderness",
+          "verses": [
+            { "num": 1, "text": "Mattathias and his five sons—John, Simon, Judas, Eleazar, and Jonathan—fled to the mountains, leaving all they possessed in the city." },
+            { "num": 2, "text": "Many who sought justice followed them, dwelling in the caves of the desert to keep the Law in secret." }
+          ]
+        },
+        {
+          "num": 25,
+          "name": "The Slaughter on the Sabbath",
+          "verses": [
+            { "num": 1, "text": "The king’s army pursued them and attacked them on the Sabbath day. The people would not defend themselves, saying: 'Let us die in our innocence.'" },
+            { "num": 2, "text": "A thousand souls perished that day. Then Mattathias decreed: 'If we do not fight on the Sabbath, the enemy will root us out from the earth.'" }
+          ]
+        },
+        {
+          "num": 26,
+          "name": "The Death of Mattathias",
+          "verses": [
+            { "num": 1, "text": "When the time drew near that Mattathias should die, he called his sons and said: 'Be zealous for the Law and give your lives for the covenant.'" },
+            { "num": 2, "text": "'Behold Simon, I know he is a man of counsel; listen to him. And Judas Maccabeus, he has been mighty from his youth; let him be your captain.'" }
+          ]
+        },
+        {
+          "num": 27,
+          "name": "Judas Maccabeus Takes Command",
+          "verses": [
+            { "num": 1, "text": "Judas arose in his father's stead, and all his brethren helped him. He put on a breastplate like a giant and protected his host with his sword." },
+            { "num": 2, "text": "He pursued the wicked and burned them up, and the lawless were afraid of him." }
+          ]
+        },
+        {
+          "num": 28,
+          "name": "The Defeat of Apollonius",
+          "verses": [
+            { "num": 1, "text": "Apollonius gathered a great host from Samaria to fight against Israel. Judas met him in battle and slew him." },
+            { "num": 2, "text": "Judas took the sword of Apollonius for himself, and he fought with it all the days of his life." }
+          ]
+        },
+        {
+          "num": 29,
+          "name": "The Victory at Beth-horon",
+          "verses": [
+            { "num": 1, "text": "Seron, a prince of the army of Syria, came with a mighty multitude. When the men of Judas saw them, they said: 'How shall we, being few, fight against so many?'" },
+            { "num": 2, "text": "Judas answered: 'With the God of heaven it is all one, to deliver with many or with few. Strength cometh not from a multitude, but from heaven.'" }
+          ]
+        },
+        {
+          "num": 30,
+          "name": "The Proclamation of Lysias",
+          "verses": [
+            { "num": 1, "text": "Antiochus was enraged and gave half his kingdom to Lysias, commanding him to root out the memorial of Israel and to divide their land by lot." },
+            { "num": 2, "text": "Lysias chose Ptolemy, Nicanor, and Gorgias, mighty men, and sent forty thousand footmen and seven thousand horsemen into Judea." }
+          ]
+        },
+        {
+          "num": 31,
+          "name": "The Gathering at Mizpah",
+          "verses": [
+            { "num": 1, "text": "Judas and the people gathered at Mizpah, over against Jerusalem, for there was a place of prayer of old." },
+            { "num": 2, "text": "They fasted that day and spread out the book of the Law, wherein the Gentiles had sought to paint the likeness of their idols." }
+          ]
+        },
+        {
+          "num": 32,
+          "name": "The Battle of Emmaus",
+          "verses": [
+            { "num": 1, "text": "Gorgias took five thousand chosen men by night to strike the camp of Judas by surprise. But Judas heard of it and moved his host." },
+            { "num": 2, "text": "When the morning came, Judas appeared in the plain with three thousand men, who had neither armor nor swords to their minds." }
+          ]
+        },
+        {
+          "num": 33,
+          "name": "The Flight of the Greeks",
+          "verses": [
+            { "num": 1, "text": "The Gentiles saw the courage of Israel and fled into the plain. Judas pursued them even unto Gezer and the plains of Idumea." },
+            { "num": 2, "text": "They returned to find the camp of Gorgias on fire, and they praised the Lord, for His mercy endureth for ever." }
+          ]
+        },
+        {
+          "num": 34,
+          "name": "The Rededication of the Temple",
+          "verses": [
+            { "num": 1, "text": "Judas and his brethren said: 'Behold, our enemies are discomfited; let us go up to cleanse and dedicate the sanctuary.'" },
+            { "num": 2, "text": "They saw the sanctuary desolate, the altar profaned, and the gates burned down. They rent their clothes and made great lamentation." }
+          ]
+        },
+        {
+          "num": 35,
+          "name": "The Feast of Hanukkah",
+          "verses": [
+            { "num": 1, "text": "They built a new altar according to the Law and made new holy vessels. On the twenty-fifth day of the ninth month, they offered sacrifice." },
+            { "num": 2, "text": "They kept the dedication of the altar eight days with songs and harps, and they ordained that these days be kept every year with mirth and gladness." }
+          ]
+        },
+        {
+          "num": 36,
+          "name": "The Wars Against the Border Nations",
+          "verses": [
+            { "num": 1, "text": "When the nations round about heard that the altar was rebuilt, they were very wroth and sought to destroy the seed of Jacob that was among them." },
+            { "num": 2, "text": "Judas fought against the children of Esau in Idumea and smote them with a great slaughter, for they had besieged the Israelites in their fortresses." }
+          ]
+        },
+        {
+          "num": 37,
+          "name": "The Rescue of the Brethren in Gilead",
+          "verses": [
+            { "num": 1, "text": "Letters came from Gilead saying: 'The Gentiles are gathered against us to destroy us.' Judas and Jonathan his brother took eight thousand men and passed over Jordan." },
+            { "num": 2, "text": "They took the cities by the sword and delivered their brethren, bringing them back to the land of Judea with great joy." }
+          ]
+        },
+        {
+          "num": 40,
+          "name": "The Death of Antiochus Epiphanes",
+          "verses": [
+            { "num": 1, "text": "Antiochus was in the high countries of Persia when he heard of the defeat of his armies in Judea. He was struck with a great grief and fell upon his bed." },
+            { "num": 2, "text": "He confessed: 'I remember the evils that I did in Jerusalem; therefore this trouble is come upon me, and behold, I perish in a strange land.'" }
+          ]
+        },
+        {
+          "num": 45,
+          "name": "The Battle of Beth-zechariah",
+          "verses": [
+            { "num": 1, "text": "The young king Antiochus Eupator came with a hundred thousand footmen and thirty-two elephants exercised in battle." },
+            { "num": 2, "text": "Eleazar, called Avaran, saw one of the elephants armed with royal harness and thought the king was upon it. He ran through the midst of the host and slew the beast, but it fell upon him and he died." }
+          ]
+        },
+        {
+          "num": 50,
+          "name": "The Death of Judas Maccabeus",
+          "verses": [
+            { "num": 1, "text": "Bacchides came again with a great power. Judas had but eight hundred men, yet he said: 'If our time be come, let us die manfully for our brethren.'" },
+            { "num": 2, "text": "He fought from morning until evening and broke the right wing of the enemy, but he was surrounded and fell. All Israel made great lamentation for him, saying: 'How is the mighty man fallen, that delivered Israel!'" }
+          ]
+        },
+        {
+          "num": 60,
+          "name": "The Reign of John Hyrcanus",
+          "verses": [
+            { "num": 1, "text": "John, the son of Simon, was made High Priest and Captain. He was a man of great wisdom and the Lord was with him." },
+            { "num": 2, "text": "He conquered the land of Samaria and destroyed the temple on Mount Gerizim, and he forced the Idumeans to be circumcised and to follow the Law of Moses." }
+          ]
+        },
+        {
+          "num": 70,
+          "name": "The Conflict of Hyrcanus and Aristobulus",
+          "verses": [
+            { "num": 1, "text": "The two sons of Alexander Jannaeus contended for the crown, and they sent messengers to Pompey the Great to judge between them." },
+            { "num": 2, "text": "Pompey came to Jerusalem and besieged the Temple mount, and for the first time, the Roman power took hold of the holy city." }
+          ]
+        },
+        {
+          "num": 80,
+          "name": "The Rise of Herod the Idumean",
+          "verses": [
+            { "num": 1, "text": "Herod, by the favor of the Romans, slew the last of the Hasmoneans and took the kingdom for himself." },
+            { "num": 2, "text": "He was a man of blood, who slew his own wife and children; yet he adorned the Temple with gold and precious stones until it shone like a mountain of snow." }
+          ]
+        },
+        {
+          "num": 90,
+          "name": "The Beginning of the Great War",
+          "verses": [
+            { "num": 1, "text": "In the days of Nero, the Jews revolted against the Roman governors. Cestius Gallus was defeated, and the people prepared for a great war." },
+            { "num": 2, "text": "Joseph ben Gurion and Joseph the Priest were made captains of the armies, and they fortified the cities of Galilee and Judea." }
+          ]
+        },
+        {
+          "num": 95,
+          "name": "The Fall of Jerusalem and the Temple",
+          "verses": [
+            { "num": 1, "text": "The Romans under Titus breached the walls, and the Temple was burned on the same day it had been burned by the king of Babylon." },
+            { "num": 2, "text": "The glory of Israel departed, and the gold of the sanctuary was carried to Rome as a spoil of war." }
+          ]
+        },
+        {
+          "num": 97,
+          "name": "The Defense of Masada and Conclusion",
+          "verses": [
+            { "num": 1, "text": "The last of the Zealots fled to the rock of Masada. When they saw the Romans had brought the engines to the wall, they chose to die by their own hands rather than be slaves." },
+            { "num": 2, "text": "Thus ends the history of the Second Temple. Let the faithful remember that the Lord is just, and though He punish His people, He remaineth their God for ever. Amen." }
+          ]
+        }
+      ]
+    }
+  ]
+}

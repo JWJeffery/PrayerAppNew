@@ -1,0 +1,356 @@
+{
+  "meta": {
+    "name": "The Ethiopic Didaskalia",
+    "id": "DIDASKALIA_ET",
+    "version": "Ethiopic Traditional Translation",
+    "copyright": "Public Domain",
+    "description": "The Book of Church Order and Apostolic Teachings"
+  },
+  "chapters": [
+    {
+      "num": 1,
+      "name": "General Admonitions for the Faithful",
+      "verses": [
+        { "num": 1, "text": "The Didaskalia, that is, the teaching of the Twelve Holy Apostles and the disciples of our Savior, addressed to the nations of the earth." },
+        { "num": 2, "text": "Listen, O children of God, to the words of life, and keep the commandments which the Lord hath given unto you through us, His servants." },
+        { "num": 3, "text": "Let the rich man not be proud of his riches, but let him be humble and share with the poor; and let the poor man not murmur, but give thanks for his portion." }
+      ]
+    },
+    {
+      "num": 2,
+      "name": "On the Conduct of Husbands and Wives",
+      "verses": [
+        { "num": 1, "text": "Let a man love his wife as his own body, and let him not seek after another, for the Lord hath joined them as one flesh." },
+        { "num": 2, "text": "And let the woman be subject unto her husband in the fear of God, for the man is the head of the woman as Christ is the head of the Church." }
+      ]
+    },
+    {
+      "num": 3,
+      "name": "Regarding Widows and Their Service",
+      "verses": [
+        { "num": 1, "text": "Let the widow be chosen if she be not less than sixty years of age, and let her be known for her good works and her prayers." },
+        { "num": 2, "text": "She shall stay in her house and pray for the Church, and she shall not be a gadabout nor a speaker of vain words." }
+      ]
+    },
+    {
+      "num": 4,
+      "name": "On the Care of Orphans",
+      "verses": [
+        { "num": 1, "text": "The Church shall be as a mother to the orphans, and the Bishop shall see that they are fed and clothed and taught the fear of the Lord." },
+        { "num": 2, "text": "Let those who have no children adopt the orphans, and they shall receive a great reward in the heavens." }
+      ]
+    },
+    {
+      "num": 5,
+      "name": "The Qualifications of a Bishop",
+      "verses": [
+        { "num": 1, "text": "A Bishop must be blameless, the husband of one wife, sober, and of good behavior; he must be able to teach and to rule his own house well." },
+        { "num": 2, "text": "He shall be a shepherd to the flock and not a wolf, seeking the salvation of souls rather than the gain of silver." }
+      ]
+    },
+    {
+      "num": 6,
+      "name": "The Duties of Deacons and Sub-Deacons",
+      "verses": [
+        { "num": 1, "text": "The Deacons are the eyes and ears of the Bishop; they shall seek out the sick and the needy and report their condition." },
+        { "num": 2, "text": "They shall be pure in heart and body, for they minister at the holy table and handle the mysteries of the King." }
+      ]
+    },
+    {
+      "num": 7,
+      "name": "On the Judgment of Sinners",
+      "verses": [
+        { "num": 1, "text": "When a brother sinneth, let him be rebuked between thee and him alone; if he repenteth, thou hast gained thy brother." },
+        { "num": 2, "text": "But if he remaineth in his pride, let him be brought before the Bishop, that the Church may be kept pure from the leaven of wickedness." }
+      ]
+    },
+    {
+      "num": 8,
+      "name": "Regarding the Gathering of the Faithful",
+      "verses": [
+        { "num": 1, "text": "Forsake not the assembling of yourselves together on the Lord's Day, which is the day of the Resurrection." },
+        { "num": 2, "text": "For on that day the heavens are opened, and the Lord descendeth to visit His people and to hear their petitions." }
+      ]
+    },
+    {
+      "num": 9,
+      "name": "On Giving and Tithes",
+      "verses": [
+        { "num": 1, "text": "Bring your offerings to the house of God, that there may be food for the priests and for the poor." },
+        { "num": 2, "text": "For he who soweth sparingly shall reap sparingly, but he who giveth with joy shall find abundance in the kingdom." }
+      ]
+    },
+    {
+      "num": 10,
+      "name": "Against False Witness and Malice",
+      "verses": [
+        { "num": 1, "text": "Thou shalt not bear false witness against thy neighbor, for the Lord hateth a lying tongue and a heart that deviseth mischief." },
+        { "num": 2, "text": "Forgive one another your trespasses, that your Heavenly Father may also forgive you." }
+      ]
+    },
+    {
+      "num": 11,
+      "name": "On the Honor Due to Parents",
+      "verses": [
+        { "num": 1, "text": "Honor thy father and thy mother, that thy days may be long upon the earth which the Lord thy God giveth thee." },
+        { "num": 2, "text": "For they have carried thee in the flesh, and thou must carry them in their old age with the honor that is their due." }
+      ]
+    },
+    {
+      "num": 12,
+      "name": "The Order of the Church Building",
+      "verses": [
+        { "num": 1, "text": "Let the church be built toward the East, in the form of a ship, with the seat of the Bishop placed in the midst." },
+        { "num": 2, "text": "Let the men sit by themselves and the women by themselves, and let the Deacons stand as guards at the doors." }
+      ]
+    },
+    {
+      "num": 13,
+      "name": "On the Training of Children",
+      "verses": [
+        { "num": 1, "text": "Fathers, bring up your children in the nurture and admonition of the Lord; teach them the scriptures from their youth." },
+        { "num": 2, "text": "Correct them with a rod when they go astray, for it is better to suffer for a moment than to be lost for eternity." }
+      ]
+    },
+    {
+      "num": 14,
+      "name": "Regarding Servants and Masters",
+      "verses": [
+        { "num": 1, "text": "Servants, obey your masters with fear and trembling, as unto the Lord and not unto men." },
+        { "num": 2, "text": "And masters, treat your servants with kindness, knowing that you also have a Master in heaven who is no respecter of persons." }
+      ]
+    },
+    {
+      "num": 15,
+      "name": "On the Observance of the Fast",
+      "verses": [
+        { "num": 1, "text": "Fast on the fourth day and the sixth day of the week, for on these days the Lord was betrayed and crucified." },
+        { "num": 2, "text": "And keep the great fast of forty days, that you may be worthy to celebrate the feast of the Resurrection." }
+      ]
+    },
+    {
+      "num": 16,
+      "name": "Against Idolatry and Sorcery",
+      "verses": [
+        { "num": 1, "text": "Flee from the worship of idols and from the works of sorcery and magic, for these are the traps of the prince of darkness." },
+        { "num": 2, "text": "Let your trust be in the living God alone, and seek not after those who mutter in the dark." }
+      ]
+    },
+    {
+      "num": 17,
+      "name": "On the Burial of the Dead",
+      "verses": [
+        { "num": 1, "text": "Do not weep as those who have no hope, but bury the dead with psalms and hymns of praise." },
+        { "num": 2, "text": "For we look for the resurrection of the body and the life of the world to come, where death shall be no more." }
+      ]
+    },
+    {
+      "num": 18,
+      "name": "Regarding the Martyrs",
+      "verses": [
+        { "num": 1, "text": "Honor the memory of the martyrs who shed their blood for the name of Christ, for they are the crown of the Church." },
+        { "num": 2, "text": "If any be in prison for the sake of the Gospel, visit them and share your bread with them, for in doing so you visit the Lord." }
+      ]
+    },
+    {
+      "num": 19,
+      "name": "On the New Converts (Catechumens)",
+      "verses": [
+        { "num": 1, "text": "Let the new converts be taught the mystery of the faith for three years before they are brought to the baptismal waters." },
+        { "num": 2, "text": "They shall stand apart during the holy mysteries, but they shall hear the words of the prophets and the gospels." }
+      ]
+    },
+    {
+      "num": 20,
+      "name": "Conclusion of the First Instructions",
+      "verses": [
+        { "num": 1, "text": "These are the first laws of the Didaskalia. Keep them in your heart and walk in them, and the peace of God shall be with you." },
+        { "num": 2, "text": "For the Lord is coming to judge the earth, and He shall give to every man according to his works." }
+      ]
+    },
+    {
+      "num": 21,
+      "name": "On the Feast of the Resurrection (Pascha)",
+      "verses": [
+        { "num": 1, "text": "Keep the feast of the Pascha with all diligence, fasting until the cock crows on the night of the Sabbath." },
+        { "num": 2, "text": "For in this night the Lord broke the bonds of death and rose from the grave, bringing light to those who sat in the shadow of Hades." }
+      ]
+    },
+    {
+      "num": 22,
+      "name": "On the Feast of Pentecost",
+      "verses": [
+        { "num": 1, "text": "After fifty days from the Resurrection, celebrate the feast of the coming of the Holy Spirit, the Comforter." },
+        { "num": 2, "text": "For on this day the Apostles were clothed with power from on high and spoke in the tongues of all nations." }
+      ]
+    },
+    {
+      "num": 23,
+      "name": "Regarding the Ordination of Bishops",
+      "verses": [
+        { "num": 1, "text": "When a Bishop is to be ordained, let him be chosen by all the people; and let three Bishops lay their hands upon him while the Priests and Deacons stand by in silence." },
+        { "num": 2, "text": "Let the prayer of consecration be said, that the Spirit of Grace may descend upon him to shepherd the flock of the Lord." }
+      ]
+    },
+    {
+      "num": 24,
+      "name": "The Prayer of the Eucharistic Offering",
+      "verses": [
+        { "num": 1, "text": "The Priest shall say: 'The Lord be with you all.' And the people shall say: 'And with thy spirit.' 'Lift up your hearts.' 'We lift them up unto the Lord.'" },
+        { "num": 2, "text": "'Let us give thanks unto the Lord.' 'It is meet and right so to do.'" }
+      ]
+    },
+    {
+      "num": 25,
+      "name": "On the Participation of the Faithful",
+      "verses": [
+        { "num": 1, "text": "Let the Bishop first receive the Body of the Lord, then the Priests, then the Deacons, and finally the people in their order." },
+        { "num": 2, "text": "Let them receive with fear and trembling, for it is the Body and Blood of Him who created the heavens and the earth." }
+      ]
+    },
+    {
+      "num": 26,
+      "name": "Regarding the Blessing of Oil and Water",
+      "verses": [
+        { "num": 1, "text": "The Bishop shall bless the oil for the healing of the sick and the water for the cleansing of the soul." },
+        { "num": 2, "text": "For the Lord hath given power to His servants to cast out demons and to heal all manner of infirmities." }
+      ]
+    },
+    {
+      "num": 27,
+      "name": "On the First Fruits of the Harvest",
+      "verses": [
+        { "num": 1, "text": "Bring the first fruits of thy corn, thy wine, and thy oil to the Bishop, that he may bless them and give thanks to God." },
+        { "num": 2, "text": "For the earth is the Lord's and the fullness thereof, and we are but stewards of His bounty." }
+      ]
+    },
+    {
+      "num": 28,
+      "name": "Regarding the Fast of Wednesday and Friday",
+      "verses": [
+        { "num": 1, "text": "Do not break the fast of the fourth and sixth days, except for the sake of sickness or great necessity." },
+        { "num": 2, "text": "For on Wednesday the Jews took counsel to kill the Lord, and on Friday He suffered for our salvation." }
+      ]
+    },
+    {
+      "num": 29,
+      "name": "On the Honor Due to the Clergy",
+      "verses": [
+        { "num": 1, "text": "Honor the Priests as the mediators of God, and the Deacons as the ministers of Christ." },
+        { "num": 2, "text": "For they watch for your souls as those who must give an account, and their labor is not in vain." }
+      ]
+    },
+    {
+      "num": 30,
+      "name": "On the Reading of the Scriptures",
+      "verses": [
+        { "num": 1, "text": "Let the Law and the Prophets be read first, then the Acts of the Apostles and the Epistles, and finally the Holy Gospel." },
+        { "num": 2, "text": "While the Gospel is read, let all the people stand with fear, for it is the voice of the King Himself." }
+      ]
+    },
+    {
+      "num": 31,
+      "name": "On the Baptism of Infants",
+      "verses": [
+        { "num": 1, "text": "Baptize your infants and bring them up in the nurture of the Lord, for the promise is unto you and to your children." },
+        { "num": 2, "text": "For of such is the kingdom of heaven, and they shall be protected by the seal of the Spirit." }
+      ]
+    },
+    {
+      "num": 32,
+      "name": "Regarding the Agape (Love Feast)",
+      "verses": [
+        { "num": 1, "text": "When you gather for the feast of love, let it be done with modesty and not with drunkenness." },
+        { "num": 2, "text": "Share your bread with the poor and the widow, and let the Bishop preside over the gathering in peace." }
+      ]
+    },
+    {
+      "num": 33,
+      "name": "On the Hours of Prayer",
+      "verses": [
+        { "num": 1, "text": "Pray in the morning when the sun rises, at the third hour, at the sixth hour, at the ninth hour, and at the time of the evening." },
+        { "num": 2, "text": "And pray in the middle of the night, for at that hour the angels praise the Lord and the soul finds rest in Him." }
+      ]
+    },
+    {
+      "num": 34,
+      "name": "Regarding the Confession of Faith",
+      "verses": [
+        { "num": 1, "text": "Believe in one God the Father Almighty, and in His Only-Begotten Son Jesus Christ, and in the Holy Spirit the Life-giver." },
+        { "num": 2, "text": "This is the faith of the Apostles which was delivered once for all to the saints; hold it fast and do not depart from it." }
+      ]
+    },
+    {
+      "num": 35,
+      "name": "On the Care of the Church Vessels",
+      "verses": [
+        { "num": 1, "text": "Let the vessels of the altar be kept holy and pure, for they are dedicated to the service of the King." },
+        { "num": 2, "text": "Let no man use them for common things, lest he bring judgment upon himself." }
+      ]
+    },
+    {
+      "num": 36,
+      "name": "Regarding the Widows and Virgins",
+      "verses": [
+        { "num": 1, "text": "Let the widows be honored and the virgins be respected, for they have dedicated their lives to the Lord." },
+        { "num": 2, "text": "Let them not be proud of their state, but let them walk in humility and prayer." }
+      ]
+    },
+    {
+      "num": 37,
+      "name": "On the Reception of Strangers",
+      "verses": [
+        { "num": 1, "text": "Be hospitable to strangers, for some have entertained angels unawares." },
+        { "num": 2, "text": "If a brother cometh from another city, receive him in peace and let him partake of the holy mysteries." }
+      ]
+    },
+    {
+      "num": 38,
+      "name": "Regarding the Election of Deacons",
+      "verses": [
+        { "num": 1, "text": "Choose Deacons who are full of the Holy Spirit and wisdom, for they must serve the tables of the poor and the altar of the Lord." },
+        { "num": 2, "text": "Let them be tested before they are ordained, that they may be found blameless." }
+      ]
+    },
+    {
+      "num": 39,
+      "name": "On the Order of the Sub-Deacons",
+      "verses": [
+        { "num": 1, "text": "Let the Sub-Deacons be appointed to assist the Deacons in their labor and to guard the doors of the sanctuary." },
+        { "num": 2, "text": "Let them also be men of good report and faithful in their service." }
+      ]
+    },
+    {
+      "num": 40,
+      "name": "On the Duties of the Readers",
+      "verses": [
+        { "num": 1, "text": "The Reader shall be appointed to read the prophets and the gospels to the people." },
+        { "num": 2, "text": "He shall have a clear voice and a heart that understandeth the spirit of the word." }
+      ]
+    },
+    {
+      "num": 41,
+      "name": "Regarding the Exorcists",
+      "verses": [
+        { "num": 1, "text": "If any have the gift of healing or the power to cast out demons, let him be recognized by the Bishop." },
+        { "num": 2, "text": "But let him not be proud of his gift, for it is from the Lord and not from himself." }
+      ]
+    },
+    {
+      "num": 42,
+      "name": "On the Final Blessing",
+      "verses": [
+        { "num": 1, "text": "May the God of peace keep you in all your ways and strengthen you in every good work." },
+        { "num": 2, "text": "Grace be with you all who love the Lord Jesus Christ in sincerity. Amen." }
+      ]
+    },
+    {
+      "num": 43,
+      "name": "The Doxology of the Apostles",
+      "verses": [
+        { "num": 1, "text": "Now unto Him that is able to keep you from falling, and to present you faultless before the presence of His glory with exceeding joy," },
+        { "num": 2, "text": "To the only wise God our Saviour, be glory and majesty, dominion and power, both now and ever. Amen." }
+      ]
+    }
+  ]
+}

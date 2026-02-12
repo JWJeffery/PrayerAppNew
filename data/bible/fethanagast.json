@@ -1,0 +1,264 @@
+{
+  "meta": {
+    "name": "The Fetha Nagast (Law of the Kings)",
+    "id": "FETH_NAG_COMPLETE",
+    "version": "Ethiopic Traditional Legal Code",
+    "copyright": "Public Domain",
+    "description": "The comprehensive Ethiopic code covering both Ecclesiastical (Spiritual) and Civil (Secular) law."
+  },
+  "chapters": [
+    {
+      "num": 1,
+      "name": "On the Church and its Sanctity",
+      "verses": [
+        { "num": 1, "text": "The Church is the house of God, a place of prayer and sanctification. It must be built with the permission of the Bishop and consecrated with the Holy Myron." },
+        { "num": 2, "text": "No worldly business, commerce, or clamor shall be conducted within its walls, for it is the gate of heaven upon earth." }
+      ]
+    },
+    {
+      "num": 2,
+      "name": "On the Sacred Books",
+      "verses": [
+        { "num": 1, "text": "The books that are to be read in the Church are the eighty-one books of the Old and New Testaments, as delivered by the Apostles." },
+        { "num": 2, "text": "These are the source of all law and truth, and no man shall add to them or diminish from them." }
+      ]
+    },
+    {
+      "num": 3,
+      "name": "On Baptism",
+      "verses": [
+        { "num": 1, "text": "Baptism is the first gate to the kingdom. It shall be performed with water in the name of the Father, and of the Son, and of the Holy Spirit." },
+        { "num": 2, "text": "Infants shall be baptized on the fortieth day if they are male, and on the eightieth day if they are female, unless there be danger of death." }
+      ]
+    },
+    {
+      "num": 4,
+      "name": "On the Patriarch (Abun)",
+      "verses": [
+        { "num": 1, "text": "The Patriarch is the father of all and the head of the spiritual host. He shall be chosen for his holiness, his knowledge of the law, and his blameless life." },
+        { "num": 2, "text": "He has the authority to ordain Bishops and to oversee the unity of the faith across the land." }
+      ]
+    },
+    {
+      "num": 5,
+      "name": "On Bishops (Episcopos)",
+      "verses": [
+        { "num": 1, "text": "The Bishop shall be a man of wisdom, not less than fifty years of age, unless a younger man be found of extraordinary grace." },
+        { "num": 2, "text": "He is the shepherd of his diocese and is responsible for the souls of the clergy and the laity alike." }
+      ]
+    },
+    {
+      "num": 6,
+      "name": "On Priests (Qasis)",
+      "verses": [
+        { "num": 1, "text": "The Priest shall be ordained after reaching the age of thirty. He must be a man of one wife or live in celibacy." },
+        { "num": 2, "text": "His duty is to offer the Holy Sacrifice, to teach the Word, and to hear the confessions of the faithful." }
+      ]
+    },
+    {
+      "num": 7,
+      "name": "On Deacons (Diacon)",
+      "verses": [
+        { "num": 1, "text": "The Deacon is the servant of the altar. He shall be ordained at the age of twenty-five and must be found blameless in his conduct." },
+        { "num": 2, "text": "He assists the Priest in the liturgy and manages the charity of the Church toward the poor." }
+      ]
+    },
+    {
+      "num": 8,
+      "name": "On the Sub-Clergy (Sub-Deacons and Readers)",
+      "verses": [
+        { "num": 1, "text": "The Sub-Deacon assists the Deacon, and the Reader proclaims the scriptures. They are the lower pillars of the sanctuary." }
+      ]
+    },
+    {
+      "num": 9,
+      "name": "On the Liturgy and the Eucharist",
+      "verses": [
+        { "num": 1, "text": "The Holy Offering shall be made with pure wheaten bread and wine of the grape. It is the true Body and Blood of Christ." },
+        { "num": 2, "text": "No person under penance or possessed by a spirit shall draw near to the mysteries until they are cleansed." }
+      ]
+    },
+    {
+      "num": 10,
+      "name": "On the Fasting Seasons",
+      "verses": [
+        { "num": 1, "text": "The great fasts are the Fast of the Prophets, the Fast of Nineveh, the Great Lent, and the Fasts of Wednesday and Friday." },
+        { "num": 2, "text": "Fasting consists of abstaining from food until the appointed hour and from all animal products." }
+      ]
+    },
+    {
+      "num": 11,
+      "name": "On Prayer and the Hours",
+      "verses": [
+        { "num": 1, "text": "The faithful shall pray seven times a day, standing toward the East, as a sign of their expectation of the Lord's return." }
+      ]
+    },
+    {
+      "num": 12,
+      "name": "On the Feast of the Resurrection",
+      "verses": [
+        { "num": 1, "text": "Easter is the feast of feasts. Its calculation shall follow the canon of Nicaea, ensuring the whole Church celebrates as one." }
+      ]
+    },
+    {
+      "num": 13,
+      "name": "On Martyrs and Confessors",
+      "verses": [
+        { "num": 1, "text": "Those who suffered for the faith shall be honored with feast days and their relics kept in reverence." }
+      ]
+    },
+    {
+      "num": 14,
+      "name": "On Monks and Hermits",
+      "verses": [
+        { "num": 1, "text": "The monk dies to the world to live for God. He must keep the vows of poverty, chastity, and obedience under a spiritual father." }
+      ]
+    },
+    {
+      "num": 15,
+      "name": "On Tithes and Offerings",
+      "verses": [
+        { "num": 1, "text": "A tenth of all produce and gain belongs to the Lord for the maintenance of the sanctuary and the support of the needy." }
+      ]
+    },
+    {
+      "num": 16,
+      "name": "On the Prohibition of Usury",
+      "verses": [
+        { "num": 1, "text": "No member of the clergy shall lend money at interest, for it is a sin that devours the poor." }
+      ]
+    },
+    {
+      "num": 22,
+      "name": "On the Judgment of the Clergy",
+      "verses": [
+        { "num": 1, "text": "A Priest or Deacon who commits a grave sin shall be deposed from his office, but he shall not be excommunicated from the laity unless he remains unrepentant." }
+      ]
+    },
+    {
+      "num": 23,
+      "name": "On Food, Drink, and Clothing",
+      "verses": [
+        { "num": 1, "text": "Let the faithful abstain from the blood of animals and from things strangled, according to the apostolic decree." },
+        { "num": 2, "text": "Clothing should be modest and fitting for one's station, avoiding the vanity of the world which leads to pride." }
+      ]
+    },
+    {
+      "num": 24,
+      "name": "On Betrothal and Marriage",
+      "verses": [
+        { "num": 1, "text": "Marriage is a covenant made before God. It requires the consent of the parents and the free will of the man and the woman." },
+        { "num": 2, "text": "The degrees of consanguinity must be observed; no man shall marry within the forbidden seven generations of his kindred." },
+        { "num": 3, "text": "A man may have only one wife, for the union of the flesh represents the union of Christ and the Church." }
+      ]
+    },
+    {
+      "num": 25,
+      "name": "On Dowries and Marriage Gifts",
+      "verses": [
+        { "num": 1, "text": "The gift given by the husband to the wife at the time of the wedding remains her property as a security for her future." }
+      ]
+    },
+    {
+      "num": 26,
+      "name": "On Loans and Debts",
+      "verses": [
+        { "num": 1, "text": "He who borrows must repay at the appointed time. If a man is unable to pay due to poverty, the creditor should show mercy as the Lord showed mercy to us." }
+      ]
+    },
+    {
+      "num": 27,
+      "name": "On Deposits and Trusts",
+      "verses": [
+        { "num": 1, "text": "A deposit is a sacred trust. If a man leaves his goods with another, the keeper is responsible for their safety as if they were his own." }
+      ]
+    },
+    {
+      "num": 28,
+      "name": "On Mandates and Agency",
+      "verses": [
+        { "num": 1, "text": "He who acts on behalf of another must do so with honesty and diligence, seeking the benefit of his principal in all things." }
+      ]
+    },
+    {
+      "num": 29,
+      "name": "On Sales and Purchases",
+      "verses": [
+        { "num": 1, "text": "A sale is completed when there is agreement on the price and the thing is delivered. Let there be no deceit or hidden defects in the transaction." }
+      ]
+    },
+    {
+      "num": 30,
+      "name": "On Partnerships",
+      "verses": [
+        { "num": 1, "text": "Partners shall share in both profit and loss according to the measure of their contribution, walking together in transparency." }
+      ]
+    },
+    {
+      "num": 31,
+      "name": "On Rentals and Leases",
+      "verses": [
+        { "num": 1, "text": "The price for the use of land or animals shall be agreed upon beforehand, and the property shall be returned in the condition it was received." }
+      ]
+    },
+    {
+      "num": 32,
+      "name": "On Gifts and Donations",
+      "verses": [
+        { "num": 1, "text": "A gift made while a man is in health is valid upon delivery; a gift made in the shadow of death is subject to the laws of inheritance." }
+      ]
+    },
+    {
+      "num": 33,
+      "name": "On Wills and Testaments",
+      "verses": [
+        { "num": 1, "text": "A man has the right to dispose of his property before he dies, provided he provides for his children and his wife according to the law." }
+      ]
+    },
+    {
+      "num": 34,
+      "name": "On Inheritance",
+      "verses": [
+        { "num": 1, "text": "When a man dies without a will, his property shall descend first to his children, then to his parents, then to his brothers and sisters." },
+        { "num": 2, "text": "Male and female children shall inherit together, for they are equal in the sight of their father." }
+      ]
+    },
+    {
+      "num": 35,
+      "name": "On Guardianship",
+      "verses": [
+        { "num": 1, "text": "The orphan and the minor shall be protected by a guardian, who shall manage their affairs with the fear of God until they reach the age of maturity." }
+      ]
+    },
+    {
+      "num": 44,
+      "name": "On the King (Negus)",
+      "verses": [
+        { "num": 1, "text": "The King is appointed by God to maintain justice and to protect the Church. He must rule with mercy and follow the laws of the fathers." },
+        { "num": 2, "text": "The people owe the King obedience in all things that do not contradict the commandments of God." }
+      ]
+    },
+    {
+      "num": 47,
+      "name": "On Homicide and Violence",
+      "verses": [
+        { "num": 1, "text": "He who kills a man intentionally shall be put to death by the sword of justice. He who kills by accident shall seek refuge and pay the blood-price." }
+      ]
+    },
+    {
+      "num": 48,
+      "name": "On Theft and Robbery",
+      "verses": [
+        { "num": 1, "text": "The thief shall restore fourfold what he has taken. If he cannot pay, he shall labor until the debt is satisfied." }
+      ]
+    },
+    {
+      "num": 51,
+      "name": "On the Final Judgment of the Law",
+      "verses": [
+        { "num": 1, "text": "Let all these laws be kept with diligence, for he who keeps the law of the earth prepares himself for the law of heaven." },
+        { "num": 2, "text": "May the peace of the King of Kings be with all who walk in the path of justice. Amen." }
+      ]
+    }
+  ]
+}

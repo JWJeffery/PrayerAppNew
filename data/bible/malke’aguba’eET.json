@@ -1,0 +1,85 @@
+{
+  "meta": {
+    "name": "Malke’a Guba’e (Hymn of Likeness to the Assembly of Saints)",
+    "id": "MALKEA_GUBAE_ET",
+    "version": "Ethiopic Traditional Hymnody",
+    "copyright": "Public Domain",
+    "description": "The complete rhythmic poetic salutation to the Assembly of the Saints, Martyrs, and Righteous, used to conclude the vigil hours."
+  },
+  "hymn_structure": {
+    "meter": "Rhythmic Ge'ez Verse (Sene-Seliit)",
+    "use_case": "Daily Office / Conclusion of the Night Vigil"
+  },
+  "stanzas": [
+    {
+      "num": 1,
+      "target": "Salutation to the Assembly",
+      "text": "Peace be unto this assembly of the righteous, who are like the stars of heaven and the sand of the sea. O you who have fought the good fight and kept the faith, pray for us that we may be numbered with you in the kingdom of light."
+    },
+    {
+      "num": 2,
+      "target": "Salutation to the Patriarchs",
+      "text": "Peace be unto the Patriarchs: Abraham, Isaac, and Jacob, who received the promises and walked in the fear of the Lord. O foundations of the faith, make our hearts steadfast in the hope of the resurrection."
+    },
+    {
+      "num": 3,
+      "target": "Salutation to the Prophets",
+      "text": "Peace be unto the Prophets: Moses, the lawgiver, and Elijah, the zealot, and all who foretold the coming of the Messiah. O voices of the Spirit, open our ears to hear the word of God and our hearts to obey His commandments."
+    },
+    {
+      "num": 4,
+      "target": "Salutation to the Apostles",
+      "text": "Peace be unto the Twelve Apostles, who went forth into all the world to preach the Gospel of peace. O pillars of the Church, preserve the unity of the faithful and keep us in the apostolic doctrine."
+    },
+    {
+      "num": 5,
+      "target": "Salutation to the Seventy-Two Disciples",
+      "text": "Peace be unto the Seventy-Two Disciples, who were sent out as laborers into the harvest. O messengers of the King, may we also be found faithful in the work to which we are called."
+    },
+    {
+      "num": 6,
+      "target": "Salutation to the Martyrs",
+      "text": "Peace be unto the Martyrs: Stephen the first, and George the brave, and all who washed their robes in the blood of the Lamb. O conquerors of death, grant us the courage to witness for Christ even unto the end."
+    },
+    {
+      "num": 7,
+      "target": "Salutation to the Confessors",
+      "text": "Peace be unto the Confessors, who endured stripes and imprisonment for the sake of the Name. O witnesses of the Truth, may your endurance be our strength in the hour of trial."
+    },
+    {
+      "num": 8,
+      "target": "Salutation to the Monks and Hermits",
+      "text": "Peace be unto the Monks and Hermits: Anthony, the father of the desert, and Tekle Haymanot, the light of Ethiopia. O lovers of silence, teach us the mystery of prayer and the beauty of holiness."
+    },
+    {
+      "num": 9,
+      "target": "Salutation to the Virgins and the Holy Women",
+      "text": "Peace be unto the Holy Women: Mary Magdalene, and Walatta Petros, and all who served the Lord with purity and love. O flowers of the sanctuary, may our lives be a sweet-smelling savor before the Lord."
+    },
+    {
+      "num": 10,
+      "target": "Salutation to the Nine Saints",
+      "text": "Peace be unto the Nine Saints, who came from the West to plant the vine of the Gospel in the land of Ethiopia. O sowers of the Word, may the fruit of your labors increase in our hearts forever."
+    },
+    {
+      "num": 11,
+      "target": "Salutation to the Three Hundred and Eighteen Orthodox",
+      "text": "Peace be unto the Three Hundred and Eighteen Fathers of Nicaea, who established the Faith and put the heretics to shame. O guardians of the Truth, keep the Church from the wolves that would scatter the flock."
+    },
+    {
+      "num": 12,
+      "target": "Salutation to the Invisible Saints",
+      "text": "Peace be unto the hidden saints, whose names are known only to God and whose prayers sustain the world. O secret friends of the Most High, intercede for us in the hidden places of our souls."
+    },
+    {
+      "num": 13,
+      "target": "Salutation to the Spirits of the Just",
+      "text": "Peace be unto the spirits of the just who wait in the gardens of light for the sound of the great Trumpet. O children of the Resurrection, may we join your chorus on the day of glory."
+    },
+    {
+      "num": 14,
+      "target": "Salutation to the Final Gathering",
+      "text": "Peace be unto the whole body of Christ, the Church which He purchased with His own blood. May we all be gathered into the one fold under the one Shepherd, Jesus Christ our Lord. Amen."
+    }
+  ]
+}

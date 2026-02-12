@@ -1,0 +1,50 @@
+{
+  "meta": {
+    "name": "The Rest of the Words of Jeremiah",
+    "id": "REST_JEREMIAH_ET",
+    "version": "Ethiopic Traditional Prophetic Text",
+    "copyright": "Public Domain",
+    "description": "The narrative of Jeremiah, Baruch, and Abimelech during and after the Babylonian exile."
+  },
+  "chapters": [
+    {
+      "num": 1,
+      "verses": [
+        { "num": 1, "text": "When the Chaldeans surrounded the city of Jerusalem, the Lord spoke to Jeremiah, saying: 'Jeremiah, My chosen one, arise and go out from this city, thou and Baruch, for I am about to deliver it into the hands of the king of the Babylonians.'" },
+        { "num": 2, "text": "And Jeremiah answered: 'O Lord, I beseech Thee, let me die before I see the destruction of Thy holy house.'" },
+        { "num": 3, "text": "But the Lord said: 'Do not fear; go and hide the vessels of the sanctuary in the earth, and tell Abimelech the Ethiopian to go to the garden of Agrippa, that I may hide him until the people return.'" }
+      ]
+    },
+    {
+      "num": 2,
+      "verses": [
+        { "num": 1, "text": "Abimelech went out to the garden to gather figs for the sick, and as he sat under a tree, a deep sleep fell upon him from the Lord." },
+        { "num": 2, "text": "And he slept for sixty-six years, and he did not wake until the time of the return was at hand." }
+      ]
+    },
+    {
+      "num": 3,
+      "verses": [
+        { "num": 1, "text": "When Abimelech awoke, he took his basket of figs and said: 'I have slept but a little while.' He looked at the figs and saw they were still fresh and dripping with juice." },
+        { "num": 2, "text": "He entered the city and found it changed, and he knew not the faces of the people; and he wept, thinking he had lost his way." },
+        { "num": 3, "text": "But an old man told him: 'My son, this is Jerusalem, but it was destroyed sixty-six years ago, and only now are the people returning from Babylon.'" }
+      ]
+    },
+    {
+      "num": 4,
+      "verses": [
+        { "num": 1, "text": "Baruch was in the tomb of the garden when he saw Abimelech, and they rejoiced together. Then they sent an eagle with a letter to Jeremiah in Babylon." },
+        { "num": 2, "text": "The eagle flew to Babylon and sat upon a dead man who was being carried to his grave; and the man arose by the power of the letter, and all the people marveled." }
+      ]
+    },
+    {
+      "num": 5,
+      "verses": [
+        { "num": 1, "text": "Jeremiah read the letter to the people by the river of Babylon, and they wept for joy. He led them back to the land of Israel, and they saw the glory of the Lord restored." },
+        { "num": 2, "text": "Jeremiah then fell into a trance for three days, and when he arose, he spoke of the coming of the Messiah, the Son of God, who should save the world." },
+        { "num": 3, "text": "The people were wroth at his words and sought to stone him; but a stone took the likeness of Jeremiah, and they stoned the image while the prophet spoke from the midst of the sanctuary." },
+        { "num": 4, "text": "Thus was the testimony of Jeremiah finished, and he fell asleep in the Lord. Amen." }
+      ]
+    }
+  ]
+}
