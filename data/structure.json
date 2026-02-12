@@ -7,7 +7,7 @@
     "current_phase": "Phase 4: Global Canon Expansion & BCP Logic Refinement (SYSTEM OFFLINE FOR REDESIGN)",
     "last_major_update": "2026-02-12"
   },
-  "operational_note": "The application is currently non-functional due to a major file system redesign. Internal logic in init() and seasonal loading functions must be updated to point to the new subdirectory paths (bible/, saints/, and season/) before the app can be used.",
+  "operational_note": "The application is currently non-functional due to a major file system redesign. Internal logic in init() and seasonal loading functions must be updated to point to the new subdirectory paths (bible/, bible/ET/, saints/, and season/) before the app can be used.",
   "goals": [
     "Offer customizable prayer experiences drawing from multiple Christian traditions to deepen users' spiritual lives.",
     "Facilitate immersion in worship, bringing 'heaven to earth' through visual, auditory, and sensory elements.",
@@ -74,10 +74,21 @@
       "data/structure.json"
     ],
     "bible_library": [
-      "data/bible/ (Contains individual JSON books: 1chronicles.json, 1enoch.json, abtilis.json, fethanagast.json, etc.)",
+      "data/bible/ (Contains standard BCP books, Deuterocanon, and secondary versions like danielGK.json)",
       "data/bible/old-testament.json",
       "data/bible/new-testament.json",
       "data/bible/psalms.json"
+    ],
+    "ethiopic_library": [
+        "data/bible/ET/ (Contains specialized Ethiopian canonical books)",
+        "data/bible/ET/1clementET.json through 8ClementET.json",
+        "data/bible/ET/1meqa’abyanET.json through 3meqa’abyanET.json",
+        "data/bible/ET/abtilisET.json",
+        "data/bible/ET/fethanagastET.json",
+        "data/bible/ET/siratetsionET.json",
+        "data/bible/ET/tizazET.json",
+        "data/bible/ET/miraclesofmaryET.json",
+        "data/bible/ET/malke’aguba’eET.json"
     ],
     "saints_kalendar": [
       "data/saints/saints-january.json through data/saints/saints-december.json"
@@ -100,7 +111,7 @@
     ]
   },
   "to_do_list": [
-    "Step 1: Update path logic in init() and seasonal loading functions to point to bible/, saints/, and season/ subdirectories. [CRITICAL]",
+    "Step 1: Update path logic in init() and seasonal loading functions to point to bible/, bible/ET/, saints/, and season/ subdirectories. [CRITICAL]",
     "Step 2: Finalize BCP 1979 Invitatory logic (Venite/Jubilate) based on liturgical season. [HIGH PRIORITY]",
     "Step 3: Implement Phos Hilaron and Evening Prayer light-based logic. [HIGH PRIORITY]",
     "Step 4: Connect Collect IDs in components.json to the index.html VARIABLE_COLLECT renderer. [Pending]",
@@ -134,7 +145,7 @@
     "Step 15: Update index.html to load correct saints-<month>.json file based on current month. [Completed]",
     "Step 16: Expansion of Ethiopian Broader Canon (Legal, Historical, Prophetic, NT 8-Books). [Completed]",
     "Step 17: Transcription of 100 Miracles of Mary and Primary Salutation Cycle (Malke'a). [Completed]",
-    "Step 18: Redesigned file system into specialized subdirectories (bible, saints, season) for better data management. [Completed]"
+    "Step 18: Redesigned file system into specialized subdirectories (bible, bible/ET, saints, season) for better data management. [Completed]"
   ],
   "lessons_learned": [
     {
