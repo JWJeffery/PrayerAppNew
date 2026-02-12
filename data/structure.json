@@ -4,9 +4,10 @@
     "version": "1.6.0",
     "description": "A comprehensive digital Daily Office and Psalter designed for Anglicans and those in communion with them. It incorporates elements from Anglican, Catholic, Eastern Orthodox, Oriental Orthodox, and Church of the East monastic and parish prayer services.",
     "theological_vision": "As part of 'the one, holy, catholic, and apostolic Church,' the app aims to help users become more like Jesus through sacraments and prayer, drawing from the Holy Fathers.",
-    "current_phase": "Phase 4: Global Canon Expansion & BCP Logic Refinement",
-    "last_major_update": "2026-02-11"
+    "current_phase": "Phase 4: Global Canon Expansion & BCP Logic Refinement (SYSTEM OFFLINE FOR REDESIGN)",
+    "last_major_update": "2026-02-12"
   },
+  "operational_note": "The application is currently non-functional due to a major file system redesign. Internal logic in init() and seasonal loading functions must be updated to point to the new subdirectory paths (bible/, saints/, and season/) before the app can be used.",
   "goals": [
     "Offer customizable prayer experiences drawing from multiple Christian traditions to deepen users' spiritual lives.",
     "Facilitate immersion in worship, bringing 'heaven to earth' through visual, auditory, and sensory elements.",
@@ -16,7 +17,7 @@
     "Standardize all unique canonical IDs (e.g., 1MEQ, JUB, ASC_ISA, FETH_NAG) for global searchability."
   ],
   "immersive_features": {
-    "visual": "Icons of saints, background colors, and themes that change with liturgical seasons based on seasonal JSON files (advent.json, christmas.json, etc.) and liturgicalColor field.",
+    "visual": "Icons of saints, background colors, and themes that change with liturgical seasons based on seasonal JSON files and liturgicalColor field.",
     "auditory": "Light background music or sounds to evoke a sacred atmosphere (pending implementation).",
     "sensory": "Design elements that evoke the atmosphere of traditional worship (e.g., imagery of incense).",
     "ui": "Immersive interface for web and mobile to create a 'heavenly worship' experience."
@@ -33,7 +34,7 @@
       "historical_psalms": "151-155 (Completed)",
       "total_entries": 155,
       "source_text": "NRSV / Traditional liturgical translations",
-      "status": "Fully verified and integrated into psalms.json"
+      "status": "Fully verified and integrated into data/bible/psalms.json"
     },
     "ethiopic_pillar": {
       "historical_legal": "Completed: Didaskalia, Fetha Nagast (Full), Nicaea, Josippon (Full)",
@@ -56,49 +57,40 @@
       "canticles": "Structure defined for Magnificat, Nunc Dimittis, and Te Deum (pending full integration)"
     },
     "saints_kalendar": {
-      "status": "Complete for January through December. month-specific loading implemented.",
-      "notes": "System updated to load correct saints-<month>.json file based on current month."
+      "status": "Complete for January through December. Subdirectory loading required.",
+      "notes": "System must be updated to load data/saints/saints-<month>.json."
     },
-    "seasonal_propers": "advent.json updated to 1979 BCP Daily Office Lectionary Year Two with correct reading keys. Other seasonal files pending similar updates."
+    "seasonal_propers": "Seasonal files migrated to data/season/. advent.json updated to 1979 BCP Year Two."
   },
   "files_structure": {
-    "keep": [
+    "root": [
       "index.html",
-      "package.json",
-      "data/components.json (Verified)",
+      "package.json"
+    ],
+    "data_root": [
+      "data/README.md",
+      "data/components.json",
       "data/rubrics.json",
-      "data/advent.json",
-      "data/christmas.json",
-      "data/epiphany.json",
-      "data/lent.json",
-      "data/easter.json",
-      "data/ordinary1.json",
-      "data/ordinary2.json",
-      "data/ordinary3.json",
-      "data/saints-january.json through saints-december.json"
+      "data/structure.json"
     ],
-    "new_geez_files": [
-      "data/ethiopic_pillar/historical_legal/DIDASKALIA_ET.json",
-      "data/ethiopic_pillar/historical_legal/FETH_NAG_COMPLETE.json",
-      "data/ethiopic_pillar/historical_legal/NICAEA_ET.json",
-      "data/ethiopic_pillar/historical_legal/JOSIPPON_FULL.json",
-      "data/ethiopic_pillar/prophetic_wisdom/REST_JEREMIAH_ET.json",
-      "data/ethiopic_pillar/new_testament_eight_books/SIR_TSION_ET.json",
-      "data/ethiopic_pillar/new_testament_eight_books/TIZAZ_ET.json",
-      "data/ethiopic_pillar/new_testament_eight_books/GITSIW_ET.json",
-      "data/ethiopic_pillar/new_testament_eight_books/ABTILIS_ET.json",
-      "data/ethiopic_pillar/new_testament_eight_books/QALEMENTOS_VIS_ET.json",
-      "data/ethiopic_pillar/new_testament_eight_books/QALEMENTOS_ROLLS_ET.json",
-      "data/ethiopic_pillar/new_testament_eight_books/QALEMENTOS_STATUTES_ET.json",
-      "data/ethiopic_pillar/marian/MIRACLES_MARY_COMPLETE_100.json",
-      "data/ethiopic_pillar/hymnody/MALKEA_MARIAM_ET.json",
-      "data/ethiopic_pillar/hymnody/MALKEA_IYASUS_ET.json",
-      "data/ethiopic_pillar/hymnody/MALKEA_GUBAE_ET.json"
-    ],
-    "bible": [
+    "bible_library": [
+      "data/bible/ (Contains individual JSON books: 1chronicles.json, 1enoch.json, abtilis.json, fethanagast.json, etc.)",
       "data/bible/old-testament.json",
       "data/bible/new-testament.json",
       "data/bible/psalms.json"
+    ],
+    "saints_kalendar": [
+      "data/saints/saints-january.json through data/saints/saints-december.json"
+    ],
+    "seasonal_propers": [
+      "data/season/advent.json",
+      "data/season/christmas.json",
+      "data/season/epiphany.json",
+      "data/season/lent.json",
+      "data/season/easter.json",
+      "data/season/ordinary1.json",
+      "data/season/ordinary2.json",
+      "data/season/ordinary3.json"
     ],
     "delete": [
       "data/psalter.json (Deprecated)",
@@ -108,20 +100,21 @@
     ]
   },
   "to_do_list": [
-    "Step 1: Finalize BCP 1979 Invitatory logic (Venite/Jubilate) based on liturgical season. [HIGH PRIORITY]",
-    "Step 2: Implement Phos Hilaron and Evening Prayer light-based logic. [HIGH PRIORITY]",
-    "Step 3: Connect Collect IDs in components.json to the index.html VARIABLE_COLLECT renderer. [Pending]",
-    "Step 4: Standardize BCP Year One/Year Two lectionary switching logic and lesson distribution options. [Pending]",
-    "Step 5: Integrate Ethiopic Propers into 'Broader Canon' mode and verify canonical ID mapping. [Pending]",
-    "Step 6: Map Clementine visionary instructions to the liturgical year and create dynamic hooks for the Sa'atat hours. [Pending]",
-    "Step 7: Implement hidden sidebar triggered by options button with slide-in animation. [Pending]",
-    "Step 8: Review litany loops and duplicated phrases in specific prayer sections. [Pending]",
-    "Step 9: Formatting: Fix inconsistent line breaks and missing separators in scripture rendering. [Pending]",
-    "Step 10: Implement dynamic calculation for movable feasts (Easter algorithm). [Future]",
-    "Step 11: Migrate individual prayers from index.html to components.json. [Future]",
-    "Step 12: Implement the Ethiopic Sa'atat (Book of Hours) night vigil logic. [Future]",
-    "Step 13: Transcribe the 14 Ethiopic Anaphoras (Qiddase). [Future]",
-    "Step 14: Implement the Malke'a of the Archangels Michael and Gabriel. [Future]"
+    "Step 1: Update path logic in init() and seasonal loading functions to point to bible/, saints/, and season/ subdirectories. [CRITICAL]",
+    "Step 2: Finalize BCP 1979 Invitatory logic (Venite/Jubilate) based on liturgical season. [HIGH PRIORITY]",
+    "Step 3: Implement Phos Hilaron and Evening Prayer light-based logic. [HIGH PRIORITY]",
+    "Step 4: Connect Collect IDs in components.json to the index.html VARIABLE_COLLECT renderer. [Pending]",
+    "Step 5: Standardize BCP Year One/Year Two lectionary switching logic and lesson distribution options. [Pending]",
+    "Step 6: Integrate Ethiopic Propers into 'Broader Canon' mode and verify canonical ID mapping. [Pending]",
+    "Step 7: Map Clementine visionary instructions to the liturgical year and create dynamic hooks for the Sa'atat hours. [Pending]",
+    "Step 8: Implement hidden sidebar triggered by options button with slide-in animation. [Pending]",
+    "Step 9: Review litany loops and duplicated phrases in specific prayer sections. [Pending]",
+    "Step 10: Formatting: Fix inconsistent line breaks and missing separators in scripture rendering. [Pending]",
+    "Step 11: Implement dynamic calculation for movable feasts (Easter algorithm). [Future]",
+    "Step 12: Migrate individual prayers from index.html to components.json. [Future]",
+    "Step 13: Implement the Ethiopic Sa'atat (Book of Hours) night vigil logic. [Future]",
+    "Step 14: Transcribe the 14 Ethiopic Anaphoras (Qiddase). [Future]",
+    "Step 15: Implement the Malke'a of the Archangels Michael and Gabriel. [Future]"
   ],
   "completed_fixes": [
     "Step 1: Consolidate Marian logic - Render once based on marianPos in index.html. [Completed]",
@@ -140,7 +133,8 @@
     "Step 14: Implement 30-day Psalm cycle - Added range parsing logic. [Completed]",
     "Step 15: Update index.html to load correct saints-<month>.json file based on current month. [Completed]",
     "Step 16: Expansion of Ethiopian Broader Canon (Legal, Historical, Prophetic, NT 8-Books). [Completed]",
-    "Step 17: Transcription of 100 Miracles of Mary and Primary Salutation Cycle (Malke'a). [Completed]"
+    "Step 17: Transcription of 100 Miracles of Mary and Primary Salutation Cycle (Malke'a). [Completed]",
+    "Step 18: Redesigned file system into specialized subdirectories (bible, saints, season) for better data management. [Completed]"
   ],
   "lessons_learned": [
     {
@@ -170,7 +164,11 @@
     {
       "lesson": "Pillar Priority",
       "description": "Ensure the BCP 1979 core functionality is fully operational before integrating broader tradition logic (e.g., Sa'atat)."
+    },
+    {
+      "lesson": "Path Management",
+      "description": "Any change to the physical directory structure must be immediately followed by an update to the pathing logic in the application's initialization functions."
     }
   ],
-  "last_updated": "2026-02-11"
+  "last_updated": "2026-02-12"
 }
