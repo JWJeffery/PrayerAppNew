@@ -1,20 +1,20 @@
 {
   "project_manifest": {
     "name": "Universal Office (Prayer App New)",
-    "version": "1.6.0",
+    "version": "1.7.0",
     "description": "A comprehensive digital Daily Office and Psalter designed for Anglicans and those in communion with them. It incorporates elements from Anglican, Catholic, Eastern Orthodox, Oriental Orthodox, and Church of the East monastic and parish prayer services.",
     "theological_vision": "As part of 'the one, holy, catholic, and apostolic Church,' the app aims to help users become more like Jesus through sacraments and prayer, drawing from the Holy Fathers.",
     "current_phase": "Phase 4: Global Canon Expansion & BCP Logic Refinement (SYSTEM OFFLINE FOR REDESIGN)",
     "last_major_update": "2026-02-12"
   },
-  "operational_note": "The application is currently non-functional due to a major file system redesign. Internal logic in init() and seasonal loading functions must be updated to point to the new subdirectory paths (bible/, bible/ET/, saints/, and season/) before the app can be used.",
+  "operational_note": "The application is currently non-functional due to a major file system redesign. Internal logic in init() and seasonal loading functions must be updated to point to the new subdirectory paths (bible/, bible/ET/, bible/SY/, bible/AR/, bible/ODES/, saints/, and season/) before the app can be used.",
   "goals": [
     "Offer customizable prayer experiences drawing from multiple Christian traditions to deepen users' spiritual lives.",
     "Facilitate immersion in worship, bringing 'heaven to earth' through visual, auditory, and sensory elements.",
     "Include a saints section with a curated kalendar based on Lesser Feasts and Fasts and the BCP, reviewed for marks of holiness and intercession.",
     "Ensure the app is beautiful and engaging, changing with liturgical seasons to enhance the prayer experience.",
     "Complete the 'Eight Books' of the Ethiopian New Testament church order.",
-    "Standardize all unique canonical IDs (e.g., 1MEQ, JUB, ASC_ISA, FETH_NAG) for global searchability."
+    "Standardize all unique canonical IDs (e.g., 1MEQ, JUB, ASC_ISA, FETH_NAG, 3CO, 2BA, LAO) for global searchability."
   ],
   "immersive_features": {
     "visual": "Icons of saints, background colors, and themes that change with liturgical seasons based on seasonal JSON files and liturgicalColor field.",
@@ -31,7 +31,7 @@
   "content_status": {
     "psalter": {
       "canonical_psalms": "1-150 (Completed)",
-      "historical_psalms": "151-155 (Completed)",
+      "historical_psalms": "151-155 (Completed: Syriac Peshitta lectionary alignment verified)",
       "total_entries": 155,
       "source_text": "NRSV / Traditional liturgical translations",
       "status": "Fully verified and integrated into data/bible/psalms.json"
@@ -44,6 +44,13 @@
       "marian_narrative": "Completed: Tä’amrä Maryam (Miracles of Mary) - 100 Miracles (Volumes I & II Combined)",
       "hymnody": "Completed: Malke’a Mariam, Malke’a Iyasus, Malke’a Guba’e (Full Salutation Cycle Finished)"
     },
+    "global_expansion": {
+      "syriac_tradition": "Completed: 2 Baruch, 5 Maccabees (Syriac), Letter of Baruch, Odes of Solomon, Psalms 152-155 (Peshitta)",
+      "armenian_tradition": "Completed: 3 Corinthians, Prayer of Apollonius, Armenian Canticles",
+      "eastern_orthodox": "Completed: Nine Biblical Odes (Septuagint Basis)",
+      "coptic_tradition": "Completed: Four Hoos (Coptic Odes)",
+      "western_apocrypha": "Completed: Epistle to the Laodiceans"
+    },
     "liturgy": {
       "morning_prayer": "Structural framework defined; logic for Invitatories (Venite/Jubilate) pending",
       "evening_prayer": "Structural framework defined; logic for Phos Hilaron pending",
@@ -52,9 +59,9 @@
       "minor_offices": "Eleventh Hour (Vespers/Sunset) logic being mapped"
     },
     "collects_and_special": {
-      "daily_collects": "In progress – collect IDs standardized across seasonal files and linked to components.json (partial implementation in index.html; full linking pending)",
+      "daily_collects": "In progress – collect IDs standardized across seasonal files and linked to components.json",
       "seasonal_antiphons": "Implemented via antiphon field in seasonal JSONs",
-      "canticles": "Structure defined for Magnificat, Nunc Dimittis, and Te Deum (pending full integration)"
+      "canticles": "Structure defined for Magnificat, Nunc Dimittis, Te Deum, and Global Odes (Integration in progress)"
     },
     "saints_kalendar": {
       "status": "Complete for January through December. Subdirectory loading required.",
@@ -99,6 +106,7 @@
         "data/bible/NT/james.json",
         "data/bible/NT/john.json",
         "data/bible/NT/jude.json",
+        "data/bible/NT/laodiceans.json",
         "data/bible/NT/luke.json",
         "data/bible/NT/mark.json",
         "data/bible/NT/matthew.json",
@@ -197,6 +205,23 @@
         "data/bible/ET/restofjeremiahET.json",
         "data/bible/ET/siratetsionET.json",
         "data/bible/ET/tizazET.json"
+      ],
+      "SY": [
+        "data/bible/SY/2baruchSY.json",
+        "data/bible/SY/5maccabeesSY.json",
+        "data/bible/SY/letterofbaruchSY.json",
+        "data/bible/SY/historyofzosimusSY.json"
+      ],
+      "AR": [
+        "data/bible/AR/3corinthiansAR.json",
+        "data/bible/AR/prayerofapolloniusAR.json"
+      ],
+      "ODES": [
+        "data/bible/ODES/eoodesEO.json",
+        "data/bible/ODES/copticodesCO.json",
+        "data/bible/ODES/armeniancanticlesAR.json",
+        "data/bible/ODES/ethiopianodesET.json",
+        "data/bible/ODES/odesofsolomonSY.json"
       ]
     },
     "saints_kalendar": [
@@ -231,15 +256,15 @@
     ]
   },
   "to_do_list": [
-    "Step 1: Update path logic in init() and seasonal loading functions to point to bible/, bible/ET/, bible/NT/, bible/OT/, saints/, and season/ subdirectories. [CRITICAL]",
+    "Step 1: Update path logic in init() and seasonal loading functions to point to bible/, bible/ET/, bible/NT/, bible/OT/, bible/SY/, bible/AR/, bible/ODES/, saints/, and season/ subdirectories. [CRITICAL]",
     "Step 2: Finalize BCP 1979 Invitatory logic (Venite/Jubilate) based on liturgical season. [HIGH PRIORITY]",
     "Step 3: Implement Phos Hilaron and Evening Prayer light-based logic. [HIGH PRIORITY]",
     "Step 4: Connect Collect IDs in components.json to the index.html VARIABLE_COLLECT renderer. [Pending]",
     "Step 5: Standardize BCP Year One/Year Two lectionary switching logic and lesson distribution options. [Pending]",
-    "Step 6: Integrate Ethiopic Propers into 'Broader Canon' mode and verify canonical ID mapping. [Pending]",
-    "Step 7: Map Clementine visionary instructions to the liturgical year and create dynamic hooks for the Sa'atat hours. [Pending]",
-    "Step 8: Implement hidden sidebar triggered by options button with slide-in animation. [Pending]",
-    "Step 9: Review litany loops and duplicated phrases in specific prayer sections. [Pending]",
+    "Step 6: Integrate Global Canon additions (SY, AR, ODES) into 'Broader Canon' mode selector. [Pending]",
+    "Step 7: Integrate Ethiopic Propers into 'Broader Canon' mode and verify canonical ID mapping. [Pending]",
+    "Step 8: Map Clementine visionary instructions to the liturgical year and create dynamic hooks for the Sa'atat hours. [Pending]",
+    "Step 9: Implement hidden sidebar triggered by options button with slide-in animation. [Pending]",
     "Step 10: Formatting: Fix inconsistent line breaks and missing separators in scripture rendering. [Pending]",
     "Step 11: Implement dynamic calculation for movable feasts (Easter algorithm). [Future]",
     "Step 12: Migrate individual prayers from index.html to components.json. [Future]",
@@ -265,7 +290,9 @@
     "Step 15: Update index.html to load correct saints-<month>.json file based on current month. [Completed]",
     "Step 16: Expansion of Ethiopian Broader Canon (Legal, Historical, Prophetic, NT 8-Books). [Completed]",
     "Step 17: Transcription of 100 Miracles of Mary and Primary Salutation Cycle (Malke'a). [Completed]",
-    "Step 18: Redesigned file system into specialized subdirectories (bible, bible/ET, bible/NT, bible/OT, saints, season) for better data management. [Completed]"
+    "Step 18: Redesigned file system into specialized subdirectories (bible, bible/ET, bible/NT, bible/OT, saints, season) for better data management. [Completed]",
+    "Step 19: Full English Canon Expansion: Integrated Syriac, Armenian, Greek (EO), and Coptic scripture files with tradition suffixes. [Completed]",
+    "Step 20: Corrected Psalter numbering: Verified Psalms 151-155 against Syriac Peshitta lectionary; resolved 153/155 duplicate. [Completed]"
   ],
   "lessons_learned": [
     {

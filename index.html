@@ -362,6 +362,44 @@ const psalterCycle = [
  {day: 31, morning: '139,140', evening: '141,142,143'}
 ];
 
+// New: Cache for bible books
+let bibleCache = {};
+
+// New: Normalize book name for file lookup
+function normalizeBookName(book) {
+  return book.toLowerCase().replace(/\s+/g, '');
+}
+
+// New: Parse scripture reference for book, chapter, verses
+function parseScriptureReference(ref) {
+  const match = ref.match(/([1-4]?\s?[A-Za-z]+)\s*(\d+):(\d+)(?:-(\d+))?/);
+  if (!match) return { book: '', chapter: 0, startVerse: 0, endVerse: 0 };
+  return {
+    book: match[1],
+    chapter: parseInt(match[2]),
+    startVerse: parseInt(match[3]),
+    endVerse: parseInt(match[4] || match[3])
+  };
+}
+
+// New: Lists of book filenames (without .json) from directory
+const otBooks = [
+  '1chronicles', '1enoch', '1esdras', '1kings', '1maccabees', '1samuel', '2chronicles', '2esdras', '2kings', '2maccabees',
+  '2samuel', '3maccabees', '4maccabees', 'amos', 'armeniancanticles', 'baruch', 'copticodes', 'daniel', 'danielgk',
+  'deuteronomy', 'ecclesiastes', 'eoodes', 'esther', 'esthergk', 'ethiopianodes', 'exodus', 'ezekiel', 'ezra', 'genesis',
+  'habakkuk', 'haggai', 'hosea', 'isaiah', 'jeremiah', 'job', 'joel', 'jonah', 'joshua', 'judges', 'judith', 'lamentations',
+  'letterofbaruchsy', 'letterofjeremiah', 'leviticus', 'malachi', 'micah', 'nahum', 'nehemiah', 'numbers', 'obadiah',
+  'odesofsolomonsy', 'prayerofapolloniusar', 'prayerofmanasseh', 'proverbs', 'psalms', 'ruth', 'sirach', 'songofsolomon',
+  'tobit', 'wisdom', 'zechariah', 'zephaniah'
+];
+
+const ntBooks = [
+  '1corinthians', '1john', '1peter', '1thessalonians', '1timothy', '2corinthians', '2john', '2peter', '2thessalonians',
+  '2timothy', '3john', 'acts', 'colossians', 'ephesians', 'epistleofthelaodiceans', 'galatians', 'hebrews',
+  'historyofzosimus', 'james', 'john', 'jude', 'luke', 'mark', 'matthew', 'philemon', 'philippians', 'revelation',
+  'romans', 'titus', '3corinthiansar'
+];
+
 function formatDateForLookup(date) {
  const options = { month: 'long', day: 'numeric', year: 'numeric' };
  return date.toLocaleDateString('en-US', options);
@@ -382,7 +420,7 @@ async function loadSeasonalData(seasonFile) {
  if (seasonalCache[seasonFile]) return seasonalCache[seasonFile];
 
  try {
-   const response = await fetch(`data/${seasonFile}`);
+   const response = await fetch(`data/season/${seasonFile}`);
    if (!response.ok) throw new Error(`HTTP ${response.status} for ${seasonFile}`);
    const data = await response.json();
    seasonalCache[seasonFile] = data;
@@ -428,12 +466,7 @@ async function init() {
            appData[file] = await res.json();
        }
 
-       const otRes = await fetch('data/bible/old-testament.json');
-       if (otRes.ok) appData['oldTestament'] = await otRes.json();
-       const ntRes = await fetch('data/bible/new-testament.json');
-       if (ntRes.ok) appData['newTestament'] = await ntRes.json();
-       console.log("NT Contents:", appData['newTestament']);
-       const psalmsRes = await fetch('data/bible/psalms.json');
+       const psalmsRes = await fetch('data/bible/OT/psalms.json');
        if (psalmsRes.ok) appData['psalms'] = await psalmsRes.json();
 
        updateUI();
@@ -491,48 +524,69 @@ function updateUI() {
    else document.body.classList.remove('dark-mode');
 }
 
-function normalizeReference(ref) {
-    const parenRegex = /\((\d+[a-zA-Z]?-\d+[a-zA-Z]?)\)/i;
-    if (!parenRegex.test(ref)) {
-        return ref; // No parentheses, return original
-    }
-    const contMatch = ref.match(parenRegex);
-    const contRange = contMatch[0].slice(1, -1); // Remove parentheses
-    const contEnd = contRange.split('-')[1].replace(/[a-zA-Z]/g, ''); // Get the ending verse number, ignore a/b
-    const mainPart = ref.split('(')[0].trim(); // Part before parentheses
-    const startMatch = mainPart.match(/:(\d+)-[0-9a-zA-Z]*/); // Handle possible a/b after the main range start
-    const startVerse = startMatch ? startMatch[1] : '';
-    const bookChapter = mainPart.split(':')[0].trim();
-    return `${bookChapter}:${startVerse}-${contEnd}`;
+// Updated to async
+async function getScriptureText(refId, version = "NRSV") {
+   if (!refId) return "No reference provided";
+   refId = refId.toUpperCase().trim();
+   if (refId.startsWith("PSALM")) {
+       return getPsalmText(refId); // Use new helper for psalms
+   }
+
+   const { book, chapter, startVerse, endVerse } = parseScriptureReference(refId);
+   if (!book) return "Invalid reference: " + refId;
+   const normBook = normalizeBookName(book);
+   const folder = ntBooks.includes(normBook) ? 'NT' : 'OT';
+   const path = `data/bible/${folder}/${normBook}.json`;
+
+   if (!bibleCache[normBook]) {
+       try {
+           const response = await fetch(path);
+           if (!response.ok) throw new Error(`Failed to load ${path}`);
+           bibleCache[normBook] = await response.json();
+       } catch (err) {
+           console.error(err);
+           return "Scripture not found for " + refId;
+       }
+   }
+
+   const chapters = bibleCache[normBook].chapters;
+   const chapData = chapters[chapter - 1];
+   if (!chapData) return "Chapter not found in " + book;
+
+   let text = '';
+   for (let v = startVerse; v <= endVerse; v++) {
+       const verseData = chapData.verses.find(verse => verse.num === v);
+       if (verseData) {
+           const verseText = verseData.text.NRSV || verseData.text.KJV || Object.values(verseData.text)[0] || '';
+           text += verseText + ' '; // Concat without nums, space-separated
+       }
+   }
+   text = text.trim().replace(/\n/g, '<br>'); // Line breaks
+   return text || "Text not found for " + refId;
 }
 
-function getScriptureText(refId, version = "NRSV") {
-   if (!refId) return "No reference provided";
-   let normalizedRef = normalizeReference(refId.trim());
-   let lookupId = normalizedRef.toUpperCase();
-   // Fix for psalm references with verse ranges (e.g., "112:1-9" -> "112")
-   if (lookupId.startsWith("PSALM")) {
-       lookupId = lookupId.replace(/:\d+-\d+/, ''); // Strip verse range
-   }
-   let source = null;
-   if (lookupId.startsWith("PSA") || lookupId.startsWith("PSALM")) {
-       source = appData['psalms'];
-   } else if (lookupId.includes("ACTS") || lookupId.includes("JOHN") || lookupId.includes("EPH") || lookupId.includes("MARK") || lookupId.includes("ROM") || lookupId.includes("HEB") || lookupId.includes("COR") || lookupId.includes("MATT") || lookupId.includes("GAL") || lookupId.includes("HEBREWS") || lookupId.includes("TIMOTHY") || lookupId.includes("TIM") || lookupId.includes("TITUS") || lookupId.includes("PHILEMON") || lookupId.includes("JAMES") || lookupId.includes("PETER") || lookupId.includes("PET") || lookupId.includes("JUDE") || lookupId.includes("REVELATION") || lookupId.includes("REV") || lookupId.includes("PHILIPPIANS") || lookupId.includes("PHIL") || lookupId.includes("COLOSSIANS") || lookupId.includes("COL") || lookupId.includes("THESSALONIANS") || lookupId.includes("THESS")) {
-       source = appData['newTestament'];
-   } else {
-       source = appData['oldTestament'];
-   }
-   if (!source) return "Bible library not loaded";
-   const entry = source.find(s => s.id.toUpperCase().trim() === lookupId);
-   if (!entry) return "Text not found for " + refId;
-   let text = entry.text[version] || entry.text["KJV"] || null;
-   if (text) {
-       text = text.replace(/\d+:\d+ /g, ''); // Remove verse numbers like "1:1 "
-       text = text.replace(/^.*?:\s*/, '').trim();
-       text = text.replace(/^["“‘]/, '').trim();
-       text = text.replace(/\n/g, '<br>'); // Replace \n with <br> for line breaks
-   }
-   return text || "Text not found for " + refId;
+// New: Helper for psalm text
+function getPsalmText(psalmRefs) {
+   let text = '';
+   const refs = psalmRefs.split(',').map(ref => ref.trim().replace('PSALM ', ''));
+   refs.forEach(ref => {
+       const psalmNum = parseInt(ref);
+       const psalm = appData['psalms'].find(p => p.num === psalmNum);
+       if (psalm) {
+           psalm.verses.forEach(verse => {
+               text += `<span class="psalm-verse"><span class="verse-num">${verse.num}</span>${verse.text}</span>`;
+           });
+           if (document.getElementById('toggle-gloria-patri').checked) {
+               const gloria = appData.components.find(c => c.id === "bcp-gloria-patri");
+               const rite = document.querySelector('input[name="rite"]:checked')?.value || 'rite2';
+               let gloriaText = gloria ? (gloria.text[rite] || gloria.text['rite2'] || "(Gloria Patri)") : "(Gloria Patri not found)";
+               text += `<br><i>${gloriaText}</i>`;
+           }
+       } else {
+           text += "Psalm not found: " + ref;
+       }
+   });
+   return text;
 }
 
 async function renderOffice() {
@@ -666,13 +720,8 @@ async function renderOffice() {
          psalmRefs.forEach(psalm => {
            let psalmId = psalm.toUpperCase().trim();
            if (!psalmId.startsWith('PSALM ')) psalmId = 'PSALM ' + psalmId;
-           const fullText = getScriptureText(psalmId);
+           const fullText = getPsalmText(psalmId); // Sync call
            psalmHtml += `<h4 class="passage-reference">Psalm ${psalm.replace(/Psalm /gi, '').replace(/:\d+-\d+[a-z]?(\(\d+-\d+[a-z]?\))?/gi, '')}</h4><span class="component-text">${fullText || "No psalm text found"}</span>`;
-           if (document.getElementById('toggle-gloria-patri').checked) {
-             const gloria = appData.components.find(c => c.id === "bcp-gloria-patri");
-             let gloriaText = gloria ? (gloria.text[rite] || gloria.text['rite2'] || "(Gloria Patri)") : "(Gloria Patri not found)";
-             psalmHtml += `<span class="component-text"><i>${gloriaText}</i></span>`;
-           }
          });
          officeHtml += psalmHtml;
        }
@@ -683,8 +732,8 @@ async function renderOffice() {
        let reading = isMorning ? morningOT : eveningOT;
        if (reading) {
          officeHtml += `<span class="rubric-text">The Old Testament Lesson</span>`;
-         officeHtml += `<h4 class="passage-reference">${normalizeReference(reading)}</h4>`;
-         const fullText = getScriptureText(reading);
+         officeHtml += `<h4 class="passage-reference">${reading}</h4>`;
+         const fullText = await getScriptureText(reading);
          officeHtml += `<span class="component-text">${fullText || "No reading appointed"}</span>`;
          officeHtml += '<br><hr style="border: 1px solid var(--gold); margin: 10px 0;">';
        }
@@ -695,8 +744,8 @@ async function renderOffice() {
        let reading = isMorning ? morningEpistle : eveningEpistle;
        if (reading) {
          officeHtml += `<span class="rubric-text">The Epistle</span>`;
-         officeHtml += `<h4 class="passage-reference">${normalizeReference(reading)}</h4>`;
-         const fullText = getScriptureText(reading);
+         officeHtml += `<h4 class="passage-reference">${reading}</h4>`;
+         const fullText = await getScriptureText(reading);
          officeHtml += `<span class="component-text">${fullText || "No reading appointed"}</span>`;
          officeHtml += '<br><hr style="border: 1px solid var(--gold); margin: 10px 0;">';
        }
@@ -707,8 +756,8 @@ async function renderOffice() {
        let reading = isMorning ? morningGospel : eveningGospel;
        if (reading) {
          officeHtml += `<span class="rubric-text">The Holy Gospel</span>`;
-         officeHtml += `<h4 class="passage-reference">${normalizeReference(reading)}</h4>`;
-         const fullText = getScriptureText(reading);
+         officeHtml += `<h4 class="passage-reference">${reading}</h4>`;
+         const fullText = await getScriptureText(reading);
          officeHtml += `<span class="component-text">${fullText || "No reading appointed"}</span>`;
          officeHtml += '<br><hr style="border: 1px solid var(--gold); margin: 10px 0;">';
        }
@@ -893,7 +942,7 @@ async function renderOffice() {
    if (!appData.saints || appData.saintsMonth !== month) {
      try {
        const file = `saints-${month.toLowerCase()}.json`;
-       const res = await fetch(`data/${file}`);
+       const res = await fetch(`data/saints/${file}`);
        if (!res.ok) throw new Error(`Failed to load ${file}`);
        appData.saints = await res.json();
        appData.saintsMonth = month;
