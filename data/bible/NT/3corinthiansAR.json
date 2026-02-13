@@ -1,0 +1,39 @@
+{
+  "meta": {
+    "name": "3 Corinthians",
+    "id": "3CO",
+    "version": "Hovhanessian",
+    "copyright": "Public Domain translation from the Armenian"
+  },
+  "chapters": [
+    {
+      "num": 1,
+      "verses": [
+        { "num": 1, "text": "Stephen and the elders who are with him, Daphne, Eubulus, Theophilus, and Xenon, to Paul the brother in the Lord, greeting." },
+        { "num": 2, "text": "Two men have come to Corinth, Simon and Cleobius, who are perverting the faith of many with wicked words." },
+        { "num": 3, "text": "For they say that we must not appeal to the prophets, and that God is not Almighty." },
+        { "num": 4, "text": "They say there is no resurrection of the flesh, and that man was not made by God." },
+        { "num": 5, "text": "They also say that the Lord has not come in the flesh, nor was He born of Mary." },
+        { "num": 6, "text": "Therefore, brother, make haste to come to us, that the church of the Corinthians may remain without offense, and that the folly of these men may be made manifest. Farewell in the Lord." }
+      ]
+    },
+    {
+      "num": 2,
+      "verses": [
+        { "num": 1, "text": "Paul, a prisoner of Jesus Christ, to the brethren in Corinth, greeting." },
+        { "num": 2, "text": "Being in many tribulations, I do not wonder that the teachings of the evil one are spreading so quickly." },
+        { "num": 3, "text": "For my Lord Jesus Christ will hasten His coming, since He can no longer endure the errors of those who pervert His words." },
+        { "num": 4, "text": "I delivered to you from the beginning what I received from the apostles who were before me, who at all times were with the Lord Jesus Christ." },
+        { "num": 5, "text": "That our Lord Jesus Christ was born of Mary of the seed of David, the Father having sent the Spirit from heaven into her," },
+        { "num": 6, "text": "That He might come into this world and redeem all flesh by His own flesh, and that He might raise us up from the dead in the flesh, even as He has shown us in Himself." },
+        { "num": 7, "text": "And since man was fashioned by His Father, therefore man was sought for when he was lost, that he might be quickened by adoption." },
+        { "num": 8, "text": "For the Almighty God, who made heaven and earth, first sent the prophets to the Jews, that they might be drawn away from their sins." },
+        { "num": 9, "text": "But those who would pervert the human spirit by vain promises say that the flesh is not raised." },
+        { "num": 10, "text": "But they do not consider that even the seed of wheat or other seeds, when cast into the ground, first rot and then are raised up by the will of God with the same body they had before." },
+        { "num": 11, "text": "And if God raises the things that are small, how much more shall He raise you who are made in His likeness?" },
+        { "num": 12, "text": "Therefore, do not listen to those who say there is no resurrection; for they shall not rise to life, but to judgment." },
+        { "num": 13, "text": "As for you, remain firm in the doctrine you have received. Peace and mercy be upon you. Amen." }
+      ]
+    }
+  ]
+}

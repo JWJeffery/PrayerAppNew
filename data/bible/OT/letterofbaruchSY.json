@@ -1,0 +1,17 @@
+{
+  "meta": {
+    "name": "The Letter of Baruch",
+    "id": "LBA",
+    "version": "Charles",
+    "copyright": "Public Domain"
+  },
+  "chapters": [
+    {
+      "num": 1,
+      "verses": [
+        { "num": 1, "text": "These are the words of that epistle which Baruch the son of Neriah sent to the nine and a half tribes, which were across the river Euphrates." },
+        { "num": 2, "text": "Thus says Baruch the son of Neriah to the brethren carried into captivity: Mercy and peace." }
+      ]
+    }
+  ]
+}

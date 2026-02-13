@@ -1,0 +1,18 @@
+{
+  "meta": {
+    "name": "The History of Zosimus (The Rechabites)",
+    "id": "ZOS",
+    "version": "Syriac Tradition",
+    "copyright": "Public Domain"
+  },
+  "chapters": [
+    {
+      "num": 1,
+      "verses": [
+        { "num": 1, "text": "There was a man of the name of Zosimus, who for forty years did not eat bread, and drank no wine, and saw no man's face." },
+        { "num": 2, "text": "He besought God that He would show him where the Blessed Ones, the sons of Rechab, were hidden." },
+        { "num": 3, "text": "And an angel of the Lord was sent to him, and said: Zosimus, man of God, behold I am sent to thee to guide thee and show thee the way to the Blessed Ones." }
+      ]
+    }
+  ]
+}

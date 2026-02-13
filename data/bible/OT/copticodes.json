@@ -1,0 +1,54 @@
+{
+  "meta": {
+    "name": "The Four Hoos (Coptic Odes)",
+    "id": "COP-ODES",
+    "version": "Coptic Orthodox Traditional",
+    "copyright": "Public Domain"
+  },
+  "chapters": [
+    {
+      "num": 1,
+      "title": "The First Hoos (The Song of Moses)",
+      "reference": "Exodus 15:1-19",
+      "verses": [
+        { "num": 1, "text": "Then sang Moses and the children of Israel this song unto the Lord, and spake, saying, I will sing unto the Lord, for he hath triumphed gloriously: the horse and his rider hath he thrown into the sea." },
+        { "num": 2, "text": "The Lord is my strength and song, and he is become my salvation: he is my God, and I will prepare him an habitation; my father's God, and I will exalt him." },
+        { "num": 21, "text": "Sing ye to the Lord, for he hath triumphed gloriously; the horse and his rider hath he thrown into the sea." }
+      ]
+    },
+    {
+      "num": 2,
+      "title": "The Second Hoos (The Great Thanksgiving)",
+      "reference": "Psalm 136 (LXX 135)",
+      "verses": [
+        { "num": 1, "text": "O give thanks unto the Lord; for he is good: for his mercy endureth for ever." },
+        { "num": 2, "text": "O give thanks unto the God of gods: for his mercy endureth for ever." },
+        { "num": 3, "text": "O give thanks to the Lord of lords: for his mercy endureth for ever." },
+        { "num": 26, "text": "O give thanks unto the God of heaven: for his mercy endureth for ever." }
+      ]
+    },
+    {
+      "num": 3,
+      "title": "The Third Hoos (The Song of the Three Holy Children)",
+      "reference": "Daniel 3:52-88 (LXX/Deuterocanon)",
+      "verses": [
+        { "num": 1, "text": "Blessed art Thou, O Lord God of our fathers: and to be praised and exalted above all for ever." },
+        { "num": 2, "text": "And blessed is Thy glorious and holy name: and to be praised and exalted above all for ever." },
+        { "num": 29, "text": "O all ye works of the Lord, bless ye the Lord: praise him, and magnify him for ever." }
+      ]
+    },
+    {
+      "num": 4,
+      "title": "The Fourth Hoos (The Creation Praise)",
+      "reference": "Psalms 148, 149, 150",
+      "verses": [
+        { "num": 1, "text": "Praise ye the Lord. Praise ye the Lord from the heavens: praise him in the heights." },
+        { "num": 2, "text": "Praise ye him, all his angels: praise ye him, all his hosts." },
+        { "num": 3, "text": "Praise him, O sun and moon: praise him, all ye stars of light." },
+        { "num": 4, "text": "Praise him, ye heavens of heavens, and ye waters that be above the heavens." },
+        { "num": 5, "text": "Praise the Lord from the earth, ye dragons, and all deeps." },
+        { "num": 6, "text": "Praise the Lord in all His saints. Praise Him in the firmament of His power." }
+      ]
+    }
+  ]
+}

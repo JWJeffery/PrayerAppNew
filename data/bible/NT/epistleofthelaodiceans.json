@@ -1,0 +1,31 @@
+{
+  "meta": {
+    "name": "Epistle to the Laodiceans",
+    "id": "LAO",
+    "version": "Westcott-Hort Latin Basis",
+    "copyright": "Public Domain"
+  },
+  "chapters": [
+    {
+      "num": 1,
+      "verses": [
+        { "num": 1, "text": "Paul, an apostle, not of men, neither by man, but by Jesus Christ, to the brethren which are at Laodicea." },
+        { "num": 2, "text": "Grace be to you, and peace, from God the Father and our Lord Jesus Christ." },
+        { "num": 3, "text": "I thank my God in every prayer of mine, because ye are steadfast and persevering in good works, looking for that which is promised in the day of judgment." },
+        { "num": 4, "text": "And let not the vain speeches of some unsettle you, who pervert the truth, that they may draw you away from the truth of the Gospel which was preached by me." },
+        { "num": 5, "text": "And now may God grant that my converts may attain to a perfect knowledge of the truth of the Gospel, be beneficent, and doing good works which accompany salvation." },
+        { "num": 6, "text": "And now my bonds, which I suffer in Christ, are manifest, in which I rejoice and am glad." },
+        { "num": 7, "text": "For I know that this shall turn to my salvation for ever, through your prayer and the supply of the Holy Spirit." },
+        { "num": 8, "text": "Whether through life or by death; for to me to live is Christ, and to die is joy." },
+        { "num": 9, "text": "And unto Him will our Lord grant His mercy, that ye may have the same love, and be of one mind." },
+        { "num": 10, "text": "Therefore, my beloved, as ye have heard of the coming of the Lord, so think and do in fear, and it shall be to you life eternal; for it is God who worketh in you." },
+        { "num": 11, "text": "And do whatsoever ye do without sin. And what is best, my beloved, rejoice in the Lord Jesus Christ, and avoid all filthy lucre." },
+        { "num": 12, "text": "Let all your petitions be made known before God, and be steadfast in the doctrine of Christ." },
+        { "num": 13, "text": "And whatsoever things are sound and true, and of good report, and chaste, and just, and holy, these things do." },
+        { "num": 14, "text": "Those things which ye have heard, and received, retain in your hearts, and peace shall be with you." },
+        { "num": 15, "text": "All the saints salute you. The grace of our Lord Jesus Christ be with your spirit. Amen." },
+        { "num": 16, "text": "Cause this epistle to be read to the Colossians, and the epistle of the Colossians to be read unto you." }
+      ]
+    }
+  ]
+}

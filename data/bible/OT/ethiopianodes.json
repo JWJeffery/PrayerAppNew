@@ -1,0 +1,34 @@
+{
+  "meta": {
+    "name": "Ethiopian Odes (Mequtariya)",
+    "id": "ET-ODES",
+    "version": "Ge'ez Traditional",
+    "copyright": "Public Domain"
+  },
+  "chapters": [
+    {
+      "num": 1,
+      "title": "First Song of Moses",
+      "reference": "Exodus 15",
+      "verses": [
+        { "num": 1, "text": "Then Moses and the children of Israel sang this song to God, and they said: Let us sing to the Lord, for he is greatly glorified." }
+      ]
+    },
+    {
+      "num": 2,
+      "title": "Song of Hannah",
+      "reference": "1 Samuel 2",
+      "verses": [
+        { "num": 1, "text": "My heart is strengthened in the Lord, and my horn is exalted in my God; my mouth is enlarged over my enemies." }
+      ]
+    },
+    {
+      "num": 3,
+      "title": "Prayer of Hezekiah",
+      "reference": "Isaiah 38",
+      "verses": [
+        { "num": 1, "text": "I said in the midst of my days: I shall go to the gates of Sheol; I shall miss the residue of my years." }
+      ]
+    }
+  ]
+}

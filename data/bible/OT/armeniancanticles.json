@@ -1,0 +1,108 @@
+{
+  "meta": {
+    "name": "Armenian Canticles (Odes)",
+    "id": "ARM-ODES",
+    "version": "Armenian Church Traditional",
+    "copyright": "Public Domain"
+  },
+  "chapters": [
+    {
+      "num": 1,
+      "title": "First Song of Moses",
+      "reference": "Exodus 15:1-19",
+      "verses": [
+        { "num": 1, "text": "Let us sing unto the Lord, for he is gloriously glorified; the horse and the rider he hath cast into the sea." }
+      ]
+    },
+    {
+      "num": 2,
+      "title": "Second Song of Moses",
+      "reference": "Deuteronomy 32:1-21",
+      "verses": [
+        { "num": 1, "text": "Give ear, O heavens, and I will speak; and hear, O earth, the words of my mouth." }
+      ]
+    },
+    { "num": 3, "title": "Third Song of Moses", "reference": "Deuteronomy 32:22-43", "verses": [{ "num": 1, "text": "For a fire is kindled in mine anger, and shall burn unto the lowest hell." }] },
+    {
+      "num": 4,
+      "title": "Song of Hannah",
+      "reference": "1 Samuel 2:1-10",
+      "verses": [
+        { "num": 1, "text": "My heart is established in the Lord, and my horn is exalted in my God." }
+      ]
+    },
+    {
+      "num": 5,
+      "title": "Song of Isaiah",
+      "reference": "Isaiah 26:9-20",
+      "verses": [
+        { "num": 1, "text": "From the night-season my spirit awaketh early unto thee, O God, for thy commandments are a light upon the earth." }
+      ]
+    },
+    {
+      "num": 6,
+      "title": "Song of Habakkuk",
+      "reference": "Habakkuk 3:2-19",
+      "verses": [
+        { "num": 1, "text": "Lord, I have heard thy report, and was afraid: O Lord, I revived thy work in the midst of the years." }
+      ]
+    },
+    {
+      "num": 7,
+      "title": "Song of Hezekiah",
+      "reference": "Isaiah 38:10-20",
+      "verses": [
+        { "num": 1, "text": "I said in the cutting off of my days, I shall go to the gates of the grave." },
+        { "num": 2, "text": "I said, I shall not see the Lord, even the Lord, in the land of the living." }
+      ]
+    },
+    {
+      "num": 8,
+      "title": "Song of Jonah",
+      "reference": "Jonah 2:2-9",
+      "verses": [
+        { "num": 1, "text": "I cried by reason of mine affliction unto the Lord, and he heard me." }
+      ]
+    },
+    {
+      "num": 9,
+      "title": "Prayer of Azariah",
+      "reference": "Daniel 3:26-45 (LXX)",
+      "verses": [
+        { "num": 1, "text": "Blessed art thou, O Lord God of our fathers: thy name is worthy to be praised and glorified for evermore." }
+      ]
+    },
+    {
+      "num": 10,
+      "title": "Song of the Three Holy Children",
+      "reference": "Daniel 3:52-88 (LXX)",
+      "verses": [
+        { "num": 1, "text": "O all ye works of the Lord, bless ye the Lord: praise him, and magnify him for ever." }
+      ]
+    },
+    {
+      "num": 11,
+      "title": "Song of Mary (Magnificat)",
+      "reference": "Luke 1:46-55",
+      "verses": [
+        { "num": 1, "text": "My soul doth magnify the Lord, and my spirit hath rejoiced in God my Savior." }
+      ]
+    },
+    {
+      "num": 12,
+      "title": "Song of Zechariah (Benedictus)",
+      "reference": "Luke 1:68-79",
+      "verses": [
+        { "num": 1, "text": "Blessed be the Lord God of Israel; for he hath visited and redeemed his people." }
+      ]
+    },
+    {
+      "num": 13,
+      "title": "Song of Simeon (Nunc Dimittis)",
+      "reference": "Luke 2:29-32",
+      "verses": [
+        { "num": 1, "text": "Lord, now lettest thou thy servant depart in peace, according to thy word." }
+      ]
+    }
+  ]
+}

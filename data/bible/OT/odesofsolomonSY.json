@@ -1,0 +1,19 @@
+{
+  "meta": {
+    "name": "The Odes of Solomon",
+    "id": "SOL-ODES",
+    "version": "James Rendel Harris Translation",
+    "copyright": "Public Domain"
+  },
+  "chapters": [
+    {
+      "num": 1,
+      "title": "Ode 1",
+      "verses": [
+        { "num": 1, "text": "The Lord is on my head like a crown, and I shall not be without Him." },
+        { "num": 2, "text": "They wove for me a crown of truth, and it caused Thy branches to bud in me." },
+        { "num": 3, "text": "For it is not like a withered crown which blossoms not; but Thou livest upon my head, and Thou hast blossomed upon my head." }
+      ]
+    }
+  ]
+}

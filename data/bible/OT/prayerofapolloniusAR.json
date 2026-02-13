@@ -1,0 +1,23 @@
+{
+  "meta": {
+    "name": "The Prayer of Apollonius",
+    "id": "PR-APOL",
+    "version": "Traditional Armenian",
+    "copyright": "Public Domain"
+  },
+  "chapters": [
+    {
+      "num": 1,
+      "verses": [
+        { "num": 1, "text": "O Lord God of hosts, and Creator of all things, who art rich in mercy and abundant in goodness." },
+        { "num": 2, "text": "I have sinned against Thee, O Lord, and I have done evil in Thy sight; my transgressions are many, and I am not worthy to look upon the height of heaven." },
+        { "num": 3, "text": "But Thou, O Lord, art patient and long-suffering, and Thy mercies are over all Thy works." },
+        { "num": 4, "text": "Hearken now to the prayer of Thy servant, and receive the supplication of him who confesses his faults before Thee." },
+        { "num": 5, "text": "Turn me, O Lord, and I shall be turned; heal me, and I shall be healed; for Thou art my praise and my God." },
+        { "num": 6, "text": "Cleanse me from my secret sins, and spare Thy servant from the power of the enemy." },
+        { "num": 7, "text": "Let Thy grace be upon me, and let the light of Thy countenance shine into the darkness of my heart." },
+        { "num": 8, "text": "For Thou art the God of the penitent, and in Thee I put my trust, now and forever, and unto the ages of ages. Amen." }
+      ]
+    }
+  ]
+}

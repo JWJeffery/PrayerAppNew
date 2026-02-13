@@ -1,0 +1,86 @@
+{
+  "meta": {
+    "name": "The Nine Odes (Eastern Orthodox)",
+    "id": "EO-ODES",
+    "version": "LXX English",
+    "copyright": "Public Domain"
+  },
+  "chapters": [
+    {
+      "num": 1,
+      "title": "The First Ode of Moses",
+      "reference": "Exodus 15:1-19",
+      "verses": [
+        { "num": 1, "text": "Let us sing to the Lord, for he is gloriously proclaimed: horse and rider he has thrown into the sea." },
+        { "num": 2, "text": "A helper and protector he has become to me for salvation: he is my God and I will glorify him; my father's God and I will exalt him." },
+        { "num": 3, "text": "The Lord is a crusher of wars: the Lord is his name." }
+      ]
+    },
+    {
+      "num": 2,
+      "title": "The Second Ode of Moses",
+      "reference": "Deuteronomy 32:1-43",
+      "verses": [
+        { "num": 1, "text": "Attend, O heaven, and I will speak; and let the earth hear the words from my mouth." },
+        { "num": 2, "text": "Let my speech be looked for as the rain, and let my words come down as the dew." }
+      ]
+    },
+    {
+      "num": 3,
+      "title": "The Third Ode of Hannah",
+      "reference": "1 Samuel 2:1-10",
+      "verses": [
+        { "num": 1, "text": "My heart is established in the Lord, my horn is exalted in my God; my mouth is enlarged over my enemies, I have rejoiced in thy salvation." }
+      ]
+    },
+    {
+      "num": 4,
+      "title": "The Fourth Ode of Habakkuk",
+      "reference": "Habakkuk 3:2-19",
+      "verses": [
+        { "num": 1, "text": "O Lord, I heard thy report and was afraid; O Lord, I considered thy works and was amazed." }
+      ]
+    },
+    {
+      "num": 5,
+      "title": "The Fifth Ode of Isaiah",
+      "reference": "Isaiah 26:9-20",
+      "verses": [
+        { "num": 1, "text": "Out of the night my spirit rises early to thee, O God, because thy commandments are a light upon the earth." }
+      ]
+    },
+    {
+      "num": 6,
+      "title": "The Sixth Ode of Jonah",
+      "reference": "Jonah 2:2-9",
+      "verses": [
+        { "num": 1, "text": "I cried out in my affliction to the Lord my God, and he heard me; out of the belly of Hades thou heardest my cry." }
+      ]
+    },
+    {
+      "num": 7,
+      "title": "The Seventh Ode of the Three Holy Children",
+      "reference": "Daniel 3:26-56 (LXX)",
+      "verses": [
+        { "num": 1, "text": "Blessed art thou, O Lord, the God of our fathers, and praised and glorified is thy name unto the ages." }
+      ]
+    },
+    {
+      "num": 8,
+      "title": "The Eighth Ode of the Three Holy Children",
+      "reference": "Daniel 3:57-88 (LXX)",
+      "verses": [
+        { "num": 1, "text": "Bless the Lord, all ye works of the Lord: sing his praises and highly exalt him unto the ages." }
+      ]
+    },
+    {
+      "num": 9,
+      "title": "The Ninth Ode (Magnificat and Benedictus)",
+      "reference": "Luke 1:46-55, 68-79",
+      "verses": [
+        { "num": 1, "text": "My soul doth magnify the Lord, and my spirit hath rejoiced in God my Savior." },
+        { "num": 2, "text": "For he hath regarded the lowliness of his handmaiden: for behold from henceforth all generations shall call me blessed." }
+      ]
+    }
+  ]
+}
