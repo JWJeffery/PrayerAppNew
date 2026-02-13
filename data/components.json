@@ -686,5 +686,14 @@
       "rite2": "Be our light in the darkness, O Lord, and in your great mercy defend us from all perils and dangers of this night; for the love of your only Son, our Savior Jesus Christ. Amen."
     },
     "type": "Collect"
+  },
+    {
+    "id": "collect-epiphany-6-thursday",
+    "title": "Collect for Epiphany 6 Thursday",
+    "text": {
+      "rite1": "O God, the strength of all who put their trust in thee: Mercifully accept our prayers; and because through the weakness of our mortal nature, we can do no good thing without thee, grant us the help of thy grace, that in keeping thy commandments we may please thee both in will and deed; through Jesus Christ our Lord, who liveth and reigneth with thee and the Holy Spirit, one God, for ever and ever. Amen.",
+      "rite2": "O God, the strength of all who put their trust in you: Mercifully accept our prayers; and because in our weakness we can do nothing good without you, give us the help of your grace, that in keeping your commandments we may please you both in will and deed; through Jesus Christ our Lord, who lives and reigns with you and the Holy Spirit, one God, for ever and ever. Amen."
+    },
+    "type": "Collect"
   }
 ]
