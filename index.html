@@ -389,24 +389,27 @@
 
 
  <div id="individual-prayers-section">
-     <h1>Individual Prayers</h1>
-     <select id="prayer-dropdown" style="width: 300px; padding: 10px; background: #333; color: white; border: 1px solid #555; border-radius: 4px;">
-         <option value="">Select a Prayer</option>
-         <option value="prayer-for-the-sick">Prayer for the Sick</option>
-         <option value="prayer-for-peace">Prayer for Peace</option>
-         <option value="prayer-for-unity">Prayer for Unity</option>
-         <option value="prayer-for-mission">Prayer for Mission</option>
-         <option value="prayer-for-guidance">Prayer for Guidance</option>
-         <option value="prayer-for-the-church">Prayer for the Church</option>
-         <option value="prayer-for-the-world">Prayer for the World</option>
-     </select>
-     <button class="mode-btn" onclick="showSinglePrayer()">Display Prayer</button>
-     <button class="mode-btn" onclick="backToSplash()" style="margin-top:20px;">Back to Modes</button>
- </div>
- <div id="prayer-display" style="display:none; margin-top:40px;">
-     <div class="office-container" id="single-prayer-content"></div>
-     <button class="mode-btn" onclick="backToPrayerDropdown()" style="margin-top:20px;">Back to Selection</button>
- </div>
+    <div id="prayer-selection">  <!-- NEW: Wrapper JavaScript expects -->
+        <h1>Individual Prayers</h1>
+        <select id="prayer-dropdown" style="width: 300px; padding: 10px; background: #333; color: white; border: 1px solid #555; border-radius: 4px;">
+            <option value="">Select a Prayer</option>
+            <option value="prayer-for-the-sick">Prayer for the Sick</option>
+            <option value="prayer-for-peace">Prayer for Peace</option>
+            <option value="prayer-for-unity">Prayer for Unity</option>
+            <option value="prayer-for-mission">Prayer for Mission</option>
+            <option value="prayer-for-guidance">Prayer for Guidance</option>
+            <option value="prayer-for-the-church">Prayer for the Church</option>
+            <option value="prayer-for-the-world">Prayer for the World</option>
+        </select>
+        <button class="mode-btn" onclick="showSinglePrayer()">Display Prayer</button>
+        <button class="mode-btn" onclick="backToSplash()" style="margin-top:20px;">Back to Modes</button>
+    </div>
+    
+    <div id="prayer-display" style="display:none; margin-top:40px;">  <!-- MOVED: Now inside section -->
+        <div class="office-container" id="single-prayer-content"></div>
+        <button class="mode-btn" onclick="backToPrayerDropdown()" style="margin-top:20px;">Back to Selection</button>
+    </div>
+</div>
 <script>
 let appData = null;
 let currentDate = new Date();
@@ -597,41 +600,57 @@ async function init() {
 
 
 function selectMode(mode) {
-  selectedMode = mode;
-  document.getElementById('mode-selection').style.display = 'none';
-  document.body.style.height = 'auto';
-  document.body.style.overflowY = 'auto'; // Allow scrolling
-  if (mode === 'daily') {
-      document.body.style.display = 'flex';
-      document.body.style.justifyContent = 'flex-start';
-      document.body.style.alignItems = 'flex-start';
-      document.getElementById('daily-office-section').style.display = 'flex';
-      renderOffice();
-  } else if (mode === 'prayers') {
-      document.body.style.display = 'flex';
-      document.body.style.justifyContent = 'center';
-      document.body.style.alignItems = 'center';
-      document.getElementById('individual-prayers-section').style.display = 'block';
-  }
+   selectedMode = mode;
+   document.getElementById('mode-selection').style.display = 'none';
+   document.body.style.height = 'auto';
+   document.body.style.overflowY = 'auto';
+   if (mode === 'daily') {
+       document.body.style.display = 'flex';
+       document.body.style.justifyContent = 'flex-start';
+       document.body.style.alignItems = 'flex-start';
+       document.getElementById('daily-office-section').style.display = 'flex';
+       updateDatePicker();
+       // Initialize data only when Daily Office is selected
+       if (!appData || !appData.rubrics) {
+           init();
+       } else {
+           renderOffice();
+       }
+   } else if (mode === 'prayers') {
+       document.body.style.display = 'flex';
+       document.body.style.justifyContent = 'center';
+       document.body.style.alignItems = 'center';
+       document.getElementById('individual-prayers-section').style.display = 'block';
+   }
 }
 
 
 
 
 function changeDate(days) {
-currentDate.setDate(currentDate.getDate() + days);
-renderOffice();
+ currentDate.setDate(currentDate.getDate() + days);
+ updateDatePicker();
+ renderOffice();
 }
 
 
 
 
 function resetDate() {
-currentDate = new Date();
-renderOffice();
+ currentDate = new Date();
+ updateDatePicker();
+ renderOffice();
 }
 
 
+function updateDatePicker() {
+ const year = currentDate.getFullYear();
+ const month = String(currentDate.getMonth() + 1).padStart(2, '0');
+ const day = String(currentDate.getDate()).padStart(2, '0');
+ const dateStr = `${year}-${month}-${day}`;
+ const picker = document.getElementById('date-picker');
+ if (picker) picker.value = dateStr;
+}
 
 
 function setCustomDate(dateStr) {
@@ -1307,12 +1326,7 @@ function backToSplash() {
 
 
 
-init();
+// init() is now called only when Daily Office mode is selected
 </script>
 </body>
 </html>
-
-
-
-
-
