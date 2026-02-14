@@ -271,6 +271,141 @@
     #prayer-display .office-container {
         border-left: none; /* Remove left border for prayers mode */
     }
+
+
+/* ============================================
+   PRINT STYLES
+   ============================================ */
+@media print {
+    /* Hide non-printable elements */
+    #mode-selection,
+    #settings-panel,
+    .mode-btn,
+    .ordo-control,
+    .setting-group,
+    #date-header,
+    .saint-section {
+        display: none !important;
+    }
+    
+    /* Reset body styles for print */
+    body {
+        background: white !important;
+        color: black !important;
+        margin: 0;
+        padding: 0;
+        font-size: 12pt;
+    }
+    
+    /* Main content takes full width */
+    #main-content {
+        margin-left: 0 !important;
+        padding: 0.5in !important;
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+    
+    /* Office container clean for print */
+    .office-container {
+        background: white !important;
+        box-shadow: none !important;
+        border: none !important;
+        padding: 0 !important;
+        max-width: 100% !important;
+        page-break-inside: avoid;
+    }
+    
+    /* Typography optimized for print */
+    h1 {
+        font-size: 18pt;
+        color: black !important;
+        margin-bottom: 0.25in;
+        page-break-after: avoid;
+    }
+    
+    h2 {
+        font-size: 14pt;
+        color: black !important;
+        border-bottom: 1px solid #333 !important;
+        margin-top: 0.2in;
+        page-break-after: avoid;
+    }
+    
+    h3, h4 {
+        font-size: 12pt;
+        color: black !important;
+        page-break-after: avoid;
+    }
+    
+    /* Rubrics print in italic */
+    .rubric-text {
+        color: #333 !important;
+        font-style: italic;
+        font-size: 11pt;
+        border-bottom: none !important;
+        margin-top: 0.15in;
+        page-break-after: avoid;
+    }
+    
+    /* Passage references */
+    .passage-reference {
+        color: #666 !important;
+        font-size: 10pt;
+        font-style: italic;
+    }
+    
+    /* Component text (prayers, readings) */
+    .component-text {
+        font-size: 11pt;
+        line-height: 1.4;
+        color: black !important;
+        margin-bottom: 0.15in;
+    }
+    
+    /* Psalm verses */
+    .psalm-verse {
+        font-size: 11pt;
+        line-height: 1.5;
+        margin-bottom: 0.1in;
+    }
+    
+    .verse-num {
+        color: #666 !important;
+        font-size: 8pt;
+    }
+    
+    /* Horizontal rules */
+    hr {
+        border: 0.5pt solid #999 !important;
+        margin: 0.15in 0 !important;
+    }
+    
+    /* Avoid breaking inside important sections */
+    .rubric-text,
+    .component-text,
+    .psalm-verse {
+        page-break-inside: avoid;
+    }
+    
+    /* Page breaks before major sections */
+    h2 {
+        page-break-before: auto;
+    }
+    
+    /* Links print as normal text */
+    a {
+        text-decoration: none;
+        color: black !important;
+    }
+    
+    /* Remove any remaining colored backgrounds */
+    * {
+        background: white !important;
+    }
+}
+
+
+
  </style>
 </head>
 <body id="app-body" class="dark-mode">
@@ -306,61 +441,61 @@
          </div>
          <div class="setting-group">
              <strong>Time of Day:</strong>
-             <label><input type="radio" name="office-time" value="morning-office" onchange="renderOffice()" checked> Morning Prayer</label>
-             <label><input type="radio" name="office-time" value="noonday-office" onchange="renderOffice()"> Noonday Prayer</label>
-             <label><input type="radio" name="office-time" value="evening-office" onchange="renderOffice()"> Evening Prayer</label>
-             <label><input type="radio" name="office-time" value="compline-office" onchange="renderOffice()"> Compline</label>
+             <label><input type="radio" name="office-time" value="morning-office" onchange="renderOffice(); saveSettings()" checked> Morning Prayer</label>
+             <label><input type="radio" name="office-time" value="noonday-office" onchange="renderOffice(); saveSettings()"> Noonday Prayer</label>
+             <label><input type="radio" name="office-time" value="evening-office" onchange="renderOffice(); saveSettings()"> Evening Prayer</label>
+             <label><input type="radio" name="office-time" value="compline-office" onchange="renderOffice(); saveSettings()"> Compline</label>
          </div>
          <div class="setting-group">
              <strong>Appearance:</strong>
-             <label><input type="checkbox" id="toggle-dark" onchange="updateUI()" checked> Dark Mode</label>
+             <label><input type="checkbox" id="toggle-dark" onchange="updateUI(); saveSettings()" checked> Dark Mode</label>
          </div>
          <div class="setting-group">
              <strong>Language & Rite:</strong>
-             <label><input type="radio" name="rite" value="rite1" onchange="renderOffice()"> Rite I (Traditional)</label>
-             <label><input type="radio" name="rite" value="rite2" onchange="renderOffice()" checked> Rite II (Contemporary)</label>
+             <label><input type="radio" name="rite" value="rite1" onchange="renderOffice(); saveSettings()"> Rite I (Traditional)</label>
+             <label><input type="radio" name="rite" value="rite2" onchange="renderOffice(); saveSettings()" checked> Rite II (Contemporary)</label>
          </div>
          <div class="setting-group">
              <strong>Officiant:</strong>
-             <label><input type="radio" name="minister" value="priest" onchange="renderOffice()"> Priest</label>
-             <label><input type="radio" name="minister" value="lay" onchange="renderOffice()" checked> Layperson</label>
+             <label><input type="radio" name="minister" value="priest" onchange="renderOffice(); saveSettings()"> Priest</label>
+             <label><input type="radio" name="minister" value="lay" onchange="renderOffice(); saveSettings()" checked> Layperson</label>
          </div>
          <div class="setting-group">
              <strong>Tradition Devotions:</strong>
              <div class="nested-group">
                  <strong>Marian Antiphon:</strong>
-                 <label><input type="radio" name="marian-antiphon-pos" value="none" onchange="renderOffice()" checked> None</label>
-                 <label><input type="radio" name="marian-antiphon-pos" value="before" onchange="renderOffice()"> Before</label>
-                 <label><input type="radio" name="marian-antiphon-pos" value="after" onchange="renderOffice()"> After</label>
+                 <label><input type="radio" name="marian-antiphon-pos" value="none" onchange="renderOffice(); saveSettings()" checked> None</label>
+                 <label><input type="radio" name="marian-antiphon-pos" value="before" onchange="renderOffice(); saveSettings()"> Before</label>
+                 <label><input type="radio" name="marian-antiphon-pos" value="after" onchange="renderOffice(); saveSettings()"> After</label>
              </div>
-             <label style="margin-top:10px;"><input type="checkbox" id="toggle-gloria-patri" onchange="renderOffice()" checked> Gloria Patri (after Psalm)</label>
-             <label><input type="checkbox" id="toggle-angelus" onchange="renderOffice()" checked> Angelus (Catholic)</label>
-             <label><input type="checkbox" id="toggle-trisagion" onchange="renderOffice()" checked> Trisagion (Eastern Orthodox)</label>
-             <label><input type="checkbox" id="toggle-theotokion" onchange="renderOffice()" checked> Theotokion (Oriental Orthodox)</label>
-             <label><input type="checkbox" id="toggle-jesus-prayer" onchange="renderOffice()" checked> Jesus Prayer (Eastern Orthodox)</label>
-             <label><input type="checkbox" id="toggle-assyrian-blessing" onchange="renderOffice()" checked> Assyrian Blessing (Church of the East)</label>
-             <label><input type="checkbox" id="toggle-agpeya-opening" onchange="renderOffice()" checked> Agpeya Opening (Coptic)</label>
+             <label style="margin-top:10px;"><input type="checkbox" id="toggle-gloria-patri" onchange="renderOffice(); saveSettings()" checked> Gloria Patri (after Psalm)</label>
+             <label><input type="checkbox" id="toggle-angelus" onchange="renderOffice(); saveSettings()" checked> Angelus (Catholic)</label>
+             <label><input type="checkbox" id="toggle-trisagion" onchange="renderOffice(); saveSettings()" checked> Trisagion (Eastern Orthodox)</label>
+             <label><input type="checkbox" id="toggle-theotokion" onchange="renderOffice(); saveSettings()" checked> Theotokion (Oriental Orthodox)</label>
+             <label><input type="checkbox" id="toggle-jesus-prayer" onchange="renderOffice(); saveSettings()" checked> Jesus Prayer (Eastern Orthodox)</label>
+             <label><input type="checkbox" id="toggle-assyrian-blessing" onchange="renderOffice(); saveSettings()" checked> Assyrian Blessing (Church of the East)</label>
+             <label><input type="checkbox" id="toggle-agpeya-opening" onchange="renderOffice(); saveSettings()" checked> Agpeya Opening (Coptic)</label>
          </div>
          <div class="setting-group">
              <strong>Creed Selection:</strong>
-             <select id="creed-type" onchange="renderOffice()">
+             <select id="creed-type" onchange="renderOffice(); saveSettings()">
                  <option value="bcp-creed-apostles">Apostles' Creed</option>
                  <option value="bcp-creed-nicene">Nicene Creed</option>
              </select>
          </div>
          <div class="setting-group">
              <strong>Ordo Components:</strong>
-             <label><input type="radio" name="gospel-placement" value="morning" onchange="renderOffice()"> Gospel in Morning</label>
-             <label><input type="radio" name="gospel-placement" value="evening" onchange="renderOffice()" checked> Gospel in Evening</label>
-             <label><input type="radio" name="gospel-placement" value="both" onchange="renderOffice()"> Gospel in Both</label>
+             <label><input type="radio" name="gospel-placement" value="morning" onchange="renderOffice(); saveSettings()"> Gospel in Morning</label>
+             <label><input type="radio" name="gospel-placement" value="evening" onchange="renderOffice(); saveSettings()" checked> Gospel in Evening</label>
+             <label><input type="radio" name="gospel-placement" value="both" onchange="renderOffice(); saveSettings()"> Gospel in Both</label>
          </div>
          <div class="setting-group">
              <strong>Optional Prayers:</strong>
-             <label><input type="checkbox" id="toggle-litany" onchange="renderOffice()"> The Great Litany</label>
-             <label><input type="checkbox" id="toggle-suffrages" onchange="renderOffice()" checked> Suffrages</label>
-             <label><input type="checkbox" id="toggle-30day-psalter" onchange="renderOffice()"> 30-Day Psalter</label>
-             <label><input type="checkbox" id="toggle-general-thanksgiving" onchange="renderOffice()"> General Thanksgiving</label>
-             <label><input type="checkbox" id="toggle-chrysostom" onchange="renderOffice()"> Prayer of St. Chrysostom</label>
+             <label><input type="checkbox" id="toggle-litany" onchange="renderOffice(); saveSettings()"> The Great Litany</label>
+             <label><input type="checkbox" id="toggle-suffrages" onchange="renderOffice(); saveSettings()" checked> Suffrages</label>
+             <label><input type="checkbox" id="toggle-30day-psalter" onchange="renderOffice(); saveSettings()"> 30-Day Psalter</label>
+             <label><input type="checkbox" id="toggle-general-thanksgiving" onchange="renderOffice(); saveSettings()"> General Thanksgiving</label>
+             <label><input type="checkbox" id="toggle-chrysostom" onchange="renderOffice(); saveSettings()"> Prayer of St. Chrysostom</label>
          </div>
      </div>
 
@@ -429,12 +564,45 @@ const monthNames = ['January', 'February', 'March', 'April', 'May', 'June', 'Jul
 
 
 const seasonRanges = [
-{ start: new Date("2025-11-30"), end: new Date("2025-12-24"), season: "advent", file: "advent.json" },
-{ start: new Date("2025-12-25"), end: new Date("2026-01-05"), season: "christmas", file: "christmas.json" },
-{ start: new Date("2026-01-06"), end: new Date("2026-02-22"), season: "epiphany", file: "epiphany.json" },
-{ start: new Date("2026-02-23"), end: new Date("2026-04-11"), season: "lent", file: "lent.json" },
-{ start: new Date("2026-04-12"), end: new Date("2026-05-24"), season: "easter", file: "easter.json" },
-{ start: new Date("2026-05-25"), end: new Date("2026-12-31"), season: "ordinary", file: "ordinary1.json" }
+ // 2025-2026 Liturgical Year
+ { start: new Date("2025-11-30"), end: new Date("2025-12-24"), season: "advent", file: "advent.json" },
+ { start: new Date("2025-12-25"), end: new Date("2026-01-05"), season: "christmas", file: "christmas.json" },
+ { start: new Date("2026-01-06"), end: new Date("2026-02-17"), season: "epiphany", file: "epiphany.json" },
+ { start: new Date("2026-02-18"), end: new Date("2026-04-04"), season: "lent", file: "lent.json" },
+ { start: new Date("2026-04-05"), end: new Date("2026-05-23"), season: "easter", file: "easter.json" },
+ { start: new Date("2026-05-24"), end: new Date("2026-11-28"), season: "ordinary", file: "ordinary1.json" },
+ 
+ // 2026-2027 Liturgical Year
+ { start: new Date("2026-11-29"), end: new Date("2026-12-24"), season: "advent", file: "advent.json" },
+ { start: new Date("2026-12-25"), end: new Date("2027-01-05"), season: "christmas", file: "christmas.json" },
+ { start: new Date("2027-01-06"), end: new Date("2027-02-09"), season: "epiphany", file: "epiphany.json" },
+ { start: new Date("2027-02-10"), end: new Date("2027-03-27"), season: "lent", file: "lent.json" },
+ { start: new Date("2027-03-28"), end: new Date("2027-05-15"), season: "easter", file: "easter.json" },
+ { start: new Date("2027-05-16"), end: new Date("2027-11-27"), season: "ordinary", file: "ordinary1.json" },
+ 
+ // 2027-2028 Liturgical Year
+ { start: new Date("2027-11-28"), end: new Date("2027-12-24"), season: "advent", file: "advent.json" },
+ { start: new Date("2027-12-25"), end: new Date("2028-01-05"), season: "christmas", file: "christmas.json" },
+ { start: new Date("2028-01-06"), end: new Date("2028-02-28"), season: "epiphany", file: "epiphany.json" },
+ { start: new Date("2028-02-29"), end: new Date("2028-04-15"), season: "lent", file: "lent.json" },
+ { start: new Date("2028-04-16"), end: new Date("2028-06-03"), season: "easter", file: "easter.json" },
+ { start: new Date("2028-06-04"), end: new Date("2028-12-02"), season: "ordinary", file: "ordinary1.json" },
+ 
+ // 2028-2029 Liturgical Year
+ { start: new Date("2028-12-03"), end: new Date("2028-12-24"), season: "advent", file: "advent.json" },
+ { start: new Date("2028-12-25"), end: new Date("2029-01-05"), season: "christmas", file: "christmas.json" },
+ { start: new Date("2029-01-06"), end: new Date("2029-02-13"), season: "epiphany", file: "epiphany.json" },
+ { start: new Date("2029-02-14"), end: new Date("2029-03-31"), season: "lent", file: "lent.json" },
+ { start: new Date("2029-04-01"), end: new Date("2029-05-19"), season: "easter", file: "easter.json" },
+ { start: new Date("2029-05-20"), end: new Date("2029-12-01"), season: "ordinary", file: "ordinary1.json" },
+ 
+ // 2029-2030 Liturgical Year
+ { start: new Date("2029-12-02"), end: new Date("2029-12-24"), season: "advent", file: "advent.json" },
+ { start: new Date("2029-12-25"), end: new Date("2030-01-05"), season: "christmas", file: "christmas.json" },
+ { start: new Date("2030-01-06"), end: new Date("2030-03-05"), season: "epiphany", file: "epiphany.json" },
+ { start: new Date("2030-03-06"), end: new Date("2030-04-20"), season: "lent", file: "lent.json" },
+ { start: new Date("2030-04-21"), end: new Date("2030-06-08"), season: "easter", file: "easter.json" },
+ { start: new Date("2030-06-09"), end: new Date("2030-12-31"), season: "ordinary", file: "ordinary1.json" }
 ];
 
 
@@ -570,9 +738,6 @@ async function init() {
 
        renderOffice();
 
-       // Log sidebar width
-       console.log(`Distance to gold line (sidebar width): ${document.getElementById('settings-panel').offsetWidth}px`);
-
    } catch (err) {
        document.getElementById('office-display').innerHTML = `<div class="office-container"><h3>System Error</h3><p>${err.message}</p></div>`;
        console.error('Init failed:', err);
@@ -587,19 +752,20 @@ function selectMode(mode) {
    document.getElementById('mode-selection').style.display = 'none';
    document.body.style.height = 'auto';
    document.body.style.overflowY = 'auto';
-   if (mode === 'daily') {
-       document.body.style.display = 'flex';
-       document.body.style.justifyContent = 'flex-start';
-       document.body.style.alignItems = 'flex-start';
-       document.getElementById('daily-office-section').style.display = 'flex';
-       updateDatePicker();
-       // Initialize data only when Daily Office is selected
-       if (!appData || !appData.rubrics) {
-           init();
-       } else {
-           renderOffice();
-       }
-   } else if (mode === 'prayers') {
+  if (mode === 'daily') {
+        document.body.style.display = 'flex';
+        document.body.style.justifyContent = 'flex-start';
+        document.body.style.alignItems = 'flex-start';
+        document.getElementById('daily-office-section').style.display = 'flex';
+        loadSettings(); // Load saved preferences
+        updateDatePicker();
+        // Initialize data only when Daily Office is selected
+        if (!appData || !appData.rubrics) {
+            init();
+        } else {
+            renderOffice();
+        }
+    } else if (mode === 'prayers') {
        document.body.style.display = 'flex';
        document.body.style.justifyContent = 'center';
        document.body.style.alignItems = 'center';
@@ -656,40 +822,138 @@ function updateUI() {
 }
 
 
+function saveSettings() {
+   const settings = {
+      darkMode: document.getElementById('toggle-dark')?.checked || false,
+      officeTime: document.querySelector('input[name="office-time"]:checked')?.value || 'morning-office',
+      rite: document.querySelector('input[name="rite"]:checked')?.value || 'rite2',
+      minister: document.querySelector('input[name="minister"]:checked')?.value || 'lay',
+      marianAntiphon: document.querySelector('input[name="marian-antiphon-pos"]:checked')?.value || 'none',
+      gloriaPatri: document.getElementById('toggle-gloria-patri')?.checked || false,
+      angelus: document.getElementById('toggle-angelus')?.checked || false,
+      trisagion: document.getElementById('toggle-trisagion')?.checked || false,
+      theotokion: document.getElementById('toggle-theotokion')?.checked || false,
+      jesusPrayer: document.getElementById('toggle-jesus-prayer')?.checked || false,
+      assyrianBlessing: document.getElementById('toggle-assyrian-blessing')?.checked || false,
+      agpeyaOpening: document.getElementById('toggle-agpeya-opening')?.checked || false,
+      creedType: document.getElementById('creed-type')?.value || 'bcp-creed-apostles',
+      gospelPlacement: document.querySelector('input[name="gospel-placement"]:checked')?.value || 'evening',
+      litany: document.getElementById('toggle-litany')?.checked || false,
+      suffrages: document.getElementById('toggle-suffrages')?.checked || false,
+      psalter30Day: document.getElementById('toggle-30day-psalter')?.checked || false,
+      generalThanksgiving: document.getElementById('toggle-general-thanksgiving')?.checked || false,
+      chrysostom: document.getElementById('toggle-chrysostom')?.checked || false
+   };
+   
+   try {
+      localStorage.setItem('universalOfficeSettings', JSON.stringify(settings));
+      console.log('Settings saved');
+   } catch (e) {
+      console.warn('Could not save settings to localStorage:', e);
+   }
+}
 
+
+function loadSettings() {
+   try {
+      const saved = localStorage.getItem('universalOfficeSettings');
+      if (!saved) return;
+      
+      const settings = JSON.parse(saved);
+      
+      // Restore checkboxes and radios
+      if (document.getElementById('toggle-dark')) document.getElementById('toggle-dark').checked = settings.darkMode;
+      
+      const officeTimeRadio = document.querySelector(`input[name="office-time"][value="${settings.officeTime}"]`);
+      if (officeTimeRadio) officeTimeRadio.checked = true;
+      
+      const riteRadio = document.querySelector(`input[name="rite"][value="${settings.rite}"]`);
+      if (riteRadio) riteRadio.checked = true;
+      
+      const ministerRadio = document.querySelector(`input[name="minister"][value="${settings.minister}"]`);
+      if (ministerRadio) ministerRadio.checked = true;
+      
+      const marianRadio = document.querySelector(`input[name="marian-antiphon-pos"][value="${settings.marianAntiphon}"]`);
+      if (marianRadio) marianRadio.checked = true;
+      
+      if (document.getElementById('toggle-gloria-patri')) document.getElementById('toggle-gloria-patri').checked = settings.gloriaPatri;
+      if (document.getElementById('toggle-angelus')) document.getElementById('toggle-angelus').checked = settings.angelus;
+      if (document.getElementById('toggle-trisagion')) document.getElementById('toggle-trisagion').checked = settings.trisagion;
+      if (document.getElementById('toggle-theotokion')) document.getElementById('toggle-theotokion').checked = settings.theotokion;
+      if (document.getElementById('toggle-jesus-prayer')) document.getElementById('toggle-jesus-prayer').checked = settings.jesusPrayer;
+      if (document.getElementById('toggle-assyrian-blessing')) document.getElementById('toggle-assyrian-blessing').checked = settings.assyrianBlessing;
+      if (document.getElementById('toggle-agpeya-opening')) document.getElementById('toggle-agpeya-opening').checked = settings.agpeyaOpening;
+      
+      if (document.getElementById('creed-type')) document.getElementById('creed-type').value = settings.creedType;
+      
+      const gospelRadio = document.querySelector(`input[name="gospel-placement"][value="${settings.gospelPlacement}"]`);
+      if (gospelRadio) gospelRadio.checked = true;
+      
+      if (document.getElementById('toggle-litany')) document.getElementById('toggle-litany').checked = settings.litany;
+      if (document.getElementById('toggle-suffrages')) document.getElementById('toggle-suffrages').checked = settings.suffrages;
+      if (document.getElementById('toggle-30day-psalter')) document.getElementById('toggle-30day-psalter').checked = settings.psalter30Day;
+      if (document.getElementById('toggle-general-thanksgiving')) document.getElementById('toggle-general-thanksgiving').checked = settings.generalThanksgiving;
+      if (document.getElementById('toggle-chrysostom')) document.getElementById('toggle-chrysostom').checked = settings.chrysostom;
+      
+      console.log('Settings loaded');
+   } catch (e) {
+      console.warn('Could not load settings from localStorage:', e);
+   }
+}
 
 async function getScriptureText(refId) {
-   if (!refId) return 'No reference provided.';
-  
-   // Cache for loaded books
-   if (!appData.bible) appData.bible = {};
-  
-   // List of NT book filenames (without .json, lowercase) based on your directory
-   const ntBooks = [
-       '1corinthians', '1john', '1peter', '1thessalonians', '1timothy',
-       '2corinthians', '2john', '2peter', '2thessalonians', '2timothy',
-       '3john', 'acts', 'colossians', 'ephesians', 'epistleofthelaodiceans',
-       'galatians', 'hebrews', 'historyofzosimus', 'james', 'john', 'jude',
-       'luke', 'mark', 'matthew', 'philemon', 'philippians', 'revelation',
-       'romans', 'titus'
-   ];
-  
-   // Helper to parse and extract from a book
-   async function extractFromBook(book, ranges) {
-       let isPsalm = book.toLowerCase().startsWith('psalm');
-       let filename = isPsalm ? 'psalms.json' : book.replace(/\s/g, '').toLowerCase() + '.json';
-       let folder = ntBooks.includes(filename.replace('.json', '')) ? 'NT' : 'OT';
-      
-       // Load book if not cached
-       if (!appData.bible[filename]) {
-           try {
-               const res = await fetch(`data/bible/${folder}/${filename}`);
-               if (!res.ok) throw new Error(`Failed to load ${filename}`);
-               appData.bible[filename] = await res.json();
-           } catch (err) {
-               return `Error loading scripture: ${err.message}`;
-           }
-       }
+    if (!refId) return 'No reference provided.';
+    
+    // Cache for loaded books with access tracking
+    if (!appData.bible) appData.bible = {};
+    if (!appData.bibleAccessOrder) appData.bibleAccessOrder = [];
+    
+    const MAX_CACHED_BOOKS = 20;
+    
+    // List of NT book filenames (without .json, lowercase) based on your directory
+    const ntBooks = [
+        '1corinthians', '1john', '1peter', '1thessalonians', '1timothy',
+        '2corinthians', '2john', '2peter', '2thessalonians', '2timothy',
+        '3john', 'acts', 'colossians', 'ephesians', 'epistleofthelaodiceans',
+        'galatians', 'hebrews', 'historyofzosimus', 'james', 'john', 'jude',
+        'luke', 'mark', 'matthew', 'philemon', 'philippians', 'revelation',
+        'romans', 'titus'
+    ];
+    
+    // Helper to parse and extract from a book
+    async function extractFromBook(book, ranges) {
+        let isPsalm = book.toLowerCase().startsWith('psalm');
+        let filename = isPsalm ? 'psalms.json' : book.replace(/\s/g, '').toLowerCase() + '.json';
+        let folder = ntBooks.includes(filename.replace('.json', '')) ? 'NT' : 'OT';
+        
+        // Load book if not cached
+        if (!appData.bible[filename]) {
+            try {
+                const res = await fetch(`data/bible/${folder}/${filename}`);
+                if (!res.ok) throw new Error(`Failed to load ${filename}`);
+                appData.bible[filename] = await res.json();
+                
+                // Track access for LRU eviction
+                appData.bibleAccessOrder.push(filename);
+                
+                // If cache is too large, evict least recently used book
+                if (appData.bibleAccessOrder.length > MAX_CACHED_BOOKS) {
+                    const oldestBook = appData.bibleAccessOrder.shift();
+                    delete appData.bible[oldestBook];
+                    console.log(`Evicted ${oldestBook} from cache (cache size: ${appData.bibleAccessOrder.length})`);
+                }
+        } catch (err) {
+                console.error(`Failed to load ${filename}:`, err);
+                return `[Scripture unavailable: ${book}]`;
+            }
+        } else {
+            // Book already cached - move it to end of access list (most recent)
+            const index = appData.bibleAccessOrder.indexOf(filename);
+            if (index > -1) {
+                appData.bibleAccessOrder.splice(index, 1);
+            }
+            appData.bibleAccessOrder.push(filename);
+        }
       
        const bookData = appData.bible[filename];
       
@@ -711,8 +975,11 @@ async function getScriptureText(refId) {
                    verseEnd = Infinity;
                }
               
-               const psalm = bookData.find(p => p.id === `PSALM ${psalmNum}`.toUpperCase());
-               if (!psalm) return `Psalm ${psalmNum} not found.`;
+              const psalm = bookData.find(p => p.id === `PSALM ${psalmNum}`.toUpperCase());
+                if (!psalm) {
+                    console.warn(`Psalm ${psalmNum} not found in psalms.json`);
+                    return `[Psalm ${psalmNum} unavailable]`;
+                }
               
                const fullText = psalm.text.NRSV;
                if (verseEnd === Infinity) {
@@ -743,7 +1010,10 @@ async function getScriptureText(refId) {
                verseEnd = parseInt(verseRange[1]) || Infinity;
               
                const chapter = bookData.chapters.find(ch => ch.num === chapterNum);
-               if (!chapter) return `Chapter ${chapterNum} not found in ${book}.`;
+                if (!chapter) {
+                    console.warn(`Chapter ${chapterNum} not found in ${book}`);
+                    return `[${book} ${chapterNum} unavailable]`;
+                }
               
                let tempText = '';
                chapter.verses.forEach(verse => {
