@@ -567,7 +567,8 @@ const seasonRanges = [
  // 2025-2026 Liturgical Year
  { start: new Date("2025-11-30"), end: new Date("2025-12-24"), season: "advent", file: "advent.json" },
  { start: new Date("2025-12-25"), end: new Date("2026-01-05"), season: "christmas", file: "christmas.json" },
- { start: new Date("2026-01-06"), end: new Date("2026-02-17"), season: "epiphany", file: "epiphany.json" },
+ { start: new Date("2026-01-06"), end: new Date("2026-02-16"), season: "epiphany", file: "epiphany.json" },
+{ start: new Date("2026-02-17"), end: new Date("2026-02-17"), season: "ordinary", file: "ordinary1.json" },
  { start: new Date("2026-02-18"), end: new Date("2026-04-04"), season: "lent", file: "lent.json" },
  { start: new Date("2026-04-05"), end: new Date("2026-05-23"), season: "easter", file: "easter.json" },
  { start: new Date("2026-05-24"), end: new Date("2026-11-28"), season: "ordinary", file: "ordinary1.json" },
@@ -654,14 +655,19 @@ return date.toLocaleDateString('en-US', options);
 
 
 function getSeasonAndFile(targetDate) {
-const date = new Date(targetDate);
-for (const range of seasonRanges) {
-  if (date >= range.start && date <= range.end) {
-    return { season: range.season, file: range.file };
+  // Normalize to just date (no time) for comparison
+  const date = new Date(targetDate.getFullYear(), targetDate.getMonth(), targetDate.getDate());
+  
+  for (const range of seasonRanges) {
+    const start = new Date(range.start.getFullYear(), range.start.getMonth(), range.start.getDate());
+    const end = new Date(range.end.getFullYear(), range.end.getMonth(), range.end.getDate());
+    
+    if (date >= start && date <= end) {
+      return { season: range.season, file: range.file };
+    }
   }
-}
-console.warn(`No season match for ${date.toDateString()} – fallback to ordinary`);
-return { season: "ordinary", file: "ordinary1.json" };
+  console.warn(`No season match for ${date.toDateString()} – fallback to ordinary`);
+  return { season: "ordinary", file: "ordinary1.json" };
 }
 
 
