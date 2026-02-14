@@ -922,9 +922,34 @@ async function getScriptureText(refId) {
     
     // Helper to parse and extract from a book
     async function extractFromBook(book, ranges) {
-        let isPsalm = book.toLowerCase().startsWith('psalm');
-        let filename = isPsalm ? 'psalms.json' : book.replace(/\s/g, '').toLowerCase() + '.json';
-        let folder = ntBooks.includes(filename.replace('.json', '')) ? 'NT' : 'OT';
+    let isPsalm = book.toLowerCase().startsWith('psalm');
+    
+    // Handle book name aliases
+    let bookName = book.toLowerCase().replace(/\s/g, '');
+    const aliases = {
+    'ecclesiasticus': 'sirach',
+    'wisdomofsolomon': 'wisdom',
+    'songofthreeyoungmen': 'daniel',
+    'songofthreeholychildren': 'daniel',
+    'belandthedragon': 'daniel',
+    'bel': 'daniel',
+    'susanna': 'daniel',
+    'prayerofazariah': 'daniel',
+    'therestofesther': 'estherGK',
+    'additionstoesther': 'estherGK',
+    'therestofdaniel': 'danielGK',
+    'additionstodaniel': 'danielGK',
+    'songsofsolomon': 'songofsolomon',
+    'canticles': 'songofsolomon',
+    'canticleofcanticles': 'songofsolomon'
+};
+    
+    if (aliases[bookName]) {
+        bookName = aliases[bookName];
+    }
+    
+    let filename = isPsalm ? 'psalms.json' : bookName + '.json';
+    let folder = ntBooks.includes(filename.replace('.json', '')) ? 'NT' : 'OT';
         
         // Load book if not cached
         if (!appData.bible[filename]) {
