@@ -273,7 +273,7 @@
     }
  </style>
 </head>
-<body id="app-body">
+<body id="app-body" class="dark-mode">
  <div id="mode-selection">
      <h1>Welcome to The Universal Office</h1>
      <p>Select your mode:</p>
@@ -552,48 +552,31 @@ document.documentElement.style.setProperty('--accent', hex);
 
 
 async function init() {
-  try {
-      appData = {};
-      const files = ['components', 'rubrics'];
-      for (const file of files) {
-          const res = await fetch(`data/${file}.json`);
-          if (!res.ok) throw new Error(`Missing: data/${file}.json`);
-          appData[file] = await res.json();
-      }
+   try {
+       // Show loading state
+       document.getElementById('office-display').innerHTML = `<div class="office-container"><h3>Loading...</h3><p>Preparing your daily office...</p></div>`;
+       
+       appData = {};
+       const files = ['components', 'rubrics'];
+       for (const file of files) {
+           const res = await fetch(`data/${file}.json`);
+           if (!res.ok) throw new Error(`Missing: data/${file}.json`);
+           appData[file] = await res.json();
+       }
 
+       updateUI();
 
+       await getDailyData();
 
+       renderOffice();
 
-     
+       // Log sidebar width
+       console.log(`Distance to gold line (sidebar width): ${document.getElementById('settings-panel').offsetWidth}px`);
 
-
-
-
-      updateUI();
-
-
-
-
-      await getDailyData();
-
-
-
-
-      renderOffice();
-
-
-
-
-      // Log sidebar width
-      console.log(`Distance to gold line (sidebar width): ${document.getElementById('settings-panel').offsetWidth}px`);
-
-
-
-
-  } catch (err) {
-      document.getElementById('office-display').innerHTML = `<div class="office-container"><h3>System Error</h3><p>${err.message}</p></div>`;
-      console.error('Init failed:', err);
-  }
+   } catch (err) {
+       document.getElementById('office-display').innerHTML = `<div class="office-container"><h3>System Error</h3><p>${err.message}</p></div>`;
+       console.error('Init failed:', err);
+   }
 }
 
 
@@ -654,8 +637,13 @@ function updateDatePicker() {
 
 
 function setCustomDate(dateStr) {
-if (dateStr) { currentDate = new Date(dateStr); }
-renderOffice();
+ if (dateStr) {
+   // Parse date string as local time to avoid timezone shifting
+   const [year, month, day] = dateStr.split('-');
+   currentDate = new Date(parseInt(year), parseInt(month) - 1, parseInt(day));
+ }
+ updateDatePicker();
+ renderOffice();
 }
 
 
@@ -774,33 +762,37 @@ async function getScriptureText(refId) {
    }
   
    // Main logic: split multiple refs (e.g., "Psalm 1, Psalm 15" or "Joel 2:1-2,12-17")
-   const parts = refId.split(',');
-   let texts = [];
-   let currentBook = '';
-   for (let part of parts) {
-       part = part.trim();
-       const match = part.match(/^(.+?)\s*(\d+.*)$/);
-       if (match) {
-           currentBook = match[1].trim();
-           range = match[2].trim();
-       } else {
-           range = part;
-       }
-       const rangeParts = range.split(',');
-       let subRanges = [];
-       for (let sub of rangeParts) {
-           subRanges.push(sub.trim());
-       }
-       const text = await extractFromBook(currentBook, subRanges);
-       texts.push(text);
-   }
-   return texts.join('\n\n');
+    const parts = refId.split(',');
+    let texts = [];
+    let currentBook = '';
+    for (let part of parts) {
+        part = part.trim();
+        let range;
+        const match = part.match(/^(.+?)\s*(\d+.*)$/);
+        if (match) {
+            currentBook = match[1].trim();
+            range = match[2].trim();
+        } else {
+            range = part;
+        }
+        const rangeParts = range.split(',');
+        let subRanges = [];
+        for (let sub of rangeParts) {
+            subRanges.push(sub.trim());
+        }
+        const text = await extractFromBook(currentBook, subRanges);
+        texts.push(text);
+    }
+    return texts.join('\n\n');
 }
 async function renderOffice() {
-  if (!appData || !appData.rubrics || !Array.isArray(appData.rubrics)) {
-      document.getElementById('office-display').innerHTML = `<div class="office-container"><h3>Loading...</h3><p>Data still loading.</p></div>`;
-      return;
-  }
+   if (!appData || !appData.rubrics || !Array.isArray(appData.rubrics)) {
+       document.getElementById('office-display').innerHTML = `<div class="office-container"><h3>Loading...</h3><p>Data still loading.</p></div>`;
+       return;
+   }
+
+   // Show brief loading state while rendering (especially helpful when fetching scripture)
+   document.getElementById('office-display').innerHTML = `<div class="office-container"><h3>Loading Office...</h3><p>Fetching readings...</p></div>`;
 
 
 
@@ -880,15 +872,19 @@ async function renderOffice() {
 
 
   // Lesson distribution based on placement with fallback to old keys
-  let readingOT = dailyData['reading_ot'] || dailyData[`reading_ot${suffix}`] || "";
-  let readingEpistle = dailyData['reading_epistle'] || dailyData[`reading_epistle${suffix}`] || "";
-  let readingGospel = dailyData['reading_gospel'] || dailyData[`reading_gospel${suffix}`] || "";
-  let morningOT = isMorning ? readingOT : '';
-  let morningEpistle = isMorning ? readingEpistle : '';
-  let morningGospel = (isMorning && (gospelPlacement === 'morning' || gospelPlacement === 'both')) ? readingGospel : '';
-  let eveningOT = (isEvening || isCompline || isNoonday) ? readingOT : '';
-  let eveningEpistle = (isEvening || isCompline || isNoonday) && gospelPlacement === 'morning' ? readingEpistle : ''; // Move Epistle to evening if no Gospel
-  let eveningGospel = (isEvening || isCompline || isNoonday && (gospelPlacement === 'evening' || gospelPlacement === 'both')) ? readingGospel : '';
+   let readingOT = dailyData['reading_ot'] || dailyData[`reading_ot${suffix}`] || "";
+   let readingEpistle = dailyData['reading_epistle'] || dailyData[`reading_epistle${suffix}`] || "";
+   let readingGospel = dailyData['reading_gospel'] || dailyData[`reading_gospel${suffix}`] || "";
+   
+   // Morning Prayer readings
+   let morningOT = isMorning ? readingOT : '';
+   let morningEpistle = isMorning ? readingEpistle : '';
+   let morningGospel = (isMorning && (gospelPlacement === 'morning' || gospelPlacement === 'both')) ? readingGospel : '';
+   
+   // Evening/Noonday/Compline readings - always show OT and Epistle
+   let eveningOT = (isEvening || isCompline || isNoonday) ? readingOT : '';
+   let eveningEpistle = (isEvening || isCompline || isNoonday) ? readingEpistle : '';
+   let eveningGospel = ((isEvening || isCompline || isNoonday) && (gospelPlacement === 'evening' || gospelPlacement === 'both')) ? readingGospel : '';
 
 
 
