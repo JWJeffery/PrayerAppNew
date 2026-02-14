@@ -565,14 +565,8 @@ async function getScriptureText(refId) {
         'romans', 'titus'
     ];
     
-    // Helper to parse a single reference (e.g., "Mark 10:32-45" or "Psalm 1")
-    async function extractFromBook(singleRef) {
-        const match = singleRef.trim().match(/^(.+?)\s*(\d+.*)$/);
-        if (!match) return `Invalid reference: ${singleRef}`;
-        
-        let book = match[1].trim();
-        let range = match[2].trim();
-        
+    // Helper to parse and extract from a book
+    async function extractFromBook(book, ranges) {
         let isPsalm = book.toLowerCase().startsWith('psalm');
         let filename = isPsalm ? 'psalms.json' : book.replace(/\s/g, '').toLowerCase() + '.json';
         let folder = ntBooks.includes(filename.replace('.json', '')) ? 'NT' : 'OT';
@@ -590,72 +584,96 @@ async function getScriptureText(refId) {
         
         const bookData = appData.bible[filename];
         
-        if (isPsalm) {
-            // Psalms handling: range could be "1" (whole Psalm 1) or "119:1-32" (verses in Psalm 119)
-            let psalmNum, verseStart, verseEnd;
-            if (range.includes(':')) {
-                const parts = range.split(':');
-                psalmNum = parseInt(parts[0]);
-                const verseRange = parts[1].split('-');
-                verseStart = parseInt(verseRange[0]);
-                verseEnd = parseInt(verseRange[1]) || Infinity; // To end if no end
-            } else {
-                psalmNum = parseInt(range);
-                verseStart = 1;
-                verseEnd = Infinity; // Whole psalm
-            }
-            
-            // Find the psalm object
-            const psalm = bookData.find(p => p.id === `PSALM ${psalmNum}`.toUpperCase());
-            if (!psalm) return `Psalm ${psalmNum} not found.`;
-            
-            const fullText = psalm.text.NRSV;
-            if (verseEnd === Infinity) return fullText; // Whole psalm
-            
-            // Extract verse range: split lines, filter by starting with `${psalmNum}:${verseNum} `
-            const lines = fullText.split('\n');
-            let extracted = [];
-            for (let line of lines) {
-                const verseMatch = line.match(/^(\d+:\d+)\s*(.*)$/);
-                if (verseMatch) {
-                    const [chVerse, text] = verseMatch;
-                    const vNum = parseInt(chVerse.split(':')[1]);
-                    if (vNum >= verseStart && vNum <= verseEnd) {
-                        extracted.push(line);
+        let extractedText = '';
+        
+        for (let range of ranges) {
+            if (isPsalm) {
+                // Psalms handling: range could be "1" (whole) or "119:1-32" (verses)
+                let psalmNum, verseStart, verseEnd;
+                if (range.includes(':')) {
+                    const parts = range.split(':');
+                    psalmNum = parseInt(parts[0]);
+                    const verseRange = parts[1].split('-');
+                    verseStart = parseInt(verseRange[0]);
+                    verseEnd = parseInt(verseRange[1]) || Infinity;
+                } else {
+                    psalmNum = parseInt(range);
+                    verseStart = 1;
+                    verseEnd = Infinity;
+                }
+                
+                const psalm = bookData.find(p => p.id === `PSALM ${psalmNum}`.toUpperCase());
+                if (!psalm) return `Psalm ${psalmNum} not found.`;
+                
+                const fullText = psalm.text.NRSV;
+                if (verseEnd === Infinity) {
+                    extractedText += fullText + '\n\n';
+                    continue;
+                }
+                
+                // Extract verse range
+                const lines = fullText.split('\n');
+                let tempText = '';
+                for (let line of lines) {
+                    const verseMatch = line.match(/^(\d+:\d+)\s*(.*)$/);
+                    if (verseMatch) {
+                        const [chVerse, text] = verseMatch;
+                        const vNum = parseInt(chVerse.split(':')[1]);
+                        if (vNum >= verseStart && vNum <= verseEnd) {
+                            tempText += line + '\n';
+                        }
                     }
                 }
+                extractedText += tempText + '\n\n';
+            } else {
+                // Non-psalms: range could be "10:32-45" or "3:4-15"
+                const rangeParts = range.split(':');
+                const chapterNum = parseInt(rangeParts[0]);
+                const verseRange = rangeParts[1].split('-');
+                verseStart = parseInt(verseRange[0]);
+                verseEnd = parseInt(verseRange[1]) || Infinity;
+                
+                const chapter = bookData.chapters.find(ch => ch.num === chapterNum);
+                if (!chapter) return `Chapter ${chapterNum} not found in ${book}.`;
+                
+                let tempText = '';
+                chapter.verses.forEach(verse => {
+                    if (verse.num >= verseStart && (verseEnd === Infinity || verse.num <= verseEnd)) {
+                        tempText += `${chapterNum}:${verse.num} ${verse.text}\n`;
+                    }
+                });
+                extractedText += tempText + '\n\n';
             }
-            return extracted.join('\n');
-        } else {
-            // Non-psalms: assume single chapter, e.g., "10:32-45" -> chapter 10, verses 32-45
-            const rangeParts = range.split(':');
-            const chapterNum = parseInt(rangeParts[0]);
-            const verseRange = rangeParts[1].split('-');
-            const verseStart = parseInt(verseRange[0]);
-            const verseEnd = parseInt(verseRange[1]) || Infinity;
-            
-            // Find chapter
-            const chapter = bookData.chapters.find(ch => ch.num === chapterNum);
-            if (!chapter) return `Chapter ${chapterNum} not found in ${book}.`;
-            
-            let extracted = [];
-            chapter.verses.forEach(verse => {
-                if (verse.num >= verseStart && (verseEnd === Infinity || verse.num <= verseEnd)) {
-                    extracted.push(`${chapterNum}:${verse.num} ${verse.text}`);
-                }
-            });
-            return extracted.join('\n');
         }
+        
+        // Strip verse numbers for all readings
+        extractedText = extractedText.replace(/\d+:\d+ /g, '').trim();
+        
+        return extractedText;
     }
     
-    // Handle multiple refs (e.g., "Psalm 1, Psalm 15")
+    // Main logic: split multiple refs (e.g., "Psalm 1, Psalm 15" or "Joel 2:1-2,12-17")
     const parts = refId.split(',');
-    const texts = [];
+    let texts = [];
+    let currentBook = '';
     for (let part of parts) {
-        const text = await extractFromBook(part);
+        part = part.trim();
+        const match = part.match(/^(.+?)\s*(\d+.*)$/);
+        if (match) {
+            currentBook = match[1].trim();
+            range = match[2].trim();
+        } else {
+            range = part;
+        }
+        const rangeParts = range.split(',');
+        let subRanges = [];
+        for (let sub of rangeParts) {
+            subRanges.push(sub.trim());
+        }
+        const text = await extractFromBook(currentBook, subRanges);
         texts.push(text);
     }
-    return texts.join('\n\n'); // Separate multiple with double newline
+    return texts.join('\n\n');
 }
 async function renderOffice() {
    if (!appData || !appData.rubrics || !Array.isArray(appData.rubrics)) {
