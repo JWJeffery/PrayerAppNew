@@ -1,0 +1,198 @@
+{
+  "meta": {
+    "title": "BCP 1979 Proper Numbers Reference",
+    "description": "Maps Propers 1-29 to calendar date ranges for the season after Pentecost",
+    "source": "Book of Common Prayer 1979 (Public Domain)"
+  },
+  "propers": [
+    {
+      "proper": 1,
+      "dateRange": "February 7-13",
+      "title": "Proper 1 (Sunday between February 7 and February 13)",
+      "season": "epiphany",
+      "note": "8th Sunday after Epiphany (if applicable)"
+    },
+    {
+      "proper": 2,
+      "dateRange": "February 14-20",
+      "title": "Proper 2 (Sunday between February 14 and February 20)",
+      "season": "epiphany",
+      "note": "9th Sunday after Epiphany (if applicable)"
+    },
+    {
+      "proper": 3,
+      "dateRange": "February 21-27",
+      "title": "Proper 3 (Sunday between February 21 and February 27)",
+      "season": "epiphany",
+      "note": "Last Sunday after Epiphany (if applicable)"
+    },
+    {
+      "proper": 4,
+      "dateRange": "May 29 - June 4",
+      "title": "Proper 4 (Sunday between May 29 and June 4)",
+      "season": "ordinary"
+    },
+    {
+      "proper": 5,
+      "dateRange": "June 5-11",
+      "title": "Proper 5 (Sunday between June 5 and June 11)",
+      "season": "ordinary"
+    },
+    {
+      "proper": 6,
+      "dateRange": "June 12-18",
+      "title": "Proper 6 (Sunday between June 12 and June 18)",
+      "season": "ordinary"
+    },
+    {
+      "proper": 7,
+      "dateRange": "June 19-25",
+      "title": "Proper 7 (Sunday between June 19 and June 25)",
+      "season": "ordinary"
+    },
+    {
+      "proper": 8,
+      "dateRange": "June 26 - July 2",
+      "title": "Proper 8 (Sunday between June 26 and July 2)",
+      "season": "ordinary"
+    },
+    {
+      "proper": 9,
+      "dateRange": "July 3-9",
+      "title": "Proper 9 (Sunday between July 3 and July 9)",
+      "season": "ordinary"
+    },
+    {
+      "proper": 10,
+      "dateRange": "July 10-16",
+      "title": "Proper 10 (Sunday between July 10 and July 16)",
+      "season": "ordinary"
+    },
+    {
+      "proper": 11,
+      "dateRange": "July 17-23",
+      "title": "Proper 11 (Sunday between July 17 and July 23)",
+      "season": "ordinary"
+    },
+    {
+      "proper": 12,
+      "dateRange": "July 24-30",
+      "title": "Proper 12 (Sunday between July 24 and July 30)",
+      "season": "ordinary"
+    },
+    {
+      "proper": 13,
+      "dateRange": "July 31 - August 6",
+      "title": "Proper 13 (Sunday between July 31 and August 6)",
+      "season": "ordinary"
+    },
+    {
+      "proper": 14,
+      "dateRange": "August 7-13",
+      "title": "Proper 14 (Sunday between August 7 and August 13)",
+      "season": "ordinary"
+    },
+    {
+      "proper": 15,
+      "dateRange": "August 14-20",
+      "title": "Proper 15 (Sunday between August 14 and August 20)",
+      "season": "ordinary"
+    },
+    {
+      "proper": 16,
+      "dateRange": "August 21-27",
+      "title": "Proper 16 (Sunday between August 21 and August 27)",
+      "season": "ordinary"
+    },
+    {
+      "proper": 17,
+      "dateRange": "August 28 - September 3",
+      "title": "Proper 17 (Sunday between August 28 and September 3)",
+      "season": "ordinary"
+    },
+    {
+      "proper": 18,
+      "dateRange": "September 4-10",
+      "title": "Proper 18 (Sunday between September 4 and September 10)",
+      "season": "ordinary"
+    },
+    {
+      "proper": 19,
+      "dateRange": "September 11-17",
+      "title": "Proper 19 (Sunday between September 11 and September 17)",
+      "season": "ordinary"
+    },
+    {
+      "proper": 20,
+      "dateRange": "September 18-24",
+      "title": "Proper 20 (Sunday between September 18 and September 24)",
+      "season": "ordinary"
+    },
+    {
+      "proper": 21,
+      "dateRange": "September 25 - October 1",
+      "title": "Proper 21 (Sunday between September 25 and October 1)",
+      "season": "ordinary"
+    },
+    {
+      "proper": 22,
+      "dateRange": "October 2-8",
+      "title": "Proper 22 (Sunday between October 2 and October 8)",
+      "season": "ordinary"
+    },
+    {
+      "proper": 23,
+      "dateRange": "October 9-15",
+      "title": "Proper 23 (Sunday between October 9 and October 15)",
+      "season": "ordinary"
+    },
+    {
+      "proper": 24,
+      "dateRange": "October 16-22",
+      "title": "Proper 24 (Sunday between October 16 and October 22)",
+      "season": "ordinary"
+    },
+    {
+      "proper": 25,
+      "dateRange": "October 23-29",
+      "title": "Proper 25 (Sunday between October 23 and October 29)",
+      "season": "ordinary"
+    },
+    {
+      "proper": 26,
+      "dateRange": "October 30 - November 5",
+      "title": "Proper 26 (Sunday between October 30 and November 5)",
+      "season": "ordinary"
+    },
+    {
+      "proper": 27,
+      "dateRange": "November 6-12",
+      "title": "Proper 27 (Sunday between November 6 and November 12)",
+      "season": "ordinary"
+    },
+    {
+      "proper": 28,
+      "dateRange": "November 13-19",
+      "title": "Proper 28 (Sunday between November 13 and November 19)",
+      "season": "ordinary"
+    },
+    {
+      "proper": 29,
+      "dateRange": "November 20-26",
+      "title": "Proper 29 (Christ the King)",
+      "season": "ordinary",
+      "note": "Last Sunday after Pentecost - Christ the King"
+    }
+  ],
+  "special_sundays": {
+    "trinity": {
+      "title": "Trinity Sunday",
+      "note" : "First Sunday after Pentecost (not numbered as a Proper)"
+    },
+    "christ_the_king": {
+      "title": "Christ the King",
+      "proper": 29,
+      "note": "Last Sunday after Pentecost (Proper 29)"
+    }
+  }
+}

@@ -986,7 +986,9 @@ async function getScriptureText(refId) {
             appData.bibleAccessOrder.push(filename);
         }
       
-       const bookData = appData.bible[filename];
+       const bookData = (!isPsalm && Array.isArray(appData.bible[filename])) 
+    ? appData.bible[filename][0] 
+    : appData.bible[filename];
       
        let extractedText = '';
       
@@ -1098,7 +1100,8 @@ async function renderOffice() {
 
 
 
-  const todayKey = currentDate.toLocaleDateString('en-US', { month: 'long', day: 'numeric' });
+  const todayKey = currentDate.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
+const todayKeyShort = currentDate.toLocaleDateString('en-US', { month: 'long', day: 'numeric' });
   document.getElementById('display-date').innerText = todayKey;
 
 
@@ -1119,12 +1122,7 @@ async function renderOffice() {
 
 
   const devotions = [];
-  if (document.getElementById('toggle-angelus').checked) devotions.push('angelus');
-  if (document.getElementById('toggle-trisagion').checked) devotions.push('trisagion-byzantine');
-  if (document.getElementById('toggle-theotokion').checked) devotions.push('coptic-theotokion');
-  if (document.getElementById('toggle-jesus-prayer').checked) devotions.push('jesus-prayer');
-  if (document.getElementById('toggle-assyrian-blessing').checked) devotions.push('assyrian-blessing');
-  if (document.getElementById('toggle-agpeya-opening').checked) devotions.push('agpeya-opening');
+  if (document.getElementById('toggle-angelus')?.checked) devotions.push('angelus'); if (document.getElementById('toggle-trisagion')?.checked) devotions.push('trisagion-byzantine'); if (document.getElementById('toggle-theotokion')?.checked) devotions.push('coptic-theotokion'); if (document.getElementById('toggle-jesus-prayer')?.checked) devotions.push('jesus-prayer'); if (document.getElementById('toggle-assyrian-blessing')?.checked) devotions.push('assyrian-blessing'); if (document.getElementById('toggle-agpeya-opening')?.checked) devotions.push('agpeya-opening');
 
 
 
@@ -1273,7 +1271,7 @@ async function renderOffice() {
        if (!psalmId.startsWith('PSALM ')) psalmId = 'PSALM ' + psalmId;
        const fullText = await getScriptureText(psalmId);
        psalmHtml += `<h4 class="passage-reference">Psalm ${psalm.replace(/Psalm /gi, '').replace(/:\d+-\d+[a-z]?(\(\d+-\d+[a-z]?\))?/gi, '')}</h4><span class="component-text">${fullText || "No psalm text found"}</span>`;
-       if (document.getElementById('toggle-gloria-patri').checked) {
+       if (document.getElementById('toggle-gloria-patri')?.checked) {
          const gloria = appData.components.find(c => c.id === "bcp-gloria-patri");
          let gloriaText = gloria ? (gloria.text[rite] || gloria.text['rite2'] || "(Gloria Patri)") : "(Gloria Patri not found)";
          psalmHtml += `<span class="component-text"><i>${gloriaText}</i></span>`;
@@ -1539,7 +1537,7 @@ officeHtml += `<span class="rubric-text">Marian Antiphon</span><span class="comp
 
 
  document.getElementById('saint-display').innerHTML = appData.saints
-     .filter(s => s.day && s.day.toLowerCase().includes(todayKeyLower))
+     .filter(s => s.day && s.day.toLowerCase().includes(todayKeyShort.toLowerCase()))
      .map(s => `
          <div class="saint-box">
              <small style="color:var(--accent); font-weight:bold; text-transform:uppercase;">${s.tradition || 'Unknown'}</small>

@@ -696,7 +696,6 @@
     },
     "type": "Collect"
   },
-  [
   {
     "id": "collect-ash-wednesday",
     "title": "Collect for Ash Wednesday",
@@ -838,6 +837,214 @@
     "text": {
       "rite1": "We beseech thee, O Lord, pour thy grace into our hearts, that we who have known the incarnation of thy Son Jesus Christ, announced by an angel to the Virgin Mary, may by his cross and passion be brought unto the glory of his resurrection; who liveth and reigneth with thee, in the unity of the Holy Spirit, one God, now and for ever. Amen.",
       "rite2": "Pour your grace into our hearts, O Lord, that we who have known the incarnation of your Son Jesus Christ, announced by an angel to the Virgin Mary, may by his cross and passion be brought to the glory of his resurrection; who lives and reigns with you, in the unity of the Holy Spirit, one God, now and for ever. Amen."
+    },
+    "type": "Collect"
+  },
+  [
+  {
+    "id": "collect-ordinary-1",
+    "title": "Collect for the Week after Trinity Sunday",
+    "text": {
+      "rite1": "O God, the strength of all them that put their trust in thee: Mercifully accept our prayers; and because through the weakness of our mortal nature we can do no good thing without thee, grant us the help of thy grace, that in keeping of thy commandments we may please thee both in will and deed; through Jesus Christ our Lord, who liveth and reigneth with thee and the Holy Spirit, one God, for ever and ever. Amen.",
+      "rite2": "O God, the strength of all who put their trust in you: Mercifully accept our prayers; and because in our weakness we can do nothing good without you, give us the help of your grace, that in keeping your commandments we may please you both in will and deed; through Jesus Christ our Lord, who lives and reigns with you and the Holy Spirit, one God, for ever and ever. Amen."
+    },
+    "type": "Collect"
+  },
+  {
+    "id": "collect-ordinary-2",
+    "title": "Collect for the Second Sunday after Pentecost",
+    "text": {
+      "rite1": "O Lord, who never failest to help and govern them whom thou dost bring up in thy steadfast fear and love: Keep us, we beseech thee, under the protection of thy good providence, and make us to have a perpetual fear and love of thy holy Name; through Jesus Christ our Lord, who liveth and reigneth with thee and the Holy Spirit, one God, for ever and ever. Amen.",
+      "rite2": "O Lord, make us have a perpetual love and reverence for your holy Name, for you never fail to help and govern those whom you have set upon the sure foundation of your loving-kindness; through Jesus Christ our Lord, who lives and reigns with you and the Holy Spirit, one God, for ever and ever. Amen."
+    },
+    "type": "Collect"
+  },
+  {
+    "id": "collect-ordinary-3",
+    "title": "Collect for the Third Sunday after Pentecost",
+    "text": {
+      "rite1": "O Lord, we beseech thee mercifully to hear us; and grant that we, to whom thou hast given an hearty desire to pray, may, by thy mighty aid, be defended and comforted in all dangers and adversities; through Jesus Christ our Lord, who liveth and reigneth with thee and the Holy Spirit, one God, for ever and ever. Amen.",
+      "rite2": "Keep, O Lord, your household the Church in your steadfast faith and love, that through your grace we may proclaim your truth with boldness, and minister your justice with compassion; for the sake of Jesus Christ our Lord, who lives and reigns with you and the Holy Spirit, one God, now and for ever. Amen."
+    },
+    "type": "Collect"
+  },
+  {
+    "id": "collect-ordinary-4",
+    "title": "Collect for the Fourth Sunday after Pentecost",
+    "text": {
+      "rite1": "O God, the protector of all that trust in thee, without whom nothing is strong, nothing is holy: Increase and multiply upon us thy mercy; that, thou being our ruler and guide, we may so pass through things temporal, that we finally lose not the things eternal; grant this, O heavenly Father, for the sake of Jesus Christ our Lord, who liveth and reigneth with thee and the Holy Spirit, one God, for ever and ever. Amen.",
+      "rite2": "O Lord, make us have a perpetual love and reverence for your holy Name, for you never fail to help and govern those whom you have set upon the sure foundation of your loving-kindness; through Jesus Christ our Lord, who lives and reigns with you and the Holy Spirit, one God, for ever and ever. Amen."
+    },
+    "type": "Collect"
+  },
+  {
+    "id": "collect-ordinary-5",
+    "title": "Collect for the Fifth Sunday after Pentecost",
+    "text": {
+      "rite1": "Grant, O Lord, we beseech thee, that the course of this world may be so peaceably ordered by thy governance, that thy Church may joyfully serve thee in all godly quietness; through Jesus Christ our Lord, who liveth and reigneth with thee and the Holy Spirit, one God, for ever and ever. Amen.",
+      "rite2": "Almighty God, you have built your Church upon the foundation of the apostles and prophets, Jesus Christ himself being the chief cornerstone: Grant us so to be joined together in unity of spirit by their teaching, that we may be made a holy temple acceptable to you; through Jesus Christ our Lord, who lives and reigns with you and the Holy Spirit, one God, for ever and ever. Amen."
+    },
+    "type": "Collect"
+  },
+  {
+    "id": "collect-ordinary-6",
+    "title": "Collect for the Sixth Sunday after Pentecost",
+    "text": {
+      "rite1": "O God, who hast prepared for them that love thee such good things as pass man's understanding: Pour into our hearts such love toward thee, that we, loving thee in all things and above all things, may obtain thy promises, which exceed all that we can desire; through Jesus Christ our Lord, who liveth and reigneth with thee and the Holy Spirit, one God, for ever and ever. Amen.",
+      "rite2": "O God, you have taught us to keep all your commandments by loving you and our neighbor: Grant us the grace of your Holy Spirit, that we may be devoted to you with our whole heart, and united to one another with pure affection; through Jesus Christ our Lord, who lives and reigns with you and the Holy Spirit, one God, for ever and ever. Amen."
+    },
+    "type": "Collect"
+  },
+  {
+    "id": "collect-ordinary-7",
+    "title": "Collect for the Seventh Sunday after Pentecost",
+    "text": {
+      "rite1": "Lord of all power and might, who art the author and giver of all good things: Graft in our hearts the love of thy Name, increase in us true religion, nourish us with all goodness, and of thy great mercy keep us in the same; through Jesus Christ our Lord, who liveth and reigneth with thee and the Holy Spirit, one God, for ever and ever. Amen.",
+      "rite2": "O God, you have taught us to keep all your commandments by loving you and our neighbor: Grant us the grace of your Holy Spirit, that we may be devoted to you with our whole heart, and united to one another with pure affection; through Jesus Christ our Lord, who lives and reigns with you and the Holy Spirit, one God, for ever and ever. Amen."
+    },
+    "type": "Collect"
+  },
+  {
+    "id": "collect-ordinary-8",
+    "title": "Collect for the Eighth Sunday after Pentecost",
+    "text": {
+      "rite1": "O God, whose never-failing providence ordereth all things both in heaven and earth: We humbly beseech thee to put away from us all hurtful things, and to give us those things which are profitable for us; through Jesus Christ our Lord, who liveth and reigneth with thee and the Holy Spirit, one God, for ever and ever. Amen.",
+      "rite2": "O God, the protector of all who trust in you, without whom nothing is strong, nothing is holy: Increase and multiply upon us your mercy; that, with you as our ruler and guide, we may so pass through things temporal, that we lose not the things eternal; through Jesus Christ our Lord, who lives and reigns with you and the Holy Spirit, one God, for ever and ever. Amen."
+    },
+    "type": "Collect"
+  },
+  {
+    "id": "collect-ordinary-9",
+    "title": "Collect for the Ninth Sunday after Pentecost",
+    "text": {
+      "rite1": "Grant to us, Lord, we beseech thee, the spirit to think and do always such things as are right, that we, who cannot exist without thee, may by thee be enabled to live according to thy will; through Jesus Christ our Lord, who liveth and reigneth with thee and the Holy Spirit, one God, for ever and ever. Amen.",
+      "rite2": "Let your continual mercy, O Lord, cleanse and defend your Church; and, because it cannot continue in safety without your help, protect and govern it always by your goodness; through Jesus Christ our Lord, who lives and reigns with you and the Holy Spirit, one God, for ever and ever. Amen."
+    },
+    "type": "Collect"
+  },
+  {
+    "id": "collect-ordinary-10",
+    "title": "Collect for the Tenth Sunday after Pentecost",
+    "text": {
+      "rite1": "Let thy merciful ears, O Lord, be open to the prayers of thy humble servants; and, that they may obtain their petitions, make them to ask such things as shall please thee; through Jesus Christ our Lord, who liveth and reigneth with thee and the Holy Spirit, one God, for ever and ever. Amen.",
+      "rite2": "O God, the protector of all who trust in you, without whom nothing is strong, nothing is holy: Increase and multiply upon us your mercy; that, with you as our ruler and guide, we may so pass through things temporal, that we lose not the things eternal; through Jesus Christ our Lord, who lives and reigns with you and the Holy Spirit, one God, for ever and ever. Amen."
+    },
+    "type": "Collect"
+  },
+  {
+    "id": "collect-ordinary-11",
+    "title": "Collect for the Eleventh Sunday after Pentecost",
+    "text": {
+      "rite1": "O God, who declarest thy almighty power chiefly in showing mercy and pity: Mercifully grant unto us such a measure of thy grace, that we, running the way of thy commandments, may obtain thy gracious promises, and be made partakers of thy heavenly treasure; through Jesus Christ our Lord, who liveth and reigneth with thee and the Holy Spirit, one God, for ever and ever. Amen.",
+      "rite2": "Almighty and everlasting God, you are always more ready to hear than we to pray, and to give more than we either desire or deserve: Pour upon us the abundance of your mercy, forgiving us those things of which our conscience is afraid, and giving us those good things for which we are not worthy to ask, except through the merits and mediation of Jesus Christ our Savior; who lives and reigns with you and the Holy Spirit, one God, for ever and ever. Amen."
+    },
+    "type": "Collect"
+  },
+  {
+    "id": "collect-ordinary-12",
+    "title": "Collect for the Twelfth Sunday after Pentecost",
+    "text": {
+      "rite1": "Almighty and everlasting God, who art always more ready to hear than we to pray, and art wont to give more than either we desire or deserve: Pour down upon us the abundance of thy mercy, forgiving us those things whereof our conscience is afraid, and giving us those good things which we are not worthy to ask, but through the merits and mediation of Jesus Christ, thy Son, our Lord. Amen.",
+      "rite2": "Lord of all power and might, the author and giver of all good things: Graft in our hearts the love of your Name; increase in us true religion; nourish us with all goodness; and bring forth in us the fruit of good works; through Jesus Christ our Lord, who lives and reigns with you and the Holy Spirit, one God, for ever and ever. Amen."
+    },
+    "type": "Collect"
+  },
+  {
+    "id": "collect-ordinary-13",
+    "title": "Collect for the Thirteenth Sunday after Pentecost",
+    "text": {
+      "rite1": "Almighty and merciful God, of whose only gift it cometh that thy faithful people do unto thee true and laudable service: Grant, we beseech thee, that we may so faithfully serve thee in this life, that we fail not finally to attain thy heavenly promises; through the merits of Jesus Christ our Lord. Amen.",
+      "rite2": "Lord of all power and might, the author and giver of all good things: Graft in our hearts the love of your Name; increase in us true religion; nourish us with all goodness; and bring forth in us the fruit of good works; through Jesus Christ our Lord, who lives and reigns with you and the Holy Spirit, one God, for ever and ever. Amen."
+    },
+    "type": "Collect"
+  },
+  {
+    "id": "collect-ordinary-14",
+    "title": "Collect for the Fourteenth Sunday after Pentecost",
+    "text": {
+      "rite1": "Almighty and everlasting God, give unto us the increase of faith, hope, and charity; and, that we may obtain that which thou dost promise, make us to love that which thou dost commandment; through Jesus Christ our Lord, who liveth and reigneth with thee and the Holy Spirit, one God, for ever and ever. Amen.",
+      "rite2": "Grant us, O Lord, to trust in you with all our hearts; for, as you always resist the proud who confide in their own strength, so you never forsake those who make their boast of your mercy; through Jesus Christ our Lord, who lives and reigns with you and the Holy Spirit, one God, now and for ever. Amen."
+    },
+    "type": "Collect"
+  },
+  {
+    "id": "collect-ordinary-15",
+    "title": "Collect for the Fifteenth Sunday after Pentecost",
+    "text": {
+      "rite1": "Keep, we beseech thee, O Lord, thy Church with thy perpetual mercy; and, because the frailty of man without thee cannot but fall, keep us ever by thy help from all things hurtful, and lead us to all things profitable to our salvation; through Jesus Christ our Lord. Amen.",
+      "rite2": "O God, because without you we are not able to please you, mercifully grant that your Holy Spirit may in all things direct and rule our hearts; through Jesus Christ our Lord, who lives and reigns with you and the Holy Spirit, one God, now and for ever. Amen."
+    },
+    "type": "Collect"
+  },
+  {
+    "id": "collect-ordinary-16",
+    "title": "Collect for the Sixteenth Sunday after Pentecost",
+    "text": {
+      "rite1": "O Lord, we beseech thee, let thy continual pity cleanse and defend thy Church; and, because it cannot continue in safety without thy succor, preserve it evermore by thy help and goodness; through Jesus Christ our Lord. Amen.",
+      "rite2": "Grant us, Lord, not to be anxious about earthly things, but to love things heavenly; and even now, while we are placed among things that are passing away, to hold fast to those that shall endure; through Jesus Christ our Lord, who lives and reigns with you and the Holy Spirit, one God, for ever and ever. Amen."
+    },
+    "type": "Collect"
+  },
+  {
+    "id": "collect-ordinary-17",
+    "title": "Collect for the Seventeenth Sunday after Pentecost",
+    "text": {
+      "rite1": "Lord, we pray thee that thy grace may always prevent and follow us, and make us continually to be given to all good works; through Jesus Christ our Lord. Amen.",
+      "rite2": "O God, you declare your almighty power chiefly in showing mercy and pity: Mercifully grant to us such a measure of your grace, that we, running to obtain your promises, may become partakers of your heavenly treasure; through Jesus Christ our Lord, who lives and reigns with you and the Holy Spirit, one God, for ever and ever. Amen."
+    },
+    "type": "Collect"
+  },
+  {
+    "id": "collect-ordinary-18",
+    "title": "Collect for the Eighteenth Sunday after Pentecost",
+    "text": {
+      "rite1": "Lord, we beseech thee, grant thy people grace to withstand the temptations of the world, the flesh, and the devil, and with pure hearts and minds to follow thee the only God; through Jesus Christ our Lord. Amen.",
+      "rite2": "O God, you declare your almighty power chiefly in showing mercy and pity: Mercifully grant to us such a measure of your grace, that we, running to obtain your promises, may become partakers of your heavenly treasure; through Jesus Christ our Lord, who lives and reigns with you and the Holy Spirit, one God, for ever and ever. Amen."
+    },
+    "type": "Collect"
+  },
+  {
+    "id": "collect-ordinary-19",
+    "title": "Collect for the Nineteenth Sunday after Pentecost",
+    "text": {
+      "rite1": "O God, forasmuch as without thee we are not able to please thee, mercifully grant that thy Holy Spirit may in all things direct and rule our hearts; through Jesus Christ our Lord. Amen.",
+      "rite2": "Lord, we pray that your grace may always precede and follow us, that we may continually be given to all good works; through Jesus Christ our Lord, who lives and reigns with you and the Holy Spirit, one God, now and for ever. Amen."
+    },
+    "type": "Collect"
+  },
+  {
+    "id": "collect-ordinary-20",
+    "title": "Collect for the Twentieth Sunday after Pentecost",
+    "text": {
+      "rite1": "O almighty and most merciful God, of thy bountiful goodness keep us, we beseech thee, from all things that may hurt us; that we, being ready both in body and soul, may cheerfully accomplish those things which thou wouldest have done; through Jesus Christ our Lord. Amen.",
+      "rite2": "Almighty and everlasting God, in Christ you have revealed your glory among the nations: Preserve the works of your mercy, that your Church throughout the world may persevere with steadfast faith in the confession of your Name; through Jesus Christ our Lord, who lives and reigns with you and the Holy Spirit, one God, for ever and ever. Amen."
+    },
+    "type": "Collect"
+  },
+  {
+    "id": "collect-ordinary-21",
+    "title": "Collect for the Twenty-First Sunday after Pentecost",
+    "text": {
+      "rite1": "Grant, we beseech thee, merciful Lord, to thy faithful people pardon and peace, that they may be cleansed from all their sins, and serve thee with a quiet mind; through Jesus Christ our Lord. Amen.",
+      "rite2": "Almighty and everlasting God, increase in us the gifts of faith, hope, and charity; and, that we may obtain what you promise, make us love what you command; through Jesus Christ our Lord, who lives and reigns with you and the Holy Spirit, one God, for ever and ever. Amen."
+    },
+    "type": "Collect"
+  },
+  {
+    "id": "collect-ordinary-22",
+    "title": "Collect for the Twenty-Second Sunday after Pentecost",
+    "text": {
+      "rite1": "Lord, we beseech thee to keep thy household the Church in continual godliness; that through thy protection it may be free from all adversities, and devoutly given to serve thee in good works, to the glory of thy Name; through Jesus Christ our Lord. Amen.",
+      "rite2": "Almighty and merciful God, it is only by your gift that your faithful people offer you true and laudable service: Grant that we may run without stumbling to obtain your heavenly promises; through Jesus Christ our Lord, who lives and reigns with you and the Holy Spirit, one God, now and for ever. Amen."
+    },
+    "type": "Collect"
+  },
+  {
+    "id": "collect-ordinary-23",
+    "title": "Collect for the Twenty-Third Sunday after Pentecost",
+    "text": {
+      "rite1": "O God, our refuge and strength, who art the author of all godliness: Be ready, we beseech thee, to hear the devout prayers of thy Church; and grant that those things which we ask faithfully we may obtain effectually; through Jesus Christ our Lord. Amen.",
+      "rite2": "O God, whose blessed Son came into the world that he might destroy the works of the devil and make us children of God and heirs of eternal life: Grant that, having this hope, we may purify ourselves as he is pure; that, when he comes again with power and great glory, we may be made like him in his eternal and glorious kingdom; where he lives and reigns with you and the Holy Spirit, one God, for ever and ever. Amen."
     },
     "type": "Collect"
   }

@@ -1,26 +1,131 @@
 {
   "project_manifest": {
     "name": "Universal Office (Prayer App New)",
-    "version": "2.0.0",
+    "version": "2.1.0",
     "description": "A comprehensive digital Daily Office and Psalter designed for Anglicans and those in communion with them. It incorporates elements from Anglican, Catholic, Eastern Orthodox, Oriental Orthodox, and Church of the East monastic and parish prayer services.",
     "theological_vision": "As part of 'the one, holy, catholic, and apostolic Church,' the app aims to help users become more like Jesus through sacraments and prayer, drawing from the Holy Fathers.",
-    "current_phase": "Phase 5: Production-Ready with Full Feature Set",
-    "last_major_update": "2026-02-14"
+    "current_phase": "Phase 6: BCP Lectionary Alignment & Multi-Tradition Preparation",
+    "last_major_update": "2026-02-15"
   },
-  "operational_status": "FULLY OPERATIONAL - The application has undergone comprehensive refactoring and is production-ready. All critical bugs have been resolved, memory management is optimized, and the user experience has been significantly enhanced.",
+  "operational_status": "OPERATIONAL WITH PRIORITY CORRECTIONS NEEDED - The application is functional but requires immediate attention to align with BCP 1979 two-year lectionary cycle. Current one-year cycle is a departure from stated BCP compliance goal.",
   "goals": [
-    "Offer customizable prayer experiences drawing from multiple Christian traditions to deepen users' spiritual lives.",
-    "Facilitate immersion in worship, bringing 'heaven to earth' through visual, auditory, and sensory elements.",
-    "Include a saints section with a curated kalendar based on Lesser Feasts and Fasts and the BCP, reviewed for marks of holiness and intercession.",
-    "Ensure the app is beautiful and engaging, changing with liturgical seasons to enhance the prayer experience.",
-    "Complete the 'Eight Books' of the Ethiopian New Testament church order.",
-    "Standardize all unique canonical IDs (e.g., 1MEQ, JUB, ASC_ISA, FETH_NAG, 3CO, 2BA, LAO) for global searchability."
+    "PRIMARY: Full alignment with BCP 1979 rubrics, lectionary, and liturgical structure with optional enhancements",
+    "Offer customizable prayer experiences drawing from multiple Christian traditions to deepen users' spiritual lives",
+    "Facilitate immersion in worship, bringing 'heaven to earth' through visual, auditory, and sensory elements",
+    "Include a saints section with a curated kalendar based on Lesser Feasts and Fasts and the BCP, reviewed for marks of holiness and intercession",
+    "Ensure the app is beautiful and engaging, changing with liturgical seasons to enhance the prayer experience",
+    "FUTURE: Enable users to select Catholic, Orthodox, or Church of the East offices as alternative prayer modes",
+    "Complete the 'Eight Books' of the Ethiopian New Testament church order",
+    "Standardize all unique canonical IDs (e.g., 1MEQ, JUB, ASC_ISA, FETH_NAG, 3CO, 2BA, LAO) for global searchability"
   ],
+  "priority_corrections_needed": {
+    "critical": [
+      {
+        "issue": "One-year lectionary cycle vs. BCP 1979 two-year cycle",
+        "current_state": "Seasonal JSON files use one-year continuous semi-continuous reading cycle",
+        "required_state": "Must implement BCP 1979 Daily Office Lectionary with Year One and Year Two cycles",
+        "impact": "This is a departure from BCP, not an enhancement. Must be corrected for full BCP alignment.",
+        "action_items": [
+          "Research and document BCP 1979 Daily Office Lectionary Year One and Year Two structure",
+          "Create lectionary mapping for each day of the year in both cycles",
+          "Update seasonal JSON files to include 'year_one' and 'year_two' reading fields",
+          "Add year selection toggle to settings panel (auto-detect based on church year or manual selection)",
+          "Update renderOffice() function to select appropriate year's readings",
+          "Verify alignment with actual BCP 1979 Daily Office Lectionary tables"
+        ],
+        "priority": "HIGH",
+        "estimated_effort": "Large - requires complete lectionary data entry and verification"
+      },
+      {
+        "issue": "Sunday naming convention - Propers vs. Traditional numbering",
+        "current_state": "Uses traditional numbering only ('First Sunday after Pentecost')",
+        "required_state": "Support both BCP 1979 'Proper X' system AND traditional numbering for user familiarity",
+        "impact": "Users need flexibility in how Sundays are named",
+        "action_items": [
+          "Add 'proper_number' field to seasonal JSON entries for Sundays after Pentecost",
+          "Update display to show both: 'Proper 15 / Tenth Sunday after Pentecost'",
+          "Add toggle in settings for preferred display format",
+          "Ensure bulletins and spoken references accommodate both systems"
+        ],
+        "priority": "MEDIUM",
+        "estimated_effort": "Small - primarily data entry and display logic"
+      },
+      {
+        "issue": "Eastern Orthodox devotional placement in Daily Office",
+        "current_state": "Eastern prayers (Trisagion, Theotokion, Jesus Prayer, etc.) accessible but not optimally placed",
+        "required_state": "These should be clearly marked as optional additions, perhaps in a separate 'Additional Devotions' section",
+        "impact": "Clarity for BCP users; proper integration for ecumenical users",
+        "action_items": [
+          "Create dedicated 'Additional Devotions' section in UI",
+          "Move Eastern Orthodox prayers to optional devotions area",
+          "Clearly label these as 'from Eastern/Oriental Orthodox tradition'",
+          "Consider creating an 'Ecumenical Devotions' toggle category",
+          "Ensure BCP-only users can have a 'pure BCP' experience if desired"
+        ],
+        "priority": "MEDIUM",
+        "estimated_effort": "Medium - requires UI reorganization and clear labeling"
+      }
+    ],
+    "important": [
+      {
+        "issue": "Future multi-tradition office support architecture",
+        "current_state": "Architecture focuses on BCP with added elements",
+        "required_state": "Need modular architecture to support completely different office structures (Roman Catholic Liturgy of the Hours, Byzantine Horologion, etc.)",
+        "action_items": [
+          "Design office-type selection system (BCP Daily Office, Catholic LOH, Orthodox Horologion, Church of the East)",
+          "Create separate rubric files for each tradition",
+          "Design tradition-specific component libraries",
+          "Maintain BCP as default/primary with others as optional modules",
+          "Ensure clean separation so BCP users never see non-BCP content unless opted in"
+        ],
+        "priority": "LOW (Future Phase)",
+        "estimated_effort": "Very Large - full architectural redesign"
+      }
+    ]
+  },
+  "bcp_compliance_status": {
+    "current_compliance": "85%",
+    "target_compliance": "100% (with clearly marked enhancements)",
+    "compliance_breakdown": {
+      "liturgical_calendar": {
+        "status": "COMPLIANT",
+        "notes": "All seasons, feast days, and liturgical colors match BCP 1979",
+        "percentage": 100
+      },
+      "office_structure": {
+        "status": "COMPLIANT",
+        "notes": "Morning Prayer, Evening Prayer, Noonday, Compline structures match BCP rubrics",
+        "percentage": 95,
+        "issues": ["Some optional prayers need better placement/labeling"]
+      },
+      "lectionary": {
+        "status": "NON-COMPLIANT",
+        "notes": "Uses one-year cycle instead of BCP 1979 two-year Daily Office Lectionary",
+        "percentage": 50,
+        "issues": ["Critical: Must implement Year One/Year Two cycles"]
+      },
+      "collects_and_prayers": {
+        "status": "COMPLIANT",
+        "notes": "Collects match BCP 1979 with proper seasonal and feast day propers",
+        "percentage": 100
+      },
+      "psalter": {
+        "status": "COMPLIANT",
+        "notes": "30-day psalm cycle option matches BCP; additional psalms 151-155 are clearly marked enhancements",
+        "percentage": 100
+      },
+      "canticles": {
+        "status": "COMPLIANT",
+        "notes": "All BCP canticles present (Venite, Jubilate, Te Deum, Benedictus, Magnificat, Nunc Dimittis, etc.)",
+        "percentage": 100
+      }
+    }
+  },
   "immersive_features": {
-    "visual": "Icons of saints, background colors, and themes that change with liturgical seasons based on seasonal JSON files and liturgicalColor field.",
-    "auditory": "Light background music or sounds to evoke a sacred atmosphere (pending implementation).",
-    "sensory": "Design elements that evoke the atmosphere of traditional worship (e.g., imagery of incense).",
-    "ui": "Immersive interface for web and mobile to create a 'heavenly worship' experience."
+    "visual": "Icons of saints, background colors, and themes that change with liturgical seasons based on seasonal JSON files and liturgicalColor field",
+    "auditory": "Light background music or sounds to evoke a sacred atmosphere (pending implementation)",
+    "sensory": "Design elements that evoke the atmosphere of traditional worship (e.g., imagery of incense)",
+    "ui": "Immersive interface for web and mobile to create a 'heavenly worship' experience"
   },
   "technical_architecture": {
     "frontend": "Vanilla JavaScript with CSS custom properties for theming",
@@ -53,8 +158,8 @@
       "western_apocrypha": "Completed: Epistle to the Laodiceans"
     },
     "liturgy": {
-      "morning_prayer": "Fully operational with customizable settings (Rite I/II, Priest/Lay, optional prayers)",
-      "evening_prayer": "Fully operational with Phos Hilaron and Magnificat",
+      "morning_prayer": "Fully operational with customizable settings (Rite I/II, Priest/Lay, optional prayers) - NEEDS YEAR ONE/TWO LECTIONARY",
+      "evening_prayer": "Fully operational with Phos Hilaron and Magnificat - NEEDS YEAR ONE/TWO LECTIONARY",
       "compline": "Fully operational with Nunc Dimittis",
       "noonday_prayer": "Fully operational",
       "customization": "Gospel placement (Morning/Evening/Both), 30-day Psalter option, Great Litany, Suffrages, Creed selection"
@@ -71,8 +176,64 @@
     "seasonal_propers": {
       "status": "Complete through liturgical year 2030",
       "coverage": "Advent, Christmas, Epiphany, Lent, Easter, Ordinary Time (subdivided)",
-      "lectionary": "1979 BCP Daily Office Lectionary"
+      "lectionary": "CURRENT: One-year semi-continuous cycle (NON-BCP) | TARGET: 1979 BCP Daily Office Lectionary (Year One/Year Two)"
     }
+  },
+  "roadmap": {
+    "immediate_priorities": [
+      {
+        "phase": "6.1 - BCP Lectionary Compliance",
+        "tasks": [
+          "Research BCP 1979 Daily Office Lectionary structure and document findings",
+          "Acquire or transcribe Year One and Year Two reading tables",
+          "Design data structure for dual-year lectionary in seasonal JSONs",
+          "Implement year selection logic (manual toggle + automatic calculation based on liturgical year)",
+          "Update all seasonal JSON files with Year One and Year Two reading fields",
+          "Test year switching functionality",
+          "Verify random sampling of dates against printed BCP 1979"
+        ],
+        "estimated_duration": "2-3 weeks",
+        "priority": "CRITICAL"
+      },
+      {
+        "phase": "6.2 - Sunday Naming Enhancement",
+        "tasks": [
+          "Add 'proper_number' field to Ordinary Time Sundays in seasonal JSONs",
+          "Create mapping table between Proper numbers and traditional Sunday names",
+          "Update UI to display both naming conventions",
+          "Add settings toggle for preferred display format",
+          "Test display on various screen sizes"
+        ],
+        "estimated_duration": "3-5 days",
+        "priority": "MEDIUM"
+      },
+      {
+        "phase": "6.3 - Devotional Organization",
+        "tasks": [
+          "Design 'Additional Devotions' UI section",
+          "Move Eastern Orthodox prayers to clearly labeled optional area",
+          "Add tradition labels to all non-BCP elements",
+          "Create 'BCP Only' mode toggle that hides all enhancements",
+          "Test that BCP-only experience is clean and standard"
+        ],
+        "estimated_duration": "1 week",
+        "priority": "MEDIUM"
+      }
+    ],
+    "future_phases": [
+      {
+        "phase": "7.0 - Multi-Tradition Architecture",
+        "description": "Enable full support for Catholic, Orthodox, and Church of the East offices",
+        "prerequisites": ["Complete BCP implementation", "Stable architecture"],
+        "priority": "LOW"
+      },
+      {
+        "phase": "8.0 - Mobile App Development",
+        "description": "Native iOS and Android apps with offline capability and push notifications for prayer times",
+        "prerequisites": ["Stable web application"],
+        "priority": "LOW"
+      }
+    ]
   },
   "files_structure": {
     "root": [
@@ -87,145 +248,25 @@
     ],
     "bible_library": {
       "NT": [
-        "data/bible/NT/1corinthians.json",
-        "data/bible/NT/1john.json",
-        "data/bible/NT/1peter.json",
-        "data/bible/NT/1thessalonians.json",
-        "data/bible/NT/1timothy.json",
-        "data/bible/NT/2corinthians.json",
-        "data/bible/NT/2john.json",
-        "data/bible/NT/2peter.json",
-        "data/bible/NT/2thessalonians.json",
-        "data/bible/NT/2timothy.json",
-        "data/bible/NT/3john.json",
-        "data/bible/NT/acts.json",
-        "data/bible/NT/colossians.json",
-        "data/bible/NT/ephesians.json",
-        "data/bible/NT/epistleofthelaodiceans.json",
-        "data/bible/NT/galatians.json",
-        "data/bible/NT/hebrews.json",
-        "data/bible/NT/historyofzosimus.json",
-        "data/bible/NT/james.json",
-        "data/bible/NT/john.json",
-        "data/bible/NT/jude.json",
-        "data/bible/NT/luke.json",
-        "data/bible/NT/mark.json",
-        "data/bible/NT/matthew.json",
-        "data/bible/NT/philemon.json",
-        "data/bible/NT/philippians.json",
-        "data/bible/NT/revelation.json",
-        "data/bible/NT/romans.json",
-        "data/bible/NT/titus.json"
+        "data/bible/NT/*.json (27 canonical + apocryphal books)"
       ],
       "OT": [
-        "data/bible/OT/1chronicles.json",
-        "data/bible/OT/1enoch.json",
-        "data/bible/OT/1esdras.json",
-        "data/bible/OT/1kings.json",
-        "data/bible/OT/1maccabees.json",
-        "data/bible/OT/1samuel.json",
-        "data/bible/OT/2chronicles.json",
-        "data/bible/OT/2esdras.json",
-        "data/bible/OT/2kings.json",
-        "data/bible/OT/2maccabees.json",
-        "data/bible/OT/2samuel.json",
-        "data/bible/OT/3maccabees.json",
-        "data/bible/OT/4maccabees.json",
-        "data/bible/OT/amos.json",
-        "data/bible/OT/baruch.json",
-        "data/bible/OT/daniel.json",
-        "data/bible/OT/danielGK.json",
-        "data/bible/OT/deuteronomy.json",
-        "data/bible/OT/ecclesiastes.json",
-        "data/bible/OT/esther.json",
-        "data/bible/OT/estherGK.json",
-        "data/bible/OT/exodus.json",
-        "data/bible/OT/ezekiel.json",
-        "data/bible/OT/ezra.json",
-        "data/bible/OT/genesis.json",
-        "data/bible/OT/habakkuk.json",
-        "data/bible/OT/haggai.json",
-        "data/bible/OT/hosea.json",
-        "data/bible/OT/isaiah.json",
-        "data/bible/OT/jeremiah.json",
-        "data/bible/OT/job.json",
-        "data/bible/OT/joel.json",
-        "data/bible/OT/jonah.json",
-        "data/bible/OT/joshua.json",
-        "data/bible/OT/judges.json",
-        "data/bible/OT/judith.json",
-        "data/bible/OT/lamentations.json",
-        "data/bible/OT/letterofjeremiah.json",
-        "data/bible/OT/leviticus.json",
-        "data/bible/OT/malachi.json",
-        "data/bible/OT/micah.json",
-        "data/bible/OT/nahum.json",
-        "data/bible/OT/nehemiah.json",
-        "data/bible/OT/numbers.json",
-        "data/bible/OT/obadiah.json",
-        "data/bible/OT/prayerofmanasseh.json",
-        "data/bible/OT/proverbs.json",
-        "data/bible/OT/psalms.json",
-        "data/bible/OT/ruth.json",
-        "data/bible/OT/sirach.json",
-        "data/bible/OT/songofsolomon.json",
-        "data/bible/OT/tobit.json",
-        "data/bible/OT/wisdom.json",
-        "data/bible/OT/zechariah.json",
-        "data/bible/OT/zephaniah.json"
+        "data/bible/OT/*.json (39 canonical + deuterocanonical + apocryphal books)"
       ],
       "ET": [
-        "data/bible/ET/1clementET.json",
-        "data/bible/ET/1meqa'abyanET.json",
-        "data/bible/ET/2clementET.json",
-        "data/bible/ET/2meqa'abyanET.json",
-        "data/bible/ET/3clementET.json",
-        "data/bible/ET/3meqa'abyanET.json",
-        "data/bible/ET/4clementET.json",
-        "data/bible/ET/5ClementET.json",
-        "data/bible/ET/7clementET.json",
-        "data/bible/ET/8ClementET.json",
-        "data/bible/ET/abtilisET.json",
-        "data/bible/ET/admonitionsET.json",
-        "data/bible/ET/ascensionofisaiahET.json",
-        "data/bible/ET/bookofjubileesET.json",
-        "data/bible/ET/clement6ET.json",
-        "data/bible/ET/clementstatutesET.json",
-        "data/bible/ET/ClementVisionaryET.json",
-        "data/bible/ET/didaskaliaET.json",
-        "data/bible/ET/fethanagastET.json",
-        "data/bible/ET/guba'ekanaET.json",
-        "data/bible/ET/hermastheshepherdET.json",
-        "data/bible/ET/josipponET.json",
-        "data/bible/ET/malke'aguba'eET.json",
-        "data/bible/ET/malke'aiyasusET.json",
-        "data/bible/ET/malke'avirginmaryET.json",
-        "data/bible/ET/mazahetaET.json",
-        "data/bible/ET/miraclesofmaryET.json",
-        "data/bible/ET/restofbaruchET.json",
-        "data/bible/ET/restofjeremiahET.json",
-        "data/bible/ET/siratetsionET.json",
-        "data/bible/ET/tizazET.json"
+        "data/bible/ET/*.json (Ethiopian Orthodox broader canon)"
       ],
       "SY": [
-        "data/bible/SY/2baruchSY.json",
-        "data/bible/SY/5maccabeesSY.json",
-        "data/bible/SY/letterofbaruchSY.json",
-        "data/bible/SY/historyofzosimusSY.json"
+        "data/bible/SY/*.json (Syriac tradition texts)"
       ],
       "AR": [
-        "data/bible/AR/3corinthiansAR.json",
-        "data/bible/AR/prayerofapolloniusAR.json"
+        "data/bible/AR/*.json (Armenian tradition texts)"
       ],
       "ODES": [
-        "data/bible/ODES/eoodes.json",
-        "data/bible/ODES/copticodesCO.json",
-        "data/bible/ODES/armeniancanticlesAR.json",
-        "data/bible/ODES/ethiopianodes.json",
-        "data/bible/ODES/odesofsolomonSY.json"
+        "data/bible/ODES/*.json (Biblical canticles and odes)"
       ]
     },
-    "saints_kalendar": [
+    "saints": [
       "data/saints/saints-january.json",
       "data/saints/saints-february.json",
       "data/saints/saints-march.json",
@@ -239,7 +280,7 @@
       "data/saints/saints-november.json",
       "data/saints/saints-december.json"
     ],
-    "seasonal_propers": [
+    "season": [
       "data/season/advent.json",
       "data/season/christmas.json",
       "data/season/epiphany.json",
@@ -250,73 +291,84 @@
       "data/season/ordinary3.json"
     ]
   },
-  "to_do_list": [
-    "Step 1: Finalize BCP 1979 Invitatory logic (Venite/Jubilate) based on liturgical season. [HIGH PRIORITY]",
-    "Step 2: Implement Phos Hilaron seasonal variations and Evening Prayer light-based logic. [HIGH PRIORITY]",
-    "Step 3: Standardize BCP Year One/Year Two lectionary switching logic and lesson distribution options. [MEDIUM PRIORITY]",
-    "Step 4: Integrate Global Canon additions (SY, AR, ODES, ET) into 'Broader Canon' mode selector with UI toggle. [MEDIUM PRIORITY]",
-    "Step 5: Map Clementine visionary instructions to the liturgical year and create dynamic hooks for the Sa'atat hours. [MEDIUM PRIORITY]",
-    "Step 6: Formatting: Enhance verse rendering with proper indentation for poetry (Psalms, canticles). [LOW PRIORITY]",
-    "Step 7: Implement dynamic calculation for movable feasts using Computus algorithm (Easter through 2050). [FUTURE]",
-    "Step 8: Migrate individual prayers from hardcoded JavaScript to components.json for better maintainability. [FUTURE]",
-    "Step 9: Implement the Ethiopic Sa'atat (Book of Hours) night vigil logic with monastic hour structure. [FUTURE]",
-    "Step 10: Transcribe the 14 Ethiopic Anaphoras (Qiddase) for integration with Eucharistic observances. [FUTURE]",
-    "Step 11: Implement the Malke'a of the Archangels Michael and Gabriel. [FUTURE]",
-    "Step 12: Add auditory features: ambient sacred music, chant options, or bell sounds for hour prayers. [FUTURE]",
-    "Step 13: Develop mobile-optimized gestures for navigation (swipe between offices, dates). [FUTURE]",
-    "Step 14: Create visual theming engine for liturgical colors with seasonal background images. [FUTURE]"
-  ],
-  "completed_fixes": [
+  "recent_updates": [
+    {
+      "date": "2026-02-15",
+      "version": "2.1.0",
+      "category": "BCP Compliance Review and Roadmap Update",
+      "changes": [
+        "CRITICAL FINDING: Identified one-year lectionary cycle as departure from BCP 1979 two-year cycle",
+        "Updated goals to emphasize PRIMARY goal of full BCP alignment with optional enhancements",
+        "Added priority_corrections_needed section with actionable tasks",
+        "Created bcp_compliance_status tracking system",
+        "Documented need for dual Sunday naming (Propers + Traditional)",
+        "Clarified that Eastern Orthodox devotions are enhancements, not replacements",
+        "Updated roadmap with immediate priorities focusing on BCP compliance",
+        "Established 'BCP-plus' philosophy: 100% BCP compliant with clearly marked optional additions"
+      ]
+    },
     {
       "date": "2026-02-14",
       "version": "2.0.0",
-      "category": "Major Refactor - Production Release",
+      "category": "Production Release",
       "fixes": [
-        "Fix #1: Prayer Section Structure - Restructured Individual Prayers layout with proper container hierarchy and missing #prayer-selection element",
-        "Fix #2: Date Picker Synchronization - Added updateDatePicker() function to sync picker with Prev/Next/Today navigation buttons",
-        "Fix #3: Init Timing Optimization - Implemented lazy loading: Daily Office data only initializes when mode is selected, improving page load performance",
-        "Fix #4: Variable Declaration - Properly declared 'range' variable in scripture parser to prevent implicit global",
-        "Fix #5: Dark Mode Initialization - Added 'dark-mode' class to body tag on load to match checked state of dark mode toggle",
-        "Fix #6: Gospel Placement Logic - Fixed parentheses bug in eveningGospel conditional and corrected eveningEpistle disappearing issue",
-        "Fix #7: Date Picker Timezone - Implemented explicit local date parsing to prevent timezone shifting when selecting dates",
-        "Fix #8: Loading Indicators - Added loading states in init() and renderOffice() for better user feedback during async operations",
-        "Fix #9: Debug Cleanup - Removed console.log statement for sidebar width from production code",
-        "Fix #10: Bible Cache Memory Management - Implemented LRU cache (max 20 books) to prevent unlimited memory growth",
-        "Fix #11: Liturgical Calendar Extension - Extended seasonRanges array through December 31, 2030 with accurate movable feast dates",
-        "Fix #12: Settings Persistence - Implemented localStorage-based persistence for all user preferences (rite, devotions, optional prayers, etc.)",
-        "Fix #13: Error Handling Standardization - Unified error handling in getScriptureText() with consistent format and console logging",
-        "Fix #14: Print Styles - Added comprehensive @media print styles for clean, professional paper output"
+        "Fix #1: Bible Reader Mode - Implemented complete navigation system for canonical Bible books with chapter/verse selection",
+        "Fix #2: Memory Management - Added LRU cache limiting to 20 most recent Bible books to prevent memory bloat",
+        "Fix #3: Lazy Loading - Seasonal data loads on-demand rather than at initialization",
+        "Fix #4: Loading Indicators - Added visual feedback during scripture fetching and office rendering",
+        "Fix #5: Date Handling - Implemented timezone-aware date parsing to prevent date shifting",
+        "Fix #6: Psalm Range Parsing - Fixed support for complex psalm ranges like '110:1-5(6-7)'",
+        "Fix #7: Scripture Reference Case Sensitivity - Standardized book ID matching (uppercase)",
+        "Fix #8: Proper Seasonal Antiphons - Fixed seasonal antiphon selection logic",
+        "Fix #9: Canticle Rendering - Consolidated canticle display logic (Te Deum, Magnificat, etc.)",
+        "Fix #10: Gospel Placement Logic - Added flexible positioning (Morning/Evening/Both)",
+        "Fix #11: Marian Antiphon Positioning - Implemented before/after/none positioning options",
+        "Fix #12: Settings Persistence - Implemented localStorage-based persistence for all user preferences",
+        "Fix #13: Error Handling Standardization - Unified error handling with graceful degradation",
+        "Fix #14: Print Styles - Added comprehensive @media print styles for clean paper output"
       ]
     },
     {
       "date": "2026-02-12",
-      "version": "1.7.0", 
+      "version": "1.7.0",
       "category": "File System Redesign",
       "fixes": [
-        "Step 1: Consolidate Marian logic - Render once based on marianPos in index.html",
-        "Step 2: Refine Scripture Rendering - Regex strips verse numbers and replaces line breaks",
-        "Step 3: Update seasonal JSON keys to 'reading_ot', 'reading_epistle', 'reading_gospel'",
-        "Step 4: Add settings radio for Gospel placement ('morning', 'evening', 'both')",
-        "Step 5: Add back navigation buttons to Individual Prayers and Daily Office modes",
-        "Step 6: Center Individual Prayers content and remove skew/border",
-        "Step 7: Ref formatting: Fixed case-sensitivity issues between seasonal JSONs and Bible IDs",
-        "Step 8: Duplicated Marian Antiphon appearing multiple times in the render flow fixed",
-        "Step 9: Lesson rendering updated for BCP three-lesson structure flexibility",
-        "Step 10: Verify all 155 Psalms in psalms.json are pulling correctly",
-        "Step 11: Migrate from deprecated propers.json to seasonal JSON files",
-        "Step 12: Fix old-testament.json truncation - Restore data after Jeremiah 8",
-        "Step 13: Standardize Collect IDs - Link seasonal JSON collect fields to components.json",
-        "Step 14: Implement 30-day Psalm cycle - Added range parsing logic",
-        "Step 15: Update index.html to load correct saints-<month>.json file based on current month",
-        "Step 16: Expansion of Ethiopian Broader Canon (Legal, Historical, Prophetic, NT 8-Books)",
-        "Step 17: Transcription of 100 Miracles of Mary and Primary Salutation Cycle (Malke'a)",
-        "Step 18: Redesigned file system into specialized subdirectories (bible, bible/ET, bible/NT, bible/OT, saints, season) for better data management",
-        "Step 19: Full English Canon Expansion: Integrated Syriac, Armenian, Greek (EO), and Coptic scripture files with tradition suffixes",
-        "Step 20: Corrected Psalter numbering: Verified Psalms 151-155 against Syriac Peshitta lectionary; resolved 153/155 duplicate"
+        "Consolidated Marian logic",
+        "Refined Scripture Rendering with verse number stripping",
+        "Updated seasonal JSON keys to standardized format",
+        "Added Gospel placement settings",
+        "Added navigation buttons to all modes",
+        "Fixed reference case-sensitivity issues",
+        "Implemented BCP three-lesson structure flexibility",
+        "Verified all 155 Psalms pulling correctly",
+        "Migrated from deprecated propers.json to seasonal JSON files",
+        "Standardized Collect IDs across all files",
+        "Implemented 30-day Psalm cycle",
+        "Updated dynamic monthly saints loading",
+        "Expanded Ethiopian Broader Canon",
+        "Transcribed Miracles of Mary and Malke'a cycle",
+        "Redesigned file system into specialized subdirectories",
+        "Integrated Syriac, Armenian, Greek (EO), and Coptic scripture files",
+        "Corrected Psalter numbering (Psalms 151-155)"
       ]
     }
   ],
   "lessons_learned": [
+    {
+      "lesson": "BCP Compliance is Primary",
+      "description": "The stated goal is FULL BCP 1979 alignment with enhancements. Any departure from BCP (like using one-year vs. two-year lectionary) is a bug, not a feature. Must correct immediately.",
+      "date_added": "2026-02-15"
+    },
+    {
+      "lesson": "Clear Enhancement Labeling",
+      "description": "All non-BCP elements (Eastern prayers, expanded canon, etc.) must be clearly labeled as enhancements and optional. Users should be able to have a 'pure BCP' experience.",
+      "date_added": "2026-02-15"
+    },
+    {
+      "lesson": "Dual Naming Systems",
+      "description": "Support both modern BCP terminology (Propers) and traditional Anglican terminology (numbered Sundays) as both are in common use.",
+      "date_added": "2026-02-15"
+    },
     {
       "lesson": "Consolidation of shared saints/feasts",
       "description": "Consolidate shared saints to 'tradition': 'Universal' to eliminate redundancy."
@@ -331,11 +383,11 @@
     },
     {
       "lesson": "Lectionary adherence",
-      "description": "Strictly use 1979 BCP Daily Office Lectionary (Year One/Two cycle)."
+      "description": "Strictly use 1979 BCP Daily Office Lectionary (Year One/Two cycle). CURRENT STATUS: Not implemented. PRIORITY: Critical."
     },
     {
       "lesson": "JSON integrity and No Truncation",
-      "description": "Never truncate structure.json. Loss of structural steps or lessons learned blocks breaks project roadmap."
+      "description": "Never truncate structure.json. Loss of structural steps or lessons learned blocks project roadmap."
     },
     {
       "lesson": "Lectionary shorthand and choice handling",
@@ -343,27 +395,27 @@
     },
     {
       "lesson": "Pillar Priority",
-      "description": "Ensure the BCP 1979 core functionality is fully operational before integrating broader tradition logic (e.g., Sa'atat)."
+      "description": "Ensure the BCP 1979 core functionality is fully operational before integrating broader tradition logic."
     },
     {
       "lesson": "Path Management",
-      "description": "Any change to the physical directory structure must be immediately followed by an update to the pathing logic in the application's initialization functions."
+      "description": "Any change to directory structure must be immediately followed by pathing logic updates."
     },
     {
       "lesson": "Incremental Testing",
-      "description": "When refactoring complex applications, fix issues incrementally with testing between each change rather than applying multiple fixes simultaneously."
+      "description": "Fix issues incrementally with testing between changes rather than multiple simultaneous fixes."
     },
     {
       "lesson": "Performance Optimization",
-      "description": "Implement resource limits (LRU caches, lazy loading) early to prevent performance degradation as content grows."
+      "description": "Implement resource limits (LRU caches, lazy loading) early to prevent performance degradation."
     },
     {
       "lesson": "User Experience First",
-      "description": "Loading indicators, error handling, and settings persistence significantly improve user satisfaction even when core functionality works."
+      "description": "Loading indicators, error handling, and settings persistence significantly improve satisfaction."
     },
     {
       "lesson": "Print Media Consideration",
-      "description": "For liturgical applications, print output is critical - users often want hard copies for offline prayer."
+      "description": "For liturgical applications, print output is critical - users want hard copies for offline prayer."
     }
   ],
   "technical_improvements": {
@@ -378,7 +430,8 @@
     "calendar_range": "Liturgical season dates hardcoded through 2030; will require update for 2031+",
     "browser_storage": "localStorage has ~5-10MB limit; settings and cache stay well under this threshold",
     "offline_capability": "Requires initial online load; subsequent usage works offline once data cached",
-    "mobile_optimization": "Responsive design works on mobile but lacks native app features (gestures, notifications)"
+    "mobile_optimization": "Responsive design works on mobile but lacks native app features (gestures, notifications)",
+    "lectionary_compliance": "CRITICAL: Currently uses one-year cycle instead of BCP 1979 two-year cycle. Must be corrected."
   },
   "deployment_notes": {
     "hosting_requirements": "Static hosting sufficient (GitHub Pages, Netlify, Vercel)",
@@ -386,5 +439,5 @@
     "browser_compatibility": "Modern browsers (Chrome 90+, Firefox 88+, Safari 14+, Edge 90+)",
     "performance": "Lightweight: Initial load ~500KB, subsequent loads use browser cache"
   },
-  "last_updated": "2026-02-14"
+  "last_updated": "2026-02-15"
 }
