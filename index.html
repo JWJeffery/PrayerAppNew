@@ -41,13 +41,13 @@
         --sidebar-bg-bottom: #030208;
         --sidebar-label: #a89878;
     }
-    body.light-mode {
+   body.light-mode {
         /* Manuscript mode — warm parchment */
-        --bg-color: #1a1520;
-        --text-color: #1c110a;
-        --container-bg: #e8d9b0;
-        --parchment: #e8d9b0;
-        --ink: #1c110a;
+        --bg-color: #3d2b1a;
+        --text-color: #2a1f14;
+        --container-bg: #f5eedc;
+        --parchment: #f5eedc;
+        --ink: #2a1f14;
         --rubric: #8b1a10;
         --accent: #8b1a10;
         --gold: #a0722a;
@@ -55,7 +55,7 @@
         --sidebar-bg-bottom: #110d05;
         --sidebar-text: #d4c9a8;
         --sidebar-label: #b8956a;
-        --main-bg: radial-gradient(ellipse at 50% 40%, #2a1f0e 0%, #1a1008 50%, #0e0805 100%);
+        --main-bg: radial-gradient(ellipse at 50% 30%, #5c3d20 0%, #3d2b1a 45%, #1e1208 100%);
     }
     body.dark-mode {
         /* Vespers/Gothic dark mode */
@@ -75,6 +75,7 @@
     }
     body {
         font-family: 'IM Fell English', Georgia, serif;
+        font-size: 22px;
         background-color: var(--bg-color);
         color: var(--text-color);
         margin: 0;
@@ -146,6 +147,15 @@
         box-shadow: 0 0 12px rgba(201, 168, 76, 0.2);
         color: #e8d090;
     }
+    body.light-mode .mode-btn {
+        background: rgba(30, 18, 8, 0.85);
+        color: var(--gold);
+        border-color: var(--gold);
+    }
+    body.light-mode .mode-btn:hover {
+        background: rgba(30, 18, 8, 1);
+        box-shadow: 0 0 12px rgba(160, 114, 42, 0.4);
+    }
     #daily-office-section { display: none; position: absolute; top: 0; left: 0; width: 100%; height: 100vh; flex-direction: row; }
     #individual-prayers-section {
     position: fixed;
@@ -162,7 +172,9 @@
     display: none;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
+    padding: 40px 20px 60px 20px;
+    box-sizing: border-box;
     z-index: 200;
 }
     #settings-panel.sidebar-hidden {
@@ -232,20 +244,20 @@
         text-transform: uppercase;
         letter-spacing: 2px;
         font-family: 'Cinzel', serif;
-        font-size: 0.85em;
+        font-size: 0.95em;
     }
     .setting-group label {
         display: block;
         margin-bottom: 10px;
         cursor: pointer;
-        font-size: 1.05em;
+        font-size: 1.1em;
         font-family: 'IM Fell English', serif;
         color: var(--sidebar-label, #b8af98);
     }
     .nested-group {
         margin-left: 12px;
         margin-top: 8px;
-        font-size: 0.97em;
+        font-size: 1em;
     }
     #main-content {
         margin-left: 300px;
@@ -348,7 +360,7 @@
     }
 
     h1 { font-family: 'Cinzel', serif; font-size: 2.4em; letter-spacing: 0.06em; margin-bottom: 0.5em; color: var(--gold); }
-    h2 { font-family: 'Cinzel', serif; font-size: 1.9em; color: var(--gold); border-bottom: 1px solid rgba(139,90,30,0.5); padding-bottom: 12px; margin-top: 0; letter-spacing: 0.04em; text-shadow: 0 1px 8px rgba(0,0,0,0.3); }
+    h2 { font-family: 'Cinzel', serif; font-size: 2.1em; color: var(--gold); border-bottom: 1px solid rgba(139,90,30,0.5); padding-bottom: 12px; margin-top: 0; letter-spacing: 0.04em; text-shadow: 0 1px 8px rgba(0,0,0,0.3); }
     .liturgical-title {
         color: var(--gold);
         font-family: 'Cinzel', serif;
@@ -365,7 +377,7 @@
         font-family: 'Cinzel', serif;
         font-variant: small-caps;
         font-weight: 600;
-        font-size: 1.35em;
+        font-size: 1.65em;
         letter-spacing: 0.06em;
         display: block;
         margin-top: 40px;
@@ -385,7 +397,7 @@
     }
     .component-text {
         font-family: 'IM Fell English', Georgia, serif;
-        font-size: 1.35em;
+        font-size: 1em;
         line-height: 1.95;
         margin-bottom: 30px;
         display: block;
@@ -407,7 +419,7 @@
     }
     .reading-text {
         font-family: 'IM Fell English', Georgia, serif;
-        font-size: 1.35em;
+        font-size: 1em;
         line-height: 1.95;
         margin-bottom: 30px;
         display: block;
@@ -425,7 +437,7 @@
     }
     .psalm-stanza {
         font-family: 'IM Fell English', Georgia, serif;
-        font-size: 1.35em;
+        font-size: 1em;
         line-height: 1.95;
         margin-bottom: 0.5em;
         display: block;
@@ -442,7 +454,7 @@
         margin-bottom: 30px;
         display: block;
     }
-    .psalm-verse { display: block; margin-bottom: 10px; font-size: 1.35em; line-height: 1.9; }
+    .psalm-verse { display: block; margin-bottom: 10px; font-size: 1em; line-height: 1.9; }
     .verse-num { font-size: 0.65em; color: var(--gold); vertical-align: super; margin-right: 8px; opacity: 0.8; }
     .saint-section { margin-top: 60px; border-top: none; padding-top: 0; }
     .saint-section-divider {
@@ -587,6 +599,16 @@
         font-weight: normal;
         font-family: 'IM Fell English', serif;
     }
+    #individual-prayers-section .office-container {
+        margin-bottom: 80px;
+    }
+    #individual-prayers-section .back-btn-wrapper {
+        position: sticky;
+        bottom: 0;
+        padding: 16px 0 8px 0;
+        text-align: center;
+        width: 100%;
+    }
     @media (max-width: 600px) {
     .prayer-select-wrapper { width: 96vw; }
     .prayer-select-trigger { font-size: 1.2em; padding: 16px 44px 16px 16px; }
@@ -709,6 +731,43 @@
         background: white !important;
     }
 }
+ /* ── Info tooltip system ── */
+    .info-btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 18px;
+        height: 18px;
+        border-radius: 50%;
+        background: rgba(201,168,76,0.2);
+        border: 1px solid rgba(201,168,76,0.5);
+        color: var(--gold);
+        font-family: Georgia, serif;
+        font-size: 11px;
+        font-style: italic;
+        font-weight: bold;
+        cursor: help;
+        margin-left: 6px;
+        vertical-align: middle;
+        flex-shrink: 0;
+        line-height: 1;
+    }
+    #uo-tooltip {
+        position: fixed;
+        background: #1a1208;
+        color: #e8d9b0;
+        border: 1px solid rgba(201,168,76,0.5);
+        border-radius: 4px;
+        padding: 14px 18px;
+        font-family: 'IM Fell English', Georgia, serif;
+        font-size: 17px;
+        line-height: 1.6;
+        width: 280px;
+        box-shadow: 4px 4px 20px rgba(0,0,0,0.7);
+        pointer-events: none;
+        z-index: 9999;
+        display: none;
+    }
  </style>
 </head>
 <body id="app-body" class="dark-mode">
@@ -757,24 +816,24 @@
          <div class="setting-group">
              <strong>Liturgical Settings:</strong>
              <div class="nested-group">
-                 <strong style="color:#aaa; font-size:0.8em;">Language &amp; Rite</strong>
+                 <strong style="color:#aaa; font-size:1em;">Language &amp; Rite</strong>
                  <label><input type="radio" name="rite" value="rite1" onchange="renderOffice(); saveSettings()"> Rite I (Traditional)</label>
                  <label><input type="radio" name="rite" value="rite2" onchange="renderOffice(); saveSettings()" checked> Rite II (Contemporary)</label>
              </div>
              <div class="nested-group" style="margin-top:8px;">
-                 <strong style="color:#aaa; font-size:0.8em;">Officiant</strong>
+                 <strong style="color:#aaa; font-size:1em;">Officiant</strong>
                  <label><input type="radio" name="minister" value="priest" onchange="renderOffice(); saveSettings()"> Priest</label>
                  <label><input type="radio" name="minister" value="lay" onchange="renderOffice(); saveSettings()" checked> Layperson</label>
              </div>
              <div class="nested-group" style="margin-top:8px;">
-                 <strong style="color:#aaa; font-size:0.8em;">Creed</strong>
+                 <strong style="color:#aaa; font-size:1em;">Creed</strong>
                  <select id="creed-type" onchange="renderOffice(); saveSettings()" style="margin-top:4px; width:100%; padding:4px; background:#333; color:white; border:1px solid #555; border-radius:4px;">
                      <option value="bcp-creed-apostles">Apostles' Creed</option>
                      <option value="bcp-creed-nicene">Nicene Creed</option>
                  </select>
              </div>
              <div class="nested-group" style="margin-top:8px;">
-                 <strong style="color:#aaa; font-size:0.8em;">Lectionary</strong>
+                 <strong style="color:#aaa; font-size:1em;">Lectionary</strong>
                  <label style="margin-top:4px;"><input type="radio" name="gospel-placement" value="morning" onchange="renderOffice(); saveSettings()"> Gospel in Morning</label>
                  <label><input type="radio" name="gospel-placement" value="evening" onchange="renderOffice(); saveSettings()" checked> Gospel in Evening</label>
                  <label><input type="radio" name="gospel-placement" value="both" onchange="renderOffice(); saveSettings()"> Gospel in Both</label>
@@ -783,21 +842,21 @@
          </div>
          <div class="setting-group" id="ecumenical-devotions-section">
              <strong>Opening Devotions:</strong>
-             <p style="font-size:0.75em; color:#888; margin:4px 0 8px 0; line-height:1.4;">Rendered before the office begins. Hidden in BCP Only Mode.</p>
+             <span class="info-btn" data-tip="These devotions render before the office begins. They are hidden when BCP Only Mode is active.">i</span>
              <div class="nested-group">
-                 <strong style="color:#aaa; font-size:0.8em;">Coptic Orthodox</strong>
+                 <strong style="color:#aaa; font-size:1em;">Coptic Orthodox</strong>
                  <label><input type="checkbox" id="toggle-agpeya-opening" onchange="renderOffice(); saveSettings()"> Agpeya Opening</label>
              </div>
              <div class="nested-group" style="margin-top:8px;">
-                 <strong style="color:#aaa; font-size:0.8em;">Church of the East</strong>
-                 <label><input type="checkbox" id="toggle-east-syriac-hours" onchange="renderOffice(); saveSettings()"> Prayer of the Hours <span style="color:#888; font-size:0.82em;">(Hudra)</span></label>
+                 <strong style="color:#aaa; font-size:1em;">Church of the East</strong>
+                 <label><input type="checkbox" id="toggle-east-syriac-hours" onchange="renderOffice(); saveSettings()"> Prayer of the Hours <span class="info-btn" data-tip="The Hudra is the Church of the East's canonical prayer book, equivalent to the Divine Office.">i</span></label>
              </div>
              <div class="nested-group" style="margin-top:8px;">
-                 <strong style="color:#aaa; font-size:0.8em;">Marian Element</strong>
+                 <strong style="color:#aaa; font-size:1em;">Marian Element</strong>
                  <label style="margin-top:4px; font-size:0.85em; color:#aaa;">Element:</label>
                  <label><input type="radio" name="marian-element" value="none" onchange="renderOffice(); saveSettings()" checked> None</label>
                  <label><input type="radio" name="marian-element" value="antiphon" onchange="renderOffice(); saveSettings()"> BCP Seasonal Antiphon</label>
-                 <label><input type="radio" name="marian-element" value="theotokion" onchange="renderOffice(); saveSettings()"> Theotokion <span style="color:#888; font-size:0.85em;">(Coptic)</span></label>
+                 <label><input type="radio" name="marian-element" value="theotokion" onchange="renderOffice(); saveSettings()"> Theotokion <span class="info-btn" data-tip="Coptic hymn honouring Mary as Theotokos (God-bearer). Sung at the close of the canonical hours.">i</span></label>
                  <label><input type="radio" name="marian-element" value="both" onchange="renderOffice(); saveSettings()"> Both</label>
                  <label style="margin-top:6px; font-size:0.85em; color:#aaa;">Position:</label>
                  <label><input type="radio" name="marian-antiphon-pos" value="before" onchange="renderOffice(); saveSettings()" checked> Before office</label>
@@ -806,17 +865,17 @@
          </div>
          <div class="setting-group" id="during-office-section">
              <strong>During the Office:</strong>
-             <p style="font-size:0.75em; color:#888; margin:4px 0 8px 0; line-height:1.4;">Elements inserted at their liturgical position. Hidden in BCP Only Mode.</p>
-             <label><input type="checkbox" id="toggle-gloria-patri" onchange="renderOffice(); saveSettings()" checked> Gloria Patri <span style="color:#888; font-size:0.82em;">(after Psalm)</span></label>
-             <label style="margin-top:4px;"><input type="checkbox" id="toggle-angelus" onchange="renderOffice(); saveSettings()"> Angelus <span style="color:#888; font-size:0.82em;">(Catholic, before Invitatory)</span></label>
-             <label><input type="checkbox" id="toggle-trisagion" onchange="renderOffice(); saveSettings()"> Trisagion <span style="color:#888; font-size:0.82em;">(Byzantine, after Absolution)</span></label>
-             <label><input type="checkbox" id="toggle-prayer-before-reading" onchange="renderOffice(); saveSettings()"> Prayer Before Reading <span style="color:#888; font-size:0.82em;">(Orthodox, before OT Lesson)</span></label>
+             <span class="info-btn" data-tip="These elements are inserted at their proper liturgical position within the office. Hidden when BCP Only Mode is active.">i</span>
+             <label><input type="checkbox" id="toggle-gloria-patri" onchange="renderOffice(); saveSettings()" checked> Gloria Patri <span class="info-btn" data-tip="The Lesser Doxology sung after each Psalm: 'Glory to the Father, and to the Son, and to the Holy Spirit...'">i</span></label>
+             <label style="margin-top:4px;"><input type="checkbox" id="toggle-angelus" onchange="renderOffice(); saveSettings()"> Angelus <span class="info-btn" data-tip="Roman Catholic devotion recalling the Incarnation, traditionally prayed at morning, noon, and evening. Placed before the Invitatory.">i</span></label>
+             <label><input type="checkbox" id="toggle-trisagion" onchange="renderOffice(); saveSettings()"> Trisagion <span class="info-btn" data-tip="'Holy God, Holy Mighty, Holy Immortal, have mercy on us.' Ancient Byzantine prayer placed after the Absolution.">i</span></label>
+             <label><input type="checkbox" id="toggle-prayer-before-reading" onchange="renderOffice(); saveSettings()"> Prayer Before Reading <span class="info-btn" data-tip="Orthodox prayer asking illumination before the Old Testament lesson is read.">i</span></label>
          </div>
          <div class="setting-group" id="closing-devotions-section">
              <strong>After the Office:</strong>
-             <p style="font-size:0.75em; color:#888; margin:4px 0 8px 0; line-height:1.4;">Elements at the close. Hidden in BCP Only Mode.</p>
-             <label><input type="checkbox" id="toggle-examen" onchange="renderOffice(); saveSettings()"> The Examen <span style="color:#888; font-size:0.82em;">(Ignatian, Compline only)</span></label>
-             <label><input type="checkbox" id="toggle-kyrie-pantocrator" onchange="renderOffice(); saveSettings()"> Kyrie Pantocrator <span style="color:#888; font-size:0.82em;">(Byzantine, after Collect)</span></label>
+             <span class="info-btn" data-tip="These devotions are appended after the office concludes. Hidden when BCP Only Mode is active.">i</span>
+             <label><input type="checkbox" id="toggle-examen" onchange="renderOffice(); saveSettings()"> The Examen <span class="info-btn" data-tip="The Ignatian Examination of Conscience — a prayerful review of the day. Appears only in Compline.">i</span></label>
+             <label><input type="checkbox" id="toggle-kyrie-pantocrator" onchange="renderOffice(); saveSettings()"> Kyrie Pantocrator <span class="info-btn" data-tip="'Lord Almighty' — a Byzantine litany of supplication placed after the Collect.">i</span></label>
              <label style="margin-top:6px;"><input type="checkbox" id="toggle-suffrages" onchange="renderOffice(); saveSettings()" checked> Suffrages</label>
              <label><input type="checkbox" id="toggle-litany" onchange="renderOffice(); saveSettings()"> The Great Litany</label>
              <label><input type="checkbox" id="toggle-general-thanksgiving" onchange="renderOffice(); saveSettings()"> General Thanksgiving</label>
@@ -924,7 +983,7 @@
     <div id="prayer-display" style="display:none; margin-top:40px; background:transparent; width:100%; max-width:800px; padding-bottom:100px; box-sizing:border-box;">
         <div id="single-prayer-content"></div>
     </div>
-    <div id="prayer-back-bar" style="display:none; position:fixed; bottom:0; left:0; right:0; text-align:center; padding:16px 0 20px; background:linear-gradient(transparent, rgba(6,4,16,0.95) 40%); z-index:300;">
+    <div id="prayer-back-bar" style="display:none; position:fixed; bottom:0; left:0; right:0; text-align:center; padding:16px 0 20px; background:linear-gradient(transparent, var(--bg-color) 40%); z-index:300;">
         <button class="mode-btn" onclick="backToPrayerDropdown()">Back to Selection</button>
     </div>
 </div>
@@ -1907,6 +1966,33 @@ function backToSplash() {
   selectedMode = null;
 }
 // init() is now called only when Daily Office mode is selected
+</script>
+<div id="uo-tooltip"></div>
+<script>
+(function() {
+    const tooltip = document.getElementById('uo-tooltip');
+    document.addEventListener('mouseover', function(e) {
+        const btn = e.target.closest('.info-btn');
+        if (btn && btn.dataset.tip) {
+            tooltip.textContent = btn.dataset.tip;
+            tooltip.style.display = 'block';
+        }
+    });
+    document.addEventListener('mouseout', function(e) {
+        if (e.target.closest('.info-btn')) {
+            tooltip.style.display = 'none';
+        }
+    });
+    document.addEventListener('mousemove', function(e) {
+        if (tooltip.style.display === 'block') {
+            const x = e.clientX + 16;
+            const y = e.clientY - 10;
+            const overflowRight = x + 296 > window.innerWidth;
+            tooltip.style.left = (overflowRight ? e.clientX - 296 : x) + 'px';
+            tooltip.style.top = Math.max(8, y) + 'px';
+        }
+    });
+})();
 </script>
 </body>
 </html>
