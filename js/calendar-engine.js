@@ -17,7 +17,40 @@ class CalendarEngine {
         { start: new Date("2026/05/24"), end: new Date("2026/07/31"), season: "ordinary", file: "ordinary1.json" },
         { start: new Date("2026/08/01"), end: new Date("2026/09/30"), season: "ordinary", file: "ordinary2.json" },
         { start: new Date("2026/10/01"), end: new Date("2026/11/28"), season: "ordinary", file: "ordinary3.json" },
-        { start: new Date("2026/11/29"), end: new Date("2026/12/24"), season: "advent", file: "advent.json" }
+        { start: new Date("2026/11/29"), end: new Date("2026/12/24"), season: "advent", file: "advent.json" },
+        { start: new Date("2026/11/29"), end: new Date("2026/12/24"), season: "advent", file: "advent.json" },
+        { start: new Date("2026/12/25"), end: new Date("2027/01/05"), season: "christmas", file: "christmas.json" },
+        { start: new Date("2027/01/06"), end: new Date("2027/02/09"), season: "epiphany", file: "epiphany.json" },
+        { start: new Date("2027/02/10"), end: new Date("2027/03/27"), season: "lent", file: "lent.json" },
+        { start: new Date("2027/03/28"), end: new Date("2027/05/15"), season: "easter", file: "easter.json" },
+        { start: new Date("2027/05/16"), end: new Date("2027/07/31"), season: "ordinary", file: "ordinary1.json" },
+        { start: new Date("2027/08/01"), end: new Date("2027/09/30"), season: "ordinary", file: "ordinary2.json" },
+        { start: new Date("2027/10/01"), end: new Date("2027/11/27"), season: "ordinary", file: "ordinary3.json" },
+        { start: new Date("2027/11/28"), end: new Date("2027/12/24"), season: "advent", file: "advent.json" },
+        { start: new Date("2027/12/25"), end: new Date("2028/01/05"), season: "christmas", file: "christmas.json" },
+        { start: new Date("2028/01/06"), end: new Date("2028/02/28"), season: "epiphany", file: "epiphany.json" },
+        { start: new Date("2028/02/29"), end: new Date("2028/04/15"), season: "lent", file: "lent.json" },
+        { start: new Date("2028/04/16"), end: new Date("2028/06/03"), season: "easter", file: "easter.json" },
+        { start: new Date("2028/06/04"), end: new Date("2028/07/31"), season: "ordinary", file: "ordinary1.json" },
+        { start: new Date("2028/08/01"), end: new Date("2028/09/30"), season: "ordinary", file: "ordinary2.json" },
+        { start: new Date("2028/10/01"), end: new Date("2028/12/02"), season: "ordinary", file: "ordinary3.json" },
+        { start: new Date("2028/12/03"), end: new Date("2028/12/24"), season: "advent", file: "advent.json" },
+        { start: new Date("2028/12/25"), end: new Date("2029/01/05"), season: "christmas", file: "christmas.json" },
+        { start: new Date("2029/01/06"), end: new Date("2029/02/13"), season: "epiphany", file: "epiphany.json" },
+        { start: new Date("2029/02/14"), end: new Date("2029/03/31"), season: "lent", file: "lent.json" },
+        { start: new Date("2029/04/01"), end: new Date("2029/05/19"), season: "easter", file: "easter.json" },
+        { start: new Date("2029/05/20"), end: new Date("2029/07/31"), season: "ordinary", file: "ordinary1.json" },
+        { start: new Date("2029/08/01"), end: new Date("2029/09/30"), season: "ordinary", file: "ordinary2.json" },
+        { start: new Date("2029/10/01"), end: new Date("2029/12/01"), season: "ordinary", file: "ordinary3.json" },
+        { start: new Date("2029/12/02"), end: new Date("2029/12/24"), season: "advent", file: "advent.json" },
+        { start: new Date("2029/12/25"), end: new Date("2030/01/05"), season: "christmas", file: "christmas.json" },
+        { start: new Date("2030/01/06"), end: new Date("2030/03/05"), season: "epiphany", file: "epiphany.json" },
+        { start: new Date("2030/03/06"), end: new Date("2030/04/20"), season: "lent", file: "lent.json" },
+        { start: new Date("2030/04/21"), end: new Date("2030/06/08"), season: "easter", file: "easter.json" },
+        { start: new Date("2030/06/09"), end: new Date("2030/07/31"), season: "ordinary", file: "ordinary1.json" },
+        { start: new Date("2030/08/01"), end: new Date("2030/09/30"), season: "ordinary", file: "ordinary2.json" },
+        { start: new Date("2030/10/01"), end: new Date("2030/11/30"), season: "ordinary", file: "ordinary3.json" },
+        { start: new Date("2030/12/01"), end: new Date("2030/12/24"), season: "advent", file: "advent.json" }
     ];
 
     static async init() {
@@ -47,7 +80,7 @@ class CalendarEngine {
 
     static getLiturgicalYear(date) {
         const advent2026 = new Date("2026/11/29");
-        return (date >= advent2026) ? 1 : 2;
+        return (date >= advent2026) ? "year1" : "year2";
     }
 
     /**
@@ -89,9 +122,23 @@ class CalendarEngine {
     static findEntry(data, date, fileName) {
         const iso = this.formatDateISO(date);
         const long = this.formatDateForLookup(date);
-        
-        const entry = data.find(d => d.date === iso || d.date === long);
-        
+
+        // First try exact match (ISO or long format)
+        let entry = data.find(d => d.date === iso || d.date === long);
+
+        // If no exact match, try month-day only (perpetual calendar fallback)
+        // This allows christmas.json, advent.json etc. to serve any year
+        if (!entry) {
+            const mmdd = iso.slice(5); // "MM-DD"
+            const longNoYear = long.replace(/,\s*\d{4}$/, '').trim(); // "December 25"
+            entry = data.find(d => {
+                if (!d.date) return false;
+                const dIso = d.date.length === 10 ? d.date.slice(5) : null;
+                const dLong = d.date.replace(/,\s*\d{4}$/, '').trim();
+                return dIso === mmdd || dLong === longNoYear;
+            });
+        }
+
         if (entry) {
             console.log(`[Calendar Engine] Found match for ${iso} in ${fileName}`);
             return entry;

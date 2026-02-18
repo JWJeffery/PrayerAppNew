@@ -1666,5 +1666,230 @@
       "rite2": "Almighty God, whose blessed apostles Peter and Paul glorified you by their martyrdom: Grant that your Church, instructed by their teaching and example, and knit together in unity by your Spirit, may ever stand firm upon the one foundation, which is Jesus Christ our Lord; who lives and reigns with you, in the unity of the Holy Spirit, one God, now and for ever. Amen."
     },
     "type": "Collect"
+  },
+  {
+    "id": "collect-last-epiphany",
+    "title": "Collect for the Last Week after the Epiphany",
+    "text": {
+      "rite1": "O God, who before the passion of thine only-begotten Son didst reveal his glory upon the holy mount: Grant unto us that we, beholding by faith the light of his countenance, may be strengthened to bear our cross, and be changed into his likeness from glory to glory; through the same Jesus Christ our Lord. Amen.",
+      "rite2": "O God, who before the passion of your only-begotten Son revealed his glory upon the holy mountain: Grant to us that we, beholding by faith the light of his countenance, may be strengthened to bear our cross, and be changed into his likeness from glory to glory; through Jesus Christ our Lord, who lives and reigns with you and the Holy Spirit, one God, for ever and ever. Amen."
+    },
+    "type": "Collect"
+  },
+  {
+    "id": "collect-st-mark",
+    "title": "Collect for Saint Mark the Evangelist (April 25)",
+    "text": {
+      "rite1": "Almighty God, who by the hand of Mark the evangelist hast given to thy Church the Gospel of Jesus Christ the Son of God: We thank thee for this witness, and pray that we may be firmly grounded in its truth; through Jesus Christ our Lord, who liveth and reigneth with thee and the Holy Spirit, one God, for ever and ever. Amen.",
+      "rite2": "Almighty God, who by the hand of Mark the evangelist have given to your Church the Gospel of Jesus Christ the Son of God: We thank you for this witness, and pray that we may be firmly grounded in its truth; through Jesus Christ our Lord, who lives and reigns with you and the Holy Spirit, one God, for ever and ever. Amen."
+    },
+    "type": "Collect"
+  },
+  {
+    "id": "collect-st-andrew",
+    "title": "Collect for Saint Andrew the Apostle (November 30)",
+    "text": {
+      "rite1": "Almighty God, who didst give such grace to thine apostle Andrew that he readily obeyed the call of thy Son Jesus Christ, and brought his brother with him: Give us, who are called by thy holy Word, grace to follow him without delay, and to bring those near to us into his gracious presence; who liveth and reigneth with thee and the Holy Spirit, one God, now and for ever. Amen.",
+      "rite2": "Almighty God, who gave such grace to your apostle Andrew that he readily obeyed the call of your Son Jesus Christ, and brought his brother with him: Give us, who are called by your holy Word, grace to follow him without delay, and to bring those near to us into his gracious presence; who lives and reigns with you and the Holy Spirit, one God, now and for ever. Amen."
+    },
+    "type": "Collect"
+  },
+  {
+    "id": "collect-st-thomas",
+    "title": "Collect for Saint Thomas the Apostle (December 21)",
+    "text": {
+      "rite1": "Everliving God, who didst strengthen thine apostle Thomas with firm and certain faith in thy Son's resurrection: Grant us so perfectly and without doubt to believe in Jesus Christ, our Lord and our God, that our faith may never be found wanting in thy sight; through him who liveth and reigneth with thee and the Holy Spirit, one God, now and for ever. Amen.",
+      "rite2": "Everliving God, who strengthened your apostle Thomas with firm and certain faith in your Son's resurrection: Grant us so perfectly and without doubt to believe in Jesus Christ, our Lord and our God, that our faith may never be found wanting in your sight; through him who lives and reigns with you and the Holy Spirit, one God, now and for ever. Amen."
+    },
+    "type": "Collect"
+  },
+  {
+    "id": "collect-all-saints",
+    "title": "Collect for All Saints' Day (November 1)",
+    "text": {
+      "rite1": "Almighty God, who hast knit together thine elect in one communion and fellowship in the mystical body of thy Son Christ our Lord: Grant us grace so to follow thy blessed saints in all virtuous and godly living, that we may come to those ineffable joys which thou hast prepared for those who unfeignedly love thee; through Jesus Christ our Lord, who with thee and the Holy Spirit liveth and reigneth, one God, in glory everlasting. Amen.",
+      "rite2": "Almighty God, you have knit together your elect in one communion and fellowship in the mystical body of your Son Christ our Lord: Give us grace so to follow your blessed saints in all virtuous and godly living, that we may come to those ineffable joys that you have prepared for those who truly love you; through Jesus Christ our Lord, who with you and the Holy Spirit lives and reigns, one God, in glory everlasting. Amen."
+    },
+    "type": "Collect"
+  },
+  {
+    "id": "collect-baptism-of-our-lord",
+    "title": "Collect for the Baptism of Our Lord",
+    "text": {
+      "rite1": "Father in heaven, who at the baptism of Jesus in the River Jordan didst proclaim him thy beloved Son and anoint him with the Holy Spirit: Grant that all who are baptized into his Name may keep the covenant they have made, and boldly confess him as Lord and Savior; who with thee and the Holy Ghost liveth and reigneth, one God, in glory everlasting. Amen.",
+      "rite2": "Father in heaven, who at the baptism of Jesus in the River Jordan proclaimed him your beloved Son and anointed him with the Holy Spirit: Grant that all who are baptized into his Name may keep the covenant they have made, and boldly confess him as Lord and Savior; who with you and the Holy Spirit lives and reigns, one God, in glory everlasting. Amen."
+    },
+    "type": "Collect"
+  },
+  {
+    "id": "collect-bartholomew",
+    "title": "Collect for Saint Bartholomew the Apostle (August 24)",
+    "text": {
+      "rite1": "Almighty and everlasting God, who didst give to thine apostle Bartholomew grace truly to believe and to preach thy Word: Grant, we beseech thee, unto thy Church to love what he believed and to preach what he taught; through Jesus Christ our Lord, who liveth and reigneth with thee and the Holy Spirit, one God, for ever and ever. Amen.",
+      "rite2": "Almighty and everlasting God, who gave to your apostle Bartholomew grace truly to believe and to preach your Word: Grant, we pray, to your Church to love what he believed and to preach what he taught; through Jesus Christ our Lord, who lives and reigns with you and the Holy Spirit, one God, for ever and ever. Amen."
+    },
+    "type": "Collect"
+  },
+  {
+    "id": "collect-christmas",
+    "title": "Collect for Christmas Day",
+    "text": {
+      "rite1": "O God, who makest us glad with the yearly remembrance of the birth of thy only Son Jesus Christ: Grant that as we joyfully receive him for our Redeemer, so we may with sure confidence behold him when he shall come to be our Judge; who liveth and reigneth with thee and the Holy Spirit, one God, world without end. Amen.",
+      "rite2": "O God, you make us glad by the yearly festival of the birth of your only Son Jesus Christ: Grant that we, who joyfully receive him as our Redeemer, may with sure confidence behold him when he comes to be our Judge; who lives and reigns with you and the Holy Spirit, one God, now and for ever. Amen."
+    },
+    "type": "Collect"
+  },
+  {
+    "id": "collect-christmas-2",
+    "title": "Collect for the Second Sunday after Christmas",
+    "text": {
+      "rite1": "O God, who didst wonderfully create, and yet more wonderfully restore, the dignity of human nature: Grant that we may share the divine life of him who humbled himself to share our humanity, thy Son Jesus Christ our Lord; who liveth and reigneth with thee, in the unity of the Holy Spirit, one God, for ever and ever. Amen.",
+      "rite2": "O God, who wonderfully created, and yet more wonderfully restored, the dignity of human nature: Grant that we may share the divine life of him who humbled himself to share our humanity, your Son Jesus Christ our Lord; who lives and reigns with you, in the unity of the Holy Spirit, one God, for ever and ever. Amen."
+    },
+    "type": "Collect"
+  },
+  {
+    "id": "collect-epiphany-1",
+    "title": "Collect for the First Week after the Epiphany",
+    "text": {
+      "rite1": "O God, by the leading of a star thou didst manifest thy only Son to the peoples of the earth: Lead us, who know thee now by faith, to thy presence, where we may see thy glory face to face; through Jesus Christ our Lord, who liveth and reigneth with thee and the Holy Spirit, one God, now and for ever. Amen.",
+      "rite2": "O God, by the leading of a star you manifested your only Son to the peoples of the earth: Lead us, who know you now by faith, to your presence, where we may see your glory face to face; through Jesus Christ our Lord, who lives and reigns with you and the Holy Spirit, one God, now and for ever. Amen."
+    },
+    "type": "Collect"
+  },
+  {
+    "id": "collect-holy-cross",
+    "title": "Collect for Holy Cross Day (September 14)",
+    "text": {
+      "rite1": "Almighty God, whose Son our Savior Jesus Christ was lifted high upon the cross that he might draw the whole world to himself: Mercifully grant that we, who glory in the mystery of our redemption, may have grace to take up our cross and follow him; who liveth and reigneth with thee and the Holy Spirit, one God, in glory everlasting. Amen.",
+      "rite2": "Almighty God, whose Son our Savior Jesus Christ was lifted high upon the cross that he might draw the whole world to himself: Mercifully grant that we, who glory in the mystery of our redemption, may have grace to take up our cross and follow him; who lives and reigns with you and the Holy Spirit, one God, in glory everlasting. Amen."
+    },
+    "type": "Collect"
+  },
+  {
+    "id": "collect-holy-innocents",
+    "title": "Collect for the Holy Innocents (December 28)",
+    "text": {
+      "rite1": "We remember today, O God, the slaughter of the holy innocents of Bethlehem by the order of King Herod. Receive, we pray, into the arms of thy mercy all innocent victims; and by thy great might frustrate the designs of evil tyrants and establish thy rule of justice, love, and peace; through Jesus Christ our Lord, who liveth and reigneth with thee, in the unity of the Holy Spirit, one God, for ever and ever. Amen.",
+      "rite2": "We remember today, O God, the slaughter of the holy innocents of Bethlehem by King Herod. Receive, we pray, into the arms of your mercy all innocent victims; and by your great might frustrate the designs of evil tyrants and establish your rule of justice, love, and peace; through Jesus Christ our Lord, who lives and reigns with you, in the unity of the Holy Spirit, one God, for ever and ever. Amen."
+    },
+    "type": "Collect"
+  },
+  {
+    "id": "collect-holy-name",
+    "title": "Collect for the Holy Name of Our Lord Jesus Christ (January 1)",
+    "text": {
+      "rite1": "Eternal Father, who didst give to thine incarnate Son the holy name of Jesus to be the sign of our salvation: Plant in every heart, we pray thee, the love of him who is the Savior of the world, our Lord Jesus Christ; who liveth and reigneth with thee and the Holy Spirit, one God, in glory everlasting. Amen.",
+      "rite2": "Eternal Father, you gave to your incarnate Son the holy name of Jesus to be the sign of our salvation: Plant in every heart, we pray, the love of him who is the Savior of the world, our Lord Jesus Christ; who lives and reigns with you and the Holy Spirit, one God, in glory everlasting. Amen."
+    },
+    "type": "Collect"
+  },
+  {
+    "id": "collect-james-apostle",
+    "title": "Collect for Saint James the Apostle (July 25)",
+    "text": {
+      "rite1": "O gracious God, we remember before thee today thy servant and apostle James, first among the Twelve to suffer martyrdom for the Name of Jesus Christ; and we pray that thou wilt pour out upon the leaders of thy Church that spirit of self-denying service by which alone they may have true authority among thy people; through the same Jesus Christ our Lord, who liveth and reigneth with thee and the Holy Spirit, one God, now and for ever. Amen.",
+      "rite2": "O gracious God, we remember before you today your servant and apostle James, first among the Twelve to suffer martyrdom for the Name of Jesus Christ; and we pray that you will pour out upon the leaders of your Church that spirit of self-denying service by which alone they may have true authority among your people; through Jesus Christ our Lord, who lives and reigns with you and the Holy Spirit, one God, now and for ever. Amen."
+    },
+    "type": "Collect"
+  },
+  {
+    "id": "collect-james-jerusalem",
+    "title": "Collect for Saint James of Jerusalem (October 23)",
+    "text": {
+      "rite1": "Grant, O God, that following the example of thy servant James the Just, brother of our Lord, thy Church may give itself continually to prayer and to the reconciliation of all who are at variance and enmity; through Jesus Christ our Lord, who liveth and reigneth with thee and the Holy Spirit, one God, now and for ever. Amen.",
+      "rite2": "Grant, O God, that following the example of your servant James the Just, brother of our Lord, your Church may give itself continually to prayer and to the reconciliation of all who are at variance and enmity; through Jesus Christ our Lord, who lives and reigns with you and the Holy Spirit, one God, now and for ever. Amen."
+    },
+    "type": "Collect"
+  },
+  {
+    "id": "collect-luke",
+    "title": "Collect for Saint Luke the Evangelist (October 18)",
+    "text": {
+      "rite1": "Almighty God, who didst inspire thy servant Luke the physician to set forth in the Gospel the love and healing power of thy Son: Graciously continue in thy Church this love and power to heal, to the praise and glory of thy Name; through thy Son Jesus Christ our Lord, who liveth and reigneth with thee, in the unity of the Holy Spirit, one God, now and for ever. Amen.",
+      "rite2": "Almighty God, you inspired your servant Luke the physician to set forth in the Gospel the love and healing power of your Son: Graciously continue in your Church this love and power to heal, to the praise and glory of your Name; through your Son Jesus Christ our Lord, who lives and reigns with you, in the unity of the Holy Spirit, one God, now and for ever. Amen."
+    },
+    "type": "Collect"
+  },
+  {
+    "id": "collect-mary-magdalene",
+    "title": "Collect for Saint Mary Magdalene (July 22)",
+    "text": {
+      "rite1": "Almighty God, whose blessed Son restored Mary Magdalene to health of body and of mind, and called her to be a witness of his resurrection: Mercifully grant that by thy grace we may be healed from all our infirmities and know thee in the power of his unending life; who with thee and the Holy Spirit liveth and reigneth, one God, now and for ever. Amen.",
+      "rite2": "Almighty God, whose blessed Son restored Mary Magdalene to health of body and of mind, and called her to be a witness of his resurrection: Mercifully grant that by your grace we may be healed from all our infirmities and know you in the power of his unending life; who with you and the Holy Spirit lives and reigns, one God, now and for ever. Amen."
+    },
+    "type": "Collect"
+  },
+  {
+    "id": "collect-mary-virgin",
+    "title": "Collect for Saint Mary the Virgin (August 15)",
+    "text": {
+      "rite1": "O God, who hast taken to thyself the blessed Virgin Mary, mother of thy incarnate Son: Grant that we, who have been redeemed by his blood, may share with her the glory of thine eternal kingdom; through thy Son Jesus Christ our Lord, who liveth and reigneth with thee, in the unity of the Holy Spirit, one God, now and for ever. Amen.",
+      "rite2": "O God, you have taken to yourself the blessed Virgin Mary, mother of your incarnate Son: Grant that we, who have been redeemed by his blood, may share with her the glory of your eternal kingdom; through your Son Jesus Christ our Lord, who lives and reigns with you, in the unity of the Holy Spirit, one God, now and for ever. Amen."
+    },
+    "type": "Collect"
+  },
+  {
+    "id": "collect-matthew",
+    "title": "Collect for Saint Matthew, Apostle and Evangelist (September 21)",
+    "text": {
+      "rite1": "We thank thee, heavenly Father, for the witness of thine apostle and evangelist Matthew to the Gospel of thy Son our Savior; and we pray that, after his example, we may with ready wills and hearts obey the calling of our Lord to follow him; through Jesus Christ our Lord, who liveth and reigneth with thee and the Holy Spirit, one God, now and for ever. Amen.",
+      "rite2": "We thank you, heavenly Father, for the witness of your apostle and evangelist Matthew to the Gospel of your Son our Savior; and we pray that, after his example, we may with ready wills and hearts obey the calling of our Lord to follow him; through Jesus Christ our Lord, who lives and reigns with you and the Holy Spirit, one God, now and for ever. Amen."
+    },
+    "type": "Collect"
+  },
+  {
+    "id": "collect-michael-all-angels",
+    "title": "Collect for Saint Michael and All Angels (September 29)",
+    "text": {
+      "rite1": "Everlasting God, who hast ordained and constituted in a wonderful order the ministries of angels and mortals: Mercifully grant that, as thy holy angels always serve and worship thee in heaven, so by thy appointment they may help and defend us here on earth; through Jesus Christ our Lord, who with thee and the Holy Spirit liveth and reigneth, one God, for ever and ever. Amen.",
+      "rite2": "Everlasting God, you have ordained and constituted in a wonderful order the ministries of angels and mortals: Mercifully grant that, as your holy angels always serve and worship you in heaven, so by your appointment they may help and defend us here on earth; through Jesus Christ our Lord, who with you and the Holy Spirit lives and reigns, one God, for ever and ever. Amen."
+    },
+    "type": "Collect"
+  },
+  {
+    "id": "collect-simon-jude",
+    "title": "Collect for Saints Simon and Jude, Apostles (October 28)",
+    "text": {
+      "rite1": "O God, we thank thee for the glorious company of the apostles, and especially on this day for Simon and Jude; and we pray that, as they were faithful and zealous in their mission, so we may with ardent devotion make known the love and mercy of our Lord and Savior Jesus Christ; who liveth and reigneth with thee and the Holy Spirit, one God, for ever and ever. Amen.",
+      "rite2": "O God, we thank you for the glorious company of the apostles, and especially on this day for Simon and Jude; and we pray that, as they were faithful and zealous in their mission, so we may with ardent devotion make known the love and mercy of our Lord and Savior Jesus Christ; who lives and reigns with you and the Holy Spirit, one God, for ever and ever. Amen."
+    },
+    "type": "Collect"
+  },
+  {
+    "id": "collect-st-john",
+    "title": "Collect for Saint John, Apostle and Evangelist (December 27)",
+    "text": {
+      "rite1": "Shed upon thy Church, O Lord, the brightness of thy light, that we, being illumined by the teaching of thine apostle and evangelist John, may so walk in the light of thy truth, that at length we may attain to the fullness of eternal life; through Jesus Christ our Lord, who with thee and the Holy Spirit liveth and reigneth, one God, for ever and ever. Amen.",
+      "rite2": "Shed upon your Church, O Lord, the brightness of your light, that we, being illumined by the teaching of your apostle and evangelist John, may so walk in the light of your truth, that at length we may attain to the fullness of eternal life; through Jesus Christ our Lord, who with you and the Holy Spirit lives and reigns, one God, for ever and ever. Amen."
+    },
+    "type": "Collect"
+  },
+  {
+    "id": "collect-st-paul-conversion",
+    "title": "Collect for the Conversion of Saint Paul the Apostle (January 25)",
+    "text": {
+      "rite1": "O God, who by the preaching of thine apostle Paul hast caused the light of the Gospel to shine throughout the world: Grant, we beseech thee, that we, having his wonderful conversion in remembrance, may show forth our thankfulness unto thee for the same by following the holy doctrine which he taught; through Jesus Christ our Lord, who liveth and reigneth with thee, in the unity of the Holy Spirit, one God, now and for ever. Amen.",
+      "rite2": "O God, by the preaching of your apostle Paul you have caused the light of the Gospel to shine throughout the world: Grant, we pray, that we, having his wonderful conversion in remembrance, may show forth our thankfulness to you for the same by following the holy doctrine which he taught; through Jesus Christ our Lord, who lives and reigns with you, in the unity of the Holy Spirit, one God, now and for ever. Amen."
+    },
+    "type": "Collect"
+  },
+  {
+    "id": "collect-st-peter-confession",
+    "title": "Collect for the Confession of Saint Peter the Apostle (January 18)",
+    "text": {
+      "rite1": "Almighty Father, who didst inspire Simon Peter, first among the apostles, to confess Jesus as Messiah and Son of the living God: Keep thy Church steadfast upon the rock of this faith, so that in unity and peace we may proclaim the one truth and follow the one Lord, our Savior Jesus Christ; who liveth and reigneth with thee and the Holy Spirit, one God, now and for ever. Amen.",
+      "rite2": "Almighty Father, who inspired Simon Peter, first among the apostles, to confess Jesus as Messiah and Son of the living God: Keep your Church steadfast upon the rock of this faith, so that in unity and peace we may proclaim the one truth and follow the one Lord, our Savior Jesus Christ; who lives and reigns with you and the Holy Spirit, one God, now and for ever. Amen."
+    },
+    "type": "Collect"
+  },
+  {
+    "id": "collect-st-stephen",
+    "title": "Collect for Saint Stephen, Deacon and Martyr (December 26)",
+    "text": {
+      "rite1": "We give thee thanks, O Lord of glory, for the example of the first martyr Stephen, who looked up to heaven and prayed for his persecutors to thy Son Jesus Christ, who standeth at thy right hand; where he liveth and reigneth with thee and the Holy Spirit, one God, in glory everlasting. Amen.",
+      "rite2": "We give you thanks, O Lord of glory, for the example of the first martyr Stephen, who looked up to heaven and prayed for his persecutors to your Son Jesus Christ, who stands at your right hand; where he lives and reigns with you and the Holy Spirit, one God, in glory everlasting. Amen."
+    },
+    "type": "Collect"
   }
 ]

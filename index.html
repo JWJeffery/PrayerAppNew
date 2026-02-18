@@ -417,46 +417,7 @@
 let appData = null;
 let currentDate = new Date();
 let selectedMode = null;
-let seasonalCache = {};
 const monthNames = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
-const seasonRanges = [
- // 2025-2026 Liturgical Year
- { start: new Date("2025-11-30"), end: new Date("2025-12-24"), season: "advent", file: "advent.json" },
- { start: new Date("2025-12-25"), end: new Date("2026-01-05"), season: "christmas", file: "christmas.json" },
- { start: new Date("2026-01-06"), end: new Date("2026-02-16"), season: "epiphany", file: "epiphany.json" },
- { start: new Date("2026-02-17"), end: new Date("2026-02-17 23:59:59"), season: "ordinary", file: "ordinary1.json" },
- { start: new Date("2026-02-18"), end: new Date("2026-04-04 23:59:59"), season: "lent", file: "lent.json" },
- { start: new Date("2026-04-05"), end: new Date("2026-05-23 23:59:59"), season: "easter", file: "easter.json" },
- { start: new Date("2026-05-24"), end: new Date("2026-11-28"), season: "ordinary", file: "ordinary1.json" },
- // 2026-2027 Liturgical Year
- { start: new Date("2026-11-29"), end: new Date("2026-12-24"), season: "advent", file: "advent.json" },
- { start: new Date("2026-12-25"), end: new Date("2027-01-05"), season: "christmas", file: "christmas.json" },
- { start: new Date("2027-01-06"), end: new Date("2027-02-09"), season: "epiphany", file: "epiphany.json" },
- { start: new Date("2027-02-10"), end: new Date("2027-03-27"), season: "lent", file: "lent.json" },
- { start: new Date("2027-03-28"), end: new Date("2027-05-15"), season: "easter", file: "easter.json" },
- { start: new Date("2027-05-16"), end: new Date("2027-11-27"), season: "ordinary", file: "ordinary1.json" },
- // 2027-2028 Liturgical Year
- { start: new Date("2027-11-28"), end: new Date("2027-12-24"), season: "advent", file: "advent.json" },
- { start: new Date("2027-12-25"), end: new Date("2028-01-05"), season: "christmas", file: "christmas.json" },
- { start: new Date("2028-01-06"), end: new Date("2028-02-28"), season: "epiphany", file: "epiphany.json" },
- { start: new Date("2028-02-29"), end: new Date("2028-04-15"), season: "lent", file: "lent.json" },
- { start: new Date("2028-04-16"), end: new Date("2028-06-03"), season: "easter", file: "easter.json" },
- { start: new Date("2028-06-04"), end: new Date("2028-12-02"), season: "ordinary", file: "ordinary1.json" },
- // 2028-2029 Liturgical Year
- { start: new Date("2028-12-03"), end: new Date("2028-12-24"), season: "advent", file: "advent.json" },
- { start: new Date("2028-12-25"), end: new Date("2029-01-05"), season: "christmas", file: "christmas.json" },
- { start: new Date("2029-01-06"), end: new Date("2029-02-13"), season: "epiphany", file: "epiphany.json" },
- { start: new Date("2029-02-14"), end: new Date("2029-03-31"), season: "lent", file: "lent.json" },
- { start: new Date("2029-04-01"), end: new Date("2029-05-19"), season: "easter", file: "easter.json" },
- { start: new Date("2029-05-20"), end: new Date("2029-12-01"), season: "ordinary", file: "ordinary1.json" },
- // 2029-2030 Liturgical Year
- { start: new Date("2029-12-02"), end: new Date("2029-12-24"), season: "advent", file: "advent.json" },
- { start: new Date("2029-12-25"), end: new Date("2030-01-05"), season: "christmas", file: "christmas.json" },
- { start: new Date("2030-01-06"), end: new Date("2030-03-05"), season: "epiphany", file: "epiphany.json" },
- { start: new Date("2030-03-06"), end: new Date("2030-04-20"), season: "lent", file: "lent.json" },
- { start: new Date("2030-04-21"), end: new Date("2030-06-08"), season: "easter", file: "easter.json" },
- { start: new Date("2030-06-09"), end: new Date("2030-12-31"), season: "ordinary", file: "ordinary1.json" }
-];
 const psalterCycle = [
 {day: 1, morning: '1,2,3,4,5', evening: '6,7,8'},
 {day: 2, morning: '9,10,11', evening: '12,13,14'},
@@ -490,62 +451,6 @@ const psalterCycle = [
 {day: 30, morning: '132,133,134,135', evening: '136,137,138'},
 {day: 31, morning: '139,140', evening: '141,142,143'}
 ];
-function getLiturgicalYear(date) {
-    // BCP 1979: Advent 1 2025 (Year Two) through Eve of Advent 2026
-    const advent2025 = new Date("2025-11-30");
-    const advent2026 = new Date("2026-11-29");
-    if (date >= advent2025 && date < advent2026) return "year2";
-    return "year1";
-}
-function formatDateForLookup(date) {
-const options = { month: 'long', day: 'numeric', year: 'numeric' };
-return date.toLocaleDateString('en-US', options);
-}
-function getSeasonAndFile(targetDate) {
-  // Normalize to just date (no time) for comparison
-  const date = new Date(targetDate.getFullYear(), targetDate.getMonth(), targetDate.getDate(), 0, 0, 0);
-  for (const range of seasonRanges) {
-    const start = new Date(range.start.getFullYear(), range.start.getMonth(), range.start.getDate());
-    const end = new Date(range.end.getFullYear(), range.end.getMonth(), range.end.getDate());
-    if (date >= start && date <= end) {
-      return { season: range.season, file: range.file };
-    }
-  }
-  console.warn(`No season match for ${date.toDateString()} – fallback to ordinary`);
-  return { season: "ordinary", file: "ordinary1.json" };
-}
-async function loadSeasonalData(seasonFile) {
-if (seasonalCache[seasonFile]) return seasonalCache[seasonFile];
-try {
-  const response = await fetch(`data/season/${seasonFile}`);
-  if (!response.ok) throw new Error(`HTTP ${response.status} for ${seasonFile}`);
-  const data = await response.json();
-  seasonalCache[seasonFile] = data;
-  console.log(`Loaded & cached ${seasonFile} (${data.length} days)`);
-  return data;
-} catch (err) {
-  console.error(`Load failed for ${seasonFile}:`, err);
-  return [];
-}
-}
-async function getDailyData(targetDate = currentDate) {
-const { file } = getSeasonAndFile(targetDate);
-const data = await loadSeasonalData(file);
-if (!data.length) return { title: "No data available", liturgicalColor: "green", antiphon: "", psalms_morning: "", reading_ot_morning: "", reading_epistle_morning: "", reading_gospel_morning: "", psalms_evening: "", reading_ot_evening: "", reading_epistle_evening: "", reading_gospel_evening: "", collect: "collect-default-ferial" };
-const lookupLong = formatDateForLookup(targetDate);
-const lookupISO = targetDate.toISOString().split('T')[0];
-const entry = data.find(d => 
-    d.date === lookupLong || 
-    d.date === lookupISO || 
-    new Date(d.date).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' }) === lookupLong
-);
-if (entry) {
-  console.log(`Found match for ${lookupLong} in ${file}`);
-  return entry;
-}
-console.warn(`No exact match for ${lookupLong} in ${file} – using first entry`);
-return data[0];
-}
 function updateSeasonalTheme(color) {
 let hex = '#27ae60'; // Default to green for Ordinary
 if (color === 'purple') hex = '#8e44ad'; // Advent/Lent
@@ -567,7 +472,7 @@ async function init() {
            appData[file] = await res.json();
        }
        updateUI();
-       await getDailyData();
+       await CalendarEngine.fetchLectionaryData();
        renderOffice();
    } catch (err) {
        document.getElementById('office-display').innerHTML = `<div class="office-container"><h3>System Error</h3><p>${err.message}</p></div>`;
@@ -717,11 +622,11 @@ const todayKeyShort = currentDate.toLocaleDateString('en-US', { month: 'long', d
   const chrysostomChecked = document.getElementById('toggle-chrysostom')?.checked || false;
   const devotions = [];
   if (document.getElementById('toggle-angelus')?.checked) devotions.push('angelus'); if (document.getElementById('toggle-trisagion')?.checked) devotions.push('trisagion-byzantine'); if (document.getElementById('toggle-theotokion')?.checked) devotions.push('coptic-theotokion'); if (document.getElementById('toggle-jesus-prayer')?.checked) devotions.push('jesus-prayer'); if (document.getElementById('toggle-assyrian-blessing')?.checked) devotions.push('assyrian-blessing'); if (document.getElementById('toggle-agpeya-opening')?.checked) devotions.push('agpeya-opening');
-  const { season } = getSeasonAndFile(currentDate);
+  const { season } = CalendarEngine.getSeasonAndFile(currentDate);
   const marianId = `bcp-marian-antiphon-${season}`;
   const marianComp = appData.components.find(c => c.id === marianId);
   const activeRubric = appData.rubrics.find(r => r.id === officeId);
-  const dailyData = await getDailyData(currentDate);
+  const dailyData = await CalendarEngine.fetchLectionaryData(currentDate);
   document.getElementById('calendar-info').innerText = dailyData.title || "Liturgical Ordo";
   updateSeasonalTheme(dailyData.liturgicalColor || 'green');
   const isMorning = officeId === 'morning-office';
@@ -737,7 +642,7 @@ const todayKeyShort = currentDate.toLocaleDateString('en-US', { month: 'long', d
     psalms = psalterCycle[psalterDay - 1][isEvening || isCompline ? 'evening' : 'morning'];
   }
   // Lesson distribution based on placement with fallback to old keys
-   const litYear = getLiturgicalYear(currentDate);
+  const litYear = CalendarEngine.getLiturgicalYear(currentDate);
 
 // Priority 1: Year-specific keys (e.g., reading_ot_mp_year2)
 // Priority 2: Standard keys (reading_ot)
