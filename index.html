@@ -26,19 +26,52 @@
         pointer-events: none;
     }
     :root {
-        --bg-color: #f0ebe0;
-        --text-color: #2a1f14;
-        --container-bg: #faf6ee;
-        --accent: #8e44ad;
+        /* Default: Vespers/Gothic dark mode */
+        --bg-color: #0d0b14;
+        --text-color: #e8d9b0;
+        --container-bg: #1e1608;
+        --parchment: #1e1608;
+        --ink: #e8d9b0;
+        --rubric: #c0392b;
+        --accent: #c0392b;
         --gold: #c9a84c;
-        --sidebar-bg: #1a1410;
+        --sidebar-bg: #080610;
+        --sidebar-text: #c8bfa8;
+        --main-bg: radial-gradient(ellipse at 50% 40%, #1a1228 0%, #0d0b14 50%, #060410 100%);
+        --sidebar-bg-bottom: #030208;
+        --sidebar-label: #a89878;
+    }
+    body.light-mode {
+        /* Manuscript mode — warm parchment */
+        --bg-color: #1a1520;
+        --text-color: #1c110a;
+        --container-bg: #e8d9b0;
+        --parchment: #e8d9b0;
+        --ink: #1c110a;
+        --rubric: #8b1a10;
+        --accent: #8b1a10;
+        --gold: #a0722a;
+        --sidebar-bg: #1c1208;
+        --sidebar-bg-bottom: #110d05;
+        --sidebar-text: #d4c9a8;
+        --sidebar-label: #b8956a;
+        --main-bg: radial-gradient(ellipse at 50% 40%, #2a1f0e 0%, #1a1008 50%, #0e0805 100%);
     }
     body.dark-mode {
-        --bg-color: #1a1008;
-        --text-color: #f0e6cc;
-        --container-bg: #221508;
-        --accent: #e8472a;
-        --sidebar-bg: #0e0a05;
+        /* Vespers/Gothic dark mode */
+        --bg-color: #0d0b14;
+        --text-color: #e8d9b0;
+        --container-bg: #1e1608;
+        --parchment: #1e1608;
+        --ink: #e8d9b0;
+        --rubric: #c0392b;
+        --accent: #c0392b;
+        --gold: #c9a84c;
+        --sidebar-bg: #080610;
+        --sidebar-text: #c8bfa8;
+        --sidebar-bg-bottom: #030208;
+        --sidebar-label: #a89878;
+        --main-bg: radial-gradient(ellipse at 50% 40%, #1a1228 0%, #0d0b14 50%, #060410 100%);
     }
     body {
         font-family: 'IM Fell English', Georgia, serif;
@@ -73,7 +106,7 @@
     }
     #mode-selection p {
         font-family: 'Cinzel', serif;
-        font-size: 0.85em;
+        font-size: 0.92em;
         letter-spacing: 0.15em;
         text-transform: uppercase;
         color: #a89878;
@@ -119,11 +152,14 @@
     inset: 0;
     width: 100%;
     height: 100%;
-   background-image: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)), url('/images/york-lancets.png');
+    background-image:
+        radial-gradient(ellipse at 50% 0%, rgba(20,10,40,0.55) 0%, transparent 55%),
+        radial-gradient(ellipse at 50% 50%, rgba(10,8,25,0.72) 0%, rgba(10,8,25,0.72) 100%),
+        url('/images/york-lancets.png');
     background-size: cover;
     background-position: center center;
     overflow-y: auto;
-    display: flex;
+    display: none;
     flex-direction: column;
     align-items: center;
     justify-content: center;
@@ -151,7 +187,7 @@
         text-orientation: mixed;
         color: var(--gold);
         font-family: 'Cinzel', serif;
-        font-size: 0.55em;
+        font-size: 0.65em;
         letter-spacing: 3px;
         text-transform: uppercase;
         user-select: none;
@@ -170,15 +206,17 @@
     }
     #settings-panel {
         width: 300px;
-        background: linear-gradient(180deg, #110a02 0%, #0d0801 100%);
-        color: #c8bfa8;
+        background: linear-gradient(180deg, var(--sidebar-bg) 0%, var(--sidebar-bg-bottom, #050408) 100%);
+        color: var(--sidebar-text);
+        font-size: 17px;
         padding: 28px 25px;
         height: 100vh;
         position: fixed;
         left: 0;
         top: 0;
         overflow-y: auto;
-        border-right: 1px solid rgba(201, 168, 76, 0.35);
+        border-right: 1px solid rgba(201, 168, 76, 0.3);
+        color: var(--sidebar-text);
         box-shadow: inset -4px 0 18px rgba(150,80,0,0.08), 4px 0 20px rgba(0,0,0,0.5);
         transition: transform 0.3s ease;
         z-index: 100;
@@ -194,19 +232,20 @@
         text-transform: uppercase;
         letter-spacing: 2px;
         font-family: 'Cinzel', serif;
-        font-size: 0.7em;
+        font-size: 0.85em;
     }
     .setting-group label {
         display: block;
         margin-bottom: 10px;
         cursor: pointer;
-        font-size: 0.9em;
+        font-size: 1.05em;
         font-family: 'IM Fell English', serif;
-        color: #b8af98;
+        color: var(--sidebar-label, #b8af98);
     }
     .nested-group {
-        margin-left: 15px;
-        margin-top: 10px;
+        margin-left: 12px;
+        margin-top: 8px;
+        font-size: 0.97em;
     }
     #main-content {
         margin-left: 300px;
@@ -218,7 +257,7 @@
         -webkit-overflow-scrolling: touch;
         scrollbar-width: thin;
         width: calc(100% - 300px);
-        background: radial-gradient(ellipse at center, #2a1a0a 0%, #130c04 100%);
+        background: var(--main-bg);
     }
     #main-content::-webkit-scrollbar {
         width: 5px;
@@ -240,15 +279,16 @@
     .ornamental-divider .div-line-left {
         flex: 1;
         height: 1px;
-        background: linear-gradient(to right, transparent, rgba(201,168,76,0.55));
+        background: linear-gradient(to right, transparent, rgba(139,90,30,0.6));
     }
     .ornamental-divider .div-line-right {
         flex: 1;
         height: 1px;
-        background: linear-gradient(to left, transparent, rgba(201,168,76,0.55));
+        background: linear-gradient(to left, transparent, rgba(139,90,30,0.6));
     }
     .ornamental-divider-glyph {
-        color: rgba(201,168,76,0.8);
+        color: var(--gold);
+        opacity: 0.7;
         font-size: 1em;
         padding: 0 16px;
         line-height: 1;
@@ -256,44 +296,59 @@
         letter-spacing: 8px;
     }
     .office-container {
-        background: linear-gradient(160deg, rgba(45,28,10,0.45) 0%, rgba(30,18,5,0.45) 60%, rgba(42,24,8,0.45) 100%);
-        max-width: 800px;
+        background: var(--container-bg);
+        max-width: 820px;
         margin: 0 auto;
-        padding: 70px 80px;
+        padding: 72px 80px 80px;
         border-radius: 1px;
-        box-shadow: 0 0 0 1px rgba(201,168,76,0.5),
-                    0 0 0 4px rgba(139,90,30,0.25),
-                    0 0 0 5px rgba(201,168,76,0.2),
-                    0 12px 50px rgba(0,0,0,0.7),
-                    inset 0 0 80px rgba(180,100,20,0.09),
-                    inset 0 0 200px rgba(0,0,0,0.15);
-        text-align: left;
-        border-left: none;
         position: relative;
+        text-align: left;
+        color: var(--ink);
+        /* Layered shadow: outer glow, then deep drop shadow, then inner warmth */
+        box-shadow:
+            0 0 0 1px rgba(201,168,76,0.55),
+            0 0 0 5px rgba(100,60,10,0.3),
+            0 0 0 6px rgba(201,168,76,0.18),
+            0 0 0 10px rgba(0,0,0,0.25),
+            0 20px 80px rgba(0,0,0,0.8),
+            0 4px 20px rgba(0,0,0,0.5),
+            inset 0 0 60px rgba(180,120,20,0.07);
     }
+    /* Inner ruled border — double line like a Book of Hours */
     .office-container::before {
         content: '';
         position: absolute;
-        inset: 8px;
-        border: 1px solid rgba(201,168,76,0.15);
+        inset: 14px;
+        border: 1px solid rgba(139,90,30,0.4);
         pointer-events: none;
         z-index: 2;
+        box-shadow: inset 0 0 0 3px rgba(139,90,30,0.15);
     }
+    /* Corner knotwork ornaments using Unicode — no images */
     .office-container::after {
-        content: '';
+        content: '✦';
         position: absolute;
-        inset: 0;
-        border-radius: 1px;
-        background-image: url("data:image/png;base64,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");
-        background-repeat: repeat;
-        background-size: 64px 64px;
-        opacity: 0.045;
-        mix-blend-mode: overlay;
+        top: 6px;
+        left: 6px;
+        right: 6px;
+        bottom: 6px;
         pointer-events: none;
-        z-index: 1;
+        z-index: 3;
+        font-size: 0.85em;
+        color: rgba(201,168,76,0.5);
+        /* Place ornament at all four corners via text-shadow */
+        text-shadow:
+            0    0    0 rgba(201,168,76,0),
+            calc(100% - 1.2em) 0 0 rgba(201,168,76,0.45),
+            0    calc(100% - 0.4em) 0 rgba(201,168,76,0.45),
+            calc(100% - 1.2em) calc(100% - 0.4em) 0 rgba(201,168,76,0.45);
+        display: block;
+        line-height: 1;
+        overflow: hidden;
     }
+
     h1 { font-family: 'Cinzel', serif; font-size: 2.4em; letter-spacing: 0.06em; margin-bottom: 0.5em; color: var(--gold); }
-    h2 { font-family: 'Cinzel', serif; font-size: 1.9em; color: #ecc85a; border-bottom: 1px solid rgba(201,168,76,0.4); padding-bottom: 12px; margin-top: 0; letter-spacing: 0.04em; text-shadow: 0 1px 10px rgba(200,130,0,0.4); }
+    h2 { font-family: 'Cinzel', serif; font-size: 1.9em; color: var(--gold); border-bottom: 1px solid rgba(139,90,30,0.5); padding-bottom: 12px; margin-top: 0; letter-spacing: 0.04em; text-shadow: 0 1px 8px rgba(0,0,0,0.3); }
     .liturgical-title {
         color: var(--gold);
         font-family: 'Cinzel', serif;
@@ -302,11 +357,11 @@
         font-size: 1.3em;
         letter-spacing: 0.05em;
         margin: 0 0 30px 0;
-        opacity: 0.9;
+        opacity: 0.85;
     }
     .rubric-text {
-        color: #e8472a;
-        text-shadow: 0 0 12px rgba(220, 80, 40, 0.45);
+        color: var(--rubric);
+        text-shadow: 0 0 8px rgba(0,0,0,0.2);
         font-family: 'Cinzel', serif;
         font-variant: small-caps;
         font-weight: 600;
@@ -331,12 +386,24 @@
     .component-text {
         font-family: 'IM Fell English', Georgia, serif;
         font-size: 1.35em;
-        line-height: 1.9;
+        line-height: 1.95;
         margin-bottom: 30px;
         display: block;
         white-space: pre-wrap;
         word-wrap: break-word;
         overflow: visible;
+        color: var(--ink);
+    }
+    /* Drop cap on first letter of prayer/reading text */
+    .component-text::first-letter {
+        font-family: 'Cinzel Decorative', 'Cinzel', serif;
+        font-size: 3.2em;
+        font-weight: 700;
+        color: var(--rubric);
+        float: left;
+        line-height: 0.75;
+        margin: 0.05em 0.1em 0 0;
+        text-shadow: 1px 1px 0 rgba(139,90,30,0.3);
     }
     .reading-text {
         font-family: 'IM Fell English', Georgia, serif;
@@ -347,6 +414,7 @@
         word-wrap: break-word;
         text-align: justify;
         hyphens: auto;
+        color: var(--ink);
     }
     .reading-text p {
         margin: 0 0 1.1em 0;
@@ -365,7 +433,7 @@
     .psalm-stanza .psalm-half-verse {
         display: block;
         padding-left: 2em;
-        color: var(--text-color);
+        color: var(--ink);
     }
     .psalm-stanza .psalm-half-verse:first-child {
         padding-left: 0;
@@ -405,10 +473,10 @@
     }
     .saint-grid { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; }
     .saint-box { background: var(--container-bg); border-top: 5px solid var(--gold); padding: 20px; width: 240px; box-shadow: 0 4px 12px rgba(0,0,0,0.15); text-align: left; border-radius: 0 0 6px 6px; }
-    .ordo-control { background: rgba(201, 168, 76, 0.05); border: 1px solid rgba(201, 168, 76, 0.3); padding: 15px; border-radius: 2px; margin-bottom: 20px; text-align: center; width: 250px; box-sizing: border-box; }
-    .ordo-date { display: block; color: var(--gold); font-weight: bold; margin: 10px 0; font-size: 1em; white-space: normal; word-break: break-word; font-family: 'Cinzel', serif; }
+    .ordo-control { background: rgba(201, 168, 76, 0.05); border: 1px solid rgba(201, 168, 76, 0.3); padding: 16px; border-radius: 2px; margin-bottom: 20px; text-align: center; width: 250px; box-sizing: border-box; font-size: 1em; }
+    .ordo-date { display: block; color: var(--gold); font-weight: bold; margin: 10px 0; font-size: 1.1em; white-space: normal; word-break: break-word; font-family: 'Cinzel', serif; }
     .ordo-buttons { display: flex; justify-content: center; gap: 5px; }
-    .ordo-btn { background: none; border: 1px solid rgba(201, 168, 76, 0.4); color: var(--gold); padding: 5px 15px; cursor: pointer; transition: background 0.2s; font-family: 'Cinzel', serif; font-size: 0.8em; letter-spacing: 0.08em; border-radius: 1px; }
+    .ordo-btn { background: none; border: 1px solid rgba(201, 168, 76, 0.4); color: var(--gold); padding: 7px 16px; cursor: pointer; transition: background 0.2s; font-family: 'Cinzel', serif; font-size: 0.9em; letter-spacing: 0.08em; border-radius: 1px; }
     .ordo-btn:hover { background: rgba(201, 168, 76, 0.15); }
     #main-content h1 {
         font-family: 'Cinzel', serif;
@@ -419,29 +487,114 @@
         text-align: center;
     }
     select { width: 100%; padding: 10px; background: #1e1a14; color: #c8bfa8; border: 1px solid rgba(201,168,76,0.35); border-radius: 2px; font-family: 'IM Fell English', serif; }
-    #individual-prayers-section {
-        display: none;
-        text-align: center;
-        max-width: 800px;
-        padding: 40px;
-        width: 100%;
-        margin: 0 auto; /* Center horizontally */
-    }
-    #prayer-selection { margin-bottom: 40px; }
+    #prayer-selection { margin-bottom: 40px; text-align: center; }
     #prayer-display {
-        background: var(--container-bg);
-        padding: 40px;
-        border-radius: 8px;
-        box-shadow: 0 4px 15px rgba(0,0,0,0.1);
         text-align: left;
         display: none;
-        margin: 40px auto 0; /* Center horizontally with top margin */
-        max-width: 800px;
         width: 100%;
+        max-width: 820px;
     }
     #prayer-display .office-container {
-        border-left: none; /* Remove left border for prayers mode */
+        width: 100%;
+        box-sizing: border-box;
     }
+    /* Custom prayer dropdown */
+    .prayer-select-wrapper {
+        position: relative;
+        width: 480px;
+        max-width: 92vw;
+        text-align: left;
+        z-index: 300;
+    }
+    .prayer-select-trigger {
+        width: 100%;
+        padding: 14px 44px 14px 18px;
+        background: #1e1a14;
+        color: #c8bfa8;
+        border: 1px solid rgba(201,168,76,0.4);
+        border-radius: 2px;
+        font-family: 'IM Fell English', serif;
+        font-size: 1.15em;
+        cursor: pointer;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        box-sizing: border-box;
+    }
+    .prayer-select-trigger::after {
+        content: '▾';
+        color: var(--gold);
+        font-size: 1em;
+        margin-left: 10px;
+        flex-shrink: 0;
+    }
+    .prayer-select-list {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: #1a140d;
+        border: 1px solid rgba(201,168,76,0.4);
+        border-top: none;
+        max-height: 60vh;
+        overflow-y: auto;
+        box-shadow: 0 8px 30px rgba(0,0,0,0.7);
+        scrollbar-width: thin;
+    }
+    .prayer-select-list.open { display: block; }
+    .prayer-optgroup-label {
+        padding: 12px 18px 6px 18px;
+        font-family: 'Cinzel', serif;
+        font-size: 0.78em;
+        font-weight: bold;
+        color: var(--gold);
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        border-top: 1px solid rgba(201,168,76,0.2);
+        background: #130e08;
+    }
+    .prayer-optgroup-label:first-child { border-top: none; }
+    .prayer-option {
+        padding: 11px 18px 11px 28px;
+        font-family: 'IM Fell English', serif;
+        font-size: 1.08em;
+        color: #c8bfa8;
+        cursor: pointer;
+        transition: background 0.15s;
+        line-height: 1.3;
+    }
+    .prayer-option:hover { background: rgba(201,168,76,0.12); color: #e8d090; }
+    .prayer-option.selected { color: var(--gold); }
+    /* Ornamental vine rule above the office title */
+    .liturgical-title::before {
+        content: '— ✦ ✝ ✦ —';
+        display: block;
+        font-family: Georgia, serif;
+        font-size: 0.7em;
+        letter-spacing: 0.35em;
+        color: var(--gold);
+        opacity: 0.6;
+        margin-bottom: 12px;
+        text-align: center;
+    }
+    /* Passage reference in ink not gold for manuscript feel */
+    .passage-reference {
+        font-size: 1.1em;
+        font-style: italic;
+        color: var(--rubric);
+        margin: 6px 0 14px 0;
+        font-weight: normal;
+        font-family: 'IM Fell English', serif;
+    }
+    @media (max-width: 600px) {
+    .prayer-select-wrapper { width: 96vw; }
+    .prayer-select-trigger { font-size: 1.2em; padding: 16px 44px 16px 16px; }
+    .prayer-optgroup-label { font-size: 0.85em; padding: 14px 16px 7px 16px; }
+    .prayer-option { font-size: 1.15em; padding: 14px 16px 14px 26px; }
+    #individual-prayers-section h1 { font-size: 1.5em !important; }
+    .mode-btn { font-size: 1.05em; padding: 14px 28px; }
+}
 /* ============================================
    PRINT STYLES
    ============================================ */
@@ -564,13 +717,19 @@
      <h1>Welcome to The Universal Office</h1>
      <p>Select your mode:</p>
      <button class="mode-btn" onclick="selectMode('daily')">Daily Office</button>
-     <button class="mode-btn" onclick="selectMode('prayers')">Individual Prayers</button>
+     <button class="mode-btn" onclick="selectMode('prayers')">The Book of Needs</button>
+     <div style="margin-top:32px; border-top:1px solid rgba(201,168,76,0.25); padding-top:18px;">
+         <a href="https://musingsancientandmodern.substack.com/" target="_blank" style="text-decoration:none; display:block; text-align:center;">
+             <span style="font-family:'Cinzel',serif; font-size:0.68em; letter-spacing:0.18em; text-transform:uppercase; color:#a89878; display:block; margin-bottom:5px;">Sponsored by</span>
+             <span style="font-family:'Cinzel Decorative','Cinzel',serif; font-size:0.95em; letter-spacing:0.08em; color:#c0392b; text-shadow:0 0 8px rgba(201,168,76,0.35), 0 1px 3px rgba(0,0,0,0.8); display:block;">Musings, Ancient and Modern</span>
+         </a>
+     </div>
  </div>
  <div id="daily-office-section">
      <div id="sidebar-toggle" onclick="toggleSidebar()">Settings</div>
      <div id="settings-panel">
          <button class="mode-btn" onclick="backToSplash()" style="margin-bottom:10px;">Back to Modes</button>
-         <h3 style="color:var(--gold)">Office Settings</h3>
+         <h3 style="color:var(--gold); font-family:'Cinzel',serif; font-size:1.15em; letter-spacing:0.08em;">Office Settings</h3>
          <div class="ordo-control">
              <strong>Liturgical Ordo</strong>
              <div class="ordo-date" id="display-date">Loading...</div>
@@ -592,7 +751,7 @@
          </div>
          <div class="setting-group">
              <strong>Appearance:</strong>
-             <label><input type="checkbox" id="toggle-dark" onchange="updateUI(); saveSettings()" checked> Dark Mode</label>
+             <label><input type="checkbox" id="toggle-dark" onchange="updateUI(); saveSettings()" checked> Vespers Mode (Dark)</label>
              <label style="margin-top:8px;"><input type="checkbox" id="toggle-bcp-only" onchange="toggleBcpOnly(); saveSettings()"> BCP Only Mode</label>
          </div>
          <div class="setting-group">
@@ -676,24 +835,97 @@
      </div>
  </div>
  <div id="individual-prayers-section">
-    <div id="prayer-selection">  <!-- NEW: Wrapper JavaScript expects -->
-        <h1>Individual Prayers</h1>
-        <select id="prayer-dropdown" style="width: 300px; padding: 10px; background: #333; color: white; border: 1px solid #555; border-radius: 4px;">
-            <option value="">Select a Prayer</option>
-            <option value="prayer-for-the-sick">Prayer for the Sick</option>
-            <option value="prayer-for-peace">Prayer for Peace</option>
-            <option value="prayer-for-unity">Prayer for Unity</option>
-            <option value="prayer-for-mission">Prayer for Mission</option>
-            <option value="prayer-for-guidance">Prayer for Guidance</option>
-            <option value="prayer-for-the-church">Prayer for the Church</option>
-            <option value="prayer-for-the-world">Prayer for the World</option>
-        </select>
-        <button class="mode-btn" onclick="showSinglePrayer()">Display Prayer</button>
-        <button class="mode-btn" onclick="backToSplash()" style="margin-top:20px;">Back to Modes</button>
+    <div id="prayer-selection">
+        <h1 style="font-family:'Cinzel Decorative','Cinzel',serif; color:var(--gold); font-size:1.9em; letter-spacing:0.06em; margin-bottom:0.3em;">The Book of Needs</h1>
+        <p style="font-family:'Cinzel',serif; font-size:0.78em; letter-spacing:0.15em; text-transform:uppercase; color:#a89878; margin-bottom:28px;">Select a Prayer</p>
+        <div class="prayer-select-wrapper" id="prayer-select-wrapper">
+            <div class="prayer-select-trigger" id="prayer-select-trigger" onclick="togglePrayerDropdown()">
+                <span id="prayer-select-label">— Choose a Prayer —</span>
+            </div>
+            <div class="prayer-select-list" id="prayer-select-list">
+
+                <div class="prayer-optgroup-label">Eucharist: Preparation &amp; Spiritual Communion</div>
+                <div class="prayer-option" data-value="prayer-humble-access" onclick="selectPrayer(this)">Prayer of Humble Access (BCP)</div>
+                <div class="prayer-option" data-value="spiritual-communion" onclick="selectPrayer(this)">Act of Spiritual Communion</div>
+
+                <div class="prayer-optgroup-label">Eucharist: Thanksgiving After Communion</div>
+                <div class="prayer-option" data-value="thanksgiving-aquinas" onclick="selectPrayer(this)">Thanksgiving (After St. Thomas Aquinas)</div>
+                <div class="prayer-option" data-value="thanksgiving-hooker" onclick="selectPrayer(this)">Thanksgiving (After Richard Hooker)</div>
+                <div class="prayer-option" data-value="thanksgiving-andrewes" onclick="selectPrayer(this)">Self-Oblation (After Lancelot Andrewes)</div>
+                <div class="prayer-option" data-value="thanksgiving-basil" onclick="selectPrayer(this)">From the Liturgy of Saint Basil</div>
+
+                <div class="prayer-optgroup-label">Eucharist: Adoration &amp; Benediction</div>
+                <div class="prayer-option" data-value="o-salutaris" onclick="selectPrayer(this)">O Salutaris (St. Thomas Aquinas)</div>
+                <div class="prayer-option" data-value="tantum-ergo" onclick="selectPrayer(this)">Tantum Ergo (St. Thomas Aquinas)</div>
+                <div class="prayer-option" data-value="divine-praises" onclick="selectPrayer(this)">The Divine Praises</div>
+                <div class="prayer-option" data-value="anima-christi" onclick="selectPrayer(this)">Anima Christi (tr. John Henry Newman)</div>
+
+                <div class="prayer-optgroup-label">Eucharist: Personal Devotions</div>
+                <div class="prayer-option" data-value="to-blessed-virgin" onclick="selectPrayer(this)">To the Blessed Virgin Mary</div>
+                <div class="prayer-option" data-value="to-saint-joseph" onclick="selectPrayer(this)">To Saint Joseph</div>
+                <div class="prayer-option" data-value="in-sorrow-or-trouble" onclick="selectPrayer(this)">In Sorrow or Trouble</div>
+                <div class="prayer-option" data-value="ave-regina" onclick="selectPrayer(this)">Ave Regina Caelorum</div>
+
+                <div class="prayer-optgroup-label">Eucharist: Contrition &amp; Repentance</div>
+                <div class="prayer-option" data-value="act-of-contrition" onclick="selectPrayer(this)">Act of Contrition</div>
+                <div class="prayer-option" data-value="after-neglect" onclick="selectPrayer(this)">After Neglect or Misuse of the Sacrament</div>
+
+                <div class="prayer-optgroup-label">Prayers of Lancelot Andrewes</div>
+                <div class="prayer-option" data-value="andrewes-commendation" onclick="selectPrayer(this)">Commendation</div>
+                <div class="prayer-option" data-value="andrewes-thanksgiving" onclick="selectPrayer(this)">Thanksgiving</div>
+                <div class="prayer-option" data-value="andrewes-penitence" onclick="selectPrayer(this)">Penitence</div>
+                <div class="prayer-option" data-value="andrewes-petition" onclick="selectPrayer(this)">Petition</div>
+
+                <div class="prayer-optgroup-label">General Intercessions</div>
+                <div class="prayer-option" data-value="prayer-for-the-sick" onclick="selectPrayer(this)">Prayer for the Sick</div>
+                <div class="prayer-option" data-value="prayer-for-peace" onclick="selectPrayer(this)">Prayer for Peace</div>
+                <div class="prayer-option" data-value="prayer-for-unity" onclick="selectPrayer(this)">Prayer for Unity</div>
+                <div class="prayer-option" data-value="prayer-for-mission" onclick="selectPrayer(this)">Prayer for Mission</div>
+                <div class="prayer-option" data-value="prayer-for-guidance" onclick="selectPrayer(this)">Prayer for Guidance</div>
+                <div class="prayer-option" data-value="prayer-for-the-church" onclick="selectPrayer(this)">Prayer for the Church</div>
+                <div class="prayer-option" data-value="prayer-for-the-world" onclick="selectPrayer(this)">Prayer for the World</div>
+
+                <div class="prayer-optgroup-label">For Ministers: Journey to Church</div>
+                <div class="prayer-option" data-value="minister-journey-bcp" onclick="selectPrayer(this)">On the Way to Church (Anglican)</div>
+                <div class="prayer-option" data-value="minister-journey-orthodox" onclick="selectPrayer(this)">On the Way to Church (Orthodox)</div>
+
+                <div class="prayer-optgroup-label">For Ministers: Before Entering Church</div>
+                <div class="prayer-option" data-value="minister-entering-bcp" onclick="selectPrayer(this)">Before Entering Church (Anglican)</div>
+                <div class="prayer-option" data-value="minister-entering-orthodox" onclick="selectPrayer(this)">Before Entering Church (Orthodox)</div>
+
+                <div class="prayer-optgroup-label">For Ministers: Vesting Prayers</div>
+                <div class="prayer-option" data-value="vesting-amice" onclick="selectPrayer(this)">Vesting: The Amice</div>
+                <div class="prayer-option" data-value="vesting-alb" onclick="selectPrayer(this)">Vesting: The Alb</div>
+                <div class="prayer-option" data-value="vesting-cincture" onclick="selectPrayer(this)">Vesting: The Cincture</div>
+                <div class="prayer-option" data-value="vesting-stole-deacon" onclick="selectPrayer(this)">Vesting: The Stole (Deacon)</div>
+                <div class="prayer-option" data-value="vesting-stole-priest" onclick="selectPrayer(this)">Vesting: The Stole (Priest)</div>
+                <div class="prayer-option" data-value="vesting-chasuble" onclick="selectPrayer(this)">Vesting: The Chasuble</div>
+                <div class="prayer-option" data-value="vesting-orthodox-epitrachelion" onclick="selectPrayer(this)">Vesting: The Epitrachelion (Orthodox)</div>
+                <div class="prayer-option" data-value="vesting-orthodox-phailonion" onclick="selectPrayer(this)">Vesting: The Phelonion (Orthodox)</div>
+                <div class="prayer-option" data-value="vesting-orthodox-full" onclick="selectPrayer(this)">Vesting Prayers: Full Orthodox Sequence</div>
+
+                <div class="prayer-optgroup-label">For Ministers: Before Serving</div>
+                <div class="prayer-option" data-value="minister-before-serving-bcp" onclick="selectPrayer(this)">Before Serving (Anglican)</div>
+                <div class="prayer-option" data-value="minister-before-serving-orthodox" onclick="selectPrayer(this)">Before the Divine Liturgy (Orthodox)</div>
+                <div class="prayer-option" data-value="minister-before-serving-deacon" onclick="selectPrayer(this)">For a Deacon Before the Liturgy</div>
+
+                <div class="prayer-optgroup-label">For Ministers: After Serving</div>
+                <div class="prayer-option" data-value="minister-after-serving-bcp" onclick="selectPrayer(this)">Thanksgiving After Serving (Anglican)</div>
+                <div class="prayer-option" data-value="minister-after-serving-orthodox" onclick="selectPrayer(this)">Thanksgiving After the Liturgy (Orthodox)</div>
+
+            </div>
+        </div>
+        <!-- Hidden input to carry the selected value -->
+        <input type="hidden" id="prayer-dropdown" value="">
+        <br>
+        <button class="mode-btn" onclick="showSinglePrayer()" style="margin-top:20px;">Display Prayer</button>
+        <button class="mode-btn" onclick="backToSplash()" style="margin-top:12px;">Back to Modes</button>
     </div>
-    <div id="prayer-display" style="display:none; margin-top:40px; background: transparent; width: 100%;">  <!-- MOVED: Now inside section -->
-        <div class="office-container" id="single-prayer-content"></div>
-        <button class="mode-btn" onclick="backToPrayerDropdown()" style="margin-top:20px;">Back to Selection</button>
+    <div id="prayer-display" style="display:none; margin-top:40px; background:transparent; width:100%; max-width:800px; padding-bottom:100px; box-sizing:border-box;">
+        <div id="single-prayer-content"></div>
+    </div>
+    <div id="prayer-back-bar" style="display:none; position:fixed; bottom:0; left:0; right:0; text-align:center; padding:16px 0 20px; background:linear-gradient(transparent, rgba(6,4,16,0.95) 40%); z-index:300;">
+        <button class="mode-btn" onclick="backToPrayerDropdown()">Back to Selection</button>
     </div>
 </div>
 <script src="js/calendar-engine.js"></script>
@@ -776,6 +1008,8 @@ function selectMode(mode) {
         document.body.style.justifyContent = 'flex-start';
         document.body.style.alignItems = 'flex-start';
         document.getElementById('daily-office-section').style.display = 'flex';
+        document.getElementById('sidebar-toggle').style.display = 'flex';
+        document.getElementById('settings-panel').style.display = 'block';
         loadSettings(); // Load saved preferences
         updateDatePicker();
         // Initialize data only when Daily Office is selected
@@ -849,9 +1083,14 @@ function toggleBcpOnly() {
    renderOffice();
 }
 function updateUI() {
-  const isDark = document.getElementById('toggle-dark')?.checked || false;
-  if (isDark) document.body.classList.add('dark-mode');
-  else document.body.classList.remove('dark-mode');
+  const isDark = document.getElementById('toggle-dark')?.checked !== false;
+  if (isDark) {
+    document.body.classList.add('dark-mode');
+    document.body.classList.remove('light-mode');
+  } else {
+    document.body.classList.add('light-mode');
+    document.body.classList.remove('dark-mode');
+  }
 }
 function saveSettings() {
    const settings = {
@@ -891,7 +1130,10 @@ function loadSettings() {
       if (!saved) return;
       const settings = JSON.parse(saved);
       // Restore checkboxes and radios
-      if (document.getElementById('toggle-dark')) document.getElementById('toggle-dark').checked = settings.darkMode;
+      if (document.getElementById('toggle-dark')) {
+         document.getElementById('toggle-dark').checked = settings.darkMode;
+         updateUI(); // Apply dark/light class immediately
+      }
       if (settings.bcpOnly && document.getElementById('toggle-bcp-only')) {
          document.getElementById('toggle-bcp-only').checked = true;
          toggleBcpOnly();
@@ -1342,31 +1584,312 @@ let readingGospel = dailyData[`reading_gospel_mp_${litYear}`] || dailyData[`read
          </div>
      `).join('') || '<p>No commemorations for today.</p>';
 }
+function togglePrayerDropdown() {
+    document.getElementById('prayer-select-list').classList.toggle('open');
+}
+function selectPrayer(el) {
+    document.querySelectorAll('.prayer-option').forEach(o => o.classList.remove('selected'));
+    el.classList.add('selected');
+    document.getElementById('prayer-select-label').textContent = el.textContent;
+    document.getElementById('prayer-dropdown').value = el.dataset.value;
+    document.getElementById('prayer-select-list').classList.remove('open');
+}
+document.addEventListener('click', function(e) {
+    const wrapper = document.getElementById('prayer-select-wrapper');
+    if (wrapper && !wrapper.contains(e.target)) {
+        document.getElementById('prayer-select-list').classList.remove('open');
+    }
+});
 function showSinglePrayer() {
   const prayerId = document.getElementById('prayer-dropdown').value;
   if (!prayerId) {
       alert("Please select a prayer first.");
       return;
   }
+
+  // Each prayer: { title, source, text }
+  // text may contain <br> for line breaks in poetry/versicles
   const prayers = {
-      "prayer-for-the-sick": "O Father of mercies, and God of all comfort, our only help in time of need: We humbly beseech thee to behold, visit, and relieve thy sick servant [Name] for whom our prayers are desired. Look upon him with the eyes of thy mercy; comfort him with a sense of thy goodness; preserve him from the temptations of the enemy; and give him patience under his affliction. In thy good time, restore him to health, and enable him to lead the residue of his life in thy fear, and to thy glory; and grant that finally he may dwell with thee in life everlasting; through Jesus Christ our Lord. Amen.",
-      "prayer-for-peace": "O God, the source of all holy desires, all good counsels, and all just works: Give to thy servants that peace which the world cannot give; that our hearts may be set to obey thy commandments, and also that by thee, we, being defended from the fear of our enemies, may pass our time in rest and quietness; through the merits of Jesus Christ our Savior. Amen.",
-      "prayer-for-unity": "O God the Father of our Lord Jesus Christ, in whom thou art well pleased, grant, we beseech thee, that being knit together in the same mind and in the same judgment, we may all speak the same thing, and be of one accord, of one mind, and that there be no divisions among us; but that we be perfectly joined together in the same mind and in the same judgment. Amen.",
-      "prayer-for-mission": "Lord Jesus Christ, who didst stretch out thy loving arms on the hard wood of the Cross that everyone might come within the reach of thy saving embrace: So clothe us in thy Spirit that we, reaching forth our hands in love, may bring those who do not know thee to the knowledge and love of thee; for the honor of thy Name. Amen.",
-      "prayer-for-guidance": "O God, by whom the meek are guided in judgment, and light riseth up in darkness for the godly: Grant us, in all our doubts and uncertainties, the grace to ask what thou wouldest have us to do, that the Spirit of wisdom may save us from all false choices; that we may find the right path, and walk in it; through Jesus Christ our Lord. Amen.",
-      "prayer-for-the-church": "Gracious Father, we pray for thy holy Catholic Church. Fill it with all truth, in all truth with all peace. Where it is corrupt, purify it; where it is in error, direct it; where in any thing it is amiss, reform it. Where it is right, strengthen it; where it is in want, provide for it; where it is divided, reunite it; for the sake of Jesus Christ thy Son our Savior. Amen.",
-      "prayer-for-the-world": "Almighty God, from whom all thoughts of truth and peace proceed: Kindle, we pray, in the hearts of all people the true love of peace, and guide with thy pure and peaceable wisdom those who take counsel for the nations of the earth; that in tranquillity thy kingdom may go forward, till the earth is filled with the knowledge of thy love; through Jesus Christ our Lord. Amen."
-  };
-  const prayerText = prayers[prayerId];
-  const dropdown = document.getElementById('prayer-dropdown');
-  const selectedOption = dropdown.options[dropdown.selectedIndex];
-  const prayerTitle = selectedOption ? selectedOption.text : 'Selected Prayer';
-  document.getElementById('single-prayer-content').innerHTML = `<div class="office-container"><h2>${prayerTitle}</h2><p class="component-text">${prayerText || 'Prayer text not found'}</p></div>`;
-  document.getElementById('prayer-display').style.display = 'block';
+
+    // ── EUCHARIST: PREPARATION & SPIRITUAL COMMUNION ──────────────────────
+    "prayer-humble-access": {
+      title: "Prayer of Humble Access",
+      source: "The Book of Common Prayer, p. 337",
+      text: `We do not presume to come to this thy Table, O merciful Lord, trusting in our own righteousness, but in thy manifold and great mercies. We are not worthy so much as to gather up the crumbs under thy Table. But thou art the same Lord whose property is always to have mercy. Grant us therefore, gracious Lord, so to eat the flesh of thy dear Son Jesus Christ, and to drink his blood, that we may evermore dwell in him, and he in us. <em>Amen.</em>`
+    },
+    "spiritual-communion": {
+      title: "Act of Spiritual Communion",
+      source: "Traditional",
+      text: `In union, blessed Jesus, with the faithful gathered at every altar of your Church where your blessed Body and Blood are offered this day, I long to offer you praise and thanksgiving, for creation and all the blessings of this life, for the redemption won for us by your life, death, and resurrection, for the means of grace and the hope of glory. I believe that you are truly present in the Holy Sacrament, and, since I cannot at this time receive communion, I pray you to come into my heart. I unite myself with you and embrace you with all my heart, my soul, and my mind. Let nothing separate me from you; let me serve you in this life until, by your grace, I come to your glorious kingdom and unending peace. <em>Amen.</em>`
+    },
+
+    // ── EUCHARIST: THANKSGIVING AFTER COMMUNION ───────────────────────────
+    "thanksgiving-aquinas": {
+      title: "Thanksgiving After Communion",
+      source: "Based on a Prayer of Saint Thomas Aquinas",
+      text: `I give thanks, O God, that in your great mercy, you have fed me with the precious Body and Blood of your Son, our Lord Jesus Christ, giving me far more than I could ask and infinitely more than I deserve. May I never receive so great a gift with presumption or thoughtlessness… Bring me, I pray, unworthy and a sinner though I am, to that ineffable feast, where, with your Son and the Holy Spirit, you are, to all your people, true light, full satisfaction, everlasting joy, pleasure's fulfillment, and perfect happiness; through the same Jesus Christ our Lord. <em>Amen.</em>`
+    },
+    "thanksgiving-hooker": {
+      title: "Thanksgiving After Communion",
+      source: "Adapted from Of the Laws of Ecclesiastical Polity, Richard Hooker, 1593",
+      text: `Our hunger is satisfied and our thirst for ever quenched; here are things wonderful which we feel, great which we see and unheard of which we utter — whose souls are possessed of this Paschal Lamb and made joyful in the strength of this new wine… Why should any cogitation possess the mind of a faithful communicant but this: O my God, thou art true, O my soul, thou art happy. <em>Amen.</em>`
+    },
+    "thanksgiving-andrewes": {
+      title: "Self-Oblation",
+      source: "Attributed to Lancelot Andrewes",
+      text: `Lord Jesus Christ, I give you my hands, to do your work, my feet to follow in your way, my eyes to see as you see, my tongue to speak your words; take my mind and let my thoughts dwell always on you and in my spirit, pray always within me. Above all, I give you my heart; that in me you may love your Father and all people. I give you myself, that you may grow in me, so that it is you, Lord Jesus, who lives and works and prays in me. <em>Amen.</em>`
+    },
+    "thanksgiving-basil": {
+      title: "Thanksgiving After Communion",
+      source: "From the Liturgy of Saint Basil",
+      text: `The mystery of thy dispensation, O Christ our God, is finished and perfected as far as in our power lies. For we have presented the memorial of thy death; we have seen the type of thy resurrection; we have been refreshed with thine endless life; we have enjoyed thine inexhaustible delights… <em>Amen.</em>`
+    },
+
+    // ── EUCHARIST: ADORATION & BENEDICTION ───────────────────────────────
+    "o-salutaris": {
+      title: "O Salutaris",
+      source: "Saint Thomas Aquinas",
+      text: `O Saving Victim, opening wide<br>the gates of heaven to us below,<br>Our foes press on from every side,<br>Thine aid supply, thy strength bestow.<br><br>All praise and thanks to thee ascend<br>for evermore, blest One in Three;<br>O grant us life that shall not end<br>in our true native land with thee. <em>Amen.</em>`
+    },
+    "tantum-ergo": {
+      title: "Tantum Ergo",
+      source: "Saint Thomas Aquinas",
+      text: `Therefore we, before him bending,<br>this great Sacrament revere;<br>types and shadows have their ending,<br>for the newer rite is here;<br>faith, our outward sense befriending,<br>makes our inward vision clear.<br><br>Glory let us give and blessing<br>to the Father and the Son,<br>who, honor, thanks, and praise addressing,<br>while eternal ages run;<br>ever too his love confessing<br>who from both with both is One. <em>Amen.</em>`
+    },
+    "divine-praises": {
+      title: "The Divine Praises",
+      source: "Traditional",
+      text: `Blessed be God.<br>Blessed be the holy and undivided Trinity.<br>Blessed be God the Father, maker of heaven and earth.<br>Blessed be Jesus Christ, true God and true Man.<br>Blessed be Jesus Christ in his death and resurrection.<br>Blessed be Jesus Christ on his throne of glory.<br>Blessed be Jesus Christ in the Sacrament of his body and blood.<br>Blessed be God the Holy Spirit, the Lord and giver of life.<br>Blessed be God in the Virgin Mary, Mother of our God.<br>Blessed be God in Joseph, guardian of the Incarnate Word.<br>Blessed be God in all the angels and saints.<br>Blessed be God.`
+    },
+    "anima-christi": {
+      title: "Anima Christi",
+      source: "Translated by John Henry Newman",
+      text: `Soul of Christ, be my sanctification;<br>Body of Christ, be my salvation;<br>Blood of Christ, fill all my veins;<br>Water of Christ's side, wash out my stains;<br>Passion of Christ, my comfort be;<br>O good Jesu, listen to me;<br>In thy wounds I fain would hide,<br>Ne'er to be parted from thy side;<br>Guard me, should the foe assail me;<br>Call me when my life shall fail me,<br>Bid me come to thee above,<br>With thy saints to sing thy love,<br>World without end. <em>Amen.</em>`
+    },
+
+    // ── EUCHARIST: PERSONAL DEVOTIONS ────────────────────────────────────
+    "to-blessed-virgin": {
+      title: "To the Blessed Virgin Mary",
+      source: "Traditional",
+      text: `O most gracious and Blessed Virgin Mary, who was found worthy to bear in thy womb and feed at thy breast our Lord Jesus Christ… pray for me and for all Christ's people, that we may render to him more faithful service and persevere to the end in loving companionship with him… <em>Amen.</em>`
+    },
+    "to-saint-joseph": {
+      title: "To Saint Joseph",
+      source: "Traditional",
+      text: `O blessed Joseph, unto whose faithful guardianship was committed Christ Jesus, whom I have received in this mighty sacrament: pray for me that I may guard, cherish, and love him who now abides in all intimacy in my heart. <em>Amen.</em>`
+    },
+    "in-sorrow-or-trouble": {
+      title: "In Sorrow or Trouble",
+      source: "Traditional",
+      text: `I hear thy voice, O Lord Jesus, saying: "Come unto me, all ye that travail and are heavy-laden, and I will refresh you." I come into thy sacramental presence, weary and laden with my sins and with the cares and distractions of the world. Let me rest awhile in thy sacred presence; let my heart find rest here. Let nothing separate me from thee, here in this world or in the world to come. <em>Amen.</em>`
+    },
+    "ave-regina": {
+      title: "Ave Regina Caelorum",
+      source: "Traditional Marian Antiphon",
+      text: `Queen of Heaven, we hail you,<br>hail you Lady of all the angels.<br>You the dawn, the door of morning,<br>whence the world's true Light is risen.<br>Joy to you, O virgin glorious,<br>beautiful beyond all other.<br>Hail and farewell, O most gracious,<br>intercede for us to Jesus.<br><br><em>V.</em> Behold the handmaid of the Lord,<br><em>R.</em> <strong>Be it done unto me according to your Word.</strong><br><br>Father in heaven, by your grace the virgin mother of your incarnate Son was blessed in bearing him, but still more blessed in keeping your word: Grant us who honor the exaltation of her lowliness to follow the example of her devotion to your will; through Jesus Christ our Lord, who lives and reigns with you and the Holy Spirit, one God, for ever and ever. <strong>Amen.</strong>`
+    },
+
+    // ── EUCHARIST: CONTRITION & REPENTANCE ───────────────────────────────
+    "act-of-contrition": {
+      title: "Act of Contrition",
+      source: "Traditional",
+      text: `O God, I am very sorry that I have sinned against you and for all the wrongs I have done and the good I have not done. <em>Especially I confess…</em> Forgive me for Jesus' sake, and grant me strength and wisdom to amend my life. <em>Amen.</em>`
+    },
+    "after-neglect": {
+      title: "After Neglect or Misuse of the Sacrament",
+      source: "Traditional",
+      text: `Gracious Lord, who restored Peter after he denied thee and welcomed Thomas who questioned thy resurrection: forgive me any misuse or disregard of thine infinite goodness given into our hands in the Blessed Sacrament of the altar. Awaken in me, and in all who come to thy feast, a keen awareness of thy great gift and our great need. Grant that we may show forth our gratitude in reverence of action and words, in diligent preparation, in joyful participation, and in lives that reflect the bountiful goodness we here receive; for the sake of thy love. <em>Amen.</em>`
+    },
+
+    // ── PRAYERS OF LANCELOT ANDREWES ─────────────────────────────────────
+    "andrewes-commendation": {
+      title: "Commendation",
+      source: "Prayers of Lancelot Andrewes",
+      text: `Into your hands, I commend<br>&nbsp;&nbsp;&nbsp;my spirit, my soul, my body;<br>you created them, redeemed them, gave them new birth,<br>&nbsp;&nbsp;&nbsp;O Lord, the God of truth.<br>And you have given me all that is with me, and all that is mine,<br>&nbsp;&nbsp;&nbsp;O Lord, in your goodness.<br>Watch over my lying down and my waking up,<br>&nbsp;&nbsp;&nbsp;from this time forth for evermore;<br>to remember you upon my bed,<br>&nbsp;&nbsp;&nbsp;to search out my spirit;<br>to wake up and still remain with you.<br>I lie down in peace; at once I fall asleep;<br>&nbsp;&nbsp;&nbsp;for only you, Lord, make me dwell in safety.`
+    },
+    "andrewes-thanksgiving": {
+      title: "Thanksgiving",
+      source: "Prayers of Lancelot Andrewes",
+      text: `I lift up my hands by night in the holy place, and bless the Lord.<br>The Lord grants his loving-kindness in the daytime;<br>&nbsp;&nbsp;&nbsp;in the night season his song is with me,<br>&nbsp;&nbsp;&nbsp;a prayer to the God of my life.<br>So will I bless you through all my life,<br>&nbsp;&nbsp;&nbsp;I will lift up my hands in your name.<br>Let my prayer be set forth in your sight as incense,<br>&nbsp;&nbsp;&nbsp;the lifting up of my hands as the evening sacrifice.<br><br>Blessed are you, O Lord our God,<br>&nbsp;&nbsp;&nbsp;the God of our Fathers,<br>who created the exchange of day and night,<br>who gave us cause to sing at night,<br>who rescued us from the evil of this day,<br>who has not cut off my life like a weaver,<br>nor broken me down, from day until night.`
+    },
+    "andrewes-penitence": {
+      title: "Penitence",
+      source: "Prayers of Lancelot Andrewes",
+      text: `As days pile upon days,<br>&nbsp;&nbsp;&nbsp;so pile up our sins.<br>Seven times a day falls the righteous,<br>&nbsp;&nbsp;&nbsp;but I of extraordinary sin, seventy-seven;<br>&nbsp;&nbsp;&nbsp;and it is strange and terrifying.<br>But I turn away from my evil ways and groan,<br>&nbsp;&nbsp;&nbsp;and I bend my heart,<br>&nbsp;&nbsp;&nbsp;I bend my whole heart to you,<br>the God of those who repent, and Savior of sinners,<br>&nbsp;&nbsp;&nbsp;and evening after evening I will turn<br>&nbsp;&nbsp;&nbsp;from the inmost marrow of my soul,<br>&nbsp;&nbsp;&nbsp;and out of the depths my soul cries to you,<br><br>"I have sinned, O Lord, I have sinned —<br>&nbsp;&nbsp;&nbsp;ah! alas! the wretchedness!<br>I repent, oh, I repent. Spare me, O Lord,<br>&nbsp;&nbsp;&nbsp;I repent — oh, I repent!<br>&nbsp;&nbsp;&nbsp;help me in my unrepentance.<br><br>Be merciful. Spare me, O Lord.<br>Be merciful. Have mercy on me.<br>&nbsp;&nbsp;&nbsp;I have said, 'Lord, have mercy.'<br>&nbsp;&nbsp;&nbsp;Heal my soul, for I have sinned against you.<br>Have mercy on me, O Lord, according to your great kindness,<br>&nbsp;&nbsp;&nbsp;and in your great compassion<br>&nbsp;&nbsp;&nbsp;blot out my offenses.<br><br>Release the guilt,<br>heal the wound,<br>wipe away the stain,<br>rescue me from the shame,<br>snatch me away from the tyranny,<br>and make not an example of me.<br><br>O Lord, my destruction comes from myself;<br>&nbsp;&nbsp;&nbsp;however much I have sinned, mercifully forgive.<br>Do not deal with us according to our sins,<br>&nbsp;&nbsp;&nbsp;nor reward us according to our wickedness.<br>Look mercifully upon our weakness,<br>&nbsp;&nbsp;&nbsp;according to the glory of your all-holy name,<br>Turn evil away from us, and all harsh things<br>&nbsp;&nbsp;&nbsp;that our sins have most justly and worthily deserved.`
+    },
+    "andrewes-petition": {
+      title: "Petition",
+      source: "Prayers of Lancelot Andrewes",
+      text: `Grant me, O Lord, rest from my work;<br>&nbsp;&nbsp;&nbsp;refresh me from my mighty toil.<br>Give light to my eyes,<br>&nbsp;&nbsp;&nbsp;lest I sleep in death.<br>Rescue me from terror by night,<br>&nbsp;&nbsp;&nbsp;from the plague that stalks in the darkness.<br>Give me wholesome rest,<br>&nbsp;&nbsp;&nbsp;so that I pass this night without fear.<br><br>O Guardian of Israel who neither slumbers nor sleeps,<br>&nbsp;&nbsp;&nbsp;Guard me this night against all evil,<br>&nbsp;&nbsp;&nbsp;Guard my soul, O Lord.<br><br>Visit me with your own visitation,<br>&nbsp;&nbsp;&nbsp;reveal my mind to me in the visions of the night.<br>But if not — for I am not worthy, I am not worthy! —<br>&nbsp;&nbsp;&nbsp;even so, O loving Master,<br>&nbsp;&nbsp;&nbsp;may my sleep be a respite for me<br>&nbsp;&nbsp;&nbsp;from both toil and from sin.<br><br>Yes, Lord — and in sleep, let me not desire<br>&nbsp;&nbsp;&nbsp;that which grieves you or defiles me.<br>Let me not be filled with illusions,<br>&nbsp;&nbsp;&nbsp;but let me have a steady heart,<br>&nbsp;&nbsp;&nbsp;without fear or dread.<br>Guard me against the dark sleep of sin,<br>&nbsp;&nbsp;&nbsp;but put every earthly and evil thought within me to sleep.<br><br>You know the sleeplessness of my unseen enemies, O Lord,<br>&nbsp;&nbsp;&nbsp;and the weakness of my struggling flesh —<br>&nbsp;&nbsp;&nbsp;you formed me!<br>Let the wing of your mercy cover me.<br>Wake me up at the right time,<br>&nbsp;&nbsp;&nbsp;at the time of prayer,<br>&nbsp;&nbsp;&nbsp;and give me grace to rise to seek you,<br>&nbsp;&nbsp;&nbsp;to give you glory and care.`
+    },
+
+    // ── GENERAL INTERCESSIONS ─────────────────────────────────────────────
+    "prayer-for-the-sick": {
+      title: "Prayer for the Sick",
+      source: "The Book of Common Prayer",
+      text: `O Father of mercies, and God of all comfort, our only help in time of need: We humbly beseech thee to behold, visit, and relieve thy sick servant [Name] for whom our prayers are desired. Look upon him with the eyes of thy mercy; comfort him with a sense of thy goodness; preserve him from the temptations of the enemy; and give him patience under his affliction. In thy good time, restore him to health, and enable him to lead the residue of his life in thy fear, and to thy glory; and grant that finally he may dwell with thee in life everlasting; through Jesus Christ our Lord. <em>Amen.</em>`
+    },
+    "prayer-for-peace": {
+      title: "Prayer for Peace",
+      source: "The Book of Common Prayer",
+      text: `O God, the source of all holy desires, all good counsels, and all just works: Give to thy servants that peace which the world cannot give; that our hearts may be set to obey thy commandments, and also that by thee, we, being defended from the fear of our enemies, may pass our time in rest and quietness; through the merits of Jesus Christ our Savior. <em>Amen.</em>`
+    },
+    "prayer-for-unity": {
+      title: "Prayer for Unity",
+      source: "The Book of Common Prayer",
+      text: `O God the Father of our Lord Jesus Christ, in whom thou art well pleased, grant, we beseech thee, that being knit together in the same mind and in the same judgment, we may all speak the same thing, and be of one accord, of one mind, and that there be no divisions among us; but that we be perfectly joined together in the same mind and in the same judgment. <em>Amen.</em>`
+    },
+    "prayer-for-mission": {
+      title: "Prayer for Mission",
+      source: "The Book of Common Prayer",
+      text: `Lord Jesus Christ, who didst stretch out thy loving arms on the hard wood of the Cross that everyone might come within the reach of thy saving embrace: So clothe us in thy Spirit that we, reaching forth our hands in love, may bring those who do not know thee to the knowledge and love of thee; for the honor of thy Name. <em>Amen.</em>`
+    },
+    "prayer-for-guidance": {
+      title: "Prayer for Guidance",
+      source: "The Book of Common Prayer",
+      text: `O God, by whom the meek are guided in judgment, and light riseth up in darkness for the godly: Grant us, in all our doubts and uncertainties, the grace to ask what thou wouldest have us to do, that the Spirit of wisdom may save us from all false choices; that we may find the right path, and walk in it; through Jesus Christ our Lord. <em>Amen.</em>`
+    },
+    "prayer-for-the-church": {
+      title: "Prayer for the Church",
+      source: "The Book of Common Prayer",
+      text: `Gracious Father, we pray for thy holy Catholic Church. Fill it with all truth, in all truth with all peace. Where it is corrupt, purify it; where it is in error, direct it; where in any thing it is amiss, reform it. Where it is right, strengthen it; where it is in want, provide for it; where it is divided, reunite it; for the sake of Jesus Christ thy Son our Savior. <em>Amen.</em>`
+    },
+    "prayer-for-the-world": {
+      title: "Prayer for the World",
+      source: "The Book of Common Prayer",
+      text: `Almighty God, from whom all thoughts of truth and peace proceed: Kindle, we pray, in the hearts of all people the true love of peace, and guide with thy pure and peaceable wisdom those who take counsel for the nations of the earth; that in tranquillity thy kingdom may go forward, till the earth is filled with the knowledge of thy love; through Jesus Christ our Lord. <em>Amen.</em>`
+    },
+
+    // ── FOR MINISTERS: JOURNEY TO CHURCH ─────────────────────────────────
+    "minister-journey-bcp": {
+      title: "On the Way to Church",
+      source: "Anglican Tradition",
+      text: `O Lord Jesus Christ, who art the Way, the Truth, and the Life: suffer us not to stray from thee, who art the Way; nor to distrust thee, who art the Truth; nor to rest in any thing other than thee, who art the Life. Thou art our Way to the Father, our Truth against all error, our Life against all death. Guide our feet and order our steps, as we make our way to thy house and to thy altar; that we may come before thee with clean hands and a pure heart, and offer thee the sacrifice of praise acceptable in thy sight; who livest and reignest with the Father and the Holy Spirit, one God, world without end. <em>Amen.</em>`
+    },
+    "minister-journey-orthodox": {
+      title: "On the Way to Church",
+      source: "Orthodox Tradition",
+      text: `I will go into thy house, O Lord; I will worship toward thy holy temple in thy fear. Lead me, O Lord, in thy righteousness; make thy way straight before my face. O Lord, I love the beauty of thy house and the place where thy glory dwelleth. Let me not be counted with sinners, nor let my life be taken with men of blood. But as for me, I will walk in mine integrity; redeem me, O Lord, and have mercy upon me. My foot standeth in an even place; in the congregations I will bless thee, O Lord. <em>Amen.</em>`
+    },
+
+    // ── FOR MINISTERS: BEFORE ENTERING CHURCH ────────────────────────────
+    "minister-entering-bcp": {
+      title: "Before Entering Church",
+      source: "Anglican Tradition",
+      text: `O Almighty God, who hast built thy Church upon the foundation of the apostles and prophets, Jesus Christ himself being the chief corner stone: grant us so to be joined together in unity of spirit by their doctrine, that we may be made an holy temple acceptable unto thee; through the same Jesus Christ our Lord. <em>Amen.</em><br><br>Lord, I am not worthy to enter beneath this thy holy roof; yet thou, who didst not disdain to enter the house of Zacchaeus, a publican, and of Simon the leper, grant that I, a sinner, may enter with a pure heart and a contrite spirit. Accept the desire of my heart as an offering well-pleasing in thy sight; and as I now enter thy house with fear and trembling, so let me stand at last before thee in glory, who livest and reignest, world without end. <em>Amen.</em>`
+    },
+    "minister-entering-orthodox": {
+      title: "Before Entering Church",
+      source: "Orthodox Tradition",
+      text: `I will enter thy house; I will worship toward thy holy temple in thy fear. O Lord, lead me in thy righteousness; because of mine enemies, make thy way straight before my face.<br><br>O holy God, who dwellest in the holy place, praised by the Seraphim with the thrice-holy voice and glorified by the Cherubim and worshipped by all the heavenly powers: Thou who hast brought all things from non-existence into being, who hast created man after thine image and likeness and hast adorned him with all thine gifts, who givest wisdom and understanding to him who asketh, and dost not overlook the sinner but hast set forth repentance for salvation: vouchsafe to me, thine unworthy servant, to stand before thy holy glory and to offer thee prayer. For thine is the majesty, and thine is the kingdom and the power and the glory, of the Father, and of the Son, and of the Holy Spirit, now and ever and unto the ages of ages. <em>Amen.</em>`
+    },
+
+    // ── FOR MINISTERS: VESTING PRAYERS ───────────────────────────────────
+    "vesting-amice": {
+      title: "Vesting: The Amice",
+      source: "Traditional (Western)",
+      text: `<em>Place the amice upon the head, then lower it to the shoulders.</em><br><br>Place upon my head, O Lord, the helmet of salvation, that I may resist the assaults of the devil; through Christ our Lord. <em>Amen.</em>`
+    },
+    "vesting-alb": {
+      title: "Vesting: The Alb",
+      source: "Traditional (Western)",
+      text: `<em>Put on the alb.</em><br><br>Make me white, O Lord, and cleanse my heart; that, being made white in the Blood of the Lamb, I may deserve an eternal reward; through Christ our Lord. <em>Amen.</em>`
+    },
+    "vesting-cincture": {
+      title: "Vesting: The Cincture",
+      source: "Traditional (Western)",
+      text: `<em>Gird on the cincture.</em><br><br>Gird me, O Lord, with the girdle of purity, and quench in my heart the fire of concupiscence; that the virtue of continence and chastity may abide in me; through Christ our Lord. <em>Amen.</em>`
+    },
+    "vesting-stole-deacon": {
+      title: "Vesting: The Stole (Deacon)",
+      source: "Traditional (Western)",
+      text: `<em>Place the stole over the left shoulder and fasten it at the right side.</em><br><br>Lord, restore the stole of immortality, which I lost through the complicity of our first parents, and, unworthy as I am to approach thy sacred mysteries, may I yet gain eternal joy; through Christ our Lord. <em>Amen.</em>`
+    },
+    "vesting-stole-priest": {
+      title: "Vesting: The Stole (Priest)",
+      source: "Traditional (Western)",
+      text: `<em>Place the stole around the neck.</em><br><br>Restore to me, O Lord, the stole of immortality, which was forfeited by the transgression of our first parents; and, although I draw near unworthily to celebrate thy holy mysteries, grant that I may obtain joy everlasting; through Christ our Lord. <em>Amen.</em>`
+    },
+    "vesting-chasuble": {
+      title: "Vesting: The Chasuble",
+      source: "Traditional (Western)",
+      text: `<em>Put on the chasuble.</em><br><br>O Lord, who hast said: My yoke is sweet and my burden light: grant that I may so carry it as to merit thy grace; through Christ our Lord. <em>Amen.</em>`
+    },
+    "vesting-orthodox-epitrachelion": {
+      title: "Vesting: The Epitrachelion",
+      source: "Orthodox Tradition",
+      text: `<em>Put on the epitrachelion (stole).</em><br><br>Blessed is God who poureth out his grace upon his priests; as myrrh upon the head, that ran down upon the beard, even the beard of Aaron; that ran down to the skirts of his garments. <em>Amen.</em>`
+    },
+    "vesting-orthodox-phailonion": {
+      title: "Vesting: The Phelonion",
+      source: "Orthodox Tradition",
+      text: `<em>Put on the phelonion (chasuble).</em><br><br>Thy priests, O Lord, shall clothe themselves with righteousness, and thy saints shall rejoice with joy, always, now and ever, and unto the ages of ages. <em>Amen.</em>`
+    },
+    "vesting-orthodox-full": {
+      title: "Full Orthodox Vesting Sequence",
+      source: "Orthodox Tradition",
+      text: `<em>Sticharion (Alb):</em><br>My soul shall rejoice in the Lord; for he hath clothed me with the garment of salvation, and with the robe of gladness hath he covered me; he hath set a crown upon me, as a bridegroom, and as a bride hath he adorned me with jewels.<br><br><em>Epitrachelion (Stole):</em><br>Blessed is God who poureth out his grace upon his priests; as myrrh upon the head, that ran down upon the beard, even the beard of Aaron; that ran down to the skirts of his garments.<br><br><em>Belt (Cincture):</em><br>Blessed is God who girdeth me with strength and hath made my way blameless; who maketh my feet like hinds' feet, and setteth me upon the high places.<br><br><em>Epimanikia (Cuffs) — Right:</em><br>Thy right hand, O Lord, is glorified in strength; thy right hand, O Lord, hath dashed the enemy in pieces.<br><br><em>Epimanikia (Cuffs) — Left:</em><br>Thy hands have made me and fashioned me; give me understanding, and I will learn thy commandments.<br><br><em>Phelonion (Chasuble):</em><br>Thy priests, O Lord, shall clothe themselves with righteousness, and thy saints shall rejoice with joy, always, now and ever, and unto the ages of ages. <em>Amen.</em>`
+    },
+
+    // ── FOR MINISTERS: BEFORE SERVING ────────────────────────────────────
+    "minister-before-serving-bcp": {
+      title: "Before Serving",
+      source: "Anglican Tradition",
+      text: `Almighty God, who on this day didst move thy servant to minister at thine altar: cleanse my heart and my lips, that I may worthily proclaim thy holy Gospel and offer the sacrifice of praise; through Jesus Christ our Lord, who liveth and reigneth with thee in the unity of the Holy Spirit, one God, world without end. <em>Amen.</em><br><br>O God, to whom every heart is open, every desire known, and from whom no secrets are hid: Cleanse the thoughts of our hearts by the inspiration of thy Holy Spirit, that we may perfectly love thee, and worthily magnify thy holy Name; through Christ our Lord. <em>Amen.</em>`
+    },
+    "minister-before-serving-orthodox": {
+      title: "Before the Divine Liturgy",
+      source: "Orthodox Tradition",
+      text: `O Lord, send down thy heavenly blessing upon us, and by thy divine power sanctify us; that being enabled to stand before thy holy altar, we may offer thee an acceptable sacrifice, and receive into our unworthy hearts the grace of thy most pure Mysteries; through the mercies and loving-kindness of thine only-begotten Son, with whom thou art blessed, together with thy most holy and good and life-giving Spirit, now and ever and unto the ages of ages. <em>Amen.</em><br><br>O God, be merciful to me a sinner; O God, cleanse me of my sins and have mercy on me; O Lord, forgive me, for I have sinned without number.`
+    },
+    "minister-before-serving-deacon": {
+      title: "For a Deacon Before the Liturgy",
+      source: "Orthodox Tradition",
+      text: `O Lord and Master Jesus Christ, who hast counted me worthy, though I am unworthy, to minister as a deacon before the altar of thy glory: Do thou, the same Lord, fill me with the Holy Spirit and gird me with power from on high. Grant that, coming before thy holy altar with a pure conscience, I may serve thee blamelessly and without condemnation in this present day and at all times; through thine inexpressible mercy and love toward mankind, with the Father and the Holy Spirit, now and ever, and unto the ages of ages. <em>Amen.</em>`
+    },
+
+    // ── FOR MINISTERS: AFTER SERVING ─────────────────────────────────────
+    "minister-after-serving-bcp": {
+      title: "Thanksgiving After Serving",
+      source: "Anglican Tradition",
+      text: `O God of all grace and comfort, who hast granted us once more to stand before thy holy altar and offer the sacrifice of praise: Accept our thanksgiving, pardon our unworthiness, strengthen us in thy service, and grant that the people whom we have served in thy name may grow in knowledge and love of thee, and that we, persevering in faithful ministry, may at the last be received into thine eternal joy; through Jesus Christ our Lord. <em>Amen.</em>`
+    },
+    "minister-after-serving-orthodox": {
+      title: "Thanksgiving After the Liturgy",
+      source: "Orthodox Tradition",
+      text: `We thank thee, O Lord our God, that thou hast again counted us worthy to stand before thy holy altar and to partake of thine ineffable and life-giving mysteries. Sanctify our souls and bodies, and grant unto us health and sanctification, and the remission of our sins. Preserve us in all thy ways, and establish us in the fear of thee; and vouchsafe that we may be found worthy before the dreadful judgment seat of thy Christ, through the intercessions of our most holy Lady, the Theotokos and Ever-Virgin Mary, and of all the saints who have pleased thee from the beginning of the world; to thee be glory, honor, and dominion, now and ever, and unto the ages of ages. <em>Amen.</em>`
+    }
+
+  }; // end prayers
+
+  const prayer = prayers[prayerId];
+  // Get display label from the custom dropdown trigger, not a select element
+  const selectedLabel = document.getElementById('prayer-select-label').textContent;
+  const prayerTitle = prayer ? prayer.title : selectedLabel;
+  const prayerSource = prayer ? `<p style="font-family:'Cinzel',serif; font-size:0.72em; letter-spacing:0.12em; text-transform:uppercase; color:#a89878; margin-top:-10px; margin-bottom:28px;">${prayer.source}</p>` : '';
+  const prayerText = prayer ? prayer.text : 'Prayer text not found.';
+
+  document.getElementById('single-prayer-content').innerHTML = `
+    <div class="office-container">
+      <h2>${prayerTitle}</h2>
+      ${prayerSource}
+      <span class="component-text">${prayerText}</span>
+    </div>`;
+  document.getElementById('prayer-display').style.display = 'flex';
+  document.getElementById('prayer-display').style.flexDirection = 'column';
+  document.getElementById('prayer-display').style.alignItems = 'center';
   document.getElementById('prayer-selection').style.display = 'none';
+  // Shift section to scroll from top, not center
+  document.getElementById('individual-prayers-section').style.justifyContent = 'flex-start';
+  document.getElementById('individual-prayers-section').style.paddingTop = '60px';
+  document.getElementById('individual-prayers-section').scrollTop = 0;
+  document.getElementById('prayer-back-bar').style.display = 'block';
 }
 function backToPrayerDropdown() {
   document.getElementById('prayer-display').style.display = 'none';
+  document.getElementById('prayer-back-bar').style.display = 'none';
+  document.getElementById('individual-prayers-section').style.justifyContent = 'center';
+  document.getElementById('individual-prayers-section').style.paddingTop = '0';
   document.getElementById('prayer-selection').style.display = 'block';
 }
 function backToSplash() {
