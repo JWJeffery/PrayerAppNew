@@ -10,16 +10,18 @@
     "psalms_evening": "Psalm 47, Psalm 48",
     "reading_ot": "Isaiah 62:6-12",
     "reading_epistle": "Romans 12:1-21",
-    "reading_gospel": "John 17:1-26"
+    "reading_gospel": "John 17:1-26",
+    "day_of_season": 1
   },
   {
-  "date": "2026-05-24",
-  "season": "Ordinary Time",
-  "week": "The Day of Pentecost",
-  "day": "Sunday",
-  "collectId": "collect-pentecost",
-  "proper": "The Day of Pentecost"
-},
+    "date": "2026-05-24",
+    "season": "Ordinary Time",
+    "week": "The Day of Pentecost",
+    "day": "Sunday",
+    "collectId": "collect-pentecost",
+    "proper": "The Day of Pentecost",
+    "day_of_season": 2
+  },
   {
     "date": "2026-05-25",
     "title": "Monday in the Week of Proper 3",
@@ -35,7 +37,8 @@
     "reading_gospel_ep_year1": "John 11:1-16",
     "reading_ot_mp_year2": "Deuteronomy 4:9-14",
     "reading_epistle_ep_year2": "2 Corinthians 1:1-11",
-    "reading_gospel_mp_year2": "Luke 14:25-35"
+    "reading_gospel_mp_year2": "Luke 14:25-35",
+    "day_of_season": 3
   },
   {
     "date": "2026-05-26",
@@ -52,7 +55,8 @@
     "reading_gospel_ep_year1": "John 11:17-29",
     "reading_ot_mp_year2": "Deuteronomy 4:15-24",
     "reading_epistle_ep_year2": "2 Corinthians 1:12-22",
-    "reading_gospel_mp_year2": "Luke 15:1-10"
+    "reading_gospel_mp_year2": "Luke 15:1-10",
+    "day_of_season": 4
   },
   {
     "date": "2026-05-27",
@@ -69,7 +73,8 @@
     "reading_gospel_ep_year1": "John 11:30-44",
     "reading_ot_mp_year2": "Deuteronomy 4:25-31",
     "reading_epistle_ep_year2": "2 Corinthians 1:23-2:17",
-    "reading_gospel_mp_year2": "Luke 15:1-2, 11-32"
+    "reading_gospel_mp_year2": "Luke 15:1-2, 11-32",
+    "day_of_season": 5
   },
   {
     "date": "2026-05-28",
@@ -86,7 +91,8 @@
     "reading_gospel_ep_year1": "John 11:45-54",
     "reading_ot_mp_year2": "Deuteronomy 4:32-40",
     "reading_epistle_ep_year2": "2 Corinthians 3:1-18",
-    "reading_gospel_mp_year2": "Luke 16:1-9"
+    "reading_gospel_mp_year2": "Luke 16:1-9",
+    "day_of_season": 6
   },
   {
     "date": "2026-05-29",
@@ -103,7 +109,8 @@
     "reading_gospel_ep_year1": "John 11:55-12:8",
     "reading_ot_mp_year2": "Deuteronomy 5:1-22",
     "reading_epistle_ep_year2": "2 Corinthians 4:1-12",
-    "reading_gospel_mp_year2": "Luke 16:10-17"
+    "reading_gospel_mp_year2": "Luke 16:10-17",
+    "day_of_season": 7
   },
   {
     "date": "2026-05-30",
@@ -125,7 +132,8 @@
     "psalms_ep_eve": "Psalm 104",
     "reading_ot_ep_eve": "Ecclesiasticus 42:15-25",
     "reading_epistle_ep_eve": "Ephesians 3:14-21",
-    "reading_gospel_ep_eve": ""
+    "reading_gospel_ep_eve": "",
+    "day_of_season": 8
   },
   {
     "date": "2026-05-31",
@@ -142,7 +150,8 @@
     "reading_gospel_ep_year1": "",
     "reading_ot_mp_year2": "Ecclesiasticus 43:1-12",
     "reading_epistle_ep_year2": "Ephesians 4:1-16",
-    "reading_gospel_mp_year2": "John 1:1-18"
+    "reading_gospel_mp_year2": "John 1:1-18",
+    "day_of_season": 9
   },
   {
     "date": "2026-06-01",
@@ -159,7 +168,8 @@
     "reading_gospel_ep_year1": "Matthew 13:1-16",
     "reading_ot_mp_year2": "Deuteronomy 11:13-19",
     "reading_epistle_ep_year2": "2 Corinthians 5:11-6:2",
-    "reading_gospel_mp_year2": "Luke 17:1-10"
+    "reading_gospel_mp_year2": "Luke 17:1-10",
+    "day_of_season": 10
   },
   {
     "date": "2026-06-02",
@@ -176,7 +186,8 @@
     "reading_gospel_ep_year1": "Matthew 13:18-23",
     "reading_ot_mp_year2": "Deuteronomy 12:1-12",
     "reading_epistle_ep_year2": "2 Corinthians 6:3-13",
-    "reading_gospel_mp_year2": "Luke 17:11-19"
+    "reading_gospel_mp_year2": "Luke 17:11-19",
+    "day_of_season": 11
   },
   {
     "date": "2026-06-03",
@@ -193,7 +204,8 @@
     "reading_gospel_ep_year1": "Matthew 13:24-30, 36-43",
     "reading_ot_mp_year2": "Deuteronomy 13:1-11",
     "reading_epistle_ep_year2": "2 Corinthians 7:2-16",
-    "reading_gospel_mp_year2": "Luke 17:20-37"
+    "reading_gospel_mp_year2": "Luke 17:20-37",
+    "day_of_season": 12
   },
   {
     "date": "2026-06-04",
@@ -210,7 +222,8 @@
     "reading_gospel_ep_year1": "Matthew 13:31-35",
     "reading_ot_mp_year2": "Deuteronomy 16:18-20; 17:14-20",
     "reading_epistle_ep_year2": "2 Corinthians 8:1-16",
-    "reading_gospel_mp_year2": "Luke 18:1-8"
+    "reading_gospel_mp_year2": "Luke 18:1-8",
+    "day_of_season": 13
   },
   {
     "date": "2026-06-05",
@@ -227,7 +240,8 @@
     "reading_gospel_ep_year1": "Matthew 13:44-52",
     "reading_ot_mp_year2": "Deuteronomy 26:1-11",
     "reading_epistle_ep_year2": "2 Corinthians 8:16-24",
-    "reading_gospel_mp_year2": "Luke 18:9-14"
+    "reading_gospel_mp_year2": "Luke 18:9-14",
+    "day_of_season": 14
   },
   {
     "date": "2026-06-06",
@@ -244,7 +258,8 @@
     "reading_gospel_ep_year1": "Matthew 13:53-58",
     "reading_ot_mp_year2": "Deuteronomy 29:2-15",
     "reading_epistle_ep_year2": "2 Corinthians 9:1-15",
-    "reading_gospel_mp_year2": "Luke 18:15-30"
+    "reading_gospel_mp_year2": "Luke 18:15-30",
+    "day_of_season": 15
   },
   {
     "date": "2026-06-07",
@@ -261,7 +276,8 @@
     "reading_gospel_ep_year1": "Luke 11:14-23",
     "reading_ot_mp_year2": "Deuteronomy 29:16-29",
     "reading_epistle_ep_year2": "Revelation 12:1-12",
-    "reading_gospel_mp_year2": "Matthew 15:29-39"
+    "reading_gospel_mp_year2": "Matthew 15:29-39",
+    "day_of_season": 16
   },
   {
     "date": "2026-06-08",
@@ -278,7 +294,8 @@
     "reading_gospel_ep_year1": "Matthew 14:1-12",
     "reading_ot_mp_year2": "Deuteronomy 30:1-10",
     "reading_epistle_ep_year2": "2 Corinthians 10:1-18",
-    "reading_gospel_mp_year2": "Luke 18:31-43"
+    "reading_gospel_mp_year2": "Luke 18:31-43",
+    "day_of_season": 17
   },
   {
     "date": "2026-06-09",
@@ -295,7 +312,8 @@
     "reading_gospel_ep_year1": "Matthew 14:13-21",
     "reading_ot_mp_year2": "Deuteronomy 30:11-20",
     "reading_epistle_ep_year2": "2 Corinthians 11:1-21a",
-    "reading_gospel_mp_year2": "Luke 19:1-10"
+    "reading_gospel_mp_year2": "Luke 19:1-10",
+    "day_of_season": 18
   },
   {
     "date": "2026-06-10",
@@ -312,7 +330,8 @@
     "reading_gospel_ep_year1": "Matthew 14:22-36",
     "reading_ot_mp_year2": "Deuteronomy 31:30-32:14",
     "reading_epistle_ep_year2": "2 Corinthians 11:21b-33",
-    "reading_gospel_mp_year2": "Luke 19:11-27"
+    "reading_gospel_mp_year2": "Luke 19:11-27",
+    "day_of_season": 19
   },
   {
     "date": "2026-06-11",
@@ -329,7 +348,8 @@
     "reading_gospel_ep_year1": "Matthew 15:1-20",
     "reading_ot_mp_year2": "Ecclesiasticus 44:19-45:5",
     "reading_epistle_ep_year2": "2 Corinthians 12:1-10",
-    "reading_gospel_mp_year2": "Luke 19:28-40"
+    "reading_gospel_mp_year2": "Luke 19:28-40",
+    "day_of_season": 20
   },
   {
     "date": "2026-06-12",
@@ -346,7 +366,8 @@
     "reading_gospel_ep_year1": "Matthew 15:21-28",
     "reading_ot_mp_year2": "Ecclesiasticus 45:6-16",
     "reading_epistle_ep_year2": "2 Corinthians 12:11-21",
-    "reading_gospel_mp_year2": "Luke 19:41-48"
+    "reading_gospel_mp_year2": "Luke 19:41-48",
+    "day_of_season": 21
   },
   {
     "date": "2026-06-13",
@@ -363,7 +384,8 @@
     "reading_gospel_ep_year1": "Matthew 15:29-39",
     "reading_ot_mp_year2": "Ecclesiasticus 46:1-10",
     "reading_epistle_ep_year2": "2 Corinthians 13:1-14",
-    "reading_gospel_mp_year2": "Luke 20:1-8"
+    "reading_gospel_mp_year2": "Luke 20:1-8",
+    "day_of_season": 22
   },
   {
     "date": "2026-06-14",
@@ -380,7 +402,8 @@
     "reading_gospel_ep_year1": "Luke 11:24-36",
     "reading_ot_mp_year2": "Ecclesiasticus 46:11-20",
     "reading_epistle_ep_year2": "Revelation 15:1-8",
-    "reading_gospel_mp_year2": "Matthew 18:1-14"
+    "reading_gospel_mp_year2": "Matthew 18:1-14",
+    "day_of_season": 23
   },
   {
     "date": "2026-06-15",
@@ -397,7 +420,8 @@
     "reading_gospel_ep_year1": "Matthew 16:1-12",
     "reading_ot_mp_year2": "1 Samuel 1:1-20",
     "reading_epistle_ep_year2": "Acts 1:1-14",
-    "reading_gospel_mp_year2": "Luke 20:9-19"
+    "reading_gospel_mp_year2": "Luke 20:9-19",
+    "day_of_season": 24
   },
   {
     "date": "2026-06-16",
@@ -414,7 +438,8 @@
     "reading_gospel_ep_year1": "Matthew 16:13-20",
     "reading_ot_mp_year2": "1 Samuel 1:21-2:11",
     "reading_epistle_ep_year2": "Acts 1:15-26",
-    "reading_gospel_mp_year2": "Luke 20:19-26"
+    "reading_gospel_mp_year2": "Luke 20:19-26",
+    "day_of_season": 25
   },
   {
     "date": "2026-06-17",
@@ -431,7 +456,8 @@
     "reading_gospel_ep_year1": "Matthew 16:21-28",
     "reading_ot_mp_year2": "1 Samuel 2:12-26",
     "reading_epistle_ep_year2": "Acts 2:1-21",
-    "reading_gospel_mp_year2": "Luke 20:27-40"
+    "reading_gospel_mp_year2": "Luke 20:27-40",
+    "day_of_season": 26
   },
   {
     "date": "2026-06-18",
@@ -448,7 +474,8 @@
     "reading_gospel_ep_year1": "Matthew 17:1-13",
     "reading_ot_mp_year2": "1 Samuel 2:27-36",
     "reading_epistle_ep_year2": "Acts 2:22-36",
-    "reading_gospel_mp_year2": "Luke 20:41-21:4"
+    "reading_gospel_mp_year2": "Luke 20:41-21:4",
+    "day_of_season": 27
   },
   {
     "date": "2026-06-19",
@@ -465,7 +492,8 @@
     "reading_gospel_ep_year1": "Matthew 17:14-21",
     "reading_ot_mp_year2": "1 Samuel 3:1-21",
     "reading_epistle_ep_year2": "Acts 2:37-47",
-    "reading_gospel_mp_year2": "Luke 21:5-19"
+    "reading_gospel_mp_year2": "Luke 21:5-19",
+    "day_of_season": 28
   },
   {
     "date": "2026-06-20",
@@ -482,7 +510,8 @@
     "reading_gospel_ep_year1": "Matthew 17:22-27",
     "reading_ot_mp_year2": "1 Samuel 4:1b-11",
     "reading_epistle_ep_year2": "Acts 4:32-5:11",
-    "reading_gospel_mp_year2": "Luke 21:20-28"
+    "reading_gospel_mp_year2": "Luke 21:20-28",
+    "day_of_season": 29
   },
   {
     "date": "2026-06-21",
@@ -499,7 +528,8 @@
     "reading_gospel_ep_year1": "Luke 11:37-52",
     "reading_ot_mp_year2": "1 Samuel 4:12-22",
     "reading_epistle_ep_year2": "James 1:1-18",
-    "reading_gospel_mp_year2": "Matthew 19:23-30"
+    "reading_gospel_mp_year2": "Matthew 19:23-30",
+    "day_of_season": 30
   },
   {
     "date": "2026-06-22",
@@ -516,7 +546,8 @@
     "reading_gospel_ep_year1": "Matthew 18:1-9",
     "reading_ot_mp_year2": "1 Samuel 5:1-12",
     "reading_epistle_ep_year2": "Acts 5:12-26",
-    "reading_gospel_mp_year2": "Luke 21:29-36"
+    "reading_gospel_mp_year2": "Luke 21:29-36",
+    "day_of_season": 31
   },
   {
     "date": "2026-06-23",
@@ -538,7 +569,8 @@
     "psalms_ep_eve": "Psalm 85, Psalm 87",
     "reading_ot_ep_eve": "Malachi 3:1-4",
     "reading_epistle_ep_eve": "",
-    "reading_gospel_ep_eve": ""
+    "reading_gospel_ep_eve": "",
+    "day_of_season": 32
   },
   {
     "date": "2026-06-24",
@@ -555,7 +587,8 @@
     "reading_gospel_ep_year1": "Luke 1:57-80",
     "reading_ot_mp_year2": "Isaiah 40:1-11",
     "reading_epistle_ep_year2": "Acts 13:14b-26",
-    "reading_gospel_mp_year2": "Luke 1:57-80"
+    "reading_gospel_mp_year2": "Luke 1:57-80",
+    "day_of_season": 33
   },
   {
     "date": "2026-06-25",
@@ -572,7 +605,8 @@
     "reading_gospel_ep_year1": "Matthew 18:21-35",
     "reading_ot_mp_year2": "1 Samuel 8:1-22",
     "reading_epistle_ep_year2": "Acts 6:15-7:16",
-    "reading_gospel_mp_year2": "Luke 22:24-30"
+    "reading_gospel_mp_year2": "Luke 22:24-30",
+    "day_of_season": 34
   },
   {
     "date": "2026-06-26",
@@ -589,7 +623,8 @@
     "reading_gospel_ep_year1": "Matthew 19:1-12",
     "reading_ot_mp_year2": "1 Samuel 9:1-14",
     "reading_epistle_ep_year2": "Acts 7:17-29",
-    "reading_gospel_mp_year2": "Luke 22:31-38"
+    "reading_gospel_mp_year2": "Luke 22:31-38",
+    "day_of_season": 35
   },
   {
     "date": "2026-06-27",
@@ -606,7 +641,8 @@
     "reading_gospel_ep_year1": "Matthew 19:13-22",
     "reading_ot_mp_year2": "1 Samuel 9:15-10:1",
     "reading_epistle_ep_year2": "Acts 7:30-43",
-    "reading_gospel_mp_year2": "Luke 22:39-51"
+    "reading_gospel_mp_year2": "Luke 22:39-51",
+    "day_of_season": 36
   },
   {
     "date": "2026-06-28",
@@ -623,7 +659,8 @@
     "reading_gospel_ep_year1": "Luke 11:53-12:12",
     "reading_ot_mp_year2": "1 Samuel 10:1-16",
     "reading_epistle_ep_year2": "Romans 4:13-25",
-    "reading_gospel_mp_year2": "Matthew 21:23-32"
+    "reading_gospel_mp_year2": "Matthew 21:23-32",
+    "day_of_season": 37
   },
   {
     "date": "2026-06-29",
@@ -640,7 +677,8 @@
     "reading_gospel_ep_year1": "John 21:15-19",
     "reading_ot_mp_year2": "Ezekiel 34:11-16",
     "reading_epistle_ep_year2": "2 Timothy 4:1-8",
-    "reading_gospel_mp_year2": "John 21:15-19"
+    "reading_gospel_mp_year2": "John 21:15-19",
+    "day_of_season": 38
   },
   {
     "date": "2026-06-30",
@@ -657,7 +695,8 @@
     "reading_gospel_ep_year1": "Matthew 20:1-16",
     "reading_ot_mp_year2": "1 Samuel 11:1-15",
     "reading_epistle_ep_year2": "Acts 8:1-13",
-    "reading_gospel_mp_year2": "Luke 22:63-71"
+    "reading_gospel_mp_year2": "Luke 22:63-71",
+    "day_of_season": 39
   },
   {
     "date": "2026-07-01",
@@ -674,7 +713,8 @@
     "reading_gospel_ep_year1": "Matthew 20:17-28",
     "reading_ot_mp_year2": "1 Samuel 12:1-6, 16-25",
     "reading_epistle_ep_year2": "Acts 8:14-25",
-    "reading_gospel_mp_year2": "Luke 23:1-12"
+    "reading_gospel_mp_year2": "Luke 23:1-12",
+    "day_of_season": 40
   },
   {
     "date": "2026-07-02",
@@ -691,7 +731,8 @@
     "reading_gospel_ep_year1": "Matthew 20:29-21:11",
     "reading_ot_mp_year2": "1 Samuel 13:5-18",
     "reading_epistle_ep_year2": "Acts 8:26-40",
-    "reading_gospel_mp_year2": "Luke 23:13-25"
+    "reading_gospel_mp_year2": "Luke 23:13-25",
+    "day_of_season": 41
   },
   {
     "date": "2026-07-03",
@@ -708,7 +749,8 @@
     "reading_gospel_ep_year1": "Matthew 21:12-22",
     "reading_ot_mp_year2": "1 Samuel 13:19-14:15",
     "reading_epistle_ep_year2": "Acts 9:1-9",
-    "reading_gospel_mp_year2": "Luke 23:26-31"
+    "reading_gospel_mp_year2": "Luke 23:26-31",
+    "day_of_season": 42
   },
   {
     "date": "2026-07-04",
@@ -725,7 +767,8 @@
     "reading_gospel_ep_year1": "Matthew 21:23-32",
     "reading_ot_mp_year2": "1 Samuel 14:16-30",
     "reading_epistle_ep_year2": "Acts 9:10-19a",
-    "reading_gospel_mp_year2": "Luke 23:32-43"
+    "reading_gospel_mp_year2": "Luke 23:32-43",
+    "day_of_season": 43
   },
   {
     "date": "2026-07-05",
@@ -742,7 +785,8 @@
     "reading_gospel_ep_year1": "Luke 12:13-21",
     "reading_ot_mp_year2": "1 Samuel 14:36-45",
     "reading_epistle_ep_year2": "Romans 5:1-11",
-    "reading_gospel_mp_year2": "Matthew 22:1-14"
+    "reading_gospel_mp_year2": "Matthew 22:1-14",
+    "day_of_season": 44
   },
   {
     "date": "2026-07-06",
@@ -759,7 +803,8 @@
     "reading_gospel_ep_year1": "Matthew 22:1-14",
     "reading_ot_mp_year2": "1 Samuel 15:1-3, 7-23",
     "reading_epistle_ep_year2": "Acts 9:19b-31",
-    "reading_gospel_mp_year2": "Luke 23:44-56a"
+    "reading_gospel_mp_year2": "Luke 23:44-56a",
+    "day_of_season": 45
   },
   {
     "date": "2026-07-07",
@@ -776,7 +821,8 @@
     "reading_gospel_ep_year1": "Matthew 22:15-33",
     "reading_ot_mp_year2": "1 Samuel 15:24-35",
     "reading_epistle_ep_year2": "Acts 9:32-43",
-    "reading_gospel_mp_year2": "Luke 23:56b-24:11"
+    "reading_gospel_mp_year2": "Luke 23:56b-24:11",
+    "day_of_season": 46
   },
   {
     "date": "2026-07-08",
@@ -793,7 +839,8 @@
     "reading_gospel_ep_year1": "Matthew 22:34-46",
     "reading_ot_mp_year2": "1 Samuel 16:1-13",
     "reading_epistle_ep_year2": "Acts 10:1-16",
-    "reading_gospel_mp_year2": "Luke 24:12-35"
+    "reading_gospel_mp_year2": "Luke 24:12-35",
+    "day_of_season": 47
   },
   {
     "date": "2026-07-09",
@@ -810,7 +857,8 @@
     "reading_gospel_ep_year1": "Matthew 23:1-12",
     "reading_ot_mp_year2": "1 Samuel 16:14-17:11",
     "reading_epistle_ep_year2": "Acts 10:17-33",
-    "reading_gospel_mp_year2": "Luke 24:36-53"
+    "reading_gospel_mp_year2": "Luke 24:36-53",
+    "day_of_season": 48
   },
   {
     "date": "2026-07-10",
@@ -827,7 +875,8 @@
     "reading_gospel_ep_year1": "Matthew 23:13-26",
     "reading_ot_mp_year2": "1 Samuel 17:17-30",
     "reading_epistle_ep_year2": "Acts 10:34-48",
-    "reading_gospel_mp_year2": "Mark 1:1-13"
+    "reading_gospel_mp_year2": "Mark 1:1-13",
+    "day_of_season": 49
   },
   {
     "date": "2026-07-11",
@@ -844,7 +893,8 @@
     "reading_gospel_ep_year1": "Matthew 23:27-39",
     "reading_ot_mp_year2": "1 Samuel 17:31-49",
     "reading_epistle_ep_year2": "Acts 11:1-18",
-    "reading_gospel_mp_year2": "Mark 1:14-28"
+    "reading_gospel_mp_year2": "Mark 1:14-28",
+    "day_of_season": 50
   },
   {
     "date": "2026-07-12",
@@ -861,7 +911,8 @@
     "reading_gospel_ep_year1": "Luke 12:32-40",
     "reading_ot_mp_year2": "1 Samuel 17:50-18:4",
     "reading_epistle_ep_year2": "Romans 10:4-17",
-    "reading_gospel_mp_year2": "Matthew 23:29-39"
+    "reading_gospel_mp_year2": "Matthew 23:29-39",
+    "day_of_season": 51
   },
   {
     "date": "2026-07-13",
@@ -878,7 +929,8 @@
     "reading_gospel_ep_year1": "Matthew 24:1-14",
     "reading_ot_mp_year2": "1 Samuel 18:5-16, 27b-30",
     "reading_epistle_ep_year2": "Acts 11:19-30",
-    "reading_gospel_mp_year2": "Mark 1:29-45"
+    "reading_gospel_mp_year2": "Mark 1:29-45",
+    "day_of_season": 52
   },
   {
     "date": "2026-07-14",
@@ -895,7 +947,8 @@
     "reading_gospel_ep_year1": "Matthew 24:15-31",
     "reading_ot_mp_year2": "1 Samuel 19:1-18",
     "reading_epistle_ep_year2": "Acts 12:1-17",
-    "reading_gospel_mp_year2": "Mark 2:1-12"
+    "reading_gospel_mp_year2": "Mark 2:1-12",
+    "day_of_season": 53
   },
   {
     "date": "2026-07-15",
@@ -912,7 +965,8 @@
     "reading_gospel_ep_year1": "Matthew 24:32-51",
     "reading_ot_mp_year2": "1 Samuel 20:1-23",
     "reading_epistle_ep_year2": "Acts 12:18-25",
-    "reading_gospel_mp_year2": "Mark 2:13-22"
+    "reading_gospel_mp_year2": "Mark 2:13-22",
+    "day_of_season": 54
   },
   {
     "date": "2026-07-16",
@@ -929,7 +983,8 @@
     "reading_gospel_ep_year1": "Matthew 25:1-13",
     "reading_ot_mp_year2": "1 Samuel 20:24-42",
     "reading_epistle_ep_year2": "Acts 13:1-12",
-    "reading_gospel_mp_year2": "Mark 2:23-3:6"
+    "reading_gospel_mp_year2": "Mark 2:23-3:6",
+    "day_of_season": 55
   },
   {
     "date": "2026-07-17",
@@ -946,7 +1001,8 @@
     "reading_gospel_ep_year1": "Matthew 25:14-30",
     "reading_ot_mp_year2": "1 Samuel 21:1-15",
     "reading_epistle_ep_year2": "Acts 13:13-25",
-    "reading_gospel_mp_year2": "Mark 3:7-19a"
+    "reading_gospel_mp_year2": "Mark 3:7-19a",
+    "day_of_season": 56
   },
   {
     "date": "2026-07-18",
@@ -963,7 +1019,8 @@
     "reading_gospel_ep_year1": "Matthew 25:31-46",
     "reading_ot_mp_year2": "1 Samuel 22:1-23",
     "reading_epistle_ep_year2": "Acts 13:26-43",
-    "reading_gospel_mp_year2": "Mark 3:19b-35"
+    "reading_gospel_mp_year2": "Mark 3:19b-35",
+    "day_of_season": 57
   },
   {
     "date": "2026-07-19",
@@ -980,7 +1037,8 @@
     "reading_gospel_ep_year1": "Luke 12:49-56",
     "reading_ot_mp_year2": "1 Samuel 23:7-18",
     "reading_epistle_ep_year2": "Romans 11:33-12:2",
-    "reading_gospel_mp_year2": "Matthew 25:14-30"
+    "reading_gospel_mp_year2": "Matthew 25:14-30",
+    "day_of_season": 58
   },
   {
     "date": "2026-07-20",
@@ -997,7 +1055,8 @@
     "reading_gospel_ep_year1": "Matthew 26:1-16",
     "reading_ot_mp_year2": "1 Samuel 24:1-22",
     "reading_epistle_ep_year2": "Acts 13:44-52",
-    "reading_gospel_mp_year2": "Mark 4:1-20"
+    "reading_gospel_mp_year2": "Mark 4:1-20",
+    "day_of_season": 59
   },
   {
     "date": "2026-07-21",
@@ -1014,7 +1073,8 @@
     "reading_gospel_ep_year1": "Matthew 26:17-25",
     "reading_ot_mp_year2": "1 Samuel 25:1-22",
     "reading_epistle_ep_year2": "Acts 14:1-18",
-    "reading_gospel_mp_year2": "Mark 4:21-34"
+    "reading_gospel_mp_year2": "Mark 4:21-34",
+    "day_of_season": 60
   },
   {
     "date": "2026-07-22",
@@ -1031,7 +1091,8 @@
     "reading_gospel_ep_year1": "John 20:11-18",
     "reading_ot_mp_year2": "Judith 9:1, 11-14",
     "reading_epistle_ep_year2": "2 Corinthians 5:14-18",
-    "reading_gospel_mp_year2": "John 20:11-18"
+    "reading_gospel_mp_year2": "John 20:11-18",
+    "day_of_season": 61
   },
   {
     "date": "2026-07-23",
@@ -1048,7 +1109,8 @@
     "reading_gospel_ep_year1": "Matthew 26:26-35",
     "reading_ot_mp_year2": "1 Samuel 28:3-20",
     "reading_epistle_ep_year2": "Acts 15:1-11",
-    "reading_gospel_mp_year2": "Mark 5:1-20"
+    "reading_gospel_mp_year2": "Mark 5:1-20",
+    "day_of_season": 62
   },
   {
     "date": "2026-07-24",
@@ -1065,7 +1127,8 @@
     "reading_gospel_ep_year1": "Matthew 26:36-46",
     "reading_ot_mp_year2": "1 Samuel 31:1-13",
     "reading_epistle_ep_year2": "Acts 15:12-21",
-    "reading_gospel_mp_year2": "Mark 5:21-43"
+    "reading_gospel_mp_year2": "Mark 5:21-43",
+    "day_of_season": 63
   },
   {
     "date": "2026-07-25",
@@ -1082,7 +1145,8 @@
     "reading_gospel_ep_year1": "Matthew 20:20-28",
     "reading_ot_mp_year2": "Jeremiah 45:1-5",
     "reading_epistle_ep_year2": "Acts 11:27-12:3",
-    "reading_gospel_mp_year2": "Matthew 20:20-28"
+    "reading_gospel_mp_year2": "Matthew 20:20-28",
+    "day_of_season": 64
   },
   {
     "date": "2026-07-26",
@@ -1099,7 +1163,8 @@
     "reading_gospel_ep_year1": "Luke 13:10-17",
     "reading_ot_mp_year2": "2 Samuel 1:17-27",
     "reading_epistle_ep_year2": "Romans 12:9-21",
-    "reading_gospel_mp_year2": "Matthew 25:31-46"
+    "reading_gospel_mp_year2": "Matthew 25:31-46",
+    "day_of_season": 65
   },
   {
     "date": "2026-07-27",
@@ -1116,7 +1181,8 @@
     "reading_gospel_ep_year1": "Matthew 26:36-46",
     "reading_ot_mp_year2": "2 Samuel 2:1-11",
     "reading_epistle_ep_year2": "Acts 15:36-16:5",
-    "reading_gospel_mp_year2": "Mark 6:14-29"
+    "reading_gospel_mp_year2": "Mark 6:14-29",
+    "day_of_season": 66
   },
   {
     "date": "2026-07-28",
@@ -1133,7 +1199,8 @@
     "reading_gospel_ep_year1": "Matthew 26:47-56",
     "reading_ot_mp_year2": "2 Samuel 3:6-21",
     "reading_epistle_ep_year2": "Acts 16:6-15",
-    "reading_gospel_mp_year2": "Mark 6:30-46"
+    "reading_gospel_mp_year2": "Mark 6:30-46",
+    "day_of_season": 67
   },
   {
     "date": "2026-07-29",
@@ -1150,7 +1217,8 @@
     "reading_gospel_ep_year1": "Matthew 26:57-68",
     "reading_ot_mp_year2": "2 Samuel 3:22-39",
     "reading_epistle_ep_year2": "Acts 16:16-24",
-    "reading_gospel_mp_year2": "Mark 6:47-56"
+    "reading_gospel_mp_year2": "Mark 6:47-56",
+    "day_of_season": 68
   },
   {
     "date": "2026-07-30",
@@ -1167,7 +1235,8 @@
     "reading_gospel_ep_year1": "Matthew 26:69-75",
     "reading_ot_mp_year2": "2 Samuel 4:1-12",
     "reading_epistle_ep_year2": "Acts 16:25-40",
-    "reading_gospel_mp_year2": "Mark 7:1-23"
+    "reading_gospel_mp_year2": "Mark 7:1-23",
+    "day_of_season": 69
   },
   {
     "date": "2026-07-31",
@@ -1184,6 +1253,7 @@
     "reading_gospel_ep_year1": "Matthew 27:1-10",
     "reading_ot_mp_year2": "2 Samuel 5:1-12",
     "reading_epistle_ep_year2": "Acts 17:1-15",
-    "reading_gospel_mp_year2": "Mark 7:24-37"
+    "reading_gospel_mp_year2": "Mark 7:24-37",
+    "day_of_season": 70
   }
 ]

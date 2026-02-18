@@ -14,7 +14,8 @@
     "reading_gospel_ep_year1": "",
     "reading_ot_mp_year2": "Jonah 3:1-4:11",
     "reading_epistle_ep_year2": "Hebrews 12:1-14",
-    "reading_gospel_mp_year2": "Luke 15:11-32"
+    "reading_gospel_mp_year2": "Luke 15:11-32",
+    "day_of_season": 1
   },
   {
     "date": "February 19, 2026",
@@ -31,10 +32,11 @@
     "reading_gospel_ep_year1": "",
     "reading_ot_mp_year2": "Deuteronomy 7:6-11",
     "reading_epistle_ep_year2": "Titus 1:1-16",
-    "reading_gospel_mp_year2": "John 1:29-34"
+    "reading_gospel_mp_year2": "John 1:29-34",
+    "day_of_season": 2
   },
   {
-  "date": "February 20, 2026",
+    "date": "February 20, 2026",
     "title": "Friday after Ash Wednesday",
     "season": "Lent",
     "liturgicalColor": "purple",
@@ -48,10 +50,11 @@
     "reading_gospel_ep_year1": "",
     "reading_ot_mp_year2": "Deuteronomy 7:12-16",
     "reading_epistle_ep_year2": "Titus 2:1-15",
-    "reading_gospel_mp_year2": "John 1:35-42"
+    "reading_gospel_mp_year2": "John 1:35-42",
+    "day_of_season": 3
   },
   {
-   "date": "February 21, 2026",
+    "date": "February 21, 2026",
     "title": "Saturday after Ash Wednesday",
     "season": "Lent",
     "liturgicalColor": "purple",
@@ -65,10 +68,11 @@
     "reading_gospel_ep_year1": "",
     "reading_ot_mp_year2": "Deuteronomy 7:17-26",
     "reading_epistle_ep_year2": "Titus 3:1-15",
-    "reading_gospel_mp_year2": "John 1:43-51"
+    "reading_gospel_mp_year2": "John 1:43-51",
+    "day_of_season": 4
   },
   {
-   "date": "February 22, 2026",
+    "date": "February 22, 2026",
     "title": "First Sunday in Lent",
     "season": "Lent",
     "liturgicalColor": "purple",
@@ -82,10 +86,11 @@
     "reading_gospel_ep_year1": "",
     "reading_ot_mp_year2": "Deuteronomy 8:1-10",
     "reading_epistle_ep_year2": "1 Corinthians 1:17-31",
-    "reading_gospel_mp_year2": "Matthew 4:1-11"
+    "reading_gospel_mp_year2": "Matthew 4:1-11",
+    "day_of_season": 5
   },
   {
-   "date": "February 23, 2026",
+    "date": "February 23, 2026",
     "title": "Monday in 1 Lent",
     "season": "Lent",
     "liturgicalColor": "purple",
@@ -99,10 +104,11 @@
     "reading_gospel_ep_year1": "",
     "reading_ot_mp_year2": "Deuteronomy 8:11-20",
     "reading_epistle_ep_year2": "Hebrews 2:11-18",
-    "reading_gospel_mp_year2": "John 2:1-12"
+    "reading_gospel_mp_year2": "John 2:1-12",
+    "day_of_season": 6
   },
   {
-   "date": "February 24, 2026",
+    "date": "February 24, 2026",
     "title": "Tuesday in 1 Lent",
     "season": "Lent",
     "liturgicalColor": "purple",
@@ -116,10 +122,11 @@
     "reading_gospel_ep_year1": "",
     "reading_ot_mp_year2": "Deuteronomy 9:4-12",
     "reading_epistle_ep_year2": "Hebrews 3:1-11",
-    "reading_gospel_mp_year2": "John 2:13-22"
+    "reading_gospel_mp_year2": "John 2:13-22",
+    "day_of_season": 7
   },
   {
-   "date": "February 25, 2026",
+    "date": "February 25, 2026",
     "title": "Wednesday in 1 Lent",
     "season": "Lent",
     "liturgicalColor": "purple",
@@ -133,10 +140,11 @@
     "reading_gospel_ep_year1": "",
     "reading_ot_mp_year2": "Deuteronomy 9:13-21",
     "reading_epistle_ep_year2": "Hebrews 3:12-19",
-    "reading_gospel_mp_year2": "John 2:23-3:15"
+    "reading_gospel_mp_year2": "John 2:23-3:15",
+    "day_of_season": 8
   },
   {
-   "date": "February 26, 2026",
+    "date": "February 26, 2026",
     "title": "Thursday in 1 Lent",
     "season": "Lent",
     "liturgicalColor": "purple",
@@ -150,7 +158,8 @@
     "reading_gospel_ep_year1": "",
     "reading_ot_mp_year2": "Deuteronomy 9:23-10:5",
     "reading_epistle_ep_year2": "Hebrews 4:1-10",
-    "reading_gospel_mp_year2": "John 3:16-21"
+    "reading_gospel_mp_year2": "John 3:16-21",
+    "day_of_season": 9
   },
   {
     "date": "February 27, 2026",
@@ -167,7 +176,8 @@
     "reading_gospel_ep_year1": "",
     "reading_ot_mp_year2": "Deuteronomy 10:12-22",
     "reading_epistle_ep_year2": "Hebrews 4:11-16",
-    "reading_gospel_mp_year2": "John 3:22-36"
+    "reading_gospel_mp_year2": "John 3:22-36",
+    "day_of_season": 10
   },
   {
     "date": "February 28, 2026",
@@ -184,7 +194,8 @@
     "reading_gospel_ep_year1": "",
     "reading_ot_mp_year2": "Deuteronomy 11:18-28",
     "reading_epistle_ep_year2": "Hebrews 5:1-10",
-    "reading_gospel_mp_year2": "John 4:1-26"
+    "reading_gospel_mp_year2": "John 4:1-26",
+    "day_of_season": 11
   },
   {
     "date": "March 1, 2026",
@@ -201,7 +212,8 @@
     "reading_gospel_ep_year1": "",
     "reading_ot_mp_year2": "Jeremiah 1:1-10",
     "reading_epistle_ep_year2": "1 Corinthians 3:11-23",
-    "reading_gospel_mp_year2": "Mark 3:31-4:9"
+    "reading_gospel_mp_year2": "Mark 3:31-4:9",
+    "day_of_season": 12
   },
   {
     "date": "March 2, 2026",
@@ -218,7 +230,8 @@
     "reading_gospel_ep_year1": "",
     "reading_ot_mp_year2": "Jeremiah 1:11-19",
     "reading_epistle_ep_year2": "Romans 1:1-15",
-    "reading_gospel_mp_year2": "John 4:27-42"
+    "reading_gospel_mp_year2": "John 4:27-42",
+    "day_of_season": 13
   },
   {
     "date": "March 3, 2026",
@@ -235,7 +248,8 @@
     "reading_gospel_ep_year1": "",
     "reading_ot_mp_year2": "Jeremiah 2:1-13",
     "reading_epistle_ep_year2": "Romans 1:16-25",
-    "reading_gospel_mp_year2": "John 4:43-54"
+    "reading_gospel_mp_year2": "John 4:43-54",
+    "day_of_season": 14
   },
   {
     "date": "March 4, 2026",
@@ -252,7 +266,8 @@
     "reading_gospel_ep_year1": "",
     "reading_ot_mp_year2": "Jeremiah 3:6-18",
     "reading_epistle_ep_year2": "Romans 1:28-2:11",
-    "reading_gospel_mp_year2": "John 5:1-18"
+    "reading_gospel_mp_year2": "John 5:1-18",
+    "day_of_season": 15
   },
   {
     "date": "March 5, 2026",
@@ -269,7 +284,8 @@
     "reading_gospel_ep_year1": "",
     "reading_ot_mp_year2": "Jeremiah 4:9-10, 19-28",
     "reading_epistle_ep_year2": "Romans 2:12-24",
-    "reading_gospel_mp_year2": "John 5:19-29"
+    "reading_gospel_mp_year2": "John 5:19-29",
+    "day_of_season": 16
   },
   {
     "date": "March 6, 2026",
@@ -286,7 +302,8 @@
     "reading_gospel_ep_year1": "",
     "reading_ot_mp_year2": "Jeremiah 5:1-9",
     "reading_epistle_ep_year2": "Romans 2:25-3:18",
-    "reading_gospel_mp_year2": "John 5:30-47"
+    "reading_gospel_mp_year2": "John 5:30-47",
+    "day_of_season": 17
   },
   {
     "date": "March 7, 2026",
@@ -303,7 +320,8 @@
     "reading_gospel_ep_year1": "",
     "reading_ot_mp_year2": "Jeremiah 5:20-31",
     "reading_epistle_ep_year2": "Romans 3:19-31",
-    "reading_gospel_mp_year2": "John 7:1-13"
+    "reading_gospel_mp_year2": "John 7:1-13",
+    "day_of_season": 18
   },
   {
     "date": "March 8, 2026",
@@ -320,7 +338,8 @@
     "reading_gospel_ep_year1": "",
     "reading_ot_mp_year2": "Jeremiah 6:9-15",
     "reading_epistle_ep_year2": "1 Corinthians 6:12-20",
-    "reading_gospel_mp_year2": "Mark 5:1-20"
+    "reading_gospel_mp_year2": "Mark 5:1-20",
+    "day_of_season": 19
   },
   {
     "date": "March 9, 2026",
@@ -337,7 +356,8 @@
     "reading_gospel_ep_year1": "",
     "reading_ot_mp_year2": "Jeremiah 7:1-15",
     "reading_epistle_ep_year2": "Romans 4:1-12",
-    "reading_gospel_mp_year2": "John 7:14-36"
+    "reading_gospel_mp_year2": "John 7:14-36",
+    "day_of_season": 20
   },
   {
     "date": "March 10, 2026",
@@ -354,7 +374,8 @@
     "reading_gospel_ep_year1": "",
     "reading_ot_mp_year2": "Jeremiah 7:21-34",
     "reading_epistle_ep_year2": "Romans 4:13-25",
-    "reading_gospel_mp_year2": "John 7:37-52"
+    "reading_gospel_mp_year2": "John 7:37-52",
+    "day_of_season": 21
   },
   {
     "date": "March 11, 2026",
@@ -371,7 +392,8 @@
     "reading_gospel_ep_year1": "",
     "reading_ot_mp_year2": "Jeremiah 8:18-9:6",
     "reading_epistle_ep_year2": "Romans 5:1-11",
-    "reading_gospel_mp_year2": "John 8:12-20"
+    "reading_gospel_mp_year2": "John 8:12-20",
+    "day_of_season": 22
   },
   {
     "date": "March 12, 2026",
@@ -388,7 +410,8 @@
     "reading_gospel_ep_year1": "",
     "reading_ot_mp_year2": "Jeremiah 10:11-24",
     "reading_epistle_ep_year2": "Romans 5:12-21",
-    "reading_gospel_mp_year2": "John 8:21-32"
+    "reading_gospel_mp_year2": "John 8:21-32",
+    "day_of_season": 23
   },
   {
     "date": "March 13, 2026",
@@ -405,7 +428,8 @@
     "reading_gospel_ep_year1": "",
     "reading_ot_mp_year2": "Jeremiah 11:1-8, 14-20",
     "reading_epistle_ep_year2": "Romans 6:1-11",
-    "reading_gospel_mp_year2": "John 8:33-47"
+    "reading_gospel_mp_year2": "John 8:33-47",
+    "day_of_season": 24
   },
   {
     "date": "March 14, 2026",
@@ -422,7 +446,8 @@
     "reading_gospel_ep_year1": "",
     "reading_ot_mp_year2": "Jeremiah 13:1-11",
     "reading_epistle_ep_year2": "Romans 6:12-23",
-    "reading_gospel_mp_year2": "John 8:47-59"
+    "reading_gospel_mp_year2": "John 8:47-59",
+    "day_of_season": 25
   },
   {
     "date": "March 15, 2026",
@@ -439,7 +464,8 @@
     "reading_gospel_ep_year1": "",
     "reading_ot_mp_year2": "Jeremiah 14:1-9, 17-22",
     "reading_epistle_ep_year2": "Galatians 4:21-5:1",
-    "reading_gospel_mp_year2": "Mark 8:11-21"
+    "reading_gospel_mp_year2": "Mark 8:11-21",
+    "day_of_season": 26
   },
   {
     "date": "March 16, 2026",
@@ -456,7 +482,8 @@
     "reading_gospel_ep_year1": "",
     "reading_ot_mp_year2": "Jeremiah 16:10-21",
     "reading_epistle_ep_year2": "Romans 7:1-12",
-    "reading_gospel_mp_year2": "John 6:1-15"
+    "reading_gospel_mp_year2": "John 6:1-15",
+    "day_of_season": 27
   },
   {
     "date": "March 17, 2026",
@@ -473,7 +500,8 @@
     "reading_gospel_ep_year1": "",
     "reading_ot_mp_year2": "Jeremiah 17:19-27",
     "reading_epistle_ep_year2": "Romans 7:13-25",
-    "reading_gospel_mp_year2": "John 6:16-27"
+    "reading_gospel_mp_year2": "John 6:16-27",
+    "day_of_season": 28
   },
   {
     "date": "March 18, 2026",
@@ -490,7 +518,8 @@
     "reading_gospel_ep_year1": "",
     "reading_ot_mp_year2": "Jeremiah 18:1-11",
     "reading_epistle_ep_year2": "Romans 8:1-11",
-    "reading_gospel_mp_year2": "John 6:27-40"
+    "reading_gospel_mp_year2": "John 6:27-40",
+    "day_of_season": 29
   },
   {
     "date": "March 19, 2026",
@@ -507,7 +536,8 @@
     "reading_gospel_ep_year1": "",
     "reading_ot_mp_year2": "2 Samuel 7:4, 8-16",
     "reading_epistle_ep_year2": "Romans 4:13-18",
-    "reading_gospel_mp_year2": "Luke 2:41-52"
+    "reading_gospel_mp_year2": "Luke 2:41-52",
+    "day_of_season": 30
   },
   {
     "date": "March 20, 2026",
@@ -524,7 +554,8 @@
     "reading_gospel_ep_year1": "",
     "reading_ot_mp_year2": "Jeremiah 23:1-8",
     "reading_epistle_ep_year2": "Romans 8:28-39",
-    "reading_gospel_mp_year2": "John 6:52-59"
+    "reading_gospel_mp_year2": "John 6:52-59",
+    "day_of_season": 31
   },
   {
     "date": "March 21, 2026",
@@ -541,7 +572,8 @@
     "reading_gospel_ep_year1": "",
     "reading_ot_mp_year2": "Jeremiah 23:9-15",
     "reading_epistle_ep_year2": "Romans 9:1-18",
-    "reading_gospel_mp_year2": "John 6:60-71"
+    "reading_gospel_mp_year2": "John 6:60-71",
+    "day_of_season": 32
   },
   {
     "date": "March 22, 2026",
@@ -558,7 +590,8 @@
     "reading_gospel_ep_year1": "",
     "reading_ot_mp_year2": "Jeremiah 23:16-32",
     "reading_epistle_ep_year2": "1 Corinthians 9:19-27",
-    "reading_gospel_mp_year2": "Mark 8:31-9:1"
+    "reading_gospel_mp_year2": "Mark 8:31-9:1",
+    "day_of_season": 33
   },
   {
     "date": "March 23, 2026",
@@ -575,7 +608,8 @@
     "reading_gospel_ep_year1": "",
     "reading_ot_mp_year2": "Jeremiah 24:1-10",
     "reading_epistle_ep_year2": "Romans 9:19-33",
-    "reading_gospel_mp_year2": "John 9:1-17"
+    "reading_gospel_mp_year2": "John 9:1-17",
+    "day_of_season": 34
   },
   {
     "date": "March 24, 2026",
@@ -597,7 +631,8 @@
     "psalms_ep_eve": "Psalm 8, Psalm 138",
     "reading_ot_ep_eve": "Genesis 3:1-15",
     "reading_epistle_ep_eve": "",
-    "reading_gospel_ep_eve": ""
+    "reading_gospel_ep_eve": "",
+    "day_of_season": 35
   },
   {
     "date": "March 25, 2026",
@@ -614,7 +649,8 @@
     "reading_gospel_ep_year1": "",
     "reading_ot_mp_year2": "Genesis 3:1-15",
     "reading_epistle_ep_year2": "Romans 5:12-21",
-    "reading_gospel_mp_year2": "Luke 1:26-38"
+    "reading_gospel_mp_year2": "Luke 1:26-38",
+    "day_of_season": 36
   },
   {
     "date": "March 26, 2026",
@@ -631,7 +667,8 @@
     "reading_gospel_ep_year1": "",
     "reading_ot_mp_year2": "Jeremiah 26:1-16",
     "reading_epistle_ep_year2": "Romans 11:1-12",
-    "reading_gospel_mp_year2": "John 10:19-42"
+    "reading_gospel_mp_year2": "John 10:19-42",
+    "day_of_season": 37
   },
   {
     "date": "March 27, 2026",
@@ -648,7 +685,8 @@
     "reading_gospel_ep_year1": "",
     "reading_ot_mp_year2": "Jeremiah 29:1, 4-13",
     "reading_epistle_ep_year2": "Romans 11:13-24",
-    "reading_gospel_mp_year2": "John 11:1-27"
+    "reading_gospel_mp_year2": "John 11:1-27",
+    "day_of_season": 38
   },
   {
     "date": "March 28, 2026",
@@ -665,7 +703,8 @@
     "reading_gospel_ep_year1": "",
     "reading_ot_mp_year2": "Jeremiah 31:27-34",
     "reading_epistle_ep_year2": "Romans 11:25-36",
-    "reading_gospel_mp_year2": "John 11:28-44"
+    "reading_gospel_mp_year2": "John 11:28-44",
+    "day_of_season": 39
   },
   {
     "date": "March 29, 2026",
@@ -682,7 +721,8 @@
     "reading_gospel_ep_year1": "",
     "reading_ot_mp_year2": "Zechariah 9:9-12; 12:9-11; 13:1, 7-9",
     "reading_epistle_ep_year2": "1 Timothy 6:12-16",
-    "reading_gospel_mp_year2": "Matthew 21:12-17"
+    "reading_gospel_mp_year2": "Matthew 21:12-17",
+    "day_of_season": 40
   },
   {
     "date": "March 30, 2026",
@@ -699,7 +739,8 @@
     "reading_gospel_ep_year1": "",
     "reading_ot_mp_year2": "Jeremiah 12:1-16",
     "reading_epistle_ep_year2": "Philippians 3:1-14",
-    "reading_gospel_mp_year2": "John 12:9-19"
+    "reading_gospel_mp_year2": "John 12:9-19",
+    "day_of_season": 41
   },
   {
     "date": "March 31, 2026",
@@ -716,7 +757,8 @@
     "reading_gospel_ep_year1": "",
     "reading_ot_mp_year2": "Jeremiah 15:10-21",
     "reading_epistle_ep_year2": "Philippians 3:15-21",
-    "reading_gospel_mp_year2": "John 12:20-26"
+    "reading_gospel_mp_year2": "John 12:20-26",
+    "day_of_season": 42
   },
   {
     "date": "April 1, 2026",
@@ -733,7 +775,8 @@
     "reading_gospel_ep_year1": "",
     "reading_ot_mp_year2": "Jeremiah 17:5-10, 14-17",
     "reading_epistle_ep_year2": "Philippians 4:1-13",
-    "reading_gospel_mp_year2": "John 12:27-36"
+    "reading_gospel_mp_year2": "John 12:27-36",
+    "day_of_season": 43
   },
   {
     "date": "April 2, 2026",
@@ -750,7 +793,8 @@
     "reading_gospel_ep_year1": "",
     "reading_ot_mp_year2": "Jeremiah 20:7-11",
     "reading_epistle_ep_year2": "1 Corinthians 10:14-17; 11:27-32",
-    "reading_gospel_mp_year2": "John 17:1-11"
+    "reading_gospel_mp_year2": "John 17:1-11",
+    "day_of_season": 44
   },
   {
     "date": "April 3, 2026",
@@ -767,7 +811,8 @@
     "reading_gospel_ep_year1": "",
     "reading_ot_mp_year2": "Wisdom 1:16-2:1, 12-22",
     "reading_epistle_ep_year2": "1 Peter 1:10-20",
-    "reading_gospel_mp_year2": "John 19:38-42"
+    "reading_gospel_mp_year2": "John 19:38-42",
+    "day_of_season": 45
   },
   {
     "date": "April 4, 2026",
@@ -784,6 +829,7 @@
     "reading_gospel_ep_year1": "",
     "reading_ot_mp_year2": "Job 19:21-27a",
     "reading_epistle_ep_year2": "Romans 8:1-11",
-    "reading_gospel_mp_year2": "Hebrews 4:1-16"
+    "reading_gospel_mp_year2": "Hebrews 4:1-16",
+    "day_of_season": 46
   }
 ]

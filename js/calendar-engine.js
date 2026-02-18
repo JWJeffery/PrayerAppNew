@@ -18,7 +18,6 @@ class CalendarEngine {
         { start: new Date("2026/08/01"), end: new Date("2026/09/30"), season: "ordinary", file: "ordinary2.json" },
         { start: new Date("2026/10/01"), end: new Date("2026/11/28"), season: "ordinary", file: "ordinary3.json" },
         { start: new Date("2026/11/29"), end: new Date("2026/12/24"), season: "advent", file: "advent.json" },
-        { start: new Date("2026/11/29"), end: new Date("2026/12/24"), season: "advent", file: "advent.json" },
         { start: new Date("2026/12/25"), end: new Date("2027/01/05"), season: "christmas", file: "christmas.json" },
         { start: new Date("2027/01/06"), end: new Date("2027/02/09"), season: "epiphany", file: "epiphany.json" },
         { start: new Date("2027/02/10"), end: new Date("2027/03/27"), season: "lent", file: "lent.json" },
@@ -79,8 +78,36 @@ class CalendarEngine {
     }
 
     static getLiturgicalYear(date) {
+        // The BCP two-year cycle alternates at each Advent Sunday.
+        // Year 2: Advent 2025 (Nov 30 2025) through Nov 28 2026
+        // Year 1: Advent 2026 (Nov 29 2026) through Nov 27 2027
+        // Year 2: Advent 2027 (Nov 28 2027) through Nov 26 2028
+        // ...and so on, alternating each year.
+        // We calculate which cycle we're in by counting Advent Sundays from 2026.
         const advent2026 = new Date("2026/11/29");
-        return (date >= advent2026) ? "year1" : "year2";
+        if (date < advent2026) return "year2";
+        // Count how many full liturgical years have elapsed since Advent 2026
+        // Each liturgical year is ~52 weeks. We find the Advent Sunday for the
+        // current year by checking the SEASON_RANGES array.
+        const seasonInfo = this.getSeasonAndFile(date);
+        const adventStart = this.SEASON_RANGES.find(r =>
+            r.season === "advent" &&
+            r.start <= date &&
+            date <= new Date(r.start.getFullYear(), 11, 31)
+        );
+        // Find which advent period we are in or just passed
+        const adventRanges = this.SEASON_RANGES.filter(r => r.season === "advent");
+        let currentAdventIndex = 0;
+        for (let i = 0; i < adventRanges.length; i++) {
+            if (date >= adventRanges[i].start) {
+                currentAdventIndex = i;
+            }
+        }
+        // Advent 2026 is index 1 in our array (0 = Advent 2025)
+        // Even offsets from Advent 2026 = year1, odd = year2
+        const advent2025Index = 0;
+        const offsetFromAdvent2026 = currentAdventIndex - 1;
+        return (offsetFromAdvent2026 % 2 === 0) ? "year1" : "year2";
     }
 
     /**
@@ -119,33 +146,64 @@ class CalendarEngine {
         }
     }
 
+    static getSeasonStartDate(targetDate) {
+        const date = new Date(targetDate.getFullYear(), targetDate.getMonth(), targetDate.getDate());
+        for (const range of this.SEASON_RANGES) {
+            // For ordinary2 and ordinary3, return the start of ordinary1 for that year
+            // so that day_of_season is continuous across all three ordinary files
+            if (date >= range.start && date <= range.end) {
+                if (range.file === 'ordinary2.json' || range.file === 'ordinary3.json') {
+                    // Find the ordinary1 range for the same year
+                    const ordinary1 = this.SEASON_RANGES.find(r =>
+                        r.file === 'ordinary1.json' &&
+                        r.start.getFullYear() === range.start.getFullYear()
+                    );
+                    return ordinary1 ? ordinary1.start : range.start;
+                }
+                return range.start;
+            }
+        }
+        return null;
+    }
+
     static findEntry(data, date, fileName) {
         const iso = this.formatDateISO(date);
         const long = this.formatDateForLookup(date);
 
-        // First try exact match (ISO or long format)
+        // Priority 1: Exact ISO or long-format match (legacy 2026 path)
         let entry = data.find(d => d.date === iso || d.date === long);
-
-        // If no exact match, try month-day only (perpetual calendar fallback)
-        // This allows christmas.json, advent.json etc. to serve any year
-        if (!entry) {
-            const mmdd = iso.slice(5); // "MM-DD"
-            const longNoYear = long.replace(/,\s*\d{4}$/, '').trim(); // "December 25"
-            entry = data.find(d => {
-                if (!d.date) return false;
-                const dIso = d.date.length === 10 ? d.date.slice(5) : null;
-                const dLong = d.date.replace(/,\s*\d{4}$/, '').trim();
-                return dIso === mmdd || dLong === longNoYear;
-            });
-        }
-
         if (entry) {
-            console.log(`[Calendar Engine] Found match for ${iso} in ${fileName}`);
+            console.log(`[Calendar Engine] Exact match for ${iso} in ${fileName}`);
             return entry;
-        } else {
-            console.warn(`[Calendar Engine] No match for ${iso} in ${fileName} - using index 0 fallback.`);
-            return data[0];
         }
+
+        // Priority 2: day_of_season offset match (perpetual moveable seasons)
+        const seasonStart = this.getSeasonStartDate(date);
+        if (seasonStart) {
+            const dayOfSeason = Math.floor((date - seasonStart) / 86400000) + 1;
+            entry = data.find(d => d.day_of_season === dayOfSeason);
+            if (entry) {
+                console.log(`[Calendar Engine] Offset match day ${dayOfSeason} for ${iso} in ${fileName}`);
+                return entry;
+            }
+        }
+
+        // Priority 3: Month-day match (fixed feasts — christmas, epiphany, sanctoral)
+        const mmdd = iso.slice(5);
+        const longNoYear = long.replace(/,\s*\d{4}$/, '').trim();
+        entry = data.find(d => {
+            if (!d.date) return false;
+            const dIso = d.date.length === 10 ? d.date.slice(5) : null;
+            const dLong = d.date.replace(/,\s*\d{4}$/, '').trim();
+            return dIso === mmdd || dLong === longNoYear;
+        });
+        if (entry) {
+            console.log(`[Calendar Engine] Month-day match for ${iso} in ${fileName}`);
+            return entry;
+        }
+
+        console.warn(`[Calendar Engine] No match for ${iso} in ${fileName} - using index 0 fallback.`);
+        return data[0];
     }
 }
 
