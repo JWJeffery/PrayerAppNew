@@ -534,7 +534,11 @@ const data = await loadSeasonalData(file);
 if (!data.length) return { title: "No data available", liturgicalColor: "green", antiphon: "", psalms_morning: "", reading_ot_morning: "", reading_epistle_morning: "", reading_gospel_morning: "", psalms_evening: "", reading_ot_evening: "", reading_epistle_evening: "", reading_gospel_evening: "", collect: "collect-default-ferial" };
 const lookupLong = formatDateForLookup(targetDate);
 const lookupISO = targetDate.toISOString().split('T')[0];
-const entry = data.find(d => d.date === lookupLong || d.date === lookupISO);
+const entry = data.find(d => 
+    d.date === lookupLong || 
+    d.date === lookupISO || 
+    new Date(d.date).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' }) === lookupLong
+);
 if (entry) {
   console.log(`Found match for ${lookupLong} in ${file}`);
   return entry;
