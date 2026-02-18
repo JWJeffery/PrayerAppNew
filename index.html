@@ -31,14 +31,6 @@
         overflow-y: hidden;
         transition: all 0.3s;
     }
-
-
-
-
-
-
-
-
     #mode-selection {
         text-align: center;
         max-width: 600px;
@@ -60,14 +52,6 @@
         transition: background 0.2s;
     }
     .mode-btn:hover { background: #9b59b6; }
-
-
-
-
-
-
-
-
     #daily-office-section { display: none; position: absolute; top: 0; left: 0; width: 100%; height: 100vh; flex-direction: row; }
     #settings-panel {
         width: 300px;
@@ -103,14 +87,6 @@
         margin-left: 15px;
         margin-top: 10px;
     }
-
-
-
-
-
-
-
-
     #main-content {
         margin-left: 300px;
         padding: 40px;
@@ -141,24 +117,8 @@
         text-align: left;
         border-left: 5px solid var(--accent);
     }
-
-
-
-
-
-
-
-
     h1 { font-size: 2.5em; letter-spacing: 0.05em; margin-bottom: 0.5em; color: var(--text-color); }
     h2 { font-size: 2em; color: var(--accent); border-bottom: 1px solid var(--gold); padding-bottom: 10px; margin-top: 0; }
-
-
-
-
-
-
-
-
     .rubric-text {
         color: var(--accent);
         font-family: 'Georgia', serif;
@@ -173,14 +133,6 @@
         padding-bottom: 2px;
         width: 100%;
     }
-
-
-
-
-
-
-
-
     .passage-reference {
         font-size: 1.1em;
         font-style: italic;
@@ -188,14 +140,6 @@
         margin: 8px 0 12px 0;
         font-weight: normal;
     }
-
-
-
-
-
-
-
-
     .component-text {
         font-size: 1.2em;
         line-height: 1.6;
@@ -205,49 +149,17 @@
         word-wrap: break-word;
         overflow: visible;
     }
-
-
-
-
-
-
-
-
     .psalm-verse { display: block; margin-bottom: 8px; font-size: 1.15em; }
     .verse-num { font-size: 0.65em; color: var(--gold); vertical-align: super; margin-right: 8px; opacity: 0.8; }
-
-
-
-
-
-
-
-
     .saint-section { margin-top: 60px; border-top: 2px double var(--accent); padding-top: 40px; }
     .saint-grid { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; }
     .saint-box { background: var(--container-bg); border-top: 5px solid var(--gold); padding: 20px; width: 240px; box-shadow: 0 4px 12px rgba(0,0,0,0.15); text-align: left; border-radius: 0 0 6px 6px; }
-
-
-
-
-
-
-
-
     .ordo-control { background: #222; border: 1px solid var(--gold); padding: 15px; border-radius: 4px; margin-bottom: 20px; text-align: center; width: 250px; box-sizing: border-box; }
     .ordo-date { display: block; color: var(--gold); font-weight: bold; margin: 10px 0; font-size: 1.1em; white-space: normal; word-break: break-word; }
     .ordo-buttons { display: flex; justify-content: center; gap: 5px; }
     .ordo-btn { background: none; border: 1px solid var(--gold); color: var(--gold); padding: 5px 15px; cursor: pointer; transition: background 0.2s; }
     .ordo-btn:hover { background: rgba(212, 175, 55, 0.2); }
     select { width: 100%; padding: 10px; background: #333; color: white; border: 1px solid #555; border-radius: 4px; }
-
-
-
-
-
-
-
-
     #individual-prayers-section {
         display: none;
         text-align: center;
@@ -271,8 +183,6 @@
     #prayer-display .office-container {
         border-left: none; /* Remove left border for prayers mode */
     }
-
-
 /* ============================================
    PRINT STYLES
    ============================================ */
@@ -287,7 +197,6 @@
     .saint-section {
         display: none !important;
     }
-    
     /* Reset body styles for print */
     body {
         background: white !important;
@@ -296,7 +205,6 @@
         padding: 0;
         font-size: 12pt;
     }
-    
     /* Main content takes full width */
     #main-content {
         margin-left: 0 !important;
@@ -304,7 +212,6 @@
         width: 100% !important;
         max-width: 100% !important;
     }
-    
     /* Office container clean for print */
     .office-container {
         background: white !important;
@@ -314,7 +221,6 @@
         max-width: 100% !important;
         page-break-inside: avoid;
     }
-    
     /* Typography optimized for print */
     h1 {
         font-size: 18pt;
@@ -322,7 +228,6 @@
         margin-bottom: 0.25in;
         page-break-after: avoid;
     }
-    
     h2 {
         font-size: 14pt;
         color: black !important;
@@ -330,13 +235,11 @@
         margin-top: 0.2in;
         page-break-after: avoid;
     }
-    
     h3, h4 {
         font-size: 12pt;
         color: black !important;
         page-break-after: avoid;
     }
-    
     /* Rubrics print in italic */
     .rubric-text {
         color: #333 !important;
@@ -346,14 +249,12 @@
         margin-top: 0.15in;
         page-break-after: avoid;
     }
-    
     /* Passage references */
     .passage-reference {
         color: #666 !important;
         font-size: 10pt;
         font-style: italic;
     }
-    
     /* Component text (prayers, readings) */
     .component-text {
         font-size: 11pt;
@@ -361,51 +262,41 @@
         color: black !important;
         margin-bottom: 0.15in;
     }
-    
     /* Psalm verses */
     .psalm-verse {
         font-size: 11pt;
         line-height: 1.5;
         margin-bottom: 0.1in;
     }
-    
     .verse-num {
         color: #666 !important;
         font-size: 8pt;
     }
-    
     /* Horizontal rules */
     hr {
         border: 0.5pt solid #999 !important;
         margin: 0.15in 0 !important;
     }
-    
     /* Avoid breaking inside important sections */
     .rubric-text,
     .component-text,
     .psalm-verse {
         page-break-inside: avoid;
     }
-    
     /* Page breaks before major sections */
     h2 {
         page-break-before: auto;
     }
-    
     /* Links print as normal text */
     a {
         text-decoration: none;
         color: black !important;
     }
-    
     /* Remove any remaining colored backgrounds */
     * {
         background: white !important;
     }
 }
-
-
-
  </style>
 </head>
 <body id="app-body" class="dark-mode">
@@ -415,14 +306,6 @@
      <button class="mode-btn" onclick="selectMode('daily')">Daily Office</button>
      <button class="mode-btn" onclick="selectMode('prayers')">Individual Prayers</button>
  </div>
-
-
-
-
-
-
-
-
  <div id="daily-office-section">
      <div id="settings-panel">
          <button class="mode-btn" onclick="backToSplash()" style="margin-bottom:10px;">Back to Modes</button>
@@ -498,14 +381,6 @@
              <label><input type="checkbox" id="toggle-chrysostom" onchange="renderOffice(); saveSettings()"> Prayer of St. Chrysostom</label>
          </div>
      </div>
-
-
-
-
-
-
-
-
      <div id="main-content">
          <h1>The Universal Office</h1>
          <div id="office-display"></div>
@@ -515,14 +390,6 @@
          </div>
      </div>
  </div>
-
-
-
-
-
-
-
-
  <div id="individual-prayers-section">
     <div id="prayer-selection">  <!-- NEW: Wrapper JavaScript expects -->
         <h1>Individual Prayers</h1>
@@ -539,40 +406,28 @@
         <button class="mode-btn" onclick="showSinglePrayer()">Display Prayer</button>
         <button class="mode-btn" onclick="backToSplash()" style="margin-top:20px;">Back to Modes</button>
     </div>
-    
     <div id="prayer-display" style="display:none; margin-top:40px;">  <!-- MOVED: Now inside section -->
         <div class="office-container" id="single-prayer-content"></div>
         <button class="mode-btn" onclick="backToPrayerDropdown()" style="margin-top:20px;">Back to Selection</button>
     </div>
 </div>
+<script src="js/calendar-engine.js"></script>
+<script src="js/scripture-resolver.js"></script>
 <script>
 let appData = null;
 let currentDate = new Date();
 let selectedMode = null;
-
-
-
-
 let seasonalCache = {};
-
-
-
-
 const monthNames = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
-
-
-
-
 const seasonRanges = [
  // 2025-2026 Liturgical Year
  { start: new Date("2025-11-30"), end: new Date("2025-12-24"), season: "advent", file: "advent.json" },
  { start: new Date("2025-12-25"), end: new Date("2026-01-05"), season: "christmas", file: "christmas.json" },
  { start: new Date("2026-01-06"), end: new Date("2026-02-16"), season: "epiphany", file: "epiphany.json" },
-{ start: new Date("2026-02-17"), end: new Date("2026-02-17"), season: "ordinary", file: "ordinary1.json" },
- { start: new Date("2026-02-18"), end: new Date("2026-04-04"), season: "lent", file: "lent.json" },
- { start: new Date("2026-04-05"), end: new Date("2026-05-23"), season: "easter", file: "easter.json" },
+ { start: new Date("2026-02-17"), end: new Date("2026-02-17 23:59:59"), season: "ordinary", file: "ordinary1.json" },
+ { start: new Date("2026-02-18"), end: new Date("2026-04-04 23:59:59"), season: "lent", file: "lent.json" },
+ { start: new Date("2026-04-05"), end: new Date("2026-05-23 23:59:59"), season: "easter", file: "easter.json" },
  { start: new Date("2026-05-24"), end: new Date("2026-11-28"), season: "ordinary", file: "ordinary1.json" },
- 
  // 2026-2027 Liturgical Year
  { start: new Date("2026-11-29"), end: new Date("2026-12-24"), season: "advent", file: "advent.json" },
  { start: new Date("2026-12-25"), end: new Date("2027-01-05"), season: "christmas", file: "christmas.json" },
@@ -580,7 +435,6 @@ const seasonRanges = [
  { start: new Date("2027-02-10"), end: new Date("2027-03-27"), season: "lent", file: "lent.json" },
  { start: new Date("2027-03-28"), end: new Date("2027-05-15"), season: "easter", file: "easter.json" },
  { start: new Date("2027-05-16"), end: new Date("2027-11-27"), season: "ordinary", file: "ordinary1.json" },
- 
  // 2027-2028 Liturgical Year
  { start: new Date("2027-11-28"), end: new Date("2027-12-24"), season: "advent", file: "advent.json" },
  { start: new Date("2027-12-25"), end: new Date("2028-01-05"), season: "christmas", file: "christmas.json" },
@@ -588,7 +442,6 @@ const seasonRanges = [
  { start: new Date("2028-02-29"), end: new Date("2028-04-15"), season: "lent", file: "lent.json" },
  { start: new Date("2028-04-16"), end: new Date("2028-06-03"), season: "easter", file: "easter.json" },
  { start: new Date("2028-06-04"), end: new Date("2028-12-02"), season: "ordinary", file: "ordinary1.json" },
- 
  // 2028-2029 Liturgical Year
  { start: new Date("2028-12-03"), end: new Date("2028-12-24"), season: "advent", file: "advent.json" },
  { start: new Date("2028-12-25"), end: new Date("2029-01-05"), season: "christmas", file: "christmas.json" },
@@ -596,7 +449,6 @@ const seasonRanges = [
  { start: new Date("2029-02-14"), end: new Date("2029-03-31"), season: "lent", file: "lent.json" },
  { start: new Date("2029-04-01"), end: new Date("2029-05-19"), season: "easter", file: "easter.json" },
  { start: new Date("2029-05-20"), end: new Date("2029-12-01"), season: "ordinary", file: "ordinary1.json" },
- 
  // 2029-2030 Liturgical Year
  { start: new Date("2029-12-02"), end: new Date("2029-12-24"), season: "advent", file: "advent.json" },
  { start: new Date("2029-12-25"), end: new Date("2030-01-05"), season: "christmas", file: "christmas.json" },
@@ -605,10 +457,6 @@ const seasonRanges = [
  { start: new Date("2030-04-21"), end: new Date("2030-06-08"), season: "easter", file: "easter.json" },
  { start: new Date("2030-06-09"), end: new Date("2030-12-31"), season: "ordinary", file: "ordinary1.json" }
 ];
-
-
-
-
 const psalterCycle = [
 {day: 1, morning: '1,2,3,4,5', evening: '6,7,8'},
 {day: 2, morning: '9,10,11', evening: '12,13,14'},
@@ -642,26 +490,23 @@ const psalterCycle = [
 {day: 30, morning: '132,133,134,135', evening: '136,137,138'},
 {day: 31, morning: '139,140', evening: '141,142,143'}
 ];
-
-
-
-
+function getLiturgicalYear(date) {
+    // BCP 1979: Advent 1 2025 (Year Two) through Eve of Advent 2026
+    const advent2025 = new Date("2025-11-30");
+    const advent2026 = new Date("2026-11-29");
+    if (date >= advent2025 && date < advent2026) return "year2";
+    return "year1";
+}
 function formatDateForLookup(date) {
 const options = { month: 'long', day: 'numeric', year: 'numeric' };
 return date.toLocaleDateString('en-US', options);
 }
-
-
-
-
 function getSeasonAndFile(targetDate) {
   // Normalize to just date (no time) for comparison
-  const date = new Date(targetDate.getFullYear(), targetDate.getMonth(), targetDate.getDate());
-  
+  const date = new Date(targetDate.getFullYear(), targetDate.getMonth(), targetDate.getDate(), 0, 0, 0);
   for (const range of seasonRanges) {
     const start = new Date(range.start.getFullYear(), range.start.getMonth(), range.start.getDate());
     const end = new Date(range.end.getFullYear(), range.end.getMonth(), range.end.getDate());
-    
     if (date >= start && date <= end) {
       return { season: range.season, file: range.file };
     }
@@ -669,16 +514,8 @@ function getSeasonAndFile(targetDate) {
   console.warn(`No season match for ${date.toDateString()} – fallback to ordinary`);
   return { season: "ordinary", file: "ordinary1.json" };
 }
-
-
-
-
 async function loadSeasonalData(seasonFile) {
 if (seasonalCache[seasonFile]) return seasonalCache[seasonFile];
-
-
-
-
 try {
   const response = await fetch(`data/season/${seasonFile}`);
   if (!response.ok) throw new Error(`HTTP ${response.status} for ${seasonFile}`);
@@ -691,27 +528,20 @@ try {
   return [];
 }
 }
-
-
-
-
 async function getDailyData(targetDate = currentDate) {
 const { file } = getSeasonAndFile(targetDate);
 const data = await loadSeasonalData(file);
 if (!data.length) return { title: "No data available", liturgicalColor: "green", antiphon: "", psalms_morning: "", reading_ot_morning: "", reading_epistle_morning: "", reading_gospel_morning: "", psalms_evening: "", reading_ot_evening: "", reading_epistle_evening: "", reading_gospel_evening: "", collect: "collect-default-ferial" };
-const lookup = formatDateForLookup(targetDate);
-const entry = data.find(d => d.date === lookup);
+const lookupLong = formatDateForLookup(targetDate);
+const lookupISO = targetDate.toISOString().split('T')[0];
+const entry = data.find(d => d.date === lookupLong || d.date === lookupISO);
 if (entry) {
-  console.log(`Found match for ${lookup} in ${file}`);
+  console.log(`Found match for ${lookupLong} in ${file}`);
   return entry;
 }
-console.warn(`No exact match for ${lookup} in ${file} – using first entry`);
+console.warn(`No exact match for ${lookupLong} in ${file} – using first entry`);
 return data[0];
 }
-
-
-
-
 function updateSeasonalTheme(color) {
 let hex = '#27ae60'; // Default to green for Ordinary
 if (color === 'purple') hex = '#8e44ad'; // Advent/Lent
@@ -721,15 +551,10 @@ if (color === 'green') hex = '#27ae60'; // Ordinary
 if (color === 'red') hex = '#c0392b'; // Pentecost/Martyrs
 document.documentElement.style.setProperty('--accent', hex);
 }
-
-
-
-
 async function init() {
    try {
        // Show loading state
        document.getElementById('office-display').innerHTML = `<div class="office-container"><h3>Loading...</h3><p>Preparing your daily office...</p></div>`;
-       
        appData = {};
        const files = ['components', 'rubrics'];
        for (const file of files) {
@@ -737,22 +562,14 @@ async function init() {
            if (!res.ok) throw new Error(`Missing: data/${file}.json`);
            appData[file] = await res.json();
        }
-
        updateUI();
-
        await getDailyData();
-
        renderOffice();
-
    } catch (err) {
        document.getElementById('office-display').innerHTML = `<div class="office-container"><h3>System Error</h3><p>${err.message}</p></div>`;
        console.error('Init failed:', err);
    }
 }
-
-
-
-
 function selectMode(mode) {
    selectedMode = mode;
    document.getElementById('mode-selection').style.display = 'none';
@@ -778,26 +595,16 @@ function selectMode(mode) {
        document.getElementById('individual-prayers-section').style.display = 'block';
    }
 }
-
-
-
-
 function changeDate(days) {
  currentDate.setDate(currentDate.getDate() + days);
  updateDatePicker();
  renderOffice();
 }
-
-
-
-
 function resetDate() {
  currentDate = new Date();
  updateDatePicker();
  renderOffice();
 }
-
-
 function updateDatePicker() {
  const year = currentDate.getFullYear();
  const month = String(currentDate.getMonth() + 1).padStart(2, '0');
@@ -806,8 +613,6 @@ function updateDatePicker() {
  const picker = document.getElementById('date-picker');
  if (picker) picker.value = dateStr;
 }
-
-
 function setCustomDate(dateStr) {
  if (dateStr) {
    // Parse date string as local time to avoid timezone shifting
@@ -817,17 +622,11 @@ function setCustomDate(dateStr) {
  updateDatePicker();
  renderOffice();
 }
-
-
-
-
 function updateUI() {
   const isDark = document.getElementById('toggle-dark')?.checked || false;
   if (isDark) document.body.classList.add('dark-mode');
   else document.body.classList.remove('dark-mode');
 }
-
-
 function saveSettings() {
    const settings = {
       darkMode: document.getElementById('toggle-dark')?.checked || false,
@@ -850,7 +649,6 @@ function saveSettings() {
       generalThanksgiving: document.getElementById('toggle-general-thanksgiving')?.checked || false,
       chrysostom: document.getElementById('toggle-chrysostom')?.checked || false
    };
-   
    try {
       localStorage.setItem('universalOfficeSettings', JSON.stringify(settings));
       console.log('Settings saved');
@@ -858,30 +656,21 @@ function saveSettings() {
       console.warn('Could not save settings to localStorage:', e);
    }
 }
-
-
 function loadSettings() {
    try {
       const saved = localStorage.getItem('universalOfficeSettings');
       if (!saved) return;
-      
       const settings = JSON.parse(saved);
-      
       // Restore checkboxes and radios
       if (document.getElementById('toggle-dark')) document.getElementById('toggle-dark').checked = settings.darkMode;
-      
       const officeTimeRadio = document.querySelector(`input[name="office-time"][value="${settings.officeTime}"]`);
       if (officeTimeRadio) officeTimeRadio.checked = true;
-      
       const riteRadio = document.querySelector(`input[name="rite"][value="${settings.rite}"]`);
       if (riteRadio) riteRadio.checked = true;
-      
       const ministerRadio = document.querySelector(`input[name="minister"][value="${settings.minister}"]`);
       if (ministerRadio) ministerRadio.checked = true;
-      
       const marianRadio = document.querySelector(`input[name="marian-antiphon-pos"][value="${settings.marianAntiphon}"]`);
       if (marianRadio) marianRadio.checked = true;
-      
       if (document.getElementById('toggle-gloria-patri')) document.getElementById('toggle-gloria-patri').checked = settings.gloriaPatri;
       if (document.getElementById('toggle-angelus')) document.getElementById('toggle-angelus').checked = settings.angelus;
       if (document.getElementById('toggle-trisagion')) document.getElementById('toggle-trisagion').checked = settings.trisagion;
@@ -889,224 +678,29 @@ function loadSettings() {
       if (document.getElementById('toggle-jesus-prayer')) document.getElementById('toggle-jesus-prayer').checked = settings.jesusPrayer;
       if (document.getElementById('toggle-assyrian-blessing')) document.getElementById('toggle-assyrian-blessing').checked = settings.assyrianBlessing;
       if (document.getElementById('toggle-agpeya-opening')) document.getElementById('toggle-agpeya-opening').checked = settings.agpeyaOpening;
-      
       if (document.getElementById('creed-type')) document.getElementById('creed-type').value = settings.creedType;
-      
       const gospelRadio = document.querySelector(`input[name="gospel-placement"][value="${settings.gospelPlacement}"]`);
       if (gospelRadio) gospelRadio.checked = true;
-      
       if (document.getElementById('toggle-litany')) document.getElementById('toggle-litany').checked = settings.litany;
       if (document.getElementById('toggle-suffrages')) document.getElementById('toggle-suffrages').checked = settings.suffrages;
       if (document.getElementById('toggle-30day-psalter')) document.getElementById('toggle-30day-psalter').checked = settings.psalter30Day;
       if (document.getElementById('toggle-general-thanksgiving')) document.getElementById('toggle-general-thanksgiving').checked = settings.generalThanksgiving;
       if (document.getElementById('toggle-chrysostom')) document.getElementById('toggle-chrysostom').checked = settings.chrysostom;
-      
       console.log('Settings loaded');
    } catch (e) {
       console.warn('Could not load settings from localStorage:', e);
    }
-}
-
-async function getScriptureText(refId) {
-    if (!refId) return 'No reference provided.';
-    
-    // Cache for loaded books with access tracking
-    if (!appData.bible) appData.bible = {};
-    if (!appData.bibleAccessOrder) appData.bibleAccessOrder = [];
-    
-    const MAX_CACHED_BOOKS = 20;
-    
-    // List of NT book filenames (without .json, lowercase) based on your directory
-    const ntBooks = [
-        '1corinthians', '1john', '1peter', '1thessalonians', '1timothy',
-        '2corinthians', '2john', '2peter', '2thessalonians', '2timothy',
-        '3john', 'acts', 'colossians', 'ephesians', 'epistleofthelaodiceans',
-        'galatians', 'hebrews', 'historyofzosimus', 'james', 'john', 'jude',
-        'luke', 'mark', 'matthew', 'philemon', 'philippians', 'revelation',
-        'romans', 'titus'
-    ];
-    
-    // Helper to parse and extract from a book
-    async function extractFromBook(book, ranges) {
-    let isPsalm = book.toLowerCase().startsWith('psalm');
-    
-    // Handle book name aliases
-    let bookName = book.toLowerCase().replace(/\s/g, '');
-    const aliases = {
-    'ecclesiasticus': 'sirach',
-    'wisdomofsolomon': 'wisdom',
-    'songofthreeyoungmen': 'daniel',
-    'songofthreeholychildren': 'daniel',
-    'belandthedragon': 'daniel',
-    'bel': 'daniel',
-    'susanna': 'daniel',
-    'prayerofazariah': 'daniel',
-    'therestofesther': 'estherGK',
-    'additionstoesther': 'estherGK',
-    'therestofdaniel': 'danielGK',
-    'additionstodaniel': 'danielGK',
-    'songsofsolomon': 'songofsolomon',
-    'canticles': 'songofsolomon',
-    'canticleofcanticles': 'songofsolomon'
-};
-    
-    if (aliases[bookName]) {
-        bookName = aliases[bookName];
-    }
-    
-    let filename = isPsalm ? 'psalms.json' : bookName + '.json';
-    let folder = ntBooks.includes(filename.replace('.json', '')) ? 'NT' : 'OT';
-        
-        // Load book if not cached
-        if (!appData.bible[filename]) {
-            try {
-                const res = await fetch(`data/bible/${folder}/${filename}`);
-                if (!res.ok) throw new Error(`Failed to load ${filename}`);
-                appData.bible[filename] = await res.json();
-                
-                // Track access for LRU eviction
-                appData.bibleAccessOrder.push(filename);
-                
-                // If cache is too large, evict least recently used book
-                if (appData.bibleAccessOrder.length > MAX_CACHED_BOOKS) {
-                    const oldestBook = appData.bibleAccessOrder.shift();
-                    delete appData.bible[oldestBook];
-                    console.log(`Evicted ${oldestBook} from cache (cache size: ${appData.bibleAccessOrder.length})`);
-                }
-        } catch (err) {
-                console.error(`Failed to load ${filename}:`, err);
-                return `[Scripture unavailable: ${book}]`;
-            }
-        } else {
-            // Book already cached - move it to end of access list (most recent)
-            const index = appData.bibleAccessOrder.indexOf(filename);
-            if (index > -1) {
-                appData.bibleAccessOrder.splice(index, 1);
-            }
-            appData.bibleAccessOrder.push(filename);
-        }
-      
-       const bookData = (!isPsalm && Array.isArray(appData.bible[filename])) 
-    ? appData.bible[filename][0] 
-    : appData.bible[filename];
-      
-       let extractedText = '';
-      
-       for (let range of ranges) {
-           if (isPsalm) {
-               // Psalms handling: range could be "1" (whole) or "119:1-32" (verses)
-               let psalmNum, verseStart, verseEnd;
-               if (range.includes(':')) {
-                   const parts = range.split(':');
-                   psalmNum = parseInt(parts[0]);
-                   const verseRange = parts[1].split('-');
-                   verseStart = parseInt(verseRange[0]);
-                   verseEnd = parseInt(verseRange[1]) || Infinity;
-               } else {
-                   psalmNum = parseInt(range);
-                   verseStart = 1;
-                   verseEnd = Infinity;
-               }
-              
-              const psalm = bookData.find(p => p.id === `PSALM ${psalmNum}`.toUpperCase());
-                if (!psalm) {
-                    console.warn(`Psalm ${psalmNum} not found in psalms.json`);
-                    return `[Psalm ${psalmNum} unavailable]`;
-                }
-              
-               const fullText = psalm.text.NRSV;
-               if (verseEnd === Infinity) {
-                   extractedText += fullText + '\n\n';
-                   continue;
-               }
-              
-               // Extract verse range
-               const lines = fullText.split('\n');
-               let tempText = '';
-               for (let line of lines) {
-                   const verseMatch = line.match(/^(\d+:\d+)\s*(.*)$/);
-                   if (verseMatch) {
-                       const [chVerse, text] = verseMatch;
-                       const vNum = parseInt(chVerse.split(':')[1]);
-                       if (vNum >= verseStart && vNum <= verseEnd) {
-                           tempText += line + '\n';
-                       }
-                   }
-               }
-               extractedText += tempText + '\n\n';
-           } else {
-               // Non-psalms: range could be "10:32-45" or "3:4-15"
-               const rangeParts = range.split(':');
-               const chapterNum = parseInt(rangeParts[0]);
-               const verseRange = rangeParts[1].split('-');
-               verseStart = parseInt(verseRange[0]);
-               verseEnd = parseInt(verseRange[1]) || Infinity;
-              
-               const chapter = bookData.chapters.find(ch => ch.num === chapterNum);
-                if (!chapter) {
-                    console.warn(`Chapter ${chapterNum} not found in ${book}`);
-                    return `[${book} ${chapterNum} unavailable]`;
-                }
-              
-               let tempText = '';
-               chapter.verses.forEach(verse => {
-                   if (verse.num >= verseStart && (verseEnd === Infinity || verse.num <= verseEnd)) {
-                       tempText += `${chapterNum}:${verse.num} ${verse.text}\n`;
-                   }
-               });
-               extractedText += tempText + '\n\n';
-           }
-       }
-      
-       // Strip verse numbers for all readings
-       extractedText = extractedText.replace(/\d+:\d+ /g, '').trim();
-      
-       return extractedText;
-   }
-  
-   // Main logic: split multiple refs (e.g., "Psalm 1, Psalm 15" or "Joel 2:1-2,12-17")
-    const parts = refId.split(',');
-    let texts = [];
-    let currentBook = '';
-    for (let part of parts) {
-        part = part.trim();
-        let range;
-        const match = part.match(/^(.+?)\s*(\d+.*)$/);
-        if (match) {
-            currentBook = match[1].trim();
-            range = match[2].trim();
-        } else {
-            range = part;
-        }
-        const rangeParts = range.split(',');
-        let subRanges = [];
-        for (let sub of rangeParts) {
-            subRanges.push(sub.trim());
-        }
-        const text = await extractFromBook(currentBook, subRanges);
-        texts.push(text);
-    }
-    return texts.join('\n\n');
 }
 async function renderOffice() {
    if (!appData || !appData.rubrics || !Array.isArray(appData.rubrics)) {
        document.getElementById('office-display').innerHTML = `<div class="office-container"><h3>Loading...</h3><p>Data still loading.</p></div>`;
        return;
    }
-
    // Show brief loading state while rendering (especially helpful when fetching scripture)
    document.getElementById('office-display').innerHTML = `<div class="office-container"><h3>Loading Office...</h3><p>Fetching readings...</p></div>`;
-
-
-
-
   const todayKey = currentDate.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
 const todayKeyShort = currentDate.toLocaleDateString('en-US', { month: 'long', day: 'numeric' });
   document.getElementById('display-date').innerText = todayKey;
-
-
-
-
   const officeId = document.querySelector('input[name="office-time"]:checked')?.value;
   const rite = document.querySelector('input[name="rite"]:checked')?.value || 'rite2';
   const minister = document.querySelector('input[name="minister"]:checked')?.value || 'lay';
@@ -1117,48 +711,20 @@ const todayKeyShort = currentDate.toLocaleDateString('en-US', { month: 'long', d
   const gospelPlacement = document.querySelector('input[name="gospel-placement"]:checked')?.value || 'evening';
   const generalThanksgivingChecked = document.getElementById('toggle-general-thanksgiving')?.checked || false;
   const chrysostomChecked = document.getElementById('toggle-chrysostom')?.checked || false;
-
-
-
-
   const devotions = [];
   if (document.getElementById('toggle-angelus')?.checked) devotions.push('angelus'); if (document.getElementById('toggle-trisagion')?.checked) devotions.push('trisagion-byzantine'); if (document.getElementById('toggle-theotokion')?.checked) devotions.push('coptic-theotokion'); if (document.getElementById('toggle-jesus-prayer')?.checked) devotions.push('jesus-prayer'); if (document.getElementById('toggle-assyrian-blessing')?.checked) devotions.push('assyrian-blessing'); if (document.getElementById('toggle-agpeya-opening')?.checked) devotions.push('agpeya-opening');
-
-
-
-
   const { season } = getSeasonAndFile(currentDate);
   const marianId = `bcp-marian-antiphon-${season}`;
   const marianComp = appData.components.find(c => c.id === marianId);
-
-
-
-
   const activeRubric = appData.rubrics.find(r => r.id === officeId);
-
-
-
-
   const dailyData = await getDailyData(currentDate);
   document.getElementById('calendar-info').innerText = dailyData.title || "Liturgical Ordo";
-
-
-
-
   updateSeasonalTheme(dailyData.liturgicalColor || 'green');
-
-
-
-
   const isMorning = officeId === 'morning-office';
   const isEvening = officeId === 'evening-office';
   const isNoonday = officeId === 'noonday-office';
   const isCompline = officeId === 'compline-office';
   const suffix = isEvening || isCompline ? '_evening' : '_morning';
-
-
-
-
   let psalms = dailyData[`psalms${suffix}`] || "";
   const use30Day = document.getElementById('toggle-30day-psalter')?.checked || false;
   if (use30Day) {
@@ -1166,34 +732,24 @@ const todayKeyShort = currentDate.toLocaleDateString('en-US', { month: 'long', d
     const psalterDay = (dayOfMonth % 30) || 30;
     psalms = psalterCycle[psalterDay - 1][isEvening || isCompline ? 'evening' : 'morning'];
   }
-
-
-
-
   // Lesson distribution based on placement with fallback to old keys
-   let readingOT = dailyData['reading_ot'] || dailyData[`reading_ot${suffix}`] || "";
-   let readingEpistle = dailyData['reading_epistle'] || dailyData[`reading_epistle${suffix}`] || "";
-   let readingGospel = dailyData['reading_gospel'] || dailyData[`reading_gospel${suffix}`] || "";
-   
+   const litYear = getLiturgicalYear(currentDate);
+
+// Priority 1: Year-specific keys (e.g., reading_ot_mp_year2)
+// Priority 2: Standard keys (reading_ot)
+let readingOT = dailyData[`reading_ot_mp_${litYear}`] || dailyData[`reading_ot_ep_${litYear}`] || dailyData['reading_ot'] || "";
+let readingEpistle = dailyData[`reading_epistle_mp_${litYear}`] || dailyData[`reading_epistle_ep_${litYear}`] || dailyData['reading_epistle'] || "";
+let readingGospel = dailyData[`reading_gospel_mp_${litYear}`] || dailyData[`reading_gospel_ep_${litYear}`] || dailyData['reading_gospel'] || "";
    // Morning Prayer readings
    let morningOT = isMorning ? readingOT : '';
    let morningEpistle = isMorning ? readingEpistle : '';
    let morningGospel = (isMorning && (gospelPlacement === 'morning' || gospelPlacement === 'both')) ? readingGospel : '';
-   
    // Evening/Noonday/Compline readings - always show OT and Epistle
    let eveningOT = (isEvening || isCompline || isNoonday) ? readingOT : '';
    let eveningEpistle = (isEvening || isCompline || isNoonday) ? readingEpistle : '';
    let eveningGospel = ((isEvening || isCompline || isNoonday) && (gospelPlacement === 'evening' || gospelPlacement === 'both')) ? readingGospel : '';
-
-
-
-
   let officeHtml = `<div class="office-container"><h2>${activeRubric?.officeName || "Office"}</h2>`;
   officeHtml += `<p style="color:var(--gold); font-variant:small-caps; font-weight:bold;">${dailyData.title || "Day Title"}</p>`;
-
-
-
-
   if (marianPos === 'before' && marianComp) {
     let marianText = marianComp.text;
     if (typeof marianText === 'object' && marianText !== null) {
@@ -1203,22 +759,12 @@ const todayKeyShort = currentDate.toLocaleDateString('en-US', { month: 'long', d
     }
     officeHtml += `<span class="rubric-text">Marian Antiphon</span><span class="component-text"><i>${marianText}</i></span>`;
   }
-
-
-
-
   if (dailyData.antiphon) {
     officeHtml += `<span class="rubric-text">Antiphon</span><span class="component-text"><i>${dailyData.antiphon}</i></span>`;
   }
-
-
-
-
   for (let item of activeRubric?.sequence || []) {
  item = item.trim(); // Trim for matching
  let compId = item.replace('[rite]', rite); // Replace placeholders like bcp-confession-[rite]
-
-
  // Handle slots like bcp-absolution-slot, bcp-creed-slot, bcp-suffrages-slot
  if (compId === "bcp-absolution-slot") {
    const ritePrefix = rite === 'rite1' ? 'r1' : 'r2';
@@ -1232,8 +778,6 @@ const todayKeyShort = currentDate.toLocaleDateString('en-US', { month: 'long', d
      continue; // Skip if unchecked
    }
  }
-
-
  if (item === "VARIABLE_OPENING") {
    let openingId = `bcp-opening-${season}`; // Seasonal, e.g., bcp-opening-advent
    const comp = appData.components.find(c => c.id === openingId) || appData.components.find(c => c.id === 'bcp-opening-general'); // Fallback
@@ -1241,8 +785,6 @@ const todayKeyShort = currentDate.toLocaleDateString('en-US', { month: 'long', d
    officeHtml += `<span class="rubric-text">Opening Sentence</span><span class="component-text">${displayText}</span>`;
    continue;
  }
-
-
  if (item === "bcp-invitatory-full") {
    let invitatoryId = isMorning ? 'bcp-invitatory-full-mp' : 'bcp-invitatory-full-ep-noon-compline';
    const comp = appData.components.find(c => c.id === invitatoryId);
@@ -1250,16 +792,12 @@ const todayKeyShort = currentDate.toLocaleDateString('en-US', { month: 'long', d
    officeHtml += `<span class="rubric-text">The Invitatory</span><span class="component-text">${displayText}</span>`;
    continue;
  }
-
-
  if (item === "bcp-phos-hilaron") {
    const comp = appData.components.find(c => c.id === "bcp-phos-hilaron");
    let displayText = comp ? (comp.text[rite] || comp.text) : "Phos Hilaron not found";
    officeHtml += `<span class="rubric-text">Phos Hilaron</span><span class="component-text">${displayText}</span>`;
    continue;
  }
-
-
  if (item === "VARIABLE_PSALM") {
    if (psalms) {
      let psalmRefs = psalms.split(',').map(p => p.trim());
@@ -1281,8 +819,6 @@ const todayKeyShort = currentDate.toLocaleDateString('en-US', { month: 'long', d
    }
    continue;
  }
-
-
  if (item === "VARIABLE_READING_OT") {
    let reading = isMorning ? morningOT : eveningOT;
    if (reading) {
@@ -1294,8 +830,6 @@ const todayKeyShort = currentDate.toLocaleDateString('en-US', { month: 'long', d
    }
    continue;
  }
-
-
  if (item === "VARIABLE_READING_EPISTLE") {
    let reading = isMorning ? morningEpistle : eveningEpistle;
    if (reading) {
@@ -1307,8 +841,6 @@ const todayKeyShort = currentDate.toLocaleDateString('en-US', { month: 'long', d
    }
    continue;
  }
-
-
  if (item === "VARIABLE_READING_GOSPEL") {
    let reading = isMorning ? morningGospel : eveningGospel;
    if (reading) {
@@ -1320,8 +852,6 @@ const todayKeyShort = currentDate.toLocaleDateString('en-US', { month: 'long', d
    }
    continue;
  }
-
-
  if (item === "VARIABLE_CANTICLE1") {
    let canticleId = isMorning ? 'bcp-te-deum' : 'bcp-magnificat'; // Default per office
    const comp = appData.components.find(c => c.id === canticleId);
@@ -1329,8 +859,6 @@ const todayKeyShort = currentDate.toLocaleDateString('en-US', { month: 'long', d
    officeHtml += `<span class="rubric-text">Canticle</span><span class="component-text">${displayText}</span>`;
    continue;
  }
-
-
  if (item === "VARIABLE_CANTICLE2") {
    let canticleId = isMorning ? 'bcp-benedictus' : 'bcp-nunc-dimittis';
    const comp = appData.components.find(c => c.id === canticleId);
@@ -1338,32 +866,24 @@ const todayKeyShort = currentDate.toLocaleDateString('en-US', { month: 'long', d
    officeHtml += `<span class="rubric-text">Canticle</span><span class="component-text">${displayText}</span>`;
    continue;
  }
-
-
  if (item === "bcp-lords-prayer") {
    const comp = appData.components.find(c => c.id === "bcp-lords-prayer");
    let displayText = comp ? (comp.text[rite] || comp.text) : "Lord's Prayer not found";
    officeHtml += `<span class="rubric-text">The Lord's Prayer</span><span class="component-text">${displayText}</span>`;
    continue;
  }
-
-
  if (item === "bcp-kyrie") {
    const comp = appData.components.find(c => c.id === "bcp-kyrie");
    let displayText = comp ? (comp.text[rite] || comp.text) : "Kyrie not found";
    officeHtml += `<span class="rubric-text">Kyrie</span><span class="component-text">${displayText}</span>`;
    continue;
  }
-
-
  if (item === "bcp-salutation") {
    const comp = appData.components.find(c => c.id === "bcp-salutation");
    let displayText = comp ? (comp.text[rite] || comp.text) : "Salutation not found";
    officeHtml += `<span class="rubric-text">Salutation</span><span class="component-text">${displayText}</span>`;
    continue;
  }
-
-
  if (item === "VARIABLE_WEEKDAY_COLLECT") {
    let collectId = isMorning ? 'bcp-collect-grace' : 'bcp-collect-peace'; // MP/EP defaults
    const comp = appData.components.find(c => c.id === collectId);
@@ -1371,16 +891,12 @@ const todayKeyShort = currentDate.toLocaleDateString('en-US', { month: 'long', d
    officeHtml += `<span class="rubric-text">Weekday Collect</span><span class="component-text">${displayText}</span>`;
    continue;
  }
-
-
  if (item === "VARIABLE_MISSION_PRAYER") {
    const comp = appData.components.find(c => c.id === "bcp-mission-prayer-1"); // Default option 1
    let displayText = comp ? (comp.text[rite] || comp.text) : "Prayer for Mission not found";
    officeHtml += `<span class="rubric-text">Prayer for Mission</span><span class="component-text">${displayText}</span>`;
    continue;
  }
-
-
  if (item === "bcp-litany") {
    if (greatLitanyChecked) {
      const comp = appData.components.find(c => c.id === "bcp-litany");
@@ -1389,8 +905,6 @@ const todayKeyShort = currentDate.toLocaleDateString('en-US', { month: 'long', d
    }
    continue;
  }
-
-
  if (item === "bcp-general-thanksgiving") {
    if (generalThanksgivingChecked) {
      const comp = appData.components.find(c => c.id === "bcp-general-thanksgiving");
@@ -1399,8 +913,6 @@ const todayKeyShort = currentDate.toLocaleDateString('en-US', { month: 'long', d
    }
    continue;
  }
-
-
  if (item === "bcp-chrysostom") {
    if (chrysostomChecked) {
      const comp = appData.components.find(c => c.id === "bcp-chrysostom");
@@ -1409,40 +921,30 @@ const todayKeyShort = currentDate.toLocaleDateString('en-US', { month: 'long', d
    }
    continue;
  }
-
-
  if (item === "bcp-closing") {
    const comp = appData.components.find(c => c.id === "bcp-closing");
    let displayText = comp ? (comp.text[rite] || comp.text) : "Closing not found";
    officeHtml += `<span class="rubric-text">Closing</span><span class="component-text">${displayText}</span>`;
    continue;
  }
-
-
  if (item === "bcp-opening-blessing") {
    const comp = appData.components.find(c => c.id === "bcp-opening-blessing-compline");
    let displayText = comp ? (comp.text[rite] || comp.text) : "Opening Blessing not found";
    officeHtml += `<span class="rubric-text">Opening Blessing</span><span class="component-text">${displayText}</span>`;
    continue;
  }
-
-
  if (item === "bcp-versicles-before-prayers") {
    const comp = appData.components.find(c => c.id === "bcp-versicles-before-prayers-compline");
    let displayText = comp ? (comp.text[rite] || comp.text) : "Versicles not found";
    officeHtml += `<span class="rubric-text">Versicles</span><span class="component-text">${displayText}</span>`;
    continue;
  }
-
-
  if (item === "bcp-nunc-dimittis") {
    const comp = appData.components.find(c => c.id === "bcp-nunc-dimittis");
    let displayText = comp ? (comp.text[rite] || comp.text) : "Nunc Dimittis not found";
    officeHtml += `<span class="rubric-text">Nunc Dimittis</span><span class="component-text">${displayText}</span>`;
    continue;
  }
-
-
  if (item === "VARIABLE_COLLECT") {
    officeHtml += `<span class="rubric-text">The Collect</span>`;
    const collectId = dailyData.collect || "collect-default-ferial"; // Fallback to default if missing
@@ -1462,8 +964,6 @@ const todayKeyShort = currentDate.toLocaleDateString('en-US', { month: 'long', d
    officeHtml += '<br><hr style="border: 1px solid var(--gold); margin: 10px 0;">';
    continue;
  }
-
-
  let comp = appData.components.find(c => c.id === compId);
  if (comp) {
    let displayText = comp.text;
@@ -1501,21 +1001,9 @@ officeHtml += `<span class="rubric-text">Marian Antiphon</span><span class="comp
      }
    });
  }
-
-
-
-
  document.getElementById('office-display').innerHTML = officeHtml + `</div>`;
-
-
-
-
  document.getElementById('date-header').innerText = `Commemorations for ${todayKey}`;
  const todayKeyLower = todayKey.toLowerCase();
-
-
-
-
  // Dynamically load saints for the current month
  const monthIndex = currentDate.getMonth();
  const month = monthNames[monthIndex];
@@ -1532,10 +1020,6 @@ officeHtml += `<span class="rubric-text">Marian Antiphon</span><span class="comp
      return;
    }
  }
-
-
-
-
  document.getElementById('saint-display').innerHTML = appData.saints
      .filter(s => s.day && s.day.toLowerCase().includes(todayKeyShort.toLowerCase()))
      .map(s => `
@@ -1546,20 +1030,12 @@ officeHtml += `<span class="rubric-text">Marian Antiphon</span><span class="comp
          </div>
      `).join('') || '<p>No commemorations for today.</p>';
 }
-
-
-
-
 function showSinglePrayer() {
   const prayerId = document.getElementById('prayer-dropdown').value;
   if (!prayerId) {
       alert("Please select a prayer first.");
       return;
   }
-
-
-
-
   const prayers = {
       "prayer-for-the-sick": "O Father of mercies, and God of all comfort, our only help in time of need: We humbly beseech thee to behold, visit, and relieve thy sick servant [Name] for whom our prayers are desired. Look upon him with the eyes of thy mercy; comfort him with a sense of thy goodness; preserve him from the temptations of the enemy; and give him patience under his affliction. In thy good time, restore him to health, and enable him to lead the residue of his life in thy fear, and to thy glory; and grant that finally he may dwell with thee in life everlasting; through Jesus Christ our Lord. Amen.",
       "prayer-for-peace": "O God, the source of all holy desires, all good counsels, and all just works: Give to thy servants that peace which the world cannot give; that our hearts may be set to obey thy commandments, and also that by thee, we, being defended from the fear of our enemies, may pass our time in rest and quietness; through the merits of Jesus Christ our Savior. Amen.",
@@ -1569,42 +1045,18 @@ function showSinglePrayer() {
       "prayer-for-the-church": "Gracious Father, we pray for thy holy Catholic Church. Fill it with all truth, in all truth with all peace. Where it is corrupt, purify it; where it is in error, direct it; where in any thing it is amiss, reform it. Where it is right, strengthen it; where it is in want, provide for it; where it is divided, reunite it; for the sake of Jesus Christ thy Son our Savior. Amen.",
       "prayer-for-the-world": "Almighty God, from whom all thoughts of truth and peace proceed: Kindle, we pray, in the hearts of all people the true love of peace, and guide with thy pure and peaceable wisdom those who take counsel for the nations of the earth; that in tranquillity thy kingdom may go forward, till the earth is filled with the knowledge of thy love; through Jesus Christ our Lord. Amen."
   };
-
-
-
-
   const prayerText = prayers[prayerId];
-
-
-
-
   const dropdown = document.getElementById('prayer-dropdown');
   const selectedOption = dropdown.options[dropdown.selectedIndex];
   const prayerTitle = selectedOption ? selectedOption.text : 'Selected Prayer';
-
-
-
-
   document.getElementById('single-prayer-content').innerHTML = `<div class="office-container"><h2>${prayerTitle}</h2><p class="component-text">${prayerText || 'Prayer text not found'}</p></div>`;
-
-
-
-
   document.getElementById('prayer-display').style.display = 'block';
   document.getElementById('prayer-selection').style.display = 'none';
 }
-
-
-
-
 function backToPrayerDropdown() {
   document.getElementById('prayer-display').style.display = 'none';
   document.getElementById('prayer-selection').style.display = 'block';
 }
-
-
-
-
 function backToSplash() {
   document.getElementById('daily-office-section').style.display = 'none';
   document.getElementById('individual-prayers-section').style.display = 'none';
@@ -1617,10 +1069,6 @@ function backToSplash() {
   document.getElementById('mode-selection').style.display = 'block';
   selectedMode = null;
 }
-
-
-
-
 // init() is now called only when Daily Office mode is selected
 </script>
 </body>

@@ -1047,6 +1047,86 @@
       "rite2": "O God, whose blessed Son came into the world that he might destroy the works of the devil and make us children of God and heirs of eternal life: Grant that, having this hope, we may purify ourselves as he is pure; that, when he comes again with power and great glory, we may be made like him in his eternal and glorious kingdom; where he lives and reigns with you and the Holy Spirit, one God, for ever and ever. Amen."
     },
     "type": "Collect"
+  },
+  {
+    "id": "collect-easter-day",
+    "title": "Collect for Easter Day",
+    "text": {
+      "rite1": "Almighty God, who through thine only-begotten Son Jesus Christ hast overcome death and opened unto us the gate of everlasting life: Grant that we, who celebrate with joy the day of the Lord's resurrection, may be raised from the death of sin by thy life-giving Spirit; through the same Jesus Christ our Lord, who liveth and reigneth with thee and the Holy Ghost, ever one God, world without end. Amen.",
+      "rite2": "Almighty God, who through your only-begotten Son Jesus Christ overcame death and opened to us the gate of everlasting life: Grant that we, who celebrate with joy the day of the Lord's resurrection, may be raised from the death of sin by your life-giving Spirit; through Jesus Christ our Lord, who lives and reigns with you and the Holy Spirit, one God, now and for ever. Amen."
+    },
+    "type": "Collect"
+  },
+  {
+    "id": "collect-easter-monday",
+    "title": "Collect for Monday in Easter Week",
+    "text": {
+      "rite1": "Grant, we beseech thee, Almighty God, that we who celebrate with reverence the Paschal feast may be found worthy to attain to everlasting joys; through Jesus Christ our Lord. Amen.",
+      "rite2": "Grant, we pray, Almighty God, that we who celebrate with reverence the Paschal feast may be found worthy to attain to everlasting joys; through Jesus Christ our Lord, who lives and reigns with you and the Holy Spirit, one God, now and for ever. Amen."
+    },
+    "type": "Collect"
+  },
+  {
+    "id": "collect-easter-day",
+    "title": "Collect for Easter Day",
+    "text": {
+      "rite1": "Almighty God, who through thine only-begotten Son Jesus Christ hast overcome death and opened unto us the gate of everlasting life: Grant that we, who celebrate with joy the day of the Lord's resurrection, may be raised from the death of sin by thy life-giving Spirit; through the same Jesus Christ our Lord, who liveth and reigneth with thee and the Holy Ghost, ever one God, world without end. Amen.",
+      "rite2": "Almighty God, who through your only-begotten Son Jesus Christ overcame death and opened to us the gate of everlasting life: Grant that we, who celebrate with joy the day of the Lord's resurrection, may be raised from the death of sin by your life-giving Spirit; through Jesus Christ our Lord, who lives and reigns with you and the Holy Spirit, one God, now and for ever. Amen."
+    },
+    "type": "Collect"
+  },
+  {
+    "id": "collect-easter-monday",
+    "title": "Collect for Monday in Easter Week",
+    "text": {
+      "rite1": "Grant, we beseech thee, Almighty God, that we who celebrate with reverence the Paschal feast may be found worthy to attain to everlasting joys; through Jesus Christ our Lord. Amen.",
+      "rite2": "Grant, we pray, Almighty God, that we who celebrate with reverence the Paschal feast may be found worthy to attain to everlasting joys; through Jesus Christ our Lord, who lives and reigns with you and the Holy Spirit, one God, now and for ever. Amen."
+    },
+    "type": "Collect"
+  },
+  {
+    "id": "collect-easter-tuesday",
+    "title": "Collect for Tuesday in Easter Week",
+    "text": {
+      "rite1": "O God, who by the glorious resurrection of thy Son Jesus Christ destroyed death and brought life and immortality to light: Grant that we, who have been raised with him, may abide in his presence and rejoice in the hope of thy glory; through Jesus Christ our Lord. Amen.",
+      "rite2": "O God, who by the glorious resurrection of your Son Jesus Christ destroyed death and brought life and immortality to light: Grant that we, who have been raised with him, may abide in his presence and rejoice in the hope of your glory; through Jesus Christ our Lord, who lives and reigns with you and the Holy Spirit, one God, now and for ever. Amen."
+    },
+    "type": "Collect"
+  },{
+    "id": "collect-easter-wednesday",
+    "title": "Collect for Wednesday in Easter Week",
+    "text": {
+      "rite1": "O God, whose blessed Son did manifest himself to his disciples in the breaking of bread: Open, we pray thee, the eyes of our faith, that we may behold him in all his redeeming work; through the same thy Son Jesus Christ our Lord. Amen.",
+      "rite2": "O God, whose blessed Son made himself known to his disciples in the breaking of bread: Open the eyes of our faith, that we may behold him in all his redeeming work; who lives and reigns with you and the Holy Spirit, one God, now and for ever. Amen."
+    },
+    "type": "Collect"
+  },
+  {
+    "id": "collect-easter-thursday",
+    "title": "Collect for Thursday in Easter Week",
+    "text": {
+      "rite1": "Almighty and everlasting God, who hast given unto us the Paschal mystery in the covenant of reconciliation: Grant that all who have been reborn into the fellowship of Christ's Body may show forth in their lives what they profess by their faith; through the same Jesus Christ our Lord. Amen.",
+      "rite2": "Almighty and everlasting God, you have given us the Paschal mystery in the covenant of reconciliation: Grant that all who have been reborn into the fellowship of Christ's Body may show forth in their lives what they profess by their faith; through Jesus Christ our Lord, who lives and reigns with you and the Holy Spirit, one God, now and for ever. Amen."
+    },
+    "type": "Collect"
+  },
+  {
+    "id": "collect-easter-friday",
+    "title": "Collect for Friday in Easter Week",
+    "text": {
+      "rite1": "Almighty Father, who hast given thine only Son to die for our sins and to rise again for our justification: Grant us so to put away the leaven of malice and wickedness, that we may always serve thee in pureness of living and truth; through the same thy Son Jesus Christ our Lord. Amen.",
+      "rite2": "Almighty Father, who gave your only Son to die for our sins and to rise again for our justification: Grant us so to put away the leaven of malice and wickedness, that we may always serve you in pureness of living and truth; through Jesus Christ our Lord, who lives and reigns with you and the Holy Spirit, one God, now and for ever. Amen."
+    },
+    "type": "Collect"
+  },
+  {
+    "id": "collect-easter-saturday",
+    "title": "Collect for Saturday in Easter Week",
+    "text": {
+      "rite1": "Heavenly Father, who by the Christ's resurrection hast given unto us the hope of life eternal: Grant that we, who celebrate these holy days with joy, may be found worthy to enter into the land of everlasting light; through Jesus Christ our Lord. Amen.",
+      "rite2": "Heavenly Father, who by the glorious resurrection of your Son Jesus Christ destroyed death and brought life and immortality to light: Grant that we, who celebrate these holy days with joy, may be found worthy to enter into the land of everlasting light; through Jesus Christ our Lord, who lives and reigns with you and the Holy Spirit, one God, now and for ever. Amen."
+    },
+    "type": "Collect"
   }
 ]
 ]

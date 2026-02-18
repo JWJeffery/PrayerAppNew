@@ -1,5 +1,18 @@
 [
   {
+    "date": "February 17, 2026",
+    "title": "Tuesday before Ash Wednesday (Shrove Tuesday)",
+    "season": "Ordinary",
+    "liturgicalColor": "green",
+    "collect": "collect-default-ferial",
+    "antiphon": "The Lord is full of compassion and mercy: Come let us adore him.",
+    "psalms_morning": "Psalm 45",
+    "psalms_evening": "Psalm 47, Psalm 48",
+    "reading_ot": "Isaiah 62:6-12",
+    "reading_epistle": "Romans 12:1-21",
+    "reading_gospel": "John 17:1-26"
+  },
+  {
     "date": "2026-05-25",
     "title": "Monday in the Week of Proper 3",
     "season": "Ordinary",
