@@ -6,15 +6,18 @@ class CalendarEngine {
     static seasonalCache = {};
     static bcpPropers = null;
 
+    // Standardized with slashes to ensure local time parsing and avoid the UTC "dead zone"
     static SEASON_RANGES = [
-        { start: new Date("2025-11-30"), end: new Date("2025-12-24"), season: "advent", file: "advent.json" },
-        { start: new Date("2025-12-25"), end: new Date("2026-01-05"), season: "christmas", file: "christmas.json" },
-        { start: new Date("2026-01-06"), end: new Date("2026-02-16"), season: "epiphany", file: "epiphany.json" },
-        { start: new Date("2026-02-17"), end: new Date("2026-02-17"), season: "ordinary", file: "ordinary1.json" },
-        { start: new Date("2026-02-18"), end: new Date("2026-04-04"), season: "lent", file: "lent.json" },
-        { start: new Date("2026-04-05"), end: new Date("2026-05-23"), season: "easter", file: "easter.json" },
-        { start: new Date("2026-05-24"), end: new Date("2026-11-28"), season: "ordinary", file: "ordinary1.json" },
-        { start: new Date("2026-11-29"), end: new Date("2026-12-24"), season: "advent", file: "advent.json" }
+        { start: new Date("2025/11/30"), end: new Date("2025/12/24"), season: "advent", file: "advent.json" },
+        { start: new Date("2025/12/25"), end: new Date("2026/01/05"), season: "christmas", file: "christmas.json" },
+        { start: new Date("2026/01/06"), end: new Date("2026/02/16"), season: "epiphany", file: "epiphany.json" },
+        { start: new Date("2026/02/17"), end: new Date("2026/02/17"), season: "ordinary", file: "ordinary1.json" },
+        { start: new Date("2026/02/18"), end: new Date("2026/04/04"), season: "lent", file: "lent.json" },
+        { start: new Date("2026/04/05"), end: new Date("2026/05/23"), season: "easter", file: "easter.json" },
+        { start: new Date("2026/05/24"), end: new Date("2026/07/31"), season: "ordinary", file: "ordinary1.json" },
+        { start: new Date("2026/08/01"), end: new Date("2026/09/30"), season: "ordinary", file: "ordinary2.json" },
+        { start: new Date("2026/10/01"), end: new Date("2026/11/28"), season: "ordinary", file: "ordinary3.json" },
+        { start: new Date("2026/11/29"), end: new Date("2026/12/24"), season: "advent", file: "advent.json" }
     ];
 
     static async init() {
@@ -43,53 +46,60 @@ class CalendarEngine {
     }
 
     static getLiturgicalYear(date) {
-        // Simple 2026 Logic for now: Advent Sunday 2026 starts Year 1
-        const advent2026 = new Date("2026-11-29");
+        const advent2026 = new Date("2026/11/29");
         return (date >= advent2026) ? 1 : 2;
     }
 
+    /**
+     * Unified logic: This now trusts the SEASON_RANGES array exclusively.
+     * The redundant 'getOrdinaryFile' override has been removed.
+     */
     static getSeasonAndFile(targetDate) {
         const date = new Date(targetDate.getFullYear(), targetDate.getMonth(), targetDate.getDate());
+        
         for (const range of this.SEASON_RANGES) {
             if (date >= range.start && date <= range.end) {
-                let file = range.file;
-                if (range.season === "ordinary") file = this.getOrdinaryFile(date);
-                return { season: range.season, file: file };
+                return { season: range.season, file: range.file };
             }
         }
+        
+        console.warn(`[Calendar Engine] No range match for ${date.toDateString()}. Defaulting to ordinary1.json`);
         return { season: "ordinary", file: "ordinary1.json" };
-    }
-
-    static getOrdinaryFile(date) {
-        const mmdd = (date.getMonth() + 1) * 100 + date.getDate();
-        if (mmdd >= 525 && mmdd <= 731) return "ordinary1.json";
-        if (mmdd >= 801 && mmdd <= 930) return "ordinary2.json";
-        if (mmdd >= 1001 && mmdd <= 1128) return "ordinary3.json";
-        return "ordinary1.json";
     }
 
     static async fetchLectionaryData(targetDate = this.currentDate) {
         const { file } = this.getSeasonAndFile(targetDate);
-        if (this.seasonalCache[file]) return this.findEntry(this.seasonalCache[file], targetDate);
+        
+        if (this.seasonalCache[file]) {
+            return this.findEntry(this.seasonalCache[file], targetDate, file);
+        }
         
         try {
             const response = await fetch(`data/season/${file}`);
             if (!response.ok) throw new Error(`HTTP ${response.status}`);
             const data = await response.json();
             this.seasonalCache[file] = data;
-            return this.findEntry(data, targetDate);
+            return this.findEntry(data, targetDate, file);
         } catch (err) {
-            console.error(`[Calendar Engine] Error:`, err);
+            console.error(`[Calendar Engine] Error loading ${file}:`, err);
             return { title: "Error loading data" };
         }
     }
 
-    static findEntry(data, date) {
+    static findEntry(data, date, fileName) {
         const iso = this.formatDateISO(date);
         const long = this.formatDateForLookup(date);
-        return data.find(d => d.date === iso || d.date === long) || data[0];
+        
+        const entry = data.find(d => d.date === iso || d.date === long);
+        
+        if (entry) {
+            console.log(`[Calendar Engine] Found match for ${iso} in ${fileName}`);
+            return entry;
+        } else {
+            console.warn(`[Calendar Engine] No match for ${iso} in ${fileName} - using index 0 fallback.`);
+            return data[0];
+        }
     }
 }
 
-// Expose to window for index.html access
 window.CalendarEngine = CalendarEngine;
