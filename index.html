@@ -5,6 +5,23 @@
  <meta name="viewport" content="width=device-width, initial-scale=1.0">
  <title>The Universal Office</title>
  <style>
+    #ecumenical-devotions-section,
+    #during-office-section,
+    #closing-devotions-section {
+        transition: opacity 0.3s, max-height 0.3s;
+        overflow: hidden;
+        max-height: 600px;
+        opacity: 1;
+    }
+    #ecumenical-devotions-section.bcp-only-hidden,
+    #during-office-section.bcp-only-hidden,
+    #closing-devotions-section.bcp-only-hidden {
+        max-height: 0;
+        opacity: 0;
+        margin: 0;
+        padding: 0;
+        pointer-events: none;
+    }
     :root {
         --bg-color: #f4f1ea;
         --text-color: #2c3e50;
@@ -53,6 +70,44 @@
     }
     .mode-btn:hover { background: #9b59b6; }
     #daily-office-section { display: none; position: absolute; top: 0; left: 0; width: 100%; height: 100vh; flex-direction: row; }
+    #settings-panel.sidebar-hidden {
+        transform: translateX(-300px);
+        pointer-events: none;
+    }
+    #sidebar-toggle {
+        position: fixed;
+        left: 300px;
+        top: 0;
+        width: 24px;
+        height: 100vh;
+        background: var(--sidebar-bg);
+        border-right: 0.5px solid var(--gold);
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 101;
+        transition: left 0.3s ease;
+        writing-mode: vertical-rl;
+        text-orientation: mixed;
+        color: var(--gold);
+        font-size: 0.6em;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        user-select: none;
+        opacity: 0.4;
+    }
+    #sidebar-toggle:hover {
+        opacity: 1;
+        background: #111;
+    }
+    #sidebar-toggle.sidebar-hidden {
+        left: 0;
+        opacity: 0.6;
+    }
+    #main-content.sidebar-hidden {
+        margin-left: 24px;
+    }
     #settings-panel {
         width: 300px;
         background: var(--sidebar-bg);
@@ -63,7 +118,9 @@
         left: 0;
         top: 0;
         overflow-y: auto;
-        border-right: 2px solid var(--gold);
+        border-right: 0.5px solid var(--gold);
+        transition: transform 0.3s ease;
+        z-index: 100;
     }
     .setting-group {
         margin-bottom: 25px;
@@ -89,6 +146,7 @@
     }
     #main-content {
         margin-left: 300px;
+        transition: margin-left 0.3s ease;
         padding: 40px;
         height: 100vh;
         overflow-y: auto;
@@ -98,10 +156,10 @@
         width: calc(100% - 300px);
     }
     #main-content::-webkit-scrollbar {
-        width: 8px;
+        width: 4px;
     }
     #main-content::-webkit-scrollbar-thumb {
-        background: var(--gold);
+        background: rgba(212, 175, 55, 0.3);
         border-radius: 4px;
     }
     #main-content::-webkit-scrollbar-track {
@@ -118,7 +176,7 @@
         border-left: 5px solid var(--accent);
     }
     h1 { font-size: 2.5em; letter-spacing: 0.05em; margin-bottom: 0.5em; color: var(--text-color); }
-    h2 { font-size: 2em; color: var(--accent); border-bottom: 1px solid var(--gold); padding-bottom: 10px; margin-top: 0; }
+    h2 { font-size: 2em; color: var(--accent); border-bottom: 0.5px solid var(--gold); padding-bottom: 10px; margin-top: 0; }
     .rubric-text {
         color: var(--accent);
         font-family: 'Georgia', serif;
@@ -129,7 +187,7 @@
         display: block;
         margin-top: 35px;
         margin-bottom: 10px;
-        border-bottom: 1px dotted var(--gold);
+        border-bottom: 0.5px dotted var(--gold);
         padding-bottom: 2px;
         width: 100%;
     }
@@ -307,6 +365,7 @@
      <button class="mode-btn" onclick="selectMode('prayers')">Individual Prayers</button>
  </div>
  <div id="daily-office-section">
+     <div id="sidebar-toggle" onclick="toggleSidebar()">Settings</div>
      <div id="settings-panel">
          <button class="mode-btn" onclick="backToSplash()" style="margin-bottom:10px;">Back to Modes</button>
          <h3 style="color:var(--gold)">Office Settings</h3>
@@ -332,55 +391,78 @@
          <div class="setting-group">
              <strong>Appearance:</strong>
              <label><input type="checkbox" id="toggle-dark" onchange="updateUI(); saveSettings()" checked> Dark Mode</label>
+             <label style="margin-top:8px;"><input type="checkbox" id="toggle-bcp-only" onchange="toggleBcpOnly(); saveSettings()"> BCP Only Mode</label>
          </div>
          <div class="setting-group">
-             <strong>Language & Rite:</strong>
-             <label><input type="radio" name="rite" value="rite1" onchange="renderOffice(); saveSettings()"> Rite I (Traditional)</label>
-             <label><input type="radio" name="rite" value="rite2" onchange="renderOffice(); saveSettings()" checked> Rite II (Contemporary)</label>
-         </div>
-         <div class="setting-group">
-             <strong>Officiant:</strong>
-             <label><input type="radio" name="minister" value="priest" onchange="renderOffice(); saveSettings()"> Priest</label>
-             <label><input type="radio" name="minister" value="lay" onchange="renderOffice(); saveSettings()" checked> Layperson</label>
-         </div>
-         <div class="setting-group">
-             <strong>Tradition Devotions:</strong>
+             <strong>Liturgical Settings:</strong>
              <div class="nested-group">
-                 <strong>Marian Antiphon:</strong>
-                 <label><input type="radio" name="marian-antiphon-pos" value="none" onchange="renderOffice(); saveSettings()" checked> None</label>
-                 <label><input type="radio" name="marian-antiphon-pos" value="before" onchange="renderOffice(); saveSettings()"> Before</label>
-                 <label><input type="radio" name="marian-antiphon-pos" value="after" onchange="renderOffice(); saveSettings()"> After</label>
+                 <strong style="color:#aaa; font-size:0.8em;">Language &amp; Rite</strong>
+                 <label><input type="radio" name="rite" value="rite1" onchange="renderOffice(); saveSettings()"> Rite I (Traditional)</label>
+                 <label><input type="radio" name="rite" value="rite2" onchange="renderOffice(); saveSettings()" checked> Rite II (Contemporary)</label>
              </div>
-             <label style="margin-top:10px;"><input type="checkbox" id="toggle-gloria-patri" onchange="renderOffice(); saveSettings()" checked> Gloria Patri (after Psalm)</label>
-             <label><input type="checkbox" id="toggle-angelus" onchange="renderOffice(); saveSettings()" checked> Angelus (Catholic)</label>
-             <label><input type="checkbox" id="toggle-trisagion" onchange="renderOffice(); saveSettings()" checked> Trisagion (Eastern Orthodox)</label>
-             <label><input type="checkbox" id="toggle-theotokion" onchange="renderOffice(); saveSettings()" checked> Theotokion (Oriental Orthodox)</label>
-             <label><input type="checkbox" id="toggle-jesus-prayer" onchange="renderOffice(); saveSettings()" checked> Jesus Prayer (Eastern Orthodox)</label>
-             <label><input type="checkbox" id="toggle-assyrian-blessing" onchange="renderOffice(); saveSettings()" checked> Assyrian Blessing (Church of the East)</label>
-             <label><input type="checkbox" id="toggle-agpeya-opening" onchange="renderOffice(); saveSettings()" checked> Agpeya Opening (Coptic)</label>
+             <div class="nested-group" style="margin-top:8px;">
+                 <strong style="color:#aaa; font-size:0.8em;">Officiant</strong>
+                 <label><input type="radio" name="minister" value="priest" onchange="renderOffice(); saveSettings()"> Priest</label>
+                 <label><input type="radio" name="minister" value="lay" onchange="renderOffice(); saveSettings()" checked> Layperson</label>
+             </div>
+             <div class="nested-group" style="margin-top:8px;">
+                 <strong style="color:#aaa; font-size:0.8em;">Creed</strong>
+                 <select id="creed-type" onchange="renderOffice(); saveSettings()" style="margin-top:4px; width:100%; padding:4px; background:#333; color:white; border:1px solid #555; border-radius:4px;">
+                     <option value="bcp-creed-apostles">Apostles' Creed</option>
+                     <option value="bcp-creed-nicene">Nicene Creed</option>
+                 </select>
+             </div>
+             <div class="nested-group" style="margin-top:8px;">
+                 <strong style="color:#aaa; font-size:0.8em;">Lectionary</strong>
+                 <label style="margin-top:4px;"><input type="radio" name="gospel-placement" value="morning" onchange="renderOffice(); saveSettings()"> Gospel in Morning</label>
+                 <label><input type="radio" name="gospel-placement" value="evening" onchange="renderOffice(); saveSettings()" checked> Gospel in Evening</label>
+                 <label><input type="radio" name="gospel-placement" value="both" onchange="renderOffice(); saveSettings()"> Gospel in Both</label>
+                 <label style="margin-top:6px;"><input type="checkbox" id="toggle-30day-psalter" onchange="renderOffice(); saveSettings()"> 30-Day Psalter</label>
+             </div>
          </div>
-         <div class="setting-group">
-             <strong>Creed Selection:</strong>
-             <select id="creed-type" onchange="renderOffice(); saveSettings()">
-                 <option value="bcp-creed-apostles">Apostles' Creed</option>
-                 <option value="bcp-creed-nicene">Nicene Creed</option>
-             </select>
+         <div class="setting-group" id="ecumenical-devotions-section">
+             <strong>Opening Devotions:</strong>
+             <p style="font-size:0.75em; color:#888; margin:4px 0 8px 0; line-height:1.4;">Rendered before the office begins. Hidden in BCP Only Mode.</p>
+             <div class="nested-group">
+                 <strong style="color:#aaa; font-size:0.8em;">Coptic Orthodox</strong>
+                 <label><input type="checkbox" id="toggle-agpeya-opening" onchange="renderOffice(); saveSettings()"> Agpeya Opening</label>
+             </div>
+             <div class="nested-group" style="margin-top:8px;">
+                 <strong style="color:#aaa; font-size:0.8em;">Church of the East</strong>
+                 <label><input type="checkbox" id="toggle-east-syriac-hours" onchange="renderOffice(); saveSettings()"> Prayer of the Hours <span style="color:#888; font-size:0.82em;">(Hudra)</span></label>
+             </div>
+             <div class="nested-group" style="margin-top:8px;">
+                 <strong style="color:#aaa; font-size:0.8em;">Marian Element</strong>
+                 <label style="margin-top:4px; font-size:0.85em; color:#aaa;">Element:</label>
+                 <label><input type="radio" name="marian-element" value="none" onchange="renderOffice(); saveSettings()" checked> None</label>
+                 <label><input type="radio" name="marian-element" value="antiphon" onchange="renderOffice(); saveSettings()"> BCP Seasonal Antiphon</label>
+                 <label><input type="radio" name="marian-element" value="theotokion" onchange="renderOffice(); saveSettings()"> Theotokion <span style="color:#888; font-size:0.85em;">(Coptic)</span></label>
+                 <label><input type="radio" name="marian-element" value="both" onchange="renderOffice(); saveSettings()"> Both</label>
+                 <label style="margin-top:6px; font-size:0.85em; color:#aaa;">Position:</label>
+                 <label><input type="radio" name="marian-antiphon-pos" value="before" onchange="renderOffice(); saveSettings()" checked> Before office</label>
+                 <label><input type="radio" name="marian-antiphon-pos" value="after" onchange="renderOffice(); saveSettings()"> After office</label>
+             </div>
          </div>
-         <div class="setting-group">
-             <strong>Ordo Components:</strong>
-             <label><input type="radio" name="gospel-placement" value="morning" onchange="renderOffice(); saveSettings()"> Gospel in Morning</label>
-             <label><input type="radio" name="gospel-placement" value="evening" onchange="renderOffice(); saveSettings()" checked> Gospel in Evening</label>
-             <label><input type="radio" name="gospel-placement" value="both" onchange="renderOffice(); saveSettings()"> Gospel in Both</label>
+         <div class="setting-group" id="during-office-section">
+             <strong>During the Office:</strong>
+             <p style="font-size:0.75em; color:#888; margin:4px 0 8px 0; line-height:1.4;">Elements inserted at their liturgical position. Hidden in BCP Only Mode.</p>
+             <label><input type="checkbox" id="toggle-gloria-patri" onchange="renderOffice(); saveSettings()" checked> Gloria Patri <span style="color:#888; font-size:0.82em;">(after Psalm)</span></label>
+             <label style="margin-top:4px;"><input type="checkbox" id="toggle-angelus" onchange="renderOffice(); saveSettings()"> Angelus <span style="color:#888; font-size:0.82em;">(Catholic, before Invitatory)</span></label>
+             <label><input type="checkbox" id="toggle-trisagion" onchange="renderOffice(); saveSettings()"> Trisagion <span style="color:#888; font-size:0.82em;">(Byzantine, after Absolution)</span></label>
+             <label><input type="checkbox" id="toggle-prayer-before-reading" onchange="renderOffice(); saveSettings()"> Prayer Before Reading <span style="color:#888; font-size:0.82em;">(Orthodox, before OT Lesson)</span></label>
          </div>
-         <div class="setting-group">
-             <strong>Optional Prayers:</strong>
+         <div class="setting-group" id="closing-devotions-section">
+             <strong>After the Office:</strong>
+             <p style="font-size:0.75em; color:#888; margin:4px 0 8px 0; line-height:1.4;">Elements at the close. Hidden in BCP Only Mode.</p>
+             <label><input type="checkbox" id="toggle-examen" onchange="renderOffice(); saveSettings()"> The Examen <span style="color:#888; font-size:0.82em;">(Ignatian, Compline only)</span></label>
+             <label><input type="checkbox" id="toggle-kyrie-pantocrator" onchange="renderOffice(); saveSettings()"> Kyrie Pantocrator <span style="color:#888; font-size:0.82em;">(Byzantine, after Collect)</span></label>
+             <label style="margin-top:6px;"><input type="checkbox" id="toggle-suffrages" onchange="renderOffice(); saveSettings()" checked> Suffrages</label>
              <label><input type="checkbox" id="toggle-litany" onchange="renderOffice(); saveSettings()"> The Great Litany</label>
-             <label><input type="checkbox" id="toggle-suffrages" onchange="renderOffice(); saveSettings()" checked> Suffrages</label>
-             <label><input type="checkbox" id="toggle-30day-psalter" onchange="renderOffice(); saveSettings()"> 30-Day Psalter</label>
              <label><input type="checkbox" id="toggle-general-thanksgiving" onchange="renderOffice(); saveSettings()"> General Thanksgiving</label>
              <label><input type="checkbox" id="toggle-chrysostom" onchange="renderOffice(); saveSettings()"> Prayer of St. Chrysostom</label>
          </div>
      </div>
+
      <div id="main-content">
          <h1>The Universal Office</h1>
          <div id="office-display"></div>
@@ -531,6 +613,31 @@ function setCustomDate(dateStr) {
  updateDatePicker();
  renderOffice();
 }
+function toggleSidebar() {
+   const panel = document.getElementById('settings-panel');
+   const toggle = document.getElementById('sidebar-toggle');
+   const main = document.getElementById('main-content');
+   const hidden = panel.classList.toggle('sidebar-hidden');
+   toggle.classList.toggle('sidebar-hidden', hidden);
+   if (main) main.classList.toggle('sidebar-hidden', hidden);
+}
+function toggleBcpOnly() {
+   const bcpOnly = document.getElementById('toggle-bcp-only')?.checked || false;
+   const sections = ['ecumenical-devotions-section','during-office-section','closing-devotions-section']
+      .map(id => document.getElementById(id)).filter(Boolean);
+   if (!sections.length) return;
+   if (bcpOnly) {
+      sections.forEach(s => s.classList.add('bcp-only-hidden'));
+      ['toggle-angelus','toggle-trisagion','toggle-east-syriac-hours','toggle-agpeya-opening',
+       'toggle-prayer-before-reading','toggle-examen','toggle-kyrie-pantocrator'].forEach(id => {
+         const el = document.getElementById(id);
+         if (el) el.checked = false;
+      });
+   } else {
+      sections.forEach(s => s.classList.remove('bcp-only-hidden'));
+   }
+   renderOffice();
+}
 function updateUI() {
   const isDark = document.getElementById('toggle-dark')?.checked || false;
   if (isDark) document.body.classList.add('dark-mode');
@@ -539,16 +646,16 @@ function updateUI() {
 function saveSettings() {
    const settings = {
       darkMode: document.getElementById('toggle-dark')?.checked || false,
+      bcpOnly: document.getElementById('toggle-bcp-only')?.checked || false,
       officeTime: document.querySelector('input[name="office-time"]:checked')?.value || 'morning-office',
       rite: document.querySelector('input[name="rite"]:checked')?.value || 'rite2',
       minister: document.querySelector('input[name="minister"]:checked')?.value || 'lay',
-      marianAntiphon: document.querySelector('input[name="marian-antiphon-pos"]:checked')?.value || 'none',
+      marianElement: document.querySelector('input[name="marian-element"]:checked')?.value || 'none',
+      marianPos: document.querySelector('input[name="marian-antiphon-pos"]:checked')?.value || 'before',
       gloriaPatri: document.getElementById('toggle-gloria-patri')?.checked || false,
       angelus: document.getElementById('toggle-angelus')?.checked || false,
       trisagion: document.getElementById('toggle-trisagion')?.checked || false,
-      theotokion: document.getElementById('toggle-theotokion')?.checked || false,
-      jesusPrayer: document.getElementById('toggle-jesus-prayer')?.checked || false,
-      assyrianBlessing: document.getElementById('toggle-assyrian-blessing')?.checked || false,
+      eastSyriacHours: document.getElementById('toggle-east-syriac-hours')?.checked || false,
       agpeyaOpening: document.getElementById('toggle-agpeya-opening')?.checked || false,
       creedType: document.getElementById('creed-type')?.value || 'bcp-creed-apostles',
       gospelPlacement: document.querySelector('input[name="gospel-placement"]:checked')?.value || 'evening',
@@ -556,7 +663,10 @@ function saveSettings() {
       suffrages: document.getElementById('toggle-suffrages')?.checked || false,
       psalter30Day: document.getElementById('toggle-30day-psalter')?.checked || false,
       generalThanksgiving: document.getElementById('toggle-general-thanksgiving')?.checked || false,
-      chrysostom: document.getElementById('toggle-chrysostom')?.checked || false
+      chrysostom: document.getElementById('toggle-chrysostom')?.checked || false,
+      prayerBeforeReading: document.getElementById('toggle-prayer-before-reading')?.checked || false,
+      examen: document.getElementById('toggle-examen')?.checked || false,
+      kyriePantocrator: document.getElementById('toggle-kyrie-pantocrator')?.checked || false
    };
    try {
       localStorage.setItem('universalOfficeSettings', JSON.stringify(settings));
@@ -572,20 +682,24 @@ function loadSettings() {
       const settings = JSON.parse(saved);
       // Restore checkboxes and radios
       if (document.getElementById('toggle-dark')) document.getElementById('toggle-dark').checked = settings.darkMode;
+      if (settings.bcpOnly && document.getElementById('toggle-bcp-only')) {
+         document.getElementById('toggle-bcp-only').checked = true;
+         toggleBcpOnly();
+      }
       const officeTimeRadio = document.querySelector(`input[name="office-time"][value="${settings.officeTime}"]`);
       if (officeTimeRadio) officeTimeRadio.checked = true;
       const riteRadio = document.querySelector(`input[name="rite"][value="${settings.rite}"]`);
       if (riteRadio) riteRadio.checked = true;
       const ministerRadio = document.querySelector(`input[name="minister"][value="${settings.minister}"]`);
       if (ministerRadio) ministerRadio.checked = true;
-      const marianRadio = document.querySelector(`input[name="marian-antiphon-pos"][value="${settings.marianAntiphon}"]`);
-      if (marianRadio) marianRadio.checked = true;
+      const marianElementRadio = document.querySelector(`input[name="marian-element"][value="${settings.marianElement}"]`);
+      if (marianElementRadio) marianElementRadio.checked = true;
+      const marianPosRadio = document.querySelector(`input[name="marian-antiphon-pos"][value="${settings.marianPos}"]`);
+      if (marianPosRadio) marianPosRadio.checked = true;
       if (document.getElementById('toggle-gloria-patri')) document.getElementById('toggle-gloria-patri').checked = settings.gloriaPatri;
       if (document.getElementById('toggle-angelus')) document.getElementById('toggle-angelus').checked = settings.angelus;
       if (document.getElementById('toggle-trisagion')) document.getElementById('toggle-trisagion').checked = settings.trisagion;
-      if (document.getElementById('toggle-theotokion')) document.getElementById('toggle-theotokion').checked = settings.theotokion;
-      if (document.getElementById('toggle-jesus-prayer')) document.getElementById('toggle-jesus-prayer').checked = settings.jesusPrayer;
-      if (document.getElementById('toggle-assyrian-blessing')) document.getElementById('toggle-assyrian-blessing').checked = settings.assyrianBlessing;
+      if (document.getElementById('toggle-east-syriac-hours')) document.getElementById('toggle-east-syriac-hours').checked = settings.eastSyriacHours;
       if (document.getElementById('toggle-agpeya-opening')) document.getElementById('toggle-agpeya-opening').checked = settings.agpeyaOpening;
       if (document.getElementById('creed-type')) document.getElementById('creed-type').value = settings.creedType;
       const gospelRadio = document.querySelector(`input[name="gospel-placement"][value="${settings.gospelPlacement}"]`);
@@ -595,6 +709,9 @@ function loadSettings() {
       if (document.getElementById('toggle-30day-psalter')) document.getElementById('toggle-30day-psalter').checked = settings.psalter30Day;
       if (document.getElementById('toggle-general-thanksgiving')) document.getElementById('toggle-general-thanksgiving').checked = settings.generalThanksgiving;
       if (document.getElementById('toggle-chrysostom')) document.getElementById('toggle-chrysostom').checked = settings.chrysostom;
+      if (document.getElementById('toggle-prayer-before-reading')) document.getElementById('toggle-prayer-before-reading').checked = settings.prayerBeforeReading;
+      if (document.getElementById('toggle-examen')) document.getElementById('toggle-examen').checked = settings.examen;
+      if (document.getElementById('toggle-kyrie-pantocrator')) document.getElementById('toggle-kyrie-pantocrator').checked = settings.kyriePantocrator;
       console.log('Settings loaded');
    } catch (e) {
       console.warn('Could not load settings from localStorage:', e);
@@ -612,19 +729,21 @@ const todayKeyShort = currentDate.toLocaleDateString('en-US', { month: 'long', d
   document.getElementById('display-date').innerText = todayKey;
   const officeId = document.querySelector('input[name="office-time"]:checked')?.value;
   const rite = document.querySelector('input[name="rite"]:checked')?.value || 'rite2';
-  const minister = document.querySelector('input[name="minister"]:checked')?.value || 'lay';
-  const marianPos = document.querySelector('input[name="marian-antiphon-pos"]:checked')?.value || 'none';
+   const minister = document.querySelector('input[name="minister"]:checked')?.value || 'lay';
+  const marianElement = document.querySelector('input[name="marian-element"]:checked')?.value || 'none';
+  const marianPos = document.querySelector('input[name="marian-antiphon-pos"]:checked')?.value || 'before';
   const creedSelection = document.getElementById('creed-type')?.value;
   const greatLitanyChecked = document.getElementById('toggle-litany')?.checked || false;
   const suffragesChecked = document.getElementById('toggle-suffrages')?.checked || false;
   const gospelPlacement = document.querySelector('input[name="gospel-placement"]:checked')?.value || 'evening';
   const generalThanksgivingChecked = document.getElementById('toggle-general-thanksgiving')?.checked || false;
   const chrysostomChecked = document.getElementById('toggle-chrysostom')?.checked || false;
-  const devotions = [];
-  if (document.getElementById('toggle-angelus')?.checked) devotions.push('angelus'); if (document.getElementById('toggle-trisagion')?.checked) devotions.push('trisagion-byzantine'); if (document.getElementById('toggle-theotokion')?.checked) devotions.push('coptic-theotokion'); if (document.getElementById('toggle-jesus-prayer')?.checked) devotions.push('jesus-prayer'); if (document.getElementById('toggle-assyrian-blessing')?.checked) devotions.push('assyrian-blessing'); if (document.getElementById('toggle-agpeya-opening')?.checked) devotions.push('agpeya-opening');
+  // Ecumenical devotions rendered positionally — no array needed
+
   const { season } = CalendarEngine.getSeasonAndFile(currentDate);
   const marianId = `bcp-marian-antiphon-${season}`;
   const marianComp = appData.components.find(c => c.id === marianId);
+  const theotokionComp = appData.components.find(c => c.id === 'coptic-theotokion');
   const activeRubric = appData.rubrics.find(r => r.id === officeId);
   const dailyData = await CalendarEngine.fetchLectionaryData(currentDate);
   document.getElementById('calendar-info').innerText = dailyData.title || "Liturgical Ordo";
@@ -659,20 +778,40 @@ let readingGospel = dailyData[`reading_gospel_mp_${litYear}`] || dailyData[`read
    let eveningGospel = ((isEvening || isCompline || isNoonday) && (gospelPlacement === 'evening' || gospelPlacement === 'both')) ? readingGospel : '';
   let officeHtml = `<div class="office-container"><h2>${activeRubric?.officeName || "Office"}</h2>`;
   officeHtml += `<p style="color:var(--gold); font-variant:small-caps; font-weight:bold;">${dailyData.title || "Day Title"}</p>`;
-  if (marianPos === 'before' && marianComp) {
-    let marianText = marianComp.text;
-    if (typeof marianText === 'object' && marianText !== null) {
-      marianText = marianText[rite] || marianText['rite2'] || marianText['rite1'] || "Marian Antiphon text not found";
-    } else {
-      marianText = marianText || "Marian Antiphon text not found";
+  // AGPEYA OPENING — Coptic preparation prayer, rendered before all else
+  if (document.getElementById('toggle-agpeya-opening')?.checked) {
+    const agpeyaComp = appData.components.find(c => c.id === 'agpeya-opening');
+    if (agpeyaComp) {
+      let agpeyaText = agpeyaComp.text;
+      if (typeof agpeyaText === 'object') agpeyaText = agpeyaText[rite] || agpeyaText['rite2'] || agpeyaText['rite1'] || agpeyaText;
+      officeHtml += `<span class="rubric-text">Agpeya Opening</span><span class="component-text">${agpeyaText}</span>`;
     }
-    officeHtml += `<span class="rubric-text">Marian Antiphon</span><span class="component-text"><i>${marianText}</i></span>`;
+  }
+  // EAST SYRIAC PRAYER OF THE HOURS (Hudra) — consecration of the hour, after Agpeya
+  if (document.getElementById('toggle-east-syriac-hours')?.checked) {
+    const esComp = appData.components.find(c => c.id === 'east-syriac-prayer-of-hours');
+    if (esComp) {
+      officeHtml += `<span class="rubric-text">Prayer of the Hours</span><span class="component-text">${esComp.text}</span>`;
+    }
+  }
+  if (marianElement !== 'none' && marianPos === 'before') {
+    if ((marianElement === 'antiphon' || marianElement === 'both') && marianComp) {
+      let marianText = marianComp.text;
+      if (typeof marianText === 'object' && marianText !== null) {
+        marianText = marianText[rite] || marianText['rite2'] || marianText['rite1'] || 'Marian Antiphon text not found';
+      }
+      officeHtml += `<span class="rubric-text">Marian Antiphon</span><span class="component-text"><i>${marianText}</i></span>`;
+    }
+    if ((marianElement === 'theotokion' || marianElement === 'both') && theotokionComp) {
+      officeHtml += `<span class="rubric-text">Theotokion</span><span class="component-text"><i>${theotokionComp.text}</i></span>`;
+    }
   }
   if (dailyData.antiphon) {
     officeHtml += `<span class="rubric-text">Antiphon</span><span class="component-text"><i>${dailyData.antiphon}</i></span>`;
   }
   for (let item of activeRubric?.sequence || []) {
  item = item.trim(); // Trim for matching
+  const originalItem = item; // Preserve before compId resolution
  let compId = item.replace('[rite]', rite); // Replace placeholders like bcp-confession-[rite]
  // Handle slots like bcp-absolution-slot, bcp-creed-slot, bcp-suffrages-slot
  if (compId === "bcp-absolution-slot") {
@@ -686,13 +825,22 @@ let readingGospel = dailyData[`reading_gospel_mp_${litYear}`] || dailyData[`read
    } else {
      continue; // Skip if unchecked
    }
- }
+  }
  if (item === "VARIABLE_OPENING") {
    let openingId = `bcp-opening-${season}`; // Seasonal, e.g., bcp-opening-advent
    const comp = appData.components.find(c => c.id === openingId) || appData.components.find(c => c.id === 'bcp-opening-general'); // Fallback
    let displayText = comp ? (comp.text[rite] || comp.text) : "Opening text not found";
    officeHtml += `<span class="rubric-text">Opening Sentence</span><span class="component-text">${displayText}</span>`;
    continue;
+ }
+ // ANGELUS — before Invitatory (Noonday always; MP/EP optional; not Compline)
+ if (item === 'bcp-invitatory-full' && document.getElementById('toggle-angelus')?.checked && !isCompline) {
+   const angelusComp = appData.components.find(c => c.id === 'angelus');
+   if (angelusComp) {
+     let angelusText = angelusComp.text;
+     if (typeof angelusText === 'object') angelusText = angelusText[rite] || angelusText['rite2'] || angelusText['rite1'] || angelusText;
+     officeHtml += `<span class="rubric-text">The Angelus</span><span class="component-text">${angelusText}</span>`;
+   }
  }
  if (item === "bcp-invitatory-full") {
    let invitatoryId = isMorning ? 'bcp-invitatory-full-mp' : 'bcp-invitatory-full-ep-noon-compline';
@@ -729,13 +877,18 @@ let readingGospel = dailyData[`reading_gospel_mp_${litYear}`] || dailyData[`read
    continue;
  }
  if (item === "VARIABLE_READING_OT") {
+    // PRAYER BEFORE READING — Orthodox epiklesis, before the lesson
+    if (document.getElementById('toggle-prayer-before-reading')?.checked) {
+      const pbrComp = appData.components.find(c => c.id === 'orthodox-prayer-before-reading');
+      if (pbrComp) officeHtml += `<span class="rubric-text">Prayer Before Reading</span><span class="component-text">${pbrComp.text}</span>`;
+    }
    let reading = isMorning ? morningOT : eveningOT;
    if (reading) {
      officeHtml += `<span class="rubric-text">The Old Testament Lesson</span>`;
      officeHtml += `<h4 class="passage-reference">${reading}</h4>`;
      const fullText = await getScriptureText(reading);
      officeHtml += `<span class="component-text">${fullText || "No reading appointed"}</span>`;
-     officeHtml += '<br><hr style="border: 1px solid var(--gold); margin: 10px 0;">';
+     officeHtml += '<br><hr style="border: 0; border-top: 0.5px solid var(--gold); margin: 10px 0;">';
    }
    continue;
  }
@@ -746,7 +899,7 @@ let readingGospel = dailyData[`reading_gospel_mp_${litYear}`] || dailyData[`read
      officeHtml += `<h4 class="passage-reference">${reading}</h4>`;
      const fullText = await getScriptureText(reading);
      officeHtml += `<span class="component-text">${fullText || "No reading appointed"}</span>`;
-     officeHtml += '<br><hr style="border: 1px solid var(--gold); margin: 10px 0;">';
+     officeHtml += '<br><hr style="border: 0; border-top: 0.5px solid var(--gold); margin: 10px 0;">';
    }
    continue;
  }
@@ -757,7 +910,7 @@ let readingGospel = dailyData[`reading_gospel_mp_${litYear}`] || dailyData[`read
      officeHtml += `<h4 class="passage-reference">${reading}</h4>`;
      const fullText = await getScriptureText(reading);
      officeHtml += `<span class="component-text">${fullText || "No reading appointed"}</span>`;
-     officeHtml += '<br><hr style="border: 1px solid var(--gold); margin: 10px 0;">';
+     officeHtml += '<br><hr style="border: 0; border-top: 0.5px solid var(--gold); margin: 10px 0;">';
    }
    continue;
  }
@@ -857,9 +1010,9 @@ let readingGospel = dailyData[`reading_gospel_mp_${litYear}`] || dailyData[`read
  if (item === "VARIABLE_COLLECT") {
    officeHtml += `<span class="rubric-text">The Collect</span>`;
    const collectId = dailyData.collect || "collect-default-ferial"; // Fallback to default if missing
-   const comp = appData.components.find(c => c.id === collectId);
-   if (comp) {
-     let displayText = comp.text;
+   const collectComp = appData.components.find(c => c.id === collectId);
+   if (collectComp) {
+     let displayText = collectComp.text;
      if (typeof displayText === 'object' && displayText !== null) {
        displayText = displayText[rite] || displayText['rite2'] || displayText['rite1'] || "Collect text not found";
      } else {
@@ -870,9 +1023,19 @@ let readingGospel = dailyData[`reading_gospel_mp_${litYear}`] || dailyData[`read
      officeHtml += `<span class="component-text">No collect appointed</span>`;
      console.log("Collect ID not found: " + collectId); // Debug log
    }
-   officeHtml += '<br><hr style="border: 1px solid var(--gold); margin: 10px 0;">';
+   officeHtml += '<br><hr style="border: 0; border-top: 0.5px solid var(--gold); margin: 10px 0;">';
+    // EXAMEN — Compline only, after Collect
+    if (isCompline && document.getElementById('toggle-examen')?.checked) {
+      const examenComp = appData.components.find(c => c.id === 'ignatian-examen');
+      if (examenComp) officeHtml += `<span class="rubric-text">The Examen</span><span class="component-text">${examenComp.text}</span>`;
+    }
+    // KYRIE PANTOCRATOR — MP/EP only, after Collect
+    if (!isCompline && !isNoonday && document.getElementById('toggle-kyrie-pantocrator')?.checked) {
+      const kyrieComp = appData.components.find(c => c.id === 'eastern-kyrie-pantocrator');
+      if (kyrieComp) officeHtml += `<span class="rubric-text">Kyrie Pantocrator</span><span class="component-text">${kyrieComp.text}</span>`;
+    }
    continue;
- }
+  }
  let comp = appData.components.find(c => c.id === compId);
  if (comp) {
    let displayText = comp.text;
@@ -885,31 +1048,28 @@ let readingGospel = dailyData[`reading_gospel_mp_${litYear}`] || dailyData[`read
  } else {
    officeHtml += `<span class="rubric-text">Component not found: ${compId}</span>`;
  }
+  // TRISAGION — rendered after Absolution
+  if (item === 'bcp-absolution-slot' && document.getElementById('toggle-trisagion')?.checked) {
+    const trisComp = appData.components.find(c => c.id === 'trisagion-byzantine');
+    if (trisComp) {
+      let trisText = trisComp.text;
+      if (typeof trisText === 'object') trisText = trisText[rite] || trisText['rite2'] || trisText['rite1'] || trisText;
+      officeHtml += `<span class="rubric-text">Trisagion</span><span class="component-text">${trisText}</span>`;
+    }
+  }
 }
-   if (marianPos === 'after' && marianComp) {
-let marianText = marianComp.text;
-if (typeof marianText === 'object' && marianText !== null) {
-  marianText = marianText[rite] || marianText['rite2'] || marianText['rite1'] || "Marian Antiphon text not found";
-} else {
-  marianText = marianText || "Marian Antiphon text not found";
-}
-officeHtml += `<span class="rubric-text">Marian Antiphon</span><span class="component-text"><i>${marianText}</i></span>`;
-}
- if (devotions.length > 0) {
-   officeHtml += `<span class="rubric-text">Tradition Devotions</span>`;
-   devotions.forEach(devId => {
-     const comp = appData.components.find(c => c.id === devId);
-     if (comp) {
-       let displayText = comp.text;
-       if (typeof displayText === 'object' && displayText !== null) {
-         displayText = displayText[rite] || displayText['rite2'] || displayText['rite1'] || "Text not found";
-       } else {
-         displayText = displayText || "Text not found";
+   if (marianElement !== 'none' && marianPos === 'after') {
+     if ((marianElement === 'antiphon' || marianElement === 'both') && marianComp) {
+       let marianText = marianComp.text;
+       if (typeof marianText === 'object' && marianText !== null) {
+         marianText = marianText[rite] || marianText['rite2'] || marianText['rite1'] || 'Marian Antiphon text not found';
        }
-       officeHtml += `<span class="rubric-text">${comp.title}</span><span class="component-text">${displayText}</span>`;
+       officeHtml += `<span class="rubric-text">Marian Antiphon</span><span class="component-text"><i>${marianText}</i></span>`;
      }
-   });
- }
+     if ((marianElement === 'theotokion' || marianElement === 'both') && theotokionComp) {
+       officeHtml += `<span class="rubric-text">Theotokion</span><span class="component-text"><i>${theotokionComp.text}</i></span>`;
+     }
+   }
  document.getElementById('office-display').innerHTML = officeHtml + `</div>`;
  document.getElementById('date-header').innerText = `Commemorations for ${todayKey}`;
  const todayKeyLower = todayKey.toLowerCase();
