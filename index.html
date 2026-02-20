@@ -156,7 +156,7 @@
         background: rgba(30, 18, 8, 1);
         box-shadow: 0 0 12px rgba(160, 114, 42, 0.4);
     }
-    #daily-office-section { display: none; position: absolute; top: 0; left: 0; width: 100%; height: 100vh; flex-direction: row; }
+    #daily-office-section { display: none; position: fixed; inset: 0; flex-direction: row; overflow: hidden; }
     #individual-prayers-section {
     position: fixed;
     inset: 0;
@@ -178,64 +178,69 @@
     z-index: 200;
 }
     #settings-panel.sidebar-hidden {
-        transform: translateX(-300px);
+        margin-left: -300px;
         pointer-events: none;
     }
     #sidebar-toggle {
-        position: fixed;
-        left: 300px;
-        top: 0;
-        width: 24px;
-        height: 100vh;
-        background: #0d0801;
+        position: relative;
+        width: 36px;
+        flex-shrink: 0;
+        background: linear-gradient(180deg, #0d0801 0%, #1a0f04 50%, #0d0801 100%);
         border-right: 1px solid rgba(201,168,76,0.3);
         cursor: pointer;
         display: flex;
+        flex-direction: column;
         align-items: center;
         justify-content: center;
+        gap: 18px;
         z-index: 101;
-        transition: left 0.3s ease;
-        writing-mode: vertical-rl;
-        text-orientation: mixed;
-        color: var(--gold);
-        font-family: 'Cinzel', serif;
-        font-size: 0.65em;
-        letter-spacing: 3px;
-        text-transform: uppercase;
         user-select: none;
-        opacity: 0.45;
+        opacity: 0.5;
     }
     #sidebar-toggle:hover {
         opacity: 1;
-        background: #180f04;
+        background: linear-gradient(180deg, #1a0f04 0%, #241508 50%, #1a0f04 100%);
     }
-    #sidebar-toggle.sidebar-hidden {
-        left: 0;
+    .toggle-cross {
+        color: var(--gold);
+        font-size: 20px;
+        line-height: 1;
+        writing-mode: horizontal-tb;
+        opacity: 0.9;
+    }
+    .toggle-dots {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        align-items: center;
+    }
+    .toggle-dots span {
+        display: block;
+        width: 14px;
+        height: 1px;
+        background: var(--gold);
         opacity: 0.6;
-    }
-    #main-content.sidebar-hidden {
-        margin-left: 24px;
+        border-radius: 1px;
     }
     #settings-panel {
         width: 300px;
+        min-width: 300px;
         background: linear-gradient(180deg, var(--sidebar-bg) 0%, var(--sidebar-bg-bottom, #050408) 100%);
         color: var(--sidebar-text);
         font-size: 17px;
-        padding: 28px 25px;
+        padding: 28px 20px;
         height: 100vh;
-        position: fixed;
-        left: 0;
-        top: 0;
         overflow-y: auto;
         border-right: 1px solid rgba(201, 168, 76, 0.3);
         color: var(--sidebar-text);
         box-shadow: inset -4px 0 18px rgba(150,80,0,0.08), 4px 0 20px rgba(0,0,0,0.5);
-        transition: transform 0.3s ease;
+        transition: margin-left 0.3s ease;
         z-index: 100;
+        text-align: center;
     }
     .setting-group {
         margin-bottom: 25px;
-        text-align: left;
+        text-align: center;
     }
     .setting-group strong {
         display: block;
@@ -247,12 +252,16 @@
         font-size: 0.95em;
     }
     .setting-group label {
-        display: block;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 4px;
         margin-bottom: 10px;
         cursor: pointer;
         font-size: 1.1em;
         font-family: 'IM Fell English', serif;
         color: var(--sidebar-label, #b8af98);
+        white-space: nowrap;
     }
     .nested-group {
         margin-left: 12px;
@@ -260,15 +269,14 @@
         font-size: 1em;
     }
     #main-content {
-        margin-left: 300px;
-        transition: margin-left 0.3s ease;
+        flex: 1;
+        min-width: 0;
         padding: 40px;
         height: 100vh;
         overflow-y: auto;
         text-align: center;
         -webkit-overflow-scrolling: touch;
         scrollbar-width: thin;
-        width: calc(100% - 300px);
         background: var(--main-bg);
     }
     #main-content::-webkit-scrollbar {
@@ -785,7 +793,11 @@
      </div>
  </div>
  <div id="daily-office-section">
-     <div id="sidebar-toggle" onclick="toggleSidebar()">Settings</div>
+     <div id="sidebar-toggle" onclick="toggleSidebar()" title="Toggle Settings">
+         <span class="toggle-cross">☩</span>
+         <div class="toggle-dots"><span></span><span></span><span></span></div>
+         <span class="toggle-cross">☩</span>
+     </div>
      <div id="settings-panel">
          <button class="mode-btn" onclick="backToSplash()" style="margin-bottom:10px;">Back to Modes</button>
          <h3 style="color:var(--gold); font-family:'Cinzel',serif; font-size:1.15em; letter-spacing:0.08em;">Office Settings</h3>
@@ -983,7 +995,7 @@
     <div id="prayer-display" style="display:none; margin-top:40px; background:transparent; width:100%; max-width:800px; padding-bottom:100px; box-sizing:border-box;">
         <div id="single-prayer-content"></div>
     </div>
-    <div id="prayer-back-bar" style="display:none; position:fixed; bottom:0; left:0; right:0; text-align:center; padding:16px 0 20px; background:linear-gradient(transparent, var(--bg-color) 40%); z-index:300;">
+    <div id="prayer-back-bar" style="display:none; position:fixed; bottom:0; left:0; right:0; text-align:center; padding:16px 0 20px; background:linear-gradient(transparent, rgba(30,18,8,0.97) 40%); z-index:300;">
         <button class="mode-btn" onclick="backToPrayerDropdown()">Back to Selection</button>
     </div>
 </div>
@@ -1119,10 +1131,8 @@ function setCustomDate(dateStr) {
 function toggleSidebar() {
    const panel = document.getElementById('settings-panel');
    const toggle = document.getElementById('sidebar-toggle');
-   const main = document.getElementById('main-content');
    const hidden = panel.classList.toggle('sidebar-hidden');
-   toggle.classList.toggle('sidebar-hidden', hidden);
-   if (main) main.classList.toggle('sidebar-hidden', hidden);
+   toggle.style.opacity = hidden ? '0.65' : '0.5';
 }
 function toggleBcpOnly() {
    const bcpOnly = document.getElementById('toggle-bcp-only')?.checked || false;
