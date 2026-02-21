@@ -1,0 +1,227 @@
+{
+  "prayer-humble-access": {
+    "title": "Prayer of Humble Access",
+    "source": "The Book of Common Prayer, p. 337",
+    "text": "We do not presume to come to this thy Table, O merciful Lord, trusting in our own righteousness, but in thy manifold and great mercies. We are not worthy so much as to gather up the crumbs under thy Table. But thou art the same Lord whose property is always to have mercy. Grant us therefore, gracious Lord, so to eat the flesh of thy dear Son Jesus Christ, and to drink his blood, that we may evermore dwell in him, and he in us. <em>Amen.</em>"
+  },
+  "spiritual-communion": {
+    "title": "Act of Spiritual Communion",
+    "source": "Traditional",
+    "text": "In union, blessed Jesus, with the faithful gathered at every altar of your Church where your blessed Body and Blood are offered this day, I long to offer you praise and thanksgiving, for creation and all the blessings of this life, for the redemption won for us by your life, death, and resurrection, for the means of grace and the hope of glory. I believe that you are truly present in the Holy Sacrament, and, since I cannot at this time receive communion, I pray you to come into my heart. I unite myself with you and embrace you with all my heart, my soul, and my mind. Let nothing separate me from you; let me serve you in this life until, by your grace, I come to your glorious kingdom and unending peace. <em>Amen.</em>"
+  },
+  "thanksgiving-aquinas": {
+    "title": "Thanksgiving After Communion",
+    "source": "Based on a Prayer of Saint Thomas Aquinas",
+    "text": "I give thanks, O God, that in your great mercy, you have fed me with the precious Body and Blood of your Son, our Lord Jesus Christ, giving me far more than I could ask and infinitely more than I deserve. May I never receive so great a gift with presumption or thoughtlessness… Bring me, I pray, unworthy and a sinner though I am, to that ineffable feast, where, with your Son and the Holy Spirit, you are, to all your people, true light, full satisfaction, everlasting joy, pleasure's fulfillment, and perfect happiness; through the same Jesus Christ our Lord. <em>Amen.</em>"
+  },
+  "thanksgiving-hooker": {
+    "title": "Thanksgiving After Communion",
+    "source": "Adapted from Of the Laws of Ecclesiastical Polity, Richard Hooker, 1593",
+    "text": "Our hunger is satisfied and our thirst for ever quenched; here are things wonderful which we feel, great which we see and unheard of which we utter — whose souls are possessed of this Paschal Lamb and made joyful in the strength of this new wine… Why should any cogitation possess the mind of a faithful communicant but this: O my God, thou art true, O my soul, thou art happy. <em>Amen.</em>"
+  },
+  "thanksgiving-andrewes": {
+    "title": "Self-Oblation",
+    "source": "Attributed to Lancelot Andrewes",
+    "text": "Lord Jesus Christ, I give you my hands, to do your work, my feet to follow in your way, my eyes to see as you see, my tongue to speak your words; take my mind and let my thoughts dwell always on you and in my spirit, pray always within me. Above all, I give you my heart; that in me you may love your Father and all people. I give you myself, that you may grow in me, so that it is you, Lord Jesus, who lives and works and prays in me. <em>Amen.</em>"
+  },
+  "thanksgiving-basil": {
+    "title": "Thanksgiving After Communion",
+    "source": "From the Liturgy of Saint Basil",
+    "text": "The mystery of thy dispensation, O Christ our God, is finished and perfected as far as in our power lies. For we have presented the memorial of thy death; we have seen the type of thy resurrection; we have been refreshed with thine endless life; we have enjoyed thine inexhaustible delights… <em>Amen.</em>"
+  },
+  "o-salutaris": {
+    "title": "O Salutaris",
+    "source": "Saint Thomas Aquinas",
+    "text": "O Saving Victim, opening wide<br>the gates of heaven to us below,<br>Our foes press on from every side,<br>Thine aid supply, thy strength bestow.<br><br>All praise and thanks to thee ascend<br>for evermore, blest One in Three;<br>O grant us life that shall not end<br>in our true native land with thee. <em>Amen.</em>"
+  },
+  "tantum-ergo": {
+    "title": "Tantum Ergo",
+    "source": "Saint Thomas Aquinas",
+    "text": "Therefore we, before him bending,<br>this great Sacrament revere;<br>types and shadows have their ending,<br>for the newer rite is here;<br>faith, our outward sense befriending,<br>makes our inward vision clear.<br><br>Glory let us give and blessing<br>to the Father and the Son,<br>who, honor, thanks, and praise addressing,<br>while eternal ages run;<br>ever too his love confessing<br>who from both with both is One. <em>Amen.</em>"
+  },
+  "divine-praises": {
+    "title": "The Divine Praises",
+    "source": "Traditional",
+    "text": "Blessed be God.<br>Blessed be the holy and undivided Trinity.<br>Blessed be God the Father, maker of heaven and earth.<br>Blessed be Jesus Christ, true God and true Man.<br>Blessed be Jesus Christ in his death and resurrection.<br>Blessed be Jesus Christ on his throne of glory.<br>Blessed be Jesus Christ in the Sacrament of his body and blood.<br>Blessed be God the Holy Spirit, the Lord and giver of life.<br>Blessed be God in the Virgin Mary, Mother of our God.<br>Blessed be God in Joseph, guardian of the Incarnate Word.<br>Blessed be God in all the angels and saints.<br>Blessed be God."
+  },
+  "anima-christi": {
+    "title": "Anima Christi",
+    "source": "Translated by John Henry Newman",
+    "text": "Soul of Christ, be my sanctification;<br>Body of Christ, be my salvation;<br>Blood of Christ, fill all my veins;<br>Water of Christ's side, wash out my stains;<br>Passion of Christ, my comfort be;<br>O good Jesu, listen to me;<br>In thy wounds I fain would hide,<br>Ne'er to be parted from thy side;<br>Guard me, should the foe assail me;<br>Call me when my life shall fail me,<br>Bid me come to thee above,<br>With thy saints to sing thy love,<br>World without end. <em>Amen.</em>"
+  },
+  "to-blessed-virgin": {
+    "title": "To the Blessed Virgin Mary",
+    "source": "Traditional",
+    "text": "O most gracious and Blessed Virgin Mary, who was found worthy to bear in thy womb and feed at thy breast our Lord Jesus Christ… pray for me and for all Christ's people, that we may render to him more faithful service and persevere to the end in loving companionship with him… <em>Amen.</em>"
+  },
+  "to-saint-joseph": {
+    "title": "To Saint Joseph",
+    "source": "Traditional",
+    "text": "O blessed Joseph, unto whose faithful guardianship was committed Christ Jesus, whom I have received in this mighty sacrament: pray for me that I may guard, cherish, and love him who now abides in all intimacy in my heart. <em>Amen.</em>"
+  },
+  "in-sorrow-or-trouble": {
+    "title": "In Sorrow or Trouble",
+    "source": "Traditional",
+    "text": "I hear thy voice, O Lord Jesus, saying: \"Come unto me, all ye that travail and are heavy-laden, and I will refresh you.\" I come into thy sacramental presence, weary and laden with my sins and with the cares and distractions of the world. Let me rest awhile in thy sacred presence; let my heart find rest here. Let nothing separate me from thee, here in this world or in the world to come. <em>Amen.</em>"
+  },
+  "ave-regina": {
+    "title": "Ave Regina Caelorum",
+    "source": "Traditional Marian Antiphon",
+    "text": "Queen of Heaven, we hail you,<br>hail you Lady of all the angels.<br>You the dawn, the door of morning,<br>whence the world's true Light is risen.<br>Joy to you, O virgin glorious,<br>beautiful beyond all other.<br>Hail and farewell, O most gracious,<br>intercede for us to Jesus.<br><br><em>V.</em> Behold the handmaid of the Lord,<br><em>R.</em> <strong>Be it done unto me according to your Word.</strong><br><br>Father in heaven, by your grace the virgin mother of your incarnate Son was blessed in bearing him, but still more blessed in keeping your word: Grant us who honor the exaltation of her lowliness to follow the example of her devotion to your will; through Jesus Christ our Lord, who lives and reigns with you and the Holy Spirit, one God, for ever and ever. <strong>Amen.</strong>"
+  },
+  "act-of-contrition": {
+    "title": "Act of Contrition",
+    "source": "Traditional",
+    "text": "O God, I am very sorry that I have sinned against you and for all the wrongs I have done and the good I have not done. <em>Especially I confess…</em> Forgive me for Jesus' sake, and grant me strength and wisdom to amend my life. <em>Amen.</em>"
+  },
+  "after-neglect": {
+    "title": "After Neglect or Misuse of the Sacrament",
+    "source": "Traditional",
+    "text": "Gracious Lord, who restored Peter after he denied thee and welcomed Thomas who questioned thy resurrection: forgive me any misuse or disregard of thine infinite goodness given into our hands in the Blessed Sacrament of the altar. Awaken in me, and in all who come to thy feast, a keen awareness of thy great gift and our great need. Grant that we may show forth our gratitude in reverence of action and words, in diligent preparation, in joyful participation, and in lives that reflect the bountiful goodness we here receive; for the sake of thy love. <em>Amen.</em>"
+  },
+  "andrewes-commendation": {
+    "title": "Commendation",
+    "source": "Prayers of Lancelot Andrewes",
+    "text": "Into your hands, I commend<br>&nbsp;&nbsp;&nbsp;my spirit, my soul, my body;<br>you created them, redeemed them, gave them new birth,<br>&nbsp;&nbsp;&nbsp;O Lord, the God of truth.<br>And you have given me all that is with me, and all that is mine,<br>&nbsp;&nbsp;&nbsp;O Lord, in your goodness.<br>Watch over my lying down and my waking up,<br>&nbsp;&nbsp;&nbsp;from this time forth for evermore;<br>to remember you upon my bed,<br>&nbsp;&nbsp;&nbsp;to search out my spirit;<br>to wake up and still remain with you.<br>I lie down in peace; at once I fall asleep;<br>&nbsp;&nbsp;&nbsp;for only you, Lord, make me dwell in safety."
+  },
+  "andrewes-thanksgiving": {
+    "title": "Thanksgiving",
+    "source": "Prayers of Lancelot Andrewes",
+    "text": "I lift up my hands by night in the holy place, and bless the Lord.<br>The Lord grants his loving-kindness in the daytime;<br>&nbsp;&nbsp;&nbsp;in the night season his song is with me,<br>&nbsp;&nbsp;&nbsp;a prayer to the God of my life.<br>So will I bless you through all my life,<br>&nbsp;&nbsp;&nbsp;I will lift up my hands in your name.<br>Let my prayer be set forth in your sight as incense,<br>&nbsp;&nbsp;&nbsp;the lifting up of my hands as the evening sacrifice.<br><br>Blessed are you, O Lord our God,<br>&nbsp;&nbsp;&nbsp;the God of our Fathers,<br>who created the exchange of day and night,<br>who gave us cause to sing at night,<br>who rescued us from the evil of this day,<br>who has not cut off my life like a weaver,<br>nor broken me down, from day until night."
+  },
+  "andrewes-penitence": {
+    "title": "Penitence",
+    "source": "Prayers of Lancelot Andrewes",
+    "text": "As days pile upon days,<br>&nbsp;&nbsp;&nbsp;so pile up our sins.<br>Seven times a day falls the righteous,<br>&nbsp;&nbsp;&nbsp;but I of extraordinary sin, seventy-seven;<br>&nbsp;&nbsp;&nbsp;and it is strange and terrifying.<br>But I turn away from my evil ways and groan,<br>&nbsp;&nbsp;&nbsp;and I bend my heart,<br>&nbsp;&nbsp;&nbsp;I bend my whole heart to you,<br>the God of those who repent, and Savior of sinners,<br>&nbsp;&nbsp;&nbsp;and evening after evening I will turn<br>&nbsp;&nbsp;&nbsp;from the inmost marrow of my soul,<br>&nbsp;&nbsp;&nbsp;and out of the depths my soul cries to you,<br><br>\"I have sinned, O Lord, I have sinned —<br>&nbsp;&nbsp;&nbsp;ah! alas! the wretchedness!<br>I repent, oh, I repent. Spare me, O Lord,<br>&nbsp;&nbsp;&nbsp;I repent — oh, I repent!<br>&nbsp;&nbsp;&nbsp;help me in my unrepentance.<br><br>Be merciful. Spare me, O Lord.<br>Be merciful. Have mercy on me.<br>&nbsp;&nbsp;&nbsp;I have said, 'Lord, have mercy.'<br>&nbsp;&nbsp;&nbsp;Heal my soul, for I have sinned against you.<br>Have mercy on me, O Lord, according to your great kindness,<br>&nbsp;&nbsp;&nbsp;and in your great compassion<br>&nbsp;&nbsp;&nbsp;blot out my offenses.<br><br>Release the guilt,<br>heal the wound,<br>wipe away the stain,<br>rescue me from the shame,<br>snatch me away from the tyranny,<br>and make not an example of me.<br><br>O Lord, my destruction comes from myself;<br>&nbsp;&nbsp;&nbsp;however much I have sinned, mercifully forgive.<br>Do not deal with us according to our sins,<br>&nbsp;&nbsp;&nbsp;nor reward us according to our wickedness.<br>Look mercifully upon our weakness,<br>&nbsp;&nbsp;&nbsp;according to the glory of your all-holy name,<br>Turn evil away from us, and all harsh things<br>&nbsp;&nbsp;&nbsp;that our sins have most justly and worthily deserved."
+  },
+  "andrewes-petition": {
+    "title": "Petition",
+    "source": "Prayers of Lancelot Andrewes",
+    "text": "Grant me, O Lord, rest from my work;<br>&nbsp;&nbsp;&nbsp;refresh me from my mighty toil.<br>Give light to my eyes,<br>&nbsp;&nbsp;&nbsp;lest I sleep in death.<br>Rescue me from terror by night,<br>&nbsp;&nbsp;&nbsp;from the plague that stalks in the darkness.<br>Give me wholesome rest,<br>&nbsp;&nbsp;&nbsp;so that I pass this night without fear.<br><br>O Guardian of Israel who neither slumbers nor sleeps,<br>&nbsp;&nbsp;&nbsp;Guard me this night against all evil,<br>&nbsp;&nbsp;&nbsp;Guard my soul, O Lord.<br><br>Visit me with your own visitation,<br>&nbsp;&nbsp;&nbsp;reveal my mind to me in the visions of the night.<br>But if not — for I am not worthy, I am not worthy! —<br>&nbsp;&nbsp;&nbsp;even so, O loving Master,<br>&nbsp;&nbsp;&nbsp;may my sleep be a respite for me<br>&nbsp;&nbsp;&nbsp;from both toil and from sin.<br><br>Yes, Lord — and in sleep, let me not desire<br>&nbsp;&nbsp;&nbsp;that which grieves you or defiles me.<br>Let me not be filled with illusions,<br>&nbsp;&nbsp;&nbsp;but let me have a steady heart,<br>&nbsp;&nbsp;&nbsp;without fear or dread.<br>Guard me against the dark sleep of sin,<br>&nbsp;&nbsp;&nbsp;but put every earthly and evil thought within me to sleep.<br><br>You know the sleeplessness of my unseen enemies, O Lord,<br>&nbsp;&nbsp;&nbsp;and the weakness of my struggling flesh —<br>&nbsp;&nbsp;&nbsp;you formed me!<br>Let the wing of your mercy cover me.<br>Wake me up at the right time,<br>&nbsp;&nbsp;&nbsp;at the time of prayer,<br>&nbsp;&nbsp;&nbsp;and give me grace to rise to seek you,<br>&nbsp;&nbsp;&nbsp;to give you glory and care."
+  },
+  "prayer-for-the-sick": {
+    "title": "Prayer for the Sick",
+    "source": "The Book of Common Prayer",
+    "text": "O Father of mercies, and God of all comfort, our only help in time of need: We humbly beseech thee to behold, visit, and relieve thy sick servant [Name] for whom our prayers are desired. Look upon him with the eyes of thy mercy; comfort him with a sense of thy goodness; preserve him from the temptations of the enemy; and give him patience under his affliction. In thy good time, restore him to health, and enable him to lead the residue of his life in thy fear, and to thy glory; and grant that finally he may dwell with thee in life everlasting; through Jesus Christ our Lord. <em>Amen.</em>"
+  },
+  "prayer-for-peace": {
+    "title": "Prayer for Peace",
+    "source": "The Book of Common Prayer",
+    "text": "O God, the source of all holy desires, all good counsels, and all just works: Give to thy servants that peace which the world cannot give; that our hearts may be set to obey thy commandments, and also that by thee, we, being defended from the fear of our enemies, may pass our time in rest and quietness; through the merits of Jesus Christ our Savior. <em>Amen.</em>"
+  },
+  "prayer-for-unity": {
+    "title": "Prayer for Unity",
+    "source": "The Book of Common Prayer",
+    "text": "O God the Father of our Lord Jesus Christ, in whom thou art well pleased, grant, we beseech thee, that being knit together in the same mind and in the same judgment, we may all speak the same thing, and be of one accord, of one mind, and that there be no divisions among us; but that we be perfectly joined together in the same mind and in the same judgment. <em>Amen.</em>"
+  },
+  "prayer-for-mission": {
+    "title": "Prayer for Mission",
+    "source": "The Book of Common Prayer",
+    "text": "Lord Jesus Christ, who didst stretch out thy loving arms on the hard wood of the Cross that everyone might come within the reach of thy saving embrace: So clothe us in thy Spirit that we, reaching forth our hands in love, may bring those who do not know thee to the knowledge and love of thee; for the honor of thy Name. <em>Amen.</em>"
+  },
+  "prayer-for-guidance": {
+    "title": "Prayer for Guidance",
+    "source": "The Book of Common Prayer",
+    "text": "O God, by whom the meek are guided in judgment, and light riseth up in darkness for the godly: Grant us, in all our doubts and uncertainties, the grace to ask what thou wouldest have us to do, that the Spirit of wisdom may save us from all false choices; that we may find the right path, and walk in it; through Jesus Christ our Lord. <em>Amen.</em>"
+  },
+  "prayer-for-the-church": {
+    "title": "Prayer for the Church",
+    "source": "The Book of Common Prayer",
+    "text": "Gracious Father, we pray for thy holy Catholic Church. Fill it with all truth, in all truth with all peace. Where it is corrupt, purify it; where it is in error, direct it; where in any thing it is amiss, reform it. Where it is right, strengthen it; where it is in want, provide for it; where it is divided, reunite it; for the sake of Jesus Christ thy Son our Savior. <em>Amen.</em>"
+  },
+  "prayer-for-the-world": {
+    "title": "Prayer for the World",
+    "source": "The Book of Common Prayer",
+    "text": "Almighty God, from whom all thoughts of truth and peace proceed: Kindle, we pray, in the hearts of all people the true love of peace, and guide with thy pure and peaceable wisdom those who take counsel for the nations of the earth; that in tranquillity thy kingdom may go forward, till the earth is filled with the knowledge of thy love; through Jesus Christ our Lord. <em>Amen.</em>"
+  },
+  "minister-journey-bcp": {
+    "title": "On the Way to Church",
+    "source": "Anglican Tradition",
+    "text": "O Lord Jesus Christ, who art the Way, the Truth, and the Life: suffer us not to stray from thee, who art the Way; nor to distrust thee, who art the Truth; nor to rest in any thing other than thee, who art the Life. Thou art our Way to the Father, our Truth against all error, our Life against all death. Guide our feet and order our steps, as we make our way to thy house and to thy altar; that we may come before thee with clean hands and a pure heart, and offer thee the sacrifice of praise acceptable in thy sight; who livest and reignest with the Father and the Holy Spirit, one God, world without end. <em>Amen.</em>"
+  },
+  "minister-journey-orthodox": {
+    "title": "On the Way to Church",
+    "source": "Orthodox Tradition",
+    "text": "I will go into thy house, O Lord; I will worship toward thy holy temple in thy fear. Lead me, O Lord, in thy righteousness; make thy way straight before my face. O Lord, I love the beauty of thy house and the place where thy glory dwelleth. Let me not be counted with sinners, nor let my life be taken with men of blood. But as for me, I will walk in mine integrity; redeem me, O Lord, and have mercy upon me. My foot standeth in an even place; in the congregations I will bless thee, O Lord. <em>Amen.</em>"
+  },
+  "minister-entering-bcp": {
+    "title": "Before Entering Church",
+    "source": "Anglican Tradition",
+    "text": "O Almighty God, who hast built thy Church upon the foundation of the apostles and prophets, Jesus Christ himself being the chief corner stone: grant us so to be joined together in unity of spirit by their doctrine, that we may be made an holy temple acceptable unto thee; through the same Jesus Christ our Lord. <em>Amen.</em><br><br>Lord, I am not worthy to enter beneath this thy holy roof; yet thou, who didst not disdain to enter the house of Zacchaeus, a publican, and of Simon the leper, grant that I, a sinner, may enter with a pure heart and a contrite spirit. Accept the desire of my heart as an offering well-pleasing in thy sight; and as I now enter thy house with fear and trembling, so let me stand at last before thee in glory, who livest and reignest, world without end. <em>Amen.</em>"
+  },
+  "minister-entering-orthodox": {
+    "title": "Before Entering Church",
+    "source": "Orthodox Tradition",
+    "text": "I will enter thy house; I will worship toward thy holy temple in thy fear. O Lord, lead me in thy righteousness; because of mine enemies, make thy way straight before my face.<br><br>O holy God, who dwellest in the holy place, praised by the Seraphim with the thrice-holy voice and glorified by the Cherubim and worshipped by all the heavenly powers: Thou who hast brought all things from non-existence into being, who hast created man after thine image and likeness and hast adorned him with all thine gifts, who givest wisdom and understanding to him who asketh, and dost not overlook the sinner but hast set forth repentance for salvation: vouchsafe to me, thine unworthy servant, to stand before thy holy glory and to offer thee prayer. For thine is the majesty, and thine is the kingdom and the power and the glory, of the Father, and of the Son, and of the Holy Spirit, now and ever and unto the ages of ages. <em>Amen.</em>"
+  },
+  "vesting-amice": {
+    "title": "Vesting: The Amice",
+    "source": "Traditional (Western)",
+    "text": "<em>Place the amice upon the head, then lower it to the shoulders.</em><br><br>Place upon my head, O Lord, the helmet of salvation, that I may resist the assaults of the devil; through Christ our Lord. <em>Amen.</em>"
+  },
+  "vesting-alb": {
+    "title": "Vesting: The Alb",
+    "source": "Traditional (Western)",
+    "text": "<em>Put on the alb.</em><br><br>Make me white, O Lord, and cleanse my heart; that, being made white in the Blood of the Lamb, I may deserve an eternal reward; through Christ our Lord. <em>Amen.</em>"
+  },
+  "vesting-cincture": {
+    "title": "Vesting: The Cincture",
+    "source": "Traditional (Western)",
+    "text": "<em>Gird on the cincture.</em><br><br>Gird me, O Lord, with the girdle of purity, and quench in my heart the fire of concupiscence; that the virtue of continence and chastity may abide in me; through Christ our Lord. <em>Amen.</em>"
+  },
+  "vesting-stole-deacon": {
+    "title": "Vesting: The Stole (Deacon)",
+    "source": "Traditional (Western)",
+    "text": "<em>Place the stole over the left shoulder and fasten it at the right side.</em><br><br>Lord, restore the stole of immortality, which I lost through the complicity of our first parents, and, unworthy as I am to approach thy sacred mysteries, may I yet gain eternal joy; through Christ our Lord. <em>Amen.</em>"
+  },
+  "vesting-stole-priest": {
+    "title": "Vesting: The Stole (Priest)",
+    "source": "Traditional (Western)",
+    "text": "<em>Place the stole around the neck.</em><br><br>Restore to me, O Lord, the stole of immortality, which was forfeited by the transgression of our first parents; and, although I draw near unworthily to celebrate thy holy mysteries, grant that I may obtain joy everlasting; through Christ our Lord. <em>Amen.</em>"
+  },
+  "vesting-chasuble": {
+    "title": "Vesting: The Chasuble",
+    "source": "Traditional (Western)",
+    "text": "<em>Put on the chasuble.</em><br><br>O Lord, who hast said: My yoke is sweet and my burden light: grant that I may so carry it as to merit thy grace; through Christ our Lord. <em>Amen.</em>"
+  },
+  "vesting-orthodox-epitrachelion": {
+    "title": "Vesting: The Epitrachelion",
+    "source": "Orthodox Tradition",
+    "text": "<em>Put on the epitrachelion (stole).</em><br><br>Blessed is God who poureth out his grace upon his priests; as myrrh upon the head, that ran down upon the beard, even the beard of Aaron; that ran down to the skirts of his garments. <em>Amen.</em>"
+  },
+  "vesting-orthodox-phailonion": {
+    "title": "Vesting: The Phelonion",
+    "source": "Orthodox Tradition",
+    "text": "<em>Put on the phelonion (chasuble).</em><br><br>Thy priests, O Lord, shall clothe themselves with righteousness, and thy saints shall rejoice with joy, always, now and ever, and unto the ages of ages. <em>Amen.</em>"
+  },
+  "vesting-orthodox-full": {
+    "title": "Full Orthodox Vesting Sequence",
+    "source": "Orthodox Tradition",
+    "text": "<em>Sticharion (Alb):</em><br>My soul shall rejoice in the Lord; for he hath clothed me with the garment of salvation, and with the robe of gladness hath he covered me; he hath set a crown upon me, as a bridegroom, and as a bride hath he adorned me with jewels.<br><br><em>Epitrachelion (Stole):</em><br>Blessed is God who poureth out his grace upon his priests; as myrrh upon the head, that ran down upon the beard, even the beard of Aaron; that ran down to the skirts of his garments.<br><br><em>Belt (Cincture):</em><br>Blessed is God who girdeth me with strength and hath made my way blameless; who maketh my feet like hinds' feet, and setteth me upon the high places.<br><br><em>Epimanikia (Cuffs) — Right:</em><br>Thy right hand, O Lord, is glorified in strength; thy right hand, O Lord, hath dashed the enemy in pieces.<br><br><em>Epimanikia (Cuffs) — Left:</em><br>Thy hands have made me and fashioned me; give me understanding, and I will learn thy commandments.<br><br><em>Phelonion (Chasuble):</em><br>Thy priests, O Lord, shall clothe themselves with righteousness, and thy saints shall rejoice with joy, always, now and ever, and unto the ages of ages. <em>Amen.</em>"
+  },
+  "minister-before-serving-bcp": {
+    "title": "Before Serving",
+    "source": "Anglican Tradition",
+    "text": "Almighty God, who on this day didst move thy servant to minister at thine altar: cleanse my heart and my lips, that I may worthily proclaim thy holy Gospel and offer the sacrifice of praise; through Jesus Christ our Lord, who liveth and reigneth with thee in the unity of the Holy Spirit, one God, world without end. <em>Amen.</em><br><br>O God, to whom every heart is open, every desire known, and from whom no secrets are hid: Cleanse the thoughts of our hearts by the inspiration of thy Holy Spirit, that we may perfectly love thee, and worthily magnify thy holy Name; through Christ our Lord. <em>Amen.</em>"
+  },
+  "minister-before-serving-orthodox": {
+    "title": "Before the Divine Liturgy",
+    "source": "Orthodox Tradition",
+    "text": "O Lord, send down thy heavenly blessing upon us, and by thy divine power sanctify us; that being enabled to stand before thy holy altar, we may offer thee an acceptable sacrifice, and receive into our unworthy hearts the grace of thy most pure Mysteries; through the mercies and loving-kindness of thine only-begotten Son, with whom thou art blessed, together with thy most holy and good and life-giving Spirit, now and ever and unto the ages of ages. <em>Amen.</em><br><br>O God, be merciful to me a sinner; O God, cleanse me of my sins and have mercy on me; O Lord, forgive me, for I have sinned without number."
+  },
+  "minister-before-serving-deacon": {
+    "title": "For a Deacon Before the Liturgy",
+    "source": "Orthodox Tradition",
+    "text": "O Lord and Master Jesus Christ, who hast counted me worthy, though I am unworthy, to minister as a deacon before the altar of thy glory: Do thou, the same Lord, fill me with the Holy Spirit and gird me with power from on high. Grant that, coming before thy holy altar with a pure conscience, I may serve thee blamelessly and without condemnation in this present day and at all times; through thine inexpressible mercy and love toward mankind, with the Father and the Holy Spirit, now and ever, and unto the ages of ages. <em>Amen.</em>"
+  },
+  "minister-after-serving-bcp": {
+    "title": "Thanksgiving After Serving",
+    "source": "Anglican Tradition",
+    "text": "O God of all grace and comfort, who hast granted us once more to stand before thy holy altar and offer the sacrifice of praise: Accept our thanksgiving, pardon our unworthiness, strengthen us in thy service, and grant that the people whom we have served in thy name may grow in knowledge and love of thee, and that we, persevering in faithful ministry, may at the last be received into thine eternal joy; through Jesus Christ our Lord. <em>Amen.</em>"
+  },
+  "minister-after-serving-orthodox": {
+    "title": "Thanksgiving After the Liturgy",
+    "source": "Orthodox Tradition",
+    "text": "We thank thee, O Lord our God, that thou hast again counted us worthy to stand before thy holy altar and to partake of thine ineffable and life-giving mysteries. Sanctify our souls and bodies, and grant unto us health and sanctification, and the remission of our sins. Preserve us in all thy ways, and establish us in the fear of thee; and vouchsafe that we may be found worthy before the dreadful judgment seat of thy Christ, through the intercessions of our most holy Lady, the Theotokos and Ever-Virgin Mary, and of all the saints who have pleased thee from the beginning of the world; to thee be glory, honor, and dominion, now and ever, and unto the ages of ages. <em>Amen.</em>"
+  }
+}

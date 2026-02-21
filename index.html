@@ -1,913 +1,169 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
- <meta charset="UTF-8">
- <meta name="viewport" content="width=device-width, initial-scale=1.0">
- <title>The Universal Office</title>
- <link rel="preconnect" href="https://fonts.googleapis.com">
- <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
- <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=IM+Fell+English:ital@0;1&family=Cinzel+Decorative:wght@400;700&display=swap" rel="stylesheet">
- <style>
-    #ecumenical-devotions-section,
-    #during-office-section,
-    #closing-devotions-section {
-        transition: opacity 0.3s, max-height 0.3s;
-        overflow: hidden;
-        max-height: 600px;
-        opacity: 1;
-    }
-    #ecumenical-devotions-section.bcp-only-hidden,
-    #during-office-section.bcp-only-hidden,
-    #closing-devotions-section.bcp-only-hidden {
-        max-height: 0;
-        opacity: 0;
-        margin: 0;
-        padding: 0;
-        pointer-events: none;
-    }
-    :root {
-        /* Default: Vespers/Gothic dark mode */
-        --bg-color: #0d0b14;
-        --text-color: #e8d9b0;
-        --container-bg: #1e1608;
-        --parchment: #1e1608;
-        --ink: #e8d9b0;
-        --rubric: #c0392b;
-        --accent: #c0392b;
-        --gold: #c9a84c;
-        --sidebar-bg: #080610;
-        --sidebar-text: #c8bfa8;
-        --main-bg: radial-gradient(ellipse at 50% 40%, #1a1228 0%, #0d0b14 50%, #060410 100%);
-        --sidebar-bg-bottom: #030208;
-        --sidebar-label: #a89878;
-    }
-   body.light-mode {
-        /* Manuscript mode — warm parchment */
-        --bg-color: #3d2b1a;
-        --text-color: #2a1f14;
-        --container-bg: #f5eedc;
-        --parchment: #f5eedc;
-        --ink: #2a1f14;
-        --rubric: #8b1a10;
-        --accent: #8b1a10;
-        --gold: #a0722a;
-        --sidebar-bg: #1c1208;
-        --sidebar-bg-bottom: #110d05;
-        --sidebar-text: #d4c9a8;
-        --sidebar-label: #b8956a;
-        --main-bg: radial-gradient(ellipse at 50% 30%, #5c3d20 0%, #3d2b1a 45%, #1e1208 100%);
-    }
-    body.dark-mode {
-        /* Vespers/Gothic dark mode */
-        --bg-color: #0d0b14;
-        --text-color: #e8d9b0;
-        --container-bg: #1e1608;
-        --parchment: #1e1608;
-        --ink: #e8d9b0;
-        --rubric: #c0392b;
-        --accent: #c0392b;
-        --gold: #c9a84c;
-        --sidebar-bg: #080610;
-        --sidebar-text: #c8bfa8;
-        --sidebar-bg-bottom: #030208;
-        --sidebar-label: #a89878;
-        --main-bg: radial-gradient(ellipse at 50% 40%, #1a1228 0%, #0d0b14 50%, #060410 100%);
-    }
-    body {
-        font-family: 'IM Fell English', Georgia, serif;
-        font-size: 22px;
-        background-color: var(--bg-color);
-        color: var(--text-color);
-        margin: 0;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        height: 100vh;
-        overflow-y: hidden;
-        transition: all 0.3s;
-    }
-    #mode-selection {
-        text-align: center;
-        max-width: 600px;
-        padding: 50px 40px;
-        background: rgba(0, 0, 0, 0.72);
-        border-radius: 4px;
-        box-shadow: 0 8px 40px rgba(0,0,0,0.7);
-        border: 1px solid rgba(201, 168, 76, 0.3);
-        position: relative;
-        z-index: 2;
-    }
-    #mode-selection h1 {
-        font-family: 'Cinzel Decorative', 'Cinzel', serif;
-        font-size: 2.2em;
-        margin-bottom: 12px;
-        color: var(--gold);
-        letter-spacing: 0.06em;
-        text-shadow: 0 2px 12px rgba(0,0,0,0.8);
-    }
-    #mode-selection p {
-        font-family: 'Cinzel', serif;
-        font-size: 0.92em;
-        letter-spacing: 0.15em;
-        text-transform: uppercase;
-        color: #a89878;
-        margin-bottom: 28px;
-    }
-    #splash-bg {
-    position: fixed;
-    inset: 0;
-    /* Use a solid color or a standard URL to prevent context window bloat */
-    background-color: var(--sidebar-bg);
-    background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('/images/canterbury.png');
-    background-size: 90%; 
-    background-position: center 5%;
-    background-repeat: no-repeat;
-    filter: blur(8px);
-    z-index: 1;
-}
-    body:not(.office-active) {
-        background-color: #000 !important;
-    }
-    .mode-btn {
-        background: transparent;
-        color: var(--gold);
-        border: 1px solid var(--gold);
-        padding: 12px 30px;
-        margin: 8px;
-        cursor: pointer;
-        font-family: 'Cinzel', serif;
-        font-size: 0.95em;
-        letter-spacing: 0.12em;
-        text-transform: uppercase;
-        border-radius: 2px;
-        transition: background 0.2s, color 0.2s, box-shadow 0.2s;
-    }
-    .mode-btn:hover {
-        background: rgba(201, 168, 76, 0.15);
-        box-shadow: 0 0 12px rgba(201, 168, 76, 0.2);
-        color: #e8d090;
-    }
-    body.light-mode .mode-btn {
-        background: rgba(30, 18, 8, 0.85);
-        color: var(--gold);
-        border-color: var(--gold);
-    }
-    body.light-mode .mode-btn:hover {
-        background: rgba(30, 18, 8, 1);
-        box-shadow: 0 0 12px rgba(160, 114, 42, 0.4);
-    }
-    #daily-office-section { display: none; position: fixed; inset: 0; flex-direction: row; overflow: hidden; }
-    #individual-prayers-section {
-    position: fixed;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    background-image:
-        radial-gradient(ellipse at 50% 0%, rgba(20,10,40,0.55) 0%, transparent 55%),
-        radial-gradient(ellipse at 50% 50%, rgba(10,8,25,0.72) 0%, rgba(10,8,25,0.72) 100%),
-        url('/images/york-lancets.png');
-    background-size: cover;
-    background-position: center center;
-    overflow-y: auto;
-    display: none;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    padding: 40px 20px 60px 20px;
-    box-sizing: border-box;
-    z-index: 200;
-}
-    #settings-panel.sidebar-hidden {
-        left: -300px;
-        pointer-events: none;
-    }
-    #sidebar-toggle {
-        position: relative;
-        width: 36px;
-        flex-shrink: 0;
-        background: linear-gradient(180deg, #0d0801 0%, #1a0f04 50%, #0d0801 100%);
-        border-right: 1px solid rgba(201,168,76,0.3);
-        cursor: pointer;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        gap: 18px;
-        z-index: 101;
-        user-select: none;
-        opacity: 0.5;
-    }
-    #sidebar-toggle:hover {
-        opacity: 1;
-        background: linear-gradient(180deg, #1a0f04 0%, #241508 50%, #1a0f04 100%);
-    }
-    .toggle-cross {
-        color: var(--gold);
-        font-size: 20px;
-        line-height: 1;
-        writing-mode: horizontal-tb;
-        opacity: 0.9;
-    }
-    .toggle-dots {
-        display: flex;
-        flex-direction: column;
-        gap: 5px;
-        align-items: center;
-    }
-    .toggle-dots span {
-        display: block;
-        width: 14px;
-        height: 1px;
-        background: var(--gold);
-        opacity: 0.6;
-        border-radius: 1px;
-    }
-    #settings-panel {
-        position: absolute;
-        left: 36px;
-        top: 0;
-        width: 300px;
-        min-width: 300px;
-        background: linear-gradient(180deg, var(--sidebar-bg) 0%, var(--sidebar-bg-bottom, #050408) 100%);
-        color: var(--sidebar-text);
-        font-size: 17px;
-        padding: 28px 20px;
-        height: 100vh;
-        overflow-y: auto;
-        border-right: 1px solid rgba(201, 168, 76, 0.3);
-        box-shadow: inset -4px 0 18px rgba(150,80,0,0.08), 4px 0 20px rgba(0,0,0,0.5);
-        transition: left 0.3s ease;
-        z-index: 100;
-        text-align: left;
-    }
-    .setting-group {
-        margin-bottom: 25px;
-        text-align: left;
-    }
-    .setting-group strong {
-        display: block;
-        margin-bottom: 10px;
-        color: var(--gold);
-        text-transform: uppercase;
-        letter-spacing: 2px;
-        font-family: 'Cinzel', serif;
-        font-size: 0.95em;
-    }
-    .setting-group label {
-        display: flex;
-        align-items: center;
-        justify-content: flex-start;
-        gap: 4px;
-        margin-bottom: 10px;
-        cursor: pointer;
-        font-size: 1.1em;
-        font-family: 'IM Fell English', serif;
-        color: var(--sidebar-label, #b8af98);
-        white-space: nowrap;
-    }
-    .nested-group {
-        margin-left: 12px;
-        margin-top: 8px;
-        font-size: 1em;
-    }
-    #main-content {
-        flex: 1;
-        min-width: 0;
-        padding: 40px;
-        height: 100vh;
-        overflow-y: auto;
-        text-align: center;
-        -webkit-overflow-scrolling: touch;
-        scrollbar-width: thin;
-        background: var(--main-bg);
-    }
-    #main-content::-webkit-scrollbar {
-        width: 5px;
-    }
-    #main-content::-webkit-scrollbar-thumb {
-        background: rgba(201, 168, 76, 0.4);
-        border-radius: 2px;
-    }
-    #main-content::-webkit-scrollbar-track {
-        background: #0e0a05;
-    }
-    .ornamental-divider {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin: 40px 0;
-        width: 100%;
-    }
-    .ornamental-divider .div-line-left {
-        flex: 1;
-        height: 1px;
-        background: linear-gradient(to right, transparent, rgba(139,90,30,0.6));
-    }
-    .ornamental-divider .div-line-right {
-        flex: 1;
-        height: 1px;
-        background: linear-gradient(to left, transparent, rgba(139,90,30,0.6));
-    }
-    .ornamental-divider-glyph {
-        color: var(--gold);
-        opacity: 0.7;
-        font-size: 1em;
-        padding: 0 16px;
-        line-height: 1;
-        font-family: Georgia, serif;
-        letter-spacing: 8px;
-    }
-    .office-container {
-        background: var(--container-bg);
-        max-width: 820px;
-        margin: 0 auto;
-        padding: 72px 80px 80px;
-        border-radius: 1px;
-        position: relative;
-        text-align: left;
-        color: var(--ink);
-        /* Layered shadow: outer glow, then deep drop shadow, then inner warmth */
-        box-shadow:
-            0 0 0 1px rgba(201,168,76,0.55),
-            0 0 0 5px rgba(100,60,10,0.3),
-            0 0 0 6px rgba(201,168,76,0.18),
-            0 0 0 10px rgba(0,0,0,0.25),
-            0 20px 80px rgba(0,0,0,0.8),
-            0 4px 20px rgba(0,0,0,0.5),
-            inset 0 0 60px rgba(180,120,20,0.07);
-    }
-    /* Inner ruled border — double line like a Book of Hours */
-    .office-container::before {
-        content: '';
-        position: absolute;
-        inset: 14px;
-        border: 1px solid rgba(139,90,30,0.4);
-        pointer-events: none;
-        z-index: 2;
-        box-shadow: inset 0 0 0 3px rgba(139,90,30,0.15);
-    }
-    /* Corner knotwork ornaments using Unicode — no images */
-    .office-container::after {
-        content: '✦';
-        position: absolute;
-        top: 6px;
-        left: 6px;
-        right: 6px;
-        bottom: 6px;
-        pointer-events: none;
-        z-index: 3;
-        font-size: 0.85em;
-        color: rgba(201,168,76,0.5);
-        /* Place ornament at all four corners via text-shadow */
-        text-shadow:
-            0    0    0 rgba(201,168,76,0),
-            calc(100% - 1.2em) 0 0 rgba(201,168,76,0.45),
-            0    calc(100% - 0.4em) 0 rgba(201,168,76,0.45),
-            calc(100% - 1.2em) calc(100% - 0.4em) 0 rgba(201,168,76,0.45);
-        display: block;
-        line-height: 1;
-        overflow: hidden;
-    }
-
-    h1 { font-family: 'Cinzel', serif; font-size: 2.4em; letter-spacing: 0.06em; margin-bottom: 0.5em; color: var(--gold); }
-    h2 { font-family: 'Cinzel', serif; font-size: 2.1em; color: var(--gold); border-bottom: 1px solid rgba(139,90,30,0.5); padding-bottom: 12px; margin-top: 0; letter-spacing: 0.04em; text-shadow: 0 1px 8px rgba(0,0,0,0.3); }
-    .liturgical-title {
-        color: var(--gold);
-        font-family: 'Cinzel', serif;
-        font-variant: small-caps;
-        font-weight: 600;
-        font-size: 1.3em;
-        letter-spacing: 0.05em;
-        margin: 0 0 30px 0;
-        opacity: 0.85;
-    }
-    .rubric-text {
-        color: var(--rubric);
-        text-shadow: 0 0 8px rgba(0,0,0,0.2);
-        font-family: 'Cinzel', serif;
-        font-variant: small-caps;
-        font-weight: 600;
-        font-size: 1.65em;
-        letter-spacing: 0.06em;
-        display: block;
-        margin-top: 40px;
-        margin-bottom: 12px;
-        border-bottom: 0.5px dotted rgba(201,168,76,0.35);
-        padding-bottom: 6px;
-        width: 100%;
-    }
-    .passage-reference {
-        font-size: 1.25em;
-        font-style: italic;
-        color: var(--gold);
-        margin: 8px 0 16px 0;
-        font-weight: normal;
-        opacity: 0.9;
-        font-family: 'IM Fell English', serif;
-    }
-    .component-text {
-        font-family: 'IM Fell English', Georgia, serif;
-        font-size: 1em;
-        line-height: 1.95;
-        margin-bottom: 30px;
-        display: block;
-        white-space: pre-wrap;
-        word-wrap: break-word;
-        overflow: visible;
-        color: var(--ink);
-    }
-    /* Drop cap on first letter of prayer/reading text */
-    .component-text::first-letter {
-        font-family: 'Cinzel Decorative', 'Cinzel', serif;
-        font-size: 3.2em;
-        font-weight: 700;
-        color: var(--rubric);
-        float: left;
-        line-height: 0.75;
-        margin: 0.05em 0.1em 0 0;
-        text-shadow: 1px 1px 0 rgba(139,90,30,0.3);
-    }
-    .reading-text {
-        font-family: 'IM Fell English', Georgia, serif;
-        font-size: 1em;
-        line-height: 1.95;
-        margin-bottom: 30px;
-        display: block;
-        word-wrap: break-word;
-        text-align: justify;
-        hyphens: auto;
-        color: var(--ink);
-    }
-    .reading-text p {
-        margin: 0 0 1.1em 0;
-        text-indent: 1.8em;
-    }
-    .reading-text p:first-child {
-        text-indent: 0;
-    }
-    .psalm-stanza {
-        font-family: 'IM Fell English', Georgia, serif;
-        font-size: 1em;
-        line-height: 1.95;
-        margin-bottom: 0.5em;
-        display: block;
-    }
-    .psalm-stanza .psalm-half-verse {
-        display: block;
-        padding-left: 2em;
-        color: var(--ink);
-    }
-    .psalm-stanza .psalm-half-verse:first-child {
-        padding-left: 0;
-    }
-    .psalm-block {
-        margin-bottom: 30px;
-        display: block;
-    }
-    .psalm-verse { display: block; margin-bottom: 10px; font-size: 1em; line-height: 1.9; }
-    .verse-num { font-size: 0.65em; color: var(--gold); vertical-align: super; margin-right: 8px; opacity: 0.8; }
-    .saint-section { margin-top: 60px; border-top: none; padding-top: 0; }
-    .saint-section-divider {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin: 0 0 40px 0;
-        width: 100%;
-    }
-    .saint-section-divider .sdiv-left {
-        flex: 1;
-        height: 1px;
-        background: linear-gradient(to right, transparent, rgba(201,168,76,0.45));
-    }
-    .saint-section-divider .sdiv-right {
-        flex: 1;
-        height: 1px;
-        background: linear-gradient(to left, transparent, rgba(201,168,76,0.45));
-    }
-    .saint-section-divider span {
-        color: var(--gold);
-        font-family: 'Cinzel', serif;
-        font-size: 0.75em;
-        letter-spacing: 0.3em;
-        text-transform: uppercase;
-        padding: 0 20px;
-        opacity: 0.7;
-    }
-    .saint-grid { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; }
-    .saint-box { background: var(--container-bg); border-top: 5px solid var(--gold); padding: 20px; width: 240px; box-shadow: 0 4px 12px rgba(0,0,0,0.15); text-align: left; border-radius: 0 0 6px 6px; }
-    .ordo-control { background: rgba(201, 168, 76, 0.05); border: 1px solid rgba(201, 168, 76, 0.3); padding: 16px; border-radius: 2px; margin-bottom: 20px; text-align: center; width: 250px; box-sizing: border-box; font-size: 1em; }
-    .ordo-date { display: block; color: var(--gold); font-weight: bold; margin: 10px 0; font-size: 1.1em; white-space: normal; word-break: break-word; font-family: 'Cinzel', serif; }
-    .ordo-buttons { display: flex; justify-content: center; gap: 5px; }
-    .ordo-btn { background: none; border: 1px solid rgba(201, 168, 76, 0.4); color: var(--gold); padding: 7px 16px; cursor: pointer; transition: background 0.2s; font-family: 'Cinzel', serif; font-size: 0.9em; letter-spacing: 0.08em; border-radius: 1px; }
-    .ordo-btn:hover { background: rgba(201, 168, 76, 0.15); }
-    #main-content h1 {
-        font-family: 'Cinzel', serif;
-        font-size: 1.8em;
-        color: var(--gold);
-        letter-spacing: 0.08em;
-        margin-bottom: 0.4em;
-        text-align: center;
-    }
-    select { width: 100%; padding: 10px; background: #1e1a14; color: #c8bfa8; border: 1px solid rgba(201,168,76,0.35); border-radius: 2px; font-family: 'IM Fell English', serif; }
-    #prayer-selection { margin-bottom: 40px; text-align: center; }
-    #prayer-display {
-        text-align: left;
-        display: none;
-        width: 100%;
-        max-width: 820px;
-    }
-    #prayer-display .office-container {
-        width: 100%;
-        box-sizing: border-box;
-    }
-    /* Custom prayer dropdown */
-    .prayer-select-wrapper {
-        position: relative;
-        width: 480px;
-        max-width: 92vw;
-        text-align: left;
-        z-index: 300;
-    }
-    .prayer-select-trigger {
-        width: 100%;
-        padding: 14px 44px 14px 18px;
-        background: #1e1a14;
-        color: #c8bfa8;
-        border: 1px solid rgba(201,168,76,0.4);
-        border-radius: 2px;
-        font-family: 'IM Fell English', serif;
-        font-size: 1.15em;
-        cursor: pointer;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        box-sizing: border-box;
-    }
-    .prayer-select-trigger::after {
-        content: '▾';
-        color: var(--gold);
-        font-size: 1em;
-        margin-left: 10px;
-        flex-shrink: 0;
-    }
-    .prayer-select-list {
-        display: none;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        right: 0;
-        background: #1a140d;
-        border: 1px solid rgba(201,168,76,0.4);
-        border-top: none;
-        max-height: 60vh;
-        overflow-y: auto;
-        box-shadow: 0 8px 30px rgba(0,0,0,0.7);
-        scrollbar-width: thin;
-    }
-    .prayer-select-list.open { display: block; }
-    .prayer-optgroup-label {
-        padding: 12px 18px 6px 18px;
-        font-family: 'Cinzel', serif;
-        font-size: 0.78em;
-        font-weight: bold;
-        color: var(--gold);
-        letter-spacing: 0.14em;
-        text-transform: uppercase;
-        border-top: 1px solid rgba(201,168,76,0.2);
-        background: #130e08;
-    }
-    .prayer-optgroup-label:first-child { border-top: none; }
-    .prayer-option {
-        padding: 11px 18px 11px 28px;
-        font-family: 'IM Fell English', serif;
-        font-size: 1.08em;
-        color: #c8bfa8;
-        cursor: pointer;
-        transition: background 0.15s;
-        line-height: 1.3;
-    }
-    .prayer-option:hover { background: rgba(201,168,76,0.12); color: #e8d090; }
-    .prayer-option.selected { color: var(--gold); }
-    /* Ornamental vine rule above the office title */
-    .liturgical-title::before {
-        content: '— ✦ ✝ ✦ —';
-        display: block;
-        font-family: Georgia, serif;
-        font-size: 0.7em;
-        letter-spacing: 0.35em;
-        color: var(--gold);
-        opacity: 0.6;
-        margin-bottom: 12px;
-        text-align: center;
-    }
-    /* Passage reference in ink not gold for manuscript feel */
-    .passage-reference {
-        font-size: 1.1em;
-        font-style: italic;
-        color: var(--rubric);
-        margin: 6px 0 14px 0;
-        font-weight: normal;
-        font-family: 'IM Fell English', serif;
-    }
-    #individual-prayers-section .office-container {
-        margin-bottom: 80px;
-    }
-    #individual-prayers-section .back-btn-wrapper {
-        position: sticky;
-        bottom: 0;
-        padding: 16px 0 8px 0;
-        text-align: center;
-        width: 100%;
-    }
-    @media (max-width: 600px) {
-    .prayer-select-wrapper { width: 96vw; }
-    .prayer-select-trigger { font-size: 1.2em; padding: 16px 44px 16px 16px; }
-    .prayer-optgroup-label { font-size: 0.85em; padding: 14px 16px 7px 16px; }
-    .prayer-option { font-size: 1.15em; padding: 14px 16px 14px 26px; }
-    #individual-prayers-section h1 { font-size: 1.5em !important; }
-    .mode-btn { font-size: 1.05em; padding: 14px 28px; }
-}
-/* ============================================
-   PRINT STYLES
-   ============================================ */
-@media print {
-    /* Hide non-printable elements */
-    #mode-selection,
-    #settings-panel,
-    .mode-btn,
-    .ordo-control,
-    .setting-group,
-    #date-header,
-    .saint-section {
-        display: none !important;
-    }
-    /* Reset body styles for print */
-    body {
-        background: white !important;
-        color: black !important;
-        margin: 0;
-        padding: 0;
-        font-size: 12pt;
-    }
-    /* Main content takes full width */
-    #main-content {
-        margin-left: 0 !important;
-        padding: 0.5in !important;
-        width: 100% !important;
-        max-width: 100% !important;
-    }
-    /* Office container clean for print */
-    .office-container {
-        background: white !important;
-        box-shadow: none !important;
-        border: none !important;
-        padding: 0 !important;
-        max-width: 100% !important;
-        page-break-inside: avoid;
-    }
-    /* Typography optimized for print */
-    h1 {
-        font-size: 18pt;
-        color: black !important;
-        margin-bottom: 0.25in;
-        page-break-after: avoid;
-    }
-    h2 {
-        font-size: 14pt;
-        color: black !important;
-        border-bottom: 1px solid #333 !important;
-        margin-top: 0.2in;
-        page-break-after: avoid;
-    }
-    h3, h4 {
-        font-size: 12pt;
-        color: black !important;
-        page-break-after: avoid;
-    }
-    /* Rubrics print in italic */
-    .rubric-text {
-        color: #333 !important;
-        font-style: italic;
-        font-size: 11pt;
-        border-bottom: none !important;
-        margin-top: 0.15in;
-        page-break-after: avoid;
-    }
-    /* Passage references */
-    .passage-reference {
-        color: #666 !important;
-        font-size: 10pt;
-        font-style: italic;
-    }
-    /* Component text (prayers, readings) */
-    .component-text {
-        font-size: 11pt;
-        line-height: 1.4;
-        color: black !important;
-        margin-bottom: 0.15in;
-    }
-    /* Psalm verses */
-    .psalm-verse {
-        font-size: 11pt;
-        line-height: 1.5;
-        margin-bottom: 0.1in;
-    }
-    .verse-num {
-        color: #666 !important;
-        font-size: 8pt;
-    }
-    /* Horizontal rules */
-    hr {
-        border: 0.5pt solid #999 !important;
-        margin: 0.15in 0 !important;
-    }
-    /* Avoid breaking inside important sections */
-    .rubric-text,
-    .component-text,
-    .psalm-verse {
-        page-break-inside: avoid;
-    }
-    /* Page breaks before major sections */
-    h2 {
-        page-break-before: auto;
-    }
-    /* Links print as normal text */
-    a {
-        text-decoration: none;
-        color: black !important;
-    }
-    /* Remove any remaining colored backgrounds */
-    * {
-        background: white !important;
-    }
-}
- /* ── Info tooltip system ── */
-    .info-btn {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        width: 18px;
-        height: 18px;
-        border-radius: 50%;
-        background: rgba(201,168,76,0.2);
-        border: 1px solid rgba(201,168,76,0.5);
-        color: var(--gold);
-        font-family: Georgia, serif;
-        font-size: 11px;
-        font-style: italic;
-        font-weight: bold;
-        cursor: help;
-        margin-left: 6px;
-        vertical-align: middle;
-        flex-shrink: 0;
-        line-height: 1;
-    }
-    #uo-tooltip {
-        position: fixed;
-        background: #1a1208;
-        color: #e8d9b0;
-        border: 1px solid rgba(201,168,76,0.5);
-        border-radius: 4px;
-        padding: 14px 18px;
-        font-family: 'IM Fell English', Georgia, serif;
-        font-size: 17px;
-        line-height: 1.6;
-        width: 280px;
-        box-shadow: 4px 4px 20px rgba(0,0,0,0.7);
-        pointer-events: none;
-        z-index: 9999;
-        display: none;
-    }
- </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Universal Office</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=IM+Fell+English:ital@0;1&family=Cinzel+Decorative:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/office.css">
 </head>
 <body id="app-body" class="dark-mode">
- <div id="splash-bg"></div>
- <div id="mode-selection">
-     <h1>Welcome to The Universal Office</h1>
-     <p>Select your mode:</p>
-     <button class="mode-btn" onclick="selectMode('daily')">Daily Office</button>
-     <button class="mode-btn" onclick="selectMode('prayers')">The Book of Needs</button>
-     <div style="margin-top:32px; border-top:1px solid rgba(201,168,76,0.25); padding-top:18px;">
-         <a href="https://musingsancientandmodern.substack.com/" target="_blank" style="text-decoration:none; display:block; text-align:center;">
-             <span style="font-family:'Cinzel',serif; font-size:0.68em; letter-spacing:0.18em; text-transform:uppercase; color:#a89878; display:block; margin-bottom:5px;">Sponsored by</span>
-             <span style="font-family:'Cinzel Decorative','Cinzel',serif; font-size:0.95em; letter-spacing:0.08em; color:#c0392b; text-shadow:0 0 8px rgba(201,168,76,0.35), 0 1px 3px rgba(0,0,0,0.8); display:block;">Musings, Ancient and Modern</span>
-         </a>
-     </div>
- </div>
- <div id="daily-office-section">
-     <div id="sidebar-toggle" onclick="toggleSidebar()" title="Toggle Settings">
-         <span class="toggle-cross">☩</span>
-         <div class="toggle-dots"><span></span><span></span><span></span></div>
-         <span class="toggle-cross">☩</span>
-     </div>
-     <div id="settings-panel">
-         <h3 style="color:var(--gold); font-family:'Cinzel',serif; font-size:1.15em; letter-spacing:0.08em;">Office Settings</h3>
-         <div class="ordo-control">
-             <strong>Liturgical Ordo</strong>
-             <div class="ordo-date" id="display-date">Loading...</div>
-             <div class="ordo-buttons">
-                 <button class="ordo-btn" onclick="changeDate(-1)">Prev</button>
-                 <button class="ordo-btn" onclick="resetDate()">Today</button>
-                 <button class="ordo-btn" onclick="changeDate(1)">Next</button>
-             </div>
-             <label for="date-picker" style="display:block; color:var(--gold); font-size:0.8em; margin-top:10px;">Select Date:</label>
-             <input type="date" id="date-picker" style="margin-top:5px; width:100%; padding:5px; background:#333; color:white; border:1px solid #555; border-radius:4px; box-sizing: border-box;" onchange="setCustomDate(this.value)">
-             <div id="calendar-info" style="font-size: 0.7em; color: var(--gold); margin-top:10px;">Exploring the Ordo...</div>
-         </div>
-         <div class="setting-group">
-             <strong>Time of Day:</strong>
-             <label><input type="radio" name="office-time" value="morning-office" onchange="updateSidebarForOffice(); renderOffice(); saveSettings()" checked> Morning Prayer</label>
-             <label><input type="radio" name="office-time" value="noonday-office" onchange="updateSidebarForOffice(); renderOffice(); saveSettings()"> Noonday Prayer</label>
-             <label><input type="radio" name="office-time" value="evening-office" onchange="updateSidebarForOffice(); renderOffice(); saveSettings()"> Evening Prayer</label>
-             <label><input type="radio" name="office-time" value="compline-office" onchange="updateSidebarForOffice(); renderOffice(); saveSettings()"> Compline</label>
-         </div>
-         <div class="setting-group">
-             <strong>Appearance:</strong>
-             <label><input type="checkbox" id="toggle-dark" onchange="updateUI(); saveSettings()" checked> Vespers Mode (Dark)</label>
-             <label style="margin-top:8px;"><input type="checkbox" id="toggle-bcp-only" onchange="toggleBcpOnly(); saveSettings()"> BCP Only Mode</label>
-         </div>
-         <div class="setting-group">
-             <strong>Liturgical Settings:</strong>
-             <div class="nested-group">
-                 <strong style="color:#aaa; font-size:1em;">Language &amp; Rite</strong>
-                 <label><input type="radio" name="rite" value="rite1" onchange="renderOffice(); saveSettings()"> Rite I (Traditional)</label>
-                 <label><input type="radio" name="rite" value="rite2" onchange="renderOffice(); saveSettings()" checked> Rite II (Contemporary)</label>
-             </div>
-             <div class="nested-group" style="margin-top:8px;">
-                 <strong style="color:#aaa; font-size:1em;">Officiant</strong>
-                 <label><input type="radio" name="minister" value="priest" onchange="renderOffice(); saveSettings()"> Priest</label>
-                 <label><input type="radio" name="minister" value="lay" onchange="renderOffice(); saveSettings()" checked> Layperson</label>
-             </div>
-             <div class="nested-group" style="margin-top:8px;">
-                 <strong style="color:#aaa; font-size:1em;">Creed</strong>
-                 <select id="creed-type" onchange="renderOffice(); saveSettings()" style="margin-top:4px; width:auto; min-width:160px; padding:4px 8px; background:#333; color:white; border:1px solid #555; border-radius:4px;">
-                     <option value="bcp-creed-apostles">Apostles' Creed</option>
-                     <option value="bcp-creed-nicene">Nicene Creed</option>
-                 </select>
-             </div>
-             <div class="nested-group" style="margin-top:8px;">
-                 <strong style="color:#aaa; font-size:1em;">Lectionary</strong>
-                 <label style="margin-top:4px;"><input type="radio" name="gospel-placement" value="morning" onchange="renderOffice(); saveSettings()"> Gospel in Morning</label>
-                 <label><input type="radio" name="gospel-placement" value="evening" onchange="renderOffice(); saveSettings()" checked> Gospel in Evening</label>
-                 <label><input type="radio" name="gospel-placement" value="both" onchange="renderOffice(); saveSettings()"> Gospel in Both</label>
-                 <label style="margin-top:6px;"><input type="checkbox" id="toggle-30day-psalter" onchange="renderOffice(); saveSettings()"> 30-Day Psalter</label>
-             </div>
-         </div>
-         <div class="setting-group" id="ecumenical-devotions-section">
-             <strong>Opening Devotions: <span class="info-btn" data-tip="These devotions render before the office begins. They are hidden when BCP Only Mode is active.">i</span></strong>
-             <div class="nested-group">
-                 <strong style="color:#aaa; font-size:1em;">Coptic Orthodox</strong>
-                 <label><input type="checkbox" id="toggle-agpeya-opening" onchange="renderOffice(); saveSettings()"> Agpeya Opening</label>
-             </div>
-             <div class="nested-group" style="margin-top:8px;">
-                 <strong style="color:#aaa; font-size:1em;">Church of the East</strong>
-                 <label><input type="checkbox" id="toggle-east-syriac-hours" onchange="renderOffice(); saveSettings()"> Prayer of the Hours <span class="info-btn" data-tip="The Hudra is the Church of the East's canonical prayer book, equivalent to the Divine Office.">i</span></label>
-             </div>
-             <div class="nested-group" style="margin-top:8px;">
-                 <strong style="color:#aaa; font-size:1em;">Marian Element</strong>
-                 <label style="margin-top:4px; font-size:0.85em; color:#aaa;">Element:</label>
-                 <label><input type="radio" name="marian-element" value="none" onchange="renderOffice(); saveSettings()" checked> None</label>
-                 <label><input type="radio" name="marian-element" value="antiphon" onchange="renderOffice(); saveSettings()"> BCP Seasonal Antiphon</label>
-                 <label><input type="radio" name="marian-element" value="theotokion" onchange="renderOffice(); saveSettings()"> Theotokion <span class="info-btn" data-tip="Coptic hymn honouring Mary as Theotokos (God-bearer). Sung at the close of the canonical hours.">i</span></label>
-                 <label><input type="radio" name="marian-element" value="both" onchange="renderOffice(); saveSettings()"> Both</label>
-                 <label style="margin-top:6px; font-size:0.85em; color:#aaa;">Position:</label>
-                 <label><input type="radio" name="marian-antiphon-pos" value="before" onchange="renderOffice(); saveSettings()" checked> Before office</label>
-                 <label><input type="radio" name="marian-antiphon-pos" value="after" onchange="renderOffice(); saveSettings()"> After office</label>
-             </div>
-         </div>
-         <div class="setting-group" id="during-office-section">
-             <strong>During the Office: <span class="info-btn" data-tip="These elements are inserted at their proper liturgical position within the office. Hidden when BCP Only Mode is active.">i</span></strong>
-             <label><input type="checkbox" id="toggle-gloria-patri" onchange="renderOffice(); saveSettings()" checked> Gloria Patri <span class="info-btn" data-tip="The Lesser Doxology sung after each Psalm: 'Glory to the Father, and to the Son, and to the Holy Spirit...'">i</span></label>
-             <label style="margin-top:4px;"><input type="checkbox" id="toggle-angelus" onchange="renderOffice(); saveSettings()"> Angelus <span class="info-btn" data-tip="Roman Catholic devotion recalling the Incarnation, traditionally prayed at morning, noon, and evening. Placed before the Invitatory.">i</span></label>
-             <label><input type="checkbox" id="toggle-trisagion" onchange="renderOffice(); saveSettings()"> Trisagion <span class="info-btn" data-tip="'Holy God, Holy Mighty, Holy Immortal, have mercy on us.' Ancient Byzantine prayer placed after the Absolution.">i</span></label>
-             <label><input type="checkbox" id="toggle-prayer-before-reading" onchange="renderOffice(); saveSettings()"> Prayer Before Reading <span class="info-btn" data-tip="Orthodox prayer asking illumination before the Old Testament lesson is read.">i</span></label>
-         </div>
-         <div class="setting-group" id="closing-devotions-section">
-             <strong>After the Office: <span class="info-btn" data-tip="These devotions are appended after the office concludes. Hidden when BCP Only Mode is active.">i</span></strong>
-             <label><input type="checkbox" id="toggle-examen" onchange="renderOffice(); saveSettings()"> The Examen <span class="info-btn" data-tip="The Ignatian Examination of Conscience — a prayerful review of the day. Appears only in Compline.">i</span></label>
-             <label><input type="checkbox" id="toggle-kyrie-pantocrator" onchange="renderOffice(); saveSettings()"> Kyrie Pantocrator <span class="info-btn" data-tip="'Lord Almighty' — a Byzantine litany of supplication placed after the Collect.">i</span></label>
-             <label style="margin-top:6px;"><input type="checkbox" id="toggle-suffrages" onchange="renderOffice(); saveSettings()" checked> Suffrages</label>
-             <label><input type="checkbox" id="toggle-litany" onchange="renderOffice(); saveSettings()"> The Great Litany</label>
-             <label><input type="checkbox" id="toggle-general-thanksgiving" onchange="renderOffice(); saveSettings()"> General Thanksgiving</label>
-             <label><input type="checkbox" id="toggle-chrysostom" onchange="renderOffice(); saveSettings()"> Prayer of St. Chrysostom</label>
-         </div>
-     </div>
 
-     <div id="main-content">
-         <button onclick="backToSplash()" style="position:fixed; top:12px; right:16px; background:transparent; color:var(--gold); border:1px solid rgba(201,168,76,0.4); padding:4px 14px; font-family:'Cinzel',serif; font-size:0.7em; letter-spacing:0.12em; text-transform:uppercase; border-radius:2px; cursor:pointer; opacity:0.6; z-index:200; transition:opacity 0.2s;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.6'">Back to Modes</button>
-         <h1>The Universal Office</h1>
-         <div id="office-display"></div>
-         <div class="saint-section">
-             <div class="saint-section-divider"><div class="sdiv-left"></div><span>Commemorations</span><div class="sdiv-right"></div></div>
-             <h2 id="date-header" style="display:none;"></h2>
-             <div id="saint-display" class="saint-grid"></div>
-         </div>
-     </div>
- </div>
- <div id="individual-prayers-section">
+<!-- ── Splash Screen ─────────────────────────────────────────────────────── -->
+<div id="splash-bg"></div>
+<div id="mode-selection">
+    <h1>Welcome to The Universal Office</h1>
+    <p>Select your mode:</p>
+    <button class="mode-btn" onclick="selectMode('daily')">Daily Office</button>
+    <button class="mode-btn" onclick="selectMode('prayers')">The Book of Needs</button>
+    <div style="margin-top:32px; border-top:1px solid rgba(201,168,76,0.25); padding-top:18px;">
+        <a href="https://musingsancientandmodern.substack.com/" target="_blank" style="text-decoration:none; display:block; text-align:center;">
+            <span style="font-family:'Cinzel',serif; font-size:0.68em; letter-spacing:0.18em; text-transform:uppercase; color:#a89878; display:block; margin-bottom:5px;">Sponsored by</span>
+            <span style="font-family:'Cinzel Decorative','Cinzel',serif; font-size:0.95em; letter-spacing:0.08em; color:#c0392b; text-shadow:0 0 8px rgba(201,168,76,0.35), 0 1px 3px rgba(0,0,0,0.8); display:block;">Musings, Ancient and Modern</span>
+        </a>
+    </div>
+</div>
+
+<!-- ── Daily Office ──────────────────────────────────────────────────────── -->
+<div id="daily-office-section">
+
+    <!-- Sidebar toggle tab -->
+    <div id="sidebar-toggle" onclick="toggleSidebar()" title="Toggle Settings">
+        <span class="toggle-cross">☩</span>
+        <div class="toggle-dots"><span></span><span></span><span></span></div>
+        <span class="toggle-cross">☩</span>
+    </div>
+
+    <!-- Settings panel -->
+    <div id="settings-panel">
+        <h3 style="color:var(--gold); font-family:'Cinzel',serif; font-size:1.15em; letter-spacing:0.08em;">Office Settings</h3>
+
+        <!-- Date navigator -->
+        <div class="ordo-control">
+            <strong>Liturgical Ordo</strong>
+            <div class="ordo-date" id="display-date">Loading...</div>
+            <div class="ordo-buttons">
+                <button class="ordo-btn" onclick="changeDate(-1)">Prev</button>
+                <button class="ordo-btn" onclick="resetDate()">Today</button>
+                <button class="ordo-btn" onclick="changeDate(1)">Next</button>
+            </div>
+            <label for="date-picker" style="display:block; color:var(--gold); font-size:0.8em; margin-top:10px;">Select Date:</label>
+            <input type="date" id="date-picker" style="margin-top:5px; width:100%; padding:5px; background:#333; color:white; border:1px solid #555; border-radius:4px; box-sizing:border-box;" onchange="setCustomDate(this.value)">
+            <div id="calendar-info" style="font-size:0.7em; color:var(--gold); margin-top:10px;">Exploring the Ordo...</div>
+        </div>
+
+        <!-- Time of Day -->
+        <div class="setting-group">
+            <strong>Time of Day:</strong>
+            <label><input type="radio" name="office-time" value="morning-office" onchange="updateSidebarForOffice(); renderOffice(); saveSettings()" checked> Morning Prayer</label>
+            <label><input type="radio" name="office-time" value="noonday-office"  onchange="updateSidebarForOffice(); renderOffice(); saveSettings()"> Noonday Prayer</label>
+            <label><input type="radio" name="office-time" value="evening-office"  onchange="updateSidebarForOffice(); renderOffice(); saveSettings()"> Evening Prayer</label>
+            <label><input type="radio" name="office-time" value="compline-office" onchange="updateSidebarForOffice(); renderOffice(); saveSettings()"> Compline</label>
+        </div>
+
+        <!-- Appearance -->
+        <div class="setting-group">
+            <strong>Appearance:</strong>
+            <label><input type="checkbox" id="toggle-dark"     onchange="updateUI(); saveSettings()" checked> Vespers Mode (Dark)</label>
+            <label style="margin-top:8px;"><input type="checkbox" id="toggle-bcp-only" onchange="toggleBcpOnly(); saveSettings()"> BCP Only Mode</label>
+        </div>
+
+        <!-- Liturgical Settings -->
+        <div class="setting-group">
+            <strong>Liturgical Settings:</strong>
+            <div class="nested-group">
+                <strong style="color:#aaa; font-size:1em;">Language &amp; Rite</strong>
+                <label><input type="radio" name="rite" value="rite1" onchange="renderOffice(); saveSettings()"> Rite I (Traditional)</label>
+                <label><input type="radio" name="rite" value="rite2" onchange="renderOffice(); saveSettings()" checked> Rite II (Contemporary)</label>
+            </div>
+            <div class="nested-group" style="margin-top:8px;">
+                <strong style="color:#aaa; font-size:1em;">Officiant</strong>
+                <label><input type="radio" name="minister" value="priest" onchange="renderOffice(); saveSettings()"> Priest</label>
+                <label><input type="radio" name="minister" value="lay"    onchange="renderOffice(); saveSettings()" checked> Layperson</label>
+            </div>
+            <div class="nested-group" style="margin-top:8px;">
+                <strong style="color:#aaa; font-size:1em;">Creed</strong>
+                <select id="creed-type" onchange="renderOffice(); saveSettings()" style="margin-top:4px; width:auto; min-width:160px; padding:4px 8px; background:#333; color:white; border:1px solid #555; border-radius:4px;">
+                    <option value="bcp-creed-apostles">Apostles' Creed</option>
+                    <option value="bcp-creed-nicene">Nicene Creed</option>
+                </select>
+            </div>
+            <div class="nested-group" style="margin-top:8px;">
+                <strong style="color:#aaa; font-size:1em;">Lectionary</strong>
+                <label style="margin-top:4px;"><input type="radio" name="gospel-placement" value="morning" onchange="renderOffice(); saveSettings()"> Gospel in Morning</label>
+                <label><input type="radio" name="gospel-placement" value="evening" onchange="renderOffice(); saveSettings()" checked> Gospel in Evening</label>
+                <label><input type="radio" name="gospel-placement" value="both"    onchange="renderOffice(); saveSettings()"> Gospel in Both</label>
+                <label style="margin-top:6px;"><input type="checkbox" id="toggle-30day-psalter" onchange="renderOffice(); saveSettings()"> 30-Day Psalter</label>
+            </div>
+        </div>
+
+        <!-- Opening Devotions (ecumenical) -->
+        <div class="setting-group" id="ecumenical-devotions-section">
+            <strong>Opening Devotions: <span class="info-btn" data-tip="These devotions render before the office begins. They are hidden when BCP Only Mode is active.">i</span></strong>
+            <div class="nested-group">
+                <strong style="color:#aaa; font-size:1em;">Coptic Orthodox</strong>
+                <label><input type="checkbox" id="toggle-agpeya-opening" onchange="renderOffice(); saveSettings()"> Agpeya Opening</label>
+            </div>
+            <div class="nested-group" style="margin-top:8px;">
+                <strong style="color:#aaa; font-size:1em;">Church of the East</strong>
+                <label><input type="checkbox" id="toggle-east-syriac-hours" onchange="renderOffice(); saveSettings()"> Prayer of the Hours <span class="info-btn" data-tip="The Hudra is the Church of the East's canonical prayer book, equivalent to the Divine Office.">i</span></label>
+            </div>
+            <div class="nested-group" style="margin-top:8px;">
+                <strong style="color:#aaa; font-size:1em;">Marian Element</strong>
+                <label style="margin-top:4px; font-size:0.85em; color:#aaa;">Element:</label>
+                <label><input type="radio" name="marian-element" value="none"      onchange="renderOffice(); saveSettings()" checked> None</label>
+                <label><input type="radio" name="marian-element" value="antiphon"  onchange="renderOffice(); saveSettings()"> BCP Seasonal Antiphon</label>
+                <label><input type="radio" name="marian-element" value="theotokion" onchange="renderOffice(); saveSettings()"> Theotokion <span class="info-btn" data-tip="Coptic hymn honouring Mary as Theotokos (God-bearer). Sung at the close of the canonical hours.">i</span></label>
+                <label><input type="radio" name="marian-element" value="both"      onchange="renderOffice(); saveSettings()"> Both</label>
+                <label style="margin-top:6px; font-size:0.85em; color:#aaa;">Position:</label>
+                <label><input type="radio" name="marian-antiphon-pos" value="before" onchange="renderOffice(); saveSettings()" checked> Before office</label>
+                <label><input type="radio" name="marian-antiphon-pos" value="after"  onchange="renderOffice(); saveSettings()"> After office</label>
+            </div>
+        </div>
+
+        <!-- During the Office -->
+        <div class="setting-group" id="during-office-section">
+            <strong>During the Office: <span class="info-btn" data-tip="These elements are inserted at their proper liturgical position within the office. Hidden when BCP Only Mode is active.">i</span></strong>
+            <label><input type="checkbox" id="toggle-gloria-patri"          onchange="renderOffice(); saveSettings()" checked> Gloria Patri <span class="info-btn" data-tip="The Lesser Doxology sung after each Psalm: 'Glory to the Father, and to the Son, and to the Holy Spirit...'">i</span></label>
+            <label style="margin-top:4px;"><input type="checkbox" id="toggle-angelus"    onchange="renderOffice(); saveSettings()"> Angelus <span class="info-btn" data-tip="Roman Catholic devotion recalling the Incarnation, traditionally prayed at morning, noon, and evening. Placed before the Invitatory.">i</span></label>
+            <label><input type="checkbox" id="toggle-trisagion"              onchange="renderOffice(); saveSettings()"> Trisagion <span class="info-btn" data-tip="'Holy God, Holy Mighty, Holy Immortal, have mercy on us.' Ancient Byzantine prayer placed after the Absolution.">i</span></label>
+            <label><input type="checkbox" id="toggle-prayer-before-reading"  onchange="renderOffice(); saveSettings()"> Prayer Before Reading <span class="info-btn" data-tip="Orthodox prayer asking illumination before the Old Testament lesson is read.">i</span></label>
+        </div>
+
+        <!-- After the Office -->
+        <div class="setting-group" id="closing-devotions-section">
+            <strong>After the Office: <span class="info-btn" data-tip="These devotions are appended after the office concludes. Hidden when BCP Only Mode is active.">i</span></strong>
+            <label><input type="checkbox" id="toggle-examen"                 onchange="renderOffice(); saveSettings()"> The Examen <span class="info-btn" data-tip="The Ignatian Examination of Conscience — a prayerful review of the day. Appears only in Compline.">i</span></label>
+            <label><input type="checkbox" id="toggle-kyrie-pantocrator"      onchange="renderOffice(); saveSettings()"> Kyrie Pantocrator <span class="info-btn" data-tip="'Lord Almighty' — a Byzantine litany of supplication placed after the Collect.">i</span></label>
+            <label style="margin-top:6px;"><input type="checkbox" id="toggle-suffrages" onchange="renderOffice(); saveSettings()" checked> Suffrages</label>
+            <label><input type="checkbox" id="toggle-litany"                 onchange="renderOffice(); saveSettings()"> The Great Litany</label>
+            <label><input type="checkbox" id="toggle-general-thanksgiving"   onchange="renderOffice(); saveSettings()"> General Thanksgiving</label>
+            <label><input type="checkbox" id="toggle-chrysostom"             onchange="renderOffice(); saveSettings()"> Prayer of St. Chrysostom</label>
+        </div>
+    </div><!-- /settings-panel -->
+
+    <!-- Main content area -->
+    <div id="main-content">
+        <button onclick="backToSplash()" style="position:fixed; top:12px; right:16px; background:transparent; color:var(--gold); border:1px solid rgba(201,168,76,0.4); padding:4px 14px; font-family:'Cinzel',serif; font-size:0.7em; letter-spacing:0.12em; text-transform:uppercase; border-radius:2px; cursor:pointer; opacity:0.6; z-index:200; transition:opacity 0.2s;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.6'">Back to Modes</button>
+        <h1>The Universal Office</h1>
+        <div id="office-display"></div>
+        <div class="saint-section">
+            <div class="saint-section-divider"><div class="sdiv-left"></div><span>Commemorations</span><div class="sdiv-right"></div></div>
+            <h2 id="date-header" style="display:none;"></h2>
+            <div id="saint-display" class="saint-grid"></div>
+        </div>
+    </div>
+
+</div><!-- /daily-office-section -->
+
+<!-- ── Book of Needs ─────────────────────────────────────────────────────── -->
+<div id="individual-prayers-section">
     <div id="prayer-selection">
         <h1 style="font-family:'Cinzel Decorative','Cinzel',serif; color:var(--gold); font-size:1.9em; letter-spacing:0.06em; margin-bottom:0.3em;">The Book of Needs</h1>
         <p style="font-family:'Cinzel',serif; font-size:0.78em; letter-spacing:0.15em; text-transform:uppercase; color:#a89878; margin-bottom:28px;">Select a Prayer</p>
+
         <div class="prayer-select-wrapper" id="prayer-select-wrapper">
             <div class="prayer-select-trigger" id="prayer-select-trigger" onclick="togglePrayerDropdown()">
                 <span id="prayer-select-label">— Choose a Prayer —</span>
@@ -915,1138 +171,101 @@
             <div class="prayer-select-list" id="prayer-select-list">
 
                 <div class="prayer-optgroup-label">Eucharist: Preparation &amp; Spiritual Communion</div>
-                <div class="prayer-option" data-value="prayer-humble-access" onclick="selectPrayer(this)">Prayer of Humble Access (BCP)</div>
-                <div class="prayer-option" data-value="spiritual-communion" onclick="selectPrayer(this)">Act of Spiritual Communion</div>
+                <div class="prayer-option" data-value="prayer-humble-access"  onclick="selectPrayer(this)">Prayer of Humble Access (BCP)</div>
+                <div class="prayer-option" data-value="spiritual-communion"   onclick="selectPrayer(this)">Act of Spiritual Communion</div>
 
                 <div class="prayer-optgroup-label">Eucharist: Thanksgiving After Communion</div>
-                <div class="prayer-option" data-value="thanksgiving-aquinas" onclick="selectPrayer(this)">Thanksgiving (After St. Thomas Aquinas)</div>
-                <div class="prayer-option" data-value="thanksgiving-hooker" onclick="selectPrayer(this)">Thanksgiving (After Richard Hooker)</div>
+                <div class="prayer-option" data-value="thanksgiving-aquinas"  onclick="selectPrayer(this)">Thanksgiving (After St. Thomas Aquinas)</div>
+                <div class="prayer-option" data-value="thanksgiving-hooker"   onclick="selectPrayer(this)">Thanksgiving (After Richard Hooker)</div>
                 <div class="prayer-option" data-value="thanksgiving-andrewes" onclick="selectPrayer(this)">Self-Oblation (After Lancelot Andrewes)</div>
-                <div class="prayer-option" data-value="thanksgiving-basil" onclick="selectPrayer(this)">From the Liturgy of Saint Basil</div>
+                <div class="prayer-option" data-value="thanksgiving-basil"    onclick="selectPrayer(this)">From the Liturgy of Saint Basil</div>
 
                 <div class="prayer-optgroup-label">Eucharist: Adoration &amp; Benediction</div>
-                <div class="prayer-option" data-value="o-salutaris" onclick="selectPrayer(this)">O Salutaris (St. Thomas Aquinas)</div>
-                <div class="prayer-option" data-value="tantum-ergo" onclick="selectPrayer(this)">Tantum Ergo (St. Thomas Aquinas)</div>
+                <div class="prayer-option" data-value="o-salutaris"    onclick="selectPrayer(this)">O Salutaris (St. Thomas Aquinas)</div>
+                <div class="prayer-option" data-value="tantum-ergo"    onclick="selectPrayer(this)">Tantum Ergo (St. Thomas Aquinas)</div>
                 <div class="prayer-option" data-value="divine-praises" onclick="selectPrayer(this)">The Divine Praises</div>
-                <div class="prayer-option" data-value="anima-christi" onclick="selectPrayer(this)">Anima Christi (tr. John Henry Newman)</div>
+                <div class="prayer-option" data-value="anima-christi"  onclick="selectPrayer(this)">Anima Christi (tr. John Henry Newman)</div>
 
                 <div class="prayer-optgroup-label">Eucharist: Personal Devotions</div>
-                <div class="prayer-option" data-value="to-blessed-virgin" onclick="selectPrayer(this)">To the Blessed Virgin Mary</div>
-                <div class="prayer-option" data-value="to-saint-joseph" onclick="selectPrayer(this)">To Saint Joseph</div>
+                <div class="prayer-option" data-value="to-blessed-virgin"   onclick="selectPrayer(this)">To the Blessed Virgin Mary</div>
+                <div class="prayer-option" data-value="to-saint-joseph"     onclick="selectPrayer(this)">To Saint Joseph</div>
                 <div class="prayer-option" data-value="in-sorrow-or-trouble" onclick="selectPrayer(this)">In Sorrow or Trouble</div>
-                <div class="prayer-option" data-value="ave-regina" onclick="selectPrayer(this)">Ave Regina Caelorum</div>
+                <div class="prayer-option" data-value="ave-regina"          onclick="selectPrayer(this)">Ave Regina Caelorum</div>
 
                 <div class="prayer-optgroup-label">Eucharist: Contrition &amp; Repentance</div>
                 <div class="prayer-option" data-value="act-of-contrition" onclick="selectPrayer(this)">Act of Contrition</div>
-                <div class="prayer-option" data-value="after-neglect" onclick="selectPrayer(this)">After Neglect or Misuse of the Sacrament</div>
+                <div class="prayer-option" data-value="after-neglect"     onclick="selectPrayer(this)">After Neglect or Misuse of the Sacrament</div>
 
                 <div class="prayer-optgroup-label">Prayers of Lancelot Andrewes</div>
-                <div class="prayer-option" data-value="andrewes-commendation" onclick="selectPrayer(this)">Commendation</div>
-                <div class="prayer-option" data-value="andrewes-thanksgiving" onclick="selectPrayer(this)">Thanksgiving</div>
-                <div class="prayer-option" data-value="andrewes-penitence" onclick="selectPrayer(this)">Penitence</div>
-                <div class="prayer-option" data-value="andrewes-petition" onclick="selectPrayer(this)">Petition</div>
+                <div class="prayer-option" data-value="andrewes-commendation"  onclick="selectPrayer(this)">Commendation</div>
+                <div class="prayer-option" data-value="andrewes-thanksgiving"  onclick="selectPrayer(this)">Thanksgiving</div>
+                <div class="prayer-option" data-value="andrewes-penitence"     onclick="selectPrayer(this)">Penitence</div>
+                <div class="prayer-option" data-value="andrewes-petition"      onclick="selectPrayer(this)">Petition</div>
 
                 <div class="prayer-optgroup-label">General Intercessions</div>
-                <div class="prayer-option" data-value="prayer-for-the-sick" onclick="selectPrayer(this)">Prayer for the Sick</div>
-                <div class="prayer-option" data-value="prayer-for-peace" onclick="selectPrayer(this)">Prayer for Peace</div>
-                <div class="prayer-option" data-value="prayer-for-unity" onclick="selectPrayer(this)">Prayer for Unity</div>
-                <div class="prayer-option" data-value="prayer-for-mission" onclick="selectPrayer(this)">Prayer for Mission</div>
-                <div class="prayer-option" data-value="prayer-for-guidance" onclick="selectPrayer(this)">Prayer for Guidance</div>
-                <div class="prayer-option" data-value="prayer-for-the-church" onclick="selectPrayer(this)">Prayer for the Church</div>
-                <div class="prayer-option" data-value="prayer-for-the-world" onclick="selectPrayer(this)">Prayer for the World</div>
+                <div class="prayer-option" data-value="prayer-for-the-sick"    onclick="selectPrayer(this)">Prayer for the Sick</div>
+                <div class="prayer-option" data-value="prayer-for-peace"       onclick="selectPrayer(this)">Prayer for Peace</div>
+                <div class="prayer-option" data-value="prayer-for-unity"       onclick="selectPrayer(this)">Prayer for Unity</div>
+                <div class="prayer-option" data-value="prayer-for-mission"     onclick="selectPrayer(this)">Prayer for Mission</div>
+                <div class="prayer-option" data-value="prayer-for-guidance"    onclick="selectPrayer(this)">Prayer for Guidance</div>
+                <div class="prayer-option" data-value="prayer-for-the-church"  onclick="selectPrayer(this)">Prayer for the Church</div>
+                <div class="prayer-option" data-value="prayer-for-the-world"   onclick="selectPrayer(this)">Prayer for the World</div>
 
                 <div class="prayer-optgroup-label">For Ministers: Journey to Church</div>
-                <div class="prayer-option" data-value="minister-journey-bcp" onclick="selectPrayer(this)">On the Way to Church (Anglican)</div>
+                <div class="prayer-option" data-value="minister-journey-bcp"      onclick="selectPrayer(this)">On the Way to Church (Anglican)</div>
                 <div class="prayer-option" data-value="minister-journey-orthodox" onclick="selectPrayer(this)">On the Way to Church (Orthodox)</div>
 
                 <div class="prayer-optgroup-label">For Ministers: Before Entering Church</div>
-                <div class="prayer-option" data-value="minister-entering-bcp" onclick="selectPrayer(this)">Before Entering Church (Anglican)</div>
+                <div class="prayer-option" data-value="minister-entering-bcp"      onclick="selectPrayer(this)">Before Entering Church (Anglican)</div>
                 <div class="prayer-option" data-value="minister-entering-orthodox" onclick="selectPrayer(this)">Before Entering Church (Orthodox)</div>
 
                 <div class="prayer-optgroup-label">For Ministers: Vesting Prayers</div>
-                <div class="prayer-option" data-value="vesting-amice" onclick="selectPrayer(this)">Vesting: The Amice</div>
-                <div class="prayer-option" data-value="vesting-alb" onclick="selectPrayer(this)">Vesting: The Alb</div>
-                <div class="prayer-option" data-value="vesting-cincture" onclick="selectPrayer(this)">Vesting: The Cincture</div>
-                <div class="prayer-option" data-value="vesting-stole-deacon" onclick="selectPrayer(this)">Vesting: The Stole (Deacon)</div>
-                <div class="prayer-option" data-value="vesting-stole-priest" onclick="selectPrayer(this)">Vesting: The Stole (Priest)</div>
-                <div class="prayer-option" data-value="vesting-chasuble" onclick="selectPrayer(this)">Vesting: The Chasuble</div>
+                <div class="prayer-option" data-value="vesting-amice"                 onclick="selectPrayer(this)">Vesting: The Amice</div>
+                <div class="prayer-option" data-value="vesting-alb"                   onclick="selectPrayer(this)">Vesting: The Alb</div>
+                <div class="prayer-option" data-value="vesting-cincture"              onclick="selectPrayer(this)">Vesting: The Cincture</div>
+                <div class="prayer-option" data-value="vesting-stole-deacon"          onclick="selectPrayer(this)">Vesting: The Stole (Deacon)</div>
+                <div class="prayer-option" data-value="vesting-stole-priest"          onclick="selectPrayer(this)">Vesting: The Stole (Priest)</div>
+                <div class="prayer-option" data-value="vesting-chasuble"              onclick="selectPrayer(this)">Vesting: The Chasuble</div>
                 <div class="prayer-option" data-value="vesting-orthodox-epitrachelion" onclick="selectPrayer(this)">Vesting: The Epitrachelion (Orthodox)</div>
-                <div class="prayer-option" data-value="vesting-orthodox-phailonion" onclick="selectPrayer(this)">Vesting: The Phelonion (Orthodox)</div>
-                <div class="prayer-option" data-value="vesting-orthodox-full" onclick="selectPrayer(this)">Vesting Prayers: Full Orthodox Sequence</div>
+                <div class="prayer-option" data-value="vesting-orthodox-phailonion"   onclick="selectPrayer(this)">Vesting: The Phelonion (Orthodox)</div>
+                <div class="prayer-option" data-value="vesting-orthodox-full"         onclick="selectPrayer(this)">Vesting Prayers: Full Orthodox Sequence</div>
 
                 <div class="prayer-optgroup-label">For Ministers: Before Serving</div>
-                <div class="prayer-option" data-value="minister-before-serving-bcp" onclick="selectPrayer(this)">Before Serving (Anglican)</div>
+                <div class="prayer-option" data-value="minister-before-serving-bcp"      onclick="selectPrayer(this)">Before Serving (Anglican)</div>
                 <div class="prayer-option" data-value="minister-before-serving-orthodox" onclick="selectPrayer(this)">Before the Divine Liturgy (Orthodox)</div>
-                <div class="prayer-option" data-value="minister-before-serving-deacon" onclick="selectPrayer(this)">For a Deacon Before the Liturgy</div>
+                <div class="prayer-option" data-value="minister-before-serving-deacon"   onclick="selectPrayer(this)">For a Deacon Before the Liturgy</div>
 
                 <div class="prayer-optgroup-label">For Ministers: After Serving</div>
-                <div class="prayer-option" data-value="minister-after-serving-bcp" onclick="selectPrayer(this)">Thanksgiving After Serving (Anglican)</div>
+                <div class="prayer-option" data-value="minister-after-serving-bcp"      onclick="selectPrayer(this)">Thanksgiving After Serving (Anglican)</div>
                 <div class="prayer-option" data-value="minister-after-serving-orthodox" onclick="selectPrayer(this)">Thanksgiving After the Liturgy (Orthodox)</div>
 
             </div>
         </div>
-        <!-- Hidden input to carry the selected value -->
+
         <input type="hidden" id="prayer-dropdown" value="">
         <br>
         <button class="mode-btn" onclick="showSinglePrayer()" style="margin-top:20px;">Display Prayer</button>
-        <button class="mode-btn" onclick="backToSplash()" style="margin-top:12px;">Back to Modes</button>
-    </div>
+        <button class="mode-btn" onclick="backToSplash()"     style="margin-top:12px;">Back to Modes</button>
+    </div><!-- /prayer-selection -->
+
     <div id="prayer-display" style="display:none; margin-top:40px; background:transparent; width:100%; max-width:800px; padding-bottom:100px; box-sizing:border-box;">
         <div id="single-prayer-content"></div>
     </div>
+
     <div id="prayer-back-bar" style="display:none; position:fixed; bottom:0; left:0; right:0; text-align:center; padding:16px 0 20px; background:linear-gradient(transparent, rgba(30,18,8,0.97) 40%); z-index:300;">
         <button class="mode-btn" onclick="backToPrayerDropdown()">Back to Selection</button>
     </div>
-</div>
+</div><!-- /individual-prayers-section -->
+
+<!-- ── Tooltip ───────────────────────────────────────────────────────────── -->
+<div id="uo-tooltip"></div>
+
+<!-- ── Scripts ───────────────────────────────────────────────────────────── -->
 <script src="js/calendar-engine.js"></script>
 <script src="js/scripture-resolver.js"></script>
-<script>
-let appData = null;
-let currentDate = new Date();
-let selectedMode = null;
-const monthNames = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
-const psalterCycle = [
-{day: 1, morning: '1,2,3,4,5', evening: '6,7,8'},
-{day: 2, morning: '9,10,11', evening: '12,13,14'},
-{day: 3, morning: '15,16,17', evening: '18'},
-{day: 4, morning: '19,20,21', evening: '22,23'},
-{day: 5, morning: '24,25,26', evening: '27,28,29'},
-{day: 6, morning: '30,31', evening: '32,33,34'},
-{day: 7, morning: '35,36', evening: '37'},
-{day: 8, morning: '38', evening: '39,40'},
-{day: 9, morning: '41,42,43', evening: '44,45,46'},
-{day: 10, morning: '47,48,49', evening: '50,51,52'},
-{day: 11, morning: '53,54,55', evening: '56,57,58'},
-{day: 12, morning: '59,60', evening: '61,62'},
-{day: 13, morning: '63,64', evening: '65,66,67'},
-{day: 14, morning: '68', evening: '69,70'},
-{day: 15, morning: '71,72', evening: '73,74'},
-{day: 16, morning: '75,76', evening: '77'},
-{day: 17, morning: '78', evening: '79,80'},
-{day: 18, morning: '81,82', evening: '83,84,85'},
-{day: 19, morning: '86,87,88', evening: '89'},
-{day: 20, morning: '90,91,92', evening: '93,94'},
-{day: 21, morning: '95,96,97,98', evening: '99,100,101'},
-{day: 22, morning: '102,103', evening: '104'},
-{day: 23, morning: '105', evening: '106'},
-{day: 24, morning: '107', evening: '108,109'},
-{day: 25, morning: '110,111,112,113', evening: '114,115'},
-{day: 26, morning: '116,117,118', evening: '119:1-32'},
-{day: 27, morning: '119:33-72', evening: '119:73-104'},
-{day: 28, morning: '119:105-144', evening: '119:145-176'},
-{day: 29, morning: '120,121,122,123,124,125', evening: '126,127,128,129,130,131'},
-{day: 30, morning: '132,133,134,135', evening: '136,137,138'},
-{day: 31, morning: '139,140', evening: '141,142,143'}
-];
-function updateSeasonalTheme(color) {
-let hex = '#4a7c59'; // Default to muted green for Ordinary
-if (color === 'purple') hex = '#6b3070'; // Advent/Lent — deep Byzantine purple
-if (color === 'rose') hex = '#a04060'; // Gaudete/Laetare — antique rose
-if (color === 'white') hex = '#c9a84c'; // Christmas/Epiphany — use gold for white seasons
-if (color === 'green') hex = '#4a7c59'; // Ordinary — forest green
-if (color === 'red') hex = '#9b2335'; // Pentecost/Martyrs — deep crimson
-document.documentElement.style.setProperty('--accent', hex);
-}
-async function init() {
-   try {
-       // Show loading state
-       document.getElementById('office-display').innerHTML = `<div class="office-container"><h3>Loading...</h3><p>Preparing your daily office...</p></div>`;
-       appData = {};
-       const files = ['components', 'rubrics'];
-       for (const file of files) {
-           const res = await fetch(`data/${file}.json`);
-           if (!res.ok) throw new Error(`Missing: data/${file}.json`);
-           appData[file] = await res.json();
-       }
-       updateUI();
-       await CalendarEngine.fetchLectionaryData();
-       renderOffice();
-   } catch (err) {
-       document.getElementById('office-display').innerHTML = `<div class="office-container"><h3>System Error</h3><p>${err.message}</p></div>`;
-       console.error('Init failed:', err);
-   }
-}
-function selectMode(mode) {
-   selectedMode = mode;
-   document.getElementById('mode-selection').style.display = 'none';
-   document.getElementById('splash-bg').style.display = 'none';
-   document.body.classList.add('office-active');
-   document.body.style.height = 'auto';
-   document.body.style.overflowY = 'auto';
-  if (mode === 'daily') {
-        document.body.style.display = 'flex';
-        document.body.style.justifyContent = 'flex-start';
-        document.body.style.alignItems = 'flex-start';
-        document.getElementById('daily-office-section').style.display = 'flex';
-        document.getElementById('sidebar-toggle').style.display = 'flex';
-        document.getElementById('settings-panel').style.display = 'block';
-        document.getElementById('settings-panel').classList.add('sidebar-hidden');
-        loadSettings(); // Load saved preferences
-        updateSidebarForOffice(); // Apply office-specific visibility after settings are restored
-        updateDatePicker();
-        // Initialize data only when Daily Office is selected
-        if (!appData || !appData.rubrics) {
-            init();
-        } else {
-            renderOffice();
-        }
-    } else if (mode === 'prayers') {
-       document.body.style.display = 'block';
-       document.body.style.width = '100vw';
-       document.body.style.maxWidth = '100vw';
-       document.body.style.margin = '0';
-       document.body.style.padding = '0';
-       document.getElementById('individual-prayers-section').style.display = 'flex';
-       document.getElementById('individual-prayers-section').style.width = '100vw';
-       document.getElementById('sidebar-toggle').style.display = 'none';
-       document.getElementById('settings-panel').style.display = 'none';
-   }
-}
-function changeDate(days) {
- currentDate.setDate(currentDate.getDate() + days);
- updateDatePicker();
- renderOffice();
-}
-function resetDate() {
- currentDate = new Date();
- updateDatePicker();
- renderOffice();
-}
-function updateDatePicker() {
- const year = currentDate.getFullYear();
- const month = String(currentDate.getMonth() + 1).padStart(2, '0');
- const day = String(currentDate.getDate()).padStart(2, '0');
- const dateStr = `${year}-${month}-${day}`;
- const picker = document.getElementById('date-picker');
- if (picker) picker.value = dateStr;
-}
-function setCustomDate(dateStr) {
- if (dateStr) {
-   // Parse date string as local time to avoid timezone shifting
-   const [year, month, day] = dateStr.split('-');
-   currentDate = new Date(parseInt(year), parseInt(month) - 1, parseInt(day));
- }
- updateDatePicker();
- renderOffice();
-}
-function toggleSidebar() {
-   const panel = document.getElementById('settings-panel');
-   const toggle = document.getElementById('sidebar-toggle');
-   const hidden = panel.classList.toggle('sidebar-hidden');
-   toggle.style.opacity = hidden ? '0.65' : '0.5';
-}
-function updateSidebarForOffice() {
-   const officeId = document.querySelector('input[name="office-time"]:checked')?.value || 'morning-office';
-   const isMorning  = officeId === 'morning-office';
-   const isEvening  = officeId === 'evening-office';
-   const isNoonday  = officeId === 'noonday-office';
-   const isCompline = officeId === 'compline-office';
-   const isMpEp     = isMorning || isEvening;
+<script src="js/office-ui.js"></script>
+<script src="js/prayers.js"></script>
+<script src="js/tooltip.js"></script>
 
-   function setVisible(id, visible) {
-      const el = document.getElementById(id);
-      if (!el) return;
-      const row = el.closest('label') || el.closest('.nested-group') || el.parentElement;
-      if (row) row.style.display = visible ? '' : 'none';
-      if (!visible) el.checked = false;
-   }
-
-   // Angelus: MP, Noonday, EP only — not Compline
-   setVisible('toggle-angelus', !isCompline);
-
-   // Trisagion: MP and EP only (needs Absolution in rubric)
-   setVisible('toggle-trisagion', isMpEp);
-
-   // Prayer Before Reading: MP and EP only (Noonday/Compline have no lessons)
-   setVisible('toggle-prayer-before-reading', isMpEp);
-
-   // Examen: Compline only
-   setVisible('toggle-examen', isCompline);
-
-   // Kyrie Pantocrator: MP and EP only
-   setVisible('toggle-kyrie-pantocrator', isMpEp);
-
-   // Suffrages: MP and EP only
-   setVisible('toggle-suffrages', isMpEp);
-
-   // Great Litany: MP and EP only
-   setVisible('toggle-litany', isMpEp);
-
-   // General Thanksgiving: MP and EP only
-   setVisible('toggle-general-thanksgiving', isMpEp);
-
-   // Prayer of St. Chrysostom: MP and EP only
-   setVisible('toggle-chrysostom', isMpEp);
-}
-function toggleBcpOnly() {
-   const bcpOnly = document.getElementById('toggle-bcp-only')?.checked || false;
-   const sections = ['ecumenical-devotions-section','during-office-section','closing-devotions-section']
-      .map(id => document.getElementById(id)).filter(Boolean);
-   if (!sections.length) return;
-   if (bcpOnly) {
-      sections.forEach(s => s.classList.add('bcp-only-hidden'));
-      ['toggle-angelus','toggle-trisagion','toggle-east-syriac-hours','toggle-agpeya-opening',
-       'toggle-prayer-before-reading','toggle-examen','toggle-kyrie-pantocrator'].forEach(id => {
-         const el = document.getElementById(id);
-         if (el) el.checked = false;
-      });
-   } else {
-      sections.forEach(s => s.classList.remove('bcp-only-hidden'));
-   }
-   renderOffice();
-}
-function updateUI() {
-  const isDark = document.getElementById('toggle-dark')?.checked !== false;
-  if (isDark) {
-    document.body.classList.add('dark-mode');
-    document.body.classList.remove('light-mode');
-  } else {
-    document.body.classList.add('light-mode');
-    document.body.classList.remove('dark-mode');
-  }
-}
-function saveSettings() {
-   const settings = {
-      darkMode: document.getElementById('toggle-dark')?.checked || false,
-      bcpOnly: document.getElementById('toggle-bcp-only')?.checked || false,
-      officeTime: document.querySelector('input[name="office-time"]:checked')?.value || 'morning-office',
-      rite: document.querySelector('input[name="rite"]:checked')?.value || 'rite2',
-      minister: document.querySelector('input[name="minister"]:checked')?.value || 'lay',
-      marianElement: document.querySelector('input[name="marian-element"]:checked')?.value || 'none',
-      marianPos: document.querySelector('input[name="marian-antiphon-pos"]:checked')?.value || 'before',
-      gloriaPatri: document.getElementById('toggle-gloria-patri')?.checked || false,
-      angelus: document.getElementById('toggle-angelus')?.checked || false,
-      trisagion: document.getElementById('toggle-trisagion')?.checked || false,
-      eastSyriacHours: document.getElementById('toggle-east-syriac-hours')?.checked || false,
-      agpeyaOpening: document.getElementById('toggle-agpeya-opening')?.checked || false,
-      creedType: document.getElementById('creed-type')?.value || 'bcp-creed-apostles',
-      gospelPlacement: document.querySelector('input[name="gospel-placement"]:checked')?.value || 'evening',
-      litany: document.getElementById('toggle-litany')?.checked || false,
-      suffrages: document.getElementById('toggle-suffrages')?.checked || false,
-      psalter30Day: document.getElementById('toggle-30day-psalter')?.checked || false,
-      generalThanksgiving: document.getElementById('toggle-general-thanksgiving')?.checked || false,
-      chrysostom: document.getElementById('toggle-chrysostom')?.checked || false,
-      prayerBeforeReading: document.getElementById('toggle-prayer-before-reading')?.checked || false,
-      examen: document.getElementById('toggle-examen')?.checked || false,
-      kyriePantocrator: document.getElementById('toggle-kyrie-pantocrator')?.checked || false
-   };
-   try {
-      localStorage.setItem('universalOfficeSettings', JSON.stringify(settings));
-      console.log('Settings saved');
-   } catch (e) {
-      console.warn('Could not save settings to localStorage:', e);
-   }
-}
-function loadSettings() {
-   try {
-      const saved = localStorage.getItem('universalOfficeSettings');
-      if (!saved) return;
-      const settings = JSON.parse(saved);
-      // Restore checkboxes and radios
-      if (document.getElementById('toggle-dark')) {
-         document.getElementById('toggle-dark').checked = settings.darkMode;
-         updateUI(); // Apply dark/light class immediately
-      }
-      if (settings.bcpOnly && document.getElementById('toggle-bcp-only')) {
-         document.getElementById('toggle-bcp-only').checked = true;
-         toggleBcpOnly();
-      }
-      const officeTimeRadio = document.querySelector(`input[name="office-time"][value="${settings.officeTime}"]`);
-      if (officeTimeRadio) officeTimeRadio.checked = true;
-      const riteRadio = document.querySelector(`input[name="rite"][value="${settings.rite}"]`);
-      if (riteRadio) riteRadio.checked = true;
-      const ministerRadio = document.querySelector(`input[name="minister"][value="${settings.minister}"]`);
-      if (ministerRadio) ministerRadio.checked = true;
-      const marianElementRadio = document.querySelector(`input[name="marian-element"][value="${settings.marianElement}"]`);
-      if (marianElementRadio) marianElementRadio.checked = true;
-      const marianPosRadio = document.querySelector(`input[name="marian-antiphon-pos"][value="${settings.marianPos}"]`);
-      if (marianPosRadio) marianPosRadio.checked = true;
-      if (document.getElementById('toggle-gloria-patri')) document.getElementById('toggle-gloria-patri').checked = settings.gloriaPatri;
-      if (document.getElementById('toggle-angelus')) document.getElementById('toggle-angelus').checked = settings.angelus;
-      if (document.getElementById('toggle-trisagion')) document.getElementById('toggle-trisagion').checked = settings.trisagion;
-      if (document.getElementById('toggle-east-syriac-hours')) document.getElementById('toggle-east-syriac-hours').checked = settings.eastSyriacHours;
-      if (document.getElementById('toggle-agpeya-opening')) document.getElementById('toggle-agpeya-opening').checked = settings.agpeyaOpening;
-      if (document.getElementById('creed-type')) document.getElementById('creed-type').value = settings.creedType;
-      const gospelRadio = document.querySelector(`input[name="gospel-placement"][value="${settings.gospelPlacement}"]`);
-      if (gospelRadio) gospelRadio.checked = true;
-      if (document.getElementById('toggle-litany')) document.getElementById('toggle-litany').checked = settings.litany;
-      if (document.getElementById('toggle-suffrages')) document.getElementById('toggle-suffrages').checked = settings.suffrages;
-      if (document.getElementById('toggle-30day-psalter')) document.getElementById('toggle-30day-psalter').checked = settings.psalter30Day;
-      if (document.getElementById('toggle-general-thanksgiving')) document.getElementById('toggle-general-thanksgiving').checked = settings.generalThanksgiving;
-      if (document.getElementById('toggle-chrysostom')) document.getElementById('toggle-chrysostom').checked = settings.chrysostom;
-      if (document.getElementById('toggle-prayer-before-reading')) document.getElementById('toggle-prayer-before-reading').checked = settings.prayerBeforeReading;
-      if (document.getElementById('toggle-examen')) document.getElementById('toggle-examen').checked = settings.examen;
-      if (document.getElementById('toggle-kyrie-pantocrator')) document.getElementById('toggle-kyrie-pantocrator').checked = settings.kyriePantocrator;
-      console.log('Settings loaded');
-   } catch (e) {
-      console.warn('Could not load settings from localStorage:', e);
-   }
-}
-function formatScriptureAsFlow(rawText) {
-    if (!rawText) return '';
-    // Remove verse number prefixes like "12:1 " or "1:1 "
-    let cleaned = rawText.replace(/^\d+:\d+\s/gm, '').trim();
-    // Split on double newlines (paragraph breaks between passages)
-    let paragraphs = cleaned.split(/\n\n+/).filter(p => p.trim());
-    return paragraphs.map(para => {
-        // Within each paragraph, join single newlines into flowing text
-        let flowing = para.split('\n').map(l => l.trim()).filter(l => l).join(' ');
-        return `<p>${flowing}</p>`;
-    }).join('');
-}
-
-function formatPsalmAsPoetry(rawText) {
-    if (!rawText) return '';
-    let cleaned = rawText.replace(/^\d+:\d+\s/gm, '').trim();
-    let lines = cleaned.split('\n').filter(l => l.trim());
-    let html = '';
-    for (let line of lines) {
-        // Psalm verses often have a mid-verse break marked by * or ; — treat as half-verse indent
-        const halves = line.split(/\s*[*]\s*/);
-        if (halves.length > 1) {
-            html += `<span class="psalm-stanza">`;
-            html += `<span class="psalm-half-verse">${halves[0].trim()}</span>`;
-            html += `<span class="psalm-half-verse">${halves[1].trim()}</span>`;
-            html += `</span>`;
-        } else {
-            html += `<span class="psalm-stanza"><span class="psalm-half-verse">${line.trim()}</span></span>`;
-        }
-    }
-    return html;
-}
-
-async function renderOffice() {
-   if (!appData || !appData.rubrics || !Array.isArray(appData.rubrics)) {
-       document.getElementById('office-display').innerHTML = `<div class="office-container"><h3>Loading...</h3><p>Data still loading.</p></div>`;
-       return;
-   }
-   // Show brief loading state while rendering (especially helpful when fetching scripture)
-   document.getElementById('office-display').innerHTML = `<div class="office-container"><h3>Loading Office...</h3><p>Fetching readings...</p></div>`;
-  const todayKey = currentDate.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
-const todayKeyShort = currentDate.toLocaleDateString('en-US', { month: 'long', day: 'numeric' });
-  document.getElementById('display-date').innerText = todayKey;
-  const officeId = document.querySelector('input[name="office-time"]:checked')?.value;
-  const rite = document.querySelector('input[name="rite"]:checked')?.value || 'rite2';
-   const minister = document.querySelector('input[name="minister"]:checked')?.value || 'lay';
-  const marianElement = document.querySelector('input[name="marian-element"]:checked')?.value || 'none';
-  const marianPos = document.querySelector('input[name="marian-antiphon-pos"]:checked')?.value || 'before';
-  const creedSelection = document.getElementById('creed-type')?.value;
-  const greatLitanyChecked = document.getElementById('toggle-litany')?.checked || false;
-  const suffragesChecked = document.getElementById('toggle-suffrages')?.checked || false;
-  const gospelPlacement = document.querySelector('input[name="gospel-placement"]:checked')?.value || 'evening';
-  const generalThanksgivingChecked = document.getElementById('toggle-general-thanksgiving')?.checked || false;
-  const chrysostomChecked = document.getElementById('toggle-chrysostom')?.checked || false;
-  // Ecumenical devotions rendered positionally — no array needed
-
-  const { season } = CalendarEngine.getSeasonAndFile(currentDate);
-  const marianId = `bcp-marian-antiphon-${season}`;
-  const marianComp = appData.components.find(c => c.id === marianId);
-  const theotokionComp = appData.components.find(c => c.id === 'coptic-theotokion');
-  const activeRubric = appData.rubrics.find(r => r.id === officeId);
-  const dailyData = await CalendarEngine.fetchLectionaryData(currentDate);
-  document.getElementById('calendar-info').innerText = dailyData.title || "Liturgical Ordo";
-  updateSeasonalTheme(dailyData.liturgicalColor || 'green');
-  const isMorning = officeId === 'morning-office';
-  const isEvening = officeId === 'evening-office';
-  const isNoonday = officeId === 'noonday-office';
-  const isCompline = officeId === 'compline-office';
-  const suffix = isEvening || isCompline ? '_evening' : '_morning';
-  let psalms = dailyData[`psalms${suffix}`] || "";
-  const use30Day = document.getElementById('toggle-30day-psalter')?.checked || false;
-  if (use30Day) {
-    const dayOfMonth = currentDate.getDate();
-    const psalterDay = (dayOfMonth % 30) || 30;
-    psalms = psalterCycle[psalterDay - 1][isEvening || isCompline ? 'evening' : 'morning'];
-  }
-  // Lesson distribution based on placement with fallback to old keys
-  const litYear = CalendarEngine.getLiturgicalYear(currentDate);
-
-// Priority 1: Year-specific keys (e.g., reading_ot_mp_year2)
-// Priority 2: Standard keys (reading_ot)
-let readingOT = dailyData[`reading_ot_mp_${litYear}`] || dailyData[`reading_ot_ep_${litYear}`] || dailyData['reading_ot'] || "";
-let readingEpistle = dailyData[`reading_epistle_mp_${litYear}`] || dailyData[`reading_epistle_ep_${litYear}`] || dailyData['reading_epistle'] || "";
-let readingGospel = dailyData[`reading_gospel_mp_${litYear}`] || dailyData[`reading_gospel_ep_${litYear}`] || dailyData['reading_gospel'] || "";
-   // Morning Prayer readings
-   let morningOT = isMorning ? readingOT : '';
-   let morningEpistle = isMorning ? readingEpistle : '';
-   let morningGospel = (isMorning && (gospelPlacement === 'morning' || gospelPlacement === 'both')) ? readingGospel : '';
-   // Evening/Noonday/Compline readings - always show OT and Epistle
-   let eveningOT = (isEvening || isCompline || isNoonday) ? readingOT : '';
-   let eveningEpistle = (isEvening || isCompline || isNoonday) ? readingEpistle : '';
-   let eveningGospel = ((isEvening || isCompline || isNoonday) && (gospelPlacement === 'evening' || gospelPlacement === 'both')) ? readingGospel : '';
-  let officeHtml = `<div class="office-container"><h2>${activeRubric?.officeName || "Office"}</h2>`;
-  officeHtml += `<p class="liturgical-title">${dailyData.title || "Day Title"}</p>`;
-  // AGPEYA OPENING — Coptic preparation prayer, rendered before all else
-  if (document.getElementById('toggle-agpeya-opening')?.checked) {
-    const agpeyaComp = appData.components.find(c => c.id === 'agpeya-opening');
-    if (agpeyaComp) {
-      let agpeyaText = agpeyaComp.text;
-      if (typeof agpeyaText === 'object') agpeyaText = agpeyaText[rite] || agpeyaText['rite2'] || agpeyaText['rite1'] || agpeyaText;
-      officeHtml += `<span class="rubric-text">Agpeya Opening</span><span class="component-text">${agpeyaText}</span>`;
-    }
-  }
-  // EAST SYRIAC PRAYER OF THE HOURS (Hudra) — consecration of the hour, after Agpeya
-  if (document.getElementById('toggle-east-syriac-hours')?.checked) {
-    const esComp = appData.components.find(c => c.id === 'east-syriac-prayer-of-hours');
-    if (esComp) {
-      officeHtml += `<span class="rubric-text">Prayer of the Hours</span><span class="component-text">${esComp.text}</span>`;
-    }
-  }
-  if (marianElement !== 'none' && marianPos === 'before') {
-    if ((marianElement === 'antiphon' || marianElement === 'both') && marianComp) {
-      let marianText = marianComp.text;
-      if (typeof marianText === 'object' && marianText !== null) {
-        marianText = marianText[rite] || marianText['rite2'] || marianText['rite1'] || 'Marian Antiphon text not found';
-      }
-      officeHtml += `<span class="rubric-text">Marian Antiphon</span><span class="component-text"><i>${marianText}</i></span>`;
-    }
-    if ((marianElement === 'theotokion' || marianElement === 'both') && theotokionComp) {
-      officeHtml += `<span class="rubric-text">Theotokion</span><span class="component-text"><i>${theotokionComp.text}</i></span>`;
-    }
-  }
-  if (dailyData.antiphon) {
-    officeHtml += `<span class="rubric-text">Antiphon</span><span class="component-text"><i>${dailyData.antiphon}</i></span>`;
-  }
-  for (let item of activeRubric?.sequence || []) {
- item = item.trim(); // Trim for matching
-  const originalItem = item; // Preserve before compId resolution
- let compId = item.replace('[rite]', rite); // Replace placeholders like bcp-confession-[rite]
- // Handle slots like bcp-absolution-slot, bcp-creed-slot, bcp-suffrages-slot
- if (compId === "bcp-absolution-slot") {
-   const ritePrefix = rite === 'rite1' ? 'r1' : 'r2';
-   compId = `bcp-absolution-${ritePrefix}-${minister}`;
- } else if (compId === "bcp-creed-slot") {
-   compId = creedSelection;
- } else if (compId === "bcp-suffrages-slot") {
-   if (suffragesChecked) {
-     compId = `bcp-suffrages-${rite}`;
-   } else {
-     continue; // Skip if unchecked
-   }
-  }
- if (item === "VARIABLE_OPENING") {
-   let openingId = `bcp-opening-${season}`; // Seasonal, e.g., bcp-opening-advent
-   const comp = appData.components.find(c => c.id === openingId) || appData.components.find(c => c.id === 'bcp-opening-general'); // Fallback
-   let displayText = comp ? (comp.text[rite] || comp.text) : "Opening text not found";
-   officeHtml += `<span class="rubric-text">Opening Sentence</span><span class="component-text">${displayText}</span>`;
-   continue;
- }
- // ANGELUS — before Invitatory (Noonday always; MP/EP optional; not Compline)
- if (item === 'bcp-invitatory-full' && document.getElementById('toggle-angelus')?.checked && !isCompline) {
-   const angelusComp = appData.components.find(c => c.id === 'angelus');
-   if (angelusComp) {
-     let angelusText = angelusComp.text;
-     if (typeof angelusText === 'object') angelusText = angelusText[rite] || angelusText['rite2'] || angelusText['rite1'] || angelusText;
-     officeHtml += `<span class="rubric-text">The Angelus</span><span class="component-text">${angelusText}</span>`;
-   }
- }
- if (item === "bcp-invitatory-full") {
-   let invitatoryId = isMorning ? 'bcp-invitatory-full-mp' : 'bcp-invitatory-full-ep-noon-compline';
-   const comp = appData.components.find(c => c.id === invitatoryId);
-   let displayText = comp ? (comp.text[rite] || comp.text) : "Invitatory text not found";
-   officeHtml += `<span class="rubric-text">The Invitatory</span><span class="component-text">${displayText}</span>`;
-   continue;
- }
- if (item === "bcp-phos-hilaron") {
-   const comp = appData.components.find(c => c.id === "bcp-phos-hilaron");
-   let displayText = comp ? (comp.text[rite] || comp.text) : "Phos Hilaron not found";
-   officeHtml += `<span class="rubric-text">Phos Hilaron</span><span class="component-text">${displayText}</span>`;
-   continue;
- }
- if (item === "VARIABLE_PSALM") {
-   if (psalms) {
-     let psalmRefs = psalms.split(',').map(p => p.trim());
-     let psalmHtml = "";
-     const rubricTitle = psalmRefs.length > 1 ? "The Psalms" : "The Psalm";
-     psalmHtml += `<span class="rubric-text">${rubricTitle}</span>`;
-     for (let psalm of psalmRefs) {
-       let psalmId = psalm.toUpperCase().trim();
-       if (!psalmId.startsWith('PSALM ')) psalmId = 'PSALM ' + psalmId;
-       const fullText = await getScriptureText(psalmId);
-       psalmHtml += `<h4 class="passage-reference">Psalm ${psalm.replace(/Psalm /gi, '').replace(/:\d+-\d+[a-z]?(\(\d+-\d+[a-z]?\))?/gi, '')}</h4><div class="psalm-block">${formatPsalmAsPoetry(fullText) || "No psalm text found"}</div>`;
-       if (document.getElementById('toggle-gloria-patri')?.checked) {
-         const gloria = appData.components.find(c => c.id === "bcp-gloria-patri");
-         let gloriaText = gloria ? (gloria.text[rite] || gloria.text['rite2'] || "(Gloria Patri)") : "(Gloria Patri not found)";
-         psalmHtml += `<span class="component-text"><i>${gloriaText}</i></span>`;
-       }
-     }
-     officeHtml += psalmHtml;
-   }
-   continue;
- }
- if (item === "VARIABLE_READING_OT") {
-    // PRAYER BEFORE READING — Orthodox epiklesis, before the lesson
-    if (document.getElementById('toggle-prayer-before-reading')?.checked) {
-      const pbrComp = appData.components.find(c => c.id === 'orthodox-prayer-before-reading');
-      if (pbrComp) officeHtml += `<span class="rubric-text">Prayer Before Reading</span><span class="component-text">${pbrComp.text}</span>`;
-    }
-   let reading = isMorning ? morningOT : eveningOT;
-   if (reading) {
-     officeHtml += `<span class="rubric-text">The Old Testament Lesson</span>`;
-     officeHtml += `<h4 class="passage-reference">${reading}</h4>`;
-     const fullText = await getScriptureText(reading);
-     officeHtml += `<div class="reading-text">${formatScriptureAsFlow(fullText) || "<p>No reading appointed</p>"}</div>`;
-     officeHtml += '<div class="ornamental-divider"><div class="div-line-left"></div><span class="ornamental-divider-glyph">✦ ✝ ✦</span><div class="div-line-right"></div></div>';
-   }
-   continue;
- }
- if (item === "VARIABLE_READING_EPISTLE") {
-   let reading = isMorning ? morningEpistle : eveningEpistle;
-   if (reading) {
-     officeHtml += `<span class="rubric-text">The Epistle</span>`;
-     officeHtml += `<h4 class="passage-reference">${reading}</h4>`;
-     const fullText = await getScriptureText(reading);
-     officeHtml += `<div class="reading-text">${formatScriptureAsFlow(fullText) || "<p>No reading appointed</p>"}</div>`;
-     officeHtml += '<div class="ornamental-divider"><div class="div-line-left"></div><span class="ornamental-divider-glyph">✦ ✝ ✦</span><div class="div-line-right"></div></div>';
-   }
-   continue;
- }
- if (item === "VARIABLE_READING_GOSPEL") {
-   let reading = isMorning ? morningGospel : eveningGospel;
-   if (reading) {
-     officeHtml += `<span class="rubric-text">The Holy Gospel</span>`;
-     officeHtml += `<h4 class="passage-reference">${reading}</h4>`;
-     const fullText = await getScriptureText(reading);
-     officeHtml += `<div class="reading-text">${formatScriptureAsFlow(fullText) || "<p>No reading appointed</p>"}</div>`;
-     officeHtml += '<div class="ornamental-divider"><div class="div-line-left"></div><span class="ornamental-divider-glyph">✦ ✝ ✦</span><div class="div-line-right"></div></div>';
-   }
-   continue;
- }
- if (item === "VARIABLE_CANTICLE1") {
-   let canticleId = isMorning ? 'bcp-te-deum' : 'bcp-magnificat'; // Default per office
-   const comp = appData.components.find(c => c.id === canticleId);
-   let displayText = comp ? (comp.text[rite] || comp.text) : "Canticle not found";
-   officeHtml += `<span class="rubric-text">Canticle</span><span class="component-text">${displayText}</span>`;
-   continue;
- }
- if (item === "VARIABLE_CANTICLE2") {
-   let canticleId = isMorning ? 'bcp-benedictus' : 'bcp-nunc-dimittis';
-   const comp = appData.components.find(c => c.id === canticleId);
-   let displayText = comp ? (comp.text[rite] || comp.text) : "Canticle not found";
-   officeHtml += `<span class="rubric-text">Canticle</span><span class="component-text">${displayText}</span>`;
-   continue;
- }
- if (item === "bcp-lords-prayer") {
-   const comp = appData.components.find(c => c.id === "bcp-lords-prayer");
-   let displayText = comp ? (comp.text[rite] || comp.text) : "Lord's Prayer not found";
-   officeHtml += `<span class="rubric-text">The Lord's Prayer</span><span class="component-text">${displayText}</span>`;
-   continue;
- }
- if (item === "bcp-kyrie") {
-   const comp = appData.components.find(c => c.id === "bcp-kyrie");
-   let displayText = comp ? (comp.text[rite] || comp.text) : "Kyrie not found";
-   officeHtml += `<span class="rubric-text">Kyrie</span><span class="component-text">${displayText}</span>`;
-   continue;
- }
- if (item === "bcp-salutation") {
-   const comp = appData.components.find(c => c.id === "bcp-salutation");
-   let displayText = comp ? (comp.text[rite] || comp.text) : "Salutation not found";
-   officeHtml += `<span class="rubric-text">Salutation</span><span class="component-text">${displayText}</span>`;
-   continue;
- }
- if (item === "VARIABLE_WEEKDAY_COLLECT") {
-   let collectId = isMorning ? 'bcp-collect-grace' : 'bcp-collect-peace'; // MP/EP defaults
-   const comp = appData.components.find(c => c.id === collectId);
-   let displayText = comp ? (comp.text[rite] || comp.text) : "Weekday Collect not found";
-   officeHtml += `<span class="rubric-text">Weekday Collect</span><span class="component-text">${displayText}</span>`;
-   continue;
- }
- if (item === "VARIABLE_MISSION_PRAYER") {
-   const comp = appData.components.find(c => c.id === "bcp-mission-prayer-1"); // Default option 1
-   let displayText = comp ? (comp.text[rite] || comp.text) : "Prayer for Mission not found";
-   officeHtml += `<span class="rubric-text">Prayer for Mission</span><span class="component-text">${displayText}</span>`;
-   continue;
- }
- if (item === "bcp-litany") {
-   if (greatLitanyChecked) {
-     const comp = appData.components.find(c => c.id === "bcp-litany");
-     let displayText = comp ? (comp.text[rite] || comp.text) : "Great Litany not found";
-     officeHtml += `<span class="rubric-text">The Great Litany</span><span class="component-text">${displayText}</span>`;
-   }
-   continue;
- }
- if (item === "bcp-general-thanksgiving") {
-   if (generalThanksgivingChecked) {
-     const comp = appData.components.find(c => c.id === "bcp-general-thanksgiving");
-     let displayText = comp ? (comp.text[rite] || comp.text) : "General Thanksgiving not found";
-     officeHtml += `<span class="rubric-text">General Thanksgiving</span><span class="component-text">${displayText}</span>`;
-   }
-   continue;
- }
- if (item === "bcp-chrysostom") {
-   if (chrysostomChecked) {
-     const comp = appData.components.find(c => c.id === "bcp-chrysostom");
-     let displayText = comp ? (comp.text[rite] || comp.text) : "Prayer of St. Chrysostom not found";
-     officeHtml += `<span class="rubric-text">Prayer of St. Chrysostom</span><span class="component-text">${displayText}</span>`;
-   }
-   continue;
- }
- if (item === "bcp-closing") {
-   const comp = appData.components.find(c => c.id === "bcp-closing");
-   let displayText = comp ? (comp.text[rite] || comp.text) : "Closing not found";
-   officeHtml += `<span class="rubric-text">Closing</span><span class="component-text">${displayText}</span>`;
-   continue;
- }
- if (item === "bcp-opening-blessing") {
-   const comp = appData.components.find(c => c.id === "bcp-opening-blessing-compline");
-   let displayText = comp ? (comp.text[rite] || comp.text) : "Opening Blessing not found";
-   officeHtml += `<span class="rubric-text">Opening Blessing</span><span class="component-text">${displayText}</span>`;
-   continue;
- }
- if (item === "bcp-versicles-before-prayers") {
-   const comp = appData.components.find(c => c.id === "bcp-versicles-before-prayers-compline");
-   let displayText = comp ? (comp.text[rite] || comp.text) : "Versicles not found";
-   officeHtml += `<span class="rubric-text">Versicles</span><span class="component-text">${displayText}</span>`;
-   continue;
- }
- if (item === "bcp-nunc-dimittis") {
-   const comp = appData.components.find(c => c.id === "bcp-nunc-dimittis");
-   let displayText = comp ? (comp.text[rite] || comp.text) : "Nunc Dimittis not found";
-   officeHtml += `<span class="rubric-text">Nunc Dimittis</span><span class="component-text">${displayText}</span>`;
-   continue;
- }
- if (item === "VARIABLE_COLLECT") {
-   officeHtml += `<span class="rubric-text">The Collect</span>`;
-   const collectId = dailyData.collect || "collect-default-ferial"; // Fallback to default if missing
-   const collectComp = appData.components.find(c => c.id === collectId);
-   if (collectComp) {
-     let displayText = collectComp.text;
-     if (typeof displayText === 'object' && displayText !== null) {
-       displayText = displayText[rite] || displayText['rite2'] || displayText['rite1'] || "Collect text not found";
-     } else {
-       displayText = displayText || "Collect text not found";
-     }
-     officeHtml += `<span class="component-text">${displayText}</span>`;
-   } else {
-     officeHtml += `<span class="component-text">No collect appointed</span>`;
-     console.log("Collect ID not found: " + collectId); // Debug log
-   }
-   officeHtml += '<div class="ornamental-divider"><div class="div-line-left"></div><span class="ornamental-divider-glyph">✦ ✝ ✦</span><div class="div-line-right"></div></div>';
-    // EXAMEN — Compline only, after Collect
-    if (isCompline && document.getElementById('toggle-examen')?.checked) {
-      const examenComp = appData.components.find(c => c.id === 'ignatian-examen');
-      if (examenComp) officeHtml += `<span class="rubric-text">The Examen</span><span class="component-text">${examenComp.text}</span>`;
-    }
-    // KYRIE PANTOCRATOR — MP/EP only, after Collect
-    if (!isCompline && !isNoonday && document.getElementById('toggle-kyrie-pantocrator')?.checked) {
-      const kyrieComp = appData.components.find(c => c.id === 'eastern-kyrie-pantocrator');
-      if (kyrieComp) officeHtml += `<span class="rubric-text">Kyrie Pantocrator</span><span class="component-text">${kyrieComp.text}</span>`;
-    }
-   continue;
-  }
- let comp = appData.components.find(c => c.id === compId);
- if (comp) {
-   let displayText = comp.text;
-   if (typeof displayText === 'object' && displayText !== null) {
-     displayText = displayText[rite] || displayText['rite2'] || displayText['rite1'] || "Text not found";
-   } else {
-     displayText = displayText || "Text not found";
-   }
-   officeHtml += `<span class="rubric-text">${comp.title || compId}</span><span class="component-text">${displayText}</span>`;
- } else {
-   officeHtml += `<span class="rubric-text">Component not found: ${compId}</span>`;
- }
-  // TRISAGION — rendered after Absolution
-  if (item === 'bcp-absolution-slot' && document.getElementById('toggle-trisagion')?.checked) {
-    const trisComp = appData.components.find(c => c.id === 'trisagion-byzantine');
-    if (trisComp) {
-      let trisText = trisComp.text;
-      if (typeof trisText === 'object') trisText = trisText[rite] || trisText['rite2'] || trisText['rite1'] || trisText;
-      officeHtml += `<span class="rubric-text">Trisagion</span><span class="component-text">${trisText}</span>`;
-    }
-  }
-}
-   if (marianElement !== 'none' && marianPos === 'after') {
-     if ((marianElement === 'antiphon' || marianElement === 'both') && marianComp) {
-       let marianText = marianComp.text;
-       if (typeof marianText === 'object' && marianText !== null) {
-         marianText = marianText[rite] || marianText['rite2'] || marianText['rite1'] || 'Marian Antiphon text not found';
-       }
-       officeHtml += `<span class="rubric-text">Marian Antiphon</span><span class="component-text"><i>${marianText}</i></span>`;
-     }
-     if ((marianElement === 'theotokion' || marianElement === 'both') && theotokionComp) {
-       officeHtml += `<span class="rubric-text">Theotokion</span><span class="component-text"><i>${theotokionComp.text}</i></span>`;
-     }
-   }
- document.getElementById('office-display').innerHTML = officeHtml + `</div>`;
- document.getElementById('date-header').innerText = `Commemorations for ${todayKey}`;
- const todayKeyLower = todayKey.toLowerCase();
- // Dynamically load saints for the current month
- const monthIndex = currentDate.getMonth();
- const month = monthNames[monthIndex];
- if (!appData.saints || appData.saintsMonth !== month) {
-   try {
-     const file = `saints-${month.toLowerCase()}.json`;
-     const res = await fetch(`data/saints/${file}`);
-     if (!res.ok) throw new Error(`Failed to load ${file}`);
-     appData.saints = await res.json();
-     appData.saintsMonth = month;
-   } catch (err) {
-     console.error('Saints load failed:', err);
-     document.getElementById('saint-display').innerHTML = '<p>No commemorations for today.</p>';
-     return;
-   }
- }
- document.getElementById('saint-display').innerHTML = appData.saints
-     .filter(s => s.day && s.day.toLowerCase().includes(todayKeyShort.toLowerCase()))
-     .map(s => `
-         <div class="saint-box">
-             <small style="color:var(--accent); font-weight:bold; text-transform:uppercase;">${s.tradition || 'Unknown'}</small>
-             <strong>${s.name || 'Unknown'}</strong>
-             <p>${s.description || 'No description'}</p>
-         </div>
-     `).join('') || '<p>No commemorations for today.</p>';
-}
-function togglePrayerDropdown() {
-    document.getElementById('prayer-select-list').classList.toggle('open');
-}
-function selectPrayer(el) {
-    document.querySelectorAll('.prayer-option').forEach(o => o.classList.remove('selected'));
-    el.classList.add('selected');
-    document.getElementById('prayer-select-label').textContent = el.textContent;
-    document.getElementById('prayer-dropdown').value = el.dataset.value;
-    document.getElementById('prayer-select-list').classList.remove('open');
-}
-document.addEventListener('click', function(e) {
-    const wrapper = document.getElementById('prayer-select-wrapper');
-    if (wrapper && !wrapper.contains(e.target)) {
-        document.getElementById('prayer-select-list').classList.remove('open');
-    }
-});
-function showSinglePrayer() {
-  const prayerId = document.getElementById('prayer-dropdown').value;
-  if (!prayerId) {
-      alert("Please select a prayer first.");
-      return;
-  }
-
-  // Each prayer: { title, source, text }
-  // text may contain <br> for line breaks in poetry/versicles
-  const prayers = {
-
-    // ── EUCHARIST: PREPARATION & SPIRITUAL COMMUNION ──────────────────────
-    "prayer-humble-access": {
-      title: "Prayer of Humble Access",
-      source: "The Book of Common Prayer, p. 337",
-      text: `We do not presume to come to this thy Table, O merciful Lord, trusting in our own righteousness, but in thy manifold and great mercies. We are not worthy so much as to gather up the crumbs under thy Table. But thou art the same Lord whose property is always to have mercy. Grant us therefore, gracious Lord, so to eat the flesh of thy dear Son Jesus Christ, and to drink his blood, that we may evermore dwell in him, and he in us. <em>Amen.</em>`
-    },
-    "spiritual-communion": {
-      title: "Act of Spiritual Communion",
-      source: "Traditional",
-      text: `In union, blessed Jesus, with the faithful gathered at every altar of your Church where your blessed Body and Blood are offered this day, I long to offer you praise and thanksgiving, for creation and all the blessings of this life, for the redemption won for us by your life, death, and resurrection, for the means of grace and the hope of glory. I believe that you are truly present in the Holy Sacrament, and, since I cannot at this time receive communion, I pray you to come into my heart. I unite myself with you and embrace you with all my heart, my soul, and my mind. Let nothing separate me from you; let me serve you in this life until, by your grace, I come to your glorious kingdom and unending peace. <em>Amen.</em>`
-    },
-
-    // ── EUCHARIST: THANKSGIVING AFTER COMMUNION ───────────────────────────
-    "thanksgiving-aquinas": {
-      title: "Thanksgiving After Communion",
-      source: "Based on a Prayer of Saint Thomas Aquinas",
-      text: `I give thanks, O God, that in your great mercy, you have fed me with the precious Body and Blood of your Son, our Lord Jesus Christ, giving me far more than I could ask and infinitely more than I deserve. May I never receive so great a gift with presumption or thoughtlessness… Bring me, I pray, unworthy and a sinner though I am, to that ineffable feast, where, with your Son and the Holy Spirit, you are, to all your people, true light, full satisfaction, everlasting joy, pleasure's fulfillment, and perfect happiness; through the same Jesus Christ our Lord. <em>Amen.</em>`
-    },
-    "thanksgiving-hooker": {
-      title: "Thanksgiving After Communion",
-      source: "Adapted from Of the Laws of Ecclesiastical Polity, Richard Hooker, 1593",
-      text: `Our hunger is satisfied and our thirst for ever quenched; here are things wonderful which we feel, great which we see and unheard of which we utter — whose souls are possessed of this Paschal Lamb and made joyful in the strength of this new wine… Why should any cogitation possess the mind of a faithful communicant but this: O my God, thou art true, O my soul, thou art happy. <em>Amen.</em>`
-    },
-    "thanksgiving-andrewes": {
-      title: "Self-Oblation",
-      source: "Attributed to Lancelot Andrewes",
-      text: `Lord Jesus Christ, I give you my hands, to do your work, my feet to follow in your way, my eyes to see as you see, my tongue to speak your words; take my mind and let my thoughts dwell always on you and in my spirit, pray always within me. Above all, I give you my heart; that in me you may love your Father and all people. I give you myself, that you may grow in me, so that it is you, Lord Jesus, who lives and works and prays in me. <em>Amen.</em>`
-    },
-    "thanksgiving-basil": {
-      title: "Thanksgiving After Communion",
-      source: "From the Liturgy of Saint Basil",
-      text: `The mystery of thy dispensation, O Christ our God, is finished and perfected as far as in our power lies. For we have presented the memorial of thy death; we have seen the type of thy resurrection; we have been refreshed with thine endless life; we have enjoyed thine inexhaustible delights… <em>Amen.</em>`
-    },
-
-    // ── EUCHARIST: ADORATION & BENEDICTION ───────────────────────────────
-    "o-salutaris": {
-      title: "O Salutaris",
-      source: "Saint Thomas Aquinas",
-      text: `O Saving Victim, opening wide<br>the gates of heaven to us below,<br>Our foes press on from every side,<br>Thine aid supply, thy strength bestow.<br><br>All praise and thanks to thee ascend<br>for evermore, blest One in Three;<br>O grant us life that shall not end<br>in our true native land with thee. <em>Amen.</em>`
-    },
-    "tantum-ergo": {
-      title: "Tantum Ergo",
-      source: "Saint Thomas Aquinas",
-      text: `Therefore we, before him bending,<br>this great Sacrament revere;<br>types and shadows have their ending,<br>for the newer rite is here;<br>faith, our outward sense befriending,<br>makes our inward vision clear.<br><br>Glory let us give and blessing<br>to the Father and the Son,<br>who, honor, thanks, and praise addressing,<br>while eternal ages run;<br>ever too his love confessing<br>who from both with both is One. <em>Amen.</em>`
-    },
-    "divine-praises": {
-      title: "The Divine Praises",
-      source: "Traditional",
-      text: `Blessed be God.<br>Blessed be the holy and undivided Trinity.<br>Blessed be God the Father, maker of heaven and earth.<br>Blessed be Jesus Christ, true God and true Man.<br>Blessed be Jesus Christ in his death and resurrection.<br>Blessed be Jesus Christ on his throne of glory.<br>Blessed be Jesus Christ in the Sacrament of his body and blood.<br>Blessed be God the Holy Spirit, the Lord and giver of life.<br>Blessed be God in the Virgin Mary, Mother of our God.<br>Blessed be God in Joseph, guardian of the Incarnate Word.<br>Blessed be God in all the angels and saints.<br>Blessed be God.`
-    },
-    "anima-christi": {
-      title: "Anima Christi",
-      source: "Translated by John Henry Newman",
-      text: `Soul of Christ, be my sanctification;<br>Body of Christ, be my salvation;<br>Blood of Christ, fill all my veins;<br>Water of Christ's side, wash out my stains;<br>Passion of Christ, my comfort be;<br>O good Jesu, listen to me;<br>In thy wounds I fain would hide,<br>Ne'er to be parted from thy side;<br>Guard me, should the foe assail me;<br>Call me when my life shall fail me,<br>Bid me come to thee above,<br>With thy saints to sing thy love,<br>World without end. <em>Amen.</em>`
-    },
-
-    // ── EUCHARIST: PERSONAL DEVOTIONS ────────────────────────────────────
-    "to-blessed-virgin": {
-      title: "To the Blessed Virgin Mary",
-      source: "Traditional",
-      text: `O most gracious and Blessed Virgin Mary, who was found worthy to bear in thy womb and feed at thy breast our Lord Jesus Christ… pray for me and for all Christ's people, that we may render to him more faithful service and persevere to the end in loving companionship with him… <em>Amen.</em>`
-    },
-    "to-saint-joseph": {
-      title: "To Saint Joseph",
-      source: "Traditional",
-      text: `O blessed Joseph, unto whose faithful guardianship was committed Christ Jesus, whom I have received in this mighty sacrament: pray for me that I may guard, cherish, and love him who now abides in all intimacy in my heart. <em>Amen.</em>`
-    },
-    "in-sorrow-or-trouble": {
-      title: "In Sorrow or Trouble",
-      source: "Traditional",
-      text: `I hear thy voice, O Lord Jesus, saying: "Come unto me, all ye that travail and are heavy-laden, and I will refresh you." I come into thy sacramental presence, weary and laden with my sins and with the cares and distractions of the world. Let me rest awhile in thy sacred presence; let my heart find rest here. Let nothing separate me from thee, here in this world or in the world to come. <em>Amen.</em>`
-    },
-    "ave-regina": {
-      title: "Ave Regina Caelorum",
-      source: "Traditional Marian Antiphon",
-      text: `Queen of Heaven, we hail you,<br>hail you Lady of all the angels.<br>You the dawn, the door of morning,<br>whence the world's true Light is risen.<br>Joy to you, O virgin glorious,<br>beautiful beyond all other.<br>Hail and farewell, O most gracious,<br>intercede for us to Jesus.<br><br><em>V.</em> Behold the handmaid of the Lord,<br><em>R.</em> <strong>Be it done unto me according to your Word.</strong><br><br>Father in heaven, by your grace the virgin mother of your incarnate Son was blessed in bearing him, but still more blessed in keeping your word: Grant us who honor the exaltation of her lowliness to follow the example of her devotion to your will; through Jesus Christ our Lord, who lives and reigns with you and the Holy Spirit, one God, for ever and ever. <strong>Amen.</strong>`
-    },
-
-    // ── EUCHARIST: CONTRITION & REPENTANCE ───────────────────────────────
-    "act-of-contrition": {
-      title: "Act of Contrition",
-      source: "Traditional",
-      text: `O God, I am very sorry that I have sinned against you and for all the wrongs I have done and the good I have not done. <em>Especially I confess…</em> Forgive me for Jesus' sake, and grant me strength and wisdom to amend my life. <em>Amen.</em>`
-    },
-    "after-neglect": {
-      title: "After Neglect or Misuse of the Sacrament",
-      source: "Traditional",
-      text: `Gracious Lord, who restored Peter after he denied thee and welcomed Thomas who questioned thy resurrection: forgive me any misuse or disregard of thine infinite goodness given into our hands in the Blessed Sacrament of the altar. Awaken in me, and in all who come to thy feast, a keen awareness of thy great gift and our great need. Grant that we may show forth our gratitude in reverence of action and words, in diligent preparation, in joyful participation, and in lives that reflect the bountiful goodness we here receive; for the sake of thy love. <em>Amen.</em>`
-    },
-
-    // ── PRAYERS OF LANCELOT ANDREWES ─────────────────────────────────────
-    "andrewes-commendation": {
-      title: "Commendation",
-      source: "Prayers of Lancelot Andrewes",
-      text: `Into your hands, I commend<br>&nbsp;&nbsp;&nbsp;my spirit, my soul, my body;<br>you created them, redeemed them, gave them new birth,<br>&nbsp;&nbsp;&nbsp;O Lord, the God of truth.<br>And you have given me all that is with me, and all that is mine,<br>&nbsp;&nbsp;&nbsp;O Lord, in your goodness.<br>Watch over my lying down and my waking up,<br>&nbsp;&nbsp;&nbsp;from this time forth for evermore;<br>to remember you upon my bed,<br>&nbsp;&nbsp;&nbsp;to search out my spirit;<br>to wake up and still remain with you.<br>I lie down in peace; at once I fall asleep;<br>&nbsp;&nbsp;&nbsp;for only you, Lord, make me dwell in safety.`
-    },
-    "andrewes-thanksgiving": {
-      title: "Thanksgiving",
-      source: "Prayers of Lancelot Andrewes",
-      text: `I lift up my hands by night in the holy place, and bless the Lord.<br>The Lord grants his loving-kindness in the daytime;<br>&nbsp;&nbsp;&nbsp;in the night season his song is with me,<br>&nbsp;&nbsp;&nbsp;a prayer to the God of my life.<br>So will I bless you through all my life,<br>&nbsp;&nbsp;&nbsp;I will lift up my hands in your name.<br>Let my prayer be set forth in your sight as incense,<br>&nbsp;&nbsp;&nbsp;the lifting up of my hands as the evening sacrifice.<br><br>Blessed are you, O Lord our God,<br>&nbsp;&nbsp;&nbsp;the God of our Fathers,<br>who created the exchange of day and night,<br>who gave us cause to sing at night,<br>who rescued us from the evil of this day,<br>who has not cut off my life like a weaver,<br>nor broken me down, from day until night.`
-    },
-    "andrewes-penitence": {
-      title: "Penitence",
-      source: "Prayers of Lancelot Andrewes",
-      text: `As days pile upon days,<br>&nbsp;&nbsp;&nbsp;so pile up our sins.<br>Seven times a day falls the righteous,<br>&nbsp;&nbsp;&nbsp;but I of extraordinary sin, seventy-seven;<br>&nbsp;&nbsp;&nbsp;and it is strange and terrifying.<br>But I turn away from my evil ways and groan,<br>&nbsp;&nbsp;&nbsp;and I bend my heart,<br>&nbsp;&nbsp;&nbsp;I bend my whole heart to you,<br>the God of those who repent, and Savior of sinners,<br>&nbsp;&nbsp;&nbsp;and evening after evening I will turn<br>&nbsp;&nbsp;&nbsp;from the inmost marrow of my soul,<br>&nbsp;&nbsp;&nbsp;and out of the depths my soul cries to you,<br><br>"I have sinned, O Lord, I have sinned —<br>&nbsp;&nbsp;&nbsp;ah! alas! the wretchedness!<br>I repent, oh, I repent. Spare me, O Lord,<br>&nbsp;&nbsp;&nbsp;I repent — oh, I repent!<br>&nbsp;&nbsp;&nbsp;help me in my unrepentance.<br><br>Be merciful. Spare me, O Lord.<br>Be merciful. Have mercy on me.<br>&nbsp;&nbsp;&nbsp;I have said, 'Lord, have mercy.'<br>&nbsp;&nbsp;&nbsp;Heal my soul, for I have sinned against you.<br>Have mercy on me, O Lord, according to your great kindness,<br>&nbsp;&nbsp;&nbsp;and in your great compassion<br>&nbsp;&nbsp;&nbsp;blot out my offenses.<br><br>Release the guilt,<br>heal the wound,<br>wipe away the stain,<br>rescue me from the shame,<br>snatch me away from the tyranny,<br>and make not an example of me.<br><br>O Lord, my destruction comes from myself;<br>&nbsp;&nbsp;&nbsp;however much I have sinned, mercifully forgive.<br>Do not deal with us according to our sins,<br>&nbsp;&nbsp;&nbsp;nor reward us according to our wickedness.<br>Look mercifully upon our weakness,<br>&nbsp;&nbsp;&nbsp;according to the glory of your all-holy name,<br>Turn evil away from us, and all harsh things<br>&nbsp;&nbsp;&nbsp;that our sins have most justly and worthily deserved.`
-    },
-    "andrewes-petition": {
-      title: "Petition",
-      source: "Prayers of Lancelot Andrewes",
-      text: `Grant me, O Lord, rest from my work;<br>&nbsp;&nbsp;&nbsp;refresh me from my mighty toil.<br>Give light to my eyes,<br>&nbsp;&nbsp;&nbsp;lest I sleep in death.<br>Rescue me from terror by night,<br>&nbsp;&nbsp;&nbsp;from the plague that stalks in the darkness.<br>Give me wholesome rest,<br>&nbsp;&nbsp;&nbsp;so that I pass this night without fear.<br><br>O Guardian of Israel who neither slumbers nor sleeps,<br>&nbsp;&nbsp;&nbsp;Guard me this night against all evil,<br>&nbsp;&nbsp;&nbsp;Guard my soul, O Lord.<br><br>Visit me with your own visitation,<br>&nbsp;&nbsp;&nbsp;reveal my mind to me in the visions of the night.<br>But if not — for I am not worthy, I am not worthy! —<br>&nbsp;&nbsp;&nbsp;even so, O loving Master,<br>&nbsp;&nbsp;&nbsp;may my sleep be a respite for me<br>&nbsp;&nbsp;&nbsp;from both toil and from sin.<br><br>Yes, Lord — and in sleep, let me not desire<br>&nbsp;&nbsp;&nbsp;that which grieves you or defiles me.<br>Let me not be filled with illusions,<br>&nbsp;&nbsp;&nbsp;but let me have a steady heart,<br>&nbsp;&nbsp;&nbsp;without fear or dread.<br>Guard me against the dark sleep of sin,<br>&nbsp;&nbsp;&nbsp;but put every earthly and evil thought within me to sleep.<br><br>You know the sleeplessness of my unseen enemies, O Lord,<br>&nbsp;&nbsp;&nbsp;and the weakness of my struggling flesh —<br>&nbsp;&nbsp;&nbsp;you formed me!<br>Let the wing of your mercy cover me.<br>Wake me up at the right time,<br>&nbsp;&nbsp;&nbsp;at the time of prayer,<br>&nbsp;&nbsp;&nbsp;and give me grace to rise to seek you,<br>&nbsp;&nbsp;&nbsp;to give you glory and care.`
-    },
-
-    // ── GENERAL INTERCESSIONS ─────────────────────────────────────────────
-    "prayer-for-the-sick": {
-      title: "Prayer for the Sick",
-      source: "The Book of Common Prayer",
-      text: `O Father of mercies, and God of all comfort, our only help in time of need: We humbly beseech thee to behold, visit, and relieve thy sick servant [Name] for whom our prayers are desired. Look upon him with the eyes of thy mercy; comfort him with a sense of thy goodness; preserve him from the temptations of the enemy; and give him patience under his affliction. In thy good time, restore him to health, and enable him to lead the residue of his life in thy fear, and to thy glory; and grant that finally he may dwell with thee in life everlasting; through Jesus Christ our Lord. <em>Amen.</em>`
-    },
-    "prayer-for-peace": {
-      title: "Prayer for Peace",
-      source: "The Book of Common Prayer",
-      text: `O God, the source of all holy desires, all good counsels, and all just works: Give to thy servants that peace which the world cannot give; that our hearts may be set to obey thy commandments, and also that by thee, we, being defended from the fear of our enemies, may pass our time in rest and quietness; through the merits of Jesus Christ our Savior. <em>Amen.</em>`
-    },
-    "prayer-for-unity": {
-      title: "Prayer for Unity",
-      source: "The Book of Common Prayer",
-      text: `O God the Father of our Lord Jesus Christ, in whom thou art well pleased, grant, we beseech thee, that being knit together in the same mind and in the same judgment, we may all speak the same thing, and be of one accord, of one mind, and that there be no divisions among us; but that we be perfectly joined together in the same mind and in the same judgment. <em>Amen.</em>`
-    },
-    "prayer-for-mission": {
-      title: "Prayer for Mission",
-      source: "The Book of Common Prayer",
-      text: `Lord Jesus Christ, who didst stretch out thy loving arms on the hard wood of the Cross that everyone might come within the reach of thy saving embrace: So clothe us in thy Spirit that we, reaching forth our hands in love, may bring those who do not know thee to the knowledge and love of thee; for the honor of thy Name. <em>Amen.</em>`
-    },
-    "prayer-for-guidance": {
-      title: "Prayer for Guidance",
-      source: "The Book of Common Prayer",
-      text: `O God, by whom the meek are guided in judgment, and light riseth up in darkness for the godly: Grant us, in all our doubts and uncertainties, the grace to ask what thou wouldest have us to do, that the Spirit of wisdom may save us from all false choices; that we may find the right path, and walk in it; through Jesus Christ our Lord. <em>Amen.</em>`
-    },
-    "prayer-for-the-church": {
-      title: "Prayer for the Church",
-      source: "The Book of Common Prayer",
-      text: `Gracious Father, we pray for thy holy Catholic Church. Fill it with all truth, in all truth with all peace. Where it is corrupt, purify it; where it is in error, direct it; where in any thing it is amiss, reform it. Where it is right, strengthen it; where it is in want, provide for it; where it is divided, reunite it; for the sake of Jesus Christ thy Son our Savior. <em>Amen.</em>`
-    },
-    "prayer-for-the-world": {
-      title: "Prayer for the World",
-      source: "The Book of Common Prayer",
-      text: `Almighty God, from whom all thoughts of truth and peace proceed: Kindle, we pray, in the hearts of all people the true love of peace, and guide with thy pure and peaceable wisdom those who take counsel for the nations of the earth; that in tranquillity thy kingdom may go forward, till the earth is filled with the knowledge of thy love; through Jesus Christ our Lord. <em>Amen.</em>`
-    },
-
-    // ── FOR MINISTERS: JOURNEY TO CHURCH ─────────────────────────────────
-    "minister-journey-bcp": {
-      title: "On the Way to Church",
-      source: "Anglican Tradition",
-      text: `O Lord Jesus Christ, who art the Way, the Truth, and the Life: suffer us not to stray from thee, who art the Way; nor to distrust thee, who art the Truth; nor to rest in any thing other than thee, who art the Life. Thou art our Way to the Father, our Truth against all error, our Life against all death. Guide our feet and order our steps, as we make our way to thy house and to thy altar; that we may come before thee with clean hands and a pure heart, and offer thee the sacrifice of praise acceptable in thy sight; who livest and reignest with the Father and the Holy Spirit, one God, world without end. <em>Amen.</em>`
-    },
-    "minister-journey-orthodox": {
-      title: "On the Way to Church",
-      source: "Orthodox Tradition",
-      text: `I will go into thy house, O Lord; I will worship toward thy holy temple in thy fear. Lead me, O Lord, in thy righteousness; make thy way straight before my face. O Lord, I love the beauty of thy house and the place where thy glory dwelleth. Let me not be counted with sinners, nor let my life be taken with men of blood. But as for me, I will walk in mine integrity; redeem me, O Lord, and have mercy upon me. My foot standeth in an even place; in the congregations I will bless thee, O Lord. <em>Amen.</em>`
-    },
-
-    // ── FOR MINISTERS: BEFORE ENTERING CHURCH ────────────────────────────
-    "minister-entering-bcp": {
-      title: "Before Entering Church",
-      source: "Anglican Tradition",
-      text: `O Almighty God, who hast built thy Church upon the foundation of the apostles and prophets, Jesus Christ himself being the chief corner stone: grant us so to be joined together in unity of spirit by their doctrine, that we may be made an holy temple acceptable unto thee; through the same Jesus Christ our Lord. <em>Amen.</em><br><br>Lord, I am not worthy to enter beneath this thy holy roof; yet thou, who didst not disdain to enter the house of Zacchaeus, a publican, and of Simon the leper, grant that I, a sinner, may enter with a pure heart and a contrite spirit. Accept the desire of my heart as an offering well-pleasing in thy sight; and as I now enter thy house with fear and trembling, so let me stand at last before thee in glory, who livest and reignest, world without end. <em>Amen.</em>`
-    },
-    "minister-entering-orthodox": {
-      title: "Before Entering Church",
-      source: "Orthodox Tradition",
-      text: `I will enter thy house; I will worship toward thy holy temple in thy fear. O Lord, lead me in thy righteousness; because of mine enemies, make thy way straight before my face.<br><br>O holy God, who dwellest in the holy place, praised by the Seraphim with the thrice-holy voice and glorified by the Cherubim and worshipped by all the heavenly powers: Thou who hast brought all things from non-existence into being, who hast created man after thine image and likeness and hast adorned him with all thine gifts, who givest wisdom and understanding to him who asketh, and dost not overlook the sinner but hast set forth repentance for salvation: vouchsafe to me, thine unworthy servant, to stand before thy holy glory and to offer thee prayer. For thine is the majesty, and thine is the kingdom and the power and the glory, of the Father, and of the Son, and of the Holy Spirit, now and ever and unto the ages of ages. <em>Amen.</em>`
-    },
-
-    // ── FOR MINISTERS: VESTING PRAYERS ───────────────────────────────────
-    "vesting-amice": {
-      title: "Vesting: The Amice",
-      source: "Traditional (Western)",
-      text: `<em>Place the amice upon the head, then lower it to the shoulders.</em><br><br>Place upon my head, O Lord, the helmet of salvation, that I may resist the assaults of the devil; through Christ our Lord. <em>Amen.</em>`
-    },
-    "vesting-alb": {
-      title: "Vesting: The Alb",
-      source: "Traditional (Western)",
-      text: `<em>Put on the alb.</em><br><br>Make me white, O Lord, and cleanse my heart; that, being made white in the Blood of the Lamb, I may deserve an eternal reward; through Christ our Lord. <em>Amen.</em>`
-    },
-    "vesting-cincture": {
-      title: "Vesting: The Cincture",
-      source: "Traditional (Western)",
-      text: `<em>Gird on the cincture.</em><br><br>Gird me, O Lord, with the girdle of purity, and quench in my heart the fire of concupiscence; that the virtue of continence and chastity may abide in me; through Christ our Lord. <em>Amen.</em>`
-    },
-    "vesting-stole-deacon": {
-      title: "Vesting: The Stole (Deacon)",
-      source: "Traditional (Western)",
-      text: `<em>Place the stole over the left shoulder and fasten it at the right side.</em><br><br>Lord, restore the stole of immortality, which I lost through the complicity of our first parents, and, unworthy as I am to approach thy sacred mysteries, may I yet gain eternal joy; through Christ our Lord. <em>Amen.</em>`
-    },
-    "vesting-stole-priest": {
-      title: "Vesting: The Stole (Priest)",
-      source: "Traditional (Western)",
-      text: `<em>Place the stole around the neck.</em><br><br>Restore to me, O Lord, the stole of immortality, which was forfeited by the transgression of our first parents; and, although I draw near unworthily to celebrate thy holy mysteries, grant that I may obtain joy everlasting; through Christ our Lord. <em>Amen.</em>`
-    },
-    "vesting-chasuble": {
-      title: "Vesting: The Chasuble",
-      source: "Traditional (Western)",
-      text: `<em>Put on the chasuble.</em><br><br>O Lord, who hast said: My yoke is sweet and my burden light: grant that I may so carry it as to merit thy grace; through Christ our Lord. <em>Amen.</em>`
-    },
-    "vesting-orthodox-epitrachelion": {
-      title: "Vesting: The Epitrachelion",
-      source: "Orthodox Tradition",
-      text: `<em>Put on the epitrachelion (stole).</em><br><br>Blessed is God who poureth out his grace upon his priests; as myrrh upon the head, that ran down upon the beard, even the beard of Aaron; that ran down to the skirts of his garments. <em>Amen.</em>`
-    },
-    "vesting-orthodox-phailonion": {
-      title: "Vesting: The Phelonion",
-      source: "Orthodox Tradition",
-      text: `<em>Put on the phelonion (chasuble).</em><br><br>Thy priests, O Lord, shall clothe themselves with righteousness, and thy saints shall rejoice with joy, always, now and ever, and unto the ages of ages. <em>Amen.</em>`
-    },
-    "vesting-orthodox-full": {
-      title: "Full Orthodox Vesting Sequence",
-      source: "Orthodox Tradition",
-      text: `<em>Sticharion (Alb):</em><br>My soul shall rejoice in the Lord; for he hath clothed me with the garment of salvation, and with the robe of gladness hath he covered me; he hath set a crown upon me, as a bridegroom, and as a bride hath he adorned me with jewels.<br><br><em>Epitrachelion (Stole):</em><br>Blessed is God who poureth out his grace upon his priests; as myrrh upon the head, that ran down upon the beard, even the beard of Aaron; that ran down to the skirts of his garments.<br><br><em>Belt (Cincture):</em><br>Blessed is God who girdeth me with strength and hath made my way blameless; who maketh my feet like hinds' feet, and setteth me upon the high places.<br><br><em>Epimanikia (Cuffs) — Right:</em><br>Thy right hand, O Lord, is glorified in strength; thy right hand, O Lord, hath dashed the enemy in pieces.<br><br><em>Epimanikia (Cuffs) — Left:</em><br>Thy hands have made me and fashioned me; give me understanding, and I will learn thy commandments.<br><br><em>Phelonion (Chasuble):</em><br>Thy priests, O Lord, shall clothe themselves with righteousness, and thy saints shall rejoice with joy, always, now and ever, and unto the ages of ages. <em>Amen.</em>`
-    },
-
-    // ── FOR MINISTERS: BEFORE SERVING ────────────────────────────────────
-    "minister-before-serving-bcp": {
-      title: "Before Serving",
-      source: "Anglican Tradition",
-      text: `Almighty God, who on this day didst move thy servant to minister at thine altar: cleanse my heart and my lips, that I may worthily proclaim thy holy Gospel and offer the sacrifice of praise; through Jesus Christ our Lord, who liveth and reigneth with thee in the unity of the Holy Spirit, one God, world without end. <em>Amen.</em><br><br>O God, to whom every heart is open, every desire known, and from whom no secrets are hid: Cleanse the thoughts of our hearts by the inspiration of thy Holy Spirit, that we may perfectly love thee, and worthily magnify thy holy Name; through Christ our Lord. <em>Amen.</em>`
-    },
-    "minister-before-serving-orthodox": {
-      title: "Before the Divine Liturgy",
-      source: "Orthodox Tradition",
-      text: `O Lord, send down thy heavenly blessing upon us, and by thy divine power sanctify us; that being enabled to stand before thy holy altar, we may offer thee an acceptable sacrifice, and receive into our unworthy hearts the grace of thy most pure Mysteries; through the mercies and loving-kindness of thine only-begotten Son, with whom thou art blessed, together with thy most holy and good and life-giving Spirit, now and ever and unto the ages of ages. <em>Amen.</em><br><br>O God, be merciful to me a sinner; O God, cleanse me of my sins and have mercy on me; O Lord, forgive me, for I have sinned without number.`
-    },
-    "minister-before-serving-deacon": {
-      title: "For a Deacon Before the Liturgy",
-      source: "Orthodox Tradition",
-      text: `O Lord and Master Jesus Christ, who hast counted me worthy, though I am unworthy, to minister as a deacon before the altar of thy glory: Do thou, the same Lord, fill me with the Holy Spirit and gird me with power from on high. Grant that, coming before thy holy altar with a pure conscience, I may serve thee blamelessly and without condemnation in this present day and at all times; through thine inexpressible mercy and love toward mankind, with the Father and the Holy Spirit, now and ever, and unto the ages of ages. <em>Amen.</em>`
-    },
-
-    // ── FOR MINISTERS: AFTER SERVING ─────────────────────────────────────
-    "minister-after-serving-bcp": {
-      title: "Thanksgiving After Serving",
-      source: "Anglican Tradition",
-      text: `O God of all grace and comfort, who hast granted us once more to stand before thy holy altar and offer the sacrifice of praise: Accept our thanksgiving, pardon our unworthiness, strengthen us in thy service, and grant that the people whom we have served in thy name may grow in knowledge and love of thee, and that we, persevering in faithful ministry, may at the last be received into thine eternal joy; through Jesus Christ our Lord. <em>Amen.</em>`
-    },
-    "minister-after-serving-orthodox": {
-      title: "Thanksgiving After the Liturgy",
-      source: "Orthodox Tradition",
-      text: `We thank thee, O Lord our God, that thou hast again counted us worthy to stand before thy holy altar and to partake of thine ineffable and life-giving mysteries. Sanctify our souls and bodies, and grant unto us health and sanctification, and the remission of our sins. Preserve us in all thy ways, and establish us in the fear of thee; and vouchsafe that we may be found worthy before the dreadful judgment seat of thy Christ, through the intercessions of our most holy Lady, the Theotokos and Ever-Virgin Mary, and of all the saints who have pleased thee from the beginning of the world; to thee be glory, honor, and dominion, now and ever, and unto the ages of ages. <em>Amen.</em>`
-    }
-
-  }; // end prayers
-
-  const prayer = prayers[prayerId];
-  // Get display label from the custom dropdown trigger, not a select element
-  const selectedLabel = document.getElementById('prayer-select-label').textContent;
-  const prayerTitle = prayer ? prayer.title : selectedLabel;
-  const prayerSource = prayer ? `<p style="font-family:'Cinzel',serif; font-size:0.72em; letter-spacing:0.12em; text-transform:uppercase; color:#a89878; margin-top:-10px; margin-bottom:28px;">${prayer.source}</p>` : '';
-  const prayerText = prayer ? prayer.text : 'Prayer text not found.';
-
-  document.getElementById('single-prayer-content').innerHTML = `
-    <div class="office-container">
-      <h2>${prayerTitle}</h2>
-      ${prayerSource}
-      <span class="component-text">${prayerText}</span>
-    </div>`;
-  document.getElementById('prayer-display').style.display = 'flex';
-  document.getElementById('prayer-display').style.flexDirection = 'column';
-  document.getElementById('prayer-display').style.alignItems = 'center';
-  document.getElementById('prayer-selection').style.display = 'none';
-  // Shift section to scroll from top, not center
-  document.getElementById('individual-prayers-section').style.justifyContent = 'flex-start';
-  document.getElementById('individual-prayers-section').style.paddingTop = '60px';
-  document.getElementById('individual-prayers-section').scrollTop = 0;
-  document.getElementById('prayer-back-bar').style.display = 'block';
-}
-function backToPrayerDropdown() {
-  document.getElementById('prayer-display').style.display = 'none';
-  document.getElementById('prayer-back-bar').style.display = 'none';
-  document.getElementById('individual-prayers-section').style.justifyContent = 'center';
-  document.getElementById('individual-prayers-section').style.paddingTop = '0';
-  document.getElementById('prayer-selection').style.display = 'block';
-}
-function backToSplash() {
-  document.getElementById('daily-office-section').style.display = 'none';
-  document.getElementById('individual-prayers-section').style.display = 'none';
-  document.getElementById('prayer-display').style.display = 'none';
-  document.body.style.display = 'flex';
-  document.body.style.alignItems = 'center';
-  document.body.style.justifyContent = 'center';
-  document.body.style.height = '100vh';
-  document.body.style.overflowY = 'hidden';
-  document.body.classList.remove('office-active');
-  document.getElementById('splash-bg').style.display = 'block';
-  document.getElementById('mode-selection').style.display = 'block';
-  selectedMode = null;
-}
-// init() is now called only when Daily Office mode is selected
-</script>
-<div id="uo-tooltip"></div>
-<script>
-(function() {
-    const tooltip = document.getElementById('uo-tooltip');
-    document.addEventListener('mouseover', function(e) {
-        const btn = e.target.closest('.info-btn');
-        if (btn && btn.dataset.tip) {
-            tooltip.textContent = btn.dataset.tip;
-            tooltip.style.display = 'block';
-        }
-    });
-    document.addEventListener('mouseout', function(e) {
-        if (e.target.closest('.info-btn')) {
-            tooltip.style.display = 'none';
-        }
-    });
-    document.addEventListener('mousemove', function(e) {
-        if (tooltip.style.display === 'block') {
-            const x = e.clientX + 16;
-            const y = e.clientY - 10;
-            const overflowRight = x + 296 > window.innerWidth;
-            tooltip.style.left = (overflowRight ? e.clientX - 296 : x) + 'px';
-            tooltip.style.top = Math.max(8, y) + 'px';
-        }
-    });
-})();
-</script>
 </body>
 </html>
