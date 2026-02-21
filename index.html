@@ -178,7 +178,7 @@
     z-index: 200;
 }
     #settings-panel.sidebar-hidden {
-        margin-left: -300px;
+        left: -300px;
         pointer-events: none;
     }
     #sidebar-toggle {
@@ -223,6 +223,9 @@
         border-radius: 1px;
     }
     #settings-panel {
+        position: absolute;
+        left: 36px;
+        top: 0;
         width: 300px;
         min-width: 300px;
         background: linear-gradient(180deg, var(--sidebar-bg) 0%, var(--sidebar-bg-bottom, #050408) 100%);
@@ -232,15 +235,14 @@
         height: 100vh;
         overflow-y: auto;
         border-right: 1px solid rgba(201, 168, 76, 0.3);
-        color: var(--sidebar-text);
         box-shadow: inset -4px 0 18px rgba(150,80,0,0.08), 4px 0 20px rgba(0,0,0,0.5);
-        transition: margin-left 0.3s ease;
+        transition: left 0.3s ease;
         z-index: 100;
-        text-align: center;
+        text-align: left;
     }
     .setting-group {
         margin-bottom: 25px;
-        text-align: center;
+        text-align: left;
     }
     .setting-group strong {
         display: block;
@@ -254,7 +256,7 @@
     .setting-group label {
         display: flex;
         align-items: center;
-        justify-content: center;
+        justify-content: flex-start;
         gap: 4px;
         margin-bottom: 10px;
         cursor: pointer;
@@ -799,7 +801,6 @@
          <span class="toggle-cross">☩</span>
      </div>
      <div id="settings-panel">
-         <button class="mode-btn" onclick="backToSplash()" style="margin-bottom:10px;">Back to Modes</button>
          <h3 style="color:var(--gold); font-family:'Cinzel',serif; font-size:1.15em; letter-spacing:0.08em;">Office Settings</h3>
          <div class="ordo-control">
              <strong>Liturgical Ordo</strong>
@@ -815,10 +816,10 @@
          </div>
          <div class="setting-group">
              <strong>Time of Day:</strong>
-             <label><input type="radio" name="office-time" value="morning-office" onchange="renderOffice(); saveSettings()" checked> Morning Prayer</label>
-             <label><input type="radio" name="office-time" value="noonday-office" onchange="renderOffice(); saveSettings()"> Noonday Prayer</label>
-             <label><input type="radio" name="office-time" value="evening-office" onchange="renderOffice(); saveSettings()"> Evening Prayer</label>
-             <label><input type="radio" name="office-time" value="compline-office" onchange="renderOffice(); saveSettings()"> Compline</label>
+             <label><input type="radio" name="office-time" value="morning-office" onchange="updateSidebarForOffice(); renderOffice(); saveSettings()" checked> Morning Prayer</label>
+             <label><input type="radio" name="office-time" value="noonday-office" onchange="updateSidebarForOffice(); renderOffice(); saveSettings()"> Noonday Prayer</label>
+             <label><input type="radio" name="office-time" value="evening-office" onchange="updateSidebarForOffice(); renderOffice(); saveSettings()"> Evening Prayer</label>
+             <label><input type="radio" name="office-time" value="compline-office" onchange="updateSidebarForOffice(); renderOffice(); saveSettings()"> Compline</label>
          </div>
          <div class="setting-group">
              <strong>Appearance:</strong>
@@ -839,7 +840,7 @@
              </div>
              <div class="nested-group" style="margin-top:8px;">
                  <strong style="color:#aaa; font-size:1em;">Creed</strong>
-                 <select id="creed-type" onchange="renderOffice(); saveSettings()" style="margin-top:4px; width:100%; padding:4px; background:#333; color:white; border:1px solid #555; border-radius:4px;">
+                 <select id="creed-type" onchange="renderOffice(); saveSettings()" style="margin-top:4px; width:auto; min-width:160px; padding:4px 8px; background:#333; color:white; border:1px solid #555; border-radius:4px;">
                      <option value="bcp-creed-apostles">Apostles' Creed</option>
                      <option value="bcp-creed-nicene">Nicene Creed</option>
                  </select>
@@ -853,8 +854,7 @@
              </div>
          </div>
          <div class="setting-group" id="ecumenical-devotions-section">
-             <strong>Opening Devotions:</strong>
-             <span class="info-btn" data-tip="These devotions render before the office begins. They are hidden when BCP Only Mode is active.">i</span>
+             <strong>Opening Devotions: <span class="info-btn" data-tip="These devotions render before the office begins. They are hidden when BCP Only Mode is active.">i</span></strong>
              <div class="nested-group">
                  <strong style="color:#aaa; font-size:1em;">Coptic Orthodox</strong>
                  <label><input type="checkbox" id="toggle-agpeya-opening" onchange="renderOffice(); saveSettings()"> Agpeya Opening</label>
@@ -876,16 +876,14 @@
              </div>
          </div>
          <div class="setting-group" id="during-office-section">
-             <strong>During the Office:</strong>
-             <span class="info-btn" data-tip="These elements are inserted at their proper liturgical position within the office. Hidden when BCP Only Mode is active.">i</span>
+             <strong>During the Office: <span class="info-btn" data-tip="These elements are inserted at their proper liturgical position within the office. Hidden when BCP Only Mode is active.">i</span></strong>
              <label><input type="checkbox" id="toggle-gloria-patri" onchange="renderOffice(); saveSettings()" checked> Gloria Patri <span class="info-btn" data-tip="The Lesser Doxology sung after each Psalm: 'Glory to the Father, and to the Son, and to the Holy Spirit...'">i</span></label>
              <label style="margin-top:4px;"><input type="checkbox" id="toggle-angelus" onchange="renderOffice(); saveSettings()"> Angelus <span class="info-btn" data-tip="Roman Catholic devotion recalling the Incarnation, traditionally prayed at morning, noon, and evening. Placed before the Invitatory.">i</span></label>
              <label><input type="checkbox" id="toggle-trisagion" onchange="renderOffice(); saveSettings()"> Trisagion <span class="info-btn" data-tip="'Holy God, Holy Mighty, Holy Immortal, have mercy on us.' Ancient Byzantine prayer placed after the Absolution.">i</span></label>
              <label><input type="checkbox" id="toggle-prayer-before-reading" onchange="renderOffice(); saveSettings()"> Prayer Before Reading <span class="info-btn" data-tip="Orthodox prayer asking illumination before the Old Testament lesson is read.">i</span></label>
          </div>
          <div class="setting-group" id="closing-devotions-section">
-             <strong>After the Office:</strong>
-             <span class="info-btn" data-tip="These devotions are appended after the office concludes. Hidden when BCP Only Mode is active.">i</span>
+             <strong>After the Office: <span class="info-btn" data-tip="These devotions are appended after the office concludes. Hidden when BCP Only Mode is active.">i</span></strong>
              <label><input type="checkbox" id="toggle-examen" onchange="renderOffice(); saveSettings()"> The Examen <span class="info-btn" data-tip="The Ignatian Examination of Conscience — a prayerful review of the day. Appears only in Compline.">i</span></label>
              <label><input type="checkbox" id="toggle-kyrie-pantocrator" onchange="renderOffice(); saveSettings()"> Kyrie Pantocrator <span class="info-btn" data-tip="'Lord Almighty' — a Byzantine litany of supplication placed after the Collect.">i</span></label>
              <label style="margin-top:6px;"><input type="checkbox" id="toggle-suffrages" onchange="renderOffice(); saveSettings()" checked> Suffrages</label>
@@ -896,6 +894,7 @@
      </div>
 
      <div id="main-content">
+         <button onclick="backToSplash()" style="position:fixed; top:12px; right:16px; background:transparent; color:var(--gold); border:1px solid rgba(201,168,76,0.4); padding:4px 14px; font-family:'Cinzel',serif; font-size:0.7em; letter-spacing:0.12em; text-transform:uppercase; border-radius:2px; cursor:pointer; opacity:0.6; z-index:200; transition:opacity 0.2s;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.6'">Back to Modes</button>
          <h1>The Universal Office</h1>
          <div id="office-display"></div>
          <div class="saint-section">
@@ -1081,7 +1080,9 @@ function selectMode(mode) {
         document.getElementById('daily-office-section').style.display = 'flex';
         document.getElementById('sidebar-toggle').style.display = 'flex';
         document.getElementById('settings-panel').style.display = 'block';
+        document.getElementById('settings-panel').classList.add('sidebar-hidden');
         loadSettings(); // Load saved preferences
+        updateSidebarForOffice(); // Apply office-specific visibility after settings are restored
         updateDatePicker();
         // Initialize data only when Daily Office is selected
         if (!appData || !appData.rubrics) {
@@ -1133,6 +1134,49 @@ function toggleSidebar() {
    const toggle = document.getElementById('sidebar-toggle');
    const hidden = panel.classList.toggle('sidebar-hidden');
    toggle.style.opacity = hidden ? '0.65' : '0.5';
+}
+function updateSidebarForOffice() {
+   const officeId = document.querySelector('input[name="office-time"]:checked')?.value || 'morning-office';
+   const isMorning  = officeId === 'morning-office';
+   const isEvening  = officeId === 'evening-office';
+   const isNoonday  = officeId === 'noonday-office';
+   const isCompline = officeId === 'compline-office';
+   const isMpEp     = isMorning || isEvening;
+
+   function setVisible(id, visible) {
+      const el = document.getElementById(id);
+      if (!el) return;
+      const row = el.closest('label') || el.closest('.nested-group') || el.parentElement;
+      if (row) row.style.display = visible ? '' : 'none';
+      if (!visible) el.checked = false;
+   }
+
+   // Angelus: MP, Noonday, EP only — not Compline
+   setVisible('toggle-angelus', !isCompline);
+
+   // Trisagion: MP and EP only (needs Absolution in rubric)
+   setVisible('toggle-trisagion', isMpEp);
+
+   // Prayer Before Reading: MP and EP only (Noonday/Compline have no lessons)
+   setVisible('toggle-prayer-before-reading', isMpEp);
+
+   // Examen: Compline only
+   setVisible('toggle-examen', isCompline);
+
+   // Kyrie Pantocrator: MP and EP only
+   setVisible('toggle-kyrie-pantocrator', isMpEp);
+
+   // Suffrages: MP and EP only
+   setVisible('toggle-suffrages', isMpEp);
+
+   // Great Litany: MP and EP only
+   setVisible('toggle-litany', isMpEp);
+
+   // General Thanksgiving: MP and EP only
+   setVisible('toggle-general-thanksgiving', isMpEp);
+
+   // Prayer of St. Chrysostom: MP and EP only
+   setVisible('toggle-chrysostom', isMpEp);
 }
 function toggleBcpOnly() {
    const bcpOnly = document.getElementById('toggle-bcp-only')?.checked || false;
