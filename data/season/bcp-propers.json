@@ -7,24 +7,21 @@
   "propers": [
     {
       "proper": 1,
-      "dateRange": "February 7-13",
-      "title": "Proper 1 (Sunday between February 7 and February 13)",
-      "season": "epiphany",
-      "note": "8th Sunday after Epiphany (if applicable)"
+      "dateRange": "May 8-14",
+      "title": "Proper 1 (Sunday between May 8 and May 14)",
+      "season": "ordinary"
     },
     {
       "proper": 2,
-      "dateRange": "February 14-20",
-      "title": "Proper 2 (Sunday between February 14 and February 20)",
-      "season": "epiphany",
-      "note": "9th Sunday after Epiphany (if applicable)"
+      "dateRange": "May 15-21",
+      "title": "Proper 2 (Sunday between May 15 and May 21)",
+      "season": "ordinary"
     },
     {
       "proper": 3,
-      "dateRange": "February 21-27",
-      "title": "Proper 3 (Sunday between February 21 and February 27)",
-      "season": "epiphany",
-      "note": "Last Sunday after Epiphany (if applicable)"
+      "dateRange": "May 22-28",
+      "title": "Proper 3 (Sunday between May 22 and May 28)",
+      "season": "ordinary"
     },
     {
       "proper": 4,

@@ -14,7 +14,8 @@ const monthNames = [
     'July','August','September','October','November','December'
 ];
 
-// ── 30-Day Psalter Cycle ─────────────────────────────────────────────────────
+// ── 30-Day Psalter Cycle (BCP 1979, p. 935) ──────────────────────────────────
+// Source: BCP 1979 Daily Office Lectionary, Traditional One-Month Psalm Cycle
 const psalterCycle = [
     {day: 1,  morning: '1,2,3,4,5',              evening: '6,7,8'},
     {day: 2,  morning: '9,10,11',                 evening: '12,13,14'},
@@ -23,29 +24,29 @@ const psalterCycle = [
     {day: 5,  morning: '24,25,26',                evening: '27,28,29'},
     {day: 6,  morning: '30,31',                   evening: '32,33,34'},
     {day: 7,  morning: '35,36',                   evening: '37'},
-    {day: 8,  morning: '38',                      evening: '39,40'},
-    {day: 9,  morning: '41,42,43',                evening: '44,45,46'},
-    {day: 10, morning: '47,48,49',                evening: '50,51,52'},
-    {day: 11, morning: '53,54,55',                evening: '56,57,58'},
-    {day: 12, morning: '59,60',                   evening: '61,62'},
-    {day: 13, morning: '63,64',                   evening: '65,66,67'},
-    {day: 14, morning: '68',                      evening: '69,70'},
-    {day: 15, morning: '71,72',                   evening: '73,74'},
-    {day: 16, morning: '75,76',                   evening: '77'},
-    {day: 17, morning: '78',                      evening: '79,80'},
-    {day: 18, morning: '81,82',                   evening: '83,84,85'},
-    {day: 19, morning: '86,87,88',                evening: '89'},
-    {day: 20, morning: '90,91,92',                evening: '93,94'},
-    {day: 21, morning: '95,96,97,98',             evening: '99,100,101'},
-    {day: 22, morning: '102,103',                 evening: '104'},
-    {day: 23, morning: '105',                     evening: '106'},
-    {day: 24, morning: '107',                     evening: '108,109'},
-    {day: 25, morning: '110,111,112,113',         evening: '114,115'},
-    {day: 26, morning: '116,117,118',             evening: '119:1-32'},
-    {day: 27, morning: '119:33-72',               evening: '119:73-104'},
-    {day: 28, morning: '119:105-144',             evening: '119:145-176'},
-    {day: 29, morning: '120,121,122,123,124,125', evening: '126,127,128,129,130,131'},
-    {day: 30, morning: '132,133,134,135',         evening: '136,137,138'},
+    {day: 8,  morning: '38,39,40',                evening: '41,42,43'},
+    {day: 9,  morning: '44,45,46',                evening: '47,48,49'},
+    {day: 10, morning: '50,51,52',                evening: '53,54,55'},
+    {day: 11, morning: '56,57,58',                evening: '59,60,61'},
+    {day: 12, morning: '62,63,64',                evening: '65,66,67'},
+    {day: 13, morning: '68',                      evening: '69,70'},
+    {day: 14, morning: '71,72',                   evening: '73,74'},
+    {day: 15, morning: '75,76,77',                evening: '78'},
+    {day: 16, morning: '79,80,81',                evening: '82,83,84,85'},
+    {day: 17, morning: '86,87,88',                evening: '89'},
+    {day: 18, morning: '90,91,92',                evening: '93,94'},
+    {day: 19, morning: '95,96,97',                evening: '98,99,100,101'},
+    {day: 20, morning: '102,103',                 evening: '104'},
+    {day: 21, morning: '105',                     evening: '106'},
+    {day: 22, morning: '107',                     evening: '108,109'},
+    {day: 23, morning: '110,111,112,113',         evening: '114,115'},
+    {day: 24, morning: '116,117,118',             evening: '119:1-32'},
+    {day: 25, morning: '119:33-72',               evening: '119:73-104'},
+    {day: 26, morning: '119:105-144',             evening: '119:145-176'},
+    {day: 27, morning: '120,121,122,123,124,125', evening: '126,127,128,129,130,131'},
+    {day: 28, morning: '132,133,134,135',         evening: '136,137,138'},
+    {day: 29, morning: '139,140,141',             evening: '142,143,144'},
+    {day: 30, morning: '145,146,147',             evening: '148,149,150'},
     {day: 31, morning: '139,140',                 evening: '141,142,143'}
 ];
 
@@ -386,9 +387,9 @@ async function renderOffice() {
         const psalmEntry = psalterCycle.find(p => p.day === dayOfMonth);
         if (psalmEntry) psalms = isMorning ? psalmEntry.morning : psalmEntry.evening;
     } else {
-        psalms = dailyData?.psalms_morning || dailyData?.psalms_evening || dailyData?.psalms || '';
+        psalms = dailyData?.psalms_mp || dailyData?.psalms_morning || dailyData?.psalms || '';
         if (isEvening || isCompline || isNoonday) {
-            psalms = dailyData?.psalms_evening || dailyData?.psalms || '';
+            psalms = dailyData?.psalms_ep || dailyData?.psalms_evening || dailyData?.psalms || '';
         }
     }
 
@@ -460,8 +461,11 @@ async function renderOffice() {
         }
     }
 
-    if (dailyData.antiphon) {
-        officeHtml += `<span class="rubric-text">Antiphon</span><span class="component-text"><i>${dailyData.antiphon}</i></span>`;
+    const antiphon = isMorning
+        ? (dailyData?.antiphon_mp || dailyData?.antiphon || '')
+        : (dailyData?.antiphon_ep || dailyData?.antiphon || '');
+    if (antiphon) {
+        officeHtml += `<span class="rubric-text">Antiphon</span><span class="component-text"><i>${antiphon}</i></span>`;
     }
 
     // ── Sequence loop ──
@@ -507,6 +511,46 @@ async function renderOffice() {
             const comp = appData.components.find(c => c.id === invitatoryId);
             let displayText = comp ? (comp.text[rite] || comp.text) : 'Invitatory text not found';
             officeHtml += `<span class="rubric-text">The Invitatory</span><span class="component-text">${displayText}</span>`;
+
+            // ── Invitatory Psalm (Venite / Jubilate) ──
+            // BCP rubric: "Then follows one of the Invitatory Psalms, Venite or Jubilate."
+            // During Lent, use Jubilate (Psalm 100); on Fridays in Lent, Psalm 95 (full).
+            // During Easter (until Pentecost), Pascha Nostrum replaces the invitatory psalm.
+            // At Noonday and Compline the invitatory psalm is omitted.
+            if (isMorning || isEvening) {
+                const isLent = (season === 'lent');
+                const isEaster = (season === 'easter');
+                const dayOfWeek = currentDate.getDay(); // 0=Sun,5=Fri
+                const isFriday = dayOfWeek === 5;
+
+                if (isEaster) {
+                    const paschComp = appData.components.find(c => c.id === 'bcp-pascha-nostrum');
+                    if (paschComp) {
+                        let t = paschComp.text;
+                        if (typeof t === 'object') t = t[rite] || t['rite2'] || t['rite1'] || t;
+                        officeHtml += `<span class="rubric-text">Christ Our Passover</span><span class="component-text">${t}</span>`;
+                    }
+                } else if (isLent && isFriday) {
+                    // Full Psalm 95 appointed for Friday mornings in Lent
+                    const ps95Text = await getScriptureText('Psalm 95');
+                    officeHtml += `<span class="rubric-text">Psalm 95</span>`;
+                    officeHtml += `<div class="psalm-block">${formatPsalmAsPoetry(ps95Text) || '[Psalm 95 unavailable]'}</div>`;
+                } else if (isLent) {
+                    const jubComp = appData.components.find(c => c.id === 'bcp-jubilate');
+                    if (jubComp) {
+                        let t = jubComp.text;
+                        if (typeof t === 'object') t = t[rite] || t['rite2'] || t['rite1'] || t;
+                        officeHtml += `<span class="rubric-text">Jubilate</span><span class="component-text">${t}</span>`;
+                    }
+                } else {
+                    const veniteComp = appData.components.find(c => c.id === 'bcp-venite');
+                    if (veniteComp) {
+                        let t = veniteComp.text;
+                        if (typeof t === 'object') t = t[rite] || t['rite2'] || t['rite1'] || t;
+                        officeHtml += `<span class="rubric-text">Venite</span><span class="component-text">${t}</span>`;
+                    }
+                }
+            }
             continue;
         }
 
@@ -524,10 +568,11 @@ async function renderOffice() {
                 const rubricTitle = psalmRefs.length > 1 ? 'The Psalms' : 'The Psalm';
                 psalmHtml += `<span class="rubric-text">${rubricTitle}</span>`;
                 for (let psalm of psalmRefs) {
-                    let psalmId = psalm.toUpperCase().trim();
-                    if (!psalmId.startsWith('PSALM ')) psalmId = 'PSALM ' + psalmId;
+                    // Strip any leading "Psalm " / "psalm " prefix before normalising
+                    let psalmId = psalm.replace(/^psalm\s+/i, '').trim().toUpperCase();
+                    psalmId = 'PSALM ' + psalmId;
                     const fullText = await getScriptureText(psalmId);
-                    psalmHtml += `<h4 class="passage-reference">Psalm ${psalm.replace(/Psalm /gi, '').replace(/:\d+-\d+[a-z]?(\(\d+-\d+[a-z]?\))?/gi, '')}</h4>`;
+                    psalmHtml += `<h4 class="passage-reference">Psalm ${psalmId.replace(/^PSALM\s+/i, '').replace(/:\d+-\d+[a-z]?(\(\d+-\d+[a-z]?\))?/gi, '')}</h4>`;
                     psalmHtml += `<div class="psalm-block">${formatPsalmAsPoetry(fullText) || 'No psalm text found'}</div>`;
                     if (document.getElementById('toggle-gloria-patri')?.checked) {
                         const gloria = appData.components.find(c => c.id === 'bcp-gloria-patri');

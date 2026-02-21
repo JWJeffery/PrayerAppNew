@@ -190,7 +190,7 @@
     "date": "2026-01-17",
     "title": "Saturday in the Week of 1 Epiphany",
     "season": "Epiphany",
-    "liturgicalColor": "green",
+    "liturgicalColor": "white",
     "collect": "collect-epiphany-1",
     "antiphon_mp": "The Lord has shown forth his glory: Come let us adore him.",
     "antiphon_ep": "The Lord has shown forth his glory: Come let us adore him.",
@@ -205,7 +205,7 @@
     "eve_title": "Eve of the Confession of Saint Peter the Apostle",
     "psalms_ep_eve": "Psalm 18:1-20",
     "reading_ot_ep_eve": "Isaiah 43:8-13",
-    "reading_epistle_ep_eve": "",
+    "reading_epistle_ep_eve": "Acts 4:8-13",
     "reading_gospel_ep_eve": "John 6:60-71"
   },
   {
@@ -314,7 +314,7 @@
     "date": "2026-01-24",
     "title": "Saturday in the Week of 2 Epiphany",
     "season": "Epiphany",
-    "liturgicalColor": "green",
+    "liturgicalColor": "white",
     "collect": "collect-epiphany-2",
     "antiphon_mp": "The Lord has shown forth his glory: Come let us adore him.",
     "antiphon_ep": "The Lord has shown forth his glory: Come let us adore him.",
@@ -453,7 +453,7 @@
     "eve_title": "Eve of the Presentation of Our Lord Jesus Christ in the Temple",
     "psalms_ep_eve": "Psalm 84",
     "reading_ot_ep_eve": "Haggai 2:1-9",
-    "reading_epistle_ep_eve": "",
+    "reading_epistle_ep_eve": "Hebrews 2:14-18",
     "reading_gospel_ep_eve": "John 12:44-50"
   },
   {

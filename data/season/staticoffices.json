@@ -1,16 +1,34 @@
 {
   "noonday": {
-    "psalms": ["Psalm 119:105-112", "Psalm 121", "Psalm 126"],
+    "psalms": [
+      "Psalm 119:105-112", 
+      "Psalm 121", 
+      "Psalm 126"
+    ],
     "readings": [
-      "Revelation 21:3-4",  "Romans 5:1-2",       "Colossians 3:12-15",
-      "Matthew 5:14-16",    "1 Peter 4:7-11"
+      "Romans 5:5",
+      "2 Corinthians 5:17-18",
+      "Malachi 1:11",
+      "Revelation 21:3-4",
+      "Romans 5:1-2",
+      "Colossians 3:12-15",
+      "Matthew 5:14-16",
+      "1 Peter 4:7-11"
     ]
   },
   "compline": {
-    "psalms": ["Psalm 4", "Psalm 31:1-6", "Psalm 91", "Psalm 134"],
+    "psalms": [
+      "Psalm 4", 
+      "Psalm 31:1-6", 
+      "Psalm 91", 
+      "Psalm 134"
+    ],
     "readings": [
-      "Jeremiah 14:9",     "Matthew 11:28-30",  "Hebrews 13:20-21",
-      "1 Peter 5:8-9a",    "Deuteronomy 6:4-7"
+      "Jeremiah 14:9, 22",
+      "Matthew 11:28-30",
+      "Hebrews 13:20-21",
+      "1 Peter 5:8-9a",
+      "Deuteronomy 6:4-7"
     ]
   }
 }
