@@ -293,6 +293,10 @@ body.light-mode .mode-btn:hover {
     -webkit-overflow-scrolling: touch;
     scrollbar-width: thin;
     background: var(--main-bg);
+    transition: margin-left 0.3s ease;
+}
+#main-content.sidebar-hidden {
+    margin-left: 36px;
 }
 #main-content::-webkit-scrollbar {
     width: 5px;

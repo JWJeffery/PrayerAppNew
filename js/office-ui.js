@@ -74,6 +74,7 @@ async function init() {
             appData[file] = await res.json();
         }
         updateUI();
+        await CalendarEngine.init();
         await CalendarEngine.fetchLectionaryData();
         renderOffice();
     } catch (err) {
@@ -150,9 +151,11 @@ function setCustomDate(dateStr) {
 
 // ── Sidebar ──────────────────────────────────────────────────────────────────
 function toggleSidebar() {
-    const panel  = document.getElementById('settings-panel');
-    const toggle = document.getElementById('sidebar-toggle');
-    const hidden = panel.classList.toggle('sidebar-hidden');
+    const panel   = document.getElementById('settings-panel');
+    const toggle  = document.getElementById('sidebar-toggle');
+    const main    = document.getElementById('main-content');
+    const hidden  = panel.classList.toggle('sidebar-hidden');
+    main.classList.toggle('sidebar-hidden', hidden);
     toggle.style.opacity = hidden ? '0.65' : '0.5';
 }
 
@@ -399,35 +402,39 @@ async function renderOffice() {
         const marianId = `bcp-marian-antiphon-${season}`;
         marianComp     = appData.components.find(c => c.id === marianId)
                       || appData.components.find(c => c.id === 'bcp-marian-antiphon-ordinary');
-        theotokionComp = appData.components.find(c => c.id === 'coptic-theotokion');
+        theotokionComp = appData.components.find(c => c.id === `coptic-theotokion-${season}`)
+                      || appData.components.find(c => c.id === 'coptic-theotokion');
     }
 
-    // ── Readings — year-aware with cross-year fallback ──
-    // Empty strings ("") are falsy so || naturally skips them.
-    // Try the active year first, then the other year, then bare keys.
+    // ── Readings — independent morning/evening chains to prevent cross-contamination ──
     const otherYear = litYear === 'year1' ? 'year2' : 'year1';
-    let readingOT = dailyData[`reading_ot_mp_${litYear}`]
-        || dailyData[`reading_ot_ep_${litYear}`]
+
+    let morningOT = dailyData[`reading_ot_mp_${litYear}`]
         || dailyData[`reading_ot_mp_${otherYear}`]
+        || dailyData['reading_ot'] || '';
+    let morningEpistle = dailyData[`reading_epistle_mp_${litYear}`]
+        || dailyData[`reading_epistle_mp_${otherYear}`]
+        || dailyData['reading_epistle'] || '';
+    let morningGospel = (gospelPlacement === 'morning' || gospelPlacement === 'both')
+        ? (dailyData[`reading_gospel_mp_${litYear}`]
+            || dailyData[`reading_gospel_mp_${otherYear}`]
+            || dailyData['reading_gospel'] || '')
+        : '';
+
+    let eveningOT = dailyData[`reading_ot_ep_${litYear}`]
         || dailyData[`reading_ot_ep_${otherYear}`]
         || dailyData['reading_ot'] || '';
-    let readingEpistle = dailyData[`reading_epistle_mp_${litYear}`]
-        || dailyData[`reading_epistle_ep_${litYear}`]
-        || dailyData[`reading_epistle_mp_${otherYear}`]
+    let eveningEpistle = dailyData[`reading_epistle_ep_${litYear}`]
         || dailyData[`reading_epistle_ep_${otherYear}`]
         || dailyData['reading_epistle'] || '';
-    let readingGospel = dailyData[`reading_gospel_mp_${litYear}`]
-        || dailyData[`reading_gospel_ep_${litYear}`]
-        || dailyData[`reading_gospel_mp_${otherYear}`]
-        || dailyData[`reading_gospel_ep_${otherYear}`]
-        || dailyData['reading_gospel'] || '';
+    let eveningGospel = (gospelPlacement === 'evening' || gospelPlacement === 'both')
+        ? (dailyData[`reading_gospel_ep_${litYear}`]
+            || dailyData[`reading_gospel_ep_${otherYear}`]
+            || dailyData['reading_gospel'] || '')
+        : '';
 
-    let morningOT      = isMorning ? readingOT : '';
-    let morningEpistle = isMorning ? readingEpistle : '';
-    let morningGospel  = (isMorning && (gospelPlacement === 'morning' || gospelPlacement === 'both')) ? readingGospel : '';
-    let eveningOT      = (isEvening || isCompline || isNoonday) ? readingOT : '';
-    let eveningEpistle = (isEvening || isCompline || isNoonday) ? readingEpistle : '';
-    let eveningGospel  = ((isEvening || isCompline || isNoonday) && (gospelPlacement === 'evening' || gospelPlacement === 'both')) ? readingGospel : '';
+    if (!isMorning) { morningOT = ''; morningEpistle = ''; morningGospel = ''; }
+    if (!isEvening && !isCompline && !isNoonday) { eveningOT = ''; eveningEpistle = ''; eveningGospel = ''; }
 
     // ── Build HTML ──
     let officeHtml = `<div class="office-container"><h2>${activeRubric?.officeName || 'Office'}</h2>`;
@@ -493,6 +500,16 @@ async function renderOffice() {
                       || appData.components.find(c => c.id === 'bcp-opening-general');
             let displayText = comp ? (comp.text[rite] || comp.text) : 'Opening text not found';
             officeHtml += `<span class="rubric-text">Opening Sentence</span><span class="component-text">${displayText}</span>`;
+            continue;
+        }
+
+        if (item === 'VARIABLE_ANTIPHON') {
+            const antiphonText = isMorning
+                ? (dailyData?.antiphon_mp || dailyData?.antiphon || '')
+                : (dailyData?.antiphon_ep || dailyData?.antiphon || '');
+            if (antiphonText) {
+                officeHtml += `<span class="rubric-text">Antiphon</span><span class="component-text"><i>${antiphonText}</i></span>`;
+            }
             continue;
         }
 
@@ -734,7 +751,13 @@ async function renderOffice() {
 
         if (item === 'VARIABLE_COLLECT') {
             officeHtml += `<span class="rubric-text">The Collect</span>`;
-            const collectId   = dailyData.collect || 'collect-default-ferial';
+            let collectId = dailyData.collect || 'collect-default-ferial';
+
+            // Manual mapping for Transfiguration naming mismatch
+            if (collectId === 'collect-transfiguration') {
+                collectId = 'collect-the-transfiguration-of-our-lord';
+            }
+
             const collectComp = appData.components.find(c => c.id === collectId);
             if (collectComp) {
                 let displayText = collectComp.text;
@@ -753,7 +776,10 @@ async function renderOffice() {
             // EXAMEN — Compline only
             if (isCompline && document.getElementById('toggle-examen')?.checked) {
                 const examenComp = appData.components.find(c => c.id === 'ignatian-examen');
-                if (examenComp) officeHtml += `<span class="rubric-text">The Examen</span><span class="component-text">${examenComp.text}</span>`;
+                if (examenComp) {
+                    const examenHtml = examenComp.text.replace(/\n\n/g, '<br><br>');
+                    officeHtml += `<span class="rubric-text">The Examen</span><div class="component-text" style="white-space:normal">${examenHtml}</div>`;
+                }
             }
             // KYRIE PANTOCRATOR — MP/EP only
             if (!isCompline && !isNoonday && document.getElementById('toggle-kyrie-pantocrator')?.checked) {
