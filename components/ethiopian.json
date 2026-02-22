@@ -1,0 +1,49 @@
+[
+  {
+    "id": "eth-basalios-prayer",
+    "title": "Prayer of Saint Basil",
+    "tradition": "Ethiopian Orthodox Tewahedo",
+    "note": "Foundational prayer of St. Basil used as the opening scaffold for all canonical hours of the Saatat.",
+    "text": "O Master, Lord, God Almighty, Father of our Lord, God and Saviour Jesus Christ, we thank Thee for every condition, concerning every condition, and in every condition. For Thou hast sheltered us, helped us, guarded us, accepted us unto Thee, spared us, supported us, and brought us unto this hour.\n\nFor this cause we pray and entreat Thy Goodness, O Thou who lovest mankind, grant us to complete this holy day, and all the days of our life, in all peace with Thy fear.\n\nAll envy, all temptation, all the operation of Satan, the counsel of evil men and the rising up of enemies, hidden and open, take them away from us, and from all Thy people, and from this holy place that is Thine.\n\nBut those things which are good and profitable do Thou provide us: for it is Thine to have mercy and to save, O our God, and we send up glory to Thee, the Father and the Son and the Holy Spirit, now and ever and unto the ages of ages. Amen."
+  },
+  {
+    "id": "eth-prayer-thanksgiving",
+    "title": "Prayer of Thanksgiving",
+    "tradition": "Ethiopian Orthodox Tewahedo",
+    "note": "Standard introductory thanksgiving recited at the opening of each canonical hour.",
+    "text": "We thank Thee, O our Father, the Lord of all goodness and the Fountain of all blessing, that Thou hast caused us to pass this night in peace. O our Lord and our God, grant us also to pass this day in peace. Keep us from all sin, all wrath, and all temptation.\n\nGrant that our prayer and our entreaty may rise up before Thee as incense, and that the lifting up of our hands may be as an evening sacrifice. Make us worthy to say before Thee at all times, without condemnation, in purity of heart: Our Father who art in Heaven.\n\nFor Thine is the kingdom and the power and the glory, of the Father and the Son and the Holy Spirit, now and ever and unto the ages of ages. Amen."
+  },
+  {
+    "id": "eth-anqasa-birhan",
+    "title": "Anqaşa Birhān — The Gate of Light",
+    "tradition": "Ethiopian Orthodox Tewahedo",
+    "hour": "Tuat",
+    "source": "data/bible/ET",
+    "note": "Theotokos hymn appointed for the Tuat (Morning Watch) hour. 'Anqaşa Birhān' means 'Gate of Light', a title of the Virgin Mary as the one through whom the Light of the World entered the world. Sung or recited as the Marian element of the Tuat office.",
+    "text": "Hail to thee, O Gate of Light, through whom the Sun of Righteousness arose upon us.\nHail to thee, O Mary, the God-bearer, the pure dove, the spotless tabernacle.\n\nThou art the gate of the eastern dawn; through thee the Great Light came forth and dispelled the darkness of sin. Thou art the morning star that precedes the Sun: through thy intercession may we, who rise to pray in the watch of the night, be found worthy to behold the true Light.\n\nHail, O full of grace, the Lord is with thee. Blessed art thou among women, and blessed is the fruit of thy womb, Jesus Christ our Lord. Pray for us, O holy Theotokos, that we may be made worthy of the promises of Christ.\n\nGlory to the Father, and to the Son, and to the Holy Spirit, now and ever and unto the ages of ages. Amen."
+  },
+  {
+    "id": "eth-tuat-hour-text",
+    "title": "The Morning Watch (Tuat) — Saatat",
+    "tradition": "Ethiopian Orthodox Tewahedo",
+    "hour": "Tuat",
+    "note": "The appointed prayer text for the Tuat canonical hour, corresponding to the night/early morning watch (6:00 AM). Drawn from the Ethiopian Saatat (Book of the Hours).",
+    "text": "At the morning watch we cry unto Thee, O Lord our God. For in the night-watches our soul has desired Thee; yea, with our spirit within us we will seek Thee early.\n\nFor the sake of Thy mercies, O Lord, we have waited for Thee. Our desire is toward Thee and toward the remembrance of Thy name. With my soul have I desired Thee in the night; yea, with my spirit within me will I seek Thee early.\n\nArising from sleep, we fall down before Thy goodness, O Master, and we cry unto Thee the Angelic Song: Holy, Holy, Holy art Thou, O God. Through the Theotokos have mercy on us.\n\nGlory to God in the highest and on earth peace, good will among men. We praise Thee, we bless Thee, we worship Thee, we glorify Thee, we give thanks to Thee for Thy great glory.\n\nO Lord, Heavenly King, God the Father Almighty; O Lord, the only-begotten Son, Jesus Christ; and the Holy Spirit: O Lord God, Lamb of God, Son of the Father, that takest away the sin of the world, have mercy on us, Thou that takest away the sins of the world. Receive our prayer, Thou that sittest at the right hand of the Father, and have mercy on us. For Thou only art holy, Thou only art Lord, Jesus Christ, to the glory of God the Father. Amen.\n\nEvery day will we bless Thee, and we will praise Thy name for ever and ever. Vouchsafe, O Lord, to keep us this day without sin. Blessed art Thou, O Lord God of our fathers, and praised and glorified is Thy name for ever. Amen."
+  },
+  {
+    "id": "eth-mazmur-tuat",
+    "title": "Mazmur for the Tuat (Morning Watch)",
+    "tradition": "Ethiopian Orthodox Tewahedo",
+    "hour": "Tuat",
+    "note": "Appointed Psalms (Mazmur) for the Tuat canonical hour. The Ethiopian Saatat appoints Psalms 3, 63, and 133 for the Morning Watch.",
+    "psalms": ["3", "63", "133"],
+    "text": "The appointed Mazmur for the Tuat hour are Psalms 3, 63, and 133. These are resolved dynamically by the ETH_MAZMUR_SLOT handler from Scripture data."
+  },
+  {
+    "id": "eth-saints-commemoration",
+    "title": "Commemoration of Saints",
+    "tradition": "Ethiopian Orthodox Tewahedo",
+    "note": "Commemorations of saints and martyrs, with priority given to saints of the Ethiopian and African churches. Ethiopian commemorations are sourced from the Synaxarium (Senkessar).",
+    "text": "Let us commemorate the holy saints who have pleased God and who intercede for us before the throne of grace. May their prayers and their holy lives be an example and a strength to us.\n\nMay the prayers of the apostles, the martyrs, and all the saints be with us. Amen."
+  }
+]

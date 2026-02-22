@@ -204,8 +204,9 @@ function updateSidebarForOffice() {
     const isMorning  = officeId === 'morning-office';
     const isEvening  = officeId === 'evening-office';
     const isNoonday  = officeId === 'noonday-office';
-    const isCompline = officeId === 'compline-office';
-    const isMpEp     = isMorning || isEvening;
+    const isCompline  = officeId === 'compline-office';
+    const isMpEp      = isMorning || isEvening;
+    const isEthSaatat = officeId === 'ethiopian-saatat';
 
     function setVisible(id, visible) {
         const el = document.getElementById(id);
@@ -386,6 +387,23 @@ function applyParagraphBreaks(text) {
     return text.replace(/\n\n/g, '<br><br>');
 }
 
+// ── Ethiopian Hour Resolver ───────────────────────────────────────────────────
+function getEthiopianHourInfo() {
+    const now          = new Date();
+    const totalMinutes = now.getHours() * 60 + now.getMinutes();
+
+    const hourMap = [
+        { from: 6 * 60, to: 9 * 60, hourId: 'eth-tuat-hour-text', hourName: 'Tuat — The Morning Watch', uiLabel: 'Morning Prayer', psalms: ['3', '63', '133'] },
+        // Future phases: Tierce (9–12), Sext (12–15), None (15–18), Vespers (18–21), Compline (21–24), Midnight (0–3), pre-Tuat (3–6)
+    ];
+
+    for (const entry of hourMap) {
+        if (totalMinutes >= entry.from && totalMinutes < entry.to) return entry;
+    }
+    // Default fallback: Tuat covers all unmapped windows until further phases are added
+    return { hourId: 'eth-tuat-hour-text', hourName: 'Tuat — The Morning Watch', uiLabel: 'Morning Prayer', psalms: ['3', '63', '133'] };
+}
+
 // ── Office Renderer ──────────────────────────────────────────────────────────
 async function renderOffice() {
     if (!appData || !appData.rubrics || !Array.isArray(appData.rubrics)) {
@@ -404,7 +422,9 @@ async function renderOffice() {
     const isMorning  = officeId === 'morning-office';
     const isEvening  = officeId === 'evening-office';
     const isNoonday  = officeId === 'noonday-office';
-    const isCompline = officeId === 'compline-office';
+    const isCompline        = officeId === 'compline-office';
+    const isEthiopianSaatat = officeId === 'ethiopian-saatat';
+    const ethHourInfo       = isEthiopianSaatat ? getEthiopianHourInfo() : null;
 
     // rite resolves to 'rite1' or 'rite2' — used as the key into component.text objects.
     // bcp-confession-[rite] interpolation produces bcp-confession-rite1 / bcp-confession-rite2,
@@ -737,6 +757,60 @@ async function renderOffice() {
                         const vt = resolveText(ven, rite) || ven.text || '';
                         officeHtml += `<span class="rubric-text">Venite</span><span class="component-text">${vt}</span>`;
                     }
+                }
+            }
+            continue;
+        }
+
+        // eth-saatat-hour-slot — resolves to the canonical hour text keyed by local clock
+        if (item === 'eth-saatat-hour-slot') {
+            if (ethHourInfo) {
+                const hourComp = appData.components.find(c => c.id === ethHourInfo.hourId);
+                if (hourComp) {
+                    officeHtml += `<span class="rubric-text">${ethHourInfo.hourName}</span>`;
+                    officeHtml += `<div class="component-text" style="white-space:normal">${applyParagraphBreaks(hourComp.text)}</div>`;
+                } else {
+                    console.warn(`[renderOffice] eth-saatat-hour-slot: component not found — ${ethHourInfo.hourId}`);
+                }
+            }
+            continue;
+        }
+
+        // eth-mazmur-slot — renders appointed Psalms for the active hour, closes with Anqaşa Birhān
+        if (item === 'eth-mazmur-slot') {
+            if (ethHourInfo && ethHourInfo.psalms && ethHourInfo.psalms.length > 0) {
+                officeHtml += `<span class="rubric-text">Mazmur (Appointed Psalms)</span>`;
+                for (const psNum of ethHourInfo.psalms) {
+                    const fullText = await getScriptureText('PSALM ' + psNum);
+                    officeHtml += `<h4 class="passage-reference">Psalm ${psNum}</h4>`;
+                    officeHtml += `<div class="psalm-block">${formatPsalmAsPoetry(fullText)}</div>`;
+                }
+                const anqasa = appData.components.find(c => c.id === 'eth-anqasa-birhan');
+                if (anqasa) {
+                    officeHtml += `<span class="rubric-text">Anqaşa Birhān — Gate of Light</span>`;
+                    officeHtml += `<div class="component-text" style="white-space:normal"><i>${applyParagraphBreaks(anqasa.text)}</i></div>`;
+                }
+            }
+            continue;
+        }
+
+        // eth-saints-commemoration — scaffold text, then surfaces Ethiopian saints for today
+        if (item === 'eth-saints-commemoration') {
+            const commComp = appData.components.find(c => c.id === 'eth-saints-commemoration');
+            if (commComp) {
+                officeHtml += `<span class="rubric-text">Commemoration of Saints</span>`;
+                officeHtml += `<span class="component-text">${commComp.text}</span>`;
+            }
+            if (appData.saints) {
+                const ethSaints = appData.saints.filter(s =>
+                    s.day && s.day.toLowerCase().includes(todayKeyShort.toLowerCase()) &&
+                    s.tradition && s.tradition.toLowerCase().includes('ethiopian')
+                );
+                if (ethSaints.length > 0) {
+                    officeHtml += `<span class="rubric-text">Ethiopian Commemorations Today</span>`;
+                    ethSaints.forEach(s => {
+                        officeHtml += `<div class="component-text"><strong>${s.name || 'Unknown'}</strong>${s.description ? ' — ' + s.description : ''}</div>`;
+                    });
                 }
             }
             continue;

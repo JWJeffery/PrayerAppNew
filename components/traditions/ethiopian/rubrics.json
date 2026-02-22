@@ -55,34 +55,38 @@
     ]
   },
   {
-    "id": "noonday-office",
-    "officeName": "Noonday Prayer",
+    "id": "ethiopian-saatat",
+    "officeName": "The Ethiopian Saatat",
+    "tradition": "Ethiopian Orthodox Tewahedo",
+    "note": "The canonical hours (Saatat) of the Ethiopian Orthodox Church. The active hour is resolved dynamically by the ETH_SAATAT_HOUR_SLOT handler based on the user's local clock. Slots are resolved at render-time.",
+    "slots": {
+      "eth-saatat-hour-slot": {
+        "description": "Resolves to the appropriate canonical hour text based on local time. Time-to-hour mapping: Tuat 6:00–9:00 AM.",
+        "time_map": {
+          "06:00–09:00": {
+            "hour_id": "eth-tuat-hour-text",
+            "hour_name": "Tuat — The Morning Watch",
+            "ui_label": "Morning Prayer"
+          }
+        }
+      },
+      "eth-mazmur-slot": {
+        "description": "Resolves to the appointed Psalms (Mazmur) for the active canonical hour. For Tuat: Psalms 3, 63, 133.",
+        "time_map": {
+          "06:00–09:00": {
+            "psalms": ["3", "63", "133"],
+            "hour_id": "eth-mazmur-tuat"
+          }
+        }
+      }
+    },
     "sequence": [
-      "bcp-invitatory-full",
-      "VARIABLE_PSALM",
-      "VARIABLE_READING_EPISTLE",
-      "comm-kyrie",
-      "comm-lords-prayer",
-      "VARIABLE_COLLECT",
-      "bcp-closing"
-    ]
-  },
-  {
-    "id": "compline-office",
-    "officeName": "Compline",
-    "sequence": [
-      "bcp-opening-blessing",
-      "bcp-confession-slot",
-      "bcp-invitatory-full",
-      "VARIABLE_PSALM",
-      "VARIABLE_READING_EPISTLE",
-      "bcp-versicles-before-prayers",
-      "comm-kyrie",
-      "comm-lords-prayer",
-      "VARIABLE_COLLECT",
-      "bcp-collect-compline-1",
-      "bcp-nunc-dimittis",
-      "bcp-closing"
+      "eth-basalios-prayer",
+      "eth-prayer-thanksgiving",
+      "eth-saatat-hour-slot",
+      "eth-mazmur-slot",
+      "eth-saints-commemoration",
+      "comm-lords-prayer"
     ]
   }
 ]
