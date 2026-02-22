@@ -12,16 +12,16 @@
     "type": "Opening"
   },
   {
-    "id": "bcp-invitatory",
+    "id"   : "bcp-invitatory",
     "title": "The Invitatory",
-    "text": "Lord, open our lips.\nAnd our mouth shall proclaim your praise.",
-    "type": "Versicle"
+    "text" : "Lord, open our lips.\nAnd our mouth shall proclaim your praise.",
+    "type" : "Versicle"
   },
   {
-    "id": "ant-advent",
+    "id"   : "ant-advent",
     "title": "Advent Antiphon",
-    "text": "Our King and Savior now draws near: Come let us adore him.",
-    "type": "Antiphon"
+    "text" : "Our King and Savior now draws near: Come let us adore him.",
+    "type" : "Antiphon"
   },
   {
     "id": "ant-christmas",
@@ -30,10 +30,10 @@
     "type": "Antiphon"
   },
   {
-    "id": "ant-epiphany",
+    "id"   : "ant-epiphany",
     "title": "Epiphany Antiphon",
-    "text": "The Lord has shown forth his glory: Come let us adore him.",
-    "type": "Antiphon"
+    "text" : "The Lord has shown forth his glory: Come let us adore him.",
+    "type" : "Antiphon"
   },
   {
     "id": "ant-lent",
@@ -48,10 +48,10 @@
     "type": "Antiphon"
   },
   {
-    "id": "ant-default",
+    "id"   : "ant-default",
     "title": "Ordinary Time Antiphon",
-    "text": "The earth is the Lord's for he made it: Come let us adore him.",
-    "type": "Antiphon"
+    "text" : "The earth is the Lord's for he made it: Come let us adore him.",
+    "type" : "Antiphon"
   },
   {
     "id": "bcp-venite",
@@ -66,10 +66,10 @@
     "type": "Canticle"
   },
   {
-    "id": "trisagion-byzantine",
+    "id"   : "trisagion-byzantine",
     "title": "The Trisagion",
-    "text": "Holy God, Holy Mighty, Holy Immortal, have mercy on us.",
-    "type": "Hymn"
+    "text" : "Holy God, Holy Mighty, Holy Immortal, have mercy on us.",
+    "type" : "Hymn"
   },
   {
     "id": "coptic-theotokion",
@@ -170,9 +170,9 @@
     "text": "The Angel of the Lord declared unto Mary.\nAnd she conceived of the Holy Spirit.\nHail Mary, full of grace, The Lord is with Thee; Blessed art thou among women, And blessed is the fruit of thy womb, Jesus.\nHoly Mary, Mother of God, Pray for us sinners, Now and at the hour of our death. Amen\nBehold the handmaid of the Lord.\nBe it done unto me according to thy word.\nHail Mary...\nAnd the Word was made Flesh.\nAnd dwelt among us.\nHail Mary...\nPray for us, O holy Mother of God.\nThat we may be made worthy of the promises of Christ.\nLet us pray: Pour forth, we beseech Thee, O Lord, Thy grace into our hearts, that we to whom the Incarnation of Christ Thy Son was made known by the message of an angel, may by His Passion and Cross be brought to the glory of His Resurrection. Through the same Christ Our Lord. Amen."
   },
   {
-    "id": "jesus-prayer",
+    "id"   : "jesus-prayer",
     "title": "Jesus Prayer",
-    "text": "Lord Jesus Christ, Son of God, have mercy on me, a sinner."
+    "text" : "Lord Jesus Christ, Son of God, have mercy on me, a sinner."
   },
   {
     "id": "agpeya-opening",
@@ -955,15 +955,15 @@
     },
     "type": "Collect"
   },
-    {
-      "id": "collect-easter-wednesday",
-      "title": "Collect for Wednesday in Easter Week",
-      "text": {
-        "rite1": "O God, who by the resurrection of thy Son Jesus Christ has given us the hope of eternal life: Grant that we, who have been raised with him, may abide in his presence and rejoice in the hope of thy glory; through Jesus Christ our Lord. Amen.",
-        "rite2": "O God, who by the resurrection of your Son Jesus Christ has given us the hope of eternal life: Grant that we, who have been raised with him, may abide in his presence and rejoice in the hope of your glory; through Jesus Christ our Lord, who lives and reigns with you and the Holy Spirit, one God, now and for ever. Amen."
-      },
-      "type": "Collect"
+  {
+    "id": "collect-easter-wednesday",
+    "title": "Collect for Wednesday in Easter Week",
+    "text": {
+      "rite1": "O God, who by the resurrection of thy Son Jesus Christ has given us the hope of eternal life: Grant that we, who have been raised with him, may abide in his presence and rejoice in the hope of thy glory; through Jesus Christ our Lord. Amen.",
+      "rite2": "O God, who by the resurrection of your Son Jesus Christ has given us the hope of eternal life: Grant that we, who have been raised with him, may abide in his presence and rejoice in the hope of your glory; through Jesus Christ our Lord, who lives and reigns with you and the Holy Spirit, one God, now and for ever. Amen."
     },
+    "type": "Collect"
+  },
   {
     "id": "collect-ordinary-25",
     "title": "Collect for the Twenty-Fifth Sunday after Pentecost",
@@ -1679,28 +1679,28 @@
     "tradition": "Ignatian"
   },
   {
-    "id": "eastern-kyrie-pantocrator",
-    "title": "Kyrie Pantocrator",
-    "text": "Lord, have mercy.\nLord, have mercy.\nLord, have mercy.",
-    "type": "Versicle",
+    "id"       : "eastern-kyrie-pantocrator",
+    "title"    : "Kyrie Pantocrator",
+    "text"     : "Lord, have mercy.\nLord, have mercy.\nLord, have mercy.",
+    "type"     : "Versicle",
     "tradition": "Byzantine Orthodox"
   },
   {
-  "id": "marian-alma-redemptoris",
-  "title": "Alma Redemptoris Mater",
-  "text": {
-    "rite1": "Alma Redemptoris Mater, quae pervia caeli porta manes, et stella maris, succurre cadenti, surgere qui curat, populo: tu quae genuisti, natura mirante, tuum sanctum Genitorem Virgo prius ac posterius, Gabrielis ab ore sumens illud Ave, peccatorum miserere.",
-    "rite2": "Loving Mother of the Redeemer, who remains the gate by which we mortals enter heaven, and star of the sea, help your fallen people who strive to rise: You who gave birth, amazing nature, to your sacred Creator while still remaining a virgin. Help us who call to you as Gabriel once did, receiving from you that Hail Mary: be merciful to us sinners."
+    "id": "marian-alma-redemptoris",
+    "title": "Alma Redemptoris Mater",
+    "text": {
+      "rite1": "Alma Redemptoris Mater, quae pervia caeli porta manes, et stella maris, succurre cadenti, surgere qui curat, populo: tu quae genuisti, natura mirante, tuum sanctum Genitorem Virgo prius ac posterius, Gabrielis ab ore sumens illud Ave, peccatorum miserere.",
+      "rite2": "Loving Mother of the Redeemer, who remains the gate by which we mortals enter heaven, and star of the sea, help your fallen people who strive to rise: You who gave birth, amazing nature, to your sacred Creator while still remaining a virgin. Help us who call to you as Gabriel once did, receiving from you that Hail Mary: be merciful to us sinners."
+    },
+    "type": "Antiphon"
   },
-  "type": "Antiphon"
-},
-{
-  "id": "marian-ave-regina",
-  "title": "Ave Regina Caelorum",
-  "text": {
-    "rite1": "Ave, Regina caelorum, Ave, Domina Angelorum: Salve, radix, salve, porta Ex qua mundo lux est orta: Gaude, Virgo gloriosa, Super omnes speciosa, Vale, o valde decora, Et pro nobis Christum exora.",
-    "rite2": "Hail, O Queen of Heaven. Hail, O Lady of Angels. Hail! thou root, hail! thou gate From whom unto the world a light has arisen: Rejoice, O glorious Virgin, Lovely beyond all others, Farewell, most beautiful maiden, And pray for us to Christ."
-  },
-  "type": "Antiphon"
-}
+  {
+    "id": "marian-ave-regina",
+    "title": "Ave Regina Caelorum",
+    "text": {
+      "rite1": "Ave, Regina caelorum, Ave, Domina Angelorum: Salve, radix, salve, porta Ex qua mundo lux est orta: Gaude, Virgo gloriosa, Super omnes speciosa, Vale, o valde decora, Et pro nobis Christum exora.",
+      "rite2": "Hail, O Queen of Heaven. Hail, O Lady of Angels. Hail! thou root, hail! thou gate From whom unto the world a light has arisen: Rejoice, O glorious Virgin, Lovely beyond all others, Farewell, most beautiful maiden, And pray for us to Christ."
+    },
+    "type": "Antiphon"
+  }
 ]
