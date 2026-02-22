@@ -131,6 +131,27 @@ body:not(.office-active) {
 }
 
 /* ── Mode Buttons ── */
+.ethiopian-btn {
+    display: block;
+    margin: 14px auto 0 auto;
+    padding: 14px 36px;
+    background: transparent;
+    color: #c9a84c;
+    border: 1px solid #c9a84c;
+    border-radius: 2px;
+    font-family: 'Cinzel', serif;
+    font-size: 0.88em;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+}
+.ethiopian-btn:hover {
+    background: rgba(201, 168, 76, 0.12);
+    color: #e8d090;
+    border-color: #e8d090;
+}
+
 .mode-btn {
     background: transparent;
     color: var(--gold);

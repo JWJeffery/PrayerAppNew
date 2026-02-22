@@ -84,6 +84,18 @@ async function init() {
         if (!rubricsRes.ok) throw new Error('Missing: data/rubrics.json');
         appData.rubrics = await rubricsRes.json();
 
+        // Load tradition-specific rubric extensions
+        try {
+            const ethRubricsRes = await fetch('components/traditions/ethiopian/rubrics.json');
+            if (ethRubricsRes.ok) {
+                const ethRubrics = await ethRubricsRes.json();
+                appData.rubrics = appData.rubrics.concat(ethRubrics);
+                console.log(`[init] Loaded Ethiopian rubrics — ${ethRubrics.length} offices`);
+            }
+        } catch (e) {
+            console.warn('[init] Could not load Ethiopian rubrics:', e.message);
+        }
+
         // 2. Load Component Shards
         // Live component data lives in components/*.json (modularized structure).
         // data/components.json is the stale pre-modularization monolith — do not use.
@@ -159,6 +171,29 @@ function selectMode(mode) {
         document.getElementById('individual-prayers-section').style.width = '100vw';
         document.getElementById('sidebar-toggle').style.display = 'none';
         document.getElementById('settings-panel').style.display = 'none';
+    } else if (mode === 'ethiopian-saatat') {
+        document.body.style.display = 'flex';
+        document.body.style.justifyContent = 'flex-start';
+        document.body.style.alignItems = 'flex-start';
+        document.body.classList.add('ethiopian-theme');
+        const mainH1 = document.querySelector('#main-content > h1');
+        if (mainH1) mainH1.style.display = 'none';
+        document.getElementById('daily-office-section').style.display = 'flex';
+        document.getElementById('sidebar-toggle').style.display = 'none';
+        document.getElementById('settings-panel').style.display = 'none';
+        // Force the office state to ethiopian-saatat
+        const ethRadio = document.querySelector('input[name="office-time"][value="ethiopian-saatat"]');
+        if (ethRadio) {
+            ethRadio.checked = true;
+        } else {
+            // No radio exists for this tradition — set via appData override
+            window._forcedOfficeId = 'ethiopian-saatat';
+        }
+        if (!appData || !appData.rubrics || appData.components.length === 0) {
+            init();
+        } else {
+            renderOffice();
+        }
     }
 }
 
@@ -393,8 +428,10 @@ function getEthiopianHourInfo() {
     const totalMinutes = now.getHours() * 60 + now.getMinutes();
 
     const hourMap = [
-        { from: 6 * 60, to: 9 * 60, hourId: 'eth-tuat-hour-text', hourName: 'Tuat — The Morning Watch', uiLabel: 'Morning Prayer', psalms: ['3', '63', '133'] },
-        // Future phases: Tierce (9–12), Sext (12–15), None (15–18), Vespers (18–21), Compline (21–24), Midnight (0–3), pre-Tuat (3–6)
+        { from:  6 * 60, to:  9 * 60, hourId: 'eth-tuat-hour-text',     hourName: 'Tuat — The Morning Watch', uiLabel: 'Morning Prayer',     psalms: ['3', '63', '133'] },
+        { from:  9 * 60, to: 12 * 60, hourId: 'eth-meserkh-hour-text',  hourName: 'Meserkh — The Third Hour',  uiLabel: 'Mid-Morning Prayer', psalms: ['16', '17', '18'] },
+        { from: 12 * 60, to: 15 * 60, hourId: 'eth-liku-hour-text',     hourName: 'Liku — The Sixth Hour',     uiLabel: 'Noonday Prayer',     psalms: ['22', '23', '24'] },
+        // Future phases: None (15–18), Vespers (18–21), Compline (21–24), Midnight (0–3), pre-Tuat (3–6)
     ];
 
     for (const entry of hourMap) {
@@ -418,13 +455,12 @@ async function renderOffice() {
     const todayKeyShort = currentDate.toLocaleDateString('en-US', { month: 'long', day: 'numeric' });
 
     // ── Office & Rite state ──────────────────────────────────────────────────
-    const officeId   = document.querySelector('input[name="office-time"]:checked')?.value || 'morning-office';
-    const isMorning  = officeId === 'morning-office';
-    const isEvening  = officeId === 'evening-office';
-    const isNoonday  = officeId === 'noonday-office';
-    const isCompline        = officeId === 'compline-office';
-    const isEthiopianSaatat = officeId === 'ethiopian-saatat';
-    const ethHourInfo       = isEthiopianSaatat ? getEthiopianHourInfo() : null;
+    const officeId          = document.querySelector('input[name="office-time"]:checked')?.value || 'morning-office';
+    const resolvedOfficeId  = window._forcedOfficeId || officeId;
+    const isMorning         = resolvedOfficeId === 'morning-office';
+    const isEvening         = resolvedOfficeId === 'evening-office';
+    const isNoonday         = resolvedOfficeId === 'noonday-office';
+    const isCompline = resolvedOfficeId === 'compline-office';
 
     // rite resolves to 'rite1' or 'rite2' — used as the key into component.text objects.
     // bcp-confession-[rite] interpolation produces bcp-confession-rite1 / bcp-confession-rite2,
@@ -445,7 +481,9 @@ async function renderOffice() {
     updateSeasonalTheme(liturgicalColor || 'green');
 
     const dailyData    = await CalendarEngine.fetchLectionaryData(currentDate);
-    const activeRubric = appData.rubrics.find(r => r.id === officeId);
+    const activeRubric      = appData.rubrics.find(r => r.id === resolvedOfficeId);
+    const isEthiopianSaatat = resolvedOfficeId === 'ethiopian-saatat';
+    const ethHourInfo       = isEthiopianSaatat ? getEthiopianHourInfo() : null;
 
     const calendarInfo = document.getElementById('calendar-info');
     if (calendarInfo && dailyData) {
@@ -495,21 +533,28 @@ async function renderOffice() {
     if (!isEvening && !isCompline && !isNoonday) { eveningOT = ''; eveningEpistle = ''; eveningGospel = ''; }
 
     // ── Begin HTML assembly ───────────────────────────────────────────────────
-    let officeHtml = `<div class="office-container"><h2>${activeRubric?.officeName || 'Office'}</h2>`;
-    officeHtml += `<p class="liturgical-title">${dailyData.title || 'Day Title'}</p>`;
+    const officeTitle    = isEthiopianSaatat
+        ? 'The Ethiopian Sa\'atat'
+        : (activeRubric?.officeName || 'Office');
+    const officeSubtitle = isEthiopianSaatat
+        ? (ethHourInfo?.hourName || 'The Book of Hours')
+        : (dailyData.title || 'Day Title');
 
-    // Pre-sequence ecumenical devotions
-    if (document.getElementById('toggle-agpeya-opening')?.checked) {
+    let officeHtml = `<div class="office-container"><h2>${officeTitle}</h2>`;
+    officeHtml += `<p class="liturgical-title">${officeSubtitle}</p>`;
+
+    // Pre-sequence ecumenical devotions (BCP offices only)
+    if (!isEthiopianSaatat && document.getElementById('toggle-agpeya-opening')?.checked) {
         const agpeyaComp = appData.components.find(c => c.id === 'cop-agpeya-opening');
         if (agpeyaComp) officeHtml += `<span class="rubric-text">Agpeya Opening</span><span class="component-text">${agpeyaComp.text}</span>`;
     }
-    if (document.getElementById('toggle-east-syriac-hours')?.checked) {
+    if (!isEthiopianSaatat && document.getElementById('toggle-east-syriac-hours')?.checked) {
         const esComp = appData.components.find(c => c.id === 'ecu-east-syriac-hours');
         if (esComp) officeHtml += `<span class="rubric-text">Prayer of the Hours</span><span class="component-text">${esComp.text}</span>`;
     }
 
-    // Pre-sequence Marian (before position)
-    if (marianElement !== 'none' && marianPos === 'before') {
+    // Pre-sequence Marian (before position — BCP offices only)
+    if (!isEthiopianSaatat && marianElement !== 'none' && marianPos === 'before') {
         if ((marianElement === 'antiphon' || marianElement === 'both') && marianComp) {
             const t = resolveText(marianComp, rite) || 'Text not found';
             officeHtml += `<span class="rubric-text">Marian Antiphon</span><span class="component-text"><i>${t}</i></span>`;
@@ -794,23 +839,22 @@ async function renderOffice() {
             continue;
         }
 
-        // eth-saints-commemoration — scaffold text, then surfaces Ethiopian saints for today
+        // eth-saints-commemoration — surfaces Ethiopian/Oriental saints; fallback intercession if none
         if (item === 'eth-saints-commemoration') {
-            const commComp = appData.components.find(c => c.id === 'eth-saints-commemoration');
-            if (commComp) {
-                officeHtml += `<span class="rubric-text">Commemoration of Saints</span>`;
-                officeHtml += `<span class="component-text">${commComp.text}</span>`;
-            }
             if (appData.saints) {
-                const ethSaints = appData.saints.filter(s =>
-                    s.day && s.day.toLowerCase().includes(todayKeyShort.toLowerCase()) &&
-                    s.tradition && s.tradition.toLowerCase().includes('ethiopian')
-                );
-                if (ethSaints.length > 0) {
-                    officeHtml += `<span class="rubric-text">Ethiopian Commemorations Today</span>`;
-                    ethSaints.forEach(s => {
+                const orientalSaints = appData.saints.filter(s => {
+                    if (!s.day || !s.day.toLowerCase().includes(todayKeyShort.toLowerCase())) return false;
+                    const t = (s.tradition || '').toLowerCase();
+                    return t.includes('ethiopian') || t.includes('oriental');
+                });
+                if (orientalSaints.length > 0) {
+                    officeHtml += `<span class="rubric-text">Commemorations of the Oriental Orthodox</span>`;
+                    orientalSaints.forEach(s => {
                         officeHtml += `<div class="component-text"><strong>${s.name || 'Unknown'}</strong>${s.description ? ' — ' + s.description : ''}</div>`;
                     });
+                } else {
+                    officeHtml += `<span class="rubric-text">Intercession for the Oriental Orthodox Communion</span>`;
+                    officeHtml += `<div class="component-text">Let us pray for the holy Oriental Orthodox Churches: the Ethiopian Tewahedo, the Coptic, the Syriac, the Armenian, the Malankara, and the Eritrean; that the Lord may preserve them in the true faith, strengthen them under persecution, and unite all Christians in the one holy catholic and apostolic Church.</div>`;
                 }
             }
             continue;
@@ -890,8 +934,8 @@ async function renderOffice() {
         }
     }
 
-    // Post-sequence Marian (after position)
-    if (marianElement !== 'none' && marianPos === 'after') {
+    // Post-sequence Marian (after position — BCP offices only)
+    if (!isEthiopianSaatat && marianElement !== 'none' && marianPos === 'after') {
         if ((marianElement === 'antiphon' || marianElement === 'both') && marianComp) {
             const t = resolveText(marianComp, rite) || 'Text not found';
             officeHtml += `<span class="rubric-text">Marian Antiphon</span><span class="component-text"><i>${t}</i></span>`;
@@ -906,7 +950,7 @@ async function renderOffice() {
     document.getElementById('office-display').innerHTML = officeHtml + `</div>`;
     document.getElementById('date-header').innerText = `Commemorations for ${todayKey}`;
 
-    // Saints / commemorations
+    // Saints / commemorations (suppressed in Ethiopian Saatat — handled inline by eth-saints-commemoration slot)
     const mIdx  = currentDate.getMonth();
     const month = monthNames[mIdx];
     if (!appData.saints || appData.saintsMonth !== month) {
@@ -915,10 +959,15 @@ async function renderOffice() {
             if (res.ok) { appData.saints = await res.json(); appData.saintsMonth = month; }
         } catch (err) { console.error('Saints load failed:', err); }
     }
-    document.getElementById('saint-display').innerHTML = appData.saints
-        ?.filter(s => s.day && s.day.toLowerCase().includes(todayKeyShort.toLowerCase()))
-        .map(s => `<div class="saint-box"><small style="color:var(--accent); font-weight:bold; text-transform:uppercase;">${s.tradition || 'Unknown'}</small><strong>${s.name || 'Unknown'}</strong><p>${s.description || 'No description'}</p></div>`)
-        .join('') || '<p>No commemorations.</p>';
+    if (!isEthiopianSaatat) {
+        document.getElementById('saint-display').innerHTML = appData.saints
+            ?.filter(s => s.day && s.day.toLowerCase().includes(todayKeyShort.toLowerCase()))
+            .map(s => `<div class="saint-box"><small style="color:var(--accent); font-weight:bold; text-transform:uppercase;">${s.tradition || 'Unknown'}</small><strong>${s.name || 'Unknown'}</strong><p>${s.description || 'No description'}</p></div>`)
+            .join('') || '<p>No commemorations.</p>';
+    } else {
+        document.getElementById('saint-display').innerHTML = '';
+        document.getElementById('date-header').style.display = 'none';
+    }
 }
 
 function backToSplash() {
