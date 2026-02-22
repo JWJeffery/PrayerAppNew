@@ -97,8 +97,6 @@ async function init() {
         }
 
         // 2. Load Component Shards
-        // Live component data lives in components/*.json (modularized structure).
-        // data/components.json is the stale pre-modularization monolith — do not use.
         const shards = ['common', 'anglican', 'coptic', 'ecumenical', 'ethiopian'];
         for (const shard of shards) {
             const required = shard !== 'ethiopian';
@@ -110,7 +108,6 @@ async function init() {
                 }
                 const text = await res.text();
                 if (!text.trim()) {
-                    // Empty file — skip silently for optional shards, warn for required
                     if (required) console.warn(`[init] Required shard is empty: components/${shard}.json`);
                     else console.log(`[init] Skipping empty optional shard: components/${shard}.json`);
                     continue;
@@ -139,62 +136,45 @@ async function init() {
 
 // ── Mode Selection ───────────────────────────────────────────────────────────
 function selectMode(mode) {
-    selectedMode = mode;
-    document.getElementById('mode-selection').style.display = 'none';
-    document.getElementById('splash-bg').style.display = 'none';
-    document.body.classList.add('office-active');
-    document.body.style.height = 'auto';
-    document.body.style.overflowY = 'auto';
+    const settingsPanel = document.getElementById('settings-panel');
+    const ethSettings = document.getElementById('ethiopian-settings');
+    const mainContent = document.getElementById('main-content');
+    
+    // Hide everything first
+    if (settingsPanel) settingsPanel.style.display = 'none';
+    if (ethSettings) ethSettings.style.display = 'none';
+    document.body.classList.remove('ethiopian-theme');
 
-    if (mode === 'daily') {
-        document.body.style.display = 'flex';
-        document.body.style.justifyContent = 'flex-start';
-        document.body.style.alignItems = 'flex-start';
-        document.getElementById('daily-office-section').style.display = 'flex';
-        document.getElementById('sidebar-toggle').style.display = 'flex';
-        document.getElementById('settings-panel').style.display = 'block';
-        document.getElementById('settings-panel').classList.add('sidebar-hidden');
-        loadSettings();
-        updateSidebarForOffice();
-        updateDatePicker();
-        if (!appData || !appData.rubrics || appData.components.length === 0) {
-            init();
-        } else {
-            renderOffice();
-        }
-    } else if (mode === 'prayers') {
-        document.body.style.display = 'block';
-        document.body.style.width = '100vw';
-        document.body.style.margin = '0';
-        document.body.style.padding = '0';
-        document.getElementById('individual-prayers-section').style.display = 'flex';
-        document.getElementById('individual-prayers-section').style.width = '100vw';
-        document.getElementById('sidebar-toggle').style.display = 'none';
-        document.getElementById('settings-panel').style.display = 'none';
-    } else if (mode === 'ethiopian-saatat') {
-        document.body.style.display = 'flex';
-        document.body.style.justifyContent = 'flex-start';
-        document.body.style.alignItems = 'flex-start';
+    if (mode === 'ethiopian-saatat') {
         document.body.classList.add('ethiopian-theme');
-        const mainH1 = document.querySelector('#main-content > h1');
-        if (mainH1) mainH1.style.display = 'none';
-        document.getElementById('daily-office-section').style.display = 'flex';
-        document.getElementById('sidebar-toggle').style.display = 'none';
-        document.getElementById('settings-panel').style.display = 'none';
-        // Force the office state to ethiopian-saatat
-        const ethRadio = document.querySelector('input[name="office-time"][value="ethiopian-saatat"]');
-        if (ethRadio) {
-            ethRadio.checked = true;
-        } else {
-            // No radio exists for this tradition — set via appData override
-            window._forcedOfficeId = 'ethiopian-saatat';
+        if (ethSettings) {
+            ethSettings.style.display = 'block';
+            ethSettings.classList.add('sidebar-hidden'); // Start closed
         }
-        if (!appData || !appData.rubrics || appData.components.length === 0) {
-            init();
-        } else {
-            renderOffice();
+        mainContent.classList.add('sidebar-hidden');
+        renderOffice('ethiopian-saatat');
+    } else {
+        if (settingsPanel) {
+            settingsPanel.style.display = 'block';
+            settingsPanel.classList.remove('sidebar-hidden');
         }
+        mainContent.classList.remove('sidebar-hidden');
+        renderOffice();
     }
+}
+
+function toggleSidebar() {
+    const bcpPanel = document.getElementById('settings-panel');
+    const ethPanel = document.getElementById('ethiopian-settings');
+    const main = document.getElementById('main-content');
+    const toggle = document.getElementById('sidebar-toggle');
+
+    // Detect which panel is currently on the screen
+    const activePanel = (ethPanel && ethPanel.style.display !== 'none') ? ethPanel : bcpPanel;
+    
+    const isHidden = activePanel.classList.toggle('sidebar-hidden');
+    main.classList.toggle('sidebar-hidden', isHidden);
+    if (toggle) toggle.style.opacity = isHidden ? '0.65' : '0.5';
 }
 
 // ── Date Controls ────────────────────────────────────────────────────────────
@@ -428,16 +408,18 @@ function getEthiopianHourInfo() {
     const totalMinutes = now.getHours() * 60 + now.getMinutes();
 
     const hourMap = [
-        { from:  6 * 60, to:  9 * 60, hourId: 'eth-tuat-hour-text',     hourName: 'Tuat — The Morning Watch', uiLabel: 'Morning Prayer',     psalms: ['3', '63', '133'] },
-        { from:  9 * 60, to: 12 * 60, hourId: 'eth-meserkh-hour-text',  hourName: 'Meserkh — The Third Hour',  uiLabel: 'Mid-Morning Prayer', psalms: ['16', '17', '18'] },
-        { from: 12 * 60, to: 15 * 60, hourId: 'eth-liku-hour-text',     hourName: 'Liku — The Sixth Hour',     uiLabel: 'Noonday Prayer',     psalms: ['22', '23', '24'] },
-        // Future phases: None (15–18), Vespers (18–21), Compline (21–24), Midnight (0–3), pre-Tuat (3–6)
+        { from:  6 * 60, to:  9 * 60, hourId: 'eth-tuat-hour-text',    hourName: 'Tuat — The Morning Watch', uiLabel: 'Morning Prayer',     psalms: ['3', '63', '133'] },
+        { from:  9 * 60, to: 12 * 60, hourId: 'eth-meserkh-hour-text', hourName: 'Meserkh — The Third Hour',  uiLabel: 'Mid-Morning Prayer', psalms: ['16', '17', '18'] },
+        { from: 12 * 60, to: 15 * 60, hourId: 'eth-liku-hour-text',    hourName: 'Liku — The Sixth Hour',     uiLabel: 'Noonday Prayer',     psalms: ['22', '23', '24'] },
+        { from: 15 * 60, to: 18 * 60, hourId: 'eth-serkh-hour-text',   hourName: 'Serkh — The Ninth Hour',    uiLabel: 'Afternoon Prayer',   psalms: ['69', '70', '71'] },
+        { from: 18 * 60, to: 21 * 60, hourId: 'eth-nimeat-hour-text',  hourName: 'Nimeat — Vespers',          uiLabel: 'Evening Prayer',     psalms: ['141', '142', '143'] },
+        { from: 21 * 60, to: 24 * 60, hourId: 'eth-night-hour-text',   hourName: 'Lelit — The Night Watch',   uiLabel: 'Night Prayer',       psalms: ['4', '6', '13'] },
+        { from:  0 * 60, to:  6 * 60, hourId: 'eth-night-hour-text',   hourName: 'Lelit — The Night Watch',   uiLabel: 'Night Prayer',       psalms: ['4', '6', '13'] },
     ];
 
     for (const entry of hourMap) {
         if (totalMinutes >= entry.from && totalMinutes < entry.to) return entry;
     }
-    // Default fallback: Tuat covers all unmapped windows until further phases are added
     return { hourId: 'eth-tuat-hour-text', hourName: 'Tuat — The Morning Watch', uiLabel: 'Morning Prayer', psalms: ['3', '63', '133'] };
 }
 
@@ -460,12 +442,8 @@ async function renderOffice() {
     const isMorning         = resolvedOfficeId === 'morning-office';
     const isEvening         = resolvedOfficeId === 'evening-office';
     const isNoonday         = resolvedOfficeId === 'noonday-office';
-    const isCompline = resolvedOfficeId === 'compline-office';
+    const isCompline        = resolvedOfficeId === 'compline-office';
 
-    // rite resolves to 'rite1' or 'rite2' — used as the key into component.text objects.
-    // bcp-confession-[rite] interpolation produces bcp-confession-rite1 / bcp-confession-rite2,
-    // which are the exact IDs present in data/components.json. No conflict with the ritePrefix
-    // (r1/r2) logic used solely for bcp-absolution-slot.
     const rite               = document.querySelector('input[name="rite"]:checked')?.value || 'rite2';
     const minister           = document.querySelector('input[name="minister"]:checked')?.value || 'lay';
     const creedSelection     = document.getElementById('creed-type')?.value || 'comm-creed-apostles';
@@ -480,7 +458,7 @@ async function renderOffice() {
     const { season, liturgicalColor, litYear } = await CalendarEngine.getSeasonAndFile(currentDate);
     updateSeasonalTheme(liturgicalColor || 'green');
 
-    const dailyData    = await CalendarEngine.fetchLectionaryData(currentDate);
+    const dailyData         = await CalendarEngine.fetchLectionaryData(currentDate);
     const activeRubric      = appData.rubrics.find(r => r.id === resolvedOfficeId);
     const isEthiopianSaatat = resolvedOfficeId === 'ethiopian-saatat';
     const ethHourInfo       = isEthiopianSaatat ? getEthiopianHourInfo() : null;
@@ -512,12 +490,11 @@ async function renderOffice() {
         const marianId = `bcp-marian-antiphon-${season}`;
         marianComp     = appData.components.find(c => c.id === marianId)
                       || appData.components.find(c => c.id === 'bcp-marian-antiphon-ordinary');
-        // Two-step Theotokion lookup: seasonal variant first, generic fallback
         theotokionComp = appData.components.find(c => c.id === `cop-theotokion-${season}`)
                       || appData.components.find(c => c.id === 'cop-theotokion');
     }
 
-    // ── Reading chains (independent MP / EP — no cross-contamination) ─────────
+    // ── Reading chains ────────────────────────────────────────────────────────
     const otherYear = litYear === 'year1' ? 'year2' : 'year1';
     let morningOT      = dailyData[`reading_ot_mp_${litYear}`]      || dailyData[`reading_ot_mp_${otherYear}`]      || dailyData['reading_ot']      || '';
     let morningEpistle = dailyData[`reading_epistle_mp_${litYear}`]  || dailyData[`reading_epistle_mp_${otherYear}`]  || dailyData['reading_epistle']  || '';
@@ -560,24 +537,28 @@ async function renderOffice() {
             officeHtml += `<span class="rubric-text">Marian Antiphon</span><span class="component-text"><i>${t}</i></span>`;
         }
         if ((marianElement === 'theotokion' || marianElement === 'both') && theotokionComp) {
-            // Apply paragraph-break formatting to Theotokion text
             const raw = resolveText(theotokionComp, rite) || theotokionComp.text || '';
             officeHtml += `<span class="rubric-text">Theotokion</span><div class="component-text" style="white-space:normal"><i>${applyParagraphBreaks(raw)}</i></div>`;
         }
+    }
+
+    // ── Saints preload (must precede sequence loop for eth-saints-commemoration) ─
+    const mIdx  = currentDate.getMonth();
+    const month = monthNames[mIdx];
+    if (!appData.saints || appData.saintsMonth !== month) {
+        try {
+            const res = await fetch(`data/saints/saints-${month.toLowerCase()}.json`);
+            if (res.ok) { appData.saints = await res.json(); appData.saintsMonth = month; }
+        } catch (err) { console.error('Saints load failed:', err); }
     }
 
     // ── Main Rubric Sequence Loop ─────────────────────────────────────────────
     for (let item of activeRubric?.sequence || []) {
         item = item.trim();
 
-        // ── Slot interpolation & redirects (run before all VARIABLE_ checks) ──
-        // [rite] interpolation: bcp-confession-[rite] → bcp-confession-rite1 / bcp-confession-rite2
-        // These exact IDs exist in data/components.json. No conflict with ritePrefix (r1/r2)
-        // which is used exclusively in the bcp-absolution-slot block below.
         let compId = item.replace('[rite]', rite);
 
         if (compId === 'bcp-absolution-slot') {
-            // Absolution uses abbreviated ritePrefix (r1/r2) + minister — separate from [rite]
             const ritePrefix = rite === 'rite1' ? 'r1' : 'r2';
             compId = `bcp-absolution-${ritePrefix}-${minister}`;
         } else if (compId === 'comm-creed-slot') {
@@ -585,8 +566,6 @@ async function renderOffice() {
         } else if (compId === 'bcp-suffrages-slot') {
             if (suffragesChecked) { compId = `bcp-suffrages-${rite}`; } else { continue; }
         }
-
-        // ── VARIABLE_ token handlers ──────────────────────────────────────────
 
         // VARIABLE_OPENING — seasonal opening sentence
         if (item === 'VARIABLE_OPENING') {
@@ -646,7 +625,6 @@ async function renderOffice() {
         }
 
         // VARIABLE_CANTICLE1 — Te Deum (Morning) / Magnificat (Evening)
-        // Rite I / Rite II text selected via resolveText(comp, rite)
         if (item === 'VARIABLE_CANTICLE1') {
             let canticleId = null;
             let canticleLabel = '';
@@ -670,7 +648,6 @@ async function renderOffice() {
         }
 
         // VARIABLE_CANTICLE2 — Benedictus (Morning) / Nunc Dimittis (Evening)
-        // Rite I / Rite II text selected via resolveText(comp, rite)
         if (item === 'VARIABLE_CANTICLE2') {
             let canticleId = null;
             let canticleLabel = '';
@@ -698,7 +675,6 @@ async function renderOffice() {
             officeHtml += `<span class="rubric-text">The Collect</span>`;
             let rawId = dailyData.collect || 'collect-default-ferial';
             let cId   = rawId.startsWith('bcp-') ? rawId : 'bcp-' + rawId;
-            // Manual ID map for known lectionary naming discrepancies
             if (cId === 'bcp-collect-transfiguration') cId = 'bcp-collect-the-transfiguration-of-our-lord';
 
             const comp = appData.components.find(c => c.id === cId);
@@ -706,14 +682,12 @@ async function renderOffice() {
             officeHtml += `<span class="component-text">${t}</span>`;
             officeHtml += '<div class="ornamental-divider"><div class="div-line-left"></div><span class="ornamental-divider-glyph">✦ ✝ ✦</span><div class="div-line-right"></div></div>';
 
-            // Examen (Compline only) — paragraph breaks preserved
             if (isCompline && document.getElementById('toggle-examen')?.checked) {
                 const ex = appData.components.find(c => c.id === 'ecu-examen');
                 if (ex) {
                     officeHtml += `<span class="rubric-text">The Examen</span><div class="component-text" style="white-space:normal">${applyParagraphBreaks(ex.text)}</div>`;
                 }
             }
-            // Kyrie Pantocrator (MP/EP only)
             if (!isCompline && !isNoonday && document.getElementById('toggle-kyrie-pantocrator')?.checked) {
                 const kp = appData.components.find(c => c.id === 'ecu-kyrie-pantocrator');
                 if (kp) officeHtml += `<span class="rubric-text">Kyrie Pantocrator</span><span class="component-text">${kp.text}</span>`;
@@ -722,22 +696,18 @@ async function renderOffice() {
         }
 
         // VARIABLE_WEEKDAY_COLLECT — ferial/weekday supplementary collect
-        // Tiered fallback: (1) seasonal key in dailyData → (2) standard office collect → (3) skip
         if (item === 'VARIABLE_WEEKDAY_COLLECT') {
             let wkComp = null;
-            // Priority 1: look for a specific weekday/seasonal collect in lectionary data
             if (dailyData.collect_weekday) {
                 const wkId = dailyData.collect_weekday.startsWith('bcp-')
                     ? dailyData.collect_weekday
                     : 'bcp-' + dailyData.collect_weekday;
                 wkComp = appData.components.find(c => c.id === wkId);
             }
-            // Priority 2: fall back to the standard grace/peace collect for the office
             if (!wkComp) {
                 const fallbackId = isMorning ? 'bcp-collect-grace' : 'bcp-collect-peace';
                 wkComp = appData.components.find(c => c.id === fallbackId);
             }
-            // Priority 3: skip silently if neither is found
             if (wkComp) {
                 const t = resolveText(wkComp, rite) || wkComp.text || '';
                 officeHtml += `<span class="rubric-text">A Collect</span><span class="component-text">${t}</span>`;
@@ -759,11 +729,8 @@ async function renderOffice() {
             continue;
         }
 
-        // ── Named component handlers ──────────────────────────────────────────
-
         // bcp-invitatory-full — invitatory with Angelus injection and seasonal canticle
         if (item === 'bcp-invitatory-full') {
-            // Optional Angelus (before invitatory text, not in Compline)
             if (document.getElementById('toggle-angelus')?.checked && !isCompline) {
                 const angelusComp = appData.components.find(c => c.id === 'ecu-angelus');
                 if (angelusComp) {
@@ -776,7 +743,6 @@ async function renderOffice() {
             const invText = invComp ? (resolveText(invComp, rite) || 'Text not found') : 'Text not found';
             officeHtml += `<span class="rubric-text">The Invitatory</span><span class="component-text">${invText}</span>`;
 
-            // Seasonal invitatory canticle (MP and EP only)
             if (isMorning || isEvening) {
                 const isLent   = season === 'lent';
                 const isEaster = season === 'easter';
@@ -823,6 +789,18 @@ async function renderOffice() {
 
         // eth-mazmur-slot — renders appointed Psalms for the active hour, closes with Anqaşa Birhān
         if (item === 'eth-mazmur-slot') {
+            const ethLength = document.getElementById('eth-length-select')?.value || 'abbreviated';
+            if (ethLength === 'full') {
+                const lekeHaileComp = appData.components.find(c => c.id === 'eth-leke-haile-chant');
+                if (lekeHaileComp) {
+                    officeHtml += `<span class="rubric-text">Leke Haile — The 12-Fold Glory</span>`;
+                    officeHtml += `<div class="component-text" style="white-space:normal">`;
+                    for (let i = 1; i <= 12; i++) {
+                        officeHtml += `<p style="margin:0.4em 0;"><span style="color:var(--gold); font-family:'Cinzel',serif; font-size:0.78em; margin-right:6px;">${i}.</span><i>${lekeHaileComp.text}</i></p>`;
+                    }
+                    officeHtml += `</div>`;
+                }
+            }
             if (ethHourInfo && ethHourInfo.psalms && ethHourInfo.psalms.length > 0) {
                 officeHtml += `<span class="rubric-text">Mazmur (Appointed Psalms)</span>`;
                 for (const psNum of ethHourInfo.psalms) {
@@ -890,10 +868,7 @@ async function renderOffice() {
             continue;
         }
 
-        // ── Generic component lookup (handles bcp-salutation, bcp-closing, etc.) ──
-        // Display label map: overrides verbose JSON titles that contain parenthetical
-        // metadata (rite, minister, office-time) which are internal to the data layer
-        // and must not appear in the rendered office.
+        // ── Generic component lookup ──────────────────────────────────────────
         const DISPLAY_LABELS = {
             'bcp-confession-rite1':           'Confession of Sin',
             'bcp-confession-rite2':           'Confession of Sin',
@@ -921,7 +896,6 @@ async function renderOffice() {
             const label = DISPLAY_LABELS[compId] || comp.title || compId;
             officeHtml += `<span class="rubric-text">${label}</span><span class="component-text">${t}</span>`;
         } else if (compId && !compId.startsWith('VARIABLE_') && compId !== item) {
-            // compId was transformed (slot/interpolation) but still not found — warn
             console.warn(`[renderOffice] Generic lookup failed for resolved ID: ${compId} (from: ${item})`);
         } else if (compId && !compId.startsWith('VARIABLE_')) {
             console.warn(`[renderOffice] Generic lookup failed for: ${compId}`);
@@ -931,6 +905,26 @@ async function renderOffice() {
         if (item === 'bcp-absolution-slot' && document.getElementById('toggle-trisagion')?.checked) {
             const tris = appData.components.find(c => c.id === 'ecu-trisagion');
             if (tris) officeHtml += `<span class="rubric-text">Trisagion</span><span class="component-text">${tris.text}</span>`;
+        }
+    }
+
+    // ── Ethiopian Full Mode: 41-Fold Kyrie & optional Weddase Maryam ─────────────
+    if (isEthiopianSaatat) {
+        const ethLength = document.getElementById('eth-length-select')?.value || 'abbreviated';
+        if (ethLength === 'full') {
+            const kyrieComp = appData.components.find(c => c.id === 'eth-41-kyrie');
+            if (kyrieComp) {
+                officeHtml += `<span class="rubric-text">Igzee-'o Tesahalene — Lord Have Mercy (41-fold)</span>`;
+                officeHtml += `<div class="component-text" style="white-space:normal">${applyParagraphBreaks(kyrieComp.text)}</div>`;
+            }
+        }
+        const includeMarianCheck = document.getElementById('eth-include-marian')?.checked;
+        if (includeMarianCheck) {
+            const weddaseComp = appData.components.find(c => c.id === 'eth-anqasa-birhan');
+            if (weddaseComp) {
+                officeHtml += `<span class="rubric-text">Weddase Maryam — Praise of Mary</span>`;
+                officeHtml += `<div class="component-text" style="white-space:normal"><i>${applyParagraphBreaks(weddaseComp.text)}</i></div>`;
+            }
         }
     }
 
@@ -948,17 +942,11 @@ async function renderOffice() {
 
     // ── Finalise DOM ──────────────────────────────────────────────────────────
     document.getElementById('office-display').innerHTML = officeHtml + `</div>`;
-    document.getElementById('date-header').innerText = `Commemorations for ${todayKey}`;
-
-    // Saints / commemorations (suppressed in Ethiopian Saatat — handled inline by eth-saints-commemoration slot)
-    const mIdx  = currentDate.getMonth();
-    const month = monthNames[mIdx];
-    if (!appData.saints || appData.saintsMonth !== month) {
-        try {
-            const res = await fetch(`data/saints/saints-${month.toLowerCase()}.json`);
-            if (res.ok) { appData.saints = await res.json(); appData.saintsMonth = month; }
-        } catch (err) { console.error('Saints load failed:', err); }
+    if (!isEthiopianSaatat) {
+        document.getElementById('date-header').innerText = `Commemorations for ${todayKey}`;
+        document.getElementById('date-header').style.display = '';
     }
+
     if (!isEthiopianSaatat) {
         document.getElementById('saint-display').innerHTML = appData.saints
             ?.filter(s => s.day && s.day.toLowerCase().includes(todayKeyShort.toLowerCase()))

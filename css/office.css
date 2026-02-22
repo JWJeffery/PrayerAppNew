@@ -756,4 +756,27 @@ select { width: 100%; padding: 10px; background: #1e1a14; color: #c8bfa8; border
     hr { border: 0.5pt solid #999 !important; margin: 0.15in 0 !important; }
     a { text-decoration: none; color: black !important; }
     * { background: white !important; }
+    #ethiopian-settings {
+    position: absolute;
+    left: 36px;
+    top: 0;
+    width: 300px;
+    min-width: 300px;
+    background: linear-gradient(180deg, var(--sidebar-bg) 0%, var(--sidebar-bg-bottom, #050408) 100%);
+    color: var(--sidebar-text);
+    font-size: 17px;
+    padding: 28px 20px;
+    height: 100vh;
+    overflow-y: auto;
+    border-right: 1px solid rgba(201,168,76,0.3);
+    box-shadow: inset -4px 0 18px rgba(150,80,0,0.08), 4px 0 20px rgba(0,0,0,0.5);
+    transition: left 0.3s ease;
+    z-index: 100;
+    text-align: left;
+}
+
+#ethiopian-settings.sidebar-hidden {
+    left: -300px;
+    pointer-events: none;
+}
 }

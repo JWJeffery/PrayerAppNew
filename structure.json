@@ -1,10 +1,10 @@
 {
   "project_manifest": {
     "name": "Universal Office",
-    "version": "2.4.0",
+    "version": "2.5.0",
     "last_updated": "2026-02-22",
     "bcp_compliance": "100%",
-    "operational_status": "OPERATIONAL — Phase 6.5 QC fixes verified through full liturgical year stress test"
+    "operational_status": "OPERATIONAL — Phase 7.3 complete: Ethiopian Sa'atat 24-hour canonical cycle fully implemented and verified"
   },
 
   "documentation_debt": {
@@ -21,16 +21,19 @@
       "SESSION_CHECKPOINT_2026-02-17.md",
       "SESSION_CHECKPOINT_2026-02-17_evening.md"
     ],
-    "reason": "All .md documentation was written against the pre-modularization monolithic index.html. None reflects the four-file modular architecture, Phase 6.4 ecumenical reorganization, or Phase 6.5 QC fixes.",
-    "action": "Full documentation rewrite required before Phase 7.0 begins."
+    "reason": "All .md documentation was written against the pre-modularization monolithic index.html. None reflects the four-file modular architecture, Phase 6.4 ecumenical reorganization, Phase 6.5 QC fixes, or Phase 7.x Ethiopian tradition work.",
+    "action": "Full documentation rewrite required."
   },
 
   "active_modules": {
     "index.html": {
       "role": "Markup and DOM structure only",
-      "lines": "~1165",
+      "lines": "~1175",
       "contains_logic": false,
-      "status": "Current",
+      "status": "Current — Phase 7.1 button added",
+      "changes": [
+        "Added third mode button: 'The Ethiopian Sa'atat (Book of Hours)' with class ethiopian-btn, calling selectMode('ethiopian-saatat')"
+      ],
       "script_load_order": [
         "js/calendar-engine.js",
         "js/scripture-resolver.js",
@@ -41,10 +44,11 @@
     },
     "js/office-ui.js": {
       "role": "All Daily Office UI logic",
-      "status": "Verified — Modularized (2026-02-22)",
+      "status": "Verified — Phase 7.3 complete (2026-02-22)",
       "primary_functions": [
         "init()",
         "renderOffice()",
+        "getEthiopianHourInfo()",
         "toggleSidebar()",
         "selectMode()",
         "changeDate() / resetDate() / setCustomDate()",
@@ -63,14 +67,23 @@
         "VARIABLE_READING_GOSPEL — Gospel subject to gospelPlacement setting",
         "VARIABLE_CANTICLE1 — Te Deum (MP) / Magnificat (EP)",
         "VARIABLE_CANTICLE2 — Benedictus (MP) / Nunc Dimittis (EP)",
-        "VARIABLE_COLLECT — collect lookup with manual ID mappings; triggers Examen and Kyrie Pantocrator"
+        "VARIABLE_COLLECT — collect lookup with manual ID mappings; triggers Examen and Kyrie Pantocrator",
+        "VARIABLE_WEEKDAY_COLLECT — tiered fallback: dailyData.collect_weekday → bcp-collect-grace/peace → skip",
+        "VARIABLE_MISSION_PRAYER — resolves bcp-mission-prayer-1",
+        "eth-saatat-hour-slot — resolves canonical hour text from getEthiopianHourInfo().hourId",
+        "eth-mazmur-slot — renders appointed Psalms for active hour; closes with eth-anqasa-birhan",
+        "eth-saints-commemoration — filters appData.saints for Ethiopian/Oriental tradition; fallback intercession if none found"
       ],
       "key_logic_notes": [
         "Reading resolution uses independent morning/evening chains — no shared intermediate variables between MP and EP",
-        "Theotokion uses two-step lookup: coptic-theotokion-${season} with fallback to coptic-theotokion",
+        "Theotokion uses two-step lookup: cop-theotokion-${season} with fallback to cop-theotokion",
         "Examen text: \\n\\n converted to <br><br>, rendered in <div style='white-space:normal'>",
         "toggleSidebar() propagates sidebar-hidden class to both #settings-panel and #main-content",
-        "CalendarEngine.init() is called explicitly in init() after JSON loads, before fetchLectionaryData()"
+        "CalendarEngine.init() is called explicitly in init() after JSON loads, before fetchLectionaryData()",
+        "resolvedOfficeId = window._forcedOfficeId || officeId — used throughout renderOffice() to support ethiopian-saatat override",
+        "Saints data preloaded before sequence loop so eth-saints-commemoration slot has access on first render",
+        "isEthiopianSaatat flag gates all BCP-specific pre/post-sequence blocks (Marian, Agpeya, East Syriac, Commemorations header, saint-display)",
+        "getEthiopianHourInfo() returns exhaustive 24-hour map; night watch (Lelit) covers both 21:00–24:00 and 00:00–06:00"
       ]
     },
     "js/calendar-engine.js": {
@@ -106,17 +119,53 @@
     },
     "css/office.css": {
       "role": "All application styles — theming, sidebar, layout, print",
-      "status": "Verified — Modularized (2026-02-22)",
+      "status": "Current — Phase 7.1 Ethiopian button styles added (2026-02-22)",
+      "changes": [
+        "Added .ethiopian-btn — gold/yellow color scheme (border: #c9a84c, transparent background, Cinzel font)",
+        "Added .ethiopian-btn:hover — subtle gold background wash on hover"
+      ],
       "key_rules": [
         "#settings-panel — sidebar panel, transition: left 0.3s ease",
         "#settings-panel.sidebar-hidden — left: -300px",
         "#main-content — flex content area, transition: margin-left 0.3s ease",
         "#main-content.sidebar-hidden — margin-left: 36px",
         "#sidebar-toggle — 36px fixed toggle column",
+        ".ethiopian-btn — gold-bordered button for Sa'atat entry point",
         "CSS custom properties on :root — --gold, --accent, --rubric, --bg-color, etc.",
         "@media print — removes all UI chrome, optimizes for paper output"
       ]
     }
+  },
+
+  "ethiopian_tradition": {
+    "status": "OPERATIONAL — Phase 7.3 complete",
+    "entry_point": "selectMode('ethiopian-saatat') — sets window._forcedOfficeId, hides sidebar and settings panel, applies .ethiopian-theme to body",
+    "rubrics_file": "components/traditions/ethiopian/rubrics.json",
+    "rubrics_load": "Loaded in init() and concatenated onto appData.rubrics after data/rubrics.json",
+    "components_file": "components/ethiopian.json",
+    "components": [
+      "eth-basalios-prayer — St. Basil's foundational prayer (scaffold for all hours)",
+      "eth-prayer-thanksgiving — Standard introductory thanksgiving",
+      "eth-anqasa-birhan — Gate of Light Theotokos hymn; appended after Mazmur in every hour",
+      "eth-tuat-hour-text — Canonical prayer text for Tuat (Morning Watch, 6:00–9:00)",
+      "eth-meserkh-hour-text — Canonical prayer text for Meserkh (Third Hour, 9:00–12:00)",
+      "eth-liku-hour-text — Canonical prayer text for Liku (Sixth Hour, 12:00–15:00)",
+      "eth-serkh-hour-text — Canonical prayer text for Serkh (Ninth Hour, 15:00–18:00)",
+      "eth-nimeat-hour-text — Canonical prayer text for Nimeat (Vespers, 18:00–21:00)",
+      "eth-night-hour-text — Canonical prayer text for Lelit (Night Watch, 21:00–06:00)",
+      "eth-mazmur-tuat — Psalm metadata for Tuat (Psalms 3, 63, 133)",
+      "eth-saints-commemoration — Saints scaffold with Oriental Orthodox filter"
+    ],
+    "hour_map": {
+      "06:00–09:00": { "hourId": "eth-tuat-hour-text",    "hourName": "Tuat — The Morning Watch",  "psalms": ["3", "63", "133"] },
+      "09:00–12:00": { "hourId": "eth-meserkh-hour-text", "hourName": "Meserkh — The Third Hour",   "psalms": ["16", "17", "18"] },
+      "12:00–15:00": { "hourId": "eth-liku-hour-text",    "hourName": "Liku — The Sixth Hour",      "psalms": ["22", "23", "24"] },
+      "15:00–18:00": { "hourId": "eth-serkh-hour-text",   "hourName": "Serkh — The Ninth Hour",     "psalms": ["69", "70", "71"] },
+      "18:00–21:00": { "hourId": "eth-nimeat-hour-text",  "hourName": "Nimeat — Vespers",           "psalms": ["141", "142", "143"] },
+      "21:00–06:00": { "hourId": "eth-night-hour-text",   "hourName": "Lelit — The Night Watch",    "psalms": ["4", "6", "13"] }
+    },
+    "saints_filter": "Only saints where tradition includes 'ethiopian' or 'oriental' (case-insensitive). Fallback: generic intercession for the Oriental Orthodox Communion.",
+    "bcp_isolation": "All BCP-specific blocks (Marian antiphons, Agpeya, East Syriac Hours, Commemorations header, saint-display) are gated behind !isEthiopianSaatat"
   },
 
   "data_summary": {
@@ -124,12 +173,130 @@
     "data/bible/": "[600+ Scripture files across NT, OT, ET, SY, AR, ODES subdirectories]",
     "data/season/": "[9 seasonal JSON files — 353 total BCP 1979 daily lectionary entries, Year One and Year Two tracks]",
     "data/saints/": "[12 monthly JSON files — 365+ saint commemorations]",
-    "data/components.json": "All renderable liturgical text components, keyed by ID",
-    "data/rubrics.json": "Office sequence definitions (rubric arrays per office ID)",
-    "data/season/bcp-propers.json": "Proper 1–29 reference table, consumed by CalendarEngine.init()"
+    "data/components.json": "DEPRECATED — do not use. Stale pre-modularization monolith.",
+    "data/rubrics.json": "BCP office sequence definitions (rubric arrays per office ID)",
+    "data/season/bcp-propers.json": "Proper 1–29 reference table, consumed by CalendarEngine.init()",
+    "components/common.json": "5 shared components",
+    "components/anglican.json": "179 BCP components",
+    "components/coptic.json": "2 Coptic components",
+    "components/ecumenical.json": "9 ecumenical components",
+    "components/ethiopian.json": "11 Ethiopian Tewahedo components (Phase 7.3)",
+    "components/traditions/ethiopian/rubrics.json": "Ethiopian Sa'atat office rubric — loaded and concatenated at init()"
   },
 
   "recent_logic_changes": [
+    {
+      "date": "2026-02-22",
+      "phase": "7.1",
+      "file": "js/office-ui.js",
+      "handler": "getEthiopianHourInfo() — new function",
+      "change": "Added Ethiopian canonical hour resolver",
+      "detail": "Maps local clock totalMinutes to { hourId, hourName, uiLabel, psalms } for all six canonical hours. Night watch (Lelit) covers both 21:00–24:00 and 00:00–06:00 via two entries in the hourMap array."
+    },
+    {
+      "date": "2026-02-22",
+      "phase": "7.1",
+      "file": "js/office-ui.js",
+      "handler": "selectMode()",
+      "change": "Added ethiopian-saatat mode branch",
+      "detail": "Sets window._forcedOfficeId = 'ethiopian-saatat', hides sidebar and settings panel, applies .ethiopian-theme to body, hides main H1, calls init() or renderOffice() as appropriate."
+    },
+    {
+      "date": "2026-02-22",
+      "phase": "7.1",
+      "file": "js/office-ui.js",
+      "handler": "renderOffice()",
+      "change": "resolvedOfficeId pattern introduced",
+      "detail": "const resolvedOfficeId = window._forcedOfficeId || officeId — used for all office-specific flags and rubric lookup. Declared immediately after officeId."
+    },
+    {
+      "date": "2026-02-22",
+      "phase": "7.1",
+      "file": "js/office-ui.js",
+      "handler": "renderOffice() — sequence loop",
+      "change": "Added eth-saatat-hour-slot, eth-mazmur-slot, eth-saints-commemoration handlers",
+      "detail": "eth-saatat-hour-slot resolves hour component via ethHourInfo.hourId. eth-mazmur-slot loops ethHourInfo.psalms and appends eth-anqasa-birhan. eth-saints-commemoration filters for Ethiopian/Oriental saints with intercession fallback."
+    },
+    {
+      "date": "2026-02-22",
+      "phase": "7.1",
+      "file": "js/office-ui.js",
+      "handler": "renderOffice() — BCP isolation",
+      "change": "All BCP pre/post-sequence blocks gated behind !isEthiopianSaatat",
+      "detail": "Covers: Agpeya opening, East Syriac Hours, Marian antiphon (before and after), Commemorations header, saint-display innerHTML."
+    },
+    {
+      "date": "2026-02-22",
+      "phase": "7.1",
+      "file": "js/office-ui.js",
+      "handler": "init()",
+      "change": "Ethiopian rubrics loaded and concatenated",
+      "detail": "Fetches components/traditions/ethiopian/rubrics.json in a try/catch after main rubrics load; concatenates onto appData.rubrics."
+    },
+    {
+      "date": "2026-02-22",
+      "phase": "7.1",
+      "file": "index.html",
+      "handler": "Mode selection buttons",
+      "change": "Added ethiopian-saatat button",
+      "detail": "Third button labeled 'The Ethiopian Sa'atat (Book of Hours)' with class ethiopian-btn below the Book of Needs button."
+    },
+    {
+      "date": "2026-02-22",
+      "phase": "7.1",
+      "file": "css/office.css",
+      "handler": ".ethiopian-btn",
+      "change": "Added gold/yellow button style",
+      "detail": "Transparent background, #c9a84c border and text, Cinzel font, hover state with subtle gold wash."
+    },
+    {
+      "date": "2026-02-22",
+      "phase": "7.2",
+      "file": "components/ethiopian.json",
+      "handler": "Hour components",
+      "change": "Added eth-meserkh-hour-text and eth-liku-hour-text",
+      "detail": "Meserkh (Third Hour, 9:00–12:00) commemorates descent of Holy Spirit at Pentecost. Liku (Sixth Hour, 12:00–15:00) commemorates the Crucifixion."
+    },
+    {
+      "date": "2026-02-22",
+      "phase": "7.3",
+      "file": "components/ethiopian.json",
+      "handler": "Hour components",
+      "change": "Added eth-serkh-hour-text, eth-nimeat-hour-text, eth-night-hour-text",
+      "detail": "Serkh (Ninth Hour, 15:00–18:00) commemorates Christ's death. Nimeat (Vespers, 18:00–21:00) gives thanks for the day's close. Lelit (Night Watch, 21:00–06:00) covers the full night vigil including Gethsemane commemoration."
+    },
+    {
+      "date": "2026-02-22",
+      "phase": "7.3",
+      "file": "js/office-ui.js",
+      "handler": "getEthiopianHourInfo()",
+      "change": "Extended hourMap to full 24-hour cycle",
+      "detail": "Added Serkh (15–18), Nimeat (18–21), Lelit night entries (21–24 and 00–06). Map is now exhaustive; fallback is retained but unreachable."
+    },
+    {
+      "date": "2026-02-22",
+      "phase": "7.3",
+      "file": "components/traditions/ethiopian/rubrics.json",
+      "handler": "slots metadata",
+      "change": "Synchronized eth-saatat-hour-slot and eth-mazmur-slot time_map to full 24-hour cycle",
+      "detail": "Both slot metadata objects now document all six canonical windows with their appointed psalms."
+    },
+    {
+      "date": "2026-02-22",
+      "phase": "7.3",
+      "file": "js/office-ui.js",
+      "handler": "renderOffice() — saints preload",
+      "change": "Saints JSON load moved before sequence loop",
+      "detail": "Ensures appData.saints is populated before eth-saints-commemoration slot executes, preventing fallback intercession on first render when saints data exists."
+    },
+    {
+      "date": "2026-02-22",
+      "phase": "7.3",
+      "file": "js/office-ui.js",
+      "handler": "renderOffice() — Finalise DOM",
+      "change": "date-header guarded behind !isEthiopianSaatat",
+      "detail": "Commemorations header is hidden entirely on the Sa'atat page; date-header.style.display = 'none' set in the else branch."
+    },
     {
       "date": "2026-02-22",
       "file": "js/office-ui.js",
@@ -159,41 +326,13 @@
       "handler": "toggleSidebar()",
       "change": "sidebar-hidden class now toggled on #main-content in addition to #settings-panel",
       "reason": "Main content area did not reflow when sidebar was hidden"
-    },
-    {
-      "date": "2026-02-22",
-      "file": "js/office-ui.js",
-      "handler": "VARIABLE_COLLECT — Examen block",
-      "change": "Examen text rendered with \\n\\n → <br><br> replacement inside <div style='white-space:normal'>",
-      "reason": "Paragraph breaks in source text were collapsed by default span/white-space handling"
-    },
-    {
-      "date": "2026-02-22",
-      "file": "js/office-ui.js",
-      "handler": "Marian components block",
-      "change": "Theotokion lookup changed to two-step: coptic-theotokion-${season} with fallback to coptic-theotokion",
-      "reason": "Seasonal Theotokion variants were never resolved; only the generic entry was ever used"
-    },
-    {
-      "date": "2026-02-22",
-      "file": "js/office-ui.js",
-      "handler": "Rubric sequence loop",
-      "change": "VARIABLE_ANTIPHON handler block added",
-      "reason": "Antiphons were rendered outside the sequence loop; handler enables correct positional placement within the rubric"
-    },
-    {
-      "date": "2026-02-22",
-      "file": "css/office.css",
-      "handler": "#main-content",
-      "change": "Added transition: margin-left 0.3s ease to base rule; added #main-content.sidebar-hidden { margin-left: 36px }",
-      "reason": "Sidebar toggle had no corresponding layout shift on the main content area"
     }
   ],
 
   "roadmap_summary": {
-    "completed": "Phases 6.1–6.5 (BCP lectionary, modularization, ecumenical organization, QC fixes)",
+    "completed": "Phases 6.1–6.5 (BCP lectionary, modularization, ecumenical organization, QC fixes), Phase 7.1–7.3 (Ethiopian Sa'atat — full 24-hour canonical cycle)",
     "next_required": "Phase 6.6 — Documentation rewrite (all .md files out of sync)",
     "next_planned": "Phase 6.7 — Performance polish (timezone warning, LRU for seasonal cache, prefetch, service worker)",
-    "future": "Phase 7.0 — Multi-tradition architecture (Byzantine, Coptic, CoE, Ethiopian); Phase 8.0 — Mobile app"
+    "future": "Phase 7.4 — Ethiopian liturgical calendar integration (Ge'ez date display, Ethiopian fasting seasons); Phase 7.5 — Coptic Agpeya as standalone tradition entry; Phase 8.0 — Mobile app"
   }
 }

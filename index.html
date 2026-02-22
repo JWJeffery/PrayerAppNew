@@ -145,6 +145,24 @@
         </div>
     </div><!-- /settings-panel -->
 
+    <!-- Ethiopian Sa'atat Liturgical Console -->
+    <div id="ethiopian-settings" style="display: none;">
+        <h3 style="color:var(--gold); font-family:'Cinzel',serif; font-size:1.15em; letter-spacing:0.08em;">Sa'atat Options</h3>
+        <div class="setting-group">
+            <strong>Edition:</strong>
+            <select id="eth-length-select" onchange="renderOffice()" style="margin-top:6px; width:100%; padding:8px; background:#1e1a14; color:#c8bfa8; border:1px solid rgba(201,168,76,0.35); border-radius:2px; font-family:'IM Fell English',serif;">
+                <option value="abbreviated">Abbreviated (Horologium)</option>
+                <option value="full">Full (Metsihafe Sa'atat)</option>
+            </select>
+        </div>
+        <div class="setting-group" style="margin-top:10px;">
+            <label>
+                <input type="checkbox" id="eth-include-marian" onchange="renderOffice()">
+                Include Weddase Maryam
+            </label>
+        </div>
+    </div>
+
     <!-- Main content area -->
     <div id="main-content">
         <button onclick="backToSplash()" style="position:fixed; top:12px; right:16px; background:transparent; color:var(--gold); border:1px solid rgba(201,168,76,0.4); padding:4px 14px; font-family:'Cinzel',serif; font-size:0.7em; letter-spacing:0.12em; text-transform:uppercase; border-radius:2px; cursor:pointer; opacity:0.6; z-index:200; transition:opacity 0.2s;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.6'">Back to Modes</button>

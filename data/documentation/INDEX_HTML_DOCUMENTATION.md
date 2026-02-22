@@ -5,19 +5,20 @@
 This is the single-page application entry point for **The Universal Office**. It serves as the UI layer only — all calendar logic, date calculation, and scripture fetching have been extracted into separate modules. The file handles DOM rendering, user settings, and office output assembly.
 
 **Production Status:** ✅ OPERATIONAL  
-**Last Updated:** February 2026  
-**Current Line Count:** ~1,151 lines  
-**Dependencies:** `js/calendar-engine.js`, `js/scripture-resolver.js`, `data/components.json`, `data/rubrics.json`  
+**Last Updated:** February 22, 2026  
+**Current Line Count:** ~1,175 lines  
+**Dependencies:** `js/calendar-engine.js`, `js/scripture-resolver.js`, `js/office-ui.js`, `js/prayers.js`, `js/tooltip.js`  
 **Architecture Role:** UI layer only — no business logic
 
 ---
 
 ## Application Modes
 
-| Mode | Description |
-|---|---|
-| **Daily Office** | Full liturgical office (Morning Prayer, Evening Prayer, Noonday, Compline) |
-| **Individual Prayers** | Single component lookup and display |
+| Mode | Selector Call | Description |
+|---|---|---|
+| **Daily Office** | `selectMode('daily')` | Full BCP liturgical office (Morning Prayer, Evening Prayer, Noonday, Compline) with sidebar |
+| **Individual Prayers** | `selectMode('prayers')` | Single component lookup and display |
+| **Ethiopian Sa'atat** | `selectMode('ethiopian-saatat')` | Ethiopian Orthodox Tewahedo canonical hours — full-screen, no sidebar, time-resolved |
 
 Mode stored in `selectedMode` variable. Controls which HTML section is visible.
 
@@ -29,9 +30,19 @@ Mode stored in `selectedMode` variable. Controls which HTML section is visible.
 
 ```
 #mode-selection              → Splash screen with mode buttons
-#daily-office-section        → Full office layout (sidebar + content)
+#daily-office-section        → Full office layout (sidebar + content) — used by both Daily Office AND Ethiopian Sa'atat
 #individual-prayers-section  → Single prayer lookup UI
 ```
+
+### Mode Selection Buttons
+
+Three buttons on the splash screen, in order:
+
+| Button Label | Class | Action |
+|---|---|---|
+| The Daily Office | `mode-btn` | `selectMode('daily')` |
+| The Book of Needs | `mode-btn` | `selectMode('prayers')` |
+| The Ethiopian Sa'atat (Book of Hours) | `ethiopian-btn` | `selectMode('ethiopian-saatat')` |
 
 ### Daily Office Layout
 
@@ -67,9 +78,11 @@ Mode stored in `selectedMode` variable. Controls which HTML section is visible.
         └── Prayer of St. Chrysostom
 
 #main-content (scrollable, margin-left: 300px; shifts to 24px when sidebar hidden)
-    ├── #date-header (liturgical title bar)
+    ├── #date-header (liturgical title bar — hidden in Ethiopian Sa'atat mode)
     └── #office-display (rendered office HTML)
 ```
+
+> **Ethiopian Sa'atat note:** When `selectMode('ethiopian-saatat')` is called, `#daily-office-section` is reused but `#sidebar-toggle` and `#settings-panel` are hidden. The main `<h1>` header is hidden. The Commemorations footer (`#date-header`, `#saint-display`) is suppressed — all saint rendering is handled inline by the `eth-saints-commemoration` sequence slot.
 
 ---
 
@@ -102,7 +115,9 @@ Toggled by `toggle-bcp-only` checkbox. When enabled:
 
 When disabled, sections un-collapse but toggles remain unchecked (user re-enables manually).
 
-> **Adding new ecumenical elements:** New toggle IDs must be added to the force-uncheck array in `toggleBcpOnly()`. New section IDs must be added to both the sections array in `toggleBcpOnly()` and the CSS `.bcp-only-hidden` selector block (currently lines 16–24 of the `<style>` block).
+> **Adding new ecumenical elements:** New toggle IDs must be added to the force-uncheck array in `toggleBcpOnly()`. New section IDs must be added to both the sections array in `toggleBcpOnly()` and the CSS `.bcp-only-hidden` selector block.
+
+> **BCP Only Mode and Ethiopian Sa'atat:** The BCP Only mode has no effect on the Sa'atat — the Sa'atat has no sidebar and all BCP-specific blocks are already suppressed unconditionally via `isEthiopianSaatat`.
 
 ---
 
@@ -125,26 +140,26 @@ When disabled, sections un-collapse but toggles remain unchecked (user re-enable
 
 | Value | Hex | Season |
 |---|---|---|
-| `purple` | `#8e44ad` | Advent, Lent |
-| `rose` | `#e74c3c` | Gaudete, Laetare Sundays |
-| `white` | `#f0f0f0` | Christmas, Epiphany, feasts |
-| `red` | `#c0392b` | Pentecost, martyrs, Holy Week |
-| `green` | `#27ae60` | Ordinary Time (default) |
+| `purple` | `#6b3070` | Advent, Lent |
+| `rose` | `#a04060` | Gaudete, Laetare Sundays |
+| `white` | `#c9a84c` | Christmas, Epiphany, feasts |
+| `red` | `#9b2335` | Pentecost, martyrs, Holy Week |
+| `green` | `#4a7c59` | Ordinary Time (default) |
+
+### Ethiopian Button Style
+
+`.ethiopian-btn` — distinct from `.mode-btn`:
+
+- Transparent background, `#c9a84c` border and text color
+- `font-family: 'Cinzel', serif`, `letter-spacing: 0.14em`, `text-transform: uppercase`
+- Hover: `rgba(201, 168, 76, 0.12)` background wash, border and text shift to `#e8d090`
 
 ### Office Content Typography
 
 - `.rubric-text` — Section headings in small-caps gold. Border-bottom: `0.5px dotted var(--gold)`
 - `.component-text` — Body text of liturgical content (used on `<span>` elements)
 - `.component-text i` — Italic for antiphons and Marian texts
-- Examen renders in a `<div class="component-text">` (not span) to support paragraph breaks
-
-### Gold Lines
-
-Horizontal dividers between readings are injected inline:
-```javascript
-officeHtml += '<br><hr style="border: 0; border-top: 0.5px solid var(--gold); margin: 10px 0;">';
-```
-Intentionally hairline (`0.5px`). The scrollbar thumb is `rgba(212, 175, 55, 0.3)` at 4px wide.
+- Examen and block prayers render in a `<div class="component-text">` (not span) to support paragraph breaks
 
 ---
 
@@ -154,19 +169,24 @@ Intentionally hairline (`0.5px`). The scrollbar thumb is `rgba(212, 175, 55, 0.3
 |---|---|---|
 | `appData` | Object/null | Loaded `components` + `rubrics` after `init()` |
 | `currentDate` | Date | Currently displayed date |
-| `selectedMode` | String/null | `'daily'` or `'individual'` |
+| `selectedMode` | String/null | `'daily'`, `'prayers'`, or `'ethiopian-saatat'` |
 | `monthNames` | Array | Month name strings for saints file loading |
 | `psalterCycle` | Array | 31-entry array for 30-day BCP Psalter |
+| `window._forcedOfficeId` | String/undefined | Set to `'ethiopian-saatat'` by `selectMode()` when no radio input exists for that tradition; read by `renderOffice()` |
 
 ---
 
 ## Function Reference
 
 ### `init()` — async
-Bootstraps the app. Fetches `components.json` and `rubrics.json` in parallel, calls `CalendarEngine.init()`, calls `loadSettings()`, pre-warms the lectionary cache.
+Bootstraps the app. Fetches `data/rubrics.json`, then concatenates Ethiopian rubrics from `components/traditions/ethiopian/rubrics.json`, then loads all five component shards, calls `CalendarEngine.init()`, and `renderOffice()`.
 
 ### `selectMode(mode)` — sync
-Shows the appropriate section for `'daily'` or `'individual'` mode.
+Accepts `'daily'`, `'prayers'`, or `'ethiopian-saatat'`.
+
+- `'daily'`: shows sidebar, loads settings, calls `init()` or `renderOffice()`
+- `'prayers'`: shows individual prayers section, hides sidebar
+- `'ethiopian-saatat'`: reuses `#daily-office-section`, hides sidebar and settings, applies `.ethiopian-theme` to body, hides main `<h1>`, sets `window._forcedOfficeId = 'ethiopian-saatat'`, calls `init()` or `renderOffice()`
 
 ### `toggleSidebar()` — sync
 Toggles `sidebar-hidden` class on panel, strip, and main content.
@@ -175,187 +195,17 @@ Toggles `sidebar-hidden` class on panel, strip, and main content.
 Collapses/expands ecumenical sidebar sections and force-unchecks ecumenical toggles when enabling BCP Only. Calls `renderOffice()`.
 
 ### `renderOffice()` — async
-**The core rendering function.** Called on every date or settings change.
-
-**Execution flow:**
-1. Guard: return if `appData` not loaded
-2. Read all settings from DOM
-3. Get season via `CalendarEngine.getSeasonAndFile(currentDate)`
-4. Fetch daily data via `CalendarEngine.fetchLectionaryData(currentDate)`
-5. Update calendar title and seasonal accent color
-6. Determine reading distribution by office (Morning/Evening/Noonday/Compline)
-7. Get liturgical year via `CalendarEngine.getLiturgicalYear(currentDate)`
-8. Select year-track readings (`reading_ot_mp_year1` vs `reading_ot_mp_year2`)
-9. Render **pre-office** ecumenical devotions (Agpeya, Prayer of Hours, Marian if `before`)
-10. Walk `activeRubric.sequence` array — for each item:
-    - Capture `const originalItem = item` before slot resolution
-    - Resolve slot IDs and `[rite]` placeholders into `compId`
-    - Inject ecumenical elements at their trigger positions (see table below)
-    - Fetch scripture via `getScriptureText()` for VARIABLE_ reading items
-    - Look up component in `appData.components` by `compId`
-11. Render **post-office** Marian element if position = `after`
-12. Set `#office-display.innerHTML`
-13. Load saints data for current month if not cached
-
-**Reading priority:**
-```javascript
-dailyData[`reading_ot_mp_${litYear}`]  // year-specific first
-dailyData['reading_ot']                 // fallback
-```
-
-### `updateSeasonalTheme(color)` — sync
-Updates `--accent` CSS variable from `dailyData.liturgicalColor`.
-
-### `changeDate(days)` / `resetDate()` / `setCustomDate(dateStr)` — sync
-Date navigation. All update `currentDate` and call `renderOffice()`.
-
-### `updateUI()` — sync
-Applies/removes `dark-mode` class from `body`.
-
-### `saveSettings()` — sync
-Persists all settings to `localStorage` under key `universalOfficeSettings`.
-
-### `loadSettings()` — sync
-Restores settings from localStorage during `init()`. Silent fail if unavailable.
-
-### `showSinglePrayer()` / `backToPrayerDropdown()` / `backToSplash()` — sync
-Navigation helpers for Individual Prayers mode and splash screen.
-
----
-
-## Persisted Settings (`saveSettings` / `loadSettings`)
-
-| Key | Default | Notes |
-|---|---|---|
-| `darkMode` | `false` | |
-| `bcpOnly` | `false` | BCP Only Mode |
-| `officeTime` | `morning-office` | |
-| `rite` | `rite2` | `rite1` or `rite2` |
-| `minister` | `lay` | `lay` or `priest` |
-| `marianElement` | `none` | `none` / `antiphon` / `theotokion` / `both` |
-| `marianPos` | `before` | `before` or `after` |
-| `gloriaPatri` | `false` | |
-| `angelus` | `false` | |
-| `trisagion` | `false` | |
-| `eastSyriacHours` | `false` | Prayer of the Hours (Hudra) |
-| `agpeyaOpening` | `false` | |
-| `creedType` | `bcp-creed-apostles` | component ID |
-| `gospelPlacement` | `evening` | `morning` / `evening` / `both` |
-| `litany` | `false` | |
-| `suffrages` | `false` | |
-| `psalter30Day` | `false` | |
-| `generalThanksgiving` | `false` | |
-| `chrysostom` | `false` | |
-| `prayerBeforeReading` | `false` | Orthodox epiklesis before OT Lesson |
-| `examen` | `false` | Ignatian Examen, Compline only |
-| `kyriePantocrator` | `false` | Byzantine Kyrie after Collect, MP/EP only |
-
----
-
-## Rubric Sequence Resolution
-
-### Slot Placeholders
-
-| Slot ID | Resolves To |
-|---|---|
-| `bcp-absolution-slot` | `bcp-absolution-{r1|r2}-{priest|lay}` |
-| `bcp-creed-slot` | `bcp-creed-apostles` or `bcp-creed-nicene` |
-| `bcp-suffrages-slot` | `bcp-suffrages-rite1` or `bcp-suffrages-rite2` (skipped if unchecked) |
-| `bcp-great-litany-slot` | `bcp-litany` (skipped if unchecked) |
-
-### Variable Placeholders
-
-| Placeholder | Resolved Content |
-|---|---|
-| `VARIABLE_OPENING` | Seasonal opening sentence |
-| `VARIABLE_PSALM` | Psalm text (lectionary or 30-day psalter) |
-| `VARIABLE_READING_OT` | Old Testament reading |
-| `VARIABLE_READING_EPISTLE` | Epistle reading |
-| `VARIABLE_READING_GOSPEL` | Gospel reading |
-| `VARIABLE_COLLECT` | Daily collect (`collectComp`, not `comp`) |
-| `VARIABLE_WEEKDAY_COLLECT` | `bcp-collect-grace` (MP) or `bcp-collect-peace` (EP) |
-| `VARIABLE_ANTIPHON` | Seasonal antiphon |
-| `VARIABLE_MISSION_PRAYER` | `bcp-mission-prayer-1` |
-
-> **`VARIABLE_COLLECT` variable naming:** This handler uses `collectComp` instead of `comp` to avoid redeclaration conflict with the generic `let comp` at the bottom of the loop. All other handlers use `const comp` within their own block scope (each ends with `continue`).
-
----
-
-## Ecumenical Devotions — Render Order
-
-All ecumenical elements are suppressed in BCP Only Mode. Each fires only if its toggle is checked.
-
-### Pre-Office (before rubric loop)
-
-| # | Element | Component ID | Toggle |
-|---|---|---|---|
-| 1 | Agpeya Opening | `agpeya-opening` | `toggle-agpeya-opening` |
-| 2 | Prayer of the Hours | `east-syriac-prayer-of-hours` | `toggle-east-syriac-hours` |
-| 3 | Marian Antiphon and/or Theotokion | `bcp-marian-antiphon-{season}` / `coptic-theotokion-{season}` | `marian-element` ≠ none, position = `before` |
-
-### During the Rubric Loop
-
-| Trigger | Element | Component ID | Toggle / Gate |
-|---|---|---|---|
-| After `bcp-absolution-slot` renders | Trisagion | `trisagion-byzantine` | `toggle-trisagion` |
-| Before `bcp-invitatory-full` renders | Angelus | `angelus` | `toggle-angelus`, not Compline |
-| Inside `VARIABLE_PSALM`, after psalm renders | Gloria Patri | `bcp-gloria-patri` | `toggle-gloria-patri` |
-| Inside `VARIABLE_READING_OT`, before lesson text | Prayer Before Reading | `orthodox-prayer-before-reading` | `toggle-prayer-before-reading` |
-
-### Post-Collect (inside VARIABLE_COLLECT handler)
-
-Rendered after collect text and `<hr>` divider, before `continue`:
-
-| Element | Component ID | Gate |
-|---|---|---|
-| The Examen | `ignatian-examen` | `toggle-examen` AND `isCompline` |
-| Kyrie Pantocrator | `eastern-kyrie-pantocrator` | `toggle-kyrie-pantocrator` AND `!isCompline && !isNoonday` |
-
-### Post-Office (after rubric loop)
-
-| Element | Gate |
-|---|---|
-| Marian Antiphon / Theotokion | `marian-element` ≠ none AND position = `after` |
-
-### Examen Rendering Note
-
-The `ignatian-examen` text uses `\n\n` paragraph breaks. These are converted before injection:
-```javascript
-const examenHtml = examenComp.text.replace(/\n\n/g, '<br><br>').replace(/\n/g, '<br>');
-officeHtml += `<span class="rubric-text">The Examen</span><div class="component-text" style="white-space:normal;">${examenHtml}</div>`;
-```
-
----
-
-## Psalm Handling
-
-**Lectionary Psalms (default):** From `dailyData.psalms_mp` / `dailyData.psalms_ep`, fetched via `getScriptureText()`.
-
-**30-Day BCP Psalter:** Enabled by `toggle-30day-psalter`. Uses `psalterCycle` array (31 entries). Formula: `(dayOfMonth % 30) || 30`. Each entry has `morning` and `evening` comma-separated psalm lists.
-
----
-
-## Marian Element
-
-| Value | Renders |
-|---|---|
-| `none` | Nothing |
-| `antiphon` | BCP seasonal antiphon (`bcp-marian-antiphon-{season}`) |
-| `theotokion` | Coptic Theotokion (`coptic-theotokion-{season}`) |
-| `both` | Both |
-
-Position: `before` or `after` the office body. Season must exactly match: `advent`, `christmas`, `epiphany`, `lent`, `easter`, `ordinary`.
+**The core rendering function.** Called on every date or settings change. See `OFFICE_UI_DOCUMENTATION.md` for full execution flow.
 
 ---
 
 ## Saints Integration
 
-```javascript
-const month = monthNames[monthIndex];
-const file = `saints-${month.toLowerCase()}.json`;
-```
+Saints data loaded from `data/saints/saints-{month}.json`. Cached in `appData.saints` / `appData.saintsMonth`.
 
-Cached in `appData.saints` / `appData.saintsMonth`. Displays commemorations for the current date below the office.
+**BCP offices:** Displays all commemorations for the current date below the office in `#saint-display`.
+
+**Ethiopian Sa'atat:** `#date-header` and `#saint-display` are both emptied and hidden. Saints filtering is handled inline within the `eth-saints-commemoration` sequence slot — only saints with `tradition` containing `'ethiopian'` or `'oriental'` are shown; if none, a generic intercession for the Oriental Orthodox Communion is rendered.
 
 ---
 
@@ -366,40 +216,9 @@ Cached in `appData.saints` / `appData.saintsMonth`. Displays commemorations for 
 - `CalendarEngine.fetchLectionaryData(date)`
 - `CalendarEngine.getSeasonAndFile(date)`
 - `CalendarEngine.getLiturgicalYear(date)`
-- `CalendarEngine.changeDate(days)`
-- `CalendarEngine.resetDate()`
-- `CalendarEngine.getCurrentDate()`
 
 **Scripture Resolver** (`js/scripture-resolver.js`):
 - `getScriptureText(citation)` — global function
-
----
-
-## Components Referenced in Render Logic
-
-`data/components.json` holds 227 components. Key IDs referenced directly:
-
-| Component ID | Purpose |
-|---|---|
-| `agpeya-opening` | Pre-office Agpeya block |
-| `east-syriac-prayer-of-hours` | Pre-office Prayer of the Hours |
-| `bcp-marian-antiphon-{season}` | Marian Antiphon (6 variants) |
-| `coptic-theotokion-{season}` | Coptic Theotokion (season variants) |
-| `angelus` | Angelus (Catholic) |
-| `trisagion-byzantine` | Trisagion (Byzantine) |
-| `orthodox-prayer-before-reading` | Prayer Before Reading |
-| `ignatian-examen` | The Examen |
-| `eastern-kyrie-pantocrator` | Kyrie Pantocrator |
-| `bcp-gloria-patri` | Gloria Patri |
-| `bcp-phos-hilaron` | Phos Hilaron (EP) |
-| `bcp-lords-prayer` | Lord's Prayer |
-| `bcp-kyrie` | Kyrie (Western) |
-| `bcp-salutation` | Salutation |
-| `bcp-nunc-dimittis` | Nunc Dimittis (Compline) |
-| `bcp-general-thanksgiving` | General Thanksgiving |
-| `bcp-chrysostom` | Prayer of St. Chrysostom |
-| `bcp-litany` | The Great Litany |
-| `bcp-closing` | Closing blessing |
 
 ---
 
@@ -408,9 +227,8 @@ Cached in `appData.saints` / `appData.saintsMonth`. Displays commemorations for 
 - **Gospel placement fallback:** Defaults to `'evening'`. Gospel never appears at Morning Prayer unless user selects it.
 - **Antiphon schema support:** Checks both `dailyData.antiphon` (v1) and `antiphon_mp`/`antiphon_ep` (v2). Both paths active.
 - **Marian season matching:** Null/undefined season causes silent failure.
-- **Examen toggle visibility:** Toggle is visible at all offices but only renders at Compline. No UI feedback explains the gate.
-- **Kyrie Pantocrator toggle visibility:** Toggle visible at all offices but only renders at MP/EP. Noonday and Compline excluded.
-- **Individual Prayers mode:** Functional but less developed. Lacks seasonal theming.
+- **Ethiopian Sa'atat date navigation:** The Sa'atat has no date controls — it always reflects the current system date and clock. Adding date navigation would require exposing date controls in the Sa'atat layout.
+- **Ethiopian Sa'atat and BCP Only Mode:** The BCP Only toggle has no effect on the Sa'atat view and is not visible there — this is correct behavior.
 
 ---
 
@@ -423,13 +241,13 @@ Before deploying changes to `index.html`:
 - [ ] `saveSettings()` and `loadSettings()` keys are in sync
 - [ ] New ecumenical toggles added to `toggleBcpOnly()` force-uncheck array
 - [ ] New ecumenical section IDs added to `toggleBcpOnly()` sections array
-- [ ] New ecumenical section IDs added to CSS `.bcp-only-hidden` multi-selector (lines 16–24 of `<style>`)
+- [ ] New ecumenical section IDs added to CSS `.bcp-only-hidden` multi-selector
 - [ ] Dark mode toggle applies/removes `dark-mode` class from `body`
 - [ ] Date picker syncs with `currentDate` after navigation
 - [ ] No duplicates of CalendarEngine logic in index.html
 - [ ] `monthNames` constant present and correct
-- [ ] VARIABLE_COLLECT handler uses `collectComp` (not `comp`)
-- [ ] All other `const comp` declarations are inside block-scoped `if (...) { ... continue; }` blocks
+- [ ] `window._forcedOfficeId` cleared in `backToSplash()` if Ethiopian Sa'atat navigation is added
+- [ ] `.ethiopian-theme` class removed from `body` in `backToSplash()`
 
 ---
 
@@ -438,10 +256,13 @@ Before deploying changes to `index.html`:
 | Phase | Status | Description |
 |---|---|---|
 | 6.4 | ✅ Complete | Ecumenical devotions with positional placement |
-| 6.5 | ⏳ Pending | Performance and polish |
-| 7.0 | 📋 Planned | Full Eastern canonical hours |
-
-**Phase 7.0 traditions:** Byzantine Orthodox, Coptic Agpeya, Church of the East (Hudra), Ethiopian/Eritrean (Ge'ez). Architecture: separate rubric files per tradition, same component lookup system, expanded mode selector on splash screen.
+| 6.5 | ✅ Complete | Modularization — office-ui.js extracted from index.html |
+| 7.1 | ✅ Complete | Ethiopian Sa'atat entry point, Tuat hour, mode isolation |
+| 7.2 | ✅ Complete | Meserkh and Liku hours; UI polish |
+| 7.3 | ✅ Complete | Full 24-hour cycle (Serkh, Nimeat, Lelit); saints preload fix; Commemorations header guard |
+| 7.4 | 📋 Planned | Ethiopian liturgical calendar (Ge'ez date display, fasting seasons) |
+| 7.5 | 📋 Planned | Coptic Agpeya as standalone tradition entry point |
+| 8.0 | 📋 Planned | Mobile app |
 
 ---
 
@@ -449,8 +270,9 @@ Before deploying changes to `index.html`:
 
 **Application:** The Universal Office  
 **Liturgical Source:** 1979 Book of Common Prayer (The Episcopal Church), public domain  
+**Ethiopian Liturgical Source:** Ethiopian Orthodox Tewahedo Sa'atat (Book of Hours)  
 **UI Framework:** Vanilla JavaScript, no external dependencies  
 
 ---
 
-*For calendar and date logic see `CALENDAR_ENGINE_DOCUMENTATION.md`. For scripture fetching see `SCRIPTURE_RESOLVER_DOCUMENTATION.md`.*
+*For office rendering logic see `OFFICE_UI_DOCUMENTATION.md`. For calendar and date logic see `CALENDAR_ENGINE_DOCUMENTATION.md`. For scripture fetching see `SCRIPTURE_RESOLVER_DOCUMENTATION.md`. For Ethiopian Sa'atat architecture see `ETHIOPIAN_SAATAT_DOCUMENTATION.md`.*
