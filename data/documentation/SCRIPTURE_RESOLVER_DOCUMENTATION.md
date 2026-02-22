@@ -5,7 +5,7 @@
 This module handles all Bible text fetching and extraction for The Universal Office. It is a collection of global functions (not a class) responsible for parsing BCP-style scripture citations, loading the correct JSON Bible book files, and extracting the requested verse ranges.
 
 **Production Status:** ✅ OPERATIONAL  
-**Last Updated:** February 17, 2026  
+**Last Updated:** February 22, 2026  
 **Current Line Count:** 124 lines  
 **Architecture Role:** Scripture fetching and text extraction module  
 **Global Exposure:** `getScriptureText()` (primary entry point)
@@ -89,7 +89,7 @@ bookName = book.toLowerCase().replace(/\s/g, '')
 ## Function Reference
 
 ### `getScriptureText(citation)` — async
-**The primary public entry point.** Called from `index.html` for every scripture reading.
+**The primary public entry point.** Called from `office-ui.js` `renderOffice()` for every psalm and scripture reading.
 
 **Parameters:** `citation` — BCP-style citation string (e.g., `"Isaiah 40:1-11"`)  
 **Returns:** Plain text string of the requested scripture, verses stripped of numbers
@@ -320,3 +320,8 @@ Load 21 different Bible books in sequence. Verify the first book loaded is no lo
 **END OF DOCUMENTATION**
 
 *For calendar logic, see CALENDAR_ENGINE_DOCUMENTATION.md. For UI rendering, see INDEX_HTML_DOCUMENTATION.md.*
+
+
+
+================================================
+FILE: data/documentation/STATIC_OFFICES_DOCUMENTATION.md

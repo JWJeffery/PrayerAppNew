@@ -1,14 +1,31 @@
-# COMPONENTS.JSON - PRODUCTION DOCUMENTATION
+# COMPONENTS — PRODUCTION DOCUMENTATION
 
 ## Overview
 
-This file is the **liturgical text library** for The Universal Office. It stores every static and semi-static text component used in the Daily Office — collects, canticles, antiphons, versicles, creeds, prayers, absolutions, and opening sentences. The rendering engine (`index.html`) looks up components by their `id` field to assemble the office output.
+Liturgical component text data for **The Universal Office** is stored across five shard files in `components/`. These files collectively form the liturgical text library — every static and semi-static text used in the Daily Office: collects, canticles, antiphons, versicles, creeds, prayers, absolutions, and opening sentences.
 
-**Production Status:** ✅ FULLY POPULATED  
-**Last Updated:** February 17, 2026  
-**Total Components:** 224  
+**Production Status:** ✅ OPERATIONAL  
+**Last Updated:** February 22, 2026  
+**Total Components:** 195 (across all shards)  
 **Source:** 1979 Book of Common Prayer (The Episcopal Church), public domain  
-**Loaded By:** `init()` in index.html via `fetch('data/components.json')`
+**Loaded By:** `init()` in `office-ui.js` via `fetch('components/{shard}.json')`
+
+> ⚠️ `data/components.json` is a **stale pre-modularization monolith**. It is not loaded by the application. All live data is in `components/*.json`.
+
+---
+
+## Shard Architecture
+
+Components are split into five files by tradition. `init()` fetches each independently, parses, and concatenates into `appData.components`:
+
+| File | Components | Types Covered |
+|---|---|---|
+| `components/common.json` | 5 | Lord's Prayer, Gloria Patri, Apostles' Creed, Nicene Creed, Kyrie |
+| `components/anglican.json` | 179 | All BCP 1979 components: opening sentences, invitatories, antiphons, canticles, penitential rite, absolutions, suffrages, litany, collects (seasonal + propers + saints), mission prayers, general thanksgiving, Chrysostom, closing |
+| `components/coptic.json` | 2 | Agpeya Opening, Theotokion |
+| `components/ecumenical.json` | 9 | Angelus, Trisagion, Examen, Jesus Prayer, Prayer Before Reading, East Syriac Hours, Kyrie Pantocrator, Alma Redemptoris Mater, Ave Regina Caelorum |
+| `components/ethiopian.json` | 0 | Reserved — file exists on disk but is currently empty |
+| **Total** | **195** | |
 
 ---
 
@@ -19,54 +36,81 @@ This file is the **liturgical text library** for The Universal Office. It stores
 Many components exist in two liturgical registers: **Rite I** (traditional, Elizabethan English) and **Rite II** (contemporary English). These are handled in two ways:
 
 **Pattern A — Separate IDs:**  
-Two distinct components share a conceptual function but have separate IDs:
+Two distinct components share a conceptual function but carry separate IDs. The rubric sequence uses a `[rite]` placeholder that `renderOffice()` substitutes at runtime:
+
 ```json
 { "id": "bcp-confession-rite1", ... }
 { "id": "bcp-confession-rite2", ... }
 ```
-The rubric uses a `[rite]` placeholder that `renderOffice()` substitutes at runtime:
+
 ```javascript
 compId = item.replace('[rite]', rite);
 // "bcp-confession-[rite]" → "bcp-confession-rite2"
 ```
 
-**Pattern B — Single ID with Object Text:**  
-One component holds both rite variants under a single ID, with `text` as an object:
+**Pattern B — Single ID with object text:**  
+One component holds both rite variants under a single ID, with `text` as an object keyed by rite:
+
 ```json
 {
-  "id": "collect-advent-1",
+  "id": "comm-creed-apostles",
+  "title": "The Apostles' Creed",
   "text": {
-    "rite1": "Almighty God, give us grace...(traditional)",
-    "rite2": "Almighty God, give us grace...(contemporary)"
-  }
+    "rite1": "I believe in God, the Father Almighty...",
+    "rite2": "I believe in God, the Father almighty..."
+  },
+  "type": "Creed"
 }
 ```
-`renderOffice()` resolves this as:
+
+`renderOffice()` resolves this via the `resolveText(comp, rite)` helper:
+
 ```javascript
-comp.text[rite] || comp.text['rite2'] || comp.text['rite1'] || comp.text
+function resolveText(comp, rite) {
+    const t = comp.text;
+    if (typeof t === 'object' && t !== null) {
+        return t[rite] || t['rite2'] || t['rite1'] || null;
+    }
+    return t || null;
+}
 ```
 
-**Parser Rule:** Always check whether `text` is a string or an object before rendering. Never assume it is a plain string.
+**Parser Rule:** Always use `resolveText()` — never assume `comp.text` is a plain string. Object text is common across collects, creeds, canticles, and the penitential rite.
 
 ### 2. Collect Lookup from Daily Data
 
-Collects are not embedded in the seasonal JSON files. Instead, the seasonal entry contains a `collect` field with an ID string (e.g., `"collect-advent-1"`). The renderer looks this up in `components.json` at runtime:
+Collects are not embedded in the seasonal JSON files. The seasonal entry contains a `collect` field with an ID string (e.g., `"collect-lent-1"`). The renderer prefixes `bcp-` if not already present, then looks up in `appData.components`:
 
 ```javascript
-const collectComp = appData.components.find(c => c.id === dailyData.collect);
+let rawId = dailyData.collect || 'collect-default-ferial';
+let cId = rawId.startsWith('bcp-') ? rawId : 'bcp-' + rawId;
+const comp = appData.components.find(c => c.id === cId);
 ```
 
-If the collect ID is not found, nothing is rendered and a console warning fires. All 224 components include every collect ID referenced by the seasonal JSON files through 2026.
+A manual ID map corrects known lectionary naming discrepancies before lookup:
+
+| Lectionary `collect` Value | Resolved Component ID |
+|---|---|
+| `collect-transfiguration` | `bcp-collect-the-transfiguration-of-our-lord` |
+
+If the resolved ID is not found, `console.warn` fires and "No collect appointed" is rendered.
 
 ### 3. Slot Resolution
 
-Some rubric sequence entries are **slots** — abstract placeholders resolved at render time rather than direct component IDs. The renderer in `index.html` handles these before the component lookup:
+Rubric sequence entries that are **slots** — abstract placeholders resolved at render time — each map to specific component IDs:
 
-| Slot | Resolution |
+| Slot | Resolved Component ID |
 |---|---|
+| `bcp-confession-[rite]` | `bcp-confession-rite1` or `bcp-confession-rite2` |
 | `bcp-absolution-slot` | `bcp-absolution-r1-priest`, `bcp-absolution-r2-lay`, etc. |
-| `bcp-creed-slot` | `bcp-creed-apostles` or `bcp-creed-nicene` (user setting) |
-| `bcp-suffrages-slot` | `bcp-suffrages-rite1` or `bcp-suffrages-rite2` (skipped if toggle off) |
+| `comm-creed-slot` | `comm-creed-apostles` or `comm-creed-nicene` |
+| `bcp-suffrages-slot` | `bcp-suffrages-rite1` or `bcp-suffrages-rite2` |
+
+> The creed slot in the rubric is `comm-creed-slot`. The resolved component IDs are `comm-creed-apostles` and `comm-creed-nicene` — both in `components/common.json`. The stale IDs `bcp-creed-apostles` / `bcp-creed-nicene` exist only in the obsolete `data/components.json` monolith.
+
+### 4. Display Label Override
+
+The `title` field in many components contains parenthetical metadata useful for data management but inappropriate for liturgical display (e.g., `"Prayer for Forgiveness (Rite II, Lay)"`). `renderOffice()` overrides these in a `DISPLAY_LABELS` map before rendering — the JSON data is never modified. See `OFFICE_UI_DOCUMENTATION.md` for the full map.
 
 ---
 
@@ -79,7 +123,7 @@ Every component has the following structure:
 {
   "id": "bcp-venite",
   "title": "Venite",
-  "text": "Come, let us sing to the Lord...",
+  "text": "O come, let us sing unto the Lord...",
   "type": "Canticle"
 }
 ```
@@ -87,478 +131,142 @@ Every component has the following structure:
 ### Rite-Aware Component (object text)
 ```json
 {
-  "id": "collect-advent-1",
-  "title": "First Sunday of Advent",
+  "id": "comm-creed-apostles",
+  "title": "The Apostles' Creed",
   "text": {
-    "rite1": "Almighty God, give us grace that we may cast away...",
-    "rite2": "Almighty God, give us grace to cast away..."
+    "rite1": "I believe in God, the Father Almighty...",
+    "rite2": "I believe in God, the Father almighty..."
   },
-  "type": "Collect"
+  "type": "Creed"
 }
 ```
 
-### Untyped Component
-Five components have no `type` field (type resolves to `undefined`). These are tradition-specific devotional additions:
-- `angelus`
-- `jesus-prayer`
-- `assyrian-blessing`
-- `agpeya-opening`
-- `collect-jan24-florence-li-tim-oi`
+### Fields
 
-These are not BCP components and are clearly marked as optional devotional enhancements.
-
----
-
-## Component Inventory by Type
-
-### Summary
-
-| Type | Count |
-|---|---|
-| Collect | 159 |
-| Antiphon | 19 |
-| Opening | 8 |
-| Versicle | 8 |
-| Canticle | 8 |
-| Absolution | 4 |
-| Prayer | 4 |
-| Hymn | 2 |
-| Creed | 2 |
-| Penitential | 2 |
-| Litany | 1 |
-| Doxology | 1 |
-| Closing | 1 |
-| *(untyped)* | 5 |
-| **Total** | **224** |
-
----
-
-## Type Reference
-
-### Antiphon (19)
-
-Invitatory antiphons displayed before the Psalms of the Day. Split into two groups:
-
-**Seasonal Invitatory Antiphons (9)** — Selected by season string from `getSeasonAndFile()`:
-
-| ID | Season | Text (opening) |
+| Field | Required | Notes |
 |---|---|---|
-| `ant-advent` | advent | "Our King and Savior now draws near..." |
-| `ant-christmas` | christmas | "Alleluia, to us a child is born..." |
-| `ant-epiphany` | epiphany | "The Lord has shown forth his glory..." |
-| `ant-lent` | lent | "The Lord is full of compassion and mercy..." |
-| `ant-easter` | easter | "Alleluia. The Lord is risen indeed..." |
-| `ant-ascension` | — | "Alleluia. Christ the Lord has ascended..." |
-| `ant-pentecost` | — | "Alleluia. The Spirit of the Lord renews..." |
-| `ant-trinity` | — | "Father, Son, and Holy Spirit, one God..." |
-| `ant-default` | ordinary | "The earth is the Lord's for he made it..." |
-
-⚠️ **Note:** `ant-ascension`, `ant-pentecost`, and `ant-trinity` appear twice in the inventory (duplicated IDs). This is a data integrity issue. The parser will use the first occurrence found. These should be deduplicated in a future cleanup pass.
-
-**Marian Antiphons (6) + Latin variant (1):**  
-Seasonal Marian antiphons are selected by `bcp-marian-antiphon-${season}`:
-
-| ID | Season |
-|---|---|
-| `bcp-marian-antiphon-advent` | advent |
-| `bcp-marian-antiphon-christmas` | christmas |
-| `bcp-marian-antiphon-epiphany` | epiphany |
-| `bcp-marian-antiphon-lent` | lent |
-| `bcp-marian-antiphon-easter` | easter |
-| `bcp-marian-antiphon-ordinary` | ordinary |
-| `latin-marian-alma` | — (Latin, tradition devotion) |
-
-Marian antiphons use **Pattern B** (rite-aware object text) for Rite I/Rite II variants.
+| `id` | ✅ | Unique string key. Naming convention: `{tradition}-{name}[-{variant}]` |
+| `title` | ✅ | Human-readable name. May include parenthetical metadata — see Display Label Override above |
+| `text` | ✅ | Either a plain string or a `{ rite1, rite2 }` object |
+| `type` | ✅ | Category string (see Component Inventory below) |
 
 ---
 
-### Opening (8)
+## Component Inventory by Shard
 
-Seasonal and general opening sentences displayed at the start of the office. Selected by `bcp-opening-${season}` with fallback to `bcp-opening-general`:
+### `components/common.json` — 5 components
 
-| ID | Used For |
-|---|---|
-| `bcp-opening-advent` | Advent season |
-| `bcp-opening-lent` | Lent season |
-| `bcp-opening-easter` | Easter season |
-| `bcp-opening-general` | Ordinary Time, Epiphany, fallback |
-| `bcp-opening-evening` | Evening Prayer (any season) |
-| `bcp-opening-blessing-compline` | Compline opening blessing |
-| `bcp-opening-1` | Alternative general opening |
-| `bcp-opening-rite1` | Rite I traditional opening ("The Lord is in his holy temple...") |
+Ecumenical liturgical standards shared across all rites and traditions.
 
-Opening components use **Pattern B** (rite-aware object text).
-
----
-
-### Versicle (8)
-
-Short call-and-response exchanges between officiant and people:
-
-| ID | Purpose |
-|---|---|
-| `bcp-invitatory` | "Lord, open our lips / And our mouth shall proclaim your praise." |
-| `bcp-invitatory-full-mp` | Full invitatory text for Morning Prayer (rite-aware) |
-| `bcp-invitatory-full-ep-noon-compline` | Full invitatory for EP / Noonday / Compline (rite-aware) |
-| `bcp-suffrages-rite1` | Rite I suffrages (V. and R. exchanges) |
-| `bcp-suffrages-rite2` | Rite II suffrages |
-| `bcp-kyrie` | "Lord, have mercy / Christ, have mercy / Lord, have mercy" |
-| `bcp-salutation` | "The Lord be with you / And also with you" |
-| `bcp-versicles-before-prayers-compline` | Compline versicles before the collect |
-
----
-
-### Canticle (8)
-
-Major liturgical songs of the office:
-
-| ID | Name | Usage |
+| ID | Title | Type |
 |---|---|---|
-| `bcp-venite` | Venite (Psalm 95) | Morning Prayer Invitatory |
-| `bcp-jubilate` | Jubilate (Psalm 100) | Morning Prayer alternate Invitatory |
-| `bcp-phos-hilaron` | Phos Hilaron | Evening Prayer lamp-lighting hymn |
-| `bcp-te-deum` | Te Deum Laudamus | Morning Prayer canticle |
-| `bcp-benedictus-es` | Benedictus es, Domine | Song of the Three Young Men |
-| `bcp-benedictus` | Benedictus (Song of Zechariah) | Morning Prayer canticle |
-| `bcp-magnificat` | Magnificat (Song of Mary) | Evening Prayer canticle |
-| `bcp-nunc-dimittis` | Nunc Dimittis (Song of Simeon) | Compline / Evening Prayer canticle |
+| `comm-lords-prayer` | The Lord's Prayer | Prayer |
+| `comm-gloria-patri` | Gloria Patri | Doxology |
+| `comm-creed-apostles` | The Apostles' Creed | Creed |
+| `comm-creed-nicene` | The Nicene Creed | Creed |
+| `comm-kyrie` | Kyrie | Versicle |
 
----
+All five have `{ rite1, rite2 }` object text.
 
-### Absolution (4)
+### `components/anglican.json` — 179 components
 
-Absolution pronouncements, varying by rite and minister:
+All BCP 1979 content. Type breakdown:
 
-| ID | Rite | Minister |
+| Type | Count | Examples |
 |---|---|---|
-| `bcp-absolution-r1-priest` | Rite I | Priest |
-| `bcp-absolution-r1-lay` | Rite I | Lay reader |
-| `bcp-absolution-r2-priest` | Rite II | Priest |
-| `bcp-absolution-r2-lay` | Rite II | Lay reader |
+| Collect | 133 | Seasonal, proper, sanctoral collects through 2026 |
+| Antiphon | 12 | Seasonal antiphons (`bcp-ant-{season}`) + Marian antiphons |
+| Opening | 8 | `bcp-opening-{season}` + `bcp-opening-general`, `bcp-opening-evening` |
+| Canticle | 8 | Te Deum, Benedictus, Magnificat, Nunc Dimittis, Venite, Jubilate, Pascha Nostrum, Phos Hilaron |
+| Versicle | 7 | Invitatories, salutation, suffrages, versicles |
+| Absolution | 4 | `bcp-absolution-r{1|2}-{priest|lay}` |
+| Penitential | 2 | `bcp-confession-rite1`, `bcp-confession-rite2` |
+| Prayer | 3 | Mission prayer, General Thanksgiving, Prayer of St. Chrysostom |
+| Litany | 1 | `bcp-litany` |
+| Closing | 1 | `bcp-closing` |
 
-Selected via `bcp-absolution-slot` resolution in `renderOffice()`.
+### `components/coptic.json` — 2 components
 
----
-
-### Penitential (2)
-
-General Confessions of Sin:
-
-| ID | Rite |
-|---|---|
-| `bcp-confession-rite1` | Rite I (traditional) |
-| `bcp-confession-rite2` | Rite II (contemporary) |
-
----
-
-### Creed (2)
-
-| ID | Name |
-|---|---|
-| `bcp-creed-apostles` | Apostles' Creed |
-| `bcp-creed-nicene` | Nicene Creed |
-
-Selected via `bcp-creed-slot` resolution based on user's `creed-type` setting.
-
----
-
-### Prayer (4)
-
-| ID | Name | Usage |
+| ID | Title | Type |
 |---|---|---|
-| `bcp-lords-prayer` | The Lord's Prayer | All offices |
-| `bcp-mission-prayer-1` | A Prayer for Mission | Morning / Evening Prayer |
-| `bcp-general-thanksgiving` | General Thanksgiving | Optional (toggle) |
-| `bcp-chrysostom` | Prayer of St. John Chrysostom | Optional (toggle) |
+| `cop-agpeya-opening` | Agpeya Opening | Hymn |
+| `cop-theotokion` | Theotokion | Hymn |
 
----
+Both are single-rite plain text. A seasonal variant lookup is attempted first (`cop-theotokion-{season}`) with `cop-theotokion` as fallback.
 
-### Doxology (1)
+### `components/ecumenical.json` — 9 components
 
-| ID | Name |
-|---|---|
-| `bcp-gloria-patri` | Gloria Patri ("Glory be to the Father...") |
-
----
-
-### Closing (1)
-
-| ID | Purpose |
-|---|---|
-| `bcp-closing` | Closing versicle / dismissal |
-
----
-
-### Litany (1)
-
-| ID | Name |
-|---|---|
-| `bcp-litany` | The Great Litany (optional, toggle-controlled) |
-
----
-
-### Hymn (2)
-
-Non-BCP tradition hymns, available as optional devotions:
-
-| ID | Tradition | Name |
+| ID | Title | Type |
 |---|---|---|
-| `trisagion-byzantine` | Eastern Orthodox | Trisagion ("Holy God, Holy and Mighty...") |
-| `coptic-theotokion` | Coptic Orthodox | Theotokion (hymn to the Mother of God) |
+| `ecu-angelus` | The Angelus | Antiphon |
+| `ecu-trisagion` | Trisagion | Prayer |
+| `ecu-examen` | The Examen | Prayer |
+| `ecu-jesus-prayer` | Jesus Prayer | Prayer |
+| `ecu-prayer-before-reading` | Prayer Before Reading | Versicle |
+| `ecu-east-syriac-hours` | Prayer of the Hours | Hymn |
+| `ecu-kyrie-pantocrator` | Kyrie Pantocrator | Antiphon |
+| `ecu-alma-redemptoris` | Alma Redemptoris Mater | Antiphon |
+| `ecu-ave-regina` | Ave Regina Caelorum | Antiphon |
+
+### `components/ethiopian.json` — 0 components
+
+File exists on disk and is fetched by `init()`, but is currently empty. The loader checks `text.trim()` before calling `JSON.parse()` and skips gracefully. Populating this file with Ethiopian/Eritrean liturgical content will be picked up automatically on next page load — no code changes required.
 
 ---
 
-## Collect Inventory
+## Key Component IDs Referenced Directly by `office-ui.js`
 
-All 159 collects are organized by liturgical period. Collects use **Pattern B** (rite-aware object text) with `rite1` and `rite2` keys.
-
-### Default
-
-| ID | Usage |
-|---|---|
-| `collect-default-ferial` | Fallback for any unmatched weekday |
-
-### Advent (5)
-
-| ID | Usage |
-|---|---|
-| `collect-advent-1` | First Sunday of Advent |
-| `collect-advent-2` | Second Sunday of Advent |
-| `collect-advent-3` | Third Sunday of Advent (Gaudete) |
-| `collect-advent-4` | Fourth Sunday of Advent |
-| `collect-advent-ferial` | Advent weekdays |
-
-### Christmas (2)
-
-| ID | Usage |
-|---|---|
-| `collect-christmas` | Christmas Day and weekdays in Christmas octave |
-| `collect-christmas-2` | Second Sunday after Christmas |
-
-### Epiphany (10)
-
-| ID | Usage |
-|---|---|
-| `collect-epiphany` | The Epiphany (January 6) |
-| `collect-epiphany-1` | First Week after Epiphany |
-| `collect-baptism-of-our-lord` | Baptism of Our Lord (First Sunday after Epiphany) |
-| `collect-epiphany-2` through `collect-epiphany-6` | Sundays 2–6 after Epiphany |
-| `collect-presentation` | The Presentation (February 2) |
-| `collect-last-epiphany` | Last Sunday after Epiphany (Transfiguration) |
-| `collect-transfiguration` | The Transfiguration (August 6) |
-
-### Lent and Holy Week (12)
-
-| ID | Usage |
-|---|---|
-| `collect-ash-wednesday` | Ash Wednesday |
-| `collect-lent-ferial` | Lenten weekdays |
-| `collect-lent-1` through `collect-lent-5` | Sundays 1–5 in Lent |
-| `collect-palm-sunday` | Palm Sunday |
-| `collect-holy-monday` | Monday in Holy Week |
-| `collect-holy-tuesday` | Tuesday in Holy Week |
-| `collect-holy-wednesday` | Wednesday in Holy Week |
-| `collect-maundy-thursday` | Maundy Thursday |
-| `collect-good-friday` | Good Friday |
-| `collect-holy-saturday` | Holy Saturday |
-
-### Easter (9)
-
-| ID | Usage |
-|---|---|
-| `collect-easter-day` | Easter Day |
-| `collect-easter-monday` | Easter Monday |
-| `collect-easter-tuesday` | Easter Tuesday |
-| `collect-easter-2` through `collect-easter-7` | Sundays 2–7 of Easter |
-| `collect-ascension` | Ascension Day |
-| `collect-pentecost` | Day of Pentecost |
-
-⚠️ **Note:** `collect-easter-day` and `collect-easter-monday` each appear three times in the inventory (triplicated IDs). This is a data integrity issue — the parser uses the first occurrence. These should be deduplicated in a future cleanup pass.
-
-### Ordinary Time — Numbered Sundays (29)
-
-| ID | Usage |
-|---|---|
-| `collect-ordinary-1` through `collect-ordinary-29` | Sundays 1–29 in Ordinary Time |
-| `collect-trinity` | Trinity Sunday |
-| `collect-ordinary-ferial` | Ordinary Time weekdays |
-
-### Ordinary Time — BCP Propers (27)
-
-The BCP 1979 also refers to Ordinary Time Sundays by "Proper" number. Both naming conventions are supported:
-
-| ID | Usage |
-|---|---|
-| `collect-proper-3` through `collect-proper-29` | Proper 3–29 (BCP Sunday naming) |
-
-⚠️ **Note:** `collect-proper-13` through `collect-proper-29` each appear **twice** in the inventory (duplicated IDs). This is a known data integrity issue — the parser uses the first occurrence. These should be deduplicated in a future cleanup pass.
-
-### Fixed Feasts — Sanctoral (37)
-
-Collects for fixed feasts of saints and major observances:
-
-| ID | Feast | Date |
+| Component ID | Purpose | Shard |
 |---|---|---|
-| `collect-holy-name` | The Holy Name of Our Lord | January 1 |
-| `collect-st-paul-conversion` | Conversion of St. Paul | January 25 |
-| `collect-st-peter-confession` | Confession of St. Peter | January 18 |
-| `collect-presentation` | The Presentation | February 2 |
-| `collect-st-joseph` | Saint Joseph | March 19 |
-| `collect-annunciation` | The Annunciation | March 25 |
-| `collect-st-mark` | Saint Mark | April 25 |
-| `collect-philip-james` | SS Philip and James | May 1 |
-| `collect-nativity-john-baptist` | Nativity of John the Baptist | June 24 |
-| `collect-peter-paul` | SS Peter and Paul | June 29 |
-| `collect-mary-magdalene` | Saint Mary Magdalene | July 22 |
-| `collect-james-apostle` | Saint James the Apostle | July 25 |
-| `collect-transfiguration` | The Transfiguration | August 6 |
-| `collect-mary-virgin` | The Virgin Mary | August 15 |
-| `collect-bartholomew` | Saint Bartholomew | August 24 |
-| `collect-holy-cross` | Holy Cross Day | September 14 |
-| `collect-matthew` | Saint Matthew | September 21 |
-| `collect-michael-all-angels` | Michael and All Angels | September 29 |
-| `collect-luke` | Saint Luke | October 18 |
-| `collect-james-jerusalem` | James of Jerusalem | October 23 |
-| `collect-simon-jude` | SS Simon and Jude | October 28 |
-| `collect-all-saints` | All Saints' Day | November 1 |
-| `collect-st-andrew` | Saint Andrew | November 30 |
-| `collect-st-thomas` | Saint Thomas | December 21 |
-| `collect-st-stephen` | Saint Stephen | December 26 |
-| `collect-st-john` | Saint John the Evangelist | December 27 |
-| `collect-holy-innocents` | The Holy Innocents | December 28 |
-
-### Daily Office Collects (3)
-
-| ID | Usage |
-|---|---|
-| `bcp-collect-grace` | Collect for Grace (Morning Prayer closing) |
-| `bcp-collect-peace` | Collect for Peace (Evening Prayer closing) |
-| `bcp-collect-compline-1` | Compline collect |
-
-### January Saints (6)
-
-| ID | Usage |
-|---|---|
-| `collect-jan19-epiphany-week2` | January 19 |
-| `collect-jan20-fabian` | Saint Fabian (January 20) |
-| `collect-jan21-agnes` | Saint Agnes (January 21) |
-| `collect-jan22-vincent` | Saint Vincent (January 22) |
-| `collect-jan23-phillips-brooks` | Phillips Brooks (January 23) |
-| `collect-jan25-conversion-paul` | Conversion of Paul (January 25, duplicate path) |
-| `collect-january-27` | January 27 |
-| `collect-epiphany-6-thursday` | Thursday in Epiphany Week 6 |
-| `collect-jan24-florence-li-tim-oi` | Florence Li Tim-Oi (January 24) — untyped |
+| `bcp-opening-{season}` | Seasonal opening sentence | anglican |
+| `bcp-opening-general` | Opening sentence fallback | anglican |
+| `bcp-invitatory-full-mp` | Morning Prayer invitatory | anglican |
+| `bcp-invitatory-full-ep-noon-compline` | EP/Noonday/Compline invitatory | anglican |
+| `bcp-venite` | Ordinary season invitatory canticle | anglican |
+| `bcp-jubilate` | Lent invitatory canticle | anglican |
+| `bcp-pascha-nostrum` | Easter invitatory canticle | anglican |
+| `bcp-confession-rite1` / `bcp-confession-rite2` | Penitential rite | anglican |
+| `bcp-absolution-r{1\|2}-{priest\|lay}` | Absolution (4 variants) | anglican |
+| `bcp-te-deum` | Canticle 1 — Morning Prayer | anglican |
+| `bcp-benedictus` | Canticle 2 — Morning Prayer | anglican |
+| `bcp-magnificat` | Canticle 1 — Evening Prayer | anglican |
+| `bcp-nunc-dimittis` | Canticle 2 — Evening Prayer / Compline | anglican |
+| `bcp-phos-hilaron` | Evening Prayer hymn | anglican |
+| `bcp-salutation` | Versicle before prayers | anglican |
+| `bcp-suffrages-rite1` / `bcp-suffrages-rite2` | Suffrages | anglican |
+| `bcp-litany` | The Great Litany | anglican |
+| `bcp-collect-grace` | Weekday collect fallback — Morning | anglican |
+| `bcp-collect-peace` | Weekday collect fallback — Evening | anglican |
+| `bcp-mission-prayer-1` | Fixed mission prayer | anglican |
+| `bcp-general-thanksgiving` | General Thanksgiving | anglican |
+| `bcp-chrysostom` | Prayer of St. Chrysostom | anglican |
+| `bcp-closing` | Closing blessing | anglican |
+| `bcp-marian-antiphon-{season}` | Seasonal Marian antiphon | anglican |
+| `bcp-marian-antiphon-ordinary` | Marian antiphon fallback | anglican |
+| `comm-lords-prayer` | Lord's Prayer | common |
+| `comm-gloria-patri` | Gloria Patri | common |
+| `comm-creed-apostles` | Apostles' Creed | common |
+| `comm-creed-nicene` | Nicene Creed | common |
+| `comm-kyrie` | Kyrie | common |
+| `cop-agpeya-opening` | Agpeya Opening | coptic |
+| `cop-theotokion` | Theotokion | coptic |
+| `ecu-angelus` | The Angelus | ecumenical |
+| `ecu-trisagion` | Trisagion | ecumenical |
+| `ecu-examen` | The Ignatian Examen | ecumenical |
+| `ecu-prayer-before-reading` | Prayer Before Reading | ecumenical |
+| `ecu-east-syriac-hours` | East Syriac Prayer of the Hours | ecumenical |
+| `ecu-kyrie-pantocrator` | Kyrie Pantocrator | ecumenical |
 
 ---
 
-## Data Integrity Issues (Known)
+## Adding New Components
 
-The following duplicate IDs exist in the current file. The JSON array remains valid (arrays allow duplicate object content), but `Array.find()` will always return the **first** occurrence, silently ignoring the duplicates.
-
-| Duplicate ID | Count | Action Required |
-|---|---|---|
-| `ant-ascension` | 2 | Deduplicate — keep first |
-| `ant-pentecost` | 2 | Deduplicate — keep first |
-| `ant-trinity` | 2 | Deduplicate — keep first |
-| `collect-easter-day` | 3 | Deduplicate — keep first, verify text matches |
-| `collect-easter-monday` | 3 | Deduplicate — keep first, verify text matches |
-| `collect-proper-13` through `collect-proper-29` | 2 each | Deduplicate — keep first, verify text matches |
-
-**Impact:** None currently — all duplicates are functionally identical to their first occurrence. The app renders correctly. However, the file is unnecessarily large and should be cleaned.
+1. Add the entry to the appropriate shard file under `components/`
+2. Use the tradition prefix: `bcp-`, `comm-`, `cop-`, `ecu-`
+3. If the component title contains parenthetical metadata, add a `DISPLAY_LABELS` entry in `office-ui.js` — do not alter the title in the JSON
+4. If the component has rite variants, use `{ "rite1": "...", "rite2": "..." }` object text
+5. Verify `resolveText()` handles the component correctly before wiring it into a rubric sequence
 
 ---
 
-## Validation Checklist
-
-Before deploying changes to components.json:
-
-- [ ] JSON is valid (no trailing commas, properly closed brackets)
-- [ ] All `collect-*` IDs referenced in seasonal JSON files resolve to an entry here
-- [ ] All rite-aware components have both `rite1` and `rite2` keys in their `text` object
-- [ ] No new duplicate IDs introduced
-- [ ] `type` field present on all BCP components
-- [ ] Text field is never `null` — use `""` for intentionally empty components
-
----
-
-## Integration Notes
-
-### Loading
-
-`components.json` is loaded once during `init()` and stored in `appData.components`:
-```javascript
-const [compRes, rubRes] = await Promise.all([
-    fetch('data/components.json'),
-    fetch('data/rubrics.json')
-]);
-appData.components = await compRes.json();
-```
-
-### Lookup Pattern
-
-```javascript
-// By exact ID
-const comp = appData.components.find(c => c.id === targetId);
-
-// Rite-aware text extraction
-const text = (typeof comp.text === 'object')
-    ? (comp.text[rite] || comp.text['rite2'] || comp.text['rite1'])
-    : comp.text;
-```
-
-### Adding New Components
-
-1. Add the JSON object to the array (position does not matter — lookup is by `id`)
-2. Assign a unique `id` following existing naming conventions
-3. Set the `type` field to one of the established types
-4. For rite-aware text, use the `{ "rite1": "...", "rite2": "..." }` object pattern
-5. If the component is referenced from a seasonal JSON `collect` field, verify the ID matches exactly
-
----
-
-## Naming Conventions
-
-| Prefix | Type | Example |
-|---|---|---|
-| `bcp-` | Core BCP liturgical element | `bcp-venite`, `bcp-confession-rite2` |
-| `collect-` | Any collect | `collect-advent-1`, `collect-proper-12` |
-| `ant-` | Invitatory antiphon | `ant-advent`, `ant-default` |
-| `bcp-marian-antiphon-` | Seasonal Marian antiphon | `bcp-marian-antiphon-lent` |
-| `latin-` | Latin-language text | `latin-marian-alma` |
-| `trisagion-` | Eastern trisagion | `trisagion-byzantine` |
-| `coptic-` | Coptic tradition element | `coptic-theotokion` |
-
----
-
-## Maintenance Notes
-
-### Annual Updates
-
-No annual updates required for the core BCP components. Fixed feast collects are perpetual. If new saints are added to the sanctoral calendar, add new `collect-*` entries following the pattern of existing feast day collects.
-
-### Adding a New Feast Day Collect
-
-1. Identify the feast day date and verify the collect text from the BCP or LFF
-2. Create a new entry with both `rite1` and `rite2` texts
-3. Use the naming convention `collect-[saint-name]` (lowercase, hyphens)
-4. Add the corresponding `"collect": "collect-[saint-name]"` field to the saints' JSON entry
-5. Verify in the app that no "Collect ID not found" warning appears for that date
-
----
-
-## Credits and Licensing
-
-**Source Text:** 1979 Book of Common Prayer (The Episcopal Church)  
-**Public Domain Status:** The 1979 BCP text is in the public domain in the United States  
-**Data Compilation:** Claude (Anthropic AI) with liturgical expertise consultation  
-**Component Count:** 224 (199 original + 25 feast day collects added February 17, 2026)
-
-**Usage Rights:** This file may be freely used in liturgical apps, church websites, and Daily Office software. Attribution appreciated but not required.
-
-**Disclaimer:** While every effort has been made to ensure accuracy of liturgical texts, users should verify critical texts against a printed 1979 BCP for authoritative reference.
-
----
-
-**END OF DOCUMENTATION**
-
-*This file is the text library only. For how components are assembled into an office, see INDEX_HTML_DOCUMENTATION.md. For seasonal collect IDs, see the relevant seasonal documentation (LENT_DOCUMENTATION.md, EASTER_DOCUMENTATION.md, etc.).*
+*For rendering logic that consumes these components see `OFFICE_UI_DOCUMENTATION.md`. For rubric sequences that reference component IDs see `data/rubrics.json` and `OFFICE_UI_DOCUMENTATION.md`.*

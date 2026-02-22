@@ -2,10 +2,10 @@
 
 ## Overview
 
-This module is the authoritative source of all liturgical calendar logic for The Universal Office. It is a static class (`CalendarEngine`) exposed globally as `window.CalendarEngine`. All date routing, season detection, lectionary entry lookup, and liturgical year calculation live here exclusively. No calendar logic should exist in `index.html`.
+This module is the authoritative source of all liturgical calendar logic for The Universal Office. It is a static class (`CalendarEngine`) exposed globally as `window.CalendarEngine`. All date routing, season detection, lectionary entry lookup, and liturgical year calculation live here exclusively. No calendar logic should exist in `office-ui.js` or any other module.
 
 **Production Status:** ✅ OPERATIONAL — Perpetual Calendar Engine Active  
-**Last Updated:** February 17, 2026  
+**Last Updated:** February 22, 2026  
 **Current Line Count:** 213 lines  
 **Architecture Role:** Calendar and lectionary logic module  
 **Global Exposure:** `window.CalendarEngine`
@@ -106,7 +106,7 @@ When the app needs to cover 2031, add new entries to `SEASON_RANGES` at the bott
 ## Method Reference
 
 ### `init()` — async, static
-**Called:** Once on app startup from `index.html`  
+**Called:** Once on app startup from `office-ui.js` `init()`  
 **Purpose:** Loads `bcp-propers.json` into `this.bcpPropers`  
 **Error Handling:** Logs error but does not throw; app continues without proper calculations
 
@@ -128,13 +128,13 @@ When the app needs to cover 2031, add new entries to `SEASON_RANGES` at the bott
 ### `changeDate(days)` — sync, static
 **Parameters:** `days` — positive or negative integer  
 **Purpose:** Advances or retreats `currentDate` by the given number of days  
-**Called by:** `index.html` Prev/Next buttons
+**Called by:** `changeDate()` in `office-ui.js`
 
 ---
 
 ### `resetDate()` — sync, static
 **Purpose:** Resets `currentDate` to today's actual date (`new Date()`)  
-**Called by:** "Today" button in index.html
+**Called by:** `resetDate()` in `office-ui.js`
 
 ---
 
@@ -175,7 +175,7 @@ When the app needs to cover 2031, add new entries to `SEASON_RANGES` at the bott
 **Algorithm:** Normalizes to local midnight, then iterates `SEASON_RANGES` looking for the first range where `start <= date <= end`. Returns `{ season: "ordinary", file: "ordinary1.json" }` as fallback with a console warning.
 
 **Called by:**
-- `index.html` to determine Marian antiphon ID
+- `office-ui.js` `renderOffice()` to determine Marian antiphon ID
 - `fetchLectionaryData()` to determine which JSON file to load
 - `getSeasonStartDate()` to find the season anchor
 
@@ -266,7 +266,7 @@ findEntry(data, date, file)
   → Fallback: data[0]
          │
          ▼
-Return daily entry object to renderOffice()
+Return daily entry object to `renderOffice()` in `office-ui.js`
 ```
 
 ---
@@ -330,7 +330,7 @@ All engine logs are prefixed with `[Calendar Engine]`:
 If new fields are added to seasonal JSON entries:
 - `findEntry()` does not care about field names — it only matches on `date` and `day_of_season`
 - No changes to the engine are needed
-- Update `renderOffice()` in index.html to consume the new fields
+- Update `renderOffice()` in `office-ui.js` to consume the new fields
 
 ---
 
@@ -346,3 +346,8 @@ If new fields are added to seasonal JSON entries:
 **END OF DOCUMENTATION**
 
 *For UI rendering logic, see INDEX_HTML_DOCUMENTATION.md. For scripture fetching, see SCRIPTURE_RESOLVER_DOCUMENTATION.md.*
+
+
+
+================================================
+FILE: data/documentation/christmasdocumentation.md
