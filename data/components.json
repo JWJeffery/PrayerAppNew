@@ -48,24 +48,6 @@
     "type": "Antiphon"
   },
   {
-    "id": "ant-ascension",
-    "title": "Ascension Antiphon",
-    "text": "Alleluia. Christ the Lord has ascended into heaven: Come let us adore him. Alleluia.",
-    "type": "Antiphon"
-  },
-  {
-    "id": "ant-pentecost",
-    "title": "Pentecost Antiphon",
-    "text": "Alleluia. The Spirit of the Lord renews the face of the earth: Come let us adore him. Alleluia.",
-    "type": "Antiphon"
-  },
-  {
-    "id": "ant-trinity",
-    "title": "Trinity Sunday Antiphon",
-    "text": "Father, Son, and Holy Spirit, one God: Come let us adore him.",
-    "type": "Antiphon"
-  },
-  {
     "id": "ant-default",
     "title": "Ordinary Time Antiphon",
     "text": "The earth is the Lord's for he made it: Come let us adore him.",
@@ -236,55 +218,13 @@
   {
     "id": "collect-jan24-florence-li-tim-oi",
     "title": "Collect for Ordination of Florence Li Tim-Oi, 1944",
-    "text": "Gracious God, who called Florence Li Tim-Oi to be the first woman ordained to the priesthood in the Anglican Communion: Grant that we may be faithful to your call, breaking down barriers and serving you with courage and love"
-  },
-  {
-    "id": "collect-jan25-conversion-paul",
-    "title": "Collect for the Conversion of Saint Paul the Apostle",
-    "text": "O God, who by the preaching of your apostle Paul has caused the light of the Gospel to shine throughout the world: Grant, we pray, that we, having his wonderful conversion in remembrance, may show ourselves thankful to you by following his holy teaching; through Jesus Christ our Lord, who lives and reigns with you, in the unity of the Holy Spirit, one God, now and for ever. Amen.",
-    "type": "Collect"
+    "text": "Gracious God, who called Florence Li Tim-Oi to be the first woman ordained to the priesthood in the Anglican Communion: Grant that we may be faithful to your call, breaking down barriers and serving you with courage and love ; through Jesus Christ our Lord, who lives and reigns with you and the Holy Spirit, one God, for ever and ever. Amen."
   },
   {
     "id": "collect-january-27",
     "title": "Collect for John Chrysostom, Bishop of Constantinople, 407",
     "text": "O God, who gave your servant John Chrysostom grace eloquently to proclaim your righteousness in the great congregation, and fearlessly to bear reproach for the honor of your Name: Mercifully grant to all bishops and pastors such excellence in preaching, and faithfulness in ministering your Word, that your people shall be partakers of the divine wisdom; through Jesus Christ our Lord, who lives and reigns with you and the Holy Spirit, one God, for ever and ever. Amen.",
     "type": "Collect"
-  },
-  {
-    "id": "bcp-marian-antiphon-advent",
-    "title": "Alma Redemptoris Mater (Advent/Christmas)",
-    "text": {
-      "rite1": "Alma Redemptoris Mater, quae pervia caeli porta manes, et stella maris, succurre cadenti, surgere qui curat, populo: tu quae genuisti, natura mirante, tuum sanctum Genitorem Virgo prius ac posterius, Gabrielis ab ore sumens illud Ave, peccatorum miserere.",
-      "rite2": "Loving Mother of the Redeemer, who remains the gate by which we mortals enter heaven, and star of the sea, help your fallen people who strive to rise: You who gave birth, amazing nature, to your sacred Creator while still remaining a virgin. Help us who call to you as Gabriel once did, receiving from you that Hail Mary: be merciful to us sinners."
-    },
-    "type": "Antiphon"
-  },
-  {
-    "id": "bcp-marian-antiphon-christmas",
-    "title": "Alma Redemptoris Mater (Advent/Christmas)",
-    "text": {
-      "rite1": "Alma Redemptoris Mater, quae pervia caeli porta manes, et stella maris, succurre cadenti, surgere qui curat, populo: tu quae genuisti, natura mirante, tuum sanctum Genitorem Virgo prius ac posterius, Gabrielis ab ore sumens illud Ave, peccatorum miserere.",
-      "rite2": "Loving Mother of the Redeemer, who remains the gate by which we mortals enter heaven, and star of the sea, help your fallen people who strive to rise: You who gave birth, amazing nature, to your sacred Creator while still remaining a virgin. Help us who call to you as Gabriel once did, receiving from you that Hail Mary: be merciful to us sinners."
-    },
-    "type": "Antiphon"
-  },
-  {
-    "id": "bcp-marian-antiphon-epiphany",
-    "title": "Ave Regina Caelorum (Epiphany/Lent)",
-    "text": {
-      "rite1": "Ave, Regina caelorum, Ave, Domina Angelorum: Salve, radix, salve, porta Ex qua mundo lux est orta: Gaude, Virgo gloriosa, Super omnes speciosa, Vale, o valde decora, Et pro nobis Christum exora.",
-      "rite2": "Hail, O Queen of Heaven. Hail, O Lady of Angels. Hail! thou root, hail! thou gate From whom unto the world a light has arisen: Rejoice, O glorious Virgin, Lovely beyond all others, Farewell, most beautiful maiden, And pray for us to Christ."
-    },
-    "type": "Antiphon"
-  },
-  {
-    "id": "bcp-marian-antiphon-lent",
-    "title": "Ave Regina Caelorum (Epiphany/Lent)",
-    "text": {
-      "rite1": "Ave, Regina caelorum, Ave, Domina Angelorum: Salve, radix, salve, porta Ex qua mundo lux est orta: Gaude, Virgo gloriosa, Super omnes speciosa, Vale, o valde decora, Et pro nobis Christum exora.",
-      "rite2": "Hail, O Queen of Heaven. Hail, O Lady of Angels. Hail! thou root, hail! thou gate From whom unto the world a light has arisen: Rejoice, O glorious Virgin, Lovely beyond all others, Farewell, most beautiful maiden, And pray for us to Christ."
-    },
-    "type": "Antiphon"
   },
   {
     "id": "bcp-marian-antiphon-easter",
@@ -341,29 +281,11 @@
     "type": "Collect"
   },
   {
-    "id": "collect-advent-ferial",
-    "title": "Collect for Advent Weekdays",
-    "text": {
-      "rite1": "Almighty God, give us grace that we may cast away the works of darkness, and put upon us the armour of light, now in the time of this mortal life, in which thy Son Jesus Christ came to visit us in great humility; that in the last day, when he shall come again in his glorious majesty to judge both the quick and the dead, we may rise to the life immortal, through him who liveth and reigneth with thee and the Holy Ghost, now and ever. Amen.",
-      "rite2": "Almighty God, give us grace to cast away the works of darkness, and put on the armor of light, now in the time of this mortal life in which your Son Jesus Christ came to visit us in great humility; that in the last day, when he shall come again in his glorious majesty to judge both the living and the dead, we may rise to the life immortal; through him who lives and reigns with you and the Holy Spirit, one God, now and for ever. Amen."
-    },
-    "type": "Collect"
-  },
-  {
     "id": "collect-epiphany",
     "title": "Collect for the Epiphany (Jan 6)",
     "text": {
       "rite1": "O God, who by the leading of a star didst manifest thy only-begotten Son to the Gentiles: Mercifully grant that we, who know thee now by faith, may after this life have the fruition of thy glorious Godhead; through the same thy Son Jesus Christ our Lord. Amen.",
       "rite2": "O God, by the leading of a star you manifested your only Son to the peoples of the earth: Lead us, who know you now by faith, to your presence, where we may see your glory face to face; through Jesus Christ our Lord, who lives and reigns with you and the Holy Spirit, one God, now and for ever. Amen."
-    },
-    "type": "Collect"
-  },
-  {
-    "id": "collect-baptism",
-    "title": "Collect for the Baptism of Our Lord (First Sunday after Epiphany)",
-    "text": {
-      "rite1": "Father in heaven, who at the baptism of Jesus in the River Jordan didst proclaim him thy beloved Son and anoint him with the Holy Spirit: Grant that all who are baptized into his Name may keep the covenant they have made, and boldly confess him as Lord and Savior; who with thee and the Holy Spirit liveth and reigneth, one God, in glory everlasting. Amen.",
-      "rite2": "Father in heaven, who at the baptism of Jesus in the River Jordan proclaimed him your beloved Son and anointed him with the Holy Spirit: Grant that all who are baptized into his Name may keep the covenant they have made, and boldly confess him as Lord and Savior; who with you and the Holy Spirit lives and reigns, one God, in glory everlasting. Amen."
     },
     "type": "Collect"
   },
@@ -422,7 +344,7 @@
     "type": "Collect"
   },
   {
-    "id": "collect-transfiguration",
+    "id": "collect-last-epiphany",
     "title": "Collect for the Transfiguration (Last Sunday after Epiphany)",
     "text": {
       "rite1": "O God, who on the holy mount didst reveal to chosen witnesses thy well-beloved Son, wonderfully transfigured, in raiment white and glistening: Mercifully grant that we, being delivered from the disquietude of this world, may by faith behold the King in his beauty; who with thee, O Father, and thee, O Holy Ghost, liveth and reigneth, one God, world without end. Amen.",
@@ -674,15 +596,6 @@
     "type": "Collect"
   },
   {
-    "id": "collect-epiphany-6-thursday",
-    "title": "Collect for Epiphany 6 Thursday",
-    "text": {
-      "rite1": "O God, the strength of all who put their trust in thee: Mercifully accept our prayers; and because through the weakness of our mortal nature, we can do no good thing without thee, grant us the help of thy grace, that in keeping thy commandments we may please thee both in will and deed; through Jesus Christ our Lord, who liveth and reigneth with thee and the Holy Spirit, one God, for ever and ever. Amen.",
-      "rite2": "O God, the strength of all who put their trust in you: Mercifully accept our prayers; and because in our weakness we can do nothing good without you, give us the help of your grace, that in keeping your commandments we may please you both in will and deed; through Jesus Christ our Lord, who lives and reigns with you and the Holy Spirit, one God, for ever and ever. Amen."
-    },
-    "type": "Collect"
-  },
-  {
     "id": "collect-ash-wednesday",
     "title": "Collect for Ash Wednesday",
     "text": {
@@ -917,15 +830,6 @@
     "type": "Collect"
   },
   {
-    "id": "collect-ordinary-11",
-    "title": "Collect for the Eleventh Sunday after Pentecost",
-    "text": {
-      "rite1": "O God, who declarest thy almighty power chiefly in showing mercy and pity: Mercifully grant unto us such a measure of thy grace, that we, running the way of thy commandments, may obtain thy gracious promises, and be made partakers of thy heavenly treasure; through Jesus Christ our Lord, who liveth and reigneth with thee and the Holy Spirit, one God, for ever and ever. Amen.",
-      "rite2": "Almighty and everlasting God, you are always more ready to hear than we to pray, and to give more than we either desire or deserve: Pour upon us the abundance of your mercy, forgiving us those things of which our conscience is afraid, and giving us those good things for which we are not worthy to ask, except through the merits and mediation of Jesus Christ our Savior; who lives and reigns with you and the Holy Spirit, one God, for ever and ever. Amen."
-    },
-    "type": "Collect"
-  },
-  {
     "id": "collect-ordinary-12",
     "title": "Collect for the Twelfth Sunday after Pentecost",
     "text": {
@@ -1016,15 +920,6 @@
     "type": "Collect"
   },
   {
-    "id": "collect-ordinary-22",
-    "title": "Collect for the Twenty-Second Sunday after Pentecost",
-    "text": {
-      "rite1": "Lord, we beseech thee to keep thy household the Church in continual godliness; that through thy protection it may be free from all adversities, and devoutly given to serve thee in good works, to the glory of thy Name; through Jesus Christ our Lord. Amen.",
-      "rite2": "Almighty and merciful God, it is only by your gift that your faithful people offer you true and laudable service: Grant that we may run without stumbling to obtain your heavenly promises; through Jesus Christ our Lord, who lives and reigns with you and the Holy Spirit, one God, now and for ever. Amen."
-    },
-    "type": "Collect"
-  },
-  {
     "id": "collect-ordinary-23",
     "title": "Collect for the Twenty-Third Sunday after Pentecost",
     "text": {
@@ -1034,15 +929,6 @@
     "type": "Collect"
   },
   {
-    "id": "collect-easter-day",
-    "title": "Collect for Easter Day",
-    "text": {
-      "rite1": "Almighty God, who through thine only-begotten Son Jesus Christ hast overcome death and opened unto us the gate of everlasting life: Grant that we, who celebrate with joy the day of the Lord's resurrection, may be raised from the death of sin by thy life-giving Spirit; through the same Jesus Christ our Lord, who liveth and reigneth with thee and the Holy Ghost, ever one God, world without end. Amen.",
-      "rite2": "Almighty God, who through your only-begotten Son Jesus Christ overcame death and opened to us the gate of everlasting life: Grant that we, who celebrate with joy the day of the Lord's resurrection, may be raised from the death of sin by your life-giving Spirit; through Jesus Christ our Lord, who lives and reigns with you and the Holy Spirit, one God, now and for ever. Amen."
-    },
-    "type": "Collect"
-  },
-  {
     "id": "collect-easter-monday",
     "title": "Collect for Monday in Easter Week",
     "text": {
@@ -1057,15 +943,6 @@
     "text": {
       "rite1": "Almighty God, who through thine only-begotten Son Jesus Christ hast overcome death and opened unto us the gate of everlasting life: Grant that we, who celebrate with joy the day of the Lord's resurrection, may be raised from the death of sin by thy life-giving Spirit; through the same Jesus Christ our Lord, who liveth and reigneth with thee and the Holy Ghost, ever one God, world without end. Amen.",
       "rite2": "Almighty God, who through your only-begotten Son Jesus Christ overcame death and opened to us the gate of everlasting life: Grant that we, who celebrate with joy the day of the Lord's resurrection, may be raised from the death of sin by your life-giving Spirit; through Jesus Christ our Lord, who lives and reigns with you and the Holy Spirit, one God, now and for ever. Amen."
-    },
-    "type": "Collect"
-  },
-  {
-    "id": "collect-easter-monday",
-    "title": "Collect for Monday in Easter Week",
-    "text": {
-      "rite1": "Grant, we beseech thee, Almighty God, that we who celebrate with reverence the Paschal feast may be found worthy to attain to everlasting joys; through Jesus Christ our Lord. Amen.",
-      "rite2": "Grant, we pray, Almighty God, that we who celebrate with reverence the Paschal feast may be found worthy to attain to everlasting joys; through Jesus Christ our Lord, who lives and reigns with you and the Holy Spirit, one God, now and for ever. Amen."
     },
     "type": "Collect"
   },
@@ -1078,15 +955,15 @@
     },
     "type": "Collect"
   },
-  {
-    "id": "collect-ordinary-24",
-    "title": "Collect for the Twenty-Fourth Sunday after Pentecost",
-    "text": {
-      "rite1": "Almighty and everlasting God, whose will it is to restore all things in thy well-beloved Son, the King of kings and Lord of lords: Mercifully grant that the peoples of the earth, divided and enslaved by sin, may be freed and brought together under his most gracious rule; who liveth and reigneth with thee and the Holy Ghost, one God, world without end. Amen.",
-      "rite2": "Almighty and eternal God, you have willed to restore all things in your well-beloved Son, the King of kings and Lord of lords: Mercifully grant that the peoples of the earth, divided and enslaved by sin, may be freed and brought together under his most gracious rule; who lives and reigns with you and the Holy Spirit, one God, now and for ever. Amen."
+    {
+      "id": "collect-easter-wednesday",
+      "title": "Collect for Wednesday in Easter Week",
+      "text": {
+        "rite1": "O God, who by the resurrection of thy Son Jesus Christ has given us the hope of eternal life: Grant that we, who have been raised with him, may abide in his presence and rejoice in the hope of thy glory; through Jesus Christ our Lord. Amen.",
+        "rite2": "O God, who by the resurrection of your Son Jesus Christ has given us the hope of eternal life: Grant that we, who have been raised with him, may abide in his presence and rejoice in the hope of your glory; through Jesus Christ our Lord, who lives and reigns with you and the Holy Spirit, one God, now and for ever. Amen."
+      },
+      "type": "Collect"
     },
-    "type": "Collect"
-  },
   {
     "id": "collect-ordinary-25",
     "title": "Collect for the Twenty-Fifth Sunday after Pentecost",
@@ -1158,15 +1035,6 @@
       "rite2": "Father, Son, and Holy Spirit, one God: O come, let us adore him."
     },
     "type": "Antiphon"
-  },
-  {
-    "id": "collect-easter-day",
-    "title": "Collect for Easter Day",
-    "text": {
-      "rite1": "Almighty God, who through thine only-begotten Son Jesus Christ hast overcome death and opened unto us the gate of everlasting life: Grant that we, who celebrate with joy the day of the Lord's resurrection, may be raised from the death of sin by thy life-giving Spirit; through the same Jesus Christ our Lord, who liveth and reigneth with thee and the Holy Ghost, ever one God, world without end. Amen.",
-      "rite2": "Almighty God, who through your only-begotten Son Jesus Christ overcame death and opened to us the gate of everlasting life: Grant that we, who celebrate with joy the day of the Lord's resurrection, may be raised from the death of sin by your life-giving Spirit; through Jesus Christ our Lord, who lives and reigns with you and the Holy Spirit, one God, now and for ever. Amen."
-    },
-    "type": "Collect"
   },
   {
     "id": "collect-easter-2",
@@ -1489,105 +1357,6 @@
     "text": {
       "rite1": "Almighty and everlasting God, whose will it is to restore all things in thy well-beloved Son, the King of kings and Lord of lords: Mercifully grant that the peoples of the earth, divided and enslaved by sin, may be freed and brought together under his most gracious rule; who liveth and reigneth with thee and the Holy Spirit, one God, now and for ever. Amen.",
       "rite2": "Almighty and everlasting God, whose will it is to restore all things in your well-beloved Son, the King of kings and Lord of lords: Mercifully grant that the peoples of the earth, divided and enslaved by sin, may be freed and brought together under his most gracious rule; who lives and reigns with you and the Holy Spirit, one God, now and for ever. Amen."
-    },
-    "type": "Collect"
-  },
-  {
-    "id": "collect-proper-13",
-    "title": "Proper 13 (Sunday closest to August 3)",
-    "text": {
-      "rite1": "Let thy merciful ears, O Lord, be open to the prayers of thy humble servants; and, that they may obtain their petitions, make them to ask such things as shall please thee; through Jesus Christ our Lord. Amen.",
-      "rite2": "Let your merciful ears, O Lord, be open to the prayers of your humble servants; and, that they may receive what they ask, teach them to ask only what pleases you; through Jesus Christ our Lord, who lives and reigns with you and the Holy Spirit, one God, for ever and ever. Amen."
-    },
-    "type": "Collect"
-  },
-  {
-    "id": "collect-proper-14",
-    "title": "Proper 14 (Sunday closest to August 10)",
-    "text": {
-      "rite1": "Almighty God, who hast given unto us thy only-begotten Son to be unto us both a sacrifice for sin and also an ensample of godly life: Give us grace that we may always most thankfully receive that his inestimable benefit, and also daily endeavor ourselves to follow the blessed steps of his most holy life. Amen.",
-      "rite2": "Grant to us, Lord, we pray, the spirit to think and do always those things that are right, that we, who cannot exist without you, may by you be enabled to live according to your will; through Jesus Christ our Lord, who lives and reigns with you and the Holy Spirit, one God, for ever and ever. Amen."
-    },
-    "type": "Collect"
-  },
-  {
-    "id": "collect-proper-15",
-    "title": "Proper 15 (Sunday closest to August 17)",
-    "text": {
-      "rite1": "Keep, we beseech thee, O Lord, thy Church with thy perpetual mercy; and, because the frailty of man without thee cannot but fall, keep us ever by thy help from all things hurtful, and lead us to all things profitable to our salvation; through Jesus Christ our Lord. Amen.",
-      "rite2": "Almighty God, you have given your only Son to be for us a sacrifice for sin, and also an example of godly life: Give us grace to receive thankfully the fruits of his redeeming work, and to follow daily in the blessed steps of his most holy life; through Jesus Christ your Son our Lord, who lives and reigns with you and the Holy Spirit, one God, now and for ever. Amen."
-    },
-    "type": "Collect"
-  },
-  {
-    "id": "collect-proper-16",
-    "title": "Proper 16 (Sunday closest to August 24)",
-    "text": {
-      "rite1": "O Lord, we beseech thee, let thy continual pity cleanse and defend thy Church; and, because it cannot continue in safety without thy succor, preserve it evermore by thy help and goodness; through Jesus Christ our Lord. Amen.",
-      "rite2": "Lord of all power and might, the author and giver of all good things: Graft in our hearts the love of your Name; increase in us true religion; nourish us with all goodness; and bring forth in us the fruit of good works; through Jesus Christ our Lord, who lives and reigns with you and the Holy Spirit, one God, for ever and ever. Amen."
-    },
-    "type": "Collect"
-  },
-  {
-    "id": "collect-proper-17",
-    "title": "Proper 17 (Sunday closest to August 31)",
-    "text": {
-      "rite1": "Lord, we pray thee that thy grace may always prevent and follow us, and make us continually to be given to all good works; through Jesus Christ our Lord. Amen.",
-      "rite2": "Lord of all power and might, the author and giver of all good things: Graft in our hearts the love of your Name; increase in us true religion; nourish us with all goodness; and bring forth in us the fruit of good works; through Jesus Christ our Lord, who lives and reigns with you and the Holy Spirit, one God, for ever and ever. Amen."
-    },
-    "type": "Collect"
-  },
-  {
-    "id": "collect-proper-18",
-    "title": "Proper 18 (Sunday closest to Sept 7)",
-    "text": {
-      "rite1": "Grant, we beseech thee, merciful Lord, to thy faithful people pardon and peace, that they may be cleansed from all their sins, and serve thee with a quiet mind; through Jesus Christ our Lord. Amen.",
-      "rite2": "Grant us, Lord, not to be anxious about earthly things, but to love things heavenly; and even now, while we are placed among things that are passing away, to hold fast to those that shall endure; through Jesus Christ our Lord, who lives and reigns with you and the Holy Spirit, one God, for ever and ever. Amen."
-    },
-    "type": "Collect"
-  },
-  {
-    "id": "collect-proper-19",
-    "title": "Proper 19 (Sunday closest to Sept 14)",
-    "text": {
-      "rite1": "O God, forasmuch as without thee we are not able to please thee, mercifully grant that thy Holy Spirit may in all things direct and rule our hearts; through Jesus Christ our Lord. Amen.",
-      "rite2": "O God, because without you we are not able to please you, mercifully grant that your Holy Spirit may in all things direct and rule our hearts; through Jesus Christ our Lord, who lives and reigns with you and the Holy Spirit, one God, now and for ever. Amen."
-    },
-    "type": "Collect"
-  },
-  {
-    "id": "collect-proper-20",
-    "title": "Proper 20 (Sunday closest to Sept 21)",
-    "text": {
-      "rite1": "O almighty and most merciful God, of thy bountiful goodness keep us, we beseech thee, from all things that may hurt us; that we, being ready both in body and soul, may cheerfully accomplish those things which thou wouldest have done; through Jesus Christ our Lord. Amen.",
-      "rite2": "Grant us, Lord, not to be anxious about earthly things, but to love things heavenly; and even now, while we are placed among things that are passing away, to hold fast to those that shall endure; through Jesus Christ our Lord, who lives and reigns with you and the Holy Spirit, one God, for ever and ever. Amen."
-    },
-    "type": "Collect"
-  },
-  {
-    "id": "collect-proper-21",
-    "title": "Proper 21 (Sunday closest to Sept 28)",
-    "text": {
-      "rite1": "O Lord, we beseech thee, let thy continual pity cleanse and defend thy Church; and, because it cannot continue in safety without thy succor, preserve it evermore by thy help and goodness; through Jesus Christ our Lord. Amen.",
-      "rite2": "O God, you declare your almighty power chiefly in showing mercy and pity: Mercifully grant to us such a measure of your grace, that we, running to obtain your promises, may become partakers of your heavenly treasure; through Jesus Christ our Lord, who lives and reigns with you and the Holy Spirit, one God, for ever and ever. Amen."
-    },
-    "type": "Collect"
-  },
-  {
-    "id": "collect-proper-22",
-    "title": "Proper 22 (Sunday closest to Oct 5)",
-    "text": {
-      "rite1": "Almighty and everlasting God, who art always more ready to hear than we to pray, and art wont to give more than either we desire or deserve: Pour down upon us the abundance of thy mercy, forgiving us those things whereof our conscience is afraid, and giving us those good things which we are not worthy to ask, but through the merits and mediation of Jesus Christ, thy Son, our Lord. Amen.",
-      "rite2": "Almighty and everlasting God, you are always more ready to hear than we to pray, and to give more than we either desire or deserve: Pour upon us the abundance of your mercy, forgiving us those things of which our conscience is afraid, and giving us those good things for which we are not worthy to ask, except through the merits and mediation of Jesus Christ our Savior; who lives and reigns with you and the Holy Spirit, one God, for ever and ever. Amen."
-    },
-    "type": "Collect"
-  },
-  {
-    "id": "collect-proper-23",
-    "title": "Proper 23 (Sunday closest to Oct 12)",
-    "text": {
-      "rite1": "Lord, we pray thee that thy grace may always prevent and follow us, and make us continually to be given to all good works; through Jesus Christ our Lord. Amen.",
-      "rite2": "Lord, we pray that your grace may always precede and follow us, that we may continually be given to all good works; through Jesus Christ our Lord, who lives and reigns with you and the Holy Spirit, one God, now and for ever. Amen."
     },
     "type": "Collect"
   },
@@ -1915,5 +1684,23 @@
     "text": "Lord, have mercy.\nLord, have mercy.\nLord, have mercy.",
     "type": "Versicle",
     "tradition": "Byzantine Orthodox"
-  }
+  },
+  {
+  "id": "marian-alma-redemptoris",
+  "title": "Alma Redemptoris Mater",
+  "text": {
+    "rite1": "Alma Redemptoris Mater, quae pervia caeli porta manes, et stella maris, succurre cadenti, surgere qui curat, populo: tu quae genuisti, natura mirante, tuum sanctum Genitorem Virgo prius ac posterius, Gabrielis ab ore sumens illud Ave, peccatorum miserere.",
+    "rite2": "Loving Mother of the Redeemer, who remains the gate by which we mortals enter heaven, and star of the sea, help your fallen people who strive to rise: You who gave birth, amazing nature, to your sacred Creator while still remaining a virgin. Help us who call to you as Gabriel once did, receiving from you that Hail Mary: be merciful to us sinners."
+  },
+  "type": "Antiphon"
+},
+{
+  "id": "marian-ave-regina",
+  "title": "Ave Regina Caelorum",
+  "text": {
+    "rite1": "Ave, Regina caelorum, Ave, Domina Angelorum: Salve, radix, salve, porta Ex qua mundo lux est orta: Gaude, Virgo gloriosa, Super omnes speciosa, Vale, o valde decora, Et pro nobis Christum exora.",
+    "rite2": "Hail, O Queen of Heaven. Hail, O Lady of Angels. Hail! thou root, hail! thou gate From whom unto the world a light has arisen: Rejoice, O glorious Virgin, Lovely beyond all others, Farewell, most beautiful maiden, And pray for us to Christ."
+  },
+  "type": "Antiphon"
+}
 ]
