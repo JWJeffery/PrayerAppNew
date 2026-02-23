@@ -148,7 +148,38 @@
     <!-- Ethiopian Sa'atat Liturgical Console -->
     <div id="ethiopian-settings" class="mode-hidden sidebar-hidden">
         <h3 style="color:var(--gold); font-family:'Cinzel',serif; font-size:1.15em; letter-spacing:0.08em;">Sa'atat Options</h3>
+
+        <!-- Active Watch display -->
         <div class="setting-group">
+            <strong style="display:block; margin-bottom:4px;">Active Watch</strong>
+            <div id="eth-active-watch-label" style="font-family:'IM Fell English',serif; font-size:1em; color:#c8bfa8; margin-bottom:2px;">—</div>
+            <div id="eth-active-date-label"  style="font-family:'Cinzel',serif; font-size:0.72em; letter-spacing:0.08em; color:#a89878; margin-bottom:8px;">—</div>
+            <a href="#" id="eth-override-toggle" onclick="toggleEthOverridePanel(event)" style="font-family:'Cinzel',serif; font-size:0.7em; letter-spacing:0.1em; text-transform:uppercase; color:var(--gold); opacity:0.7; text-decoration:none;">Choose different date/time</a>
+        </div>
+
+        <!-- Override selection panel (hidden by default) -->
+        <div id="eth-override-panel" style="display:none;">
+            <div class="setting-group" style="margin-top:10px;">
+                <strong style="display:block; margin-bottom:6px;">Date</strong>
+                <input type="date" id="eth-override-date" onchange="applyEthOverride()"
+                    style="width:100%; padding:6px 8px; background:#1e1a14; color:#c8bfa8; border:1px solid rgba(201,168,76,0.35); border-radius:2px; font-family:'IM Fell English',serif; font-size:0.95em; box-sizing:border-box;">
+            </div>
+            <div class="setting-group" style="margin-top:10px;">
+                <strong style="display:block; margin-bottom:6px;">Canonical Watch</strong>
+                <label style="display:block; margin-bottom:5px;"><input type="radio" name="eth-watch-override" value="eth-tuat-hour-text"    onchange="applyEthOverride()"> Tuat (06:00–09:00)</label>
+                <label style="display:block; margin-bottom:5px;"><input type="radio" name="eth-watch-override" value="eth-meserkh-hour-text" onchange="applyEthOverride()"> Meserkh (09:00–12:00)</label>
+                <label style="display:block; margin-bottom:5px;"><input type="radio" name="eth-watch-override" value="eth-liku-hour-text"    onchange="applyEthOverride()"> Liku (12:00–15:00)</label>
+                <label style="display:block; margin-bottom:5px;"><input type="radio" name="eth-watch-override" value="eth-serkh-hour-text"   onchange="applyEthOverride()"> Serkh (15:00–18:00)</label>
+                <label style="display:block; margin-bottom:5px;"><input type="radio" name="eth-watch-override" value="eth-nimeat-hour-text"  onchange="applyEthOverride()"> Nimeat (18:00–21:00)</label>
+                <label style="display:block; margin-bottom:5px;"><input type="radio" name="eth-watch-override" value="eth-hour-7"            onchange="applyEthOverride()"> Seventh Hour (21:00–00:00)</label>
+                <label style="display:block; margin-bottom:5px;"><input type="radio" name="eth-watch-override" value="eth-night-hour-text"   onchange="applyEthOverride()"> Lelit (00:00–06:00)</label>
+            </div>
+            <div class="setting-group" style="margin-top:10px;">
+                <button onclick="resetEthOverride()" style="width:100%; padding:7px; background:transparent; color:var(--gold); border:1px solid rgba(201,168,76,0.4); font-family:'Cinzel',serif; font-size:0.8em; letter-spacing:0.1em; text-transform:uppercase; cursor:pointer; border-radius:2px;">Reset to Current Time</button>
+            </div>
+        </div>
+
+        <div class="setting-group" style="margin-top:14px; border-top:1px solid rgba(201,168,76,0.15); padding-top:14px;">
             <strong>Edition:</strong>
             <select id="eth-length-select" onchange="renderOffice()" style="margin-top:6px; width:100%; padding:8px; background:#1e1a14; color:#c8bfa8; border:1px solid rgba(201,168,76,0.35); border-radius:2px; font-family:'IM Fell English',serif;">
                 <option value="abbreviated">Abbreviated (Horologium)</option>

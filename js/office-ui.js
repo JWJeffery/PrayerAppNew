@@ -20,6 +20,47 @@ let appData = null;
 let currentDate = new Date();
 let selectedMode = null;
 
+// ── Ethiopian Temporal Override ───────────────────────────────────────────────
+window._temporalOverride = { active: false, date: null, hourId: null };
+
+function toggleEthOverridePanel(e) {
+    e.preventDefault();
+    const panel = document.getElementById('eth-override-panel');
+    if (!panel) return;
+    const isOpen = panel.style.display !== 'none';
+    panel.style.display = isOpen ? 'none' : 'block';
+    if (!isOpen) {
+        const picker = document.getElementById('eth-override-date');
+        if (picker) {
+            const y  = currentDate.getFullYear();
+            const mo = String(currentDate.getMonth() + 1).padStart(2, '0');
+            const d  = String(currentDate.getDate()).padStart(2, '0');
+            picker.value = `${y}-${mo}-${d}`;
+        }
+    }
+}
+
+function applyEthOverride() {
+    const dateVal  = document.getElementById('eth-override-date')?.value;
+    const radioVal = document.querySelector('input[name="eth-watch-override"]:checked')?.value;
+    if (!dateVal && !radioVal) return;
+    window._temporalOverride.active = true;
+    if (dateVal) {
+        const [y, mo, d] = dateVal.split('-');
+        window._temporalOverride.date = new Date(parseInt(y), parseInt(mo) - 1, parseInt(d));
+    }
+    window._temporalOverride.hourId = radioVal || null;
+    renderOffice();
+}
+
+function resetEthOverride() {
+    window._temporalOverride = { active: false, date: null, hourId: null };
+    document.querySelectorAll('input[name="eth-watch-override"]').forEach(r => r.checked = false);
+    const panel = document.getElementById('eth-override-panel');
+    if (panel) panel.style.display = 'none';
+    renderOffice();
+}
+
 const monthNames = [
     'January','February','March','April','May','June',
     'July','August','September','October','November','December'
@@ -492,7 +533,38 @@ async function renderOffice() {
     const dailyData         = await CalendarEngine.fetchLectionaryData(currentDate);
     const activeRubric      = appData.rubrics.find(r => r.id === resolvedOfficeId);
     const isEthiopianSaatat = resolvedOfficeId === 'ethiopian-saatat';
-    const ethHourInfo       = isEthiopianSaatat ? getEthiopianHourInfo() : null;
+
+    // Apply temporal override for Ethiopian Sa'atat if active
+    if (isEthiopianSaatat && window._temporalOverride.active && window._temporalOverride.date) {
+        currentDate = window._temporalOverride.date;
+    }
+
+    // Resolve hour info: use override hourId if set, otherwise real-time clock
+    let ethHourInfo = null;
+    if (isEthiopianSaatat) {
+        if (window._temporalOverride.active && window._temporalOverride.hourId) {
+            const overrideHourMap = [
+                { from:  6*60, to:  9*60, hourId: 'eth-tuat-hour-text',    hourName: 'Tuat — The Morning Watch',             uiLabel: 'Morning Prayer',       psalms: ['3','63','133'],    etReading: '1CLEM_ET 1:1-20' },
+                { from:  9*60, to: 12*60, hourId: 'eth-meserkh-hour-text', hourName: 'Meserkh — The Third Hour',             uiLabel: 'Mid-Morning Prayer',   psalms: ['16','17','18'],    etReading: null },
+                { from: 12*60, to: 15*60, hourId: 'eth-liku-hour-text',    hourName: 'Liku — The Sixth Hour',                uiLabel: 'Noonday Prayer',       psalms: ['22','23','24'],    etReading: null },
+                { from: 15*60, to: 18*60, hourId: 'eth-serkh-hour-text',   hourName: 'Serkh — The Ninth Hour',               uiLabel: 'Afternoon Prayer',     psalms: ['69','70','71'],    etReading: null },
+                { from: 18*60, to: 21*60, hourId: 'eth-nimeat-hour-text',  hourName: 'Nimeat — Vespers',                     uiLabel: 'Evening Prayer',       psalms: ['141','142','143'], etReading: null },
+                { from: 21*60, to: 24*60, hourId: 'eth-hour-7',            hourName: 'The Seventh Hour — First Night Watch', uiLabel: 'Night Prayer (Early)', psalms: ['4','6','13'],      etReading: 'HERM_ET 1:1-10' },
+                { from:  0*60, to:  6*60, hourId: 'eth-night-hour-text',   hourName: 'Lelit — The Night Watch',              uiLabel: 'Night Prayer',         psalms: ['4','6','13'],      etReading: 'HERM_ET 1:1-10' },
+            ];
+            ethHourInfo = overrideHourMap.find(e => e.hourId === window._temporalOverride.hourId) || getEthiopianHourInfo();
+        } else {
+            ethHourInfo = getEthiopianHourInfo();
+        }
+    }
+
+    // Update sidebar Active Watch display
+    if (isEthiopianSaatat && ethHourInfo) {
+        const watchLabel = document.getElementById('eth-active-watch-label');
+        const dateLabel  = document.getElementById('eth-active-date-label');
+        if (watchLabel) watchLabel.textContent = ethHourInfo.hourName;
+        if (dateLabel)  dateLabel.textContent  = currentDate.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' }) + (window._temporalOverride.active ? ' ✦ override' : '');
+    }
 
     const calendarInfo = document.getElementById('calendar-info');
     if (calendarInfo && dailyData) {
@@ -806,17 +878,17 @@ async function renderOffice() {
 
         // eth-saatat-hour-slot — resolves to the canonical hour text keyed by local clock
         if (item === 'eth-saatat-hour-slot') {
-            if (ethHourInfo) {
-                const hourComp = appData.components.find(c => c.id === ethHourInfo.hourId);
-                if (hourComp) {
-                    officeHtml += `<span class="rubric-text">${ethHourInfo.hourName}</span>`;
-                    officeHtml += `<div class="component-text" style="white-space:normal">${applyParagraphBreaks(hourComp.text)}</div>`;
-                } else {
-                    console.warn(`[renderOffice] eth-saatat-hour-slot: component not found — ${ethHourInfo.hourId}`);
-                }
-            }
-            continue;
+    if (ethHourInfo) {
+        const hourComp = appData.components.find(c => c.id === ethHourInfo.hourId);
+        if (hourComp) {
+            // Uniform naming check
+            const displayName = (ethHourInfo.hourId === 'eth-hour-7') ? 'Nimeat (The Seventh Hour)' : ethHourInfo.hourName;
+            officeHtml += `<span class="rubric-text">${displayName}</span>`;
+            officeHtml += `<div class="component-text" style="white-space:normal">${applyParagraphBreaks(hourComp.text)}</div>`;
         }
+    }
+    continue;
+}
 
         // eth-mazmur-slot — renders appointed Psalms for the active hour, closes with Anqaşa Birhān
         if (item === 'eth-mazmur-slot') {
@@ -959,7 +1031,7 @@ async function renderOffice() {
         }
     }
 
-    // ── Ethiopian Full Mode: 41-Fold Kyrie & optional Weddase Maryam ─────────────
+    // ── Ethiopian Full Mode: 41-Fold Kyrie & weekly Weddase Maryam ───────────────
     if (isEthiopianSaatat) {
         const ethLength = document.getElementById('eth-length-select')?.value || 'abbreviated';
         if (ethLength === 'full') {
@@ -971,9 +1043,13 @@ async function renderOffice() {
         }
         const includeMarianCheck = document.getElementById('eth-include-marian')?.checked;
         if (includeMarianCheck) {
-            const weddaseComp = appData.components.find(c => c.id === 'eth-anqasa-birhan');
+            const dayNames = ['sunday','monday','tuesday','wednesday','thursday','friday','saturday'];
+            const activeDay = currentDate.getDay(); // 0 = Sunday, uses currentDate so override is respected
+            const weddaseId = `eth-weddase-${dayNames[activeDay]}`;
+            const weddaseComp = appData.components.find(c => c.id === weddaseId)
+                             || appData.components.find(c => c.id === 'eth-weddase-sunday');
             if (weddaseComp) {
-                officeHtml += `<span class="rubric-text">Weddase Maryam — Praise of Mary</span>`;
+                officeHtml += `<span class="rubric-text">Weddase Maryam — ${dayNames[activeDay].charAt(0).toUpperCase() + dayNames[activeDay].slice(1)}</span>`;
                 officeHtml += `<div class="component-text" style="white-space:normal"><i>${applyParagraphBreaks(weddaseComp.text)}</i></div>`;
             }
         }
