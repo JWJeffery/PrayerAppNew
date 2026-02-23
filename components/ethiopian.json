@@ -44,11 +44,11 @@
     "tradition": "Ethiopian Orthodox Tewahedo",
     "hour": "Liku",
     "note": "Commemorating the Crucifixion of Christ.",
-    "text": "At the sixth hour let us bow down before the Lord and worship Him, for at this hour Christ was nailed to the Cross for our sake, and the sun withheld its light, and the earth was shaken to its foundations.\n\nO Lord Jesus Christ, at the sixth hour of the day Thou wast crucified for our sins upon the Holy Cross, and the handwriting of our sins was nailed therewith. Forgive us our iniquities and save us.\n\nThou who at the sixth hour didst nail to the Cross the sin of the presumptuous Adam in Paradise: tear asunder also the bond of our iniquities, O Christ our God, and save us.\n\nAt midday, at the sixth hour, the light of the sun was darkened, and the veil of the temple was rent in two, when Thou, O Saviour, wast crucified between two thieves. Thou wast numbered with the transgressors, but Thou knewest no sin. Intercede for our souls, O Lord.\n\nGlory to the Father, and to the Son, and to the Holy Spirit. As it was in the beginning, is now, and ever shall be, world without end. Amen.\n\nLord have mercy. Lord have mercy. Lord have mercy.\n\nO God, who at the sixth hour and on the Cross didst nail the sin that bold Adam committed in Paradise: tear asunder also the handwriting of our iniquities, O Christ our God, and save us."
+    "text": "At the sixth hour we bow before Thee, O Christ our God, for at this hour Thou wast nailed to the Cross and didst take away the sin of the world.\n\nO Lord our God, who at the sixth hour didst nail to the Cross the sin of the presumptuous Adam, and didst tear asunder the handwriting of our sins: O Christ our God, mortify also the lusts of the flesh, and save us.\n\nAt the sixth hour they stretched out Thy hands upon the Cross, O our Savior, and pierced Thy side with a spear. At the same hour grant us also to wound our bodies with the nails of Thy fear, and cause us to love Thy holy sufferings.\n\nGlory to the Father, and to the Son, and to the Holy Spirit. As it was in the beginning, is now, and ever shall be, world without end. Amen.\n\nLord have mercy. Lord have mercy. Lord have mercy.\n\nO Thou who at the sixth hour and on the sixth day didst nail to the Cross the presumptuous sin of Adam, tear asunder also the bond of our transgressions, O Christ our God, and save us."
   },
   {
     "id": "eth-mazmur-tuat",
-    "title": "Mazmur for the Tuat (Morning Watch)",
+    "title": "Mazmur (Psalms) for the Tuat Hour",
     "tradition": "Ethiopian Orthodox Tewahedo",
     "hour": "Tuat",
     "note": "Appointed Psalms (Mazmur) for the Tuat canonical hour. The Ethiopian Saatat appoints Psalms 3, 63, and 133 for the Morning Watch.",
@@ -59,8 +59,28 @@
     "id": "eth-saints-commemoration",
     "title": "Commemoration of Saints",
     "tradition": "Ethiopian Orthodox Tewahedo",
-    "note": "Commemorations of saints and martyrs, with priority given to saints of the Ethiopian and African churches. Ethiopian commemorations are sourced from the Synaxarium (Senkessar).",
+    "note": "Fallback commemoration rendered when no Senkessar entry is available for the current date, or when the Full (Metsihafe Sa'atat) edition is not active. In the Full edition, this component is superseded by eth-synaxarium-reading, which fetches the appointed narrative hagiography from data/synaxarium/ethiopian/. This component is retained for the Abbreviated (Horologium) edition and as a safety fallback.",
+    "role": "fallback",
+    "superseded_by": "eth-synaxarium-reading",
     "text": "Let us commemorate the holy saints who have pleased God and who intercede for us before the throne of grace. May their prayers and their holy lives be an example and a strength to us.\n\nMay the prayers of the apostles, the martyrs, and all the saints be with us. Amen."
+  },
+  {
+    "id": "eth-synaxarium-reading",
+    "title": "Senkessar — The Synaxarium Reading",
+    "tradition": "Ethiopian Orthodox Tewahedo",
+    "note": "Primary hagiographical reading for the Full (Metsihafe Sa'atat) edition. Appointed for the Lelit (Night Watch) and Tuat (Morning Watch) hours. The narrative text is fetched dynamically from data/synaxarium/ethiopian/ via the senkessar-index.json, keyed to the current Ethiopian calendar date. Falls back to eth-saints-commemoration if no entry is found.",
+    "role": "primary",
+    "edition": "full",
+    "hours": ["Lelit", "Tuat"],
+    "data_path": "data/synaxarium/ethiopian/",
+    "index_file": "data/synaxarium/ethiopian/senkessar-index.json",
+    "resolution": {
+      "method": "ethiopian-calendar-date-lookup",
+      "key_pattern": "{month-slug}-{day}",
+      "fallback_component": "eth-saints-commemoration",
+      "note": "renderOffice() must convert the current Gregorian date to its Ethiopian calendar equivalent before resolving this component. The Ethiopian calendar conversion logic should be added to calendar-engine.js in Phase 2."
+    },
+    "text": "The appointed reading from the Senkessar (Book of the Saints) for this day.\n\nThis text is resolved dynamically from data/synaxarium/ethiopian/ and will be replaced at render time with the narrative hagiography for the current Ethiopian calendar date.\n\nIf no Senkessar entry is found for today, the general Commemoration of Saints will be offered in its place."
   },
   {
     "id": "eth-leke-haile-chant",
@@ -71,6 +91,9 @@
   },
   {
     "id": "eth-41-kyrie",
+    "title": "The Forty-One Kyrie",
+    "tradition": "Ethiopian Orthodox Tewahedo",
+    "note": "The litany of forty-one Lord have mercies recited in the Full (Metsihafe Sa'atat) edition.",
     "text": "Lord have mercy.\nLord have mercy.\nLord have mercy.\n\nLord have mercy.\nLord have mercy.\nLord have mercy.\n\nLord have mercy.\nLord have mercy.\nLord have mercy.\n\nLord have mercy.\nLord have mercy.\nLord have mercy.\n\nLord have mercy.\nLord have mercy.\nLord have mercy.\n\nLord have mercy.\nLord have mercy.\nLord have mercy.\n\nLord have mercy.\nLord have mercy.\nLord have mercy.\n\nLord have mercy.\nLord have mercy.\nLord have mercy.\n\nLord have mercy.\nLord have mercy.\nLord have mercy.\n\nLord have mercy.\nLord have mercy.\nLord have mercy.\n\nLord have mercy.\nLord have mercy.\nLord have mercy.\n\nLord have mercy.\nLord have mercy.\nLord have mercy.\n\nLord have mercy.\nLord have mercy.\nLord have mercy.\n\nLord have mercy.\nLord have mercy."
   },
   {
@@ -78,7 +101,7 @@
     "title": "Weddase Maryam — Sunday (The Praises of Mary)",
     "tradition": "Ethiopian Orthodox Tewahedo",
     "note": "The appointed Praises of Mary for Sunday. This is the heart of the Sunday Sa'atat, composed of rhythmic, theological poetry celebrating the Incarnation.",
-    "text": "Nai’eet (Blessed art thou)... \n\nBlessed art thou among women, and blessed is the fruit of thy womb. Hail to thee, O full of grace, the Lord is with thee. Thou art the spiritual vessel in which the Manna was hidden; the Manna which came down from heaven, the bread of life which gives life to the world.\n\nThou art the golden lampstand which carried the bright Light at all times; the Light which is the Son of God, who came and dwelt in thee, and enlightened us who were sitting in darkness and the shadow of death.\n\nThou art the golden censer which carried the coal of fire; the fire which the Word of God took from thee, and through it He smelled the sweet savor of the world's salvation. Thou art the garden of delight, the garden of the spirit, in which the tree of life was planted; the tree which is Christ, our God and Savior.\n\nO Mary, the Virgin, the Mother of God, the pure, the holy, the Mother of the Light: we magnify thee with the songs of the angels. Thou art higher than the Cherubim and more glorious than the Seraphim. Thou art the glory of the prophets and the pride of the apostles. Thou art the foundation of the martyrs and the strength of the righteous.\n\nIntercede for us, O holy one, before thy Son, our Lord Jesus Christ, that He may forgive us our sins and have mercy upon us. Glory be to the Father, and to the Son, and to the Holy Spirit, now and ever, and unto the ages of ages. Amen."
+    "text": "Nai'eet (Blessed art thou)... \n\nBlessed art thou among women, and blessed is the fruit of thy womb. Hail to thee, O full of grace, the Lord is with thee. Thou art the spiritual vessel in which the Manna was hidden; the Manna which came down from heaven, the bread of life which gives life to the world.\n\nThou art the golden lampstand which carried the bright Light at all times; the Light which is the Son of God, who came and dwelt in thee, and enlightened us who were sitting in darkness and the shadow of death.\n\nThou art the golden censer which carried the coal of fire; the fire which the Word of God took from thee, and through it He smelled the sweet savor of the world's salvation. Thou art the garden of delight, the garden of the spirit, in which the tree of life was planted; the tree which is Christ, our God and Savior.\n\nO Mary, the Virgin, the Mother of God, the pure, the holy, the Mother of the Light: we magnify thee with the songs of the angels. Thou art higher than the Cherubim and more glorious than the Seraphim. Thou art the glory of the prophets and the pride of the apostles. Thou art the foundation of the martyrs and the strength of the righteous.\n\nIntercede for us, O holy one, before thy Son, our Lord Jesus Christ, that He may forgive us our sins and have mercy upon us. Glory be to the Father, and to the Son, and to the Holy Spirit, now and ever, and unto the ages of ages. Amen."
   },
   {
     "id": "eth-serkh-hour-text",
