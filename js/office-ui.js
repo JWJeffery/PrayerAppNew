@@ -439,19 +439,19 @@ function getEthiopianHourInfo() {
     const totalMinutes = now.getHours() * 60 + now.getMinutes();
 
     const hourMap = [
-        { from:  6 * 60, to:  9 * 60, hourId: 'eth-tuat-hour-text',    hourName: 'Tuat — The Morning Watch', uiLabel: 'Morning Prayer',     psalms: ['3', '63', '133'] },
-        { from:  9 * 60, to: 12 * 60, hourId: 'eth-meserkh-hour-text', hourName: 'Meserkh — The Third Hour',  uiLabel: 'Mid-Morning Prayer', psalms: ['16', '17', '18'] },
-        { from: 12 * 60, to: 15 * 60, hourId: 'eth-liku-hour-text',    hourName: 'Liku — The Sixth Hour',     uiLabel: 'Noonday Prayer',     psalms: ['22', '23', '24'] },
-        { from: 15 * 60, to: 18 * 60, hourId: 'eth-serkh-hour-text',   hourName: 'Serkh — The Ninth Hour',    uiLabel: 'Afternoon Prayer',   psalms: ['69', '70', '71'] },
-        { from: 18 * 60, to: 21 * 60, hourId: 'eth-nimeat-hour-text',  hourName: 'Nimeat — Vespers',          uiLabel: 'Evening Prayer',     psalms: ['141', '142', '143'] },
-        { from: 21 * 60, to: 24 * 60, hourId: 'eth-night-hour-text',   hourName: 'Lelit — The Night Watch',   uiLabel: 'Night Prayer',       psalms: ['4', '6', '13'] },
-        { from:  0 * 60, to:  6 * 60, hourId: 'eth-night-hour-text',   hourName: 'Lelit — The Night Watch',   uiLabel: 'Night Prayer',       psalms: ['4', '6', '13'] },
+        { from:  6 * 60, to:  9 * 60, hourId: 'eth-tuat-hour-text',    hourName: 'Tuat — The Morning Watch',             uiLabel: 'Morning Prayer',     psalms: ['3', '63', '133'],    etReading: '1CLEM_ET 1:1-20' },
+        { from:  9 * 60, to: 12 * 60, hourId: 'eth-meserkh-hour-text', hourName: 'Meserkh — The Third Hour',             uiLabel: 'Mid-Morning Prayer', psalms: ['16', '17', '18'],    etReading: null },
+        { from: 12 * 60, to: 15 * 60, hourId: 'eth-liku-hour-text',    hourName: 'Liku — The Sixth Hour',                uiLabel: 'Noonday Prayer',     psalms: ['22', '23', '24'],    etReading: null },
+        { from: 15 * 60, to: 18 * 60, hourId: 'eth-serkh-hour-text',   hourName: 'Serkh — The Ninth Hour',               uiLabel: 'Afternoon Prayer',   psalms: ['69', '70', '71'],    etReading: null },
+        { from: 18 * 60, to: 21 * 60, hourId: 'eth-nimeat-hour-text',  hourName: 'Nimeat — Vespers',                     uiLabel: 'Evening Prayer',     psalms: ['141', '142', '143'], etReading: null },
+        { from: 21 * 60, to: 24 * 60, hourId: 'eth-hour-7',            hourName: 'The Seventh Hour — First Night Watch', uiLabel: 'Night Prayer (Early)', psalms: ['4', '6', '13'],   etReading: 'HERM_ET 1:1-10' },
+        { from:  0 * 60, to:  6 * 60, hourId: 'eth-night-hour-text',   hourName: 'Lelit — The Night Watch',              uiLabel: 'Night Prayer',       psalms: ['4', '6', '13'],      etReading: 'HERM_ET 1:1-10' },
     ];
 
     for (const entry of hourMap) {
         if (totalMinutes >= entry.from && totalMinutes < entry.to) return entry;
     }
-    return { hourId: 'eth-tuat-hour-text', hourName: 'Tuat — The Morning Watch', uiLabel: 'Morning Prayer', psalms: ['3', '63', '133'] };
+    return { hourId: 'eth-tuat-hour-text', hourName: 'Tuat — The Morning Watch', uiLabel: 'Morning Prayer', psalms: ['3', '63', '133'], etReading: '1CLEM_ET 1:1-20' };
 }
 
 // ── Office Renderer ──────────────────────────────────────────────────────────
@@ -843,6 +843,26 @@ async function renderOffice() {
                 if (anqasa) {
                     officeHtml += `<span class="rubric-text">Anqaşa Birhān — Gate of Light</span>`;
                     officeHtml += `<div class="component-text" style="white-space:normal"><i>${applyParagraphBreaks(anqasa.text)}</i></div>`;
+                }
+            }
+            continue;
+        }
+
+        // VARIABLE_READING_ET — canonical ET-tradition scripture reading for Lelit and Tuat
+        if (item === 'VARIABLE_READING_ET') {
+            if (isEthiopianSaatat && ethHourInfo && ethHourInfo.etReading) {
+                const citation = ethHourInfo.etReading;
+                const text     = await getScriptureText(citation);
+                if (text) {
+                    const readingLabel = (ethHourInfo.hourId === 'eth-tuat-hour-text')
+                        ? 'The Tuat Reading — 1 Clement'
+                        : 'The Lelit Reading — The Shepherd of Hermas';
+                    officeHtml += `<span class="rubric-text">${readingLabel}</span>`;
+                    officeHtml += `<h4 class="passage-reference">${citation}</h4>`;
+                    officeHtml += `<div class="reading-text">${formatScriptureAsFlow(text)}</div>`;
+                    officeHtml += '<div class="ornamental-divider"><div class="div-line-left"></div><span class="ornamental-divider-glyph">✦ ✝ ✦</span><div class="div-line-right"></div></div>';
+                } else {
+                    console.warn(`[renderOffice] VARIABLE_READING_ET: no text returned for ${citation}`);
                 }
             }
             continue;
