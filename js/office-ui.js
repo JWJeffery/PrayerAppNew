@@ -136,42 +136,83 @@ async function init() {
 
 // ── Mode Selection ───────────────────────────────────────────────────────────
 function selectMode(mode) {
-    const settingsPanel = document.getElementById('settings-panel');
-    const ethSettings = document.getElementById('ethiopian-settings');
-    const mainContent = document.getElementById('main-content');
-    
-    // Hide everything first
-    if (settingsPanel) settingsPanel.style.display = 'none';
-    if (ethSettings) ethSettings.style.display = 'none';
-    document.body.classList.remove('ethiopian-theme');
+    selectedMode = mode;
 
-    if (mode === 'ethiopian-saatat') {
+    // ── 1. Dismiss the splash screen ────────────────────────────────────────
+    document.getElementById('splash-bg').style.display      = 'none';
+    document.getElementById('mode-selection').style.display = 'none';
+
+    // ── 2. Strip body splash-centering layout ────────────────────────────────
+    document.body.style.display        = '';
+    document.body.style.alignItems     = '';
+    document.body.style.justifyContent = '';
+    document.body.style.height         = '';
+    document.body.style.overflowY      = '';
+    document.body.classList.add('office-active');
+
+    // ── 3. Clear any prior theme state ───────────────────────────────────────
+    document.body.classList.remove('ethiopian-theme');
+    window._forcedOfficeId = undefined;
+
+    const settingsPanel = document.getElementById('settings-panel');
+    const ethSettings   = document.getElementById('ethiopian-settings');
+    const mainContent   = document.getElementById('main-content');
+
+    if (mode === 'prayers') {
+        // ── Book of Needs ────────────────────────────────────────────────────
+        document.getElementById('daily-office-section').style.display       = 'none';
+        document.getElementById('individual-prayers-section').style.display = 'flex';
+
+    } else if (mode === 'ethiopian-saatat') {
+        // ── Ethiopian Sa'atat ────────────────────────────────────────────────
+        document.getElementById('individual-prayers-section').style.display = 'none';
+        document.getElementById('daily-office-section').style.display       = 'flex';
+
         document.body.classList.add('ethiopian-theme');
+        window._forcedOfficeId = 'ethiopian-saatat';
+
+        // CSS controls visibility — JS only manages classes
+        if (settingsPanel) {
+            settingsPanel.classList.add('sidebar-hidden');
+            settingsPanel.classList.add('mode-hidden'); // hide from flex flow entirely
+        }
         if (ethSettings) {
-            ethSettings.style.display = 'block';
-            ethSettings.classList.add('sidebar-hidden'); // Start closed
+            ethSettings.classList.remove('mode-hidden');
+            ethSettings.classList.add('sidebar-hidden'); // starts closed
         }
         mainContent.classList.add('sidebar-hidden');
-        renderOffice('ethiopian-saatat');
+
+        if (!appData) { init(); } else { renderOffice(); }
+
     } else {
+        // ── Daily Office (default) ───────────────────────────────────────────
+        document.getElementById('individual-prayers-section').style.display = 'none';
+        document.getElementById('daily-office-section').style.display       = 'flex';
+
+        // CSS controls visibility — JS only manages classes
+        if (ethSettings) {
+            ethSettings.classList.add('sidebar-hidden');
+            ethSettings.classList.add('mode-hidden'); // hide from flex flow entirely
+        }
         if (settingsPanel) {
-            settingsPanel.style.display = 'block';
+            settingsPanel.classList.remove('mode-hidden');
             settingsPanel.classList.remove('sidebar-hidden');
         }
         mainContent.classList.remove('sidebar-hidden');
-        renderOffice();
+
+        if (!appData) { init(); } else { renderOffice(); }
     }
 }
 
 function toggleSidebar() {
     const bcpPanel = document.getElementById('settings-panel');
     const ethPanel = document.getElementById('ethiopian-settings');
-    const main = document.getElementById('main-content');
-    const toggle = document.getElementById('sidebar-toggle');
+    const main     = document.getElementById('main-content');
+    const toggle   = document.getElementById('sidebar-toggle');
 
-    // Detect which panel is currently on the screen
-    const activePanel = (ethPanel && ethPanel.style.display !== 'none') ? ethPanel : bcpPanel;
-    
+    // Detect active panel by which one is NOT mode-hidden
+    const activePanel = (ethPanel && !ethPanel.classList.contains('mode-hidden')) ? ethPanel : bcpPanel;
+
     const isHidden = activePanel.classList.toggle('sidebar-hidden');
     main.classList.toggle('sidebar-hidden', isHidden);
     if (toggle) toggle.style.opacity = isHidden ? '0.65' : '0.5';
@@ -202,16 +243,6 @@ function setCustomDate(dateStr) {
     }
     updateDatePicker();
     renderOffice();
-}
-
-// ── Sidebar ──────────────────────────────────────────────────────────────────
-function toggleSidebar() {
-    const panel  = document.getElementById('settings-panel');
-    const toggle = document.getElementById('sidebar-toggle');
-    const main   = document.getElementById('main-content');
-    const hidden = panel.classList.toggle('sidebar-hidden');
-    main.classList.toggle('sidebar-hidden', hidden);
-    toggle.style.opacity = hidden ? '0.65' : '0.5';
 }
 
 function updateSidebarForOffice() {
@@ -962,12 +993,19 @@ function backToSplash() {
     document.getElementById('daily-office-section').style.display       = 'none';
     document.getElementById('individual-prayers-section').style.display = 'none';
     document.getElementById('prayer-display').style.display             = 'none';
+
+    // Restore body to splash centering layout
     document.body.style.display        = 'flex';
     document.body.style.alignItems     = 'center';
     document.body.style.justifyContent = 'center';
     document.body.style.height         = '100vh';
     document.body.style.overflowY      = 'hidden';
+
+    // Scrub all mode/theme state
     document.body.classList.remove('office-active');
+    document.body.classList.remove('ethiopian-theme');
+    window._forcedOfficeId = undefined;
+
     document.getElementById('splash-bg').style.display      = 'block';
     document.getElementById('mode-selection').style.display = 'block';
     selectedMode = null;
