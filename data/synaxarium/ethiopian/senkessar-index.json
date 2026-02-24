@@ -5,477 +5,2099 @@
     "description": "Maps each day of the 13-month Ethiopian calendar to its appointed Senkessar entry IDs. Entries are keyed by Ethiopian month name and day number. Each day may carry multiple entries (primary saint, secondary saint, feast). The 'reading_id' field is the component/narrative ID that will be resolved by renderOffice() via the eth-synaxarium-reading component.",
     "calendar_system": "Ethiopian (Ge'ez) — 12 months of 30 days + Pagume (intercalary month of 5 or 6 days)",
     "month_names": [
-      "Meskerem", "Tikimt", "Hidar", "Tahsas",
-      "Tir", "Yekatit", "Megabit", "Miyazya",
-      "Ginbot", "Sene", "Hamle", "Nehase", "Pagume"
+      "Meskerem", "Tikimt",   "Hidar",    "Tahsas",   "Tir",      "Yekatit",
+      "Megabit",  "Miyazya",  "Ginbot",   "Sene",     "Hamle",    "Nehase",
+      "Pagume"
     ],
     "version": "1.0 — structural template (Phase 1)",
     "note": "Entry IDs follow the pattern: senkessar-{month-slug}-{day}. Narrative text files will reside at data/synaxarium/ethiopian/{month-slug}/{day}.json."
   },
-
-  "months": {
-
-    "Meskerem": {
+  "months": [
+    {
+      "month": "Meskerem",
       "month_number": 1,
-      "days": 30,
-      "entries": {
-        "1":  { "reading_id": "senkessar-meskerem-1",  "primary_saint": null, "feast": "Ethiopian New Year (Enkutatash)" },
-        "2":  { "reading_id": "senkessar-meskerem-2",  "primary_saint": null, "feast": null },
-        "3":  { "reading_id": "senkessar-meskerem-3",  "primary_saint": null, "feast": null },
-        "4":  { "reading_id": "senkessar-meskerem-4",  "primary_saint": null, "feast": null },
-        "5":  { "reading_id": "senkessar-meskerem-5",  "primary_saint": null, "feast": null },
-        "6":  { "reading_id": "senkessar-meskerem-6",  "primary_saint": null, "feast": null },
-        "7":  { "reading_id": "senkessar-meskerem-7",  "primary_saint": null, "feast": null },
-        "8":  { "reading_id": "senkessar-meskerem-8",  "primary_saint": null, "feast": null },
-        "9":  { "reading_id": "senkessar-meskerem-9",  "primary_saint": null, "feast": null },
-        "10": { "reading_id": "senkessar-meskerem-10", "primary_saint": null, "feast": null },
-        "11": { "reading_id": "senkessar-meskerem-11", "primary_saint": null, "feast": null },
-        "12": { "reading_id": "senkessar-meskerem-12", "primary_saint": null, "feast": null },
-        "13": { "reading_id": "senkessar-meskerem-13", "primary_saint": null, "feast": null },
-        "14": { "reading_id": "senkessar-meskerem-14", "primary_saint": null, "feast": null },
-        "15": { "reading_id": "senkessar-meskerem-15", "primary_saint": null, "feast": null },
-        "16": { "reading_id": "senkessar-meskerem-16", "primary_saint": null, "feast": null },
-        "17": { "reading_id": "senkessar-meskerem-17", "primary_saint": null, "feast": null },
-        "18": { "reading_id": "senkessar-meskerem-18", "primary_saint": null, "feast": null },
-        "19": { "reading_id": "senkessar-meskerem-19", "primary_saint": null, "feast": null },
-        "20": { "reading_id": "senkessar-meskerem-20", "primary_saint": null, "feast": null },
-        "21": { "reading_id": "senkessar-meskerem-21", "primary_saint": null, "feast": null },
-        "22": { "reading_id": "senkessar-meskerem-22", "primary_saint": null, "feast": null },
-        "23": { "reading_id": "senkessar-meskerem-23", "primary_saint": null, "feast": null },
-        "24": { "reading_id": "senkessar-meskerem-24", "primary_saint": null, "feast": null },
-        "25": { "reading_id": "senkessar-meskerem-25", "primary_saint": null, "feast": null },
-        "26": { "reading_id": "senkessar-meskerem-26", "primary_saint": null, "feast": null },
-        "27": { "reading_id": "senkessar-meskerem-27", "primary_saint": null, "feast": null },
-        "28": { "reading_id": "senkessar-meskerem-28", "primary_saint": null, "feast": null },
-        "29": { "reading_id": "senkessar-meskerem-29", "primary_saint": null, "feast": null },
-        "30": { "reading_id": "senkessar-meskerem-30", "primary_saint": null, "feast": null }
-      }
+      "ge_ez": "መስከረም",
+      "total_days": 30,
+      "thematic_summary": "The first month of the new Ethiopian year. Season of golden light, the Enkutatash New Year celebration, and the royal triumph of the Cross at Maskal. Opens with the Crown of the Year and builds toward the Finding of the True Cross on Day 17.",
+      "key_feasts": [
+        {"day": 1, "feast": "Enkutatash — The Ethiopian New Year"},
+        {"day": 8, "feast": "The Birthday of the Virgin Mary"},
+        {
+          "day": 17,
+          "feast": "Maskal — The Feast of the Finding of the True Cross"
+        },
+        {
+          "day": 26,
+          "feast": "Departure and Translation of St. John the Apostle"
+        },
+        {"day": 27, "feast": "Monthly Crucifixion"},
+        {"day": 29, "feast": "Triple Feast (Maskal/Qal/Timqat)"},
+        {"day": 30, "feast": "St. Gregory the Illuminator, Apostle of Armenia"}
+      ],
+      "days": [
+        {
+          "day": 1,
+          "id": "senkessar-meskerem-1",
+          "title": "1 Meskerem — Enkutatash (The New Year) & The Assembly"
+        },
+        {
+          "day": 2,
+          "id": "senkessar-meskerem-2",
+          "title": "2 Meskerem — St. John the Baptist & The Assembly"
+        },
+        {
+          "day": 3,
+          "id": "senkessar-meskerem-3",
+          "title": "3 Meskerem — St. Zechariah the Prophet & The Assembly"
+        },
+        {
+          "day": 4,
+          "id": "senkessar-meskerem-4",
+          "title": "4 Meskerem — St. John the Apostle & The Assembly"
+        },
+        {
+          "day": 5,
+          "id": "senkessar-meskerem-5",
+          "title": "5 Meskerem — St. Sophia & Her Daughters & The Assembly"
+        },
+        {
+          "day": 6,
+          "id": "senkessar-meskerem-6",
+          "title": "6 Meskerem — St. Ezekiel the Prophet & The Assembly"
+        },
+        {
+          "day": 7,
+          "id": "senkessar-meskerem-7",
+          "title": "7 Meskerem — Archangel Gabriel & The Assembly"
+        },
+        {
+          "day": 8,
+          "id": "senkessar-meskerem-8",
+          "title": "8 Meskerem — The Birthday of the Virgin Mary & The Assembly"
+        },
+        {
+          "day": 9,
+          "id": "senkessar-meskerem-9",
+          "title": "9 Meskerem — St. Samuel the Prophet & The Assembly"
+        },
+        {
+          "day": 10,
+          "id": "senkessar-meskerem-10",
+          "title": "10 Meskerem — St. Matra the Martyr & The Assembly"
+        },
+        {
+          "day": 11,
+          "id": "senkessar-meskerem-11",
+          "title": "11 Meskerem — Archangel Michael & The Assembly"
+        },
+        {
+          "day": 12,
+          "id": "senkessar-meskerem-12",
+          "title": "12 Meskerem — St. Constantine the Great & The Assembly"
+        },
+        {
+          "day": 13,
+          "id": "senkessar-meskerem-13",
+          "title": "13 Meskerem — St. Basalide & The Assembly"
+        },
+        {
+          "day": 14,
+          "id": "senkessar-meskerem-14",
+          "title": "14 Meskerem — St. Agathon the Hermit & The Assembly"
+        },
+        {
+          "day": 15,
+          "id": "senkessar-meskerem-15",
+          "title": "15 Meskerem — St. Stephen the Protomartyr & The Assembly"
+        },
+        {
+          "day": 16,
+          "id": "senkessar-meskerem-16",
+          "title": "16 Meskerem — St. John the Baptist & The Assembly"
+        },
+        {
+          "day": 17,
+          "id": "senkessar-meskerem-17",
+          "title": "17 Meskerem — Maskal (The Feast of the True Cross) & The Assembly"
+        },
+        {
+          "day": 18,
+          "id": "senkessar-meskerem-18",
+          "title": "18 Meskerem — St. George & The Assembly"
+        },
+        {
+          "day": 19,
+          "id": "senkessar-meskerem-19",
+          "title": "19 Meskerem — Archangel Gabriel & The Assembly"
+        },
+        {
+          "day": 20,
+          "id": "senkessar-meskerem-20",
+          "title": "20 Meskerem — The First Entry into Egypt & The Assembly"
+        },
+        {
+          "day": 21,
+          "id": "senkessar-meskerem-21",
+          "title": "21 Meskerem — The Virgin Mary & The Assembly"
+        },
+        {
+          "day": 22,
+          "id": "senkessar-meskerem-22",
+          "title": "22 Meskerem — St. Isaac of Nineveh & The Assembly"
+        },
+        {
+          "day": 23,
+          "id": "senkessar-meskerem-23",
+          "title": "23 Meskerem — St. Solomon the King & The Assembly"
+        },
+        {
+          "day": 24,
+          "id": "senkessar-meskerem-24",
+          "title": "24 Meskerem — The Arrival in Egypt & The Assembly"
+        },
+        {
+          "day": 25,
+          "id": "senkessar-meskerem-25",
+          "title": "25 Meskerem — St. Tekle Haymanot & The Assembly"
+        },
+        {
+          "day": 26,
+          "id": "senkessar-meskerem-26",
+          "title": "26 Meskerem — St. Joshua son of Nun & The Assembly"
+        },
+        {
+          "day": 27,
+          "id": "senkessar-meskerem-27",
+          "title": "27 Meskerem — The Monthly Crucifixion & The Assembly"
+        },
+        {
+          "day": 28,
+          "id": "senkessar-meskerem-28",
+          "title": "28 Meskerem — St. Abraham, Isaac, and Jacob & The Assembly"
+        },
+        {
+          "day": 29,
+          "id": "senkessar-meskerem-29",
+          "title": "29 Meskerem — The Triple Feast & The Assembly"
+        },
+        {
+          "day": 30,
+          "id": "senkessar-meskerem-30",
+          "title": "30 Meskerem — St. Gregory the Illuminator & The Assembly"
+        }
+      ]
     },
-
-    "Tikimt": {
+    {
+      "month": "Tiqimt",
       "month_number": 2,
-      "days": 30,
-      "entries": {
-        "1":  { "reading_id": "senkessar-tikimt-1",  "primary_saint": null, "feast": null },
-        "2":  { "reading_id": "senkessar-tikimt-2",  "primary_saint": null, "feast": null },
-        "3":  { "reading_id": "senkessar-tikimt-3",  "primary_saint": null, "feast": null },
-        "4":  { "reading_id": "senkessar-tikimt-4",  "primary_saint": null, "feast": null },
-        "5":  { "reading_id": "senkessar-tikimt-5",  "primary_saint": null, "feast": null },
-        "6":  { "reading_id": "senkessar-tikimt-6",  "primary_saint": null, "feast": null },
-        "7":  { "reading_id": "senkessar-tikimt-7",  "primary_saint": null, "feast": null },
-        "8":  { "reading_id": "senkessar-tikimt-8",  "primary_saint": null, "feast": null },
-        "9":  { "reading_id": "senkessar-tikimt-9",  "primary_saint": null, "feast": null },
-        "10": { "reading_id": "senkessar-tikimt-10", "primary_saint": null, "feast": null },
-        "11": { "reading_id": "senkessar-tikimt-11", "primary_saint": null, "feast": null },
-        "12": { "reading_id": "senkessar-tikimt-12", "primary_saint": null, "feast": null },
-        "13": { "reading_id": "senkessar-tikimt-13", "primary_saint": null, "feast": null },
-        "14": { "reading_id": "senkessar-tikimt-14", "primary_saint": null, "feast": null },
-        "15": { "reading_id": "senkessar-tikimt-15", "primary_saint": null, "feast": null },
-        "16": { "reading_id": "senkessar-tikimt-16", "primary_saint": null, "feast": null },
-        "17": { "reading_id": "senkessar-tikimt-17", "primary_saint": null, "feast": null },
-        "18": { "reading_id": "senkessar-tikimt-18", "primary_saint": null, "feast": null },
-        "19": { "reading_id": "senkessar-tikimt-19", "primary_saint": null, "feast": null },
-        "20": { "reading_id": "senkessar-tikimt-20", "primary_saint": null, "feast": null },
-        "21": { "reading_id": "senkessar-tikimt-21", "primary_saint": null, "feast": null },
-        "22": { "reading_id": "senkessar-tikimt-22", "primary_saint": null, "feast": null },
-        "23": { "reading_id": "senkessar-tikimt-23", "primary_saint": null, "feast": null },
-        "24": { "reading_id": "senkessar-tikimt-24", "primary_saint": null, "feast": null },
-        "25": { "reading_id": "senkessar-tikimt-25", "primary_saint": null, "feast": null },
-        "26": { "reading_id": "senkessar-tikimt-26", "primary_saint": null, "feast": null },
-        "27": { "reading_id": "senkessar-tikimt-27", "primary_saint": null, "feast": null },
-        "28": { "reading_id": "senkessar-tikimt-28", "primary_saint": null, "feast": null },
-        "29": { "reading_id": "senkessar-tikimt-29", "primary_saint": null, "feast": null },
-        "30": { "reading_id": "senkessar-tikimt-30", "primary_saint": null, "feast": null }
-      }
+      "ge_ez": "ጥቅምት",
+      "total_days": 30,
+      "thematic_summary": "The second month — the month of the Covenant of Mercy. As the excitement of the New Year settles, the focus turns inward: the quiet of the cell, the steadfastness of the martyrs, and the sustained faithfulness of the interior life. The critical historical anchor is the Martyrs of Najran and King Kaleb of Aksum on Day 24.",
+      "key_feasts": [
+        {"day": 14, "feast": "St. Gebre Mesqel (King), Servant of the Cross"},
+        {
+          "day": 24,
+          "feast": "Martyrs of Najran and St. Elesbaan (King Kaleb of Aksum)"
+        },
+        {"day": 27, "feast": "Monthly Crucifixion"},
+        {"day": 29, "feast": "Triple Feast (Maskal/Qal/Timqat)"},
+        {"day": 30, "feast": "St. John Chrysostom, the Golden-Mouthed"}
+      ],
+      "days": [
+        {
+          "day": 1,
+          "id": "senkessar-tiqimt-1",
+          "title": "1 Tiqimt — St. Adam & The Assembly"
+        },
+        {
+          "day": 2,
+          "id": "senkessar-tiqimt-2",
+          "title": "2 Tiqimt — St. Job the Patriarch & The Assembly"
+        },
+        {
+          "day": 3,
+          "id": "senkessar-tiqimt-3",
+          "title": "3 Tiqimt — St. Zechariah the Prophet & The Assembly"
+        },
+        {
+          "day": 4,
+          "id": "senkessar-tiqimt-4",
+          "title": "4 Tiqimt — St. John the Apostle & The Assembly"
+        },
+        {
+          "day": 5,
+          "id": "senkessar-tiqimt-5",
+          "title": "5 Tiqimt — St. Philip the Apostle & The Assembly"
+        },
+        {
+          "day": 6,
+          "id": "senkessar-tiqimt-6",
+          "title": "6 Tiqimt — St. Ezekiel the Prophet & The Assembly"
+        },
+        {
+          "day": 7,
+          "id": "senkessar-tiqimt-7",
+          "title": "7 Tiqimt — Archangel Gabriel & The Assembly"
+        },
+        {
+          "day": 8,
+          "id": "senkessar-tiqimt-8",
+          "title": "8 Tiqimt — The Birthday of the Virgin Mary & The Assembly"
+        },
+        {
+          "day": 9,
+          "id": "senkessar-tiqimt-9",
+          "title": "9 Tiqimt — St. Samuel the Prophet & The Assembly"
+        },
+        {
+          "day": 10,
+          "id": "senkessar-tiqimt-10",
+          "title": "10 Tiqimt — St. Matra the Martyr & The Assembly"
+        },
+        {
+          "day": 11,
+          "id": "senkessar-tiqimt-11",
+          "title": "11 Tiqimt — Archangel Michael & The Assembly"
+        },
+        {
+          "day": 12,
+          "id": "senkessar-tiqimt-12",
+          "title": "12 Tiqimt — St. Constantine the Great & The Assembly"
+        },
+        {
+          "day": 13,
+          "id": "senkessar-tiqimt-13",
+          "title": "13 Tiqimt — St. Basalide & The Assembly"
+        },
+        {
+          "day": 14,
+          "id": "senkessar-tiqimt-14",
+          "title": "14 Tiqimt — St. Gebre Mesqel the Emperor & The Assembly"
+        },
+        {
+          "day": 15,
+          "id": "senkessar-tiqimt-15",
+          "title": "15 Tiqimt — St. Stephen the Protomartyr & The Assembly"
+        },
+        {
+          "day": 16,
+          "id": "senkessar-tiqimt-16",
+          "title": "16 Tiqimt — St. John the Baptist & The Assembly"
+        },
+        {
+          "day": 17,
+          "id": "senkessar-tiqimt-17",
+          "title": "17 Tiqimt — St. James the Apostle & The Assembly"
+        },
+        {
+          "day": 18,
+          "id": "senkessar-tiqimt-18",
+          "title": "18 Tiqimt — St. George & The Assembly"
+        },
+        {
+          "day": 19,
+          "id": "senkessar-tiqimt-19",
+          "title": "19 Tiqimt — Archangel Gabriel & The Assembly"
+        },
+        {
+          "day": 20,
+          "id": "senkessar-tiqimt-20",
+          "title": "20 Tiqimt — The First Entry into Egypt & The Assembly"
+        },
+        {
+          "day": 21,
+          "id": "senkessar-tiqimt-21",
+          "title": "21 Tiqimt — The Virgin Mary & The Assembly"
+        },
+        {
+          "day": 22,
+          "id": "senkessar-tiqimt-22",
+          "title": "22 Tiqimt — St. Isaac of Nineveh & The Assembly"
+        },
+        {
+          "day": 23,
+          "id": "senkessar-tiqimt-23",
+          "title": "23 Tiqimt — St. Solomon the King & The Assembly"
+        },
+        {
+          "day": 24,
+          "id": "senkessar-tiqimt-24",
+          "title": "24 Tiqimt — The Arrival in Egypt & The Assembly"
+        },
+        {
+          "day": 25,
+          "id": "senkessar-tiqimt-25",
+          "title": "25 Tiqimt — St. Tekle Haymanot & The Assembly"
+        },
+        {
+          "day": 26,
+          "id": "senkessar-tiqimt-26",
+          "title": "26 Tiqimt — St. Joshua son of Nun & The Assembly"
+        },
+        {
+          "day": 27,
+          "id": "senkessar-tiqimt-27",
+          "title": "27 Tiqimt — The Monthly Crucifixion & The Assembly"
+        },
+        {
+          "day": 28,
+          "id": "senkessar-tiqimt-28",
+          "title": "28 Tiqimt — St. Abraham, Isaac, and Jacob & The Assembly"
+        },
+        {
+          "day": 29,
+          "id": "senkessar-tiqimt-29",
+          "title": "29 Tiqimt — The Triple Feast & The Assembly"
+        },
+        {
+          "day": 30,
+          "id": "senkessar-tiqimt-30",
+          "title": "30 Tiqimt — St. John Chrysostom & The Assembly"
+        }
+      ]
     },
-
-    "Hidar": {
+    {
+      "month": "Hidar",
       "month_number": 3,
-      "days": 30,
-      "entries": {
-        "1":  { "reading_id": "senkessar-hidar-1",  "primary_saint": null, "feast": null },
-        "2":  { "reading_id": "senkessar-hidar-2",  "primary_saint": null, "feast": null },
-        "3":  { "reading_id": "senkessar-hidar-3",  "primary_saint": null, "feast": null },
-        "4":  { "reading_id": "senkessar-hidar-4",  "primary_saint": null, "feast": null },
-        "5":  { "reading_id": "senkessar-hidar-5",  "primary_saint": null, "feast": null },
-        "6":  { "reading_id": "senkessar-hidar-6",  "primary_saint": null, "feast": null },
-        "7":  { "reading_id": "senkessar-hidar-7",  "primary_saint": null, "feast": null },
-        "8":  { "reading_id": "senkessar-hidar-8",  "primary_saint": null, "feast": null },
-        "9":  { "reading_id": "senkessar-hidar-9",  "primary_saint": null, "feast": null },
-        "10": { "reading_id": "senkessar-hidar-10", "primary_saint": null, "feast": null },
-        "11": { "reading_id": "senkessar-hidar-11", "primary_saint": null, "feast": null },
-        "12": { "reading_id": "senkessar-hidar-12", "primary_saint": null, "feast": null },
-        "13": { "reading_id": "senkessar-hidar-13", "primary_saint": null, "feast": null },
-        "14": { "reading_id": "senkessar-hidar-14", "primary_saint": null, "feast": null },
-        "15": { "reading_id": "senkessar-hidar-15", "primary_saint": null, "feast": null },
-        "16": { "reading_id": "senkessar-hidar-16", "primary_saint": null, "feast": null },
-        "17": { "reading_id": "senkessar-hidar-17", "primary_saint": null, "feast": null },
-        "18": { "reading_id": "senkessar-hidar-18", "primary_saint": null, "feast": null },
-        "19": { "reading_id": "senkessar-hidar-19", "primary_saint": null, "feast": null },
-        "20": { "reading_id": "senkessar-hidar-20", "primary_saint": null, "feast": null },
-        "21": { "reading_id": "senkessar-hidar-21", "primary_saint": null, "feast": null },
-        "22": { "reading_id": "senkessar-hidar-22", "primary_saint": null, "feast": null },
-        "23": { "reading_id": "senkessar-hidar-23", "primary_saint": null, "feast": null },
-        "24": { "reading_id": "senkessar-hidar-24", "primary_saint": null, "feast": null },
-        "25": { "reading_id": "senkessar-hidar-25", "primary_saint": null, "feast": null },
-        "26": { "reading_id": "senkessar-hidar-26", "primary_saint": null, "feast": null },
-        "27": { "reading_id": "senkessar-hidar-27", "primary_saint": null, "feast": "Feast of the Covenant of Mercy (Hidar Tsion)" },
-        "28": { "reading_id": "senkessar-hidar-28", "primary_saint": null, "feast": null },
-        "29": { "reading_id": "senkessar-hidar-29", "primary_saint": null, "feast": null },
-        "30": { "reading_id": "senkessar-hidar-30", "primary_saint": null, "feast": null }
-      }
+      "ge_ez": "ኅዳር",
+      "total_days": 30,
+      "thematic_summary": "The third month — the Apostolic Vesting. The interior life formed in Tiqimt finds its weight and purpose in community and mission. Four thematic anchors: the Four Heavenly Creatures (Day 8), the Great Feast of Archangel Michael (Day 12), the Entry of the Virgin into the Temple (Day 21), and the Twenty-Four Elders of Heaven (Day 24).",
+      "key_feasts": [
+        {
+          "day": 8,
+          "feast": "The Four Heavenly Creatures (Arba'etu Insesa) — Support of the Throne"
+        },
+        {
+          "day": 12,
+          "feast": "The Great Feast of Archangel Michael — Captain of the Host"
+        },
+        {
+          "day": 14,
+          "feast": "Departure of St. Philip the Apostle — Ethiopia's Apostolic Patron"
+        },
+        {"day": 21, "feast": "The Entry of the Virgin Mary into the Temple"},
+        {
+          "day": 24,
+          "feast": "The Twenty-Four Elders of Heaven — Heavenly Liturgy"
+        },
+        {"day": 27, "feast": "Monthly Crucifixion"},
+        {
+          "day": 29,
+          "feast": "Triple Feast (Maskal/Qal/Timqat) + Dedication of the Church of the Nativity"
+        },
+        {
+          "day": 30,
+          "feast": "Departure of St. Andrew the Apostle — First-Called"
+        }
+      ],
+      "days": [
+        {
+          "day": 1,
+          "id": "senkessar-hidar-1",
+          "title": "1 Hidar — St. Adam & The Assembly"
+        },
+        {
+          "day": 2,
+          "id": "senkessar-hidar-2",
+          "title": "2 Hidar — St. Job the Patriarch & The Assembly"
+        },
+        {
+          "day": 3,
+          "id": "senkessar-hidar-3",
+          "title": "3 Hidar — St. Zechariah the Prophet & The Assembly"
+        },
+        {
+          "day": 4,
+          "id": "senkessar-hidar-4",
+          "title": "4 Hidar — St. John the Apostle & The Assembly"
+        },
+        {
+          "day": 5,
+          "id": "senkessar-hidar-5",
+          "title": "5 Hidar — St. Philip the Apostle & The Assembly"
+        },
+        {
+          "day": 6,
+          "id": "senkessar-hidar-6",
+          "title": "6 Hidar — St. Ezekiel the Prophet & The Assembly"
+        },
+        {
+          "day": 7,
+          "id": "senkessar-hidar-7",
+          "title": "7 Hidar — Archangel Gabriel & The Assembly"
+        },
+        {
+          "day": 8,
+          "id": "senkessar-hidar-8",
+          "title": "8 Hidar — The Four Heavenly Creatures & The Assembly"
+        },
+        {
+          "day": 9,
+          "id": "senkessar-hidar-9",
+          "title": "9 Hidar — St. Samuel the Prophet & The Assembly"
+        },
+        {
+          "day": 10,
+          "id": "senkessar-hidar-10",
+          "title": "10 Hidar — St. Matra the Martyr & The Assembly"
+        },
+        {
+          "day": 11,
+          "id": "senkessar-hidar-11",
+          "title": "11 Hidar — Archangel Michael & The Assembly"
+        },
+        {
+          "day": 12,
+          "id": "senkessar-hidar-12",
+          "title": "12 Hidar — The Great Feast of Archangel Michael & The Assembly"
+        },
+        {
+          "day": 13,
+          "id": "senkessar-hidar-13",
+          "title": "13 Hidar — St. Basalide & The Assembly"
+        },
+        {
+          "day": 14,
+          "id": "senkessar-hidar-14",
+          "title": "14 Hidar — St. Gebre Mesqel & The Assembly"
+        },
+        {
+          "day": 15,
+          "id": "senkessar-hidar-15",
+          "title": "15 Hidar — St. Stephen the Protomartyr & The Assembly"
+        },
+        {
+          "day": 16,
+          "id": "senkessar-hidar-16",
+          "title": "16 Hidar — St. John the Baptist & The Assembly"
+        },
+        {
+          "day": 17,
+          "id": "senkessar-hidar-17",
+          "title": "17 Hidar — St. James the Apostle & The Assembly"
+        },
+        {
+          "day": 18,
+          "id": "senkessar-hidar-18",
+          "title": "18 Hidar — St. George & The Assembly"
+        },
+        {
+          "day": 19,
+          "id": "senkessar-hidar-19",
+          "title": "19 Hidar — Archangel Gabriel & The Assembly"
+        },
+        {
+          "day": 20,
+          "id": "senkessar-hidar-20",
+          "title": "20 Hidar — The First Entry into Egypt & The Assembly"
+        },
+        {
+          "day": 21,
+          "id": "senkessar-hidar-21",
+          "title": "21 Hidar — The Entry of the Virgin into the Temple & The Assembly"
+        },
+        {
+          "day": 22,
+          "id": "senkessar-hidar-22",
+          "title": "22 Hidar — St. Isaac of Nineveh & The Assembly"
+        },
+        {
+          "day": 23,
+          "id": "senkessar-hidar-23",
+          "title": "23 Hidar — St. Solomon the King & The Assembly"
+        },
+        {
+          "day": 24,
+          "id": "senkessar-hidar-24",
+          "title": "24 Hidar — The Arrival in Egypt & The Assembly"
+        },
+        {
+          "day": 25,
+          "id": "senkessar-hidar-25",
+          "title": "25 Hidar — St. Tekle Haymanot & The Assembly"
+        },
+        {
+          "day": 26,
+          "id": "senkessar-hidar-26",
+          "title": "26 Hidar — St. Joshua son of Nun & The Assembly"
+        },
+        {
+          "day": 27,
+          "id": "senkessar-hidar-27",
+          "title": "27 Hidar — The Monthly Crucifixion & The Assembly"
+        },
+        {
+          "day": 28,
+          "id": "senkessar-hidar-28",
+          "title": "28 Hidar — St. Abraham, Isaac, and Jacob & The Assembly"
+        },
+        {
+          "day": 29,
+          "id": "senkessar-hidar-29",
+          "title": "29 Hidar — The Triple Feast & The Assembly"
+        },
+        {
+          "day": 30,
+          "id": "senkessar-hidar-30",
+          "title": "30 Hidar — St. John Chrysostom & The Assembly"
+        }
+      ]
     },
-
-    "Tahsas": {
+    {
+      "month": "Tahsas",
       "month_number": 4,
-      "days": 30,
-      "entries": {
-        "1":  { "reading_id": "senkessar-tahsas-1",  "primary_saint": null, "feast": null },
-        "2":  { "reading_id": "senkessar-tahsas-2",  "primary_saint": null, "feast": null },
-        "3":  { "reading_id": "senkessar-tahsas-3",  "primary_saint": null, "feast": null },
-        "4":  { "reading_id": "senkessar-tahsas-4",  "primary_saint": null, "feast": null },
-        "5":  { "reading_id": "senkessar-tahsas-5",  "primary_saint": null, "feast": null },
-        "6":  { "reading_id": "senkessar-tahsas-6",  "primary_saint": null, "feast": null },
-        "7":  { "reading_id": "senkessar-tahsas-7",  "primary_saint": null, "feast": null },
-        "8":  { "reading_id": "senkessar-tahsas-8",  "primary_saint": null, "feast": null },
-        "9":  { "reading_id": "senkessar-tahsas-9",  "primary_saint": null, "feast": null },
-        "10": { "reading_id": "senkessar-tahsas-10", "primary_saint": null, "feast": null },
-        "11": { "reading_id": "senkessar-tahsas-11", "primary_saint": null, "feast": null },
-        "12": { "reading_id": "senkessar-tahsas-12", "primary_saint": null, "feast": null },
-        "13": { "reading_id": "senkessar-tahsas-13", "primary_saint": null, "feast": null },
-        "14": { "reading_id": "senkessar-tahsas-14", "primary_saint": null, "feast": null },
-        "15": { "reading_id": "senkessar-tahsas-15", "primary_saint": null, "feast": null },
-        "16": { "reading_id": "senkessar-tahsas-16", "primary_saint": null, "feast": null },
-        "17": { "reading_id": "senkessar-tahsas-17", "primary_saint": null, "feast": null },
-        "18": { "reading_id": "senkessar-tahsas-18", "primary_saint": null, "feast": null },
-        "19": { "reading_id": "senkessar-tahsas-19", "primary_saint": null, "feast": null },
-        "20": { "reading_id": "senkessar-tahsas-20", "primary_saint": null, "feast": null },
-        "21": { "reading_id": "senkessar-tahsas-21", "primary_saint": null, "feast": null },
-        "22": { "reading_id": "senkessar-tahsas-22", "primary_saint": null, "feast": null },
-        "23": { "reading_id": "senkessar-tahsas-23", "primary_saint": null, "feast": null },
-        "24": { "reading_id": "senkessar-tahsas-24", "primary_saint": null, "feast": null },
-        "25": { "reading_id": "senkessar-tahsas-25", "primary_saint": null, "feast": "Lidat — Ethiopian Nativity of Christ (Genna)" },
-        "26": { "reading_id": "senkessar-tahsas-26", "primary_saint": null, "feast": null },
-        "27": { "reading_id": "senkessar-tahsas-27", "primary_saint": null, "feast": null },
-        "28": { "reading_id": "senkessar-tahsas-28", "primary_saint": null, "feast": null },
-        "29": { "reading_id": "senkessar-tahsas-29", "primary_saint": null, "feast": null },
-        "30": { "reading_id": "senkessar-tahsas-30", "primary_saint": null, "feast": null }
-      }
+      "ge_ez": "ታኅሣሥ",
+      "total_days": 30,
+      "thematic_summary": "The month of the Incarnation. The tone transitions from prophetic anticipation (Days 1–24) to the cosmic explosion of light at the Nativity (Day 25). The month moves from the groaning of creation to the cry of a newborn Child.",
+      "key_feasts": [
+        {"day": 24, "feast": "The Eve of the Nativity"                      },
+        {"day": 25, "feast": "Ganna — The Nativity of Our Lord Jesus Christ"},
+        {"day": 27, "feast": "The Massacre of the Holy Innocents"           },
+        {"day": 29, "feast": "Triple Feast (Monthly)"                       },
+        {"day": 30, "feast": "St. John Chrysostom (Monthly)"                }
+      ],
+      "days": [
+        {
+          "day": 1,
+          "id": "senkessar-tahsas-1",
+          "title": "1 Tahsas — St. Adam & The Assembly"
+        },
+        {
+          "day": 2,
+          "id": "senkessar-tahsas-2",
+          "title": "2 Tahsas — St. Job & The Assembly"
+        },
+        {
+          "day": 3,
+          "id": "senkessar-tahsas-3",
+          "title": "3 Tahsas — St. Zechariah & The Assembly"
+        },
+        {
+          "day": 4,
+          "id": "senkessar-tahsas-4",
+          "title": "4 Tahsas — St. John the Apostle & The Assembly"
+        },
+        {
+          "day": 5,
+          "id": "senkessar-tahsas-5",
+          "title": "5 Tahsas — St. Philip & The Assembly"
+        },
+        {
+          "day": 6,
+          "id": "senkessar-tahsas-6",
+          "title": "6 Tahsas — St. Ezekiel & The Assembly"
+        },
+        {
+          "day": 7,
+          "id": "senkessar-tahsas-7",
+          "title": "7 Tahsas — Archangel Gabriel & The Assembly"
+        },
+        {
+          "day": 8,
+          "id": "senkessar-tahsas-8",
+          "title": "8 Tahsas — St. Mary & The Assembly"
+        },
+        {
+          "day": 9,
+          "id": "senkessar-tahsas-9",
+          "title": "9 Tahsas — St. Samuel & The Assembly"
+        },
+        {
+          "day": 10,
+          "id": "senkessar-tahsas-10",
+          "title": "10 Tahsas — St. Matra & The Assembly"
+        },
+        {
+          "day": 11,
+          "id": "senkessar-tahsas-11",
+          "title": "11 Tahsas — Archangel Michael & The Assembly"
+        },
+        {
+          "day": 12,
+          "id": "senkessar-tahsas-12",
+          "title": "12 Tahsas — St. Constantine & The Assembly"
+        },
+        {
+          "day": 13,
+          "id": "senkessar-tahsas-13",
+          "title": "13 Tahsas — St. Basalide & The Assembly"
+        },
+        {
+          "day": 14,
+          "id": "senkessar-tahsas-14",
+          "title": "14 Tahsas — St. Gebre Mesqel & The Assembly"
+        },
+        {
+          "day": 15,
+          "id": "senkessar-tahsas-15",
+          "title": "15 Tahsas — St. Stephen & The Assembly"
+        },
+        {
+          "day": 16,
+          "id": "senkessar-tahsas-16",
+          "title": "16 Tahsas — St. John the Baptist & The Assembly"
+        },
+        {
+          "day": 17,
+          "id": "senkessar-tahsas-17",
+          "title": "17 Tahsas — St. James & The Assembly"
+        },
+        {
+          "day": 18,
+          "id": "senkessar-tahsas-18",
+          "title": "18 Tahsas — St. George & The Assembly"
+        },
+        {
+          "day": 19,
+          "id": "senkessar-tahsas-19",
+          "title": "19 Tahsas — Archangel Gabriel (The Annunciation) & The Assembly"
+        },
+        {
+          "day": 20,
+          "id": "senkessar-tahsas-20",
+          "title": "20 Tahsas — The First Entry into Egypt & The Assembly"
+        },
+        {
+          "day": 21,
+          "id": "senkessar-tahsas-21",
+          "title": "21 Tahsas — The Virgin Mary & The Assembly"
+        },
+        {
+          "day": 22,
+          "id": "senkessar-tahsas-22",
+          "title": "22 Tahsas — St. Isaac of Nineveh & The Assembly"
+        },
+        {
+          "day": 23,
+          "id": "senkessar-tahsas-23",
+          "title": "23 Tahsas — St. Solomon & The Assembly"
+        },
+        {
+          "day": 24,
+          "id": "senkessar-tahsas-24",
+          "title": "24 Tahsas — The Eve of the Nativity & The Assembly"
+        },
+        {
+          "day": 25,
+          "id": "senkessar-tahsas-25",
+          "title": "25 Tahsas — St. Ganna (The Nativity of Christ) & The Assembly"
+        },
+        {
+          "day": 26,
+          "id": "senkessar-tahsas-26",
+          "title": "26 Tahsas — The Feast of the Shepherds & The Assembly"
+        },
+        {
+          "day": 27,
+          "id": "senkessar-tahsas-27",
+          "title": "27 Tahsas — The Massacre of the Innocents & The Assembly"
+        },
+        {
+          "day": 28,
+          "id": "senkessar-tahsas-28",
+          "title": "28 Tahsas — The Holy Patriarchs & The Assembly"
+        },
+        {
+          "day": 29,
+          "id": "senkessar-tahsas-29",
+          "title": "29 Tahsas — The Triple Feast & The Assembly"
+        },
+        {
+          "day": 30,
+          "id": "senkessar-tahsas-30",
+          "title": "30 Tahsas — St. John Chrysostom & The Assembly"
+        }
+      ]
     },
-
-    "Tir": {
+    {
+      "month": "Tir",
       "month_number": 5,
-      "days": 30,
-      "entries": {
-        "1":  { "reading_id": "senkessar-tir-1",  "primary_saint": null, "feast": null },
-        "2":  { "reading_id": "senkessar-tir-2",  "primary_saint": null, "feast": null },
-        "3":  { "reading_id": "senkessar-tir-3",  "primary_saint": null, "feast": null },
-        "4":  { "reading_id": "senkessar-tir-4",  "primary_saint": null, "feast": null },
-        "5":  { "reading_id": "senkessar-tir-5",  "primary_saint": null, "feast": null },
-        "6":  { "reading_id": "senkessar-tir-6",  "primary_saint": null, "feast": null },
-        "7":  { "reading_id": "senkessar-tir-7",  "primary_saint": null, "feast": null },
-        "8":  { "reading_id": "senkessar-tir-8",  "primary_saint": null, "feast": null },
-        "9":  { "reading_id": "senkessar-tir-9",  "primary_saint": null, "feast": null },
-        "10": { "reading_id": "senkessar-tir-10", "primary_saint": null, "feast": null },
-        "11": { "reading_id": "senkessar-tir-11", "primary_saint": "Abuna Tekle Haymanot", "feast": null },
-        "12": { "reading_id": "senkessar-tir-12", "primary_saint": null, "feast": null },
-        "13": { "reading_id": "senkessar-tir-13", "primary_saint": null, "feast": null },
-        "14": { "reading_id": "senkessar-tir-14", "primary_saint": null, "feast": null },
-        "15": { "reading_id": "senkessar-tir-15", "primary_saint": null, "feast": null },
-        "16": { "reading_id": "senkessar-tir-16", "primary_saint": null, "feast": null },
-        "17": { "reading_id": "senkessar-tir-17", "primary_saint": null, "feast": null },
-        "18": { "reading_id": "senkessar-tir-18", "primary_saint": null, "feast": null },
-        "19": { "reading_id": "senkessar-tir-19", "primary_saint": null, "feast": null },
-        "20": { "reading_id": "senkessar-tir-20", "primary_saint": null, "feast": null },
-        "21": { "reading_id": "senkessar-tir-21", "primary_saint": null, "feast": null },
-        "22": { "reading_id": "senkessar-tir-22", "primary_saint": null, "feast": null },
-        "23": { "reading_id": "senkessar-tir-23", "primary_saint": null, "feast": null },
-        "24": { "reading_id": "senkessar-tir-24", "primary_saint": null, "feast": null },
-        "25": { "reading_id": "senkessar-tir-25", "primary_saint": null, "feast": null },
-        "26": { "reading_id": "senkessar-tir-26", "primary_saint": null, "feast": null },
-        "27": { "reading_id": "senkessar-tir-27", "primary_saint": null, "feast": null },
-        "28": { "reading_id": "senkessar-tir-28", "primary_saint": null, "feast": null },
-        "29": { "reading_id": "senkessar-tir-29", "primary_saint": null, "feast": null },
-        "30": { "reading_id": "senkessar-tir-30", "primary_saint": null, "feast": null }
-      }
+      "ge_ez": "ጥር",
+      "total_days": 30,
+      "thematic_summary": "The month of the Manifestation. The tone shifts from the interior mystery of the Nativity to the public, cosmic manifestation of the Trinity at the Jordan River. Timqat (Day 11) is the month's apex — the Hallowing of the Waters and the voice of the Father.",
+      "key_feasts": [
+        {"day": 6, "feast": "The Circumcision of Christ"},
+        {"day": 10, "feast": "The Eve of Timqat (Gera)"},
+        {"day": 11, "feast": "Timqat — The Feast of the Epiphany"},
+        {"day": 13, "feast": "The Miracle at Cana of Galilee"},
+        {"day": 27, "feast": "Monthly Crucifixion"},
+        {"day": 29, "feast": "Triple Feast (Monthly)"},
+        {
+          "day": 30,
+          "feast": "St. John Chrysostom (Monthly) & Synaxis of the Three Holy Hierarchs"
+        }
+      ],
+      "days": [
+        {
+          "day": 1,
+          "id": "senkessar-tir-1",
+          "title": "1 Tir — St. Adam & The Assembly"
+        },
+        {
+          "day": 2,
+          "id": "senkessar-tir-2",
+          "title": "2 Tir — St. Job & The Assembly"
+        },
+        {
+          "day": 3,
+          "id": "senkessar-tir-3",
+          "title": "3 Tir — St. Zechariah & The Assembly"
+        },
+        {
+          "day": 4,
+          "id": "senkessar-tir-4",
+          "title": "4 Tir — St. John the Apostle & The Assembly"
+        },
+        {
+          "day": 5,
+          "id": "senkessar-tir-5",
+          "title": "5 Tir — St. Philip & The Assembly"
+        },
+        {
+          "day": 6,
+          "id": "senkessar-tir-6",
+          "title": "6 Tir — The Circumcision of Christ & The Assembly"
+        },
+        {
+          "day": 7,
+          "id": "senkessar-tir-7",
+          "title": "7 Tir — Archangel Gabriel & The Assembly"
+        },
+        {
+          "day": 8,
+          "id": "senkessar-tir-8",
+          "title": "8 Tir — St. Mary & The Assembly"
+        },
+        {
+          "day": 9,
+          "id": "senkessar-tir-9",
+          "title": "9 Tir — St. Samuel & The Assembly"
+        },
+        {
+          "day": 10,
+          "id": "senkessar-tir-10",
+          "title": "10 Tir — The Eve of Timqat (Gera) & The Assembly"
+        },
+        {
+          "day": 11,
+          "id": "senkessar-tir-11",
+          "title": "11 Tir — Timqat (The Feast of Epiphany) & The Assembly"
+        },
+        {
+          "day": 12,
+          "id": "senkessar-tir-12",
+          "title": "12 Tir — The Feast of Arba'etu Insesa & The Assembly"
+        },
+        {
+          "day": 13,
+          "id": "senkessar-tir-13",
+          "title": "13 Tir — The Miracle at Cana of Galilee & The Assembly"
+        },
+        {
+          "day": 14,
+          "id": "senkessar-tir-14",
+          "title": "14 Tir — St. Gebre Mesqel & The Assembly"
+        },
+        {
+          "day": 15,
+          "id": "senkessar-tir-15",
+          "title": "15 Tir — St. Stephen & The Assembly"
+        },
+        {
+          "day": 16,
+          "id": "senkessar-tir-16",
+          "title": "16 Tir — St. John the Baptist & The Assembly"
+        },
+        {
+          "day": 17,
+          "id": "senkessar-tir-17",
+          "title": "17 Tir — St. James & The Assembly"
+        },
+        {
+          "day": 18,
+          "id": "senkessar-tir-18",
+          "title": "18 Tir — St. George & The Assembly"
+        },
+        {
+          "day": 19,
+          "id": "senkessar-tir-19",
+          "title": "19 Tir — Archangel Gabriel & The Assembly"
+        },
+        {
+          "day": 20,
+          "id": "senkessar-tir-20",
+          "title": "20 Tir — The First Entry into Egypt & The Assembly"
+        },
+        {
+          "day": 21,
+          "id": "senkessar-tir-21",
+          "title": "21 Tir — The Virgin Mary & The Assembly"
+        },
+        {
+          "day": 22,
+          "id": "senkessar-tir-22",
+          "title": "22 Tir — St. Isaac of Nineveh & The Assembly"
+        },
+        {
+          "day": 23,
+          "id": "senkessar-tir-23",
+          "title": "23 Tir — St. Solomon & The Assembly"
+        },
+        {
+          "day": 24,
+          "id": "senkessar-tir-24",
+          "title": "24 Tir — The Arrival in Egypt & The Assembly"
+        },
+        {
+          "day": 25,
+          "id": "senkessar-tir-25",
+          "title": "25 Tir — St. Tekle Haymanot & The Assembly"
+        },
+        {
+          "day": 26,
+          "id": "senkessar-tir-26",
+          "title": "26 Tir — St. Joshua son of Nun & The Assembly"
+        },
+        {
+          "day": 27,
+          "id": "senkessar-tir-27",
+          "title": "27 Tir — The Monthly Crucifixion & The Assembly"
+        },
+        {
+          "day": 28,
+          "id": "senkessar-tir-28",
+          "title": "28 Tir — St. Abraham, Isaac, and Jacob & The Assembly"
+        },
+        {
+          "day": 29,
+          "id": "senkessar-tir-29",
+          "title": "29 Tir — The Triple Feast & The Assembly"
+        },
+        {
+          "day": 30,
+          "id": "senkessar-tir-30",
+          "title": "30 Tir — St. John Chrysostom & The Assembly"
+        }
+      ]
     },
-
-    "Yekatit": {
+    {
+      "month": "Yekatit",
       "month_number": 6,
-      "days": 30,
-      "entries": {
-        "1":  { "reading_id": "senkessar-yekatit-1",  "primary_saint": "St. Barsanuphius, St. Ephrem the Syrian, Abba Pishay the Humble, and the 49 Martyrs of Scetis", "feast": null },
-        "2":  { "reading_id": "senkessar-yekatit-2",  "primary_saint": "St. Paul the First Hermit, St. Longinus the Centurion, the Vision of St. Anthony, and St. Eutychius of Rome", "feast": null },
-        "3":  { "reading_id": "senkessar-yekatit-3",  "primary_saint": "St. James the Apostle, St. Simeon the Elder, the Seventy-Two Disciples, and St. Anna the Prophetess", "feast": null },
-        "4":  { "reading_id": "senkessar-yekatit-4",  "primary_saint": "St. Agabus the Prophet, St. Zechariah the Priest, St. Gelasius the Martyr, and the Martyrs of Sinai and Raithu", "feast": null },
-        "5":  { "reading_id": "senkessar-yekatit-5",  "primary_saint": "St. Agrippinus of Alexandria, St. Bishoy the Great, St. Apollo of Bawit, and St. Philemon the Musician", "feast": null },
-        "6":  { "reading_id": "senkessar-yekatit-6",  "primary_saint": "St. Elizabeth the Righteous, St. Hippolytus of Rome, St. Belane of the East, and St. Fausta of Cyzicus", "feast": null },
-        "7":  { "reading_id": "senkessar-yekatit-7",  "primary_saint": "St. Theodore the General, St. Theodore Stratelates, St. Alexander of Alexandria, and St. Augentius the Hermit", "feast": null },
-        "8":  { "reading_id": "senkessar-yekatit-8",  "primary_saint": "The Twenty-Four Elders, St. Cyprian of Carthage, St. Justina the Virgin, and the Host of the Holy Archangels", "feast": null },
-        "9":  { "reading_id": "senkessar-yekatit-9",  "primary_saint": "St. Barsauma the Archimandrite, the Forty Martyrs of Sebaste, St. Paul the Syrian, and St. Nicephorus of Antioch", "feast": null },
-        "10": { "reading_id": "senkessar-yekatit-10", "primary_saint": "St. James the Hermit, St. Isidore of Pelusium, St. Philoxenus of Mabbug, and St. Thecla of Iconium", "feast": null },
-        "11": { "reading_id": "senkessar-yekatit-11", "primary_saint": "St. Fabian Pope of Rome, St. Demetrius the Great Martyr, St. Porphyrius of Gaza, and St. Julian of Emesa", "feast": null },
-        "12": { "reading_id": "senkessar-yekatit-12", "primary_saint": "The Archangel Michael, St. Gelasius the Monk, St. Karas of Egypt, and St. Blaise of Sebaste", "feast": null },
-        "13": { "reading_id": "senkessar-yekatit-13", "primary_saint": "St. Timothy Pope of Alexandria, St. Paphnutius the Confessor, St. Stephen of Antioch, and St. Martinianus of Caesarea", "feast": null },
-        "14": { "reading_id": "senkessar-yekatit-14", "primary_saint": "St. Severus of Antioch, St. Jacob of Serugh, St. Cyril of Alexandria, and St. Dionysius of Corinth", "feast": null },
-        "15": { "reading_id": "senkessar-yekatit-15", "primary_saint": "The Prophet Zechariah, the Forty Martyrs of Persia, Abba Pambo of Egypt, and St. Sophia of Thrace", "feast": null },
-        "16": { "reading_id": "senkessar-yekatit-16", "primary_saint": "Kidane Meheret — Covenant of Mercy, St. Yared the Hymnographer, St. Tekle Haymanot the Apostle of Ethiopia, and the Seventy-Five Martyrs of Persia", "feast": "Kidane Meheret — Covenant of Mercy" },
-        "17": { "reading_id": "senkessar-yekatit-17", "primary_saint": "St. Minas of Akhmim, St. Romulus the Martyr, St. Eusebius the Confessor, and St. Agapitus of Sinnada", "feast": null },
-        "18": { "reading_id": "senkessar-yekatit-18", "primary_saint": "St. Melitios of Antioch, St. Polyeuctus the Martyr, St. Isaac of Nineveh, and St. Leo the Great of Rome", "feast": null },
-        "19": { "reading_id": "senkessar-yekatit-19", "primary_saint": "St. Peter II Patriarch of Alexandria, St. Basilissa the Martyr, St. Anastasia of Rome, and St. Martianus the Ascetic", "feast": null },
-        "20": { "reading_id": "senkessar-yekatit-20", "primary_saint": "The Three Holy Hierarchs, St. Peter of Sebaste, St. Macrina the Younger, and St. Naucratius the Ascetic", "feast": null },
-        "21": { "reading_id": "senkessar-yekatit-21", "primary_saint": "The Ever-Virgin Mary Theotokos, the Prophet Joel, St. Keladion Pope of Alexandria, and St. Zacharias Patriarch of Jerusalem", "feast": "Monthly Feast of the Virgin Mary" },
-        "22": { "reading_id": "senkessar-yekatit-22", "primary_saint": "St. Marouta of Maipherqat, St. Titus the Apostle, the Persian Witnesses, and St. Thalassius of Libya", "feast": null },
-        "23": { "reading_id": "senkessar-yekatit-23", "primary_saint": "St. Eusebius the Recluse, St. Polycarp of Smyrna, St. Kodratos the Apologist, and St. Gorgonia Sister of Gregory", "feast": null },
-        "24": { "reading_id": "senkessar-yekatit-24", "primary_saint": "St. Matthias the Apostle, St. Agapetus the Martyr, St. Lucian of Antioch, and St. Phib the Hermit of Egypt", "feast": null },
-        "25": { "reading_id": "senkessar-yekatit-25", "primary_saint": "St. Archippus the Apostle, St. Philemon the Apostle, St. Apphia the Martyr, and St. Onesimus the Apostle", "feast": null },
-        "26": { "reading_id": "senkessar-yekatit-26", "primary_saint": "The Prophet Hosea, St. Zadok the Priest and Martyr, the One Hundred and Twenty-Eight Persian Martyrs, and St. Porphyrius the Actor", "feast": null },
-        "27": { "reading_id": "senkessar-yekatit-27", "primary_saint": "St. Eustathius of Antioch, St. Meletius of Antioch, St. Libanius the Hermit, and St. Thalelaeus of Cilicia", "feast": null },
-        "28": { "reading_id": "senkessar-yekatit-28", "primary_saint": "St. Theodore the Roman Martyr, St. John Cassian the Monk, St. Alexander of Jerusalem, and St. Gerasimus of Jordan", "feast": null },
-        "29": { "reading_id": "senkessar-yekatit-29", "primary_saint": "The Feast of Annunciation, Nativity and Resurrection; St. Mark the Evangelist; St. Polycarp of Smyrna; and St. Aristides the Philosopher", "feast": "Feast of the Annunciation, Nativity, and Resurrection" },
-        "30": { "reading_id": "senkessar-yekatit-30", "primary_saint": "St. John the Baptist, St. Narcissus of Jerusalem, St. Pandoleon the Martyr, and St. Silas the Apostle", "feast": null }
-      }
+      "ge_ez": "የካቲት",
+      "total_days": 30,
+      "thematic_summary": "The sixth month, containing the great feast of Kidane Meheret (Covenant of Mercy) on Day 16.",
+      "key_feasts": [
+        {"day": 16, "feast": "Kidane Meheret — Covenant of Mercy"},
+        {"day": 21, "feast": "Monthly Feast of the Virgin Mary"},
+        {
+          "day": 29,
+          "feast": "Feast of the Annunciation, Nativity, and Resurrection"
+        }
+      ],
+      "days": [
+        {
+          "day": 1,
+          "id": "senkessar-yekatit-1",
+          "title": "1 Yekatit — St. Barsanuphius & The Assembly"
+        },
+        {
+          "day": 2,
+          "id": "senkessar-yekatit-2",
+          "title": "2 Yekatit — St. Paul the First Hermit & The Assembly"
+        },
+        {
+          "day": 3,
+          "id": "senkessar-yekatit-3",
+          "title": "3 Yekatit — St. James the Apostle & The Assembly"
+        },
+        {
+          "day": 4,
+          "id": "senkessar-yekatit-4",
+          "title": "4 Yekatit — St. Agabus the Prophet & The Assembly"
+        },
+        {
+          "day": 5,
+          "id": "senkessar-yekatit-5",
+          "title": "5 Yekatit — St. Agrippinus of Alexandria & The Assembly"
+        },
+        {
+          "day": 6,
+          "id": "senkessar-yekatit-6",
+          "title": "6 Yekatit — St. Elizabeth the Righteous & The Assembly"
+        },
+        {
+          "day": 7,
+          "id": "senkessar-yekatit-7",
+          "title": "7 Yekatit — St. Theodore the General & The Assembly"
+        },
+        {
+          "day": 8,
+          "id": "senkessar-yekatit-8",
+          "title": "8 Yekatit — The Twenty-Four Elders & The Assembly"
+        },
+        {
+          "day": 9,
+          "id": "senkessar-yekatit-9",
+          "title": "9 Yekatit — St. Barsauma the Archimandrite & The Assembly"
+        },
+        {
+          "day": 10,
+          "id": "senkessar-yekatit-10",
+          "title": "10 Yekatit — St. James the Hermit & The Assembly"
+        },
+        {
+          "day": 11,
+          "id": "senkessar-yekatit-11",
+          "title": "11 Yekatit — St. Fabian Pope of Rome & The Assembly"
+        },
+        {
+          "day": 12,
+          "id": "senkessar-yekatit-12",
+          "title": "12 Yekatit — The Archangel Michael & The Assembly"
+        },
+        {
+          "day": 13,
+          "id": "senkessar-yekatit-13",
+          "title": "13 Yekatit — St. Timothy Pope of Alexandria & The Assembly"
+        },
+        {
+          "day": 14,
+          "id": "senkessar-yekatit-14",
+          "title": "14 Yekatit — St. Severus of Antioch & The Assembly"
+        },
+        {
+          "day": 15,
+          "id": "senkessar-yekatit-15",
+          "title": "15 Yekatit — The Prophet Zechariah & The Assembly"
+        },
+        {
+          "day": 16,
+          "id": "senkessar-yekatit-16",
+          "title": "16 Yekatit — Kidane Meheret (Covenant of Mercy) & The Assembly"
+        },
+        {
+          "day": 17,
+          "id": "senkessar-yekatit-17",
+          "title": "17 Yekatit — St. Minas of Akhmim & The Assembly"
+        },
+        {
+          "day": 18,
+          "id": "senkessar-yekatit-18",
+          "title": "18 Yekatit — St. Melitios of Antioch & The Assembly"
+        },
+        {
+          "day": 19,
+          "id": "senkessar-yekatit-19",
+          "title": "19 Yekatit — St. Peter II Patriarch of Alexandria & The Assembly"
+        },
+        {
+          "day": 20,
+          "id": "senkessar-yekatit-20",
+          "title": "20 Yekatit — The Three Holy Hierarchs & The Assembly"
+        },
+        {
+          "day": 21,
+          "id": "senkessar-yekatit-21",
+          "title": "21 Yekatit — The Virgin Mary & The Assembly"
+        },
+        {
+          "day": 22,
+          "id": "senkessar-yekatit-22",
+          "title": "22 Yekatit — St. Marouta of Maipherqat & The Assembly"
+        },
+        {
+          "day": 23,
+          "id": "senkessar-yekatit-23",
+          "title": "23 Yekatit — St. Eusebius the Recluse & The Assembly"
+        },
+        {
+          "day": 24,
+          "id": "senkessar-yekatit-24",
+          "title": "24 Yekatit — St. Matthias the Apostle & The Assembly"
+        },
+        {
+          "day": 25,
+          "id": "senkessar-yekatit-25",
+          "title": "25 Yekatit — St. Archippus the Apostle & The Assembly"
+        },
+        {
+          "day": 26,
+          "id": "senkessar-yekatit-26",
+          "title": "26 Yekatit — The Prophet Hosea & The Assembly"
+        },
+        {
+          "day": 27,
+          "id": "senkessar-yekatit-27",
+          "title": "27 Yekatit — St. Eustathius of Antioch & The Assembly"
+        },
+        {
+          "day": 28,
+          "id": "senkessar-yekatit-28",
+          "title": "28 Yekatit — St. Theodore the Roman Martyr & The Assembly"
+        },
+        {
+          "day": 29,
+          "id": "senkessar-yekatit-29",
+          "title": "29 Yekatit — The Feast of the Annunciation, Nativity, and Resurrection & The Assembly"
+        },
+        {
+          "day": 30,
+          "id": "senkessar-yekatit-30",
+          "title": "30 Yekatit — St. John the Baptist & The Assembly"
+        }
+      ]
     },
-
-    "Megabit": {
+    {
+      "month": "Megabit",
       "month_number": 7,
-      "days": 30,
-      "entries": {
-        "1":  { "reading_id": "senkessar-megabit-1",  "primary_saint": "St. Barkisos of Persia, St. Mercurius the Great Martyr, St. Alexander of Alexandria, and St. Methodius of Olympus", "feast": null },
-        "2":  { "reading_id": "senkessar-megabit-2",  "primary_saint": "St. Macrobius the Martyr, St. Julian of Emesa, St. Dionysius the Great of Alexandria, and St. Domninus of Caesarea", "feast": null },
-        "3":  { "reading_id": "senkessar-megabit-3",  "primary_saint": "St. Cosmas III Pope of Alexandria, St. Porphyrius of Gaza, St. Hadrian of Nicomedia, and St. Eutropius the Martyr", "feast": null },
-        "4":  { "reading_id": "senkessar-megabit-4",  "primary_saint": "St. Hananias the Apostle, St. Paul of Thebes the First Hermit, St. Gerasimus of Jordan, and the Martyrs of the Quadratus Company", "feast": null },
-        "5":  { "reading_id": "senkessar-megabit-5",  "primary_saint": "St. Sarapamon of Egypt, St. Eudoxia the Martyr, St. Peter the Iberian, and St. Photina the Samaritan Woman", "feast": null },
-        "6":  { "reading_id": "senkessar-megabit-6",  "primary_saint": "St. Dioscorus II Pope of Alexandria, St. Theodotus of Ancyra, St. Philemon the Actor, and St. Conon of Isauria", "feast": null },
-        "7":  { "reading_id": "senkessar-megabit-7",  "primary_saint": "St. Theodotus of Ancyra, St. Philemon the Confessor, St. Arianus Governor of Antinoë, and St. Apollonia of Alexandria", "feast": null },
-        "8":  { "reading_id": "senkessar-megabit-8",  "primary_saint": "St. Matthias the Apostle, St. Julian the Hospitaller, St. Ariadne of Prymnessia, and St. Quadratus of Corinth", "feast": null },
-        "9":  { "reading_id": "senkessar-megabit-9",  "primary_saint": "St. Andronicus the Apostle, St. Athanasius the Great of Alexandria, St. Konon the Gardener, and the Forty Martyrs of Sebaste", "feast": null },
-        "10": { "reading_id": "senkessar-megabit-10", "primary_saint": "The Finding of the True Cross, St. Marianus the Reader, St. Protus the Martyr, and St. Hyacinth the Martyr", "feast": "Finding of the Holy and Life-Giving Cross" },
-        "11": { "reading_id": "senkessar-megabit-11", "primary_saint": "St. Basil the Great, St. Gregory the Theologian, St. Sophronius Patriarch of Jerusalem, and St. Pionios of Smyrna", "feast": null },
-        "12": { "reading_id": "senkessar-megabit-12", "primary_saint": "The Archangel Michael, St. Demetrius of Thessalonica, St. Theophanes the Confessor, and St. Gregory the Great Dialogos", "feast": null },
-        "13": { "reading_id": "senkessar-megabit-13", "primary_saint": "St. Dionysius the Areopagite, St. Timothy Pope of Alexandria, St. Puplius of Athens, and St. Sabinus of Egypt", "feast": null },
-        "14": { "reading_id": "senkessar-megabit-14", "primary_saint": "St. Cyril of Jerusalem, St. Sinuthius the Archimandrite of Atripe, St. Benedict of Nursia, and St. Euphrasia of Tabennisi", "feast": null },
-        "15": { "reading_id": "senkessar-megabit-15", "primary_saint": "St. Sarah the Hermit of the Nile, St. Helias of Egypt, St. Aristobulus of Britain, and St. Agapius with His Seven Companions", "feast": null },
-        "16": { "reading_id": "senkessar-megabit-16", "primary_saint": "St. Michael of Qalamun the Monk, St. John the Confessor, St. Sabas the Goth, and St. Abanoub of Nehisa the Child Martyr", "feast": null },
-        "17": { "reading_id": "senkessar-megabit-17", "primary_saint": "St. Lazarus the Beloved Friend of Christ, St. Basil of Caesarea, St. Gertrude of Nivelles, and the Martyrs of the Persian Persecution", "feast": null },
-        "18": { "reading_id": "senkessar-megabit-18", "primary_saint": "St. Isidore of Seville the Doctor, St. Aristobulus of Britain, the Translation of the Relics of St. Cyril of Jerusalem, and St. Edward King and Martyr", "feast": null },
-        "19": { "reading_id": "senkessar-megabit-19", "primary_saint": "St. Aristarchus of Thessalonica, St. Pudens the Senator, St. Trophimus the Apostle, and the Forty-Two Martyrs of Amorium", "feast": null },
-        "20": { "reading_id": "senkessar-megabit-20", "primary_saint": "St. Theodore Stratelates the Great Martyr, St. Amon of Egypt the Monk, St. Cuthbert of Lindisfarne, and St. Photina of Rome", "feast": null },
-        "21": { "reading_id": "senkessar-megabit-21", "primary_saint": "The Ever-Virgin Mary Theotokos, St. Benedict of Nursia, St. Serapion of Thmuis, and St. Beryllus of Catania", "feast": "Monthly Feast of the Virgin Mary" },
-        "22": { "reading_id": "senkessar-megabit-22", "primary_saint": "St. Cyril of Alexandria, the Archangel Michael, St. Basil of Ancyra the Confessor, and St. Drosida of Antioch", "feast": null },
-        "23": { "reading_id": "senkessar-megabit-23", "primary_saint": "The Prophet Daniel, St. Nicon the Metanoeite of Sicily, St. Lydia of Thyatira, and St. Luke of Steiris", "feast": null },
-        "24": { "reading_id": "senkessar-megabit-24", "primary_saint": "St. Macarius the Great of Egypt, St. Artemon of Seleucia, St. Parthenius of Lampsacus, and St. Zachariah the Recluse", "feast": null },
-        "25": { "reading_id": "senkessar-megabit-25", "primary_saint": "St. Onesiphorus the Apostle, St. Paphnutius the Confessor, St. Matrona of Thessalonica, and St. Hilarion the New of Pelekete", "feast": null },
-        "26": { "reading_id": "senkessar-megabit-26", "primary_saint": "The Archangel Gabriel, St. Stephen the Protomartyr, St. Pulcheria the Empress, and St. Irene of Chrysovalantou", "feast": "Feast of the Archangel Gabriel" },
-        "27": { "reading_id": "senkessar-megabit-27", "primary_saint": "The Monthly Commemoration of the Crucifixion, St. Macarius of Egypt, St. Matrona of Barcelona, and St. John of Lycopolis", "feast": "Monthly Commemoration of the Crucifixion" },
-        "28": { "reading_id": "senkessar-megabit-28", "primary_saint": "St. Constantine the Great Equal to the Apostles, St. Helena the Empress, St. Hilarion of Pelekete, and St. Stephen the Wonderworker", "feast": null },
-        "29": { "reading_id": "senkessar-megabit-29", "primary_saint": "The Annunciation of the Lord — Tinsae Maryam, the Mystery of the Incarnation of the Eternal Word, and St. Eustathius of Antioch", "feast": "The Annunciation — Tinsae Maryam" },
-        "30": { "reading_id": "senkessar-megabit-30", "primary_saint": "St. John Climacus of Sinai, St. Samson of Dol, St. Mary of Egypt, and St. Zosimas the Priest-Monk", "feast": null }
-      }
+      "ge_ez": "መጋቢት",
+      "total_days": 30,
+      "thematic_summary": "The seventh month, containing the Finding of the True Cross (Day 10), the Annunciation — Tinsae Maryam (Day 29), and the feast of the Archangel Gabriel (Day 26).",
+      "key_feasts": [
+        {"day": 10, "feast": "Finding of the Holy and Life-Giving Cross"},
+        {"day": 26, "feast": "Feast of the Archangel Gabriel"           },
+        {"day": 27, "feast": "Monthly Commemoration of the Crucifixion" },
+        {"day": 29, "feast": "The Annunciation — Tinsae Maryam"         }
+      ],
+      "days": [
+        {
+          "day": 1,
+          "id": "senkessar-megabit-1",
+          "title": "1 Megabit — St. Barkisos of Persia & The Assembly"
+        },
+        {
+          "day": 2,
+          "id": "senkessar-megabit-2",
+          "title": "2 Megabit — St. Macrobius the Martyr & The Assembly"
+        },
+        {
+          "day": 3,
+          "id": "senkessar-megabit-3",
+          "title": "3 Megabit — St. Cosmas III Pope of Alexandria & The Assembly"
+        },
+        {
+          "day": 4,
+          "id": "senkessar-megabit-4",
+          "title": "4 Megabit — St. Hananias the Apostle & The Assembly"
+        },
+        {
+          "day": 5,
+          "id": "senkessar-megabit-5",
+          "title": "5 Megabit — St. Sarapamon of Egypt & The Assembly"
+        },
+        {
+          "day": 6,
+          "id": "senkessar-megabit-6",
+          "title": "6 Megabit — St. Dioscorus II Pope of Alexandria & The Assembly"
+        },
+        {
+          "day": 7,
+          "id": "senkessar-megabit-7",
+          "title": "7 Megabit — St. Theodotus of Ancyra & The Assembly"
+        },
+        {
+          "day": 8,
+          "id": "senkessar-megabit-8",
+          "title": "8 Megabit — St. Matthias the Apostle & The Assembly"
+        },
+        {
+          "day": 9,
+          "id": "senkessar-megabit-9",
+          "title": "9 Megabit — St. Andronicus the Apostle & The Assembly"
+        },
+        {
+          "day": 10,
+          "id": "senkessar-megabit-10",
+          "title": "10 Megabit — The Finding of the True Cross & The Assembly"
+        },
+        {
+          "day": 11,
+          "id": "senkessar-megabit-11",
+          "title": "11 Megabit — St. Basil the Great & The Assembly"
+        },
+        {
+          "day": 12,
+          "id": "senkessar-megabit-12",
+          "title": "12 Megabit — The Archangel Michael & The Assembly"
+        },
+        {
+          "day": 13,
+          "id": "senkessar-megabit-13",
+          "title": "13 Megabit — St. Dionysius the Areopagite & The Assembly"
+        },
+        {
+          "day": 14,
+          "id": "senkessar-megabit-14",
+          "title": "14 Megabit — St. Cyril of Jerusalem & The Assembly"
+        },
+        {
+          "day": 15,
+          "id": "senkessar-megabit-15",
+          "title": "15 Megabit — St. Sarah the Hermit & The Assembly"
+        },
+        {
+          "day": 16,
+          "id": "senkessar-megabit-16",
+          "title": "16 Megabit — St. Michael of Qalamun & The Assembly"
+        },
+        {
+          "day": 17,
+          "id": "senkessar-megabit-17",
+          "title": "17 Megabit — St. Lazarus the Beloved Friend of Christ & The Assembly"
+        },
+        {
+          "day": 18,
+          "id": "senkessar-megabit-18",
+          "title": "18 Megabit — St. Isidore of Seville & The Assembly"
+        },
+        {
+          "day": 19,
+          "id": "senkessar-megabit-19",
+          "title": "19 Megabit — St. Aristarchus of Thessalonica & The Assembly"
+        },
+        {
+          "day": 20,
+          "id": "senkessar-megabit-20",
+          "title": "20 Megabit — St. Theodore Stratelates & The Assembly"
+        },
+        {
+          "day": 21,
+          "id": "senkessar-megabit-21",
+          "title": "21 Megabit — The Virgin Mary & The Assembly"
+        },
+        {
+          "day": 22,
+          "id": "senkessar-megabit-22",
+          "title": "22 Megabit — St. Cyril of Alexandria & The Assembly"
+        },
+        {
+          "day": 23,
+          "id": "senkessar-megabit-23",
+          "title": "23 Megabit — The Prophet Daniel & The Assembly"
+        },
+        {
+          "day": 24,
+          "id": "senkessar-megabit-24",
+          "title": "24 Megabit — St. Macarius the Great of Egypt & The Assembly"
+        },
+        {
+          "day": 25,
+          "id": "senkessar-megabit-25",
+          "title": "25 Megabit — St. Onesiphorus the Apostle & The Assembly"
+        },
+        {
+          "day": 26,
+          "id": "senkessar-megabit-26",
+          "title": "26 Megabit — The Archangel Gabriel & The Assembly"
+        },
+        {
+          "day": 27,
+          "id": "senkessar-megabit-27",
+          "title": "27 Megabit — The Monthly Crucifixion & The Assembly"
+        },
+        {
+          "day": 28,
+          "id": "senkessar-megabit-28",
+          "title": "28 Megabit — St. Constantine the Great & The Assembly"
+        },
+        {
+          "day": 29,
+          "id": "senkessar-megabit-29",
+          "title": "29 Megabit — The Annunciation (Tinsae Maryam) & The Assembly"
+        },
+        {
+          "day": 30,
+          "id": "senkessar-megabit-30",
+          "title": "30 Megabit — St. John Climacus & The Assembly"
+        }
+      ]
     },
-
-    "Miyazya": {
+    {
+      "month": "Miyazya",
       "month_number": 8,
-      "days": 30,
-      "entries": {
-        "1":  { "reading_id": "senkessar-miyazya-1",  "primary_saint": "St. Silvanus the Bishop-Martyr, St. Mary of Egypt, St. Melitene of Marcianopolis, and St. Gerontius of Cervia", "feast": null },
-        "2":  { "reading_id": "senkessar-miyazya-2",  "primary_saint": "St. Christopher the Great Martyr, St. Theodosia the Martyr, St. Amphianus of Caesarea, and St. Aedesius his Brother", "feast": null },
-        "3":  { "reading_id": "senkessar-miyazya-3",  "primary_saint": "St. John of the Levant, St. Isaac the Confessor, St. Illyricus the Martyr, and St. Elpidephorus the Martyr", "feast": null },
-        "4":  { "reading_id": "senkessar-miyazya-4",  "primary_saint": "St. Victor the Martyr, St. Decius the Confessor, St. Zosimus of Palestine, and St. Plato of Sakkudion", "feast": null },
-        "5":  { "reading_id": "senkessar-miyazya-5",  "primary_saint": "The Prophet Ezekiel, St. Hypatius of Rufinianae, St. Claudian the Martyr, and St. Pannonius the Martyr", "feast": null },
-        "6":  { "reading_id": "senkessar-miyazya-6",  "primary_saint": "St. Mary of Egypt the Great Penitent, St. Eutychius Patriarch of Constantinople, and St. Platonida the Abbess", "feast": "Monthly Commemoration of St. Mary of Egypt" },
-        "7":  { "reading_id": "senkessar-miyazya-7",  "primary_saint": "The Archangel Gabriel, St. Calliopius the Martyr, and St. Akilina the Younger", "feast": "Monthly Feast of the Archangel Gabriel" },
-        "8":  { "reading_id": "senkessar-miyazya-8",  "primary_saint": "Sts. Agape, Irene, and Chiona the Sister-Martyrs, St. Pausilypus the Martyr, and St. Herodion of Patras", "feast": null },
-        "9":  { "reading_id": "senkessar-miyazya-9",  "primary_saint": "St. Zosimas the Priest-Monk, St. Mary of Egypt, St. Eupsychius of Caesarea, and St. Bademus of Persia", "feast": null },
-        "10": { "reading_id": "senkessar-miyazya-10", "primary_saint": "St. Isaac of Tipare the Monk, St. Gabriel the Archangel, St. Terentius the Martyr, and the Forty Martyrs of Carthage", "feast": null },
-        "11": { "reading_id": "senkessar-miyazya-11", "primary_saint": "St. Antipas of Pergamum the Martyr, St. Pharmuthius the Hermit, and St. Barsanuphius the Great of Palestine", "feast": null },
-        "12": { "reading_id": "senkessar-miyazya-12", "primary_saint": "The Archangel Michael, St. Anthusa of Constantinople the Abbess, and St. Athanasia of Aegina", "feast": "Monthly Feast of the Archangel Michael" },
-        "13": { "reading_id": "senkessar-miyazya-13", "primary_saint": "St. Joshua the Son of Nun, St. Martin the Confessor Pope of Rome, and St. Maximus of Scythopolis", "feast": null },
-        "14": { "reading_id": "senkessar-miyazya-14", "primary_saint": "St. Alexandra the Empress-Martyr, St. Ardalion the Actor-Martyr, and St. Thomais of Alexandria", "feast": null },
-        "15": { "reading_id": "senkessar-miyazya-15", "primary_saint": "St. Nicolaus the Bishop-Confessor, St. Agapius the Martyr, St. Leonidas of Alexandria, and St. Theodore of Sykeon", "feast": null },
-        "16": { "reading_id": "senkessar-miyazya-16", "primary_saint": "St. Antipas the Martyr of Pergamum, St. Galini the Martyr of Corinth, and St. Charissa the Martyr of Corinth", "feast": null },
-        "17": { "reading_id": "senkessar-miyazya-17", "primary_saint": "St. James the Apostle Son of Zebedee, St. Simeon of Persia the Martyr-Bishop, and St. Adrian of Corinth", "feast": null },
-        "18": { "reading_id": "senkessar-miyazya-18", "primary_saint": "St. Eusebius of Samosata the Confessor-Bishop, St. Peter the Confessor, St. Cosmas of Chalcedon, and St. Athanasia of Aegina", "feast": null },
-        "19": { "reading_id": "senkessar-miyazya-19", "primary_saint": "St. Simeon the Apostle, St. Paphnutius of Jerusalem the Monk, and St. George of Antioch", "feast": null },
-        "20": { "reading_id": "senkessar-miyazya-20", "primary_saint": "St. Bebnuda the Martyr of Egypt, St. Theodore the Confessor, St. Zacchaeus of Jerusalem, and St. Victor of Caesarea", "feast": null },
-        "21": { "reading_id": "senkessar-miyazya-21", "primary_saint": "The Ever-Virgin Mary Theotokos, St. Januarius Bishop of Benevento, and St. Alexandra the Martyr", "feast": "Monthly Feast of the Virgin Mary" },
-        "22": { "reading_id": "senkessar-miyazya-22", "primary_saint": "St. Isaac of Nineveh the Mystic, St. Theodore the Trichinas the Ascetic, and St. Nathaniel — Bartholomew the Apostle", "feast": null },
-        "23": { "reading_id": "senkessar-miyazya-23", "primary_saint": "St. George the Great Martyr and Trophy-Bearer, St. Alexandra the Queen, and St. Anatolius the Soldier-Convert", "feast": "Feast of St. George the Great Martyr" },
-        "24": { "reading_id": "senkessar-miyazya-24", "primary_saint": "St. Shenouda the Archimandrite of White Monastery, St. Elizabeth the Wonderworker, and St. Sabas the Goth", "feast": null },
-        "25": { "reading_id": "senkessar-miyazya-25", "primary_saint": "St. Mark the Evangelist and Founder of the Alexandrian Church, St. Anianus the Second Bishop of Alexandria, and St. Macedonius the Syrian Ascetic", "feast": null },
-        "26": { "reading_id": "senkessar-miyazya-26", "primary_saint": "St. Susenyos the Martyr of Ethiopia, St. Victor the Martyr, St. Basil of Amasea, and St. Glaphyra the Handmaid", "feast": null },
-        "27": { "reading_id": "senkessar-miyazya-27", "primary_saint": "The Monthly Commemoration of the Crucifixion, St. Simeon the Second Bishop of Jerusalem, and St. Stephen of Taron", "feast": "Monthly Commemoration of the Crucifixion" },
-        "28": { "reading_id": "senkessar-miyazya-28", "primary_saint": "St. Melius the Martyr, St. Jason of Tarsus the Apostle, St. Sosipater of Iconium the Apostle, and the Companions of the Seventy", "feast": null },
-        "29": { "reading_id": "senkessar-miyazya-29", "primary_saint": "The Monthly Feast of the Annunciation, Nativity and Resurrection; St. Memnon the Wonderworker; and St. Dadas of Persia", "feast": "Monthly Feast of the Annunciation, Nativity, and Resurrection" },
-        "30": { "reading_id": "senkessar-miyazya-30", "primary_saint": "St. Mark the Evangelist, St. James the Brother of the Lord First Bishop of Jerusalem, and St. Clement of Rome", "feast": null }
-      }
+      "ge_ez": "ሚያዝያ",
+      "total_days": 30,
+      "thematic_summary": "The eighth month — the Paschal month. Contains the feast of St. George the Great Martyr (Day 23) and the feast of St. Mark the Evangelist (Day 25).",
+      "key_feasts": [
+        {"day": 21, "feast": "Monthly Feast of the Virgin Mary"},
+        {"day": 23, "feast": "Feast of St. George the Great Martyr"},
+        {"day": 25, "feast": "Feast of St. Mark the Evangelist"},
+        {"day": 27, "feast": "Monthly Commemoration of the Crucifixion"},
+        {
+          "day": 29,
+          "feast": "Monthly Feast of the Annunciation, Nativity, and Resurrection"
+        }
+      ],
+      "days": [
+        {
+          "day": 1,
+          "id": "senkessar-miyazya-1",
+          "title": "1 Miyazya — St. Silvanus the Bishop-Martyr & The Assembly"
+        },
+        {
+          "day": 2,
+          "id": "senkessar-miyazya-2",
+          "title": "2 Miyazya — St. Christopher the Great Martyr & The Assembly"
+        },
+        {
+          "day": 3,
+          "id": "senkessar-miyazya-3",
+          "title": "3 Miyazya — St. John of the Levant & The Assembly"
+        },
+        {
+          "day": 4,
+          "id": "senkessar-miyazya-4",
+          "title": "4 Miyazya — St. Victor the Martyr & The Assembly"
+        },
+        {
+          "day": 5,
+          "id": "senkessar-miyazya-5",
+          "title": "5 Miyazya — The Prophet Ezekiel & The Assembly"
+        },
+        {
+          "day": 6,
+          "id": "senkessar-miyazya-6",
+          "title": "6 Miyazya — St. Mary of Egypt & The Assembly"
+        },
+        {
+          "day": 7,
+          "id": "senkessar-miyazya-7",
+          "title": "7 Miyazya — The Archangel Gabriel & The Assembly"
+        },
+        {
+          "day": 8,
+          "id": "senkessar-miyazya-8",
+          "title": "8 Miyazya — Sts. Agape, Irene, and Chiona & The Assembly"
+        },
+        {
+          "day": 9,
+          "id": "senkessar-miyazya-9",
+          "title": "9 Miyazya — St. Zosimas the Priest-Monk & The Assembly"
+        },
+        {
+          "day": 10,
+          "id": "senkessar-miyazya-10",
+          "title": "10 Miyazya — St. Isaac of Tipare & The Assembly"
+        },
+        {
+          "day": 11,
+          "id": "senkessar-miyazya-11",
+          "title": "11 Miyazya — St. Antipas of Pergamum & The Assembly"
+        },
+        {
+          "day": 12,
+          "id": "senkessar-miyazya-12",
+          "title": "12 Miyazya — The Archangel Michael & The Assembly"
+        },
+        {
+          "day": 13,
+          "id": "senkessar-miyazya-13",
+          "title": "13 Miyazya — St. Joshua the Son of Nun & The Assembly"
+        },
+        {
+          "day": 14,
+          "id": "senkessar-miyazya-14",
+          "title": "14 Miyazya — St. Alexandra the Empress-Martyr & The Assembly"
+        },
+        {
+          "day": 15,
+          "id": "senkessar-miyazya-15",
+          "title": "15 Miyazya — St. Nicolaus the Bishop-Confessor & The Assembly"
+        },
+        {
+          "day": 16,
+          "id": "senkessar-miyazya-16",
+          "title": "16 Miyazya — St. Antipas the Martyr of Pergamum & The Assembly"
+        },
+        {
+          "day": 17,
+          "id": "senkessar-miyazya-17",
+          "title": "17 Miyazya — St. James the Apostle Son of Zebedee & The Assembly"
+        },
+        {
+          "day": 18,
+          "id": "senkessar-miyazya-18",
+          "title": "18 Miyazya — St. Eusebius of Samosata & The Assembly"
+        },
+        {
+          "day": 19,
+          "id": "senkessar-miyazya-19",
+          "title": "19 Miyazya — St. Simeon the Apostle & The Assembly"
+        },
+        {
+          "day": 20,
+          "id": "senkessar-miyazya-20",
+          "title": "20 Miyazya — St. Bebnuda the Martyr & The Assembly"
+        },
+        {
+          "day": 21,
+          "id": "senkessar-miyazya-21",
+          "title": "21 Miyazya — The Virgin Mary & The Assembly"
+        },
+        {
+          "day": 22,
+          "id": "senkessar-miyazya-22",
+          "title": "22 Miyazya — St. Isaac of Nineveh & The Assembly"
+        },
+        {
+          "day": 23,
+          "id": "senkessar-miyazya-23",
+          "title": "23 Miyazya — St. George the Great Martyr & The Assembly"
+        },
+        {
+          "day": 24,
+          "id": "senkessar-miyazya-24",
+          "title": "24 Miyazya — St. Shenouda the Archimandrite & The Assembly"
+        },
+        {
+          "day": 25,
+          "id": "senkessar-miyazya-25",
+          "title": "25 Miyazya — St. Mark the Evangelist & The Assembly"
+        },
+        {
+          "day": 26,
+          "id": "senkessar-miyazya-26",
+          "title": "26 Miyazya — St. Susenyos the Martyr of Ethiopia & The Assembly"
+        },
+        {
+          "day": 27,
+          "id": "senkessar-miyazya-27",
+          "title": "27 Miyazya — The Monthly Crucifixion & The Assembly"
+        },
+        {
+          "day": 28,
+          "id": "senkessar-miyazya-28",
+          "title": "28 Miyazya — St. Melius the Martyr & The Assembly"
+        },
+        {
+          "day": 29,
+          "id": "senkessar-miyazya-29",
+          "title": "29 Miyazya — The Monthly Feast of the Annunciation, Nativity, and Resurrection & The Assembly"
+        },
+        {
+          "day": 30,
+          "id": "senkessar-miyazya-30",
+          "title": "30 Miyazya — St. Mark the Evangelist & The Assembly"
+        }
+      ]
     },
-
-    "Ginbot": {
+    {
+      "month": "Ginbot",
       "month_number": 9,
-      "days": 30,
-      "entries": {
-        "1":  { "reading_id": "senkessar-ginbot-1",  "primary_saint": "The Nativity of the Virgin Mary — St. Isaac of Tipare & St. Berberus the Barbarian", "feast": null },
-        "2":  { "reading_id": "senkessar-ginbot-2",  "primary_saint": "St. Job the Patriarch & St. Theodore — St. Pelagia of Tarsus & St. Aphraates of Persia", "feast": null },
-        "3":  { "reading_id": "senkessar-ginbot-3",  "primary_saint": "St. Jason & St. Sosipater — St. Timothy the Reader & St. Maura His Wife", "feast": null },
-        "4":  { "reading_id": "senkessar-ginbot-4",  "primary_saint": "St. John the Apostle (Monthly) — St. Pelagia the Penitent & St. Hilary of Poitiers", "feast": null },
-        "5":  { "reading_id": "senkessar-ginbot-5",  "primary_saint": "St. Jeremiah the Prophet — St. Irene of Thessalonica & St. Neophytos the Martyr", "feast": null },
-        "6":  { "reading_id": "senkessar-ginbot-6",  "primary_saint": "St. Isaac Son of Abraham — St. Christopher (Relics Translation) & St. Barbaras", "feast": null },
-        "7":  { "reading_id": "senkessar-ginbot-7",  "primary_saint": "St. Athanasius (Monthly) — St. Acacius of Byzantium & St. Tarachus", "feast": null },
-        "8":  { "reading_id": "senkessar-ginbot-8",  "primary_saint": "St. John the Evangelist (Departure) — St. Arsenius the Great & St. Emilia", "feast": null },
-        "9":  { "reading_id": "senkessar-ginbot-9",  "primary_saint": "St. Helena the Empress — St. Christopher (Monthly) & Sts. Shmona and Guria", "feast": null },
-        "10": { "reading_id": "senkessar-ginbot-10", "primary_saint": "The 318 Holy Fathers of Nicaea — St. Simon the Zealot & St. Hesychius the Palatine", "feast": null },
-        "11": { "reading_id": "senkessar-ginbot-11", "primary_saint": "St. Paphnutius the Bishop — St. Mocius the Priest & St. Dioscorus of Smyrna", "feast": null },
-        "12": { "reading_id": "senkessar-ginbot-12", "primary_saint": "Archangel Michael (Monthly) — St. Epiphanius of Cyprus & St. Germanus of Constantinople", "feast": null },
-        "13": { "reading_id": "senkessar-ginbot-13", "primary_saint": "St. Arsenius (Monthly) — St. Glyceria the Martyr & St. Alexander of Tiberias", "feast": null },
-        "14": { "reading_id": "senkessar-ginbot-14", "primary_saint": "St. Pachomius — Father of Koinonia — St. Petronilla & St. Isidore of Chios", "feast": null },
-        "15": { "reading_id": "senkessar-ginbot-15", "primary_saint": "St. Simon the Stylite — St. Achilles of Larissa & St. Cassius of Clermont", "feast": null },
-        "16": { "reading_id": "senkessar-ginbot-16", "primary_saint": "St. John the Baptist (Monthly) — St. Abda the Bishop & St. Gennadius of Byzantium", "feast": null },
-        "17": { "reading_id": "senkessar-ginbot-17", "primary_saint": "St. Epiphanius (Departure) — St. Solochon & St. Andronicus (Monthly)", "feast": null },
-        "18": { "reading_id": "senkessar-ginbot-18", "primary_saint": "St. Gaudentius & St. Isaac — St. Peter of Alexandria (Monthly) & St. Julian of Egypt", "feast": null },
-        "19": { "reading_id": "senkessar-ginbot-19", "primary_saint": "St. Menas the Deacon — St. Patrick of Prusa & St. Pudens (Monthly)", "feast": null },
-        "20": { "reading_id": "senkessar-ginbot-20", "primary_saint": "The First Entry of Christ into Egypt — St. Thalalaeus the Merciful & St. Asterius", "feast": null },
-        "21": { "reading_id": "senkessar-ginbot-21", "primary_saint": "The Virgin Mary (Monthly) — Sts. Constantine & Helena the Great Feast", "feast": "Monthly Feast of the Virgin Mary" },
-        "22": { "reading_id": "senkessar-ginbot-22", "primary_saint": "St. Julian & St. Mary of Egypt — St. Basiliscus of Comana & St. Sophia of Thrace", "feast": null },
-        "23": { "reading_id": "senkessar-ginbot-23", "primary_saint": "St. George (Monthly) — St. Michael of Synnada & St. Mary of Cleophas", "feast": null },
-        "24": { "reading_id": "senkessar-ginbot-24", "primary_saint": "The Arrival of Christ in Egypt (Monthly) — St. Vincent of Lérins & St. Meletius the General", "feast": null },
-        "25": { "reading_id": "senkessar-ginbot-25", "primary_saint": "St. Salome Ointment-Bearer — St. Maximus the Confessor (Relics) & St. Aphrodisius", "feast": null },
-        "26": { "reading_id": "senkessar-ginbot-26", "primary_saint": "St. Thomas the Apostle — St. Carpus of the 70 & St. Alphius", "feast": null },
-        "27": { "reading_id": "senkessar-ginbot-27", "primary_saint": "The Crucifixion (Monthly) — St. Helladius the Bishop & St. Julius the Veteran", "feast": "Monthly Commemoration of the Crucifixion" },
-        "28": { "reading_id": "senkessar-ginbot-28", "primary_saint": "St. Amon of Egypt — St. Heliconis & St. Dioscorides of Rome", "feast": null },
-        "29": { "reading_id": "senkessar-ginbot-29", "primary_saint": "The Triple Feast (Monthly) — St. Theodosia of Constantinople & St. Restituta", "feast": "Monthly Feast of the Annunciation, Nativity, and Resurrection" },
-        "30": { "reading_id": "senkessar-ginbot-30", "primary_saint": "St. Ketsun the Martyr — St. Isaac of Dalmatia & St. Emmelia (Relics)", "feast": null }
-      }
+      "ge_ez": "ግንቦት",
+      "total_days": 30,
+      "thematic_summary": "The ninth month — containing the feast of the 318 Holy Fathers of Nicaea (Day 10), the feast of St. Pachomius Father of Koinonia (Day 14), and the feast of Sts. Constantine and Helena (Day 21).",
+      "key_feasts": [
+        {"day": 10, "feast": "The 318 Holy Fathers of Nicaea"},
+        {"day": 14, "feast": "St. Pachomius — Father of Koinonia"},
+        {
+          "day": 21,
+          "feast": "Monthly Feast of the Virgin Mary & Sts. Constantine and Helena"
+        },
+        {"day": 27, "feast": "Monthly Commemoration of the Crucifixion"},
+        {
+          "day": 29,
+          "feast": "Monthly Feast of the Annunciation, Nativity, and Resurrection"
+        }
+      ],
+      "days": [
+        {
+          "day": 1,
+          "id": "senkessar-ginbot-1",
+          "title": "1 Ginbot — The Nativity of the Virgin Mary & The Assembly"
+        },
+        {
+          "day": 2,
+          "id": "senkessar-ginbot-2",
+          "title": "2 Ginbot — St. Job the Patriarch & The Assembly"
+        },
+        {
+          "day": 3,
+          "id": "senkessar-ginbot-3",
+          "title": "3 Ginbot — St. Jason & St. Sosipater & The Assembly"
+        },
+        {
+          "day": 4,
+          "id": "senkessar-ginbot-4",
+          "title": "4 Ginbot — St. John the Apostle & The Assembly"
+        },
+        {
+          "day": 5,
+          "id": "senkessar-ginbot-5",
+          "title": "5 Ginbot — St. Jeremiah the Prophet & The Assembly"
+        },
+        {
+          "day": 6,
+          "id": "senkessar-ginbot-6",
+          "title": "6 Ginbot — St. Isaac Son of Abraham & The Assembly"
+        },
+        {
+          "day": 7,
+          "id": "senkessar-ginbot-7",
+          "title": "7 Ginbot — St. Athanasius & The Assembly"
+        },
+        {
+          "day": 8,
+          "id": "senkessar-ginbot-8",
+          "title": "8 Ginbot — St. John the Evangelist (Departure) & The Assembly"
+        },
+        {
+          "day": 9,
+          "id": "senkessar-ginbot-9",
+          "title": "9 Ginbot — St. Helena the Empress & The Assembly"
+        },
+        {
+          "day": 10,
+          "id": "senkessar-ginbot-10",
+          "title": "10 Ginbot — The 318 Holy Fathers of Nicaea & The Assembly"
+        },
+        {
+          "day": 11,
+          "id": "senkessar-ginbot-11",
+          "title": "11 Ginbot — St. Paphnutius the Bishop & The Assembly"
+        },
+        {
+          "day": 12,
+          "id": "senkessar-ginbot-12",
+          "title": "12 Ginbot — Archangel Michael & The Assembly"
+        },
+        {
+          "day": 13,
+          "id": "senkessar-ginbot-13",
+          "title": "13 Ginbot — St. Arsenius & The Assembly"
+        },
+        {
+          "day": 14,
+          "id": "senkessar-ginbot-14",
+          "title": "14 Ginbot — St. Pachomius — Father of Koinonia & The Assembly"
+        },
+        {
+          "day": 15,
+          "id": "senkessar-ginbot-15",
+          "title": "15 Ginbot — St. Simon the Stylite & The Assembly"
+        },
+        {
+          "day": 16,
+          "id": "senkessar-ginbot-16",
+          "title": "16 Ginbot — St. John the Baptist & The Assembly"
+        },
+        {
+          "day": 17,
+          "id": "senkessar-ginbot-17",
+          "title": "17 Ginbot — St. Epiphanius (Departure) & The Assembly"
+        },
+        {
+          "day": 18,
+          "id": "senkessar-ginbot-18",
+          "title": "18 Ginbot — St. Gaudentius & St. Isaac & The Assembly"
+        },
+        {
+          "day": 19,
+          "id": "senkessar-ginbot-19",
+          "title": "19 Ginbot — St. Menas the Deacon & The Assembly"
+        },
+        {
+          "day": 20,
+          "id": "senkessar-ginbot-20",
+          "title": "20 Ginbot — The First Entry of Christ into Egypt & The Assembly"
+        },
+        {
+          "day": 21,
+          "id": "senkessar-ginbot-21",
+          "title": "21 Ginbot — The Virgin Mary & The Assembly"
+        },
+        {
+          "day": 22,
+          "id": "senkessar-ginbot-22",
+          "title": "22 Ginbot — St. Julian & St. Mary of Egypt & The Assembly"
+        },
+        {
+          "day": 23,
+          "id": "senkessar-ginbot-23",
+          "title": "23 Ginbot — St. George & The Assembly"
+        },
+        {
+          "day": 24,
+          "id": "senkessar-ginbot-24",
+          "title": "24 Ginbot — The Arrival of Christ in Egypt & The Assembly"
+        },
+        {
+          "day": 25,
+          "id": "senkessar-ginbot-25",
+          "title": "25 Ginbot — St. Salome Ointment-Bearer & The Assembly"
+        },
+        {
+          "day": 26,
+          "id": "senkessar-ginbot-26",
+          "title": "26 Ginbot — St. Thomas the Apostle & The Assembly"
+        },
+        {
+          "day": 27,
+          "id": "senkessar-ginbot-27",
+          "title": "27 Ginbot — The Monthly Crucifixion & The Assembly"
+        },
+        {
+          "day": 28,
+          "id": "senkessar-ginbot-28",
+          "title": "28 Ginbot — St. Amon of Egypt & The Assembly"
+        },
+        {
+          "day": 29,
+          "id": "senkessar-ginbot-29",
+          "title": "29 Ginbot — The Triple Feast & The Assembly"
+        },
+        {
+          "day": 30,
+          "id": "senkessar-ginbot-30",
+          "title": "30 Ginbot — St. Ketsun the Martyr & The Assembly"
+        }
+      ]
     },
-
-    "Sene": {
+    {
+      "month": "Sene",
       "month_number": 10,
-      "days": 30,
-      "entries": {
-        "1":  { "reading_id": "senkessar-sene-1",  "primary_saint": "St. Cosmas of Tane & St. Bartholomew the Apostle — St. Justin Martyr & St. Pyrrus the Martyr", "feast": null },
-        "2":  { "reading_id": "senkessar-sene-2",  "primary_saint": "St. John the Baptist (Monthly) — St. Erasmus of Formia & St. Blandina of Lyon", "feast": null },
-        "3":  { "reading_id": "senkessar-sene-3",  "primary_saint": "St. Martha & St. Mary of Bethany — St. Lucillian of Nicomedia & St. Paula the Child-Martyr", "feast": null },
-        "4":  { "reading_id": "senkessar-sene-4",  "primary_saint": "St. John the Apostle (Monthly) — St. Metrophanes of Byzantium & St. Zenaida the Physician", "feast": null },
-        "5":  { "reading_id": "senkessar-sene-5",  "primary_saint": "St. James the Apostle (Alpheus) — St. Dorotheus of Tyre & St. Marcian the Martyr", "feast": null },
-        "6":  { "reading_id": "senkessar-sene-6",  "primary_saint": "Archangel Gabriel (Monthly) — St. Bessarion of Egypt & St. Hilarion the Younger", "feast": null },
-        "7":  { "reading_id": "senkessar-sene-7",  "primary_saint": "St. Athanasius (Monthly) — St. Theodotus of Ancyra & St. Potamiana of Alexandria", "feast": null },
-        "8":  { "reading_id": "senkessar-sene-8",  "primary_saint": "St. Mary of Egypt (Monthly) | St. Ephrem the Syrian (Monthly) — St. Medard of Noyon", "feast": null },
-        "9":  { "reading_id": "senkessar-sene-9",  "primary_saint": "St. Samuel the Prophet — St. Cyril of Alexandria (Monthly) & St. Columba of Iona", "feast": null },
-        "10": { "reading_id": "senkessar-sene-10", "primary_saint": "St. Sophia & Her Three Daughters — St. Timothy of Prusa & St. Canides the Martyr", "feast": null },
-        "11": { "reading_id": "senkessar-sene-11", "primary_saint": "Archangel Michael (Monthly) — St. Bartholomew Apostle (Monthly) & St. Barnabas the Apostle", "feast": null },
-        "12": { "reading_id": "senkessar-sene-12", "primary_saint": "St. Onuphrius (Abba Nofer) the Great — St. Peter of Athos & St. Antonina the Martyr", "feast": null },
-        "13": { "reading_id": "senkessar-sene-13", "primary_saint": "St. Arsenius the Great (Monthly) — St. Aquilina of Byblos & St. Triphyllius of Cyprus", "feast": null },
-        "14": { "reading_id": "senkessar-sene-14", "primary_saint": "St. Cyril of Alexandria (Departure) & St. Methodius of Constantinople — St. Jerome (Monthly) & St. Vitus the Child-Martyr", "feast": null },
-        "15": { "reading_id": "senkessar-sene-15", "primary_saint": "St. Menas the Martyr (Monthly) — St. Jerome (Monthly) & St. Vitus the Child-Martyr", "feast": null },
-        "16": { "reading_id": "senkessar-sene-16", "primary_saint": "St. John the Baptist (Monthly) — St. Tychon of Amathus & St. Kauma the Martyr", "feast": null },
-        "17": { "reading_id": "senkessar-sene-17", "primary_saint": "St. Latsun the Confessor — Sts. Manuel, Sabel & Ishmael the Persian Brothers", "feast": null },
-        "18": { "reading_id": "senkessar-sene-18", "primary_saint": "St. George (Monthly) — St. Leontius of Tripoli & St. Marina of Antioch", "feast": null },
-        "19": { "reading_id": "senkessar-sene-19", "primary_saint": "Archangel Gabriel (Monthly) — St. Jude the Apostle (Thaddeus) & St. Zosimus the Martyr", "feast": null },
-        "20": { "reading_id": "senkessar-sene-20", "primary_saint": "The First Entry into Egypt (Monthly) — St. Methodius of Olympus & St. Adauctus the Martyr", "feast": null },
-        "21": { "reading_id": "senkessar-sene-21", "primary_saint": "The Virgin Mary (Monthly) — St. Julian of Tarsus & St. Tertullius the Martyr", "feast": "Monthly Feast of the Virgin Mary" },
-        "22": { "reading_id": "senkessar-sene-22", "primary_saint": "St. Isaac of Nineveh (Monthly) — St. Eusebius of Samosata & St. Alban of Britain", "feast": null },
-        "23": { "reading_id": "senkessar-sene-23", "primary_saint": "St. Solomon the King — St. Agrippina of Rome & St. Aristocleus the Martyr", "feast": null },
-        "24": { "reading_id": "senkessar-sene-24", "primary_saint": "The Arrival in Egypt (Monthly) — The Nativity of St. John the Baptist (Major Feast)", "feast": "Nativity of St. John the Baptist" },
-        "25": { "reading_id": "senkessar-sene-25", "primary_saint": "St. Jude the Apostle — St. Febronia of Nisibis & St. Liborius of Le Mans", "feast": null },
-        "26": { "reading_id": "senkessar-sene-26", "primary_saint": "St. Joshua Son of Nun (Monthly) — St. David of Thessalonica & St. Antion the Martyr", "feast": null },
-        "27": { "reading_id": "senkessar-sene-27", "primary_saint": "The Monthly Crucifixion — St. Joanna the Myrrh-Bearer & St. Sampson the Hospitable", "feast": "Monthly Commemoration of the Crucifixion" },
-        "28": { "reading_id": "senkessar-sene-28", "primary_saint": "Sts. Abraham, Isaac & Jacob the Patriarchs — Sts. Cyrus & John (Relics) & St. Pappias the Martyr", "feast": null },
-        "29": { "reading_id": "senkessar-sene-29", "primary_saint": "The Triple Feast (Monthly) — Sts. Peter & Paul (Eve of Feast)", "feast": "Monthly Feast of the Annunciation, Nativity, and Resurrection" },
-        "30": { "reading_id": "senkessar-sene-30", "primary_saint": "Sts. Peter & Paul the Pillars — The Synaxis of the Twelve Apostles", "feast": null }
-      }
+      "ge_ez": "ሰኔ",
+      "total_days": 30,
+      "thematic_summary": "The tenth month — containing the Nativity of St. John the Baptist (Day 24) and the feast of Sts. Peter and Paul (Day 30).",
+      "key_feasts": [
+        {"day": 21, "feast": "Monthly Feast of the Virgin Mary"},
+        {"day": 24, "feast": "Nativity of St. John the Baptist"},
+        {"day": 27, "feast": "Monthly Commemoration of the Crucifixion"},
+        {
+          "day": 29,
+          "feast": "Monthly Feast of the Annunciation, Nativity, and Resurrection"
+        },
+        {
+          "day": 30,
+          "feast": "Sts. Peter and Paul the Pillars — Synaxis of the Twelve Apostles"
+        }
+      ],
+      "days": [
+        {
+          "day": 1,
+          "id": "senkessar-sene-1",
+          "title": "1 Sene — St. Cosmas of Tane & The Assembly"
+        },
+        {
+          "day": 2,
+          "id": "senkessar-sene-2",
+          "title": "2 Sene — St. John the Baptist & The Assembly"
+        },
+        {
+          "day": 3,
+          "id": "senkessar-sene-3",
+          "title": "3 Sene — St. Martha & St. Mary of Bethany & The Assembly"
+        },
+        {
+          "day": 4,
+          "id": "senkessar-sene-4",
+          "title": "4 Sene — St. John the Apostle & The Assembly"
+        },
+        {
+          "day": 5,
+          "id": "senkessar-sene-5",
+          "title": "5 Sene — St. James the Apostle (Alpheus) & The Assembly"
+        },
+        {
+          "day": 6,
+          "id": "senkessar-sene-6",
+          "title": "6 Sene — Archangel Gabriel & The Assembly"
+        },
+        {
+          "day": 7,
+          "id": "senkessar-sene-7",
+          "title": "7 Sene — St. Athanasius & The Assembly"
+        },
+        {
+          "day": 8,
+          "id": "senkessar-sene-8",
+          "title": "8 Sene — St. Mary of Egypt & The Assembly"
+        },
+        {
+          "day": 9,
+          "id": "senkessar-sene-9",
+          "title": "9 Sene — St. Samuel the Prophet & The Assembly"
+        },
+        {
+          "day": 10,
+          "id": "senkessar-sene-10",
+          "title": "10 Sene — St. Sophia & Her Three Daughters & The Assembly"
+        },
+        {
+          "day": 11,
+          "id": "senkessar-sene-11",
+          "title": "11 Sene — Archangel Michael & The Assembly"
+        },
+        {
+          "day": 12,
+          "id": "senkessar-sene-12",
+          "title": "12 Sene — St. Onuphrius the Great & The Assembly"
+        },
+        {
+          "day": 13,
+          "id": "senkessar-sene-13",
+          "title": "13 Sene — St. Arsenius the Great & The Assembly"
+        },
+        {
+          "day": 14,
+          "id": "senkessar-sene-14",
+          "title": "14 Sene — St. Cyril of Alexandria (Departure) & The Assembly"
+        },
+        {
+          "day": 15,
+          "id": "senkessar-sene-15",
+          "title": "15 Sene — St. Menas the Martyr & The Assembly"
+        },
+        {
+          "day": 16,
+          "id": "senkessar-sene-16",
+          "title": "16 Sene — St. John the Baptist & The Assembly"
+        },
+        {
+          "day": 17,
+          "id": "senkessar-sene-17",
+          "title": "17 Sene — St. Latsun the Confessor & The Assembly"
+        },
+        {
+          "day": 18,
+          "id": "senkessar-sene-18",
+          "title": "18 Sene — St. George & The Assembly"
+        },
+        {
+          "day": 19,
+          "id": "senkessar-sene-19",
+          "title": "19 Sene — Archangel Gabriel & The Assembly"
+        },
+        {
+          "day": 20,
+          "id": "senkessar-sene-20",
+          "title": "20 Sene — The First Entry into Egypt & The Assembly"
+        },
+        {
+          "day": 21,
+          "id": "senkessar-sene-21",
+          "title": "21 Sene — The Virgin Mary & The Assembly"
+        },
+        {
+          "day": 22,
+          "id": "senkessar-sene-22",
+          "title": "22 Sene — St. Isaac of Nineveh & The Assembly"
+        },
+        {
+          "day": 23,
+          "id": "senkessar-sene-23",
+          "title": "23 Sene — St. Solomon the King & The Assembly"
+        },
+        {
+          "day": 24,
+          "id": "senkessar-sene-24",
+          "title": "24 Sene — The Nativity of St. John the Baptist & The Assembly"
+        },
+        {
+          "day": 25,
+          "id": "senkessar-sene-25",
+          "title": "25 Sene — St. Jude the Apostle & The Assembly"
+        },
+        {
+          "day": 26,
+          "id": "senkessar-sene-26",
+          "title": "26 Sene — St. Joshua Son of Nun & The Assembly"
+        },
+        {
+          "day": 27,
+          "id": "senkessar-sene-27",
+          "title": "27 Sene — The Monthly Crucifixion & The Assembly"
+        },
+        {
+          "day": 28,
+          "id": "senkessar-sene-28",
+          "title": "28 Sene — Sts. Abraham, Isaac, and Jacob & The Assembly"
+        },
+        {
+          "day": 29,
+          "id": "senkessar-sene-29",
+          "title": "29 Sene — The Triple Feast & The Assembly"
+        },
+        {
+          "day": 30,
+          "id": "senkessar-sene-30",
+          "title": "30 Sene — Sts. Peter and Paul the Pillars & The Assembly"
+        }
+      ]
     },
-
-    "Hamle": {
+    {
+      "month": "Hamle",
       "month_number": 11,
-      "days": 30,
-      "entries": {
-        "1":  { "reading_id": "senkessar-hamle-1",  "primary_saint": null, "feast": null },
-        "2":  { "reading_id": "senkessar-hamle-2",  "primary_saint": null, "feast": null },
-        "3":  { "reading_id": "senkessar-hamle-3",  "primary_saint": null, "feast": null },
-        "4":  { "reading_id": "senkessar-hamle-4",  "primary_saint": null, "feast": null },
-        "5":  { "reading_id": "senkessar-hamle-5",  "primary_saint": null, "feast": null },
-        "6":  { "reading_id": "senkessar-hamle-6",  "primary_saint": null, "feast": null },
-        "7":  { "reading_id": "senkessar-hamle-7",  "primary_saint": null, "feast": null },
-        "8":  { "reading_id": "senkessar-hamle-8",  "primary_saint": null, "feast": null },
-        "9":  { "reading_id": "senkessar-hamle-9",  "primary_saint": null, "feast": null },
-        "10": { "reading_id": "senkessar-hamle-10", "primary_saint": null, "feast": null },
-        "11": { "reading_id": "senkessar-hamle-11", "primary_saint": null, "feast": null },
-        "12": { "reading_id": "senkessar-hamle-12", "primary_saint": null, "feast": null },
-        "13": { "reading_id": "senkessar-hamle-13", "primary_saint": null, "feast": null },
-        "14": { "reading_id": "senkessar-hamle-14", "primary_saint": null, "feast": null },
-        "15": { "reading_id": "senkessar-hamle-15", "primary_saint": null, "feast": null },
-        "16": { "reading_id": "senkessar-hamle-16", "primary_saint": null, "feast": null },
-        "17": { "reading_id": "senkessar-hamle-17", "primary_saint": null, "feast": null },
-        "18": { "reading_id": "senkessar-hamle-18", "primary_saint": null, "feast": null },
-        "19": { "reading_id": "senkessar-hamle-19", "primary_saint": null, "feast": null },
-        "20": { "reading_id": "senkessar-hamle-20", "primary_saint": null, "feast": null },
-        "21": { "reading_id": "senkessar-hamle-21", "primary_saint": null, "feast": "Feast of the Blessed Virgin Mary (Haile Maryam)" },
-        "22": { "reading_id": "senkessar-hamle-22", "primary_saint": null, "feast": null },
-        "23": { "reading_id": "senkessar-hamle-23", "primary_saint": null, "feast": null },
-        "24": { "reading_id": "senkessar-hamle-24", "primary_saint": null, "feast": null },
-        "25": { "reading_id": "senkessar-hamle-25", "primary_saint": null, "feast": null },
-        "26": { "reading_id": "senkessar-hamle-26", "primary_saint": null, "feast": null },
-        "27": { "reading_id": "senkessar-hamle-27", "primary_saint": null, "feast": null },
-        "28": { "reading_id": "senkessar-hamle-28", "primary_saint": null, "feast": null },
-        "29": { "reading_id": "senkessar-hamle-29", "primary_saint": null, "feast": null },
-        "30": { "reading_id": "senkessar-hamle-30", "primary_saint": null, "feast": null }
-      }
+      "ge_ez": "ሐምሌ",
+      "total_days": 30,
+      "thematic_summary": "The eleventh month — entries pending population.",
+      "key_feasts": [
+        {"day": 21, "feast": "Feast of the Blessed Virgin Mary (Haile Maryam)"}
+      ],
+      "days": [
+        {
+          "day": 1,
+          "id": "senkessar-hamle-1",
+          "title": "1 Hamle — The Assembly"
+        },
+        {
+          "day": 2,
+          "id": "senkessar-hamle-2",
+          "title": "2 Hamle — The Assembly"
+        },
+        {
+          "day": 3,
+          "id": "senkessar-hamle-3",
+          "title": "3 Hamle — The Assembly"
+        },
+        {
+          "day": 4,
+          "id": "senkessar-hamle-4",
+          "title": "4 Hamle — The Assembly"
+        },
+        {
+          "day": 5,
+          "id": "senkessar-hamle-5",
+          "title": "5 Hamle — The Assembly"
+        },
+        {
+          "day": 6,
+          "id": "senkessar-hamle-6",
+          "title": "6 Hamle — The Assembly"
+        },
+        {
+          "day": 7,
+          "id": "senkessar-hamle-7",
+          "title": "7 Hamle — The Assembly"
+        },
+        {
+          "day": 8,
+          "id": "senkessar-hamle-8",
+          "title": "8 Hamle — The Assembly"
+        },
+        {
+          "day": 9,
+          "id": "senkessar-hamle-9",
+          "title": "9 Hamle — The Assembly"
+        },
+        {
+          "day": 10,
+          "id": "senkessar-hamle-10",
+          "title": "10 Hamle — The Assembly"
+        },
+        {
+          "day": 11,
+          "id": "senkessar-hamle-11",
+          "title": "11 Hamle — The Assembly"
+        },
+        {
+          "day": 12,
+          "id": "senkessar-hamle-12",
+          "title": "12 Hamle — The Assembly"
+        },
+        {
+          "day": 13,
+          "id": "senkessar-hamle-13",
+          "title": "13 Hamle — The Assembly"
+        },
+        {
+          "day": 14,
+          "id": "senkessar-hamle-14",
+          "title": "14 Hamle — The Assembly"
+        },
+        {
+          "day": 15,
+          "id": "senkessar-hamle-15",
+          "title": "15 Hamle — The Assembly"
+        },
+        {
+          "day": 16,
+          "id": "senkessar-hamle-16",
+          "title": "16 Hamle — The Assembly"
+        },
+        {
+          "day": 17,
+          "id": "senkessar-hamle-17",
+          "title": "17 Hamle — The Assembly"
+        },
+        {
+          "day": 18,
+          "id": "senkessar-hamle-18",
+          "title": "18 Hamle — The Assembly"
+        },
+        {
+          "day": 19,
+          "id": "senkessar-hamle-19",
+          "title": "19 Hamle — The Assembly"
+        },
+        {
+          "day": 20,
+          "id": "senkessar-hamle-20",
+          "title": "20 Hamle — The Assembly"
+        },
+        {
+          "day": 21,
+          "id": "senkessar-hamle-21",
+          "title": "21 Hamle — The Virgin Mary (Haile Maryam) & The Assembly"
+        },
+        {
+          "day": 22,
+          "id": "senkessar-hamle-22",
+          "title": "22 Hamle — The Assembly"
+        },
+        {
+          "day": 23,
+          "id": "senkessar-hamle-23",
+          "title": "23 Hamle — The Assembly"
+        },
+        {
+          "day": 24,
+          "id": "senkessar-hamle-24",
+          "title": "24 Hamle — The Assembly"
+        },
+        {
+          "day": 25,
+          "id": "senkessar-hamle-25",
+          "title": "25 Hamle — The Assembly"
+        },
+        {
+          "day": 26,
+          "id": "senkessar-hamle-26",
+          "title": "26 Hamle — The Assembly"
+        },
+        {
+          "day": 27,
+          "id": "senkessar-hamle-27",
+          "title": "27 Hamle — The Assembly"
+        },
+        {
+          "day": 28,
+          "id": "senkessar-hamle-28",
+          "title": "28 Hamle — The Assembly"
+        },
+        {
+          "day": 29,
+          "id": "senkessar-hamle-29",
+          "title": "29 Hamle — The Assembly"
+        },
+        {
+          "day": 30,
+          "id": "senkessar-hamle-30",
+          "title": "30 Hamle — The Assembly"
+        }
+      ]
     },
-
-    "Nehase": {
+    {
+      "month": "Nehase",
       "month_number": 12,
-      "days": 30,
-      "entries": {
-        "1":  { "reading_id": "senkessar-nehase-1",  "primary_saint": null, "feast": null },
-        "2":  { "reading_id": "senkessar-nehase-2",  "primary_saint": null, "feast": null },
-        "3":  { "reading_id": "senkessar-nehase-3",  "primary_saint": null, "feast": null },
-        "4":  { "reading_id": "senkessar-nehase-4",  "primary_saint": null, "feast": null },
-        "5":  { "reading_id": "senkessar-nehase-5",  "primary_saint": null, "feast": null },
-        "6":  { "reading_id": "senkessar-nehase-6",  "primary_saint": null, "feast": null },
-        "7":  { "reading_id": "senkessar-nehase-7",  "primary_saint": null, "feast": null },
-        "8":  { "reading_id": "senkessar-nehase-8",  "primary_saint": null, "feast": null },
-        "9":  { "reading_id": "senkessar-nehase-9",  "primary_saint": null, "feast": null },
-        "10": { "reading_id": "senkessar-nehase-10", "primary_saint": null, "feast": null },
-        "11": { "reading_id": "senkessar-nehase-11", "primary_saint": null, "feast": null },
-        "12": { "reading_id": "senkessar-nehase-12", "primary_saint": null, "feast": null },
-        "13": { "reading_id": "senkessar-nehase-13", "primary_saint": null, "feast": null },
-        "14": { "reading_id": "senkessar-nehase-14", "primary_saint": null, "feast": null },
-        "15": { "reading_id": "senkessar-nehase-15", "primary_saint": null, "feast": null },
-        "16": { "reading_id": "senkessar-nehase-16", "primary_saint": null, "feast": "Feast of the Transfiguration (Buhe)" },
-        "17": { "reading_id": "senkessar-nehase-17", "primary_saint": null, "feast": null },
-        "18": { "reading_id": "senkessar-nehase-18", "primary_saint": null, "feast": null },
-        "19": { "reading_id": "senkessar-nehase-19", "primary_saint": null, "feast": null },
-        "20": { "reading_id": "senkessar-nehase-20", "primary_saint": null, "feast": null },
-        "21": { "reading_id": "senkessar-nehase-21", "primary_saint": null, "feast": null },
-        "22": { "reading_id": "senkessar-nehase-22", "primary_saint": null, "feast": null },
-        "23": { "reading_id": "senkessar-nehase-23", "primary_saint": null, "feast": null },
-        "24": { "reading_id": "senkessar-nehase-24", "primary_saint": null, "feast": null },
-        "25": { "reading_id": "senkessar-nehase-25", "primary_saint": null, "feast": null },
-        "26": { "reading_id": "senkessar-nehase-26", "primary_saint": null, "feast": null },
-        "27": { "reading_id": "senkessar-nehase-27", "primary_saint": null, "feast": null },
-        "28": { "reading_id": "senkessar-nehase-28", "primary_saint": null, "feast": null },
-        "29": { "reading_id": "senkessar-nehase-29", "primary_saint": null, "feast": null },
-        "30": { "reading_id": "senkessar-nehase-30", "primary_saint": null, "feast": null }
-      }
+      "ge_ez": "ነሐሴ",
+      "total_days": 30,
+      "thematic_summary": "The month of the Transfiguration, the Great Filseta Fast, and the Assumption of the Virgin Mary. Culminates with the Departure of St. Tekle Haymanot and closes on the threshold of the New Year.",
+      "key_feasts": [
+        {"day": 6, "feast": "The Transfiguration (Debre Tabor)"},
+        {"day": 7, "feast": "Beginning of the Filseta Fast"},
+        {"day": 16, "feast": "The Assumption of the Virgin Mary (Filseta)"},
+        {"day": 25, "feast": "Departure of St. Tekle Haymanot"},
+        {"day": 27, "feast": "Monthly Crucifixion"},
+        {
+          "day": 29,
+          "feast": "Triple Feast (Maskal/Qal/Timqat) & Beheading of St. John the Baptist"
+        }
+      ],
+      "days": [
+        {
+          "day": 1,
+          "id": "senkessar-nehase-1",
+          "title": "1 Nehase — St. Adam & The Assembly"
+        },
+        {
+          "day": 2,
+          "id": "senkessar-nehase-2",
+          "title": "2 Nehase — St. Job the Patriarch & The Assembly"
+        },
+        {
+          "day": 3,
+          "id": "senkessar-nehase-3",
+          "title": "3 Nehase — St. Zechariah the Prophet & The Assembly"
+        },
+        {
+          "day": 4,
+          "id": "senkessar-nehase-4",
+          "title": "4 Nehase — St. John the Apostle & The Assembly"
+        },
+        {
+          "day": 5,
+          "id": "senkessar-nehase-5",
+          "title": "5 Nehase — St. Philip the Apostle & The Assembly"
+        },
+        {
+          "day": 6,
+          "id": "senkessar-nehase-6",
+          "title": "6 Nehase — The Transfiguration (Debre Tabor) & The Assembly"
+        },
+        {
+          "day": 7,
+          "id": "senkessar-nehase-7",
+          "title": "7 Nehase — The Fast of the Virgin (Filseta Begins) & The Assembly"
+        },
+        {
+          "day": 8,
+          "id": "senkessar-nehase-8",
+          "title": "8 Nehase — St. Eleutherius & St. Leonidas & The Assembly"
+        },
+        {
+          "day": 9,
+          "id": "senkessar-nehase-9",
+          "title": "9 Nehase — St. Or of Nitria & The Assembly"
+        },
+        {
+          "day": 10,
+          "id": "senkessar-nehase-10",
+          "title": "10 Nehase — St. Matra the Martyr & The Assembly"
+        },
+        {
+          "day": 11,
+          "id": "senkessar-nehase-11",
+          "title": "11 Nehase — Archangel Michael & The Assembly"
+        },
+        {
+          "day": 12,
+          "id": "senkessar-nehase-12",
+          "title": "12 Nehase — St. Constantine & The Assembly"
+        },
+        {
+          "day": 13,
+          "id": "senkessar-nehase-13",
+          "title": "13 Nehase — St. Arsenius the Great & The Assembly"
+        },
+        {
+          "day": 14,
+          "id": "senkessar-nehase-14",
+          "title": "14 Nehase — St. Pachomius the Great & The Assembly"
+        },
+        {
+          "day": 15,
+          "id": "senkessar-nehase-15",
+          "title": "15 Nehase — St. Ephrem the Syrian & The Assembly"
+        },
+        {
+          "day": 16,
+          "id": "senkessar-nehase-16",
+          "title": "16 Nehase — The Assumption of the Virgin Mary (Filseta) & The Assembly"
+        },
+        {
+          "day": 17,
+          "id": "senkessar-nehase-17",
+          "title": "17 Nehase — St. James the Apostle & The Assembly"
+        },
+        {
+          "day": 18,
+          "id": "senkessar-nehase-18",
+          "title": "18 Nehase — St. George & The Assembly"
+        },
+        {
+          "day": 19,
+          "id": "senkessar-nehase-19",
+          "title": "19 Nehase — Archangel Gabriel & The Assembly"
+        },
+        {
+          "day": 20,
+          "id": "senkessar-nehase-20",
+          "title": "20 Nehase — The Seven Youths of Ephesus & The Assembly"
+        },
+        {
+          "day": 21,
+          "id": "senkessar-nehase-21",
+          "title": "21 Nehase — The Virgin Mary & The Assembly"
+        },
+        {
+          "day": 22,
+          "id": "senkessar-nehase-22",
+          "title": "22 Nehase — St. Isaac of Nineveh & The Assembly"
+        },
+        {
+          "day": 23,
+          "id": "senkessar-nehase-23",
+          "title": "23 Nehase — St. Solomon the King & The Assembly"
+        },
+        {
+          "day": 24,
+          "id": "senkessar-nehase-24",
+          "title": "24 Nehase — The Arrival of Christ in Egypt & The Assembly"
+        },
+        {
+          "day": 25,
+          "id": "senkessar-nehase-25",
+          "title": "25 Nehase — St. Tekle Haymanot & The Assembly"
+        },
+        {
+          "day": 26,
+          "id": "senkessar-nehase-26",
+          "title": "26 Nehase — St. Joshua son of Nun & The Assembly"
+        },
+        {
+          "day": 27,
+          "id": "senkessar-nehase-27",
+          "title": "27 Nehase — The Monthly Crucifixion & The Assembly"
+        },
+        {
+          "day": 28,
+          "id": "senkessar-nehase-28",
+          "title": "28 Nehase — St. Abraham, Isaac, and Jacob & The Assembly"
+        },
+        {
+          "day": 29,
+          "id": "senkessar-nehase-29",
+          "title": "29 Nehase — The Triple Feast & The Assembly"
+        },
+        {
+          "day": 30,
+          "id": "senkessar-nehase-30",
+          "title": "30 Nehase — St. Malachi the Prophet & The Assembly"
+        }
+      ]
     },
-
-    "Pagume": {
+    {
+      "month": "Pagumen",
       "month_number": 13,
-      "days_standard": 5,
-      "days_leap": 6,
-      "note": "Pagume is the intercalary month. It has 5 days in a common year and 6 days in a leap year (every 4 years in the Ethiopian calendar). The 6th day should be populated only in leap years.",
-      "entries": {
-        "1": { "reading_id": "senkessar-pagume-1", "primary_saint": null, "feast": null },
-        "2": { "reading_id": "senkessar-pagume-2", "primary_saint": null, "feast": null },
-        "3": { "reading_id": "senkessar-pagume-3", "primary_saint": null, "feast": null },
-        "4": { "reading_id": "senkessar-pagume-4", "primary_saint": null, "feast": null },
-        "5": { "reading_id": "senkessar-pagume-5", "primary_saint": null, "feast": "Eve of Ethiopian New Year" },
-        "6": { "reading_id": "senkessar-pagume-6", "primary_saint": null, "feast": "Leap year intercalary day — Eve of Ethiopian New Year (leap year only)" }
-      }
+      "ge_ez": "ጳጉሜን",
+      "total_days": 5,
+      "thematic_summary": "The intercalary month — the five threshold days between the old year and the New Year (Meskerem 1). Governed by the theology of purification, the washing of the year's griefs in the rains of Pagumen, and the passage from the Old Man to the New. The primary feast is the Archangel Raphael on Day 3.",
+      "key_feasts": [
+        {
+          "day": 3,
+          "feast": "The Great Feast of the Archangel Raphael, Healer and Guardian of the Waters"
+        }
+      ],
+      "days": [
+        {
+          "day": 1,
+          "id": "senkessar-pagumen-1",
+          "title": "1 Pagumen — St. Eusebius & The Assembly"
+        },
+        {
+          "day": 2,
+          "id": "senkessar-pagumen-2",
+          "title": "2 Pagumen — St. Titus the Apostle & The Assembly"
+        },
+        {
+          "day": 3,
+          "id": "senkessar-pagumen-3",
+          "title": "3 Pagumen — The Archangel Raphael & The Assembly"
+        },
+        {
+          "day": 4,
+          "id": "senkessar-pagumen-4",
+          "title": "4 Pagumen — St. Benjamin the Hermit & The Assembly"
+        },
+        {
+          "day": 5,
+          "id": "senkessar-pagumen-5",
+          "title": "5 Pagumen — The Prophet Amos & The Assembly"
+        }
+      ]
     }
-
-  },
-
+  ],
   "entry_file_schema": {
     "description": "Each reading_id resolves to a file at data/synaxarium/ethiopian/{month-slug}/{day}.json. That file must conform to the following schema.",
     "schema": {
