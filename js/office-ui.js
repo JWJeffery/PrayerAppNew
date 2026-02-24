@@ -483,10 +483,11 @@ function getEthiopianHourInfo() {
         { from:  6 * 60, to:  9 * 60, hourId: 'eth-nigatu-hour-text',  hourName: 'Nigatu — ንጋቱ (Matins)',              uiLabel: 'Matins',             psalms: ['3', '63', '133'],    etReading: '1CLEM_ET 1:1-20' },
         { from:  9 * 60, to: 12 * 60, hourId: 'eth-meserk-hour-text',  hourName: "Mese'rk — መሠርቅ (Third Hour)",        uiLabel: 'Third Hour',         psalms: ['16', '17', '18'],    etReading: null },
         { from: 12 * 60, to: 15 * 60, hourId: 'eth-lika-hour-text',    hourName: 'Lika — ሊካ (Sixth Hour)',              uiLabel: 'Sixth Hour',         psalms: ['22', '23', '24'],    etReading: null },
-        { from: 15 * 60, to: 17 * 60, hourId: 'eth-terk-hour-text',    hourName: "Te'rk — ተርቅ (Ninth Hour)",           uiLabel: 'Ninth Hour',         psalms: ['69', '70', '71'],    etReading: null },
+        { from: 15 * 60, to: 17 * 60, hourId: 'eth-terk-hour-text',    hourName: "Tese'at — ተሰዓት (Ninth Hour)",         uiLabel: 'Ninth Hour',         psalms: ['69', '70', '71'],    etReading: null },
         { from: 17 * 60, to: 18 * 60, hourId: 'eth-serkh-hour-text',   hourName: 'Serkh — ሠርክ (Eleventh Hour)',         uiLabel: 'Vespers',            psalms: ['141', '142', '143'], etReading: null },
-        { from: 18 * 60, to: 21 * 60, hourId: 'eth-nome-hour-text',    hourName: 'Nome — ኖሜ (Compline)',                uiLabel: 'Compline',           psalms: ['4', '6', '13'],      etReading: null },
-        { from: 21 * 60, to: 27 * 60, hourId: 'eth-lelit-hour-text',   hourName: "Le'lit — ሌሊት (Midnight)",             uiLabel: 'Midnight Office',    psalms: ['4', '6', '13'],      etReading: 'HERM_ET 1:1-10' },
+        { from: 18 * 60, to: 21 * 60, hourId: 'eth-nome-hour-text',    hourName: 'Nime — ኖሜ (Compline)',                uiLabel: 'Compline',           psalms: ['4', '6', '13'],      etReading: null },
+        { from: 21 * 60, to: 24 * 60, hourId: 'eth-hour-7',            hourName: "Le'lit — First Night Watch",          uiLabel: 'First Night Watch',  psalms: ['4', '6', '13'],      etReading: 'HERM_ET 1:1-10' },
+        { from:  0 * 60, to:  3 * 60, hourId: 'eth-lelit-hour-text',   hourName: "Le'lit — ሌሊት (Midnight)",             uiLabel: 'Midnight Office',    psalms: ['4', '6', '13'],      etReading: 'HERM_ET 1:1-10' },
         { from:  3 * 60, to:  6 * 60, hourId: 'eth-mahlet-hour-text',  hourName: 'Mahlet — ማህሌት (Pre-dawn Vigil)',      uiLabel: 'Pre-dawn Vigil',     psalms: ['3', '63', '133'],    etReading: null },
     ];
 
@@ -548,10 +549,11 @@ async function renderOffice() {
                 { from:  6*60, to:  9*60, hourId: 'eth-nigatu-hour-text',  hourName: 'Nigatu — ንጋቱ (Matins)',              uiLabel: 'Matins',           psalms: ['3','63','133'],    etReading: '1CLEM_ET 1:1-20' },
                 { from:  9*60, to: 12*60, hourId: 'eth-meserk-hour-text',  hourName: "Mese'rk — መሠርቅ (Third Hour)",        uiLabel: 'Third Hour',       psalms: ['16','17','18'],    etReading: null },
                 { from: 12*60, to: 15*60, hourId: 'eth-lika-hour-text',    hourName: 'Lika — ሊካ (Sixth Hour)',              uiLabel: 'Sixth Hour',       psalms: ['22','23','24'],    etReading: null },
-                { from: 15*60, to: 17*60, hourId: 'eth-terk-hour-text',    hourName: "Te'rk — ተርቅ (Ninth Hour)",           uiLabel: 'Ninth Hour',       psalms: ['69','70','71'],    etReading: null },
+                { from: 15*60, to: 17*60, hourId: 'eth-terk-hour-text',    hourName: "Tese'at — ተሰዓት (Ninth Hour)",         uiLabel: 'Ninth Hour',       psalms: ['69','70','71'],    etReading: null },
                 { from: 17*60, to: 18*60, hourId: 'eth-serkh-hour-text',   hourName: 'Serkh — ሠርክ (Eleventh Hour)',         uiLabel: 'Vespers',          psalms: ['141','142','143'], etReading: null },
-                { from: 18*60, to: 21*60, hourId: 'eth-nome-hour-text',    hourName: 'Nome — ኖሜ (Compline)',                uiLabel: 'Compline',         psalms: ['4','6','13'],      etReading: null },
-                { from: 21*60, to: 27*60, hourId: 'eth-lelit-hour-text',   hourName: "Le'lit — ሌሊት (Midnight)",             uiLabel: 'Midnight Office',  psalms: ['4','6','13'],      etReading: 'HERM_ET 1:1-10' },
+                { from: 18*60, to: 21*60, hourId: 'eth-nome-hour-text',    hourName: 'Nime — ኖሜ (Compline)',                uiLabel: 'Compline',         psalms: ['4','6','13'],      etReading: null },
+                { from: 21*60, to: 24*60, hourId: 'eth-hour-7',            hourName: "Le'lit — First Night Watch",          uiLabel: 'First Night Watch',psalms: ['4','6','13'],      etReading: 'HERM_ET 1:1-10' },
+                { from:  0*60, to:  3*60, hourId: 'eth-lelit-hour-text',   hourName: "Le'lit — ሌሊት (Midnight)",             uiLabel: 'Midnight Office',  psalms: ['4','6','13'],      etReading: 'HERM_ET 1:1-10' },
                 { from:  3*60, to:  6*60, hourId: 'eth-mahlet-hour-text',  hourName: 'Mahlet — ማህሌት (Pre-dawn Vigil)',      uiLabel: 'Pre-dawn Vigil',   psalms: ['3','63','133'],    etReading: null },
             ];
             ethHourInfo = overrideHourMap.find(e => e.hourId === window._temporalOverride.hourId) || getEthiopianHourInfo();
@@ -948,6 +950,15 @@ async function renderOffice() {
             const ethDate = EthiopianCalendar.getEthiopianDate(currentDate);
             const ethDateLabel = `${ethDate.month} ${ethDate.day}`;
 
+            // Month name → folder slug map (handles the one irregular spelling: Miyazya → miazia)
+            const MONTH_SLUG_MAP = {
+                'meskerem': 'meskerem', 'teqemt': 'tiqimt', 'hidar': 'hidar',
+                'tahsas': 'tahsas', 'tir': 'tir', 'yekatit': 'yekatit',
+                'megabit': 'megabit', 'miyazya': 'miazia', 'ginbot': 'ginbot',
+                'sene': 'sene', 'hamle': 'hamle', 'nehase': 'nehase', 'pagume': 'pagume'
+            };
+            const monthSlug = MONTH_SLUG_MAP[ethDate.month.toLowerCase()] || ethDate.month.toLowerCase();
+
             // 2. Lazy-load and cache the Senkessar index
             if (!appData.senkessarIndex) {
                 try {
@@ -958,34 +969,50 @@ async function renderOffice() {
                 }
             }
 
-            // 3. Look up today's entry in the Senkessar index
-            let senkessarEntry = null;
-            if (appData.senkessarIndex?.months?.[ethDate.month]?.entries?.[String(ethDate.day)]) {
-                senkessarEntry = appData.senkessarIndex.months[ethDate.month].entries[String(ethDate.day)];
+            // 3. Find today's entry in the index (months is an array, not a keyed object)
+            let indexEntry = null;
+            if (appData.senkessarIndex?.months) {
+                const MONTH_NAME_ALIASES = { 'teqemt': 'tiqimt' };
+                const normalizedMonth = MONTH_NAME_ALIASES[ethDate.month.toLowerCase()] || ethDate.month.toLowerCase();
+                const monthData = appData.senkessarIndex.months.find(
+                    m => m.month.toLowerCase() === normalizedMonth
+                );
+                if (monthData?.days) {
+                    indexEntry = monthData.days.find(d => d.day === ethDate.day) || null;
+                }
             }
-
-            const hasFeast       = senkessarEntry?.feast;
-            const hasPrimarySaint = senkessarEntry?.primary_saint;
 
             // 4. Render header
             officeHtml += `<span class="rubric-text">The Senkessar: ${ethDateLabel}</span>`;
 
-            if (hasFeast || hasPrimarySaint) {
-                // Senkessar entry exists — render feast and/or primary saint
-                if (hasFeast) {
-                    officeHtml += `<div class="component-text"><strong style="color:#d4af37">${senkessarEntry.feast}</strong></div>`;
-                }
-                if (hasPrimarySaint) {
-                    const saint = senkessarEntry.primary_saint;
-                    officeHtml += `<div class="component-text"><strong style="color:#d4af37">${saint.name || saint}</strong>`;
-                    if (saint.narrative || saint.description) {
-                        officeHtml += applyParagraphBreaks(saint.narrative || saint.description);
+            if (indexEntry) {
+                // 5. Fetch the per-day narrative file (cached in appData.senkessarCache)
+                if (!appData.senkessarCache) appData.senkessarCache = {};
+                const cacheKey = `${monthSlug}-${ethDate.day}`;
+                if (!appData.senkessarCache[cacheKey]) {
+                    try {
+                        const dayRes = await fetch(`data/synaxarium/ethiopian/${monthSlug}/${ethDate.day}.json`);
+                        if (dayRes.ok) appData.senkessarCache[cacheKey] = await dayRes.json();
+                    } catch (err) {
+                        console.warn(`[eth-saints-commemoration] Day file load failed: ${monthSlug}/${ethDate.day}.json`, err);
                     }
-                    officeHtml += `</div>`;
+                }
+                const dayData = appData.senkessarCache[cacheKey];
+
+                if (dayData) {
+                    // Render title and narrative from the day file
+                    officeHtml += `<div class="component-text"><strong style="color:#d4af37">${dayData.title || indexEntry.title}</strong></div>`;
+                    if (dayData.narrative) {
+                        const normalizedNarrative = dayData.narrative.replace(/\\n\\n/g, '\n\n').replace(/\\n/g, '\n');
+                        officeHtml += `<div class="component-text" style="white-space:normal">${applyParagraphBreaks(normalizedNarrative)}</div>`;
+                    }
+                } else {
+                    // Day file missing — fall back to the index title alone
+                    officeHtml += `<div class="component-text"><strong style="color:#d4af37">${indexEntry.title}</strong></div>`;
+                    console.warn(`[eth-saints-commemoration] No day file found for ${monthSlug}/${ethDate.day}`);
                 }
             } else {
-                // 5. Secondary check: any Oriental/Ethiopian saints in the Gregorian saints data
-                //    (handles saints whose Gregorian feast day is known)
+                // 6. No index entry — secondary check: Oriental/Ethiopian saints in Gregorian saints data
                 const orientalSaints = (appData.saints || []).filter(s => {
                     if (!s.day || !s.day.toLowerCase().includes(todayKeyShort.toLowerCase())) return false;
                     const t = (s.tradition || '').toLowerCase();
@@ -1001,7 +1028,7 @@ async function renderOffice() {
                         officeHtml += `</div>`;
                     });
                 } else {
-                    // 6. Fallback intercession
+                    // 7. Final fallback intercession
                     officeHtml += `<div class="component-text">Let us pray for the holy Oriental Orthodox Churches: the Ethiopian Tewahedo, the Coptic, the Syriac, the Armenian, the Malankara, and the Eritrean; that the Lord may preserve them in the true faith, strengthen them under persecution, and unite all Christians in the one holy catholic and apostolic Church.</div>`;
                 }
             }
@@ -1119,6 +1146,8 @@ async function renderOffice() {
     if (!isEthiopianSaatat) {
         document.getElementById('date-header').innerText = `Commemorations for ${todayKey}`;
         document.getElementById('date-header').style.display = '';
+        const saintSection = document.querySelector('.saint-section');
+        if (saintSection) saintSection.style.display = '';
     }
 
     if (!isEthiopianSaatat) {
@@ -1129,6 +1158,8 @@ async function renderOffice() {
     } else {
         document.getElementById('saint-display').innerHTML = '';
         document.getElementById('date-header').style.display = 'none';
+        const saintSection = document.querySelector('.saint-section');
+        if (saintSection) saintSection.style.display = 'none';
     }
 }
 

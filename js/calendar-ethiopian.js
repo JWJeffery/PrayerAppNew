@@ -51,7 +51,7 @@ const EthiopianCalendar = (() => {
     // Ethiopian (Ge'ez) month names
     const MONTH_NAMES = [
         'Meskerem',  // 1  (approx Sep 11/12)
-        'Tikimt',    // 2  (approx Oct 11/12)
+        'Teqemt',    // 2  (approx Oct 11/12)
         'Hidar',     // 3  (approx Nov 10/11)
         'Tahsas',    // 4  (approx Dec 10/11)
         'Tir',       // 5  (approx Jan  9/10)

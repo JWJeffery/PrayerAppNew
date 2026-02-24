@@ -37,6 +37,7 @@
       ],
       "script_load_order": [
         "js/calendar-engine.js",
+        "js/calendar-ethiopian.js",
         "js/scripture-resolver.js",
         "js/office-ui.js",
         "js/prayers.js",

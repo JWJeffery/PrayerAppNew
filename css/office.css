@@ -89,6 +89,13 @@ body {
 body:not(.office-active) {
     background-color: #000 !important;
 }
+body.office-active {
+    display: block;
+    align-items: unset;
+    justify-content: unset;
+    height: auto;
+    overflow-y: auto;
+}
 
 /* ── Splash / Mode Selection ── */
 #mode-selection {
@@ -169,7 +176,7 @@ body.light-mode .mode-btn:hover {
     /* overflow:hidden clips the sidebar as it slides out via negative margin,
        so #main-content width never changes and the inner container never reflows */
     overflow: hidden;
-    width: 100vw;
+    width: 100%;
 }
 #daily-office-section[style*="flex"] {
     display: flex !important;
@@ -242,7 +249,7 @@ body.light-mode .mode-btn:hover {
 
 /* ── Settings Panel ── */
 #settings-panel {
-    position: absolute !important;
+    position: fixed;
     top: 0;
     left: 36px;
     width: 300px;
@@ -271,7 +278,7 @@ body.light-mode .mode-btn:hover {
 
 /* ── Ethiopian Sa'atat Sidebar ── */
 #ethiopian-settings {
-    position: absolute !important;
+    position: fixed;
     top: 0;
     left: 36px;
     width: 300px;
@@ -332,7 +339,7 @@ body.light-mode .mode-btn:hover {
 #main-content {
     flex: 1;
     min-width: 0;
-    padding: 40px;
+    padding: 40px 40px 40px 340px;
     height: 100vh;
     overflow-y: auto;
     text-align: center;
@@ -341,6 +348,9 @@ body.light-mode .mode-btn:hover {
     background: var(--main-bg);
     /* Prevent inherited transition:all from body animating flex-basis changes */
     transition: none;
+}
+#main-content.sidebar-hidden {
+    padding-left: 80px;
 }
 /* sidebar-hidden kept for JS compatibility only — no styles needed */
 #main-content::-webkit-scrollbar {
@@ -394,6 +404,8 @@ body.light-mode .mode-btn:hover {
 .office-container {
     background: var(--container-bg);
     max-width: 820px;
+    width: 100%;
+    box-sizing: border-box;
     margin: 0 auto;
     padding: 72px 80px 80px;
     border-radius: 1px;
