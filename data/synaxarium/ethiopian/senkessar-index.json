@@ -5,7 +5,7 @@
     "description": "Maps each day of the 13-month Ethiopian calendar to its appointed Senkessar entry IDs. Entries are keyed by Ethiopian month name and day number. Each day may carry multiple entries (primary saint, secondary saint, feast). The 'reading_id' field is the component/narrative ID that will be resolved by renderOffice() via the eth-synaxarium-reading component.",
     "calendar_system": "Ethiopian (Ge'ez) — 12 months of 30 days + Pagume (intercalary month of 5 or 6 days)",
     "month_names": [
-      "Meskerem", "Tikimt",   "Hidar",    "Tahsas",   "Tir",      "Yekatit",
+      "Meskerem", "Tiqimt",   "Hidar",    "Tahsas",   "Tir",      "Yekatit",
       "Megabit",  "Miyazya",  "Ginbot",   "Sene",     "Hamle",    "Nehase",
       "Pagume"
     ],
