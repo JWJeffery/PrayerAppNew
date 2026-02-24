@@ -2,53 +2,52 @@ import os
 import re
 import json
 
-def universal_repair(file_path):
-    with open(file_path, 'r', encoding='utf-8') as f:
-        content = f.read()
+def repair_file(file_path):
+    try:
+        with open(file_path, 'r', encoding='utf-8') as f:
+            content = f.read()
+        
+        # 1. Force-extract ID and Title
+        id_m = re.search(r'\"id\":\s*\"([^\"]+)\"', content)
+        title_m = re.search(r'\"title\":\s*\"([^\"]+)\"', content)
+        if not id_m or not title_m: return
 
-    # 1. Extract ID and Title (these are usually stable)
-    id_match = re.search(r'"id":\s*"([^"]+)"', content)
-    title_match = re.search(r'"title":\s*"([^"]+)"', content)
-    
-    if not id_match or not title_match:
-        return # Skip index files or malformed non-data files
+        # 2. Extract every long string (paragraphs)
+        # This fixes the 'broken comma' bug by vacuuming up the orphaned text
+        paras = re.findall(r'\"([^\"].{50,})\"', content)
+        
+        clean_paras = []
+        for p in paras:
+            # Strip metadata/header drift
+            p = re.sub(r'^(Tiqimt|Ginbot|Yekatit|Tahsas|primary_saint)\s+', '', p, flags=re.I)
+            # Fix double-backslash bug
+            p = p.replace('\\\\\\\\n', '\n').replace('\\\\n', '\n').replace('\\n', '\n')
+            if p.strip() != title_m.group(1).strip():
+                clean_paras.append(p.strip())
+        
+        new_data = {
+            'id': id_m.group(1).strip(),
+            'title': title_m.group(1).strip(),
+            'narrative': '\n\n'.join(clean_paras)
+        }
+        
+        with open(file_path, 'w', encoding='utf-8') as f:
+            json.dump(new_data, f, indent=2, ensure_ascii=False)
+        return True
+    except Exception as e:
+        print(f"Error fixing {file_path}: {e}")
+        return False
 
-    id_val = id_match.group(1)
-    title_val = title_match.group(1)
+# This path matches the 'root' structure of the project you uploaded
+root_data_path = "./data/synaxarium/ethiopian"
 
-    # 2. Extract all 'Long' strings (Paragraphs)
-    # We find all quoted text longer than 50 chars to avoid keys
-    all_text = re.findall(r'"([^"]{50,})"', content)
-    
-    # 3. Clean and Unify
-    paragraphs = []
-    for text in all_text:
-        # Remove 'primary_saint' header drift
-        text = text.replace("primary_saint\\n\\n", "").replace("primary_saint\n\n", "")
-        # Normalize all versions of newlines to single \n
-        text = text.replace("\\\\n", "\n").replace("\\n", "\n")
-        # Ensure it's not the title being caught
-        if text.strip() != title_val.strip():
-            paragraphs.append(text.strip())
-
-    # 4. Final Narrative Construction
-    # Join with exactly two newlines for HTML pre-wrap compatibility
-    final_narrative = "\n\n".join(paragraphs)
-
-    new_data = {
-        "id": id_val,
-        "title": title_val,
-        "narrative": final_narrative
-    }
-
-    with open(file_path, 'w', encoding='utf-8') as f:
-        json.dump(new_data, f, indent=2, ensure_ascii=False)
-
-# Targeted Directory Walk
-root_dir = "./data/synaxarium/ethiopian"
-for subdir, _, files in os.walk(root_dir):
-    for file in files:
-        if file.endswith(".json") and "index" not in file:
-            universal_repair(os.path.join(subdir, file))
-
-print("Systematic Repair Complete. Check Git Diff.")
+if not os.path.exists(root_data_path):
+    print(f"Error: Cannot find folder at {root_data_path}")
+else:
+    count = 0
+    for root, _, files in os.walk(root_data_path):
+        for f in files:
+            if f.endswith('.json') and 'index' not in f:
+                if repair_file(os.path.join(root, f)):
+                    count += 1
+    print(f"Repaired {count} files. Check git diff now.")
