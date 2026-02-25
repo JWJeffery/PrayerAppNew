@@ -23,6 +23,11 @@ let selectedMode = null;
 // ── Ethiopian Temporal Override ───────────────────────────────────────────────
 window._temporalOverride = { active: false, date: null, hourId: null };
 
+// ── App Settings (Phase 9.0 prep) ────────────────────────────────────────────
+const appSettings = {
+    studyMode: false  // Phase 9.0: Study Mode / Commentary Database placeholder
+};
+
 function toggleEthOverridePanel(e) {
     e.preventDefault();
     const panel = document.getElementById('eth-override-panel');
@@ -368,7 +373,8 @@ function saveSettings() {
         chrysostom:          document.getElementById('toggle-chrysostom')?.checked || false,
         prayerBeforeReading: document.getElementById('toggle-prayer-before-reading')?.checked || false,
         examen:              document.getElementById('toggle-examen')?.checked || false,
-        kyriePantocrator:    document.getElementById('toggle-kyrie-pantocrator')?.checked || false
+        kyriePantocrator:    document.getElementById('toggle-kyrie-pantocrator')?.checked || false,
+        studyMode:           appSettings.studyMode
     };
     try {
         localStorage.setItem('universalOfficeSettings', JSON.stringify(settings));
@@ -418,6 +424,10 @@ function loadSettings() {
         setChk('toggle-prayer-before-reading', s.prayerBeforeReading);
         setChk('toggle-examen',                s.examen);
         setChk('toggle-kyrie-pantocrator',     s.kyriePantocrator);
+
+        if (typeof s.studyMode === 'boolean') {
+            appSettings.studyMode = s.studyMode;
+        }
 
         if (document.getElementById('creed-type'))
             document.getElementById('creed-type').value = s.creedType;
@@ -567,7 +577,14 @@ async function renderOffice() {
         const watchLabel = document.getElementById('eth-active-watch-label');
         const dateLabel  = document.getElementById('eth-active-date-label');
         if (watchLabel) watchLabel.textContent = ethHourInfo.hourName;
-        if (dateLabel)  dateLabel.textContent  = currentDate.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' }) + (window._temporalOverride.active ? ' ✦ override' : '');
+        let ethSidebarDate = currentDate.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
+        try {
+            const geezDateStr = EthiopianCalendar.formatEthiopianDate(currentDate);
+            ethSidebarDate += ` | ${geezDateStr}`;
+        } catch (e) {
+            console.warn('[Phase 8.5] Ge\'ez date unavailable:', e.message);
+        }
+        if (dateLabel) dateLabel.textContent = ethSidebarDate + (window._temporalOverride.active ? ' ✦ override' : '');
     }
 
     const calendarInfo = document.getElementById('calendar-info');
@@ -880,6 +897,27 @@ async function renderOffice() {
             continue;
         }
 
+ // eth-introduction-to-every-hour — mandatory Tselote Meweta opening
+        if (item === 'eth-introduction-to-every-hour') {
+            const introComp = appData.components.find(c => c.id === 'eth-introduction-to-every-hour');
+            if (introComp) {
+                // Prostration rubric
+                if (introComp.rubric_before) {
+                    officeHtml += `<span class="rubric-text"><i>${introComp.rubric_before}</i></span>`;
+                }
+                // The Lord's Prayer, Thanksgiving, and Psalm 50 are all embedded
+                // in the single component text, so we render it in three labelled
+                // sections by splitting on the double-newline paragraph boundaries.
+                // The component text is structured: [Lord's Prayer] \n\n [Thanksgiving (2 paras)] \n\n [Psalm 50 verses...]
+                // We use the full text with a single rubric label for clean liturgical flow.
+                officeHtml += `<span class="rubric-text">Introduction to Every Hour — Tselote Meweta</span>`;
+                officeHtml += `<div class="component-text" style="white-space:normal">${applyParagraphBreaks(introComp.text)}</div>`;
+            } else {
+                console.warn('[renderOffice] eth-introduction-to-every-hour: component not found in appData — check ethiopian.json');
+            }
+            continue;
+        }
+
         // eth-saatat-hour-slot — resolves to the canonical hour text keyed by local clock
         if (item === 'eth-saatat-hour-slot') {
     if (ethHourInfo) {
@@ -888,6 +926,9 @@ async function renderOffice() {
             // Uniform naming check
             const displayName = ethHourInfo.hourName;
             officeHtml += `<span class="rubric-text">${displayName}</span>`;
+            if (ethHourInfo.hourId === 'eth-lika-hour-text') {
+                officeHtml += `<div class="component-text" style="white-space:normal"><i>This is the Sixth Hour, the hour of the Crucifixion of Our Lord Jesus Christ, who was nailed to the Holy Cross for the salvation of the world.</i></div>`;
+            }
             officeHtml += `<div class="component-text" style="white-space:normal">${applyParagraphBreaks(hourComp.text)}</div>`;
         }
     }
@@ -1144,7 +1185,15 @@ async function renderOffice() {
     // ── Finalise DOM ──────────────────────────────────────────────────────────
     document.getElementById('office-display').innerHTML = officeHtml + `</div>`;
     if (!isEthiopianSaatat) {
-        document.getElementById('date-header').innerText = `Commemorations for ${todayKey}`;
+        // ── PHASE 8.5: Dual-date header (Gregorian + Ge'ez) ─────────────────
+        let dateHeaderText = `Commemorations for ${todayKey}`;
+        try {
+            const geezDateStr = EthiopianCalendar.formatEthiopianDate(currentDate);
+            dateHeaderText += ` | ${geezDateStr}`;
+        } catch (e) {
+            console.warn('[Phase 8.5] Ge\'ez date unavailable:', e.message);
+        }
+        document.getElementById('date-header').innerText = dateHeaderText;
         document.getElementById('date-header').style.display = '';
         const saintSection = document.querySelector('.saint-section');
         if (saintSection) saintSection.style.display = '';

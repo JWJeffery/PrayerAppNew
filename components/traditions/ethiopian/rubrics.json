@@ -58,14 +58,14 @@
     "id": "ethiopian-saatat",
     "officeName": "The Ethiopian Saatat",
     "tradition": "Ethiopian Orthodox Tewahedo",
-    "note": "The canonical hours (Saatat) of the Ethiopian Orthodox Church. The active hour is resolved dynamically by the ETH_SAATAT_HOUR_SLOT handler. Phase 2A: Lelit (21:00–06:00) split into Seventh Hour (eth-hour-7, 21:00–23:59) and Lelit proper (eth-night-hour-text, 00:00–06:00). VARIABLE_READING_ET added to Lelit and Tuat watches.",
+    "note": "The canonical hours (Saatat) of the Ethiopian Orthodox Church. The active hour is resolved dynamically by the ETH_SAATAT_HOUR_SLOT handler. Phase 2A: Lelit (21:00–06:00) split into Seventh Hour (eth-hour-7, 21:00–23:59) and Lelit proper (eth-night-hour-text, 00:00–06:00). VARIABLE_READING_ET added to Lelit and Tuat watches. v2.6.0: eth-introduction-to-every-hour prepended as mandatory opening sequence (Tselote Meweta).",
     "slots": {
       "eth-saatat-hour-slot": {
         "description": "Resolves to the appropriate canonical hour text component via ethHourInfo.hourId.",
         "time_map": {
-          "06:00–09:00": { "hour_id": "eth-tuat-hour-text",    "hour_name": "Tuat — The Morning Watch" },
+          "06:00–09:00": { "hour_id": "eth-nigatu-hour-text",  "hour_name": "Nigatu — The Morning Watch" },
           "09:00–12:00": { "hour_id": "eth-meserkh-hour-text", "hour_name": "Meserkh — The Third Hour" },
-          "12:00–15:00": { "hour_id": "eth-liku-hour-text",    "hour_name": "Liku — The Sixth Hour" },
+          "12:00–15:00": { "hour_id": "eth-lika-hour-text",    "hour_name": "Lika — The Sixth Hour" },
           "15:00–18:00": { "hour_id": "eth-serkh-hour-text",   "hour_name": "Serkh — The Ninth Hour" },
           "18:00–21:00": { "hour_id": "eth-nimeat-hour-text",  "hour_name": "Nimeat — Vespers" },
           "21:00–00:00": { "hour_id": "eth-hour-7",            "hour_name": "The Seventh Hour — The First Night Watch", "phase": "2A — component text pending Phase 2B; falls back to eth-night-hour-text if component absent" },
@@ -94,8 +94,8 @@
       }
     },
     "sequence": [
+      "eth-introduction-to-every-hour",
       "eth-basalios-prayer",
-      "eth-prayer-thanksgiving",
       "eth-saatat-hour-slot",
       "eth-mazmur-slot",
       "VARIABLE_READING_ET",

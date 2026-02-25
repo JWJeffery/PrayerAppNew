@@ -5,9 +5,9 @@
 `office-ui.js` is the core application logic module for **The Universal Office**. It handles all UI state, settings persistence, office rendering, and DOM assembly. All calendar logic, lectionary resolution, and scripture fetching have been extracted into separate modules.
 
 **Production Status:** ✅ OPERATIONAL  
-**Last Updated:** February 22, 2026  
+**Last Updated:** February 24, 2026  
 **Architecture Role:** UI and rendering layer — no calendar or scripture logic  
-**Dependencies:** `js/calendar-engine.js`, `js/scripture-resolver.js`, `data/rubrics.json`, `components/*.json`, `components/traditions/ethiopian/rubrics.json`  
+**Dependencies:** `js/calendar-engine.js`, `js/calendar-ethiopian.js`, `js/scripture-resolver.js`, `data/rubrics.json`, `components/*.json`, `components/traditions/ethiopian/rubrics.json`  
 **Global Exposure:** All functions are global (no class or module wrapper)
 
 ---
@@ -65,7 +65,7 @@ for (const shard of shards) {
 }
 ```
 
-**Shard load order and counts (as of February 22, 2026):**
+**Shard load order and counts (as of February 24, 2026):**
 
 | Shard | Path | Components | Notes |
 |---|---|---|---|
@@ -73,8 +73,8 @@ for (const shard of shards) {
 | `anglican` | `components/anglican.json` | 179 | All BCP components — collects, canticles, absolutions, etc. |
 | `coptic` | `components/coptic.json` | 2 | Agpeya Opening, Theotokion |
 | `ecumenical` | `components/ecumenical.json` | 9 | Angelus, Trisagion, Examen, etc. |
-| `ethiopian` | `components/ethiopian.json` | 11 | Sa'atat hour texts, Mazmur metadata, Anqaşa Birhān, saints scaffold |
-| **Total** | | **206** | |
+| `ethiopian` | `components/ethiopian.json` | ~19 | Sa'atat hour texts, Tselote Meweta, Weddase Maryam (×7), Senkessar scaffolds, Mazmur metadata, Anqaşa Birhān, saints scaffold |
+| **Total** | | **~214** | |
 
 > ⚠️ `data/components.json` is a **stale pre-modularization monolith**. Do not load from this path. The live data is exclusively in `components/*.json`.
 
@@ -84,12 +84,13 @@ for (const shard of shards) {
 
 | Variable | Type | Purpose |
 |---|---|---|
-| `appData` | Object/null | `{ components: [], rubrics: [] }` — populated by `init()` |
+| `appData` | Object/null | `{ components: [], rubrics: [], senkessarIndex: null, senkessarCache: {} }` — populated by `init()` |
 | `currentDate` | Date | The date currently being rendered |
 | `selectedMode` | String/null | `'daily'`, `'prayers'`, or `'ethiopian-saatat'` |
 | `monthNames` | Array | Month name strings for saints file path construction |
 | `psalterCycle` | Array | 31-entry BCP 30-Day Psalter (BCP 1979, p. 935) |
 | `window._forcedOfficeId` | String/undefined | Set to `'ethiopian-saatat'` by `selectMode()` when no radio input exists for the tradition |
+| `window._temporalOverride` | Object/undefined | Set in browser console to force a specific Ethiopian canonical hour for testing |
 
 ---
 
@@ -103,25 +104,28 @@ Called by `selectMode()` only if `appData` is not yet populated.
 ### `selectMode(mode)` — sync
 Accepts `'daily'`, `'prayers'`, or `'ethiopian-saatat'`.
 
-- `'daily'`: shows sidebar and settings panel, calls `loadSettings()`, `updateSidebarForOffice()`, `renderOffice()`
+- `'daily'`: shows BCP sidebar and settings panel, calls `loadSettings()`, `updateSidebarForOffice()`, `renderOffice()`
 - `'prayers'`: shows individual prayers section, hides sidebar and settings
-- `'ethiopian-saatat'`: reuses `#daily-office-section`, hides sidebar and settings panel, applies `.ethiopian-theme` to `body`, hides main `<h1>`, sets `window._forcedOfficeId = 'ethiopian-saatat'`, calls `init()` or `renderOffice()`
+- `'ethiopian-saatat'`: reuses `#daily-office-section`, hides `#settings-panel` (BCP) and shows `#ethiopian-settings`, applies `.ethiopian-theme` to `body`, hides main `<h1>`, sets `window._forcedOfficeId = 'ethiopian-saatat'`, calls `init()` or `renderOffice()`
 
 ### `getEthiopianHourInfo()` — sync
-Returns the canonical hour entry matching the current local time. Consults an exhaustive `hourMap` array covering all six canonical watches in 3-hour windows. Returns `{ hourId, hourName, uiLabel, psalms }`.
+Returns the canonical hour entry matching the current local time. Checks `window._temporalOverride` first (testing hook). Consults an exhaustive `hourMap` covering all nine canonical watches. Returns `{ hourId, hourName, uiLabel, psalms, etReading }`.
 
 **Hour map:**
 
-| Window | hourId | hourName | Psalms |
-|---|---|---|---|
-| 06:00–09:00 | `eth-tuat-hour-text` | Tuat — The Morning Watch | 3, 63, 133 |
-| 09:00–12:00 | `eth-meserkh-hour-text` | Meserkh — The Third Hour | 16, 17, 18 |
-| 12:00–15:00 | `eth-liku-hour-text` | Liku — The Sixth Hour | 22, 23, 24 |
-| 15:00–18:00 | `eth-serkh-hour-text` | Serkh — The Ninth Hour | 69, 70, 71 |
-| 18:00–21:00 | `eth-nimeat-hour-text` | Nimeat — Vespers | 141, 142, 143 |
-| 21:00–06:00 | `eth-night-hour-text` | Lelit — The Night Watch | 4, 6, 13 |
+| Window | hourId | hourName | Psalms | etReading |
+|---|---|---|---|---|
+| 06:00–09:00 | `eth-nigatu-hour-text` | Nigatu — ንጋቱ (Matins) | 3, 63, 133 | 1 Clement |
+| 09:00–12:00 | `eth-meserk-hour-text` | Mese'rk — መሠርቅ (Third Hour) | 16, 17, 18 | — |
+| 12:00–15:00 | `eth-lika-hour-text` | Lika — ሊካ (Sixth Hour) | 22, 23, 24 | — |
+| 15:00–17:00 | `eth-terk-hour-text` | Tese'at — ተሰዓት (Ninth Hour) | 69, 70, 71 | — |
+| 17:00–18:00 | `eth-serkh-hour-text` | Serkh — ሠርክ (Eleventh Hour) | 141, 142, 143 | — |
+| 18:00–21:00 | `eth-nome-hour-text` | Nime — ኖሜ (Compline) | 4, 6, 13 | — |
+| 21:00–00:00 | `eth-hour-7` | Le'lit — First Night Watch | 4, 6, 13 | Hermas |
+| 00:00–03:00 | `eth-lelit-hour-text` | Le'lit — ሌሊት (Midnight) | 4, 6, 13 | Hermas |
+| 03:00–06:00 | `eth-mahlet-hour-text` | Mahlet — ማህሌት (Pre-dawn Vigil) | 3, 63, 133 | — |
 
-Night watch covers both 21:00–24:00 and 00:00–06:00 via two entries in the array. The map is exhaustive; the fallback (Tuat) should never be reached.
+Map is exhaustive (all 1440 minutes covered). Fallback returns Nigatu and should never be reached.
 
 ### `renderOffice()` — async
 **The core rendering function.** Assembles complete office HTML and writes it to `#office-display`. Called on every date or settings change.
@@ -158,7 +162,7 @@ Syncs the `#date-picker` input value to `currentDate` using zero-padded YYYY-MM-
 Toggles `sidebar-hidden` class on `#settings-panel`, `#sidebar-toggle`, and `#main-content`. Adjusts toggle opacity.
 
 ### `updateSidebarForOffice()` — sync
-Shows/hides sidebar toggles based on which office is selected. Hides irrelevant options and force-unchecks hidden toggles. Not called in Ethiopian Sa'atat mode (no sidebar).
+Shows/hides sidebar toggles based on which office is selected. Hides irrelevant options and force-unchecks hidden toggles. Not called in Ethiopian Sa'atat mode (no BCP sidebar).
 
 ### `toggleBcpOnly()` — sync
 Enables/disables BCP Only Mode. When enabled: applies `bcp-only-hidden` CSS class to all three ecumenical sections and force-unchecks all ecumenical toggles. Calls `renderOffice()`. Has no effect on Ethiopian Sa'atat.
@@ -178,10 +182,10 @@ Updates `--accent` CSS custom property:
 | `green` | `#4a7c59` | Ordinary Time (default) |
 
 ### `saveSettings()` / `loadSettings()` — sync
-Persist and restore all settings to/from `localStorage` under key `universalOfficeSettings`. Both functions fail silently with `console.warn` if localStorage is unavailable. Ethiopian Sa'atat has no user-configurable settings and does not interact with this persistence layer.
+Persist and restore all settings to/from `localStorage` under key `universalOfficeSettings`. Ethiopian Sa'atat has no user-configurable settings and does not interact with this persistence layer.
 
 ### `formatScriptureAsFlow(rawText)` — sync
-Strips verse numbers, splits on double newlines, wraps paragraphs in `<p>` tags. Used for prose readings (OT, Epistle, Gospel).
+Strips verse numbers, splits on double newlines, wraps paragraphs in `<p>` tags. Used for prose readings (OT, Epistle, Gospel, ET scripture readings).
 
 ### `formatPsalmAsPoetry(rawText)` — sync
 Strips verse numbers, splits on `*` to produce half-verse spans. Returns `<span class="psalm-stanza">` structure for CSS poetry layout. Used by both BCP psalm handler and `eth-mazmur-slot`.
@@ -190,7 +194,7 @@ Strips verse numbers, splits on `*` to produce half-verse spans. Returns `<span 
 Helper: extracts rite-aware text from a component. Returns `comp.text[rite]`, falling back to `rite2`, then `rite1`, then the raw string if `text` is not an object.
 
 ### `applyParagraphBreaks(text)` — sync
-Helper: converts `\n\n` to `<br><br>` for block text that needs paragraph breaks. Used with `white-space:normal` container divs. Used by Examen, Theotokion, and all Ethiopian hour texts.
+Helper: converts `\n\n` to `<br><br>` for block text that needs paragraph breaks. Used with `white-space:normal` container divs. Used by Examen, Theotokion, all Ethiopian hour texts, and Senkessar narratives.
 
 ### `backToSplash()` — sync
 Hides all office sections, restores splash screen and mode selector.
@@ -259,9 +263,11 @@ All settings persisted via `localStorage` key `universalOfficeSettings`:
 
 | Slot | Behavior |
 |---|---|
-| `eth-saatat-hour-slot` | Looks up `ethHourInfo.hourId` in `appData.components`; renders with `applyParagraphBreaks()` |
+| `eth-introduction-to-every-hour` | Renders `introComp.rubric_before` as `.rubric-text` span, then full Tselote Meweta text (Lord's Prayer + Thanksgiving + Psalm 50/51) via `applyParagraphBreaks()`. Console warning if component missing. |
+| `eth-saatat-hour-slot` | Looks up `ethHourInfo.hourId` in `appData.components`; prepends Sixth Hour commemorative sentence when `hourId === 'eth-lika-hour-text'`; renders hour text with `applyParagraphBreaks()` |
+| `VARIABLE_READING_ET` | Fetches `ethHourInfo.etReading` citation via `getScriptureText()`; active for Nigatu (1 Clement) and both Le'lit watches (Hermas); silently skipped (`continue`) for all other hours where `etReading` is null |
 | `eth-mazmur-slot` | Loops `ethHourInfo.psalms`; fetches each via `getScriptureText()`; renders with `formatPsalmAsPoetry()`; appends `eth-anqasa-birhan` (Anqaşa Birhān — Gate of Light) |
-| `eth-saints-commemoration` | Filters `appData.saints` for `tradition` containing `'ethiopian'` or `'oriental'` (case-insensitive) and `day` matching `todayKeyShort`; if none found, renders generic intercession for the Oriental Orthodox Communion |
+| `eth-saints-commemoration` | Full Senkessar pipeline: calls `EthiopianCalendar.getEthiopianDate()`, normalises via `MONTH_SLUG_MAP`, lazy-loads and caches `senkessar-index.json`, fetches and caches per-day narrative from `data/synaxarium/ethiopian/{slug}/{day}.json`, renders title + narrative; falls back to Oriental saints filter, then generic intercession |
 
 ### Named Component Handlers
 
@@ -345,7 +351,7 @@ The following blocks are unconditionally suppressed when `isEthiopianSaatat` is 
 | East Syriac Hours | Pre-sequence | BCP ecumenical only |
 | Marian Antiphon / Theotokion (before) | Pre-sequence | BCP ecumenical only |
 | Marian Antiphon / Theotokion (after) | Post-sequence | BCP ecumenical only |
-| `#date-header` text and visibility | Finalise DOM | Replaced by Sa'atat inline commemorations |
+| `#date-header` text and visibility | Finalise DOM | Replaced by Sa'atat inline Senkessar commemoration |
 | `#saint-display` content | Finalise DOM | Handled by `eth-saints-commemoration` slot |
 
 ---
@@ -381,7 +387,7 @@ Saints data loaded from `data/saints/saints-{month}.json`. Cached in `appData.sa
 
 **BCP offices:** All saints matching `todayKeyShort` are shown in `#saint-display` below the office.
 
-**Ethiopian Sa'atat:** Only saints with `tradition` containing `'ethiopian'` or `'oriental'` (case-insensitive) are shown, rendered inline within the sequence. If none match, a generic intercession for the Oriental Orthodox Communion is rendered. `#saint-display` is cleared and `#date-header` is hidden.
+**Ethiopian Sa'atat:** The `eth-saints-commemoration` handler runs the full Senkessar pipeline first (Ethiopian calendar date → `senkessar-index.json` → per-day narrative fetch). If no Senkessar entry is found, it falls back to filtering `appData.saints` for `tradition` containing `'ethiopian'` or `'oriental'` (case-insensitive). If still no match, a generic intercession for the Oriental Orthodox Communion is rendered. `#saint-display` is cleared and `#date-header` is hidden.
 
 ---
 
@@ -393,13 +399,18 @@ Saints data loaded from `data/saints/saints-{month}.json`. Cached in `appData.sa
 | `[init] Loaded Ethiopian rubrics — N offices` | log | Ethiopian rubrics concatenated |
 | `[init] Could not load Ethiopian rubrics: ...` | warn | Ethiopian rubrics file missing or malformed |
 | `[init] Required shard missing: components/X.json` | warn | Required shard returned non-200 |
-| `[init] Total components loaded: N` | log | All shards processed; N should be 206 |
+| `[init] Total components loaded: N` | log | All shards processed; N should be ~214 |
+| `[renderOffice] eth-introduction-to-every-hour: component not found` | warn | Tselote Meweta component missing from ethiopian.json |
 | `[renderOffice] eth-saatat-hour-slot: component not found — X` | warn | Hour component ID not in loaded components |
+| `[eth-saints-commemoration] Senkessar index load failed: ...` | warn | senkessar-index.json missing or malformed |
+| `[eth-saints-commemoration] Day file load failed: X/Y.json` | warn | Per-day Senkessar narrative file missing |
+| `[eth-saints-commemoration] No day file found for X/Y` | warn | Narrative fetched but empty |
 | `[renderOffice] VARIABLE_CANTICLE1: component not found — X` | warn | Canticle ID not in loaded components |
 | `[renderOffice] VARIABLE_WEEKDAY_COLLECT: no collect resolved — skipping` | warn | Neither seasonal nor fallback collect found |
 | `[renderOffice] VARIABLE_MISSION_PRAYER: bcp-mission-prayer-1 not found` | warn | Mission prayer missing from components |
 | `[renderOffice] Generic lookup failed for resolved ID: X (from: Y)` | warn | Slot resolved to ID not found in components |
 | `[renderOffice] Generic lookup failed for: X` | warn | Direct component ID not found |
+| `[EthiopianCalendar] All N self-tests passed.` | log | Calendar engine self-test on load — expected on every page load |
 
 ---
 
@@ -413,11 +424,18 @@ Saints data loaded from `data/saints/saints-{month}.json`. Cached in `appData.sa
 | `CalendarEngine.getSeasonAndFile(date)` | Returns `{ season, liturgicalColor, litYear }` |
 | `CalendarEngine.fetchLectionaryData(date)` | Returns the full `dailyData` object |
 
+**`EthiopianCalendar`** (`js/calendar-ethiopian.js`):
+
+| Method | Used For |
+|---|---|
+| `EthiopianCalendar.getEthiopianDate(date)` | Converts Gregorian date → `{ day, month, monthIndex, year }` for Senkessar lookup |
+| `EthiopianCalendar.formatEthiopianDate(date)` | Returns display string (Phase 8.5 Ge'ez header — not yet wired to UI) |
+
 **Scripture Resolver** (`js/scripture-resolver.js`):
 
 | Function | Used For |
 |---|---|
-| `getScriptureText(citation)` | Fetches psalm and reading text by BCP citation string — used by both BCP and Ethiopian psalm rendering |
+| `getScriptureText(citation)` | Fetches psalm and reading text — used by BCP offices, Ethiopian Mazmur slot, and VARIABLE_READING_ET |
 
 ---
 
@@ -444,8 +462,9 @@ Before deploying changes to `office-ui.js`:
 - [ ] New ecumenical toggles added to `toggleBcpOnly()` force-uncheck array
 - [ ] Verbose component titles overridden in `DISPLAY_LABELS` (not by editing JSON)
 - [ ] `VARIABLE_COLLECT` applies manual ID map for `collect-transfiguration`
-- [ ] `applyParagraphBreaks()` used for Examen, Theotokion, and Ethiopian hour texts
+- [ ] `applyParagraphBreaks()` used for Examen, Theotokion, Ethiopian hour texts, and Senkessar narratives
 - [ ] `updateDatePicker()` called after any `currentDate` mutation
+- [ ] `EthiopianCalendar` self-test passes on load (check console for `[EthiopianCalendar] All N self-tests passed`)
 
 ---
 
@@ -456,12 +475,16 @@ Before deploying changes to `office-ui.js`:
 | 6.4 | ✅ Complete | Ecumenical devotions with positional placement |
 | 6.5 | ✅ Complete | Modularization — office-ui.js extracted from index.html |
 | 6.6 | ✅ Complete | VARIABLE_CANTICLE1/2, VARIABLE_WEEKDAY_COLLECT, VARIABLE_MISSION_PRAYER handlers; bcp-litany gate; Theotokion formatting; display label map |
-| 7.1 | ✅ Complete | Ethiopian Sa'atat entry point; Tuat hour; mode isolation; resolvedOfficeId pattern; Ethiopian rubrics loader |
-| 7.2 | ✅ Complete | Meserkh (Third Hour) and Liku (Sixth Hour); UI polish; saints filter; Oriental fallback intercession |
-| 7.3 | ✅ Complete | Full 24-hour cycle (Serkh, Nimeat, Lelit); saints preload before sequence loop; Commemorations header guard |
-| 7.4 | 📋 Planned | Ethiopian liturgical calendar (Ge'ez date display, fasting seasons) |
+| 7.1 | ✅ Complete | Ethiopian Sa'atat entry point; Nigatu/Matins hour; mode isolation; resolvedOfficeId pattern; Ethiopian rubrics loader |
+| 7.2 | ✅ Complete | Mese'rk (Third Hour) and Lika (Sixth Hour); UI polish; saints filter; Oriental fallback intercession |
+| 7.3 | ✅ Complete | Full 24-hour cycle (Tese'at, Serkh, Nime, Le'lit, Mahlet); saints preload before sequence loop; Commemorations header guard |
+| 7.4 | ✅ Complete | `js/calendar-ethiopian.js` — JDN Alexandrian calendar engine; `EthiopianCalendar.getEthiopianDate()` wired into `eth-saints-commemoration` for live Senkessar date resolution |
+| 8.1 | ✅ Complete | Senkessar index corrected and validated; Tir corpus complete; full pipeline wired |
+| 8.2 | ✅ Complete | All 13 Senkessar months complete (Hamle verified 2026-02-24); three-tier fallback operational |
+| v2.6.1 | ✅ Complete | `eth-introduction-to-every-hour` (Tselote Meweta); Metsehafe Tselot CSS; Sixth Hour sentence; CSS legibility fix; ID corrections |
+| 8.5 | 📋 Planned | Ge'ez date display in Sa'atat UI header — `EthiopianCalendar.formatEthiopianDate()` ready; UI change only |
 | 7.5 | 📋 Planned | Coptic Agpeya as standalone tradition entry point |
-| 8.0 | 📋 Planned | Mobile app |
+| 9.0 | 📋 Planned | Mobile app |
 
 ---
 
@@ -469,7 +492,8 @@ Before deploying changes to `office-ui.js`:
 
 **Application:** The Universal Office  
 **Liturgical Source:** 1979 Book of Common Prayer (The Episcopal Church), public domain  
-**Ethiopian Liturgical Source:** Ethiopian Orthodox Tewahedo Sa'atat (Book of Hours)  
+**Ethiopian Liturgical Source:** Ethiopian Orthodox Tewahedo Sa'atat (Book of Hours); Senkessar (Synaxarium)  
+**Calendar Algorithm:** Alexandrian JDN method (`js/calendar-ethiopian.js`)  
 **UI Framework:** Vanilla JavaScript, no external dependencies  
 
 ---

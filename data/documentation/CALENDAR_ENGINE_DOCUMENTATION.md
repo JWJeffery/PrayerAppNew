@@ -1,13 +1,24 @@
-# CALENDAR-ENGINE.JS - PRODUCTION DOCUMENTATION
+# CALENDAR-ENGINE.JS — PRODUCTION DOCUMENTATION
 
 ## Overview
 
-This module is the authoritative source of all liturgical calendar logic for The Universal Office. It is a static class (`CalendarEngine`) exposed globally as `window.CalendarEngine`. All date routing, season detection, lectionary entry lookup, and liturgical year calculation live here exclusively. No calendar logic should exist in `office-ui.js` or any other module.
+This document covers **two separate calendar modules** used by The Universal Office:
+
+1. **`js/calendar-engine.js`** (`CalendarEngine`) — the BCP liturgical calendar. Handles season detection, BCP lectionary entry lookup, liturgical year (Year 1/Year 2), and Proper number calculation. Authoritative for all Western/Anglican calendar logic.
+
+2. **`js/calendar-ethiopian.js`** (`EthiopianCalendar`) — the Ethiopian (Ge'ez) and Coptic calendar. Handles Gregorian → Ethiopian date conversion via the Alexandrian JDN algorithm. Authoritative for all Ethiopian Orthodox calendar logic.
+
+These are peer modules — neither depends on the other. Both are loaded before `office-ui.js` and both are globally accessible.
+
+> **Architecture note:** The original statement "no calendar logic should exist in `office-ui.js`" applies to `CalendarEngine` logic only. `EthiopianCalendar` is called directly within `renderOffice()` in the `eth-saints-commemoration` slot handler, which is the correct pattern for a tradition-specific module consumed in one specific rendering context.
+
+---
+
+# PART 1: `js/calendar-engine.js` (CalendarEngine)
 
 **Production Status:** ✅ OPERATIONAL — Perpetual Calendar Engine Active  
 **Last Updated:** February 22, 2026  
 **Current Line Count:** 213 lines  
-**Architecture Role:** Calendar and lectionary logic module  
 **Global Exposure:** `window.CalendarEngine`
 
 ---
@@ -266,12 +277,12 @@ findEntry(data, date, file)
   → Fallback: data[0]
          │
          ▼
-Return daily entry object to `renderOffice()` in `office-ui.js`
+Return daily entry object to renderOffice() in office-ui.js
 ```
 
 ---
 
-## Console Log Reference
+## Console Log Reference (`CalendarEngine`)
 
 All engine logs are prefixed with `[Calendar Engine]`:
 
@@ -288,7 +299,7 @@ All engine logs are prefixed with `[Calendar Engine]`:
 
 ---
 
-## Testing Scenarios
+## Testing Scenarios (CalendarEngine)
 
 ### 1. Liturgical Year Alternation
 | Date | Expected | Verified |
@@ -316,7 +327,7 @@ All engine logs are prefixed with `[Calendar Engine]`:
 
 ---
 
-## Maintenance Notes
+## Maintenance Notes (CalendarEngine)
 
 ### Adding Years Beyond 2030
 
@@ -334,20 +345,171 @@ If new fields are added to seasonal JSON entries:
 
 ---
 
+---
+
+# PART 2: `js/calendar-ethiopian.js` (EthiopianCalendar)
+
+**Production Status:** ✅ OPERATIONAL — Phase 7.4 complete  
+**Last Updated:** February 22, 2026  
+**Lines:** ~253 (lines 3859–4111 of codebase)  
+**Global Exposure:** `EthiopianCalendar` (IIFE, window-scoped)  
+**Called by:** `renderOffice()` in `office-ui.js` — within the `eth-saints-commemoration` slot handler
+
+---
+
+## Purpose
+
+Converts a Gregorian `Date` object to the corresponding Ethiopian (Amete Mihret era) or Coptic calendar date. The result is used by the Senkessar pipeline to determine which month/day directory to fetch the daily hagiographical narrative from (`data/synaxarium/ethiopian/{monthSlug}/{day}.json`).
+
+---
+
+## Algorithm
+
+The module uses the **Julian Day Number (JDN) method** — a standard astronomical conversion that is valid for all historical and future dates without the boundary problems of simple arithmetic offsets.
+
+**Epoch:** 1 Meskerem 1 EC = JDN 1724221 = 29 August 8 AD (Julian calendar)
+
+**Conversion steps:**
+1. Calculate JDN for the input Gregorian date
+2. Subtract the Ethiopian epoch JDN
+3. Divide by 365.25 to determine the approximate Ethiopian year
+4. Calculate the day within the year and map to month + day
+
+**Leap years:** Ethiopian leap year when `year % 4 === 3`. In a leap year, Pagume has 6 days instead of 5.
+
+**Self-test:** A 9-case reference point suite runs on every page load and logs results to the console. All 9 cases must pass before the module is considered operational on any given device.
+
+---
+
+## Public API
+
+### `EthiopianCalendar.getEthiopianDate(gregorianDate)` — sync
+**Parameters:** `gregorianDate` — JavaScript `Date` object  
+**Returns:** `{ day: number, month: string, monthIndex: number, year: number }`
+
+- `day` — Day of the Ethiopian month (1–30; 1–5 or 1–6 for Pagume)
+- `month` — Ge'ez month name string (e.g., `"Yekatit"`, `"Miyazya"`)
+- `monthIndex` — 0-based index into `MONTH_NAMES` array (0 = Meskerem, 12 = Pagume)
+- `year` — Ethiopian year in Amete Mihret era (e.g., `2018`)
+
+**Called in:** `eth-saints-commemoration` handler — `EthiopianCalendar.getEthiopianDate(currentDate)`
+
+---
+
+### `EthiopianCalendar.getCopticDate(gregorianDate)` — sync
+**Parameters:** `gregorianDate` — JavaScript `Date` object  
+**Returns:** `{ day: number, month: string, monthIndex: number, year: number }`
+
+Same algorithm as `getEthiopianDate()` but uses Coptic month names and the EC-276 era offset. Used for Coptic calendar display if that feature is added.
+
+---
+
+### `EthiopianCalendar.formatEthiopianDate(gregorianDate)` — sync
+**Parameters:** `gregorianDate` — JavaScript `Date` object  
+**Returns:** Display string, e.g., `"15 Yekatit 2018"`
+
+**Current status:** Fully implemented and available. Not yet wired to any UI element. Phase 8.5 target: display in the Sa'atat header area using `#ethiopian-settings` or a dedicated `#eth-date-display` element.
+
+---
+
+### `EthiopianCalendar.isEthiopianLeapYear(ethiopianYear)` — sync
+**Parameters:** `ethiopianYear` — integer  
+**Returns:** boolean — `true` when `ethiopianYear % 4 === 3`
+
+---
+
+### `EthiopianCalendar.MONTH_NAMES` — exported constant
+Array of 13 Ge'ez month name strings in order:
+`["Meskerem", "Tiqimt", "Hidar", "Tahsas", "Tir", "Yekatit", "Megabit", "Miyazya", "Ginbot", "Sene", "Hamle", "Nehase", "Pagume"]`
+
+---
+
+### `EthiopianCalendar.COPTIC_MONTH_NAMES` — exported constant
+Array of 13 Coptic month name strings in the corresponding order.
+
+---
+
+## Self-Test Reference Points
+
+The module verifies these 9 cases on every page load. A failure indicates a platform-level JDN calculation issue:
+
+| Gregorian Date | Expected Ethiopian Date |
+|---|---|
+| 2026-02-22 | 15 Yekatit 2018 |
+| 2025-09-11 | 1 Meskerem 2018 (Ethiopian New Year) |
+| 2025-09-10 | 5 Pagume 2017 (last day of non-leap year) |
+| 2026-09-11 | 1 Meskerem 2019 |
+| 2024-09-11 | 1 Meskerem 2017 (leap year boundary) |
+| 2024-09-10 | 6 Pagume 2016 (Pagume day 6 in leap year) |
+| 2026-01-06 | 28 Tahsas 2018 (Gregorian Epiphany) |
+| 2026-01-19 | 11 Tir 2018 (Ethiopian Timqat / Epiphany) |
+| 2025-12-25 | 16 Tahsas 2018 |
+
+**Console output on success:** `[EthiopianCalendar] All 9 self-tests passed.`  
+**On failure:** Individual test failures are logged with expected vs. actual values.
+
+---
+
+## Integration with Senkessar Pipeline
+
+`getEthiopianDate()` is the entry point for the entire Senkessar data flow:
+
+```
+EthiopianCalendar.getEthiopianDate(currentDate)
+         │
+         ▼
+{ day: 15, month: "Miyazya", monthIndex: 7, year: 2018 }
+         │
+         ▼
+MONTH_SLUG_MAP: "miyazya" → "miazia"   (folder normalisation)
+         │
+         ▼
+Fetch senkessar-index.json (lazy, cached in appData.senkessarIndex)
+Find months[].find(m => m.month === "miazia")
+Find days[].find(d => d.day === 15)
+         │
+         ▼
+Fetch data/synaxarium/ethiopian/miazia/15.json
+(cached in appData.senkessarCache["miazia-15"])
+         │
+         ▼
+Render { id, title, narrative } in office HTML
+```
+
+**Month name mismatch:** `getEthiopianDate()` returns `"Miyazya"` (the Ge'ez romanisation) but the data folder is `miazia` (the common English spelling). The `MONTH_SLUG_MAP` in the `eth-saints-commemoration` handler bridges this gap. Similarly `"Tiqimt"` maps to `"tiqimt"`. No changes to the calendar module are needed.
+
+---
+
+## Console Log Reference (`EthiopianCalendar`)
+
+| Message | Level | Meaning |
+|---|---|---|
+| `[EthiopianCalendar] All 9 self-tests passed.` | log | Module loaded and verified correctly |
+| `[EthiopianCalendar] SELF-TEST FAILED for YYYY-MM-DD: expected X, got Y` | error | JDN calculation error on this platform |
+
+---
+
+## Maintenance Notes (EthiopianCalendar)
+
+**The module requires no annual updates.** The Alexandrian algorithm is perpetually valid. Unlike `CalendarEngine`, there is no `SEASON_RANGES` array to extend — the Ethiopian calendar is purely mathematical.
+
+**Pagume edge case:** In Ethiopian leap years (`year % 4 === 3`), Pagume has 6 days. The Senkessar data directory `pagumen/` contains `1.json` through `5.json` for non-leap years. If a user accesses the Sa'atat on Pagume 6 in a leap year and `6.json` does not exist, the `eth-saints-commemoration` handler will fall through to the Oriental saints filter, then to the generic intercession. Adding `pagumen/6.json` is a low-priority future enhancement.
+
+**Coptic Agpeya integration (Phase 7.5):** When the Coptic Agpeya is added as a standalone mode, `getCopticDate()` will drive its equivalent of the Senkessar pipeline. The module is already prepared for this.
+
+---
+
 ## Credits
 
 **Module:** Universal Office Calendar Engine  
 **Architecture:** Claude (Anthropic AI) with user direction and Architect/QC approval  
-**Liturgical Source:** 1979 Book of Common Prayer (The Episcopal Church), public domain  
-**Perpetual Calendar Strategy:** Designed and approved February 17, 2026
+**Liturgical Source (BCP):** 1979 Book of Common Prayer (The Episcopal Church), public domain  
+**Calendar Algorithm (Ethiopian/Coptic):** Alexandrian JDN method  
+**Perpetual BCP Calendar Strategy:** Designed and approved February 17, 2026  
+**Ethiopian Calendar Engine:** Implemented Phase 7.4, February 22, 2026; self-test suite verified against 9 reference points
 
 ---
 
 **END OF DOCUMENTATION**
 
-*For UI rendering logic, see INDEX_HTML_DOCUMENTATION.md. For scripture fetching, see SCRIPTURE_RESOLVER_DOCUMENTATION.md.*
-
-
-
-================================================
-FILE: data/documentation/christmasdocumentation.md
+*For UI rendering logic see `OFFICE_UI_DOCUMENTATION.md`. For Ethiopian Sa'atat architecture see `ETHIOPIAN_SAATAT_DOCUMENTATION.md`. For scripture fetching see `SCRIPTURE_RESOLVER_DOCUMENTATION.md`.*
