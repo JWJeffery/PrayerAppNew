@@ -28,5 +28,35 @@
     "id": "esy-variable-marmitha",
     "title": "The Marmitha",
     "text": "<p class=\"rubric-text\">[The appointed Marmitha of the Psalter is recited here.]</p>"
+  },
+  {
+    "id": "esy-suraya",
+    "title": "The Suraya",
+    "text": "<p class=\"rubric-text\">The Suraya is chanted:</p><p class=\"component-text\">Your word is a lamp to my feet and a light to my path.<br>I have sworn an oath and confirmed it, to observe your righteous ordinances.<br>I am severely afflicted; give me life, O Lord, according to your word.</p>"
+  },
+  {
+    "id": "esy-karozutha",
+    "title": "The Karozutha (Litany)",
+    "text": "<p class=\"rubric-text\">The Deacon intones the Karozutha. The Congregation responds: <strong>Lord, have mercy.</strong></p><p class=\"component-text\">Let us all stand well in sorrow and care and say: <em>Lord, have mercy.</em><br>Father of mercies and God of all comfort, we beseech you: <em>Lord, have mercy.</em><br>For the peace, harmony, and well-being of the whole world and of all churches, we beseech you: <em>Lord, have mercy.</em><br>For our country and for all countries, and for those who dwell in them in faith, we beseech you: <em>Lord, have mercy.</em></p>"
+  },
+  {
+    "id": "esy-concluding-blessing",
+    "title": "The Concluding Blessing",
+    "text": "<p class=\"rubric-text\">The Priest blesses the congregation:</p><p class=\"component-text\">May God, the Lord of all, bless us. May He keep our days in peace, and establish our lives in His grace and mercy, now and always, and for ever and ever.</p><p class=\"rubric-text\">The Congregation responds:</p><p class=\"component-text\">Amen.</p>"
+  },
+  {
+    "id": "esy-suraya",
+    "title": "The Suraya",
+    "text": "<p class=\"rubric-text\">The Suraya is chanted:</p><p class=\"component-text\">Your word is a lamp to my feet and a light to my path.<br>I have sworn an oath and confirmed it, to observe your righteous ordinances.<br>I am severely afflicted; give me life, O Lord, according to your word.</p>"
+  },
+  {
+    "id": "esy-karozutha",
+    "title": "The Karozutha (Litany)",
+    "text": "<p class=\"rubric-text\">The Deacon intones the Karozutha. The Congregation responds: <strong>Lord, have mercy.</strong></p><p class=\"component-text\">Let us all stand well in sorrow and care and say: <em>Lord, have mercy.</em><br>Father of mercies and God of all comfort, we beseech you: <em>Lord, have mercy.</em><br>For the peace, harmony, and well-being of the whole world and of all churches, we beseech you: <em>Lord, have mercy.</em><br>For our country and for all countries, and for those who dwell in them in faith, we beseech you: <em>Lord, have mercy.</em></p>"
+  },
+  {
+    "id": "esy-concluding-blessing",
+    "title": "The Concluding Blessing",
+    "text": "<p class=\"rubric-text\">The Priest blesses the congregation:</p><p class=\"component-text\">May God, the Lord of all, bless us. May He keep our days in peace, and establish our lives in His grace and mercy, now and always, and for ever and ever.</p><p class=\"rubric-text\">The Congregation responds:</p><p class=\"component-text\">Amen.</p>"
   }
 ]

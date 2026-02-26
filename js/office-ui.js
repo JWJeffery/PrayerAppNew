@@ -1838,11 +1838,34 @@ async function renderEastSyriac() {
     const rite     = document.querySelector('input[name="rite"]:checked')?.value || 'rite2';
     const sequence = appData.eastSyriacRubrics?.['ramsha-sequence'] || [];
 
+    const marmithaMap = {
+        0: ['1',  '2',  '3'],
+        1: ['4',  '5',  '6'],
+        2: ['7',  '8',  '9'],
+        3: ['10', '11', '12'],
+        4: ['13', '14', '15'],
+        5: ['16', '17', '18'],
+        6: ['19', '20', '21']
+    };
+
     let officeHtml = `<div class="office-container"><h2>Church of the East</h2>`;
     officeHtml += `<p class="liturgical-title">Ramsha — Evening Prayer</p>`;
 
     for (let item of sequence) {
         item = item.trim();
+
+        if (item === 'esy-variable-marmitha') {
+            const dayOfWeek  = currentDate.getDay();
+            const psalmNums  = marmithaMap[dayOfWeek] || marmithaMap[0];
+            officeHtml += `<span class="rubric-text">The Marmitha (Appointed Psalms)</span>`;
+            for (const psNum of psalmNums) {
+                const fullText = await getScriptureText('PSALM ' + psNum);
+                officeHtml += `<h4 class="passage-reference">Psalm ${psNum}</h4>`;
+                officeHtml += `<div class="psalm-block">${formatPsalmAsPoetry(fullText)}</div>`;
+            }
+            continue;
+        }
+
         const comp = appData.components.find(c => c.id === item);
         if (comp) {
             const t = resolveText(comp, rite) || comp.text || '';
