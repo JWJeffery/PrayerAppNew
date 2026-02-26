@@ -406,6 +406,68 @@ async function hydrateForEthiopianSaatat() {
 }
 
 
+// ── EAST SYRIAC RAMSHA HYDRATION ──────────────────────────────────────────────
+async function hydrateForEastSyriac() {
+    await loadKernel();
+    if (!appData) return;
+
+    if (appData._loadedTraditions.has('east-syriac')) {
+        console.log('[hydrate:east-syriac] Already loaded — skipping.');
+        return;
+    }
+
+    console.log('[hydrate:east-syriac] Fetching East Syriac shard and rubrics in parallel...');
+
+    const [shardResult, rubricsResult] = await Promise.allSettled([
+        fetch('components/east-syriac.json'),
+        fetch('components/traditions/east-syriac/rubrics.json')
+    ]);
+
+    if (shardResult.status === 'fulfilled') {
+        const res = shardResult.value;
+        if (res.ok) {
+            try {
+                const text = await res.text();
+                if (text.trim()) {
+                    const data = JSON.parse(text);
+                    appData.components = appData.components.concat(data);
+                    console.log(`[hydrate:east-syriac] Loaded components/east-syriac.json — ${data.length} components`);
+                } else {
+                    console.warn('[hydrate:east-syriac] components/east-syriac.json is present but empty.');
+                }
+            } catch (e) {
+                console.warn('[hydrate:east-syriac] Failed to parse east-syriac.json:', e.message);
+            }
+        } else {
+            console.warn(`[hydrate:east-syriac] components/east-syriac.json not found (HTTP ${res.status}).`);
+        }
+    } else {
+        console.warn('[hydrate:east-syriac] Network error fetching components/east-syriac.json:', shardResult.reason);
+    }
+
+    if (rubricsResult.status === 'fulfilled') {
+        const res = rubricsResult.value;
+        if (res.ok) {
+            try {
+                const rubrics = await res.json();
+                appData.eastSyriacRubrics = rubrics;
+                console.log('[hydrate:east-syriac] Loaded East Syriac rubrics.json.');
+            } catch (e) {
+                console.warn('[hydrate:east-syriac] Failed to parse East Syriac rubrics.json:', e.message);
+            }
+        } else {
+            console.warn('[hydrate:east-syriac] East Syriac rubrics.json not found — Ramsha sequence will be absent.');
+        }
+    } else {
+        console.warn('[hydrate:east-syriac] Network error fetching East Syriac rubrics.json:', rubricsResult.reason);
+    }
+
+    console.log(`[hydrate:east-syriac] Total components in registry: ${appData.components.length}`);
+    appData._loadedTraditions.add('east-syriac');
+    console.log('[hydrate:east-syriac] East Syriac hydration complete.');
+}
+
+
 // ── REVISED selectMode() ──────────────────────────────────────────────────────
 //
 // selectMode() is now async so it can await the correct hydration function
@@ -480,6 +542,28 @@ async function selectMode(mode) {
             `<div class="office-container"><h3>Preparing the Sa'atat...</h3><p>Loading the Ethiopian Book of Hours.</p></div>`;
 
         await hydrateForEthiopianSaatat();
+        isHydrationComplete = true;
+        renderOffice();
+
+    } else if (mode === 'east-syriac') {
+        // ── Church of the East — Ramsha ───────────────────────────────────────
+        document.getElementById('individual-prayers-section').style.display = 'none';
+        document.getElementById('daily-office-section').style.display       = 'flex';
+
+        if (settingsPanel) {
+            settingsPanel.classList.add('sidebar-hidden');
+            settingsPanel.classList.add('mode-hidden');
+        }
+        if (ethSettings) {
+            ethSettings.classList.add('sidebar-hidden');
+            ethSettings.classList.add('mode-hidden');
+        }
+        mainContent.classList.add('sidebar-hidden');
+
+        document.getElementById('office-display').innerHTML =
+            `<div class="office-container"><h3>Preparing Ramsha...</h3><p>Loading the Church of the East Evening Prayer.</p></div>`;
+
+        await hydrateForEastSyriac();
         isHydrationComplete = true;
         renderOffice();
 
@@ -836,6 +920,7 @@ async function renderOffice() {
     const dailyData         = await CalendarEngine.fetchLectionaryData(currentDate);
     const activeRubric      = appData.rubrics.find(r => r.id === resolvedOfficeId);
     const isEthiopianSaatat = resolvedOfficeId === 'ethiopian-saatat';
+    const isEastSyriac      = resolvedOfficeId === 'east-syriac';
 
     // Apply temporal override for Ethiopian Sa'atat if active
     if (isEthiopianSaatat && window._temporalOverride.active && window._temporalOverride.date) {
@@ -1016,7 +1101,11 @@ async function renderOffice() {
     }
 
     // ── Main Rubric Sequence Loop ─────────────────────────────────────────────
-    for (let item of activeRubric?.sequence || []) {
+    const eastSyriacSequence = isEastSyriac
+        ? (appData.eastSyriacRubrics?.['ramsha-sequence'] || [])
+        : [];
+
+    for (let item of (isEastSyriac ? eastSyriacSequence : (activeRubric?.sequence || []))) {
         item = item.trim();
 
         let compId = item.replace('[rite]', rite);

@@ -1,0 +1,32 @@
+[
+  {
+    "id": "esy-opening-formula",
+    "title": "The Opening",
+    "text": "<p class=\"rubric-text\">The Priest begins:</p><p class=\"component-text\">In the name of the Father, and of the Son, and of the Holy Spirit for ever.</p><p class=\"rubric-text\">The Congregation responds:</p><p class=\"component-text\">Amen.</p>"
+  },
+  {
+    "id": "esy-gloria-patri",
+    "title": "Glory be to the Father",
+    "text": "<p class=\"component-text\">Glory be to the Father, and to the Son, and to the Holy Spirit;<br>From everlasting to everlasting. Amen and Amen.</p>"
+  },
+  {
+    "id": "esy-lords-prayer-farced",
+    "title": "The Lord's Prayer (with Qanona)",
+    "text": "<p class=\"rubric-text\">The Lord's Prayer is said, farced with the Qanona (the refrain):</p><p class=\"component-text\">Our Father in heaven, hallowed be your name. Your kingdom come.<br><em>Holy, holy, holy are you, our Father in heaven. Heaven and earth are full of the greatness of your glory. Angels and men cry out to you: Holy, holy, holy are you.</em><br>Our Father in heaven, hallowed be your name. Your kingdom come. Your will be done on earth as in heaven. Give us this day our daily bread. And forgive us our trespasses, as we forgive those who trespass against us. And lead us not into temptation, but deliver us from the evil one. For yours is the kingdom, and the power, and the glory, for ever and ever. Amen.</p>"
+  },
+  {
+    "id": "esy-laku-mara",
+    "title": "Laku Mara (To You, Lord)",
+    "text": "<p class=\"rubric-text\">The Laku Mara, the Hymn of the Resurrection, is chanted:</p><p class=\"component-text\">To you, Lord of all, we give thanks;<br>And you, Jesus Christ, we glorify;<br>For you are the restorer of our bodies,<br>And you are the savior of our souls.</p>"
+  },
+  {
+    "id": "esy-trisagion",
+    "title": "The Trisagion",
+    "text": "<p class=\"rubric-text\">The Trisagion is chanted three times:</p><p class=\"component-text\">Holy God,<br>Holy Mighty,<br>Holy Immortal,<br>Have mercy on us.</p>"
+  },
+  {
+    "id": "esy-variable-marmitha",
+    "title": "The Marmitha",
+    "text": "<p class=\"rubric-text\">[The appointed Marmitha of the Psalter is recited here.]</p>"
+  }
+]
