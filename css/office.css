@@ -498,7 +498,8 @@ h2 { font-family: 'Cinzel', serif; font-size: 2.1em; color: var(--gold); border-
     border-bottom: 0.5px dotted rgba(201,168,76,0.35);
     padding-bottom: 4px;
     width: 100%;
-    opacity: 0.82;
+    opacity: 0.9;
+    line-height: 1.2;
 }
 
 .passage-reference {

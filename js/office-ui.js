@@ -546,9 +546,11 @@ async function selectMode(mode) {
         renderOffice();
 
     } else if (mode === 'east-syriac') {
-        // ── Church of the East — Ramsha ───────────────────────────────────────
+        // ── Church of the East ────────────────────────────────────────────────
         document.getElementById('individual-prayers-section').style.display = 'none';
         document.getElementById('daily-office-section').style.display       = 'flex';
+
+        const esySettings = document.getElementById('east-syriac-settings-panel');
 
         if (settingsPanel) {
             settingsPanel.classList.add('sidebar-hidden');
@@ -558,7 +560,11 @@ async function selectMode(mode) {
             ethSettings.classList.add('sidebar-hidden');
             ethSettings.classList.add('mode-hidden');
         }
-        mainContent.classList.add('sidebar-hidden');
+        if (esySettings) {
+            esySettings.classList.remove('sidebar-hidden');
+            esySettings.classList.remove('mode-hidden');
+        }
+        mainContent.classList.remove('sidebar-hidden');
 
         document.getElementById('office-display').innerHTML =
             `<div class="office-container"><h3>Preparing Ramsha...</h3><p>Loading the Church of the East Evening Prayer.</p></div>`;
@@ -1835,11 +1841,20 @@ async function renderEastSyriac() {
         return;
     }
 
-    const rite      = document.querySelector('input[name="rite"]:checked')?.value || 'rite2';
-    const isMorning = document.querySelector('input[name="office-time"]:checked')?.value === 'morning-office';
-    const sequence  = isMorning
-        ? (appData.eastSyriacRubrics?.['sapra-sequence'] || [])
-        : (appData.eastSyriacRubrics?.['ramsha-sequence'] || []);
+    const rite          = document.querySelector('input[name="rite"]:checked')?.value || 'rite2';
+    const selectedTime  = document.querySelector('input[name="esy-time"]:checked')?.value;
+
+    let sequence, officeTitle;
+    if (selectedTime === 'lelya') {
+        sequence    = appData.eastSyriacRubrics?.['lelya-sequence'] || [];
+        officeTitle = 'Lelya — Night Office';
+    } else if (selectedTime === 'sapra') {
+        sequence    = appData.eastSyriacRubrics?.['sapra-sequence'] || [];
+        officeTitle = 'Sapra — Morning Prayer';
+    } else {
+        sequence    = appData.eastSyriacRubrics?.['ramsha-sequence'] || [];
+        officeTitle = 'Ramsha — Evening Prayer';
+    }
 
     const { season, liturgicalColor } = await CalendarEngine.getSeasonAndFile(currentDate);
     updateSeasonalTheme(liturgicalColor || 'green');
@@ -1853,9 +1868,12 @@ async function renderEastSyriac() {
         return 1 + Math.round(((date.getTime() - week1.getTime()) / 86400000 - 3 + (week1.getDay() + 6) % 7) / 7);
     };
 
-    const weekNum = getWeekNumber(currentDate);
-    const cycle = weekNum % 2 !== 0 ? 'qdham' : 'wathar';
+    const weekNum    = getWeekNumber(currentDate);
+    const cycle      = weekNum % 2 !== 0 ? 'qdham' : 'wathar';
     const cycleLabel = cycle === 'qdham' ? 'Qdham (Before)' : 'Wathar (After)';
+
+    const esyCycleDisplay = document.getElementById('esy-cycle-box');
+    if (esyCycleDisplay) esyCycleDisplay.textContent = cycleLabel;
 
     const marmithaMap = {
         'qdham': {
@@ -1878,8 +1896,29 @@ async function renderEastSyriac() {
         }
     };
 
+    const hulaliMap = {
+        'qdham': {
+            0: ['1', '2', '3', '4', '5'],
+            1: ['18', '19', '20', '21'],
+            2: ['37', '38', '39', '40'],
+            3: ['51', '52', '53', '54'],
+            4: ['69', '70', '71', '72'],
+            5: ['82', '83', '84', '85'],
+            6: ['94', '95', '96', '97']
+        },
+        'wathar': {
+            0: ['105', '106', '107'],
+            1: ['110', '111', '112', '113'],
+            2: ['119'],
+            3: ['120', '121', '122', '123'],
+            4: ['135', '136', '137', '138'],
+            5: ['140', '141', '142'],
+            6: ['145', '146', '147']
+        }
+    };
+
     let officeHtml = `<div class="office-container"><h2>Church of the East</h2>`;
-    officeHtml += `<p class="liturgical-title">${isMorning ? 'Sapra — Morning Prayer' : 'Ramsha — Evening Prayer'}</p>`;
+    officeHtml += `<p class="liturgical-title">${officeTitle}</p>`;
 
     for (let item of sequence) {
         item = item.trim();
@@ -1923,6 +1962,20 @@ async function renderEastSyriac() {
             continue;
         }
 
+        if (item === 'esy-variable-hulali') {
+            const dayOfWeek = currentDate.getDay();
+            const psalmNums = hulaliMap[cycle][dayOfWeek] || hulaliMap[cycle][0];
+
+            officeHtml += `<span class="rubric-text">The Appointed Hulali (Night Psalms — ${cycleLabel} Week)</span>`;
+
+            for (const psNum of psalmNums) {
+                const fullText = await getScriptureText('PSALM ' + psNum);
+                officeHtml += `<h4 class="passage-reference">Psalm ${psNum}</h4>`;
+                officeHtml += `<div class="psalm-block">${formatPsalmAsPoetry(fullText)}</div>`;
+            }
+            continue;
+        }
+
         const comp = appData.components.find(c => c.id === item);
         if (comp) {
             const t = resolveText(comp, rite) || comp.text || '';
@@ -1937,27 +1990,4 @@ async function renderEastSyriac() {
     document.getElementById('date-header').style.display = 'none';
     const saintSection = document.querySelector('.saint-section');
     if (saintSection) saintSection.style.display = 'none';
-}
-
-
-function backToSplash() {
-    document.getElementById('daily-office-section').style.display       = 'none';
-    document.getElementById('individual-prayers-section').style.display = 'none';
-    document.getElementById('prayer-display').style.display             = 'none';
-
-    // Restore body to splash centering layout
-    document.body.style.display        = 'flex';
-    document.body.style.alignItems     = 'center';
-    document.body.style.justifyContent = 'center';
-    document.body.style.height         = '100vh';
-    document.body.style.overflowY      = 'hidden';
-
-    // Scrub all mode/theme state
-    document.body.classList.remove('office-active');
-    document.body.classList.remove('ethiopian-theme');
-    window._forcedOfficeId = undefined;
-
-    document.getElementById('splash-bg').style.display      = 'block';
-    document.getElementById('mode-selection').style.display = 'block';
-    selectedMode = null;
 }
