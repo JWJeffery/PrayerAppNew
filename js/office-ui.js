@@ -510,6 +510,7 @@ async function selectMode(mode) {
 
     const settingsPanel = document.getElementById('settings-panel');
     const ethSettings   = document.getElementById('ethiopian-settings');
+    const esySettings   = document.getElementById('east-syriac-settings');
     const mainContent   = document.getElementById('main-content');
 
     if (mode === 'prayers') {
@@ -532,6 +533,9 @@ async function selectMode(mode) {
             settingsPanel.classList.add('sidebar-hidden');
             settingsPanel.classList.add('mode-hidden');
         }
+        if (esySettings) {
+            esySettings.classList.add('sidebar-hidden', 'mode-hidden');
+        }
         if (ethSettings) {
             ethSettings.classList.remove('mode-hidden');
             ethSettings.classList.add('sidebar-hidden');
@@ -550,21 +554,19 @@ async function selectMode(mode) {
         document.getElementById('individual-prayers-section').style.display = 'none';
         document.getElementById('daily-office-section').style.display       = 'flex';
 
-        const esySettings = document.getElementById('east-syriac-settings-panel');
+        window._forcedOfficeId = 'east-syriac';
 
         if (settingsPanel) {
-            settingsPanel.classList.add('sidebar-hidden');
-            settingsPanel.classList.add('mode-hidden');
+            settingsPanel.classList.add('sidebar-hidden', 'mode-hidden');
         }
         if (ethSettings) {
-            ethSettings.classList.add('sidebar-hidden');
-            ethSettings.classList.add('mode-hidden');
+            ethSettings.classList.add('sidebar-hidden', 'mode-hidden');
         }
         if (esySettings) {
-            esySettings.classList.remove('sidebar-hidden');
             esySettings.classList.remove('mode-hidden');
+            esySettings.classList.add('sidebar-hidden');
         }
-        mainContent.classList.remove('sidebar-hidden');
+        mainContent.classList.add('sidebar-hidden');
 
         document.getElementById('office-display').innerHTML =
             `<div class="office-container"><h3>Preparing Ramsha...</h3><p>Loading the Church of the East Evening Prayer.</p></div>`;
@@ -581,6 +583,9 @@ async function selectMode(mode) {
         if (ethSettings) {
             ethSettings.classList.add('sidebar-hidden');
             ethSettings.classList.add('mode-hidden');
+        }
+        if (esySettings) {
+            esySettings.classList.add('sidebar-hidden', 'mode-hidden');
         }
         if (settingsPanel) {
             settingsPanel.classList.remove('mode-hidden');
@@ -628,11 +633,14 @@ async function init() {
 function toggleSidebar() {
     const bcpPanel = document.getElementById('settings-panel');
     const ethPanel = document.getElementById('ethiopian-settings');
+    const esyPanel = document.getElementById('east-syriac-settings');
     const main     = document.getElementById('main-content');
     const toggle   = document.getElementById('sidebar-toggle');
 
     // Detect active panel by which one is NOT mode-hidden
-    const activePanel = (ethPanel && !ethPanel.classList.contains('mode-hidden')) ? ethPanel : bcpPanel;
+    let activePanel = bcpPanel;
+    if (ethPanel && !ethPanel.classList.contains('mode-hidden')) activePanel = ethPanel;
+    if (esyPanel && !esyPanel.classList.contains('mode-hidden')) activePanel = esyPanel;
 
     const isHidden = activePanel.classList.toggle('sidebar-hidden');
     main.classList.toggle('sidebar-hidden', isHidden);

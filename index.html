@@ -197,27 +197,24 @@
         </div>
     </div>
 
-<div id="east-syriac-settings-panel" class="settings-panel sidebar-hidden mode-hidden">
-    <div class="settings-header">
-        <h3>East Syriac Rite</h3>
-    </div>
+    <!-- Church of the East Liturgical Console -->
+    <div id="east-syriac-settings" class="mode-hidden sidebar-hidden">
+        <h3 style="color:var(--gold); font-family:'Cinzel',serif; font-size:1.15em; letter-spacing:0.08em;">Church of the East</h3>
 
-    <div class="settings-group">
-        <label>The Appointed Hour</label>
-        <div class="radio-group">
+        <div class="setting-group">
+            <strong>The Appointed Hour</strong>
             <label><input type="radio" name="esy-time" value="sapra" checked onchange="renderOffice()"> Sapra (Morning)</label>
             <label><input type="radio" name="esy-time" value="ramsha" onchange="renderOffice()"> Ramsha (Evening)</label>
             <label><input type="radio" name="esy-time" value="lelya" onchange="renderOffice()"> Lelya (Night)</label>
         </div>
-    </div>
 
-    <div class="settings-group">
-        <label>Current Cycle</label>
-        <div id="esy-cycle-box" class="status-box" style="font-family: 'Cinzel', serif; color: var(--gold); border: 1px solid rgba(201,168,76,0.3); padding: 8px; background: rgba(0,0,0,0.2);">
-            Calculating...
+        <div class="setting-group" style="margin-top:14px; border-top:1px solid rgba(201,168,76,0.15); padding-top:14px;">
+            <strong style="display:block; margin-bottom:6px;">Current Cycle</strong>
+            <div id="esy-cycle-box" style="font-family:'Cinzel',serif; font-size:0.9em; color:var(--gold); border:1px solid rgba(201,168,76,0.3); padding:8px; background:rgba(0,0,0,0.2); border-radius:2px;">
+                Calculating...
+            </div>
         </div>
     </div>
-</div>
 
     <!-- Main content area -->
     <div id="main-content">
@@ -230,23 +227,7 @@
             <div id="saint-display" class="saint-grid"></div>
         </div>
     </div>
-<div id="east-syriac-settings-panel" class="settings-panel sidebar-hidden mode-hidden">
-    <div class="settings-header">
-        <h3>East Syriac Console</h3>
-    </div>
-    <div class="settings-group">
-        <label>Select Office</label>
-        <div class="radio-group">
-            <label><input type="radio" name="esy-office-time" value="sapra" checked onchange="renderOffice()"> Sapra (Morning)</label>
-            <label><input type="radio" name="esy-office-time" value="ramsha" onchange="renderOffice()"> Ramsha (Evening)</label>
-            <label><input type="radio" name="esy-office-time" value="lelya" onchange="renderOffice()"> Lelya (Night)</label>
-        </div>
-    </div>
-    <div class="settings-group">
-        <label>Week Cycle</label>
-        <div id="esy-cycle-display" class="status-box">Calculating...</div>
-    </div>
-</div>
+
 </div><!-- /daily-office-section -->
 
 <!-- ── Book of Needs ─────────────────────────────────────────────────────── -->
