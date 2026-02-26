@@ -10,5 +10,16 @@
     "esy-trisagion",
     "esy-karozutha",
     "esy-concluding-blessing"
+  ],
+  "sapra-sequence": [
+    "esy-opening-formula",
+    "esy-gloria-patri",
+    "esy-lords-prayer-farced",
+    "esy-gloria-patri",
+    "esy-sapra-morning-hymn",
+    "esy-variable-sapra-psalms",
+    "esy-trisagion",
+    "esy-karozutha-morning",
+    "esy-concluding-blessing"
   ]
 }

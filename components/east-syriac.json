@@ -58,5 +58,15 @@
     "id": "esy-concluding-blessing",
     "title": "The Concluding Blessing",
     "text": "<p class=\"rubric-text\">The Priest blesses the congregation:</p><p class=\"component-text\">May God, the Lord of all, bless us. May He keep our days in peace, and establish our lives in His grace and mercy, now and always, and for ever and ever.</p><p class=\"rubric-text\">The Congregation responds:</p><p class=\"component-text\">Amen.</p>"
+  },
+  {
+    "id": "esy-sapra-morning-hymn",
+    "title": "The Morning Hymn",
+    "text": "<p class=\"rubric-text\">The Morning Hymn is chanted:</p><p class=\"component-text\">Light has dawned for the righteous, and joy for the upright in heart.<br>Christ our hope has risen from the dead; He has delivered us from darkness and given us light.</p>"
+  },
+  {
+    "id": "esy-karozutha-morning",
+    "title": "The Karozutha (Morning Litany)",
+    "text": "<p class=\"rubric-text\">The Deacon intones the Morning Karozutha:</p><p class=\"component-text\">Let us all stand well in joy and gladness and say: <em>Lord, have mercy.</em><br>For the peace of the whole world and the preservation of the holy churches, we beseech you: <em>Lord, have mercy.</em><br>O Christ, who are the true light, shine in our hearts that we may walk in your truth: <em>Lord, have mercy.</em></p>"
   }
 ]

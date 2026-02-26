@@ -1835,29 +1835,69 @@ async function renderEastSyriac() {
         return;
     }
 
-    const rite     = document.querySelector('input[name="rite"]:checked')?.value || 'rite2';
-    const sequence = appData.eastSyriacRubrics?.['ramsha-sequence'] || [];
+    const rite      = document.querySelector('input[name="rite"]:checked')?.value || 'rite2';
+    const isMorning = document.querySelector('input[name="office-time"]:checked')?.value === 'morning-office';
+    const sequence  = isMorning
+        ? (appData.eastSyriacRubrics?.['sapra-sequence'] || [])
+        : (appData.eastSyriacRubrics?.['ramsha-sequence'] || []);
+
+    // Calculate week of the year to toggle Qdham (Odd) / Wathar (Even)
+    const getWeekNumber = (d) => {
+        const date = new Date(d.getTime());
+        date.setHours(0, 0, 0, 0);
+        date.setDate(date.getDate() + 3 - (date.getDay() + 6) % 7);
+        const week1 = new Date(date.getFullYear(), 0, 4);
+        return 1 + Math.round(((date.getTime() - week1.getTime()) / 86400000 - 3 + (week1.getDay() + 6) % 7) / 7);
+    };
+
+    const weekNum = getWeekNumber(currentDate);
+    const cycle = weekNum % 2 !== 0 ? 'qdham' : 'wathar';
+    const cycleLabel = cycle === 'qdham' ? 'Qdham (Before)' : 'Wathar (After)';
 
     const marmithaMap = {
-        0: ['1',  '2',  '3'],
-        1: ['4',  '5',  '6'],
-        2: ['7',  '8',  '9'],
-        3: ['10', '11', '12'],
-        4: ['13', '14', '15'],
-        5: ['16', '17', '18'],
-        6: ['19', '20', '21']
+        'qdham': {
+            0: ['1',  '2',  '3'],
+            1: ['4',  '5',  '6'],
+            2: ['7',  '8',  '9'],
+            3: ['10', '11', '12'],
+            4: ['13', '14', '15'],
+            5: ['16', '17', '18'],
+            6: ['19', '20', '21']
+        },
+        'wathar': {
+            0: ['22', '23', '24'],
+            1: ['25', '26', '27'],
+            2: ['28', '29', '30'],
+            3: ['31', '32', '33'],
+            4: ['34', '35', '36'],
+            5: ['37', '38', '39'],
+            6: ['40', '41', '42']
+        }
     };
 
     let officeHtml = `<div class="office-container"><h2>Church of the East</h2>`;
-    officeHtml += `<p class="liturgical-title">Ramsha — Evening Prayer</p>`;
+    officeHtml += `<p class="liturgical-title">${isMorning ? 'Sapra — Morning Prayer' : 'Ramsha — Evening Prayer'}</p>`;
 
     for (let item of sequence) {
         item = item.trim();
 
+        if (item === 'esy-variable-sapra-psalms') {
+            const sapraPsalms = ['100', '91', '148', '150'];
+            officeHtml += `<span class="rubric-text">The Appointed Psalms of the Morning</span>`;
+            for (const psNum of sapraPsalms) {
+                const fullText = await getScriptureText('PSALM ' + psNum);
+                officeHtml += `<h4 class="passage-reference">Psalm ${psNum}</h4>`;
+                officeHtml += `<div class="psalm-block">${formatPsalmAsPoetry(fullText)}</div>`;
+            }
+            continue;
+        }
+
         if (item === 'esy-variable-marmitha') {
-            const dayOfWeek  = currentDate.getDay();
-            const psalmNums  = marmithaMap[dayOfWeek] || marmithaMap[0];
-            officeHtml += `<span class="rubric-text">The Marmitha (Appointed Psalms)</span>`;
+            const dayOfWeek = currentDate.getDay();
+            const psalmNums = marmithaMap[cycle][dayOfWeek] || marmithaMap[cycle][0];
+
+            officeHtml += `<span class="rubric-text">The Marmitha (Appointed Psalms — ${cycleLabel} Week)</span>`;
+
             for (const psNum of psalmNums) {
                 const fullText = await getScriptureText('PSALM ' + psNum);
                 officeHtml += `<h4 class="passage-reference">Psalm ${psNum}</h4>`;
