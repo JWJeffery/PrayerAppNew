@@ -779,6 +779,12 @@ select { width: 100%; padding: 10px; background: #1e1a14; color: #c8bfa8; border
     color: #C0392B;
 }
 
+/* ── Light/Manuscript mode: restore traditional Qay ink ── */
+body.light-mode .ethiopian-theme .rubric-text {
+    color: #8B0000;
+    border-left-color: #8B0000;
+}
+
 /* ── Ethiopian Prayer Text (heavier voice weight) ── */
 .ethiopian-theme .component-text {
     font-weight: 500;

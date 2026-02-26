@@ -25,9 +25,10 @@
         if (tooltip.style.display === 'block') {
             const x = e.clientX + 16;
             const y = e.clientY - 10;
-            const overflowRight = x + 296 > window.innerWidth;
-            tooltip.style.left = (overflowRight ? e.clientX - 296 : x) + 'px';
-            tooltip.style.top  = Math.max(8, y) + 'px';
+            const overflowRight  = x + 296 > window.innerWidth;
+            const overflowBottom = y + tooltip.offsetHeight > window.innerHeight;
+            tooltip.style.left = (overflowRight  ? e.clientX - 296 : x) + 'px';
+            tooltip.style.top  = (overflowBottom ? e.clientY - tooltip.offsetHeight - 8 : Math.max(8, y)) + 'px';
         }
     });
 })();

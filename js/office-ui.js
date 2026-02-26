@@ -67,6 +67,7 @@
 let appData = null;
 let currentDate = new Date();
 let selectedMode = null;
+let isHydrationComplete = false;
 
 // ── Ethiopian Temporal Override ───────────────────────────────────────────────
 window._temporalOverride = { active: false, date: null, hourId: null };
@@ -479,6 +480,7 @@ async function selectMode(mode) {
             `<div class="office-container"><h3>Preparing the Sa'atat...</h3><p>Loading the Ethiopian Book of Hours.</p></div>`;
 
         await hydrateForEthiopianSaatat();
+        isHydrationComplete = true;
         renderOffice();
 
     } else {
@@ -502,6 +504,7 @@ async function selectMode(mode) {
         await hydrateForDailyOffice();
         loadSettings();
         updateSidebarForOffice();
+        isHydrationComplete = true;
         renderOffice();
     }
 }
@@ -791,6 +794,12 @@ function getEthiopianHourInfo() {
 
 // ── Office Renderer ──────────────────────────────────────────────────────────
 async function renderOffice() {
+    if (!isHydrationComplete) {
+        // Hydration has not finished yet — a sidebar control or date navigator
+        // fired before the Promise chain completed. Silently bail out; selectMode()
+        // will call renderOffice() itself once hydration is done.
+        return;
+    }
     if (!appData || !appData.rubrics || !Array.isArray(appData.rubrics)) {
         document.getElementById('office-display').innerHTML =
             `<div class="office-container"><h3>Loading...</h3><p>Data still loading.</p></div>`;
@@ -1357,30 +1366,31 @@ async function renderOffice() {
             officeHtml += `<span class="rubric-text">The Senkessar: ${ethDateLabel}</span>`;
 
             if (indexEntry) {
-                // 5. Fetch the per-day narrative file (cached in appData.senkessarCache)
+                // 5. Fetch the monthly narrative file (cached in appData.senkessarCache by monthSlug)
                 if (!appData.senkessarCache) appData.senkessarCache = {};
-                const cacheKey = `${monthSlug}-${ethDate.day}`;
-                if (!appData.senkessarCache[cacheKey]) {
+                if (!appData.senkessarCache[monthSlug]) {
                     try {
-                        const dayRes = await fetch(`data/synaxarium/ethiopian/${monthSlug}/${ethDate.day}.json`);
-                        if (dayRes.ok) appData.senkessarCache[cacheKey] = await dayRes.json();
+                        const monthRes = await fetch(`data/synaxarium/ethiopian/${monthSlug}.json`);
+                        if (monthRes.ok) appData.senkessarCache[monthSlug] = await monthRes.json();
                     } catch (err) {
-                        console.warn(`[eth-saints-commemoration] Day file load failed: ${monthSlug}/${ethDate.day}.json`, err);
+                        console.warn(`[eth-saints-commemoration] Month file load failed: ${monthSlug}.json`, err);
                     }
                 }
-                const dayData = appData.senkessarCache[cacheKey];
+                const dayData = appData.senkessarCache[monthSlug]
+                    ? appData.senkessarCache[monthSlug][ethDate.day]
+                    : null;
 
                 if (dayData) {
-                    // Render title and narrative from the day file
+                    // Render title and narrative from the monthly file
                     officeHtml += `<div class="component-text"><strong style="color:#d4af37">${dayData.title || indexEntry.title}</strong></div>`;
                     if (dayData.narrative) {
                         const normalizedNarrative = dayData.narrative.replace(/\\n\\n/g, '\n\n').replace(/\\n/g, '\n');
                         officeHtml += `<div class="component-text" style="white-space:normal">${applyParagraphBreaks(normalizedNarrative)}</div>`;
                     }
                 } else {
-                    // Day file missing — fall back to the index title alone
+                    // Day entry missing — fall back to the index title alone
                     officeHtml += `<div class="component-text"><strong style="color:#d4af37">${indexEntry.title}</strong></div>`;
-                    console.warn(`[eth-saints-commemoration] No day file found for ${monthSlug}/${ethDate.day}`);
+                    console.warn(`[eth-saints-commemoration] No entry for day ${ethDate.day} in ${monthSlug}.json`);
                 }
             } else {
                 // 6. No index entry — secondary check: Oriental/Ethiopian saints in Gregorian saints data
