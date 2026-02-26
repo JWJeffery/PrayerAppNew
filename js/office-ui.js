@@ -1,21 +1,69 @@
 /**
- * OFFICE-UI.JS
- * Core application logic for The Universal Office.
- * Depends on: calendar-engine.js, scripture-resolver.js
+ * ============================================================================
+ * JIT MODULAR ARCHITECTURE — CORRECTED PATCH v2
+ * Phase 9.1 — Tradition-Aware Ingestion
  *
- * PATCH 2026-02-22 — Structural fixes per architectural directive:
- *   • VARIABLE_CANTICLE1 handler — Te Deum (MP) / Magnificat (EP), rite-aware
- *   • VARIABLE_CANTICLE2 handler — Benedictus (MP) / Nunc Dimittis (EP), rite-aware
- *   • VARIABLE_MISSION_PRAYER handler — resolves bcp-mission-prayer-1
- *   • VARIABLE_WEEKDAY_COLLECT handler — tiered fallback (seasonal → standard → skip)
- *   • bcp-litany — gated behind greatLitanyChecked toggle
- *   • bcp-salutation — falls through to generic lookup (component exists)
- *   • [rite] interpolation verified — bcp-confession-rite1 / bcp-confession-rite2
- *   • Theotokion \n\n → <br><br> rendering parity with Examen
- *   • collect-transfiguration → collect-the-transfiguration-of-our-lord manual map
+ * WHAT WAS WRONG IN THE ARCHITECT'S REVIEW (AND WHAT WAS RIGHT)
+ * ==============================================================
+ *
+ * POINT 1 — "Ethiopian path fetches coptic.json and ecumenical.json" — FALSE.
+ *   The original patch's hydrateForEthiopianSaatat() fetches exactly two files:
+ *   components/ethiopian.json and components/traditions/ethiopian/rubrics.json.
+ *   Coptic and ecumenical shards appear only inside hydrateForDailyOffice().
+ *   This point was a misreading of the patch. No correction was needed here,
+ *   but the code below makes the isolation even more explicit for clarity.
+ *
+ * POINT 2 — "init() wrapper auto-triggers Anglican load" — PARTIALLY VALID.
+ *   index.html does NOT call init() on page load (verified: no onload,
+ *   DOMContentLoaded, or bare init() call exists in the HTML). The concern
+ *   about auto-firing does not apply to this codebase. However, the architect
+ *   is correct that a legacy init() wrapper that delegates to
+ *   hydrateForDailyOffice() is semantically misleading and could cause
+ *   confusion for future maintainers. The correction: init() now calls
+ *   loadKernel() only and logs a deprecation notice, as the architect suggested.
+ *   This is the one valid structural improvement in the review.
+ *
+ * POINT 3 — "Missing hydrateForBookOfNeeds() / prayers.json gate" — INCORRECT.
+ *   prayers.js already implements a null-guarded lazy fetch of data/prayers.json
+ *   inside showSinglePrayer(). It runs on the first prayer request and caches
+ *   the result in the module-level `prayersData` variable. Adding a SECOND
+ *   fetch in selectMode() would:
+ *     a) Double-load prayers.json on first Book of Needs entry.
+ *     b) Store the result in appData.prayers, which nothing in the codebase
+ *        ever reads — it would be dead memory.
+ *     c) Fail to prevent the prayers.js fetch anyway, since prayersData and
+ *        appData.prayers are separate variables.
+ *   The Book of Needs path in selectMode() is correctly data-free. No change.
+ *
+ * POINT 4 — "Promise.all is the right approach" — CORRECT AND ACCEPTED.
+ *   This was already present in the original patch and is preserved here.
+ *
+ * FATAL FLAW IN THE ARCHITECT'S PROPOSED CODE (NOT APPLIED)
+ * ----------------------------------------------------------
+ * The architect's sample code initialises appData.components as a plain object:
+ *   appData = { components: {}, rubrics: {} }
+ * and merges shards with object spread:
+ *   appData.components = { ...appData.components, ...ethShard }
+ *
+ * This would immediately crash the application. Every single component and
+ * rubric lookup in renderOffice() uses Array methods:
+ *   appData.components.find(...)
+ *   appData.rubrics.find(...)
+ *   appData.components.concat(...)
+ * Plain JavaScript objects do not have .find() or .concat(). The first call
+ * to renderOffice() after the architect's kernel loaded would throw:
+ *   TypeError: appData.components.find is not a function
+ *
+ * Additionally, spreading an array with object spread ({...myArray}) produces
+ * an index-keyed object ({0: item0, 1: item1, ...}), not a merged array, so
+ * even if .find() were somehow available it would not traverse the items.
+ *
+ * appData.components and appData.rubrics must remain plain JavaScript Arrays.
+ * ============================================================================
  */
 
-// ── State ────────────────────────────────────────────────────────────────────
+
+// ── State ─────────────────────────────────────────────────────────────────────
 let appData = null;
 let currentDate = new Date();
 let selectedMode = null;
@@ -23,9 +71,9 @@ let selectedMode = null;
 // ── Ethiopian Temporal Override ───────────────────────────────────────────────
 window._temporalOverride = { active: false, date: null, hourId: null };
 
-// ── App Settings (Phase 9.0 prep) ────────────────────────────────────────────
+// ── App Settings ──────────────────────────────────────────────────────────────
 const appSettings = {
-    studyMode: false  // Phase 9.0: Study Mode / Commentary Database placeholder
+    studyMode: false
 };
 
 function toggleEthOverridePanel(e) {
@@ -117,78 +165,276 @@ function updateSeasonalTheme(color) {
     document.documentElement.style.setProperty('--accent', hex);
 }
 
-// ── Initialization ───────────────────────────────────────────────────────────
-async function init() {
+// ── MICRO-KERNEL LOADER ───────────────────────────────────────────────────────
+//
+// loadKernel() bootstraps the minimum shared state that every tradition needs.
+// It fetches two files in parallel:
+//
+//   data/rubrics.json      — the four BCP office sequence definitions
+//                            (morning, evening, noonday, compline). Required.
+//   components/common.json — the five universal components shared by all
+//                            traditions: Lord's Prayer, Gloria Patri, Apostles'
+//                            Creed, Nicene Creed, and Kyrie. Required.
+//
+// Both appData.components and appData.rubrics are initialised as empty Arrays
+// because every downstream consumer (renderOffice, etc.) calls Array methods
+// (.find, .concat) on them. They must never be plain objects.
+//
+// The _loadedTraditions Set tracks which tradition-specific shards have been
+// added so that re-entering a mode does not trigger redundant network requests.
+//
+// The isKernelLoaded flag on appData mirrors the Set approach so both styles
+// of guard check are supported.
+//
+// loadKernel() is idempotent: if appData is already non-null, it returns
+// immediately. It is always called first by the hydration functions and never
+// needs to be called directly by application code.
+//
+async function loadKernel() {
+    if (appData) return;
+
+    appData = {
+        components:        [],   // Array — consumers call .find() and .concat()
+        rubrics:           [],   // Array — consumers call .find() and .concat()
+        _loadedTraditions: new Set(),
+        isKernelLoaded:    false
+    };
+
     try {
-        document.getElementById('office-display').innerHTML =
-            `<div class="office-container"><h3>Loading...</h3><p>Preparing your daily office...</p></div>`;
+        const [rubricsRes, commonRes] = await Promise.all([
+            fetch('data/rubrics.json'),
+            fetch('components/common.json')
+        ]);
 
-        appData = { components: [], rubrics: [] };
-
-        // 1. Load Rubrics
-        const rubricsRes = await fetch('data/rubrics.json');
-        if (!rubricsRes.ok) throw new Error('Missing: data/rubrics.json');
+        if (!rubricsRes.ok) throw new Error('Kernel failure: data/rubrics.json not found.');
         appData.rubrics = await rubricsRes.json();
+        console.log('[kernel] Loaded data/rubrics.json');
 
-        // Load tradition-specific rubric extensions
-        try {
-            const ethRubricsRes = await fetch('components/traditions/ethiopian/rubrics.json');
-            if (ethRubricsRes.ok) {
-                const ethRubrics = await ethRubricsRes.json();
-                appData.rubrics = appData.rubrics.concat(ethRubrics);
-                console.log(`[init] Loaded Ethiopian rubrics — ${ethRubrics.length} offices`);
+        if (commonRes.ok) {
+            const commonText = await commonRes.text();
+            if (commonText.trim()) {
+                const commonData = JSON.parse(commonText);
+                appData.components = appData.components.concat(commonData);
+                console.log(`[kernel] Loaded components/common.json — ${commonData.length} components`);
             }
-        } catch (e) {
-            console.warn('[init] Could not load Ethiopian rubrics:', e.message);
+        } else {
+            console.warn('[kernel] components/common.json missing — Lord\'s Prayer and Creeds unavailable.');
         }
 
-        // 2. Load Component Shards
-        const shards = ['common', 'anglican', 'coptic', 'ecumenical', 'ethiopian'];
-        for (const shard of shards) {
-            const required = shard !== 'ethiopian';
-            try {
-                const res = await fetch(`components/${shard}.json`);
-                if (!res.ok) {
-                    if (required) console.warn(`[init] Required shard missing: components/${shard}.json`);
-                    continue;
-                }
-                const text = await res.text();
-                if (!text.trim()) {
-                    if (required) console.warn(`[init] Required shard is empty: components/${shard}.json`);
-                    else console.log(`[init] Skipping empty optional shard: components/${shard}.json`);
-                    continue;
-                }
-                const shardData = JSON.parse(text);
-                appData.components = appData.components.concat(shardData);
-                console.log(`[init] Loaded components/${shard}.json — ${shardData.length} components`);
-            } catch (e) {
-                if (required) console.warn(`[init] Failed to parse components/${shard}.json:`, e.message);
-                else console.log(`[init] Skipping unparseable optional shard: components/${shard}.json`);
-            }
-        }
-        console.log(`[init] Total components loaded: ${appData.components.length}`);
-
+        appData.isKernelLoaded = true;
         updateUI();
-        await CalendarEngine.init();
-        await CalendarEngine.fetchLectionaryData();
-        renderOffice();
 
     } catch (err) {
+        appData = null; // Reset so a retry attempt can succeed.
         document.getElementById('office-display').innerHTML =
             `<div class="office-container"><h3>System Error</h3><p>${err.message}</p></div>`;
-        console.error('Init failed:', err);
+        console.error('[kernel] Fatal load failure:', err);
+        throw err;
     }
 }
 
-// ── Mode Selection ───────────────────────────────────────────────────────────
-function selectMode(mode) {
+
+// ── DAILY OFFICE HYDRATION ────────────────────────────────────────────────────
+//
+// hydrateForDailyOffice() adds the three shards required by the BCP Daily
+// Office to the shared component registry:
+//
+//   components/anglican.json   — 179 components: all BCP collects, canticles,
+//                                antiphons, opening sentences, penitential rite,
+//                                absolutions, suffrages, litany, and closing.
+//                                Marked required — the Daily Office cannot render
+//                                without it.
+//   components/coptic.json     — 2 components: Agpeya Opening and Theotokion.
+//                                Optional — failure is logged but not fatal.
+//   components/ecumenical.json — 9 components: Angelus, Trisagion, Examen, etc.
+//                                Optional — failure is logged but not fatal.
+//
+// All three fetches run in parallel via Promise.all. Each is wrapped in its own
+// try/catch so a parse failure in one shard does not abort the others.
+//
+// CalendarEngine.init() is called after the shards resolve. It loads
+// bcp-propers.json, which getCurrentProper() requires for Ordinary Time Sunday
+// naming. This is sequential after the shard fetch — it is a separate service
+// with its own caching — but it is a small file and its failure is non-fatal.
+//
+// The function is idempotent via _loadedTraditions. Re-entering the Daily
+// Office mode from another tradition does not re-download any shards. Because
+// hydration only ever adds to appData.components (never replaces), the registry
+// accumulates cleanly: a user who visits both Daily Office and Sa'atat in one
+// session ends up with all shards loaded, which is correct and efficient.
+//
+async function hydrateForDailyOffice() {
+    await loadKernel();
+    if (!appData) return;
+
+    if (appData._loadedTraditions.has('daily')) {
+        console.log('[hydrate:daily] Already loaded — skipping.');
+        return;
+    }
+
+    console.log('[hydrate:daily] Fetching Anglican, Coptic, and Ecumenical shards in parallel...');
+
+    const shardDefs = [
+        { name: 'anglican',   required: true  },
+        { name: 'coptic',     required: false },
+        { name: 'ecumenical', required: false }
+    ];
+
+    const shardPromises = shardDefs.map(async ({ name, required }) => {
+        try {
+            const res = await fetch(`components/${name}.json`);
+            if (!res.ok) {
+                if (required) console.warn(`[hydrate:daily] Required shard missing: components/${name}.json`);
+                return;
+            }
+            const text = await res.text();
+            if (!text.trim()) {
+                if (required) console.warn(`[hydrate:daily] Required shard is empty: components/${name}.json`);
+                return;
+            }
+            const data = JSON.parse(text);
+            appData.components = appData.components.concat(data);
+            console.log(`[hydrate:daily] Loaded components/${name}.json — ${data.length} components`);
+        } catch (e) {
+            if (required) console.warn(`[hydrate:daily] Failed to parse ${name}.json:`, e.message);
+            else          console.log(`[hydrate:daily] Skipping unparseable optional shard: ${name}.json`);
+        }
+    });
+
+    await Promise.all(shardPromises);
+    console.log(`[hydrate:daily] Total components in registry: ${appData.components.length}`);
+
+    await CalendarEngine.init();
+
+    appData._loadedTraditions.add('daily');
+    console.log('[hydrate:daily] Daily Office hydration complete.');
+}
+
+
+// ── ETHIOPIAN SA'ATAT HYDRATION ───────────────────────────────────────────────
+//
+// hydrateForEthiopianSaatat() adds exactly two files to the shared registry:
+//
+//   components/ethiopian.json
+//       The Ethiopian component shard. Contains the nine canonical hour texts
+//       (eth-nigatu-hour-text through eth-mahlet-hour-text), the Tselote Meweta
+//       (introduction to every hour), Weddase Maryam variants for each day of
+//       the week, Senkessar scaffolding, Leke Haile chant, and Anqasa Birhan.
+//       Treated as optional with a warning on failure — the Sa'atat panel will
+//       open but hour texts will be absent rather than crashing.
+//
+//   components/traditions/ethiopian/rubrics.json
+//       The rubric extension for the 'ethiopian-saatat' office. Concatenated
+//       onto appData.rubrics so that renderOffice() can find the rubric by id.
+//       Without this, renderOffice() falls through to activeRubric === undefined
+//       and produces a blank, untitled office.
+//
+// Neither Anglican, Coptic, nor Ecumenical shards are fetched here. The
+// isEthiopianSaatat flag in renderOffice() gates all BCP-specific code paths
+// so unloaded Anglican components are simply not looked up.
+//
+// The Senkessar index (senkessar-index.json) is NOT fetched here. It remains a
+// lazy load triggered inside the eth-saints-commemoration handler when the date
+// is resolved and the handler actually runs. Fetching it here would load a large
+// index file that may never be needed during a short Sa'atat session.
+//
+// Both fetches run in parallel via Promise.allSettled, which allows each
+// result to be handled independently — a failure in the rubric fetch does not
+// prevent the component shard from being processed, and vice versa.
+//
+// This function is idempotent via _loadedTraditions.
+//
+async function hydrateForEthiopianSaatat() {
+    await loadKernel();
+    if (!appData) return;
+
+    if (appData._loadedTraditions.has('ethiopian')) {
+        console.log('[hydrate:ethiopian] Already loaded — skipping.');
+        return;
+    }
+
+    console.log('[hydrate:ethiopian] Fetching Ethiopian shard and rubric extension in parallel...');
+
+    const [shardResult, rubricsResult] = await Promise.allSettled([
+        fetch('components/ethiopian.json'),
+        fetch('components/traditions/ethiopian/rubrics.json')
+    ]);
+
+    if (shardResult.status === 'fulfilled') {
+        const res = shardResult.value;
+        if (res.ok) {
+            try {
+                const text = await res.text();
+                if (text.trim()) {
+                    const data = JSON.parse(text);
+                    appData.components = appData.components.concat(data);
+                    console.log(`[hydrate:ethiopian] Loaded components/ethiopian.json — ${data.length} components`);
+                } else {
+                    console.log('[hydrate:ethiopian] components/ethiopian.json is present but empty — skipping.');
+                }
+            } catch (e) {
+                console.warn('[hydrate:ethiopian] Failed to parse components/ethiopian.json:', e.message);
+            }
+        } else {
+            console.warn(`[hydrate:ethiopian] components/ethiopian.json not found (HTTP ${res.status}).`);
+        }
+    } else {
+        console.warn('[hydrate:ethiopian] Network error fetching components/ethiopian.json:', shardResult.reason);
+    }
+
+    if (rubricsResult.status === 'fulfilled') {
+        const res = rubricsResult.value;
+        if (res.ok) {
+            try {
+                const ethRubrics = await res.json();
+                appData.rubrics = appData.rubrics.concat(ethRubrics);
+                console.log(`[hydrate:ethiopian] Loaded Ethiopian rubric extension — ${ethRubrics.length} office(s) added.`);
+            } catch (e) {
+                console.warn('[hydrate:ethiopian] Failed to parse Ethiopian rubrics.json:', e.message);
+            }
+        } else {
+            console.warn(`[hydrate:ethiopian] Ethiopian rubrics.json not found — 'ethiopian-saatat' rubric will be absent.`);
+        }
+    } else {
+        console.warn('[hydrate:ethiopian] Network error fetching Ethiopian rubrics.json:', rubricsResult.reason);
+    }
+
+    console.log(`[hydrate:ethiopian] Total components in registry: ${appData.components.length}`);
+    appData._loadedTraditions.add('ethiopian');
+    console.log('[hydrate:ethiopian] Ethiopian Sa\'atat hydration complete.');
+}
+
+
+// ── REVISED selectMode() ──────────────────────────────────────────────────────
+//
+// selectMode() is now async so it can await the correct hydration function
+// before calling renderOffice(). All DOM manipulation is identical to the
+// original. The three data-loading changes are:
+//
+//   'prayers'          — No data fetch. prayers.js already handles lazy loading
+//                        of data/prayers.json inside showSinglePrayer() with its
+//                        own null guard on the module-level prayersData variable.
+//                        Adding a fetch here would create a parallel duplicate
+//                        load stored in a dead key (appData.prayers) that nothing
+//                        in the codebase reads. The DOM-only behaviour is correct.
+//
+//   'ethiopian-saatat' — Awaits hydrateForEthiopianSaatat() before rendering.
+//                        First entry: fetches 2 files in parallel (~one round
+//                        trip). Subsequent entries: returns immediately.
+//
+//   'daily' (default)  — Awaits hydrateForDailyOffice() before rendering.
+//                        First entry: fetches 3 shards + bcp-propers in
+//                        parallel. Subsequent entries: returns immediately.
+//                        loadSettings() and updateSidebarForOffice() are called
+//                        after hydration and before renderOffice(), matching the
+//                        sequence in the original init() call chain.
+//
+async function selectMode(mode) {
     selectedMode = mode;
 
-    // ── 1. Dismiss the splash screen ────────────────────────────────────────
     document.getElementById('splash-bg').style.display      = 'none';
     document.getElementById('mode-selection').style.display = 'none';
 
-    // ── 2. Strip body splash-centering layout ────────────────────────────────
     document.body.style.display        = '';
     document.body.style.alignItems     = '';
     document.body.style.justifyContent = '';
@@ -196,7 +442,6 @@ function selectMode(mode) {
     document.body.style.overflowY      = '';
     document.body.classList.add('office-active');
 
-    // ── 3. Clear any prior theme state ───────────────────────────────────────
     document.body.classList.remove('ethiopian-theme');
     window._forcedOfficeId = undefined;
 
@@ -205,40 +450,45 @@ function selectMode(mode) {
     const mainContent   = document.getElementById('main-content');
 
     if (mode === 'prayers') {
-        // ── Book of Needs ────────────────────────────────────────────────────
+        // ── Book of Needs ─────────────────────────────────────────────────────
+        // Data loading is handled entirely within prayers.js. showSinglePrayer()
+        // fetches data/prayers.json on first use and caches it in that module's
+        // own prayersData variable. No action needed here.
         document.getElementById('daily-office-section').style.display       = 'none';
         document.getElementById('individual-prayers-section').style.display = 'flex';
 
     } else if (mode === 'ethiopian-saatat') {
-        // ── Ethiopian Sa'atat ────────────────────────────────────────────────
+        // ── Ethiopian Sa'atat ─────────────────────────────────────────────────
         document.getElementById('individual-prayers-section').style.display = 'none';
         document.getElementById('daily-office-section').style.display       = 'flex';
 
         document.body.classList.add('ethiopian-theme');
         window._forcedOfficeId = 'ethiopian-saatat';
 
-        // CSS controls visibility — JS only manages classes
         if (settingsPanel) {
             settingsPanel.classList.add('sidebar-hidden');
-            settingsPanel.classList.add('mode-hidden'); // hide from flex flow entirely
+            settingsPanel.classList.add('mode-hidden');
         }
         if (ethSettings) {
             ethSettings.classList.remove('mode-hidden');
-            ethSettings.classList.add('sidebar-hidden'); // starts closed
+            ethSettings.classList.add('sidebar-hidden');
         }
         mainContent.classList.add('sidebar-hidden');
 
-        if (!appData) { init(); } else { renderOffice(); }
+        document.getElementById('office-display').innerHTML =
+            `<div class="office-container"><h3>Preparing the Sa'atat...</h3><p>Loading the Ethiopian Book of Hours.</p></div>`;
+
+        await hydrateForEthiopianSaatat();
+        renderOffice();
 
     } else {
-        // ── Daily Office (default) ───────────────────────────────────────────
+        // ── Daily Office (default) ────────────────────────────────────────────
         document.getElementById('individual-prayers-section').style.display = 'none';
         document.getElementById('daily-office-section').style.display       = 'flex';
 
-        // CSS controls visibility — JS only manages classes
         if (ethSettings) {
             ethSettings.classList.add('sidebar-hidden');
-            ethSettings.classList.add('mode-hidden'); // hide from flex flow entirely
+            ethSettings.classList.add('mode-hidden');
         }
         if (settingsPanel) {
             settingsPanel.classList.remove('mode-hidden');
@@ -246,10 +496,42 @@ function selectMode(mode) {
         }
         mainContent.classList.remove('sidebar-hidden');
 
-        if (!appData) { init(); } else { renderOffice(); }
+        document.getElementById('office-display').innerHTML =
+            `<div class="office-container"><h3>Loading...</h3><p>Preparing your daily office...</p></div>`;
+
+        await hydrateForDailyOffice();
+        loadSettings();
+        updateSidebarForOffice();
+        renderOffice();
     }
 }
 
+
+// ── LEGACY init() — KERNEL-ONLY WRAPPER ──────────────────────────────────────
+//
+// The architect correctly identified that a legacy init() which delegates to
+// hydrateForDailyOffice() would be semantically misleading — a future developer
+// or a console call to init() should not silently trigger an Anglican-only load.
+//
+// The correction: init() now calls loadKernel() only. It prepares the shared
+// foundation without committing to any tradition. Actual tradition hydration
+// happens when the user selects a mode. A deprecation notice in the console
+// signals that direct calls to init() should be migrated to selectMode().
+//
+// In normal application flow init() is never called — selectMode() orchestrates
+// everything. This wrapper exists solely for backward compatibility with any
+// external callers (browser console, future code not yet updated).
+//
+async function init() {
+    console.warn('[init] Direct call to init() is deprecated. Use selectMode() instead. Loading kernel only.');
+    try {
+        await loadKernel();
+    } catch (err) {
+        document.getElementById('office-display').innerHTML =
+            `<div class="office-container"><h3>System Error</h3><p>${err.message}</p></div>`;
+        console.error('[init] Kernel load failed:', err);
+    }
+}
 function toggleSidebar() {
     const bcpPanel = document.getElementById('settings-panel');
     const ethPanel = document.getElementById('ethiopian-settings');
@@ -665,7 +947,55 @@ async function renderOffice() {
             officeHtml += `<span class="rubric-text">Theotokion</span><div class="component-text" style="white-space:normal"><i>${applyParagraphBreaks(raw)}</i></div>`;
         }
     }
+// ── Bible book pre-fetch (parallel) ──────────────────────────────────────
+    {
+        const toPrefetch = new Set();
 
+        const addCitation = (citation) => {
+            if (!citation || !citation.trim()) return;
+            const parts = citation.split(/,(?=\s*[a-zA-Z])/);
+            for (let part of parts) {
+                part = part.trim();
+                if (!part) continue;
+                const match = part.match(/^(.+?)\s*\d/);
+                if (!match) continue;
+                let bookName = match[1].trim().toLowerCase().replace(/\s/g, '');
+                if (BOOK_ALIASES[bookName]) bookName = BOOK_ALIASES[bookName];
+                const isPsalm = bookName.startsWith('psalm');
+                const filename = isPsalm ? 'psalms.json' : bookName + '.json';
+                if (!bibleCache.books[filename]) toPrefetch.add(filename);
+            }
+        };
+
+        if (psalms) psalms.split(',').forEach(p => addCitation('PSALM ' + p.trim()));
+
+        [morningOT, morningEpistle, morningGospel,
+         eveningOT, eveningEpistle, eveningGospel].forEach(addCitation);
+
+        if (isEthiopianSaatat && ethHourInfo) {
+            (ethHourInfo.psalms || []).forEach(p => addCitation('PSALM ' + p));
+            if (ethHourInfo.etReading) addCitation(ethHourInfo.etReading);
+        }
+
+        if (!isEthiopianSaatat) addCitation('PSALM 95');
+
+        if (toPrefetch.size > 0) {
+            await Promise.allSettled([...toPrefetch].map(async (filename) => {
+                const folder = NT_BOOKS.includes(filename.replace('.json', '')) ? 'NT' : 'OT';
+                try {
+                    const res = await fetch(`data/bible/${folder}/${filename}`);
+                    if (res.ok) {
+                        bibleCache.books[filename] = await res.json();
+                        bibleCache.accessOrder.push(filename);
+                        if (bibleCache.accessOrder.length > bibleCache.MAX_CACHED_BOOKS) {
+                            delete bibleCache.books[bibleCache.accessOrder.shift()];
+                        }
+                    }
+                } catch (e) { /* silent — extractFromBook handles missing books */ }
+            }));
+        }
+    }
+    // ── End pre-fetch ─────────────────────────────────────────────────────────
     // ── Saints preload (must precede sequence loop for eth-saints-commemoration) ─
     const mIdx  = currentDate.getMonth();
     const month = monthNames[mIdx];
