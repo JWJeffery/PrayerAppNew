@@ -1841,6 +1841,9 @@ async function renderEastSyriac() {
         ? (appData.eastSyriacRubrics?.['sapra-sequence'] || [])
         : (appData.eastSyriacRubrics?.['ramsha-sequence'] || []);
 
+    const { season, liturgicalColor } = await CalendarEngine.getSeasonAndFile(currentDate);
+    updateSeasonalTheme(liturgicalColor || 'green');
+
     // Calculate week of the year to toggle Qdham (Odd) / Wathar (Even)
     const getWeekNumber = (d) => {
         const date = new Date(d.getTime());
@@ -1880,6 +1883,20 @@ async function renderEastSyriac() {
 
     for (let item of sequence) {
         item = item.trim();
+
+        if (item === 'esy-variable-seasonal-onitha') {
+            const onithaId = season === 'lent'   ? 'esy-onitha-lent'
+                           : season === 'easter' ? 'esy-onitha-easter'
+                           :                       'esy-onitha-ordinary';
+            const onithaComp = appData.components.find(c => c.id === onithaId);
+            if (onithaComp) {
+                const t = resolveText(onithaComp, rite) || onithaComp.text || '';
+                officeHtml += `<span class="rubric-text">${onithaComp.title || 'Onitha'}</span><span class="component-text">${t}</span>`;
+            } else {
+                console.warn(`[renderEastSyriac] Seasonal Onitha not found: ${onithaId}`);
+            }
+            continue;
+        }
 
         if (item === 'esy-variable-sapra-psalms') {
             const sapraPsalms = ['100', '91', '148', '150'];

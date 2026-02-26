@@ -68,5 +68,30 @@
     "id": "esy-karozutha-morning",
     "title": "The Karozutha (Morning Litany)",
     "text": "<p class=\"rubric-text\">The Deacon intones the Morning Karozutha:</p><p class=\"component-text\">Let us all stand well in joy and gladness and say: <em>Lord, have mercy.</em><br>For the peace of the whole world and the preservation of the holy churches, we beseech you: <em>Lord, have mercy.</em><br>O Christ, who are the true light, shine in our hearts that we may walk in your truth: <em>Lord, have mercy.</em></p>"
+  },
+  {
+    "id": "esy-onitha-ordinary",
+    "title": "The 'Onitha (Anthem)",
+    "text": "<p class=\"rubric-text\">The appointed seasonal anthem is sung:</p><p class=\"component-text\">Blessed is Christ, who has magnified His holy Church, and established her upon the rock of faith. By His grace, she sings praise to His name.</p>"
+  },
+  {
+    "id": "esy-onitha-lent",
+    "title": "The 'Onitha (Anthem for the Great Fast)",
+    "text": "<p class=\"rubric-text\">The appointed seasonal anthem is sung:</p><p class=\"component-text\">O Lord, open the door of your mercy to our prayers, and accept our fasting and our tears. Forgive our debts, O good and merciful God.</p>"
+  },
+  {
+    "id": "esy-onitha-easter",
+    "title": "The 'Onitha (Anthem for the Resurrection)",
+    "text": "<p class=\"rubric-text\">The appointed seasonal anthem is sung:</p><p class=\"component-text\">Christ is risen from the dead! He has overthrown the power of death and raised all of creation with Him. Let the heavens and the earth rejoice!</p>"
+  },
+  {
+    "id": "esy-lelya-opening-prayer",
+    "title": "The Night Prayer",
+    "text": "<p class=\"rubric-text\">The Priest prays:</p><p class=\"component-text\">Strengthen us, O our Lord and God, that we may be vigilant before You in pure prayer during the night watches. May we sing Your praises with the heavenly hosts, now and always, and for ever and ever.</p>"
+  },
+  {
+    "id": "esy-lelya-hymn",
+    "title": "The Tishbohta (Hymn of Praise)",
+    "text": "<p class=\"rubric-text\">The Tishbohta is sung:</p><p class=\"component-text\">Blessed is the glorious honor of the Lord from His place.<br>From everlasting to everlasting, You alone are God.<br>Let all creation praise Your holy name.</p>"
   }
 ]

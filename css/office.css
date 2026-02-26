@@ -488,15 +488,17 @@ h2 { font-family: 'Cinzel', serif; font-size: 2.1em; color: var(--gold); border-
     text-shadow: 0 0 8px rgba(0,0,0,0.2);
     font-family: 'Cinzel', serif;
     font-variant: small-caps;
+    font-style: italic;
     font-weight: 600;
-    font-size: 1.65em;
+    font-size: 0.88em;
     letter-spacing: 0.06em;
     display: block;
-    margin-top: 40px;
-    margin-bottom: 12px;
+    margin-top: 32px;
+    margin-bottom: 4px;
     border-bottom: 0.5px dotted rgba(201,168,76,0.35);
-    padding-bottom: 6px;
+    padding-bottom: 4px;
     width: 100%;
+    opacity: 0.82;
 }
 
 .passage-reference {

@@ -5,6 +5,7 @@
     "esy-lords-prayer-farced",
     "esy-gloria-patri",
     "esy-variable-marmitha",
+    "esy-variable-seasonal-onitha",
     "esy-suraya",
     "esy-laku-mara",
     "esy-trisagion",
@@ -18,8 +19,21 @@
     "esy-gloria-patri",
     "esy-sapra-morning-hymn",
     "esy-variable-sapra-psalms",
+    "esy-variable-seasonal-onitha",
     "esy-trisagion",
     "esy-karozutha-morning",
+    "esy-concluding-blessing"
+  ],
+  "lelya-sequence": [
+    "esy-opening-formula",
+    "esy-gloria-patri",
+    "esy-lords-prayer-farced",
+    "esy-gloria-patri",
+    "esy-lelya-opening-prayer",
+    "esy-variable-hulali",
+    "esy-lelya-hymn",
+    "esy-trisagion",
+    "esy-karozutha",
     "esy-concluding-blessing"
   ]
 }
