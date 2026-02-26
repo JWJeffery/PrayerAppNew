@@ -1,10 +1,23 @@
 {
   "project_manifest": {
     "name": "Universal Office",
-    "version": "2.6.1",
-    "last_updated": "2026-02-24",
+    "version": "2.6.2-audit",
+    "last_updated": "2026-02-26",
     "bcp_compliance": "100%",
-    "operational_status": "OPERATIONAL — v2.6.1: Ethiopian Tselote Meweta implemented; Metsehafe Tselot rubric aesthetic applied; Senkessar fully wired via EthiopianCalendar; orphaned CSS duplicate removed; Lika ID mismatch corrected"
+    "operational_status": "OPERATIONAL — v2.6.1: Ethiopian Tselote Meweta implemented; Metsehafe Tselot rubric aesthetic applied; Senkessar fully wired via EthiopianCalendar; orphaned CSS duplicate removed; Lika ID mismatch corrected",
+    "audit_findings": {
+      "critical_bugs": [
+        "Ethiopian ID mismatch: 'eth-meserk-hour-text' in components/ethiopian.json vs expected 'eth-meserkh-hour-text' in rubrics.",
+        "CalendarEngine: Missing Gregorian-to-Ethiopian date conversion for Senkessar resolution.",
+        "Rubric logic: [rite] placeholder resolution in rubrics.json is fragile and prone to null returns.",
+        "Tooltip collision: js/tooltip.js lacks vertical overflow detection for elements at the bottom of the viewport."
+      ],
+      "architectural_debt": [
+        "Heavy reliance on .innerHTML string building in office-ui.js needs transition to a template system.",
+        "Global state race condition: appData hydration must be gated before renderOffice() execution.",
+        "Redundant liturgical fragments (Gloria Patri/Kyrie) should be normalized into common.json."
+      ]
+    }
   },
 
   "documentation_debt": {
@@ -320,6 +333,13 @@
 
   "recent_logic_changes": [
     {
+      "date": "2026-02-26",
+      "phase": "Audit",
+      "file": "audit/internal",
+      "change": "Internal code audit identifying rendering race conditions, tooltip collision bugs, and Ethiopian ID mismatches.",
+      "detail": "Identified innerHTML technical debt, appData hydration race conditions, tooltip y-axis overflow, and eth-meserk-hour-text ID typo."
+    },
+    {
       "date": "2026-02-24",
       "phase": "v2.6.1",
       "file": "components/ethiopian.json",
@@ -404,7 +424,7 @@
 
   "roadmap_summary": {
     "completed": "Phases 6.1–6.5, Phase 7.1–7.4 (full Ethiopian Sa'atat + calendar engine), Phase 8.1 (Senkessar index + Tir corpus + full wiring via EthiopianCalendar), Phase 8.3 (Hamle narrative corpus — verified complete 2026-02-24), v2.6.1 (Tselote Meweta, Metsehafe Tselot aesthetic, fixes)",
-    "next_required": "Phase 6.6 — Documentation rewrite",
+    "next_required": "Phase 6.6 — Documentation rewrite & Audit Remediation (Fix Ethiopian ID typos, tooltip logic, and appData race conditions)",
     "next_planned": "Phase 8.5 — Ge'ez date display in Sa'atat UI header. EthiopianCalendar.formatEthiopianDate() already available — UI change only, no engine work needed.",
     "future_8x": [
       "Phase 8.4 — Optional cosmetic: align senkessar-index.json month 8 slug 'miyazya' → 'miazia' (renderer already handles this correctly)"
@@ -412,6 +432,6 @@
     "future_css": [
       "body.light-mode .ethiopian-theme .rubric-text { color: #8B0000; border-left-color: #8B0000; } — restore traditional Qay ink in manuscript mode"
     ],
-    "future": "Phase 6.7 — Performance polish (timezone warning, LRU seasonal cache, prefetch, service worker); Phase 7.5 — Coptic Agpeya as standalone tradition entry; Phase 9.0 — Mobile app"
+    "future": "Phase 6.7 — Performance polish (timezone warning, LRU seasonal cache, prefetch, service worker); Phase 7.5 — Coptic Agpeya as standalone tradition entry; Phase 9.0 — Mobile app; Phase 9.1 — Cross-Tradition Search (Comparative scripture view across AR, ET, and SY canons)"
   }
 }
