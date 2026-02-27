@@ -550,7 +550,7 @@ async function selectMode(mode) {
         document.getElementById('individual-prayers-section').style.display = 'none';
         document.getElementById('daily-office-section').style.display       = 'flex';
 
-        const esySettings = document.getElementById('east-syriac-settings-panel');
+        const esySettings = document.getElementById('east-syriac-settings');
 
         if (settingsPanel) {
             settingsPanel.classList.add('sidebar-hidden');
@@ -628,11 +628,19 @@ async function init() {
 function toggleSidebar() {
     const bcpPanel = document.getElementById('settings-panel');
     const ethPanel = document.getElementById('ethiopian-settings');
+    const esyPanel = document.getElementById('east-syriac-settings');
     const main     = document.getElementById('main-content');
     const toggle   = document.getElementById('sidebar-toggle');
 
     // Detect active panel by which one is NOT mode-hidden
-    const activePanel = (ethPanel && !ethPanel.classList.contains('mode-hidden')) ? ethPanel : bcpPanel;
+    let activePanel;
+    if (esyPanel && !esyPanel.classList.contains('mode-hidden')) {
+        activePanel = esyPanel;
+    } else if (ethPanel && !ethPanel.classList.contains('mode-hidden')) {
+        activePanel = ethPanel;
+    } else {
+        activePanel = bcpPanel;
+    }
 
     const isHidden = activePanel.classList.toggle('sidebar-hidden');
     main.classList.toggle('sidebar-hidden', isHidden);

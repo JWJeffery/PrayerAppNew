@@ -120,8 +120,21 @@ const EastSyriacCalendar = (() => {
      * @return {number}
      */
     function weeksSince(start, date) {
-        const msPerWeek = 7 * 24 * 60 * 60 * 1000;
-        return Math.floor((toMidnight(date) - toMidnight(start)) / msPerWeek);
+        // Use UTC day-number arithmetic rather than raw ms subtraction.
+        // Raw ms subtraction is vulnerable to DST transitions: a spring-forward
+        // boundary (-1 hr) between start and date reduces the interval by 3 600 000 ms,
+        // which is enough to make Math.floor() return one week fewer than the true count.
+        // That single-week error flips Qdham/Wathar parity for every date beyond the
+        // DST boundary. Using Date.UTC() for both operands strips local timezone offsets
+        // and DST shifts entirely, giving a pure day count.
+        const s = toMidnight(start);
+        const d = toMidnight(date);
+        const dayDiff = Math.round(
+            (Date.UTC(d.getFullYear(), d.getMonth(), d.getDate()) -
+             Date.UTC(s.getFullYear(), s.getMonth(), s.getDate()))
+            / 86400000
+        );
+        return Math.floor(dayDiff / 7);
     }
 
     // ── Julian Easter (Meeus algorithm) ──────────────────────────────────────
