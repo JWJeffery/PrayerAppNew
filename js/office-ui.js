@@ -198,7 +198,9 @@ async function loadKernel() {
         components:        [],   // Array — consumers call .find() and .concat()
         rubrics:           [],   // Array — consumers call .find() and .concat()
         _loadedTraditions: new Set(),
-        isKernelLoaded:    false
+        isKernelLoaded:    false,
+        senkessarIndex:    null, // Lazy-loaded on first Ethiopian saints render
+        senkessarCache:    {}    // Keyed by month slug; populated on first access per month
     };
 
     try {
@@ -943,6 +945,18 @@ async function renderBcpOffice() {
     const dailyData         = await CalendarEngine.fetchLectionaryData(currentDate);
     const activeRubric = appData.rubrics.find(r => r.id === resolvedOfficeId);
 
+    // If the calendar engine returned a fallback sentinel (no entry found for this date),
+    // render a visible notice rather than silently producing a broken or blank office.
+    if (dailyData?._isFallback) {
+        document.getElementById('office-display').innerHTML =
+            `<div class="office-container"><h3 style="color:var(--rubric)">Lectionary Gap</h3>` +
+            `<p class="component-text">${dailyData.title}</p>` +
+            `<p class="component-text" style="font-size:0.85em; opacity:0.7;">` +
+            `No lectionary entry exists in the data files for this date. ` +
+            `The season file may need to be extended.</p></div>`;
+        return;
+    }
+
 
     const calendarInfo = document.getElementById('calendar-info');
     if (calendarInfo && dailyData) {
@@ -1409,7 +1423,6 @@ async function renderBcpOffice() {
 
             if (indexEntry) {
                 // 5. Fetch the monthly narrative file (cached in appData.senkessarCache by monthSlug)
-                if (!appData.senkessarCache) appData.senkessarCache = {};
                 if (!appData.senkessarCache[monthSlug]) {
                     try {
                         const monthRes = await fetch(`data/synaxarium/ethiopian/${monthSlug}.json`);
@@ -1746,7 +1759,6 @@ async function renderEthiopianSaatat() {
             officeHtml += `<span class="rubric-text">The Senkessar: ${ethDateLabel}</span>`;
 
             if (indexEntry) {
-                if (!appData.senkessarCache) appData.senkessarCache = {};
                 if (!appData.senkessarCache[monthSlug]) {
                     try {
                         const monthRes = await fetch(`data/synaxarium/ethiopian/${monthSlug}.json`);

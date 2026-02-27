@@ -42,6 +42,9 @@
  *
  * Architecture note: Isolated utility for reuse by the Coptic calendar
  * (same Alexandrian base, different month names and 276-year era offset).
+ * The 276 derives from the difference between the two epochs: Diocletian's
+ * accession (284 AD, anchor of the Coptic Anno Martyrum era) minus the
+ * Incarnation year used by the Ethiopian Amete Mihret era (8 AD Julian) = 276.
  *
  * Phase 7.4 - Ethiopian liturgical calendar integration.
  */
@@ -170,6 +173,15 @@ const EthiopianCalendar = (() => {
     /**
      * Convert a Gregorian JS Date to a Coptic (Anno Martyrum) date.
      * Same Alexandrian algorithm; Coptic month names and year era (EC - 276).
+     *
+     * The 276-year offset converts from the Ethiopian Amete Mihret era (AM,
+     * anchored to the Incarnation, 8 AD Julian) to the Coptic Anno Martyrum
+     * era (AM, anchored to the accession of Diocletian, 284 AD Julian).
+     * 284 - 8 = 276. The two traditions share the same 365/366-day Alexandrian
+     * calendar structure; only the epoch and month names differ.
+     *
+     * Verification: 2026-02-22 = 15 Yekatit 2018 EC = 15 Meshir 1742 AM (Coptic).
+     * 2018 - 276 = 1742. ✓
      *
      * @param  {Date} gregorianDate
      * @return {{ day: number, month: string, monthIndex: number, year: number }}

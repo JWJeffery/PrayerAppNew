@@ -58,9 +58,17 @@ async function extractFromBook(book, ranges) {
     
     const bookData = (!isPsalm && Array.isArray(bibleCache.books[filename])) ? bibleCache.books[filename][0] : bibleCache.books[filename];
     let extractedText = '';
+    // lastChapter is scoped to this call chain — tracks chapter across sub-ranges
+    // within a single book fetch, with no shared global state between concurrent calls.
+    let lastChapter = null;
     for (let range of ranges) {
-        if (isPsalm) extractedText += await extractPsalmRange(bookData, range);
-        else extractedText += extractBookRange(bookData, book, range);
+        if (isPsalm) {
+            extractedText += await extractPsalmRange(bookData, range);
+        } else {
+            const result = extractBookRange(bookData, book, range, lastChapter);
+            extractedText += result.text;
+            lastChapter = result.lastChapter;
+        }
     }
     return extractedText.replace(/\d+:\d+ /g, '').trim();
 }
@@ -90,8 +98,9 @@ async function extractPsalmRange(psalmsData, range) {
     return tempText + '\n\n';
 }
 
-function extractBookRange(bookData, bookName, range) {
-    if (!range || typeof range !== 'string') return '';
+// Returns { text, lastChapter } so callers can thread chapter context without global state.
+function extractBookRange(bookData, bookName, range, lastChapter) {
+    if (!range || typeof range !== 'string') return { text: '', lastChapter };
 
     let chNum, vStart, vEnd;
 
@@ -101,22 +110,22 @@ function extractBookRange(bookData, bookName, range) {
         const vRange = rParts[1].split('-');
         vStart = parseInt(vRange[0]);
         vEnd = parseInt(vRange[1]) || Infinity;
-        window.lastChapter = chNum; // Persistent storage for non-sequential verse support
+        lastChapter = chNum; // Update for subsequent chapterless sub-ranges in this call chain
     } else {
-        chNum = window.lastChapter || 1; 
+        chNum = lastChapter || 1;
         const vRange = range.split('-');
         vStart = parseInt(vRange[0]);
         vEnd = parseInt(vRange[1]) || Infinity;
     }
 
     const chapter = bookData.chapters.find(ch => ch.num === chNum);
-    if (!chapter) return `[${bookName} ${chNum} unavailable]`;
+    if (!chapter) return { text: `[${bookName} ${chNum} unavailable]`, lastChapter };
     
-    let tempText = ''; // Corrected variable initialization
+    let tempText = '';
     chapter.verses.forEach(v => {
         if (v.num >= vStart && (vEnd === Infinity || v.num <= vEnd)) {
             tempText += `${chNum}:${v.num} ${v.text}\n`;
         }
     });
-    return tempText + '\n\n';
+    return { text: tempText + '\n\n', lastChapter };
 }

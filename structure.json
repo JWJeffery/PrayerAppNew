@@ -1,13 +1,12 @@
 {
   "project_manifest": {
     "name": "Universal Office",
-    "version": "2.7.0",
-    "last_updated": "2026-02-26",
+    "version": "2.8.0",
+    "last_updated": "2026-02-27",
     "bcp_compliance": "100%",
-    "operational_status": "OPERATIONAL — v2.7.0: Phase 6.6 Audit Remediation complete. Ethiopian Third Hour ID mismatch resolved. Markdown documentation backlog fully resolved.",
+    "operational_status": "OPERATIONAL — v2.8.0: Church of the East minor hours complete. All seven canonical hours of the Hudra now implemented (Sapra, Quta'a, Endana, D-tsha' Sa'in, Ramsha, Lelya, Suba'a). Cathedral and monastic sequences for all four new hours added to rubrics.json. Eight new static components added to east-syriac.json. renderEastSyriac() routing and psalm-token handlers fully implemented.",
     "audit_findings": {
       "critical_bugs": [
-        "Ethiopian ID mismatch: 'eth-meserk-hour-text' in components/ethiopian.json vs expected 'eth-meserkh-hour-text' in rubrics.",
         "Rubric logic: [rite] placeholder resolution in rubrics.json is fragile and prone to null returns.",
         "Tooltip collision: js/tooltip.js lacks vertical overflow detection for elements at the bottom of the viewport."
       ],
@@ -15,12 +14,19 @@
         "Heavy reliance on .innerHTML string building in office-ui.js needs transition to a template system.",
         "Global state race condition: appData hydration must be gated before renderOffice() execution.",
         "Redundant liturgical fragments (Gloria Patri/Kyrie) should be normalized into common.json."
+      ],
+      "resolved_in_this_version": [
+        "Ethiopian ID mismatch ('eth-meserk-hour-text') — resolved in Phase 6.6, moved to resolved_audit_items."
       ]
     },
     "resolved_audit_items": [
       {
         "item": "CalendarEngine: Missing Gregorian-to-Ethiopian date conversion for Senkessar resolution.",
         "resolution": "Resolved in Phase 7.4 via full Julian Day Number algorithm implementation."
+      },
+      {
+        "item": "Ethiopian ID mismatch: 'eth-meserk-hour-text' in components/ethiopian.json vs expected 'eth-meserkh-hour-text' in rubrics.",
+        "resolution": "Resolved in Phase 6.6 — eth-meserkh-hour-text corrected to eth-meserk-hour-text in rubrics.json slots time_map."
       }
     ]
   },
@@ -30,25 +36,31 @@
       "role": "Markup and DOM structure only",
       "lines": "~1175",
       "contains_logic": false,
-      "status": "Current — Phase 7.1 button added",
+      "status": "Current — v2.8.0 (2026-02-27)",
       "changes": [
-        "Added third mode button: 'The Ethiopian Sa'atat (Book of Hours)' with class ethiopian-btn, calling selectMode('ethiopian-saatat')"
+        "Added third mode button: 'The Ethiopian Sa'atat (Book of Hours)' with class ethiopian-btn, calling selectMode('ethiopian-saatat') [Phase 7.1]",
+        "Added four minor hours to esy-time radio group: qutaa, endana, dtsha-sain, subaa [v2.8.0]"
       ],
       "script_load_order": [
         "js/calendar-engine.js",
         "js/calendar-ethiopian.js",
+        "js/calendar-east-syriac.js",
         "js/scripture-resolver.js",
         "js/office-ui.js",
         "js/prayers.js",
         "js/tooltip.js"
-      ]
+      ],
+      "discrepancy_note": "Previous version of this file omitted js/calendar-east-syriac.js from script_load_order. Corrected — it is present in index.html and required for renderEastSyriac()."
     },
     "js/office-ui.js": {
       "role": "All Daily Office UI logic",
-      "status": "Current — v2.7.0 (2026-02-26)",
+      "status": "Current — v2.8.0 (2026-02-27)",
       "primary_functions": [
         "init()",
         "renderOffice()",
+        "renderEastSyriac()",
+        "renderEthiopianSaatat()",
+        "renderBcpOffice()",
         "getEthiopianHourInfo()",
         "toggleSidebar()",
         "selectMode()",
@@ -62,7 +74,7 @@
         "applyEthOverride()",
         "resetEthOverride()"
       ],
-      "rubric_loop_handlers": [
+      "rubric_loop_handlers_bcp": [
         "VARIABLE_OPENING — resolves bcp-opening-${season}, fallback to bcp-opening-general",
         "VARIABLE_ANTIPHON — resolves antiphon_mp or antiphon_ep from dailyData",
         "VARIABLE_PSALM — renders appointed psalms with optional Gloria Patri",
@@ -81,11 +93,24 @@
         "eth-saints-commemoration — FULL SENKESSAR PIPELINE: calls EthiopianCalendar.getEthiopianDate(), lazy-loads and caches senkessar-index.json, fetches and caches per-day narrative from data/synaxarium/ethiopian/{monthSlug}/{day}.json. Falls back to Oriental saints filter, then generic intercession. MONTH_SLUG_MAP handles miyazya→miazia.",
         "comm-lords-prayer — rite-aware Lords Prayer"
       ],
+      "rubric_loop_handlers_east_syriac": [
+        "esy-variable-seasonal-onitha — selects from esy-onitha-lent (sauma), esy-onitha-easter (qyamta), or esy-onitha-ordinary",
+        "esy-variable-sapra-psalms — fixed morning selection: Psalms 100, 91, 148, 150",
+        "esy-variable-qutaa-psalms — fixed Third Hour selection: Psalms 19, 24, 25 [v2.8.0]",
+        "esy-variable-endana-psalms — fixed Sixth Hour selection: Psalms 119:1-32, 121, 122 [v2.8.0]",
+        "esy-variable-dtsha-sain-psalms — fixed Ninth Hour selection: Psalms 84, 116, 117 [v2.8.0]",
+        "esy-variable-subaa-psalms — fixed Compline selection: Psalms 4, 91, 134 [v2.8.0]",
+        "esy-variable-marmitha — selects 3 psalms from marmithaMap[cycle][dayOfWeek]. Qdham: Pss 1–21; Wathar: Pss 22–42",
+        "esy-variable-hulali — selects psalms from hulaliMap[cycle][dayOfWeek]. Night office psalmody covering full Psalter",
+        "esy-variable-qanona — resolves esy-qanona-{season}-{cycle}; fallback esy-qanona-ordinary",
+        "esy-variable-onitha-with-qala — renders Qala tone marker then Onitha text (monastic sequences)",
+        "esy-variable-barekmar-intercessions — day-specific dyptichs; sauma penitential form; fallback esy-barekmar-general"
+      ],
       "key_logic_notes": [
         "Reading resolution uses independent morning/evening chains — no shared intermediate variables between MP and EP",
         "Theotokion uses two-step lookup: cop-theotokion-${season} with fallback to cop-theotokion",
         "Examen text: \\n\\n converted to <br><br>, rendered in <div style='white-space:normal'>",
-        "toggleSidebar() detects active panel by checking which is NOT mode-hidden — works for both BCP and Ethiopian panels",
+        "toggleSidebar() detects active panel by checking which is NOT mode-hidden — works for BCP, Ethiopian, and East Syriac panels",
         "CalendarEngine.init() called explicitly in init() after JSON loads, before fetchLectionaryData()",
         "resolvedOfficeId = window._forcedOfficeId || officeId — used throughout renderOffice() to support ethiopian-saatat override",
         "Saints data preloaded before sequence loop so eth-saints-commemoration has access on first render",
@@ -93,7 +118,9 @@
         "getEthiopianHourInfo() returns exhaustive 9-entry 24-hour map covering all canonical watches",
         "window._temporalOverride — date and hourId override for testing any canonical hour at any date",
         "MONTH_SLUG_MAP in eth-saints-commemoration normalises EthiopianCalendar month names to folder slugs; handles miyazya→miazia and teqemt→tiqimt irregularities",
-        "Senkessar index and per-day narratives cached in appData.senkessarIndex and appData.senkessarCache — no redundant fetches"
+        "Senkessar index and per-day narratives cached in appData.senkessarIndex and appData.senkessarCache — no redundant fetches",
+        "renderEastSyriac() uses EastSyriacCalendar.getSeason(currentDate) for season, cycle, cycleLabel, and seasonColor",
+        "East Syriac routing: selectedTime drives sequence selection; officeMode (cathedral/monastic) drives variant; else-default is always Ramsha"
       ]
     },
     "js/calendar-engine.js": {
@@ -115,6 +142,26 @@
         "formatDateISO(date) — returns '2026-02-17'"
       ]
     },
+    "js/calendar-east-syriac.js": {
+      "role": "Church of the East liturgical calendar — nine seasons, Qdham/Wathar cycle, seasonal colour",
+      "status": "COMPLETE AND OPERATIONAL — All 20 self-tests passing (confirmed in console 2026-02-27)",
+      "global_api": "EastSyriacCalendar (IIFE, window-scoped)",
+      "public_methods": [
+        "getSeason(date) — returns { season, cycle, cycleLabel, seasonColor, weekNumber }"
+      ],
+      "seasons": [
+        "subara — Annunciation/Advent",
+        "denkha — Epiphany",
+        "sauma — Great Fast (Lent)",
+        "qyamta — Resurrection (Easter)",
+        "shlihe — Apostles",
+        "qayta — Summer",
+        "eliya-sliwa — Elijah and the Holy Cross",
+        "muse — Moses",
+        "qudash-idta — Dedication of the Church"
+      ],
+      "cycle_note": "Qdham (Before) and Wathar (After) are the two-week rotating cycles anchored to Subara Sunday. Drives Qanona, Marmitha, and Barekmar selection."
+    },
     "js/calendar-ethiopian.js": {
       "role": "Ethiopian (Ge'ez) calendar conversion and date resolution",
       "status": "COMPLETE AND OPERATIONAL — Phase 7.4. Fully integrated.",
@@ -133,8 +180,7 @@
         "Pagume: 5 days normally, 6 in leap years (year % 4 === 3)",
         "Self-test suite on load — 9 verified reference points logged to console",
         "Called in office-ui.js eth-saints-commemoration: EthiopianCalendar.getEthiopianDate(currentDate)"
-      ],
-      "integration_status": "COMPLETE. Previously listed as 'Phase 8.2 target — not yet wired'. That was incorrect or stale. EthiopianCalendar.getEthiopianDate() is actively called in the eth-saints-commemoration handler and drives all Senkessar date resolution. formatEthiopianDate() is also available for Phase 8.5 Ge'ez date display — no additional engine work needed for that feature."
+      ]
     },
     "js/scripture-resolver.js": {
       "role": "Scripture text fetching, citation parsing, LRU book cache",
@@ -154,15 +200,16 @@
       "changes": [
         "Added .ethiopian-btn — gold/yellow color scheme [Phase 7.1]",
         "Added .ethiopian-btn:hover — subtle gold wash [Phase 7.1]",
-        "Added .ethiopian-theme .rubric-text — Metsehafe Tselot aesthetic: #C0392B, 0.85em, weight 300, italic, IM Fell English, font-variant normal, border-left 2px solid #C0392B, padding-left 10px, border-bottom none, margin-top 28px, text-shadow none, width auto [v2.6.1]",
+        "Added .ethiopian-theme .rubric-text — Metsehafe Tselot aesthetic [v2.6.1]",
         "Added .ethiopian-theme .rubric-text::before — ☩ glyph prefix [v2.6.1]",
         "Added .ethiopian-theme .component-text — font-weight 500 for hierarchy of voice [v2.6.1]",
         "Added @media print override — collapses Ethiopian rubric border-left and padding [v2.6.1]",
-        "Color note: #C0392B used for dark mode legibility. body.light-mode override restores #8B0000 (traditional Qay ink) for manuscript mode [v2.7.1]."
+        "Added #east-syriac-settings — sidebar geometry matching #settings-panel and #ethiopian-settings"
       ],
       "key_rules": [
         "#settings-panel — BCP sidebar, transition: transform 0.3s ease, translateX(-336px) when hidden",
         "#ethiopian-settings — Ethiopian Sa'atat sidebar, same geometry",
+        "#east-syriac-settings — Church of the East sidebar, same geometry",
         "#main-content — flex content area, padding-left 80px when sidebar hidden",
         "#sidebar-toggle — 36px fixed toggle column",
         ".ethiopian-btn — gold-bordered splash button for Sa'atat entry",
@@ -179,11 +226,97 @@
     }
   },
 
+  "east_syriac_tradition": {
+    "status": "OPERATIONAL — v2.8.0. All seven canonical hours implemented. Cathedral and monastic sequences for all hours. Full Qdham/Wathar Qanona rotation, Marmitha psalmody, Barekmar intercessions, and Onitha-with-Qala rendering active in monastic mode.",
+    "entry_point": "selectMode('east-syriac') — hides BCP and Ethiopian sidebars, shows east-syriac-settings, awaits hydrateForEastSyriac(), calls renderOffice()",
+    "rubrics_file": "components/traditions/east-syriac/rubrics.json",
+    "components_file": "components/east-syriac.json",
+    "component_count": 83,
+    "hours": {
+      "sapra": {
+        "title": "Sapra — Morning Prayer",
+        "time": "Dawn",
+        "cathedral_sequence": "cathedral-sapra-sequence",
+        "monastic_sequence": "monastic-sapra-sequence",
+        "fixed_psalms": ["100", "91", "148", "150"],
+        "token": "esy-variable-sapra-psalms"
+      },
+      "qutaa": {
+        "title": "Quta'a — Third Hour",
+        "time": "~09:00",
+        "cathedral_sequence": "cathedral-qutaa-sequence",
+        "monastic_sequence": "monastic-qutaa-sequence",
+        "fixed_psalms": ["19", "24", "25"],
+        "token": "esy-variable-qutaa-psalms",
+        "theological_note": "Ps. 19 — sun going forth; Ps. 24 — King of glory entering; Ps. 25 — morning supplication. Hour of the Descent of the Holy Spirit."
+      },
+      "endana": {
+        "title": "Endana — Sixth Hour",
+        "time": "~12:00",
+        "cathedral_sequence": "cathedral-endana-sequence",
+        "monastic_sequence": "monastic-endana-sequence",
+        "fixed_psalms": ["119:1-32", "121", "122"],
+        "token": "esy-variable-endana-psalms",
+        "theological_note": "Ps. 119 (portion) — the longest psalm at the longest hour; Songs of Ascent for the midday pause."
+      },
+      "dtsha-sain": {
+        "title": "D-tsha' Sa'in — Ninth Hour",
+        "time": "~15:00",
+        "cathedral_sequence": "cathedral-dtsha-sain-sequence",
+        "monastic_sequence": "monastic-dtsha-sain-sequence",
+        "fixed_psalms": ["84", "116", "117"],
+        "token": "esy-variable-dtsha-sain-psalms",
+        "theological_note": "Hour of the Crucifixion. Ps. 116 — the cup of salvation as direct Passion type."
+      },
+      "ramsha": {
+        "title": "Ramsha — Evening Prayer",
+        "time": "Sunset",
+        "cathedral_sequence": "cathedral-ramsha-sequence",
+        "monastic_sequence": "monastic-ramsha-sequence",
+        "token": "esy-variable-marmitha"
+      },
+      "lelya": {
+        "title": "Lelya — Night Office",
+        "time": "Night",
+        "cathedral_sequence": "lelya-sequence",
+        "monastic_sequence": "monastic-lelya-sequence",
+        "token": "esy-variable-hulali"
+      },
+      "subaa": {
+        "title": "Suba'a — Compline",
+        "time": "Before sleep",
+        "cathedral_sequence": "cathedral-subaa-sequence",
+        "monastic_sequence": "monastic-subaa-sequence",
+        "fixed_psalms": ["4", "91", "134"],
+        "token": "esy-variable-subaa-psalms",
+        "theological_note": "Ps. 4 — ancient night psalm; Ps. 91 — the protection psalm; Ps. 134 — night doxology. Unique concluding elements: examination of conscience, Nunc Dimittis (Hullala d-Sham'un), and distinct Compline blessing.",
+        "distinct_components": ["esy-subaa-examination", "esy-subaa-nunc-dimittis", "esy-subaa-blessing"]
+      }
+    },
+    "dynamic_token_status": {
+      "esy-variable-sapra-psalms": "IMPLEMENTED",
+      "esy-variable-qutaa-psalms": "IMPLEMENTED [v2.8.0]",
+      "esy-variable-endana-psalms": "IMPLEMENTED [v2.8.0]",
+      "esy-variable-dtsha-sain-psalms": "IMPLEMENTED [v2.8.0]",
+      "esy-variable-subaa-psalms": "IMPLEMENTED [v2.8.0]",
+      "esy-variable-marmitha": "IMPLEMENTED",
+      "esy-variable-hulali": "IMPLEMENTED",
+      "esy-variable-seasonal-onitha": "IMPLEMENTED",
+      "esy-variable-qanona": "IMPLEMENTED",
+      "esy-variable-onitha-with-qala": "IMPLEMENTED",
+      "esy-variable-barekmar-intercessions": "IMPLEMENTED"
+    },
+    "legacy_sequences": {
+      "note": "ramsha-sequence, sapra-sequence, and lelya-sequence retained in rubrics.json for backward compatibility. renderEastSyriac() now routes exclusively to the cathedral-* and monastic-* named variants.",
+      "status": "Preserved — do not remove"
+    }
+  },
+
   "ethiopian_tradition": {
     "status": "OPERATIONAL — v2.6.1 complete. Full 24-hour canonical cycle, Tselote Meweta opening, Senkessar wired, Metsehafe Tselot rubric aesthetic.",
     "entry_point": "selectMode('ethiopian-saatat') — sets window._forcedOfficeId, hides BCP sidebar, shows ethiopian-settings, applies .ethiopian-theme to body",
     "rubrics_file": "components/traditions/ethiopian/rubrics.json",
-    "rubrics_load": "Loaded in init() and concatenated onto appData.rubrics after data/rubrics.json",
+    "rubrics_load": "Loaded in hydrateForEthiopianSaatat() and concatenated onto appData.rubrics",
     "components_file": "components/ethiopian.json",
     "components": [
       "eth-introduction-to-every-hour — (v2.6.1) Tselote Meweta mandatory opening: prostration rubric, Lord's Prayer, Thanksgiving, Psalm 50/51 with Gloria Patri",
@@ -198,7 +331,7 @@
       "eth-nome-hour-text — Compline / Nime (18:00–21:00)",
       "eth-hour-7 — First Night Watch / Le'lit (21:00–00:00)",
       "eth-lelit-hour-text — Midnight / Le'lit (00:00–03:00)",
-      "eth-mahlet-hour-text — Pre-dawn Vigil / Mahlet (03:00–06:00). NOTE: text flagged as sparse/provisional in component note — full text should be sourced from qualified scholar.",
+      "eth-mahlet-hour-text — Pre-dawn Vigil / Mahlet (03:00–06:00). NOTE: text flagged as sparse/provisional.",
       "eth-mazmur-tuat — Psalm metadata for Tuat",
       "eth-leke-haile-chant — 12-fold Leke Haile doxology (Full edition only)",
       "eth-41-kyrie — 41-fold Kyrie / Igzee'o Tesahalene (Full edition only)",
@@ -231,51 +364,37 @@
   },
 
   "ethiopian_synaxarium": {
-    "status": "OPERATIONAL — Fully wired and rendering. Index validated. 12 of 13 months confirmed complete. Hamle status requires developer verification.",
+    "status": "OPERATIONAL — Fully wired and rendering. All 13 months confirmed complete.",
     "description": "Senkessar (Ethiopian Synaxarium) integrated in eth-saints-commemoration rubric handler. Renders for all hours via EthiopianCalendar date resolution and dynamic fetch from data/synaxarium/ethiopian/{month}/{day}.json.",
-    "wiring_status": "COMPLETE. Previously listed as 'Phase 8.2 target — not yet wired'. This was stale. EthiopianCalendar.getEthiopianDate() is called directly in eth-saints-commemoration. Senkessar index lazy-loaded and cached. Per-day narratives fetched and cached.",
+    "wiring_status": "COMPLETE. EthiopianCalendar.getEthiopianDate() called directly in eth-saints-commemoration. Senkessar index lazy-loaded and cached. Per-day narratives fetched and cached.",
     "index_file": "data/synaxarium/ethiopian/senkessar-index.json",
-    "index_status": "COMPLETE — 13 months, 385 entries. Corrected and validated 2026-02-23.",
-    "index_schema_notes": [
-      "months is a top-level JSON array (not object)",
-      "ge'ez key renamed to ge_ez for parser compatibility",
-      "All months use uniform days[] array (not entries{} object)",
-      "Each day: { day, id, title } — id pattern: senkessar-{month-slug}-{day}",
-      "Months 6–10 converted from entries{} to days[] during 2026-02-23 correction"
-    ],
+    "index_status": "COMPLETE — 13 months, 385 entries. Validated 2026-02-23.",
     "miazia_path_resolution": {
       "issue": "EthiopianCalendar outputs 'Miyazya'. Folder on disk is 'miazia'.",
-      "status": "RESOLVED IN RENDERER — MONTH_SLUG_MAP maps 'miyazya': 'miazia'. No folder rename or index change required for correct operation.",
+      "status": "RESOLVED IN RENDERER — MONTH_SLUG_MAP maps 'miyazya': 'miazia'. No folder rename required.",
       "optional_cleanup": "Cosmetic only: consider aligning senkessar-index.json month 8 slug to 'miazia' in a future maintenance pass."
     },
     "narrative_corpus_status": {
-      "meskerem":  { "month_number": 1,  "days": 30, "status": "COMPLETE", "note": "Enkutatash New Year, Maskal (Finding of True Cross) arc" },
-      "tiqimt":   { "month_number": 2,  "days": 30, "status": "COMPLETE", "note": "Martyrs of Najran, interior life arc" },
-      "hidar":    { "month_number": 3,  "days": 30, "status": "COMPLETE", "note": "Arba'etu Insesa, Entry of Virgin into Temple, Archangel Michael Great Feast arc" },
-      "tahsas":   { "month_number": 4,  "days": 30, "status": "COMPLETE", "note": "Incarnation arc — Annunciation through Nativity (Ganna) through Innocents" },
-      "tir":      { "month_number": 5,  "days": 30, "status": "COMPLETE — Phase 8.1 focus", "note": "Timqat arc. Circumcision (Day 6), Eve of Timqat (Day 10), Timqat/Epiphany (Day 11), Cana (Day 13), Anthony the Great (Day 17), Three Hierarchs (Day 30). Generated 2026-02-23." },
-      "yekatit":  { "month_number": 6,  "days": 30, "status": "COMPLETE", "note": "Kidane Meheret (Covenant of Mercy, Day 16) arc" },
-      "megabit":  { "month_number": 7,  "days": 30, "status": "COMPLETE", "note": "Finding of Cross (Day 10), Annunciation/Tinsae Maryam (Day 29) arc" },
-      "miazia":   { "month_number": 8,  "days": 30, "status": "COMPLETE", "note": "Folder slug confirmed 'miazia'. Renderer MONTH_SLUG_MAP correct. George the Great Martyr (Day 23), Mark the Evangelist (Day 25) arc." },
-      "ginbot":   { "month_number": 9,  "days": 30, "status": "COMPLETE", "note": "318 Holy Fathers of Nicaea (Day 10), Pachomius (Day 14), Constantine & Helena (Day 21) arc" },
-      "sene":     { "month_number": 10, "days": 30, "status": "COMPLETE", "note": "Nativity of John the Baptist (Day 24), Peter and Paul (Day 30) arc" },
-      "hamle":    { "month_number": 11, "days": 30, "status": "COMPLETE", "note": "Verified 2026-02-24. 30 narrative JSON files confirmed present on disk. Key feast: Haile Maryam / Blessed Virgin Mary (Day 21)." },
-      "nehase":   { "month_number": 12, "days": 30, "status": "COMPLETE", "note": "Transfiguration (Day 6), Filseta/Assumption (Day 16), Tekle Haymanot (Day 25) arc" },
-      "pagumen":  { "month_number": 13, "days": 5,  "status": "COMPLETE", "note": "Intercalary month (5 days; 6 in leap years). Archangel Raphael (Day 3) arc." }
+      "meskerem":  { "month_number": 1,  "days": 30, "status": "COMPLETE" },
+      "tiqimt":   { "month_number": 2,  "days": 30, "status": "COMPLETE" },
+      "hidar":    { "month_number": 3,  "days": 30, "status": "COMPLETE" },
+      "tahsas":   { "month_number": 4,  "days": 30, "status": "COMPLETE" },
+      "tir":      { "month_number": 5,  "days": 30, "status": "COMPLETE" },
+      "yekatit":  { "month_number": 6,  "days": 30, "status": "COMPLETE" },
+      "megabit":  { "month_number": 7,  "days": 30, "status": "COMPLETE" },
+      "miazia":   { "month_number": 8,  "days": 30, "status": "COMPLETE" },
+      "ginbot":   { "month_number": 9,  "days": 30, "status": "COMPLETE" },
+      "sene":     { "month_number": 10, "days": 30, "status": "COMPLETE" },
+      "hamle":    { "month_number": 11, "days": 30, "status": "COMPLETE" },
+      "nehase":   { "month_number": 12, "days": 30, "status": "COMPLETE" },
+      "pagumen":  { "month_number": 13, "days": 5,  "status": "COMPLETE" }
     },
     "narrative_format": {
       "schema": "{ id, title, narrative }",
-      "narrative_style": "Deep Assembly — High-liturgical English; 4-paragraph woven structure: (1) primary monthly commemoration in theological arc, (2) Discovery saints woven by name etymology, (3) historical/patristic anchor, (4) theological seal to month apex feast",
+      "narrative_style": "Deep Assembly — High-liturgical English; 4-paragraph woven structure",
       "register": "Formal high-liturgical English; no modern idioms; paragraph breaks as \\n\\n",
       "data_path": "data/synaxarium/ethiopian/{month-slug}/{day}.json",
       "id_pattern": "senkessar-{month-slug}-{day}"
-    },
-    "tir_narrative_arc": {
-      "apex_feast": "11 Tir — Timqat (Epiphany) — Trinitarian theophany, hallowing of all waters",
-      "approach_days_1_10": "Adam, Job, Zechariah, John Apostle, Philip, Circumcision of Christ (Day 6), Gabriel, Mary, Samuel, Gera/Eve of Timqat (Day 10)",
-      "apex_day_11": "Timqat — Son in water, Spirit as dove, Father from opened heaven; reversal of Eden; Michael; Theodosius Cenobiarch",
-      "post_epiphanic_days_12_20": "Arba'etu Insesa (Day 12), Cana (Day 13), Paul the Hermit (Day 15), Anthony the Great (Day 17), Macarius (Day 19), Euthymius (Day 20)",
-      "synthesis_days_21_30": "Mary (Day 21), Maximus Confessor, patriarchs (Day 28), Ephrem the Syrian (Day 28), Triple Feast (Day 29), Three Hierarchs — Basil/Gregory/Chrysostom (Day 30)"
     }
   },
 
@@ -288,74 +407,91 @@
     "data/rubrics.json": "BCP office sequence definitions",
     "data/season/bcp-propers.json": "Proper 1–29 reference table for CalendarEngine.init()",
     "data/synaxarium/ethiopian/senkessar-index.json": "Master index — 13 months, 385 entries. Validated 2026-02-23.",
-    "data/synaxarium/ethiopian/tir/": "30 narrative JSON files — complete Tir corpus (Phase 8.1)",
-    "data/synaxarium/ethiopian/hamle/": "30 narrative JSON files — complete Hamle corpus. Verified 2026-02-24.",
-    "data/synaxarium/ethiopian/[all months]/": "Complete narrative corpora confirmed for all 13 months: meskerem, tiqimt, hidar, tahsas, tir, yekatit, megabit, miazia, ginbot, sene, hamle, nehase, pagumen.",
+    "data/synaxarium/ethiopian/[all months]/": "Complete narrative corpora confirmed for all 13 months.",
     "components/common.json": "5 shared components",
     "components/anglican.json": "179 BCP components",
     "components/coptic.json": "2 Coptic components",
     "components/ecumenical.json": "9 ecumenical components",
-    "components/ethiopian.json": "~19 Ethiopian Tewahedo components (v2.6.1: +eth-introduction-to-every-hour; eth-prayer-thanksgiving retained but retired from sequence)",
-    "components/traditions/ethiopian/rubrics.json": "Ethiopian Sa'atat rubric. v2.6.1: eth-introduction-to-every-hour prepended; eth-prayer-thanksgiving removed; eth-liku typo corrected to eth-lika. v2.7.0: eth-meserkh-hour-text typo corrected to eth-meserk-hour-text in slots time_map."
+    "components/ethiopian.json": "~19 Ethiopian Tewahedo components",
+    "components/east-syriac.json": "83 Church of the East components (v2.8.0: +8 new minor hours components — esy-qutaa-hymn, esy-endana-hymn, esy-dtsha-sain-hymn, esy-subaa-hymn, esy-subaa-examination, esy-subaa-nunc-dimittis, esy-subaa-blessing, esy-karozutha-daytime)",
+    "components/traditions/ethiopian/rubrics.json": "Ethiopian Sa'atat rubric sequences",
+    "components/traditions/east-syriac/rubrics.json": "Church of the East rubric sequences — 15 sequences total (3 legacy, 6 existing, 8 new minor hours [v2.8.0]). 11 dynamic tokens, all implemented."
   },
 
   "known_outstanding_issues": {
     "eth_mahlet_text": {
       "severity": "LOW",
-      "description": "eth-mahlet-hour-text (03:00–06:00) component note flags text as sparse/provisional. Drawn from SAATAT_FULL ch.1.",
+      "description": "eth-mahlet-hour-text (03:00–06:00) component note flags text as sparse/provisional.",
       "action": "Full Mahlet text should be sourced from a qualified Ethiopian Orthodox liturgical scholar. Not blocking."
+    },
+    "tooltip_vertical_overflow": {
+      "severity": "LOW",
+      "description": "js/tooltip.js lacks vertical overflow detection for elements at the bottom of the viewport.",
+      "action": "Add overflowBottom check to mousemove handler. Already present for horizontal overflow — same pattern applies.",
+      "file": "js/tooltip.js"
+    },
+    "hydration_race_condition": {
+      "severity": "MEDIUM",
+      "description": "Global state race condition: appData hydration must be gated before renderOffice() execution.",
+      "action": "Review isHydrationComplete gate and all async selectMode() paths to ensure no renderOffice() call can fire before hydration resolves.",
+      "file": "js/office-ui.js"
+    },
+    "splash_button_label": {
+      "severity": "COSMETIC",
+      "description": "Splash screen button reads 'Church of the East — Ramsha'. Now that all seven hours are implemented this label is a misnomer.",
+      "action": "Update to 'Church of the East — Office' or 'Church of the East — Hudra'.",
+      "file": "index.html",
+      "line_hint": "selectMode('east-syriac') button label"
     }
   },
 
   "recent_logic_changes": [
     {
+      "date": "2026-02-27",
+      "phase": "v2.8.0",
+      "file": "index.html",
+      "change": "Added four minor hours to esy-time radio group",
+      "detail": "Added qutaa (Quta'a — Third Hour), endana (Endana — Sixth Hour), dtsha-sain (D-tsha' Sa'in — Ninth Hour), subaa (Suba'a — Compline) radio buttons to #east-syriac-settings appointed hour group."
+    },
+    {
+      "date": "2026-02-27",
+      "phase": "v2.8.0",
+      "file": "components/traditions/east-syriac/rubrics.json",
+      "change": "Added eight new sequences for the four minor hours",
+      "detail": "cathedral-qutaa-sequence, monastic-qutaa-sequence, cathedral-endana-sequence, monastic-endana-sequence, cathedral-dtsha-sain-sequence, monastic-dtsha-sain-sequence, cathedral-subaa-sequence, monastic-subaa-sequence. Four new dynamic tokens registered: esy-variable-qutaa-psalms, esy-variable-endana-psalms, esy-variable-dtsha-sain-psalms, esy-variable-subaa-psalms (all status: implemented). Suba'a sequences use distinct esy-subaa-blessing rather than shared esy-concluding-blessing."
+    },
+    {
+      "date": "2026-02-27",
+      "phase": "v2.8.0",
+      "file": "js/office-ui.js — renderEastSyriac()",
+      "change": "Expanded sequence routing block and added four psalm-token handlers",
+      "detail": "Routing block extended from 3 hours to 7: added qutaa, endana, dtsha-sain, subaa branches before the Ramsha else-default. Four new psalm-token handlers inserted in the for-loop immediately after the esy-variable-sapra-psalms handler and before esy-variable-marmitha. All use await getScriptureText() and formatPsalmAsPoetry() consistent with existing handlers."
+    },
+    {
+      "date": "2026-02-27",
+      "phase": "v2.8.0",
+      "file": "components/east-syriac.json",
+      "change": "Added 8 new components for the minor hours",
+      "detail": "esy-qutaa-hymn (Hour of the Holy Spirit descent), esy-endana-hymn (Hour of the Crucifixion — cross outstretched at noon), esy-dtsha-sain-hymn (Hour of Christ's death and the thief's confession), esy-subaa-hymn (Shubha Mara — night doxology), esy-subaa-examination (brief examination of conscience with communal Kyrie response), esy-subaa-nunc-dimittis (Hullala d-Sham'un — Song of Simeon), esy-subaa-blessing (Compline blessing with 'And with your spirit' response), esy-karozutha-daytime (shared daytime litany for Quta'a, Endana, and D-tsha' Sa'in). Component count: 78 → 83 (confirmed in console)."
+    },
+    {
       "date": "2026-02-26",
       "phase": "6.6",
       "file": "structure.json + components/traditions/ethiopian/rubrics.json",
       "change": "Phase 6.6 Audit Remediation — Third Hour ID mismatch corrected; structure.json updated",
-      "detail": "eth-meserkh-hour-text corrected to eth-meserk-hour-text in rubrics.json slots time_map. structure.json: documentation_debt object deleted (backlog fully resolved); CalendarEngine Senkessar resolution bug moved to resolved_audit_items with Phase 7.4 resolution note; next_required updated; version bumped to 2.7.0."
-    },
-    {
-      "date": "2026-02-26",
-      "phase": "Audit",
-      "file": "audit/internal",
-      "change": "Internal code audit identifying rendering race conditions, tooltip collision bugs, and Ethiopian ID mismatches.",
-      "detail": "Identified innerHTML technical debt, appData hydration race conditions, tooltip y-axis overflow, and eth-meserk-hour-text ID typo."
+      "detail": "eth-meserkh-hour-text corrected to eth-meserk-hour-text in rubrics.json slots time_map. Version bumped to 2.7.0."
     },
     {
       "date": "2026-02-24",
       "phase": "v2.6.1",
       "file": "components/ethiopian.json",
-      "change": "Added eth-introduction-to-every-hour (Tselote Meweta)",
-      "detail": "Mandatory introductory component for all canonical hours. rubric_before field (punchy prostration instruction), Lord's Prayer, hour-generic Thanksgiving, full Psalm 50/51 with Gloria Patri."
-    },
-    {
-      "date": "2026-02-24",
-      "phase": "v2.6.1",
-      "file": "components/ethiopian.json",
-      "change": "eth-prayer-thanksgiving retired from sequence",
-      "detail": "Content subsumed by eth-introduction-to-every-hour. Removed from rubrics.json sequence. Component retained in JSON."
-    },
-    {
-      "date": "2026-02-24",
-      "phase": "v2.6.1",
-      "file": "components/traditions/ethiopian/rubrics.json",
-      "change": "eth-introduction-to-every-hour prepended to sequence; eth-prayer-thanksgiving removed; eth-liku→eth-lika corrected in slots metadata",
-      "detail": "Sequence now opens with Tselote Meweta. ID typo was cosmetic — renderer used JS hourMap, not rubrics slots, for resolution."
-    },
-    {
-      "date": "2026-02-24",
-      "phase": "v2.6.1",
-      "file": "js/office-ui.js",
-      "change": "Added eth-introduction-to-every-hour handler; added Sixth Hour commemorative sentence in eth-saatat-hour-slot",
-      "detail": "Intro handler renders rubric_before then full text. Sixth Hour: 'The Sixth Hour — the hour of the Crucifixion. Bow your head.' injected when hourId === 'eth-lika-hour-text'."
+      "change": "Added eth-introduction-to-every-hour (Tselote Meweta); eth-prayer-thanksgiving retired from sequence"
     },
     {
       "date": "2026-02-24",
       "phase": "v2.6.1",
       "file": "css/office.css",
-      "change": "Ethiopian rubric Metsehafe Tselot aesthetic; color corrected #8B0000→#C0392B; print override",
-      "detail": "#8B0000 illegible on dark parchment. #C0392B matches --rubric dark mode variable and is legible. Print collapses border-left."
+      "change": "Ethiopian rubric Metsehafe Tselot aesthetic; color corrected #8B0000→#C0392B; print override"
     },
     {
       "date": "2026-02-24",
@@ -366,48 +502,26 @@
     {
       "date": "2026-02-23",
       "phase": "8.1",
-      "file": "data/synaxarium/ethiopian/senkessar-index.json",
-      "change": "Full structural correction and validation",
-      "detail": "Six categories of errors corrected. 13 months, 385 entries, JSON parses clean."
-    },
-    {
-      "date": "2026-02-23",
-      "phase": "8.1",
-      "file": "data/synaxarium/ethiopian/tir/",
-      "change": "Completed Tir (Month 5) narrative corpus — 30 daily JSON files",
-      "detail": "Deep Assembly 4-paragraph woven narratives. Full arc from Circumcision through Timqat through Three Hierarchs."
+      "file": "data/synaxarium/ethiopian/senkessar-index.json + data/synaxarium/ethiopian/tir/",
+      "change": "Full Senkessar index correction and Tir corpus completion"
     },
     {
       "date": "2026-02-22",
       "phase": "7.4",
       "file": "js/calendar-ethiopian.js",
-      "change": "Ethiopian/Coptic calendar engine — fully implemented, self-tested, integrated",
-      "detail": "JDN-based Alexandrian algorithm. 9 reference-point self-test on load. EthiopianCalendar.getEthiopianDate() called directly in eth-saints-commemoration."
+      "change": "Ethiopian/Coptic calendar engine — fully implemented, self-tested, integrated"
     },
     {
       "date": "2026-02-22",
       "phase": "7.1–7.3",
       "file": "js/office-ui.js",
-      "change": "Ethiopian Sa'atat mode — full 24-hour canonical cycle implemented",
-      "detail": "selectMode branch, window._temporalOverride, getEthiopianHourInfo() 9-entry map, all rubric handlers, full Senkessar pipeline in eth-saints-commemoration, VARIABLE_READING_ET, BCP isolation throughout."
-    },
-    {
-      "date": "2026-02-22",
-      "phase": "7.1",
-      "file": "index.html + css/office.css",
-      "change": "Ethiopian Sa'atat splash button and .ethiopian-btn gold styling added"
-    },
-    {
-      "date": "2026-02-22",
-      "file": "js/office-ui.js",
-      "change": "Multiple BCP rendering fixes",
-      "detail": "Independent MP/EP reading chains; CalendarEngine.init() race condition; collect ID mapping; toggleSidebar() reflow; saints preload; date-header gated."
+      "change": "Ethiopian Sa'atat mode — full 24-hour canonical cycle implemented"
     }
   ],
 
   "roadmap_summary": {
-    "completed": "Phases 6.1–6.5, Phase 6.6 (Audit Remediation — Third Hour ID mismatch corrected, documentation backlog fully resolved), Phase 7.1–7.4 (full Ethiopian Sa'atat + calendar engine), Phase 8.1 (Senkessar index + Tir corpus + full wiring via EthiopianCalendar), Phase 8.3 (Hamle narrative corpus — verified complete 2026-02-24), v2.6.1 (Tselote Meweta, Metsehafe Tselot aesthetic, fixes)",
-    "next_required": "Phase 6.6 Audit Remediation items remaining: tooltip vertical overflow detection (js/tooltip.js) and appData hydration race condition (js/office-ui.js). Markdown documentation backlog has been completely resolved.",
+    "completed": "Phases 6.1–6.6 (BCP office + audit remediation), Phase 7.1–7.4 (full Ethiopian Sa'atat + calendar engine), Phase 8.1 (Senkessar index + Tir corpus + full wiring), Phase 8.3 (Hamle corpus verified), v2.6.1 (Tselote Meweta, Metsehafe Tselot aesthetic), v2.8.0 (Church of the East — all seven canonical hours: Sapra, Quta'a, Endana, D-tsha' Sa'in, Ramsha, Lelya, Suba'a — cathedral and monastic sequences, full dynamic token implementation)",
+    "next_required": "Outstanding audit items: (1) tooltip vertical overflow detection in js/tooltip.js — LOW severity; (2) appData hydration race condition review in js/office-ui.js — MEDIUM severity. Cosmetic: splash button label update ('Church of the East — Ramsha' → 'Church of the East — Office').",
     "next_planned": "Phase 8.5 — Ge'ez date display in Sa'atat UI header. EthiopianCalendar.formatEthiopianDate() already available — UI change only, no engine work needed.",
     "future": "Phase 6.7 — Performance polish (timezone warning, LRU seasonal cache, prefetch, service worker); Phase 7.5 — Coptic Agpeya as standalone tradition entry; Phase 9.0 — Mobile app; Phase 9.1 — Cross-Tradition Search (Comparative scripture view across AR, ET, and SY canons)"
   }

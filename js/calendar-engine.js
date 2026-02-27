@@ -114,8 +114,9 @@ class CalendarEngine {
             }
         }
 
-        console.warn(`[Calendar Engine] No range match for ${date.toDateString()}. Defaulting to ordinary1.json`);
+        console.warn(`[Calendar Engine] No season range match for ${date.toDateString()}. Defaulting to ordinary1.json`);
         return {
+            _isFallback: true,
             season: "ordinary",
             file: "ordinary1.json",
             liturgicalColor: "green",
@@ -197,8 +198,20 @@ class CalendarEngine {
             return entry;
         }
 
-        console.warn(`[Calendar Engine] No match for ${iso} in ${fileName} - using index 0 fallback.`);
-        return data[0];
+        console.warn(`[Calendar Engine] No match for ${iso} in ${fileName} - returning fallback sentinel.`);
+        // Return a sentinel rather than data[0] so that a calendar gap produces a visible,
+        // honest failure in the rendered office rather than silently serving the wrong day's content.
+        return {
+            _isFallback: true,
+            title: `[No lectionary entry for ${iso}]`,
+            date: iso,
+            morning_reading_1: '',
+            morning_reading_2: '',
+            evening_reading_1: '',
+            evening_reading_2: '',
+            psalms_morning: '',
+            psalms_evening: ''
+        };
     }
 }
 
