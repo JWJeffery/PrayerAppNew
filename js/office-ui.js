@@ -494,7 +494,92 @@ async function hydrateForEastSyriac() {
 //                        after hydration and before renderOffice(), matching the
 //                        sequence in the original init() call chain.
 //
-async function backToSplash() {
+
+// ── EAST SYRIAC TEMPORAL OVERRIDE ────────────────────────────────────────────
+
+window._esyTemporalOverride = { active: false, date: null, hourId: null };
+
+// Map clock time to the canonical East Syriac hour.
+// Traditional time windows follow the ancient day-division used in the Hudra:
+//   Sapra      06:00–09:00  (Morning Prayer)
+//   Quta'a     09:00–12:00  (Third Hour)
+//   Endana     12:00–15:00  (Sixth Hour)
+//   D-tsha' Sa'in  15:00–18:00  (Ninth Hour)
+//   Ramsha     18:00–21:00  (Evening Prayer)
+//   Lelya      21:00–00:00  (Night Office)
+//   Lelya      00:00–03:00  (Night Office, continued)
+//   Suba'a     03:00–06:00  (Compline / Pre-dawn)
+function getEastSyriacHourInfo() {
+    const now          = new Date();
+    const totalMinutes = now.getHours() * 60 + now.getMinutes();
+
+    const hourMap = [
+        { from:  6 * 60, to:  9 * 60, value: 'sapra',     label: 'Sapra — Morning Prayer' },
+        { from:  9 * 60, to: 12 * 60, value: 'qutaa',     label: "Quta\'a — Third Hour" },
+        { from: 12 * 60, to: 15 * 60, value: 'endana',    label: 'Endana — Sixth Hour' },
+        { from: 15 * 60, to: 18 * 60, value: 'dtsha-sain',label: "D-tsha\' Sa\'in — Ninth Hour" },
+        { from: 18 * 60, to: 21 * 60, value: 'ramsha',    label: 'Ramsha — Evening Prayer' },
+        { from: 21 * 60, to: 24 * 60, value: 'lelya',     label: 'Lelya — Night Office' },
+        { from:  0 * 60, to:  3 * 60, value: 'lelya',     label: 'Lelya — Night Office' },
+        { from:  3 * 60, to:  6 * 60, value: 'subaa',     label: "Suba\'a — Compline" },
+    ];
+
+    for (const entry of hourMap) {
+        if (totalMinutes >= entry.from && totalMinutes < entry.to) return entry;
+    }
+    return { value: 'sapra', label: 'Sapra — Morning Prayer' };
+}
+
+function toggleEsyOverridePanel(e) {
+    e.preventDefault();
+    const panel = document.getElementById('esy-override-panel');
+    if (!panel) return;
+    const isOpen = panel.style.display !== 'none';
+    panel.style.display = isOpen ? 'none' : 'block';
+    if (!isOpen) {
+        const picker = document.getElementById('esy-override-date');
+        if (picker) {
+            const y  = currentDate.getFullYear();
+            const mo = String(currentDate.getMonth() + 1).padStart(2, '0');
+            const d  = String(currentDate.getDate()).padStart(2, '0');
+            picker.value = `${y}-${mo}-${d}`;
+        }
+    }
+}
+
+function applyEsyOverride() {
+    const dateVal  = document.getElementById('esy-override-date')?.value;
+    const radioVal = document.querySelector('input[name="esy-hour-override"]:checked')?.value;
+    if (!dateVal && !radioVal) return;
+    window._esyTemporalOverride.active = true;
+    if (dateVal) {
+        const [y, mo, d] = dateVal.split('-');
+        window._esyTemporalOverride.date = new Date(parseInt(y), parseInt(mo) - 1, parseInt(d));
+        currentDate = window._esyTemporalOverride.date;
+    }
+    if (radioVal) {
+        window._esyTemporalOverride.hourId = radioVal;
+        // Sync the main hour radio to match the override
+        const mainRadio = document.querySelector(`input[name="esy-time"][value="${radioVal}"]`);
+        if (mainRadio) { mainRadio.checked = true; }
+    }
+    renderOffice();
+}
+
+function resetEsyOverride() {
+    window._esyTemporalOverride = { active: false, date: null, hourId: null };
+    currentDate = new Date();
+    document.querySelectorAll('input[name="esy-hour-override"]').forEach(r => r.checked = false);
+    const panel = document.getElementById('esy-override-panel');
+    if (panel) panel.style.display = 'none';
+    // Restore main hour radio to auto-detected hour
+    const autoHour = getEastSyriacHourInfo();
+    const mainRadio = document.querySelector(`input[name="esy-time"][value="${autoHour.value}"]`);
+    if (mainRadio) { mainRadio.checked = true; }
+    renderOffice();
+}
+
+function backToSplash() {
     // Reset hydration and mode state so the next selectMode() call
     // performs a full fresh load rather than re-using stale data.
     isHydrationComplete = false;
@@ -1904,6 +1989,18 @@ async function renderEastSyriac() {
     }
 
     const rite          = document.querySelector('input[name="rite"]:checked')?.value || 'rite2';
+
+    // If an hour override is active, sync the radio; otherwise auto-detect from clock
+    // so the sidebar "Active Hour" always reflects what is actually being displayed.
+    if (window._esyTemporalOverride.active && window._esyTemporalOverride.hourId) {
+        const overrideRadio = document.querySelector(`input[name="esy-time"][value="${window._esyTemporalOverride.hourId}"]`);
+        if (overrideRadio) overrideRadio.checked = true;
+    } else if (!document.querySelector('input[name="esy-time"]:checked')) {
+        const autoHour  = getEastSyriacHourInfo();
+        const autoRadio = document.querySelector(`input[name="esy-time"][value="${autoHour.value}"]`);
+        if (autoRadio) autoRadio.checked = true;
+    }
+
     const selectedTime  = document.querySelector('input[name="esy-time"]:checked')?.value;
 
     const officeMode = document.querySelector('input[name="esy-mode"]:checked')?.value || 'cathedral';
@@ -1947,6 +2044,11 @@ async function renderEastSyriac() {
         officeTitle = 'Ramsha — Evening Prayer';
     }
 
+    // Apply date override if active
+    if (window._esyTemporalOverride.active && window._esyTemporalOverride.date) {
+        currentDate = window._esyTemporalOverride.date;
+    }
+
     // Use the East Syriac calendar module for season, cycle, and liturgical colour.
     // This replaces the old ISO-week getWeekNumber() hack and the CalendarEngine
     // call — the Church of the East operates on its own nine-season year, not
@@ -1959,6 +2061,23 @@ async function renderEastSyriac() {
 
     const esyCycleDisplay = document.getElementById('esy-cycle-box');
     if (esyCycleDisplay) esyCycleDisplay.textContent = cycleLabel;
+
+    // Update sidebar Active Hour display
+    const esyActiveLabel = document.getElementById('esy-active-hour-label');
+    const esyDateLabel   = document.getElementById('esy-active-date-label');
+    if (esyActiveLabel) {
+        const autoHour = getEastSyriacHourInfo();
+        const displayHour = (window._esyTemporalOverride.active && window._esyTemporalOverride.hourId)
+            ? officeTitle
+            : autoHour.label;
+        esyActiveLabel.textContent = officeTitle;
+    }
+    if (esyDateLabel) {
+        const gregDateStr = currentDate.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
+        const esyWeekStr  = esyData.weekLabel || esyData.seasonLabel || '';
+        esyDateLabel.textContent = gregDateStr + (esyWeekStr ? ` | ${esyWeekStr}` : '')
+                                 + (window._esyTemporalOverride.active ? ' ✦ override' : '');
+    }
 
     const marmithaMap = {
         'qdham': {

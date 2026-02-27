@@ -201,15 +201,46 @@
     <div id="east-syriac-settings" class="mode-hidden sidebar-hidden">
         <h3 style="color:var(--gold); font-family:'Cinzel',serif; font-size:1.15em; letter-spacing:0.08em;">Church of the East</h3>
 
+        <!-- Active Hour display -->
         <div class="setting-group">
-            <strong>The Appointed Hour</strong>
-            <label><input type="radio" name="esy-time" value="sapra"      checked onchange="renderOffice()"> Sapra (Morning)</label>
-            <label><input type="radio" name="esy-time" value="qutaa"             onchange="renderOffice()"> Quta'a (Third Hour)</label>
-            <label><input type="radio" name="esy-time" value="endana"            onchange="renderOffice()"> Endana (Sixth Hour)</label>
-            <label><input type="radio" name="esy-time" value="dtsha-sain"        onchange="renderOffice()"> D-tsha' Sa'in (Ninth Hour)</label>
-            <label><input type="radio" name="esy-time" value="ramsha"            onchange="renderOffice()"> Ramsha (Evening)</label>
-            <label><input type="radio" name="esy-time" value="lelya"             onchange="renderOffice()"> Lelya (Night)</label>
-            <label><input type="radio" name="esy-time" value="subaa"             onchange="renderOffice()"> Suba'a (Compline)</label>
+            <strong style="display:block; margin-bottom:4px;">Active Hour</strong>
+            <div id="esy-active-hour-label" style="font-family:'IM Fell English',serif; font-size:1em; color:#c8bfa8; margin-bottom:2px;">—</div>
+            <div id="esy-active-date-label" style="font-family:'Cinzel',serif; font-size:0.72em; letter-spacing:0.08em; color:#a89878; margin-bottom:8px;">—</div>
+            <a href="#" id="esy-override-toggle" onclick="toggleEsyOverridePanel(event)" style="font-family:'Cinzel',serif; font-size:0.7em; letter-spacing:0.1em; text-transform:uppercase; color:var(--gold); opacity:0.7; text-decoration:none;">Choose different date/time</a>
+        </div>
+
+        <!-- Override selection panel (hidden by default) -->
+        <div id="esy-override-panel" style="display:none;">
+            <div class="setting-group" style="margin-top:10px;">
+                <strong style="display:block; margin-bottom:6px;">Date</strong>
+                <input type="date" id="esy-override-date" onchange="applyEsyOverride()"
+                    style="width:100%; padding:6px 8px; background:#1e1a14; color:#c8bfa8; border:1px solid rgba(201,168,76,0.35); border-radius:2px; font-family:'IM Fell English',serif; font-size:0.95em; box-sizing:border-box;">
+            </div>
+            <div class="setting-group" style="margin-top:10px;">
+                <strong style="display:block; margin-bottom:6px;">Canonical Hour</strong>
+                <label style="display:block; margin-bottom:5px;"><input type="radio" name="esy-hour-override" value="sapra"     onchange="applyEsyOverride()"> Sapra (06:00–09:00)</label>
+                <label style="display:block; margin-bottom:5px;"><input type="radio" name="esy-hour-override" value="qutaa"     onchange="applyEsyOverride()"> Quta'a (09:00–12:00)</label>
+                <label style="display:block; margin-bottom:5px;"><input type="radio" name="esy-hour-override" value="endana"    onchange="applyEsyOverride()"> Endana (12:00–15:00)</label>
+                <label style="display:block; margin-bottom:5px;"><input type="radio" name="esy-hour-override" value="dtsha-sain" onchange="applyEsyOverride()"> D-tsha' Sa'in (15:00–18:00)</label>
+                <label style="display:block; margin-bottom:5px;"><input type="radio" name="esy-hour-override" value="ramsha"    onchange="applyEsyOverride()"> Ramsha (18:00–21:00)</label>
+                <label style="display:block; margin-bottom:5px;"><input type="radio" name="esy-hour-override" value="lelya"     onchange="applyEsyOverride()"> Lelya (21:00–03:00)</label>
+                <label style="display:block; margin-bottom:5px;"><input type="radio" name="esy-hour-override" value="subaa"     onchange="applyEsyOverride()"> Suba'a (03:00–06:00)</label>
+            </div>
+            <div class="setting-group" style="margin-top:10px;">
+                <button onclick="resetEsyOverride()" style="width:100%; padding:7px; background:transparent; color:var(--gold); border:1px solid rgba(201,168,76,0.4); font-family:'Cinzel',serif; font-size:0.8em; letter-spacing:0.1em; text-transform:uppercase; cursor:pointer; border-radius:2px;">Reset to Current Time</button>
+            </div>
+        </div>
+
+        <!-- Hidden esy-time radios — read by renderEastSyriac(); UI selection is
+             handled by the override panel above and synced here via applyEsyOverride()/resetEsyOverride() -->
+        <div style="display:none;">
+            <input type="radio" name="esy-time" value="sapra"      checked>
+            <input type="radio" name="esy-time" value="qutaa">
+            <input type="radio" name="esy-time" value="endana">
+            <input type="radio" name="esy-time" value="dtsha-sain">
+            <input type="radio" name="esy-time" value="ramsha">
+            <input type="radio" name="esy-time" value="lelya">
+            <input type="radio" name="esy-time" value="subaa">
         </div>
 
         <div class="setting-group" style="margin-top:14px; border-top:1px solid rgba(201,168,76,0.15); padding-top:14px;">
