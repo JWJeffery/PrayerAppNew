@@ -1972,11 +1972,54 @@ async function renderEthiopianSaatat() {
         }
     }
 
-    document.getElementById('office-display').innerHTML = officeHtml + `</div>`;
-    document.getElementById('saint-display').innerHTML = '';
-    document.getElementById('date-header').style.display = 'none';
+    // ── Saints preload (same monthly JSON used by BCP and Ethiopian renderers) ──
+    const esyMonth = currentDate.toLocaleDateString('en-US', { month: 'long' });
+    if (!appData.saints || appData.saintsMonth !== esyMonth) {
+        try {
+            const res = await fetch(`data/saints/saints-${esyMonth.toLowerCase()}.json`);
+            if (res.ok) { appData.saints = await res.json(); appData.saintsMonth = esyMonth; }
+        } catch (err) { console.warn('[renderEastSyriac] Saints load failed:', err); }
+    }
+
+    // ── Populate saint-display: Eastern/Syriac tradition saints for today ────
+    const esyTodayShort = currentDate.toLocaleDateString('en-US', { month: 'long', day: 'numeric' });
+    const esySaints = (appData.saints || []).filter(s => {
+        if (!s.day || !s.day.toLowerCase().includes(esyTodayShort.toLowerCase())) return false;
+        const t = (s.tradition || '').toLowerCase();
+        return t.includes('syriac') || t.includes('east') || t.includes('assyrian')
+            || t.includes('church of the east') || t.includes('nestorian')
+            || t.includes('chaldean') || t.includes('persian');
+    });
+
+    // Also show any ecumenical/universal saints (apostles, early martyrs) if no tradition-specific ones
+    const universalSaints = esySaints.length === 0
+        ? (appData.saints || []).filter(s => {
+            if (!s.day || !s.day.toLowerCase().includes(esyTodayShort.toLowerCase())) return false;
+            const t = (s.tradition || '').toLowerCase();
+            return t.includes('ecumenical') || t.includes('universal') || t.includes('apostle');
+          })
+        : [];
+
+    const saintsToShow = [...esySaints, ...universalSaints];
     const saintSection = document.querySelector('.saint-section');
-    if (saintSection) saintSection.style.display = 'none';
+
+    document.getElementById('office-display').innerHTML = officeHtml + `</div>`;
+
+    if (saintsToShow.length > 0) {
+        const dateHeader = document.getElementById('date-header');
+        if (dateHeader) {
+            dateHeader.textContent = currentDate.toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric', year: 'numeric' });
+            dateHeader.style.display = '';
+        }
+        document.getElementById('saint-display').innerHTML = saintsToShow
+            .map(s => `<div class="saint-box"><small style="color:var(--accent); font-weight:bold; text-transform:uppercase;">${s.tradition || 'Church of the East'}</small><strong>${s.name || 'Unknown'}</strong><p>${s.description || ''}</p></div>`)
+            .join('');
+        if (saintSection) saintSection.style.display = '';
+    } else {
+        document.getElementById('saint-display').innerHTML = '';
+        document.getElementById('date-header').style.display = 'none';
+        if (saintSection) saintSection.style.display = 'none';
+    }
 }
 
 
@@ -2062,20 +2105,38 @@ async function renderEastSyriac() {
     const esyCycleDisplay = document.getElementById('esy-cycle-box');
     if (esyCycleDisplay) esyCycleDisplay.textContent = cycleLabel;
 
+    // Fasting character display
+    const esyFastDisplay = document.getElementById('esy-fast-box');
+    if (esyFastDisplay) {
+        esyFastDisplay.textContent = esyData.fastLabel || 'Ordinary Day';
+        // Colour-code: fast days gold-red tint, feast days brighter, ordinary neutral
+        const fastColors = {
+            'nineveh-fast': '#c8785a',
+            'great-fast':   '#c87a3a',
+            'fast':         '#b8a060',
+            'feast':        '#a0c890',
+            'ordinary':     'var(--gold)',
+        };
+        esyFastDisplay.style.color = fastColors[esyData.fastCharacter] || 'var(--gold)';
+    }
+
+    // Anaphora display
+    const esyAnaphoraDisplay = document.getElementById('esy-anaphora-box');
+    if (esyAnaphoraDisplay) esyAnaphoraDisplay.textContent = esyData.anaphoraLabel || 'Anaphora of Addai and Mari';
+
     // Update sidebar Active Hour display
     const esyActiveLabel = document.getElementById('esy-active-hour-label');
     const esyDateLabel   = document.getElementById('esy-active-date-label');
     if (esyActiveLabel) {
-        const autoHour = getEastSyriacHourInfo();
-        const displayHour = (window._esyTemporalOverride.active && window._esyTemporalOverride.hourId)
-            ? officeTitle
-            : autoHour.label;
         esyActiveLabel.textContent = officeTitle;
     }
     if (esyDateLabel) {
         const gregDateStr = currentDate.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
-        const esyWeekStr  = esyData.weekLabel || esyData.seasonLabel || '';
-        esyDateLabel.textContent = gregDateStr + (esyWeekStr ? ` | ${esyWeekStr}` : '')
+        // Show Nineveh Fast in week label if active, otherwise normal week label
+        const weekStr = esyData.fastCharacter === 'nineveh-fast'
+            ? "Ba\'utha d\'Ninwaye (Nineveh Fast)"
+            : (esyData.weekLabel || esyData.seasonLabel || '');
+        esyDateLabel.textContent = gregDateStr + (weekStr ? ` | ${weekStr}` : '')
                                  + (window._esyTemporalOverride.active ? ' ✦ override' : '');
     }
 
@@ -2128,10 +2189,11 @@ async function renderEastSyriac() {
         item = item.trim();
 
         if (item === 'esy-variable-seasonal-onitha') {
-            // season comes from EastSyriacCalendar.getSeason() — use East Syriac names
-            const onithaId = season === 'sauma'   ? 'esy-onitha-lent'
-                           : season === 'qyamta'  ? 'esy-onitha-easter'
-                           :                        'esy-onitha-ordinary';
+            // Nineveh Fast uses its own Onitha; Sauma uses lent form; Qyamta uses easter form
+            const onithaId = esyData.fastCharacter === 'nineveh-fast' ? 'esy-onitha-nineveh'
+                           : season === 'sauma'                        ? 'esy-onitha-lent'
+                           : season === 'qyamta'                       ? 'esy-onitha-easter'
+                           :                                             'esy-onitha-ordinary';
             const onithaComp = appData.components.find(c => c.id === onithaId);
             if (onithaComp) {
                 const t = resolveText(onithaComp, rite) || onithaComp.text || '';
@@ -2271,7 +2333,8 @@ async function renderEastSyriac() {
         if (item === 'esy-variable-barekmar-intercessions') {
             const dayNames   = ['sunday','monday','tuesday','wednesday','thursday','friday','saturday'];
             const dayName    = dayNames[currentDate.getDay()];
-            const barekmarId = season === 'sauma'
+            // Nineveh Fast and Sauma both use the penitential Barekmar form
+            const barekmarId = (season === 'sauma' || esyData.fastCharacter === 'nineveh-fast')
                                 ? 'esy-barekmar-sauma'
                                 : `esy-barekmar-${dayName}`;
             const comp = appData.components.find(c => c.id === barekmarId)

@@ -1,386 +1,386 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Universal Office</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=IM+Fell+English:ital@0;1&family=Cinzel+Decorative:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/office.css">
-</head>
-<body id="app-body" class="dark-mode">
-
-<!-- ── Splash Screen ─────────────────────────────────────────────────────── -->
-<div id="splash-bg"></div>
-<div id="mode-selection">
-    <h1>Welcome to The Universal Office</h1>
-    <p>Select your mode:</p>
-    <button class="mode-btn" onclick="selectMode('daily')">Daily Office</button>
-    <button class="mode-btn" onclick="selectMode('prayers')">The Book of Needs</button>
-    <button class="mode-btn ethiopian-btn" onclick="selectMode('ethiopian-saatat')">The Ethiopian Sa'atat (Book of Hours)</button>
-    <button class="mode-btn" onclick="selectMode('east-syriac')">Church of the East — Hudra</button>
-    <div style="margin-top:32px; border-top:1px solid rgba(201,168,76,0.25); padding-top:18px;">
-        <a href="https://musingsancientandmodern.substack.com/" target="_blank" style="text-decoration:none; display:block; text-align:center;">
-            <span style="font-family:'Cinzel',serif; font-size:0.68em; letter-spacing:0.18em; text-transform:uppercase; color:#a89878; display:block; margin-bottom:5px;">Sponsored by</span>
-            <span style="font-family:'Cinzel Decorative','Cinzel',serif; font-size:0.95em; letter-spacing:0.08em; color:#c0392b; text-shadow:0 0 8px rgba(201,168,76,0.35), 0 1px 3px rgba(0,0,0,0.8); display:block;">Musings, Ancient and Modern</span>
-        </a>
-    </div>
-</div>
-
-<!-- ── Daily Office ──────────────────────────────────────────────────────── -->
-<div id="daily-office-section">
-
-    <!-- Sidebar toggle tab -->
-    <div id="sidebar-toggle" onclick="toggleSidebar()" title="Toggle Settings">
-        <span class="toggle-cross">☩</span>
-        <div class="toggle-dots"><span></span><span></span><span></span></div>
-        <span class="toggle-cross">☩</span>
-    </div>
-
-    <!-- Settings panel -->
-    <div id="settings-panel">
-        <h3 style="color:var(--gold); font-family:'Cinzel',serif; font-size:1.15em; letter-spacing:0.08em;">Office Settings</h3>
-
-        <!-- Date navigator -->
-        <div class="ordo-control">
-            <strong>Liturgical Ordo</strong>
-            <div class="ordo-date" id="display-date">Loading...</div>
-            <div class="ordo-buttons">
-                <button class="ordo-btn" onclick="changeDate(-1)">Prev</button>
-                <button class="ordo-btn" onclick="resetDate()">Today</button>
-                <button class="ordo-btn" onclick="changeDate(1)">Next</button>
-            </div>
-            <label for="date-picker" style="display:block; color:var(--gold); font-size:0.8em; margin-top:10px;">Select Date:</label>
-            <input type="date" id="date-picker" style="margin-top:5px; width:100%; padding:5px; background:#333; color:white; border:1px solid #555; border-radius:4px; box-sizing:border-box;" onchange="setCustomDate(this.value)">
-            <div id="calendar-info" style="font-size:0.7em; color:var(--gold); margin-top:10px;">Exploring the Ordo...</div>
-        </div>
-
-        <!-- Time of Day -->
-        <div class="setting-group">
-            <strong>Time of Day:</strong>
-            <label><input type="radio" name="office-time" value="morning-office" onchange="updateSidebarForOffice(); renderOffice(); saveSettings()" checked> Morning Prayer</label>
-            <label><input type="radio" name="office-time" value="noonday-office"  onchange="updateSidebarForOffice(); renderOffice(); saveSettings()"> Noonday Prayer</label>
-            <label><input type="radio" name="office-time" value="evening-office"  onchange="updateSidebarForOffice(); renderOffice(); saveSettings()"> Evening Prayer</label>
-            <label><input type="radio" name="office-time" value="compline-office" onchange="updateSidebarForOffice(); renderOffice(); saveSettings()"> Compline</label>
-        </div>
-
-        <!-- Appearance -->
-        <div class="setting-group">
-            <strong>Appearance:</strong>
-            <label><input type="checkbox" id="toggle-dark"     onchange="updateUI(); saveSettings()" checked> Vespers Mode (Dark)</label>
-            <label style="margin-top:8px;"><input type="checkbox" id="toggle-bcp-only" onchange="toggleBcpOnly(); saveSettings()"> BCP Only Mode</label>
-        </div>
-
-        <!-- Liturgical Settings -->
-        <div class="setting-group">
-            <strong>Liturgical Settings:</strong>
-            <div class="nested-group">
-                <strong style="color:#aaa; font-size:1em;">Language &amp; Rite</strong>
-                <label><input type="radio" name="rite" value="rite1" onchange="renderOffice(); saveSettings()"> Rite I (Traditional)</label>
-                <label><input type="radio" name="rite" value="rite2" onchange="renderOffice(); saveSettings()" checked> Rite II (Contemporary)</label>
-            </div>
-            <div class="nested-group" style="margin-top:8px;">
-                <strong style="color:#aaa; font-size:1em;">Officiant</strong>
-                <label><input type="radio" name="minister" value="priest" onchange="renderOffice(); saveSettings()"> Priest</label>
-                <label><input type="radio" name="minister" value="lay"    onchange="renderOffice(); saveSettings()" checked> Layperson</label>
-            </div>
-            <div class="nested-group" style="margin-top:8px;">
-                <strong style="color:#aaa; font-size:1em;">Creed</strong>
-                <select id="creed-type" onchange="renderOffice(); saveSettings()" style="margin-top:4px; width:auto; min-width:160px; padding:4px 8px; background:#333; color:white; border:1px solid #555; border-radius:4px;">
-                    <option value="comm-creed-apostles">Apostles' Creed</option>
-                    <option value="comm-creed-nicene">Nicene Creed</option>
-                </select>
-            </div>
-            <div class="nested-group" style="margin-top:8px;">
-                <strong style="color:#aaa; font-size:1em;">Lectionary</strong>
-                <label style="margin-top:4px;"><input type="radio" name="gospel-placement" value="morning" onchange="renderOffice(); saveSettings()"> Gospel in Morning</label>
-                <label><input type="radio" name="gospel-placement" value="evening" onchange="renderOffice(); saveSettings()" checked> Gospel in Evening</label>
-                <label><input type="radio" name="gospel-placement" value="both"    onchange="renderOffice(); saveSettings()"> Gospel in Both</label>
-                <label style="margin-top:6px;"><input type="checkbox" id="toggle-30day-psalter" onchange="renderOffice(); saveSettings()"> 30-Day Psalter</label>
-            </div>
-        </div>
-
-        <!-- Opening Devotions (ecumenical) -->
-        <div class="setting-group" id="ecumenical-devotions-section">
-            <strong>Opening Devotions: <span class="info-btn" data-tip="These devotions render before the office begins. They are hidden when BCP Only Mode is active.">i</span></strong>
-            <div class="nested-group">
-                <strong style="color:#aaa; font-size:1em;">Coptic Orthodox</strong>
-                <label><input type="checkbox" id="toggle-agpeya-opening" onchange="renderOffice(); saveSettings()"> Agpeya Opening</label>
-            </div>
-            <div class="nested-group" style="margin-top:8px;">
-                <strong style="color:#aaa; font-size:1em;">Church of the East</strong>
-                <label><input type="checkbox" id="toggle-east-syriac-hours" onchange="renderOffice(); saveSettings()"> Prayer of the Hours <span class="info-btn" data-tip="The Hudra is the Church of the East's canonical prayer book, equivalent to the Divine Office.">i</span></label>
-            </div>
-            <div class="nested-group" style="margin-top:8px;">
-                <strong style="color:#aaa; font-size:1em;">Marian Element</strong>
-                <label style="margin-top:4px; font-size:0.85em; color:#aaa;">Element:</label>
-                <label><input type="radio" name="marian-element" value="none"      onchange="renderOffice(); saveSettings()" checked> None</label>
-                <label><input type="radio" name="marian-element" value="antiphon"  onchange="renderOffice(); saveSettings()"> BCP Seasonal Antiphon</label>
-                <label><input type="radio" name="marian-element" value="theotokion" onchange="renderOffice(); saveSettings()"> Theotokion <span class="info-btn" data-tip="Coptic hymn honouring Mary as Theotokos (God-bearer). Sung at the close of the canonical hours.">i</span></label>
-                <label><input type="radio" name="marian-element" value="both"      onchange="renderOffice(); saveSettings()"> Both</label>
-                <label style="margin-top:6px; font-size:0.85em; color:#aaa;">Position:</label>
-                <label><input type="radio" name="marian-antiphon-pos" value="before" onchange="renderOffice(); saveSettings()" checked> Before office</label>
-                <label><input type="radio" name="marian-antiphon-pos" value="after"  onchange="renderOffice(); saveSettings()"> After office</label>
-            </div>
-        </div>
-
-        <!-- During the Office -->
-        <div class="setting-group" id="during-office-section">
-            <strong>During the Office: <span class="info-btn" data-tip="These elements are inserted at their proper liturgical position within the office. Hidden when BCP Only Mode is active.">i</span></strong>
-            <label><input type="checkbox" id="toggle-gloria-patri"          onchange="renderOffice(); saveSettings()" checked> Gloria Patri <span class="info-btn" data-tip="The Lesser Doxology sung after each Psalm: 'Glory to the Father, and to the Son, and to the Holy Spirit...'">i</span></label>
-            <label style="margin-top:4px;"><input type="checkbox" id="toggle-angelus"    onchange="renderOffice(); saveSettings()"> Angelus <span class="info-btn" data-tip="Roman Catholic devotion recalling the Incarnation, traditionally prayed at morning, noon, and evening. Placed before the Invitatory.">i</span></label>
-            <label><input type="checkbox" id="toggle-trisagion"              onchange="renderOffice(); saveSettings()"> Trisagion <span class="info-btn" data-tip="'Holy God, Holy Mighty, Holy Immortal, have mercy on us.' Ancient Byzantine prayer placed after the Absolution.">i</span></label>
-            <label><input type="checkbox" id="toggle-prayer-before-reading"  onchange="renderOffice(); saveSettings()"> Prayer Before Reading <span class="info-btn" data-tip="Orthodox prayer asking illumination before the Old Testament lesson is read.">i</span></label>
-        </div>
-
-        <!-- After the Office -->
-        <div class="setting-group" id="closing-devotions-section">
-            <strong>After the Office: <span class="info-btn" data-tip="These devotions are appended after the office concludes. Hidden when BCP Only Mode is active.">i</span></strong>
-            <label><input type="checkbox" id="toggle-examen"                 onchange="renderOffice(); saveSettings()"> The Examen <span class="info-btn" data-tip="The Ignatian Examination of Conscience — a prayerful review of the day. Appears only in Compline.">i</span></label>
-            <label><input type="checkbox" id="toggle-kyrie-pantocrator"      onchange="renderOffice(); saveSettings()"> Kyrie Pantocrator <span class="info-btn" data-tip="'Lord Almighty' — a Byzantine litany of supplication placed after the Collect.">i</span></label>
-            <label style="margin-top:6px;"><input type="checkbox" id="toggle-suffrages" onchange="renderOffice(); saveSettings()" checked> Suffrages</label>
-            <label><input type="checkbox" id="toggle-litany"                 onchange="renderOffice(); saveSettings()"> The Great Litany</label>
-            <label><input type="checkbox" id="toggle-general-thanksgiving"   onchange="renderOffice(); saveSettings()"> General Thanksgiving</label>
-            <label><input type="checkbox" id="toggle-chrysostom"             onchange="renderOffice(); saveSettings()"> Prayer of St. Chrysostom</label>
-        </div>
-    </div><!-- /settings-panel -->
-
-    <!-- Ethiopian Sa'atat Liturgical Console -->
-    <div id="ethiopian-settings" class="mode-hidden sidebar-hidden">
-        <h3 style="color:var(--gold); font-family:'Cinzel',serif; font-size:1.15em; letter-spacing:0.08em;">Sa'atat Options</h3>
-
-        <!-- Active Watch display -->
-        <div class="setting-group">
-            <strong style="display:block; margin-bottom:4px;">Active Watch</strong>
-            <div id="eth-active-watch-label" style="font-family:'IM Fell English',serif; font-size:1em; color:#c8bfa8; margin-bottom:2px;">—</div>
-            <div id="eth-active-date-label"  style="font-family:'Cinzel',serif; font-size:0.72em; letter-spacing:0.08em; color:#a89878; margin-bottom:8px;">—</div>
-            <a href="#" id="eth-override-toggle" onclick="toggleEthOverridePanel(event)" style="font-family:'Cinzel',serif; font-size:0.7em; letter-spacing:0.1em; text-transform:uppercase; color:var(--gold); opacity:0.7; text-decoration:none;">Choose different date/time</a>
-        </div>
-
-        <!-- Override selection panel (hidden by default) -->
-        <div id="eth-override-panel" style="display:none;">
-            <div class="setting-group" style="margin-top:10px;">
-                <strong style="display:block; margin-bottom:6px;">Date</strong>
-                <input type="date" id="eth-override-date" onchange="applyEthOverride()"
-                    style="width:100%; padding:6px 8px; background:#1e1a14; color:#c8bfa8; border:1px solid rgba(201,168,76,0.35); border-radius:2px; font-family:'IM Fell English',serif; font-size:0.95em; box-sizing:border-box;">
-            </div>
-            <div class="setting-group" style="margin-top:10px;">
-                <strong style="display:block; margin-bottom:6px;">Canonical Watch</strong>
-                <label style="display:block; margin-bottom:5px;"><input type="radio" name="eth-watch-override" value="eth-nigatu-hour-text"  onchange="applyEthOverride()"> Nigatu — ንጋቱ (06:00–09:00)</label>
-                <label style="display:block; margin-bottom:5px;"><input type="radio" name="eth-watch-override" value="eth-meserk-hour-text"  onchange="applyEthOverride()"> Mese’rk — መሠርቅ (09:00–12:00)</label>
-                <label style="display:block; margin-bottom:5px;"><input type="radio" name="eth-watch-override" value="eth-lika-hour-text"    onchange="applyEthOverride()"> Lika — ሊካ (12:00–15:00)</label>
-                <label style="display:block; margin-bottom:5px;"><input type="radio" name="eth-watch-override" value="eth-terk-hour-text"    onchange="applyEthOverride()"> Tese’at — ተሰዓት (15:00–17:00)</label>
-                <label style="display:block; margin-bottom:5px;"><input type="radio" name="eth-watch-override" value="eth-serkh-hour-text"   onchange="applyEthOverride()"> Serkh — ሠርክ (17:00–18:00)</label>
-                <label style="display:block; margin-bottom:5px;"><input type="radio" name="eth-watch-override" value="eth-nome-hour-text"    onchange="applyEthOverride()"> Nime — ኖሜ (18:00–21:00)</label>
-                <label style="display:block; margin-bottom:5px;"><input type="radio" name="eth-watch-override" value="eth-hour-7"            onchange="applyEthOverride()"> Le’lit — First Night Watch (21:00–00:00)</label>
-                <label style="display:block; margin-bottom:5px;"><input type="radio" name="eth-watch-override" value="eth-lelit-hour-text"   onchange="applyEthOverride()"> Le’lit — ሌሊት (00:00–03:00)</label>
-                <label style="display:block; margin-bottom:5px;"><input type="radio" name="eth-watch-override" value="eth-mahlet-hour-text"  onchange="applyEthOverride()"> Mahlet — ማህሌት (03:00–06:00)</label>
-            </div>
-            <div class="setting-group" style="margin-top:10px;">
-                <button onclick="resetEthOverride()" style="width:100%; padding:7px; background:transparent; color:var(--gold); border:1px solid rgba(201,168,76,0.4); font-family:'Cinzel',serif; font-size:0.8em; letter-spacing:0.1em; text-transform:uppercase; cursor:pointer; border-radius:2px;">Reset to Current Time</button>
-            </div>
-        </div>
-
-        <div class="setting-group" style="margin-top:14px; border-top:1px solid rgba(201,168,76,0.15); padding-top:14px;">
-            <strong>Edition:</strong>
-            <select id="eth-length-select" onchange="renderOffice()" style="margin-top:6px; width:100%; padding:8px; background:#1e1a14; color:#c8bfa8; border:1px solid rgba(201,168,76,0.35); border-radius:2px; font-family:'IM Fell English',serif;">
-                <option value="abbreviated">Abbreviated (Horologium)</option>
-                <option value="full">Full (Metsihafe Sa'atat)</option>
-            </select>
-        </div>
-        <div class="setting-group" style="margin-top:10px;">
-            <label>
-                <input type="checkbox" id="eth-include-marian" onchange="renderOffice()">
-                Include Weddase Maryam
-            </label>
-        </div>
-    </div>
-
-    <!-- Church of the East Liturgical Console -->
-    <div id="east-syriac-settings" class="mode-hidden sidebar-hidden">
-        <h3 style="color:var(--gold); font-family:'Cinzel',serif; font-size:1.15em; letter-spacing:0.08em;">Church of the East</h3>
-
-        <!-- Active Hour display -->
-        <div class="setting-group">
-            <strong style="display:block; margin-bottom:4px;">Active Hour</strong>
-            <div id="esy-active-hour-label" style="font-family:'IM Fell English',serif; font-size:1em; color:#c8bfa8; margin-bottom:2px;">—</div>
-            <div id="esy-active-date-label" style="font-family:'Cinzel',serif; font-size:0.72em; letter-spacing:0.08em; color:#a89878; margin-bottom:8px;">—</div>
-            <a href="#" id="esy-override-toggle" onclick="toggleEsyOverridePanel(event)" style="font-family:'Cinzel',serif; font-size:0.7em; letter-spacing:0.1em; text-transform:uppercase; color:var(--gold); opacity:0.7; text-decoration:none;">Choose different date/time</a>
-        </div>
-
-        <!-- Override selection panel (hidden by default) -->
-        <div id="esy-override-panel" style="display:none;">
-            <div class="setting-group" style="margin-top:10px;">
-                <strong style="display:block; margin-bottom:6px;">Date</strong>
-                <input type="date" id="esy-override-date" onchange="applyEsyOverride()"
-                    style="width:100%; padding:6px 8px; background:#1e1a14; color:#c8bfa8; border:1px solid rgba(201,168,76,0.35); border-radius:2px; font-family:'IM Fell English',serif; font-size:0.95em; box-sizing:border-box;">
-            </div>
-            <div class="setting-group" style="margin-top:10px;">
-                <strong style="display:block; margin-bottom:6px;">Canonical Hour</strong>
-                <label style="display:block; margin-bottom:5px;"><input type="radio" name="esy-hour-override" value="sapra"     onchange="applyEsyOverride()"> Sapra (06:00–09:00)</label>
-                <label style="display:block; margin-bottom:5px;"><input type="radio" name="esy-hour-override" value="qutaa"     onchange="applyEsyOverride()"> Quta'a (09:00–12:00)</label>
-                <label style="display:block; margin-bottom:5px;"><input type="radio" name="esy-hour-override" value="endana"    onchange="applyEsyOverride()"> Endana (12:00–15:00)</label>
-                <label style="display:block; margin-bottom:5px;"><input type="radio" name="esy-hour-override" value="dtsha-sain" onchange="applyEsyOverride()"> D-tsha' Sa'in (15:00–18:00)</label>
-                <label style="display:block; margin-bottom:5px;"><input type="radio" name="esy-hour-override" value="ramsha"    onchange="applyEsyOverride()"> Ramsha (18:00–21:00)</label>
-                <label style="display:block; margin-bottom:5px;"><input type="radio" name="esy-hour-override" value="lelya"     onchange="applyEsyOverride()"> Lelya (21:00–03:00)</label>
-                <label style="display:block; margin-bottom:5px;"><input type="radio" name="esy-hour-override" value="subaa"     onchange="applyEsyOverride()"> Suba'a (03:00–06:00)</label>
-            </div>
-            <div class="setting-group" style="margin-top:10px;">
-                <button onclick="resetEsyOverride()" style="width:100%; padding:7px; background:transparent; color:var(--gold); border:1px solid rgba(201,168,76,0.4); font-family:'Cinzel',serif; font-size:0.8em; letter-spacing:0.1em; text-transform:uppercase; cursor:pointer; border-radius:2px;">Reset to Current Time</button>
-            </div>
-        </div>
-
-        <!-- Hidden esy-time radios — read by renderEastSyriac(); UI selection is
-             handled by the override panel above and synced here via applyEsyOverride()/resetEsyOverride() -->
-        <div style="display:none;">
-            <input type="radio" name="esy-time" value="sapra"      checked>
-            <input type="radio" name="esy-time" value="qutaa">
-            <input type="radio" name="esy-time" value="endana">
-            <input type="radio" name="esy-time" value="dtsha-sain">
-            <input type="radio" name="esy-time" value="ramsha">
-            <input type="radio" name="esy-time" value="lelya">
-            <input type="radio" name="esy-time" value="subaa">
-        </div>
-
-        <div class="setting-group" style="margin-top:14px; border-top:1px solid rgba(201,168,76,0.15); padding-top:14px;">
-            <strong>Office Mode</strong>
-            <label><input type="radio" name="esy-mode" value="cathedral" checked onchange="renderOffice()"> Cathedral (Simplified)</label>
-            <label><input type="radio" name="esy-mode" value="monastic" onchange="renderOffice()"> Monastic (Full)</label>
-        </div>
-
-        <div class="setting-group" style="margin-top:14px; border-top:1px solid rgba(201,168,76,0.15); padding-top:14px;">
-            <strong style="display:block; margin-bottom:6px;">Current Cycle</strong>
-            <div id="esy-cycle-box" style="font-family:'Cinzel',serif; font-size:0.9em; color:var(--gold); border:1px solid rgba(201,168,76,0.3); padding:8px; background:rgba(0,0,0,0.2); border-radius:2px;">
-                Calculating...
-            </div>
-        </div>
-    </div>
-
-    <!-- Main content area -->
-    <div id="main-content">
-        <button onclick="backToSplash()" style="position:fixed; top:12px; right:16px; background:transparent; color:var(--gold); border:1px solid rgba(201,168,76,0.4); padding:4px 14px; font-family:'Cinzel',serif; font-size:0.7em; letter-spacing:0.12em; text-transform:uppercase; border-radius:2px; cursor:pointer; opacity:0.6; z-index:200; transition:opacity 0.2s;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.6'">Back to Modes</button>
-        <h1>The Universal Office</h1>
-        <div id="office-display"></div>
-        <div class="saint-section">
-            <div class="saint-section-divider"><div class="sdiv-left"></div><span>Commemorations</span><div class="sdiv-right"></div></div>
-            <h2 id="date-header" style="display:none;"></h2>
-            <div id="saint-display" class="saint-grid"></div>
-        </div>
-    </div>
-
-</div><!-- /daily-office-section -->
-
-<!-- ── Book of Needs ─────────────────────────────────────────────────────── -->
-<div id="individual-prayers-section">
-    <div id="prayer-selection">
-        <h1 style="font-family:'Cinzel Decorative','Cinzel',serif; color:var(--gold); font-size:1.9em; letter-spacing:0.06em; margin-bottom:0.3em;">The Book of Needs</h1>
-        <p style="font-family:'Cinzel',serif; font-size:0.78em; letter-spacing:0.15em; text-transform:uppercase; color:#a89878; margin-bottom:28px;">Select a Prayer</p>
-
-        <div class="prayer-select-wrapper" id="prayer-select-wrapper">
-            <div class="prayer-select-trigger" id="prayer-select-trigger" onclick="togglePrayerDropdown()">
-                <span id="prayer-select-label">— Choose a Prayer —</span>
-            </div>
-            <div class="prayer-select-list" id="prayer-select-list">
-
-                <div class="prayer-optgroup-label">Eucharist: Preparation &amp; Spiritual Communion</div>
-                <div class="prayer-option" data-value="prayer-humble-access"  onclick="selectPrayer(this)">Prayer of Humble Access (BCP)</div>
-                <div class="prayer-option" data-value="spiritual-communion"   onclick="selectPrayer(this)">Act of Spiritual Communion</div>
-
-                <div class="prayer-optgroup-label">Eucharist: Thanksgiving After Communion</div>
-                <div class="prayer-option" data-value="thanksgiving-aquinas"  onclick="selectPrayer(this)">Thanksgiving (After St. Thomas Aquinas)</div>
-                <div class="prayer-option" data-value="thanksgiving-hooker"   onclick="selectPrayer(this)">Thanksgiving (After Richard Hooker)</div>
-                <div class="prayer-option" data-value="thanksgiving-andrewes" onclick="selectPrayer(this)">Self-Oblation (After Lancelot Andrewes)</div>
-                <div class="prayer-option" data-value="thanksgiving-basil"    onclick="selectPrayer(this)">From the Liturgy of Saint Basil</div>
-
-                <div class="prayer-optgroup-label">Eucharist: Adoration &amp; Benediction</div>
-                <div class="prayer-option" data-value="o-salutaris"    onclick="selectPrayer(this)">O Salutaris (St. Thomas Aquinas)</div>
-                <div class="prayer-option" data-value="tantum-ergo"    onclick="selectPrayer(this)">Tantum Ergo (St. Thomas Aquinas)</div>
-                <div class="prayer-option" data-value="divine-praises" onclick="selectPrayer(this)">The Divine Praises</div>
-                <div class="prayer-option" data-value="anima-christi"  onclick="selectPrayer(this)">Anima Christi (tr. John Henry Newman)</div>
-
-                <div class="prayer-optgroup-label">Eucharist: Personal Devotions</div>
-                <div class="prayer-option" data-value="to-blessed-virgin"   onclick="selectPrayer(this)">To the Blessed Virgin Mary</div>
-                <div class="prayer-option" data-value="to-saint-joseph"     onclick="selectPrayer(this)">To Saint Joseph</div>
-                <div class="prayer-option" data-value="in-sorrow-or-trouble" onclick="selectPrayer(this)">In Sorrow or Trouble</div>
-                <div class="prayer-option" data-value="ave-regina"          onclick="selectPrayer(this)">Ave Regina Caelorum</div>
-
-                <div class="prayer-optgroup-label">Eucharist: Contrition &amp; Repentance</div>
-                <div class="prayer-option" data-value="act-of-contrition" onclick="selectPrayer(this)">Act of Contrition</div>
-                <div class="prayer-option" data-value="after-neglect"     onclick="selectPrayer(this)">After Neglect or Misuse of the Sacrament</div>
-
-                <div class="prayer-optgroup-label">Prayers of Lancelot Andrewes</div>
-                <div class="prayer-option" data-value="andrewes-commendation"  onclick="selectPrayer(this)">Commendation</div>
-                <div class="prayer-option" data-value="andrewes-thanksgiving"  onclick="selectPrayer(this)">Thanksgiving</div>
-                <div class="prayer-option" data-value="andrewes-penitence"     onclick="selectPrayer(this)">Penitence</div>
-                <div class="prayer-option" data-value="andrewes-petition"      onclick="selectPrayer(this)">Petition</div>
-
-                <div class="prayer-optgroup-label">General Intercessions</div>
-                <div class="prayer-option" data-value="prayer-for-the-sick"    onclick="selectPrayer(this)">Prayer for the Sick</div>
-                <div class="prayer-option" data-value="prayer-for-peace"       onclick="selectPrayer(this)">Prayer for Peace</div>
-                <div class="prayer-option" data-value="prayer-for-unity"       onclick="selectPrayer(this)">Prayer for Unity</div>
-                <div class="prayer-option" data-value="prayer-for-mission"     onclick="selectPrayer(this)">Prayer for Mission</div>
-                <div class="prayer-option" data-value="prayer-for-guidance"    onclick="selectPrayer(this)">Prayer for Guidance</div>
-                <div class="prayer-option" data-value="prayer-for-the-church"  onclick="selectPrayer(this)">Prayer for the Church</div>
-                <div class="prayer-option" data-value="prayer-for-the-world"   onclick="selectPrayer(this)">Prayer for the World</div>
-
-                <div class="prayer-optgroup-label">For Ministers: Journey to Church</div>
-                <div class="prayer-option" data-value="minister-journey-bcp"      onclick="selectPrayer(this)">On the Way to Church (Anglican)</div>
-                <div class="prayer-option" data-value="minister-journey-orthodox" onclick="selectPrayer(this)">On the Way to Church (Orthodox)</div>
-
-                <div class="prayer-optgroup-label">For Ministers: Before Entering Church</div>
-                <div class="prayer-option" data-value="minister-entering-bcp"      onclick="selectPrayer(this)">Before Entering Church (Anglican)</div>
-                <div class="prayer-option" data-value="minister-entering-orthodox" onclick="selectPrayer(this)">Before Entering Church (Orthodox)</div>
-
-                <div class="prayer-optgroup-label">For Ministers: Vesting Prayers</div>
-                <div class="prayer-option" data-value="vesting-amice"                 onclick="selectPrayer(this)">Vesting: The Amice</div>
-                <div class="prayer-option" data-value="vesting-alb"                   onclick="selectPrayer(this)">Vesting: The Alb</div>
-                <div class="prayer-option" data-value="vesting-cincture"              onclick="selectPrayer(this)">Vesting: The Cincture</div>
-                <div class="prayer-option" data-value="vesting-stole-deacon"          onclick="selectPrayer(this)">Vesting: The Stole (Deacon)</div>
-                <div class="prayer-option" data-value="vesting-stole-priest"          onclick="selectPrayer(this)">Vesting: The Stole (Priest)</div>
-                <div class="prayer-option" data-value="vesting-chasuble"              onclick="selectPrayer(this)">Vesting: The Chasuble</div>
-                <div class="prayer-option" data-value="vesting-orthodox-epitrachelion" onclick="selectPrayer(this)">Vesting: The Epitrachelion (Orthodox)</div>
-                <div class="prayer-option" data-value="vesting-orthodox-phailonion"   onclick="selectPrayer(this)">Vesting: The Phelonion (Orthodox)</div>
-                <div class="prayer-option" data-value="vesting-orthodox-full"         onclick="selectPrayer(this)">Vesting Prayers: Full Orthodox Sequence</div>
-
-                <div class="prayer-optgroup-label">For Ministers: Before Serving</div>
-                <div class="prayer-option" data-value="minister-before-serving-bcp"      onclick="selectPrayer(this)">Before Serving (Anglican)</div>
-                <div class="prayer-option" data-value="minister-before-serving-orthodox" onclick="selectPrayer(this)">Before the Divine Liturgy (Orthodox)</div>
-                <div class="prayer-option" data-value="minister-before-serving-deacon"   onclick="selectPrayer(this)">For a Deacon Before the Liturgy</div>
-
-                <div class="prayer-optgroup-label">For Ministers: After Serving</div>
-                <div class="prayer-option" data-value="minister-after-serving-bcp"      onclick="selectPrayer(this)">Thanksgiving After Serving (Anglican)</div>
-                <div class="prayer-option" data-value="minister-after-serving-orthodox" onclick="selectPrayer(this)">Thanksgiving After the Liturgy (Orthodox)</div>
-
-            </div>
-        </div>
-
-        <input type="hidden" id="prayer-dropdown" value="">
-        <br>
-        <button class="mode-btn" onclick="showSinglePrayer()" style="margin-top:20px;">Display Prayer</button>
-        <button class="mode-btn" onclick="backToSplash()"     style="margin-top:12px;">Back to Modes</button>
-    </div><!-- /prayer-selection -->
-
-    <div id="prayer-display" style="display:none; margin-top:40px; background:transparent; width:100%; max-width:800px; padding-bottom:100px; box-sizing:border-box;">
-        <div id="single-prayer-content"></div>
-    </div>
-
-    <div id="prayer-back-bar" style="display:none; position:fixed; bottom:0; left:0; right:0; text-align:center; padding:16px 0 20px; background:linear-gradient(transparent, rgba(30,18,8,0.97) 40%); z-index:300;">
-        <button class="mode-btn" onclick="backToPrayerDropdown()">Back to Selection</button>
-    </div>
-</div><!-- /individual-prayers-section -->
-
-<!-- ── Tooltip ───────────────────────────────────────────────────────────── -->
-<div id="uo-tooltip"></div>
-
-<!-- ── Scripts ───────────────────────────────────────────────────────────── -->
-<script src="js/calendar-engine.js" defer></script>
-<script src="js/calendar-ethiopian.js" defer></script>
-<script src="js/calendar-east-syriac.js" defer></script>
-<script src="js/scripture-resolver.js" defer></script>
-<script src="js/office-ui.js" defer></script>
-<script src="js/prayers.js"></script>
-<script src="js/tooltip.js"></script>
-
-</body>
-</html>
+[
+  {
+    "id": "esy-opening-formula",
+    "title": "The Opening",
+    "text": "<p class=\"rubric-text\">The Priest begins:</p><p class=\"component-text\">In the name of the Father, and of the Son, and of the Holy Spirit for ever.</p><p class=\"rubric-text\">The Congregation responds:</p><p class=\"component-text\">Amen.</p>"
+  },
+  {
+    "id": "esy-gloria-patri",
+    "title": "Glory be to the Father",
+    "text": "<p class=\"component-text\">Glory be to the Father, and to the Son, and to the Holy Spirit;<br>From everlasting to everlasting. Amen and Amen.</p>"
+  },
+  {
+    "id": "esy-lords-prayer-farced",
+    "title": "The Lord's Prayer (with Qanona)",
+    "text": "<p class=\"rubric-text\">The Lord's Prayer is said, farced with the Qanona (the refrain):</p><p class=\"component-text\">Our Father in heaven, hallowed be your name. Your kingdom come.<br><em>Holy, holy, holy are you, our Father in heaven. Heaven and earth are full of the greatness of your glory. Angels and men cry out to you: Holy, holy, holy are you.</em><br>Our Father in heaven, hallowed be your name. Your kingdom come. Your will be done on earth as in heaven. Give us this day our daily bread. And forgive us our trespasses, as we forgive those who trespass against us. And lead us not into temptation, but deliver us from the evil one. For yours is the kingdom, and the power, and the glory, for ever and ever. Amen.</p>"
+  },
+  {
+    "id": "esy-laku-mara",
+    "title": "Laku Mara (To You, Lord)",
+    "text": "<p class=\"rubric-text\">The Laku Mara, the Hymn of the Resurrection, is chanted:</p><p class=\"component-text\">To you, Lord of all, we give thanks;<br>And you, Jesus Christ, we glorify;<br>For you are the restorer of our bodies,<br>And you are the savior of our souls.</p>"
+  },
+  {
+    "id": "esy-trisagion",
+    "title": "The Trisagion",
+    "text": "<p class=\"rubric-text\">The Trisagion is chanted three times:</p><p class=\"component-text\">Holy God,<br>Holy Mighty,<br>Holy Immortal,<br>Have mercy on us.</p>"
+  },
+  {
+    "id": "esy-suraya",
+    "title": "The Suraya",
+    "text": "<p class=\"rubric-text\">The Suraya is chanted:</p><p class=\"component-text\">Your word is a lamp to my feet and a light to my path.<br>I have sworn an oath and confirmed it, to observe your righteous ordinances.<br>I am severely afflicted; give me life, O Lord, according to your word.</p>"
+  },
+  {
+    "id": "esy-karozutha",
+    "title": "The Karozutha (Litany)",
+    "text": "<p class=\"rubric-text\">The Deacon intones the Karozutha. The Congregation responds: <strong>Lord, have mercy.</strong></p><p class=\"component-text\">Let us all stand well in sorrow and care and say: <em>Lord, have mercy.</em><br>Father of mercies and God of all comfort, we beseech you: <em>Lord, have mercy.</em><br>For the peace, harmony, and well-being of the whole world and of all churches, we beseech you: <em>Lord, have mercy.</em><br>For our country and for all countries, and for those who dwell in them in faith, we beseech you: <em>Lord, have mercy.</em></p>"
+  },
+  {
+    "id": "esy-concluding-blessing",
+    "title": "The Concluding Blessing",
+    "text": "<p class=\"rubric-text\">The Priest blesses the congregation:</p><p class=\"component-text\">May God, the Lord of all, bless us. May He keep our days in peace, and establish our lives in His grace and mercy, now and always, and for ever and ever.</p><p class=\"rubric-text\">The Congregation responds:</p><p class=\"component-text\">Amen.</p>"
+  },
+  {
+    "id": "esy-sapra-morning-hymn",
+    "title": "The Morning Hymn",
+    "text": "<p class=\"rubric-text\">The Morning Hymn is chanted:</p><p class=\"component-text\">Light has dawned for the righteous, and joy for the upright in heart.<br>Christ our hope has risen from the dead; He has delivered us from darkness and given us light.</p>"
+  },
+  {
+    "id": "esy-karozutha-morning",
+    "title": "The Karozutha (Morning Litany)",
+    "text": "<p class=\"rubric-text\">The Deacon intones the Morning Karozutha:</p><p class=\"component-text\">Let us all stand well in joy and gladness and say: <em>Lord, have mercy.</em><br>For the peace of the whole world and the preservation of the holy churches, we beseech you: <em>Lord, have mercy.</em><br>O Christ, who are the true light, shine in our hearts that we may walk in your truth: <em>Lord, have mercy.</em></p>"
+  },
+  {
+    "id": "esy-onitha-ordinary",
+    "title": "The 'Onitha (Anthem)",
+    "text": "<p class=\"rubric-text\">The appointed seasonal anthem is sung:</p><p class=\"component-text\">Blessed is Christ, who has magnified His holy Church, and established her upon the rock of faith. By His grace, she sings praise to His name.</p>"
+  },
+  {
+    "id": "esy-onitha-lent",
+    "title": "The 'Onitha (Anthem for the Great Fast)",
+    "text": "<p class=\"rubric-text\">The appointed seasonal anthem is sung:</p><p class=\"component-text\">O Lord, open the door of your mercy to our prayers, and accept our fasting and our tears. Forgive our debts, O good and merciful God.</p>"
+  },
+  {
+    "id": "esy-onitha-easter",
+    "title": "The 'Onitha (Anthem for the Resurrection)",
+    "text": "<p class=\"rubric-text\">The appointed seasonal anthem is sung:</p><p class=\"component-text\">Christ is risen from the dead! He has overthrown the power of death and raised all of creation with Him. Let the heavens and the earth rejoice!</p>"
+  },
+  {
+    "id": "esy-lelya-opening-prayer",
+    "title": "The Night Prayer",
+    "text": "<p class=\"rubric-text\">The Priest prays:</p><p class=\"component-text\">Strengthen us, O our Lord and God, that we may be vigilant before You in pure prayer during the night watches. May we sing Your praises with the heavenly hosts, now and always, and for ever and ever.</p>"
+  },
+  {
+    "id": "esy-lelya-hymn",
+    "title": "The Tishbohta (Hymn of Praise)",
+    "text": "<p class=\"rubric-text\">The Tishbohta is sung:</p><p class=\"component-text\">Blessed is the glorious honor of the Lord from His place.<br>From everlasting to everlasting, You alone are God.<br>Let all creation praise Your holy name.</p>"
+  },
+  {
+    "id": "esy-barekmar-general",
+    "title": "Barekmar Intercessions (General)",
+    "text": "<p class=\"rubric-text\">The Officiant says the Barekmar. After each petition the Congregation responds: <strong>Lord, have mercy.</strong></p><p class=\"component-text\">Bless, O Lord, our Catholicos-Patriarch, our bishops, our priests, and all who minister at Your holy altar. <em>Lord, have mercy.</em><br>Bless, O Lord, this holy congregation gathered here; keep us in the true faith and grant us growth in holiness. <em>Lord, have mercy.</em><br>Bless, O Lord, the sick and the suffering, the poor and the oppressed, and all who call upon Your name in their need. <em>Lord, have mercy.</em><br>Remember, O Lord, the faithful departed who have fallen asleep in the hope of the resurrection; grant them rest in Your kingdom. <em>Lord, have mercy.</em><br>For the peace of the whole world, for the welfare of Your holy churches, and for the unity of all, we beseech You. <em>Lord, have mercy.</em><br>Cause Your mercy to rise upon us, O Lord, as the sun at its rising, and let not the darkness of sin overcome us. <em>Lord, have mercy.</em></p>"
+  },
+  {
+    "id": "esy-barekmar-sunday",
+    "title": "Barekmar — Sunday",
+    "text": "<p class=\"rubric-text\">The Officiant says the Barekmar of the Lord's Day. The Congregation responds: <strong>Lord, have mercy.</strong></p><p class=\"component-text\">Bless, O Lord, our Catholicos-Patriarch, our bishops, our priests, and all who serve at the altar of Your glory. <em>Lord, have mercy.</em><br>On this day of the Resurrection, we commemorate our holy father Mar Shimun Bar Sabbae and all the martyrs of the East, who sealed their witness with their blood. Grant them a glorious crown in Your kingdom. <em>Lord, have mercy.</em><br>Bless, O Lord, this assembly of Your people who have gathered on the first day of the week to break the bread of life and drink the cup of salvation. <em>Lord, have mercy.</em><br>Bless the children who are baptized into Your death and resurrection; let them grow in the knowledge and fear of Your name. <em>Lord, have mercy.</em><br>Remember, O Lord, all the faithful departed, from the righteous Adam until this day; grant them rest with the saints in the light of Your countenance. <em>Lord, have mercy.</em><br>For the peace of the whole world, for the welfare of Your holy Church throughout all the earth, and for the union of all, we beseech You. <em>Lord, have mercy.</em></p>"
+  },
+  {
+    "id": "esy-barekmar-monday",
+    "title": "Barekmar — Monday",
+    "text": "<p class=\"rubric-text\">The Officiant says the Barekmar. The Congregation responds: <strong>Lord, have mercy.</strong></p><p class=\"component-text\">Bless, O Lord, our Catholicos-Patriarch, our bishops, our priests, and all the deacons and ministers of Your holy Church. <em>Lord, have mercy.</em><br>On this day we commemorate the holy angels and archangels, the cherubim and seraphim, and all the heavenly hosts who stand before Your throne and cry: Holy, holy, holy. Unite our voices with theirs as we offer this prayer. <em>Lord, have mercy.</em><br>Bless, O Lord, the rulers of the nations; incline their hearts toward justice, mercy, and the protection of the innocent. <em>Lord, have mercy.</em><br>Bless those who labor and are heavy-laden; refresh them with Your rest, and let their work be found pleasing before You. <em>Lord, have mercy.</em><br>Remember, O Lord, the faithful departed who served You in this life; number them with Your saints in the land of the living. <em>Lord, have mercy.</em><br>For the peace of the whole world, for the welfare of Your holy churches, and for the unity of all, we beseech You. <em>Lord, have mercy.</em></p>"
+  },
+  {
+    "id": "esy-barekmar-tuesday",
+    "title": "Barekmar — Tuesday",
+    "text": "<p class=\"rubric-text\">The Officiant says the Barekmar. The Congregation responds: <strong>Lord, have mercy.</strong></p><p class=\"component-text\">Bless, O Lord, our Catholicos-Patriarch, our bishops, our priests, and all the orders of Your Church from the greatest to the least. <em>Lord, have mercy.</em><br>On this day we commemorate the holy prophets who foretold Your coming; their words were fire and their lives a flame that consumed them with love for Your name. Grant us a portion of their zeal. <em>Lord, have mercy.</em><br>Bless, O Lord, the monasteries and communities of prayer throughout the world; preserve them from all temptation and strengthen them in their vocation. <em>Lord, have mercy.</em><br>Bless the students and the scholars; open their minds to truth and let all learning lead them to the source of all wisdom. <em>Lord, have mercy.</em><br>Remember, O Lord, those who died without the comfort of the sacraments or the prayers of the faithful; have mercy on them, for You alone know the secrets of all hearts. <em>Lord, have mercy.</em><br>For the peace of the whole world, for the welfare of Your holy churches, and for the unity of all, we beseech You. <em>Lord, have mercy.</em></p>"
+  },
+  {
+    "id": "esy-barekmar-wednesday",
+    "title": "Barekmar — Wednesday",
+    "text": "<p class=\"rubric-text\">The Officiant says the Barekmar. The Congregation responds: <strong>Lord, have mercy.</strong></p><p class=\"component-text\">Bless, O Lord, our Catholicos-Patriarch, our bishops, our priests, and all the faithful people of the East who keep the ancient way. <em>Lord, have mercy.</em><br>On this day, the day of Your betrayal, O Lord, we remember the night in which You were handed over, and we give thanks that You gave Yourself willingly for our salvation. May we never betray You by our deeds or our silence. <em>Lord, have mercy.</em><br>Bless, O Lord, those who are persecuted for righteousness' sake; be their shield and their strong tower in the day of trial. <em>Lord, have mercy.</em><br>Bless the strangers and the exiles, those far from their homelands and their families; let them find a dwelling place in the house of Your love. <em>Lord, have mercy.</em><br>Remember, O Lord, those who have fallen asleep in foreign lands, far from the graves of their fathers; gather them from every corner of the earth on the day of resurrection. <em>Lord, have mercy.</em><br>For the peace of the whole world, for the welfare of Your holy churches, and for the unity of all, we beseech You. <em>Lord, have mercy.</em></p>"
+  },
+  {
+    "id": "esy-barekmar-thursday",
+    "title": "Barekmar — Thursday",
+    "text": "<p class=\"rubric-text\">The Officiant says the Barekmar. The Congregation responds: <strong>Lord, have mercy.</strong></p><p class=\"component-text\">Bless, O Lord, our Catholicos-Patriarch, our bishops, our priests, and the entire body of the holy Apostolic Church of the East. <em>Lord, have mercy.</em><br>On this day we commemorate the holy Apostles, and especially Mar Addai and Mar Mari who brought the Gospel to our fathers in the East; let their intercessions guard us and their example inflame us. <em>Lord, have mercy.</em><br>Bless, O Lord, those who preach the Gospel in distant places and among hostile peoples; let Your word go forth and not return empty. <em>Lord, have mercy.</em><br>Bless the families gathered in their homes this day; let every household be a little church, and let peace rule within its walls. <em>Lord, have mercy.</em><br>Remember, O Lord, the bishops and patriarchs who have fallen asleep in the faith, who guarded the deposit of true teaching; let them intercede for us before Your throne. <em>Lord, have mercy.</em><br>For the peace of the whole world, for the welfare of Your holy churches, and for the unity of all, we beseech You. <em>Lord, have mercy.</em></p>"
+  },
+  {
+    "id": "esy-barekmar-friday",
+    "title": "Barekmar — Friday",
+    "text": "<p class=\"rubric-text\">The Officiant says the Barekmar of the Holy Cross. The Congregation responds: <strong>Lord, have mercy.</strong></p><p class=\"component-text\">Bless, O Lord, our Catholicos-Patriarch, our bishops, our priests, and all who carry their cross daily in Your service. <em>Lord, have mercy.</em><br>On this day of the Holy Cross, we stand before You in penitence, knowing that our sins nailed You to the wood. By the wood of the Cross, O Lord, heal the wounds that sin has made in our souls. <em>Lord, have mercy.</em><br>Bless, O Lord, those who are suffering this day in body or in spirit; let the Cross of Christ be their consolation and their medicine. <em>Lord, have mercy.</em><br>Bless the prisoners and those unjustly condemned; free them from their chains as You freed the thief on the cross by a word of mercy. <em>Lord, have mercy.</em><br>Remember, O Lord, those who died on this day throughout the ages in the faith of the Cross; let the sign of the Son of Man be their glory at the last day. <em>Lord, have mercy.</em><br>For the peace of the whole world, for the welfare of Your holy churches, and for the unity of all, we beseech You. <em>Lord, have mercy.</em></p>"
+  },
+  {
+    "id": "esy-barekmar-saturday",
+    "title": "Barekmar — Saturday",
+    "text": "<p class=\"rubric-text\">The Officiant says the Barekmar of the Departed. The Congregation responds: <strong>Lord, have mercy.</strong></p><p class=\"component-text\">Bless, O Lord, our Catholicos-Patriarch, our bishops, our priests, and all the holy souls who await the resurrection in the peace of Your rest. <em>Lord, have mercy.</em><br>On this day of holy rest we commemorate all the faithful departed: the patriarchs and prophets, the apostles and martyrs, the confessors and virgins, and every soul who died in the hope of the resurrection. <em>Lord, have mercy.</em><br>Remember, O Lord, our fathers and mothers, our brothers and sisters, our friends and neighbors who have fallen asleep; grant them light, refreshment, and peace. <em>Lord, have mercy.</em><br>Remember those who died young, those who died in war, those who died in poverty, and all who had none to pray for them; let Your mercy be their portion. <em>Lord, have mercy.</em><br>Hasten, O Lord, the day of the resurrection, when all who sleep in the dust shall awaken and the whole creation shall be made new in Your glory. <em>Lord, have mercy.</em><br>For the peace of the whole world, for the welfare of Your holy churches, and for the unity of all, we beseech You. <em>Lord, have mercy.</em></p>"
+  },
+  {
+    "id": "esy-barekmar-sauma",
+    "title": "Barekmar — Season of the Great Fast (Sauma)",
+    "text": "<p class=\"rubric-text\">During the Great Fast, the Barekmar takes a penitential form. The Congregation responds: <strong>Lord, have mercy.</strong></p><p class=\"component-text\">Bless, O Lord, our Catholicos-Patriarch, our bishops, our priests, and all Your people who fast and pray in this holy season. <em>Lord, have mercy.</em><br>We have sinned against You, O Lord, in thought and word and deed, by what we have done and by what we have left undone; we turn to You now with fasting and prayer. <em>Lord, have mercy.</em><br>Do not remember, O Lord, the offenses of our youth or the trespasses of our ignorance; remember us according to Your steadfast love and for the sake of Your goodness. <em>Lord, have mercy.</em><br>Accept our fasting as an offering of the will, and our tears as the incense of a broken spirit; for You will not despise a humble and a contrite heart. <em>Lord, have mercy.</em><br>Bless, O Lord, those who journey through this fast in weakness of body; let Your grace be made perfect in their infirmity. <em>Lord, have mercy.</em><br>Remember, O Lord, the faithful departed who kept this fast in hope of the Resurrection; grant them a portion in that joy which no fasting precedes and no sorrow follows. <em>Lord, have mercy.</em><br>For the peace of the whole world, for the welfare of Your holy churches, and for the unity of all, we beseech You. <em>Lord, have mercy.</em></p>"
+  },
+  {
+    "id": "esy-qanona-ordinary",
+    "title": "Qanona (Ordinary)",
+    "text": "<p class=\"rubric-text\">The Qanona, the office refrain, is chanted:</p><p class=\"component-text\">Glory to God in the highest,<br>and on earth peace, good will among all peoples.<br>We praise You, we bless You, we worship You,<br>we glorify You, we give thanks to You for Your great glory.<br>O Lord God, heavenly King,<br>God the Father Almighty;<br>O Lord, the only-begotten Son, Jesus Christ;<br>O Lord God, Lamb of God, Son of the Father,<br>who takes away the sin of the world, have mercy on us;<br>who takes away the sin of the world, receive our prayer;<br>who sits at the right hand of the Father, have mercy on us.<br>For You alone are holy, You alone are Lord,<br>You alone are most high, Jesus Christ,<br>with the Holy Spirit, in the glory of God the Father. Amen.</p>"
+  },
+  {
+    "id": "esy-qanona-sapra",
+    "title": "Qanona of the Morning (Sapra)",
+    "text": "<p class=\"rubric-text\">The Morning Qanona is chanted:</p><p class=\"component-text\">At the breaking of this day, O Lord,<br>let Your light arise upon us as the sun arises upon the earth.<br>Drive far from us the darkness of sin<br>and every counsel of the enemy.<br>As the morning stars sang together at the dawn of creation,<br>so let our lips offer You a worthy sacrifice of praise.<br>Worthy are You, O Lord, to receive glory and honor and blessing,<br>from the rising of the sun until its going down,<br>now and always, and unto ages of ages. Amen.</p>"
+  },
+  {
+    "id": "esy-qanona-ramsha",
+    "title": "Qanona of the Evening (Ramsha)",
+    "text": "<p class=\"rubric-text\">The Evening Qanona is chanted:</p><p class=\"component-text\">As the evening light fades, O Lord,<br>and the day draws toward its rest,<br>we offer You the incense of our evening prayer.<br>Let our prayer rise before You as incense,<br>the lifting up of our hands as an evening sacrifice.<br>Guard us through the hours of darkness<br>and let no evil approach our dwelling.<br>You who neither slumber nor sleep,<br>watch over Your servants this night<br>and bring us to the morning of the resurrection,<br>now and always, and unto ages of ages. Amen.</p>"
+  },
+  {
+    "id": "esy-qanona-lelya",
+    "title": "Qanona of the Night (Lelya)",
+    "text": "<p class=\"rubric-text\">The Night Qanona is chanted:</p><p class=\"component-text\">In the watches of the night, O Lord,<br>when all creation is still before You,<br>let our hearts keep vigil even as our bodies rest.<br>You who spoke to the prophets in the night,<br>speak also to Your servants.<br>You who called Samuel in the dark hours,<br>call us by name to arise and serve You.<br>Let this night be filled with Your holy presence,<br>and let the darkness itself proclaim Your glory,<br>now and always, and unto ages of ages. Amen.</p>"
+  },
+  {
+    "id": "esy-madrashe",
+    "title": "Madrashe (Didactic Hymn)",
+    "text": "<p class=\"rubric-text\">A Madrashe, a teaching hymn after the manner of Mar Ephrem, is chanted:</p><p class=\"component-text\">The treasury of Your mercies, O Lord,<br>is open and none can close it;<br>the gate of Your compassion stands wide,<br>and none shall be turned away who knocks in truth.<br>Mar Ephrem, the harp of the Spirit,<br>sang of Your mysteries in hymns of fire;<br>the loom of his tongue wove garments of praise<br>from the undying threads of Your word.<br>We are poor weavers, O Lord,<br>yet accept our offering;<br>for the silk of the worm is not despised<br>when it is laid before the altar of the King.<br><em>Refrain: Praise to You, O Lord, in the assembly of the just.</em></p>"
+  },
+  {
+    "id": "esy-teshbohta",
+    "title": "Teshbohta (Doxology)",
+    "text": "<p class=\"rubric-text\">The Teshbohta, the great doxology, is sung:</p><p class=\"component-text\">Glory to the Father who sent His Son into the world for our salvation.<br>Glory to the Son who came and redeemed us by His precious blood.<br>Glory to the Holy Spirit who descended at the Jordan and abides in His Church.<br>Glory to the Trinity undivided, one God, one Lord, one Holy Spirit,<br>whose kingdom shall have no end,<br>whose glory fills the heaven and the earth,<br>whose mercy endures from generation to generation.<br>To Him be glory and honor and dominion<br>from all mouths, from all tongues, from all creatures,<br>now and always, and unto ages of ages. Amen.<br><em>Holy, holy, holy, Lord God of hosts;<br>heaven and earth are full of the greatness of Your glory.<br>Hosanna in the highest.</em></p>"
+  },
+  {
+    "id": "esy-qanona-subara-qdham",
+    "title": "Qanona of Subara — Qdham (Before)",
+    "text": "<p class=\"rubric-text\">The Qanona of the Annunciation season is chanted:</p><p class=\"component-text\">The voice of the angel has gone forth into all the earth,<br>and his word to the ends of the world:<br>Behold, the Virgin shall conceive and bear a Son,<br>and His name shall be called Emmanuel, God with us.<br>The heavens bowed down and the Word descended;<br>He who fills all things emptied Himself<br>and took up His dwelling in the womb of the Virgin.<br>Make us ready, O Lord, to receive You;<br>let our hearts be the manger where You find Your rest,<br>now and always, and unto ages of ages. Amen.</p>"
+  },
+  {
+    "id": "esy-qanona-subara-wathar",
+    "title": "Qanona of Subara — Wathar (After)",
+    "text": "<p class=\"rubric-text\">The Qanona of the Annunciation season is chanted:</p><p class=\"component-text\">She said: Behold the handmaid of the Lord;<br>let it be to me according to Your word.<br>And in that moment of her yes,<br>the eternal Word put on our mortality<br>as a man puts on a garment.<br>O mystery hidden from ages and generations,<br>revealed at last to us in the fullness of time:<br>that God should be born of a woman,<br>that the Maker of all things should be made,<br>that Life itself should enter the house of death to conquer it.<br>Glory to the Father who sent;<br>glory to the Son who came;<br>glory to the Spirit who overshadowed the Holy Virgin,<br>now and always, and unto ages of ages. Amen.</p>"
+  },
+  {
+    "id": "esy-qanona-denkha-qdham",
+    "title": "Qanona of Denkha — Qdham (Before)",
+    "text": "<p class=\"rubric-text\">The Qanona of the Epiphany season is chanted:</p><p class=\"component-text\">The voice of the Father was heard above the waters:<br>This is My beloved Son, in whom I am well pleased.<br>The Spirit descended in the form of a dove<br>and rested upon Him whom the waters could not contain.<br>The Trinity was made manifest at the Jordan:<br>the Father speaking, the Son baptized, the Spirit descending.<br>Wash us, O Lord, in the waters of Your mercy;<br>let the voice that named You Son<br>name us also as children of the Most High,<br>now and always, and unto ages of ages. Amen.</p>"
+  },
+  {
+    "id": "esy-qanona-denkha-wathar",
+    "title": "Qanona of Denkha — Wathar (After)",
+    "text": "<p class=\"rubric-text\">The Qanona of the Epiphany season is chanted:</p><p class=\"component-text\">A star arose in the East and the Magi followed it;<br>they brought gold and frankincense and myrrh<br>to the One who is King, and God, and the sacrifice of our salvation.<br>Light has dawned upon those who sat in darkness;<br>the nations that did not know Your name<br>have come to bow before Your cradle.<br>You are the Denkha, the rising of the true Sun,<br>whose rays reach to the ends of the earth<br>and whose warmth no winter can extinguish.<br>Shine upon us who walk in the shadow of the world,<br>now and always, and unto ages of ages. Amen.</p>"
+  },
+  {
+    "id": "esy-qanona-sauma-qdham",
+    "title": "Qanona of Sauma — Qdham (Before)",
+    "text": "<p class=\"rubric-text\">The Qanona of the Great Fast is chanted:</p><p class=\"component-text\">We have wandered far from Your house, O Father,<br>and spent our inheritance in the country of our passions.<br>We arise now and turn toward You,<br>not as sons worthy of Your table<br>but as servants who have remembered Your mercy.<br>Accept our fasting as the voice of our hunger for You;<br>accept our prayer as the cry of those who are lost<br>and have begun at last to find their way home.<br>Meet us while we are yet a great way off,<br>and let Your embrace be our absolution,<br>now and always, and unto ages of ages. Amen.</p>"
+  },
+  {
+    "id": "esy-qanona-sauma-wathar",
+    "title": "Qanona of Sauma — Wathar (After)",
+    "text": "<p class=\"rubric-text\">The Qanona of the Great Fast is chanted:</p><p class=\"component-text\">You fasted forty days in the wilderness, O Lord,<br>and overcame the one who overcame our first father.<br>Where Adam fell by food, You conquered by hunger;<br>where he grasped at divinity, You emptied Yourself of glory.<br>We fast in the shadow of Your fast;<br>our hunger is a sign of the hunger You bear for our salvation.<br>Let this season be for us a wilderness of meeting,<br>where we hear Your voice in the silence<br>and find in our poverty the riches of Your grace,<br>now and always, and unto ages of ages. Amen.</p>"
+  },
+  {
+    "id": "esy-qanona-qyamta-qdham",
+    "title": "Qanona of Qyamta — Qdham (Before)",
+    "text": "<p class=\"rubric-text\">The Qanona of the Resurrection is chanted:</p><p class=\"component-text\">The tomb is empty and death is despoiled;<br>He who descended into the house of the dead<br>has broken its gates and led captivity captive.<br>The seal is broken, the stone is rolled away,<br>and the angels sit where the body had lain<br>and say: He is not here; He is risen as He said.<br>O death, where is your victory?<br>O Sheol, where is your sting?<br>Christ is risen and you are abolished,<br>Christ is risen and the angels rejoice,<br>Christ is risen and life reigns everywhere,<br>now and always, and unto ages of ages. Amen.</p>"
+  },
+  {
+    "id": "esy-qanona-qyamta-wathar",
+    "title": "Qanona of Qyamta — Wathar (After)",
+    "text": "<p class=\"rubric-text\">The Qanona of the Resurrection is chanted:</p><p class=\"component-text\">Mary came weeping to the tomb in the early morning<br>and found the gardener standing in the garden.<br>She did not know that the one who tended Eden<br>had come to tend the garden of the new creation.<br>He called her by her name, and she knew Him;<br>for the Shepherd calls His own sheep by name<br>and they hear His voice and follow.<br>We are those who have not seen and yet have believed;<br>blessed are we among the nations,<br>for the Risen One has breathed on us His Spirit<br>and made us witnesses of His resurrection,<br>now and always, and unto ages of ages. Amen.</p>"
+  },
+  {
+    "id": "esy-qanona-shlihe-qdham",
+    "title": "Qanona of Shlihe — Qdham (Before)",
+    "text": "<p class=\"rubric-text\">The Qanona of the Apostles is chanted:</p><p class=\"component-text\">They were gathered in one place when the rushing wind came<br>and divided tongues of fire rested upon each of them.<br>They who had been fishermen became fishers of all peoples;<br>they who had hidden behind locked doors<br>went out into the streets and proclaimed what they had seen.<br>The Spirit whom the Father sent in the name of the Son<br>has not been withdrawn; He abides with His Church.<br>Pour out upon us, O Lord, that same Spirit;<br>let His fire burn in our lips and His wind fill our sails<br>as we carry Your name to those who have not heard it,<br>now and always, and unto ages of ages. Amen.</p>"
+  },
+  {
+    "id": "esy-qanona-shlihe-wathar",
+    "title": "Qanona of Shlihe — Wathar (After)",
+    "text": "<p class=\"rubric-text\">The Qanona of the Apostles is chanted:</p><p class=\"component-text\">Mar Addai came to Edessa bearing the image of Your face;<br>Mar Mari went into the land between the rivers<br>and planted the seed of the Gospel in our fathers' soil.<br>They did not go in their own strength<br>but in the power of the One who sent them,<br>who promised: Lo, I am with you always,<br>even to the end of the age.<br>We are the fruit of their labor and their suffering;<br>let us not make their sacrifice void<br>by living as those who have forgotten the price of the faith.<br>Make us worthy of the apostolic inheritance we have received,<br>now and always, and unto ages of ages. Amen.</p>"
+  },
+  {
+    "id": "esy-qanona-qayta-qdham",
+    "title": "Qanona of Qayta — Qdham (Before)",
+    "text": "<p class=\"rubric-text\">The Qanona of the Summer season is chanted:</p><p class=\"component-text\">The sower went out to sow,<br>and the seed fell into the good earth of the nations.<br>What was planted in tears by the Apostles<br>is now ripe for the harvest in the heat of the summer sun.<br>The field is the world, O Lord,<br>and You are the Lord of the harvest.<br>Send laborers into Your harvest;<br>let none who are hungry go without bread,<br>and let the abundance of Your summer<br>be a foretaste of the eternal feast,<br>now and always, and unto ages of ages. Amen.</p>"
+  },
+  {
+    "id": "esy-qanona-qayta-wathar",
+    "title": "Qanona of Qayta — Wathar (After)",
+    "text": "<p class=\"rubric-text\">The Qanona of the Summer season is chanted:</p><p class=\"component-text\">The vine is heavy with fruit<br>and the fig tree spreads its shade;<br>every tree planted by the river of the Spirit<br>bears fruit in its season and its leaf does not wither.<br>We are Your planting, O Lord;<br>the vinedresser has pruned us that we might bear more fruit.<br>Let the summer of Your grace not pass<br>before we have returned to You the harvest You are owed;<br>let every act of mercy, every word of truth,<br>be a cluster laid at the feet of the Master of the feast,<br>now and always, and unto ages of ages. Amen.</p>"
+  },
+  {
+    "id": "esy-qanona-eliya-sliwa-qdham",
+    "title": "Qanona of Eliya-Sliwa — Qdham (Before)",
+    "text": "<p class=\"rubric-text\">The Qanona of Elijah and the Holy Cross is chanted:</p><p class=\"component-text\">He stood on the mountain and the fire of God came down;<br>he called down rain upon a land parched by apostasy<br>and the people fell on their faces and cried:<br>The Lord, He is God; the Lord, He is God.<br>Elijah the Tishbite did not see death<br>but was taken up in a chariot of fire<br>as a sign of the One who would ascend in glory.<br>Send the fire of Your Spirit upon our cold altars, O Lord;<br>let it consume our sacrifice<br>and warm the hearts that the world has left cold,<br>now and always, and unto ages of ages. Amen.</p>"
+  },
+  {
+    "id": "esy-qanona-eliya-sliwa-wathar",
+    "title": "Qanona of Eliya-Sliwa — Wathar (After)",
+    "text": "<p class=\"rubric-text\">The Qanona of Elijah and the Holy Cross is chanted:</p><p class=\"component-text\">The wood of the Cross is the new tree of life<br>planted at the center of the new creation.<br>What was a tree of shame in the hands of the empire<br>has become the throne of the King of kings.<br>Helena sought the true wood and found it;<br>the Church exalts it on this day<br>and the faithful bow before the sign of their redemption.<br>O Cross, you are more beautiful than all the cedars of Lebanon;<br>in your shadow we find our healing,<br>in your outstretched arms the embrace of the eternal Father,<br>now and always, and unto ages of ages. Amen.</p>"
+  },
+  {
+    "id": "esy-qanona-muse-qdham",
+    "title": "Qanona of Muse — Qdham (Before)",
+    "text": "<p class=\"rubric-text\">The Qanona of Moses is chanted:</p><p class=\"component-text\">Moses stood before the burning bush<br>and the ground beneath his feet was holy ground.<br>He led the people through the sea on dry land<br>and gave them water from the rock in the wilderness.<br>The rock was Christ, says the Apostle;<br>the sea was baptism, the manna was the Eucharist.<br>All the Law was a shadow of the body of Christ;<br>all the prophets were lanterns lit from His flame.<br>Now the shadow has given way to substance;<br>let us receive the fulfillment with the faith that Moses had in the promise,<br>now and always, and unto ages of ages. Amen.</p>"
+  },
+  {
+    "id": "esy-qanona-muse-wathar",
+    "title": "Qanona of Muse — Wathar (After)",
+    "text": "<p class=\"rubric-text\">The Qanona of Moses is chanted:</p><p class=\"component-text\">On the mountain of the Transfiguration<br>Moses stood again beside the One he had served from afar,<br>and Elijah the prophet stood with him,<br>and the voice of the Father spoke again as at the Jordan:<br>This is My beloved Son; hear Him.<br>The Law and the Prophets bear witness to Christ;<br>their testimony is complete in His Person.<br>We are those who live after the fulfillment;<br>let us not be like those who hold the husk<br>after the grain has been given,<br>but receive the fullness of the One to whom all things pointed,<br>now and always, and unto ages of ages. Amen.</p>"
+  },
+  {
+    "id": "esy-qanona-qudash-idta-qdham",
+    "title": "Qanona of Qudash 'Idta — Qdham (Before)",
+    "text": "<p class=\"rubric-text\">The Qanona of the Dedication of the Church is chanted:</p><p class=\"component-text\">Solomon built a house of cedar and stone<br>and the glory of the Lord filled it at its dedication,<br>so that the priests could not stand to minister<br>for the cloud of the divine presence.<br>But You, O Lord, have built a living temple<br>not of wood and stone but of souls redeemed by Your blood.<br>Every baptized heart is a stone in this building,<br>every assembly of the faithful a manifestation of Your glory.<br>Consecrate this house of Your Church anew;<br>let Your Shekinah rest upon the altars of the East<br>and upon every place where Your name is called upon,<br>now and always, and unto ages of ages. Amen.</p>"
+  },
+  {
+    "id": "esy-qanona-qudash-idta-wathar",
+    "title": "Qanona of Qudash 'Idta — Wathar (After)",
+    "text": "<p class=\"rubric-text\">The Qanona of the Dedication of the Church is chanted:</p><p class=\"component-text\">I saw the holy city, new Jerusalem,<br>coming down from God out of heaven,<br>prepared as a bride adorned for her husband.<br>The Bride of Christ is the Church,<br>and her adornment is the righteousness of the saints.<br>We are those who are betrothed to the eternal Bridegroom;<br>let us keep our lamps burning and our garments clean,<br>for we do not know the day or the hour<br>when the cry will go out: Behold, the Bridegroom comes.<br>Make us ready, O Lord, to enter the feast,<br>now and always, and unto ages of ages. Amen.</p>"
+  },
+  {
+    "id": "esy-qala-subara-qdham",
+    "title": "Qala — Subara, Qdham Cycle",
+    "text": "Mode Five (Qala Hamishaya) — The tone of longing and expectation."
+  },
+  {
+    "id": "esy-qala-subara-wathar",
+    "title": "Qala — Subara, Wathar Cycle",
+    "text": "Mode Six (Qala Shtitaya) — The tone of the mystery of the Incarnation."
+  },
+  {
+    "id": "esy-qala-denkha-qdham",
+    "title": "Qala — Denkha, Qdham Cycle",
+    "text": "Mode Three (Qala Tlitaya) — The tone of revelation and festal light."
+  },
+  {
+    "id": "esy-qala-denkha-wathar",
+    "title": "Qala — Denkha, Wathar Cycle",
+    "text": "Mode Four (Qala Rbi'aya) — The tone of the nations drawn to the light."
+  },
+  {
+    "id": "esy-qala-sauma-qdham",
+    "title": "Qala — Sauma, Qdham Cycle",
+    "text": "Mode One (Qala Qadmaya) — The solemn tone of penitence and fasting."
+  },
+  {
+    "id": "esy-qala-sauma-wathar",
+    "title": "Qala — Sauma, Wathar Cycle",
+    "text": "Mode Two (Qala Trayyana) — The tone of lamentation and compunction."
+  },
+  {
+    "id": "esy-qala-qyamta-qdham",
+    "title": "Qala — Qyamta, Qdham Cycle",
+    "text": "Mode One (Qala Qadmaya) — The triumphant tone of the Resurrection proclamation."
+  },
+  {
+    "id": "esy-qala-qyamta-wathar",
+    "title": "Qala — Qyamta, Wathar Cycle",
+    "text": "Mode Two (Qala Trayyana) — The tone of the resurrection appearances and the new creation."
+  },
+  {
+    "id": "esy-qala-shlihe-qdham",
+    "title": "Qala — Shlihe, Qdham Cycle",
+    "text": "Mode Four (Qala Rbi'aya) — The tone of the Spirit's descent and apostolic proclamation."
+  },
+  {
+    "id": "esy-qala-shlihe-wathar",
+    "title": "Qala — Shlihe, Wathar Cycle",
+    "text": "Mode Three (Qala Tlitaya) — The tone of the apostolic mission and the spread of the Gospel."
+  },
+  {
+    "id": "esy-qala-qayta-qdham",
+    "title": "Qala — Qayta, Qdham Cycle",
+    "text": "Mode Six (Qala Shtitaya) — The tone of summer abundance and the growth of the Church."
+  },
+  {
+    "id": "esy-qala-qayta-wathar",
+    "title": "Qala — Qayta, Wathar Cycle",
+    "text": "Mode Five (Qala Hamishaya) — The contemplative tone of the harvest and the coming autumn."
+  },
+  {
+    "id": "esy-qala-eliya-sliwa-qdham",
+    "title": "Qala — Eliya-Sliwa, Qdham Cycle",
+    "text": "Mode Seven (Qala Shbi'aya) — The processional tone of the prophet's fire and the exaltation of the Cross."
+  },
+  {
+    "id": "esy-qala-eliya-sliwa-wathar",
+    "title": "Qala — Eliya-Sliwa, Wathar Cycle",
+    "text": "Mode Eight (Qala Tminya) — The doxological tone of the victory of the Cross over death."
+  },
+  {
+    "id": "esy-qala-muse-qdham",
+    "title": "Qala — Muse, Qdham Cycle",
+    "text": "Mode Five (Qala Hamishaya) — The contemplative tone of the Law fulfilled in Christ."
+  },
+  {
+    "id": "esy-qala-muse-wathar",
+    "title": "Qala — Muse, Wathar Cycle",
+    "text": "Mode Six (Qala Shtitaya) — The tone of the Transfiguration and the glory hidden in the Law."
+  },
+  {
+    "id": "esy-qala-qudash-idta-qdham",
+    "title": "Qala — Qudash 'Idta, Qdham Cycle",
+    "text": "Mode Seven (Qala Shbi'aya) — The processional tone of the Church's dedication and the new temple."
+  },
+  {
+    "id": "esy-qala-qudash-idta-wathar",
+    "title": "Qala — Qudash 'Idta, Wathar Cycle",
+    "text": "Mode Eight (Qala Tminya) — The bridal tone of the Church as the Bride awaiting her Lord."
+  },
+  {
+    "id": "esy-qutaa-hymn",
+    "title": "The Third Hour Hymn",
+    "text": "<p class=\"rubric-text\">The Hymn of the Third Hour is chanted:</p><p class=\"component-text\">O Lord, who at the third hour of this day did send down the Holy Spirit upon Your apostles and disciples, do not take Him away from us, but renew Him within us, who pray to You, O God. Make us worthy that we may glorify You, and the Father who sent You, and Your Holy Spirit, now and always, and for ever and ever. Amen.</p>"
+  },
+  {
+    "id": "esy-endana-hymn",
+    "title": "The Sixth Hour Hymn",
+    "text": "<p class=\"rubric-text\">The Hymn of the Sixth Hour is chanted:</p><p class=\"component-text\">O Christ God, who at the sixth hour did stretch out Your pure hands upon the Cross for the salvation of the world: Let the radiance of Your countenance illuminate us, and do not turn away the light of Your knowledge from those who praise You. For You are the light of the world, and the true day that knows no setting. Accept our prayers and our praise, O Merciful One, now and always, and for ever and ever. Amen.</p>"
+  },
+  {
+    "id": "esy-dtsha-sain-hymn",
+    "title": "The Ninth Hour Hymn",
+    "text": "<p class=\"rubric-text\">The Hymn of the Ninth Hour is chanted:</p><p class=\"component-text\">O Lord God, at the ninth hour You tasted death in the flesh for our sake, and You silenced the power of death. Hear our prayer at this hour, as You heard the thief who cried to You from the cross, and grant us in Your mercy a place in Your Kingdom. For You are good and the Lover of mankind, and to You we give glory, to the Father, to the Son, and to the Holy Spirit, now and always, and for ever and ever. Amen.</p>"
+  },
+  {
+    "id": "esy-subaa-hymn",
+    "title": "The Compline Hymn (Shubha Mara)",
+    "text": "<p class=\"rubric-text\">The Shubha Mara is chanted:</p><p class=\"component-text\">Glory to You, O Lord God, who stretched out the heavens and laid the foundation of the earth. You created the sun to rule by day and the moon to rule by night. Grant us, O Lord, to pass through this night in peace, that at the dawn of morning we may praise You with thankful hearts. For You are blessed for ever and ever. Amen.</p>"
+  },
+  {
+    "id": "esy-subaa-examination",
+    "title": "The Examination of Conscience",
+    "text": "<p class=\"rubric-text\">The Officiant leads the brief examination. A moment of silence is kept.</p><p class=\"component-text\">Let us call to mind the sins of this day: sins of speech, of thought, and of deed. Let us lay them before the Lord in penitence.<br><em>A silence is observed.</em><br>O Lord, forgive us the transgressions of this day. Have mercy on us and renew a right spirit within us, that we may rest in Your peace and rise to serve You at the coming dawn.</p><p class=\"rubric-text\">The Congregation responds:</p><p class=\"component-text\">Lord, have mercy. Lord, have mercy. Lord, have mercy.</p>"
+  },
+  {
+    "id": "esy-subaa-nunc-dimittis",
+    "title": "The Hullala d-Sham'un (Song of Simeon)",
+    "text": "<p class=\"rubric-text\">The Hullala d-Sham'un is chanted as the office draws to its close:</p><p class=\"component-text\">Lord, now let Your servant depart in peace, according to Your word;<br>For my eyes have seen Your salvation,<br>Which You have prepared before the face of all peoples,<br>A light to lighten the Gentiles, and the glory of Your people Israel.</p><p class=\"rubric-text\">Glory be to the Father, and to the Son, and to the Holy Spirit; from everlasting to everlasting. Amen.</p>"
+  },
+  {
+    "id": "esy-subaa-blessing",
+    "title": "The Compline Blessing",
+    "text": "<p class=\"rubric-text\">The Priest or Officiant gives the blessing:</p><p class=\"component-text\">May the Lord of peace Himself give you peace at all times and in every way. May the holy angels stand watch over your rest, and may the blessing of the Father, and of the Son, and of the Holy Spirit be upon you now and through the night and for ever.</p><p class=\"rubric-text\">The Congregation responds:</p><p class=\"component-text\">Amen. And with your spirit.</p><p class=\"rubric-text\">The office is concluded.</p>"
+  },
+  {
+    "id": "esy-karozutha-daytime",
+    "title": "The Daytime Karozutha",
+    "text": "<p class=\"rubric-text\">The Deacon intones the Karozutha for the Daytime Hours. The Congregation responds: <strong>Lord, have mercy.</strong></p><p class=\"component-text\">Let us all stand and pray with attentive hearts: <em>Lord, have mercy.</em><br>For the gift of this hour, for the light that sustains us, and for all the works of Your hands, we give You thanks: <em>Lord, have mercy.</em><br>Grant wisdom and peace to all who labour this day in field, home, church, and city: <em>Lord, have mercy.</em><br>Protect, O Lord, the children, the aged, and all who are without shelter or comfort: <em>Lord, have mercy.</em><br>Remember those who even now suffer persecution for Your name's sake: <em>Lord, have mercy.</em><br>That this hour and all our hours may be acceptable before Your throne, we beseech You: <em>Lord, have mercy.</em></p>"
+  },
+  {
+    "id": "esy-onitha-nineveh",
+    "title": "The 'Onitha of the Nineveh Fast",
+    "tradition": "Church of the East",
+    "note": "The seasonal Onitha appointed for the three days of the Ba'utha d'Ninwaye (Rogation of the Ninevites). This fast, unique to the Church of the East, commemorates the repentance of Nineveh at the preaching of Jonah. It falls on the Monday, Tuesday, and Wednesday three weeks before the start of Sauma.",
+    "text": "<p class=\"component-text\">The city of Nineveh heard the voice of Jonah,<br>and repented in sackcloth and ashes;<br>it turned from its evil way,<br>and the Lord relented of the calamity he had spoken.<br><br>Have mercy on us, O Lord, as on the Ninevites of old;<br>receive our fasting and our prayer,<br>turn away your wrath from us,<br>and number us among those who have found grace before you.<br><br>For you are a God slow to anger and abounding in mercy,<br>who desires not the death of the sinner<br>but that he turn and live.<br>To you be glory for ever and ever. Amen.</p>"
+  },
+  {
+    "id": "esy-nineveh-fast-proclamation",
+    "title": "The Proclamation of the Nineveh Fast",
+    "tradition": "Church of the East",
+    "note": "The opening proclamation read at the beginning of the Ba'utha d'Ninwaye, announcing the three-day fast of the Ninevites. Traditionally read at the Ramsha (Evening Prayer) opening the fast on Sunday evening.",
+    "text": "<p class=\"rubric-text\">The Deacon proclaims:</p><p class=\"component-text\">Hear, O children of the holy Church: the three days of the Fast of the Ninevites are upon us. Let us fast as the Ninevites fasted — in humility, in prayer, and in repentance — that as God heard the cry of that great city and turned aside his wrath, so he may hear our cry also, and remember his mercy toward us.</p><p class=\"rubric-text\">The Priest continues:</p><p class=\"component-text\">O Lord our God, who sent your prophet Jonah to Nineveh and received their repentance, receive also ours: the fasting of our bodies, the contrition of our hearts, and the prayer of our lips. Turn your face toward us, O Merciful One, and let us not be put to shame. Amen.</p>"
+  }
+]

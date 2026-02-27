@@ -378,6 +378,78 @@ const EastSyriacCalendar = (() => {
         const cycle      = weeksSinceSubara % 2 === 0 ? 'qdham' : 'wathar';
         const cycleLabel = cycle === 'qdham' ? 'Qdham (Before)' : 'Wathar (After)';
 
+        // ── Nineveh Fast ──────────────────────────────────────────────────────
+        // Ba'utha d'Ninwaye: Monday–Wednesday of the week three weeks before Sauma.
+        // saumaStart is always a Sunday; subtracting 20 days lands on the Monday
+        // of the Nineveh week.
+        const ninevehMonday = addDays(saumaStart, -20);
+        const ninevehWed    = addDays(ninevehMonday, 2);
+        const ninevehFast   = { start: ninevehMonday, end: ninevehWed };
+
+        // ── Fasting character ─────────────────────────────────────────────────
+        const pentecost = addDays(easter, 49);
+        let fastCharacter, fastLabel;
+
+        if (d >= ninevehMonday && d <= ninevehWed) {
+            fastCharacter = 'nineveh-fast';
+            fastLabel     = "Ba\'utha d\'Ninwaye — Nineveh Fast";
+        } else if (d >= saumaStart && d < easter) {
+            fastCharacter = 'great-fast';
+            fastLabel     = 'Sauma — the Great Fast';
+        } else if (d >= easter && d < pentecost) {
+            fastCharacter = 'feast';
+            fastLabel     = 'Season of Qyamta — fasting suspended';
+        } else if (d.getMonth() === 0 && d.getDate() === 18) {
+            // Jan 18 Gregorian = Eve of Denkha (Julian Epiphany Jan 6 + 13)
+            fastCharacter = 'fast';
+            fastLabel     = 'Eve of Denkha — Fast';
+        } else if (d.getDay() === 3) {
+            // Wednesday
+            fastCharacter = 'fast';
+            fastLabel     = 'Wednesday — Station Fast';
+        } else if (d.getDay() === 5) {
+            // Friday
+            fastCharacter = 'fast';
+            fastLabel     = 'Friday — Station Fast';
+        } else {
+            fastCharacter = 'ordinary';
+            fastLabel     = 'Ordinary Day';
+        }
+
+        // ── Anaphora appointment ──────────────────────────────────────────────
+        // Three anaphoras of the Church of the East:
+        //   Nestorius:  Epiphany (Jan 19 Greg), Palm Sunday, Maundy Thursday,
+        //               Easter (d'Qyamta), Pentecost (Shlihe Sunday)
+        //   Theodore:   Feast days of Apostles, Martyrs, and Doctors;
+        //               weekday Masses during Sauma
+        //   Addai-Mari: All other occasions (the ordinary anaphora)
+        const palmSunday    = addDays(easter, -7);
+        const maundyThurs   = addDays(easter, -3);
+        const epiphanyGreg  = new Date(d.getFullYear(), 0, 19); // Jan 19
+
+        let anaphora, anaphoraLabel;
+        const isNestoriusFeast = (
+            (d.getMonth() === 0 && d.getDate() === 19) || // Epiphany
+            d.getTime() === palmSunday.getTime()         ||
+            d.getTime() === maundyThurs.getTime()        ||
+            d.getTime() === easter.getTime()             ||
+            d.getTime() === pentecost.getTime()
+        );
+        const isTheodoreFeast = (
+            (d >= saumaStart && d < easter && d.getDay() !== 0) // Sauma weekdays
+        );
+
+        if (isNestoriusFeast) {
+            anaphora      = 'nestorius';
+            anaphoraLabel = 'Anaphora of Mar Nestorius';
+        } else if (isTheodoreFeast) {
+            anaphora      = 'theodore';
+            anaphoraLabel = 'Anaphora of Theodore of Mopsuestia';
+        } else {
+            anaphora      = 'addai-mari';
+            anaphoraLabel = 'Anaphora of Addai and Mari';
+        }
+
         return {
             season:       currentSeason.name,
             seasonLabel:  meta.label,
@@ -388,6 +460,11 @@ const EastSyriacCalendar = (() => {
             cycleLabel,
             easter,
             subaraStart,
+            ninevehFast,
+            fastCharacter,
+            fastLabel,
+            anaphora,
+            anaphoraLabel,
         };
     }
 

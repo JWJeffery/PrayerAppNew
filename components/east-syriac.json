@@ -368,5 +368,19 @@
     "id": "esy-karozutha-daytime",
     "title": "The Daytime Karozutha",
     "text": "<p class=\"rubric-text\">The Deacon intones the Karozutha for the Daytime Hours. The Congregation responds: <strong>Lord, have mercy.</strong></p><p class=\"component-text\">Let us all stand and pray with attentive hearts: <em>Lord, have mercy.</em><br>For the gift of this hour, for the light that sustains us, and for all the works of Your hands, we give You thanks: <em>Lord, have mercy.</em><br>Grant wisdom and peace to all who labour this day in field, home, church, and city: <em>Lord, have mercy.</em><br>Protect, O Lord, the children, the aged, and all who are without shelter or comfort: <em>Lord, have mercy.</em><br>Remember those who even now suffer persecution for Your name's sake: <em>Lord, have mercy.</em><br>That this hour and all our hours may be acceptable before Your throne, we beseech You: <em>Lord, have mercy.</em></p>"
+  },
+  {
+    "id": "esy-onitha-nineveh",
+    "title": "The 'Onitha of the Nineveh Fast",
+    "tradition": "Church of the East",
+    "note": "The seasonal Onitha appointed for the three days of the Ba'utha d'Ninwaye (Rogation of the Ninevites). This fast, unique to the Church of the East, commemorates the repentance of Nineveh at the preaching of Jonah. It falls on the Monday, Tuesday, and Wednesday three weeks before the start of Sauma.",
+    "text": "<p class=\"component-text\">The city of Nineveh heard the voice of Jonah,<br>and repented in sackcloth and ashes;<br>it turned from its evil way,<br>and the Lord relented of the calamity he had spoken.<br><br>Have mercy on us, O Lord, as on the Ninevites of old;<br>receive our fasting and our prayer,<br>turn away your wrath from us,<br>and number us among those who have found grace before you.<br><br>For you are a God slow to anger and abounding in mercy,<br>who desires not the death of the sinner<br>but that he turn and live.<br>To you be glory for ever and ever. Amen.</p>"
+  },
+  {
+    "id": "esy-nineveh-fast-proclamation",
+    "title": "The Proclamation of the Nineveh Fast",
+    "tradition": "Church of the East",
+    "note": "The opening proclamation read at the beginning of the Ba'utha d'Ninwaye, announcing the three-day fast of the Ninevites. Traditionally read at the Ramsha (Evening Prayer) opening the fast on Sunday evening.",
+    "text": "<p class=\"rubric-text\">The Deacon proclaims:</p><p class=\"component-text\">Hear, O children of the holy Church: the three days of the Fast of the Ninevites are upon us. Let us fast as the Ninevites fasted — in humility, in prayer, and in repentance — that as God heard the cry of that great city and turned aside his wrath, so he may hear our cry also, and remember his mercy toward us.</p><p class=\"rubric-text\">The Priest continues:</p><p class=\"component-text\">O Lord our God, who sent your prophet Jonah to Nineveh and received their repentance, receive also ours: the fasting of our bodies, the contrition of our hearts, and the prayer of our lips. Turn your face toward us, O Merciful One, and let us not be put to shame. Amen.</p>"
   }
 ]
