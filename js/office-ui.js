@@ -1986,7 +1986,9 @@ async function renderEastSyriac() {
                 officeHtml += `<div class="psalm-block">${formatPsalmAsPoetry(fullText)}</div>`;
             }
             continue;
-        }if (item === 'esy-variable-qutaa-psalms') {
+        }
+
+        if (item === 'esy-variable-qutaa-psalms') {
             const qutaaPsalms = ['19', '24', '25'];
             officeHtml += `<span class="rubric-text">The Appointed Psalms of the Third Hour</span>`;
             for (const psNum of qutaaPsalms) {
