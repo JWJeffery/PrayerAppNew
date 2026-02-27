@@ -1,5 +1,5 @@
 {
-  "_comment": "Church of the East — Hudra Sequence Definitions. Fourteen sequences total: two legacy cathedral sequences (preserved for backward compatibility), two explicit cathedral sequences (Sapra, Ramsha), four minor-hour cathedral sequences (Quta'a, Endana, D-tsha' Sa'in, Suba'a), and six monastic sequences (Sapra, Ramsha, Lelya, Quta'a, Endana, D-tsha' Sa'in, Suba'a). All dynamic tokens prefixed 'esy-variable-' are resolved at render time by renderEastSyriac() in office-ui.js.",
+  "_comment": "Church of the East — Hudra Sequence Definitions. Sixteen sequences total: two legacy sequences (ramsha-sequence, sapra-sequence, preserved for backward compatibility), and fourteen active sequences covering all seven canonical hours in both Cathedral and Monastic modes. Dynamic tokens prefixed 'esy-variable-' are resolved at render time by renderEastSyriac() in office-ui.js. NOTE: Minor hours (Quta'a, Endana, D-tsha' Sa'in, Suba'a) in Monastic mode render only the seasonal Qanona (esy-qanona-{season}-{cycle}); no hour-specific frame Qanona is defined for minor hours, consistent with Hudra tradition where hour-frame Qanona are proper to the three major hours (Sapra, Ramsha, Lelya) only.",
   "ramsha-sequence": [
     "esy-opening-formula",
     "esy-gloria-patri",
@@ -222,7 +222,8 @@
     "esy-variable-marmitha": {
       "handled_by": "renderEastSyriac()",
       "resolution": "Selects 3 psalms from marmithaMap[cycle][dayOfWeek]. Qdham weeks 1–7 cover Psalms 1–21; Wathar weeks 1–7 cover Psalms 22–42.",
-      "status": "implemented"
+      "status": "implemented",
+      "note": "The static placeholder component esy-variable-marmitha has been removed from east-syriac.json. This token is resolved entirely at render time by the marmithaMap in renderEastSyriac() and never falls through to the generic component lookup."
     },
     "esy-variable-hulali": {
       "handled_by": "renderEastSyriac()",
