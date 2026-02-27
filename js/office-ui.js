@@ -494,6 +494,52 @@ async function hydrateForEastSyriac() {
 //                        after hydration and before renderOffice(), matching the
 //                        sequence in the original init() call chain.
 //
+async function backToSplash() {
+    // Reset hydration and mode state so the next selectMode() call
+    // performs a full fresh load rather than re-using stale data.
+    isHydrationComplete = false;
+    selectedMode = null;
+
+    // Hide all section panels
+    document.getElementById('daily-office-section').style.display       = 'none';
+    document.getElementById('individual-prayers-section').style.display = 'none';
+
+    // Restore the splash screen
+    document.getElementById('splash-bg').style.display      = '';
+    document.getElementById('mode-selection').style.display = '';
+
+    // Remove office-active so body returns to its splash flex-centering state
+    document.body.classList.remove('office-active');
+    document.body.classList.remove('ethiopian-theme');
+
+    // Clear any forced office override
+    window._forcedOfficeId = undefined;
+
+    // Reset all settings panels to their default hidden states so the next
+    // mode selection starts clean (avoids e.g. East Syriac settings panel
+    // bleeding into a subsequent Daily Office load)
+    const settingsPanel = document.getElementById('settings-panel');
+    const ethSettings   = document.getElementById('ethiopian-settings');
+    const esySettings   = document.getElementById('east-syriac-settings');
+    const mainContent   = document.getElementById('main-content');
+
+    if (settingsPanel) {
+        settingsPanel.classList.remove('sidebar-hidden');
+        settingsPanel.classList.remove('mode-hidden');
+    }
+    if (ethSettings) {
+        ethSettings.classList.add('sidebar-hidden');
+        ethSettings.classList.add('mode-hidden');
+    }
+    if (esySettings) {
+        esySettings.classList.add('sidebar-hidden');
+        esySettings.classList.add('mode-hidden');
+    }
+    if (mainContent) {
+        mainContent.classList.remove('sidebar-hidden');
+    }
+}
+
 async function selectMode(mode) {
     selectedMode = mode;
 
