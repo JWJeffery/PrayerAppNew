@@ -6,51 +6,136 @@ class CalendarEngine {
     static seasonalCache = {};
     static bcpPropers = null;
 
-    // Standardized with slashes to ensure local time parsing and avoid the UTC "dead zone"
-    static SEASON_RANGES = [
-        { start: new Date("2025/11/30"), end: new Date("2025/12/24"), season: "advent",   file: "advent.json",    liturgicalColor: "purple" },
-        { start: new Date("2025/12/25"), end: new Date("2026/01/05"), season: "christmas", file: "christmas.json", liturgicalColor: "white"  },
-        { start: new Date("2026/01/06"), end: new Date("2026/02/16"), season: "epiphany",  file: "epiphany.json",  liturgicalColor: "white"  },
-        { start: new Date("2026/02/17"), end: new Date("2026/02/17"), season: "ordinary",  file: "ordinary1.json", liturgicalColor: "green"  },
-        { start: new Date("2026/02/18"), end: new Date("2026/04/04"), season: "lent",      file: "lent.json",      liturgicalColor: "purple" },
-        { start: new Date("2026/04/05"), end: new Date("2026/05/23"), season: "easter",    file: "easter.json",    liturgicalColor: "white"  },
-        { start: new Date("2026/05/24"), end: new Date("2026/07/31"), season: "ordinary",  file: "ordinary1.json", liturgicalColor: "green"  },
-        { start: new Date("2026/08/01"), end: new Date("2026/09/30"), season: "ordinary",  file: "ordinary2.json", liturgicalColor: "green"  },
-        { start: new Date("2026/10/01"), end: new Date("2026/11/28"), season: "ordinary",  file: "ordinary3.json", liturgicalColor: "green"  },
-        { start: new Date("2026/11/29"), end: new Date("2026/12/24"), season: "advent",    file: "advent.json",    liturgicalColor: "purple" },
-        { start: new Date("2026/12/25"), end: new Date("2027/01/05"), season: "christmas", file: "christmas.json", liturgicalColor: "white"  },
-        { start: new Date("2027/01/06"), end: new Date("2027/02/09"), season: "epiphany",  file: "epiphany.json",  liturgicalColor: "white"  },
-        { start: new Date("2027/02/10"), end: new Date("2027/03/27"), season: "lent",      file: "lent.json",      liturgicalColor: "purple" },
-        { start: new Date("2027/03/28"), end: new Date("2027/05/15"), season: "easter",    file: "easter.json",    liturgicalColor: "white"  },
-        { start: new Date("2027/05/16"), end: new Date("2027/07/31"), season: "ordinary",  file: "ordinary1.json", liturgicalColor: "green"  },
-        { start: new Date("2027/08/01"), end: new Date("2027/09/30"), season: "ordinary",  file: "ordinary2.json", liturgicalColor: "green"  },
-        { start: new Date("2027/10/01"), end: new Date("2027/11/27"), season: "ordinary",  file: "ordinary3.json", liturgicalColor: "green"  },
-        { start: new Date("2027/11/28"), end: new Date("2027/12/24"), season: "advent",    file: "advent.json",    liturgicalColor: "purple" },
-        { start: new Date("2027/12/25"), end: new Date("2028/01/05"), season: "christmas", file: "christmas.json", liturgicalColor: "white"  },
-        { start: new Date("2028/01/06"), end: new Date("2028/02/28"), season: "epiphany",  file: "epiphany.json",  liturgicalColor: "white"  },
-        { start: new Date("2028/02/29"), end: new Date("2028/04/15"), season: "lent",      file: "lent.json",      liturgicalColor: "purple" },
-        { start: new Date("2028/04/16"), end: new Date("2028/06/03"), season: "easter",    file: "easter.json",    liturgicalColor: "white"  },
-        { start: new Date("2028/06/04"), end: new Date("2028/07/31"), season: "ordinary",  file: "ordinary1.json", liturgicalColor: "green"  },
-        { start: new Date("2028/08/01"), end: new Date("2028/09/30"), season: "ordinary",  file: "ordinary2.json", liturgicalColor: "green"  },
-        { start: new Date("2028/10/01"), end: new Date("2028/12/02"), season: "ordinary",  file: "ordinary3.json", liturgicalColor: "green"  },
-        { start: new Date("2028/12/03"), end: new Date("2028/12/24"), season: "advent",    file: "advent.json",    liturgicalColor: "purple" },
-        { start: new Date("2028/12/25"), end: new Date("2029/01/05"), season: "christmas", file: "christmas.json", liturgicalColor: "white"  },
-        { start: new Date("2029/01/06"), end: new Date("2029/02/13"), season: "epiphany",  file: "epiphany.json",  liturgicalColor: "white"  },
-        { start: new Date("2029/02/14"), end: new Date("2029/03/31"), season: "lent",      file: "lent.json",      liturgicalColor: "purple" },
-        { start: new Date("2029/04/01"), end: new Date("2029/05/19"), season: "easter",    file: "easter.json",    liturgicalColor: "white"  },
-        { start: new Date("2029/05/20"), end: new Date("2029/07/31"), season: "ordinary",  file: "ordinary1.json", liturgicalColor: "green"  },
-        { start: new Date("2029/08/01"), end: new Date("2029/09/30"), season: "ordinary",  file: "ordinary2.json", liturgicalColor: "green"  },
-        { start: new Date("2029/10/01"), end: new Date("2029/12/01"), season: "ordinary",  file: "ordinary3.json", liturgicalColor: "green"  },
-        { start: new Date("2029/12/02"), end: new Date("2029/12/24"), season: "advent",    file: "advent.json",    liturgicalColor: "purple" },
-        { start: new Date("2029/12/25"), end: new Date("2030/01/05"), season: "christmas", file: "christmas.json", liturgicalColor: "white"  },
-        { start: new Date("2030/01/06"), end: new Date("2030/03/05"), season: "epiphany",  file: "epiphany.json",  liturgicalColor: "white"  },
-        { start: new Date("2030/03/06"), end: new Date("2030/04/20"), season: "lent",      file: "lent.json",      liturgicalColor: "purple" },
-        { start: new Date("2030/04/21"), end: new Date("2030/06/08"), season: "easter",    file: "easter.json",    liturgicalColor: "white"  },
-        { start: new Date("2030/06/09"), end: new Date("2030/07/31"), season: "ordinary",  file: "ordinary1.json", liturgicalColor: "green"  },
-        { start: new Date("2030/08/01"), end: new Date("2030/09/30"), season: "ordinary",  file: "ordinary2.json", liturgicalColor: "green"  },
-        { start: new Date("2030/10/01"), end: new Date("2030/11/30"), season: "ordinary",  file: "ordinary3.json", liturgicalColor: "green"  },
-        { start: new Date("2030/12/01"), end: new Date("2030/12/24"), season: "advent",    file: "advent.json",    liturgicalColor: "purple" }
-    ];
+    // ── Algorithmic BCP Season Calculator ────────────────────────────────────
+    //
+    // Computes Western Gregorian Easter for any year using the Anonymous
+    // Gregorian algorithm (O'Beirne / Meeus), then derives all season boundaries
+    // from that anchor plus Advent Sunday. Valid for any year indefinitely.
+    //
+    // SEASON_RANGES is retained as a computed getter for backward compatibility
+    // with any code that references it directly, but is now generated on demand
+    // rather than hardcoded.
+
+    static _seasonCache = {};   // keyed by calendar year, stores generated ranges
+
+    static _getEaster(year) {
+        // Anonymous Gregorian algorithm
+        const a = year % 19;
+        const b = Math.floor(year / 100);
+        const c = year % 100;
+        const d = Math.floor(b / 4);
+        const e = b % 4;
+        const f = Math.floor((b + 8) / 25);
+        const g = Math.floor((b - f + 1) / 3);
+        const h = (19 * a + b - d - g + 15) % 30;
+        const i = Math.floor(c / 4);
+        const k = c % 4;
+        const l = (32 + 2 * e + 2 * i - h - k) % 7;
+        const m = Math.floor((a + 11 * h + 22 * l) / 451);
+        const month = Math.floor((h + l - 7 * m + 114) / 31); // 3=March, 4=April
+        const day   = ((h + l - 7 * m + 114) % 31) + 1;
+        return new Date(year, month - 1, day);
+    }
+
+    static _getAdventSunday(year) {
+        // Advent Sunday = the Sunday on or after November 27
+        // (equivalent to the Sunday nearest November 30)
+        const nov27 = new Date(year, 10, 27); // month is 0-indexed
+        const dow   = nov27.getDay();          // 0=Sun
+        const daysUntilSunday = (7 - dow) % 7;
+        return new Date(year, 10, 27 + daysUntilSunday);
+    }
+
+    static _addDays(date, n) {
+        const d = new Date(date);
+        d.setDate(d.getDate() + n);
+        return d;
+    }
+
+    static _generateSeasonRanges(year) {
+        // Generates all season ranges for the liturgical year that begins in
+        // November/December of `year` and ends in late November/December of `year+1`.
+        // Called once per unique year encountered; result is cached in _seasonCache.
+
+        const adventStart   = this._getAdventSunday(year);
+        const christmas     = new Date(year, 11, 25);            // Dec 25
+        const epiphany      = new Date(year + 1, 0, 6);         // Jan 6
+        const easter        = this._getEaster(year + 1);
+        const ashWednesday  = this._addDays(easter, -46);
+        const epiphanyEnd   = this._addDays(ashWednesday, -1);   // day before Ash Wednesday
+        const lentEnd       = this._addDays(easter, -1);        // Holy Saturday
+        const easterEnd     = this._addDays(easter, 49);        // Pentecost
+        const nextAdvent    = this._getAdventSunday(year + 1);
+        const nextAdventEve = this._addDays(nextAdvent, -1);
+
+        // Ordinary Time after Pentecost is split into three files matching
+        // the existing data/season/ file structure:
+        //   ordinary1: day after Pentecost through July 31
+        //   ordinary2: Aug 1 through Sep 30
+        //   ordinary3: Oct 1 through day before next Advent Sunday
+        const ordinaryStart  = this._addDays(easterEnd, 1);
+        const ordinary1End   = new Date(year + 1, 6, 31);       // Jul 31
+        const ordinary2Start = new Date(year + 1, 7, 1);        // Aug 1
+        const ordinary2End   = new Date(year + 1, 8, 30);       // Sep 30
+        const ordinary3Start = new Date(year + 1, 9, 1);        // Oct 1
+
+        const ranges = [];
+
+        // Advent
+        ranges.push({ start: adventStart,    end: new Date(year, 11, 24),    season: "advent",    file: "advent.json",    liturgicalColor: "purple" });
+        // Christmas
+        ranges.push({ start: christmas,      end: new Date(year + 1, 0, 5),  season: "christmas", file: "christmas.json", liturgicalColor: "white"  });
+        // Epiphany
+        ranges.push({ start: epiphany,       end: epiphanyEnd,               season: "epiphany",  file: "epiphany.json",  liturgicalColor: "white"  });
+
+        // Brief Ordinary Time between Epiphany and Ash Wednesday.
+        // In very early Easter years this window can be zero or negative — skip it if so.
+        const briefOrdStart = this._addDays(epiphanyEnd, 1);
+        if (briefOrdStart < ashWednesday) {
+            ranges.push({ start: briefOrdStart, end: this._addDays(ashWednesday, -1), season: "ordinary", file: "ordinary1.json", liturgicalColor: "green" });
+        }
+
+        // Lent
+        ranges.push({ start: ashWednesday,   end: lentEnd,                   season: "lent",      file: "lent.json",      liturgicalColor: "purple" });
+        // Easter
+        ranges.push({ start: easter,         end: easterEnd,                 season: "easter",    file: "easter.json",    liturgicalColor: "white"  });
+        // Ordinary Time (three file blocks)
+        ranges.push({ start: ordinaryStart,  end: ordinary1End,              season: "ordinary",  file: "ordinary1.json", liturgicalColor: "green"  });
+        ranges.push({ start: ordinary2Start, end: ordinary2End,              season: "ordinary",  file: "ordinary2.json", liturgicalColor: "green"  });
+        ranges.push({ start: ordinary3Start, end: nextAdventEve,             season: "ordinary",  file: "ordinary3.json", liturgicalColor: "green"  });
+
+        return ranges;
+    }
+
+    static _getRangesForDate(date) {
+        // Returns the generated ranges for the liturgical year that contains `date`.
+        // Checks the prior calendar year first because Advent begins in Nov/Dec
+        // of the year before the liturgical year it opens.
+        const y = date.getFullYear();
+        for (const candidateYear of [y - 1, y]) {
+            if (!this._seasonCache[candidateYear]) {
+                this._seasonCache[candidateYear] = this._generateSeasonRanges(candidateYear);
+            }
+            const ranges = this._seasonCache[candidateYear];
+            for (const r of ranges) {
+                if (date >= r.start && date <= r.end) return ranges;
+            }
+        }
+        // Fallback: generate for current calendar year (handles edge cases)
+        if (!this._seasonCache[y]) {
+            this._seasonCache[y] = this._generateSeasonRanges(y);
+        }
+        return this._seasonCache[y];
+    }
+
+    // Computed getter retained for backward compatibility with any code that
+    // references CalendarEngine.SEASON_RANGES directly.
+    static get SEASON_RANGES() {
+        const y = new Date().getFullYear();
+        if (!this._seasonCache[y - 1]) this._seasonCache[y - 1] = this._generateSeasonRanges(y - 1);
+        if (!this._seasonCache[y])     this._seasonCache[y]     = this._generateSeasonRanges(y);
+        return [...this._seasonCache[y - 1], ...this._seasonCache[y]];
+    }
 
     static async init() {
         try {
@@ -78,22 +163,26 @@ class CalendarEngine {
     }
 
     static getLiturgicalYear(date) {
-        // BCP two-year daily office cycle, anchored to Advent Sunday:
-        //   Advent 2025 (Nov 30 2025) → Year 2
-        //   Advent 2026 (Nov 29 2026) → Year 1
-        //   Advent 2027 (Nov 28 2027) → Year 2  ...alternates.
-        //
-        // Count how many Advent seasons have started on or before `date`.
-        // NOTE: deliberately does NOT call getSeasonAndFile to avoid circular calls.
-        const adventRanges = this.SEASON_RANGES.filter(r => r.season === "advent");
-        let adventsPassed = 0;
-        for (const r of adventRanges) {
-            if (date >= r.start) adventsPassed++;
+        // BCP two-year daily office cycle. Year 2 began Advent 2025.
+        // Find the Advent Sunday that governs `date`, then count how many
+        // Advent cycles have elapsed since the 2025 anchor.
+        // Odd count = Year 2, even count = Year 1.
+        const ANCHOR_YEAR = 2025; // Advent 2025 → Year 2
+        const d = new Date(date.getFullYear(), date.getMonth(), date.getDate());
+
+        // The governing Advent is this year's Advent Sunday if date falls on or
+        // after it; otherwise it is last year's Advent Sunday.
+        let governingAdvent = this._getAdventSunday(d.getFullYear());
+        if (d < governingAdvent) {
+            governingAdvent = this._getAdventSunday(d.getFullYear() - 1);
         }
-        // 1 Advent passed (2025) → year2
-        // 2 Advents passed (2026) → year1
-        // 3 Advents passed (2027) → year2 ... odd = year2, even = year1
-        return (adventsPassed % 2 === 0) ? "year1" : "year2";
+
+        const diff = governingAdvent.getFullYear() - ANCHOR_YEAR;
+
+        // diff=0 → 2025 Advent → Year 2
+        // diff=1 → 2026 Advent → Year 1
+        // diff=2 → 2027 Advent → Year 2 ... perpetual
+        return (diff % 2 === 0) ? "year2" : "year1";
     }
 
     /**
@@ -103,7 +192,8 @@ class CalendarEngine {
     static getSeasonAndFile(targetDate) {
         const date = new Date(targetDate.getFullYear(), targetDate.getMonth(), targetDate.getDate());
 
-        for (const range of this.SEASON_RANGES) {
+        const ranges = this._getRangesForDate(date);
+        for (const range of ranges) {
             if (date >= range.start && date <= range.end) {
                 return {
                     season: range.season,
@@ -145,12 +235,13 @@ class CalendarEngine {
 
     static getSeasonStartDate(targetDate) {
         const date = new Date(targetDate.getFullYear(), targetDate.getMonth(), targetDate.getDate());
-        for (const range of this.SEASON_RANGES) {
+        const ranges = this._getRangesForDate(date);
+        for (const range of ranges) {
             if (date >= range.start && date <= range.end) {
                 // For ordinary2 and ordinary3, return the start of ordinary1 for that year
                 // so that day_of_season is continuous across all three ordinary files.
                 if (range.file === 'ordinary2.json' || range.file === 'ordinary3.json') {
-                    const ordinary1 = this.SEASON_RANGES.find(r =>
+                    const ordinary1 = ranges.find(r =>
                         r.file === 'ordinary1.json' &&
                         r.start.getFullYear() === range.start.getFullYear()
                     );
@@ -199,8 +290,6 @@ class CalendarEngine {
         }
 
         console.warn(`[Calendar Engine] No match for ${iso} in ${fileName} - returning fallback sentinel.`);
-        // Return a sentinel rather than data[0] so that a calendar gap produces a visible,
-        // honest failure in the rendered office rather than silently serving the wrong day's content.
         return {
             _isFallback: true,
             title: `[No lectionary entry for ${iso}]`,

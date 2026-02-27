@@ -68,7 +68,7 @@
           "12:00–15:00": { "hour_id": "eth-lika-hour-text",    "hour_name": "Lika — The Sixth Hour" },
           "15:00–18:00": { "hour_id": "eth-serkh-hour-text",   "hour_name": "Serkh — The Ninth Hour" },
           "18:00–21:00": { "hour_id": "eth-nimeat-hour-text",  "hour_name": "Nimeat — Vespers" },
-          "21:00–00:00": { "hour_id": "eth-hour-7",            "hour_name": "The Seventh Hour — The First Night Watch", "phase": "2A — component text pending Phase 2B; falls back to eth-night-hour-text if component absent" },
+         "21:00–00:00": { "hour_id": "eth-hour-7", "hour_name": "The Seventh Hour — The First Night Watch" },
           "00:00–06:00": { "hour_id": "eth-night-hour-text",   "hour_name": "Lelit — The Night Watch" }
         }
       },

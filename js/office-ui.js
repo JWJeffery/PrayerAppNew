@@ -2061,6 +2061,15 @@ async function renderEastSyriac() {
         }
 
         if (item === 'esy-variable-qanona') {
+            // Hour-specific Qanona (Sapra/Ramsha/Lelya frame) rendered first if present
+            const hourQanonaMap = { sapra: 'esy-qanona-sapra', ramsha: 'esy-qanona-ramsha', lelya: 'esy-qanona-lelya' };
+            const hourQanonaId  = hourQanonaMap[selectedTime];
+            const hourComp      = hourQanonaId ? appData.components.find(c => c.id === hourQanonaId) : null;
+            if (hourComp) {
+                const t = resolveText(hourComp, rite) || hourComp.text || '';
+                officeHtml += `<span class="rubric-text">${hourComp.title || 'Qanona'}</span><span class="component-text">${t}</span>`;
+            }
+            // Seasonal Qanona (season + cycle content) rendered second
             const qanonaId = `esy-qanona-${season}-${cycle}`;
             const comp = appData.components.find(c => c.id === qanonaId)
                       || appData.components.find(c => c.id === 'esy-qanona-ordinary');
@@ -2068,7 +2077,7 @@ async function renderEastSyriac() {
                 const t = resolveText(comp, rite) || comp.text || '';
                 officeHtml += `<span class="rubric-text">${comp.title || 'Qanona'}</span><span class="component-text">${t}</span>`;
             } else {
-                console.warn(`[renderEastSyriac] Qanona not found: ${qanonaId}`);
+                console.warn(`[renderEastSyriac] Seasonal Qanona not found: ${qanonaId}`);
             }
             continue;
         }
