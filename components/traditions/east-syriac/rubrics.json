@@ -1,4 +1,6 @@
 {
+  "_comment": "Church of the East — Hudra Sequence Definitions. Eight sequences total: three legacy cathedral sequences (preserved for backward compatibility with existing office-ui.js references), two explicit cathedral sequences, and three full monastic sequences. Dynamic tokens beginning with 'esy-variable-' are resolved at render time by renderEastSyriac() in office-ui.js based on the current date, season, and Qdham/Wathar cycle returned by EastSyriacCalendar.getSeason(). New dynamic tokens introduced here (esy-variable-qanona, esy-variable-onitha-with-qala, esy-variable-barekmar-intercessions) must be added as handlers in renderEastSyriac() during Step 3.",
+
   "ramsha-sequence": [
     "esy-opening-formula",
     "esy-gloria-patri",
@@ -12,6 +14,7 @@
     "esy-karozutha",
     "esy-concluding-blessing"
   ],
+
   "sapra-sequence": [
     "esy-opening-formula",
     "esy-gloria-patri",
@@ -24,6 +27,7 @@
     "esy-karozutha-morning",
     "esy-concluding-blessing"
   ],
+
   "lelya-sequence": [
     "esy-opening-formula",
     "esy-gloria-patri",
@@ -35,5 +39,148 @@
     "esy-trisagion",
     "esy-karozutha",
     "esy-concluding-blessing"
-  ]
+  ],
+
+  "cathedral-sapra-sequence": [
+    "esy-opening-formula",
+    "esy-gloria-patri",
+    "esy-lords-prayer-farced",
+    "esy-gloria-patri",
+    "esy-sapra-morning-hymn",
+    "esy-variable-sapra-psalms",
+    "esy-variable-seasonal-onitha",
+    "esy-trisagion",
+    "esy-karozutha-morning",
+    "esy-concluding-blessing"
+  ],
+
+  "cathedral-ramsha-sequence": [
+    "esy-opening-formula",
+    "esy-gloria-patri",
+    "esy-lords-prayer-farced",
+    "esy-gloria-patri",
+    "esy-variable-marmitha",
+    "esy-variable-seasonal-onitha",
+    "esy-suraya",
+    "esy-laku-mara",
+    "esy-trisagion",
+    "esy-karozutha",
+    "esy-concluding-blessing"
+  ],
+
+  "monastic-sapra-sequence": [
+    "esy-opening-formula",
+    "esy-gloria-patri",
+    "esy-lords-prayer-farced",
+    "esy-gloria-patri",
+
+    "esy-sapra-morning-hymn",
+
+    "esy-variable-marmitha",
+
+    "esy-variable-qanona",
+
+    "esy-variable-onitha-with-qala",
+
+    "esy-laku-mara",
+
+    "esy-trisagion",
+
+    "esy-karozutha-morning",
+
+    "esy-variable-barekmar-intercessions",
+
+    "esy-lords-prayer-farced",
+    "esy-concluding-blessing"
+  ],
+
+  "monastic-ramsha-sequence": [
+    "esy-opening-formula",
+    "esy-gloria-patri",
+    "esy-lords-prayer-farced",
+    "esy-gloria-patri",
+
+    "esy-variable-marmitha",
+
+    "esy-variable-qanona",
+
+    "esy-variable-onitha-with-qala",
+
+    "esy-suraya",
+
+    "esy-laku-mara",
+
+    "esy-trisagion",
+
+    "esy-karozutha",
+
+    "esy-variable-barekmar-intercessions",
+
+    "esy-lords-prayer-farced",
+    "esy-concluding-blessing"
+  ],
+
+  "monastic-lelya-sequence": [
+    "esy-opening-formula",
+    "esy-gloria-patri",
+    "esy-lords-prayer-farced",
+    "esy-gloria-patri",
+
+    "esy-lelya-opening-prayer",
+
+    "esy-variable-hulali",
+
+    "esy-variable-qanona",
+
+    "esy-lelya-hymn",
+
+    "esy-variable-onitha-with-qala",
+
+    "esy-trisagion",
+
+    "esy-karozutha",
+
+    "esy-variable-barekmar-intercessions",
+
+    "esy-lords-prayer-farced",
+    "esy-concluding-blessing"
+  ],
+
+  "_dynamic_token_registry": {
+    "esy-variable-marmitha": {
+      "handled_by": "renderEastSyriac()",
+      "resolution": "Selects 3 psalms from marmithaMap[cycle][dayOfWeek]. Qdham weeks 1–7 cover Psalms 1–21; Wathar weeks 1–7 cover Psalms 22–42.",
+      "status": "implemented"
+    },
+    "esy-variable-hulali": {
+      "handled_by": "renderEastSyriac()",
+      "resolution": "Selects psalms from hulaliMap[cycle][dayOfWeek]. Night office psalmody covering the full Psalter across the two-week cycle.",
+      "status": "implemented"
+    },
+    "esy-variable-sapra-psalms": {
+      "handled_by": "renderEastSyriac()",
+      "resolution": "Fixed morning selection: Psalms 100, 91, 148, 150. Does not rotate.",
+      "status": "implemented"
+    },
+    "esy-variable-seasonal-onitha": {
+      "handled_by": "renderEastSyriac()",
+      "resolution": "Selects from esy-onitha-lent (sauma), esy-onitha-easter (qyamta), or esy-onitha-ordinary. Season name from EastSyriacCalendar.getSeason().",
+      "status": "implemented"
+    },
+    "esy-variable-qanona": {
+      "handled_by": "renderEastSyriac() — TO BE IMPLEMENTED in Step 3",
+      "resolution": "The Qanona is a metrical office hymn that rotates by season and by the Qdham/Wathar cycle. Component IDs follow the pattern esy-qanona-{season}-{cycle}, e.g. esy-qanona-subara-qdham, esy-qanona-qyamta-wathar. Fallback: esy-qanona-ordinary.",
+      "status": "pending"
+    },
+    "esy-variable-onitha-with-qala": {
+      "handled_by": "renderEastSyriac() — TO BE IMPLEMENTED in Step 3",
+      "resolution": "Extended Onitha rendering used in monastic sequences. Unlike esy-variable-seasonal-onitha (which picks a single seasonal text), this token renders the Onitha together with its appointed Qala (tone/mode indicator). Component IDs: esy-onitha-{season} for text, esy-qala-{season}-{cycle} for tone. The Qala is displayed as a rubric before the Onitha text.",
+      "status": "pending"
+    },
+    "esy-variable-barekmar-intercessions": {
+      "handled_by": "renderEastSyriac() — TO BE IMPLEMENTED in Step 3",
+      "resolution": "The Barekmar ('Bless, O Lord') is a series of intercessory dyptichs recited by the officiant. In the monastic office these are day-specific: esy-barekmar-{dayName} (e.g. esy-barekmar-sunday, esy-barekmar-monday). Fallback: esy-barekmar-general. The set also varies by season: during Sauma a penitential form is used (esy-barekmar-sauma).",
+      "status": "pending"
+    }
+  }
 }

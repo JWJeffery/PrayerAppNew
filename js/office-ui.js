@@ -510,7 +510,6 @@ async function selectMode(mode) {
 
     const settingsPanel = document.getElementById('settings-panel');
     const ethSettings   = document.getElementById('ethiopian-settings');
-    const esySettings   = document.getElementById('east-syriac-settings');
     const mainContent   = document.getElementById('main-content');
 
     if (mode === 'prayers') {
@@ -533,9 +532,6 @@ async function selectMode(mode) {
             settingsPanel.classList.add('sidebar-hidden');
             settingsPanel.classList.add('mode-hidden');
         }
-        if (esySettings) {
-            esySettings.classList.add('sidebar-hidden', 'mode-hidden');
-        }
         if (ethSettings) {
             ethSettings.classList.remove('mode-hidden');
             ethSettings.classList.add('sidebar-hidden');
@@ -554,19 +550,21 @@ async function selectMode(mode) {
         document.getElementById('individual-prayers-section').style.display = 'none';
         document.getElementById('daily-office-section').style.display       = 'flex';
 
-        window._forcedOfficeId = 'east-syriac';
+        const esySettings = document.getElementById('east-syriac-settings-panel');
 
         if (settingsPanel) {
-            settingsPanel.classList.add('sidebar-hidden', 'mode-hidden');
+            settingsPanel.classList.add('sidebar-hidden');
+            settingsPanel.classList.add('mode-hidden');
         }
         if (ethSettings) {
-            ethSettings.classList.add('sidebar-hidden', 'mode-hidden');
+            ethSettings.classList.add('sidebar-hidden');
+            ethSettings.classList.add('mode-hidden');
         }
         if (esySettings) {
+            esySettings.classList.remove('sidebar-hidden');
             esySettings.classList.remove('mode-hidden');
-            esySettings.classList.add('sidebar-hidden');
         }
-        mainContent.classList.add('sidebar-hidden');
+        mainContent.classList.remove('sidebar-hidden');
 
         document.getElementById('office-display').innerHTML =
             `<div class="office-container"><h3>Preparing Ramsha...</h3><p>Loading the Church of the East Evening Prayer.</p></div>`;
@@ -583,9 +581,6 @@ async function selectMode(mode) {
         if (ethSettings) {
             ethSettings.classList.add('sidebar-hidden');
             ethSettings.classList.add('mode-hidden');
-        }
-        if (esySettings) {
-            esySettings.classList.add('sidebar-hidden', 'mode-hidden');
         }
         if (settingsPanel) {
             settingsPanel.classList.remove('mode-hidden');
@@ -633,14 +628,11 @@ async function init() {
 function toggleSidebar() {
     const bcpPanel = document.getElementById('settings-panel');
     const ethPanel = document.getElementById('ethiopian-settings');
-    const esyPanel = document.getElementById('east-syriac-settings');
     const main     = document.getElementById('main-content');
     const toggle   = document.getElementById('sidebar-toggle');
 
     // Detect active panel by which one is NOT mode-hidden
-    let activePanel = bcpPanel;
-    if (ethPanel && !ethPanel.classList.contains('mode-hidden')) activePanel = ethPanel;
-    if (esyPanel && !esyPanel.classList.contains('mode-hidden')) activePanel = esyPanel;
+    const activePanel = (ethPanel && !ethPanel.classList.contains('mode-hidden')) ? ethPanel : bcpPanel;
 
     const isHidden = activePanel.classList.toggle('sidebar-hidden');
     main.classList.toggle('sidebar-hidden', isHidden);
@@ -1073,11 +1065,7 @@ async function renderBcpOffice() {
     }
 
     // ── Main Rubric Sequence Loop ─────────────────────────────────────────────
-    const eastSyriacSequence = isEastSyriac
-        ? (appData.eastSyriacRubrics?.['ramsha-sequence'] || [])
-        : [];
-
-    for (let item of (isEastSyriac ? eastSyriacSequence : (activeRubric?.sequence || []))) {
+    for (let item of (activeRubric?.sequence || [])) {
         item = item.trim();
 
         let compId = item.replace('[rite]', rite);
@@ -1852,33 +1840,35 @@ async function renderEastSyriac() {
     const rite          = document.querySelector('input[name="rite"]:checked')?.value || 'rite2';
     const selectedTime  = document.querySelector('input[name="esy-time"]:checked')?.value;
 
+    const officeMode = document.querySelector('input[name="esy-mode"]:checked')?.value || 'cathedral';
+
     let sequence, officeTitle;
     if (selectedTime === 'lelya') {
-        sequence    = appData.eastSyriacRubrics?.['lelya-sequence'] || [];
+        sequence    = officeMode === 'monastic'
+                        ? (appData.eastSyriacRubrics?.['monastic-lelya-sequence'] || [])
+                        : (appData.eastSyriacRubrics?.['lelya-sequence'] || []);
         officeTitle = 'Lelya — Night Office';
     } else if (selectedTime === 'sapra') {
-        sequence    = appData.eastSyriacRubrics?.['sapra-sequence'] || [];
+        sequence    = officeMode === 'monastic'
+                        ? (appData.eastSyriacRubrics?.['monastic-sapra-sequence'] || [])
+                        : (appData.eastSyriacRubrics?.['cathedral-sapra-sequence'] || []);
         officeTitle = 'Sapra — Morning Prayer';
     } else {
-        sequence    = appData.eastSyriacRubrics?.['ramsha-sequence'] || [];
+        sequence    = officeMode === 'monastic'
+                        ? (appData.eastSyriacRubrics?.['monastic-ramsha-sequence'] || [])
+                        : (appData.eastSyriacRubrics?.['cathedral-ramsha-sequence'] || []);
         officeTitle = 'Ramsha — Evening Prayer';
     }
 
-    const { season, liturgicalColor } = await CalendarEngine.getSeasonAndFile(currentDate);
-    updateSeasonalTheme(liturgicalColor || 'green');
-
-    // Calculate week of the year to toggle Qdham (Odd) / Wathar (Even)
-    const getWeekNumber = (d) => {
-        const date = new Date(d.getTime());
-        date.setHours(0, 0, 0, 0);
-        date.setDate(date.getDate() + 3 - (date.getDay() + 6) % 7);
-        const week1 = new Date(date.getFullYear(), 0, 4);
-        return 1 + Math.round(((date.getTime() - week1.getTime()) / 86400000 - 3 + (week1.getDay() + 6) % 7) / 7);
-    };
-
-    const weekNum    = getWeekNumber(currentDate);
-    const cycle      = weekNum % 2 !== 0 ? 'qdham' : 'wathar';
-    const cycleLabel = cycle === 'qdham' ? 'Qdham (Before)' : 'Wathar (After)';
+    // Use the East Syriac calendar module for season, cycle, and liturgical colour.
+    // This replaces the old ISO-week getWeekNumber() hack and the CalendarEngine
+    // call — the Church of the East operates on its own nine-season year, not
+    // the BCP calendar. Qdham/Wathar parity is now anchored to Subara Sunday.
+    const esyData    = EastSyriacCalendar.getSeason(currentDate);
+    const season     = esyData.season;
+    const cycle      = esyData.cycle;
+    const cycleLabel = esyData.cycleLabel;
+    updateSeasonalTheme(esyData.seasonColor || 'green');
 
     const esyCycleDisplay = document.getElementById('esy-cycle-box');
     if (esyCycleDisplay) esyCycleDisplay.textContent = cycleLabel;
@@ -1932,9 +1922,10 @@ async function renderEastSyriac() {
         item = item.trim();
 
         if (item === 'esy-variable-seasonal-onitha') {
-            const onithaId = season === 'lent'   ? 'esy-onitha-lent'
-                           : season === 'easter' ? 'esy-onitha-easter'
-                           :                       'esy-onitha-ordinary';
+            // season comes from EastSyriacCalendar.getSeason() — use East Syriac names
+            const onithaId = season === 'sauma'   ? 'esy-onitha-lent'
+                           : season === 'qyamta'  ? 'esy-onitha-easter'
+                           :                        'esy-onitha-ordinary';
             const onithaComp = appData.components.find(c => c.id === onithaId);
             if (onithaComp) {
                 const t = resolveText(onithaComp, rite) || onithaComp.text || '';
@@ -1980,6 +1971,55 @@ async function renderEastSyriac() {
                 const fullText = await getScriptureText('PSALM ' + psNum);
                 officeHtml += `<h4 class="passage-reference">Psalm ${psNum}</h4>`;
                 officeHtml += `<div class="psalm-block">${formatPsalmAsPoetry(fullText)}</div>`;
+            }
+            continue;
+        }
+
+        if (item === 'esy-variable-qanona') {
+            const qanonaId = `esy-qanona-${season}-${cycle}`;
+            const comp = appData.components.find(c => c.id === qanonaId)
+                      || appData.components.find(c => c.id === 'esy-qanona-ordinary');
+            if (comp) {
+                const t = resolveText(comp, rite) || comp.text || '';
+                officeHtml += `<span class="rubric-text">${comp.title || 'Qanona'}</span><span class="component-text">${t}</span>`;
+            } else {
+                console.warn(`[renderEastSyriac] Qanona not found: ${qanonaId}`);
+            }
+            continue;
+        }
+
+        if (item === 'esy-variable-onitha-with-qala') {
+            const qalaId   = `esy-qala-${season}-${cycle}`;
+            const onithaId = season === 'sauma'  ? 'esy-onitha-lent'
+                           : season === 'qyamta' ? 'esy-onitha-easter'
+                           :                       'esy-onitha-ordinary';
+            const qalaComp   = appData.components.find(c => c.id === qalaId);
+            const onithaComp = appData.components.find(c => c.id === onithaId);
+            if (qalaComp) {
+                officeHtml += `<span class="rubric-text"><i>Tone: ${qalaComp.text || ''}</i></span>`;
+            }
+            if (onithaComp) {
+                const t = resolveText(onithaComp, rite) || onithaComp.text || '';
+                officeHtml += `<span class="rubric-text">${onithaComp.title || "'Onitha"}</span><span class="component-text">${t}</span>`;
+            } else {
+                console.warn(`[renderEastSyriac] Onitha not found: ${onithaId}`);
+            }
+            continue;
+        }
+
+        if (item === 'esy-variable-barekmar-intercessions') {
+            const dayNames   = ['sunday','monday','tuesday','wednesday','thursday','friday','saturday'];
+            const dayName    = dayNames[currentDate.getDay()];
+            const barekmarId = season === 'sauma'
+                                ? 'esy-barekmar-sauma'
+                                : `esy-barekmar-${dayName}`;
+            const comp = appData.components.find(c => c.id === barekmarId)
+                      || appData.components.find(c => c.id === 'esy-barekmar-general');
+            if (comp) {
+                const t = resolveText(comp, rite) || comp.text || '';
+                officeHtml += `<span class="rubric-text">${comp.title || 'Barekmar Intercessions'}</span><div class="component-text" style="white-space:normal">${applyParagraphBreaks(t)}</div>`;
+            } else {
+                console.warn(`[renderEastSyriac] Barekmar not found: ${barekmarId} — add esy-barekmar-general to east-syriac.json`);
             }
             continue;
         }

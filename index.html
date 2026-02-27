@@ -209,6 +209,12 @@
         </div>
 
         <div class="setting-group" style="margin-top:14px; border-top:1px solid rgba(201,168,76,0.15); padding-top:14px;">
+            <strong>Office Mode</strong>
+            <label><input type="radio" name="esy-mode" value="cathedral" checked onchange="renderOffice()"> Cathedral (Simplified)</label>
+            <label><input type="radio" name="esy-mode" value="monastic" onchange="renderOffice()"> Monastic (Full)</label>
+        </div>
+
+        <div class="setting-group" style="margin-top:14px; border-top:1px solid rgba(201,168,76,0.15); padding-top:14px;">
             <strong style="display:block; margin-bottom:6px;">Current Cycle</strong>
             <div id="esy-cycle-box" style="font-family:'Cinzel',serif; font-size:0.9em; color:var(--gold); border:1px solid rgba(201,168,76,0.3); padding:8px; background:rgba(0,0,0,0.2); border-radius:2px;">
                 Calculating...
@@ -335,6 +341,7 @@
 <!-- ── Scripts ───────────────────────────────────────────────────────────── -->
 <script src="js/calendar-engine.js" defer></script>
 <script src="js/calendar-ethiopian.js" defer></script>
+<script src="js/calendar-east-syriac.js" defer></script>
 <script src="js/scripture-resolver.js" defer></script>
 <script src="js/office-ui.js" defer></script>
 <script src="js/prayers.js"></script>
