@@ -1972,54 +1972,12 @@ async function renderEthiopianSaatat() {
         }
     }
 
-    // ── Saints preload (same monthly JSON used by BCP and Ethiopian renderers) ──
-    const esyMonth = currentDate.toLocaleDateString('en-US', { month: 'long' });
-    if (!appData.saints || appData.saintsMonth !== esyMonth) {
-        try {
-            const res = await fetch(`data/saints/saints-${esyMonth.toLowerCase()}.json`);
-            if (res.ok) { appData.saints = await res.json(); appData.saintsMonth = esyMonth; }
-        } catch (err) { console.warn('[renderEastSyriac] Saints load failed:', err); }
-    }
-
-    // ── Populate saint-display: Eastern/Syriac tradition saints for today ────
-    const esyTodayShort = currentDate.toLocaleDateString('en-US', { month: 'long', day: 'numeric' });
-    const esySaints = (appData.saints || []).filter(s => {
-        if (!s.day || !s.day.toLowerCase().includes(esyTodayShort.toLowerCase())) return false;
-        const t = (s.tradition || '').toLowerCase();
-        return t.includes('syriac') || t.includes('east') || t.includes('assyrian')
-            || t.includes('church of the east') || t.includes('nestorian')
-            || t.includes('chaldean') || t.includes('persian');
-    });
-
-    // Also show any ecumenical/universal saints (apostles, early martyrs) if no tradition-specific ones
-    const universalSaints = esySaints.length === 0
-        ? (appData.saints || []).filter(s => {
-            if (!s.day || !s.day.toLowerCase().includes(esyTodayShort.toLowerCase())) return false;
-            const t = (s.tradition || '').toLowerCase();
-            return t.includes('ecumenical') || t.includes('universal') || t.includes('apostle');
-          })
-        : [];
-
-    const saintsToShow = [...esySaints, ...universalSaints];
-    const saintSection = document.querySelector('.saint-section');
 
     document.getElementById('office-display').innerHTML = officeHtml + `</div>`;
-
-    if (saintsToShow.length > 0) {
-        const dateHeader = document.getElementById('date-header');
-        if (dateHeader) {
-            dateHeader.textContent = currentDate.toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric', year: 'numeric' });
-            dateHeader.style.display = '';
-        }
-        document.getElementById('saint-display').innerHTML = saintsToShow
-            .map(s => `<div class="saint-box"><small style="color:var(--accent); font-weight:bold; text-transform:uppercase;">${s.tradition || 'Church of the East'}</small><strong>${s.name || 'Unknown'}</strong><p>${s.description || ''}</p></div>`)
-            .join('');
-        if (saintSection) saintSection.style.display = '';
-    } else {
-        document.getElementById('saint-display').innerHTML = '';
-        document.getElementById('date-header').style.display = 'none';
-        if (saintSection) saintSection.style.display = 'none';
-    }
+    document.getElementById('saint-display').innerHTML = '';
+    document.getElementById('date-header').style.display = 'none';
+    const saintSection = document.querySelector('.saint-section');
+    if (saintSection) saintSection.style.display = 'none';
 }
 
 
@@ -2357,9 +2315,48 @@ async function renderEastSyriac() {
         }
     }
 
-    document.getElementById('office-display').innerHTML = officeHtml + `</div>`;
-    document.getElementById('saint-display').innerHTML = '';
-    document.getElementById('date-header').style.display = 'none';
+    // ── Saints preload ──
+    const esyMonth = currentDate.toLocaleDateString('en-US', { month: 'long' });
+    if (!appData.saints || appData.saintsMonth !== esyMonth) {
+        try {
+            const res = await fetch(`data/saints/saints-${esyMonth.toLowerCase()}.json`);
+            if (res.ok) { appData.saints = await res.json(); appData.saintsMonth = esyMonth; }
+        } catch (err) { console.warn('[renderEastSyriac] Saints load failed:', err); }
+    }
+
+    const esyTodayShort = currentDate.toLocaleDateString('en-US', { month: 'long', day: 'numeric' });
+    const esySaints = (appData.saints || []).filter(s => {
+        if (!s.day || !s.day.toLowerCase().includes(esyTodayShort.toLowerCase())) return false;
+        const t = (s.tradition || '').toLowerCase();
+        return t.includes('syriac') || t.includes('east') || t.includes('assyrian')
+            || t.includes('church of the east') || t.includes('nestorian')
+            || t.includes('chaldean') || t.includes('persian');
+    });
+    const universalSaints = esySaints.length === 0
+        ? (appData.saints || []).filter(s => {
+            if (!s.day || !s.day.toLowerCase().includes(esyTodayShort.toLowerCase())) return false;
+            const t = (s.tradition || '').toLowerCase();
+            return t.includes('ecumenical') || t.includes('universal') || t.includes('apostle');
+          })
+        : [];
+    const saintsToShow = [...esySaints, ...universalSaints];
     const saintSection = document.querySelector('.saint-section');
-    if (saintSection) saintSection.style.display = 'none';
+
+    document.getElementById('office-display').innerHTML = officeHtml + `</div>`;
+
+    if (saintsToShow.length > 0) {
+        const dateHeader = document.getElementById('date-header');
+        if (dateHeader) {
+            dateHeader.textContent = currentDate.toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric', year: 'numeric' });
+            dateHeader.style.display = '';
+        }
+        document.getElementById('saint-display').innerHTML = saintsToShow
+            .map(s => `<div class="saint-box"><small style="color:var(--accent); font-weight:bold; text-transform:uppercase;">${s.tradition || 'Church of the East'}</small><strong>${s.name || 'Unknown'}</strong><p>${s.description || ''}</p></div>`)
+            .join('');
+        if (saintSection) saintSection.style.display = '';
+    } else {
+        document.getElementById('saint-display').innerHTML = '';
+        document.getElementById('date-header').style.display = 'none';
+        if (saintSection) saintSection.style.display = 'none';
+    }
 }
