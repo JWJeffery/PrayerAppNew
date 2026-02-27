@@ -348,5 +348,45 @@
     "id": "esy-qala-qudash-idta-wathar",
     "title": "Qala — Qudash 'Idta, Wathar Cycle",
     "text": "Mode Eight (Qala Tminya) — The bridal tone of the Church as the Bride awaiting her Lord."
+  },
+  {
+    "id": "esy-qutaa-hymn",
+    "title": "The Third Hour Hymn",
+    "text": "<p class=\"rubric-text\">The Hymn of the Third Hour is chanted:</p><p class=\"component-text\">O Lord, who at the third hour of this day did send down the Holy Spirit upon Your apostles and disciples, do not take Him away from us, but renew Him within us, who pray to You, O God. Make us worthy that we may glorify You, and the Father who sent You, and Your Holy Spirit, now and always, and for ever and ever. Amen.</p>"
+  },
+  {
+    "id": "esy-endana-hymn",
+    "title": "The Sixth Hour Hymn",
+    "text": "<p class=\"rubric-text\">The Hymn of the Sixth Hour is chanted:</p><p class=\"component-text\">O Christ God, who at the sixth hour did stretch out Your pure hands upon the Cross for the salvation of the world: Let the radiance of Your countenance illuminate us, and do not turn away the light of Your knowledge from those who praise You. For You are the light of the world, and the true day that knows no setting. Accept our prayers and our praise, O Merciful One, now and always, and for ever and ever. Amen.</p>"
+  },
+  {
+    "id": "esy-dtsha-sain-hymn",
+    "title": "The Ninth Hour Hymn",
+    "text": "<p class=\"rubric-text\">The Hymn of the Ninth Hour is chanted:</p><p class=\"component-text\">O Lord God, at the ninth hour You tasted death in the flesh for our sake, and You silenced the power of death. Hear our prayer at this hour, as You heard the thief who cried to You from the cross, and grant us in Your mercy a place in Your Kingdom. For You are good and the Lover of mankind, and to You we give glory, to the Father, to the Son, and to the Holy Spirit, now and always, and for ever and ever. Amen.</p>"
+  },
+  {
+    "id": "esy-subaa-hymn",
+    "title": "The Compline Hymn (Shubha Mara)",
+    "text": "<p class=\"rubric-text\">The Shubha Mara is chanted:</p><p class=\"component-text\">Glory to You, O Lord God, who stretched out the heavens and laid the foundation of the earth. You created the sun to rule by day and the moon to rule by night. Grant us, O Lord, to pass through this night in peace, that at the dawn of morning we may praise You with thankful hearts. For You are blessed for ever and ever. Amen.</p>"
+  },
+  {
+    "id": "esy-subaa-examination",
+    "title": "The Examination of Conscience",
+    "text": "<p class=\"rubric-text\">The Officiant leads the brief examination. A moment of silence is kept.</p><p class=\"component-text\">Let us call to mind the sins of this day: sins of speech, of thought, and of deed. Let us lay them before the Lord in penitence.<br><em>A silence is observed.</em><br>O Lord, forgive us the transgressions of this day. Have mercy on us and renew a right spirit within us, that we may rest in Your peace and rise to serve You at the coming dawn.</p><p class=\"rubric-text\">The Congregation responds:</p><p class=\"component-text\">Lord, have mercy. Lord, have mercy. Lord, have mercy.</p>"
+  },
+  {
+    "id": "esy-subaa-nunc-dimittis",
+    "title": "The Hullala d-Sham'un (Song of Simeon)",
+    "text": "<p class=\"rubric-text\">The Hullala d-Sham'un is chanted as the office draws to its close:</p><p class=\"component-text\">Lord, now let Your servant depart in peace, according to Your word;<br>For my eyes have seen Your salvation,<br>Which You have prepared before the face of all peoples,<br>A light to lighten the Gentiles, and the glory of Your people Israel.</p><p class=\"rubric-text\">Glory be to the Father, and to the Son, and to the Holy Spirit; from everlasting to everlasting. Amen.</p>"
+  },
+  {
+    "id": "esy-subaa-blessing",
+    "title": "The Compline Blessing",
+    "text": "<p class=\"rubric-text\">The Priest or Officiant gives the blessing:</p><p class=\"component-text\">May the Lord of peace Himself give you peace at all times and in every way. May the holy angels stand watch over your rest, and may the blessing of the Father, and of the Son, and of the Holy Spirit be upon you now and through the night and for ever.</p><p class=\"rubric-text\">The Congregation responds:</p><p class=\"component-text\">Amen. And with your spirit.</p><p class=\"rubric-text\">The office is concluded.</p>"
+  },
+  {
+    "id": "esy-karozutha-daytime",
+    "title": "The Daytime Karozutha",
+    "text": "<p class=\"rubric-text\">The Deacon intones the Karozutha for the Daytime Hours. The Congregation responds: <strong>Lord, have mercy.</strong></p><p class=\"component-text\">Let us all stand and pray with attentive hearts: <em>Lord, have mercy.</em><br>For the gift of this hour, for the light that sustains us, and for all the works of Your hands, we give You thanks: <em>Lord, have mercy.</em><br>Grant wisdom and peace to all who labour this day in field, home, church, and city: <em>Lord, have mercy.</em><br>Protect, O Lord, the children, the aged, and all who are without shelter or comfort: <em>Lord, have mercy.</em><br>Remember those who even now suffer persecution for Your name's sake: <em>Lord, have mercy.</em><br>That this hour and all our hours may be acceptable before Your throne, we beseech You: <em>Lord, have mercy.</em></p>"
   }
 ] 

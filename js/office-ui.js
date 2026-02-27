@@ -1861,7 +1861,28 @@ async function renderEastSyriac() {
                         ? (appData.eastSyriacRubrics?.['monastic-sapra-sequence'] || [])
                         : (appData.eastSyriacRubrics?.['cathedral-sapra-sequence'] || []);
         officeTitle = 'Sapra — Morning Prayer';
+    } else if (selectedTime === 'qutaa') {
+        sequence    = officeMode === 'monastic'
+                        ? (appData.eastSyriacRubrics?.['monastic-qutaa-sequence'] || [])
+                        : (appData.eastSyriacRubrics?.['cathedral-qutaa-sequence'] || []);
+        officeTitle = "Quta'a — Third Hour";
+    } else if (selectedTime === 'endana') {
+        sequence    = officeMode === 'monastic'
+                        ? (appData.eastSyriacRubrics?.['monastic-endana-sequence'] || [])
+                        : (appData.eastSyriacRubrics?.['cathedral-endana-sequence'] || []);
+        officeTitle = 'Endana — Sixth Hour';
+    } else if (selectedTime === 'dtsha-sain') {
+        sequence    = officeMode === 'monastic'
+                        ? (appData.eastSyriacRubrics?.['monastic-dtsha-sain-sequence'] || [])
+                        : (appData.eastSyriacRubrics?.['cathedral-dtsha-sain-sequence'] || []);
+        officeTitle = "D-tsha' Sa'in — Ninth Hour";
+    } else if (selectedTime === 'subaa') {
+        sequence    = officeMode === 'monastic'
+                        ? (appData.eastSyriacRubrics?.['monastic-subaa-sequence'] || [])
+                        : (appData.eastSyriacRubrics?.['cathedral-subaa-sequence'] || []);
+        officeTitle = "Suba'a — Compline";
     } else {
+        // Default: Ramsha
         sequence    = officeMode === 'monastic'
                         ? (appData.eastSyriacRubrics?.['monastic-ramsha-sequence'] || [])
                         : (appData.eastSyriacRubrics?.['cathedral-ramsha-sequence'] || []);
@@ -1948,6 +1969,50 @@ async function renderEastSyriac() {
             const sapraPsalms = ['100', '91', '148', '150'];
             officeHtml += `<span class="rubric-text">The Appointed Psalms of the Morning</span>`;
             for (const psNum of sapraPsalms) {
+                const fullText = await getScriptureText('PSALM ' + psNum);
+                officeHtml += `<h4 class="passage-reference">Psalm ${psNum}</h4>`;
+                officeHtml += `<div class="psalm-block">${formatPsalmAsPoetry(fullText)}</div>`;
+            }
+            continue;
+        }if (item === 'esy-variable-qutaa-psalms') {
+            const qutaaPsalms = ['19', '24', '25'];
+            officeHtml += `<span class="rubric-text">The Appointed Psalms of the Third Hour</span>`;
+            for (const psNum of qutaaPsalms) {
+                const fullText = await getScriptureText('PSALM ' + psNum);
+                officeHtml += `<h4 class="passage-reference">Psalm ${psNum}</h4>`;
+                officeHtml += `<div class="psalm-block">${formatPsalmAsPoetry(fullText)}</div>`;
+            }
+            continue;
+        }
+
+        if (item === 'esy-variable-endana-psalms') {
+            const endanaPsalms = ['119:1-32', '121', '122'];
+            officeHtml += `<span class="rubric-text">The Appointed Psalms of the Sixth Hour</span>`;
+            for (const psRef of endanaPsalms) {
+                const fullText = await getScriptureText('PSALM ' + psRef);
+                // Extract the display label (psalm number only, strip verse range)
+                const displayNum = psRef.split(':')[0];
+                officeHtml += `<h4 class="passage-reference">Psalm ${psRef}</h4>`;
+                officeHtml += `<div class="psalm-block">${formatPsalmAsPoetry(fullText)}</div>`;
+            }
+            continue;
+        }
+
+        if (item === 'esy-variable-dtsha-sain-psalms') {
+            const dtshaPsalms = ['84', '116', '117'];
+            officeHtml += `<span class="rubric-text">The Appointed Psalms of the Ninth Hour</span>`;
+            for (const psNum of dtshaPsalms) {
+                const fullText = await getScriptureText('PSALM ' + psNum);
+                officeHtml += `<h4 class="passage-reference">Psalm ${psNum}</h4>`;
+                officeHtml += `<div class="psalm-block">${formatPsalmAsPoetry(fullText)}</div>`;
+            }
+            continue;
+        }
+
+        if (item === 'esy-variable-subaa-psalms') {
+            const subaaPsalms = ['4', '91', '134'];
+            officeHtml += `<span class="rubric-text">The Appointed Psalms of Compline</span>`;
+            for (const psNum of subaaPsalms) {
                 const fullText = await getScriptureText('PSALM ' + psNum);
                 officeHtml += `<h4 class="passage-reference">Psalm ${psNum}</h4>`;
                 officeHtml += `<div class="psalm-block">${formatPsalmAsPoetry(fullText)}</div>`;

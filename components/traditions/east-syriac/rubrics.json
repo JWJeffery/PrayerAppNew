@@ -179,8 +179,143 @@
     },
     "esy-variable-barekmar-intercessions": {
       "handled_by": "renderEastSyriac() — TO BE IMPLEMENTED in Step 3",
-      "resolution": "The Barekmar ('Bless, O Lord') is a series of intercessory dyptichs recited by the officiant. In the monastic office these are day-specific: esy-barekmar-{dayName} (e.g. esy-barekmar-sunday, esy-barekmar-monday). Fallback: esy-barekmar-general. The set also varies by season: during Sauma a penitential form is used (esy-barekmar-sauma).",
+      "resolution": "The Barekmar ('Bless, O Lord') is a series of intercessory dyptichs...",
       "status": "pending"
-    }
+    },
+    "esy-variable-qutaa-psalms": {
+      "handled_by": "renderEastSyriac()",
+      "resolution": "Fixed Third Hour selection: Psalms 19, 24, 25. Does not rotate.",
+      "status": "implemented"
+    },
+    "esy-variable-endana-psalms": {
+      "handled_by": "renderEastSyriac()",
+      "resolution": "Fixed Sixth Hour selection: Psalms 119:1-32, 121, 122. Does not rotate.",
+      "status": "implemented"
+    },
+    "esy-variable-dtsha-sain-psalms": {
+      "handled_by": "renderEastSyriac()",
+      "resolution": "Fixed Ninth Hour selection: Psalms 84, 116, 117. Does not rotate.",
+      "status": "implemented"
+    },
+    "esy-variable-subaa-psalms": {
+      "handled_by": "renderEastSyriac()",
+      "resolution": "Fixed Compline selection: Psalms 4, 91, 134. Does not rotate.",
+      "status": "implemented"
+    },
+    "cathedral-qutaa-sequence": [
+    "esy-opening-formula",
+    "esy-gloria-patri",
+    "esy-lords-prayer-farced",
+    "esy-gloria-patri",
+    "esy-qutaa-hymn",
+    "esy-variable-qutaa-psalms",
+    "esy-variable-seasonal-onitha",
+    "esy-trisagion",
+    "esy-karozutha-daytime",
+    "esy-concluding-blessing"
+  ],
+
+  "monastic-qutaa-sequence": [
+    "esy-opening-formula",
+    "esy-gloria-patri",
+    "esy-lords-prayer-farced",
+    "esy-gloria-patri",
+    "esy-qutaa-hymn",
+    "esy-variable-marmitha",
+    "esy-variable-qanona",
+    "esy-variable-onitha-with-qala",
+    "esy-trisagion",
+    "esy-karozutha-daytime",
+    "esy-variable-barekmar-intercessions",
+    "esy-lords-prayer-farced",
+    "esy-concluding-blessing"
+  ],
+
+  "cathedral-endana-sequence": [
+    "esy-opening-formula",
+    "esy-gloria-patri",
+    "esy-lords-prayer-farced",
+    "esy-gloria-patri",
+    "esy-endana-hymn",
+    "esy-variable-endana-psalms",
+    "esy-variable-seasonal-onitha",
+    "esy-trisagion",
+    "esy-karozutha-daytime",
+    "esy-concluding-blessing"
+  ],
+
+  "monastic-endana-sequence": [
+    "esy-opening-formula",
+    "esy-gloria-patri",
+    "esy-lords-prayer-farced",
+    "esy-gloria-patri",
+    "esy-endana-hymn",
+    "esy-variable-marmitha",
+    "esy-variable-qanona",
+    "esy-variable-onitha-with-qala",
+    "esy-trisagion",
+    "esy-karozutha-daytime",
+    "esy-variable-barekmar-intercessions",
+    "esy-lords-prayer-farced",
+    "esy-concluding-blessing"
+  ],
+
+  "cathedral-dtsha-sain-sequence": [
+    "esy-opening-formula",
+    "esy-gloria-patri",
+    "esy-lords-prayer-farced",
+    "esy-gloria-patri",
+    "esy-dtsha-sain-hymn",
+    "esy-variable-dtsha-sain-psalms",
+    "esy-variable-seasonal-onitha",
+    "esy-trisagion",
+    "esy-karozutha-daytime",
+    "esy-concluding-blessing"
+  ],
+
+  "monastic-dtsha-sain-sequence": [
+    "esy-opening-formula",
+    "esy-gloria-patri",
+    "esy-lords-prayer-farced",
+    "esy-gloria-patri",
+    "esy-dtsha-sain-hymn",
+    "esy-variable-marmitha",
+    "esy-variable-qanona",
+    "esy-variable-onitha-with-qala",
+    "esy-trisagion",
+    "esy-karozutha-daytime",
+    "esy-variable-barekmar-intercessions",
+    "esy-lords-prayer-farced",
+    "esy-concluding-blessing"
+  ],
+
+  "cathedral-subaa-sequence": [
+    "esy-opening-formula",
+    "esy-gloria-patri",
+    "esy-lords-prayer-farced",
+    "esy-gloria-patri",
+    "esy-variable-subaa-psalms",
+    "esy-subaa-hymn",
+    "esy-trisagion",
+    "esy-subaa-examination",
+    "esy-subaa-nunc-dimittis",
+    "esy-subaa-blessing"
+  ],
+
+  "monastic-subaa-sequence": [
+    "esy-opening-formula",
+    "esy-gloria-patri",
+    "esy-lords-prayer-farced",
+    "esy-gloria-patri",
+    "esy-variable-subaa-psalms",
+    "esy-variable-qanona",
+    "esy-subaa-hymn",
+    "esy-variable-onitha-with-qala",
+    "esy-trisagion",
+    "esy-subaa-examination",
+    "esy-variable-barekmar-intercessions",
+    "esy-subaa-nunc-dimittis",
+    "esy-subaa-blessing"
+  ]
   }
 }
