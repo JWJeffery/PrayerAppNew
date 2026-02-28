@@ -1,0 +1,902 @@
+[
+  {
+    "day": "May 1",
+    "tradition": "Universal",
+    "name": "Jeremiah the Prophet",
+    "description": "Old Testament prophet known for his lamentations."
+  },
+  {
+    "day": "May 1",
+    "tradition": "Catholic",
+    "name": "Saint Joseph the Worker",
+    "description": "Patron of workers and spouse of the Blessed Virgin Mary."
+  },
+  {
+    "day": "May 1",
+    "tradition": "Church of the East",
+    "name": "Saint Addai the Apostle",
+    "description": "Apostle and missionary to Edessa."
+  },
+  {
+    "day": "May 1",
+    "tradition": "Anglican",
+    "name": "Philip and James, Apostles",
+    "description": "Apostles and martyrs (Western traditional date)."
+  },
+  {
+    "day": "May 1",
+    "tradition": "Eastern Orthodox",
+    "name": "Martyr Philosophos",
+    "description": "Martyr at Alexandria, died 252 AD."
+  },
+  {
+    "day": "May 1",
+    "tradition": "Oriental Orthodox",
+    "name": "Martyrdom of Saint Mark the Evangelist",
+    "description": "Apostle and founder of the Coptic Church, martyred in Alexandria."
+  },
+  {
+    "day": "May 2",
+    "tradition": "Universal",
+    "name": "Saint Athanasius the Great",
+    "description": "Patriarch of Alexandria and Doctor of the Church, defender against Arianism."
+  },
+  {
+    "day": "May 2",
+    "tradition": "Anglican",
+    "name": "Saint Athanasius",
+    "description": "Bishop of Alexandria and Teacher of the Faith, died 373 AD."
+  },
+  {
+    "day": "May 2",
+    "tradition": "Church of the East",
+    "name": "Saint Athanasius",
+    "description": "Patriarch of Alexandria and defender of orthodoxy, died 373 AD."
+  },
+  {
+    "day": "May 2",
+    "tradition": "Eastern Orthodox",
+    "name": "Saint Athanasius the Great",
+    "description": "Bishop of Alexandria and theologian, died 373 AD."
+  },
+  {
+    "day": "May 2",
+    "tradition": "Oriental Orthodox",
+    "name": "Saint Athanasius the Apostolic",
+    "description": "Patriarch of Alexandria and pillar of faith, died 373 AD."
+  },
+  {
+    "day": "May 3",
+    "tradition": "Eastern Orthodox, Oriental Orthodox",
+    "name": "Martyrs Timothy and Maura",
+    "description": "Husband and wife martyrs."
+  },
+  {
+    "day": "May 3",
+    "tradition": "Catholic, Anglican",
+    "name": "Philip and James, Apostles",
+    "description": "Apostles and martyrs (Roman Catholic calendar date)."
+  },
+  {
+    "day": "May 3",
+    "tradition": "Church of the East",
+    "name": "Martyrs of the East",
+    "description": "Early martyrs in the Persian Empire."
+  },
+  {
+    "day": "May 4",
+    "tradition": "Catholic, Anglican",
+    "name": "Saint Monica",
+    "description": "Mother of Saint Augustine, known for her persistent prayer."
+  },
+  {
+    "day": "May 4",
+    "tradition": "Eastern Orthodox",
+    "name": "Virgin Martyr Pelagia of Tarsus",
+    "description": "Martyr under Diocletian, died 287 AD."
+  },
+  {
+    "day": "May 4",
+    "tradition": "Oriental Orthodox",
+    "name": "Saint Pachomius",
+    "description": "Founder of communal monasticism, died 348 AD."
+  },
+  {
+    "day": "May 4",
+    "tradition": "Church of the East",
+    "name": "Saint Pachomius",
+    "description": "Egyptian monk and founder of cenobitic monasticism."
+  },
+  {
+    "day": "May 5",
+    "tradition": "Eastern Orthodox",
+    "name": "Great Martyr Irene",
+    "description": "Early martyr for the faith."
+  },
+  {
+    "day": "May 5",
+    "tradition": "Catholic",
+    "name": "Saint Hilary of Arles",
+    "description": "Bishop and monastic reformer, died 449 AD."
+  },
+  {
+    "day": "May 5",
+    "tradition": "Anglican",
+    "name": "Saint Asaph",
+    "description": "Bishop in Wales, died 601 AD."
+  },
+  {
+    "day": "May 5",
+    "tradition": "Oriental Orthodox",
+    "name": "Departure of Saint Simon the Zealot",
+    "description": "One of the Twelve Apostles, martyred in Persia."
+  },
+  {
+    "day": "May 5",
+    "tradition": "Church of the East",
+    "name": "Saint Sawrisho of Beth Garmi",
+    "description": "Monk and ascetic, 6th century."
+  },
+  {
+    "day": "May 6",
+    "tradition": "Eastern Orthodox",
+    "name": "Righteous Job the Long-suffering",
+    "description": "Old Testament figure of patience and faith."
+  },
+  {
+    "day": "May 6",
+    "tradition": "Catholic",
+    "name": "Saint Evodius of Antioch",
+    "description": "Early bishop and martyr, 1st century."
+  },
+  {
+    "day": "May 6",
+    "tradition": "Anglican",
+    "name": "Saint John of Beverley",
+    "description": "Bishop of York, died 721 AD."
+  },
+  {
+    "day": "May 6",
+    "tradition": "Oriental Orthodox",
+    "name": "Saint George of Lydda",
+    "description": "Soldier and martyr, died 303 AD."
+  },
+  {
+    "day": "May 6",
+    "tradition": "Church of the East",
+    "name": "Saint Awa Catholicos",
+    "description": "Patriarch and leader, died 6th century."
+  },
+  {
+    "day": "May 7",
+    "tradition": "Universal",
+    "name": "Dame Julian of Norwich",
+    "description": "English mystic and author of 'Revelations of Divine Love'."
+  },
+  {
+    "day": "May 7",
+    "tradition": "Catholic",
+    "name": "Saint Domitian of Huy",
+    "description": "Bishop and evangelizer, died 560 AD."
+  },
+  {
+    "day": "May 7",
+    "tradition": "Anglican",
+    "name": "Saint John of Beverley",
+    "description": "Bishop and hermit, died 721 AD."
+  },
+  {
+    "day": "May 7",
+    "tradition": "Eastern Orthodox",
+    "name": "Commemoration of the Sign of the Cross over Jerusalem",
+    "description": "Apparition in 351 AD."
+  },
+  {
+    "day": "May 7",
+    "tradition": "Oriental Orthodox",
+    "name": "Martyrdom of Saint Pachomius",
+    "description": "Founder of monasticism, died 348 AD."
+  },
+  {
+    "day": "May 7",
+    "tradition": "Church of the East",
+    "name": "Saint John Bar Malkeh",
+    "description": "Bishop and theologian, 8th century."
+  },
+  {
+    "day": "May 8",
+    "tradition": "Eastern Orthodox",
+    "name": "Saint John the Theologian",
+    "description": "Apostle and Evangelist."
+  },
+  {
+    "day": "May 8",
+    "tradition": "Catholic",
+    "name": "Saint Desideratus of Bourges",
+    "description": "Bishop, died 550 AD."
+  },
+  {
+    "day": "May 8",
+    "tradition": "Anglican",
+    "name": "Julian of Norwich",
+    "description": "Mystic and theologian, died c. 1417 AD."
+  },
+  {
+    "day": "May 8",
+    "tradition": "Oriental Orthodox",
+    "name": "Martyrdom of St. Mark the Evangelist",
+    "description": "Apostle and evangelist, died 68 AD (Coptic commemoration)."
+  },
+  {
+    "day": "May 8",
+    "tradition": "Church of the East",
+    "name": "Saint John the Evangelist",
+    "description": "Apostle and author of the Gospel."
+  },
+  {
+    "day": "May 9",
+    "tradition": "Catholic, Eastern Orthodox",
+    "name": "Saint Pachomius the Great",
+    "description": "Founder of cenobitic (communal) monasticism."
+  },
+  {
+    "day": "May 9",
+    "tradition": "Anglican",
+    "name": "Gregory of Nazianzus",
+    "description": "Bishop of Constantinople and one of the Cappadocian Fathers, died 389 AD."
+  },
+  {
+    "day": "May 9",
+    "tradition": "Oriental Orthodox",
+    "name": "Saint Pachomius of Tabennisi",
+    "description": "Founder of Coptic monasticism, died 348 AD."
+  },
+  {
+    "day": "May 9",
+    "tradition": "Church of the East",
+    "name": "Feast of the Ascension",
+    "description": "Commemoration of Christ's Ascension (if falling on this date)."
+  },
+  {
+    "day": "May 10",
+    "tradition": "Eastern Orthodox",
+    "name": "Apostle Simon the Zealot",
+    "description": "One of the Twelve Apostles."
+  },
+  {
+    "day": "May 10",
+    "tradition": "Catholic",
+    "name": "Saint John of Avila",
+    "description": "Priest and Doctor of the Church, died 1569 AD."
+  },
+  {
+    "day": "May 10",
+    "tradition": "Anglican",
+    "name": "Saint Comgall",
+    "description": "Abbot of Bangor, died 601 AD."
+  },
+  {
+    "day": "May 10",
+    "tradition": "Oriental Orthodox",
+    "name": "Saint Simon the Zealot",
+    "description": "Apostle martyred in Persia."
+  },
+  {
+    "day": "May 10",
+    "tradition": "Church of the East",
+    "name": "Saint Simon the Zealot",
+    "description": "Apostle and missionary."
+  },
+  {
+    "day": "May 11",
+    "tradition": "Universal",
+    "name": "Saints Cyril and Methodius",
+    "description": "Equals-to-the-Apostles and missionaries to the Slavs."
+  },
+  {
+    "day": "May 11",
+    "tradition": "Catholic",
+    "name": "Saint Mamertus",
+    "description": "Bishop of Vienne, died 475 AD."
+  },
+  {
+    "day": "May 11",
+    "tradition": "Anglican",
+    "name": "Saints Cyril and Methodius",
+    "description": "Missionaries to the Slavs, died 869 and 885 AD."
+  },
+  {
+    "day": "May 11",
+    "tradition": "Eastern Orthodox",
+    "name": "Hieromartyr Mocius",
+    "description": "Priest and martyr, died 295 AD."
+  },
+  {
+    "day": "May 11",
+    "tradition": "Oriental Orthodox",
+    "name": "Saints Cyril and Methodius",
+    "description": "Brothers and evangelizers."
+  },
+  {
+    "day": "May 11",
+    "tradition": "Church of the East",
+    "name": "Saint Mocius",
+    "description": "Martyr under Diocletian."
+  },
+  {
+    "day": "May 12",
+    "tradition": "Catholic, Anglican, Church of the East",
+    "name": "Saint Pancras",
+    "description": "Young Roman martyr beheaded for his faith around 304 AD. Patron of children, jobs, and health."
+  },
+  {
+    "day": "May 12",
+    "tradition": "Catholic, Eastern Orthodox, Oriental Orthodox, Anglican",
+    "name": "Saints Nereus and Achilleus",
+    "description": "Roman soldiers martyred for converting to Christianity around 100 AD."
+  },
+  {
+    "day": "May 12",
+    "tradition": "Eastern Orthodox, Oriental Orthodox",
+    "name": "Saint Epiphanius of Salamis",
+    "description": "Bishop of Salamis and defender against heresies, died 403 AD."
+  },
+  {
+    "day": "May 12",
+    "tradition": "Oriental Orthodox",
+    "name": "Mor Ya'qub of Nisibin",
+    "description": "Bishop and confessor, died 338 AD (Syriac commemoration)."
+  },
+  {
+    "day": "May 13",
+    "tradition": "Catholic",
+    "name": "Our Lady of Fatima",
+    "description": "Apparition of the Blessed Virgin Mary in Portugal, 1917."
+  },
+  {
+    "day": "May 13",
+    "tradition": "Anglican",
+    "name": "Saint Julian of Norwich",
+    "description": "Mystic, died c. 1417 AD."
+  },
+  {
+    "day": "May 13",
+    "tradition": "Eastern Orthodox",
+    "name": "Virgin Martyr Glyceria",
+    "description": "Martyr at Heraclea, died 177 AD."
+  },
+  {
+    "day": "May 13",
+    "tradition": "Oriental Orthodox",
+    "name": "Saint Isaac the Syrian",
+    "description": "Bishop and ascetic writer, died 700 AD (Syriac feast)."
+  },
+  {
+    "day": "May 13",
+    "tradition": "Church of the East",
+    "name": "Saint Isaac of Nineveh",
+    "description": "Mystic and bishop, 7th century."
+  },
+  {
+    "day": "May 14",
+    "tradition": "Catholic, Anglican",
+    "name": "Saint Matthias the Apostle",
+    "description": "The apostle chosen to replace Judas Iscariot."
+  },
+  {
+    "day": "May 14",
+    "tradition": "Eastern Orthodox",
+    "name": "Martyr Isidore of Chios",
+    "description": "Martyr under Decius, died 251 AD."
+  },
+  {
+    "day": "May 14",
+    "tradition": "Oriental Orthodox",
+    "name": "Saint Pachomius",
+    "description": "Founder of monasticism (Coptic)."
+  },
+  {
+    "day": "May 14",
+    "tradition": "Church of the East",
+    "name": "Saint Matthias",
+    "description": "Apostle and martyr."
+  },
+  {
+    "day": "May 15",
+    "tradition": "Catholic",
+    "name": "Saint Dymphna",
+    "description": "Patron saint of those suffering from mental illness."
+  },
+  {
+    "day": "May 15",
+    "tradition": "Anglican",
+    "name": "Junia",
+    "description": "Apostle mentioned by St. Paul in Romans."
+  },
+  {
+    "day": "May 15",
+    "tradition": "Eastern Orthodox",
+    "name": "Saint Pachomius the Great",
+    "description": "Founder of cenobitic monasticism, died 348 AD."
+  },
+  {
+    "day": "May 15",
+    "tradition": "Oriental Orthodox",
+    "name": "Holy Virgin Mary of the Harvest",
+    "description": "Feast for blessing of crops (Syriac)."
+  },
+  {
+    "day": "May 15",
+    "tradition": "Church of the East",
+    "name": "Saint Pachomius",
+    "description": "Monk and founder, venerated in Eastern traditions."
+  },
+  {
+    "day": "May 16",
+    "tradition": "Catholic, Anglican",
+    "name": "Saint Brendan the Navigator",
+    "description": "Irish abbot and missionary known for his voyages, died 577 AD."
+  },
+  {
+    "day": "May 16",
+    "tradition": "Eastern Orthodox, Oriental Orthodox",
+    "name": "Venerable Theodore the Sanctified",
+    "description": "Disciple of Saint Pachomius and founder of monasteries, died 368 AD."
+  },
+  {
+    "day": "May 16",
+    "tradition": "Church of the East",
+    "name": "Saint Theodore of Tabennisi",
+    "description": "Monk and disciple in early monastic tradition, died 368 AD."
+  },
+  {
+    "day": "May 16",
+    "tradition": "Eastern Orthodox",
+    "name": "Hieromartyr Alexander of Jerusalem",
+    "description": "Bishop and martyr under Decius, died 251 AD."
+  },
+  {
+    "day": "May 17",
+    "tradition": "Catholic",
+    "name": "Saint Paschal Baylon",
+    "description": "Franciscan lay brother and mystic devoted to the Eucharist, died 1592 AD."
+  },
+  {
+    "day": "May 17",
+    "tradition": "Eastern Orthodox, Oriental Orthodox",
+    "name": "Apostles Andronicus and Junia",
+    "description": "Of the Seventy Apostles, relatives of Saint Paul, 1st century."
+  },
+  {
+    "day": "May 17",
+    "tradition": "Anglican",
+    "name": "Saint Madron of Cornwall",
+    "description": "Hermit and martyr in Cornwall, 6th century."
+  },
+  {
+    "day": "May 17",
+    "tradition": "Church of the East",
+    "name": "Martyrs Solochon, Pamphamer, and Pamphalon",
+    "description": "Soldiers martyred at Chalcedon around 298 AD."
+  },
+  {
+    "day": "May 18",
+    "tradition": "Catholic",
+    "name": "Pope Saint John I",
+    "description": "Pope and martyr imprisoned by Theodoric, died 526 AD."
+  },
+  {
+    "day": "May 18",
+    "tradition": "Eastern Orthodox, Oriental Orthodox",
+    "name": "Martyr Theodotus of Ancyra",
+    "description": "Martyr with seven virgin martyrs under Diocletian, died 303 AD."
+  },
+  {
+    "day": "May 18",
+    "tradition": "Anglican, Catholic",
+    "name": "Saint Felix of Cantalice",
+    "description": "Capuchin friar known for charity, died 1587 AD."
+  },
+  {
+    "day": "May 18",
+    "tradition": "Church of the East",
+    "name": "Martyrs Peter, Andrew, Paul, and Dionysia",
+    "description": "Martyrs under Decius around 250 AD."
+  },
+  {
+    "day": "May 19",
+    "tradition": "Anglican",
+    "name": "Dunstan",
+    "description": "Archbishop of Canterbury and monastic reformer, died 988 AD."
+  },
+  {
+    "day": "May 19",
+    "tradition": "Catholic",
+    "name": "Saint Celestine V",
+    "description": "Pope and hermit, died 1296 AD."
+  },
+  {
+    "day": "May 19",
+    "tradition": "Eastern Orthodox",
+    "name": "Hieromartyr Patrick of Prusa",
+    "description": "Bishop and martyr with companions, died 100 AD."
+  },
+  {
+    "day": "May 19",
+    "tradition": "Oriental Orthodox",
+    "name": "Saint Epiphanius of Salamis",
+    "description": "Bishop and theologian, died 403 AD."
+  },
+  {
+    "day": "May 19",
+    "tradition": "Church of the East",
+    "name": "Pentecost Sunday",
+    "description": "Commemoration of the descent of the Holy Spirit."
+  },
+  {
+    "day": "May 20",
+    "tradition": "Anglican",
+    "name": "Alcuin of York",
+    "description": "Deacon, Abbot, and scholar under Charlemagne, died 804 AD."
+  },
+  {
+    "day": "May 20",
+    "tradition": "Catholic",
+    "name": "Saint Bernardine of Siena",
+    "description": "Priest and preacher, died 1444 AD."
+  },
+  {
+    "day": "May 20",
+    "tradition": "Eastern Orthodox",
+    "name": "Martyr Thallelaios",
+    "description": "Physician and martyr at Anazarbus, died 284 AD."
+  },
+  {
+    "day": "May 20",
+    "tradition": "Oriental Orthodox",
+    "name": "Saint Thalassius the Myrrh-Streamer",
+    "description": "Ascetic and wonderworker, 7th century."
+  },
+  {
+    "day": "May 20",
+    "tradition": "Church of the East",
+    "name": "Saint Thalassius",
+    "description": "Hermit and healer."
+  },
+  {
+    "day": "May 21",
+    "tradition": "Catholic",
+    "name": "St. Christopher Magallanes and Companions",
+    "description": "Martyrs of the Cristero War in Mexico."
+  },
+  {
+    "day": "May 21",
+    "tradition": "Catholic",
+    "name": "St. Eugene de Mazenod",
+    "description": "Bishop of Marseille and founder of the Oblates of Mary Immaculate."
+  },
+  {
+    "day": "May 21",
+    "tradition": "Catholic",
+    "name": "Mary, Mother of the Church",
+    "description": "Movable feast commemorating Mary as Mother of the Church."
+  },
+  {
+    "day": "May 21",
+    "tradition": "Eastern Orthodox",
+    "name": "St. Cassian the Greek",
+    "description": "15th-century miracle worker and monk who founded a monastery in Uglich, Russia."
+  },
+  {
+    "day": "May 21",
+    "tradition": "Eastern Orthodox",
+    "name": "St. Pachomius of Patmos",
+    "description": "New Martyr from the 18th century."
+  },
+  {
+    "day": "May 21",
+    "tradition": "Eastern Orthodox",
+    "name": "St. Agapitus of Markushev",
+    "description": "Hieromartyr and abbot from the Vologda region."
+  },
+  {
+    "day": "May 21",
+    "tradition": "Eastern Orthodox",
+    "name": "Vladimir Icon of the Mother of God",
+    "description": "Commemoration of the saving of Moscow from invasion in 1521."
+  },
+  {
+    "day": "May 21",
+    "tradition": "Anglican",
+    "name": "St. Collen",
+    "description": "7th-century Welsh abbot."
+  },
+  {
+    "day": "May 21",
+    "tradition": "Anglican",
+    "name": "St. Isberga",
+    "description": "Sister of Charlemagne and a nun in France."
+  },
+  {
+    "day": "May 21",
+    "tradition": "Oriental Orthodox",
+    "name": "St. Adelphios",
+    "description": "4th-century Bishop of Onouphis in Egypt."
+  },
+  {
+    "day": "May 21",
+    "tradition": "Oriental Orthodox, Eastern Orthodox",
+    "name": "Martyrs Polyeuctus, Victorinus, and Donatus",
+    "description": "Martyrs from Caesarea in Cappadocia."
+  },
+  {
+    "day": "May 21",
+    "tradition": "Church of the East",
+    "name": "Martyrs Polyeuctus, Victorinus, and Donatus",
+    "description": "Martyrs from Caesarea in Cappadocia."
+  },
+  {
+    "day": "May 22",
+    "tradition": "Universal",
+    "name": "Saint Rita of Cascia",
+    "description": "Augustinian nun and patroness of impossible causes."
+  },
+  {
+    "day": "May 22",
+    "tradition": "Eastern Orthodox, Oriental Orthodox",
+    "name": "Saint Basiliscus of Comana",
+    "description": "Martyr under Maximian, died 308 AD."
+  },
+  {
+    "day": "May 22",
+    "tradition": "Anglican",
+    "name": "Saint Begh of Bee",
+    "description": "Irish princess who founded a convent at St. Bees."
+  },
+  {
+    "day": "May 22",
+    "tradition": "Oriental Orthodox",
+    "name": "Saint Kali of Ethiopia",
+    "description": "Woman known for her extreme devotion and ascetic life."
+  },
+  {
+    "day": "May 22",
+    "tradition": "Church of the East",
+    "name": "Saint Basiliscus of Comana",
+    "description": "Martyr under Maximian, died 308 AD."
+  },
+  {
+    "day": "May 22",
+    "tradition": "Catholic",
+    "name": "Blessed John Forest",
+    "description": "Franciscan friar and martyr under Henry VIII, died 1538 AD."
+  },
+  {
+    "day": "May 22",
+    "tradition": "Catholic",
+    "name": "Saint Humility",
+    "description": "14th-century Italian mystic and foundress of the Vallumbrosan Nuns."
+  },
+  {
+    "day": "May 22",
+    "tradition": "Eastern Orthodox",
+    "name": "Commemoration of the Second Ecumenical Council",
+    "description": "Council of Constantinople in 381 AD."
+  },
+  {
+    "day": "May 23",
+    "tradition": "Catholic, Anglican",
+    "name": "Saint Giovanni Battista Rossi",
+    "description": "Priest known for charity to the poor, died 1764 AD."
+  },
+  {
+    "day": "May 23",
+    "tradition": "Eastern Orthodox, Oriental Orthodox",
+    "name": "Saint Michael the Confessor of Synnada",
+    "description": "Bishop and confessor exiled for icon veneration, died 826 AD."
+  },
+  {
+    "day": "May 23",
+    "tradition": "Church of the East",
+    "name": "Holy Myrrh-bearer Mary Wife of Cleopas",
+    "description": "One of the myrrh-bearing women at Christ's tomb, 1st century."
+  },
+  {
+    "day": "May 24",
+    "tradition": "Catholic, Oriental Orthodox",
+    "name": "Saint David I of Scotland",
+    "description": "King known for his piety and establishment of monasteries."
+  },
+  {
+    "day": "May 24",
+    "tradition": "Eastern Orthodox",
+    "name": "Martyr Meletius Stratelates",
+    "description": "Soldier martyr with 1218 companions in Galatia, died 138 AD."
+  },
+  {
+    "day": "May 24",
+    "tradition": "Anglican",
+    "name": "Saint David of Scotland",
+    "description": "Pious king, died 1153 AD."
+  },
+  {
+    "day": "May 24",
+    "tradition": "Church of the East",
+    "name": "Martyr Meletius",
+    "description": "General and martyr with family."
+  },
+  {
+    "day": "May 25",
+    "tradition": "Universal",
+    "name": "Bede the Venerable",
+    "description": "Priest, monk of Jarrow, and 'Father of English History,' died 735 AD."
+  },
+  {
+    "day": "May 25",
+    "tradition": "Catholic",
+    "name": "Saint Gregory VII",
+    "description": "Pope and reformer, died 1085 AD."
+  },
+  {
+    "day": "May 25",
+    "tradition": "Eastern Orthodox",
+    "name": "Third Finding of the Head of Saint John the Baptist",
+    "description": "Relic discovery in 850 AD."
+  },
+  {
+    "day": "May 25",
+    "tradition": "Oriental Orthodox",
+    "name": "Saint Bede",
+    "description": "Scholar and historian."
+  },
+  {
+    "day": "May 25",
+    "tradition": "Church of the East",
+    "name": "Saint Bede",
+    "description": "Monk and doctor."
+  },
+  {
+    "day": "May 26",
+    "tradition": "Universal",
+    "name": "Saint Philip Neri",
+    "description": "Founder of the Oratorians and the 'Apostle of Rome'."
+  },
+  {
+    "day": "May 26",
+    "tradition": "Anglican",
+    "name": "Augustine of Canterbury",
+    "description": "First Archbishop of Canterbury, died 605 AD."
+  },
+  {
+    "day": "May 26",
+    "tradition": "Eastern Orthodox",
+    "name": "Apostle Carpus of the Seventy",
+    "description": "Disciple of Saint Paul, 1st century."
+  },
+  {
+    "day": "May 26",
+    "tradition": "Oriental Orthodox",
+    "name": "Saint Augustine of Canterbury",
+    "description": "Missionary to England."
+  },
+  {
+    "day": "May 26",
+    "tradition": "Church of the East",
+    "name": "Second Sunday of the Apostles",
+    "description": "Post-Pentecost commemoration."
+  },
+  {
+    "day": "May 27",
+    "tradition": "Catholic, Anglican",
+    "name": "Saint Augustine of Canterbury",
+    "description": "First Archbishop of Canterbury and missionary to England, died 605 AD."
+  },
+  {
+    "day": "May 27",
+    "tradition": "Eastern Orthodox, Oriental Orthodox",
+    "name": "Hieromartyr Therapon of Sardis",
+    "description": "Bishop and martyr under Valerian, died 259 AD."
+  },
+  {
+    "day": "May 27",
+    "tradition": "Church of the East",
+    "name": "Saint John the Russian",
+    "description": "Confessor and wonderworker captured by Turks, died 1730 AD."
+  },
+  {
+    "day": "May 28",
+    "tradition": "Catholic, Anglican",
+    "name": "Blessed Lanfranc of Canterbury",
+    "description": "Archbishop and scholar, died 1089 AD."
+  },
+  {
+    "day": "May 28",
+    "tradition": "Eastern Orthodox, Oriental Orthodox",
+    "name": "Saint Ignatius of Rostov",
+    "description": "Bishop and wonderworker, died 1288 AD."
+  },
+  {
+    "day": "May 28",
+    "tradition": "Church of the East",
+    "name": "Hieromartyr Eutychius of Melitene",
+    "description": "Bishop martyred under Maximian, died 303 AD."
+  },
+  {
+    "day": "May 29",
+    "tradition": "Catholic",
+    "name": "Saint Ursula Ledochowska",
+    "description": "Foundress of the Ursulines of the Agonizing Heart of Jesus, died 1939 AD."
+  },
+  {
+    "day": "May 29",
+    "tradition": "Eastern Orthodox, Oriental Orthodox",
+    "name": "Virgin Martyr Theodosia of Tyre",
+    "description": "Martyred during Diocletian's persecution, died 307 AD."
+  },
+  {
+    "day": "May 29",
+    "tradition": "Anglican, Catholic",
+    "name": "Saint Maximinus of Trier",
+    "description": "Bishop who sheltered Saint Athanasius, died 346 AD."
+  },
+  {
+    "day": "May 29",
+    "tradition": "Church of the East",
+    "name": "Hieromartyr Olbian of Anaea",
+    "description": "Bishop and martyr with disciples under Diocletian, died 303 AD."
+  },
+  {
+    "day": "May 30",
+    "tradition": "Universal",
+    "name": "Saint Joan of Arc",
+    "description": "Visionary, martyr, and patroness of France, died 1431 AD."
+  },
+  {
+    "day": "May 30",
+    "tradition": "Eastern Orthodox",
+    "name": "Venerable Isaac of Dalmatia",
+    "description": "Founder of Dalmatian Monastery, died 383 AD."
+  },
+  {
+    "day": "May 30",
+    "tradition": "Anglican",
+    "name": "Saint Joan of Arc",
+    "description": "Visionary and martyr."
+  },
+  {
+    "day": "May 30",
+    "tradition": "Oriental Orthodox",
+    "name": "Saint Isaac the Syrian",
+    "description": "Ascetic and writer."
+  },
+  {
+    "day": "May 30",
+    "tradition": "Church of the East",
+    "name": "Saint Joan of Arc",
+    "description": "Martyr for faith."
+  },
+  {
+    "day": "May 31",
+    "tradition": "Catholic, Anglican",
+    "name": "Visitation of the Blessed Virgin Mary",
+    "description": "Mary's visit to Elizabeth following the Annunciation."
+  },
+  {
+    "day": "May 31",
+    "tradition": "Church of the East",
+    "name": "Saint Ahudemmeh",
+    "description": "Bishop and missionary to the Arabs."
+  },
+  {
+    "day": "May 31",
+    "tradition": "Eastern Orthodox",
+    "name": "Martyr Hermias of Comana",
+    "description": "Soldier martyr, died 160 AD."
+  },
+  {
+    "day": "May 31",
+    "tradition": "Oriental Orthodox",
+    "name": "Visitation of the Virgin Mary",
+    "description": "Commemoration of Mary's visit to Elizabeth."
+  }
+]

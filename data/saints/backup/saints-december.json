@@ -1,0 +1,704 @@
+[
+  {
+    "day": "December 1",
+    "tradition": "Catholic",
+    "name": "Saint Eligius",
+    "description": "Bishop and patron of metalworkers."
+  },
+  {
+    "day": "December 1",
+    "tradition": "Anglican",
+    "name": "Nicholas Ferrar",
+    "description": "Deacon and founder of Little Gidding."
+  },
+  {
+    "day": "December 1",
+    "tradition": "Eastern Orthodox",
+    "name": "Prophet Nahum",
+    "description": "One of the twelve Minor Prophets."
+  },
+  {
+    "day": "December 1",
+    "tradition": "Oriental Orthodox",
+    "name": "Saint Peter of Alexandria",
+    "description": "Patriarch and 'Seal of the Martyrs'."
+  },
+  {
+    "day": "December 1",
+    "tradition": "Church of the East",
+    "name": "Mar Pethion",
+    "description": "Martyr and evangelist of the Persian interior."
+  },
+  {
+    "day": "December 2",
+    "tradition": "Catholic",
+    "name": "Saint Bibiana",
+    "description": "Virgin and Martyr."
+  },
+  {
+    "day": "December 2",
+    "tradition": "Anglican",
+    "name": "Channing Moore Williams",
+    "description": "Missionary Bishop."
+  },
+  {
+    "day": "December 2",
+    "tradition": "Eastern Orthodox",
+    "name": "Prophet Habakkuk",
+    "description": "Old Testament prophet."
+  },
+  {
+    "day": "December 2",
+    "tradition": "Oriental Orthodox",
+    "name": "Saint Abba Hor",
+    "description": "Ascetic and leader of monks."
+  },
+  {
+    "day": "December 2",
+    "tradition": "Church of the East",
+    "name": "Mar Shmon",
+    "description": "Bishop and martyr."
+  },
+  {
+    "day": "December 3",
+    "tradition": "Catholic, Anglican",
+    "name": "Saint Francis Xavier",
+    "description": "Jesuit missionary and Priest."
+  },
+  {
+    "day": "December 3",
+    "tradition": "Eastern Orthodox",
+    "name": "Prophet Zephaniah",
+    "description": "Old Testament prophet."
+  },
+  {
+    "day": "December 3",
+    "tradition": "Oriental Orthodox",
+    "name": "Saint Elias of Alexandria",
+    "description": "Patriarch."
+  },
+  {
+    "day": "December 3",
+    "tradition": "Church of the East",
+    "name": "Mar Babai the Great",
+    "description": "Theologian and Abbot of Mount Izla."
+  },
+  {
+    "day": "December 4",
+    "tradition": "Universal",
+    "name": "Saint Barbara and Saint John of Damascus",
+    "description": "Great Martyr and Doctor of the Church; shared by all major traditions."
+  },
+  {
+    "day": "December 4",
+    "tradition": "Church of the East",
+    "name": "Mar Shalita",
+    "description": "Healer and companion of Mar Awgin."
+  },
+  {
+    "day": "December 5",
+    "tradition": "Universal",
+    "name": "Saint Sabbas the Sanctified",
+    "description": "Abbot and founder; recognized in East and West."
+  },
+  {
+    "day": "December 5",
+    "tradition": "Catholic",
+    "name": "Saint Birinus",
+    "description": "Apostle of Wessex."
+  },
+  {
+    "day": "December 5",
+    "tradition": "Anglican",
+    "name": "Clement of Alexandria",
+    "description": "Priest and theologian."
+  },
+  {
+    "day": "December 5",
+    "tradition": "Oriental Orthodox",
+    "name": "Saint Victor",
+    "description": "Coptic martyr."
+  },
+  {
+    "day": "December 6",
+    "tradition": "Universal",
+    "name": "Saint Nicholas of Myra",
+    "description": "Bishop and Wonderworker; celebrated across all traditions."
+  },
+  {
+    "day": "December 7",
+    "tradition": "Universal",
+    "name": "Saint Ambrose of Milan",
+    "description": "Bishop and Doctor; celebrated across all traditions."
+  },
+  {
+    "day": "December 8",
+    "tradition": "Universal",
+    "name": "Conception of the Blessed Virgin Mary",
+    "description": "Commemoration of the conception of the Mother of God (Immaculate Conception in Catholic tradition)."
+  },
+  {
+    "day": "December 8",
+    "tradition": "Eastern Orthodox",
+    "name": "Saint Patapius",
+    "description": "Ascetic of Egypt."
+  },
+  {
+    "day": "December 8",
+    "tradition": "Oriental Orthodox",
+    "name": "Saint Barbara (Oriental date)",
+    "description": "Commemoration of the Great Martyr."
+  },
+  {
+    "day": "December 8",
+    "tradition": "Church of the East",
+    "name": "Mar Abdisho",
+    "description": "Metropolitan and author."
+  },
+  {
+    "day": "December 9",
+    "tradition": "Catholic",
+    "name": "Saint Juan Diego",
+    "description": "Visionary of Guadalupe."
+  },
+  {
+    "day": "December 9",
+    "tradition": "Anglican",
+    "name": "Prophets of the Old Testament",
+    "description": "General commemoration."
+  },
+  {
+    "day": "December 9",
+    "tradition": "Eastern Orthodox",
+    "name": "Conception of the Theotokos by Saint Anna",
+    "description": "Miraculous conception."
+  },
+  {
+    "day": "December 9",
+    "tradition": "Oriental Orthodox",
+    "name": "Saint Samuel the Confessor",
+    "description": "Abbot of Kalamon."
+  },
+  {
+    "day": "December 9",
+    "tradition": "Church of the East",
+    "name": "Mar Isaac of Nineveh (Secondary)",
+    "description": "Spiritual writings."
+  },
+  {
+    "day": "December 10",
+    "tradition": "Catholic",
+    "name": "Our Lady of Loreto",
+    "description": "Holy House commemoration."
+  },
+  {
+    "day": "December 10",
+    "tradition": "Anglican",
+    "name": "Thomas Merton",
+    "description": "Spiritual writer."
+  },
+  {
+    "day": "December 10",
+    "tradition": "Eastern Orthodox",
+    "name": "Martyrs Menas, Hermogenes, and Eugraphus",
+    "description": "Sufferers of Alexandria."
+  },
+  {
+    "day": "December 10",
+    "tradition": "Oriental Orthodox",
+    "name": "Saint Severus of Antioch",
+    "description": "Translation of relics."
+  },
+  {
+    "day": "December 10",
+    "tradition": "Church of the East",
+    "name": "Mar Behnam and Sarah",
+    "description": "Martyred royal siblings."
+  },
+  {
+    "day": "December 11",
+    "tradition": "Catholic",
+    "name": "Saint Damasus I",
+    "description": "Pope."
+  },
+  {
+    "day": "December 11",
+    "tradition": "Anglican",
+    "name": "Damasus",
+    "description": "Bishop of Rome."
+  },
+  {
+    "day": "December 11",
+    "tradition": "Eastern Orthodox",
+    "name": "Saint Daniel the Stylite",
+    "description": "Pillar saint."
+  },
+  {
+    "day": "December 11",
+    "tradition": "Oriental Orthodox",
+    "name": "Saint Anba Hadra",
+    "description": "Bishop of Aswan."
+  },
+  {
+    "day": "December 11",
+    "tradition": "Church of the East",
+    "name": "Mar Barsabba",
+    "description": "Abbot."
+  },
+  {
+    "day": "December 12",
+    "tradition": "Catholic",
+    "name": "Our Lady of Guadalupe",
+    "description": "Patroness of the Americas."
+  },
+  {
+    "day": "December 12",
+    "tradition": "Anglican",
+    "name": "Saint Finnian",
+    "description": "Teacher of Irish saints."
+  },
+  {
+    "day": "December 12",
+    "tradition": "Eastern Orthodox",
+    "name": "Saint Spyridon the Wonderworker",
+    "description": "Bishop of Trimythous."
+  },
+  {
+    "day": "December 12",
+    "tradition": "Oriental Orthodox",
+    "name": "Saint Spyridon",
+    "description": "Shared commemoration."
+  },
+  {
+    "day": "December 12",
+    "tradition": "Church of the East",
+    "name": "Mar Kardagh",
+    "description": "Martyr."
+  },
+  {
+    "day": "December 13",
+    "tradition": "Universal",
+    "name": "Saint Lucy",
+    "description": "Virgin and Martyr; recognized across all traditions."
+  },
+  {
+    "day": "December 13",
+    "tradition": "Anglican",
+    "name": "Samuel Johnson",
+    "description": "Moralist."
+  },
+  {
+    "day": "December 13",
+    "tradition": "Church of the East",
+    "name": "Mar Addai and Mar Mari",
+    "description": "General commemoration."
+  },
+  {
+    "day": "December 14",
+    "tradition": "Universal",
+    "name": "Saint John of the Cross",
+    "description": "Mystic and Doctor; recognized across all traditions."
+  },
+  {
+    "day": "December 14",
+    "tradition": "Oriental Orthodox",
+    "name": "Saint Dioscorus II",
+    "description": "Patriarch."
+  },
+  {
+    "day": "December 14",
+    "tradition": "Church of the East",
+    "name": "Mar Timothy I",
+    "description": "Catholicos."
+  },
+  {
+    "day": "December 15",
+    "tradition": "Catholic",
+    "name": "Saint Virginia Centurione Bracelli",
+    "description": "Foundress."
+  },
+  {
+    "day": "December 15",
+    "tradition": "Anglican",
+    "name": "Simon Gibbons",
+    "description": "Priest."
+  },
+  {
+    "day": "December 15",
+    "tradition": "Eastern Orthodox",
+    "name": "Hieromartyr Eleutherius of Illyria",
+    "description": "Bishop."
+  },
+  {
+    "day": "December 15",
+    "tradition": "Oriental Orthodox",
+    "name": "Saint Gregentios",
+    "description": "Bishop."
+  },
+  {
+    "day": "December 15",
+    "tradition": "Church of the East",
+    "name": "Mar Abraham the Great",
+    "description": "Monastic reformer."
+  },
+  {
+    "day": "December 16",
+    "tradition": "Catholic",
+    "name": "Saint Adelaide",
+    "description": "Empress."
+  },
+  {
+    "day": "December 16",
+    "tradition": "Anglican",
+    "name": "Saint Bean",
+    "description": "Bishop."
+  },
+  {
+    "day": "December 16",
+    "tradition": "Eastern Orthodox",
+    "name": "Prophet Haggai",
+    "description": "Minor Prophet."
+  },
+  {
+    "day": "December 16",
+    "tradition": "Oriental Orthodox",
+    "name": "Saint Gideon",
+    "description": "Judge."
+  },
+  {
+    "day": "December 16",
+    "tradition": "Church of the East",
+    "name": "Mar Narsai",
+    "description": "Theologian."
+  },
+  {
+    "day": "December 17",
+    "tradition": "Universal",
+    "name": "Prophet Daniel and the Three Holy Youths",
+    "description": "Ananias, Azarias, and Misael; celebrated across traditions."
+  },
+  {
+    "day": "December 17",
+    "tradition": "Catholic",
+    "name": "Saint Lazarus of Bethany",
+    "description": "Friend of Jesus."
+  },
+  {
+    "day": "December 17",
+    "tradition": "Anglican",
+    "name": "Eglantyne Jebb",
+    "description": "Reformer."
+  },
+  {
+    "day": "December 17",
+    "tradition": "Eastern Orthodox",
+    "name": "Prophet Daniel and the Three Holy Youths",
+    "description": "Old Testament saints."
+  },
+  {
+    "day": "December 17",
+    "tradition": "Oriental Orthodox",
+    "name": "Prophet Daniel",
+    "description": "Prophet."
+  },
+  {
+    "day": "December 17",
+    "tradition": "Church of the East",
+    "name": "Mar Elias",
+    "description": "Monk."
+  },
+  {
+    "day": "December 18",
+    "tradition": "Catholic",
+    "name": "Expectation of the Blessed Virgin Mary",
+    "description": "Marian feast."
+  },
+  {
+    "day": "December 18",
+    "tradition": "Anglican",
+    "name": "O Adonai",
+    "description": "Liturgical antiphon."
+  },
+  {
+    "day": "December 18",
+    "tradition": "Eastern Orthodox",
+    "name": "Saint Sebastian",
+    "description": "Martyr."
+  },
+  {
+    "day": "December 18",
+    "tradition": "Oriental Orthodox",
+    "name": "Saint Titus",
+    "description": "Apostle."
+  },
+  {
+    "day": "December 18",
+    "tradition": "Church of the East",
+    "name": "Mar Yakob of Nisibis",
+    "description": "Spiritual father."
+  },
+  {
+    "day": "December 19",
+    "tradition": "Catholic",
+    "name": "Saint Anastasius I",
+    "description": "Pope."
+  },
+  {
+    "day": "December 19",
+    "tradition": "Anglican",
+    "name": "Lillian Trasher",
+    "description": "Missionary."
+  },
+  {
+    "day": "December 19",
+    "tradition": "Eastern Orthodox",
+    "name": "Martyr Boniface",
+    "description": "Martyr."
+  },
+  {
+    "day": "December 19",
+    "tradition": "Oriental Orthodox",
+    "name": "Saint John of the Golden Gospel",
+    "description": "Ascetic."
+  },
+  {
+    "day": "December 19",
+    "tradition": "Church of the East",
+    "name": "Mar Michael",
+    "description": "Abbot."
+  },
+  {
+    "day": "December 20",
+    "tradition": "Universal",
+    "name": "Saint Ignatius of Antioch",
+    "description": "Hieromartyr and Apostolic Father (Eastern primary date)."
+  },
+  {
+    "day": "December 20",
+    "tradition": "Catholic",
+    "name": "Saint Dominic of Silos",
+    "description": "Abbot."
+  },
+  {
+    "day": "December 20",
+    "tradition": "Anglican",
+    "name": "Thomas Traherne",
+    "description": "Poet."
+  },
+  {
+    "day": "December 20",
+    "tradition": "Church of the East",
+    "name": "Mar Papa bar Aggai (See Foundation)",
+    "description": "Primary commemoration of the See."
+  },
+  {
+    "day": "December 21",
+    "tradition": "Universal",
+    "name": "Saint Thomas the Apostle and Saint Juliana",
+    "description": "Apostle and Martyr; shared across all traditions."
+  },
+  {
+    "day": "December 21",
+    "tradition": "Catholic",
+    "name": "Saint Peter Canisius",
+    "description": "Doctor."
+  },
+  {
+    "day": "December 22",
+    "tradition": "Universal",
+    "name": "Saint Anastasia",
+    "description": "Great Martyr; celebrated across traditions."
+  },
+  {
+    "day": "December 22",
+    "tradition": "Catholic",
+    "name": "Saint Frances Xavier Cabrini",
+    "description": "Missionary."
+  },
+  {
+    "day": "December 22",
+    "tradition": "Anglican",
+    "name": "Henry Budd",
+    "description": "Priest."
+  },
+  {
+    "day": "December 22",
+    "tradition": "Church of the East",
+    "name": "Mar Awgin (Departure)",
+    "description": "Great Saint of the East."
+  },
+  {
+    "day": "December 23",
+    "tradition": "Catholic, Anglican",
+    "name": "Saint John of Kanty",
+    "description": "Priest."
+  },
+  {
+    "day": "December 23",
+    "tradition": "Eastern Orthodox",
+    "name": "Ten Martyrs of Crete",
+    "description": "Martyrs."
+  },
+  {
+    "day": "December 23",
+    "tradition": "Oriental Orthodox",
+    "name": "Saint Barnabas",
+    "description": "Apostle."
+  },
+  {
+    "day": "December 23",
+    "tradition": "Church of the East",
+    "name": "Mar Yohannan (Vigil)",
+    "description": "Baptist."
+  },
+  {
+    "day": "December 24",
+    "tradition": "Universal",
+    "name": "Eve of the Nativity and Holy Ancestors",
+    "description": "Christmas Eve; commemoration of Adam, Eve, and the righteous."
+  },
+  {
+    "day": "December 25",
+    "tradition": "Universal",
+    "name": "The Nativity of Our Lord",
+    "description": "Christmas; celebrated across all traditions."
+  },
+  {
+    "day": "December 26",
+    "tradition": "Universal",
+    "name": "Saint Stephen, Protomartyr",
+    "description": "The First Martyr and Deacon; celebrated across all traditions."
+  },
+  {
+    "day": "December 26",
+    "tradition": "Universal",
+    "name": "Synaxis of the Theotokos",
+    "description": "Feast of the Mother of God; recognized in Eastern and Western contexts."
+  },
+  {
+    "day": "December 26",
+    "tradition": "Church of the East",
+    "name": "Mar Archelaus",
+    "description": "Martyr."
+  },
+  {
+    "day": "December 27",
+    "tradition": "Universal",
+    "name": "Saint John the Apostle",
+    "description": "Apostle and Evangelist; celebrated across all traditions."
+  },
+  {
+    "day": "December 27",
+    "tradition": "Catholic",
+    "name": "Saint Fabiola",
+    "description": "Benefactress."
+  },
+  {
+    "day": "December 27",
+    "tradition": "Eastern Orthodox",
+    "name": "Saint Theodore the Grapt",
+    "description": "Confessor."
+  },
+  {
+    "day": "December 28",
+    "tradition": "Universal",
+    "name": "The Holy Innocents",
+    "description": "The infants of Bethlehem; celebrated across all traditions."
+  },
+  {
+    "day": "December 28",
+    "tradition": "Catholic",
+    "name": "Saint Gaspar del Bufalo",
+    "description": "Founder."
+  },
+  {
+    "day": "December 28",
+    "tradition": "Eastern Orthodox",
+    "name": "Saint Simon the Myrrhgusher",
+    "description": "Founder."
+  },
+  {
+    "day": "December 28",
+    "tradition": "Church of the East",
+    "name": "Mar Simon the Stylite",
+    "description": "Pillar saint."
+  },
+  {
+    "day": "December 29",
+    "tradition": "Catholic, Anglican, Church of the East",
+    "name": "Saint Thomas Becket",
+    "description": "Archbishop and Martyr."
+  },
+  {
+    "day": "December 29",
+    "tradition": "Eastern Orthodox",
+    "name": "The 14,000 Holy Infants",
+    "description": "Eastern commemoration of Innocents."
+  },
+  {
+    "day": "December 29",
+    "tradition": "Oriental Orthodox",
+    "name": "Saint Barnabas (Syriac)",
+    "description": "Apostle."
+  },
+  {
+    "day": "December 30",
+    "tradition": "Catholic",
+    "name": "Saint Egwin",
+    "description": "Bishop."
+  },
+  {
+    "day": "December 30",
+    "tradition": "Anglican",
+    "name": "Josephine Butler",
+    "description": "Reformer."
+  },
+  {
+    "day": "December 30",
+    "tradition": "Eastern Orthodox",
+    "name": "Martyr Anysia",
+    "description": "Virgin martyr."
+  },
+  {
+    "day": "December 30",
+    "tradition": "Oriental Orthodox",
+    "name": "Saint John the Evangelist (Translation)",
+    "description": "Coptic feast."
+  },
+  {
+    "day": "December 30",
+    "tradition": "Church of the East",
+    "name": "Mar Shmon the Second",
+    "description": "Patriarch."
+  },
+  {
+    "day": "December 31",
+    "tradition": "Universal",
+    "name": "Saint Sylvester I",
+    "description": "Pope; celebrated across traditions."
+  },
+  {
+    "day": "December 31",
+    "tradition": "Anglican",
+    "name": "Samuel Ajayi Crowther",
+    "description": "Bishop in Nigeria, Translator, 1891."
+  },
+  {
+    "day": "December 31",
+    "tradition": "Eastern Orthodox",
+    "name": "Saint Melania the Younger",
+    "description": "Ascetic."
+  },
+  {
+    "day": "December 31",
+    "tradition": "Oriental Orthodox",
+    "name": "Saint Gregory of Nyssa",
+    "description": "Father of the Church."
+  },
+  {
+    "day": "December 31",
+    "tradition": "Church of the East",
+    "name": "Saint Ephrem the Syrian",
+    "description": "Commemoration."
+  }
+]

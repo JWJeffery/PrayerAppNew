@@ -1582,8 +1582,8 @@ async function renderBcpOffice() {
                 // 6. No index entry — secondary check: Oriental/Ethiopian saints in Gregorian saints data
                 const orientalSaints = (appData.saints || []).filter(s => {
                     if (!s.day || !s.day.toLowerCase().includes(todayKeyShort.toLowerCase())) return false;
-                    const t = (s.tradition || '').toLowerCase();
-                    return t.includes('ethiopian') || t.includes('oriental');
+                    const tags = Array.isArray(s.tags) ? s.tags : [];
+                    return tags.includes('OOR');
                 });
 
                 if (orientalSaints.length > 0) {
@@ -1701,8 +1701,19 @@ async function renderBcpOffice() {
     if (saintSection) saintSection.style.display = '';
 
     document.getElementById('saint-display').innerHTML = appData.saints
-        ?.filter(s => s.day && s.day.toLowerCase().includes(todayKeyShort.toLowerCase()))
-        .map(s => `<div class="saint-box"><small style="color:var(--accent); font-weight:bold; text-transform:uppercase;">${s.tradition || 'Unknown'}</small><strong>${s.name || 'Unknown'}</strong><p>${s.description || 'No description'}</p></div>`)
+        ?.filter(s => {
+            if (!s.day || !s.day.toLowerCase().includes(todayKeyShort.toLowerCase())) return false;
+            const tags = Array.isArray(s.tags) ? s.tags : [];
+            const ECU_CODES = ['ANG','LAT','EOR','OOR','COE'];
+            return tags.includes('ANG') || ECU_CODES.every(c => tags.includes(c));
+        })
+        .map(s => {
+            const tags = Array.isArray(s.tags) ? s.tags : [];
+            const ECU_CODES = ['ANG','LAT','EOR','OOR','COE'];
+            const isEcu = ECU_CODES.every(c => tags.includes(c));
+            const label = isEcu ? 'ECU' : (tags.join(' · ') || 'Unknown');
+            return `<div class="saint-box"><small style="color:var(--accent); font-weight:bold; text-transform:uppercase;">${label}</small><strong>${s.name || 'Unknown'}</strong><p>${s.description || 'No description'}</p></div>`;
+        })
         .join('') || '<p>No commemorations.</p>';
 }
 
@@ -1914,8 +1925,8 @@ async function renderEthiopianSaatat() {
             } else {
                 const orientalSaints = (appData.saints || []).filter(s => {
                     if (!s.day || !s.day.toLowerCase().includes(todayKeyShort.toLowerCase())) return false;
-                    const t = (s.tradition || '').toLowerCase();
-                    return t.includes('ethiopian') || t.includes('oriental');
+                    const tags = Array.isArray(s.tags) ? s.tags : [];
+                    return tags.includes('OOR');
                 });
                 if (orientalSaints.length > 0) {
                     orientalSaints.forEach(s => {
@@ -2325,18 +2336,17 @@ async function renderEastSyriac() {
     }
 
     const esyTodayShort = currentDate.toLocaleDateString('en-US', { month: 'long', day: 'numeric' });
+    const ECU_CODES = ['ANG','LAT','EOR','OOR','COE'];
     const esySaints = (appData.saints || []).filter(s => {
         if (!s.day || !s.day.toLowerCase().includes(esyTodayShort.toLowerCase())) return false;
-        const t = (s.tradition || '').toLowerCase();
-        return t.includes('syriac') || t.includes('east') || t.includes('assyrian')
-            || t.includes('church of the east') || t.includes('nestorian')
-            || t.includes('chaldean') || t.includes('persian');
+        const tags = Array.isArray(s.tags) ? s.tags : [];
+        return tags.includes('COE');
     });
     const universalSaints = esySaints.length === 0
         ? (appData.saints || []).filter(s => {
             if (!s.day || !s.day.toLowerCase().includes(esyTodayShort.toLowerCase())) return false;
-            const t = (s.tradition || '').toLowerCase();
-            return t.includes('ecumenical') || t.includes('universal') || t.includes('apostle');
+            const tags = Array.isArray(s.tags) ? s.tags : [];
+            return ECU_CODES.every(c => tags.includes(c));
           })
         : [];
     const saintsToShow = [...esySaints, ...universalSaints];
@@ -2351,7 +2361,12 @@ async function renderEastSyriac() {
             dateHeader.style.display = '';
         }
         document.getElementById('saint-display').innerHTML = saintsToShow
-            .map(s => `<div class="saint-box"><small style="color:var(--accent); font-weight:bold; text-transform:uppercase;">${s.tradition || 'Church of the East'}</small><strong>${s.name || 'Unknown'}</strong><p>${s.description || ''}</p></div>`)
+            .map(s => {
+                const tags = Array.isArray(s.tags) ? s.tags : [];
+                const isEcu = ECU_CODES.every(c => tags.includes(c));
+                const label = isEcu ? 'ECU' : (tags.join(' · ') || 'Church of the East');
+                return `<div class="saint-box"><small style="color:var(--accent); font-weight:bold; text-transform:uppercase;">${label}</small><strong>${s.name || 'Unknown'}</strong><p>${s.description || ''}</p></div>`;
+            })
             .join('');
         if (saintSection) saintSection.style.display = '';
     } else {

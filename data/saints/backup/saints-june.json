@@ -1,0 +1,692 @@
+[
+  {
+    "day": "June 1",
+    "tradition": "Universal",
+    "name": "Saint Justin Martyr",
+    "description": "Philosopher and apologist, defender of the faith and martyr at Rome."
+  },
+  {
+    "day": "June 1",
+    "tradition": "Eastern Orthodox",
+    "name": "Martyr Firmus",
+    "description": "Martyr commemorated in the synaxarion."
+  },
+  {
+    "day": "June 1",
+    "tradition": "Oriental Orthodox",
+    "name": "Martyr Thespesios of Cappadocia",
+    "description": "Martyr under Diocletian."
+  },
+  {
+    "day": "June 2",
+    "tradition": "Anglican",
+    "name": "Blandina and her Companions",
+    "description": "Martyrs of Lyons, 177."
+  },
+  {
+    "day": "June 2",
+    "tradition": "Eastern Orthodox, Oriental Orthodox",
+    "name": "Saint Nicephorus the Confessor",
+    "description": "Patriarch of Constantinople and defender of icons."
+  },
+  {
+    "day": "June 2",
+    "tradition": "Catholic",
+    "name": "Saints Marcellinus and Peter",
+    "description": "Martyrs under Diocletian, died 304 AD."
+  },
+  {
+    "day": "June 2",
+    "tradition": "Church of the East",
+    "name": "Third Sunday of the Apostles",
+    "description": "Liturgical commemoration."
+  },
+  {
+    "day": "June 3",
+    "tradition": "Universal",
+    "name": "Saint Charles Lwanga and Companions",
+    "description": "The Martyrs of Uganda, 1886."
+  },
+  {
+    "day": "June 3",
+    "tradition": "Eastern Orthodox",
+    "name": "Martyrs Loukilianos, Claudius, Hypatius, Paul, Dionysius and Paula",
+    "description": "Martyrs at Byzantium."
+  },
+  {
+    "day": "June 3",
+    "tradition": "Oriental Orthodox",
+    "name": "Prophet Elijah",
+    "description": "Remembrance of the Prophet Elijah (Armenian)."
+  },
+  {
+    "day": "June 3",
+    "tradition": "Church of the East",
+    "name": "Martyrs of the East",
+    "description": "Early martyrs, shared commemoration."
+  },
+  {
+    "day": "June 4",
+    "tradition": "Catholic",
+    "name": "Saint Francis Caracciolo",
+    "description": "Founder of the Minor Clerks Regular, died 1608 AD."
+  },
+  {
+    "day": "June 4",
+    "tradition": "Anglican",
+    "name": "Petroc",
+    "description": "Abbot of Padstow, 6th century."
+  },
+  {
+    "day": "June 4",
+    "tradition": "Eastern Orthodox",
+    "name": "Saint Metrophanes of Constantinople",
+    "description": "First Patriarch of Constantinople, died 326 AD."
+  },
+  {
+    "day": "June 4",
+    "tradition": "Oriental Orthodox",
+    "name": "Saint Hripsime and her Companions",
+    "description": "Virgin martyrs (Armenian)."
+  },
+  {
+    "day": "June 4",
+    "tradition": "Church of the East",
+    "name": "Martyrs Zoticus, Atallus, Camisius and Philip",
+    "description": "Newly-revealed saints."
+  },
+  {
+    "day": "June 5",
+    "tradition": "Universal",
+    "name": "Saint Boniface",
+    "description": "Archbishop of Mainz, Missionary to the Germans and Martyr, 754."
+  },
+  {
+    "day": "June 5",
+    "tradition": "Eastern Orthodox",
+    "name": "Hieromartyr Dorotheus of Tyre",
+    "description": "Bishop of Tyre, martyr, 362 AD."
+  },
+  {
+    "day": "June 5",
+    "tradition": "Oriental Orthodox",
+    "name": "Saint Gayane and her Companions",
+    "description": "Virgin martyrs (Armenian)."
+  },
+  {
+    "day": "June 5",
+    "tradition": "Church of the East",
+    "name": "Saint Dorotheus",
+    "description": "Bishop and martyr, shared veneration."
+  },
+  {
+    "day": "June 6",
+    "tradition": "Catholic, Oriental Orthodox",
+    "name": "Saint Norbert",
+    "description": "Bishop and founder of the Premonstratensian Order."
+  },
+  {
+    "day": "June 6",
+    "tradition": "Anglican",
+    "name": "Ini Kopuria",
+    "description": "Founder of the Melanesian Brotherhood, 1945."
+  },
+  {
+    "day": "June 6",
+    "tradition": "Eastern Orthodox",
+    "name": "Venerable Bessarion the Wonderworker of Egypt",
+    "description": "Hermit and wonderworker, 5th century."
+  },
+  {
+    "day": "June 6",
+    "tradition": "Church of the East",
+    "name": "Venerable Bessarion",
+    "description": "Wonderworker, shared veneration."
+  },
+  {
+    "day": "June 7",
+    "tradition": "Catholic",
+    "name": "Saint Robert of Newminster",
+    "description": "Cistercian abbot, died 1159 AD."
+  },
+  {
+    "day": "June 7",
+    "tradition": "Eastern Orthodox",
+    "name": "Hieromartyr Theodotus of Ancyra",
+    "description": "Martyr, died 303 AD."
+  },
+  {
+    "day": "June 7",
+    "tradition": "Oriental Orthodox",
+    "name": "Saint Nune",
+    "description": "Virgin and missionary (Armenian)."
+  },
+  {
+    "day": "June 7",
+    "tradition": "Church of the East",
+    "name": "Hieromartyr Theodotus",
+    "description": "Martyr, shared."
+  },
+  {
+    "day": "June 7",
+    "tradition": "Anglican",
+    "name": "Saint Bede the Venerable",
+    "description": "Priest and Doctor, died 735 AD."
+  },
+  {
+    "day": "June 8",
+    "tradition": "Universal",
+    "name": "Saint William of York",
+    "description": "Archbishop of York."
+  },
+  {
+    "day": "June 8",
+    "tradition": "Anglican",
+    "name": "Thomas Ken",
+    "description": "Bishop of Bath and Wells, Nonjuror, Hymn Writer, 1711."
+  },
+  {
+    "day": "June 8",
+    "tradition": "Eastern Orthodox",
+    "name": "Translation of the Relics of Saint Theodore the Commander",
+    "description": "Stratelates, martyr."
+  },
+  {
+    "day": "June 8",
+    "tradition": "Oriental Orthodox",
+    "name": "Martyrdom of St. George of Alexandria",
+    "description": "Coptic commemoration (Paoni 1)."
+  },
+  {
+    "day": "June 8",
+    "tradition": "Church of the East",
+    "name": "Saint Theodore Stratelates",
+    "description": "Martyr, shared."
+  },
+  {
+    "day": "June 9",
+    "tradition": "Universal",
+    "name": "Saint Ephrem the Syrian",
+    "description": "Deacon, Hymnographer, and Doctor of the Church, 373."
+  },
+  {
+    "day": "June 9",
+    "tradition": "Anglican",
+    "name": "Columba of Iona",
+    "description": "Abbot and missionary to Scotland, 597."
+  },
+  {
+    "day": "June 9",
+    "tradition": "Eastern Orthodox",
+    "name": "Saint Cyril of Alexandria",
+    "description": "Patriarch and Doctor, died 444 AD."
+  },
+  {
+    "day": "June 10",
+    "tradition": "Catholic",
+    "name": "Blessed Edward Poppe",
+    "description": "Priest, died 1924 AD."
+  },
+  {
+    "day": "June 10",
+    "tradition": "Anglican",
+    "name": "Saint Ephrem of Edessa",
+    "description": "Deacon, Confessor, Doctor, 373."
+  },
+  {
+    "day": "June 10",
+    "tradition": "Eastern Orthodox",
+    "name": "Saint Timothy of Prusa",
+    "description": "Bishop and martyr, died 362 AD."
+  },
+  {
+    "day": "June 10",
+    "tradition": "Oriental Orthodox",
+    "name": "Departure of Saint Abram, Bishop of Faiyum",
+    "description": "Coptic saint."
+  },
+  {
+    "day": "June 10",
+    "tradition": "Church of the East",
+    "name": "Saint John Metropolitan of Tobolsk",
+    "description": "Bishop, died 1715 AD."
+  },
+  {
+    "day": "June 11",
+    "tradition": "Universal",
+    "name": "Saint Barnabas the Apostle",
+    "description": "Missionary companion of St. Paul and 'Son of Encouragement'."
+  },
+  {
+    "day": "June 11",
+    "tradition": "Oriental Orthodox",
+    "name": "Holy New Martyrs of China",
+    "description": "Martyrs in 1904."
+  },
+  {
+    "day": "June 12",
+    "tradition": "Eastern Orthodox, Oriental Orthodox",
+    "name": "Venerable Onuphrius the Great",
+    "description": "Early Egyptian desert hermit."
+  },
+  {
+    "day": "June 12",
+    "tradition": "Catholic",
+    "name": "Blessed Jolanta of Poland",
+    "description": "Religious, died 1298 AD."
+  },
+  {
+    "day": "June 12",
+    "tradition": "Anglican",
+    "name": "Saint Peter of Mount Athos",
+    "description": "Hermit, 8th century."
+  },
+  {
+    "day": "June 12",
+    "tradition": "Church of the East",
+    "name": "Venerable Onuphrius the Great",
+    "description": "Early Egyptian desert hermit."
+  },
+  {
+    "day": "June 13",
+    "tradition": "Catholic, Oriental Orthodox",
+    "name": "Saint Anthony of Padua",
+    "description": "Franciscan priest, renowned preacher, and Doctor of the Church."
+  },
+  {
+    "day": "June 13",
+    "tradition": "Eastern Orthodox",
+    "name": "Martyr Aquilina of Byblos",
+    "description": "Martyr, died 293 AD."
+  },
+  {
+    "day": "June 13",
+    "tradition": "Anglican",
+    "name": "Saint Antony of Padua",
+    "description": "Doctor of the Church, died 1231 AD."
+  },
+  {
+    "day": "June 13",
+    "tradition": "Church of the East",
+    "name": "Saint Anthony of Padua",
+    "description": "Franciscan priest, renowned preacher, and Doctor of the Church."
+  },
+  {
+    "day": "June 14",
+    "tradition": "Eastern Orthodox, Oriental Orthodox",
+    "name": "Prophet Elisha",
+    "description": "Old Testament prophet and successor to Elijah."
+  },
+  {
+    "day": "June 14",
+    "tradition": "Catholic",
+    "name": "Saint Methodius I of Constantinople",
+    "description": "Patriarch, died 847 AD."
+  },
+  {
+    "day": "June 14",
+    "tradition": "Anglican",
+    "name": "Basil the Great",
+    "description": "Bishop of Caesarea, 379."
+  },
+  {
+    "day": "June 14",
+    "tradition": "Church of the East",
+    "name": "Prophet Elisha",
+    "description": "Old Testament prophet and successor to Elijah."
+  },
+  {
+    "day": "June 15",
+    "tradition": "Eastern Orthodox, Oriental Orthodox",
+    "name": "Prophet Amos",
+    "description": "Old Testament prophet."
+  },
+  {
+    "day": "June 15",
+    "tradition": "Catholic",
+    "name": "Saint Germaine Cousin",
+    "description": "Virgin, died 1601 AD."
+  },
+  {
+    "day": "June 15",
+    "tradition": "Church of the East",
+    "name": "Saint Augustine of Hippo",
+    "description": "Bishop, commemorated in some calendars."
+  },
+  {
+    "day": "June 15",
+    "tradition": "Anglican",
+    "name": "Saint Vitus",
+    "description": "Martyr, 303 AD."
+  },
+  {
+    "day": "June 16",
+    "tradition": "Eastern Orthodox, Oriental Orthodox",
+    "name": "Saint Tychon of Amathus",
+    "description": "Bishop of Cyprus and wonderworker."
+  },
+  {
+    "day": "June 16",
+    "tradition": "Catholic",
+    "name": "Saint Lutgardis",
+    "description": "Cistercian mystic, died 1246 AD."
+  },
+  {
+    "day": "June 16",
+    "tradition": "Anglican",
+    "name": "Saint Richard of Chichester",
+    "description": "Bishop, died 1253 AD."
+  },
+  {
+    "day": "June 16",
+    "tradition": "Church of the East",
+    "name": "Saint Tychon of Amathus",
+    "description": "Bishop of Cyprus and wonderworker."
+  },
+  {
+    "day": "June 17",
+    "tradition": "Catholic",
+    "name": "Saint Ranieri of Pisa",
+    "description": "Hermit, died 1161 AD."
+  },
+  {
+    "day": "June 17",
+    "tradition": "Eastern Orthodox, Oriental Orthodox",
+    "name": "Martyrs Isaurus and Companions",
+    "description": "Martyrs of Athens."
+  },
+  {
+    "day": "June 17",
+    "tradition": "Anglican",
+    "name": "Saint Botolph",
+    "description": "Abbot, died 680 AD."
+  },
+  {
+    "day": "June 17",
+    "tradition": "Church of the East",
+    "name": "Martyrs Isaurus and Companions",
+    "description": "Martyrs of Athens."
+  },
+  {
+    "day": "June 18",
+    "tradition": "Anglican",
+    "name": "Bernard Mizeki",
+    "description": "Catechist and martyr in Mashonaland, 1896."
+  },
+  {
+    "day": "June 18",
+    "tradition": "Catholic",
+    "name": "Saint Mark and Marcellian",
+    "description": "Martyrs, died 286 AD."
+  },
+  {
+    "day": "June 18",
+    "tradition": "Eastern Orthodox",
+    "name": "Martyr Leontius at Tripoli",
+    "description": "Martyr, died 73 AD."
+  },
+  {
+    "day": "June 18",
+    "tradition": "Oriental Orthodox",
+    "name": "Saint Ephrem of Edessa",
+    "description": "Deacon and doctor, died 373 AD."
+  },
+  {
+    "day": "June 18",
+    "tradition": "Church of the East",
+    "name": "Saint Ephrem of Edessa",
+    "description": "Deacon and doctor, died 373 AD."
+  },
+  {
+    "day": "June 19",
+    "tradition": "Universal",
+    "name": "Saint Jude Thaddeus",
+    "description": "Apostle and relative of the Lord."
+  },
+  {
+    "day": "June 19",
+    "tradition": "Catholic",
+    "name": "Saint Romuald",
+    "description": "Founder of the Camaldolese Benedictines, died 1027 AD."
+  },
+  {
+    "day": "June 19",
+    "tradition": "Oriental Orthodox",
+    "name": "Saint Epiphanius of Salamis",
+    "description": "Bishop, died 403 AD."
+  },
+  {
+    "day": "June 19",
+    "tradition": "Church of the East",
+    "name": "Saint John of San Francisco",
+    "description": "Archbishop, died 1966 AD."
+  },
+  {
+    "day": "June 19",
+    "tradition": "Anglican",
+    "name": "Saint Gervase and Protase",
+    "description": "Martyrs, 2nd century."
+  },
+  {
+    "day": "June 19",
+    "tradition": "Eastern Orthodox",
+    "name": "Apostle Jude the Brother of the Lord",
+    "description": "Apostle, 1st century."
+  },
+  {
+    "day": "June 20",
+    "tradition": "Eastern Orthodox, Oriental Orthodox",
+    "name": "Hieromartyr Methodius of Patara",
+    "description": "Bishop and early Church writer."
+  },
+  {
+    "day": "June 20",
+    "tradition": "Catholic",
+    "name": "Irish Martyrs",
+    "description": "Martyrs between 1572-1655."
+  },
+  {
+    "day": "June 20",
+    "tradition": "Anglican",
+    "name": "Translation of Edward, King of the West Saxons",
+    "description": "Martyr, 979."
+  },
+  {
+    "day": "June 20",
+    "tradition": "Church of the East",
+    "name": "Hieromartyr Methodius of Patara",
+    "description": "Bishop and early Church writer."
+  },
+  {
+    "day": "June 21",
+    "tradition": "Catholic, Oriental Orthodox",
+    "name": "Saint Aloysius Gonzaga",
+    "description": "Jesuit religious and patron saint of youth."
+  },
+  {
+    "day": "June 21",
+    "tradition": "Eastern Orthodox",
+    "name": "Martyr Julian of Tarsus",
+    "description": "Martyr, died 305 AD."
+  },
+  {
+    "day": "June 21",
+    "tradition": "Anglican",
+    "name": "Saint Aloysius Gonzaga",
+    "description": "Religious, died 1591 AD."
+  },
+  {
+    "day": "June 21",
+    "tradition": "Church of the East",
+    "name": "Saint Aloysius Gonzaga",
+    "description": "Jesuit religious and patron saint of youth."
+  },
+  {
+    "day": "June 22",
+    "tradition": "Anglican, Oriental Orthodox",
+    "name": "Saint Alban",
+    "description": "The first martyr of Britain, c. 304."
+  },
+  {
+    "day": "June 22",
+    "tradition": "Catholic",
+    "name": "Saint Thomas More",
+    "description": "Martyr, died 1535 AD."
+  },
+  {
+    "day": "June 22",
+    "tradition": "Eastern Orthodox",
+    "name": "Hieromartyr Eusebius of Samosata",
+    "description": "Bishop, died 380 AD."
+  },
+  {
+    "day": "June 22",
+    "tradition": "Church of the East",
+    "name": "Hieromartyr Eusebius of Samosata",
+    "description": "Bishop, died 380 AD."
+  },
+  {
+    "day": "June 23",
+    "tradition": "Catholic",
+    "name": "Saint Joseph Cafasso",
+    "description": "Priest, died 1860 AD."
+  },
+  {
+    "day": "June 23",
+    "tradition": "Anglican",
+    "name": "Etheldreda",
+    "description": "Abbess of Ely, 679."
+  },
+  {
+    "day": "June 23",
+    "tradition": "Eastern Orthodox",
+    "name": "Martyr Agrippina of Rome",
+    "description": "Virgin martyr, died 260 AD."
+  },
+  {
+    "day": "June 23",
+    "tradition": "Oriental Orthodox",
+    "name": "Saint Barbaros the Myrrh-gusher",
+    "description": "Wonderworker."
+  },
+  {
+    "day": "June 23",
+    "tradition": "Church of the East",
+    "name": "Martyr Agrippina of Rome",
+    "description": "Virgin martyr, died 260 AD."
+  },
+  {
+    "day": "June 24",
+    "tradition": "Universal",
+    "name": "Nativity of Saint John the Baptist",
+    "description": "The birth of the Forerunner and Precursor to Christ."
+  },
+  {
+    "day": "June 24",
+    "tradition": "Eastern Orthodox",
+    "name": "Nativity of Saint John the Baptist",
+    "description": "Feast of the birth of the Forerunner."
+  },
+  {
+    "day": "June 24",
+    "tradition": "Oriental Orthodox",
+    "name": "Nativity of Saint John the Baptist",
+    "description": "Shared feast."
+  },
+  {
+    "day": "June 25",
+    "tradition": "Catholic",
+    "name": "Saint Prosper of Reggio",
+    "description": "Bishop, died 466 AD."
+  },
+  {
+    "day": "June 25",
+    "tradition": "Eastern Orthodox, Oriental Orthodox",
+    "name": "Virgin Martyr Febronia of Nisibis",
+    "description": "Martyr, died 304 AD."
+  },
+  {
+    "day": "June 25",
+    "tradition": "Anglican",
+    "name": "Virgin Martyr Febronia of Nisibis",
+    "description": "Martyr, died 304 AD."
+  },
+  {
+    "day": "June 25",
+    "tradition": "Church of the East",
+    "name": "Virgin Martyr Febronia of Nisibis",
+    "description": "Martyr, died 304 AD."
+  },
+  {
+    "day": "June 26",
+    "tradition": "Catholic",
+    "name": "Saint Josemaria Escriva",
+    "description": "Priest, founder of Opus Dei, died 1975 AD."
+  },
+  {
+    "day": "June 26",
+    "tradition": "Eastern Orthodox",
+    "name": "Saint David of Thessaloniki",
+    "description": "Hermit, 6th century."
+  },
+  {
+    "day": "June 26",
+    "tradition": "Oriental Orthodox",
+    "name": "Tikhvin Icon of the Mother of God",
+    "description": "Synaxis of the icon."
+  },
+  {
+    "day": "June 26",
+    "tradition": "Anglican",
+    "name": "Saint David of Thessaloniki",
+    "description": "Hermit, 6th century."
+  },
+  {
+    "day": "June 26",
+    "tradition": "Church of the East",
+    "name": "Saint David of Thessaloniki",
+    "description": "Hermit, 6th century."
+  },
+  {
+    "day": "June 27",
+    "tradition": "Universal",
+    "name": "Saint Cyril of Alexandria",
+    "description": "Bishop, Doctor of the Church, and defender of the title 'Theotokos'."
+  },
+  {
+    "day": "June 28",
+    "tradition": "Universal",
+    "name": "Saint Irenaeus of Lyons",
+    "description": "Bishop, Martyr, and Doctor of the Church; author of 'Against Heresies'."
+  },
+  {
+    "day": "June 28",
+    "tradition": "Eastern Orthodox",
+    "name": "Translation of the Relics of Saints Cyrus and John",
+    "description": "Unmercenary healers."
+  },
+  {
+    "day": "June 29",
+    "tradition": "Universal",
+    "name": "Saints Peter and Paul, Apostles",
+    "description": "The chief pillars of the Church and martyrs at Rome."
+  },
+  {
+    "day": "June 29",
+    "tradition": "Catholic",
+    "name": "Saint Emma",
+    "description": "Widow and benefactress noted for her charity."
+  },
+  {
+    "day": "June 30",
+    "tradition": "Universal",
+    "name": "Holy Martyrs of the Church of Rome",
+    "description": "Commemoration of the first Christians martyred under Nero."
+  },
+  {
+    "day": "June 30",
+    "tradition": "Eastern Orthodox, Oriental Orthodox, Church of the East",
+    "name": "Synaxis of the Twelve Apostles",
+    "description": "A collective feast celebrating the Twelve chosen by Christ."
+  }
+]

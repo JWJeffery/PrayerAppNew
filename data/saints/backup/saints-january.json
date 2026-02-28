@@ -1,0 +1,956 @@
+[
+  {
+    "day": "January 1",
+    "tradition": "Universal",
+    "name": "Holy Name of Jesus / Circumcision of Christ",
+    "description": "Feast of the Circumcision and Naming of Christ, venerated in Anglican Communion, Catholic, Eastern Orthodox, Oriental Orthodox, and Church of the East traditions."
+  },
+  {
+    "day": "January 1",
+    "tradition": "Universal",
+    "name": "Saint Basil the Great",
+    "description": "Bishop of Caesarea, Doctor of the Church, venerated in Catholic, Eastern Orthodox, Oriental Orthodox, and Church of the East traditions."
+  },
+  {
+    "day": "January 1",
+    "tradition": "Catholic",
+    "name": "Mary, Mother of God",
+    "description": "Solemnity honoring Mary as Theotokos."
+  },
+  {
+    "day": "January 2",
+    "tradition": "Anglican Communion",
+    "name": "Vedanayagam Samuel Azariah",
+    "description": "First Indian Anglican bishop and evangelist."
+  },
+  {
+    "day": "January 2",
+    "tradition": "Catholic",
+    "name": "Saints Basil the Great and Gregory Nazianzen",
+    "description": "Doctors of the Church, Cappadocian Fathers."
+  },
+  {
+    "day": "January 2",
+    "tradition": "Eastern Orthodox",
+    "name": "Saint Seraphim of Sarov",
+    "description": "Russian monk and mystic."
+  },
+  {
+    "day": "January 2",
+    "tradition": "Oriental Orthodox",
+    "name": "Saint Abraam the Bishop",
+    "description": "Bishop known for charity and miracles (Coptic/Syrian tradition)."
+  },
+  {
+    "day": "January 2",
+    "tradition": "Church of the East",
+    "name": "Saint Cosmas of Constantinople",
+    "description": "Archbishop and hymnographer."
+  },
+  {
+    "day": "January 3",
+    "tradition": "Catholic",
+    "name": "Most Holy Name of Jesus",
+    "description": "Feast honoring the name of Jesus."
+  },
+  {
+    "day": "January 3",
+    "tradition": "Eastern Orthodox",
+    "name": "Prophet Malachias",
+    "description": "Old Testament prophet."
+  },
+  {
+    "day": "January 3",
+    "tradition": "Eastern Orthodox",
+    "name": "Martyr Gordius",
+    "description": "Martyr at Caesarea in Cappadocia."
+  },
+  {
+    "day": "January 3",
+    "tradition": "Eastern Orthodox",
+    "name": "Saint Genevieve of Paris",
+    "description": "Patroness of Paris."
+  },
+  {
+    "day": "January 3",
+    "tradition": "Oriental Orthodox",
+    "name": "Fifth Day of the Fast of the Nativity",
+    "description": "Armenian tradition fasting in preparation for Nativity."
+  },
+  {
+    "day": "January 3",
+    "tradition": "Church of the East",
+    "name": "Saint Malachi",
+    "description": "Old Testament prophet (shared commemoration)."
+  },
+  {
+    "day": "January 3",
+    "tradition": "Anglican Communion",
+    "name": "Most Holy Name of Jesus",
+    "description": "Feast commemorating the naming of Jesus."
+  },
+  {
+    "day": "January 4",
+    "tradition": "Catholic",
+    "name": "Saint Elizabeth Ann Seton",
+    "description": "First native-born citizen of the United States to be canonized."
+  },
+  {
+    "day": "January 4",
+    "tradition": "Eastern Orthodox",
+    "name": "Synaxis of the Seventy Apostles",
+    "description": "Commemoration of the seventy apostles."
+  },
+  {
+    "day": "January 4",
+    "tradition": "Eastern Orthodox",
+    "name": "Saint Theoctistus",
+    "description": "Abbot at Cucomo in Sicily."
+  },
+  {
+    "day": "January 4",
+    "tradition": "Oriental Orthodox",
+    "name": "Sixth Day of the Fast of the Nativity",
+    "description": "Armenian tradition fasting."
+  },
+  {
+    "day": "January 4",
+    "tradition": "Church of the East",
+    "name": "Saint Theoctistus",
+    "description": "Abbot (shared commemoration)."
+  },
+  {
+    "day": "January 5",
+    "tradition": "Catholic",
+    "name": "Saint John Neumann",
+    "description": "Bishop known for work with immigrants in the US."
+  },
+  {
+    "day": "January 5",
+    "tradition": "Eastern Orthodox",
+    "name": "Martyrs Theopemptus and Theonas",
+    "description": "Martyrs."
+  },
+  {
+    "day": "January 5",
+    "tradition": "Eastern Orthodox",
+    "name": "Saint Syncletica of Alexandria",
+    "description": "Ascetic saint."
+  },
+  {
+    "day": "January 5",
+    "tradition": "Oriental Orthodox",
+    "name": "Eve of the Nativity and Theophany",
+    "description": "Armenian tradition."
+  },
+  {
+    "day": "January 5",
+    "tradition": "Anglican Communion",
+    "name": "Sarah, Theodora, and Syncletica of Egypt",
+    "description": "Desert Mothers, 4th-5th century."
+  },
+  {
+    "day": "January 5",
+    "tradition": "Church of the East",
+    "name": "Saint Syncletica",
+    "description": "Ascetic (shared commemoration)."
+  },
+  {
+    "day": "January 6",
+    "tradition": "Universal",
+    "name": "The Epiphany / Theophany of Our Lord",
+    "description": "Manifestation / Baptism of Christ, venerated in Catholic, Eastern Orthodox, Oriental Orthodox, Church of the East, and Anglican traditions."
+  },
+  {
+    "day": "January 7",
+    "tradition": "Catholic",
+    "name": "Saint Raymond of Penyafort",
+    "description": "Priest and canonist."
+  },
+  {
+    "day": "January 7",
+    "tradition": "Eastern Orthodox",
+    "name": "Synaxis of John the Baptist",
+    "description": "Commemoration of the Forerunner."
+  },
+  {
+    "day": "January 7",
+    "tradition": "Oriental Orthodox",
+    "name": "Second Day of the Nativity",
+    "description": "Armenian tradition."
+  },
+  {
+    "day": "January 7",
+    "tradition": "Anglican Communion",
+    "name": "Harriet Bedell",
+    "description": "Deaconess and Missionary, 1969."
+  },
+  {
+    "day": "January 7",
+    "tradition": "Church of the East",
+    "name": "Saint John the Baptist",
+    "description": "Synaxis (shared commemoration)."
+  },
+  {
+    "day": "January 8",
+    "tradition": "Catholic",
+    "name": "Saint Thorfinn",
+    "description": "Bishop."
+  },
+  {
+    "day": "January 8",
+    "tradition": "Eastern Orthodox",
+    "name": "Saint George the Chozebite",
+    "description": "Abbot."
+  },
+  {
+    "day": "January 8",
+    "tradition": "Oriental Orthodox",
+    "name": "Third Day of the Nativity",
+    "description": "Armenian tradition."
+  },
+  {
+    "day": "January 8",
+    "tradition": "Anglican Communion",
+    "name": "George the Chozebite",
+    "description": "Abbot (shared commemoration)."
+  },
+  {
+    "day": "January 8",
+    "tradition": "Church of the East",
+    "name": "Saint George the Chozebite",
+    "description": "Abbot (shared commemoration)."
+  },
+  {
+    "day": "January 9",
+    "tradition": "Catholic",
+    "name": "Saint Adrian of Canterbury",
+    "description": "Abbot."
+  },
+  {
+    "day": "January 9",
+    "tradition": "Eastern Orthodox",
+    "name": "Martyr Polyeuctus of Melitine",
+    "description": "Martyr."
+  },
+  {
+    "day": "January 9",
+    "tradition": "Oriental Orthodox",
+    "name": "Fourth Day of the Nativity",
+    "description": "Armenian tradition."
+  },
+  {
+    "day": "January 9",
+    "tradition": "Anglican Communion",
+    "name": "Polyeuctus of Melitine",
+    "description": "Martyr (shared commemoration)."
+  },
+  {
+    "day": "January 9",
+    "tradition": "Church of the East",
+    "name": "Saint Polyeuctus",
+    "description": "Martyr (shared commemoration)."
+  },
+  {
+    "day": "January 10",
+    "tradition": "Catholic",
+    "name": "Saint Gregory of Nyssa",
+    "description": "Bishop and theologian."
+  },
+  {
+    "day": "January 10",
+    "tradition": "Eastern Orthodox",
+    "name": "Saint Gregory of Nyssa",
+    "description": "Bishop and theologian."
+  },
+  {
+    "day": "January 10",
+    "tradition": "Oriental Orthodox",
+    "name": "Fifth Day of the Nativity",
+    "description": "Armenian tradition."
+  },
+  {
+    "day": "January 10",
+    "tradition": "Anglican Communion",
+    "name": "Gregory of Nyssa",
+    "description": "Bishop and theologian."
+  },
+  {
+    "day": "January 10",
+    "tradition": "Church of the East",
+    "name": "Saint Gregory of Nyssa",
+    "description": "Theologian (shared commemoration)."
+  },
+  {
+    "day": "January 11",
+    "tradition": "Catholic",
+    "name": "Saint Theodosius the Cenobiarch",
+    "description": "Abbot."
+  },
+  {
+    "day": "January 11",
+    "tradition": "Eastern Orthodox",
+    "name": "Saint Theodosius the Great",
+    "description": "The Cenobiarch."
+  },
+  {
+    "day": "January 11",
+    "tradition": "Oriental Orthodox",
+    "name": "Sixth Day of the Nativity",
+    "description": "Armenian tradition."
+  },
+  {
+    "day": "January 11",
+    "tradition": "Anglican Communion",
+    "name": "Mary Slessor",
+    "description": "Missionary in West Africa, 1915."
+  },
+  {
+    "day": "January 11",
+    "tradition": "Church of the East",
+    "name": "Saint Theodosius the Cenobiarch",
+    "description": "Abbot (shared commemoration)."
+  },
+  {
+    "day": "January 12",
+    "tradition": "Catholic",
+    "name": "Saint Marguerite Bourgeoys",
+    "description": "Foundress of the Congregation of Notre Dame."
+  },
+  {
+    "day": "January 12",
+    "tradition": "Eastern Orthodox",
+    "name": "Martyr Tatiana of Rome",
+    "description": "Martyr."
+  },
+  {
+    "day": "January 12",
+    "tradition": "Oriental Orthodox",
+    "name": "Seventh Day of the Nativity",
+    "description": "Armenian tradition."
+  },
+  {
+    "day": "January 12",
+    "tradition": "Anglican Communion",
+    "name": "Aelred of Hexham",
+    "description": "Abbot of Rievaulx."
+  },
+  {
+    "day": "January 12",
+    "tradition": "Anglican Communion",
+    "name": "Benedict Biscop",
+    "description": "Abbot of Wearmouth."
+  },
+  {
+    "day": "January 12",
+    "tradition": "Church of the East",
+    "name": "Saint Tatiana",
+    "description": "Martyr (shared commemoration)."
+  },
+  {
+    "day": "January 13",
+    "tradition": "Catholic",
+    "name": "Saint Hilary of Poitiers",
+    "description": "Bishop and Doctor of the Church."
+  },
+  {
+    "day": "January 13",
+    "tradition": "Eastern Orthodox",
+    "name": "Martyrs Hermylus and Stratonicus",
+    "description": "Martyrs at Belgrade."
+  },
+  {
+    "day": "January 13",
+    "tradition": "Oriental Orthodox",
+    "name": "Eighth Day of the Nativity",
+    "description": "Armenian tradition."
+  },
+  {
+    "day": "January 13",
+    "tradition": "Anglican Communion",
+    "name": "Hilary of Poitiers",
+    "description": "Bishop of Poitiers."
+  },
+  {
+    "day": "January 13",
+    "tradition": "Anglican Communion",
+    "name": "Kentigern (Mungo)",
+    "description": "Missionary Bishop in Strathclyde and Cumbria."
+  },
+  {
+    "day": "January 13",
+    "tradition": "Anglican Communion",
+    "name": "George Fox",
+    "description": "Founder of the Society of Friends (Quakers)."
+  },
+  {
+    "day": "January 13",
+    "tradition": "Church of the East",
+    "name": "Saint Hilary of Poitiers",
+    "description": "Bishop (shared commemoration)."
+  },
+  {
+    "day": "January 14",
+    "tradition": "Catholic",
+    "name": "Saint Felix of Nola",
+    "description": "Priest."
+  },
+  {
+    "day": "January 14",
+    "tradition": "Eastern Orthodox",
+    "name": "The Holy Fathers slain at Sinai and Raithu",
+    "description": "Martyred monks including Isaiah and Sabbas."
+  },
+  {
+    "day": "January 14",
+    "tradition": "Oriental Orthodox",
+    "name": "Ninth Day of the Nativity",
+    "description": "Armenian tradition."
+  },
+  {
+    "day": "January 14",
+    "tradition": "Anglican Communion",
+    "name": "Felix of Nola",
+    "description": "Priest (shared commemoration)."
+  },
+  {
+    "day": "January 14",
+    "tradition": "Church of the East",
+    "name": "The Holy Fathers slain at Sinai",
+    "description": "Martyred monks (shared commemoration)."
+  },
+  {
+    "day": "January 15",
+    "tradition": "Catholic",
+    "name": "Saint Paul the First Hermit",
+    "description": "Hermit."
+  },
+  {
+    "day": "January 15",
+    "tradition": "Eastern Orthodox",
+    "name": "Saint Paul of Thebes in Egypt",
+    "description": "Monk."
+  },
+  {
+    "day": "January 15",
+    "tradition": "Church of the East",
+    "name": "Commemoration of All the Saints",
+    "description": "Commemoration of all saints."
+  },
+  {
+    "day": "January 15",
+    "tradition": "Oriental Orthodox",
+    "name": "Tenth Day of the Nativity",
+    "description": "Armenian tradition."
+  },
+  {
+    "day": "January 15",
+    "tradition": "Anglican Communion",
+    "name": "Paul the First Hermit",
+    "description": "Hermit (shared commemoration)."
+  },
+  {
+    "day": "January 16",
+    "tradition": "Catholic",
+    "name": "Saint Berard and Companions",
+    "description": "Franciscan martyrs."
+  },
+  {
+    "day": "January 16",
+    "tradition": "Eastern Orthodox",
+    "name": "Veneration of the Precious Chains of Saint Peter",
+    "description": "Veneration of the chains of the Apostle."
+  },
+  {
+    "day": "January 16",
+    "tradition": "Oriental Orthodox",
+    "name": "Eleventh Day of the Nativity",
+    "description": "Armenian tradition."
+  },
+  {
+    "day": "January 16",
+    "tradition": "Anglican Communion",
+    "name": "Berard and Companions",
+    "description": "Franciscan martyrs (shared commemoration)."
+  },
+  {
+    "day": "January 16",
+    "tradition": "Church of the East",
+    "name": "Saint Peter the Apostle",
+    "description": "Veneration of relics (shared commemoration)."
+  },
+  {
+    "day": "January 17",
+    "tradition": "Catholic",
+    "name": "Saint Anthony the Abbot",
+    "description": "Founder of Christian monasticism."
+  },
+  {
+    "day": "January 17",
+    "tradition": "Eastern Orthodox",
+    "name": "Saint Anthony the Great",
+    "description": "Founder of Christian monasticism."
+  },
+  {
+    "day": "January 17",
+    "tradition": "Oriental Orthodox",
+    "name": "Twelfth Day of the Nativity",
+    "description": "Armenian tradition."
+  },
+  {
+    "day": "January 17",
+    "tradition": "Anglican Communion",
+    "name": "Antony of Egypt",
+    "description": "Hermit, Abbot, 356."
+  },
+  {
+    "day": "January 17",
+    "tradition": "Anglican Communion",
+    "name": "Charles Gore",
+    "description": "Bishop and Founder of the Community of the Resurrection."
+  },
+  {
+    "day": "January 17",
+    "tradition": "Church of the East",
+    "name": "Saint Anthony the Great",
+    "description": "Founder of monasticism (shared commemoration)."
+  },
+  {
+    "day": "January 18",
+    "tradition": "Universal",
+    "name": "Confession of Saint Peter",
+    "description": "Peter's recognition of Christ as Messiah, venerated in Anglican Communion, Catholic, Eastern Orthodox, and Oriental Orthodox traditions."
+  },
+  {
+    "day": "January 18",
+    "tradition": "Catholic",
+    "name": "Saint Prisca",
+    "description": "Early Roman martyr."
+  },
+  {
+    "day": "January 18",
+    "tradition": "Eastern Orthodox",
+    "name": "Saints Athanasius and Cyril",
+    "description": "Archbishops of Alexandria."
+  },
+  {
+    "day": "January 18",
+    "tradition": "Oriental Orthodox",
+    "name": "Saint Bashnouna",
+    "description": "Monk and martyr (Armenian)."
+  },
+  {
+    "day": "January 18",
+    "tradition": "Church of the East",
+    "name": "Mar Narsai",
+    "description": "The 'Harp of the Spirit,' theologian."
+  },
+  {
+    "day": "January 19",
+    "tradition": "Anglican Communion",
+    "name": "Wulfstan of Worcester",
+    "description": "Anglo-Saxon bishop."
+  },
+  {
+    "day": "January 19",
+    "tradition": "Catholic",
+    "name": "Saint Wulfstan",
+    "description": "Bishop of Worcester."
+  },
+  {
+    "day": "January 19",
+    "tradition": "Eastern Orthodox",
+    "name": "Saint Macarius the Great",
+    "description": "Egyptian desert father."
+  },
+  {
+    "day": "January 19",
+    "tradition": "Oriental Orthodox",
+    "name": "Saint Mark of Ephesus",
+    "description": "Defender of Orthodoxy."
+  },
+  {
+    "day": "January 19",
+    "tradition": "Church of the East",
+    "name": "Saint Jacob of Nisibis",
+    "description": "Bishop and confessor."
+  },
+  {
+    "day": "January 20",
+    "tradition": "Catholic",
+    "name": "Saint Fabian",
+    "description": "Pope and martyr."
+  },
+  {
+    "day": "January 20",
+    "tradition": "Catholic",
+    "name": "Saint Sebastian",
+    "description": "Roman soldier and martyr."
+  },
+  {
+    "day": "January 20",
+    "tradition": "Eastern Orthodox",
+    "name": "Saint Euthymius the Great",
+    "description": "Hermit and monastery founder."
+  },
+  {
+    "day": "January 20",
+    "tradition": "Eastern Orthodox",
+    "name": "Martyrs Inna, Pinna, and Rimma",
+    "description": "Disciples of Apostle Andrew."
+  },
+  {
+    "day": "January 20",
+    "tradition": "Oriental Orthodox",
+    "name": "Saint Sebastian",
+    "description": "Martyr."
+  },
+  {
+    "day": "January 20",
+    "tradition": "Anglican Communion",
+    "name": "Richard Rolle of Hampole",
+    "description": "Spiritual writer and hermit."
+  },
+  {
+    "day": "January 20",
+    "tradition": "Church of the East",
+    "name": "Saint Euthymius",
+    "description": "Hermit (shared commemoration)."
+  },
+  {
+    "day": "January 21",
+    "tradition": "Catholic",
+    "name": "Saint Agnes of Rome",
+    "description": "Virgin and martyr."
+  },
+  {
+    "day": "January 21",
+    "tradition": "Eastern Orthodox",
+    "name": "Saint Maximus the Confessor",
+    "description": "Theologian and defender of orthodoxy."
+  },
+  {
+    "day": "January 21",
+    "tradition": "Eastern Orthodox",
+    "name": "Martyr Neophytus of Nicaea",
+    "description": "Young martyr."
+  },
+  {
+    "day": "January 21",
+    "tradition": "Oriental Orthodox",
+    "name": "Saint Agnes of Rome",
+    "description": "Virgin martyr."
+  },
+  {
+    "day": "January 21",
+    "tradition": "Anglican Communion",
+    "name": "Saint Agnes",
+    "description": "Virgin and martyr."
+  },
+  {
+    "day": "January 21",
+    "tradition": "Church of the East",
+    "name": "Saint Maximus the Confessor",
+    "description": "Theologian (shared commemoration)."
+  },
+  {
+    "day": "January 22",
+    "tradition": "Catholic",
+    "name": "Saint Vincent of Saragossa",
+    "description": "Deacon and martyr."
+  },
+  {
+    "day": "January 22",
+    "tradition": "Eastern Orthodox",
+    "name": "Apostle Timothy",
+    "description": "Apostle of the Seventy."
+  },
+  {
+    "day": "January 22",
+    "tradition": "Eastern Orthodox",
+    "name": "Saint Anastasius the Persian",
+    "description": "Monk and martyr."
+  },
+  {
+    "day": "January 22",
+    "tradition": "Oriental Orthodox",
+    "name": "Saint Vincent of Saragossa",
+    "description": "Deacon and martyr."
+  },
+  {
+    "day": "January 22",
+    "tradition": "Anglican Communion",
+    "name": "Saint Vincent",
+    "description": "Deacon of Saragossa, martyr."
+  },
+  {
+    "day": "January 22",
+    "tradition": "Church of the East",
+    "name": "Saint Timothy",
+    "description": "Apostle (shared commemoration)."
+  },
+  {
+    "day": "January 23",
+    "tradition": "Anglican Communion",
+    "name": "Phillips Brooks",
+    "description": "Bishop of Massachusetts and carol writer."
+  },
+  {
+    "day": "January 23",
+    "tradition": "Catholic",
+    "name": "Saint John the Almsgiver",
+    "description": "Patriarch of Alexandria."
+  },
+  {
+    "day": "January 23",
+    "tradition": "Eastern Orthodox",
+    "name": "Saint Clement of Ancyra",
+    "description": "Hieromartyr and bishop."
+  },
+  {
+    "day": "January 23",
+    "tradition": "Oriental Orthodox",
+    "name": "Saint Demiana",
+    "description": "Virgin martyr (Coptic/Syrian Jacobite)."
+  },
+  {
+    "day": "January 23",
+    "tradition": "Church of the East",
+    "name": "Rogation of the Ninevites",
+    "description": "Fasting period commemorating Jonah."
+  },
+  {
+    "day": "January 24",
+    "tradition": "Anglican Communion",
+    "name": "Florence Li Tim-Oi",
+    "description": "First woman ordained to the priesthood in the Anglican Communion."
+  },
+  {
+    "day": "January 24",
+    "tradition": "Catholic",
+    "name": "Saint Francis de Sales",
+    "description": "Doctor of the Church."
+  },
+  {
+    "day": "January 24",
+    "tradition": "Eastern Orthodox",
+    "name": "Saint Xenia of Rome",
+    "description": "Virgin and deaconess."
+  },
+  {
+    "day": "January 24",
+    "tradition": "Oriental Orthodox",
+    "name": "Saint Maximus and Saint Domatius",
+    "description": "Martyrs and brothers (Armenian)."
+  },
+  {
+    "day": "January 24",
+    "tradition": "Church of the East",
+    "name": "Rogation of the Ninevites",
+    "description": "Continued fasting."
+  },
+  {
+    "day": "January 25",
+    "tradition": "Universal",
+    "name": "Conversion of Saint Paul",
+    "description": "Commemoration of Paul's conversion on the road to Damascus, venerated in Anglican Communion and Catholic traditions."
+  },
+  {
+    "day": "January 25",
+    "tradition": "Eastern Orthodox",
+    "name": "Saint Gregory the Theologian",
+    "description": "Archbishop of Constantinople."
+  },
+  {
+    "day": "January 25",
+    "tradition": "Oriental Orthodox",
+    "name": "Saint Gregory the Theologian",
+    "description": "Theologian."
+  },
+  {
+    "day": "January 25",
+    "tradition": "Church of the East",
+    "name": "Saint Mar Babai the Great",
+    "description": "Monk and theologian."
+  },
+  {
+    "day": "January 26",
+    "tradition": "Catholic",
+    "name": "Saints Timothy and Titus",
+    "description": "Bishops and companions of Paul."
+  },
+  {
+    "day": "January 26",
+    "tradition": "Eastern Orthodox",
+    "name": "Venerable Xenophon and Family",
+    "description": "Monks of Constantinople."
+  },
+  {
+    "day": "January 26",
+    "tradition": "Oriental Orthodox",
+    "name": "Venerable Xenophon and Family",
+    "description": "Ascetics."
+  },
+  {
+    "day": "January 26",
+    "tradition": "Church of the East",
+    "name": "Saints Timothy and Titus",
+    "description": "Early bishops."
+  },
+  {
+    "day": "January 26",
+    "tradition": "Anglican Communion",
+    "name": "Timothy and Titus",
+    "description": "Companions of Saint Paul."
+  },
+  {
+    "day": "January 27",
+    "tradition": "Catholic",
+    "name": "Saint Angela Merici",
+    "description": "Foundress of the Ursulines."
+  },
+  {
+    "day": "January 27",
+    "tradition": "Eastern Orthodox",
+    "name": "Translation of the Relics of Saint John Chrysostom",
+    "description": "Return of relics to Constantinople."
+  },
+  {
+    "day": "January 27",
+    "tradition": "Oriental Orthodox",
+    "name": "Saint John Chrysostom",
+    "description": "Honored for eloquence."
+  },
+  {
+    "day": "January 27",
+    "tradition": "Church of the East",
+    "name": "Saint John Chrysostom",
+    "description": "Doctor of the Church."
+  },
+  {
+    "day": "January 27",
+    "tradition": "Anglican Communion",
+    "name": "John Chrysostom",
+    "description": "Bishop of Constantinople."
+  },
+  {
+    "day": "January 28",
+    "tradition": "Catholic",
+    "name": "Saint Thomas Aquinas",
+    "description": "Doctor of the Church."
+  },
+  {
+    "day": "January 28",
+    "tradition": "Eastern Orthodox",
+    "name": "Venerable Ephraim the Syrian",
+    "description": "Monk and hymnographer."
+  },
+  {
+    "day": "January 28",
+    "tradition": "Oriental Orthodox",
+    "name": "Saint Isaac the Syrian",
+    "description": "Bishop of Nineveh."
+  },
+  {
+    "day": "January 28",
+    "tradition": "Church of the East",
+    "name": "Saint Ephraim the Syrian",
+    "description": "Deacon and Doctor of the Church."
+  },
+  {
+    "day": "January 28",
+    "tradition": "Anglican Communion",
+    "name": "Thomas Aquinas",
+    "description": "Teacher of the Faith."
+  },
+  {
+    "day": "January 29",
+    "tradition": "Catholic",
+    "name": "Saint Gildas the Wise",
+    "description": "Monk and historian."
+  },
+  {
+    "day": "January 29",
+    "tradition": "Eastern Orthodox",
+    "name": "Translation of the Relics of Hieromartyr Ignatius",
+    "description": "Bishop of Antioch."
+  },
+  {
+    "day": "January 29",
+    "tradition": "Oriental Orthodox",
+    "name": "Saints Sarbelus and Barbea",
+    "description": "Brother and sister martyrs."
+  },
+  {
+    "day": "January 29",
+    "tradition": "Church of the East",
+    "name": "Commemoration of St. John Daylimaya",
+    "description": "Monk and ascetic."
+  },
+  {
+    "day": "January 29",
+    "tradition": "Anglican Communion",
+    "name": "Andrei Rublev",
+    "description": "Monk and Iconographer."
+  },
+  {
+    "day": "January 30",
+    "tradition": "Catholic",
+    "name": "Saint Hyacintha of Mariscotti",
+    "description": "Virgin and religious."
+  },
+  {
+    "day": "January 30",
+    "tradition": "Eastern Orthodox",
+    "name": "Synaxis of the Three Holy Hierarchs",
+    "description": "Basil, Gregory, and John."
+  },
+  {
+    "day": "January 30",
+    "tradition": "Oriental Orthodox",
+    "name": "Synaxis of the Three Holy Hierarchs",
+    "description": "Great ecumenical teachers."
+  },
+  {
+    "day": "January 30",
+    "tradition": "Church of the East",
+    "name": "The Holy Feast of the Epiphany",
+    "description": "Commemoration of the manifestation of Christ."
+  },
+  {
+    "day": "January 30",
+    "tradition": "Anglican Communion",
+    "name": "King Charles the Martyr",
+    "description": "King of England."
+  },
+  {
+    "day": "January 31",
+    "tradition": "Catholic",
+    "name": "Saint John Bosco",
+    "description": "Founder of the Salesians."
+  },
+  {
+    "day": "January 31",
+    "tradition": "Eastern Orthodox",
+    "name": "Holy Wonderworkers Cyrus and John",
+    "description": "Unmercenaries and martyrs."
+  },
+  {
+    "day": "January 31",
+    "tradition": "Oriental Orthodox",
+    "name": "Holy Wonderworkers Cyrus and John",
+    "description": "Physicians."
+  },
+  {
+    "day": "January 31",
+    "tradition": "Church of the East",
+    "name": "Commemoration of St. Sawrisho of Beth Garmi",
+    "description": "Saint and bishop."
+  },
+  {
+    "day": "January 31",
+    "tradition": "Anglican Communion",
+    "name": "John Bosco",
+    "description": "Salesian Teaching Order."
+  }
+]

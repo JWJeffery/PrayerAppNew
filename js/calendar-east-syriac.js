@@ -319,7 +319,7 @@ const EastSyriacCalendar = (() => {
 
         seasons.push(  { name: 'qudash-idta', start: qudashIdtaStart, end: addDays(nextSubara,      -1) });
 
-        return { subaraStart, easter, nextSubara, seasons };
+        return { subaraStart, saumaStart, easter, nextSubara, seasons };
     }
 
     // ── Public: getSeason ─────────────────────────────────────────────────────
@@ -342,8 +342,7 @@ const EastSyriacCalendar = (() => {
      */
     function getSeason(gregorianDate) {
         const d = toMidnight(gregorianDate);
-        const { subaraStart, easter, seasons } = getLiturgicalYear(d);
-
+        const { subaraStart, saumaStart, easter, seasons } = getLiturgicalYear(d);
         // Find which season contains this date
         let currentSeason = null;
         for (const s of seasons) {

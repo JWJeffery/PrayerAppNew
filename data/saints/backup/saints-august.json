@@ -1,0 +1,908 @@
+[
+  {
+    "day": "August 1",
+    "tradition": "Catholic",
+    "name": "Saint Alphonsus Liguori",
+    "description": "Bishop and Doctor of the Church; founder of the Redemptorists."
+  },
+  {
+    "day": "August 1",
+    "tradition": "Eastern Orthodox",
+    "name": "The Holy Seven Maccabean Martyrs",
+    "description": "Seven brothers, their mother Solomonia, and their teacher Eleazar."
+  },
+  {
+    "day": "August 1",
+    "tradition": "Oriental Orthodox",
+    "name": "Procession of the Holy Cross",
+    "description": "Commemoration of the wood of the True Cross."
+  },
+  {
+    "day": "August 1",
+    "tradition": "Anglican",
+    "name": "Joseph of Arimathea",
+    "description": "The disciple who buried Jesus in his own tomb."
+  },
+  {
+    "day": "August 1",
+    "tradition": "Church of the East",
+    "name": "Mar Mari",
+    "description": "Apostle of the East and disciple of Addai."
+  },
+  {
+    "day": "August 2",
+    "tradition": "Catholic",
+    "name": "Saint Eusebius of Vercelli",
+    "description": "Bishop and defender of the divinity of Christ."
+  },
+  {
+    "day": "August 2",
+    "tradition": "Eastern Orthodox, Oriental Orthodox",
+    "name": "Saint Stephen the First Martyr",
+    "description": "Commemoration of the first Christian martyr."
+  },
+  {
+    "day": "August 2",
+    "tradition": "Anglican",
+    "name": "Samuel David Ferguson",
+    "description": "Missionary Bishop for West Africa, 1916."
+  },
+  {
+    "day": "August 2",
+    "tradition": "Church of the East",
+    "name": "Saint Pethion",
+    "description": "Martyr under the Sassanids."
+  },
+  {
+    "day": "August 3",
+    "tradition": "Catholic",
+    "name": "Saint Lydia of Thyatira",
+    "description": "The first convert to Christianity in Europe recorded in Acts."
+  },
+  {
+    "day": "August 3",
+    "tradition": "Eastern Orthodox",
+    "name": "Venerable Isaacius, Dalmatus, and Faustus",
+    "description": "Abbots of the Dalmatian Monastery in Constantinople."
+  },
+  {
+    "day": "August 3",
+    "tradition": "Oriental Orthodox",
+    "name": "Saint Lydia",
+    "description": "Benefactress and follower of St. Paul."
+  },
+  {
+    "day": "August 3",
+    "tradition": "Church of the East",
+    "name": "Mar Addai",
+    "description": "One of the Seventy Disciples and Apostle to Edessa."
+  },
+  {
+    "day": "August 4",
+    "tradition": "Catholic",
+    "name": "Saint John Vianney",
+    "description": "The Curé of Ars, patron of parish priests."
+  },
+  {
+    "day": "August 4",
+    "tradition": "Eastern Orthodox",
+    "name": "Seven Holy Youths of Ephesus",
+    "description": "The Seven Sleepers who awoke after centuries."
+  },
+  {
+    "day": "August 4",
+    "tradition": "Oriental Orthodox",
+    "name": "The Seven Sleepers",
+    "description": "Martyrs who witnessed to the resurrection of the body."
+  },
+  {
+    "day": "August 4",
+    "tradition": "Anglican",
+    "name": "Charles Clingman",
+    "description": "Bishop of Kentucky, 1968."
+  },
+  {
+    "day": "August 4",
+    "tradition": "Church of the East",
+    "name": "Mar Shalita",
+    "description": "Disciple of Mar Augin and ascetic."
+  },
+  {
+    "day": "August 5",
+    "tradition": "Catholic",
+    "name": "Dedication of Saint Mary Major",
+    "description": "Commemoration of the snow miracle and the Roman Basilica."
+  },
+  {
+    "day": "August 5",
+    "tradition": "Eastern Orthodox",
+    "name": "Forefeast of the Transfiguration",
+    "description": "Preparation for the revelation on Mount Tabor."
+  },
+  {
+    "day": "August 5",
+    "tradition": "Oriental Orthodox",
+    "name": "Saint Eusignius of Antioch",
+    "description": "Soldier-martyr under Julian the Apostate."
+  },
+  {
+    "day": "August 5",
+    "tradition": "Anglican",
+    "name": "Oswald of Northumbria",
+    "description": "King and Martyr, 642."
+  },
+  {
+    "day": "August 5",
+    "tradition": "Church of the East",
+    "name": "Mar Augin (Saint Eugene)",
+    "description": "The 'Father of Egyptian Monasticism' in the East."
+  },
+  {
+    "day": "August 6",
+    "tradition": "Universal",
+    "name": "Transfiguration of the Lord",
+    "description": "Feast of Christ's glory revealed to Peter, James, and John."
+  },
+  {
+    "day": "August 6",
+    "tradition": "Catholic",
+    "name": "Saint Hormisdas",
+    "description": "Pope and peacemaker between East and West."
+  },
+  {
+    "day": "August 6",
+    "tradition": "Eastern Orthodox",
+    "name": "Saint Dometius of Persia",
+    "description": "Martyr and hermit."
+  },
+  {
+    "day": "August 6",
+    "tradition": "Oriental Orthodox",
+    "name": "Saint Afra",
+    "description": "Martyr of Augsburg."
+  },
+  {
+    "day": "August 6",
+    "tradition": "Church of the East",
+    "name": "Saint Hardut",
+    "description": "Martyr and witness to the faith."
+  },
+  {
+    "day": "August 7",
+    "tradition": "Catholic",
+    "name": "Saint Sixtus II and Companions",
+    "description": "Pope and martyrs under Valerian."
+  },
+  {
+    "day": "August 7",
+    "tradition": "Eastern Orthodox",
+    "name": "Venerable Pimen of the Kiev Caves",
+    "description": "Ascetic and faster."
+  },
+  {
+    "day": "August 7",
+    "tradition": "Oriental Orthodox",
+    "name": "Dormition of Saint Anna",
+    "description": "Falling asleep of the mother of the Virgin Mary."
+  },
+  {
+    "day": "August 7",
+    "tradition": "Anglican",
+    "name": "John Mason Neale",
+    "description": "Priest and hymnodist, 1866."
+  },
+  {
+    "day": "August 7",
+    "tradition": "Church of the East",
+    "name": "Mar Abda",
+    "description": "Bishop and martyr."
+  },
+  {
+    "day": "August 8",
+    "tradition": "Catholic",
+    "name": "Saint Dominic",
+    "description": "Priest and founder of the Order of Preachers."
+  },
+  {
+    "day": "August 8",
+    "tradition": "Eastern Orthodox",
+    "name": "Saint Emilian the Confessor",
+    "description": "Bishop of Cyzicus."
+  },
+  {
+    "day": "August 8",
+    "tradition": "Oriental Orthodox",
+    "name": "Saint Dominic",
+    "description": "Confessor and founder."
+  },
+  {
+    "day": "August 8",
+    "tradition": "Anglican",
+    "name": "Saint Dominic",
+    "description": "Founder of the Dominicans."
+  },
+  {
+    "day": "August 8",
+    "tradition": "Church of the East",
+    "name": "Mar Papa bar Aggai",
+    "description": "Early Catholicos of Seleucia-Ctesiphon."
+  },
+  {
+    "day": "August 9",
+    "tradition": "Catholic",
+    "name": "Saint Teresa Benedicta of the Cross (Edith Stein)",
+    "description": "Philosopher, Carmelite, and martyr of Auschwitz."
+  },
+  {
+    "day": "August 9",
+    "tradition": "Eastern Orthodox",
+    "name": "Saint Matthias the Apostle",
+    "description": "The apostle chosen to replace Judas Iscariot."
+  },
+  {
+    "day": "August 9",
+    "tradition": "Oriental Orthodox",
+    "name": "Saint Matthias",
+    "description": "Apostle and witness to the Resurrection."
+  },
+  {
+    "day": "August 9",
+    "tradition": "Anglican",
+    "name": "Mary Sumner",
+    "description": "Foundress of the Mothers' Union, 1921."
+  },
+  {
+    "day": "August 9",
+    "tradition": "Church of the East",
+    "name": "Mar Qardagh",
+    "description": "Governor and martyr."
+  },
+  {
+    "day": "August 10",
+    "tradition": "Universal",
+    "name": "Saint Lawrence",
+    "description": "Deacon and martyr of Rome."
+  },
+  {
+    "day": "August 10",
+    "tradition": "Catholic",
+    "name": "Saint Lawrence",
+    "description": "Patron of cooks and the poor."
+  },
+  {
+    "day": "August 10",
+    "tradition": "Eastern Orthodox",
+    "name": "Holy Martyr Lawrence the Archdeacon",
+    "description": "Martyred on a gridiron."
+  },
+  {
+    "day": "August 10",
+    "tradition": "Oriental Orthodox",
+    "name": "Saint Lawrence",
+    "description": "Deacon and witness."
+  },
+  {
+    "day": "August 10",
+    "tradition": "Church of the East",
+    "name": "Mar Shimon Bar Sabbae",
+    "description": "Catholicos and martyr."
+  },
+  {
+    "day": "August 11",
+    "tradition": "Catholic",
+    "name": "Saint Clare of Assisi",
+    "description": "Virgin and foundress of the Poor Clares."
+  },
+  {
+    "day": "August 11",
+    "tradition": "Eastern Orthodox",
+    "name": "Saint Euplus the Archdeacon",
+    "description": "Martyred in Sicily."
+  },
+  {
+    "day": "August 11",
+    "tradition": "Oriental Orthodox",
+    "name": "Saint Clare",
+    "description": "Follower of St. Francis."
+  },
+  {
+    "day": "August 11",
+    "tradition": "Anglican",
+    "name": "Saint Clare of Assisi",
+    "description": "Foundress of the Poor Clares."
+  },
+  {
+    "day": "August 11",
+    "tradition": "Church of the East",
+    "name": "Mar Mari the Apostle",
+    "description": "Commemoration of the teacher of the East."
+  },
+  {
+    "day": "August 12",
+    "tradition": "Catholic",
+    "name": "Saint Jane Frances de Chantal",
+    "description": "Foundress of the Visitation Order."
+  },
+  {
+    "day": "August 12",
+    "tradition": "Eastern Orthodox",
+    "name": "Martyrs Anicetus and Photius",
+    "description": "Martyrs of Nicomedia."
+  },
+  {
+    "day": "August 12",
+    "tradition": "Oriental Orthodox",
+    "name": "Saint Jane de Chantal",
+    "description": "Widow and religious."
+  },
+  {
+    "day": "August 12",
+    "tradition": "Church of the East",
+    "name": "Mar Augustine",
+    "description": "Monk and teacher."
+  },
+  {
+    "day": "August 13",
+    "tradition": "Catholic",
+    "name": "Saint Pontian and Saint Hippolytus",
+    "description": "Pope and priest, reconciled martyrs."
+  },
+  {
+    "day": "August 13",
+    "tradition": "Eastern Orthodox",
+    "name": "Saint Maximus the Confessor",
+    "description": "Theologian and defender of Christ's two wills."
+  },
+  {
+    "day": "August 13",
+    "tradition": "Oriental Orthodox",
+    "name": "Saint Maximus the Confessor",
+    "description": "Monk and witness."
+  },
+  {
+    "day": "August 13",
+    "tradition": "Anglican",
+    "name": "Jeremy Taylor",
+    "description": "Bishop and teacher of the faith, 1667."
+  },
+  {
+    "day": "August 13",
+    "tradition": "Church of the East",
+    "name": "Mar Isaac of Nineveh",
+    "description": "Mystic and bishop."
+  },
+  {
+    "day": "August 14",
+    "tradition": "Catholic",
+    "name": "Saint Maximilian Kolbe",
+    "description": "Priest who sacrificed his life for another at Auschwitz."
+  },
+  {
+    "day": "August 14",
+    "tradition": "Eastern Orthodox",
+    "name": "Prophet Micah",
+    "description": "Old Testament prophet; foretold Christ's birth in Bethlehem."
+  },
+  {
+    "day": "August 14",
+    "tradition": "Oriental Orthodox",
+    "name": "Vigil of the Assumption",
+    "description": "Preparation for the feast of Mary."
+  },
+  {
+    "day": "August 14",
+    "tradition": "Anglican",
+    "name": "Jonathan Daniels",
+    "description": "Seminarian and martyr for civil rights, 1965."
+  },
+  {
+    "day": "August 14",
+    "tradition": "Church of the East",
+    "name": "Mar Awa",
+    "description": "Catholicos and scholar."
+  },
+  {
+    "day": "August 15",
+    "tradition": "Universal",
+    "name": "Dormition or Assumption of the Virgin Mary",
+    "description": "The falling asleep and bodily reception of Mary into heaven."
+  },
+  {
+    "day": "August 15",
+    "tradition": "Catholic",
+    "name": "Saint Tarcisius",
+    "description": "Youth martyr for the Eucharist."
+  },
+  {
+    "day": "August 15",
+    "tradition": "Eastern Orthodox",
+    "name": "Saint Macarius the Roman",
+    "description": "Hermit found in the deep desert."
+  },
+  {
+    "day": "August 15",
+    "tradition": "Oriental Orthodox",
+    "name": "Dormition of the Theotokos",
+    "description": "Feast of the Virgin in the Armenian tradition."
+  },
+  {
+    "day": "August 15",
+    "tradition": "Church of the East",
+    "name": "Saint Shamuni and Sons",
+    "description": "The Maccabean martyrs."
+  },
+  {
+    "day": "August 16",
+    "tradition": "Catholic",
+    "name": "Saint Stephen of Hungary",
+    "description": "King and apostle to the Magyars."
+  },
+  {
+    "day": "August 16",
+    "tradition": "Eastern Orthodox",
+    "name": "The Image of Christ Not-Made-By-Hands",
+    "description": "Commemoration of the Mandylion of Edessa."
+  },
+  {
+    "day": "August 16",
+    "tradition": "Oriental Orthodox",
+    "name": "Afterfeast of the Assumption",
+    "description": "Continued celebration of the Virgin's glory."
+  },
+  {
+    "day": "August 16",
+    "tradition": "Anglican",
+    "name": "Saint Stephen of Hungary",
+    "description": "Apostolic king."
+  },
+  {
+    "day": "August 16",
+    "tradition": "Church of the East",
+    "name": "Mar Saba",
+    "description": "Monk and miracle worker."
+  },
+  {
+    "day": "August 17",
+    "tradition": "Catholic",
+    "name": "Saint Hyacinth",
+    "description": "Dominican missionary known as the Apostle of the North."
+  },
+  {
+    "day": "August 17",
+    "tradition": "Eastern Orthodox",
+    "name": "Saint Myron the Presbyter",
+    "description": "Martyr of Cyzicus."
+  },
+  {
+    "day": "August 17",
+    "tradition": "Oriental Orthodox",
+    "name": "Saint Myron",
+    "description": "Martyr and witness."
+  },
+  {
+    "day": "August 17",
+    "tradition": "Anglican",
+    "name": "William Porcher DuBose",
+    "description": "Priest and theologian, 1918."
+  },
+  {
+    "day": "August 17",
+    "tradition": "Church of the East",
+    "name": "Mar Zeia",
+    "description": "The traveler and ascetic."
+  },
+  {
+    "day": "August 18",
+    "tradition": "Catholic",
+    "name": "Saint Helena",
+    "description": "Empress and mother of Constantine; seeker of the True Cross."
+  },
+  {
+    "day": "August 18",
+    "tradition": "Eastern Orthodox",
+    "name": "Martyrs Florus and Laurus",
+    "description": "Stonecutters and twin brothers."
+  },
+  {
+    "day": "August 18",
+    "tradition": "Oriental Orthodox",
+    "name": "Saint Helena",
+    "description": "Empress and findress of the Cross."
+  },
+  {
+    "day": "August 18",
+    "tradition": "Church of the East",
+    "name": "Mar Shalita",
+    "description": "Commemoration of his monastery and mission."
+  },
+  {
+    "day": "August 19",
+    "tradition": "Catholic",
+    "name": "Saint John Eudes",
+    "description": "Priest and promoter of the Sacred Heart."
+  },
+  {
+    "day": "August 19",
+    "tradition": "Eastern Orthodox",
+    "name": "Saint Andrew Stratelates",
+    "description": "Military commander and martyr with his 2,593 soldiers."
+  },
+  {
+    "day": "August 19",
+    "tradition": "Oriental Orthodox",
+    "name": "Saint Andrew the General",
+    "description": "Martyr."
+  },
+  {
+    "day": "August 19",
+    "tradition": "Anglican",
+    "name": "Saint Bernard of Clairvaux (Eve)",
+    "description": "Vigil of the great abbot."
+  },
+  {
+    "day": "August 19",
+    "tradition": "Church of the East",
+    "name": "Mar Yohannan",
+    "description": "Bishop and confessor."
+  },
+  {
+    "day": "August 20",
+    "tradition": "Catholic",
+    "name": "Saint Bernard of Clairvaux",
+    "description": "Abbot and Doctor of the Church; 'Mellifluous Doctor'."
+  },
+  {
+    "day": "August 20",
+    "tradition": "Eastern Orthodox",
+    "name": "Prophet Samuel",
+    "description": "Old Testament prophet and judge of Israel."
+  },
+  {
+    "day": "August 20",
+    "tradition": "Oriental Orthodox",
+    "name": "Prophet Samuel",
+    "description": "The seer who anointed David."
+  },
+  {
+    "day": "August 20",
+    "tradition": "Anglican",
+    "name": "Saint Bernard of Clairvaux",
+    "description": "Abbot of Clairvaux, 1153."
+  },
+  {
+    "day": "August 20",
+    "tradition": "Church of the East",
+    "name": "Mar Sabrisho",
+    "description": "Catholicos and monk."
+  },
+  {
+    "day": "August 21",
+    "tradition": "Catholic",
+    "name": "Saint Pius X",
+    "description": "Pope who encouraged frequent communion for children."
+  },
+  {
+    "day": "August 21",
+    "tradition": "Eastern Orthodox",
+    "name": "Apostle Thaddeus of the Seventy",
+    "description": "Healer of King Abgar of Edessa."
+  },
+  {
+    "day": "August 21",
+    "tradition": "Oriental Orthodox",
+    "name": "Saint Thaddeus",
+    "description": "Apostle and missionary."
+  },
+  {
+    "day": "August 21",
+    "tradition": "Anglican",
+    "name": "Saint Bartholomew (Eve)",
+    "description": "Preparation for the Feast of the Apostle."
+  },
+  {
+    "day": "August 21",
+    "tradition": "Church of the East",
+    "name": "Mar Narsai",
+    "description": "The 'Harp of the Spirit' and poet-theologian."
+  },
+  {
+    "day": "August 22",
+    "tradition": "Catholic",
+    "name": "Queenship of the Blessed Virgin Mary",
+    "description": "Octave of the Assumption celebrating Mary's reign."
+  },
+  {
+    "day": "August 22",
+    "tradition": "Eastern Orthodox",
+    "name": "Martyr Agathonicus and Companions",
+    "description": "Martyrs of Nicomedia."
+  },
+  {
+    "day": "August 22",
+    "tradition": "Oriental Orthodox",
+    "name": "Saint Agathonicus",
+    "description": "Witness to the faith."
+  },
+  {
+    "day": "August 22",
+    "tradition": "Anglican",
+    "name": "Saints Pontian and Hippolytus",
+    "description": "Commemoration of the early Roman martyrs."
+  },
+  {
+    "day": "August 22",
+    "tradition": "Church of the East",
+    "name": "Mar Babai the Great",
+    "description": "Pillar of the Church of the East."
+  },
+  {
+    "day": "August 23",
+    "tradition": "Catholic",
+    "name": "Saint Rose of Lima",
+    "description": "Virgin and the first saint of the Americas."
+  },
+  {
+    "day": "August 23",
+    "tradition": "Eastern Orthodox",
+    "name": "Saint Lupus of Thessalonica",
+    "description": "Servant of St. Demetrius."
+  },
+  {
+    "day": "August 23",
+    "tradition": "Oriental Orthodox",
+    "name": "Saint Lupus",
+    "description": "Martyr."
+  },
+  {
+    "day": "August 23",
+    "tradition": "Anglican",
+    "name": "Saint Rose of Lima",
+    "description": "Mystic and lay Dominican."
+  },
+  {
+    "day": "August 23",
+    "tradition": "Church of the East",
+    "name": "Mar Abraham",
+    "description": "Catholicos and missionary."
+  },
+  {
+    "day": "August 24",
+    "tradition": "Universal",
+    "name": "Saint Bartholomew the Apostle",
+    "description": "The Apostle often identified as Nathanael; martyr."
+  },
+  {
+    "day": "August 24",
+    "tradition": "Catholic",
+    "name": "Saint Emily de Vialar",
+    "description": "Foundress of the Sisters of Saint Joseph."
+  },
+  {
+    "day": "August 24",
+    "tradition": "Eastern Orthodox",
+    "name": "Hieromartyr Eutychius",
+    "description": "Disciple of St. John the Evangelist."
+  },
+  {
+    "day": "August 24",
+    "tradition": "Oriental Orthodox",
+    "name": "Saint Verena",
+    "description": "Virgin and healer from the Theban Legion."
+  },
+  {
+    "day": "August 24",
+    "tradition": "Church of the East",
+    "name": "Saint Ya'qub (James) of Nisibis",
+    "description": "Bishop and spiritual father."
+  },
+  {
+    "day": "August 25",
+    "tradition": "Catholic",
+    "name": "Saint Louis IX",
+    "description": "King of France and model of Christian rule."
+  },
+  {
+    "day": "August 25",
+    "tradition": "Eastern Orthodox",
+    "name": "Return of the Relics of the Apostle Bartholomew",
+    "description": "Commemoration of his transfer to Lipari."
+  },
+  {
+    "day": "August 25",
+    "tradition": "Oriental Orthodox",
+    "name": "Saint Titus the Apostle",
+    "description": "Companion of St. Paul and Bishop of Crete."
+  },
+  {
+    "day": "August 25",
+    "tradition": "Anglican",
+    "name": "Saint Louis of France",
+    "description": "King and crusader."
+  },
+  {
+    "day": "August 25",
+    "tradition": "Church of the East",
+    "name": "Mar Dadisho",
+    "description": "Catholicos and ascetic."
+  },
+  {
+    "day": "August 26",
+    "tradition": "Catholic",
+    "name": "Our Lady of Czestochowa",
+    "description": "The Black Madonna of Poland."
+  },
+  {
+    "day": "August 26",
+    "tradition": "Eastern Orthodox",
+    "name": "Martyrs Adrian and Natalia",
+    "description": "Husband and wife martyrs of Nicomedia."
+  },
+  {
+    "day": "August 26",
+    "tradition": "Oriental Orthodox",
+    "name": "Saint Adrian and Saint Natalia",
+    "description": "Martyrs."
+  },
+  {
+    "day": "August 26",
+    "tradition": "Anglican",
+    "name": "Elizabeth Ann Seton (Commemoration)",
+    "description": "Founder of the American Sisters of Charity."
+  },
+  {
+    "day": "August 26",
+    "tradition": "Church of the East",
+    "name": "Mar Shimon",
+    "description": "Bishop and witness."
+  },
+  {
+    "day": "August 27",
+    "tradition": "Universal",
+    "name": "Saint Monica",
+    "description": "Mother of St. Augustine; tireless in prayer for her son's conversion."
+  },
+  {
+    "day": "August 27",
+    "tradition": "Catholic",
+    "name": "Saint Monica",
+    "description": "Patroness of mothers and difficult marriages."
+  },
+  {
+    "day": "August 27",
+    "tradition": "Eastern Orthodox",
+    "name": "Venerable Pimen the Great",
+    "description": "Desert Father and ascetic teacher."
+  },
+  {
+    "day": "August 27",
+    "tradition": "Oriental Orthodox",
+    "name": "Saint Monica",
+    "description": "The praying mother."
+  },
+  {
+    "day": "August 27",
+    "tradition": "Church of the East",
+    "name": "Mar Giwargis",
+    "description": "Martyr and bishop."
+  },
+  {
+    "day": "August 28",
+    "tradition": "Universal",
+    "name": "Saint Augustine of Hippo",
+    "description": "Bishop, Doctor, and one of the Pillars of Christian theology."
+  },
+  {
+    "day": "August 28",
+    "tradition": "Catholic",
+    "name": "Saint Augustine",
+    "description": "Author of 'The Confessions' and 'The City of God'."
+  },
+  {
+    "day": "August 28",
+    "tradition": "Eastern Orthodox",
+    "name": "Saint Moses the Black",
+    "description": "Former bandit turned Desert Father."
+  },
+  {
+    "day": "August 28",
+    "tradition": "Oriental Orthodox",
+    "name": "Saint Augustine",
+    "description": "Bishop and teacher."
+  },
+  {
+    "day": "August 28",
+    "tradition": "Church of the East",
+    "name": "Mar Mushi",
+    "description": "Monk and writer."
+  },
+  {
+    "day": "August 29",
+    "tradition": "Universal",
+    "name": "Martyrdom of Saint John the Baptist",
+    "description": "The beheading of the Forerunner by King Herod."
+  },
+  {
+    "day": "August 29",
+    "tradition": "Catholic",
+    "name": "Saint Sabina",
+    "description": "Roman widow and martyr."
+  },
+  {
+    "day": "August 29",
+    "tradition": "Eastern Orthodox",
+    "name": "Beheading of the Baptist",
+    "description": "Strict fast day in the Eastern Church."
+  },
+  {
+    "day": "August 29",
+    "tradition": "Oriental Orthodox",
+    "name": "Saint John the Baptist",
+    "description": "The martyrdom of the Forerunner."
+  },
+  {
+    "day": "August 29",
+    "tradition": "Church of the East",
+    "name": "Mar Shimun Bar Sabbae",
+    "description": "Catholicos and martyr (Secondary commemoration)."
+  },
+  {
+    "day": "August 30",
+    "tradition": "Catholic",
+    "name": "Saint Felix and Saint Adauctus",
+    "description": "Martyrs of Rome."
+  },
+  {
+    "day": "August 30",
+    "tradition": "Eastern Orthodox",
+    "name": "Saints Alexander, John, and Paul the New",
+    "description": "Patriarchs of Constantinople."
+  },
+  {
+    "day": "August 30",
+    "tradition": "Oriental Orthodox",
+    "name": "Saint Alexander of Constantinople",
+    "description": "Bishop and defender of the faith."
+  },
+  {
+    "day": "August 30",
+    "tradition": "Anglican",
+    "name": "Charles Grafton",
+    "description": "Bishop of Fond du Lac, 1912."
+  },
+  {
+    "day": "August 30",
+    "tradition": "Church of the East",
+    "name": "Mar Sliwa",
+    "description": "Martyr."
+  },
+  {
+    "day": "August 31",
+    "tradition": "Catholic",
+    "name": "Saint Raymond Nonnatus",
+    "description": "Redemptionist and martyr of charity."
+  },
+  {
+    "day": "August 31",
+    "tradition": "Eastern Orthodox",
+    "name": "Deposition of the Cincture of the Virgin Mary",
+    "description": "Placement of Mary's sash in Constantinople."
+  },
+  {
+    "day": "August 31",
+    "tradition": "Oriental Orthodox",
+    "name": "Saint Aidan",
+    "description": "Apostle of Northumbria."
+  },
+  {
+    "day": "August 31",
+    "tradition": "Anglican",
+    "name": "Aidan of Lindisfarne",
+    "description": "Bishop and missionary, 651."
+  },
+  {
+    "day": "August 31",
+    "tradition": "Church of the East",
+    "name": "Mar Toma (Apostle Thomas)",
+    "description": "Apostle of the East (Feast of the return of relics)."
+  }
+] 

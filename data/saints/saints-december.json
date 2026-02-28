@@ -1,704 +1,1381 @@
 [
   {
+    "id": "saint-eligius",
     "day": "December 1",
-    "tradition": "Catholic",
     "name": "Saint Eligius",
-    "description": "Bishop and patron of metalworkers."
+    "description": "Bishop and patron of metalworkers.",
+    "type": "saint",
+    "tags": [
+      "LAT"
+    ],
+    "verification_status": "verified"
   },
   {
+    "id": "nicholas-ferrar",
     "day": "December 1",
-    "tradition": "Anglican",
     "name": "Nicholas Ferrar",
-    "description": "Deacon and founder of Little Gidding."
+    "description": "Deacon and founder of Little Gidding.",
+    "type": "saint",
+    "tags": [
+      "ANG"
+    ],
+    "verification_status": "verified"
   },
   {
+    "id": "prophet-nahum",
     "day": "December 1",
-    "tradition": "Eastern Orthodox",
     "name": "Prophet Nahum",
-    "description": "One of the twelve Minor Prophets."
+    "description": "One of the twelve Minor Prophets.",
+    "type": "saint",
+    "tags": [
+      "EOR"
+    ],
+    "verification_status": "verified"
   },
   {
+    "id": "saint-peter-of-alexandria",
     "day": "December 1",
-    "tradition": "Oriental Orthodox",
     "name": "Saint Peter of Alexandria",
-    "description": "Patriarch and 'Seal of the Martyrs'."
+    "description": "Patriarch and 'Seal of the Martyrs'.",
+    "type": "saint",
+    "tags": [
+      "OOR"
+    ],
+    "verification_status": "verified"
   },
   {
+    "id": "mar-pethion",
     "day": "December 1",
-    "tradition": "Church of the East",
     "name": "Mar Pethion",
-    "description": "Martyr and evangelist of the Persian interior."
+    "description": "Martyr and evangelist of the Persian interior.",
+    "type": "saint",
+    "tags": [
+      "COE"
+    ],
+    "verification_status": "verified"
   },
   {
+    "id": "saint-bibiana",
     "day": "December 2",
-    "tradition": "Catholic",
     "name": "Saint Bibiana",
-    "description": "Virgin and Martyr."
+    "description": "Virgin and Martyr.",
+    "type": "saint",
+    "tags": [
+      "LAT"
+    ],
+    "verification_status": "verified"
   },
   {
+    "id": "channing-moore-williams",
     "day": "December 2",
-    "tradition": "Anglican",
     "name": "Channing Moore Williams",
-    "description": "Missionary Bishop."
+    "description": "Missionary Bishop.",
+    "type": "saint",
+    "tags": [
+      "ANG"
+    ],
+    "verification_status": "verified"
   },
   {
+    "id": "prophet-habakkuk",
     "day": "December 2",
-    "tradition": "Eastern Orthodox",
     "name": "Prophet Habakkuk",
-    "description": "Old Testament prophet."
+    "description": "Old Testament prophet.",
+    "type": "saint",
+    "tags": [
+      "EOR"
+    ],
+    "verification_status": "verified"
   },
   {
+    "id": "saint-abba-hor",
     "day": "December 2",
-    "tradition": "Oriental Orthodox",
     "name": "Saint Abba Hor",
-    "description": "Ascetic and leader of monks."
+    "description": "Ascetic and leader of monks.",
+    "type": "saint",
+    "tags": [
+      "OOR"
+    ],
+    "verification_status": "verified"
   },
   {
+    "id": "mar-shmon",
     "day": "December 2",
-    "tradition": "Church of the East",
     "name": "Mar Shmon",
-    "description": "Bishop and martyr."
+    "description": "Bishop and martyr.",
+    "type": "saint",
+    "tags": [
+      "COE"
+    ],
+    "verification_status": "verified"
   },
   {
+    "id": "saint-francis-xavier",
     "day": "December 3",
-    "tradition": "Catholic, Anglican",
     "name": "Saint Francis Xavier",
-    "description": "Jesuit missionary and Priest."
+    "description": "Jesuit missionary and Priest.",
+    "type": "saint",
+    "tags": [
+      "ANG",
+      "LAT"
+    ],
+    "verification_status": "verified"
   },
   {
+    "id": "prophet-zephaniah",
     "day": "December 3",
-    "tradition": "Eastern Orthodox",
     "name": "Prophet Zephaniah",
-    "description": "Old Testament prophet."
+    "description": "Old Testament prophet.",
+    "type": "saint",
+    "tags": [
+      "EOR"
+    ],
+    "verification_status": "verified"
   },
   {
+    "id": "saint-elias-of-alexandria",
     "day": "December 3",
-    "tradition": "Oriental Orthodox",
     "name": "Saint Elias of Alexandria",
-    "description": "Patriarch."
+    "description": "Patriarch.",
+    "type": "saint",
+    "tags": [
+      "OOR"
+    ],
+    "verification_status": "verified"
   },
   {
+    "id": "mar-babai-the-great",
     "day": "December 3",
-    "tradition": "Church of the East",
     "name": "Mar Babai the Great",
-    "description": "Theologian and Abbot of Mount Izla."
+    "description": "Theologian and Abbot of Mount Izla.",
+    "type": "saint",
+    "tags": [
+      "COE"
+    ],
+    "verification_status": "verified"
   },
   {
+    "id": "saint-barbara-of-nicomedia",
     "day": "December 4",
-    "tradition": "Universal",
-    "name": "Saint Barbara and Saint John of Damascus",
-    "description": "Great Martyr and Doctor of the Church; shared by all major traditions."
+    "name": "Saint Barbara of Nicomedia",
+    "description": "Virgin-martyr of Nicomedia.",
+    "type": "saint",
+    "tags": [
+      "EOR",
+      "LAT",
+      "OOR"
+    ],
+    "verification_status": "verified"
   },
   {
+    "id": "saint-john-of-damascus",
     "day": "December 4",
-    "tradition": "Church of the East",
+    "name": "Saint John of Damascus",
+    "description": "Monk, priest, and Doctor of the Church; defender of icons.",
+    "type": "saint",
+    "tags": [
+      "ANG",
+      "EOR",
+      "LAT"
+    ],
+    "verification_status": "verified"
+  },
+  {
+    "id": "mar-shalita",
+    "day": "December 4",
     "name": "Mar Shalita",
-    "description": "Healer and companion of Mar Awgin."
+    "description": "Healer and companion of Mar Awgin.",
+    "type": "saint",
+    "tags": [
+      "COE"
+    ],
+    "verification_status": "verified"
   },
   {
+    "id": "saint-sabbas-the-sanctified",
     "day": "December 5",
-    "tradition": "Universal",
     "name": "Saint Sabbas the Sanctified",
-    "description": "Abbot and founder; recognized in East and West."
+    "description": "Abbot and founder; recognized in East and West.",
+    "type": "saint",
+    "tags": [
+      "EOR",
+      "LAT",
+      "OOR"
+    ],
+    "verification_status": "verified",
+    "notes": "Also in Roman Martyrology"
   },
   {
+    "id": "saint-birinus",
     "day": "December 5",
-    "tradition": "Catholic",
     "name": "Saint Birinus",
-    "description": "Apostle of Wessex."
+    "description": "Apostle of Wessex.",
+    "type": "saint",
+    "tags": [
+      "LAT"
+    ],
+    "verification_status": "verified"
   },
   {
+    "id": "clement-of-alexandria",
     "day": "December 5",
-    "tradition": "Anglican",
     "name": "Clement of Alexandria",
-    "description": "Priest and theologian."
+    "description": "Priest and theologian.",
+    "type": "saint",
+    "tags": [
+      "ANG"
+    ],
+    "verification_status": "verified"
   },
   {
+    "id": "saint-victor",
     "day": "December 5",
-    "tradition": "Oriental Orthodox",
     "name": "Saint Victor",
-    "description": "Coptic martyr."
+    "description": "Coptic martyr.",
+    "type": "saint",
+    "tags": [
+      "OOR"
+    ],
+    "verification_status": "verified"
   },
   {
+    "id": "saint-nicholas-of-myra",
     "day": "December 6",
-    "tradition": "Universal",
     "name": "Saint Nicholas of Myra",
-    "description": "Bishop and Wonderworker; celebrated across all traditions."
+    "description": "Bishop and Wonderworker; celebrated across all traditions.",
+    "type": "saint",
+    "tags": [
+      "ANG",
+      "COE",
+      "EOR",
+      "LAT",
+      "OOR"
+    ],
+    "verification_status": "verified"
   },
   {
+    "id": "saint-ambrose-of-milan",
     "day": "December 7",
-    "tradition": "Universal",
     "name": "Saint Ambrose of Milan",
-    "description": "Bishop and Doctor; celebrated across all traditions."
+    "description": "Bishop and Doctor; celebrated across all traditions.",
+    "type": "saint",
+    "tags": [
+      "ANG",
+      "COE",
+      "EOR",
+      "LAT",
+      "OOR"
+    ],
+    "verification_status": "verified"
   },
   {
+    "id": "feast-immaculate-conception",
     "day": "December 8",
-    "tradition": "Universal",
-    "name": "Conception of the Blessed Virgin Mary",
-    "description": "Commemoration of the conception of the Mother of God (Immaculate Conception in Catholic tradition)."
+    "name": "Immaculate Conception of the Blessed Virgin Mary",
+    "description": "Western feast of the Immaculate Conception, dogmatically defined by the Latin Church. Not accepted by Eastern Orthodox or Oriental Orthodox.",
+    "type": "marian_feast",
+    "tags": [
+      "ANG",
+      "LAT"
+    ],
+    "verification_status": "verified",
+    "notes": "December 8. Dogmatically declared by LAT; not accepted by EOR or OOR. Eastern equivalent celebrated December 9 — see Conception of the Theotokos by Saint Anne."
   },
   {
+    "id": "feast-conception-of-the-theotokos",
+    "day": "December 9",
+    "name": "Conception of the Theotokos by Saint Anne",
+    "description": "Eastern commemoration of the conception of the Virgin Mary by her mother Anne.",
+    "type": "marian_feast",
+    "tags": [
+      "EOR",
+      "OOR"
+    ],
+    "verification_status": "verified",
+    "notes": "Eastern equivalent of the Western Immaculate Conception (Dec 8). Distinct commemorations with distinct theological framings; must not be conflated."
+  },
+  {
+    "id": "saint-patapius",
     "day": "December 8",
-    "tradition": "Eastern Orthodox",
     "name": "Saint Patapius",
-    "description": "Ascetic of Egypt."
+    "description": "Ascetic of Egypt.",
+    "type": "saint",
+    "tags": [
+      "EOR"
+    ],
+    "verification_status": "verified"
   },
   {
+    "id": "saint-barbara-oriental-date",
     "day": "December 8",
-    "tradition": "Oriental Orthodox",
     "name": "Saint Barbara (Oriental date)",
-    "description": "Commemoration of the Great Martyr."
+    "description": "Commemoration of the Great Martyr.",
+    "type": "saint",
+    "tags": [
+      "OOR"
+    ],
+    "verification_status": "verified"
   },
   {
+    "id": "mar-abdisho",
     "day": "December 8",
-    "tradition": "Church of the East",
     "name": "Mar Abdisho",
-    "description": "Metropolitan and author."
+    "description": "Metropolitan and author.",
+    "type": "saint",
+    "tags": [
+      "COE"
+    ],
+    "verification_status": "verified"
   },
   {
+    "id": "saint-juan-diego",
     "day": "December 9",
-    "tradition": "Catholic",
     "name": "Saint Juan Diego",
-    "description": "Visionary of Guadalupe."
+    "description": "Visionary of Guadalupe.",
+    "type": "saint",
+    "tags": [
+      "LAT"
+    ],
+    "verification_status": "verified"
   },
   {
+    "id": "prophets-of-the-old-testament",
     "day": "December 9",
-    "tradition": "Anglican",
     "name": "Prophets of the Old Testament",
-    "description": "General commemoration."
+    "description": "General commemoration.",
+    "type": "saint",
+    "tags": [
+      "ANG"
+    ],
+    "verification_status": "verified"
   },
   {
+    "id": "conception-of-the-theotokos-by-saint-anna",
     "day": "December 9",
-    "tradition": "Eastern Orthodox",
     "name": "Conception of the Theotokos by Saint Anna",
-    "description": "Miraculous conception."
+    "description": "Miraculous conception.",
+    "type": "saint",
+    "tags": [
+      "EOR"
+    ],
+    "verification_status": "verified"
   },
   {
+    "id": "saint-samuel-the-confessor",
     "day": "December 9",
-    "tradition": "Oriental Orthodox",
     "name": "Saint Samuel the Confessor",
-    "description": "Abbot of Kalamon."
+    "description": "Abbot of Kalamon.",
+    "type": "saint",
+    "tags": [
+      "OOR"
+    ],
+    "verification_status": "verified"
   },
   {
+    "id": "mar-isaac-of-nineveh-secondary",
     "day": "December 9",
-    "tradition": "Church of the East",
     "name": "Mar Isaac of Nineveh (Secondary)",
-    "description": "Spiritual writings."
+    "description": "Spiritual writings.",
+    "type": "saint",
+    "tags": [
+      "COE"
+    ],
+    "verification_status": "verified"
   },
   {
+    "id": "our-lady-of-loreto",
     "day": "December 10",
-    "tradition": "Catholic",
     "name": "Our Lady of Loreto",
-    "description": "Holy House commemoration."
+    "description": "Holy House commemoration.",
+    "type": "saint",
+    "tags": [
+      "LAT"
+    ],
+    "verification_status": "verified"
   },
   {
+    "id": "thomas-merton",
     "day": "December 10",
-    "tradition": "Anglican",
     "name": "Thomas Merton",
-    "description": "Spiritual writer."
+    "description": "Spiritual writer.",
+    "type": "saint",
+    "tags": [
+      "ANG"
+    ],
+    "verification_status": "verified"
   },
   {
+    "id": "martyrs-menas-hermogenes-and-eugraphus",
     "day": "December 10",
-    "tradition": "Eastern Orthodox",
     "name": "Martyrs Menas, Hermogenes, and Eugraphus",
-    "description": "Sufferers of Alexandria."
+    "description": "Sufferers of Alexandria.",
+    "type": "saint",
+    "tags": [
+      "EOR"
+    ],
+    "verification_status": "verified"
   },
   {
+    "id": "saint-severus-of-antioch",
     "day": "December 10",
-    "tradition": "Oriental Orthodox",
     "name": "Saint Severus of Antioch",
-    "description": "Translation of relics."
+    "description": "Translation of relics.",
+    "type": "saint",
+    "tags": [
+      "OOR"
+    ],
+    "verification_status": "verified"
   },
   {
+    "id": "mar-behnam-and-sarah",
     "day": "December 10",
-    "tradition": "Church of the East",
     "name": "Mar Behnam and Sarah",
-    "description": "Martyred royal siblings."
+    "description": "Martyred royal siblings.",
+    "type": "saint",
+    "tags": [
+      "COE"
+    ],
+    "verification_status": "verified"
   },
   {
+    "id": "saint-damasus-i",
     "day": "December 11",
-    "tradition": "Catholic",
     "name": "Saint Damasus I",
-    "description": "Pope."
+    "description": "Pope.",
+    "type": "saint",
+    "tags": [
+      "LAT"
+    ],
+    "verification_status": "verified"
   },
   {
+    "id": "damasus",
     "day": "December 11",
-    "tradition": "Anglican",
     "name": "Damasus",
-    "description": "Bishop of Rome."
+    "description": "Bishop of Rome.",
+    "type": "saint",
+    "tags": [
+      "ANG"
+    ],
+    "verification_status": "verified"
   },
   {
+    "id": "saint-daniel-the-stylite",
     "day": "December 11",
-    "tradition": "Eastern Orthodox",
     "name": "Saint Daniel the Stylite",
-    "description": "Pillar saint."
+    "description": "Pillar saint.",
+    "type": "saint",
+    "tags": [
+      "EOR"
+    ],
+    "verification_status": "verified"
   },
   {
+    "id": "saint-anba-hadra",
     "day": "December 11",
-    "tradition": "Oriental Orthodox",
     "name": "Saint Anba Hadra",
-    "description": "Bishop of Aswan."
+    "description": "Bishop of Aswan.",
+    "type": "saint",
+    "tags": [
+      "OOR"
+    ],
+    "verification_status": "verified"
   },
   {
+    "id": "mar-barsabba",
     "day": "December 11",
-    "tradition": "Church of the East",
     "name": "Mar Barsabba",
-    "description": "Abbot."
+    "description": "Abbot.",
+    "type": "saint",
+    "tags": [
+      "COE"
+    ],
+    "verification_status": "verified"
   },
   {
+    "id": "our-lady-of-guadalupe",
     "day": "December 12",
-    "tradition": "Catholic",
     "name": "Our Lady of Guadalupe",
-    "description": "Patroness of the Americas."
+    "description": "Patroness of the Americas.",
+    "type": "saint",
+    "tags": [
+      "LAT"
+    ],
+    "verification_status": "verified"
   },
   {
+    "id": "saint-finnian",
     "day": "December 12",
-    "tradition": "Anglican",
     "name": "Saint Finnian",
-    "description": "Teacher of Irish saints."
+    "description": "Teacher of Irish saints.",
+    "type": "saint",
+    "tags": [
+      "ANG"
+    ],
+    "verification_status": "verified"
   },
   {
+    "id": "saint-spyridon-the-wonderworker",
     "day": "December 12",
-    "tradition": "Eastern Orthodox",
     "name": "Saint Spyridon the Wonderworker",
-    "description": "Bishop of Trimythous."
+    "description": "Bishop of Trimythous.",
+    "type": "saint",
+    "tags": [
+      "EOR"
+    ],
+    "verification_status": "verified"
   },
   {
+    "id": "saint-spyridon",
     "day": "December 12",
-    "tradition": "Oriental Orthodox",
     "name": "Saint Spyridon",
-    "description": "Shared commemoration."
+    "description": "Shared commemoration.",
+    "type": "saint",
+    "tags": [
+      "OOR"
+    ],
+    "verification_status": "verified"
   },
   {
+    "id": "mar-kardagh",
     "day": "December 12",
-    "tradition": "Church of the East",
     "name": "Mar Kardagh",
-    "description": "Martyr."
+    "description": "Martyr.",
+    "type": "saint",
+    "tags": [
+      "COE"
+    ],
+    "verification_status": "verified"
   },
   {
+    "id": "saint-lucy",
     "day": "December 13",
-    "tradition": "Universal",
     "name": "Saint Lucy",
-    "description": "Virgin and Martyr; recognized across all traditions."
+    "description": "Virgin and Martyr; recognized across all traditions.",
+    "type": "saint",
+    "tags": [
+      "ANG",
+      "EOR",
+      "LAT",
+      "OOR"
+    ],
+    "verification_status": "verified"
   },
   {
+    "id": "samuel-johnson",
     "day": "December 13",
-    "tradition": "Anglican",
     "name": "Samuel Johnson",
-    "description": "Moralist."
+    "description": "Moralist.",
+    "type": "saint",
+    "tags": [
+      "ANG"
+    ],
+    "verification_status": "verified"
   },
   {
+    "id": "mar-addai-and-mar-mari",
     "day": "December 13",
-    "tradition": "Church of the East",
     "name": "Mar Addai and Mar Mari",
-    "description": "General commemoration."
+    "description": "General commemoration.",
+    "type": "saint",
+    "tags": [
+      "COE"
+    ],
+    "verification_status": "verified"
   },
   {
+    "id": "saint-john-of-the-cross",
     "day": "December 14",
-    "tradition": "Universal",
     "name": "Saint John of the Cross",
-    "description": "Mystic and Doctor; recognized across all traditions."
+    "description": "Mystic and Doctor; recognized across all traditions.",
+    "type": "saint",
+    "tags": [
+      "ANG",
+      "LAT"
+    ],
+    "verification_status": "verified"
   },
   {
+    "id": "saint-dioscorus-ii",
     "day": "December 14",
-    "tradition": "Oriental Orthodox",
     "name": "Saint Dioscorus II",
-    "description": "Patriarch."
+    "description": "Patriarch.",
+    "type": "saint",
+    "tags": [
+      "OOR"
+    ],
+    "verification_status": "verified"
   },
   {
+    "id": "mar-timothy-i",
     "day": "December 14",
-    "tradition": "Church of the East",
     "name": "Mar Timothy I",
-    "description": "Catholicos."
+    "description": "Catholicos.",
+    "type": "saint",
+    "tags": [
+      "COE"
+    ],
+    "verification_status": "verified"
   },
   {
+    "id": "saint-virginia-centurione-bracelli",
     "day": "December 15",
-    "tradition": "Catholic",
     "name": "Saint Virginia Centurione Bracelli",
-    "description": "Foundress."
+    "description": "Foundress.",
+    "type": "saint",
+    "tags": [
+      "LAT"
+    ],
+    "verification_status": "verified"
   },
   {
+    "id": "simon-gibbons",
     "day": "December 15",
-    "tradition": "Anglican",
     "name": "Simon Gibbons",
-    "description": "Priest."
+    "description": "Priest.",
+    "type": "saint",
+    "tags": [
+      "ANG"
+    ],
+    "verification_status": "verified"
   },
   {
+    "id": "hieromartyr-eleutherius-of-illyria",
     "day": "December 15",
-    "tradition": "Eastern Orthodox",
     "name": "Hieromartyr Eleutherius of Illyria",
-    "description": "Bishop."
+    "description": "Bishop.",
+    "type": "saint",
+    "tags": [
+      "EOR"
+    ],
+    "verification_status": "verified"
   },
   {
+    "id": "saint-gregentios",
     "day": "December 15",
-    "tradition": "Oriental Orthodox",
     "name": "Saint Gregentios",
-    "description": "Bishop."
+    "description": "Bishop.",
+    "type": "saint",
+    "tags": [
+      "OOR"
+    ],
+    "verification_status": "verified"
   },
   {
+    "id": "mar-abraham-the-great",
     "day": "December 15",
-    "tradition": "Church of the East",
     "name": "Mar Abraham the Great",
-    "description": "Monastic reformer."
+    "description": "Monastic reformer.",
+    "type": "saint",
+    "tags": [
+      "COE"
+    ],
+    "verification_status": "verified"
   },
   {
+    "id": "saint-adelaide",
     "day": "December 16",
-    "tradition": "Catholic",
     "name": "Saint Adelaide",
-    "description": "Empress."
+    "description": "Empress.",
+    "type": "saint",
+    "tags": [
+      "LAT"
+    ],
+    "verification_status": "verified"
   },
   {
+    "id": "saint-bean",
     "day": "December 16",
-    "tradition": "Anglican",
     "name": "Saint Bean",
-    "description": "Bishop."
+    "description": "Bishop.",
+    "type": "saint",
+    "tags": [
+      "ANG"
+    ],
+    "verification_status": "verified"
   },
   {
+    "id": "prophet-haggai",
     "day": "December 16",
-    "tradition": "Eastern Orthodox",
     "name": "Prophet Haggai",
-    "description": "Minor Prophet."
+    "description": "Minor Prophet.",
+    "type": "saint",
+    "tags": [
+      "EOR"
+    ],
+    "verification_status": "verified"
   },
   {
+    "id": "saint-gideon",
     "day": "December 16",
-    "tradition": "Oriental Orthodox",
     "name": "Saint Gideon",
-    "description": "Judge."
+    "description": "Judge.",
+    "type": "saint",
+    "tags": [
+      "OOR"
+    ],
+    "verification_status": "verified"
   },
   {
+    "id": "mar-narsai",
     "day": "December 16",
-    "tradition": "Church of the East",
     "name": "Mar Narsai",
-    "description": "Theologian."
+    "description": "Theologian.",
+    "type": "saint",
+    "tags": [
+      "COE"
+    ],
+    "verification_status": "verified"
   },
   {
+    "id": "prophet-daniel-and-the-three-holy-youths",
     "day": "December 17",
-    "tradition": "Universal",
     "name": "Prophet Daniel and the Three Holy Youths",
-    "description": "Ananias, Azarias, and Misael; celebrated across traditions."
+    "description": "Ananias, Azarias, and Misael; celebrated across traditions.",
+    "type": "prophet",
+    "tags": [
+      "ANG",
+      "COE",
+      "EOR",
+      "LAT",
+      "OOR"
+    ],
+    "verification_status": "verified"
   },
   {
+    "id": "saint-lazarus-of-bethany",
     "day": "December 17",
-    "tradition": "Catholic",
     "name": "Saint Lazarus of Bethany",
-    "description": "Friend of Jesus."
+    "description": "Friend of Jesus.",
+    "type": "saint",
+    "tags": [
+      "LAT"
+    ],
+    "verification_status": "verified"
   },
   {
+    "id": "eglantyne-jebb",
     "day": "December 17",
-    "tradition": "Anglican",
     "name": "Eglantyne Jebb",
-    "description": "Reformer."
+    "description": "Reformer.",
+    "type": "saint",
+    "tags": [
+      "ANG"
+    ],
+    "verification_status": "verified"
   },
   {
+    "id": "prophet-daniel-and-the-three-holy-youths",
     "day": "December 17",
-    "tradition": "Eastern Orthodox",
     "name": "Prophet Daniel and the Three Holy Youths",
-    "description": "Old Testament saints."
+    "description": "Old Testament saints.",
+    "type": "saint",
+    "tags": [
+      "EOR"
+    ],
+    "verification_status": "verified"
   },
   {
+    "id": "prophet-daniel",
     "day": "December 17",
-    "tradition": "Oriental Orthodox",
     "name": "Prophet Daniel",
-    "description": "Prophet."
+    "description": "Prophet.",
+    "type": "saint",
+    "tags": [
+      "OOR"
+    ],
+    "verification_status": "verified"
   },
   {
+    "id": "mar-elias",
     "day": "December 17",
-    "tradition": "Church of the East",
     "name": "Mar Elias",
-    "description": "Monk."
+    "description": "Monk.",
+    "type": "saint",
+    "tags": [
+      "COE"
+    ],
+    "verification_status": "verified"
   },
   {
+    "id": "expectation-of-the-blessed-virgin-mary",
     "day": "December 18",
-    "tradition": "Catholic",
     "name": "Expectation of the Blessed Virgin Mary",
-    "description": "Marian feast."
+    "description": "Marian feast.",
+    "type": "saint",
+    "tags": [
+      "LAT"
+    ],
+    "verification_status": "verified"
   },
   {
+    "id": "o-adonai",
     "day": "December 18",
-    "tradition": "Anglican",
     "name": "O Adonai",
-    "description": "Liturgical antiphon."
+    "description": "Liturgical antiphon.",
+    "type": "saint",
+    "tags": [
+      "ANG"
+    ],
+    "verification_status": "verified"
   },
   {
+    "id": "saint-sebastian",
     "day": "December 18",
-    "tradition": "Eastern Orthodox",
     "name": "Saint Sebastian",
-    "description": "Martyr."
+    "description": "Martyr.",
+    "type": "saint",
+    "tags": [
+      "EOR"
+    ],
+    "verification_status": "verified"
   },
   {
+    "id": "saint-titus",
     "day": "December 18",
-    "tradition": "Oriental Orthodox",
     "name": "Saint Titus",
-    "description": "Apostle."
+    "description": "Apostle.",
+    "type": "saint",
+    "tags": [
+      "OOR"
+    ],
+    "verification_status": "verified"
   },
   {
+    "id": "mar-yakob-of-nisibis",
     "day": "December 18",
-    "tradition": "Church of the East",
     "name": "Mar Yakob of Nisibis",
-    "description": "Spiritual father."
+    "description": "Spiritual father.",
+    "type": "saint",
+    "tags": [
+      "COE"
+    ],
+    "verification_status": "verified"
   },
   {
+    "id": "saint-anastasius-i",
     "day": "December 19",
-    "tradition": "Catholic",
     "name": "Saint Anastasius I",
-    "description": "Pope."
+    "description": "Pope.",
+    "type": "saint",
+    "tags": [
+      "LAT"
+    ],
+    "verification_status": "verified"
   },
   {
+    "id": "lillian-trasher",
     "day": "December 19",
-    "tradition": "Anglican",
     "name": "Lillian Trasher",
-    "description": "Missionary."
+    "description": "Missionary.",
+    "type": "saint",
+    "tags": [
+      "ANG"
+    ],
+    "verification_status": "verified"
   },
   {
+    "id": "martyr-boniface",
     "day": "December 19",
-    "tradition": "Eastern Orthodox",
     "name": "Martyr Boniface",
-    "description": "Martyr."
+    "description": "Martyr.",
+    "type": "saint",
+    "tags": [
+      "EOR"
+    ],
+    "verification_status": "verified"
   },
   {
+    "id": "saint-john-of-the-golden-gospel",
     "day": "December 19",
-    "tradition": "Oriental Orthodox",
     "name": "Saint John of the Golden Gospel",
-    "description": "Ascetic."
+    "description": "Ascetic.",
+    "type": "saint",
+    "tags": [
+      "OOR"
+    ],
+    "verification_status": "verified"
   },
   {
+    "id": "mar-michael",
     "day": "December 19",
-    "tradition": "Church of the East",
     "name": "Mar Michael",
-    "description": "Abbot."
+    "description": "Abbot.",
+    "type": "saint",
+    "tags": [
+      "COE"
+    ],
+    "verification_status": "verified"
   },
   {
+    "id": "saint-ignatius-of-antioch",
     "day": "December 20",
-    "tradition": "Universal",
     "name": "Saint Ignatius of Antioch",
-    "description": "Hieromartyr and Apostolic Father (Eastern primary date)."
+    "description": "Hieromartyr and Apostolic Father (Eastern primary date).",
+    "type": "saint",
+    "tags": [
+      "ANG",
+      "COE",
+      "EOR",
+      "LAT",
+      "OOR"
+    ],
+    "verification_status": "verified"
   },
   {
+    "id": "saint-dominic-of-silos",
     "day": "December 20",
-    "tradition": "Catholic",
     "name": "Saint Dominic of Silos",
-    "description": "Abbot."
+    "description": "Abbot.",
+    "type": "saint",
+    "tags": [
+      "LAT"
+    ],
+    "verification_status": "verified"
   },
   {
+    "id": "thomas-traherne",
     "day": "December 20",
-    "tradition": "Anglican",
     "name": "Thomas Traherne",
-    "description": "Poet."
+    "description": "Poet.",
+    "type": "saint",
+    "tags": [
+      "ANG"
+    ],
+    "verification_status": "verified"
   },
   {
+    "id": "mar-papa-bar-aggai-see-foundation",
     "day": "December 20",
-    "tradition": "Church of the East",
     "name": "Mar Papa bar Aggai (See Foundation)",
-    "description": "Primary commemoration of the See."
+    "description": "Primary commemoration of the See.",
+    "type": "saint",
+    "tags": [
+      "COE"
+    ],
+    "verification_status": "verified"
   },
   {
+    "id": "saint-thomas-the-apostle-and-saint-juliana",
     "day": "December 21",
-    "tradition": "Universal",
     "name": "Saint Thomas the Apostle and Saint Juliana",
-    "description": "Apostle and Martyr; shared across all traditions."
+    "description": "Apostle and Martyr; shared across all traditions.",
+    "type": "apostle",
+    "tags": [
+      "ANG",
+      "COE",
+      "EOR",
+      "LAT",
+      "OOR"
+    ],
+    "verification_status": "verified",
+    "notes": "Thomas is apostle; Juliana is a separate EOR saint — consider splitting"
   },
   {
+    "id": "saint-peter-canisius",
     "day": "December 21",
-    "tradition": "Catholic",
     "name": "Saint Peter Canisius",
-    "description": "Doctor."
+    "description": "Doctor.",
+    "type": "saint",
+    "tags": [
+      "LAT"
+    ],
+    "verification_status": "verified"
   },
   {
+    "id": "saint-anastasia",
     "day": "December 22",
-    "tradition": "Universal",
     "name": "Saint Anastasia",
-    "description": "Great Martyr; celebrated across traditions."
+    "description": "Great Martyr; celebrated across traditions.",
+    "type": "saint",
+    "tags": [
+      "EOR",
+      "LAT",
+      "OOR"
+    ],
+    "verification_status": "verified",
+    "notes": "In Roman Martyrology; Eastern calendars; not BCP"
   },
   {
+    "id": "saint-frances-xavier-cabrini",
     "day": "December 22",
-    "tradition": "Catholic",
     "name": "Saint Frances Xavier Cabrini",
-    "description": "Missionary."
+    "description": "Missionary.",
+    "type": "saint",
+    "tags": [
+      "LAT"
+    ],
+    "verification_status": "verified"
   },
   {
+    "id": "henry-budd",
     "day": "December 22",
-    "tradition": "Anglican",
     "name": "Henry Budd",
-    "description": "Priest."
+    "description": "Priest.",
+    "type": "saint",
+    "tags": [
+      "ANG"
+    ],
+    "verification_status": "verified"
   },
   {
+    "id": "mar-awgin-departure",
     "day": "December 22",
-    "tradition": "Church of the East",
     "name": "Mar Awgin (Departure)",
-    "description": "Great Saint of the East."
+    "description": "Great Saint of the East.",
+    "type": "saint",
+    "tags": [
+      "COE"
+    ],
+    "verification_status": "verified"
   },
   {
+    "id": "saint-john-of-kanty",
     "day": "December 23",
-    "tradition": "Catholic, Anglican",
     "name": "Saint John of Kanty",
-    "description": "Priest."
+    "description": "Priest.",
+    "type": "saint",
+    "tags": [
+      "ANG",
+      "LAT"
+    ],
+    "verification_status": "verified"
   },
   {
+    "id": "ten-martyrs-of-crete",
     "day": "December 23",
-    "tradition": "Eastern Orthodox",
     "name": "Ten Martyrs of Crete",
-    "description": "Martyrs."
+    "description": "Martyrs.",
+    "type": "saint",
+    "tags": [
+      "EOR"
+    ],
+    "verification_status": "verified"
   },
   {
+    "id": "saint-barnabas",
     "day": "December 23",
-    "tradition": "Oriental Orthodox",
     "name": "Saint Barnabas",
-    "description": "Apostle."
+    "description": "Apostle.",
+    "type": "saint",
+    "tags": [
+      "OOR"
+    ],
+    "verification_status": "verified"
   },
   {
+    "id": "mar-yohannan-vigil",
     "day": "December 23",
-    "tradition": "Church of the East",
     "name": "Mar Yohannan (Vigil)",
-    "description": "Baptist."
+    "description": "Baptist.",
+    "type": "saint",
+    "tags": [
+      "COE"
+    ],
+    "verification_status": "verified"
   },
   {
+    "id": "eve-of-the-nativity-and-holy-ancestors",
     "day": "December 24",
-    "tradition": "Universal",
     "name": "Eve of the Nativity and Holy Ancestors",
-    "description": "Christmas Eve; commemoration of Adam, Eve, and the righteous."
+    "description": "Christmas Eve; commemoration of Adam, Eve, and the righteous.",
+    "type": "commemoration",
+    "tags": [
+      "ANG",
+      "COE",
+      "EOR",
+      "LAT",
+      "OOR"
+    ],
+    "verification_status": "verified"
   },
   {
+    "id": "the-nativity-of-our-lord",
     "day": "December 25",
-    "tradition": "Universal",
     "name": "The Nativity of Our Lord",
-    "description": "Christmas; celebrated across all traditions."
+    "description": "Christmas; celebrated across all traditions.",
+    "type": "feast",
+    "tags": [
+      "ANG",
+      "COE",
+      "EOR",
+      "LAT",
+      "OOR"
+    ],
+    "verification_status": "verified"
   },
   {
+    "id": "saint-stephen-protomartyr",
     "day": "December 26",
-    "tradition": "Universal",
     "name": "Saint Stephen, Protomartyr",
-    "description": "The First Martyr and Deacon; celebrated across all traditions."
+    "description": "The First Martyr and Deacon; celebrated across all traditions.",
+    "type": "apostle",
+    "tags": [
+      "ANG",
+      "COE",
+      "EOR",
+      "LAT",
+      "OOR"
+    ],
+    "verification_status": "verified"
   },
   {
+    "id": "synaxis-of-the-theotokos",
     "day": "December 26",
-    "tradition": "Universal",
     "name": "Synaxis of the Theotokos",
-    "description": "Feast of the Mother of God; recognized in Eastern and Western contexts."
+    "description": "Feast of the Mother of God; recognized in Eastern and Western contexts.",
+    "type": "marian_feast",
+    "tags": [
+      "ANG",
+      "COE",
+      "EOR",
+      "LAT",
+      "OOR"
+    ],
+    "verification_status": "verified"
   },
   {
+    "id": "mar-archelaus",
     "day": "December 26",
-    "tradition": "Church of the East",
     "name": "Mar Archelaus",
-    "description": "Martyr."
+    "description": "Martyr.",
+    "type": "saint",
+    "tags": [
+      "COE"
+    ],
+    "verification_status": "verified"
   },
   {
+    "id": "saint-john-the-apostle",
     "day": "December 27",
-    "tradition": "Universal",
     "name": "Saint John the Apostle",
-    "description": "Apostle and Evangelist; celebrated across all traditions."
+    "description": "Apostle and Evangelist; celebrated across all traditions.",
+    "type": "apostle",
+    "tags": [
+      "ANG",
+      "COE",
+      "EOR",
+      "LAT",
+      "OOR"
+    ],
+    "verification_status": "verified"
   },
   {
+    "id": "saint-fabiola",
     "day": "December 27",
-    "tradition": "Catholic",
     "name": "Saint Fabiola",
-    "description": "Benefactress."
+    "description": "Benefactress.",
+    "type": "saint",
+    "tags": [
+      "LAT"
+    ],
+    "verification_status": "verified"
   },
   {
+    "id": "saint-theodore-the-grapt",
     "day": "December 27",
-    "tradition": "Eastern Orthodox",
     "name": "Saint Theodore the Grapt",
-    "description": "Confessor."
+    "description": "Confessor.",
+    "type": "saint",
+    "tags": [
+      "EOR"
+    ],
+    "verification_status": "verified"
   },
   {
+    "id": "the-holy-innocents",
     "day": "December 28",
-    "tradition": "Universal",
     "name": "The Holy Innocents",
-    "description": "The infants of Bethlehem; celebrated across all traditions."
+    "description": "The infants of Bethlehem; celebrated across all traditions.",
+    "type": "commemoration",
+    "tags": [
+      "ANG",
+      "COE",
+      "EOR",
+      "LAT",
+      "OOR"
+    ],
+    "verification_status": "verified"
   },
   {
+    "id": "saint-gaspar-del-bufalo",
     "day": "December 28",
-    "tradition": "Catholic",
     "name": "Saint Gaspar del Bufalo",
-    "description": "Founder."
+    "description": "Founder.",
+    "type": "saint",
+    "tags": [
+      "LAT"
+    ],
+    "verification_status": "verified"
   },
   {
+    "id": "saint-simon-the-myrrhgusher",
     "day": "December 28",
-    "tradition": "Eastern Orthodox",
     "name": "Saint Simon the Myrrhgusher",
-    "description": "Founder."
+    "description": "Founder.",
+    "type": "saint",
+    "tags": [
+      "EOR"
+    ],
+    "verification_status": "verified"
   },
   {
+    "id": "mar-simon-the-stylite",
     "day": "December 28",
-    "tradition": "Church of the East",
     "name": "Mar Simon the Stylite",
-    "description": "Pillar saint."
+    "description": "Pillar saint.",
+    "type": "saint",
+    "tags": [
+      "COE"
+    ],
+    "verification_status": "verified"
   },
   {
+    "id": "saint-thomas-becket",
     "day": "December 29",
-    "tradition": "Catholic, Anglican, Church of the East",
     "name": "Saint Thomas Becket",
-    "description": "Archbishop and Martyr."
+    "description": "Archbishop and Martyr.",
+    "type": "saint",
+    "tags": [
+      "ANG",
+      "COE",
+      "LAT"
+    ],
+    "verification_status": "verified"
   },
   {
+    "id": "the-14-000-holy-infants",
     "day": "December 29",
-    "tradition": "Eastern Orthodox",
     "name": "The 14,000 Holy Infants",
-    "description": "Eastern commemoration of Innocents."
+    "description": "Eastern commemoration of Innocents.",
+    "type": "saint",
+    "tags": [
+      "EOR"
+    ],
+    "verification_status": "verified"
   },
   {
+    "id": "saint-barnabas-syriac",
     "day": "December 29",
-    "tradition": "Oriental Orthodox",
     "name": "Saint Barnabas (Syriac)",
-    "description": "Apostle."
+    "description": "Apostle.",
+    "type": "saint",
+    "tags": [
+      "OOR"
+    ],
+    "verification_status": "verified"
   },
   {
+    "id": "saint-egwin",
     "day": "December 30",
-    "tradition": "Catholic",
     "name": "Saint Egwin",
-    "description": "Bishop."
+    "description": "Bishop.",
+    "type": "saint",
+    "tags": [
+      "LAT"
+    ],
+    "verification_status": "verified"
   },
   {
+    "id": "josephine-butler",
     "day": "December 30",
-    "tradition": "Anglican",
     "name": "Josephine Butler",
-    "description": "Reformer."
+    "description": "Reformer.",
+    "type": "saint",
+    "tags": [
+      "ANG"
+    ],
+    "verification_status": "verified"
   },
   {
+    "id": "martyr-anysia",
     "day": "December 30",
-    "tradition": "Eastern Orthodox",
     "name": "Martyr Anysia",
-    "description": "Virgin martyr."
+    "description": "Virgin martyr.",
+    "type": "saint",
+    "tags": [
+      "EOR"
+    ],
+    "verification_status": "verified"
   },
   {
+    "id": "saint-john-the-evangelist-translation",
     "day": "December 30",
-    "tradition": "Oriental Orthodox",
     "name": "Saint John the Evangelist (Translation)",
-    "description": "Coptic feast."
+    "description": "Coptic feast.",
+    "type": "saint",
+    "tags": [
+      "OOR"
+    ],
+    "verification_status": "verified"
   },
   {
+    "id": "mar-shmon-the-second",
     "day": "December 30",
-    "tradition": "Church of the East",
     "name": "Mar Shmon the Second",
-    "description": "Patriarch."
+    "description": "Patriarch.",
+    "type": "saint",
+    "tags": [
+      "COE"
+    ],
+    "verification_status": "verified"
   },
   {
+    "id": "saint-sylvester-i",
     "day": "December 31",
-    "tradition": "Universal",
     "name": "Saint Sylvester I",
-    "description": "Pope; celebrated across traditions."
+    "description": "Pope; celebrated across traditions.",
+    "type": "saint",
+    "tags": [
+      "ANG",
+      "EOR",
+      "LAT",
+      "OOR"
+    ],
+    "verification_status": "verified"
   },
   {
+    "id": "samuel-ajayi-crowther",
     "day": "December 31",
-    "tradition": "Anglican",
     "name": "Samuel Ajayi Crowther",
-    "description": "Bishop in Nigeria, Translator, 1891."
+    "description": "Bishop in Nigeria, Translator, 1891.",
+    "type": "saint",
+    "tags": [
+      "ANG"
+    ],
+    "verification_status": "verified"
   },
   {
+    "id": "saint-melania-the-younger",
     "day": "December 31",
-    "tradition": "Eastern Orthodox",
     "name": "Saint Melania the Younger",
-    "description": "Ascetic."
+    "description": "Ascetic.",
+    "type": "saint",
+    "tags": [
+      "EOR"
+    ],
+    "verification_status": "verified"
   },
   {
+    "id": "saint-gregory-of-nyssa",
     "day": "December 31",
-    "tradition": "Oriental Orthodox",
     "name": "Saint Gregory of Nyssa",
-    "description": "Father of the Church."
+    "description": "Father of the Church.",
+    "type": "saint",
+    "tags": [
+      "OOR"
+    ],
+    "verification_status": "verified"
   },
   {
+    "id": "saint-ephrem-the-syrian",
     "day": "December 31",
-    "tradition": "Church of the East",
     "name": "Saint Ephrem the Syrian",
-    "description": "Commemoration."
+    "description": "Commemoration.",
+    "type": "saint",
+    "tags": [
+      "COE"
+    ],
+    "verification_status": "verified"
   }
 ]

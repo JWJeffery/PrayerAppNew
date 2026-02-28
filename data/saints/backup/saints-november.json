@@ -1,0 +1,848 @@
+[
+  {
+    "day": "November 1",
+    "tradition": "Universal",
+    "name": "All Saints",
+    "description": "Commemoration of all the saints, known and unknown."
+  },
+  {
+    "day": "November 1",
+    "tradition": "Catholic",
+    "name": "All Saints' Day",
+    "description": "Solemnity honoring all saints."
+  },
+  {
+    "day": "November 1",
+    "tradition": "Eastern Orthodox",
+    "name": "Saints Cosmas and Damian",
+    "description": "Unmercenary healers."
+  },
+  {
+    "day": "November 1",
+    "tradition": "Oriental Orthodox",
+    "name": "Saints Cosmas and Damian",
+    "description": "Unmercenary healers."
+  },
+  {
+    "day": "November 1",
+    "tradition": "Anglican",
+    "name": "All Saints' Day",
+    "description": "Commemoration of all saints."
+  },
+  {
+    "day": "November 1",
+    "tradition": "Church of the East",
+    "name": "Saints Cosmas and Damian",
+    "description": "Unmercenary healers."
+  },
+  {
+    "day": "November 2",
+    "tradition": "Universal",
+    "name": "All Souls / Commemoration of the Dead",
+    "description": "Commemoration of all the faithful departed."
+  },
+  {
+    "day": "November 2",
+    "tradition": "Catholic",
+    "name": "All Souls' Day",
+    "description": "Day to pray for the dead."
+  },
+  {
+    "day": "November 2",
+    "tradition": "Eastern Orthodox",
+    "name": "Martyrs Acindynus, Pegasius, Aphthonius, Elpidephorus, Anempodistus",
+    "description": "Martyrs of Persia."
+  },
+  {
+    "day": "November 2",
+    "tradition": "Oriental Orthodox",
+    "name": "Saint Peter the Worshipper",
+    "description": "Martyr."
+  },
+  {
+    "day": "November 2",
+    "tradition": "Anglican",
+    "name": "Commemoration of the Faithful Departed",
+    "description": "All Souls' Day."
+  },
+  {
+    "day": "November 2",
+    "tradition": "Church of the East",
+    "name": "Friday of the Dead",
+    "description": "Commemoration of the faithful departed."
+  },
+  {
+    "day": "November 3",
+    "tradition": "Catholic",
+    "name": "Saint Martin de Porres",
+    "description": "Dominican lay brother; patron of social justice."
+  },
+  {
+    "day": "November 3",
+    "tradition": "Anglican",
+    "name": "Richard Hooker",
+    "description": "Priest and Teacher of the Faith."
+  },
+  {
+    "day": "November 3",
+    "tradition": "Eastern Orthodox",
+    "name": "Saints Acepsimas, Joseph, and Aithalas",
+    "description": "Martyrs of Persia under Sapor II."
+  },
+  {
+    "day": "November 3",
+    "tradition": "Oriental Orthodox",
+    "name": "Saint Cyriacus and Saint Athanasius",
+    "description": "Coptic martyrs of the early church."
+  },
+  {
+    "day": "November 3",
+    "tradition": "Church of the East",
+    "name": "Mar Zaia",
+    "description": "The 'Traveler' and wonderworker of the East Syriac tradition."
+  },
+  {
+    "day": "November 4",
+    "tradition": "Catholic",
+    "name": "Saint Charles Borromeo",
+    "description": "Bishop and reformer."
+  },
+  {
+    "day": "November 4",
+    "tradition": "Anglican",
+    "name": "Saints of the Old Testament",
+    "description": "Commemoration of the righteous of the Old Covenant."
+  },
+  {
+    "day": "November 4",
+    "tradition": "Eastern Orthodox",
+    "name": "Saint Joannicius the Great",
+    "description": "Ascetic and defender of icons."
+  },
+  {
+    "day": "November 4",
+    "tradition": "Oriental Orthodox",
+    "name": "Saint John and Saint James",
+    "description": "Syriac martyrs."
+  },
+  {
+    "day": "November 4",
+    "tradition": "Church of the East",
+    "name": "Mar Adar",
+    "description": "Abbot and miracle worker."
+  },
+  {
+    "day": "November 5",
+    "tradition": "Universal",
+    "name": "Saint Elizabeth",
+    "description": "Mother of John the Baptist; honored across the traditions."
+  },
+  {
+    "day": "November 5",
+    "tradition": "Catholic",
+    "name": "Saint Elizabeth",
+    "description": "Mother of John the Baptist."
+  },
+  {
+    "day": "November 5",
+    "tradition": "Anglican",
+    "name": "Elizabeth and Zechariah",
+    "description": "Parents of John the Baptist."
+  },
+  {
+    "day": "November 5",
+    "tradition": "Eastern Orthodox",
+    "name": "Martyrs Galaction and Epistemis",
+    "description": "Martyrs."
+  },
+  {
+    "day": "November 5",
+    "tradition": "Oriental Orthodox",
+    "name": "Saint Galaction",
+    "description": "Martyr."
+  },
+  {
+    "day": "November 5",
+    "tradition": "Church of the East",
+    "name": "Saint Jonah of Novgorod",
+    "description": "Bishop."
+  },
+  {
+    "day": "November 6",
+    "tradition": "Catholic",
+    "name": "Saint Leonard of Noblac",
+    "description": "Patron of prisoners."
+  },
+  {
+    "day": "November 6",
+    "tradition": "Anglican",
+    "name": "William Temple",
+    "description": "Archbishop of Canterbury."
+  },
+  {
+    "day": "November 6",
+    "tradition": "Eastern Orthodox",
+    "name": "Saint Paul the Confessor",
+    "description": "Patriarch of Constantinople."
+  },
+  {
+    "day": "November 6",
+    "tradition": "Oriental Orthodox",
+    "name": "Saint Felix and Saint Eusebius",
+    "description": "Martyrs in the Coptic tradition."
+  },
+  {
+    "day": "November 6",
+    "tradition": "Church of the East",
+    "name": "Mar Ishaia",
+    "description": "Monk and ascetic."
+  },
+  {
+    "day": "November 7",
+    "tradition": "Catholic",
+    "name": "Saint Willibrord",
+    "description": "Apostle of the Frisians."
+  },
+  {
+    "day": "November 7",
+    "tradition": "Anglican",
+    "name": "Willibrord of York",
+    "description": "Bishop and missionary."
+  },
+  {
+    "day": "November 7",
+    "tradition": "Eastern Orthodox",
+    "name": "The 33 Martyrs of Melitene",
+    "description": "Soldiers martyred under Diocletian."
+  },
+  {
+    "day": "November 7",
+    "tradition": "Oriental Orthodox",
+    "name": "Saint George of Alexandria",
+    "description": "Coptic martyr."
+  },
+  {
+    "day": "November 7",
+    "tradition": "Church of the East",
+    "name": "Mar George the Martyr",
+    "description": "Persian commemoration of the Great Martyr."
+  },
+  {
+    "day": "November 8",
+    "tradition": "Universal",
+    "name": "Synaxis of the Archangel Michael and All Angels",
+    "description": "Major feast for the Heavenly Hosts across all traditions."
+  },
+  {
+    "day": "November 8",
+    "tradition": "Catholic",
+    "name": "Blessed John Duns Scotus",
+    "description": "Franciscan theologian."
+  },
+  {
+    "day": "November 8",
+    "tradition": "Anglican",
+    "name": "Saints and Martyrs of the Anglican Communion",
+    "description": "Commemoration."
+  },
+  {
+    "day": "November 8",
+    "tradition": "Eastern Orthodox",
+    "name": "Archangels Michael and Gabriel",
+    "description": "Synaxis of the archangels."
+  },
+  {
+    "day": "November 8",
+    "tradition": "Oriental Orthodox",
+    "name": "Holy Archangels Gabriel and Michael",
+    "description": "Feast."
+  },
+  {
+    "day": "November 9",
+    "tradition": "Catholic",
+    "name": "Dedication of the Lateran Basilica",
+    "description": "Feast of the Cathedral of Rome."
+  },
+  {
+    "day": "November 9",
+    "tradition": "Anglican",
+    "name": "Margery Kempe",
+    "description": "Mystic and author."
+  },
+  {
+    "day": "November 9",
+    "tradition": "Eastern Orthodox",
+    "name": "Saint Nectarios of Aegina",
+    "description": "Wonderworker."
+  },
+  {
+    "day": "November 9",
+    "tradition": "Oriental Orthodox",
+    "name": "Saint Isaac of Antioch",
+    "description": "Syriac teacher and poet."
+  },
+  {
+    "day": "November 9",
+    "tradition": "Church of the East",
+    "name": "Mar Awgin and his Disciples",
+    "description": "Brought monasticism to Mesopotamia."
+  },
+  {
+    "day": "November 10",
+    "tradition": "Universal",
+    "name": "Saint Leo the Great",
+    "description": "Pope and Doctor."
+  },
+  {
+    "day": "November 11",
+    "tradition": "Universal",
+    "name": "Saint Martin of Tours",
+    "description": "Bishop and soldier."
+  },
+  {
+    "day": "November 11",
+    "tradition": "Church of the East",
+    "name": "Mar Menas",
+    "description": "The Great Martyr and soldier."
+  },
+  {
+    "day": "November 12",
+    "tradition": "Universal",
+    "name": "Saint Josaphat",
+    "description": "Bishop and Martyr."
+  },
+  {
+    "day": "November 13",
+    "tradition": "Universal",
+    "name": "Saint John Chrysostom",
+    "description": "Doctor and Patriarch; 'The Golden-Mouthed'."
+  },
+  {
+    "day": "November 14",
+    "tradition": "Universal",
+    "name": "Saint Philip the Apostle",
+    "description": "Apostle."
+  },
+  {
+    "day": "November 14",
+    "tradition": "Eastern Orthodox",
+    "name": "Saint Gregory Palamas",
+    "description": "Archbishop of Thessalonica."
+  },
+  {
+    "day": "November 15",
+    "tradition": "Catholic",
+    "name": "Saint Albert the Great",
+    "description": "Bishop and Doctor."
+  },
+  {
+    "day": "November 15",
+    "tradition": "Anglican",
+    "name": "Saint Machutus",
+    "description": "Bishop and hermit, died 565."
+  },
+  {
+    "day": "November 15",
+    "tradition": "Eastern Orthodox",
+    "name": "Herman of Alaska",
+    "description": "Missionary."
+  },
+  {
+    "day": "November 15",
+    "tradition": "Oriental Orthodox",
+    "name": "Saint Mar Menas (Relics)",
+    "description": "Discovery of his relics (Coptic)."
+  },
+  {
+    "day": "November 15",
+    "tradition": "Church of the East",
+    "name": "Mar Pethion",
+    "description": "Persian martyr."
+  },
+  {
+    "day": "November 16",
+    "tradition": "Universal",
+    "name": "Saint Matthew the Apostle",
+    "description": "Apostle and Evangelist."
+  },
+  {
+    "day": "November 16",
+    "tradition": "Catholic",
+    "name": "Saint Margaret of Scotland",
+    "description": "Queen and patroness."
+  },
+  {
+    "day": "November 16",
+    "tradition": "Anglican",
+    "name": "Saint Margaret of Scotland",
+    "description": "Commemoration of the Queen."
+  },
+  {
+    "day": "November 16",
+    "tradition": "Eastern Orthodox",
+    "name": "Saint Matthew (Synaxis)",
+    "description": "Secondary feast."
+  },
+  {
+    "day": "November 16",
+    "tradition": "Oriental Orthodox",
+    "name": "Saint Gertrude (Shared)",
+    "description": "Commemoration of the mystic."
+  },
+  {
+    "day": "November 16",
+    "tradition": "Church of the East",
+    "name": "Mar Balai",
+    "description": "East Syriac hymnographer."
+  },
+  {
+    "day": "November 17",
+    "tradition": "Universal",
+    "name": "Saint Elizabeth of Hungary",
+    "description": "Princess and helper of the poor."
+  },
+  {
+    "day": "November 17",
+    "tradition": "Anglican",
+    "name": "Saint Hilda of Whitby",
+    "description": "Abbess and teacher."
+  },
+  {
+    "day": "November 17",
+    "tradition": "Eastern Orthodox",
+    "name": "Saint Gregory of Neocaesarea",
+    "description": "The Wonderworker."
+  },
+  {
+    "day": "November 17",
+    "tradition": "Oriental Orthodox",
+    "name": "Saint Gertrude the Great",
+    "description": "Commemoration."
+  },
+  {
+    "day": "November 17",
+    "tradition": "Church of the East",
+    "name": "Mar Gregory the Wonderworker",
+    "description": "East Syriac feast."
+  },
+  {
+    "day": "November 18",
+    "tradition": "Catholic",
+    "name": "Dedication of Peter and Paul Basilicas",
+    "description": "Roman basilicas."
+  },
+  {
+    "day": "November 18",
+    "tradition": "Anglican",
+    "name": "Elizabeth of Hungary (Transferred)",
+    "description": "Commemoration."
+  },
+  {
+    "day": "November 18",
+    "tradition": "Eastern Orthodox",
+    "name": "Saints Plato and Romanus",
+    "description": "Great martyrs."
+  },
+  {
+    "day": "November 18",
+    "tradition": "Oriental Orthodox",
+    "name": "Saint Philip the Apostle (Coptic)",
+    "description": "Martyrdom."
+  },
+  {
+    "day": "November 18",
+    "tradition": "Church of the East",
+    "name": "Mar Yakob of Nisibis",
+    "description": "Spiritual father."
+  },
+  {
+    "day": "November 19",
+    "tradition": "Catholic",
+    "name": "Saint Agnes of Assisi",
+    "description": "Abbess."
+  },
+  {
+    "day": "November 19",
+    "tradition": "Anglican",
+    "name": "Mechtild of Magdeburg",
+    "description": "Mystic."
+  },
+  {
+    "day": "November 19",
+    "tradition": "Eastern Orthodox",
+    "name": "Saint Philaret of Moscow",
+    "description": "Metropolitan."
+  },
+  {
+    "day": "November 19",
+    "tradition": "Oriental Orthodox",
+    "name": "Saints Dedyaqus and Theodore",
+    "description": "Coptic martyrs."
+  },
+  {
+    "day": "November 19",
+    "tradition": "Church of the East",
+    "name": "Mar Abda",
+    "description": "Persian martyr."
+  },
+  {
+    "day": "November 20",
+    "tradition": "Catholic",
+    "name": "Saint Edmund the Martyr",
+    "description": "King."
+  },
+  {
+    "day": "November 20",
+    "tradition": "Anglican",
+    "name": "Priscilla Lydia Sellon",
+    "description": "Restorer of religious life."
+  },
+  {
+    "day": "November 20",
+    "tradition": "Eastern Orthodox",
+    "name": "Saint Gregory of Decapolis",
+    "description": "Ascetic."
+  },
+  {
+    "day": "November 20",
+    "tradition": "Oriental Orthodox",
+    "name": "Saint Anianus",
+    "description": "Patriarch."
+  },
+  {
+    "day": "November 20",
+    "tradition": "Church of the East",
+    "name": "Mar Papa bar Aggai (See Foundation)",
+    "description": "Primary commemoration of the See."
+  },
+  {
+    "day": "November 21",
+    "tradition": "Universal",
+    "name": "Presentation of the Blessed Virgin Mary",
+    "description": "Entrance of the Theotokos into the Temple."
+  },
+  {
+    "day": "November 21",
+    "tradition": "Catholic",
+    "name": "Presentation of the Blessed Virgin Mary",
+    "description": "Memorial."
+  },
+  {
+    "day": "November 21",
+    "tradition": "Anglican",
+    "name": "Presentation of the Blessed Virgin Mary",
+    "description": "Feast."
+  },
+  {
+    "day": "November 21",
+    "tradition": "Eastern Orthodox",
+    "name": "Entrance of the Theotokos into the Temple",
+    "description": "Great feast."
+  },
+  {
+    "day": "November 21",
+    "tradition": "Oriental Orthodox",
+    "name": "Entrance of the Theotokos",
+    "description": "Feast."
+  },
+  {
+    "day": "November 21",
+    "tradition": "Church of the East",
+    "name": "Entrance of the Theotokos",
+    "description": "Commemoration."
+  },
+  {
+    "day": "November 22",
+    "tradition": "Universal",
+    "name": "Saint Cecilia",
+    "description": "Virgin and Martyr."
+  },
+  {
+    "day": "November 22",
+    "tradition": "Catholic",
+    "name": "Saint Cecilia",
+    "description": "Patron of music."
+  },
+  {
+    "day": "November 22",
+    "tradition": "Anglican",
+    "name": "Saint Cecilia",
+    "description": "Martyr, patron of musicians."
+  },
+  {
+    "day": "November 22",
+    "tradition": "Eastern Orthodox",
+    "name": "Saint Cecilia",
+    "description": "Martyr."
+  },
+  {
+    "day": "November 22",
+    "tradition": "Oriental Orthodox",
+    "name": "Saint Cecilia",
+    "description": "Martyr."
+  },
+  {
+    "day": "November 22",
+    "tradition": "Church of the East",
+    "name": "Saint Cecilia",
+    "description": "Martyr."
+  },
+  {
+    "day": "November 23",
+    "tradition": "Universal",
+    "name": "Saint Clement of Rome",
+    "description": "Pope and Martyr."
+  },
+  {
+    "day": "November 23",
+    "tradition": "Catholic",
+    "name": "Saint Columban",
+    "description": "Irish missionary."
+  },
+  {
+    "day": "November 23",
+    "tradition": "Anglican",
+    "name": "Clement of Rome",
+    "description": "Bishop, c. 100."
+  },
+  {
+    "day": "November 23",
+    "tradition": "Eastern Orthodox",
+    "name": "Saint Amphilochius of Iconium",
+    "description": "Bishop."
+  },
+  {
+    "day": "November 23",
+    "tradition": "Oriental Orthodox",
+    "name": "Saint Clement of Rome",
+    "description": "Pope and martyr."
+  },
+  {
+    "day": "November 23",
+    "tradition": "Church of the East",
+    "name": "Saint Clement of Rome",
+    "description": "Apostolic Father."
+  },
+  {
+    "day": "November 24",
+    "tradition": "Catholic",
+    "name": "Saint Andrew Dung-Lac and Companions",
+    "description": "Vietnamese Martyrs."
+  },
+  {
+    "day": "November 24",
+    "tradition": "Anglican",
+    "name": "Catherine of Alexandria",
+    "description": "Martyr, c. 305."
+  },
+  {
+    "day": "November 24",
+    "tradition": "Eastern Orthodox",
+    "name": "Hieromartyr Clement of Rome",
+    "description": "Apostolic Father."
+  },
+  {
+    "day": "November 24",
+    "tradition": "Oriental Orthodox",
+    "name": "Saint Catherine (Coptic)",
+    "description": "Martyr."
+  },
+  {
+    "day": "November 24",
+    "tradition": "Church of the East",
+    "name": "Mar Abraham of Kashkar",
+    "description": "Monastic reformer."
+  },
+  {
+    "day": "November 25",
+    "tradition": "Universal",
+    "name": "Saint Catherine of Alexandria",
+    "description": "Great Martyr."
+  },
+  {
+    "day": "November 25",
+    "tradition": "Catholic",
+    "name": "Saint Catherine of Alexandria",
+    "description": "Virgin and martyr."
+  },
+  {
+    "day": "November 25",
+    "tradition": "Anglican",
+    "name": "Catherine of Alexandria",
+    "description": "Martyr."
+  },
+  {
+    "day": "November 25",
+    "tradition": "Eastern Orthodox",
+    "name": "Saint Catherine of Alexandria",
+    "description": "Great martyr."
+  },
+  {
+    "day": "November 25",
+    "tradition": "Oriental Orthodox",
+    "name": "Saint Catherine of Alexandria",
+    "description": "Martyr."
+  },
+  {
+    "day": "November 25",
+    "tradition": "Church of the East",
+    "name": "Saint Catherine of Alexandria",
+    "description": "Martyr."
+  },
+  {
+    "day": "November 26",
+    "tradition": "Catholic",
+    "name": "Saint Sylvester Gozzolini",
+    "description": "Abbot."
+  },
+  {
+    "day": "November 26",
+    "tradition": "Anglican",
+    "name": "Isaac Watts",
+    "description": "Hymnwriter."
+  },
+  {
+    "day": "November 26",
+    "tradition": "Eastern Orthodox",
+    "name": "Saint Alypius the Stylite",
+    "description": "Ascetic."
+  },
+  {
+    "day": "November 26",
+    "tradition": "Oriental Orthodox",
+    "name": "Saint Valerius",
+    "description": "Bishop and martyr."
+  },
+  {
+    "day": "November 26",
+    "tradition": "Church of the East",
+    "name": "Mar George the Martyr (Secondary)",
+    "description": "Persian Rite."
+  },
+  {
+    "day": "November 27",
+    "tradition": "Catholic",
+    "name": "Saint Francesco Antonio Fasani",
+    "description": "Preacher."
+  },
+  {
+    "day": "November 27",
+    "tradition": "Anglican",
+    "name": "Saints of India",
+    "description": "Commemoration."
+  },
+  {
+    "day": "November 27",
+    "tradition": "Eastern Orthodox",
+    "name": "Saint James the Hermit",
+    "description": "Syrian ascetic."
+  },
+  {
+    "day": "November 27",
+    "tradition": "Oriental Orthodox",
+    "name": "Saint James the Persian",
+    "description": "The Intercisus."
+  },
+  {
+    "day": "November 27",
+    "tradition": "Church of the East",
+    "name": "Mar Pinhas",
+    "description": "Martyr."
+  },
+  {
+    "day": "November 28",
+    "tradition": "Catholic",
+    "name": "Saint James of the March",
+    "description": "Franciscan."
+  },
+  {
+    "day": "November 28",
+    "tradition": "Anglican",
+    "name": "Kamehameha and Emma",
+    "description": "Hawaii."
+  },
+  {
+    "day": "November 28",
+    "tradition": "Eastern Orthodox",
+    "name": "Saint Stephen the New",
+    "description": "Icon defender."
+  },
+  {
+    "day": "November 28",
+    "tradition": "Oriental Orthodox",
+    "name": "Saint Sarapamon",
+    "description": "Coptic Bishop."
+  },
+  {
+    "day": "November 28",
+    "tradition": "Church of the East",
+    "name": "Mar Abraham of Kashkar (Secondary)",
+    "description": "Theologian."
+  },
+  {
+    "day": "November 29",
+    "tradition": "Universal",
+    "name": "Saint Saturninus",
+    "description": "Bishop and Martyr."
+  },
+  {
+    "day": "November 29",
+    "tradition": "Anglican",
+    "name": "Day of Intercession for Missions",
+    "description": "Commemoration."
+  },
+  {
+    "day": "November 29",
+    "tradition": "Eastern Orthodox",
+    "name": "Martyr Paramon",
+    "description": "Suffered with 370 martyrs."
+  },
+  {
+    "day": "November 29",
+    "tradition": "Oriental Orthodox",
+    "name": "Saint Peter of Alexandria",
+    "description": "Seal of Martyrs (Commemoration)."
+  },
+  {
+    "day": "November 29",
+    "tradition": "Church of the East",
+    "name": "Mar Isaac of Nineveh",
+    "description": "Ascetic father."
+  },
+  {
+    "day": "November 30",
+    "tradition": "Universal",
+    "name": "Saint Andrew the Apostle",
+    "description": "The First-Called Apostle."
+  },
+  {
+    "day": "November 30",
+    "tradition": "Catholic",
+    "name": "Saint Andrew the Apostle",
+    "description": "Apostle and martyr."
+  },
+  {
+    "day": "November 30",
+    "tradition": "Anglican",
+    "name": "Saint Andrew the Apostle",
+    "description": "Patron of Scotland."
+  },
+  {
+    "day": "November 30",
+    "tradition": "Eastern Orthodox",
+    "name": "Saint Andrew the Apostle",
+    "description": "First-called Apostle."
+  },
+  {
+    "day": "November 30",
+    "tradition": "Oriental Orthodox",
+    "name": "Saint Andrew the Apostle",
+    "description": "Apostle."
+  },
+  {
+    "day": "November 30",
+    "tradition": "Church of the East",
+    "name": "Saint Andrew the Apostle",
+    "description": "Apostle."
+  }
+]
