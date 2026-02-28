@@ -928,5 +928,10 @@
     "next_required": "1. COE-II: Three-layer COE calendar rebuild per known_outstanding_issues.coe_calendar_model. Requires: getDayClass() in calendar-east-syriac.js, fixed feasts layer, COE tags audit, renderEastSyriac() three-layer model, Commemoration UI framing. Do not begin until architectural review complete. 2. appData hydration race condition \u2014 MEDIUM severity. 3. Lower priority: [rite] placeholder fragility; .innerHTML architecture; Gloria Patri/Kyrie normalization.",
     "next_planned": "No planned phase currently queued. See roadmap future items.",
     "future": "Phase 6.7 \u2014 Performance polish (timezone warning, LRU seasonal cache, prefetch, service worker); Phase 7.5 \u2014 Coptic Agpeya as standalone tradition entry; Phase 9.0 \u2014 Mobile app; Phase 9.1 \u2014 Cross-Tradition Search (Comparative scripture view across AR, ET, and SY canons); COE-II \u2014 Three-layer COE calendar model (season engine + fixed feasts + sparse saints + getDayClass() + Commemoration UI)"
-  }
-}
+  },
+  "governance": {
+  "architectural_charter": {
+    "path": "documentation/governance/architectural_charter.md",
+    "version": "0.1",
+    "status": "active"
+}}}
