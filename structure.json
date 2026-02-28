@@ -1,10 +1,10 @@
 {
   "project_manifest": {
     "name": "Universal Office",
-    "version": "2.8.2",
+    "version": "2.8.3",
     "last_updated": "2026-02-28",
     "bcp_compliance": "100%",
-    "operational_status": "OPERATIONAL \u2014 v2.8.2: Saints data migration complete. All 1568 saint records migrated from legacy tradition string to tags[] array schema. New fields: id, type, tags[], verification_status. Barbara/John of Damascus entry split into two records. Conception of the BVM split into Dec 8 (LAT+ANG) and Dec 9 EOR+OOR entries. Tags: ANG, LAT, EOR, OOR, COE. ECU derived dynamically at render time when all five present. JS filter logic in office-ui.js updated for new schema (pending).",
+    "operational_status": "OPERATIONAL \u2014 v2.8.3: COE saint section silenced pending architectural rebuild. COE rendering model documented. Saints filter updated for tags[] schema (v2.8.2). All 1568 saint records migrated.",
     "audit_findings": {
       "open_bugs": [
         "1. Rubric logic: [rite] placeholder resolution in rubrics.json is fragile and prone to null returns. (LOW \u2014 see known_outstanding_issues.rite_placeholder_resolution)"
@@ -13,10 +13,11 @@
         "1. Heavy reliance on .innerHTML string building in office-ui.js needs transition to a template system.",
         "2. Global state race condition: appData hydration must be gated before renderOffice() execution. (see known_outstanding_issues.hydration_race_condition for full detail)",
         "3. Redundant liturgical fragments (Gloria Patri/Kyrie) should be normalized into common.json.",
-        "4. Saints data model: flat tradition-string records should be refactored into separate Saint (identity) and Commemoration (calendar binding) record types. Current tags[] schema is a verified interim step \u2014 data is clean and correct. Full refactor deferred. See known_outstanding_issues.saints_schema_refactor for detail."
+        "4. Saints data model: flat tradition-string records should be refactored into separate Saint (identity) and Commemoration (calendar binding) record types. Current tags[] schema is a verified interim step \u2014 data is clean and correct. Full refactor deferred. See known_outstanding_issues.saints_schema_refactor for detail.",
+        "5. COE saint/commemoration rendering: the current saint-grid model is categorically wrong for the Church of the East. COE is a salvation-historical seasonal calendar, not a date-to-saint grid. Requires a three-layer rebuild: (1) season engine already exists; (2) fixed feasts layer; (3) sparse individual saints. Friday is a liturgical class (martyrial), not a saint slot. Full spec in known_outstanding_issues.coe_calendar_model. COE saint section silenced in v2.8.3 pending rebuild."
       ],
       "resolved_in_this_version": [
-        "1. Saints tradition tag migration: all 1568 records across 12 monthly files migrated from legacy `tradition` string to `tags[]` array. New fields: id (slug), type (saint/apostle/prophet/feast/marian_feast/commemoration), tags (ANG/LAT/EOR/OOR/COE), verification_status (verified/provisional). 137 formerly-Universal entries fully classified per external research and editorial review. Barbara/John of Damascus combined entry split. Conception of the BVM split into two tradition-correct entries."
+        "1. COE saint section silenced: renderEastSyriac() saint display locked to empty pending architectural rebuild. Previous behaviour was historically inaccurate \u2014 string-matching tradition fields was surfacing wrong saints. Silence is liturgically correct for COE weekdays with no fixed saint."
       ]
     },
     "resolved_audit_items": [
@@ -678,9 +679,115 @@
         "js/office-ui.js"
       ],
       "reference": "Architectural advice received 2026-02-28. ECU continues to be derived dynamically (never stored). tags[] field names are forward-compatible with the target schema."
+    },
+    "coe_calendar_model": {
+      "severity": "HIGH",
+      "description": "The Church of the East does not operate on a Western-style date-to-saint calendar. Its calendar is salvation-historical and seasonal. Saints reinforce theology; they do not drive it. The current saint-grid rendering model is categorically inappropriate for this tradition.",
+      "architectural_principle": "Latin logic: Calendar = Saints framework with seasonal overlay. East Syriac logic: Calendar = Salvation-historical seasons with occasional saints.",
+      "three_layer_model": {
+        "layer_1_season_engine": {
+          "status": "IMPLEMENTED \u2014 calendar-east-syriac.js",
+          "provides": [
+            "season",
+            "week number",
+            "cycle (Qdham/Wathar)",
+            "fasting character",
+            "season color"
+          ],
+          "needed": "Friday liturgical class detection (martyrial axis). Friday is not a saint slot \u2014 it is a liturgical category."
+        },
+        "layer_2_fixed_feasts": {
+          "status": "NOT IMPLEMENTED",
+          "description": "Major fixed observances calculated seasonally, not stored as date-keyed saints.",
+          "examples": [
+            "Nativity",
+            "Epiphany (Denha)",
+            "Resurrection",
+            "Exaltation of the Cross",
+            "Annunciation",
+            "Apostles season commemorations",
+            "All Saints",
+            "Commemoration of the Dead"
+          ],
+          "type": "feast or commemoration \u2014 never saint",
+          "implementation": "Inject at render time from calendar-east-syriac.js, not from saints JSON files."
+        },
+        "layer_3_individual_saints": {
+          "status": "PARTIALLY IMPLEMENTED \u2014 over-populated, needs audit",
+          "description": "Sparse. Conservative. Person-based only. Pre-schism and explicitly East Syriac.",
+          "inclusion_criteria": [
+            "Pre-schism and universally ancient",
+            "Explicitly East Syriac (Hudra manuscript evidence)",
+            "Apostolic or Biblical figures",
+            "Persian/Mesopotamian martyrs"
+          ],
+          "exclusion_criteria": [
+            "Eastern Orthodox saints not in COE usage",
+            "Saints in Roman Martyrology but not in Hudra",
+            "Saints included only because they are 'early enough'",
+            "Post-7th century Western saints",
+            "Augustine of Hippo \u2014 not COE",
+            "Gregory the Great \u2014 disputed, currently tagged COE, needs review",
+            "Any saint tagged COE solely by proximity to EOR"
+          ],
+          "action": "Audit all saints currently tagged COE against Hudra manuscript evidence. Remove liberal tagging."
+        }
+      },
+      "friday_logic": {
+        "description": "Friday is the martyrial axis of the East Syriac week throughout most seasons.",
+        "great_fast_fridays": {
+          "type": "commemoration",
+          "name": "Commemoration of the Holy Martyrs",
+          "tags": [
+            "COE"
+          ],
+          "note": "Corporate, not individual. All Fridays of Sawma Rabba. No rotating named saint."
+        },
+        "implementation": "getSeason() already returns season. Add getDayClass(date) to calendar-east-syriac.js returning { isFriday, isLenten, commemorationType, commemorationName }. renderEastSyriac() consults this before any saint lookup."
+      },
+      "season_weekly_logic": {
+        "subara": "Text-heavy, saint-light. Marian material doxological. No Immaculate Conception construct.",
+        "nativity": "Synaxis-type commemorations. Apostles and biblical figures in propers. Major feasts are feast/commemoration type.",
+        "denha": "Occasional fixed apostles. Strong baptismal theology. Friday commemorations continue.",
+        "sawma_rabba": "Friday = Commemoration of the Martyrs (corporate). No rotating individual saint list. Inject dynamically.",
+        "qyamta": "Apostolic figures more visible. Thomas receives liturgical prominence. Paschal weeks suppress martyr themes.",
+        "shlihe": "Apostles commemorated strongly. Missionary saints possible (pre-schism). Individual apostle entries appropriate.",
+        "qayta": "Subdued. Few saint-heavy days.",
+        "eliya_sliwa": "Prophetic focus. Prophets and OT figures appropriate.",
+        "qudash_idta": "Ecclesiology. All Saints-type commemorations appropriate."
+      },
+      "ui_framing": {
+        "avoid": "'Saint of the Day' framing for COE",
+        "prefer": [
+          "'Seasonal Commemoration'",
+          "'Friday Commemoration of the Martyrs'",
+          "'Apostolic Memory'"
+        ],
+        "existing_correct": [
+          "Current Cycle",
+          "Fasting Character",
+          "Anaphora fields are correct"
+        ],
+        "recommended_addition": "Display week name/number prominently within season for COE."
+      },
+      "action": "Phase COE-II: (1) Audit COE tags in saints data against Hudra criteria. (2) Add getDayClass() to calendar-east-syriac.js. (3) Build fixed feasts layer. (4) Update renderEastSyriac() to use three-layer model. (5) Replace saint-grid UI with Commemoration framing. Do not begin implementation until architectural review is complete.",
+      "files": [
+        "js/calendar-east-syriac.js",
+        "js/office-ui.js \u2014 renderEastSyriac()",
+        "data/saints/*.json \u2014 COE tag audit required",
+        "components/east-syriac.json"
+      ],
+      "research_credit": "Architectural model established 2026-02-28 via external liturgical consultant review."
     }
   },
   "recent_logic_changes": [
+    {
+      "date": "2026-02-28",
+      "phase": "v2.8.3",
+      "file": "js/office-ui.js \u2014 renderEastSyriac()",
+      "change": "COE saint section silenced pending architectural rebuild",
+      "detail": "esySaints filter and saint-display block removed from renderEastSyriac(). saint-section hidden, saint-display cleared. Previous string-matching behaviour was historically inaccurate for the East Syriac tradition. COE calendar is salvation-historical and seasonal \u2014 not a date-to-saint grid. Correct rebuild requires three-layer model (season engine, fixed feasts, sparse saints). Full spec in known_outstanding_issues.coe_calendar_model. Silence is liturgically accurate for COE weekdays with no fixed individual saint."
+    },
     {
       "date": "2026-02-28",
       "phase": "v2.8.2",
@@ -817,9 +924,9 @@
     }
   ],
   "roadmap_summary": {
-    "completed": "Phases 6.1\u20136.6 (BCP office + audit remediation), Phase 7.1\u20137.4 (full Ethiopian Sa'atat + calendar engine), Phase 8.1 (Senkessar index + Tir corpus + full wiring), Phase 8.3 (Hamle corpus verified), Phase 8.5 (Ge'ez dual-date display in Sa'atat sidebar and BCP date header \u2014 both rendering via EthiopianCalendar.formatEthiopianDate()), v2.6.1 (Tselote Meweta, Metsehafe Tselot aesthetic), v2.8.0 (Church of the East \u2014 all seven canonical hours: Sapra, Quta'a, Endana, D-tsha' Sa'in, Ramsha, Lelya, Suba'a \u2014 cathedral and monastic sequences, full dynamic token implementation), v2.8.1 (Barekmar components, Mahlet expansion, duplicate removal, Qanona layering, algorithmic calendar engine), v2.8.2 (saints data migration \u2014 tags[] schema, 1568 records, full classification)",
-    "next_required": "1. Update saints filter logic in js/office-ui.js for new tags[] schema (all three render paths: BCP, Ethiopian, East Syriac). 2. appData hydration race condition review \u2014 MEDIUM severity. 3. Lower priority: [rite] placeholder fragility; .innerHTML architecture; Gloria Patri/Kyrie normalization.",
+    "completed": "Phases 6.1\u20136.6 (BCP office + audit remediation), Phase 7.1\u20137.4 (full Ethiopian Sa'atat + calendar engine), Phase 8.1 (Senkessar index + Tir corpus + full wiring), Phase 8.3 (Hamle corpus verified), Phase 8.5 (Ge'ez dual-date display in Sa'atat sidebar and BCP date header \u2014 both rendering via EthiopianCalendar.formatEthiopianDate()), v2.6.1 (Tselote Meweta, Metsehafe Tselot aesthetic), v2.8.0 (Church of the East \u2014 all seven canonical hours: Sapra, Quta'a, Endana, D-tsha' Sa'in, Ramsha, Lelya, Suba'a \u2014 cathedral and monastic sequences, full dynamic token implementation), v2.8.1 (Barekmar components, Mahlet expansion, duplicate removal, Qanona layering, algorithmic calendar engine), v2.8.2 (saints data migration \u2014 tags[] schema, 1568 records, full classification), v2.8.3 (COE saint section silenced; COE architectural model documented)",
+    "next_required": "1. COE-II: Three-layer COE calendar rebuild per known_outstanding_issues.coe_calendar_model. Requires: getDayClass() in calendar-east-syriac.js, fixed feasts layer, COE tags audit, renderEastSyriac() three-layer model, Commemoration UI framing. Do not begin until architectural review complete. 2. appData hydration race condition \u2014 MEDIUM severity. 3. Lower priority: [rite] placeholder fragility; .innerHTML architecture; Gloria Patri/Kyrie normalization.",
     "next_planned": "No planned phase currently queued. See roadmap future items.",
-    "future": "Phase 6.7 \u2014 Performance polish (timezone warning, LRU seasonal cache, prefetch, service worker); Phase 7.5 \u2014 Coptic Agpeya as standalone tradition entry; Phase 9.0 \u2014 Mobile app; Phase 9.1 \u2014 Cross-Tradition Search (Comparative scripture view across AR, ET, and SY canons)"
+    "future": "Phase 6.7 \u2014 Performance polish (timezone warning, LRU seasonal cache, prefetch, service worker); Phase 7.5 \u2014 Coptic Agpeya as standalone tradition entry; Phase 9.0 \u2014 Mobile app; Phase 9.1 \u2014 Cross-Tradition Search (Comparative scripture view across AR, ET, and SY canons); COE-II \u2014 Three-layer COE calendar model (season engine + fixed feasts + sparse saints + getDayClass() + Commemoration UI)"
   }
 }

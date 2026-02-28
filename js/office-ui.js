@@ -2336,42 +2336,16 @@ async function renderEastSyriac() {
     }
 
     const esyTodayShort = currentDate.toLocaleDateString('en-US', { month: 'long', day: 'numeric' });
-    const ECU_CODES = ['ANG','LAT','EOR','OOR','COE'];
-    const esySaints = (appData.saints || []).filter(s => {
-        if (!s.day || !s.day.toLowerCase().includes(esyTodayShort.toLowerCase())) return false;
-        const tags = Array.isArray(s.tags) ? s.tags : [];
-        return tags.includes('COE');
-    });
-    const universalSaints = esySaints.length === 0
-        ? (appData.saints || []).filter(s => {
-            if (!s.day || !s.day.toLowerCase().includes(esyTodayShort.toLowerCase())) return false;
-            const tags = Array.isArray(s.tags) ? s.tags : [];
-            return ECU_CODES.every(c => tags.includes(c));
-          })
-        : [];
-    const saintsToShow = [...esySaints, ...universalSaints];
-    const saintSection = document.querySelector('.saint-section');
-
     document.getElementById('office-display').innerHTML = officeHtml + `</div>`;
 
-    if (saintsToShow.length > 0) {
-        const dateHeader = document.getElementById('date-header');
-        if (dateHeader) {
-            dateHeader.textContent = currentDate.toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric', year: 'numeric' });
-            dateHeader.style.display = '';
-        }
-        document.getElementById('saint-display').innerHTML = saintsToShow
-            .map(s => {
-                const tags = Array.isArray(s.tags) ? s.tags : [];
-                const isEcu = ECU_CODES.every(c => tags.includes(c));
-                const label = isEcu ? 'ECU' : (tags.join(' · ') || 'Church of the East');
-                return `<div class="saint-box"><small style="color:var(--accent); font-weight:bold; text-transform:uppercase;">${label}</small><strong>${s.name || 'Unknown'}</strong><p>${s.description || ''}</p></div>`;
-            })
-            .join('');
-        if (saintSection) saintSection.style.display = '';
-    } else {
-        document.getElementById('saint-display').innerHTML = '';
-        document.getElementById('date-header').style.display = 'none';
-        if (saintSection) saintSection.style.display = 'none';
-    }
+    // COE saint section silenced — v2.8.3
+    // The Church of the East operates on a salvation-historical seasonal calendar,
+    // not a date-to-saint grid. A three-layer model (season engine, fixed feasts,
+    // sparse individual saints) is required. See known_outstanding_issues.coe_calendar_model
+    // in structure.json. Silence is liturgically accurate for COE weekdays with no
+    // fixed individual saint.
+    document.getElementById('saint-display').innerHTML = '';
+    document.getElementById('date-header').style.display = 'none';
+    const saintSection = document.querySelector('.saint-section');
+    if (saintSection) saintSection.style.display = 'none';
 }
