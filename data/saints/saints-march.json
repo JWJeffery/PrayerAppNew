@@ -7,8 +7,7 @@
     "type": "saint",
     "tags": [
       "ANG"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "martyr-eudocia-of-heliopolis",
@@ -18,19 +17,7 @@
     "type": "saint",
     "tags": [
       "EOR"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "third-sunday-of-great-lent",
-    "day": "March 1",
-    "name": "Third Sunday of Great Lent",
-    "description": "Liturgical Sunday.",
-    "type": "saint",
-    "tags": [
-      "COE"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "saint-david-of-wales",
@@ -40,19 +27,17 @@
     "type": "saint",
     "tags": [
       "OOR"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
-    "id": "saint-chad-of-lichfield",
-    "day": "March 2",
-    "name": "Saint Chad of Lichfield",
-    "description": "Bishop and missionary, venerated in Catholic, Oriental Orthodox, and Anglican Communion traditions, 672.",
+    "id": "third-sunday-of-great-lent",
+    "day": "March 1",
+    "name": "Third Sunday of Great Lent",
+    "description": "Liturgical Sunday.",
     "type": "saint",
     "tags": [
-      "ANG"
-    ],
-    "verification_status": "verified"
+      "COE"
+    ]
   },
   {
     "id": "hieromartyr-theodotus-bishop-of-cyrenia",
@@ -62,8 +47,7 @@
     "type": "saint",
     "tags": [
       "EOR"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "monday-of-great-lent",
@@ -73,30 +57,17 @@
     "type": "saint",
     "tags": [
       "COE"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
-    "id": "saint-katharine-drexel",
-    "day": "March 3",
-    "name": "Saint Katharine Drexel",
-    "description": "Foundress and missionary to Native and African Americans, venerated in Catholic and Oriental Orthodox traditions.",
+    "id": "saint-chad-of-lichfield",
+    "day": "March 2",
+    "name": "Saint Chad of Lichfield",
+    "description": "Bishop and missionary, venerated in Catholic, Oriental Orthodox, and Anglican Communion traditions, 672.",
     "type": "saint",
     "tags": [
-      "LAT"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "martyrs-eutropius-cleonicus-and-basiliscus",
-    "day": "March 3",
-    "name": "Martyrs Eutropius, Cleonicus, and Basiliscus",
-    "description": "Martyrs.",
-    "type": "saint",
-    "tags": [
-      "EOR"
-    ],
-    "verification_status": "verified"
+      "ANG"
+    ]
   },
   {
     "id": "john-and-charles-wesley",
@@ -106,8 +77,17 @@
     "type": "saint",
     "tags": [
       "ANG"
-    ],
-    "verification_status": "verified"
+    ]
+  },
+  {
+    "id": "martyrs-eutropius-cleonicus-and-basiliscus",
+    "day": "March 3",
+    "name": "Martyrs Eutropius, Cleonicus, and Basiliscus",
+    "description": "Martyrs.",
+    "type": "saint",
+    "tags": [
+      "EOR"
+    ]
   },
   {
     "id": "saint-eutropius",
@@ -117,30 +97,17 @@
     "type": "saint",
     "tags": [
       "COE"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
-    "id": "saint-casimir",
-    "day": "March 4",
-    "name": "Saint Casimir",
-    "description": "Prince of Poland and patron of Lithuania, venerated in Catholic and Oriental Orthodox traditions.",
+    "id": "saint-katharine-drexel",
+    "day": "March 3",
+    "name": "Saint Katharine Drexel",
+    "description": "Foundress and missionary to Native and African Americans, venerated in Catholic and Oriental Orthodox traditions.",
     "type": "saint",
     "tags": [
       "LAT"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "venerable-gerasimus-of-the-jordan",
-    "day": "March 4",
-    "name": "Venerable Gerasimus of the Jordan",
-    "description": "Monk and wonderworker.",
-    "type": "saint",
-    "tags": [
-      "EOR"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "paul-cuffee",
@@ -150,8 +117,17 @@
     "type": "saint",
     "tags": [
       "ANG"
-    ],
-    "verification_status": "verified"
+    ]
+  },
+  {
+    "id": "saint-casimir",
+    "day": "March 4",
+    "name": "Saint Casimir",
+    "description": "Prince of Poland and patron of Lithuania, venerated in Catholic and Oriental Orthodox traditions.",
+    "type": "saint",
+    "tags": [
+      "LAT"
+    ]
   },
   {
     "id": "saint-gerasimus",
@@ -161,30 +137,17 @@
     "type": "saint",
     "tags": [
       "COE"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
-    "id": "saint-john-joseph-of-the-cross",
-    "day": "March 5",
-    "name": "Saint John Joseph of the Cross",
-    "description": "Franciscan priest, venerated in Catholic and Oriental Orthodox traditions.",
-    "type": "saint",
-    "tags": [
-      "LAT"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "martyr-conon-of-isauria",
-    "day": "March 5",
-    "name": "Martyr Conon of Isauria",
-    "description": "Martyr.",
+    "id": "venerable-gerasimus-of-the-jordan",
+    "day": "March 4",
+    "name": "Venerable Gerasimus of the Jordan",
+    "description": "Monk and wonderworker.",
     "type": "saint",
     "tags": [
       "EOR"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "cuthbert",
@@ -194,8 +157,17 @@
     "type": "saint",
     "tags": [
       "ANG"
-    ],
-    "verification_status": "verified"
+    ]
+  },
+  {
+    "id": "martyr-conon-of-isauria",
+    "day": "March 5",
+    "name": "Martyr Conon of Isauria",
+    "description": "Martyr.",
+    "type": "saint",
+    "tags": [
+      "EOR"
+    ]
   },
   {
     "id": "saint-conon",
@@ -205,8 +177,17 @@
     "type": "saint",
     "tags": [
       "COE"
-    ],
-    "verification_status": "verified"
+    ]
+  },
+  {
+    "id": "saint-john-joseph-of-the-cross",
+    "day": "March 5",
+    "name": "Saint John Joseph of the Cross",
+    "description": "Franciscan priest, venerated in Catholic and Oriental Orthodox traditions.",
+    "type": "saint",
+    "tags": [
+      "LAT"
+    ]
   },
   {
     "id": "saint-colette",
@@ -216,8 +197,7 @@
     "type": "saint",
     "tags": [
       "LAT"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "the-42-martyrs-of-amorium",
@@ -226,9 +206,9 @@
     "description": "Martyrs captured during the sack of Amorium.",
     "type": "saint",
     "tags": [
+      "COE",
       "EOR"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "william-mayo-charles-menninger-and-their-sons",
@@ -238,19 +218,7 @@
     "type": "saint",
     "tags": [
       "ANG"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "the-42-martyrs-of-amorium",
-    "day": "March 6",
-    "name": "The 42 Martyrs of Amorium",
-    "description": "Martyrs (shared commemoration).",
-    "type": "saint",
-    "tags": [
-      "COE"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "saints-perpetua-and-felicity",
@@ -263,31 +231,7 @@
       "EOR",
       "LAT",
       "OOR"
-    ],
-    "verification_status": "verified",
-    "notes": "Pre-schism martyrs; COE unclear"
-  },
-  {
-    "id": "saint-john-of-god",
-    "day": "March 8",
-    "name": "Saint John of God",
-    "description": "Founder of the Brothers Hospitallers, venerated in Catholic and Oriental Orthodox traditions.",
-    "type": "saint",
-    "tags": [
-      "LAT"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-theophylact-the-confessor",
-    "day": "March 8",
-    "name": "Saint Theophylact the Confessor",
-    "description": "Bishop of Nicomedia and defender of icons.",
-    "type": "saint",
-    "tags": [
-      "EOR"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "fourth-sunday-of-great-lent",
@@ -297,8 +241,7 @@
     "type": "saint",
     "tags": [
       "COE"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "john-of-god",
@@ -308,8 +251,47 @@
     "type": "saint",
     "tags": [
       "ANG"
-    ],
-    "verification_status": "verified"
+    ]
+  },
+  {
+    "id": "saint-john-of-god",
+    "day": "March 8",
+    "name": "Saint John of God",
+    "description": "Founder of the Brothers Hospitallers, venerated in Catholic and Oriental Orthodox traditions.",
+    "type": "saint",
+    "tags": [
+      "LAT"
+    ]
+  },
+  {
+    "id": "saint-theophylact-the-confessor",
+    "day": "March 8",
+    "name": "Saint Theophylact the Confessor",
+    "description": "Bishop of Nicomedia and defender of icons.",
+    "type": "saint",
+    "tags": [
+      "EOR"
+    ]
+  },
+  {
+    "id": "gregory-of-nyssa",
+    "day": "March 9",
+    "name": "Gregory of Nyssa",
+    "description": "Bishop and theologian, c. 394.",
+    "type": "saint",
+    "tags": [
+      "ANG"
+    ]
+  },
+  {
+    "id": "saint-frances-of-rome",
+    "day": "March 9",
+    "name": "Saint Frances of Rome",
+    "description": "Religious and founder of the Oblates of Mary.",
+    "type": "saint",
+    "tags": [
+      "LAT"
+    ]
   },
   {
     "id": "the-holy-forty-martyrs-of-sebaste",
@@ -321,31 +303,7 @@
       "EOR",
       "LAT",
       "OOR"
-    ],
-    "verification_status": "verified",
-    "notes": "In Roman Martyrology; primarily Eastern"
-  },
-  {
-    "id": "saint-frances-of-rome",
-    "day": "March 9",
-    "name": "Saint Frances of Rome",
-    "description": "Religious and founder of the Oblates of Mary.",
-    "type": "saint",
-    "tags": [
-      "LAT"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "gregory-of-nyssa",
-    "day": "March 9",
-    "name": "Gregory of Nyssa",
-    "description": "Bishop and theologian, c. 394.",
-    "type": "saint",
-    "tags": [
-      "ANG"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "venerable-theophanes-the-confessor",
@@ -354,53 +312,10 @@
     "description": "Monk and confessor.",
     "type": "saint",
     "tags": [
-      "EOR"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "venerable-theophanes-the-confessor",
-    "day": "March 9",
-    "name": "Venerable Theophanes the Confessor",
-    "description": "Monk and confessor (shared commemoration).",
-    "type": "saint",
-    "tags": [
+      "COE",
+      "EOR",
       "OOR"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "venerable-theophanes-the-confessor",
-    "day": "March 9",
-    "name": "Venerable Theophanes the Confessor",
-    "description": "Monk and confessor (shared commemoration).",
-    "type": "saint",
-    "tags": [
-      "COE"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-john-ogilvie",
-    "day": "March 10",
-    "name": "Saint John Ogilvie",
-    "description": "Jesuit martyr in Scotland, venerated in Catholic and Oriental Orthodox traditions.",
-    "type": "saint",
-    "tags": [
-      "LAT"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "martyr-quadratus-and-his-companions",
-    "day": "March 10",
-    "name": "Martyr Quadratus and his Companions",
-    "description": "Martyrs in Corinth.",
-    "type": "saint",
-    "tags": [
-      "EOR"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "harriet-tubman",
@@ -410,8 +325,27 @@
     "type": "saint",
     "tags": [
       "ANG"
-    ],
-    "verification_status": "verified"
+    ]
+  },
+  {
+    "id": "martyr-quadratus-and-his-companions",
+    "day": "March 10",
+    "name": "Martyr Quadratus and his Companions",
+    "description": "Martyrs in Corinth.",
+    "type": "saint",
+    "tags": [
+      "EOR"
+    ]
+  },
+  {
+    "id": "saint-john-ogilvie",
+    "day": "March 10",
+    "name": "Saint John Ogilvie",
+    "description": "Jesuit martyr in Scotland, venerated in Catholic and Oriental Orthodox traditions.",
+    "type": "saint",
+    "tags": [
+      "LAT"
+    ]
   },
   {
     "id": "saint-quadratus",
@@ -421,8 +355,37 @@
     "type": "saint",
     "tags": [
       "COE"
-    ],
-    "verification_status": "verified"
+    ]
+  },
+  {
+    "id": "oakerhater-making-medicine",
+    "day": "March 11",
+    "name": "Oakerhater (Making Medicine)",
+    "description": "Deacon and missionary, 1931.",
+    "type": "saint",
+    "tags": [
+      "ANG"
+    ]
+  },
+  {
+    "id": "saint-sophronius",
+    "day": "March 11",
+    "name": "Saint Sophronius",
+    "description": "Theologian (shared commemoration).",
+    "type": "saint",
+    "tags": [
+      "COE"
+    ]
+  },
+  {
+    "id": "saint-sophronius-of-jerusalem",
+    "day": "March 11",
+    "name": "Saint Sophronius of Jerusalem",
+    "description": "Theologian and hymnographer (shared commemoration).",
+    "type": "saint",
+    "tags": [
+      "LAT"
+    ]
   },
   {
     "id": "saint-sophronius-patriarch-of-jerusalem",
@@ -433,67 +396,7 @@
     "tags": [
       "EOR",
       "OOR"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "oakerhater-making-medicine",
-    "day": "March 11",
-    "name": "Oakerhater (Making Medicine)",
-    "description": "Deacon and missionary, 1931.",
-    "type": "saint",
-    "tags": [
-      "ANG"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-sophronius-of-jerusalem",
-    "day": "March 11",
-    "name": "Saint Sophronius of Jerusalem",
-    "description": "Theologian and hymnographer (shared commemoration).",
-    "type": "saint",
-    "tags": [
-      "LAT"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-sophronius",
-    "day": "March 11",
-    "name": "Saint Sophronius",
-    "description": "Theologian (shared commemoration).",
-    "type": "saint",
-    "tags": [
-      "COE"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "gregory-the-great-gregory-the-dialogist",
-    "day": "March 12",
-    "name": "Gregory the Great (Gregory the Dialogist)",
-    "description": "Pope of Rome and Doctor of the Church, venerated in Catholic, Eastern Orthodox, Oriental Orthodox, and Anglican Communion traditions, 604.",
-    "type": "saint",
-    "tags": [
-      "ANG",
-      "COE",
-      "EOR",
-      "LAT",
-      "OOR"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "venerable-theophanes-the-confessor-of-sigriane",
-    "day": "March 12",
-    "name": "Venerable Theophanes the Confessor of Sigriane",
-    "description": "Monk.",
-    "type": "saint",
-    "tags": [
-      "EOR"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "gregory-the-great",
@@ -503,8 +406,21 @@
     "type": "saint",
     "tags": [
       "ANG"
-    ],
-    "verification_status": "verified"
+    ]
+  },
+  {
+    "id": "gregory-the-great-gregory-the-dialogist",
+    "day": "March 12",
+    "name": "Gregory the Great (Gregory the Dialogist)",
+    "description": "Pope of Rome and Doctor of the Church, venerated in Catholic, Eastern Orthodox, Oriental Orthodox, and Anglican Communion traditions, 604.",
+    "type": "saint",
+    "tags": [
+      "ANG",
+      "LAT",
+      "EOR",
+      "OOR",
+      "COE"
+    ]
   },
   {
     "id": "saint-gregory-the-dialogist",
@@ -514,19 +430,37 @@
     "type": "saint",
     "tags": [
       "COE"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
-    "id": "saint-roderick",
-    "day": "March 13",
-    "name": "Saint Roderick",
-    "description": "Priest and martyr.",
+    "id": "venerable-theophanes-the-confessor-of-sigriane",
+    "day": "March 12",
+    "name": "Venerable Theophanes the Confessor of Sigriane",
+    "description": "Monk.",
     "type": "saint",
     "tags": [
-      "LAT"
-    ],
-    "verification_status": "verified"
+      "EOR"
+    ]
+  },
+  {
+    "id": "james-theodore-holly",
+    "day": "March 13",
+    "name": "James Theodore Holly",
+    "description": "Bishop of Haiti, 1911.",
+    "type": "saint",
+    "tags": [
+      "ANG"
+    ]
+  },
+  {
+    "id": "saint-nicephorus",
+    "day": "March 13",
+    "name": "Saint Nicephorus",
+    "description": "Patriarch and confessor (shared commemoration).",
+    "type": "saint",
+    "tags": [
+      "COE"
+    ]
   },
   {
     "id": "saint-nicephorus-patriarch-of-constantinople",
@@ -537,30 +471,27 @@
     "tags": [
       "EOR",
       "OOR"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
-    "id": "james-theodore-holly",
+    "id": "saint-roderick",
     "day": "March 13",
-    "name": "James Theodore Holly",
-    "description": "Bishop of Haiti, 1911.",
+    "name": "Saint Roderick",
+    "description": "Priest and martyr.",
     "type": "saint",
     "tags": [
-      "ANG"
-    ],
-    "verification_status": "verified"
+      "LAT"
+    ]
   },
   {
-    "id": "saint-nicephorus",
-    "day": "March 13",
-    "name": "Saint Nicephorus",
-    "description": "Patriarch and confessor (shared commemoration).",
+    "id": "saint-matilda",
+    "day": "March 14",
+    "name": "Saint Matilda",
+    "description": "Queen of Germany.",
     "type": "saint",
     "tags": [
-      "COE"
-    ],
-    "verification_status": "verified"
+      "LAT"
+    ]
   },
   {
     "id": "venerable-benedict-of-nursia",
@@ -573,53 +504,7 @@
       "EOR",
       "LAT",
       "OOR"
-    ],
-    "verification_status": "verified",
-    "notes": "Not reliably COE"
-  },
-  {
-    "id": "saint-matilda",
-    "day": "March 14",
-    "name": "Saint Matilda",
-    "description": "Queen of Germany.",
-    "type": "saint",
-    "tags": [
-      "LAT"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-louise-de-marillac",
-    "day": "March 15",
-    "name": "Saint Louise de Marillac",
-    "description": "Foundress of the Daughters of Charity, venerated in Catholic and Oriental Orthodox traditions.",
-    "type": "saint",
-    "tags": [
-      "LAT"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "martyr-agapius-and-companions",
-    "day": "March 15",
-    "name": "Martyr Agapius and Companions",
-    "description": "Martyrs at Caesarea.",
-    "type": "saint",
-    "tags": [
-      "EOR"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "vincent-ferrer",
-    "day": "March 15",
-    "name": "Vincent Ferrer",
-    "description": "Priest, 1419.",
-    "type": "saint",
-    "tags": [
-      "ANG"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "martyr-agapius",
@@ -629,19 +514,37 @@
     "type": "saint",
     "tags": [
       "COE"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
-    "id": "saint-abraham-kidunaia",
-    "day": "March 16",
-    "name": "Saint Abraham Kidunaia",
-    "description": "Hermit.",
+    "id": "martyr-agapius-and-companions",
+    "day": "March 15",
+    "name": "Martyr Agapius and Companions",
+    "description": "Martyrs at Caesarea.",
+    "type": "saint",
+    "tags": [
+      "EOR"
+    ]
+  },
+  {
+    "id": "saint-louise-de-marillac",
+    "day": "March 15",
+    "name": "Saint Louise de Marillac",
+    "description": "Foundress of the Daughters of Charity, venerated in Catholic and Oriental Orthodox traditions.",
     "type": "saint",
     "tags": [
       "LAT"
-    ],
-    "verification_status": "verified"
+    ]
+  },
+  {
+    "id": "vincent-ferrer",
+    "day": "March 15",
+    "name": "Vincent Ferrer",
+    "description": "Priest, 1419.",
+    "type": "saint",
+    "tags": [
+      "ANG"
+    ]
   },
   {
     "id": "martyr-sabinus-of-egypt",
@@ -653,8 +556,7 @@
       "EOR",
       "LAT",
       "OOR"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "robert-grosseteste",
@@ -664,8 +566,17 @@
     "type": "saint",
     "tags": [
       "ANG"
-    ],
-    "verification_status": "verified"
+    ]
+  },
+  {
+    "id": "saint-abraham-kidunaia",
+    "day": "March 16",
+    "name": "Saint Abraham Kidunaia",
+    "description": "Hermit.",
+    "type": "saint",
+    "tags": [
+      "LAT"
+    ]
   },
   {
     "id": "saint-sabinus",
@@ -675,8 +586,27 @@
     "type": "saint",
     "tags": [
       "COE"
-    ],
-    "verification_status": "verified"
+    ]
+  },
+  {
+    "id": "saint-alexius-the-man-of-god",
+    "day": "March 17",
+    "name": "Saint Alexius the Man of God",
+    "description": "Ascetic and beggar.",
+    "type": "saint",
+    "tags": [
+      "EOR"
+    ]
+  },
+  {
+    "id": "saint-gertrude-of-nivelles",
+    "day": "March 17",
+    "name": "Saint Gertrude of Nivelles",
+    "description": "Abbess and patroness of travelers/hospitality, venerated in Catholic and Church of the East traditions.",
+    "type": "saint",
+    "tags": [
+      "LAT"
+    ]
   },
   {
     "id": "saint-patrick-patricius",
@@ -687,30 +617,7 @@
     "tags": [
       "ANG",
       "LAT"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-gertrude-of-nivelles",
-    "day": "March 17",
-    "name": "Saint Gertrude of Nivelles",
-    "description": "Abbess and patroness of travelers/hospitality, venerated in Catholic and Church of the East traditions.",
-    "type": "saint",
-    "tags": [
-      "LAT"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-alexius-the-man-of-god",
-    "day": "March 17",
-    "name": "Saint Alexius the Man of God",
-    "description": "Ascetic and beggar.",
-    "type": "saint",
-    "tags": [
-      "EOR"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "saint-cyril-of-jerusalem",
@@ -720,37 +627,11 @@
     "type": "saint",
     "tags": [
       "ANG",
-      "EOR",
       "LAT",
-      "OOR"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-cyril-of-jerusalem",
-    "day": "March 18",
-    "name": "Saint Cyril of Jerusalem",
-    "description": "Bishop and Doctor of the Church (shared commemoration).",
-    "type": "saint",
-    "tags": [
+      "EOR",
+      "OOR",
       "COE"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-joseph-spouse-of-the-blessed-virgin-mary",
-    "day": "March 19",
-    "name": "Saint Joseph, Spouse of the Blessed Virgin Mary",
-    "description": "Guardian of Jesus and patron of workers, venerated in Catholic, Eastern Orthodox, Oriental Orthodox, and Anglican Communion traditions.",
-    "type": "marian_feast",
-    "tags": [
-      "ANG",
-      "COE",
-      "EOR",
-      "LAT",
-      "OOR"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "martyrs-chrysanthus-and-daria",
@@ -760,8 +641,7 @@
     "type": "saint",
     "tags": [
       "EOR"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "saint-innocent-of-alaska",
@@ -771,8 +651,21 @@
     "type": "saint",
     "tags": [
       "EOR"
-    ],
-    "verification_status": "verified"
+    ]
+  },
+  {
+    "id": "saint-joseph-spouse-of-the-blessed-virgin-mary",
+    "day": "March 19",
+    "name": "Saint Joseph, Spouse of the Blessed Virgin Mary",
+    "description": "Guardian of Jesus and patron of workers, venerated in Catholic, Eastern Orthodox, Oriental Orthodox, and Anglican Communion traditions.",
+    "type": "marian_feast",
+    "tags": [
+      "ANG",
+      "LAT",
+      "EOR",
+      "OOR",
+      "COE"
+    ]
   },
   {
     "id": "st-mari-the-bishop",
@@ -782,8 +675,7 @@
     "type": "saint",
     "tags": [
       "COE"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "saint-cuthbert-of-lindisfarne",
@@ -794,8 +686,7 @@
     "tags": [
       "ANG",
       "LAT"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "saint-enda-of-aran",
@@ -805,8 +696,7 @@
     "type": "saint",
     "tags": [
       "LAT"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "saint-james-the-confessor",
@@ -815,20 +705,10 @@
     "description": "Confessor.",
     "type": "saint",
     "tags": [
-      "EOR"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-james-the-confessor",
-    "day": "March 21",
-    "name": "Saint James the Confessor",
-    "description": "Confessor.",
-    "type": "saint",
-    "tags": [
+      "COE",
+      "EOR",
       "OOR"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "thomas-ken",
@@ -838,30 +718,7 @@
     "type": "saint",
     "tags": [
       "ANG"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-james-the-confessor",
-    "day": "March 21",
-    "name": "Saint James the Confessor",
-    "description": "Confessor (shared commemoration).",
-    "type": "saint",
-    "tags": [
-      "COE"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-lea-of-rome",
-    "day": "March 22",
-    "name": "Saint Lea of Rome",
-    "description": "Widow and ascetic.",
-    "type": "saint",
-    "tags": [
-      "LAT"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "hieromartyr-basilides-of-rome",
@@ -871,30 +728,7 @@
     "type": "saint",
     "tags": [
       "EOR"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-lea-of-rome",
-    "day": "March 22",
-    "name": "Saint Lea of Rome",
-    "description": "Widow and ascetic.",
-    "type": "saint",
-    "tags": [
-      "OOR"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "thomas-ken",
-    "day": "March 22",
-    "name": "Thomas Ken",
-    "description": "Bishop of Bath and Wells, 1711.",
-    "type": "saint",
-    "tags": [
-      "ANG"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "saint-basilides",
@@ -904,41 +738,28 @@
     "type": "saint",
     "tags": [
       "COE"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
-    "id": "saint-turibius-of-mogrovejo",
-    "day": "March 23",
-    "name": "Saint Turibius of Mogrovejo",
-    "description": "Archbishop of Lima.",
+    "id": "saint-lea-of-rome",
+    "day": "March 22",
+    "name": "Saint Lea of Rome",
+    "description": "Widow and ascetic.",
     "type": "saint",
     "tags": [
-      "LAT"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "venerable-nicon-metanoeite",
-    "day": "March 23",
-    "name": "Venerable Nicon 'Metanoeite'",
-    "description": "Monk and preacher of repentance.",
-    "type": "saint",
-    "tags": [
-      "EOR"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-turibius-of-mogrovejo",
-    "day": "March 23",
-    "name": "Saint Turibius of Mogrovejo",
-    "description": "Archbishop.",
-    "type": "saint",
-    "tags": [
+      "LAT",
       "OOR"
-    ],
-    "verification_status": "verified"
+    ]
+  },
+  {
+    "id": "thomas-ken",
+    "day": "March 22",
+    "name": "Thomas Ken",
+    "description": "Bishop of Bath and Wells, 1711.",
+    "type": "saint",
+    "tags": [
+      "ANG"
+    ]
   },
   {
     "id": "gregory-the-illuminator",
@@ -948,8 +769,7 @@
     "type": "saint",
     "tags": [
       "ANG"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "saint-nicon",
@@ -959,19 +779,28 @@
     "type": "saint",
     "tags": [
       "COE"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
-    "id": "saint-catherine-of-sweden",
-    "day": "March 24",
-    "name": "Saint Catherine of Sweden",
-    "description": "Daughter of Saint Bridget.",
+    "id": "saint-turibius-of-mogrovejo",
+    "day": "March 23",
+    "name": "Saint Turibius of Mogrovejo",
+    "description": "Archbishop of Lima.",
     "type": "saint",
     "tags": [
-      "LAT"
-    ],
-    "verification_status": "verified"
+      "LAT",
+      "OOR"
+    ]
+  },
+  {
+    "id": "venerable-nicon-metanoeite",
+    "day": "March 23",
+    "name": "Venerable Nicon 'Metanoeite'",
+    "description": "Monk and preacher of repentance.",
+    "type": "saint",
+    "tags": [
+      "EOR"
+    ]
   },
   {
     "id": "forefeast-of-the-annunciation",
@@ -980,20 +809,9 @@
     "description": "Preparation for the Annunciation.",
     "type": "saint",
     "tags": [
+      "COE",
       "EOR"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-catherine-of-sweden",
-    "day": "March 24",
-    "name": "Saint Catherine of Sweden",
-    "description": "Religious.",
-    "type": "saint",
-    "tags": [
-      "OOR"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "oscar-romero",
@@ -1003,19 +821,18 @@
     "type": "saint",
     "tags": [
       "ANG"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
-    "id": "forefeast-of-the-annunciation",
+    "id": "saint-catherine-of-sweden",
     "day": "March 24",
-    "name": "Forefeast of the Annunciation",
-    "description": "Preparation for the Annunciation.",
+    "name": "Saint Catherine of Sweden",
+    "description": "Daughter of Saint Bridget.",
     "type": "saint",
     "tags": [
-      "COE"
-    ],
-    "verification_status": "verified"
+      "LAT",
+      "OOR"
+    ]
   },
   {
     "id": "annunciation-of-the-lord-annunciation-of-the-theotokos",
@@ -1025,12 +842,11 @@
     "type": "marian_feast",
     "tags": [
       "ANG",
-      "COE",
-      "EOR",
       "LAT",
-      "OOR"
-    ],
-    "verification_status": "verified"
+      "EOR",
+      "OOR",
+      "COE"
+    ]
   },
   {
     "id": "saint-dismas",
@@ -1040,13 +856,11 @@
     "type": "saint",
     "tags": [
       "ANG",
-      "COE",
-      "EOR",
       "LAT",
-      "OOR"
-    ],
-    "verification_status": "verified",
-    "notes": "The Good Thief; venerated in all traditions"
+      "EOR",
+      "OOR",
+      "COE"
+    ]
   },
   {
     "id": "st-mari-the-bishop",
@@ -1056,19 +870,7 @@
     "type": "saint",
     "tags": [
       "COE"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "synaxis-of-the-archangel-gabriel",
-    "day": "March 26",
-    "name": "Synaxis of the Archangel Gabriel",
-    "description": "Commemoration following the Annunciation.",
-    "type": "saint",
-    "tags": [
-      "EOR"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "harriet-monsell",
@@ -1078,8 +880,7 @@
     "type": "saint",
     "tags": [
       "ANG"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "saint-gabriel-the-archangel",
@@ -1088,42 +889,20 @@
     "description": "Commemoration of Gabriel (shared with Eastern).",
     "type": "saint",
     "tags": [
-      "LAT"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-gabriel-the-archangel",
-    "day": "March 26",
-    "name": "Saint Gabriel the Archangel",
-    "description": "Commemoration of Gabriel (shared with Eastern).",
-    "type": "saint",
-    "tags": [
+      "COE",
+      "LAT",
       "OOR"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
-    "id": "saint-gabriel-the-archangel",
+    "id": "synaxis-of-the-archangel-gabriel",
     "day": "March 26",
-    "name": "Saint Gabriel the Archangel",
-    "description": "Commemoration of Gabriel (shared with Eastern).",
+    "name": "Synaxis of the Archangel Gabriel",
+    "description": "Commemoration following the Annunciation.",
     "type": "saint",
     "tags": [
-      "COE"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-rupert-of-salzburg",
-    "day": "March 27",
-    "name": "Saint Rupert of Salzburg",
-    "description": "Bishop and missionary.",
-    "type": "saint",
-    "tags": [
-      "LAT"
-    ],
-    "verification_status": "verified"
+      "EOR"
+    ]
   },
   {
     "id": "charles-henry-brent",
@@ -1133,41 +912,20 @@
     "type": "saint",
     "tags": [
       "ANG"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "saint-rupert-of-salzburg",
     "day": "March 27",
     "name": "Saint Rupert of Salzburg",
-    "description": "Bishop and missionary (shared commemoration).",
+    "description": "Bishop and missionary.",
     "type": "saint",
     "tags": [
-      "EOR"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-rupert-of-salzburg",
-    "day": "March 27",
-    "name": "Saint Rupert of Salzburg",
-    "description": "Bishop and missionary (shared commemoration).",
-    "type": "saint",
-    "tags": [
+      "COE",
+      "EOR",
+      "LAT",
       "OOR"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-rupert-of-salzburg",
-    "day": "March 27",
-    "name": "Saint Rupert of Salzburg",
-    "description": "Bishop and missionary (shared commemoration).",
-    "type": "saint",
-    "tags": [
-      "COE"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "holy-thursday-of-the-passover",
@@ -1177,8 +935,7 @@
     "type": "saint",
     "tags": [
       "COE"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "john-keble",
@@ -1188,8 +945,7 @@
     "type": "saint",
     "tags": [
       "ANG"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "saint-hesychius-of-jerusalem",
@@ -1198,31 +954,10 @@
     "description": "Priest and theologian.",
     "type": "saint",
     "tags": [
-      "LAT"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-hesychius-of-jerusalem",
-    "day": "March 28",
-    "name": "Saint Hesychius of Jerusalem",
-    "description": "Priest and theologian.",
-    "type": "saint",
-    "tags": [
-      "EOR"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-hesychius-of-jerusalem",
-    "day": "March 28",
-    "name": "Saint Hesychius of Jerusalem",
-    "description": "Priest and theologian.",
-    "type": "saint",
-    "tags": [
+      "EOR",
+      "LAT",
       "OOR"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "john-donne",
@@ -1232,8 +967,7 @@
     "type": "saint",
     "tags": [
       "ANG"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "saint-mary-magdalene-de-pazzi",
@@ -1243,8 +977,7 @@
     "type": "saint",
     "tags": [
       "LAT"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "venerable-macarius-the-egyptian",
@@ -1253,44 +986,10 @@
     "description": "Desert father and ascetic.",
     "type": "saint",
     "tags": [
-      "EOR"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "venerable-macarius-the-egyptian",
-    "day": "March 29",
-    "name": "Venerable Macarius the Egyptian",
-    "description": "Desert father and ascetic (shared commemoration).",
-    "type": "saint",
-    "tags": [
-      "OOR"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "venerable-macarius-the-egyptian",
-    "day": "March 29",
-    "name": "Venerable Macarius the Egyptian",
-    "description": "Desert father and ascetic (shared commemoration).",
-    "type": "saint",
-    "tags": [
-      "COE"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-john-climacus",
-    "day": "March 30",
-    "name": "Saint John Climacus",
-    "description": "Abbot and author of 'The Ladder of Divine Ascent', venerated in Catholic, Eastern Orthodox, and Oriental Orthodox traditions.",
-    "type": "saint",
-    "tags": [
+      "COE",
       "EOR",
-      "LAT",
       "OOR"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "innocent-of-alaska",
@@ -1300,31 +999,20 @@
     "type": "saint",
     "tags": [
       "ANG"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "saint-john-climacus",
     "day": "March 30",
     "name": "Saint John Climacus",
-    "description": "Abbot (shared commemoration).",
+    "description": "Abbot and author of 'The Ladder of Divine Ascent', venerated in Catholic, Eastern Orthodox, and Oriental Orthodox traditions.",
     "type": "saint",
     "tags": [
-      "COE"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-hypatius-bishop-of-gangra",
-    "day": "March 31",
-    "name": "Saint Hypatius, Bishop of Gangra",
-    "description": "Bishop and martyr, venerated in Eastern Orthodox and Oriental Orthodox traditions.",
-    "type": "saint",
-    "tags": [
+      "COE",
       "EOR",
+      "LAT",
       "OOR"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "john-donne",
@@ -1334,19 +1022,7 @@
     "type": "saint",
     "tags": [
       "ANG"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-hypatius-bishop-of-gangra",
-    "day": "March 31",
-    "name": "Saint Hypatius, Bishop of Gangra",
-    "description": "Bishop and martyr (shared commemoration).",
-    "type": "saint",
-    "tags": [
-      "COE"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "saint-hypatius-of-gangra",
@@ -1356,7 +1032,18 @@
     "type": "saint",
     "tags": [
       "LAT"
-    ],
-    "verification_status": "verified"
+    ]
+  },
+  {
+    "id": "saint-hypatius-bishop-of-gangra",
+    "day": "March 31",
+    "name": "Saint Hypatius, Bishop of Gangra",
+    "description": "Bishop and martyr, venerated in Eastern Orthodox and Oriental Orthodox traditions.",
+    "type": "saint",
+    "tags": [
+      "COE",
+      "EOR",
+      "OOR"
+    ]
   }
 ]
