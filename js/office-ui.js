@@ -1024,6 +1024,49 @@ function getEthiopianHourInfo() {
 }
 
 // ── Office Renderer ──────────────────────────────────────────────────────────
+
+// ── Saints Resolver ──────────────────────────────────────────────────────────
+// Exact day match helper (prevents "February 2" matching "February 21", etc.)
+function saintOccursOnDate(saintDayField, dateObj) {
+    if (!saintDayField || !(dateObj instanceof Date)) return false;
+
+    const target = dateObj.toLocaleDateString('en-US', { month: 'long', day: 'numeric' }).toLowerCase().trim();
+
+    // Support multiple days in one field: "February 2, February 3" (or semicolons)
+    const parts = String(saintDayField)
+        .split(/[;,]/)
+        .map(s => s.trim().toLowerCase())
+        .filter(Boolean);
+
+    // Normalize "February 02" -> "February 2"
+    const normalize = (s) => s.replace(/\b(\w+)\s+0+(\d{1,2})\b/, '$1 $2').trim();
+
+    return parts.some(p => normalize(p) === target);
+}
+const TRADITION_CODES = ['ANG','LAT','EOR','OOR','COE'];
+
+function isDerivedEcumenical(tags) {
+    return TRADITION_CODES.every(c => tags.includes(c));
+}
+
+// NOTE: This is the seam for the future 3-layer saints model.
+// Identity registry + per-tradition commemoration records.
+// For now we resolve from tags only.
+function saintAppliesToContext(saint, ctx) {
+    // ctx = { tradition: 'ANG', includeEcumenical: true }
+    const tags = Array.isArray(saint.tags) ? saint.tags : [];
+    if (!ctx || !ctx.tradition) return { ok: false, label: null, isEcu: false };
+
+    const isEcu = isDerivedEcumenical(tags);
+
+    // Precedence: ECU label wins when derived ecumenical is true.
+    if (ctx.includeEcumenical && isEcu) return { ok: true, label: 'ECU', isEcu };
+
+    if (tags.includes(ctx.tradition)) return { ok: true, label: ctx.tradition, isEcu };
+
+    return { ok: false, label: null, isEcu };
+}
+
 function renderOffice() {
     if (!isHydrationComplete) return;
 
@@ -1581,7 +1624,7 @@ async function renderBcpOffice() {
             } else {
                 // 6. No index entry — secondary check: Oriental/Ethiopian saints in Gregorian saints data
                 const orientalSaints = (appData.saints || []).filter(s => {
-                    if (!s.day || !s.day.toLowerCase().includes(todayKeyShort.toLowerCase())) return false;
+                    if (!saintOccursOnDate(s.day, currentDate)) return false;
                     const tags = Array.isArray(s.tags) ? s.tags : [];
                     return tags.includes('OOR');
                 });
@@ -1687,34 +1730,22 @@ async function renderBcpOffice() {
     // ── Finalise DOM ──────────────────────────────────────────────────────────
     document.getElementById('office-display').innerHTML = officeHtml + `</div>`;
 
-    // ── PHASE 8.5: Dual-date header (Gregorian + Ge'ez) ─────────────────────
-    let dateHeaderText = `Commemorations for ${todayKey}`;
-    try {
-        const geezDateStr = EthiopianCalendar.formatEthiopianDate(currentDate);
-        dateHeaderText += ` | ${geezDateStr}`;
-    } catch (e) {
-        console.warn('[Phase 8.5] Ge\'ez date unavailable:', e.message);
-    }
-    document.getElementById('date-header').innerText = dateHeaderText;
-    document.getElementById('date-header').style.display = '';
-    const saintSection = document.querySelector('.saint-section');
-    if (saintSection) saintSection.style.display = '';
+   let dateHeaderText = `Commemorations for ${todayKey}`;
+document.getElementById('date-header').innerText = 'Commemorations';
+ // ── Saints (BCP / Daily Office) ─────────────────────────────────────────────
+const ctx = { tradition: 'ANG', includeEcumenical: true };
 
-    document.getElementById('saint-display').innerHTML = appData.saints
-        ?.filter(s => {
-            if (!s.day || !s.day.toLowerCase().includes(todayKeyShort.toLowerCase())) return false;
-            const tags = Array.isArray(s.tags) ? s.tags : [];
-            const ECU_CODES = ['ANG','LAT','EOR','OOR','COE'];
-            return tags.includes('ANG') || ECU_CODES.every(c => tags.includes(c));
-        })
-        .map(s => {
-            const tags = Array.isArray(s.tags) ? s.tags : [];
-            const ECU_CODES = ['ANG','LAT','EOR','OOR','COE'];
-            const isEcu = ECU_CODES.every(c => tags.includes(c));
-            const label = isEcu ? 'ECU' : (tags.join(' · ') || 'Unknown');
-            return `<div class="saint-box"><small style="color:var(--accent); font-weight:bold; text-transform:uppercase;">${label}</small><strong>${s.name || 'Unknown'}</strong><p>${s.description || 'No description'}</p></div>`;
-        })
-        .join('') || '<p>No commemorations.</p>';
+document.getElementById('saint-display').innerHTML = (appData.saints || [])
+    .filter(s => {
+        if (!saintOccursOnDate(s.day, currentDate)) return false;
+        return saintAppliesToContext(s, ctx).ok;
+    })
+    .map(s => {
+        const res = saintAppliesToContext(s, ctx);
+        const label = res.label || 'Unknown';
+        return `<div class="saint-box"><small style="color:var(--accent); font-weight:bold; text-transform:uppercase;">${label}</small><strong>${s.name || 'Unknown'}</strong><p>${s.description || 'No description'}</p></div>`;
+    })
+    .join('') || '<p>No commemorations.</p>';
 }
 
 // ── ETHIOPIAN SA'ATAT RENDERER ────────────────────────────────────────────────
@@ -1924,7 +1955,7 @@ async function renderEthiopianSaatat() {
                 }
             } else {
                 const orientalSaints = (appData.saints || []).filter(s => {
-                    if (!s.day || !s.day.toLowerCase().includes(todayKeyShort.toLowerCase())) return false;
+                    if (!saintOccursOnDate(s.day, currentDate)) return false;
                     const tags = Array.isArray(s.tags) ? s.tags : [];
                     return tags.includes('OOR');
                 });
