@@ -139,7 +139,7 @@ class CalendarEngine {
 
     static async init() {
         try {
-            const res = await fetch('data/season/bcp-propers.json');
+            const res = await fetch('../data/season/bcp-propers.json');
             if (res.ok) {
                 this.bcpPropers = await res.json();
                 console.log('[Calendar Engine] Loaded bcp-propers.json');
