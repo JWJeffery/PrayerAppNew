@@ -1045,6 +1045,25 @@ function saintOccursOnDate(saintDayField, dateObj) {
 }
 const TRADITION_CODES = ['ANG','LAT','EOR','OOR','COE'];
 
+// ── Centralized tradition display labels ────────────────────────────────────
+// All badge rendering MUST derive human-visible text from this map.
+// Internal logic (filtering, matching) must use internal codes only — never
+// the display label.  ECU is a derived state (all five codes present); it is
+// never stored but always displayed as 'ECU'.
+const TRADITION_DISPLAY_LABELS = {
+    ANG: 'ANG',
+    LAT: 'LAT',
+    EOR: 'EOR',
+    OOR: 'OOR',
+    COE: 'COE',
+    ECU: 'ECU',  // derived ecumenical — display label is the internal code
+};
+
+/** Return the badge display label for a given internal tradition code. */
+function getTraditionDisplayLabel(code) {
+    return TRADITION_DISPLAY_LABELS[code] || code;
+}
+
 function isDerivedEcumenical(tags) {
     return TRADITION_CODES.every(c => tags.includes(c));
 }
@@ -1742,7 +1761,7 @@ document.getElementById('saint-display').innerHTML = (appData.saints || [])
     })
     .map(s => {
         const res = saintAppliesToContext(s, ctx);
-        const label = res.label || 'Unknown';
+        const label = getTraditionDisplayLabel(res.label || 'Unknown');
         return `<div class="saint-box"><small style="color:var(--accent); font-weight:bold; text-transform:uppercase;">${label}</small><strong>${s.name || 'Unknown'}</strong><p>${s.description || 'No description'}</p></div>`;
     })
     .join('') || '<p>No commemorations.</p>';

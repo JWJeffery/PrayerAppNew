@@ -1487,7 +1487,7 @@
   {
     "id": "kateri-tekakwitha",
     "name": "Kateri Tekakwitha",
-    "description": "Native American saint (shared commemoration).",
+    "description": "Mohawk laywoman, canonized 2012; first Native American saint.",
     "type": "saint"
   },
   {
@@ -1979,7 +1979,7 @@
   {
     "id": "martin-i",
     "name": "Martin I",
-    "description": "Pope and martyr (shared commemoration).",
+    "description": "Pope and martyr, defender of Chalcedonian orthodoxy, died 655.",
     "type": "saint"
   },
   {
@@ -3398,7 +3398,7 @@
   {
     "id": "saint-basil-the-great",
     "name": "Saint Basil the Great",
-    "description": "Bishop of Caesarea, Doctor of the Church, venerated in Catholic, Eastern Orthodox, Oriental Orthodox, and Church of the East traditions.",
+    "description": "Bishop of Caesarea, Doctor of the Church, died 379.",
     "type": "saint"
   },
   {
@@ -3807,13 +3807,13 @@
   {
     "id": "saint-cyril-of-alexandria",
     "name": "Saint Cyril of Alexandria",
-    "description": "Bishop and Doctor of the Church, died 444.",
+    "description": "Archbishop of Alexandria, Doctor of the Church, died 444.",
     "type": "saint"
   },
   {
     "id": "saint-cyril-of-jerusalem",
     "name": "Saint Cyril of Jerusalem",
-    "description": "Bishop and Doctor of the Church, venerated in Catholic, Eastern Orthodox, Oriental Orthodox, and Anglican Communion traditions.",
+    "description": "Bishop of Jerusalem and Doctor of the Church, died 386.",
     "type": "saint",
     "status": "verified"
   },
@@ -3905,10 +3905,10 @@
   {
     "id": "saint-dismas",
     "name": "Saint Dismas",
-    "description": "The Repentant Thief on the cross, venerated in Catholic and Oriental Orthodox traditions.",
+    "description": "The Penitent Thief crucified alongside Christ (Luke 23:39–43).",
     "type": "saint",
     "status": "verified",
-    "notes": "The Good Thief; venerated in all traditions"
+    "notes": "Traditional name; venerated in Western and Oriental Orthodox traditions."
   },
   {
     "id": "saint-dometius-of-persia",
@@ -4046,7 +4046,7 @@
   {
     "id": "saint-ephrem-the-syrian",
     "name": "Saint Ephrem the Syrian",
-    "description": "Commemoration.",
+    "description": "Deacon, hymnographer, and Doctor of the Church, died 373.",
     "type": "saint"
   },
   {
@@ -4313,7 +4313,7 @@
   {
     "id": "saint-george",
     "name": "Saint George",
-    "description": "Great-martyr and patron saint of many nations, venerated across all traditions.",
+    "description": "Martyr, died c. 303.",
     "type": "saint"
   },
   {
@@ -4589,7 +4589,7 @@
   {
     "id": "saint-ignatius-of-antioch",
     "name": "Saint Ignatius of Antioch",
-    "description": "Hieromartyr and Apostolic Father (Eastern primary date).",
+    "description": "Bishop of Antioch and Apostolic Father, martyred at Rome c. 107.",
     "type": "saint"
   },
   {
@@ -4692,7 +4692,7 @@
   {
     "id": "saint-james-the-brother-of-the-lord",
     "name": "Saint James the Brother of the Lord",
-    "description": "Bishop of Jerusalem (shared commemoration).",
+    "description": "First Bishop of Jerusalem and author of the Epistle of James, martyred c. 62.",
     "type": "saint"
   },
   {
@@ -4807,7 +4807,7 @@
   {
     "id": "saint-john-chrysostom",
     "name": "Saint John Chrysostom",
-    "description": "Honored for eloquence.",
+    "description": "Archbishop of Constantinople and Doctor of the Church, died 407.",
     "type": "saint"
   },
   {
@@ -5385,7 +5385,7 @@
   {
     "id": "saint-mark-the-evangelist",
     "name": "Saint Mark the Evangelist",
-    "description": "Apostle, Gospel author, and founder of the Church in Alexandria, venerated across all traditions.",
+    "description": "Evangelist, author of the second Gospel, and first Bishop of Alexandria.",
     "type": "apostle"
   },
   {
@@ -5453,7 +5453,7 @@
   {
     "id": "saint-matthew-the-apostle",
     "name": "Saint Matthew the Apostle",
-    "description": "Apostle and Evangelist.",
+    "description": "Apostle, tax collector, and author of the first Gospel.",
     "type": "apostle"
   },
   {
@@ -5465,8 +5465,8 @@
   {
     "id": "saint-matthias-the-apostle",
     "name": "Saint Matthias the Apostle",
-    "description": "The apostle chosen to replace Judas Iscariot.",
-    "type": "saint"
+    "description": "Apostle chosen to replace Judas Iscariot (Acts 1:26).",
+    "type": "apostle"
   },
   {
     "id": "saint-maurice",
@@ -5943,7 +5943,7 @@
   {
     "id": "saint-polycarp-of-smyrna",
     "name": "Saint Polycarp of Smyrna",
-    "description": "Bishop and martyr.",
+    "description": "Bishop of Smyrna and Apostolic Father, martyred c. 155.",
     "type": "saint"
   },
   {
