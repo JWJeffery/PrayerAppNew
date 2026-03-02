@@ -1,5 +1,25 @@
 [
   {
+    "id": "david-pendleton-oakerhater",
+    "day": "September 1",
+    "name": "David Pendleton Oakerhater",
+    "description": "Cheyenne warrior and deacon; missionary to his people.",
+    "type": "saint",
+    "tags": [
+      "ANG"
+    ]
+  },
+  {
+    "id": "mar-mari",
+    "day": "September 1",
+    "name": "Mar Mari",
+    "description": "Apostle of the East and disciple of Addai.",
+    "type": "saint",
+    "tags": [
+      "COE"
+    ]
+  },
+  {
     "id": "saint-giles",
     "day": "September 1",
     "name": "Saint Giles",
@@ -7,8 +27,7 @@
     "type": "saint",
     "tags": [
       "LAT"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "saint-simeon-stylites",
@@ -18,41 +37,27 @@
     "type": "saint",
     "tags": [
       "EOR"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "saint-verena",
     "day": "September 1",
     "name": "Saint Verena",
-    "description": "A member of the Theban Legion who taught hygiene in Switzerland.",
+    "description": "Virgin and healer from the Theban Legion.",
     "type": "saint",
     "tags": [
       "OOR"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
-    "id": "david-pendleton-oakerhater",
-    "day": "September 1",
-    "name": "David Pendleton Oakerhater",
-    "description": "Cheyenne warrior and deacon; missionary to his people.",
-    "type": "saint",
-    "tags": [
-      "ANG"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "mar-mari",
-    "day": "September 1",
-    "name": "Mar Mari",
-    "description": "The Apostle of Mesopotamia and disciple of Addai.",
+    "id": "mar-papa-bar-aggai",
+    "day": "September 2",
+    "name": "Mar Papa bar Aggai",
+    "description": "Early Catholicos of Seleucia-Ctesiphon.",
     "type": "saint",
     "tags": [
       "COE"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "saint-agricola-of-avignon",
@@ -62,8 +67,7 @@
     "type": "saint",
     "tags": [
       "LAT"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "saint-john-the-faster",
@@ -73,8 +77,7 @@
     "type": "saint",
     "tags": [
       "EOR"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "saint-mammas",
@@ -84,8 +87,7 @@
     "type": "saint",
     "tags": [
       "OOR"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "the-martyrs-of-new-guinea",
@@ -95,30 +97,7 @@
     "type": "saint",
     "tags": [
       "ANG"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "mar-papa-bar-aggai",
-    "day": "September 2",
-    "name": "Mar Papa bar Aggai",
-    "description": "Early primate of Seleucia-Ctesiphon.",
-    "type": "saint",
-    "tags": [
-      "COE"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-gregory-the-great",
-    "day": "September 3",
-    "name": "Saint Gregory the Great",
-    "description": "Pope and Doctor; 'Father of Christian Worship'.",
-    "type": "saint",
-    "tags": [
-      "LAT"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "hieromartyr-anthimus",
@@ -128,8 +107,17 @@
     "type": "saint",
     "tags": [
       "EOR"
-    ],
-    "verification_status": "verified"
+    ]
+  },
+  {
+    "id": "mar-babai-the-great",
+    "day": "September 3",
+    "name": "Mar Babai the Great",
+    "description": "Pillar of the Church of the East.",
+    "type": "saint",
+    "tags": [
+      "COE"
+    ]
   },
   {
     "id": "saint-anba-ruwais",
@@ -139,8 +127,17 @@
     "type": "saint",
     "tags": [
       "OOR"
-    ],
-    "verification_status": "verified"
+    ]
+  },
+  {
+    "id": "saint-gregory-the-great",
+    "day": "September 3",
+    "name": "Saint Gregory the Great",
+    "description": "Pope and Doctor; 'Father of Christian Worship'.",
+    "type": "saint",
+    "tags": [
+      "LAT"
+    ]
   },
   {
     "id": "saint-phoebe",
@@ -150,30 +147,7 @@
     "type": "saint",
     "tags": [
       "ANG"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "mar-babai-the-great",
-    "day": "September 3",
-    "name": "Mar Babai the Great",
-    "description": "Theologian who defined East Syriac christology.",
-    "type": "saint",
-    "tags": [
-      "COE"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-rosalia",
-    "day": "September 4",
-    "name": "Saint Rosalia",
-    "description": "Hermitess and patroness against plagues.",
-    "type": "saint",
-    "tags": [
-      "LAT"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "holy-prophet-moses",
@@ -183,19 +157,17 @@
     "type": "saint",
     "tags": [
       "EOR"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
-    "id": "saint-isaac-of-sadmant",
+    "id": "mar-shalita",
     "day": "September 4",
-    "name": "Saint Isaac of Sadmant",
-    "description": "Coptic writer and monk of the 13th century.",
+    "name": "Mar Shalita",
+    "description": "Disciple of Mar Augin and ascetic.",
     "type": "saint",
     "tags": [
-      "OOR"
-    ],
-    "verification_status": "verified"
+      "COE"
+    ]
   },
   {
     "id": "paul-jones",
@@ -205,52 +177,27 @@
     "type": "saint",
     "tags": [
       "ANG"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
-    "id": "mar-shalita",
+    "id": "saint-isaac-of-sadmant",
     "day": "September 4",
-    "name": "Mar Shalita",
-    "description": "A healer and monk who evangelized the northern mountains.",
-    "type": "saint",
-    "tags": [
-      "COE"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-teresa-of-calcutta",
-    "day": "September 5",
-    "name": "Saint Teresa of Calcutta",
-    "description": "Foundress of the Missionaries of Charity.",
-    "type": "saint",
-    "tags": [
-      "LAT"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "prophet-zachariah",
-    "day": "September 5",
-    "name": "Prophet Zachariah",
-    "description": "Father of the Forerunner; martyred in the Temple.",
-    "type": "saint",
-    "tags": [
-      "EOR"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "righteous-elizabeth",
-    "day": "September 5",
-    "name": "Righteous Elizabeth",
-    "description": "Mother of John the Baptist.",
+    "name": "Saint Isaac of Sadmant",
+    "description": "Coptic writer and monk of the 13th century.",
     "type": "saint",
     "tags": [
       "OOR"
-    ],
-    "verification_status": "verified"
+    ]
+  },
+  {
+    "id": "saint-rosalia",
+    "day": "September 4",
+    "name": "Saint Rosalia",
+    "description": "Hermitess and patroness against plagues.",
+    "type": "saint",
+    "tags": [
+      "LAT"
+    ]
   },
   {
     "id": "gregorio-aglipay",
@@ -260,52 +207,47 @@
     "type": "saint",
     "tags": [
       "ANG"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "mar-narsai",
     "day": "September 5",
     "name": "Mar Narsai",
-    "description": "The 'Harp of the Spirit' and poet of the School of Nisibis.",
+    "description": "The 'Harp of the Spirit' and poet-theologian.",
     "type": "saint",
     "tags": [
       "COE"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
-    "id": "saint-begga",
-    "day": "September 6",
-    "name": "Saint Begga",
-    "description": "Abbess and daughter of Pepin of Landen.",
-    "type": "saint",
-    "tags": [
-      "LAT"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "miracle-of-archangel-michael-at-colossae",
-    "day": "September 6",
-    "name": "Miracle of Archangel Michael at Colossae",
-    "description": "The saving of a church from a diverted river.",
+    "id": "prophet-zachariah",
+    "day": "September 5",
+    "name": "Prophet Zachariah",
+    "description": "Father of the Forerunner; martyred in the Temple.",
     "type": "saint",
     "tags": [
       "EOR"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
-    "id": "saint-dioscorus",
-    "day": "September 6",
-    "name": "Saint Dioscorus",
-    "description": "Patriarch of Alexandria and champion of the Miaphysite faith.",
+    "id": "righteous-elizabeth",
+    "day": "September 5",
+    "name": "Righteous Elizabeth",
+    "description": "Mother of John the Baptist.",
     "type": "saint",
     "tags": [
       "OOR"
-    ],
-    "verification_status": "verified"
+    ]
+  },
+  {
+    "id": "saint-teresa-of-calcutta",
+    "day": "September 5",
+    "name": "Saint Teresa of Calcutta",
+    "description": "Foundress of the Missionaries of Charity.",
+    "type": "saint",
+    "tags": [
+      "LAT"
+    ]
   },
   {
     "id": "hannah-more",
@@ -315,52 +257,47 @@
     "type": "saint",
     "tags": [
       "ANG"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "mar-addai",
     "day": "September 6",
     "name": "Mar Addai",
-    "description": "Apostle who brought the Gospel to Edessa.",
+    "description": "One of the Seventy Disciples and Apostle to Edessa.",
     "type": "saint",
     "tags": [
       "COE"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
-    "id": "saint-cloud",
-    "day": "September 7",
-    "name": "Saint Cloud",
-    "description": "Frankish prince who became a hermit and priest.",
-    "type": "saint",
-    "tags": [
-      "LAT"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-sozon",
-    "day": "September 7",
-    "name": "Saint Sozon",
-    "description": "Shepherd martyr of Cilicia who destroyed a gold idol.",
+    "id": "miracle-of-archangel-michael-at-colossae",
+    "day": "September 6",
+    "name": "Miracle of Archangel Michael at Colossae",
+    "description": "The saving of a church from a diverted river.",
     "type": "saint",
     "tags": [
       "EOR"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
-    "id": "saint-john-the-little",
-    "day": "September 7",
-    "name": "Saint John the Little",
-    "description": "Famous Desert Father of Scetis.",
+    "id": "saint-begga",
+    "day": "September 6",
+    "name": "Saint Begga",
+    "description": "Abbess and daughter of Pepin of Landen.",
+    "type": "saint",
+    "tags": [
+      "LAT"
+    ]
+  },
+  {
+    "id": "saint-dioscorus",
+    "day": "September 6",
+    "name": "Saint Dioscorus",
+    "description": "Patriarch of Alexandria and champion of the Miaphysite faith.",
     "type": "saint",
     "tags": [
       "OOR"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "mar-awa-i",
@@ -370,8 +307,37 @@
     "type": "saint",
     "tags": [
       "COE"
-    ],
-    "verification_status": "verified"
+    ]
+  },
+  {
+    "id": "saint-cloud",
+    "day": "September 7",
+    "name": "Saint Cloud",
+    "description": "Frankish prince who became a hermit and priest.",
+    "type": "saint",
+    "tags": [
+      "LAT"
+    ]
+  },
+  {
+    "id": "saint-john-the-little",
+    "day": "September 7",
+    "name": "Saint John the Little",
+    "description": "Famous Desert Father of Scetis.",
+    "type": "saint",
+    "tags": [
+      "OOR"
+    ]
+  },
+  {
+    "id": "saint-sozon",
+    "day": "September 7",
+    "name": "Saint Sozon",
+    "description": "Shepherd martyr of Cilicia who destroyed a gold idol.",
+    "type": "saint",
+    "tags": [
+      "EOR"
+    ]
   },
   {
     "id": "nativity-of-the-blessed-virgin-mary",
@@ -381,45 +347,11 @@
     "type": "marian_feast",
     "tags": [
       "ANG",
-      "COE",
-      "EOR",
       "LAT",
-      "OOR"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-peter-claver",
-    "day": "September 9",
-    "name": "Saint Peter Claver",
-    "description": "Missionary and patron of African missions.",
-    "type": "saint",
-    "tags": [
-      "LAT"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "holy-ancestors-joachim-and-anna",
-    "day": "September 9",
-    "name": "Holy Ancestors Joachim and Anna",
-    "description": "Synaxis of the parents of the Theotokos.",
-    "type": "saint",
-    "tags": [
-      "EOR"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-severus-of-antioch",
-    "day": "September 9",
-    "name": "Saint Severus of Antioch",
-    "description": "Patriarch and great defender of Miaphysitism.",
-    "type": "saint",
-    "tags": [
-      "OOR"
-    ],
-    "verification_status": "verified"
+      "EOR",
+      "OOR",
+      "COE"
+    ]
   },
   {
     "id": "constance-and-her-companions",
@@ -429,52 +361,47 @@
     "type": "saint",
     "tags": [
       "ANG"
-    ],
-    "verification_status": "verified"
+    ]
+  },
+  {
+    "id": "holy-ancestors-joachim-and-anna",
+    "day": "September 9",
+    "name": "Holy Ancestors Joachim and Anna",
+    "description": "Synaxis of the parents of the Theotokos.",
+    "type": "saint",
+    "tags": [
+      "EOR"
+    ]
   },
   {
     "id": "mar-saba",
     "day": "September 9",
     "name": "Mar Saba",
-    "description": "Ascetic monk of the Persian church.",
+    "description": "Monk and miracle worker.",
     "type": "saint",
     "tags": [
       "COE"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
-    "id": "saint-nicholas-of-tolentino",
-    "day": "September 10",
-    "name": "Saint Nicholas of Tolentino",
-    "description": "Augustinian priest and mystic.",
+    "id": "saint-peter-claver",
+    "day": "September 9",
+    "name": "Saint Peter Claver",
+    "description": "Missionary and patron of African missions.",
     "type": "saint",
     "tags": [
       "LAT"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
-    "id": "martyrs-menodora-metrodora-and-nymphodora",
-    "day": "September 10",
-    "name": "Martyrs Menodora, Metrodora, and Nymphodora",
-    "description": "Three virgin sisters martyred in Bithynia.",
-    "type": "saint",
-    "tags": [
-      "EOR"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-cyriacus",
-    "day": "September 10",
-    "name": "Saint Cyriacus",
-    "description": "Anchorite of the Jordan desert.",
+    "id": "saint-severus-of-antioch",
+    "day": "September 9",
+    "name": "Saint Severus of Antioch",
+    "description": "Translation of relics.",
     "type": "saint",
     "tags": [
       "OOR"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "alexander-crummell",
@@ -484,52 +411,47 @@
     "type": "saint",
     "tags": [
       "ANG"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "mar-zeia",
     "day": "September 10",
     "name": "Mar Zeia",
-    "description": "The 'Traveler' and wonderworker.",
+    "description": "The traveler and ascetic.",
     "type": "saint",
     "tags": [
       "COE"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
-    "id": "saint-paphnutius",
-    "day": "September 11",
-    "name": "Saint Paphnutius",
-    "description": "Bishop and witness to the faith during persecutions.",
-    "type": "saint",
-    "tags": [
-      "LAT"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-theodora-of-alexandria",
-    "day": "September 11",
-    "name": "Saint Theodora of Alexandria",
-    "description": "Ascetic who lived as a monk to repent.",
+    "id": "martyrs-menodora-metrodora-and-nymphodora",
+    "day": "September 10",
+    "name": "Martyrs Menodora, Metrodora, and Nymphodora",
+    "description": "Three virgin sisters martyred in Bithynia.",
     "type": "saint",
     "tags": [
       "EOR"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
-    "id": "saint-macarius-of-alexandria",
-    "day": "September 11",
-    "name": "Saint Macarius of Alexandria",
-    "description": "Desert Father known for his severe austerities.",
+    "id": "saint-cyriacus",
+    "day": "September 10",
+    "name": "Saint Cyriacus",
+    "description": "Anchorite of the Jordan desert.",
     "type": "saint",
     "tags": [
       "OOR"
-    ],
-    "verification_status": "verified"
+    ]
+  },
+  {
+    "id": "saint-nicholas-of-tolentino",
+    "day": "September 10",
+    "name": "Saint Nicholas of Tolentino",
+    "description": "Augustinian priest and mystic.",
+    "type": "saint",
+    "tags": [
+      "LAT"
+    ]
   },
   {
     "id": "harry-thacker-burleigh",
@@ -539,30 +461,47 @@
     "type": "saint",
     "tags": [
       "ANG"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "mar-yohannan",
     "day": "September 11",
     "name": "Mar Yohannan",
-    "description": "Holy bishop and witness of the East.",
+    "description": "Bishop and confessor.",
     "type": "saint",
     "tags": [
       "COE"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
-    "id": "the-holy-name-of-mary",
-    "day": "September 12",
-    "name": "The Holy Name of Mary",
-    "description": "Feast of the name of the Virgin.",
+    "id": "saint-macarius-of-alexandria",
+    "day": "September 11",
+    "name": "Saint Macarius of Alexandria",
+    "description": "Desert Father known for his severe austerities.",
+    "type": "saint",
+    "tags": [
+      "OOR"
+    ]
+  },
+  {
+    "id": "saint-paphnutius",
+    "day": "September 11",
+    "name": "Saint Paphnutius",
+    "description": "Bishop and witness to the faith during persecutions.",
     "type": "saint",
     "tags": [
       "LAT"
-    ],
-    "verification_status": "verified"
+    ]
+  },
+  {
+    "id": "saint-theodora-of-alexandria",
+    "day": "September 11",
+    "name": "Saint Theodora of Alexandria",
+    "description": "Ascetic who lived as a monk to repent.",
+    "type": "saint",
+    "tags": [
+      "EOR"
+    ]
   },
   {
     "id": "hieromartyr-autonomus",
@@ -572,19 +511,7 @@
     "type": "saint",
     "tags": [
       "EOR"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-samuel-the-confessor",
-    "day": "September 12",
-    "name": "Saint Samuel the Confessor",
-    "description": "Abbot of the Monastery of Kalamun.",
-    "type": "saint",
-    "tags": [
-      "OOR"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "john-henry-hobart",
@@ -594,30 +521,37 @@
     "type": "saint",
     "tags": [
       "ANG"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "mar-sabrisho",
     "day": "September 12",
     "name": "Mar Sabrisho",
-    "description": "Catholicos and monastic father.",
+    "description": "Catholicos and monk.",
     "type": "saint",
     "tags": [
       "COE"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
-    "id": "saint-john-chrysostom",
-    "day": "September 13",
-    "name": "Saint John Chrysostom",
-    "description": "Patriarch of Constantinople and Doctor; 'Golden-Mouthed'.",
+    "id": "saint-samuel-the-confessor",
+    "day": "September 12",
+    "name": "Saint Samuel the Confessor",
+    "description": "Abbot of Kalamon.",
+    "type": "saint",
+    "tags": [
+      "OOR"
+    ]
+  },
+  {
+    "id": "the-holy-name-of-mary",
+    "day": "September 12",
+    "name": "The Holy Name of Mary",
+    "description": "Feast of the name of the Virgin.",
     "type": "saint",
     "tags": [
       "LAT"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "encaenia-of-the-temple-of-the-resurrection",
@@ -627,8 +561,17 @@
     "type": "saint",
     "tags": [
       "EOR"
-    ],
-    "verification_status": "verified"
+    ]
+  },
+  {
+    "id": "mar-mushi",
+    "day": "September 13",
+    "name": "Mar Mushi",
+    "description": "Monk and writer.",
+    "type": "saint",
+    "tags": [
+      "COE"
+    ]
   },
   {
     "id": "saint-basil-of-caesarea",
@@ -638,19 +581,17 @@
     "type": "saint",
     "tags": [
       "OOR"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
-    "id": "mar-mushi",
+    "id": "saint-john-chrysostom",
     "day": "September 13",
-    "name": "Mar Mushi",
-    "description": "Monastic teacher and scholar.",
+    "name": "Saint John Chrysostom",
+    "description": "Honored for eloquence.",
     "type": "saint",
     "tags": [
-      "COE"
-    ],
-    "verification_status": "verified"
+      "LAT"
+    ]
   },
   {
     "id": "exaltation-of-the-holy-cross",
@@ -660,23 +601,11 @@
     "type": "feast",
     "tags": [
       "ANG",
-      "COE",
-      "EOR",
       "LAT",
-      "OOR"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "our-lady-of-sorrows",
-    "day": "September 15",
-    "name": "Our Lady of Sorrows",
-    "description": "Feast of the Seven Sorrows of Mary.",
-    "type": "saint",
-    "tags": [
-      "LAT"
-    ],
-    "verification_status": "verified"
+      "EOR",
+      "OOR",
+      "COE"
+    ]
   },
   {
     "id": "great-martyr-nicetas",
@@ -686,19 +615,27 @@
     "type": "saint",
     "tags": [
       "EOR"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
-    "id": "saint-philoxenus-of-mabbug",
+    "id": "mar-sliwa",
     "day": "September 15",
-    "name": "Saint Philoxenus of Mabbug",
-    "description": "Syriac father and theologian.",
+    "name": "Mar Sliwa",
+    "description": "Martyr.",
     "type": "saint",
     "tags": [
-      "OOR"
-    ],
-    "verification_status": "verified"
+      "COE"
+    ]
+  },
+  {
+    "id": "our-lady-of-sorrows",
+    "day": "September 15",
+    "name": "Our Lady of Sorrows",
+    "description": "Feast of the Seven Sorrows of Mary.",
+    "type": "saint",
+    "tags": [
+      "LAT"
+    ]
   },
   {
     "id": "saint-cyprian-of-carthage",
@@ -708,30 +645,17 @@
     "type": "saint",
     "tags": [
       "ANG"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
-    "id": "mar-sliwa",
+    "id": "saint-philoxenus-of-mabbug",
     "day": "September 15",
-    "name": "Mar Sliwa",
-    "description": "The Martyr of the Cross.",
+    "name": "Saint Philoxenus of Mabbug",
+    "description": "Syriac father and theologian.",
     "type": "saint",
     "tags": [
-      "COE"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-cornelius",
-    "day": "September 16",
-    "name": "Saint Cornelius",
-    "description": "Pope and martyr who fought for church reconciliation.",
-    "type": "saint",
-    "tags": [
-      "LAT"
-    ],
-    "verification_status": "verified"
+      "OOR"
+    ]
   },
   {
     "id": "great-martyr-euphemia",
@@ -741,8 +665,27 @@
     "type": "saint",
     "tags": [
       "EOR"
-    ],
-    "verification_status": "verified"
+    ]
+  },
+  {
+    "id": "mar-qardagh",
+    "day": "September 16",
+    "name": "Mar Qardagh",
+    "description": "Governor and martyr.",
+    "type": "saint",
+    "tags": [
+      "COE"
+    ]
+  },
+  {
+    "id": "saint-cornelius",
+    "day": "September 16",
+    "name": "Saint Cornelius",
+    "description": "Pope and martyr who fought for church reconciliation.",
+    "type": "saint",
+    "tags": [
+      "LAT"
+    ]
   },
   {
     "id": "saint-gayane",
@@ -752,8 +695,7 @@
     "type": "saint",
     "tags": [
       "OOR"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "saint-ninian",
@@ -763,63 +705,7 @@
     "type": "saint",
     "tags": [
       "ANG"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "mar-qardagh",
-    "day": "September 16",
-    "name": "Mar Qardagh",
-    "description": "The Martyr-Prince of the Persians.",
-    "type": "saint",
-    "tags": [
-      "COE"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-robert-bellarmine",
-    "day": "September 17",
-    "name": "Saint Robert Bellarmine",
-    "description": "Cardinal, Jesuit, and Doctor.",
-    "type": "saint",
-    "tags": [
-      "LAT"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "sophia-faith-hope-and-charity",
-    "day": "September 17",
-    "name": "Sophia, Faith, Hope, and Charity",
-    "description": "Mother and daughters martyred in Rome.",
-    "type": "saint",
-    "tags": [
-      "EOR"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-tekle-haymanot",
-    "day": "September 17",
-    "name": "Saint Tekle Haymanot",
-    "description": "Beloved Ethiopian monk and wonderworker.",
-    "type": "saint",
-    "tags": [
-      "OOR"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-hildegard-of-bingen",
-    "day": "September 17",
-    "name": "Saint Hildegard of Bingen",
-    "description": "Visionary, Abbess, and Doctor.",
-    "type": "saint",
-    "tags": [
-      "ANG"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "mar-addai-relics",
@@ -829,41 +715,47 @@
     "type": "saint",
     "tags": [
       "COE"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
-    "id": "saint-joseph-of-cupertino",
-    "day": "September 18",
-    "name": "Saint Joseph of Cupertino",
-    "description": "Mystic and patron of students.",
+    "id": "saint-hildegard-of-bingen",
+    "day": "September 17",
+    "name": "Saint Hildegard of Bingen",
+    "description": "Visionary, Abbess, and Doctor.",
+    "type": "saint",
+    "tags": [
+      "ANG"
+    ]
+  },
+  {
+    "id": "saint-robert-bellarmine",
+    "day": "September 17",
+    "name": "Saint Robert Bellarmine",
+    "description": "Cardinal, Jesuit, and Doctor.",
     "type": "saint",
     "tags": [
       "LAT"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
-    "id": "saint-eumenius-of-gortyna",
-    "day": "September 18",
-    "name": "Saint Eumenius of Gortyna",
-    "description": "Bishop and wonderworker.",
-    "type": "saint",
-    "tags": [
-      "EOR"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-isaac-of-nineveh",
-    "day": "September 18",
-    "name": "Saint Isaac of Nineveh",
-    "description": "Mystic father of the East Syriac tradition.",
+    "id": "saint-tekle-haymanot",
+    "day": "September 17",
+    "name": "Saint Tekle Haymanot",
+    "description": "Beloved Ethiopian monk and wonderworker.",
     "type": "saint",
     "tags": [
       "OOR"
-    ],
-    "verification_status": "verified"
+    ]
+  },
+  {
+    "id": "sophia-faith-hope-and-charity",
+    "day": "September 17",
+    "name": "Sophia, Faith, Hope, and Charity",
+    "description": "Mother and daughters martyred in Rome.",
+    "type": "saint",
+    "tags": [
+      "EOR"
+    ]
   },
   {
     "id": "edward-bouverie-pusey",
@@ -873,30 +765,57 @@
     "type": "saint",
     "tags": [
       "ANG"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "mar-mari-synaxis",
     "day": "September 18",
     "name": "Mar Mari (Synaxis)",
-    "description": "Liturgical assembly honoring the Evangelist.",
+    "description": "Assembly in honor of the Apostle.",
     "type": "saint",
     "tags": [
       "COE"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
-    "id": "saint-januarius",
-    "day": "September 19",
-    "name": "Saint Januarius",
-    "description": "Bishop and martyr of Naples.",
+    "id": "saint-eumenius-of-gortyna",
+    "day": "September 18",
+    "name": "Saint Eumenius of Gortyna",
+    "description": "Bishop and wonderworker.",
+    "type": "saint",
+    "tags": [
+      "EOR"
+    ]
+  },
+  {
+    "id": "saint-isaac-of-nineveh",
+    "day": "September 18",
+    "name": "Saint Isaac of Nineveh",
+    "description": "Mystic and bishop, 7th century.",
+    "type": "saint",
+    "tags": [
+      "OOR"
+    ]
+  },
+  {
+    "id": "saint-joseph-of-cupertino",
+    "day": "September 18",
+    "name": "Saint Joseph of Cupertino",
+    "description": "Mystic and patron of students.",
     "type": "saint",
     "tags": [
       "LAT"
-    ],
-    "verification_status": "verified"
+    ]
+  },
+  {
+    "id": "mar-augustine",
+    "day": "September 19",
+    "name": "Mar Augustine",
+    "description": "Monk and teacher.",
+    "type": "saint",
+    "tags": [
+      "COE"
+    ]
   },
   {
     "id": "martyrs-trophimus-sabbatius-and-dorymedon",
@@ -906,8 +825,17 @@
     "type": "saint",
     "tags": [
       "EOR"
-    ],
-    "verification_status": "verified"
+    ]
+  },
+  {
+    "id": "saint-januarius",
+    "day": "September 19",
+    "name": "Saint Januarius",
+    "description": "Bishop and martyr of Naples.",
+    "type": "saint",
+    "tags": [
+      "LAT"
+    ]
   },
   {
     "id": "saint-pisenti",
@@ -917,8 +845,7 @@
     "type": "saint",
     "tags": [
       "OOR"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "theodore-of-tarsus",
@@ -928,30 +855,7 @@
     "type": "saint",
     "tags": [
       "ANG"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "mar-augustine",
-    "day": "September 19",
-    "name": "Mar Augustine",
-    "description": "Monastic teacher and ascetic.",
-    "type": "saint",
-    "tags": [
-      "COE"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-andrew-kim-taegon",
-    "day": "September 20",
-    "name": "Saint Andrew Kim Taegon",
-    "description": "First native Korean priest and martyr.",
-    "type": "saint",
-    "tags": [
-      "LAT"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "great-martyr-eustathius",
@@ -961,30 +865,17 @@
     "type": "saint",
     "tags": [
       "EOR"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-mesrop-mashtots",
-    "day": "September 20",
-    "name": "Saint Mesrop Mashtots",
-    "description": "Creator of the Armenian alphabet.",
-    "type": "saint",
-    "tags": [
-      "OOR"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "john-coleridge-patteson",
     "day": "September 20",
     "name": "John Coleridge Patteson",
-    "description": "Bishop and Martyr of Melanesia.",
+    "description": "Bishop of Melanesia and Martyr, 1871.",
     "type": "saint",
     "tags": [
       "ANG"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "mar-papa-secondary",
@@ -994,34 +885,41 @@
     "type": "saint",
     "tags": [
       "COE"
-    ],
-    "verification_status": "verified"
+    ]
+  },
+  {
+    "id": "saint-andrew-kim-taegon",
+    "day": "September 20",
+    "name": "Saint Andrew Kim Taegon",
+    "description": "First native Korean priest and martyr.",
+    "type": "saint",
+    "tags": [
+      "LAT"
+    ]
+  },
+  {
+    "id": "saint-mesrop-mashtots",
+    "day": "September 20",
+    "name": "Saint Mesrop Mashtots",
+    "description": "Inventor of the Armenian alphabet.",
+    "type": "saint",
+    "tags": [
+      "OOR"
+    ]
   },
   {
     "id": "saint-matthew-the-apostle",
     "day": "September 21",
     "name": "Saint Matthew the Apostle",
-    "description": "Tax collector and Evangelist.",
+    "description": "Apostle and Evangelist.",
     "type": "apostle",
     "tags": [
       "ANG",
-      "COE",
-      "EOR",
       "LAT",
-      "OOR"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-maurice",
-    "day": "September 22",
-    "name": "Saint Maurice",
-    "description": "Leader of the Theban Legion.",
-    "type": "saint",
-    "tags": [
-      "LAT"
-    ],
-    "verification_status": "verified"
+      "EOR",
+      "OOR",
+      "COE"
+    ]
   },
   {
     "id": "hieromartyr-phocas",
@@ -1031,19 +929,17 @@
     "type": "saint",
     "tags": [
       "EOR"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
-    "id": "saint-shenouda-the-archimandrite",
+    "id": "mar-addai-and-mar-mari",
     "day": "September 22",
-    "name": "Saint Shenouda the Archimandrite",
-    "description": "Great Coptic reformer and abbot.",
+    "name": "Mar Addai and Mar Mari",
+    "description": "General commemoration.",
     "type": "saint",
     "tags": [
-      "OOR"
-    ],
-    "verification_status": "verified"
+      "COE"
+    ]
   },
   {
     "id": "philander-chase",
@@ -1053,30 +949,27 @@
     "type": "saint",
     "tags": [
       "ANG"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
-    "id": "mar-addai-and-mar-mari",
+    "id": "saint-maurice",
     "day": "September 22",
-    "name": "Mar Addai and Mar Mari",
-    "description": "Joint feast of the founders.",
-    "type": "saint",
-    "tags": [
-      "COE"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-pius-of-pietrelcina",
-    "day": "September 23",
-    "name": "Saint Pius of Pietrelcina",
-    "description": "Padre Pio; Capuchin mystic.",
+    "name": "Saint Maurice",
+    "description": "Leader of the Theban Legion.",
     "type": "saint",
     "tags": [
       "LAT"
-    ],
-    "verification_status": "verified"
+    ]
+  },
+  {
+    "id": "saint-shenouda-the-archimandrite",
+    "day": "September 22",
+    "name": "Saint Shenouda the Archimandrite",
+    "description": "Great Coptic reformer and abbot.",
+    "type": "saint",
+    "tags": [
+      "OOR"
+    ]
   },
   {
     "id": "conception-of-saint-john-the-baptist",
@@ -1086,19 +979,37 @@
     "type": "saint",
     "tags": [
       "EOR"
-    ],
-    "verification_status": "verified"
+    ]
+  },
+  {
+    "id": "mar-shimun-bar-sabbae",
+    "day": "September 23",
+    "name": "Mar Shimun Bar Sabbae",
+    "description": "Catholicos and martyr (Secondary commemoration).",
+    "type": "saint",
+    "tags": [
+      "COE"
+    ]
   },
   {
     "id": "saint-jacob-of-nisibis",
     "day": "September 23",
     "name": "Saint Jacob of Nisibis",
-    "description": "Bishop and father of the Syriac church.",
+    "description": "Bishop and confessor.",
     "type": "saint",
     "tags": [
       "OOR"
-    ],
-    "verification_status": "verified"
+    ]
+  },
+  {
+    "id": "saint-pius-of-pietrelcina",
+    "day": "September 23",
+    "name": "Saint Pius of Pietrelcina",
+    "description": "Padre Pio; Capuchin mystic.",
+    "type": "saint",
+    "tags": [
+      "LAT"
+    ]
   },
   {
     "id": "thecla-of-iconium",
@@ -1108,41 +1019,7 @@
     "type": "saint",
     "tags": [
       "ANG"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "mar-shimun-bar-sabbae",
-    "day": "September 23",
-    "name": "Mar Shimun bar Sabbae",
-    "description": "The Good Shepherd Catholicos-Martyr.",
-    "type": "saint",
-    "tags": [
-      "COE"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "our-lady-of-walsingham",
-    "day": "September 24",
-    "name": "Our Lady of Walsingham",
-    "description": "Shrine of the Annunciation in England.",
-    "type": "saint",
-    "tags": [
-      "LAT"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-thecla-the-protomartyr",
-    "day": "September 24",
-    "name": "Saint Thecla the Protomartyr",
-    "description": "First female martyr.",
-    "type": "saint",
-    "tags": [
-      "EOR"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "mar-toma-relics",
@@ -1152,52 +1029,27 @@
     "type": "saint",
     "tags": [
       "COE"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
-    "id": "saint-finbarr",
-    "day": "September 25",
-    "name": "Saint Finbarr",
-    "description": "Bishop of Cork.",
+    "id": "our-lady-of-walsingham",
+    "day": "September 24",
+    "name": "Our Lady of Walsingham",
+    "description": "Shrine of the Annunciation in England.",
     "type": "saint",
     "tags": [
       "LAT"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
-    "id": "saint-euphrosyne-of-alexandria",
-    "day": "September 25",
-    "name": "Saint Euphrosyne of Alexandria",
-    "description": "Virgin who lived as a monk.",
+    "id": "saint-thecla-the-protomartyr",
+    "day": "September 24",
+    "name": "Saint Thecla the Protomartyr",
+    "description": "First female martyr.",
     "type": "saint",
     "tags": [
       "EOR"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-anthony-the-great-relics",
-    "day": "September 25",
-    "name": "Saint Anthony the Great (Relics)",
-    "description": "Translation of the father of monks.",
-    "type": "saint",
-    "tags": [
-      "OOR"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "sergius-of-radonezh",
-    "day": "September 25",
-    "name": "Sergius of Radonezh",
-    "description": "Abbot and patron of Russia.",
-    "type": "saint",
-    "tags": [
-      "ANG"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "mar-mari-the-evangelist",
@@ -1207,30 +1059,47 @@
     "type": "saint",
     "tags": [
       "COE"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
-    "id": "saints-cosmas-and-damian",
-    "day": "September 26",
-    "name": "Saints Cosmas and Damian",
-    "description": "Physicians who took no money.",
+    "id": "saint-anthony-the-great-relics",
+    "day": "September 25",
+    "name": "Saint Anthony the Great (Relics)",
+    "description": "Translation of the father of monks.",
     "type": "saint",
     "tags": [
-      "LAT"
-    ],
-    "verification_status": "verified"
+      "OOR"
+    ]
   },
   {
-    "id": "repose-of-apostle-john-the-theologian",
-    "day": "September 26",
-    "name": "Repose of Apostle John the Theologian",
-    "description": "Beloved disciple's passing.",
+    "id": "saint-euphrosyne-of-alexandria",
+    "day": "September 25",
+    "name": "Saint Euphrosyne of Alexandria",
+    "description": "Virgin who lived as a monk.",
     "type": "saint",
     "tags": [
       "EOR"
-    ],
-    "verification_status": "verified"
+    ]
+  },
+  {
+    "id": "saint-finbarr",
+    "day": "September 25",
+    "name": "Saint Finbarr",
+    "description": "Bishop of Cork.",
+    "type": "saint",
+    "tags": [
+      "LAT"
+    ]
+  },
+  {
+    "id": "sergius-of-radonezh",
+    "day": "September 25",
+    "name": "Sergius of Radonezh",
+    "description": "Abbot and patron of Russia.",
+    "type": "saint",
+    "tags": [
+      "ANG"
+    ]
   },
   {
     "id": "lancelot-andrewes",
@@ -1240,52 +1109,27 @@
     "type": "saint",
     "tags": [
       "ANG"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
-    "id": "saint-vincent-de-paul",
-    "day": "September 27",
-    "name": "Saint Vincent de Paul",
-    "description": "Priest of the poor.",
-    "type": "saint",
-    "tags": [
-      "LAT"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-callistratus",
-    "day": "September 27",
-    "name": "Saint Callistratus",
-    "description": "Soldier and martyr.",
+    "id": "repose-of-apostle-john-the-theologian",
+    "day": "September 26",
+    "name": "Repose of Apostle John the Theologian",
+    "description": "Beloved disciple's passing.",
     "type": "saint",
     "tags": [
       "EOR"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
-    "id": "saint-barsoum-the-naked",
-    "day": "September 27",
-    "name": "Saint Barsoum the Naked",
-    "description": "Coptic saint of Cairo.",
+    "id": "saints-cosmas-and-damian",
+    "day": "September 26",
+    "name": "Saints Cosmas and Damian",
+    "description": "Unmercenary healers.",
     "type": "saint",
     "tags": [
-      "OOR"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "vincent-de-paul",
-    "day": "September 27",
-    "name": "Vincent de Paul",
-    "description": "Priest and worker for charity.",
-    "type": "saint",
-    "tags": [
-      "ANG"
-    ],
-    "verification_status": "verified"
+      "LAT"
+    ]
   },
   {
     "id": "mar-augin",
@@ -1295,41 +1139,57 @@
     "type": "saint",
     "tags": [
       "COE"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
-    "id": "saint-wenceslaus",
-    "day": "September 28",
-    "name": "Saint Wenceslaus",
-    "description": "Duke and martyr of Bohemia.",
-    "type": "saint",
-    "tags": [
-      "LAT"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-chariton",
-    "day": "September 28",
-    "name": "Saint Chariton",
-    "description": "Founder of the Old Lavra.",
-    "type": "saint",
-    "tags": [
-      "EOR"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-abba-pishoy-relics",
-    "day": "September 28",
-    "name": "Saint Abba Pishoy (Relics)",
-    "description": "The Star of the Desert.",
+    "id": "saint-barsoum-the-naked",
+    "day": "September 27",
+    "name": "Saint Barsoum the Naked",
+    "description": "Coptic saint of Cairo.",
     "type": "saint",
     "tags": [
       "OOR"
-    ],
-    "verification_status": "verified"
+    ]
+  },
+  {
+    "id": "saint-callistratus",
+    "day": "September 27",
+    "name": "Saint Callistratus",
+    "description": "Soldier and martyr.",
+    "type": "saint",
+    "tags": [
+      "EOR"
+    ]
+  },
+  {
+    "id": "saint-vincent-de-paul",
+    "day": "September 27",
+    "name": "Saint Vincent de Paul",
+    "description": "Priest of the poor.",
+    "type": "saint",
+    "tags": [
+      "LAT"
+    ]
+  },
+  {
+    "id": "vincent-de-paul",
+    "day": "September 27",
+    "name": "Vincent de Paul",
+    "description": "Priest and worker for charity.",
+    "type": "saint",
+    "tags": [
+      "ANG"
+    ]
+  },
+  {
+    "id": "mar-pethion",
+    "day": "September 28",
+    "name": "Mar Pethion",
+    "description": "Martyr and evangelist of the Persian interior.",
+    "type": "saint",
+    "tags": [
+      "COE"
+    ]
   },
   {
     "id": "richard-rolle",
@@ -1339,63 +1199,37 @@
     "type": "saint",
     "tags": [
       "ANG"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
-    "id": "mar-pethion",
+    "id": "saint-abba-pishoy-relics",
     "day": "September 28",
-    "name": "Mar Pethion",
-    "description": "Martyr and missionary.",
-    "type": "saint",
-    "tags": [
-      "COE"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-michael-archangel",
-    "day": "September 29",
-    "name": "Saint Michael Archangel",
-    "description": "Feast of the Prince of the Heavenly Host.",
-    "type": "saint",
-    "tags": [
-      "LAT"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-kyriakos",
-    "day": "September 29",
-    "name": "Saint Kyriakos",
-    "description": "Hermit of the Jordan.",
-    "type": "saint",
-    "tags": [
-      "EOR"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-gregory-the-illuminator-main",
-    "day": "September 29",
-    "name": "Saint Gregory the Illuminator (Main)",
-    "description": "Enlightener of Armenia.",
+    "name": "Saint Abba Pishoy (Relics)",
+    "description": "The Star of the Desert.",
     "type": "saint",
     "tags": [
       "OOR"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
-    "id": "saint-michael-and-all-angels",
-    "day": "September 29",
-    "name": "Saint Michael and All Angels",
-    "description": "Michaelmas.",
+    "id": "saint-chariton",
+    "day": "September 28",
+    "name": "Saint Chariton",
+    "description": "Founder of the Old Lavra.",
     "type": "saint",
     "tags": [
-      "ANG"
-    ],
-    "verification_status": "verified"
+      "EOR"
+    ]
+  },
+  {
+    "id": "saint-wenceslaus",
+    "day": "September 28",
+    "name": "Saint Wenceslaus",
+    "description": "Duke and martyr of Bohemia.",
+    "type": "saint",
+    "tags": [
+      "LAT"
+    ]
   },
   {
     "id": "mar-gabriel-archangel",
@@ -1405,19 +1239,47 @@
     "type": "saint",
     "tags": [
       "COE"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
-    "id": "saint-jerome",
-    "day": "September 30",
-    "name": "Saint Jerome",
-    "description": "Translator of the Vulgate.",
+    "id": "saint-gregory-the-illuminator-main",
+    "day": "September 29",
+    "name": "Saint Gregory the Illuminator (Main)",
+    "description": "Enlightener of Armenia.",
+    "type": "saint",
+    "tags": [
+      "OOR"
+    ]
+  },
+  {
+    "id": "saint-kyriakos",
+    "day": "September 29",
+    "name": "Saint Kyriakos",
+    "description": "Hermit of the Jordan.",
+    "type": "saint",
+    "tags": [
+      "EOR"
+    ]
+  },
+  {
+    "id": "saint-michael-and-all-angels",
+    "day": "September 29",
+    "name": "Saint Michael and All Angels",
+    "description": "Michaelmas.",
+    "type": "saint",
+    "tags": [
+      "ANG"
+    ]
+  },
+  {
+    "id": "saint-michael-archangel",
+    "day": "September 29",
+    "name": "Saint Michael Archangel",
+    "description": "Feast of the Prince of the Heavenly Host.",
     "type": "saint",
     "tags": [
       "LAT"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "hieromartyr-gregory-of-armenia",
@@ -1427,19 +1289,7 @@
     "type": "saint",
     "tags": [
       "EOR"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-sahak-partiev",
-    "day": "September 30",
-    "name": "Saint Sahak Partiev",
-    "description": "Catholicos and scholar.",
-    "type": "saint",
-    "tags": [
-      "OOR"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "jerome",
@@ -1449,8 +1299,7 @@
     "type": "saint",
     "tags": [
       "ANG"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "mar-shimun-bar-sabbae-secondary",
@@ -1460,7 +1309,26 @@
     "type": "saint",
     "tags": [
       "COE"
-    ],
-    "verification_status": "verified"
+    ]
+  },
+  {
+    "id": "saint-jerome",
+    "day": "September 30",
+    "name": "Saint Jerome",
+    "description": "Translator of the Vulgate.",
+    "type": "saint",
+    "tags": [
+      "LAT"
+    ]
+  },
+  {
+    "id": "saint-sahak-partiev",
+    "day": "September 30",
+    "name": "Saint Sahak Partiev",
+    "description": "Catholicos and scholar.",
+    "type": "saint",
+    "tags": [
+      "OOR"
+    ]
   }
 ]

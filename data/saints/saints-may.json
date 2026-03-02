@@ -7,45 +7,11 @@
     "type": "prophet",
     "tags": [
       "ANG",
-      "COE",
-      "EOR",
       "LAT",
-      "OOR"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-joseph-the-worker",
-    "day": "May 1",
-    "name": "Saint Joseph the Worker",
-    "description": "Patron of workers and spouse of the Blessed Virgin Mary.",
-    "type": "saint",
-    "tags": [
-      "LAT"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-addai-the-apostle",
-    "day": "May 1",
-    "name": "Saint Addai the Apostle",
-    "description": "Apostle and missionary to Edessa.",
-    "type": "saint",
-    "tags": [
+      "EOR",
+      "OOR",
       "COE"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "philip-and-james-apostles",
-    "day": "May 1",
-    "name": "Philip and James, Apostles",
-    "description": "Apostles and martyrs (Western traditional date).",
-    "type": "saint",
-    "tags": [
-      "ANG"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "martyr-philosophos",
@@ -55,8 +21,7 @@
     "type": "saint",
     "tags": [
       "EOR"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "martyrdom-of-saint-mark-the-evangelist",
@@ -66,23 +31,37 @@
     "type": "saint",
     "tags": [
       "OOR"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
-    "id": "saint-athanasius-the-great",
-    "day": "May 2",
-    "name": "Saint Athanasius the Great",
-    "description": "Patriarch of Alexandria and Doctor of the Church, defender against Arianism.",
+    "id": "philip-and-james-apostles",
+    "day": "May 1",
+    "name": "Philip and James, Apostles",
+    "description": "Apostles and martyrs (Western traditional date).",
     "type": "saint",
     "tags": [
-      "ANG",
-      "COE",
-      "EOR",
-      "LAT",
-      "OOR"
-    ],
-    "verification_status": "verified"
+      "ANG"
+    ]
+  },
+  {
+    "id": "saint-addai-the-apostle",
+    "day": "May 1",
+    "name": "Saint Addai the Apostle",
+    "description": "Apostle and missionary to Edessa.",
+    "type": "saint",
+    "tags": [
+      "COE"
+    ]
+  },
+  {
+    "id": "saint-joseph-the-worker",
+    "day": "May 1",
+    "name": "Saint Joseph the Worker",
+    "description": "Patron of workers and spouse of the Blessed Virgin Mary.",
+    "type": "saint",
+    "tags": [
+      "LAT"
+    ]
   },
   {
     "id": "saint-athanasius",
@@ -91,31 +70,9 @@
     "description": "Bishop of Alexandria and Teacher of the Faith, died 373 AD.",
     "type": "saint",
     "tags": [
-      "ANG"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-athanasius",
-    "day": "May 2",
-    "name": "Saint Athanasius",
-    "description": "Patriarch of Alexandria and defender of orthodoxy, died 373 AD.",
-    "type": "saint",
-    "tags": [
+      "ANG",
       "COE"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-athanasius-the-great",
-    "day": "May 2",
-    "name": "Saint Athanasius the Great",
-    "description": "Bishop of Alexandria and theologian, died 373 AD.",
-    "type": "saint",
-    "tags": [
-      "EOR"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "saint-athanasius-the-apostolic",
@@ -125,8 +82,31 @@
     "type": "saint",
     "tags": [
       "OOR"
-    ],
-    "verification_status": "verified"
+    ]
+  },
+  {
+    "id": "saint-athanasius-the-great",
+    "day": "May 2",
+    "name": "Saint Athanasius the Great",
+    "description": "Patriarch of Alexandria and Doctor of the Church, defender against Arianism.",
+    "type": "saint",
+    "tags": [
+      "ANG",
+      "LAT",
+      "EOR",
+      "OOR",
+      "COE"
+    ]
+  },
+  {
+    "id": "martyrs-of-the-east",
+    "day": "May 3",
+    "name": "Martyrs of the East",
+    "description": "Early martyrs, shared commemoration.",
+    "type": "saint",
+    "tags": [
+      "COE"
+    ]
   },
   {
     "id": "martyrs-timothy-and-maura",
@@ -137,43 +117,40 @@
     "tags": [
       "EOR",
       "OOR"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "philip-and-james-apostles",
     "day": "May 3",
     "name": "Philip and James, Apostles",
-    "description": "Apostles and martyrs (Roman Catholic calendar date).",
+    "description": "Apostles and martyrs (Western traditional date).",
     "type": "saint",
     "tags": [
       "ANG",
       "LAT"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "martyrs-of-the-east",
-    "day": "May 3",
-    "name": "Martyrs of the East",
-    "description": "Early martyrs in the Persian Empire.",
-    "type": "saint",
-    "tags": [
-      "COE"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "saint-monica",
     "day": "May 4",
     "name": "Saint Monica",
-    "description": "Mother of Saint Augustine, known for her persistent prayer.",
+    "description": "Mother of St. Augustine; tireless in prayer for her son's conversion.",
     "type": "saint",
     "tags": [
       "ANG",
       "LAT"
-    ],
-    "verification_status": "verified"
+    ]
+  },
+  {
+    "id": "saint-pachomius",
+    "day": "May 4",
+    "name": "Saint Pachomius",
+    "description": "Founder of communal monasticism, died 348 AD.",
+    "type": "saint",
+    "tags": [
+      "COE",
+      "OOR"
+    ]
   },
   {
     "id": "virgin-martyr-pelagia-of-tarsus",
@@ -183,63 +160,7 @@
     "type": "saint",
     "tags": [
       "EOR"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-pachomius",
-    "day": "May 4",
-    "name": "Saint Pachomius",
-    "description": "Founder of communal monasticism, died 348 AD.",
-    "type": "saint",
-    "tags": [
-      "OOR"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-pachomius",
-    "day": "May 4",
-    "name": "Saint Pachomius",
-    "description": "Egyptian monk and founder of cenobitic monasticism.",
-    "type": "saint",
-    "tags": [
-      "COE"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "great-martyr-irene",
-    "day": "May 5",
-    "name": "Great Martyr Irene",
-    "description": "Early martyr for the faith.",
-    "type": "saint",
-    "tags": [
-      "EOR"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-hilary-of-arles",
-    "day": "May 5",
-    "name": "Saint Hilary of Arles",
-    "description": "Bishop and monastic reformer, died 449 AD.",
-    "type": "saint",
-    "tags": [
-      "LAT"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-asaph",
-    "day": "May 5",
-    "name": "Saint Asaph",
-    "description": "Bishop in Wales, died 601 AD.",
-    "type": "saint",
-    "tags": [
-      "ANG"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "departure-of-saint-simon-the-zealot",
@@ -249,8 +170,37 @@
     "type": "saint",
     "tags": [
       "OOR"
-    ],
-    "verification_status": "verified"
+    ]
+  },
+  {
+    "id": "great-martyr-irene",
+    "day": "May 5",
+    "name": "Great Martyr Irene",
+    "description": "Early martyr for the faith.",
+    "type": "saint",
+    "tags": [
+      "EOR"
+    ]
+  },
+  {
+    "id": "saint-asaph",
+    "day": "May 5",
+    "name": "Saint Asaph",
+    "description": "Bishop in Wales, died 601 AD.",
+    "type": "saint",
+    "tags": [
+      "ANG"
+    ]
+  },
+  {
+    "id": "saint-hilary-of-arles",
+    "day": "May 5",
+    "name": "Saint Hilary of Arles",
+    "description": "Bishop and monastic reformer, died 449 AD.",
+    "type": "saint",
+    "tags": [
+      "LAT"
+    ]
   },
   {
     "id": "saint-sawrisho-of-beth-garmi",
@@ -260,8 +210,7 @@
     "type": "saint",
     "tags": [
       "COE"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "righteous-job-the-long-suffering",
@@ -271,41 +220,7 @@
     "type": "saint",
     "tags": [
       "EOR"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-evodius-of-antioch",
-    "day": "May 6",
-    "name": "Saint Evodius of Antioch",
-    "description": "Early bishop and martyr, 1st century.",
-    "type": "saint",
-    "tags": [
-      "LAT"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-john-of-beverley",
-    "day": "May 6",
-    "name": "Saint John of Beverley",
-    "description": "Bishop of York, died 721 AD.",
-    "type": "saint",
-    "tags": [
-      "ANG"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-george-of-lydda",
-    "day": "May 6",
-    "name": "Saint George of Lydda",
-    "description": "Soldier and martyr, died 303 AD.",
-    "type": "saint",
-    "tags": [
-      "OOR"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "saint-awa-catholicos",
@@ -315,42 +230,37 @@
     "type": "saint",
     "tags": [
       "COE"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
-    "id": "dame-julian-of-norwich",
-    "day": "May 7",
-    "name": "Dame Julian of Norwich",
-    "description": "English mystic and author of 'Revelations of Divine Love'.",
-    "type": "saint",
-    "tags": [
-      "ANG"
-    ],
-    "verification_status": "verified",
-    "notes": "LAT devotional only, not liturgical"
-  },
-  {
-    "id": "saint-domitian-of-huy",
-    "day": "May 7",
-    "name": "Saint Domitian of Huy",
-    "description": "Bishop and evangelizer, died 560 AD.",
+    "id": "saint-evodius-of-antioch",
+    "day": "May 6",
+    "name": "Saint Evodius of Antioch",
+    "description": "Early bishop and martyr, 1st century.",
     "type": "saint",
     "tags": [
       "LAT"
-    ],
-    "verification_status": "verified"
+    ]
+  },
+  {
+    "id": "saint-george-of-lydda",
+    "day": "May 6",
+    "name": "Saint George of Lydda",
+    "description": "Soldier and martyr, died 303 AD.",
+    "type": "saint",
+    "tags": [
+      "OOR"
+    ]
   },
   {
     "id": "saint-john-of-beverley",
-    "day": "May 7",
+    "day": "May 6",
     "name": "Saint John of Beverley",
-    "description": "Bishop and hermit, died 721 AD.",
+    "description": "Bishop of York, died 721 AD.",
     "type": "saint",
     "tags": [
       "ANG"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "commemoration-of-the-sign-of-the-cross-over-jerusalem",
@@ -360,8 +270,17 @@
     "type": "saint",
     "tags": [
       "EOR"
-    ],
-    "verification_status": "verified"
+    ]
+  },
+  {
+    "id": "dame-julian-of-norwich",
+    "day": "May 7",
+    "name": "Dame Julian of Norwich",
+    "description": "English mystic and author of 'Revelations of Divine Love'.",
+    "type": "saint",
+    "tags": [
+      "ANG"
+    ]
   },
   {
     "id": "martyrdom-of-saint-pachomius",
@@ -371,8 +290,17 @@
     "type": "saint",
     "tags": [
       "OOR"
-    ],
-    "verification_status": "verified"
+    ]
+  },
+  {
+    "id": "saint-domitian-of-huy",
+    "day": "May 7",
+    "name": "Saint Domitian of Huy",
+    "description": "Bishop and evangelizer, died 560 AD.",
+    "type": "saint",
+    "tags": [
+      "LAT"
+    ]
   },
   {
     "id": "saint-john-bar-malkeh",
@@ -382,30 +310,17 @@
     "type": "saint",
     "tags": [
       "COE"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
-    "id": "saint-john-the-theologian",
-    "day": "May 8",
-    "name": "Saint John the Theologian",
-    "description": "Apostle and Evangelist.",
+    "id": "saint-john-of-beverley",
+    "day": "May 7",
+    "name": "Saint John of Beverley",
+    "description": "Bishop of York, died 721 AD.",
     "type": "saint",
     "tags": [
-      "EOR"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-desideratus-of-bourges",
-    "day": "May 8",
-    "name": "Saint Desideratus of Bourges",
-    "description": "Bishop, died 550 AD.",
-    "type": "saint",
-    "tags": [
-      "LAT"
-    ],
-    "verification_status": "verified"
+      "ANG"
+    ]
   },
   {
     "id": "julian-of-norwich",
@@ -415,8 +330,7 @@
     "type": "saint",
     "tags": [
       "ANG"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "martyrdom-of-st-mark-the-evangelist",
@@ -426,8 +340,17 @@
     "type": "saint",
     "tags": [
       "OOR"
-    ],
-    "verification_status": "verified"
+    ]
+  },
+  {
+    "id": "saint-desideratus-of-bourges",
+    "day": "May 8",
+    "name": "Saint Desideratus of Bourges",
+    "description": "Bishop, died 550 AD.",
+    "type": "saint",
+    "tags": [
+      "LAT"
+    ]
   },
   {
     "id": "saint-john-the-evangelist",
@@ -437,8 +360,47 @@
     "type": "saint",
     "tags": [
       "COE"
-    ],
-    "verification_status": "verified"
+    ]
+  },
+  {
+    "id": "saint-john-the-theologian",
+    "day": "May 8",
+    "name": "Saint John the Theologian",
+    "description": "Apostle and Evangelist.",
+    "type": "saint",
+    "tags": [
+      "EOR"
+    ]
+  },
+  {
+    "id": "feast-of-the-ascension",
+    "day": "May 9",
+    "name": "Feast of the Ascension",
+    "description": "Commemoration of Christ's Ascension (if falling on this date).",
+    "type": "saint",
+    "tags": [
+      "COE"
+    ]
+  },
+  {
+    "id": "gregory-of-nazianzus",
+    "day": "May 9",
+    "name": "Gregory of Nazianzus",
+    "description": "Bishop of Constantinople and one of the Cappadocian Fathers, died 389 AD.",
+    "type": "saint",
+    "tags": [
+      "ANG"
+    ]
+  },
+  {
+    "id": "saint-pachomius-of-tabennisi",
+    "day": "May 9",
+    "name": "Saint Pachomius of Tabennisi",
+    "description": "Founder of Coptic monasticism, died 348 AD.",
+    "type": "saint",
+    "tags": [
+      "OOR"
+    ]
   },
   {
     "id": "saint-pachomius-the-great",
@@ -449,41 +411,7 @@
     "tags": [
       "EOR",
       "LAT"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "gregory-of-nazianzus",
-    "day": "May 9",
-    "name": "Gregory of Nazianzus",
-    "description": "Bishop of Constantinople and one of the Cappadocian Fathers, died 389 AD.",
-    "type": "saint",
-    "tags": [
-      "ANG"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-pachomius-of-tabennisi",
-    "day": "May 9",
-    "name": "Saint Pachomius of Tabennisi",
-    "description": "Founder of Coptic monasticism, died 348 AD.",
-    "type": "saint",
-    "tags": [
-      "OOR"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "feast-of-the-ascension",
-    "day": "May 9",
-    "name": "Feast of the Ascension",
-    "description": "Commemoration of Christ's Ascension (if falling on this date).",
-    "type": "saint",
-    "tags": [
-      "COE"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "apostle-simon-the-zealot",
@@ -493,19 +421,7 @@
     "type": "saint",
     "tags": [
       "EOR"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-john-of-avila",
-    "day": "May 10",
-    "name": "Saint John of Avila",
-    "description": "Priest and Doctor of the Church, died 1569 AD.",
-    "type": "saint",
-    "tags": [
-      "LAT"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "saint-comgall",
@@ -515,8 +431,17 @@
     "type": "saint",
     "tags": [
       "ANG"
-    ],
-    "verification_status": "verified"
+    ]
+  },
+  {
+    "id": "saint-john-of-avila",
+    "day": "May 10",
+    "name": "Saint John of Avila",
+    "description": "Priest and Doctor of the Church, died 1569 AD.",
+    "type": "saint",
+    "tags": [
+      "LAT"
+    ]
   },
   {
     "id": "saint-simon-the-zealot",
@@ -525,56 +450,9 @@
     "description": "Apostle martyred in Persia.",
     "type": "saint",
     "tags": [
+      "COE",
       "OOR"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-simon-the-zealot",
-    "day": "May 10",
-    "name": "Saint Simon the Zealot",
-    "description": "Apostle and missionary.",
-    "type": "saint",
-    "tags": [
-      "COE"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saints-cyril-and-methodius",
-    "day": "May 11",
-    "name": "Saints Cyril and Methodius",
-    "description": "Equals-to-the-Apostles and missionaries to the Slavs.",
-    "type": "saint",
-    "tags": [
-      "ANG",
-      "EOR",
-      "LAT",
-      "OOR"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-mamertus",
-    "day": "May 11",
-    "name": "Saint Mamertus",
-    "description": "Bishop of Vienne, died 475 AD.",
-    "type": "saint",
-    "tags": [
-      "LAT"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saints-cyril-and-methodius",
-    "day": "May 11",
-    "name": "Saints Cyril and Methodius",
-    "description": "Missionaries to the Slavs, died 869 and 885 AD.",
-    "type": "saint",
-    "tags": [
-      "ANG"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "hieromartyr-mocius",
@@ -584,19 +462,17 @@
     "type": "saint",
     "tags": [
       "EOR"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
-    "id": "saints-cyril-and-methodius",
+    "id": "saint-mamertus",
     "day": "May 11",
-    "name": "Saints Cyril and Methodius",
-    "description": "Brothers and evangelizers.",
+    "name": "Saint Mamertus",
+    "description": "Bishop of Vienne, died 475 AD.",
     "type": "saint",
     "tags": [
-      "OOR"
-    ],
-    "verification_status": "verified"
+      "LAT"
+    ]
   },
   {
     "id": "saint-mocius",
@@ -606,8 +482,41 @@
     "type": "saint",
     "tags": [
       "COE"
-    ],
-    "verification_status": "verified"
+    ]
+  },
+  {
+    "id": "saints-cyril-and-methodius",
+    "day": "May 11",
+    "name": "Saints Cyril and Methodius",
+    "description": "Patrons of Europe and missionaries to the Slavs, venerated in Catholic and Anglican Communion traditions.",
+    "type": "saint",
+    "tags": [
+      "ANG",
+      "EOR",
+      "LAT",
+      "OOR"
+    ]
+  },
+  {
+    "id": "mor-ya-qub-of-nisibin",
+    "day": "May 12",
+    "name": "Mor Ya'qub of Nisibin",
+    "description": "Bishop and confessor, died 338 AD (Syriac commemoration).",
+    "type": "saint",
+    "tags": [
+      "OOR"
+    ]
+  },
+  {
+    "id": "saint-epiphanius-of-salamis",
+    "day": "May 12",
+    "name": "Saint Epiphanius of Salamis",
+    "description": "Bishop, died 403 AD.",
+    "type": "saint",
+    "tags": [
+      "EOR",
+      "OOR"
+    ]
   },
   {
     "id": "saint-pancras",
@@ -619,8 +528,7 @@
       "ANG",
       "COE",
       "LAT"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "saints-nereus-and-achilleus",
@@ -633,31 +541,7 @@
       "EOR",
       "LAT",
       "OOR"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-epiphanius-of-salamis",
-    "day": "May 12",
-    "name": "Saint Epiphanius of Salamis",
-    "description": "Bishop of Salamis and defender against heresies, died 403 AD.",
-    "type": "saint",
-    "tags": [
-      "EOR",
-      "OOR"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "mor-ya-qub-of-nisibin",
-    "day": "May 12",
-    "name": "Mor Ya'qub of Nisibin",
-    "description": "Bishop and confessor, died 338 AD (Syriac commemoration).",
-    "type": "saint",
-    "tags": [
-      "OOR"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "our-lady-of-fatima",
@@ -667,41 +551,7 @@
     "type": "saint",
     "tags": [
       "LAT"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-julian-of-norwich",
-    "day": "May 13",
-    "name": "Saint Julian of Norwich",
-    "description": "Mystic, died c. 1417 AD.",
-    "type": "saint",
-    "tags": [
-      "ANG"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "virgin-martyr-glyceria",
-    "day": "May 13",
-    "name": "Virgin Martyr Glyceria",
-    "description": "Martyr at Heraclea, died 177 AD.",
-    "type": "saint",
-    "tags": [
-      "EOR"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-isaac-the-syrian",
-    "day": "May 13",
-    "name": "Saint Isaac the Syrian",
-    "description": "Bishop and ascetic writer, died 700 AD (Syriac feast).",
-    "type": "saint",
-    "tags": [
-      "OOR"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "saint-isaac-of-nineveh",
@@ -711,8 +561,57 @@
     "type": "saint",
     "tags": [
       "COE"
-    ],
-    "verification_status": "verified"
+    ]
+  },
+  {
+    "id": "saint-isaac-the-syrian",
+    "day": "May 13",
+    "name": "Saint Isaac the Syrian",
+    "description": "Bishop of Nineveh.",
+    "type": "saint",
+    "tags": [
+      "OOR"
+    ]
+  },
+  {
+    "id": "saint-julian-of-norwich",
+    "day": "May 13",
+    "name": "Saint Julian of Norwich",
+    "description": "Mystic, died c. 1417 AD.",
+    "type": "saint",
+    "tags": [
+      "ANG"
+    ]
+  },
+  {
+    "id": "virgin-martyr-glyceria",
+    "day": "May 13",
+    "name": "Virgin Martyr Glyceria",
+    "description": "Martyr at Heraclea, died 177 AD.",
+    "type": "saint",
+    "tags": [
+      "EOR"
+    ]
+  },
+  {
+    "id": "martyr-isidore-of-chios",
+    "day": "May 14",
+    "name": "Martyr Isidore of Chios",
+    "description": "Martyr under Decius, died 251 AD.",
+    "type": "saint",
+    "tags": [
+      "EOR"
+    ]
+  },
+  {
+    "id": "saint-matthias",
+    "day": "May 14",
+    "name": "Saint Matthias",
+    "description": "Apostle and witness to the Resurrection.",
+    "type": "saint",
+    "tags": [
+      "COE"
+    ]
   },
   {
     "id": "saint-matthias-the-apostle",
@@ -723,74 +622,17 @@
     "tags": [
       "ANG",
       "LAT"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "martyr-isidore-of-chios",
-    "day": "May 14",
-    "name": "Martyr Isidore of Chios",
-    "description": "Martyr under Decius, died 251 AD.",
-    "type": "saint",
-    "tags": [
-      "EOR"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "saint-pachomius",
     "day": "May 14",
     "name": "Saint Pachomius",
-    "description": "Founder of monasticism (Coptic).",
+    "description": "Founder of communal monasticism, died 348 AD.",
     "type": "saint",
     "tags": [
       "OOR"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-matthias",
-    "day": "May 14",
-    "name": "Saint Matthias",
-    "description": "Apostle and martyr.",
-    "type": "saint",
-    "tags": [
-      "COE"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-dymphna",
-    "day": "May 15",
-    "name": "Saint Dymphna",
-    "description": "Patron saint of those suffering from mental illness.",
-    "type": "saint",
-    "tags": [
-      "LAT"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "junia",
-    "day": "May 15",
-    "name": "Junia",
-    "description": "Apostle mentioned by St. Paul in Romans.",
-    "type": "saint",
-    "tags": [
-      "ANG"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-pachomius-the-great",
-    "day": "May 15",
-    "name": "Saint Pachomius the Great",
-    "description": "Founder of cenobitic monasticism, died 348 AD.",
-    "type": "saint",
-    "tags": [
-      "EOR"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "holy-virgin-mary-of-the-harvest",
@@ -800,19 +642,57 @@
     "type": "saint",
     "tags": [
       "OOR"
-    ],
-    "verification_status": "verified"
+    ]
+  },
+  {
+    "id": "junia",
+    "day": "May 15",
+    "name": "Junia",
+    "description": "Apostle mentioned by St. Paul in Romans.",
+    "type": "saint",
+    "tags": [
+      "ANG"
+    ]
+  },
+  {
+    "id": "saint-dymphna",
+    "day": "May 15",
+    "name": "Saint Dymphna",
+    "description": "Patron saint of those suffering from mental illness.",
+    "type": "saint",
+    "tags": [
+      "LAT"
+    ]
   },
   {
     "id": "saint-pachomius",
     "day": "May 15",
     "name": "Saint Pachomius",
-    "description": "Monk and founder, venerated in Eastern traditions.",
+    "description": "Founder of communal monasticism, died 348 AD.",
     "type": "saint",
     "tags": [
       "COE"
-    ],
-    "verification_status": "verified"
+    ]
+  },
+  {
+    "id": "saint-pachomius-the-great",
+    "day": "May 15",
+    "name": "Saint Pachomius the Great",
+    "description": "Founder of cenobitic (communal) monasticism.",
+    "type": "saint",
+    "tags": [
+      "EOR"
+    ]
+  },
+  {
+    "id": "hieromartyr-alexander-of-jerusalem",
+    "day": "May 16",
+    "name": "Hieromartyr Alexander of Jerusalem",
+    "description": "Bishop and martyr under Decius, died 251 AD.",
+    "type": "saint",
+    "tags": [
+      "EOR"
+    ]
   },
   {
     "id": "saint-brendan-the-navigator",
@@ -823,8 +703,17 @@
     "tags": [
       "ANG",
       "LAT"
-    ],
-    "verification_status": "verified"
+    ]
+  },
+  {
+    "id": "saint-theodore-of-tabennisi",
+    "day": "May 16",
+    "name": "Saint Theodore of Tabennisi",
+    "description": "Monk and disciple in early monastic tradition, died 368 AD.",
+    "type": "saint",
+    "tags": [
+      "COE"
+    ]
   },
   {
     "id": "venerable-theodore-the-sanctified",
@@ -835,41 +724,7 @@
     "tags": [
       "EOR",
       "OOR"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-theodore-of-tabennisi",
-    "day": "May 16",
-    "name": "Saint Theodore of Tabennisi",
-    "description": "Monk and disciple in early monastic tradition, died 368 AD.",
-    "type": "saint",
-    "tags": [
-      "COE"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "hieromartyr-alexander-of-jerusalem",
-    "day": "May 16",
-    "name": "Hieromartyr Alexander of Jerusalem",
-    "description": "Bishop and martyr under Decius, died 251 AD.",
-    "type": "saint",
-    "tags": [
-      "EOR"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-paschal-baylon",
-    "day": "May 17",
-    "name": "Saint Paschal Baylon",
-    "description": "Franciscan lay brother and mystic devoted to the Eucharist, died 1592 AD.",
-    "type": "saint",
-    "tags": [
-      "LAT"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "apostles-andronicus-and-junia",
@@ -880,19 +735,7 @@
     "tags": [
       "EOR",
       "OOR"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-madron-of-cornwall",
-    "day": "May 17",
-    "name": "Saint Madron of Cornwall",
-    "description": "Hermit and martyr in Cornwall, 6th century.",
-    "type": "saint",
-    "tags": [
-      "ANG"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "martyrs-solochon-pamphamer-and-pamphalon",
@@ -902,19 +745,27 @@
     "type": "saint",
     "tags": [
       "COE"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
-    "id": "pope-saint-john-i",
-    "day": "May 18",
-    "name": "Pope Saint John I",
-    "description": "Pope and martyr imprisoned by Theodoric, died 526 AD.",
+    "id": "saint-madron-of-cornwall",
+    "day": "May 17",
+    "name": "Saint Madron of Cornwall",
+    "description": "Hermit and martyr in Cornwall, 6th century.",
+    "type": "saint",
+    "tags": [
+      "ANG"
+    ]
+  },
+  {
+    "id": "saint-paschal-baylon",
+    "day": "May 17",
+    "name": "Saint Paschal Baylon",
+    "description": "Franciscan lay brother and mystic devoted to the Eucharist, died 1592 AD.",
     "type": "saint",
     "tags": [
       "LAT"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "martyr-theodotus-of-ancyra",
@@ -925,8 +776,27 @@
     "tags": [
       "EOR",
       "OOR"
-    ],
-    "verification_status": "verified"
+    ]
+  },
+  {
+    "id": "martyrs-peter-andrew-paul-and-dionysia",
+    "day": "May 18",
+    "name": "Martyrs Peter, Andrew, Paul, and Dionysia",
+    "description": "Martyrs under Decius around 250 AD.",
+    "type": "saint",
+    "tags": [
+      "COE"
+    ]
+  },
+  {
+    "id": "pope-saint-john-i",
+    "day": "May 18",
+    "name": "Pope Saint John I",
+    "description": "Pope and martyr imprisoned by Theodoric, died 526 AD.",
+    "type": "saint",
+    "tags": [
+      "LAT"
+    ]
   },
   {
     "id": "saint-felix-of-cantalice",
@@ -937,19 +807,7 @@
     "tags": [
       "ANG",
       "LAT"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "martyrs-peter-andrew-paul-and-dionysia",
-    "day": "May 18",
-    "name": "Martyrs Peter, Andrew, Paul, and Dionysia",
-    "description": "Martyrs under Decius around 250 AD.",
-    "type": "saint",
-    "tags": [
-      "COE"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "dunstan",
@@ -959,19 +817,7 @@
     "type": "saint",
     "tags": [
       "ANG"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-celestine-v",
-    "day": "May 19",
-    "name": "Saint Celestine V",
-    "description": "Pope and hermit, died 1296 AD.",
-    "type": "saint",
-    "tags": [
-      "LAT"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "hieromartyr-patrick-of-prusa",
@@ -981,19 +827,7 @@
     "type": "saint",
     "tags": [
       "EOR"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-epiphanius-of-salamis",
-    "day": "May 19",
-    "name": "Saint Epiphanius of Salamis",
-    "description": "Bishop and theologian, died 403 AD.",
-    "type": "saint",
-    "tags": [
-      "OOR"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "pentecost-sunday",
@@ -1003,8 +837,27 @@
     "type": "saint",
     "tags": [
       "COE"
-    ],
-    "verification_status": "verified"
+    ]
+  },
+  {
+    "id": "saint-celestine-v",
+    "day": "May 19",
+    "name": "Saint Celestine V",
+    "description": "Pope and hermit, died 1296 AD.",
+    "type": "saint",
+    "tags": [
+      "LAT"
+    ]
+  },
+  {
+    "id": "saint-epiphanius-of-salamis",
+    "day": "May 19",
+    "name": "Saint Epiphanius of Salamis",
+    "description": "Bishop, died 403 AD.",
+    "type": "saint",
+    "tags": [
+      "OOR"
+    ]
   },
   {
     "id": "alcuin-of-york",
@@ -1014,19 +867,7 @@
     "type": "saint",
     "tags": [
       "ANG"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-bernardine-of-siena",
-    "day": "May 20",
-    "name": "Saint Bernardine of Siena",
-    "description": "Priest and preacher, died 1444 AD.",
-    "type": "saint",
-    "tags": [
-      "LAT"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "martyr-thallelaios",
@@ -1036,19 +877,17 @@
     "type": "saint",
     "tags": [
       "EOR"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
-    "id": "saint-thalassius-the-myrrh-streamer",
+    "id": "saint-bernardine-of-siena",
     "day": "May 20",
-    "name": "Saint Thalassius the Myrrh-Streamer",
-    "description": "Ascetic and wonderworker, 7th century.",
+    "name": "Saint Bernardine of Siena",
+    "description": "Priest and preacher, died 1444 AD.",
     "type": "saint",
     "tags": [
-      "OOR"
-    ],
-    "verification_status": "verified"
+      "LAT"
+    ]
   },
   {
     "id": "saint-thalassius",
@@ -1058,30 +897,29 @@
     "type": "saint",
     "tags": [
       "COE"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
-    "id": "st-christopher-magallanes-and-companions",
-    "day": "May 21",
-    "name": "St. Christopher Magallanes and Companions",
-    "description": "Martyrs of the Cristero War in Mexico.",
+    "id": "saint-thalassius-the-myrrh-streamer",
+    "day": "May 20",
+    "name": "Saint Thalassius the Myrrh-Streamer",
+    "description": "Ascetic and wonderworker, 7th century.",
     "type": "saint",
     "tags": [
-      "LAT"
-    ],
-    "verification_status": "verified"
+      "OOR"
+    ]
   },
   {
-    "id": "st-eugene-de-mazenod",
+    "id": "martyrs-polyeuctus-victorinus-and-donatus",
     "day": "May 21",
-    "name": "St. Eugene de Mazenod",
-    "description": "Bishop of Marseille and founder of the Oblates of Mary Immaculate.",
+    "name": "Martyrs Polyeuctus, Victorinus, and Donatus",
+    "description": "Martyrs from Caesarea in Cappadocia.",
     "type": "saint",
     "tags": [
-      "LAT"
-    ],
-    "verification_status": "verified"
+      "COE",
+      "EOR",
+      "OOR"
+    ]
   },
   {
     "id": "mary-mother-of-the-church",
@@ -1091,74 +929,7 @@
     "type": "saint",
     "tags": [
       "LAT"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "st-cassian-the-greek",
-    "day": "May 21",
-    "name": "St. Cassian the Greek",
-    "description": "15th-century miracle worker and monk who founded a monastery in Uglich, Russia.",
-    "type": "saint",
-    "tags": [
-      "EOR"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "st-pachomius-of-patmos",
-    "day": "May 21",
-    "name": "St. Pachomius of Patmos",
-    "description": "New Martyr from the 18th century.",
-    "type": "saint",
-    "tags": [
-      "EOR"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "st-agapitus-of-markushev",
-    "day": "May 21",
-    "name": "St. Agapitus of Markushev",
-    "description": "Hieromartyr and abbot from the Vologda region.",
-    "type": "saint",
-    "tags": [
-      "EOR"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "vladimir-icon-of-the-mother-of-god",
-    "day": "May 21",
-    "name": "Vladimir Icon of the Mother of God",
-    "description": "Commemoration of the saving of Moscow from invasion in 1521.",
-    "type": "saint",
-    "tags": [
-      "EOR"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "st-collen",
-    "day": "May 21",
-    "name": "St. Collen",
-    "description": "7th-century Welsh abbot.",
-    "type": "saint",
-    "tags": [
-      "ANG"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "st-isberga",
-    "day": "May 21",
-    "name": "St. Isberga",
-    "description": "Sister of Charlemagne and a nun in France.",
-    "type": "saint",
-    "tags": [
-      "ANG"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "st-adelphios",
@@ -1168,87 +939,87 @@
     "type": "saint",
     "tags": [
       "OOR"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
-    "id": "martyrs-polyeuctus-victorinus-and-donatus",
+    "id": "st-agapitus-of-markushev",
     "day": "May 21",
-    "name": "Martyrs Polyeuctus, Victorinus, and Donatus",
-    "description": "Martyrs from Caesarea in Cappadocia.",
+    "name": "St. Agapitus of Markushev",
+    "description": "Hieromartyr and abbot from the Vologda region.",
     "type": "saint",
     "tags": [
-      "EOR",
-      "OOR"
-    ],
-    "verification_status": "verified"
+      "EOR"
+    ]
   },
   {
-    "id": "martyrs-polyeuctus-victorinus-and-donatus",
+    "id": "st-cassian-the-greek",
     "day": "May 21",
-    "name": "Martyrs Polyeuctus, Victorinus, and Donatus",
-    "description": "Martyrs from Caesarea in Cappadocia.",
+    "name": "St. Cassian the Greek",
+    "description": "15th-century miracle worker and monk who founded a monastery in Uglich, Russia.",
     "type": "saint",
     "tags": [
-      "COE"
-    ],
-    "verification_status": "verified"
+      "EOR"
+    ]
   },
   {
-    "id": "saint-rita-of-cascia",
-    "day": "May 22",
-    "name": "Saint Rita of Cascia",
-    "description": "Augustinian nun and patroness of impossible causes.",
+    "id": "st-christopher-magallanes-and-companions",
+    "day": "May 21",
+    "name": "St. Christopher Magallanes and Companions",
+    "description": "Martyrs of the Cristero War in Mexico.",
     "type": "saint",
     "tags": [
       "LAT"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
-    "id": "saint-basiliscus-of-comana",
-    "day": "May 22",
-    "name": "Saint Basiliscus of Comana",
-    "description": "Martyr under Maximian, died 308 AD.",
-    "type": "saint",
-    "tags": [
-      "EOR",
-      "OOR"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-begh-of-bee",
-    "day": "May 22",
-    "name": "Saint Begh of Bee",
-    "description": "Irish princess who founded a convent at St. Bees.",
+    "id": "st-collen",
+    "day": "May 21",
+    "name": "St. Collen",
+    "description": "7th-century Welsh abbot.",
     "type": "saint",
     "tags": [
       "ANG"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
-    "id": "saint-kali-of-ethiopia",
-    "day": "May 22",
-    "name": "Saint Kali of Ethiopia",
-    "description": "Woman known for her extreme devotion and ascetic life.",
+    "id": "st-eugene-de-mazenod",
+    "day": "May 21",
+    "name": "St. Eugene de Mazenod",
+    "description": "Bishop of Marseille and founder of the Oblates of Mary Immaculate.",
     "type": "saint",
     "tags": [
-      "OOR"
-    ],
-    "verification_status": "verified"
+      "LAT"
+    ]
   },
   {
-    "id": "saint-basiliscus-of-comana",
-    "day": "May 22",
-    "name": "Saint Basiliscus of Comana",
-    "description": "Martyr under Maximian, died 308 AD.",
+    "id": "st-isberga",
+    "day": "May 21",
+    "name": "St. Isberga",
+    "description": "Sister of Charlemagne and a nun in France.",
     "type": "saint",
     "tags": [
-      "COE"
-    ],
-    "verification_status": "verified"
+      "ANG"
+    ]
+  },
+  {
+    "id": "st-pachomius-of-patmos",
+    "day": "May 21",
+    "name": "St. Pachomius of Patmos",
+    "description": "New Martyr from the 18th century.",
+    "type": "saint",
+    "tags": [
+      "EOR"
+    ]
+  },
+  {
+    "id": "vladimir-icon-of-the-mother-of-god",
+    "day": "May 21",
+    "name": "Vladimir Icon of the Mother of God",
+    "description": "Commemoration of the saving of Moscow from invasion in 1521.",
+    "type": "saint",
+    "tags": [
+      "EOR"
+    ]
   },
   {
     "id": "blessed-john-forest",
@@ -1258,19 +1029,7 @@
     "type": "saint",
     "tags": [
       "LAT"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-humility",
-    "day": "May 22",
-    "name": "Saint Humility",
-    "description": "14th-century Italian mystic and foundress of the Vallumbrosan Nuns.",
-    "type": "saint",
-    "tags": [
-      "LAT"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "commemoration-of-the-second-ecumenical-council",
@@ -1280,8 +1039,69 @@
     "type": "saint",
     "tags": [
       "EOR"
-    ],
-    "verification_status": "verified"
+    ]
+  },
+  {
+    "id": "saint-basiliscus-of-comana",
+    "day": "May 22",
+    "name": "Saint Basiliscus of Comana",
+    "description": "Martyr under Maximian, died 308 AD.",
+    "type": "saint",
+    "tags": [
+      "COE",
+      "EOR",
+      "OOR"
+    ]
+  },
+  {
+    "id": "saint-begh-of-bee",
+    "day": "May 22",
+    "name": "Saint Begh of Bee",
+    "description": "Irish princess who founded a convent at St. Bees.",
+    "type": "saint",
+    "tags": [
+      "ANG"
+    ]
+  },
+  {
+    "id": "saint-humility",
+    "day": "May 22",
+    "name": "Saint Humility",
+    "description": "14th-century Italian mystic and foundress of the Vallumbrosan Nuns.",
+    "type": "saint",
+    "tags": [
+      "LAT"
+    ]
+  },
+  {
+    "id": "saint-kali-of-ethiopia",
+    "day": "May 22",
+    "name": "Saint Kali of Ethiopia",
+    "description": "Woman known for her extreme devotion and ascetic life.",
+    "type": "saint",
+    "tags": [
+      "OOR"
+    ]
+  },
+  {
+    "id": "saint-rita-of-cascia",
+    "day": "May 22",
+    "name": "Saint Rita of Cascia",
+    "description": "Augustinian nun and patroness of impossible causes.",
+    "type": "saint",
+    "tags": [
+      "LAT"
+    ]
+  },
+  {
+    "id": "holy-myrrh-bearer-mary-wife-of-cleopas",
+    "day": "May 23",
+    "name": "Holy Myrrh-bearer Mary Wife of Cleopas",
+    "description": "One of the myrrh-bearing women at Christ's tomb, 1st century.",
+    "type": "saint",
+    "tags": [
+      "COE"
+    ]
   },
   {
     "id": "saint-giovanni-battista-rossi",
@@ -1292,8 +1112,7 @@
     "tags": [
       "ANG",
       "LAT"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "saint-michael-the-confessor-of-synnada",
@@ -1304,19 +1123,27 @@
     "tags": [
       "EOR",
       "OOR"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
-    "id": "holy-myrrh-bearer-mary-wife-of-cleopas",
-    "day": "May 23",
-    "name": "Holy Myrrh-bearer Mary Wife of Cleopas",
-    "description": "One of the myrrh-bearing women at Christ's tomb, 1st century.",
+    "id": "martyr-meletius",
+    "day": "May 24",
+    "name": "Martyr Meletius",
+    "description": "General and martyr with family.",
     "type": "saint",
     "tags": [
       "COE"
-    ],
-    "verification_status": "verified"
+    ]
+  },
+  {
+    "id": "martyr-meletius-stratelates",
+    "day": "May 24",
+    "name": "Martyr Meletius Stratelates",
+    "description": "Soldier martyr with 1218 companions in Galatia, died 138 AD.",
+    "type": "saint",
+    "tags": [
+      "EOR"
+    ]
   },
   {
     "id": "saint-david-i-of-scotland",
@@ -1327,19 +1154,7 @@
     "tags": [
       "LAT",
       "OOR"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "martyr-meletius-stratelates",
-    "day": "May 24",
-    "name": "Martyr Meletius Stratelates",
-    "description": "Soldier martyr with 1218 companions in Galatia, died 138 AD.",
-    "type": "saint",
-    "tags": [
-      "EOR"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "saint-david-of-scotland",
@@ -1349,19 +1164,7 @@
     "type": "saint",
     "tags": [
       "ANG"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "martyr-meletius",
-    "day": "May 24",
-    "name": "Martyr Meletius",
-    "description": "General and martyr with family.",
-    "type": "saint",
-    "tags": [
-      "COE"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "bede-the-venerable",
@@ -1372,8 +1175,18 @@
     "tags": [
       "ANG",
       "LAT"
-    ],
-    "verification_status": "verified"
+    ]
+  },
+  {
+    "id": "saint-bede",
+    "day": "May 25",
+    "name": "Saint Bede",
+    "description": "Scholar and historian.",
+    "type": "saint",
+    "tags": [
+      "COE",
+      "OOR"
+    ]
   },
   {
     "id": "saint-gregory-vii",
@@ -1383,8 +1196,7 @@
     "type": "saint",
     "tags": [
       "LAT"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "third-finding-of-the-head-of-saint-john-the-baptist",
@@ -1394,52 +1206,7 @@
     "type": "saint",
     "tags": [
       "EOR"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-bede",
-    "day": "May 25",
-    "name": "Saint Bede",
-    "description": "Scholar and historian.",
-    "type": "saint",
-    "tags": [
-      "OOR"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-bede",
-    "day": "May 25",
-    "name": "Saint Bede",
-    "description": "Monk and doctor.",
-    "type": "saint",
-    "tags": [
-      "COE"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-philip-neri",
-    "day": "May 26",
-    "name": "Saint Philip Neri",
-    "description": "Founder of the Oratorians and the 'Apostle of Rome'.",
-    "type": "saint",
-    "tags": [
-      "LAT"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "augustine-of-canterbury",
-    "day": "May 26",
-    "name": "Augustine of Canterbury",
-    "description": "First Archbishop of Canterbury, died 605 AD.",
-    "type": "saint",
-    "tags": [
-      "ANG"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "apostle-carpus-of-the-seventy",
@@ -1449,8 +1216,17 @@
     "type": "saint",
     "tags": [
       "EOR"
-    ],
-    "verification_status": "verified"
+    ]
+  },
+  {
+    "id": "augustine-of-canterbury",
+    "day": "May 26",
+    "name": "Augustine of Canterbury",
+    "description": "First Archbishop of Canterbury, died 605 AD.",
+    "type": "saint",
+    "tags": [
+      "ANG"
+    ]
   },
   {
     "id": "saint-augustine-of-canterbury",
@@ -1460,8 +1236,17 @@
     "type": "saint",
     "tags": [
       "OOR"
-    ],
-    "verification_status": "verified"
+    ]
+  },
+  {
+    "id": "saint-philip-neri",
+    "day": "May 26",
+    "name": "Saint Philip Neri",
+    "description": "Founder of the Oratorians and the 'Apostle of Rome'.",
+    "type": "saint",
+    "tags": [
+      "LAT"
+    ]
   },
   {
     "id": "second-sunday-of-the-apostles",
@@ -1471,20 +1256,7 @@
     "type": "saint",
     "tags": [
       "COE"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-augustine-of-canterbury",
-    "day": "May 27",
-    "name": "Saint Augustine of Canterbury",
-    "description": "First Archbishop of Canterbury and missionary to England, died 605 AD.",
-    "type": "saint",
-    "tags": [
-      "ANG",
-      "LAT"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "hieromartyr-therapon-of-sardis",
@@ -1495,8 +1267,18 @@
     "tags": [
       "EOR",
       "OOR"
-    ],
-    "verification_status": "verified"
+    ]
+  },
+  {
+    "id": "saint-augustine-of-canterbury",
+    "day": "May 27",
+    "name": "Saint Augustine of Canterbury",
+    "description": "Missionary to England.",
+    "type": "saint",
+    "tags": [
+      "ANG",
+      "LAT"
+    ]
   },
   {
     "id": "saint-john-the-russian",
@@ -1506,8 +1288,7 @@
     "type": "saint",
     "tags": [
       "COE"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "blessed-lanfranc-of-canterbury",
@@ -1518,8 +1299,17 @@
     "tags": [
       "ANG",
       "LAT"
-    ],
-    "verification_status": "verified"
+    ]
+  },
+  {
+    "id": "hieromartyr-eutychius-of-melitene",
+    "day": "May 28",
+    "name": "Hieromartyr Eutychius of Melitene",
+    "description": "Bishop martyred under Maximian, died 303 AD.",
+    "type": "saint",
+    "tags": [
+      "COE"
+    ]
   },
   {
     "id": "saint-ignatius-of-rostov",
@@ -1530,42 +1320,17 @@
     "tags": [
       "EOR",
       "OOR"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
-    "id": "hieromartyr-eutychius-of-melitene",
-    "day": "May 28",
-    "name": "Hieromartyr Eutychius of Melitene",
-    "description": "Bishop martyred under Maximian, died 303 AD.",
+    "id": "hieromartyr-olbian-of-anaea",
+    "day": "May 29",
+    "name": "Hieromartyr Olbian of Anaea",
+    "description": "Bishop and martyr with disciples under Diocletian, died 303 AD.",
     "type": "saint",
     "tags": [
       "COE"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-ursula-ledochowska",
-    "day": "May 29",
-    "name": "Saint Ursula Ledochowska",
-    "description": "Foundress of the Ursulines of the Agonizing Heart of Jesus, died 1939 AD.",
-    "type": "saint",
-    "tags": [
-      "LAT"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "virgin-martyr-theodosia-of-tyre",
-    "day": "May 29",
-    "name": "Virgin Martyr Theodosia of Tyre",
-    "description": "Martyred during Diocletian's persecution, died 307 AD.",
-    "type": "saint",
-    "tags": [
-      "EOR",
-      "OOR"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "saint-maximinus-of-trier",
@@ -1576,19 +1341,38 @@
     "tags": [
       "ANG",
       "LAT"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
-    "id": "hieromartyr-olbian-of-anaea",
+    "id": "saint-ursula-ledochowska",
     "day": "May 29",
-    "name": "Hieromartyr Olbian of Anaea",
-    "description": "Bishop and martyr with disciples under Diocletian, died 303 AD.",
+    "name": "Saint Ursula Ledochowska",
+    "description": "Foundress of the Ursulines of the Agonizing Heart of Jesus, died 1939 AD.",
     "type": "saint",
     "tags": [
-      "COE"
-    ],
-    "verification_status": "verified"
+      "LAT"
+    ]
+  },
+  {
+    "id": "virgin-martyr-theodosia-of-tyre",
+    "day": "May 29",
+    "name": "Virgin Martyr Theodosia of Tyre",
+    "description": "Martyred during Diocletian's persecution, died 307 AD.",
+    "type": "saint",
+    "tags": [
+      "EOR",
+      "OOR"
+    ]
+  },
+  {
+    "id": "saint-isaac-the-syrian",
+    "day": "May 30",
+    "name": "Saint Isaac the Syrian",
+    "description": "Bishop of Nineveh.",
+    "type": "saint",
+    "tags": [
+      "OOR"
+    ]
   },
   {
     "id": "saint-joan-of-arc",
@@ -1598,9 +1382,9 @@
     "type": "saint",
     "tags": [
       "ANG",
+      "COE",
       "LAT"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "venerable-isaac-of-dalmatia",
@@ -1610,41 +1394,27 @@
     "type": "saint",
     "tags": [
       "EOR"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
-    "id": "saint-joan-of-arc",
-    "day": "May 30",
-    "name": "Saint Joan of Arc",
-    "description": "Visionary and martyr.",
+    "id": "martyr-hermias-of-comana",
+    "day": "May 31",
+    "name": "Martyr Hermias of Comana",
+    "description": "Soldier martyr, died 160 AD.",
     "type": "saint",
     "tags": [
-      "ANG"
-    ],
-    "verification_status": "verified"
+      "EOR"
+    ]
   },
   {
-    "id": "saint-isaac-the-syrian",
-    "day": "May 30",
-    "name": "Saint Isaac the Syrian",
-    "description": "Ascetic and writer.",
-    "type": "saint",
-    "tags": [
-      "OOR"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-joan-of-arc",
-    "day": "May 30",
-    "name": "Saint Joan of Arc",
-    "description": "Martyr for faith.",
+    "id": "saint-ahudemmeh",
+    "day": "May 31",
+    "name": "Saint Ahudemmeh",
+    "description": "Bishop and missionary to the Arabs.",
     "type": "saint",
     "tags": [
       "COE"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "visitation-of-the-blessed-virgin-mary",
@@ -1655,30 +1425,7 @@
     "tags": [
       "ANG",
       "LAT"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-ahudemmeh",
-    "day": "May 31",
-    "name": "Saint Ahudemmeh",
-    "description": "Bishop and missionary to the Arabs.",
-    "type": "saint",
-    "tags": [
-      "COE"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "martyr-hermias-of-comana",
-    "day": "May 31",
-    "name": "Martyr Hermias of Comana",
-    "description": "Soldier martyr, died 160 AD.",
-    "type": "saint",
-    "tags": [
-      "EOR"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "visitation-of-the-virgin-mary",
@@ -1688,7 +1435,6 @@
     "type": "saint",
     "tags": [
       "OOR"
-    ],
-    "verification_status": "verified"
+    ]
   }
 ]

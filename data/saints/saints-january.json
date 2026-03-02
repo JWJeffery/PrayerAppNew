@@ -7,27 +7,11 @@
     "type": "feast",
     "tags": [
       "ANG",
-      "COE",
-      "EOR",
       "LAT",
-      "OOR"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-basil-the-great",
-    "day": "January 1",
-    "name": "Saint Basil the Great",
-    "description": "Bishop of Caesarea, Doctor of the Church, venerated in Catholic, Eastern Orthodox, Oriental Orthodox, and Church of the East traditions.",
-    "type": "saint",
-    "tags": [
-      "ANG",
-      "COE",
       "EOR",
-      "LAT",
-      "OOR"
-    ],
-    "verification_status": "verified"
+      "OOR",
+      "COE"
+    ]
   },
   {
     "id": "mary-mother-of-god",
@@ -37,41 +21,21 @@
     "type": "saint",
     "tags": [
       "LAT"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
-    "id": "vedanayagam-samuel-azariah",
-    "day": "January 2",
-    "name": "Vedanayagam Samuel Azariah",
-    "description": "First Indian Anglican bishop and evangelist.",
+    "id": "saint-basil-the-great",
+    "day": "January 1",
+    "name": "Saint Basil the Great",
+    "description": "Bishop of Caesarea, Doctor of the Church, venerated in Catholic, Eastern Orthodox, Oriental Orthodox, and Church of the East traditions.",
     "type": "saint",
     "tags": [
-      "ANG"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saints-basil-the-great-and-gregory-nazianzen",
-    "day": "January 2",
-    "name": "Saints Basil the Great and Gregory Nazianzen",
-    "description": "Doctors of the Church, Cappadocian Fathers.",
-    "type": "saint",
-    "tags": [
-      "LAT"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-seraphim-of-sarov",
-    "day": "January 2",
-    "name": "Saint Seraphim of Sarov",
-    "description": "Russian monk and mystic.",
-    "type": "saint",
-    "tags": [
-      "EOR"
-    ],
-    "verification_status": "verified"
+      "ANG",
+      "LAT",
+      "EOR",
+      "OOR",
+      "COE"
+    ]
   },
   {
     "id": "saint-abraam-the-bishop",
@@ -81,8 +45,7 @@
     "type": "saint",
     "tags": [
       "OOR"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "saint-cosmas-of-constantinople",
@@ -92,52 +55,37 @@
     "type": "saint",
     "tags": [
       "COE"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
-    "id": "most-holy-name-of-jesus",
-    "day": "January 3",
-    "name": "Most Holy Name of Jesus",
-    "description": "Feast honoring the name of Jesus.",
+    "id": "saint-seraphim-of-sarov",
+    "day": "January 2",
+    "name": "Saint Seraphim of Sarov",
+    "description": "Russian monk and mystic.",
+    "type": "saint",
+    "tags": [
+      "EOR"
+    ]
+  },
+  {
+    "id": "saints-basil-the-great-and-gregory-nazianzen",
+    "day": "January 2",
+    "name": "Saints Basil the Great and Gregory Nazianzen",
+    "description": "Doctors of the Church, Cappadocian Fathers.",
     "type": "saint",
     "tags": [
       "LAT"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
-    "id": "prophet-malachias",
-    "day": "January 3",
-    "name": "Prophet Malachias",
-    "description": "Old Testament prophet.",
+    "id": "vedanayagam-samuel-azariah",
+    "day": "January 2",
+    "name": "Vedanayagam Samuel Azariah",
+    "description": "First Indian Anglican bishop and evangelist.",
     "type": "saint",
     "tags": [
-      "EOR"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "martyr-gordius",
-    "day": "January 3",
-    "name": "Martyr Gordius",
-    "description": "Martyr at Caesarea in Cappadocia.",
-    "type": "saint",
-    "tags": [
-      "EOR"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-genevieve-of-paris",
-    "day": "January 3",
-    "name": "Saint Genevieve of Paris",
-    "description": "Patroness of Paris.",
-    "type": "saint",
-    "tags": [
-      "EOR"
-    ],
-    "verification_status": "verified"
+      "ANG"
+    ]
   },
   {
     "id": "fifth-day-of-the-fast-of-the-nativity",
@@ -147,8 +95,48 @@
     "type": "saint",
     "tags": [
       "OOR"
-    ],
-    "verification_status": "verified"
+    ]
+  },
+  {
+    "id": "martyr-gordius",
+    "day": "January 3",
+    "name": "Martyr Gordius",
+    "description": "Martyr at Caesarea in Cappadocia.",
+    "type": "saint",
+    "tags": [
+      "EOR"
+    ]
+  },
+  {
+    "id": "most-holy-name-of-jesus",
+    "day": "January 3",
+    "name": "Most Holy Name of Jesus",
+    "description": "Feast honoring the name of Jesus.",
+    "type": "saint",
+    "tags": [
+      "ANG",
+      "LAT"
+    ]
+  },
+  {
+    "id": "prophet-malachias",
+    "day": "January 3",
+    "name": "Prophet Malachias",
+    "description": "Old Testament prophet.",
+    "type": "saint",
+    "tags": [
+      "EOR"
+    ]
+  },
+  {
+    "id": "saint-genevieve-of-paris",
+    "day": "January 3",
+    "name": "Saint Genevieve of Paris",
+    "description": "Patroness of Paris.",
+    "type": "saint",
+    "tags": [
+      "EOR"
+    ]
   },
   {
     "id": "saint-malachi",
@@ -158,19 +146,7 @@
     "type": "saint",
     "tags": [
       "COE"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "most-holy-name-of-jesus",
-    "day": "January 3",
-    "name": "Most Holy Name of Jesus",
-    "description": "Feast commemorating the naming of Jesus.",
-    "type": "saint",
-    "tags": [
-      "ANG"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "saint-elizabeth-ann-seton",
@@ -180,19 +156,7 @@
     "type": "saint",
     "tags": [
       "LAT"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "synaxis-of-the-seventy-apostles",
-    "day": "January 4",
-    "name": "Synaxis of the Seventy Apostles",
-    "description": "Commemoration of the seventy apostles.",
-    "type": "saint",
-    "tags": [
-      "EOR"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "saint-theoctistus",
@@ -201,9 +165,9 @@
     "description": "Abbot at Cucomo in Sicily.",
     "type": "saint",
     "tags": [
+      "COE",
       "EOR"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "sixth-day-of-the-fast-of-the-nativity",
@@ -213,52 +177,17 @@
     "type": "saint",
     "tags": [
       "OOR"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
-    "id": "saint-theoctistus",
+    "id": "synaxis-of-the-seventy-apostles",
     "day": "January 4",
-    "name": "Saint Theoctistus",
-    "description": "Abbot (shared commemoration).",
-    "type": "saint",
-    "tags": [
-      "COE"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-john-neumann",
-    "day": "January 5",
-    "name": "Saint John Neumann",
-    "description": "Bishop known for work with immigrants in the US.",
-    "type": "saint",
-    "tags": [
-      "LAT"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "martyrs-theopemptus-and-theonas",
-    "day": "January 5",
-    "name": "Martyrs Theopemptus and Theonas",
-    "description": "Martyrs.",
+    "name": "Synaxis of the Seventy Apostles",
+    "description": "Commemoration of the seventy apostles.",
     "type": "saint",
     "tags": [
       "EOR"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-syncletica-of-alexandria",
-    "day": "January 5",
-    "name": "Saint Syncletica of Alexandria",
-    "description": "Ascetic saint.",
-    "type": "saint",
-    "tags": [
-      "EOR"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "eve-of-the-nativity-and-theophany",
@@ -268,19 +197,27 @@
     "type": "saint",
     "tags": [
       "OOR"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
-    "id": "sarah-theodora-and-syncletica-of-egypt",
+    "id": "martyrs-theopemptus-and-theonas",
     "day": "January 5",
-    "name": "Sarah, Theodora, and Syncletica of Egypt",
-    "description": "Desert Mothers, 4th-5th century.",
+    "name": "Martyrs Theopemptus and Theonas",
+    "description": "Martyrs.",
     "type": "saint",
     "tags": [
-      "ANG"
-    ],
-    "verification_status": "verified"
+      "EOR"
+    ]
+  },
+  {
+    "id": "saint-john-neumann",
+    "day": "January 5",
+    "name": "Saint John Neumann",
+    "description": "Bishop known for work with immigrants in the US.",
+    "type": "saint",
+    "tags": [
+      "LAT"
+    ]
   },
   {
     "id": "saint-syncletica",
@@ -290,8 +227,27 @@
     "type": "saint",
     "tags": [
       "COE"
-    ],
-    "verification_status": "verified"
+    ]
+  },
+  {
+    "id": "saint-syncletica-of-alexandria",
+    "day": "January 5",
+    "name": "Saint Syncletica of Alexandria",
+    "description": "Ascetic saint.",
+    "type": "saint",
+    "tags": [
+      "EOR"
+    ]
+  },
+  {
+    "id": "sarah-theodora-and-syncletica-of-egypt",
+    "day": "January 5",
+    "name": "Sarah, Theodora, and Syncletica of Egypt",
+    "description": "Desert Mothers, 4th-5th century.",
+    "type": "saint",
+    "tags": [
+      "ANG"
+    ]
   },
   {
     "id": "the-epiphany-theophany-of-our-lord",
@@ -301,45 +257,11 @@
     "type": "feast",
     "tags": [
       "ANG",
-      "COE",
-      "EOR",
       "LAT",
-      "OOR"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-raymond-of-penyafort",
-    "day": "January 7",
-    "name": "Saint Raymond of Penyafort",
-    "description": "Priest and canonist.",
-    "type": "saint",
-    "tags": [
-      "LAT"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "synaxis-of-john-the-baptist",
-    "day": "January 7",
-    "name": "Synaxis of John the Baptist",
-    "description": "Commemoration of the Forerunner.",
-    "type": "saint",
-    "tags": [
-      "EOR"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "second-day-of-the-nativity",
-    "day": "January 7",
-    "name": "Second Day of the Nativity",
-    "description": "Armenian tradition.",
-    "type": "saint",
-    "tags": [
-      "OOR"
-    ],
-    "verification_status": "verified"
+      "EOR",
+      "OOR",
+      "COE"
+    ]
   },
   {
     "id": "harriet-bedell",
@@ -349,52 +271,47 @@
     "type": "saint",
     "tags": [
       "ANG"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "saint-john-the-baptist",
     "day": "January 7",
     "name": "Saint John the Baptist",
-    "description": "Synaxis (shared commemoration).",
+    "description": "The martyrdom of the Forerunner.",
     "type": "saint",
     "tags": [
       "COE"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
-    "id": "saint-thorfinn",
-    "day": "January 8",
-    "name": "Saint Thorfinn",
-    "description": "Bishop.",
+    "id": "saint-raymond-of-penyafort",
+    "day": "January 7",
+    "name": "Saint Raymond of Penyafort",
+    "description": "Priest and canonist.",
     "type": "saint",
     "tags": [
       "LAT"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
-    "id": "saint-george-the-chozebite",
-    "day": "January 8",
-    "name": "Saint George the Chozebite",
-    "description": "Abbot.",
-    "type": "saint",
-    "tags": [
-      "EOR"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "third-day-of-the-nativity",
-    "day": "January 8",
-    "name": "Third Day of the Nativity",
+    "id": "second-day-of-the-nativity",
+    "day": "January 7",
+    "name": "Second Day of the Nativity",
     "description": "Armenian tradition.",
     "type": "saint",
     "tags": [
       "OOR"
-    ],
-    "verification_status": "verified"
+    ]
+  },
+  {
+    "id": "synaxis-of-john-the-baptist",
+    "day": "January 7",
+    "name": "Synaxis of John the Baptist",
+    "description": "Commemoration of the Forerunner.",
+    "type": "saint",
+    "tags": [
+      "EOR"
+    ]
   },
   {
     "id": "george-the-chozebite",
@@ -404,41 +321,38 @@
     "type": "saint",
     "tags": [
       "ANG"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "saint-george-the-chozebite",
     "day": "January 8",
     "name": "Saint George the Chozebite",
-    "description": "Abbot (shared commemoration).",
-    "type": "saint",
-    "tags": [
-      "COE"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-adrian-of-canterbury",
-    "day": "January 9",
-    "name": "Saint Adrian of Canterbury",
     "description": "Abbot.",
     "type": "saint",
     "tags": [
-      "LAT"
-    ],
-    "verification_status": "verified"
+      "COE",
+      "EOR"
+    ]
   },
   {
-    "id": "martyr-polyeuctus-of-melitine",
-    "day": "January 9",
-    "name": "Martyr Polyeuctus of Melitine",
-    "description": "Martyr.",
+    "id": "saint-thorfinn",
+    "day": "January 8",
+    "name": "Saint Thorfinn",
+    "description": "Bishop.",
     "type": "saint",
     "tags": [
-      "EOR"
-    ],
-    "verification_status": "verified"
+      "LAT"
+    ]
+  },
+  {
+    "id": "third-day-of-the-nativity",
+    "day": "January 8",
+    "name": "Third Day of the Nativity",
+    "description": "Armenian tradition.",
+    "type": "saint",
+    "tags": [
+      "OOR"
+    ]
   },
   {
     "id": "fourth-day-of-the-nativity",
@@ -448,8 +362,17 @@
     "type": "saint",
     "tags": [
       "OOR"
-    ],
-    "verification_status": "verified"
+    ]
+  },
+  {
+    "id": "martyr-polyeuctus-of-melitine",
+    "day": "January 9",
+    "name": "Martyr Polyeuctus of Melitine",
+    "description": "Martyr.",
+    "type": "saint",
+    "tags": [
+      "EOR"
+    ]
   },
   {
     "id": "polyeuctus-of-melitine",
@@ -459,8 +382,17 @@
     "type": "saint",
     "tags": [
       "ANG"
-    ],
-    "verification_status": "verified"
+    ]
+  },
+  {
+    "id": "saint-adrian-of-canterbury",
+    "day": "January 9",
+    "name": "Saint Adrian of Canterbury",
+    "description": "Abbot.",
+    "type": "saint",
+    "tags": [
+      "LAT"
+    ]
   },
   {
     "id": "saint-polyeuctus",
@@ -470,30 +402,7 @@
     "type": "saint",
     "tags": [
       "COE"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-gregory-of-nyssa",
-    "day": "January 10",
-    "name": "Saint Gregory of Nyssa",
-    "description": "Bishop and theologian.",
-    "type": "saint",
-    "tags": [
-      "LAT"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-gregory-of-nyssa",
-    "day": "January 10",
-    "name": "Saint Gregory of Nyssa",
-    "description": "Bishop and theologian.",
-    "type": "saint",
-    "tags": [
-      "EOR"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "fifth-day-of-the-nativity",
@@ -503,63 +412,29 @@
     "type": "saint",
     "tags": [
       "OOR"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "gregory-of-nyssa",
     "day": "January 10",
     "name": "Gregory of Nyssa",
-    "description": "Bishop and theologian.",
+    "description": "Bishop and theologian, c. 394.",
     "type": "saint",
     "tags": [
       "ANG"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "saint-gregory-of-nyssa",
     "day": "January 10",
     "name": "Saint Gregory of Nyssa",
-    "description": "Theologian (shared commemoration).",
+    "description": "Father of the Church.",
     "type": "saint",
     "tags": [
-      "COE"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-theodosius-the-cenobiarch",
-    "day": "January 11",
-    "name": "Saint Theodosius the Cenobiarch",
-    "description": "Abbot.",
-    "type": "saint",
-    "tags": [
+      "COE",
+      "EOR",
       "LAT"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-theodosius-the-great",
-    "day": "January 11",
-    "name": "Saint Theodosius the Great",
-    "description": "The Cenobiarch.",
-    "type": "saint",
-    "tags": [
-      "EOR"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "sixth-day-of-the-nativity",
-    "day": "January 11",
-    "name": "Sixth Day of the Nativity",
-    "description": "Armenian tradition.",
-    "type": "saint",
-    "tags": [
-      "OOR"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "mary-slessor",
@@ -569,52 +444,38 @@
     "type": "saint",
     "tags": [
       "ANG"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "saint-theodosius-the-cenobiarch",
     "day": "January 11",
     "name": "Saint Theodosius the Cenobiarch",
-    "description": "Abbot (shared commemoration).",
+    "description": "Abbot.",
     "type": "saint",
     "tags": [
-      "COE"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-marguerite-bourgeoys",
-    "day": "January 12",
-    "name": "Saint Marguerite Bourgeoys",
-    "description": "Foundress of the Congregation of Notre Dame.",
-    "type": "saint",
-    "tags": [
+      "COE",
       "LAT"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
-    "id": "martyr-tatiana-of-rome",
-    "day": "January 12",
-    "name": "Martyr Tatiana of Rome",
-    "description": "Martyr.",
+    "id": "saint-theodosius-the-great",
+    "day": "January 11",
+    "name": "Saint Theodosius the Great",
+    "description": "The Cenobiarch.",
     "type": "saint",
     "tags": [
       "EOR"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
-    "id": "seventh-day-of-the-nativity",
-    "day": "January 12",
-    "name": "Seventh Day of the Nativity",
+    "id": "sixth-day-of-the-nativity",
+    "day": "January 11",
+    "name": "Sixth Day of the Nativity",
     "description": "Armenian tradition.",
     "type": "saint",
     "tags": [
       "OOR"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "aelred-of-hexham",
@@ -624,8 +485,7 @@
     "type": "saint",
     "tags": [
       "ANG"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "benedict-biscop",
@@ -635,8 +495,27 @@
     "type": "saint",
     "tags": [
       "ANG"
-    ],
-    "verification_status": "verified"
+    ]
+  },
+  {
+    "id": "martyr-tatiana-of-rome",
+    "day": "January 12",
+    "name": "Martyr Tatiana of Rome",
+    "description": "Martyr.",
+    "type": "saint",
+    "tags": [
+      "EOR"
+    ]
+  },
+  {
+    "id": "saint-marguerite-bourgeoys",
+    "day": "January 12",
+    "name": "Saint Marguerite Bourgeoys",
+    "description": "Foundress of the Congregation of Notre Dame.",
+    "type": "saint",
+    "tags": [
+      "LAT"
+    ]
   },
   {
     "id": "saint-tatiana",
@@ -646,30 +525,17 @@
     "type": "saint",
     "tags": [
       "COE"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
-    "id": "saint-hilary-of-poitiers",
-    "day": "January 13",
-    "name": "Saint Hilary of Poitiers",
-    "description": "Bishop and Doctor of the Church.",
+    "id": "seventh-day-of-the-nativity",
+    "day": "January 12",
+    "name": "Seventh Day of the Nativity",
+    "description": "Armenian tradition.",
     "type": "saint",
     "tags": [
-      "LAT"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "martyrs-hermylus-and-stratonicus",
-    "day": "January 13",
-    "name": "Martyrs Hermylus and Stratonicus",
-    "description": "Martyrs at Belgrade.",
-    "type": "saint",
-    "tags": [
-      "EOR"
-    ],
-    "verification_status": "verified"
+      "OOR"
+    ]
   },
   {
     "id": "eighth-day-of-the-nativity",
@@ -679,30 +545,7 @@
     "type": "saint",
     "tags": [
       "OOR"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "hilary-of-poitiers",
-    "day": "January 13",
-    "name": "Hilary of Poitiers",
-    "description": "Bishop of Poitiers.",
-    "type": "saint",
-    "tags": [
-      "ANG"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "kentigern-mungo",
-    "day": "January 13",
-    "name": "Kentigern (Mungo)",
-    "description": "Missionary Bishop in Strathclyde and Cumbria.",
-    "type": "saint",
-    "tags": [
-      "ANG"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "george-fox",
@@ -712,52 +555,48 @@
     "type": "saint",
     "tags": [
       "ANG"
-    ],
-    "verification_status": "verified"
+    ]
+  },
+  {
+    "id": "hilary-of-poitiers",
+    "day": "January 13",
+    "name": "Hilary of Poitiers",
+    "description": "Bishop of Poitiers.",
+    "type": "saint",
+    "tags": [
+      "ANG"
+    ]
+  },
+  {
+    "id": "kentigern-mungo",
+    "day": "January 13",
+    "name": "Kentigern (Mungo)",
+    "description": "Missionary Bishop in Strathclyde and Cumbria.",
+    "type": "saint",
+    "tags": [
+      "ANG"
+    ]
+  },
+  {
+    "id": "martyrs-hermylus-and-stratonicus",
+    "day": "January 13",
+    "name": "Martyrs Hermylus and Stratonicus",
+    "description": "Martyrs at Belgrade.",
+    "type": "saint",
+    "tags": [
+      "EOR"
+    ]
   },
   {
     "id": "saint-hilary-of-poitiers",
     "day": "January 13",
     "name": "Saint Hilary of Poitiers",
-    "description": "Bishop (shared commemoration).",
+    "description": "Bishop and Doctor of the Church.",
     "type": "saint",
     "tags": [
-      "COE"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-felix-of-nola",
-    "day": "January 14",
-    "name": "Saint Felix of Nola",
-    "description": "Priest.",
-    "type": "saint",
-    "tags": [
+      "COE",
       "LAT"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "the-holy-fathers-slain-at-sinai-and-raithu",
-    "day": "January 14",
-    "name": "The Holy Fathers slain at Sinai and Raithu",
-    "description": "Martyred monks including Isaiah and Sabbas.",
-    "type": "saint",
-    "tags": [
-      "EOR"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "ninth-day-of-the-nativity",
-    "day": "January 14",
-    "name": "Ninth Day of the Nativity",
-    "description": "Armenian tradition.",
-    "type": "saint",
-    "tags": [
-      "OOR"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "felix-of-nola",
@@ -767,8 +606,27 @@
     "type": "saint",
     "tags": [
       "ANG"
-    ],
-    "verification_status": "verified"
+    ]
+  },
+  {
+    "id": "ninth-day-of-the-nativity",
+    "day": "January 14",
+    "name": "Ninth Day of the Nativity",
+    "description": "Armenian tradition.",
+    "type": "saint",
+    "tags": [
+      "OOR"
+    ]
+  },
+  {
+    "id": "saint-felix-of-nola",
+    "day": "January 14",
+    "name": "Saint Felix of Nola",
+    "description": "Priest.",
+    "type": "saint",
+    "tags": [
+      "LAT"
+    ]
   },
   {
     "id": "the-holy-fathers-slain-at-sinai",
@@ -778,30 +636,17 @@
     "type": "saint",
     "tags": [
       "COE"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
-    "id": "saint-paul-the-first-hermit",
-    "day": "January 15",
-    "name": "Saint Paul the First Hermit",
-    "description": "Hermit.",
-    "type": "saint",
-    "tags": [
-      "LAT"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-paul-of-thebes-in-egypt",
-    "day": "January 15",
-    "name": "Saint Paul of Thebes in Egypt",
-    "description": "Monk.",
+    "id": "the-holy-fathers-slain-at-sinai-and-raithu",
+    "day": "January 14",
+    "name": "The Holy Fathers slain at Sinai and Raithu",
+    "description": "Martyred monks including Isaiah and Sabbas.",
     "type": "saint",
     "tags": [
       "EOR"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "commemoration-of-all-the-saints",
@@ -811,19 +656,7 @@
     "type": "saint",
     "tags": [
       "COE"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "tenth-day-of-the-nativity",
-    "day": "January 15",
-    "name": "Tenth Day of the Nativity",
-    "description": "Armenian tradition.",
-    "type": "saint",
-    "tags": [
-      "OOR"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "paul-the-first-hermit",
@@ -833,41 +666,37 @@
     "type": "saint",
     "tags": [
       "ANG"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
-    "id": "saint-berard-and-companions",
-    "day": "January 16",
-    "name": "Saint Berard and Companions",
-    "description": "Franciscan martyrs.",
-    "type": "saint",
-    "tags": [
-      "LAT"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "veneration-of-the-precious-chains-of-saint-peter",
-    "day": "January 16",
-    "name": "Veneration of the Precious Chains of Saint Peter",
-    "description": "Veneration of the chains of the Apostle.",
+    "id": "saint-paul-of-thebes-in-egypt",
+    "day": "January 15",
+    "name": "Saint Paul of Thebes in Egypt",
+    "description": "Monk.",
     "type": "saint",
     "tags": [
       "EOR"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
-    "id": "eleventh-day-of-the-nativity",
-    "day": "January 16",
-    "name": "Eleventh Day of the Nativity",
+    "id": "saint-paul-the-first-hermit",
+    "day": "January 15",
+    "name": "Saint Paul the First Hermit",
+    "description": "Hermit.",
+    "type": "saint",
+    "tags": [
+      "LAT"
+    ]
+  },
+  {
+    "id": "tenth-day-of-the-nativity",
+    "day": "January 15",
+    "name": "Tenth Day of the Nativity",
     "description": "Armenian tradition.",
     "type": "saint",
     "tags": [
       "OOR"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "berard-and-companions",
@@ -877,8 +706,27 @@
     "type": "saint",
     "tags": [
       "ANG"
-    ],
-    "verification_status": "verified"
+    ]
+  },
+  {
+    "id": "eleventh-day-of-the-nativity",
+    "day": "January 16",
+    "name": "Eleventh Day of the Nativity",
+    "description": "Armenian tradition.",
+    "type": "saint",
+    "tags": [
+      "OOR"
+    ]
+  },
+  {
+    "id": "saint-berard-and-companions",
+    "day": "January 16",
+    "name": "Saint Berard and Companions",
+    "description": "Franciscan martyrs.",
+    "type": "saint",
+    "tags": [
+      "LAT"
+    ]
   },
   {
     "id": "saint-peter-the-apostle",
@@ -888,41 +736,17 @@
     "type": "saint",
     "tags": [
       "COE"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
-    "id": "saint-anthony-the-abbot",
-    "day": "January 17",
-    "name": "Saint Anthony the Abbot",
-    "description": "Founder of Christian monasticism.",
-    "type": "saint",
-    "tags": [
-      "LAT"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-anthony-the-great",
-    "day": "January 17",
-    "name": "Saint Anthony the Great",
-    "description": "Founder of Christian monasticism.",
+    "id": "veneration-of-the-precious-chains-of-saint-peter",
+    "day": "January 16",
+    "name": "Veneration of the Precious Chains of Saint Peter",
+    "description": "Veneration of the chains of the Apostle.",
     "type": "saint",
     "tags": [
       "EOR"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "twelfth-day-of-the-nativity",
-    "day": "January 17",
-    "name": "Twelfth Day of the Nativity",
-    "description": "Armenian tradition.",
-    "type": "saint",
-    "tags": [
-      "OOR"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "antony-of-egypt",
@@ -932,8 +756,7 @@
     "type": "saint",
     "tags": [
       "ANG"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "charles-gore",
@@ -943,19 +766,38 @@
     "type": "saint",
     "tags": [
       "ANG"
-    ],
-    "verification_status": "verified"
+    ]
+  },
+  {
+    "id": "saint-anthony-the-abbot",
+    "day": "January 17",
+    "name": "Saint Anthony the Abbot",
+    "description": "Founder of Christian monasticism.",
+    "type": "saint",
+    "tags": [
+      "LAT"
+    ]
   },
   {
     "id": "saint-anthony-the-great",
     "day": "January 17",
     "name": "Saint Anthony the Great",
-    "description": "Founder of monasticism (shared commemoration).",
+    "description": "Founder of Christian monasticism.",
     "type": "saint",
     "tags": [
-      "COE"
-    ],
-    "verification_status": "verified"
+      "COE",
+      "EOR"
+    ]
+  },
+  {
+    "id": "twelfth-day-of-the-nativity",
+    "day": "January 17",
+    "name": "Twelfth Day of the Nativity",
+    "description": "Armenian tradition.",
+    "type": "saint",
+    "tags": [
+      "OOR"
+    ]
   },
   {
     "id": "confession-of-saint-peter",
@@ -965,31 +807,17 @@
     "type": "commemoration",
     "tags": [
       "EOR"
-    ],
-    "verification_status": "verified",
-    "notes": "Primarily a Byzantine liturgical observance (Jan 16). Not a standard universal feast in LAT, ANG, OOR, or COE calendars."
+    ]
   },
   {
-    "id": "saint-prisca",
+    "id": "mar-narsai",
     "day": "January 18",
-    "name": "Saint Prisca",
-    "description": "Early Roman martyr.",
+    "name": "Mar Narsai",
+    "description": "The 'Harp of the Spirit' and poet-theologian.",
     "type": "saint",
     "tags": [
-      "LAT"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saints-athanasius-and-cyril",
-    "day": "January 18",
-    "name": "Saints Athanasius and Cyril",
-    "description": "Archbishops of Alexandria.",
-    "type": "saint",
-    "tags": [
-      "EOR"
-    ],
-    "verification_status": "verified"
+      "COE"
+    ]
   },
   {
     "id": "saint-bashnouna",
@@ -999,63 +827,27 @@
     "type": "saint",
     "tags": [
       "OOR"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
-    "id": "mar-narsai",
+    "id": "saint-prisca",
     "day": "January 18",
-    "name": "Mar Narsai",
-    "description": "The 'Harp of the Spirit,' theologian.",
-    "type": "saint",
-    "tags": [
-      "COE"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "wulfstan-of-worcester",
-    "day": "January 19",
-    "name": "Wulfstan of Worcester",
-    "description": "Anglo-Saxon bishop.",
-    "type": "saint",
-    "tags": [
-      "ANG"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-wulfstan",
-    "day": "January 19",
-    "name": "Saint Wulfstan",
-    "description": "Bishop of Worcester.",
+    "name": "Saint Prisca",
+    "description": "Early Roman martyr.",
     "type": "saint",
     "tags": [
       "LAT"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
-    "id": "saint-macarius-the-great",
-    "day": "January 19",
-    "name": "Saint Macarius the Great",
-    "description": "Egyptian desert father.",
+    "id": "saints-athanasius-and-cyril",
+    "day": "January 18",
+    "name": "Saints Athanasius and Cyril",
+    "description": "Archbishops of Alexandria.",
     "type": "saint",
     "tags": [
       "EOR"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-mark-of-ephesus",
-    "day": "January 19",
-    "name": "Saint Mark of Ephesus",
-    "description": "Defender of Orthodoxy.",
-    "type": "saint",
-    "tags": [
-      "OOR"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "saint-jacob-of-nisibis",
@@ -1065,41 +857,47 @@
     "type": "saint",
     "tags": [
       "COE"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
-    "id": "saint-fabian",
-    "day": "January 20",
-    "name": "Saint Fabian",
-    "description": "Pope and martyr.",
-    "type": "saint",
-    "tags": [
-      "LAT"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-sebastian",
-    "day": "January 20",
-    "name": "Saint Sebastian",
-    "description": "Roman soldier and martyr.",
-    "type": "saint",
-    "tags": [
-      "LAT"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-euthymius-the-great",
-    "day": "January 20",
-    "name": "Saint Euthymius the Great",
-    "description": "Hermit and monastery founder.",
+    "id": "saint-macarius-the-great",
+    "day": "January 19",
+    "name": "Saint Macarius the Great",
+    "description": "Egyptian desert father.",
     "type": "saint",
     "tags": [
       "EOR"
-    ],
-    "verification_status": "verified"
+    ]
+  },
+  {
+    "id": "saint-mark-of-ephesus",
+    "day": "January 19",
+    "name": "Saint Mark of Ephesus",
+    "description": "Defender of Orthodoxy.",
+    "type": "saint",
+    "tags": [
+      "OOR"
+    ]
+  },
+  {
+    "id": "saint-wulfstan",
+    "day": "January 19",
+    "name": "Saint Wulfstan",
+    "description": "Bishop of Worcester.",
+    "type": "saint",
+    "tags": [
+      "LAT"
+    ]
+  },
+  {
+    "id": "wulfstan-of-worcester",
+    "day": "January 19",
+    "name": "Wulfstan of Worcester",
+    "description": "Anglo-Saxon bishop.",
+    "type": "saint",
+    "tags": [
+      "ANG"
+    ]
   },
   {
     "id": "martyrs-inna-pinna-and-rimma",
@@ -1109,19 +907,7 @@
     "type": "saint",
     "tags": [
       "EOR"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-sebastian",
-    "day": "January 20",
-    "name": "Saint Sebastian",
-    "description": "Martyr.",
-    "type": "saint",
-    "tags": [
-      "OOR"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "richard-rolle-of-hampole",
@@ -1131,8 +917,7 @@
     "type": "saint",
     "tags": [
       "ANG"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "saint-euthymius",
@@ -1142,30 +927,38 @@
     "type": "saint",
     "tags": [
       "COE"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
-    "id": "saint-agnes-of-rome",
-    "day": "January 21",
-    "name": "Saint Agnes of Rome",
-    "description": "Virgin and martyr.",
-    "type": "saint",
-    "tags": [
-      "LAT"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-maximus-the-confessor",
-    "day": "January 21",
-    "name": "Saint Maximus the Confessor",
-    "description": "Theologian and defender of orthodoxy.",
+    "id": "saint-euthymius-the-great",
+    "day": "January 20",
+    "name": "Saint Euthymius the Great",
+    "description": "Hermit and monastery founder.",
     "type": "saint",
     "tags": [
       "EOR"
-    ],
-    "verification_status": "verified"
+    ]
+  },
+  {
+    "id": "saint-fabian",
+    "day": "January 20",
+    "name": "Saint Fabian",
+    "description": "Pope and martyr.",
+    "type": "saint",
+    "tags": [
+      "LAT"
+    ]
+  },
+  {
+    "id": "saint-sebastian",
+    "day": "January 20",
+    "name": "Saint Sebastian",
+    "description": "Martyr.",
+    "type": "saint",
+    "tags": [
+      "LAT",
+      "OOR"
+    ]
   },
   {
     "id": "martyr-neophytus-of-nicaea",
@@ -1175,19 +968,7 @@
     "type": "saint",
     "tags": [
       "EOR"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-agnes-of-rome",
-    "day": "January 21",
-    "name": "Saint Agnes of Rome",
-    "description": "Virgin martyr.",
-    "type": "saint",
-    "tags": [
-      "OOR"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "saint-agnes",
@@ -1197,30 +978,29 @@
     "type": "saint",
     "tags": [
       "ANG"
-    ],
-    "verification_status": "verified"
+    ]
+  },
+  {
+    "id": "saint-agnes-of-rome",
+    "day": "January 21",
+    "name": "Saint Agnes of Rome",
+    "description": "Virgin and martyr.",
+    "type": "saint",
+    "tags": [
+      "LAT",
+      "OOR"
+    ]
   },
   {
     "id": "saint-maximus-the-confessor",
     "day": "January 21",
     "name": "Saint Maximus the Confessor",
-    "description": "Theologian (shared commemoration).",
+    "description": "Theologian and defender of Christ's two wills.",
     "type": "saint",
     "tags": [
-      "COE"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-vincent-of-saragossa",
-    "day": "January 22",
-    "name": "Saint Vincent of Saragossa",
-    "description": "Deacon and martyr.",
-    "type": "saint",
-    "tags": [
-      "LAT"
-    ],
-    "verification_status": "verified"
+      "COE",
+      "EOR"
+    ]
   },
   {
     "id": "apostle-timothy",
@@ -1230,8 +1010,7 @@
     "type": "saint",
     "tags": [
       "EOR"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "saint-anastasius-the-persian",
@@ -1241,30 +1020,7 @@
     "type": "saint",
     "tags": [
       "EOR"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-vincent-of-saragossa",
-    "day": "January 22",
-    "name": "Saint Vincent of Saragossa",
-    "description": "Deacon and martyr.",
-    "type": "saint",
-    "tags": [
-      "OOR"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-vincent",
-    "day": "January 22",
-    "name": "Saint Vincent",
-    "description": "Deacon of Saragossa, martyr.",
-    "type": "saint",
-    "tags": [
-      "ANG"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "saint-timothy",
@@ -1274,8 +1030,28 @@
     "type": "saint",
     "tags": [
       "COE"
-    ],
-    "verification_status": "verified"
+    ]
+  },
+  {
+    "id": "saint-vincent",
+    "day": "January 22",
+    "name": "Saint Vincent",
+    "description": "Deacon of Saragossa, martyr.",
+    "type": "saint",
+    "tags": [
+      "ANG"
+    ]
+  },
+  {
+    "id": "saint-vincent-of-saragossa",
+    "day": "January 22",
+    "name": "Saint Vincent of Saragossa",
+    "description": "Deacon and martyr.",
+    "type": "saint",
+    "tags": [
+      "LAT",
+      "OOR"
+    ]
   },
   {
     "id": "phillips-brooks",
@@ -1285,41 +1061,7 @@
     "type": "saint",
     "tags": [
       "ANG"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-john-the-almsgiver",
-    "day": "January 23",
-    "name": "Saint John the Almsgiver",
-    "description": "Patriarch of Alexandria.",
-    "type": "saint",
-    "tags": [
-      "LAT"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-clement-of-ancyra",
-    "day": "January 23",
-    "name": "Saint Clement of Ancyra",
-    "description": "Hieromartyr and bishop.",
-    "type": "saint",
-    "tags": [
-      "EOR"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-demiana",
-    "day": "January 23",
-    "name": "Saint Demiana",
-    "description": "Virgin martyr (Coptic/Syrian Jacobite).",
-    "type": "saint",
-    "tags": [
-      "OOR"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "rogation-of-the-ninevites",
@@ -1329,8 +1071,37 @@
     "type": "saint",
     "tags": [
       "COE"
-    ],
-    "verification_status": "verified"
+    ]
+  },
+  {
+    "id": "saint-clement-of-ancyra",
+    "day": "January 23",
+    "name": "Saint Clement of Ancyra",
+    "description": "Hieromartyr and bishop.",
+    "type": "saint",
+    "tags": [
+      "EOR"
+    ]
+  },
+  {
+    "id": "saint-demiana",
+    "day": "January 23",
+    "name": "Saint Demiana",
+    "description": "Virgin martyr (Coptic/Syrian Jacobite).",
+    "type": "saint",
+    "tags": [
+      "OOR"
+    ]
+  },
+  {
+    "id": "saint-john-the-almsgiver",
+    "day": "January 23",
+    "name": "Saint John the Almsgiver",
+    "description": "Patriarch of Alexandria.",
+    "type": "saint",
+    "tags": [
+      "LAT"
+    ]
   },
   {
     "id": "florence-li-tim-oi",
@@ -1340,8 +1111,17 @@
     "type": "saint",
     "tags": [
       "ANG"
-    ],
-    "verification_status": "verified"
+    ]
+  },
+  {
+    "id": "rogation-of-the-ninevites",
+    "day": "January 24",
+    "name": "Rogation of the Ninevites",
+    "description": "Fasting period commemorating Jonah.",
+    "type": "saint",
+    "tags": [
+      "COE"
+    ]
   },
   {
     "id": "saint-francis-de-sales",
@@ -1351,19 +1131,7 @@
     "type": "saint",
     "tags": [
       "LAT"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-xenia-of-rome",
-    "day": "January 24",
-    "name": "Saint Xenia of Rome",
-    "description": "Virgin and deaconess.",
-    "type": "saint",
-    "tags": [
-      "EOR"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "saint-maximus-and-saint-domatius",
@@ -1373,19 +1141,17 @@
     "type": "saint",
     "tags": [
       "OOR"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
-    "id": "rogation-of-the-ninevites",
+    "id": "saint-xenia-of-rome",
     "day": "January 24",
-    "name": "Rogation of the Ninevites",
-    "description": "Continued fasting.",
+    "name": "Saint Xenia of Rome",
+    "description": "Virgin and deaconess.",
     "type": "saint",
     "tags": [
-      "COE"
-    ],
-    "verification_status": "verified"
+      "EOR"
+    ]
   },
   {
     "id": "conversion-of-saint-paul",
@@ -1396,9 +1162,7 @@
     "tags": [
       "ANG",
       "LAT"
-    ],
-    "verification_status": "verified",
-    "notes": "Western feast; not formally on Eastern calendars"
+    ]
   },
   {
     "id": "saint-gregory-the-theologian",
@@ -1407,20 +1171,9 @@
     "description": "Archbishop of Constantinople.",
     "type": "saint",
     "tags": [
-      "EOR"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-gregory-the-theologian",
-    "day": "January 25",
-    "name": "Saint Gregory the Theologian",
-    "description": "Theologian.",
-    "type": "saint",
-    "tags": [
+      "EOR",
       "OOR"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "saint-mar-babai-the-great",
@@ -1430,8 +1183,7 @@
     "type": "saint",
     "tags": [
       "COE"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "saints-timothy-and-titus",
@@ -1440,42 +1192,9 @@
     "description": "Bishops and companions of Paul.",
     "type": "saint",
     "tags": [
+      "COE",
       "LAT"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "venerable-xenophon-and-family",
-    "day": "January 26",
-    "name": "Venerable Xenophon and Family",
-    "description": "Monks of Constantinople.",
-    "type": "saint",
-    "tags": [
-      "EOR"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "venerable-xenophon-and-family",
-    "day": "January 26",
-    "name": "Venerable Xenophon and Family",
-    "description": "Ascetics.",
-    "type": "saint",
-    "tags": [
-      "OOR"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saints-timothy-and-titus",
-    "day": "January 26",
-    "name": "Saints Timothy and Titus",
-    "description": "Early bishops.",
-    "type": "saint",
-    "tags": [
-      "COE"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "timothy-and-titus",
@@ -1485,52 +1204,18 @@
     "type": "saint",
     "tags": [
       "ANG"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
-    "id": "saint-angela-merici",
-    "day": "January 27",
-    "name": "Saint Angela Merici",
-    "description": "Foundress of the Ursulines.",
+    "id": "venerable-xenophon-and-family",
+    "day": "January 26",
+    "name": "Venerable Xenophon and Family",
+    "description": "Monks of Constantinople.",
     "type": "saint",
     "tags": [
-      "LAT"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "translation-of-the-relics-of-saint-john-chrysostom",
-    "day": "January 27",
-    "name": "Translation of the Relics of Saint John Chrysostom",
-    "description": "Return of relics to Constantinople.",
-    "type": "saint",
-    "tags": [
-      "EOR"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-john-chrysostom",
-    "day": "January 27",
-    "name": "Saint John Chrysostom",
-    "description": "Honored for eloquence.",
-    "type": "saint",
-    "tags": [
+      "EOR",
       "OOR"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-john-chrysostom",
-    "day": "January 27",
-    "name": "Saint John Chrysostom",
-    "description": "Doctor of the Church.",
-    "type": "saint",
-    "tags": [
-      "COE"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "john-chrysostom",
@@ -1540,41 +1225,38 @@
     "type": "saint",
     "tags": [
       "ANG"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
-    "id": "saint-thomas-aquinas",
-    "day": "January 28",
-    "name": "Saint Thomas Aquinas",
-    "description": "Doctor of the Church.",
+    "id": "saint-angela-merici",
+    "day": "January 27",
+    "name": "Saint Angela Merici",
+    "description": "Foundress of the Ursulines.",
     "type": "saint",
     "tags": [
       "LAT"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
-    "id": "venerable-ephraim-the-syrian",
-    "day": "January 28",
-    "name": "Venerable Ephraim the Syrian",
-    "description": "Monk and hymnographer.",
+    "id": "saint-john-chrysostom",
+    "day": "January 27",
+    "name": "Saint John Chrysostom",
+    "description": "Honored for eloquence.",
+    "type": "saint",
+    "tags": [
+      "COE",
+      "OOR"
+    ]
+  },
+  {
+    "id": "translation-of-the-relics-of-saint-john-chrysostom",
+    "day": "January 27",
+    "name": "Translation of the Relics of Saint John Chrysostom",
+    "description": "Return of relics to Constantinople.",
     "type": "saint",
     "tags": [
       "EOR"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-isaac-the-syrian",
-    "day": "January 28",
-    "name": "Saint Isaac the Syrian",
-    "description": "Bishop of Nineveh.",
-    "type": "saint",
-    "tags": [
-      "OOR"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "saint-ephraim-the-syrian",
@@ -1584,8 +1266,27 @@
     "type": "saint",
     "tags": [
       "COE"
-    ],
-    "verification_status": "verified"
+    ]
+  },
+  {
+    "id": "saint-isaac-the-syrian",
+    "day": "January 28",
+    "name": "Saint Isaac the Syrian",
+    "description": "Bishop of Nineveh.",
+    "type": "saint",
+    "tags": [
+      "OOR"
+    ]
+  },
+  {
+    "id": "saint-thomas-aquinas",
+    "day": "January 28",
+    "name": "Saint Thomas Aquinas",
+    "description": "Doctor of the Church.",
+    "type": "saint",
+    "tags": [
+      "LAT"
+    ]
   },
   {
     "id": "thomas-aquinas",
@@ -1595,52 +1296,17 @@
     "type": "saint",
     "tags": [
       "ANG"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
-    "id": "saint-gildas-the-wise",
-    "day": "January 29",
-    "name": "Saint Gildas the Wise",
-    "description": "Monk and historian.",
-    "type": "saint",
-    "tags": [
-      "LAT"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "translation-of-the-relics-of-hieromartyr-ignatius",
-    "day": "January 29",
-    "name": "Translation of the Relics of Hieromartyr Ignatius",
-    "description": "Bishop of Antioch.",
+    "id": "venerable-ephraim-the-syrian",
+    "day": "January 28",
+    "name": "Venerable Ephraim the Syrian",
+    "description": "Monk and hymnographer.",
     "type": "saint",
     "tags": [
       "EOR"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saints-sarbelus-and-barbea",
-    "day": "January 29",
-    "name": "Saints Sarbelus and Barbea",
-    "description": "Brother and sister martyrs.",
-    "type": "saint",
-    "tags": [
-      "OOR"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "commemoration-of-st-john-daylimaya",
-    "day": "January 29",
-    "name": "Commemoration of St. John Daylimaya",
-    "description": "Monk and ascetic.",
-    "type": "saint",
-    "tags": [
-      "COE"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "andrei-rublev",
@@ -1650,52 +1316,47 @@
     "type": "saint",
     "tags": [
       "ANG"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
-    "id": "saint-hyacintha-of-mariscotti",
-    "day": "January 30",
-    "name": "Saint Hyacintha of Mariscotti",
-    "description": "Virgin and religious.",
-    "type": "saint",
-    "tags": [
-      "LAT"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "synaxis-of-the-three-holy-hierarchs",
-    "day": "January 30",
-    "name": "Synaxis of the Three Holy Hierarchs",
-    "description": "Basil, Gregory, and John.",
-    "type": "saint",
-    "tags": [
-      "EOR"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "synaxis-of-the-three-holy-hierarchs",
-    "day": "January 30",
-    "name": "Synaxis of the Three Holy Hierarchs",
-    "description": "Great ecumenical teachers.",
-    "type": "saint",
-    "tags": [
-      "OOR"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "the-holy-feast-of-the-epiphany",
-    "day": "January 30",
-    "name": "The Holy Feast of the Epiphany",
-    "description": "Commemoration of the manifestation of Christ.",
+    "id": "commemoration-of-st-john-daylimaya",
+    "day": "January 29",
+    "name": "Commemoration of St. John Daylimaya",
+    "description": "Monk and ascetic.",
     "type": "saint",
     "tags": [
       "COE"
-    ],
-    "verification_status": "verified"
+    ]
+  },
+  {
+    "id": "saint-gildas-the-wise",
+    "day": "January 29",
+    "name": "Saint Gildas the Wise",
+    "description": "Monk and historian.",
+    "type": "saint",
+    "tags": [
+      "LAT"
+    ]
+  },
+  {
+    "id": "saints-sarbelus-and-barbea",
+    "day": "January 29",
+    "name": "Saints Sarbelus and Barbea",
+    "description": "Brother and sister martyrs.",
+    "type": "saint",
+    "tags": [
+      "OOR"
+    ]
+  },
+  {
+    "id": "translation-of-the-relics-of-hieromartyr-ignatius",
+    "day": "January 29",
+    "name": "Translation of the Relics of Hieromartyr Ignatius",
+    "description": "Bishop of Antioch.",
+    "type": "saint",
+    "tags": [
+      "EOR"
+    ]
   },
   {
     "id": "king-charles-the-martyr",
@@ -1705,41 +1366,38 @@
     "type": "saint",
     "tags": [
       "ANG"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
-    "id": "saint-john-bosco",
-    "day": "January 31",
-    "name": "Saint John Bosco",
-    "description": "Founder of the Salesians.",
+    "id": "saint-hyacintha-of-mariscotti",
+    "day": "January 30",
+    "name": "Saint Hyacintha of Mariscotti",
+    "description": "Virgin and religious.",
     "type": "saint",
     "tags": [
       "LAT"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
-    "id": "holy-wonderworkers-cyrus-and-john",
-    "day": "January 31",
-    "name": "Holy Wonderworkers Cyrus and John",
-    "description": "Unmercenaries and martyrs.",
+    "id": "synaxis-of-the-three-holy-hierarchs",
+    "day": "January 30",
+    "name": "Synaxis of the Three Holy Hierarchs",
+    "description": "Basil, Gregory, and John.",
     "type": "saint",
     "tags": [
-      "EOR"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "holy-wonderworkers-cyrus-and-john",
-    "day": "January 31",
-    "name": "Holy Wonderworkers Cyrus and John",
-    "description": "Physicians.",
-    "type": "saint",
-    "tags": [
+      "EOR",
       "OOR"
-    ],
-    "verification_status": "verified"
+    ]
+  },
+  {
+    "id": "the-holy-feast-of-the-epiphany",
+    "day": "January 30",
+    "name": "The Holy Feast of the Epiphany",
+    "description": "Commemoration of the manifestation of Christ.",
+    "type": "saint",
+    "tags": [
+      "COE"
+    ]
   },
   {
     "id": "commemoration-of-st-sawrisho-of-beth-garmi",
@@ -1749,8 +1407,18 @@
     "type": "saint",
     "tags": [
       "COE"
-    ],
-    "verification_status": "verified"
+    ]
+  },
+  {
+    "id": "holy-wonderworkers-cyrus-and-john",
+    "day": "January 31",
+    "name": "Holy Wonderworkers Cyrus and John",
+    "description": "Unmercenaries and martyrs.",
+    "type": "saint",
+    "tags": [
+      "EOR",
+      "OOR"
+    ]
   },
   {
     "id": "john-bosco",
@@ -1760,7 +1428,16 @@
     "type": "saint",
     "tags": [
       "ANG"
-    ],
-    "verification_status": "verified"
+    ]
+  },
+  {
+    "id": "saint-john-bosco",
+    "day": "January 31",
+    "name": "Saint John Bosco",
+    "description": "Founder of the Salesians.",
+    "type": "saint",
+    "tags": [
+      "LAT"
+    ]
   }
 ]

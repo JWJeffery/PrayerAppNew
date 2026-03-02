@@ -1,0 +1,44 @@
+name: saints-gate
+
+on:
+  pull_request:
+    paths:
+      - "data/saints/**"
+      - "tools/**"
+      - "package.json"
+      - "package-lock.json"
+      - ".github/workflows/saints-gate.yml"
+  push:
+    branches: [ main ]
+    paths:
+      - "data/saints/**"
+      - "tools/**"
+      - "package.json"
+      - "package-lock.json"
+      - ".github/workflows/saints-gate.yml"
+
+jobs:
+  saints:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+
+      - name: Install
+        run: npm ci
+
+      - name: Validate saints sources
+        run: node tools/validate_saints_sources.js
+
+      - name: Build saints cache
+        run: node tools/build_saints_cache.js
+
+      # Optional but recommended: enforce that generated caches are committed
+      - name: Fail if build produced uncommitted diffs
+        run: git diff --exit-code -- data/saints

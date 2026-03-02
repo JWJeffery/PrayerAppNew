@@ -1,28 +1,13 @@
 [
   {
-    "id": "saint-mary-of-egypt",
+    "id": "frederick-denison-maurice",
     "day": "April 1",
-    "name": "Saint Mary of Egypt",
-    "description": "Repentant hermit and desert ascetic, venerated in Eastern Orthodox and Oriental Orthodox traditions.",
+    "name": "Frederick Denison Maurice",
+    "description": "Priest and Renewer of Society, 1872.",
     "type": "saint",
     "tags": [
-      "EOR",
-      "LAT",
-      "OOR"
-    ],
-    "verification_status": "verified",
-    "notes": "External asset confirms; also in Roman Martyrology"
-  },
-  {
-    "id": "saint-hugh-of-grenoble",
-    "day": "April 1",
-    "name": "Saint Hugh of Grenoble",
-    "description": "Bishop and co-founder of the Carthusians.",
-    "type": "saint",
-    "tags": [
-      "LAT"
-    ],
-    "verification_status": "verified"
+      "ANG"
+    ]
   },
   {
     "id": "mar-awa-catholicos",
@@ -32,41 +17,29 @@
     "type": "saint",
     "tags": [
       "COE"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
-    "id": "frederick-denison-maurice",
+    "id": "saint-hugh-of-grenoble",
     "day": "April 1",
-    "name": "Frederick Denison Maurice",
-    "description": "Priest and Renewer of Society, 1872.",
-    "type": "saint",
-    "tags": [
-      "ANG"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-francis-of-paola",
-    "day": "April 2",
-    "name": "Saint Francis of Paola",
-    "description": "Hermit and founder of the Minim Friars, venerated in Catholic and Oriental Orthodox traditions.",
+    "name": "Saint Hugh of Grenoble",
+    "description": "Bishop and co-founder of the Carthusians.",
     "type": "saint",
     "tags": [
       "LAT"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
-    "id": "venerable-titus-the-wonderworker",
-    "day": "April 2",
-    "name": "Venerable Titus the Wonderworker",
-    "description": "Monk.",
+    "id": "saint-mary-of-egypt",
+    "day": "April 1",
+    "name": "Saint Mary of Egypt",
+    "description": "Repentant hermit and desert ascetic, venerated in Eastern Orthodox and Oriental Orthodox traditions.",
     "type": "saint",
     "tags": [
-      "EOR"
-    ],
-    "verification_status": "verified"
+      "EOR",
+      "LAT",
+      "OOR"
+    ]
   },
   {
     "id": "james-lloyd-breck",
@@ -76,19 +49,28 @@
     "type": "saint",
     "tags": [
       "ANG"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "saint-francis-of-paola",
     "day": "April 2",
     "name": "Saint Francis of Paola",
-    "description": "Hermit and founder (shared commemoration).",
+    "description": "Hermit and founder of the Minim Friars, venerated in Catholic and Oriental Orthodox traditions.",
     "type": "saint",
     "tags": [
-      "COE"
-    ],
-    "verification_status": "verified"
+      "COE",
+      "LAT"
+    ]
+  },
+  {
+    "id": "venerable-titus-the-wonderworker",
+    "day": "April 2",
+    "name": "Venerable Titus the Wonderworker",
+    "description": "Monk.",
+    "type": "saint",
+    "tags": [
+      "EOR"
+    ]
   },
   {
     "id": "richard-of-chichester",
@@ -99,19 +81,7 @@
     "tags": [
       "ANG",
       "LAT"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-nicetas-the-confessor",
-    "day": "April 3",
-    "name": "Saint Nicetas the Confessor",
-    "description": "Abbot of Medikion.",
-    "type": "saint",
-    "tags": [
-      "EOR"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "saint-nicetas",
@@ -121,8 +91,17 @@
     "type": "saint",
     "tags": [
       "COE"
-    ],
-    "verification_status": "verified"
+    ]
+  },
+  {
+    "id": "saint-nicetas-the-confessor",
+    "day": "April 3",
+    "name": "Saint Nicetas the Confessor",
+    "description": "Abbot of Medikion.",
+    "type": "saint",
+    "tags": [
+      "EOR"
+    ]
   },
   {
     "id": "saint-isidore-of-seville",
@@ -131,54 +110,11 @@
     "description": "Bishop, Scholar, and Doctor of the Church, venerated in Catholic and Oriental Orthodox traditions.",
     "type": "saint",
     "tags": [
+      "ANG",
+      "COE",
+      "EOR",
       "LAT"
-    ],
-    "verification_status": "verified",
-    "notes": "Doctor of Latin Church; external asset confirms LAT only"
-  },
-  {
-    "id": "saint-isidore-of-seville",
-    "day": "April 4",
-    "name": "Saint Isidore of Seville",
-    "description": "Bishop and scholar (shared commemoration).",
-    "type": "saint",
-    "tags": [
-      "EOR"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-isidore-of-seville",
-    "day": "April 4",
-    "name": "Saint Isidore of Seville",
-    "description": "Bishop and scholar (shared commemoration).",
-    "type": "saint",
-    "tags": [
-      "COE"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-isidore-of-seville",
-    "day": "April 4",
-    "name": "Saint Isidore of Seville",
-    "description": "Bishop and scholar (shared commemoration).",
-    "type": "saint",
-    "tags": [
-      "ANG"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-vincent-ferrer",
-    "day": "April 5",
-    "name": "Saint Vincent Ferrer",
-    "description": "Dominican priest and missionary preacher, venerated in Catholic and Oriental Orthodox traditions.",
-    "type": "saint",
-    "tags": [
-      "LAT"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "martyrs-claudius-victor-and-companions",
@@ -188,30 +124,48 @@
     "type": "saint",
     "tags": [
       "EOR"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "saint-vincent-ferrer",
     "day": "April 5",
     "name": "Saint Vincent Ferrer",
-    "description": "Preacher (shared commemoration).",
+    "description": "Dominican priest and missionary preacher, venerated in Catholic and Oriental Orthodox traditions.",
     "type": "saint",
     "tags": [
-      "COE"
-    ],
-    "verification_status": "verified"
+      "COE",
+      "LAT"
+    ]
   },
   {
     "id": "vincent-ferrer",
     "day": "April 5",
     "name": "Vincent Ferrer",
-    "description": "Priest and preacher (shared commemoration).",
+    "description": "Priest, 1419.",
     "type": "saint",
     "tags": [
       "ANG"
-    ],
-    "verification_status": "verified"
+    ]
+  },
+  {
+    "id": "eutychius-of-constantinople",
+    "day": "April 6",
+    "name": "Eutychius of Constantinople",
+    "description": "Patriarch (shared commemoration).",
+    "type": "saint",
+    "tags": [
+      "ANG"
+    ]
+  },
+  {
+    "id": "saint-eutychius-of-constantinople",
+    "day": "April 6",
+    "name": "Saint Eutychius of Constantinople",
+    "description": "Patriarch (shared commemoration).",
+    "type": "saint",
+    "tags": [
+      "LAT"
+    ]
   },
   {
     "id": "saint-eutychius-patriarch-of-constantinople",
@@ -222,8 +176,7 @@
     "tags": [
       "EOR",
       "LAT"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "saturday-of-light-easter-vigil",
@@ -233,30 +186,7 @@
     "type": "saint",
     "tags": [
       "COE"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "eutychius-of-constantinople",
-    "day": "April 6",
-    "name": "Eutychius of Constantinople",
-    "description": "Patriarch (shared commemoration).",
-    "type": "saint",
-    "tags": [
-      "ANG"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-eutychius-of-constantinople",
-    "day": "April 6",
-    "name": "Saint Eutychius of Constantinople",
-    "description": "Patriarch (shared commemoration).",
-    "type": "saint",
-    "tags": [
-      "LAT"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "saint-john-baptist-de-la-salle",
@@ -265,9 +195,10 @@
     "description": "Founder of the Christian Brothers and patron of educators, venerated in Catholic and Oriental Orthodox traditions.",
     "type": "saint",
     "tags": [
+      "COE",
+      "EOR",
       "LAT"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "tikhon-of-moscow",
@@ -277,30 +208,7 @@
     "type": "saint",
     "tags": [
       "ANG"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-john-baptist-de-la-salle",
-    "day": "April 7",
-    "name": "Saint John Baptist de la Salle",
-    "description": "Founder of the Christian Brothers (shared commemoration).",
-    "type": "saint",
-    "tags": [
-      "EOR"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-john-baptist-de-la-salle",
-    "day": "April 7",
-    "name": "Saint John Baptist de la Salle",
-    "description": "Founder of the Christian Brothers (shared commemoration).",
-    "type": "saint",
-    "tags": [
-      "COE"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "apostles-herodion-and-agabus",
@@ -309,11 +217,10 @@
     "description": "Members of the Seventy Apostles, venerated in Eastern Orthodox and Oriental Orthodox traditions.",
     "type": "apostle",
     "tags": [
+      "COE",
       "EOR",
       "OOR"
-    ],
-    "verification_status": "verified",
-    "notes": "Seventy Apostles; Eastern calendars only"
+    ]
   },
   {
     "id": "herodion-and-agabus",
@@ -322,31 +229,9 @@
     "description": "Apostles of the Seventy (shared commemoration).",
     "type": "saint",
     "tags": [
-      "ANG"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "herodion-and-agabus",
-    "day": "April 8",
-    "name": "Herodion and Agabus",
-    "description": "Apostles of the Seventy (shared commemoration).",
-    "type": "saint",
-    "tags": [
+      "ANG",
       "LAT"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "apostles-herodion-and-agabus",
-    "day": "April 8",
-    "name": "Apostles Herodion and Agabus",
-    "description": "Members of the Seventy Apostles (shared commemoration).",
-    "type": "saint",
-    "tags": [
-      "COE"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "dietrich-bonhoeffer",
@@ -356,8 +241,7 @@
     "type": "saint",
     "tags": [
       "ANG"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "saint-waldetrudis",
@@ -366,42 +250,11 @@
     "description": "Abbess.",
     "type": "saint",
     "tags": [
-      "LAT"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-waldetrudis",
-    "day": "April 9",
-    "name": "Saint Waldetrudis",
-    "description": "Abbess (shared commemoration).",
-    "type": "saint",
-    "tags": [
-      "EOR"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-waldetrudis",
-    "day": "April 9",
-    "name": "Saint Waldetrudis",
-    "description": "Abbess (shared commemoration).",
-    "type": "saint",
-    "tags": [
+      "COE",
+      "EOR",
+      "LAT",
       "OOR"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-waldetrudis",
-    "day": "April 9",
-    "name": "Saint Waldetrudis",
-    "description": "Abbess (shared commemoration).",
-    "type": "saint",
-    "tags": [
-      "COE"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "good-friday",
@@ -411,41 +264,7 @@
     "type": "saint",
     "tags": [
       "COE"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-macarius-the-egyptian",
-    "day": "April 10",
-    "name": "Saint Macarius the Egyptian",
-    "description": "Desert father.",
-    "type": "saint",
-    "tags": [
-      "LAT"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-macarius-the-egyptian",
-    "day": "April 10",
-    "name": "Saint Macarius the Egyptian",
-    "description": "Desert father.",
-    "type": "saint",
-    "tags": [
-      "EOR"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-macarius-the-egyptian",
-    "day": "April 10",
-    "name": "Saint Macarius the Egyptian",
-    "description": "Desert father.",
-    "type": "saint",
-    "tags": [
-      "OOR"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "macarius-the-egyptian",
@@ -455,8 +274,19 @@
     "type": "saint",
     "tags": [
       "ANG"
-    ],
-    "verification_status": "verified"
+    ]
+  },
+  {
+    "id": "saint-macarius-the-egyptian",
+    "day": "April 10",
+    "name": "Saint Macarius the Egyptian",
+    "description": "Desert father.",
+    "type": "saint",
+    "tags": [
+      "EOR",
+      "LAT",
+      "OOR"
+    ]
   },
   {
     "id": "saint-antipas-of-pergamum",
@@ -468,8 +298,7 @@
       "EOR",
       "LAT",
       "OOR"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "saint-stanislaus",
@@ -478,9 +307,9 @@
     "description": "Bishop of Kraków and martyr.",
     "type": "saint",
     "tags": [
+      "COE",
       "LAT"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "stanislaus-of-krak-w",
@@ -490,19 +319,7 @@
     "type": "saint",
     "tags": [
       "ANG"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-stanislaus",
-    "day": "April 11",
-    "name": "Saint Stanislaus",
-    "description": "Bishop and martyr (shared commemoration).",
-    "type": "saint",
-    "tags": [
-      "COE"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "easter-sunday-the-resurrection-of-our-lord",
@@ -512,12 +329,22 @@
     "type": "feast",
     "tags": [
       "ANG",
-      "COE",
-      "EOR",
       "LAT",
-      "OOR"
-    ],
-    "verification_status": "verified"
+      "EOR",
+      "OOR",
+      "COE"
+    ]
+  },
+  {
+    "id": "martin-i",
+    "day": "April 13",
+    "name": "Martin I",
+    "description": "Pope and martyr (shared commemoration).",
+    "type": "saint",
+    "tags": [
+      "ANG",
+      "EOR"
+    ]
   },
   {
     "id": "saint-martin-i",
@@ -526,56 +353,10 @@
     "description": "Pope and martyr, venerated in Catholic and Oriental Orthodox traditions.",
     "type": "saint",
     "tags": [
+      "COE",
       "EOR",
       "LAT"
-    ],
-    "verification_status": "verified",
-    "notes": "Pope and martyr; different feast days East and West; not ANG or COE"
-  },
-  {
-    "id": "martin-i",
-    "day": "April 13",
-    "name": "Martin I",
-    "description": "Pope and martyr (shared commemoration).",
-    "type": "saint",
-    "tags": [
-      "ANG"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "martin-i",
-    "day": "April 13",
-    "name": "Martin I",
-    "description": "Pope and martyr (shared commemoration).",
-    "type": "saint",
-    "tags": [
-      "EOR"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-martin-i",
-    "day": "April 13",
-    "name": "Saint Martin I",
-    "description": "Pope and martyr (shared commemoration).",
-    "type": "saint",
-    "tags": [
-      "COE"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-tiburtius-and-companions",
-    "day": "April 14",
-    "name": "Saint Tiburtius and Companions",
-    "description": "Early Roman martyrs, venerated in Catholic and Oriental Orthodox traditions.",
-    "type": "saint",
-    "tags": [
-      "LAT"
-    ],
-    "verification_status": "verified",
-    "notes": "Roman martyrs; Western calendar only"
+    ]
   },
   {
     "id": "justin-martyr",
@@ -585,8 +366,7 @@
     "type": "saint",
     "tags": [
       "ANG"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "saint-tiburtius",
@@ -595,20 +375,19 @@
     "description": "Martyr (shared commemoration).",
     "type": "saint",
     "tags": [
+      "COE",
       "EOR"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
-    "id": "saint-tiburtius",
+    "id": "saint-tiburtius-and-companions",
     "day": "April 14",
-    "name": "Saint Tiburtius",
-    "description": "Martyr (shared commemoration).",
+    "name": "Saint Tiburtius and Companions",
+    "description": "Early Roman martyrs, venerated in Catholic and Oriental Orthodox traditions.",
     "type": "saint",
     "tags": [
-      "COE"
-    ],
-    "verification_status": "verified"
+      "LAT"
+    ]
   },
   {
     "id": "damien-and-marianne-of-moloka-i",
@@ -618,8 +397,7 @@
     "type": "saint",
     "tags": [
       "ANG"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "saint-damien-of-moloka-i",
@@ -628,53 +406,11 @@
     "description": "Missionary to lepers.",
     "type": "saint",
     "tags": [
-      "LAT"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-damien-of-moloka-i",
-    "day": "April 15",
-    "name": "Saint Damien of Moloka’i",
-    "description": "Missionary to lepers (shared commemoration).",
-    "type": "saint",
-    "tags": [
-      "EOR"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-damien-of-moloka-i",
-    "day": "April 15",
-    "name": "Saint Damien of Moloka’i",
-    "description": "Missionary to lepers (shared commemoration).",
-    "type": "saint",
-    "tags": [
+      "COE",
+      "EOR",
+      "LAT",
       "OOR"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-damien-of-moloka-i",
-    "day": "April 15",
-    "name": "Saint Damien of Moloka’i",
-    "description": "Missionary to lepers (shared commemoration).",
-    "type": "saint",
-    "tags": [
-      "COE"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-bernadette-soubirous",
-    "day": "April 16",
-    "name": "Saint Bernadette Soubirous",
-    "description": "Visionary of the Grotto of Lourdes.",
-    "type": "saint",
-    "tags": [
-      "LAT"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "molly-brant-konwatsijayenni",
@@ -684,52 +420,20 @@
     "type": "saint",
     "tags": [
       "ANG"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "saint-bernadette-soubirous",
     "day": "April 16",
     "name": "Saint Bernadette Soubirous",
-    "description": "Visionary (shared commemoration).",
+    "description": "Visionary of the Grotto of Lourdes.",
     "type": "saint",
     "tags": [
-      "EOR"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-bernadette-soubirous",
-    "day": "April 16",
-    "name": "Saint Bernadette Soubirous",
-    "description": "Visionary (shared commemoration).",
-    "type": "saint",
-    "tags": [
+      "COE",
+      "EOR",
+      "LAT",
       "OOR"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-bernadette-soubirous",
-    "day": "April 16",
-    "name": "Saint Bernadette Soubirous",
-    "description": "Visionary (shared commemoration).",
-    "type": "saint",
-    "tags": [
-      "COE"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-kateri-tekakwitha",
-    "day": "April 17",
-    "name": "Saint Kateri Tekakwitha",
-    "description": "The 'Lily of the Mohawks,' first Native American saint.",
-    "type": "saint",
-    "tags": [
-      "LAT"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "kateri-tekakwitha",
@@ -739,41 +443,20 @@
     "type": "saint",
     "tags": [
       "ANG"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "saint-kateri-tekakwitha",
     "day": "April 17",
     "name": "Saint Kateri Tekakwitha",
-    "description": "Native American saint (shared commemoration).",
+    "description": "The 'Lily of the Mohawks,' first Native American saint.",
     "type": "saint",
     "tags": [
-      "EOR"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-kateri-tekakwitha",
-    "day": "April 17",
-    "name": "Saint Kateri Tekakwitha",
-    "description": "Native American saint (shared commemoration).",
-    "type": "saint",
-    "tags": [
+      "COE",
+      "EOR",
+      "LAT",
       "OOR"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-kateri-tekakwitha",
-    "day": "April 17",
-    "name": "Saint Kateri Tekakwitha",
-    "description": "Native American saint (shared commemoration).",
-    "type": "saint",
-    "tags": [
-      "COE"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "saint-alphege",
@@ -782,31 +465,10 @@
     "description": "Archbishop of Canterbury and martyr, 1012, venerated in Catholic, Eastern Orthodox, and Anglican Communion traditions.",
     "type": "saint",
     "tags": [
-      "ANG"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-alphege",
-    "day": "April 19",
-    "name": "Saint Alphege",
-    "description": "Archbishop and martyr (shared commemoration).",
-    "type": "saint",
-    "tags": [
-      "COE"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-alphege",
-    "day": "April 19",
-    "name": "Saint Alphege",
-    "description": "Archbishop and martyr (shared commemoration).",
-    "type": "saint",
-    "tags": [
+      "ANG",
+      "COE",
       "OOR"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "saint-anselm-of-canterbury",
@@ -816,31 +478,10 @@
     "type": "saint",
     "tags": [
       "ANG",
-      "LAT"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-anselm-of-canterbury",
-    "day": "April 21",
-    "name": "Saint Anselm of Canterbury",
-    "description": "Theologian (shared commemoration).",
-    "type": "saint",
-    "tags": [
-      "COE"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-anselm-of-canterbury",
-    "day": "April 21",
-    "name": "Saint Anselm of Canterbury",
-    "description": "Theologian (shared commemoration).",
-    "type": "saint",
-    "tags": [
+      "COE",
+      "LAT",
       "OOR"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "saint-theodore-of-sykeon",
@@ -849,21 +490,11 @@
     "description": "Bishop and wonderworker, venerated in Eastern Orthodox and Oriental Orthodox traditions.",
     "type": "saint",
     "tags": [
+      "COE",
       "EOR",
+      "LAT",
       "OOR"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-theodore-of-sykeon",
-    "day": "April 22",
-    "name": "Saint Theodore of Sykeon",
-    "description": "Bishop and wonderworker (shared commemoration).",
-    "type": "saint",
-    "tags": [
-      "LAT"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "theodore-of-sykeon",
@@ -873,19 +504,7 @@
     "type": "saint",
     "tags": [
       "ANG"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-theodore-of-sykeon",
-    "day": "April 22",
-    "name": "Saint Theodore of Sykeon",
-    "description": "Bishop and wonderworker (shared commemoration).",
-    "type": "saint",
-    "tags": [
-      "COE"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "saint-george",
@@ -895,24 +514,11 @@
     "type": "saint",
     "tags": [
       "ANG",
-      "COE",
-      "EOR",
       "LAT",
-      "OOR"
-    ],
-    "verification_status": "verified",
-    "notes": "Venerated in all traditions"
-  },
-  {
-    "id": "saint-fidelis-of-sigmaringen",
-    "day": "April 24",
-    "name": "Saint Fidelis of Sigmaringen",
-    "description": "Capuchin priest and martyr, venerated in Catholic and Oriental Orthodox traditions.",
-    "type": "saint",
-    "tags": [
-      "LAT"
-    ],
-    "verification_status": "verified"
+      "EOR",
+      "OOR",
+      "COE"
+    ]
   },
   {
     "id": "genocide-remembrance",
@@ -922,30 +528,19 @@
     "type": "saint",
     "tags": [
       "ANG"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "saint-fidelis-of-sigmaringen",
     "day": "April 24",
     "name": "Saint Fidelis of Sigmaringen",
-    "description": "Martyr (shared commemoration).",
+    "description": "Capuchin priest and martyr, venerated in Catholic and Oriental Orthodox traditions.",
     "type": "saint",
     "tags": [
-      "EOR"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-fidelis-of-sigmaringen",
-    "day": "April 24",
-    "name": "Saint Fidelis of Sigmaringen",
-    "description": "Martyr (shared commemoration).",
-    "type": "saint",
-    "tags": [
-      "COE"
-    ],
-    "verification_status": "verified"
+      "COE",
+      "EOR",
+      "LAT"
+    ]
   },
   {
     "id": "saint-mark-the-evangelist",
@@ -955,12 +550,23 @@
     "type": "apostle",
     "tags": [
       "ANG",
-      "COE",
-      "EOR",
       "LAT",
-      "OOR"
-    ],
-    "verification_status": "verified"
+      "EOR",
+      "OOR",
+      "COE"
+    ]
+  },
+  {
+    "id": "saint-symeon",
+    "day": "April 27",
+    "name": "Saint Symeon",
+    "description": "Bishop of Jerusalem (shared commemoration).",
+    "type": "saint",
+    "tags": [
+      "ANG",
+      "COE",
+      "LAT"
+    ]
   },
   {
     "id": "saint-symeon-kinsman-of-the-lord",
@@ -972,63 +578,7 @@
       "EOR",
       "LAT",
       "OOR"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-symeon",
-    "day": "April 27",
-    "name": "Saint Symeon",
-    "description": "Bishop of Jerusalem (shared commemoration).",
-    "type": "saint",
-    "tags": [
-      "LAT"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-symeon",
-    "day": "April 27",
-    "name": "Saint Symeon",
-    "description": "Bishop of Jerusalem (shared commemoration).",
-    "type": "saint",
-    "tags": [
-      "ANG"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-symeon",
-    "day": "April 27",
-    "name": "Saint Symeon",
-    "description": "Bishop of Jerusalem (shared commemoration).",
-    "type": "saint",
-    "tags": [
-      "COE"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-peter-chanel",
-    "day": "April 28",
-    "name": "Saint Peter Chanel",
-    "description": "Priest and first martyr of Oceania (Futuna), venerated in Catholic and Oriental Orthodox traditions.",
-    "type": "saint",
-    "tags": [
-      "LAT"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-peter-chanel",
-    "day": "April 28",
-    "name": "Saint Peter Chanel",
-    "description": "Martyr (shared commemoration).",
-    "type": "saint",
-    "tags": [
-      "EOR"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "peter-chanel",
@@ -1038,19 +588,19 @@
     "type": "saint",
     "tags": [
       "ANG"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "saint-peter-chanel",
     "day": "April 28",
     "name": "Saint Peter Chanel",
-    "description": "Martyr (shared commemoration).",
+    "description": "Priest and first martyr of Oceania (Futuna), venerated in Catholic and Oriental Orthodox traditions.",
     "type": "saint",
     "tags": [
-      "COE"
-    ],
-    "verification_status": "verified"
+      "COE",
+      "EOR",
+      "LAT"
+    ]
   },
   {
     "id": "saint-catherine-of-siena",
@@ -1060,43 +610,23 @@
     "type": "saint",
     "tags": [
       "ANG",
-      "LAT"
-    ],
-    "verification_status": "verified",
-    "notes": "External asset: LAT + ANG optional; not East"
-  },
-  {
-    "id": "saint-catherine-of-siena",
-    "day": "April 29",
-    "name": "Saint Catherine of Siena",
-    "description": "Mystic (shared commemoration).",
-    "type": "saint",
-    "tags": [
-      "EOR"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-catherine-of-siena",
-    "day": "April 29",
-    "name": "Saint Catherine of Siena",
-    "description": "Mystic (shared commemoration).",
-    "type": "saint",
-    "tags": [
-      "OOR"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-catherine-of-siena",
-    "day": "April 29",
-    "name": "Saint Catherine of Siena",
-    "description": "Mystic (shared commemoration).",
-    "type": "saint",
-    "tags": [
+      "LAT",
+      "EOR",
+      "OOR",
       "COE"
-    ],
-    "verification_status": "verified"
+    ]
+  },
+  {
+    "id": "saint-james-the-brother-of-the-lord",
+    "day": "April 30",
+    "name": "Saint James the Brother of the Lord",
+    "description": "Bishop of Jerusalem (shared commemoration).",
+    "type": "saint",
+    "tags": [
+      "ANG",
+      "COE",
+      "LAT"
+    ]
   },
   {
     "id": "saint-james-the-brother-of-the-lord-james-the-just",
@@ -1106,44 +636,10 @@
     "type": "apostle",
     "tags": [
       "ANG",
-      "COE",
-      "EOR",
       "LAT",
-      "OOR"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-james-the-brother-of-the-lord",
-    "day": "April 30",
-    "name": "Saint James the Brother of the Lord",
-    "description": "Bishop of Jerusalem (shared commemoration).",
-    "type": "saint",
-    "tags": [
-      "LAT"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-james-the-brother-of-the-lord",
-    "day": "April 30",
-    "name": "Saint James the Brother of the Lord",
-    "description": "Bishop of Jerusalem (shared commemoration).",
-    "type": "saint",
-    "tags": [
-      "ANG"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-james-the-brother-of-the-lord",
-    "day": "April 30",
-    "name": "Saint James the Brother of the Lord",
-    "description": "Bishop of Jerusalem (shared commemoration).",
-    "type": "saint",
-    "tags": [
+      "EOR",
+      "OOR",
       "COE"
-    ],
-    "verification_status": "verified"
+    ]
   }
 ]

@@ -7,12 +7,11 @@
     "type": "commemoration",
     "tags": [
       "ANG",
-      "COE",
-      "EOR",
       "LAT",
-      "OOR"
-    ],
-    "verification_status": "verified"
+      "EOR",
+      "OOR",
+      "COE"
+    ]
   },
   {
     "id": "all-saints-day",
@@ -21,9 +20,9 @@
     "description": "Solemnity honoring all saints.",
     "type": "saint",
     "tags": [
+      "ANG",
       "LAT"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "saints-cosmas-and-damian",
@@ -32,42 +31,10 @@
     "description": "Unmercenary healers.",
     "type": "saint",
     "tags": [
-      "EOR"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saints-cosmas-and-damian",
-    "day": "November 1",
-    "name": "Saints Cosmas and Damian",
-    "description": "Unmercenary healers.",
-    "type": "saint",
-    "tags": [
+      "COE",
+      "EOR",
       "OOR"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "all-saints-day",
-    "day": "November 1",
-    "name": "All Saints' Day",
-    "description": "Commemoration of all saints.",
-    "type": "saint",
-    "tags": [
-      "ANG"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saints-cosmas-and-damian",
-    "day": "November 1",
-    "name": "Saints Cosmas and Damian",
-    "description": "Unmercenary healers.",
-    "type": "saint",
-    "tags": [
-      "COE"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "all-souls-commemoration-of-the-dead",
@@ -77,12 +44,11 @@
     "type": "commemoration",
     "tags": [
       "ANG",
-      "COE",
-      "EOR",
       "LAT",
-      "OOR"
-    ],
-    "verification_status": "verified"
+      "EOR",
+      "OOR",
+      "COE"
+    ]
   },
   {
     "id": "all-souls-day",
@@ -92,30 +58,7 @@
     "type": "saint",
     "tags": [
       "LAT"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "martyrs-acindynus-pegasius-aphthonius-elpidephorus-anempodistus",
-    "day": "November 2",
-    "name": "Martyrs Acindynus, Pegasius, Aphthonius, Elpidephorus, Anempodistus",
-    "description": "Martyrs of Persia.",
-    "type": "saint",
-    "tags": [
-      "EOR"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-peter-the-worshipper",
-    "day": "November 2",
-    "name": "Saint Peter the Worshipper",
-    "description": "Martyr.",
-    "type": "saint",
-    "tags": [
-      "OOR"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "commemoration-of-the-faithful-departed",
@@ -125,8 +68,7 @@
     "type": "saint",
     "tags": [
       "ANG"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "friday-of-the-dead",
@@ -136,52 +78,27 @@
     "type": "saint",
     "tags": [
       "COE"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
-    "id": "saint-martin-de-porres",
-    "day": "November 3",
-    "name": "Saint Martin de Porres",
-    "description": "Dominican lay brother; patron of social justice.",
-    "type": "saint",
-    "tags": [
-      "LAT"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "richard-hooker",
-    "day": "November 3",
-    "name": "Richard Hooker",
-    "description": "Priest and Teacher of the Faith.",
-    "type": "saint",
-    "tags": [
-      "ANG"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saints-acepsimas-joseph-and-aithalas",
-    "day": "November 3",
-    "name": "Saints Acepsimas, Joseph, and Aithalas",
-    "description": "Martyrs of Persia under Sapor II.",
+    "id": "martyrs-acindynus-pegasius-aphthonius-elpidephorus-anempodistus",
+    "day": "November 2",
+    "name": "Martyrs Acindynus, Pegasius, Aphthonius, Elpidephorus, Anempodistus",
+    "description": "Martyrs of Persia.",
     "type": "saint",
     "tags": [
       "EOR"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
-    "id": "saint-cyriacus-and-saint-athanasius",
-    "day": "November 3",
-    "name": "Saint Cyriacus and Saint Athanasius",
-    "description": "Coptic martyrs of the early church.",
+    "id": "saint-peter-the-worshipper",
+    "day": "November 2",
+    "name": "Saint Peter the Worshipper",
+    "description": "Martyr.",
     "type": "saint",
     "tags": [
       "OOR"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "mar-zaia",
@@ -191,52 +108,47 @@
     "type": "saint",
     "tags": [
       "COE"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
-    "id": "saint-charles-borromeo",
-    "day": "November 4",
-    "name": "Saint Charles Borromeo",
-    "description": "Bishop and reformer.",
-    "type": "saint",
-    "tags": [
-      "LAT"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saints-of-the-old-testament",
-    "day": "November 4",
-    "name": "Saints of the Old Testament",
-    "description": "Commemoration of the righteous of the Old Covenant.",
+    "id": "richard-hooker",
+    "day": "November 3",
+    "name": "Richard Hooker",
+    "description": "Priest and Teacher of the Faith.",
     "type": "saint",
     "tags": [
       "ANG"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
-    "id": "saint-joannicius-the-great",
-    "day": "November 4",
-    "name": "Saint Joannicius the Great",
-    "description": "Ascetic and defender of icons.",
-    "type": "saint",
-    "tags": [
-      "EOR"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-john-and-saint-james",
-    "day": "November 4",
-    "name": "Saint John and Saint James",
-    "description": "Syriac martyrs.",
+    "id": "saint-cyriacus-and-saint-athanasius",
+    "day": "November 3",
+    "name": "Saint Cyriacus and Saint Athanasius",
+    "description": "Coptic martyrs of the early church.",
     "type": "saint",
     "tags": [
       "OOR"
-    ],
-    "verification_status": "verified"
+    ]
+  },
+  {
+    "id": "saint-martin-de-porres",
+    "day": "November 3",
+    "name": "Saint Martin de Porres",
+    "description": "Dominican lay brother; patron of social justice.",
+    "type": "saint",
+    "tags": [
+      "LAT"
+    ]
+  },
+  {
+    "id": "saints-acepsimas-joseph-and-aithalas",
+    "day": "November 3",
+    "name": "Saints Acepsimas, Joseph, and Aithalas",
+    "description": "Martyrs of Persia under Sapor II.",
+    "type": "saint",
+    "tags": [
+      "EOR"
+    ]
   },
   {
     "id": "mar-adar",
@@ -246,35 +158,47 @@
     "type": "saint",
     "tags": [
       "COE"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
-    "id": "saint-elizabeth",
-    "day": "November 5",
-    "name": "Saint Elizabeth",
-    "description": "Mother of John the Baptist; honored across the traditions.",
-    "type": "saint",
-    "tags": [
-      "ANG",
-      "COE",
-      "EOR",
-      "LAT",
-      "OOR"
-    ],
-    "verification_status": "verified",
-    "notes": "Elizabeth mother of John the Baptist"
-  },
-  {
-    "id": "saint-elizabeth",
-    "day": "November 5",
-    "name": "Saint Elizabeth",
-    "description": "Mother of John the Baptist.",
+    "id": "saint-charles-borromeo",
+    "day": "November 4",
+    "name": "Saint Charles Borromeo",
+    "description": "Bishop and reformer.",
     "type": "saint",
     "tags": [
       "LAT"
-    ],
-    "verification_status": "verified"
+    ]
+  },
+  {
+    "id": "saint-joannicius-the-great",
+    "day": "November 4",
+    "name": "Saint Joannicius the Great",
+    "description": "Ascetic and defender of icons.",
+    "type": "saint",
+    "tags": [
+      "EOR"
+    ]
+  },
+  {
+    "id": "saint-john-and-saint-james",
+    "day": "November 4",
+    "name": "Saint John and Saint James",
+    "description": "Syriac martyrs.",
+    "type": "saint",
+    "tags": [
+      "OOR"
+    ]
+  },
+  {
+    "id": "saints-of-the-old-testament",
+    "day": "November 4",
+    "name": "Saints of the Old Testament",
+    "description": "Commemoration of the righteous of the Old Covenant.",
+    "type": "saint",
+    "tags": [
+      "ANG"
+    ]
   },
   {
     "id": "elizabeth-and-zechariah",
@@ -284,8 +208,7 @@
     "type": "saint",
     "tags": [
       "ANG"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "martyrs-galaction-and-epistemis",
@@ -295,8 +218,21 @@
     "type": "saint",
     "tags": [
       "EOR"
-    ],
-    "verification_status": "verified"
+    ]
+  },
+  {
+    "id": "saint-elizabeth",
+    "day": "November 5",
+    "name": "Saint Elizabeth",
+    "description": "Mother of John the Baptist; honored across the traditions.",
+    "type": "saint",
+    "tags": [
+      "ANG",
+      "LAT",
+      "EOR",
+      "OOR",
+      "COE"
+    ]
   },
   {
     "id": "saint-galaction",
@@ -306,8 +242,7 @@
     "type": "saint",
     "tags": [
       "OOR"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "saint-jonah-of-novgorod",
@@ -317,52 +252,7 @@
     "type": "saint",
     "tags": [
       "COE"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-leonard-of-noblac",
-    "day": "November 6",
-    "name": "Saint Leonard of Noblac",
-    "description": "Patron of prisoners.",
-    "type": "saint",
-    "tags": [
-      "LAT"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "william-temple",
-    "day": "November 6",
-    "name": "William Temple",
-    "description": "Archbishop of Canterbury.",
-    "type": "saint",
-    "tags": [
-      "ANG"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-paul-the-confessor",
-    "day": "November 6",
-    "name": "Saint Paul the Confessor",
-    "description": "Patriarch of Constantinople.",
-    "type": "saint",
-    "tags": [
-      "EOR"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-felix-and-saint-eusebius",
-    "day": "November 6",
-    "name": "Saint Felix and Saint Eusebius",
-    "description": "Martyrs in the Coptic tradition.",
-    "type": "saint",
-    "tags": [
-      "OOR"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "mar-ishaia",
@@ -372,52 +262,47 @@
     "type": "saint",
     "tags": [
       "COE"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
-    "id": "saint-willibrord",
-    "day": "November 7",
-    "name": "Saint Willibrord",
-    "description": "Apostle of the Frisians.",
-    "type": "saint",
-    "tags": [
-      "LAT"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "willibrord-of-york",
-    "day": "November 7",
-    "name": "Willibrord of York",
-    "description": "Bishop and missionary.",
-    "type": "saint",
-    "tags": [
-      "ANG"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "the-33-martyrs-of-melitene",
-    "day": "November 7",
-    "name": "The 33 Martyrs of Melitene",
-    "description": "Soldiers martyred under Diocletian.",
-    "type": "saint",
-    "tags": [
-      "EOR"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-george-of-alexandria",
-    "day": "November 7",
-    "name": "Saint George of Alexandria",
-    "description": "Coptic martyr.",
+    "id": "saint-felix-and-saint-eusebius",
+    "day": "November 6",
+    "name": "Saint Felix and Saint Eusebius",
+    "description": "Martyrs in the Coptic tradition.",
     "type": "saint",
     "tags": [
       "OOR"
-    ],
-    "verification_status": "verified"
+    ]
+  },
+  {
+    "id": "saint-leonard-of-noblac",
+    "day": "November 6",
+    "name": "Saint Leonard of Noblac",
+    "description": "Patron of prisoners.",
+    "type": "saint",
+    "tags": [
+      "LAT"
+    ]
+  },
+  {
+    "id": "saint-paul-the-confessor",
+    "day": "November 6",
+    "name": "Saint Paul the Confessor",
+    "description": "Patriarch of Constantinople.",
+    "type": "saint",
+    "tags": [
+      "EOR"
+    ]
+  },
+  {
+    "id": "william-temple",
+    "day": "November 6",
+    "name": "William Temple",
+    "description": "Archbishop of Canterbury.",
+    "type": "saint",
+    "tags": [
+      "ANG"
+    ]
   },
   {
     "id": "mar-george-the-martyr",
@@ -427,45 +312,47 @@
     "type": "saint",
     "tags": [
       "COE"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
-    "id": "synaxis-of-the-archangel-michael-and-all-angels",
-    "day": "November 8",
-    "name": "Synaxis of the Archangel Michael and All Angels",
-    "description": "Major feast for the Heavenly Hosts across all traditions.",
-    "type": "commemoration",
+    "id": "saint-george-of-alexandria",
+    "day": "November 7",
+    "name": "Saint George of Alexandria",
+    "description": "Coptic martyr.",
+    "type": "saint",
     "tags": [
-      "ANG",
-      "COE",
-      "EOR",
-      "LAT",
       "OOR"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
-    "id": "blessed-john-duns-scotus",
-    "day": "November 8",
-    "name": "Blessed John Duns Scotus",
-    "description": "Franciscan theologian.",
+    "id": "saint-willibrord",
+    "day": "November 7",
+    "name": "Saint Willibrord",
+    "description": "Apostle of the Frisians.",
     "type": "saint",
     "tags": [
       "LAT"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
-    "id": "saints-and-martyrs-of-the-anglican-communion",
-    "day": "November 8",
-    "name": "Saints and Martyrs of the Anglican Communion",
-    "description": "Commemoration.",
+    "id": "the-33-martyrs-of-melitene",
+    "day": "November 7",
+    "name": "The 33 Martyrs of Melitene",
+    "description": "Soldiers martyred under Diocletian.",
+    "type": "saint",
+    "tags": [
+      "EOR"
+    ]
+  },
+  {
+    "id": "willibrord-of-york",
+    "day": "November 7",
+    "name": "Willibrord of York",
+    "description": "Bishop and missionary.",
     "type": "saint",
     "tags": [
       "ANG"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "archangels-michael-and-gabriel",
@@ -475,8 +362,17 @@
     "type": "saint",
     "tags": [
       "EOR"
-    ],
-    "verification_status": "verified"
+    ]
+  },
+  {
+    "id": "blessed-john-duns-scotus",
+    "day": "November 8",
+    "name": "Blessed John Duns Scotus",
+    "description": "Franciscan theologian.",
+    "type": "saint",
+    "tags": [
+      "LAT"
+    ]
   },
   {
     "id": "holy-archangels-gabriel-and-michael",
@@ -486,8 +382,31 @@
     "type": "saint",
     "tags": [
       "OOR"
-    ],
-    "verification_status": "verified"
+    ]
+  },
+  {
+    "id": "saints-and-martyrs-of-the-anglican-communion",
+    "day": "November 8",
+    "name": "Saints and Martyrs of the Anglican Communion",
+    "description": "Commemoration.",
+    "type": "saint",
+    "tags": [
+      "ANG"
+    ]
+  },
+  {
+    "id": "synaxis-of-the-archangel-michael-and-all-angels",
+    "day": "November 8",
+    "name": "Synaxis of the Archangel Michael and All Angels",
+    "description": "Major feast for the Heavenly Hosts across all traditions.",
+    "type": "commemoration",
+    "tags": [
+      "ANG",
+      "LAT",
+      "EOR",
+      "OOR",
+      "COE"
+    ]
   },
   {
     "id": "dedication-of-the-lateran-basilica",
@@ -497,41 +416,7 @@
     "type": "saint",
     "tags": [
       "LAT"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "margery-kempe",
-    "day": "November 9",
-    "name": "Margery Kempe",
-    "description": "Mystic and author.",
-    "type": "saint",
-    "tags": [
-      "ANG"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-nectarios-of-aegina",
-    "day": "November 9",
-    "name": "Saint Nectarios of Aegina",
-    "description": "Wonderworker.",
-    "type": "saint",
-    "tags": [
-      "EOR"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-isaac-of-antioch",
-    "day": "November 9",
-    "name": "Saint Isaac of Antioch",
-    "description": "Syriac teacher and poet.",
-    "type": "saint",
-    "tags": [
-      "OOR"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "mar-awgin-and-his-disciples",
@@ -541,38 +426,50 @@
     "type": "saint",
     "tags": [
       "COE"
-    ],
-    "verification_status": "verified"
+    ]
+  },
+  {
+    "id": "margery-kempe",
+    "day": "November 9",
+    "name": "Margery Kempe",
+    "description": "Mystic and author.",
+    "type": "saint",
+    "tags": [
+      "ANG"
+    ]
+  },
+  {
+    "id": "saint-isaac-of-antioch",
+    "day": "November 9",
+    "name": "Saint Isaac of Antioch",
+    "description": "Syriac teacher and poet.",
+    "type": "saint",
+    "tags": [
+      "OOR"
+    ]
+  },
+  {
+    "id": "saint-nectarios-of-aegina",
+    "day": "November 9",
+    "name": "Saint Nectarios of Aegina",
+    "description": "Wonderworker.",
+    "type": "saint",
+    "tags": [
+      "EOR"
+    ]
   },
   {
     "id": "saint-leo-the-great",
     "day": "November 10",
     "name": "Saint Leo the Great",
-    "description": "Pope and Doctor.",
+    "description": "Pope and Doctor of the Church, died 461.",
     "type": "saint",
     "tags": [
       "ANG",
       "EOR",
       "LAT",
       "OOR"
-    ],
-    "verification_status": "verified",
-    "notes": "COE sensitivity — omitted per external asset"
-  },
-  {
-    "id": "saint-martin-of-tours",
-    "day": "November 11",
-    "name": "Saint Martin of Tours",
-    "description": "Bishop and soldier.",
-    "type": "saint",
-    "tags": [
-      "ANG",
-      "COE",
-      "EOR",
-      "LAT",
-      "OOR"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "mar-menas",
@@ -582,8 +479,21 @@
     "type": "saint",
     "tags": [
       "COE"
-    ],
-    "verification_status": "verified"
+    ]
+  },
+  {
+    "id": "saint-martin-of-tours",
+    "day": "November 11",
+    "name": "Saint Martin of Tours",
+    "description": "Bishop and soldier.",
+    "type": "saint",
+    "tags": [
+      "ANG",
+      "LAT",
+      "EOR",
+      "OOR",
+      "COE"
+    ]
   },
   {
     "id": "saint-josaphat",
@@ -593,39 +503,21 @@
     "type": "saint",
     "tags": [
       "LAT"
-    ],
-    "verification_status": "verified",
-    "notes": "Eastern Catholic martyr; not recognized by Eastern Orthodox"
+    ]
   },
   {
     "id": "saint-john-chrysostom",
     "day": "November 13",
     "name": "Saint John Chrysostom",
-    "description": "Doctor and Patriarch; 'The Golden-Mouthed'.",
+    "description": "Honored for eloquence.",
     "type": "saint",
     "tags": [
       "ANG",
-      "COE",
-      "EOR",
       "LAT",
-      "OOR"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-philip-the-apostle",
-    "day": "November 14",
-    "name": "Saint Philip the Apostle",
-    "description": "Apostle.",
-    "type": "apostle",
-    "tags": [
-      "ANG",
-      "COE",
       "EOR",
-      "LAT",
-      "OOR"
-    ],
-    "verification_status": "verified"
+      "OOR",
+      "COE"
+    ]
   },
   {
     "id": "saint-gregory-palamas",
@@ -635,30 +527,21 @@
     "type": "saint",
     "tags": [
       "EOR"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
-    "id": "saint-albert-the-great",
-    "day": "November 15",
-    "name": "Saint Albert the Great",
-    "description": "Bishop and Doctor.",
-    "type": "saint",
+    "id": "saint-philip-the-apostle",
+    "day": "November 14",
+    "name": "Saint Philip the Apostle",
+    "description": "Apostle.",
+    "type": "apostle",
     "tags": [
-      "LAT"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-machutus",
-    "day": "November 15",
-    "name": "Saint Machutus",
-    "description": "Bishop and hermit, died 565.",
-    "type": "saint",
-    "tags": [
-      "ANG"
-    ],
-    "verification_status": "verified"
+      "ANG",
+      "LAT",
+      "EOR",
+      "OOR",
+      "COE"
+    ]
   },
   {
     "id": "herman-of-alaska",
@@ -668,8 +551,37 @@
     "type": "saint",
     "tags": [
       "EOR"
-    ],
-    "verification_status": "verified"
+    ]
+  },
+  {
+    "id": "mar-pethion",
+    "day": "November 15",
+    "name": "Mar Pethion",
+    "description": "Martyr and evangelist of the Persian interior.",
+    "type": "saint",
+    "tags": [
+      "COE"
+    ]
+  },
+  {
+    "id": "saint-albert-the-great",
+    "day": "November 15",
+    "name": "Saint Albert the Great",
+    "description": "Bishop and Doctor.",
+    "type": "saint",
+    "tags": [
+      "LAT"
+    ]
+  },
+  {
+    "id": "saint-machutus",
+    "day": "November 15",
+    "name": "Saint Machutus",
+    "description": "Bishop and hermit, died 565.",
+    "type": "saint",
+    "tags": [
+      "ANG"
+    ]
   },
   {
     "id": "saint-mar-menas-relics",
@@ -679,78 +591,7 @@
     "type": "saint",
     "tags": [
       "OOR"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "mar-pethion",
-    "day": "November 15",
-    "name": "Mar Pethion",
-    "description": "Persian martyr.",
-    "type": "saint",
-    "tags": [
-      "COE"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-matthew-the-apostle",
-    "day": "November 16",
-    "name": "Saint Matthew the Apostle",
-    "description": "Apostle and Evangelist.",
-    "type": "apostle",
-    "tags": [
-      "ANG",
-      "COE",
-      "EOR",
-      "LAT",
-      "OOR"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-margaret-of-scotland",
-    "day": "November 16",
-    "name": "Saint Margaret of Scotland",
-    "description": "Queen and patroness.",
-    "type": "saint",
-    "tags": [
-      "LAT"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-margaret-of-scotland",
-    "day": "November 16",
-    "name": "Saint Margaret of Scotland",
-    "description": "Commemoration of the Queen.",
-    "type": "saint",
-    "tags": [
-      "ANG"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-matthew-synaxis",
-    "day": "November 16",
-    "name": "Saint Matthew (Synaxis)",
-    "description": "Secondary feast.",
-    "type": "saint",
-    "tags": [
-      "EOR"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-gertrude-shared",
-    "day": "November 16",
-    "name": "Saint Gertrude (Shared)",
-    "description": "Commemoration of the mystic.",
-    "type": "saint",
-    "tags": [
-      "OOR"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "mar-balai",
@@ -760,8 +601,62 @@
     "type": "saint",
     "tags": [
       "COE"
-    ],
-    "verification_status": "verified"
+    ]
+  },
+  {
+    "id": "saint-gertrude-shared",
+    "day": "November 16",
+    "name": "Saint Gertrude (Shared)",
+    "description": "Commemoration of the mystic.",
+    "type": "saint",
+    "tags": [
+      "OOR"
+    ]
+  },
+  {
+    "id": "saint-margaret-of-scotland",
+    "day": "November 16",
+    "name": "Saint Margaret of Scotland",
+    "description": "Queen and patroness.",
+    "type": "saint",
+    "tags": [
+      "ANG",
+      "LAT"
+    ]
+  },
+  {
+    "id": "saint-matthew-synaxis",
+    "day": "November 16",
+    "name": "Saint Matthew (Synaxis)",
+    "description": "Secondary feast.",
+    "type": "saint",
+    "tags": [
+      "EOR"
+    ]
+  },
+  {
+    "id": "saint-matthew-the-apostle",
+    "day": "November 16",
+    "name": "Saint Matthew the Apostle",
+    "description": "Apostle and Evangelist.",
+    "type": "apostle",
+    "tags": [
+      "ANG",
+      "LAT",
+      "EOR",
+      "OOR",
+      "COE"
+    ]
+  },
+  {
+    "id": "mar-gregory-the-wonderworker",
+    "day": "November 17",
+    "name": "Mar Gregory the Wonderworker",
+    "description": "East Syriac feast.",
+    "type": "saint",
+    "tags": [
+      "COE"
+    ]
   },
   {
     "id": "saint-elizabeth-of-hungary",
@@ -772,30 +667,7 @@
     "tags": [
       "ANG",
       "LAT"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-hilda-of-whitby",
-    "day": "November 17",
-    "name": "Saint Hilda of Whitby",
-    "description": "Abbess and teacher.",
-    "type": "saint",
-    "tags": [
-      "ANG"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-gregory-of-neocaesarea",
-    "day": "November 17",
-    "name": "Saint Gregory of Neocaesarea",
-    "description": "The Wonderworker.",
-    "type": "saint",
-    "tags": [
-      "EOR"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "saint-gertrude-the-great",
@@ -805,19 +677,27 @@
     "type": "saint",
     "tags": [
       "OOR"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
-    "id": "mar-gregory-the-wonderworker",
+    "id": "saint-gregory-of-neocaesarea",
     "day": "November 17",
-    "name": "Mar Gregory the Wonderworker",
-    "description": "East Syriac feast.",
+    "name": "Saint Gregory of Neocaesarea",
+    "description": "The Wonderworker.",
     "type": "saint",
     "tags": [
-      "COE"
-    ],
-    "verification_status": "verified"
+      "EOR"
+    ]
+  },
+  {
+    "id": "saint-hilda-of-whitby",
+    "day": "November 17",
+    "name": "Saint Hilda of Whitby",
+    "description": "Abbess and teacher.",
+    "type": "saint",
+    "tags": [
+      "ANG"
+    ]
   },
   {
     "id": "dedication-of-peter-and-paul-basilicas",
@@ -827,8 +707,7 @@
     "type": "saint",
     "tags": [
       "LAT"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "elizabeth-of-hungary-transferred",
@@ -838,30 +717,7 @@
     "type": "saint",
     "tags": [
       "ANG"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saints-plato-and-romanus",
-    "day": "November 18",
-    "name": "Saints Plato and Romanus",
-    "description": "Great martyrs.",
-    "type": "saint",
-    "tags": [
-      "EOR"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-philip-the-apostle-coptic",
-    "day": "November 18",
-    "name": "Saint Philip the Apostle (Coptic)",
-    "description": "Martyrdom.",
-    "type": "saint",
-    "tags": [
-      "OOR"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "mar-yakob-of-nisibis",
@@ -871,19 +727,37 @@
     "type": "saint",
     "tags": [
       "COE"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
-    "id": "saint-agnes-of-assisi",
-    "day": "November 19",
-    "name": "Saint Agnes of Assisi",
-    "description": "Abbess.",
+    "id": "saint-philip-the-apostle-coptic",
+    "day": "November 18",
+    "name": "Saint Philip the Apostle (Coptic)",
+    "description": "Martyrdom.",
     "type": "saint",
     "tags": [
-      "LAT"
-    ],
-    "verification_status": "verified"
+      "OOR"
+    ]
+  },
+  {
+    "id": "saints-plato-and-romanus",
+    "day": "November 18",
+    "name": "Saints Plato and Romanus",
+    "description": "Great martyrs.",
+    "type": "saint",
+    "tags": [
+      "EOR"
+    ]
+  },
+  {
+    "id": "mar-abda",
+    "day": "November 19",
+    "name": "Mar Abda",
+    "description": "Bishop and martyr.",
+    "type": "saint",
+    "tags": [
+      "COE"
+    ]
   },
   {
     "id": "mechtild-of-magdeburg",
@@ -893,8 +767,17 @@
     "type": "saint",
     "tags": [
       "ANG"
-    ],
-    "verification_status": "verified"
+    ]
+  },
+  {
+    "id": "saint-agnes-of-assisi",
+    "day": "November 19",
+    "name": "Saint Agnes of Assisi",
+    "description": "Abbess.",
+    "type": "saint",
+    "tags": [
+      "LAT"
+    ]
   },
   {
     "id": "saint-philaret-of-moscow",
@@ -904,8 +787,7 @@
     "type": "saint",
     "tags": [
       "EOR"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "saints-dedyaqus-and-theodore",
@@ -915,63 +797,7 @@
     "type": "saint",
     "tags": [
       "OOR"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "mar-abda",
-    "day": "November 19",
-    "name": "Mar Abda",
-    "description": "Persian martyr.",
-    "type": "saint",
-    "tags": [
-      "COE"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-edmund-the-martyr",
-    "day": "November 20",
-    "name": "Saint Edmund the Martyr",
-    "description": "King.",
-    "type": "saint",
-    "tags": [
-      "LAT"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "priscilla-lydia-sellon",
-    "day": "November 20",
-    "name": "Priscilla Lydia Sellon",
-    "description": "Restorer of religious life.",
-    "type": "saint",
-    "tags": [
-      "ANG"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-gregory-of-decapolis",
-    "day": "November 20",
-    "name": "Saint Gregory of Decapolis",
-    "description": "Ascetic.",
-    "type": "saint",
-    "tags": [
-      "EOR"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-anianus",
-    "day": "November 20",
-    "name": "Saint Anianus",
-    "description": "Patriarch.",
-    "type": "saint",
-    "tags": [
-      "OOR"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "mar-papa-bar-aggai-see-foundation",
@@ -981,45 +807,58 @@
     "type": "saint",
     "tags": [
       "COE"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
-    "id": "presentation-of-the-blessed-virgin-mary",
-    "day": "November 21",
-    "name": "Presentation of the Blessed Virgin Mary",
-    "description": "Entrance of the Theotokos into the Temple.",
-    "type": "marian_feast",
-    "tags": [
-      "ANG",
-      "COE",
-      "EOR",
-      "LAT",
-      "OOR"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "presentation-of-the-blessed-virgin-mary",
-    "day": "November 21",
-    "name": "Presentation of the Blessed Virgin Mary",
-    "description": "Memorial.",
-    "type": "saint",
-    "tags": [
-      "LAT"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "presentation-of-the-blessed-virgin-mary",
-    "day": "November 21",
-    "name": "Presentation of the Blessed Virgin Mary",
-    "description": "Feast.",
+    "id": "priscilla-lydia-sellon",
+    "day": "November 20",
+    "name": "Priscilla Lydia Sellon",
+    "description": "Restorer of religious life.",
     "type": "saint",
     "tags": [
       "ANG"
-    ],
-    "verification_status": "verified"
+    ]
+  },
+  {
+    "id": "saint-anianus",
+    "day": "November 20",
+    "name": "Saint Anianus",
+    "description": "Patriarch.",
+    "type": "saint",
+    "tags": [
+      "OOR"
+    ]
+  },
+  {
+    "id": "saint-edmund-the-martyr",
+    "day": "November 20",
+    "name": "Saint Edmund the Martyr",
+    "description": "King.",
+    "type": "saint",
+    "tags": [
+      "LAT"
+    ]
+  },
+  {
+    "id": "saint-gregory-of-decapolis",
+    "day": "November 20",
+    "name": "Saint Gregory of Decapolis",
+    "description": "Ascetic.",
+    "type": "saint",
+    "tags": [
+      "EOR"
+    ]
+  },
+  {
+    "id": "entrance-of-the-theotokos",
+    "day": "November 21",
+    "name": "Entrance of the Theotokos",
+    "description": "Feast.",
+    "type": "saint",
+    "tags": [
+      "COE",
+      "OOR"
+    ]
   },
   {
     "id": "entrance-of-the-theotokos-into-the-temple",
@@ -1029,30 +868,21 @@
     "type": "saint",
     "tags": [
       "EOR"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
-    "id": "entrance-of-the-theotokos",
+    "id": "presentation-of-the-blessed-virgin-mary",
     "day": "November 21",
-    "name": "Entrance of the Theotokos",
-    "description": "Feast.",
-    "type": "saint",
+    "name": "Presentation of the Blessed Virgin Mary",
+    "description": "Entrance of the Theotokos into the Temple.",
+    "type": "marian_feast",
     "tags": [
-      "OOR"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "entrance-of-the-theotokos",
-    "day": "November 21",
-    "name": "Entrance of the Theotokos",
-    "description": "Commemoration.",
-    "type": "saint",
-    "tags": [
+      "ANG",
+      "LAT",
+      "EOR",
+      "OOR",
       "COE"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "saint-cecilia",
@@ -1061,93 +891,12 @@
     "description": "Virgin and Martyr.",
     "type": "saint",
     "tags": [
-      "EOR",
-      "LAT",
-      "OOR"
-    ],
-    "verification_status": "verified",
-    "notes": "Roman martyr; in Eastern calendars too"
-  },
-  {
-    "id": "saint-cecilia",
-    "day": "November 22",
-    "name": "Saint Cecilia",
-    "description": "Patron of music.",
-    "type": "saint",
-    "tags": [
-      "LAT"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-cecilia",
-    "day": "November 22",
-    "name": "Saint Cecilia",
-    "description": "Martyr, patron of musicians.",
-    "type": "saint",
-    "tags": [
-      "ANG"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-cecilia",
-    "day": "November 22",
-    "name": "Saint Cecilia",
-    "description": "Martyr.",
-    "type": "saint",
-    "tags": [
-      "EOR"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-cecilia",
-    "day": "November 22",
-    "name": "Saint Cecilia",
-    "description": "Martyr.",
-    "type": "saint",
-    "tags": [
-      "OOR"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-cecilia",
-    "day": "November 22",
-    "name": "Saint Cecilia",
-    "description": "Martyr.",
-    "type": "saint",
-    "tags": [
-      "COE"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-clement-of-rome",
-    "day": "November 23",
-    "name": "Saint Clement of Rome",
-    "description": "Pope and Martyr.",
-    "type": "saint",
-    "tags": [
       "ANG",
-      "COE",
-      "EOR",
       "LAT",
-      "OOR"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-columban",
-    "day": "November 23",
-    "name": "Saint Columban",
-    "description": "Irish missionary.",
-    "type": "saint",
-    "tags": [
-      "LAT"
-    ],
-    "verification_status": "verified"
+      "EOR",
+      "OOR",
+      "COE"
+    ]
   },
   {
     "id": "clement-of-rome",
@@ -1157,8 +906,7 @@
     "type": "saint",
     "tags": [
       "ANG"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "saint-amphilochius-of-iconium",
@@ -1168,41 +916,31 @@
     "type": "saint",
     "tags": [
       "EOR"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "saint-clement-of-rome",
     "day": "November 23",
     "name": "Saint Clement of Rome",
-    "description": "Pope and martyr.",
+    "description": "Pope and Martyr.",
     "type": "saint",
     "tags": [
-      "OOR"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-clement-of-rome",
-    "day": "November 23",
-    "name": "Saint Clement of Rome",
-    "description": "Apostolic Father.",
-    "type": "saint",
-    "tags": [
+      "ANG",
+      "LAT",
+      "EOR",
+      "OOR",
       "COE"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
-    "id": "saint-andrew-dung-lac-and-companions",
-    "day": "November 24",
-    "name": "Saint Andrew Dung-Lac and Companions",
-    "description": "Vietnamese Martyrs.",
+    "id": "saint-columban",
+    "day": "November 23",
+    "name": "Saint Columban",
+    "description": "Irish missionary.",
     "type": "saint",
     "tags": [
       "LAT"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "catherine-of-alexandria",
@@ -1212,8 +950,7 @@
     "type": "saint",
     "tags": [
       "ANG"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "hieromartyr-clement-of-rome",
@@ -1223,8 +960,27 @@
     "type": "saint",
     "tags": [
       "EOR"
-    ],
-    "verification_status": "verified"
+    ]
+  },
+  {
+    "id": "mar-abraham-of-kashkar",
+    "day": "November 24",
+    "name": "Mar Abraham of Kashkar",
+    "description": "Reviver of the community and abbot.",
+    "type": "saint",
+    "tags": [
+      "COE"
+    ]
+  },
+  {
+    "id": "saint-andrew-dung-lac-and-companions",
+    "day": "November 24",
+    "name": "Saint Andrew Dung-Lac and Companions",
+    "description": "Vietnamese Martyrs.",
+    "type": "saint",
+    "tags": [
+      "LAT"
+    ]
   },
   {
     "id": "saint-catherine-coptic",
@@ -1234,19 +990,17 @@
     "type": "saint",
     "tags": [
       "OOR"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
-    "id": "mar-abraham-of-kashkar",
-    "day": "November 24",
-    "name": "Mar Abraham of Kashkar",
-    "description": "Monastic reformer.",
+    "id": "catherine-of-alexandria",
+    "day": "November 25",
+    "name": "Catherine of Alexandria",
+    "description": "Martyr, c. 305.",
     "type": "saint",
     "tags": [
-      "COE"
-    ],
-    "verification_status": "verified"
+      "ANG"
+    ]
   },
   {
     "id": "saint-catherine-of-alexandria",
@@ -1256,78 +1010,11 @@
     "type": "saint",
     "tags": [
       "ANG",
-      "COE",
-      "EOR",
       "LAT",
-      "OOR"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-catherine-of-alexandria",
-    "day": "November 25",
-    "name": "Saint Catherine of Alexandria",
-    "description": "Virgin and martyr.",
-    "type": "saint",
-    "tags": [
-      "LAT"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "catherine-of-alexandria",
-    "day": "November 25",
-    "name": "Catherine of Alexandria",
-    "description": "Martyr.",
-    "type": "saint",
-    "tags": [
-      "ANG"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-catherine-of-alexandria",
-    "day": "November 25",
-    "name": "Saint Catherine of Alexandria",
-    "description": "Great martyr.",
-    "type": "saint",
-    "tags": [
-      "EOR"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-catherine-of-alexandria",
-    "day": "November 25",
-    "name": "Saint Catherine of Alexandria",
-    "description": "Martyr.",
-    "type": "saint",
-    "tags": [
-      "OOR"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-catherine-of-alexandria",
-    "day": "November 25",
-    "name": "Saint Catherine of Alexandria",
-    "description": "Martyr.",
-    "type": "saint",
-    "tags": [
+      "EOR",
+      "OOR",
       "COE"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-sylvester-gozzolini",
-    "day": "November 26",
-    "name": "Saint Sylvester Gozzolini",
-    "description": "Abbot.",
-    "type": "saint",
-    "tags": [
-      "LAT"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "isaac-watts",
@@ -1337,30 +1024,7 @@
     "type": "saint",
     "tags": [
       "ANG"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-alypius-the-stylite",
-    "day": "November 26",
-    "name": "Saint Alypius the Stylite",
-    "description": "Ascetic.",
-    "type": "saint",
-    "tags": [
-      "EOR"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-valerius",
-    "day": "November 26",
-    "name": "Saint Valerius",
-    "description": "Bishop and martyr.",
-    "type": "saint",
-    "tags": [
-      "OOR"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "mar-george-the-martyr-secondary",
@@ -1370,52 +1034,37 @@
     "type": "saint",
     "tags": [
       "COE"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
-    "id": "saint-francesco-antonio-fasani",
-    "day": "November 27",
-    "name": "Saint Francesco Antonio Fasani",
-    "description": "Preacher.",
-    "type": "saint",
-    "tags": [
-      "LAT"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saints-of-india",
-    "day": "November 27",
-    "name": "Saints of India",
-    "description": "Commemoration.",
-    "type": "saint",
-    "tags": [
-      "ANG"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-james-the-hermit",
-    "day": "November 27",
-    "name": "Saint James the Hermit",
-    "description": "Syrian ascetic.",
+    "id": "saint-alypius-the-stylite",
+    "day": "November 26",
+    "name": "Saint Alypius the Stylite",
+    "description": "Ascetic.",
     "type": "saint",
     "tags": [
       "EOR"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
-    "id": "saint-james-the-persian",
-    "day": "November 27",
-    "name": "Saint James the Persian",
-    "description": "The Intercisus.",
+    "id": "saint-sylvester-gozzolini",
+    "day": "November 26",
+    "name": "Saint Sylvester Gozzolini",
+    "description": "Abbot.",
+    "type": "saint",
+    "tags": [
+      "LAT"
+    ]
+  },
+  {
+    "id": "saint-valerius",
+    "day": "November 26",
+    "name": "Saint Valerius",
+    "description": "Bishop and martyr.",
     "type": "saint",
     "tags": [
       "OOR"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "mar-pinhas",
@@ -1425,19 +1074,47 @@
     "type": "saint",
     "tags": [
       "COE"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
-    "id": "saint-james-of-the-march",
-    "day": "November 28",
-    "name": "Saint James of the March",
-    "description": "Franciscan.",
+    "id": "saint-francesco-antonio-fasani",
+    "day": "November 27",
+    "name": "Saint Francesco Antonio Fasani",
+    "description": "Preacher.",
     "type": "saint",
     "tags": [
       "LAT"
-    ],
-    "verification_status": "verified"
+    ]
+  },
+  {
+    "id": "saint-james-the-hermit",
+    "day": "November 27",
+    "name": "Saint James the Hermit",
+    "description": "Syrian ascetic.",
+    "type": "saint",
+    "tags": [
+      "EOR"
+    ]
+  },
+  {
+    "id": "saint-james-the-persian",
+    "day": "November 27",
+    "name": "Saint James the Persian",
+    "description": "The Intercisus.",
+    "type": "saint",
+    "tags": [
+      "OOR"
+    ]
+  },
+  {
+    "id": "saints-of-india",
+    "day": "November 27",
+    "name": "Saints of India",
+    "description": "Commemoration.",
+    "type": "saint",
+    "tags": [
+      "ANG"
+    ]
   },
   {
     "id": "kamehameha-and-emma",
@@ -1447,30 +1124,7 @@
     "type": "saint",
     "tags": [
       "ANG"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-stephen-the-new",
-    "day": "November 28",
-    "name": "Saint Stephen the New",
-    "description": "Icon defender.",
-    "type": "saint",
-    "tags": [
-      "EOR"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-sarapamon",
-    "day": "November 28",
-    "name": "Saint Sarapamon",
-    "description": "Coptic Bishop.",
-    "type": "saint",
-    "tags": [
-      "OOR"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "mar-abraham-of-kashkar-secondary",
@@ -1480,19 +1134,37 @@
     "type": "saint",
     "tags": [
       "COE"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
-    "id": "saint-saturninus",
-    "day": "November 29",
-    "name": "Saint Saturninus",
-    "description": "Bishop and Martyr.",
+    "id": "saint-james-of-the-march",
+    "day": "November 28",
+    "name": "Saint James of the March",
+    "description": "Franciscan.",
     "type": "saint",
     "tags": [
       "LAT"
-    ],
-    "verification_status": "verified"
+    ]
+  },
+  {
+    "id": "saint-sarapamon",
+    "day": "November 28",
+    "name": "Saint Sarapamon",
+    "description": "Coptic Bishop.",
+    "type": "saint",
+    "tags": [
+      "OOR"
+    ]
+  },
+  {
+    "id": "saint-stephen-the-new",
+    "day": "November 28",
+    "name": "Saint Stephen the New",
+    "description": "Icon defender.",
+    "type": "saint",
+    "tags": [
+      "EOR"
+    ]
   },
   {
     "id": "day-of-intercession-for-missions",
@@ -1502,8 +1174,17 @@
     "type": "saint",
     "tags": [
       "ANG"
-    ],
-    "verification_status": "verified"
+    ]
+  },
+  {
+    "id": "mar-isaac-of-nineveh",
+    "day": "November 29",
+    "name": "Mar Isaac of Nineveh",
+    "description": "Mystic and bishop.",
+    "type": "saint",
+    "tags": [
+      "COE"
+    ]
   },
   {
     "id": "martyr-paramon",
@@ -1513,30 +1194,27 @@
     "type": "saint",
     "tags": [
       "EOR"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "saint-peter-of-alexandria",
     "day": "November 29",
     "name": "Saint Peter of Alexandria",
-    "description": "Seal of Martyrs (Commemoration).",
+    "description": "Patriarch and 'Seal of the Martyrs'.",
     "type": "saint",
     "tags": [
       "OOR"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
-    "id": "mar-isaac-of-nineveh",
+    "id": "saint-saturninus",
     "day": "November 29",
-    "name": "Mar Isaac of Nineveh",
-    "description": "Ascetic father.",
+    "name": "Saint Saturninus",
+    "description": "Bishop and Martyr.",
     "type": "saint",
     "tags": [
-      "COE"
-    ],
-    "verification_status": "verified"
+      "LAT"
+    ]
   },
   {
     "id": "saint-andrew-the-apostle",
@@ -1546,66 +1224,10 @@
     "type": "apostle",
     "tags": [
       "ANG",
-      "COE",
-      "EOR",
       "LAT",
-      "OOR"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-andrew-the-apostle",
-    "day": "November 30",
-    "name": "Saint Andrew the Apostle",
-    "description": "Apostle and martyr.",
-    "type": "saint",
-    "tags": [
-      "LAT"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-andrew-the-apostle",
-    "day": "November 30",
-    "name": "Saint Andrew the Apostle",
-    "description": "Patron of Scotland.",
-    "type": "saint",
-    "tags": [
-      "ANG"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-andrew-the-apostle",
-    "day": "November 30",
-    "name": "Saint Andrew the Apostle",
-    "description": "First-called Apostle.",
-    "type": "saint",
-    "tags": [
-      "EOR"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-andrew-the-apostle",
-    "day": "November 30",
-    "name": "Saint Andrew the Apostle",
-    "description": "Apostle.",
-    "type": "saint",
-    "tags": [
-      "OOR"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-andrew-the-apostle",
-    "day": "November 30",
-    "name": "Saint Andrew the Apostle",
-    "description": "Apostle.",
-    "type": "saint",
-    "tags": [
+      "EOR",
+      "OOR",
       "COE"
-    ],
-    "verification_status": "verified"
+    ]
   }
 ]

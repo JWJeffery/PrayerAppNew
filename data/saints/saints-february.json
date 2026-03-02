@@ -1,15 +1,13 @@
 [
   {
-    "id": "saint-brigid-of-kildare",
+    "id": "5th-epiphany-sunday",
     "day": "February 1",
-    "name": "Saint Brigid of Kildare",
-    "description": "Abbess and patroness of Ireland, venerated in Catholic, Anglican Communion, and Oriental Orthodox traditions.",
+    "name": "5th Epiphany Sunday",
+    "description": "Liturgical commemoration in the season of Epiphany.",
     "type": "saint",
     "tags": [
-      "ANG",
-      "LAT"
-    ],
-    "verification_status": "verified"
+      "COE"
+    ]
   },
   {
     "id": "martyr-tryphon-of-lampsacus",
@@ -19,19 +17,18 @@
     "type": "saint",
     "tags": [
       "EOR"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
-    "id": "5th-epiphany-sunday",
+    "id": "saint-brigid-of-kildare",
     "day": "February 1",
-    "name": "5th Epiphany Sunday",
-    "description": "Liturgical commemoration in the season of Epiphany.",
+    "name": "Saint Brigid of Kildare",
+    "description": "Abbess and patroness of Ireland, venerated in Catholic, Anglican Communion, and Oriental Orthodox traditions.",
     "type": "saint",
     "tags": [
-      "COE"
-    ],
-    "verification_status": "verified"
+      "ANG",
+      "LAT"
+    ]
   },
   {
     "id": "presentation-of-the-lord-candlemas",
@@ -41,12 +38,11 @@
     "type": "feast",
     "tags": [
       "ANG",
-      "COE",
-      "EOR",
       "LAT",
-      "OOR"
-    ],
-    "verification_status": "verified"
+      "EOR",
+      "OOR",
+      "COE"
+    ]
   },
   {
     "id": "saint-joan-de-lestonnac",
@@ -56,19 +52,7 @@
     "type": "saint",
     "tags": [
       "LAT"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-theodosius-of-chernigov",
-    "day": "February 2",
-    "name": "Saint Theodosius of Chernigov",
-    "description": "Archbishop and wonderworker.",
-    "type": "saint",
-    "tags": [
-      "EOR"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "saint-longinus-the-soldier",
@@ -78,8 +62,7 @@
     "type": "saint",
     "tags": [
       "OOR"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "saint-simeon-the-elder",
@@ -89,41 +72,17 @@
     "type": "saint",
     "tags": [
       "COE"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
-    "id": "saint-blaise",
-    "day": "February 3",
-    "name": "Saint Blaise",
-    "description": "Bishop and martyr, patron against throat ailments.",
-    "type": "saint",
-    "tags": [
-      "LAT"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-ansgar",
-    "day": "February 3",
-    "name": "Saint Ansgar",
-    "description": "Bishop and missionary to Denmark and Sweden.",
-    "type": "saint",
-    "tags": [
-      "LAT"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saints-symeon-the-god-receiver-and-anna-the-prophetess",
-    "day": "February 3",
-    "name": "Saints Symeon the God-receiver and Anna the Prophetess",
-    "description": "Those who met Christ in the Temple.",
+    "id": "saint-theodosius-of-chernigov",
+    "day": "February 2",
+    "name": "Saint Theodosius of Chernigov",
+    "description": "Archbishop and wonderworker.",
     "type": "saint",
     "tags": [
       "EOR"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "prophet-azariah",
@@ -133,8 +92,17 @@
     "type": "saint",
     "tags": [
       "EOR"
-    ],
-    "verification_status": "verified"
+    ]
+  },
+  {
+    "id": "saint-ansgar",
+    "day": "February 3",
+    "name": "Saint Ansgar",
+    "description": "Bishop and missionary to Denmark and Sweden.",
+    "type": "saint",
+    "tags": [
+      "LAT"
+    ]
   },
   {
     "id": "saint-ansgar-anskar",
@@ -145,8 +113,17 @@
     "tags": [
       "ANG",
       "LAT"
-    ],
-    "verification_status": "verified"
+    ]
+  },
+  {
+    "id": "saint-blaise",
+    "day": "February 3",
+    "name": "Saint Blaise",
+    "description": "Bishop and martyr, patron against throat ailments.",
+    "type": "saint",
+    "tags": [
+      "LAT"
+    ]
   },
   {
     "id": "saint-malachi",
@@ -156,8 +133,37 @@
     "type": "saint",
     "tags": [
       "COE"
-    ],
-    "verification_status": "verified"
+    ]
+  },
+  {
+    "id": "saints-symeon-the-god-receiver-and-anna-the-prophetess",
+    "day": "February 3",
+    "name": "Saints Symeon the God-receiver and Anna the Prophetess",
+    "description": "Those who met Christ in the Temple.",
+    "type": "saint",
+    "tags": [
+      "EOR"
+    ]
+  },
+  {
+    "id": "commemoration-of-st-sawrisho-of-beth-garmi",
+    "day": "February 4",
+    "name": "Commemoration of St. Sawrisho of Beth Garmi",
+    "description": "Saint and bishop.",
+    "type": "saint",
+    "tags": [
+      "COE"
+    ]
+  },
+  {
+    "id": "cornelius-the-centurion",
+    "day": "February 4",
+    "name": "Cornelius the Centurion",
+    "description": "First Gentile convert to Christianity.",
+    "type": "saint",
+    "tags": [
+      "ANG"
+    ]
   },
   {
     "id": "saint-john-de-britto",
@@ -167,8 +173,7 @@
     "type": "saint",
     "tags": [
       "LAT"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "venerable-isidore-of-pelusium",
@@ -179,30 +184,27 @@
     "tags": [
       "EOR",
       "OOR"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
-    "id": "commemoration-of-st-sawrisho-of-beth-garmi",
-    "day": "February 4",
-    "name": "Commemoration of St. Sawrisho of Beth Garmi",
-    "description": "Saint and bishop.",
+    "id": "commemoration-of-st-awa-catholicos",
+    "day": "February 5",
+    "name": "Commemoration of St. Awa Catholicos",
+    "description": "Patriarch of the Church of the East.",
     "type": "saint",
     "tags": [
       "COE"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
-    "id": "cornelius-the-centurion",
-    "day": "February 4",
-    "name": "Cornelius the Centurion",
-    "description": "First Gentile convert to Christianity.",
+    "id": "martyrs-of-japan",
+    "day": "February 5",
+    "name": "Martyrs of Japan",
+    "description": "Christian martyrs, 1597.",
     "type": "saint",
     "tags": [
       "ANG"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "saint-agatha",
@@ -215,63 +217,7 @@
       "EOR",
       "LAT",
       "OOR"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "commemoration-of-st-awa-catholicos",
-    "day": "February 5",
-    "name": "Commemoration of St. Awa Catholicos",
-    "description": "Patriarch of the Church of the East.",
-    "type": "saint",
-    "tags": [
-      "COE"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "martyrs-of-japan",
-    "day": "February 5",
-    "name": "Martyrs of Japan",
-    "description": "Christian martyrs, 1597.",
-    "type": "saint",
-    "tags": [
-      "ANG"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saints-paul-miki-and-companions-martyrs-of-japan",
-    "day": "February 6",
-    "name": "Saints Paul Miki and Companions (Martyrs of Japan)",
-    "description": "Jesuit and Franciscan martyrs at Nagasaki, venerated in Catholic and Anglican Communion traditions.",
-    "type": "saint",
-    "tags": [
-      "LAT"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-bucolus-of-smyrna",
-    "day": "February 6",
-    "name": "Saint Bucolus of Smyrna",
-    "description": "Early bishop.",
-    "type": "saint",
-    "tags": [
-      "EOR"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-photius-of-constantinople",
-    "day": "February 6",
-    "name": "Saint Photius of Constantinople",
-    "description": "Defender of icons.",
-    "type": "saint",
-    "tags": [
-      "EOR"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "saint-barsanuphius-the-great",
@@ -281,8 +227,37 @@
     "type": "saint",
     "tags": [
       "OOR"
-    ],
-    "verification_status": "verified"
+    ]
+  },
+  {
+    "id": "saint-bucolus-of-smyrna",
+    "day": "February 6",
+    "name": "Saint Bucolus of Smyrna",
+    "description": "Early bishop.",
+    "type": "saint",
+    "tags": [
+      "EOR"
+    ]
+  },
+  {
+    "id": "saint-photius-of-constantinople",
+    "day": "February 6",
+    "name": "Saint Photius of Constantinople",
+    "description": "Defender of icons.",
+    "type": "saint",
+    "tags": [
+      "EOR"
+    ]
+  },
+  {
+    "id": "saints-paul-miki-and-companions-martyrs-of-japan",
+    "day": "February 6",
+    "name": "Saints Paul Miki and Companions (Martyrs of Japan)",
+    "description": "Jesuit and Franciscan martyrs at Nagasaki, venerated in Catholic and Anglican Communion traditions.",
+    "type": "saint",
+    "tags": [
+      "LAT"
+    ]
   },
   {
     "id": "blessed-pius-ix",
@@ -292,8 +267,17 @@
     "type": "saint",
     "tags": [
       "LAT"
-    ],
-    "verification_status": "verified"
+    ]
+  },
+  {
+    "id": "cornelius-the-centurion",
+    "day": "February 7",
+    "name": "Cornelius the Centurion",
+    "description": "First Gentile convert to Christianity.",
+    "type": "saint",
+    "tags": [
+      "ANG"
+    ]
   },
   {
     "id": "venerable-parthenius-of-lampsacus",
@@ -304,31 +288,7 @@
     "tags": [
       "EOR",
       "OOR"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "cornelius-the-centurion",
-    "day": "February 7",
-    "name": "Cornelius the Centurion",
-    "description": "Shared commemoration.",
-    "type": "saint",
-    "tags": [
-      "ANG"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-josephine-bakhita",
-    "day": "February 8",
-    "name": "Saint Josephine Bakhita",
-    "description": "Former slave and religious sister (Sudanese), venerated in Catholic and Anglican Communion traditions.",
-    "type": "saint",
-    "tags": [
-      "ANG",
-      "LAT"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "great-martyr-theodore-stratelates-theodore-the-general",
@@ -339,19 +299,28 @@
     "tags": [
       "EOR",
       "OOR"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
-    "id": "saint-apollonia",
-    "day": "February 9",
-    "name": "Saint Apollonia",
-    "description": "Virgin and martyr, patron of dentistry.",
+    "id": "saint-josephine-bakhita",
+    "day": "February 8",
+    "name": "Saint Josephine Bakhita",
+    "description": "Former slave and religious sister (Sudanese), venerated in Catholic and Anglican Communion traditions.",
     "type": "saint",
     "tags": [
+      "ANG",
       "LAT"
-    ],
-    "verification_status": "verified"
+    ]
+  },
+  {
+    "id": "cyril-and-methodius",
+    "day": "February 9",
+    "name": "Cyril and Methodius",
+    "description": "Missionaries to the Slavs, 869 and 885.",
+    "type": "saint",
+    "tags": [
+      "ANG"
+    ]
   },
   {
     "id": "martyr-nicephorus-of-antioch",
@@ -362,31 +331,27 @@
     "tags": [
       "EOR",
       "OOR"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
-    "id": "cyril-and-methodius",
+    "id": "saint-apollonia",
     "day": "February 9",
-    "name": "Cyril and Methodius",
-    "description": "Missionaries to the Slavs, 869 and 885.",
+    "name": "Saint Apollonia",
+    "description": "Virgin and martyr, patron of dentistry.",
     "type": "saint",
     "tags": [
-      "ANG"
-    ],
-    "verification_status": "verified"
+      "LAT"
+    ]
   },
   {
-    "id": "saint-scholastica",
+    "id": "commemoration-of-mar-benyamin-shimun-xxi",
     "day": "February 10",
-    "name": "Saint Scholastica",
-    "description": "Virgin and sister of Saint Benedict, venerated in Catholic and Anglican Communion traditions.",
+    "name": "Commemoration of Mar Benyamin Shimun XXI",
+    "description": "Modern martyr and patriarch.",
     "type": "saint",
     "tags": [
-      "ANG",
-      "LAT"
-    ],
-    "verification_status": "verified"
+      "COE"
+    ]
   },
   {
     "id": "hieromartyr-charalampus-of-magnesia",
@@ -397,52 +362,18 @@
     "tags": [
       "EOR",
       "OOR"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
-    "id": "commemoration-of-mar-benyamin-shimun-xxi",
+    "id": "saint-scholastica",
     "day": "February 10",
-    "name": "Commemoration of Mar Benyamin Shimun XXI",
-    "description": "Modern martyr and patriarch.",
+    "name": "Saint Scholastica",
+    "description": "Virgin and sister of Saint Benedict, venerated in Catholic and Anglican Communion traditions.",
     "type": "saint",
     "tags": [
-      "COE"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "our-lady-of-lourdes",
-    "day": "February 11",
-    "name": "Our Lady of Lourdes",
-    "description": "Apparition of the Blessed Virgin Mary.",
-    "type": "saint",
-    "tags": [
+      "ANG",
       "LAT"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "hieromartyr-blaise-of-sebaste",
-    "day": "February 11",
-    "name": "Hieromartyr Blaise of Sebaste",
-    "description": "Martyr and healer.",
-    "type": "saint",
-    "tags": [
-      "EOR"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-theodora-the-empress",
-    "day": "February 11",
-    "name": "Saint Theodora the Empress",
-    "description": "Empress and defender of icons.",
-    "type": "saint",
-    "tags": [
-      "OOR"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "fanny-crosby",
@@ -452,19 +383,57 @@
     "type": "saint",
     "tags": [
       "ANG"
-    ],
-    "verification_status": "verified"
+    ]
+  },
+  {
+    "id": "hieromartyr-blaise-of-sebaste",
+    "day": "February 11",
+    "name": "Hieromartyr Blaise of Sebaste",
+    "description": "Martyr and healer.",
+    "type": "saint",
+    "tags": [
+      "EOR"
+    ]
+  },
+  {
+    "id": "our-lady-of-lourdes",
+    "day": "February 11",
+    "name": "Our Lady of Lourdes",
+    "description": "Apparition of the Blessed Virgin Mary.",
+    "type": "saint",
+    "tags": [
+      "LAT"
+    ]
   },
   {
     "id": "saint-blaise",
     "day": "February 11",
     "name": "Saint Blaise",
-    "description": "Bishop and martyr (shared commemoration).",
+    "description": "Bishop and martyr, patron against throat ailments.",
     "type": "saint",
     "tags": [
       "COE"
-    ],
-    "verification_status": "verified"
+    ]
+  },
+  {
+    "id": "saint-theodora-the-empress",
+    "day": "February 11",
+    "name": "Saint Theodora the Empress",
+    "description": "Empress and defender of icons.",
+    "type": "saint",
+    "tags": [
+      "OOR"
+    ]
+  },
+  {
+    "id": "charles-freer-andrews",
+    "day": "February 12",
+    "name": "Charles Freer Andrews",
+    "description": "Priest and Friend of the Poor in India, 1940.",
+    "type": "saint",
+    "tags": [
+      "ANG"
+    ]
   },
   {
     "id": "saint-julian-the-hospitaller",
@@ -474,8 +443,17 @@
     "type": "saint",
     "tags": [
       "LAT"
-    ],
-    "verification_status": "verified"
+    ]
+  },
+  {
+    "id": "saint-meletius",
+    "day": "February 12",
+    "name": "Saint Meletius",
+    "description": "Bishop (shared commemoration).",
+    "type": "saint",
+    "tags": [
+      "COE"
+    ]
   },
   {
     "id": "saint-meletius-of-antioch",
@@ -486,85 +464,7 @@
     "tags": [
       "EOR",
       "OOR"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "charles-freer-andrews",
-    "day": "February 12",
-    "name": "Charles Freer Andrews",
-    "description": "Priest and Friend of the Poor in India, 1940.",
-    "type": "saint",
-    "tags": [
-      "ANG"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-meletius",
-    "day": "February 12",
-    "name": "Saint Meletius",
-    "description": "Bishop (shared commemoration).",
-    "type": "saint",
-    "tags": [
-      "COE"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-catherine-de-ricci",
-    "day": "February 13",
-    "name": "Saint Catherine de' Ricci",
-    "description": "Virgin and mystic.",
-    "type": "saint",
-    "tags": [
-      "LAT"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "venerable-martinian-of-caesarea",
-    "day": "February 13",
-    "name": "Venerable Martinian of Caesarea",
-    "description": "Hermit.",
-    "type": "saint",
-    "tags": [
-      "EOR"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saints-aquila-and-priscilla",
-    "day": "February 13",
-    "name": "Saints Aquila and Priscilla",
-    "description": "Missionary couple.",
-    "type": "saint",
-    "tags": [
-      "EOR"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saints-aquila-and-priscilla",
-    "day": "February 13",
-    "name": "Saints Aquila and Priscilla",
-    "description": "Helpers of Saint Paul.",
-    "type": "saint",
-    "tags": [
-      "OOR"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "friday-of-the-deceased",
-    "day": "February 13",
-    "name": "Friday of the Deceased",
-    "description": "Commemoration for the faithful departed.",
-    "type": "saint",
-    "tags": [
-      "COE"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "absalom-jones",
@@ -574,8 +474,109 @@
     "type": "saint",
     "tags": [
       "ANG"
-    ],
-    "verification_status": "verified"
+    ]
+  },
+  {
+    "id": "friday-of-the-deceased",
+    "day": "February 13",
+    "name": "Friday of the Deceased",
+    "description": "Commemoration for the faithful departed.",
+    "type": "saint",
+    "tags": [
+      "COE"
+    ]
+  },
+  {
+    "id": "saint-catherine-de-ricci",
+    "day": "February 13",
+    "name": "Saint Catherine de' Ricci",
+    "description": "Virgin and mystic.",
+    "type": "saint",
+    "tags": [
+      "LAT"
+    ]
+  },
+  {
+    "id": "saints-aquila-and-priscilla",
+    "day": "February 13",
+    "name": "Saints Aquila and Priscilla",
+    "description": "Missionary couple.",
+    "type": "saint",
+    "tags": [
+      "EOR",
+      "OOR"
+    ]
+  },
+  {
+    "id": "venerable-martinian-of-caesarea",
+    "day": "February 13",
+    "name": "Venerable Martinian of Caesarea",
+    "description": "Hermit.",
+    "type": "saint",
+    "tags": [
+      "EOR"
+    ]
+  },
+  {
+    "id": "saint-abraham-of-carrhae",
+    "day": "February 14",
+    "name": "Saint Abraham of Carrhae",
+    "description": "Syrian bishop.",
+    "type": "saint",
+    "tags": [
+      "COE",
+      "OOR"
+    ]
+  },
+  {
+    "id": "saint-abraham-the-hermit",
+    "day": "February 14",
+    "name": "Saint Abraham the Hermit",
+    "description": "Ascetic.",
+    "type": "saint",
+    "tags": [
+      "OOR"
+    ]
+  },
+  {
+    "id": "saint-auxentius-of-bithynia",
+    "day": "February 14",
+    "name": "Saint Auxentius of Bithynia",
+    "description": "Hermit.",
+    "type": "saint",
+    "tags": [
+      "EOR"
+    ]
+  },
+  {
+    "id": "saint-maron",
+    "day": "February 14",
+    "name": "Saint Maron",
+    "description": "Hermit founder.",
+    "type": "saint",
+    "tags": [
+      "EOR"
+    ]
+  },
+  {
+    "id": "saint-maron-of-syria",
+    "day": "February 14",
+    "name": "Saint Maron of Syria",
+    "description": "Hermit founder.",
+    "type": "saint",
+    "tags": [
+      "COE"
+    ]
+  },
+  {
+    "id": "saint-valentine",
+    "day": "February 14",
+    "name": "Saint Valentine",
+    "description": "Martyr.",
+    "type": "saint",
+    "tags": [
+      "LAT"
+    ]
   },
   {
     "id": "saints-cyril-and-methodius",
@@ -588,96 +589,7 @@
       "EOR",
       "LAT",
       "OOR"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-valentine",
-    "day": "February 14",
-    "name": "Saint Valentine",
-    "description": "Martyr.",
-    "type": "saint",
-    "tags": [
-      "LAT"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-auxentius-of-bithynia",
-    "day": "February 14",
-    "name": "Saint Auxentius of Bithynia",
-    "description": "Hermit.",
-    "type": "saint",
-    "tags": [
-      "EOR"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-maron",
-    "day": "February 14",
-    "name": "Saint Maron",
-    "description": "Hermit founder.",
-    "type": "saint",
-    "tags": [
-      "EOR"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-abraham-the-hermit",
-    "day": "February 14",
-    "name": "Saint Abraham the Hermit",
-    "description": "Ascetic.",
-    "type": "saint",
-    "tags": [
-      "OOR"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-abraham-of-carrhae",
-    "day": "February 14",
-    "name": "Saint Abraham of Carrhae",
-    "description": "Syrian bishop.",
-    "type": "saint",
-    "tags": [
-      "OOR"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-maron-of-syria",
-    "day": "February 14",
-    "name": "Saint Maron of Syria",
-    "description": "Hermit founder.",
-    "type": "saint",
-    "tags": [
-      "COE"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-abraham-of-carrhae",
-    "day": "February 14",
-    "name": "Saint Abraham of Carrhae",
-    "description": "Ascetic bishop.",
-    "type": "saint",
-    "tags": [
-      "COE"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-claude-de-la-colombi-re",
-    "day": "February 15",
-    "name": "Saint Claude de la Colombière",
-    "description": "Jesuit priest, confessor.",
-    "type": "saint",
-    "tags": [
-      "LAT"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "apostle-onesimus-of-the-seventy",
@@ -687,8 +599,7 @@
     "type": "saint",
     "tags": [
       "EOR"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "entrance-of-the-lord-into-the-temple",
@@ -698,8 +609,7 @@
     "type": "saint",
     "tags": [
       "OOR"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "first-sunday-of-great-fast",
@@ -709,8 +619,17 @@
     "type": "saint",
     "tags": [
       "COE"
-    ],
-    "verification_status": "verified"
+    ]
+  },
+  {
+    "id": "saint-claude-de-la-colombi-re",
+    "day": "February 15",
+    "name": "Saint Claude de la Colombière",
+    "description": "Jesuit priest, confessor.",
+    "type": "saint",
+    "tags": [
+      "LAT"
+    ]
   },
   {
     "id": "thomas-bray",
@@ -720,30 +639,7 @@
     "type": "saint",
     "tags": [
       "ANG"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-juliana-of-nicomedia",
-    "day": "February 16",
-    "name": "Saint Juliana of Nicomedia",
-    "description": "Virgin and martyr.",
-    "type": "saint",
-    "tags": [
-      "LAT"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "holy-martyrs-pamphilus-and-companions",
-    "day": "February 16",
-    "name": "Holy Martyrs Pamphilus and Companions",
-    "description": "Martyrs at Caesarea.",
-    "type": "saint",
-    "tags": [
-      "EOR"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "beginning-of-great-lent",
@@ -753,19 +649,7 @@
     "type": "saint",
     "tags": [
       "OOR"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "monday-of-great-lent",
-    "day": "February 16",
-    "name": "Monday of Great Lent",
-    "description": "Lenten observance.",
-    "type": "saint",
-    "tags": [
-      "COE"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "charles-todd-quintard",
@@ -775,19 +659,37 @@
     "type": "saint",
     "tags": [
       "ANG"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
-    "id": "seven-holy-founders-of-the-servite-order",
-    "day": "February 17",
-    "name": "Seven Holy Founders of the Servite Order",
-    "description": "Founders of the Servites.",
+    "id": "holy-martyrs-pamphilus-and-companions",
+    "day": "February 16",
+    "name": "Holy Martyrs Pamphilus and Companions",
+    "description": "Martyrs at Caesarea.",
+    "type": "saint",
+    "tags": [
+      "EOR"
+    ]
+  },
+  {
+    "id": "monday-of-great-lent",
+    "day": "February 16",
+    "name": "Monday of Great Lent",
+    "description": "Lenten observance.",
+    "type": "saint",
+    "tags": [
+      "COE"
+    ]
+  },
+  {
+    "id": "saint-juliana-of-nicomedia",
+    "day": "February 16",
+    "name": "Saint Juliana of Nicomedia",
+    "description": "Virgin and martyr.",
     "type": "saint",
     "tags": [
       "LAT"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "holy-great-martyr-theodore-the-recruit",
@@ -797,19 +699,7 @@
     "type": "saint",
     "tags": [
       "EOR"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "martyrdom-of-saint-james-the-apostle",
-    "day": "February 17",
-    "name": "Martyrdom of Saint James the Apostle",
-    "description": "Son of Alphaeus.",
-    "type": "saint",
-    "tags": [
-      "OOR"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "janani-luwum",
@@ -819,41 +709,27 @@
     "type": "saint",
     "tags": [
       "ANG"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
-    "id": "saint-simeon-of-jerusalem",
-    "day": "February 18",
-    "name": "Saint Simeon of Jerusalem",
-    "description": "Bishop and martyr.",
-    "type": "saint",
-    "tags": [
-      "LAT"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-leo-the-great-pope-of-rome",
-    "day": "February 18",
-    "name": "Saint Leo the Great, Pope of Rome",
-    "description": "Pope known for the Council of Chalcedon.",
-    "type": "saint",
-    "tags": [
-      "EOR"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "martyrdom-of-saint-fabian-pope-of-rome",
-    "day": "February 18",
-    "name": "Martyrdom of Saint Fabian, Pope of Rome",
-    "description": "Pope and martyr.",
+    "id": "martyrdom-of-saint-james-the-apostle",
+    "day": "February 17",
+    "name": "Martyrdom of Saint James the Apostle",
+    "description": "Son of Alphaeus.",
     "type": "saint",
     "tags": [
       "OOR"
-    ],
-    "verification_status": "verified"
+    ]
+  },
+  {
+    "id": "seven-holy-founders-of-the-servite-order",
+    "day": "February 17",
+    "name": "Seven Holy Founders of the Servite Order",
+    "description": "Founders of the Servites.",
+    "type": "saint",
+    "tags": [
+      "LAT"
+    ]
   },
   {
     "id": "ash-wednesday",
@@ -863,41 +739,37 @@
     "type": "saint",
     "tags": [
       "COE"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
-    "id": "saint-mesrop-mashtots",
-    "day": "February 19",
-    "name": "Saint Mesrop Mashtots",
-    "description": "Inventor of the Armenian alphabet.",
-    "type": "saint",
-    "tags": [
-      "LAT"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-bucolus-bishop-of-smyrna",
-    "day": "February 19",
-    "name": "Saint Bucolus, Bishop of Smyrna",
-    "description": "Disciple of Saint John.",
-    "type": "saint",
-    "tags": [
-      "EOR"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-quodvultdeus",
-    "day": "February 19",
-    "name": "Saint Quodvultdeus",
-    "description": "Bishop of Carthage.",
+    "id": "martyrdom-of-saint-fabian-pope-of-rome",
+    "day": "February 18",
+    "name": "Martyrdom of Saint Fabian, Pope of Rome",
+    "description": "Pope and martyr.",
     "type": "saint",
     "tags": [
       "OOR"
-    ],
-    "verification_status": "verified"
+    ]
+  },
+  {
+    "id": "saint-leo-the-great-pope-of-rome",
+    "day": "February 18",
+    "name": "Saint Leo the Great, Pope of Rome",
+    "description": "Pope known for the Council of Chalcedon.",
+    "type": "saint",
+    "tags": [
+      "EOR"
+    ]
+  },
+  {
+    "id": "saint-simeon-of-jerusalem",
+    "day": "February 18",
+    "name": "Saint Simeon of Jerusalem",
+    "description": "Bishop and martyr.",
+    "type": "saint",
+    "tags": [
+      "LAT"
+    ]
   },
   {
     "id": "agnes-tsao-kou-ying",
@@ -907,8 +779,7 @@
     "type": "saint",
     "tags": [
       "ANG"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "saint-bucolus",
@@ -918,52 +789,37 @@
     "type": "saint",
     "tags": [
       "COE"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
-    "id": "saints-jacinta-and-francisco-marto",
-    "day": "February 20",
-    "name": "Saints Jacinta and Francisco Marto",
-    "description": "Children of Fatima.",
-    "type": "saint",
-    "tags": [
-      "LAT"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-leo-of-catania",
-    "day": "February 20",
-    "name": "Saint Leo of Catania",
-    "description": "Wonderworker.",
+    "id": "saint-bucolus-bishop-of-smyrna",
+    "day": "February 19",
+    "name": "Saint Bucolus, Bishop of Smyrna",
+    "description": "Disciple of Saint John.",
     "type": "saint",
     "tags": [
       "EOR"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
-    "id": "saint-sergius-of-atripe",
-    "day": "February 20",
-    "name": "Saint Sergius of Atripe",
-    "description": "Martyr with his family.",
+    "id": "saint-mesrop-mashtots",
+    "day": "February 19",
+    "name": "Saint Mesrop Mashtots",
+    "description": "Inventor of the Armenian alphabet.",
+    "type": "saint",
+    "tags": [
+      "LAT"
+    ]
+  },
+  {
+    "id": "saint-quodvultdeus",
+    "day": "February 19",
+    "name": "Saint Quodvultdeus",
+    "description": "Bishop of Carthage.",
     "type": "saint",
     "tags": [
       "OOR"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "friday-of-the-deceased",
-    "day": "February 20",
-    "name": "Friday of the Deceased",
-    "description": "Commemoration of the faithful departed.",
-    "type": "saint",
-    "tags": [
-      "COE"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "frederick-douglass",
@@ -973,41 +829,47 @@
     "type": "saint",
     "tags": [
       "ANG"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
-    "id": "saint-peter-damian",
-    "day": "February 21",
-    "name": "Saint Peter Damian",
-    "description": "Bishop and Doctor of the Church.",
+    "id": "friday-of-the-deceased",
+    "day": "February 20",
+    "name": "Friday of the Deceased",
+    "description": "Commemoration for the faithful departed.",
     "type": "saint",
     "tags": [
-      "LAT"
-    ],
-    "verification_status": "verified"
+      "COE"
+    ]
   },
   {
-    "id": "venerable-timothy-of-symbola",
-    "day": "February 21",
-    "name": "Venerable Timothy of Symbola",
-    "description": "Monk.",
+    "id": "saint-leo-of-catania",
+    "day": "February 20",
+    "name": "Saint Leo of Catania",
+    "description": "Wonderworker.",
     "type": "saint",
     "tags": [
       "EOR"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
-    "id": "saint-eustathius-of-antioch",
-    "day": "February 21",
-    "name": "Saint Eustathius of Antioch",
-    "description": "Bishop and confessor.",
+    "id": "saint-sergius-of-atripe",
+    "day": "February 20",
+    "name": "Saint Sergius of Atripe",
+    "description": "Martyr with his family.",
     "type": "saint",
     "tags": [
       "OOR"
-    ],
-    "verification_status": "verified"
+    ]
+  },
+  {
+    "id": "saints-jacinta-and-francisco-marto",
+    "day": "February 20",
+    "name": "Saints Jacinta and Francisco Marto",
+    "description": "Children of Fatima.",
+    "type": "saint",
+    "tags": [
+      "LAT"
+    ]
   },
   {
     "id": "john-henry-newman",
@@ -1017,8 +879,27 @@
     "type": "saint",
     "tags": [
       "ANG"
-    ],
-    "verification_status": "verified"
+    ]
+  },
+  {
+    "id": "saint-eustathius-of-antioch",
+    "day": "February 21",
+    "name": "Saint Eustathius of Antioch",
+    "description": "Bishop and confessor.",
+    "type": "saint",
+    "tags": [
+      "OOR"
+    ]
+  },
+  {
+    "id": "saint-peter-damian",
+    "day": "February 21",
+    "name": "Saint Peter Damian",
+    "description": "Bishop and Doctor of the Church.",
+    "type": "saint",
+    "tags": [
+      "LAT"
+    ]
   },
   {
     "id": "saint-timothy-of-symbola",
@@ -1028,8 +909,17 @@
     "type": "saint",
     "tags": [
       "COE"
-    ],
-    "verification_status": "verified"
+    ]
+  },
+  {
+    "id": "venerable-timothy-of-symbola",
+    "day": "February 21",
+    "name": "Venerable Timothy of Symbola",
+    "description": "Monk.",
+    "type": "saint",
+    "tags": [
+      "EOR"
+    ]
   },
   {
     "id": "chair-of-saint-peter",
@@ -1040,9 +930,7 @@
     "tags": [
       "ANG",
       "LAT"
-    ],
-    "verification_status": "verified",
-    "notes": "Western feast; not Eastern"
+    ]
   },
   {
     "id": "finding-of-the-relics-of-the-holy-martyrs-at-eugenius",
@@ -1052,8 +940,7 @@
     "type": "saint",
     "tags": [
       "EOR"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "saint-polycarp-of-smyrna",
@@ -1063,8 +950,7 @@
     "type": "saint",
     "tags": [
       "OOR"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "second-sunday-of-great-lent",
@@ -1074,38 +960,45 @@
     "type": "saint",
     "tags": [
       "COE"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "saint-polycarp-of-smyrna",
     "day": "February 23",
     "name": "Saint Polycarp of Smyrna",
-    "description": "Apostolic father, bishop, and martyr, venerated in Catholic, Eastern Orthodox, and Oriental Orthodox traditions.",
+    "description": "Bishop and martyr.",
     "type": "saint",
     "tags": [
       "ANG",
-      "COE",
-      "EOR",
       "LAT",
-      "OOR"
-    ],
-    "verification_status": "verified"
+      "EOR",
+      "OOR",
+      "COE"
+    ]
   },
   {
     "id": "saint-matthias-the-apostle",
     "day": "February 24",
     "name": "Saint Matthias the Apostle",
-    "description": "Apostle chosen to replace Judas, venerated in Catholic, Eastern Orthodox, Oriental Orthodox, and Anglican traditions.",
-    "type": "apostle",
+    "description": "The apostle chosen to replace Judas Iscariot.",
+    "type": "saint",
     "tags": [
       "ANG",
-      "COE",
-      "EOR",
       "LAT",
-      "OOR"
-    ],
-    "verification_status": "verified"
+      "EOR",
+      "OOR",
+      "COE"
+    ]
+  },
+  {
+    "id": "john-roberts",
+    "day": "February 25",
+    "name": "John Roberts",
+    "description": "Priest, 1949.",
+    "type": "saint",
+    "tags": [
+      "ANG"
+    ]
   },
   {
     "id": "saint-tarasius-of-constantinople",
@@ -1116,8 +1009,7 @@
     "tags": [
       "EOR",
       "OOR"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "wednesday-of-mid-lent",
@@ -1127,19 +1019,17 @@
     "type": "saint",
     "tags": [
       "COE"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
-    "id": "john-roberts",
-    "day": "February 25",
-    "name": "John Roberts",
-    "description": "Priest, 1949.",
+    "id": "emily-malbone-morgan",
+    "day": "February 26",
+    "name": "Emily Malbone Morgan",
+    "description": "Prophetic witness, 1937.",
     "type": "saint",
     "tags": [
       "ANG"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "saint-porphyry-of-gaza",
@@ -1151,52 +1041,7 @@
       "EOR",
       "LAT",
       "OOR"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "emily-malbone-morgan",
-    "day": "February 26",
-    "name": "Emily Malbone Morgan",
-    "description": "Prophetic witness, 1937.",
-    "type": "saint",
-    "tags": [
-      "ANG"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-gabriel-of-our-lady-of-sorrows",
-    "day": "February 27",
-    "name": "Saint Gabriel of Our Lady of Sorrows",
-    "description": "Passionist cleric.",
-    "type": "saint",
-    "tags": [
-      "LAT"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-raphael-of-brooklyn",
-    "day": "February 27",
-    "name": "Saint Raphael of Brooklyn",
-    "description": "Bishop.",
-    "type": "saint",
-    "tags": [
-      "EOR"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-cyril-of-jerusalem",
-    "day": "February 27",
-    "name": "Saint Cyril of Jerusalem",
-    "description": "Bishop and doctor.",
-    "type": "saint",
-    "tags": [
-      "OOR"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "george-herbert",
@@ -1206,30 +1051,37 @@
     "type": "saint",
     "tags": [
       "ANG"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
-    "id": "saint-oswald-of-worcester",
-    "day": "February 28",
-    "name": "Saint Oswald of Worcester",
-    "description": "Bishop, venerated in Catholic and Oriental Orthodox traditions.",
+    "id": "saint-cyril-of-jerusalem",
+    "day": "February 27",
+    "name": "Saint Cyril of Jerusalem",
+    "description": "Bishop and Doctor of the Church, venerated in Catholic, Eastern Orthodox, Oriental Orthodox, and Anglican Communion traditions.",
     "type": "saint",
     "tags": [
-      "ANG"
-    ],
-    "verification_status": "verified"
+      "OOR"
+    ]
   },
   {
-    "id": "venerable-basil-the-confessor",
-    "day": "February 28",
-    "name": "Venerable Basil the Confessor",
-    "description": "Companion of Saint Procopius.",
+    "id": "saint-gabriel-of-our-lady-of-sorrows",
+    "day": "February 27",
+    "name": "Saint Gabriel of Our Lady of Sorrows",
+    "description": "Passionist cleric.",
+    "type": "saint",
+    "tags": [
+      "LAT"
+    ]
+  },
+  {
+    "id": "saint-raphael-of-brooklyn",
+    "day": "February 27",
+    "name": "Saint Raphael of Brooklyn",
+    "description": "Bishop.",
     "type": "saint",
     "tags": [
       "EOR"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "anna-julia-haywood-cooper-and-elizabeth-evelyn-wright",
@@ -1239,7 +1091,26 @@
     "type": "saint",
     "tags": [
       "ANG"
-    ],
-    "verification_status": "verified"
+    ]
+  },
+  {
+    "id": "saint-oswald-of-worcester",
+    "day": "February 28",
+    "name": "Saint Oswald of Worcester",
+    "description": "Bishop, venerated in Catholic and Oriental Orthodox traditions.",
+    "type": "saint",
+    "tags": [
+      "ANG"
+    ]
+  },
+  {
+    "id": "venerable-basil-the-confessor",
+    "day": "February 28",
+    "name": "Venerable Basil the Confessor",
+    "description": "Companion of Saint Procopius.",
+    "type": "saint",
+    "tags": [
+      "EOR"
+    ]
   }
 ]

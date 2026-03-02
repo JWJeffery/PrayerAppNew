@@ -1,16 +1,5 @@
 [
   {
-    "id": "saint-th-r-se-of-lisieux",
-    "day": "October 1",
-    "name": "Saint Thérèse of Lisieux",
-    "description": "Virgin and Doctor of the Church, known for her 'Little Way'.",
-    "type": "saint",
-    "tags": [
-      "LAT"
-    ],
-    "verification_status": "verified"
-  },
-  {
     "id": "holy-protection-of-the-theotokos",
     "day": "October 1",
     "name": "Holy Protection of the Theotokos",
@@ -18,8 +7,7 @@
     "type": "saint",
     "tags": [
       "EOR"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "intercession-of-the-theotokos",
@@ -29,8 +17,7 @@
     "type": "saint",
     "tags": [
       "OOR"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "saint-romanos-the-melodist",
@@ -40,8 +27,17 @@
     "type": "saint",
     "tags": [
       "COE"
-    ],
-    "verification_status": "verified"
+    ]
+  },
+  {
+    "id": "saint-th-r-se-of-lisieux",
+    "day": "October 1",
+    "name": "Saint Thérèse of Lisieux",
+    "description": "Virgin and Doctor of the Church, known for her 'Little Way'.",
+    "type": "saint",
+    "tags": [
+      "LAT"
+    ]
   },
   {
     "id": "guardian-angels",
@@ -51,30 +47,7 @@
     "type": "saint",
     "tags": [
       "LAT"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saints-cyprian-and-justina",
-    "day": "October 2",
-    "name": "Saints Cyprian and Justina",
-    "description": "Martyr and virgin martyr.",
-    "type": "saint",
-    "tags": [
-      "EOR"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-justina",
-    "day": "October 2",
-    "name": "Saint Justina",
-    "description": "Virgin martyr.",
-    "type": "saint",
-    "tags": [
-      "OOR"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "remigius",
@@ -84,8 +57,7 @@
     "type": "saint",
     "tags": [
       "ANG"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "saint-cyprian",
@@ -95,41 +67,27 @@
     "type": "saint",
     "tags": [
       "COE"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
-    "id": "mother-th-odore-gu-rin",
-    "day": "October 3",
-    "name": "Mother Théodore Guérin",
-    "description": "Religious and educator.",
-    "type": "saint",
-    "tags": [
-      "LAT"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-dionysius-the-areopagite",
-    "day": "October 3",
-    "name": "Saint Dionysius the Areopagite",
-    "description": "Bishop and martyr.",
-    "type": "saint",
-    "tags": [
-      "EOR"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-dionysius-the-areopagite",
-    "day": "October 3",
-    "name": "Saint Dionysius the Areopagite",
-    "description": "Convert of St. Paul.",
+    "id": "saint-justina",
+    "day": "October 2",
+    "name": "Saint Justina",
+    "description": "Virgin martyr.",
     "type": "saint",
     "tags": [
       "OOR"
-    ],
-    "verification_status": "verified"
+    ]
+  },
+  {
+    "id": "saints-cyprian-and-justina",
+    "day": "October 2",
+    "name": "Saints Cyprian and Justina",
+    "description": "Martyr and virgin martyr.",
+    "type": "saint",
+    "tags": [
+      "EOR"
+    ]
   },
   {
     "id": "george-bell",
@@ -139,8 +97,17 @@
     "type": "saint",
     "tags": [
       "ANG"
-    ],
-    "verification_status": "verified"
+    ]
+  },
+  {
+    "id": "mother-th-odore-gu-rin",
+    "day": "October 3",
+    "name": "Mother Théodore Guérin",
+    "description": "Religious and educator.",
+    "type": "saint",
+    "tags": [
+      "LAT"
+    ]
   },
   {
     "id": "saint-dionysius",
@@ -150,41 +117,18 @@
     "type": "saint",
     "tags": [
       "COE"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
-    "id": "saint-francis-of-assisi",
-    "day": "October 4",
-    "name": "Saint Francis of Assisi",
-    "description": "Friar and founder.",
+    "id": "saint-dionysius-the-areopagite",
+    "day": "October 3",
+    "name": "Saint Dionysius the Areopagite",
+    "description": "Bishop and martyr.",
     "type": "saint",
     "tags": [
-      "LAT"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-hierotheos-of-athens",
-    "day": "October 4",
-    "name": "Saint Hierotheos of Athens",
-    "description": "Bishop and disciple of St. Paul.",
-    "type": "saint",
-    "tags": [
-      "EOR"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-hierotheos",
-    "day": "October 4",
-    "name": "Saint Hierotheos",
-    "description": "Bishop of Athens.",
-    "type": "saint",
-    "tags": [
+      "EOR",
       "OOR"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "francis-of-assisi",
@@ -194,52 +138,38 @@
     "type": "saint",
     "tags": [
       "ANG"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "saint-francis-of-assisi",
     "day": "October 4",
     "name": "Saint Francis of Assisi",
-    "description": "Friar and saint.",
+    "description": "Friar and founder.",
     "type": "saint",
     "tags": [
-      "COE"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-faustina-kowalska",
-    "day": "October 5",
-    "name": "Saint Faustina Kowalska",
-    "description": "Virgin and apostle of Divine Mercy.",
-    "type": "saint",
-    "tags": [
+      "COE",
       "LAT"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
-    "id": "holy-martyr-charitina",
-    "day": "October 5",
-    "name": "Holy Martyr Charitina",
-    "description": "Martyr under Diocletian.",
-    "type": "saint",
-    "tags": [
-      "EOR"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-charitina",
-    "day": "October 5",
-    "name": "Saint Charitina",
-    "description": "Virgin martyr.",
+    "id": "saint-hierotheos",
+    "day": "October 4",
+    "name": "Saint Hierotheos",
+    "description": "Bishop of Athens.",
     "type": "saint",
     "tags": [
       "OOR"
-    ],
-    "verification_status": "verified"
+    ]
+  },
+  {
+    "id": "saint-hierotheos-of-athens",
+    "day": "October 4",
+    "name": "Saint Hierotheos of Athens",
+    "description": "Bishop and disciple of St. Paul.",
+    "type": "saint",
+    "tags": [
+      "EOR"
+    ]
   },
   {
     "id": "faustina-kowalska",
@@ -249,30 +179,38 @@
     "type": "saint",
     "tags": [
       "ANG"
-    ],
-    "verification_status": "verified"
+    ]
+  },
+  {
+    "id": "holy-martyr-charitina",
+    "day": "October 5",
+    "name": "Holy Martyr Charitina",
+    "description": "Martyr under Diocletian.",
+    "type": "saint",
+    "tags": [
+      "EOR"
+    ]
   },
   {
     "id": "saint-charitina",
     "day": "October 5",
     "name": "Saint Charitina",
-    "description": "Martyr.",
+    "description": "Virgin martyr.",
     "type": "saint",
     "tags": [
-      "COE"
-    ],
-    "verification_status": "verified"
+      "COE",
+      "OOR"
+    ]
   },
   {
-    "id": "saint-bruno",
-    "day": "October 6",
-    "name": "Saint Bruno",
-    "description": "Founder of the Carthusians.",
+    "id": "saint-faustina-kowalska",
+    "day": "October 5",
+    "name": "Saint Faustina Kowalska",
+    "description": "Virgin and apostle of Divine Mercy.",
     "type": "saint",
     "tags": [
       "LAT"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "holy-apostle-thomas",
@@ -282,19 +220,28 @@
     "type": "saint",
     "tags": [
       "EOR"
-    ],
-    "verification_status": "verified"
+    ]
+  },
+  {
+    "id": "saint-bruno",
+    "day": "October 6",
+    "name": "Saint Bruno",
+    "description": "Founder of the Carthusians.",
+    "type": "saint",
+    "tags": [
+      "LAT"
+    ]
   },
   {
     "id": "saint-thomas-the-apostle",
     "day": "October 6",
     "name": "Saint Thomas the Apostle",
-    "description": "Apostle to India.",
+    "description": "Feast of the Apostle who confessed 'My Lord and my God'.",
     "type": "saint",
     "tags": [
+      "COE",
       "OOR"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "william-tyndale",
@@ -304,52 +251,7 @@
     "type": "saint",
     "tags": [
       "ANG"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-thomas-the-apostle",
-    "day": "October 6",
-    "name": "Saint Thomas the Apostle",
-    "description": "Apostle and patron.",
-    "type": "saint",
-    "tags": [
-      "COE"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "our-lady-of-the-rosary",
-    "day": "October 7",
-    "name": "Our Lady of the Rosary",
-    "description": "Memorial of the Blessed Virgin Mary.",
-    "type": "saint",
-    "tags": [
-      "LAT"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "martyrs-sergius-and-bacchus",
-    "day": "October 7",
-    "name": "Martyrs Sergius and Bacchus",
-    "description": "Martyrs under Maximian.",
-    "type": "saint",
-    "tags": [
-      "EOR"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-sergius-and-bacchus",
-    "day": "October 7",
-    "name": "Saint Sergius and Bacchus",
-    "description": "Soldier martyrs.",
-    "type": "saint",
-    "tags": [
-      "OOR"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "birgitta-of-sweden",
@@ -359,8 +261,37 @@
     "type": "saint",
     "tags": [
       "ANG"
-    ],
-    "verification_status": "verified"
+    ]
+  },
+  {
+    "id": "martyrs-sergius-and-bacchus",
+    "day": "October 7",
+    "name": "Martyrs Sergius and Bacchus",
+    "description": "Martyrs under Maximian.",
+    "type": "saint",
+    "tags": [
+      "EOR"
+    ]
+  },
+  {
+    "id": "our-lady-of-the-rosary",
+    "day": "October 7",
+    "name": "Our Lady of the Rosary",
+    "description": "Memorial of the Blessed Virgin Mary.",
+    "type": "saint",
+    "tags": [
+      "LAT"
+    ]
+  },
+  {
+    "id": "saint-sergius-and-bacchus",
+    "day": "October 7",
+    "name": "Saint Sergius and Bacchus",
+    "description": "Soldier martyrs.",
+    "type": "saint",
+    "tags": [
+      "OOR"
+    ]
   },
   {
     "id": "saints-sergius-and-bacchus",
@@ -370,41 +301,7 @@
     "type": "saint",
     "tags": [
       "COE"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-tha-s",
-    "day": "October 8",
-    "name": "Saint Thaïs",
-    "description": "Penitent.",
-    "type": "saint",
-    "tags": [
-      "LAT"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "venerable-pelagia-the-penitent",
-    "day": "October 8",
-    "name": "Venerable Pelagia the Penitent",
-    "description": "Repentant sinner and ascetic.",
-    "type": "saint",
-    "tags": [
-      "EOR"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-pelagia",
-    "day": "October 8",
-    "name": "Saint Pelagia",
-    "description": "Virgin martyr.",
-    "type": "saint",
-    "tags": [
-      "OOR"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "robert-grosseteste",
@@ -414,52 +311,38 @@
     "type": "saint",
     "tags": [
       "ANG"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "saint-pelagia",
     "day": "October 8",
     "name": "Saint Pelagia",
+    "description": "Virgin martyr.",
+    "type": "saint",
+    "tags": [
+      "COE",
+      "OOR"
+    ]
+  },
+  {
+    "id": "saint-tha-s",
+    "day": "October 8",
+    "name": "Saint Thaïs",
     "description": "Penitent.",
     "type": "saint",
     "tags": [
-      "COE"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-john-leonardi",
-    "day": "October 9",
-    "name": "Saint John Leonardi",
-    "description": "Founder of the Clerks Regular of the Mother of God.",
-    "type": "saint",
-    "tags": [
       "LAT"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
-    "id": "holy-apostle-james-son-of-alphaeus",
-    "day": "October 9",
-    "name": "Holy Apostle James, son of Alphaeus",
-    "description": "Apostle and martyr.",
+    "id": "venerable-pelagia-the-penitent",
+    "day": "October 8",
+    "name": "Venerable Pelagia the Penitent",
+    "description": "Repentant sinner and ascetic.",
     "type": "saint",
     "tags": [
       "EOR"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-james-son-of-alphaeus",
-    "day": "October 9",
-    "name": "Saint James son of Alphaeus",
-    "description": "Apostle.",
-    "type": "saint",
-    "tags": [
-      "OOR"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "denys",
@@ -469,8 +352,17 @@
     "type": "saint",
     "tags": [
       "ANG"
-    ],
-    "verification_status": "verified"
+    ]
+  },
+  {
+    "id": "holy-apostle-james-son-of-alphaeus",
+    "day": "October 9",
+    "name": "Holy Apostle James, son of Alphaeus",
+    "description": "Apostle and martyr.",
+    "type": "saint",
+    "tags": [
+      "EOR"
+    ]
   },
   {
     "id": "saint-james-son-of-alphaeus",
@@ -479,20 +371,19 @@
     "description": "Apostle.",
     "type": "saint",
     "tags": [
-      "COE"
-    ],
-    "verification_status": "verified"
+      "COE",
+      "OOR"
+    ]
   },
   {
-    "id": "saint-francis-borgia",
-    "day": "October 10",
-    "name": "Saint Francis Borgia",
-    "description": "Jesuit and administrator.",
+    "id": "saint-john-leonardi",
+    "day": "October 9",
+    "name": "Saint John Leonardi",
+    "description": "Founder of the Clerks Regular of the Mother of God.",
     "type": "saint",
     "tags": [
       "LAT"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "martyrs-eulampius-and-eulampia",
@@ -501,20 +392,9 @@
     "description": "Brother and sister martyrs.",
     "type": "saint",
     "tags": [
+      "COE",
       "EOR"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-eulampia",
-    "day": "October 10",
-    "name": "Saint Eulampia",
-    "description": "Martyr.",
-    "type": "saint",
-    "tags": [
-      "OOR"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "paulinus",
@@ -524,30 +404,27 @@
     "type": "saint",
     "tags": [
       "ANG"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
-    "id": "martyrs-eulampius-and-eulampia",
+    "id": "saint-eulampia",
     "day": "October 10",
-    "name": "Martyrs Eulampius and Eulampia",
-    "description": "Siblings martyred.",
+    "name": "Saint Eulampia",
+    "description": "Martyr.",
     "type": "saint",
     "tags": [
-      "COE"
-    ],
-    "verification_status": "verified"
+      "OOR"
+    ]
   },
   {
-    "id": "saint-john-xxiii",
-    "day": "October 11",
-    "name": "Saint John XXIII",
-    "description": "Pope and convener of Vatican II.",
+    "id": "saint-francis-borgia",
+    "day": "October 10",
+    "name": "Saint Francis Borgia",
+    "description": "Jesuit and administrator.",
     "type": "saint",
     "tags": [
       "LAT"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "holy-apostle-philip",
@@ -557,19 +434,7 @@
     "type": "saint",
     "tags": [
       "EOR"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-philip-the-deacon",
-    "day": "October 11",
-    "name": "Saint Philip the Deacon",
-    "description": "One of the Seven.",
-    "type": "saint",
-    "tags": [
-      "OOR"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "philip",
@@ -579,30 +444,38 @@
     "type": "saint",
     "tags": [
       "ANG"
-    ],
-    "verification_status": "verified"
+    ]
+  },
+  {
+    "id": "saint-john-xxiii",
+    "day": "October 11",
+    "name": "Saint John XXIII",
+    "description": "Pope and convener of Vatican II.",
+    "type": "saint",
+    "tags": [
+      "LAT"
+    ]
   },
   {
     "id": "saint-philip-the-deacon",
     "day": "October 11",
     "name": "Saint Philip the Deacon",
-    "description": "Evangelist.",
+    "description": "One of the Seven.",
     "type": "saint",
     "tags": [
-      "COE"
-    ],
-    "verification_status": "verified"
+      "COE",
+      "OOR"
+    ]
   },
   {
-    "id": "saint-seraphin-of-montegranaro",
+    "id": "edward-the-confessor",
     "day": "October 12",
-    "name": "Saint Seraphin of Montegranaro",
-    "description": "Capuchin lay brother.",
+    "name": "Edward the Confessor",
+    "description": "King of England, 1066.",
     "type": "saint",
     "tags": [
-      "LAT"
-    ],
-    "verification_status": "verified"
+      "ANG"
+    ]
   },
   {
     "id": "martyrs-probus-tarachus-and-andronicus",
@@ -612,8 +485,7 @@
     "type": "saint",
     "tags": [
       "EOR"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "saint-cosmas-of-maiuma",
@@ -622,42 +494,29 @@
     "description": "Hymnographer.",
     "type": "saint",
     "tags": [
+      "COE",
       "OOR"
-    ],
-    "verification_status": "verified"
+    ]
+  },
+  {
+    "id": "saint-seraphin-of-montegranaro",
+    "day": "October 12",
+    "name": "Saint Seraphin of Montegranaro",
+    "description": "Capuchin lay brother.",
+    "type": "saint",
+    "tags": [
+      "LAT"
+    ]
   },
   {
     "id": "edward-the-confessor",
-    "day": "October 12",
+    "day": "October 13",
     "name": "Edward the Confessor",
     "description": "King of England, 1066.",
     "type": "saint",
     "tags": [
       "ANG"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-cosmas-of-maiuma",
-    "day": "October 12",
-    "name": "Saint Cosmas of Maiuma",
-    "description": "Bishop and hymnographer.",
-    "type": "saint",
-    "tags": [
-      "COE"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-edward-the-confessor",
-    "day": "October 13",
-    "name": "Saint Edward the Confessor",
-    "description": "King of England.",
-    "type": "saint",
-    "tags": [
-      "LAT"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "martyrs-carpus-papylus-agathodorus-and-agathonica",
@@ -667,8 +526,7 @@
     "type": "saint",
     "tags": [
       "EOR"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "saint-carpus",
@@ -677,75 +535,19 @@
     "description": "Bishop and martyr.",
     "type": "saint",
     "tags": [
+      "COE",
       "OOR"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
-    "id": "edward-the-confessor",
+    "id": "saint-edward-the-confessor",
     "day": "October 13",
-    "name": "Edward the Confessor",
-    "description": "King of England, 1066.",
-    "type": "saint",
-    "tags": [
-      "ANG"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-carpus",
-    "day": "October 13",
-    "name": "Saint Carpus",
-    "description": "Martyr.",
-    "type": "saint",
-    "tags": [
-      "COE"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-callistus-i",
-    "day": "October 14",
-    "name": "Saint Callistus I",
-    "description": "Pope and martyr.",
+    "name": "Saint Edward the Confessor",
+    "description": "King of England.",
     "type": "saint",
     "tags": [
       "LAT"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "martyrs-nazarius-gervasius-protasius-and-celsus",
-    "day": "October 14",
-    "name": "Martyrs Nazarius, Gervasius, Protasius, and Celsus",
-    "description": "Martyrs of Milan.",
-    "type": "saint",
-    "tags": [
-      "EOR"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-nazarius",
-    "day": "October 14",
-    "name": "Saint Nazarius",
-    "description": "Martyr.",
-    "type": "saint",
-    "tags": [
-      "OOR"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "samuel-schereschewsky",
-    "day": "October 14",
-    "name": "Samuel Schereschewsky",
-    "description": "Bishop of Shanghai, 1906.",
-    "type": "saint",
-    "tags": [
-      "ANG"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "martyrs-nazarius-and-companions",
@@ -755,52 +557,57 @@
     "type": "saint",
     "tags": [
       "COE"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
-    "id": "saint-teresa-of-jesus",
-    "day": "October 15",
-    "name": "Saint Teresa of Jesus",
-    "description": "Virgin and Doctor.",
-    "type": "saint",
-    "tags": [
-      "LAT"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "venerable-euthymius-the-new",
-    "day": "October 15",
-    "name": "Venerable Euthymius the New",
-    "description": "Monk of Thessalonica.",
+    "id": "martyrs-nazarius-gervasius-protasius-and-celsus",
+    "day": "October 14",
+    "name": "Martyrs Nazarius, Gervasius, Protasius, and Celsus",
+    "description": "Martyrs of Milan.",
     "type": "saint",
     "tags": [
       "EOR"
-    ],
-    "verification_status": "verified"
+    ]
+  },
+  {
+    "id": "saint-callistus-i",
+    "day": "October 14",
+    "name": "Saint Callistus I",
+    "description": "Pope and martyr.",
+    "type": "saint",
+    "tags": [
+      "LAT"
+    ]
+  },
+  {
+    "id": "saint-nazarius",
+    "day": "October 14",
+    "name": "Saint Nazarius",
+    "description": "Martyr.",
+    "type": "saint",
+    "tags": [
+      "OOR"
+    ]
+  },
+  {
+    "id": "samuel-schereschewsky",
+    "day": "October 14",
+    "name": "Samuel Schereschewsky",
+    "description": "Bishop of Shanghai, 1906.",
+    "type": "saint",
+    "tags": [
+      "ANG"
+    ]
   },
   {
     "id": "saint-euthymius",
     "day": "October 15",
     "name": "Saint Euthymius",
-    "description": "Ascetic.",
+    "description": "Hermit (shared commemoration).",
     "type": "saint",
     "tags": [
       "OOR"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "teresa-of-avila",
-    "day": "October 15",
-    "name": "Teresa of Avila",
-    "description": "Mystic, 1582.",
-    "type": "saint",
-    "tags": [
-      "ANG"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "saint-teresa-of-avila",
@@ -810,41 +617,37 @@
     "type": "saint",
     "tags": [
       "COE"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
-    "id": "saint-hedwig",
-    "day": "October 16",
-    "name": "Saint Hedwig",
-    "description": "Religious.",
+    "id": "saint-teresa-of-jesus",
+    "day": "October 15",
+    "name": "Saint Teresa of Jesus",
+    "description": "Virgin and Doctor.",
     "type": "saint",
     "tags": [
       "LAT"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
-    "id": "martyr-longinus-the-centurion",
-    "day": "October 16",
-    "name": "Martyr Longinus the Centurion",
-    "description": "Soldier at the Crucifixion.",
+    "id": "teresa-of-avila",
+    "day": "October 15",
+    "name": "Teresa of Avila",
+    "description": "Mystic, 1582.",
+    "type": "saint",
+    "tags": [
+      "ANG"
+    ]
+  },
+  {
+    "id": "venerable-euthymius-the-new",
+    "day": "October 15",
+    "name": "Venerable Euthymius the New",
+    "description": "Monk of Thessalonica.",
     "type": "saint",
     "tags": [
       "EOR"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-longinus",
-    "day": "October 16",
-    "name": "Saint Longinus",
-    "description": "Centurion martyr.",
-    "type": "saint",
-    "tags": [
-      "OOR"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "hugh-latimer-and-nicholas-ridley",
@@ -854,52 +657,38 @@
     "type": "saint",
     "tags": [
       "ANG"
-    ],
-    "verification_status": "verified"
+    ]
+  },
+  {
+    "id": "martyr-longinus-the-centurion",
+    "day": "October 16",
+    "name": "Martyr Longinus the Centurion",
+    "description": "Soldier at the Crucifixion.",
+    "type": "saint",
+    "tags": [
+      "EOR"
+    ]
+  },
+  {
+    "id": "saint-hedwig",
+    "day": "October 16",
+    "name": "Saint Hedwig",
+    "description": "Religious.",
+    "type": "saint",
+    "tags": [
+      "LAT"
+    ]
   },
   {
     "id": "saint-longinus",
     "day": "October 16",
     "name": "Saint Longinus",
-    "description": "Centurion at the Cross.",
+    "description": "Centurion martyr.",
     "type": "saint",
     "tags": [
-      "COE"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-ignatius-of-antioch",
-    "day": "October 17",
-    "name": "Saint Ignatius of Antioch",
-    "description": "Bishop and martyr.",
-    "type": "saint",
-    "tags": [
-      "LAT"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "prophet-hosea",
-    "day": "October 17",
-    "name": "Prophet Hosea",
-    "description": "Old Testament prophet.",
-    "type": "saint",
-    "tags": [
-      "EOR"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-hosea",
-    "day": "October 17",
-    "name": "Saint Hosea",
-    "description": "Prophet.",
-    "type": "saint",
-    "tags": [
+      "COE",
       "OOR"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "ignatius-of-antioch",
@@ -909,56 +698,38 @@
     "type": "saint",
     "tags": [
       "ANG"
-    ],
-    "verification_status": "verified"
+    ]
+  },
+  {
+    "id": "prophet-hosea",
+    "day": "October 17",
+    "name": "Prophet Hosea",
+    "description": "Old Testament prophet.",
+    "type": "saint",
+    "tags": [
+      "EOR"
+    ]
+  },
+  {
+    "id": "saint-hosea",
+    "day": "October 17",
+    "name": "Saint Hosea",
+    "description": "Prophet.",
+    "type": "saint",
+    "tags": [
+      "OOR"
+    ]
   },
   {
     "id": "saint-ignatius-of-antioch",
     "day": "October 17",
     "name": "Saint Ignatius of Antioch",
-    "description": "Bishop and martyr.",
+    "description": "Hieromartyr and Apostolic Father (Eastern primary date).",
     "type": "saint",
     "tags": [
-      "COE"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-luke-the-evangelist",
-    "day": "October 18",
-    "name": "Saint Luke the Evangelist",
-    "description": "Physician and author of the Gospel and Acts.",
-    "type": "apostle",
-    "tags": [
-      "ANG",
       "COE",
-      "EOR",
-      "LAT",
-      "OOR"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-marinus-the-martyr",
-    "day": "October 18",
-    "name": "Saint Marinus the Martyr",
-    "description": "Martyr in Anazarbus.",
-    "type": "saint",
-    "tags": [
-      "EOR"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-luke-the-evangelist",
-    "day": "October 18",
-    "name": "Saint Luke the Evangelist",
-    "description": "Author of the Gospel.",
-    "type": "saint",
-    "tags": [
-      "OOR"
-    ],
-    "verification_status": "verified"
+      "LAT"
+    ]
   },
   {
     "id": "saint-julian-the-hermit",
@@ -968,41 +739,31 @@
     "type": "saint",
     "tags": [
       "COE"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
-    "id": "saint-isaac-jogues-and-companions",
-    "day": "October 19",
-    "name": "Saint Isaac Jogues and Companions",
-    "description": "Jesuit martyrs of North America.",
-    "type": "saint",
+    "id": "saint-luke-the-evangelist",
+    "day": "October 18",
+    "name": "Saint Luke the Evangelist",
+    "description": "Physician and author of the Gospel and Acts.",
+    "type": "apostle",
     "tags": [
-      "LAT"
-    ],
-    "verification_status": "verified"
+      "ANG",
+      "LAT",
+      "EOR",
+      "OOR",
+      "COE"
+    ]
   },
   {
-    "id": "prophet-joel",
-    "day": "October 19",
-    "name": "Prophet Joel",
-    "description": "Old Testament prophet.",
+    "id": "saint-marinus-the-martyr",
+    "day": "October 18",
+    "name": "Saint Marinus the Martyr",
+    "description": "Martyr in Anazarbus.",
     "type": "saint",
     "tags": [
       "EOR"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-joel",
-    "day": "October 19",
-    "name": "Saint Joel",
-    "description": "Prophet.",
-    "type": "saint",
-    "tags": [
-      "OOR"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "henry-martyn",
@@ -1012,8 +773,7 @@
     "type": "saint",
     "tags": [
       "ANG"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "prophet-joel",
@@ -1022,20 +782,29 @@
     "description": "Old Testament prophet.",
     "type": "saint",
     "tags": [
-      "COE"
-    ],
-    "verification_status": "verified"
+      "COE",
+      "EOR"
+    ]
   },
   {
-    "id": "saint-paul-of-the-cross",
-    "day": "October 20",
-    "name": "Saint Paul of the Cross",
-    "description": "Founder of the Passionists.",
+    "id": "saint-isaac-jogues-and-companions",
+    "day": "October 19",
+    "name": "Saint Isaac Jogues and Companions",
+    "description": "Jesuit martyrs of North America.",
     "type": "saint",
     "tags": [
       "LAT"
-    ],
-    "verification_status": "verified"
+    ]
+  },
+  {
+    "id": "saint-joel",
+    "day": "October 19",
+    "name": "Saint Joel",
+    "description": "Prophet.",
+    "type": "saint",
+    "tags": [
+      "OOR"
+    ]
   },
   {
     "id": "greatmartyr-artemius-at-antioch",
@@ -1045,19 +814,7 @@
     "type": "saint",
     "tags": [
       "EOR"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-artemius",
-    "day": "October 20",
-    "name": "Saint Artemius",
-    "description": "Martyr.",
-    "type": "saint",
-    "tags": [
-      "OOR"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "paul-of-the-cross",
@@ -1067,8 +824,7 @@
     "type": "saint",
     "tags": [
       "ANG"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "saint-artemius",
@@ -1077,9 +833,19 @@
     "description": "Martyr.",
     "type": "saint",
     "tags": [
-      "COE"
-    ],
-    "verification_status": "verified"
+      "COE",
+      "OOR"
+    ]
+  },
+  {
+    "id": "saint-paul-of-the-cross",
+    "day": "October 20",
+    "name": "Saint Paul of the Cross",
+    "description": "Founder of the Passionists.",
+    "type": "saint",
+    "tags": [
+      "LAT"
+    ]
   },
   {
     "id": "saint-hilarion",
@@ -1088,31 +854,10 @@
     "description": "Hermit.",
     "type": "saint",
     "tags": [
-      "LAT"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "venerable-hilarion-the-great",
-    "day": "October 21",
-    "name": "Venerable Hilarion the Great",
-    "description": "Hermit of Palestine.",
-    "type": "saint",
-    "tags": [
-      "EOR"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-hilarion",
-    "day": "October 21",
-    "name": "Saint Hilarion",
-    "description": "Ascetic.",
-    "type": "saint",
-    "tags": [
+      "COE",
+      "LAT",
       "OOR"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "ursula-and-companions",
@@ -1122,52 +867,17 @@
     "type": "saint",
     "tags": [
       "ANG"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
-    "id": "saint-hilarion",
+    "id": "venerable-hilarion-the-great",
     "day": "October 21",
-    "name": "Saint Hilarion",
-    "description": "Hermit.",
-    "type": "saint",
-    "tags": [
-      "COE"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-john-paul-ii",
-    "day": "October 22",
-    "name": "Saint John Paul II",
-    "description": "Pope.",
-    "type": "saint",
-    "tags": [
-      "LAT"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "equal-to-the-apostles-abercius",
-    "day": "October 22",
-    "name": "Equal-to-the-Apostles Abercius",
-    "description": "Bishop of Hierapolis.",
+    "name": "Venerable Hilarion the Great",
+    "description": "Hermit of Palestine.",
     "type": "saint",
     "tags": [
       "EOR"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-abercius",
-    "day": "October 22",
-    "name": "Saint Abercius",
-    "description": "Bishop.",
-    "type": "saint",
-    "tags": [
-      "OOR"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "donatus",
@@ -1177,45 +887,38 @@
     "type": "saint",
     "tags": [
       "ANG"
-    ],
-    "verification_status": "verified"
+    ]
+  },
+  {
+    "id": "equal-to-the-apostles-abercius",
+    "day": "October 22",
+    "name": "Equal-to-the-Apostles Abercius",
+    "description": "Bishop of Hierapolis.",
+    "type": "saint",
+    "tags": [
+      "EOR"
+    ]
   },
   {
     "id": "saint-abercius",
     "day": "October 22",
     "name": "Saint Abercius",
-    "description": "Bishop and missionary.",
+    "description": "Bishop.",
     "type": "saint",
     "tags": [
-      "COE"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-james-the-brother-of-the-lord",
-    "day": "October 23",
-    "name": "Saint James the Brother of the Lord",
-    "description": "Apostle and martyr.",
-    "type": "apostle",
-    "tags": [
-      "ANG",
       "COE",
-      "EOR",
-      "LAT",
       "OOR"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
-    "id": "saint-ignatius-of-constantinople",
-    "day": "October 23",
-    "name": "Saint Ignatius of Constantinople",
-    "description": "Patriarch and confessor.",
+    "id": "saint-john-paul-ii",
+    "day": "October 22",
+    "name": "Saint John Paul II",
+    "description": "Pope.",
     "type": "saint",
     "tags": [
-      "EOR"
-    ],
-    "verification_status": "verified"
+      "LAT"
+    ]
   },
   {
     "id": "saint-boethius",
@@ -1225,19 +928,31 @@
     "type": "saint",
     "tags": [
       "COE"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
-    "id": "saint-anthony-mary-claret",
-    "day": "October 24",
-    "name": "Saint Anthony Mary Claret",
-    "description": "Bishop and founder.",
+    "id": "saint-ignatius-of-constantinople",
+    "day": "October 23",
+    "name": "Saint Ignatius of Constantinople",
+    "description": "Patriarch and confessor.",
     "type": "saint",
     "tags": [
-      "LAT"
-    ],
-    "verification_status": "verified"
+      "EOR"
+    ]
+  },
+  {
+    "id": "saint-james-the-brother-of-the-lord",
+    "day": "October 23",
+    "name": "Saint James the Brother of the Lord",
+    "description": "Bishop of Jerusalem (shared commemoration).",
+    "type": "saint",
+    "tags": [
+      "ANG",
+      "LAT",
+      "EOR",
+      "OOR",
+      "COE"
+    ]
   },
   {
     "id": "martyr-arethas-and-companions",
@@ -1247,8 +962,17 @@
     "type": "saint",
     "tags": [
       "EOR"
-    ],
-    "verification_status": "verified"
+    ]
+  },
+  {
+    "id": "saint-anthony-mary-claret",
+    "day": "October 24",
+    "name": "Saint Anthony Mary Claret",
+    "description": "Bishop and founder.",
+    "type": "saint",
+    "tags": [
+      "LAT"
+    ]
   },
   {
     "id": "saint-arethas",
@@ -1257,9 +981,9 @@
     "description": "Martyr.",
     "type": "saint",
     "tags": [
+      "COE",
       "OOR"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "saint-magloire",
@@ -1269,52 +993,7 @@
     "type": "saint",
     "tags": [
       "ANG"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-arethas",
-    "day": "October 24",
-    "name": "Saint Arethas",
-    "description": "Martyr.",
-    "type": "saint",
-    "tags": [
-      "COE"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saints-crispin-and-crispinian",
-    "day": "October 25",
-    "name": "Saints Crispin and Crispinian",
-    "description": "Martyrs.",
-    "type": "saint",
-    "tags": [
-      "LAT"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "martyrs-marcian-and-martyrius",
-    "day": "October 25",
-    "name": "Martyrs Marcian and Martyrius",
-    "description": "Notaries of Constantinople.",
-    "type": "saint",
-    "tags": [
-      "EOR"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-marcian",
-    "day": "October 25",
-    "name": "Saint Marcian",
-    "description": "Martyr.",
-    "type": "saint",
-    "tags": [
-      "OOR"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "crispin-and-crispinian",
@@ -1324,8 +1003,17 @@
     "type": "saint",
     "tags": [
       "ANG"
-    ],
-    "verification_status": "verified"
+    ]
+  },
+  {
+    "id": "martyrs-marcian-and-martyrius",
+    "day": "October 25",
+    "name": "Martyrs Marcian and Martyrius",
+    "description": "Notaries of Constantinople.",
+    "type": "saint",
+    "tags": [
+      "EOR"
+    ]
   },
   {
     "id": "saint-marcian",
@@ -1334,42 +1022,19 @@
     "description": "Martyr.",
     "type": "saint",
     "tags": [
-      "COE"
-    ],
-    "verification_status": "verified"
+      "COE",
+      "OOR"
+    ]
   },
   {
-    "id": "saint-cedd",
-    "day": "October 26",
-    "name": "Saint Cedd",
-    "description": "Bishop of the East Saxons.",
+    "id": "saints-crispin-and-crispinian",
+    "day": "October 25",
+    "name": "Saints Crispin and Crispinian",
+    "description": "Martyrs.",
     "type": "saint",
     "tags": [
       "LAT"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "greatmartyr-demetrius-the-myrrh-streamer",
-    "day": "October 26",
-    "name": "Greatmartyr Demetrius the Myrrh-streamer",
-    "description": "Martyr of Thessalonica.",
-    "type": "saint",
-    "tags": [
-      "EOR"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-demetrius",
-    "day": "October 26",
-    "name": "Saint Demetrius",
-    "description": "Martyr.",
-    "type": "saint",
-    "tags": [
-      "OOR"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "alfred-the-great",
@@ -1379,8 +1044,27 @@
     "type": "saint",
     "tags": [
       "ANG"
-    ],
-    "verification_status": "verified"
+    ]
+  },
+  {
+    "id": "greatmartyr-demetrius-the-myrrh-streamer",
+    "day": "October 26",
+    "name": "Greatmartyr Demetrius the Myrrh-streamer",
+    "description": "Martyr of Thessalonica.",
+    "type": "saint",
+    "tags": [
+      "EOR"
+    ]
+  },
+  {
+    "id": "saint-cedd",
+    "day": "October 26",
+    "name": "Saint Cedd",
+    "description": "Bishop of the East Saxons.",
+    "type": "saint",
+    "tags": [
+      "LAT"
+    ]
   },
   {
     "id": "saint-demetrius",
@@ -1389,20 +1073,9 @@
     "description": "Martyr.",
     "type": "saint",
     "tags": [
-      "COE"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-frumentius",
-    "day": "October 27",
-    "name": "Saint Frumentius",
-    "description": "Apostle of Ethiopia.",
-    "type": "saint",
-    "tags": [
-      "LAT"
-    ],
-    "verification_status": "verified"
+      "COE",
+      "OOR"
+    ]
   },
   {
     "id": "martyr-nestor-of-thessalonica",
@@ -1412,30 +1085,18 @@
     "type": "saint",
     "tags": [
       "EOR"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-nestor",
-    "day": "October 27",
-    "name": "Saint Nestor",
-    "description": "Martyr.",
-    "type": "saint",
-    "tags": [
-      "OOR"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "saint-frumentius",
     "day": "October 27",
     "name": "Saint Frumentius",
-    "description": "Bishop and Missionary to Ethiopia, 383.",
+    "description": "Apostle of Ethiopia.",
     "type": "saint",
     "tags": [
-      "ANG"
-    ],
-    "verification_status": "verified"
+      "ANG",
+      "LAT"
+    ]
   },
   {
     "id": "saint-nestor",
@@ -1444,46 +1105,9 @@
     "description": "Martyr.",
     "type": "saint",
     "tags": [
-      "COE"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saints-simon-and-jude",
-    "day": "October 28",
-    "name": "Saints Simon and Jude",
-    "description": "Apostles and martyrs.",
-    "type": "apostle",
-    "tags": [
-      "ANG",
       "COE",
-      "EOR",
-      "LAT",
       "OOR"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-terence-and-eunice",
-    "day": "October 28",
-    "name": "Saint Terence and Eunice",
-    "description": "Martyrs.",
-    "type": "saint",
-    "tags": [
-      "EOR"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-simon-the-apostle",
-    "day": "October 28",
-    "name": "Saint Simon the Apostle",
-    "description": "Apostle and martyr.",
-    "type": "saint",
-    "tags": [
-      "OOR"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "saint-faraj-of-shiraz",
@@ -1493,41 +1117,41 @@
     "type": "saint",
     "tags": [
       "COE"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
-    "id": "saint-narcissus-of-jerusalem",
-    "day": "October 29",
-    "name": "Saint Narcissus of Jerusalem",
-    "description": "Bishop.",
-    "type": "saint",
-    "tags": [
-      "LAT"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "venerable-abramius-the-recluse",
-    "day": "October 29",
-    "name": "Venerable Abramius the Recluse",
-    "description": "Hermit.",
-    "type": "saint",
-    "tags": [
-      "EOR"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-abramius",
-    "day": "October 29",
-    "name": "Saint Abramius",
-    "description": "Recluse.",
+    "id": "saint-simon-the-apostle",
+    "day": "October 28",
+    "name": "Saint Simon the Apostle",
+    "description": "Apostle and martyr.",
     "type": "saint",
     "tags": [
       "OOR"
-    ],
-    "verification_status": "verified"
+    ]
+  },
+  {
+    "id": "saint-terence-and-eunice",
+    "day": "October 28",
+    "name": "Saint Terence and Eunice",
+    "description": "Martyrs.",
+    "type": "saint",
+    "tags": [
+      "EOR"
+    ]
+  },
+  {
+    "id": "saints-simon-and-jude",
+    "day": "October 28",
+    "name": "Saints Simon and Jude",
+    "description": "Apostles and martyrs.",
+    "type": "apostle",
+    "tags": [
+      "ANG",
+      "LAT",
+      "EOR",
+      "OOR",
+      "COE"
+    ]
   },
   {
     "id": "james-hannington",
@@ -1537,30 +1161,38 @@
     "type": "saint",
     "tags": [
       "ANG"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "saint-abramius",
     "day": "October 29",
     "name": "Saint Abramius",
-    "description": "Hermit.",
+    "description": "Recluse.",
     "type": "saint",
     "tags": [
-      "COE"
-    ],
-    "verification_status": "verified"
+      "COE",
+      "OOR"
+    ]
   },
   {
-    "id": "saint-marcellus-of-tangier",
-    "day": "October 30",
-    "name": "Saint Marcellus of Tangier",
-    "description": "Martyr.",
+    "id": "saint-narcissus-of-jerusalem",
+    "day": "October 29",
+    "name": "Saint Narcissus of Jerusalem",
+    "description": "Bishop.",
     "type": "saint",
     "tags": [
       "LAT"
-    ],
-    "verification_status": "verified"
+    ]
+  },
+  {
+    "id": "venerable-abramius-the-recluse",
+    "day": "October 29",
+    "name": "Venerable Abramius the Recluse",
+    "description": "Hermit.",
+    "type": "saint",
+    "tags": [
+      "EOR"
+    ]
   },
   {
     "id": "hieromartyr-zenobius-and-zenobia",
@@ -1570,19 +1202,7 @@
     "type": "saint",
     "tags": [
       "EOR"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-zenobius",
-    "day": "October 30",
-    "name": "Saint Zenobius",
-    "description": "Martyr.",
-    "type": "saint",
-    "tags": [
-      "OOR"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "saint-alphonsus-rodriguez",
@@ -1592,30 +1212,28 @@
     "type": "saint",
     "tags": [
       "ANG"
-    ],
-    "verification_status": "verified"
+    ]
+  },
+  {
+    "id": "saint-marcellus-of-tangier",
+    "day": "October 30",
+    "name": "Saint Marcellus of Tangier",
+    "description": "Martyr.",
+    "type": "saint",
+    "tags": [
+      "LAT"
+    ]
   },
   {
     "id": "saint-zenobius",
     "day": "October 30",
     "name": "Saint Zenobius",
-    "description": "Bishop and martyr.",
+    "description": "Martyr.",
     "type": "saint",
     "tags": [
-      "COE"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-wolfgang-of-regensburg",
-    "day": "October 31",
-    "name": "Saint Wolfgang of Regensburg",
-    "description": "Bishop.",
-    "type": "saint",
-    "tags": [
-      "LAT"
-    ],
-    "verification_status": "verified"
+      "COE",
+      "OOR"
+    ]
   },
   {
     "id": "apostles-stachys-apellos-amplias-urban-narcissus-and-aristobulus",
@@ -1625,8 +1243,7 @@
     "type": "saint",
     "tags": [
       "EOR"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "saint-stachys",
@@ -1635,19 +1252,18 @@
     "description": "Apostle.",
     "type": "saint",
     "tags": [
+      "COE",
       "OOR"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
-    "id": "saint-stachys",
+    "id": "saint-wolfgang-of-regensburg",
     "day": "October 31",
-    "name": "Saint Stachys",
-    "description": "Apostle.",
+    "name": "Saint Wolfgang of Regensburg",
+    "description": "Bishop.",
     "type": "saint",
     "tags": [
-      "COE"
-    ],
-    "verification_status": "verified"
+      "LAT"
+    ]
   }
 ]

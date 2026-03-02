@@ -4,8 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "http-server -p 3000"
-  },
+  "start": "http-server -p 3000",
+  "saints:validate": "node tools/validate_saints_sources.js",
+  "saints:build": "node tools/build_saints_cache.js",
+  "saints:regen": "npm run saints:validate && npm run saints:build"
+},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/JWJeffery/PrayerAppNew.git"

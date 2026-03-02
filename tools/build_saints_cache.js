@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * build_saints_cache.js
+ * tools/build_saints_cache.js
  *
  * Reads the normalized source-of-truth files:
  *   data/saints/identities.json
@@ -15,129 +15,180 @@
  *   node tools/build_saints_cache.js march april  # generates two months
  *
  * Tag emission rules (transitional):
- *   - Each generated record's `tags` array includes the tradition code for that commemoration.
+ *   - Each generated record's `tags` array includes the tradition code(s) for that commemoration day.
  *   - When a single identity has commemorations in ALL five traditions on the same date,
  *     the generated record receives the full five-code set ["ANG","LAT","EOR","OOR","COE"]
- *     so the runtime UI derives the ECU (ecumenical) display label without code changes.
+ *     so the runtime UI can derive the ECU (ecumenical) display label without code changes.
  */
 
 "use strict";
 
-const fs   = require("fs");
+const fs = require("fs");
 const path = require("path");
 
 // ── Month helpers ────────────────────────────────────────────────────────────
 const MONTH_NAMES = [
   "", // 1-indexed
-  "January","February","March","April","May","June",
-  "July","August","September","October","November","December"
+  "January", "February", "March", "April", "May", "June",
+  "July", "August", "September", "October", "November", "December",
 ];
 
 const MONTH_SLUGS = {
-  "january":1,"february":2,"march":3,"april":4,"may":5,"june":6,
-  "july":7,"august":8,"september":9,"october":10,"november":11,"december":12
+  january: 1, february: 2, march: 3, april: 4, may: 5, june: 6,
+  july: 7, august: 8, september: 9, october: 10, november: 11, december: 12,
 };
 
-const ALL_TRADITIONS = new Set(["ANG","LAT","EOR","OOR","COE"]);
+// Single source of truth for “all traditions”
+const ALL_TRADITIONS = ["ANG", "LAT", "EOR", "OOR", "COE"];
 
-// ── Paths (relative to project root) ────────────────────────────────────────
+// ── Paths (relative to project root; cwd-independent) ────────────────────────
+// LANDMARK: this line should exist in your current script.
 const ROOT = path.resolve(__dirname, "..");
-const IDENTITIES_PATH    = path.join(ROOT, "data", "saints", "identities.json");
+const IDENTITIES_PATH = path.join(ROOT, "data", "saints", "identities.json");
 const COMMEMORATIONS_PATH = path.join(ROOT, "data", "saints", "commemorations.json");
 
-// ── Load source files ────────────────────────────────────────────────────────
-function load(p) {
+// ── File helpers ─────────────────────────────────────────────────────────────
+function loadJson(p) {
   const text = fs.readFileSync(p, "utf8");
   return JSON.parse(text);
 }
 
-// ── Generate cache for a single month number (1–12) ─────────────────────────
+function writeJson(p, obj) {
+  fs.writeFileSync(p, JSON.stringify(obj, null, 2) + "\n", "utf8");
+}
+
+function die(msg) {
+  process.stderr.write(msg + "\n");
+  process.exit(1);
+}
+
+// ── Validation (lightweight, generator-focused) ──────────────────────────────
+function validateInputs(identities, commemorations) {
+  if (!Array.isArray(identities)) die(`ERROR: identities.json must be an array`);
+  if (!Array.isArray(commemorations)) die(`ERROR: commemorations.json must be an array`);
+
+  const seen = new Set();
+  for (const i of identities) {
+    if (!i || typeof i !== "object") die(`ERROR: identity is not an object: ${JSON.stringify(i)}`);
+    if (!i.id || typeof i.id !== "string") die(`ERROR: identity missing string id: ${JSON.stringify(i)}`);
+    if (seen.has(i.id)) die(`ERROR: duplicate identity id "${i.id}"`);
+    seen.add(i.id);
+    if (!i.name || typeof i.name !== "string") die(`ERROR: identity "${i.id}" missing name`);
+    if (!i.description || typeof i.description !== "string") die(`ERROR: identity "${i.id}" missing description`);
+    if (!i.type || typeof i.type !== "string") die(`ERROR: identity "${i.id}" missing type`);
+  }
+
+  for (const c of commemorations) {
+    if (!c || typeof c !== "object") die(`ERROR: commemoration is not an object: ${JSON.stringify(c)}`);
+    if (!c.identity_id || typeof c.identity_id !== "string") die(`ERROR: commemoration missing identity_id: ${JSON.stringify(c)}`);
+    if (!seen.has(c.identity_id)) die(`ERROR: commemoration references unknown identity_id "${c.identity_id}"`);
+    if (!c.tradition || typeof c.tradition !== "string") die(`ERROR: commemoration missing tradition: ${JSON.stringify(c)}`);
+    if (!ALL_TRADITIONS.includes(c.tradition)) die(`ERROR: commemoration has invalid tradition "${c.tradition}"`);
+    if (!c.calendar || typeof c.calendar !== "string") die(`ERROR: commemoration missing calendar: ${JSON.stringify(c)}`);
+    if (c.calendar !== "gregorian") die(`ERROR: commemoration.calendar must be "gregorian": ${JSON.stringify(c)}`);
+    if (!c.date || typeof c.date !== "object") die(`ERROR: commemoration missing date: ${JSON.stringify(c)}`);
+    if (typeof c.date.month !== "number" || c.date.month < 1 || c.date.month > 12) die(`ERROR: invalid date.month: ${JSON.stringify(c)}`);
+    if (typeof c.date.day !== "number" || c.date.day < 1 || c.date.day > 31) die(`ERROR: invalid date.day: ${JSON.stringify(c)}`);
+  }
+}
+
+// ── Cache generation ─────────────────────────────────────────────────────────
 function generateMonth(monthNum, identityMap, commemorations) {
-  const monthComms = commemorations.filter(c => c.date.month === monthNum);
+  // Only gregorian commemorations are eligible for this cache.
+  const monthComms = commemorations.filter(
+    c => c.calendar === "gregorian" && c.date.month === monthNum
+  );
 
   // Group commemorations by (identity_id, day) to detect ecumenical coverage
   // key: `${identity_id}::${day}`
   const groupMap = new Map();
   for (const comm of monthComms) {
+    // Harden against malformed records (even though we validate)
+    if (!comm?.date || typeof comm.date.day !== "number") continue;
+
     const key = `${comm.identity_id}::${comm.date.day}`;
     if (!groupMap.has(key)) groupMap.set(key, []);
     groupMap.get(key).push(comm);
   }
 
-  // Build output records.  One record per (identity_id, day) group.
   const records = [];
-  for (const [key, comms] of groupMap.entries()) {
-    const identity = identityMap.get(comms[0].identity_id);
+
+  for (const comms of groupMap.values()) {
+    const identityId = comms[0].identity_id;
+    const identity = identityMap.get(identityId);
     if (!identity) {
-      process.stderr.write(`WARN: no identity for id="${comms[0].identity_id}"\n`);
+      process.stderr.write(`WARN: no identity for id="${identityId}" (skipping)\n`);
       continue;
     }
 
-    const dayNum   = comms[0].date.day;
-    const dayStr   = `${MONTH_NAMES[monthNum]} ${dayNum}`;   // e.g. "March 1"
-    const traditions = new Set(comms.map(c => c.tradition));
+    const dayNum = comms[0].date.day;
+    const dayStr = `${MONTH_NAMES[monthNum]} ${dayNum}`; // e.g. "March 1"
 
-    // Ecumenical: all five traditions present on this date for this identity
-    let tags;
-    if (traditions.size === ALL_TRADITIONS.size &&
-        [...ALL_TRADITIONS].every(t => traditions.has(t))) {
-      tags = ["ANG","LAT","EOR","OOR","COE"];
-    } else {
-      tags = [...traditions].sort();
-    }
+    const traditionsPresent = new Set(comms.map(c => c.tradition));
+    const isEcumenical = ALL_TRADITIONS.every(t => traditionsPresent.has(t));
+
+    const tags = isEcumenical
+      ? [...ALL_TRADITIONS]
+      : [...traditionsPresent].sort();
 
     records.push({
-      id:          identity.id,
-      day:         dayStr,
-      name:        identity.name,
+      id: identity.id,
+      day: dayStr,
+      name: identity.name,
       description: identity.description,
-      type:        identity.type,
+      type: identity.type,
       tags,
+      // Internal sort aid (removed before write)
+      _dayNum: dayNum,
     });
   }
 
-  // Sort: day numeric asc, then name asc (deterministic)
+  // Deterministic sort: day asc, then name asc
   records.sort((a, b) => {
-    const da = parseInt(a.day.split(" ")[1], 10);
-    const db = parseInt(b.day.split(" ")[1], 10);
-    if (da !== db) return da - db;
+    if (a._dayNum !== b._dayNum) return a._dayNum - b._dayNum;
     return a.name.localeCompare(b.name, "en");
   });
+
+  // Strip internal field
+  for (const r of records) delete r._dayNum;
 
   return records;
 }
 
-// ── Write a cache file ───────────────────────────────────────────────────────
 function writeCacheFile(monthNum, records) {
   const monthSlug = MONTH_NAMES[monthNum].toLowerCase();
-  const outPath   = path.join(ROOT, "data", "saints", `saints-${monthSlug}.json`);
-  fs.writeFileSync(outPath, JSON.stringify(records, null, 2) + "\n", "utf8");
+  const outPath = path.join(ROOT, "data", "saints", `saints-${monthSlug}.json`);
+  writeJson(outPath, records);
   process.stdout.write(`wrote ${records.length} records → ${path.relative(ROOT, outPath)}\n`);
 }
 
 // ── Main ─────────────────────────────────────────────────────────────────────
 function main() {
-  const identities     = load(IDENTITIES_PATH);
-  const commemorations = load(COMMEMORATIONS_PATH);
+  // Load
+  const identities = loadJson(IDENTITIES_PATH);
+  const commemorations = loadJson(COMMEMORATIONS_PATH);
 
-  // Build identity lookup map
+  // Validate inputs (generator-focused)
+  validateInputs(identities, commemorations);
+
+  // Build identity lookup
   const identityMap = new Map(identities.map(i => [i.id, i]));
 
   // Determine which months to generate
-  let monthNums;
-  const args = process.argv.slice(2).map(a => a.toLowerCase().trim());
+  const args = process.argv.slice(2).map(a => a.toLowerCase().trim()).filter(Boolean);
 
+  let monthNums;
   if (args.length === 0) {
-    // Generate all months that appear in commemorations
-    const presentMonths = new Set(commemorations.map(c => c.date.month));
+    const presentMonths = new Set(
+      commemorations
+        .filter(c => c.calendar === "gregorian")
+        .map(c => c.date.month)
+    );
     monthNums = [...presentMonths].sort((a, b) => a - b);
   } else {
     monthNums = args.map(slug => {
       const num = MONTH_SLUGS[slug];
-      if (!num) {
-        process.stderr.write(`ERROR: unrecognised month "${slug}"\n`);
-        process.exit(1);
-      }
+      if (!num) die(`ERROR: unrecognised month "${slug}"`);
       return num;
     });
   }

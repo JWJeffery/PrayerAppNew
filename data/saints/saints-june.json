@@ -1,20 +1,5 @@
 [
   {
-    "id": "saint-justin-martyr",
-    "day": "June 1",
-    "name": "Saint Justin Martyr",
-    "description": "Philosopher and apologist, defender of the faith and martyr at Rome.",
-    "type": "saint",
-    "tags": [
-      "ANG",
-      "COE",
-      "EOR",
-      "LAT",
-      "OOR"
-    ],
-    "verification_status": "verified"
-  },
-  {
     "id": "martyr-firmus",
     "day": "June 1",
     "name": "Martyr Firmus",
@@ -22,8 +7,7 @@
     "type": "saint",
     "tags": [
       "EOR"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "martyr-thespesios-of-cappadocia",
@@ -33,8 +17,21 @@
     "type": "saint",
     "tags": [
       "OOR"
-    ],
-    "verification_status": "verified"
+    ]
+  },
+  {
+    "id": "saint-justin-martyr",
+    "day": "June 1",
+    "name": "Saint Justin Martyr",
+    "description": "Philosopher and apologist, defender of the faith and martyr at Rome.",
+    "type": "saint",
+    "tags": [
+      "ANG",
+      "LAT",
+      "EOR",
+      "OOR",
+      "COE"
+    ]
   },
   {
     "id": "blandina-and-her-companions",
@@ -44,8 +41,7 @@
     "type": "saint",
     "tags": [
       "ANG"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "saint-nicephorus-the-confessor",
@@ -56,8 +52,7 @@
     "tags": [
       "EOR",
       "OOR"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "saints-marcellinus-and-peter",
@@ -67,8 +62,7 @@
     "type": "saint",
     "tags": [
       "LAT"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "third-sunday-of-the-apostles",
@@ -78,8 +72,37 @@
     "type": "saint",
     "tags": [
       "COE"
-    ],
-    "verification_status": "verified"
+    ]
+  },
+  {
+    "id": "martyrs-loukilianos-claudius-hypatius-paul-dionysius-and-paula",
+    "day": "June 3",
+    "name": "Martyrs Loukilianos, Claudius, Hypatius, Paul, Dionysius and Paula",
+    "description": "Martyrs at Byzantium.",
+    "type": "saint",
+    "tags": [
+      "EOR"
+    ]
+  },
+  {
+    "id": "martyrs-of-the-east",
+    "day": "June 3",
+    "name": "Martyrs of the East",
+    "description": "Early martyrs, shared commemoration.",
+    "type": "saint",
+    "tags": [
+      "COE"
+    ]
+  },
+  {
+    "id": "prophet-elijah",
+    "day": "June 3",
+    "name": "Prophet Elijah",
+    "description": "Old Testament prophet.",
+    "type": "saint",
+    "tags": [
+      "OOR"
+    ]
   },
   {
     "id": "saint-charles-lwanga-and-companions",
@@ -90,85 +113,7 @@
     "tags": [
       "ANG",
       "LAT"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "martyrs-loukilianos-claudius-hypatius-paul-dionysius-and-paula",
-    "day": "June 3",
-    "name": "Martyrs Loukilianos, Claudius, Hypatius, Paul, Dionysius and Paula",
-    "description": "Martyrs at Byzantium.",
-    "type": "saint",
-    "tags": [
-      "EOR"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "prophet-elijah",
-    "day": "June 3",
-    "name": "Prophet Elijah",
-    "description": "Remembrance of the Prophet Elijah (Armenian).",
-    "type": "saint",
-    "tags": [
-      "OOR"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "martyrs-of-the-east",
-    "day": "June 3",
-    "name": "Martyrs of the East",
-    "description": "Early martyrs, shared commemoration.",
-    "type": "saint",
-    "tags": [
-      "COE"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-francis-caracciolo",
-    "day": "June 4",
-    "name": "Saint Francis Caracciolo",
-    "description": "Founder of the Minor Clerks Regular, died 1608 AD.",
-    "type": "saint",
-    "tags": [
-      "LAT"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "petroc",
-    "day": "June 4",
-    "name": "Petroc",
-    "description": "Abbot of Padstow, 6th century.",
-    "type": "saint",
-    "tags": [
-      "ANG"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-metrophanes-of-constantinople",
-    "day": "June 4",
-    "name": "Saint Metrophanes of Constantinople",
-    "description": "First Patriarch of Constantinople, died 326 AD.",
-    "type": "saint",
-    "tags": [
-      "EOR"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-hripsime-and-her-companions",
-    "day": "June 4",
-    "name": "Saint Hripsime and her Companions",
-    "description": "Virgin martyrs (Armenian).",
-    "type": "saint",
-    "tags": [
-      "OOR"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "martyrs-zoticus-atallus-camisius-and-philip",
@@ -178,8 +123,57 @@
     "type": "saint",
     "tags": [
       "COE"
-    ],
-    "verification_status": "verified"
+    ]
+  },
+  {
+    "id": "petroc",
+    "day": "June 4",
+    "name": "Petroc",
+    "description": "Abbot of Padstow, 6th century.",
+    "type": "saint",
+    "tags": [
+      "ANG"
+    ]
+  },
+  {
+    "id": "saint-francis-caracciolo",
+    "day": "June 4",
+    "name": "Saint Francis Caracciolo",
+    "description": "Founder of the Minor Clerks Regular, died 1608 AD.",
+    "type": "saint",
+    "tags": [
+      "LAT"
+    ]
+  },
+  {
+    "id": "saint-hripsime-and-her-companions",
+    "day": "June 4",
+    "name": "Saint Hripsime and her Companions",
+    "description": "Virgin martyrs (Armenian).",
+    "type": "saint",
+    "tags": [
+      "OOR"
+    ]
+  },
+  {
+    "id": "saint-metrophanes-of-constantinople",
+    "day": "June 4",
+    "name": "Saint Metrophanes of Constantinople",
+    "description": "First Patriarch of Constantinople, died 326 AD.",
+    "type": "saint",
+    "tags": [
+      "EOR"
+    ]
+  },
+  {
+    "id": "hieromartyr-dorotheus-of-tyre",
+    "day": "June 5",
+    "name": "Hieromartyr Dorotheus of Tyre",
+    "description": "Bishop of Tyre, martyr, 362 AD.",
+    "type": "saint",
+    "tags": [
+      "EOR"
+    ]
   },
   {
     "id": "saint-boniface",
@@ -190,30 +184,7 @@
     "tags": [
       "ANG",
       "LAT"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "hieromartyr-dorotheus-of-tyre",
-    "day": "June 5",
-    "name": "Hieromartyr Dorotheus of Tyre",
-    "description": "Bishop of Tyre, martyr, 362 AD.",
-    "type": "saint",
-    "tags": [
-      "EOR"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-gayane-and-her-companions",
-    "day": "June 5",
-    "name": "Saint Gayane and her Companions",
-    "description": "Virgin martyrs (Armenian).",
-    "type": "saint",
-    "tags": [
-      "OOR"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "saint-dorotheus",
@@ -223,8 +194,27 @@
     "type": "saint",
     "tags": [
       "COE"
-    ],
-    "verification_status": "verified"
+    ]
+  },
+  {
+    "id": "saint-gayane-and-her-companions",
+    "day": "June 5",
+    "name": "Saint Gayane and her Companions",
+    "description": "Virgin martyrs (Armenian).",
+    "type": "saint",
+    "tags": [
+      "OOR"
+    ]
+  },
+  {
+    "id": "ini-kopuria",
+    "day": "June 6",
+    "name": "Ini Kopuria",
+    "description": "Founder of the Melanesian Brotherhood, 1945.",
+    "type": "saint",
+    "tags": [
+      "ANG"
+    ]
   },
   {
     "id": "saint-norbert",
@@ -235,30 +225,7 @@
     "tags": [
       "LAT",
       "OOR"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "ini-kopuria",
-    "day": "June 6",
-    "name": "Ini Kopuria",
-    "description": "Founder of the Melanesian Brotherhood, 1945.",
-    "type": "saint",
-    "tags": [
-      "ANG"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "venerable-bessarion-the-wonderworker-of-egypt",
-    "day": "June 6",
-    "name": "Venerable Bessarion the Wonderworker of Egypt",
-    "description": "Hermit and wonderworker, 5th century.",
-    "type": "saint",
-    "tags": [
-      "EOR"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "venerable-bessarion",
@@ -268,41 +235,17 @@
     "type": "saint",
     "tags": [
       "COE"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
-    "id": "saint-robert-of-newminster",
-    "day": "June 7",
-    "name": "Saint Robert of Newminster",
-    "description": "Cistercian abbot, died 1159 AD.",
-    "type": "saint",
-    "tags": [
-      "LAT"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "hieromartyr-theodotus-of-ancyra",
-    "day": "June 7",
-    "name": "Hieromartyr Theodotus of Ancyra",
-    "description": "Martyr, died 303 AD.",
+    "id": "venerable-bessarion-the-wonderworker-of-egypt",
+    "day": "June 6",
+    "name": "Venerable Bessarion the Wonderworker of Egypt",
+    "description": "Hermit and wonderworker, 5th century.",
     "type": "saint",
     "tags": [
       "EOR"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-nune",
-    "day": "June 7",
-    "name": "Saint Nune",
-    "description": "Virgin and missionary (Armenian).",
-    "type": "saint",
-    "tags": [
-      "OOR"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "hieromartyr-theodotus",
@@ -312,8 +255,17 @@
     "type": "saint",
     "tags": [
       "COE"
-    ],
-    "verification_status": "verified"
+    ]
+  },
+  {
+    "id": "hieromartyr-theodotus-of-ancyra",
+    "day": "June 7",
+    "name": "Hieromartyr Theodotus of Ancyra",
+    "description": "Martyr, died 303 AD.",
+    "type": "saint",
+    "tags": [
+      "EOR"
+    ]
   },
   {
     "id": "saint-bede-the-venerable",
@@ -323,8 +275,47 @@
     "type": "saint",
     "tags": [
       "ANG"
-    ],
-    "verification_status": "verified"
+    ]
+  },
+  {
+    "id": "saint-nune",
+    "day": "June 7",
+    "name": "Saint Nune",
+    "description": "Virgin and missionary (Armenian).",
+    "type": "saint",
+    "tags": [
+      "OOR"
+    ]
+  },
+  {
+    "id": "saint-robert-of-newminster",
+    "day": "June 7",
+    "name": "Saint Robert of Newminster",
+    "description": "Cistercian abbot, died 1159 AD.",
+    "type": "saint",
+    "tags": [
+      "LAT"
+    ]
+  },
+  {
+    "id": "martyrdom-of-st-george-of-alexandria",
+    "day": "June 8",
+    "name": "Martyrdom of St. George of Alexandria",
+    "description": "Coptic commemoration (Paoni 1).",
+    "type": "saint",
+    "tags": [
+      "OOR"
+    ]
+  },
+  {
+    "id": "saint-theodore-stratelates",
+    "day": "June 8",
+    "name": "Saint Theodore Stratelates",
+    "description": "Martyr, shared.",
+    "type": "saint",
+    "tags": [
+      "COE"
+    ]
   },
   {
     "id": "saint-william-of-york",
@@ -335,19 +326,17 @@
     "tags": [
       "ANG",
       "LAT"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "thomas-ken",
     "day": "June 8",
     "name": "Thomas Ken",
-    "description": "Bishop of Bath and Wells, Nonjuror, Hymn Writer, 1711.",
+    "description": "Bishop of Bath and Wells, 1711.",
     "type": "saint",
     "tags": [
       "ANG"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "translation-of-the-relics-of-saint-theodore-the-commander",
@@ -357,45 +346,7 @@
     "type": "saint",
     "tags": [
       "EOR"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "martyrdom-of-st-george-of-alexandria",
-    "day": "June 8",
-    "name": "Martyrdom of St. George of Alexandria",
-    "description": "Coptic commemoration (Paoni 1).",
-    "type": "saint",
-    "tags": [
-      "OOR"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-theodore-stratelates",
-    "day": "June 8",
-    "name": "Saint Theodore Stratelates",
-    "description": "Martyr, shared.",
-    "type": "saint",
-    "tags": [
-      "COE"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-ephrem-the-syrian",
-    "day": "June 9",
-    "name": "Saint Ephrem the Syrian",
-    "description": "Deacon, Hymnographer, and Doctor of the Church, 373.",
-    "type": "saint",
-    "tags": [
-      "ANG",
-      "COE",
-      "EOR",
-      "LAT",
-      "OOR"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "columba-of-iona",
@@ -405,19 +356,31 @@
     "type": "saint",
     "tags": [
       "ANG"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "saint-cyril-of-alexandria",
     "day": "June 9",
     "name": "Saint Cyril of Alexandria",
-    "description": "Patriarch and Doctor, died 444 AD.",
+    "description": "Bishop and Doctor of the Church, died 444.",
     "type": "saint",
     "tags": [
       "EOR"
-    ],
-    "verification_status": "verified"
+    ]
+  },
+  {
+    "id": "saint-ephrem-the-syrian",
+    "day": "June 9",
+    "name": "Saint Ephrem the Syrian",
+    "description": "Commemoration.",
+    "type": "saint",
+    "tags": [
+      "ANG",
+      "LAT",
+      "EOR",
+      "OOR",
+      "COE"
+    ]
   },
   {
     "id": "blessed-edward-poppe",
@@ -427,30 +390,7 @@
     "type": "saint",
     "tags": [
       "LAT"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-ephrem-of-edessa",
-    "day": "June 10",
-    "name": "Saint Ephrem of Edessa",
-    "description": "Deacon, Confessor, Doctor, 373.",
-    "type": "saint",
-    "tags": [
-      "ANG"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-timothy-of-prusa",
-    "day": "June 10",
-    "name": "Saint Timothy of Prusa",
-    "description": "Bishop and martyr, died 362 AD.",
-    "type": "saint",
-    "tags": [
-      "EOR"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "departure-of-saint-abram-bishop-of-faiyum",
@@ -460,8 +400,17 @@
     "type": "saint",
     "tags": [
       "OOR"
-    ],
-    "verification_status": "verified"
+    ]
+  },
+  {
+    "id": "saint-ephrem-of-edessa",
+    "day": "June 10",
+    "name": "Saint Ephrem of Edessa",
+    "description": "Deacon, Confessor, Doctor, 373.",
+    "type": "saint",
+    "tags": [
+      "ANG"
+    ]
   },
   {
     "id": "saint-john-metropolitan-of-tobolsk",
@@ -471,23 +420,17 @@
     "type": "saint",
     "tags": [
       "COE"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
-    "id": "saint-barnabas-the-apostle",
-    "day": "June 11",
-    "name": "Saint Barnabas the Apostle",
-    "description": "Missionary companion of St. Paul and 'Son of Encouragement'.",
-    "type": "apostle",
+    "id": "saint-timothy-of-prusa",
+    "day": "June 10",
+    "name": "Saint Timothy of Prusa",
+    "description": "Bishop and martyr, died 362 AD.",
+    "type": "saint",
     "tags": [
-      "ANG",
-      "COE",
-      "EOR",
-      "LAT",
-      "OOR"
-    ],
-    "verification_status": "verified"
+      "EOR"
+    ]
   },
   {
     "id": "holy-new-martyrs-of-china",
@@ -497,20 +440,21 @@
     "type": "saint",
     "tags": [
       "OOR"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
-    "id": "venerable-onuphrius-the-great",
-    "day": "June 12",
-    "name": "Venerable Onuphrius the Great",
-    "description": "Early Egyptian desert hermit.",
-    "type": "saint",
+    "id": "saint-barnabas-the-apostle",
+    "day": "June 11",
+    "name": "Saint Barnabas the Apostle",
+    "description": "Missionary companion of St. Paul and 'Son of Encouragement'.",
+    "type": "apostle",
     "tags": [
+      "ANG",
+      "LAT",
       "EOR",
-      "OOR"
-    ],
-    "verification_status": "verified"
+      "OOR",
+      "COE"
+    ]
   },
   {
     "id": "blessed-jolanta-of-poland",
@@ -520,8 +464,7 @@
     "type": "saint",
     "tags": [
       "LAT"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "saint-peter-of-mount-athos",
@@ -531,8 +474,7 @@
     "type": "saint",
     "tags": [
       "ANG"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "venerable-onuphrius-the-great",
@@ -541,21 +483,10 @@
     "description": "Early Egyptian desert hermit.",
     "type": "saint",
     "tags": [
-      "COE"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-anthony-of-padua",
-    "day": "June 13",
-    "name": "Saint Anthony of Padua",
-    "description": "Franciscan priest, renowned preacher, and Doctor of the Church.",
-    "type": "saint",
-    "tags": [
-      "LAT",
+      "COE",
+      "EOR",
       "OOR"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "martyr-aquilina-of-byblos",
@@ -565,8 +496,19 @@
     "type": "saint",
     "tags": [
       "EOR"
-    ],
-    "verification_status": "verified"
+    ]
+  },
+  {
+    "id": "saint-anthony-of-padua",
+    "day": "June 13",
+    "name": "Saint Anthony of Padua",
+    "description": "Franciscan priest, renowned preacher, and Doctor of the Church.",
+    "type": "saint",
+    "tags": [
+      "COE",
+      "LAT",
+      "OOR"
+    ]
   },
   {
     "id": "saint-antony-of-padua",
@@ -576,42 +518,7 @@
     "type": "saint",
     "tags": [
       "ANG"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-anthony-of-padua",
-    "day": "June 13",
-    "name": "Saint Anthony of Padua",
-    "description": "Franciscan priest, renowned preacher, and Doctor of the Church.",
-    "type": "saint",
-    "tags": [
-      "COE"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "prophet-elisha",
-    "day": "June 14",
-    "name": "Prophet Elisha",
-    "description": "Old Testament prophet and successor to Elijah.",
-    "type": "saint",
-    "tags": [
-      "EOR",
-      "OOR"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-methodius-i-of-constantinople",
-    "day": "June 14",
-    "name": "Saint Methodius I of Constantinople",
-    "description": "Patriarch, died 847 AD.",
-    "type": "saint",
-    "tags": [
-      "LAT"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "basil-the-great",
@@ -621,8 +528,7 @@
     "type": "saint",
     "tags": [
       "ANG"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "prophet-elisha",
@@ -631,9 +537,20 @@
     "description": "Old Testament prophet and successor to Elijah.",
     "type": "saint",
     "tags": [
-      "COE"
-    ],
-    "verification_status": "verified"
+      "COE",
+      "EOR",
+      "OOR"
+    ]
+  },
+  {
+    "id": "saint-methodius-i-of-constantinople",
+    "day": "June 14",
+    "name": "Saint Methodius I of Constantinople",
+    "description": "Patriarch, died 847 AD.",
+    "type": "saint",
+    "tags": [
+      "LAT"
+    ]
   },
   {
     "id": "prophet-amos",
@@ -644,8 +561,17 @@
     "tags": [
       "EOR",
       "OOR"
-    ],
-    "verification_status": "verified"
+    ]
+  },
+  {
+    "id": "saint-augustine-of-hippo",
+    "day": "June 15",
+    "name": "Saint Augustine of Hippo",
+    "description": "Bishop, Doctor, and one of the Pillars of Christian theology.",
+    "type": "saint",
+    "tags": [
+      "COE"
+    ]
   },
   {
     "id": "saint-germaine-cousin",
@@ -655,19 +581,7 @@
     "type": "saint",
     "tags": [
       "LAT"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-augustine-of-hippo",
-    "day": "June 15",
-    "name": "Saint Augustine of Hippo",
-    "description": "Bishop, commemorated in some calendars.",
-    "type": "saint",
-    "tags": [
-      "COE"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "saint-vitus",
@@ -677,20 +591,7 @@
     "type": "saint",
     "tags": [
       "ANG"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-tychon-of-amathus",
-    "day": "June 16",
-    "name": "Saint Tychon of Amathus",
-    "description": "Bishop of Cyprus and wonderworker.",
-    "type": "saint",
-    "tags": [
-      "EOR",
-      "OOR"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "saint-lutgardis",
@@ -700,8 +601,7 @@
     "type": "saint",
     "tags": [
       "LAT"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "saint-richard-of-chichester",
@@ -711,8 +611,7 @@
     "type": "saint",
     "tags": [
       "ANG"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "saint-tychon-of-amathus",
@@ -721,20 +620,10 @@
     "description": "Bishop of Cyprus and wonderworker.",
     "type": "saint",
     "tags": [
-      "COE"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-ranieri-of-pisa",
-    "day": "June 17",
-    "name": "Saint Ranieri of Pisa",
-    "description": "Hermit, died 1161 AD.",
-    "type": "saint",
-    "tags": [
-      "LAT"
-    ],
-    "verification_status": "verified"
+      "COE",
+      "EOR",
+      "OOR"
+    ]
   },
   {
     "id": "martyrs-isaurus-and-companions",
@@ -743,10 +632,10 @@
     "description": "Martyrs of Athens.",
     "type": "saint",
     "tags": [
+      "COE",
       "EOR",
       "OOR"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "saint-botolph",
@@ -756,19 +645,17 @@
     "type": "saint",
     "tags": [
       "ANG"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
-    "id": "martyrs-isaurus-and-companions",
+    "id": "saint-ranieri-of-pisa",
     "day": "June 17",
-    "name": "Martyrs Isaurus and Companions",
-    "description": "Martyrs of Athens.",
+    "name": "Saint Ranieri of Pisa",
+    "description": "Hermit, died 1161 AD.",
     "type": "saint",
     "tags": [
-      "COE"
-    ],
-    "verification_status": "verified"
+      "LAT"
+    ]
   },
   {
     "id": "bernard-mizeki",
@@ -778,19 +665,7 @@
     "type": "saint",
     "tags": [
       "ANG"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-mark-and-marcellian",
-    "day": "June 18",
-    "name": "Saint Mark and Marcellian",
-    "description": "Martyrs, died 286 AD.",
-    "type": "saint",
-    "tags": [
-      "LAT"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "martyr-leontius-at-tripoli",
@@ -800,89 +675,28 @@
     "type": "saint",
     "tags": [
       "EOR"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "saint-ephrem-of-edessa",
     "day": "June 18",
     "name": "Saint Ephrem of Edessa",
-    "description": "Deacon and doctor, died 373 AD.",
+    "description": "Deacon, Confessor, Doctor, 373.",
     "type": "saint",
     "tags": [
-      "OOR"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-ephrem-of-edessa",
-    "day": "June 18",
-    "name": "Saint Ephrem of Edessa",
-    "description": "Deacon and doctor, died 373 AD.",
-    "type": "saint",
-    "tags": [
-      "COE"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-jude-thaddeus",
-    "day": "June 19",
-    "name": "Saint Jude Thaddeus",
-    "description": "Apostle and relative of the Lord.",
-    "type": "apostle",
-    "tags": [
-      "ANG",
       "COE",
-      "EOR",
-      "LAT",
       "OOR"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
-    "id": "saint-romuald",
-    "day": "June 19",
-    "name": "Saint Romuald",
-    "description": "Founder of the Camaldolese Benedictines, died 1027 AD.",
+    "id": "saint-mark-and-marcellian",
+    "day": "June 18",
+    "name": "Saint Mark and Marcellian",
+    "description": "Martyrs, died 286 AD.",
     "type": "saint",
     "tags": [
       "LAT"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-epiphanius-of-salamis",
-    "day": "June 19",
-    "name": "Saint Epiphanius of Salamis",
-    "description": "Bishop, died 403 AD.",
-    "type": "saint",
-    "tags": [
-      "OOR"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-john-of-san-francisco",
-    "day": "June 19",
-    "name": "Saint John of San Francisco",
-    "description": "Archbishop, died 1966 AD.",
-    "type": "saint",
-    "tags": [
-      "COE"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-gervase-and-protase",
-    "day": "June 19",
-    "name": "Saint Gervase and Protase",
-    "description": "Martyrs, 2nd century.",
-    "type": "saint",
-    "tags": [
-      "ANG"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "apostle-jude-the-brother-of-the-lord",
@@ -892,8 +706,61 @@
     "type": "saint",
     "tags": [
       "EOR"
-    ],
-    "verification_status": "verified"
+    ]
+  },
+  {
+    "id": "saint-epiphanius-of-salamis",
+    "day": "June 19",
+    "name": "Saint Epiphanius of Salamis",
+    "description": "Bishop, died 403 AD.",
+    "type": "saint",
+    "tags": [
+      "OOR"
+    ]
+  },
+  {
+    "id": "saint-gervase-and-protase",
+    "day": "June 19",
+    "name": "Saint Gervase and Protase",
+    "description": "Martyrs, 2nd century.",
+    "type": "saint",
+    "tags": [
+      "ANG"
+    ]
+  },
+  {
+    "id": "saint-john-of-san-francisco",
+    "day": "June 19",
+    "name": "Saint John of San Francisco",
+    "description": "Archbishop, died 1966 AD.",
+    "type": "saint",
+    "tags": [
+      "COE"
+    ]
+  },
+  {
+    "id": "saint-jude-thaddeus",
+    "day": "June 19",
+    "name": "Saint Jude Thaddeus",
+    "description": "Apostle and relative of the Lord.",
+    "type": "apostle",
+    "tags": [
+      "ANG",
+      "LAT",
+      "EOR",
+      "OOR",
+      "COE"
+    ]
+  },
+  {
+    "id": "saint-romuald",
+    "day": "June 19",
+    "name": "Saint Romuald",
+    "description": "Founder of the Camaldolese Benedictines, died 1027 AD.",
+    "type": "saint",
+    "tags": [
+      "LAT"
+    ]
   },
   {
     "id": "hieromartyr-methodius-of-patara",
@@ -902,10 +769,10 @@
     "description": "Bishop and early Church writer.",
     "type": "saint",
     "tags": [
+      "COE",
       "EOR",
       "OOR"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "irish-martyrs",
@@ -915,8 +782,7 @@
     "type": "saint",
     "tags": [
       "LAT"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "translation-of-edward-king-of-the-west-saxons",
@@ -926,31 +792,7 @@
     "type": "saint",
     "tags": [
       "ANG"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "hieromartyr-methodius-of-patara",
-    "day": "June 20",
-    "name": "Hieromartyr Methodius of Patara",
-    "description": "Bishop and early Church writer.",
-    "type": "saint",
-    "tags": [
-      "COE"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-aloysius-gonzaga",
-    "day": "June 21",
-    "name": "Saint Aloysius Gonzaga",
-    "description": "Jesuit religious and patron saint of youth.",
-    "type": "saint",
-    "tags": [
-      "LAT",
-      "OOR"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "martyr-julian-of-tarsus",
@@ -960,19 +802,7 @@
     "type": "saint",
     "tags": [
       "EOR"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-aloysius-gonzaga",
-    "day": "June 21",
-    "name": "Saint Aloysius Gonzaga",
-    "description": "Religious, died 1591 AD.",
-    "type": "saint",
-    "tags": [
-      "ANG"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "saint-aloysius-gonzaga",
@@ -981,9 +811,22 @@
     "description": "Jesuit religious and patron saint of youth.",
     "type": "saint",
     "tags": [
-      "COE"
-    ],
-    "verification_status": "verified"
+      "ANG",
+      "COE",
+      "LAT",
+      "OOR"
+    ]
+  },
+  {
+    "id": "hieromartyr-eusebius-of-samosata",
+    "day": "June 22",
+    "name": "Hieromartyr Eusebius of Samosata",
+    "description": "Bishop, died 380 AD.",
+    "type": "saint",
+    "tags": [
+      "COE",
+      "EOR"
+    ]
   },
   {
     "id": "saint-alban",
@@ -994,8 +837,7 @@
     "tags": [
       "ANG",
       "OOR"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "saint-thomas-more",
@@ -1005,41 +847,7 @@
     "type": "saint",
     "tags": [
       "LAT"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "hieromartyr-eusebius-of-samosata",
-    "day": "June 22",
-    "name": "Hieromartyr Eusebius of Samosata",
-    "description": "Bishop, died 380 AD.",
-    "type": "saint",
-    "tags": [
-      "EOR"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "hieromartyr-eusebius-of-samosata",
-    "day": "June 22",
-    "name": "Hieromartyr Eusebius of Samosata",
-    "description": "Bishop, died 380 AD.",
-    "type": "saint",
-    "tags": [
-      "COE"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-joseph-cafasso",
-    "day": "June 23",
-    "name": "Saint Joseph Cafasso",
-    "description": "Priest, died 1860 AD.",
-    "type": "saint",
-    "tags": [
-      "LAT"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "etheldreda",
@@ -1049,8 +857,7 @@
     "type": "saint",
     "tags": [
       "ANG"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "martyr-agrippina-of-rome",
@@ -1059,9 +866,9 @@
     "description": "Virgin martyr, died 260 AD.",
     "type": "saint",
     "tags": [
+      "COE",
       "EOR"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "saint-barbaros-the-myrrh-gusher",
@@ -1071,19 +878,17 @@
     "type": "saint",
     "tags": [
       "OOR"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
-    "id": "martyr-agrippina-of-rome",
+    "id": "saint-joseph-cafasso",
     "day": "June 23",
-    "name": "Martyr Agrippina of Rome",
-    "description": "Virgin martyr, died 260 AD.",
+    "name": "Saint Joseph Cafasso",
+    "description": "Priest, died 1860 AD.",
     "type": "saint",
     "tags": [
-      "COE"
-    ],
-    "verification_status": "verified"
+      "LAT"
+    ]
   },
   {
     "id": "nativity-of-saint-john-the-baptist",
@@ -1093,34 +898,11 @@
     "type": "feast",
     "tags": [
       "ANG",
-      "COE",
-      "EOR",
       "LAT",
-      "OOR"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "nativity-of-saint-john-the-baptist",
-    "day": "June 24",
-    "name": "Nativity of Saint John the Baptist",
-    "description": "Feast of the birth of the Forerunner.",
-    "type": "saint",
-    "tags": [
-      "EOR"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "nativity-of-saint-john-the-baptist",
-    "day": "June 24",
-    "name": "Nativity of Saint John the Baptist",
-    "description": "Shared feast.",
-    "type": "saint",
-    "tags": [
-      "OOR"
-    ],
-    "verification_status": "verified"
+      "EOR",
+      "OOR",
+      "COE"
+    ]
   },
   {
     "id": "saint-prosper-of-reggio",
@@ -1130,8 +912,7 @@
     "type": "saint",
     "tags": [
       "LAT"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "virgin-martyr-febronia-of-nisibis",
@@ -1140,32 +921,23 @@
     "description": "Martyr, died 304 AD.",
     "type": "saint",
     "tags": [
+      "ANG",
+      "COE",
       "EOR",
       "OOR"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
-    "id": "virgin-martyr-febronia-of-nisibis",
-    "day": "June 25",
-    "name": "Virgin Martyr Febronia of Nisibis",
-    "description": "Martyr, died 304 AD.",
+    "id": "saint-david-of-thessaloniki",
+    "day": "June 26",
+    "name": "Saint David of Thessaloniki",
+    "description": "Hermit, 6th century.",
     "type": "saint",
     "tags": [
-      "ANG"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "virgin-martyr-febronia-of-nisibis",
-    "day": "June 25",
-    "name": "Virgin Martyr Febronia of Nisibis",
-    "description": "Martyr, died 304 AD.",
-    "type": "saint",
-    "tags": [
-      "COE"
-    ],
-    "verification_status": "verified"
+      "ANG",
+      "COE",
+      "EOR"
+    ]
   },
   {
     "id": "saint-josemaria-escriva",
@@ -1175,19 +947,7 @@
     "type": "saint",
     "tags": [
       "LAT"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-david-of-thessaloniki",
-    "day": "June 26",
-    "name": "Saint David of Thessaloniki",
-    "description": "Hermit, 6th century.",
-    "type": "saint",
-    "tags": [
-      "EOR"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "tikhvin-icon-of-the-mother-of-god",
@@ -1197,45 +957,21 @@
     "type": "saint",
     "tags": [
       "OOR"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-david-of-thessaloniki",
-    "day": "June 26",
-    "name": "Saint David of Thessaloniki",
-    "description": "Hermit, 6th century.",
-    "type": "saint",
-    "tags": [
-      "ANG"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-david-of-thessaloniki",
-    "day": "June 26",
-    "name": "Saint David of Thessaloniki",
-    "description": "Hermit, 6th century.",
-    "type": "saint",
-    "tags": [
-      "COE"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "saint-cyril-of-alexandria",
     "day": "June 27",
     "name": "Saint Cyril of Alexandria",
-    "description": "Bishop, Doctor of the Church, and defender of the title 'Theotokos'.",
+    "description": "Bishop and Doctor of the Church, died 444.",
     "type": "saint",
     "tags": [
       "ANG",
-      "COE",
-      "EOR",
       "LAT",
-      "OOR"
-    ],
-    "verification_status": "verified"
+      "EOR",
+      "OOR",
+      "COE"
+    ]
   },
   {
     "id": "saint-irenaeus-of-lyons",
@@ -1245,12 +981,11 @@
     "type": "saint",
     "tags": [
       "ANG",
-      "COE",
-      "EOR",
       "LAT",
-      "OOR"
-    ],
-    "verification_status": "verified"
+      "EOR",
+      "OOR",
+      "COE"
+    ]
   },
   {
     "id": "translation-of-the-relics-of-saints-cyrus-and-john",
@@ -1260,23 +995,7 @@
     "type": "saint",
     "tags": [
       "EOR"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saints-peter-and-paul-apostles",
-    "day": "June 29",
-    "name": "Saints Peter and Paul, Apostles",
-    "description": "The chief pillars of the Church and martyrs at Rome.",
-    "type": "apostle",
-    "tags": [
-      "ANG",
-      "COE",
-      "EOR",
-      "LAT",
-      "OOR"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "saint-emma",
@@ -1286,8 +1005,21 @@
     "type": "saint",
     "tags": [
       "LAT"
-    ],
-    "verification_status": "verified"
+    ]
+  },
+  {
+    "id": "saints-peter-and-paul-apostles",
+    "day": "June 29",
+    "name": "Saints Peter and Paul, Apostles",
+    "description": "The chief pillars of the Church and martyrs at Rome.",
+    "type": "apostle",
+    "tags": [
+      "ANG",
+      "LAT",
+      "EOR",
+      "OOR",
+      "COE"
+    ]
   },
   {
     "id": "holy-martyrs-of-the-church-of-rome",
@@ -1297,8 +1029,7 @@
     "type": "commemoration",
     "tags": [
       "LAT"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "synaxis-of-the-twelve-apostles",
@@ -1310,7 +1041,6 @@
       "COE",
       "EOR",
       "OOR"
-    ],
-    "verification_status": "verified"
+    ]
   }
 ]

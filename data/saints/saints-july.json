@@ -1,5 +1,15 @@
 [
   {
+    "id": "mar-mari-the-apostle",
+    "day": "July 1",
+    "name": "Mar Mari the Apostle",
+    "description": "Commemoration of the teacher of the East.",
+    "type": "saint",
+    "tags": [
+      "COE"
+    ]
+  },
+  {
     "id": "saint-jun-pero-serra",
     "day": "July 1",
     "name": "Saint Junípero Serra",
@@ -7,30 +17,7 @@
     "type": "saint",
     "tags": [
       "LAT"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saints-cosmas-and-damian-of-rome",
-    "day": "July 1",
-    "name": "Saints Cosmas and Damian of Rome",
-    "description": "Unmercenary physicians who healed without charge.",
-    "type": "saint",
-    "tags": [
-      "EOR"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-pishoy-bishoy",
-    "day": "July 1",
-    "name": "Saint Pishoy (Bishoy)",
-    "description": "The 'Star of the Desert' and beloved Coptic monastic father.",
-    "type": "saint",
-    "tags": [
-      "OOR"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "saint-oliver-plunkett",
@@ -40,30 +27,27 @@
     "type": "saint",
     "tags": [
       "ANG"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
-    "id": "mar-mari-the-apostle",
+    "id": "saint-pishoy-bishoy",
     "day": "July 1",
-    "name": "Mar Mari the Apostle",
-    "description": "Evangelist of Mesopotamia and the Far East.",
+    "name": "Saint Pishoy (Bishoy)",
+    "description": "The 'Star of the Desert' and beloved Coptic monastic father.",
     "type": "saint",
     "tags": [
-      "COE"
-    ],
-    "verification_status": "verified"
+      "OOR"
+    ]
   },
   {
-    "id": "saint-processus-and-saint-martinian",
-    "day": "July 2",
-    "name": "Saint Processus and Saint Martinian",
-    "description": "Martyrs of Rome, traditionally the jailers of St. Peter.",
+    "id": "saints-cosmas-and-damian-of-rome",
+    "day": "July 1",
+    "name": "Saints Cosmas and Damian of Rome",
+    "description": "Unmercenary physicians who healed without charge.",
     "type": "saint",
     "tags": [
-      "LAT"
-    ],
-    "verification_status": "verified"
+      "EOR"
+    ]
   },
   {
     "id": "feast-of-the-visitation",
@@ -73,8 +57,17 @@
     "type": "saint",
     "tags": [
       "OOR"
-    ],
-    "verification_status": "verified"
+    ]
+  },
+  {
+    "id": "mar-addai",
+    "day": "July 2",
+    "name": "Mar Addai",
+    "description": "One of the Seventy Disciples and Apostle to Edessa.",
+    "type": "saint",
+    "tags": [
+      "COE"
+    ]
   },
   {
     "id": "saint-otto-of-bamberg",
@@ -84,19 +77,37 @@
     "type": "saint",
     "tags": [
       "ANG"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
-    "id": "mar-addai",
+    "id": "saint-processus-and-saint-martinian",
     "day": "July 2",
-    "name": "Mar Addai",
-    "description": "Apostle of the Seventy and teacher of Edessa.",
+    "name": "Saint Processus and Saint Martinian",
+    "description": "Martyrs of Rome, traditionally the jailers of St. Peter.",
     "type": "saint",
     "tags": [
-      "COE"
-    ],
-    "verification_status": "verified"
+      "LAT"
+    ]
+  },
+  {
+    "id": "john-coleridge-patteson",
+    "day": "July 3",
+    "name": "John Coleridge Patteson",
+    "description": "Bishop of Melanesia and Martyr, 1871.",
+    "type": "saint",
+    "tags": [
+      "ANG"
+    ]
+  },
+  {
+    "id": "martyr-hyacinth-of-caesarea",
+    "day": "July 3",
+    "name": "Martyr Hyacinth of Caesarea",
+    "description": "A youth in the court of Trajan who died for the faith.",
+    "type": "saint",
+    "tags": [
+      "EOR"
+    ]
   },
   {
     "id": "saint-thomas-the-apostle",
@@ -108,30 +119,28 @@
       "COE",
       "LAT",
       "OOR"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
-    "id": "martyr-hyacinth-of-caesarea",
-    "day": "July 3",
-    "name": "Martyr Hyacinth of Caesarea",
-    "description": "A youth in the court of Trajan who died for the faith.",
+    "id": "mar-papa-bar-aggai",
+    "day": "July 4",
+    "name": "Mar Papa bar Aggai",
+    "description": "Early Catholicos of Seleucia-Ctesiphon.",
     "type": "saint",
     "tags": [
+      "COE"
+    ]
+  },
+  {
+    "id": "saint-andrew-of-crete",
+    "day": "July 4",
+    "name": "Saint Andrew of Crete",
+    "description": "Archbishop and author of the Great Canon of Repentance.",
+    "type": "saint",
+    "tags": [
+      "ANG",
       "EOR"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "john-coleridge-patteson",
-    "day": "July 3",
-    "name": "John Coleridge Patteson",
-    "description": "Bishop of Melanesia and Martyr, 1871.",
-    "type": "saint",
-    "tags": [
-      "ANG"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "saint-elizabeth-of-portugal",
@@ -141,19 +150,7 @@
     "type": "saint",
     "tags": [
       "LAT"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-andrew-of-crete",
-    "day": "July 4",
-    "name": "Saint Andrew of Crete",
-    "description": "Archbishop and author of the Great Canon of Repentance.",
-    "type": "saint",
-    "tags": [
-      "EOR"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "the-holy-royal-martyrs-of-russia",
@@ -163,30 +160,17 @@
     "type": "saint",
     "tags": [
       "OOR"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
-    "id": "saint-andrew-of-crete",
-    "day": "July 4",
-    "name": "Saint Andrew of Crete",
-    "description": "Bishop and hymnographer, died 740.",
-    "type": "saint",
-    "tags": [
-      "ANG"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "mar-papa-bar-aggai",
-    "day": "July 4",
-    "name": "Mar Papa bar Aggai",
-    "description": "Catholicos during the early organization of the Church.",
+    "id": "mar-shalita",
+    "day": "July 5",
+    "name": "Mar Shalita",
+    "description": "Disciple of Mar Augin and ascetic.",
     "type": "saint",
     "tags": [
       "COE"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "saint-anthony-mary-zaccaria",
@@ -196,30 +180,7 @@
     "type": "saint",
     "tags": [
       "LAT"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "venerable-athanasius-of-mount-athos",
-    "day": "July 5",
-    "name": "Venerable Athanasius of Mount Athos",
-    "description": "Founder of the Great Lavra and Athonite monasticism.",
-    "type": "saint",
-    "tags": [
-      "EOR"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-lampad",
-    "day": "July 5",
-    "name": "Saint Lampad",
-    "description": "Hermit and miracle-worker of Irenopolis.",
-    "type": "saint",
-    "tags": [
-      "OOR"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "saint-cyril-of-alexandria",
@@ -229,41 +190,27 @@
     "type": "saint",
     "tags": [
       "ANG"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
-    "id": "mar-shalita",
+    "id": "saint-lampad",
     "day": "July 5",
-    "name": "Mar Shalita",
-    "description": "Disciple of Mar Augin and renowned healer.",
+    "name": "Saint Lampad",
+    "description": "Hermit and miracle-worker of Irenopolis.",
     "type": "saint",
     "tags": [
-      "COE"
-    ],
-    "verification_status": "verified"
+      "OOR"
+    ]
   },
   {
-    "id": "saint-maria-goretti",
-    "day": "July 6",
-    "name": "Saint Maria Goretti",
-    "description": "Virgin and martyr; patroness of forgiveness.",
-    "type": "saint",
-    "tags": [
-      "LAT"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-sisoes-the-great",
-    "day": "July 6",
-    "name": "Saint Sisoes the Great",
-    "description": "Famous Desert Father and ascetic.",
+    "id": "venerable-athanasius-of-mount-athos",
+    "day": "July 5",
+    "name": "Venerable Athanasius of Mount Athos",
+    "description": "Founder of the Great Lavra and Athonite monasticism.",
     "type": "saint",
     "tags": [
       "EOR"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "abouna-mina-aboud",
@@ -273,19 +220,7 @@
     "type": "saint",
     "tags": [
       "OOR"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "thomas-more",
-    "day": "July 6",
-    "name": "Thomas More",
-    "description": "Scholar and martyr for conscience.",
-    "type": "saint",
-    "tags": [
-      "ANG"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "saint-isaiah-the-prophet",
@@ -295,52 +230,37 @@
     "type": "saint",
     "tags": [
       "COE"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
-    "id": "saint-palladius",
-    "day": "July 7",
-    "name": "Saint Palladius",
-    "description": "First bishop sent to the Christians of Ireland.",
+    "id": "saint-maria-goretti",
+    "day": "July 6",
+    "name": "Saint Maria Goretti",
+    "description": "Virgin and martyr; patroness of forgiveness.",
     "type": "saint",
     "tags": [
       "LAT"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
-    "id": "saint-kyriaki-cyriaca-of-nicomedia",
-    "day": "July 7",
-    "name": "Saint Kyriaki (Cyriaca) of Nicomedia",
-    "description": "Great Martyr who suffered under Diocletian.",
+    "id": "saint-sisoes-the-great",
+    "day": "July 6",
+    "name": "Saint Sisoes the Great",
+    "description": "Famous Desert Father and ascetic.",
     "type": "saint",
     "tags": [
       "EOR"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
-    "id": "saint-thomas-of-mount-maleon",
-    "day": "July 7",
-    "name": "Saint Thomas of Mount Maleon",
-    "description": "Ascetic who lived in solitude on the mountain.",
-    "type": "saint",
-    "tags": [
-      "OOR"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "thomas-cranmer",
-    "day": "July 7",
-    "name": "Thomas Cranmer",
-    "description": "Archbishop and compiler of the Prayer Book, martyr, died 1556.",
+    "id": "thomas-more",
+    "day": "July 6",
+    "name": "Thomas More",
+    "description": "Scholar and martyr for conscience.",
     "type": "saint",
     "tags": [
       "ANG"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "mar-augin-commemoration",
@@ -350,19 +270,47 @@
     "type": "saint",
     "tags": [
       "COE"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
-    "id": "saints-adrian-iii",
-    "day": "July 8",
-    "name": "Saints Adrian III",
-    "description": "Pope and peacemaker.",
+    "id": "saint-kyriaki-cyriaca-of-nicomedia",
+    "day": "July 7",
+    "name": "Saint Kyriaki (Cyriaca) of Nicomedia",
+    "description": "Great Martyr who suffered under Diocletian.",
+    "type": "saint",
+    "tags": [
+      "EOR"
+    ]
+  },
+  {
+    "id": "saint-palladius",
+    "day": "July 7",
+    "name": "Saint Palladius",
+    "description": "First bishop sent to the Christians of Ireland.",
     "type": "saint",
     "tags": [
       "LAT"
-    ],
-    "verification_status": "verified"
+    ]
+  },
+  {
+    "id": "saint-thomas-of-mount-maleon",
+    "day": "July 7",
+    "name": "Saint Thomas of Mount Maleon",
+    "description": "Ascetic who lived in solitude on the mountain.",
+    "type": "saint",
+    "tags": [
+      "OOR"
+    ]
+  },
+  {
+    "id": "thomas-cranmer",
+    "day": "July 7",
+    "name": "Thomas Cranmer",
+    "description": "Archbishop and compiler of the Prayer Book, martyr, died 1556.",
+    "type": "saint",
+    "tags": [
+      "ANG"
+    ]
   },
   {
     "id": "great-martyr-procopius",
@@ -373,41 +321,37 @@
     "tags": [
       "EOR",
       "OOR"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saints-aquila-and-priscilla",
-    "day": "July 8",
-    "name": "Saints Aquila and Priscilla",
-    "description": "The tentmakers and friends of St. Paul.",
-    "type": "saint",
-    "tags": [
-      "ANG"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "mar-pethion",
     "day": "July 8",
     "name": "Mar Pethion",
-    "description": "Evangelist and martyr of the Persian Empire.",
+    "description": "Martyr and evangelist of the Persian interior.",
     "type": "saint",
     "tags": [
       "COE"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
-    "id": "saint-augustine-zhao-rong-and-companions",
-    "day": "July 9",
-    "name": "Saint Augustine Zhao Rong and Companions",
-    "description": "Martyrs of China.",
+    "id": "saints-adrian-iii",
+    "day": "July 8",
+    "name": "Saints Adrian III",
+    "description": "Pope and peacemaker.",
     "type": "saint",
     "tags": [
       "LAT"
-    ],
-    "verification_status": "verified"
+    ]
+  },
+  {
+    "id": "saints-aquila-and-priscilla",
+    "day": "July 8",
+    "name": "Saints Aquila and Priscilla",
+    "description": "Missionary couple.",
+    "type": "saint",
+    "tags": [
+      "ANG"
+    ]
   },
   {
     "id": "hieromartyr-pancratius-of-taormina",
@@ -418,19 +362,7 @@
     "tags": [
       "EOR",
       "OOR"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-leo-the-great",
-    "day": "July 9",
-    "name": "Saint Leo the Great",
-    "description": "Pope and Doctor of the Church, died 461.",
-    "type": "saint",
-    "tags": [
-      "ANG"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "mar-shimon-bar-sabbae-commemoration",
@@ -440,41 +372,37 @@
     "type": "saint",
     "tags": [
       "COE"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
-    "id": "saint-veronica-giuliani",
-    "day": "July 10",
-    "name": "Saint Veronica Giuliani",
-    "description": "Capuchin nun and mystic.",
+    "id": "saint-augustine-zhao-rong-and-companions",
+    "day": "July 9",
+    "name": "Saint Augustine Zhao Rong and Companions",
+    "description": "Martyrs of China.",
     "type": "saint",
     "tags": [
       "LAT"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
-    "id": "the-45-martyrs-of-nikopolis",
-    "day": "July 10",
-    "name": "The 45 Martyrs of Nikopolis",
-    "description": "Martyred in Armenia under Emperor Licinius.",
+    "id": "saint-leo-the-great",
+    "day": "July 9",
+    "name": "Saint Leo the Great",
+    "description": "Pope and Doctor of the Church, died 461.",
     "type": "saint",
     "tags": [
-      "EOR"
-    ],
-    "verification_status": "verified"
+      "ANG"
+    ]
   },
   {
-    "id": "venerable-anthony-of-the-kiev-caves",
+    "id": "mar-babai-the-great",
     "day": "July 10",
-    "name": "Venerable Anthony of the Kiev Caves",
-    "description": "Father of Russian/Ukrainian monasticism.",
+    "name": "Mar Babai the Great",
+    "description": "Pillar of the Church of the East.",
     "type": "saint",
     "tags": [
-      "OOR"
-    ],
-    "verification_status": "verified"
+      "COE"
+    ]
   },
   {
     "id": "saint-benedict-of-nursia-eve",
@@ -484,19 +412,57 @@
     "type": "saint",
     "tags": [
       "ANG"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
-    "id": "mar-babai-the-great",
+    "id": "saint-veronica-giuliani",
     "day": "July 10",
-    "name": "Mar Babai the Great",
-    "description": "Guardian of the faith and monastic reformer.",
+    "name": "Saint Veronica Giuliani",
+    "description": "Capuchin nun and mystic.",
+    "type": "saint",
+    "tags": [
+      "LAT"
+    ]
+  },
+  {
+    "id": "the-45-martyrs-of-nikopolis",
+    "day": "July 10",
+    "name": "The 45 Martyrs of Nikopolis",
+    "description": "Martyred in Armenia under Emperor Licinius.",
+    "type": "saint",
+    "tags": [
+      "EOR"
+    ]
+  },
+  {
+    "id": "venerable-anthony-of-the-kiev-caves",
+    "day": "July 10",
+    "name": "Venerable Anthony of the Kiev Caves",
+    "description": "Father of Russian/Ukrainian monasticism.",
+    "type": "saint",
+    "tags": [
+      "OOR"
+    ]
+  },
+  {
+    "id": "great-martyr-euphemia",
+    "day": "July 11",
+    "name": "Great Martyr Euphemia",
+    "description": "The 'All-Praised' martyr of Chalcedon.",
+    "type": "saint",
+    "tags": [
+      "EOR"
+    ]
+  },
+  {
+    "id": "mar-isaac-of-nineveh",
+    "day": "July 11",
+    "name": "Mar Isaac of Nineveh",
+    "description": "Mystic and bishop.",
     "type": "saint",
     "tags": [
       "COE"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "saint-benedict-of-nursia",
@@ -507,19 +473,7 @@
     "tags": [
       "ANG",
       "LAT"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "great-martyr-euphemia",
-    "day": "July 11",
-    "name": "Great Martyr Euphemia",
-    "description": "The 'All-Praised' martyr of Chalcedon.",
-    "type": "saint",
-    "tags": [
-      "EOR"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "saint-olga-of-kiev",
@@ -529,63 +483,7 @@
     "type": "saint",
     "tags": [
       "OOR"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "mar-isaac-of-nineveh",
-    "day": "July 11",
-    "name": "Mar Isaac of Nineveh",
-    "description": "Mystic and teacher of the spiritual life.",
-    "type": "saint",
-    "tags": [
-      "COE"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-veronica",
-    "day": "July 12",
-    "name": "Saint Veronica",
-    "description": "The woman who wiped the Holy Face of Jesus.",
-    "type": "saint",
-    "tags": [
-      "LAT"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "martyrs-proclus-and-hilary",
-    "day": "July 12",
-    "name": "Martyrs Proclus and Hilary",
-    "description": "Martyrs of Ancyra.",
-    "type": "saint",
-    "tags": [
-      "EOR"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-paisios-the-athonite",
-    "day": "July 12",
-    "name": "Saint Paisios the Athonite",
-    "description": "Modern saint and elder of Mount Athos.",
-    "type": "saint",
-    "tags": [
-      "OOR"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-john-cassian",
-    "day": "July 12",
-    "name": "Saint John Cassian",
-    "description": "Abbot and theologian, died 435.",
-    "type": "saint",
-    "tags": [
-      "ANG"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "mar-abraham-of-kashkar",
@@ -595,19 +493,47 @@
     "type": "saint",
     "tags": [
       "COE"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
-    "id": "saint-henry",
-    "day": "July 13",
-    "name": "Saint Henry",
-    "description": "Holy Roman Emperor and just ruler.",
+    "id": "martyrs-proclus-and-hilary",
+    "day": "July 12",
+    "name": "Martyrs Proclus and Hilary",
+    "description": "Martyrs of Ancyra.",
+    "type": "saint",
+    "tags": [
+      "EOR"
+    ]
+  },
+  {
+    "id": "saint-john-cassian",
+    "day": "July 12",
+    "name": "Saint John Cassian",
+    "description": "Abbot and theologian, died 435.",
+    "type": "saint",
+    "tags": [
+      "ANG"
+    ]
+  },
+  {
+    "id": "saint-paisios-the-athonite",
+    "day": "July 12",
+    "name": "Saint Paisios the Athonite",
+    "description": "Modern saint and elder of Mount Athos.",
+    "type": "saint",
+    "tags": [
+      "OOR"
+    ]
+  },
+  {
+    "id": "saint-veronica",
+    "day": "July 12",
+    "name": "Saint Veronica",
+    "description": "The woman who wiped the Holy Face of Jesus.",
     "type": "saint",
     "tags": [
       "LAT"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "archangel-gabriel",
@@ -618,8 +544,27 @@
     "tags": [
       "EOR",
       "OOR"
-    ],
-    "verification_status": "verified"
+    ]
+  },
+  {
+    "id": "mar-narsai",
+    "day": "July 13",
+    "name": "Mar Narsai",
+    "description": "The 'Harp of the Spirit' and poet-theologian.",
+    "type": "saint",
+    "tags": [
+      "COE"
+    ]
+  },
+  {
+    "id": "saint-henry",
+    "day": "July 13",
+    "name": "Saint Henry",
+    "description": "Holy Roman Emperor and just ruler.",
+    "type": "saint",
+    "tags": [
+      "LAT"
+    ]
   },
   {
     "id": "saint-silas",
@@ -629,30 +574,17 @@
     "type": "saint",
     "tags": [
       "ANG"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
-    "id": "mar-narsai",
-    "day": "July 13",
-    "name": "Mar Narsai",
-    "description": "The Harp of the Spirit and poet.",
+    "id": "mar-awa",
+    "day": "July 14",
+    "name": "Mar Awa",
+    "description": "Catholicos and scholar.",
     "type": "saint",
     "tags": [
       "COE"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-kateri-tekakwitha",
-    "day": "July 14",
-    "name": "Saint Kateri Tekakwitha",
-    "description": "The Lily of the Mohawks; first Native American saint.",
-    "type": "saint",
-    "tags": [
-      "LAT"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "saint-aquila",
@@ -663,8 +595,17 @@
     "tags": [
       "EOR",
       "OOR"
-    ],
-    "verification_status": "verified"
+    ]
+  },
+  {
+    "id": "saint-kateri-tekakwitha",
+    "day": "July 14",
+    "name": "Saint Kateri Tekakwitha",
+    "description": "The 'Lily of the Mohawks,' first Native American saint.",
+    "type": "saint",
+    "tags": [
+      "LAT"
+    ]
   },
   {
     "id": "samson-occom",
@@ -674,19 +615,17 @@
     "type": "saint",
     "tags": [
       "ANG"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
-    "id": "mar-awa",
-    "day": "July 14",
-    "name": "Mar Awa",
-    "description": "Catholicos and defender of the East.",
+    "id": "mar-saba",
+    "day": "July 15",
+    "name": "Mar Saba",
+    "description": "Monk and miracle worker.",
     "type": "saint",
     "tags": [
       "COE"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "saint-bonaventure",
@@ -696,19 +635,7 @@
     "type": "saint",
     "tags": [
       "LAT"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-vladimir-of-kiev",
-    "day": "July 15",
-    "name": "Saint Vladimir of Kiev",
-    "description": "Baptizer of Rus' and Prince.",
-    "type": "saint",
-    "tags": [
-      "EOR"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "saint-cyricus-and-saint-julitta",
@@ -718,8 +645,17 @@
     "type": "saint",
     "tags": [
       "OOR"
-    ],
-    "verification_status": "verified"
+    ]
+  },
+  {
+    "id": "saint-vladimir-of-kiev",
+    "day": "July 15",
+    "name": "Saint Vladimir of Kiev",
+    "description": "Baptizer of Rus' and Prince.",
+    "type": "saint",
+    "tags": [
+      "EOR"
+    ]
   },
   {
     "id": "swithun-of-winchester",
@@ -729,19 +665,27 @@
     "type": "saint",
     "tags": [
       "ANG"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
-    "id": "mar-saba",
-    "day": "July 15",
-    "name": "Mar Saba",
-    "description": "The holy monk and worker of signs.",
+    "id": "anne-askew",
+    "day": "July 16",
+    "name": "Anne Askew",
+    "description": "Poet and martyr, 1546.",
+    "type": "saint",
+    "tags": [
+      "ANG"
+    ]
+  },
+  {
+    "id": "mar-zeia",
+    "day": "July 16",
+    "name": "Mar Zeia",
+    "description": "The traveler and ascetic.",
     "type": "saint",
     "tags": [
       "COE"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "our-lady-of-mount-carmel",
@@ -751,8 +695,7 @@
     "type": "saint",
     "tags": [
       "LAT"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "saint-athenogenes",
@@ -763,30 +706,17 @@
     "tags": [
       "EOR",
       "OOR"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
-    "id": "anne-askew",
-    "day": "July 16",
-    "name": "Anne Askew",
-    "description": "Poet and martyr, 1546.",
-    "type": "saint",
-    "tags": [
-      "ANG"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "mar-zeia",
-    "day": "July 16",
-    "name": "Mar Zeia",
-    "description": "The traveler and miracle worker.",
+    "id": "mar-yohannan",
+    "day": "July 17",
+    "name": "Mar Yohannan",
+    "description": "Bishop and confessor.",
     "type": "saint",
     "tags": [
       "COE"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "saint-leo-iv",
@@ -796,8 +726,7 @@
     "type": "saint",
     "tags": [
       "LAT"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "saint-marina",
@@ -808,8 +737,7 @@
     "tags": [
       "EOR",
       "OOR"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "william-white",
@@ -819,19 +747,27 @@
     "type": "saint",
     "tags": [
       "ANG"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
-    "id": "mar-yohannan",
-    "day": "July 17",
-    "name": "Mar Yohannan",
-    "description": "Bishop and tireless confessor.",
+    "id": "elizabeth-ferard",
+    "day": "July 18",
+    "name": "Elizabeth Ferard",
+    "description": "First Deaconess of the Church of England, 1883.",
+    "type": "saint",
+    "tags": [
+      "ANG"
+    ]
+  },
+  {
+    "id": "mar-sabrisho",
+    "day": "July 18",
+    "name": "Mar Sabrisho",
+    "description": "Catholicos and monk.",
     "type": "saint",
     "tags": [
       "COE"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "saint-camillus-de-lellis",
@@ -841,8 +777,7 @@
     "type": "saint",
     "tags": [
       "LAT"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "saint-emilian",
@@ -853,30 +788,17 @@
     "tags": [
       "EOR",
       "OOR"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
-    "id": "elizabeth-ferard",
-    "day": "July 18",
-    "name": "Elizabeth Ferard",
-    "description": "First Deaconess of the Church of England, 1883.",
-    "type": "saint",
-    "tags": [
-      "ANG"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "mar-sabrisho",
-    "day": "July 18",
-    "name": "Mar Sabrisho",
-    "description": "Commemoration of the Catholicos and monk.",
+    "id": "mar-mushi",
+    "day": "July 19",
+    "name": "Mar Mushi",
+    "description": "Monk and writer.",
     "type": "saint",
     "tags": [
       "COE"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "saint-arsenius-the-great",
@@ -886,8 +808,7 @@
     "type": "saint",
     "tags": [
       "LAT"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "saint-macrina-the-younger",
@@ -899,30 +820,7 @@
       "ANG",
       "EOR",
       "OOR"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "mar-mushi",
-    "day": "July 19",
-    "name": "Mar Mushi",
-    "description": "Teacher and writer of the East.",
-    "type": "saint",
-    "tags": [
-      "COE"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-apollinaris",
-    "day": "July 20",
-    "name": "Saint Apollinaris",
-    "description": "Bishop and Martyr.",
-    "type": "saint",
-    "tags": [
-      "LAT"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "prophet-elias-elijah",
@@ -934,8 +832,7 @@
       "COE",
       "EOR",
       "OOR"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "prophet-elijah",
@@ -945,19 +842,27 @@
     "type": "saint",
     "tags": [
       "ANG"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
-    "id": "saint-lawrence-of-brindisi",
-    "day": "July 21",
-    "name": "Saint Lawrence of Brindisi",
-    "description": "Doctor of the Church and Capuchin.",
+    "id": "saint-apollinaris",
+    "day": "July 20",
+    "name": "Saint Apollinaris",
+    "description": "Bishop and Martyr.",
     "type": "saint",
     "tags": [
       "LAT"
-    ],
-    "verification_status": "verified"
+    ]
+  },
+  {
+    "id": "mar-sliwa",
+    "day": "July 21",
+    "name": "Mar Sliwa",
+    "description": "Martyr.",
+    "type": "saint",
+    "tags": [
+      "COE"
+    ]
   },
   {
     "id": "prophet-ezekiel",
@@ -968,30 +873,28 @@
     "tags": [
       "EOR",
       "OOR"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "saint-lawrence-of-brindisi",
     "day": "July 21",
     "name": "Saint Lawrence of Brindisi",
-    "description": "Priest and Teacher.",
+    "description": "Doctor of the Church and Capuchin.",
     "type": "saint",
     "tags": [
-      "ANG"
-    ],
-    "verification_status": "verified"
+      "ANG",
+      "LAT"
+    ]
   },
   {
-    "id": "mar-sliwa",
-    "day": "July 21",
-    "name": "Mar Sliwa",
-    "description": "The Martyr of the Cross.",
+    "id": "mar-mari-translation-of-relics",
+    "day": "July 22",
+    "name": "Mar Mari (Translation of Relics)",
+    "description": "Commemoration of the Apostle.",
     "type": "saint",
     "tags": [
       "COE"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "saint-mary-magdalene",
@@ -1004,19 +907,17 @@
       "EOR",
       "LAT",
       "OOR"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
-    "id": "mar-mari-translation-of-relics",
-    "day": "July 22",
-    "name": "Mar Mari (Translation of Relics)",
-    "description": "Commemoration of the Apostle.",
+    "id": "mar-qardagh",
+    "day": "July 23",
+    "name": "Mar Qardagh",
+    "description": "Governor and martyr.",
     "type": "saint",
     "tags": [
       "COE"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "saint-bridget-of-sweden",
@@ -1027,8 +928,7 @@
     "tags": [
       "ANG",
       "LAT"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "saint-phocas",
@@ -1039,30 +939,17 @@
     "tags": [
       "EOR",
       "OOR"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
-    "id": "mar-qardagh",
-    "day": "July 23",
-    "name": "Mar Qardagh",
-    "description": "The Martyr Prince.",
+    "id": "mar-addai-secondary-feast",
+    "day": "July 24",
+    "name": "Mar Addai (Secondary Feast)",
+    "description": "Commemoration of the teacher.",
     "type": "saint",
     "tags": [
       "COE"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-sharbel-makhlouf",
-    "day": "July 24",
-    "name": "Saint Sharbel Makhlouf",
-    "description": "Maronite monk and miracle worker.",
-    "type": "saint",
-    "tags": [
-      "LAT"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "saint-christina",
@@ -1073,8 +960,17 @@
     "tags": [
       "EOR",
       "OOR"
-    ],
-    "verification_status": "verified"
+    ]
+  },
+  {
+    "id": "saint-sharbel-makhlouf",
+    "day": "July 24",
+    "name": "Saint Sharbel Makhlouf",
+    "description": "Maronite monk and miracle worker.",
+    "type": "saint",
+    "tags": [
+      "LAT"
+    ]
   },
   {
     "id": "thomas-kempis",
@@ -1084,19 +980,27 @@
     "type": "saint",
     "tags": [
       "ANG"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
-    "id": "mar-addai-secondary-feast",
-    "day": "July 24",
-    "name": "Mar Addai (Secondary Feast)",
-    "description": "Commemoration of the teacher.",
+    "id": "dormition-of-saint-anna",
+    "day": "July 25",
+    "name": "Dormition of Saint Anna",
+    "description": "Falling asleep of the mother of the Virgin Mary.",
+    "type": "saint",
+    "tags": [
+      "EOR"
+    ]
+  },
+  {
+    "id": "mar-ya-qub-saint-james",
+    "day": "July 25",
+    "name": "Mar Ya'qub (Saint James)",
+    "description": "The Apostle.",
     "type": "saint",
     "tags": [
       "COE"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "saint-james-the-apostle",
@@ -1108,30 +1012,17 @@
       "ANG",
       "LAT",
       "OOR"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
-    "id": "dormition-of-saint-anna",
-    "day": "July 25",
-    "name": "Dormition of Saint Anna",
-    "description": "Falling asleep of the mother of the Theotokos.",
-    "type": "saint",
-    "tags": [
-      "EOR"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "mar-ya-qub-saint-james",
-    "day": "July 25",
-    "name": "Mar Ya'qub (Saint James)",
-    "description": "The Apostle.",
+    "id": "mar-mari-synaxis",
+    "day": "July 26",
+    "name": "Mar Mari (Synaxis)",
+    "description": "Assembly in honor of the Apostle.",
     "type": "saint",
     "tags": [
       "COE"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "saint-joachim-and-saint-anne",
@@ -1144,19 +1035,17 @@
       "EOR",
       "LAT",
       "OOR"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
-    "id": "mar-mari-synaxis",
-    "day": "July 26",
-    "name": "Mar Mari (Synaxis)",
-    "description": "Assembly in honor of the Apostle.",
+    "id": "mar-augustine-commemoration",
+    "day": "July 27",
+    "name": "Mar Augustine (Commemoration)",
+    "description": "Teacher of the faith.",
     "type": "saint",
     "tags": [
       "COE"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "saint-pantaleon",
@@ -1166,8 +1055,7 @@
     "type": "saint",
     "tags": [
       "LAT"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "saint-panteleimon",
@@ -1178,8 +1066,7 @@
     "tags": [
       "EOR",
       "OOR"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "william-reed-huntington",
@@ -1189,30 +1076,7 @@
     "type": "saint",
     "tags": [
       "ANG"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "mar-augustine-commemoration",
-    "day": "July 27",
-    "name": "Mar Augustine (Commemoration)",
-    "description": "Teacher of the faith.",
-    "type": "saint",
-    "tags": [
-      "COE"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-samson-of-dol",
-    "day": "July 28",
-    "name": "Saint Samson of Dol",
-    "description": "Abbot and Bishop.",
-    "type": "saint",
-    "tags": [
-      "LAT"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "apostles-of-the-seventy-prochorus-and-nicanor",
@@ -1223,19 +1087,7 @@
     "tags": [
       "EOR",
       "OOR"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-victor-i",
-    "day": "July 28",
-    "name": "Saint Victor I",
-    "description": "Pope and martyr, died 199.",
-    "type": "saint",
-    "tags": [
-      "ANG"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "mar-papa-commemoration",
@@ -1245,8 +1097,37 @@
     "type": "saint",
     "tags": [
       "COE"
-    ],
-    "verification_status": "verified"
+    ]
+  },
+  {
+    "id": "saint-samson-of-dol",
+    "day": "July 28",
+    "name": "Saint Samson of Dol",
+    "description": "Abbot and Bishop.",
+    "type": "saint",
+    "tags": [
+      "LAT"
+    ]
+  },
+  {
+    "id": "saint-victor-i",
+    "day": "July 28",
+    "name": "Saint Victor I",
+    "description": "Pope and martyr, died 199.",
+    "type": "saint",
+    "tags": [
+      "ANG"
+    ]
+  },
+  {
+    "id": "mar-addai-and-mar-mari",
+    "day": "July 29",
+    "name": "Mar Addai and Mar Mari",
+    "description": "General commemoration.",
+    "type": "saint",
+    "tags": [
+      "COE"
+    ]
   },
   {
     "id": "saints-mary-martha-and-lazarus-of-bethany",
@@ -1259,19 +1140,17 @@
       "EOR",
       "LAT",
       "OOR"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
-    "id": "mar-addai-and-mar-mari",
-    "day": "July 29",
-    "name": "Mar Addai and Mar Mari",
-    "description": "Founders of the Church of the East.",
+    "id": "mar-shimun-bar-sabbae",
+    "day": "July 30",
+    "name": "Mar Shimun Bar Sabbae",
+    "description": "Catholicos and martyr (Secondary commemoration).",
     "type": "saint",
     "tags": [
       "COE"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "saint-peter-chrysologus",
@@ -1281,20 +1160,18 @@
     "type": "saint",
     "tags": [
       "LAT"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "saint-silas",
     "day": "July 30",
     "name": "Saint Silas",
-    "description": "Apostle and martyr.",
+    "description": "Companion of St. Paul.",
     "type": "saint",
     "tags": [
       "EOR",
       "OOR"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "william-wilberforce",
@@ -1304,30 +1181,27 @@
     "type": "saint",
     "tags": [
       "ANG"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
-    "id": "mar-shimun-bar-sabbae",
-    "day": "July 30",
-    "name": "Mar Shimun bar Sabbae",
-    "description": "The Good Shepherd Catholicos.",
+    "id": "joseph-of-arimathea",
+    "day": "July 31",
+    "name": "Joseph of Arimathea",
+    "description": "The disciple who buried Jesus in his own tomb.",
+    "type": "saint",
+    "tags": [
+      "ANG"
+    ]
+  },
+  {
+    "id": "mar-toma-feast-of-relics",
+    "day": "July 31",
+    "name": "Mar Toma (Feast of Relics)",
+    "description": "Commemoration of the Apostle.",
     "type": "saint",
     "tags": [
       "COE"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "saint-ignatius-of-loyola",
-    "day": "July 31",
-    "name": "Saint Ignatius of Loyola",
-    "description": "Founder of the Society of Jesus.",
-    "type": "saint",
-    "tags": [
-      "LAT"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
     "id": "saint-eudocimus",
@@ -1338,29 +1212,16 @@
     "tags": [
       "EOR",
       "OOR"
-    ],
-    "verification_status": "verified"
+    ]
   },
   {
-    "id": "joseph-of-arimathea",
+    "id": "saint-ignatius-of-loyola",
     "day": "July 31",
-    "name": "Joseph of Arimathea",
-    "description": "The disciple who provided the tomb.",
+    "name": "Saint Ignatius of Loyola",
+    "description": "Founder of the Society of Jesus.",
     "type": "saint",
     "tags": [
-      "ANG"
-    ],
-    "verification_status": "verified"
-  },
-  {
-    "id": "mar-toma-feast-of-relics",
-    "day": "July 31",
-    "name": "Mar Toma (Feast of Relics)",
-    "description": "Commemoration of the Apostle.",
-    "type": "saint",
-    "tags": [
-      "COE"
-    ],
-    "verification_status": "verified"
+      "LAT"
+    ]
   }
 ]
