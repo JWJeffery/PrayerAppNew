@@ -227,6 +227,31 @@ header {
 }
 .season-dates { color: var(--text-dim); font-size: 0.88em; text-align: right; white-space: nowrap; }
 
+/* Sub-season badges (e.g. Cheesefare Week inside Triodion) */
+.subseason-row {
+  grid-column: 1 / -1;
+  position: relative;
+  height: 18px;
+  margin-top: -2px;
+  margin-bottom: 2px;
+}
+.subseason-badge {
+  position: absolute;
+  display: inline-block;
+  height: 14px;
+  line-height: 14px;
+  border-radius: 2px;
+  font-size: 0.72em;
+  padding: 0 4px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  opacity: 0.75;
+  color: var(--bg);
+  font-weight: 600;
+  letter-spacing: 0.03em;
+}
+
 /* Season color map */
 .color-purple  { background: var(--season-purple); }
 .color-white   { background: var(--season-white); }
@@ -527,6 +552,7 @@ header {
 <script src="../js/calendar-engine.js"></script>
 <script src="../js/calendar-east-syriac.js"></script>
 <script src="../js/calendar-ethiopian.js"></script>
+<script src="../js/calendar-eastern-orthodox.js"></script>
 
 <script>
 'use strict';
@@ -574,17 +600,81 @@ function fmtHuman(isoStr) {
 function getYearSnapshot(year, config) {
   const { tradition, calendarSystem, eoMode } = config;
 
-  if (tradition === 'EOR' && eoMode === 'old_calendar') {
-    // Julian EO mode: not yet implemented. Return sentinel.
-    return { _notImplemented: true, reason: 'EO old_calendar (Julian) mode is not yet implemented.' };
+  // ── Eastern Orthodox ── routed exclusively to EasternOrthodoxCalendar
+  if (tradition === 'EOR') {
+    if (typeof EasternOrthodoxCalendar === 'undefined') {
+      return { _notImplemented: true, reason: 'EasternOrthodoxCalendar module not loaded.' };
+    }
+    const eoSnap = EasternOrthodoxCalendar.getYearSnapshot(year, { eoMode: eoMode });
+    if (eoSnap._notImplemented) return eoSnap;
+    return buildEORSnapshot(eoSnap, year);
   }
 
   if (tradition === 'COE') {
     return buildCOESnapshot(year);
   }
 
-  // BCP / EOR (Gregorian / Revised Julian — same computation path)
+  // BCP / default (Gregorian / Revised Julian — same computation path)
   return buildBCPSnapshot(year);
+}
+
+// ── EOR adapter: translate EasternOrthodoxCalendar snapshot → admin shape ──
+function buildEORSnapshot(eoSnap, year) {
+  const { anchors, seasons } = eoSnap;
+
+  // Color map: EO season key → colorToken string (mirrors SEASON_COLOR_TOKENS)
+  const EOR_COLORS = {
+    TRIODION:      'purple',
+    GREAT_LENT:    'purple',
+    HOLY_WEEK:     'purple',
+    PENTECOSTARION:'white',
+    AFTER_PENTECOST:'green',
+  };
+
+  const yearStart = new Date(year, 0, 1);
+  const yearEnd   = new Date(year, 11, 31);
+
+  const mappedSeasons = seasons
+    .filter(s => {
+      // Only include seasons that overlap the civil year
+      const start = s.start instanceof Date ? s.start : new Date(s.start);
+      const end   = s.end   instanceof Date ? s.end   : new Date(s.end);
+      return start <= yearEnd && end >= yearStart;
+    })
+    .map(s => {
+      const mappedColor = EOR_COLORS[s.key] || s.color || 'green';
+      return {
+        key:        s.key,
+        label:      s.label,
+        colorToken: mappedColor,
+        startDate:  toISO(s.start instanceof Date ? s.start : new Date(s.start)),
+        endDate:    toISO(s.end   instanceof Date ? s.end   : new Date(s.end)),
+        _endNotImplemented: s._endNotImplemented || false,
+        subSeasons: (s.subSeasons || []).map(ss => ({
+          key:        ss.key,
+          label:      ss.label,
+          startDate:  toISO(ss.start instanceof Date ? ss.start : new Date(ss.start)),
+          endDate:    toISO(ss.end   instanceof Date ? ss.end   : new Date(ss.end)),
+          colorToken: ss.color || EOR_COLORS[ss.key] || mappedColor,
+        })),
+      };
+    });
+
+  // Anchors — toISO each Date
+  const mappedAnchors = {};
+  for (const [k, v] of Object.entries(anchors)) {
+    mappedAnchors[k] = toISO(v instanceof Date ? v : new Date(v));
+  }
+  // Rename for display
+  const displayAnchors = {
+    'Pascha (Orthodox Easter)': mappedAnchors.pascha,
+    'Clean Monday':             mappedAnchors.cleanMonday,
+    'Ascension':                mappedAnchors.ascension,
+    'Pentecost':                mappedAnchors.pentecost,
+    'All Saints Sunday':        mappedAnchors.allSaints,
+  };
+
+  return { anchors: displayAnchors, seasons: mappedSeasons };
 }
 
 function buildBCPSnapshot(year) {
@@ -717,6 +807,27 @@ function renderYearSnapshot(year, config) {
     const offset   = ((sStart - yearStart) / yearSpan) * 100;
     const width    = Math.max(0.5, ((sEnd - sStart) / yearSpan) * 100);
 
+    // Task 2: honest end-date label for open-ended seasons
+    const endLabel = s._endNotImplemented
+      ? `${fmtHuman(s.startDate)} → <span style="color:var(--text-muted);font-style:italic">open</span>`
+      : `${fmtHuman(s.startDate)} → ${fmtHuman(s.endDate)}`;
+
+    // Task 1: sub-season badges rendered below the parent bar, indented
+    const subHtml = (s.subSeasons && s.subSeasons.length)
+      ? `<div class="subseason-row">` +
+          s.subSeasons.map(ss => {
+            const ssToken = getColorToken(ss.colorToken);
+            const ssStart = Math.max(fromISO(ss.startDate).getTime(), yearStart);
+            const ssEnd   = Math.min(fromISO(ss.endDate).getTime(), new Date(year, 11, 31).getTime());
+            const ssOff   = ((ssStart - yearStart) / yearSpan) * 100;
+            const ssW     = Math.max(0.5, ((ssEnd - ssStart) / yearSpan) * 100);
+            return `<span class="subseason-badge ${ssToken.cssClass}"
+                         style="margin-left:calc(120px + 8px + ${ssOff.toFixed(1)}%); width:${ssW.toFixed(1)}%"
+                         title="${ss.label}: ${ss.startDate} → ${ss.endDate}">${ss.label}</span>`;
+          }).join('') +
+        `</div>`
+      : '';
+
     return `
       <div class="season-row">
         <span class="season-label">${s.label}</span>
@@ -725,8 +836,8 @@ function renderYearSnapshot(year, config) {
                style="width:${width.toFixed(1)}%; margin-left:${offset.toFixed(1)}%"
                title="${s.label}: ${s.startDate} → ${s.endDate}"></div>
         </div>
-        <span class="season-dates">${fmtHuman(s.startDate)} → ${fmtHuman(s.endDate)}</span>
-      </div>`;
+        <span class="season-dates">${endLabel}</span>
+      </div>${subHtml}`;
   }).join('');
 
   // Legend
@@ -756,7 +867,10 @@ function renderDaySnapshot(dateISO, config) {
   const tradition = config.tradition;
   const eoMode    = config.eoMode;
 
-  if (tradition === 'EOR' && eoMode === 'old_calendar') {
+  if (tradition === 'EOR') {
+    notImpl = true;
+    notImplReason = 'Eastern Orthodox day snapshot is not yet implemented. Year Snapshot (season timeline) is available — use the panel above.';
+  } else if (tradition === 'EOR' && eoMode === 'old_calendar') {
     notImpl = true;
     notImplReason = 'EO old_calendar (Julian) day snapshot not yet implemented.';
   }
