@@ -969,5 +969,69 @@
       "november",
       "december"
     ]
+  },
+  "admin": {
+    "_note": "Admin dashboard configuration. todos are the authoritative task list consumed by the /admin UI. Add new todos here; do not create a separate file.",
+    "_how_to_add_todo": "Add an object to the todos array with: id (kebab-case unique), title (short), description (full), severity (HIGH|MEDIUM|LOW), status (open|in-progress|done), area (code-area or file), and optionally phase.",
+    "todos": [
+      {
+        "id": "coe-calendar-rebuild",
+        "title": "COE-II: Three-layer COE calendar rebuild",
+        "description": "The Church of the East calendar is salvation-historical/seasonal — not a date-to-saint grid. Rebuild requires: (1) getDayClass() in calendar-east-syriac.js, (2) fixed feasts layer, (3) COE tags audit, (4) renderEastSyriac() three-layer model, (5) Commemoration UI framing. Do not begin until architectural review complete.",
+        "severity": "HIGH",
+        "status": "open",
+        "area": "js/calendar-east-syriac.js + js/office-ui.js",
+        "phase": "COE-II"
+      },
+      {
+        "id": "hydration-race-condition",
+        "title": "Fix appData hydration race condition",
+        "description": "Global state race: appData hydration must be gated before renderOffice() can fire. Review isHydrationComplete gate and all async selectMode() paths.",
+        "severity": "MEDIUM",
+        "status": "open",
+        "area": "js/office-ui.js"
+      },
+      {
+        "id": "saints-schema-refactor",
+        "title": "Saints data model normalization",
+        "description": "Separate Saint identity records from Commemoration calendar records. Define schemas, write adapter, deduplicate identities, implement resolveCommemorations(date, tradition) interface.",
+        "severity": "LOW",
+        "status": "in-progress",
+        "area": "data/saints/*.json + js/office-ui.js",
+        "phase": "Phase TBD"
+      },
+      {
+        "id": "rite-placeholder-fragility",
+        "title": "Fix [rite] placeholder resolution fragility",
+        "description": "Rubric [rite] interpolation in rubrics.json is fragile and prone to null returns. Audit all sequence entries that use [rite] and add null-safe fallback handling.",
+        "severity": "LOW",
+        "status": "open",
+        "area": "data/rubrics.json + js/office-ui.js"
+      },
+      {
+        "id": "gloria-patri-normalization",
+        "title": "Normalize duplicated liturgical fragments",
+        "description": "Gloria Patri and Kyrie appear in multiple tradition JSON files. Consolidate into common.json with tradition-specific rendering where needed.",
+        "severity": "LOW",
+        "status": "open",
+        "area": "components/common.json + components/*.json"
+      },
+      {
+        "id": "innerHTML-architecture",
+        "title": "Migrate from innerHTML string-building",
+        "description": "Heavy reliance on .innerHTML string building in office-ui.js creates maintenance burden and XSS surface. Long-term: migrate to template system (createElement + insertAdjacentHTML patterns).",
+        "severity": "LOW",
+        "status": "open",
+        "area": "js/office-ui.js"
+      },
+      {
+        "id": "eo-calendar-modes",
+        "title": "EO old/new calendar mode implementation",
+        "description": "Eastern Orthodox old calendar (Julian) vs new calendar (Revised Julian) mode is not yet implemented. Admin dashboard scaffolding is in place; full behavior requires Julian Easter calculation and season boundary computation in the revised julian calendar variant.",
+        "severity": "MEDIUM",
+        "status": "open",
+        "area": "js/calendar-engine.js + admin/admin.html"
+      }
+    ]
   }
 }

@@ -1,0 +1,959 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Universal Office — Admin</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;700&family=Cinzel:wght@400;600&display=swap" rel="stylesheet">
+<style>
+/* ── Design tokens ─────────────────────────────────────────────────────── */
+:root {
+  --bg:           #0b0d0f;
+  --surface:      #111418;
+  --surface-2:    #181c22;
+  --border:       rgba(255,255,255,0.07);
+  --border-bright:rgba(255,255,255,0.14);
+  --text:         #d4cfc8;
+  --text-dim:     #6e6b66;
+  --text-muted:   #3a3835;
+
+  /* Season color tokens — mirrors updateSeasonalTheme() in office-ui.js */
+  --season-purple: #7c3fa0;
+  --season-white:  #c9a84c;
+  --season-green:  #4a7c59;
+  --season-red:    #9b2335;
+  --season-rose:   #a04060;
+  --season-gold:   #c9a84c;
+
+  /* Severity */
+  --sev-high:   #e05252;
+  --sev-med:    #d4924a;
+  --sev-low:    #6a9b7a;
+
+  /* Status */
+  --status-open:        #e05252;
+  --status-in-progress: #d4924a;
+  --status-done:        #4a7c59;
+
+  --accent:      #c9a84c;
+  --radius:      6px;
+  --mono: 'JetBrains Mono', monospace;
+  --serif: 'Cinzel', serif;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { height: 100%; background: var(--bg); color: var(--text); font-family: var(--mono); font-size: 13px; line-height: 1.6; }
+
+/* ── Layout ────────────────────────────────────────────────────────────── */
+#shell {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  min-height: 100vh;
+}
+
+header {
+  border-bottom: 1px solid var(--border);
+  padding: 14px 28px;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+.header-title {
+  font-family: var(--serif);
+  font-size: 0.95em;
+  letter-spacing: 0.14em;
+  color: var(--accent);
+  text-transform: uppercase;
+}
+.header-badge {
+  font-size: 0.7em;
+  letter-spacing: 0.1em;
+  background: #1a1400;
+  border: 1px solid #3d2e00;
+  color: #8a6d00;
+  padding: 2px 8px;
+  border-radius: 20px;
+}
+
+#workspace {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 0;
+  height: 100%;
+}
+
+/* ── Sidebar (controls) ────────────────────────────────────────────────── */
+#sidebar {
+  border-right: 1px solid var(--border);
+  padding: 20px 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  overflow-y: auto;
+}
+
+.ctrl-group { display: flex; flex-direction: column; gap: 8px; }
+.ctrl-label {
+  font-size: 0.68em;
+  letter-spacing: 0.14em;
+  color: var(--text-dim);
+  text-transform: uppercase;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 5px;
+}
+.ctrl-select, .ctrl-input {
+  background: var(--surface);
+  border: 1px solid var(--border-bright);
+  color: var(--text);
+  font-family: var(--mono);
+  font-size: 0.85em;
+  padding: 7px 10px;
+  border-radius: var(--radius);
+  width: 100%;
+  outline: none;
+  transition: border-color 0.15s;
+  appearance: none;
+}
+.ctrl-select:focus, .ctrl-input:focus { border-color: var(--accent); }
+
+.eo-mode-row { display: none; margin-top: 4px; }
+.eo-mode-row.visible { display: block; }
+
+.eo-notice {
+  font-size: 0.72em;
+  background: rgba(208,88,36,0.12);
+  border: 1px solid rgba(208,88,36,0.28);
+  border-radius: var(--radius);
+  padding: 8px 10px;
+  color: #e08040;
+  line-height: 1.5;
+  display: none;
+}
+.eo-notice.visible { display: block; }
+
+.run-btn {
+  background: var(--surface-2);
+  border: 1px solid var(--border-bright);
+  color: var(--accent);
+  font-family: var(--mono);
+  font-size: 0.8em;
+  letter-spacing: 0.08em;
+  padding: 9px 14px;
+  border-radius: var(--radius);
+  cursor: pointer;
+  width: 100%;
+  transition: background 0.15s, border-color 0.15s;
+}
+.run-btn:hover { background: #1c2028; border-color: var(--accent); }
+
+/* ── Main panels ───────────────────────────────────────────────────────── */
+#main {
+  padding: 20px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  overflow-y: auto;
+}
+
+.panel {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+.panel-head {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 16px;
+  border-bottom: 1px solid var(--border);
+  background: var(--surface-2);
+}
+.panel-title {
+  font-size: 0.7em;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+}
+.panel-body { padding: 14px 16px; }
+
+/* ── Year Snapshot ─────────────────────────────────────────────────────── */
+.anchors-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+.anchor-chip {
+  background: var(--surface-2);
+  border: 1px solid var(--border-bright);
+  border-radius: 4px;
+  padding: 4px 10px;
+  font-size: 0.78em;
+  display: flex;
+  gap: 8px;
+}
+.anchor-key  { color: var(--text-dim); }
+.anchor-val  { color: var(--accent); font-weight: 500; }
+
+/* Season timeline */
+.timeline {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.season-row {
+  display: grid;
+  grid-template-columns: 120px 1fr 180px;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.78em;
+}
+.season-label { color: var(--text); font-weight: 500; }
+.season-bar-wrap {
+  height: 18px;
+  background: var(--surface-2);
+  border-radius: 3px;
+  overflow: hidden;
+  position: relative;
+}
+.season-bar {
+  height: 100%;
+  border-radius: 3px;
+  opacity: 0.85;
+  transition: width 0.3s ease;
+}
+.season-dates { color: var(--text-dim); font-size: 0.88em; text-align: right; white-space: nowrap; }
+
+/* Season color map */
+.color-purple  { background: var(--season-purple); }
+.color-white   { background: var(--season-white); }
+.color-green   { background: var(--season-green); }
+.color-red     { background: var(--season-red); }
+.color-rose    { background: var(--season-rose); }
+.color-gold    { background: var(--season-gold); }
+
+/* Color legend */
+.legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 12px;
+  padding-top: 10px;
+  border-top: 1px solid var(--border);
+}
+.legend-item { display: flex; align-items: center; gap: 5px; font-size: 0.72em; color: var(--text-dim); }
+.legend-swatch { width: 12px; height: 12px; border-radius: 2px; flex-shrink: 0; }
+
+/* ── Day Snapshot ──────────────────────────────────────────────────────── */
+.day-date-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+.day-date-input {
+  background: var(--surface-2);
+  border: 1px solid var(--border-bright);
+  color: var(--text);
+  font-family: var(--mono);
+  font-size: 0.85em;
+  padding: 6px 10px;
+  border-radius: var(--radius);
+  outline: none;
+}
+.day-date-input:focus { border-color: var(--accent); }
+.snap-btn {
+  background: transparent;
+  border: 1px solid var(--border-bright);
+  color: var(--text-dim);
+  font-family: var(--mono);
+  font-size: 0.78em;
+  padding: 6px 12px;
+  border-radius: var(--radius);
+  cursor: pointer;
+}
+.snap-btn:hover { border-color: var(--accent); color: var(--accent); }
+
+.day-season-block {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 14px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  margin-bottom: 12px;
+}
+.day-season-swatch { width: 10px; height: 36px; border-radius: 3px; flex-shrink: 0; }
+.day-season-info { display: flex; flex-direction: column; gap: 2px; }
+.day-season-name { font-weight: 600; font-size: 0.9em; }
+.day-season-meta { font-size: 0.75em; color: var(--text-dim); }
+
+.commemorations-list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.comm-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 7px 10px;
+  background: var(--surface-2);
+  border-radius: 4px;
+  border: 1px solid var(--border);
+}
+.comm-name { flex: 1; font-size: 0.82em; }
+.comm-tags { display: flex; gap: 4px; flex-wrap: wrap; }
+.tag-chip {
+  font-size: 0.68em;
+  padding: 1px 6px;
+  border-radius: 3px;
+  border: 1px solid var(--border-bright);
+  color: var(--text-dim);
+  background: var(--surface);
+}
+.tag-ecu { border-color: #c9a84c40; color: #c9a84c; }
+
+/* ── Top 5 To-Dos ──────────────────────────────────────────────────────── */
+.todos-list { display: flex; flex-direction: column; gap: 8px; }
+.todo-row {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 10px 14px;
+  align-items: start;
+  padding: 10px 12px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface-2);
+  transition: border-color 0.15s;
+}
+.todo-row:hover { border-color: var(--border-bright); }
+.todo-sev {
+  font-size: 0.68em;
+  letter-spacing: 0.08em;
+  font-weight: 700;
+  padding: 2px 7px;
+  border-radius: 3px;
+  white-space: nowrap;
+  align-self: start;
+  margin-top: 1px;
+}
+.sev-HIGH   { background: rgba(224,82,82,0.15); color: var(--sev-high); border: 1px solid rgba(224,82,82,0.25); }
+.sev-MEDIUM { background: rgba(212,146,74,0.15); color: var(--sev-med);  border: 1px solid rgba(212,146,74,0.25); }
+.sev-LOW    { background: rgba(106,155,122,0.15);color: var(--sev-low);  border: 1px solid rgba(106,155,122,0.25); }
+.todo-body { display: flex; flex-direction: column; gap: 3px; }
+.todo-title { font-size: 0.85em; font-weight: 500; }
+.todo-area  { font-size: 0.72em; color: var(--text-dim); }
+.todo-desc  { font-size: 0.76em; color: var(--text-dim); line-height: 1.5; margin-top: 2px; }
+.todo-status {
+  font-size: 0.68em;
+  letter-spacing: 0.06em;
+  padding: 2px 7px;
+  border-radius: 3px;
+  white-space: nowrap;
+  align-self: start;
+  margin-top: 1px;
+}
+.status-open        { background: rgba(224,82,82,0.1);  color: var(--status-open);        border: 1px solid rgba(224,82,82,0.2); }
+.status-in-progress { background: rgba(212,146,74,0.1); color: var(--status-in-progress); border: 1px solid rgba(212,146,74,0.2); }
+
+/* ── Empty / loading states ────────────────────────────────────────────── */
+.empty-state {
+  padding: 24px;
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 0.8em;
+  letter-spacing: 0.06em;
+}
+.loading-dot::after {
+  content: '…';
+  animation: blink 1.2s infinite;
+}
+@keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.3} }
+
+/* ── EO not-implemented banner ─────────────────────────────────────────── */
+.not-impl-banner {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  background: rgba(208,88,36,0.08);
+  border: 1px solid rgba(208,88,36,0.25);
+  border-radius: var(--radius);
+  padding: 12px 14px;
+  font-size: 0.8em;
+  line-height: 1.5;
+  color: #d07840;
+}
+.not-impl-icon { font-size: 1.3em; flex-shrink: 0; }
+
+/* ── Scrollbar ─────────────────────────────────────────────────────────── */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: #2a2e36; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: #3a3e46; }
+</style>
+</head>
+<body>
+<div id="shell">
+
+<!-- ── Header ─────────────────────────────────────────────────────────── -->
+<header>
+  <span class="header-title">☩ Universal Office</span>
+  <span style="color:var(--border-bright); font-size:1.2em">／</span>
+  <span class="header-title" style="color:var(--text-dim)">Admin Dashboard</span>
+  <span class="header-badge">DEV ONLY</span>
+</header>
+
+<div id="workspace">
+
+  <!-- ── Sidebar ───────────────────────────────────────────────────────── -->
+  <aside id="sidebar">
+    <div class="ctrl-group">
+      <div class="ctrl-label">Year</div>
+      <input type="number" id="ctrl-year" class="ctrl-input" value="2026" min="1900" max="2100">
+    </div>
+
+    <div class="ctrl-group">
+      <div class="ctrl-label">Tradition</div>
+      <select id="ctrl-tradition" class="ctrl-select">
+        <option value="BCP">Anglican (BCP)</option>
+        <option value="COE">Church of the East</option>
+        <option value="EOR">Eastern Orthodox</option>
+      </select>
+    </div>
+
+    <div class="ctrl-group">
+      <div class="ctrl-label">Calendar System</div>
+      <select id="ctrl-calendar" class="ctrl-select">
+        <option value="gregorian">Gregorian</option>
+        <option value="julian">Julian</option>
+        <option value="revised_julian">Revised Julian</option>
+      </select>
+      <div class="eo-mode-row" id="eo-mode-row">
+        <div class="ctrl-label" style="margin-top:10px">EO Mode</div>
+        <select id="ctrl-eo-mode" class="ctrl-select">
+          <option value="new_calendar">New Calendar (Revised Julian)</option>
+          <option value="old_calendar">Old Calendar (Julian)</option>
+        </select>
+      </div>
+      <div class="eo-notice" id="eo-notice">
+        ⚠ Old Calendar (Julian) EO mode is scaffolded but not yet implemented.
+        Season boundaries shown will reflect Gregorian/Revised Julian only.
+      </div>
+    </div>
+
+    <button class="run-btn" id="run-btn">↻ Compute Year Snapshot</button>
+
+    <div class="ctrl-group" style="margin-top:auto; padding-top:14px; border-top:1px solid var(--border)">
+      <div class="ctrl-label">Version</div>
+      <span style="font-size:0.75em; color:var(--text-dim)" id="version-display">Loading…</span>
+    </div>
+  </aside>
+
+  <!-- ── Main panels ────────────────────────────────────────────────────── -->
+  <main id="main">
+
+    <!-- Year Snapshot -->
+    <div class="panel" id="panel-year">
+      <div class="panel-head">
+        <span class="panel-title">Year Snapshot</span>
+        <span style="margin-left:auto; font-size:0.72em; color:var(--text-dim)" id="year-snapshot-label">—</span>
+      </div>
+      <div class="panel-body" id="year-snapshot-body">
+        <div class="empty-state">Select a year and tradition, then click Compute.</div>
+      </div>
+    </div>
+
+    <!-- Day Snapshot -->
+    <div class="panel" id="panel-day">
+      <div class="panel-head">
+        <span class="panel-title">Day Snapshot</span>
+      </div>
+      <div class="panel-body">
+        <div class="day-date-row">
+          <input type="date" id="day-date-input" class="day-date-input">
+          <button class="snap-btn" id="day-snap-btn">Inspect</button>
+        </div>
+        <div id="day-snapshot-body">
+          <div class="empty-state">Pick a date above to inspect it.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Top 5 To-Dos -->
+    <div class="panel" id="panel-todos">
+      <div class="panel-head">
+        <span class="panel-title">Top 5 Open To-Dos</span>
+        <span style="margin-left:auto; font-size:0.68em; color:var(--text-dim)">source: structure.json → admin.todos</span>
+      </div>
+      <div class="panel-body" id="todos-body">
+        <div class="empty-state loading-dot">Loading</div>
+      </div>
+    </div>
+
+  </main>
+</div><!-- /workspace -->
+</div><!-- /shell -->
+
+<!-- Load calendar engines (path relative to /admin/) -->
+<script src="../js/calendar-engine.js"></script>
+<script src="../js/calendar-east-syriac.js"></script>
+<script src="../js/calendar-ethiopian.js"></script>
+
+<script>
+'use strict';
+
+// ── Season color token map ────────────────────────────────────────────────
+// This is THE centralized mapping of season color token → CSS class/variable.
+// All season-color rendering in the admin dashboard reads from this object only.
+// Mirrors the token set in office-ui.js updateSeasonalTheme().
+const SEASON_COLOR_TOKENS = {
+  purple: { cssClass: 'color-purple', cssVar: 'var(--season-purple)', label: 'Purple (Advent/Lent)' },
+  white:  { cssClass: 'color-white',  cssVar: 'var(--season-white)',  label: 'White/Gold (Feasts)' },
+  green:  { cssClass: 'color-green',  cssVar: 'var(--season-green)',  label: 'Green (Ordinary)' },
+  red:    { cssClass: 'color-red',    cssVar: 'var(--season-red)',    label: 'Red (Martyrs/Apostles)' },
+  rose:   { cssClass: 'color-rose',   cssVar: 'var(--season-rose)',   label: 'Rose (Gaudete/Laetare)' },
+  gold:   { cssClass: 'color-gold',   cssVar: 'var(--season-gold)',   label: 'Gold (Ecumenical)' },
+};
+
+function getColorToken(colorString) {
+  return SEASON_COLOR_TOKENS[colorString] || SEASON_COLOR_TOKENS.green;
+}
+
+// ── Date utilities ────────────────────────────────────────────────────────
+function toISO(date) {
+  const y = date.getFullYear();
+  const m = String(date.getMonth() + 1).padStart(2,'0');
+  const d = String(date.getDate()).padStart(2,'0');
+  return `${y}-${m}-${d}`;
+}
+function fromISO(str) {
+  const [y,m,d] = str.split('-').map(Number);
+  return new Date(y, m-1, d);
+}
+function fmtHuman(isoStr) {
+  const d = fromISO(isoStr);
+  return d.toLocaleDateString('en-US', { month:'short', day:'numeric' });
+}
+
+// ── Calendar API wrappers ─────────────────────────────────────────────────
+/**
+ * Returns SeasonRange[] for the given year and tradition.
+ * Shape: { key, label, colorToken, startDate, endDate }
+ *
+ * CalendarConfig: { tradition, calendarSystem, eoMode? }
+ */
+function getYearSnapshot(year, config) {
+  const { tradition, calendarSystem, eoMode } = config;
+
+  if (tradition === 'EOR' && eoMode === 'old_calendar') {
+    // Julian EO mode: not yet implemented. Return sentinel.
+    return { _notImplemented: true, reason: 'EO old_calendar (Julian) mode is not yet implemented.' };
+  }
+
+  if (tradition === 'COE') {
+    return buildCOESnapshot(year);
+  }
+
+  // BCP / EOR (Gregorian / Revised Julian — same computation path)
+  return buildBCPSnapshot(year);
+}
+
+function buildBCPSnapshot(year) {
+  // Pull two liturgical years' worth of ranges: the one starting in year-1's Advent
+  // through year's Advent, to cover the full civil year.
+  const ranges = [];
+  for (let y = year - 1; y <= year; y++) {
+    if (!CalendarEngine._seasonCache[y]) {
+      CalendarEngine._seasonCache[y] = CalendarEngine._generateSeasonRanges(y);
+    }
+    ranges.push(...CalendarEngine._seasonCache[y]);
+  }
+
+  // Filter to only ranges that overlap the civil year [Jan 1 .. Dec 31]
+  const yearStart = new Date(year, 0, 1);
+  const yearEnd   = new Date(year, 11, 31);
+  const visible   = ranges.filter(r => r.start <= yearEnd && r.end >= yearStart);
+
+  // Season display labels
+  const SEASON_LABELS = {
+    advent: 'Advent', christmas: 'Christmas', epiphany: 'Epiphany',
+    lent: 'Lent', easter: 'Eastertide', ordinary: 'Ordinary Time',
+  };
+
+  const seasons = visible.map(r => ({
+    key:        r.season,
+    label:      SEASON_LABELS[r.season] || r.season,
+    colorToken: r.liturgicalColor || 'green',
+    startDate:  toISO(r.start),
+    endDate:    toISO(r.end),
+  }));
+
+  // Anchors: Easter and Advent Sunday
+  const easter = CalendarEngine._getEaster(year);
+  const advent = CalendarEngine._getAdventSunday(year);
+
+  return {
+    seasons,
+    anchors: {
+      'Easter':        toISO(easter),
+      'Advent Sunday': toISO(advent),
+      'Ash Wednesday': toISO(CalendarEngine._addDays(easter, -46)),
+      'Pentecost':     toISO(CalendarEngine._addDays(easter, 49)),
+    }
+  };
+}
+
+function buildCOESnapshot(year) {
+  const litYear = EastSyriacCalendar.getLiturgicalYear(new Date(year, 0, 15));
+  const { seasons: seasonMap } = litYear;
+
+  const COE_LABELS = {
+    'subara': 'Subara', 'denkha': 'Denkha', 'sauma': 'Sauma',
+    'qyamta': 'Qyamta', 'shlihe': 'Shlihe', 'qayta': 'Qayta',
+    'eliya-sliwa': 'Eliya-Sliwa', 'muse': 'Muse', 'qudash-idta': "Qudash 'Idta",
+  };
+  const COE_COLORS = {
+    'subara': 'purple', 'denkha': 'white', 'sauma': 'purple',
+    'qyamta': 'white', 'shlihe': 'red', 'qayta': 'green',
+    'eliya-sliwa': 'green', 'muse': 'green', 'qudash-idta': 'white',
+  };
+
+  const yearStart = new Date(year, 0, 1);
+  const yearEnd   = new Date(year, 11, 31);
+
+  const seasons = Object.entries(seasonMap)
+    .filter(([, range]) => range.start <= yearEnd && range.end >= yearStart)
+    .map(([key, range]) => ({
+      key,
+      label:      COE_LABELS[key] || key,
+      colorToken: COE_COLORS[key] || 'green',
+      startDate:  toISO(range.start),
+      endDate:    toISO(range.end),
+    }));
+
+  const easter = litYear.easter;
+  const subaraStart = litYear.subaraStart;
+
+  return {
+    seasons,
+    anchors: {
+      "Subara (start)": toISO(subaraStart),
+      "D'Qyamta (Easter)": toISO(easter),
+    }
+  };
+}
+
+// ── Year Snapshot renderer ────────────────────────────────────────────────
+function renderYearSnapshot(year, config) {
+  const label = document.getElementById('year-snapshot-label');
+  const body  = document.getElementById('year-snapshot-body');
+
+  label.textContent = `${year} · ${config.tradition}`;
+
+  const snapshot = getYearSnapshot(year, config);
+
+  if (snapshot._notImplemented) {
+    body.innerHTML = `
+      <div class="not-impl-banner">
+        <span class="not-impl-icon">⚠</span>
+        <div>
+          <strong>Not implemented:</strong> ${snapshot.reason}<br>
+          <span style="font-size:0.9em">To implement: add <code>getEOSeasonRanges(year, eoMode)</code> to
+          <code>js/calendar-engine.js</code> using the Julian Easter algorithm in
+          <code>calendar-east-syriac.js</code> and wire into the YearSnapshot API.
+          See <code>admin/README.md</code> for the full contract.</span>
+        </div>
+      </div>`;
+    return;
+  }
+
+  const { anchors, seasons } = snapshot;
+
+  // Compute year span for timeline bar widths
+  const yearStart = new Date(year, 0, 1).getTime();
+  const yearSpan  = new Date(year, 11, 31).getTime() - yearStart;
+
+  // Anchors
+  const anchorHtml = Object.entries(anchors).map(([key, val]) => `
+    <div class="anchor-chip">
+      <span class="anchor-key">${key}</span>
+      <span class="anchor-val">${val}</span>
+    </div>`).join('');
+
+  // Season timeline rows
+  const rowsHtml = seasons.map(s => {
+    const token    = getColorToken(s.colorToken);
+    const sStart   = Math.max(fromISO(s.startDate).getTime(), yearStart);
+    const sEnd     = Math.min(fromISO(s.endDate).getTime(), new Date(year, 11, 31).getTime());
+    const offset   = ((sStart - yearStart) / yearSpan) * 100;
+    const width    = Math.max(0.5, ((sEnd - sStart) / yearSpan) * 100);
+
+    return `
+      <div class="season-row">
+        <span class="season-label">${s.label}</span>
+        <div class="season-bar-wrap">
+          <div class="season-bar ${token.cssClass}"
+               style="width:${width.toFixed(1)}%; margin-left:${offset.toFixed(1)}%"
+               title="${s.label}: ${s.startDate} → ${s.endDate}"></div>
+        </div>
+        <span class="season-dates">${fmtHuman(s.startDate)} → ${fmtHuman(s.endDate)}</span>
+      </div>`;
+  }).join('');
+
+  // Legend
+  const usedTokens = [...new Set(seasons.map(s => s.colorToken))];
+  const legendHtml = usedTokens.map(t => {
+    const tok = getColorToken(t);
+    return `<div class="legend-item">
+      <div class="legend-swatch ${tok.cssClass}"></div>
+      <span>${tok.label}</span>
+    </div>`;
+  }).join('');
+
+  body.innerHTML = `
+    <div class="anchors-row">${anchorHtml}</div>
+    <div class="timeline">${rowsHtml}</div>
+    <div class="legend">${legendHtml}</div>
+  `;
+}
+
+// ── Day Snapshot renderer ─────────────────────────────────────────────────
+function renderDaySnapshot(dateISO, config) {
+  const body = document.getElementById('day-snapshot-body');
+  const date = fromISO(dateISO);
+
+  let season, commemorations = [], notImpl = false, notImplReason = '';
+
+  const tradition = config.tradition;
+  const eoMode    = config.eoMode;
+
+  if (tradition === 'EOR' && eoMode === 'old_calendar') {
+    notImpl = true;
+    notImplReason = 'EO old_calendar (Julian) day snapshot not yet implemented.';
+  }
+
+  if (notImpl) {
+    body.innerHTML = `
+      <div class="not-impl-banner">
+        <span class="not-impl-icon">⚠</span>
+        <div><strong>Not implemented:</strong> ${notImplReason}</div>
+      </div>`;
+    return;
+  }
+
+  // Get season from engine
+  if (tradition === 'COE') {
+    const s = EastSyriacCalendar.getSeason(date);
+    const COE_COLORS = {
+      'subara':'purple','denkha':'white','sauma':'purple','qyamta':'white',
+      'shlihe':'red','qayta':'green','eliya-sliwa':'green','muse':'green','qudash-idta':'white',
+    };
+    season = {
+      key:        s.season,
+      label:      s.seasonLabel,
+      colorToken: COE_COLORS[s.season] || 'green',
+      weekLabel:  s.weekLabel,
+      cycle:      s.cycle,
+    };
+  } else {
+    const s = CalendarEngine.getSeasonAndFile(date);
+    const LABELS = { advent:'Advent', christmas:'Christmas', epiphany:'Epiphany',
+                     lent:'Lent', easter:'Eastertide', ordinary:'Ordinary Time' };
+    season = {
+      key:        s.season,
+      label:      LABELS[s.season] || s.season,
+      colorToken: s.liturgicalColor || 'green',
+      litYear:    s.litYear,
+    };
+  }
+
+  // Load commemorations from monthly cache file (if available)
+  const monthName = date.toLocaleDateString('en-US', { month:'long' }).toLowerCase();
+  const dayNum    = date.getDate();
+
+  fetch(`../data/saints/saints-${monthName}.json`)
+    .then(r => r.ok ? r.json() : [])
+    .then(saints => {
+      const comms = (saints || []).filter(s => {
+        // day field format: "March 1" or "March 1, 2" (range)
+        const parts = (s.day || '').split(',').map(p => p.trim());
+        const target = date.toLocaleDateString('en-US', { month:'long', day:'numeric' });
+        return parts.includes(target);
+      });
+      renderDaySnapshotResult(body, dateISO, season, comms);
+    })
+    .catch(() => {
+      renderDaySnapshotResult(body, dateISO, season, []);
+    });
+}
+
+function renderDaySnapshotResult(body, dateISO, season, comms) {
+  const token = getColorToken(season.colorToken);
+
+  const seasonMeta = [
+    season.litYear  ? `Lectionary: ${season.litYear}` : null,
+    season.weekLabel ? season.weekLabel : null,
+    season.cycle    ? `Qdham/Wathar: ${season.cycle}` : null,
+  ].filter(Boolean).join(' · ');
+
+  const commsHtml = comms.length
+    ? comms.map(c => {
+        const tags = (c.tags || []);
+        const tagHtml = tags.map(t =>
+          `<span class="tag-chip ${t === 'ECU' ? 'tag-ecu' : ''}">${t}</span>`
+        ).join('');
+        return `
+          <div class="comm-row">
+            <div class="comm-name">${c.name || 'Unknown'}</div>
+            <div class="comm-tags">${tagHtml}</div>
+          </div>`;
+      }).join('')
+    : `<div class="empty-state" style="padding:12px 0">No commemorations loaded for this date.</div>`;
+
+  body.innerHTML = `
+    <div class="day-season-block">
+      <div class="day-season-swatch ${token.cssClass}"></div>
+      <div class="day-season-info">
+        <div class="day-season-name">${season.label}</div>
+        <div class="day-season-meta">${dateISO}${seasonMeta ? ' · ' + seasonMeta : ''}</div>
+      </div>
+    </div>
+    <div style="font-size:0.72em; color:var(--text-dim); margin-bottom:8px; letter-spacing:0.08em;">
+      COMMEMORATIONS
+    </div>
+    <div class="commemorations-list">${commsHtml}</div>
+  `;
+}
+
+// ── To-Dos renderer ───────────────────────────────────────────────────────
+function renderTodos() {
+  const body = document.getElementById('todos-body');
+
+  fetch('../structure.json')
+    .then(r => r.json())
+    .then(data => {
+      const allTodos = (data?.admin?.todos || []);
+      const open = allTodos
+        .filter(t => t.status !== 'done')
+        .sort((a, b) => {
+          const sevOrder = { HIGH: 0, MEDIUM: 1, LOW: 2 };
+          return (sevOrder[a.severity] ?? 9) - (sevOrder[b.severity] ?? 9);
+        })
+        .slice(0, 5);
+
+      if (!open.length) {
+        body.innerHTML = `<div class="empty-state">No open todos found in structure.json → admin.todos</div>`;
+        return;
+      }
+
+      const html = open.map(t => `
+        <div class="todo-row">
+          <span class="todo-sev sev-${t.severity}">${t.severity}</span>
+          <div class="todo-body">
+            <div class="todo-title">${t.title}</div>
+            <div class="todo-area">${t.area || ''}</div>
+            <div class="todo-desc">${t.description}</div>
+          </div>
+          <span class="todo-status status-${t.status.replace('-','_').replace(/ /g,'-')}">${t.status}</span>
+        </div>`).join('');
+
+      body.innerHTML = `<div class="todos-list">${html}</div>`;
+    })
+    .catch(err => {
+      body.innerHTML = `<div class="empty-state">Failed to load structure.json: ${err.message}</div>`;
+    });
+}
+
+// ── Version display ───────────────────────────────────────────────────────
+function loadVersion() {
+  fetch('../structure.json')
+    .then(r => r.json())
+    .then(data => {
+      const ver = data?.project_manifest?.version || '—';
+      const status = data?.project_manifest?.operational_status?.replace(/^(\S+).*/,'$1') || '';
+      document.getElementById('version-display').textContent = `v${ver} · ${status}`;
+    })
+    .catch(() => { document.getElementById('version-display').textContent = '—'; });
+}
+
+// ── Controls ──────────────────────────────────────────────────────────────
+function getConfig() {
+  return {
+    tradition:      document.getElementById('ctrl-tradition').value,
+    calendarSystem: document.getElementById('ctrl-calendar').value,
+    eoMode:         document.getElementById('ctrl-eo-mode').value,
+  };
+}
+
+function onTraditionChange() {
+  const t      = document.getElementById('ctrl-tradition').value;
+  const eoRow  = document.getElementById('eo-mode-row');
+  const notice = document.getElementById('eo-notice');
+  const calSel = document.getElementById('ctrl-calendar');
+
+  if (t === 'EOR') {
+    eoRow.classList.add('visible');
+    calSel.value = 'revised_julian';
+    onEOModeChange();
+  } else {
+    eoRow.classList.remove('visible');
+    notice.classList.remove('visible');
+    calSel.value = (t === 'COE') ? 'julian' : 'gregorian';
+  }
+}
+
+function onEOModeChange() {
+  const mode   = document.getElementById('ctrl-eo-mode').value;
+  const notice = document.getElementById('eo-notice');
+  notice.classList.toggle('visible', mode === 'old_calendar');
+}
+
+document.getElementById('ctrl-tradition').addEventListener('change', onTraditionChange);
+document.getElementById('ctrl-eo-mode').addEventListener('change', onEOModeChange);
+
+document.getElementById('run-btn').addEventListener('click', () => {
+  const year   = parseInt(document.getElementById('ctrl-year').value, 10);
+  const config = getConfig();
+  if (isNaN(year) || year < 1600 || year > 2100) {
+    alert('Please enter a year between 1600 and 2100.');
+    return;
+  }
+  renderYearSnapshot(year, config);
+});
+
+document.getElementById('day-snap-btn').addEventListener('click', () => {
+  const dateVal = document.getElementById('day-date-input').value;
+  if (!dateVal) { alert('Please pick a date.'); return; }
+  const config = getConfig();
+  renderDaySnapshot(dateVal, config);
+});
+
+// ── Init ──────────────────────────────────────────────────────────────────
+(function init() {
+  // Set default date picker to today
+  const today = new Date();
+  document.getElementById('day-date-input').value = toISO(today);
+
+  // Init calendar engine (fire-and-forget; it loads bcp-propers.json)
+  if (typeof CalendarEngine !== 'undefined') {
+    CalendarEngine.init().catch(() => {});
+  }
+
+  // Render initial year snapshot for current year
+  const currentYear = today.getFullYear();
+  document.getElementById('ctrl-year').value = currentYear;
+  renderYearSnapshot(currentYear, getConfig());
+
+  // Load todos
+  renderTodos();
+
+  // Load version
+  loadVersion();
+})();
+</script>
+</body>
+</html>

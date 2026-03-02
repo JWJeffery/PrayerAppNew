@@ -118,37 +118,37 @@
     "id": "apostle-carpus-of-the-seventy",
     "name": "Apostle Carpus of the Seventy",
     "description": "Disciple of Saint Paul, 1st century.",
-    "type": "saint"
+    "type": "apostle"
   },
   {
     "id": "apostle-jude-the-brother-of-the-lord",
     "name": "Apostle Jude the Brother of the Lord",
     "description": "Apostle, 1st century.",
-    "type": "saint"
+    "type": "apostle"
   },
   {
     "id": "apostle-onesimus-of-the-seventy",
     "name": "Apostle Onesimus of the Seventy",
     "description": "Disciple of Saint Paul.",
-    "type": "saint"
+    "type": "apostle"
   },
   {
     "id": "apostle-simon-the-zealot",
     "name": "Apostle Simon the Zealot",
     "description": "One of the Twelve Apostles.",
-    "type": "saint"
+    "type": "apostle"
   },
   {
     "id": "apostle-thaddeus-of-the-seventy",
     "name": "Apostle Thaddeus of the Seventy",
     "description": "Healer of King Abgar of Edessa.",
-    "type": "saint"
+    "type": "apostle"
   },
   {
     "id": "apostle-timothy",
     "name": "Apostle Timothy",
     "description": "Apostle of the Seventy.",
-    "type": "saint"
+    "type": "apostle"
   },
   {
     "id": "apostles-andronicus-and-junia",
@@ -1187,19 +1187,19 @@
     "id": "holy-apostle-james-son-of-alphaeus",
     "name": "Holy Apostle James, son of Alphaeus",
     "description": "Apostle and martyr.",
-    "type": "saint"
+    "type": "apostle"
   },
   {
     "id": "holy-apostle-philip",
     "name": "Holy Apostle Philip",
     "description": "One of the Seven Deacons.",
-    "type": "saint"
+    "type": "apostle"
   },
   {
     "id": "holy-apostle-thomas",
     "name": "Holy Apostle Thomas",
     "description": "Apostle and martyr.",
-    "type": "saint"
+    "type": "apostle"
   },
   {
     "id": "holy-archangels-gabriel-and-michael",
@@ -1259,7 +1259,7 @@
     "id": "holy-prophet-moses",
     "name": "Holy Prophet Moses",
     "description": "The Law-giver who beheld God on Mount Sinai.",
-    "type": "saint"
+    "type": "prophet"
   },
   {
     "id": "holy-protection-of-the-theotokos",
@@ -1758,7 +1758,7 @@
     "id": "mar-mari-the-apostle",
     "name": "Mar Mari the Apostle",
     "description": "Commemoration of the teacher of the East.",
-    "type": "saint"
+    "type": "apostle"
   },
   {
     "id": "mar-mari-the-evangelist",
@@ -1920,7 +1920,7 @@
     "id": "mar-toma-apostle-thomas",
     "name": "Mar Toma (Apostle Thomas)",
     "description": "Apostle of the East (Feast of the return of relics).",
-    "type": "saint"
+    "type": "apostle"
   },
   {
     "id": "mar-toma-feast-of-relics",
@@ -2652,7 +2652,7 @@
     "id": "philip-and-james-apostles",
     "name": "Philip and James, Apostles",
     "description": "Apostles and martyrs (Western traditional date).",
-    "type": "saint"
+    "type": "apostle"
   },
   {
     "id": "phillips-brooks",
@@ -2700,19 +2700,19 @@
     "id": "prophet-amos",
     "name": "Prophet Amos",
     "description": "Old Testament prophet.",
-    "type": "saint"
+    "type": "prophet"
   },
   {
     "id": "prophet-azariah",
     "name": "Prophet Azariah",
     "description": "Old Testament prophet.",
-    "type": "saint"
+    "type": "prophet"
   },
   {
     "id": "prophet-daniel",
     "name": "Prophet Daniel",
     "description": "Prophet.",
-    "type": "saint"
+    "type": "prophet"
   },
   {
     "id": "prophet-daniel-and-the-three-holy-youths",
@@ -2724,85 +2724,85 @@
     "id": "prophet-elias-elijah",
     "name": "Prophet Elias (Elijah)",
     "description": "Old Testament prophet taken up in the chariot.",
-    "type": "saint"
+    "type": "prophet"
   },
   {
     "id": "prophet-elijah",
     "name": "Prophet Elijah",
     "description": "Old Testament prophet.",
-    "type": "saint"
+    "type": "prophet"
   },
   {
     "id": "prophet-elisha",
     "name": "Prophet Elisha",
     "description": "Old Testament prophet and successor to Elijah.",
-    "type": "saint"
+    "type": "prophet"
   },
   {
     "id": "prophet-ezekiel",
     "name": "Prophet Ezekiel",
     "description": "The prophet who saw the valley of dry bones.",
-    "type": "saint"
+    "type": "prophet"
   },
   {
     "id": "prophet-habakkuk",
     "name": "Prophet Habakkuk",
     "description": "Old Testament prophet.",
-    "type": "saint"
+    "type": "prophet"
   },
   {
     "id": "prophet-haggai",
     "name": "Prophet Haggai",
     "description": "Minor Prophet.",
-    "type": "saint"
+    "type": "prophet"
   },
   {
     "id": "prophet-hosea",
     "name": "Prophet Hosea",
     "description": "Old Testament prophet.",
-    "type": "saint"
+    "type": "prophet"
   },
   {
     "id": "prophet-joel",
     "name": "Prophet Joel",
     "description": "Old Testament prophet.",
-    "type": "saint"
+    "type": "prophet"
   },
   {
     "id": "prophet-malachias",
     "name": "Prophet Malachias",
     "description": "Old Testament prophet.",
-    "type": "saint"
+    "type": "prophet"
   },
   {
     "id": "prophet-micah",
     "name": "Prophet Micah",
     "description": "Old Testament prophet; foretold Christ's birth in Bethlehem.",
-    "type": "saint"
+    "type": "prophet"
   },
   {
     "id": "prophet-nahum",
     "name": "Prophet Nahum",
     "description": "One of the twelve Minor Prophets.",
-    "type": "saint"
+    "type": "prophet"
   },
   {
     "id": "prophet-samuel",
     "name": "Prophet Samuel",
     "description": "Old Testament prophet and judge of Israel.",
-    "type": "saint"
+    "type": "prophet"
   },
   {
     "id": "prophet-zachariah",
     "name": "Prophet Zachariah",
     "description": "Father of the Forerunner; martyred in the Temple.",
-    "type": "saint"
+    "type": "prophet"
   },
   {
     "id": "prophet-zephaniah",
     "name": "Prophet Zephaniah",
     "description": "Old Testament prophet.",
-    "type": "saint"
+    "type": "prophet"
   },
   {
     "id": "prophets-of-the-old-testament",
@@ -2936,7 +2936,7 @@
     "id": "saint-addai-the-apostle",
     "name": "Saint Addai the Apostle",
     "description": "Apostle and missionary to Edessa.",
-    "type": "saint"
+    "type": "apostle"
   },
   {
     "id": "saint-adelaide",
@@ -3345,13 +3345,13 @@
     "id": "saint-barnabas",
     "name": "Saint Barnabas",
     "description": "Apostle.",
-    "type": "saint"
+    "type": "apostle"
   },
   {
     "id": "saint-barnabas-syriac",
     "name": "Saint Barnabas (Syriac)",
     "description": "Apostle.",
-    "type": "saint"
+    "type": "apostle"
   },
   {
     "id": "saint-barnabas-the-apostle",
@@ -4681,13 +4681,13 @@
     "id": "saint-james-son-of-alphaeus",
     "name": "Saint James son of Alphaeus",
     "description": "Apostle.",
-    "type": "saint"
+    "type": "apostle"
   },
   {
     "id": "saint-james-the-apostle",
     "name": "Saint James the Apostle",
     "description": "The Son of Zebedee.",
-    "type": "saint"
+    "type": "apostle"
   },
   {
     "id": "saint-james-the-brother-of-the-lord",
@@ -5460,7 +5460,7 @@
     "id": "saint-matthias",
     "name": "Saint Matthias",
     "description": "Apostle and witness to the Resurrection.",
-    "type": "saint"
+    "type": "apostle"
   },
   {
     "id": "saint-matthias-the-apostle",
@@ -5848,7 +5848,7 @@
     "id": "saint-peter-the-apostle",
     "name": "Saint Peter the Apostle",
     "description": "Veneration of relics (shared commemoration).",
-    "type": "saint"
+    "type": "apostle"
   },
   {
     "id": "saint-peter-the-worshipper",
@@ -6224,7 +6224,7 @@
     "id": "saint-simon-the-apostle",
     "name": "Saint Simon the Apostle",
     "description": "Apostle and martyr.",
-    "type": "saint"
+    "type": "apostle"
   },
   {
     "id": "saint-simon-the-myrrhgusher",
@@ -6546,7 +6546,7 @@
     "id": "saint-thomas-the-apostle",
     "name": "Saint Thomas the Apostle",
     "description": "Feast of the Apostle who confessed 'My Lord and my God'.",
-    "type": "saint"
+    "type": "apostle"
   },
   {
     "id": "saint-thomas-the-apostle-and-saint-juliana",
@@ -6600,7 +6600,7 @@
     "id": "saint-titus-the-apostle",
     "name": "Saint Titus the Apostle",
     "description": "Companion of St. Paul and Bishop of Crete.",
-    "type": "saint"
+    "type": "apostle"
   },
   {
     "id": "saint-turibius-of-mogrovejo",
