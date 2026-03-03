@@ -106,44 +106,7 @@ function applyEthOverride() {
     window._temporalOverride.hourId = radioVal || null;
     renderOffice();
 }
-// ── Ethiopian Date Navigation ─────────────────────────────────────────
 
-function _toISODateLocal(d) {
-  const yyyy = d.getFullYear();
-  const mm = String(d.getMonth() + 1).padStart(2, "0");
-  const dd = String(d.getDate()).padStart(2, "0");
-  return `${yyyy}-${mm}-${dd}`;
-}
-
-function _addDaysISO(iso, deltaDays) {
-  const [y, m, d] = iso.split("-").map(Number);
-  const dt = new Date(y, m - 1, d);
-  dt.setDate(dt.getDate() + deltaDays);
-  return _toISODateLocal(dt);
-}
-
-function ethChangeDate(deltaDays) {
-  const el = document.getElementById("eth-override-date");
-  if (!el) return;
-
-  const base = el.value || _toISODateLocal(new Date());
-  el.value = _addDaysISO(base, deltaDays);
-
-  applyEthOverride();
-  renderOffice();
-  if (typeof saveSettings === "function") saveSettings();
-}
-
-function ethToday() {
-  const el = document.getElementById("eth-override-date");
-  if (!el) return;
-
-  el.value = _toISODateLocal(new Date());
-
-  applyEthOverride();
-  renderOffice();
-  if (typeof saveSettings === "function") saveSettings();
-}
 function resetEthOverride() {
     window._temporalOverride = { active: false, date: null, hourId: null };
     document.querySelectorAll('input[name="eth-watch-override"]').forEach(r => r.checked = false);
@@ -601,31 +564,6 @@ function applyEsyOverride() {
         if (mainRadio) { mainRadio.checked = true; }
     }
     renderOffice();
-}
-
-// ── Church of the East Date Navigation ────────────────────────────────
-
-function esyChangeDate(deltaDays) {
-  const el = document.getElementById("esy-override-date");
-  if (!el) return;
-
-  const base = el.value || _toISODateLocal(new Date());
-  el.value = _addDaysISO(base, deltaDays);
-
-  applyEsyOverride();
-  renderOffice();
-  if (typeof saveSettings === "function") saveSettings();
-}
-
-function esyToday() {
-  const el = document.getElementById("esy-override-date");
-  if (!el) return;
-
-  el.value = _toISODateLocal(new Date());
-
-  applyEsyOverride();
-  renderOffice();
-  if (typeof saveSettings === "function") saveSettings();
 }
 
 function resetEsyOverride() {
@@ -1646,7 +1584,7 @@ async function renderBcpOffice() {
                 'meskerem': 'meskerem', 'teqemt': 'tiqimt', 'hidar': 'hidar',
                 'tahsas': 'tahsas', 'tir': 'tir', 'yekatit': 'yekatit',
                 'megabit': 'megabit', 'miyazya': 'miazia', 'ginbot': 'ginbot',
-                'sene': 'sene', 'hamle': 'hamle', 'nehase': 'nehase', 'pagume': 'pagume'
+                'sene': 'sene', 'hamle': 'hamle', 'nehase': 'nehase', 'pagume': 'pagumen'
             };
             const monthSlug = MONTH_SLUG_MAP[ethDate.month.toLowerCase()] || ethDate.month.toLowerCase();
 
@@ -1663,7 +1601,7 @@ async function renderBcpOffice() {
             // 3. Find today's entry in the index (months is an array, not a keyed object)
             let indexEntry = null;
             if (appData.senkessarIndex?.months) {
-                const MONTH_NAME_ALIASES = { 'teqemt': 'tiqimt' };
+                const MONTH_NAME_ALIASES = { 'teqemt': 'tiqimt' , 'pagume': 'pagumen', 'pagumen': 'pagumen'};
                 const normalizedMonth = MONTH_NAME_ALIASES[ethDate.month.toLowerCase()] || ethDate.month.toLowerCase();
                 const monthData = appData.senkessarIndex.months.find(
                     m => m.month.toLowerCase() === normalizedMonth
@@ -1676,6 +1614,18 @@ async function renderBcpOffice() {
             // 4. Render header
             officeHtml += `<span class="rubric-text">The Senkessar: ${ethDateLabel}</span>`;
 
+            // If Pagumen 6 is in view, allow rendering even if the index file has not yet been extended to 6 days.
+            if (!indexEntry && monthSlug === 'pagumen' && ethDate.day === 6) {
+                indexEntry = { title: '6 Pagumen — The Seal of the Year' };
+            }
+
+
+            // If Pagumen 6 is in view, allow rendering even if the index file has not yet been extended to 6 days.
+            if (!indexEntry && monthSlug === 'pagumen' && ethDate.day === 6) {
+                indexEntry = { title: '6 Pagumen — The Seal of the Year' };
+            }
+
+
             if (indexEntry) {
                 // 5. Fetch the monthly narrative file (cached in appData.senkessarCache by monthSlug)
                 if (!appData.senkessarCache[monthSlug]) {
@@ -1686,9 +1636,25 @@ async function renderBcpOffice() {
                         console.warn(`[eth-saints-commemoration] Month file load failed: ${monthSlug}.json`, err);
                     }
                 }
-                const dayData = appData.senkessarCache[monthSlug]
-                    ? appData.senkessarCache[monthSlug][ethDate.day]
-                    : null;
+                let dayData = null;
+                // Pagumen 6 is stored as a standalone file (only exists in Ethiopian leap years)
+                if (monthSlug === 'pagumen' && ethDate.day === 6) {
+                    const key6 = 'pagumen-6';
+                    if (!appData.senkessarCache[key6]) {
+                        try {
+                            const day6Res = await fetch('data/synaxarium/ethiopian/pagumen-6.json');
+                            if (day6Res.ok) appData.senkessarCache[key6] = await day6Res.json();
+                        } catch (err) {
+                            console.warn('[eth-saints-commemoration] Day 6 file load failed: pagumen-6.json', err);
+                        }
+                    }
+                    dayData = appData.senkessarCache[key6] || null;
+                } else {
+                    dayData = appData.senkessarCache[monthSlug]
+                        ? appData.senkessarCache[monthSlug][ethDate.day]
+                        : null;
+                }
+
 
                 if (dayData) {
                     // Render title and narrative from the monthly file
@@ -1987,7 +1953,7 @@ async function renderEthiopianSaatat() {
                 'meskerem': 'meskerem', 'teqemt': 'tiqimt', 'hidar': 'hidar',
                 'tahsas': 'tahsas', 'tir': 'tir', 'yekatit': 'yekatit',
                 'megabit': 'megabit', 'miyazya': 'miazia', 'ginbot': 'ginbot',
-                'sene': 'sene', 'hamle': 'hamle', 'nehase': 'nehase', 'pagume': 'pagume'
+                'sene': 'sene', 'hamle': 'hamle', 'nehase': 'nehase', 'pagume': 'pagumen'
             };
             const monthSlug = MONTH_SLUG_MAP[ethDate.month.toLowerCase()] || ethDate.month.toLowerCase();
 
@@ -2002,7 +1968,7 @@ async function renderEthiopianSaatat() {
 
             let indexEntry = null;
             if (appData.senkessarIndex?.months) {
-                const MONTH_NAME_ALIASES = { 'teqemt': 'tiqimt' };
+                const MONTH_NAME_ALIASES = { 'teqemt': 'tiqimt' , 'pagume': 'pagumen', 'pagumen': 'pagumen'};
                 const normalizedMonth = MONTH_NAME_ALIASES[ethDate.month.toLowerCase()] || ethDate.month.toLowerCase();
                 const monthData = appData.senkessarIndex.months.find(m => m.month.toLowerCase() === normalizedMonth);
                 if (monthData?.days) {
@@ -2021,9 +1987,25 @@ async function renderEthiopianSaatat() {
                         console.warn(`[renderEthiopianSaatat] Month file load failed: ${monthSlug}.json`, err);
                     }
                 }
-                const dayData = appData.senkessarCache[monthSlug]
-                    ? appData.senkessarCache[monthSlug][ethDate.day]
-                    : null;
+                let dayData = null;
+                // Pagumen 6 is stored as a standalone file (only exists in Ethiopian leap years)
+                if (monthSlug === 'pagumen' && ethDate.day === 6) {
+                    const key6 = 'pagumen-6';
+                    if (!appData.senkessarCache[key6]) {
+                        try {
+                            const day6Res = await fetch('data/synaxarium/ethiopian/pagumen-6.json');
+                            if (day6Res.ok) appData.senkessarCache[key6] = await day6Res.json();
+                        } catch (err) {
+                            console.warn('[renderEthiopianSaatat] Day 6 file load failed: pagumen-6.json', err);
+                        }
+                    }
+                    dayData = appData.senkessarCache[key6] || null;
+                } else {
+                    dayData = appData.senkessarCache[monthSlug]
+                        ? appData.senkessarCache[monthSlug][ethDate.day]
+                        : null;
+                }
+
                 if (dayData) {
                     officeHtml += `<div class="component-text"><strong style="color:#d4af37">${dayData.title || indexEntry.title}</strong></div>`;
                     if (dayData.narrative) {
@@ -2461,3 +2443,4 @@ async function renderEastSyriac() {
     const saintSection = document.querySelector('.saint-section');
     if (saintSection) saintSection.style.display = 'none';
 }
+
