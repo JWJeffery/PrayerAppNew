@@ -1,10 +1,10 @@
 {
   "project_manifest": {
     "name": "Universal Office",
-    "version": "2.8.3",
-    "last_updated": "2026-02-28",
+    "version": "2.8.4",
+    "last_updated": "2026-03-03",
     "bcp_compliance": "100%",
-    "operational_status": "OPERATIONAL — v2.8.3: COE saint section silenced pending architectural rebuild. COE rendering model documented. Saints filter updated for tags[] schema (v2.8.2). All 1568 saint records migrated.",
+    "operational_status": "OPERATIONAL — v2.8.4: Documentation realigned to current architecture (structure.json contract, UI boot/state, saints normalization, COE-II spec). No functional changes.",
     "audit_findings": {
       "open_bugs": [
         "1. Rubric logic: [rite] placeholder resolution in rubrics.json is fragile and prone to null returns. (LOW — see known_outstanding_issues.rite_placeholder_resolution)"
@@ -13,7 +13,7 @@
         "1. Heavy reliance on .innerHTML string building in office-ui.js needs transition to a template system.",
         "2. Global state race condition: appData hydration must be gated before renderOffice() execution. (see known_outstanding_issues.hydration_race_condition for full detail)",
         "3. Redundant liturgical fragments (Gloria Patri/Kyrie) should be normalized into common.json.",
-        "4. Saints data model: flat tradition-string records should be refactored into separate Saint (identity) and Commemoration (calendar binding) record types. Current tags[] schema is a verified interim step — data is clean and correct. Full refactor deferred. See known_outstanding_issues.saints_schema_refactor for detail.",
+        "4. Saints data model: identities.json + commemorations.json are now the canonical source-of-truth. Remaining work: finalize schema documentation, enforce adapters at boundaries, and implement resolveCommemorations(date, tradition) as the sole UI entrypoint.",
         "5. COE saint/commemoration rendering: the current saint-grid model is categorically wrong for the Church of the East. COE is a salvation-historical seasonal calendar, not a date-to-saint grid. Requires a three-layer rebuild: (1) season engine already exists; (2) fixed feasts layer; (3) sparse individual saints. Friday is a liturgical class (martyrial), not a saint slot. Full spec in known_outstanding_issues.coe_calendar_model. COE saint section silenced in v2.8.3 pending rebuild."
       ],
       "resolved_in_this_version": [
@@ -61,6 +61,9 @@
         "item": "CalendarEngine SEASON_RANGES hardcoded through December 2030. Any date after that fell through to ordinary1.json fallback with a console warning.",
         "resolution": "Resolved in v2.8.1 — SEASON_RANGES replaced with algorithmic generator using Anonymous Gregorian Easter algorithm. getLiturgicalYear() also made fully algorithmic. Valid for any year. Tested against 2026 through 2099."
       }
+    ],
+    "resolved_in_this_version": [
+      "2. Documentation realignment: structure.json contract and documentation/* updated to match v2.8.2–v2.8.3 architecture changes (internal-only)."
     ]
   },
   "active_modules": {
@@ -932,7 +935,7 @@
   "governance": {
     "architectural_charter": {
       "path": "documentation/governance/architectural_charter.md",
-      "version": "0.1",
+      "version": "0.2",
       "status": "active"
     }
   },
@@ -1032,6 +1035,21 @@
         "status": "open",
         "area": "js/calendar-engine.js + admin/admin.html"
       }
+    ]
+  },
+  "documentation_manifest": {
+    "status": "internal",
+    "last_realigned": "2026-03-03",
+    "notes": [
+      "structure.json is the canonical governance+documentation artifact and is consumed by admin dashboard.",
+      "documentation/* files are internal engineering references; git history is the archive of prior versions."
+    ],
+    "key_docs": [
+      "documentation/STRUCTURE_JSON_CONTRACT.md",
+      "documentation/OFFICE_UI_DOCUMENTATION.md",
+      "documentation/governance/architectural_charter.md",
+      "documentation/SAINTS_DATA_MODEL.md",
+      "documentation/COE_II_ARCHITECTURE.md"
     ]
   }
 }

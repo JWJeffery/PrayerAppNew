@@ -1,8 +1,15 @@
 # Architectural Charter — Universal Office
-# Architectural Charter — Universal Office
-**Version:** 0.1 (Draft)  
-**Status:** Active upon merge to main  
+**Version:** 0.2  
+**Status:** Active  
 **Scope:** Repository architecture, data modeling, calendar engines, saints/commemoration system, merge governance
+
+## Changelog
+
+- **0.2 (2026-03-03)** — Documentation realignment and contracts formalization:
+  - Declared `structure.json` as an operational governance ledger (consumed by admin dashboard) and documented its contract.
+  - Formalized “mechanical honesty” as documentation + UI requirement (no silent fallbacks in engines; visible “not implemented” states).
+  - Recorded saints normalization milestone: `data/saints/identities.json` + `data/saints/commemorations.json` as canonical source-of-truth.
+  - Added COE-II as a design spec (observance-first; three-layer model).
 
 ---
 

@@ -102,3 +102,7 @@ interface CalendarConfig {
   eoMode?:        EoMode;   // only applicable when tradition === 'EOR'
 }
 ```
+
+---
+
+**Note:** `structure.json` is the canonical governance ledger (also runtime-consumed by the Admin Dashboard). See `documentation/STRUCTURE_JSON_CONTRACT.md`.
