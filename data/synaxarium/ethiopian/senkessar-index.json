@@ -2061,7 +2061,7 @@
       "month": "Pagumen",
       "month_number": 13,
       "ge_ez": "ጳጉሜን",
-      "total_days": 5,
+      "total_days": 6,
       "thematic_summary": "The intercalary month — the five threshold days between the old year and the New Year (Meskerem 1). Governed by the theology of purification, the washing of the year's griefs in the rains of Pagumen, and the passage from the Old Man to the New. The primary feast is the Archangel Raphael on Day 3.",
       "key_feasts": [
         {
@@ -2094,6 +2094,11 @@
           "day": 5,
           "id": "senkessar-pagumen-5",
           "title": "5 Pagumen — The Prophet Amos & The Assembly"
+        },
+        {
+          "day": 6,
+          "id": "senkessar-pagumen-6",
+          "title": "6 Pagumen — The Seal of the Year"
         }
       ]
     }

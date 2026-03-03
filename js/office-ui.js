@@ -106,7 +106,44 @@ function applyEthOverride() {
     window._temporalOverride.hourId = radioVal || null;
     renderOffice();
 }
+// ── Ethiopian Date Navigation ─────────────────────────────────────────
 
+function _toISODateLocal(d) {
+  const yyyy = d.getFullYear();
+  const mm = String(d.getMonth() + 1).padStart(2, "0");
+  const dd = String(d.getDate()).padStart(2, "0");
+  return `${yyyy}-${mm}-${dd}`;
+}
+
+function _addDaysISO(iso, deltaDays) {
+  const [y, m, d] = iso.split("-").map(Number);
+  const dt = new Date(y, m - 1, d);
+  dt.setDate(dt.getDate() + deltaDays);
+  return _toISODateLocal(dt);
+}
+
+function ethChangeDate(deltaDays) {
+  const el = document.getElementById("eth-override-date");
+  if (!el) return;
+
+  const base = el.value || _toISODateLocal(new Date());
+  el.value = _addDaysISO(base, deltaDays);
+
+  applyEthOverride();
+  renderOffice();
+  if (typeof saveSettings === "function") saveSettings();
+}
+
+function ethToday() {
+  const el = document.getElementById("eth-override-date");
+  if (!el) return;
+
+  el.value = _toISODateLocal(new Date());
+
+  applyEthOverride();
+  renderOffice();
+  if (typeof saveSettings === "function") saveSettings();
+}
 function resetEthOverride() {
     window._temporalOverride = { active: false, date: null, hourId: null };
     document.querySelectorAll('input[name="eth-watch-override"]').forEach(r => r.checked = false);
@@ -564,6 +601,31 @@ function applyEsyOverride() {
         if (mainRadio) { mainRadio.checked = true; }
     }
     renderOffice();
+}
+
+// ── Church of the East Date Navigation ────────────────────────────────
+
+function esyChangeDate(deltaDays) {
+  const el = document.getElementById("esy-override-date");
+  if (!el) return;
+
+  const base = el.value || _toISODateLocal(new Date());
+  el.value = _addDaysISO(base, deltaDays);
+
+  applyEsyOverride();
+  renderOffice();
+  if (typeof saveSettings === "function") saveSettings();
+}
+
+function esyToday() {
+  const el = document.getElementById("esy-override-date");
+  if (!el) return;
+
+  el.value = _toISODateLocal(new Date());
+
+  applyEsyOverride();
+  renderOffice();
+  if (typeof saveSettings === "function") saveSettings();
 }
 
 function resetEsyOverride() {

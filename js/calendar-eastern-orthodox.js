@@ -423,11 +423,11 @@
   }
 
   /**
-   * Find any observance on a given date.
+   * Find all observances on a given date. Returns [] if none match.
    */
-  function findObservance(date, observances) {
+  function findObservances(date, observances) {
     const d = midnight(date);
-    return observances.find(o => dateEq(d, o.date)) || null;
+    return observances.filter(o => dateEq(d, o.date));
   }
 
   // ── Public API ───────────────────────────────────────────────────────────
@@ -502,11 +502,11 @@
    *
    * Returns:
    * {
-   *   date:       "YYYY-MM-DD",
-   *   season:     { key, label, colorToken },
-   *   week:       { key, label } | null,
-   *   observance: { key, label, kind, colorToken } | null,
-   *   anchors:    { pascha, cleanMonday, ascension, pentecost, allSaints, … } // ISO
+   *   date:        "YYYY-MM-DD",
+   *   season:      { key, label, colorToken },
+   *   week:        { key, label } | null,
+   *   observances: [ { key, label, kind, colorToken } ]   <- array, never null
+   *   anchors:     { pascha, cleanMonday, ascension, pentecost, allSaints, ... } // ISO
    * }
    */
   function getDaySnapshot(dateOrISO, options) {
@@ -536,8 +536,8 @@
       else if (findSeason(date, calNext.seasons)) chosenCal = calNext;
     }
 
-    const week = findWeek(date, chosenCal.anchors, chosenCal.pascha);
-    const obs  = findObservance(date, chosenCal.observances);
+    const week       = findWeek(date, chosenCal.anchors, chosenCal.pascha);
+    const obsMatches = findObservances(date, chosenCal.observances);
 
     // Anchors as ISO
     const anchorsISO = {};
@@ -550,16 +550,16 @@
       ? { key: season.key, label: season.label, colorToken: season.colorToken }
       : { key: 'AFTER_PENTECOST', label: 'After Pentecost', colorToken: 'green' };
 
-    const obsOut = obs
-      ? { key: obs.key, label: obs.label, kind: obs.kind, colorToken: obs.colorToken }
-      : null;
+    const observancesOut = obsMatches.map(function(o) {
+      return { key: o.key, label: o.label, kind: o.kind, colorToken: o.colorToken };
+    });
 
     return {
-      date:       toISO(date),
-      season:     seasonOut,
-      week:       week,
-      observance: obsOut,
-      anchors:    anchorsISO,
+      date:        toISO(date),
+      season:      seasonOut,
+      week:        week,
+      observances: observancesOut,
+      anchors:     anchorsISO,
     };
   }
 
