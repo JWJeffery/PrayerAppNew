@@ -68,6 +68,9 @@ let appData = null;
 let currentDate = new Date();
 let selectedMode = null;
 let isHydrationComplete = false;
+let activeRender = null;
+let pendingRender = false;
+let renderScheduled = false;
 
 // ── Ethiopian Temporal Override ───────────────────────────────────────────────
 window._temporalOverride = { active: false, date: null, hourId: null };
@@ -104,7 +107,7 @@ function applyEthOverride() {
         window._temporalOverride.date = new Date(parseInt(y), parseInt(mo) - 1, parseInt(d));
     }
     window._temporalOverride.hourId = radioVal || null;
-    renderOffice();
+    requestRender();
 }
 
 function resetEthOverride() {
@@ -112,7 +115,7 @@ function resetEthOverride() {
     document.querySelectorAll('input[name="eth-watch-override"]').forEach(r => r.checked = false);
     const panel = document.getElementById('eth-override-panel');
     if (panel) panel.style.display = 'none';
-    renderOffice();
+    requestRender();
 }
 
 const monthNames = [
@@ -563,7 +566,7 @@ function applyEsyOverride() {
         const mainRadio = document.querySelector(`input[name="esy-time"][value="${radioVal}"]`);
         if (mainRadio) { mainRadio.checked = true; }
     }
-    renderOffice();
+    requestRender();
 }
 
 function resetEsyOverride() {
@@ -576,7 +579,7 @@ function resetEsyOverride() {
     const autoHour = getEastSyriacHourInfo();
     const mainRadio = document.querySelector(`input[name="esy-time"][value="${autoHour.value}"]`);
     if (mainRadio) { mainRadio.checked = true; }
-    renderOffice();
+    requestRender();
 }
 
 function backToSplash() {
@@ -676,7 +679,7 @@ async function selectMode(mode) {
 
         await hydrateForEthiopianSaatat();
         isHydrationComplete = true;
-        renderOffice();
+        requestRender();
 
     } else if (mode === 'east-syriac') {
         // ── Church of the East ────────────────────────────────────────────────
@@ -704,7 +707,7 @@ async function selectMode(mode) {
 
         await hydrateForEastSyriac();
         isHydrationComplete = true;
-        renderOffice();
+        requestRender();
 
     } else {
         // ── Daily Office (default) ────────────────────────────────────────────
@@ -728,7 +731,7 @@ async function selectMode(mode) {
         loadSettings();
         updateSidebarForOffice();
         isHydrationComplete = true;
-        renderOffice();
+        requestRender();
     }
 }
 
@@ -784,12 +787,12 @@ function toggleSidebar() {
 function changeDate(days) {
     currentDate.setDate(currentDate.getDate() + days);
     updateDatePicker();
-    renderOffice();
+    requestRender();
 }
 function resetDate() {
     currentDate = new Date();
     updateDatePicker();
-    renderOffice();
+    requestRender();
 }
 function updateDatePicker() {
     const year  = currentDate.getFullYear();
@@ -804,7 +807,7 @@ function setCustomDate(dateStr) {
         currentDate = new Date(parseInt(year), parseInt(month) - 1, parseInt(day));
     }
     updateDatePicker();
-    renderOffice();
+    requestRender();
 }
 
 function updateSidebarForOffice() {
@@ -850,7 +853,7 @@ function toggleBcpOnly() {
     } else {
         sections.forEach(s => s.classList.remove('bcp-only-hidden'));
     }
-    renderOffice();
+    requestRender();
 }
 
 // ── Appearance ───────────────────────────────────────────────────────────────
@@ -1086,15 +1089,42 @@ function saintAppliesToContext(saint, ctx) {
     return { ok: false, label: null, isEcu };
 }
 
-function renderOffice() {
+function requestRender() {
+  pendingRender = true;
+
+  if (!renderScheduled) {
+    renderScheduled = true;
+    Promise.resolve().then(flushRender);
+  }
+}
+
+async function flushRender() {
+  renderScheduled = false;
+
+  if (!pendingRender) return;
+  pendingRender = false;
+
+  if (activeRender) {
+    await activeRender;
+  }
+
+  activeRender = Promise.resolve(renderOffice());
+  try {
+    await activeRender;
+  } finally {
+    activeRender = null;
+  }
+}
+
+async function renderOffice() {
     if (!isHydrationComplete) return;
 
     if (selectedMode === 'ethiopian-saatat') {
-        renderEthiopianSaatat();
+        return renderEthiopianSaatat();
     } else if (selectedMode === 'east-syriac') {
-        renderEastSyriac();
+        return renderEastSyriac();
     } else {
-        renderBcpOffice();
+        return renderBcpOffice();
     }
 }
 
@@ -2443,4 +2473,3 @@ async function renderEastSyriac() {
     const saintSection = document.querySelector('.saint-section');
     if (saintSection) saintSection.style.display = 'none';
 }
-
