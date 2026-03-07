@@ -166,7 +166,7 @@
      * This is a synchronous read — it never triggers a fetch. It is intended
      * for callers that have already called resolveCommemorations() or
      * loadSaintsForDate() for the same month and need the complete unfiltered
-     * array (e.g. to seed a secondary cache such as appData.saints).
+     * array without any tradition filter.
      *
      * @param {string} month  - e.g. 'March' (capitalised, matches MONTH_NAMES)
      * @returns {Array|null}
@@ -174,6 +174,36 @@
     function getMonthRecords(month) {
         if (_cache && _cache.month === month) return _cache.records;
         return null;
+    }
+
+    /**
+     * Synchronous tradition filter against the already-loaded monthly cache.
+     * Never triggers a fetch. Returns an empty array if the month is not cached.
+     *
+     * Intended for use inside synchronous sequence loops that cannot await,
+     * where the caller has already warmed the cache via resolveCommemorations()
+     * or loadSaintsForDate() earlier in the same render pass.
+     *
+     * Semantics match resolveCommemorations() exactly:
+     * - Records whose `day` matches `date`
+     * - Records whose `tags` include `tradition` OR are derived ECU
+     *   (when opts.includeEcumenical is true, which is the default)
+     *
+     * @param {Date}   date
+     * @param {string} tradition  - 'ANG' | 'LAT' | 'EOR' | 'OOR' | 'COE'
+     * @param {object} [opts]
+     * @param {boolean} [opts.includeEcumenical=true]
+     * @returns {Array}
+     */
+    function filterCachedByTradition(date, tradition, opts) {
+        const month = MONTH_NAMES[date.getMonth()];
+        const records = (_cache && _cache.month === month) ? _cache.records : [];
+        const includeEcumenical = (opts && opts.includeEcumenical === false) ? false : true;
+        const ctx = { tradition, includeEcumenical };
+        return records.filter(s => {
+            if (!saintOccursOnDate(s.day, date)) return false;
+            return saintAppliesToContext(s, ctx).ok;
+        });
     }
 
     /**
@@ -197,6 +227,7 @@
         loadSaintsForDate,
         resolveCommemorations,
         getMonthRecords,
+        filterCachedByTradition,
         // Helpers exposed for callers that use them directly
         saintOccursOnDate,
         saintAppliesToContext,

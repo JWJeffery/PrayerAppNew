@@ -1057,9 +1057,8 @@ function getTraditionDisplayLabel(code) {
 
 /**
  * Canonical saints read path for the office renderers.
- * Delegates to SaintsResolver.resolveCommemorations, then seeds appData.saints
- * from SaintsResolver's internal cache (no second network fetch) so that inline
- * OOR fallback filters in the sequence loops can read appData.saints directly.
+ * Thin wrapper around SaintsResolver.resolveCommemorations.
+ * All caching and filtering is owned by SaintsResolver.
  *
  * @param {Date}   date
  * @param {string} tradition  - 'ANG' | 'LAT' | 'EOR' | 'OOR' | 'COE'
@@ -1067,25 +1066,7 @@ function getTraditionDisplayLabel(code) {
  * @returns {Promise<Array>}
  */
 async function resolveCommemorations(date, tradition, opts) {
-    const MONTH_NAMES = [
-        'January','February','March','April','May','June',
-        'July','August','September','October','November','December',
-    ];
-    const month = MONTH_NAMES[date.getMonth()];
-
-    // Delegate — loads and caches the monthly file inside SaintsResolver
-    // if not already cached for this month.
-    const result = await SaintsResolver.resolveCommemorations(date, tradition, opts);
-
-    // Seed appData.saints from SaintsResolver's now-populated cache.
-    // getMonthRecords() is synchronous and never fetches; safe to call
-    // immediately after the await above — same month is guaranteed in cache.
-    if (!appData.saints || appData.saintsMonth !== month) {
-        appData.saints      = SaintsResolver.getMonthRecords(month) || [];
-        appData.saintsMonth = month;
-    }
-
-    return result;
+    return SaintsResolver.resolveCommemorations(date, tradition, opts);
 }
 
 function requestRender() {
@@ -1299,7 +1280,7 @@ async function renderBcpOffice() {
     }
     // ── End pre-fetch ─────────────────────────────────────────────────────────
     // ── Saints preload (must precede sequence loop for eth-saints-commemoration) ─
-    // Warms appData.saints for the current month via the shared resolver.
+    // Warms SaintsResolver monthly cache before sequence loop.
     await resolveCommemorations(currentDate, 'ANG');
 
     // ── Main Rubric Sequence Loop ─────────────────────────────────────────────
@@ -1693,11 +1674,7 @@ async function renderBcpOffice() {
                 }
             } else {
                 // 6. No index entry — secondary check: Oriental/Ethiopian saints in Gregorian saints data
-                const orientalSaints = (appData.saints || []).filter(s => {
-                    if (!saintOccursOnDate(s.day, currentDate)) return false;
-                    const tags = Array.isArray(s.tags) ? s.tags : [];
-                    return tags.includes('OOR');
-                });
+                const orientalSaints = SaintsResolver.filterCachedByTradition(currentDate, 'OOR');
 
                 if (orientalSaints.length > 0) {
                     orientalSaints.forEach(s => {
@@ -1869,7 +1846,7 @@ async function renderEthiopianSaatat() {
 
     const activeRubric = appData.rubrics.find(r => r.id === 'ethiopian-saatat');
 
-    // Saints preload — warms appData.saints for OOR fallback in sequence loop.
+    // Warms SaintsResolver monthly cache before sequence loop.
     await resolveCommemorations(currentDate, 'OOR');
 
     let officeHtml = `<div class="office-container"><h2>The Ethiopian Sa'atat</h2>`;
@@ -2030,11 +2007,7 @@ async function renderEthiopianSaatat() {
                     console.warn(`[renderEthiopianSaatat] No entry for day ${ethDate.day} in ${monthSlug}.json`);
                 }
             } else {
-                const orientalSaints = (appData.saints || []).filter(s => {
-                    if (!saintOccursOnDate(s.day, currentDate)) return false;
-                    const tags = Array.isArray(s.tags) ? s.tags : [];
-                    return tags.includes('OOR');
-                });
+                const orientalSaints = SaintsResolver.filterCachedByTradition(currentDate, 'OOR');
                 if (orientalSaints.length > 0) {
                     orientalSaints.forEach(s => {
                         officeHtml += `<div class="component-text"><strong style="color:#d4af37">${s.name || 'Unknown'}</strong>`;
