@@ -1,4 +1,3 @@
-================================================
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -175,13 +174,13 @@
             <div class="setting-group" style="margin-top:10px;">
                 <strong style="display:block; margin-bottom:6px;">Canonical Watch</strong>
                 <label style="display:block; margin-bottom:5px;"><input type="radio" name="eth-watch-override" value="eth-nigatu-hour-text"  onchange="applyEthOverride()"> Nigatu — ንጋቱ (06:00–09:00)</label>
-                <label style="display:block; margin-bottom:5px;"><input type="radio" name="eth-watch-override" value="eth-meserk-hour-text"  onchange="applyEthOverride()"> Mese’rk — መሠርቅ (09:00–12:00)</label>
+                <label style="display:block; margin-bottom:5px;"><input type="radio" name="eth-watch-override" value="eth-meserk-hour-text"  onchange="applyEthOverride()"> Mese'rk — መሠርቅ (09:00–12:00)</label>
                 <label style="display:block; margin-bottom:5px;"><input type="radio" name="eth-watch-override" value="eth-lika-hour-text"    onchange="applyEthOverride()"> Lika — ሊካ (12:00–15:00)</label>
-                <label style="display:block; margin-bottom:5px;"><input type="radio" name="eth-watch-override" value="eth-terk-hour-text"    onchange="applyEthOverride()"> Tese’at — ተሰዓት (15:00–17:00)</label>
+                <label style="display:block; margin-bottom:5px;"><input type="radio" name="eth-watch-override" value="eth-terk-hour-text"    onchange="applyEthOverride()"> Tese'at — ተሰዓት (15:00–17:00)</label>
                 <label style="display:block; margin-bottom:5px;"><input type="radio" name="eth-watch-override" value="eth-serkh-hour-text"   onchange="applyEthOverride()"> Serkh — ሠርክ (17:00–18:00)</label>
                 <label style="display:block; margin-bottom:5px;"><input type="radio" name="eth-watch-override" value="eth-nome-hour-text"    onchange="applyEthOverride()"> Nime — ኖሜ (18:00–21:00)</label>
-                <label style="display:block; margin-bottom:5px;"><input type="radio" name="eth-watch-override" value="eth-hour-7"            onchange="applyEthOverride()"> Le’lit — First Night Watch (21:00–00:00)</label>
-                <label style="display:block; margin-bottom:5px;"><input type="radio" name="eth-watch-override" value="eth-lelit-hour-text"   onchange="applyEthOverride()"> Le’lit — ሌሊት (00:00–03:00)</label>
+                <label style="display:block; margin-bottom:5px;"><input type="radio" name="eth-watch-override" value="eth-hour-7"            onchange="applyEthOverride()"> Le'lit — First Night Watch (21:00–00:00)</label>
+                <label style="display:block; margin-bottom:5px;"><input type="radio" name="eth-watch-override" value="eth-lelit-hour-text"   onchange="applyEthOverride()"> Le'lit — ሌሊት (00:00–03:00)</label>
                 <label style="display:block; margin-bottom:5px;"><input type="radio" name="eth-watch-override" value="eth-mahlet-hour-text"  onchange="applyEthOverride()"> Mahlet — ማህሌት (03:00–06:00)</label>
             </div>
             <div class="setting-group" style="margin-top:10px;">
@@ -202,7 +201,7 @@
                 Include Weddase Maryam
             </label>
         </div>
-    </div>
+    </div><!-- /ethiopian-settings -->
 
     <!-- Church of the East Liturgical Console -->
     <div id="east-syriac-settings" class="mode-hidden sidebar-hidden">
@@ -280,7 +279,36 @@
                 —
             </div>
         </div>
-    </div>
+    </div><!-- /east-syriac-settings -->
+
+    <!-- Generic Sidebar Shell — Horologion and future traditions -->
+    <!-- ── NEW: added for Horologion v2.x UI shell. Do not add BCP-specific     -->
+    <!-- ── controls here. This panel is the reusable path for any tradition     -->
+    <!-- ── that does not have its own dedicated settings panel.                 -->
+    <div id="generic-settings" class="mode-hidden sidebar-hidden">
+        <h3 style="color:var(--gold); font-family:'Cinzel',serif; font-size:1.15em; letter-spacing:0.08em;">Byzantine Vespers</h3>
+
+        <!-- Tradition / office identity label -->
+        <div class="setting-group">
+            <div id="generic-tradition-label" style="font-family:'IM Fell English',serif; font-size:1em; color:#c8bfa8; margin-bottom:2px;">Byzantine Vespers — Horologion</div>
+            <div id="generic-date-label" style="font-family:'Cinzel',serif; font-size:0.72em; letter-spacing:0.08em; color:#a89878; margin-bottom:8px;">—</div>
+        </div>
+
+        <!-- Date navigator — reuses the same changeDate/resetDate/setCustomDate
+             functions as the BCP panel; currentDate is shared app-wide state. -->
+        <div class="ordo-control">
+            <strong>Liturgical Ordo</strong>
+            <div class="ordo-date" id="generic-display-date">Loading...</div>
+            <div class="ordo-buttons">
+                <button class="ordo-btn" onclick="changeDate(-1)">Prev</button>
+                <button class="ordo-btn" onclick="resetDate()">Today</button>
+                <button class="ordo-btn" onclick="changeDate(1)">Next</button>
+            </div>
+            <label for="generic-date-picker" style="display:block; color:var(--gold); font-size:0.8em; margin-top:10px;">Select Date:</label>
+            <input type="date" id="generic-date-picker" style="margin-top:5px; width:100%; padding:5px; background:#333; color:white; border:1px solid #555; border-radius:4px; box-sizing:border-box;" onchange="setCustomDate(this.value)">
+            <div id="generic-calendar-info" style="font-size:0.7em; color:var(--gold); margin-top:10px;">Exploring the Ordo...</div>
+        </div>
+    </div><!-- /generic-settings -->
 
     <!-- Main content area -->
     <div id="main-content">
@@ -412,6 +440,3 @@
 
 </body>
 </html>
-
-
-================================================

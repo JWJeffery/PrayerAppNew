@@ -541,15 +541,20 @@ function backToSplash() {
     // Reset all settings panels to their default hidden states so the next
     // mode selection starts clean (avoids e.g. East Syriac settings panel
     // bleeding into a subsequent Daily Office load)
-    const settingsPanel = document.getElementById('settings-panel');
+   const settingsPanel = document.getElementById('settings-panel');
     const ethSettings   = document.getElementById('ethiopian-settings');
     const esySettings   = document.getElementById('east-syriac-settings');
+    const genSettings   = document.getElementById('generic-settings');
     const mainContent   = document.getElementById('main-content');
 
+    // On splash, ALL panels are hidden. The next selectMode() call is solely
+    // responsible for activating whichever panel is correct for that mode.
+    // Do NOT restore #settings-panel here — that was the original splash
+    // deformation bug. Splash has no sidebar at all.
     if (settingsPanel) {
-    settingsPanel.classList.add('sidebar-hidden');
-    settingsPanel.classList.add('mode-hidden');
-}
+        settingsPanel.classList.add('sidebar-hidden');
+        settingsPanel.classList.add('mode-hidden');
+    }
     if (ethSettings) {
         ethSettings.classList.add('sidebar-hidden');
         ethSettings.classList.add('mode-hidden');
@@ -558,10 +563,13 @@ function backToSplash() {
         esySettings.classList.add('sidebar-hidden');
         esySettings.classList.add('mode-hidden');
     }
+    if (genSettings) {
+        genSettings.classList.add('sidebar-hidden');
+        genSettings.classList.add('mode-hidden');
+    }
     if (mainContent) {
         mainContent.classList.remove('sidebar-hidden');
     }
-}
 
 async function selectMode(mode) {
     selectedMode = mode;
@@ -752,11 +760,13 @@ function toggleSidebar() {
 function changeDate(days) {
     currentDate.setDate(currentDate.getDate() + days);
     updateDatePicker();
+    if (selectedMode === 'horologion-vespers') updateGenericDateDisplay();
     requestRender();
 }
 function resetDate() {
     currentDate = new Date();
     updateDatePicker();
+    if (selectedMode === 'horologion-vespers') updateGenericDateDisplay();
     requestRender();
 }
 function updateDatePicker() {
@@ -766,12 +776,42 @@ function updateDatePicker() {
     const picker = document.getElementById('date-picker');
     if (picker) picker.value = `${year}-${month}-${day}`;
 }
+function updateGenericDateDisplay() {
+    // Syncs #generic-settings date widgets with currentDate.
+    // Called by changeDate(), resetDate(), setCustomDate() when
+    // selectedMode === 'horologion-vespers'. Zero cost in all other modes.
+    const year  = currentDate.getFullYear();
+    const month = String(currentDate.getMonth() + 1).padStart(2, '0');
+    const day   = String(currentDate.getDate()).padStart(2, '0');
+
+    const displayEl = document.getElementById('generic-display-date');
+    const pickerEl  = document.getElementById('generic-date-picker');
+    const infoEl    = document.getElementById('generic-calendar-info');
+
+    if (displayEl) {
+        displayEl.textContent = currentDate.toLocaleDateString('en-US', {
+            weekday: 'long', year: 'numeric', month: 'long', day: 'numeric'
+        });
+    }
+    if (pickerEl) {
+        pickerEl.value = `${year}-${month}-${day}`;
+    }
+    if (infoEl) {
+        // Mirror whatever the BCP calendar-info line already computed,
+        // if it has been populated by the render cycle.
+        const bcpInfo = document.getElementById('calendar-info');
+        if (bcpInfo && bcpInfo.textContent && bcpInfo.textContent !== 'Exploring the Ordo...') {
+            infoEl.textContent = bcpInfo.textContent;
+        }
+    }
+}
 function setCustomDate(dateStr) {
     if (dateStr) {
         const [year, month, day] = dateStr.split('-');
         currentDate = new Date(parseInt(year), parseInt(month) - 1, parseInt(day));
     }
     updateDatePicker();
+    if (selectedMode === 'horologion-vespers') updateGenericDateDisplay();
     requestRender();
 }
 
@@ -2619,4 +2659,4 @@ async function renderEastSyriac() {
         if (dateHeader)   dateHeader.style.display   = 'none';
         if (saintDisplay) saintDisplay.innerHTML      = '';
     }
-}
+}}
