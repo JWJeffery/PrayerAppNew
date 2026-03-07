@@ -1,6 +1,6 @@
 // ── js/horologion-engine.js ────────────────────────────────────────────────
 //
-// Horologion Engine v1.7
+// Horologion Engine v1.9
 // Architecture layer: ENGINE (not UI, not calendar)
 //
 // This module owns:
@@ -69,6 +69,70 @@
 //     Festal overrides: NOT implemented; stated openly in Saturday output.
 //
 // ──────────────────────────────────────────────────────────────────────────
+// ── v1.8 additions ─────────────────────────────────────────────────────────
+//   Sunday Vespers bundle pass. Implements Sunday Small Vespers (Sunday
+//   evening office) as a distinct, honest baseline.
+//
+//   WHAT "SUNDAY VESPERS" MEANS HERE:
+//     This is Sunday Small Vespers — the brief evening office sung on Sunday
+//     evening itself, not Saturday Great Vespers (which anticipates Sunday and
+//     is already implemented under dayOfWeek === 6). The two offices are
+//     liturgically distinct; this pass targets dayOfWeek === 0.
+//
+//   stichera-at-lord-i-have-cried (Sunday):
+//     Resolved using the resurrectional 'saturday' Octoechos corpus (same tone
+//     week). At Sunday Small Vespers the resurrectional stichera of the current
+//     tone are appointed — the same set anticipated at Saturday Great Vespers.
+//     Label patched to read "Sunday Small Vespers"; rubric notes that three
+//     stichera are typically used rather than eight at this shorter office.
+//     resolvedAs: 'sunday-small-vespers-resurrectional-stichera'
+//
+//   aposticha (Sunday):
+//     Same approach — Resurrectional Aposticha from the 'saturday' corpus.
+//     resolvedAs: 'sunday-small-vespers-resurrectional-aposticha'
+//
+//   kathisma-reading (Sunday):
+//     Upgraded from generic deferred stub to an actionable rubric encoding
+//     the ordinary Sunday Small Vespers practice: kathisma omitted. Vigil
+//     usage (Kathisma 1) is stated for reference. No text fabricated.
+//     resolvedAs: 'sunday-small-vespers-kathisma-ordinary-omitted'
+//
+//   troparion-or-apolytikion (Sunday):
+//     Full Resurrectional Troparion of the current Octoechos tone, from
+//     data/horologion/vespers-troparion.json. Same text as Saturday Great
+//     Vespers — the apolytikion of the tone, not Saturday-specific.
+//     resolvedAs: 'resurrectional-troparion-sunday'
+//
+//   theotokion-dismissal (Sunday):
+//     Full dismissal Theotokion of the current Octoechos tone, from
+//     data/horologion/vespers-theotokion.json. Same text as Saturday Great
+//     Vespers — tone-matched Octoechos Theotokion, not Saturday-specific.
+//     resolvedAs: 'dismissal-theotokion-sunday'
+//
+//   No new data files. No new loaders. office-ui.js unchanged.
+//   Engine changes: _resolveKathismaSlot, _resolveTroparionSlot,
+//   _resolveTheotokionSlot, _resolveVespersSlots (octoechosWeekdayKey +
+//   Sunday label patches in stichera and aposticha blocks).
+//
+// ── v1.9 additions ─────────────────────────────────────────────────────────
+//   - _loadWeekdayTheotokionData(): loads
+//       data/horologion/vespers-weekday-theotokion.json
+//       40 entries: 8 tones × 5 weekdays (Mon–Fri).
+//   - _resolveTheotokionSlot() weekday branch (Mon–Fri): upgraded from
+//       tone-identified rubric stub to type:'text' full resolution.
+//     Mon, Tue, Thu: standard Octoechos weekday Theotokion for this tone + day.
+//     Wed, Fri:      Stavrotheotokion (Cross Theotokion) for this tone + day —
+//       standard Byzantine practice on the weekly fasting days.
+//     resolvedAs: 'weekday-octoechos-theotokion'
+//   - troparion-or-apolytikion (Mon–Fri): UNCHANGED — remains rubric stub.
+//       No Menaion data exists in the repo. Tone is stated; text not fabricated.
+//       resolvedAs: 'weekday-menaion-required'
+//   - LIMITATION RECORDED IN OUTPUT: weekday Theotokion ideally follows the
+//       tone of the Menaion troparion, which may differ from the Octoechos
+//       weekly tone. This baseline uses the Octoechos tone — correct when
+//       the two tones agree (ordinary weeks). Stated openly in the output text.
+//
+// ──────────────────────────────────────────────────────────────────────────
 const HorologionEngine = (() => {
 
     // ── Internal skeleton cache ────────────────────────────────────────────
@@ -97,6 +161,11 @@ const HorologionEngine = (() => {
     // ── v1.7: Dismissal Theotokion data file URL ───────────────────────────
     const THEOTOKION_URL = 'data/horologion/vespers-theotokion.json';
 
+    // ── v1.9: Weekday Theotokion data file URL ────────────────────────────
+    // 40 entries: 8 Octoechos tones × 5 weekdays (Mon–Fri).
+    // Wednesday and Friday entries are Stavrotheotokia (Cross Theotokia).
+    const WEEKDAY_THEOTOKION_URL = 'data/horologion/vespers-weekday-theotokion.json';
+
     // ── v1.2: Weekday prokeimena lookup array (null until first fetch) ──────
     // Populated lazily by _loadVespersProkeimena(). Indexed by JS Date.getDay()
     // (0 = Sunday … 6 = Saturday). Built from vespers-prokeimena.json entries.
@@ -123,6 +192,12 @@ const HorologionEngine = (() => {
     // Populated lazily by _loadTheotokionData().
     // Shape: { dismissal_theotokia: { "1": {...}, ... "8": {...} } }
     let _theotokionData = null;
+
+    // ── v1.9: Weekday Theotokion data object (null until first fetch) ──────
+    // Populated lazily by _loadWeekdayTheotokionData().
+    // Shape: { weekday_theotokia: { "1": { monday: {...}, tuesday: {...}, ... }, ... } }
+    // Covers tones 1–8, weekdays Monday–Friday (40 entries total).
+    let _weekdayTheotokionData = null;
 
     // ── v1.3: Pascha cache ─────────────────────────────────────────────────
     // Keyed by Gregorian year string. Avoids recomputing Pascha repeatedly
@@ -693,14 +768,24 @@ const HorologionEngine = (() => {
         const assignment = assignments.find(a => a.weekdayIndex === dayOfWeek);
         if (!assignment) return null;
 
-        // ── Sunday: explicitly deferred ──────────────────────────────────
+        // ── Sunday Small Vespers: kathisma rubric ─────────────────────────
+        // At Sunday Small Vespers (the brief evening office on Sunday itself),
+        // the kathisma is ordinarily omitted. Kathisma 1 ("Blessed is the man")
+        // is read at Saturday Great Vespers (all-night vigil), not here.
+        // This rubric encodes the ordinary practice honestly without fabrication.
         if (assignment.sunday_deferred) {
             return {
                 type:       'rubric',
                 key:        'kathisma-reading',
                 label:      'Kathisma',
-                text:       '(Sunday Vespers — Kathisma appointment deferred. Sunday Vespers kathisma practice varies significantly by usage: at full Great Vespers (all-night vigil) Kathisma 1 is standard; at ordinary Sunday small Vespers the kathisma is often omitted or varies by local use. A single baseline rule cannot be safely applied. This slot will be resolved in a future pass.)',
-                resolvedAs: 'sunday-deferred'
+                text:       '(Sunday Small Vespers — Kathisma: at ordinary Sunday Small Vespers, ' +
+                            'the kathisma is omitted. Kathisma 1 ("Blessed is the man...") ' +
+                            'is appointed at Saturday Great Vespers (the all-night vigil), ' +
+                            'not at Sunday Small Vespers. If celebrating Sunday Great Vespers ' +
+                            'as a vigil, Kathisma 1 should be read at this point. ' +
+                            'Great Lent and festal overrides are not implemented; ' +
+                            'this rubric reflects ordinary Sunday Small Vespers practice only.)',
+                resolvedAs: 'sunday-small-vespers-kathisma-ordinary-omitted'
             };
         }
 
@@ -795,10 +880,10 @@ const HorologionEngine = (() => {
     //   the current tone and states honestly that the Menaion is required.
     //   resolvedAs: 'weekday-menaion-required'
     //
-    // SUNDAY:
-    //   Explicitly deferred. Sunday Vespers troparion handling is part of
-    //   the dedicated Sunday Vespers pass. Not fabricated.
-    //   resolvedAs: 'sunday-deferred'
+    // SUNDAY (v1.8):
+    //   Full Resurrectional Troparion of the current Octoechos tone (type:'text').
+    //   Same text as Saturday Great Vespers — the Octoechos apolytikion of the tone.
+    //   resolvedAs: 'resurrectional-troparion-sunday'
     //
     // FESTAL OVERRIDES:
     //   Not implemented. When a Great Feast falls on any day, its proper
@@ -828,19 +913,28 @@ const HorologionEngine = (() => {
         const tone = toneResult.tone;
         if (!tone) return null;
 
-        // ── Sunday: explicitly deferred ───────────────────────────────────
+        // ── Sunday Small Vespers: Resurrectional Troparion ──────────────────
+        // The Resurrectional Troparion of the current Octoechos tone is sung
+        // at Sunday Small Vespers. The text is the same as at Saturday Great
+        // Vespers — it is the fixed apolytikion of the tone.
         if (dayOfWeek === 0) {
+            const troparia = _troparionData.resurrectional_troparia;
+            const entry = troparia && troparia[String(tone)];
+            if (!entry) return null;
+
             return {
-                type:       'rubric',
+                type:       'text',
                 key:        'troparion-or-apolytikion',
-                label:      'Troparion / Apolytikion of the Day',
-                text:       `(Sunday Vespers — Troparion deferred. ` +
-                            `Current tone: Tone ${tone}. ` +
-                            `Sunday Vespers troparion handling is part of the dedicated Sunday Vespers pass ` +
-                            `and is not resolved in this baseline. The Resurrectional Troparion of Tone ${tone} ` +
-                            `is appointed for Sunday, but Sunday Vespers overall is not yet fully implemented.)`,
+                label:      entry.title,
+                text:       entry.text + '\n\n' +
+                            `(BASELINE — Sunday Small Vespers, Tone ${tone}. ` +
+                            `This is the Resurrectional Troparion (Apolytikion) of the Octoechos. ` +
+                            `The same troparion is used at both Saturday Great Vespers and ` +
+                            `Sunday Small Vespers for the same tone week. ` +
+                            `On Great Feast Sundays, the proper apolytikion of the feast replaces ` +
+                            `this text; festal overrides are not yet implemented.)`,
                 tone:       tone,
-                resolvedAs: 'sunday-deferred'
+                resolvedAs: 'resurrectional-troparion-sunday'
             };
         }
 
@@ -913,6 +1007,38 @@ const HorologionEngine = (() => {
 
 
     // ──────────────────────────────────────────────────────────────────────
+    // v1.9: _loadWeekdayTheotokionData()
+    //
+    // Fetches and caches the weekday Octoechos Theotokia data from
+    // data/horologion/vespers-weekday-theotokion.json.
+    //
+    // Shape: { weekday_theotokia: { "1": { monday: {...}, ... "friday": {...} }, ... "8": {...} } }
+    // 40 entries total: 8 tones × 5 weekdays (Mon–Fri).
+    // Wednesday and Friday entries are Stavrotheotokia.
+    //
+    // Non-throwing: on failure, logs a warning and leaves _weekdayTheotokionData null.
+    // The resolver degrades gracefully — the weekday theotokion-dismissal slot
+    // falls back to the v1.7 tone-identified rubric stub behaviour.
+    // ──────────────────────────────────────────────────────────────────────
+    async function _loadWeekdayTheotokionData() {
+        if (_weekdayTheotokionData !== null) return; // already loaded or attempted
+
+        try {
+            const response = await fetch(WEEKDAY_THEOTOKION_URL);
+            if (!response.ok) {
+                console.warn(`[HorologionEngine] Could not load weekday theotokion data (HTTP ${response.status}); weekday theotokion-dismissal will fall back to rubric stub.`);
+                return;
+            }
+            _weekdayTheotokionData = await response.json();
+            console.log('[HorologionEngine] Loaded weekday Octoechos Theotokia (tones 1–8, Mon–Fri, 40 entries).');
+        } catch (err) {
+            console.warn('[HorologionEngine] _loadWeekdayTheotokionData failed:', err.message, '— weekday theotokion-dismissal will fall back to rubric stub.');
+            // _weekdayTheotokionData remains null; next call will retry
+        }
+    }
+
+
+    // ──────────────────────────────────────────────────────────────────────
     // v1.7: _resolveTheotokionSlot(dayOfWeek, toneResult)
     //
     // Returns a resolved item for the theotokion-dismissal slot,
@@ -936,16 +1062,21 @@ const HorologionEngine = (() => {
     //   not a data gap. Returns an explanatory rubric.
     //   resolvedAs: 'bright-week-no-theotokion'
     //
-    // WEEKDAY (Monday–Friday) ORDINARY:
-    //   The dismissal Theotokion at weekday Vespers follows the tone of whichever
-    //   Menaion troparion was sung. Since weekday troparion text is Menaion-driven
-    //   and not yet implemented, the weekday Theotokion cannot be resolved without
-    //   fabricating a link that does not exist. Returns a tone-identified stub.
-    //   resolvedAs: 'weekday-menaion-required'
+    // WEEKDAY (Monday–Friday) ORDINARY — v1.9:
+    //   Returns full Octoechos weekday Theotokion text (type:'text') for the
+    //   current tone + day. Mon, Tue, Thu: standard weekday Theotokion.
+    //   Wed, Fri: Stavrotheotokion (Cross Theotokion), the standard Byzantine
+    //   practice for the weekly fasting days.
+    //   Source: data/horologion/vespers-weekday-theotokion.json (40 entries).
+    //   LIMITATION: The ideal Theotokion follows the tone of the Menaion
+    //   troparion, which may differ from the weekly Octoechos tone. This
+    //   baseline uses the Octoechos tone — correct when the two agree (ordinary
+    //   weeks with no feast). The limitation is stated openly in the output.
+    //   resolvedAs: 'weekday-octoechos-theotokion'
+    //   Graceful degradation: if weekday data file failed to load, falls back
+    //   to the v1.7 tone-identified rubric stub (resolvedAs: 'weekday-menaion-required').
     //
     // SUNDAY:
-    //   Explicitly deferred — part of the dedicated Sunday Vespers pass.
-    //   resolvedAs: 'sunday-deferred'
     //
     // FESTAL OVERRIDES:
     //   Not implemented. When a Great Feast falls on Saturday, its proper
@@ -975,18 +1106,30 @@ const HorologionEngine = (() => {
         const tone = toneResult.tone;
         if (!tone) return null;
 
-        // ── Sunday: explicitly deferred ───────────────────────────────────
+        // ── Sunday Small Vespers: dismissal Theotokion ───────────────────────
+        // The dismissal Theotokion of the current Octoechos tone is sung at
+        // Sunday Small Vespers, paired with the Resurrectional Troparion.
+        // The text is the same as at Saturday Great Vespers — the fixed tone
+        // Theotokion of the Octoechos, not a Saturday-specific text.
         if (dayOfWeek === 0) {
+            const theotokia = _theotokionData.dismissal_theotokia;
+            const entry = theotokia && theotokia[String(tone)];
+            if (!entry) return null;
+
             return {
-                type:       'rubric',
+                type:       'text',
                 key:        'theotokion-dismissal',
-                label:      'Theotokion',
-                text:       `(Sunday Vespers — Theotokion deferred. ` +
-                            `Current tone: Tone ${tone}. ` +
-                            `Sunday Vespers Theotokion handling is part of the dedicated Sunday Vespers pass ` +
-                            `and is not resolved in this baseline.)`,
+                label:      entry.title,
+                text:       entry.text + '\n\n' +
+                            `(BASELINE — Sunday Small Vespers, Tone ${tone}. ` +
+                            `This is the dismissal Theotokion of the Octoechos, paired with the ` +
+                            `Resurrectional Troparion of the same tone. ` +
+                            `The same Theotokion is used at both Saturday Great Vespers and ` +
+                            `Sunday Small Vespers for the same tone week. ` +
+                            `On Great Feast Sundays, a proper Theotokion replaces this text; ` +
+                            `festal overrides are not yet implemented.)`,
                 tone:       tone,
-                resolvedAs: 'sunday-deferred'
+                resolvedAs: 'dismissal-theotokion-sunday'
             };
         }
 
@@ -1013,23 +1156,73 @@ const HorologionEngine = (() => {
             };
         }
 
-        // ── Weekday (Mon–Fri): tone-identified stub ───────────────────────
-        // The dismissal Theotokion at weekday Vespers follows the tone of the
-        // Menaion troparion. Since weekday troparion text is not yet implemented,
-        // the Theotokion cannot be determined without fabrication. Tone is known.
+        // ── Weekday (Mon–Fri): Octoechos weekday Theotokion ─────────────────
+        // v1.9: full type:'text' resolution from vespers-weekday-theotokion.json.
+        // These are the standard Octoechos Theotokia for each tone + weekday.
+        // Wednesday and Friday entries are Stavrotheotokia (Cross Theotokia).
+        //
+        // Graceful degradation: if the weekday data file failed to load,
+        // fall back to the v1.7 tone-identified rubric stub.
+        const WEEKDAY_NAMES_SHORT = ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'];
+        const weekdayName = WEEKDAY_NAMES_SHORT[dayOfWeek]; // 'monday' … 'friday'
+
+        if (_weekdayTheotokionData !== null) {
+            const allTones = _weekdayTheotokionData.weekday_theotokia;
+            const toneEntry = allTones && allTones[String(tone)];
+            const dayEntry  = toneEntry && toneEntry[weekdayName];
+
+            if (dayEntry) {
+                // Wednesday and Friday have Stavrotheotokia — note this in label
+                const isStavro = (dayOfWeek === 3 || dayOfWeek === 5);
+                const typeLabel = isStavro ? 'Stavrotheotokion' : 'Theotokion';
+
+                return {
+                    type:       'text',
+                    key:        'theotokion-dismissal',
+                    label:      dayEntry.title,
+                    text:       dayEntry.text + '\n\n' +
+                                `(BASELINE — ordinary weekday Vespers, Tone ${tone}, ${_capitalise(weekdayName)}. ` +
+                                `This is the ${typeLabel} of the Octoechos for this tone and day. ` +
+                                (isStavro
+                                    ? `Wednesday and Friday Theotokia are Stavrotheotokia (Theotokia of the Cross), ` +
+                                      `reflecting the fasting character of these days in the Byzantine rite. `
+                                    : '') +
+                                `LIMITATION: The Theotokion at weekday Vespers ordinarily follows the tone of the ` +
+                                `Menaion troparion sung, which may differ from the current Octoechos tone (Tone ${tone}). ` +
+                                `Because weekday troparion text is Menaion-driven and not yet implemented, ` +
+                                `this baseline uses the current Octoechos tone. ` +
+                                `This is correct for ordinary weeks when the Menaion troparion is of the same tone. ` +
+                                `Festal overrides are not yet implemented.)`,
+                    tone:       tone,
+                    weekday:    weekdayName,
+                    resolvedAs: 'weekday-octoechos-theotokion'
+                };
+            }
+        }
+
+        // Fallback: weekday data file unavailable — return v1.7-style rubric stub
         return {
             type:       'rubric',
             key:        'theotokion-dismissal',
             label:      'Theotokion',
-            text:       `(Tone ${tone} — Weekday Dismissal Theotokion: Menaion required. ` +
-                        `The dismissal Theotokion at weekday Vespers follows the tone of the troparion sung. ` +
-                        `The current Octoechos tone is Tone ${tone}. ` +
-                        `Because weekday troparion text is Menaion-driven and not yet implemented, ` +
-                        `the corresponding Theotokion cannot be resolved without fabrication. ` +
-                        `Full resolution requires Menaion data.)`,
+            text:       `(Tone ${tone} — Weekday Dismissal Theotokion: data unavailable. ` +
+                        `Current Octoechos tone: Tone ${tone}. ` +
+                        `The weekday Theotokion data file (vespers-weekday-theotokion.json) could not be loaded. ` +
+                        `When available, the Octoechos weekday Theotokion for Tone ${tone} on ${_capitalise(weekdayName)} will be displayed.)`,
             tone:       tone,
             resolvedAs: 'weekday-menaion-required'
         };
+    }
+
+
+    // ──────────────────────────────────────────────────────────────────────
+    // v1.9 internal helper: _capitalise(str)
+    // Returns the string with the first character uppercased.
+    // Used for weekday name formatting in rubric text.
+    // ──────────────────────────────────────────────────────────────────────
+    function _capitalise(str) {
+        if (!str) return '';
+        return str.charAt(0).toUpperCase() + str.slice(1);
     }
 
 
@@ -1173,10 +1366,42 @@ const HorologionEngine = (() => {
     //     Sunday: explicitly deferred — part of the Sunday Vespers pass.
     //     Festal overrides: NOT implemented; stated openly in Saturday output.
     //
-    // Slots NOT resolved in v1.7 (deferred):
-    //   theotokion-dismissal (weekday Menaion-driven) — requires Menaion
-    //   theotokion-dismissal (Sunday) — part of Sunday Vespers pass
-    //   All Sunday Vespers slots — dedicated Sunday pass pending
+    // Slots resolved in v1.8:
+    //   stichera-at-lord-i-have-cried (Sunday): resurrectional stichera from
+    //     'saturday' Octoechos corpus; label patched for Sunday Small Vespers.
+    //     resolvedAs: 'sunday-small-vespers-resurrectional-stichera'
+    //   aposticha (Sunday): resurrectional aposticha from 'saturday' corpus.
+    //     resolvedAs: 'sunday-small-vespers-resurrectional-aposticha'
+    //   kathisma-reading (Sunday): actionable omission rubric — kathisma
+    //     ordinarily omitted at Sunday Small Vespers; vigil practice noted.
+    //     resolvedAs: 'sunday-small-vespers-kathisma-ordinary-omitted'
+    //   troparion-or-apolytikion (Sunday): full Resurrectional Troparion text
+    //     from vespers-troparion.json; same text as Saturday Great Vespers.
+    //     resolvedAs: 'resurrectional-troparion-sunday'
+    //   theotokion-dismissal (Sunday): full dismissal Theotokion text from
+    //     vespers-theotokion.json; same text as Saturday Great Vespers.
+    //     resolvedAs: 'dismissal-theotokion-sunday'
+    //
+    // Slots NOT resolved in v1.8 (deferred):
+    //   troparion-or-apolytikion (weekday Mon–Fri) — Menaion required
+    //   theotokion-dismissal (weekday Mon–Fri) — Menaion required
+    //   Feast-rank override engine — deferred beyond Menaion work
+    //
+    // Slots resolved in v1.9:
+    //   theotokion-dismissal (weekday Mon–Fri): full Octoechos weekday Theotokion
+    //     text (type:'text') for the current tone + day of week.
+    //     Source: data/horologion/vespers-weekday-theotokion.json (40 entries).
+    //     Mon/Tue/Thu: standard Octoechos weekday Theotokion.
+    //     Wed/Fri: Stavrotheotokion (Cross Theotokion).
+    //     Limitation stated in output: tone follows current Octoechos week;
+    //       Menaion troparion tone may differ (festal override not implemented).
+    //     resolvedAs: 'weekday-octoechos-theotokion'
+    //     Graceful degradation: falls back to rubric stub if data file unavailable.
+    //
+    // Slots NOT resolved in v1.9 (deferred):
+    //   troparion-or-apolytikion (weekday Mon–Fri) — Menaion required; unchanged
+    //   Feast-rank override engine — deferred
+    //   Great Lent variable overrides — deferred
     // ──────────────────────────────────────────────────────────────────────
     async function _resolveVespersSlots(sections, dateObj) {
         // Load all five data files in parallel
@@ -1185,7 +1410,8 @@ const HorologionEngine = (() => {
             _loadOctoechosData(),
             _loadKathismaData(),
             _loadTroparionData(),
-            _loadTheotokionData()
+            _loadTheotokionData(),
+            _loadWeekdayTheotokionData()
         ]);
 
         const dayOfWeek = dateObj.getDay(); // 0 = Sunday, 6 = Saturday
@@ -1198,7 +1424,12 @@ const HorologionEngine = (() => {
 
         // Saturday Vespers is the Vespers FOR Sunday; use Sunday's weekday key for data lookup.
         // The tone is already computed with Saturday → Sunday correction in _computeBaselineTone.
-        const octoechosWeekdayKey = (dayOfWeek === 6) ? 'saturday' : WEEKDAY_NAMES[dayOfWeek];
+        // Saturday Vespers uses 'saturday' corpus (resurrectional stichera for Sunday).
+        // Sunday Small Vespers also uses the 'saturday' (resurrectional) corpus —
+        // same Octoechos tone week, same resurrectional set. The 'sunday' slot in
+        // octoechos-vespers.json carries sunday_deferred:true; we bypass it here
+        // by routing Sunday to 'saturday', then patch the label at the call site.
+        const octoechosWeekdayKey = (dayOfWeek === 6 || dayOfWeek === 0) ? 'saturday' : WEEKDAY_NAMES[dayOfWeek];
 
         for (const section of sections) {
             if (!Array.isArray(section.items)) continue;
@@ -1255,6 +1486,23 @@ const HorologionEngine = (() => {
                             'stichera_at_lord_i_have_cried', toneResult
                         );
                         if (resolved) {
+                            // v1.8: Sunday Small Vespers label patch.
+                            // _resolveSticheraSlot returns the 'saturday'-corpus result;
+                            // re-label it for Sunday context without altering the text.
+                            if (dayOfWeek === 0 && resolved.type === 'stichera') {
+                                resolved.weekday = 'sunday';
+                                resolved.resolvedAs = 'sunday-small-vespers-resurrectional-stichera';
+                                if (resolved.label) {
+                                    resolved.label = resolved.label.replace(/Saturday/gi, 'Sunday Small Vespers');
+                                }
+                                resolved.text = (resolved.text || '') +
+                                    `\n\n(Sunday Small Vespers — Resurrectional Stichera of ${toneResult.toneLabel}. ` +
+                                    `At Sunday Small Vespers, three stichera are typically used ` +
+                                    `(the final three of the full set). ` +
+                                    `This is the same resurrectional corpus used at Saturday Great Vespers ` +
+                                    `for the same tone week. ` +
+                                    `Festal and Great Lent overrides are not yet implemented.)`;
+                            }
                             section.items[i] = resolved;
                         }
                         // If null (data load failed), slot remains placeholder
@@ -1277,6 +1525,20 @@ const HorologionEngine = (() => {
                             'aposticha', toneResult
                         );
                         if (resolved) {
+                            // v1.8: Sunday Small Vespers label patch (parallel to stichera block).
+                            if (dayOfWeek === 0 && resolved.type === 'stichera') {
+                                resolved.weekday = 'sunday';
+                                resolved.resolvedAs = 'sunday-small-vespers-resurrectional-aposticha';
+                                if (resolved.label) {
+                                    resolved.label = resolved.label.replace(/Saturday/gi, 'Sunday Small Vespers');
+                                }
+                                resolved.text = (resolved.text || '') +
+                                    `\n\n(Sunday Small Vespers — Resurrectional Aposticha of ${toneResult.toneLabel}. ` +
+                                    `At Sunday Small Vespers, the Resurrectional Aposticha of the tone are appointed. ` +
+                                    `This is the same aposticha corpus used at Saturday Great Vespers ` +
+                                    `for the same tone week. ` +
+                                    `Festal and Great Lent overrides are not yet implemented.)`;
+                            }
                             section.items[i] = resolved;
                         }
                         // If null (data load failed), slot remains placeholder

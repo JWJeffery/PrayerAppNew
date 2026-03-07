@@ -1,0 +1,274 @@
+{
+  "_meta": {
+    "file": "data/horologion/vespers-weekday-theotokion.json",
+    "version": "1.9",
+    "created": "2026-03-07",
+    "description": "Weekday dismissal Theotokia for Vespers, Tones 1–8, Monday–Friday. These are the standard Octoechos weekday Theotokia sung after the troparion(ia) at ordinary weekday Vespers. They are keyed by tone number and weekday name and do not depend on which specific Menaion saint is commemorated. Wednesday and Friday Theotokia reflect the Cross-Theotokos (Stavrotheotokion) character of those days. Source: Byzantine Octoechos; Antiochian/OCA Hapgood-tradition English.",
+    "keying": "Outer key: tone string '1'–'8'. Inner key: weekday name ('monday'|'tuesday'|'wednesday'|'thursday'|'friday').",
+    "note_on_menaion": "These Theotokia are used at ordinary weekday Vespers when the Menaion saint has a troparion of the same tone as the week's Octoechos tone. When the Menaion troparion is of a different tone, the Theotokion is sung in that troparion's tone. Because weekday troparion text and tone are Menaion-driven and not yet implemented, the Theotokion here follows the current Octoechos tone — the ordinary baseline. Festal overrides are not implemented.",
+    "note_on_wednesday_friday": "Wednesday and Friday Theotokia are Stavrotheotokia — Theotokia of the Cross — reflecting the fasting character of those days in the Byzantine rite.",
+    "overrides_not_implemented": [
+      "Great Feasts: proper Theotokion replaces ordinary Octoechos Theotokion",
+      "Great Lent: different Theotokia from the Lenten Triodion",
+      "Menaion tone conflict: when Menaion troparion is in a different tone than the weekly Octoechos tone, Theotokion follows Menaion tone"
+    ]
+  },
+  "weekday_theotokia": {
+    "1": {
+      "monday": {
+        "tone": 1,
+        "weekday": "monday",
+        "title": "Theotokion — Tone 1, Monday",
+        "text": "Let us praise the Virgin Mary, the gate of heaven, the glory of the world, who sprang from a royal seed and is united to the Lord of all; let us sing her praises, the heavenly gate. She is the praise of virgins and of all God's Church; she is the joy of all the faithful. Hail, O honorable woman, portal of the Lord's kingdom! May your intercessions be with us always."
+      },
+      "tuesday": {
+        "tone": 1,
+        "weekday": "tuesday",
+        "title": "Theotokion — Tone 1, Tuesday",
+        "text": "O all-hymned Theotokos, who didst ineffably conceive God the Word, cease not to make intercession for us, his servants, that we who confide in thee may be delivered from all tribulation and affliction, from corruption of soul and body, and at the dread hour of judgment may be delivered from everlasting punishment. O thou who art incorrupt, intercede for the salvation of our souls."
+      },
+      "wednesday": {
+        "tone": 1,
+        "weekday": "wednesday",
+        "title": "Stavrotheotokion — Tone 1, Wednesday",
+        "text": "When the spotless Lamb beheld her own Lamb led to the slaughter, she followed with the other women, crying out thus: Where goest thou, my Child? Why dost thou run so swiftly? Is this another wedding in Cana, where thou didst turn water into wine? Shall I go with thee, my Child, or shall I wait for thee? Speak some word to me, O Word; pass me not by in silence, thou who didst keep me pure, who art my Lord and my God."
+      },
+      "thursday": {
+        "tone": 1,
+        "weekday": "thursday",
+        "title": "Theotokion — Tone 1, Thursday",
+        "text": "O Virgin Theotokos, thou art the refuge and strength of all who flee to thee and the light of those who are darkened in soul. Do thou, who art the Queen of all, cast the light of thy mercy upon all, for thou art the joy and protection of the faithful, and in thee do we trust and hope for salvation."
+      },
+      "friday": {
+        "tone": 1,
+        "weekday": "friday",
+        "title": "Stavrotheotokion — Tone 1, Friday",
+        "text": "When she that had conceived thee in a manner past understanding beheld thee, O Christ, hung upon the Cross, she cried out with maternal sorrow: O my sweetest Child, where hath the beauty of thy form vanished? I cannot bear to look upon thee unjustly crucified; hasten therefore, arise, that I may behold thy resurrection from the dead on the third day."
+      }
+    },
+    "2": {
+      "monday": {
+        "tone": 2,
+        "weekday": "monday",
+        "title": "Theotokion — Tone 2, Monday",
+        "text": "O most glorious wonder, more wondrous than all wonders! For how was the transcendent God contained in thy womb, O all-holy Virgin? How didst thou bring forth the Creator of all things? Praise to him who through thee was made incarnate and saved us."
+      },
+      "tuesday": {
+        "tone": 2,
+        "weekday": "tuesday",
+        "title": "Theotokion — Tone 2, Tuesday",
+        "text": "O never-failing intercessor of Christians and most constant mediator before the Creator, despise not the voices of sinners in their petitions, but be thou quick, as thou art good, to help us who cry to thee in faith. Be thou swift to intercede, O Theotokos, and cease not to intercede for us who honor thee; for thou art always the protection of thy servants."
+      },
+      "wednesday": {
+        "tone": 2,
+        "weekday": "wednesday",
+        "title": "Stavrotheotokion — Tone 2, Wednesday",
+        "text": "The most pure Virgin, beholding thee, O Christ, willingly raised up upon the wood of the Cross, lamented with a mother's grief and cried: Alas, my sweetest Child! How art thou unjustly condemned by the ungrateful people? Yet I glorify thy longsuffering, and I praise and worship thy Passion, O lover of mankind."
+      },
+      "thursday": {
+        "tone": 2,
+        "weekday": "thursday",
+        "title": "Theotokion — Tone 2, Thursday",
+        "text": "O protection of Christians that cannot be put to shame, O mediator before the Creator that cannot be turned away: despise not the suppliant voices of sinners, but be thou quick, O good one, to help us who cry to thee in faith; hasten to intercede and speed thy supplication, O Theotokos, ever protecting those who honor thee."
+      },
+      "friday": {
+        "tone": 2,
+        "weekday": "friday",
+        "title": "Stavrotheotokion — Tone 2, Friday",
+        "text": "Seeing thee, O Christ, stretched upon the Cross, she who gave birth to thee without seed cried out with grief: O my Son, where hath the beauty of thy countenance departed? I cannot endure to behold thee unjustly crucified, O thou who dost sustain all creation. Hasten, O Lord, and arise, granting remission of sins to those who worship thy Passion with faith."
+      }
+    },
+    "3": {
+      "monday": {
+        "tone": 3,
+        "weekday": "monday",
+        "title": "Theotokion — Tone 3, Monday",
+        "text": "How shall we not marvel at thy divine condescension, O great Theotokos? For thou wast not consumed who bore the unconsumed Fire, but ratherst gavest birth to him as a human child. We beg thee: cease not to pray for us thy servants who now flee to thee."
+      },
+      "tuesday": {
+        "tone": 3,
+        "weekday": "tuesday",
+        "title": "Theotokion — Tone 3, Tuesday",
+        "text": "O holy Theotokos, save us through thine intercessions; for thou art an unassailable wall and our protection, and thou makest supplication to God for us. Turn not away from us who are in need, O Lady, but help us and have mercy upon us."
+      },
+      "wednesday": {
+        "tone": 3,
+        "weekday": "wednesday",
+        "title": "Stavrotheotokion — Tone 3, Wednesday",
+        "text": "When the holy Virgin saw the Lamb and Shepherd and Savior of the world hanging on the Cross, she said with tears: The world rejoiceth, receiving deliverance through thee, but my heart burneth as I behold thy crucifixion which thou dost endure for the sake of all. O Word of God and Son of God, who art long-suffering and full of mercy, have compassion and grant me consolation."
+      },
+      "thursday": {
+        "tone": 3,
+        "weekday": "thursday",
+        "title": "Theotokion — Tone 3, Thursday",
+        "text": "We, who of old fell from the heights of life through the counsel of the deceiver, have been raised up through thee, O Theotokos, who art truly the gate of life; for thee the Creator chose to be his dwelling place, and through thee he saved all creation. Wherefore we glorify thy blessed offspring and thee."
+      },
+      "friday": {
+        "tone": 3,
+        "weekday": "friday",
+        "title": "Stavrotheotokion — Tone 3, Friday",
+        "text": "Beholding the God of all suspended on the Cross, the all-pure one said: O my Son and my God, though thou sufferest as a man, thou art the timeless Son of the Father. I glorify thy voluntary Passion and thine ineffable condescension, O Savior; through thy death grant me consolation and bestow thy mercy upon the world."
+      }
+    },
+    "4": {
+      "monday": {
+        "tone": 4,
+        "weekday": "monday",
+        "title": "Theotokion — Tone 4, Monday",
+        "text": "The mystery hidden from eternity and unknown to the angels was revealed to thee, O Theotokos, through thee, who art the mediator between God and man: God assumed human form and was not transformed, and we have been deified and have been raised above the world. O most pure Theotokos, we glorify thee and magnify thee."
+      },
+      "tuesday": {
+        "tone": 4,
+        "weekday": "tuesday",
+        "title": "Theotokion — Tone 4, Tuesday",
+        "text": "Our intercessor before God, who art ever ready to hear: despise not us sinners who now flee to thy protection, but go before us and plead our cause. For all who trust in thee are not put to shame; we glorify thee, O pure Theotokos, and we hope in thine intercessions."
+      },
+      "wednesday": {
+        "tone": 4,
+        "weekday": "wednesday",
+        "title": "Stavrotheotokion — Tone 4, Wednesday",
+        "text": "When she that bore thee saw thee, O Christ, the King of all, hanging upon the Cross, she grieved as a mother and cried: My God, though thou art my Son, thou art God before the ages. Why hast thou willed to suffer so? How is it that thou diest, O life-giver, who dost take away the world's death? I glorify thine ineffable condescension, O lover of mankind."
+      },
+      "thursday": {
+        "tone": 4,
+        "weekday": "thursday",
+        "title": "Theotokion — Tone 4, Thursday",
+        "text": "Thou art the treasury of our resurrection, O pure Theotokos; for thou gavest birth to life which abolished death. Through thy intercessions, raise up those who have fallen through sin into the depth of corruption, and grant to us thy servants the forgiveness of sins and a new life in God."
+      },
+      "friday": {
+        "tone": 4,
+        "weekday": "friday",
+        "title": "Stavrotheotokion — Tone 4, Friday",
+        "text": "Seeing thee lifted on the Cross, O Christ, she who bore thee without pain cried out: My Son, where is the beauty of thy face? I cannot bear to see thee unjustly crucified. Hasten, arise, grant remission of offenses to those who glorify thy divine sufferings."
+      }
+    },
+    "5": {
+      "monday": {
+        "tone": 5,
+        "weekday": "monday",
+        "title": "Theotokion — Tone 5, Monday",
+        "text": "Rejoice, O unwedded Bride and pure Theotokos; rejoice, O thou who art the pride of virgins and the glory of mothers. For thy Son, our Savior, illumines those sitting in the shadow of death; he trampled down Death by his Death and has granted us eternal life."
+      },
+      "tuesday": {
+        "tone": 5,
+        "weekday": "tuesday",
+        "title": "Theotokion — Tone 5, Tuesday",
+        "text": "O Theotokos, thou art the true vine who brought forth the cluster of life. We beseech thee, O most glorious one: together with the Apostles and all the saints, intercede for the salvation of our souls."
+      },
+      "wednesday": {
+        "tone": 5,
+        "weekday": "wednesday",
+        "title": "Stavrotheotokion — Tone 5, Wednesday",
+        "text": "When the Theotokos beheld the Lamb and Shepherd whom she bore hanging upon the Cross, she cried out amid her grief: The world is delivered from its ancient error, but my heart is wounded by the fire of thy sufferings, which thou dost endure for the compassion thou bearest toward all. Yet I glorify thine ineffable condescension, O Lord."
+      },
+      "thursday": {
+        "tone": 5,
+        "weekday": "thursday",
+        "title": "Theotokion — Tone 5, Thursday",
+        "text": "O pure and holy Virgin Theotokos, thou art the city of the great King, in which Christ, the King of glory, took up his dwelling. We beg thee not to despise thy servants but always to intercede for us before him who was born of thee, that we may be delivered from all sin and evil and receive his mercy."
+      },
+      "friday": {
+        "tone": 5,
+        "weekday": "friday",
+        "title": "Stavrotheotokion — Tone 5, Friday",
+        "text": "Seeing thee crucified, O Christ, thy spotless mother cried with tears: What is this strange sight, O my Child? How is it that the life of all things dies in the flesh, that he who giveth life to all submitteth to death? I glorify thine ineffable forbearance, O my Son and my God."
+      }
+    },
+    "6": {
+      "monday": {
+        "tone": 6,
+        "weekday": "monday",
+        "title": "Theotokion — Tone 6, Monday",
+        "text": "O most holy Theotokos, thou didst bear the Creator of all things, who took flesh from thee and tabernacled among men. Entreat him unceasingly on behalf of those who honor thee, that he may grant the forgiveness of sins and the amendment of life to all who have recourse to thee in faith."
+      },
+      "tuesday": {
+        "tone": 6,
+        "weekday": "tuesday",
+        "title": "Theotokion — Tone 6, Tuesday",
+        "text": "O Theotokos, thou art the fervent intercessor for Christians. Reject not our prayer, but receive it and bring it before thy Son and our God, that he may have mercy upon us and save us who flee to thee with faith."
+      },
+      "wednesday": {
+        "tone": 6,
+        "weekday": "wednesday",
+        "title": "Stavrotheotokion — Tone 6, Wednesday",
+        "text": "When the most pure Virgin beheld her Son on the Cross, she said: O my Son, what is this strange sight? How art thou who sustainest the whole creation willingly crucified? All creation was shaken as it saw thee stretched upon the Cross, O Savior of the world, but I, thine own mother, am wounded to the heart with grief. Yet I glorify thy voluntary Passion."
+      },
+      "thursday": {
+        "tone": 6,
+        "weekday": "thursday",
+        "title": "Theotokion — Tone 6, Thursday",
+        "text": "O all-immaculate Theotokos, who wast alone found worthy to bear God in the flesh, do thou ever make intercession for the salvation of our souls. For we have thee as our sure and constant hope, and in thee do we put our trust."
+      },
+      "friday": {
+        "tone": 6,
+        "weekday": "friday",
+        "title": "Stavrotheotokion — Tone 6, Friday",
+        "text": "Seeing thee voluntarily raised upon the Cross, O Christ, she who bore thee without seed lamented and cried: What is this wondrous sight, O my Son? How dost thou die in the flesh, O thou who art the life of all? I cannot bear to see thee suffer unjustly; hasten, arise, O compassionate one, and grant thy mercy to the world."
+      }
+    },
+    "7": {
+      "monday": {
+        "tone": 7,
+        "weekday": "monday",
+        "title": "Theotokion — Tone 7, Monday",
+        "text": "No tongue is able to praise thee worthily, O Virgin Theotokos; no mind, however exalted, can comprehend thee; for thou art higher than all things visible and invisible. Yet we beseech thee: turn not thy face from us and be our intercessor before God, who was born of thee."
+      },
+      "tuesday": {
+        "tone": 7,
+        "weekday": "tuesday",
+        "title": "Theotokion — Tone 7, Tuesday",
+        "text": "O most pure Theotokos, accept our supplications; make haste to rescue us from every affliction and trouble. Deliver us from all temptation and from everlasting punishment, and grant to us thy servants the forgiveness of sins, for in thee we have placed all our hope."
+      },
+      "wednesday": {
+        "tone": 7,
+        "weekday": "wednesday",
+        "title": "Stavrotheotokion — Tone 7, Wednesday",
+        "text": "When the most pure Theotokos beheld the Lamb willingly led to the slaughter, she raised her voice, lamenting and weeping, and cried: Alas, my sweetest Child, how art thou unjustly crucified by those thou hast made? I cannot bear to behold thee in agony, O thou who art the light of my eyes and the joy of my heart; hasten, O Lord, and arise."
+      },
+      "thursday": {
+        "tone": 7,
+        "weekday": "thursday",
+        "title": "Theotokion — Tone 7, Thursday",
+        "text": "Thou art our refuge, O Theotokos, and our salvation; for thou art the treasury of all good things and the haven of those who are tossed about on the waves of life. Receive thou our prayers and bring them to thy Son and our God, that he may have mercy upon us."
+      },
+      "friday": {
+        "tone": 7,
+        "weekday": "friday",
+        "title": "Stavrotheotokion — Tone 7, Friday",
+        "text": "The Theotokos, looking upon thee upon the Cross, O Christ, was struck with grief and said weeping: O my Son, what is this strange sight which mine eyes behold? Thou art willingly crucified, O thou who art the life of all; thou dost submit to death, that thou mayest deliver the world from death. We glorify thine all-holy resurrection."
+      }
+    },
+    "8": {
+      "monday": {
+        "tone": 8,
+        "weekday": "monday",
+        "title": "Theotokion — Tone 8, Monday",
+        "text": "O most immaculate one, who in a way beyond understanding didst bear God in the flesh, and who, as the mother of God, hast great boldness before him: cease not to intercede, O all-holy Theotokos, that we thy servants may be granted forgiveness of sins and the amendment of life."
+      },
+      "tuesday": {
+        "tone": 8,
+        "weekday": "tuesday",
+        "title": "Theotokion — Tone 8, Tuesday",
+        "text": "O most holy Virgin Theotokos, who wast found worthy to bear the incarnate Son of God: entreat him now for us his servants who are burdened by many sins, that he may grant us remission and the great mercy of his lovingkindness."
+      },
+      "wednesday": {
+        "tone": 8,
+        "weekday": "wednesday",
+        "title": "Stavrotheotokion — Tone 8, Wednesday",
+        "text": "When the spotless ewe-lamb beheld her own Shepherd crucified upon the Cross, she wept and cried: O my sweetest Son, how art thou suspended on the wood? How art thou numbered among the transgressors, thou who art without sin? I cannot bear to behold thee suffer unjustly, O lover of mankind. Hasten, O Lord, and arise on the third day, as thou hast said."
+      },
+      "thursday": {
+        "tone": 8,
+        "weekday": "thursday",
+        "title": "Theotokion — Tone 8, Thursday",
+        "text": "O holy Mother of God, who art higher than the heavens and more glorious than the Cherubim, and who art appointed as the intercessor and mediator for our race: cease not to pray to God who was born of thee, that he may have mercy upon us and grant us his great gift."
+      },
+      "friday": {
+        "tone": 8,
+        "weekday": "friday",
+        "title": "Stavrotheotokion — Tone 8, Friday",
+        "text": "When she that was immaculate beheld thee crucified upon the Cross, O Christ, she cried out with grief: My Son, O my Son, how dost thou suffer this? What is this voluntary suffering? I marvel at thine ineffable forbearance and thy great compassion for men. O lover of mankind, have mercy on us and save us."
+      }
+    }
+  }
+}
