@@ -1,0 +1,38 @@
+{
+  "_comment": "Horologion normalized office payload schema v1. All fields marked required:true must be present for validateOfficePayload() to pass.",
+  "version": "1.0",
+  "payloadShape": {
+    "tradition":  { "type": "string", "required": true,  "example": "BYZC",       "note": "Tradition code — BYZC (Byzantine Catholic/Orthodox), COE, ETH, ANG, etc." },
+    "officeKey":  { "type": "string", "required": true,  "example": "vespers",    "note": "Canonical office identifier matching the skeleton JSON filename." },
+    "date":       { "type": "string", "required": true,  "example": "2025-06-01", "note": "ISO 8601 date string YYYY-MM-DD." },
+    "title":      { "type": "string", "required": true,  "example": "Vespers",    "note": "Human-readable office title for display." },
+    "variant":    { "type": "string", "required": false, "example": "baseline",   "note": "Variant label — baseline, great, small, festal, lenten, etc." },
+    "status":     { "type": "string", "required": true,  "example": "partial",    "note": "partial | complete | error. 'partial' indicates unresolved placeholder slots remain." },
+    "sections":   { "type": "array",  "required": true,                           "note": "Ordered array of section objects as defined below." },
+    "diagnostics":{ "type": "object", "required": true,                           "note": "Runtime diagnostic counters produced by resolveOffice()." }
+  },
+  "sectionShape": {
+    "id":    { "type": "string", "required": true,  "note": "Stable kebab-case identifier for this section." },
+    "label": { "type": "string", "required": true,  "note": "Human-readable section heading." },
+    "items": { "type": "array",  "required": true,  "note": "Ordered array of item objects." }
+  },
+  "itemShape": {
+    "type":   { "type": "string", "required": true,  "values": ["text", "rubric", "psalm", "placeholder"], "note": "Item type drives rendering strategy in the UI adapter." },
+    "key":    { "type": "string", "required": true,  "note": "Stable camelCase or kebab-case key; used for slot identity in diagnostics." },
+    "text":   { "type": "string", "required": false, "note": "Resolved text content. Absent on placeholder items." },
+    "status": { "type": "string", "required": false, "values": ["resolved", "placeholder", "unresolved"], "note": "Omit for fully resolved items; set to 'unresolved' for placeholder slots." },
+    "note":   { "type": "string", "required": false, "note": "Developer-facing diagnostic note, surfaced in validateOfficePayload() output." }
+  },
+  "diagnosticsShape": {
+    "implementedSlots": { "type": "number", "note": "Count of items with type != placeholder and status != unresolved." },
+    "placeholderSlots": { "type": "number", "note": "Count of items with type == placeholder or status == unresolved." },
+    "warnings":         { "type": "array",  "note": "Array of warning strings from validation or resolution. Empty array when clean." }
+  },
+  "traditionCodes": {
+    "BYZC": "Byzantine (Greek/Slavic rite, Catholic or Orthodox)",
+    "COE":  "Church of the East (East Syriac / Hudra)",
+    "ETH":  "Ethiopian Orthodox (Ge'ez / Sa'atat)",
+    "ANG":  "Anglican (BCP 1979 Daily Office)",
+    "LAT":  "Latin / Roman Rite"
+  }
+}

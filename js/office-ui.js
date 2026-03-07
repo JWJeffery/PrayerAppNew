@@ -644,6 +644,36 @@ async function selectMode(mode) {
         isHydrationComplete = true;
         requestRender();
 
+    } else if (mode === 'horologion-vespers') {
+        // ── Horologion — Byzantine Vespers ────────────────────────────────────
+        // HorologionEngine loads its own data files (data/horologion/*.json) on
+        // demand. loadKernel() is called only for shared UI infrastructure.
+        // No tradition-specific hydration shard is needed in v1.
+        document.getElementById('individual-prayers-section').style.display = 'none';
+        document.getElementById('daily-office-section').style.display       = 'flex';
+
+        const horSettings = document.getElementById('east-syriac-settings');
+        if (settingsPanel) {
+            settingsPanel.classList.add('sidebar-hidden');
+            settingsPanel.classList.add('mode-hidden');
+        }
+        if (ethSettings) {
+            ethSettings.classList.add('sidebar-hidden');
+            ethSettings.classList.add('mode-hidden');
+        }
+        if (horSettings) {
+            horSettings.classList.add('sidebar-hidden');
+            horSettings.classList.add('mode-hidden');
+        }
+        mainContent.classList.add('sidebar-hidden');
+
+        document.getElementById('office-display').innerHTML =
+            `<div class="office-container"><h3>Preparing Vespers…</h3><p>Loading the Byzantine Evening Office.</p></div>`;
+
+        await loadKernel();
+        isHydrationComplete = true;
+        requestRender();
+
     } else {
         // ── Daily Office (default) ────────────────────────────────────────────
         document.getElementById('individual-prayers-section').style.display = 'none';
@@ -1038,10 +1068,158 @@ async function renderOffice() {
         return renderEthiopianSaatat();
     } else if (selectedMode === 'east-syriac') {
         return renderEastSyriac();
+    } else if (selectedMode === 'horologion-vespers') {
+        return renderHorologionOffice('vespers');
     } else {
         return renderBcpOffice();
     }
 }
+
+
+// ── HOROLOGION UI ADAPTER ─────────────────────────────────────────────────────
+//
+// renderHorologionOffice() is a THIN ADAPTER only. All liturgical logic lives
+// in HorologionEngine (js/horologion-engine.js). This function:
+//   1. Calls HorologionEngine.resolveOffice() — non-throwing by contract.
+//   2. Checks payload.status === "error" and renders a visible error block.
+//   3. Walks sections and items, rendering placeholders as visible dashed blocks.
+//
+// No calendar logic, no feast resolution, no text composition belongs here.
+//
+async function renderHorologionOffice(officeKey) {
+    const display = document.getElementById('office-display');
+    if (!display) return;
+
+    // resolveOffice() is non-throwing: all failures come back as status:"error"
+    const payload = await HorologionEngine.resolveOffice(currentDate, officeKey);
+
+    // ── Error state: surface explicitly, never silently blank ────────────────
+    if (payload.status === 'error') {
+        const msg = (payload.diagnostics.warnings || []).join(' ') || 'Unknown error.';
+        display.innerHTML =
+            `<div class="office-container">` +
+            `<h3 style="color:var(--rubric)">Horologion Error</h3>` +
+            `<p class="component-text">${msg}</p>` +
+            `</div>`;
+        console.error('[renderHorologionOffice] Engine returned error payload:', msg);
+        return;
+    }
+
+    // Validate for developer visibility (non-fatal — logs only)
+    const validation = HorologionEngine.validateOfficePayload(payload);
+    if (!validation.valid) {
+        console.warn('[renderHorologionOffice] Payload validation errors:', validation.errors);
+    }
+
+    const dateLabel = currentDate.toLocaleDateString('en-US', {
+        weekday: 'long', year: 'numeric', month: 'long', day: 'numeric'
+    });
+
+    let html = `<div class="office-container">`;
+    html += `<h2>${payload.title}</h2>`;
+    html += `<p class="liturgical-title">${dateLabel}</p>`;
+
+    // Diagnostic banner when variable slots remain unresolved
+    if (payload.diagnostics.placeholderSlots > 0) {
+        html +=
+            `<div style="border:1px solid var(--rubric); border-radius:4px; ` +
+            `padding:10px 14px; margin:12px 0; font-size:0.8em; color:var(--rubric); ` +
+            `font-family:'Cinzel',serif; letter-spacing:0.04em;">` +
+            `⚠ Horologion v1 — Baseline skeleton only. ` +
+            `${payload.diagnostics.placeholderSlots} variable slot(s) not yet resolved. ` +
+            `Sections marked below require Octoechos, Menaion, or calendar data.` +
+            `</div>`;
+    }
+
+    for (const section of payload.sections) {
+        html +=
+            `<h3 class="rubric-heading" style="margin-top:1.5em; font-family:'Cinzel',serif; ` +
+            `font-size:1em; letter-spacing:0.1em; text-transform:uppercase; color:var(--rubric);">` +
+            `${section.label}</h3>`;
+        for (const item of section.items) {
+            html += _renderHorologionItem(item);
+        }
+    }
+
+    html += `</div>`;
+    display.innerHTML = html;
+}
+
+// Renders a single Horologion item as HTML.
+// Placeholder/unresolved items always produce a visible block — never silently omitted.
+function _renderHorologionItem(item) {
+    const isUnresolved =
+        item.type === 'placeholder' ||
+        item.status === 'unresolved' ||
+        item.status === 'placeholder';
+
+    if (isUnresolved) {
+        const label   = item.label || item.key;
+        const devNote = item.note
+            ? `<span style="font-size:0.78em; opacity:0.7; display:block; margin-top:4px;">${item.note}</span>`
+            : '';
+        return `<div style="border:1px dashed var(--rubric); border-radius:3px; ` +
+            `padding:8px 12px; margin:8px 0; opacity:0.75;">` +
+            `<span class="rubric-text" style="font-size:0.85em;">Not yet implemented: ${label}</span>` +
+            devNote +
+            `</div>`;
+    }
+
+    if (item.type === 'rubric') {
+        return `<span class="rubric-text">${item.text || ''}</span>`;
+    }
+
+    // Shared HTML-escape helper used by all resolved text branches.
+    function escapeHtml(str) {
+        return str
+            .replace(/&/g, '&amp;')
+            .replace(/</g, '&lt;')
+            .replace(/>/g, '&gt;')
+            .replace(/"/g, '&quot;')
+            .replace(/'/g, '&#39;');
+    }
+
+    // type: "psalm" — render label then body text.
+    if (item.type === 'psalm') {
+        const label = item.label ? `<p class="rubric-text" style="margin-bottom:0.4em;">${escapeHtml(item.label)}</p>` : '';
+        const safe  = escapeHtml(String(item.text || ''));
+        const body  = safe
+            .replace(/\n\n+/g, '</p><p>')
+            .replace(/\n/g, '<br>');
+        return `<div class="horologion-text">${label}<p>${body}</p></div>`;
+    }
+
+    // type: "litany" — render each line role-tagged.
+    // Lines beginning "Deacon:", "Priest:", "Reader:" are rubrics.
+    // Lines beginning "Choir:" are congregational responses.
+    // Blank lines produce a small vertical gap.
+    if (item.type === 'litany') {
+        const lines = String(item.text || '').split('\n');
+        let out = '<div class="horologion-litany">';
+        for (const line of lines) {
+            const trimmed = line.trim();
+            if (!trimmed) {
+                out += '<div style="height:0.5em;"></div>';
+            } else if (/^(Deacon|Priest|Reader|Bishop):/.test(trimmed)) {
+                out += `<p class="rubric-text" style="margin:0.2em 0;">${escapeHtml(trimmed)}</p>`;
+            } else if (/^Choir:/.test(trimmed)) {
+                out += `<p class="component-text" style="margin:0.15em 0 0.15em 1.5em; font-style:italic;">${escapeHtml(trimmed)}</p>`;
+            } else {
+                out += `<p class="component-text" style="margin:0.2em 0;">${escapeHtml(trimmed)}</p>`;
+            }
+        }
+        out += '</div>';
+        return out;
+    }
+
+    // type: "text" or any other resolved item — paragraph/line-break formatting.
+    const safe      = escapeHtml(String(item.text || ''));
+    const formatted = safe
+        .replace(/\n\n+/g, '</p><p>')
+        .replace(/\n/g, '<br>');
+    return `<div class="horologion-text"><p>${formatted}</p></div>`;
+}
+
 
 async function renderBcpOffice() {
     if (!isHydrationComplete) {

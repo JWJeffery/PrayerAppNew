@@ -1,10 +1,10 @@
 {
   "project_manifest": {
     "name": "Universal Office",
-    "version": "2.8.9",
-    "last_updated": "2026-03-06",
+    "version": "2.9.0",
+    "last_updated": "2026-03-07",
     "bcp_compliance": "100%",
-    "operational_status": "OPERATIONAL — v2.8.9: COE governance complete. Three-layer COE calendar model fully implemented: Layer 1 season engine operational; Layer 2 fixed feasts (Sawma Rabba Friday martyrs, Commemoration of the Faithful Departed) active; Layer 3 individual saints re-enabled via CoeEligibility.filter() allowlist gate. COE-IIB saint-tag audit complete — 133 identity IDs (136 rows) removed from commemorations.json; monthly caches regenerated. Final five adjudication complete: 3 REMOVE_COE_TAG applied; mar-augustine / mar-augustine-commemoration held as external-research holdout (excluded from Layer 3). No COE internal refactor work remains open. Prior: Saints resolver boundary complete (v2.8.6); hydration-race gating verified closed (v2.8.6). EO old/new calendar mode diagnostics are now implemented in admin tooling only; main-app EO mode is not yet exposed.",
+    "operational_status": "OPERATIONAL — v2.8.9: COE governance complete. Three-layer COE calendar model fully implemented: Layer 1 season engine operational; Layer 2 fixed feasts (Sawma Rabba Friday martyrs, Commemoration of the Faithful Departed) active; Layer 3 individual saints re-enabled via CoeEligibility.filter() allowlist gate. COE-IIB saint-tag audit complete — 133 identity IDs (136 rows) removed from commemorations.json; monthly caches regenerated. Final five adjudication complete: 3 REMOVE_COE_TAG applied; mar-augustine / mar-augustine-commemoration held as external-research holdout (excluded from Layer 3). No COE internal refactor work remains open. Prior: Saints resolver boundary complete (v2.8.6); hydration-race gating verified closed (v2.8.6). EO old/new calendar mode diagnostics are now implemented in admin tooling only; main-app EO mode is not yet exposed. Horologion v1 architecture boundary established (2026-03-07): js/horologion-engine.js (HorologionEngine) active; data/horologion/vespers.json skeleton present; thin UI adapter in office-ui.js; index.html Vespers splash button and saints-resolver.js load confirmed present. 7 variable Vespers slots pending Octoechos/Menaion engine.",
     "audit_findings": {
       "open_bugs": [
         "1. Rubric logic: [rite] placeholder resolution in rubrics.json is fragile and prone to null returns. (LOW — see known_outstanding_issues.rite_placeholder_resolution)"
@@ -73,25 +73,29 @@
       "role": "Markup and DOM structure only",
       "lines": "~1175",
       "contains_logic": false,
-      "status": "Current — v2.8.1 (2026-02-27)",
+      "status": "Current — v2.9.0 (2026-03-07)",
       "changes": [
         "1. Added third mode button: 'The Ethiopian Sa'atat (Book of Hours)' with class ethiopian-btn, calling selectMode('ethiopian-saatat') [Phase 7.1]",
-        "2. Added four minor hours to esy-time radio group: qutaa, endana, dtsha-sain, subaa [v2.8.0]"
+        "2. Added four minor hours to esy-time radio group: qutaa, endana, dtsha-sain, subaa [v2.8.0]",
+        "3. Added 'Byzantine Vespers — Horologion' splash button calling selectMode('horologion-vespers'), placed between 'Church of the East — Hudra' and 'Admin Dashboard' [Horologion v1]",
+        "4. Added js/saints-resolver.js (before js/office-ui.js) and js/horologion-engine.js (before js/office-ui.js) to script load block [Horologion v1]"
       ],
       "script_load_order": [
         "js/calendar-engine.js",
         "js/calendar-ethiopian.js",
         "js/calendar-east-syriac.js",
         "js/scripture-resolver.js",
+        "js/saints-resolver.js",
+        "js/horologion-engine.js",
         "js/office-ui.js",
         "js/prayers.js",
         "js/tooltip.js"
       ],
-      "discrepancy_note": "Previous version of this file omitted js/calendar-east-syriac.js from script_load_order. Corrected — it is present in index.html and required for renderEastSyriac(). Main app still does not expose an EO mode selector or load js/calendar-eastern-orthodox.js; EO old/new mode remains admin-only."
+      "discrepancy_note": "Live repo is confirmed ahead of the uploaded snapshot: the Horologion splash button, saints-resolver.js, and horologion-engine.js are present in the running app (verified by screenshot 2026-03-07) but absent from the snapshot's index.html. script_load_order above reflects the verified live state. EO mode selector and js/calendar-eastern-orthodox.js are still not loaded on the main-app path."
     },
     "js/office-ui.js": {
       "role": "All Daily Office UI logic",
-      "status": "Current — v2.8.9 (COE Layer 3 re-enabled via CoeEligibility.filter())",
+      "status": "Current — v2.9.0 (Horologion v1 adapter added)",
       "primary_functions": [
         "init()",
         "renderOffice()",
@@ -109,7 +113,9 @@
         "backToSplash()",
         "toggleEthOverridePanel()",
         "applyEthOverride()",
-        "resetEthOverride()"
+        "resetEthOverride()",
+        "renderHorologionOffice(officeKey)",
+        "_renderHorologionItem(item)"
       ],
       "rubric_loop_handlers_bcp": [
         "VARIABLE_OPENING — resolves bcp-opening-${season}, fallback to bcp-opening-general",
@@ -158,7 +164,8 @@
         "12. Senkessar index and per-day narratives cached in appData.senkessarIndex and appData.senkessarCache — no redundant fetches",
         "13. renderEastSyriac() uses EastSyriacCalendar.getSeason(currentDate) for season, cycle, cycleLabel, and seasonColor",
         "14. East Syriac routing: selectedTime drives sequence selection; officeMode (cathedral/monastic) drives variant; else-default is always Ramsha"
-      ]
+      ],
+      "horologion_adapter_note": "Thin adapter only. renderHorologionOffice() calls HorologionEngine.resolveOffice(), checks payload.status === 'error' explicitly, renders diagnostic banner when placeholderSlots > 0, walks sections/items via _renderHorologionItem(). _renderHorologionItem() handles types: rubric, psalm (label + formatted body), litany (role-tagged lines: Deacon/Priest/Reader/Bishop → rubric-text; Choir → indented italic), text/fallback (paragraph + linebreak). selectMode('horologion-vespers') calls loadKernel() only — no tradition shard needed. No Byzantine logic lives in the UI layer."
     },
     "js/calendar-engine.js": {
       "role": "All date and liturgical calendar logic",
@@ -302,6 +309,55 @@
         "Zero dependency design: no private CalendarEngine calls.",
         "Loaded by admin/admin.html for diagnostics; not loaded by main app index.html."
       ]
+    },
+    "js/horologion-engine.js": {
+      "role": "Byzantine Horologion office engine — skeleton loading, payload resolution, validation",
+      "status": "Active — Horologion v1 (2026-03-07)",
+      "global_api": "window.HorologionEngine",
+      "public_methods": [
+        "getOfficeSkeleton(officeKey, traditionVariant) — fetches and caches data/horologion/<officeKey>.json",
+        "resolveOffice(date, officeKey, context) — returns normalized payload; non-throwing; status:'error' on all failure paths",
+        "validateOfficePayload(payload) — returns { valid, errors[], warnings[] }"
+      ],
+      "supported_offices_v1": [
+        "vespers"
+      ],
+      "tradition_code": "BYZC",
+      "architecture_note": "Engine layer only — no rendering logic. Non-throwing contract: all failure modes return status:'error' payload. _formatLocalISODate() uses getFullYear/getMonth/getDate to avoid UTC date-shift. office-ui.js contains only a thin adapter (renderHorologionOffice, _renderHorologionItem) that walks the normalized payload — no Byzantine logic in the UI layer."
+    },
+    "data/horologion/": {
+      "role": "Horologion office skeleton data files",
+      "status": "Active — Horologion v1 (2026-03-07)",
+      "files": {
+        "vespers.json": {
+          "status": "PARTIAL — fixed/invariable content complete; 7 variable slots unresolved",
+          "sections": 7,
+          "resolved_slots": [
+            "usual-beginning-rubric (rubric)",
+            "usual-beginning (text) — full Usual Beginning",
+            "psalm-103-rubric (rubric)",
+            "psalm-103-lxx (psalm) — full LXX Psalm 103",
+            "great-litany (litany) — full 13-petition Great Litany",
+            "lord-i-have-cried-rubric (rubric)",
+            "entrance-rubric (rubric)",
+            "o-gladsome-light (text) — Phos Hilaron",
+            "nunc-dimittis (text) — Song of Simeon",
+            "dismissal-rubric (rubric)"
+          ],
+          "placeholder_slots": [
+            "stichera-at-lord-i-have-cried — requires Octoechos tone/week",
+            "kathisma-reading — requires Psalter weekly cycle",
+            "daily-prokeimenon — requires weekday or feast-rank resolution",
+            "vesperal-reading — feast/Lent only; omitted ordinary days",
+            "aposticha — requires Octoechos or Menaion",
+            "troparion-or-apolytikion — requires Menaion or weekly cycle",
+            "theotokion-dismissal — depends on apolytikion tone"
+          ]
+        },
+        "schema.json": {
+          "status": "Active — documents normalized payload shape v1"
+        }
+      }
     }
   },
   "east_syriac_tradition": {
@@ -817,9 +873,25 @@
         "js/calendar-eastern-orthodox.js",
         "admin/admin.html"
       ]
+    },
+    "horologion_variable_engine": {
+      "severity": "MEDIUM",
+      "description": "Horologion Vespers has 7 unresolved variable slots that render as visible 'Not yet implemented' placeholder blocks: stichera-at-lord-i-have-cried, kathisma-reading, daily-prokeimenon, vesperal-reading, aposticha, troparion-or-apolytikion, theotokion-dismissal. Resolution requires a variable-insert engine supplying at minimum the weekday prokeimenon cycle (7 fixed entries, no calendar dependency) and baseline Octoechos stichera for 8 tones.",
+      "action": "Phase Horologion v1.2: implement weekday prokeimenon (7-day fixed cycle). Phase Horologion v1.3: implement baseline Octoechos stichera (8 tones). Do not implement Menaion feast-specific material until tone/week engine is stable.",
+      "files": [
+        "js/horologion-engine.js",
+        "data/horologion/vespers.json"
+      ]
     }
   },
   "recent_logic_changes": [
+    {
+      "date": "2026-03-07",
+      "phase": "Horologion v1",
+      "file": "js/horologion-engine.js + data/horologion/ + js/office-ui.js + index.html",
+      "change": "Horologion v1 architecture boundary established",
+      "detail": "js/horologion-engine.js: HorologionEngine IIFE, window-scoped. getOfficeSkeleton() fetches/caches data/horologion/<officeKey>.json. resolveOffice() is non-throwing — all failure paths return status:'error' payload. _formatLocalISODate() uses getFullYear/getMonth/getDate (not toISOString) to avoid UTC date-shift. data/horologion/vespers.json: 7 sections, fixed content complete, 7 variable slots as explicit placeholders. data/horologion/schema.json: normalized payload contract. office-ui.js: selectMode('horologion-vespers') branch, renderHorologionOffice(), _renderHorologionItem() added. index.html: 'Byzantine Vespers — Horologion' splash button; saints-resolver.js and horologion-engine.js added to script block before office-ui.js. Verified live in app via screenshot 2026-03-07."
+    },
     {
       "date": "2026-03-06",
       "phase": "v2.8.9",
@@ -998,9 +1070,9 @@
     }
   ],
   "roadmap_summary": {
-    "completed": "Phases 6.1–6.6 (BCP office + audit remediation), Phase 7.1–7.4 (full Ethiopian Sa'atat + calendar engine), Phase 8.1 (Senkessar index + Tir corpus + full wiring), Phase 8.3 (Hamle corpus verified), Phase 8.5 (Ge'ez dual-date display in Sa'atat sidebar and BCP date header — both rendering via EthiopianCalendar.formatEthiopianDate()), v2.6.1 (Tselote Meweta, Metsehafe Tselot aesthetic), v2.8.0 (Church of the East — all seven canonical hours: Sapra, Quta'a, Endana, D-tsha' Sa'in, Ramsha, Lelya, Suba'a — cathedral and monastic sequences, full dynamic token implementation), v2.8.1 (Barekmar components, Mahlet expansion, duplicate removal, Qanona layering, algorithmic calendar engine), v2.8.2 (saints data migration — tags[] schema, 1568 records, full classification), v2.8.3 (COE saint section silenced; COE architectural model documented), v2.8.5–2.8.6 (saints resolver boundary — js/saints-resolver.js; resolveCommemorations delegation; OOR fallback via filterCachedByTradition; appData.saints eliminated; hydration-race gating verified closed), v2.8.9 (COE-II complete: COE-IIA Layer 2 fixed feasts, COE-IIB tag audit [133 IDs removed, eligibility gate], final five adjudication, Layer 3 re-enabled via CoeEligibility.filter()), 2026-03-06 admin-only EO diagnostics (CalendarEngine.getEOSeasonRanges(), EO fixed-feast anchors in admin Year Snapshot, corrected admin render path)",
-    "next_required": "1. EO app integration: admin/devtool EO old/new calendar diagnostics are implemented, but the main application still has no EO mode selector or production render path consuming eoMode. 2. [rite] placeholder fragility: audit rubric sequence entries using [rite] interpolation; add null-safe fallback. 3. Lower priority: .innerHTML architecture; Gloria Patri/Kyrie normalization; saints normalized-source runtime adapter. 4. Optional COE future work: COE-IIC — expand Layer 2 with major Hudra fixed feasts (Denha, Sleeba, Annunciation, All Saints). 5. External-research holdout only: mar-augustine / mar-augustine-commemoration (excluded from Layer 3 by eligibility gate; requires Syriac manuscript evidence before any change).",
-    "next_planned": "No single implementation phase is queued, but EO app integration is now the clearest medium-priority functional gap.",
+    "completed": "Phases 6.1–6.6 (BCP office + audit remediation), Phase 7.1–7.4 (full Ethiopian Sa'atat + calendar engine), Phase 8.1 (Senkessar index + Tir corpus + full wiring), Phase 8.3 (Hamle corpus verified), Phase 8.5 (Ge'ez dual-date display in Sa'atat sidebar and BCP date header — both rendering via EthiopianCalendar.formatEthiopianDate()), v2.6.1 (Tselote Meweta, Metsehafe Tselot aesthetic), v2.8.0 (Church of the East — all seven canonical hours: Sapra, Quta'a, Endana, D-tsha' Sa'in, Ramsha, Lelya, Suba'a — cathedral and monastic sequences, full dynamic token implementation), v2.8.1 (Barekmar components, Mahlet expansion, duplicate removal, Qanona layering, algorithmic calendar engine), v2.8.2 (saints data migration — tags[] schema, 1568 records, full classification), v2.8.3 (COE saint section silenced; COE architectural model documented), v2.8.5–2.8.6 (saints resolver boundary — js/saints-resolver.js; resolveCommemorations delegation; OOR fallback via filterCachedByTradition; appData.saints eliminated; hydration-race gating verified closed), v2.8.9 (COE-II complete: COE-IIA Layer 2 fixed feasts, COE-IIB tag audit [133 IDs removed, eligibility gate], final five adjudication, Layer 3 re-enabled via CoeEligibility.filter()), 2026-03-06 admin-only EO diagnostics (CalendarEngine.getEOSeasonRanges(), EO fixed-feast anchors in admin Year Snapshot, corrected admin render path), Horologion v1 (2026-03-07 — architecture boundary: js/horologion-engine.js, data/horologion/vespers.json skeleton with fixed content, schema.json, office-ui.js thin adapter, index.html splash button and script loads)",
+    "next_required": "1. Horologion v1.2: weekday prokeimenon cycle (7 fixed entries) — smallest remaining variable slot; no Octoechos dependency. 2. EO app integration: admin/devtool EO diagnostics complete; main app still has no EO mode selector, no production render path, and index.html does not load js/calendar-eastern-orthodox.js. 3. [rite] placeholder fragility: audit rubric sequence entries using [rite] interpolation. 4. Lower priority: .innerHTML architecture; Gloria Patri/Kyrie normalization; saints normalized-source runtime adapter. 5. Horologion v2: Compline skeleton, Little Hours skeletons (after v1.2 stable). 6. Horologion v3 (deferred/blocked): Orthros — blocked on Octoechos tone engine. 7. Optional COE: COE-IIC Layer 2 expansion (Denha, Sleeba, Annunciation, All Saints). 8. External-research holdout: mar-augustine / mar-augustine-commemoration.",
+    "next_planned": "Horologion v1.2 (weekday prokeimenon) is the next concrete implementation step. EO app integration remains the clearest medium-priority functional gap.",
     "future": "Phase 6.7 — Performance polish (timezone warning, LRU seasonal cache, prefetch, service worker); Phase 7.5 — Coptic Agpeya as standalone tradition entry; Phase 9.0 — Mobile app; Phase 9.1 — Cross-Tradition Search (Comparative scripture view across AR, ET, and SY canons); COE-IIC — Optional Layer 2 expansion: major Hudra fixed feasts (Denha/Epiphany, Sleeba/Exaltation, Annunciation, All Saints)"
   },
   "governance": {
@@ -1123,16 +1195,62 @@
         "status": "done",
         "area": "js/calendar-engine.js + admin/admin.html",
         "phase": "EO admin diagnostics"
+      },
+      {
+        "id": "horologion-v1-architecture",
+        "title": "Horologion v1: architecture boundary",
+        "description": "COMPLETE — 2026-03-07. js/horologion-engine.js (HorologionEngine) established as engine layer (non-throwing resolveOffice(), skeleton cache, validateOfficePayload()). data/horologion/vespers.json: 7-section skeleton with fixed content complete (Usual Beginning, Psalm 103 LXX, Great Litany, O Gladsome Light, Nunc Dimittis, rubrics). data/horologion/schema.json: payload contract documented. Thin UI adapter (renderHorologionOffice, _renderHorologionItem) added to office-ui.js. selectMode('horologion-vespers') branch active. index.html: splash button and script loads confirmed present in live app.",
+        "severity": "HIGH",
+        "status": "done",
+        "area": "js/horologion-engine.js + data/horologion/ + js/office-ui.js + index.html",
+        "phase": "Horologion v1"
+      },
+      {
+        "id": "horologion-vespers-variable-slots",
+        "title": "Horologion Vespers: resolve 7 variable slots",
+        "description": "IN PROGRESS. 7 slots in vespers.json currently render as placeholder blocks: stichera-at-lord-i-have-cried, kathisma-reading, daily-prokeimenon, vesperal-reading, aposticha, troparion-or-apolytikion, theotokion-dismissal. Minimum next step: weekday prokeimenon (7 fixed entries, no Octoechos dependency). Full resolution: Octoechos 8-tone engine for stichera and aposticha; Psalter weekly cycle for kathisma; Menaion for troparion/theotokion.",
+        "severity": "MEDIUM",
+        "status": "in-progress",
+        "area": "js/horologion-engine.js + data/horologion/vespers.json",
+        "phase": "Horologion v1.2"
+      },
+      {
+        "id": "horologion-compline-v1",
+        "title": "Horologion: Compline (Small Apodeipnon) v1",
+        "description": "Add data/horologion/compline.json skeleton. Small Apodeipnon structure: Usual Beginning, fixed Psalms (50, 69, 142, Doxology), Creed, Trisagion, Our Father, troparia, Kontakion of the day (variable — placeholder), Prayer of St. Basil, dismissal. Most content is fixed; only Kontakion slot is variable.",
+        "severity": "LOW",
+        "status": "open",
+        "area": "data/horologion/ + js/horologion-engine.js",
+        "phase": "Horologion v2"
+      },
+      {
+        "id": "horologion-little-hours-v1",
+        "title": "Horologion: Little Hours v1 (First, Third, Sixth, Ninth)",
+        "description": "Add skeleton files for the four Little Hours. Fixed structure per hour: Usual Beginning, fixed Psalms, Theotokion (variable — placeholder), Kontakion (variable — placeholder), Prayer, Dismissal. Fixed Psalm assignments: First Hour (5, 89, 100), Third Hour (16, 24, 50), Sixth Hour (53, 54, 90), Ninth Hour (83, 84, 85). Implement as four separate skeleton JSON files.",
+        "severity": "LOW",
+        "status": "open",
+        "area": "data/horologion/ + js/horologion-engine.js",
+        "phase": "Horologion v2"
+      },
+      {
+        "id": "horologion-orthros-v1",
+        "title": "Horologion: Orthros (Matins) v1 — DEFERRED, high complexity",
+        "description": "DEFERRED — do not begin until Octoechos tone engine is stable from Vespers work. Orthros is the most structurally complex Byzantine office: two variable kathisma readings per day (Psalter weekly cycle), Canon of 9 odes with variable troparia per tone/week/feast, Lauds Psalms (148–150), variable Exapostilarion, variable Ainoi stichera. Blocked on: horologion-vespers-variable-slots completion.",
+        "severity": "LOW",
+        "status": "open",
+        "area": "data/horologion/ + js/horologion-engine.js",
+        "phase": "Horologion v3 (deferred)"
       }
     ]
   },
   "documentation_manifest": {
     "status": "internal",
-    "last_realigned": "2026-03-06",
+    "last_realigned": "2026-03-07",
     "notes": [
       "structure.json is the canonical governance+documentation artifact and is consumed by admin dashboard.",
       "documentation/* files are internal engineering references; git history is the archive of prior versions.",
-      "EO admin diagnostics vs main-app EO integration split recorded in structure.json on 2026-03-06."
+      "EO admin diagnostics vs main-app EO integration split recorded in structure.json on 2026-03-06.",
+      "Horologion v1 architecture established and app-wired as of 2026-03-07. Tracked in structure.json todos (horologion-v1-architecture through horologion-orthros-v1), active_modules (js/horologion-engine.js, data/horologion/), and known_outstanding_issues (horologion_variable_engine)."
     ],
     "key_docs": [
       "documentation/STRUCTURE_JSON_CONTRACT.md",
