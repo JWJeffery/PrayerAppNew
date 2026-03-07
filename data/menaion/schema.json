@@ -1,0 +1,114 @@
+{
+  "_comment": [
+    "data/menaion/schema.json — Menaion v1.0",
+    "",
+    "CONTRACT: This schema governs all files under data/menaion/.",
+    "Every monthly file must conform to this structure.",
+    "",
+    "SCOPE (v1): Fixed-date commemorations only.",
+    "  - Movable feasts (Triodion, Pentecostarion) are not in this namespace.",
+    "  - Octoechos weekday themes are not in this namespace.",
+    "  - Only troparion/apolytikion text is stored in v1.",
+    "  - Full stichera corpus is deferred.",
+    "",
+    "RANK MODEL (v1 — four ranks only):",
+    "  rank 1 — Great Feast / Feast of the Lord / Feast of the Theotokos.",
+    "            Apolytikion always used; displaces Octoechos troparion entirely.",
+    "  rank 2 — Polyeleos feast. Apolytikion used; Octoechos is not sung.",
+    "  rank 3 — Six-stichera feast (Doxology). Apolytikion used.",
+    "  rank 4 — Three-stichera commemoration. Troparion used after Octoechos.",
+    "",
+    "  For weekday Vespers troparion resolution, any commemoration with rank 1–4",
+    "  and a troparion entry is considered 'resolved'. When multiple saints share",
+    "  a date, the highest-rank commemoration's troparion is used. Ties resolved",
+    "  by the first entry in the commemorations array (traditional precedence order).",
+    "",
+    "TONE: Byzantine tones 1–8 (integer). Required when troparion is present.",
+    "",
+    "MONTHLY FILE SHAPE: See monthShape below.",
+    "DATE KEY: MM-DD string (zero-padded month and day). Not year-dependent.",
+    "  Examples: '11-08', '11-16', '12-25'.",
+    "",
+    "COVERAGE FIELD: Each monthly file carries a top-level coverage object",
+    "  stating which dates have been imported, which are empty (no fixed feast)",
+    "  and which are known to exist but not yet imported.",
+    "",
+    "TROPARION OBJECT: See troparionShape below.",
+    "  A null troparion means: we know the commemorand exists but do not have",
+    "  the troparion text yet — different from a date with no import attempt.",
+    "",
+    "SOURCE EXPECTATION: All troparion texts should be drawn from published",
+    "  Orthodox service books in the Antiochian/OCA Hapgood tradition,",
+    "  or equivalent published liturgical translations (Jordanville, etc.).",
+    "  Texts must not be fabricated. If a troparion is unavailable, the",
+    "  troparion field must be null and troparion_status must be 'text-unavailable'.",
+    "",
+    "GOVERNANCE: This file is the authoritative schema. Edits to the schema",
+    "  require a version bump and a note in the monthly files' _meta.schema_version.",
+    "  Do not add fields to monthly files that are not declared here."
+  ],
+  "version": "1.0.0",
+  "monthShape": {
+    "_meta": {
+      "file": "string — data/menaion/<monthname>.json",
+      "version": "string — semver",
+      "schema_version": "string — must match schema.json version",
+      "month_number": "integer 1–12",
+      "month_name": "string",
+      "calendar_style": "string — 'new-calendar' (Revised Julian) | 'old-calendar' (Julian)",
+      "coverage_note": "string — prose summary of what has and has not been imported",
+      "imported_date_count": "integer — count of date keys with at least one commemoration entry",
+      "total_days": "integer — total days in the month"
+    },
+    "dates": {
+      "<MM-DD>": {
+        "commemorations": "array — ordered array of commemorationShape objects (highest rank first)"
+      }
+    }
+  },
+  "commemorationShape": {
+    "id": "string — stable kebab-case identifier (e.g. 'synaxis-archangels')",
+    "name": "string — primary liturgical name as used in services",
+    "type": "string — 'saint' | 'feast' | 'marian_feast' | 'apostle' | 'martyr' | 'prophet' | 'hierarch' | 'monastic'",
+    "rank": "integer 1–4 — see rank model above",
+    "troparion_tone": "integer 1–8 — required when troparion.text is present; null otherwise",
+    "troparion": "null | troparionShape",
+    "troparion_status": "string — 'resolved' | 'text-unavailable' | 'deferred'",
+    "tradition_tags": "array of strings — ['EOR', 'OOR', 'ANG', 'LAT', 'COE']. EOR = Eastern Orthodox. 'BYZC' commemorations use 'EOR'.",
+    "notes": "string | null — liturgical notes, alternate names, usage notes"
+  },
+  "troparionShape": {
+    "tone": "integer 1–8",
+    "title": "string — e.g. 'Troparion of the Holy Archangels, Tone 4'",
+    "text": "string — full troparion text"
+  },
+  "resolutionContract": {
+    "resolved": {
+      "code": "menaion-resolved",
+      "description": "A commemoration with rank 1–4 and troparion text was found for this date. Text is returned.",
+      "output_type": "text"
+    },
+    "not_imported": {
+      "code": "menaion-not-imported",
+      "description": "This date's month has not been imported into the Menaion corpus yet. A rubric is returned.",
+      "output_type": "rubric"
+    },
+    "no_commemoration": {
+      "code": "menaion-no-ranked-commemoration",
+      "description": "The date was imported but no commemoration with a troparion was found. Weekday theme troparion applies.",
+      "output_type": "rubric"
+    },
+    "text_unavailable": {
+      "code": "menaion-text-unavailable",
+      "description": "A commemoration is known for this date but troparion text is not yet in the corpus.",
+      "output_type": "rubric"
+    }
+  },
+  "traditionCodes": {
+    "EOR": "Eastern Orthodox (Greek, Russian, Antiochian, etc.)",
+    "OOR": "Oriental Orthodox",
+    "ANG": "Anglican",
+    "LAT": "Roman Catholic / Latin Rite",
+    "COE": "Church of the East"
+  }
+}

@@ -1,0 +1,263 @@
+{
+  "_meta": {
+    "file": "data/menaion/november.json",
+    "version": "1.0.0",
+    "schema_version": "1.0.0",
+    "month_number": 11,
+    "month_name": "November",
+    "calendar_style": "new-calendar",
+    "coverage_note": "PILOT CORPUS. This is not a full Menaion import. A representative set of well-known November commemorations has been imported to demonstrate the schema and resolver boundary. Dates not listed in this file are NOT empty days — they have not been imported. The resolver returns 'menaion-not-imported' for any November date not present here. A full November import is a future task.",
+    "imported_date_count": 12,
+    "total_days": 30,
+    "sources": [
+      "OCA Menaion (orthodox.net/saints) — Antiochian/OCA tradition",
+      "Antiochian Orthodox Archdiocese Service Book texts",
+      "Hapgood, Isabel (trans.), Service Book of the Holy Orthodox-Catholic Apostolic Church, 1922"
+    ]
+  },
+  "dates": {
+    "11-01": {
+      "commemorations": [
+        {
+          "id": "holy-wonder-workers-cosmas-damian-asia",
+          "name": "Holy Unmercenary Healers and Wonder-workers Cosmas and Damian of Asia",
+          "type": "saint",
+          "rank": 3,
+          "troparion_tone": 8,
+          "troparion": {
+            "tone": 8,
+            "title": "Troparion of SS. Cosmas and Damian of Asia, Tone 8",
+            "text": "Holy unmercenaries and wonder-workers, visit our infirmities; freely ye have received, freely give to us."
+          },
+          "troparion_status": "resolved",
+          "tradition_tags": ["EOR", "OOR", "LAT"],
+          "notes": "Three sets of Cosmas and Damian exist in the Orthodox calendar; these are those of Asia, commemorated Nov 1 (new calendar)."
+        }
+      ]
+    },
+    "11-08": {
+      "commemorations": [
+        {
+          "id": "synaxis-bodiless-powers",
+          "name": "Synaxis of the Chief of the Heavenly Hosts, Archangel Michael and All the Incorporeal Powers",
+          "type": "feast",
+          "rank": 2,
+          "troparion_tone": 4,
+          "troparion": {
+            "tone": 4,
+            "title": "Troparion of the Synaxis of the Bodiless Hosts, Tone 4",
+            "text": "O Commanders of God's armies and ministers of the divine glory, princes of the bodiless Angels and guides of mankind, ask for what is good for us, and for great mercy, as Commanders of the Bodiless Hosts."
+          },
+          "troparion_status": "resolved",
+          "tradition_tags": ["EOR", "OOR"],
+          "notes": "Major feast of the Angelic Orders. Ranks as Polyeleos in the OCA Typikon. The primary feast of the Bodiless Powers in the Byzantine calendar."
+        }
+      ]
+    },
+    "11-09": {
+      "commemorations": [
+        {
+          "id": "dedication-church-archangel-chonae",
+          "name": "Dedication of the Church of St. Michael the Archangel at Chonae (Colossae)",
+          "type": "feast",
+          "rank": 4,
+          "troparion_tone": 4,
+          "troparion": {
+            "tone": 4,
+            "title": "Troparion (same as Nov 8), Tone 4",
+            "text": "O Commanders of God's armies and ministers of the divine glory, princes of the bodiless Angels and guides of mankind, ask for what is good for us, and for great mercy, as Commanders of the Bodiless Hosts."
+          },
+          "troparion_status": "resolved",
+          "tradition_tags": ["EOR"],
+          "notes": "The afterfeast / octave commemoration of the Nov 8 feast. Troparion is the same as Nov 8."
+        }
+      ]
+    },
+    "11-13": {
+      "commemorations": [
+        {
+          "id": "john-chrysostom",
+          "name": "Our Holy Father John Chrysostom, Archbishop of Constantinople",
+          "type": "hierarch",
+          "rank": 2,
+          "troparion_tone": 8,
+          "troparion": {
+            "tone": 8,
+            "title": "Troparion of St. John Chrysostom, Tone 8",
+            "text": "Grace shining forth from thy mouth like a beacon hath illumined the universe, and disclosed to the world the treasures of poverty, and shown us the height of humility. But whilst instructing us by thy words, O Father John Chrysostom, intercede with the Word, Christ our God, to save our souls."
+          },
+          "troparion_status": "resolved",
+          "tradition_tags": ["EOR", "OOR", "ANG", "LAT"],
+          "notes": "Polyeleos feast. Universal Doctor of the Church. Patron of preachers and liturgical scholars."
+        }
+      ]
+    },
+    "11-14": {
+      "commemorations": [
+        {
+          "id": "philip-apostle",
+          "name": "Holy and All-Praised Apostle Philip",
+          "type": "apostle",
+          "rank": 2,
+          "troparion_tone": 8,
+          "troparion": {
+            "tone": 8,
+            "title": "Troparion of the Holy Apostle Philip, Tone 8",
+            "text": "Thou wast a fellow disciple of Paul, and a companion of Andrew; and like him thou didst hasten to follow Christ the Master. Together with both of them we honor thee, O Philip, and together with them we cry to thee: Entreat the Lord to grant us great mercy."
+          },
+          "troparion_status": "resolved",
+          "tradition_tags": ["EOR", "OOR", "ANG", "LAT"],
+          "notes": "Note: Nov 14 is the new-calendar date; old calendar observance differs. Philip's Fast begins Nov 15 (new calendar)."
+        }
+      ]
+    },
+    "11-16": {
+      "commemorations": [
+        {
+          "id": "matthew-apostle-evangelist",
+          "name": "Holy and All-Praised Apostle and Evangelist Matthew",
+          "type": "apostle",
+          "rank": 2,
+          "troparion_tone": 3,
+          "troparion": {
+            "tone": 3,
+            "title": "Troparion of the Holy Apostle and Evangelist Matthew, Tone 3",
+            "text": "With great speed, like an eagle soaring to heaven, the Apostle Matthew, fired with burning zeal, cast aside the customs-house, and followed Christ. Glorifying God in the flesh, he gained the life of heaven. Wherefore we praise his honorable memory."
+          },
+          "troparion_status": "resolved",
+          "tradition_tags": ["EOR", "OOR", "ANG", "LAT"],
+          "notes": "Polyeleos feast. One of the four Evangelists. New-calendar date; old-calendar observance on corresponding Julian date."
+        }
+      ]
+    },
+    "11-17": {
+      "commemorations": [
+        {
+          "id": "gregory-wonderworker",
+          "name": "Our Holy Father Gregory the Wonderworker, Bishop of Neo-Caesarea",
+          "type": "hierarch",
+          "rank": 3,
+          "troparion_tone": 8,
+          "troparion": {
+            "tone": 8,
+            "title": "Troparion of St. Gregory the Wonderworker, Tone 8",
+            "text": "Through the inspiration of the Most Holy Spirit, thou didst acquire the exactness of true wisdom; through the pureness of thy life, thou didst obtain the working of wonders; for thou art indeed worthy of thy name, O great Hierarch Gregory. Intercede with Christ God that our souls be saved."
+          },
+          "troparion_status": "resolved",
+          "tradition_tags": ["EOR", "OOR"],
+          "notes": "Known as Thaumaturgus (Wonderworker). Six-stichera feast."
+        }
+      ]
+    },
+    "11-20": {
+      "commemorations": [
+        {
+          "id": "forefeast-entrance-theotokos",
+          "name": "Forefeast of the Entrance of the Most Holy Theotokos into the Temple",
+          "type": "marian_feast",
+          "rank": 4,
+          "troparion_tone": 4,
+          "troparion": {
+            "tone": 4,
+            "title": "Troparion of the Forefeast, Tone 4",
+            "text": "Today is the prelude of God's good will and the proclamation of the salvation of mankind; in the temple of God the Virgin is clearly revealed and foretells Christ to all. Let us shout to her with great rejoicing: Rejoice, O fulfillment of the Creator's dispensation."
+          },
+          "troparion_status": "resolved",
+          "tradition_tags": ["EOR", "OOR"],
+          "notes": "Forefeast of Nov 21. Troparion of the feast itself is used beginning on the forefeast."
+        }
+      ]
+    },
+    "11-21": {
+      "commemorations": [
+        {
+          "id": "entrance-theotokos-temple",
+          "name": "Entrance of the Most Holy Theotokos into the Temple",
+          "type": "marian_feast",
+          "rank": 1,
+          "troparion_tone": 4,
+          "troparion": {
+            "tone": 4,
+            "title": "Troparion of the Entrance of the Theotokos, Tone 4",
+            "text": "Today is the prelude of God's good will and the proclamation of the salvation of mankind; in the temple of God the Virgin is clearly revealed and foretells Christ to all. Let us shout to her with great rejoicing: Rejoice, O fulfillment of the Creator's dispensation."
+          },
+          "troparion_status": "resolved",
+          "tradition_tags": ["EOR", "OOR", "LAT"],
+          "notes": "One of the Twelve Great Feasts. Rank 1 (Great Feast / Feast of the Theotokos). Liturgical texts displace the Octoechos entirely on this day."
+        }
+      ]
+    },
+    "11-22": {
+      "commemorations": [
+        {
+          "id": "afterfeast-entrance-theotokos",
+          "name": "Afterfeast of the Entrance of the Most Holy Theotokos into the Temple",
+          "type": "marian_feast",
+          "rank": 4,
+          "troparion_tone": 4,
+          "troparion": {
+            "tone": 4,
+            "title": "Troparion of the Afterfeast (Entrance of the Theotokos), Tone 4",
+            "text": "Today is the prelude of God's good will and the proclamation of the salvation of mankind; in the temple of God the Virgin is clearly revealed and foretells Christ to all. Let us shout to her with great rejoicing: Rejoice, O fulfillment of the Creator's dispensation."
+          },
+          "troparion_status": "resolved",
+          "tradition_tags": ["EOR", "OOR"],
+          "notes": "Afterfeast days of the Entrance of the Theotokos (Nov 22–25). All use the feast troparion."
+        }
+      ]
+    },
+    "11-25": {
+      "commemorations": [
+        {
+          "id": "clement-rome",
+          "name": "Holy Hieromartyr Clement, Pope of Rome",
+          "type": "martyr",
+          "rank": 3,
+          "troparion_tone": 4,
+          "troparion": {
+            "tone": 4,
+            "title": "Troparion of St. Clement of Rome, Tone 4",
+            "text": "Thy righteousness of life and confessor's struggles, thy martyr's death and pastoral care of thy flock have made thee known throughout the world, O Father Clement, Hieromartyr and Bishop of Rome. Intercede with Christ our God that He grant us great mercy."
+          },
+          "troparion_status": "resolved",
+          "tradition_tags": ["EOR", "OOR", "ANG", "LAT"],
+          "notes": "Leavetaking of the Entrance of the Theotokos also falls on Nov 25. When this is a weekday, the feast troparion (Nov 21) may take precedence in some uses; Clement is sung in addition."
+        },
+        {
+          "id": "leavetaking-entrance-theotokos",
+          "name": "Leavetaking of the Entrance of the Most Holy Theotokos",
+          "type": "marian_feast",
+          "rank": 3,
+          "troparion_tone": 4,
+          "troparion": {
+            "tone": 4,
+            "title": "Troparion of the Leavetaking (Entrance of the Theotokos), Tone 4",
+            "text": "Today is the prelude of God's good will and the proclamation of the salvation of mankind; in the temple of God the Virgin is clearly revealed and foretells Christ to all. Let us shout to her with great rejoicing: Rejoice, O fulfillment of the Creator's dispensation."
+          },
+          "troparion_status": "resolved",
+          "tradition_tags": ["EOR", "OOR"],
+          "notes": "Leavetaking of the Entrance of the Theotokos. The feast troparion is used at Leavetaking as on the feast itself."
+        }
+      ]
+    },
+    "11-30": {
+      "commemorations": [
+        {
+          "id": "andrew-first-called",
+          "name": "Holy and All-Praised Apostle Andrew the First-Called",
+          "type": "apostle",
+          "rank": 2,
+          "troparion_tone": 4,
+          "troparion": {
+            "tone": 4,
+            "title": "Troparion of the Holy Apostle Andrew the First-Called, Tone 4",
+            "text": "As the first-called of the Apostles and the brother of the foremost disciple, entreat the Master of all, O Andrew, to grant peace to the world and to our souls great mercy."
+          },
+          "troparion_status": "resolved",
+          "tradition_tags": ["EOR", "OOR", "ANG", "LAT"],
+          "notes": "Polyeleos feast. Patron of several patriarchates (Constantinople, Russia, Scotland). New-calendar date."
+        }
+      ]
+    }
+  }
+}
