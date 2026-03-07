@@ -160,6 +160,23 @@
     }
 
     /**
+     * Return the full cached records array for `month` if it is already in the
+     * internal cache, otherwise return null.
+     *
+     * This is a synchronous read — it never triggers a fetch. It is intended
+     * for callers that have already called resolveCommemorations() or
+     * loadSaintsForDate() for the same month and need the complete unfiltered
+     * array (e.g. to seed a secondary cache such as appData.saints).
+     *
+     * @param {string} month  - e.g. 'March' (capitalised, matches MONTH_NAMES)
+     * @returns {Array|null}
+     */
+    function getMonthRecords(month) {
+        if (_cache && _cache.month === month) return _cache.records;
+        return null;
+    }
+
+    /**
      * Override the base path used for fetch URLs.
      * Call before any load if the file is served from a non-root path.
      * Example: SaintsResolver.configure({ dataBasePath: '../data/saints/' })
@@ -179,6 +196,7 @@
         configure,
         loadSaintsForDate,
         resolveCommemorations,
+        getMonthRecords,
         // Helpers exposed for callers that use them directly
         saintOccursOnDate,
         saintAppliesToContext,

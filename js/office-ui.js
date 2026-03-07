@@ -1057,8 +1057,9 @@ function getTraditionDisplayLabel(code) {
 
 /**
  * Canonical saints read path for the office renderers.
- * Delegates to SaintsResolver. Also keeps appData.saints populated so that
- * inline OOR fallback filters in the sequence loops can read the cache directly.
+ * Delegates to SaintsResolver.resolveCommemorations, then seeds appData.saints
+ * from SaintsResolver's internal cache (no second network fetch) so that inline
+ * OOR fallback filters in the sequence loops can read appData.saints directly.
  *
  * @param {Date}   date
  * @param {string} tradition  - 'ANG' | 'LAT' | 'EOR' | 'OOR' | 'COE'
@@ -1072,21 +1073,19 @@ async function resolveCommemorations(date, tradition, opts) {
     ];
     const month = MONTH_NAMES[date.getMonth()];
 
-    // Seed appData.saints / appData.saintsMonth so sequence-loop inline
-    // OOR fallback filters continue to work without change.
+    // Delegate — loads and caches the monthly file inside SaintsResolver
+    // if not already cached for this month.
+    const result = await SaintsResolver.resolveCommemorations(date, tradition, opts);
+
+    // Seed appData.saints from SaintsResolver's now-populated cache.
+    // getMonthRecords() is synchronous and never fetches; safe to call
+    // immediately after the await above — same month is guaranteed in cache.
     if (!appData.saints || appData.saintsMonth !== month) {
-        try {
-            const res = await fetch(`data/saints/saints-${month.toLowerCase()}.json`);
-            appData.saints     = res.ok ? await res.json() : [];
-            appData.saintsMonth = month;
-        } catch (err) {
-            console.error('[resolveCommemorations] Saints load failed:', err);
-            appData.saints     = [];
-            appData.saintsMonth = month;
-        }
+        appData.saints      = SaintsResolver.getMonthRecords(month) || [];
+        appData.saintsMonth = month;
     }
 
-    return SaintsResolver.resolveCommemorations(date, tradition, opts);
+    return result;
 }
 
 function requestRender() {
