@@ -89,7 +89,7 @@
     "day": "February 3",
     "name": "Prophet Azariah",
     "description": "Old Testament prophet.",
-    "type": "saint",
+    "type": "prophet",
     "tags": [
       "EOR"
     ]
@@ -123,16 +123,6 @@
     "type": "saint",
     "tags": [
       "LAT"
-    ]
-  },
-  {
-    "id": "saint-malachi",
-    "day": "February 3",
-    "name": "Saint Malachi",
-    "description": "Old Testament prophet (shared commemoration).",
-    "type": "saint",
-    "tags": [
-      "COE"
     ]
   },
   {
@@ -406,16 +396,6 @@
     ]
   },
   {
-    "id": "saint-blaise",
-    "day": "February 11",
-    "name": "Saint Blaise",
-    "description": "Bishop and martyr, patron against throat ailments.",
-    "type": "saint",
-    "tags": [
-      "COE"
-    ]
-  },
-  {
     "id": "saint-theodora-the-empress",
     "day": "February 11",
     "name": "Saint Theodora the Empress",
@@ -443,16 +423,6 @@
     "type": "saint",
     "tags": [
       "LAT"
-    ]
-  },
-  {
-    "id": "saint-meletius",
-    "day": "February 12",
-    "name": "Saint Meletius",
-    "description": "Bishop (shared commemoration).",
-    "type": "saint",
-    "tags": [
-      "COE"
     ]
   },
   {
@@ -559,16 +529,6 @@
     ]
   },
   {
-    "id": "saint-maron-of-syria",
-    "day": "February 14",
-    "name": "Saint Maron of Syria",
-    "description": "Hermit founder.",
-    "type": "saint",
-    "tags": [
-      "COE"
-    ]
-  },
-  {
     "id": "saint-valentine",
     "day": "February 14",
     "name": "Saint Valentine",
@@ -596,7 +556,7 @@
     "day": "February 15",
     "name": "Apostle Onesimus of the Seventy",
     "description": "Disciple of Saint Paul.",
-    "type": "saint",
+    "type": "apostle",
     "tags": [
       "EOR"
     ]
@@ -782,16 +742,6 @@
     ]
   },
   {
-    "id": "saint-bucolus",
-    "day": "February 19",
-    "name": "Saint Bucolus",
-    "description": "Bishop (shared commemoration).",
-    "type": "saint",
-    "tags": [
-      "COE"
-    ]
-  },
-  {
     "id": "saint-bucolus-bishop-of-smyrna",
     "day": "February 19",
     "name": "Saint Bucolus, Bishop of Smyrna",
@@ -902,16 +852,6 @@
     ]
   },
   {
-    "id": "saint-timothy-of-symbola",
-    "day": "February 21",
-    "name": "Saint Timothy of Symbola",
-    "description": "Monk (shared commemoration).",
-    "type": "saint",
-    "tags": [
-      "COE"
-    ]
-  },
-  {
     "id": "venerable-timothy-of-symbola",
     "day": "February 21",
     "name": "Venerable Timothy of Symbola",
@@ -946,7 +886,7 @@
     "id": "saint-polycarp-of-smyrna",
     "day": "February 22",
     "name": "Saint Polycarp of Smyrna",
-    "description": "Bishop and martyr.",
+    "description": "Bishop of Smyrna and Apostolic Father, martyred c. 155.",
     "type": "saint",
     "tags": [
       "OOR"
@@ -966,22 +906,21 @@
     "id": "saint-polycarp-of-smyrna",
     "day": "February 23",
     "name": "Saint Polycarp of Smyrna",
-    "description": "Bishop and martyr.",
+    "description": "Bishop of Smyrna and Apostolic Father, martyred c. 155.",
     "type": "saint",
     "tags": [
       "ANG",
-      "LAT",
       "EOR",
-      "OOR",
-      "COE"
+      "LAT",
+      "OOR"
     ]
   },
   {
     "id": "saint-matthias-the-apostle",
     "day": "February 24",
     "name": "Saint Matthias the Apostle",
-    "description": "The apostle chosen to replace Judas Iscariot.",
-    "type": "saint",
+    "description": "Apostle chosen to replace Judas Iscariot (Acts 1:26).",
+    "type": "apostle",
     "tags": [
       "ANG",
       "LAT",
@@ -1057,7 +996,7 @@
     "id": "saint-cyril-of-jerusalem",
     "day": "February 27",
     "name": "Saint Cyril of Jerusalem",
-    "description": "Bishop and Doctor of the Church, venerated in Catholic, Eastern Orthodox, Oriental Orthodox, and Anglican Communion traditions.",
+    "description": "Bishop of Jerusalem and Doctor of the Church, died 386.",
     "type": "saint",
     "tags": [
       "OOR"

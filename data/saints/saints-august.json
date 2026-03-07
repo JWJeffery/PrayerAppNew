@@ -391,7 +391,7 @@
     "day": "August 9",
     "name": "Saint Matthias",
     "description": "Apostle and witness to the Resurrection.",
-    "type": "saint",
+    "type": "apostle",
     "tags": [
       "OOR"
     ]
@@ -400,8 +400,8 @@
     "id": "saint-matthias-the-apostle",
     "day": "August 9",
     "name": "Saint Matthias the Apostle",
-    "description": "The apostle chosen to replace Judas Iscariot.",
-    "type": "saint",
+    "description": "Apostle chosen to replace Judas Iscariot (Acts 1:26).",
+    "type": "apostle",
     "tags": [
       "EOR"
     ]
@@ -454,7 +454,7 @@
     "day": "August 11",
     "name": "Mar Mari the Apostle",
     "description": "Commemoration of the teacher of the East.",
-    "type": "saint",
+    "type": "apostle",
     "tags": [
       "COE"
     ]
@@ -596,7 +596,7 @@
     "day": "August 14",
     "name": "Prophet Micah",
     "description": "Old Testament prophet; foretold Christ's birth in Bethlehem.",
-    "type": "saint",
+    "type": "prophet",
     "tags": [
       "EOR"
     ]
@@ -862,7 +862,7 @@
     "day": "August 20",
     "name": "Prophet Samuel",
     "description": "Old Testament prophet and judge of Israel.",
-    "type": "saint",
+    "type": "prophet",
     "tags": [
       "EOR",
       "OOR"
@@ -884,7 +884,7 @@
     "day": "August 21",
     "name": "Apostle Thaddeus of the Seventy",
     "description": "Healer of King Abgar of Edessa.",
-    "type": "saint",
+    "type": "apostle",
     "tags": [
       "EOR"
     ]
@@ -1119,7 +1119,7 @@
     "day": "August 25",
     "name": "Saint Titus the Apostle",
     "description": "Companion of St. Paul and Bishop of Crete.",
-    "type": "saint",
+    "type": "apostle",
     "tags": [
       "OOR"
     ]
@@ -1379,7 +1379,7 @@
     "day": "August 31",
     "name": "Mar Toma (Apostle Thomas)",
     "description": "Apostle of the East (Feast of the return of relics).",
-    "type": "saint",
+    "type": "apostle",
     "tags": [
       "COE"
     ]

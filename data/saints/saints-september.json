@@ -154,7 +154,7 @@
     "day": "September 4",
     "name": "Holy Prophet Moses",
     "description": "The Law-giver who beheld God on Mount Sinai.",
-    "type": "saint",
+    "type": "prophet",
     "tags": [
       "EOR"
     ]
@@ -224,7 +224,7 @@
     "day": "September 5",
     "name": "Prophet Zachariah",
     "description": "Father of the Forerunner; martyred in the Temple.",
-    "type": "saint",
+    "type": "prophet",
     "tags": [
       "EOR"
     ]
@@ -587,7 +587,7 @@
     "id": "saint-john-chrysostom",
     "day": "September 13",
     "name": "Saint John Chrysostom",
-    "description": "Honored for eloquence.",
+    "description": "Archbishop of Constantinople and Doctor of the Church, died 407.",
     "type": "saint",
     "tags": [
       "LAT"
@@ -911,7 +911,7 @@
     "id": "saint-matthew-the-apostle",
     "day": "September 21",
     "name": "Saint Matthew the Apostle",
-    "description": "Apostle and Evangelist.",
+    "description": "Apostle, tax collector, and author of the first Gospel.",
     "type": "apostle",
     "tags": [
       "ANG",

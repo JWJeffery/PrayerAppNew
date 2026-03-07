@@ -27,10 +27,9 @@
     "type": "saint",
     "tags": [
       "ANG",
-      "LAT",
       "EOR",
-      "OOR",
-      "COE"
+      "LAT",
+      "OOR"
     ]
   },
   {
@@ -99,7 +98,7 @@
     "day": "June 3",
     "name": "Prophet Elijah",
     "description": "Old Testament prophet.",
-    "type": "saint",
+    "type": "prophet",
     "tags": [
       "OOR"
     ]
@@ -113,16 +112,6 @@
     "tags": [
       "ANG",
       "LAT"
-    ]
-  },
-  {
-    "id": "martyrs-zoticus-atallus-camisius-and-philip",
-    "day": "June 4",
-    "name": "Martyrs Zoticus, Atallus, Camisius and Philip",
-    "description": "Newly-revealed saints.",
-    "type": "saint",
-    "tags": [
-      "COE"
     ]
   },
   {
@@ -187,16 +176,6 @@
     ]
   },
   {
-    "id": "saint-dorotheus",
-    "day": "June 5",
-    "name": "Saint Dorotheus",
-    "description": "Bishop and martyr, shared veneration.",
-    "type": "saint",
-    "tags": [
-      "COE"
-    ]
-  },
-  {
     "id": "saint-gayane-and-her-companions",
     "day": "June 5",
     "name": "Saint Gayane and her Companions",
@@ -228,16 +207,6 @@
     ]
   },
   {
-    "id": "venerable-bessarion",
-    "day": "June 6",
-    "name": "Venerable Bessarion",
-    "description": "Wonderworker, shared veneration.",
-    "type": "saint",
-    "tags": [
-      "COE"
-    ]
-  },
-  {
     "id": "venerable-bessarion-the-wonderworker-of-egypt",
     "day": "June 6",
     "name": "Venerable Bessarion the Wonderworker of Egypt",
@@ -245,16 +214,6 @@
     "type": "saint",
     "tags": [
       "EOR"
-    ]
-  },
-  {
-    "id": "hieromartyr-theodotus",
-    "day": "June 7",
-    "name": "Hieromartyr Theodotus",
-    "description": "Martyr, shared.",
-    "type": "saint",
-    "tags": [
-      "COE"
     ]
   },
   {
@@ -308,16 +267,6 @@
     ]
   },
   {
-    "id": "saint-theodore-stratelates",
-    "day": "June 8",
-    "name": "Saint Theodore Stratelates",
-    "description": "Martyr, shared.",
-    "type": "saint",
-    "tags": [
-      "COE"
-    ]
-  },
-  {
     "id": "saint-william-of-york",
     "day": "June 8",
     "name": "Saint William of York",
@@ -362,7 +311,7 @@
     "id": "saint-cyril-of-alexandria",
     "day": "June 9",
     "name": "Saint Cyril of Alexandria",
-    "description": "Bishop and Doctor of the Church, died 444.",
+    "description": "Archbishop of Alexandria, Doctor of the Church, died 444.",
     "type": "saint",
     "tags": [
       "EOR"
@@ -372,7 +321,7 @@
     "id": "saint-ephrem-the-syrian",
     "day": "June 9",
     "name": "Saint Ephrem the Syrian",
-    "description": "Commemoration.",
+    "description": "Deacon, hymnographer, and Doctor of the Church, died 373.",
     "type": "saint",
     "tags": [
       "ANG",
@@ -410,16 +359,6 @@
     "type": "saint",
     "tags": [
       "ANG"
-    ]
-  },
-  {
-    "id": "saint-john-metropolitan-of-tobolsk",
-    "day": "June 10",
-    "name": "Saint John Metropolitan of Tobolsk",
-    "description": "Bishop, died 1715 AD.",
-    "type": "saint",
-    "tags": [
-      "COE"
     ]
   },
   {
@@ -483,7 +422,6 @@
     "description": "Early Egyptian desert hermit.",
     "type": "saint",
     "tags": [
-      "COE",
       "EOR",
       "OOR"
     ]
@@ -505,7 +443,6 @@
     "description": "Franciscan priest, renowned preacher, and Doctor of the Church.",
     "type": "saint",
     "tags": [
-      "COE",
       "LAT",
       "OOR"
     ]
@@ -535,7 +472,7 @@
     "day": "June 14",
     "name": "Prophet Elisha",
     "description": "Old Testament prophet and successor to Elijah.",
-    "type": "saint",
+    "type": "prophet",
     "tags": [
       "COE",
       "EOR",
@@ -557,20 +494,10 @@
     "day": "June 15",
     "name": "Prophet Amos",
     "description": "Old Testament prophet.",
-    "type": "saint",
+    "type": "prophet",
     "tags": [
       "EOR",
       "OOR"
-    ]
-  },
-  {
-    "id": "saint-augustine-of-hippo",
-    "day": "June 15",
-    "name": "Saint Augustine of Hippo",
-    "description": "Bishop, Doctor, and one of the Pillars of Christian theology.",
-    "type": "saint",
-    "tags": [
-      "COE"
     ]
   },
   {
@@ -632,7 +559,6 @@
     "description": "Martyrs of Athens.",
     "type": "saint",
     "tags": [
-      "COE",
       "EOR",
       "OOR"
     ]
@@ -703,7 +629,7 @@
     "day": "June 19",
     "name": "Apostle Jude the Brother of the Lord",
     "description": "Apostle, 1st century.",
-    "type": "saint",
+    "type": "apostle",
     "tags": [
       "EOR"
     ]
@@ -726,16 +652,6 @@
     "type": "saint",
     "tags": [
       "ANG"
-    ]
-  },
-  {
-    "id": "saint-john-of-san-francisco",
-    "day": "June 19",
-    "name": "Saint John of San Francisco",
-    "description": "Archbishop, died 1966 AD.",
-    "type": "saint",
-    "tags": [
-      "COE"
     ]
   },
   {
@@ -769,7 +685,6 @@
     "description": "Bishop and early Church writer.",
     "type": "saint",
     "tags": [
-      "COE",
       "EOR",
       "OOR"
     ]
@@ -812,7 +727,6 @@
     "type": "saint",
     "tags": [
       "ANG",
-      "COE",
       "LAT",
       "OOR"
     ]
@@ -824,7 +738,6 @@
     "description": "Bishop, died 380 AD.",
     "type": "saint",
     "tags": [
-      "COE",
       "EOR"
     ]
   },
@@ -935,7 +848,6 @@
     "type": "saint",
     "tags": [
       "ANG",
-      "COE",
       "EOR"
     ]
   },
@@ -963,14 +875,13 @@
     "id": "saint-cyril-of-alexandria",
     "day": "June 27",
     "name": "Saint Cyril of Alexandria",
-    "description": "Bishop and Doctor of the Church, died 444.",
+    "description": "Archbishop of Alexandria, Doctor of the Church, died 444.",
     "type": "saint",
     "tags": [
       "ANG",
-      "LAT",
       "EOR",
-      "OOR",
-      "COE"
+      "LAT",
+      "OOR"
     ]
   },
   {
@@ -981,10 +892,9 @@
     "type": "saint",
     "tags": [
       "ANG",
-      "LAT",
       "EOR",
-      "OOR",
-      "COE"
+      "LAT",
+      "OOR"
     ]
   },
   {

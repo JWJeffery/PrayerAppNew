@@ -38,7 +38,7 @@
     "day": "May 1",
     "name": "Philip and James, Apostles",
     "description": "Apostles and martyrs (Western traditional date).",
-    "type": "saint",
+    "type": "apostle",
     "tags": [
       "ANG"
     ]
@@ -48,7 +48,7 @@
     "day": "May 1",
     "name": "Saint Addai the Apostle",
     "description": "Apostle and missionary to Edessa.",
-    "type": "saint",
+    "type": "apostle",
     "tags": [
       "COE"
     ]
@@ -70,8 +70,7 @@
     "description": "Bishop of Alexandria and Teacher of the Faith, died 373 AD.",
     "type": "saint",
     "tags": [
-      "ANG",
-      "COE"
+      "ANG"
     ]
   },
   {
@@ -92,10 +91,9 @@
     "type": "saint",
     "tags": [
       "ANG",
-      "LAT",
       "EOR",
-      "OOR",
-      "COE"
+      "LAT",
+      "OOR"
     ]
   },
   {
@@ -124,7 +122,7 @@
     "day": "May 3",
     "name": "Philip and James, Apostles",
     "description": "Apostles and martyrs (Western traditional date).",
-    "type": "saint",
+    "type": "apostle",
     "tags": [
       "ANG",
       "LAT"
@@ -148,7 +146,6 @@
     "description": "Founder of communal monasticism, died 348 AD.",
     "type": "saint",
     "tags": [
-      "COE",
       "OOR"
     ]
   },
@@ -353,16 +350,6 @@
     ]
   },
   {
-    "id": "saint-john-the-evangelist",
-    "day": "May 8",
-    "name": "Saint John the Evangelist",
-    "description": "Apostle and author of the Gospel.",
-    "type": "saint",
-    "tags": [
-      "COE"
-    ]
-  },
-  {
     "id": "saint-john-the-theologian",
     "day": "May 8",
     "name": "Saint John the Theologian",
@@ -418,7 +405,7 @@
     "day": "May 10",
     "name": "Apostle Simon the Zealot",
     "description": "One of the Twelve Apostles.",
-    "type": "saint",
+    "type": "apostle",
     "tags": [
       "EOR"
     ]
@@ -526,7 +513,6 @@
     "type": "saint",
     "tags": [
       "ANG",
-      "COE",
       "LAT"
     ]
   },
@@ -608,7 +594,7 @@
     "day": "May 14",
     "name": "Saint Matthias",
     "description": "Apostle and witness to the Resurrection.",
-    "type": "saint",
+    "type": "apostle",
     "tags": [
       "COE"
     ]
@@ -617,8 +603,8 @@
     "id": "saint-matthias-the-apostle",
     "day": "May 14",
     "name": "Saint Matthias the Apostle",
-    "description": "The apostle chosen to replace Judas Iscariot.",
-    "type": "saint",
+    "description": "Apostle chosen to replace Judas Iscariot (Acts 1:26).",
+    "type": "apostle",
     "tags": [
       "ANG",
       "LAT"
@@ -665,16 +651,6 @@
     ]
   },
   {
-    "id": "saint-pachomius",
-    "day": "May 15",
-    "name": "Saint Pachomius",
-    "description": "Founder of communal monasticism, died 348 AD.",
-    "type": "saint",
-    "tags": [
-      "COE"
-    ]
-  },
-  {
     "id": "saint-pachomius-the-great",
     "day": "May 15",
     "name": "Saint Pachomius the Great",
@@ -706,16 +682,6 @@
     ]
   },
   {
-    "id": "saint-theodore-of-tabennisi",
-    "day": "May 16",
-    "name": "Saint Theodore of Tabennisi",
-    "description": "Monk and disciple in early monastic tradition, died 368 AD.",
-    "type": "saint",
-    "tags": [
-      "COE"
-    ]
-  },
-  {
     "id": "venerable-theodore-the-sanctified",
     "day": "May 16",
     "name": "Venerable Theodore the Sanctified",
@@ -735,16 +701,6 @@
     "tags": [
       "EOR",
       "OOR"
-    ]
-  },
-  {
-    "id": "martyrs-solochon-pamphamer-and-pamphalon",
-    "day": "May 17",
-    "name": "Martyrs Solochon, Pamphamer, and Pamphalon",
-    "description": "Soldiers martyred at Chalcedon around 298 AD.",
-    "type": "saint",
-    "tags": [
-      "COE"
     ]
   },
   {
@@ -776,16 +732,6 @@
     "tags": [
       "EOR",
       "OOR"
-    ]
-  },
-  {
-    "id": "martyrs-peter-andrew-paul-and-dionysia",
-    "day": "May 18",
-    "name": "Martyrs Peter, Andrew, Paul, and Dionysia",
-    "description": "Martyrs under Decius around 250 AD.",
-    "type": "saint",
-    "tags": [
-      "COE"
     ]
   },
   {
@@ -890,16 +836,6 @@
     ]
   },
   {
-    "id": "saint-thalassius",
-    "day": "May 20",
-    "name": "Saint Thalassius",
-    "description": "Hermit and healer.",
-    "type": "saint",
-    "tags": [
-      "COE"
-    ]
-  },
-  {
     "id": "saint-thalassius-the-myrrh-streamer",
     "day": "May 20",
     "name": "Saint Thalassius the Myrrh-Streamer",
@@ -916,7 +852,6 @@
     "description": "Martyrs from Caesarea in Cappadocia.",
     "type": "saint",
     "tags": [
-      "COE",
       "EOR",
       "OOR"
     ]
@@ -1094,16 +1029,6 @@
     ]
   },
   {
-    "id": "holy-myrrh-bearer-mary-wife-of-cleopas",
-    "day": "May 23",
-    "name": "Holy Myrrh-bearer Mary Wife of Cleopas",
-    "description": "One of the myrrh-bearing women at Christ's tomb, 1st century.",
-    "type": "saint",
-    "tags": [
-      "COE"
-    ]
-  },
-  {
     "id": "saint-giovanni-battista-rossi",
     "day": "May 23",
     "name": "Saint Giovanni Battista Rossi",
@@ -1123,16 +1048,6 @@
     "tags": [
       "EOR",
       "OOR"
-    ]
-  },
-  {
-    "id": "martyr-meletius",
-    "day": "May 24",
-    "name": "Martyr Meletius",
-    "description": "General and martyr with family.",
-    "type": "saint",
-    "tags": [
-      "COE"
     ]
   },
   {
@@ -1184,7 +1099,6 @@
     "description": "Scholar and historian.",
     "type": "saint",
     "tags": [
-      "COE",
       "OOR"
     ]
   },
@@ -1213,7 +1127,7 @@
     "day": "May 26",
     "name": "Apostle Carpus of the Seventy",
     "description": "Disciple of Saint Paul, 1st century.",
-    "type": "saint",
+    "type": "apostle",
     "tags": [
       "EOR"
     ]
@@ -1281,16 +1195,6 @@
     ]
   },
   {
-    "id": "saint-john-the-russian",
-    "day": "May 27",
-    "name": "Saint John the Russian",
-    "description": "Confessor and wonderworker captured by Turks, died 1730 AD.",
-    "type": "saint",
-    "tags": [
-      "COE"
-    ]
-  },
-  {
     "id": "blessed-lanfranc-of-canterbury",
     "day": "May 28",
     "name": "Blessed Lanfranc of Canterbury",
@@ -1302,16 +1206,6 @@
     ]
   },
   {
-    "id": "hieromartyr-eutychius-of-melitene",
-    "day": "May 28",
-    "name": "Hieromartyr Eutychius of Melitene",
-    "description": "Bishop martyred under Maximian, died 303 AD.",
-    "type": "saint",
-    "tags": [
-      "COE"
-    ]
-  },
-  {
     "id": "saint-ignatius-of-rostov",
     "day": "May 28",
     "name": "Saint Ignatius of Rostov",
@@ -1320,16 +1214,6 @@
     "tags": [
       "EOR",
       "OOR"
-    ]
-  },
-  {
-    "id": "hieromartyr-olbian-of-anaea",
-    "day": "May 29",
-    "name": "Hieromartyr Olbian of Anaea",
-    "description": "Bishop and martyr with disciples under Diocletian, died 303 AD.",
-    "type": "saint",
-    "tags": [
-      "COE"
     ]
   },
   {
@@ -1382,7 +1266,6 @@
     "type": "saint",
     "tags": [
       "ANG",
-      "COE",
       "LAT"
     ]
   },

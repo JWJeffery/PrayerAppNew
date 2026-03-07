@@ -1,68 +1,3 @@
-/**
- * ============================================================================
- * JIT MODULAR ARCHITECTURE — CORRECTED PATCH v2
- * Phase 9.1 — Tradition-Aware Ingestion
- *
- * WHAT WAS WRONG IN THE ARCHITECT'S REVIEW (AND WHAT WAS RIGHT)
- * ==============================================================
- *
- * POINT 1 — "Ethiopian path fetches coptic.json and ecumenical.json" — FALSE.
- *   The original patch's hydrateForEthiopianSaatat() fetches exactly two files:
- *   components/ethiopian.json and components/traditions/ethiopian/rubrics.json.
- *   Coptic and ecumenical shards appear only inside hydrateForDailyOffice().
- *   This point was a misreading of the patch. No correction was needed here,
- *   but the code below makes the isolation even more explicit for clarity.
- *
- * POINT 2 — "init() wrapper auto-triggers Anglican load" — PARTIALLY VALID.
- *   index.html does NOT call init() on page load (verified: no onload,
- *   DOMContentLoaded, or bare init() call exists in the HTML). The concern
- *   about auto-firing does not apply to this codebase. However, the architect
- *   is correct that a legacy init() wrapper that delegates to
- *   hydrateForDailyOffice() is semantically misleading and could cause
- *   confusion for future maintainers. The correction: init() now calls
- *   loadKernel() only and logs a deprecation notice, as the architect suggested.
- *   This is the one valid structural improvement in the review.
- *
- * POINT 3 — "Missing hydrateForBookOfNeeds() / prayers.json gate" — INCORRECT.
- *   prayers.js already implements a null-guarded lazy fetch of data/prayers.json
- *   inside showSinglePrayer(). It runs on the first prayer request and caches
- *   the result in the module-level `prayersData` variable. Adding a SECOND
- *   fetch in selectMode() would:
- *     a) Double-load prayers.json on first Book of Needs entry.
- *     b) Store the result in appData.prayers, which nothing in the codebase
- *        ever reads — it would be dead memory.
- *     c) Fail to prevent the prayers.js fetch anyway, since prayersData and
- *        appData.prayers are separate variables.
- *   The Book of Needs path in selectMode() is correctly data-free. No change.
- *
- * POINT 4 — "Promise.all is the right approach" — CORRECT AND ACCEPTED.
- *   This was already present in the original patch and is preserved here.
- *
- * FATAL FLAW IN THE ARCHITECT'S PROPOSED CODE (NOT APPLIED)
- * ----------------------------------------------------------
- * The architect's sample code initialises appData.components as a plain object:
- *   appData = { components: {}, rubrics: {} }
- * and merges shards with object spread:
- *   appData.components = { ...appData.components, ...ethShard }
- *
- * This would immediately crash the application. Every single component and
- * rubric lookup in renderOffice() uses Array methods:
- *   appData.components.find(...)
- *   appData.rubrics.find(...)
- *   appData.components.concat(...)
- * Plain JavaScript objects do not have .find() or .concat(). The first call
- * to renderOffice() after the architect's kernel loaded would throw:
- *   TypeError: appData.components.find is not a function
- *
- * Additionally, spreading an array with object spread ({...myArray}) produces
- * an index-keyed object ({0: item0, 1: item1, ...}), not a merged array, so
- * even if .find() were somehow available it would not traverse the items.
- *
- * appData.components and appData.rubrics must remain plain JavaScript Arrays.
- * ============================================================================
- */
-
-
 // ── State ─────────────────────────────────────────────────────────────────────
 let appData = null;
 let currentDate = new Date();
@@ -2141,11 +2076,11 @@ async function renderEastSyriac() {
         currentDate = window._esyTemporalOverride.date;
     }
 
-    // Use the East Syriac calendar module for season, cycle, and liturgical colour.
-    // This replaces the old ISO-week getWeekNumber() hack and the CalendarEngine
-    // call — the Church of the East operates on its own nine-season year, not
-    // the BCP calendar. Qdham/Wathar parity is now anchored to Subara Sunday.
-    const esyData    = EastSyriacCalendar.getSeason(currentDate);
+    // COE-IIA: Use getDayClass() which wraps getSeason() and adds Layer 2
+    // fixed-feast / corporate-commemoration data. All season engine fields
+    // (season, cycle, cycleLabel, fastCharacter, etc.) are passed through
+    // unchanged on esyData, so all downstream references are unaffected.
+    const esyData    = EastSyriacCalendar.getDayClass(currentDate);
     const season     = esyData.season;
     const cycle      = esyData.cycle;
     const cycleLabel = esyData.cycleLabel;
@@ -2233,6 +2168,32 @@ async function renderEastSyriac() {
 
     let officeHtml = `<div class="office-container"><h2>Church of the East</h2>`;
     officeHtml += `<p class="liturgical-title">${officeTitle}</p>`;
+
+    // ── COE-IIA: Commemoration area ──────────────────────────────────────────
+    // Render Layer 2 fixed / corporate commemorations before the prayer sequence.
+    // Framing is commemoration-first (not saint-first). If no commemoration
+    // applies, this section is absent. The saint-grid model is not used here.
+    const esyComms = esyData.commemorations || [];
+    if (esyComms.length > 0) {
+        const primaryComm = esyComms[0];
+
+        // Choose heading based on key/type rather than free text to keep framing stable
+        const headingMap = {
+            'COE_FRIDAY_MARTYRS_SAUMA':    'Friday Commemoration of the Martyrs',
+            'COE_COMMEMORATION_OF_DEAD':   'Seasonal Commemoration',
+        };
+        const sectionHeading = headingMap[primaryComm.key] || 'Seasonal Commemoration';
+
+        officeHtml += `<div class="coe-commemoration-section">`;
+        officeHtml += `<span class="rubric-text">${sectionHeading}</span>`;
+        officeHtml += `<p class="commemoration-label">${primaryComm.label}</p>`;
+
+        // Render any additional commemorations on this date
+        for (let i = 1; i < esyComms.length; i++) {
+            officeHtml += `<p class="commemoration-label commemoration-secondary">${esyComms[i].label}</p>`;
+        }
+        officeHtml += `</div>`;
+    }
 
     for (let item of sequence) {
         item = item.trim();
@@ -2406,18 +2367,14 @@ async function renderEastSyriac() {
         }
     }
 
-    // ── Saints preload ──
-    // COE saint display is silenced pending COE-II. Cache warmed for future use.
-    await resolveCommemorations(currentDate, 'COE');
-
     const esyTodayShort = currentDate.toLocaleDateString('en-US', { month: 'long', day: 'numeric' });
     document.getElementById('office-display').innerHTML = officeHtml + `</div>`;
 
-    // COE saint section silenced — v2.8.3
-    // The Church of the East operates on a salvation-historical seasonal calendar,
-    // not a date-to-saint grid. A three-layer model (season engine, fixed feasts,
-    // sparse individual saints) is required. See known_outstanding_issues.coe_calendar_model
-    // in structure.json. Silence is liturgically accurate for COE weekdays with no
+    // COE saint section remains silenced — COE-IIA adds Layer 2 fixed / corporate
+    // commemorations via getDayClass() and renders them in the office body above.
+    // Layer 3 individual saints require the COE-IIB saint-tag audit before they
+    // can be re-enabled. See known_outstanding_issues.coe_calendar_model in
+    // structure.json. Silence is liturgically accurate for COE weekdays with no
     // fixed individual saint.
     document.getElementById('saint-display').innerHTML = '';
     document.getElementById('date-header').style.display = 'none';

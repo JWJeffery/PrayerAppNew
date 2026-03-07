@@ -4,7 +4,7 @@
     "day": "July 1",
     "name": "Mar Mari the Apostle",
     "description": "Commemoration of the teacher of the East.",
-    "type": "saint",
+    "type": "apostle",
     "tags": [
       "COE"
     ]
@@ -114,7 +114,7 @@
     "day": "July 3",
     "name": "Saint Thomas the Apostle",
     "description": "Feast of the Apostle who confessed 'My Lord and my God'.",
-    "type": "saint",
+    "type": "apostle",
     "tags": [
       "COE",
       "LAT",
@@ -186,7 +186,7 @@
     "id": "saint-cyril-of-alexandria",
     "day": "July 5",
     "name": "Saint Cyril of Alexandria",
-    "description": "Bishop and Doctor of the Church, died 444.",
+    "description": "Archbishop of Alexandria, Doctor of the Church, died 444.",
     "type": "saint",
     "tags": [
       "ANG"
@@ -220,16 +220,6 @@
     "type": "saint",
     "tags": [
       "OOR"
-    ]
-  },
-  {
-    "id": "saint-isaiah-the-prophet",
-    "day": "July 6",
-    "name": "Saint Isaiah the Prophet",
-    "description": "Old Testament prophet (Eastern Syriac commemoration).",
-    "type": "saint",
-    "tags": [
-      "COE"
     ]
   },
   {
@@ -827,7 +817,7 @@
     "day": "July 20",
     "name": "Prophet Elias (Elijah)",
     "description": "Old Testament prophet taken up in the chariot.",
-    "type": "saint",
+    "type": "prophet",
     "tags": [
       "COE",
       "EOR",
@@ -839,7 +829,7 @@
     "day": "July 20",
     "name": "Prophet Elijah",
     "description": "Old Testament prophet.",
-    "type": "saint",
+    "type": "prophet",
     "tags": [
       "ANG"
     ]
@@ -869,7 +859,7 @@
     "day": "July 21",
     "name": "Prophet Ezekiel",
     "description": "The prophet who saw the valley of dry bones.",
-    "type": "saint",
+    "type": "prophet",
     "tags": [
       "EOR",
       "OOR"
@@ -1007,7 +997,7 @@
     "day": "July 25",
     "name": "Saint James the Apostle",
     "description": "The Son of Zebedee.",
-    "type": "saint",
+    "type": "apostle",
     "tags": [
       "ANG",
       "LAT",

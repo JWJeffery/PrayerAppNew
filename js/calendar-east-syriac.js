@@ -569,12 +569,179 @@ const EastSyriacCalendar = (() => {
         }
     })();
 
+    // ── COE-IIA: Fixed-feast / corporate-commemoration layer ─────────────────
+    //
+    // Scope: Layer 2 of the three-layer COE model (season engine / fixed feasts
+    // & corporate commemorations / individual saints). This layer is intentionally
+    // small and explicit. It derives observances deterministically from the
+    // existing season engine. No saint identities are involved here.
+    //
+    // Returned observance objects are typed as 'feast' or 'commemoration', never
+    // 'saint', to preserve the COE framing distinction.
+
+    /**
+     * Return any fixed or corporate commemorations applicable to the given date,
+     * derived from the season engine data already computed by getSeason().
+     *
+     * @param  {Date}   date        — the date to check (midnight-normalised is fine)
+     * @param  {object} seasonData  — result of getSeason(date)
+     * @return {Array<{
+     *   type:  'feast' | 'commemoration',
+     *   key:   string,
+     *   label: string,
+     *   note:  string,
+     * }>}
+     */
+    function getFixedCommemorationsForDate(date, seasonData) {
+        const d          = toMidnight(date);
+        const season     = seasonData.season;
+        const isFriday   = d.getDay() === 5;
+        const isLenten   = (season === 'sauma');
+        const results    = [];
+
+        // ── Friday Commemoration of the Martyrs (Sawma Rabba / Great Fast) ────
+        // During the Great Fast (Sauma), every Friday is a corporate
+        // commemoration of the Martyrs. This is a structural liturgical class,
+        // not a named-saint slot.
+        if (isFriday && isLenten) {
+            results.push({
+                type:  'commemoration',
+                key:   'COE_FRIDAY_MARTYRS_SAUMA',
+                label: 'Friday Commemoration of the Martyrs',
+                note:  'Corporate martyrial commemoration during Sawma Rabba. No individual saint assigned.',
+            });
+        }
+
+        // ── Commemoration of the Faithful Departed ────────────────────────────
+        // The Church of the East observes a Commemoration of All the Faithful
+        // Departed on the Friday immediately before Sauma begins (i.e. the Friday
+        // of the last full week of Denkha). Sauma always starts on a Sunday, so
+        // the Friday two days prior is saumaStart − 2.
+        // This is a fixed structural observance anchored to the season boundary;
+        // it takes priority over the generic Great Fast Friday label on that date.
+        const { saumaStart } = getLiturgicalYear(d);
+        const commemorationOfDead = addDays(saumaStart, -2);
+        if (d.getTime() === commemorationOfDead.getTime()) {
+            results.unshift({
+                type:  'commemoration',
+                key:   'COE_COMMEMORATION_OF_DEAD',
+                label: 'Commemoration of the Faithful Departed',
+                note:  'Friday before Sauma. General Commemoration of the Dead in the East Syriac tradition.',
+            });
+        }
+
+        return results;
+    }
+
+    // ── COE-IIA: getDayClass ──────────────────────────────────────────────────
+
+    /**
+     * Return a structured day-classification object for the given date, built
+     * on top of the existing season engine. This is the primary entry point for
+     * renderEastSyriac() to determine commemoration rendering before any Layer 3
+     * saint logic is consulted.
+     *
+     * All fields are present and non-null; boolean flags use false rather than
+     * undefined when not applicable. commemorations is always an array (may be
+     * empty).
+     *
+     * @param  {Date} gregorianDate
+     * @return {{
+     *   // ── Date character ─────────────────────────────────────────────────
+     *   isFriday:          boolean,
+     *   isSunday:          boolean,
+     *   isLenten:          boolean,   — true when season === 'sauma'
+     *   isNinevehFast:     boolean,
+     *   // ── Day class ──────────────────────────────────────────────────────
+     *   dayClass:          string,    — 'feast' | 'commemoration' | 'fast' | 'ordinary'
+     *   // ── Season passthrough (from getSeason) ────────────────────────────
+     *   season:            string,
+     *   seasonLabel:       string,
+     *   seasonColor:       string,
+     *   weekLabel:         string,
+     *   weekInSeason:      number,
+     *   cycle:             string,
+     *   cycleLabel:        string,
+     *   fastCharacter:     string,
+     *   fastLabel:         string,
+     *   anaphora:          string,
+     *   anaphoraLabel:     string,
+     *   easter:            Date,
+     *   subaraStart:       Date,
+     *   ninevehFast:       { start: Date, end: Date },
+     *   // ── Layer 2 commemorations ─────────────────────────────────────────
+     *   commemorations:    Array<{ type, key, label, note }>,
+     *   // ── Primary commemoration shorthand (first in array, or null) ──────
+     *   commemorationType: string | null,
+     *   commemorationName: string | null,
+     * }}
+     */
+    function getDayClass(gregorianDate) {
+        const d          = toMidnight(gregorianDate);
+        const seasonData = getSeason(d);
+        const isFriday   = d.getDay() === 5;
+        const isSunday   = d.getDay() === 0;
+        const isLenten   = seasonData.season === 'sauma';
+        const isNineveh  = seasonData.fastCharacter === 'nineveh-fast';
+
+        const commemorations = getFixedCommemorationsForDate(d, seasonData);
+
+        // dayClass: if any feast-typed commemoration exists, elevate to 'feast';
+        // if any commemoration-typed exists, 'commemoration'; otherwise fall back
+        // to the fast character.
+        let dayClass;
+        if (commemorations.some(c => c.type === 'feast')) {
+            dayClass = 'feast';
+        } else if (commemorations.length > 0) {
+            dayClass = 'commemoration';
+        } else if (seasonData.fastCharacter === 'great-fast' || seasonData.fastCharacter === 'nineveh-fast' || seasonData.fastCharacter === 'fast') {
+            dayClass = 'fast';
+        } else if (seasonData.fastCharacter === 'feast') {
+            dayClass = 'feast';
+        } else {
+            dayClass = 'ordinary';
+        }
+
+        const primary = commemorations[0] || null;
+
+        return {
+            isFriday,
+            isSunday,
+            isLenten,
+            isNinevehFast:     isNineveh,
+            dayClass,
+
+            // Season passthrough
+            season:            seasonData.season,
+            seasonLabel:       seasonData.seasonLabel,
+            seasonColor:       seasonData.seasonColor,
+            weekLabel:         seasonData.weekLabel,
+            weekInSeason:      seasonData.weekInSeason,
+            cycle:             seasonData.cycle,
+            cycleLabel:        seasonData.cycleLabel,
+            fastCharacter:     seasonData.fastCharacter,
+            fastLabel:         seasonData.fastLabel,
+            anaphora:          seasonData.anaphora,
+            anaphoraLabel:     seasonData.anaphoraLabel,
+            easter:            seasonData.easter,
+            subaraStart:       seasonData.subaraStart,
+            ninevehFast:       seasonData.ninevehFast,
+
+            // Layer 2
+            commemorations,
+            commemorationType: primary ? primary.type  : null,
+            commemorationName: primary ? primary.label : null,
+        };
+    }
+
     // ── Public API ────────────────────────────────────────────────────────────
 
     return {
         getSeason,
         getEaster,
         getLiturgicalYear,
+        getDayClass,
+        getFixedCommemorationsForDate,
         SEASON_META,
     };
 

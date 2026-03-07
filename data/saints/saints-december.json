@@ -24,7 +24,7 @@
     "day": "December 1",
     "name": "Prophet Nahum",
     "description": "One of the twelve Minor Prophets.",
-    "type": "saint",
+    "type": "prophet",
     "tags": [
       "EOR"
     ]
@@ -74,7 +74,7 @@
     "day": "December 2",
     "name": "Prophet Habakkuk",
     "description": "Old Testament prophet.",
-    "type": "saint",
+    "type": "prophet",
     "tags": [
       "EOR"
     ]
@@ -114,7 +114,7 @@
     "day": "December 3",
     "name": "Prophet Zephaniah",
     "description": "Old Testament prophet.",
-    "type": "saint",
+    "type": "prophet",
     "tags": [
       "EOR"
     ]
@@ -238,10 +238,9 @@
     "type": "saint",
     "tags": [
       "ANG",
-      "LAT",
       "EOR",
-      "OOR",
-      "COE"
+      "LAT",
+      "OOR"
     ]
   },
   {
@@ -625,7 +624,7 @@
     "day": "December 16",
     "name": "Prophet Haggai",
     "description": "Minor Prophet.",
-    "type": "saint",
+    "type": "prophet",
     "tags": [
       "EOR"
     ]
@@ -685,7 +684,7 @@
     "day": "December 17",
     "name": "Prophet Daniel",
     "description": "Prophet.",
-    "type": "saint",
+    "type": "prophet",
     "tags": [
       "OOR"
     ]
@@ -838,7 +837,7 @@
     "id": "saint-ignatius-of-antioch",
     "day": "December 20",
     "name": "Saint Ignatius of Antioch",
-    "description": "Hieromartyr and Apostolic Father (Eastern primary date).",
+    "description": "Bishop of Antioch and Apostolic Father, martyred at Rome c. 107.",
     "type": "saint",
     "tags": [
       "ANG",
@@ -939,7 +938,7 @@
     "day": "December 23",
     "name": "Saint Barnabas",
     "description": "Apostle.",
-    "type": "saint",
+    "type": "apostle",
     "tags": [
       "OOR"
     ]
@@ -1114,7 +1113,7 @@
     "day": "December 29",
     "name": "Saint Barnabas (Syriac)",
     "description": "Apostle.",
-    "type": "saint",
+    "type": "apostle",
     "tags": [
       "OOR"
     ]
@@ -1127,7 +1126,6 @@
     "type": "saint",
     "tags": [
       "ANG",
-      "COE",
       "LAT"
     ]
   },
@@ -1195,7 +1193,7 @@
     "id": "saint-ephrem-the-syrian",
     "day": "December 31",
     "name": "Saint Ephrem the Syrian",
-    "description": "Commemoration.",
+    "description": "Deacon, hymnographer, and Doctor of the Church, died 373.",
     "type": "saint",
     "tags": [
       "COE"

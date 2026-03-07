@@ -31,7 +31,6 @@
     "description": "Unmercenary healers.",
     "type": "saint",
     "tags": [
-      "COE",
       "EOR",
       "OOR"
     ]
@@ -228,10 +227,9 @@
     "type": "saint",
     "tags": [
       "ANG",
-      "LAT",
       "EOR",
-      "OOR",
-      "COE"
+      "LAT",
+      "OOR"
     ]
   },
   {
@@ -242,16 +240,6 @@
     "type": "saint",
     "tags": [
       "OOR"
-    ]
-  },
-  {
-    "id": "saint-jonah-of-novgorod",
-    "day": "November 5",
-    "name": "Saint Jonah of Novgorod",
-    "description": "Bishop.",
-    "type": "saint",
-    "tags": [
-      "COE"
     ]
   },
   {
@@ -489,10 +477,9 @@
     "type": "saint",
     "tags": [
       "ANG",
-      "LAT",
       "EOR",
-      "OOR",
-      "COE"
+      "LAT",
+      "OOR"
     ]
   },
   {
@@ -509,14 +496,13 @@
     "id": "saint-john-chrysostom",
     "day": "November 13",
     "name": "Saint John Chrysostom",
-    "description": "Honored for eloquence.",
+    "description": "Archbishop of Constantinople and Doctor of the Church, died 407.",
     "type": "saint",
     "tags": [
       "ANG",
-      "LAT",
       "EOR",
-      "OOR",
-      "COE"
+      "LAT",
+      "OOR"
     ]
   },
   {
@@ -638,7 +624,7 @@
     "id": "saint-matthew-the-apostle",
     "day": "November 16",
     "name": "Saint Matthew the Apostle",
-    "description": "Apostle and Evangelist.",
+    "description": "Apostle, tax collector, and author of the first Gospel.",
     "type": "apostle",
     "tags": [
       "ANG",
@@ -892,10 +878,9 @@
     "type": "saint",
     "tags": [
       "ANG",
-      "LAT",
       "EOR",
-      "OOR",
-      "COE"
+      "LAT",
+      "OOR"
     ]
   },
   {
@@ -926,10 +911,9 @@
     "type": "saint",
     "tags": [
       "ANG",
-      "LAT",
       "EOR",
-      "OOR",
-      "COE"
+      "LAT",
+      "OOR"
     ]
   },
   {

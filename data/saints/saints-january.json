@@ -27,14 +27,13 @@
     "id": "saint-basil-the-great",
     "day": "January 1",
     "name": "Saint Basil the Great",
-    "description": "Bishop of Caesarea, Doctor of the Church, venerated in Catholic, Eastern Orthodox, Oriental Orthodox, and Church of the East traditions.",
+    "description": "Bishop of Caesarea, Doctor of the Church, died 379.",
     "type": "saint",
     "tags": [
       "ANG",
-      "LAT",
       "EOR",
-      "OOR",
-      "COE"
+      "LAT",
+      "OOR"
     ]
   },
   {
@@ -45,16 +44,6 @@
     "type": "saint",
     "tags": [
       "OOR"
-    ]
-  },
-  {
-    "id": "saint-cosmas-of-constantinople",
-    "day": "January 2",
-    "name": "Saint Cosmas of Constantinople",
-    "description": "Archbishop and hymnographer.",
-    "type": "saint",
-    "tags": [
-      "COE"
     ]
   },
   {
@@ -123,7 +112,7 @@
     "day": "January 3",
     "name": "Prophet Malachias",
     "description": "Old Testament prophet.",
-    "type": "saint",
+    "type": "prophet",
     "tags": [
       "EOR"
     ]
@@ -136,16 +125,6 @@
     "type": "saint",
     "tags": [
       "EOR"
-    ]
-  },
-  {
-    "id": "saint-malachi",
-    "day": "January 3",
-    "name": "Saint Malachi",
-    "description": "Old Testament prophet (shared commemoration).",
-    "type": "saint",
-    "tags": [
-      "COE"
     ]
   },
   {
@@ -165,7 +144,6 @@
     "description": "Abbot at Cucomo in Sicily.",
     "type": "saint",
     "tags": [
-      "COE",
       "EOR"
     ]
   },
@@ -220,16 +198,6 @@
     ]
   },
   {
-    "id": "saint-syncletica",
-    "day": "January 5",
-    "name": "Saint Syncletica",
-    "description": "Ascetic (shared commemoration).",
-    "type": "saint",
-    "tags": [
-      "COE"
-    ]
-  },
-  {
     "id": "saint-syncletica-of-alexandria",
     "day": "January 5",
     "name": "Saint Syncletica of Alexandria",
@@ -271,16 +239,6 @@
     "type": "saint",
     "tags": [
       "ANG"
-    ]
-  },
-  {
-    "id": "saint-john-the-baptist",
-    "day": "January 7",
-    "name": "Saint John the Baptist",
-    "description": "The martyrdom of the Forerunner.",
-    "type": "saint",
-    "tags": [
-      "COE"
     ]
   },
   {
@@ -330,7 +288,6 @@
     "description": "Abbot.",
     "type": "saint",
     "tags": [
-      "COE",
       "EOR"
     ]
   },
@@ -395,16 +352,6 @@
     ]
   },
   {
-    "id": "saint-polyeuctus",
-    "day": "January 9",
-    "name": "Saint Polyeuctus",
-    "description": "Martyr (shared commemoration).",
-    "type": "saint",
-    "tags": [
-      "COE"
-    ]
-  },
-  {
     "id": "fifth-day-of-the-nativity",
     "day": "January 10",
     "name": "Fifth Day of the Nativity",
@@ -431,7 +378,6 @@
     "description": "Father of the Church.",
     "type": "saint",
     "tags": [
-      "COE",
       "EOR",
       "LAT"
     ]
@@ -453,7 +399,6 @@
     "description": "Abbot.",
     "type": "saint",
     "tags": [
-      "COE",
       "LAT"
     ]
   },
@@ -515,16 +460,6 @@
     "type": "saint",
     "tags": [
       "LAT"
-    ]
-  },
-  {
-    "id": "saint-tatiana",
-    "day": "January 12",
-    "name": "Saint Tatiana",
-    "description": "Martyr (shared commemoration).",
-    "type": "saint",
-    "tags": [
-      "COE"
     ]
   },
   {
@@ -594,7 +529,6 @@
     "description": "Bishop and Doctor of the Church.",
     "type": "saint",
     "tags": [
-      "COE",
       "LAT"
     ]
   },
@@ -626,16 +560,6 @@
     "type": "saint",
     "tags": [
       "LAT"
-    ]
-  },
-  {
-    "id": "the-holy-fathers-slain-at-sinai",
-    "day": "January 14",
-    "name": "The Holy Fathers slain at Sinai",
-    "description": "Martyred monks (shared commemoration).",
-    "type": "saint",
-    "tags": [
-      "COE"
     ]
   },
   {
@@ -726,16 +650,6 @@
     "type": "saint",
     "tags": [
       "LAT"
-    ]
-  },
-  {
-    "id": "saint-peter-the-apostle",
-    "day": "January 16",
-    "name": "Saint Peter the Apostle",
-    "description": "Veneration of relics (shared commemoration).",
-    "type": "saint",
-    "tags": [
-      "COE"
     ]
   },
   {
@@ -920,16 +834,6 @@
     ]
   },
   {
-    "id": "saint-euthymius",
-    "day": "January 20",
-    "name": "Saint Euthymius",
-    "description": "Hermit (shared commemoration).",
-    "type": "saint",
-    "tags": [
-      "COE"
-    ]
-  },
-  {
     "id": "saint-euthymius-the-great",
     "day": "January 20",
     "name": "Saint Euthymius the Great",
@@ -998,7 +902,6 @@
     "description": "Theologian and defender of Christ's two wills.",
     "type": "saint",
     "tags": [
-      "COE",
       "EOR"
     ]
   },
@@ -1007,7 +910,7 @@
     "day": "January 22",
     "name": "Apostle Timothy",
     "description": "Apostle of the Seventy.",
-    "type": "saint",
+    "type": "apostle",
     "tags": [
       "EOR"
     ]
@@ -1241,10 +1144,9 @@
     "id": "saint-john-chrysostom",
     "day": "January 27",
     "name": "Saint John Chrysostom",
-    "description": "Honored for eloquence.",
+    "description": "Archbishop of Constantinople and Doctor of the Church, died 407.",
     "type": "saint",
     "tags": [
-      "COE",
       "OOR"
     ]
   },

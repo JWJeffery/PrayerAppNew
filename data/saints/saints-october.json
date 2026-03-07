@@ -20,16 +20,6 @@
     ]
   },
   {
-    "id": "saint-romanos-the-melodist",
-    "day": "October 1",
-    "name": "Saint Romanos the Melodist",
-    "description": "Deacon and hymnographer, died 556.",
-    "type": "saint",
-    "tags": [
-      "COE"
-    ]
-  },
-  {
     "id": "saint-th-r-se-of-lisieux",
     "day": "October 1",
     "name": "Saint Thérèse of Lisieux",
@@ -57,16 +47,6 @@
     "type": "saint",
     "tags": [
       "ANG"
-    ]
-  },
-  {
-    "id": "saint-cyprian",
-    "day": "October 2",
-    "name": "Saint Cyprian",
-    "description": "Martyr and confessor.",
-    "type": "saint",
-    "tags": [
-      "COE"
     ]
   },
   {
@@ -110,16 +90,6 @@
     ]
   },
   {
-    "id": "saint-dionysius",
-    "day": "October 3",
-    "name": "Saint Dionysius",
-    "description": "Bishop and martyr.",
-    "type": "saint",
-    "tags": [
-      "COE"
-    ]
-  },
-  {
     "id": "saint-dionysius-the-areopagite",
     "day": "October 3",
     "name": "Saint Dionysius the Areopagite",
@@ -147,7 +117,6 @@
     "description": "Friar and founder.",
     "type": "saint",
     "tags": [
-      "COE",
       "LAT"
     ]
   },
@@ -198,7 +167,6 @@
     "description": "Virgin martyr.",
     "type": "saint",
     "tags": [
-      "COE",
       "OOR"
     ]
   },
@@ -217,7 +185,7 @@
     "day": "October 6",
     "name": "Holy Apostle Thomas",
     "description": "Apostle and martyr.",
-    "type": "saint",
+    "type": "apostle",
     "tags": [
       "EOR"
     ]
@@ -237,7 +205,7 @@
     "day": "October 6",
     "name": "Saint Thomas the Apostle",
     "description": "Feast of the Apostle who confessed 'My Lord and my God'.",
-    "type": "saint",
+    "type": "apostle",
     "tags": [
       "COE",
       "OOR"
@@ -320,7 +288,6 @@
     "description": "Virgin martyr.",
     "type": "saint",
     "tags": [
-      "COE",
       "OOR"
     ]
   },
@@ -359,7 +326,7 @@
     "day": "October 9",
     "name": "Holy Apostle James, son of Alphaeus",
     "description": "Apostle and martyr.",
-    "type": "saint",
+    "type": "apostle",
     "tags": [
       "EOR"
     ]
@@ -369,7 +336,7 @@
     "day": "October 9",
     "name": "Saint James son of Alphaeus",
     "description": "Apostle.",
-    "type": "saint",
+    "type": "apostle",
     "tags": [
       "COE",
       "OOR"
@@ -392,7 +359,6 @@
     "description": "Brother and sister martyrs.",
     "type": "saint",
     "tags": [
-      "COE",
       "EOR"
     ]
   },
@@ -431,7 +397,7 @@
     "day": "October 11",
     "name": "Holy Apostle Philip",
     "description": "One of the Seven Deacons.",
-    "type": "saint",
+    "type": "apostle",
     "tags": [
       "EOR"
     ]
@@ -494,7 +460,6 @@
     "description": "Hymnographer.",
     "type": "saint",
     "tags": [
-      "COE",
       "OOR"
     ]
   },
@@ -535,7 +500,6 @@
     "description": "Bishop and martyr.",
     "type": "saint",
     "tags": [
-      "COE",
       "OOR"
     ]
   },
@@ -547,16 +511,6 @@
     "type": "saint",
     "tags": [
       "LAT"
-    ]
-  },
-  {
-    "id": "martyrs-nazarius-and-companions",
-    "day": "October 14",
-    "name": "Martyrs Nazarius and Companions",
-    "description": "Martyrs.",
-    "type": "saint",
-    "tags": [
-      "COE"
     ]
   },
   {
@@ -607,16 +561,6 @@
     "type": "saint",
     "tags": [
       "OOR"
-    ]
-  },
-  {
-    "id": "saint-teresa-of-avila",
-    "day": "October 15",
-    "name": "Saint Teresa of Avila",
-    "description": "Mystic and doctor.",
-    "type": "saint",
-    "tags": [
-      "COE"
     ]
   },
   {
@@ -686,7 +630,6 @@
     "description": "Centurion martyr.",
     "type": "saint",
     "tags": [
-      "COE",
       "OOR"
     ]
   },
@@ -705,7 +648,7 @@
     "day": "October 17",
     "name": "Prophet Hosea",
     "description": "Old Testament prophet.",
-    "type": "saint",
+    "type": "prophet",
     "tags": [
       "EOR"
     ]
@@ -724,21 +667,11 @@
     "id": "saint-ignatius-of-antioch",
     "day": "October 17",
     "name": "Saint Ignatius of Antioch",
-    "description": "Hieromartyr and Apostolic Father (Eastern primary date).",
+    "description": "Bishop of Antioch and Apostolic Father, martyred at Rome c. 107.",
     "type": "saint",
     "tags": [
       "COE",
       "LAT"
-    ]
-  },
-  {
-    "id": "saint-julian-the-hermit",
-    "day": "October 18",
-    "name": "Saint Julian the Hermit",
-    "description": "Ascetic.",
-    "type": "saint",
-    "tags": [
-      "COE"
     ]
   },
   {
@@ -780,7 +713,7 @@
     "day": "October 19",
     "name": "Prophet Joel",
     "description": "Old Testament prophet.",
-    "type": "saint",
+    "type": "prophet",
     "tags": [
       "COE",
       "EOR"
@@ -833,7 +766,6 @@
     "description": "Martyr.",
     "type": "saint",
     "tags": [
-      "COE",
       "OOR"
     ]
   },
@@ -854,7 +786,6 @@
     "description": "Hermit.",
     "type": "saint",
     "tags": [
-      "COE",
       "LAT",
       "OOR"
     ]
@@ -921,16 +852,6 @@
     ]
   },
   {
-    "id": "saint-boethius",
-    "day": "October 23",
-    "name": "Saint Boethius",
-    "description": "Philosopher and martyr.",
-    "type": "saint",
-    "tags": [
-      "COE"
-    ]
-  },
-  {
     "id": "saint-ignatius-of-constantinople",
     "day": "October 23",
     "name": "Saint Ignatius of Constantinople",
@@ -944,7 +865,7 @@
     "id": "saint-james-the-brother-of-the-lord",
     "day": "October 23",
     "name": "Saint James the Brother of the Lord",
-    "description": "Bishop of Jerusalem (shared commemoration).",
+    "description": "First Bishop of Jerusalem and author of the Epistle of James, martyred c. 62.",
     "type": "saint",
     "tags": [
       "ANG",
@@ -1022,7 +943,6 @@
     "description": "Martyr.",
     "type": "saint",
     "tags": [
-      "COE",
       "OOR"
     ]
   },
@@ -1073,7 +993,6 @@
     "description": "Martyr.",
     "type": "saint",
     "tags": [
-      "COE",
       "OOR"
     ]
   },
@@ -1105,7 +1024,6 @@
     "description": "Martyr.",
     "type": "saint",
     "tags": [
-      "COE",
       "OOR"
     ]
   },
@@ -1124,7 +1042,7 @@
     "day": "October 28",
     "name": "Saint Simon the Apostle",
     "description": "Apostle and martyr.",
-    "type": "saint",
+    "type": "apostle",
     "tags": [
       "OOR"
     ]
@@ -1170,7 +1088,6 @@
     "description": "Recluse.",
     "type": "saint",
     "tags": [
-      "COE",
       "OOR"
     ]
   },
@@ -1231,7 +1148,6 @@
     "description": "Martyr.",
     "type": "saint",
     "tags": [
-      "COE",
       "OOR"
     ]
   },
@@ -1252,7 +1168,6 @@
     "description": "Apostle.",
     "type": "saint",
     "tags": [
-      "COE",
       "OOR"
     ]
   },

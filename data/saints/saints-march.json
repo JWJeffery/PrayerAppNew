@@ -90,16 +90,6 @@
     ]
   },
   {
-    "id": "saint-eutropius",
-    "day": "March 3",
-    "name": "Saint Eutropius",
-    "description": "Martyr (shared commemoration).",
-    "type": "saint",
-    "tags": [
-      "COE"
-    ]
-  },
-  {
     "id": "saint-katharine-drexel",
     "day": "March 3",
     "name": "Saint Katharine Drexel",
@@ -127,16 +117,6 @@
     "type": "saint",
     "tags": [
       "LAT"
-    ]
-  },
-  {
-    "id": "saint-gerasimus",
-    "day": "March 4",
-    "name": "Saint Gerasimus",
-    "description": "Monk (shared commemoration).",
-    "type": "saint",
-    "tags": [
-      "COE"
     ]
   },
   {
@@ -170,16 +150,6 @@
     ]
   },
   {
-    "id": "saint-conon",
-    "day": "March 5",
-    "name": "Saint Conon",
-    "description": "Martyr (shared commemoration).",
-    "type": "saint",
-    "tags": [
-      "COE"
-    ]
-  },
-  {
     "id": "saint-john-joseph-of-the-cross",
     "day": "March 5",
     "name": "Saint John Joseph of the Cross",
@@ -206,7 +176,6 @@
     "description": "Martyrs captured during the sack of Amorium.",
     "type": "saint",
     "tags": [
-      "COE",
       "EOR"
     ]
   },
@@ -312,7 +281,6 @@
     "description": "Monk and confessor.",
     "type": "saint",
     "tags": [
-      "COE",
       "EOR",
       "OOR"
     ]
@@ -348,16 +316,6 @@
     ]
   },
   {
-    "id": "saint-quadratus",
-    "day": "March 10",
-    "name": "Saint Quadratus",
-    "description": "Martyr (shared commemoration).",
-    "type": "saint",
-    "tags": [
-      "COE"
-    ]
-  },
-  {
     "id": "oakerhater-making-medicine",
     "day": "March 11",
     "name": "Oakerhater (Making Medicine)",
@@ -365,16 +323,6 @@
     "type": "saint",
     "tags": [
       "ANG"
-    ]
-  },
-  {
-    "id": "saint-sophronius",
-    "day": "March 11",
-    "name": "Saint Sophronius",
-    "description": "Theologian (shared commemoration).",
-    "type": "saint",
-    "tags": [
-      "COE"
     ]
   },
   {
@@ -416,20 +364,9 @@
     "type": "saint",
     "tags": [
       "ANG",
-      "LAT",
       "EOR",
-      "OOR",
-      "COE"
-    ]
-  },
-  {
-    "id": "saint-gregory-the-dialogist",
-    "day": "March 12",
-    "name": "Saint Gregory the Dialogist",
-    "description": "Pope and Doctor of the Church (shared commemoration).",
-    "type": "saint",
-    "tags": [
-      "COE"
+      "LAT",
+      "OOR"
     ]
   },
   {
@@ -450,16 +387,6 @@
     "type": "saint",
     "tags": [
       "ANG"
-    ]
-  },
-  {
-    "id": "saint-nicephorus",
-    "day": "March 13",
-    "name": "Saint Nicephorus",
-    "description": "Patriarch and confessor (shared commemoration).",
-    "type": "saint",
-    "tags": [
-      "COE"
     ]
   },
   {
@@ -504,16 +431,6 @@
       "EOR",
       "LAT",
       "OOR"
-    ]
-  },
-  {
-    "id": "martyr-agapius",
-    "day": "March 15",
-    "name": "Martyr Agapius",
-    "description": "Martyr (shared commemoration).",
-    "type": "saint",
-    "tags": [
-      "COE"
     ]
   },
   {
@@ -579,16 +496,6 @@
     ]
   },
   {
-    "id": "saint-sabinus",
-    "day": "March 16",
-    "name": "Saint Sabinus",
-    "description": "Martyr (shared commemoration).",
-    "type": "saint",
-    "tags": [
-      "COE"
-    ]
-  },
-  {
     "id": "saint-alexius-the-man-of-god",
     "day": "March 17",
     "name": "Saint Alexius the Man of God",
@@ -623,14 +530,13 @@
     "id": "saint-cyril-of-jerusalem",
     "day": "March 18",
     "name": "Saint Cyril of Jerusalem",
-    "description": "Bishop and Doctor of the Church, venerated in Catholic, Eastern Orthodox, Oriental Orthodox, and Anglican Communion traditions.",
+    "description": "Bishop of Jerusalem and Doctor of the Church, died 386.",
     "type": "saint",
     "tags": [
       "ANG",
-      "LAT",
       "EOR",
-      "OOR",
-      "COE"
+      "LAT",
+      "OOR"
     ]
   },
   {
@@ -705,7 +611,6 @@
     "description": "Confessor.",
     "type": "saint",
     "tags": [
-      "COE",
       "EOR",
       "OOR"
     ]
@@ -728,16 +633,6 @@
     "type": "saint",
     "tags": [
       "EOR"
-    ]
-  },
-  {
-    "id": "saint-basilides",
-    "day": "March 22",
-    "name": "Saint Basilides",
-    "description": "Martyr (shared commemoration).",
-    "type": "saint",
-    "tags": [
-      "COE"
     ]
   },
   {
@@ -772,16 +667,6 @@
     ]
   },
   {
-    "id": "saint-nicon",
-    "day": "March 23",
-    "name": "Saint Nicon",
-    "description": "Monk and preacher (shared commemoration).",
-    "type": "saint",
-    "tags": [
-      "COE"
-    ]
-  },
-  {
     "id": "saint-turibius-of-mogrovejo",
     "day": "March 23",
     "name": "Saint Turibius of Mogrovejo",
@@ -809,7 +694,6 @@
     "description": "Preparation for the Annunciation.",
     "type": "saint",
     "tags": [
-      "COE",
       "EOR"
     ]
   },
@@ -852,7 +736,7 @@
     "id": "saint-dismas",
     "day": "March 25",
     "name": "Saint Dismas",
-    "description": "The Repentant Thief on the cross, venerated in Catholic and Oriental Orthodox traditions.",
+    "description": "The Penitent Thief crucified alongside Christ (Luke 23:39–43).",
     "type": "saint",
     "tags": [
       "ANG",
@@ -921,7 +805,6 @@
     "description": "Bishop and missionary.",
     "type": "saint",
     "tags": [
-      "COE",
       "EOR",
       "LAT",
       "OOR"
@@ -986,7 +869,6 @@
     "description": "Desert father and ascetic.",
     "type": "saint",
     "tags": [
-      "COE",
       "EOR",
       "OOR"
     ]
@@ -1008,7 +890,6 @@
     "description": "Abbot and author of 'The Ladder of Divine Ascent', venerated in Catholic, Eastern Orthodox, and Oriental Orthodox traditions.",
     "type": "saint",
     "tags": [
-      "COE",
       "EOR",
       "LAT",
       "OOR"

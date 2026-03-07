@@ -58,7 +58,6 @@
     "description": "Hermit and founder of the Minim Friars, venerated in Catholic and Oriental Orthodox traditions.",
     "type": "saint",
     "tags": [
-      "COE",
       "LAT"
     ]
   },
@@ -84,16 +83,6 @@
     ]
   },
   {
-    "id": "saint-nicetas",
-    "day": "April 3",
-    "name": "Saint Nicetas",
-    "description": "Confessor (shared commemoration).",
-    "type": "saint",
-    "tags": [
-      "COE"
-    ]
-  },
-  {
     "id": "saint-nicetas-the-confessor",
     "day": "April 3",
     "name": "Saint Nicetas the Confessor",
@@ -111,7 +100,6 @@
     "type": "saint",
     "tags": [
       "ANG",
-      "COE",
       "EOR",
       "LAT"
     ]
@@ -133,7 +121,6 @@
     "description": "Dominican priest and missionary preacher, venerated in Catholic and Oriental Orthodox traditions.",
     "type": "saint",
     "tags": [
-      "COE",
       "LAT"
     ]
   },
@@ -195,7 +182,6 @@
     "description": "Founder of the Christian Brothers and patron of educators, venerated in Catholic and Oriental Orthodox traditions.",
     "type": "saint",
     "tags": [
-      "COE",
       "EOR",
       "LAT"
     ]
@@ -250,7 +236,6 @@
     "description": "Abbess.",
     "type": "saint",
     "tags": [
-      "COE",
       "EOR",
       "LAT",
       "OOR"
@@ -307,7 +292,6 @@
     "description": "Bishop of Kraków and martyr.",
     "type": "saint",
     "tags": [
-      "COE",
       "LAT"
     ]
   },
@@ -339,7 +323,7 @@
     "id": "martin-i",
     "day": "April 13",
     "name": "Martin I",
-    "description": "Pope and martyr (shared commemoration).",
+    "description": "Pope and martyr, defender of Chalcedonian orthodoxy, died 655.",
     "type": "saint",
     "tags": [
       "ANG",
@@ -353,7 +337,6 @@
     "description": "Pope and martyr, venerated in Catholic and Oriental Orthodox traditions.",
     "type": "saint",
     "tags": [
-      "COE",
       "EOR",
       "LAT"
     ]
@@ -375,7 +358,6 @@
     "description": "Martyr (shared commemoration).",
     "type": "saint",
     "tags": [
-      "COE",
       "EOR"
     ]
   },
@@ -406,7 +388,6 @@
     "description": "Missionary to lepers.",
     "type": "saint",
     "tags": [
-      "COE",
       "EOR",
       "LAT",
       "OOR"
@@ -429,7 +410,6 @@
     "description": "Visionary of the Grotto of Lourdes.",
     "type": "saint",
     "tags": [
-      "COE",
       "EOR",
       "LAT",
       "OOR"
@@ -439,7 +419,7 @@
     "id": "kateri-tekakwitha",
     "day": "April 17",
     "name": "Kateri Tekakwitha",
-    "description": "Native American saint (shared commemoration).",
+    "description": "Mohawk laywoman, canonized 2012; first Native American saint.",
     "type": "saint",
     "tags": [
       "ANG"
@@ -452,7 +432,6 @@
     "description": "The 'Lily of the Mohawks,' first Native American saint.",
     "type": "saint",
     "tags": [
-      "COE",
       "EOR",
       "LAT",
       "OOR"
@@ -466,7 +445,6 @@
     "type": "saint",
     "tags": [
       "ANG",
-      "COE",
       "OOR"
     ]
   },
@@ -478,7 +456,6 @@
     "type": "saint",
     "tags": [
       "ANG",
-      "COE",
       "LAT",
       "OOR"
     ]
@@ -490,7 +467,6 @@
     "description": "Bishop and wonderworker, venerated in Eastern Orthodox and Oriental Orthodox traditions.",
     "type": "saint",
     "tags": [
-      "COE",
       "EOR",
       "LAT",
       "OOR"
@@ -510,14 +486,13 @@
     "id": "saint-george",
     "day": "April 23",
     "name": "Saint George",
-    "description": "Great-martyr and patron saint of many nations, venerated across all traditions.",
+    "description": "Martyr, died c. 303.",
     "type": "saint",
     "tags": [
       "ANG",
-      "LAT",
       "EOR",
-      "OOR",
-      "COE"
+      "LAT",
+      "OOR"
     ]
   },
   {
@@ -537,7 +512,6 @@
     "description": "Capuchin priest and martyr, venerated in Catholic and Oriental Orthodox traditions.",
     "type": "saint",
     "tags": [
-      "COE",
       "EOR",
       "LAT"
     ]
@@ -546,7 +520,7 @@
     "id": "saint-mark-the-evangelist",
     "day": "April 25",
     "name": "Saint Mark the Evangelist",
-    "description": "Apostle, Gospel author, and founder of the Church in Alexandria, venerated across all traditions.",
+    "description": "Evangelist, author of the second Gospel, and first Bishop of Alexandria.",
     "type": "apostle",
     "tags": [
       "ANG",
@@ -564,7 +538,6 @@
     "type": "saint",
     "tags": [
       "ANG",
-      "COE",
       "LAT"
     ]
   },
@@ -597,7 +570,6 @@
     "description": "Priest and first martyr of Oceania (Futuna), venerated in Catholic and Oriental Orthodox traditions.",
     "type": "saint",
     "tags": [
-      "COE",
       "EOR",
       "LAT"
     ]
@@ -610,17 +582,16 @@
     "type": "saint",
     "tags": [
       "ANG",
-      "LAT",
       "EOR",
-      "OOR",
-      "COE"
+      "LAT",
+      "OOR"
     ]
   },
   {
     "id": "saint-james-the-brother-of-the-lord",
     "day": "April 30",
     "name": "Saint James the Brother of the Lord",
-    "description": "Bishop of Jerusalem (shared commemoration).",
+    "description": "First Bishop of Jerusalem and author of the Epistle of James, martyred c. 62.",
     "type": "saint",
     "tags": [
       "ANG",
