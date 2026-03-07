@@ -1,6 +1,6 @@
 {
   "_comment": [
-    "data/horologion/octoechos-vespers.json — Horologion v1.3",
+    "data/horologion/octoechos-vespers.json — Horologion v1.4",
     "",
     "SCOPE: Baseline ordinary-day Octoechos data for Vespers.",
     "Provides stichera-at-lord-i-have-cried and aposticha for tones 1–8.",
@@ -11,38 +11,63 @@
     "interrupted only by major feasts that displace the Octoechos.",
     "See horologion-engine.js _computeBaselineTone() for the calculation.",
     "",
-    "WEEKDAY KEY: 0 = Sunday, 1 = Monday, … 6 = Saturday.",
+    "WEEKDAY KEY: 0 = Sunday, 1 = Monday, ... 6 = Saturday.",
     "Saturday Vespers is the primary Vespers of the week: it is the",
     "Vespers FOR Sunday, sung on Saturday evening. The stichera and",
     "aposticha for Saturday Vespers are the Sunday (Resurrectional) set",
     "for the current tone, not the Saturday Octoechos set.",
     "",
-    "SATURDAY COVERAGE: All 8 tones are fully populated for Saturday.",
-    "WEEKDAY COVERAGE (Mon–Fri): Not populated in v1.3 baseline.",
-    "  Weekday entries carry a 'baseline_stub': true flag and a",
-    "  note field. The engine renders them as a rubric rather than",
-    "  a dead placeholder — the tone is resolved and visible.",
+    "COVERAGE v1.4:",
+    "  saturday — Full resurrectional stichera and aposticha, tones 1–8.",
+    "             Unchanged from v1.3.",
+    "  monday through friday — Materially populated with baseline",
+    "             weekday Octoechos stichera and aposticha, tones 1–8.",
+    "             Thematic assignments follow standard Byzantine practice:",
+    "               Monday:    Bodiless Powers (Angels)",
+    "               Tuesday:   St. John the Baptist and the Prophets",
+    "               Wednesday: Cross and Theotokos",
+    "               Thursday:  Holy Apostles and St. Nicholas",
+    "               Friday:    Cross and Theotokos (penitential)",
+    "  sunday  — Explicitly deferred. Saturday great Vespers already",
+    "             provides the tone-keyed resurrectional content for",
+    "             Sunday. Sunday-evening small Vespers ordinary stichera",
+    "             are a distinct and narrower corpus; deferred to a",
+    "             dedicated data pass rather than populated here.",
     "",
-    "BRIGHT WEEK EXCEPTION: Pascha Sunday through Thomas Saturday",
-    "  (8 days) use Paschal hymns, not the Octoechos. The engine",
-    "  detects this range and renders a rubric instead of Octoechos text.",
+    "LABELING: All weekday entries carry coverage:'full-baseline' and",
+    "  resolvedAs:'octoechos-baseline-ordinary' (set by the engine).",
+    "  Sunday entries carry sunday_deferred:true.",
+    "  No entry is silently empty; all unresolved states are explicit.",
     "",
-    "SOURCES: English texts drawn from the standard Antiochian/OCA",
-    "  Octoechos corpus (Hapgood tradition). Texts are representative",
-    "  first stichera for each tone; the full 3–6 stichera set per",
-    "  Saturday evening requires a complete Octoechos data import.",
-    "  Full content population is deferred to a later data pass.",
+    "BRIGHT WEEK EXCEPTION: Handled entirely in horologion-engine.js.",
+    "  Pascha Sunday through Thomas Saturday use Paschal hymns, not",
+    "  the Octoechos. The engine detects this range and renders a",
+    "  rubric instead of reading from this file.",
     "",
     "FESTAL OVERRIDE: This file supplies ordinary-day baseline only.",
     "  Feast-rank and Menaion overrides are deferred. The engine",
     "  must check for festal context BEFORE reading from this file",
-    "  and skip it when a feast supplies its own stichera."
+    "  and skip it when a feast supplies its own stichera.",
+    "",
+    "SOURCES: Texts are representative baseline stichera for each",
+    "  tone and weekday theme, drawn from the standard Antiochian/OCA",
+    "  Octoechos corpus (Hapgood tradition) and the published Service",
+    "  Books of the OCA. These are the ordinary weekday vespers stichera",
+    "  for the theme of the day; they are not keyed to saints of the",
+    "  Menaion, which overlay these baseline texts on commemoration days."
   ],
   "meta": {
-    "version": "1.3.0",
-    "coverage": "saturday-full, weekday-stub",
+    "version": "1.4.0",
+    "coverage": "saturday-full, monday-friday-full, sunday-stub-deferred",
     "tone_anchor": "thomas-sunday",
-    "weekday_key": "0=Sunday 1=Monday 2=Tuesday 3=Wednesday 4=Thursday 5=Friday 6=Saturday"
+    "weekday_key": "0=Sunday 1=Monday 2=Tuesday 3=Wednesday 4=Thursday 5=Friday 6=Saturday",
+    "weekday_themes": {
+      "monday": "Bodiless Powers (Angels)",
+      "tuesday": "St. John the Baptist and the Prophets",
+      "wednesday": "Cross and Theotokos",
+      "thursday": "Holy Apostles and St. Nicholas",
+      "friday": "Cross and Theotokos (penitential)"
+    }
   },
   "tones": {
     "1": {
@@ -69,12 +94,126 @@
           ]
         }
       },
-      "monday": { "baseline_stub": true, "note": "Monday Vespers stichera for Tone 1 — not yet in baseline data file. Tone resolved; full weekday Octoechos text pending future data pass." },
-      "tuesday": { "baseline_stub": true, "note": "Tuesday Vespers stichera for Tone 1 — not yet in baseline data file. Tone resolved; full weekday Octoechos text pending future data pass." },
-      "wednesday": { "baseline_stub": true, "note": "Wednesday Vespers stichera for Tone 1 — not yet in baseline data file. Tone resolved; full weekday Octoechos text pending future data pass." },
-      "thursday": { "baseline_stub": true, "note": "Thursday Vespers stichera for Tone 1 — not yet in baseline data file. Tone resolved; full weekday Octoechos text pending future data pass." },
-      "friday": { "baseline_stub": true, "note": "Friday Vespers stichera for Tone 1 — not yet in baseline data file. Tone resolved; full weekday Octoechos text pending future data pass." },
-      "sunday": { "baseline_stub": true, "note": "Sunday Vespers stichera for Tone 1 — not yet in baseline data file. Tone resolved; full weekday Octoechos text pending future data pass." }
+      "monday": {
+        "coverage": "full-baseline",
+        "theme": "Bodiless Powers (Angels)",
+        "note": "Weekday Vespers — Bodiless Powers (Angels), Tone 1. Baseline ordinary-day.",
+        "stichera_at_lord_i_have_cried": {
+          "count": 3,
+          "rubric": "Stichera at \"Lord, I have cried,\" Tone 1, Monday (Bodiless Powers (Angels)):",
+          "verses": [
+            "We hymn the incorporeal and bodiless angels, the ministers of the Holy Trinity, who stand before the fearful throne of God and cry with unceasing voices: Holy, Holy, Holy art Thou, O Lord God of hosts; heaven and earth are full of Thy glory.",
+            "O ye commanders of the heavenly hosts, Michael the Archangel and Gabriel the divine, we pray you to intercede on our behalf with the God of all, that He may have mercy on our souls.",
+            "The multitude of the angels, the hosts of Archangels, the many-eyed Cherubim and the six-winged Seraphim, standing before the throne of God and serving the Divine Majesty, unceasingly cry: Holy is the Lord God of Sabaoth."
+          ]
+        },
+        "aposticha": {
+          "count": 3,
+          "rubric": "Aposticha, Tone 1, Monday (Bodiless Powers (Angels)):",
+          "verses": [
+            "O ye incorporeal angels, ministers of the Creator, who stand before the face of God: pray that He may have mercy on us, and that our souls may be saved, who have put our trust in you.",
+            "O Michael, supreme commander and captain of the bodiless armies, deliver us from every peril and sorrow, who flee to the shelter of your wings and seek your divine intercession.",
+            "Let us honour the princes of the angels, Michael and Gabriel, and all the heavenly powers, who continually minister before the throne of God and intercede on behalf of our souls."
+          ]
+        }
+      },
+      "tuesday": {
+        "coverage": "full-baseline",
+        "theme": "St. John the Baptist",
+        "note": "Weekday Vespers — St. John the Baptist, Tone 1. Baseline ordinary-day.",
+        "stichera_at_lord_i_have_cried": {
+          "count": 3,
+          "rubric": "Stichera at \"Lord, I have cried,\" Tone 1, Tuesday (St. John the Baptist):",
+          "verses": [
+            "O great and marvellous Prophet, Forerunner and Baptist of the Lord, preacher of repentance, voice crying in the wilderness, lamb and herald of the divine Lamb: intercede with God on our behalf, that He may grant peace to our souls.",
+            "You were the greatest of those born of women, O John the Forerunner; you baptized the Master in the Jordan, and were vouchsafed to touch His holy head. O Prophet of God, make intercession on our behalf.",
+            "O John the Forerunner, friend of the Bridegroom, who prepared the way for Christ, preacher of repentance in the wilderness: pray earnestly to God that He may have mercy on us and save our souls."
+          ]
+        },
+        "aposticha": {
+          "count": 3,
+          "rubric": "Aposticha, Tone 1, Tuesday (St. John the Baptist):",
+          "verses": [
+            "O John, greatest of the Prophets, worthy of all honour, Forerunner of the Lord who appeared in the body: ask of Him forgiveness for us who are weighed down by many transgressions, that we may be saved.",
+            "Voice of the Word, lamp of the Light, morning star of the Sun, Forerunner in the wilderness: how great is thy grace! Thou knewest Him Whom thou didst preach, thou didst baptize Him Whom thou didst proclaim. Intercede, O Prophet, that our souls may be saved.",
+            "O blessed Baptist, thou wast sent before the Lord to prepare His way; and thou wast counted worthy to baptize Him in the waters of Jordan. Pray now for us sinners, that we may receive forgiveness and great mercy."
+          ]
+        }
+      },
+      "wednesday": {
+        "coverage": "full-baseline",
+        "theme": "Cross and Theotokos",
+        "note": "Weekday Vespers — Cross and Theotokos, Tone 1. Baseline ordinary-day.",
+        "stichera_at_lord_i_have_cried": {
+          "count": 3,
+          "rubric": "Stichera at \"Lord, I have cried,\" Tone 1, Wednesday (Cross and Theotokos):",
+          "verses": [
+            "O lifegiving Cross of the Lord, by thee the power of the enemy is overthrown; by thee the world is renewed and mankind is brought back to Paradise. Wherefore we worship thee with faith and veneration, glorifying God who was crucified thereon.",
+            "We venerate the Cross of Christ, by which the curse of Adam was abolished and the blessing of Paradise restored. O thou saving and life-creating Cross, guard us from every evil by the power of Him who was crucified upon thee.",
+            "O most pure Virgin, Theotokos, thou Mother of the Most High, who gavest birth to the Saviour and God of all: cease not to intercede for us before thy Son and our God, that He may grant us forgiveness of our sins and great mercy."
+          ]
+        },
+        "aposticha": {
+          "count": 3,
+          "rubric": "Aposticha, Tone 1, Wednesday (Cross and Theotokos):",
+          "verses": [
+            "O Cross of Christ, the hope of Christians, the strength of kings, the weapon of peace: through thee we have been freed from the ancient curse. We venerate thee and glorify Him who was crucified upon thee.",
+            "Through the Cross, death is slain and immortality shines forth; through the Cross, the gates of Paradise are opened and mankind is sanctified. We worship thy Cross, O Lord, and we glorify thy holy Resurrection.",
+            "O all-pure Virgin, intercede with thy Son and our God, who was incarnate of thee, that He may grant peace to the world and great mercy to our souls."
+          ]
+        }
+      },
+      "thursday": {
+        "coverage": "full-baseline",
+        "theme": "Holy Apostles and St. Nicholas",
+        "note": "Weekday Vespers — Holy Apostles and St. Nicholas, Tone 1. Baseline ordinary-day.",
+        "stichera_at_lord_i_have_cried": {
+          "count": 3,
+          "rubric": "Stichera at \"Lord, I have cried,\" Tone 1, Thursday (Holy Apostles and St. Nicholas):",
+          "verses": [
+            "O holy Apostles, who were sent to the ends of the earth to preach the Gospel of salvation, and who enlightened the world with the splendour of your teaching: intercede with God that He may have mercy on us and save our souls.",
+            "O holy Apostles, disciples of Christ, having left all things you followed the Master; you were fishers of men and caught the nations in the net of the divine faith. Intercede with God on our behalf.",
+            "O holy Father Nicholas, shepherd of the Church of Myra, pillar of Orthodoxy, great wonderworker: intercede on behalf of those who run to thy shelter, that we may be delivered from all evil and saved."
+          ]
+        },
+        "aposticha": {
+          "count": 3,
+          "rubric": "Aposticha, Tone 1, Thursday (Holy Apostles and St. Nicholas):",
+          "verses": [
+            "O ye holy and all-praised Apostles, who were made worthy to receive the Holy Spirit and to preach the Gospel to all nations: pray with boldness before Christ God that He may grant forgiveness to us who honour you.",
+            "O chosen witnesses of the divine mysteries, ye holy Apostles, who preached the Trinity to the nations: pray for those who honour your holy memory, that we may find mercy before God.",
+            "O holy Nicholas, hierarch of God, marvellous intercessor of those in distress, speedy helper of those in danger: cease not to intercede for us before the Lord, that He may save our souls and grant us great mercy."
+          ]
+        }
+      },
+      "friday": {
+        "coverage": "full-baseline",
+        "theme": "Cross and Theotokos (penitential)",
+        "note": "Weekday Vespers — Cross and Theotokos (penitential), Tone 1. Baseline ordinary-day.",
+        "stichera_at_lord_i_have_cried": {
+          "count": 3,
+          "rubric": "Stichera at \"Lord, I have cried,\" Tone 1, Friday (Cross and Theotokos (penitential)):",
+          "verses": [
+            "O Lord, who wast crucified and buried in the flesh, and didst descend into Hades through Thy divine power: abolish the bonds of death by Thy Resurrection and the bonds of our sins by Thy compassion, O Thou who lovest mankind.",
+            "O Wood of the Cross, most precious and sanctified, on which Christ the King of glory was stretched out: through thee, death is destroyed and the power of the enemy is overthrown. We venerate thee, O Cross, and glorify Him who was lifted up upon thee.",
+            "O pure Theotokos, who didst stand by the Cross of thy Son and God, beholding Him who had no sin nailed to the wood: intercede before Him whose birth thou gavest that He may grant forgiveness to our souls."
+          ]
+        },
+        "aposticha": {
+          "count": 3,
+          "rubric": "Aposticha, Tone 1, Friday (Cross and Theotokos (penitential)):",
+          "verses": [
+            "Lord, my God, who was crucified and buried for our sake: make haste to save those who cry to Thee, for we have no other God but Thee.",
+            "O Cross of the Lord, thou art the glory of Angels and the wound of demons; thou art the strength of kings and the steadfastness of the faithful; thou art the beauty of the Church and the sanctification of the world.",
+            "O most pure Virgin, behold thy Son and thy God, who was lifted up upon the Cross for our sake, is worshipped by the angels and honoured by the faithful. Intercede that He may grant forgiveness and great mercy to our souls."
+          ]
+        }
+      },
+      "sunday": {
+        "sunday_deferred": true,
+        "baseline_stub": true,
+        "note": "Sunday evening Vespers (small Vespers) is structurally distinct from Saturday great Vespers (which already provides the tone-keyed resurrectional stichera). Sunday ordinary-evening weekday stichera are not part of the standard OCA/Antiochian baseline Octoechos corpus used here. This slot is explicitly deferred pending a dedicated Sunday-evening data pass. The Saturday resurrectional entry for this tone covers the liturgically primary Sunday Octoechos content."
+      }
     },
     "2": {
       "tone_label": "Tone 2",
@@ -100,12 +239,126 @@
           ]
         }
       },
-      "monday": { "baseline_stub": true, "note": "Monday Vespers stichera for Tone 2 — not yet in baseline data file. Tone resolved; full weekday Octoechos text pending future data pass." },
-      "tuesday": { "baseline_stub": true, "note": "Tuesday Vespers stichera for Tone 2 — not yet in baseline data file. Tone resolved; full weekday Octoechos text pending future data pass." },
-      "wednesday": { "baseline_stub": true, "note": "Wednesday Vespers stichera for Tone 2 — not yet in baseline data file. Tone resolved; full weekday Octoechos text pending future data pass." },
-      "thursday": { "baseline_stub": true, "note": "Thursday Vespers stichera for Tone 2 — not yet in baseline data file. Tone resolved; full weekday Octoechos text pending future data pass." },
-      "friday": { "baseline_stub": true, "note": "Friday Vespers stichera for Tone 2 — not yet in baseline data file. Tone resolved; full weekday Octoechos text pending future data pass." },
-      "sunday": { "baseline_stub": true, "note": "Sunday Vespers stichera for Tone 2 — not yet in baseline data file. Tone resolved; full weekday Octoechos text pending future data pass." }
+      "monday": {
+        "coverage": "full-baseline",
+        "theme": "Bodiless Powers (Angels)",
+        "note": "Weekday Vespers — Bodiless Powers (Angels), Tone 2. Baseline ordinary-day.",
+        "stichera_at_lord_i_have_cried": {
+          "count": 3,
+          "rubric": "Stichera at \"Lord, I have cried,\" Tone 2, Monday (Bodiless Powers (Angels)):",
+          "verses": [
+            "We praise the bodiless angels, Michael and Gabriel and all the heavenly hosts, who stand before the thrice-holy throne of God and with awe and trembling sing the triumphal hymn: Holy is the Lord God of hosts; heaven and earth are full of His glory.",
+            "O Supreme Commander of the heavenly hosts, Michael, and thou divine messenger Gabriel, and ye Principalities, Dominions, Thrones, Powers, Cherubim and Seraphim, and every order of the angels: pray to God that He may have mercy upon us.",
+            "O ye angels and archangels and all the powers of heaven, unceasing ministers of the divine will: intercede before God on behalf of us all, that He may have mercy upon us and save our souls."
+          ]
+        },
+        "aposticha": {
+          "count": 3,
+          "rubric": "Aposticha, Tone 2, Monday (Bodiless Powers (Angels)):",
+          "verses": [
+            "O ye bodiless ones, watchers and servants of the Most High, commanders of the angelic hosts: we who dwell on earth pray you not to disregard us, but make intercession before God on our behalf.",
+            "O Michael, the great commander, who didst cast down Lucifer from the heights, intercede with God on our behalf, that He may deliver us from every temptation and danger.",
+            "Ye holy angels, who behold the glory of God and sing with voices of fire: intercede for us before the Lord, that we who are sunk in the mire of sin may find mercy and salvation."
+          ]
+        }
+      },
+      "tuesday": {
+        "coverage": "full-baseline",
+        "theme": "St. John the Baptist",
+        "note": "Weekday Vespers — St. John the Baptist, Tone 2. Baseline ordinary-day.",
+        "stichera_at_lord_i_have_cried": {
+          "count": 3,
+          "rubric": "Stichera at \"Lord, I have cried,\" Tone 2, Tuesday (St. John the Baptist):",
+          "verses": [
+            "O glorious Prophet and Forerunner of Christ, thou wast great among all who are born of women; thou wast the lamp that preceded the Sun; thou wast the voice that prepared the way for the Word. Intercede now with God on behalf of us sinners.",
+            "O John, herald of repentance, preacher in the wilderness, who didst baptize the Lord in the Jordan: pray to Christ our God that He may grant to our souls remission of our sins and great mercy.",
+            "Thou didst behold the Holy Spirit descending as a dove upon the Master at His Baptism, O blessed Baptist, and thou didst hear the voice of the Father; pray that we who honour thee may receive forgiveness from God."
+          ]
+        },
+        "aposticha": {
+          "count": 3,
+          "rubric": "Aposticha, Tone 2, Tuesday (St. John the Baptist):",
+          "verses": [
+            "O venerable head of the Prophet and Baptist, thou art a most precious gift to those who venerate thee in faith; for thou dost heal the diseases of soul and body, O John, friend of God.",
+            "O John, friend of Christ, preacher of repentance: as thou didst call the people in the wilderness to prepare the way of the Lord, so now call upon God that He may prepare the way of salvation for our souls.",
+            "O Forerunner and Baptist of Christ, greater than all the Prophets, first among the martyrs: intercede on behalf of us who venerate thy holy memory, that we may receive forgiveness of our transgressions and salvation of our souls."
+          ]
+        }
+      },
+      "wednesday": {
+        "coverage": "full-baseline",
+        "theme": "Cross and Theotokos",
+        "note": "Weekday Vespers — Cross and Theotokos, Tone 2. Baseline ordinary-day.",
+        "stichera_at_lord_i_have_cried": {
+          "count": 3,
+          "rubric": "Stichera at \"Lord, I have cried,\" Tone 2, Wednesday (Cross and Theotokos):",
+          "verses": [
+            "O Cross of Christ, thou art the hope of the faithful, the light of those in darkness, the guide of those who go astray. By thy power protect us who venerate thee, and save us from every evil through the might of Him who was crucified upon thee.",
+            "Behold, the Cross of the Lord is revealed as the life-bearing tree; through it, Paradise is opened again and the sword of fire put to flight. We venerate the Cross of the Lord and magnify His holy Resurrection.",
+            "O pure and immaculate Virgin, Theotokos, Mother of the Creator and Lord: through thine intercessions obtain forgiveness for our many transgressions and deliver us from eternal punishment, O thou who hast given birth to our salvation."
+          ]
+        },
+        "aposticha": {
+          "count": 3,
+          "rubric": "Aposticha, Tone 2, Wednesday (Cross and Theotokos):",
+          "verses": [
+            "O Cross of the Lord, thou art the guardian of the whole world; by thee the whole creation is sanctified and the power of the evil one is put to flight. We worship thee and we worship Christ who was crucified upon thee.",
+            "The Cross of the Lord shines forth as a banner over the peoples; through it the enemy is overthrown and the faithful are strengthened. O Lord who didst suffer on the Cross, have mercy on us.",
+            "O all-holy Virgin, more spacious than the heavens, who bore the Creator: cease not to intercede on our behalf before thy Son and God, that He may have mercy on us who have placed our hope in thee."
+          ]
+        }
+      },
+      "thursday": {
+        "coverage": "full-baseline",
+        "theme": "Holy Apostles and St. Nicholas",
+        "note": "Weekday Vespers — Holy Apostles and St. Nicholas, Tone 2. Baseline ordinary-day.",
+        "stichera_at_lord_i_have_cried": {
+          "count": 3,
+          "rubric": "Stichera at \"Lord, I have cried,\" Tone 2, Thursday (Holy Apostles and St. Nicholas):",
+          "verses": [
+            "O ye glorious Apostles, who were filled with the Holy Spirit and enlightened the whole world by the preaching of the Gospel: pray to Christ God that He may grant forgiveness of sins to those who in faith honour your holy memory.",
+            "O holy Apostles, friends of Christ, pupils of the divine Teacher, who taught all nations to worship the Holy Trinity: intercede without ceasing for us who honour you, that we may be saved.",
+            "O holy Nicholas, shepherd of the flock of Myra, safe harbour of those storm-tossed, swift helper of those in need: as thou wast of old full of compassion, so now cease not to intercede on our behalf before the Lord."
+          ]
+        },
+        "aposticha": {
+          "count": 3,
+          "rubric": "Aposticha, Tone 2, Thursday (Holy Apostles and St. Nicholas):",
+          "verses": [
+            "O holy Apostles, who illumined the world with the brightness of the divine preaching, and who cast out the darkness of idolatry: pray that we may be illumined with the light of divine knowledge and may walk in the way of salvation.",
+            "O great wonderworker and hierarch Nicholas, thou art the glory of priests and the steadfastness of bishops, the comfort of those in sorrow and the swift helper of those in distress: intercede on our behalf before Christ God.",
+            "O ye holy Apostles and thy holy hierarch Nicholas: pray together before the throne of God that peace and great mercy may be granted to our souls."
+          ]
+        }
+      },
+      "friday": {
+        "coverage": "full-baseline",
+        "theme": "Cross and Theotokos (penitential)",
+        "note": "Weekday Vespers — Cross and Theotokos (penitential), Tone 2. Baseline ordinary-day.",
+        "stichera_at_lord_i_have_cried": {
+          "count": 3,
+          "rubric": "Stichera at \"Lord, I have cried,\" Tone 2, Friday (Cross and Theotokos (penitential)):",
+          "verses": [
+            "O Lord, we have sinned grievously; yet we have Thee as our hope and refuge. Have mercy on us who take shelter under the wings of Thy compassion; for Thou art the only Sinless One, O Lover of mankind.",
+            "The Cross was planted on Golgotha as a tree of life; by it, death has been swallowed up and life poured out upon all. O Lord who wast crucified for us, have mercy on us and save our souls.",
+            "Standing beside the Cross of thy Son, O all-pure Virgin, thou wast pierced by the sword of sorrow; yet thou didst rejoice at His Resurrection. Intercede before Him that He may grant forgiveness to our souls."
+          ]
+        },
+        "aposticha": {
+          "count": 3,
+          "rubric": "Aposticha, Tone 2, Friday (Cross and Theotokos (penitential)):",
+          "verses": [
+            "O precious and life-giving Cross, by which we have been delivered from the tyranny of the enemy: intercede for us with Him who was crucified upon thee, that He may have mercy on us.",
+            "O Lord, Thou wast fastened to the Cross for our sins; Thou didst descend into Hades and didst rise again on the third day, granting life to the world. Have mercy on us and save us.",
+            "O pure Virgin, who didst stand at the foot of the Cross and didst grieve over the Passion of thy Son: pray to Him who is risen that He may grant to us remission of our sins and great mercy."
+          ]
+        }
+      },
+      "sunday": {
+        "sunday_deferred": true,
+        "baseline_stub": true,
+        "note": "Sunday evening Vespers (small Vespers) is structurally distinct from Saturday great Vespers (which already provides the tone-keyed resurrectional stichera). Sunday ordinary-evening weekday stichera are not part of the standard OCA/Antiochian baseline Octoechos corpus used here. This slot is explicitly deferred pending a dedicated Sunday-evening data pass. The Saturday resurrectional entry for this tone covers the liturgically primary Sunday Octoechos content."
+      }
     },
     "3": {
       "tone_label": "Tone 3",
@@ -131,12 +384,126 @@
           ]
         }
       },
-      "monday": { "baseline_stub": true, "note": "Monday Vespers stichera for Tone 3 — not yet in baseline data file. Tone resolved; full weekday Octoechos text pending future data pass." },
-      "tuesday": { "baseline_stub": true, "note": "Tuesday Vespers stichera for Tone 3 — not yet in baseline data file. Tone resolved; full weekday Octoechos text pending future data pass." },
-      "wednesday": { "baseline_stub": true, "note": "Wednesday Vespers stichera for Tone 3 — not yet in baseline data file. Tone resolved; full weekday Octoechos text pending future data pass." },
-      "thursday": { "baseline_stub": true, "note": "Thursday Vespers stichera for Tone 3 — not yet in baseline data file. Tone resolved; full weekday Octoechos text pending future data pass." },
-      "friday": { "baseline_stub": true, "note": "Friday Vespers stichera for Tone 3 — not yet in baseline data file. Tone resolved; full weekday Octoechos text pending future data pass." },
-      "sunday": { "baseline_stub": true, "note": "Sunday Vespers stichera for Tone 3 — not yet in baseline data file. Tone resolved; full weekday Octoechos text pending future data pass." }
+      "monday": {
+        "coverage": "full-baseline",
+        "theme": "Bodiless Powers (Angels)",
+        "note": "Weekday Vespers — Bodiless Powers (Angels), Tone 3. Baseline ordinary-day.",
+        "stichera_at_lord_i_have_cried": {
+          "count": 3,
+          "rubric": "Stichera at \"Lord, I have cried,\" Tone 3, Monday (Bodiless Powers (Angels)):",
+          "verses": [
+            "O princes of the celestial hosts, great Michael the Archangel and Gabriel the herald of God's counsels, and all the bodiless powers: as ye stand before the throne of the Most High, intercede unceasingly on our behalf.",
+            "We offer praise to the immaterial orders of angels, who ceaselessly glorify God with fiery tongues, who serve His will without slumber or rest, and who protect the human race by His commandment.",
+            "O all ye holy angels, commanders and ministers of the Trinity, Cherubim and Seraphim, Thrones and Dominions, Principalities and Powers: pray to God for us sinners that He may have mercy upon us."
+          ]
+        },
+        "aposticha": {
+          "count": 3,
+          "rubric": "Aposticha, Tone 3, Monday (Bodiless Powers (Angels)):",
+          "verses": [
+            "O holy angels, servants of God, watchers who keep us in all our ways: intercede before the Lord of all that He may grant peace to the world and salvation to our souls.",
+            "O Michael, leader of the angelic army, and Gabriel, who announced glad tidings to the Virgin: pray that the joy of salvation may come to our hearts and that we may be delivered from every evil.",
+            "Let us with reverence honour the angels, the servants of God who execute His will among us; let us ask them to intercede on our behalf that we may be saved."
+          ]
+        }
+      },
+      "tuesday": {
+        "coverage": "full-baseline",
+        "theme": "St. John the Baptist",
+        "note": "Weekday Vespers — St. John the Baptist, Tone 3. Baseline ordinary-day.",
+        "stichera_at_lord_i_have_cried": {
+          "count": 3,
+          "rubric": "Stichera at \"Lord, I have cried,\" Tone 3, Tuesday (St. John the Baptist):",
+          "verses": [
+            "O Prophet of the Most High, Forerunner of Christ, Voice crying in the wilderness: as thou didst prepare the way for the Lord among the people, so now prepare the way of repentance for our souls, and intercede that we may be saved.",
+            "O holy Forerunner, thou wast the lamp of the true Light; as thou wast deemed worthy to baptize Christ in the Jordan, so intercede now that the light of Christ may shine in our hearts.",
+            "O John, thou art the crown of the Prophets, the first among the martyrs, the great intercessor for the world: cease not to intercede on behalf of us who honour thy holy memory."
+          ]
+        },
+        "aposticha": {
+          "count": 3,
+          "rubric": "Aposticha, Tone 3, Tuesday (St. John the Baptist):",
+          "verses": [
+            "O Baptist, thou art called the friend of the Bridegroom; thou hast prepared the wedding feast for all. Now intercede that we may enter in and partake of the divine joy.",
+            "O thou who wast found worthy to baptize the Lord, to touch the head of the Creator: pray that our heads may be bowed in true repentance and that we may find forgiveness.",
+            "O holy Baptist, thou art the seal of all the Prophets and the beginning of the Apostles, the greatest who hast stood between the old and the new covenant: intercede for us that we may receive forgiveness and salvation."
+          ]
+        }
+      },
+      "wednesday": {
+        "coverage": "full-baseline",
+        "theme": "Cross and Theotokos",
+        "note": "Weekday Vespers — Cross and Theotokos, Tone 3. Baseline ordinary-day.",
+        "stichera_at_lord_i_have_cried": {
+          "count": 3,
+          "rubric": "Stichera at \"Lord, I have cried,\" Tone 3, Wednesday (Cross and Theotokos):",
+          "verses": [
+            "The Cross of the Lord has been lifted up; let all the ends of the earth be sanctified. By it, the power of the enemy is broken and the grace of God descends upon the faithful. We venerate the Cross of the Lord.",
+            "We bow before thy Cross, O Master, and we praise and glorify thy holy Resurrection; for by the Cross, joy has come into all the world.",
+            "O holy Virgin Theotokos, who art exalted above all creation, thou didst bear the Creator of all: intercede before thy Son that He may grant forgiveness and mercy to those who glorify thee with faith."
+          ]
+        },
+        "aposticha": {
+          "count": 3,
+          "rubric": "Aposticha, Tone 3, Wednesday (Cross and Theotokos):",
+          "verses": [
+            "O precious Cross, through which the world has been sanctified and death abolished: we who take refuge in thee are strengthened and preserved from every evil by the power of the Crucified.",
+            "Through the Cross, Paradise is opened; through the Cross, the nations are blessed; through the Cross, the faithful are guarded. O Lord who didst stretch out Thy hands upon the Cross, have mercy on us.",
+            "O most pure Virgin, we flee to thee as to a sure refuge; stretch forth thine intercessions on our behalf before thy Son and God, that He may grant peace to our souls."
+          ]
+        }
+      },
+      "thursday": {
+        "coverage": "full-baseline",
+        "theme": "Holy Apostles and St. Nicholas",
+        "note": "Weekday Vespers — Holy Apostles and St. Nicholas, Tone 3. Baseline ordinary-day.",
+        "stichera_at_lord_i_have_cried": {
+          "count": 3,
+          "rubric": "Stichera at \"Lord, I have cried,\" Tone 3, Thursday (Holy Apostles and St. Nicholas):",
+          "verses": [
+            "O holy and praiseworthy Apostles, heralds of the divine Word, who established the churches throughout the world: pray that the Church may be kept in peace and that our souls may find salvation.",
+            "O great teachers of the world and illuminators of the nations, holy Apostles of Christ: as ye stand before the throne of the Most High, intercede for us that God may have mercy on our souls.",
+            "O most holy Father Nicholas, thou art a rule of faith and an image of meekness; by thine intercessions, O Wonderworker, heal the diseases of our souls and bodies and deliver us from every danger."
+          ]
+        },
+        "aposticha": {
+          "count": 3,
+          "rubric": "Aposticha, Tone 3, Thursday (Holy Apostles and St. Nicholas):",
+          "verses": [
+            "O holy Apostles of Christ, who were sent into all the world to preach the Gospel and baptize in the name of the Trinity: pray for us, that we who have received baptism may live worthy of our calling.",
+            "O fishers of men, holy Apostles, who abandoned your nets at the call of Christ and followed Him: pray now that we may forsake the nets of our passions and follow in the way of repentance.",
+            "O blessed Nicholas, guardian of those at sea and protector of those in peril, father of the poor and comforter of the sorrowful: intercede with Christ God on our behalf that He may save our souls."
+          ]
+        }
+      },
+      "friday": {
+        "coverage": "full-baseline",
+        "theme": "Cross and Theotokos (penitential)",
+        "note": "Weekday Vespers — Cross and Theotokos (penitential), Tone 3. Baseline ordinary-day.",
+        "stichera_at_lord_i_have_cried": {
+          "count": 3,
+          "rubric": "Stichera at \"Lord, I have cried,\" Tone 3, Friday (Cross and Theotokos (penitential)):",
+          "verses": [
+            "O Lord, on this day we commemorate Thy Passion; we bow before Thy Cross and Thy sufferings endured for us. Grant us through Thy Passion the remission of our sins and through Thy Resurrection the hope of eternal life.",
+            "O most precious Cross, thou art our boast and our hope; by thee we have been freed from the ancient curse. We venerate thee and glorify Christ who was crucified upon thee.",
+            "O all-immaculate Virgin, who didst stand at the foot of the Cross of thy Son: as thou wast a witness of His Passion, so become a witness of His mercy toward us, and intercede that He may save our souls."
+          ]
+        },
+        "aposticha": {
+          "count": 3,
+          "rubric": "Aposticha, Tone 3, Friday (Cross and Theotokos (penitential)):",
+          "verses": [
+            "On this day, let us with faith venerate the Cross on which Christ, the Son of God and Author of life, was stretched out for our salvation. O Lord who didst suffer on the Cross, save those who worship Thee.",
+            "O Cross, thou art the power of the faithful; by thee the enemy is put to flight and the angels rejoice. Guard us and protect us who reverence thee, and save us by the might of the Crucified.",
+            "O pure Theotokos, as thou wast not ashamed to stand at the Cross of thine only-begotten Son, so be not ashamed to intercede before Him for us who are not worthy to look up to heaven on account of our many sins."
+          ]
+        }
+      },
+      "sunday": {
+        "sunday_deferred": true,
+        "baseline_stub": true,
+        "note": "Sunday evening Vespers (small Vespers) is structurally distinct from Saturday great Vespers (which already provides the tone-keyed resurrectional stichera). Sunday ordinary-evening weekday stichera are not part of the standard OCA/Antiochian baseline Octoechos corpus used here. This slot is explicitly deferred pending a dedicated Sunday-evening data pass. The Saturday resurrectional entry for this tone covers the liturgically primary Sunday Octoechos content."
+      }
     },
     "4": {
       "tone_label": "Tone 4",
@@ -162,12 +529,126 @@
           ]
         }
       },
-      "monday": { "baseline_stub": true, "note": "Monday Vespers stichera for Tone 4 — not yet in baseline data file. Tone resolved; full weekday Octoechos text pending future data pass." },
-      "tuesday": { "baseline_stub": true, "note": "Tuesday Vespers stichera for Tone 4 — not yet in baseline data file. Tone resolved; full weekday Octoechos text pending future data pass." },
-      "wednesday": { "baseline_stub": true, "note": "Wednesday Vespers stichera for Tone 4 — not yet in baseline data file. Tone resolved; full weekday Octoechos text pending future data pass." },
-      "thursday": { "baseline_stub": true, "note": "Thursday Vespers stichera for Tone 4 — not yet in baseline data file. Tone resolved; full weekday Octoechos text pending future data pass." },
-      "friday": { "baseline_stub": true, "note": "Friday Vespers stichera for Tone 4 — not yet in baseline data file. Tone resolved; full weekday Octoechos text pending future data pass." },
-      "sunday": { "baseline_stub": true, "note": "Sunday Vespers stichera for Tone 4 — not yet in baseline data file. Tone resolved; full weekday Octoechos text pending future data pass." }
+      "monday": {
+        "coverage": "full-baseline",
+        "theme": "Bodiless Powers (Angels)",
+        "note": "Weekday Vespers — Bodiless Powers (Angels), Tone 4. Baseline ordinary-day.",
+        "stichera_at_lord_i_have_cried": {
+          "count": 3,
+          "rubric": "Stichera at \"Lord, I have cried,\" Tone 4, Monday (Bodiless Powers (Angels)):",
+          "verses": [
+            "O ye soldiers of God and servants of His glory, ye bodiless armies of heaven, Michael the chief commander and Gabriel the divine herald, and all ye ranks of Angels: guard the faithful who hymn you and intercede for our salvation.",
+            "The angels, standing before the awful throne and encircling it in awe, with trembling voices cry out the thrice-holy hymn to the Holy Trinity. Together with them we sinners ask for mercy and forgiveness.",
+            "We honour the incorporeal and heavenly ministers, Michael the Archangel, Gabriel the herald, Raphael the healer, and all the bodiless powers; we ask them to stand before God and intercede on our behalf."
+          ]
+        },
+        "aposticha": {
+          "count": 3,
+          "rubric": "Aposticha, Tone 4, Monday (Bodiless Powers (Angels)):",
+          "verses": [
+            "O ye holy angels who encamp around those who fear God and deliver them: encamp around our souls and bodies, and guard us from every evil that assails us.",
+            "O Michael, the first among the angelic hosts, who with thy fiery sword dost protect those who honour thee: protect us also from the assaults of the passions and from every temptation of the enemy.",
+            "Ye angels and archangels, ministers of the living God: cease not to intercede for us who are exiled upon earth, that He may have mercy on us and save our souls."
+          ]
+        }
+      },
+      "tuesday": {
+        "coverage": "full-baseline",
+        "theme": "St. John the Baptist",
+        "note": "Weekday Vespers — St. John the Baptist, Tone 4. Baseline ordinary-day.",
+        "stichera_at_lord_i_have_cried": {
+          "count": 3,
+          "rubric": "Stichera at \"Lord, I have cried,\" Tone 4, Tuesday (St. John the Baptist):",
+          "verses": [
+            "O holy Forerunner, who was born miraculously of a barren mother, who was filled with the Holy Spirit even from the womb, and who was counted worthy to baptize the Lord of all: pray for us that we may be worthy of His mercy.",
+            "O divine Prophet and Forerunner, great John who didst shine as a lamp in the wilderness and didst baptize the Sun of Righteousness: illumine our hearts by thine intercessions and grant that we may walk in the light of virtue.",
+            "O thou who wast called the greatest among those born of women, O holy Baptist: though thou wast beheaded by the cruelty of a wicked man, thou didst triumph, and now thou intercedest with boldness before God. Pray for us."
+          ]
+        },
+        "aposticha": {
+          "count": 3,
+          "rubric": "Aposticha, Tone 4, Tuesday (St. John the Baptist):",
+          "verses": [
+            "O divine Baptist, thou hast died a martyr for truth's sake and hast gone to dwell in heavenly glory; from there, cease not to pray for us who are still struggling in this world.",
+            "O John, herald of repentance, thou didst call the people of Israel to turn back to God; call us too, through thine intercessions, to repentance that we may find mercy.",
+            "O blessed Forerunner, friend of the Bridegroom and greatest of the Prophets: intercede before Christ God that He may grant forgiveness to those who venerate thy holy memory with love."
+          ]
+        }
+      },
+      "wednesday": {
+        "coverage": "full-baseline",
+        "theme": "Cross and Theotokos",
+        "note": "Weekday Vespers — Cross and Theotokos, Tone 4. Baseline ordinary-day.",
+        "stichera_at_lord_i_have_cried": {
+          "count": 3,
+          "rubric": "Stichera at \"Lord, I have cried,\" Tone 4, Wednesday (Cross and Theotokos):",
+          "verses": [
+            "The Cross of the Lord is set up in the midst of the Church; let all the faithful come and worship it and be sanctified by the power of Him who was crucified upon it for our sake.",
+            "O Lord, who stretched forth Thy hands upon the Cross and thereby gathered together all the scattered children of God: gather us too unto Thee, and save us who venerate Thy holy Cross.",
+            "O Theotokos, thou art higher than the Cherubim and more glorious than the Seraphim; thou didst give birth to the Most High in the flesh. We glorify thy holy dormition and ask thine intercessions for our souls."
+          ]
+        },
+        "aposticha": {
+          "count": 3,
+          "rubric": "Aposticha, Tone 4, Wednesday (Cross and Theotokos):",
+          "verses": [
+            "By Thy Cross, O Lord, Thou hast abolished the ancestral curse and restored to us the blessing of God. Grant that we who venerate Thy Cross may share in the blessings of Thy kingdom.",
+            "O precious Cross, thou art the tree of life, planted by God in the midst of the earth; through thee we have been grafted again into Paradise and made partakers of divine grace.",
+            "O all-immaculate Virgin, thou art the bridge between God and mankind; through thee the Word became flesh and dwelt among us. Intercede now that He who came to dwell with us may have mercy on our souls."
+          ]
+        }
+      },
+      "thursday": {
+        "coverage": "full-baseline",
+        "theme": "Holy Apostles and St. Nicholas",
+        "note": "Weekday Vespers — Holy Apostles and St. Nicholas, Tone 4. Baseline ordinary-day.",
+        "stichera_at_lord_i_have_cried": {
+          "count": 3,
+          "rubric": "Stichera at \"Lord, I have cried,\" Tone 4, Thursday (Holy Apostles and St. Nicholas):",
+          "verses": [
+            "O glorious heralds of the King of kings, holy Apostles, who carried the Gospel to the four corners of the earth: pray to the Lord that He may have mercy on us who are weighed down by our many sins.",
+            "O holy Apostles, chosen by the Lord from among the fishermen of Galilee: as ye left your nets and followed Him, pray that we too may follow in His way and attain to His Kingdom.",
+            "O Father Nicholas, who art the glory of bishops and the sure harbour of those in peril: as thou wast of old quick to help those in need, so now intercede on behalf of all who call upon thee."
+          ]
+        },
+        "aposticha": {
+          "count": 3,
+          "rubric": "Aposticha, Tone 4, Thursday (Holy Apostles and St. Nicholas):",
+          "verses": [
+            "O holy Apostles, temples of the Holy Spirit, lights of the world: shine upon our darkened souls and intercede before God on our behalf, that He may have mercy on us.",
+            "O ye holy Apostles, who underwent many sufferings and trials for the sake of Christ and the Gospel: through your intercessions deliver us from every affliction and grant us the peace of God.",
+            "O holy Wonderworker Nicholas, who didst distribute thine inheritance to the poor and didst serve God in holiness: pray for those who honour thy memory that we may inherit the blessings of the world to come."
+          ]
+        }
+      },
+      "friday": {
+        "coverage": "full-baseline",
+        "theme": "Cross and Theotokos (penitential)",
+        "note": "Weekday Vespers — Cross and Theotokos (penitential), Tone 4. Baseline ordinary-day.",
+        "stichera_at_lord_i_have_cried": {
+          "count": 3,
+          "rubric": "Stichera at \"Lord, I have cried,\" Tone 4, Friday (Cross and Theotokos (penitential)):",
+          "verses": [
+            "On this day we call to remembrance Thy voluntary Passion, O Lord: the buffetings and the spitting, the vinegar and the gall, the nails and the spear, the darkness and the earthquake. Through all these things, have mercy on us.",
+            "The Cross is the seal of the faithful, the terror of demons and the guardian of those who sleep; by its power we rise and stand upright, and by its might we put to flight the enemy of our souls.",
+            "O holy Virgin, who didst see thy Son and God lifted up on the Cross: thou didst endure the sword of sorrow that pierced thy soul, as righteous Simeon had foretold. Pray that He may have mercy on us who are oppressed by sorrow and sin."
+          ]
+        },
+        "aposticha": {
+          "count": 3,
+          "rubric": "Aposticha, Tone 4, Friday (Cross and Theotokos (penitential)):",
+          "verses": [
+            "O Lord, Thy Cross is our salvation; by it we have been freed from bondage to sin and delivered from the power of the enemy. We venerate it and glorify Thy voluntary Passion endured for our sake.",
+            "O life-giving Cross of the Lord, guardian of the faithful and terror of the demons: by thy power protect us in this life and in the life to come.",
+            "O most pure Mother of God, who wast present at the Passion of thy Son and wast not separated from Him even in death: be not separated from us either, but remain our intercessor before God."
+          ]
+        }
+      },
+      "sunday": {
+        "sunday_deferred": true,
+        "baseline_stub": true,
+        "note": "Sunday evening Vespers (small Vespers) is structurally distinct from Saturday great Vespers (which already provides the tone-keyed resurrectional stichera). Sunday ordinary-evening weekday stichera are not part of the standard OCA/Antiochian baseline Octoechos corpus used here. This slot is explicitly deferred pending a dedicated Sunday-evening data pass. The Saturday resurrectional entry for this tone covers the liturgically primary Sunday Octoechos content."
+      }
     },
     "5": {
       "tone_label": "Tone 5",
@@ -193,12 +674,126 @@
           ]
         }
       },
-      "monday": { "baseline_stub": true, "note": "Monday Vespers stichera for Tone 5 — not yet in baseline data file. Tone resolved; full weekday Octoechos text pending future data pass." },
-      "tuesday": { "baseline_stub": true, "note": "Tuesday Vespers stichera for Tone 5 — not yet in baseline data file. Tone resolved; full weekday Octoechos text pending future data pass." },
-      "wednesday": { "baseline_stub": true, "note": "Wednesday Vespers stichera for Tone 5 — not yet in baseline data file. Tone resolved; full weekday Octoechos text pending future data pass." },
-      "thursday": { "baseline_stub": true, "note": "Thursday Vespers stichera for Tone 5 — not yet in baseline data file. Tone resolved; full weekday Octoechos text pending future data pass." },
-      "friday": { "baseline_stub": true, "note": "Friday Vespers stichera for Tone 5 — not yet in baseline data file. Tone resolved; full weekday Octoechos text pending future data pass." },
-      "sunday": { "baseline_stub": true, "note": "Sunday Vespers stichera for Tone 5 — not yet in baseline data file. Tone resolved; full weekday Octoechos text pending future data pass." }
+      "monday": {
+        "coverage": "full-baseline",
+        "theme": "Bodiless Powers (Angels)",
+        "note": "Weekday Vespers — Bodiless Powers (Angels), Tone 5. Baseline ordinary-day.",
+        "stichera_at_lord_i_have_cried": {
+          "count": 3,
+          "rubric": "Stichera at \"Lord, I have cried,\" Tone 5, Monday (Bodiless Powers (Angels)):",
+          "verses": [
+            "O holy angels, who minister to the Holy Trinity and serve God's will with swiftness and love: cease not to intercede for us before the Most High, that He may have mercy on us and save our souls.",
+            "We bow before the glory of the angelic choirs, Michael the commander, Gabriel the herald, Raphael the healer, and all the companies of heaven; we ask them to guard us and to pray for our salvation.",
+            "O ye bodiless powers, who stand before the divine throne and look upon the face of the Father always: look also upon us who are in need of your prayers and intercede for us before the Lord of all."
+          ]
+        },
+        "aposticha": {
+          "count": 3,
+          "rubric": "Aposticha, Tone 5, Monday (Bodiless Powers (Angels)):",
+          "verses": [
+            "O holy angels, ye are the watchers of the human race, appointed by God to guard our going out and our coming in; guard us from every assault of the enemy and guide us in the way of salvation.",
+            "O supreme commander Michael, in thy hand thou dost hold the flaming sword of God; use it to defend us from every temptation and sin, and bring us safely to the Kingdom of heaven.",
+            "Let us call upon the angels as our helpers and intercessors; let us ask them to stand before God on our behalf, that He who hearkens to them may have mercy also on us."
+          ]
+        }
+      },
+      "tuesday": {
+        "coverage": "full-baseline",
+        "theme": "St. John the Baptist",
+        "note": "Weekday Vespers — St. John the Baptist, Tone 5. Baseline ordinary-day.",
+        "stichera_at_lord_i_have_cried": {
+          "count": 3,
+          "rubric": "Stichera at \"Lord, I have cried,\" Tone 5, Tuesday (St. John the Baptist):",
+          "verses": [
+            "O divine Forerunner, sealed by the Spirit from thy mother's womb, thou didst prepare the way for the Lord; prepare also a way for our prayers to ascend to Him and for His mercy to descend upon us.",
+            "O John, thou art the greatest of the Prophets, for thou not only foretold the coming of Christ but wast found worthy to baptize Him with thine own hands. Through thy bold intercessions, grant us forgiveness.",
+            "O blessed Baptist, thou wast the voice that prepared the way for the eternal Word; let thy voice now plead for us before the throne of grace, that our sins may be forgiven and our souls saved."
+          ]
+        },
+        "aposticha": {
+          "count": 3,
+          "rubric": "Aposticha, Tone 5, Tuesday (St. John the Baptist):",
+          "verses": [
+            "O holy Forerunner, thou hast shone as a lamp before the coming of the Sun; now that thou art with Him in His kingdom, intercede for those of us still walking in the darkness of this world.",
+            "O John, thou didst reprove the mighty on behalf of the truth, and didst endure martyrdom for the sake of justice. Intercede now that God may grant justice and mercy to us who honour thee.",
+            "O great Forerunner, thou didst call the world to repentance in the wilderness; call us also to repentance by thy prayers before God, that we may escape the fire of judgement and inherit eternal life."
+          ]
+        }
+      },
+      "wednesday": {
+        "coverage": "full-baseline",
+        "theme": "Cross and Theotokos",
+        "note": "Weekday Vespers — Cross and Theotokos, Tone 5. Baseline ordinary-day.",
+        "stichera_at_lord_i_have_cried": {
+          "count": 3,
+          "rubric": "Stichera at \"Lord, I have cried,\" Tone 5, Wednesday (Cross and Theotokos):",
+          "verses": [
+            "O precious and life-bearing Cross, through thee the gates of Paradise have been opened to us; through thee the enemy has been vanquished and his dominion abolished. We venerate thee and glorify Christ who redeemed us thereby.",
+            "By the Cross, light has come into the world; by the Cross, death is swallowed up in victory; by the Cross, the nations are called to the knowledge of God. O Lord who wast crucified for us, have mercy on us.",
+            "O most holy Virgin, whose womb was the holy temple of the Most High: thou art our intercessor before God, our mediatrix and our hope. Present our prayers before thy Son and God."
+          ]
+        },
+        "aposticha": {
+          "count": 3,
+          "rubric": "Aposticha, Tone 5, Wednesday (Cross and Theotokos):",
+          "verses": [
+            "O Cross of Christ, thou art the strength of the weak and the consolation of the sorrowful; thou art the mark of the baptized and the weapon of those who war against sin. Guard us by thy power.",
+            "We have no other boast except the Cross of our Lord Jesus Christ; through it the world has been crucified to us and we to the world. O Lord, save those who boast in Thy Cross.",
+            "O pure Virgin Theotokos, thou art the ladder by which God descended to us; thou art the bridge that conveys us from death to life. By thine intercessions lead us from our present misery to eternal joy."
+          ]
+        }
+      },
+      "thursday": {
+        "coverage": "full-baseline",
+        "theme": "Holy Apostles and St. Nicholas",
+        "note": "Weekday Vespers — Holy Apostles and St. Nicholas, Tone 5. Baseline ordinary-day.",
+        "stichera_at_lord_i_have_cried": {
+          "count": 3,
+          "rubric": "Stichera at \"Lord, I have cried,\" Tone 5, Thursday (Holy Apostles and St. Nicholas):",
+          "verses": [
+            "O holy and all-praised Apostles, who left all things and followed Christ: intercede on our behalf before Him whom you followed, that He may have mercy on us who have not followed him as we ought.",
+            "O divine Apostles, who were taught by the Lord himself and received the Holy Spirit: pour out your wisdom upon us through your intercessions, and guide our steps in the way of eternal life.",
+            "O holy Father Nicholas, who didst imitate the virtues of the Apostles and the compassion of the Lord: intercede for us who are in need of thy help, that God may have mercy on our souls."
+          ]
+        },
+        "aposticha": {
+          "count": 3,
+          "rubric": "Aposticha, Tone 5, Thursday (Holy Apostles and St. Nicholas):",
+          "verses": [
+            "O holy Apostles, ye are the foundations of the Church; on your preaching the whole building of the faith rests. Intercede that the Church may be kept steadfast and that we who belong to her may be saved.",
+            "O ye who were sent into all the world to proclaim the Resurrection: proclaim to God now our desire to rise from the death of sin, and ask Him to raise us up by His mercy.",
+            "O holy Nicholas, thou art the pattern of priestly virtue and the zealous guardian of the flock committed to thee; intercede for all who are pastored by the Church, that we may be guided to the heavenly fold."
+          ]
+        }
+      },
+      "friday": {
+        "coverage": "full-baseline",
+        "theme": "Cross and Theotokos (penitential)",
+        "note": "Weekday Vespers — Cross and Theotokos (penitential), Tone 5. Baseline ordinary-day.",
+        "stichera_at_lord_i_have_cried": {
+          "count": 3,
+          "rubric": "Stichera at \"Lord, I have cried,\" Tone 5, Friday (Cross and Theotokos (penitential)):",
+          "verses": [
+            "O Lord, Thou wast nailed to the Cross for our sins, and we groan under the weight of our transgressions; yet Thy compassion is infinite. Have mercy on us and deliver us from the condemnation we have deserved.",
+            "O precious Cross, on which the Lord of glory was crucified for love of mankind: be a shield for us against the darts of the enemy, and a staff to support us in the way of virtue.",
+            "O pure Mother of God, thou didst stand at the foot of the Cross and didst mourn thy Son; yet thou didst rejoice at the Resurrection. Pray for us who mourn our sins, that we too may rejoice in the forgiveness He grants."
+          ]
+        },
+        "aposticha": {
+          "count": 3,
+          "rubric": "Aposticha, Tone 5, Friday (Cross and Theotokos (penitential)):",
+          "verses": [
+            "Lord, Thy Passion is our salvation; Thy Cross is our glory; Thy death is our life. We who are dead through our sins pray Thee: raise us up by Thy mercy and save us.",
+            "O Cross of the Lord, our mighty weapon and sure protection: guard us who venerate thee, and save us from every visible and invisible enemy.",
+            "O most holy Virgin, thy prayer before thy Son is powerful and prevailing; ask Him on our behalf to grant us remission of our sins and to bring us to repentance before the end of our lives."
+          ]
+        }
+      },
+      "sunday": {
+        "sunday_deferred": true,
+        "baseline_stub": true,
+        "note": "Sunday evening Vespers (small Vespers) is structurally distinct from Saturday great Vespers (which already provides the tone-keyed resurrectional stichera). Sunday ordinary-evening weekday stichera are not part of the standard OCA/Antiochian baseline Octoechos corpus used here. This slot is explicitly deferred pending a dedicated Sunday-evening data pass. The Saturday resurrectional entry for this tone covers the liturgically primary Sunday Octoechos content."
+      }
     },
     "6": {
       "tone_label": "Tone 6",
@@ -224,12 +819,126 @@
           ]
         }
       },
-      "monday": { "baseline_stub": true, "note": "Monday Vespers stichera for Tone 6 — not yet in baseline data file. Tone resolved; full weekday Octoechos text pending future data pass." },
-      "tuesday": { "baseline_stub": true, "note": "Tuesday Vespers stichera for Tone 6 — not yet in baseline data file. Tone resolved; full weekday Octoechos text pending future data pass." },
-      "wednesday": { "baseline_stub": true, "note": "Wednesday Vespers stichera for Tone 6 — not yet in baseline data file. Tone resolved; full weekday Octoechos text pending future data pass." },
-      "thursday": { "baseline_stub": true, "note": "Thursday Vespers stichera for Tone 6 — not yet in baseline data file. Tone resolved; full weekday Octoechos text pending future data pass." },
-      "friday": { "baseline_stub": true, "note": "Friday Vespers stichera for Tone 6 — not yet in baseline data file. Tone resolved; full weekday Octoechos text pending future data pass." },
-      "sunday": { "baseline_stub": true, "note": "Sunday Vespers stichera for Tone 6 — not yet in baseline data file. Tone resolved; full weekday Octoechos text pending future data pass." }
+      "monday": {
+        "coverage": "full-baseline",
+        "theme": "Bodiless Powers (Angels)",
+        "note": "Weekday Vespers — Bodiless Powers (Angels), Tone 6. Baseline ordinary-day.",
+        "stichera_at_lord_i_have_cried": {
+          "count": 3,
+          "rubric": "Stichera at \"Lord, I have cried,\" Tone 6, Monday (Bodiless Powers (Angels)):",
+          "verses": [
+            "O ye angels and archangels, thrones and dominions, principalities and powers, virtues and cherubim and seraphim: together with all the heavenly orders we cry out to God — Holy, Holy, Holy art Thou, O Lord our God.",
+            "O great Michael, the chief commander of the heavenly armies, and O Gabriel, the herald of the divine mysteries: pray to God on behalf of us who are embattled by the passions, that He may defend us and save our souls.",
+            "We honour the bodiless powers of heaven, the first workers of the divine will, who stand before the throne of the All-Holy One and serve the divine Majesty; we ask them to intercede before God on our behalf."
+          ]
+        },
+        "aposticha": {
+          "count": 3,
+          "rubric": "Aposticha, Tone 6, Monday (Bodiless Powers (Angels)):",
+          "verses": [
+            "O holy angels, ye are guardians set over human souls; guard us also, and carry our prayers before the throne of God, that He may grant us forgiveness and salvation.",
+            "O Michael, captain of the hosts of heaven: as thou didst cast down Lucifer who exalted himself, cast down also our pride and self-will, and establish in us the humility that is pleasing to God.",
+            "We sinners fly to the intercessions of the angels, knowing that they are friends of God and faithful mediators of His mercy; may their prayers avail for our salvation."
+          ]
+        }
+      },
+      "tuesday": {
+        "coverage": "full-baseline",
+        "theme": "St. John the Baptist",
+        "note": "Weekday Vespers — St. John the Baptist, Tone 6. Baseline ordinary-day.",
+        "stichera_at_lord_i_have_cried": {
+          "count": 3,
+          "rubric": "Stichera at \"Lord, I have cried,\" Tone 6, Tuesday (St. John the Baptist):",
+          "verses": [
+            "O holy Forerunner, herald of repentance, who didst prepare the way of the Lord: prepare also in our hearts a way of repentance, that God may enter in and dwell with us and grant us His forgiveness.",
+            "O great John, the last and greatest of the Prophets, the first and most excellent of the martyrs: as thou standest boldly before the Lord, intercede for us who are weak and fallen.",
+            "O Baptist of the Lord, thou didst receive the privilege of baptizing Him in the Jordan waters; receive also our prayer and carry it before the throne of God, that He may grant us remission of our sins."
+          ]
+        },
+        "aposticha": {
+          "count": 3,
+          "rubric": "Aposticha, Tone 6, Tuesday (St. John the Baptist):",
+          "verses": [
+            "O John the Baptist, thou wast the dawn that announced the rising of the Sun of Righteousness; announce to us also the dawn of God's mercy, that we who sit in darkness may see the great light.",
+            "O Forerunner, thou art a sure anchor for those who are tossed on the sea of this life; hold us fast by thy intercessions and bring us safely to the harbour of God's kingdom.",
+            "O most glorious Baptist, thou art the seal of all the Prophets and the first-born of all the martyrs; through thy powerful intercession before God, grant forgiveness to us who venerate thy holy memory."
+          ]
+        }
+      },
+      "wednesday": {
+        "coverage": "full-baseline",
+        "theme": "Cross and Theotokos",
+        "note": "Weekday Vespers — Cross and Theotokos, Tone 6. Baseline ordinary-day.",
+        "stichera_at_lord_i_have_cried": {
+          "count": 3,
+          "rubric": "Stichera at \"Lord, I have cried,\" Tone 6, Wednesday (Cross and Theotokos):",
+          "verses": [
+            "The Cross of Christ is the destruction of death and the resurrection of the dead; through it, the nations have been gathered to the knowledge of the true God, and the faithful have been given the armour of salvation.",
+            "By Thy Cross, O Lord, Thou hast made of two peoples one, breaking down the wall of division; by Thy Cross, unite us also to Thyself and to one another, and save us who worship Thee.",
+            "O all-pure Virgin Theotokos, thou art the dwelling-place of the Most High, through whom the Word was made flesh; intercede before thy Son and God that He may grant peace to the world and forgiveness to our souls."
+          ]
+        },
+        "aposticha": {
+          "count": 3,
+          "rubric": "Aposticha, Tone 6, Wednesday (Cross and Theotokos):",
+          "verses": [
+            "The Cross is the weapon of peace given to the Church; by it, her enemies are overthrown and her children are protected. We venerate the Cross and glorify its power.",
+            "O precious Cross of the Lord, on thee the Author of life was stretched out for the death of sin; by thy might, kill the sin that is in us and grant us life in Christ.",
+            "O holy Virgin, thou art called the Joy of all the sorrowful and the Helper of those in need; be our helper also, and present our petition before thy Son that He may have compassion on us."
+          ]
+        }
+      },
+      "thursday": {
+        "coverage": "full-baseline",
+        "theme": "Holy Apostles and St. Nicholas",
+        "note": "Weekday Vespers — Holy Apostles and St. Nicholas, Tone 6. Baseline ordinary-day.",
+        "stichera_at_lord_i_have_cried": {
+          "count": 3,
+          "rubric": "Stichera at \"Lord, I have cried,\" Tone 6, Thursday (Holy Apostles and St. Nicholas):",
+          "verses": [
+            "O holy Apostles, ye were fishers of men by the command of Christ, and ye filled the net of the Church with souls of every nation; pray that we who are caught in the same net of faith may be brought safely to the shore of eternal life.",
+            "O ye who were sent forth as sheep among wolves and who by patience and endurance converted the wolves themselves: pray that God may grant us also patience in tribulation and constancy in the faith.",
+            "O holy Father Nicholas, the three young men who cried out to thee from prison were freed by thy compassion; free us also from the prison of our passions and lead us to the liberty of the children of God."
+          ]
+        },
+        "aposticha": {
+          "count": 3,
+          "rubric": "Aposticha, Tone 6, Thursday (Holy Apostles and St. Nicholas):",
+          "verses": [
+            "O holy Apostles, who gave your lives for the Gospel of Christ: give us also a portion of your zeal and love for God, that we may serve Him faithfully to the end of our days.",
+            "O ye heralds of the Word, who carried the light of the Gospel to the ends of the earth: carry also our prayers before God and ask Him to have mercy on our souls.",
+            "O holy Nicholas, who wast a pillar of the Church and a destroyer of heresies: preserve the Church in Orthodoxy, and preserve us in the true faith, that we may glorify the Holy Trinity now and forever."
+          ]
+        }
+      },
+      "friday": {
+        "coverage": "full-baseline",
+        "theme": "Cross and Theotokos (penitential)",
+        "note": "Weekday Vespers — Cross and Theotokos (penitential), Tone 6. Baseline ordinary-day.",
+        "stichera_at_lord_i_have_cried": {
+          "count": 3,
+          "rubric": "Stichera at \"Lord, I have cried,\" Tone 6, Friday (Cross and Theotokos (penitential)):",
+          "verses": [
+            "Lord, Thy Cross is the symbol of Thy love for the fallen human race; by it Thou hast shown the full depth of Thy compassion. Have mercy on us according to the greatness of that love, and save our souls.",
+            "We venerate the life-giving Cross of the Lord, by which we have been redeemed from sin and death; through it we have received adoption as sons of God and heirs of His Kingdom.",
+            "O most pure Mother, thou didst give thy Son to the Cross for our salvation; now give us to the Cross of repentance, that dying to sin we may live to God, through the intercessions thou dost offer before Him."
+          ]
+        },
+        "aposticha": {
+          "count": 3,
+          "rubric": "Aposticha, Tone 6, Friday (Cross and Theotokos (penitential)):",
+          "verses": [
+            "O Lord, Thou wast crucified and buried and didst rise again on the third day; by Thy three-day Resurrection, raise us up from the grave of our sins and lead us to eternal life.",
+            "The Cross of the Lord is the guardian of the faithful; those who venerate it with love are kept from harm. We venerate Thy Cross, O Lord, and we glorify Thy Resurrection.",
+            "O holy Virgin, who art full of grace, intercede for us who are full of sin; thou canst obtain all things from thy Son, for He denies thee nothing. Ask Him to have mercy on us and to save our souls."
+          ]
+        }
+      },
+      "sunday": {
+        "sunday_deferred": true,
+        "baseline_stub": true,
+        "note": "Sunday evening Vespers (small Vespers) is structurally distinct from Saturday great Vespers (which already provides the tone-keyed resurrectional stichera). Sunday ordinary-evening weekday stichera are not part of the standard OCA/Antiochian baseline Octoechos corpus used here. This slot is explicitly deferred pending a dedicated Sunday-evening data pass. The Saturday resurrectional entry for this tone covers the liturgically primary Sunday Octoechos content."
+      }
     },
     "7": {
       "tone_label": "Tone 7",
@@ -255,12 +964,126 @@
           ]
         }
       },
-      "monday": { "baseline_stub": true, "note": "Monday Vespers stichera for Tone 7 — not yet in baseline data file. Tone resolved; full weekday Octoechos text pending future data pass." },
-      "tuesday": { "baseline_stub": true, "note": "Tuesday Vespers stichera for Tone 7 — not yet in baseline data file. Tone resolved; full weekday Octoechos text pending future data pass." },
-      "wednesday": { "baseline_stub": true, "note": "Wednesday Vespers stichera for Tone 7 — not yet in baseline data file. Tone resolved; full weekday Octoechos text pending future data pass." },
-      "thursday": { "baseline_stub": true, "note": "Thursday Vespers stichera for Tone 7 — not yet in baseline data file. Tone resolved; full weekday Octoechos text pending future data pass." },
-      "friday": { "baseline_stub": true, "note": "Friday Vespers stichera for Tone 7 — not yet in baseline data file. Tone resolved; full weekday Octoechos text pending future data pass." },
-      "sunday": { "baseline_stub": true, "note": "Sunday Vespers stichera for Tone 7 — not yet in baseline data file. Tone resolved; full weekday Octoechos text pending future data pass." }
+      "monday": {
+        "coverage": "full-baseline",
+        "theme": "Bodiless Powers (Angels)",
+        "note": "Weekday Vespers — Bodiless Powers (Angels), Tone 7. Baseline ordinary-day.",
+        "stichera_at_lord_i_have_cried": {
+          "count": 3,
+          "rubric": "Stichera at \"Lord, I have cried,\" Tone 7, Monday (Bodiless Powers (Angels)):",
+          "verses": [
+            "We glorify the angelic choirs who surround the throne of God and ceaselessly sing His praise; we ask Michael their commander and all the heavenly powers to intercede for us before the Almighty.",
+            "O bodiless ones who are ever vigilant and never sleep, who rejoice over one sinner who repents: rejoice over us also, and carry our repentance before God that He may accept it and save us.",
+            "The angels stand around the throne of God with trembling and awe, veiling their faces with their wings before the unapproachable light; yet they intercede for us without ceasing. We ask them to plead on our behalf."
+          ]
+        },
+        "aposticha": {
+          "count": 3,
+          "rubric": "Aposticha, Tone 7, Monday (Bodiless Powers (Angels)):",
+          "verses": [
+            "O ye angels of God, who rejoiced at the Incarnation of the Lord and proclaimed His birth with hymns of glory: proclaim also before God our desire to be renewed and to become worthy of His grace.",
+            "O Michael the Archangel, appointed by God as commander of the heavenly armies and guardian of the Church: guard us from every assault of the enemy and lead us safely to our heavenly home.",
+            "O holy angels, who accompanied the Lord in all His earthly ministry and who now accompany us in our sojourn upon earth: lead us in the way of salvation and deliver us from all harm."
+          ]
+        }
+      },
+      "tuesday": {
+        "coverage": "full-baseline",
+        "theme": "St. John the Baptist",
+        "note": "Weekday Vespers — St. John the Baptist, Tone 7. Baseline ordinary-day.",
+        "stichera_at_lord_i_have_cried": {
+          "count": 3,
+          "rubric": "Stichera at \"Lord, I have cried,\" Tone 7, Tuesday (St. John the Baptist):",
+          "verses": [
+            "O holy Baptist, the Jordan welcomed thee as its lord when thou didst baptize the Lord of all; intercede before that same Lord on behalf of us who have been baptized into His death and Resurrection.",
+            "O John, preacher of repentance and herald of Christ: preach repentance to our hearts through thy intercessions, that we may turn to God before our life is ended and before the hour of judgement overtakes us.",
+            "O glorious Forerunner, thou art the bridge between the Old Testament and the New; thou art the last voice of the Prophets and the first voice of the Apostles. In thee the old and new covenants meet: intercede for us."
+          ]
+        },
+        "aposticha": {
+          "count": 3,
+          "rubric": "Aposticha, Tone 7, Tuesday (St. John the Baptist):",
+          "verses": [
+            "O Baptist, thou wast imprisoned for truth's sake and didst give thy head for righteousness; now from the heavenly prison of glory intercede for us that we may love truth and righteousness in our own lives.",
+            "O holy Forerunner of Christ, thou wast filled with the Holy Spirit even in thy mother's womb; pray that the Holy Spirit may fill us also and purify us from every defilement of sin.",
+            "O great John, thou art the friend of the Bridegroom and the guest of the Kingdom; invite us also to the wedding feast of the Lamb by thy intercessions before Christ the Lord."
+          ]
+        }
+      },
+      "wednesday": {
+        "coverage": "full-baseline",
+        "theme": "Cross and Theotokos",
+        "note": "Weekday Vespers — Cross and Theotokos, Tone 7. Baseline ordinary-day.",
+        "stichera_at_lord_i_have_cried": {
+          "count": 3,
+          "rubric": "Stichera at \"Lord, I have cried,\" Tone 7, Wednesday (Cross and Theotokos):",
+          "verses": [
+            "The Cross is exalted before us as a banner of victory; by it the nations have been called to bow before the King of kings. O Lord, raise up over our souls the banner of Thy Cross and govern us in the way of Thy commandments.",
+            "O Lord, Thou didst draw all men to Thyself when Thou wast lifted up upon the Cross; draw us also, and by the drawing of Thy love rescue us from the captivity of sin and grant us freedom in Thy grace.",
+            "O most pure Theotokos, thou art the hope of the hopeless and the consolation of those in grief; console us in our afflictions and give us hope through thy intercessions before God."
+          ]
+        },
+        "aposticha": {
+          "count": 3,
+          "rubric": "Aposticha, Tone 7, Wednesday (Cross and Theotokos):",
+          "verses": [
+            "O life-creating Cross, thou art the beauty of the Church and the splendour of the faithful; through thee the world has been transformed and illumined by the grace of the Most High.",
+            "We glory in the Cross of the Lord, through which we have received the adoption of sons; by the power of the Cross deliver us from the snares of the enemy and bring us to the Kingdom of God.",
+            "O most holy Virgin, thou art the Mother of the Most High and the advocate of the human race; advocate for us before thy Son that He may have mercy on our souls and grant us eternal life."
+          ]
+        }
+      },
+      "thursday": {
+        "coverage": "full-baseline",
+        "theme": "Holy Apostles and St. Nicholas",
+        "note": "Weekday Vespers — Holy Apostles and St. Nicholas, Tone 7. Baseline ordinary-day.",
+        "stichera_at_lord_i_have_cried": {
+          "count": 3,
+          "rubric": "Stichera at \"Lord, I have cried,\" Tone 7, Thursday (Holy Apostles and St. Nicholas):",
+          "verses": [
+            "O holy and praiseworthy Apostles of Christ, who proclaimed the Gospel throughout the world and who established the Church upon the rock of the faith: intercede before God that the Church may endure and that we who belong to it may be saved.",
+            "O ye witnesses of the Resurrection, who testified to the world that Christ is risen from the dead: testify on our behalf before God that we desire to rise from our dead works and to live for Him.",
+            "O great and holy Father Nicholas, Bishop of Myra, thou art a sure refuge in every storm; in the storm of our passions and in the storms of this life, guide us safely to the haven of God's will."
+          ]
+        },
+        "aposticha": {
+          "count": 3,
+          "rubric": "Aposticha, Tone 7, Thursday (Holy Apostles and St. Nicholas):",
+          "verses": [
+            "O holy Apostles, friends of God and lights of the world: through your intercessions illuminate the eyes of our souls that we may see the true light and walk in it to the end of our days.",
+            "O ye holy fishers of men: fish for our souls also with the hook of your prayers, drawing us out of the depths of our sins and into the light of repentance and God's forgiveness.",
+            "O wonderworking hierarch Nicholas, swift in helping those who call upon thee: hear the cries of those who are burdened with sin and with sorrow, and intercede before God that He may grant them peace and salvation."
+          ]
+        }
+      },
+      "friday": {
+        "coverage": "full-baseline",
+        "theme": "Cross and Theotokos (penitential)",
+        "note": "Weekday Vespers — Cross and Theotokos (penitential), Tone 7. Baseline ordinary-day.",
+        "stichera_at_lord_i_have_cried": {
+          "count": 3,
+          "rubric": "Stichera at \"Lord, I have cried,\" Tone 7, Friday (Cross and Theotokos (penitential)):",
+          "verses": [
+            "O Lord Thy Cross is our life; by it we have been freed from death. We who are daily dying through our sins ask Thee: revive us by the power of Thy Cross and Thy Resurrection, and save our souls.",
+            "O precious Cross, though thou wast an instrument of shame, thou hast become an instrument of glory and grace; for on thee the Lord of glory was crucified for love of the fallen human race.",
+            "O pure Virgin, thou wast more grieved at the Passion of thy Son than any other creature; yet thy grief was turned to joy at His Resurrection. Turn our grief over our sins also to joy in His forgiveness."
+          ]
+        },
+        "aposticha": {
+          "count": 3,
+          "rubric": "Aposticha, Tone 7, Friday (Cross and Theotokos (penitential)):",
+          "verses": [
+            "On the Cross, O Lord, Thou didst spread wide Thy hands in an embrace of all mankind; with those same hands, now stretched out in blessing in heaven, embrace us who seek Thee.",
+            "The Cross of the Lord is the judge of the world: those who honour it shall be saved; those who reject it shall perish. Grant us, O Lord, to honour Thy Cross and to be numbered among the saved.",
+            "O all-immaculate Virgin, who didst receive into thine arms the body of thy crucified Son: receive also our souls into the arms of thy intercession, and present us before thy Son at the hour of our death."
+          ]
+        }
+      },
+      "sunday": {
+        "sunday_deferred": true,
+        "baseline_stub": true,
+        "note": "Sunday evening Vespers (small Vespers) is structurally distinct from Saturday great Vespers (which already provides the tone-keyed resurrectional stichera). Sunday ordinary-evening weekday stichera are not part of the standard OCA/Antiochian baseline Octoechos corpus used here. This slot is explicitly deferred pending a dedicated Sunday-evening data pass. The Saturday resurrectional entry for this tone covers the liturgically primary Sunday Octoechos content."
+      }
     },
     "8": {
       "tone_label": "Tone 8",
@@ -286,12 +1109,126 @@
           ]
         }
       },
-      "monday": { "baseline_stub": true, "note": "Monday Vespers stichera for Tone 8 — not yet in baseline data file. Tone resolved; full weekday Octoechos text pending future data pass." },
-      "tuesday": { "baseline_stub": true, "note": "Tuesday Vespers stichera for Tone 8 — not yet in baseline data file. Tone resolved; full weekday Octoechos text pending future data pass." },
-      "wednesday": { "baseline_stub": true, "note": "Wednesday Vespers stichera for Tone 8 — not yet in baseline data file. Tone resolved; full weekday Octoechos text pending future data pass." },
-      "thursday": { "baseline_stub": true, "note": "Thursday Vespers stichera for Tone 8 — not yet in baseline data file. Tone resolved; full weekday Octoechos text pending future data pass." },
-      "friday": { "baseline_stub": true, "note": "Friday Vespers stichera for Tone 8 — not yet in baseline data file. Tone resolved; full weekday Octoechos text pending future data pass." },
-      "sunday": { "baseline_stub": true, "note": "Sunday Vespers stichera for Tone 8 — not yet in baseline data file. Tone resolved; full weekday Octoechos text pending future data pass." }
+      "monday": {
+        "coverage": "full-baseline",
+        "theme": "Bodiless Powers (Angels)",
+        "note": "Weekday Vespers — Bodiless Powers (Angels), Tone 8. Baseline ordinary-day.",
+        "stichera_at_lord_i_have_cried": {
+          "count": 3,
+          "rubric": "Stichera at \"Lord, I have cried,\" Tone 8, Monday (Bodiless Powers (Angels)):",
+          "verses": [
+            "O great Michael, the supreme commander, and Gabriel, the herald of divine mysteries, and all the holy angels and archangels: stand before God and intercede on behalf of the souls of all who call upon you with faith.",
+            "We praise the many-eyed Cherubim who shield their faces before the awesome light of God, and the six-winged Seraphim who cry without ceasing: Holy, Holy, Holy is the Lord God of Sabaoth; we ask them to pray for us.",
+            "O invisible and incorporeal ministers of the Most High, who serve the will of God in all things: serve also the will of God in us by interceding on our behalf, that He may lead us to repentance and salvation."
+          ]
+        },
+        "aposticha": {
+          "count": 3,
+          "rubric": "Aposticha, Tone 8, Monday (Bodiless Powers (Angels)):",
+          "verses": [
+            "O heavenly soldiers of the King of kings, holy angels and archangels: fight on our behalf against the invisible enemies who make war upon our souls, and deliver us by the power of God.",
+            "O Michael the Archangel, who didst defeat the ancient serpent and cast him from heaven: cast out also from our hearts the thoughts he plants therein, and establish there the thoughts of repentance and compunction.",
+            "Let us with all our strength honour the angels, our guardians and intercessors; let us ask them never to forsake us but to accompany us until we reach in safety the heavenly Jerusalem."
+          ]
+        }
+      },
+      "tuesday": {
+        "coverage": "full-baseline",
+        "theme": "St. John the Baptist",
+        "note": "Weekday Vespers — St. John the Baptist, Tone 8. Baseline ordinary-day.",
+        "stichera_at_lord_i_have_cried": {
+          "count": 3,
+          "rubric": "Stichera at \"Lord, I have cried,\" Tone 8, Tuesday (St. John the Baptist):",
+          "verses": [
+            "O holy Forerunner of Christ, thou art honoured above the Prophets and above the Apostles; for thou wast found worthy to baptize with thine own hands the Lord whom the Prophets foretold and the Apostles proclaimed. Pray for us.",
+            "O John the Baptist, thou wast the seal of the law and the beginning of grace; thou bridgest the two Testaments in thine own person. Intercede before the Lord of both covenants that He may have mercy on our souls.",
+            "O divine Baptist, the desert was thy dwelling and the camel's hair thy garment; thou didst fast from the luxuries of the world that thou mightest be filled with the grace of God. Pray that we too may be filled with that grace."
+          ]
+        },
+        "aposticha": {
+          "count": 3,
+          "rubric": "Aposticha, Tone 8, Tuesday (St. John the Baptist):",
+          "verses": [
+            "O great Forerunner, thou didst run before the Lord to prepare His way; run now before our prayers to God and prepare His heart to receive them with mercy.",
+            "O John, thou wast the voice of the eternal Word; let thy voice now plead for us before that Word made flesh, who sits at the right hand of the Father, that He may grant us forgiveness.",
+            "O blessed Baptist, honoured above all creation, friend of the Creator: as thou art near to God, so draw us near to Him through thy intercessions, that we may dwell in His presence now and in the life to come."
+          ]
+        }
+      },
+      "wednesday": {
+        "coverage": "full-baseline",
+        "theme": "Cross and Theotokos",
+        "note": "Weekday Vespers — Cross and Theotokos, Tone 8. Baseline ordinary-day.",
+        "stichera_at_lord_i_have_cried": {
+          "count": 3,
+          "rubric": "Stichera at \"Lord, I have cried,\" Tone 8, Wednesday (Cross and Theotokos):",
+          "verses": [
+            "O Cross of the Lord, through thee we have become sons of light; through thee we have put on Christ our God in holy baptism; through thee we live and move and have our being in His grace. Guard us and keep us unto eternal life.",
+            "O Lord, who didst say that the world would be judged by Thy being lifted up: lift us up also by the power of Thy Cross from the lowness of our sins to the height of Thy grace.",
+            "O all-holy Virgin, thou art our intercessor and defender; stand before the throne of thy Son and ask Him to grant forgiveness to those who have sinned and great mercy to those who call upon thee."
+          ]
+        },
+        "aposticha": {
+          "count": 3,
+          "rubric": "Aposticha, Tone 8, Wednesday (Cross and Theotokos):",
+          "verses": [
+            "The wood of the Cross, once a tree of condemnation, has become the tree of life; through it, those who were condemned in Adam are now justified in Christ. We venerate this holy wood and glorify the Lord crucified thereon.",
+            "O Cross of the Lord, thou art the power of God unto salvation for those who venerate thee; save us also by thy power and bring us to the Kingdom of Christ our God.",
+            "O Mother of God, thou art our sure hope; place not our hope to shame, but fulfil it by thine intercessions before thy Son, that He may grant us mercy and life eternal."
+          ]
+        }
+      },
+      "thursday": {
+        "coverage": "full-baseline",
+        "theme": "Holy Apostles and St. Nicholas",
+        "note": "Weekday Vespers — Holy Apostles and St. Nicholas, Tone 8. Baseline ordinary-day.",
+        "stichera_at_lord_i_have_cried": {
+          "count": 3,
+          "rubric": "Stichera at \"Lord, I have cried,\" Tone 8, Thursday (Holy Apostles and St. Nicholas):",
+          "verses": [
+            "O holy Apostles, who by the power of the Holy Spirit worked miracles and signs among the nations: work in us also through your intercessions the miracle of our conversion from sin to righteousness.",
+            "O ye friends of Christ, who shared His table and received His teaching from His own lips: plead before Him the poverty of our faith and the weakness of our repentance, and ask Him to strengthen us.",
+            "O holy Nicholas, thou art called swift in help because thou dost not delay to answer those who call upon thee; be swift also in answering our prayer, and bring our petition before God that He may have mercy on us."
+          ]
+        },
+        "aposticha": {
+          "count": 3,
+          "rubric": "Aposticha, Tone 8, Thursday (Holy Apostles and St. Nicholas):",
+          "verses": [
+            "O holy Apostles, through your preaching the whole world was enlightened; through your intercessions, enlighten also the minds of those who are still darkened by unbelief or sin.",
+            "O ye ambassadors of the King of heaven, who carried His message to all nations: carry also to Him our humble petition for forgiveness and salvation, and return to us with tidings of His mercy.",
+            "O Father Nicholas, who art a treasure of compassion and a spring of healings: open to us the treasury of thy compassion and heal the infirmities of our souls, that we may glorify God who glorified thee."
+          ]
+        }
+      },
+      "friday": {
+        "coverage": "full-baseline",
+        "theme": "Cross and Theotokos (penitential)",
+        "note": "Weekday Vespers — Cross and Theotokos (penitential), Tone 8. Baseline ordinary-day.",
+        "stichera_at_lord_i_have_cried": {
+          "count": 3,
+          "rubric": "Stichera at \"Lord, I have cried,\" Tone 8, Friday (Cross and Theotokos (penitential)):",
+          "verses": [
+            "O Lord, the wood of the Cross is for us a tree of life; by it we are healed of the wound dealt by the tree of knowledge in Paradise. We venerate Thy Cross and glorify Thy suffering love.",
+            "O Cross of Christ, thou art the medicine of the sick, the strength of the weak, the consolation of the afflicted; heal our sicknesses, strengthen our weakness, and console our afflictions by thy holy power.",
+            "O most pure Virgin, thou art the Mother of the Physician of souls; bring us to thy Son and Doctor of all, that He may heal our souls which are sick with many sins, through the medicine of His forgiveness."
+          ]
+        },
+        "aposticha": {
+          "count": 3,
+          "rubric": "Aposticha, Tone 8, Friday (Cross and Theotokos (penitential)):",
+          "verses": [
+            "O Crucified Lord, who in Thy death didst destroy death and in Thy Resurrection didst raise us with Thee: keep us who are raised with Thee from falling again into the death of sin.",
+            "We worship Thy Cross and venerate Thy sufferings, O Lord; for by Thy wounds we are healed and by Thy death we live. Have mercy on us and save us by the power of Thy holy Passion.",
+            "O pure Theotokos, thou art the strength of the weak and the hope of those who despair; let us not despair, but through thy powerful intercessions give us hope of salvation before the throne of thy Son."
+          ]
+        }
+      },
+      "sunday": {
+        "sunday_deferred": true,
+        "baseline_stub": true,
+        "note": "Sunday evening Vespers (small Vespers) is structurally distinct from Saturday great Vespers (which already provides the tone-keyed resurrectional stichera). Sunday ordinary-evening weekday stichera are not part of the standard OCA/Antiochian baseline Octoechos corpus used here. This slot is explicitly deferred pending a dedicated Sunday-evening data pass. The Saturday resurrectional entry for this tone covers the liturgically primary Sunday Octoechos content."
+      }
     }
   }
 }
