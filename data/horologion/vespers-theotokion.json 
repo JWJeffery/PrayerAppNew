@@ -1,0 +1,96 @@
+{
+  "_comment": [
+    "data/horologion/vespers-theotokion.json — Horologion v1.7",
+    "",
+    "PURPOSE: Dismissal Theotokia of the Octoechos for Saturday Great Vespers.",
+    "Keyed by tone string ('1'–'8').",
+    "",
+    "RULE: Dismissal Theotokion of the current Octoechos tone.",
+    "SOURCE: Byzantine Octoechos; Antiochian/OCA Hapgood-tradition English.",
+    "",
+    "LITURGICAL CONTEXT:",
+    "  At Saturday Great Vespers (ordinary, no feast), after the Resurrectional",
+    "  Troparion (Apolytikion), the Theotokion of the same tone is sung.",
+    "  These are the apolytikion-paired dismissal Theotokia of the Octoechos.",
+    "  They are invariable for each tone and require no Menaion.",
+    "",
+    "DISTINCTION FROM THE DOGMATIKON:",
+    "  The Dogmatikon (major Saturday Theotokion) is the longer theological",
+    "  hymn sung during the Aposticha. It is already part of the stichera",
+    "  resolution (octoechos-vespers.json). These dismissal Theotokia are",
+    "  shorter texts sung at the close of Vespers after the Apolytikion.",
+    "",
+    "BRIGHT WEEK:",
+    "  During Bright Week the Paschal Troparion is used at the dismissal",
+    "  and there is no separate dismissal Theotokion. This is an explicit",
+    "  liturgical omission, not a data gap. The engine returns a rubric",
+    "  noting this clearly.",
+    "",
+    "OVERRIDES NOT IMPLEMENTED (explicitly noted, not silently absent):",
+    "  - Feast Theotokia: when a Great Feast falls on Saturday, a proper",
+    "    Theotokion replaces the ordinary tone Theotokion — requires feast-rank engine.",
+    "  - Weekday Theotokia: depend on which Menaion troparion was sung.",
+    "    Not included here. Engine returns tone-identified stub for weekdays.",
+    "  - Sunday: deferred — part of the Sunday Vespers pass.",
+    "  - Great Lent: different Theotokion patterns. Deferred."
+  ],
+  "meta": {
+    "version": "1.7.0",
+    "rule": "dismissal-theotokion-octoechos-tone",
+    "applicable_days": [
+      "saturday"
+    ],
+    "bright_week": "omitted — no dismissal Theotokion during Bright Week; Paschal Troparion serves as dismissal",
+    "weekday_status": "stub-only — depends on Menaion troparion not yet implemented",
+    "sunday_status": "deferred — part of Sunday Vespers pass",
+    "overrides_implemented": false,
+    "overrides_deferred": [
+      "feast-theotokia",
+      "weekday-theotokia",
+      "great-lent",
+      "sunday-vespers"
+    ]
+  },
+  "dismissal_theotokia": {
+    "1": {
+      "tone": 1,
+      "title": "Dismissal Theotokion, Tone 1",
+      "text": "Gabriel cried aloud unto thee, O Virgin: Rejoice, O gracious one! The Lord is with thee. Blessed art thou among women, for thou hast conceived the Savior of our souls."
+    },
+    "2": {
+      "tone": 2,
+      "title": "Dismissal Theotokion, Tone 2",
+      "text": "All thy hope do I place in thee, O Mother of God; keep me under thy protection."
+    },
+    "3": {
+      "tone": 3,
+      "title": "Dismissal Theotokion, Tone 3",
+      "text": "We who, for thy sake, have been enriched with grace, do hymn thee, O Theotokos, with the angels, crying aloud unto thee: Rejoice, Lady, protection, intercession, and salvation of our souls."
+    },
+    "4": {
+      "tone": 4,
+      "title": "Dismissal Theotokion, Tone 4",
+      "text": "The mystery which was hidden from eternity and was unknown of the angels hath been revealed through thee, O Theotokos, to those on earth: God in unconfused union incarnate, of His own will accepting the Cross for our sakes, whereby He raised the first-created man and saved our souls from death."
+    },
+    "5": {
+      "tone": 5,
+      "title": "Dismissal Theotokion, Tone 5",
+      "text": "Rejoice, O gate of the Lord that cannot be passed through! Rejoice, O wall and protection of those who flee unto thee! Rejoice, O untroubled haven and Virgin, who gavest birth in the flesh to thy Creator and God! Cease not to intercede for those who hymn and worship the birth thou gavest."
+    },
+    "6": {
+      "tone": 6,
+      "title": "Dismissal Theotokion, Tone 6",
+      "text": "Having placed all hope in thee, O Mother of God, I shall be under thy protection."
+    },
+    "7": {
+      "tone": 7,
+      "title": "Dismissal Theotokion, Tone 7",
+      "text": "Thou art the source of tenderness, O Theotokos; vouchsafe to us tenderness, O thou who art full of compassion, and turn our misfortunes to joy. Strengthen the Christian people, and grant them salvation from above, for thou art the divine protection of thy servants."
+    },
+    "8": {
+      "tone": 8,
+      "title": "Dismissal Theotokion, Tone 8",
+      "text": "O Theotokos, Thou who art truly worthy to be blessed, thou art the immutable glory of those who are steadfast, the exalted boast of those who are pure, and thou art the support of the whole world. Intercede with thy Son and God for the salvation of our souls."
+    }
+  }
+}

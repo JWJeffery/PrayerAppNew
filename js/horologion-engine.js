@@ -1,6 +1,6 @@
 // ── js/horologion-engine.js ────────────────────────────────────────────────
 //
-// Horologion Engine v1.6
+// Horologion Engine v1.7
 // Architecture layer: ENGINE (not UI, not calendar)
 //
 // This module owns:
@@ -53,6 +53,21 @@
 //   - theotokion-dismissal: remains deferred this pass (depends on which
 //     troparion was sung; weekday theotokion requires Menaion resolution).
 //
+// ── v1.7 additions ─────────────────────────────────────────────────────────
+//   - _loadTheotokionData(): loads data/horologion/vespers-theotokion.json
+//   - _resolveTheotokionSlot(dayOfWeek, toneResult): returns a resolved item
+//     for the theotokion-dismissal slot.
+//     Saturday: full dismissal Theotokion text for the current tone (tones 1–8).
+//       These are the Octoechos apolytikion-paired dismissal Theotokia,
+//       invariable for each tone at ordinary Saturday Great Vespers.
+//     Bright Week: no dismissal Theotokion — the Paschal Troparion itself
+//       serves as the dismissal; explicit omission rubric returned.
+//     Weekday (Mon–Fri): tone-identified rubric stub — the weekday
+//       dismissal Theotokion depends on which Menaion troparion was sung;
+//       Menaion not yet implemented; tone is stated; text not fabricated.
+//     Sunday: explicitly deferred — part of the Sunday Vespers pass.
+//     Festal overrides: NOT implemented; stated openly in Saturday output.
+//
 // ──────────────────────────────────────────────────────────────────────────
 const HorologionEngine = (() => {
 
@@ -79,6 +94,9 @@ const HorologionEngine = (() => {
     // ── v1.6: Troparion/Apolytikion data file URL ──────────────────────────
     const TROPARION_URL = 'data/horologion/vespers-troparion.json';
 
+    // ── v1.7: Dismissal Theotokion data file URL ───────────────────────────
+    const THEOTOKION_URL = 'data/horologion/vespers-theotokion.json';
+
     // ── v1.2: Weekday prokeimena lookup array (null until first fetch) ──────
     // Populated lazily by _loadVespersProkeimena(). Indexed by JS Date.getDay()
     // (0 = Sunday … 6 = Saturday). Built from vespers-prokeimena.json entries.
@@ -100,6 +118,11 @@ const HorologionEngine = (() => {
     // Shape: { resurrectional_troparia: { "1": {...}, ... "8": {...} },
     //          paschal_troparion: { title, text, note } }
     let _troparionData = null;
+
+    // ── v1.7: Theotokion data object (null until first fetch) ──────────────
+    // Populated lazily by _loadTheotokionData().
+    // Shape: { dismissal_theotokia: { "1": {...}, ... "8": {...} } }
+    let _theotokionData = null;
 
     // ── v1.3: Pascha cache ─────────────────────────────────────────────────
     // Keyed by Gregorian year string. Avoids recomputing Pascha repeatedly
@@ -862,6 +885,155 @@ const HorologionEngine = (() => {
 
 
     // ──────────────────────────────────────────────────────────────────────
+    // v1.7: _loadTheotokionData()
+    //
+    // Fetches and caches the Vespers dismissal Theotokion data from
+    // data/horologion/vespers-theotokion.json.
+    //
+    // Non-throwing: on failure, logs a warning and leaves _theotokionData null.
+    // The resolver degrades gracefully — the theotokion-dismissal slot
+    // remains as a placeholder rather than failing or fabricating content.
+    // ──────────────────────────────────────────────────────────────────────
+    async function _loadTheotokionData() {
+        if (_theotokionData !== null) return; // already loaded or attempted
+
+        try {
+            const response = await fetch(THEOTOKION_URL);
+            if (!response.ok) {
+                console.warn(`[HorologionEngine] Could not load theotokion data (HTTP ${response.status}); theotokion-dismissal slot will remain as placeholder.`);
+                return;
+            }
+            _theotokionData = await response.json();
+            console.log('[HorologionEngine] Loaded Vespers dismissal Theotokion data (tones 1–8).');
+        } catch (err) {
+            console.warn('[HorologionEngine] _loadTheotokionData failed:', err.message, '— theotokion-dismissal slot will remain as placeholder.');
+            // _theotokionData remains null; next call will retry
+        }
+    }
+
+
+    // ──────────────────────────────────────────────────────────────────────
+    // v1.7: _resolveTheotokionSlot(dayOfWeek, toneResult)
+    //
+    // Returns a resolved item for the theotokion-dismissal slot,
+    // or null if the data file has not loaded (graceful degradation).
+    //
+    // dayOfWeek: JS Date.getDay() value (0 = Sunday … 6 = Saturday)
+    // toneResult: object from _computeBaselineTone() — { tone, brightWeek, ... }
+    //
+    // RULE: Dismissal Theotokion of the current Octoechos tone.
+    //
+    // SATURDAY (ordinary Great Vespers):
+    //   Returns the full dismissal Theotokion text for the computed tone.
+    //   These are the apolytikion-paired dismissal Theotokia of the Octoechos,
+    //   invariable for each tone. Require no Menaion.
+    //   Source: data/horologion/vespers-theotokion.json, keyed by tone string.
+    //   resolvedAs: 'dismissal-theotokion-saturday'
+    //
+    // BRIGHT WEEK (Pascha Sunday through Thomas Saturday):
+    //   The Paschal Troparion itself serves as the dismissal during Bright Week;
+    //   there is no separate dismissal Theotokion. This is a liturgical omission,
+    //   not a data gap. Returns an explanatory rubric.
+    //   resolvedAs: 'bright-week-no-theotokion'
+    //
+    // WEEKDAY (Monday–Friday) ORDINARY:
+    //   The dismissal Theotokion at weekday Vespers follows the tone of whichever
+    //   Menaion troparion was sung. Since weekday troparion text is Menaion-driven
+    //   and not yet implemented, the weekday Theotokion cannot be resolved without
+    //   fabricating a link that does not exist. Returns a tone-identified stub.
+    //   resolvedAs: 'weekday-menaion-required'
+    //
+    // SUNDAY:
+    //   Explicitly deferred — part of the dedicated Sunday Vespers pass.
+    //   resolvedAs: 'sunday-deferred'
+    //
+    // FESTAL OVERRIDES:
+    //   Not implemented. When a Great Feast falls on Saturday, its proper
+    //   Theotokion replaces the ordinary tone Theotokion. Requires feast-rank
+    //   engine. The Saturday output states this limitation explicitly.
+    //
+    // Returns: a resolved item object, or null on data load failure.
+    // ──────────────────────────────────────────────────────────────────────
+    function _resolveTheotokionSlot(dayOfWeek, toneResult) {
+        // If data file failed to load, degrade to placeholder.
+        if (_theotokionData === null) return null;
+
+        // ── Bright Week: no dismissal Theotokion ─────────────────────────
+        if (toneResult.brightWeek) {
+            return {
+                type:       'rubric',
+                key:        'theotokion-dismissal',
+                label:      'Theotokion',
+                text:       '(Bright Week — no dismissal Theotokion. ' +
+                            'During Bright Week (Pascha Sunday through Thomas Saturday) ' +
+                            'the Paschal Troparion ("Christ is risen") itself serves as the dismissal. ' +
+                            'No separate Theotokion is sung.)',
+                resolvedAs: 'bright-week-no-theotokion'
+            };
+        }
+
+        const tone = toneResult.tone;
+        if (!tone) return null;
+
+        // ── Sunday: explicitly deferred ───────────────────────────────────
+        if (dayOfWeek === 0) {
+            return {
+                type:       'rubric',
+                key:        'theotokion-dismissal',
+                label:      'Theotokion',
+                text:       `(Sunday Vespers — Theotokion deferred. ` +
+                            `Current tone: Tone ${tone}. ` +
+                            `Sunday Vespers Theotokion handling is part of the dedicated Sunday Vespers pass ` +
+                            `and is not resolved in this baseline.)`,
+                tone:       tone,
+                resolvedAs: 'sunday-deferred'
+            };
+        }
+
+        // ── Saturday: full dismissal Theotokion ───────────────────────────
+        if (dayOfWeek === 6) {
+            const theotokia = _theotokionData.dismissal_theotokia;
+            const entry = theotokia && theotokia[String(tone)];
+            if (!entry) return null;
+
+            return {
+                type:       'text',
+                key:        'theotokion-dismissal',
+                label:      entry.title,
+                text:       entry.text + '\n\n' +
+                            `(BASELINE — ordinary Saturday Great Vespers, Tone ${tone}. ` +
+                            `This is the dismissal Theotokion of the Octoechos, paired with the ` +
+                            `Resurrectional Troparion of the same tone. ` +
+                            `Note: this is distinct from the Dogmatikon (major Theotokion of the tone) ` +
+                            `sung during the Aposticha. ` +
+                            `On Great Feast days, a proper Theotokion replaces this text; ` +
+                            `festal overrides are not yet implemented.)`,
+                tone:       tone,
+                resolvedAs: 'dismissal-theotokion-saturday'
+            };
+        }
+
+        // ── Weekday (Mon–Fri): tone-identified stub ───────────────────────
+        // The dismissal Theotokion at weekday Vespers follows the tone of the
+        // Menaion troparion. Since weekday troparion text is not yet implemented,
+        // the Theotokion cannot be determined without fabrication. Tone is known.
+        return {
+            type:       'rubric',
+            key:        'theotokion-dismissal',
+            label:      'Theotokion',
+            text:       `(Tone ${tone} — Weekday Dismissal Theotokion: Menaion required. ` +
+                        `The dismissal Theotokion at weekday Vespers follows the tone of the troparion sung. ` +
+                        `The current Octoechos tone is Tone ${tone}. ` +
+                        `Because weekday troparion text is Menaion-driven and not yet implemented, ` +
+                        `the corresponding Theotokion cannot be resolved without fabrication. ` +
+                        `Full resolution requires Menaion data.)`,
+            tone:       tone,
+            resolvedAs: 'weekday-menaion-required'
+        };
+    }
+
+
+    // ──────────────────────────────────────────────────────────────────────
     // v1.3: _resolveSticheraSlot(tone, weekdayName, slotKey, toneResult)
     //
     // Resolves a single stichera-style slot from the Octoechos data.
@@ -989,18 +1161,31 @@ const HorologionEngine = (() => {
     //       Sunday Vespers pass.
     //     Festal overrides: NOT implemented. Feast-rank engine deferred.
     //
-    // Slots NOT resolved in v1.6 (deferred):
-    //   theotokion-dismissal — depends on which troparion was sung;
-    //     weekday theotokion requires Menaion resolution first.
-    //     Saturday/Sunday dismissal Theotokia are deferred to a future pass.
+    // Slots resolved in v1.7:
+    //   theotokion-dismissal
+    //     Saturday: full dismissal Theotokion text for the current tone (tones 1–8).
+    //       Octoechos apolytikion-paired dismissal Theotokia — invariable per tone.
+    //       Distinct from the Dogmatikon (which is part of the Aposticha).
+    //     Bright Week: explicit omission rubric — Paschal Troparion serves as
+    //       the dismissal; no separate Theotokion is sung.
+    //     Weekday (Mon–Fri): tone-identified rubric stub — Menaion required;
+    //       weekday Theotokion follows the Menaion troparion, not yet implemented.
+    //     Sunday: explicitly deferred — part of the Sunday Vespers pass.
+    //     Festal overrides: NOT implemented; stated openly in Saturday output.
+    //
+    // Slots NOT resolved in v1.7 (deferred):
+    //   theotokion-dismissal (weekday Menaion-driven) — requires Menaion
+    //   theotokion-dismissal (Sunday) — part of Sunday Vespers pass
+    //   All Sunday Vespers slots — dedicated Sunday pass pending
     // ──────────────────────────────────────────────────────────────────────
     async function _resolveVespersSlots(sections, dateObj) {
-        // Load all four data files in parallel
+        // Load all five data files in parallel
         await Promise.all([
             _loadVespersProkeimena(),
             _loadOctoechosData(),
             _loadKathismaData(),
-            _loadTroparionData()
+            _loadTroparionData(),
+            _loadTheotokionData()
         ]);
 
         const dayOfWeek = dateObj.getDay(); // 0 = Sunday, 6 = Saturday
@@ -1124,11 +1309,19 @@ const HorologionEngine = (() => {
                     // If null (data load failed), slot remains placeholder.
                 }
 
-                // ── theotokion-dismissal (deferred) ──────────────────────
-                // Not resolved in v1.6. The dismissal Theotokion depends on
-                // which troparion was sung. Weekday Theotokia require Menaion
-                // resolution; Saturday/Sunday Theotokia are deferred to a
-                // future pass. See function documentation above.
+                // ── theotokion-dismissal (v1.7) ───────────────────────────
+                // Saturday: full dismissal Theotokion (Octoechos, tone-matched).
+                // Bright Week: explicit omission rubric.
+                // Weekdays: tone-identified stub (Menaion required for text).
+                // Sunday: explicitly deferred.
+                // Festal overrides: NOT implemented in this pass.
+                else if (item.key === 'theotokion-dismissal') {
+                    const resolved = _resolveTheotokionSlot(dayOfWeek, toneResult);
+                    if (resolved) {
+                        section.items[i] = resolved;
+                    }
+                    // If null (data load failed), slot remains placeholder.
+                }
             }
         }
     }
