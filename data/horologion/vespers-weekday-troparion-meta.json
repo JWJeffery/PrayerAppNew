@@ -1,0 +1,111 @@
+{
+  "_comment": [
+    "data/horologion/vespers-weekday-troparion-meta.json — Horologion v2.0",
+    "",
+    "PURPOSE: Documents the weekday troparion (apolytikion) dependency model",
+    "for Mon–Fri Byzantine Vespers. This file contains NO troparion text.",
+    "It records what is structurally known about the slot without fabricating",
+    "Menaion content that does not exist in this repository.",
+    "",
+    "WHY THIS FILE EXISTS:",
+    "  The weekday troparion at Vespers is drawn from the Menaion — the daily",
+    "  saints calendar. There is no single fixed Octoechos weekday troparion",
+    "  cycle equivalent to the stichera cycle. The engine can identify the",
+    "  current Octoechos tone and the standard Byzantine weekday liturgical",
+    "  theme for each day, but cannot produce actual troparion text without",
+    "  Menaion data. This file makes that dependency contract explicit and",
+    "  machine-readable, supporting better rubric output and future resolution.",
+    "",
+    "WEEKDAY LITURGICAL THEMES (standard Byzantine Octoechos schema):",
+    "  These themes govern which class of saints is commemorated each weekday",
+    "  when no specific Menaion feast of higher rank overrides. They inform the",
+    "  troparion choice — e.g., on an ordinary Monday with no ranked feast,",
+    "  a troparion to the Bodiless Powers may be used. On days with a ranked",
+    "  Menaion commemoration, the Menaion troparion takes precedence.",
+    "",
+    "RESOLUTION DEPENDENCY CHAIN:",
+    "  1. Determine if a Great Feast or ranked feast falls on this date.",
+    "     If yes: use the feast's proper apolytikion from the Menaion.",
+    "  2. Determine if there is a Menaion saint of rank 4+ for this date.",
+    "     If yes: use the saint's apolytikion from the Menaion.",
+    "  3. If no ranked Menaion commemoration: use the weekday theme troparion",
+    "     from the Octoechos for the current tone and weekday theme.",
+    "     (Step 3 text is NOT available in this repo without Menaion import.)",
+    "",
+    "WHAT IS NOT YET IMPLEMENTED:",
+    "  - Menaion saint data with troparion text",
+    "  - Feast-rank override engine",
+    "  - Octoechos generic weekday troparia (distinct from the stichera corpus)",
+    "    These are shorter 1-stanza troparia, not the resurrectional apolytikia.",
+    "",
+    "SOURCE FOR FUTURE IMPLEMENTATION:",
+    "  Antiochian Service Book / OCA Menaion (12 volumes)",
+    "  Jordanville Horologion (2008) weekday troparion tables"
+  ],
+  "meta": {
+    "version": "2.0.0",
+    "purpose": "weekday-troparion-dependency-contract",
+    "troparion_text_available": false,
+    "troparion_text_source": "Menaion — not yet in repo",
+    "weekday_theme_available": true,
+    "note": "weekday_themes below may be used by the engine to produce an accurate rubric even without troparion text"
+  },
+  "weekday_themes": {
+    "monday": {
+      "weekdayIndex": 1,
+      "theme": "Bodiless Powers (Angels)",
+      "theme_short": "Angels",
+      "theme_note": "Monday commemorates the Bodiless Powers — the angelic orders, headed by the Archangels Michael and Gabriel. On ordinary Mondays, the troparion addresses the holy Angels.",
+      "troparion_tone_rule": "Current Octoechos weekly tone; or Menaion saint's tone if ranked commemoration present.",
+      "troparion_source": "Menaion (if ranked feast) or Octoechos weekday theme (if ordinary)"
+    },
+    "tuesday": {
+      "weekdayIndex": 2,
+      "theme": "St. John the Baptist and the Prophets",
+      "theme_short": "St. John the Baptist",
+      "theme_note": "Tuesday commemorates St. John the Baptist (the Forerunner) and the Old Testament Prophets. On ordinary Tuesdays, the troparion addresses the Forerunner.",
+      "troparion_tone_rule": "Current Octoechos weekly tone; or Menaion saint's tone if ranked commemoration present.",
+      "troparion_source": "Menaion (if ranked feast) or Octoechos weekday theme (if ordinary)"
+    },
+    "wednesday": {
+      "weekdayIndex": 3,
+      "theme": "Cross and Theotokos",
+      "theme_short": "The Holy Cross",
+      "theme_note": "Wednesday commemorates the Holy Cross and the Theotokos. It is one of the two weekly fasting days. The troparion typically addresses the Cross or the Theotokos. The dismissal Theotokion is a Stavrotheotokion (Cross-Theotokion).",
+      "troparion_tone_rule": "Current Octoechos weekly tone; or Menaion saint's tone if ranked commemoration present.",
+      "troparion_source": "Menaion (if ranked feast) or Octoechos weekday theme (if ordinary)",
+      "fasting_day": true,
+      "stavrotheotokion": true
+    },
+    "thursday": {
+      "weekdayIndex": 4,
+      "theme": "Holy Apostles and St. Nicholas of Myra",
+      "theme_short": "Holy Apostles",
+      "theme_note": "Thursday commemorates the Holy Apostles and St. Nicholas, Archbishop of Myra. On ordinary Thursdays, the troparion addresses the Apostles and/or St. Nicholas.",
+      "troparion_tone_rule": "Current Octoechos weekly tone; or Menaion saint's tone if ranked commemoration present.",
+      "troparion_source": "Menaion (if ranked feast) or Octoechos weekday theme (if ordinary)"
+    },
+    "friday": {
+      "weekdayIndex": 5,
+      "theme": "Cross and Theotokos (penitential)",
+      "theme_short": "The Holy Cross (penitential)",
+      "theme_note": "Friday commemorates the Passion of Christ — the Crucifixion — and the Theotokos in her grief. It is the second weekly fasting day. The troparion addresses the Cross with a penitential character. The dismissal Theotokion is a Stavrotheotokion.",
+      "troparion_tone_rule": "Current Octoechos weekly tone; or Menaion saint's tone if ranked commemoration present.",
+      "troparion_source": "Menaion (if ranked feast) or Octoechos weekday theme (if ordinary)",
+      "fasting_day": true,
+      "stavrotheotokion": true
+    }
+  },
+  "resolution_states": {
+    "menaion_unavailable": {
+      "code": "weekday-menaion-required",
+      "description": "No Menaion troparion text is available in this repo. The weekday theme and Octoechos tone are known. The rubric states the theme and tone accurately.",
+      "honest_output": "type:rubric with weekday theme, tone, and clear dependency note"
+    },
+    "menaion_available": {
+      "code": "weekday-menaion-resolved",
+      "description": "Future state: Menaion troparion text resolved for the specific saint of the day. Not yet implemented.",
+      "honest_output": "type:text with saint name, troparion text, tone"
+    }
+  }
+}

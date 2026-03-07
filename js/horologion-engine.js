@@ -1,6 +1,6 @@
 // ── js/horologion-engine.js ────────────────────────────────────────────────
 //
-// Horologion Engine v1.9
+// Horologion Engine v2.0
 // Architecture layer: ENGINE (not UI, not calendar)
 //
 // This module owns:
@@ -132,6 +132,34 @@
 //       weekly tone. This baseline uses the Octoechos tone — correct when
 //       the two tones agree (ordinary weeks). Stated openly in the output text.
 //
+// ── v2.0 additions ─────────────────────────────────────────────────────────
+//   Weekday Menaion refinement — Mon–Fri troparion-or-apolytikion.
+//
+//   ASSESSMENT RESULT (v2.0):
+//     Full weekday troparion text is NOT derivable from existing repo data.
+//     No Menaion corpus exists. No fake text has been introduced.
+//     The Octoechos weekday stichera (octoechos-vespers.json) cover chorus
+//     texts but NOT the troparion/apolytikion slot.
+//     The resurrectional troparia (vespers-troparion.json) are Sat/Sun only.
+//
+//   WHAT IS IMPLEMENTED (Outcome B + C):
+//     1. New data file: data/horologion/vespers-weekday-troparion-meta.json
+//        Dependency contract: weekday themes, resolution chain, resolution
+//        states. Contains NO troparion text. Honest documentation only.
+//     2. _loadWeekdayTroparionMeta(): lazy loader. Non-throwing; falls back
+//        to an inline theme table if the file cannot be loaded.
+//     3. _resolveTroparionSlot() weekday branch upgraded:
+//        - Rubric names the liturgical theme of the day (e.g., "Angels" on
+//          Monday, "Holy Apostles" on Thursday).
+//        - Fasting day flag noted on Wednesday and Friday.
+//        - weekdayTheme field added to the returned item for future use.
+//        - resolvedAs: 'weekday-theme-rubric' (more precise than prior code).
+//
+//   WHAT REMAINS DEFERRED:
+//     - Actual weekday troparion text (requires Menaion data import)
+//     - Feast-rank override engine
+//     - Great Lent overrides
+//
 // ──────────────────────────────────────────────────────────────────────────
 const HorologionEngine = (() => {
 
@@ -198,6 +226,27 @@ const HorologionEngine = (() => {
     // Shape: { weekday_theotokia: { "1": { monday: {...}, tuesday: {...}, ... }, ... } }
     // Covers tones 1–8, weekdays Monday–Friday (40 entries total).
     let _weekdayTheotokionData = null;
+
+    // ── v2.0: Weekday troparion meta file URL ─────────────────────────────
+    // Documents the dependency contract for weekday troparia (no text supplied).
+    const WEEKDAY_TROPARION_META_URL = 'data/horologion/vespers-weekday-troparion-meta.json';
+
+    // ── v2.0: Weekday troparion meta object (null until first fetch) ───────
+    // Populated lazily by _loadWeekdayTroparionMeta().
+    // Shape: { weekday_themes: { monday: { theme, theme_short, fasting_day? }, ... } }
+    // Used to produce accurate weekday theme rubrics without fabricating text.
+    let _weekdayTroparionMeta = null;
+
+    // ── v2.0: Inline fallback weekday theme table ──────────────────────────
+    // Used if the meta JSON file fails to load. Keeps the rubric accurate
+    // even under network failure without requiring the file at runtime.
+    const _WEEKDAY_THEME_FALLBACK = {
+        monday:    { theme: 'Bodiless Powers (Angels)',              theme_short: 'Angels',                fasting_day: false },
+        tuesday:   { theme: 'St. John the Baptist and the Prophets', theme_short: 'St. John the Baptist',  fasting_day: false },
+        wednesday: { theme: 'Cross and Theotokos',                   theme_short: 'the Holy Cross',         fasting_day: true  },
+        thursday:  { theme: 'Holy Apostles and St. Nicholas',        theme_short: 'the Holy Apostles',      fasting_day: false },
+        friday:    { theme: 'Cross and Theotokos (penitential)',     theme_short: 'the Holy Cross',         fasting_day: true  }
+    };
 
     // ── v1.3: Pascha cache ─────────────────────────────────────────────────
     // Keyed by Gregorian year string. Avoids recomputing Pascha repeatedly
@@ -958,22 +1007,47 @@ const HorologionEngine = (() => {
             };
         }
 
-        // ── Weekday (Mon–Fri): tone-identified stub ───────────────────────
+        // ── Weekday (Mon–Fri): theme-identified rubric stub ──────────────────
         // The weekday troparion is drawn from the Menaion (saints of the day).
-        // There is no single week-cycle rule that safely identifies it without
-        // Menaion data. The tone is known; the text is not fabricated.
+        // No Menaion data exists in this repo; no text is fabricated.
+        // The liturgical theme for the day is known from the Octoechos schema
+        // and is included in the rubric to produce an accurate, informative stub.
+        const WEEKDAY_NAMES_LC = ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'];
+        const weekdayName = WEEKDAY_NAMES_LC[dayOfWeek] || 'unknown';
+
+        // Resolve theme from loaded meta or inline fallback table
+        const themeSource = (_weekdayTroparionMeta && _weekdayTroparionMeta.weekday_themes)
+            ? _weekdayTroparionMeta.weekday_themes[weekdayName]
+            : _WEEKDAY_THEME_FALLBACK[weekdayName];
+
+        const theme      = themeSource ? themeSource.theme       : 'see Menaion';
+        const themeShort = themeSource ? themeSource.theme_short : 'see Menaion';
+        const fastingDay = themeSource ? !!themeSource.fasting_day : false;
+
+        const fastingNote = fastingDay
+            ? ` (${weekdayName.charAt(0).toUpperCase() + weekdayName.slice(1)} is a weekly fasting day; the troparion typically addresses the Cross.)`
+            : '';
+
         return {
-            type:       'rubric',
-            key:        'troparion-or-apolytikion',
-            label:      'Troparion / Apolytikion of the Day',
-            text:       `(Tone ${tone} — Weekday Troparion: Menaion required. ` +
-                        `The troparion at weekday Vespers is appointed by the Menaion ` +
-                        `(the saints and commemorations of this day). ` +
-                        `The current Octoechos tone is Tone ${tone}. ` +
-                        `Full weekday troparion resolution requires Menaion data, which is not yet implemented. ` +
-                        `The Resurrectional Troparion of Tone ${tone} is NOT used at ordinary weekday Vespers.)`,
-            tone:       tone,
-            resolvedAs: 'weekday-menaion-required'
+            type:         'rubric',
+            key:          'troparion-or-apolytikion',
+            label:        `Troparion / Apolytikion of the Day — ${theme}`,
+            text:         `[${theme}${fastingNote}]\n\n` +
+                          `Tone ${tone} — Weekday Troparion: Menaion required.\n\n` +
+                          `On an ordinary ${weekdayName.charAt(0).toUpperCase() + weekdayName.slice(1)}, ` +
+                          `Byzantine Vespers appoints the troparion of ${themeShort} from the Menaion. ` +
+                          `If a saint of rank 4 or higher is commemorated from the Menaion today, ` +
+                          `the saint's own apolytikion is used in its place.\n\n` +
+                          `The current Octoechos weekly tone is Tone ${tone}. ` +
+                          `The troparion is typically sung in the tone of the saint's apolytikion (Menaion), ` +
+                          `which may or may not coincide with Tone ${tone}.\n\n` +
+                          `Weekday troparion text resolution requires Menaion data, which is not yet ` +
+                          `available in this repository. The Resurrectional Troparion of Tone ${tone} ` +
+                          `is NOT used at ordinary weekday Vespers.`,
+            tone:         tone,
+            weekdayTheme: theme,
+            fastingDay:   fastingDay,
+            resolvedAs:   'weekday-theme-rubric'
         };
     }
 
@@ -1034,6 +1108,38 @@ const HorologionEngine = (() => {
         } catch (err) {
             console.warn('[HorologionEngine] _loadWeekdayTheotokionData failed:', err.message, '— weekday theotokion-dismissal will fall back to rubric stub.');
             // _weekdayTheotokionData remains null; next call will retry
+        }
+    }
+
+
+    // ──────────────────────────────────────────────────────────────────────
+    // v2.0: _loadWeekdayTroparionMeta()
+    //
+    // Fetches and caches the weekday troparion dependency metadata from
+    // data/horologion/vespers-weekday-troparion-meta.json.
+    //
+    // This file contains NO troparion text. It documents the weekday theme
+    // schema (Mon–Fri liturgical themes) and resolution contract. It is used
+    // to produce accurate weekday rubric stubs in _resolveTroparionSlot().
+    //
+    // Non-throwing: on failure the engine falls back to the inline
+    // _WEEKDAY_THEME_FALLBACK table, which contains the same theme data.
+    // The troparion rubric will still be informative even without this file.
+    // ──────────────────────────────────────────────────────────────────────
+    async function _loadWeekdayTroparionMeta() {
+        if (_weekdayTroparionMeta !== null) return; // already loaded or attempted
+
+        try {
+            const response = await fetch(WEEKDAY_TROPARION_META_URL);
+            if (!response.ok) {
+                console.warn(`[HorologionEngine] Could not load weekday troparion meta (HTTP ${response.status}); falling back to inline theme table.`);
+                return;
+            }
+            _weekdayTroparionMeta = await response.json();
+            console.log('[HorologionEngine] Loaded weekday troparion meta (theme dependency contract, Mon–Fri).');
+        } catch (err) {
+            console.warn('[HorologionEngine] _loadWeekdayTroparionMeta failed:', err.message, '— falling back to inline weekday theme table.');
+            // _weekdayTroparionMeta remains null; inline fallback used in resolver
         }
     }
 
@@ -1398,20 +1504,23 @@ const HorologionEngine = (() => {
     //     resolvedAs: 'weekday-octoechos-theotokion'
     //     Graceful degradation: falls back to rubric stub if data file unavailable.
     //
-    // Slots NOT resolved in v1.9 (deferred):
-    //   troparion-or-apolytikion (weekday Mon–Fri) — Menaion required; unchanged
+    // Slots NOT resolved in v2.0 (deferred):
+    //   troparion-or-apolytikion (weekday Mon–Fri) — Menaion text required;
+    //     rubric now includes weekday liturgical theme (v2.0 improvement).
+    //     resolvedAs changed to 'weekday-theme-rubric'.
     //   Feast-rank override engine — deferred
     //   Great Lent variable overrides — deferred
     // ──────────────────────────────────────────────────────────────────────
     async function _resolveVespersSlots(sections, dateObj) {
-        // Load all five data files in parallel
+        // Load all data files in parallel (seven loaders as of v2.0)
         await Promise.all([
             _loadVespersProkeimena(),
             _loadOctoechosData(),
             _loadKathismaData(),
             _loadTroparionData(),
             _loadTheotokionData(),
-            _loadWeekdayTheotokionData()
+            _loadWeekdayTheotokionData(),
+            _loadWeekdayTroparionMeta()
         ]);
 
         const dayOfWeek = dateObj.getDay(); // 0 = Sunday, 6 = Saturday
@@ -1631,3 +1740,4 @@ const HorologionEngine = (() => {
 
 // Expose globally for the no-build-step SPA pattern
 window.HorologionEngine = HorologionEngine;
+
