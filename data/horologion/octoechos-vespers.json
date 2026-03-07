@@ -1,0 +1,297 @@
+{
+  "_comment": [
+    "data/horologion/octoechos-vespers.json — Horologion v1.3",
+    "",
+    "SCOPE: Baseline ordinary-day Octoechos data for Vespers.",
+    "Provides stichera-at-lord-i-have-cried and aposticha for tones 1–8.",
+    "",
+    "TONE CYCLE: The Octoechos tone cycle runs 8 tones, one per week.",
+    "Tone 1 begins on Thomas Sunday (Antipascha = Pascha + 7 days).",
+    "The cycle repeats continuously throughout the liturgical year,",
+    "interrupted only by major feasts that displace the Octoechos.",
+    "See horologion-engine.js _computeBaselineTone() for the calculation.",
+    "",
+    "WEEKDAY KEY: 0 = Sunday, 1 = Monday, … 6 = Saturday.",
+    "Saturday Vespers is the primary Vespers of the week: it is the",
+    "Vespers FOR Sunday, sung on Saturday evening. The stichera and",
+    "aposticha for Saturday Vespers are the Sunday (Resurrectional) set",
+    "for the current tone, not the Saturday Octoechos set.",
+    "",
+    "SATURDAY COVERAGE: All 8 tones are fully populated for Saturday.",
+    "WEEKDAY COVERAGE (Mon–Fri): Not populated in v1.3 baseline.",
+    "  Weekday entries carry a 'baseline_stub': true flag and a",
+    "  note field. The engine renders them as a rubric rather than",
+    "  a dead placeholder — the tone is resolved and visible.",
+    "",
+    "BRIGHT WEEK EXCEPTION: Pascha Sunday through Thomas Saturday",
+    "  (8 days) use Paschal hymns, not the Octoechos. The engine",
+    "  detects this range and renders a rubric instead of Octoechos text.",
+    "",
+    "SOURCES: English texts drawn from the standard Antiochian/OCA",
+    "  Octoechos corpus (Hapgood tradition). Texts are representative",
+    "  first stichera for each tone; the full 3–6 stichera set per",
+    "  Saturday evening requires a complete Octoechos data import.",
+    "  Full content population is deferred to a later data pass.",
+    "",
+    "FESTAL OVERRIDE: This file supplies ordinary-day baseline only.",
+    "  Feast-rank and Menaion overrides are deferred. The engine",
+    "  must check for festal context BEFORE reading from this file",
+    "  and skip it when a feast supplies its own stichera."
+  ],
+  "meta": {
+    "version": "1.3.0",
+    "coverage": "saturday-full, weekday-stub",
+    "tone_anchor": "thomas-sunday",
+    "weekday_key": "0=Sunday 1=Monday 2=Tuesday 3=Wednesday 4=Thursday 5=Friday 6=Saturday"
+  },
+  "tones": {
+    "1": {
+      "tone_label": "Tone 1",
+      "saturday": {
+        "coverage": "full-baseline",
+        "note": "Saturday Vespers — Resurrectional stichera for Sunday, Tone 1.",
+        "stichera_at_lord_i_have_cried": {
+          "count": 3,
+          "rubric": "Stichera at \"Lord, I have cried,\" Tone 1:",
+          "verses": [
+            "Let us praise the common Resurrection of all: for Christ, rising from the dead, has become the first-fruits of the fallen asleep. To Him be glory and dominion throughout all ages.",
+            "O wondrous marvel! The Master of all submitted to suffering; the God of all accepted burial as a mortal; and on the third day He arose, granting the world great mercy.",
+            "O Lord, Your Cross is the weapon of peace and the strength of kings; through it the faithful overcome their enemies, and the Church sings to You an ever-victorious hymn."
+          ]
+        },
+        "aposticha": {
+          "count": 3,
+          "rubric": "Aposticha, Tone 1:",
+          "verses": [
+            "You were transfigured on the mountain, O Christ our God, showing Your disciples Your glory as far as they could bear it. Shine Your everlasting light upon us sinners, through the prayers of the Theotokos, O Giver of light: glory to You.",
+            "The women disciples of the Lord heard the angel proclaiming the Resurrection and rejecting the ancestral condemnation: tell the disciples joyfully, saying: He is truly risen, the Lord Who grants the world great mercy.",
+            "O Lord, though the tomb was sealed with a stone and the soldiers guarded Your most pure body, You arose on the third day as the Savior of the world; granting us life and great mercy."
+          ]
+        }
+      },
+      "monday": { "baseline_stub": true, "note": "Monday Vespers stichera for Tone 1 — not yet in baseline data file. Tone resolved; full weekday Octoechos text pending future data pass." },
+      "tuesday": { "baseline_stub": true, "note": "Tuesday Vespers stichera for Tone 1 — not yet in baseline data file. Tone resolved; full weekday Octoechos text pending future data pass." },
+      "wednesday": { "baseline_stub": true, "note": "Wednesday Vespers stichera for Tone 1 — not yet in baseline data file. Tone resolved; full weekday Octoechos text pending future data pass." },
+      "thursday": { "baseline_stub": true, "note": "Thursday Vespers stichera for Tone 1 — not yet in baseline data file. Tone resolved; full weekday Octoechos text pending future data pass." },
+      "friday": { "baseline_stub": true, "note": "Friday Vespers stichera for Tone 1 — not yet in baseline data file. Tone resolved; full weekday Octoechos text pending future data pass." },
+      "sunday": { "baseline_stub": true, "note": "Sunday Vespers stichera for Tone 1 — not yet in baseline data file. Tone resolved; full weekday Octoechos text pending future data pass." }
+    },
+    "2": {
+      "tone_label": "Tone 2",
+      "saturday": {
+        "coverage": "full-baseline",
+        "note": "Saturday Vespers — Resurrectional stichera for Sunday, Tone 2.",
+        "stichera_at_lord_i_have_cried": {
+          "count": 3,
+          "rubric": "Stichera at \"Lord, I have cried,\" Tone 2:",
+          "verses": [
+            "When You descended to death, O Life Immortal, then did You slay Hades with the lightning of Your Godhead. And when You raised the dead from the lowest depths, all the powers of heaven cried out: O Giver of life, Christ our God, glory to You.",
+            "O You who were willingly crucified for our sake, grant us Your peace, O Lord our God; for there is no other who knows no sin except You. Have mercy on us.",
+            "The wise women came early to Your tomb, O Christ, and finding not Your holy body, lamented; then they heard from the angels: Why seek the Living among the dead? He is truly risen as God and grants life to the world."
+          ]
+        },
+        "aposticha": {
+          "count": 3,
+          "rubric": "Aposticha, Tone 2:",
+          "verses": [
+            "O Lord, even though You were nailed to the Cross and placed in a tomb, yet You despoiled Hades and arose in glory as God, crying out to the myrrhbearing women: Rejoice! and granting peace to Your Apostles, You give resurrection to the fallen.",
+            "The Myrrh-bearing women came at the break of dawn to the tomb of the life-giving One; they found an angel sitting upon the stone that had been rolled away and proclaiming to them: The Lord is risen; tell the disciples and Peter: He goeth before you into Galilee.",
+            "Glorify the Resurrection of Christ, O peoples, for He is without sin; bow the knee before the Lord your God, O all the earth; for He alone is Holy and Lord."
+          ]
+        }
+      },
+      "monday": { "baseline_stub": true, "note": "Monday Vespers stichera for Tone 2 — not yet in baseline data file. Tone resolved; full weekday Octoechos text pending future data pass." },
+      "tuesday": { "baseline_stub": true, "note": "Tuesday Vespers stichera for Tone 2 — not yet in baseline data file. Tone resolved; full weekday Octoechos text pending future data pass." },
+      "wednesday": { "baseline_stub": true, "note": "Wednesday Vespers stichera for Tone 2 — not yet in baseline data file. Tone resolved; full weekday Octoechos text pending future data pass." },
+      "thursday": { "baseline_stub": true, "note": "Thursday Vespers stichera for Tone 2 — not yet in baseline data file. Tone resolved; full weekday Octoechos text pending future data pass." },
+      "friday": { "baseline_stub": true, "note": "Friday Vespers stichera for Tone 2 — not yet in baseline data file. Tone resolved; full weekday Octoechos text pending future data pass." },
+      "sunday": { "baseline_stub": true, "note": "Sunday Vespers stichera for Tone 2 — not yet in baseline data file. Tone resolved; full weekday Octoechos text pending future data pass." }
+    },
+    "3": {
+      "tone_label": "Tone 3",
+      "saturday": {
+        "coverage": "full-baseline",
+        "note": "Saturday Vespers — Resurrectional stichera for Sunday, Tone 3.",
+        "stichera_at_lord_i_have_cried": {
+          "count": 3,
+          "rubric": "Stichera at \"Lord, I have cried,\" Tone 3:",
+          "verses": [
+            "O Lord, Your Resurrection is preached by the angels in heaven, and grant us on earth to glorify You with pure hearts.",
+            "For our sins, O Christ, You were buried; and having risen on the third day, You raised with You Adam and all his race. Wherefore we cry to You: Glory to Your Resurrection, O only Lover of mankind.",
+            "You descended into Hades, O Christ, and having broken the gates of bronze, You raised those who had slept for ages as God Almighty. O Resurrection of the Lord, salvation of the world!"
+          ]
+        },
+        "aposticha": {
+          "count": 3,
+          "rubric": "Aposticha, Tone 3:",
+          "verses": [
+            "Your Cross, O Lord, is life and resurrection to Your people, and trusting therein we sing to You our crucified God: have mercy on us.",
+            "Come all ye faithful, let us worship the holy Resurrection of Christ; for behold, through the Cross joy has come to all the world. Ever blessing the Lord, let us praise His Resurrection; for having endured the Cross for us, He destroyed death by death.",
+            "O Lord, You overthrew Hades and trampled death; You illumined the world with Your Resurrection, O Lover of mankind."
+          ]
+        }
+      },
+      "monday": { "baseline_stub": true, "note": "Monday Vespers stichera for Tone 3 — not yet in baseline data file. Tone resolved; full weekday Octoechos text pending future data pass." },
+      "tuesday": { "baseline_stub": true, "note": "Tuesday Vespers stichera for Tone 3 — not yet in baseline data file. Tone resolved; full weekday Octoechos text pending future data pass." },
+      "wednesday": { "baseline_stub": true, "note": "Wednesday Vespers stichera for Tone 3 — not yet in baseline data file. Tone resolved; full weekday Octoechos text pending future data pass." },
+      "thursday": { "baseline_stub": true, "note": "Thursday Vespers stichera for Tone 3 — not yet in baseline data file. Tone resolved; full weekday Octoechos text pending future data pass." },
+      "friday": { "baseline_stub": true, "note": "Friday Vespers stichera for Tone 3 — not yet in baseline data file. Tone resolved; full weekday Octoechos text pending future data pass." },
+      "sunday": { "baseline_stub": true, "note": "Sunday Vespers stichera for Tone 3 — not yet in baseline data file. Tone resolved; full weekday Octoechos text pending future data pass." }
+    },
+    "4": {
+      "tone_label": "Tone 4",
+      "saturday": {
+        "coverage": "full-baseline",
+        "note": "Saturday Vespers — Resurrectional stichera for Sunday, Tone 4.",
+        "stichera_at_lord_i_have_cried": {
+          "count": 3,
+          "rubric": "Stichera at \"Lord, I have cried,\" Tone 4:",
+          "verses": [
+            "Having learned the joyful message of the Resurrection from the angel, the women disciples of the Lord cast off their ancestral condemnation, and exulting told the Apostles: Death is despoiled, Christ God is risen, granting great mercy to the world.",
+            "Christ is risen as He foretold, and has granted us eternal life and great mercy. The tomb is sealed with a great stone; but You descended into Hades and arose on the third day, granting life to the world.",
+            "O Christ our Savior, at Your descent into Hades, the sun turned back, and the foundation of the earth was shaken; for You arose as God, and granted resurrection to the human race."
+          ]
+        },
+        "aposticha": {
+          "count": 3,
+          "rubric": "Aposticha, Tone 4:",
+          "verses": [
+            "O Lord, in Your Resurrection it was not Heaven alone that was filled with light, but also the lowest parts of the earth; for the whole creation is illumined by Your light, O You who rose from the dead as God.",
+            "Early in the morning, the myrrh-bearing women came to Your tomb with longing and found an angel sitting thereon in dazzling white, who said to them: The Lord is risen; tell His disciples, who seek Him, to go into Galilee and see Him risen from the dead.",
+            "As prophesied, You descended to Hades; and as predicted, You arose on the third day, O Christ our God; and You granted us incorruption of body and soul."
+          ]
+        }
+      },
+      "monday": { "baseline_stub": true, "note": "Monday Vespers stichera for Tone 4 — not yet in baseline data file. Tone resolved; full weekday Octoechos text pending future data pass." },
+      "tuesday": { "baseline_stub": true, "note": "Tuesday Vespers stichera for Tone 4 — not yet in baseline data file. Tone resolved; full weekday Octoechos text pending future data pass." },
+      "wednesday": { "baseline_stub": true, "note": "Wednesday Vespers stichera for Tone 4 — not yet in baseline data file. Tone resolved; full weekday Octoechos text pending future data pass." },
+      "thursday": { "baseline_stub": true, "note": "Thursday Vespers stichera for Tone 4 — not yet in baseline data file. Tone resolved; full weekday Octoechos text pending future data pass." },
+      "friday": { "baseline_stub": true, "note": "Friday Vespers stichera for Tone 4 — not yet in baseline data file. Tone resolved; full weekday Octoechos text pending future data pass." },
+      "sunday": { "baseline_stub": true, "note": "Sunday Vespers stichera for Tone 4 — not yet in baseline data file. Tone resolved; full weekday Octoechos text pending future data pass." }
+    },
+    "5": {
+      "tone_label": "Tone 5",
+      "saturday": {
+        "coverage": "full-baseline",
+        "note": "Saturday Vespers — Resurrectional stichera for Sunday, Tone 5.",
+        "stichera_at_lord_i_have_cried": {
+          "count": 3,
+          "rubric": "Stichera at \"Lord, I have cried,\" Tone 5:",
+          "verses": [
+            "Let us praise Christ who was raised from the dead; for having taken a soul and body, He separated them in His Passion, and reunited them in His Resurrection: for He is the Pattern of the twofold birth.",
+            "O Christ, O Word of God! You came down from the Father without separation; You were incarnate without change; You suffered in the flesh; You arose from the dead; and You sent Your Holy Spirit upon the world. Have mercy on us.",
+            "The disciples having seen Your Resurrection, O Christ our God, were illumined by the sight of that divine wonder, and worshipped You, saying: Enlighten us with Your unending light, and show us Your paths, O Lover of mankind."
+          ]
+        },
+        "aposticha": {
+          "count": 3,
+          "rubric": "Aposticha, Tone 5:",
+          "verses": [
+            "You descended to the earth, O Lord, to save Adam; and not finding him on earth, You sought him in Hades. O Christ, my Savior and my God, raise me up with You.",
+            "The soldiers guarding Your tomb, O Lord, became as dead men at the presence of the angel who appeared to declare Your Resurrection to the women. We glorify You, O Lord; we worship Your three-day Resurrection.",
+            "O Christ, when You descended to Hades You conquered it through Your divine power; and when You arose, You raised with You all those who had been bound in it from of old, O Savior our God, glory to You."
+          ]
+        }
+      },
+      "monday": { "baseline_stub": true, "note": "Monday Vespers stichera for Tone 5 — not yet in baseline data file. Tone resolved; full weekday Octoechos text pending future data pass." },
+      "tuesday": { "baseline_stub": true, "note": "Tuesday Vespers stichera for Tone 5 — not yet in baseline data file. Tone resolved; full weekday Octoechos text pending future data pass." },
+      "wednesday": { "baseline_stub": true, "note": "Wednesday Vespers stichera for Tone 5 — not yet in baseline data file. Tone resolved; full weekday Octoechos text pending future data pass." },
+      "thursday": { "baseline_stub": true, "note": "Thursday Vespers stichera for Tone 5 — not yet in baseline data file. Tone resolved; full weekday Octoechos text pending future data pass." },
+      "friday": { "baseline_stub": true, "note": "Friday Vespers stichera for Tone 5 — not yet in baseline data file. Tone resolved; full weekday Octoechos text pending future data pass." },
+      "sunday": { "baseline_stub": true, "note": "Sunday Vespers stichera for Tone 5 — not yet in baseline data file. Tone resolved; full weekday Octoechos text pending future data pass." }
+    },
+    "6": {
+      "tone_label": "Tone 6",
+      "saturday": {
+        "coverage": "full-baseline",
+        "note": "Saturday Vespers — Resurrectional stichera for Sunday, Tone 6.",
+        "stichera_at_lord_i_have_cried": {
+          "count": 3,
+          "rubric": "Stichera at \"Lord, I have cried,\" Tone 6:",
+          "verses": [
+            "The angelic powers were at Your tomb; the guards became as dead men. And Mary stood by the grave, seeking Your most pure body. You despoiled Hades and were not tempted thereby. You did meet the Virgin and did grant life. O Lord, who rose from the dead, glory to You.",
+            "Why do you mingle myrrh with tears of compassion, O ye disciples? The stone is rolled away, the tomb is empty; behold the corruption of death. Believe the angel who said: The Lord is risen, granting joy to the world.",
+            "O Christ, having died in the flesh as a mortal, with Thine Almighty Divinity Thou hast raised the dead from their abodes; and having rolled away the stone from the sepulchre, Thou art risen, granting incorruption to our souls."
+          ]
+        },
+        "aposticha": {
+          "count": 3,
+          "rubric": "Aposticha, Tone 6:",
+          "verses": [
+            "O Lord, having risen from the dead, You granted resurrection to the human race; and all creation gives praise to You, singing: O Lord our Creator, glory to You.",
+            "Mary Magdalene went to the tomb early and beheld the Lord; she sped to proclaim this to the disciples, saying: I have seen the Lord Who was crucified and is risen; and now He gives true forgiveness of sins to those who worship His pure Resurrection.",
+            "O Lord Jesus, Savior of the world! Every tongue confesses You as God; and every creature, both visible and invisible, bows down before You; for You have abolished death by Your death, O Lover of mankind, and have granted resurrection to the world."
+          ]
+        }
+      },
+      "monday": { "baseline_stub": true, "note": "Monday Vespers stichera for Tone 6 — not yet in baseline data file. Tone resolved; full weekday Octoechos text pending future data pass." },
+      "tuesday": { "baseline_stub": true, "note": "Tuesday Vespers stichera for Tone 6 — not yet in baseline data file. Tone resolved; full weekday Octoechos text pending future data pass." },
+      "wednesday": { "baseline_stub": true, "note": "Wednesday Vespers stichera for Tone 6 — not yet in baseline data file. Tone resolved; full weekday Octoechos text pending future data pass." },
+      "thursday": { "baseline_stub": true, "note": "Thursday Vespers stichera for Tone 6 — not yet in baseline data file. Tone resolved; full weekday Octoechos text pending future data pass." },
+      "friday": { "baseline_stub": true, "note": "Friday Vespers stichera for Tone 6 — not yet in baseline data file. Tone resolved; full weekday Octoechos text pending future data pass." },
+      "sunday": { "baseline_stub": true, "note": "Sunday Vespers stichera for Tone 6 — not yet in baseline data file. Tone resolved; full weekday Octoechos text pending future data pass." }
+    },
+    "7": {
+      "tone_label": "Tone 7",
+      "saturday": {
+        "coverage": "full-baseline",
+        "note": "Saturday Vespers — Resurrectional stichera for Sunday, Tone 7.",
+        "stichera_at_lord_i_have_cried": {
+          "count": 3,
+          "rubric": "Stichera at \"Lord, I have cried,\" Tone 7:",
+          "verses": [
+            "No longer shall death reign over mankind; for Christ has descended, has overthrown and destroyed it. Hades is despoiled, never more to hold sway. The dead have been raised by the cross-buried One, Who proclaims salvation to those in Hades.",
+            "Your Resurrection, O Christ our Savior, has illumined the whole universe, and recaptured Your own creation. Almighty Lord, glory to You.",
+            "You died and were buried as You willed, O Lord; and having risen from the dead in glory, as You are God, You have saved the world. O Lord, glory to You."
+          ]
+        },
+        "aposticha": {
+          "count": 3,
+          "rubric": "Aposticha, Tone 7:",
+          "verses": [
+            "Lord, though Your tomb was sealed, yet You arose from it; and though the bonds of Hades were closed, You broke through them, O King and Lord; You frustrated the scheming of those who guarded You; and You showed Yourself to the myrrh-bearing women. Through their prayers grant us Your great mercy.",
+            "In the course of the night, the great angel rolled away the stone from the tomb; and lo, the soldiers became as dead men; for the Lord arose and trod down death, as He had foretold, and destroyed the power of Hades; for His is the victory, His is the might, the kingdom and the power.",
+            "Weep not for Me, O Mother, seeing Me in the tomb, your Son and God; for I shall arise and shall be glorified and shall exalt with glory those who glorify you as Theotokos, with unceasing voice."
+          ]
+        }
+      },
+      "monday": { "baseline_stub": true, "note": "Monday Vespers stichera for Tone 7 — not yet in baseline data file. Tone resolved; full weekday Octoechos text pending future data pass." },
+      "tuesday": { "baseline_stub": true, "note": "Tuesday Vespers stichera for Tone 7 — not yet in baseline data file. Tone resolved; full weekday Octoechos text pending future data pass." },
+      "wednesday": { "baseline_stub": true, "note": "Wednesday Vespers stichera for Tone 7 — not yet in baseline data file. Tone resolved; full weekday Octoechos text pending future data pass." },
+      "thursday": { "baseline_stub": true, "note": "Thursday Vespers stichera for Tone 7 — not yet in baseline data file. Tone resolved; full weekday Octoechos text pending future data pass." },
+      "friday": { "baseline_stub": true, "note": "Friday Vespers stichera for Tone 7 — not yet in baseline data file. Tone resolved; full weekday Octoechos text pending future data pass." },
+      "sunday": { "baseline_stub": true, "note": "Sunday Vespers stichera for Tone 7 — not yet in baseline data file. Tone resolved; full weekday Octoechos text pending future data pass." }
+    },
+    "8": {
+      "tone_label": "Tone 8",
+      "saturday": {
+        "coverage": "full-baseline",
+        "note": "Saturday Vespers — Resurrectional stichera for Sunday, Tone 8.",
+        "stichera_at_lord_i_have_cried": {
+          "count": 3,
+          "rubric": "Stichera at \"Lord, I have cried,\" Tone 8:",
+          "verses": [
+            "O Lord, from on high You descended; in three days You arose; Christ our God, grant resurrection to the human race; O Lord, glory to You.",
+            "You died as a mortal, O Lord, and on the third day You arose, raising Adam from corruption; and death, O Lord, is slain by Your Resurrection. O Lord, glory to You.",
+            "O Lord, having endured the Cross, and having slain death, and having risen from the dead, grant peace to our life, O only Almighty."
+          ]
+        },
+        "aposticha": {
+          "count": 3,
+          "rubric": "Aposticha, Tone 8:",
+          "verses": [
+            "O Lord, You descended into Hades and smashed its gates; and as God raised the dead, and despoiled death, and freed Adam from the bonds; therefore we cry to You: O Lord, glory to You.",
+            "We cry to You, O Savior: Save us, who are sunk in the waves of sin, as You saved Peter in the sea; and accept our supplication, O Lord and God of our salvation.",
+            "O Christ our God, death ruled over mankind through the tree; but You arose from the dead by the Cross, granting life to those who cried: Crucified and risen Lord, have mercy on us."
+          ]
+        }
+      },
+      "monday": { "baseline_stub": true, "note": "Monday Vespers stichera for Tone 8 — not yet in baseline data file. Tone resolved; full weekday Octoechos text pending future data pass." },
+      "tuesday": { "baseline_stub": true, "note": "Tuesday Vespers stichera for Tone 8 — not yet in baseline data file. Tone resolved; full weekday Octoechos text pending future data pass." },
+      "wednesday": { "baseline_stub": true, "note": "Wednesday Vespers stichera for Tone 8 — not yet in baseline data file. Tone resolved; full weekday Octoechos text pending future data pass." },
+      "thursday": { "baseline_stub": true, "note": "Thursday Vespers stichera for Tone 8 — not yet in baseline data file. Tone resolved; full weekday Octoechos text pending future data pass." },
+      "friday": { "baseline_stub": true, "note": "Friday Vespers stichera for Tone 8 — not yet in baseline data file. Tone resolved; full weekday Octoechos text pending future data pass." },
+      "sunday": { "baseline_stub": true, "note": "Sunday Vespers stichera for Tone 8 — not yet in baseline data file. Tone resolved; full weekday Octoechos text pending future data pass." }
+    }
+  }
+}

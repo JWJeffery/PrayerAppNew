@@ -1189,6 +1189,17 @@ function _renderHorologionItem(item) {
         return `<div class="horologion-text">${label}<p>${body}</p></div>`;
     }
 
+    // type: "stichera" — render rubric label then verse text (same layout as psalm).
+    // Produced by HorologionEngine v1.3 for stichera-at-lord-i-have-cried and aposticha.
+    if (item.type === 'stichera') {
+        const label = item.label ? `<p class="rubric-text" style="margin-bottom:0.4em;">${escapeHtml(item.label)}</p>` : '';
+        const safe  = escapeHtml(String(item.text || ''));
+        const body  = safe
+            .replace(/\n\n+/g, '</p><p>')
+            .replace(/\n/g, '<br>');
+        return `<div class="horologion-text">${label}<p>${body}</p></div>`;
+    }
+
     // type: "litany" — render each line role-tagged.
     // Lines beginning "Deacon:", "Priest:", "Reader:" are rubrics.
     // Lines beginning "Choir:" are congregational responses.
