@@ -547,9 +547,9 @@ function backToSplash() {
     const mainContent   = document.getElementById('main-content');
 
     if (settingsPanel) {
-        settingsPanel.classList.remove('sidebar-hidden');
-        settingsPanel.classList.remove('mode-hidden');
-    }
+    settingsPanel.classList.add('sidebar-hidden');
+    settingsPanel.classList.add('mode-hidden');
+}
     if (ethSettings) {
         ethSettings.classList.add('sidebar-hidden');
         ethSettings.classList.add('mode-hidden');
