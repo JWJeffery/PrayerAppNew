@@ -1,10 +1,10 @@
 {
   "project_manifest": {
     "name": "Universal Office",
-    "version": "2.9.5",
+    "version": "2.9.6",
     "last_updated": "2026-03-07",
     "bcp_compliance": "100%",
-    "operational_status": "OPERATIONAL — v2.9.5: Menaion pilot wired. Horologion v2.1 (engine) + Menaion v1 pilot (data + resolver). The weekday (Mon–Fri) troparion-or-apolytikion slot now has a live Menaion-backed resolution path via js/menaion-resolver.js and data/menaion/november.json. On imported November pilot dates, Mon–Fri weekday troparion resolves to full text (type:'text', resolvedAs:'menaion-resolved'). On non-imported dates the slot falls back honestly to the weekday-theme rubric (resolvedAs:'weekday-theme-rubric') — identical to the v2.0 fallback. No full annual Menaion coverage is claimed. Pilot corpus: 12 of 30 November dates. New files: js/menaion-resolver.js (window.MenaionResolver, IIFE), data/menaion/schema.json (pilot schema contract), data/menaion/november.json (12-date November corpus). index.html now loads js/menaion-resolver.js before js/horologion-engine.js. horologion-engine.js: engine version v2.1; _resolveTroparionSlot() made async, third parameter dateObj added; weekday branch queries MenaionResolver before falling through to theme rubric; try/catch non-throwing guard; call site in _resolveVespersSlots() awaited with dateObj. Prior: v1.9 weekday Theotokion from Octoechos; v1.8 Sunday Small Vespers baseline; v1.7 theotokion-dismissal; v1.6 troparion; v1.5 kathisma; v1.4 Mon–Fri Octoechos text; v1.3 tone engine; v1.2 prokeimenon + vesperal-reading; v1 architecture boundary. Remaining work: Menaion corpus expansion (18 November dates not imported; all other months not imported); feast-rank override system; Great Lent variable overrides; kathisma full psalm text.",
+    "operational_status": "Menaion tranche 2 live. Horologion v2.1 engine + Menaion v1.1 corpus/resolver. November full corpus imported (30/30). December full corpus imported (31/31). Jan–Oct remain unimported. Feast-rank override logic still deferred.",
     "audit_findings": {
       "open_bugs": [
         "1. Rubric logic: [rite] placeholder resolution in rubrics.json is fragile and prone to null returns. (LOW — see known_outstanding_issues.rite_placeholder_resolution)"
@@ -454,7 +454,7 @@
           "coverage": "Documents the canonical shape for all future monthly Menaion files. Rank model: rank 1 (Great Feast / Theotokos), rank 2 (Polyeleos), rank 3 (Six-stichera / Doxology), rank 4 (Simple commemoration). Date key: MM-DD string (zero-padded, not year-dependent). Commemoration shape: id, name, type, rank, troparion_tone, troparion { tone, title, text }, troparion_status, tradition_tags, notes. Resolution contract codes documented."
         },
         "november.json": {
-          "status": "Active — Menaion v1 pilot (2026-03-07). PILOT CORPUS: 12 of 30 November dates imported. 18 November dates NOT imported — return 'menaion-not-imported'.",
+          "status": "Active — Menaion v1.1 tranche 2 (2026-03-08). FULL CORPUS: all 30 November dates imported. Dates with unconfirmed troparion text carry troparion_status:'text-unavailable' and return 'menaion-text-unavailable' from the resolver.",
           "imported_dates": [
             "11-01: Cosmas and Damian of Asia (rank 3, Tone 8)",
             "11-08: Synaxis of the Bodiless Hosts / Archangels (rank 2, Tone 4) — primary live-resolution test date",
@@ -471,6 +471,26 @@
           ],
           "source": "OCA/Antiochian Hapgood-tradition English; Jordanville Horologion",
           "coverage_note": "PILOT ONLY. Not representative of full Menaion coverage. Expansion to remaining November dates and all other months is deferred corpus work."
+        },
+        "december.json": {
+    "status": "Active — Menaion v1.1 tranche 2 (2026-03-08). FULL CORPUS: all 31 December dates imported. Includes Nativity Fast commemorations, Forefeast (Dec 20–24), Christmas Day rank-1 feast (Dec 25), and Afterfeast (Dec 26–31). Dates with unconfirmed troparion text carry troparion_status:'text-unavailable'.",
+    "imported_dates": "31 of 31",
+    "notable_dates": [
+        "12-04: Great Martyr Barbara (rank 3)",
+        "12-05: Sabas the Sanctified (rank 2)",
+        "12-06: Nicholas of Myra (rank 2)",
+        "12-09: Conception of the Theotokos (rank 3)",
+        "12-12: Spyridon of Trimythous (rank 2)",
+        "12-17: Prophet Daniel and Three Youths (rank 3)",
+        "12-20: Forefeast of Nativity begins + Ignatius God-bearer (rank 3)",
+        "12-24: Eve of the Nativity / Paramone (rank 1)",
+        "12-25: Nativity of Christ (rank 1, Great Feast)",
+        "12-26: Synaxis of the Theotokos (rank 2)",
+        "12-27: Protomartyr Stephen (rank 2)",
+        "12-29: Holy Innocents (rank 3)"
+    ],
+    "source": "OCA/Antiochian Hapgood-tradition English; Jordanville Horologion",
+    "coverage_note": "PILOT ONLY. Not representative of full Menaion coverage. Expansion to remaining November dates and all other months is deferred corpus work."
         }
       }
     }

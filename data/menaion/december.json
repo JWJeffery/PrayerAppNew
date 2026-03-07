@@ -1,0 +1,604 @@
+{
+  "_meta": {
+    "file": "data/menaion/december.json",
+    "version": "1.0.0",
+    "schema_version": "1.0.0",
+    "month_number": 12,
+    "month_name": "December",
+    "calendar_style": "new-calendar",
+    "coverage_note": "FULL IMPORT — all 31 December dates. First post-pilot monthly corpus file (tranche 2, 2026-03-08). Source posture: OCA/Antiochian Hapgood-tradition English and Jordanville Menaion. December is liturgically dense: it contains the Nativity Fast (Advent, from Nov 15), the Forefeast of the Nativity (Dec 20–24), Christmas Day (Dec 25, Great Feast rank 1), and the Afterfeast through Dec 31. Troparion text confirmed from published sources is marked 'resolved'; text not yet confirmed in the Antiochian/OCA Hapgood corpus is marked 'text-unavailable' per the mechanical honesty contract.",
+    "imported_date_count": 31,
+    "total_days": 31
+  },
+  "dates": {
+    "12-01": {
+      "commemorations": [
+        {
+          "id": "prophet-nahum",
+          "name": "Holy Prophet Nahum",
+          "type": "prophet",
+          "rank": 4,
+          "troparion_tone": 2,
+          "troparion": null,
+          "troparion_status": "text-unavailable",
+          "tradition_tags": ["EOR", "OOR"],
+          "notes": "One of the Twelve Minor Prophets. Rank 4. Troparion text not confirmed from published Antiochian/OCA source for this corpus."
+        }
+      ]
+    },
+    "12-02": {
+      "commemorations": [
+        {
+          "id": "prophet-habakkuk",
+          "name": "Holy Prophet Habakkuk",
+          "type": "prophet",
+          "rank": 4,
+          "troparion_tone": 2,
+          "troparion": null,
+          "troparion_status": "text-unavailable",
+          "tradition_tags": ["EOR", "OOR"],
+          "notes": "One of the Twelve Minor Prophets. Rank 4. Troparion text not confirmed for this corpus."
+        }
+      ]
+    },
+    "12-03": {
+      "commemorations": [
+        {
+          "id": "prophet-zephaniah",
+          "name": "Holy Prophet Zephaniah (Sophonias)",
+          "type": "prophet",
+          "rank": 4,
+          "troparion_tone": 2,
+          "troparion": null,
+          "troparion_status": "text-unavailable",
+          "tradition_tags": ["EOR", "OOR"],
+          "notes": "One of the Twelve Minor Prophets. Rank 4. Troparion text not confirmed for this corpus."
+        }
+      ]
+    },
+    "12-04": {
+      "commemorations": [
+        {
+          "id": "barbara-great-martyr",
+          "name": "Holy Great Martyr Barbara",
+          "type": "martyr",
+          "rank": 3,
+          "troparion_tone": 8,
+          "troparion": {
+            "tone": 8,
+            "title": "Troparion of the Great Martyr Barbara — Tone 8",
+            "text": "Following thy call, O Barbara, thou didst leave behind the error of thy fathers, and believing in the Trinity, co-essential and undivided, thou didst contest with faith and hast been granted the gift of healing to the faithful. We cry out to thee: glory to God Who hath strengthened thee; glory to Him Who hath crowned thee; glory to Him Who worketh healings for all through thee."
+          },
+          "troparion_status": "resolved",
+          "tradition_tags": ["EOR", "OOR"],
+          "notes": "Holy Great Martyr Barbara of Heliopolis, +306. Rank 3 / Doxology."
+        },
+        {
+          "id": "john-damascene",
+          "name": "Our Father among the Saints John of Damascus",
+          "type": "hierarch",
+          "rank": 3,
+          "troparion_tone": 8,
+          "troparion": {
+            "tone": 8,
+            "title": "Troparion of John of Damascus — Tone 8",
+            "text": "O leader of Orthodoxy, teacher of piety and reverence, luminary of the world, God-inspired pride of monastics, John, the all-wise: thou hast enlightened all by thy teachings, O harp of the Spirit. Entreat Christ God to save our souls."
+          },
+          "troparion_status": "resolved",
+          "tradition_tags": ["EOR", "OOR"],
+          "notes": "St. John of Damascus, theologian and hymnographer, +749. Rank 3. Two rank-3 entries: Barbara listed first by traditional calendar ordering on this date; resolver selects Barbara (first entry). Feast-rank engine (deferred) will handle proper precedence."
+        }
+      ]
+    },
+    "12-05": {
+      "commemorations": [
+        {
+          "id": "sabas-sanctified",
+          "name": "Our Father among the Saints Sabas the Sanctified",
+          "type": "monastic",
+          "rank": 2,
+          "troparion_tone": 8,
+          "troparion": {
+            "tone": 8,
+            "title": "Troparion of Sabas the Sanctified — Tone 8",
+            "text": "In thee, O Father Sabas, was exactly preserved that which was according to the image of God; for taking up thy cross thou didst follow Christ, teaching by deeds to despise the flesh since it passes away, and to care for the soul as an immortal thing. Therefore thy soul rejoiceth with the angels."
+          },
+          "troparion_status": "resolved",
+          "tradition_tags": ["EOR", "OOR"],
+          "notes": "Abbot of the Great Laura near Jerusalem, founder of Palestinian monasticism, +532. Rank 2 / Polyeleos."
+        }
+      ]
+    },
+    "12-06": {
+      "commemorations": [
+        {
+          "id": "nicholas-myra",
+          "name": "Our Father among the Saints Nicholas, Archbishop of Myra in Lycia, Wonderworker",
+          "type": "hierarch",
+          "rank": 2,
+          "troparion_tone": 4,
+          "troparion": {
+            "tone": 4,
+            "title": "Troparion of St. Nicholas — Tone 4",
+            "text": "The truth of things revealed thee to thy flock as a rule of faith, a model of meekness, and a teacher of temperance; therefore thou hast achieved the heights by humility, riches by poverty. O Holy Father Nicholas, intercede with Christ God that our souls may be saved."
+          },
+          "troparion_status": "resolved",
+          "tradition_tags": ["EOR", "OOR"],
+          "notes": "Major feast of St. Nicholas of Myra. Rank 2 / Polyeleos. One of the most celebrated saints of the Byzantine calendar."
+        }
+      ]
+    },
+    "12-07": {
+  "commemorations": [
+    {
+      "id": "ambrose-milan",
+      "name": "Our Father among the Saints Ambrose, Bishop of Milan",
+      "type": "hierarch",
+      "rank": 3,
+      "troparion_tone": 4,
+      "troparion": {
+        "tone": 4,
+        "title": "Troparion of St. Ambrose of Milan — Tone 4",
+        "text": "The truth of things revealed you to your flock as a rule of faith, a model of meekness, and a teacher of temperance. Through humility, you attained the heights; and through poverty, riches. O Father and Hierarch Ambrose, intercede with Christ God that our souls may be saved."
+      },
+      "troparion_status": "resolved",
+      "tradition_tags": ["EOR", "OOR"],
+      "notes": "Commemorated on December 7 in published OCA and GOARCH menaion materials. Specific troparion text is attested in OCA and corresponding GOARCH liturgical materials."
+    }
+      ]
+    },
+    "12-08": {
+      "commemorations": [
+        {
+          "id": "patapius-thebes",
+          "name": "Venerable Patapius of Thebes",
+          "type": "monastic",
+          "rank": 4,
+          "troparion_tone": 8,
+          "troparion": null,
+          "troparion_status": "text-unavailable",
+          "tradition_tags": ["EOR", "OOR"],
+          "notes": "Hermit of Constantinople, +7th c. Rank 4. Troparion text not confirmed for this corpus."
+        }
+      ]
+    },
+    "12-09": {
+      "commemorations": [
+        {
+          "id": "conception-theotokos-anna",
+          "name": "Conception of the Most Holy Theotokos by Righteous Anna",
+          "type": "marian_feast",
+          "rank": 3,
+          "troparion_tone": 4,
+          "troparion": {
+            "tone": 4,
+            "title": "Troparion of the Conception of the Theotokos — Tone 4",
+            "text": "Today the bounds of barrenness are broken and God heareth the prayer of Joachim and Anna; for He hath promised them beyond all hope a divine fruit — the most holy Virgin — from whom was born the Infinite One, incarnate, commanding the angel to cry to her: Rejoice, O full of grace, the Lord is with thee."
+          },
+          "troparion_status": "resolved",
+          "tradition_tags": ["EOR", "OOR"],
+          "notes": "Conception of the Theotokos by Righteous Anna. Rank 3 / Doxology. Celebrated in conjunction with the Marian calendar cycle."
+        }
+      ]
+    },
+    "12-10": {
+      "commemorations": [
+        {
+          "id": "menas-hermogenes-eugraphus",
+          "name": "Holy Martyrs Menas, Hermogenes, and Eugraphus",
+          "type": "martyr",
+          "rank": 4,
+          "troparion_tone": 4,
+          "troparion": null,
+          "troparion_status": "text-unavailable",
+          "tradition_tags": ["EOR", "OOR"],
+          "notes": "Martyrs at Alexandria. Rank 4. Troparion text not confirmed for this corpus."
+        }
+      ]
+    },
+    "12-11": {
+      "commemorations": [
+        {
+          "id": "daniel-stylite",
+          "name": "Venerable Daniel the Stylite",
+          "type": "monastic",
+          "rank": 3,
+          "troparion_tone": 1,
+          "troparion": {
+            "tone": 1,
+            "title": "Troparion of Daniel the Stylite — Tone 1",
+            "text": "Thou wast a pillar of endurance, a true imitator of the Prophets — Job in sufferings, and Joseph in temptations. Thou didst live the life of the incorporeal while yet in the flesh, O Daniel our Father. Beseech Christ God that our souls may be saved."
+          },
+          "troparion_status": "resolved",
+          "tradition_tags": ["EOR", "OOR"],
+          "notes": "Daniel the Stylite, who stood on his pillar near Constantinople for 33 years, +493. Rank 3."
+        }
+      ]
+    },
+    "12-12": {
+      "commemorations": [
+        {
+          "id": "spyridon-trimythous",
+          "name": "Our Father among the Saints Spyridon, Bishop of Trimythous, Wonderworker",
+          "type": "hierarch",
+          "rank": 2,
+          "troparion_tone": 1,
+          "troparion": {
+            "tone": 1,
+            "title": "Troparion of Spyridon of Trimythous — Tone 1",
+            "text": "Thou didst prove to be a fellow-citizen with the angels, O divinely wise and venerable Spyridon; for thou didst cause a dead woman to speak and didst turn a snake to gold. And when thou wast chanting the holy prayers, O sacred hierarch, thou hadst angels celebrating with thee. Glory to Him Who glorified thee, glory to Him Who crowned thee, glory to Him Who worketh healings for all through thee."
+          },
+          "troparion_status": "resolved",
+          "tradition_tags": ["EOR", "OOR"],
+          "notes": "Bishop of Trimythous in Cyprus, wonderworker, participant at Nicaea, +348. Rank 2 / Polyeleos. Greatly venerated especially in Greek Orthodox tradition."
+        }
+      ]
+    },
+    "12-13": {
+      "commemorations": [
+        {
+          "id": "lucy-syracuse",
+          "name": "Holy Martyr Lucy of Syracuse",
+          "type": "martyr",
+          "rank": 4,
+          "troparion_tone": 4,
+          "troparion": null,
+          "troparion_status": "text-unavailable",
+          "tradition_tags": ["EOR", "OOR"],
+          "notes": "Holy Virgin Martyr Lucy of Syracuse, +304. Rank 4. Troparion text not confirmed from published Antiochian/OCA source for this corpus."
+        }
+      ]
+    },
+    "12-14": {
+      "commemorations": [
+        {
+          "id": "thyrsus-leucius-philemon",
+          "name": "Holy Martyrs Thyrsus, Leucius, and Philemon",
+          "type": "martyr",
+          "rank": 4,
+          "troparion_tone": 4,
+          "troparion": null,
+          "troparion_status": "text-unavailable",
+          "tradition_tags": ["EOR", "OOR"],
+          "notes": "Martyrs at Caesarea in Phrygia. Rank 4. Troparion text not confirmed for this corpus."
+        }
+      ]
+    },
+    "12-15": {
+      "commemorations": [
+        {
+          "id": "stephen-younger-sabaite",
+          "name": "Venerable Stephen the Sabaite, Hymnographer",
+          "type": "monastic",
+          "rank": 4,
+          "troparion_tone": 8,
+          "troparion": null,
+          "troparion_status": "text-unavailable",
+          "tradition_tags": ["EOR", "OOR"],
+          "notes": "Stephen the Younger, monk of the Great Laura and hymnographer, +794. Rank 4. Troparion text not confirmed for this corpus."
+        }
+      ]
+    },
+    "12-16": {
+      "commemorations": [
+        {
+          "id": "prophet-haggai",
+          "name": "Holy Prophet Haggai",
+          "type": "prophet",
+          "rank": 4,
+          "troparion_tone": 2,
+          "troparion": null,
+          "troparion_status": "text-unavailable",
+          "tradition_tags": ["EOR", "OOR"],
+          "notes": "One of the Twelve Minor Prophets. Rank 4. Troparion text not confirmed for this corpus."
+        }
+      ]
+    },
+    "12-17": {
+      "commemorations": [
+        {
+          "id": "prophet-daniel-three-youths",
+          "name": "Holy Prophet Daniel and the Three Holy Youths Ananias, Azarias, and Misael",
+          "type": "prophet",
+          "rank": 3,
+          "troparion_tone": 2,
+          "troparion": {
+            "tone": 2,
+            "title": "Troparion of the Prophet Daniel and the Three Youths — Tone 2",
+            "text": "O great Daniel, prophet of God, and thou three youths, Ananias, Azarias, and Misael, ye enlightened the faith of the Trinity and were unafraid in the flames, calling on God: Blessed art Thou, O God of our Fathers."
+          },
+          "troparion_status": "resolved",
+          "tradition_tags": ["EOR", "OOR"],
+          "notes": "Holy Prophet Daniel and the Three Holy Youths from the Book of Daniel. Rank 3. Commemorated on Dec 17, the Sunday before Christmas in some traditions, but fixed in the new-calendar Menaion."
+        }
+      ]
+    },
+    "12-18": {
+      "commemorations": [
+        {
+          "id": "sebastian-rome",
+          "name": "Holy Martyr Sebastian and his Companions",
+          "type": "martyr",
+          "rank": 4,
+          "troparion_tone": 4,
+          "troparion": null,
+          "troparion_status": "text-unavailable",
+          "tradition_tags": ["EOR", "OOR"],
+          "notes": "Martyr Sebastian of Rome, +288. Rank 4. Troparion text not confirmed from published Antiochian/OCA source for this corpus."
+        }
+      ]
+    },
+    "12-19": {
+      "commemorations": [
+        {
+          "id": "boniface-tarsus",
+          "name": "Holy Martyr Boniface of Tarsus",
+          "type": "martyr",
+          "rank": 4,
+          "troparion_tone": 4,
+          "troparion": null,
+          "troparion_status": "text-unavailable",
+          "tradition_tags": ["EOR", "OOR"],
+          "notes": "Martyr at Tarsus in Cilicia. Rank 4. Troparion text not confirmed for this corpus."
+        }
+      ]
+    },
+    "12-20": {
+      "commemorations": [
+        {
+          "id": "forefeast-nativity",
+          "name": "Forefeast of the Nativity of our Lord God and Savior Jesus Christ",
+          "type": "feast",
+          "rank": 4,
+          "troparion_tone": 4,
+          "troparion": {
+            "tone": 4,
+            "title": "Troparion of the Forefeast of the Nativity — Tone 4",
+            "text": "Make ready, O Bethlehem, for Eden hath been opened for all. Adorn thyself, O Ephrathah, for the Tree of Life hath blossomed forth in the cave from the Virgin; for her womb did appear as a spiritual paradise in which is planted the divine Plant, and if we eat of it we shall live and shall not die as did Adam. Christ shall be born to raise the image that fell of old."
+          },
+          "troparion_status": "resolved",
+          "tradition_tags": ["EOR", "OOR"],
+          "notes": "First day of the Forefeast of the Nativity (Dec 20–24). Rank 4. Also commemorates Holy Hieromartyr Ignatius the God-bearer of Antioch on some calendar recensions."
+        },
+        {
+          "id": "ignatius-god-bearer",
+          "name": "Our Father among the Saints Ignatius the God-Bearer, Bishop of Antioch",
+          "type": "hierarch",
+          "rank": 3,
+          "troparion_tone": 4,
+          "troparion": {
+            "tone": 4,
+            "title": "Troparion of Ignatius the God-Bearer — Tone 4",
+            "text": "Thou didst hunger for Christ with desire, O Ignatius worthy of God; thou wast counted worthy, as bread of God, to be consumed by wild beasts. Thou wast found to be a chosen vessel of the Holy Trinity. Bless us from on high, O Holy Father and Hieromartyr."
+          },
+          "troparion_status": "resolved",
+          "tradition_tags": ["EOR", "OOR"],
+          "notes": "Holy Hieromartyr Ignatius of Antioch, +107. Rank 3. Forefeast (rank 4, first entry) takes precedence in resolver selection as the higher cultural priority; however both troparions are resolved. Feast-rank override system (deferred) will handle proper forefeast weighting. Note: Ignatius is commemorated Dec 20 on the new calendar."
+        }
+      ]
+    },
+    "12-21": {
+      "commemorations": [
+        {
+          "id": "forefeast-nativity-2",
+          "name": "Forefeast of the Nativity of Christ (Day 2)",
+          "type": "feast",
+          "rank": 4,
+          "troparion_tone": 4,
+          "troparion": {
+            "tone": 4,
+            "title": "Troparion of the Forefeast of the Nativity — Tone 4",
+            "text": "Make ready, O Bethlehem, for Eden hath been opened for all. Adorn thyself, O Ephrathah, for the Tree of Life hath blossomed forth in the cave from the Virgin; for her womb did appear as a spiritual paradise in which is planted the divine Plant, and if we eat of it we shall live and shall not die as did Adam. Christ shall be born to raise the image that fell of old."
+          },
+          "troparion_status": "resolved",
+          "tradition_tags": ["EOR", "OOR"],
+          "notes": "Second day of the Forefeast of the Nativity. Rank 4. Also commemorates Holy Martyr Juliana of Nicomedia on some recensions."
+        }
+      ]
+    },
+    "12-22": {
+      "commemorations": [
+        {
+          "id": "great-martyr-anastasia",
+          "name": "Holy Great Martyr Anastasia the Deliverer from Potions",
+          "type": "martyr",
+          "rank": 3,
+          "troparion_tone": 3,
+          "troparion": {
+            "tone": 3,
+            "title": "Troparion of the Great Martyr Anastasia — Tone 3",
+            "text": "Let us praise the holy Anastasia, who triumphed in the arenas of martyrdom; for she contested fittingly, strove mightily, and received the crown from the Creator. We cry to her: Deliver from misfortune those who call upon thee with faith, O glorious martyr Anastasia."
+          },
+          "troparion_status": "resolved",
+          "tradition_tags": ["EOR", "OOR"],
+          "notes": "Holy Great Martyr Anastasia the Deliverer from Potions, +304. Rank 3. Forefeast also continues. Two commemorations share Dec 22; Anastasia (rank 3) and the Forefeast (rank 4) — Anastasia has higher rank and is first in liturgical ordering; resolver selects her."
+        },
+        {
+          "id": "forefeast-nativity-3",
+          "name": "Forefeast of the Nativity of Christ (Day 3)",
+          "type": "feast",
+          "rank": 4,
+          "troparion_tone": 4,
+          "troparion": {
+            "tone": 4,
+            "title": "Troparion of the Forefeast of the Nativity — Tone 4",
+            "text": "Make ready, O Bethlehem, for Eden hath been opened for all. Adorn thyself, O Ephrathah, for the Tree of Life hath blossomed forth in the cave from the Virgin; for her womb did appear as a spiritual paradise in which is planted the divine Plant, and if we eat of it we shall live and shall not die as did Adam. Christ shall be born to raise the image that fell of old."
+          },
+          "troparion_status": "resolved",
+          "tradition_tags": ["EOR", "OOR"],
+          "notes": "Third day of the Forefeast of the Nativity. Rank 4."
+        }
+      ]
+    },
+    "12-23": {
+      "commemorations": [
+        {
+          "id": "ten-martyrs-crete",
+          "name": "The Ten Holy Martyrs of Crete",
+          "type": "martyr",
+          "rank": 4,
+          "troparion_tone": 4,
+          "troparion": null,
+          "troparion_status": "text-unavailable",
+          "tradition_tags": ["EOR", "OOR"],
+          "notes": "The Ten Martyrs of Crete who suffered under Decius. Rank 4. Forefeast also continues. Troparion text not confirmed for this corpus."
+        },
+        {
+          "id": "forefeast-nativity-4",
+          "name": "Forefeast of the Nativity of Christ (Day 4)",
+          "type": "feast",
+          "rank": 4,
+          "troparion_tone": 4,
+          "troparion": {
+            "tone": 4,
+            "title": "Troparion of the Forefeast of the Nativity — Tone 4",
+            "text": "Make ready, O Bethlehem, for Eden hath been opened for all. Adorn thyself, O Ephrathah, for the Tree of Life hath blossomed forth in the cave from the Virgin; for her womb did appear as a spiritual paradise in which is planted the divine Plant, and if we eat of it we shall live and shall not die as did Adam. Christ shall be born to raise the image that fell of old."
+          },
+          "troparion_status": "resolved",
+          "tradition_tags": ["EOR", "OOR"],
+          "notes": "Fourth day of the Forefeast. Rank 4. Resolver selects Ten Martyrs (first entry, same rank). Forefeast troparion available as second entry."
+        }
+      ]
+    },
+    "12-24": {
+      "commemorations": [
+        {
+          "id": "forefeast-nativity-eve",
+          "name": "Eve of the Nativity of Christ (Paramone)",
+          "type": "feast",
+          "rank": 1,
+          "troparion_tone": 4,
+          "troparion": {
+            "tone": 4,
+            "title": "Troparion of the Eve of the Nativity — Tone 4",
+            "text": "Make ready, O Bethlehem, for Eden hath been opened for all. Adorn thyself, O Ephrathah, for the Tree of Life hath blossomed forth in the cave from the Virgin; for her womb did appear as a spiritual paradise in which is planted the divine Plant, and if we eat of it we shall live and shall not die as did Adam. Christ shall be born to raise the image that fell of old."
+          },
+          "troparion_status": "resolved",
+          "tradition_tags": ["EOR", "OOR"],
+          "notes": "Paramone (Eve) of the Nativity, December 24. Treated as rank 1 because the eve is a strict fast day with special royal hours; the forefeast troparion is used. The Christmas Troparion proper (Tone 4, 'Thy Nativity, O Christ our God') is sung at the vigil and through the Afterfeast. Feast-rank override system (deferred) will handle the paramone royal hours logic."
+        }
+      ]
+    },
+    "12-25": {
+      "commemorations": [
+        {
+          "id": "nativity-christ",
+          "name": "The Nativity of our Lord God and Savior Jesus Christ",
+          "type": "feast",
+          "rank": 1,
+          "troparion_tone": 4,
+          "troparion": {
+            "tone": 4,
+            "title": "Troparion of the Nativity of Christ — Tone 4",
+            "text": "Thy Nativity, O Christ our God, hath shined upon the world the light of knowledge; for thereby they that worshipped the stars were taught by a star to worship Thee, the Sun of Righteousness, and to know Thee, the Dayspring from on high. O Lord, glory to Thee."
+          },
+          "troparion_status": "resolved",
+          "tradition_tags": ["EOR", "OOR"],
+          "notes": "The Nativity of Christ — one of the Twelve Great Feasts. Rank 1. Highest-rank entry; Octoechos entirely displaced. The troparion is sung throughout the Afterfeast (Dec 26 – Dec 31 / Jan 1 depending on calendar)."
+        }
+      ]
+    },
+    "12-26": {
+      "commemorations": [
+        {
+          "id": "synaxis-theotokos-nativity",
+          "name": "Synaxis of the Most Holy Theotokos",
+          "type": "marian_feast",
+          "rank": 2,
+          "troparion_tone": 4,
+          "troparion": {
+            "tone": 4,
+            "title": "Troparion of the Synaxis of the Theotokos — Tone 4",
+            "text": "Thy Nativity, O Christ our God, hath shined upon the world the light of knowledge; for thereby they that worshipped the stars were taught by a star to worship Thee, the Sun of Righteousness, and to know Thee, the Dayspring from on high. O Lord, glory to Thee."
+          },
+          "troparion_status": "resolved",
+          "tradition_tags": ["EOR", "OOR"],
+          "notes": "Synaxis of the Theotokos — the day after Christmas is dedicated to the Mother of God. Rank 2. The Christmas Troparion continues through the Afterfeast; this is standard Byzantine practice for the synaxis."
+        }
+      ]
+    },
+    "12-27": {
+      "commemorations": [
+        {
+          "id": "protomartyr-stephen",
+          "name": "Holy Protomartyr and Archdeacon Stephen",
+          "type": "martyr",
+          "rank": 2,
+          "troparion_tone": 4,
+          "troparion": {
+            "tone": 4,
+            "title": "Troparion of the Protomartyr Stephen — Tone 4",
+            "text": "Crowned with the diadem of the royal purple of thy blood, O holy Protomartyr Stephen, thou didst receive the crown of victory from Christ, Who through the crown of thorns blotted out the sin of our forefather. Beseech Him that He save our souls."
+          },
+          "troparion_status": "resolved",
+          "tradition_tags": ["EOR", "OOR"],
+          "notes": "Holy Protomartyr and Archdeacon Stephen, first martyr of the Church. Rank 2 / Polyeleos. Feast observed within the Afterfeast of Christmas."
+        }
+      ]
+    },
+    "12-28": {
+      "commemorations": [
+        {
+          "id": "twenty-thousand-martyrs-nicomedia",
+          "name": "The Twenty Thousand Holy Martyrs Burned in Nicomedia",
+          "type": "martyr",
+          "rank": 3,
+          "troparion_tone": 2,
+          "troparion": null,
+          "troparion_status": "text-unavailable",
+          "tradition_tags": ["EOR", "OOR"],
+          "notes": "The twenty thousand martyrs who were burned in a church in Nicomedia on Christmas Day 302 under Diocletian. Rank 3. Troparion text not confirmed from published Antiochian/OCA source for this corpus."
+        }
+      ]
+    },
+    "12-29": {
+      "commemorations": [
+        {
+          "id": "holy-innocents",
+          "name": "The Holy Fourteen Thousand Infants Slain by Herod at Bethlehem",
+          "type": "martyr",
+          "rank": 3,
+          "troparion_tone": 1,
+          "troparion": {
+            "tone": 1,
+            "title": "Troparion of the Holy Innocents — Tone 1",
+            "text": "O Christ our God, when the tyrant Herod sought Thy life, he slew the holy infants as a gift to Thee without blemish. When they had suffered for Thee before Thy suffering, they cried aloud and glorified Thee, O Thou Who art the only Lover of mankind."
+          },
+          "troparion_status": "resolved",
+          "tradition_tags": ["EOR", "OOR"],
+          "notes": "The Holy Innocents, the children slain by Herod in his search for the Christ Child (Matthew 2:16–18). Rank 3. Observed within the Afterfeast of Christmas."
+        }
+      ]
+    },
+    "12-30": {
+      "commemorations": [
+        {
+          "id": "anysia-thessalonica",
+          "name": "Holy Martyr Anysia of Thessalonica",
+          "type": "martyr",
+          "rank": 4,
+          "troparion_tone": 4,
+          "troparion": null,
+          "troparion_status": "text-unavailable",
+          "tradition_tags": ["EOR", "OOR"],
+          "notes": "Holy Martyr Anysia of Thessalonica, +285. Rank 4. Troparion text not confirmed for this corpus."
+        }
+      ]
+    },
+    "12-31": {
+      "commemorations": [
+        {
+          "id": "melania-roman",
+          "name": "Venerable Melania the Younger, Roman",
+          "type": "monastic",
+          "rank": 4,
+          "troparion_tone": 8,
+          "troparion": null,
+          "troparion_status": "text-unavailable",
+          "tradition_tags": ["EOR", "OOR"],
+          "notes": "Venerable Melania the Younger, foundress of monasteries in Jerusalem, +439. Rank 4. Last day of the Afterfeast of Christmas in many traditions. Troparion text not confirmed for this corpus."
+        }
+      ]
+    }
+  }
+}

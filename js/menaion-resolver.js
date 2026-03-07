@@ -1,6 +1,6 @@
 // ── js/menaion-resolver.js ─────────────────────────────────────────────────
 //
-// MenaionResolver v1.0
+// MenaionResolver v1.1
 // Architecture layer: DATA RESOLVER (not UI, not calendar, not engine)
 //
 // This module owns:
@@ -52,19 +52,19 @@ const MenaionResolver = (() => {
     // Keys: month number (1–12). Values: filename stem.
     // Add entries here as monthly files are imported.
     const MONTH_FILES = {
-        // 1:  'january',    // not yet imported
-        // 2:  'february',   // not yet imported
-        // 3:  'march',      // not yet imported
-        // 4:  'april',      // not yet imported
-        // 5:  'may',        // not yet imported
-        // 6:  'june',       // not yet imported
-        // 7:  'july',       // not yet imported
-        // 8:  'august',     // not yet imported
-        // 9:  'september',  // not yet imported
-        // 10: 'october',    // not yet imported
-        11: 'november',   // PILOT CORPUS — partial import, see file _meta
-        // 12: 'december',   // not yet imported
-    };
+    // 1:  'january',    // not yet imported
+    // 2:  'february',   // not yet imported
+    // 3:  'march',      // not yet imported
+    // 4:  'april',      // not yet imported
+    // 5:  'may',        // not yet imported
+    // 6:  'june',       // not yet imported
+    // 7:  'july',       // not yet imported
+    // 8:  'august',     // not yet imported
+    // 9:  'september',  // not yet imported
+    // 10: 'october',    // not yet imported
+    11: 'november',   // FULL CORPUS — all 30 dates, tranche 2 (2026-03-08)
+    12: 'december',   // FULL CORPUS — all 31 dates, tranche 2 (2026-03-08)
+};
 
     // ── Data base URL ──────────────────────────────────────────────────────
     const DATA_BASE = 'data/menaion/';
