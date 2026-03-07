@@ -282,20 +282,14 @@
     </div><!-- /east-syriac-settings -->
 
     <!-- Generic Sidebar Shell — Horologion and future traditions -->
-    <!-- ── NEW: added for Horologion v2.x UI shell. Do not add BCP-specific     -->
-    <!-- ── controls here. This panel is the reusable path for any tradition     -->
-    <!-- ── that does not have its own dedicated settings panel.                 -->
+    <!-- Do not add BCP-specific controls here. This is the reusable neutral   -->
+    <!-- path for any tradition without its own dedicated settings panel.       -->
     <div id="generic-settings" class="mode-hidden sidebar-hidden">
-        <h3 style="color:var(--gold); font-family:'Cinzel',serif; font-size:1.15em; letter-spacing:0.08em;">Byzantine Vespers</h3>
+        <h3 style="color:var(--gold); font-family:'Cinzel',serif; font-size:1.15em; letter-spacing:0.08em;" id="generic-tradition-label">Byzantine Vespers — Horologion</h3>
 
-        <!-- Tradition / office identity label -->
-        <div class="setting-group">
-            <div id="generic-tradition-label" style="font-family:'IM Fell English',serif; font-size:1em; color:#c8bfa8; margin-bottom:2px;">Byzantine Vespers — Horologion</div>
-            <div id="generic-date-label" style="font-family:'Cinzel',serif; font-size:0.72em; letter-spacing:0.08em; color:#a89878; margin-bottom:8px;">—</div>
-        </div>
-
-        <!-- Date navigator — reuses the same changeDate/resetDate/setCustomDate
-             functions as the BCP panel; currentDate is shared app-wide state. -->
+        <!-- Date navigator — identical structural pattern to BCP #settings-panel.
+             changeDate / resetDate / setCustomDate are shared app-wide functions.
+             The tradition label is the h3 above; no extra wrapper div is needed. -->
         <div class="ordo-control">
             <strong>Liturgical Ordo</strong>
             <div class="ordo-date" id="generic-display-date">Loading...</div>

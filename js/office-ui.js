@@ -567,9 +567,12 @@ function backToSplash() {
         genSettings.classList.add('sidebar-hidden');
         genSettings.classList.add('mode-hidden');
     }
-    if (mainContent) {
+       if (mainContent) {
         mainContent.classList.remove('sidebar-hidden');
     }
+}
+
+async function selectMode(mode) {
 
 async function selectMode(mode) {
     selectedMode = mode;
