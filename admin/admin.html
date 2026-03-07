@@ -489,10 +489,7 @@ header {
           <option value="old_calendar">Old Calendar (Julian)</option>
         </select>
       </div>
-      <div class="eo-notice" id="eo-notice">
-        ⚠ Old Calendar (Julian) EO mode is scaffolded but not yet implemented.
-        Season boundaries shown will reflect Gregorian/Revised Julian only.
-      </div>
+      <div class="eo-notice" id="eo-notice" style="display:none"></div>
     </div>
 
     <button class="run-btn" id="run-btn">↻ Compute Year Snapshot</button>
@@ -610,7 +607,8 @@ function getYearSnapshot(year, config) {
     }
     const eoSnap = EasternOrthodoxCalendar.getYearSnapshot(year, { eoMode: eoMode });
     if (eoSnap._notImplemented) return eoSnap;
-    return buildEORSnapshot(eoSnap, year);
+    const eoRanges = CalendarEngine.getEOSeasonRanges(year, eoMode || 'new_calendar');
+    return buildEORSnapshot(eoSnap, year, eoRanges);
   }
 
   if (tradition === 'COE') {
@@ -622,7 +620,7 @@ function getYearSnapshot(year, config) {
 }
 
 // ── EOR adapter: translate EasternOrthodoxCalendar snapshot → admin shape ──
-function buildEORSnapshot(eoSnap, year) {
+function buildEORSnapshot(eoSnap, year, eoRanges) {
   const { anchors, seasons } = eoSnap;
 
   // Color map: EO season key → colorToken string (mirrors SEASON_COLOR_TOKENS)
@@ -668,7 +666,8 @@ function buildEORSnapshot(eoSnap, year) {
   for (const [k, v] of Object.entries(anchors)) {
     mappedAnchors[k] = toISO(v instanceof Date ? v : new Date(v));
   }
-  // Rename for display
+
+  // Build display anchors: movable feasts first, then eoMode-aware fixed feasts.
   const displayAnchors = {
     'Pascha (Orthodox Easter)': mappedAnchors.pascha,
     'Clean Monday':             mappedAnchors.cleanMonday,
@@ -677,7 +676,15 @@ function buildEORSnapshot(eoSnap, year) {
     'All Saints Sunday':        mappedAnchors.allSaints,
   };
 
-  return { anchors: displayAnchors, seasons: mappedSeasons };
+  const fixedFeasts = (eoRanges && eoRanges.fixedFeasts) ? eoRanges.fixedFeasts : {};
+  if (fixedFeasts.christmas) displayAnchors['Nativity of Christ']  = fixedFeasts.christmas;
+  if (fixedFeasts.theophany) displayAnchors['Theophany (Epiphany)'] = fixedFeasts.theophany;
+
+  const eoModeLabel = (eoRanges && eoRanges.eoMode === 'old_calendar')
+    ? 'Old Calendar (Julian)'
+    : 'New Calendar (Revised Julian)';
+
+  return { anchors: displayAnchors, seasons: mappedSeasons, _eoModeLabel: eoModeLabel };
 }
 
 function buildBCPSnapshot(year) {
@@ -770,9 +777,10 @@ function renderYearSnapshot(year, config) {
   const label = document.getElementById('year-snapshot-label');
   const body  = document.getElementById('year-snapshot-body');
 
-  label.textContent = `${year} · ${config.tradition}`;
-
   const snapshot = getYearSnapshot(year, config);
+
+  const modeLabel = snapshot._eoModeLabel ? ` · ${snapshot._eoModeLabel}` : '';
+  label.textContent = `${year} · ${config.tradition}${modeLabel}`;
 
   if (snapshot._notImplemented) {
     body.innerHTML = `
@@ -1121,9 +1129,7 @@ function onTraditionChange() {
 }
 
 function onEOModeChange() {
-  const mode   = document.getElementById('ctrl-eo-mode').value;
-  const notice = document.getElementById('eo-notice');
-  notice.classList.toggle('visible', mode === 'old_calendar');
+  // EO old/new calendar mode is now implemented; no warning notice needed.
 }
 
 document.getElementById('ctrl-tradition').addEventListener('change', onTraditionChange);

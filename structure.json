@@ -4,7 +4,7 @@
     "version": "2.8.9",
     "last_updated": "2026-03-06",
     "bcp_compliance": "100%",
-    "operational_status": "OPERATIONAL — v2.8.9: COE governance complete. Three-layer COE calendar model fully implemented: Layer 1 season engine operational; Layer 2 fixed feasts (Sawma Rabba Friday martyrs, Commemoration of the Faithful Departed) active; Layer 3 individual saints re-enabled via CoeEligibility.filter() allowlist gate. COE-IIB saint-tag audit complete — 133 identity IDs (136 rows) removed from commemorations.json; monthly caches regenerated. Final five adjudication complete: 3 REMOVE_COE_TAG applied; mar-augustine / mar-augustine-commemoration held as external-research holdout (excluded from Layer 3). No COE internal refactor work remains open. Prior: Saints resolver boundary complete (v2.8.6); hydration-race gating verified closed (v2.8.6).",
+    "operational_status": "OPERATIONAL — v2.8.9: COE governance complete. Three-layer COE calendar model fully implemented: Layer 1 season engine operational; Layer 2 fixed feasts (Sawma Rabba Friday martyrs, Commemoration of the Faithful Departed) active; Layer 3 individual saints re-enabled via CoeEligibility.filter() allowlist gate. COE-IIB saint-tag audit complete — 133 identity IDs (136 rows) removed from commemorations.json; monthly caches regenerated. Final five adjudication complete: 3 REMOVE_COE_TAG applied; mar-augustine / mar-augustine-commemoration held as external-research holdout (excluded from Layer 3). No COE internal refactor work remains open. Prior: Saints resolver boundary complete (v2.8.6); hydration-race gating verified closed (v2.8.6). EO old/new calendar mode diagnostics are now implemented in admin tooling only; main-app EO mode is not yet exposed.",
     "audit_findings": {
       "open_bugs": [
         "1. Rubric logic: [rite] placeholder resolution in rubrics.json is fragile and prone to null returns. (LOW — see known_outstanding_issues.rite_placeholder_resolution)"
@@ -14,7 +14,8 @@
         "2. [CLOSED — v2.8.6] Hydration-race gating: renderOffice() is guarded by isHydrationComplete. selectMode() awaits hydration before setting that flag and calling requestRender(). requestRender()/flushRender() coalesce and serialise renders via activeRender. init() is kernel-only and no longer silently triggers Daily Office hydration. Residual: no automated regression test covers this gating path.",
         "3. Redundant liturgical fragments (Gloria Patri/Kyrie) should be normalized into common.json.",
         "4. Saints data model: identities.json + commemorations.json are the canonical source-of-truth. js/saints-resolver.js provides the shared resolver boundary. office-ui.js and admin.html route all saints paths through SaintsResolver. Phase 4 duplicate identity consolidation complete (v2.8.8): 46 pairs resolved, 1,228 identities remain. COE audit and governance complete (v2.8.9). Remaining: normalized-source runtime adapter (SaintsResolver reads monthly cache files at runtime; a true adapter would query identities.json + commemorations.json directly).",
-        "5. [CLOSED — v2.8.9] COE saint/commemoration rendering: Three-layer rebuild complete. Layer 1 (season engine) was already operational. Layer 2 (fixed feasts: Sawma Rabba Friday martyrs, pre-Sawma Commemoration of the Faithful Departed) implemented in COE-IIA via getDayClass() in calendar-east-syriac.js. Layer 3 (sparse individual saints) source-data corrected via COE-IIB audit (133 IDs removed), eligibility gate implemented in js/coe-eligibility.js (CoeEligibility.filter()), and display re-enabled in renderEastSyriac(). saint-grid model eliminated. CoeEligibility.filter() is mandatory before any Layer 3 render. Layer 2 output from getDayClass() renders before Layer 3 lookup. No saint-grid fallback. Silence is correct when no eligible saint is present."
+        "5. [CLOSED — v2.8.9] COE saint/commemoration rendering: Three-layer rebuild complete. Layer 1 (season engine) was already operational. Layer 2 (fixed feasts: Sawma Rabba Friday martyrs, pre-Sawma Commemoration of the Faithful Departed) implemented in COE-IIA via getDayClass() in calendar-east-syriac.js. Layer 3 (sparse individual saints) source-data corrected via COE-IIB audit (133 IDs removed), eligibility gate implemented in js/coe-eligibility.js (CoeEligibility.filter()), and display re-enabled in renderEastSyriac(). saint-grid model eliminated. CoeEligibility.filter() is mandatory before any Layer 3 render. Layer 2 output from getDayClass() renders before Layer 3 lookup. No saint-grid fallback. Silence is correct when no eligible saint is present.",
+        "6. EO old/new calendar mode is partially implemented in admin-only tooling (CalendarEngine.getEOSeasonRanges() + admin/admin.html snapshots), but the main application still has no EO mode UI and does not load js/calendar-eastern-orthodox.js on the production path."
       ],
       "resolved_in_this_version": [
         "1. COE saint section silenced: renderEastSyriac() saint display locked to empty pending architectural rebuild. Previous behaviour was historically inaccurate — string-matching tradition fields was surfacing wrong saints. Silence is liturgically correct for COE weekdays with no fixed saint."
@@ -86,7 +87,7 @@
         "js/prayers.js",
         "js/tooltip.js"
       ],
-      "discrepancy_note": "Previous version of this file omitted js/calendar-east-syriac.js from script_load_order. Corrected — it is present in index.html and required for renderEastSyriac()."
+      "discrepancy_note": "Previous version of this file omitted js/calendar-east-syriac.js from script_load_order. Corrected — it is present in index.html and required for renderEastSyriac(). Main app still does not expose an EO mode selector or load js/calendar-eastern-orthodox.js; EO old/new mode remains admin-only."
     },
     "js/office-ui.js": {
       "role": "All Daily Office UI logic",
@@ -161,9 +162,9 @@
     },
     "js/calendar-engine.js": {
       "role": "All date and liturgical calendar logic",
-      "status": "Current — v2.8.1 (2026-02-27)",
+      "status": "Current — v2.8.9 + 2026-03-06 admin EO diagnostics patch",
       "global_api": "window.CalendarEngine",
-      "architecture_note": "v2.8.1: Hardcoded SEASON_RANGES array (was valid through Dec 2030 only) replaced with algorithmic generator. getLiturgicalYear() is now fully algorithmic. Both are valid for any year indefinitely.",
+      "architecture_note": "v2.8.1: Hardcoded SEASON_RANGES array (was valid through Dec 2030 only) replaced with algorithmic generator. getLiturgicalYear() is now fully algorithmic. Both are valid for any year indefinitely. Admin/devtool extension now adds EO snapshot helpers for old_calendar vs new_calendar diagnostics; this does not by itself expose EO mode in the main app.",
       "public_methods": [
         "init() — loads bcp-propers.json; must be called before fetchLectionaryData()",
         "getSeasonAndFile(date) — returns { season, file, liturgicalColor, litYear }",
@@ -175,14 +176,18 @@
         "changeDate(days)",
         "resetDate()",
         "formatDateForLookup(date) — returns 'February 17, 2026'",
-        "formatDateISO(date) — returns '2026-02-17'"
+        "formatDateISO(date) — returns '2026-02-17'",
+        "getYearSnapshot(year, config) — admin/devtool snapshot adapter; routes EOR to EasternOrthodoxCalendar when available",
+        "getEOSeasonRanges(year, eoMode) — admin/devtool EO fixed-feast + season-range diagnostics for new_calendar vs old_calendar"
       ],
       "private_methods": [
         "_getEaster(year) — Anonymous Gregorian algorithm; returns JS Date of Easter Sunday for any year",
         "_getAdventSunday(year) — returns JS Date of Advent Sunday (Sunday on or after Nov 27) for any year",
         "_addDays(date, n) — date arithmetic helper",
         "_generateSeasonRanges(year) — generates all season range objects for the liturgical year beginning in Nov/Dec of `year`",
-        "_getRangesForDate(date) — returns the correct generated range set for any date; checks prior and current calendar year"
+        "_getRangesForDate(date) — returns the correct generated range set for any date; checks prior and current calendar year",
+        "_julianToGregorianOffset(year) — century-based Julian→Gregorian offset helper for EO fixed-feast diagnostics",
+        "_isoFromDate(date) — local-time-safe YYYY-MM-DD formatter used by EO diagnostics"
       ],
       "season_files": {
         "advent.json": "Advent season",
@@ -282,6 +287,21 @@
       "role": "DELETED — orphaned duplicate of css/office.css",
       "status": "DELETED 2026-02-24",
       "note": "Was never referenced by index.html or any JS module. Deleted to eliminate confusion."
+    },
+    "js/calendar-eastern-orthodox.js": {
+      "role": "Eastern Orthodox movable-feast engine for admin/year-day snapshot diagnostics",
+      "status": "Current — admin/devtool path only (2026-03-06 wiring confirmed)",
+      "global_api": "window.EasternOrthodoxCalendar",
+      "public_methods": [
+        "getYearSnapshot(year, options) — returns EO year snapshot using Julian Paschalion",
+        "getDaySnapshot(date, options) — returns EO day snapshot",
+        "_verifyPascha(year) — internal verification helper exposed on module"
+      ],
+      "implementation_notes": [
+        "Julian Paschalion (Meeus/standard Orthodox method), then Julian→Gregorian conversion by century-based offset.",
+        "Zero dependency design: no private CalendarEngine calls.",
+        "Loaded by admin/admin.html for diagnostics; not loaded by main app index.html."
+      ]
     }
   },
   "east_syriac_tradition": {
@@ -634,7 +654,7 @@
     "note": "Individual data files not enumerated here. See historical structure file for full listings.",
     "data/bible/": "[600+ Scripture files across NT, OT, ET, SY, AR, ODES subdirectories]",
     "data/season/": "[9 seasonal JSON files — 353 total BCP 1979 daily lectionary entries, Year One and Year Two]",
-    "data/saints/": "12 monthly JSON files — 1568 saint records (post v2.8.2 migration). Schema: id, day, name, description, type, tags[], verification_status, notes?. Tags: ANG | LAT | EOR | OOR | COE. ECU derived at render time. Backup of pre-migration files at data/saints/backup/.",
+    "data/saints/": "12 monthly JSON files — 1568 saint records (post v2.8.2 migration). Schema: id, day, name, description, type, tags[], verification_status, notes?. Tags: ANG | LAT | EOR | OOR | COE. ECU derived at render time. Generated monthly files are cache/display artifacts, not canonical source.",
     "data/components.json": "DEPRECATED — do not use. Stale pre-modularization monolith.",
     "data/rubrics.json": "BCP office sequence definitions",
     "data/season/bcp-propers.json": "Proper 1–29 reference table for CalendarEngine.init()",
@@ -785,9 +805,35 @@
         "components/east-syriac.json"
       ],
       "research_credit": "Architectural model established 2026-02-28 via external liturgical consultant review."
+    },
+    "eo_mode_app_integration": {
+      "severity": "MEDIUM",
+      "description": "EO old/new calendar mode is only partially implemented. Admin tooling now supports eoMode-aware diagnostics through CalendarEngine.getEOSeasonRanges() and admin/admin.html Year Snapshot rendering, but the main application has no EO mode selector, no production render path consuming eoMode, and index.html does not load js/calendar-eastern-orthodox.js.",
+      "action": "Add EO mode selection to the main app, load/wire the Orthodox calendar module on the production path, and ensure live office/day rendering consumes eoMode instead of relying on admin-only snapshot tooling.",
+      "files": [
+        "index.html",
+        "js/office-ui.js",
+        "js/calendar-engine.js",
+        "js/calendar-eastern-orthodox.js",
+        "admin/admin.html"
+      ]
     }
   },
   "recent_logic_changes": [
+    {
+      "date": "2026-03-06",
+      "phase": "v2.8.9",
+      "file": "js/calendar-engine.js + admin/admin.html",
+      "change": "EO old/new calendar mode — admin diagnostics implemented",
+      "detail": "CalendarEngine now exposes getEOSeasonRanges(year, eoMode) with explicit old_calendar vs new_calendar fixed-feast handling, using EasternOrthodoxCalendar for the Julian Paschalion/movable-feast cycle. admin/admin.html now consumes eoMode in the Year Snapshot path and surfaces Nativity/Theophany anchor differences. This is admin/devtool coverage only; the main app still has no EO mode UI or production wiring."
+    },
+    {
+      "date": "2026-03-06",
+      "phase": "v2.8.9",
+      "file": "structure.json",
+      "change": "EO work reclassified from generic implementation task to app-integration task",
+      "detail": "structure.json now records the split accurately: admin-side EO diagnostics are implemented, while the actual remaining work is production integration. admin.todos and known_outstanding_issues were updated to preserve the completed admin/devtool step and keep the end-user EO mode gap open."
+    },
     {
       "date": "2026-03-06",
       "phase": "v2.8.9",
@@ -952,9 +998,9 @@
     }
   ],
   "roadmap_summary": {
-    "completed": "Phases 6.1–6.6 (BCP office + audit remediation), Phase 7.1–7.4 (full Ethiopian Sa'atat + calendar engine), Phase 8.1 (Senkessar index + Tir corpus + full wiring), Phase 8.3 (Hamle corpus verified), Phase 8.5 (Ge'ez dual-date display in Sa'atat sidebar and BCP date header — both rendering via EthiopianCalendar.formatEthiopianDate()), v2.6.1 (Tselote Meweta, Metsehafe Tselot aesthetic), v2.8.0 (Church of the East — all seven canonical hours: Sapra, Quta'a, Endana, D-tsha' Sa'in, Ramsha, Lelya, Suba'a — cathedral and monastic sequences, full dynamic token implementation), v2.8.1 (Barekmar components, Mahlet expansion, duplicate removal, Qanona layering, algorithmic calendar engine), v2.8.2 (saints data migration — tags[] schema, 1568 records, full classification), v2.8.3 (COE saint section silenced; COE architectural model documented), v2.8.5–2.8.6 (saints resolver boundary — js/saints-resolver.js; resolveCommemorations delegation; OOR fallback via filterCachedByTradition; appData.saints eliminated; hydration-race gating verified closed), v2.8.9 (COE-II complete: COE-IIA Layer 2 fixed feasts, COE-IIB tag audit [133 IDs removed, eligibility gate], final five adjudication, Layer 3 re-enabled via CoeEligibility.filter())",
-    "next_required": "1. [rite] placeholder fragility: audit rubric sequence entries using [rite] interpolation; add null-safe fallback. 2. Lower priority: .innerHTML architecture; Gloria Patri/Kyrie normalization; saints normalized-source runtime adapter; identity deduplication (saints-cleanup-queue.md Phase 4). 3. Optional COE future work: COE-IIC — expand Layer 2 with major Hudra fixed feasts (Denha, Sleeba, Annunciation, All Saints). External-research holdout only: mar-augustine / mar-augustine-commemoration (excluded from Layer 3 by eligibility gate; requires Syriac manuscript evidence before any change).",
-    "next_planned": "No planned phase currently queued. See roadmap future items.",
+    "completed": "Phases 6.1–6.6 (BCP office + audit remediation), Phase 7.1–7.4 (full Ethiopian Sa'atat + calendar engine), Phase 8.1 (Senkessar index + Tir corpus + full wiring), Phase 8.3 (Hamle corpus verified), Phase 8.5 (Ge'ez dual-date display in Sa'atat sidebar and BCP date header — both rendering via EthiopianCalendar.formatEthiopianDate()), v2.6.1 (Tselote Meweta, Metsehafe Tselot aesthetic), v2.8.0 (Church of the East — all seven canonical hours: Sapra, Quta'a, Endana, D-tsha' Sa'in, Ramsha, Lelya, Suba'a — cathedral and monastic sequences, full dynamic token implementation), v2.8.1 (Barekmar components, Mahlet expansion, duplicate removal, Qanona layering, algorithmic calendar engine), v2.8.2 (saints data migration — tags[] schema, 1568 records, full classification), v2.8.3 (COE saint section silenced; COE architectural model documented), v2.8.5–2.8.6 (saints resolver boundary — js/saints-resolver.js; resolveCommemorations delegation; OOR fallback via filterCachedByTradition; appData.saints eliminated; hydration-race gating verified closed), v2.8.9 (COE-II complete: COE-IIA Layer 2 fixed feasts, COE-IIB tag audit [133 IDs removed, eligibility gate], final five adjudication, Layer 3 re-enabled via CoeEligibility.filter()), 2026-03-06 admin-only EO diagnostics (CalendarEngine.getEOSeasonRanges(), EO fixed-feast anchors in admin Year Snapshot, corrected admin render path)",
+    "next_required": "1. EO app integration: admin/devtool EO old/new calendar diagnostics are implemented, but the main application still has no EO mode selector or production render path consuming eoMode. 2. [rite] placeholder fragility: audit rubric sequence entries using [rite] interpolation; add null-safe fallback. 3. Lower priority: .innerHTML architecture; Gloria Patri/Kyrie normalization; saints normalized-source runtime adapter. 4. Optional COE future work: COE-IIC — expand Layer 2 with major Hudra fixed feasts (Denha, Sleeba, Annunciation, All Saints). 5. External-research holdout only: mar-augustine / mar-augustine-commemoration (excluded from Layer 3 by eligibility gate; requires Syriac manuscript evidence before any change).",
+    "next_planned": "No single implementation phase is queued, but EO app integration is now the clearest medium-priority functional gap.",
     "future": "Phase 6.7 — Performance polish (timezone warning, LRU seasonal cache, prefetch, service worker); Phase 7.5 — Coptic Agpeya as standalone tradition entry; Phase 9.0 — Mobile app; Phase 9.1 — Cross-Tradition Search (Comparative scripture view across AR, ET, and SY canons); COE-IIC — Optional Layer 2 expansion: major Hudra fixed feasts (Denha/Epiphany, Sleeba/Exaltation, Annunciation, All Saints)"
   },
   "governance": {
@@ -1015,7 +1061,7 @@
     ]
   },
   "admin": {
-    "_note": "Admin dashboard configuration. todos are the authoritative task list consumed by the /admin UI. Add new todos here; do not create a separate file.",
+    "_note": "Admin dashboard configuration. todos are the authoritative task list consumed by the /admin UI. Completed items remain in the array as ledger history; do not delete them when reclassifying work.",
     "_how_to_add_todo": "Add an object to the todos array with: id (kebab-case unique), title (short), description (full), severity (HIGH|MEDIUM|LOW), status (open|in-progress|done), area (code-area or file), and optionally phase.",
     "todos": [
       {
@@ -1062,20 +1108,31 @@
       },
       {
         "id": "eo-calendar-modes",
-        "title": "EO old/new calendar mode implementation",
-        "description": "Eastern Orthodox old calendar (Julian) vs new calendar (Revised Julian) mode is not yet implemented. Admin dashboard scaffolding is in place; full behavior requires Julian Easter calculation and season boundary computation in the revised julian calendar variant.",
+        "title": "EO old/new calendar mode: main-app integration",
+        "description": "PARTIAL — admin/devtool diagnostics are now implemented, but the feature is not complete in the actual app. CalendarEngine.getEOSeasonRanges(year, eoMode) and admin/admin.html support EO old_calendar vs new_calendar year snapshots, including fixed-feast anchor differences. Remaining work: add EO mode selection to the main app, load js/calendar-eastern-orthodox.js on the production path, and ensure live office/day rendering consumes eoMode rather than admin-only snapshot tooling.",
         "severity": "MEDIUM",
-        "status": "open",
-        "area": "js/calendar-engine.js + admin/admin.html"
+        "status": "in-progress",
+        "area": "index.html + js/office-ui.js + js/calendar-engine.js + js/calendar-eastern-orthodox.js + admin/admin.html",
+        "phase": "EO app integration"
+      },
+      {
+        "id": "eo-admin-diagnostics",
+        "title": "EO admin diagnostics: old/new calendar snapshot support",
+        "description": "COMPLETE — 2026-03-06. Admin/devtool coverage exists for EO old_calendar vs new_calendar diagnostics. CalendarEngine.getEOSeasonRanges(year, eoMode) computes fixed-feast civil placement (Nativity/Theophany) while EasternOrthodoxCalendar continues to own the Julian Paschalion/movable-feast cycle. admin/admin.html Year Snapshot consumes eoMode and renders the differing anchor dates. This does not expose EO mode in the main application.",
+        "severity": "MEDIUM",
+        "status": "done",
+        "area": "js/calendar-engine.js + admin/admin.html",
+        "phase": "EO admin diagnostics"
       }
     ]
   },
   "documentation_manifest": {
     "status": "internal",
-    "last_realigned": "2026-03-03",
+    "last_realigned": "2026-03-06",
     "notes": [
       "structure.json is the canonical governance+documentation artifact and is consumed by admin dashboard.",
-      "documentation/* files are internal engineering references; git history is the archive of prior versions."
+      "documentation/* files are internal engineering references; git history is the archive of prior versions.",
+      "EO admin diagnostics vs main-app EO integration split recorded in structure.json on 2026-03-06."
     ],
     "key_docs": [
       "documentation/STRUCTURE_JSON_CONTRACT.md",

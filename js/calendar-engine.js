@@ -302,6 +302,180 @@ class CalendarEngine {
             psalms_evening: ''
         };
     }
+
+    // ── Eastern Orthodox calendar support ─────────────────────────────────────
+    //
+    // getEOSeasonRanges() and its helpers implement the fixed-feast placement
+    // half of the EO old/new calendar mode contract described in admin/readme.md.
+    //
+    // The movable-feast half (Pascha and all P±N observances) is handled entirely
+    // by calendar-eastern-orthodox.js via EasternOrthodoxCalendar.getYearSnapshot().
+    // Pascha itself always follows the Julian Paschalion regardless of eoMode;
+    // eoMode only governs where fixed feasts (Christmas, Theophany) land on the
+    // civil calendar.
+    //
+    // new_calendar (Revised Julian / New Calendar parishes):
+    //   Fixed feasts = Gregorian civil date. Christmas = Dec 25, Theophany = Jan 6.
+    //
+    // old_calendar (Julian / Old Calendar parishes):
+    //   Fixed feasts = Julian date expressed as a Gregorian civil date by adding
+    //   the century-based Julian↔Gregorian offset (13 days in 20th–21st century).
+    //   Christmas = Jan 7, Theophany = Jan 19.
+
+    /**
+     * Century-based Julian→Gregorian day offset.
+     * Julian civil date + offset = Gregorian civil date.
+     * Valid from 1600 AD through 2199 AD.
+     *
+     * @param  {number} year - The Gregorian civil year
+     * @return {number} Number of days to add to a Julian date to get its Gregorian civil equivalent
+     */
+    static _julianToGregorianOffset(year) {
+        if (year >= 2100) return 14;
+        if (year >= 1900) return 13; // current century
+        if (year >= 1800) return 12;
+        if (year >= 1700) return 11;
+        return 10;
+    }
+
+    /**
+     * Format a Date object as a YYYY-MM-DD string (local time, no UTC shift).
+     * Private helper used by getEOSeasonRanges() to avoid depending on
+     * formatDateISO() which calls toISOString() and can shift by timezone.
+     *
+     * @param  {Date} date
+     * @return {string} "YYYY-MM-DD"
+     */
+    static _isoFromDate(date) {
+        const y = date.getFullYear();
+        const m = String(date.getMonth() + 1).padStart(2, '0');
+        const d = String(date.getDate()).padStart(2, '0');
+        return `${y}-${m}-${d}`;
+    }
+
+    /**
+     * getEOSeasonRanges(year, eoMode)
+     *
+     * Returns the Eastern Orthodox liturgical season ranges for the given civil
+     * year, with fixed feasts placed according to eoMode.
+     *
+     * This function implements the open MEDIUM task "EO old/new calendar mode
+     * implementation" documented in structure.json → admin.todos.
+     *
+     * Return shape:
+     * {
+     *   seasons:     [ { key, label, colorToken, startDate, endDate } ]  // civil YYYY-MM-DD
+     *   fixedFeasts: { christmas, theophany }                            // civil YYYY-MM-DD
+     *   eoMode:      'new_calendar' | 'old_calendar'
+     *   _diagnostics: { julianOffset, paschaAlgorithm }
+     * }
+     *
+     * On missing module, returns: { _notImplemented: true, reason: string }
+     * This preserves the explicit-error contract described in admin/readme.md.
+     *
+     * @param  {number} year    - Civil year (e.g. 2026)
+     * @param  {string} eoMode  - 'new_calendar' (default) or 'old_calendar'
+     * @return {object}
+     */
+    static getEOSeasonRanges(year, eoMode = 'new_calendar') {
+        if (eoMode !== 'new_calendar' && eoMode !== 'old_calendar') {
+            throw new Error(
+                `[CalendarEngine] getEOSeasonRanges: unknown eoMode "${eoMode}". ` +
+                'Must be "new_calendar" or "old_calendar".'
+            );
+        }
+
+        // Guard: EasternOrthodoxCalendar must be loaded.
+        // Do NOT coerce to new_calendar — surface the failure explicitly.
+        if (typeof EasternOrthodoxCalendar === 'undefined') {
+            return {
+                _notImplemented: true,
+                reason: 'EasternOrthodoxCalendar module not loaded. ' +
+                        'Ensure js/calendar-eastern-orthodox.js is included before this file.'
+            };
+        }
+
+        // ── Fixed-feast civil dates ──────────────────────────────────────
+        //
+        // Christmas and Theophany (Epiphany) are fixed in the Julian or
+        // Revised-Julian calendar depending on eoMode.
+        //
+        // new_calendar: Revised Julian fixed dates coincide with Gregorian.
+        //   Christmas  = Dec 25 of `year`   (civil Dec 25)
+        //   Theophany  = Jan  6 of `year+1` (civil Jan  6)
+        //
+        // old_calendar: Julian fixed dates, converted to Gregorian civil dates.
+        //   Julian Dec 25 + 13 days = Gregorian Jan  7 of `year+1`
+        //   Julian Jan  6 + 13 days = Gregorian Jan 19 of `year+1`
+        //   (offset = 13 for years 1900–2099; see _julianToGregorianOffset)
+
+        const offset = this._julianToGregorianOffset(year);
+
+        let christmas, theophany;
+
+        if (eoMode === 'new_calendar') {
+            christmas = new Date(year,     11, 25); // Dec 25 of this year
+            theophany = new Date(year + 1,  0,  6); // Jan  6 of next year
+        } else {
+            // Julian Dec 25 → add offset days → Gregorian civil date
+            // Julian Dec 25 + 13 = Dec 38 → rolls to Jan 7 of year+1
+            // Expressed cleanly: new Date(year+1, 0, offset - 6)
+            //   offset=13 → Jan 7  ✓
+            //   offset=14 → Jan 8  ✓ (post-2100)
+            // Julian Jan  6 → add offset days → Gregorian civil date
+            //   new Date(year+1, 0, 6 + offset)
+            //   offset=13 → Jan 19 ✓
+            christmas = new Date(year + 1,  0, offset - 6);  // Jan 7 when offset=13
+            theophany = new Date(year + 1,  0,  6 + offset); // Jan 19 when offset=13
+        }
+
+        // ── Movable feasts from EasternOrthodoxCalendar ─────────────────
+        //
+        // Pascha always uses the Julian Paschalion regardless of eoMode.
+        // Its civil date (Gregorian) is already correct in both modes because
+        // calendar-eastern-orthodox.js converts Julian Pascha → Gregorian civil.
+        // eoMode is passed through to allow future fixed-feast extensions inside
+        // the Orthodox module if needed.
+
+        const snap = EasternOrthodoxCalendar.getYearSnapshot(year, { eoMode });
+
+        // Normalize season start/end to YYYY-MM-DD strings.
+        // The EasternOrthodoxCalendar module returns start/end as Date objects.
+        const seasons = snap.seasons.map(function(s) {
+            return {
+                key:        s.key,
+                label:      s.label,
+                colorToken: s.colorToken,
+                startDate:  CalendarEngine._isoFromDate(
+                                s.start instanceof Date ? s.start : new Date(s.start)
+                            ),
+                endDate:    CalendarEngine._isoFromDate(
+                                s.end instanceof Date ? s.end : new Date(s.end)
+                            ),
+            };
+        });
+
+        console.log(
+            `[CalendarEngine] getEOSeasonRanges(${year}, "${eoMode}"):`,
+            `Christmas=${this._isoFromDate(christmas)},`,
+            `Theophany=${this._isoFromDate(theophany)},`,
+            `Pascha=${snap.anchors.pascha}`
+        );
+
+        return {
+            seasons,
+            fixedFeasts: {
+                christmas: this._isoFromDate(christmas),
+                theophany: this._isoFromDate(theophany),
+            },
+            eoMode,
+            _diagnostics: {
+                julianOffset:    (eoMode === 'old_calendar') ? offset : 0,
+                paschaAlgorithm: 'julian_paschalion',
+                paschaISO:       snap.anchors.pascha,
+            },
+        };
+    }
 }
 
 window.CalendarEngine = CalendarEngine;
