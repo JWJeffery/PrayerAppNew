@@ -571,9 +571,6 @@ function backToSplash() {
         mainContent.classList.remove('sidebar-hidden');
     }
 }
-
-async function selectMode(mode) {
-
 async function selectMode(mode) {
     selectedMode = mode;
 
@@ -741,15 +738,17 @@ function toggleSidebar() {
     const bcpPanel = document.getElementById('settings-panel');
     const ethPanel = document.getElementById('ethiopian-settings');
     const esyPanel = document.getElementById('east-syriac-settings');
+    const genPanel = document.getElementById('generic-settings');
     const main     = document.getElementById('main-content');
     const toggle   = document.getElementById('sidebar-toggle');
 
-    // Detect active panel by which one is NOT mode-hidden
     let activePanel;
     if (esyPanel && !esyPanel.classList.contains('mode-hidden')) {
         activePanel = esyPanel;
     } else if (ethPanel && !ethPanel.classList.contains('mode-hidden')) {
         activePanel = ethPanel;
+    } else if (genPanel && !genPanel.classList.contains('mode-hidden')) {
+        activePanel = genPanel;
     } else {
         activePanel = bcpPanel;
     }
@@ -2662,4 +2661,4 @@ async function renderEastSyriac() {
         if (dateHeader)   dateHeader.style.display   = 'none';
         if (saintDisplay) saintDisplay.innerHTML      = '';
     }
-}}
+}   

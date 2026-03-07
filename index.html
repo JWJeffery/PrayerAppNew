@@ -285,24 +285,21 @@
     <!-- Do not add BCP-specific controls here. This is the reusable neutral   -->
     <!-- path for any tradition without its own dedicated settings panel.       -->
     <div id="generic-settings" class="mode-hidden sidebar-hidden">
-        <h3 style="color:var(--gold); font-family:'Cinzel',serif; font-size:1.15em; letter-spacing:0.08em;" id="generic-tradition-label">Byzantine Vespers — Horologion</h3>
+    <h3 style="color:var(--gold); font-family:'Cinzel',serif; font-size:1.15em; letter-spacing:0.08em;" id="generic-tradition-label">Byzantine Vespers — Horologion</h3>
 
-        <!-- Date navigator — identical structural pattern to BCP #settings-panel.
-             changeDate / resetDate / setCustomDate are shared app-wide functions.
-             The tradition label is the h3 above; no extra wrapper div is needed. -->
-        <div class="ordo-control">
-            <strong>Liturgical Ordo</strong>
-            <div class="ordo-date" id="generic-display-date">Loading...</div>
-            <div class="ordo-buttons">
-                <button class="ordo-btn" onclick="changeDate(-1)">Prev</button>
-                <button class="ordo-btn" onclick="resetDate()">Today</button>
-                <button class="ordo-btn" onclick="changeDate(1)">Next</button>
-            </div>
-            <label for="generic-date-picker" style="display:block; color:var(--gold); font-size:0.8em; margin-top:10px;">Select Date:</label>
-            <input type="date" id="generic-date-picker" style="margin-top:5px; width:100%; padding:5px; background:#333; color:white; border:1px solid #555; border-radius:4px; box-sizing:border-box;" onchange="setCustomDate(this.value)">
-            <div id="generic-calendar-info" style="font-size:0.7em; color:var(--gold); margin-top:10px;">Exploring the Ordo...</div>
+    <div class="ordo-control">
+        <strong>Liturgical Ordo</strong>
+        <div class="ordo-date" id="generic-display-date">Loading...</div>
+        <div class="ordo-buttons">
+            <button class="ordo-btn" onclick="changeDate(-1)">Prev</button>
+            <button class="ordo-btn" onclick="resetDate()">Today</button>
+            <button class="ordo-btn" onclick="changeDate(1)">Next</button>
         </div>
-    </div><!-- /generic-settings -->
+        <label for="generic-date-picker" style="display:block; color:var(--gold); font-size:0.8em; margin-top:10px;">Select Date:</label>
+        <input type="date" id="generic-date-picker" style="margin-top:5px; width:100%; padding:5px; background:#333; color:white; border:1px solid #555; border-radius:4px; box-sizing:border-box;" onchange="setCustomDate(this.value)">
+        <div id="generic-calendar-info" style="font-size:0.7em; color:var(--gold); margin-top:10px;">Exploring the Ordo...</div>
+    </div>
+</div>
 
     <!-- Main content area -->
     <div id="main-content">
