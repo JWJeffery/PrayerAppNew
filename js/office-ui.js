@@ -660,7 +660,10 @@ async function selectMode(mode) {
         document.getElementById('individual-prayers-section').style.display = 'none';
         document.getElementById('daily-office-section').style.display       = 'flex';
 
-        const horSettings = document.getElementById('east-syriac-settings');
+        const esySettings = document.getElementById('east-syriac-settings');
+        const genSettings = document.getElementById('generic-settings');
+
+        // Hide all tradition-specific panels
         if (settingsPanel) {
             settingsPanel.classList.add('sidebar-hidden');
             settingsPanel.classList.add('mode-hidden');
@@ -669,11 +672,22 @@ async function selectMode(mode) {
             ethSettings.classList.add('sidebar-hidden');
             ethSettings.classList.add('mode-hidden');
         }
-        if (horSettings) {
-            horSettings.classList.add('sidebar-hidden');
-            horSettings.classList.add('mode-hidden');
+        if (esySettings) {
+            esySettings.classList.add('sidebar-hidden');
+            esySettings.classList.add('mode-hidden');
         }
-        mainContent.classList.add('sidebar-hidden');
+
+        // Activate the generic sidebar shell
+        if (genSettings) {
+            genSettings.classList.remove('mode-hidden');
+            genSettings.classList.remove('sidebar-hidden');
+        }
+        mainContent.classList.remove('sidebar-hidden');
+
+        // Set the tradition label and sync the date display
+        const tradLabel = document.getElementById('generic-tradition-label');
+        if (tradLabel) tradLabel.textContent = 'Byzantine Vespers — Horologion';
+        updateGenericDateDisplay();
 
         document.getElementById('office-display').innerHTML =
             `<div class="office-container"><h3>Preparing Vespers…</h3><p>Loading the Byzantine Evening Office.</p></div>`;
