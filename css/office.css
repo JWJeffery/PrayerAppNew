@@ -333,6 +333,34 @@ body.light-mode .mode-btn:hover {
 #east-syriac-settings.mode-hidden {
     display: none !important;
 }
+/* ── Generic Sidebar Shell (Horologion + future traditions) ── */
+#generic-settings {
+    position: fixed;
+    top: 0;
+    left: 36px;
+    width: 300px;
+    background: linear-gradient(180deg, var(--sidebar-bg) 0%, var(--sidebar-bg-bottom, #050408) 100%);
+    color: var(--sidebar-text);
+    font-size: 17px;
+    padding: 28px 20px;
+    height: 100vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+    border-right: 1px solid rgba(201,168,76,0.3);
+    box-shadow: inset -4px 0 18px rgba(150,80,0,0.08), 4px 0 20px rgba(0,0,0,0.5);
+    transition: transform 0.3s ease;
+    z-index: 100;
+    text-align: left;
+    box-sizing: border-box;
+}
+#generic-settings.sidebar-hidden {
+    transform: translateX(-336px);
+    pointer-events: none;
+}
+/* Completely remove from flex flow when the other mode is active */
+#generic-settings.mode-hidden {
+    display: none !important;
+}
 .setting-group {
     margin-bottom: 25px;
     text-align: left;
@@ -839,7 +867,8 @@ body.light-mode .ethiopian-theme .rubric-text {
 @media (max-width: 768px) {
     #settings-panel,
     #ethiopian-settings,
-    #east-syriac-settings {
+    #east-syriac-settings,
+    #generic-settings {
         position: fixed !important;
         top: 0;
         left: 0;
@@ -850,7 +879,8 @@ body.light-mode .ethiopian-theme .rubric-text {
     }
     #settings-panel.sidebar-hidden,
     #ethiopian-settings.sidebar-hidden,
-    #east-syriac-settings.sidebar-hidden {
+    #east-syriac-settings.sidebar-hidden,
+    #generic-settings.sidebar-hidden {
         transform: translateX(-300px);
         margin-left: 0 !important;
     }
@@ -861,7 +891,8 @@ body.light-mode .ethiopian-theme .rubric-text {
     /* Dim content behind open sidebar */
     #daily-office-section:has(#settings-panel:not(.sidebar-hidden))::after,
     #daily-office-section:has(#ethiopian-settings:not(.sidebar-hidden))::after,
-    #daily-office-section:has(#east-syriac-settings:not(.sidebar-hidden))::after {
+    #daily-office-section:has(#east-syriac-settings:not(.sidebar-hidden))::after,
+    #daily-office-section:has(#generic-settings:not(.sidebar-hidden))::after {
         content: '';
         position: fixed;
         inset: 0;
@@ -887,6 +918,7 @@ body.light-mode .ethiopian-theme .rubric-text {
     #settings-panel,
     #ethiopian-settings,
     #east-syriac-settings,
+    #generic-settings,
     .mode-btn,
     .ordo-control,
     .setting-group,
