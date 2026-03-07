@@ -1,0 +1,100 @@
+{
+  "_comment": [
+    "data/horologion/vespers-troparion.json — Horologion v1.6",
+    "",
+    "PURPOSE: Resurrectional Troparia (Apolytikia) of the Octoechos for Vespers.",
+    "Keyed by tone number (1–8).",
+    "",
+    "RULE: Resurrectional Troparion of the current Octoechos tone.",
+    "SOURCE: Byzantine Octoechos; Antiochian/OCA Hapgood-tradition English.",
+    "",
+    "SCOPE OF THIS FILE:",
+    "  These texts are used at Saturday Great Vespers (for the coming Sunday)",
+    "  and at Sunday Vespers. They are the fixed resurrectional apolytikia",
+    "  of the Octoechos — invariable for each tone.",
+    "",
+    "  For weekday (Mon–Fri) ordinary Vespers, the troparion depends on the",
+    "  Menaion (daily saints calendar). No weekday troparion text is provided",
+    "  here — the engine renders a tone-identified rubric stub for weekdays.",
+    "  This is not a silent omission; it is explicitly stated in the output.",
+    "",
+    "OVERRIDES NOT IMPLEMENTED (explicitly noted, not silently absent):",
+    "  - Menaion feast troparia (require Menaion data, not yet available)",
+    "  - Great Feast apolytikia (require feast-rank engine)",
+    "  - Lenten week troparia (different cycle during Great Lent)",
+    "  - Sunday deferral: Sunday Vespers troparion is the same resurrectional",
+    "    apolytikion as Saturday Great Vespers for that tone. This pass",
+    "    resolves Saturday only; Sunday handling is evaluated separately.",
+    "",
+    "TONE ENGINE: The current tone is computed by HorologionEngine._computeBaselineTone(),",
+    "  which uses the Julian Paschalion with a Thomas Sunday (Pascha+7) anchor.",
+    "  Tone 1 begins on Thomas Sunday. Tones cycle 1–8 weekly.",
+    "",
+    "PASCHAL TROPARION: Included as a separate top-level key for Bright Week use.",
+    "  During Bright Week the resurrectional troparion is not used;",
+    "  'Christ is risen' is sung in its place."
+  ],
+  "meta": {
+    "version": "1.6.0",
+    "rule": "resurrectional-octoechos-tone",
+    "applicable_days": [
+      "saturday"
+    ],
+    "weekday_status": "stub-only — menaion required",
+    "sunday_status": "deferred — evaluated separately",
+    "overrides_implemented": false,
+    "overrides_deferred": [
+      "menaion-feasts",
+      "great-feasts",
+      "great-lent",
+      "sunday-vespers"
+    ]
+  },
+  "resurrectional_troparia": {
+    "1": {
+      "tone": 1,
+      "title": "Resurrectional Troparion, Tone 1",
+      "text": "When the stone had been sealed by the Jews, and the soldiers were guarding Thy most pure body, Thou didst arise on the third day, O Savior, granting life to the world. Wherefore the heavenly powers cried aloud unto Thee, O Giver of life: Glory to Thy Resurrection, O Christ! Glory to Thy Kingdom! Glory to Thy Providence, O Thou Who lovest mankind!"
+    },
+    "2": {
+      "tone": 2,
+      "title": "Resurrectional Troparion, Tone 2",
+      "text": "When Thou didst descend unto death, O Life Immortal, Thou didst slay Hades with the dazzling light of Thy Divinity. And when Thou didst raise the dead from the nether regions, all the powers of the heavens cried aloud: O Christ our God and Giver of Life, glory be to Thee!"
+    },
+    "3": {
+      "tone": 3,
+      "title": "Resurrectional Troparion, Tone 3",
+      "text": "Let the heavens rejoice and let the earth be glad, for the Lord hath wrought might with His arm. He hath trampled down death by death, and become the first-born of the dead. He hath delivered us from the depths of Hades, and hath granted great mercy to the world."
+    },
+    "4": {
+      "tone": 4,
+      "title": "Resurrectional Troparion, Tone 4",
+      "text": "Having learned the joyful message of the Resurrection from the angel, and having cast off the ancestral condemnation, the women disciples of the Lord spake to the Apostles exultantly: Death hath been despoiled, Christ God is risen, granting great mercy to the world."
+    },
+    "5": {
+      "tone": 5,
+      "title": "Resurrectional Troparion, Tone 5",
+      "text": "Let us believers praise and worship the Word, co-eternal with the Father and the Spirit, Who was born of the Virgin for our salvation; for He was pleased to be lifted up in the flesh upon the Cross, and to endure death, and to raise the dead by His glorious Resurrection."
+    },
+    "6": {
+      "tone": 6,
+      "title": "Resurrectional Troparion, Tone 6",
+      "text": "The angelic powers were at Thy tomb, and the guards became as dead men; and Mary stood at the sepulchre, seeking Thy most pure body. Thou didst despoil Hades without being tried thereby, and didst meet the Virgin granting life. O Lord Who didst rise from the dead, glory be to Thee!"
+    },
+    "7": {
+      "tone": 7,
+      "title": "Resurrectional Troparion, Tone 7",
+      "text": "Thou didst shatter death by Thy Cross, Thou didst open Paradise to the thief; Thou didst transform the weeping of the myrrh-bearers and didst bid Thine Apostles proclaim: Thou art risen, O Christ our God, granting great mercy to the world."
+    },
+    "8": {
+      "tone": 8,
+      "title": "Resurrectional Troparion, Tone 8",
+      "text": "From the heights Thou didst descend, O compassionate One, and Thou didst accept the three-day burial to free us from our passions. O Lord our Life and our Resurrection, glory be to Thee!"
+    }
+  },
+  "paschal_troparion": {
+    "title": "Paschal Troparion",
+    "text": "Christ is risen from the dead, trampling down death by death, and upon those in the tombs bestowing life.",
+    "note": "Sung three times at the Paschal dismissal. Used throughout Bright Week (Pascha Sunday through Thomas Saturday) in place of the tone-based resurrectional troparion."
+  }
+}

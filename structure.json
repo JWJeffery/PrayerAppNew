@@ -1,10 +1,10 @@
 {
   "project_manifest": {
     "name": "Universal Office",
-    "version": "2.9.0",
+    "version": "2.9.3",
     "last_updated": "2026-03-07",
     "bcp_compliance": "100%",
-    "operational_status": "OPERATIONAL — v2.8.9: COE governance complete. Three-layer COE calendar model fully implemented: Layer 1 season engine operational; Layer 2 fixed feasts (Sawma Rabba Friday martyrs, Commemoration of the Faithful Departed) active; Layer 3 individual saints re-enabled via CoeEligibility.filter() allowlist gate. COE-IIB saint-tag audit complete — 133 identity IDs (136 rows) removed from commemorations.json; monthly caches regenerated. Final five adjudication complete: 3 REMOVE_COE_TAG applied; mar-augustine / mar-augustine-commemoration held as external-research holdout (excluded from Layer 3). No COE internal refactor work remains open. Prior: Saints resolver boundary complete (v2.8.6); hydration-race gating verified closed (v2.8.6). EO old/new calendar mode diagnostics are now implemented in admin tooling only; main-app EO mode is not yet exposed. Horologion v1 architecture boundary established (2026-03-07): js/horologion-engine.js (HorologionEngine) active; data/horologion/vespers.json skeleton present; thin UI adapter in office-ui.js; index.html Vespers splash button and saints-resolver.js load confirmed present. 7 variable Vespers slots pending Octoechos/Menaion engine.",
+    "operational_status": "OPERATIONAL — v2.9.3: Horologion v1.6 complete. troparion-or-apolytikion partially resolved: Saturday Great Vespers: full Resurrectional Troparion text for current Octoechos tone (tones 1–8, type:'text'). Bright Week: Paschal Troparion ('Christ is risen') as fixed text (type:'text'). Monday–Friday: tone-identified rubric stub (type:'rubric') — current tone stated, Menaion required for text, not fabricated. Sunday: explicitly deferred (type:'rubric' stub). Festal overrides: not implemented; stated openly in Saturday output. New file: data/horologion/vespers-troparion.json (8 Resurrectional Troparia + Paschal Troparion). Engine additions: _loadTroparionData(), _resolveTroparionSlot(). office-ui.js unchanged — type:'text' already handled by existing renderer. 1 variable Vespers slot remains fully unresolved: theotokion-dismissal. Sunday Vespers handling remains explicitly deferred across multiple slots. Weekday troparion text (Menaion) deferred. Prior: v2.9.2 Horologion v1.5 kathisma-reading resolved; v1.4 Mon–Fri Octoechos text; v1.3 tone engine + Saturday stichera; v1.2 prokeimenon + vesperal-reading; v1 architecture boundary.",
     "audit_findings": {
       "open_bugs": [
         "1. Rubric logic: [rite] placeholder resolution in rubrics.json is fragile and prone to null returns. (LOW — see known_outstanding_issues.rite_placeholder_resolution)"
@@ -330,7 +330,7 @@
       "status": "Active — Horologion v1 (2026-03-07)",
       "files": {
         "vespers.json": {
-          "status": "PARTIAL — fixed/invariable content complete; v1.3 added Octoechos tone engine. Saturday stichera/aposticha fully populated (tones 1–8). Weekday stichera/aposticha: tone-aware rubric stubs only (text deferred). 3 slots fully unresolved: kathisma-reading, troparion-or-apolytikion, theotokion-dismissal.",
+          "status": "PARTIAL — fixed/invariable content complete. v1.2: daily-prokeimenon and vesperal-reading resolved. v1.3: Octoechos tone engine; Saturday stichera/aposticha fully populated (tones 1–8). v1.4: Monday–Friday stichera/aposticha materially populated (tones 1–8). v1.5: kathisma-reading resolved for ordinary Mon–Sat as appointment rubric; Sunday kathisma and Sunday stichera/aposticha explicitly deferred; Bright Week kathisma explicitly omitted. v1.6: troparion-or-apolytikion partially resolved — Saturday full text (tones 1–8); Bright Week Paschal Troparion; Mon–Fri tone-identified stub (Menaion required); Sunday explicitly deferred; festal overrides not implemented. 1 slot fully unresolved: theotokion-dismissal.",
           "sections": 7,
           "resolved_slots": [
             "usual-beginning-rubric (rubric)",
@@ -353,25 +353,56 @@
               "stichera-at-lord-i-have-cried — tones 1–8, resurrectional stichera (v1.3)",
               "aposticha — tones 1–8, resurrectional aposticha (v1.3)"
             ],
-            "tone_aware_stub_weekdays": [
-              "stichera-at-lord-i-have-cried — tone identified; Mon–Fri + Sunday text deferred (v1.3)",
-              "aposticha — tone identified; Mon–Fri + Sunday text deferred (v1.3)"
+            "monday_through_friday_populated": [
+              "stichera-at-lord-i-have-cried — tones 1–8, ordinary weekday text (v1.4)",
+              "aposticha — tones 1–8, ordinary weekday text (v1.4)",
+              "thematic assignments: Monday=Bodiless Powers (Angels), Tuesday=St. John the Baptist, Wednesday=Cross and Theotokos, Thursday=Holy Apostles and St. Nicholas, Friday=Cross and Theotokos (penitential)"
+            ],
+            "sunday_deferred": [
+              "stichera-at-lord-i-have-cried — tone identified; Sunday evening ordinary stichera explicitly deferred (v1.4 data file carries sunday_deferred:true + baseline_stub:true; renders as tone-identified rubric stub, not fabricated text)",
+              "aposticha — same as above"
             ],
             "fully_unresolved": [
-              "kathisma-reading — requires Psalter weekly cycle",
-              "troparion-or-apolytikion — requires Menaion or weekly cycle",
-              "theotokion-dismissal — depends on apolytikion tone"
-            ]
+              "theotokion-dismissal — depends on which troparion was sung; weekday theotokion requires Menaion"
+            ],
+            "kathisma_reading": {
+              "monday_through_saturday": "appointment rubric resolved (v1.5) — kathisma number, title, LXX psalm range, incipit; full text deferred",
+              "sunday": "explicitly deferred — practice varies; honest stub rendered",
+              "bright_week": "explicitly omitted — Paschal Canon replaces Psalter; honest rubric rendered",
+              "festal_lenten_overrides": "not implemented — stated openly in rendered output; deferred to future pass"
+            },
+            "troparion_or_apolytikion": {
+              "saturday": "full Resurrectional Troparion text resolved (v1.6) — tones 1–8, type:'text', resolvedAs:'resurrectional-troparion-saturday'",
+              "bright_week": "Paschal Troparion resolved (v1.6) — fixed text, type:'text', resolvedAs:'bright-week-paschal-troparion'",
+              "monday_through_friday": "tone-identified rubric stub (v1.6) — current tone stated, Menaion required for text, not fabricated, resolvedAs:'weekday-menaion-required'",
+              "sunday": "explicitly deferred — evaluated as part of Sunday Vespers pass, resolvedAs:'sunday-deferred'",
+              "festal_overrides": "not implemented — Great Feast apolytikia require feast-rank engine; stated openly in Saturday output"
+            }
           }
         },
         "schema.json": {
           "status": "Active — documents normalized payload shape v1"
         },
         "octoechos-vespers.json": {
-          "status": "Active — Horologion v1.3 (2026-03-07)",
-          "coverage": "Tones 1–8. Saturday: full resurrectional stichera and aposticha. Weekdays (Mon–Fri, Sunday): baseline_stub entries — tone key present, text fields not yet populated.",
+          "status": "Active — Horologion v1.4 (2026-03-07)",
+          "coverage": "Tones 1–8. Saturday: full resurrectional stichera and aposticha (unchanged from v1.3). Monday–Friday: materially populated with baseline ordinary weekday stichera and aposticha (v1.4). Sunday: baseline_stub:true + sunday_deferred:true — explicitly deferred; renders as tone-identified rubric stub. Not silently empty.",
           "keying": "Outer key: tone string '1'–'8'. Inner key: weekday name (saturday, sunday, monday … friday).",
-          "content_source": "English Octoechos (Antiochian/OCA Hapgood-tradition resurrectional texts). Saturday texts are representative first stichera; full 3–6 stichera set per slot is a future data-pass item."
+          "content_source": "English Octoechos (Antiochian/OCA Hapgood-tradition resurrectional texts). Saturday texts are representative first stichera; full 3–6 stichera set per slot is a future data-pass item.",
+          "weekday_themes": {
+            "monday": "Bodiless Powers (Angels)",
+            "tuesday": "St. John the Baptist and the Prophets",
+            "wednesday": "Cross and Theotokos",
+            "thursday": "Holy Apostles and St. Nicholas",
+            "friday": "Cross and Theotokos (penitential)"
+          }
+        },
+        "vespers-kathisma.json": {
+          "status": "Active — Horologion v1.5 (2026-03-07)",
+          "coverage": "7 entries keyed by JS Date.getDay() index (0=Sunday through 6=Saturday). Mon–Sat: kathisma number, title, LXX psalm range, Protestant equivalents, incipit. Sunday: sunday_deferred:true with explicit note. Rule: standard Byzantine Psalter weekly cycle for ordinary Vespers (OCA/Antiochian Psalter table; Jordanville Horologion 2008). Overrides not implemented: great-feasts, great-lent, bright-week, sunday-vespers."
+        },
+        "vespers-troparion.json": {
+          "status": "Active — Horologion v1.6 (2026-03-07)",
+          "coverage": "resurrectional_troparia: 8 entries keyed by tone string ('1'–'8'). Each entry: tone number, title, full liturgical text (Antiochian/OCA Hapgood-tradition English). paschal_troparion: Paschal Troparion for Bright Week use. Applicable days: Saturday Great Vespers (for Sunday). Weekday troparion text not included — Menaion required. Source: Byzantine Octoechos; Antiochian/OCA Hapgood-tradition English. Overrides not implemented: menaion-feasts, great-feasts, great-lent, sunday-vespers."
         }
       }
     }
@@ -891,17 +922,40 @@
       ]
     },
     "horologion_variable_engine": {
-      "severity": "MEDIUM",
-      "description": "Horologion Vespers Octoechos layer is partially resolved after v1.3. Status by slot: stichera-at-lord-i-have-cried — Saturday: fully populated for tones 1–8 (resurrectional stichera); weekdays: tone identified, rubric stub rendered, full text deferred. aposticha — Saturday: fully populated for tones 1–8; weekdays: tone identified, rubric stub rendered, full text deferred. kathisma-reading — unresolved; requires Psalter weekly cycle. troparion-or-apolytikion — unresolved; requires Menaion or weekly cycle. theotokion-dismissal — unresolved; depends on apolytikion tone. v1.2 resolved: daily-prokeimenon (weekday data table) and vesperal-reading (omitted ordinary days). v1.3 resolved: tone-selection engine (Julian Paschalion, Thomas Sunday anchor, tones 1–8); Saturday Vespers stichera/aposticha fully populated in data/horologion/octoechos-vespers.json; weekday stichera/aposticha are tone-aware rubric stubs — not dead placeholders, not full liturgical text.",
-      "action": "Phase Horologion v1.4: populate weekday Octoechos text for stichera-at-lord-i-have-cried and aposticha in data/horologion/octoechos-vespers.json (Mon–Fri + Sunday entries per tone). Phase Horologion v1.5: Psalter weekly cycle for kathisma-reading. Phase Horologion v1.6: Menaion/weekly cycle for troparion-or-apolytikion and theotokion-dismissal. Do not implement Menaion feast-specific material until kathisma and troparion layers are stable.",
+      "severity": "LOW",
+      "description": "Horologion Vespers variable slots — status after v1.6. stichera-at-lord-i-have-cried: Saturday fully populated (tones 1–8, v1.3); Monday–Friday materially populated (tones 1–8, v1.4); Sunday explicitly deferred. aposticha: same three-tier state. kathisma-reading: Monday–Saturday ordinary resolved as appointment rubric (v1.5); Sunday deferred; Bright Week omitted. troparion-or-apolytikion: Saturday full Resurrectional Troparion text (tones 1–8, v1.6); Bright Week Paschal Troparion resolved (v1.6); Monday–Friday tone-identified rubric stub — Menaion required for text, not fabricated (v1.6); Sunday explicitly deferred (v1.6); festal overrides not implemented. theotokion-dismissal: unresolved — depends on which troparion was sung; weekday Theotokia require Menaion; Saturday/Sunday Theotokia deferred. Sunday Vespers handling remains explicitly deferred across all variable slots. Weekday troparion text (Menaion) deferred.",
+      "action": "Phase Horologion v1.7 (or Sunday-Vespers pass): theotokion-dismissal — Saturday dismissal Theotokion can be resolved now that Saturday troparion is resolved (tone is known; 8 Resurrectional Theotokia are fixed Octoechos texts). Sunday Vespers handling: evaluate as dedicated pass — affects stichera/aposticha, kathisma, troparion, and theotokion. Weekday troparion text: requires Menaion data; deferred beyond theotokion. Festal/Lenten overrides: require feast-rank engine; deferred. Do not implement Menaion feast-specific material until Sunday Vespers pass is planned.",
       "files": [
-        "js/horologion-engine.js",
+        "data/horologion/octoechos-vespers.json",
+        "data/horologion/vespers-kathisma.json",
+        "data/horologion/vespers-troparion.json",
         "data/horologion/vespers.json",
-        "data/horologion/octoechos-vespers.json"
+        "js/horologion-engine.js"
       ]
     }
   },
   "recent_logic_changes": [
+    {
+      "date": "2026-03-07",
+      "phase": "Horologion v1.6",
+      "file": "js/horologion-engine.js + data/horologion/vespers-troparion.json",
+      "change": "Horologion v1.6 — troparion-or-apolytikion baseline resolved for Saturday and Bright Week Vespers",
+      "detail": "data/horologion/vespers-troparion.json: new file. resurrectional_troparia: 8 entries keyed by tone string ('1'–'8'); each has tone, title, and full liturgical text (Byzantine Octoechos; Antiochian/OCA Hapgood-tradition English). paschal_troparion: fixed text for Bright Week. js/horologion-engine.js: version bumped v1.5→v1.6. TROPARION_URL constant added. _troparionData cache variable added. _loadTroparionData(): lazy fetch, non-throwing, same pattern as existing loaders. _resolveTroparionSlot(dayOfWeek, toneResult): Bright Week → type:'text', resolvedAs:'bright-week-paschal-troparion'; Saturday → type:'text' with full Resurrectional Troparion, resolvedAs:'resurrectional-troparion-saturday'; Sunday → type:'rubric', resolvedAs:'sunday-deferred'; Mon–Fri → type:'rubric' stub, resolvedAs:'weekday-menaion-required' (tone stated, text not fabricated). All cases state their limitations openly in rendered text. Promise.all in _resolveVespersSlots: three-loader → four-loader (adds _loadTroparionData()). Slot loop: deferred comment replaced with live troparion-or-apolytikion branch; theotokion-dismissal deferred comment updated. office-ui.js: NO CHANGES — type:'text' already handled by existing final branch in _renderHorologionItem (same renderer as O Gladsome Light and Nunc Dimittis). NET: troparion-or-apolytikion no longer shows dashed placeholder on Saturday or Bright Week. Mon–Fri shows tone-identified stub (not placeholder box). Sunday shows deferred stub (not placeholder box). theotokion-dismissal: unchanged placeholder."
+    },
+    {
+      "date": "2026-03-07",
+      "phase": "Horologion v1.5",
+      "file": "js/horologion-engine.js + data/horologion/vespers-kathisma.json",
+      "change": "Horologion v1.5 — kathisma-reading baseline resolved for ordinary Monday–Saturday Vespers",
+      "detail": "data/horologion/vespers-kathisma.json: new file. 7-entry appointment table keyed by JS Date.getDay() (0=Sunday … 6=Saturday). Rule: standard Byzantine Psalter weekly cycle for ordinary Vespers (OCA/Antiochian Psalter table; Jordanville Horologion 2008). Assignments (LXX psalm numbers): Monday=Kathisma 4 (Ps 24–31), Tuesday=6 (37–45), Wednesday=8 (55–63), Thursday=10 (70–76), Friday=12 (85–90, 92), Saturday=1 (1–8). Sunday entry: sunday_deferred:true with honest note about usage variation. js/horologion-engine.js: version bumped v1.3→v1.5. KATHISMA_URL constant added. _kathismaData cache variable added. _loadKathismaData(): lazy fetch, non-throwing, same pattern as existing loaders. _resolveKathismaSlot(dayOfWeek, brightWeek): Bright Week → type:'rubric', resolvedAs:'bright-week-no-kathisma'; Sunday → type:'rubric', resolvedAs:'sunday-deferred'; Mon–Sat ordinary → type:'rubric' with kathisma number, title, LXX range, incipit, resolvedAs:'ordinary-weekday-baseline'. Friday entry includes variant_note about Ps 91/92 edition differences. All three cases state their limitations openly in rendered text — no silent approximations. Promise.all in _resolveVespersSlots: two-loader → three-loader (adds _loadKathismaData()). slot loop: deferred comment replaced with live kathisma-reading branch. office-ui.js: NO CHANGES — type:'rubric' is already handled by existing renderer. NET: kathisma-reading slot no longer shows as a dashed placeholder on Mon–Sat ordinary Vespers. Sunday kathisma remains an honest stub. troparion-or-apolytikion and theotokion-dismissal: unchanged placeholders."
+    },
+    {
+      "date": "2026-03-07",
+      "phase": "Horologion v1.4",
+      "file": "data/horologion/octoechos-vespers.json",
+      "change": "Horologion v1.4 — Monday–Friday baseline Octoechos stichera/aposticha materially populated",
+      "detail": "data/horologion/octoechos-vespers.json: version bumped 1.3.0 → 1.4.0. Replaced baseline_stub:true entries for Monday–Friday with fully populated stichera_at_lord_i_have_cried and aposticha objects (coverage:'full-baseline') for all 8 tones. 80 weekday slots populated (8 tones × 5 days × 2 slots); 240 verses total (3 per slot). Thematic assignments per standard Byzantine Octoechos practice: Monday=Bodiless Powers (Angels), Tuesday=St. John the Baptist and the Prophets, Wednesday=Cross and Theotokos, Thursday=Holy Apostles and St. Nicholas, Friday=Cross and Theotokos (penitential). Sunday entries: updated from bare baseline_stub to sunday_deferred:true + baseline_stub:true with an explicit note explaining that Saturday great Vespers already provides the Sunday-tone resurrectional content, and Sunday small Vespers ordinary stichera are a distinct corpus deferred to a future pass. This is an explicit deferral, not a silent gap. js/horologion-engine.js: NO CHANGES in this pass. The existing _resolveSticheraSlot() three-tier logic (full data → stub → null) already handles the newly populated weekday entries without modification. office-ui.js: NO CHANGES. Saturday data: unchanged from v1.3. NET: Monday–Friday Vespers stichera and aposticha are now materially resolved for all 8 tones. Sunday remains an honest stub. kathisma-reading, troparion-or-apolytikion, theotokion-dismissal: unchanged placeholders."
+    },
     {
       "date": "2026-03-07",
       "phase": "Horologion v1.3",
@@ -1101,9 +1155,9 @@
     }
   ],
   "roadmap_summary": {
-    "completed": "Phases 6.1–6.6 (BCP office + audit remediation), Phase 7.1–7.4 (full Ethiopian Sa'atat + calendar engine), Phase 8.1 (Senkessar index + Tir corpus + full wiring), Phase 8.3 (Hamle corpus verified), Phase 8.5 (Ge'ez dual-date display in Sa'atat sidebar and BCP date header — both rendering via EthiopianCalendar.formatEthiopianDate()), v2.6.1 (Tselote Meweta, Metsehafe Tselot aesthetic), v2.8.0 (Church of the East — all seven canonical hours: Sapra, Quta'a, Endana, D-tsha' Sa'in, Ramsha, Lelya, Suba'a — cathedral and monastic sequences, full dynamic token implementation), v2.8.1 (Barekmar components, Mahlet expansion, duplicate removal, Qanona layering, algorithmic calendar engine), v2.8.2 (saints data migration — tags[] schema, 1568 records, full classification), v2.8.3 (COE saint section silenced; COE architectural model documented), v2.8.5–2.8.6 (saints resolver boundary — js/saints-resolver.js; resolveCommemorations delegation; OOR fallback via filterCachedByTradition; appData.saints eliminated; hydration-race gating verified closed), v2.8.9 (COE-II complete: COE-IIA Layer 2 fixed feasts, COE-IIB tag audit [133 IDs removed, eligibility gate], final five adjudication, Layer 3 re-enabled via CoeEligibility.filter()), 2026-03-06 admin-only EO diagnostics (CalendarEngine.getEOSeasonRanges(), EO fixed-feast anchors in admin Year Snapshot, corrected admin render path), Horologion v1 (2026-03-07 — architecture boundary: js/horologion-engine.js, data/horologion/vespers.json skeleton with fixed content, schema.json, office-ui.js thin adapter, index.html splash button and script loads), Horologion v1.2 (2026-03-07 — weekday Vespers prokeimenon resolved via 7-entry weekday data table; ordinary-day vesperal reading explicitly omitted; 7 placeholder slots reduced to 5), Horologion v1.3 (2026-03-07 — Julian Paschalion tone engine; Saturday resurrectional stichera/aposticha fully populated tones 1–8; weekday tone-aware rubric stubs; type:'stichera' renderer in office-ui.js; octoechos-vespers.json added)",
-    "next_required": "1. Horologion v1.4: populate weekday Octoechos text (Mon–Fri + Sunday) for stichera-at-lord-i-have-cried and aposticha in octoechos-vespers.json — tone engine is in place; this is a data-completion pass. 2. EO app integration: admin/devtool EO diagnostics complete; main app still has no EO mode selector, no production render path, and index.html does not load js/calendar-eastern-orthodox.js. 3. [rite] placeholder fragility: audit rubric sequence entries using [rite] interpolation. 4. Lower priority: .innerHTML architecture; Gloria Patri/Kyrie normalization; saints normalized-source runtime adapter. 5. Horologion v1.5: Psalter weekly cycle for kathisma-reading. 6. Horologion v1.6: Menaion/weekly cycle for troparion-or-apolytikion and theotokion-dismissal. 7. Horologion v2: Compline skeleton, Little Hours skeletons (after v1.4 stable). 8. Horologion v3 (deferred/blocked): Orthros — blocked on full Octoechos data completion. 9. Optional COE: COE-IIC Layer 2 expansion (Denha, Sleeba, Annunciation, All Saints). 10. External-research holdout: mar-augustine / mar-augustine-commemoration.",
-    "next_planned": "Horologion v1.4 (weekday Octoechos text completion in octoechos-vespers.json) is the next concrete step — the engine infrastructure is already in place from v1.3. EO app integration remains the clearest medium-priority functional gap.",
+    "completed": "Phases 6.1–6.6 (BCP office + audit remediation), Phase 7.1–7.4 (full Ethiopian Sa'atat + calendar engine), Phase 8.1 (Senkessar index + Tir corpus + full wiring), Phase 8.3 (Hamle corpus verified), Phase 8.5 (Ge'ez dual-date display in Sa'atat sidebar and BCP date header — both rendering via EthiopianCalendar.formatEthiopianDate()), v2.6.1 (Tselote Meweta, Metsehafe Tselot aesthetic), v2.8.0 (Church of the East — all seven canonical hours: Sapra, Quta'a, Endana, D-tsha' Sa'in, Ramsha, Lelya, Suba'a — cathedral and monastic sequences, full dynamic token implementation), v2.8.1 (Barekmar components, Mahlet expansion, duplicate removal, Qanona layering, algorithmic calendar engine), v2.8.2 (saints data migration — tags[] schema, 1568 records, full classification), v2.8.3 (COE saint section silenced; COE architectural model documented), v2.8.5–2.8.6 (saints resolver boundary — js/saints-resolver.js; resolveCommemorations delegation; OOR fallback via filterCachedByTradition; appData.saints eliminated; hydration-race gating verified closed), v2.8.9 (COE-II complete: COE-IIA Layer 2 fixed feasts, COE-IIB tag audit [133 IDs removed, eligibility gate], final five adjudication, Layer 3 re-enabled via CoeEligibility.filter()), 2026-03-06 admin-only EO diagnostics (CalendarEngine.getEOSeasonRanges(), EO fixed-feast anchors in admin Year Snapshot, corrected admin render path), Horologion v1 (2026-03-07 — architecture boundary: js/horologion-engine.js, data/horologion/vespers.json skeleton with fixed content, schema.json, office-ui.js thin adapter, index.html splash button and script loads), Horologion v1.2 (2026-03-07 — weekday Vespers prokeimenon resolved via 7-entry weekday data table; ordinary-day vesperal reading explicitly omitted; 7 placeholder slots reduced to 5), Horologion v1.3 (2026-03-07 — Julian Paschalion tone engine; Saturday resurrectional stichera/aposticha fully populated tones 1–8; weekday tone-aware rubric stubs; type:'stichera' renderer in office-ui.js; octoechos-vespers.json added), Horologion v1.4 (2026-03-07 — Monday–Friday Octoechos stichera/aposticha materially populated in octoechos-vespers.json for tones 1–8; 80 slots / 240 verses; thematic ordinary-day baseline; Saturday unchanged; Sunday explicitly deferred with sunday_deferred:true stub; js/horologion-engine.js and office-ui.js unchanged in this pass), Horologion v1.5 (2026-03-07 — kathisma-reading resolved for ordinary Mon–Sat Vespers as appointment rubric; new data/horologion/vespers-kathisma.json; _loadKathismaData() + _resolveKathismaSlot() added to engine; office-ui.js unchanged; Sunday deferred, Bright Week omitted, festal/Lenten overrides deferred), Horologion v1.6 (2026-03-07 — troparion-or-apolytikion baseline: Saturday full Resurrectional Troparion tones 1–8; Bright Week Paschal Troparion; Mon–Fri tone-identified stub; Sunday deferred; new data/horologion/vespers-troparion.json; _loadTroparionData() + _resolveTroparionSlot() added to engine; office-ui.js unchanged)",
+    "next_required": "1. theotokion-dismissal: Saturday Theotokion is now unblocked — tone is known from v1.6; 8 Resurrectional Theotokia are fixed Octoechos texts. Weekday Theotokia require Menaion; Sunday Theotokion is part of the Sunday pass. 2. Sunday Vespers handling: stichera/aposticha, kathisma, troparion, and theotokion all remain deferred. Evaluate as dedicated pass. 3. Weekday troparion text: requires Menaion data; deferred beyond theotokion pass. 4. Festal/Lenten overrides (troparion, kathisma, stichera): require feast-rank engine; deferred beyond Sunday pass. 5. EO app integration: admin/devtool EO diagnostics complete; main app still has no EO mode selector, no production render path, and index.html does not load js/calendar-eastern-orthodox.js. 6. [rite] placeholder fragility: audit rubric sequence entries using [rite] interpolation. 7. Lower priority: .innerHTML architecture; Gloria Patri/Kyrie normalization; saints normalized-source runtime adapter. 8. Horologion v2: Compline skeleton, Little Hours skeletons (after theotokion + Sunday pass stable). 9. Horologion v3 (deferred/blocked): Orthros — blocked on Octoechos and Psalter cycle completion. 10. Optional COE: COE-IIC Layer 2 expansion. 11. External-research holdout: mar-augustine / mar-augustine-commemoration.",
+    "next_planned": "theotokion-dismissal (Saturday baseline) is the next concrete step — Saturday tone is now known and the 8 Resurrectional Theotokia are fixed Octoechos texts requiring no Menaion. Sunday Vespers pass follows. EO app integration remains the clearest medium-priority gap outside the Horologion path.",
     "future": "Phase 6.7 — Performance polish (timezone warning, LRU seasonal cache, prefetch, service worker); Phase 7.5 — Coptic Agpeya as standalone tradition entry; Phase 9.0 — Mobile app; Phase 9.1 — Cross-Tradition Search (Comparative scripture view across AR, ET, and SY canons); COE-IIC — Optional Layer 2 expansion: major Hudra fixed feasts (Denha/Epiphany, Sleeba/Exaltation, Annunciation, All Saints)"
   },
   "governance": {
@@ -1114,7 +1168,10 @@
     },
     "notes": [
       "Horologion v1.2 complete (2026-03-07): weekday prokeimenon data table active; ordinary-day vesperal reading resolved as omitted. 5 variable Vespers slots remain. Tracked in known_outstanding_issues (horologion_variable_engine), admin.todos (horologion-vespers-variable-slots), active_modules (data/horologion/), and recent_logic_changes.",
-      "Horologion v1.3 complete (2026-03-07): Julian Paschalion tone engine active (Thomas Sunday anchor, tones 1–8, Bright Week detection). Saturday Vespers stichera and aposticha materially populated for all 8 tones in data/horologion/octoechos-vespers.json. Weekday stichera/aposticha: tone-aware rubric stubs — tone resolved, full text deferred. This distinction (Saturday fully populated vs weekday text pending) is recorded explicitly in known_outstanding_issues, admin.todos, active_modules, and recent_logic_changes. 3 slots remain fully unresolved: kathisma-reading, troparion-or-apolytikion, theotokion-dismissal. office-ui.js received a minimal additive change: type:'stichera' renderer (+11 lines). calendar-eastern-orthodox.js remains admin-only; Pascha calc is self-contained in horologion-engine.js with a documented delegation note for when that module reaches the main path."
+      "Horologion v1.3 complete (2026-03-07): Julian Paschalion tone engine active (Thomas Sunday anchor, tones 1–8, Bright Week detection). Saturday Vespers stichera and aposticha materially populated for all 8 tones in data/horologion/octoechos-vespers.json. Weekday stichera/aposticha: tone-aware rubric stubs — tone resolved, full text deferred. This distinction (Saturday fully populated vs weekday text pending) is recorded explicitly in known_outstanding_issues, admin.todos, active_modules, and recent_logic_changes. 3 slots remain fully unresolved: kathisma-reading, troparion-or-apolytikion, theotokion-dismissal. office-ui.js received a minimal additive change: type:'stichera' renderer (+11 lines). calendar-eastern-orthodox.js remains admin-only; Pascha calc is self-contained in horologion-engine.js with a documented delegation note for when that module reaches the main path.",
+      "Horologion v1.4 complete (2026-03-07): Monday–Friday Octoechos stichera-at-lord-i-have-cried and aposticha materially populated in data/horologion/octoechos-vespers.json for all 8 tones (80 slots, 240 verses). Thematic assignments: Monday=Angels, Tuesday=Baptist, Wednesday=Cross/Theotokos, Thursday=Apostles/Nicholas, Friday=Cross/Theotokos (penitential). Saturday resurrectional data: unchanged (v1.3). Sunday: explicitly deferred — data carries sunday_deferred:true + baseline_stub:true; not a silent gap; renders as tone-identified rubric stub with honest note. js/horologion-engine.js and office-ui.js: NO CHANGES in this pass. Remaining open: Sunday Vespers ordinary stichera/aposticha (deferred, not forgotten); kathisma-reading; troparion-or-apolytikion; theotokion-dismissal. Tracked in known_outstanding_issues (horologion_variable_engine), admin.todos (horologion-vespers-variable-slots), active_modules (data/horologion/), and recent_logic_changes.",
+      "Horologion v1.5 complete (2026-03-07): kathisma-reading resolved for ordinary Mon–Sat Vespers as appointment rubric (type:'rubric'; kathisma number, title, LXX psalm range, incipit; full text deferred). Sunday kathisma: explicitly deferred — practice varies by usage; honest stub rendered. Bright Week kathisma: explicitly omitted — Paschal Canon replaces Psalter; rubric rendered. Festal/Lenten kathisma overrides: not implemented; stated openly in rendered output. New file: data/horologion/vespers-kathisma.json. office-ui.js: NO CHANGES. 2 fully unresolved Vespers slots remain: troparion-or-apolytikion, theotokion-dismissal. Sunday Vespers handling (stichera, kathisma, troparion) remains explicitly deferred. Tracked in known_outstanding_issues (horologion_variable_engine), admin.todos (horologion-vespers-variable-slots), active_modules (data/horologion/), and recent_logic_changes.",
+      "Horologion v1.6 complete (2026-03-07): troparion-or-apolytikion baseline resolved. Saturday: full Resurrectional Troparion (tones 1–8, type:'text'). Bright Week: Paschal Troparion (type:'text'). Mon–Fri: tone-identified rubric stub — Menaion required, not fabricated (type:'rubric'). Sunday: explicitly deferred (type:'rubric'). New file: data/horologion/vespers-troparion.json. office-ui.js: NO CHANGES. 1 fully unresolved Vespers slot remains: theotokion-dismissal. Sunday Vespers handling remains explicitly deferred. Tracked in known_outstanding_issues (horologion_variable_engine), admin.todos (horologion-vespers-variable-slots), active_modules (data/horologion/), and recent_logic_changes."
     ]
   },
   "saints_model": {
@@ -1242,12 +1299,12 @@
       },
       {
         "id": "horologion-vespers-variable-slots",
-        "title": "Horologion Vespers: complete Octoechos weekday text and remaining slots",
-        "description": "IN PROGRESS — v1.3 complete. v1.3 status: Saturday stichera-at-lord-i-have-cried and aposticha are fully populated for tones 1–8 in octoechos-vespers.json. Weekday (Mon–Fri, Sunday) entries are tone-aware rubric stubs — the tone is resolved and shown, but full Octoechos text is not yet in the data file. This is not a dead placeholder; it is an honest partial resolution. Remaining substantive work: (a) weekday Octoechos text for stichera-at-lord-i-have-cried and aposticha (data-completion pass in octoechos-vespers.json); (b) kathisma-reading — requires Psalter weekly cycle; (c) troparion-or-apolytikion — requires Menaion or weekly cycle; (d) theotokion-dismissal — depends on apolytikion tone.",
+        "title": "Horologion Vespers: theotokion-dismissal and Sunday Vespers pass",
+        "description": "IN PROGRESS — v1.6 complete. v1.6 status: troparion-or-apolytikion partially resolved. Saturday: full Resurrectional Troparion text (tones 1–8). Bright Week: Paschal Troparion. Mon–Fri: tone-identified rubric stub — Menaion required, not fabricated. Sunday: explicitly deferred. office-ui.js unchanged. Remaining substantive work: (a) theotokion-dismissal — Saturday baseline now unblocked (tone known, 8 Resurrectional Theotokia are fixed Octoechos texts); weekday Theotokia require Menaion; Sunday Theotokion part of Sunday pass; (b) Sunday Vespers handling — stichera/aposticha, kathisma, troparion, and theotokion all remain deferred; dedicated pass needed. Lower-priority deferred: weekday troparion text (Menaion); festal/Lenten overrides; kathisma full psalm text.",
         "severity": "MEDIUM",
         "status": "in-progress",
         "area": "js/horologion-engine.js + data/horologion/vespers.json",
-        "phase": "Horologion v1.4"
+        "phase": "Horologion v1.7 / Sunday-Vespers pass"
       },
       {
         "id": "horologion-compline-v1",
@@ -1285,7 +1342,10 @@
       "structure.json is the canonical governance+documentation artifact and is consumed by admin dashboard.",
       "documentation/* files are internal engineering references; git history is the archive of prior versions.",
       "EO admin diagnostics vs main-app EO integration split recorded in structure.json on 2026-03-06.",
-      "Horologion v1 architecture established and app-wired as of 2026-03-07. Tracked in structure.json todos (horologion-v1-architecture through horologion-orthros-v1), active_modules (js/horologion-engine.js, data/horologion/), and known_outstanding_issues (horologion_variable_engine)."
+      "Horologion v1 architecture established and app-wired as of 2026-03-07. Tracked in structure.json todos (horologion-v1-architecture through horologion-orthros-v1), active_modules (js/horologion-engine.js, data/horologion/), and known_outstanding_issues (horologion_variable_engine).",
+      "Horologion v1.4 governance normalization (2026-03-07): structure.json updated to record Monday–Friday Octoechos data completion, Saturday populated state (v1.3), and Sunday explicit deferral. The Saturday/Mon–Fri/Sunday distinction is preserved precisely throughout — no slot state is collapsed or misrepresented.",
+      "Horologion v1.5 governance normalization (2026-03-07): structure.json updated to record kathisma-reading Mon–Sat resolution, Sunday deferral, Bright Week omission, and the two remaining fully unresolved Vespers slots. Festal/Lenten override gap noted explicitly — not collapsed into the Mon–Sat baseline coverage.",
+      "Horologion v1.6 governance normalization (2026-03-07): structure.json updated to record troparion-or-apolytikion four-state resolution (Saturday resolved, Bright Week resolved, Mon–Fri tone-known/Menaion-deferred, Sunday deferred), new vespers-troparion.json entry, and theotokion-dismissal as the single remaining fully unresolved Vespers slot. Severity downgraded to LOW — only one slot fully unresolved; Saturday Vespers is now substantively complete."
     ],
     "key_docs": [
       "documentation/STRUCTURE_JSON_CONTRACT.md",

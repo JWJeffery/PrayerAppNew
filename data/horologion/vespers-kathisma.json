@@ -1,0 +1,117 @@
+{
+  "_comment": [
+    "data/horologion/vespers-kathisma.json — Horologion v1.5",
+    "",
+    "PURPOSE: Appointment table for the Kathisma reading at Vespers.",
+    "Keyed by weekday (Sunday–Saturday) for ordinary non-festal Vespers.",
+    "",
+    "RULE: Standard Byzantine Psalter weekly cycle for Vespers.",
+    "SOURCE: OCA/Antiochian Psalter table; Jordanville Horologion (2008).",
+    "",
+    "THIS FILE PROVIDES: Kathisma number, title, psalm citation (LXX and",
+    "  Hebrew/Protestant), and the opening incipit line. It does NOT",
+    "  contain full psalm text. The engine renders a rubric identifying",
+    "  the appointed kathisma; the text is read from a Psalter.",
+    "",
+    "WHY NO FULL TEXT: Each kathisma spans 8–10+ psalms. Embedding full",
+    "  text for 7 kathismata inline is a separate data-import task.",
+    "  This baseline resolves the 'what is appointed' question with an",
+    "  honest, useful output. Full text population is deferred.",
+    "",
+    "OVERRIDES NOT IMPLEMENTED (explicitly noted, not silently absent):",
+    "  - Great Feasts: kathisma typically omitted or replaced by the feast",
+    "  - Great Lent: entire Psalter read twice weekly (different distribution)",
+    "  - Bright Week (Pascha–Thomas Saturday): no kathisma",
+    "  - Sunday: practice varies by usage; explicitly deferred",
+    "  - Feast-rank engine: deferred to a future pass",
+    "",
+    "WEEKDAY INDEX: JS Date.getDay() — 0=Sunday, 1=Monday, 6=Saturday."
+  ],
+  "meta": {
+    "version": "1.5.0",
+    "rule": "standard-weekly-cycle-ordinary",
+    "numbering": "LXX (Septuagint) psalm numbers used throughout, as per Byzantine liturgical practice",
+    "overrides_implemented": false,
+    "overrides_deferred": [
+      "great-feasts",
+      "great-lent",
+      "bright-week",
+      "sunday-vespers"
+    ]
+  },
+  "assignments": [
+    {
+      "weekday": "sunday",
+      "weekdayIndex": 0,
+      "sunday_deferred": true,
+      "note": "Sunday Vespers kathisma practice varies significantly by usage. At full Great Vespers (all-night vigil), Kathisma 1 is standard. At ordinary Sunday small Vespers, the kathisma is often omitted or differs by local use. Sunday Vespers kathisma is explicitly deferred in this baseline. The appointed kathisma number is not fabricated."
+    },
+    {
+      "weekday": "monday",
+      "weekdayIndex": 1,
+      "kathismaNumber": 4,
+      "title": "Fourth Kathisma",
+      "psalms_lxx": "24–31",
+      "psalms_heb_protestant": "25–32",
+      "incipit": "To Thee, O Lord, have I lifted up my soul",
+      "rubric": "Kathisma 4 — Fourth Kathisma (Psalms 24–31 LXX)",
+      "note": null
+    },
+    {
+      "weekday": "tuesday",
+      "weekdayIndex": 2,
+      "kathismaNumber": 6,
+      "title": "Sixth Kathisma",
+      "psalms_lxx": "37–45",
+      "psalms_heb_protestant": "38–46",
+      "incipit": "Rebuke me not, O Lord, in Thine anger",
+      "rubric": "Kathisma 6 — Sixth Kathisma (Psalms 37–45 LXX)",
+      "note": null
+    },
+    {
+      "weekday": "wednesday",
+      "weekdayIndex": 3,
+      "kathismaNumber": 8,
+      "title": "Eighth Kathisma",
+      "psalms_lxx": "55–63",
+      "psalms_heb_protestant": "56–64",
+      "incipit": "Have mercy on me, O God, for man hath trodden me down",
+      "rubric": "Kathisma 8 — Eighth Kathisma (Psalms 55–63 LXX)",
+      "note": null
+    },
+    {
+      "weekday": "thursday",
+      "weekdayIndex": 4,
+      "kathismaNumber": 10,
+      "title": "Tenth Kathisma",
+      "psalms_lxx": "70–76",
+      "psalms_heb_protestant": "71–77",
+      "incipit": "In Thee, O Lord, have I hoped",
+      "rubric": "Kathisma 10 — Tenth Kathisma (Psalms 70–76 LXX)",
+      "note": null
+    },
+    {
+      "weekday": "friday",
+      "weekdayIndex": 5,
+      "kathismaNumber": 12,
+      "title": "Twelfth Kathisma",
+      "psalms_lxx": "85–90, 92",
+      "psalms_heb_protestant": "86–91, 93",
+      "incipit": "Incline Thine ear, O Lord, and hear me",
+      "rubric": "Kathisma 12 — Twelfth Kathisma (Psalms 85–90, 92 LXX)",
+      "note": null,
+      "variant_note": "Some editions (Jordanville) include Psalm 91 (LXX) / Psalm 92 (Protestant) within this kathisma; others end at Psalm 90. The citation above follows the standard OCA weekday Vespers Psalter table."
+    },
+    {
+      "weekday": "saturday",
+      "weekdayIndex": 6,
+      "kathismaNumber": 1,
+      "title": "Blessed is the Man",
+      "psalms_lxx": "1–8",
+      "psalms_heb_protestant": "1–8",
+      "incipit": "Blessed is the man who walks not in the counsel of the ungodly",
+      "rubric": "Kathisma 1 — Blessed is the Man (Psalms 1–8 LXX)",
+      "note": null
+    }
+  ]
+}

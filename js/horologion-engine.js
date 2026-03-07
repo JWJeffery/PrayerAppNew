@@ -1,6 +1,6 @@
 // ── js/horologion-engine.js ────────────────────────────────────────────────
 //
-// Horologion Engine v1.3
+// Horologion Engine v1.6
 // Architecture layer: ENGINE (not UI, not calendar)
 //
 // This module owns:
@@ -28,6 +28,31 @@
 //   - Bright Week (Pascha–Thomas Saturday) detected; Octoechos slots
 //     resolved as a rubric noting Paschal Tone is in use.
 //
+// ── v1.5 additions ─────────────────────────────────────────────────────────
+//   - _loadKathismaData(): loads data/horologion/vespers-kathisma.json
+//   - _resolveKathismaSlot(dayOfWeek, brightWeek): returns a resolved item
+//     for the kathisma-reading slot using the standard Byzantine Psalter
+//     weekly cycle (Mon–Sat ordinary). Sunday is explicitly deferred.
+//     Bright Week (no kathisma) returns a rubric with honest note.
+//     Festal/Lenten overrides are NOT implemented; stated openly in output.
+//   - kathisma-reading slot resolved for Mon–Sat ordinary Vespers (v1.5).
+//     Produces type:'rubric' naming the appointed kathisma number, title,
+//     psalm range (LXX), and incipit. Full psalm text is deferred.
+//
+// ── v1.6 additions ─────────────────────────────────────────────────────────
+//   - _loadTroparionData(): loads data/horologion/vespers-troparion.json
+//   - _resolveTroparionSlot(dayOfWeek, toneResult): returns a resolved item
+//     for the troparion-or-apolytikion slot.
+//     Saturday: full Resurrectional Troparion text for the current tone.
+//     Bright Week: Paschal Troparion ("Christ is risen") — fixed text.
+//     Weekday (Mon–Fri): tone-identified rubric stub — the weekday troparion
+//       requires the Menaion (daily saints); no text is fabricated.
+//     Sunday: explicitly deferred — Sunday Vespers troparion handling
+//       is evaluated as part of the dedicated Sunday Vespers pass.
+//     Festal overrides: NOT implemented; stated openly in output.
+//   - theotokion-dismissal: remains deferred this pass (depends on which
+//     troparion was sung; weekday theotokion requires Menaion resolution).
+//
 // ──────────────────────────────────────────────────────────────────────────
 const HorologionEngine = (() => {
 
@@ -48,6 +73,12 @@ const HorologionEngine = (() => {
     // ── v1.3: Octoechos data file URL ──────────────────────────────────────
     const OCTOECHOS_URL = 'data/horologion/octoechos-vespers.json';
 
+    // ── v1.5: Kathisma appointment table URL ───────────────────────────────
+    const KATHISMA_URL = 'data/horologion/vespers-kathisma.json';
+
+    // ── v1.6: Troparion/Apolytikion data file URL ──────────────────────────
+    const TROPARION_URL = 'data/horologion/vespers-troparion.json';
+
     // ── v1.2: Weekday prokeimena lookup array (null until first fetch) ──────
     // Populated lazily by _loadVespersProkeimena(). Indexed by JS Date.getDay()
     // (0 = Sunday … 6 = Saturday). Built from vespers-prokeimena.json entries.
@@ -57,6 +88,18 @@ const HorologionEngine = (() => {
     // Populated lazily by _loadOctoechosData().
     // Shape: { tones: { "1": { saturday: {...}, monday: {...}, ... }, ... } }
     let _octoechosData = null;
+
+    // ── v1.5: Kathisma data object (null until first fetch) ────────────────
+    // Populated lazily by _loadKathismaData().
+    // Shape: { assignments: [ { weekday, weekdayIndex, kathismaNumber, ... }, ... ] }
+    // assignments[0] = Sunday (deferred), assignments[1] = Monday, etc.
+    let _kathismaData = null;
+
+    // ── v1.6: Troparion data object (null until first fetch) ───────────────
+    // Populated lazily by _loadTroparionData().
+    // Shape: { resurrectional_troparia: { "1": {...}, ... "8": {...} },
+    //          paschal_troparion: { title, text, note } }
+    let _troparionData = null;
 
     // ── v1.3: Pascha cache ─────────────────────────────────────────────────
     // Keyed by Gregorian year string. Avoids recomputing Pascha repeatedly
@@ -541,6 +584,284 @@ const HorologionEngine = (() => {
 
 
     // ──────────────────────────────────────────────────────────────────────
+    // v1.5: _loadKathismaData()
+    //
+    // Fetches and caches the Vespers kathisma appointment table from
+    // data/horologion/vespers-kathisma.json.
+    //
+    // Non-throwing: on failure, logs a warning and leaves _kathismaData null.
+    // The resolver degrades gracefully — the kathisma-reading slot remains
+    // as a placeholder rather than failing or fabricating content.
+    // ──────────────────────────────────────────────────────────────────────
+    async function _loadKathismaData() {
+        if (_kathismaData !== null) return; // already loaded or attempted
+
+        try {
+            const response = await fetch(KATHISMA_URL);
+            if (!response.ok) {
+                console.warn(`[HorologionEngine] Could not load kathisma data (HTTP ${response.status}); kathisma-reading slot will remain as placeholder.`);
+                return;
+            }
+            _kathismaData = await response.json();
+            console.log('[HorologionEngine] Loaded Vespers kathisma appointment table (Mon–Sat ordinary).');
+        } catch (err) {
+            console.warn('[HorologionEngine] _loadKathismaData failed:', err.message, '— kathisma-reading slot will remain as placeholder.');
+            // _kathismaData remains null; next call will retry
+        }
+    }
+
+
+    // ──────────────────────────────────────────────────────────────────────
+    // v1.5: _resolveKathismaSlot(dayOfWeek, brightWeek)
+    //
+    // Returns a resolved item for the kathisma-reading slot, or null if
+    // the data file has not loaded (graceful degradation to placeholder).
+    //
+    // dayOfWeek: JS Date.getDay() value (0 = Sunday … 6 = Saturday)
+    // brightWeek: boolean — true during Pascha–Thomas Saturday
+    //
+    // RULE: Standard Byzantine Psalter weekly cycle for ordinary Vespers.
+    //   Assignments (LXX psalm numbers):
+    //     Monday    → Kathisma  4 (Ps 24–31)
+    //     Tuesday   → Kathisma  6 (Ps 37–45)
+    //     Wednesday → Kathisma  8 (Ps 55–63)
+    //     Thursday  → Kathisma 10 (Ps 70–76)
+    //     Friday    → Kathisma 12 (Ps 85–90, 92)
+    //     Saturday  → Kathisma  1 (Ps 1–8)  [Saturday Great Vespers]
+    //     Sunday    → explicitly deferred (see below)
+    //
+    // BRIGHT WEEK: No kathisma is read during Bright Week. The Paschal Canon
+    //   replaces the Psalter. A rubric stating this is returned.
+    //
+    // SUNDAY: Practice varies significantly between Great Vespers (vigil)
+    //   usage and ordinary Sunday small Vespers. Not safely resolvable with
+    //   a single rule. A rubric with an honest deferral note is returned.
+    //
+    // OVERRIDES NOT IMPLEMENTED (stated openly, not silently absent):
+    //   - Great Feasts: kathisma typically omitted or replaced
+    //   - Great Lent: different weekly Psalter distribution
+    //   - Feast-rank engine: deferred to a future pass
+    //
+    // FULL TEXT: This pass returns the kathisma appointment (number, title,
+    //   psalm citation, incipit) as a rubric. Embedding full psalm text for
+    //   each kathisma is a separate data-import task; it is deferred.
+    //
+    // Returns: a resolved item object (type:'rubric'), or null on data failure.
+    // ──────────────────────────────────────────────────────────────────────
+    function _resolveKathismaSlot(dayOfWeek, brightWeek) {
+        // If data file failed to load, degrade to placeholder.
+        if (_kathismaData === null) return null;
+
+        const assignments = _kathismaData.assignments;
+        if (!Array.isArray(assignments)) return null;
+
+        // ── Bright Week: no kathisma ──────────────────────────────────────
+        if (brightWeek) {
+            return {
+                type:       'rubric',
+                key:        'kathisma-reading',
+                label:      'Kathisma',
+                text:       '(Bright Week — no Kathisma. During Bright Week (Pascha Sunday through Thomas Saturday) the Paschal Canon is sung in place of the Psalter. The Kathisma is not read.)',
+                resolvedAs: 'bright-week-no-kathisma'
+            };
+        }
+
+        // Find the assignment for this weekday (weekdayIndex matches getDay())
+        const assignment = assignments.find(a => a.weekdayIndex === dayOfWeek);
+        if (!assignment) return null;
+
+        // ── Sunday: explicitly deferred ──────────────────────────────────
+        if (assignment.sunday_deferred) {
+            return {
+                type:       'rubric',
+                key:        'kathisma-reading',
+                label:      'Kathisma',
+                text:       '(Sunday Vespers — Kathisma appointment deferred. Sunday Vespers kathisma practice varies significantly by usage: at full Great Vespers (all-night vigil) Kathisma 1 is standard; at ordinary Sunday small Vespers the kathisma is often omitted or varies by local use. A single baseline rule cannot be safely applied. This slot will be resolved in a future pass.)',
+                resolvedAs: 'sunday-deferred'
+            };
+        }
+
+        // ── Ordinary weekday: name the appointed kathisma ─────────────────
+        // Produces a rubric that identifies the kathisma and its psalm range.
+        // Full text is NOT rendered here; this tells the officiant what to read.
+        const k = assignment.kathismaNumber;
+        const title = assignment.title;
+        const psalmsLxx = assignment.psalms_lxx;
+        const psalmsProt = assignment.psalms_heb_protestant;
+        const incipit = assignment.incipit;
+
+        let text = `${assignment.rubric}\n\n` +
+            `Incipit: "${incipit}"\n\n` +
+            `(LXX Psalm numbers used throughout, as per Byzantine liturgical practice. ` +
+            `Protestant/Hebrew equivalents: Psalms ${psalmsProt}.)\n\n` +
+            `(BASELINE — ordinary weekday weekly cycle only. ` +
+            `Great Feast and Great Lent kathisma overrides are not yet implemented. ` +
+            `Full psalm text is deferred; read the appointed kathisma from a Psalter.)`;
+
+        // Append variant note for Friday if present
+        if (assignment.variant_note) {
+            text += `\n\n(${assignment.variant_note})`;
+        }
+
+        return {
+            type:           'rubric',
+            key:            'kathisma-reading',
+            label:          `Kathisma ${k} — ${title}`,
+            text:           text,
+            kathismaNumber: k,
+            psalmsLxx:      psalmsLxx,
+            weekday:        assignment.weekday,
+            resolvedAs:     'ordinary-weekday-baseline'
+        };
+    }
+
+
+    // ──────────────────────────────────────────────────────────────────────
+    // v1.6: _loadTroparionData()
+    //
+    // Fetches and caches the Vespers troparion/apolytikion data from
+    // data/horologion/vespers-troparion.json.
+    //
+    // Non-throwing: on failure, logs a warning and leaves _troparionData null.
+    // The resolver degrades gracefully — the troparion-or-apolytikion slot
+    // remains as a placeholder rather than failing or fabricating content.
+    // ──────────────────────────────────────────────────────────────────────
+    async function _loadTroparionData() {
+        if (_troparionData !== null) return; // already loaded or attempted
+
+        try {
+            const response = await fetch(TROPARION_URL);
+            if (!response.ok) {
+                console.warn(`[HorologionEngine] Could not load troparion data (HTTP ${response.status}); troparion-or-apolytikion slot will remain as placeholder.`);
+                return;
+            }
+            _troparionData = await response.json();
+            console.log('[HorologionEngine] Loaded Vespers troparion data (Resurrectional Troparia, tones 1–8).');
+        } catch (err) {
+            console.warn('[HorologionEngine] _loadTroparionData failed:', err.message, '— troparion-or-apolytikion slot will remain as placeholder.');
+            // _troparionData remains null; next call will retry
+        }
+    }
+
+
+    // ──────────────────────────────────────────────────────────────────────
+    // v1.6: _resolveTroparionSlot(dayOfWeek, toneResult)
+    //
+    // Returns a resolved item for the troparion-or-apolytikion slot,
+    // or null if the data file has not loaded (graceful degradation).
+    //
+    // dayOfWeek: JS Date.getDay() value (0 = Sunday … 6 = Saturday)
+    // toneResult: object from _computeBaselineTone() — { tone, brightWeek, ... }
+    //
+    // RULE: Resurrectional Troparion / Apolytikion of the current Octoechos tone.
+    //
+    // SATURDAY (Great Vespers, for Sunday):
+    //   Returns the full Resurrectional Troparion text for the computed tone.
+    //   These are the fixed apolytikia of the Octoechos, invariable for each tone.
+    //   Source: data/horologion/vespers-troparion.json, keyed by tone number.
+    //   resolvedAs: 'resurrectional-troparion-saturday'
+    //
+    // BRIGHT WEEK (Pascha Sunday through Thomas Saturday):
+    //   Returns the Paschal Troparion ("Christ is risen from the dead...").
+    //   This is a fixed text independent of tone; toneResult.brightWeek === true.
+    //   resolvedAs: 'bright-week-paschal-troparion'
+    //
+    // WEEKDAY (Monday–Friday) ORDINARY:
+    //   The weekday troparion depends on the Menaion (daily saints' calendar).
+    //   No text is fabricated. Returns a tone-identified rubric stub that names
+    //   the current tone and states honestly that the Menaion is required.
+    //   resolvedAs: 'weekday-menaion-required'
+    //
+    // SUNDAY:
+    //   Explicitly deferred. Sunday Vespers troparion handling is part of
+    //   the dedicated Sunday Vespers pass. Not fabricated.
+    //   resolvedAs: 'sunday-deferred'
+    //
+    // FESTAL OVERRIDES:
+    //   Not implemented. When a Great Feast falls on any day, its proper
+    //   apolytikion replaces the resurrectional troparion. This requires a
+    //   feast-rank engine (Menaion + feast calendar). Deferred.
+    //   The output for Saturday states this limitation explicitly.
+    //
+    // Returns: a resolved item object, or null on data load failure.
+    // ──────────────────────────────────────────────────────────────────────
+    function _resolveTroparionSlot(dayOfWeek, toneResult) {
+        // If data file failed to load, degrade to placeholder.
+        if (_troparionData === null) return null;
+
+        // ── Bright Week: Paschal Troparion ────────────────────────────────
+        if (toneResult.brightWeek) {
+            const pt = _troparionData.paschal_troparion;
+            if (!pt) return null;
+            return {
+                type:       'text',
+                key:        'troparion-or-apolytikion',
+                label:      pt.title,
+                text:       pt.text,
+                resolvedAs: 'bright-week-paschal-troparion'
+            };
+        }
+
+        const tone = toneResult.tone;
+        if (!tone) return null;
+
+        // ── Sunday: explicitly deferred ───────────────────────────────────
+        if (dayOfWeek === 0) {
+            return {
+                type:       'rubric',
+                key:        'troparion-or-apolytikion',
+                label:      'Troparion / Apolytikion of the Day',
+                text:       `(Sunday Vespers — Troparion deferred. ` +
+                            `Current tone: Tone ${tone}. ` +
+                            `Sunday Vespers troparion handling is part of the dedicated Sunday Vespers pass ` +
+                            `and is not resolved in this baseline. The Resurrectional Troparion of Tone ${tone} ` +
+                            `is appointed for Sunday, but Sunday Vespers overall is not yet fully implemented.)`,
+                tone:       tone,
+                resolvedAs: 'sunday-deferred'
+            };
+        }
+
+        // ── Saturday: full Resurrectional Troparion ───────────────────────
+        if (dayOfWeek === 6) {
+            const troparia = _troparionData.resurrectional_troparia;
+            const entry = troparia && troparia[String(tone)];
+            if (!entry) return null;
+
+            return {
+                type:       'text',
+                key:        'troparion-or-apolytikion',
+                label:      entry.title,
+                text:       entry.text + '\n\n' +
+                            `(BASELINE — ordinary Saturday Great Vespers, Tone ${tone}. ` +
+                            `This is the fixed Resurrectional Troparion of the Octoechos. ` +
+                            `On Great Feast days, the proper apolytikion of the feast replaces this text; ` +
+                            `festal overrides are not yet implemented.)`,
+                tone:       tone,
+                resolvedAs: 'resurrectional-troparion-saturday'
+            };
+        }
+
+        // ── Weekday (Mon–Fri): tone-identified stub ───────────────────────
+        // The weekday troparion is drawn from the Menaion (saints of the day).
+        // There is no single week-cycle rule that safely identifies it without
+        // Menaion data. The tone is known; the text is not fabricated.
+        return {
+            type:       'rubric',
+            key:        'troparion-or-apolytikion',
+            label:      'Troparion / Apolytikion of the Day',
+            text:       `(Tone ${tone} — Weekday Troparion: Menaion required. ` +
+                        `The troparion at weekday Vespers is appointed by the Menaion ` +
+                        `(the saints and commemorations of this day). ` +
+                        `The current Octoechos tone is Tone ${tone}. ` +
+                        `Full weekday troparion resolution requires Menaion data, which is not yet implemented. ` +
+                        `The Resurrectional Troparion of Tone ${tone} is NOT used at ordinary weekday Vespers.)`,
+            tone:       tone,
+            resolvedAs: 'weekday-menaion-required'
+        };
+    }
+
+
+    // ──────────────────────────────────────────────────────────────────────
     // v1.3: _resolveSticheraSlot(tone, weekdayName, slotKey, toneResult)
     //
     // Resolves a single stichera-style slot from the Octoechos data.
@@ -641,16 +962,45 @@ const HorologionEngine = (() => {
     //   aposticha
     //     Same three tiers as stichera-at-lord-i-have-cried above.
     //
-    // Slots NOT resolved in v1.3 (deferred):
-    //   kathisma-reading      — requires Psalter weekly cycle
-    //   troparion-or-apolytikion — requires Menaion or weekly cycle
-    //   theotokion-dismissal  — depends on apolytikion tone
+    // Slots resolved in v1.5:
+    //   kathisma-reading
+    //     Mon–Sat ordinary: standard Byzantine Psalter weekly cycle.
+    //       Produces type:'rubric' with kathisma number, title, psalm range
+    //       (LXX), and incipit. Full psalm text is NOT included; the rubric
+    //       directs the officiant to read the appointed kathisma.
+    //     Sunday: explicitly deferred — practice varies by usage; not fabricated.
+    //     Bright Week: no kathisma; rubric states this openly.
+    //     Festal/Lenten overrides: NOT implemented. This is the ordinary
+    //       weekday baseline only. Great Feasts omit or replace the kathisma;
+    //       Great Lent uses a different weekly distribution. Neither is
+    //       silently applied here.
+    //
+    // Slots resolved in v1.6:
+    //   troparion-or-apolytikion
+    //     Saturday: full Resurrectional Troparion text for the current tone
+    //       (from data/horologion/vespers-troparion.json). These are the
+    //       fixed apolytikia of the Octoechos sung at Saturday Great Vespers.
+    //     Bright Week: Paschal Troparion ("Christ is risen") — fixed text.
+    //     Weekday (Mon–Fri): tone-identified rubric stub. The weekday troparion
+    //       depends on the Menaion (daily saints); no text is fabricated.
+    //       The current tone is stated so the celebrant can locate the correct
+    //       Menaion entry. This is an honest partial resolution, not silence.
+    //     Sunday: explicitly deferred — evaluated as part of the dedicated
+    //       Sunday Vespers pass.
+    //     Festal overrides: NOT implemented. Feast-rank engine deferred.
+    //
+    // Slots NOT resolved in v1.6 (deferred):
+    //   theotokion-dismissal — depends on which troparion was sung;
+    //     weekday theotokion requires Menaion resolution first.
+    //     Saturday/Sunday dismissal Theotokia are deferred to a future pass.
     // ──────────────────────────────────────────────────────────────────────
     async function _resolveVespersSlots(sections, dateObj) {
-        // Load both data files in parallel
+        // Load all four data files in parallel
         await Promise.all([
             _loadVespersProkeimena(),
-            _loadOctoechosData()
+            _loadOctoechosData(),
+            _loadKathismaData(),
+            _loadTroparionData()
         ]);
 
         const dayOfWeek = dateObj.getDay(); // 0 = Sunday, 6 = Saturday
@@ -748,8 +1098,37 @@ const HorologionEngine = (() => {
                     }
                 }
 
-                // ── kathisma-reading, troparion, theotokion (deferred) ────
-                // Not resolved in v1.3. See function documentation above.
+                // ── kathisma-reading (v1.5) ───────────────────────────────
+                // Baseline: standard Byzantine Psalter weekly cycle, Mon–Sat.
+                // Sunday and Bright Week are handled with explicit honest notes.
+                // Festal/Lenten overrides are NOT implemented in this pass.
+                else if (item.key === 'kathisma-reading') {
+                    const resolved = _resolveKathismaSlot(dayOfWeek, toneResult.brightWeek);
+                    if (resolved) {
+                        section.items[i] = resolved;
+                    }
+                    // If null (data load failed), slot remains placeholder.
+                }
+
+                // ── troparion-or-apolytikion (v1.6) ──────────────────────
+                // Baseline: Resurrectional Troparion of the current tone
+                // for Saturday Great Vespers. Bright Week: Paschal Troparion.
+                // Weekdays: tone-identified stub (Menaion required for text).
+                // Sunday: explicitly deferred.
+                // Festal overrides: NOT implemented in this pass.
+                else if (item.key === 'troparion-or-apolytikion') {
+                    const resolved = _resolveTroparionSlot(dayOfWeek, toneResult);
+                    if (resolved) {
+                        section.items[i] = resolved;
+                    }
+                    // If null (data load failed), slot remains placeholder.
+                }
+
+                // ── theotokion-dismissal (deferred) ──────────────────────
+                // Not resolved in v1.6. The dismissal Theotokion depends on
+                // which troparion was sung. Weekday Theotokia require Menaion
+                // resolution; Saturday/Sunday Theotokia are deferred to a
+                // future pass. See function documentation above.
             }
         }
     }
