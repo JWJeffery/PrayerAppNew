@@ -884,16 +884,6 @@
     ]
   },
   {
-    "id": "clement-of-rome",
-    "day": "November 23",
-    "name": "Clement of Rome",
-    "description": "Bishop, c. 100.",
-    "type": "saint",
-    "tags": [
-      "ANG"
-    ]
-  },
-  {
     "id": "saint-amphilochius-of-iconium",
     "day": "November 23",
     "name": "Saint Amphilochius of Iconium",
@@ -924,16 +914,6 @@
     "type": "saint",
     "tags": [
       "LAT"
-    ]
-  },
-  {
-    "id": "catherine-of-alexandria",
-    "day": "November 24",
-    "name": "Catherine of Alexandria",
-    "description": "Martyr, c. 305.",
-    "type": "saint",
-    "tags": [
-      "ANG"
     ]
   },
   {
@@ -977,10 +957,10 @@
     ]
   },
   {
-    "id": "catherine-of-alexandria",
-    "day": "November 25",
-    "name": "Catherine of Alexandria",
-    "description": "Martyr, c. 305.",
+    "id": "saint-catherine-of-alexandria",
+    "day": "November 24",
+    "name": "Saint Catherine of Alexandria",
+    "description": "Great Martyr.",
     "type": "saint",
     "tags": [
       "ANG"

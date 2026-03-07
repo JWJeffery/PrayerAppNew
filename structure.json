@@ -1,10 +1,10 @@
 {
   "project_manifest": {
     "name": "Universal Office",
-    "version": "2.8.6",
-    "last_updated": "2026-03-03",
+    "version": "2.8.9",
+    "last_updated": "2026-03-06",
     "bcp_compliance": "100%",
-    "operational_status": "OPERATIONAL — v2.8.6: Saints resolver boundary complete; hydration-race gating verified closed. js/saints-resolver.js is the sole monthly-cache owner. office-ui.js resolveCommemorations() is a pure delegation wrapper. Both OOR inline fallback filters route through SaintsResolver.filterCachedByTradition(). admin.html routes day-snapshot saints paths through SaintsResolver.loadSaintsForDate(). No appData.saints usage or direct saints-cache fetches remain outside saints-resolver.js. renderOffice() is guarded by isHydrationComplete; selectMode() awaits hydration before setting that flag; requestRender()/flushRender() coalesce and serialise renders. Remaining: normalized-source runtime adapter; identity deduplication.",
+    "operational_status": "OPERATIONAL — v2.8.9: COE governance complete. Three-layer COE calendar model fully implemented: Layer 1 season engine operational; Layer 2 fixed feasts (Sawma Rabba Friday martyrs, Commemoration of the Faithful Departed) active; Layer 3 individual saints re-enabled via CoeEligibility.filter() allowlist gate. COE-IIB saint-tag audit complete — 133 identity IDs (136 rows) removed from commemorations.json; monthly caches regenerated. Final five adjudication complete: 3 REMOVE_COE_TAG applied; mar-augustine / mar-augustine-commemoration held as external-research holdout (excluded from Layer 3). No COE internal refactor work remains open. Prior: Saints resolver boundary complete (v2.8.6); hydration-race gating verified closed (v2.8.6).",
     "audit_findings": {
       "open_bugs": [
         "1. Rubric logic: [rite] placeholder resolution in rubrics.json is fragile and prone to null returns. (LOW — see known_outstanding_issues.rite_placeholder_resolution)"
@@ -13,8 +13,8 @@
         "1. Heavy reliance on .innerHTML string building in office-ui.js needs transition to a template system.",
         "2. [CLOSED — v2.8.6] Hydration-race gating: renderOffice() is guarded by isHydrationComplete. selectMode() awaits hydration before setting that flag and calling requestRender(). requestRender()/flushRender() coalesce and serialise renders via activeRender. init() is kernel-only and no longer silently triggers Daily Office hydration. Residual: no automated regression test covers this gating path.",
         "3. Redundant liturgical fragments (Gloria Patri/Kyrie) should be normalized into common.json.",
-        "4. Saints data model: identities.json + commemorations.json are the canonical source-of-truth. js/saints-resolver.js provides the shared resolver boundary. office-ui.js and admin.html route all saints paths through SaintsResolver. Remaining: (a) normalized-source runtime adapter; (b) duplicate identity consolidation (saints-cleanup-queue.md Phase 4).",
-        "5. COE saint/commemoration rendering: the current saint-grid model is categorically wrong for the Church of the East. COE is a salvation-historical seasonal calendar, not a date-to-saint grid. Requires a three-layer rebuild: (1) season engine already exists; (2) fixed feasts layer; (3) sparse individual saints. Friday is a liturgical class (martyrial), not a saint slot. Full spec in known_outstanding_issues.coe_calendar_model. COE saint section silenced in v2.8.3 pending rebuild."
+        "4. Saints data model: identities.json + commemorations.json are the canonical source-of-truth. js/saints-resolver.js provides the shared resolver boundary. office-ui.js and admin.html route all saints paths through SaintsResolver. Phase 4 duplicate identity consolidation complete (v2.8.8): 46 pairs resolved, 1,228 identities remain. COE audit and governance complete (v2.8.9). Remaining: normalized-source runtime adapter (SaintsResolver reads monthly cache files at runtime; a true adapter would query identities.json + commemorations.json directly).",
+        "5. [CLOSED — v2.8.9] COE saint/commemoration rendering: Three-layer rebuild complete. Layer 1 (season engine) was already operational. Layer 2 (fixed feasts: Sawma Rabba Friday martyrs, pre-Sawma Commemoration of the Faithful Departed) implemented in COE-IIA via getDayClass() in calendar-east-syriac.js. Layer 3 (sparse individual saints) source-data corrected via COE-IIB audit (133 IDs removed), eligibility gate implemented in js/coe-eligibility.js (CoeEligibility.filter()), and display re-enabled in renderEastSyriac(). saint-grid model eliminated. CoeEligibility.filter() is mandatory before any Layer 3 render. Layer 2 output from getDayClass() renders before Layer 3 lookup. No saint-grid fallback. Silence is correct when no eligible saint is present."
       ],
       "resolved_in_this_version": [
         "1. COE saint section silenced: renderEastSyriac() saint display locked to empty pending architectural rebuild. Previous behaviour was historically inaccurate — string-matching tradition fields was surfacing wrong saints. Silence is liturgically correct for COE weekdays with no fixed saint."
@@ -90,7 +90,7 @@
     },
     "js/office-ui.js": {
       "role": "All Daily Office UI logic",
-      "status": "Current — v2.8.6",
+      "status": "Current — v2.8.9 (COE Layer 3 re-enabled via CoeEligibility.filter())",
       "primary_functions": [
         "init()",
         "renderOffice()",
@@ -201,7 +201,12 @@
       "status": "COMPLETE AND OPERATIONAL — All 20 self-tests passing (confirmed in console 2026-02-27)",
       "global_api": "EastSyriacCalendar (IIFE, window-scoped)",
       "public_methods": [
-        "getSeason(date) — returns { season, cycle, cycleLabel, seasonColor, weekNumber }"
+        "getSeason(date) — returns { season, weekInSeason, cycle, weekLabel, seasonLabel, easter }",
+        "getDayClass(date) — returns full day-classification object including isFriday, isLenten, isNinevehFast, dayClass, commemorations[], and all getSeason fields",
+        "getEaster(gregorianYear) — returns Date (Gregorian JS Date of d'Qyamta for that year)",
+        "getLiturgicalYear(date) — returns { subaraStart, easter, seasons, nextSubara }",
+        "getFixedCommemorationsForDate(date) — returns commemoration records for Layer 2 fixed observances",
+        "SEASON_META — read-only season metadata object"
       ],
       "seasons": [
         "subara — Annunciation/Advent",
@@ -676,33 +681,31 @@
     },
     "saints_schema_refactor": {
       "severity": "LOW",
-      "description": "Saints resolver boundary complete as of v2.8.6. js/saints-resolver.js (SaintsResolver) is the sole monthly-cache owner. office-ui.js resolveCommemorations() is a pure delegation wrapper. OOR inline fallback filters route through SaintsResolver.filterCachedByTradition(). admin.html routes through SaintsResolver.loadSaintsForDate(). No appData.saints usage or direct saints-cache fetches remain outside saints-resolver.js. Remaining: (1) Normalized-source runtime adapter not implemented. (2) Duplicate identity consolidation (saints-cleanup-queue.md Phase 4) not started. (3) COE saint-tag audit deferred to COE-II.",
-      "action": "(A) Implement normalized-source runtime adapter in saints-resolver.js. (B) Consolidate duplicate identities per saints-cleanup-queue.md Phase 4.",
+      "description": "Saints resolver boundary complete as of v2.8.6. js/saints-resolver.js (SaintsResolver) is the sole monthly-cache owner. office-ui.js resolveCommemorations() is a pure delegation wrapper. OOR inline fallback filters route through SaintsResolver.filterCachedByTradition(). admin.html routes through SaintsResolver.loadSaintsForDate(). No appData.saints usage or direct saints-cache fetches remain outside saints-resolver.js. Duplicate identity consolidation (saints-cleanup-queue.md Phase 4) complete as of v2.8.8: 46 duplicate identity pairs resolved; identities.json reduced from 1,274 to 1,228 records; all 12 monthly caches regenerated. COE saint-tag audit and governance complete as of v2.8.9 (see known_outstanding_issues.coe_calendar_model). Remaining internal work: normalized-source runtime adapter only — SaintsResolver currently reads generated monthly cache files at runtime rather than querying identities.json + commemorations.json directly.",
+      "action": "Implement normalized-source runtime adapter in saints-resolver.js.",
       "files": [
         "js/saints-resolver.js",
-        "js/office-ui.js",
         "data/saints/identities.json",
         "data/saints/commemorations.json"
       ]
     },
     "coe_calendar_model": {
-      "severity": "HIGH",
-      "description": "The Church of the East does not operate on a Western-style date-to-saint calendar. Its calendar is salvation-historical and seasonal. Saints reinforce theology; they do not drive it. The current saint-grid rendering model is categorically inappropriate for this tradition.",
+      "severity": "CLOSED",
+      "description": "RESOLVED — v2.8.9. Three-layer COE calendar model implemented. Layer 1: season engine (calendar-east-syriac.js getSeason() / getDayClass()) operational. Layer 2: getDayClass() returns commemorations[] for Sawma Rabba Fridays and pre-Sawma Faithful Departed. Layer 3: CoeEligibility.filter() allowlist gate implemented; display re-enabled in renderEastSyriac(). COE-IIB audit complete: 133 identity IDs (136 rows) removed from commemorations.json. saint-grid model eliminated. No saint-grid fallback. Layer 2 renders before Layer 3 lookup. Silence is correct when no eligible saint is present.",
       "architectural_principle": "Latin logic: Calendar = Saints framework with seasonal overlay. East Syriac logic: Calendar = Salvation-historical seasons with occasional saints.",
       "three_layer_model": {
         "layer_1_season_engine": {
-          "status": "IMPLEMENTED — calendar-east-syriac.js",
+          "status": "COMPLETE — calendar-east-syriac.js",
           "provides": [
             "season",
             "week number",
             "cycle (Qdham/Wathar)",
             "fasting character",
             "season color"
-          ],
-          "needed": "Friday liturgical class detection (martyrial axis). Friday is not a saint slot — it is a liturgical category."
+          ]
         },
         "layer_2_fixed_feasts": {
-          "status": "NOT IMPLEMENTED",
+          "status": "COMPLETE — COE-IIA (getDayClass() commemorations[])",
           "description": "Major fixed observances calculated seasonally, not stored as date-keyed saints.",
           "examples": [
             "Nativity",
@@ -714,11 +717,10 @@
             "All Saints",
             "Commemoration of the Dead"
           ],
-          "type": "feast or commemoration — never saint",
-          "implementation": "Inject at render time from calendar-east-syriac.js, not from saints JSON files."
+          "type": "feast or commemoration — never saint"
         },
         "layer_3_individual_saints": {
-          "status": "PARTIALLY IMPLEMENTED — over-populated, needs audit",
+          "status": "COMPLETE — COE-IIB audit done; CoeEligibility.filter() gate active; display re-enabled v2.8.7",
           "description": "Sparse. Conservative. Person-based only. Pre-schism and explicitly East Syriac.",
           "inclusion_criteria": [
             "Pre-schism and universally ancient",
@@ -735,7 +737,7 @@
             "Gregory the Great — disputed, currently tagged COE, needs review",
             "Any saint tagged COE solely by proximity to EOR"
           ],
-          "action": "Audit all saints currently tagged COE against Hudra manuscript evidence. Remove liberal tagging."
+          "action": "No further internal action required. One external-research holdout remains: mar-augustine / mar-augustine-commemoration — excluded from Layer 3 by the eligibility gate. Do not alter on internal evidence alone. Resolution requires external Syriac manuscript evidence (Budge Book of the Governors, Wright Catalogue, Encyclopaedia Iranica COE calendar). If a matching Hudra figure is confirmed: correct feast dates, merge identity records, add to allowlist. If no figure is found: REMOVE_COE_TAG from both records."
         }
       },
       "friday_logic": {
@@ -775,7 +777,7 @@
         ],
         "recommended_addition": "Display week name/number prominently within season for COE."
       },
-      "action": "Phase COE-II: (1) Audit COE tags in saints data against Hudra criteria. (2) Add getDayClass() to calendar-east-syriac.js. (3) Build fixed feasts layer. (4) Update renderEastSyriac() to use three-layer model. (5) Replace saint-grid UI with Commemoration framing. Do not begin implementation until architectural review is complete.",
+      "action": "No internal action required. COE-II complete. Optional future work: COE-IIC — expand Layer 2 with major Hudra fixed feasts (Denha/Epiphany, Sleeba/Exaltation of the Cross, Annunciation, All Saints). External holdout: see three_layer_model.layer_3_individual_saints.action.",
       "files": [
         "js/calendar-east-syriac.js",
         "js/office-ui.js — renderEastSyriac()",
@@ -786,6 +788,27 @@
     }
   },
   "recent_logic_changes": [
+    {
+      "date": "2026-03-06",
+      "phase": "v2.8.9",
+      "file": "structure.json + documentation/COE_II_ARCHITECTURE.md + js/coe-eligibility.js",
+      "change": "COE governance closure — all internal COE work marked complete",
+      "detail": "COE-II declared complete. Three-layer model fully operational. known_outstanding_issues.coe_calendar_model severity set to CLOSED. admin.todos coe-calendar-rebuild marked done. roadmap_summary updated: COE-II removed from next_required; COE-IIC (optional Layer 2 expansion) noted as future work only. External holdout: mar-augustine / mar-augustine-commemoration excluded from Layer 3 by CoeEligibility.filter(); requires external Syriac manuscript research before any change. No internal COE refactor work remains open."
+    },
+    {
+      "date": "2026-03-06",
+      "phase": "v2.8.8",
+      "file": "data/saints/commemorations.json + data/saints/saints-february/october/december.json",
+      "change": "COE final five adjudication — 3 REMOVE_COE_TAG, 2 external-research holdout",
+      "detail": "saint-ignatius-of-antioch (COE 10/17, 12/20): removed — mechanical two-date following (LAT on 10/17, EOR/OOR on 12/20); Antioch is Syriac Orthodox jurisdiction, not COE. saint-nicholas-of-myra (COE 12/6): removed — five-tradition sweep; identity description itself says \"celebrated across all traditions\"; Myra geographically outside COE heartland. saint-abraham-of-carrhae (COE 2/14): removed — Harran is west of Euphrates, Roman/Byzantine territory, Antiochene jurisdiction; COE followed OOR mechanically. mar-augustine / mar-augustine-commemoration: STILL_UNRESOLVED — retained as external-research holdout. Mar- prefix is genuine East Syriac evidence but three-date structure across two identity records is architecturally abnormal; cannot adjudicate without external Syriac manuscript evidence. Excluded from Layer 3 by eligibility gate. commemorations.json: 1808 → 1804 rows. February, October, December caches regenerated."
+    },
+    {
+      "date": "2026-03-06",
+      "phase": "v2.8.7",
+      "file": "js/office-ui.js — renderEastSyriac() + js/coe-eligibility.js",
+      "change": "COE Layer 3 cautiously re-enabled via CoeEligibility.filter() allowlist gate",
+      "detail": "Layer 3 display re-enabled in renderEastSyriac() after COE-IIB source-data corrections and eligibility gate implementation. Two surgical edits only: (1) resolveCommemorations(currentDate, \"COE\") cache warm-up added before office HTML assembly. (2) Silenced Layer 3 tail replaced with gated block: coeRaw → CoeEligibility.filter() → render .saint-section if eligible saints present, hide if none. CoeEligibility.filter() is mandatory — no \"filter all COE-tagged\" shortcut. No saint-grid fallback. Silence is correct when no eligible saint is present. Layer 2 (getDayClass() commemorations[]) renders before Layer 3 lookup. typeof CoeEligibility guard degrades silently if file fails to load."
+    },
     {
       "date": "2026-02-28",
       "phase": "v2.8.3",
@@ -929,10 +952,10 @@
     }
   ],
   "roadmap_summary": {
-    "completed": "Phases 6.1–6.6 (BCP office + audit remediation), Phase 7.1–7.4 (full Ethiopian Sa'atat + calendar engine), Phase 8.1 (Senkessar index + Tir corpus + full wiring), Phase 8.3 (Hamle corpus verified), Phase 8.5 (Ge'ez dual-date display in Sa'atat sidebar and BCP date header — both rendering via EthiopianCalendar.formatEthiopianDate()), v2.6.1 (Tselote Meweta, Metsehafe Tselot aesthetic), v2.8.0 (Church of the East — all seven canonical hours: Sapra, Quta'a, Endana, D-tsha' Sa'in, Ramsha, Lelya, Suba'a — cathedral and monastic sequences, full dynamic token implementation), v2.8.1 (Barekmar components, Mahlet expansion, duplicate removal, Qanona layering, algorithmic calendar engine), v2.8.2 (saints data migration — tags[] schema, 1568 records, full classification), v2.8.3 (COE saint section silenced; COE architectural model documented), v2.8.5–2.8.6 (saints resolver boundary — js/saints-resolver.js; resolveCommemorations delegation; OOR fallback via filterCachedByTradition; appData.saints eliminated; hydration-race gating verified closed)",
-    "next_required": "1. COE-II: Three-layer COE calendar rebuild per known_outstanding_issues.coe_calendar_model. Requires: getDayClass() in calendar-east-syriac.js, fixed feasts layer, COE tags audit, renderEastSyriac() three-layer model, Commemoration UI framing. Do not begin until architectural review complete. 2. Lower priority: [rite] placeholder fragility; .innerHTML architecture; Gloria Patri/Kyrie normalization; saints normalized-source runtime adapter; identity deduplication.",
+    "completed": "Phases 6.1–6.6 (BCP office + audit remediation), Phase 7.1–7.4 (full Ethiopian Sa'atat + calendar engine), Phase 8.1 (Senkessar index + Tir corpus + full wiring), Phase 8.3 (Hamle corpus verified), Phase 8.5 (Ge'ez dual-date display in Sa'atat sidebar and BCP date header — both rendering via EthiopianCalendar.formatEthiopianDate()), v2.6.1 (Tselote Meweta, Metsehafe Tselot aesthetic), v2.8.0 (Church of the East — all seven canonical hours: Sapra, Quta'a, Endana, D-tsha' Sa'in, Ramsha, Lelya, Suba'a — cathedral and monastic sequences, full dynamic token implementation), v2.8.1 (Barekmar components, Mahlet expansion, duplicate removal, Qanona layering, algorithmic calendar engine), v2.8.2 (saints data migration — tags[] schema, 1568 records, full classification), v2.8.3 (COE saint section silenced; COE architectural model documented), v2.8.5–2.8.6 (saints resolver boundary — js/saints-resolver.js; resolveCommemorations delegation; OOR fallback via filterCachedByTradition; appData.saints eliminated; hydration-race gating verified closed), v2.8.9 (COE-II complete: COE-IIA Layer 2 fixed feasts, COE-IIB tag audit [133 IDs removed, eligibility gate], final five adjudication, Layer 3 re-enabled via CoeEligibility.filter())",
+    "next_required": "1. [rite] placeholder fragility: audit rubric sequence entries using [rite] interpolation; add null-safe fallback. 2. Lower priority: .innerHTML architecture; Gloria Patri/Kyrie normalization; saints normalized-source runtime adapter; identity deduplication (saints-cleanup-queue.md Phase 4). 3. Optional COE future work: COE-IIC — expand Layer 2 with major Hudra fixed feasts (Denha, Sleeba, Annunciation, All Saints). External-research holdout only: mar-augustine / mar-augustine-commemoration (excluded from Layer 3 by eligibility gate; requires Syriac manuscript evidence before any change).",
     "next_planned": "No planned phase currently queued. See roadmap future items.",
-    "future": "Phase 6.7 — Performance polish (timezone warning, LRU seasonal cache, prefetch, service worker); Phase 7.5 — Coptic Agpeya as standalone tradition entry; Phase 9.0 — Mobile app; Phase 9.1 — Cross-Tradition Search (Comparative scripture view across AR, ET, and SY canons); COE-II — Three-layer COE calendar model (season engine + fixed feasts + sparse saints + getDayClass() + Commemoration UI)"
+    "future": "Phase 6.7 — Performance polish (timezone warning, LRU seasonal cache, prefetch, service worker); Phase 7.5 — Coptic Agpeya as standalone tradition entry; Phase 9.0 — Mobile app; Phase 9.1 — Cross-Tradition Search (Comparative scripture view across AR, ET, and SY canons); COE-IIC — Optional Layer 2 expansion: major Hudra fixed feasts (Denha/Epiphany, Sleeba/Exaltation, Annunciation, All Saints)"
   },
   "governance": {
     "architectural_charter": {
@@ -943,7 +966,7 @@
   },
   "saints_model": {
     "status": "normalized-all-months-generated",
-    "status_note": "All 12 monthly cache files are present as of v2.8.2. js/saints-resolver.js (SaintsResolver) is the sole monthly-cache owner and the canonical saints boundary. office-ui.js and admin.html route all saints paths through SaintsResolver. No appData.saints usage or direct saints-cache fetches remain outside saints-resolver.js.",
+    "status_note": "All 12 monthly cache files are present as of v2.8.2 and last regenerated in v2.8.8 (Phase 4 duplicate consolidation). js/saints-resolver.js (SaintsResolver) is the sole monthly-cache owner and the canonical saints boundary. office-ui.js and admin.html route all saints paths through SaintsResolver. No appData.saints usage or direct saints-cache fetches remain outside saints-resolver.js. Phase 4 duplicate identity consolidation complete: 46 pairs resolved, 1,228 unique identities remain.",
     "source_of_truth": [
       "data/saints/identities.json",
       "data/saints/commemorations.json"
@@ -988,9 +1011,7 @@
     ],
     "pending_months": [],
     "unfinished_work": [
-      "Normalized-source runtime adapter: SaintsResolver reads generated cache files at runtime. A true adapter would query identities.json + commemorations.json directly.",
-      "Duplicate identity consolidation (saints-cleanup-queue.md Phase 4): not started.",
-      "COE saint-tag audit against Hudra manuscript evidence: deferred to COE-II."
+      "Normalized-source runtime adapter: SaintsResolver reads generated cache files at runtime. A true adapter would query identities.json + commemorations.json directly."
     ]
   },
   "admin": {
@@ -1000,16 +1021,16 @@
       {
         "id": "coe-calendar-rebuild",
         "title": "COE-II: Three-layer COE calendar rebuild",
-        "description": "The Church of the East calendar is salvation-historical/seasonal — not a date-to-saint grid. Rebuild requires: (1) getDayClass() in calendar-east-syriac.js, (2) fixed feasts layer, (3) COE tags audit, (4) renderEastSyriac() three-layer model, (5) Commemoration UI framing. Do not begin until architectural review complete.",
+        "description": "COMPLETE — v2.8.9. Three-layer model fully implemented. Layer 1 (season engine): operational. Layer 2 (fixed feasts: Sawma Rabba Friday martyrs, Faithful Departed): implemented via getDayClass(). Layer 3 (sparse individual saints): CoeEligibility.filter() gate active; display re-enabled. COE-IIB audit complete: saint-grid model eliminated. External holdout: mar-augustine / mar-augustine-commemoration excluded from Layer 3 pending external Syriac manuscript research. No further internal action.",
         "severity": "HIGH",
-        "status": "open",
+        "status": "done",
         "area": "js/calendar-east-syriac.js + js/office-ui.js",
         "phase": "COE-II"
       },
       {
         "id": "saints-schema-refactor",
-        "title": "Saints resolver: normalized-source adapter and identity deduplication",
-        "description": "Resolver boundary complete (v2.8.6). Remaining: (1) Implement normalized-source runtime adapter in saints-resolver.js so SaintsResolver queries identities.json + commemorations.json directly rather than generated monthly cache files at runtime. (2) Consolidate duplicate identities per saints-cleanup-queue.md Phase 4.",
+        "title": "Saints resolver: normalized-source runtime adapter",
+        "description": "Resolver boundary complete (v2.8.6). Phase 4 duplicate identity consolidation complete (v2.8.8): 46 pairs resolved, 1,228 identities remain. COE audit and governance complete (v2.8.9). Remaining: implement normalized-source runtime adapter in saints-resolver.js so SaintsResolver queries identities.json + commemorations.json directly rather than generated monthly cache files at runtime.",
         "severity": "LOW",
         "status": "in-progress",
         "area": "js/saints-resolver.js + data/saints/",

@@ -213,22 +213,13 @@
     ]
   },
   {
-    "id": "john-of-god",
-    "day": "March 8",
-    "name": "John of God",
-    "description": "Founder of the Brothers Hospitallers (shared commemoration).",
-    "type": "saint",
-    "tags": [
-      "ANG"
-    ]
-  },
-  {
     "id": "saint-john-of-god",
     "day": "March 8",
     "name": "Saint John of God",
     "description": "Founder of the Brothers Hospitallers, venerated in Catholic and Oriental Orthodox traditions.",
     "type": "saint",
     "tags": [
+      "ANG",
       "LAT"
     ]
   },
@@ -243,16 +234,6 @@
     ]
   },
   {
-    "id": "gregory-of-nyssa",
-    "day": "March 9",
-    "name": "Gregory of Nyssa",
-    "description": "Bishop and theologian, c. 394.",
-    "type": "saint",
-    "tags": [
-      "ANG"
-    ]
-  },
-  {
     "id": "saint-frances-of-rome",
     "day": "March 9",
     "name": "Saint Frances of Rome",
@@ -260,6 +241,16 @@
     "type": "saint",
     "tags": [
       "LAT"
+    ]
+  },
+  {
+    "id": "saint-gregory-of-nyssa",
+    "day": "March 9",
+    "name": "Saint Gregory of Nyssa",
+    "description": "Father of the Church.",
+    "type": "saint",
+    "tags": [
+      "ANG"
     ]
   },
   {
@@ -347,16 +338,6 @@
     ]
   },
   {
-    "id": "gregory-the-great",
-    "day": "March 12",
-    "name": "Gregory the Great",
-    "description": "Pope and Doctor of the Church (shared commemoration).",
-    "type": "saint",
-    "tags": [
-      "ANG"
-    ]
-  },
-  {
     "id": "gregory-the-great-gregory-the-dialogist",
     "day": "March 12",
     "name": "Gregory the Great (Gregory the Dialogist)",
@@ -367,6 +348,16 @@
       "EOR",
       "LAT",
       "OOR"
+    ]
+  },
+  {
+    "id": "saint-gregory-the-great",
+    "day": "March 12",
+    "name": "Saint Gregory the Great",
+    "description": "Pope and Doctor; 'Father of Christian Worship'.",
+    "type": "saint",
+    "tags": [
+      "ANG"
     ]
   },
   {
@@ -454,10 +445,10 @@
     ]
   },
   {
-    "id": "vincent-ferrer",
+    "id": "saint-vincent-ferrer",
     "day": "March 15",
-    "name": "Vincent Ferrer",
-    "description": "Priest, 1419.",
+    "name": "Saint Vincent Ferrer",
+    "description": "Dominican priest and missionary preacher, venerated in Catholic and Oriental Orthodox traditions.",
     "type": "saint",
     "tags": [
       "ANG"
@@ -874,10 +865,10 @@
     ]
   },
   {
-    "id": "innocent-of-alaska",
+    "id": "saint-innocent-of-alaska",
     "day": "March 30",
-    "name": "Innocent of Alaska",
-    "description": "Bishop, 1879.",
+    "name": "Saint Innocent of Alaska",
+    "description": "Missionary bishop to America.",
     "type": "saint",
     "tags": [
       "ANG"

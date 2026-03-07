@@ -8,6 +8,20 @@
  * tradition. All other COE-tagged entries must not be surfaced in Layer 3,
  * even if they carry a COE tag in the saints data.
  *
+ * Governance status
+ * -----------------
+ * COE-II is complete as of v2.8.9. All repo-internal COE tag cleanup is done.
+ * This file's allowlist is the authoritative eligibility gate and requires no
+ * further structural changes at this time.
+ *
+ * One external-research holdout remains:
+ *   mar-augustine / mar-augustine-commemoration
+ *   These two identities carry COE tags (8/12, 9/19, 7/27) but cannot be
+ *   adjudicated on internal evidence alone. They are NOT in the allowlist and
+ *   are therefore excluded from Layer 3 display. Do not alter them on internal
+ *   evidence alone. Resolution requires external Syriac manuscript research
+ *   (Budge, Wright, Encyclopaedia Iranica). See documentation/COE_II_ARCHITECTURE.md §7.
+ *
  * Background
  * ----------
  * The v2.8.2 saints data migration applied COE tags mechanically by renaming
@@ -16,11 +30,8 @@
  * these have no defensible COE liturgical basis and should have their tag
  * removed. A further 21% belong in Layer 2 (fixed feasts, corporate
  * commemorations, calendar structure) rather than Layer 3.
- *
- * Until the source data is corrected (tag removals applied, duplicate
- * identities consolidated per saints-cleanup-queue.md Phase 4), this module
- * acts as the authoritative eligibility gate. It must be consulted before any
- * Layer 3 saint is displayed for COE.
+ * Source-data corrections are complete: 133 unique identity IDs (136 rows)
+ * have had their COE tags removed from commemorations.json.
  *
  * Architecture
  * ------------
@@ -36,17 +47,13 @@
  *   const ok = CoeEligibility.isEligible(saint);
  *   // Returns true if the individual saint record passes the eligibility check.
  *
- * When to re-enable display
- * -------------------------
- * Layer 3 display in renderEastSyriac() remains silenced pending:
- *   1. ✓ Source data correction: 129 REMOVE_COE_TAG identity IDs (132 rows)
- *      removed from commemorations.json; monthly caches regenerated.
- *      (Completed COE-IIB source-data pass, 2026-03-06.)
- *   2. Duplicate identity consolidation (saints-cleanup-queue.md Phase 4).
- *   3. NEEDS_REVIEW entries resolved (external Hudra evidence or further
- *      editorial review; 13 entries remain).
- * After steps 2–3, re-enable by routing the resolved set through
- * CoeEligibility.filter() and rendering the result.
+ * Layer 3 display
+ * ---------------
+ * Layer 3 is active in renderEastSyriac() as of v2.8.7. The call sequence is:
+ *   1. resolveCommemorations(currentDate, 'COE') — populate cache
+ *   2. CoeEligibility.filter(coeRaw)             — apply allowlist gate
+ *   3. Render .saint-section if eligible length > 0; hide if 0
+ * Silence when empty is correct. No fallback. No saint-grid.
  *
  * Do NOT replace this module with a "just filter all COE-tagged entries"
  * approach — that is precisely the pattern COE-IIB exists to prevent.

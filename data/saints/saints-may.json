@@ -320,16 +320,6 @@
     ]
   },
   {
-    "id": "julian-of-norwich",
-    "day": "May 8",
-    "name": "Julian of Norwich",
-    "description": "Mystic and theologian, died c. 1417 AD.",
-    "type": "saint",
-    "tags": [
-      "ANG"
-    ]
-  },
-  {
     "id": "martyrdom-of-st-mark-the-evangelist",
     "day": "May 8",
     "name": "Martyrdom of St. Mark the Evangelist",
@@ -357,6 +347,16 @@
     "type": "saint",
     "tags": [
       "EOR"
+    ]
+  },
+  {
+    "id": "saint-julian-of-norwich",
+    "day": "May 8",
+    "name": "Saint Julian of Norwich",
+    "description": "Mystic, died c. 1417 AD.",
+    "type": "saint",
+    "tags": [
+      "ANG"
     ]
   },
   {
@@ -401,16 +401,6 @@
     ]
   },
   {
-    "id": "apostle-simon-the-zealot",
-    "day": "May 10",
-    "name": "Apostle Simon the Zealot",
-    "description": "One of the Twelve Apostles.",
-    "type": "apostle",
-    "tags": [
-      "EOR"
-    ]
-  },
-  {
     "id": "saint-comgall",
     "day": "May 10",
     "name": "Saint Comgall",
@@ -438,6 +428,7 @@
     "type": "saint",
     "tags": [
       "COE",
+      "EOR",
       "OOR"
     ]
   },
@@ -590,16 +581,6 @@
     ]
   },
   {
-    "id": "saint-matthias",
-    "day": "May 14",
-    "name": "Saint Matthias",
-    "description": "Apostle and witness to the Resurrection.",
-    "type": "apostle",
-    "tags": [
-      "COE"
-    ]
-  },
-  {
     "id": "saint-matthias-the-apostle",
     "day": "May 14",
     "name": "Saint Matthias the Apostle",
@@ -607,6 +588,7 @@
     "type": "apostle",
     "tags": [
       "ANG",
+      "COE",
       "LAT"
     ]
   },
@@ -1133,22 +1115,13 @@
     ]
   },
   {
-    "id": "augustine-of-canterbury",
-    "day": "May 26",
-    "name": "Augustine of Canterbury",
-    "description": "First Archbishop of Canterbury, died 605 AD.",
-    "type": "saint",
-    "tags": [
-      "ANG"
-    ]
-  },
-  {
     "id": "saint-augustine-of-canterbury",
     "day": "May 26",
     "name": "Saint Augustine of Canterbury",
     "description": "Missionary to England.",
     "type": "saint",
     "tags": [
+      "ANG",
       "OOR"
     ]
   },

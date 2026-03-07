@@ -272,22 +272,13 @@
     ]
   },
   {
-    "id": "george-the-chozebite",
-    "day": "January 8",
-    "name": "George the Chozebite",
-    "description": "Abbot (shared commemoration).",
-    "type": "saint",
-    "tags": [
-      "ANG"
-    ]
-  },
-  {
     "id": "saint-george-the-chozebite",
     "day": "January 8",
     "name": "Saint George the Chozebite",
     "description": "Abbot.",
     "type": "saint",
     "tags": [
+      "ANG",
       "EOR"
     ]
   },
@@ -322,23 +313,14 @@
     ]
   },
   {
-    "id": "martyr-polyeuctus-of-melitine",
-    "day": "January 9",
-    "name": "Martyr Polyeuctus of Melitine",
-    "description": "Martyr.",
-    "type": "saint",
-    "tags": [
-      "EOR"
-    ]
-  },
-  {
     "id": "polyeuctus-of-melitine",
     "day": "January 9",
     "name": "Polyeuctus of Melitine",
     "description": "Martyr (shared commemoration).",
     "type": "saint",
     "tags": [
-      "ANG"
+      "ANG",
+      "EOR"
     ]
   },
   {
@@ -362,22 +344,13 @@
     ]
   },
   {
-    "id": "gregory-of-nyssa",
-    "day": "January 10",
-    "name": "Gregory of Nyssa",
-    "description": "Bishop and theologian, c. 394.",
-    "type": "saint",
-    "tags": [
-      "ANG"
-    ]
-  },
-  {
     "id": "saint-gregory-of-nyssa",
     "day": "January 10",
     "name": "Saint Gregory of Nyssa",
     "description": "Father of the Church.",
     "type": "saint",
     "tags": [
+      "ANG",
       "EOR",
       "LAT"
     ]
@@ -493,16 +466,6 @@
     ]
   },
   {
-    "id": "hilary-of-poitiers",
-    "day": "January 13",
-    "name": "Hilary of Poitiers",
-    "description": "Bishop of Poitiers.",
-    "type": "saint",
-    "tags": [
-      "ANG"
-    ]
-  },
-  {
     "id": "kentigern-mungo",
     "day": "January 13",
     "name": "Kentigern (Mungo)",
@@ -529,17 +492,8 @@
     "description": "Bishop and Doctor of the Church.",
     "type": "saint",
     "tags": [
+      "ANG",
       "LAT"
-    ]
-  },
-  {
-    "id": "felix-of-nola",
-    "day": "January 14",
-    "name": "Felix of Nola",
-    "description": "Priest (shared commemoration).",
-    "type": "saint",
-    "tags": [
-      "ANG"
     ]
   },
   {
@@ -559,6 +513,7 @@
     "description": "Priest.",
     "type": "saint",
     "tags": [
+      "ANG",
       "LAT"
     ]
   },
@@ -583,16 +538,6 @@
     ]
   },
   {
-    "id": "paul-the-first-hermit",
-    "day": "January 15",
-    "name": "Paul the First Hermit",
-    "description": "Hermit (shared commemoration).",
-    "type": "saint",
-    "tags": [
-      "ANG"
-    ]
-  },
-  {
     "id": "saint-paul-of-thebes-in-egypt",
     "day": "January 15",
     "name": "Saint Paul of Thebes in Egypt",
@@ -609,6 +554,7 @@
     "description": "Hermit.",
     "type": "saint",
     "tags": [
+      "ANG",
       "LAT"
     ]
   },
@@ -620,16 +566,6 @@
     "type": "saint",
     "tags": [
       "OOR"
-    ]
-  },
-  {
-    "id": "berard-and-companions",
-    "day": "January 16",
-    "name": "Berard and Companions",
-    "description": "Franciscan martyrs (shared commemoration).",
-    "type": "saint",
-    "tags": [
-      "ANG"
     ]
   },
   {
@@ -649,6 +585,7 @@
     "description": "Franciscan martyrs.",
     "type": "saint",
     "tags": [
+      "ANG",
       "LAT"
     ]
   },
@@ -906,16 +843,6 @@
     ]
   },
   {
-    "id": "apostle-timothy",
-    "day": "January 22",
-    "name": "Apostle Timothy",
-    "description": "Apostle of the Seventy.",
-    "type": "apostle",
-    "tags": [
-      "EOR"
-    ]
-  },
-  {
     "id": "saint-anastasius-the-persian",
     "day": "January 22",
     "name": "Saint Anastasius the Persian",
@@ -932,7 +859,8 @@
     "description": "Apostle (shared commemoration).",
     "type": "saint",
     "tags": [
-      "COE"
+      "COE",
+      "EOR"
     ]
   },
   {
@@ -1068,6 +996,16 @@
     ]
   },
   {
+    "id": "mar-babai-the-great",
+    "day": "January 25",
+    "name": "Mar Babai the Great",
+    "description": "Pillar of the Church of the East.",
+    "type": "saint",
+    "tags": [
+      "COE"
+    ]
+  },
+  {
     "id": "saint-gregory-the-theologian",
     "day": "January 25",
     "name": "Saint Gregory the Theologian",
@@ -1076,16 +1014,6 @@
     "tags": [
       "EOR",
       "OOR"
-    ]
-  },
-  {
-    "id": "saint-mar-babai-the-great",
-    "day": "January 25",
-    "name": "Saint Mar Babai the Great",
-    "description": "Monk and theologian.",
-    "type": "saint",
-    "tags": [
-      "COE"
     ]
   },
   {
@@ -1121,16 +1049,6 @@
     ]
   },
   {
-    "id": "john-chrysostom",
-    "day": "January 27",
-    "name": "John Chrysostom",
-    "description": "Bishop of Constantinople.",
-    "type": "saint",
-    "tags": [
-      "ANG"
-    ]
-  },
-  {
     "id": "saint-angela-merici",
     "day": "January 27",
     "name": "Saint Angela Merici",
@@ -1147,6 +1065,7 @@
     "description": "Archbishop of Constantinople and Doctor of the Church, died 407.",
     "type": "saint",
     "tags": [
+      "ANG",
       "OOR"
     ]
   },
@@ -1181,23 +1100,14 @@
     ]
   },
   {
-    "id": "saint-thomas-aquinas",
-    "day": "January 28",
-    "name": "Saint Thomas Aquinas",
-    "description": "Doctor of the Church.",
-    "type": "saint",
-    "tags": [
-      "LAT"
-    ]
-  },
-  {
     "id": "thomas-aquinas",
     "day": "January 28",
     "name": "Thomas Aquinas",
     "description": "Teacher of the Faith.",
     "type": "saint",
     "tags": [
-      "ANG"
+      "ANG",
+      "LAT"
     ]
   },
   {
@@ -1323,22 +1233,13 @@
     ]
   },
   {
-    "id": "john-bosco",
-    "day": "January 31",
-    "name": "John Bosco",
-    "description": "Salesian Teaching Order.",
-    "type": "saint",
-    "tags": [
-      "ANG"
-    ]
-  },
-  {
     "id": "saint-john-bosco",
     "day": "January 31",
     "name": "Saint John Bosco",
     "description": "Founder of the Salesians.",
     "type": "saint",
     "tags": [
+      "ANG",
       "LAT"
     ]
   }

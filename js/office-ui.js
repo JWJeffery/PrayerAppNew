@@ -2166,6 +2166,11 @@ async function renderEastSyriac() {
         }
     };
 
+    // Warms SaintsResolver monthly cache before the office body is assembled.
+    // Required so that the Layer 3 saint lookup below runs against the cached
+    // data without triggering an async fetch inside the saint-display block.
+    await resolveCommemorations(currentDate, 'COE');
+
     let officeHtml = `<div class="office-container"><h2>Church of the East</h2>`;
     officeHtml += `<p class="liturgical-title">${officeTitle}</p>`;
 
@@ -2367,17 +2372,62 @@ async function renderEastSyriac() {
         }
     }
 
-    const esyTodayShort = currentDate.toLocaleDateString('en-US', { month: 'long', day: 'numeric' });
     document.getElementById('office-display').innerHTML = officeHtml + `</div>`;
 
-    // COE saint section remains silenced — COE-IIA adds Layer 2 fixed / corporate
-    // commemorations via getDayClass() and renders them in the office body above.
-    // Layer 3 individual saints require the COE-IIB saint-tag audit before they
-    // can be re-enabled. See known_outstanding_issues.coe_calendar_model in
-    // structure.json. Silence is liturgically accurate for COE weekdays with no
-    // fixed individual saint.
-    document.getElementById('saint-display').innerHTML = '';
-    document.getElementById('date-header').style.display = 'none';
+    // ── COE Layer 3 — Sparse Individual Commemorations (COE-IIB) ────────────
+    //
+    // Architecture:
+    //   Layer 1 — season engine  (calendar-east-syriac.js getSeason)
+    //   Layer 2 — fixed feasts   (getDayClass commemorations[], rendered above)
+    //   Layer 3 — THIS BLOCK     (individual saints, sparse, gated by allowlist)
+    //
+    // Gating rules:
+    //   • CoeEligibility.filter() is the sole eligibility gate. It enforces the
+    //     explicit allowlist defined in js/coe-eligibility.js. No saint is
+    //     displayed unless its identity id is in that allowlist.
+    //   • The 5 STILL_UNRESOLVED identities (saint-ignatius-of-antioch,
+    //     saint-nicholas-of-myra, saint-abraham-of-carrhae, mar-augustine,
+    //     mar-augustine-commemoration) are NOT in the allowlist and will be
+    //     excluded automatically — no special case needed here.
+    //   • Layer 2 commemorations (esyComms) are structural observances, not
+    //     saints. They are never passed through CoeEligibility; they are
+    //     already rendered above. There is no override or collision with Layer 3.
+    //   • If CoeEligibility.filter() returns an empty array, nothing is
+    //     rendered. No fallback, no grid, no intercession placeholder.
+    //   • The saint-of-the-day grid model is not used. Framing is secondary and
+    //     non-assertive: "Commemorated Holy Figures".
+    //
     const saintSection = document.querySelector('.saint-section');
-    if (saintSection) saintSection.style.display = 'none';
+    const dateHeader   = document.getElementById('date-header');
+    const saintDisplay = document.getElementById('saint-display');
+
+    // Resolve COE saints for today and apply the eligibility filter.
+    // resolveCommemorations() uses the cache warmed above; no additional fetch.
+    const coeRaw      = await resolveCommemorations(currentDate, 'COE');
+    const coeEligible = (typeof CoeEligibility !== 'undefined')
+        ? CoeEligibility.filter(coeRaw)
+        : [];
+
+    if (coeEligible.length > 0) {
+        // Show the saint section with sparse, secondary framing.
+        if (saintSection) saintSection.style.display = '';
+        if (dateHeader)   dateHeader.style.display   = '';
+        document.getElementById('date-header').innerText = 'Commemorated Holy Figures';
+
+        saintDisplay.innerHTML = coeEligible
+            .map(s => {
+                // Badge: always COE for this renderer — do not show cross-tradition labels.
+                return `<div class="saint-box">`
+                     + `<small style="color:var(--accent); font-weight:bold; text-transform:uppercase;">COE</small>`
+                     + `<strong>${s.name || 'Unknown'}</strong>`
+                     + (s.description ? `<p>${s.description}</p>` : '')
+                     + `</div>`;
+            })
+            .join('');
+    } else {
+        // No eligible Layer 3 saints for this date — silence is liturgically correct.
+        if (saintSection) saintSection.style.display = 'none';
+        if (dateHeader)   dateHeader.style.display   = 'none';
+        if (saintDisplay) saintDisplay.innerHTML      = '';
+    }
 }

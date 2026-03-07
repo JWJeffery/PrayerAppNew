@@ -342,7 +342,7 @@
     "calendar": "gregorian"
   },
   {
-    "identity_id": "george-the-chozebite",
+    "identity_id": "saint-george-the-chozebite",
     "tradition": "ANG",
     "date": {
       "month": 1,
@@ -387,7 +387,7 @@
     "calendar": "gregorian"
   },
   {
-    "identity_id": "martyr-polyeuctus-of-melitine",
+    "identity_id": "polyeuctus-of-melitine",
     "tradition": "EOR",
     "date": {
       "month": 1,
@@ -414,7 +414,7 @@
     "calendar": "gregorian"
   },
   {
-    "identity_id": "gregory-of-nyssa",
+    "identity_id": "saint-gregory-of-nyssa",
     "tradition": "ANG",
     "date": {
       "month": 1,
@@ -540,7 +540,7 @@
     "calendar": "gregorian"
   },
   {
-    "identity_id": "hilary-of-poitiers",
+    "identity_id": "saint-hilary-of-poitiers",
     "tradition": "ANG",
     "date": {
       "month": 1,
@@ -585,7 +585,7 @@
     "calendar": "gregorian"
   },
   {
-    "identity_id": "felix-of-nola",
+    "identity_id": "saint-felix-of-nola",
     "tradition": "ANG",
     "date": {
       "month": 1,
@@ -621,7 +621,7 @@
     "calendar": "gregorian"
   },
   {
-    "identity_id": "paul-the-first-hermit",
+    "identity_id": "saint-paul-the-first-hermit",
     "tradition": "ANG",
     "date": {
       "month": 1,
@@ -666,7 +666,7 @@
     "calendar": "gregorian"
   },
   {
-    "identity_id": "berard-and-companions",
+    "identity_id": "saint-berard-and-companions",
     "tradition": "ANG",
     "date": {
       "month": 1,
@@ -963,7 +963,7 @@
     "calendar": "gregorian"
   },
   {
-    "identity_id": "apostle-timothy",
+    "identity_id": "saint-timothy",
     "tradition": "EOR",
     "date": {
       "month": 1,
@@ -1098,7 +1098,7 @@
     "calendar": "gregorian"
   },
   {
-    "identity_id": "saint-mar-babai-the-great",
+    "identity_id": "mar-babai-the-great",
     "tradition": "COE",
     "date": {
       "month": 1,
@@ -1179,7 +1179,7 @@
     "calendar": "gregorian"
   },
   {
-    "identity_id": "john-chrysostom",
+    "identity_id": "saint-john-chrysostom",
     "tradition": "ANG",
     "date": {
       "month": 1,
@@ -1242,7 +1242,7 @@
     "calendar": "gregorian"
   },
   {
-    "identity_id": "saint-thomas-aquinas",
+    "identity_id": "thomas-aquinas",
     "tradition": "LAT",
     "date": {
       "month": 1,
@@ -1350,7 +1350,7 @@
     "calendar": "gregorian"
   },
   {
-    "identity_id": "john-bosco",
+    "identity_id": "saint-john-bosco",
     "tradition": "ANG",
     "date": {
       "month": 1,
@@ -1982,15 +1982,6 @@
   {
     "identity_id": "saints-cyril-and-methodius",
     "tradition": "ANG",
-    "date": {
-      "month": 2,
-      "day": 14
-    },
-    "calendar": "gregorian"
-  },
-  {
-    "identity_id": "saint-abraham-of-carrhae",
-    "tradition": "COE",
     "date": {
       "month": 2,
       "day": 14
@@ -2863,7 +2854,7 @@
     "status": "verified"
   },
   {
-    "identity_id": "john-of-god",
+    "identity_id": "saint-john-of-god",
     "tradition": "ANG",
     "calendar": "gregorian",
     "date": {
@@ -2907,7 +2898,7 @@
     "status": "verified"
   },
   {
-    "identity_id": "gregory-of-nyssa",
+    "identity_id": "saint-gregory-of-nyssa",
     "tradition": "ANG",
     "calendar": "gregorian",
     "date": {
@@ -3061,7 +3052,7 @@
     "status": "verified"
   },
   {
-    "identity_id": "gregory-the-great",
+    "identity_id": "saint-gregory-the-great",
     "tradition": "ANG",
     "calendar": "gregorian",
     "date": {
@@ -3226,7 +3217,7 @@
     "status": "verified"
   },
   {
-    "identity_id": "vincent-ferrer",
+    "identity_id": "saint-vincent-ferrer",
     "tradition": "ANG",
     "calendar": "gregorian",
     "date": {
@@ -4007,7 +3998,7 @@
     "status": "verified"
   },
   {
-    "identity_id": "innocent-of-alaska",
+    "identity_id": "saint-innocent-of-alaska",
     "tradition": "ANG",
     "calendar": "gregorian",
     "date": {
@@ -4241,7 +4232,7 @@
     "calendar": "gregorian"
   },
   {
-    "identity_id": "vincent-ferrer",
+    "identity_id": "saint-vincent-ferrer",
     "tradition": "ANG",
     "date": {
       "month": 4,
@@ -4268,7 +4259,7 @@
     "calendar": "gregorian"
   },
   {
-    "identity_id": "eutychius-of-constantinople",
+    "identity_id": "saint-eutychius-of-constantinople",
     "tradition": "ANG",
     "date": {
       "month": 4,
@@ -4421,7 +4412,7 @@
     "calendar": "gregorian"
   },
   {
-    "identity_id": "macarius-the-egyptian",
+    "identity_id": "saint-macarius-the-egyptian",
     "tradition": "ANG",
     "date": {
       "month": 4,
@@ -4556,17 +4547,8 @@
     "calendar": "gregorian"
   },
   {
-    "identity_id": "martin-i",
+    "identity_id": "saint-martin-i",
     "tradition": "ANG",
-    "date": {
-      "month": 4,
-      "day": 13
-    },
-    "calendar": "gregorian"
-  },
-  {
-    "identity_id": "martin-i",
-    "tradition": "EOR",
     "date": {
       "month": 4,
       "day": 13
@@ -4592,7 +4574,7 @@
     "calendar": "gregorian"
   },
   {
-    "identity_id": "justin-martyr",
+    "identity_id": "saint-justin-martyr",
     "tradition": "ANG",
     "date": {
       "month": 4,
@@ -4691,7 +4673,7 @@
     "calendar": "gregorian"
   },
   {
-    "identity_id": "kateri-tekakwitha",
+    "identity_id": "saint-kateri-tekakwitha",
     "tradition": "ANG",
     "date": {
       "month": 4,
@@ -4772,7 +4754,7 @@
     "calendar": "gregorian"
   },
   {
-    "identity_id": "theodore-of-sykeon",
+    "identity_id": "saint-theodore-of-sykeon",
     "tradition": "ANG",
     "date": {
       "month": 4,
@@ -4961,7 +4943,7 @@
     "calendar": "gregorian"
   },
   {
-    "identity_id": "peter-chanel",
+    "identity_id": "saint-peter-chanel",
     "tradition": "ANG",
     "date": {
       "month": 4,
@@ -5033,15 +5015,6 @@
     "calendar": "gregorian"
   },
   {
-    "identity_id": "saint-james-the-brother-of-the-lord-james-the-just",
-    "tradition": "ANG",
-    "date": {
-      "month": 4,
-      "day": 30
-    },
-    "calendar": "gregorian"
-  },
-  {
     "identity_id": "saint-james-the-brother-of-the-lord",
     "tradition": "COE",
     "date": {
@@ -5051,16 +5024,7 @@
     "calendar": "gregorian"
   },
   {
-    "identity_id": "saint-james-the-brother-of-the-lord-james-the-just",
-    "tradition": "COE",
-    "date": {
-      "month": 4,
-      "day": 30
-    },
-    "calendar": "gregorian"
-  },
-  {
-    "identity_id": "saint-james-the-brother-of-the-lord-james-the-just",
+    "identity_id": "saint-james-the-brother-of-the-lord",
     "tradition": "EOR",
     "date": {
       "month": 4,
@@ -5078,16 +5042,7 @@
     "calendar": "gregorian"
   },
   {
-    "identity_id": "saint-james-the-brother-of-the-lord-james-the-just",
-    "tradition": "LAT",
-    "date": {
-      "month": 4,
-      "day": 30
-    },
-    "calendar": "gregorian"
-  },
-  {
-    "identity_id": "saint-james-the-brother-of-the-lord-james-the-just",
+    "identity_id": "saint-james-the-brother-of-the-lord",
     "tradition": "OOR",
     "date": {
       "month": 4,
@@ -5465,7 +5420,7 @@
     "calendar": "gregorian"
   },
   {
-    "identity_id": "julian-of-norwich",
+    "identity_id": "saint-julian-of-norwich",
     "tradition": "ANG",
     "date": {
       "month": 5,
@@ -5564,7 +5519,7 @@
     "calendar": "gregorian"
   },
   {
-    "identity_id": "apostle-simon-the-zealot",
+    "identity_id": "saint-simon-the-zealot",
     "tradition": "EOR",
     "date": {
       "month": 5,
@@ -5789,7 +5744,7 @@
     "calendar": "gregorian"
   },
   {
-    "identity_id": "saint-matthias",
+    "identity_id": "saint-matthias-the-apostle",
     "tradition": "COE",
     "date": {
       "month": 5,
@@ -6374,7 +6329,7 @@
     "calendar": "gregorian"
   },
   {
-    "identity_id": "augustine-of-canterbury",
+    "identity_id": "saint-augustine-of-canterbury",
     "tradition": "ANG",
     "date": {
       "month": 5,
@@ -6869,7 +6824,7 @@
     "calendar": "gregorian"
   },
   {
-    "identity_id": "saint-bede-the-venerable",
+    "identity_id": "bede-the-venerable",
     "tradition": "ANG",
     "date": {
       "month": 6,
@@ -7175,7 +7130,7 @@
     "calendar": "gregorian"
   },
   {
-    "identity_id": "basil-the-great",
+    "identity_id": "saint-basil-the-great",
     "tradition": "ANG",
     "date": {
       "month": 6,
@@ -7256,7 +7211,7 @@
     "calendar": "gregorian"
   },
   {
-    "identity_id": "saint-richard-of-chichester",
+    "identity_id": "richard-of-chichester",
     "tradition": "ANG",
     "date": {
       "month": 6,
@@ -7553,7 +7508,7 @@
     "calendar": "gregorian"
   },
   {
-    "identity_id": "saint-thomas-more",
+    "identity_id": "thomas-more",
     "tradition": "LAT",
     "date": {
       "month": 6,
@@ -9074,15 +9029,6 @@
     "calendar": "gregorian"
   },
   {
-    "identity_id": "mar-augustine-commemoration",
-    "tradition": "COE",
-    "date": {
-      "month": 7,
-      "day": 27
-    },
-    "calendar": "gregorian"
-  },
-  {
     "identity_id": "saint-panteleimon",
     "tradition": "EOR",
     "date": {
@@ -9713,7 +9659,7 @@
     "calendar": "gregorian"
   },
   {
-    "identity_id": "saint-matthias",
+    "identity_id": "saint-matthias-the-apostle",
     "tradition": "OOR",
     "date": {
       "month": 8,
@@ -9817,15 +9763,6 @@
     "date": {
       "month": 8,
       "day": 11
-    },
-    "calendar": "gregorian"
-  },
-  {
-    "identity_id": "mar-augustine",
-    "tradition": "COE",
-    "date": {
-      "month": 8,
-      "day": 12
     },
     "calendar": "gregorian"
   },
@@ -11639,15 +11576,6 @@
     "calendar": "gregorian"
   },
   {
-    "identity_id": "mar-augustine",
-    "tradition": "COE",
-    "date": {
-      "month": 9,
-      "day": 19
-    },
-    "calendar": "gregorian"
-  },
-  {
     "identity_id": "martyrs-trophimus-sabbatius-and-dorymedon",
     "tradition": "EOR",
     "date": {
@@ -11981,7 +11909,7 @@
     "calendar": "gregorian"
   },
   {
-    "identity_id": "saint-vincent-de-paul",
+    "identity_id": "vincent-de-paul",
     "tradition": "LAT",
     "date": {
       "month": 9,
@@ -12089,7 +12017,7 @@
     "calendar": "gregorian"
   },
   {
-    "identity_id": "jerome",
+    "identity_id": "saint-jerome",
     "tradition": "ANG",
     "date": {
       "month": 9,
@@ -12233,7 +12161,7 @@
     "calendar": "gregorian"
   },
   {
-    "identity_id": "francis-of-assisi",
+    "identity_id": "saint-francis-of-assisi",
     "tradition": "ANG",
     "date": {
       "month": 10,
@@ -12269,7 +12197,7 @@
     "calendar": "gregorian"
   },
   {
-    "identity_id": "faustina-kowalska",
+    "identity_id": "saint-faustina-kowalska",
     "tradition": "ANG",
     "date": {
       "month": 10,
@@ -12611,7 +12539,7 @@
     "calendar": "gregorian"
   },
   {
-    "identity_id": "saint-edward-the-confessor",
+    "identity_id": "edward-the-confessor",
     "tradition": "LAT",
     "date": {
       "month": 10,
@@ -12737,17 +12665,8 @@
     "calendar": "gregorian"
   },
   {
-    "identity_id": "ignatius-of-antioch",
-    "tradition": "ANG",
-    "date": {
-      "month": 10,
-      "day": 17
-    },
-    "calendar": "gregorian"
-  },
-  {
     "identity_id": "saint-ignatius-of-antioch",
-    "tradition": "COE",
+    "tradition": "ANG",
     "date": {
       "month": 10,
       "day": 17
@@ -12773,7 +12692,7 @@
     "calendar": "gregorian"
   },
   {
-    "identity_id": "saint-hosea",
+    "identity_id": "prophet-hosea",
     "tradition": "OOR",
     "date": {
       "month": 10,
@@ -12872,7 +12791,7 @@
     "calendar": "gregorian"
   },
   {
-    "identity_id": "saint-joel",
+    "identity_id": "prophet-joel",
     "tradition": "OOR",
     "date": {
       "month": 10,
@@ -12881,7 +12800,7 @@
     "calendar": "gregorian"
   },
   {
-    "identity_id": "paul-of-the-cross",
+    "identity_id": "saint-paul-of-the-cross",
     "tradition": "ANG",
     "date": {
       "month": 10,
@@ -14528,15 +14447,6 @@
     "calendar": "gregorian"
   },
   {
-    "identity_id": "clement-of-rome",
-    "tradition": "ANG",
-    "date": {
-      "month": 11,
-      "day": 23
-    },
-    "calendar": "gregorian"
-  },
-  {
     "identity_id": "saint-clement-of-rome",
     "tradition": "ANG",
     "date": {
@@ -14591,7 +14501,7 @@
     "calendar": "gregorian"
   },
   {
-    "identity_id": "catherine-of-alexandria",
+    "identity_id": "saint-catherine-of-alexandria",
     "tradition": "ANG",
     "date": {
       "month": 11,
@@ -14632,15 +14542,6 @@
     "date": {
       "month": 11,
       "day": 24
-    },
-    "calendar": "gregorian"
-  },
-  {
-    "identity_id": "catherine-of-alexandria",
-    "tradition": "ANG",
-    "date": {
-      "month": 11,
-      "day": 25
     },
     "calendar": "gregorian"
   },
@@ -15169,15 +15070,6 @@
   {
     "identity_id": "saint-nicholas-of-myra",
     "tradition": "ANG",
-    "date": {
-      "month": 12,
-      "day": 6
-    },
-    "calendar": "gregorian"
-  },
-  {
-    "identity_id": "saint-nicholas-of-myra",
-    "tradition": "COE",
     "date": {
       "month": 12,
       "day": 6
@@ -15815,7 +15707,7 @@
     "calendar": "gregorian"
   },
   {
-    "identity_id": "martyr-boniface",
+    "identity_id": "saint-boniface",
     "tradition": "EOR",
     "date": {
       "month": 12,
@@ -15861,15 +15753,6 @@
   },
   {
     "identity_id": "mar-papa-bar-aggai-see-foundation",
-    "tradition": "COE",
-    "date": {
-      "month": 12,
-      "day": 20
-    },
-    "calendar": "gregorian"
-  },
-  {
-    "identity_id": "saint-ignatius-of-antioch",
     "tradition": "COE",
     "date": {
       "month": 12,

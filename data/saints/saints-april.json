@@ -121,27 +121,8 @@
     "description": "Dominican priest and missionary preacher, venerated in Catholic and Oriental Orthodox traditions.",
     "type": "saint",
     "tags": [
+      "ANG",
       "LAT"
-    ]
-  },
-  {
-    "id": "vincent-ferrer",
-    "day": "April 5",
-    "name": "Vincent Ferrer",
-    "description": "Priest, 1419.",
-    "type": "saint",
-    "tags": [
-      "ANG"
-    ]
-  },
-  {
-    "id": "eutychius-of-constantinople",
-    "day": "April 6",
-    "name": "Eutychius of Constantinople",
-    "description": "Patriarch (shared commemoration).",
-    "type": "saint",
-    "tags": [
-      "ANG"
     ]
   },
   {
@@ -151,6 +132,7 @@
     "description": "Patriarch (shared commemoration).",
     "type": "saint",
     "tags": [
+      "ANG",
       "LAT"
     ]
   },
@@ -252,22 +234,13 @@
     ]
   },
   {
-    "id": "macarius-the-egyptian",
-    "day": "April 10",
-    "name": "Macarius the Egyptian",
-    "description": "Desert father (shared commemoration).",
-    "type": "saint",
-    "tags": [
-      "ANG"
-    ]
-  },
-  {
     "id": "saint-macarius-the-egyptian",
     "day": "April 10",
     "name": "Saint Macarius the Egyptian",
     "description": "Desert father.",
     "type": "saint",
     "tags": [
+      "ANG",
       "EOR",
       "LAT",
       "OOR"
@@ -320,32 +293,22 @@
     ]
   },
   {
-    "id": "martin-i",
-    "day": "April 13",
-    "name": "Martin I",
-    "description": "Pope and martyr, defender of Chalcedonian orthodoxy, died 655.",
-    "type": "saint",
-    "tags": [
-      "ANG",
-      "EOR"
-    ]
-  },
-  {
     "id": "saint-martin-i",
     "day": "April 13",
     "name": "Saint Martin I",
     "description": "Pope and martyr, venerated in Catholic and Oriental Orthodox traditions.",
     "type": "saint",
     "tags": [
+      "ANG",
       "EOR",
       "LAT"
     ]
   },
   {
-    "id": "justin-martyr",
+    "id": "saint-justin-martyr",
     "day": "April 14",
-    "name": "Justin Martyr",
-    "description": "Philosopher and martyr at Rome, c. 167.",
+    "name": "Saint Justin Martyr",
+    "description": "Philosopher and apologist, defender of the faith and martyr at Rome.",
     "type": "saint",
     "tags": [
       "ANG"
@@ -416,22 +379,13 @@
     ]
   },
   {
-    "id": "kateri-tekakwitha",
-    "day": "April 17",
-    "name": "Kateri Tekakwitha",
-    "description": "Mohawk laywoman, canonized 2012; first Native American saint.",
-    "type": "saint",
-    "tags": [
-      "ANG"
-    ]
-  },
-  {
     "id": "saint-kateri-tekakwitha",
     "day": "April 17",
     "name": "Saint Kateri Tekakwitha",
     "description": "The 'Lily of the Mohawks,' first Native American saint.",
     "type": "saint",
     "tags": [
+      "ANG",
       "EOR",
       "LAT",
       "OOR"
@@ -467,19 +421,10 @@
     "description": "Bishop and wonderworker, venerated in Eastern Orthodox and Oriental Orthodox traditions.",
     "type": "saint",
     "tags": [
+      "ANG",
       "EOR",
       "LAT",
       "OOR"
-    ]
-  },
-  {
-    "id": "theodore-of-sykeon",
-    "day": "April 22",
-    "name": "Theodore of Sykeon",
-    "description": "Bishop and wonderworker (shared commemoration).",
-    "type": "saint",
-    "tags": [
-      "ANG"
     ]
   },
   {
@@ -554,22 +499,13 @@
     ]
   },
   {
-    "id": "peter-chanel",
-    "day": "April 28",
-    "name": "Peter Chanel",
-    "description": "Martyr (shared commemoration).",
-    "type": "saint",
-    "tags": [
-      "ANG"
-    ]
-  },
-  {
     "id": "saint-peter-chanel",
     "day": "April 28",
     "name": "Saint Peter Chanel",
     "description": "Priest and first martyr of Oceania (Futuna), venerated in Catholic and Oriental Orthodox traditions.",
     "type": "saint",
     "tags": [
+      "ANG",
       "EOR",
       "LAT"
     ]
@@ -593,18 +529,6 @@
     "name": "Saint James the Brother of the Lord",
     "description": "First Bishop of Jerusalem and author of the Epistle of James, martyred c. 62.",
     "type": "saint",
-    "tags": [
-      "ANG",
-      "COE",
-      "LAT"
-    ]
-  },
-  {
-    "id": "saint-james-the-brother-of-the-lord-james-the-just",
-    "day": "April 30",
-    "name": "Saint James the Brother of the Lord (James the Just)",
-    "description": "First Bishop of Jerusalem, venerated in Eastern Orthodox and Oriental Orthodox traditions.",
-    "type": "apostle",
     "tags": [
       "ANG",
       "LAT",

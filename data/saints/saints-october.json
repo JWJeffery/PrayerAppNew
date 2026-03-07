@@ -101,22 +101,13 @@
     ]
   },
   {
-    "id": "francis-of-assisi",
-    "day": "October 4",
-    "name": "Francis of Assisi",
-    "description": "Friar, Deacon, Founder of the Friars Minor, 1226.",
-    "type": "saint",
-    "tags": [
-      "ANG"
-    ]
-  },
-  {
     "id": "saint-francis-of-assisi",
     "day": "October 4",
     "name": "Saint Francis of Assisi",
     "description": "Friar and founder.",
     "type": "saint",
     "tags": [
+      "ANG",
       "LAT"
     ]
   },
@@ -138,16 +129,6 @@
     "type": "saint",
     "tags": [
       "EOR"
-    ]
-  },
-  {
-    "id": "faustina-kowalska",
-    "day": "October 5",
-    "name": "Faustina Kowalska",
-    "description": "Virgin and mystic.",
-    "type": "saint",
-    "tags": [
-      "ANG"
     ]
   },
   {
@@ -177,6 +158,7 @@
     "description": "Virgin and apostle of Divine Mercy.",
     "type": "saint",
     "tags": [
+      "ANG",
       "LAT"
     ]
   },
@@ -480,7 +462,8 @@
     "description": "King of England, 1066.",
     "type": "saint",
     "tags": [
-      "ANG"
+      "ANG",
+      "LAT"
     ]
   },
   {
@@ -501,16 +484,6 @@
     "type": "saint",
     "tags": [
       "OOR"
-    ]
-  },
-  {
-    "id": "saint-edward-the-confessor",
-    "day": "October 13",
-    "name": "Saint Edward the Confessor",
-    "description": "King of England.",
-    "type": "saint",
-    "tags": [
-      "LAT"
     ]
   },
   {
@@ -634,32 +607,13 @@
     ]
   },
   {
-    "id": "ignatius-of-antioch",
-    "day": "October 17",
-    "name": "Ignatius of Antioch",
-    "description": "Bishop and Martyr, c. 107.",
-    "type": "saint",
-    "tags": [
-      "ANG"
-    ]
-  },
-  {
     "id": "prophet-hosea",
     "day": "October 17",
     "name": "Prophet Hosea",
     "description": "Old Testament prophet.",
     "type": "prophet",
     "tags": [
-      "EOR"
-    ]
-  },
-  {
-    "id": "saint-hosea",
-    "day": "October 17",
-    "name": "Saint Hosea",
-    "description": "Prophet.",
-    "type": "saint",
-    "tags": [
+      "EOR",
       "OOR"
     ]
   },
@@ -670,7 +624,7 @@
     "description": "Bishop of Antioch and Apostolic Father, martyred at Rome c. 107.",
     "type": "saint",
     "tags": [
-      "COE",
+      "ANG",
       "LAT"
     ]
   },
@@ -716,7 +670,8 @@
     "type": "prophet",
     "tags": [
       "COE",
-      "EOR"
+      "EOR",
+      "OOR"
     ]
   },
   {
@@ -730,16 +685,6 @@
     ]
   },
   {
-    "id": "saint-joel",
-    "day": "October 19",
-    "name": "Saint Joel",
-    "description": "Prophet.",
-    "type": "saint",
-    "tags": [
-      "OOR"
-    ]
-  },
-  {
     "id": "greatmartyr-artemius-at-antioch",
     "day": "October 20",
     "name": "Greatmartyr Artemius at Antioch",
@@ -747,16 +692,6 @@
     "type": "saint",
     "tags": [
       "EOR"
-    ]
-  },
-  {
-    "id": "paul-of-the-cross",
-    "day": "October 20",
-    "name": "Paul of the Cross",
-    "description": "Priest and Mystic, 1775.",
-    "type": "saint",
-    "tags": [
-      "ANG"
     ]
   },
   {
@@ -776,6 +711,7 @@
     "description": "Founder of the Passionists.",
     "type": "saint",
     "tags": [
+      "ANG",
       "LAT"
     ]
   },

@@ -387,23 +387,14 @@
     ]
   },
   {
-    "id": "saint-matthias",
-    "day": "August 9",
-    "name": "Saint Matthias",
-    "description": "Apostle and witness to the Resurrection.",
-    "type": "apostle",
-    "tags": [
-      "OOR"
-    ]
-  },
-  {
     "id": "saint-matthias-the-apostle",
     "day": "August 9",
     "name": "Saint Matthias the Apostle",
     "description": "Apostle chosen to replace Judas Iscariot (Acts 1:26).",
     "type": "apostle",
     "tags": [
-      "EOR"
+      "EOR",
+      "OOR"
     ]
   },
   {
@@ -488,16 +479,6 @@
     "type": "saint",
     "tags": [
       "EOR"
-    ]
-  },
-  {
-    "id": "mar-augustine",
-    "day": "August 12",
-    "name": "Mar Augustine",
-    "description": "Monk and teacher.",
-    "type": "saint",
-    "tags": [
-      "COE"
     ]
   },
   {

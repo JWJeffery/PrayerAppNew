@@ -133,21 +133,9 @@
     "type": "apostle"
   },
   {
-    "id": "apostle-simon-the-zealot",
-    "name": "Apostle Simon the Zealot",
-    "description": "One of the Twelve Apostles.",
-    "type": "apostle"
-  },
-  {
     "id": "apostle-thaddeus-of-the-seventy",
     "name": "Apostle Thaddeus of the Seventy",
     "description": "Healer of King Abgar of Edessa.",
-    "type": "apostle"
-  },
-  {
-    "id": "apostle-timothy",
-    "name": "Apostle Timothy",
-    "description": "Apostle of the Seventy.",
     "type": "apostle"
   },
   {
@@ -193,18 +181,6 @@
     "type": "saint"
   },
   {
-    "id": "augustine-of-canterbury",
-    "name": "Augustine of Canterbury",
-    "description": "First Archbishop of Canterbury, died 605 AD.",
-    "type": "saint"
-  },
-  {
-    "id": "basil-the-great",
-    "name": "Basil the Great",
-    "description": "Bishop of Caesarea, 379.",
-    "type": "saint"
-  },
-  {
     "id": "bede-the-venerable",
     "name": "Bede the Venerable",
     "description": "Priest, monk of Jarrow, and 'Father of English History,' died 735 AD.",
@@ -226,12 +202,6 @@
     "id": "benedict-biscop",
     "name": "Benedict Biscop",
     "description": "Abbot of Wearmouth.",
-    "type": "saint"
-  },
-  {
-    "id": "berard-and-companions",
-    "name": "Berard and Companions",
-    "description": "Franciscan martyrs (shared commemoration).",
     "type": "saint"
   },
   {
@@ -289,12 +259,6 @@
     "type": "saint"
   },
   {
-    "id": "catherine-of-alexandria",
-    "name": "Catherine of Alexandria",
-    "description": "Martyr, c. 305.",
-    "type": "saint"
-  },
-  {
     "id": "chair-of-saint-peter",
     "name": "Chair of Saint Peter",
     "description": "Commemoration of the primacy of Peter, venerated in Catholic and Anglican Communion traditions.",
@@ -347,12 +311,6 @@
     "id": "clement-of-alexandria",
     "name": "Clement of Alexandria",
     "description": "Priest and theologian.",
-    "type": "saint"
-  },
-  {
-    "id": "clement-of-rome",
-    "name": "Clement of Rome",
-    "description": "Bishop, c. 100.",
     "type": "saint"
   },
   {
@@ -682,12 +640,6 @@
     "type": "saint"
   },
   {
-    "id": "eutychius-of-constantinople",
-    "name": "Eutychius of Constantinople",
-    "description": "Patriarch (shared commemoration).",
-    "type": "saint"
-  },
-  {
     "id": "eve-of-the-nativity-and-holy-ancestors",
     "name": "Eve of the Nativity and Holy Ancestors",
     "description": "Christmas Eve; commemoration of Adam, Eve, and the righteous.",
@@ -718,12 +670,6 @@
     "type": "saint"
   },
   {
-    "id": "faustina-kowalska",
-    "name": "Faustina Kowalska",
-    "description": "Virgin and mystic.",
-    "type": "saint"
-  },
-  {
     "id": "feast-conception-of-the-theotokos",
     "name": "Conception of the Theotokos by Saint Anne",
     "description": "Eastern commemoration of the conception of the Virgin Mary by her mother Anne.",
@@ -745,12 +691,6 @@
     "id": "feast-of-the-visitation",
     "name": "Feast of the Visitation",
     "description": "Commemoration of Mary visiting Elizabeth (Syriac/Coptic tradition).",
-    "type": "saint"
-  },
-  {
-    "id": "felix-of-nola",
-    "name": "Felix of Nola",
-    "description": "Priest (shared commemoration).",
     "type": "saint"
   },
   {
@@ -810,12 +750,6 @@
     "status": "verified"
   },
   {
-    "id": "francis-of-assisi",
-    "name": "Francis of Assisi",
-    "description": "Friar, Deacon, Founder of the Friars Minor, 1226.",
-    "type": "saint"
-  },
-  {
     "id": "frederick-denison-maurice",
     "name": "Frederick Denison Maurice",
     "description": "Priest and Renewer of Society, 1872.",
@@ -861,12 +795,6 @@
     "id": "george-herbert",
     "name": "George Herbert",
     "description": "Priest and poet, 1633.",
-    "type": "saint"
-  },
-  {
-    "id": "george-the-chozebite",
-    "name": "George the Chozebite",
-    "description": "Abbot (shared commemoration).",
     "type": "saint"
   },
   {
@@ -934,20 +862,6 @@
     "name": "Gregory of Nazianzus",
     "description": "Bishop of Constantinople and one of the Cappadocian Fathers, died 389 AD.",
     "type": "saint"
-  },
-  {
-    "id": "gregory-of-nyssa",
-    "name": "Gregory of Nyssa",
-    "description": "Bishop and theologian, c. 394.",
-    "type": "saint",
-    "status": "verified"
-  },
-  {
-    "id": "gregory-the-great",
-    "name": "Gregory the Great",
-    "description": "Pope and Doctor of the Church (shared commemoration).",
-    "type": "saint",
-    "status": "verified"
   },
   {
     "id": "gregory-the-great-gregory-the-dialogist",
@@ -1172,12 +1086,6 @@
     "type": "saint"
   },
   {
-    "id": "hilary-of-poitiers",
-    "name": "Hilary of Poitiers",
-    "description": "Bishop of Poitiers.",
-    "type": "saint"
-  },
-  {
     "id": "holy-ancestors-joachim-and-anna",
     "name": "Holy Ancestors Joachim and Anna",
     "description": "Synaxis of the parents of the Theotokos.",
@@ -1293,23 +1201,10 @@
     "type": "saint"
   },
   {
-    "id": "ignatius-of-antioch",
-    "name": "Ignatius of Antioch",
-    "description": "Bishop and Martyr, c. 107.",
-    "type": "saint"
-  },
-  {
     "id": "ini-kopuria",
     "name": "Ini Kopuria",
     "description": "Founder of the Melanesian Brotherhood, 1945.",
     "type": "saint"
-  },
-  {
-    "id": "innocent-of-alaska",
-    "name": "Innocent of Alaska",
-    "description": "Bishop, 1879.",
-    "type": "saint",
-    "status": "verified"
   },
   {
     "id": "intercession-of-the-theotokos",
@@ -1367,29 +1262,11 @@
     "type": "saint"
   },
   {
-    "id": "jerome",
-    "name": "Jerome",
-    "description": "Priest and Scholar, 420.",
-    "type": "saint"
-  },
-  {
     "id": "john-and-charles-wesley",
     "name": "John and Charles Wesley",
     "description": "Priests and reformers of the Church, 1791 and 1788.",
     "type": "saint",
     "status": "verified"
-  },
-  {
-    "id": "john-bosco",
-    "name": "John Bosco",
-    "description": "Salesian Teaching Order.",
-    "type": "saint"
-  },
-  {
-    "id": "john-chrysostom",
-    "name": "John Chrysostom",
-    "description": "Bishop of Constantinople.",
-    "type": "saint"
   },
   {
     "id": "john-coleridge-patteson",
@@ -1430,13 +1307,6 @@
     "type": "saint"
   },
   {
-    "id": "john-of-god",
-    "name": "John of God",
-    "description": "Founder of the Brothers Hospitallers (shared commemoration).",
-    "type": "saint",
-    "status": "verified"
-  },
-  {
     "id": "john-roberts",
     "name": "John Roberts",
     "description": "Priest, 1949.",
@@ -1461,33 +1331,15 @@
     "type": "saint"
   },
   {
-    "id": "julian-of-norwich",
-    "name": "Julian of Norwich",
-    "description": "Mystic and theologian, died c. 1417 AD.",
-    "type": "saint"
-  },
-  {
     "id": "junia",
     "name": "Junia",
     "description": "Apostle mentioned by St. Paul in Romans.",
     "type": "saint"
   },
   {
-    "id": "justin-martyr",
-    "name": "Justin Martyr",
-    "description": "Philosopher and martyr at Rome, c. 167.",
-    "type": "saint"
-  },
-  {
     "id": "kamehameha-and-emma",
     "name": "Kamehameha and Emma",
     "description": "Hawaii.",
-    "type": "saint"
-  },
-  {
-    "id": "kateri-tekakwitha",
-    "name": "Kateri Tekakwitha",
-    "description": "Mohawk laywoman, canonized 2012; first Native American saint.",
     "type": "saint"
   },
   {
@@ -1512,12 +1364,6 @@
     "id": "lillian-trasher",
     "name": "Lillian Trasher",
     "description": "Missionary.",
-    "type": "saint"
-  },
-  {
-    "id": "macarius-the-egyptian",
-    "name": "Macarius the Egyptian",
-    "description": "Desert father (shared commemoration).",
     "type": "saint"
   },
   {
@@ -1608,18 +1454,6 @@
     "id": "mar-augin-saint-eugene",
     "name": "Mar Augin (Saint Eugene)",
     "description": "The 'Father of Egyptian Monasticism' in the East.",
-    "type": "saint"
-  },
-  {
-    "id": "mar-augustine",
-    "name": "Mar Augustine",
-    "description": "Monk and teacher.",
-    "type": "saint"
-  },
-  {
-    "id": "mar-augustine-commemoration",
-    "name": "Mar Augustine (Commemoration)",
-    "description": "Teacher of the faith.",
     "type": "saint"
   },
   {
@@ -1977,12 +1811,6 @@
     "type": "saint"
   },
   {
-    "id": "martin-i",
-    "name": "Martin I",
-    "description": "Pope and martyr, defender of Chalcedonian orthodoxy, died 655.",
-    "type": "saint"
-  },
-  {
     "id": "martyr-agapius",
     "name": "Martyr Agapius",
     "description": "Martyr (shared commemoration).",
@@ -2024,12 +1852,6 @@
     "id": "martyr-arethas-and-companions",
     "name": "Martyr Arethas and companions",
     "description": "Martyrs in Ethiopia.",
-    "type": "saint"
-  },
-  {
-    "id": "martyr-boniface",
-    "name": "Martyr Boniface",
-    "description": "Martyr.",
     "type": "saint"
   },
   {
@@ -2134,12 +1956,6 @@
     "id": "martyr-philosophos",
     "name": "Martyr Philosophos",
     "description": "Martyr at Alexandria, died 252 AD.",
-    "type": "saint"
-  },
-  {
-    "id": "martyr-polyeuctus-of-melitine",
-    "name": "Martyr Polyeuctus of Melitine",
-    "description": "Martyr.",
     "type": "saint"
   },
   {
@@ -2601,18 +2417,6 @@
     "type": "saint"
   },
   {
-    "id": "paul-of-the-cross",
-    "name": "Paul of the Cross",
-    "description": "Priest and Mystic, 1775.",
-    "type": "saint"
-  },
-  {
-    "id": "paul-the-first-hermit",
-    "name": "Paul the First Hermit",
-    "description": "Hermit (shared commemoration).",
-    "type": "saint"
-  },
-  {
     "id": "paulinus",
     "name": "Paulinus",
     "description": "Bishop of York, Missionary, 644.",
@@ -2622,12 +2426,6 @@
     "id": "pentecost-sunday",
     "name": "Pentecost Sunday",
     "description": "Commemoration of the descent of the Holy Spirit.",
-    "type": "saint"
-  },
-  {
-    "id": "peter-chanel",
-    "name": "Peter Chanel",
-    "description": "Martyr (shared commemoration).",
     "type": "saint"
   },
   {
@@ -3427,12 +3225,6 @@
     "type": "saint"
   },
   {
-    "id": "saint-bede-the-venerable",
-    "name": "Saint Bede the Venerable",
-    "description": "Priest and Doctor, died 735 AD.",
-    "type": "saint"
-  },
-  {
     "id": "saint-begga",
     "name": "Saint Begga",
     "description": "Abbess and daughter of Pepin of Landen.",
@@ -3953,12 +3745,6 @@
     "type": "saint"
   },
   {
-    "id": "saint-edward-the-confessor",
-    "name": "Saint Edward the Confessor",
-    "description": "King of England.",
-    "type": "saint"
-  },
-  {
     "id": "saint-egwin",
     "name": "Saint Egwin",
     "description": "Bishop.",
@@ -4427,13 +4213,6 @@
     "type": "saint"
   },
   {
-    "id": "saint-gregory-the-dialogist",
-    "name": "Saint Gregory the Dialogist",
-    "description": "Pope and Doctor of the Church (shared commemoration).",
-    "type": "saint",
-    "status": "verified"
-  },
-  {
     "id": "saint-gregory-the-great",
     "name": "Saint Gregory the Great",
     "description": "Pope and Doctor; 'Father of Christian Worship'.",
@@ -4534,12 +4313,6 @@
     "id": "saint-hormisdas",
     "name": "Saint Hormisdas",
     "description": "Pope and peacemaker between East and West.",
-    "type": "saint"
-  },
-  {
-    "id": "saint-hosea",
-    "name": "Saint Hosea",
-    "description": "Prophet.",
     "type": "saint"
   },
   {
@@ -4696,12 +4469,6 @@
     "type": "saint"
   },
   {
-    "id": "saint-james-the-brother-of-the-lord-james-the-just",
-    "name": "Saint James the Brother of the Lord (James the Just)",
-    "description": "First Bishop of Jerusalem, venerated in Eastern Orthodox and Oriental Orthodox traditions.",
-    "type": "apostle"
-  },
-  {
     "id": "saint-james-the-confessor",
     "name": "Saint James the Confessor",
     "description": "Confessor.",
@@ -4766,12 +4533,6 @@
     "id": "saint-joannicius-the-great",
     "name": "Saint Joannicius the Great",
     "description": "Ascetic and defender of icons.",
-    "type": "saint"
-  },
-  {
-    "id": "saint-joel",
-    "name": "Saint Joel",
-    "description": "Prophet.",
     "type": "saint"
   },
   {
@@ -5317,12 +5078,6 @@
     "type": "saint"
   },
   {
-    "id": "saint-mar-babai-the-great",
-    "name": "Saint Mar Babai the Great",
-    "description": "Monk and theologian.",
-    "type": "saint"
-  },
-  {
     "id": "saint-mar-menas-relics",
     "name": "Saint Mar Menas (Relics)",
     "description": "Discovery of his relics (Coptic).",
@@ -5454,12 +5209,6 @@
     "id": "saint-matthew-the-apostle",
     "name": "Saint Matthew the Apostle",
     "description": "Apostle, tax collector, and author of the first Gospel.",
-    "type": "apostle"
-  },
-  {
-    "id": "saint-matthias",
-    "name": "Saint Matthias",
-    "description": "Apostle and witness to the Resurrection.",
     "type": "apostle"
   },
   {
@@ -6020,12 +5769,6 @@
     "type": "saint"
   },
   {
-    "id": "saint-richard-of-chichester",
-    "name": "Saint Richard of Chichester",
-    "description": "Bishop, died 1253 AD.",
-    "type": "saint"
-  },
-  {
     "id": "saint-rita-of-cascia",
     "name": "Saint Rita of Cascia",
     "description": "Augustinian nun and patroness of impossible causes.",
@@ -6398,12 +6141,6 @@
     "type": "saint"
   },
   {
-    "id": "saint-teresa-of-avila",
-    "name": "Saint Teresa of Avila",
-    "description": "Mystic and doctor.",
-    "type": "saint"
-  },
-  {
     "id": "saint-teresa-of-calcutta",
     "name": "Saint Teresa of Calcutta",
     "description": "Foundress of the Missionaries of Charity.",
@@ -6519,21 +6256,9 @@
     "status": "verified"
   },
   {
-    "id": "saint-thomas-aquinas",
-    "name": "Saint Thomas Aquinas",
-    "description": "Doctor of the Church.",
-    "type": "saint"
-  },
-  {
     "id": "saint-thomas-becket",
     "name": "Saint Thomas Becket",
     "description": "Archbishop and Martyr.",
-    "type": "saint"
-  },
-  {
-    "id": "saint-thomas-more",
-    "name": "Saint Thomas More",
-    "description": "Martyr, died 1535 AD.",
     "type": "saint"
   },
   {
@@ -6667,12 +6392,6 @@
     "id": "saint-vincent",
     "name": "Saint Vincent",
     "description": "Deacon of Saragossa, martyr.",
-    "type": "saint"
-  },
-  {
-    "id": "saint-vincent-de-paul",
-    "name": "Saint Vincent de Paul",
-    "description": "Priest of the poor.",
     "type": "saint"
   },
   {
@@ -7283,12 +7002,6 @@
     "type": "saint"
   },
   {
-    "id": "theodore-of-sykeon",
-    "name": "Theodore of Sykeon",
-    "description": "Bishop and wonderworker (shared commemoration).",
-    "type": "saint"
-  },
-  {
     "id": "theodore-of-tarsus",
     "name": "Theodore of Tarsus",
     "description": "Archbishop of Canterbury who organized the English church.",
@@ -7632,13 +7345,6 @@
     "name": "Vincent de Paul",
     "description": "Priest and worker for charity.",
     "type": "saint"
-  },
-  {
-    "id": "vincent-ferrer",
-    "name": "Vincent Ferrer",
-    "description": "Priest, 1419.",
-    "type": "saint",
-    "status": "verified"
   },
   {
     "id": "virgin-martyr-febronia-of-nisibis",

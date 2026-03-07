@@ -808,16 +808,6 @@
     ]
   },
   {
-    "id": "mar-augustine",
-    "day": "September 19",
-    "name": "Mar Augustine",
-    "description": "Monk and teacher.",
-    "type": "saint",
-    "tags": [
-      "COE"
-    ]
-  },
-  {
     "id": "martyrs-trophimus-sabbatius-and-dorymedon",
     "day": "September 19",
     "name": "Martyrs Trophimus, Sabbatius, and Dorymedon",
@@ -1162,23 +1152,14 @@
     ]
   },
   {
-    "id": "saint-vincent-de-paul",
-    "day": "September 27",
-    "name": "Saint Vincent de Paul",
-    "description": "Priest of the poor.",
-    "type": "saint",
-    "tags": [
-      "LAT"
-    ]
-  },
-  {
     "id": "vincent-de-paul",
     "day": "September 27",
     "name": "Vincent de Paul",
     "description": "Priest and worker for charity.",
     "type": "saint",
     "tags": [
-      "ANG"
+      "ANG",
+      "LAT"
     ]
   },
   {
@@ -1292,16 +1273,6 @@
     ]
   },
   {
-    "id": "jerome",
-    "day": "September 30",
-    "name": "Jerome",
-    "description": "Priest and Scholar, 420.",
-    "type": "saint",
-    "tags": [
-      "ANG"
-    ]
-  },
-  {
     "id": "mar-shimun-bar-sabbae-secondary",
     "day": "September 30",
     "name": "Mar Shimun Bar Sabbae (Secondary)",
@@ -1318,6 +1289,7 @@
     "description": "Translator of the Vulgate.",
     "type": "saint",
     "tags": [
+      "ANG",
       "LAT"
     ]
   },

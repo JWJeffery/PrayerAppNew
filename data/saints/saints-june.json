@@ -217,6 +217,16 @@
     ]
   },
   {
+    "id": "bede-the-venerable",
+    "day": "June 7",
+    "name": "Bede the Venerable",
+    "description": "Priest, monk of Jarrow, and 'Father of English History,' died 735 AD.",
+    "type": "saint",
+    "tags": [
+      "ANG"
+    ]
+  },
+  {
     "id": "hieromartyr-theodotus-of-ancyra",
     "day": "June 7",
     "name": "Hieromartyr Theodotus of Ancyra",
@@ -224,16 +234,6 @@
     "type": "saint",
     "tags": [
       "EOR"
-    ]
-  },
-  {
-    "id": "saint-bede-the-venerable",
-    "day": "June 7",
-    "name": "Saint Bede the Venerable",
-    "description": "Priest and Doctor, died 735 AD.",
-    "type": "saint",
-    "tags": [
-      "ANG"
     ]
   },
   {
@@ -458,16 +458,6 @@
     ]
   },
   {
-    "id": "basil-the-great",
-    "day": "June 14",
-    "name": "Basil the Great",
-    "description": "Bishop of Caesarea, 379.",
-    "type": "saint",
-    "tags": [
-      "ANG"
-    ]
-  },
-  {
     "id": "prophet-elisha",
     "day": "June 14",
     "name": "Prophet Elisha",
@@ -477,6 +467,16 @@
       "COE",
       "EOR",
       "OOR"
+    ]
+  },
+  {
+    "id": "saint-basil-the-great",
+    "day": "June 14",
+    "name": "Saint Basil the Great",
+    "description": "Bishop of Caesarea, Doctor of the Church, died 379.",
+    "type": "saint",
+    "tags": [
+      "ANG"
     ]
   },
   {
@@ -521,6 +521,16 @@
     ]
   },
   {
+    "id": "richard-of-chichester",
+    "day": "June 16",
+    "name": "Richard of Chichester",
+    "description": "Bishop known for his 'Prayer of St. Richard,' 1253, venerated in Catholic, Anglican Communion, and Oriental Orthodox traditions.",
+    "type": "saint",
+    "tags": [
+      "ANG"
+    ]
+  },
+  {
     "id": "saint-lutgardis",
     "day": "June 16",
     "name": "Saint Lutgardis",
@@ -528,16 +538,6 @@
     "type": "saint",
     "tags": [
       "LAT"
-    ]
-  },
-  {
-    "id": "saint-richard-of-chichester",
-    "day": "June 16",
-    "name": "Saint Richard of Chichester",
-    "description": "Bishop, died 1253 AD.",
-    "type": "saint",
-    "tags": [
-      "ANG"
     ]
   },
   {
@@ -753,10 +753,10 @@
     ]
   },
   {
-    "id": "saint-thomas-more",
+    "id": "thomas-more",
     "day": "June 22",
-    "name": "Saint Thomas More",
-    "description": "Martyr, died 1535 AD.",
+    "name": "Thomas More",
+    "description": "Scholar and martyr for conscience.",
     "type": "saint",
     "tags": [
       "LAT"
