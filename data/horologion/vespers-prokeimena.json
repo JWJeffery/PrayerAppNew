@@ -1,0 +1,92 @@
+{
+  "_comment": "Weekday Vespers Prokeimena — data/horologion/vespers-prokeimena.json",
+  "_version": "1.2",
+  "_source": "Standard Byzantine Typikon (Antiochian Service Book / OCA / Jordanville Horologion). The weekday prokeimena are fixed by day of week and are tone-independent of the Octoechos weekly cycle. They are unchanged on ordinary days; feast prokeimena (appointed by Menaion or Triodion) override these on their respective days.",
+  "_weekdayIndex": "Entries keyed by JS Date.getDay() value: 0 = Sunday, 1 = Monday, … 6 = Saturday.",
+  "prokeimena": [
+    {
+      "weekdayIndex": 0,
+      "weekday": "sunday",
+      "tone": 6,
+      "label": "Prokeimenon of Sunday, Tone 6",
+      "text": "The Lord is King; He is robed in majesty.",
+      "textRef": "Psalm 92 (LXX), verse 1a",
+      "verse": "The Lord is robed; He is girded with strength.",
+      "verseRef": "Psalm 92 (LXX), verse 1b",
+      "rubric": "Reader: The Prokeimenon, in Tone 6.",
+      "note": "Sung at Sunday Vespers. The Lord's Day prokeimenon is invariable."
+    },
+    {
+      "weekdayIndex": 1,
+      "weekday": "monday",
+      "tone": 4,
+      "label": "Prokeimenon of Monday, Tone 4",
+      "text": "The Lord will hear me when I cry to Him.",
+      "textRef": "Psalm 4 (LXX), verse 3",
+      "verse": "When I called, the God of my righteousness answered me.",
+      "verseRef": "Psalm 4 (LXX), verse 1",
+      "rubric": "Reader: The Prokeimenon, in Tone 4.",
+      "note": "Sung at Monday Vespers on ordinary days."
+    },
+    {
+      "weekdayIndex": 2,
+      "weekday": "tuesday",
+      "tone": 1,
+      "label": "Prokeimenon of Tuesday, Tone 1",
+      "text": "Thy mercy, O Lord, shall pursue me all the days of my life.",
+      "textRef": "Psalm 22 (LXX), verse 6",
+      "verse": "The Lord is my shepherd; I shall not want.",
+      "verseRef": "Psalm 22 (LXX), verse 1",
+      "rubric": "Reader: The Prokeimenon, in Tone 1.",
+      "note": "Sung at Tuesday Vespers on ordinary days."
+    },
+    {
+      "weekdayIndex": 3,
+      "weekday": "wednesday",
+      "tone": 5,
+      "label": "Prokeimenon of Wednesday, Tone 5",
+      "text": "O God, in Thy name save me, and in Thy might vindicate me.",
+      "textRef": "Psalm 53 (LXX), verse 1",
+      "verse": "O God, hear my prayer; give ear to the words of my mouth.",
+      "verseRef": "Psalm 53 (LXX), verse 2",
+      "rubric": "Reader: The Prokeimenon, in Tone 5.",
+      "note": "Sung at Wednesday Vespers on ordinary days."
+    },
+    {
+      "weekdayIndex": 4,
+      "weekday": "thursday",
+      "tone": 6,
+      "label": "Prokeimenon of Thursday, Tone 6",
+      "text": "My help comes from the Lord, Who made heaven and earth.",
+      "textRef": "Psalm 120 (LXX), verse 2",
+      "verse": "I lift up mine eyes unto the hills; from whence cometh my help?",
+      "verseRef": "Psalm 120 (LXX), verse 1",
+      "rubric": "Reader: The Prokeimenon, in Tone 6.",
+      "note": "Sung at Thursday Vespers on ordinary days."
+    },
+    {
+      "weekdayIndex": 5,
+      "weekday": "friday",
+      "tone": 6,
+      "label": "Prokeimenon of Friday, Tone 6",
+      "text": "God is our refuge and strength, a helper found in troubles.",
+      "textRef": "Psalm 45 (LXX), verse 1",
+      "verse": "Therefore we will not fear, though the earth be moved.",
+      "verseRef": "Psalm 45 (LXX), verse 2",
+      "rubric": "Reader: The Prokeimenon, in Tone 6.",
+      "note": "Sung at Friday Vespers on ordinary days."
+    },
+    {
+      "weekdayIndex": 6,
+      "weekday": "saturday",
+      "tone": 8,
+      "label": "Prokeimenon of Saturday, Tone 8",
+      "text": "The Lord is King forever and ever; the nations shall perish from His land.",
+      "textRef": "Psalm 9 (LXX), verse 36",
+      "verse": "Hear my prayer, O Lord; give ear to my supplication.",
+      "verseRef": "Psalm 142 (LXX), verse 1",
+      "rubric": "Reader: The Prokeimenon, in Tone 8.",
+      "note": "Sung at Saturday Vespers on ordinary days. Main verse from Ps 9 LXX (= Ps 10 Hebrew); verse from Ps 142 LXX (= Ps 143 Hebrew)."
+    }
+  ]
+}
