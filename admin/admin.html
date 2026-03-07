@@ -553,9 +553,12 @@ header {
 <script src="../js/calendar-east-syriac.js"></script>
 <script src="../js/calendar-ethiopian.js"></script>
 <script src="../js/calendar-eastern-orthodox.js"></script>
+<script src="../js/saints-resolver.js"></script>
 
 <script>
 'use strict';
+
+SaintsResolver.configure({ dataBasePath: '../data/saints/' });
 
 // ── Season color token map ────────────────────────────────────────────────
 // This is THE centralized mapping of season color token → CSS class/variable.
@@ -887,17 +890,8 @@ function renderDaySnapshot(dateISO, config) {
     };
 
     // Load any fixed-date saints that share this civil date (best-effort)
-    const monthName = date.toLocaleDateString('en-US', { month:'long' }).toLowerCase();
-    fetch(`../data/saints/saints-${monthName}.json`)
-      .then(r => r.ok ? r.json() : [])
-      .then(saints => {
-        const comms = (saints || []).filter(s => {
-          const parts = (s.day || '').split(',').map(p => p.trim());
-          const target = date.toLocaleDateString('en-US', { month:'long', day:'numeric' });
-          return parts.includes(target);
-        });
-        renderEORDayResult(body, dateISO, season, snap, comms);
-      })
+    SaintsResolver.loadSaintsForDate(date)
+      .then(comms => renderEORDayResult(body, dateISO, season, snap, comms))
       .catch(() => renderEORDayResult(body, dateISO, season, snap, []));
     return;
   }
@@ -930,24 +924,10 @@ function renderDaySnapshot(dateISO, config) {
     };
   }
 
-  // Load commemorations from monthly cache file (if available)
-  const monthName = date.toLocaleDateString('en-US', { month:'long' }).toLowerCase();
-  const dayNum    = date.getDate();
-
-  fetch(`../data/saints/saints-${monthName}.json`)
-    .then(r => r.ok ? r.json() : [])
-    .then(saints => {
-      const comms = (saints || []).filter(s => {
-        // day field format: "March 1" or "March 1, 2" (range)
-        const parts = (s.day || '').split(',').map(p => p.trim());
-        const target = date.toLocaleDateString('en-US', { month:'long', day:'numeric' });
-        return parts.includes(target);
-      });
-      renderDaySnapshotResult(body, dateISO, season, comms);
-    })
-    .catch(() => {
-      renderDaySnapshotResult(body, dateISO, season, []);
-    });
+  // Load commemorations for this date via the shared resolver.
+  SaintsResolver.loadSaintsForDate(date)
+    .then(comms => renderDaySnapshotResult(body, dateISO, season, comms))
+    .catch(() => renderDaySnapshotResult(body, dateISO, season, []));
 }
 
 // ── EOR day snapshot renderer ─────────────────────────────────────────────

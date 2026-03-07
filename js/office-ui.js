@@ -1028,25 +1028,13 @@ function getEthiopianHourInfo() {
 
 // ── Office Renderer ──────────────────────────────────────────────────────────
 
-// ── Saints Resolver ──────────────────────────────────────────────────────────
-// Exact day match helper (prevents "February 2" matching "February 21", etc.)
-function saintOccursOnDate(saintDayField, dateObj) {
-    if (!saintDayField || !(dateObj instanceof Date)) return false;
+// ── Saints Resolver ────────────────────────────────────────────────────────────────
+// Canonical saints boundary. All logic lives in js/saints-resolver.js (SaintsResolver).
+// Local aliases keep call-sites in this file unchanged.
 
-    const target = dateObj.toLocaleDateString('en-US', { month: 'long', day: 'numeric' }).toLowerCase().trim();
-
-    // Support multiple days in one field: "February 2, February 3" (or semicolons)
-    const parts = String(saintDayField)
-        .split(/[;,]/)
-        .map(s => s.trim().toLowerCase())
-        .filter(Boolean);
-
-    // Normalize "February 02" -> "February 2"
-    const normalize = (s) => s.replace(/\b(\w+)\s+0+(\d{1,2})\b/, '$1 $2').trim();
-
-    return parts.some(p => normalize(p) === target);
-}
-const TRADITION_CODES = ['ANG','LAT','EOR','OOR','COE'];
+const saintOccursOnDate    = SaintsResolver.saintOccursOnDate;
+const saintAppliesToContext = SaintsResolver.saintAppliesToContext;
+const isDerivedEcumenical  = SaintsResolver.isDerivedEcumenical;
 
 // ── Centralized tradition display labels ────────────────────────────────────
 // All badge rendering MUST derive human-visible text from this map.
@@ -1067,26 +1055,38 @@ function getTraditionDisplayLabel(code) {
     return TRADITION_DISPLAY_LABELS[code] || code;
 }
 
-function isDerivedEcumenical(tags) {
-    return TRADITION_CODES.every(c => tags.includes(c));
-}
+/**
+ * Canonical saints read path for the office renderers.
+ * Delegates to SaintsResolver. Also keeps appData.saints populated so that
+ * inline OOR fallback filters in the sequence loops can read the cache directly.
+ *
+ * @param {Date}   date
+ * @param {string} tradition  - 'ANG' | 'LAT' | 'EOR' | 'OOR' | 'COE'
+ * @param {object} [opts]
+ * @returns {Promise<Array>}
+ */
+async function resolveCommemorations(date, tradition, opts) {
+    const MONTH_NAMES = [
+        'January','February','March','April','May','June',
+        'July','August','September','October','November','December',
+    ];
+    const month = MONTH_NAMES[date.getMonth()];
 
-// NOTE: This is the seam for the future 3-layer saints model.
-// Identity registry + per-tradition commemoration records.
-// For now we resolve from tags only.
-function saintAppliesToContext(saint, ctx) {
-    // ctx = { tradition: 'ANG', includeEcumenical: true }
-    const tags = Array.isArray(saint.tags) ? saint.tags : [];
-    if (!ctx || !ctx.tradition) return { ok: false, label: null, isEcu: false };
+    // Seed appData.saints / appData.saintsMonth so sequence-loop inline
+    // OOR fallback filters continue to work without change.
+    if (!appData.saints || appData.saintsMonth !== month) {
+        try {
+            const res = await fetch(`data/saints/saints-${month.toLowerCase()}.json`);
+            appData.saints     = res.ok ? await res.json() : [];
+            appData.saintsMonth = month;
+        } catch (err) {
+            console.error('[resolveCommemorations] Saints load failed:', err);
+            appData.saints     = [];
+            appData.saintsMonth = month;
+        }
+    }
 
-    const isEcu = isDerivedEcumenical(tags);
-
-    // Precedence: ECU label wins when derived ecumenical is true.
-    if (ctx.includeEcumenical && isEcu) return { ok: true, label: 'ECU', isEcu };
-
-    if (tags.includes(ctx.tradition)) return { ok: true, label: ctx.tradition, isEcu };
-
-    return { ok: false, label: null, isEcu };
+    return SaintsResolver.resolveCommemorations(date, tradition, opts);
 }
 
 function requestRender() {
@@ -1300,14 +1300,8 @@ async function renderBcpOffice() {
     }
     // ── End pre-fetch ─────────────────────────────────────────────────────────
     // ── Saints preload (must precede sequence loop for eth-saints-commemoration) ─
-    const mIdx  = currentDate.getMonth();
-    const month = monthNames[mIdx];
-    if (!appData.saints || appData.saintsMonth !== month) {
-        try {
-            const res = await fetch(`data/saints/saints-${month.toLowerCase()}.json`);
-            if (res.ok) { appData.saints = await res.json(); appData.saintsMonth = month; }
-        } catch (err) { console.error('Saints load failed:', err); }
-    }
+    // Warms appData.saints for the current month via the shared resolver.
+    await resolveCommemorations(currentDate, 'ANG');
 
     // ── Main Rubric Sequence Loop ─────────────────────────────────────────────
     for (let item of (activeRubric?.sequence || [])) {
@@ -1810,14 +1804,11 @@ async function renderBcpOffice() {
    let dateHeaderText = `Commemorations for ${todayKey}`;
 document.getElementById('date-header').innerText = 'Commemorations';
  // ── Saints (BCP / Daily Office) ─────────────────────────────────────────────
-const ctx = { tradition: 'ANG', includeEcumenical: true };
+const angComms = await resolveCommemorations(currentDate, 'ANG', { includeEcumenical: true });
 
-document.getElementById('saint-display').innerHTML = (appData.saints || [])
-    .filter(s => {
-        if (!saintOccursOnDate(s.day, currentDate)) return false;
-        return saintAppliesToContext(s, ctx).ok;
-    })
+document.getElementById('saint-display').innerHTML = angComms
     .map(s => {
+        const ctx = { tradition: 'ANG', includeEcumenical: true };
         const res = saintAppliesToContext(s, ctx);
         const label = getTraditionDisplayLabel(res.label || 'Unknown');
         return `<div class="saint-box"><small style="color:var(--accent); font-weight:bold; text-transform:uppercase;">${label}</small><strong>${s.name || 'Unknown'}</strong><p>${s.description || 'No description'}</p></div>`;
@@ -1879,15 +1870,8 @@ async function renderEthiopianSaatat() {
 
     const activeRubric = appData.rubrics.find(r => r.id === 'ethiopian-saatat');
 
-    // Saints preload
-    const mIdx  = currentDate.getMonth();
-    const month = monthNames[mIdx];
-    if (!appData.saints || appData.saintsMonth !== month) {
-        try {
-            const res = await fetch(`data/saints/saints-${month.toLowerCase()}.json`);
-            if (res.ok) { appData.saints = await res.json(); appData.saintsMonth = month; }
-        } catch (err) { console.error('Saints load failed:', err); }
-    }
+    // Saints preload — warms appData.saints for OOR fallback in sequence loop.
+    await resolveCommemorations(currentDate, 'OOR');
 
     let officeHtml = `<div class="office-container"><h2>The Ethiopian Sa'atat</h2>`;
     officeHtml += `<p class="liturgical-title">${ethHourInfo?.hourName || 'The Book of Hours'}</p>`;
@@ -2451,13 +2435,8 @@ async function renderEastSyriac() {
     }
 
     // ── Saints preload ──
-    const esyMonth = currentDate.toLocaleDateString('en-US', { month: 'long' });
-    if (!appData.saints || appData.saintsMonth !== esyMonth) {
-        try {
-            const res = await fetch(`data/saints/saints-${esyMonth.toLowerCase()}.json`);
-            if (res.ok) { appData.saints = await res.json(); appData.saintsMonth = esyMonth; }
-        } catch (err) { console.warn('[renderEastSyriac] Saints load failed:', err); }
-    }
+    // COE saint display is silenced pending COE-II. Cache warmed for future use.
+    await resolveCommemorations(currentDate, 'COE');
 
     const esyTodayShort = currentDate.toLocaleDateString('en-US', { month: 'long', day: 'numeric' });
     document.getElementById('office-display').innerHTML = officeHtml + `</div>`;

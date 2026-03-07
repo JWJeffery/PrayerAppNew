@@ -1,10 +1,10 @@
 {
   "project_manifest": {
     "name": "Universal Office",
-    "version": "2.8.4",
+    "version": "2.8.5",
     "last_updated": "2026-03-03",
     "bcp_compliance": "100%",
-    "operational_status": "OPERATIONAL — v2.8.4: Documentation realigned to current architecture (structure.json contract, UI boot/state, saints normalization, COE-II spec). No functional changes.",
+    "operational_status": "OPERATIONAL — v2.8.5: Saints resolver boundary substantially complete. js/saints-resolver.js introduced as shared module (SaintsResolver). office-ui.js delegates all saints helper logic to SaintsResolver; all three renderers route saints preload through resolveCommemorations(). admin.html routes both day-snapshot fetch sites through SaintsResolver.loadSaintsForDate(). One intentional direct fetch remains in office-ui.js resolveCommemorations() to seed appData.saints for inline OOR fallback filters in sequence loops. Normalized-source runtime adapter and formal OOR inline boundary remain future work.",
     "audit_findings": {
       "open_bugs": [
         "1. Rubric logic: [rite] placeholder resolution in rubrics.json is fragile and prone to null returns. (LOW — see known_outstanding_issues.rite_placeholder_resolution)"
@@ -13,7 +13,7 @@
         "1. Heavy reliance on .innerHTML string building in office-ui.js needs transition to a template system.",
         "2. Global state race condition: appData hydration must be gated before renderOffice() execution. (see known_outstanding_issues.hydration_race_condition for full detail)",
         "3. Redundant liturgical fragments (Gloria Patri/Kyrie) should be normalized into common.json.",
-        "4. Saints data model: identities.json + commemorations.json are now the canonical source-of-truth. Remaining work: finalize schema documentation, enforce adapters at boundaries, and implement resolveCommemorations(date, tradition) as the sole UI entrypoint.",
+        "4. Saints data model: identities.json + commemorations.json are the canonical source-of-truth. js/saints-resolver.js provides the shared resolver boundary (SaintsResolver.resolveCommemorations, SaintsResolver.loadSaintsForDate). office-ui.js and admin.html route through it. Remaining work: (a) office-ui.js resolveCommemorations() contains one intentional direct fetch to seed appData.saints for OOR sequence-loop fallback filters — should be unified with SaintsResolver’s internal cache to eliminate the parallel fetch; (b) OOR inline fallback filters in renderBcpOffice() and renderEthiopianSaatat() read appData.saints directly rather than going through the resolver boundary; (c) normalized-source runtime adapter (query identities.json + commemorations.json directly, bypassing generated monthly cache files at runtime) is not yet implemented.",
         "5. COE saint/commemoration rendering: the current saint-grid model is categorically wrong for the Church of the East. COE is a salvation-historical seasonal calendar, not a date-to-saint grid. Requires a three-layer rebuild: (1) season engine already exists; (2) fixed feasts layer; (3) sparse individual saints. Friday is a liturgical class (martyrial), not a saint slot. Full spec in known_outstanding_issues.coe_calendar_model. COE saint section silenced in v2.8.3 pending rebuild."
       ],
       "resolved_in_this_version": [
@@ -63,7 +63,8 @@
       }
     ],
     "resolved_in_this_version": [
-      "2. Documentation realignment: structure.json contract and documentation/* updated to match v2.8.2–v2.8.3 architecture changes (internal-only)."
+      "1. Saints resolver boundary: js/saints-resolver.js created as shared module. office-ui.js saints helper functions (saintOccursOnDate, saintAppliesToContext, isDerivedEcumenical) delegated to SaintsResolver; resolveCommemorations() delegates filtering to SaintsResolver. All three renderers (renderBcpOffice, renderEthiopianSaatat, renderEastSyriac) route saints preload through resolveCommemorations(). admin.html loads saints-resolver.js, configures data path, and routes both day-snapshot fetch sites through SaintsResolver.loadSaintsForDate(). No direct saints-cache fetches remain in admin.html.",
+      "2. Documentation realignment: structure.json, SAINTS_DATA_MODEL.md, and saints-data-rules.md updated to reflect full 12-month generated cache state, partial resolver adoption, and accurate outstanding-work accounting."
     ]
   },
   "active_modules": {
@@ -675,13 +676,14 @@
     },
     "saints_schema_refactor": {
       "severity": "LOW",
-      "description": "Saints data model conflates saint identity with calendar commemoration. Correct architecture separates Saint records (id, name, bio, aliases) from Commemoration records (saint_id, tags[], calendar, date, rank). Current flat file structure with tags[] is a verified interim — data is correct but not yet normalized.",
-      "action": "Phase TBD: (A) Define Saint and Commemoration JSON schemas. (B) Write adapter so UI continues working during migration. (C) Incrementally deduplicate saint identities (same saint appearing in multiple tradition files). (D) Implement resolveCommemorations(date, tradition) interface. (E) Add calendar-aware date keys (Gregorian/Julian/Ethiopian offsets) to replace string-based day fields.",
+      "description": "Saints resolver boundary substantially complete as of v2.8.5. js/saints-resolver.js is the shared module. office-ui.js and admin.html route through it. The two-file normalized source (identities.json + commemorations.json) and all 12 generated monthly cache files are in place. Remaining gaps: (1) office-ui.js resolveCommemorations() has one intentional direct fetch to seed appData.saints for OOR sequence-loop fallback filters — should be unified with SaintsResolver’s internal cache to remove the redundant network call. (2) OOR inline fallback filters in renderBcpOffice() and renderEthiopianSaatat() read appData.saints directly rather than being formally routed through the resolver boundary. (3) Normalized-source runtime adapter not yet implemented: resolveCommemorations() reads generated cache files at runtime, not identities.json + commemorations.json directly. (4) Duplicate identity consolidation (saints-cleanup-queue.md Phase 4) not started.",
+      "action": "(A) Expose SaintsResolver internal month cache so office-ui.js resolveCommemorations() can seed appData.saints from it without a parallel fetch. (B) Formally route OOR fallback filters through resolver boundary. (C) Implement normalized-source runtime adapter. (D) Consolidate duplicate identities per saints-cleanup-queue.md Phase 4.",
       "files": [
-        "data/saints/*.json",
-        "js/office-ui.js"
-      ],
-      "reference": "Architectural advice received 2026-02-28. ECU continues to be derived dynamically (never stored). tags[] field names are forward-compatible with the target schema."
+        "js/saints-resolver.js",
+        "js/office-ui.js",
+        "data/saints/identities.json",
+        "data/saints/commemorations.json"
+      ]
     },
     "coe_calendar_model": {
       "severity": "HIGH",
@@ -940,28 +942,46 @@
     }
   },
   "saints_model": {
-    "status": "normalized-march-seeded",
+    "status": "normalized-all-months-generated",
+    "status_note": "All 12 monthly cache files are present as of v2.8.2. js/saints-resolver.js (SaintsResolver) is the shared resolver module as of v2.8.5. resolveCommemorations(date, tradition) is implemented in office-ui.js and delegates to it. All three renderers and admin.html route through the shared module. One intentional direct fetch remains in office-ui.js resolveCommemorations() to seed appData.saints for OOR sequence-loop fallback filters. Normalized-source runtime adapter and formal OOR inline boundary remain future work.",
     "source_of_truth": [
       "data/saints/identities.json",
       "data/saints/commemorations.json"
     ],
     "generated_cache": [
-      "data/saints/saints-march.json"
+      "data/saints/saints-january.json",
+      "data/saints/saints-february.json",
+      "data/saints/saints-march.json",
+      "data/saints/saints-april.json",
+      "data/saints/saints-may.json",
+      "data/saints/saints-june.json",
+      "data/saints/saints-july.json",
+      "data/saints/saints-august.json",
+      "data/saints/saints-september.json",
+      "data/saints/saints-october.json",
+      "data/saints/saints-november.json",
+      "data/saints/saints-december.json"
     ],
     "generator": "tools/build_saints_cache.js",
-    "workflow": "Edit identities.json or commemorations.json → run `node tools/build_saints_cache.js march` → commit regenerated saints-march.json.",
+    "workflow": "Edit identities.json or commemorations.json → run `npm run saints:regen` (validates then regenerates all months) → commit modified source files and all regenerated monthly cache files together. To regenerate a single month: `node tools/build_saints_cache.js <month>`.",
+    "shared_module": "js/saints-resolver.js",
+    "shared_module_api": [
+      "SaintsResolver.loadSaintsForDate(date) → Promise<Array>  — all records for date, no tradition filter. Used by admin.",
+      "SaintsResolver.resolveCommemorations(date, tradition, opts) → Promise<Array>  — filtered by tradition. Used by renderers.",
+      "SaintsResolver.configure({ dataBasePath }) — set fetch base path (admin uses ‘../data/saints/’).",
+      "SaintsResolver.saintOccursOnDate, .saintAppliesToContext, .isDerivedEcumenical — helpers."
+    ],
     "rules": [
       "Do not edit saints-<month>.json files manually.",
       "All dates in source-of-truth files must use numeric { month, day }.",
       "Tradition is defined only in commemorations.json.",
-      "ECU is derived by generator when identity has commemorations in all five traditions on the same date."
+      "ECU is derived by generator when identity has commemorations in all five traditions on the same date.",
+      "Generated cache records carry a `type` field derived from identity.type. Do not flatten type distinctions (saint / feast / commemoration / apostle / prophet / marian_feast) at the UI layer."
     ],
     "migrated_months": [
-      "march"
-    ],
-    "pending_months": [
       "january",
       "february",
+      "march",
       "april",
       "may",
       "june",
@@ -971,6 +991,14 @@
       "october",
       "november",
       "december"
+    ],
+    "pending_months": [],
+    "unfinished_work": [
+      "office-ui.js resolveCommemorations() contains one intentional direct fetch to seed appData.saints for OOR sequence-loop fallback filters. Should be unified with SaintsResolver internal cache to eliminate the redundant network call.",
+      "OOR inline fallback filters in renderBcpOffice() and renderEthiopianSaatat() sequence loops read appData.saints directly. They are correct (cache pre-warmed by resolver call before loop) but are not formally behind the resolver boundary.",
+      "Normalized-source runtime adapter: resolveCommemorations() currently reads generated monthly cache files at runtime. A true adapter would query identities.json + commemorations.json directly, removing the generated files as a runtime dependency.",
+      "Duplicate identity consolidation (saints-cleanup-queue.md Phase 4): not started.",
+      "COE saints tag audit against Hudra manuscript evidence: deferred to COE-II."
     ]
   },
   "admin": {
@@ -996,11 +1024,11 @@
       },
       {
         "id": "saints-schema-refactor",
-        "title": "Saints data model normalization",
-        "description": "Separate Saint identity records from Commemoration calendar records. Define schemas, write adapter, deduplicate identities, implement resolveCommemorations(date, tradition) interface.",
+        "title": "Saints resolver: unify appData seeding and OOR boundary",
+        "description": "Resolver boundary substantially complete (v2.8.5): js/saints-resolver.js exists, office-ui.js delegates to it, admin.html routes through it. Remaining: (1) office-ui.js resolveCommemorations() does a direct fetch to seed appData.saints for OOR fallback filters — unify with SaintsResolver internal cache. (2) OOR inline fallback filters in renderBcpOffice() and renderEthiopianSaatat() read appData.saints directly; route formally through resolver. (3) Implement normalized-source runtime adapter. (4) Consolidate duplicate identities per saints-cleanup-queue.md Phase 4.",
         "severity": "LOW",
         "status": "in-progress",
-        "area": "data/saints/*.json + js/office-ui.js",
+        "area": "js/saints-resolver.js + js/office-ui.js",
         "phase": "Phase TBD"
       },
       {
