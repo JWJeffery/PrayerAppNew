@@ -1367,10 +1367,13 @@ const HorologionEngine = (() => {
         const weekdayName = WEEKDAY_NAMES_SHORT[dayOfWeek]; // 'monday' … 'friday'
 
         // v2.2: determine effective Theotokion tone
+        // v2.5: Menaion tone-correction now applies to all resolved Menaion
+        // commemorations (rank 1–4), not only rank-1/2 feasts. Whenever the
+        // troparion was resolved from the Menaion with a valid tone, the
+        // weekday Theotokion follows that tone rather than the Octoechos baseline.
         const menaionToneCorrection =
             resolvedTroparionItem &&
             resolvedTroparionItem.resolvedAs === 'menaion-resolved' &&
-            resolvedTroparionItem.feastRankOverride === true &&
             typeof resolvedTroparionItem.tone === 'number' &&
             resolvedTroparionItem.tone >= 1 &&
             resolvedTroparionItem.tone <= 8;
@@ -1438,7 +1441,74 @@ const HorologionEngine = (() => {
         if (!str) return '';
         return str.charAt(0).toUpperCase() + str.slice(1);
     }
+// ──────────────────────────────────────────────────────────────────────
+    // v2.6: _computeLiturgicalSeason(dateObj, toneResult)
+    //
+    // Returns a season code string for the given date:
+    //   'bright-week'     — Pascha through Thomas Saturday (already handled
+    //                       by toneResult.brightWeek; included here for
+    //                       completeness and explicit precedence ordering)
+    //   'great-lent'      — Clean Monday through Great Friday inclusive
+    //                       (excludes Palm Sunday and Holy Week Sat/Sun)
+    //   'holy-week'       — Palm Sunday through Great Saturday (deferred;
+    //                       returned as 'holy-week' but treated as ordinary
+    //                       in this pass so nothing breaks)
+    //   'ordinary'        — all other dates
+    //
+    // Great Lent boundaries are computed from Orthodox Pascha:
+    //   Clean Monday  = Pascha - 48 days
+    //   Great Friday  = Pascha - 2 days
+    //   Palm Sunday   = Pascha - 7 days
+    //
+    // This function is intentionally narrow. It does not attempt to classify
+    // Pentecostarion, Apostles' Fast, Dormition Fast, or Nativity Fast.
+    // Those seasons are deferred to future passes.
+    // ──────────────────────────────────────────────────────────────────────
+    // ──────────────────────────────────────────────────────────────────────
+    // v2.6: _computeLiturgicalSeason(dateObj, toneResult)
+    //
+    // Returns a season code string for the given date:
+    //   'bright-week' — Pascha through Thomas Saturday (toneResult.brightWeek)
+    //   'great-lent'  — Clean Monday (Pascha - 48) through Great Friday
+    //                   (Pascha - 2) inclusive. Palm Sunday (Pascha - 7)
+    //                   and Great Saturday (Pascha - 1) fall outside this
+    //                   window and return 'ordinary' — Holy Week handling
+    //                   is deferred to a future pass.
+    //   'ordinary'    — all other dates, including Palm Sunday, Great
+    //                   Saturday, and all post-Pascha non-Bright-Week dates.
+    //
+    // NOTE: 'holy-week' is intentionally NOT introduced in this pass.
+    // Palm Sunday and Great Saturday return 'ordinary' rather than a
+    // deferred state that could interfere with Great Lent handling.
+    // ──────────────────────────────────────────────────────────────────────
+    function _computeLiturgicalSeason(dateObj, toneResult) {
+        if (toneResult.brightWeek) return 'bright-week';
 
+        const localDate = new Date(
+            dateObj.getFullYear(),
+            dateObj.getMonth(),
+            dateObj.getDate()
+        );
+
+        let year = localDate.getFullYear();
+        let pascha = _getOrthodoxPascha(year);
+        if (pascha > localDate) {
+            year  = year - 1;
+            pascha = _getOrthodoxPascha(year);
+        }
+
+        const MS_PER_DAY = 86400000;
+
+        // Great Lent: Clean Monday (Pascha - 48) through Great Friday (Pascha - 2)
+        const cleanMonday = new Date(pascha.getTime() - 48 * MS_PER_DAY);
+        const greatFriday = new Date(pascha.getTime() -  2 * MS_PER_DAY);
+
+        if (localDate >= cleanMonday && localDate <= greatFriday) {
+            return 'great-lent';
+        }
+
+        return 'ordinary';
+    }
 
     // ──────────────────────────────────────────────────────────────────────
     // v1.3: _resolveSticheraSlot(tone, weekdayName, slotKey, toneResult)
@@ -1648,6 +1718,20 @@ const HorologionEngine = (() => {
         // by routing Sunday to 'saturday', then patch the label at the call site.
         const octoechosWeekdayKey = (dayOfWeek === 6 || dayOfWeek === 0) ? 'saturday' : WEEKDAY_NAMES[dayOfWeek];
 
+        // v2.3: Pre-resolve the troparion slot on weekday Mon–Fri so that the
+        // stichera and aposticha branches can read feastRankOverride without a
+        // second Menaion query. On all other days this remains null and the slot
+        // loop resolves the troparion item in its normal position.
+        let _preResolvedTroparion = null;
+        const isWeekday = (dayOfWeek >= 1 && dayOfWeek <= 5);
+        if (isWeekday) {
+            _preResolvedTroparion = await _resolveTroparionSlot(dayOfWeek, toneResult, dateObj);
+        }
+
+        // v2.6: Compute liturgical season once for use across all slot branches.
+        const liturgicalSeason = _computeLiturgicalSeason(dateObj, toneResult);
+        const isGreatLentWeekday = (liturgicalSeason === 'great-lent') && isWeekday;
+
         for (const section of sections) {
             if (!Array.isArray(section.items)) continue;
 
@@ -1675,27 +1759,92 @@ const HorologionEngine = (() => {
                     // If pk is null (load failed), item remains as-is (placeholder).
                 }
 
-                // ── vesperal-reading (v1.2, ordinary day = omitted) ───────
+                // ── vesperal-reading (v1.2 / v2.4) ───────────────────────
                 else if (item.key === 'vesperal-reading') {
-                    section.items[i] = {
-                        type:       'rubric',
-                        key:        'vesperal-reading',
-                        label:      'Paremiae (Vesperal Readings)',
-                        text:       '(Paremiae — Vesperal Readings — are not appointed at ordinary Vespers. They are read only on feasts of the first and second ranks and during Great Lent. No reading is appointed today.)',
-                        resolvedAs: 'omitted-ordinary-day'
-                    };
+                    if (isWeekday &&
+                        !toneResult.brightWeek &&
+                        _preResolvedTroparion &&
+                        _preResolvedTroparion.feastRankOverride === true) {
+                        // v2.4: rank-1/2 weekday feast — unchanged
+                        section.items[i] = {
+                            type:        'rubric',
+                            key:         'vesperal-reading',
+                            label:       'Paremiae (Vesperal Readings)',
+                            text:        `(FEAST-RANK OVERRIDE — ${_preResolvedTroparion.menaionName}, ` +
+                                         `Rank ${_preResolvedTroparion.menaionRank}. ` +
+                                         `Paremiae (Old Testament vesperal readings) are appointed at Vespers for feasts of rank 1 and rank 2. ` +
+                                         `The proper festal readings for this commemoration are not yet in the corpus. ` +
+                                         `When available, the appointed paremiae from the Menaion for this feast will appear here.)`,
+                            menaionName: _preResolvedTroparion.menaionName,
+                            menaionRank: _preResolvedTroparion.menaionRank,
+                            resolvedAs:  'weekday-feast-paremiae-pending'
+                        };
+                    } else if (isGreatLentWeekday) {
+                        // v2.6: Great Lent weekday — paremiae are appointed at every
+                        // weekday Vespers during Great Lent (typically two or three
+                        // Old Testament readings). Triodion/Lenten lectionary corpus
+                        // not yet available; render an explicit Lenten seasonal rubric.
+                        section.items[i] = {
+                            type:       'rubric',
+                            key:        'vesperal-reading',
+                            label:      'Paremiae (Vesperal Readings)',
+                            text:       '(GREAT LENT — weekday Vespers. ' +
+                                        'Paremiae (Old Testament vesperal readings) are appointed at every weekday Vespers during Great Lent. ' +
+                                        'Typically two readings are appointed Monday through Friday, drawn from Genesis and Proverbs. ' +
+                                        'The Lenten lectionary corpus is not yet available in this engine. ' +
+                                        'When available, the appointed paremiae will appear here.)',
+                            resolvedAs: 'great-lent-paremiae-pending'
+                        };
+                    } else {
+                        section.items[i] = {
+                            type:       'rubric',
+                            key:        'vesperal-reading',
+                            label:      'Paremiae (Vesperal Readings)',
+                            text:       '(Paremiae — Vesperal Readings — are not appointed at ordinary Vespers. They are read only on feasts of the first and second ranks and during Great Lent. No reading is appointed today.)',
+                            resolvedAs: 'omitted-ordinary-day'
+                        };
+                    }
                 }
-
-                // ── stichera-at-lord-i-have-cried (v1.3) ─────────────────
+                // ── stichera-at-lord-i-have-cried (v1.3 / v2.3) ──────────
                 else if (item.key === 'stichera-at-lord-i-have-cried') {
                     if (toneResult.brightWeek) {
-                        // Bright Week: Paschal hymns, not Octoechos
+                        // Bright Week: Paschal hymns, not Octoechos — unchanged
                         section.items[i] = {
                             type:       'rubric',
                             key:        'stichera-at-lord-i-have-cried',
                             label:      'Stichera at "Lord, I have cried"',
                             text:       '(Bright Week — Paschal Tone. During Bright Week (Pascha Sunday through Thomas Saturday), the Resurrectional Stichera of Tone 1 are replaced by Paschal hymns. Ordinary Octoechos stichera are not used this week.)',
                             resolvedAs: 'bright-week-paschal-tone'
+                        };
+                    } else if (isWeekday && _preResolvedTroparion && _preResolvedTroparion.feastRankOverride === true) {
+                        // v2.3: rank-1/2 weekday feast — unchanged
+                        section.items[i] = {
+                            type:       'rubric',
+                            key:        'stichera-at-lord-i-have-cried',
+                            label:      'Stichera at "Lord, I have cried"',
+                            text:       `(FEAST-RANK OVERRIDE — ${_preResolvedTroparion.menaionName}, ` +
+                                        `Rank ${_preResolvedTroparion.menaionRank}. ` +
+                                        `The ordinary weekday Octoechos stichera (${octoechosWeekdayKey} theme) are displaced by this feast. ` +
+                                        `Proper festal stichera for this commemoration are not yet in the corpus. ` +
+                                        `When available, the appointed stichera from the Menaion for this feast will appear here.)`,
+                            menaionName: _preResolvedTroparion.menaionName,
+                            menaionRank: _preResolvedTroparion.menaionRank,
+                            resolvedAs:  'weekday-feast-stichera-pending'
+                        };
+                    } else if (isGreatLentWeekday) {
+                        // v2.6: Great Lent weekday — ordinary Octoechos weekday stichera
+                        // are not sung during Great Lent. Triodion stichera corpus not yet
+                        // available; render an explicit Lenten seasonal rubric.
+                        section.items[i] = {
+                            type:       'rubric',
+                            key:        'stichera-at-lord-i-have-cried',
+                            label:      'Stichera at "Lord, I have cried"',
+                            text:       '(GREAT LENT — weekday Vespers. ' +
+                                        'The ordinary Octoechos weekday stichera are not appointed during Great Lent. ' +
+                                        'The stichera at "Lord, I have cried" on Lenten weekdays are drawn from the Triodion. ' +
+                                        'The Triodion corpus is not yet available in this engine. ' +
+                                        'When available, the appointed Lenten stichera will appear here.)',
+                            resolvedAs: 'great-lent-stichera-pending'
                         };
                     } else if (toneResult.tone) {
                         const resolved = _resolveSticheraSlot(
@@ -1704,8 +1853,6 @@ const HorologionEngine = (() => {
                         );
                         if (resolved) {
                             // v1.8: Sunday Small Vespers label patch.
-                            // _resolveSticheraSlot returns the 'saturday'-corpus result;
-                            // re-label it for Sunday context without altering the text.
                             if (dayOfWeek === 0 && resolved.type === 'stichera') {
                                 resolved.weekday = 'sunday';
                                 resolved.resolvedAs = 'sunday-small-vespers-resurrectional-stichera';
@@ -1726,9 +1873,10 @@ const HorologionEngine = (() => {
                     }
                 }
 
-                // ── aposticha (v1.3) ──────────────────────────────────────
+                // ── aposticha (v1.3 / v2.3) ───────────────────────────────
                 else if (item.key === 'aposticha') {
                     if (toneResult.brightWeek) {
+                        // Bright Week unchanged
                         section.items[i] = {
                             type:       'rubric',
                             key:        'aposticha',
@@ -1736,13 +1884,43 @@ const HorologionEngine = (() => {
                             text:       '(Bright Week — Paschal Tone. During Bright Week, the Aposticha are Paschal hymns, not the ordinary Octoechos aposticha.)',
                             resolvedAs: 'bright-week-paschal-tone'
                         };
+                    } else if (isWeekday && _preResolvedTroparion && _preResolvedTroparion.feastRankOverride === true) {
+                        // v2.3: rank-1/2 weekday feast — unchanged
+                        section.items[i] = {
+                            type:       'rubric',
+                            key:        'aposticha',
+                            label:      'Aposticha',
+                            text:       `(FEAST-RANK OVERRIDE — ${_preResolvedTroparion.menaionName}, ` +
+                                        `Rank ${_preResolvedTroparion.menaionRank}. ` +
+                                        `The ordinary weekday Octoechos aposticha (${octoechosWeekdayKey} theme) are displaced by this feast. ` +
+                                        `Proper festal aposticha for this commemoration are not yet in the corpus. ` +
+                                        `When available, the appointed aposticha from the Menaion for this feast will appear here.)`,
+                            menaionName: _preResolvedTroparion.menaionName,
+                            menaionRank: _preResolvedTroparion.menaionRank,
+                            resolvedAs:  'weekday-feast-aposticha-pending'
+                        };
+                    } else if (isGreatLentWeekday) {
+                        // v2.6: Great Lent weekday — ordinary Octoechos weekday aposticha
+                        // are not sung during Great Lent. Triodion aposticha corpus not yet
+                        // available; render an explicit Lenten seasonal rubric.
+                        section.items[i] = {
+                            type:       'rubric',
+                            key:        'aposticha',
+                            label:      'Aposticha',
+                            text:       '(GREAT LENT — weekday Vespers. ' +
+                                        'The ordinary Octoechos weekday aposticha are not appointed during Great Lent. ' +
+                                        'The aposticha on Lenten weekdays are drawn from the Triodion. ' +
+                                        'The Triodion corpus is not yet available in this engine. ' +
+                                        'When available, the appointed Lenten aposticha will appear here.)',
+                            resolvedAs: 'great-lent-aposticha-pending'
+                        };
                     } else if (toneResult.tone) {
                         const resolved = _resolveSticheraSlot(
                             toneResult.tone, octoechosWeekdayKey,
                             'aposticha', toneResult
                         );
                         if (resolved) {
-                            // v1.8: Sunday Small Vespers label patch (parallel to stichera block).
+                            // v1.8: Sunday Small Vespers label patch.
                             if (dayOfWeek === 0 && resolved.type === 'stichera') {
                                 resolved.weekday = 'sunday';
                                 resolved.resolvedAs = 'sunday-small-vespers-resurrectional-aposticha';
@@ -1774,21 +1952,43 @@ const HorologionEngine = (() => {
                     // If null (data load failed), slot remains placeholder.
                 }
 
-                // ── troparion-or-apolytikion (v1.6) ──────────────────────
+                // ── troparion-or-apolytikion (v1.6 / v2.3) ───────────────
                 // Baseline: Resurrectional Troparion of the current tone
                 // for Saturday Great Vespers. Bright Week: Paschal Troparion.
-                // Weekdays: MenaionResolver query → text if found, theme rubric if not.
+                // Weekdays: pre-resolved above (_preResolvedTroparion) on Mon–Fri;
+                //   resolver called directly for Saturday and Sunday.
                 // Sunday: Resurrectional Troparion of the tone.
-                // Festal overrides: NOT implemented in this pass.
                 else if (item.key === 'troparion-or-apolytikion') {
-                    // v2.1: _resolveTroparionSlot is now async; dateObj passed for MM-DD lookup.
-                    const resolved = await _resolveTroparionSlot(dayOfWeek, toneResult, dateObj);
+                    // v2.3: on weekdays use the pre-resolved result to avoid a
+                    // second Menaion query; on Sat/Sun call the resolver as before.
+                    const resolved = isWeekday
+                        ? _preResolvedTroparion
+                        : await _resolveTroparionSlot(dayOfWeek, toneResult, dateObj);
                     if (resolved) {
-                        section.items[i] = resolved;
+                        // v2.6: if resolved is a weekday-theme rubric (no Menaion text)
+                        // and this is a Great Lent weekday, replace the ordinary weekday
+                        // theme rubric with an explicit Lenten rubric. Menaion-resolved
+                        // commemorations during Lent retain their proper troparion.
+                        if (isGreatLentWeekday &&
+                            resolved.resolvedAs === 'weekday-theme-rubric') {
+                            section.items[i] = {
+                                type:       'rubric',
+                                key:        'troparion-or-apolytikion',
+                                label:      'Troparion / Apolytikion of the Day',
+                                text:       '(GREAT LENT — weekday Vespers. ' +
+                                            'The ordinary weekday Octoechos troparion theme is not used during Great Lent. ' +
+                                            'On Lenten weekdays without a ranked Menaion commemoration, ' +
+                                            'the dismissal troparion follows Lenten practice from the Triodion. ' +
+                                            'The Triodion corpus is not yet available in this engine. ' +
+                                            'When available, the appointed Lenten troparion will appear here.)',
+                                resolvedAs: 'great-lent-troparion-pending'
+                            };
+                        } else {
+                            section.items[i] = resolved;
+                        }
                     }
                     // If null (data load failed), slot remains placeholder.
                 }
-
                 // ── theotokion-dismissal (v1.7 / v2.2) ───────────────────────────
                 // Saturday: full dismissal Theotokion (Octoechos, tone-matched).
                 // Bright Week: explicit omission rubric.
@@ -1796,14 +1996,35 @@ const HorologionEngine = (() => {
                 //   Octoechos baseline tone preserved for all other cases.
                 // Sunday: Octoechos tone Theotokion.
                 else if (item.key === 'theotokion-dismissal') {
-                    // v2.2: pass the already-resolved troparion item so the weekday
-                    // branch can apply Menaion tone-correction for rank 1/2 feasts.
+                    // v2.6: Great Lent weekday — ordinary Octoechos weekday Theotokion
+                    // is not sung during Great Lent on days without a ranked Menaion
+                    // commemoration. If a Menaion troparion is resolved (any rank),
+                    // retain that troparion's tone-corrected Theotokion.
                     const troparionItem = section.items.find(it => it.key === 'troparion-or-apolytikion');
-                    const resolved = _resolveTheotokionSlot(dayOfWeek, toneResult, troparionItem);
-                    if (resolved) {
-                        section.items[i] = resolved;
+                    const hasMenaionTroparion = troparionItem &&
+                        troparionItem.resolvedAs === 'menaion-resolved';
+
+                    if (isGreatLentWeekday && !hasMenaionTroparion) {
+                        section.items[i] = {
+                            type:       'rubric',
+                            key:        'theotokion-dismissal',
+                            label:      'Theotokion',
+                            text:       '(GREAT LENT — weekday Vespers. ' +
+                                        'The ordinary Octoechos weekday Theotokion is not appointed on Lenten weekdays without a Menaion commemoration. ' +
+                                        'The dismissal Theotokion on Lenten weekdays follows Triodion practice. ' +
+                                        'The Triodion corpus is not yet available in this engine. ' +
+                                        'When available, the appointed Lenten Theotokion will appear here.)',
+                            resolvedAs: 'great-lent-theotokion-pending'
+                        };
+                    } else {
+                        // v2.2: pass the already-resolved troparion item so the weekday
+                        // branch can apply Menaion tone-correction.
+                        const resolved = _resolveTheotokionSlot(dayOfWeek, toneResult, troparionItem);
+                        if (resolved) {
+                            section.items[i] = resolved;
+                        }
+                        // If null (data load failed), slot remains placeholder.
                     }
-                    // If null (data load failed), slot remains placeholder.
                 }
             }
         }
