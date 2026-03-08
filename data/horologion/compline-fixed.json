@@ -1,0 +1,70 @@
+{
+  "_comment": [
+    "data/horologion/compline-fixed.json — Horologion v3.0",
+    "",
+    "Invariable fixed texts for Small Compline (Mikron Apodeipnon).",
+    "All entries resolved unconditionally by _resolveComplineSlots().",
+    "Variable slot (troparion-of-the-day) is NOT here; resolved dynamically.",
+    "",
+    "Psalm translations follow the LXX numeration used in Byzantine practice.",
+    "Source: Standard Antiochian/OCA Horologion (Jordanville 2008 edition)."
+  ],
+  "slots": {
+    "usual-beginning": {
+      "type": "text",
+      "label": "The Usual Beginning",
+      "text": "Glory to Thee, our God, glory to Thee.\n\nO Heavenly King, O Comforter, the Spirit of Truth, Who art everywhere present and fillest all things, Treasury of blessings and Giver of life: come and abide in us, and cleanse us from every impurity, and save our souls, O Good One.\n\nHoly God, Holy Mighty, Holy Immortal, have mercy on us. (×3)\n\nGlory to the Father, and to the Son, and to the Holy Spirit, both now and ever, and unto ages of ages. Amen.\n\nAll-holy Trinity, have mercy on us. Lord, cleanse us from our sins. Master, pardon our iniquities. Holy One, visit and heal our infirmities for Thy Name's sake.\n\nLord, have mercy. (×3)\n\nGlory to the Father, and to the Son, and to the Holy Spirit, both now and ever, and unto ages of ages. Amen.\n\nOur Father, Who art in Heaven, hallowed be Thy Name. Thy Kingdom come, Thy will be done, on earth as it is in Heaven. Give us this day our daily bread; and forgive us our trespasses, as we forgive those who trespass against us; and lead us not into temptation, but deliver us from evil.\n\nFor Thine is the Kingdom, and the power, and the glory, of the Father, and of the Son, and of the Holy Spirit, now and ever, and unto ages of ages. Amen.\n\nLord, have mercy. (×12)\n\nCome, let us worship God our King.\nCome, let us worship and fall down before Christ our King and God.\nCome, let us worship and fall down before Christ Himself, our King and our God."
+    },
+    "psalm-50": {
+      "type": "psalm",
+      "lxxNumber": 50,
+      "hebrewNumber": 51,
+      "label": "Psalm 50 (LXX) — Have mercy on me, O God",
+      "text": "Have mercy on me, O God, according to Thy great mercy; and according to the multitude of Thy tender mercies blot out my transgression.\n\nWash me thoroughly from mine iniquity, and cleanse me from my sin. For I know mine iniquity, and my sin is ever before me. Against Thee only have I sinned and done evil before Thee, that Thou mightest be justified in Thy words and prevail when Thou art judged.\n\nFor behold, I was conceived in iniquities, and in sins did my mother bear me. For behold, Thou hast loved truth; the hidden and secret things of Thy wisdom hast Thou made manifest unto me.\n\nThou shalt sprinkle me with hyssop, and I shall be made clean; Thou shalt wash me, and I shall be made whiter than snow. Thou shalt make me to hear joy and gladness; the bones that be humbled shall rejoice.\n\nTurn Thy face away from my sins, and blot out all mine iniquities. Create in me a clean heart, O God, and renew a right spirit within me. Cast me not away from Thy presence, and take not Thy Holy Spirit from me.\n\nRestore unto me the joy of Thy salvation, and with Thy governing Spirit establish me. I shall teach transgressors Thy ways, and the ungodly shall turn back unto Thee.\n\nDeliver me from blood-guiltiness, O God, Thou God of my salvation; my tongue shall rejoice in Thy righteousness. O Lord, Thou shalt open my lips, and my mouth shall declare Thy praise.\n\nFor if Thou hadst desired sacrifice, I had given it; with whole-burnt offerings Thou shalt not be pleased. A sacrifice unto God is a broken spirit; a broken and humbled heart God will not despise.\n\nDo good, O Lord, in Thy good pleasure unto Zion, and let the walls of Jerusalem be builded. Then shalt Thou be pleased with a sacrifice of righteousness, with oblation and whole-burnt offerings. Then shall they offer bullocks upon Thine altar.\n\nGlory to the Father, and to the Son, and to the Holy Spirit, both now and ever, and unto ages of ages. Amen."
+    },
+    "psalm-69": {
+      "type": "psalm",
+      "lxxNumber": 69,
+      "hebrewNumber": 70,
+      "label": "Psalm 69 (LXX) — O God, come to my assistance",
+      "text": "O God, be attentive unto helping me; O Lord, make haste to help me.\n\nLet them be ashamed and confounded that seek after my soul. Let them be turned backward and put to shame that wish me evil. Let them be turned back by reason of their shame that say unto me: Well done, well done.\n\nLet all that seek Thee rejoice and be glad in Thee; and let them that love Thy salvation say continually: The Lord be magnified.\n\nBut I am poor and needy; O God, help me. Thou art my helper and deliverer; O Lord, make no tarrying.\n\nGlory to the Father, and to the Son, and to the Holy Spirit, both now and ever, and unto ages of ages. Amen."
+    },
+    "psalm-142": {
+      "type": "psalm",
+      "lxxNumber": 142,
+      "hebrewNumber": 143,
+      "label": "Psalm 142 (LXX) — Hear my prayer, O Lord",
+      "text": "O Lord, hear my prayer, give ear unto my supplication in Thy truth; hearken unto me in Thy righteousness. And enter not into judgment with Thy servant, for in Thy sight shall no man living be justified.\n\nFor the enemy hath persecuted my soul; he hath humbled my life down to the earth. He hath sat me in darkness as those that have been long dead, and my spirit within me is become despondent; within me my heart is troubled.\n\nI remembered days of old, I meditated on all Thy works, I pondered on the creations of Thy hands. I stretched forth my hands unto Thee; my soul thirsteth after Thee like a waterless land.\n\nHearken unto me speedily, O Lord; my spirit hath fainted away. Turn not Thy face away from me, lest I be like unto them that go down into the pit.\n\nCause me to hear Thy mercy in the morning, for in Thee have I put my hope. Cause me to know, O Lord, the way wherein I should walk, for unto Thee have I lifted up my soul.\n\nDeliver me from mine enemies, O Lord, for unto Thee have I fled for refuge. Teach me to do Thy will, for Thou art my God. Thy good Spirit shall lead me in the land of uprightness.\n\nFor Thy Name's sake, O Lord, Thou shalt quicken me. In Thy righteousness Thou shalt bring my soul out of affliction, and in Thy mercy Thou shalt utterly destroy mine enemies. And Thou shalt cut off all them that afflict my soul, for I am Thy servant.\n\nGlory to the Father, and to the Son, and to the Holy Spirit, both now and ever, and unto ages of ages. Amen."
+    },
+    "doxology": {
+      "type": "text",
+      "label": "The Lesser Doxology",
+      "text": "Glory to God in the highest, and on earth peace, good will among men. (×3)\n\nO Lord, I will open my lips, and my mouth shall proclaim Thy praise.\n\nGlory to the Father, and to the Son, and to the Holy Spirit, both now and ever, and unto ages of ages. Amen.\n\nHallelujah, Hallelujah, Hallelujah. Glory to Thee, O God. (×3)\n\nLord, have mercy. (×3)\n\nGlory to the Father, and to the Son, and to the Holy Spirit, both now and ever, and unto ages of ages. Amen."
+    },
+    "creed": {
+      "type": "text",
+      "label": "The Symbol of Faith (Nicene-Constantinopolitan Creed)",
+      "text": "I believe in one God, the Father Almighty, Maker of heaven and earth, and of all things visible and invisible.\n\nAnd in one Lord Jesus Christ, the Son of God, the Only-begotten, begotten of the Father before all ages; Light of Light, true God of true God; begotten, not made; of one essence with the Father; by Whom all things were made; Who for us men and for our salvation came down from heaven, and was incarnate of the Holy Spirit and the Virgin Mary, and became man; and was crucified also for us under Pontius Pilate, and suffered and was buried; and the third day He rose again, according to the Scriptures; and ascended into heaven, and sitteth at the right hand of the Father; and He shall come again with glory to judge the living and the dead; Whose Kingdom shall have no end.\n\nAnd in the Holy Spirit, the Lord, and Giver of life, Who proceedeth from the Father; Who with the Father and the Son together is worshipped and glorified; Who spake by the Prophets.\n\nIn one Holy Catholic and Apostolic Church. I acknowledge one Baptism for the remission of sins. I look for the Resurrection of the dead, and the life of the world to come. Amen."
+    },
+    "trisagion-prayers": {
+      "type": "text",
+      "label": "Trisagion Prayers",
+      "text": "Holy God, Holy Mighty, Holy Immortal, have mercy on us. (×3)\n\nGlory to the Father, and to the Son, and to the Holy Spirit, both now and ever, and unto ages of ages. Amen.\n\nAll-holy Trinity, have mercy on us. Lord, cleanse us from our sins. Master, pardon our iniquities. Holy One, visit and heal our infirmities for Thy Name's sake.\n\nLord, have mercy. (×3)\n\nGlory to the Father, and to the Son, and to the Holy Spirit, both now and ever, and unto ages of ages. Amen.\n\nOur Father, Who art in Heaven, hallowed be Thy Name. Thy Kingdom come, Thy will be done, on earth as it is in Heaven. Give us this day our daily bread; and forgive us our trespasses, as we forgive those who trespass against us; and lead us not into temptation, but deliver us from evil.\n\nFor Thine is the Kingdom, and the power, and the glory, of the Father, and of the Son, and of the Holy Spirit, now and ever, and unto ages of ages. Amen.\n\nLord, have mercy. (×12)"
+    },
+    "compline-theotokion": {
+      "type": "text",
+      "label": "Theotokion of Compline",
+      "text": "O Theotokos and Virgin, rejoice, Mary full of grace, the Lord is with thee. Blessed art thou among women, and blessed is the fruit of thy womb, for thou hast borne the Savior of our souls.\n\nGlory to the Father, and to the Son, and to the Holy Spirit, both now and ever, and unto ages of ages. Amen."
+    },
+    "prayer-of-basil": {
+      "type": "text",
+      "label": "Prayer of St. Basil the Great",
+      "text": "Lord our God, Who hast granted us the forgiveness of sins through repentance and hast pointed us to the model of the publican's prayer as an example of repentance and confession that leads to justification: do Thou Thyself accept us who are bowed down before Thee in contrition of heart.\n\nReceive our nightly supplications and hearken to our prayer. Make us to lie down in peace, and raise us up again for glory and praise and prayer to Thy goodness, granting that we be granted worthy of joys and incorruptibility and eternal blessings.\n\nFor Thou art our God, the God Who has compassion and saves, and unto Thee do we send up glory: to the Father, and to the Son, and to the Holy Spirit, now and ever, and unto ages of ages. Amen."
+    },
+    "into-thy-hands": {
+      "type": "text",
+      "label": "Into Thy Hands",
+      "text": "Into Thy hands, O Lord Jesus Christ my God, I commend my spirit. Do Thou bless me, have mercy on me, and grant me life everlasting. Amen.\n\nGlory to the Father, and to the Son, and to the Holy Spirit.\n\nO Lord of my forefathers and Master, my God Jesus Christ, let me not fall asleep in sin but grant me refreshing slumber. Let not the evil one overshadow and darken me with the darkness of sins; drive away from me all fleshly desires and other harmful temptations. Enliven my heart with the sprinkles of Thy holiness, that I may continually bless Thy holy Name throughout the night, and in the morning glorify Thee and Thy good Father and Thy Life-giving Spirit, both now and ever, and unto ages of ages. Amen.\n\nBoth now and ever, and unto ages of ages. Amen.\n\nAll my hope I place in thee, O Mother of God; keep me under thy protection."
+    }
+  }
+}

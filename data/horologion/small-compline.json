@@ -1,0 +1,137 @@
+{
+  "officeKey": "small-compline",
+  "label": "Small Compline (Mikron Apodeipnon)",
+  "tradition": "BYZC",
+  "description": "The Byzantine Night Office. Small Compline (Mikron Apodeipnon) is the shorter form of Compline in the Byzantine rite, appointed for ordinary weekdays and seasons outside Great Lent.",
+  "sections": [
+    {
+      "id": "opening",
+      "label": "Opening",
+      "notes": "Small Compline opens with the Usual Beginning, as do all Byzantine offices.",
+      "items": [
+        {
+          "type": "rubric",
+          "key": "opening-blessing-rubric",
+          "text": "The Priest blesses: Blessed is our God, always, now and ever and unto ages of ages."
+        },
+        {
+          "type": "placeholder",
+          "key": "usual-beginning",
+          "label": "The Usual Beginning",
+          "status": "unresolved",
+          "note": "Trisagion prayers sequence. Resolved from compline-fixed.json by HorologionEngine."
+        }
+      ]
+    },
+    {
+      "id": "psalmody",
+      "label": "Fixed Psalmody",
+      "notes": "Small Compline appoints three fixed psalms: 50, 69, and 142 (LXX). These are invariable on all ordinary days.",
+      "items": [
+        {
+          "type": "placeholder",
+          "key": "psalm-50",
+          "label": "Psalm 50 (LXX) — Have mercy on me, O God",
+          "status": "unresolved",
+          "note": "Resolved from compline-fixed.json by HorologionEngine."
+        },
+        {
+          "type": "placeholder",
+          "key": "psalm-69",
+          "label": "Psalm 69 (LXX) — O God, come to my assistance",
+          "status": "unresolved",
+          "note": "Resolved from compline-fixed.json by HorologionEngine."
+        },
+        {
+          "type": "placeholder",
+          "key": "psalm-142",
+          "label": "Psalm 142 (LXX) — Hear my prayer, O Lord",
+          "status": "unresolved",
+          "note": "Resolved from compline-fixed.json by HorologionEngine."
+        }
+      ]
+    },
+    {
+      "id": "doxology-creed",
+      "label": "Doxology and Creed",
+      "notes": "The Lesser Doxology, followed by the Nicene-Constantinopolitan Creed.",
+      "items": [
+        {
+          "type": "placeholder",
+          "key": "doxology",
+          "label": "Lesser Doxology",
+          "status": "unresolved",
+          "note": "Resolved from compline-fixed.json by HorologionEngine."
+        },
+        {
+          "type": "placeholder",
+          "key": "creed",
+          "label": "The Creed (Nicene-Constantinopolitan)",
+          "status": "unresolved",
+          "note": "Resolved from compline-fixed.json by HorologionEngine."
+        }
+      ]
+    },
+    {
+      "id": "trisagion",
+      "label": "Trisagion Prayers",
+      "notes": "The Trisagion prayer sequence precedes the troparia.",
+      "items": [
+        {
+          "type": "placeholder",
+          "key": "trisagion-prayers",
+          "label": "Trisagion Prayers",
+          "status": "unresolved",
+          "note": "Resolved from compline-fixed.json by HorologionEngine."
+        }
+      ]
+    },
+    {
+      "id": "troparia",
+      "label": "Troparia",
+      "notes": "The dismissal troparion of the day is sung. The fixed Theotokion of Compline follows.",
+      "items": [
+        {
+          "type": "placeholder",
+          "key": "troparion-of-the-day",
+          "label": "Troparion of the Day",
+          "status": "unresolved",
+          "note": "Variable troparion: resolved via Menaion resolver or weekday-theme rubric by HorologionEngine. Same infrastructure as Vespers troparion slot."
+        },
+        {
+          "type": "placeholder",
+          "key": "compline-theotokion",
+          "label": "Theotokion of Compline",
+          "status": "unresolved",
+          "note": "Fixed invariable Theotokion of Small Compline. Resolved from compline-fixed.json by HorologionEngine."
+        }
+      ]
+    },
+    {
+      "id": "prayer-and-dismissal",
+      "label": "Prayer of St. Basil and Dismissal",
+      "notes": "The Prayer of St. Basil the Great is said at Compline. The office closes with the standard dismissal.",
+      "items": [
+        {
+          "type": "placeholder",
+          "key": "prayer-of-basil",
+          "label": "Prayer of St. Basil the Great",
+          "status": "unresolved",
+          "note": "Resolved from compline-fixed.json by HorologionEngine."
+        },
+        {
+          "type": "placeholder",
+          "key": "into-thy-hands",
+          "label": "Into Thy Hands",
+          "status": "unresolved",
+          "note": "Resolved from compline-fixed.json by HorologionEngine."
+        },
+        {
+          "type": "rubric",
+          "key": "dismissal-rubric",
+          "text": "Priest: Glory to Thee, O Christ our God, our hope, glory to Thee.\nChoir: Glory to the Father, and to the Son, and to the Holy Spirit, both now and ever, and unto ages of ages. Amen. Lord, have mercy. (×3) Father, bless.\nPriest: [Dismissal according to the day and feast]"
+        }
+      ]
+    }
+  ]
+}

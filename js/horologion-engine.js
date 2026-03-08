@@ -195,7 +195,7 @@ const HorologionEngine = (() => {
     const _skeletonCache = {};
 
     // ── Supported offices in this version ─────────────────────────────────
-    const SUPPORTED_OFFICES = ['vespers'];
+    const SUPPORTED_OFFICES = ['vespers', 'small-compline'];
 
     // ── Tradition code for this engine ────────────────────────────────────
     const TRADITION = 'BYZC';
@@ -256,6 +256,13 @@ const HorologionEngine = (() => {
     // ── v2.0: Weekday troparion meta file URL ─────────────────────────────
     // Documents the dependency contract for weekday troparia (no text supplied).
     const WEEKDAY_TROPARION_META_URL = 'data/horologion/vespers-weekday-troparion-meta.json';
+
+    // ── v3.0: Compline fixed-text data file URL and cache ─────────────────
+    const COMPLINE_FIXED_URL = 'data/horologion/compline-fixed.json';
+
+    // Populated lazily by _loadComplineFixedData().
+    // Shape: { slots: { "usual-beginning": {...}, "psalm-50": {...}, ... } }
+    let _complineFixedData = null;
 
     // ── v2.0: Weekday troparion meta object (null until first fetch) ───────
     // Populated lazily by _loadWeekdayTroparionMeta().
@@ -384,8 +391,14 @@ const HorologionEngine = (() => {
         // Deep-copy sections so we never mutate the cached skeleton
         const sections = _deepCopySections(skeleton.sections || []);
 
-        // v1.2 / v1.3: Run ordinary-day slot resolution before diagnostic count
-        await _resolveVespersSlots(sections, dateObj);
+        // Route to the correct slot resolver based on officeKey.
+        if (normalizedKey === 'small-compline') {
+            await _resolveComplineSlots(sections, dateObj);
+        } else {
+            // v1.2 / v1.3: Vespers resolver (default for 'vespers' and any
+            // future office that shares it until it has its own resolver).
+            await _resolveVespersSlots(sections, dateObj);
+        }
 
         // Diagnostic pass — count resolved vs placeholder slots
         let implementedSlots = 0;
@@ -636,12 +649,8 @@ const HorologionEngine = (() => {
         // Step 1: find the Pascha that precedes (or equals) localDate.
         // Try current year first; if that year's Pascha is after localDate,
         // fall back to previous year.
-        let year = localDate.getFullYear();
-        let pascha = _getOrthodoxPascha(year);
-        if (pascha > localDate) {
-            year  = year - 1;
-            pascha = _getOrthodoxPascha(year);
-        }
+        const year = localDate.getFullYear();
+const pascha = _getOrthodoxPascha(year);
 
         // Step 2: Thomas Sunday = Pascha + 7
         const thomasSunday = new Date(pascha.getFullYear(), pascha.getMonth(), pascha.getDate() + 7);
@@ -1468,12 +1477,8 @@ const HorologionEngine = (() => {
             dateObj.getDate()
         );
 
-        let year = localDate.getFullYear();
-        let pascha = _getOrthodoxPascha(year);
-        if (pascha > localDate) {
-            year  = year - 1;
-            pascha = _getOrthodoxPascha(year);
-        }
+        const year = localDate.getFullYear();
+const pascha = _getOrthodoxPascha(year);
 
         const MS_PER_DAY = 86400000;
 
@@ -1507,6 +1512,111 @@ const HorologionEngine = (() => {
         }
 
         return { season: 'ordinary', holyWeekDay: null };
+    }
+
+    // ──────────────────────────────────────────────────────────────────────
+    // v3.0: _loadComplineFixedData()
+    //
+    // Fetches and caches data/horologion/compline-fixed.json.
+    // Non-throwing: on failure, logs a warning and leaves _complineFixedData
+    // null. Fixed slots degrade to visible placeholder boxes rather than
+    // failing silently.
+    // ──────────────────────────────────────────────────────────────────────
+    async function _loadComplineFixedData() {
+        if (_complineFixedData !== null) return;
+
+        try {
+            const response = await fetch(COMPLINE_FIXED_URL);
+            if (!response.ok) {
+                console.warn(`[HorologionEngine] Could not load compline fixed data (HTTP ${response.status}); fixed slots will remain as placeholders.`);
+                return;
+            }
+            _complineFixedData = await response.json();
+            console.log('[HorologionEngine] Loaded Small Compline fixed text data.');
+        } catch (err) {
+            console.warn('[HorologionEngine] _loadComplineFixedData failed:', err.message, '— fixed slots will remain as placeholders.');
+        }
+    }
+
+    // ──────────────────────────────────────────────────────────────────────
+    // v3.0: _resolveComplineSlots(sections, dateObj)
+    //
+    // Slot resolution pass for Small Compline.
+    //
+    // Fixed slots resolved from compline-fixed.json:
+    //   usual-beginning, psalm-50, psalm-69, psalm-142, doxology, creed,
+    //   trisagion-prayers, compline-theotokion, prayer-of-basil, into-thy-hands
+    //
+    // Variable slot (troparion-of-the-day): resolved via the existing
+    // _resolveTroparionSlot() infrastructure. Key is renamed from
+    // 'troparion-or-apolytikion' to 'troparion-of-the-day' for correct
+    // diagnostic labelling. All fallback paths (weekday-theme rubric,
+    // Resurrectional Troparion, Paschal Troparion) are inherited unchanged.
+    //
+    // Non-throwing. On data file failure, fixed slots remain as placeholders.
+    // ──────────────────────────────────────────────────────────────────────
+    async function _resolveComplineSlots(sections, dateObj) {
+        await Promise.all([
+            _loadComplineFixedData(),
+            _loadTroparionData(),
+            _loadWeekdayTroparionMeta()
+        ]);
+
+        const dayOfWeek  = dateObj.getDay();
+        const toneResult = _computeBaselineTone(dateObj);
+
+        const FIXED_SLOT_KEYS = new Set([
+            'usual-beginning',
+            'psalm-50',
+            'psalm-69',
+            'psalm-142',
+            'doxology',
+            'creed',
+            'trisagion-prayers',
+            'compline-theotokion',
+            'prayer-of-basil',
+            'into-thy-hands'
+        ]);
+
+        for (const section of sections) {
+            if (!Array.isArray(section.items)) continue;
+
+            for (let i = 0; i < section.items.length; i++) {
+                const item = section.items[i];
+
+                // ── Fixed slots ───────────────────────────────────────────
+                if (FIXED_SLOT_KEYS.has(item.key)) {
+                    const slotData = _complineFixedData &&
+                        _complineFixedData.slots &&
+                        _complineFixedData.slots[item.key];
+
+                    if (slotData) {
+                        section.items[i] = {
+                            type:       slotData.type || 'text',
+                            key:        item.key,
+                            label:      slotData.label || item.label,
+                            text:       slotData.text,
+                            lxxNumber:  slotData.lxxNumber,
+                            resolvedAs: 'compline-fixed'
+                        };
+                    }
+                    // If data not loaded: item remains placeholder — correct degradation.
+                    continue;
+                }
+
+                // ── troparion-of-the-day ──────────────────────────────────
+                if (item.key === 'troparion-of-the-day') {
+                    const resolved = await _resolveTroparionSlot(dayOfWeek, toneResult, dateObj);
+                    if (resolved) {
+                        section.items[i] = Object.assign({}, resolved, {
+                            key: 'troparion-of-the-day'
+                        });
+                    }
+                    // If null (data load failed): slot remains placeholder.
+                }
+                // All other items (baked rubrics) pass through unchanged.
+            }
+        }
     }
 
     // ──────────────────────────────────────────────────────────────────────

@@ -2,7 +2,8 @@
 let appData = null;
 let currentDate = new Date();
 let selectedMode = null;
-let isHydrationComplete = false;
+let isHydrationComplete        = false;
+let selectedHorologionOffice   = 'vespers'; // tracks active office within Horologion mode
 let activeRender = null;
 let pendingRender = false;
 let renderScheduled = false;
@@ -652,18 +653,17 @@ async function selectMode(mode) {
         isHydrationComplete = true;
         requestRender();
 
-    } else if (mode === 'horologion-vespers') {
-        // ── Horologion — Byzantine Vespers ────────────────────────────────────
-        // HorologionEngine loads its own data files (data/horologion/*.json) on
-        // demand. loadKernel() is called only for shared UI infrastructure.
-        // No tradition-specific hydration shard is needed in v1.
+    } else if (mode === 'horologion') {
+        // ── Horologion — Byzantine Offices ────────────────────────────────────
+        // Unified entry point for all Horologion offices. Office selection is
+        // handled inside the sidebar via selectHorologionOffice(). On first
+        // entry, selectedHorologionOffice defaults to 'vespers'.
         document.getElementById('individual-prayers-section').style.display = 'none';
         document.getElementById('daily-office-section').style.display       = 'flex';
 
         const esySettings = document.getElementById('east-syriac-settings');
         const genSettings = document.getElementById('generic-settings');
 
-        // Hide all tradition-specific panels
         if (settingsPanel) {
             settingsPanel.classList.add('sidebar-hidden');
             settingsPanel.classList.add('mode-hidden');
@@ -676,21 +676,17 @@ async function selectMode(mode) {
             esySettings.classList.add('sidebar-hidden');
             esySettings.classList.add('mode-hidden');
         }
-
-        // Activate the generic sidebar shell
         if (genSettings) {
             genSettings.classList.remove('mode-hidden');
             genSettings.classList.remove('sidebar-hidden');
         }
         mainContent.classList.remove('sidebar-hidden');
 
-        // Set the tradition label and sync the date display
-        const tradLabel = document.getElementById('generic-tradition-label');
-        if (tradLabel) tradLabel.textContent = 'Byzantine Vespers — Horologion';
         updateGenericDateDisplay();
+        _updateHorologionOfficeButtons();
 
         document.getElementById('office-display').innerHTML =
-            `<div class="office-container"><h3>Preparing Vespers…</h3><p>Loading the Byzantine Evening Office.</p></div>`;
+            `<div class="office-container"><h3>Preparing ${_horologionOfficeLabel(selectedHorologionOffice)}…</h3><p>Loading the Byzantine Office.</p></div>`;
 
         await loadKernel();
         isHydrationComplete = true;
@@ -776,13 +772,13 @@ function toggleSidebar() {
 function changeDate(days) {
     currentDate.setDate(currentDate.getDate() + days);
     updateDatePicker();
-    if (selectedMode === 'horologion-vespers') updateGenericDateDisplay();
+  if (selectedMode === 'horologion') updateGenericDateDisplay();
     requestRender();
 }
 function resetDate() {
     currentDate = new Date();
     updateDatePicker();
-    if (selectedMode === 'horologion-vespers') updateGenericDateDisplay();
+  if (selectedMode === 'horologion') updateGenericDateDisplay();
     requestRender();
 }
 function updateDatePicker() {
@@ -795,7 +791,7 @@ function updateDatePicker() {
 function updateGenericDateDisplay() {
     // Syncs #generic-settings date widgets with currentDate.
     // Called by changeDate(), resetDate(), setCustomDate() when
-    // selectedMode === 'horologion-vespers'. Zero cost in all other modes.
+    // selectedMode === 'horologion'. Zero cost in all other modes.
     const year  = currentDate.getFullYear();
     const month = String(currentDate.getMonth() + 1).padStart(2, '0');
     const day   = String(currentDate.getDate()).padStart(2, '0');
@@ -827,8 +823,41 @@ function setCustomDate(dateStr) {
         currentDate = new Date(parseInt(year), parseInt(month) - 1, parseInt(day));
     }
     updateDatePicker();
-    if (selectedMode === 'horologion-vespers') updateGenericDateDisplay();
+    if (selectedMode === 'horologion') updateGenericDateDisplay();
     requestRender();
+}
+
+// ── Horologion office selector ────────────────────────────────────────────
+
+function selectHorologionOffice(officeKey) {
+    selectedHorologionOffice = officeKey;
+    _updateHorologionOfficeButtons();
+    requestRender();
+}
+
+function _updateHorologionOfficeButtons() {
+    const offices = ['vespers', 'small-compline'];
+    for (const key of offices) {
+        const btn = document.getElementById(`hor-btn-${key}`);
+        if (!btn) continue;
+        if (key === selectedHorologionOffice) {
+            btn.style.background  = 'rgba(201,168,76,0.18)';
+            btn.style.borderColor = 'rgba(201,168,76,0.9)';
+            btn.style.fontWeight  = 'bold';
+        } else {
+            btn.style.background  = 'transparent';
+            btn.style.borderColor = 'rgba(201,168,76,0.5)';
+            btn.style.fontWeight  = 'normal';
+        }
+    }
+}
+
+function _horologionOfficeLabel(officeKey) {
+    const labels = {
+        'vespers':        'Vespers',
+        'small-compline': 'Small Compline'
+    };
+    return labels[officeKey] || officeKey;
 }
 
 // ── Tradition sidebar compatibility wrappers ──────────────────────────────
@@ -1132,8 +1161,8 @@ async function renderOffice() {
         return renderEthiopianSaatat();
     } else if (selectedMode === 'east-syriac') {
         return renderEastSyriac();
-    } else if (selectedMode === 'horologion-vespers') {
-        return renderHorologionOffice('vespers');
+    } else if (selectedMode === 'horologion') {
+        return renderHorologionOffice(selectedHorologionOffice);
     } else {
         return renderBcpOffice();
     }
