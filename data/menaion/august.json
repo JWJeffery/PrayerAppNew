@@ -1,0 +1,544 @@
+{
+  "_meta": {
+    "file": "data/menaion/august.json",
+    "version": "1.0.0",
+    "schema_version": "1.0.0",
+    "month_number": 8,
+    "month_name": "August",
+    "calendar_style": "new-calendar",
+    "coverage_note": "FULL CORPUS — all 31 August dates. August is the most feast-dense month of the Byzantine year. It contains: the Procession of the Cross (Aug 1, rank 3), the Transfiguration (Aug 6, rank 1 Great Feast), the Dormition of the Theotokos (Aug 15, rank 1 Great Feast), and the Translation of the Image of Christ Not Made by Hands (Aug 16, rank 3). The Dormition Fast runs Aug 1–14. Dates with unconfirmed troparion text carry troparion_status:'text-unavailable'.",
+    "imported_date_count": 31,
+    "total_days": 31
+  },
+  "dates": {
+    "08-01": {
+      "commemorations": [
+        {
+          "id": "procession-cross-maccabees",
+          "name": "Procession of the Precious Cross; Holy Maccabee Martyrs",
+          "type": "feast",
+          "rank": 3,
+          "troparion_tone": 1,
+          "troparion": {
+            "tone": 1,
+            "title": "Troparion of the Procession of the Cross",
+            "text": "Save, O Lord, Thy people and bless Thine inheritance; grant victories to the Orthodox Christians over their adversaries; and by virtue of Thy Cross, preserve Thy habitation."
+          },
+          "troparion_status": "resolved",
+          "tradition_tags": ["EOR"],
+          "notes": "Procession of the Precious and Life-giving Cross + commemoration of the Seven Maccabee Martyrs and their mother Solomonia. Rank 3. Beginning of the Dormition Fast. The Cross troparion is the standard troparion of the Exaltation of the Cross."
+        }
+      ]
+    },
+    "08-02": {
+      "commemorations": [
+        {
+          "id": "translation-stephen-protomartyr",
+          "name": "Translation of the Relics of the Protomartyr Stephen",
+          "type": "feast",
+          "rank": 4,
+          "troparion_tone": 4,
+          "troparion": {
+            "tone": 4,
+            "title": "Troparion of the Protomartyr Stephen (Translation)",
+            "text": "Thy crown of martyrdom overflows with glory, O first-born of the martyrs; for thou didst suffer with Christ the King of all, and receive from His hand the crown of victory. Intercede with Christ our God that He may save our souls."
+          },
+          "troparion_status": "resolved",
+          "tradition_tags": ["EOR"],
+          "notes": "Translation of relics of the Protomartyr Stephen (415 AD). Uses Stephen's standard troparion. Rank 4."
+        }
+      ]
+    },
+    "08-03": {
+      "commemorations": [
+        {
+          "id": "isaakios-dalmatos-dalmatian",
+          "name": "Venerable Isaakios, Dalmatos, and Faustus",
+          "type": "monastic",
+          "rank": 4,
+          "troparion_tone": 8,
+          "troparion": null,
+          "troparion_status": "text-unavailable",
+          "tradition_tags": ["EOR"],
+          "notes": "Dalmatos (+440) and Faustus, abbots of the Dalmatian Monastery in Constantinople. Rank 4. Troparion text not securely confirmed."
+        }
+      ]
+    },
+    "08-04": {
+      "commemorations": [
+        {
+          "id": "seven-sleepers-ephesus",
+          "name": "The Seven Youths (Sleepers) of Ephesus",
+          "type": "martyr",
+          "rank": 4,
+          "troparion_tone": 4,
+          "troparion": null,
+          "troparion_status": "text-unavailable",
+          "tradition_tags": ["EOR"],
+          "notes": "The Seven Sleepers of Ephesus (+3rd c., awakened 5th c.). Rank 4. Troparion text not securely confirmed."
+        }
+      ]
+    },
+    "08-05": {
+      "commemorations": [
+        {
+          "id": "forefeast-transfiguration",
+          "name": "Forefeast of the Transfiguration of Our Lord",
+          "type": "feast",
+          "rank": 4,
+          "troparion_tone": 4,
+          "troparion": {
+            "tone": 4,
+            "title": "Troparion of the Forefeast of the Transfiguration",
+            "text": "Come, let us go up to the mount of the Lord and to the house of our God, and let us behold the glory of His Transfiguration, the glory as of the Only-begotten of the Father. Let us receive light from His light, with singing let us magnify Christ forever."
+          },
+          "troparion_status": "resolved",
+          "tradition_tags": ["EOR"],
+          "notes": "Forefeast of the Transfiguration. Rank 4."
+        }
+      ]
+    },
+    "08-06": {
+      "commemorations": [
+        {
+          "id": "transfiguration-lord",
+          "name": "The Holy Transfiguration of Our Lord God and Savior Jesus Christ",
+          "type": "feast",
+          "rank": 1,
+          "troparion_tone": 7,
+          "troparion": {
+            "tone": 7,
+            "title": "Troparion of the Transfiguration",
+            "text": "Thou wast transfigured on the mount, O Christ our God, revealing Thy glory to Thy disciples as far as they could bear it. Let Thine everlasting Light shine upon us sinners, through the intercessions of the Theotokos. O Giver of Light, glory to Thee."
+          },
+          "troparion_status": "resolved",
+          "tradition_tags": ["EOR", "OOR", "ANG", "LAT"],
+          "notes": "Great Feast — Transfiguration of Our Lord. Rank 1. One of the Twelve Great Feasts."
+        }
+      ]
+    },
+    "08-07": {
+      "commemorations": [
+        {
+          "id": "dometius-persia",
+          "name": "Venerable Martyr Dometios of Persia",
+          "type": "martyr",
+          "rank": 4,
+          "troparion_tone": 4,
+          "troparion": null,
+          "troparion_status": "text-unavailable",
+          "tradition_tags": ["EOR"],
+          "notes": "Dometios of Persia (+363), monk and martyr under Julian the Apostate. Rank 4. Troparion text not securely confirmed."
+        }
+      ]
+    },
+    "08-08": {
+      "commemorations": [
+        {
+          "id": "emilian-bishop-cyzicus",
+          "name": "St. Emilian the Confessor, Bishop of Cyzicus",
+          "type": "hierarch",
+          "rank": 4,
+          "troparion_tone": 4,
+          "troparion": null,
+          "troparion_status": "text-unavailable",
+          "tradition_tags": ["EOR"],
+          "notes": "Emilian of Cyzicus (+9th c.), confessor bishop under the Second Iconoclasm. Rank 4. Troparion text not securely confirmed."
+        }
+      ]
+    },
+    "08-09": {
+      "commemorations": [
+        {
+          "id": "matthias-apostle-august",
+          "name": "Holy Apostle Matthias",
+          "type": "apostle",
+          "rank": 3,
+          "troparion_tone": 3,
+          "troparion": {
+            "tone": 3,
+            "title": "Troparion of the Holy Apostle Matthias",
+            "text": "O Holy Apostle Matthias, intercede with the merciful God, that He grant our souls forgiveness of offences."
+          },
+          "troparion_status": "resolved",
+          "tradition_tags": ["EOR"],
+          "notes": "Matthias the Apostle, chosen to replace Judas (Acts 1:26). Rank 3. Standard apostle troparion form (Tone 3)."
+        }
+      ]
+    },
+    "08-10": {
+      "commemorations": [
+        {
+          "id": "lawrence-archdeacon-rome",
+          "name": "Holy Martyr and Archdeacon Lawrence of Rome",
+          "type": "martyr",
+          "rank": 4,
+          "troparion_tone": 4,
+          "troparion": null,
+          "troparion_status": "text-unavailable",
+          "tradition_tags": ["EOR", "LAT", "ANG"],
+          "notes": "Lawrence of Rome (+258), archdeacon and martyr under Valerian. Widely venerated East and West. Eastern troparion text not securely confirmed for corpus."
+        }
+      ]
+    },
+    "08-11": {
+      "commemorations": [
+        {
+          "id": "euplus-catania-deacon",
+          "name": "Holy Martyr Euplus (Euplius) of Catania",
+          "type": "martyr",
+          "rank": 4,
+          "troparion_tone": 4,
+          "troparion": null,
+          "troparion_status": "text-unavailable",
+          "tradition_tags": ["EOR"],
+          "notes": "Euplus of Catania (+304), deacon-martyr under Diocletian. Rank 4. Troparion text not securely confirmed."
+        }
+      ]
+    },
+    "08-12": {
+      "commemorations": [
+        {
+          "id": "phoebe-deaconess",
+          "name": "Holy Deaconess Phoebe",
+          "type": "saint",
+          "rank": 4,
+          "troparion_tone": 3,
+          "troparion": null,
+          "troparion_status": "text-unavailable",
+          "tradition_tags": ["EOR"],
+          "notes": "Phoebe the Deaconess (Romans 16:1), one of the Seventy. Rank 4. Troparion text not securely confirmed."
+        }
+      ]
+    },
+    "08-13": {
+      "commemorations": [
+        {
+          "id": "maximus-confessor",
+          "name": "Venerable Maximus the Confessor",
+          "type": "monastic",
+          "rank": 4,
+          "troparion_tone": 8,
+          "troparion": {
+            "tone": 8,
+            "title": "Troparion of St. Maximus the Confessor",
+            "text": "Guide of Orthodoxy, pillar and teacher of piety, luminary of the world and adornment of monks: O God-bearing Maximus, thou hast enlightened all by thy teachings. O harp of the Spirit, intercede with Christ our God that our souls may be saved."
+          },
+          "troparion_status": "resolved",
+          "tradition_tags": ["EOR", "LAT", "ANG"],
+          "notes": "Maximus the Confessor (+662), theologian and defender of Chalcedonian Christology against Monothelitism. Rank 4."
+        }
+      ]
+    },
+    "08-14": {
+      "commemorations": [
+        {
+          "id": "forefeast-dormition",
+          "name": "Forefeast of the Dormition of the Most Holy Theotokos",
+          "type": "marian_feast",
+          "rank": 4,
+          "troparion_tone": 1,
+          "troparion": {
+            "tone": 1,
+            "title": "Troparion of the Forefeast of the Dormition",
+            "text": "In thy birth thou didst preserve thy virginity; in thy falling asleep thou didst not forsake the world, O Theotokos. Thou wast translated to life, O Mother of Life, and by thine intercessions dost deliver our souls from death."
+          },
+          "troparion_status": "resolved",
+          "tradition_tags": ["EOR"],
+          "notes": "Forefeast of the Dormition. The Dormition Troparion is used. Rank 4."
+        }
+      ]
+    },
+    "08-15": {
+      "commemorations": [
+        {
+          "id": "dormition-theotokos",
+          "name": "The Dormition of Our Most Holy Lady, the Theotokos and Ever-Virgin Mary",
+          "type": "marian_feast",
+          "rank": 1,
+          "troparion_tone": 1,
+          "troparion": {
+            "tone": 1,
+            "title": "Troparion of the Dormition of the Theotokos",
+            "text": "In thy birth thou didst preserve thy virginity; in thy falling asleep thou didst not forsake the world, O Theotokos. Thou wast translated to life, O Mother of Life, and by thine intercessions dost deliver our souls from death."
+          },
+          "troparion_status": "resolved",
+          "tradition_tags": ["EOR", "OOR", "ANG", "LAT"],
+          "notes": "Great Feast — Dormition (Falling Asleep) of the Theotokos. Rank 1. One of the Twelve Great Feasts. Leavetaking Aug 23."
+        }
+      ]
+    },
+    "08-16": {
+      "commemorations": [
+        {
+          "id": "icon-not-made-by-hands",
+          "name": "Translation of the Image of Our Lord Jesus Christ Not Made by Hands (Holy Mandylion)",
+          "type": "feast",
+          "rank": 3,
+          "troparion_tone": 2,
+          "troparion": {
+            "tone": 2,
+            "title": "Troparion of the Image Not Made by Hands",
+            "text": "We venerate Thine immaculate image, O Good One, and ask forgiveness of our transgressions, O Christ our God; for by Thy will Thou wast pleased to ascend the Cross in Thy flesh to deliver from the bondage of the enemy those whom Thou hadst fashioned. Wherefore, we thankfully cry aloud to Thee: Thou didst fill all with joy, O our Savior, Thou Who camest to save the world."
+          },
+          "troparion_status": "resolved",
+          "tradition_tags": ["EOR"],
+          "notes": "Translation of the Holy Mandylion (Image Not Made by Hands) from Edessa to Constantinople (944 AD). Rank 3."
+        }
+      ]
+    },
+    "08-17": {
+      "commemorations": [
+        {
+          "id": "myron-martyr-cyzicus",
+          "name": "Holy Martyr Myron of Cyzicus",
+          "type": "martyr",
+          "rank": 4,
+          "troparion_tone": 4,
+          "troparion": null,
+          "troparion_status": "text-unavailable",
+          "tradition_tags": ["EOR"],
+          "notes": "Myron of Cyzicus (+3rd c.), presbyter-martyr. Rank 4. Troparion text not securely confirmed."
+        }
+      ]
+    },
+    "08-18": {
+      "commemorations": [
+        {
+          "id": "floros-lavros-martyrs",
+          "name": "Holy Martyrs Floros and Lavros",
+          "type": "martyr",
+          "rank": 4,
+          "troparion_tone": 4,
+          "troparion": null,
+          "troparion_status": "text-unavailable",
+          "tradition_tags": ["EOR"],
+          "notes": "Floros and Lavros (+2nd c.), stonemason-martyrs of Illyria. Rank 4. Patrons of horses in Slavic tradition. Troparion text not securely confirmed."
+        }
+      ]
+    },
+    "08-19": {
+      "commemorations": [
+        {
+          "id": "andrew-stratelates",
+          "name": "Holy Martyr Andrew Stratelates and companions",
+          "type": "martyr",
+          "rank": 4,
+          "troparion_tone": 4,
+          "troparion": null,
+          "troparion_status": "text-unavailable",
+          "tradition_tags": ["EOR"],
+          "notes": "Andrew Stratelates (+4th c.) and 2,593 companions, martyrs of Cilicia. Rank 4. Troparion text not securely confirmed."
+        }
+      ]
+    },
+    "08-20": {
+      "commemorations": [
+        {
+          "id": "samuel-prophet",
+          "name": "Holy Prophet Samuel",
+          "type": "prophet",
+          "rank": 4,
+          "troparion_tone": 2,
+          "troparion": {
+            "tone": 2,
+            "title": "Troparion of the Holy Prophet Samuel",
+            "text": "We celebrate the memory of Thy prophet Samuel, O Lord, and through him we beseech Thee: save our souls."
+          },
+          "troparion_status": "resolved",
+          "tradition_tags": ["EOR"],
+          "notes": "Samuel the Prophet (11th c. BC). Rank 4. Standard prophet troparion form."
+        }
+      ]
+    },
+    "08-21": {
+      "commemorations": [
+        {
+          "id": "thaddaeus-apostle",
+          "name": "Holy Apostle Thaddaeus",
+          "type": "apostle",
+          "rank": 4,
+          "troparion_tone": 3,
+          "troparion": {
+            "tone": 3,
+            "title": "Troparion of the Holy Apostle Thaddaeus",
+            "text": "O Holy Apostle Thaddaeus, intercede with the merciful God, that He grant our souls forgiveness of offences."
+          },
+          "troparion_status": "resolved",
+          "tradition_tags": ["EOR"],
+          "notes": "Thaddaeus, one of the Seventy Apostles (distinct from Jude-Thaddaeus), evangelist of Edessa. Rank 4. Standard apostle troparion form (Tone 3)."
+        }
+      ]
+    },
+    "08-22": {
+      "commemorations": [
+        {
+          "id": "agathonikos-martyr",
+          "name": "Holy Martyr Agathonikos and companions",
+          "type": "martyr",
+          "rank": 4,
+          "troparion_tone": 4,
+          "troparion": null,
+          "troparion_status": "text-unavailable",
+          "tradition_tags": ["EOR"],
+          "notes": "Agathonikos and companions (+3rd c.), martyrs of Nicomedia. Rank 4. Troparion text not securely confirmed."
+        }
+      ]
+    },
+    "08-23": {
+      "commemorations": [
+        {
+          "id": "leavetaking-dormition",
+          "name": "Leavetaking of the Dormition of the Theotokos",
+          "type": "marian_feast",
+          "rank": 4,
+          "troparion_tone": 1,
+          "troparion": {
+            "tone": 1,
+            "title": "Troparion of the Dormition (Leavetaking)",
+            "text": "In thy birth thou didst preserve thy virginity; in thy falling asleep thou didst not forsake the world, O Theotokos. Thou wast translated to life, O Mother of Life, and by thine intercessions dost deliver our souls from death."
+          },
+          "troparion_status": "resolved",
+          "tradition_tags": ["EOR"],
+          "notes": "Leavetaking of the Dormition. Dormition Troparion repeated. Rank 4."
+        }
+      ]
+    },
+    "08-24": {
+      "commemorations": [
+        {
+          "id": "eutyches-hieromartyr",
+          "name": "Hieromartyr Eutyches, Disciple of John the Theologian",
+          "type": "martyr",
+          "rank": 4,
+          "troparion_tone": 4,
+          "troparion": null,
+          "troparion_status": "text-unavailable",
+          "tradition_tags": ["EOR"],
+          "notes": "Eutyches (+1st c.), disciple of John and Paul, bishop and martyr. Rank 4. Troparion text not securely confirmed."
+        }
+      ]
+    },
+    "08-25": {
+      "commemorations": [
+        {
+          "id": "bartholomew-titus-apostles",
+          "name": "Holy Apostles Bartholomew and Titus",
+          "type": "apostle",
+          "rank": 3,
+          "troparion_tone": 3,
+          "troparion": {
+            "tone": 3,
+            "title": "Troparion of the Holy Apostles Bartholomew and Titus",
+            "text": "O Holy Apostles Bartholomew and Titus, intercede with the merciful God, that He grant our souls forgiveness of offences."
+          },
+          "troparion_status": "resolved",
+          "tradition_tags": ["EOR"],
+          "notes": "Bartholomew (one of the Twelve) and Titus (companion of Paul). Joint feast Aug 25. Rank 3. Standard apostle troparion form (Tone 3)."
+        }
+      ]
+    },
+    "08-26": {
+      "commemorations": [
+        {
+          "id": "tikhon-zadonsk",
+          "name": "St. Tikhon of Zadonsk, Bishop of Voronezh",
+          "type": "hierarch",
+          "rank": 3,
+          "troparion_tone": 8,
+          "troparion": {
+            "tone": 8,
+            "title": "Troparion of St. Tikhon of Zadonsk",
+            "text": "To the heritage of Christ thou wast a shepherd and teacher; thou didst accomplish the command of the Apostle Paul: 'I have become all things to all men.' O hierarch Tikhon, beseech Christ God to save our souls."
+          },
+          "troparion_status": "resolved",
+          "tradition_tags": ["EOR"],
+          "notes": "Tikhon of Zadonsk (+1783), Bishop of Voronezh, Russian monastic theologian. Glorified 1861. Rank 3."
+        }
+      ]
+    },
+    "08-27": {
+      "commemorations": [
+        {
+          "id": "pimen-great",
+          "name": "Venerable Pimen (Poemen) the Great",
+          "type": "monastic",
+          "rank": 4,
+          "troparion_tone": 8,
+          "troparion": null,
+          "troparion_status": "text-unavailable",
+          "tradition_tags": ["EOR"],
+          "notes": "Poemen the Great (+5th c.), Egyptian desert father, one of the most-quoted in the Apophthegmata Patrum. Rank 4. Troparion text not securely confirmed."
+        }
+      ]
+    },
+    "08-28": {
+      "commemorations": [
+        {
+          "id": "moses-prophet-ethiopia",
+          "name": "Venerable Moses the Ethiopian (the Black)",
+          "type": "monastic",
+          "rank": 4,
+          "troparion_tone": 8,
+          "troparion": null,
+          "troparion_status": "text-unavailable",
+          "tradition_tags": ["EOR"],
+          "notes": "Moses the Ethiopian (+ca. 405), former robber turned desert father in Scetis. Rank 4. Troparion text not securely confirmed."
+        }
+      ]
+    },
+    "08-29": {
+      "commemorations": [
+        {
+          "id": "beheading-john-baptist",
+          "name": "The Beheading of the Holy Glorious Prophet, Forerunner, and Baptist John",
+          "type": "feast",
+          "rank": 2,
+          "troparion_tone": 2,
+          "troparion": {
+            "tone": 2,
+            "title": "Troparion of the Beheading of John the Baptist",
+            "text": "The memory of the righteous is celebrated with praise, but the Lord's testimony is sufficient for thee, O Forerunner; for thou hast proved to be truly more venerable than the Prophets, since thou wast granted to baptize in the stream Him Whom they proclaimed. Wherefore, having contested for the truth, thou didst rejoice to announce to those in Hades the good tidings of God Who had appeared in the flesh; Who takes away the sin of the world, and grants us great mercy."
+          },
+          "troparion_status": "resolved",
+          "tradition_tags": ["EOR", "OOR", "ANG", "LAT"],
+          "notes": "Beheading of John the Baptist. Rank 2 (Polyeleos). A strict fast day. Same Troparion tone as the Synaxis of the Baptist (Jan 7)."
+        }
+      ]
+    },
+    "08-30": {
+      "commemorations": [
+        {
+          "id": "alexander-john-paul-cp-patriarchs",
+          "name": "Sts. Alexander, John, and Paul the New, Patriarchs of Constantinople",
+          "type": "hierarch",
+          "rank": 4,
+          "troparion_tone": 4,
+          "troparion": null,
+          "troparion_status": "text-unavailable",
+          "tradition_tags": ["EOR"],
+          "notes": "Alexander (+340), John (+595), and Paul the New (+784), patriarchs of Constantinople. Rank 4. Troparion text not securely confirmed."
+        }
+      ]
+    },
+    "08-31": {
+      "commemorations": [
+        {
+          "id": "deposition-belt-theotokos",
+          "name": "Deposition of the Precious Belt of the Most Holy Theotokos",
+          "type": "marian_feast",
+          "rank": 3,
+          "troparion_tone": 8,
+          "troparion": {
+            "tone": 8,
+            "title": "Troparion of the Deposition of the Belt of the Theotokos",
+            "text": "O Theotokos, thou art a vine grown from a noble root; thou hast blossomed as a blossom of incorruption; thou dost grant healing to all. We thy servants bless thee with faith and call thee blessed, as thou hast commanded."
+          },
+          "troparion_status": "resolved",
+          "tradition_tags": ["EOR"],
+          "notes": "Deposition of the Belt of the Theotokos at Constantinople (395 AD). Rank 3. Distinct from the Deposition of the Robe (Jul 2)."
+        }
+      ]
+    }
+  }
+}

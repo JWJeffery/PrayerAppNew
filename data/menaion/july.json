@@ -1,0 +1,544 @@
+{
+  "_meta": {
+    "file": "data/menaion/july.json",
+    "version": "1.0.0",
+    "schema_version": "1.0.0",
+    "month_number": 7,
+    "month_name": "July",
+    "calendar_style": "new-calendar",
+    "coverage_note": "FULL CORPUS — all 31 July dates. July contains the feast of the Holy Royal Martyrs (Jul 17, rank 3, Russian calendar), the Prophet Elijah (Jul 20, rank 2), the Equal-to-the-Apostles Mary Magdalene (Jul 22, rank 3), and the Holy Great Martyr Panteleimon (Jul 27, rank 3). Dates with unconfirmed troparion text carry troparion_status:'text-unavailable'.",
+    "imported_date_count": 31,
+    "total_days": 31
+  },
+  "dates": {
+    "07-01": {
+      "commemorations": [
+        {
+          "id": "cosmas-damian-rome",
+          "name": "Holy Unmercenary Physicians Cosmas and Damian of Rome",
+          "type": "martyr",
+          "rank": 4,
+          "troparion_tone": 8,
+          "troparion": {
+            "tone": 8,
+            "title": "Troparion of Sts. Cosmas and Damian",
+            "text": "O holy unmercenaries and wonder-workers Cosmas and Damian, visit our infirmities; freely ye received, freely give to us."
+          },
+          "troparion_status": "resolved",
+          "tradition_tags": ["EOR"],
+          "notes": "Cosmas and Damian of Rome (+3rd c.), martyred physicians. Rank 4. The unmercenary troparion. Distinct from the Asian pair (Nov 1) and the Arabian pair (Oct 17)."
+        }
+      ]
+    },
+    "07-02": {
+      "commemorations": [
+        {
+          "id": "deposition-robe-theotokos",
+          "name": "Deposition of the Robe of the Most Holy Theotokos at Blachernae",
+          "type": "marian_feast",
+          "rank": 3,
+          "troparion_tone": 8,
+          "troparion": {
+            "tone": 8,
+            "title": "Troparion of the Deposition of the Robe of the Theotokos",
+            "text": "O Theotokos, thou art a vine grown from a noble root; thou hast blossomed as a blossom of incorruption, and thou dost grant healing to all. We thy servants bless thee with faith and call thee blessed, as thou hast commanded."
+          },
+          "troparion_status": "resolved",
+          "tradition_tags": ["EOR"],
+          "notes": "Deposition of the Robe of the Theotokos at the Blachernae Church in Constantinople (5th c.). Rank 3."
+        }
+      ]
+    },
+    "07-03": {
+      "commemorations": [
+        {
+          "id": "hyacinth-caesarea",
+          "name": "Holy Martyr Hyacinth of Caesarea",
+          "type": "martyr",
+          "rank": 4,
+          "troparion_tone": 4,
+          "troparion": null,
+          "troparion_status": "text-unavailable",
+          "tradition_tags": ["EOR"],
+          "notes": "Hyacinth of Caesarea (+108), martyr under Trajan. Rank 4. Troparion text not securely confirmed."
+        }
+      ]
+    },
+    "07-04": {
+      "commemorations": [
+        {
+          "id": "andrew-crete-bishop",
+          "name": "St. Andrew of Crete, Archbishop of Gortyna",
+          "type": "hierarch",
+          "rank": 4,
+          "troparion_tone": 4,
+          "troparion": {
+            "tone": 4,
+            "title": "Troparion of St. Andrew of Crete",
+            "text": "As a guide of Orthodoxy, a teacher of piety and modesty, a luminary of the world and an adornment of hierarchs, thou hast enlightened all by thy teachings, O Andrew of Crete. Intercede with Christ our God for the salvation of our souls."
+          },
+          "troparion_status": "resolved",
+          "tradition_tags": ["EOR"],
+          "notes": "Andrew of Crete (+740), Archbishop of Gortyna and author of the Great Canon. Rank 4."
+        }
+      ]
+    },
+    "07-05": {
+      "commemorations": [
+        {
+          "id": "athanasios-athos",
+          "name": "Venerable Athanasios of Athos",
+          "type": "monastic",
+          "rank": 4,
+          "troparion_tone": 8,
+          "troparion": {
+            "tone": 8,
+            "title": "Troparion of St. Athanasios of Athos",
+            "text": "Through thy divine longing and love for God, O Athanasios, thou didst take up thy cross and follow Christ; founding the Great Lavra on the Holy Mountain, thou didst draw multitudes to the angelic life. Intercede with Christ our God that our souls may be saved."
+          },
+          "troparion_status": "resolved",
+          "tradition_tags": ["EOR"],
+          "notes": "Athanasios the Athonite (+1000), founder of the Great Lavra on Mt. Athos. Rank 4."
+        }
+      ]
+    },
+    "07-06": {
+      "commemorations": [
+        {
+          "id": "sisoes-great",
+          "name": "Venerable Sisoes the Great",
+          "type": "monastic",
+          "rank": 4,
+          "troparion_tone": 8,
+          "troparion": null,
+          "troparion_status": "text-unavailable",
+          "tradition_tags": ["EOR"],
+          "notes": "Sisoes the Great (+429), Egyptian desert father. Rank 4. Troparion text not securely confirmed."
+        }
+      ]
+    },
+    "07-07": {
+      "commemorations": [
+        {
+          "id": "thomas-apostle",
+          "name": "Holy Apostle Thomas",
+          "type": "apostle",
+          "rank": 3,
+          "troparion_tone": 2,
+          "troparion": {
+            "tone": 2,
+            "title": "Troparion of the Holy Apostle Thomas",
+            "text": "O Apostle Thomas, thou wast not absent from the burial of Christ, and thou wast the first to see His wounds after the Resurrection; thou didst confess Him as Lord and God. Pray thou to Christ our God that He may save our souls."
+          },
+          "troparion_status": "resolved",
+          "tradition_tags": ["EOR"],
+          "notes": "Thomas the Apostle (+72 AD). Rank 3. Also commemorated Oct 6 (synaxis of Apostles of the Seventy context)."
+        }
+      ]
+    },
+    "07-08": {
+      "commemorations": [
+        {
+          "id": "prokopios-caesarea-martyr",
+          "name": "Holy Great Martyr Prokopios of Caesarea",
+          "type": "martyr",
+          "rank": 3,
+          "troparion_tone": 4,
+          "troparion": {
+            "tone": 4,
+            "title": "Troparion of the Holy Great Martyr Prokopios",
+            "text": "Thy martyr Prokopios, O Lord, in his sufferings received an imperishable crown from Thee, our God; for having Thy strength, he laid low his adversaries and shattered the powerless boldness of demons. Through his intercessions, save our souls."
+          },
+          "troparion_status": "resolved",
+          "tradition_tags": ["EOR"],
+          "notes": "Prokopios of Caesarea (+303), military martyr under Diocletian. Rank 3."
+        }
+      ]
+    },
+    "07-09": {
+      "commemorations": [
+        {
+          "id": "paisios-great",
+          "name": "Venerable Paisios the Great",
+          "type": "monastic",
+          "rank": 4,
+          "troparion_tone": 8,
+          "troparion": null,
+          "troparion_status": "text-unavailable",
+          "tradition_tags": ["EOR"],
+          "notes": "Paisios the Great (+400), Egyptian monastic, disciple of Pambo. Rank 4. Troparion text not securely confirmed."
+        }
+      ]
+    },
+    "07-10": {
+      "commemorations": [
+        {
+          "id": "forty-five-martyrs-nicopolis",
+          "name": "Holy Forty-Five Martyrs of Nicopolis in Armenia",
+          "type": "martyr",
+          "rank": 4,
+          "troparion_tone": 4,
+          "troparion": null,
+          "troparion_status": "text-unavailable",
+          "tradition_tags": ["EOR"],
+          "notes": "Forty-five martyrs of Nicopolis in Armenia (+319), burned alive under Licinius. Rank 4. Troparion text not securely confirmed."
+        }
+      ]
+    },
+    "07-11": {
+      "commemorations": [
+        {
+          "id": "euphemia-great-martyr",
+          "name": "Holy Great Martyr Euphemia the All-Praised",
+          "type": "martyr",
+          "rank": 3,
+          "troparion_tone": 4,
+          "troparion": {
+            "tone": 4,
+            "title": "Troparion of the Holy Great Martyr Euphemia the All-Praised",
+            "text": "Thy lamb Euphemia crieth out to Thee with a loud voice: I love Thee, O my Bridegroom, and in seeking Thee I endure suffering, and am crucified and buried with Thee in Thy Baptism; and I suffer for Thy sake, that I may reign with Thee; and I die for Thee, that I may live with Thee. Accept me offered with longing as an unblemished sacrifice. Through her intercessions save our souls, as Thou art merciful."
+          },
+          "troparion_status": "resolved",
+          "tradition_tags": ["EOR"],
+          "notes": "Euphemia the All-Praised (+304), great martyr of Chalcedon. The Fourth Ecumenical Council (Chalcedon 451) is associated with her relics. Rank 3. Primary feast; also commemorated Sep 16."
+        }
+      ]
+    },
+    "07-12": {
+      "commemorations": [
+        {
+          "id": "proclus-hilary-martyrs",
+          "name": "Holy Martyrs Proclus and Hilary",
+          "type": "martyr",
+          "rank": 4,
+          "troparion_tone": 4,
+          "troparion": null,
+          "troparion_status": "text-unavailable",
+          "tradition_tags": ["EOR"],
+          "notes": "Proclus and Hilary (+115), martyrs under Trajan. Rank 4. Troparion text not securely confirmed."
+        }
+      ]
+    },
+    "07-13": {
+      "commemorations": [
+        {
+          "id": "gabriel-archangel-july",
+          "name": "Synaxis of the Holy Archangel Gabriel",
+          "type": "feast",
+          "rank": 4,
+          "troparion_tone": 4,
+          "troparion": {
+            "tone": 4,
+            "title": "Troparion of the Holy Archangel Gabriel",
+            "text": "O Gabriel, the leader of the bodiless hosts, we who are unworthy beseech thee: by thy supplications encompass us with the protection of the wings of thy spiritual glory, guarding us who fall down before thee and fervently cry: Deliver us from all harm, as the commander of the powers on high."
+          },
+          "troparion_status": "resolved",
+          "tradition_tags": ["EOR"],
+          "notes": "Second Synaxis of Archangel Gabriel in July. Rank 4. Uses the same troparion as Mar 26."
+        }
+      ]
+    },
+    "07-14": {
+      "commemorations": [
+        {
+          "id": "joseph-arimathea-nicodemus",
+          "name": "Holy Joseph of Arimathea and Nicodemus",
+          "type": "saint",
+          "rank": 4,
+          "troparion_tone": 2,
+          "troparion": null,
+          "troparion_status": "text-unavailable",
+          "tradition_tags": ["EOR"],
+          "notes": "Joseph of Arimathea and Nicodemus, those who buried Christ. Rank 4. Troparion text not securely confirmed."
+        }
+      ]
+    },
+    "07-15": {
+      "commemorations": [
+        {
+          "id": "vladimir-equal-apostles",
+          "name": "Holy Equal-to-the-Apostles Great Prince Vladimir of Russia",
+          "type": "saint",
+          "rank": 3,
+          "troparion_tone": 4,
+          "troparion": {
+            "tone": 4,
+            "title": "Troparion of St. Vladimir, Equal-to-the-Apostles",
+            "text": "O holy Equal-to-the-Apostles Vladimir, thou wast like the merchant seeking goodly pearls; when thou hadst found the precious pearl — Christ — thou didst shed the darkness of idolatry and adorn Russia with the divine light. Intercede with Christ our God that He may save our souls."
+          },
+          "troparion_status": "resolved",
+          "tradition_tags": ["EOR"],
+          "notes": "Vladimir I of Kiev (+1015), Baptizer of Russia, Equal-to-the-Apostles. Rank 3."
+        }
+      ]
+    },
+    "07-16": {
+      "commemorations": [
+        {
+          "id": "translation-robe-lord-moscow",
+          "name": "Translation of the Robe of Our Lord Jesus Christ to Moscow",
+          "type": "feast",
+          "rank": 4,
+          "troparion_tone": 8,
+          "troparion": null,
+          "troparion_status": "text-unavailable",
+          "tradition_tags": ["EOR"],
+          "notes": "Translation of a portion of the robe of Christ to Moscow (1625). Russian Orthodox calendar. Rank 4. Troparion text not securely confirmed."
+        }
+      ]
+    },
+    "07-17": {
+      "commemorations": [
+        {
+          "id": "royal-martyrs-russia",
+          "name": "Holy Royal Passion-Bearers Tsar Nicholas II and his family",
+          "type": "martyr",
+          "rank": 3,
+          "troparion_tone": 4,
+          "troparion": {
+            "tone": 4,
+            "title": "Troparion of the Holy Royal Passion-Bearers",
+            "text": "O holy Royal Passion-Bearers, ye bore the crown of martyrdom with meekness and humility, enduring suffering and death at the hands of the godless. Grant to the faithful people of Russia, who honor your memory, firmness in the Orthodox Faith and love for the Heavenly Fatherland."
+          },
+          "troparion_status": "resolved",
+          "tradition_tags": ["EOR"],
+          "notes": "Tsar Nicholas II, Tsaritsa Alexandra, and children (+1918). Glorified by ROC 2000. Rank 3. Russian Orthodox calendar primarily."
+        }
+      ]
+    },
+    "07-18": {
+      "commemorations": [
+        {
+          "id": "emilian-dorystolon",
+          "name": "Holy Martyr Emilian of Dorystolon",
+          "type": "martyr",
+          "rank": 4,
+          "troparion_tone": 4,
+          "troparion": null,
+          "troparion_status": "text-unavailable",
+          "tradition_tags": ["EOR"],
+          "notes": "Emilian of Dorystolon (+362), slave-martyr under Julian the Apostate. Rank 4. Troparion text not securely confirmed."
+        }
+      ]
+    },
+    "07-19": {
+      "commemorations": [
+        {
+          "id": "macrina-sister-basil",
+          "name": "Venerable Macrina, Sister of Basil the Great",
+          "type": "monastic",
+          "rank": 4,
+          "troparion_tone": 8,
+          "troparion": null,
+          "troparion_status": "text-unavailable",
+          "tradition_tags": ["EOR"],
+          "notes": "Macrina the Younger (+379), sister of Basil the Great and Gregory of Nyssa. Rank 4. Troparion text not securely confirmed."
+        }
+      ]
+    },
+    "07-20": {
+      "commemorations": [
+        {
+          "id": "elijah-prophet",
+          "name": "Holy Glorious Prophet Elijah the Tishbite",
+          "type": "prophet",
+          "rank": 2,
+          "troparion_tone": 4,
+          "troparion": {
+            "tone": 4,
+            "title": "Troparion of the Holy Prophet Elijah",
+            "text": "An angel in the flesh and a cornerstone of the Prophets, the second Forerunner of the coming of Christ, glorious Elijah sent grace from on high to Elisha, to dispel diseases and to cleanse lepers. Therefore he pours forth healings on those who honor him."
+          },
+          "troparion_status": "resolved",
+          "tradition_tags": ["EOR"],
+          "notes": "Elijah the Tishbite, Prophet. Rank 2 (Polyeleos). One of the most prominent Old Testament feasts in the Byzantine calendar."
+        }
+      ]
+    },
+    "07-21": {
+      "commemorations": [
+        {
+          "id": "symeon-fool-for-christ",
+          "name": "Venerable Symeon the Fool for Christ and John the Eremite",
+          "type": "monastic",
+          "rank": 4,
+          "troparion_tone": 8,
+          "troparion": null,
+          "troparion_status": "text-unavailable",
+          "tradition_tags": ["EOR"],
+          "notes": "Symeon of Emesa (+590), holy fool for Christ, and his companion John the Eremite. Rank 4. Troparion text not securely confirmed."
+        }
+      ]
+    },
+    "07-22": {
+      "commemorations": [
+        {
+          "id": "mary-magdalene-equal-apostles",
+          "name": "Holy Equal-to-the-Apostles Mary Magdalene",
+          "type": "saint",
+          "rank": 3,
+          "troparion_tone": 1,
+          "troparion": {
+            "tone": 1,
+            "title": "Troparion of St. Mary Magdalene",
+            "text": "O Christ our God, equal to the Apostles and myrrh-bearing Mary Magdalene proclaimed to the disciples the glad tidings of Thy Resurrection. Having been forgiven by Thee, she received the gift of Thy Spirit and now rejoices with the angels. Through her intercessions, O Lord, have mercy on us and save our souls."
+          },
+          "troparion_status": "resolved",
+          "tradition_tags": ["EOR", "LAT", "ANG"],
+          "notes": "Mary Magdalene (+1st c.), Equal-to-the-Apostles, myrrh-bearer and first witness of the Resurrection. Rank 3."
+        }
+      ]
+    },
+    "07-23": {
+      "commemorations": [
+        {
+          "id": "phocas-bishop-sinope",
+          "name": "Hieromartyr Phocas, Bishop of Sinope",
+          "type": "martyr",
+          "rank": 4,
+          "troparion_tone": 4,
+          "troparion": null,
+          "troparion_status": "text-unavailable",
+          "tradition_tags": ["EOR"],
+          "notes": "Phocas of Sinope (+117), bishop and martyr under Trajan. Rank 4. Troparion text not securely confirmed."
+        }
+      ]
+    },
+    "07-24": {
+      "commemorations": [
+        {
+          "id": "christina-tire-martyr",
+          "name": "Holy Great Martyr Christina of Tyre",
+          "type": "martyr",
+          "rank": 4,
+          "troparion_tone": 4,
+          "troparion": null,
+          "troparion_status": "text-unavailable",
+          "tradition_tags": ["EOR"],
+          "notes": "Christina of Tyre (+3rd c.), great martyr. Rank 4. Troparion text not securely confirmed."
+        }
+      ]
+    },
+    "07-25": {
+      "commemorations": [
+        {
+          "id": "dormition-anna-mother-theotokos",
+          "name": "Repose of St. Anna, Mother of the Most Holy Theotokos",
+          "type": "marian_feast",
+          "rank": 3,
+          "troparion_tone": 4,
+          "troparion": {
+            "tone": 4,
+            "title": "Troparion of St. Anna, Mother of the Theotokos",
+            "text": "Joachim and Anna were freed from the reproach of childlessness, and Adam and Eve from the corruption of death, O most holy one, by thy holy nativity. Thy people also celebrate thy repose, delivered from the guilt of transgressions through thee who gavest birth to God."
+          },
+          "troparion_status": "resolved",
+          "tradition_tags": ["EOR"],
+          "notes": "Repose of St. Anna, mother of the Theotokos. Rank 3. Feast of the repose distinct from the Conception of Anna (Dec 9) and the Nativity of the Theotokos (Sep 8)."
+        }
+      ]
+    },
+    "07-26": {
+      "commemorations": [
+        {
+          "id": "hermolaus-hieromartyr",
+          "name": "Hieromartyr Hermolaus and companions",
+          "type": "martyr",
+          "rank": 4,
+          "troparion_tone": 4,
+          "troparion": null,
+          "troparion_status": "text-unavailable",
+          "tradition_tags": ["EOR"],
+          "notes": "Hermolaus and companions (+305), martyrs under Diocletian in Nicomedia. Rank 4. Troparion text not securely confirmed."
+        }
+      ]
+    },
+    "07-27": {
+      "commemorations": [
+        {
+          "id": "panteleimon-great-martyr",
+          "name": "Holy Great Martyr and Healer Panteleimon",
+          "type": "martyr",
+          "rank": 3,
+          "troparion_tone": 3,
+          "troparion": {
+            "tone": 3,
+            "title": "Troparion of the Holy Great Martyr Panteleimon",
+            "text": "O passion-bearer and healer Panteleimon, intercede with the merciful God that He may grant to our souls forgiveness of our transgressions."
+          },
+          "troparion_status": "resolved",
+          "tradition_tags": ["EOR", "OOR"],
+          "notes": "Panteleimon (+305), physician-martyr of Nicomedia. Rank 3. Patron of physicians; the feast is widely observed."
+        }
+      ]
+    },
+    "07-28": {
+      "commemorations": [
+        {
+          "id": "prochorus-nicanor-timon-parmenas",
+          "name": "Holy Apostles Prochorus, Nicanor, Timon, and Parmenas",
+          "type": "apostle",
+          "rank": 4,
+          "troparion_tone": 3,
+          "troparion": {
+            "tone": 3,
+            "title": "Troparion of the Holy Apostles Prochorus, Nicanor, Timon, and Parmenas",
+            "text": "O Holy Apostles Prochorus, Nicanor, Timon, and Parmenas, intercede with the merciful God, that He grant our souls forgiveness of offences."
+          },
+          "troparion_status": "resolved",
+          "tradition_tags": ["EOR"],
+          "notes": "Four of the Seven Deacons (Acts 6:5). Rank 4. Standard apostle troparion form (Tone 3)."
+        }
+      ]
+    },
+    "07-29": {
+      "commemorations": [
+        {
+          "id": "callinicos-martyr",
+          "name": "Holy Martyr Callinicos of Gangra",
+          "type": "martyr",
+          "rank": 4,
+          "troparion_tone": 4,
+          "troparion": null,
+          "troparion_status": "text-unavailable",
+          "tradition_tags": ["EOR"],
+          "notes": "Callinicos of Gangra (+4th c.), martyr. Rank 4. Troparion text not securely confirmed."
+        }
+      ]
+    },
+    "07-30": {
+      "commemorations": [
+        {
+          "id": "silas-apostle",
+          "name": "Holy Apostle Silas",
+          "type": "apostle",
+          "rank": 4,
+          "troparion_tone": 3,
+          "troparion": {
+            "tone": 3,
+            "title": "Troparion of the Holy Apostle Silas",
+            "text": "O Holy Apostle Silas, intercede with the merciful God, that He grant our souls forgiveness of offences."
+          },
+          "troparion_status": "resolved",
+          "tradition_tags": ["EOR"],
+          "notes": "Silas, companion of Paul (Acts 15:22). Rank 4. Standard apostle troparion form (Tone 3)."
+        }
+      ]
+    },
+    "07-31": {
+      "commemorations": [
+        {
+          "id": "eudocimus-cappadocia",
+          "name": "Righteous Eudocimus of Cappadocia",
+          "type": "righteous",
+          "rank": 4,
+          "troparion_tone": 8,
+          "troparion": null,
+          "troparion_status": "text-unavailable",
+          "tradition_tags": ["EOR"],
+          "notes": "Eudocimus of Cappadocia (+9th c.), pious military officer. Rank 4. Troparion text not securely confirmed."
+        }
+      ]
+    }
+  }
+}

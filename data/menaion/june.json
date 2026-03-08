@@ -1,0 +1,513 @@
+{
+  "_meta": {
+    "file": "data/menaion/june.json",
+    "version": "1.0.0",
+    "schema_version": "1.0.0",
+    "month_number": 6,
+    "month_name": "June",
+    "calendar_style": "new-calendar",
+    "coverage_note": "FULL CORPUS — all 30 June dates. June contains the Nativity of John the Baptist (Jun 24, rank 1 Great Feast) and the Feast of the Holy Apostles Peter and Paul (Jun 29, rank 1). The Apostles' Fast precedes the Peter-Paul feast. Pentecost and Trinity Sunday may fall in June; Paschal feast-rank overrides deferred per governance. Dates with unconfirmed troparion text carry troparion_status:'text-unavailable'.",
+    "imported_date_count": 30,
+    "total_days": 30
+  },
+  "dates": {
+    "06-01": {
+      "commemorations": [
+        {
+          "id": "justin-martyr-philosopher",
+          "name": "Holy Martyr Justin the Philosopher",
+          "type": "martyr",
+          "rank": 4,
+          "troparion_tone": 4,
+          "troparion": {
+            "tone": 4,
+            "title": "Troparion of the Holy Martyr Justin the Philosopher",
+            "text": "Having known the truth through the study of wisdom, and having declared Christ before His enemies, thou didst seal thy witness with thy blood, O Justin the Philosopher. With bold confidence, O holy martyr, intercede for us before Christ our God."
+          },
+          "troparion_status": "resolved",
+          "tradition_tags": ["EOR", "LAT", "ANG"],
+          "notes": "Justin Martyr (+ca. 165), Christian apologist and philosopher, martyred in Rome. Rank 4."
+        }
+      ]
+    },
+    "06-02": {
+      "commemorations": [
+        {
+          "id": "nicephorus-patriarch-cp",
+          "name": "Translation of the Relics of St. Nicephorus, Patriarch of Constantinople",
+          "type": "hierarch",
+          "rank": 4,
+          "troparion_tone": 4,
+          "troparion": null,
+          "troparion_status": "text-unavailable",
+          "tradition_tags": ["EOR"],
+          "notes": "Translation of relics of Nicephorus I of Constantinople (+828), confessor under Iconoclasm. Rank 4. Troparion text not securely confirmed."
+        }
+      ]
+    },
+    "06-03": {
+      "commemorations": [
+        {
+          "id": "lucian-antioch-martyr",
+          "name": "Holy Martyr Lucillian and companions",
+          "type": "martyr",
+          "rank": 4,
+          "troparion_tone": 4,
+          "troparion": null,
+          "troparion_status": "text-unavailable",
+          "tradition_tags": ["EOR"],
+          "notes": "Lucillian and four young martyrs with him (+273), martyred in Byzantium. Rank 4. Troparion text not securely confirmed."
+        }
+      ]
+    },
+    "06-04": {
+      "commemorations": [
+        {
+          "id": "metrophanes-cp",
+          "name": "St. Metrophanes, First Patriarch of Constantinople",
+          "type": "hierarch",
+          "rank": 4,
+          "troparion_tone": 4,
+          "troparion": null,
+          "troparion_status": "text-unavailable",
+          "tradition_tags": ["EOR"],
+          "notes": "Metrophanes of Constantinople (+325), first patriarch. Rank 4. Troparion text not securely confirmed."
+        }
+      ]
+    },
+    "06-05": {
+      "commemorations": [
+        {
+          "id": "dorotheus-bishop-tyre",
+          "name": "Hieromartyr Dorotheus, Bishop of Tyre",
+          "type": "martyr",
+          "rank": 4,
+          "troparion_tone": 4,
+          "troparion": null,
+          "troparion_status": "text-unavailable",
+          "tradition_tags": ["EOR"],
+          "notes": "Dorotheus of Tyre (+362), bishop and martyr under Julian the Apostate. Rank 4. Troparion text not securely confirmed."
+        }
+      ]
+    },
+    "06-06": {
+      "commemorations": [
+        {
+          "id": "bessarion-egypt",
+          "name": "Venerable Bessarion of Egypt",
+          "type": "monastic",
+          "rank": 4,
+          "troparion_tone": 8,
+          "troparion": null,
+          "troparion_status": "text-unavailable",
+          "tradition_tags": ["EOR"],
+          "notes": "Bessarion the Wonder-Worker (+4th–5th c.), Egyptian desert father. Rank 4. Troparion text not securely confirmed."
+        }
+      ]
+    },
+    "06-07": {
+      "commemorations": [
+        {
+          "id": "theodotus-ancyra-bishop",
+          "name": "Hieromartyr Marcellus, Bishop of Rome",
+          "type": "martyr",
+          "rank": 4,
+          "troparion_tone": 4,
+          "troparion": null,
+          "troparion_status": "text-unavailable",
+          "tradition_tags": ["EOR"],
+          "notes": "Marcellus I, Bishop of Rome (+309), martyr. Rank 4. Troparion text not securely confirmed."
+        }
+      ]
+    },
+    "06-08": {
+      "commemorations": [
+        {
+          "id": "theodore-stratilates-translation",
+          "name": "Translation of the Relics of the Great Martyr Theodore Stratelates",
+          "type": "feast",
+          "rank": 4,
+          "troparion_tone": 4,
+          "troparion": {
+            "tone": 4,
+            "title": "Troparion of Theodore Stratelates (Translation of Relics)",
+            "text": "In thy sufferings, O Theodore Stratelates, thou didst receive an incorruptible crown from Christ God; as thou art adorned with thy blood, thou hast put to shame the false gods. By thy prayers deliver us from every adversity, O most lauded one."
+          },
+          "troparion_status": "resolved",
+          "tradition_tags": ["EOR"],
+          "notes": "Translation of relics of Theodore Stratelates (+319). Uses the same troparion as his primary feast (Feb 8, Tone 4). Rank 4."
+        }
+      ]
+    },
+    "06-09": {
+      "commemorations": [
+        {
+          "id": "cyril-alexandria-bishop",
+          "name": "St. Cyril, Archbishop of Alexandria",
+          "type": "hierarch",
+          "rank": 3,
+          "troparion_tone": 8,
+          "troparion": {
+            "tone": 8,
+            "title": "Troparion of St. Cyril of Alexandria",
+            "text": "As a guide of Orthodoxy, a teacher of piety and modesty, a luminary of the world and an adornment of hierarchs, thou hast enlightened all by thy teachings, O holy Cyril. Intercede with Christ our God to save our souls."
+          },
+          "troparion_status": "resolved",
+          "tradition_tags": ["EOR", "LAT", "ANG"],
+          "notes": "Cyril of Alexandria (+444), Doctor of the Church, champion of Theotokos title at Ephesus (431). Rank 3. Also commemorated Jan 18 together with Athanasius."
+        }
+      ]
+    },
+    "06-10": {
+      "commemorations": [
+        {
+          "id": "alexander-antonina-martyrs",
+          "name": "Holy Martyrs Alexander and Antonina",
+          "type": "martyr",
+          "rank": 4,
+          "troparion_tone": 4,
+          "troparion": null,
+          "troparion_status": "text-unavailable",
+          "tradition_tags": ["EOR"],
+          "notes": "Alexander and Antonina (+4th c.), martyrs of Caesarea in Cappadocia. Rank 4. Troparion text not securely confirmed."
+        }
+      ]
+    },
+    "06-11": {
+      "commemorations": [
+        {
+          "id": "bartholomew-barnabas-apostles",
+          "name": "Holy Apostles Bartholomew and Barnabas",
+          "type": "apostle",
+          "rank": 3,
+          "troparion_tone": 3,
+          "troparion": {
+            "tone": 3,
+            "title": "Troparion of the Holy Apostles Bartholomew and Barnabas",
+            "text": "O Holy Apostles Bartholomew and Barnabas, intercede with the merciful God, that He grant our souls forgiveness of offences."
+          },
+          "troparion_status": "resolved",
+          "tradition_tags": ["EOR"],
+          "notes": "Bartholomew (one of the Twelve) and Barnabas (companion of Paul, Acts 14). Joint feast Jun 11. Rank 3. Standard apostle troparion form (Tone 3)."
+        }
+      ]
+    },
+    "06-12": {
+      "commemorations": [
+        {
+          "id": "onuphrius-great",
+          "name": "Venerable Onuphrius the Great",
+          "type": "monastic",
+          "rank": 3,
+          "troparion_tone": 4,
+          "troparion": {
+            "tone": 4,
+            "title": "Troparion of St. Onuphrius the Great",
+            "text": "Earnestly desiring the life of the angels, O Onuphrius, thou didst clothe thyself in angelic virtue while still in the flesh; for having quenched the flame of the passions with the streams of compunction, thou hast bloomed in the desert as a fruitful tree, a man of God always abounding in virtues. Intercede with Christ our God that our souls may be saved."
+          },
+          "troparion_status": "resolved",
+          "tradition_tags": ["EOR"],
+          "notes": "Onuphrius the Great (+4th c.), naked ascetic of the Egyptian desert. Rank 3."
+        }
+      ]
+    },
+    "06-13": {
+      "commemorations": [
+        {
+          "id": "aquilina-byblos",
+          "name": "Holy Martyr Aquilina of Byblos",
+          "type": "martyr",
+          "rank": 4,
+          "troparion_tone": 4,
+          "troparion": null,
+          "troparion_status": "text-unavailable",
+          "tradition_tags": ["EOR"],
+          "notes": "Aquilina of Byblos (+293), child martyr under Diocletian. Rank 4. Troparion text not securely confirmed."
+        }
+      ]
+    },
+    "06-14": {
+      "commemorations": [
+        {
+          "id": "elisha-prophet",
+          "name": "Holy Prophet Elisha",
+          "type": "prophet",
+          "rank": 4,
+          "troparion_tone": 2,
+          "troparion": {
+            "tone": 2,
+            "title": "Troparion of the Holy Prophet Elisha",
+            "text": "We celebrate the memory of Thy prophet Elisha, O Lord, and through him we beseech Thee: save our souls."
+          },
+          "troparion_status": "resolved",
+          "tradition_tags": ["EOR"],
+          "notes": "Elisha the Prophet (9th c. BC), successor of Elijah. Rank 4. Standard prophet troparion form."
+        }
+      ]
+    },
+    "06-15": {
+      "commemorations": [
+        {
+          "id": "augustine-hippo",
+          "name": "Blessed Augustine, Bishop of Hippo",
+          "type": "hierarch",
+          "rank": 4,
+          "troparion_tone": 4,
+          "troparion": null,
+          "troparion_status": "text-unavailable",
+          "tradition_tags": ["EOR", "LAT", "ANG"],
+          "notes": "Augustine of Hippo (+430), Doctor of the Western Church. Venerated in Byzantine Menaion on Jun 15. Eastern troparion text not securely confirmed for corpus."
+        }
+      ]
+    },
+    "06-16": {
+      "commemorations": [
+        {
+          "id": "tikhon-amathous",
+          "name": "St. Tikhon, Bishop of Amathous in Cyprus",
+          "type": "hierarch",
+          "rank": 4,
+          "troparion_tone": 4,
+          "troparion": null,
+          "troparion_status": "text-unavailable",
+          "tradition_tags": ["EOR"],
+          "notes": "Tikhon of Amathous (+5th c.), Cypriot bishop and wonder-worker. Rank 4. Troparion text not securely confirmed."
+        }
+      ]
+    },
+    "06-17": {
+      "commemorations": [
+        {
+          "id": "manuel-sabel-ismael",
+          "name": "Holy Martyrs Manuel, Sabel, and Ismael",
+          "type": "martyr",
+          "rank": 4,
+          "troparion_tone": 4,
+          "troparion": null,
+          "troparion_status": "text-unavailable",
+          "tradition_tags": ["EOR"],
+          "notes": "Manuel, Sabel, and Ismael (+362), Persian martyrs under Julian the Apostate. Rank 4. Troparion text not securely confirmed."
+        }
+      ]
+    },
+    "06-18": {
+      "commemorations": [
+        {
+          "id": "leontius-martyr",
+          "name": "Holy Martyr Leontius of Phoenicia",
+          "type": "martyr",
+          "rank": 4,
+          "troparion_tone": 4,
+          "troparion": null,
+          "troparion_status": "text-unavailable",
+          "tradition_tags": ["EOR"],
+          "notes": "Leontius of Phoenicia (+2nd c.), soldier-martyr under Vespasian. Rank 4. Troparion text not securely confirmed."
+        }
+      ]
+    },
+    "06-19": {
+      "commemorations": [
+        {
+          "id": "jude-apostle-brother-lord",
+          "name": "Holy Apostle Jude, Brother of the Lord",
+          "type": "apostle",
+          "rank": 3,
+          "troparion_tone": 1,
+          "troparion": {
+            "tone": 1,
+            "title": "Troparion of the Holy Apostle Jude, Brother of the Lord",
+            "text": "O Apostle Jude, relative of Christ our God and pillar of the Church, intercede with the Master of all that He grant peace to all the world and to our souls great mercy."
+          },
+          "troparion_status": "resolved",
+          "tradition_tags": ["EOR"],
+          "notes": "Jude, Brother of the Lord (Thaddaeus), author of the Epistle of Jude. Rank 3."
+        }
+      ]
+    },
+    "06-20": {
+      "commemorations": [
+        {
+          "id": "methodius-bishop-patara",
+          "name": "Hieromartyr Methodius, Bishop of Patara",
+          "type": "martyr",
+          "rank": 4,
+          "troparion_tone": 4,
+          "troparion": null,
+          "troparion_status": "text-unavailable",
+          "tradition_tags": ["EOR"],
+          "notes": "Methodius of Olympus (+ca. 311), bishop and theologian, author of the Symposium. Rank 4. Troparion text not securely confirmed."
+        }
+      ]
+    },
+    "06-21": {
+      "commemorations": [
+        {
+          "id": "julian-tarsus-martyr",
+          "name": "Holy Martyr Julian of Tarsus",
+          "type": "martyr",
+          "rank": 4,
+          "troparion_tone": 4,
+          "troparion": null,
+          "troparion_status": "text-unavailable",
+          "tradition_tags": ["EOR"],
+          "notes": "Julian of Tarsus (+3rd c.), young martyr. Rank 4. Troparion text not securely confirmed."
+        }
+      ]
+    },
+    "06-22": {
+      "commemorations": [
+        {
+          "id": "eusebius-samosata",
+          "name": "Hieromartyr Eusebius, Bishop of Samosata",
+          "type": "martyr",
+          "rank": 3,
+          "troparion_tone": 4,
+          "troparion": {
+            "tone": 4,
+            "title": "Troparion of the Hieromartyr Eusebius of Samosata",
+            "text": "Thou didst share in the ways of the apostles and occupy their throne; thou didst find the practice of virtue to be a passage to divine vision. Wherefore, having rightly divided the word of truth, thou didst also pour out thy blood for the faith, O Hieromartyr Eusebius. Intercede with Christ God to save our souls."
+          },
+          "troparion_status": "resolved",
+          "tradition_tags": ["EOR"],
+          "notes": "Eusebius of Samosata (+380), bishop, defender of Nicene faith, martyred by Arian. Rank 3."
+        }
+      ]
+    },
+    "06-23": {
+      "commemorations": [
+        {
+          "id": "agrippina-rome-martyr",
+          "name": "Holy Martyr Agrippina of Rome",
+          "type": "martyr",
+          "rank": 4,
+          "troparion_tone": 4,
+          "troparion": null,
+          "troparion_status": "text-unavailable",
+          "tradition_tags": ["EOR"],
+          "notes": "Agrippina of Rome (+3rd c.), virgin martyr. Rank 4. Troparion text not securely confirmed."
+        }
+      ]
+    },
+    "06-24": {
+      "commemorations": [
+        {
+          "id": "nativity-john-baptist",
+          "name": "The Nativity of the Holy Glorious Prophet, Forerunner, and Baptist John",
+          "type": "feast",
+          "rank": 1,
+          "troparion_tone": 4,
+          "troparion": {
+            "tone": 4,
+            "title": "Troparion of the Nativity of John the Baptist",
+            "text": "The Prophet and Forerunner of the coming of Christ, we worthily honor thee with love, for the barrenness of her that bore thee was loosed by the divine grace, and the dumbness of the father was freed by thy divine birth, O Baptist John, and the Incarnation of the Son of God is proclaimed to the world."
+          },
+          "troparion_status": "resolved",
+          "tradition_tags": ["EOR", "OOR", "ANG", "LAT"],
+          "notes": "Great Feast — Nativity of John the Baptist. Rank 1."
+        }
+      ]
+    },
+    "06-25": {
+      "commemorations": [
+        {
+          "id": "febronia-nisibis",
+          "name": "Venerable Martyr Febronia of Nisibis",
+          "type": "martyr",
+          "rank": 4,
+          "troparion_tone": 4,
+          "troparion": null,
+          "troparion_status": "text-unavailable",
+          "tradition_tags": ["EOR"],
+          "notes": "Febronia of Nisibis (+ca. 304), nun and martyr under Diocletian. Rank 4. Troparion text not securely confirmed."
+        }
+      ]
+    },
+    "06-26": {
+      "commemorations": [
+        {
+          "id": "david-thessalonica",
+          "name": "Venerable David of Thessalonica",
+          "type": "monastic",
+          "rank": 4,
+          "troparion_tone": 8,
+          "troparion": null,
+          "troparion_status": "text-unavailable",
+          "tradition_tags": ["EOR"],
+          "notes": "David of Thessalonica (+6th c.), dendrite ascetic who lived in an almond tree. Rank 4. Troparion text not securely confirmed."
+        }
+      ]
+    },
+    "06-27": {
+      "commemorations": [
+        {
+          "id": "sampson-inn-keeper",
+          "name": "Venerable Sampson the Hospitable",
+          "type": "saint",
+          "rank": 4,
+          "troparion_tone": 8,
+          "troparion": null,
+          "troparion_status": "text-unavailable",
+          "tradition_tags": ["EOR"],
+          "notes": "Sampson the Hospitable (+6th c.), physician-saint and founder of a hospice in Constantinople. Rank 4. Troparion text not securely confirmed."
+        }
+      ]
+    },
+    "06-28": {
+      "commemorations": [
+        {
+          "id": "paul-peter-apostles-forefeast",
+          "name": "Forefeast of the Feast of the Holy Apostles Peter and Paul",
+          "type": "feast",
+          "rank": 4,
+          "troparion_tone": 4,
+          "troparion": {
+            "tone": 4,
+            "title": "Troparion of the Forefeast of Peter and Paul",
+            "text": "O Chief Apostles Peter and Paul, ye are the foundations of the Church and its teachers; through your intercessions establish her in peace, O Only Lover of mankind."
+          },
+          "troparion_status": "resolved",
+          "tradition_tags": ["EOR"],
+          "notes": "Forefeast of the Feast of Sts. Peter and Paul (Jun 29). Uses the apostles' troparion. Rank 4."
+        }
+      ]
+    },
+    "06-29": {
+      "commemorations": [
+        {
+          "id": "peter-paul-apostles",
+          "name": "The Holy Glorious and All-Praised Chief Apostles Peter and Paul",
+          "type": "apostle",
+          "rank": 1,
+          "troparion_tone": 4,
+          "troparion": {
+            "tone": 4,
+            "title": "Troparion of the Holy Chief Apostles Peter and Paul",
+            "text": "O Chief Apostles Peter and Paul, ye are the foundations of the Church and its teachers; through your intercessions establish her in peace, O Only Lover of mankind."
+          },
+          "troparion_status": "resolved",
+          "tradition_tags": ["EOR", "OOR", "ANG", "LAT"],
+          "notes": "Feast of the Holy Apostles Peter and Paul. Rank 1 (Great Feast level in many calendars; technically ranked as Great Feast or rank 2 depending on typikon — entered here as rank 1 per OCA usage). End of the Apostles' Fast."
+        }
+      ]
+    },
+    "06-30": {
+      "commemorations": [
+        {
+          "id": "synaxis-twelve-apostles",
+          "name": "Synaxis of the Holy Glorious and All-Praised Twelve Apostles",
+          "type": "apostle",
+          "rank": 3,
+          "troparion_tone": 3,
+          "troparion": {
+            "tone": 3,
+            "title": "Troparion of the Synaxis of the Twelve Apostles",
+            "text": "O holy Apostles, intercede with the merciful God that He may grant our souls forgiveness of transgressions."
+          },
+          "troparion_status": "resolved",
+          "tradition_tags": ["EOR"],
+          "notes": "Synaxis of the Holy Twelve Apostles — the day after the Peter-Paul feast. Rank 3."
+        }
+      ]
+    }
+  }
+}
