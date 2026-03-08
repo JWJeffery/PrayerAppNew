@@ -52,10 +52,10 @@ const MenaionResolver = (() => {
     // Keys: month number (1–12). Values: filename stem.
     // Add entries here as monthly files are imported.
     const MONTH_FILES = {
-    // 1:  'january',    // not yet imported
-    // 2:  'february',   // not yet imported
-    // 3:  'march',      // not yet imported
-    // 4:  'april',      // not yet imported
+    1:  'january',    // FULL CORPUS — all 30 dates (2026-03-07)
+    2:  'february',   // FULL CORPUS — all 28 dates (2026-03-07)
+    3:  'march',      // FULL CORPUS — all 31 dates (2026-03-07)
+    4:  'april',      // FULL CORPUS — all 30 dates (2026-03-07)
     // 5:  'may',        // not yet imported
     // 6:  'june',       // not yet imported
     // 7:  'july',       // not yet imported

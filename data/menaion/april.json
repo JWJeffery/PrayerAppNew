@@ -1,0 +1,509 @@
+{
+  "_meta": {
+    "file": "data/menaion/april.json",
+    "version": "1.0.0",
+    "schema_version": "1.0.0",
+    "month_number": 4,
+    "month_name": "April",
+    "calendar_style": "new-calendar",
+    "coverage_note": "FULL CORPUS — all 30 April dates. April contains the feast of St. George the Great Martyr (Apr 23, rank 2) and St. Mark the Evangelist (Apr 25, rank 2). Pascha and Bright Week fall wholly or partly in April in many years; Paschal feast-rank overrides are deferred per governance. Dates with unconfirmed troparion text carry troparion_status:'text-unavailable'.",
+    "imported_date_count": 30,
+    "total_days": 30
+  },
+  "dates": {
+    "04-01": {
+      "commemorations": [
+        {
+          "id": "mary-egypt",
+          "name": "Venerable Mary of Egypt",
+          "type": "monastic",
+          "rank": 3,
+          "troparion_tone": 8,
+          "troparion": {
+            "tone": 8,
+            "title": "Troparion of St. Mary of Egypt",
+            "text": "The image of God was truly preserved in thee, O Mother, for thou didst take up the Cross and follow Christ. By so doing, thou hast taught us to disregard the flesh, for it passes away, but to care instead for the soul, since it is immortal. Therefore thy spirit, O holy Mary, rejoices with the angels."
+          },
+          "troparion_status": "resolved",
+          "tradition_tags": ["EOR"],
+          "notes": "Mary of Egypt (+ca. 421), penitent desert mother, commemorated on the Fifth Sunday of Great Lent (movable) and fixed on April 1. Rank 3."
+        }
+      ]
+    },
+    "04-02": {
+      "commemorations": [
+        {
+          "id": "titus-wonder-worker",
+          "name": "Venerable Titus the Wonder-Worker",
+          "type": "monastic",
+          "rank": 4,
+          "troparion_tone": 8,
+          "troparion": null,
+          "troparion_status": "text-unavailable",
+          "tradition_tags": ["EOR"],
+          "notes": "Titus the Wonder-Worker (+9th c.), monk, confessor under Iconoclasm. Rank 4. Troparion text not securely confirmed."
+        }
+      ]
+    },
+    "04-03": {
+      "commemorations": [
+        {
+          "id": "nicetas-medikion",
+          "name": "Venerable Nicetas, Hegumen of Medikion",
+          "type": "monastic",
+          "rank": 4,
+          "troparion_tone": 4,
+          "troparion": null,
+          "troparion_status": "text-unavailable",
+          "tradition_tags": ["EOR"],
+          "notes": "Nicetas of Medikion (+824), abbot and confessor under the Second Iconoclasm. Rank 4. Troparion text not securely confirmed."
+        }
+      ]
+    },
+    "04-04": {
+      "commemorations": [
+        {
+          "id": "george-mtsmindeli",
+          "name": "Venerable George the Hagiorite (of Mt. Athos)",
+          "type": "monastic",
+          "rank": 4,
+          "troparion_tone": 8,
+          "troparion": null,
+          "troparion_status": "text-unavailable",
+          "tradition_tags": ["EOR"],
+          "notes": "George the Hagiorite (+1065), Georgian monk of Mt. Athos, translator and churchman. Rank 4. Troparion text not securely confirmed."
+        }
+      ]
+    },
+    "04-05": {
+      "commemorations": [
+        {
+          "id": "claudius-diodorus-victor-papias",
+          "name": "Holy Martyrs Claudius, Diodorus, Victor, and Papias",
+          "type": "martyr",
+          "rank": 4,
+          "troparion_tone": 4,
+          "troparion": null,
+          "troparion_status": "text-unavailable",
+          "tradition_tags": ["EOR"],
+          "notes": "Claudius, Diodorus, Victor, Papias and companions, martyrs of Corinth (+3rd c.). Rank 4. Troparion text not securely confirmed."
+        }
+      ]
+    },
+    "04-06": {
+      "commemorations": [
+        {
+          "id": "eutychios-patriarch-constantinople",
+          "name": "St. Eutychios, Patriarch of Constantinople",
+          "type": "hierarch",
+          "rank": 4,
+          "troparion_tone": 4,
+          "troparion": null,
+          "troparion_status": "text-unavailable",
+          "tradition_tags": ["EOR"],
+          "notes": "Eutychios of Constantinople (+582), twice patriarch, defender of Chalcedonian Christology. Rank 4. Troparion text not securely confirmed."
+        }
+      ]
+    },
+    "04-07": {
+      "commemorations": [
+        {
+          "id": "george-maleon",
+          "name": "Venerable George of Maleon",
+          "type": "monastic",
+          "rank": 4,
+          "troparion_tone": 8,
+          "troparion": null,
+          "troparion_status": "text-unavailable",
+          "tradition_tags": ["EOR"],
+          "notes": "George of Maleon (+10th c.), Byzantine hesychast. Rank 4. Troparion text not securely confirmed."
+        }
+      ]
+    },
+    "04-08": {
+      "commemorations": [
+        {
+          "id": "herodion-asyncritus-phlegon",
+          "name": "Holy Apostles Herodion, Asyncritus, and Phlegon",
+          "type": "apostle",
+          "rank": 4,
+          "troparion_tone": 3,
+          "troparion": {
+            "tone": 3,
+            "title": "Troparion of the Holy Apostles Herodion, Asyncritus, and Phlegon",
+            "text": "O Holy Apostles Herodion, Asyncritus, and Phlegon, intercede with the merciful God, that He grant our souls forgiveness of offences."
+          },
+          "troparion_status": "resolved",
+          "tradition_tags": ["EOR"],
+          "notes": "Herodion, Asyncritus, Phlegon — Apostles of the Seventy (Romans 16:11, 14). Rank 4. Standard apostle troparion form (Tone 3)."
+        }
+      ]
+    },
+    "04-09": {
+      "commemorations": [
+        {
+          "id": "eupsychios-caesarea",
+          "name": "Holy Martyr Eupsychios of Caesarea",
+          "type": "martyr",
+          "rank": 4,
+          "troparion_tone": 4,
+          "troparion": null,
+          "troparion_status": "text-unavailable",
+          "tradition_tags": ["EOR"],
+          "notes": "Eupsychios of Caesarea in Cappadocia (+362), martyr under Julian. Rank 4. Troparion text not securely confirmed."
+        }
+      ]
+    },
+    "04-10": {
+      "commemorations": [
+        {
+          "id": "terence-pompeius-companions",
+          "name": "Holy Martyrs Terence, Pompeius, and companions",
+          "type": "martyr",
+          "rank": 4,
+          "troparion_tone": 4,
+          "troparion": null,
+          "troparion_status": "text-unavailable",
+          "tradition_tags": ["EOR"],
+          "notes": "Terence, Pompeius, and companions, martyrs of Africa (+3rd c.). Rank 4. Troparion text not securely confirmed."
+        }
+      ]
+    },
+    "04-11": {
+      "commemorations": [
+        {
+          "id": "antipas-pergamon",
+          "name": "Hieromartyr Antipas of Pergamon",
+          "type": "martyr",
+          "rank": 4,
+          "troparion_tone": 4,
+          "troparion": {
+            "tone": 4,
+            "title": "Troparion of the Hieromartyr Antipas of Pergamon",
+            "text": "Thou didst share in the ways of the apostles and occupy their throne; thou didst find the practice of virtue to be a passage to divine vision. Wherefore, having rightly divided the word of truth, thou didst also pour out thy blood for the faith, O Hieromartyr Antipas. Intercede with Christ God to save our souls."
+          },
+          "troparion_status": "resolved",
+          "tradition_tags": ["EOR"],
+          "notes": "Antipas of Pergamon (+ca. 92 AD), bishop and martyr, mentioned in Revelation 2:13. Rank 4."
+        }
+      ]
+    },
+    "04-12": {
+      "commemorations": [
+        {
+          "id": "basil-bishop-parium",
+          "name": "Hieromartyr Basil, Bishop of Parium",
+          "type": "martyr",
+          "rank": 4,
+          "troparion_tone": 4,
+          "troparion": null,
+          "troparion_status": "text-unavailable",
+          "tradition_tags": ["EOR"],
+          "notes": "Basil of Parium (+3rd c.), bishop and martyr. Rank 4. Troparion text not securely confirmed."
+        }
+      ]
+    },
+    "04-13": {
+      "commemorations": [
+        {
+          "id": "martin-pope-rome",
+          "name": "Hieromartyr Martin, Pope of Rome",
+          "type": "martyr",
+          "rank": 3,
+          "troparion_tone": 4,
+          "troparion": {
+            "tone": 4,
+            "title": "Troparion of the Hieromartyr Martin, Pope of Rome",
+            "text": "O Martin, thou wast a successor of the Apostles in the throne and in their ways; thou didst find practice of virtue to be a passage to divine vision; wherefore, having rightly divided the word of truth, and poured out thy blood for the Faith, thou dost intercede with Christ our God to save our souls."
+          },
+          "troparion_status": "resolved",
+          "tradition_tags": ["EOR"],
+          "notes": "Martin I, Pope of Rome (+655), exiled and martyred for defending the Third Council of Constantinople against Monothelitism. Rank 3. Venerated as a confessor and martyr in both East and West."
+        }
+      ]
+    },
+    "04-14": {
+      "commemorations": [
+        {
+          "id": "martin-confessor-pope",
+          "name": "St. Martin the Confessor, Pope of Rome",
+          "type": "hierarch",
+          "rank": 4,
+          "troparion_tone": 4,
+          "troparion": null,
+          "troparion_status": "text-unavailable",
+          "tradition_tags": ["EOR"],
+          "notes": "Some calendars observe a separate commemoration of St. Martin on Apr 14 alongside Sts. Ardalion and companions. Rank 4. Troparion text not securely confirmed."
+        }
+      ]
+    },
+    "04-15": {
+      "commemorations": [
+        {
+          "id": "aristarchus-pudens-trophimus",
+          "name": "Holy Apostles Aristarchus, Pudens, and Trophimus",
+          "type": "apostle",
+          "rank": 4,
+          "troparion_tone": 3,
+          "troparion": {
+            "tone": 3,
+            "title": "Troparion of the Holy Apostles Aristarchus, Pudens, and Trophimus",
+            "text": "O Holy Apostles Aristarchus, Pudens, and Trophimus, intercede with the merciful God, that He grant our souls forgiveness of offences."
+          },
+          "troparion_status": "resolved",
+          "tradition_tags": ["EOR"],
+          "notes": "Aristarchus, Pudens, Trophimus — Apostles of the Seventy, companions of Paul. Rank 4. Standard apostle troparion form (Tone 3)."
+        }
+      ]
+    },
+    "04-16": {
+      "commemorations": [
+        {
+          "id": "irene-great-martyr",
+          "name": "Holy Great Martyr Irene",
+          "type": "martyr",
+          "rank": 3,
+          "troparion_tone": 4,
+          "troparion": {
+            "tone": 4,
+            "title": "Troparion of the Holy Great Martyr Irene",
+            "text": "Thy lamb Irene crieth out to Thee with a loud voice: I love Thee, O my Bridegroom, and in seeking Thee I endure suffering, and am crucified and buried with Thee in Thy Baptism; and I suffer for Thy sake, that I may reign with Thee; and I die for Thee, that I may live with Thee. Accept me offered with longing as an unblemished sacrifice. Through her intercessions save our souls, as Thou art merciful."
+          },
+          "troparion_status": "resolved",
+          "tradition_tags": ["EOR"],
+          "notes": "Irene the Great Martyr (+303), martyred under Diocletian. Rank 3. Prominent in the Greek tradition."
+        }
+      ]
+    },
+    "04-17": {
+      "commemorations": [
+        {
+          "id": "symeon-bishop-persia",
+          "name": "Hieromartyr Symeon, Bishop of Persia, and companions",
+          "type": "martyr",
+          "rank": 4,
+          "troparion_tone": 4,
+          "troparion": null,
+          "troparion_status": "text-unavailable",
+          "tradition_tags": ["EOR"],
+          "notes": "Symeon bar Sabbae (+341), bishop of Seleucia-Ctesiphon and martyr under Shapur II of Persia. Rank 4. Troparion text not securely confirmed."
+        }
+      ]
+    },
+    "04-18": {
+      "commemorations": [
+        {
+          "id": "john-disciple-gregory-theologian",
+          "name": "Venerable John, Disciple of St. Gregory the Theologian",
+          "type": "monastic",
+          "rank": 4,
+          "troparion_tone": 8,
+          "troparion": null,
+          "troparion_status": "text-unavailable",
+          "tradition_tags": ["EOR"],
+          "notes": "John, disciple of Gregory the Theologian (+4th c.). Rank 4. Troparion text not securely confirmed."
+        }
+      ]
+    },
+    "04-19": {
+      "commemorations": [
+        {
+          "id": "john-of-old-lavra",
+          "name": "Venerable John of the Old Lavra",
+          "type": "monastic",
+          "rank": 4,
+          "troparion_tone": 8,
+          "troparion": null,
+          "troparion_status": "text-unavailable",
+          "tradition_tags": ["EOR"],
+          "notes": "John of the Old Lavra (+6th c.), Palestinian desert father. Rank 4. Troparion text not securely confirmed."
+        }
+      ]
+    },
+    "04-20": {
+      "commemorations": [
+        {
+          "id": "anastasia-rome-martyr",
+          "name": "Holy Martyr Anastasia of Rome",
+          "type": "martyr",
+          "rank": 4,
+          "troparion_tone": 4,
+          "troparion": null,
+          "troparion_status": "text-unavailable",
+          "tradition_tags": ["EOR"],
+          "notes": "Anastasia of Rome (+3rd c.), martyr. Rank 4. Distinct from Anastasia the Great Martyr (Dec 22). Troparion text not securely confirmed."
+        }
+      ]
+    },
+    "04-21": {
+      "commemorations": [
+        {
+          "id": "januarius-bishop-beneventum",
+          "name": "Hieromartyr Januarius, Bishop of Beneventum",
+          "type": "martyr",
+          "rank": 4,
+          "troparion_tone": 4,
+          "troparion": null,
+          "troparion_status": "text-unavailable",
+          "tradition_tags": ["EOR", "LAT"],
+          "notes": "Januarius of Beneventum (+305), bishop and martyr. Widely venerated in both East and West. Eastern troparion text not securely confirmed for corpus."
+        }
+      ]
+    },
+    "04-22": {
+      "commemorations": [
+        {
+          "id": "theodore-sykeote",
+          "name": "Venerable Theodore of Sykeon",
+          "type": "monastic",
+          "rank": 3,
+          "troparion_tone": 4,
+          "troparion": {
+            "tone": 4,
+            "title": "Troparion of St. Theodore of Sykeon",
+            "text": "Having been a vessel of virtues from thy youth, thou didst become a divine dwelling-place by thy labours, O Father Theodore; for thou hast received the grace of healing from the Lord. Wherefore, we pray thee, heal the infirmities of our souls and bodies."
+          },
+          "troparion_status": "resolved",
+          "tradition_tags": ["EOR"],
+          "notes": "Theodore of Sykeon (+613), bishop of Anastasioupolis, wonder-worker and ascetic. Rank 3."
+        }
+      ]
+    },
+    "04-23": {
+      "commemorations": [
+        {
+          "id": "george-great-martyr",
+          "name": "Holy Great Martyr George the Trophy-Bearer",
+          "type": "martyr",
+          "rank": 2,
+          "troparion_tone": 4,
+          "troparion": {
+            "tone": 4,
+            "title": "Troparion of the Holy Great Martyr George",
+            "text": "As a deliverer of captives and a defender of the poor, a physician to the sick and a champion of kings, O trophy-bearing Great Martyr George, intercede with Christ God that our souls may be saved."
+          },
+          "troparion_status": "resolved",
+          "tradition_tags": ["EOR", "OOR", "ANG", "LAT"],
+          "notes": "George the Great Martyr (+ca. 303), trophy-bearer and victory-martyr. Rank 2 (Polyeleos). Patron of England, Georgia, and many cities. Note: if Apr 23 falls during Bright Week or Holy Week the commemoration is moved; feast-rank override deferred."
+        }
+      ]
+    },
+    "04-24": {
+      "commemorations": [
+        {
+          "id": "elizabeth-wonderworker",
+          "name": "Venerable Elizabeth the Wonder-Worker",
+          "type": "monastic",
+          "rank": 4,
+          "troparion_tone": 8,
+          "troparion": null,
+          "troparion_status": "text-unavailable",
+          "tradition_tags": ["EOR"],
+          "notes": "Elizabeth the Wonder-Worker (+6th c.), abbess of Constantinople. Rank 4. Troparion text not securely confirmed."
+        }
+      ]
+    },
+    "04-25": {
+      "commemorations": [
+        {
+          "id": "mark-evangelist",
+          "name": "Holy Apostle and Evangelist Mark",
+          "type": "apostle",
+          "rank": 2,
+          "troparion_tone": 3,
+          "troparion": {
+            "tone": 3,
+            "title": "Troparion of the Holy Apostle and Evangelist Mark",
+            "text": "O Holy Apostle and Evangelist Mark, intercede with the merciful God that He may grant our souls forgiveness of transgressions."
+          },
+          "troparion_status": "resolved",
+          "tradition_tags": ["EOR", "OOR", "ANG", "LAT"],
+          "notes": "Mark the Evangelist, author of the Second Gospel, first bishop of Alexandria (+68 AD). Rank 2 (Polyeleos). Pan-traditional."
+        }
+      ]
+    },
+    "04-26": {
+      "commemorations": [
+        {
+          "id": "basil-bishop-amasea",
+          "name": "Hieromartyr Basil, Bishop of Amasea",
+          "type": "martyr",
+          "rank": 4,
+          "troparion_tone": 4,
+          "troparion": null,
+          "troparion_status": "text-unavailable",
+          "tradition_tags": ["EOR"],
+          "notes": "Basil of Amasea (+322), bishop and martyr under Licinius. Rank 4. Troparion text not securely confirmed."
+        }
+      ]
+    },
+    "04-27": {
+      "commemorations": [
+        {
+          "id": "simeon-bishop-jerusalem",
+          "name": "Hieromartyr Simeon, Bishop of Jerusalem",
+          "type": "martyr",
+          "rank": 4,
+          "troparion_tone": 4,
+          "troparion": null,
+          "troparion_status": "text-unavailable",
+          "tradition_tags": ["EOR"],
+          "notes": "Simeon of Jerusalem (+107), second bishop of Jerusalem, son of Cleopas, kinsman of the Lord. Martyred under Trajan. Rank 4. Troparion text not securely confirmed."
+        }
+      ]
+    },
+    "04-28": {
+      "commemorations": [
+        {
+          "id": "jason-sosipater",
+          "name": "Holy Apostles Jason and Sosipater",
+          "type": "apostle",
+          "rank": 4,
+          "troparion_tone": 3,
+          "troparion": {
+            "tone": 3,
+            "title": "Troparion of the Holy Apostles Jason and Sosipater",
+            "text": "O Holy Apostles Jason and Sosipater, intercede with the merciful God, that He grant our souls forgiveness of offences."
+          },
+          "troparion_status": "resolved",
+          "tradition_tags": ["EOR"],
+          "notes": "Jason and Sosipater — Apostles of the Seventy (Romans 16:21), evangelists of Corfu. Rank 4. Standard apostle troparion form (Tone 3)."
+        }
+      ]
+    },
+    "04-29": {
+      "commemorations": [
+        {
+          "id": "memnou-memnon-wonder-worker",
+          "name": "Holy Martyr Memnon the Wonder-Worker",
+          "type": "martyr",
+          "rank": 4,
+          "troparion_tone": 4,
+          "troparion": null,
+          "troparion_status": "text-unavailable",
+          "tradition_tags": ["EOR"],
+          "notes": "Memnon the Wonder-Worker (+3rd c.), martyr. Rank 4. Troparion text not securely confirmed."
+        }
+      ]
+    },
+    "04-30": {
+      "commemorations": [
+        {
+          "id": "james-brother-lord",
+          "name": "Holy Apostle James, Brother of the Lord",
+          "type": "apostle",
+          "rank": 3,
+          "troparion_tone": 2,
+          "troparion": {
+            "tone": 2,
+            "title": "Troparion of the Holy Apostle James, Brother of the Lord",
+            "text": "As a disciple of the Lord thou didst receive the Gospel, O James; as a martyr thou art unswayed; as a brother of God thou hast boldness; as a hierarch thou dost intercede. Entreat Christ God to save our souls."
+          },
+          "troparion_status": "resolved",
+          "tradition_tags": ["EOR"],
+          "notes": "James the Brother of the Lord (+62 AD), first bishop of Jerusalem, author of the Epistle of James. Rank 3. Also commemorated Oct 23 in a joint feast with other brothers of the Lord."
+        }
+      ]
+    }
+  }
+}
