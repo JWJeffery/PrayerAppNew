@@ -60,8 +60,8 @@ const MenaionResolver = (() => {
     6:  'june',       // FULL CORPUS — all 30 dates (2026-03-07)
     7:  'july',       // FULL CORPUS — all 31 dates (2026-03-07)
     8:  'august',     // FULL CORPUS — all 31 dates (2026-03-07)
-    // 9:  'september',  // not yet imported
-    // 10: 'october',    // not yet imported
+    9:  'september',  // FULL CORPUS — all 30 dates (2026-03-07)
+    10: 'october',    // FULL CORPUS — all 31 dates (2026-03-07)
     11: 'november',   // FULL CORPUS — all 30 dates, tranche 2 (2026-03-08)
     12: 'december',   // FULL CORPUS — all 31 dates, tranche 2 (2026-03-08)
 };

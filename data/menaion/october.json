@@ -1,0 +1,540 @@
+{
+  "_meta": {
+    "file": "data/menaion/october.json",
+    "version": "1.0.0",
+    "schema_version": "1.0.0",
+    "month_number": 10,
+    "month_name": "October",
+    "calendar_style": "new-calendar",
+    "coverage_note": "FULL CORPUS — all 31 October dates. This is the final month of the annual fixed-date Menaion corpus. October contains the Protection of the Theotokos (Oct 1, rank 2 in Slavic tradition / rank 3 in Greek), the Holy Apostle and Evangelist Luke (Oct 18, rank 2), and St. John of Kronstadt (Oct 19, rank 3). Dates with unconfirmed troparion text carry troparion_status:'text-unavailable'.",
+    "imported_date_count": 31,
+    "total_days": 31
+  },
+  "dates": {
+    "10-01": {
+      "commemorations": [
+        {
+          "id": "protection-theotokos",
+          "name": "The Protection of Our Most Holy Lady, the Theotokos and Ever-Virgin Mary",
+          "type": "marian_feast",
+          "rank": 2,
+          "troparion_tone": 4,
+          "troparion": {
+            "tone": 4,
+            "title": "Troparion of the Protection of the Theotokos",
+            "text": "Today the Virgin stands in the midst of the Church and with choirs of saints she invisibly prays to God for us. Angels and bishops worship, apostles and prophets rejoice together, since for our sake she prays to the Pre-eternal God."
+          },
+          "troparion_status": "resolved",
+          "tradition_tags": ["EOR"],
+          "notes": "Protection (Pokrov) of the Theotokos — vision of Andrew the Fool-for-Christ in Blachernae (+10th c.). Rank 2 in Slavic calendars (Polyeleos); rank 3 in Greek. Entered here as rank 2 per OCA usage."
+        }
+      ]
+    },
+    "10-02": {
+      "commemorations": [
+        {
+          "id": "cyprian-ustyna-martyrs",
+          "name": "Hieromartyr Cyprian and Holy Martyr Justina",
+          "type": "martyr",
+          "rank": 4,
+          "troparion_tone": 4,
+          "troparion": null,
+          "troparion_status": "text-unavailable",
+          "tradition_tags": ["EOR"],
+          "notes": "Cyprian and Justina (+304), martyrs of Antioch under Diocletian. Rank 4. Troparion text not securely confirmed."
+        }
+      ]
+    },
+    "10-03": {
+      "commemorations": [
+        {
+          "id": "dionysius-areopagite",
+          "name": "Hieromartyr Dionysius the Areopagite, Bishop of Athens",
+          "type": "martyr",
+          "rank": 4,
+          "troparion_tone": 4,
+          "troparion": {
+            "tone": 4,
+            "title": "Troparion of the Hieromartyr Dionysius the Areopagite",
+            "text": "Thou didst share in the ways of the apostles and occupy their throne; thou didst find the practice of virtue to be a passage to divine vision. Wherefore, having rightly divided the word of truth, thou didst also pour out thy blood for the faith, O Hieromartyr Dionysius. Intercede with Christ God to save our souls."
+          },
+          "troparion_status": "resolved",
+          "tradition_tags": ["EOR", "LAT", "ANG"],
+          "notes": "Dionysius the Areopagite (+1st c.), converted by Paul (Acts 17:34), first bishop of Athens. Rank 4."
+        }
+      ]
+    },
+    "10-04": {
+      "commemorations": [
+        {
+          "id": "hierotheos-bishop-athens",
+          "name": "St. Hierotheos, Bishop of Athens",
+          "type": "hierarch",
+          "rank": 4,
+          "troparion_tone": 4,
+          "troparion": null,
+          "troparion_status": "text-unavailable",
+          "tradition_tags": ["EOR"],
+          "notes": "Hierotheos of Athens (+1st c.), companion of Dionysius, ordained by Paul. Rank 4. Troparion text not securely confirmed."
+        }
+      ]
+    },
+    "10-05": {
+      "commemorations": [
+        {
+          "id": "charitina-martyr",
+          "name": "Holy Martyr Charitina",
+          "type": "martyr",
+          "rank": 4,
+          "troparion_tone": 4,
+          "troparion": null,
+          "troparion_status": "text-unavailable",
+          "tradition_tags": ["EOR"],
+          "notes": "Charitina (+304), slave and martyr under Diocletian. Rank 4. Troparion text not securely confirmed."
+        }
+      ]
+    },
+    "10-06": {
+      "commemorations": [
+        {
+          "id": "thomas-apostle-october",
+          "name": "Holy Apostle Thomas",
+          "type": "apostle",
+          "rank": 3,
+          "troparion_tone": 2,
+          "troparion": {
+            "tone": 2,
+            "title": "Troparion of the Holy Apostle Thomas",
+            "text": "O Apostle Thomas, thou wast not absent from the burial of Christ, and thou wast the first to see His wounds after the Resurrection; thou didst confess Him as Lord and God. Pray thou to Christ our God that He may save our souls."
+          },
+          "troparion_status": "resolved",
+          "tradition_tags": ["EOR"],
+          "notes": "Thomas the Apostle — second commemoration in October (primary: Jul 7). Rank 3."
+        }
+      ]
+    },
+    "10-07": {
+      "commemorations": [
+        {
+          "id": "sergios-bacchus",
+          "name": "Holy Martyrs Sergios and Bacchus",
+          "type": "martyr",
+          "rank": 4,
+          "troparion_tone": 4,
+          "troparion": null,
+          "troparion_status": "text-unavailable",
+          "tradition_tags": ["EOR"],
+          "notes": "Sergios and Bacchus (+303), soldier-martyrs under Maximian in Syria. Rank 4. Troparion text not securely confirmed."
+        }
+      ]
+    },
+    "10-08": {
+      "commemorations": [
+        {
+          "id": "pelagia-penitent",
+          "name": "Venerable Pelagia the Penitent",
+          "type": "monastic",
+          "rank": 4,
+          "troparion_tone": 8,
+          "troparion": null,
+          "troparion_status": "text-unavailable",
+          "tradition_tags": ["EOR"],
+          "notes": "Pelagia the Penitent (+5th c.), actress of Antioch who repented, lived as 'Brother Pelagios' on the Mount of Olives. Rank 4. Troparion text not securely confirmed."
+        }
+      ]
+    },
+    "10-09": {
+      "commemorations": [
+        {
+          "id": "james-alphaeus-apostle",
+          "name": "Holy Apostle James the son of Alphaeus",
+          "type": "apostle",
+          "rank": 3,
+          "troparion_tone": 3,
+          "troparion": {
+            "tone": 3,
+            "title": "Troparion of the Holy Apostle James the son of Alphaeus",
+            "text": "O Holy Apostle James, intercede with the merciful God, that He grant our souls forgiveness of offences."
+          },
+          "troparion_status": "resolved",
+          "tradition_tags": ["EOR"],
+          "notes": "James son of Alphaeus, one of the Twelve Apostles. Rank 3. Standard apostle troparion form (Tone 3)."
+        }
+      ]
+    },
+    "10-10": {
+      "commemorations": [
+        {
+          "id": "eulampios-eulampia",
+          "name": "Holy Martyrs Eulampios and Eulampia",
+          "type": "martyr",
+          "rank": 4,
+          "troparion_tone": 4,
+          "troparion": null,
+          "troparion_status": "text-unavailable",
+          "tradition_tags": ["EOR"],
+          "notes": "Eulampios and his sister Eulampia (+311), martyrs under Maximinus Daza. Rank 4. Troparion text not securely confirmed."
+        }
+      ]
+    },
+    "10-11": {
+      "commemorations": [
+        {
+          "id": "philip-apostle-october",
+          "name": "Holy Apostle Philip, one of the Seven Deacons",
+          "type": "apostle",
+          "rank": 4,
+          "troparion_tone": 3,
+          "troparion": {
+            "tone": 3,
+            "title": "Troparion of the Holy Apostle Philip the Deacon",
+            "text": "O Holy Apostle Philip, intercede with the merciful God, that He grant our souls forgiveness of offences."
+          },
+          "troparion_status": "resolved",
+          "tradition_tags": ["EOR"],
+          "notes": "Philip the Deacon (Acts 6:5, 8:5), one of the Seven. Rank 4. Distinct from Philip the Apostle of the Twelve (Nov 14). Standard apostle troparion form (Tone 3)."
+        }
+      ]
+    },
+    "10-12": {
+      "commemorations": [
+        {
+          "id": "cosmas-damian-arabia",
+          "name": "Holy Unmercenary Physicians Cosmas and Damian of Arabia",
+          "type": "martyr",
+          "rank": 4,
+          "troparion_tone": 8,
+          "troparion": {
+            "tone": 8,
+            "title": "Troparion of Sts. Cosmas and Damian of Arabia",
+            "text": "O holy unmercenaries and wonder-workers Cosmas and Damian, visit our infirmities; freely ye received, freely give to us."
+          },
+          "troparion_status": "resolved",
+          "tradition_tags": ["EOR"],
+          "notes": "Cosmas and Damian of Arabia (+3rd c.), martyred with their brothers. Rank 4. The Arabian pair — distinct from the Roman pair (Jul 1) and Asian pair (Nov 1)."
+        }
+      ]
+    },
+    "10-13": {
+      "commemorations": [
+        {
+          "id": "cornelius-centurion",
+          "name": "Holy Martyr Cornelius the Centurion",
+          "type": "saint",
+          "rank": 4,
+          "troparion_tone": 3,
+          "troparion": {
+            "tone": 3,
+            "title": "Troparion of the Holy Apostle Cornelius the Centurion",
+            "text": "O Holy Apostle Cornelius, intercede with the merciful God, that He grant our souls forgiveness of offences."
+          },
+          "troparion_status": "resolved",
+          "tradition_tags": ["EOR"],
+          "notes": "Cornelius the Centurion (Acts 10), first Gentile convert, bishop. Rank 4. Standard apostle troparion form (Tone 3)."
+        }
+      ]
+    },
+    "10-14": {
+      "commemorations": [
+        {
+          "id": "paraskeva-serbia",
+          "name": "Venerable Paraskeva of Serbia (of the Balkans)",
+          "type": "monastic",
+          "rank": 3,
+          "troparion_tone": 3,
+          "troparion": {
+            "tone": 3,
+            "title": "Troparion of St. Paraskeva of Serbia",
+            "text": "Let us praise Paraskeva the wondrous, the flower of Epivates, the adornment of the Balkans, the rampart of Orthodoxy, the intercessor for our souls."
+          },
+          "troparion_status": "resolved",
+          "tradition_tags": ["EOR"],
+          "notes": "Paraskeva of Serbia (+11th c.), ascetic venerated throughout the Balkans. Her relics are in Iași, Romania. Rank 3."
+        }
+      ]
+    },
+    "10-15": {
+      "commemorations": [
+        {
+          "id": "euthymios-thessalonica",
+          "name": "Venerable Euthymios the New of Thessalonica",
+          "type": "monastic",
+          "rank": 4,
+          "troparion_tone": 8,
+          "troparion": null,
+          "troparion_status": "text-unavailable",
+          "tradition_tags": ["EOR"],
+          "notes": "Euthymios the New (+889), monk of Thessalonica. Rank 4. Troparion text not securely confirmed."
+        }
+      ]
+    },
+    "10-16": {
+      "commemorations": [
+        {
+          "id": "longinus-centurion",
+          "name": "Holy Martyr Longinus the Centurion",
+          "type": "martyr",
+          "rank": 4,
+          "troparion_tone": 4,
+          "troparion": {
+            "tone": 4,
+            "title": "Troparion of the Holy Martyr Longinus the Centurion",
+            "text": "Thy martyr Longinus, O Lord, in his sufferings received an imperishable crown from Thee, our God; for having Thy strength, he laid low his adversaries and shattered the powerless boldness of demons. Through his intercessions, save our souls."
+          },
+          "troparion_status": "resolved",
+          "tradition_tags": ["EOR", "LAT"],
+          "notes": "Longinus the Centurion (+1st c.), soldier who pierced Christ's side, martyred in Cappadocia. Rank 4."
+        }
+      ]
+    },
+    "10-17": {
+      "commemorations": [
+        {
+          "id": "hosea-prophet",
+          "name": "Holy Prophet Hosea",
+          "type": "prophet",
+          "rank": 4,
+          "troparion_tone": 2,
+          "troparion": {
+            "tone": 2,
+            "title": "Troparion of the Holy Prophet Hosea",
+            "text": "We celebrate the memory of Thy prophet Hosea, O Lord, and through him we beseech Thee: save our souls."
+          },
+          "troparion_status": "resolved",
+          "tradition_tags": ["EOR"],
+          "notes": "Hosea the Prophet (8th c. BC). Rank 4. Standard prophet troparion form."
+        }
+      ]
+    },
+    "10-18": {
+      "commemorations": [
+        {
+          "id": "luke-evangelist",
+          "name": "Holy Apostle and Evangelist Luke",
+          "type": "apostle",
+          "rank": 2,
+          "troparion_tone": 5,
+          "troparion": {
+            "tone": 5,
+            "title": "Troparion of the Holy Apostle and Evangelist Luke",
+            "text": "O Holy Apostle and Evangelist Luke, intercede with the merciful God that He may grant our souls forgiveness of transgressions."
+          },
+          "troparion_status": "resolved",
+          "tradition_tags": ["EOR", "OOR", "ANG", "LAT"],
+          "notes": "Luke the Evangelist, author of the Third Gospel and Acts. Rank 2 (Polyeleos). Pan-traditional."
+        }
+      ]
+    },
+    "10-19": {
+      "commemorations": [
+        {
+          "id": "john-kronstadt",
+          "name": "St. John of Kronstadt, Wonderworker",
+          "type": "saint",
+          "rank": 3,
+          "troparion_tone": 4,
+          "troparion": {
+            "tone": 4,
+            "title": "Troparion of St. John of Kronstadt",
+            "text": "God-like in thy pastoral love for people, a model of piety and shepherd of souls, O John of Kronstadt, thou didst instruct God's people in the Faith by thy life and teachings. As thou hast boldness before the Lord, intercede with Him for the salvation of our souls."
+          },
+          "troparion_status": "resolved",
+          "tradition_tags": ["EOR"],
+          "notes": "John of Kronstadt (+1908), parish priest and wonderworker, glorified by ROC 1990. Rank 3."
+        }
+      ]
+    },
+    "10-20": {
+      "commemorations": [
+        {
+          "id": "artemios-antioch-martyr",
+          "name": "Holy Great Martyr Artemios of Antioch",
+          "type": "martyr",
+          "rank": 4,
+          "troparion_tone": 4,
+          "troparion": null,
+          "troparion_status": "text-unavailable",
+          "tradition_tags": ["EOR"],
+          "notes": "Artemios (+363), military officer martyred under Julian the Apostate. Rank 4. Troparion text not securely confirmed."
+        }
+      ]
+    },
+    "10-21": {
+      "commemorations": [
+        {
+          "id": "hilarion-great",
+          "name": "Venerable Hilarion the Great",
+          "type": "monastic",
+          "rank": 4,
+          "troparion_tone": 8,
+          "troparion": null,
+          "troparion_status": "text-unavailable",
+          "tradition_tags": ["EOR"],
+          "notes": "Hilarion the Great (+371), founder of monasticism in Palestine, disciple of Anthony the Great. Rank 4. Troparion text not securely confirmed."
+        }
+      ]
+    },
+    "10-22": {
+      "commemorations": [
+        {
+          "id": "abercius-bishop-hieropolis",
+          "name": "Equal-to-the-Apostles Abercius, Bishop of Hieropolis",
+          "type": "hierarch",
+          "rank": 4,
+          "troparion_tone": 4,
+          "troparion": null,
+          "troparion_status": "text-unavailable",
+          "tradition_tags": ["EOR"],
+          "notes": "Abercius of Hieropolis (+2nd c.), bishop and wonder-worker, known from his famous epitaph. Rank 4. Troparion text not securely confirmed."
+        }
+      ]
+    },
+    "10-23": {
+      "commemorations": [
+        {
+          "id": "james-brother-lord-october",
+          "name": "Holy Apostle James, Brother of the Lord (second commemoration)",
+          "type": "apostle",
+          "rank": 4,
+          "troparion_tone": 2,
+          "troparion": {
+            "tone": 2,
+            "title": "Troparion of the Holy Apostle James, Brother of the Lord",
+            "text": "As a disciple of the Lord thou didst receive the Gospel, O James; as a martyr thou art unswayed; as a brother of God thou hast boldness; as a hierarch thou dost intercede. Entreat Christ God to grant us great mercy."
+          },
+          "troparion_status": "resolved",
+          "tradition_tags": ["EOR"],
+          "notes": "James Brother of the Lord — second commemoration (primary: Apr 30). Also joint feast with Jude (Brother of Lord) and others on this date. Rank 4."
+        }
+      ]
+    },
+    "10-24": {
+      "commemorations": [
+        {
+          "id": "arethas-martyrs-nagran",
+          "name": "Holy Great Martyr Arethas and companions of Nagran",
+          "type": "martyr",
+          "rank": 4,
+          "troparion_tone": 4,
+          "troparion": null,
+          "troparion_status": "text-unavailable",
+          "tradition_tags": ["EOR"],
+          "notes": "Arethas and the martyrs of Nagran/Najran in Arabia (+523), martyred by the Jewish king Dhu Nuwas. Rank 4. Troparion text not securely confirmed."
+        }
+      ]
+    },
+    "10-25": {
+      "commemorations": [
+        {
+          "id": "martyrs-notarios",
+          "name": "Holy Martyrs Marcian and Martyrios",
+          "type": "martyr",
+          "rank": 4,
+          "troparion_tone": 4,
+          "troparion": null,
+          "troparion_status": "text-unavailable",
+          "tradition_tags": ["EOR"],
+          "notes": "Marcian and Martyrios (+351), lector and notary of the Great Church of Constantinople, martyred by Arians. Rank 4. Troparion text not securely confirmed."
+        }
+      ]
+    },
+    "10-26": {
+      "commemorations": [
+        {
+          "id": "demetrios-thessalonica",
+          "name": "Holy Great Martyr Demetrios of Thessalonica, the Myrrh-streamer",
+          "type": "martyr",
+          "rank": 2,
+          "troparion_tone": 3,
+          "troparion": {
+            "tone": 3,
+            "title": "Troparion of the Holy Great Martyr Demetrios",
+            "text": "The world has found in thee a great champion and defender in times of peril, O passion-bearer Demetrios, who dost rout the nations. As thou didst bring low the pride of Lyaios and make St. Nestor brave in the contest, so O holy Great Martyr, do thou beseech Christ God to grant us great mercy."
+          },
+          "troparion_status": "resolved",
+          "tradition_tags": ["EOR", "OOR"],
+          "notes": "Demetrios of Thessalonica (+306), Great Martyr and Myrrh-streamer. Rank 2 (Polyeleos). Patron of Thessalonica and the Balkans. One of the most venerated saints of the Byzantine calendar."
+        }
+      ]
+    },
+    "10-27": {
+      "commemorations": [
+        {
+          "id": "nestor-martyr-thessalonica",
+          "name": "Holy Martyr Nestor of Thessalonica",
+          "type": "martyr",
+          "rank": 4,
+          "troparion_tone": 4,
+          "troparion": null,
+          "troparion_status": "text-unavailable",
+          "tradition_tags": ["EOR"],
+          "notes": "Nestor of Thessalonica (+306), young martyr, companion of Demetrios. Rank 4. Troparion text not securely confirmed."
+        }
+      ]
+    },
+    "10-28": {
+      "commemorations": [
+        {
+          "id": "terence-neonilla-family",
+          "name": "Holy Martyrs Terence and Neonilla and their children",
+          "type": "martyr",
+          "rank": 4,
+          "troparion_tone": 4,
+          "troparion": null,
+          "troparion_status": "text-unavailable",
+          "tradition_tags": ["EOR"],
+          "notes": "Terence, Neonilla, and their seven children (+3rd c.), family martyrs. Rank 4. Troparion text not securely confirmed."
+        }
+      ]
+    },
+    "10-29": {
+      "commemorations": [
+        {
+          "id": "anastasia-romana",
+          "name": "Venerable Anastasia of Rome",
+          "type": "monastic",
+          "rank": 4,
+          "troparion_tone": 8,
+          "troparion": null,
+          "troparion_status": "text-unavailable",
+          "tradition_tags": ["EOR"],
+          "notes": "Anastasia the Roman (+3rd c.), nun who fled persecution and was martyred. Rank 4. Troparion text not securely confirmed."
+        }
+      ]
+    },
+    "10-30": {
+      "commemorations": [
+        {
+          "id": "zenobius-zenobia",
+          "name": "Holy Martyrs Zenobius and Zenobia",
+          "type": "martyr",
+          "rank": 4,
+          "troparion_tone": 4,
+          "troparion": null,
+          "troparion_status": "text-unavailable",
+          "tradition_tags": ["EOR"],
+          "notes": "Zenobius and his sister Zenobia (+285), physician-martyrs of Cilicia under Diocletian. Rank 4. Troparion text not securely confirmed."
+        }
+      ]
+    },
+    "10-31": {
+      "commemorations": [
+        {
+          "id": "stachys-amplias-urban-apostles",
+          "name": "Holy Apostles Stachys, Amplias, Urban, Narcissus, Apelles, and Aristobulus",
+          "type": "apostle",
+          "rank": 4,
+          "troparion_tone": 3,
+          "troparion": {
+            "tone": 3,
+            "title": "Troparion of the Holy Apostles Stachys, Amplias, Urban, Narcissus, Apelles, and Aristobulus",
+            "text": "O Holy Apostles Stachys, Amplias, Urban, Narcissus, Apelles, and Aristobulus, intercede with the merciful God, that He grant our souls forgiveness of offences."
+          },
+          "troparion_status": "resolved",
+          "tradition_tags": ["EOR"],
+          "notes": "Six Apostles of the Seventy from Romans 16. Rank 4. Standard apostle troparion form (Tone 3)."
+        }
+      ]
+    }
+  }
+}
