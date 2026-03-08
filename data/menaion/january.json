@@ -1,0 +1,576 @@
+{
+  "_meta": {
+    "file": "data/menaion/january.json",
+    "version": "1.0.0",
+    "schema_version": "1.0.0",
+    "month_number": 1,
+    "month_name": "January",
+    "calendar_style": "new-calendar",
+    "coverage_note": "FULL CORPUS — all 31 January dates. January is liturgically dense: Circumcision and Basil the Great (Jan 1), Theophany/Epiphany and its forefeast/afterfeast (Jan 5–14), and several major Apostle and Doctor feasts. Dates with unconfirmed troparion text carry troparion_status:'text-unavailable'.",
+    "imported_date_count": 31,
+    "total_days": 31
+  },
+  "dates": {
+    "01-01": {
+      "commemorations": [
+        {
+          "id": "basil-great-circumcision",
+          "name": "Circumcision of Our Lord; St. Basil the Great",
+          "type": "feast",
+          "rank": 2,
+          "troparion_tone": 1,
+          "troparion": {
+            "tone": 1,
+            "title": "Troparion of St. Basil the Great",
+            "text": "Thy sound has gone forth into all the earth, which has received thy word. Thereby thou hast taught the Faith in a manner befitting God; thou hast made manifest the nature of created things; thou hast adorned the customs of men. O Father, royal Priesthood, intercede with Christ God that our souls be saved."
+          },
+          "troparion_status": "resolved",
+          "tradition_tags": ["EOR", "OOR"],
+          "notes": "Jan 1 commemorates both the Circumcision (rank 1 feast of the Lord) and St. Basil the Great. The Troparion of St. Basil is used at Vespers; the feast rank recorded here reflects St. Basil as Polyeleos saint."
+        }
+      ]
+    },
+    "01-02": {
+      "commemorations": [
+        {
+          "id": "seraphim-sarov",
+          "name": "St. Seraphim of Sarov",
+          "type": "saint",
+          "rank": 2,
+          "troparion_tone": 4,
+          "troparion": {
+            "tone": 4,
+            "title": "Troparion of St. Seraphim of Sarov",
+            "text": "From thy youth thou didst love Christ above all things, O blessed one, and desiring to serve Him alone thou didst wander in the wilderness and strengthen thyself by constant prayer. Filled with love for God and neighbor, thou art a speedy helper to all who come to thee. O Holy Father Seraphim, intercede for the salvation of our souls."
+          },
+          "troparion_status": "resolved",
+          "tradition_tags": ["EOR"],
+          "notes": "St. Seraphim of Sarov (+1833). Glorified 1903. Rank 2 (Polyeleos). OCA calendar."
+        }
+      ]
+    },
+    "01-03": {
+      "commemorations": [
+        {
+          "id": "prophet-malachi",
+          "name": "Prophet Malachi; Martyr Gordius of Caesarea",
+          "type": "prophet",
+          "rank": 4,
+          "troparion_tone": 2,
+          "troparion": null,
+          "troparion_status": "text-unavailable",
+          "tradition_tags": ["EOR"],
+          "notes": "Forefeast of Theophany begins Jan 2 on some typika; Jan 3 is a commemoration day. Troparion text not securely confirmed for corpus."
+        }
+      ]
+    },
+    "01-04": {
+      "commemorations": [
+        {
+          "id": "synaxis-seventy-apostles",
+          "name": "Synaxis of the Seventy Holy Apostles",
+          "type": "apostle",
+          "rank": 3,
+          "troparion_tone": 3,
+          "troparion": {
+            "tone": 3,
+            "title": "Troparion of the Seventy Apostles",
+            "text": "O Holy Apostles, intercede with the merciful God, that He grant our souls forgiveness of offences."
+          },
+          "troparion_status": "resolved",
+          "tradition_tags": ["EOR"],
+          "notes": "Synaxis of the Seventy. Shared troparion form used for groups of apostles."
+        }
+      ]
+    },
+    "01-05": {
+      "commemorations": [
+        {
+          "id": "forefeast-theophany",
+          "name": "Forefeast of Theophany; Martyr Theopemptus",
+          "type": "feast",
+          "rank": 4,
+          "troparion_tone": 4,
+          "troparion": {
+            "tone": 4,
+            "title": "Troparion of the Forefeast",
+            "text": "Make ready, O Zebulon, and prepare, O Naphtali. Jordan River, stop thy flowing and leap for joy at the approach of thy Master, Who comes to be baptized. O Adam, rejoice with our first mother, and hide not as you did in Paradise; for He Who saw you naked has appeared to clothe you with the first garment. Christ appeared to renew all creation."
+          },
+          "troparion_status": "resolved",
+          "tradition_tags": ["EOR"],
+          "notes": "Forefeast of Theophany (Eve of Theophany / Paramone). Rank 4 as forefeast."
+        }
+      ]
+    },
+    "01-06": {
+      "commemorations": [
+        {
+          "id": "theophany-epiphany",
+          "name": "Holy Theophany — Baptism of Our Lord Jesus Christ",
+          "type": "feast",
+          "rank": 1,
+          "troparion_tone": 1,
+          "troparion": {
+            "tone": 1,
+            "title": "Troparion of Holy Theophany",
+            "text": "When Thou, O Lord, wast baptized in the Jordan, the worship of the Trinity was made manifest; for the voice of the Father bore witness to Thee, and called Thee His beloved Son; and the Spirit, in the form of a dove, confirmed the truthfulness of His word. O Christ our God, Who hast revealed Thyself, and hast enlightened the world, glory to Thee."
+          },
+          "troparion_status": "resolved",
+          "tradition_tags": ["EOR", "OOR", "ANG"],
+          "notes": "Great Feast — Theophany / Epiphany. Rank 1. The Troparion is sung throughout the festal period."
+        }
+      ]
+    },
+    "01-07": {
+      "commemorations": [
+        {
+          "id": "synaxis-forerunner-john",
+          "name": "Synaxis of the Holy Glorious Prophet, Forerunner and Baptist John",
+          "type": "feast",
+          "rank": 2,
+          "troparion_tone": 2,
+          "troparion": {
+            "tone": 2,
+            "title": "Troparion of St. John the Baptist",
+            "text": "The memory of the righteous is celebrated with praise, but the Lord's testimony is sufficient for thee, O Forerunner; for thou hast proved to be truly more venerable than the Prophets, since thou wast granted to baptize in the stream Him Whom they proclaimed. Wherefore, having contested for the truth, thou didst rejoice to announce to those in Hades the good tidings of God Who had appeared in the flesh; Who takes away the sin of the world, and grants us great mercy."
+          },
+          "troparion_status": "resolved",
+          "tradition_tags": ["EOR", "OOR"],
+          "notes": "Synaxis of the Baptist — the day after Theophany, celebrating the Forerunner. Rank 2."
+        }
+      ]
+    },
+    "01-08": {
+      "commemorations": [
+        {
+          "id": "george-chozebite-domnica",
+          "name": "Venerable George the Chozebite; Venerable Domnica of Constantinople",
+          "type": "monastic",
+          "rank": 4,
+          "troparion_tone": 8,
+          "troparion": null,
+          "troparion_status": "text-unavailable",
+          "tradition_tags": ["EOR"],
+          "notes": "Afterfeast of Theophany. Rank 4 commemorations. Troparion text not securely confirmed."
+        }
+      ]
+    },
+    "01-09": {
+      "commemorations": [
+        {
+          "id": "martyr-polyeuctus",
+          "name": "Holy Martyr Polyeuctus of Melitene",
+          "type": "martyr",
+          "rank": 4,
+          "troparion_tone": 4,
+          "troparion": null,
+          "troparion_status": "text-unavailable",
+          "tradition_tags": ["EOR"],
+          "notes": "Afterfeast of Theophany. Troparion text not securely confirmed."
+        }
+      ]
+    },
+    "01-10": {
+      "commemorations": [
+        {
+          "id": "gregory-nyssa",
+          "name": "St. Gregory of Nyssa; St. Dometian of Melitene",
+          "type": "hierarch",
+          "rank": 3,
+          "troparion_tone": 4,
+          "troparion": {
+            "tone": 4,
+            "title": "Troparion of St. Gregory of Nyssa",
+            "text": "As a guide of Orthodoxy, a teacher of piety and modesty, a luminary of the world, the inspired glory of bishops: O Gregory, thou hast enlightened all by thy teachings. O harp of the Spirit, intercede with Christ God for the salvation of our souls."
+          },
+          "troparion_status": "resolved",
+          "tradition_tags": ["EOR"],
+          "notes": "Gregory of Nyssa (+395). Doctor of the Church, Cappadocian Father. Rank 3."
+        }
+      ]
+    },
+    "01-11": {
+      "commemorations": [
+        {
+          "id": "theodosius-cenobiarch",
+          "name": "Venerable Theodosius the Cenobiarch",
+          "type": "monastic",
+          "rank": 2,
+          "troparion_tone": 8,
+          "troparion": {
+            "tone": 8,
+            "title": "Troparion of St. Theodosius the Cenobiarch",
+            "text": "Thou didst struggle from thy youth for the sake of Christ, O God-bearing Father, forsaking all earthly things; thou wast adorned with virtues of all kinds and shone forth as a bright light upon the world. Therefore we honor thee, O Theodosius, Father of Fathers."
+          },
+          "troparion_status": "resolved",
+          "tradition_tags": ["EOR"],
+          "notes": "Theodosius the Great (+529), founder of the cenobitic tradition in Palestine. Rank 2."
+        }
+      ]
+    },
+    "01-12": {
+      "commemorations": [
+        {
+          "id": "tatiana-rome",
+          "name": "Holy Martyr Tatiana of Rome",
+          "type": "martyr",
+          "rank": 4,
+          "troparion_tone": 4,
+          "troparion": null,
+          "troparion_status": "text-unavailable",
+          "tradition_tags": ["EOR"],
+          "notes": "Leavetaking of Theophany on some typika. Tatiana of Rome. Troparion text not securely confirmed."
+        }
+      ]
+    },
+    "01-13": {
+      "commemorations": [
+        {
+          "id": "leavetaking-theophany",
+          "name": "Leavetaking of Theophany; Martyrs of Crete",
+          "type": "feast",
+          "rank": 4,
+          "troparion_tone": 1,
+          "troparion": {
+            "tone": 1,
+            "title": "Troparion of Holy Theophany (Leavetaking)",
+            "text": "When Thou, O Lord, wast baptized in the Jordan, the worship of the Trinity was made manifest; for the voice of the Father bore witness to Thee, and called Thee His beloved Son; and the Spirit, in the form of a dove, confirmed the truthfulness of His word. O Christ our God, Who hast revealed Thyself, and hast enlightened the world, glory to Thee."
+          },
+          "troparion_status": "resolved",
+          "tradition_tags": ["EOR"],
+          "notes": "Leavetaking of Theophany — the Theophany Troparion is repeated."
+        }
+      ]
+    },
+    "01-14": {
+      "commemorations": [
+        {
+          "id": "fathers-council-nicaea",
+          "name": "Holy Fathers of the First Ecumenical Council at Nicaea (observed); Equal-to-the-Apostles Nina of Georgia",
+          "type": "saint",
+          "rank": 3,
+          "troparion_tone": 8,
+          "troparion": {
+            "tone": 8,
+            "title": "Troparion of St. Nina Equal-to-the-Apostles",
+            "text": "Equal to the Apostles in conduct and the Enlightener of the Iberian land, thou art beloved of Christ; thy deeds have won thee a crown, O wise Nina. Enlighten with thy prayers those who are in darkness of sin, and deliver them from every evil, for thou hast great boldness before Christ our God."
+          },
+          "troparion_status": "resolved",
+          "tradition_tags": ["EOR"],
+          "notes": "St. Nina of Georgia (+335). Primary commemoration for weekday use. Rank 3."
+        }
+      ]
+    },
+    "01-15": {
+      "commemorations": [
+        {
+          "id": "paul-theban-john-huts",
+          "name": "Venerable Paul of Thebes; Venerable John Calabytes ('of the Huts')",
+          "type": "monastic",
+          "rank": 4,
+          "troparion_tone": 1,
+          "troparion": {
+            "tone": 1,
+            "title": "Troparion of St. Paul of Thebes",
+            "text": "Thou didst emulate Elias in his zeal, and didst follow the Baptist in his ways, O Father Paul; dwelling in the desert, thou didst strengthen the world by thy prayers. Intercede with Christ God that our souls be saved."
+          },
+          "troparion_status": "resolved",
+          "tradition_tags": ["EOR"],
+          "notes": "Paul of Thebes (+341), first hermit. Rank 4."
+        }
+      ]
+    },
+    "01-16": {
+      "commemorations": [
+        {
+          "id": "veneration-chains-peter",
+          "name": "Veneration of the Chains of the Holy Apostle Peter",
+          "type": "feast",
+          "rank": 3,
+          "troparion_tone": 4,
+          "troparion": {
+            "tone": 4,
+            "title": "Troparion of the Chains of the Apostle Peter",
+            "text": "Thou hast received the chains of Peter the leader of the Apostles as a great gift, O Christ our God, wherewith he was bound in Rome, and offering the same, Thou dost heal the afflictions of men; therefore we magnify Thee Who art rich in mercy."
+          },
+          "troparion_status": "resolved",
+          "tradition_tags": ["EOR"],
+          "notes": "Feast of the Precious Chains of the Apostle Peter. Rank 3."
+        }
+      ]
+    },
+    "01-17": {
+      "commemorations": [
+        {
+          "id": "anthony-great",
+          "name": "Venerable Anthony the Great",
+          "type": "monastic",
+          "rank": 2,
+          "troparion_tone": 4,
+          "troparion": {
+            "tone": 4,
+            "title": "Troparion of St. Anthony the Great",
+            "text": "Emulating the ways of Elias the zealot, and following the straight path of the Baptist, thou didst become a Father of Fathers in the desert, O Anthony. Through thy prayers, restore our souls O Father."
+          },
+          "troparion_status": "resolved",
+          "tradition_tags": ["EOR", "OOR", "ANG", "LAT"],
+          "notes": "Anthony the Great (+356), Father of monasticism. Rank 2 (Polyeleos). Pan-traditional celebration."
+        }
+      ]
+    },
+    "01-18": {
+      "commemorations": [
+        {
+          "id": "athanasius-cyril-alexandria",
+          "name": "Sts. Athanasius the Great and Cyril of Alexandria",
+          "type": "hierarch",
+          "rank": 2,
+          "troparion_tone": 3,
+          "troparion": {
+            "tone": 3,
+            "title": "Troparion of Sts. Athanasius and Cyril of Alexandria",
+            "text": "Pillars of Orthodoxy, who truly supported the Church with divine doctrines, filling the whole world with your teachings, O blessed Athanasius and wise Cyril: you are now standing before the Lord of all. Pray ye ever for the salvation of our souls."
+          },
+          "troparion_status": "resolved",
+          "tradition_tags": ["EOR", "OOR", "ANG", "LAT"],
+          "notes": "Athanasius (+373) and Cyril (+444) of Alexandria. Defenders of Nicene orthodoxy. Rank 2."
+        }
+      ]
+    },
+    "01-19": {
+      "commemorations": [
+        {
+          "id": "macarius-egypt",
+          "name": "Venerable Macarius the Great of Egypt",
+          "type": "monastic",
+          "rank": 4,
+          "troparion_tone": 8,
+          "troparion": {
+            "tone": 8,
+            "title": "Troparion of St. Macarius of Egypt",
+            "text": "In thee the image was preserved with exactness, O Father; for taking up thy cross, thou didst follow Christ. By so doing thou didst teach us to disregard the flesh, for it passes away; but to care instead for the soul, since it is immortal. Therefore thy soul rejoices with the angels, O Holy Macarius."
+          },
+          "troparion_status": "resolved",
+          "tradition_tags": ["EOR", "OOR"],
+          "notes": "Macarius the Great of Egypt (+390/391). Desert Father. Rank 4."
+        }
+      ]
+    },
+    "01-20": {
+      "commemorations": [
+        {
+          "id": "euthymius-great",
+          "name": "Venerable Euthymius the Great",
+          "type": "monastic",
+          "rank": 2,
+          "troparion_tone": 4,
+          "troparion": {
+            "tone": 4,
+            "title": "Troparion of St. Euthymius the Great",
+            "text": "Thou wast a zealous emulator of the Fathers of the desert, following their angelic way of life; together with them thou hast been granted to behold the face of God in His heavenly Kingdom. O Euthymius, Father of monks, intercede with Christ our God that He may grant great mercy to our souls."
+          },
+          "troparion_status": "resolved",
+          "tradition_tags": ["EOR"],
+          "notes": "Euthymius the Great (+473), Palestinian monastic. Rank 2."
+        }
+      ]
+    },
+    "01-21": {
+      "commemorations": [
+        {
+          "id": "maximus-confessor",
+          "name": "Venerable Maximus the Confessor",
+          "type": "monastic",
+          "rank": 4,
+          "troparion_tone": 8,
+          "troparion": {
+            "tone": 8,
+            "title": "Troparion of St. Maximus the Confessor",
+            "text": "Guide of Orthodox faith, teacher of piety and reverence, luminary of the world, adornment of monks inspired by God: thou hast enlightened all by thy doctrines, O Maximus, harp of the Holy Spirit. Intercede with Christ our God for the salvation of our souls."
+          },
+          "troparion_status": "resolved",
+          "tradition_tags": ["EOR", "ANG", "LAT"],
+          "notes": "Maximus the Confessor (+662). Theologian and confessor under monothelite persecution. Rank 4."
+        }
+      ]
+    },
+    "01-22": {
+      "commemorations": [
+        {
+          "id": "apostle-timothy",
+          "name": "Holy Apostle Timothy",
+          "type": "apostle",
+          "rank": 3,
+          "troparion_tone": 4,
+          "troparion": {
+            "tone": 4,
+            "title": "Troparion of the Holy Apostle Timothy",
+            "text": "O Apostle Timothy, who art adorned with divine grace as a companion of Paul the teacher of the nations, with him intercede with God to grant us remission of our sins."
+          },
+          "troparion_status": "resolved",
+          "tradition_tags": ["EOR", "ANG", "LAT"],
+          "notes": "Apostle Timothy (+97), disciple of Paul. Rank 3."
+        }
+      ]
+    },
+    "01-23": {
+      "commemorations": [
+        {
+          "id": "clement-ancyra-agathangelus",
+          "name": "Hieromartyr Clement of Ancyra; Martyr Agathangelus",
+          "type": "martyr",
+          "rank": 4,
+          "troparion_tone": 4,
+          "troparion": null,
+          "troparion_status": "text-unavailable",
+          "tradition_tags": ["EOR"],
+          "notes": "Hieromartyr Clement (+296). Troparion text not securely confirmed for corpus."
+        }
+      ]
+    },
+    "01-24": {
+      "commemorations": [
+        {
+          "id": "xenia-rome",
+          "name": "Venerable Xenia of Rome (Eusebeia)",
+          "type": "saint",
+          "rank": 4,
+          "troparion_tone": 4,
+          "troparion": null,
+          "troparion_status": "text-unavailable",
+          "tradition_tags": ["EOR"],
+          "notes": "Venerable Xenia (+5th c.). Troparion text not securely confirmed."
+        }
+      ]
+    },
+    "01-25": {
+      "commemorations": [
+        {
+          "id": "gregory-theologian",
+          "name": "St. Gregory the Theologian, Archbishop of Constantinople",
+          "type": "hierarch",
+          "rank": 2,
+          "troparion_tone": 1,
+          "troparion": {
+            "tone": 1,
+            "title": "Troparion of St. Gregory the Theologian",
+            "text": "The shepherd's pipe of thy theology vanquished the trumpetings of the philosophers, O Gregory the Theologian. Having gathered and sown the depths of the Spirit, beauty was added unto thee. But intercede with Christ God that our souls be saved."
+          },
+          "troparion_status": "resolved",
+          "tradition_tags": ["EOR", "OOR", "ANG", "LAT"],
+          "notes": "Gregory Nazianzus (+389/390), Cappadocian Father. Rank 2 (Polyeleos). Also Translation of the relics of Gregory (Jan 19 old calendar / Jan 26 in some usage)."
+        }
+      ]
+    },
+    "01-26": {
+      "commemorations": [
+        {
+          "id": "xenophon-family",
+          "name": "Venerable Xenophon and Mary, and their sons Arcadius and John",
+          "type": "monastic",
+          "rank": 4,
+          "troparion_tone": 8,
+          "troparion": null,
+          "troparion_status": "text-unavailable",
+          "tradition_tags": ["EOR"],
+          "notes": "5th-6th c. Constantinople. Rank 4. Troparion text not securely confirmed."
+        }
+      ]
+    },
+    "01-27": {
+      "commemorations": [
+        {
+          "id": "translation-chrysostom",
+          "name": "Translation of the Relics of St. John Chrysostom",
+          "type": "feast",
+          "rank": 2,
+          "troparion_tone": 8,
+          "troparion": {
+            "tone": 8,
+            "title": "Troparion of St. John Chrysostom",
+            "text": "Grace like a flame shining forth from thy mouth has illumined the universe and stored up in the world the treasures of poverty and the height of humility. Teaching us in thine own words, O Father John Chrysostom, intercede with the Word, Christ our God, that our souls may be saved."
+          },
+          "troparion_status": "resolved",
+          "tradition_tags": ["EOR", "OOR", "ANG", "LAT"],
+          "notes": "Translation of the relics of Chrysostom (438). The Troparion is the same as Nov 13. Rank 2."
+        }
+      ]
+    },
+    "01-28": {
+      "commemorations": [
+        {
+          "id": "ephrem-syrian",
+          "name": "Venerable Ephrem the Syrian",
+          "type": "monastic",
+          "rank": 2,
+          "troparion_tone": 8,
+          "troparion": {
+            "tone": 8,
+            "title": "Troparion of St. Ephrem the Syrian",
+            "text": "Emulator of the angels and support of the afflicted, thee, O God-wise Ephrem, thy Lord filled with the gifts of the Holy Spirit, for thou hast bent low before His footstool. Wherefore from the spring of thy words thou dost pour forth rivers of repentance. O Father, intercede with God for the salvation of our souls."
+          },
+          "troparion_status": "resolved",
+          "tradition_tags": ["EOR", "OOR", "ANG", "LAT", "COE"],
+          "notes": "Ephrem the Syrian (+373). Deacon, hymnographer, Doctor of the Church. Pan-traditional. Rank 2."
+        }
+      ]
+    },
+    "01-29": {
+      "commemorations": [
+        {
+          "id": "martyr-ignatius-god-bearer-translation",
+          "name": "Translation of the Relics of Hieromartyr Ignatius the God-Bearer",
+          "type": "martyr",
+          "rank": 3,
+          "troparion_tone": 4,
+          "troparion": {
+            "tone": 4,
+            "title": "Troparion of St. Ignatius the God-Bearer",
+            "text": "As the disciples of the Lord, thou didst fulfill His evangelical counsel and didst not hold thy life dear, O blessed Ignatius. Therefore thou wast devoured by lions, yet thou hast been found worthy of bearing Christ within thee. Intercede with Him for the salvation of our souls."
+          },
+          "troparion_status": "resolved",
+          "tradition_tags": ["EOR", "OOR", "ANG", "LAT"],
+          "notes": "Translation of relics of Ignatius of Antioch (+107/108). Same Troparion as Dec 20. Rank 3."
+        }
+      ]
+    },
+    "01-30": {
+      "commemorations": [
+        {
+          "id": "three-hierarchs",
+          "name": "Synaxis of the Three Great Hierarchs: Basil the Great, Gregory the Theologian, and John Chrysostom",
+          "type": "feast",
+          "rank": 2,
+          "troparion_tone": 4,
+          "troparion": {
+            "tone": 4,
+            "title": "Troparion of the Three Hierarchs",
+            "text": "As the three outstanding lights of the three-sunned Godhead, who filled all the world with divine light, the God-inspired speakers of holy words: let us praise them as three golden mouths of wisdom, for they dispersed doctrines of divinity and they now intercede with the Master before all to have mercy on our souls."
+          },
+          "troparion_status": "resolved",
+          "tradition_tags": ["EOR", "OOR"],
+          "notes": "Feast of the Three Hierarchs. Established by Patriarch John Mauropos of Constantinople (+1100). Rank 2 (Polyeleos). All three are commemorated on their individual feast days as well."
+        }
+      ]
+    },
+    "01-31": {
+      "commemorations": [
+        {
+          "id": "cyrus-john-unmercenaries",
+          "name": "Holy Unmercenary Healers Cyrus and John",
+          "type": "saint",
+          "rank": 3,
+          "troparion_tone": 5,
+          "troparion": {
+            "tone": 5,
+            "title": "Troparion of the Holy Unmercenaries Cyrus and John",
+            "text": "O God-bearing Cyrus and holy John, with your divine healings ye have driven away the wiles of the demons and the deceptions of the enemies, guarding those of us who are in sickness with your miraculous interventions; and by your supplications ye have chased away the darkness of demonic delusion from our souls."
+          },
+          "troparion_status": "resolved",
+          "tradition_tags": ["EOR", "OOR"],
+          "notes": "Cyrus (+311) and John (+311), unmercenary physicians of Alexandria. Rank 3."
+        }
+      ]
+    }
+  }
+}

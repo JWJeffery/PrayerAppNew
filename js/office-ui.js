@@ -831,6 +831,14 @@ function setCustomDate(dateStr) {
     requestRender();
 }
 
+// ── Tradition sidebar compatibility wrappers ──────────────────────────────
+// index.html sidebar buttons for Ethiopian and East Syriac use these names.
+// All delegate to the shared date helpers — no logic lives here.
+function ethChangeDate(days) { changeDate(days); }
+function ethToday()          { resetDate();      }
+function esyChangeDate(days) { changeDate(days); }
+function esyToday()          { resetDate();      }
+
 function updateSidebarForOffice() {
     const officeId   = document.querySelector('input[name="office-time"]:checked')?.value || 'morning-office';
     const isMorning  = officeId === 'morning-office';
