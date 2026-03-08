@@ -1,10 +1,10 @@
 {
   "project_manifest": {
     "name": "Universal Office",
-    "version": "3.1.0",
+    "version": "3.2.0",
     "last_updated": "2026-03-07",
     "bcp_compliance": "100%",
-    "operational_status": "Menaion corpus COMPLETE: all 12 months imported — November (30/30), December (31/31), January (31/31), February (28/28), March (31/31), April (30/30), May (31/31), June (30/30), July (31/31), August (31/31), September (30/30), October (31/31). Total: 365 fixed-date entries across the annual calendar. Horologion v2.1 engine + Menaion v1.8 corpus/resolver. All months now resolve from Menaion data; no month returns menaion-not-imported. Feast-rank override logic still deferred. Generic sidebar shell (#generic-settings) implemented as fourth sidebar identity.",
+    "operational_status": "Menaion corpus COMPLETE: all 12 months imported — November (30/30), December (31/31), January (31/31), February (28/28), March (31/31), April (30/30), May (31/31), June (30/30), July (31/31), August (31/31), September (30/30), October (31/31). Total: 365 fixed-date entries across the annual calendar. Horologion v2.1 engine + Menaion v1.8 corpus/resolver. All months now resolve from Menaion data; no month returns menaion-not-imported. Weekday Theotokion tone-correction for rank 1/2 Menaion feasts implemented (v2.2). Stichera, aposticha, and paremiae overrides for rank 1/2 feasts still deferred. Generic sidebar shell (#generic-settings) implemented as fourth sidebar identity.",
     "audit_findings": {
       "open_bugs": [
         "1. Rubric logic: [rite] placeholder resolution in rubrics.json is fragile and prone to null returns. (LOW — see known_outstanding_issues.rite_placeholder_resolution)"

@@ -1068,19 +1068,27 @@ const HorologionEngine = (() => {
                 const mr   = await window.MenaionResolver.queryTroparion(mmdd);
 
                 if (mr.status === 'menaion-resolved') {
+                    // v2.2: feastRankOverride flag added for rank 1/2 feasts.
+                    // The troparion selection path is unchanged — the engine already
+                    // returned the Menaion text for any rank. The flag lets the
+                    // Theotokion resolver detect when a rank 1/2 feast tone should
+                    // drive the dismissal Theotokion. The stale "pilot corpus:
+                    // November only" note is removed; all 12 months are now imported.
+                    const isFeastRankOverride = typeof mr.rank === 'number' && mr.rank <= 2;
                     return {
-                        type:         'text',
-                        key:          'troparion-or-apolytikion',
-                        label:        mr.title || `Apolytikion — ${mr.name}`,
-                        text:         mr.text +
-                                      `\n\n(Menaion — ${mr.name}. Tone ${mr.tone}. Rank ${mr.rank}. ` +
-                                      `Pilot corpus: November only. Festal override of Octoechos stichera is not yet implemented.)`,
-                        tone:         mr.tone,
-                        weekdayTheme: theme,
-                        fastingDay:   fastingDay,
-                        menaionName:  mr.name,
-                        menaionRank:  mr.rank,
-                        resolvedAs:   'menaion-resolved'
+                        type:             'text',
+                        key:              'troparion-or-apolytikion',
+                        label:            mr.title || `Apolytikion — ${mr.name}`,
+                        text:             mr.text +
+                                          `\n\n(Menaion — ${mr.name}. Tone ${mr.tone}. Rank ${mr.rank}. ` +
+                                          `Stichera and paremiae overrides for rank 1/2 feasts are not yet implemented.)`,
+                        tone:             mr.tone,
+                        weekdayTheme:     theme,
+                        fastingDay:       fastingDay,
+                        menaionName:      mr.name,
+                        menaionRank:      mr.rank,
+                        feastRankOverride: isFeastRankOverride,
+                        resolvedAs:       'menaion-resolved'
                     };
                 }
 
@@ -1273,7 +1281,7 @@ const HorologionEngine = (() => {
     //
     // Returns: a resolved item object, or null on data load failure.
     // ──────────────────────────────────────────────────────────────────────
-    function _resolveTheotokionSlot(dayOfWeek, toneResult) {
+    function _resolveTheotokionSlot(dayOfWeek, toneResult, resolvedTroparionItem) {
         // If data file failed to load, degrade to placeholder.
         if (_theotokionData === null) return null;
 
@@ -1346,63 +1354,81 @@ const HorologionEngine = (() => {
 
         // ── Weekday (Mon–Fri): Octoechos weekday Theotokion ─────────────────
         // v1.9: full type:'text' resolution from vespers-weekday-theotokion.json.
-        // These are the standard Octoechos Theotokia for each tone + weekday.
         // Wednesday and Friday entries are Stavrotheotokia (Cross Theotokia).
+        //
+        // v2.2: Menaion tone-correction for rank 1/2 feasts.
+        // When the resolved troparion is a rank 1/2 Menaion commemoration, the
+        // Theotokion lookup uses the Menaion troparion's tone rather than the
+        // Octoechos weekly tone. For all other cases the Octoechos tone is used.
         //
         // Graceful degradation: if the weekday data file failed to load,
         // fall back to the v1.7 tone-identified rubric stub.
         const WEEKDAY_NAMES_SHORT = ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'];
         const weekdayName = WEEKDAY_NAMES_SHORT[dayOfWeek]; // 'monday' … 'friday'
 
+        // v2.2: determine effective Theotokion tone
+        const menaionToneCorrection =
+            resolvedTroparionItem &&
+            resolvedTroparionItem.resolvedAs === 'menaion-resolved' &&
+            resolvedTroparionItem.feastRankOverride === true &&
+            typeof resolvedTroparionItem.tone === 'number' &&
+            resolvedTroparionItem.tone >= 1 &&
+            resolvedTroparionItem.tone <= 8;
+
+        const effectiveTone = menaionToneCorrection ? resolvedTroparionItem.tone : tone;
+        const theotokionToneSource = menaionToneCorrection ? 'menaion' : 'octoechos';
+
         if (_weekdayTheotokionData !== null) {
             const allTones = _weekdayTheotokionData.weekday_theotokia;
-            const toneEntry = allTones && allTones[String(tone)];
+            const toneEntry = allTones && allTones[String(effectiveTone)];
             const dayEntry  = toneEntry && toneEntry[weekdayName];
 
             if (dayEntry) {
-                // Wednesday and Friday have Stavrotheotokia — note this in label
                 const isStavro = (dayOfWeek === 3 || dayOfWeek === 5);
                 const typeLabel = isStavro ? 'Stavrotheotokion' : 'Theotokion';
 
+                const baselineOrOverride = menaionToneCorrection ? 'FEAST-TONE CORRECTION' : 'BASELINE';
+                const toneAnnotation = menaionToneCorrection
+                    ? `Tone ${effectiveTone} (from Menaion troparion — rank ${resolvedTroparionItem.menaionRank} feast; Octoechos tone was ${tone}).`
+                    : `Tone ${effectiveTone} (Octoechos baseline). ` +
+                      `LIMITATION: The Theotokion at weekday Vespers ordinarily follows the tone of the ` +
+                      `Menaion troparion sung. This baseline is correct when the Menaion troparion ` +
+                      `is of the same tone; rank 1/2 feast tone-correction is now applied automatically.`;
+
                 return {
-                    type:       'text',
-                    key:        'theotokion-dismissal',
-                    label:      dayEntry.title,
-                    text:       dayEntry.text + '\n\n' +
-                                `(BASELINE — ordinary weekday Vespers, Tone ${tone}, ${_capitalise(weekdayName)}. ` +
-                                `This is the ${typeLabel} of the Octoechos for this tone and day. ` +
-                                (isStavro
-                                    ? `Wednesday and Friday Theotokia are Stavrotheotokia (Theotokia of the Cross), ` +
-                                      `reflecting the fasting character of these days in the Byzantine rite. `
-                                    : '') +
-                                `LIMITATION: The Theotokion at weekday Vespers ordinarily follows the tone of the ` +
-                                `Menaion troparion sung, which may differ from the current Octoechos tone (Tone ${tone}). ` +
-                                `Because weekday troparion text is Menaion-driven and not yet implemented, ` +
-                                `this baseline uses the current Octoechos tone. ` +
-                                `This is correct for ordinary weeks when the Menaion troparion is of the same tone. ` +
-                                `Festal overrides are not yet implemented.)`,
-                    tone:       tone,
-                    weekday:    weekdayName,
-                    resolvedAs: 'weekday-octoechos-theotokion'
+                    type:                'text',
+                    key:                 'theotokion-dismissal',
+                    label:               dayEntry.title,
+                    text:                dayEntry.text + '\n\n' +
+                                         `(${baselineOrOverride} — weekday Vespers, ${_capitalise(weekdayName)}. ` +
+                                         `${toneAnnotation} ` +
+                                         `This is the ${typeLabel} of the Octoechos for this tone and day. ` +
+                                         (isStavro
+                                             ? `Wednesday and Friday Theotokia are Stavrotheotokia (Theotokia of the Cross), ` +
+                                               `reflecting the fasting character of these days in the Byzantine rite. `
+                                             : ''),
+                    tone:                effectiveTone,
+                    weekday:             weekdayName,
+                    theotokionToneSource: theotokionToneSource,
+                    resolvedAs:          'weekday-octoechos-theotokion'
                 };
             }
         }
 
-        // Fallback: weekday data file unavailable — return v1.7-style rubric stub
+        // Fallback: weekday data file unavailable — return rubric stub
         return {
             type:       'rubric',
             key:        'theotokion-dismissal',
             label:      'Theotokion',
-            text:       `(Tone ${tone} — Weekday Dismissal Theotokion: data unavailable. ` +
-                        `Current Octoechos tone: Tone ${tone}. ` +
+            text:       `(Tone ${effectiveTone} — Weekday Dismissal Theotokion: data unavailable. ` +
                         `The weekday Theotokion data file (vespers-weekday-theotokion.json) could not be loaded. ` +
-                        `When available, the Octoechos weekday Theotokion for Tone ${tone} on ${_capitalise(weekdayName)} will be displayed.)`,
-            tone:       tone,
+                        (menaionToneCorrection
+                            ? `Menaion tone-correction was applicable (rank ${resolvedTroparionItem.menaionRank} feast, Tone ${effectiveTone}) but could not be applied.`
+                            : `Current Octoechos tone: Tone ${effectiveTone}.`),
+            tone:       effectiveTone,
             resolvedAs: 'weekday-menaion-required'
         };
     }
-
-
     // ──────────────────────────────────────────────────────────────────────
     // v1.9 internal helper: _capitalise(str)
     // Returns the string with the first character uppercased.
@@ -1763,14 +1789,17 @@ const HorologionEngine = (() => {
                     // If null (data load failed), slot remains placeholder.
                 }
 
-                // ── theotokion-dismissal (v1.7) ───────────────────────────
+                // ── theotokion-dismissal (v1.7 / v2.2) ───────────────────────────
                 // Saturday: full dismissal Theotokion (Octoechos, tone-matched).
                 // Bright Week: explicit omission rubric.
-                // Weekdays: tone-identified stub (Menaion required for text).
-                // Sunday: explicitly deferred.
-                // Festal overrides: NOT implemented in this pass.
+                // Weekdays: v2.2 — tone follows Menaion troparion for rank 1/2 feasts;
+                //   Octoechos baseline tone preserved for all other cases.
+                // Sunday: Octoechos tone Theotokion.
                 else if (item.key === 'theotokion-dismissal') {
-                    const resolved = _resolveTheotokionSlot(dayOfWeek, toneResult);
+                    // v2.2: pass the already-resolved troparion item so the weekday
+                    // branch can apply Menaion tone-correction for rank 1/2 feasts.
+                    const troparionItem = section.items.find(it => it.key === 'troparion-or-apolytikion');
+                    const resolved = _resolveTheotokionSlot(dayOfWeek, toneResult, troparionItem);
                     if (resolved) {
                         section.items[i] = resolved;
                     }
