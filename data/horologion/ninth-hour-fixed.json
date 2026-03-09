@@ -1,0 +1,51 @@
+{
+  "_comment": [
+    "data/horologion/ninth-hour-fixed.json — Horologion v3.4",
+    "",
+    "Invariable fixed texts for the Ninth Hour (Nona).",
+    "All entries resolved unconditionally by _resolveNinthHourSlots().",
+    "Variable slots (troparion-of-the-day, ninth-hour-theotokion) are NOT here;",
+    "they are resolved dynamically by HorologionEngine.",
+    "",
+    "Psalm translations follow the LXX numeration used in Byzantine practice.",
+    "Source: Standard Antiochian/OCA Horologion (Jordanville 2008 edition)."
+  ],
+  "slots": {
+    "usual-beginning": {
+      "type": "text",
+      "label": "The Usual Beginning",
+      "text": "Glory to Thee, our God, glory to Thee.\n\nO Heavenly King, O Comforter, the Spirit of Truth, Who art everywhere present and fillest all things, Treasury of blessings and Giver of life: come and abide in us, and cleanse us from every impurity, and save our souls, O Good One.\n\nHoly God, Holy Mighty, Holy Immortal, have mercy on us. (×3)\n\nGlory to the Father, and to the Son, and to the Holy Spirit, both now and ever, and unto ages of ages. Amen.\n\nAll-holy Trinity, have mercy on us. Lord, cleanse us from our sins. Master, pardon our iniquities. Holy One, visit and heal our infirmities for Thy Name's sake.\n\nLord, have mercy. (×3)\n\nGlory to the Father, and to the Son, and to the Holy Spirit, both now and ever, and unto ages of ages. Amen.\n\nOur Father, Who art in Heaven, hallowed be Thy Name. Thy Kingdom come, Thy will be done, on earth as it is in Heaven. Give us this day our daily bread; and forgive us our trespasses, as we forgive those who trespass against us; and lead us not into temptation, but deliver us from evil.\n\nFor Thine is the Kingdom, and the power, and the glory, of the Father, and of the Son, and of the Holy Spirit, now and ever, and unto ages of ages. Amen.\n\nLord, have mercy. (×12)\n\nCome, let us worship God our King.\nCome, let us worship and fall down before Christ our King and God.\nCome, let us worship and fall down before Christ Himself, our King and our God."
+    },
+    "psalm-83": {
+      "type": "psalm",
+      "lxxNumber": 83,
+      "hebrewNumber": 84,
+      "label": "Psalm 83 (LXX) — How beloved are Thy dwellings, O Lord of hosts",
+      "text": "How beloved are Thy dwellings, O Lord of hosts! My soul longeth and fainteth for the courts of the Lord. My heart and my flesh have rejoiced in the living God.\n\nFor the sparrow hath found herself a house, and the turtledove a nest for herself where she may lay her young, even Thine altars, O Lord of hosts, my King and my God. Blessed are they that dwell in Thy house; unto ages of ages shall they praise Thee.\n\nBlessed is the man whose help is from Thee; he hath made ascents in his heart, in the vale of weeping, in the place which he hath appointed. For the lawgiver will give blessings; they shall go from strength to strength; the God of gods shall be seen in Zion.\n\nO Lord God of hosts, hear my prayer; give ear, O God of Jacob. O God our defender, behold, and look upon the face of Thine anointed.\n\nFor better is one day in Thy courts than thousands elsewhere. I have chosen rather to be an outcast in the house of my God than to dwell in the tents of sinners. For the Lord loveth mercy and truth; God will give grace and glory.\n\nThe Lord will not withhold good things from them that walk in innocence. O Lord God of hosts, blessed is the man that hopeth in Thee.\n\nGlory to the Father, and to the Son, and to the Holy Spirit, both now and ever, and unto ages of ages. Amen."
+    },
+    "psalm-84": {
+      "type": "psalm",
+      "lxxNumber": 84,
+      "hebrewNumber": 85,
+      "label": "Psalm 84 (LXX) — O Lord, Thou hast been gracious unto Thy land",
+      "text": "O Lord, Thou hast been gracious unto Thy land; Thou hast turned back the captivity of Jacob. Thou hast forgiven the iniquities of Thy people; Thou hast covered all their sins. Thou hast made to cease all Thy wrath; Thou hast turned back from the wrath of Thine anger.\n\nTurn us back, O God of our salvation, and turn away Thine anger from us. Wilt Thou be angry with us unto the ages, or wilt Thou stretch out Thy wrath from generation to generation? O God, Thou shalt turn again and quicken us, and Thy people shall be glad in Thee.\n\nShow us, O Lord, Thy mercy, and grant us Thy salvation. I will hear what the Lord God will speak in me; for He will speak peace unto His people, and unto His saints, and unto them that turn their hearts unto Him.\n\nMoreover, His salvation is nigh unto them that fear Him, that glory may dwell in our land. Mercy and truth are met together; righteousness and peace have kissed each other. Truth is sprung up from the earth, and righteousness hath looked down from heaven.\n\nFor the Lord will give goodness, and our earth shall yield her fruit. Righteousness shall go before Him, and shall set His footsteps in the way.\n\nGlory to the Father, and to the Son, and to the Holy Spirit, both now and ever, and unto ages of ages. Amen."
+    },
+    "psalm-85": {
+      "type": "psalm",
+      "lxxNumber": 85,
+      "hebrewNumber": 86,
+      "label": "Psalm 85 (LXX) — Bow down Thine ear, O Lord, and hear me",
+      "text": "Bow down Thine ear, O Lord, and hear me, for poor and needy am I. Preserve my soul, for I am holy; save Thy servant, O my God, that hopeth in Thee. Be merciful unto me, O Lord, for unto Thee will I cry all the day.\n\nGladden the soul of Thy servant, for unto Thee have I lifted up my soul. For Thou, O Lord, art good and gentle, and plenteous in mercy unto all them that call upon Thee. Give ear, O Lord, unto my prayer, and attend unto the voice of my supplication.\n\nIn the day of mine affliction I cried unto Thee, for Thou hast heard me. There is none like unto Thee among the gods, O Lord, and there are no works like unto Thy works. All the nations whom Thou hast made shall come and shall worship before Thee, O Lord, and shall glorify Thy Name.\n\nFor Thou art great and workest wonders; Thou alone art God. Guide me, O Lord, in Thy way, and I will walk in Thy truth. Let my heart rejoice, that I may fear Thy Name. I will confess Thee, O Lord my God, with all my heart, and I will glorify Thy Name forever.\n\nFor great is Thy mercy upon me, and Thou hast delivered my soul from the nethermost Hades. O God, transgressors have risen up against me, and the assembly of the mighty have sought after my soul, and they have not set Thee before them.\n\nBut Thou, O Lord my God, art compassionate and merciful, long-suffering and plenteous in mercy, and true. Look upon me and have mercy on me; give Thy strength unto Thy servant, and save the son of Thy handmaid. Work in me a sign unto good, and let them that hate me behold and be put to shame, because Thou, O Lord, hast helped me and comforted me.\n\nGlory to the Father, and to the Son, and to the Holy Spirit, both now and ever, and unto ages of ages. Amen."
+    },
+    "trisagion-prayers": {
+      "type": "text",
+      "label": "Trisagion Prayers",
+      "text": "Holy God, Holy Mighty, Holy Immortal, have mercy on us. (×3)\n\nGlory to the Father, and to the Son, and to the Holy Spirit, both now and ever, and unto ages of ages. Amen.\n\nAll-holy Trinity, have mercy on us. Lord, cleanse us from our sins. Master, pardon our iniquities. Holy One, visit and heal our infirmities for Thy Name's sake.\n\nLord, have mercy. (×3)\n\nGlory to the Father, and to the Son, and to the Holy Spirit, both now and ever, and unto ages of ages. Amen.\n\nOur Father, Who art in Heaven, hallowed be Thy Name. Thy Kingdom come, Thy will be done, on earth as it is in Heaven. Give us this day our daily bread; and forgive us our trespasses, as we forgive those who trespass against us; and lead us not into temptation, but deliver us from evil.\n\nFor Thine is the Kingdom, and the power, and the glory, of the Father, and of the Son, and of the Holy Spirit, now and ever, and unto ages of ages. Amen.\n\nLord, have mercy. (×12)"
+    },
+    "prayer-of-the-ninth-hour": {
+      "type": "text",
+      "label": "Prayer of the Ninth Hour",
+      "text": "O Master and Lord, Jesus Christ our God, Who art long-suffering toward our sins and hast brought us even unto this present hour, in which, hanging upon the life-giving Cross, Thou hast opened unto the good thief the way into Paradise and destroyed death by death: be merciful to us, Thy humble and sinful and unworthy servants. For we have sinned and transgressed, and we are not worthy to lift up our eyes and look at the height of heaven, since we have forsaken the path of Thy righteousness and have walked according to the desires of our own hearts. But we pray Thee of Thy boundless goodness, spare us, O Lord, according to the abundance of Thy mercy, and save us for Thy holy Name's sake, for our days are consumed in vanity. Deliver us from the hand of the adversary, forgive us our sins, and kill the passions of the flesh, that putting off the old man, we may be clothed with the new, and may live for Thee, our Master and Protector; and that so, following Thine ordinances, we may attain to the eternal rest, in the place where all the joyful dwell. For Thou, O Christ our God, art indeed the true joy and gladness of those that love Thee, and unto Thee we ascribe glory, together with Thy Father, Who is without beginning, and Thy most holy, good, and life-giving Spirit, now and ever, and unto ages of ages. Amen."
+    }
+  }
+}
