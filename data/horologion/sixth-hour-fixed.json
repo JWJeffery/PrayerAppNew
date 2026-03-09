@@ -1,0 +1,51 @@
+{
+  "_comment": [
+    "data/horologion/sixth-hour-fixed.json — Horologion v3.3",
+    "",
+    "Invariable fixed texts for the Sixth Hour (Sexta).",
+    "All entries resolved unconditionally by _resolveSixthHourSlots().",
+    "Variable slots (troparion-of-the-day, sixth-hour-theotokion) are NOT here;",
+    "they are resolved dynamically by HorologionEngine.",
+    "",
+    "Psalm translations follow the LXX numeration used in Byzantine practice.",
+    "Source: Standard Antiochian/OCA Horologion (Jordanville 2008 edition)."
+  ],
+  "slots": {
+    "usual-beginning": {
+      "type": "text",
+      "label": "The Usual Beginning",
+      "text": "Glory to Thee, our God, glory to Thee.\n\nO Heavenly King, O Comforter, the Spirit of Truth, Who art everywhere present and fillest all things, Treasury of blessings and Giver of life: come and abide in us, and cleanse us from every impurity, and save our souls, O Good One.\n\nHoly God, Holy Mighty, Holy Immortal, have mercy on us. (×3)\n\nGlory to the Father, and to the Son, and to the Holy Spirit, both now and ever, and unto ages of ages. Amen.\n\nAll-holy Trinity, have mercy on us. Lord, cleanse us from our sins. Master, pardon our iniquities. Holy One, visit and heal our infirmities for Thy Name's sake.\n\nLord, have mercy. (×3)\n\nGlory to the Father, and to the Son, and to the Holy Spirit, both now and ever, and unto ages of ages. Amen.\n\nOur Father, Who art in Heaven, hallowed be Thy Name. Thy Kingdom come, Thy will be done, on earth as it is in Heaven. Give us this day our daily bread; and forgive us our trespasses, as we forgive those who trespass against us; and lead us not into temptation, but deliver us from evil.\n\nFor Thine is the Kingdom, and the power, and the glory, of the Father, and of the Son, and of the Holy Spirit, now and ever, and unto ages of ages. Amen.\n\nLord, have mercy. (×12)\n\nCome, let us worship God our King.\nCome, let us worship and fall down before Christ our King and God.\nCome, let us worship and fall down before Christ Himself, our King and our God."
+    },
+    "psalm-53": {
+      "type": "psalm",
+      "lxxNumber": 53,
+      "hebrewNumber": 54,
+      "label": "Psalm 53 (LXX) — Save me, O God, by Thy Name",
+      "text": "Save me, O God, by Thy Name, and judge me by Thy might.\n\nO God, hear my prayer; give ear to the words of my mouth. For strangers are risen up against me, and mighty men have sought after my soul; they have not set God before them.\n\nFor behold, God helpeth me, and the Lord is the defender of my soul. He shall return evil unto mine enemies; destroy Thou them in Thy truth.\n\nI will sacrifice unto Thee willingly; I will praise Thy Name, O Lord, for it is good. For Thou hast delivered me out of all affliction, and mine eye hath looked down upon mine enemies.\n\nGlory to the Father, and to the Son, and to the Holy Spirit, both now and ever, and unto ages of ages. Amen."
+    },
+    "psalm-54": {
+      "type": "psalm",
+      "lxxNumber": 54,
+      "hebrewNumber": 55,
+      "label": "Psalm 54 (LXX) — Give ear to my prayer, O God",
+      "text": "Give ear to my prayer, O God, and despise not my supplication. Attend unto me and hear me; I was grieved in my meditation, and was troubled at the voice of the enemy and at the oppression of the sinner; for they brought iniquity against me and in anger they were wrathful at me.\n\nMy heart was troubled within me, and the fear of death fell upon me. Fear and trembling came upon me, and darkness covered me.\n\nAnd I said: Who will give me wings like a dove, and I will fly away and be at rest? Lo, I have gone far off, fleeing away, and I abode in the wilderness.\n\nI waited for Him that saveth me from faintheartedness and tempest. Destroy them, O Lord, and divide their tongues, for I have seen iniquity and contradiction in the city.\n\nDay and night it shall go about upon her walls; iniquity and toil are in the midst of her, and injustice; and usury and deceit have not departed from her streets.\n\nFor if mine enemy had reproached me, I would have endured it; and if he that hateth me had spoken against me with presumption, I would have hidden myself from him. But thou, a man of like soul with me, my guide and my acquaintance, who together made sweet food, in the house of God we walked in concord.\n\nLet death come upon them, and let them go down into Hades alive; for iniquity is in their dwellings, in the midst of them.\n\nAs for me, I cried unto God, and the Lord heard me. Evening and morning and at noon will I declare and make known; and He shall hear my voice. He shall redeem my soul in peace from them that draw nigh unto me; for among many they were with me.\n\nGod shall hear and shall humble them, He that is before the ages. For there is no change for them, and they feared not God; he stretched forth his hand unto retribution, they have defiled His covenant. They were scattered at the anger of His countenance, and His heart drew near; His words were smoother than oil, yet are they darts.\n\nCast thy care upon the Lord, and He shall nourish thee; He shall never suffer the righteous man to be shaken.\n\nBut Thou, O God, shalt bring them down into the pit of destruction; men of blood and deceit shall not live out half their days. But as for me, I will hope in Thee, O Lord.\n\nGlory to the Father, and to the Son, and to the Holy Spirit, both now and ever, and unto ages of ages. Amen."
+    },
+    "psalm-90": {
+      "type": "psalm",
+      "lxxNumber": 90,
+      "hebrewNumber": 91,
+      "label": "Psalm 90 (LXX) — He that dwelleth in the help of the Most High",
+      "text": "He that dwelleth in the help of the Most High shall abide in the shelter of the God of heaven. He shall say unto the Lord: Thou art my helper and my refuge, my God, and I will hope in Him.\n\nFor He shall deliver thee from the snare of the hunters and from every troubling word. He shall overshadow thee with His shoulders, and under His wings shalt thou hope; His truth shall encompass thee with a shield.\n\nThou shalt not be afraid of the terror by night, nor of the arrow that flieth by day, nor of the thing that walketh in darkness, nor of the mishap and the noonday demon.\n\nA thousand shall fall at thy side, and ten thousand at thy right hand; but it shall not come nigh thee. Nevertheless, with thine eyes shalt thou behold, and thou shalt see the reward of sinners.\n\nFor Thou, O Lord, art my hope; thou hast made the Most High thy refuge. No evil shall befall thee, and no scourge shall come nigh thy dwelling. For He shall give His angels charge over thee, to keep thee in all thy ways. In their hands shall they bear thee up, lest at any time thou dash thy foot against a stone.\n\nThou shalt tread upon the asp and the basilisk, and thou shalt trample the lion and the dragon.\n\nFor he hath set his hope on Me, and I will deliver him; I will shelter him, because he hath known My Name. He shall call upon Me and I will hearken unto him; I am with him in affliction, and I will deliver him and glorify him. With length of days will I satisfy him, and I will show him My salvation.\n\nGlory to the Father, and to the Son, and to the Holy Spirit, both now and ever, and unto ages of ages. Amen."
+    },
+    "trisagion-prayers": {
+      "type": "text",
+      "label": "Trisagion Prayers",
+      "text": "Holy God, Holy Mighty, Holy Immortal, have mercy on us. (×3)\n\nGlory to the Father, and to the Son, and to the Holy Spirit, both now and ever, and unto ages of ages. Amen.\n\nAll-holy Trinity, have mercy on us. Lord, cleanse us from our sins. Master, pardon our iniquities. Holy One, visit and heal our infirmities for Thy Name's sake.\n\nLord, have mercy. (×3)\n\nGlory to the Father, and to the Son, and to the Holy Spirit, both now and ever, and unto ages of ages. Amen.\n\nOur Father, Who art in Heaven, hallowed be Thy Name. Thy Kingdom come, Thy will be done, on earth as it is in Heaven. Give us this day our daily bread; and forgive us our trespasses, as we forgive those who trespass against us; and lead us not into temptation, but deliver us from evil.\n\nFor Thine is the Kingdom, and the power, and the glory, of the Father, and of the Son, and of the Holy Spirit, now and ever, and unto ages of ages. Amen.\n\nLord, have mercy. (×12)"
+    },
+    "prayer-of-the-sixth-hour": {
+      "type": "text",
+      "label": "Prayer of the Sixth Hour",
+      "text": "O God and Lord of powers, and Maker of all creation, Who by Thy tender mercy didst send down Thine Only-begotten Son, our Lord Jesus Christ, for the salvation of our race, and through His venerable Cross didst tear asunder the handwriting of our sins, and thereby didst triumph over the principalities and powers of darkness: do Thou Thyself, O Master Who lovest mankind, accept also from us sinners these prayers of thanksgiving and supplication, and deliver us from every destructive and dark transgression, and from all visible and invisible enemies who seek to harm us. Nail down our flesh with fear of Thee, and let not our hearts incline toward words or thoughts of evil, but pierce our souls with Thy love, that ever looking unto Thee, being guided by Thy light and beholding Thee, the unapproachable and everlasting Light, we may render unceasing confession and thanksgiving to Thee, the eternal Father, with Thine Only-begotten Son, and with Thine All-holy, good, and life-creating Spirit, now and ever, and unto ages of ages. Amen."
+    }
+  }
+}

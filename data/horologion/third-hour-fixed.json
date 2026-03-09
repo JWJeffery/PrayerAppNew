@@ -1,0 +1,51 @@
+{
+  "_comment": [
+    "data/horologion/third-hour-fixed.json — Horologion v3.2",
+    "",
+    "Invariable fixed texts for the Third Hour (Tertia).",
+    "All entries resolved unconditionally by _resolveThirdHourSlots().",
+    "Variable slots (troparion-of-the-day, third-hour-theotokion) are NOT here;",
+    "they are resolved dynamically by HorologionEngine.",
+    "",
+    "Psalm translations follow the LXX numeration used in Byzantine practice.",
+    "Source: Standard Antiochian/OCA Horologion (Jordanville 2008 edition)."
+  ],
+  "slots": {
+    "usual-beginning": {
+      "type": "text",
+      "label": "The Usual Beginning",
+      "text": "Glory to Thee, our God, glory to Thee.\n\nO Heavenly King, O Comforter, the Spirit of Truth, Who art everywhere present and fillest all things, Treasury of blessings and Giver of life: come and abide in us, and cleanse us from every impurity, and save our souls, O Good One.\n\nHoly God, Holy Mighty, Holy Immortal, have mercy on us. (×3)\n\nGlory to the Father, and to the Son, and to the Holy Spirit, both now and ever, and unto ages of ages. Amen.\n\nAll-holy Trinity, have mercy on us. Lord, cleanse us from our sins. Master, pardon our iniquities. Holy One, visit and heal our infirmities for Thy Name's sake.\n\nLord, have mercy. (×3)\n\nGlory to the Father, and to the Son, and to the Holy Spirit, both now and ever, and unto ages of ages. Amen.\n\nOur Father, Who art in Heaven, hallowed be Thy Name. Thy Kingdom come, Thy will be done, on earth as it is in Heaven. Give us this day our daily bread; and forgive us our trespasses, as we forgive those who trespass against us; and lead us not into temptation, but deliver us from evil.\n\nFor Thine is the Kingdom, and the power, and the glory, of the Father, and of the Son, and of the Holy Spirit, now and ever, and unto ages of ages. Amen.\n\nLord, have mercy. (×12)\n\nCome, let us worship God our King.\nCome, let us worship and fall down before Christ our King and God.\nCome, let us worship and fall down before Christ Himself, our King and our God."
+    },
+    "psalm-16": {
+      "type": "psalm",
+      "lxxNumber": 16,
+      "hebrewNumber": 17,
+      "label": "Psalm 16 (LXX) — Hear, O Lord, my righteousness",
+      "text": "Hear, O Lord, my righteousness; attend to my supplication; give ear unto my prayer, which cometh not from deceitful lips.\n\nLet my judgment come forth from Thy presence; let mine eyes behold righteous things. Thou hast proved mine heart, Thou hast visited me by night, Thou hast tried me by fire, and iniquity hath not been found in me; for my mouth shall not speak of the works of men.\n\nAs for the works of men, by the words of Thy lips I have kept myself from the ways of the destroyer. Make my steps firm in Thy paths, that my feet may not stumble.\n\nI have cried, for Thou heardest me, O God; incline Thine ear unto me and hear my words. Show the marvels of Thy mercy, Thou that savest them that trust in Thee from those that resist Thy right hand.\n\nGuard me as the pupil of Thine eye; in the shadow of Thy wings shalt Thou shelter me from the face of the ungodly that afflict me.\n\nMine enemies have surrounded my soul; they have enclosed themselves in their own fat, their mouth hath spoken pride. They have now cast me out and surrounded me; they have set their eyes bowing down to the ground.\n\nThey received me as a lion ready for the prey, and as a young lion lurking in secret places. Arise, O Lord, forestall them and overthrow them; deliver my soul from the ungodly; draw Thy sword from the enemies of Thine hand.\n\nO Lord, destroy them from the earth; scatter them in their life, though their belly be filled from Thy hidden treasures. They have been satisfied with swine's flesh and have left the remnants thereof to their babes.\n\nBut as for me, in righteousness shall I behold Thy face; I shall be satisfied when Thy glory shall appear.\n\nGlory to the Father, and to the Son, and to the Holy Spirit, both now and ever, and unto ages of ages. Amen."
+    },
+    "psalm-24": {
+      "type": "psalm",
+      "lxxNumber": 24,
+      "hebrewNumber": 25,
+      "label": "Psalm 24 (LXX) — To Thee, O Lord, have I lifted up my soul",
+      "text": "To Thee, O Lord, have I lifted up my soul. O my God, in Thee have I put my trust; let me not be put to shame, neither let mine enemies mock me; for all they that wait on Thee shall not be put to shame.\n\nLet them be put to shame who transgress without cause. O Lord, show me Thy ways, and teach me Thy paths. Lead me in Thy truth and teach me, for Thou art God my Saviour; on Thee have I waited all the day long.\n\nRemember, O Lord, Thy tender mercies and Thy mercies, for they are from everlasting. The sins of my youth and mine ignorance remember not; according to Thy mercy remember Thou me, for Thy goodness' sake, O Lord.\n\nGood and upright is the Lord; therefore will He appoint a law for them that sin in the way. He will guide the meek in judgment; He will teach the gentle His ways. All the ways of the Lord are mercy and truth, to them that seek His covenant and His testimonies.\n\nFor Thy Name's sake, O Lord, be merciful unto my sin, for it is great. Who is the man that feareth the Lord? He shall appoint him a law in the way which he hath chosen.\n\nHis soul shall dwell in good things, and his seed shall inherit the earth. The Lord is the strength of them that fear Him, and His covenant is to make it manifest unto them. Mine eyes are ever toward the Lord, for He shall pluck my feet out of the snare.\n\nLook upon me and have mercy on me, for I am alone and needy. The afflictions of mine heart are multiplied; bring me out of my distresses. Look upon mine abasement and my toil, and forgive all my sins.\n\nLook upon mine enemies, for they are multiplied; and with an unjust hatred have they hated me. Keep my soul and deliver me; let me not be ashamed, for I have hoped in Thee. The innocent and the upright have cleaved unto me, for I have waited on Thee, O Lord.\n\nDeliver Israel, O God, out of all his afflictions.\n\nGlory to the Father, and to the Son, and to the Holy Spirit, both now and ever, and unto ages of ages. Amen."
+    },
+    "psalm-50": {
+      "type": "psalm",
+      "lxxNumber": 50,
+      "hebrewNumber": 51,
+      "label": "Psalm 50 (LXX) — Have mercy on me, O God",
+      "text": "Have mercy on me, O God, according to Thy great mercy; and according to the multitude of Thy tender mercies blot out my transgression.\n\nWash me thoroughly from mine iniquity, and cleanse me from my sin. For I know mine iniquity, and my sin is ever before me. Against Thee only have I sinned and done evil before Thee, that Thou mightest be justified in Thy words and prevail when Thou art judged.\n\nFor behold, I was conceived in iniquities, and in sins did my mother bear me. For behold, Thou hast loved truth; the hidden and secret things of Thy wisdom hast Thou made manifest unto me.\n\nThou shalt sprinkle me with hyssop, and I shall be made clean; Thou shalt wash me, and I shall be made whiter than snow. Thou shalt make me to hear joy and gladness; the bones that be humbled shall rejoice.\n\nTurn Thy face away from my sins, and blot out all mine iniquities. Create in me a clean heart, O God, and renew a right spirit within me. Cast me not away from Thy presence, and take not Thy Holy Spirit from me.\n\nRestore unto me the joy of Thy salvation, and with Thy governing Spirit establish me. I shall teach transgressors Thy ways, and the ungodly shall turn back unto Thee.\n\nDeliver me from blood-guiltiness, O God, Thou God of my salvation; my tongue shall rejoice in Thy righteousness. O Lord, Thou shalt open my lips, and my mouth shall declare Thy praise.\n\nFor if Thou hadst desired sacrifice, I had given it; with whole-burnt offerings Thou shalt not be pleased. A sacrifice unto God is a broken spirit; a broken and humbled heart God will not despise.\n\nDo good, O Lord, in Thy good pleasure unto Zion, and let the walls of Jerusalem be builded. Then shalt Thou be pleased with a sacrifice of righteousness, with oblation and whole-burnt offerings. Then shall they offer bullocks upon Thine altar.\n\nGlory to the Father, and to the Son, and to the Holy Spirit, both now and ever, and unto ages of ages. Amen."
+    },
+    "trisagion-prayers": {
+      "type": "text",
+      "label": "Trisagion Prayers",
+      "text": "Holy God, Holy Mighty, Holy Immortal, have mercy on us. (×3)\n\nGlory to the Father, and to the Son, and to the Holy Spirit, both now and ever, and unto ages of ages. Amen.\n\nAll-holy Trinity, have mercy on us. Lord, cleanse us from our sins. Master, pardon our iniquities. Holy One, visit and heal our infirmities for Thy Name's sake.\n\nLord, have mercy. (×3)\n\nGlory to the Father, and to the Son, and to the Holy Spirit, both now and ever, and unto ages of ages. Amen.\n\nOur Father, Who art in Heaven, hallowed be Thy Name. Thy Kingdom come, Thy will be done, on earth as it is in Heaven. Give us this day our daily bread; and forgive us our trespasses, as we forgive those who trespass against us; and lead us not into temptation, but deliver us from evil.\n\nFor Thine is the Kingdom, and the power, and the glory, of the Father, and of the Son, and of the Holy Spirit, now and ever, and unto ages of ages. Amen.\n\nLord, have mercy. (×12)"
+    },
+    "prayer-of-the-third-hour": {
+      "type": "text",
+      "label": "Prayer of the Third Hour",
+      "text": "O Lord God, Who didst send down Thy Most Holy Spirit at the third hour upon Thine Apostles: take Him not from us, O Good One, but renew Him in us who pray to Thee.\n\nCreate in me a clean heart, O God, and renew a right spirit within me.\n\nCast me not away from Thy presence, and take not Thy Holy Spirit from me. Amen."
+    }
+  }
+}

@@ -1,0 +1,109 @@
+{
+  "officeKey": "third-hour",
+  "label": "Third Hour (Tertia)",
+  "tradition": "BYZC",
+  "description": "The Byzantine Third Hour is sung at the third hour of the day. It consists of fixed psalmody (Psalms 16, 24, 50 LXX), the Trisagion prayer sequence, a troparion of the day, the Theotokion of the hour, and the Prayer of the Third Hour.",
+  "sections": [
+    {
+      "id": "opening",
+      "label": "Opening",
+      "notes": "The Third Hour opens with the Usual Beginning, as do all Byzantine offices.",
+      "items": [
+        {
+          "type": "rubric",
+          "key": "opening-blessing-rubric",
+          "text": "The Priest blesses: Blessed is our God, always, now and ever and unto ages of ages."
+        },
+        {
+          "type": "placeholder",
+          "key": "usual-beginning",
+          "label": "The Usual Beginning",
+          "status": "unresolved",
+          "note": "Trisagion prayers sequence. Resolved from third-hour-fixed.json by HorologionEngine."
+        }
+      ]
+    },
+    {
+      "id": "psalmody",
+      "label": "Fixed Psalmody",
+      "notes": "The Third Hour appoints three fixed psalms: 16, 24, and 50 (LXX). These are invariable on ordinary days.",
+      "items": [
+        {
+          "type": "placeholder",
+          "key": "psalm-16",
+          "label": "Psalm 16 (LXX) — Hear, O Lord, my righteousness",
+          "status": "unresolved",
+          "note": "Resolved from third-hour-fixed.json by HorologionEngine."
+        },
+        {
+          "type": "placeholder",
+          "key": "psalm-24",
+          "label": "Psalm 24 (LXX) — To Thee, O Lord, have I lifted up my soul",
+          "status": "unresolved",
+          "note": "Resolved from third-hour-fixed.json by HorologionEngine."
+        },
+        {
+          "type": "placeholder",
+          "key": "psalm-50",
+          "label": "Psalm 50 (LXX) — Have mercy on me, O God",
+          "status": "unresolved",
+          "note": "Resolved from third-hour-fixed.json by HorologionEngine."
+        }
+      ]
+    },
+    {
+      "id": "trisagion",
+      "label": "Trisagion Prayers",
+      "notes": "The Trisagion prayer sequence precedes the troparia.",
+      "items": [
+        {
+          "type": "placeholder",
+          "key": "trisagion-prayers",
+          "label": "Trisagion Prayers",
+          "status": "unresolved",
+          "note": "Resolved from third-hour-fixed.json by HorologionEngine."
+        }
+      ]
+    },
+    {
+      "id": "troparia",
+      "label": "Troparia",
+      "notes": "The dismissal troparion of the day is sung. The Theotokion of the Third Hour follows. On ferial days the troparion is from the Octoechos or Menaion; on Sundays the Resurrectional Troparion of the current tone.",
+      "items": [
+        {
+          "type": "placeholder",
+          "key": "troparion-of-the-day",
+          "label": "Troparion of the Day",
+          "status": "unresolved",
+          "note": "Variable troparion: resolved via Menaion resolver or weekday-theme rubric by HorologionEngine. Same infrastructure as Vespers and First Hour troparion slot."
+        },
+        {
+          "type": "placeholder",
+          "key": "third-hour-theotokion",
+          "label": "Theotokion of the Third Hour",
+          "status": "unresolved",
+          "note": "Variable: tone-dependent Theotokion from the Octoechos Third Hour cycle. Resolved by HorologionEngine as explicit rubric stub at baseline; full text deferred pending Third Hour Octoechos data."
+        }
+      ]
+    },
+    {
+      "id": "prayer-and-dismissal",
+      "label": "Prayer of the Third Hour and Dismissal",
+      "notes": "The Prayer of the Third Hour concludes the fixed psalmody cycle. The office ends with the standard dismissal.",
+      "items": [
+        {
+          "type": "placeholder",
+          "key": "prayer-of-the-third-hour",
+          "label": "Prayer of the Third Hour",
+          "status": "unresolved",
+          "note": "Fixed invariable prayer. Resolved from third-hour-fixed.json by HorologionEngine."
+        },
+        {
+          "type": "rubric",
+          "key": "dismissal-rubric",
+          "text": "Priest: Christ our true God, through the intercessions of His all-pure Mother, of all the Saints, have mercy on us and save us, as He is good and the Lover of mankind.\nChoir: Amen."
+        }
+      ]
+    }
+  ]
+}

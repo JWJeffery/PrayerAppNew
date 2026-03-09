@@ -1,0 +1,109 @@
+{
+  "officeKey": "sixth-hour",
+  "label": "Sixth Hour (Sexta)",
+  "tradition": "BYZC",
+  "description": "The Byzantine Sixth Hour is sung at the sixth hour of the day (approximately noon). It consists of fixed psalmody (Psalms 53, 54, 90 LXX), the Trisagion prayer sequence, a troparion of the day, the Theotokion of the hour, and the Prayer of the Sixth Hour.",
+  "sections": [
+    {
+      "id": "opening",
+      "label": "Opening",
+      "notes": "The Sixth Hour opens with the Usual Beginning, as do all Byzantine offices.",
+      "items": [
+        {
+          "type": "rubric",
+          "key": "opening-blessing-rubric",
+          "text": "The Priest blesses: Blessed is our God, always, now and ever and unto ages of ages."
+        },
+        {
+          "type": "placeholder",
+          "key": "usual-beginning",
+          "label": "The Usual Beginning",
+          "status": "unresolved",
+          "note": "Trisagion prayers sequence. Resolved from sixth-hour-fixed.json by HorologionEngine."
+        }
+      ]
+    },
+    {
+      "id": "psalmody",
+      "label": "Fixed Psalmody",
+      "notes": "The Sixth Hour appoints three fixed psalms: 53, 54, and 90 (LXX). These are invariable on ordinary days.",
+      "items": [
+        {
+          "type": "placeholder",
+          "key": "psalm-53",
+          "label": "Psalm 53 (LXX) — Save me, O God, by Thy Name",
+          "status": "unresolved",
+          "note": "Resolved from sixth-hour-fixed.json by HorologionEngine."
+        },
+        {
+          "type": "placeholder",
+          "key": "psalm-54",
+          "label": "Psalm 54 (LXX) — Give ear to my prayer, O God",
+          "status": "unresolved",
+          "note": "Resolved from sixth-hour-fixed.json by HorologionEngine."
+        },
+        {
+          "type": "placeholder",
+          "key": "psalm-90",
+          "label": "Psalm 90 (LXX) — He that dwelleth in the help of the Most High",
+          "status": "unresolved",
+          "note": "Resolved from sixth-hour-fixed.json by HorologionEngine."
+        }
+      ]
+    },
+    {
+      "id": "trisagion",
+      "label": "Trisagion Prayers",
+      "notes": "The Trisagion prayer sequence precedes the troparia.",
+      "items": [
+        {
+          "type": "placeholder",
+          "key": "trisagion-prayers",
+          "label": "Trisagion Prayers",
+          "status": "unresolved",
+          "note": "Resolved from sixth-hour-fixed.json by HorologionEngine."
+        }
+      ]
+    },
+    {
+      "id": "troparia",
+      "label": "Troparia",
+      "notes": "The dismissal troparion of the day is sung. The Theotokion of the Sixth Hour follows.",
+      "items": [
+        {
+          "type": "placeholder",
+          "key": "troparion-of-the-day",
+          "label": "Troparion of the Day",
+          "status": "unresolved",
+          "note": "Variable troparion: resolved via Menaion resolver or weekday-theme rubric by HorologionEngine. Same infrastructure as Vespers, First Hour, and Third Hour troparion slot."
+        },
+        {
+          "type": "placeholder",
+          "key": "sixth-hour-theotokion",
+          "label": "Theotokion of the Sixth Hour",
+          "status": "unresolved",
+          "note": "Variable: tone-dependent Theotokion from the Octoechos Sixth Hour cycle. Resolved by HorologionEngine as explicit rubric stub at baseline; full text deferred pending Sixth Hour Octoechos data."
+        }
+      ]
+    },
+    {
+      "id": "prayer-and-dismissal",
+      "label": "Prayer of the Sixth Hour and Dismissal",
+      "notes": "The Prayer of the Sixth Hour concludes the fixed psalmody cycle. The office ends with the standard dismissal.",
+      "items": [
+        {
+          "type": "placeholder",
+          "key": "prayer-of-the-sixth-hour",
+          "label": "Prayer of the Sixth Hour",
+          "status": "unresolved",
+          "note": "Fixed invariable prayer. Resolved from sixth-hour-fixed.json by HorologionEngine."
+        },
+        {
+          "type": "rubric",
+          "key": "dismissal-rubric",
+          "text": "Priest: Christ our true God, through the intercessions of His all-pure Mother, of all the Saints, have mercy on us and save us, as He is good and the Lover of mankind.\nChoir: Amen."
+        }
+      ]
+    }
+  ]
+}

@@ -230,7 +230,7 @@ const HorologionEngine = (() => {
     const _skeletonCache = {};
 
     // ── Supported offices in this version ─────────────────────────────────
-    const SUPPORTED_OFFICES = ['vespers', 'small-compline', 'first-hour'];
+   const SUPPORTED_OFFICES = ['vespers', 'small-compline', 'first-hour', 'third-hour', 'sixth-hour'];
 
     // ── Tradition code for this engine ────────────────────────────────────
     const TRADITION = 'BYZC';
@@ -299,12 +299,26 @@ const HorologionEngine = (() => {
     // Shape: { slots: { "usual-beginning": {...}, "psalm-50": {...}, ... } }
     let _complineFixedData = null;
 
-    // ── v3.1: First Hour fixed-text data file URL and cache ───────────────
+   // ── v3.1: First Hour fixed-text data file URL and cache ───────────────
     const FIRST_HOUR_FIXED_URL = 'data/horologion/first-hour-fixed.json';
 
     // Populated lazily by _loadFirstHourFixedData().
     // Shape: { slots: { "usual-beginning": {...}, "psalm-5": {...}, ... } }
     let _firstHourFixedData = null;
+
+    // ── v3.2: Third Hour fixed-text data file URL and cache ───────────────
+    const THIRD_HOUR_FIXED_URL = 'data/horologion/third-hour-fixed.json';
+
+    // Populated lazily by _loadThirdHourFixedData().
+    // Shape: { slots: { "usual-beginning": {...}, "psalm-16": {...}, ... } }
+    let _thirdHourFixedData = null;
+
+    // ── v3.3: Sixth Hour fixed-text data file URL and cache ───────────────
+    const SIXTH_HOUR_FIXED_URL = 'data/horologion/sixth-hour-fixed.json';
+
+    // Populated lazily by _loadSixthHourFixedData().
+    // Shape: { slots: { "usual-beginning": {...}, "psalm-53": {...}, ... } }
+    let _sixthHourFixedData = null;
     // ── v2.0: Weekday troparion meta object (null until first fetch) ───────
     // Populated lazily by _loadWeekdayTroparionMeta().
     // Shape: { weekday_themes: { monday: { theme, theme_short, fasting_day? }, ... } }
@@ -435,8 +449,12 @@ const HorologionEngine = (() => {
          // Route to the correct slot resolver based on officeKey.
         if (normalizedKey === 'small-compline') {
             await _resolveComplineSlots(sections, dateObj);
-        } else if (normalizedKey === 'first-hour') {
+         } else if (normalizedKey === 'first-hour') {
             await _resolveFirstHourSlots(sections, dateObj);
+        } else if (normalizedKey === 'third-hour') {
+            await _resolveThirdHourSlots(sections, dateObj);
+        } else if (normalizedKey === 'sixth-hour') {
+            await _resolveSixthHourSlots(sections, dateObj);
         } else {
             // v1.2 / v1.3: Vespers resolver (default for 'vespers' and any
             // future office that shares it until it has its own resolver).
@@ -1778,7 +1796,176 @@ const pascha = _getOrthodoxPascha(year);
             }
         }
     }
+async function _loadThirdHourFixedData() {
+        if (_thirdHourFixedData !== null) return;
 
+        try {
+            const response = await fetch(THIRD_HOUR_FIXED_URL);
+            if (!response.ok) {
+                console.warn(`[HorologionEngine] Could not load Third Hour fixed data (HTTP ${response.status}); fixed slots will remain as placeholders.`);
+                return;
+            }
+            _thirdHourFixedData = await response.json();
+            console.log('[HorologionEngine] Loaded Third Hour fixed text data.');
+        } catch (err) {
+            console.warn('[HorologionEngine] _loadThirdHourFixedData failed:', err.message, '— fixed slots will remain as placeholders.');
+        }
+    }
+    async function _resolveThirdHourSlots(sections, dateObj) {
+        await Promise.all([
+            _loadThirdHourFixedData(),
+            _loadTroparionData(),
+            _loadWeekdayTroparionMeta()
+        ]);
+
+        const dayOfWeek  = dateObj.getDay();
+        const toneResult = _computeBaselineTone(dateObj);
+
+        const FIXED_SLOT_KEYS = new Set([
+            'usual-beginning',
+            'psalm-16',
+            'psalm-24',
+            'psalm-50',
+            'trisagion-prayers',
+            'prayer-of-the-third-hour'
+        ]);
+
+        for (const section of sections) {
+            if (!Array.isArray(section.items)) continue;
+
+            for (let i = 0; i < section.items.length; i++) {
+                const item = section.items[i];
+
+                if (FIXED_SLOT_KEYS.has(item.key)) {
+                    const slotData = _thirdHourFixedData &&
+                        _thirdHourFixedData.slots &&
+                        _thirdHourFixedData.slots[item.key];
+
+                    if (slotData) {
+                        section.items[i] = {
+                            type:       slotData.type || 'text',
+                            key:        item.key,
+                            label:      slotData.label || item.label,
+                            text:       slotData.text,
+                            lxxNumber:  slotData.lxxNumber,
+                            resolvedAs: 'third-hour-fixed'
+                        };
+                    }
+                    continue;
+                }
+
+                if (item.key === 'troparion-of-the-day') {
+                    const resolved = await _resolveTroparionSlot(dayOfWeek, toneResult, dateObj);
+                    if (resolved) {
+                        section.items[i] = Object.assign({}, resolved, {
+                            key: 'troparion-of-the-day'
+                        });
+                    }
+                    continue;
+                }
+
+                if (item.key === 'third-hour-theotokion') {
+                    const toneName = toneResult && toneResult.tone
+                        ? `Tone ${toneResult.tone}`
+                        : 'tone not resolved';
+                    section.items[i] = {
+                        type:       'rubric',
+                        key:        'third-hour-theotokion',
+                        label:      item.label || 'Theotokion of the Third Hour',
+                        text:       `[Third Hour Theotokion — ${toneName}. Tone-dependent; drawn from the Octoechos. Full text deferred pending Third Hour Octoechos data. Source: Byzantine Horologion, Jordanville 2008.]`,
+                        resolvedAs: 'third-hour-theotokion-deferred'
+                    };
+                    continue;
+                }
+            }
+        }
+    }
+
+    async function _loadSixthHourFixedData() {
+        if (_sixthHourFixedData !== null) return;
+
+        try {
+            const response = await fetch(SIXTH_HOUR_FIXED_URL);
+            if (!response.ok) {
+                console.warn(`[HorologionEngine] Could not load Sixth Hour fixed data (HTTP ${response.status}); fixed slots will remain as placeholders.`);
+                return;
+            }
+            _sixthHourFixedData = await response.json();
+            console.log('[HorologionEngine] Loaded Sixth Hour fixed text data.');
+        } catch (err) {
+            console.warn('[HorologionEngine] _loadSixthHourFixedData failed:', err.message, '— fixed slots will remain as placeholders.');
+        }
+    }
+
+    async function _resolveSixthHourSlots(sections, dateObj) {
+        await Promise.all([
+            _loadSixthHourFixedData(),
+            _loadTroparionData(),
+            _loadWeekdayTroparionMeta()
+        ]);
+
+        const dayOfWeek  = dateObj.getDay();
+        const toneResult = _computeBaselineTone(dateObj);
+
+        const FIXED_SLOT_KEYS = new Set([
+            'usual-beginning',
+            'psalm-53',
+            'psalm-54',
+            'psalm-90',
+            'trisagion-prayers',
+            'prayer-of-the-sixth-hour'
+        ]);
+
+        for (const section of sections) {
+            if (!Array.isArray(section.items)) continue;
+
+            for (let i = 0; i < section.items.length; i++) {
+                const item = section.items[i];
+
+                if (FIXED_SLOT_KEYS.has(item.key)) {
+                    const slotData = _sixthHourFixedData &&
+                        _sixthHourFixedData.slots &&
+                        _sixthHourFixedData.slots[item.key];
+
+                    if (slotData) {
+                        section.items[i] = {
+                            type:       slotData.type || 'text',
+                            key:        item.key,
+                            label:      slotData.label || item.label,
+                            text:       slotData.text,
+                            lxxNumber:  slotData.lxxNumber,
+                            resolvedAs: 'sixth-hour-fixed'
+                        };
+                    }
+                    continue;
+                }
+
+                if (item.key === 'troparion-of-the-day') {
+                    const resolved = await _resolveTroparionSlot(dayOfWeek, toneResult, dateObj);
+                    if (resolved) {
+                        section.items[i] = Object.assign({}, resolved, {
+                            key: 'troparion-of-the-day'
+                        });
+                    }
+                    continue;
+                }
+
+                if (item.key === 'sixth-hour-theotokion') {
+                    const toneName = toneResult && toneResult.tone
+                        ? `Tone ${toneResult.tone}`
+                        : 'tone not resolved';
+                    section.items[i] = {
+                        type:       'rubric',
+                        key:        'sixth-hour-theotokion',
+                        label:      item.label || 'Theotokion of the Sixth Hour',
+                        text:       `[Sixth Hour Theotokion — ${toneName}. Tone-dependent; drawn from the Octoechos. Full text deferred pending Sixth Hour Octoechos data. Source: Byzantine Horologion, Jordanville 2008.]`,
+                        resolvedAs: 'sixth-hour-theotokion-deferred'
+                    };
+                    continue;
+                }
+            }
+        }
+    }
     // ──────────────────────────────────────────────────────────────────────
     // v1.3: _resolveSticheraSlot(tone, weekdayName, slotKey, toneResult)    //
     // Resolves a single stichera-style slot from the Octoechos data.
