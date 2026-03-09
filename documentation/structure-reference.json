@@ -1,0 +1,493 @@
+{
+  "_note": "Live reference dossiers extracted from structure.json. Tradition architecture, hour maps, component inventories, horologion file details, COE calendar model. Updated in sync with structure.json.",
+  "last_updated": "2026-03-08",
+  "east_syriac_tradition": {
+    "status": "OPERATIONAL \u2014 v2.8.1. All seven canonical hours implemented. Cathedral and monastic sequences for all hours. Full Qdham/Wathar Qanona rotation (layered hour-specific + seasonal for Sapra/Ramsha/Lelya), Marmitha psalmody, Barekmar intercessions (all 9 components now present), and Onitha-with-Qala rendering active in monastic mode.",
+    "entry_point": "selectMode('east-syriac') \u2014 hides BCP and Ethiopian sidebars, shows east-syriac-settings, awaits hydrateForEastSyriac(), calls renderOffice()",
+    "rubrics_file": "components/traditions/east-syriac/rubrics.json",
+    "components_file": "components/east-syriac.json",
+    "component_count": 92,
+    "component_count_note": "83 (v2.8.0) + 9 Barekmar components (v2.8.1) = 92. Duplicate removal of 3 components (esy-suraya, esy-karozutha, esy-concluding-blessing second copies) does not reduce logical count as duplicates carried no unique content.",
+    "hours": {
+      "sapra": {
+        "title": "Sapra \u2014 Morning Prayer",
+        "time": "Dawn",
+        "cathedral_sequence": "cathedral-sapra-sequence",
+        "monastic_sequence": "monastic-sapra-sequence",
+        "fixed_psalms": [
+          "100",
+          "91",
+          "148",
+          "150"
+        ],
+        "token": "esy-variable-sapra-psalms",
+        "qanona_note": "v2.8.1: esy-qanona-sapra now rendered first (hour-specific frame), followed by seasonal esy-qanona-{season}-{cycle}"
+      },
+      "qutaa": {
+        "title": "Quta'a \u2014 Third Hour",
+        "time": "~09:00",
+        "cathedral_sequence": "cathedral-qutaa-sequence",
+        "monastic_sequence": "monastic-qutaa-sequence",
+        "fixed_psalms": [
+          "19",
+          "24",
+          "25"
+        ],
+        "token": "esy-variable-qutaa-psalms",
+        "theological_note": "Ps. 19 \u2014 sun going forth; Ps. 24 \u2014 King of glory entering; Ps. 25 \u2014 morning supplication. Hour of the Descent of the Holy Spirit."
+      },
+      "endana": {
+        "title": "Endana \u2014 Sixth Hour",
+        "time": "~12:00",
+        "cathedral_sequence": "cathedral-endana-sequence",
+        "monastic_sequence": "monastic-endana-sequence",
+        "fixed_psalms": [
+          "119:1-32",
+          "121",
+          "122"
+        ],
+        "token": "esy-variable-endana-psalms",
+        "theological_note": "Ps. 119 (portion) \u2014 the longest psalm at the longest hour; Songs of Ascent for the midday pause."
+      },
+      "dtsha-sain": {
+        "title": "D-tsha' Sa'in \u2014 Ninth Hour",
+        "time": "~15:00",
+        "cathedral_sequence": "cathedral-dtsha-sain-sequence",
+        "monastic_sequence": "monastic-dtsha-sain-sequence",
+        "fixed_psalms": [
+          "84",
+          "116",
+          "117"
+        ],
+        "token": "esy-variable-dtsha-sain-psalms",
+        "theological_note": "Hour of the Crucifixion. Ps. 116 \u2014 the cup of salvation as direct Passion type."
+      },
+      "ramsha": {
+        "title": "Ramsha \u2014 Evening Prayer",
+        "time": "Sunset",
+        "cathedral_sequence": "cathedral-ramsha-sequence",
+        "monastic_sequence": "monastic-ramsha-sequence",
+        "token": "esy-variable-marmitha",
+        "qanona_note": "v2.8.1: esy-qanona-ramsha now rendered first (hour-specific frame), followed by seasonal esy-qanona-{season}-{cycle}"
+      },
+      "lelya": {
+        "title": "Lelya \u2014 Night Office",
+        "time": "Night",
+        "cathedral_sequence": "lelya-sequence",
+        "monastic_sequence": "monastic-lelya-sequence",
+        "token": "esy-variable-hulali",
+        "qanona_note": "v2.8.1: esy-qanona-lelya now rendered first (hour-specific frame), followed by seasonal esy-qanona-{season}-{cycle}"
+      },
+      "subaa": {
+        "title": "Suba'a \u2014 Compline",
+        "time": "Before sleep",
+        "cathedral_sequence": "cathedral-subaa-sequence",
+        "monastic_sequence": "monastic-subaa-sequence",
+        "fixed_psalms": [
+          "4",
+          "91",
+          "134"
+        ],
+        "token": "esy-variable-subaa-psalms",
+        "theological_note": "Ps. 4 \u2014 ancient night psalm; Ps. 91 \u2014 the protection psalm; Ps. 134 \u2014 night doxology. Unique concluding elements: examination of conscience, Nunc Dimittis (Hullala d-Sham'un), and distinct Compline blessing.",
+        "distinct_components": [
+          "esy-subaa-examination",
+          "esy-subaa-nunc-dimittis",
+          "esy-subaa-blessing"
+        ]
+      }
+    },
+    "dynamic_token_status": {
+      "esy-variable-sapra-psalms": "IMPLEMENTED",
+      "esy-variable-qutaa-psalms": "IMPLEMENTED [v2.8.0]",
+      "esy-variable-endana-psalms": "IMPLEMENTED [v2.8.0]",
+      "esy-variable-dtsha-sain-psalms": "IMPLEMENTED [v2.8.0]",
+      "esy-variable-subaa-psalms": "IMPLEMENTED [v2.8.0]",
+      "esy-variable-marmitha": "IMPLEMENTED",
+      "esy-variable-hulali": "IMPLEMENTED",
+      "esy-variable-seasonal-onitha": "IMPLEMENTED",
+      "esy-variable-qanona": "IMPLEMENTED \u2014 v2.8.1: updated to layered rendering for Sapra/Ramsha/Lelya",
+      "esy-variable-onitha-with-qala": "IMPLEMENTED",
+      "esy-variable-barekmar-intercessions": "IMPLEMENTED \u2014 v2.8.1: all 9 required components now present in east-syriac.json"
+    },
+    "barekmar_components": {
+      "note": "Added v2.8.1. All appended to end of components/east-syriac.json.",
+      "components": [
+        "esy-barekmar-general \u2014 fallback; rendered when no day-specific or seasonal form found",
+        "esy-barekmar-sauma \u2014 seasonal Lenten form; rendered throughout Sauma season",
+        "esy-barekmar-sunday \u2014 Sunday diptychs; Resurrection and assembly character",
+        "esy-barekmar-monday \u2014 Monday diptychs; apostolic and missionary character",
+        "esy-barekmar-tuesday \u2014 Tuesday diptychs; teaching and prophetic character",
+        "esy-barekmar-wednesday \u2014 Wednesday diptychs; penitential character (fasting day)",
+        "esy-barekmar-thursday \u2014 Thursday diptychs; sacramental and priestly character",
+        "esy-barekmar-friday \u2014 Friday diptychs; martyr-honouring, penitential (fasting day)",
+        "esy-barekmar-saturday \u2014 Saturday diptychs; commemorative of the departed, anticipatory"
+      ]
+    },
+    "legacy_sequences": {
+      "note": "ramsha-sequence, sapra-sequence, and lelya-sequence retained in rubrics.json for backward compatibility. renderEastSyriac() now routes exclusively to the cathedral-* and monastic-* named variants.",
+      "status": "Preserved \u2014 do not remove"
+    }
+  },
+  "ethiopian_tradition": {
+    "status": "OPERATIONAL \u2014 v2.8.1. Full 24-hour canonical cycle, Tselote Meweta opening, Senkessar wired, Metsehafe Tselot rubric aesthetic. Mahlet text fully expanded.",
+    "entry_point": "selectMode('ethiopian-saatat') \u2014 sets window._forcedOfficeId, hides BCP sidebar, shows ethiopian-settings, applies .ethiopian-theme to body",
+    "rubrics_file": "components/traditions/ethiopian/rubrics.json",
+    "rubrics_load": "Loaded in hydrateForEthiopianSaatat() and concatenated onto appData.rubrics",
+    "components_file": "components/ethiopian.json",
+    "components": [
+      "eth-introduction-to-every-hour \u2014 (v2.6.1) Tselote Meweta mandatory opening: prostration rubric, Lord's Prayer, Thanksgiving, Psalm 50/51 with Gloria Patri",
+      "eth-basalios-prayer \u2014 St. Basil's foundational prayer (all hours)",
+      "eth-prayer-thanksgiving \u2014 RETIRED FROM SEQUENCE v2.6.1. Content subsumed by eth-introduction-to-every-hour. Retained in JSON as reference.",
+      "eth-anqasa-birhan \u2014 Gate of Light Theotokos hymn; appended after Mazmur",
+      "eth-nigatu-hour-text \u2014 Matins (06:00\u201309:00)",
+      "eth-meserk-hour-text \u2014 Third Hour / Mese'rk (09:00\u201312:00)",
+      "eth-lika-hour-text \u2014 Sixth Hour / Lika (12:00\u201315:00). Crucifixion hour. ID is 'lika' not 'liku' \u2014 corrected in rubrics metadata v2.6.1.",
+      "eth-terk-hour-text \u2014 Ninth Hour / Tese'at (15:00\u201317:00)",
+      "eth-serkh-hour-text \u2014 Eleventh Hour / Vespers / Serkh (17:00\u201318:00)",
+      "eth-nome-hour-text \u2014 Compline / Nime (18:00\u201321:00)",
+      "eth-hour-7 \u2014 First Night Watch / Le'lit (21:00\u201300:00). Text complete. Phase 2B stale note removed v2.8.1.",
+      "eth-lelit-hour-text \u2014 Midnight / Le'lit (00:00\u201303:00)",
+      "eth-mahlet-hour-text \u2014 Pre-dawn Vigil / Mahlet (03:00\u201306:00). Text fully expanded v2.8.1 \u2014 Gethsemane imagery, holy women at the tomb, Marian intercession, eschatological frame.",
+      "eth-mazmur-tuat \u2014 Psalm metadata for Tuat",
+      "eth-leke-haile-chant \u2014 12-fold Leke Haile doxology (Full edition only)",
+      "eth-41-kyrie \u2014 41-fold Kyrie / Igzee'o Tesahalene (Full edition only)",
+      "eth-saints-commemoration \u2014 Senkessar pipeline component + Oriental saints fallback + intercession fallback",
+      "eth-synaxarium-reading \u2014 Senkessar reading scaffold; actual pipeline implemented within eth-saints-commemoration handler",
+      "eth-weddase-sunday through eth-weddase-saturday \u2014 Weddase Maryam for all seven days"
+    ],
+    "sequence_current": [
+      "eth-introduction-to-every-hour  \u2190 mandatory Tselote Meweta opening [v2.6.1]",
+      "eth-basalios-prayer",
+      "eth-saatat-hour-slot            \u2190 active canonical hour + Sixth Hour sentence",
+      "eth-mazmur-slot                 \u2190 Psalms + Anqasa Birhan (+ Leke Haile in Full)",
+      "VARIABLE_READING_ET             \u2190 1 Clement (Nigatu) / Hermas (Le'lit) / skipped",
+      "eth-saints-commemoration        \u2190 full Senkessar pipeline",
+      "comm-lords-prayer"
+    ],
+    "hour_map": {
+      "06:00\u201309:00": {
+        "hourId": "eth-nigatu-hour-text",
+        "hourName": "Nigatu \u2014 \u1295\u130b\u1271 (Matins)",
+        "psalms": [
+          "3",
+          "63",
+          "133"
+        ],
+        "etReading": "1CLEM_ET 1:1-20"
+      },
+      "09:00\u201312:00": {
+        "hourId": "eth-meserk-hour-text",
+        "hourName": "Mese'rk \u2014 \u1218\u1220\u122d\u1245 (Third Hour)",
+        "psalms": [
+          "16",
+          "17",
+          "18"
+        ],
+        "etReading": null
+      },
+      "12:00\u201315:00": {
+        "hourId": "eth-lika-hour-text",
+        "hourName": "Lika \u2014 \u120a\u12ab (Sixth Hour)",
+        "psalms": [
+          "22",
+          "23",
+          "24"
+        ],
+        "etReading": null,
+        "note": "Crucifixion hour \u2014 commemorative sentence injected in renderer"
+      },
+      "15:00\u201317:00": {
+        "hourId": "eth-terk-hour-text",
+        "hourName": "Tese'at \u2014 \u1270\u1230\u12d3\u1275 (Ninth Hour)",
+        "psalms": [
+          "69",
+          "70",
+          "71"
+        ],
+        "etReading": null
+      },
+      "17:00\u201318:00": {
+        "hourId": "eth-serkh-hour-text",
+        "hourName": "Serkh \u2014 \u1220\u122d\u12ad (Eleventh Hour/Vespers)",
+        "psalms": [
+          "141",
+          "142",
+          "143"
+        ],
+        "etReading": null
+      },
+      "18:00\u201321:00": {
+        "hourId": "eth-nome-hour-text",
+        "hourName": "Nime \u2014 \u1296\u121c (Compline)",
+        "psalms": [
+          "4",
+          "6",
+          "13"
+        ],
+        "etReading": null
+      },
+      "21:00\u201300:00": {
+        "hourId": "eth-hour-7",
+        "hourName": "Le'lit \u2014 First Night Watch",
+        "psalms": [
+          "4",
+          "6",
+          "13"
+        ],
+        "etReading": "HERM_ET 1:1-10"
+      },
+      "00:00\u201303:00": {
+        "hourId": "eth-lelit-hour-text",
+        "hourName": "Le'lit \u2014 \u120c\u120a\u1275 (Midnight)",
+        "psalms": [
+          "4",
+          "6",
+          "13"
+        ],
+        "etReading": "HERM_ET 1:1-10"
+      },
+      "03:00\u201306:00": {
+        "hourId": "eth-mahlet-hour-text",
+        "hourName": "Mahlet \u2014 \u121b\u1205\u120c\u1275 (Pre-dawn Vigil)",
+        "psalms": [
+          "3",
+          "63",
+          "133"
+        ],
+        "etReading": null
+      }
+    },
+    "saints_filter": "Only saints where tradition includes 'ethiopian' or 'oriental' (case-insensitive). Used only when no Senkessar entry found. Final fallback: generic Oriental Orthodox Communion intercession.",
+    "bcp_isolation": "All BCP-specific blocks gated behind !isEthiopianSaatat throughout renderOffice()"
+  },
+  "ethiopian_synaxarium": {
+    "status": "OPERATIONAL \u2014 Fully wired and rendering. All 13 months confirmed complete.",
+    "description": "Senkessar (Ethiopian Synaxarium) integrated in eth-saints-commemoration rubric handler. Renders for all hours via EthiopianCalendar date resolution and dynamic fetch from data/synaxarium/ethiopian/{month}/{day}.json.",
+    "wiring_status": "COMPLETE. EthiopianCalendar.getEthiopianDate() called directly in eth-saints-commemoration. Senkessar index lazy-loaded and cached. Per-day narratives fetched and cached.",
+    "index_file": "data/synaxarium/ethiopian/senkessar-index.json",
+    "index_status": "COMPLETE \u2014 13 months, 385 entries. Validated 2026-02-23.",
+    "miazia_path_resolution": {
+      "issue": "EthiopianCalendar outputs 'Miyazya'. Folder on disk is 'miazia'.",
+      "status": "RESOLVED IN RENDERER \u2014 MONTH_SLUG_MAP maps 'miyazya': 'miazia'. No folder rename required.",
+      "optional_cleanup": "Cosmetic only: consider aligning senkessar-index.json month 8 slug to 'miazia' in a future maintenance pass."
+    },
+    "narrative_corpus_status": {
+      "meskerem": {
+        "month_number": 1,
+        "days": 30,
+        "status": "COMPLETE"
+      },
+      "tiqimt": {
+        "month_number": 2,
+        "days": 30,
+        "status": "COMPLETE"
+      },
+      "hidar": {
+        "month_number": 3,
+        "days": 30,
+        "status": "COMPLETE"
+      },
+      "tahsas": {
+        "month_number": 4,
+        "days": 30,
+        "status": "COMPLETE"
+      },
+      "tir": {
+        "month_number": 5,
+        "days": 30,
+        "status": "COMPLETE"
+      },
+      "yekatit": {
+        "month_number": 6,
+        "days": 30,
+        "status": "COMPLETE"
+      },
+      "megabit": {
+        "month_number": 7,
+        "days": 30,
+        "status": "COMPLETE"
+      },
+      "miazia": {
+        "month_number": 8,
+        "days": 30,
+        "status": "COMPLETE"
+      },
+      "ginbot": {
+        "month_number": 9,
+        "days": 30,
+        "status": "COMPLETE"
+      },
+      "sene": {
+        "month_number": 10,
+        "days": 30,
+        "status": "COMPLETE"
+      },
+      "hamle": {
+        "month_number": 11,
+        "days": 30,
+        "status": "COMPLETE"
+      },
+      "nehase": {
+        "month_number": 12,
+        "days": 30,
+        "status": "COMPLETE"
+      },
+      "pagumen": {
+        "month_number": 13,
+        "days": 5,
+        "status": "COMPLETE"
+      }
+    },
+    "narrative_format": {
+      "schema": "{ id, title, narrative }",
+      "narrative_style": "Deep Assembly \u2014 High-liturgical English; 4-paragraph woven structure",
+      "register": "Formal high-liturgical English; no modern idioms; paragraph breaks as \\n\\n",
+      "data_path": "data/synaxarium/ethiopian/{month-slug}/{day}.json",
+      "id_pattern": "senkessar-{month-slug}-{day}"
+    }
+  },
+  "horologion_files": {
+    "vespers.json": {
+      "status": "BASELINE COMPLETE \u2014 fixed/invariable content complete. v1.2: daily-prokeimenon and vesperal-reading resolved. v1.3: Octoechos tone engine; Saturday stichera/aposticha fully populated (tones 1\u20138). v1.4: Monday\u2013Friday stichera/aposticha materially populated (tones 1\u20138). v1.5: kathisma-reading resolved for ordinary Mon\u2013Sat as appointment rubric. v1.6: troparion-or-apolytikion \u2014 Saturday full Resurrectional Troparion; Bright Week Paschal Troparion; Mon\u2013Fri tone stub; Sunday deferred. v1.7: theotokion-dismissal \u2014 Saturday full dismissal Theotokion (tones 1\u20138, distinct from Dogmatikon); Bright Week explicit omission; Mon\u2013Fri tone stub; Sunday deferred. v1.8: Sunday Small Vespers implemented as a real baseline path. All five Sunday-case variable slots resolved: stichera/aposticha use resurrectional tone corpus with explicit Sunday Small Vespers labeling; kathisma-reading resolves to actionable omission rubric; troparion and theotokion resolve to full tone texts (type:'text'). Every variable slot across all day-of-week paths now yields full text, an explicit rubric stub, or an explicit omission rubric. v1.9: weekday theotokion-dismissal (Mon\u2013Fri) upgraded from tone-identified rubric stub to type:'text' full resolution using new data/horologion/vespers-weekday-theotokion.json (40 entries: 8 tones \u00d7 5 weekdays). Mon/Tue/Thu: standard Octoechos weekday Theotokion. Wed/Fri: Stavrotheotokion (Cross Theotokion). resolvedAs:'weekday-octoechos-theotokion'. Remaining work: weekday troparion (Mon\u2013Fri) Menaion-deferred; feast-rank override system; Great Lent overrides; kathisma full psalm text.",
+      "sections": 7
+    },
+    "schema.json": {
+      "status": "Active \u2014 documents normalized payload shape v1"
+    },
+    "octoechos-vespers.json": {
+      "status": "Active \u2014 Horologion v1.4 (2026-03-07)",
+      "coverage": "Tones 1\u20138. Saturday: full resurrectional stichera and aposticha (unchanged from v1.3). Monday\u2013Friday: materially populated with baseline ordinary weekday stichera and aposticha (v1.4). Sunday: baseline_stub:true + sunday_deferred:true \u2014 explicitly deferred; renders as tone-identified rubric stub. Not silently empty.",
+      "keying": "Outer key: tone string '1'\u2013'8'. Inner key: weekday name (saturday, sunday, monday \u2026 friday).",
+      "content_source": "English Octoechos (Antiochian/OCA Hapgood-tradition resurrectional texts). Saturday texts are representative first stichera; full 3\u20136 stichera set per slot is a future data-pass item.",
+      "weekday_themes": {
+        "monday": "Bodiless Powers (Angels)",
+        "tuesday": "St. John the Baptist and the Prophets",
+        "wednesday": "Cross and Theotokos",
+        "thursday": "Holy Apostles and St. Nicholas",
+        "friday": "Cross and Theotokos (penitential)"
+      }
+    },
+    "vespers-kathisma.json": {
+      "status": "Active \u2014 Horologion v1.5 (2026-03-07)",
+      "coverage": "7 entries keyed by JS Date.getDay() index (0=Sunday through 6=Saturday). Mon\u2013Sat: kathisma number, title, LXX psalm range, Protestant equivalents, incipit. Sunday: sunday_deferred:true with explicit note. Rule: standard Byzantine Psalter weekly cycle for ordinary Vespers (OCA/Antiochian Psalter table; Jordanville Horologion 2008). Overrides not implemented: great-feasts, great-lent, bright-week, sunday-vespers."
+    },
+    "vespers-troparion.json": {
+      "status": "Active \u2014 Horologion v1.8 (2026-03-07) \u2014 unchanged in v1.9 and Menaion v1",
+      "coverage": "resurrectional_troparia: 8 entries keyed by tone string ('1'\u2013'8'). Each entry: tone number, title, full liturgical text (Antiochian/OCA Hapgood-tradition English). paschal_troparion: Paschal Troparion for Bright Week use. Applicable days: Saturday Great Vespers and Sunday Small Vespers (both resolved; same Octoechos apolytikion for both offices). Weekday troparion text (Mon\u2013Fri): this file is NOT the source for weekday troparion. Weekday troparion is now resolved via data/menaion/ + js/menaion-resolver.js on imported pilot dates; falls back to weekday-theme rubric on non-imported dates. Source: Byzantine Octoechos; Antiochian/OCA Hapgood-tradition English. Overrides not implemented: menaion-feasts (feast-rank engine deferred), great-feasts, great-lent."
+    },
+    "vespers-theotokion.json": {
+      "status": "Active \u2014 Horologion v1.8 (2026-03-07) \u2014 unchanged in v1.9",
+      "coverage": "dismissal_theotokia: 8 entries keyed by tone string ('1'\u2013'8'). Each entry: tone number, title, full liturgical text (Antiochian/OCA Hapgood-tradition English). Applicable days: Saturday Great Vespers and Sunday Small Vespers (both resolved in v1.8; same Octoechos apolytikion-paired dismissal Theotokion). These are the dismissal Theotokia of the Octoechos, distinct from the Dogmatika (major Theotokia sung during the Aposticha). Weekday dismissal Theotokion is now handled by vespers-weekday-theotokion.json (v1.9). Overrides not implemented: feast-theotokia, great-lent."
+    },
+    "small-compline.json": {
+      "status": "Active \u2014 Horologion v3.0 (2026-03-08) \u2014 NEW in v3.0",
+      "coverage": "Skeleton for Small Compline (Mikron Apodeipnon). officeKey:'small-compline', tradition:'BYZC'. Fixed slots (usual-beginning, psalm-50, psalm-69, psalm-142, doxology, creed, trisagion-prayers, compline-theotokion, prayer-of-basil, into-thy-hands) are placeholders resolved at runtime by _resolveComplineSlots() from compline-fixed.json. Variable slot troparion-of-the-day resolved via _resolveTroparionSlot(). Description: Byzantine Night Office; shorter form of Compline appointed for ordinary weekdays and seasons outside Great Lent."
+    },
+    "compline-fixed.json": {
+      "status": "Active \u2014 Horologion v3.0 (2026-03-08) \u2014 NEW in v3.0",
+      "coverage": "Invariable fixed texts for Small Compline. All entries resolved unconditionally by _resolveComplineSlots(). Slots keyed by name: usual-beginning, psalm-50, psalm-69, psalm-142, doxology, creed, trisagion-prayers, compline-theotokion, prayer-of-basil, into-thy-hands. Psalm translations follow LXX numeration used in Byzantine practice. Source: Standard Antiochian/OCA Horologion (Jordanville 2008 edition)."
+    },
+    "vespers-weekday-theotokion.json": {
+      "status": "Active \u2014 Horologion v1.9 (2026-03-07) \u2014 NEW in v1.9",
+      "coverage": "weekday_theotokia: 40 entries keyed by tone string ('1'\u2013'8') then weekday name ('monday'|'tuesday'|'wednesday'|'thursday'|'friday'). Each entry: tone, weekday, title, full liturgical text (Antiochian/OCA Hapgood-tradition English). Monday/Tuesday/Thursday: standard Octoechos weekday Theotokion for that tone + day. Wednesday/Friday: Stavrotheotokion (Cross Theotokion) \u2014 standard Byzantine fasting-day Theotokia. Applicable days: Mon\u2013Fri ordinary weekday Vespers. Resolves theotokion-dismissal slot for all five weekdays at baseline. Limitation: baseline uses current Octoechos weekly tone; if Menaion troparion is of a different tone, Theotokion should follow Menaion tone \u2014 not yet implemented. Overrides not implemented: great-feasts, great-lent, Menaion-tone conflict."
+    }
+  },
+  "coe_calendar_model": {
+    "severity": "CLOSED",
+    "description": "RESOLVED \u2014 v2.8.9. Three-layer COE calendar model implemented. Layer 1: season engine (calendar-east-syriac.js getSeason() / getDayClass()) operational. Layer 2: getDayClass() returns commemorations[] for Sawma Rabba Fridays and pre-Sawma Faithful Departed. Layer 3: CoeEligibility.filter() allowlist gate implemented; display re-enabled in renderEastSyriac(). COE-IIB audit complete: 133 identity IDs (136 rows) removed from commemorations.json. saint-grid model eliminated. No saint-grid fallback. Layer 2 renders before Layer 3 lookup. Silence is correct when no eligible saint is present.",
+    "architectural_principle": "Latin logic: Calendar = Saints framework with seasonal overlay. East Syriac logic: Calendar = Salvation-historical seasons with occasional saints.",
+    "three_layer_model": {
+      "layer_1_season_engine": {
+        "status": "COMPLETE \u2014 calendar-east-syriac.js",
+        "provides": [
+          "season",
+          "week number",
+          "cycle (Qdham/Wathar)",
+          "fasting character",
+          "season color"
+        ]
+      },
+      "layer_2_fixed_feasts": {
+        "status": "COMPLETE \u2014 COE-IIA (getDayClass() commemorations[])",
+        "description": "Major fixed observances calculated seasonally, not stored as date-keyed saints.",
+        "examples": [
+          "Nativity",
+          "Epiphany (Denha)",
+          "Resurrection",
+          "Exaltation of the Cross",
+          "Annunciation",
+          "Apostles season commemorations",
+          "All Saints",
+          "Commemoration of the Dead"
+        ],
+        "type": "feast or commemoration \u2014 never saint"
+      },
+      "layer_3_individual_saints": {
+        "status": "COMPLETE \u2014 COE-IIB audit done; CoeEligibility.filter() gate active; display re-enabled v2.8.7",
+        "description": "Sparse. Conservative. Person-based only. Pre-schism and explicitly East Syriac.",
+        "inclusion_criteria": [
+          "Pre-schism and universally ancient",
+          "Explicitly East Syriac (Hudra manuscript evidence)",
+          "Apostolic or Biblical figures",
+          "Persian/Mesopotamian martyrs"
+        ],
+        "exclusion_criteria": [
+          "Eastern Orthodox saints not in COE usage",
+          "Saints in Roman Martyrology but not in Hudra",
+          "Saints included only because they are 'early enough'",
+          "Post-7th century Western saints",
+          "Augustine of Hippo \u2014 not COE",
+          "Gregory the Great \u2014 disputed, currently tagged COE, needs review",
+          "Any saint tagged COE solely by proximity to EOR"
+        ],
+        "action": "No further internal action required. One external-research holdout remains: mar-augustine / mar-augustine-commemoration \u2014 excluded from Layer 3 by the eligibility gate. Do not alter on internal evidence alone. Resolution requires external Syriac manuscript evidence (Budge Book of the Governors, Wright Catalogue, Encyclopaedia Iranica COE calendar). If a matching Hudra figure is confirmed: correct feast dates, merge identity records, add to allowlist. If no figure is found: REMOVE_COE_TAG from both records."
+      }
+    },
+    "friday_logic": {
+      "description": "Friday is the martyrial axis of the East Syriac week throughout most seasons.",
+      "great_fast_fridays": {
+        "type": "commemoration",
+        "name": "Commemoration of the Holy Martyrs",
+        "tags": [
+          "COE"
+        ],
+        "note": "Corporate, not individual. All Fridays of Sawma Rabba. No rotating named saint."
+      },
+      "implementation": "getSeason() already returns season. Add getDayClass(date) to calendar-east-syriac.js returning { isFriday, isLenten, commemorationType, commemorationName }. renderEastSyriac() consults this before any saint lookup."
+    },
+    "season_weekly_logic": {
+      "subara": "Text-heavy, saint-light. Marian material doxological. No Immaculate Conception construct.",
+      "nativity": "Synaxis-type commemorations. Apostles and biblical figures in propers. Major feasts are feast/commemoration type.",
+      "denha": "Occasional fixed apostles. Strong baptismal theology. Friday commemorations continue.",
+      "sawma_rabba": "Friday = Commemoration of the Martyrs (corporate). No rotating individual saint list. Inject dynamically.",
+      "qyamta": "Apostolic figures more visible. Thomas receives liturgical prominence. Paschal weeks suppress martyr themes.",
+      "shlihe": "Apostles commemorated strongly. Missionary saints possible (pre-schism). Individual apostle entries appropriate.",
+      "qayta": "Subdued. Few saint-heavy days.",
+      "eliya_sliwa": "Prophetic focus. Prophets and OT figures appropriate.",
+      "qudash_idta": "Ecclesiology. All Saints-type commemorations appropriate."
+    },
+    "ui_framing": {
+      "avoid": "'Saint of the Day' framing for COE",
+      "prefer": [
+        "'Seasonal Commemoration'",
+        "'Friday Commemoration of the Martyrs'",
+        "'Apostolic Memory'"
+      ],
+      "existing_correct": [
+        "Current Cycle",
+        "Fasting Character",
+        "Anaphora fields are correct"
+      ],
+      "recommended_addition": "Display week name/number prominently within season for COE."
+    },
+    "action": "No internal action required. COE-II complete. Optional future work: COE-IIC \u2014 expand Layer 2 with major Hudra fixed feasts (Denha/Epiphany, Sleeba/Exaltation of the Cross, Annunciation, All Saints). External holdout: see three_layer_model.layer_3_individual_saints.action.",
+    "files": [
+      "js/calendar-east-syriac.js",
+      "js/office-ui.js \u2014 renderEastSyriac()",
+      "data/saints/*.json \u2014 COE tag audit required",
+      "components/east-syriac.json"
+    ],
+    "research_credit": "Architectural model established 2026-02-28 via external liturgical consultant review."
+  }
+}

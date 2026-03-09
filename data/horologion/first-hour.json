@@ -1,0 +1,109 @@
+{
+  "officeKey": "first-hour",
+  "label": "First Hour (Prima)",
+  "tradition": "BYZC",
+  "description": "The Byzantine First Hour (Prima) is the morning office concluding the all-night vigil cycle, sung at dawn after Orthros. On ordinary days without a vigil it follows immediately after Orthros. It sanctifies the first hour of the day with fixed psalmody, a troparion of the day, the Theotokion of the hour, and the Prayer of the First Hour.",
+  "sections": [
+    {
+      "id": "opening",
+      "label": "Opening",
+      "notes": "The First Hour opens with the Usual Beginning, as do all Byzantine offices.",
+      "items": [
+        {
+          "type": "rubric",
+          "key": "opening-blessing-rubric",
+          "text": "The Priest blesses: Blessed is our God, always, now and ever and unto ages of ages."
+        },
+        {
+          "type": "placeholder",
+          "key": "usual-beginning",
+          "label": "The Usual Beginning",
+          "status": "unresolved",
+          "note": "Trisagion prayers sequence. Resolved from first-hour-fixed.json by HorologionEngine."
+        }
+      ]
+    },
+    {
+      "id": "psalmody",
+      "label": "Fixed Psalmody",
+      "notes": "The First Hour appoints three fixed psalms: 5, 89, and 100 (LXX). These are invariable on ordinary days.",
+      "items": [
+        {
+          "type": "placeholder",
+          "key": "psalm-5",
+          "label": "Psalm 5 (LXX) — Give ear to my words, O Lord",
+          "status": "unresolved",
+          "note": "Resolved from first-hour-fixed.json by HorologionEngine."
+        },
+        {
+          "type": "placeholder",
+          "key": "psalm-89",
+          "label": "Psalm 89 (LXX) — Lord, Thou hast been our refuge",
+          "status": "unresolved",
+          "note": "Resolved from first-hour-fixed.json by HorologionEngine."
+        },
+        {
+          "type": "placeholder",
+          "key": "psalm-100",
+          "label": "Psalm 100 (LXX) — Of mercy and judgment I will sing",
+          "status": "unresolved",
+          "note": "Resolved from first-hour-fixed.json by HorologionEngine."
+        }
+      ]
+    },
+    {
+      "id": "trisagion",
+      "label": "Trisagion Prayers",
+      "notes": "The Trisagion prayer sequence precedes the troparia.",
+      "items": [
+        {
+          "type": "placeholder",
+          "key": "trisagion-prayers",
+          "label": "Trisagion Prayers",
+          "status": "unresolved",
+          "note": "Resolved from first-hour-fixed.json by HorologionEngine."
+        }
+      ]
+    },
+    {
+      "id": "troparia",
+      "label": "Troparia",
+      "notes": "The dismissal troparion of the day is sung. The tone-dependent Theotokion of the First Hour follows. On ferial days the troparion is from the Octoechos or Menaion; on Sundays the Resurrectional Troparion of the current tone.",
+      "items": [
+        {
+          "type": "placeholder",
+          "key": "troparion-of-the-day",
+          "label": "Troparion of the Day",
+          "status": "unresolved",
+          "note": "Variable troparion: resolved via Menaion resolver or weekday-theme rubric by HorologionEngine. Same infrastructure as Vespers troparion slot."
+        },
+        {
+          "type": "placeholder",
+          "key": "first-hour-theotokion",
+          "label": "Theotokion of the First Hour",
+          "status": "unresolved",
+          "note": "Variable: tone-dependent Theotokion from the Octoechos First Hour cycle. Resolved by HorologionEngine as explicit rubric stub at baseline; full text deferred pending First Hour Octoechos data."
+        }
+      ]
+    },
+    {
+      "id": "prayer-and-dismissal",
+      "label": "Prayer of the First Hour and Dismissal",
+      "notes": "The Prayer of the First Hour concludes the fixed psalmody cycle. The office ends with the standard dismissal.",
+      "items": [
+        {
+          "type": "placeholder",
+          "key": "prayer-of-the-first-hour",
+          "label": "Prayer of the First Hour",
+          "status": "unresolved",
+          "note": "Fixed invariable prayer. Resolved from first-hour-fixed.json by HorologionEngine."
+        },
+        {
+          "type": "rubric",
+          "key": "dismissal-rubric",
+          "text": "Priest: Christ our true God, through the intercessions of His all-pure Mother, of all the Saints, have mercy on us and save us, as He is good and the Lover of mankind.\nChoir: Amen."
+        }
+      ]
+    }
+  ]
+}

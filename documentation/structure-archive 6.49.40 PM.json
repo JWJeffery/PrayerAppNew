@@ -1,0 +1,1084 @@
+{
+  "_note": "Archived data from structure.json. Contains: (1) change_history \u2014 recent_logic_changes entries older than 5 days or superseded by terminal versions; (2) removed_active_module_details \u2014 verbose implementation details stripped from active_modules; (3) removed_documentation_manifest_notes and removed_governance_notes \u2014 changelog narrative stripped from those sections; (4) removed_roadmap_completed \u2014 original verbose completed string.",
+  "archived_from": "structure.json",
+  "archived_cutoff": "2026-03-08 (intermediates superseded by terminal state)",
+  "project_at_cutoff": {
+    "name": "Universal Office",
+    "version": "3.5.0",
+    "last_updated": "2026-03-08"
+  },
+  "change_history": [
+    {
+      "file": "js/horologion-engine.js",
+      "change": "Horologion v1.8 \u2014 Sunday Small Vespers implemented as a real baseline path",
+      "detail": "js/horologion-engine.js: version bumped v1.7\u2192v1.8. Five Sunday-case variable slots resolved. (1) stichera-at-lord-i-have-cried: _resolveVespersSlots() now routes dayOfWeek===0 to the 'saturday' Octoechos corpus; resolvedAs, weekday, and label fields patched post-resolution to 'sunday-small-vespers-resurrectional-stichera'; rubric note appended stating 3 stichera typically used at Sunday Small Vespers. (2) aposticha: same routing and label-patch logic; resolvedAs:'sunday-small-vespers-resurrectional-aposticha'. Liturgical rationale: the resurrectional stichera are the tone-week corpus, not Saturday-specific \u2014 they are anticipated at Saturday Great Vespers and repeated at Sunday Small Vespers; no new data fabricated. (3) kathisma-reading: _resolveKathismaSlot() Sunday branch upgraded from generic deferred stub to actionable omission rubric \u2014 Sunday Small Vespers ordinarily omits kathisma; Kathisma 1 belongs to Saturday Great Vespers vigil; resolvedAs:'sunday-small-vespers-kathisma-ordinary-omitted'. (4) troparion-or-apolytikion: _resolveTroparionSlot() Sunday branch upgraded from deferred rubric to type:'text' with full Resurrectional Troparion of the tone; resolvedAs:'resurrectional-troparion-sunday'. (5) theotokion-dismissal: _resolveTheotokionSlot() Sunday branch upgraded from deferred rubric to type:'text' with full dismissal Theotokion of the tone; resolvedAs:'dismissal-theotokion-sunday'. data/horologion/octoechos-vespers.json: unchanged \u2014 sunday_deferred:true entries remain as data markers; routing override is in engine only. data/horologion/vespers-kathisma.json, vespers-troparion.json, vespers-theotokion.json: unchanged. office-ui.js: NO CHANGES \u2014 type:'text' and type:'stichera' already handled. GOVERNANCE CONSEQUENCE: The 'Sunday Vespers bundle deferred' framing is retired. Every Vespers variable slot across all day-of-week paths now yields full text, explicit rubric stub, or explicit omission rubric. Remaining work is refinement: weekday Menaion refinement (Mon\u2013Fri troparion/theotokion text) and feast-rank override system."
+    },
+    {
+      "date": "2026-02-22",
+      "phase": "7.1\u20137.3",
+      "file": "js/office-ui.js",
+      "change": "Ethiopian Sa'atat mode \u2014 full 24-hour canonical cycle implemented"
+    },
+    {
+      "date": "2026-02-22",
+      "phase": "7.4",
+      "file": "js/calendar-ethiopian.js",
+      "change": "Ethiopian/Coptic calendar engine \u2014 fully implemented, self-tested, integrated"
+    },
+    {
+      "date": "2026-02-23",
+      "phase": "8.1",
+      "file": "data/synaxarium/ethiopian/senkessar-index.json + data/synaxarium/ethiopian/tir/",
+      "change": "Full Senkessar index correction and Tir corpus completion"
+    },
+    {
+      "date": "2026-02-24",
+      "phase": "v2.6.1",
+      "file": "js/css/office.css",
+      "change": "DELETED \u2014 orphaned duplicate. Never referenced by any file."
+    },
+    {
+      "date": "2026-02-24",
+      "phase": "v2.6.1",
+      "file": "css/office.css",
+      "change": "Ethiopian rubric Metsehafe Tselot aesthetic; color corrected #8B0000\u2192#C0392B; print override"
+    },
+    {
+      "date": "2026-02-24",
+      "phase": "v2.6.1",
+      "file": "components/ethiopian.json",
+      "change": "Added eth-introduction-to-every-hour (Tselote Meweta); eth-prayer-thanksgiving retired from sequence"
+    },
+    {
+      "date": "2026-02-26",
+      "phase": "6.6",
+      "file": "structure.json + components/traditions/ethiopian/rubrics.json",
+      "change": "Phase 6.6 Audit Remediation \u2014 Third Hour ID mismatch corrected; structure.json updated",
+      "detail": "eth-meserkh-hour-text corrected to eth-meserk-hour-text in rubrics.json slots time_map. Version bumped to 2.7.0."
+    },
+    {
+      "date": "2026-02-27",
+      "phase": "v2.8.0",
+      "file": "components/east-syriac.json",
+      "change": "Added 8 new components for the minor hours",
+      "detail": "esy-qutaa-hymn (Hour of the Holy Spirit descent), esy-endana-hymn (Hour of the Crucifixion \u2014 cross outstretched at noon), esy-dtsha-sain-hymn (Hour of Christ's death and the thief's confession), esy-subaa-hymn (Shubha Mara \u2014 night doxology), esy-subaa-examination (brief examination of conscience with communal Kyrie response), esy-subaa-nunc-dimittis (Hullala d-Sham'un \u2014 Song of Simeon), esy-subaa-blessing (Compline blessing with 'And with your spirit' response), esy-karozutha-daytime (shared daytime litany for Quta'a, Endana, and D-tsha' Sa'in). Component count: 78 \u2192 83."
+    },
+    {
+      "date": "2026-02-27",
+      "phase": "v2.8.0",
+      "file": "js/office-ui.js \u2014 renderEastSyriac()",
+      "change": "Expanded sequence routing block and added four psalm-token handlers",
+      "detail": "Routing block extended from 3 hours to 7: added qutaa, endana, dtsha-sain, subaa branches before the Ramsha else-default. Four new psalm-token handlers inserted in the for-loop immediately after the esy-variable-sapra-psalms handler and before esy-variable-marmitha. All use await getScriptureText() and formatPsalmAsPoetry() consistent with existing handlers."
+    },
+    {
+      "date": "2026-02-27",
+      "phase": "v2.8.0",
+      "file": "components/traditions/east-syriac/rubrics.json",
+      "change": "Added eight new sequences for the four minor hours",
+      "detail": "cathedral-qutaa-sequence, monastic-qutaa-sequence, cathedral-endana-sequence, monastic-endana-sequence, cathedral-dtsha-sain-sequence, monastic-dtsha-sain-sequence, cathedral-subaa-sequence, monastic-subaa-sequence. Four new dynamic tokens registered: esy-variable-qutaa-psalms, esy-variable-endana-psalms, esy-variable-dtsha-sain-psalms, esy-variable-subaa-psalms (all status: implemented). Suba'a sequences use distinct esy-subaa-blessing rather than shared esy-concluding-blessing."
+    },
+    {
+      "date": "2026-02-27",
+      "phase": "v2.8.0",
+      "file": "index.html",
+      "change": "Added four minor hours to esy-time radio group",
+      "detail": "Added qutaa (Quta'a \u2014 Third Hour), endana (Endana \u2014 Sixth Hour), dtsha-sain (D-tsha' Sa'in \u2014 Ninth Hour), subaa (Suba'a \u2014 Compline) radio buttons to #east-syriac-settings appointed hour group."
+    },
+    {
+      "date": "2026-02-27",
+      "phase": "v2.8.1",
+      "file": "js/calendar-engine.js",
+      "change": "Replaced hardcoded SEASON_RANGES with algorithmic generator; getLiturgicalYear() made fully algorithmic",
+      "detail": "SEASON_RANGES static array (previously hardcoded through Dec 2030) replaced with: _getEaster() (Anonymous Gregorian algorithm), _getAdventSunday(), _addDays(), _generateSeasonRanges(), _getRangesForDate(), and _seasonCache. SEASON_RANGES getter retained for backward compatibility. getLiturgicalYear() now anchors to Advent 2025 = Year 2 and counts cycles algorithmically \u2014 no array dependency. getSeasonAndFile() and getSeasonStartDate() updated to call _getRangesForDate() instead of iterating SEASON_RANGES. Tested and passing for dates through 2099."
+    },
+    {
+      "date": "2026-02-27",
+      "phase": "v2.8.1",
+      "file": "js/office-ui.js \u2014 renderEastSyriac() esy-variable-qanona handler",
+      "change": "Updated Qanona handler to Option A layered rendering",
+      "detail": "For Sapra, Ramsha, and Lelya: hour-specific Qanona (esy-qanona-sapra, esy-qanona-ramsha, esy-qanona-lelya) now renders first as an hour-specific frame, followed immediately by the seasonal Qanona (esy-qanona-{season}-{cycle}). Previously these three components were unreachable. Daytime hours (Quta'a, Endana, D-tsha' Sa'in, Suba'a) unchanged \u2014 seasonal Qanona only."
+    },
+    {
+      "date": "2026-02-27",
+      "phase": "v2.8.1",
+      "file": "components/east-syriac.json",
+      "change": "Removed duplicate component definitions",
+      "detail": "esy-suraya, esy-karozutha, and esy-concluding-blessing each appeared twice with identical content. Second copy of each removed. First occurrence at original position retained."
+    },
+    {
+      "date": "2026-02-27",
+      "phase": "v2.8.1",
+      "file": "components/traditions/ethiopian/rubrics.json",
+      "change": "Removed stale Phase 2B note from eth-hour-7 time_map entry",
+      "detail": "The phase field reading 'component text pending Phase 2B; falls back to eth-night-hour-text if component absent' was removed. eth-hour-7 component was completed in v2.7.0; note was misleading maintenance debt."
+    },
+    {
+      "date": "2026-02-27",
+      "phase": "v2.8.1",
+      "file": "components/ethiopian.json",
+      "change": "Expanded eth-mahlet-hour-text from sparse placeholder to full liturgical text",
+      "detail": "Pre-dawn vigil hour (03:00\u201306:00) now has full liturgical depth matching all other Saatat hours. Gethsemane/pre-dawn imagery, holy women at the tomb, locked upper room reference, Marian intercession, eschatological frame. Stale TODO note removed from component note field."
+    },
+    {
+      "date": "2026-02-27",
+      "phase": "v2.8.1",
+      "file": "components/east-syriac.json",
+      "change": "Added 9 Barekmar intercession components",
+      "detail": "esy-barekmar-general (fallback), esy-barekmar-sauma (seasonal Lenten), esy-barekmar-sunday through esy-barekmar-saturday (day-of-week diptychs). All appended to end of file. Component count 83 \u2192 92."
+    },
+    {
+      "date": "2026-02-27",
+      "phase": "v2.8.1",
+      "file": "js/tooltip.js",
+      "change": "Tooltip vertical overflow \u2014 confirmed already resolved, issue closed",
+      "detail": "Audit note flagged missing overflowBottom detection. Code review confirmed overflowBottom check already present in mousemove handler. No code change required. Issue closed as stale."
+    },
+    {
+      "date": "2026-02-27",
+      "phase": "v2.8.1",
+      "file": "index.html",
+      "change": "Updated splash button label for Church of the East",
+      "detail": "Button label changed from 'Church of the East \u2014 Ramsha' to 'Church of the East \u2014 Hudra'. 'Ramsha' was a misnomer once all seven canonical hours were implemented in v2.8.0."
+    },
+    {
+      "date": "2026-02-28",
+      "phase": "v2.8.2",
+      "file": "data/saints/*.json",
+      "change": "Saints data migration \u2014 tradition string to tags[] array schema",
+      "detail": "All 1568 saint records across 12 monthly files migrated. Legacy `tradition` string field replaced with: id (stable slug), type (saint/apostle/prophet/feast/marian_feast/commemoration), tags[] (ANG/LAT/EOR/OOR/COE), verification_status (verified/provisional). 137 formerly-Universal entries fully classified via external research and editorial review. Mechanical renames: Catholic->LAT, Anglican Communion->ANG, Eastern Orthodox->EOR, Oriental Orthodox->OOR, Ethiopian Orthodox Tewahedo->OOR, Byzantine Orthodox->EOR, Church of the East->COE. Multi-tradition comma-separated strings parsed and split correctly. Barbara/John of Damascus combined entry split into saint-barbara-of-nicomedia (EOR/LAT/OOR) and saint-john-of-damascus (ANG/EOR/LAT). Conception of the BVM split: Dec 8 feast-immaculate-conception (ANG/LAT) and Dec 9 feast-conception-of-the-theotokos (EOR/OOR). ECU never stored \u2014 derived dynamically at render time when all five tags present. JS filter logic in office-ui.js requires update (next task)."
+    },
+    {
+      "date": "2026-02-28",
+      "phase": "v2.8.3",
+      "file": "js/office-ui.js \u2014 renderEastSyriac()",
+      "change": "COE saint section silenced pending architectural rebuild",
+      "detail": "esySaints filter and saint-display block removed from renderEastSyriac(). saint-section hidden, saint-display cleared. Previous string-matching behaviour was historically inaccurate for the East Syriac tradition. COE calendar is salvation-historical and seasonal \u2014 not a date-to-saint grid. Correct rebuild requires three-layer model (season engine, fixed feasts, sparse saints). Full spec in known_outstanding_issues.coe_calendar_model. Silence is liturgically accurate for COE weekdays with no fixed individual saint."
+    },
+    {
+      "date": "2026-03-07",
+      "phase": "Horologion v1",
+      "file": "js/horologion-engine.js + data/horologion/ + js/office-ui.js + index.html",
+      "change": "Horologion v1 architecture boundary established",
+      "detail": "js/horologion-engine.js: HorologionEngine IIFE, window-scoped. getOfficeSkeleton() fetches/caches data/horologion/<officeKey>.json. resolveOffice() is non-throwing \u2014 all failure paths return status:'error' payload. _formatLocalISODate() uses getFullYear/getMonth/getDate (not toISOString) to avoid UTC date-shift. data/horologion/vespers.json: 7 sections, fixed content complete, 7 variable slots as explicit placeholders. data/horologion/schema.json: normalized payload contract. office-ui.js: selectMode('horologion-vespers') branch, renderHorologionOffice(), _renderHorologionItem() added. index.html: 'Byzantine Vespers \u2014 Horologion' splash button; saints-resolver.js and horologion-engine.js added to script block before office-ui.js. Verified live in app via screenshot 2026-03-07."
+    },
+    {
+      "date": "2026-03-07",
+      "phase": "Horologion v1.2",
+      "file": "js/horologion-engine.js + data/horologion/vespers.json",
+      "change": "Horologion v1.2 \u2014 weekday Vespers prokeimenon and ordinary-day vesperal reading resolved",
+      "detail": "daily-prokeimenon: implemented via a weekday data table (Sunday\u2013Saturday, 7 fixed entries, no Octoechos or calendar dependency). vesperal-reading: resolved as explicitly omitted for ordinary non-festal days (slot present in skeleton but suppressed at render time; feast-day and Lenten readings remain deferred). Net result: 7 placeholder slots reduced to 5. Remaining: stichera-at-lord-i-have-cried, kathisma-reading, aposticha, troparion-or-apolytikion, theotokion-dismissal."
+    },
+    {
+      "date": "2026-03-07",
+      "phase": "Horologion v1.3",
+      "file": "js/horologion-engine.js + data/horologion/octoechos-vespers.json + js/office-ui.js",
+      "change": "Horologion v1.3 \u2014 baseline Octoechos tone engine; Saturday Vespers stichera/aposticha populated; weekday tone-aware stubs",
+      "detail": "_computeOrthodoxPascha(): self-contained Meeus Julian Paschalion (duplicated from calendar-eastern-orthodox.js which is admin-only; documented for future delegation when that module reaches main path). _computeBaselineTone(): Thomas Sunday anchor (Pascha+7 = Tone 1); ((weekCount % 8) + 8) % 8 + 1 handles pre-Pascha negative counts; Saturday\u2192Sunday correction applied; Bright Week (Pascha\u2013Thomas Saturday) returns tone:null. _loadOctoechosData(): lazy-loads data/horologion/octoechos-vespers.json; non-throwing. _resolveSticheraSlot(): three-tier resolution \u2014 (1) full data (Saturday): type:'stichera' with rubric+verses; (2) stub (weekday): type:'rubric' with tone identified and honest deferral note; (3) load failure: null \u2192 slot remains skeleton placeholder. Bright Week branches render rubric noting Paschal Tone. office-ui.js: +11 lines adding type:'stichera' handler (label+body, mirrors psalm branch). data/horologion/octoechos-vespers.json: tones 1\u20138; Saturday fully populated; Mon\u2013Fri+Sunday: baseline_stub:true entries. NET: Saturday Vespers stichera and aposticha are now materially resolved for all 8 tones. Weekday stichera/aposticha are no longer dead generic placeholders \u2014 tone is resolved and displayed \u2014 but full weekday Octoechos text remains a deferred data-pass item. kathisma-reading, troparion-or-apolytikion, theotokion-dismissal: unchanged placeholders."
+    },
+    {
+      "date": "2026-03-07",
+      "phase": "Horologion v1.4",
+      "file": "data/horologion/octoechos-vespers.json",
+      "change": "Horologion v1.4 \u2014 Monday\u2013Friday baseline Octoechos stichera/aposticha materially populated",
+      "detail": "data/horologion/octoechos-vespers.json: version bumped 1.3.0 \u2192 1.4.0. Replaced baseline_stub:true entries for Monday\u2013Friday with fully populated stichera_at_lord_i_have_cried and aposticha objects (coverage:'full-baseline') for all 8 tones. 80 weekday slots populated (8 tones \u00d7 5 days \u00d7 2 slots); 240 verses total (3 per slot). Thematic assignments per standard Byzantine Octoechos practice: Monday=Bodiless Powers (Angels), Tuesday=St. John the Baptist and the Prophets, Wednesday=Cross and Theotokos, Thursday=Holy Apostles and St. Nicholas, Friday=Cross and Theotokos (penitential). Sunday entries: updated from bare baseline_stub to sunday_deferred:true + baseline_stub:true with an explicit note explaining that Saturday great Vespers already provides the Sunday-tone resurrectional content, and Sunday small Vespers ordinary stichera are a distinct corpus deferred to a future pass. This is an explicit deferral, not a silent gap. js/horologion-engine.js: NO CHANGES in this pass. The existing _resolveSticheraSlot() three-tier logic (full data \u2192 stub \u2192 null) already handles the newly populated weekday entries without modification. office-ui.js: NO CHANGES. Saturday data: unchanged from v1.3. NET: Monday\u2013Friday Vespers stichera and aposticha are now materially resolved for all 8 tones. Sunday remains an honest stub. kathisma-reading, troparion-or-apolytikion, theotokion-dismissal: unchanged placeholders."
+    },
+    {
+      "date": "2026-03-07",
+      "phase": "Horologion v1.5",
+      "file": "js/horologion-engine.js + data/horologion/vespers-kathisma.json",
+      "change": "Horologion v1.5 \u2014 kathisma-reading baseline resolved for ordinary Monday\u2013Saturday Vespers",
+      "detail": "data/horologion/vespers-kathisma.json: new file. 7-entry appointment table keyed by JS Date.getDay() (0=Sunday \u2026 6=Saturday). Rule: standard Byzantine Psalter weekly cycle for ordinary Vespers (OCA/Antiochian Psalter table; Jordanville Horologion 2008). Assignments (LXX psalm numbers): Monday=Kathisma 4 (Ps 24\u201331), Tuesday=6 (37\u201345), Wednesday=8 (55\u201363), Thursday=10 (70\u201376), Friday=12 (85\u201390, 92), Saturday=1 (1\u20138). Sunday entry: sunday_deferred:true with honest note about usage variation. js/horologion-engine.js: version bumped v1.3\u2192v1.5. KATHISMA_URL constant added. _kathismaData cache variable added. _loadKathismaData(): lazy fetch, non-throwing, same pattern as existing loaders. _resolveKathismaSlot(dayOfWeek, brightWeek): Bright Week \u2192 type:'rubric', resolvedAs:'bright-week-no-kathisma'; Sunday \u2192 type:'rubric', resolvedAs:'sunday-deferred'; Mon\u2013Sat ordinary \u2192 type:'rubric' with kathisma number, title, LXX range, incipit, resolvedAs:'ordinary-weekday-baseline'. Friday entry includes variant_note about Ps 91/92 edition differences. All three cases state their limitations openly in rendered text \u2014 no silent approximations. Promise.all in _resolveVespersSlots: two-loader \u2192 three-loader (adds _loadKathismaData()). slot loop: deferred comment replaced with live kathisma-reading branch. office-ui.js: NO CHANGES \u2014 type:'rubric' is already handled by existing renderer. NET: kathisma-reading slot no longer shows as a dashed placeholder on Mon\u2013Sat ordinary Vespers. Sunday kathisma remains an honest stub. troparion-or-apolytikion and theotokion-dismissal: unchanged placeholders."
+    },
+    {
+      "date": "2026-03-07",
+      "phase": "Horologion v1.6",
+      "file": "js/horologion-engine.js + data/horologion/vespers-troparion.json",
+      "change": "Horologion v1.6 \u2014 troparion-or-apolytikion baseline resolved for Saturday and Bright Week Vespers",
+      "detail": "data/horologion/vespers-troparion.json: new file. resurrectional_troparia: 8 entries keyed by tone string ('1'\u2013'8'); each has tone, title, and full liturgical text (Byzantine Octoechos; Antiochian/OCA Hapgood-tradition English). paschal_troparion: fixed text for Bright Week. js/horologion-engine.js: version bumped v1.5\u2192v1.6. TROPARION_URL constant added. _troparionData cache variable added. _loadTroparionData(): lazy fetch, non-throwing, same pattern as existing loaders. _resolveTroparionSlot(dayOfWeek, toneResult): Bright Week \u2192 type:'text', resolvedAs:'bright-week-paschal-troparion'; Saturday \u2192 type:'text' with full Resurrectional Troparion, resolvedAs:'resurrectional-troparion-saturday'; Sunday \u2192 type:'rubric', resolvedAs:'sunday-deferred'; Mon\u2013Fri \u2192 type:'rubric' stub, resolvedAs:'weekday-menaion-required' (tone stated, text not fabricated). All cases state their limitations openly in rendered text. Promise.all in _resolveVespersSlots: three-loader \u2192 four-loader (adds _loadTroparionData()). Slot loop: deferred comment replaced with live troparion-or-apolytikion branch; theotokion-dismissal deferred comment updated. office-ui.js: NO CHANGES \u2014 type:'text' already handled by existing final branch in _renderHorologionItem (same renderer as O Gladsome Light and Nunc Dimittis). NET: troparion-or-apolytikion no longer shows dashed placeholder on Saturday or Bright Week. Mon\u2013Fri shows tone-identified stub (not placeholder box). Sunday shows deferred stub (not placeholder box). theotokion-dismissal: unchanged placeholder."
+    },
+    {
+      "date": "2026-03-07",
+      "phase": "Horologion v1.7",
+      "file": "js/horologion-engine.js + data/horologion/vespers-theotokion.json",
+      "change": "Horologion v1.7 \u2014 theotokion-dismissal baseline resolved for Saturday and Bright Week Vespers",
+      "detail": "data/horologion/vespers-theotokion.json: new file. dismissal_theotokia: 8 entries keyed by tone string ('1'\u2013'8'); each has tone, title, and full liturgical text (apolytikion-paired dismissal Theotokia of the Octoechos; Antiochian/OCA Hapgood-tradition English). Explicitly documented as distinct from the Dogmatika (major Theotokia in the Aposticha). js/horologion-engine.js: version bumped v1.6\u2192v1.7. THEOTOKION_URL constant added. _theotokionData cache variable added. _loadTheotokionData(): lazy fetch, non-throwing, same pattern as existing loaders. _resolveTheotokionSlot(dayOfWeek, toneResult): Bright Week \u2192 type:'rubric', resolvedAs:'bright-week-no-theotokion' (explicit omission \u2014 no Theotokion at Paschal dismissal); Sunday \u2192 type:'rubric', resolvedAs:'sunday-deferred'; Saturday \u2192 type:'text' with full dismissal Theotokion, resolvedAs:'dismissal-theotokion-saturday'; Mon\u2013Fri \u2192 type:'rubric' stub, resolvedAs:'weekday-menaion-required' (tone stated, Menaion required, text not fabricated). All cases state limitations openly. Promise.all in _resolveVespersSlots: four-loader \u2192 five-loader (adds _loadTheotokionData()). Slot loop: deferred comment replaced with live theotokion-dismissal branch. office-ui.js: NO CHANGES. GOVERNANCE CONSEQUENCE: zero dead placeholder boxes remain on ordinary Saturday Vespers. All seven original skeleton variable slots now yield full text, a rubric stub, or an explicit omission rubric. Remaining work is refinement (Sunday bundle, Menaion, feast-rank) not slot completion."
+    },
+    {
+      "date": "2026-03-07",
+      "phase": "Horologion v1.9",
+      "file": "js/horologion-engine.js + data/horologion/vespers-weekday-theotokion.json",
+      "change": "Horologion v1.9 \u2014 weekday Vespers dismissal Theotokion (Mon\u2013Fri) resolved from Octoechos weekday corpus",
+      "detail": "New file: data/horologion/vespers-weekday-theotokion.json. 40 entries keyed by tone string ('1'\u2013'8') then weekday name ('monday'\u2013'friday'). Each entry: tone, weekday, title, full liturgical text. Monday/Tuesday/Thursday: standard Octoechos weekday Theotokion for that tone + day. Wednesday/Friday: Stavrotheotokion (Cross Theotokion) \u2014 standard Byzantine fasting-day practice. js/horologion-engine.js: version bumped v1.8\u2192v1.9. WEEKDAY_THEOTOKION_URL constant added. _weekdayTheotokionData cache variable added. _loadWeekdayTheotokionData(): lazy fetch, non-throwing, graceful degradation \u2014 if data file fails, falls back to v1.7-style tone-identified rubric stub (not a crash). _resolveTheotokionSlot() weekday branch (Mon\u2013Fri): upgraded from tone-identified rubric stub (resolvedAs:'weekday-menaion-required') to type:'text' with full Octoechos weekday Theotokion text (resolvedAs:'weekday-octoechos-theotokion'). Limitation recorded in each output: baseline uses current Octoechos weekly tone; if Menaion troparion is of a different tone the Theotokion should follow that tone \u2014 not yet implemented; stated openly. _capitalise() internal helper added for weekday name formatting in rubric text. Promise.all in _resolveVespersSlots: five-loader \u2192 six-loader (adds _loadWeekdayTheotokionData()). Saturday, Sunday, and Bright Week theotokion paths: UNCHANGED. troparion-or-apolytikion (Mon\u2013Fri): UNCHANGED \u2014 remains tone-identified rubric stub; Menaion data is genuinely required; no fabrication. office-ui.js: NO CHANGES \u2014 type:'text' already handled. GOVERNANCE CONSEQUENCE: The framing 'weekday Menaion refinement for troparion + theotokion' is now incorrect. After v1.9, the only remaining open weekday slot is troparion-or-apolytikion (Mon\u2013Fri); theotokion-dismissal is baseline-resolved. The term 'weekday Menaion refinement' now refers exclusively to weekday troparion text."
+    },
+    {
+      "date": "2026-03-07",
+      "phase": "Menaion v1 pilot \u2014 engine v2.1",
+      "file": "js/horologion-engine.js + js/menaion-resolver.js + data/menaion/schema.json + data/menaion/november.json + index.html",
+      "change": "Menaion v1 pilot wired into live weekday Vespers troparion resolution. Engine version v2.1.",
+      "detail": "NEW FILES: js/menaion-resolver.js \u2014 IIFE module (window.MenaionResolver). Soft dependency on horologion-engine.js. Exposes queryTroparion(mmdd) \u2192 Promise<ResultObject>. MONTH_FILES map: only month 11 (november) active. _loadMonth(): lazy fetch, non-throwing, result cached. _selectBestCommemoration(): highest rank (lowest integer); ties go to first entry. Result status codes: menaion-resolved, menaion-text-unavailable, menaion-not-imported, menaion-no-ranked-commemoration, menaion-load-error. data/menaion/schema.json: pilot schema contract for all future monthly Menaion files. data/menaion/november.json: 12 of 30 November dates imported (11-01, 11-08, 11-09, 11-13, 11-14, 11-16, 11-17, 11-20, 11-21, 11-22, 11-25, 11-30). Source: OCA/Antiochian Hapgood-tradition English; Jordanville Horologion. CHANGED FILES: index.html \u2014 js/menaion-resolver.js added before js/horologion-engine.js. js/horologion-engine.js \u2014 version bumped v2.0\u2192v2.1. _resolveTroparionSlot(): made async; third parameter dateObj added. Bright Week, Saturday, Sunday branches: UNCHANGED. Weekday (Mon\u2013Fri) branch: builds MM-DD string from dateObj; calls window.MenaionResolver.queryTroparion(mmdd); routes on status: menaion-resolved \u2192 type:'text' with full troparion text + saint name + tone + rank annotation (resolvedAs:'menaion-resolved'); menaion-text-unavailable \u2192 type:'rubric' with commemoration name (resolvedAs:'menaion-text-unavailable'); all other statuses or resolver unavailable \u2192 falls through to weekday-theme rubric (resolvedAs:'weekday-theme-rubric', identical to v2.0 fallback). try/catch wraps entire resolver call \u2014 non-throwing. typeof window.MenaionResolver guard prevents crash if module not loaded. Call site in _resolveVespersSlots(): _resolveTroparionSlot() awaited with dateObj. _resolveVespersSlots() was already async \u2014 no signature change. office-ui.js: NO CHANGES. PILOT SCOPE: November only (12 of 30 dates). All other months return 'menaion-not-imported'. GOVERNANCE CONSEQUENCE: The framing 'weekday troparion is simply unresolved' is retired. After Menaion v1, weekday troparion has a live pilot path. Imported November dates resolve to full text. Non-imported dates fall back honestly to the theme rubric. Remaining work is corpus expansion + feast-rank engine. 'Menaion required' now refers to corpus expansion, not a missing architecture."
+    },
+    {
+      "date": "2026-03-07",
+      "phase": "Menaion v1.2 \u2014 January corpus",
+      "file": "data/menaion/january.json + js/menaion-resolver.js",
+      "change": "January Menaion corpus imported \u2014 all 31 dates. Resolver MONTH_FILES updated.",
+      "detail": "data/menaion/january.json: new file. 31 of 31 January dates imported. 24 dates carry troparion_status:'resolved' with full text; 7 dates carry troparion_status:'text-unavailable' (name and tone recorded, text not securely confirmed). Notable feasts: Theophany (Jan 6, rank 1); Three Hierarchs (Jan 30, rank 2); Anthony the Great (Jan 17, rank 2); Basil the Great (Jan 1, rank 2); Gregory the Theologian (Jan 25, rank 2); Ephrem the Syrian (Jan 28, rank 2). js/menaion-resolver.js: MONTH_FILES entry 1:'january' uncommented; comment updated from 'not yet imported' to 'FULL CORPUS \u2014 all 31 dates'. office-ui.js: NO CHANGES. horologion-engine.js: NO CHANGES. index.html: NO CHANGES. Resolver semantics and status codes: UNCHANGED."
+    },
+    {
+      "date": "2026-03-07",
+      "phase": "Menaion v1.3 \u2014 February corpus",
+      "file": "data/menaion/february.json + js/menaion-resolver.js",
+      "change": "February Menaion corpus imported \u2014 all 28 dates. Resolver MONTH_FILES updated.",
+      "detail": "data/menaion/february.json: new file. 28 of 28 February dates imported. 15 dates carry troparion_status:'resolved' with full text; 13 dates carry troparion_status:'text-unavailable' (name and tone recorded, text not securely confirmed). Notable feasts: Presentation of the Lord (Feb 2, rank 1 Great Feast); First and Second Finding of the Head of the Baptist (Feb 24, rank 2); Theodore Stratelates (Feb 8, rank 3); Haralambos (Feb 10, rank 3); Cyril of the Slavs (Feb 14, rank 3); Theodore Tyron (Feb 17, rank 3); Leo the Great (Feb 18, rank 3); Polycarp of Smyrna (Feb 23, rank 3). js/menaion-resolver.js: MONTH_FILES entry 2:'february' uncommented; comment updated to 'FULL CORPUS \u2014 all 28 dates'. office-ui.js: NO CHANGES. horologion-engine.js: NO CHANGES. index.html: NO CHANGES. Resolver semantics and status codes: UNCHANGED."
+    },
+    {
+      "date": "2026-03-07",
+      "phase": "Menaion v1.4 \u2014 March corpus",
+      "file": "data/menaion/march.json + js/menaion-resolver.js",
+      "change": "March Menaion corpus imported \u2014 all 31 dates. Resolver MONTH_FILES updated.",
+      "detail": "data/menaion/march.json: new file. 31 of 31 March dates imported. 11 dates carry troparion_status:'resolved' with full text; 20 dates carry troparion_status:'text-unavailable' (name and tone recorded, text not securely confirmed). March is heavily Lenten in most years; Great Lent feast-rank overrides deferred per governance. Notable feasts: Annunciation (Mar 25, rank 1 Great Feast, Tone 4); Forty Martyrs of Sebaste (Mar 9, rank 3); Cyril of Jerusalem (Mar 18, rank 3); Synaxis of Archangel Gabriel (Mar 26, rank 3); John Climacus (Mar 30, rank 3). js/menaion-resolver.js: MONTH_FILES entry 3:'march' uncommented; comment updated to 'FULL CORPUS \u2014 all 31 dates'. office-ui.js: NO CHANGES. horologion-engine.js: NO CHANGES. index.html: NO CHANGES. Resolver semantics and status codes: UNCHANGED."
+    },
+    {
+      "date": "2026-03-07",
+      "phase": "Menaion v1.5 \u2014 April corpus",
+      "file": "data/menaion/april.json + js/menaion-resolver.js",
+      "change": "April Menaion corpus imported \u2014 all 30 dates. Resolver MONTH_FILES updated.",
+      "detail": "data/menaion/april.json: new file. 30 of 30 April dates imported. 11 dates carry troparion_status:'resolved' with full text; 19 dates carry troparion_status:'text-unavailable' (name and tone recorded, text not securely confirmed). Pascha/Bright Week feast-rank overrides deferred. Notable feasts: George the Great Martyr (Apr 23, rank 2, Tone 4); Mark the Evangelist (Apr 25, rank 2, Tone 3); Mary of Egypt (Apr 1, rank 3); Irene the Great Martyr (Apr 16, rank 3); Martin Pope of Rome (Apr 13, rank 3); Theodore of Sykeon (Apr 22, rank 3); James Brother of the Lord (Apr 30, rank 3). js/menaion-resolver.js: MONTH_FILES entry 4:'april' uncommented; comment updated to 'FULL CORPUS \u2014 all 30 dates'. office-ui.js: NO CHANGES. horologion-engine.js: NO CHANGES. index.html: NO CHANGES. Resolver semantics and status codes: UNCHANGED."
+    },
+    {
+      "date": "2026-03-07",
+      "phase": "Menaion v1.6 \u2014 May + June corpus",
+      "file": "data/menaion/may.json + june.json + js/menaion-resolver.js",
+      "change": "May (31/31) and June (30/30) Menaion corpora imported. Resolver MONTH_FILES updated.",
+      "detail": "data/menaion/may.json: 31 dates. 12 resolved, 19 text-unavailable. Notable: Athanasius (May 2, rank 3); John Theologian (May 8, rank 2); Simon Zealot (May 10, rank 3); Cyril & Methodius (May 11, rank 3); Pachomius (May 15, rank 3); Constantine & Helen (May 21, rank 2); Third Finding of Head of Baptist (May 25, rank 2). data/menaion/june.json: 30 dates. 12 resolved, 18 text-unavailable. Notable: Cyril of Alexandria (Jun 9, rank 3); Bartholomew & Barnabas (Jun 11, rank 3); Onuphrius (Jun 12, rank 3); Jude Brother of Lord (Jun 19, rank 3); Eusebius of Samosata (Jun 22, rank 3); Nativity of John the Baptist (Jun 24, rank 1 Great Feast); Peter and Paul (Jun 29, rank 1); Synaxis of Twelve (Jun 30, rank 3). js/menaion-resolver.js: MONTH_FILES entries 5:'may' and 6:'june' uncommented. office-ui.js: NO CHANGES. horologion-engine.js: NO CHANGES. index.html: NO CHANGES. Resolver semantics and status codes: UNCHANGED."
+    },
+    {
+      "date": "2026-03-07",
+      "phase": "Menaion v1.7 \u2014 July + August corpus",
+      "file": "data/menaion/july.json + august.json + js/menaion-resolver.js",
+      "change": "July (31/31) and August (31/31) Menaion corpora imported. Resolver MONTH_FILES updated.",
+      "detail": "data/menaion/july.json: 31 dates. 16 resolved, 15 text-unavailable. Notable: Deposition of Robe of Theotokos (Jul 2, rank 3); Thomas Apostle (Jul 7, rank 3); Prokopios (Jul 8, rank 3); Euphemia (Jul 11, rank 3); Vladimir (Jul 15, rank 3); Royal Martyrs (Jul 17, rank 3); Elijah the Prophet (Jul 20, rank 2); Mary Magdalene (Jul 22, rank 3); Anna mother of Theotokos (Jul 25, rank 3); Panteleimon (Jul 27, rank 3). data/menaion/august.json: 31 dates. 16 resolved, 15 text-unavailable. Notable: Procession of the Cross (Aug 1, rank 3); Transfiguration (Aug 6, rank 1 Great Feast); Matthias Apostle (Aug 9, rank 3); Maximus Confessor (Aug 13, rank 4); Dormition (Aug 15, rank 1 Great Feast); Holy Mandylion (Aug 16, rank 3); Bartholomew & Titus (Aug 25, rank 3); Tikhon of Zadonsk (Aug 26, rank 3); Beheading of John Baptist (Aug 29, rank 2); Deposition of Belt (Aug 31, rank 3). js/menaion-resolver.js: MONTH_FILES entries 7:'july' and 8:'august' uncommented. office-ui.js: NO CHANGES. horologion-engine.js: NO CHANGES. index.html: NO CHANGES. Resolver semantics and status codes: UNCHANGED."
+    }
+  ],
+  "removed_active_module_details": {
+    "js/office-ui.js": {
+      "rubric_loop_handlers_bcp": [
+        "VARIABLE_OPENING \u2014 resolves bcp-opening-${season}, fallback to bcp-opening-general",
+        "VARIABLE_ANTIPHON \u2014 resolves antiphon_mp or antiphon_ep from dailyData",
+        "VARIABLE_PSALM \u2014 renders appointed psalms with optional Gloria Patri",
+        "VARIABLE_READING_OT \u2014 OT lesson from independent morning or evening chain",
+        "VARIABLE_READING_EPISTLE \u2014 Epistle from independent morning or evening chain",
+        "VARIABLE_READING_GOSPEL \u2014 Gospel subject to gospelPlacement setting",
+        "VARIABLE_CANTICLE1 \u2014 Te Deum (MP) / Magnificat (EP)",
+        "VARIABLE_CANTICLE2 \u2014 Benedictus (MP) / Nunc Dimittis (EP)",
+        "VARIABLE_COLLECT \u2014 collect lookup with manual ID mappings; triggers Examen and Kyrie Pantocrator",
+        "VARIABLE_WEEKDAY_COLLECT \u2014 tiered fallback: dailyData.collect_weekday \u2192 bcp-collect-grace/peace \u2192 skip",
+        "VARIABLE_MISSION_PRAYER \u2014 resolves bcp-mission-prayer-1",
+        "VARIABLE_READING_ET \u2014 canonical ET-tradition scripture reading; resolves ethHourInfo.etReading; active for Nigatu (1 Clement) and both Le'lit watches (Shepherd of Hermas); silently skipped for all other hours",
+        "eth-introduction-to-every-hour \u2014 (v2.6.1) renders rubric_before as italic rubric label, then full Tselote Meweta text (Lord's Prayer + Thanksgiving + Psalm 50/51). Logs warning if component missing.",
+        "eth-saatat-hour-slot \u2014 resolves canonical hour text from getEthiopianHourInfo().hourId; injects italicised Sixth Hour commemorative sentence when hourId === 'eth-lika-hour-text'",
+        "eth-mazmur-slot \u2014 renders appointed Psalms via ethHourInfo.psalms; closes with eth-anqasa-birhan. Full edition prepends 12-fold Leke Haile chant.",
+        "eth-saints-commemoration \u2014 FULL SENKESSAR PIPELINE: calls EthiopianCalendar.getEthiopianDate(), lazy-loads and caches senkessar-index.json, fetches and caches per-day narrative from data/synaxarium/ethiopian/{monthSlug}/{day}.json. Falls back to Oriental saints filter, then generic intercession. MONTH_SLUG_MAP handles miyazya\u2192miazia.",
+        "comm-lords-prayer \u2014 rite-aware Lord's Prayer"
+      ],
+      "rubric_loop_handlers_east_syriac": [
+        "esy-variable-seasonal-onitha \u2014 selects from esy-onitha-lent (sauma), esy-onitha-easter (qyamta), or esy-onitha-ordinary",
+        "esy-variable-sapra-psalms \u2014 fixed morning selection: Psalms 100, 91, 148, 150",
+        "esy-variable-qutaa-psalms \u2014 fixed Third Hour selection: Psalms 19, 24, 25 [v2.8.0]",
+        "esy-variable-endana-psalms \u2014 fixed Sixth Hour selection: Psalms 119:1-32, 121, 122 [v2.8.0]",
+        "esy-variable-dtsha-sain-psalms \u2014 fixed Ninth Hour selection: Psalms 84, 116, 117 [v2.8.0]",
+        "esy-variable-subaa-psalms \u2014 fixed Compline selection: Psalms 4, 91, 134 [v2.8.0]",
+        "esy-variable-marmitha \u2014 selects 3 psalms from marmithaMap[cycle][dayOfWeek]. Qdham: Pss 1\u201321; Wathar: Pss 22\u201342",
+        "esy-variable-hulali \u2014 selects psalms from hulaliMap[cycle][dayOfWeek]. Night office psalmody covering full Psalter",
+        "esy-variable-qanona \u2014 [v2.8.1 UPDATED] For Sapra, Ramsha, Lelya: renders hour-specific Qanona (esy-qanona-{hour}) first, then seasonal Qanona (esy-qanona-{season}-{cycle}). For all other hours: seasonal Qanona only. Fallback: esy-qanona-ordinary.",
+        "esy-variable-onitha-with-qala \u2014 renders Qala tone marker then Onitha text (monastic sequences)",
+        "esy-variable-barekmar-intercessions \u2014 [v2.8.1] day-specific diptychs (esy-barekmar-{day}); sauma seasonal form (esy-barekmar-sauma); fallback esy-barekmar-general"
+      ]
+    },
+    "data/horologion/vespers.json": {
+      "slot_status": {
+        "saturday_populated": [
+          "stichera-at-lord-i-have-cried \u2014 tones 1\u20138, resurrectional stichera (v1.3)",
+          "aposticha \u2014 tones 1\u20138, resurrectional aposticha (v1.3)"
+        ],
+        "monday_through_friday_populated": [
+          "stichera-at-lord-i-have-cried \u2014 tones 1\u20138, ordinary weekday text (v1.4)",
+          "aposticha \u2014 tones 1\u20138, ordinary weekday text (v1.4)",
+          "thematic assignments: Monday=Bodiless Powers (Angels), Tuesday=St. John the Baptist, Wednesday=Cross and Theotokos, Thursday=Holy Apostles and St. Nicholas, Friday=Cross and Theotokos (penitential)"
+        ],
+        "sunday_implemented": [
+          "stichera-at-lord-i-have-cried \u2014 Sunday Small Vespers uses resurrectional tone corpus routed through Saturday Octoechos data, with explicit Sunday Small Vespers labeling; resolvedAs:'sunday-small-vespers-resurrectional-stichera' (v1.8)",
+          "aposticha \u2014 same as above; resolvedAs:'sunday-small-vespers-resurrectional-aposticha' (v1.8)"
+        ],
+        "kathisma_reading": {
+          "monday_through_saturday": "appointment rubric resolved (v1.5) \u2014 kathisma number, title, LXX psalm range, incipit; full text deferred",
+          "sunday": "Sunday Small Vespers resolves to actionable omission rubric (v1.8) \u2014 Sunday Small Vespers ordinarily omits kathisma; Kathisma 1 belongs to Saturday Great Vespers vigil; vigil practice stated for reference; resolvedAs:'sunday-small-vespers-kathisma-ordinary-omitted'",
+          "bright_week": "explicitly omitted \u2014 Paschal Canon replaces Psalter; honest rubric rendered",
+          "festal_lenten_overrides": "not implemented \u2014 stated openly in rendered output; deferred to future pass"
+        },
+        "troparion_or_apolytikion": {
+          "saturday": "full Resurrectional Troparion text resolved (v1.6) \u2014 tones 1\u20138, type:'text', resolvedAs:'resurrectional-troparion-saturday'",
+          "bright_week": "Paschal Troparion resolved (v1.6) \u2014 fixed text, type:'text', resolvedAs:'bright-week-paschal-troparion'",
+          "monday_through_friday": "Live Menaion path active (Menaion v1.8 / engine v2.1) \u2014 ANNUAL CORPUS COMPLETE. All 12 months imported: November (30/30), December (31/31), January (31/31), February (28/28), March (31/31), April (30/30), May (31/31), June (30/30), July (31/31), August (31/31), September (30/30), October (31/31). On imported dates: type:'text', resolvedAs:'menaion-resolved', full troparion text + saint name + tone + rank annotation; or type:'rubric', resolvedAs:'menaion-text-unavailable' where troparion text is not yet confirmed. No month returns menaion-not-imported. Remaining work: feast-rank override engine; Lenten/Paschal override system; resolution of text-unavailable entries.",
+          "sunday": "full Resurrectional Troparion of the tone resolved (v1.8) \u2014 same Octoechos apolytikion as Saturday; type:'text', resolvedAs:'resurrectional-troparion-sunday'",
+          "festal_overrides": "not implemented \u2014 Great Feast apolytikia require feast-rank engine; stated openly in Saturday output"
+        },
+        "theotokion_dismissal": {
+          "saturday": "full dismissal Theotokion resolved (v1.7) \u2014 tones 1\u20138, type:'text', resolvedAs:'dismissal-theotokion-saturday'; distinct from the Dogmatikon",
+          "bright_week": "explicitly omitted (v1.7) \u2014 Paschal Troparion serves as dismissal; no separate Theotokion; type:'rubric', resolvedAs:'bright-week-no-theotokion'",
+          "monday_through_friday": "full Octoechos weekday Theotokion resolved (v1.9) \u2014 type:'text', resolvedAs:'weekday-octoechos-theotokion'; Mon/Tue/Thu: standard weekday Theotokion for tone + day; Wed/Fri: Stavrotheotokion (Cross Theotokion); 40-entry corpus in data/horologion/vespers-weekday-theotokion.json; baseline uses current Octoechos tone (Menaion troparion tone may differ \u2014 limitation stated in output)",
+          "sunday": "full dismissal Theotokion of the tone resolved (v1.8) \u2014 same Octoechos dismissal Theotokion as Saturday; type:'text', resolvedAs:'dismissal-theotokion-sunday'",
+          "festal_overrides": "not implemented \u2014 proper feast Theotokia require feast-rank engine; stated openly in Saturday output"
+        },
+        "refinement_pending": [
+          "Weekday troparion text (Mon\u2013Fri): Live Menaion path active (Menaion v1.8). All 12 months imported \u2014 annual fixed-date corpus complete. No date returns menaion-not-imported. Remaining refinement: (a) feast-rank override engine to surface correct apolytikia on major feasts; (b) resolution of ~200 text-unavailable entries; (c) Lenten/Paschal override system.",
+          "Feast-rank override engine: proper feast apolytikia and Theotokia require feast-rank engine; deferred beyond corpus expansion",
+          "Menaion-tone Theotokion conflict: when Menaion troparion tone differs from Octoechos weekly tone, dismissal Theotokion should follow Menaion tone; not yet implemented",
+          "Kathisma full psalm text: separate data-import task; deferred",
+          "Great Lent variable slot overrides: deferred"
+        ]
+      },
+      "resolved_slots": [
+        "usual-beginning-rubric (rubric)",
+        "usual-beginning (text) \u2014 full Usual Beginning",
+        "psalm-103-rubric (rubric)",
+        "psalm-103-lxx (psalm) \u2014 full LXX Psalm 103",
+        "great-litany (litany) \u2014 full 13-petition Great Litany",
+        "lord-i-have-cried-rubric (rubric)",
+        "entrance-rubric (rubric)",
+        "o-gladsome-light (text) \u2014 Phos Hilaron",
+        "nunc-dimittis (text) \u2014 Song of Simeon",
+        "dismissal-rubric (rubric)"
+      ],
+      "resolved_in_v1_2": [
+        "daily-prokeimenon \u2014 weekday data table (7 fixed entries, no Octoechos dependency)",
+        "vesperal-reading \u2014 explicitly omitted for ordinary non-festal days"
+      ]
+    },
+    "data/menaion/november.json": {
+      "imported_dates": [
+        "11-01: Cosmas and Damian of Asia (rank 3, Tone 8)",
+        "11-08: Synaxis of the Bodiless Hosts / Archangels (rank 2, Tone 4) \u2014 primary live-resolution test date",
+        "11-09: Miracle at Chonae (rank 4, Tone 4)",
+        "11-13: St. John Chrysostom (rank 2, Tone 8)",
+        "11-14: Apostle Philip (rank 2, Tone 8)",
+        "11-16: Apostle and Evangelist Matthew (rank 2, Tone 3)",
+        "11-17: St. Gregory the Wonderworker (rank 3, Tone 8)",
+        "11-20: Forefeast of Entrance of Theotokos (rank 4, Tone 4)",
+        "11-21: Entrance of the Theotokos (rank 1, Tone 4) \u2014 Great Feast test date",
+        "11-22: Afterfeast of Entrance (rank 4, Tone 4)",
+        "11-25: St. Clement of Rome + Leavetaking of Entrance (two entries, both rank 3) \u2014 multi-commemoration tie-break test",
+        "11-30: Apostle Andrew the First-Called (rank 2, Tone 4)"
+      ],
+      "source": "OCA/Antiochian Hapgood-tradition English; Jordanville Horologion"
+    },
+    "data/menaion/december.json": {
+      "notable_dates": [
+        "12-04: Great Martyr Barbara (rank 3)",
+        "12-05: Sabas the Sanctified (rank 2)",
+        "12-06: Nicholas of Myra (rank 2)",
+        "12-09: Conception of the Theotokos (rank 3)",
+        "12-12: Spyridon of Trimythous (rank 2)",
+        "12-17: Prophet Daniel and Three Youths (rank 3)",
+        "12-20: Forefeast of Nativity begins + Ignatius God-bearer (rank 3)",
+        "12-24: Eve of the Nativity / Paramone (rank 1)",
+        "12-25: Nativity of Christ (rank 1, Great Feast)",
+        "12-26: Synaxis of the Theotokos (rank 2)",
+        "12-27: Protomartyr Stephen (rank 2)",
+        "12-29: Holy Innocents (rank 3)"
+      ],
+      "imported_dates": "31 of 31",
+      "source": "OCA/Antiochian Hapgood-tradition English; Jordanville Horologion"
+    },
+    "data/menaion/january.json": {
+      "notable_dates": [
+        "01-01: Circumcision / St. Basil the Great (rank 2, Tone 1)",
+        "01-02: St. Seraphim of Sarov (rank 2, Tone 4)",
+        "01-06: Holy Theophany \u2014 Baptism of Our Lord (rank 1, Great Feast, Tone 1)",
+        "01-07: Synaxis of St. John the Baptist (rank 2, Tone 2)",
+        "01-17: Venerable Anthony the Great (rank 2, Tone 4)",
+        "01-18: Sts. Athanasius and Cyril of Alexandria (rank 2, Tone 3)",
+        "01-20: Venerable Euthymius the Great (rank 2, Tone 4)",
+        "01-25: St. Gregory the Theologian (rank 2, Tone 1)",
+        "01-27: Translation of relics of St. John Chrysostom (rank 2, Tone 8)",
+        "01-28: Venerable Ephrem the Syrian (rank 2, Tone 8)",
+        "01-30: Synaxis of the Three Great Hierarchs (rank 2, Tone 4)"
+      ],
+      "imported_dates": "31 of 31",
+      "source": "OCA/Antiochian Hapgood-tradition English; Jordanville Horologion"
+    },
+    "data/menaion/february.json": {
+      "notable_dates": [
+        "02-02: Presentation of the Lord / Meeting (rank 1, Great Feast, Tone 1)",
+        "02-08: Great Martyr Theodore Stratelates (rank 3, Tone 4)",
+        "02-10: Hieromartyr Haralambos (rank 3, Tone 4)",
+        "02-14: Equal-to-Apostles Cyril, Teacher of the Slavs (rank 3, Tone 4)",
+        "02-15: Apostle Onesimus (rank 3, Tone 3)",
+        "02-17: Great Martyr Theodore Tyron (rank 3, Tone 2)",
+        "02-18: St. Leo the Great, Pope of Rome (rank 3, Tone 3)",
+        "02-23: Hieromartyr Polycarp of Smyrna (rank 3, Tone 4)",
+        "02-24: First and Second Finding of the Head of John the Baptist (rank 2, Tone 4)"
+      ],
+      "imported_dates": "28 of 28",
+      "source": "OCA/Antiochian Hapgood-tradition English; Jordanville Horologion"
+    },
+    "data/menaion/march.json": {
+      "notable_dates": [
+        "03-09: Forty Martyrs of Sebaste (rank 3, Tone 1)",
+        "03-18: St. Cyril of Jerusalem (rank 3, Tone 4)",
+        "03-24: Forefeast of the Annunciation (rank 4, Tone 4)",
+        "03-25: Annunciation of the Theotokos (rank 1, Great Feast, Tone 4)",
+        "03-26: Synaxis of the Archangel Gabriel (rank 3, Tone 4)",
+        "03-30: John Climacus, Abbot of Sinai (rank 3, Tone 1)"
+      ],
+      "imported_dates": "31 of 31",
+      "source": "OCA/Antiochian Hapgood-tradition English; Jordanville Horologion"
+    },
+    "data/menaion/april.json": {
+      "notable_dates": [
+        "04-01: Mary of Egypt (rank 3, Tone 8)",
+        "04-13: Hieromartyr Martin, Pope of Rome (rank 3, Tone 4)",
+        "04-16: Great Martyr Irene (rank 3, Tone 4)",
+        "04-22: Theodore of Sykeon (rank 3, Tone 4)",
+        "04-23: George the Great Martyr, Trophy-Bearer (rank 2, Tone 4)",
+        "04-25: Apostle and Evangelist Mark (rank 2, Tone 3)",
+        "04-30: James, Brother of the Lord (rank 3, Tone 2)"
+      ],
+      "imported_dates": "30 of 30",
+      "source": "OCA/Antiochian Hapgood-tradition English; Jordanville Horologion"
+    },
+    "data/menaion/may.json": {
+      "notable_dates": [
+        "05-02: Athanasius the Great (rank 3, Tone 3)",
+        "05-08: John the Theologian, Apostle and Evangelist (rank 2, Tone 2)",
+        "05-10: Simon the Zealot (rank 3, Tone 3)",
+        "05-11: Cyril and Methodius, Teachers of the Slavs (rank 3, Tone 4)",
+        "05-15: Pachomius the Great (rank 3, Tone 4)",
+        "05-21: Constantine and Helen, Equal-to-the-Apostles (rank 2, Tone 8)",
+        "05-25: Third Finding of the Head of John the Baptist (rank 2, Tone 4)"
+      ],
+      "imported_dates": "31 of 31",
+      "source": "OCA/Antiochian Hapgood-tradition English; Jordanville Horologion"
+    },
+    "data/menaion/june.json": {
+      "notable_dates": [
+        "06-09: Cyril of Alexandria (rank 3, Tone 8)",
+        "06-11: Apostles Bartholomew and Barnabas (rank 3, Tone 3)",
+        "06-12: Onuphrius the Great (rank 3, Tone 4)",
+        "06-19: Jude, Brother of the Lord (rank 3, Tone 1)",
+        "06-22: Eusebius of Samosata (rank 3, Tone 4)",
+        "06-24: Nativity of John the Baptist (rank 1, Great Feast, Tone 4)",
+        "06-29: Holy Apostles Peter and Paul (rank 1, Tone 4)",
+        "06-30: Synaxis of the Twelve Apostles (rank 3, Tone 3)"
+      ],
+      "imported_dates": "30 of 30",
+      "source": "OCA/Antiochian Hapgood-tradition English; Jordanville Horologion"
+    },
+    "data/menaion/july.json": {
+      "notable_dates": [
+        "07-02: Deposition of the Robe of the Theotokos (rank 3, Tone 8)",
+        "07-07: Holy Apostle Thomas (rank 3, Tone 2)",
+        "07-08: Great Martyr Prokopios (rank 3, Tone 4)",
+        "07-11: Great Martyr Euphemia the All-Praised (rank 3, Tone 4)",
+        "07-15: Vladimir Equal-to-the-Apostles (rank 3, Tone 4)",
+        "07-17: Holy Royal Passion-Bearers (rank 3, Tone 4)",
+        "07-20: Prophet Elijah (rank 2, Tone 4)",
+        "07-22: Mary Magdalene, Equal-to-the-Apostles (rank 3, Tone 1)",
+        "07-25: Repose of St. Anna (rank 3, Tone 4)",
+        "07-27: Panteleimon the Great Martyr and Healer (rank 3, Tone 3)"
+      ],
+      "imported_dates": "31 of 31",
+      "source": "OCA/Antiochian Hapgood-tradition English; Jordanville Horologion"
+    },
+    "data/menaion/august.json": {
+      "notable_dates": [
+        "08-01: Procession of the Precious Cross / Maccabees (rank 3, Tone 1)",
+        "08-06: Transfiguration of Our Lord (rank 1, Great Feast, Tone 7)",
+        "08-09: Apostle Matthias (rank 3, Tone 3)",
+        "08-13: Maximus the Confessor (rank 4, Tone 8)",
+        "08-15: Dormition of the Theotokos (rank 1, Great Feast, Tone 1)",
+        "08-16: Image Not Made by Hands / Holy Mandylion (rank 3, Tone 2)",
+        "08-25: Apostles Bartholomew and Titus (rank 3, Tone 3)",
+        "08-26: Tikhon of Zadonsk (rank 3, Tone 8)",
+        "08-29: Beheading of John the Baptist (rank 2, Tone 2)",
+        "08-31: Deposition of the Belt of the Theotokos (rank 3, Tone 8)"
+      ],
+      "imported_dates": "31 of 31",
+      "source": "OCA/Antiochian Hapgood-tradition English; Jordanville Horologion"
+    },
+    "data/menaion/september.json": {
+      "notable_dates": [
+        "09-01: Indiction \u2014 Church New Year (rank 4, Tone 2)",
+        "09-06: Miracle of Archangel Michael at Chonae (rank 3, Tone 4)",
+        "09-08: Nativity of the Theotokos (rank 1, Great Feast, Tone 4)",
+        "09-14: Exaltation of the Holy Cross (rank 1, Great Feast, Tone 1)",
+        "09-16: Great Martyr Euphemia the All-Praised (rank 3, Tone 4)",
+        "09-20: Great Martyr Eustathios Placidas (rank 3, Tone 4)",
+        "09-24: Thekla, Equal-to-the-Apostles (rank 3, Tone 4)",
+        "09-26: John the Theologian, Repose (rank 2, Tone 2)",
+        "09-30: Gregory the Illuminator of Armenia (rank 3, Tone 4)"
+      ],
+      "imported_dates": "30 of 30",
+      "source": "OCA/Antiochian Hapgood-tradition English; Jordanville Horologion"
+    },
+    "data/menaion/october.json": {
+      "notable_dates": [
+        "10-01: Protection of the Theotokos / Pokrov (rank 2, Tone 4)",
+        "10-06: Apostle Thomas \u2014 second commemoration (rank 3, Tone 2)",
+        "10-09: Apostle James son of Alphaeus (rank 3, Tone 3)",
+        "10-14: Paraskeva of Serbia (rank 3, Tone 3)",
+        "10-18: Luke the Apostle and Evangelist (rank 2, Tone 5)",
+        "10-19: John of Kronstadt (rank 3, Tone 4)",
+        "10-26: Demetrios of Thessalonica, the Myrrh-streamer (rank 2, Tone 3)"
+      ],
+      "imported_dates": "31 of 31",
+      "source": "OCA/Antiochian Hapgood-tradition English; Jordanville Horologion"
+    },
+    "js/calendar-engine.js": {
+      "private_methods": [
+        "_getEaster(year) \u2014 Anonymous Gregorian algorithm; returns JS Date of Easter Sunday for any year",
+        "_getAdventSunday(year) \u2014 returns JS Date of Advent Sunday (Sunday on or after Nov 27) for any year",
+        "_addDays(date, n) \u2014 date arithmetic helper",
+        "_generateSeasonRanges(year) \u2014 generates all season range objects for the liturgical year beginning in Nov/Dec of `year`",
+        "_getRangesForDate(date) \u2014 returns the correct generated range set for any date; checks prior and current calendar year",
+        "_julianToGregorianOffset(year) \u2014 century-based Julian\u2192Gregorian offset helper for EO fixed-feast diagnostics",
+        "_isoFromDate(date) \u2014 local-time-safe YYYY-MM-DD formatter used by EO diagnostics"
+      ],
+      "season_files": {
+        "advent.json": "Advent season",
+        "christmas.json": "Christmas through Jan 5",
+        "epiphany.json": "Epiphany Jan 6 through day before Ash Wednesday",
+        "lent.json": "Ash Wednesday through Holy Saturday",
+        "easter.json": "Easter Sunday through Pentecost",
+        "ordinary1.json": "Day after Pentecost through Jul 31 (also: brief Ordinary Time between Epiphany and Ash Wednesday when applicable)",
+        "ordinary2.json": "Aug 1 through Sep 30",
+        "ordinary3.json": "Oct 1 through day before Advent Sunday"
+      }
+    }
+  },
+  "removed_documentation_manifest_notes": [
+    "structure.json is the canonical governance+documentation artifact and is consumed by admin dashboard.",
+    "documentation/* files are internal engineering references; git history is the archive of prior versions.",
+    "EO admin diagnostics vs main-app EO integration split recorded in structure.json on 2026-03-06.",
+    "Horologion v1 architecture established and app-wired as of 2026-03-07. Tracked in structure.json todos (horologion-v1-architecture through horologion-orthros-v1), active_modules (js/horologion-engine.js, data/horologion/), and known_outstanding_issues (horologion_variable_engine).",
+    "Horologion v1.4 governance normalization (2026-03-07): structure.json updated to record Monday\u2013Friday Octoechos data completion, Saturday populated state (v1.3), and Sunday explicit deferral. The Saturday/Mon\u2013Fri/Sunday distinction is preserved precisely throughout \u2014 no slot state is collapsed or misrepresented.",
+    "Horologion v1.5 governance normalization (2026-03-07): structure.json updated to record kathisma-reading Mon\u2013Sat resolution, Sunday deferral, Bright Week omission, and the two remaining fully unresolved Vespers slots. Festal/Lenten override gap noted explicitly \u2014 not collapsed into the Mon\u2013Sat baseline coverage.",
+    "Horologion v1.6 governance normalization (2026-03-07): structure.json updated to record troparion-or-apolytikion four-state resolution (Saturday resolved, Bright Week resolved, Mon\u2013Fri tone-known/Menaion-deferred, Sunday deferred), new vespers-troparion.json entry, and theotokion-dismissal as the single remaining fully unresolved Vespers slot. Severity downgraded to LOW \u2014 only one slot fully unresolved; Saturday Vespers is now substantively complete.",
+    "Horologion v1.7 governance normalization (2026-03-07): structure.json updated to record theotokion-dismissal four-state resolution (Saturday resolved, Bright Week omitted, Mon\u2013Fri tone-known/Menaion-deferred, Sunday deferred), new vespers-theotokion.json entry, and governance reframe from 'fully unresolved slot count' to refinement-layer model. fully_unresolved key removed from slot_status; replaced by refinement_pending list. Saturday Vespers for ordinary weeks is now substantively complete.",
+    "Horologion v1.8 governance normalization (2026-03-07): structure.json updated to record Sunday Small Vespers baseline implementation. sunday_deferred slot_status key replaced by sunday_implemented. sunday entries updated across kathisma_reading, troparion_or_apolytikion, and theotokion_dismissal slot_status tables. refinement_pending list updated: 'Sunday Vespers bundle' item removed; weekday Menaion refinement and feast-rank override system remain open. operational_status, known_outstanding_issues, admin.todos, roadmap_summary, and governance.notes all updated. 'Sunday Vespers bundle deferred' wording does not appear anywhere in this version of structure.json.",
+    "Horologion v1.9 governance normalization (2026-03-07): structure.json updated to record weekday Vespers dismissal Theotokion resolution. theotokion_dismissal.monday_through_friday slot_status entry updated from tone-identified stub to full Octoechos resolution with Stavrotheotokion note for Wed/Fri. refinement_pending list updated: 'Weekday theotokion text' item removed; weekday troparion item reworded to clarify it is now the only remaining open weekday slot. New vespers-weekday-theotokion.json file entry added to active_modules. vespers-theotokion.json coverage note updated to point to new weekday file. operational_status, known_outstanding_issues, admin.todos, roadmap_summary, governance.notes, and recent_logic_changes all updated. The framing 'weekday Menaion refinement for troparion + theotokion' does not appear in this version of structure.json; the correct framing after v1.9 is 'weekday troparion text \u2014 the only remaining open weekday slot'.",
+    "Menaion v1 pilot governance normalization (2026-03-07, v2.9.5): structure.json updated to record that a live Menaion pilot path is now wired and active for Mon\u2013Fri weekday troparion resolution. Key governance distinctions enforced throughout: (1) the pilot path exists and is live (not 'planned' or 'required'); (2) imported November dates (12 of 30) resolve to full text via MenaionResolver; (3) non-imported dates fall back honestly to weekday-theme rubric; (4) no full annual Menaion coverage is claimed. Sections updated: project_manifest.version + operational_status; active_modules.index.html (script_load_order, changes); active_modules.js/horologion-engine.js (status, architecture_note); new active_modules.js/menaion-resolver.js entry; new active_modules.data/menaion/ entry with schema.json and november.json; data/horologion/vespers.json troparion_or_apolytikion.monday_through_friday and refinement_pending updated; vespers-troparion.json coverage note updated; known_outstanding_issues.horologion_variable_engine description, action, and files updated; recent_logic_changes Menaion v1 entry prepended; roadmap_summary.completed, next_required, and next_planned updated; admin.todos.horologion-vespers-variable-slots updated; documentation_manifest.notes Menaion v1 entry appended. EO entries: UNCHANGED. Holy Week structural override live. Small Compline baseline live unified Horologion navigation live",
+    "Generic sidebar shell governance normalization (2026-03-07, v2.9.7): structure.json updated to record the fourth sidebar identity (#generic-settings) and the Horologion mode-shell repair. Sections updated: project_manifest.version + operational_status; active_modules.index.html (status, changes entry 6); active_modules.js/office-ui.js (status, key_logic_notes notes 4/15/16/17, primary_functions); active_modules.css/office.css (status, changes entries 8\u201311, key_rules); recent_logic_changes (new entry prepended); documentation_manifest.notes (this entry). Engine/module entries: UNCHANGED. No features invented \u2014 this records only the UI-shell repair and CSS geometry addition that were required to make Horologion mode display its sidebar. Holy Week structural override, Small Compline baseline, unified Horologion navigation added.",
+    "Menaion v1.2 governance normalization (2026-03-07): structure.json tightened to remove all stale November-pilot and Jan\u2013Oct framing. Sections corrected: project_manifest.operational_status (contradictory sentences replaced with single accurate coverage line); known_outstanding_issues.horologion_variable_engine (pilot/November-only language replaced with current 3-month reality); active_modules.data/horologion/ vespers.json slot_status monday_through_friday and refinement_pending (November-only wording replaced); roadmap_summary.next_required + next_planned (stale framing corrected); \"next_required\" 1. Horologion: Little Hours baseline (First, Third, Sixth, Ninth) \u2014 next office family to implement after Vespers and Small Compline. 2. Horologion seasonal refinement: Triodion and Pentecostarion corpus work, beginning with Compline Great Lent / Holy Week behavior and broader seasonal text replacement. 3. Horologion festal refinement: rank-1/2 feast proper texts for Vespers stichera, aposticha, and paremiae. admin.todos.horologion-vespers-variable-slots (stale pilot wording corrected); active_modules.data/menaion/ november.json + december.json coverage_note fields corrected. No engine, UI, or non-Menaion entries changed.",
+    "Menaion v1.3 governance normalization (2026-03-07): structure.json updated to record February corpus import (28/28). Sections updated: project_manifest.version + operational_status; active_modules.js/menaion-resolver.js (status, architecture_note); active_modules.data/menaion/ (status, new february.json entry); active_modules.data/horologion/ vespers.json slot_status monday_through_friday and refinement_pending; known_outstanding_issues.horologion_variable_engine (description, action); roadmap_summary.completed + next_required + next_planned; admin.todos.horologion-vespers-variable-slots; recent_logic_changes (entry prepended). No engine, UI, or non-Menaion entries changed.",
+    "Menaion v1.4 governance normalization (2026-03-07): structure.json updated to record March corpus import (31/31). Sections updated: project_manifest.version + operational_status; active_modules.js/menaion-resolver.js (status, architecture_note); active_modules.data/menaion/ (status, new march.json entry); active_modules.data/horologion/ vespers.json slot_status monday_through_friday and refinement_pending; known_outstanding_issues.horologion_variable_engine (description, action); roadmap_summary.completed + next_required + next_planned; admin.todos.horologion-vespers-variable-slots; recent_logic_changes (entry prepended). No engine, UI, or non-Menaion entries changed.",
+    "Menaion v1.5 governance normalization (2026-03-07): structure.json updated to record April corpus import (30/30). Sections updated: project_manifest.version + operational_status; active_modules.js/menaion-resolver.js (status, architecture_note); active_modules.data/menaion/ (status, new april.json entry); active_modules.data/horologion/ vespers.json slot_status monday_through_friday and refinement_pending; known_outstanding_issues.horologion_variable_engine (description, action); roadmap_summary.completed + next_required + next_planned; admin.todos.horologion-vespers-variable-slots; recent_logic_changes (entry prepended). No engine, UI, or non-Menaion entries changed.",
+    "Menaion v1.6 governance normalization (2026-03-07): structure.json updated to record May (31/31) and June (30/30) corpus imports. Sections updated: project_manifest.version + operational_status; active_modules.js/menaion-resolver.js (status, architecture_note); active_modules.data/menaion/ (status, new may.json + june.json entries); active_modules.data/horologion/ vespers.json slot_status monday_through_friday and refinement_pending; known_outstanding_issues.horologion_variable_engine (description, action); roadmap_summary.completed + next_required + next_planned; admin.todos.horologion-vespers-variable-slots; recent_logic_changes (entry prepended). No engine, UI, or non-Menaion entries changed.",
+    "Menaion v1.7 governance normalization (2026-03-07): structure.json updated to record July (31/31) and August (31/31) corpus imports. Sections updated: project_manifest.version + operational_status; active_modules.js/menaion-resolver.js (status, architecture_note); active_modules.data/menaion/ (status, new july.json + august.json entries); active_modules.data/horologion/ vespers.json slot_status monday_through_friday and refinement_pending; known_outstanding_issues.horologion_variable_engine (description, action); roadmap_summary.completed + next_required + next_planned; admin.todos.horologion-vespers-variable-slots; recent_logic_changes (entry prepended). No engine, UI, or non-Menaion entries changed.",
+    "Menaion v1.8 governance normalization (2026-03-07): structure.json updated to record September (30/30) and October (31/31) corpus imports \u2014 ANNUAL CORPUS COMPLETE. Sections updated: project_manifest.version + operational_status; active_modules.js/menaion-resolver.js (status, architecture_note \u2014 corpus complete); active_modules.data/menaion/ (status, new september.json + october.json entries); active_modules.data/horologion/ vespers.json slot_status monday_through_friday and refinement_pending (updated to reflect complete corpus, pivot to override engine); known_outstanding_issues.horologion_variable_engine (description, action); roadmap_summary.completed + next_required + next_planned (corpus complete, next=override engine); admin.todos.horologion-vespers-variable-slots; recent_logic_changes (entry prepended). No engine, UI, or non-Menaion entries changed.",
+    "Menaion v1.9 governance normalization (2026-03-08): structure.json updated to record next_required: 1. Horologion: Little Hours baseline (First, Third, Sixth, Ninth) \u2014 next office family to implement after Vespers and Small Compline. 2. Horologion seasonal refinement: Triodion and Pentecostarion corpus work, beginning with Compline Great Lent / Holy Week behavior and broader seasonal text replacement. 3. Horologion festal refinement: rank-1/2 feast proper texts for Vespers stichera, aposticha, and paremiae."
+  ],
+  "removed_governance_notes": [
+    "Horologion v1.2 complete (2026-03-07): weekday prokeimenon data table active; ordinary-day vesperal reading resolved as omitted. 5 variable Vespers slots remain. Tracked in known_outstanding_issues (horologion_variable_engine), admin.todos (horologion-vespers-variable-slots), active_modules (data/horologion/), and recent_logic_changes.",
+    "Horologion v1.3 complete (2026-03-07): Julian Paschalion tone engine active (Thomas Sunday anchor, tones 1\u20138, Bright Week detection). Saturday Vespers stichera and aposticha materially populated for all 8 tones in data/horologion/octoechos-vespers.json. Weekday stichera/aposticha: tone-aware rubric stubs \u2014 tone resolved, full text deferred. This distinction (Saturday fully populated vs weekday text pending) is recorded explicitly in known_outstanding_issues, admin.todos, active_modules, and recent_logic_changes. 3 slots remain fully unresolved: kathisma-reading, troparion-or-apolytikion, theotokion-dismissal. office-ui.js received a minimal additive change: type:'stichera' renderer (+11 lines). calendar-eastern-orthodox.js remains admin-only; Pascha calc is self-contained in horologion-engine.js with a documented delegation note for when that module reaches the main path.",
+    "Horologion v1.4 complete (2026-03-07): Monday\u2013Friday Octoechos stichera-at-lord-i-have-cried and aposticha materially populated in data/horologion/octoechos-vespers.json for all 8 tones (80 slots, 240 verses). Thematic assignments: Monday=Angels, Tuesday=Baptist, Wednesday=Cross/Theotokos, Thursday=Apostles/Nicholas, Friday=Cross/Theotokos (penitential). Saturday resurrectional data: unchanged (v1.3). Sunday: explicitly deferred \u2014 data carries sunday_deferred:true + baseline_stub:true; not a silent gap; renders as tone-identified rubric stub with honest note. js/horologion-engine.js and office-ui.js: NO CHANGES in this pass. Remaining open: Sunday Vespers ordinary stichera/aposticha (deferred, not forgotten); kathisma-reading; troparion-or-apolytikion; theotokion-dismissal. Tracked in known_outstanding_issues (horologion_variable_engine), admin.todos (horologion-vespers-variable-slots), active_modules (data/horologion/), and recent_logic_changes.",
+    "Horologion v1.5 complete (2026-03-07): kathisma-reading resolved for ordinary Mon\u2013Sat Vespers as appointment rubric (type:'rubric'; kathisma number, title, LXX psalm range, incipit; full text deferred). Sunday kathisma: explicitly deferred \u2014 practice varies by usage; honest stub rendered. Bright Week kathisma: explicitly omitted \u2014 Paschal Canon replaces Psalter; rubric rendered. Festal/Lenten kathisma overrides: not implemented; stated openly in rendered output. New file: data/horologion/vespers-kathisma.json. office-ui.js: NO CHANGES. 2 fully unresolved Vespers slots remain: troparion-or-apolytikion, theotokion-dismissal. Sunday Vespers handling (stichera, kathisma, troparion) remains explicitly deferred. Tracked in known_outstanding_issues (horologion_variable_engine), admin.todos (horologion-vespers-variable-slots), active_modules (data/horologion/), and recent_logic_changes.",
+    "Horologion v1.6 complete (2026-03-07): troparion-or-apolytikion baseline resolved. Saturday: full Resurrectional Troparion (tones 1\u20138, type:'text'). Bright Week: Paschal Troparion (type:'text'). Mon\u2013Fri: tone-identified rubric stub \u2014 Menaion required, not fabricated (type:'rubric'). Sunday: explicitly deferred (type:'rubric'). New file: data/horologion/vespers-troparion.json. office-ui.js: NO CHANGES. 1 fully unresolved Vespers slot remains: theotokion-dismissal. Sunday Vespers handling remains explicitly deferred. Tracked in known_outstanding_issues (horologion_variable_engine), admin.todos (horologion-vespers-variable-slots), active_modules (data/horologion/), and recent_logic_changes.",
+    "Horologion v1.7 complete (2026-03-07): theotokion-dismissal baseline resolved. Saturday: full dismissal Theotokion (tones 1\u20138, type:'text', distinct from Dogmatikon). Bright Week: explicit omission (type:'rubric', resolvedAs:'bright-week-no-theotokion'). Mon\u2013Fri: tone-identified rubric stub \u2014 Menaion required, not fabricated. Sunday: explicitly deferred. New file: data/horologion/vespers-theotokion.json. office-ui.js: NO CHANGES. GOVERNANCE REFRAME: zero dead placeholder slots remain on ordinary Saturday Vespers. All seven original variable slots yield full text, rubric stub, or explicit omission rubric. Remaining Horologion work reframed as three refinement layers: (a) Sunday Vespers bundle pass, (b) weekday/festal Menaion refinement, (c) feast-rank override system. Tracked in known_outstanding_issues (horologion_variable_engine), admin.todos (horologion-vespers-variable-slots), active_modules (data/horologion/), and recent_logic_changes.",
+    "Horologion v1.8 complete (2026-03-07): Sunday Small Vespers implemented as a real baseline path. All five Sunday-case variable slots resolved: stichera/aposticha routed through Saturday Octoechos resurrectional corpus with explicit Sunday Small Vespers labeling (resolvedAs: sunday-small-vespers-*); kathisma upgraded from generic deferred stub to actionable omission rubric (resolvedAs:'sunday-small-vespers-kathisma-ordinary-omitted'); troparion upgraded to type:'text' full Resurrectional Troparion (resolvedAs:'resurrectional-troparion-sunday'); theotokion upgraded to type:'text' full dismissal Theotokion (resolvedAs:'dismissal-theotokion-sunday'). data files and office-ui.js: NO CHANGES. GOVERNANCE CONSEQUENCE: 'Sunday Vespers bundle deferred' framing retired. Every Vespers variable slot across all day-of-week paths now yields full text, explicit rubric stub, or explicit omission rubric. Remaining open refinement: (a) weekday Menaion refinement \u2014 Mon\u2013Fri troparion/theotokion text requires Menaion data; (b) feast-rank override system \u2014 deferred beyond Menaion. Tracked in known_outstanding_issues (horologion_variable_engine), admin.todos (horologion-vespers-variable-slots), active_modules (data/horologion/), and recent_logic_changes.",
+    "Horologion v1.9 complete (2026-03-07): weekday Vespers dismissal Theotokion (Mon\u2013Fri) resolved from fixed Octoechos weekday corpus. New file: data/horologion/vespers-weekday-theotokion.json (40 entries: 8 tones \u00d7 5 weekdays). Mon/Tue/Thu: standard Octoechos weekday Theotokion for tone + day. Wed/Fri: Stavrotheotokion (Cross Theotokion) \u2014 standard Byzantine fasting-day practice. Engine _resolveTheotokionSlot() weekday branch: type:'rubric' stub \u2192 type:'text', resolvedAs:'weekday-octoechos-theotokion'. Graceful degradation to stub if data file unavailable. Limitation recorded in output: baseline uses Octoechos weekly tone; Menaion troparion tone may differ. office-ui.js: NO CHANGES. Troparion weekday stub: UNCHANGED \u2014 Menaion required. GOVERNANCE CONSEQUENCE: The framing 'weekday Menaion refinement for troparion + theotokion' is retired. After v1.9, 'weekday Menaion refinement' refers exclusively to weekday troparion text \u2014 the only remaining open weekday Vespers slot. Tracked in known_outstanding_issues (horologion_variable_engine), admin.todos (horologion-vespers-variable-slots), active_modules (data/horologion/), and recent_logic_changes."
+  ],
+  "removed_roadmap_completed": "Phases 6.1\u20136.6 (BCP office + audit remediation), Phase 7.1\u20137.4 (full Ethiopian Sa'atat + calendar engine), Phase 8.1 (Senkessar index + Tir corpus + full wiring), Phase 8.3 (Hamle corpus verified), Phase 8.5 (Ge'ez dual-date display in Sa'atat sidebar and BCP date header \u2014 both rendering via EthiopianCalendar.formatEthiopianDate()), v2.6.1 (Tselote Meweta, Metsehafe Tselot aesthetic), v2.8.0 (Church of the East \u2014 all seven canonical hours: Sapra, Quta'a, Endana, D-tsha' Sa'in, Ramsha, Lelya, Suba'a \u2014 cathedral and monastic sequences, full dynamic token implementation), v2.8.1 (Barekmar components, Mahlet expansion, duplicate removal, Qanona layering, algorithmic calendar engine), v2.8.2 (saints data migration \u2014 tags[] schema, 1568 records, full classification), v2.8.3 (COE saint section silenced; COE architectural model documented), v2.8.5\u20132.8.6 (saints resolver boundary \u2014 js/saints-resolver.js; resolveCommemorations delegation; OOR fallback via filterCachedByTradition; appData.saints eliminated; hydration-race gating verified closed), v2.8.9 (COE-II complete: COE-IIA Layer 2 fixed feasts, COE-IIB tag audit [133 IDs removed, eligibility gate], final five adjudication, Layer 3 re-enabled via CoeEligibility.filter()), 2026-03-06 admin-only EO diagnostics (CalendarEngine.getEOSeasonRanges(), EO fixed-feast anchors in admin Year Snapshot, corrected admin render path), Horologion v1 (2026-03-07 \u2014 architecture boundary: js/horologion-engine.js, data/horologion/vespers.json skeleton with fixed content, schema.json, office-ui.js thin adapter, index.html splash button and script loads), Horologion v1.2 (2026-03-07 \u2014 weekday Vespers prokeimenon resolved via 7-entry weekday data table; ordinary-day vesperal reading explicitly omitted; 7 placeholder slots reduced to 5), Horologion v1.3 (2026-03-07 \u2014 Julian Paschalion tone engine; Saturday resurrectional stichera/aposticha fully populated tones 1\u20138; weekday tone-aware rubric stubs; type:'stichera' renderer in office-ui.js; octoechos-vespers.json added), Horologion v1.4 (2026-03-07 \u2014 Monday\u2013Friday Octoechos stichera/aposticha materially populated in octoechos-vespers.json for tones 1\u20138; 80 slots / 240 verses; thematic ordinary-day baseline; Saturday unchanged; Sunday explicitly deferred with sunday_deferred:true stub; js/horologion-engine.js and office-ui.js unchanged in this pass), Horologion v1.5 (2026-03-07 \u2014 kathisma-reading resolved for ordinary Mon\u2013Sat Vespers as appointment rubric; new data/horologion/vespers-kathisma.json; _loadKathismaData() + _resolveKathismaSlot() added to engine; office-ui.js unchanged; Sunday deferred, Bright Week omitted, festal/Lenten overrides deferred), Horologion v1.6 (2026-03-07 \u2014 troparion-or-apolytikion baseline: Saturday full Resurrectional Troparion tones 1\u20138; Bright Week Paschal Troparion; Mon\u2013Fri tone-identified stub; Sunday deferred; new data/horologion/vespers-troparion.json; _loadTroparionData() + _resolveTroparionSlot() added to engine; office-ui.js unchanged), Horologion v1.7 (2026-03-07 \u2014 theotokion-dismissal baseline: Saturday full dismissal Theotokion tones 1\u20138; Bright Week explicit omission; Mon\u2013Fri tone-identified stub; Sunday deferred; new data/horologion/vespers-theotokion.json; _loadTheotokionData() + _resolveTheotokionSlot() added to engine; office-ui.js unchanged; governance reframe: zero dead placeholder slots remain; Saturday Vespers substantively complete for ordinary weeks), Horologion v1.8 (2026-03-07 \u2014 Sunday Small Vespers implemented as baseline path: stichera/aposticha routed through Saturday Octoechos resurrectional corpus with explicit Sunday Small Vespers labeling; kathisma-reading upgraded to actionable omission rubric; troparion and theotokion upgraded to full tone texts (type:'text'); office-ui.js and data files unchanged; 'Sunday Vespers bundle deferred' framing retired; every Vespers variable slot now resolved across all day-of-week paths), Horologion v1.9 (2026-03-07 \u2014 weekday Vespers dismissal Theotokion (Mon\u2013Fri) resolved from Octoechos weekday corpus: new data/horologion/vespers-weekday-theotokion.json (40 entries: 8 tones \u00d7 5 weekdays); Mon/Tue/Thu standard weekday Theotokion; Wed/Fri Stavrotheotokion; engine _resolveTheotokionSlot() weekday branch upgraded to type:'text'; graceful fallback to stub if data file unavailable; office-ui.js unchanged; troparion weekday stub unchanged \u2014 Menaion required; 'weekday Menaion refinement for troparion + theotokion' framing retired; weekday theotokion now resolved), Menaion v1.8 (2026-03-07 \u2014 September 30/30 + October 31/31 imported; ANNUAL CORPUS COMPLETE \u2014 all 12 months; resolver MONTH_FILES fully populated), Menaion v1.7 (2026-03-07 \u2014 July corpus 31/31 + August corpus 31/31 imported; resolver MONTH_FILES updated; September\u2013October remain), Menaion v1.6 (2026-03-07 \u2014 May corpus 31/31 + June corpus 30/30 imported; resolver MONTH_FILES updated; July\u2013October remain), Menaion v1.5 (2026-03-07 \u2014 April corpus 30/30 imported; resolver MONTH_FILES updated; May\u2013October remain), Menaion v1.4 (2026-03-07 \u2014 March corpus 31/31 imported; resolver MONTH_FILES updated; April\u2013October remain), Menaion v1.3 (2026-03-07 \u2014 February corpus 28/28 imported; resolver MONTH_FILES updated; March\u2013October remain), Menaion v1.2 (2026-03-07 \u2014 January corpus 31/31 imported; resolver MONTH_FILES updated; February\u2013October remain), Menaion v1 pilot / engine v2.1 (2026-03-07 \u2014 live Menaion pilot path wired into weekday troparion resolution: js/menaion-resolver.js (window.MenaionResolver), data/menaion/schema.json, data/menaion/november.json (12 of 30 November dates); horologion-engine.js _resolveTroparionSlot() made async; weekday branch queries MenaionResolver; imported November dates resolve to full text (menaion-resolved); non-imported dates fall back to weekday-theme rubric; index.html updated with menaion-resolver.js load; office-ui.js unchanged; 'weekday troparion is simply unresolved' framing retired)",
+  "removed_tradition_dossiers": {
+    "east_syriac_tradition": {
+      "status": "OPERATIONAL \u2014 v2.8.1. All seven canonical hours implemented. Cathedral and monastic sequences for all hours. Full Qdham/Wathar Qanona rotation (layered hour-specific + seasonal for Sapra/Ramsha/Lelya), Marmitha psalmody, Barekmar intercessions (all 9 components now present), and Onitha-with-Qala rendering active in monastic mode.",
+      "entry_point": "selectMode('east-syriac') \u2014 hides BCP and Ethiopian sidebars, shows east-syriac-settings, awaits hydrateForEastSyriac(), calls renderOffice()",
+      "rubrics_file": "components/traditions/east-syriac/rubrics.json",
+      "components_file": "components/east-syriac.json",
+      "component_count": 92,
+      "component_count_note": "83 (v2.8.0) + 9 Barekmar components (v2.8.1) = 92. Duplicate removal of 3 components (esy-suraya, esy-karozutha, esy-concluding-blessing second copies) does not reduce logical count as duplicates carried no unique content.",
+      "hours": {
+        "sapra": {
+          "title": "Sapra \u2014 Morning Prayer",
+          "time": "Dawn",
+          "cathedral_sequence": "cathedral-sapra-sequence",
+          "monastic_sequence": "monastic-sapra-sequence",
+          "fixed_psalms": [
+            "100",
+            "91",
+            "148",
+            "150"
+          ],
+          "token": "esy-variable-sapra-psalms",
+          "qanona_note": "v2.8.1: esy-qanona-sapra now rendered first (hour-specific frame), followed by seasonal esy-qanona-{season}-{cycle}"
+        },
+        "qutaa": {
+          "title": "Quta'a \u2014 Third Hour",
+          "time": "~09:00",
+          "cathedral_sequence": "cathedral-qutaa-sequence",
+          "monastic_sequence": "monastic-qutaa-sequence",
+          "fixed_psalms": [
+            "19",
+            "24",
+            "25"
+          ],
+          "token": "esy-variable-qutaa-psalms",
+          "theological_note": "Ps. 19 \u2014 sun going forth; Ps. 24 \u2014 King of glory entering; Ps. 25 \u2014 morning supplication. Hour of the Descent of the Holy Spirit."
+        },
+        "endana": {
+          "title": "Endana \u2014 Sixth Hour",
+          "time": "~12:00",
+          "cathedral_sequence": "cathedral-endana-sequence",
+          "monastic_sequence": "monastic-endana-sequence",
+          "fixed_psalms": [
+            "119:1-32",
+            "121",
+            "122"
+          ],
+          "token": "esy-variable-endana-psalms",
+          "theological_note": "Ps. 119 (portion) \u2014 the longest psalm at the longest hour; Songs of Ascent for the midday pause."
+        },
+        "dtsha-sain": {
+          "title": "D-tsha' Sa'in \u2014 Ninth Hour",
+          "time": "~15:00",
+          "cathedral_sequence": "cathedral-dtsha-sain-sequence",
+          "monastic_sequence": "monastic-dtsha-sain-sequence",
+          "fixed_psalms": [
+            "84",
+            "116",
+            "117"
+          ],
+          "token": "esy-variable-dtsha-sain-psalms",
+          "theological_note": "Hour of the Crucifixion. Ps. 116 \u2014 the cup of salvation as direct Passion type."
+        },
+        "ramsha": {
+          "title": "Ramsha \u2014 Evening Prayer",
+          "time": "Sunset",
+          "cathedral_sequence": "cathedral-ramsha-sequence",
+          "monastic_sequence": "monastic-ramsha-sequence",
+          "token": "esy-variable-marmitha",
+          "qanona_note": "v2.8.1: esy-qanona-ramsha now rendered first (hour-specific frame), followed by seasonal esy-qanona-{season}-{cycle}"
+        },
+        "lelya": {
+          "title": "Lelya \u2014 Night Office",
+          "time": "Night",
+          "cathedral_sequence": "lelya-sequence",
+          "monastic_sequence": "monastic-lelya-sequence",
+          "token": "esy-variable-hulali",
+          "qanona_note": "v2.8.1: esy-qanona-lelya now rendered first (hour-specific frame), followed by seasonal esy-qanona-{season}-{cycle}"
+        },
+        "subaa": {
+          "title": "Suba'a \u2014 Compline",
+          "time": "Before sleep",
+          "cathedral_sequence": "cathedral-subaa-sequence",
+          "monastic_sequence": "monastic-subaa-sequence",
+          "fixed_psalms": [
+            "4",
+            "91",
+            "134"
+          ],
+          "token": "esy-variable-subaa-psalms",
+          "theological_note": "Ps. 4 \u2014 ancient night psalm; Ps. 91 \u2014 the protection psalm; Ps. 134 \u2014 night doxology. Unique concluding elements: examination of conscience, Nunc Dimittis (Hullala d-Sham'un), and distinct Compline blessing.",
+          "distinct_components": [
+            "esy-subaa-examination",
+            "esy-subaa-nunc-dimittis",
+            "esy-subaa-blessing"
+          ]
+        }
+      },
+      "dynamic_token_status": {
+        "esy-variable-sapra-psalms": "IMPLEMENTED",
+        "esy-variable-qutaa-psalms": "IMPLEMENTED [v2.8.0]",
+        "esy-variable-endana-psalms": "IMPLEMENTED [v2.8.0]",
+        "esy-variable-dtsha-sain-psalms": "IMPLEMENTED [v2.8.0]",
+        "esy-variable-subaa-psalms": "IMPLEMENTED [v2.8.0]",
+        "esy-variable-marmitha": "IMPLEMENTED",
+        "esy-variable-hulali": "IMPLEMENTED",
+        "esy-variable-seasonal-onitha": "IMPLEMENTED",
+        "esy-variable-qanona": "IMPLEMENTED \u2014 v2.8.1: updated to layered rendering for Sapra/Ramsha/Lelya",
+        "esy-variable-onitha-with-qala": "IMPLEMENTED",
+        "esy-variable-barekmar-intercessions": "IMPLEMENTED \u2014 v2.8.1: all 9 required components now present in east-syriac.json"
+      },
+      "barekmar_components": {
+        "note": "Added v2.8.1. All appended to end of components/east-syriac.json.",
+        "components": [
+          "esy-barekmar-general \u2014 fallback; rendered when no day-specific or seasonal form found",
+          "esy-barekmar-sauma \u2014 seasonal Lenten form; rendered throughout Sauma season",
+          "esy-barekmar-sunday \u2014 Sunday diptychs; Resurrection and assembly character",
+          "esy-barekmar-monday \u2014 Monday diptychs; apostolic and missionary character",
+          "esy-barekmar-tuesday \u2014 Tuesday diptychs; teaching and prophetic character",
+          "esy-barekmar-wednesday \u2014 Wednesday diptychs; penitential character (fasting day)",
+          "esy-barekmar-thursday \u2014 Thursday diptychs; sacramental and priestly character",
+          "esy-barekmar-friday \u2014 Friday diptychs; martyr-honouring, penitential (fasting day)",
+          "esy-barekmar-saturday \u2014 Saturday diptychs; commemorative of the departed, anticipatory"
+        ]
+      },
+      "legacy_sequences": {
+        "note": "ramsha-sequence, sapra-sequence, and lelya-sequence retained in rubrics.json for backward compatibility. renderEastSyriac() now routes exclusively to the cathedral-* and monastic-* named variants.",
+        "status": "Preserved \u2014 do not remove"
+      }
+    },
+    "ethiopian_tradition": {
+      "status": "OPERATIONAL \u2014 v2.8.1. Full 24-hour canonical cycle, Tselote Meweta opening, Senkessar wired, Metsehafe Tselot rubric aesthetic. Mahlet text fully expanded.",
+      "entry_point": "selectMode('ethiopian-saatat') \u2014 sets window._forcedOfficeId, hides BCP sidebar, shows ethiopian-settings, applies .ethiopian-theme to body",
+      "rubrics_file": "components/traditions/ethiopian/rubrics.json",
+      "rubrics_load": "Loaded in hydrateForEthiopianSaatat() and concatenated onto appData.rubrics",
+      "components_file": "components/ethiopian.json",
+      "components": [
+        "eth-introduction-to-every-hour \u2014 (v2.6.1) Tselote Meweta mandatory opening: prostration rubric, Lord's Prayer, Thanksgiving, Psalm 50/51 with Gloria Patri",
+        "eth-basalios-prayer \u2014 St. Basil's foundational prayer (all hours)",
+        "eth-prayer-thanksgiving \u2014 RETIRED FROM SEQUENCE v2.6.1. Content subsumed by eth-introduction-to-every-hour. Retained in JSON as reference.",
+        "eth-anqasa-birhan \u2014 Gate of Light Theotokos hymn; appended after Mazmur",
+        "eth-nigatu-hour-text \u2014 Matins (06:00\u201309:00)",
+        "eth-meserk-hour-text \u2014 Third Hour / Mese'rk (09:00\u201312:00)",
+        "eth-lika-hour-text \u2014 Sixth Hour / Lika (12:00\u201315:00). Crucifixion hour. ID is 'lika' not 'liku' \u2014 corrected in rubrics metadata v2.6.1.",
+        "eth-terk-hour-text \u2014 Ninth Hour / Tese'at (15:00\u201317:00)",
+        "eth-serkh-hour-text \u2014 Eleventh Hour / Vespers / Serkh (17:00\u201318:00)",
+        "eth-nome-hour-text \u2014 Compline / Nime (18:00\u201321:00)",
+        "eth-hour-7 \u2014 First Night Watch / Le'lit (21:00\u201300:00). Text complete. Phase 2B stale note removed v2.8.1.",
+        "eth-lelit-hour-text \u2014 Midnight / Le'lit (00:00\u201303:00)",
+        "eth-mahlet-hour-text \u2014 Pre-dawn Vigil / Mahlet (03:00\u201306:00). Text fully expanded v2.8.1 \u2014 Gethsemane imagery, holy women at the tomb, Marian intercession, eschatological frame.",
+        "eth-mazmur-tuat \u2014 Psalm metadata for Tuat",
+        "eth-leke-haile-chant \u2014 12-fold Leke Haile doxology (Full edition only)",
+        "eth-41-kyrie \u2014 41-fold Kyrie / Igzee'o Tesahalene (Full edition only)",
+        "eth-saints-commemoration \u2014 Senkessar pipeline component + Oriental saints fallback + intercession fallback",
+        "eth-synaxarium-reading \u2014 Senkessar reading scaffold; actual pipeline implemented within eth-saints-commemoration handler",
+        "eth-weddase-sunday through eth-weddase-saturday \u2014 Weddase Maryam for all seven days"
+      ],
+      "sequence_current": [
+        "eth-introduction-to-every-hour  \u2190 mandatory Tselote Meweta opening [v2.6.1]",
+        "eth-basalios-prayer",
+        "eth-saatat-hour-slot            \u2190 active canonical hour + Sixth Hour sentence",
+        "eth-mazmur-slot                 \u2190 Psalms + Anqasa Birhan (+ Leke Haile in Full)",
+        "VARIABLE_READING_ET             \u2190 1 Clement (Nigatu) / Hermas (Le'lit) / skipped",
+        "eth-saints-commemoration        \u2190 full Senkessar pipeline",
+        "comm-lords-prayer"
+      ],
+      "hour_map": {
+        "06:00\u201309:00": {
+          "hourId": "eth-nigatu-hour-text",
+          "hourName": "Nigatu \u2014 \u1295\u130b\u1271 (Matins)",
+          "psalms": [
+            "3",
+            "63",
+            "133"
+          ],
+          "etReading": "1CLEM_ET 1:1-20"
+        },
+        "09:00\u201312:00": {
+          "hourId": "eth-meserk-hour-text",
+          "hourName": "Mese'rk \u2014 \u1218\u1220\u122d\u1245 (Third Hour)",
+          "psalms": [
+            "16",
+            "17",
+            "18"
+          ],
+          "etReading": null
+        },
+        "12:00\u201315:00": {
+          "hourId": "eth-lika-hour-text",
+          "hourName": "Lika \u2014 \u120a\u12ab (Sixth Hour)",
+          "psalms": [
+            "22",
+            "23",
+            "24"
+          ],
+          "etReading": null,
+          "note": "Crucifixion hour \u2014 commemorative sentence injected in renderer"
+        },
+        "15:00\u201317:00": {
+          "hourId": "eth-terk-hour-text",
+          "hourName": "Tese'at \u2014 \u1270\u1230\u12d3\u1275 (Ninth Hour)",
+          "psalms": [
+            "69",
+            "70",
+            "71"
+          ],
+          "etReading": null
+        },
+        "17:00\u201318:00": {
+          "hourId": "eth-serkh-hour-text",
+          "hourName": "Serkh \u2014 \u1220\u122d\u12ad (Eleventh Hour/Vespers)",
+          "psalms": [
+            "141",
+            "142",
+            "143"
+          ],
+          "etReading": null
+        },
+        "18:00\u201321:00": {
+          "hourId": "eth-nome-hour-text",
+          "hourName": "Nime \u2014 \u1296\u121c (Compline)",
+          "psalms": [
+            "4",
+            "6",
+            "13"
+          ],
+          "etReading": null
+        },
+        "21:00\u201300:00": {
+          "hourId": "eth-hour-7",
+          "hourName": "Le'lit \u2014 First Night Watch",
+          "psalms": [
+            "4",
+            "6",
+            "13"
+          ],
+          "etReading": "HERM_ET 1:1-10"
+        },
+        "00:00\u201303:00": {
+          "hourId": "eth-lelit-hour-text",
+          "hourName": "Le'lit \u2014 \u120c\u120a\u1275 (Midnight)",
+          "psalms": [
+            "4",
+            "6",
+            "13"
+          ],
+          "etReading": "HERM_ET 1:1-10"
+        },
+        "03:00\u201306:00": {
+          "hourId": "eth-mahlet-hour-text",
+          "hourName": "Mahlet \u2014 \u121b\u1205\u120c\u1275 (Pre-dawn Vigil)",
+          "psalms": [
+            "3",
+            "63",
+            "133"
+          ],
+          "etReading": null
+        }
+      },
+      "saints_filter": "Only saints where tradition includes 'ethiopian' or 'oriental' (case-insensitive). Used only when no Senkessar entry found. Final fallback: generic Oriental Orthodox Communion intercession.",
+      "bcp_isolation": "All BCP-specific blocks gated behind !isEthiopianSaatat throughout renderOffice()"
+    },
+    "ethiopian_synaxarium": {
+      "status": "OPERATIONAL \u2014 Fully wired and rendering. All 13 months confirmed complete.",
+      "description": "Senkessar (Ethiopian Synaxarium) integrated in eth-saints-commemoration rubric handler. Renders for all hours via EthiopianCalendar date resolution and dynamic fetch from data/synaxarium/ethiopian/{month}/{day}.json.",
+      "wiring_status": "COMPLETE. EthiopianCalendar.getEthiopianDate() called directly in eth-saints-commemoration. Senkessar index lazy-loaded and cached. Per-day narratives fetched and cached.",
+      "index_file": "data/synaxarium/ethiopian/senkessar-index.json",
+      "index_status": "COMPLETE \u2014 13 months, 385 entries. Validated 2026-02-23.",
+      "miazia_path_resolution": {
+        "issue": "EthiopianCalendar outputs 'Miyazya'. Folder on disk is 'miazia'.",
+        "status": "RESOLVED IN RENDERER \u2014 MONTH_SLUG_MAP maps 'miyazya': 'miazia'. No folder rename required.",
+        "optional_cleanup": "Cosmetic only: consider aligning senkessar-index.json month 8 slug to 'miazia' in a future maintenance pass."
+      },
+      "narrative_corpus_status": {
+        "meskerem": {
+          "month_number": 1,
+          "days": 30,
+          "status": "COMPLETE"
+        },
+        "tiqimt": {
+          "month_number": 2,
+          "days": 30,
+          "status": "COMPLETE"
+        },
+        "hidar": {
+          "month_number": 3,
+          "days": 30,
+          "status": "COMPLETE"
+        },
+        "tahsas": {
+          "month_number": 4,
+          "days": 30,
+          "status": "COMPLETE"
+        },
+        "tir": {
+          "month_number": 5,
+          "days": 30,
+          "status": "COMPLETE"
+        },
+        "yekatit": {
+          "month_number": 6,
+          "days": 30,
+          "status": "COMPLETE"
+        },
+        "megabit": {
+          "month_number": 7,
+          "days": 30,
+          "status": "COMPLETE"
+        },
+        "miazia": {
+          "month_number": 8,
+          "days": 30,
+          "status": "COMPLETE"
+        },
+        "ginbot": {
+          "month_number": 9,
+          "days": 30,
+          "status": "COMPLETE"
+        },
+        "sene": {
+          "month_number": 10,
+          "days": 30,
+          "status": "COMPLETE"
+        },
+        "hamle": {
+          "month_number": 11,
+          "days": 30,
+          "status": "COMPLETE"
+        },
+        "nehase": {
+          "month_number": 12,
+          "days": 30,
+          "status": "COMPLETE"
+        },
+        "pagumen": {
+          "month_number": 13,
+          "days": 5,
+          "status": "COMPLETE"
+        }
+      },
+      "narrative_format": {
+        "schema": "{ id, title, narrative }",
+        "narrative_style": "Deep Assembly \u2014 High-liturgical English; 4-paragraph woven structure",
+        "register": "Formal high-liturgical English; no modern idioms; paragraph breaks as \\n\\n",
+        "data_path": "data/synaxarium/ethiopian/{month-slug}/{day}.json",
+        "id_pattern": "senkessar-{month-slug}-{day}"
+      }
+    },
+    "_note": "Full dossiers now live in structure-reference.json. These are the versions as of 2026-03-08."
+  },
+  "removed_coe_calendar_model_detail": {
+    "severity": "CLOSED",
+    "description": "RESOLVED \u2014 v2.8.9. Three-layer COE calendar model implemented. Layer 1: season engine (calendar-east-syriac.js getSeason() / getDayClass()) operational. Layer 2: getDayClass() returns commemorations[] for Sawma Rabba Fridays and pre-Sawma Faithful Departed. Layer 3: CoeEligibility.filter() allowlist gate implemented; display re-enabled in renderEastSyriac(). COE-IIB audit complete: 133 identity IDs (136 rows) removed from commemorations.json. saint-grid model eliminated. No saint-grid fallback. Layer 2 renders before Layer 3 lookup. Silence is correct when no eligible saint is present.",
+    "architectural_principle": "Latin logic: Calendar = Saints framework with seasonal overlay. East Syriac logic: Calendar = Salvation-historical seasons with occasional saints.",
+    "three_layer_model": {
+      "layer_1_season_engine": {
+        "status": "COMPLETE \u2014 calendar-east-syriac.js",
+        "provides": [
+          "season",
+          "week number",
+          "cycle (Qdham/Wathar)",
+          "fasting character",
+          "season color"
+        ]
+      },
+      "layer_2_fixed_feasts": {
+        "status": "COMPLETE \u2014 COE-IIA (getDayClass() commemorations[])",
+        "description": "Major fixed observances calculated seasonally, not stored as date-keyed saints.",
+        "examples": [
+          "Nativity",
+          "Epiphany (Denha)",
+          "Resurrection",
+          "Exaltation of the Cross",
+          "Annunciation",
+          "Apostles season commemorations",
+          "All Saints",
+          "Commemoration of the Dead"
+        ],
+        "type": "feast or commemoration \u2014 never saint"
+      },
+      "layer_3_individual_saints": {
+        "status": "COMPLETE \u2014 COE-IIB audit done; CoeEligibility.filter() gate active; display re-enabled v2.8.7",
+        "description": "Sparse. Conservative. Person-based only. Pre-schism and explicitly East Syriac.",
+        "inclusion_criteria": [
+          "Pre-schism and universally ancient",
+          "Explicitly East Syriac (Hudra manuscript evidence)",
+          "Apostolic or Biblical figures",
+          "Persian/Mesopotamian martyrs"
+        ],
+        "exclusion_criteria": [
+          "Eastern Orthodox saints not in COE usage",
+          "Saints in Roman Martyrology but not in Hudra",
+          "Saints included only because they are 'early enough'",
+          "Post-7th century Western saints",
+          "Augustine of Hippo \u2014 not COE",
+          "Gregory the Great \u2014 disputed, currently tagged COE, needs review",
+          "Any saint tagged COE solely by proximity to EOR"
+        ],
+        "action": "No further internal action required. One external-research holdout remains: mar-augustine / mar-augustine-commemoration \u2014 excluded from Layer 3 by the eligibility gate. Do not alter on internal evidence alone. Resolution requires external Syriac manuscript evidence (Budge Book of the Governors, Wright Catalogue, Encyclopaedia Iranica COE calendar). If a matching Hudra figure is confirmed: correct feast dates, merge identity records, add to allowlist. If no figure is found: REMOVE_COE_TAG from both records."
+      }
+    },
+    "friday_logic": {
+      "description": "Friday is the martyrial axis of the East Syriac week throughout most seasons.",
+      "great_fast_fridays": {
+        "type": "commemoration",
+        "name": "Commemoration of the Holy Martyrs",
+        "tags": [
+          "COE"
+        ],
+        "note": "Corporate, not individual. All Fridays of Sawma Rabba. No rotating named saint."
+      },
+      "implementation": "getSeason() already returns season. Add getDayClass(date) to calendar-east-syriac.js returning { isFriday, isLenten, commemorationType, commemorationName }. renderEastSyriac() consults this before any saint lookup."
+    },
+    "season_weekly_logic": {
+      "subara": "Text-heavy, saint-light. Marian material doxological. No Immaculate Conception construct.",
+      "nativity": "Synaxis-type commemorations. Apostles and biblical figures in propers. Major feasts are feast/commemoration type.",
+      "denha": "Occasional fixed apostles. Strong baptismal theology. Friday commemorations continue.",
+      "sawma_rabba": "Friday = Commemoration of the Martyrs (corporate). No rotating individual saint list. Inject dynamically.",
+      "qyamta": "Apostolic figures more visible. Thomas receives liturgical prominence. Paschal weeks suppress martyr themes.",
+      "shlihe": "Apostles commemorated strongly. Missionary saints possible (pre-schism). Individual apostle entries appropriate.",
+      "qayta": "Subdued. Few saint-heavy days.",
+      "eliya_sliwa": "Prophetic focus. Prophets and OT figures appropriate.",
+      "qudash_idta": "Ecclesiology. All Saints-type commemorations appropriate."
+    },
+    "ui_framing": {
+      "avoid": "'Saint of the Day' framing for COE",
+      "prefer": [
+        "'Seasonal Commemoration'",
+        "'Friday Commemoration of the Martyrs'",
+        "'Apostolic Memory'"
+      ],
+      "existing_correct": [
+        "Current Cycle",
+        "Fasting Character",
+        "Anaphora fields are correct"
+      ],
+      "recommended_addition": "Display week name/number prominently within season for COE."
+    },
+    "action": "No internal action required. COE-II complete. Optional future work: COE-IIC \u2014 expand Layer 2 with major Hudra fixed feasts (Denha/Epiphany, Sleeba/Exaltation of the Cross, Annunciation, All Saints). External holdout: see three_layer_model.layer_3_individual_saints.action.",
+    "files": [
+      "js/calendar-east-syriac.js",
+      "js/office-ui.js \u2014 renderEastSyriac()",
+      "data/saints/*.json \u2014 COE tag audit required",
+      "components/east-syriac.json"
+    ],
+    "research_credit": "Architectural model established 2026-02-28 via external liturgical consultant review."
+  },
+  "removed_horologion_file_details_full": {
+    "vespers.json": {
+      "status": "BASELINE COMPLETE \u2014 fixed/invariable content complete. v1.2: daily-prokeimenon and vesperal-reading resolved. v1.3: Octoechos tone engine; Saturday stichera/aposticha fully populated (tones 1\u20138). v1.4: Monday\u2013Friday stichera/aposticha materially populated (tones 1\u20138). v1.5: kathisma-reading resolved for ordinary Mon\u2013Sat as appointment rubric. v1.6: troparion-or-apolytikion \u2014 Saturday full Resurrectional Troparion; Bright Week Paschal Troparion; Mon\u2013Fri tone stub; Sunday deferred. v1.7: theotokion-dismissal \u2014 Saturday full dismissal Theotokion (tones 1\u20138, distinct from Dogmatikon); Bright Week explicit omission; Mon\u2013Fri tone stub; Sunday deferred. v1.8: Sunday Small Vespers implemented as a real baseline path. All five Sunday-case variable slots resolved: stichera/aposticha use resurrectional tone corpus with explicit Sunday Small Vespers labeling; kathisma-reading resolves to actionable omission rubric; troparion and theotokion resolve to full tone texts (type:'text'). Every variable slot across all day-of-week paths now yields full text, an explicit rubric stub, or an explicit omission rubric. v1.9: weekday theotokion-dismissal (Mon\u2013Fri) upgraded from tone-identified rubric stub to type:'text' full resolution using new data/horologion/vespers-weekday-theotokion.json (40 entries: 8 tones \u00d7 5 weekdays). Mon/Tue/Thu: standard Octoechos weekday Theotokion. Wed/Fri: Stavrotheotokion (Cross Theotokion). resolvedAs:'weekday-octoechos-theotokion'. Remaining work: weekday troparion (Mon\u2013Fri) Menaion-deferred; feast-rank override system; Great Lent overrides; kathisma full psalm text.",
+      "sections": 7
+    },
+    "schema.json": {
+      "status": "Active \u2014 documents normalized payload shape v1"
+    },
+    "octoechos-vespers.json": {
+      "status": "Active \u2014 Horologion v1.4 (2026-03-07)",
+      "coverage": "Tones 1\u20138. Saturday: full resurrectional stichera and aposticha (unchanged from v1.3). Monday\u2013Friday: materially populated with baseline ordinary weekday stichera and aposticha (v1.4). Sunday: baseline_stub:true + sunday_deferred:true \u2014 explicitly deferred; renders as tone-identified rubric stub. Not silently empty.",
+      "keying": "Outer key: tone string '1'\u2013'8'. Inner key: weekday name (saturday, sunday, monday \u2026 friday).",
+      "content_source": "English Octoechos (Antiochian/OCA Hapgood-tradition resurrectional texts). Saturday texts are representative first stichera; full 3\u20136 stichera set per slot is a future data-pass item.",
+      "weekday_themes": {
+        "monday": "Bodiless Powers (Angels)",
+        "tuesday": "St. John the Baptist and the Prophets",
+        "wednesday": "Cross and Theotokos",
+        "thursday": "Holy Apostles and St. Nicholas",
+        "friday": "Cross and Theotokos (penitential)"
+      }
+    },
+    "vespers-kathisma.json": {
+      "status": "Active \u2014 Horologion v1.5 (2026-03-07)",
+      "coverage": "7 entries keyed by JS Date.getDay() index (0=Sunday through 6=Saturday). Mon\u2013Sat: kathisma number, title, LXX psalm range, Protestant equivalents, incipit. Sunday: sunday_deferred:true with explicit note. Rule: standard Byzantine Psalter weekly cycle for ordinary Vespers (OCA/Antiochian Psalter table; Jordanville Horologion 2008). Overrides not implemented: great-feasts, great-lent, bright-week, sunday-vespers."
+    },
+    "vespers-troparion.json": {
+      "status": "Active \u2014 Horologion v1.8 (2026-03-07) \u2014 unchanged in v1.9 and Menaion v1",
+      "coverage": "resurrectional_troparia: 8 entries keyed by tone string ('1'\u2013'8'). Each entry: tone number, title, full liturgical text (Antiochian/OCA Hapgood-tradition English). paschal_troparion: Paschal Troparion for Bright Week use. Applicable days: Saturday Great Vespers and Sunday Small Vespers (both resolved; same Octoechos apolytikion for both offices). Weekday troparion text (Mon\u2013Fri): this file is NOT the source for weekday troparion. Weekday troparion is now resolved via data/menaion/ + js/menaion-resolver.js on imported pilot dates; falls back to weekday-theme rubric on non-imported dates. Source: Byzantine Octoechos; Antiochian/OCA Hapgood-tradition English. Overrides not implemented: menaion-feasts (feast-rank engine deferred), great-feasts, great-lent."
+    },
+    "vespers-theotokion.json": {
+      "status": "Active \u2014 Horologion v1.8 (2026-03-07) \u2014 unchanged in v1.9",
+      "coverage": "dismissal_theotokia: 8 entries keyed by tone string ('1'\u2013'8'). Each entry: tone number, title, full liturgical text (Antiochian/OCA Hapgood-tradition English). Applicable days: Saturday Great Vespers and Sunday Small Vespers (both resolved in v1.8; same Octoechos apolytikion-paired dismissal Theotokion). These are the dismissal Theotokia of the Octoechos, distinct from the Dogmatika (major Theotokia sung during the Aposticha). Weekday dismissal Theotokion is now handled by vespers-weekday-theotokion.json (v1.9). Overrides not implemented: feast-theotokia, great-lent."
+    },
+    "small-compline.json": {
+      "status": "Active \u2014 Horologion v3.0 (2026-03-08) \u2014 NEW in v3.0",
+      "coverage": "Skeleton for Small Compline (Mikron Apodeipnon). officeKey:'small-compline', tradition:'BYZC'. Fixed slots (usual-beginning, psalm-50, psalm-69, psalm-142, doxology, creed, trisagion-prayers, compline-theotokion, prayer-of-basil, into-thy-hands) are placeholders resolved at runtime by _resolveComplineSlots() from compline-fixed.json. Variable slot troparion-of-the-day resolved via _resolveTroparionSlot(). Description: Byzantine Night Office; shorter form of Compline appointed for ordinary weekdays and seasons outside Great Lent."
+    },
+    "compline-fixed.json": {
+      "status": "Active \u2014 Horologion v3.0 (2026-03-08) \u2014 NEW in v3.0",
+      "coverage": "Invariable fixed texts for Small Compline. All entries resolved unconditionally by _resolveComplineSlots(). Slots keyed by name: usual-beginning, psalm-50, psalm-69, psalm-142, doxology, creed, trisagion-prayers, compline-theotokion, prayer-of-basil, into-thy-hands. Psalm translations follow LXX numeration used in Byzantine practice. Source: Standard Antiochian/OCA Horologion (Jordanville 2008 edition)."
+    },
+    "vespers-weekday-theotokion.json": {
+      "status": "Active \u2014 Horologion v1.9 (2026-03-07) \u2014 NEW in v1.9",
+      "coverage": "weekday_theotokia: 40 entries keyed by tone string ('1'\u2013'8') then weekday name ('monday'|'tuesday'|'wednesday'|'thursday'|'friday'). Each entry: tone, weekday, title, full liturgical text (Antiochian/OCA Hapgood-tradition English). Monday/Tuesday/Thursday: standard Octoechos weekday Theotokion for that tone + day. Wednesday/Friday: Stavrotheotokion (Cross Theotokion) \u2014 standard Byzantine fasting-day Theotokia. Applicable days: Mon\u2013Fri ordinary weekday Vespers. Resolves theotokion-dismissal slot for all five weekdays at baseline. Limitation: baseline uses current Octoechos weekly tone; if Menaion troparion is of a different tone, Theotokion should follow Menaion tone \u2014 not yet implemented. Overrides not implemented: great-feasts, great-lent, Menaion-tone conflict."
+    }
+  }
+}

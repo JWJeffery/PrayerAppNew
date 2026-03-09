@@ -186,6 +186,41 @@
 //     All other months → fallback rubric.
 //     Non-imported November dates → fallback rubric.
 //
+// ── v3.0 additions ─────────────────────────────────────────────────────────
+//   Small Compline (Mikron Apodeipnon) support.
+//
+//   SUPPORTED_OFFICES updated: ['vespers', 'small-compline']
+//   COMPLINE_FIXED_URL: 'data/horologion/compline-fixed.json'
+//   _complineFixedData: module-level cache (null until first load).
+//
+//   _loadComplineFixedData(): lazy loader for compline-fixed.json.
+//     Non-throwing: on failure, logs warning; fixed slots degrade to visible
+//     placeholder boxes rather than failing silently.
+//
+//   _resolveComplineSlots(sections, dateObj): slot resolution pass for
+//     Small Compline. Called from resolveOffice() when normalizedKey ===
+//     'small-compline'. Parallel-loads compline-fixed, troparion, and
+//     weekday-troparion-meta data.
+//
+//     Fixed slots (resolved unconditionally from compline-fixed.json):
+//       usual-beginning, psalm-50, psalm-69, psalm-142, doxology, creed,
+//       trisagion-prayers, compline-theotokion, prayer-of-basil, into-thy-hands
+//     Variable slot:
+//       troparion-of-the-day — delegates to _resolveTroparionSlot() with
+//       key renamed from 'troparion-or-apolytikion' for correct labelling.
+//       All fallback paths (weekday-theme rubric, Resurrectional Troparion,
+//       Paschal Troparion) inherited unchanged from Vespers implementation.
+//
+//   Unified Horologion navigation (office-ui.js + index.html):
+//     - selectMode('horologion') replaces selectMode('horologion-vespers')
+//     - #generic-settings sidebar now contains office selector buttons:
+//       #hor-btn-vespers and #hor-btn-small-compline
+//     - selectHorologionOffice(), _updateHorologionOfficeButtons(),
+//       _horologionOfficeLabel() added to office-ui.js
+//     - selectedHorologionOffice state defaults to 'vespers'
+//     - Old mode strings horologion-vespers and horologion-small-compline
+//       eliminated from all files
+//
 // ──────────────────────────────────────────────────────────────────────────
 const HorologionEngine = (() => {
 
@@ -195,7 +230,7 @@ const HorologionEngine = (() => {
     const _skeletonCache = {};
 
     // ── Supported offices in this version ─────────────────────────────────
-    const SUPPORTED_OFFICES = ['vespers', 'small-compline'];
+    const SUPPORTED_OFFICES = ['vespers', 'small-compline', 'first-hour'];
 
     // ── Tradition code for this engine ────────────────────────────────────
     const TRADITION = 'BYZC';
@@ -257,13 +292,19 @@ const HorologionEngine = (() => {
     // Documents the dependency contract for weekday troparia (no text supplied).
     const WEEKDAY_TROPARION_META_URL = 'data/horologion/vespers-weekday-troparion-meta.json';
 
-    // ── v3.0: Compline fixed-text data file URL and cache ─────────────────
+  // ── v3.0: Compline fixed-text data file URL and cache ─────────────────
     const COMPLINE_FIXED_URL = 'data/horologion/compline-fixed.json';
 
     // Populated lazily by _loadComplineFixedData().
     // Shape: { slots: { "usual-beginning": {...}, "psalm-50": {...}, ... } }
     let _complineFixedData = null;
 
+    // ── v3.1: First Hour fixed-text data file URL and cache ───────────────
+    const FIRST_HOUR_FIXED_URL = 'data/horologion/first-hour-fixed.json';
+
+    // Populated lazily by _loadFirstHourFixedData().
+    // Shape: { slots: { "usual-beginning": {...}, "psalm-5": {...}, ... } }
+    let _firstHourFixedData = null;
     // ── v2.0: Weekday troparion meta object (null until first fetch) ───────
     // Populated lazily by _loadWeekdayTroparionMeta().
     // Shape: { weekday_themes: { monday: { theme, theme_short, fasting_day? }, ... } }
@@ -391,9 +432,11 @@ const HorologionEngine = (() => {
         // Deep-copy sections so we never mutate the cached skeleton
         const sections = _deepCopySections(skeleton.sections || []);
 
-        // Route to the correct slot resolver based on officeKey.
+         // Route to the correct slot resolver based on officeKey.
         if (normalizedKey === 'small-compline') {
             await _resolveComplineSlots(sections, dateObj);
+        } else if (normalizedKey === 'first-hour') {
+            await _resolveFirstHourSlots(sections, dateObj);
         } else {
             // v1.2 / v1.3: Vespers resolver (default for 'vespers' and any
             // future office that shares it until it has its own resolver).
@@ -1619,9 +1662,125 @@ const pascha = _getOrthodoxPascha(year);
         }
     }
 
-    // ──────────────────────────────────────────────────────────────────────
-    // v1.3: _resolveSticheraSlot(tone, weekdayName, slotKey, toneResult)
+   // ──────────────────────────────────────────────────────────────────────
+    // v3.1: _loadFirstHourFixedData()
     //
+    // Fetches and caches data/horologion/first-hour-fixed.json.
+    // Non-throwing: on failure logs a warning; fixed slots remain as
+    // visible placeholders rather than crashing.
+    // ──────────────────────────────────────────────────────────────────────
+    async function _loadFirstHourFixedData() {
+        if (_firstHourFixedData !== null) return;
+
+        try {
+            const response = await fetch(FIRST_HOUR_FIXED_URL);
+            if (!response.ok) {
+                console.warn(`[HorologionEngine] Could not load First Hour fixed data (HTTP ${response.status}); fixed slots will remain as placeholders.`);
+                return;
+            }
+            _firstHourFixedData = await response.json();
+            console.log('[HorologionEngine] Loaded First Hour fixed text data.');
+        } catch (err) {
+            console.warn('[HorologionEngine] _loadFirstHourFixedData failed:', err.message, '— fixed slots will remain as placeholders.');
+        }
+    }
+
+    // ──────────────────────────────────────────────────────────────────────
+    // v3.1: _resolveFirstHourSlots(sections, dateObj)
+    //
+    // Slot resolution pass for the First Hour (Prima).
+    //
+    // Fixed slots resolved from first-hour-fixed.json:
+    //   usual-beginning, psalm-5, psalm-89, psalm-100,
+    //   trisagion-prayers, prayer-of-the-first-hour
+    //
+    // Variable slots:
+    //   troparion-of-the-day: delegates to _resolveTroparionSlot()
+    //     (same infrastructure as Vespers and Small Compline).
+    //   first-hour-theotokion: tone-dependent dismissal Theotokion.
+    //     Baseline: deferred — requires Octoechos weekday Theotokion
+    //     data keyed for First Hour. Rendered as explicit rubric stub.
+    //
+    // Non-throwing. On data file failure, fixed slots remain as placeholders.
+    // ──────────────────────────────────────────────────────────────────────
+    async function _resolveFirstHourSlots(sections, dateObj) {
+        await Promise.all([
+            _loadFirstHourFixedData(),
+            _loadTroparionData(),
+            _loadWeekdayTroparionMeta()
+        ]);
+
+        const dayOfWeek  = dateObj.getDay();
+        const toneResult = _computeBaselineTone(dateObj);
+
+        const FIXED_SLOT_KEYS = new Set([
+            'usual-beginning',
+            'psalm-5',
+            'psalm-89',
+            'psalm-100',
+            'trisagion-prayers',
+            'prayer-of-the-first-hour'
+        ]);
+
+        for (const section of sections) {
+            if (!Array.isArray(section.items)) continue;
+
+            for (let i = 0; i < section.items.length; i++) {
+                const item = section.items[i];
+
+                // ── Fixed slots ───────────────────────────────────────────
+                if (FIXED_SLOT_KEYS.has(item.key)) {
+                    const slotData = _firstHourFixedData &&
+                        _firstHourFixedData.slots &&
+                        _firstHourFixedData.slots[item.key];
+
+                    if (slotData) {
+                        section.items[i] = {
+                            type:       slotData.type || 'text',
+                            key:        item.key,
+                            label:      slotData.label || item.label,
+                            text:       slotData.text,
+                            lxxNumber:  slotData.lxxNumber,
+                            resolvedAs: 'first-hour-fixed'
+                        };
+                    }
+                    // If data not loaded: item remains placeholder — correct degradation.
+                    continue;
+                }
+
+                // ── troparion-of-the-day ──────────────────────────────────
+                if (item.key === 'troparion-of-the-day') {
+                    const resolved = await _resolveTroparionSlot(dayOfWeek, toneResult, dateObj);
+                    if (resolved) {
+                        section.items[i] = Object.assign({}, resolved, {
+                            key: 'troparion-of-the-day'
+                        });
+                    }
+                    continue;
+                }
+
+                // ── first-hour-theotokion — deferred baseline ─────────────
+                if (item.key === 'first-hour-theotokion') {
+                    const toneName = toneResult && toneResult.tone
+                        ? `Tone ${toneResult.tone}`
+                        : 'tone not resolved';
+                    section.items[i] = {
+                        type:       'rubric',
+                        key:        'first-hour-theotokion',
+                        label:      item.label || 'Theotokion of the First Hour',
+                        text:       `[First Hour Theotokion — ${toneName}. The dismissal Theotokion of the First Hour is tone-dependent and drawn from the Octoechos. Full text deferred pending First Hour Octoechos data. Source: Byzantine Horologion, Jordanville 2008.]`,
+                        resolvedAs: 'first-hour-theotokion-deferred'
+                    };
+                    continue;
+                }
+
+                // All other items (baked rubrics) pass through unchanged.
+            }
+        }
+    }
+
+    // ──────────────────────────────────────────────────────────────────────
+    // v1.3: _resolveSticheraSlot(tone, weekdayName, slotKey, toneResult)    //
     // Resolves a single stichera-style slot from the Octoechos data.
     //
     // slotKey: 'stichera_at_lord_i_have_cried' or 'aposticha'

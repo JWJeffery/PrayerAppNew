@@ -836,7 +836,7 @@ function selectHorologionOffice(officeKey) {
 }
 
 function _updateHorologionOfficeButtons() {
-    const offices = ['vespers', 'small-compline'];
+    const offices = ['vespers', 'small-compline', 'first-hour'];
     for (const key of offices) {
         const btn = document.getElementById(`hor-btn-${key}`);
         if (!btn) continue;
@@ -853,9 +853,10 @@ function _updateHorologionOfficeButtons() {
 }
 
 function _horologionOfficeLabel(officeKey) {
-    const labels = {
+   const labels = {
         'vespers':        'Vespers',
-        'small-compline': 'Small Compline'
+        'small-compline': 'Small Compline',
+        'first-hour':     'First Hour'
     };
     return labels[officeKey] || officeKey;
 }

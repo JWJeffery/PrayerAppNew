@@ -1,0 +1,56 @@
+{
+  "_comment": [
+    "data/horologion/first-hour-fixed.json — Horologion v3.1",
+    "",
+    "Invariable fixed texts for the First Hour (Prima).",
+    "All entries resolved unconditionally by _resolveFirstHourSlots().",
+    "Variable slots (troparion-of-the-day, first-hour-theotokion) are NOT here;",
+    "resolved dynamically by HorologionEngine.",
+    "",
+    "Psalm translations follow the LXX numeration used in Byzantine practice.",
+    "Source: Standard Antiochian/OCA Horologion (Jordanville 2008 edition).",
+    "",
+    "NOTE: usual-beginning and trisagion-prayers are identical to",
+    "compline-fixed.json. They are duplicated here intentionally so that",
+    "each office resolves independently from its own file. If a shared-common",
+    "fixed-texts file is introduced in a future pass, these can be deduplicated."
+  ],
+  "slots": {
+    "usual-beginning": {
+      "type": "text",
+      "label": "The Usual Beginning",
+      "text": "Glory to Thee, our God, glory to Thee.\n\nO Heavenly King, O Comforter, the Spirit of Truth, Who art everywhere present and fillest all things, Treasury of blessings and Giver of life: come and abide in us, and cleanse us from every impurity, and save our souls, O Good One.\n\nHoly God, Holy Mighty, Holy Immortal, have mercy on us. (×3)\n\nGlory to the Father, and to the Son, and to the Holy Spirit, both now and ever, and unto ages of ages. Amen.\n\nAll-holy Trinity, have mercy on us. Lord, cleanse us from our sins. Master, pardon our iniquities. Holy One, visit and heal our infirmities for Thy Name's sake.\n\nLord, have mercy. (×3)\n\nGlory to the Father, and to the Son, and to the Holy Spirit, both now and ever, and unto ages of ages. Amen.\n\nOur Father, Who art in Heaven, hallowed be Thy Name. Thy Kingdom come, Thy will be done, on earth as it is in Heaven. Give us this day our daily bread; and forgive us our trespasses, as we forgive those who trespass against us; and lead us not into temptation, but deliver us from evil.\n\nFor Thine is the Kingdom, and the power, and the glory, of the Father, and of the Son, and of the Holy Spirit, now and ever, and unto ages of ages. Amen.\n\nLord, have mercy. (×12)\n\nCome, let us worship God our King.\nCome, let us worship and fall down before Christ our King and God.\nCome, let us worship and fall down before Christ Himself, our King and our God."
+    },
+    "psalm-5": {
+      "type": "psalm",
+      "lxxNumber": 5,
+      "hebrewNumber": 5,
+      "label": "Psalm 5 (LXX) — Give ear to my words, O Lord",
+      "text": "Give ear to my words, O Lord, consider my meditation. Hearken unto the voice of my cry, my King and my God, for unto Thee will I pray.\n\nMy voice shalt Thou hear in the morning, O Lord; in the morning will I order my prayer unto Thee and will look up.\n\nFor Thou art not a God that willeth iniquity; neither shall he that worketh evil dwell with Thee. The boastful shall not stand in Thy sight; Thou hatest all workers of iniquity.\n\nThou shalt destroy them that speak falsehood; the bloodthirsty and deceitful man the Lord abhorreth. But I in the multitude of Thy mercy will enter Thy house; I will worship toward Thy holy temple in Thy fear.\n\nO Lord, lead me in Thy righteousness because of mine enemies; make straight Thy way before me. For there is no truth in their mouth; their heart is vain; their throat is an open sepulchre; with their tongues they have spoken deceitfully.\n\nJudge them, O God; let them fall from their own counsels; according to the multitude of their ungodliness cast them out, for they have embittered Thee, O Lord.\n\nAnd let all that put their trust in Thee rejoice; they shall ever shout for joy, and Thou shalt dwell among them. And all they that love Thy Name shall boast in Thee, for Thou, Lord, shalt bless the righteous.\n\nO Lord, as with a shield of Thy good will hast Thou crowned us.\n\nGlory to the Father, and to the Son, and to the Holy Spirit, both now and ever, and unto ages of ages. Amen."
+    },
+    "psalm-89": {
+      "type": "psalm",
+      "lxxNumber": 89,
+      "hebrewNumber": 90,
+      "label": "Psalm 89 (LXX) — Lord, Thou hast been our refuge",
+      "text": "Lord, Thou hast been our refuge in generation and generation. Before the mountains were brought forth, or ever the earth and the world were formed, even from everlasting to everlasting, Thou art.\n\nTurn not man back to humiliation; but Thou saidst: Return, ye sons of men. For a thousand years in Thy sight are as yesterday when it is past, and as a watch in the night.\n\nYears shall be as grass; in the morning let man blossom and pass away; in the evening let him fall, and grow stiff and wither. For we have come to an end in Thine anger, and in Thy wrath are we troubled.\n\nThou hast set our iniquities before Thee, our age in the light of Thy countenance. For all our days are spent, and we have spent our years in wrath as a spider. The days of our years — in them are threescore years and ten; but if in strength, fourscore years; and yet their vaunting is toil and sorrow, for mildness is come upon us, and we shall be chastened.\n\nWho knoweth the power of Thy wrath? And from fear of Thee who can count Thine anger? So make Thy right hand known to me, and those that are instructed in wisdom in their heart.\n\nReturn, O Lord; how long? And be entreated favourably regarding Thy servants. We were filled in the morning with Thy mercy, O Lord, and we rejoiced and were glad all our days.\n\nWe were gladdened in return for the days in which Thou didst humble us, for the years in which we saw evil. And look upon Thy servants, and upon Thy works, and guide their sons. And let the brightness of the Lord our God be upon us, and the works of our hands do Thou prosper, yea, the work of our hands do Thou prosper.\n\nGlory to the Father, and to the Son, and to the Holy Spirit, both now and ever, and unto ages of ages. Amen."
+    },
+    "psalm-100": {
+      "type": "psalm",
+      "lxxNumber": 100,
+      "hebrewNumber": 101,
+      "label": "Psalm 100 (LXX) — Of mercy and judgment I will sing",
+      "text": "I will sing of mercy and judgment; unto Thee, O Lord, will I chant. I will behave wisely in a blameless way. When wilt Thou come unto me? I walked in the innocence of my heart in the midst of my house.\n\nI set no wicked thing before mine eyes; I hated the workers of transgressions; they cleaved not unto me. A crooked heart departed from me; I knew not an evil man.\n\nHim that privily slandered his neighbour, him did I drive away. He that is proud in look and insatiable in heart — with him I did not eat.\n\nMine eyes were upon the faithful of the land, that they should sit with me; the man who walked in a blameless way, he ministered unto me.\n\nThe proud doer dwelled not in the midst of my house; the speaker of unrighteous things prospered not before mine eyes.\n\nIn the mornings I slew all the sinners of the land, that I might cut off from the city of the Lord all them that work iniquity.\n\nGlory to the Father, and to the Son, and to the Holy Spirit, both now and ever, and unto ages of ages. Amen."
+    },
+    "trisagion-prayers": {
+      "type": "text",
+      "label": "Trisagion Prayers",
+      "text": "Holy God, Holy Mighty, Holy Immortal, have mercy on us. (×3)\n\nGlory to the Father, and to the Son, and to the Holy Spirit, both now and ever, and unto ages of ages. Amen.\n\nAll-holy Trinity, have mercy on us. Lord, cleanse us from our sins. Master, pardon our iniquities. Holy One, visit and heal our infirmities for Thy Name's sake.\n\nLord, have mercy. (×3)\n\nGlory to the Father, and to the Son, and to the Holy Spirit, both now and ever, and unto ages of ages. Amen.\n\nOur Father, Who art in Heaven, hallowed be Thy Name. Thy Kingdom come, Thy will be done, on earth as it is in Heaven. Give us this day our daily bread; and forgive us our trespasses, as we forgive those who trespass against us; and lead us not into temptation, but deliver us from evil.\n\nFor Thine is the Kingdom, and the power, and the glory, of the Father, and of the Son, and of the Holy Spirit, now and ever, and unto ages of ages. Amen.\n\nLord, have mercy. (×12)"
+    },
+    "prayer-of-the-first-hour": {
+      "type": "text",
+      "label": "Prayer of the First Hour",
+      "text": "O Christ, the True Light, Who enlightenest and sanctifiest every man that cometh into the world: let the light of Thy countenance be signed upon us, that in it we may see the unapproachable Light; and direct our steps in the keeping of Thy commandments, through the intercessions of Thy most-pure Mother and of all Thy Saints. Amen."
+    }
+  }
+}
