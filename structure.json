@@ -15,7 +15,8 @@
         "3. Redundant liturgical fragments (Gloria Patri/Kyrie) should be normalized into common.json.",
         "4. Saints data model: identities.json + commemorations.json are the canonical source-of-truth. js/saints-resolver.js provides the shared resolver boundary. office-ui.js and admin.html route all saints paths through SaintsResolver. Phase 4 duplicate identity consolidation complete (v2.8.8): 46 pairs resolved, 1,228 identities remain. COE audit and governance complete (v2.8.9). Remaining: normalized-source runtime adapter (SaintsResolver reads monthly cache files at runtime; a true adapter would query identities.json + commemorations.json directly).",
         "5. [CLOSED — v2.8.9] COE saint/commemoration rendering: Three-layer rebuild complete. Layer 1 (season engine) was already operational. Layer 2 (fixed feasts: Sawma Rabba Friday martyrs, pre-Sawma Commemoration of the Faithful Departed) implemented in COE-IIA via getDayClass() in calendar-east-syriac.js. Layer 3 (sparse individual saints) source-data corrected via COE-IIB audit (133 IDs removed), eligibility gate implemented in js/coe-eligibility.js (CoeEligibility.filter()), and display re-enabled in renderEastSyriac(). saint-grid model eliminated. CoeEligibility.filter() is mandatory before any Layer 3 render. Layer 2 output from getDayClass() renders before Layer 3 lookup. No saint-grid fallback. Silence is correct when no eligible saint is present.",
-        "6. EO old/new calendar mode is partially implemented in admin-only tooling (CalendarEngine.getEOSeasonRanges() + admin/admin.html snapshots), but the main application still has no EO mode UI and does not load js/calendar-eastern-orthodox.js on the production path."
+        "6. EO old/new calendar mode is partially implemented in admin-only tooling (CalendarEngine.getEOSeasonRanges() + admin/admin.html snapshots), but the main application still has no EO mode UI and does not load js/calendar-eastern-orthodox.js on the production path.",
+        "7. Duplicate private helper definition in js/horologion-engine.js: _loadTheotokionData() appears twice. Runtime is currently safe because the later definition wins, but the duplicate is architectural debris and should be removed to prevent misleading future edits."
       ],
       "resolved_in_this_version": [
         "1. COE saint section silenced: renderEastSyriac() saint display locked to empty pending architectural rebuild. Previous behaviour was historically inaccurate — string-matching tradition fields was surfacing wrong saints. Silence is liturgically correct for COE weekdays with no fixed saint."
@@ -73,17 +74,20 @@
       "role": "Markup and DOM structure only",
       "lines": "~1175",
       "contains_logic": false,
-      "status": "Current — v3.1 (2026-03-08)",
+      "status": "Current — v3.4 (2026-03-08)",
       "changes": [
-        "1. Added third mode button: 'The Ethiopian Sa'atat (Book of Hours)' with class ethiopian-btn, calling selectMode('ethiopian-saatat') [Phase 7.1]",
-        "2. Added four minor hours to esy-time radio group: qutaa, endana, dtsha-sain, subaa [v2.8.0]",
-        "3. Added 'Byzantine Vespers — Horologion' splash button calling selectMode('horologion-vespers'), placed between 'Church of the East — Hudra' and 'Admin Dashboard' [Horologion v1]",
-        "4. Added js/saints-resolver.js (before js/office-ui.js) and js/horologion-engine.js (before js/office-ui.js) to script load block [Horologion v1]",
-        "5. Added js/menaion-resolver.js immediately before js/horologion-engine.js in script load block [Menaion v1 pilot]",
-        "6. Added #generic-settings panel — neutral sidebar shell for Horologion and future non-BCP traditions. Inserted between #east-syriac-settings and the main content area. Contains: tradition label (#generic-tradition-label), .ordo-control date navigator (generic-display-date, generic-date-picker, generic-ordo-btn buttons, generic-calendar-info). Opened with class='mode-hidden sidebar-hidden'. [v2.9.7 — generic sidebar shell]",
-        "7. Unified Horologion navigation (v3.0): splash button updated to call selectMode('horologion'). #generic-settings sidebar expanded with office selector buttons #hor-btn-vespers (Vespers) and #hor-btn-small-compline (Small Compline). Old selectMode('horologion-vespers') string eliminated.",
-        "8. First Hour added to Horologion office selector (v3.1): #hor-btn-first-hour button added to #generic-settings, calling selectHorologionOffice('first-hour'). Placed after #hor-btn-small-compline."
-      ],
+  "1. Added third mode button: 'The Ethiopian Sa'atat (Book of Hours)' with class ethiopian-btn, calling selectMode('ethiopian-saatat') [Phase 7.1]",
+  "2. Added four minor hours to esy-time radio group: qutaa, endana, dtsha-sain, subaa [v2.8.0]",
+  "3. Added 'Byzantine Vespers — Horologion' splash button calling selectMode('horologion-vespers'), placed between 'Church of the East — Hudra' and 'Admin Dashboard' [Horologion v1]",
+  "4. Added js/saints-resolver.js (before js/office-ui.js) and js/horologion-engine.js (before js/office-ui.js) to script load block [Horologion v1]",
+  "5. Added js/menaion-resolver.js immediately before js/horologion-engine.js in script load block [Menaion v1 pilot]",
+  "6. Added #generic-settings panel — neutral sidebar shell for Horologion and future non-BCP traditions. Inserted between #east-syriac-settings and the main content area. Contains: tradition label (#generic-tradition-label), .ordo-control date navigator (generic-display-date, generic-date-picker, generic-ordo-btn buttons, generic-calendar-info). Opened with class='mode-hidden sidebar-hidden'. [v2.9.7 — generic sidebar shell]",
+  "7. Unified Horologion navigation (v3.0): splash button updated to call selectMode('horologion'). #generic-settings sidebar expanded with office selector buttons #hor-btn-vespers (Vespers) and #hor-btn-small-compline (Small Compline). Old selectMode('horologion-vespers') string eliminated.",
+  "8. First Hour added to Horologion office selector (v3.1): #hor-btn-first-hour button added to #generic-settings, calling selectHorologionOffice('first-hour'). Placed after #hor-btn-small-compline.",
+  "9. Third Hour added to Horologion office selector (v3.2): #hor-btn-third-hour button added to #generic-settings, calling selectHorologionOffice('third-hour').",
+  "10. Sixth Hour added to Horologion office selector (v3.3): #hor-btn-sixth-hour button added to #generic-settings, calling selectHorologionOffice('sixth-hour').",
+  "11. Ninth Hour added to Horologion office selector (v3.4): #hor-btn-ninth-hour button added to #generic-settings, calling selectHorologionOffice('ninth-hour')."
+],
       "script_load_order": [
         "js/calendar-engine.js",
         "js/calendar-ethiopian.js",
@@ -100,7 +104,7 @@
     },
     "js/office-ui.js": {
       "role": "All Daily Office UI logic",
-      "status": "Current — v3.1 (2026-03-08)",
+      "status": "Current — v3.4 (2026-03-08)",
       "primary_functions": [
         "init()",
         "renderOffice()",
@@ -142,12 +146,11 @@
         "16. backToSplash() adds mode-hidden + sidebar-hidden to all four sidebar panels (including #generic-settings). No panel is left active on splash return.",
         "17. updateGenericDateDisplay() — syncs #generic-display-date (long locale string), #generic-date-picker (YYYY-MM-DD), and #generic-calendar-info. Called by selectMode('horologion'), changeDate(), resetDate(), and setCustomDate() when selectedMode === 'horologion'.",
         "18. selectHorologionOffice(officeKey) — sets selectedHorologionOffice, calls _updateHorologionOfficeButtons(), calls requestRender().",
-        "19. _updateHorologionOfficeButtons() — highlights the active office button in #generic-settings for offices ['vespers','small-compline','first-hour'].",
-        "20. _horologionOfficeLabel(officeKey) — returns display label for officeKey: 'vespers'→'Vespers', 'small-compline'→'Small Compline', 'first-hour'→'First Hour'."
+        "19. _updateHorologionOfficeButtons() — highlights the active office button in #generic-settings for offices ['vespers','small-compline','first-hour','third-hour','sixth-hour','ninth-hour'].",
+        "20. _horologionOfficeLabel(officeKey) — returns display label for officeKey: 'vespers'→'Vespers', 'small-compline'→'Small Compline', 'first-hour'→'First Hour', 'third-hour'→'Third Hour', 'sixth-hour'→'Sixth Hour', 'ninth-hour'→'Ninth Hour'."
       ],
-      "horologion_adapter_note": "Thin adapter only. renderHorologionOffice() calls HorologionEngine.resolveOffice(), checks payload.status === 'error' explicitly, renders diagnostic banner when placeholderSlots > 0, walks sections/items via _renderHorologionItem(). _renderHorologionItem() handles types: rubric, psalm (label + formatted body), litany (role-tagged lines: Deacon/Priest/Reader/Bishop → rubric-text; Choir → indented italic), text/fallback (paragraph + linebreak). selectMode('horologion') calls loadKernel() only — no tradition shard needed. No Byzantine logic lives in the UI layer. Office switching via selectHorologionOffice() is purely a UI state change — requestRender() re-calls renderHorologionOffice(selectedHorologionOffice)."
-    },
-    "js/calendar-engine.js": {
+  
+      "js/calendar-engine.js": {
       "role": "All date and liturgical calendar logic",
       "status": "Current — v2.8.9 + 2026-03-06 admin EO diagnostics patch",
       "global_api": "window.CalendarEngine",
@@ -278,7 +281,7 @@
     },
     "js/horologion-engine.js": {
       "role": "Byzantine Horologion office engine — skeleton loading, payload resolution, validation",
-      "status": "Active — Horologion engine v3.1 (2026-03-08)",
+      "status": "Active — Horologion engine v3.4 (2026-03-08)",
       "global_api": "window.HorologionEngine",
       "public_methods": [
         "getOfficeSkeleton(officeKey, traditionVariant) — fetches and caches data/horologion/<officeKey>.json",
@@ -286,21 +289,21 @@
         "validateOfficePayload(payload) — returns { valid, errors[], warnings[] }"
       ],
       "supported_offices_v1": [
-        "vespers",
-        "small-compline",
-        "first-hour"
-      ],
+  "vespers",
+  "small-compline",
+  "first-hour",
+  "third-hour",
+  "sixth-hour",
+  "ninth-hour"
+],
       "tradition_code": "BYZC",
-      "architecture_note": "Engine layer only — no rendering logic. Non-throwing contract: all failure modes return status:'error' payload. v2.1: _resolveTroparionSlot() async, MenaionResolver soft dependency. v3.0: small-compline added; SUPPORTED_OFFICES ['vespers','small-compline']. v3.1: First Hour baseline live; SUPPORTED_OFFICES ['vespers','small-compline','first-hour']. Third, Sixth, Ninth Hours are the next office family — skeletons not yet added.",
-      "supported_offices_next": [
-        "third-hour",
-        "sixth-hour",
-        "ninth-hour"
-      ]
+      "architecture_note": "Horologion v3.5: feast-rank arbitration layer introduced. Qualifying fixed-date Menaion commemorations (rank 1–4) may override the Vespers troparion/apolytikion and govern the dismissal Theotokion tone. Scope in this phase is limited to Vespers troparion and dismissal Theotokion; Little Hours and broader festal slot replacement remain deferred.",
+      "supported_offices_next": []
     },
     "data/horologion/": {
       "role": "Horologion office skeleton data files",
-      "status": "Active — Horologion v3.1 (2026-03-08). Vespers + Small Compline + First Hour operational. Third, Sixth, Ninth Hours next.",
+      "status": "Active — Horologion v3.4 (2026-03-08). Vespers + Small Compline + First Hour + Third Hour + Sixth Hour + Ninth Hour operational.",
+      "milestone_status": "Horologion v3.5 complete: Feast-Rank Override Engine (Phase 1) implemented for Vespers troparion/apolytikion and dismissal Theotokion.",
       "files": {
         "_ref": "Full per-file status in structure-reference.json horologion_files.",
         "vespers.json": {
@@ -323,7 +326,26 @@
         },
         "first-hour-fixed.json": {
           "status": "Active — Horologion v3.1 (2026-03-08) — NEW in v3.1. Fixed-text corpus for the First Hour: usual-beginning, psalm-5 (LXX), psalm-89 (LXX), psalm-100 (LXX), trisagion-prayers, prayer-of-the-first-hour. Variable slots (troparion-of-the-day, first-hour-theotokion) are not here; resolved dynamically by HorologionEngine. Source: Jordanville 2008 edition."
-        }
+        },
+        "third-hour.json": {
+  "status": "Active — Horologion v3.2 (2026-03-08). Third Hour skeleton: fixed slots resolved from third-hour-fixed.json; troparion-of-the-day resolved dynamically; third-hour-theotokion remains a rubric stub (deferred)."
+},
+"third-hour-fixed.json": {
+  "status": "Active — Horologion v3.2 (2026-03-08). Fixed-text corpus for the Third Hour: usual-beginning, psalm-16 (LXX), psalm-24 (LXX), psalm-50 (LXX), trisagion-prayers, prayer-of-the-third-hour. Variable slots (troparion-of-the-day, third-hour-theotokion) are not here; resolved dynamically by HorologionEngine. Source: Jordanville 2008 edition."
+},
+"sixth-hour.json": {
+  "status": "Active — Horologion v3.3 (2026-03-08). Sixth Hour skeleton: fixed slots resolved from sixth-hour-fixed.json; troparion-of-the-day resolved dynamically; sixth-hour-theotokion remains a rubric stub (deferred)."
+},
+"sixth-hour-fixed.json": {
+  "status": "Active — Horologion v3.3 (2026-03-08). Fixed-text corpus for the Sixth Hour: usual-beginning, psalm-53 (LXX), psalm-54 (LXX), psalm-90 (LXX), trisagion-prayers, prayer-of-the-sixth-hour. Variable slots (troparion-of-the-day, sixth-hour-theotokion) are not here; resolved dynamically by HorologionEngine. Source: Jordanville 2008 edition."
+},
+"ninth-hour.json": {
+  "status": "Active — Horologion v3.4 (2026-03-08). Ninth Hour skeleton: fixed slots resolved from ninth-hour-fixed.json; troparion-of-the-day resolved dynamically; ninth-hour-theotokion remains a rubric stub (deferred)."
+},
+"ninth-hour-fixed.json": {
+  "status": "Active — Horologion v3.4 (2026-03-08). Fixed-text corpus for the Ninth Hour: usual-beginning, psalm-83 (LXX), psalm-84 (LXX), psalm-85 (LXX), trisagion-prayers, prayer-of-the-ninth-hour. Variable slots (troparion-of-the-day, ninth-hour-theotokion) are not here; resolved dynamically by HorologionEngine. Source: Jordanville 2008 edition."
+},
+"next_required": "Horologion v3.6: reuse feast-rank override context for Little Hours troparion arbitration."
       }
     },
     "js/menaion-resolver.js": {
@@ -549,7 +571,7 @@
     "horologion_variable_engine": {
       "severity": "LOW",
       "description": "Vespers: all slots resolved across all day-of-week paths (v1.9/v3.0). Small Compline: fixed slots + troparion-of-the-day resolved (v3.0). Remaining: (a) feast-rank override engine — proper feast apolytikia/Theotokia; (b) ~200 menaion text-unavailable entries; (c) Menaion-tone Theotokion conflict; (d) Great Lent/Kathisma overrides — lowest priority.",
-      "action": "First Hour baseline complete. Next concrete tasks: Third Hour, Sixth Hour, Ninth Hour skeletons.",
+      "action": "Little Hours baseline complete. Next concrete tasks: (1) feast-rank override engine (proper feast apolytikia/Theotokia), (2) Menaion text-unavailable resolution, (3) Menaion-tone Theotokion conflict handling, (4) seasonal refinement for Compline and Little Hours (Triodion / Great Lent / Kathisma override layers).",
       "files": [
         "js/horologion-engine.js",
         "js/menaion-resolver.js",
@@ -563,7 +585,7 @@
     }
   },
   "roadmap_summary": {
-    "completed": "Phases 6-8 (BCP, Ethiopian Sa'atat, Senkessar). v2.8.x: COE three-layer model, saints resolver boundary, hydration-race gating, tags[] schema migration, EO admin diagnostics. Horologion v1-v3.0: vespers skeleton through full slot resolution, Menaion annual corpus complete (all 12 months), Small Compline baseline. v2.9.7: generic sidebar shell. First Hour baseline live (v3.1).",
+    "completed": "Phases 6-8 (BCP, Ethiopian Sa'atat, Senkessar). v2.8.x: COE three-layer model, saints resolver boundary, hydration-race gating, tags[] schema migration, EO admin diagnostics. Horologion v1-v3.0: vespers skeleton through full slot resolution, Menaion annual corpus complete (all 12 months), Small Compline baseline. v2.9.7: generic sidebar shell. Little Hours baseline live: First Hour (v3.1), Third Hour (v3.2), Sixth Hour (v3.3), Ninth Hour (v3.4).",
     "next_required": "1. Feast-rank override engine (proper apolytikia/Theotokia). 2. EO app integration.",
     "next_planned": "Feast-rank engine after Little Hours stable. Text-unavailable resolution (~200 Menaion entries). Horologion seasonal refinement (Triodion/Great Lent Compline/Little Hours overrides).",
     "future": "Phase 6.7 — Performance polish (timezone warning, LRU seasonal cache, prefetch, service worker); Phase 7.5 — Coptic Agpeya as standalone tradition entry; Phase 9.0 — Mobile app; Phase 9.1 — Cross-Tradition Search (Comparative scripture view across AR, ET, and SY canons); COE-IIC — Optional Layer 2 expansion: major Hudra fixed feasts (Denha/Epiphany, Sleeba/Exaltation, Annunciation, All Saints)"
@@ -660,21 +682,11 @@
         "phase": "Horologion v3.0"
       },
       {
-        "id": "horologion-little-hours-v1",
-        "title": "Horologion: Little Hours (Third, Sixth, Ninth)",
-        "description": "IN PROGRESS — First Hour baseline complete (v3.1, 2026-03-08): fixed corpus (usual-beginning, psalm-5, psalm-89, psalm-100, trisagion-prayers, prayer-of-the-first-hour) from first-hour-fixed.json; troparion-of-the-day resolved dynamically; first-hour-theotokion remains a rubric stub (deferred). Remaining: Third Hour, Sixth Hour, Ninth Hour skeletons. Fixed Psalms: Third=16,24,50; Sixth=53,54,90; Ninth=83,84,85. Implement as three skeleton JSON files + _resolveLittleHourSlots() extension in horologion-engine.js.",
-        "severity": "LOW",
-        "status": "in-progress",
-        "area": "data/horologion/ + js/horologion-engine.js",
-        "phase": "Horologion v2"
-      },
-      {
         "id": "horologion-orthros-v1",
         "title": "Horologion: Orthros (Matins) v1 — DEFERRED, high complexity",
         "description": "DEFERRED — do not begin until Octoechos tone engine is stable from Vespers work. Orthros is the most structurally complex Byzantine office: two variable kathisma readings per day (Psalter weekly cycle), Canon of 9 odes with variable troparia per tone/week/feast, Lauds Psalms (148–150), variable Exapostilarion, variable Ainoi stichera. Blocked on: horologion-vespers-variable-slots completion.",
         "severity": "LOW",
         "status": "open",
-        "area": "data/horologion/ + js/horologion-engine.js",
         "phase": "Horologion v3 (deferred)"
       }
     ]
@@ -755,4 +767,4 @@
       "detail": "Layer 3 display re-enabled in renderEastSyriac() after COE-IIB source-data corrections and eligibility gate implementation. Two surgical edits only: (1) resolveCommemorations(currentDate, \"COE\") cache warm-up added before office HTML assembly. (2) Silenced Layer 3 tail replaced with gated block: coeRaw → CoeEligibility.filter() → render .saint-section if eligible saints present, hide if none. CoeEligibility.filter() is mandatory — no \"filter all COE-tagged\" shortcut. No saint-grid fallback. Silence is correct when no eligible saint is present. Layer 2 (getDayClass() commemorations[]) renders before Layer 3 lookup. typeof CoeEligibility guard degrades silently if file fails to load."
     }
   ]
-}
+}}

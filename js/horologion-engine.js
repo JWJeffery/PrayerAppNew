@@ -614,8 +614,122 @@ const HorologionEngine = (() => {
         const d = String(dateObj.getDate()).padStart(2, '0');
         return `${y}-${m}-${d}`;
     }
+    // ──────────────────────────────────────────────────────────────────────
+    // v3.5: _resolveFeastOverrideContext(dateObj, dayOfWeek, menaionResult)
+    //
+    // Minimal Vespers feast-rank arbitration layer for Phase 1.
+    // Governs:
+    //   - troparion-or-apolytikion
+    //   - theotokion-dismissal
+    // ──────────────────────────────────────────────────────────────────────
+    function _resolveFeastOverrideContext(dateObj, dayOfWeek, menaionResult) {
+        try {
+            const rank =
+                menaionResult &&
+                typeof menaionResult.rank === 'number'
+                    ? menaionResult.rank
+                    : null;
 
+            const governingTone =
+                menaionResult &&
+                typeof menaionResult.tone === 'number' &&
+                menaionResult.tone >= 1 &&
+                menaionResult.tone <= 8
+                    ? menaionResult.tone
+                    : null;
 
+            const hasOverride = Boolean(
+                menaionResult &&
+                menaionResult.status === 'menaion-resolved' &&
+                typeof menaionResult.text === 'string' &&
+                menaionResult.text.trim() !== '' &&
+                rank !== null &&
+                rank >= 1 &&
+                rank <= 4
+            );
+
+            return {
+                hasOverride:   hasOverride,
+                rank:          hasOverride ? rank : null,
+                governingTone: hasOverride ? governingTone : null,
+                overrideType:  hasOverride ? 'menaion-troparion' : 'none',
+                appliesTo:     hasOverride ? ['troparion', 'theotokion-dismissal'] : []
+            };
+        } catch (err) {
+            return {
+                hasOverride:   false,
+                rank:          null,
+                governingTone: null,
+                overrideType:  'none',
+                appliesTo:     []
+            };
+        }
+    }
+    // ──────────────────────────────────────────────────────────────────────
+    // v3.6: _resolveLittleHourTroparionSlot(dayOfWeek, toneResult, dateObj)
+    //
+    // Reuses the existing feast-rank override context for the Little Hours.
+    //
+    // Rule:
+    //   - If a qualifying fixed-date Menaion commemoration (rank 1–4)
+    //     resolves, return the Menaion troparion.
+    //   - Otherwise preserve the existing baseline behaviour by delegating
+    //     back to _resolveTroparionSlot().
+    //
+    // Scope:
+    //   - first-hour
+    //   - third-hour
+    //   - sixth-hour
+    //   - ninth-hour
+    //
+    // Non-throwing. On resolver failure, falls back to baseline behaviour.
+    // ──────────────────────────────────────────────────────────────────────
+    async function _resolveLittleHourTroparionSlot(dayOfWeek, toneResult, dateObj) {
+        let menaionResult = null;
+        let overrideContext = {
+            hasOverride:   false,
+            rank:          null,
+            governingTone: null,
+            overrideType:  'none',
+            appliesTo:     []
+        };
+
+        if (
+            dateObj &&
+            typeof window !== 'undefined' &&
+            window.MenaionResolver &&
+            typeof window.MenaionResolver.queryTroparion === 'function'
+        ) {
+            try {
+                const mm   = String(dateObj.getMonth() + 1).padStart(2, '0');
+                const dd   = String(dateObj.getDate()).padStart(2, '0');
+                const mmdd = `${mm}-${dd}`;
+
+                menaionResult   = await window.MenaionResolver.queryTroparion(mmdd);
+                overrideContext = _resolveFeastOverrideContext(dateObj, dayOfWeek, menaionResult);
+            } catch (err) {
+                console.warn('[HorologionEngine] Little Hours Menaion troparion lookup failed:', err.message);
+            }
+        }
+
+        if (overrideContext.hasOverride) {
+            return {
+                type:          'text',
+                key:           'troparion-of-the-day',
+                label:         menaionResult.title || `Troparion of ${menaionResult.name || 'the Feast'}`,
+                text:          menaionResult.text,
+                source:        'Menaion',
+                tone:          overrideContext.governingTone,
+                resolvedAs:    'menaion-feast-troparion',
+                overrideType:  'menaion-troparion',
+                governingTone: overrideContext.governingTone,
+                rank:          overrideContext.rank,
+                commemoration: menaionResult.name || null
+            };
+        }
+
+        return await _resolveTroparionSlot(dayOfWeek, toneResult, dateObj);
+    }
     // ──────────────────────────────────────────────────────────────────────
     // v1.3: _computeOrthodoxPascha(gregorianYear)
     //
@@ -1051,7 +1165,7 @@ const pascha = _getOrthodoxPascha(year);
     // The weekday (Mon–Fri) branch queries MenaionResolver for a fixed-date
     // troparion. All other branches (Bright Week, Saturday, Sunday) are
     // synchronous paths wrapped in an async function — behaviour unchanged.
-           async function _resolveTroparionSlot(dayOfWeek, toneResult, dateObj) {
+                     async function _resolveTroparionSlot(dayOfWeek, toneResult, dateObj) {
         // If data file failed to load, degrade to placeholder.
         if (_troparionData === null) return null;
 
@@ -1074,11 +1188,16 @@ const pascha = _getOrthodoxPascha(year);
         const tone = toneResult.tone;
         if (!tone) return null;
 
-        // ── Saturday / Sunday: rank-1/2 Menaion feast may override baseline ──
-        let saturdaySundayFeastOverride = null;
+        let menaionResult = null;
+        let overrideContext = {
+            hasOverride:   false,
+            rank:          null,
+            governingTone: null,
+            overrideType:  'none',
+            appliesTo:     []
+        };
 
         if (
-            (dayOfWeek === 0 || dayOfWeek === 6) &&
             dateObj &&
             typeof window !== 'undefined' &&
             window.MenaionResolver &&
@@ -1088,42 +1207,33 @@ const pascha = _getOrthodoxPascha(year);
                 const mm   = String(dateObj.getMonth() + 1).padStart(2, '0');
                 const dd   = String(dateObj.getDate()).padStart(2, '0');
                 const mmdd = `${mm}-${dd}`;
-                const mr   = await window.MenaionResolver.queryTroparion(mmdd);
 
-                const hasResolvedText =
-                    mr &&
-                    mr.status === 'menaion-resolved' &&
-                    typeof mr.text === 'string' &&
-                    mr.text.trim() !== '';
-
-                const isQualifyingRank =
-                    mr &&
-                    typeof mr.rank === 'number' &&
-                    mr.rank <= 2;
-
-                if (hasResolvedText && isQualifyingRank) {
-                    saturdaySundayFeastOverride = mr;
-                }
+                menaionResult   = await window.MenaionResolver.queryTroparion(mmdd);
+                overrideContext = _resolveFeastOverrideContext(dateObj, dayOfWeek, menaionResult);
             } catch (err) {
-                console.warn('[HorologionEngine] Saturday/Sunday feast override pre-check failed:', err.message);
+                console.warn('[HorologionEngine] Menaion troparion lookup failed:', err.message);
             }
         }
 
         // ── Sunday Small Vespers ───────────────────────────────────────────────
         if (dayOfWeek === 0) {
-            if (saturdaySundayFeastOverride) {
+            if (overrideContext.hasOverride) {
                 return {
                     type:               'text',
                     key:                'troparion-or-apolytikion',
-                    label:              saturdaySundayFeastOverride.title || `Troparion of ${saturdaySundayFeastOverride.name || 'the Feast'}`,
-                    text:               saturdaySundayFeastOverride.text,
+                    label:              menaionResult.title || `Troparion of ${menaionResult.name || 'the Feast'}`,
+                    text:               menaionResult.text,
                     source:             'Menaion',
-                    tone:               saturdaySundayFeastOverride.tone || null,
-                    rank:               saturdaySundayFeastOverride.rank,
-                    feastName:          saturdaySundayFeastOverride.name || 'Feast of the Day',
-                    feastRankOverride:  true,
+                    tone:               overrideContext.governingTone,
+                    rank:               overrideContext.rank,
+                    feastName:          menaionResult.name || 'Feast of the Day',
+                    commemoration:      menaionResult.name || null,
+                    overrideType:       overrideContext.overrideType,
+                    appliesTo:          overrideContext.appliesTo.slice(),
+                    governingTone:      overrideContext.governingTone,
+                    feastRankOverride:  overrideContext.rank !== null && overrideContext.rank <= 2,
                     overriddenBaseline: 'resurrectional-troparion-sunday',
-                    resolvedAs:         'menaion-feast-override'
+                    resolvedAs:         'menaion-feast-troparion'
                 };
             }
 
@@ -1137,8 +1247,9 @@ const pascha = _getOrthodoxPascha(year);
                 label:      entry.title,
                 text:       entry.text + '\n\n' +
                             `(BASELINE — Sunday Small Vespers, Tone ${tone}. ` +
-                            `A rank 1–2 fixed feast of the Lord or Theotokos may displace this ` +
-                            `resurrectional apolytikion; feast-rank arbitration is only partially implemented.)`,
+                            `A qualifying fixed-date Menaion commemoration of rank 1–4 may displace this ` +
+                            `resurrectional apolytikion. This Phase 1 arbitration is currently limited ` +
+                            `to the troparion and dismissal Theotokion only.)`,
                 source:     'Octoechos',
                 tone,
                 resolvedAs: 'resurrectional-troparion-sunday'
@@ -1147,19 +1258,23 @@ const pascha = _getOrthodoxPascha(year);
 
         // ── Saturday Great Vespers ─────────────────────────────────────────────
         if (dayOfWeek === 6) {
-            if (saturdaySundayFeastOverride) {
+            if (overrideContext.hasOverride) {
                 return {
                     type:               'text',
                     key:                'troparion-or-apolytikion',
-                    label:              saturdaySundayFeastOverride.title || `Troparion of ${saturdaySundayFeastOverride.name || 'the Feast'}`,
-                    text:               saturdaySundayFeastOverride.text,
+                    label:              menaionResult.title || `Troparion of ${menaionResult.name || 'the Feast'}`,
+                    text:               menaionResult.text,
                     source:             'Menaion',
-                    tone:               saturdaySundayFeastOverride.tone || null,
-                    rank:               saturdaySundayFeastOverride.rank,
-                    feastName:          saturdaySundayFeastOverride.name || 'Feast of the Day',
-                    feastRankOverride:  true,
+                    tone:               overrideContext.governingTone,
+                    rank:               overrideContext.rank,
+                    feastName:          menaionResult.name || 'Feast of the Day',
+                    commemoration:      menaionResult.name || null,
+                    overrideType:       overrideContext.overrideType,
+                    appliesTo:          overrideContext.appliesTo.slice(),
+                    governingTone:      overrideContext.governingTone,
+                    feastRankOverride:  overrideContext.rank !== null && overrideContext.rank <= 2,
                     overriddenBaseline: 'resurrectional-troparion-saturday',
-                    resolvedAs:         'menaion-feast-override'
+                    resolvedAs:         'menaion-feast-troparion'
                 };
             }
 
@@ -1173,8 +1288,9 @@ const pascha = _getOrthodoxPascha(year);
                 label:      entry.title,
                 text:       entry.text + '\n\n' +
                             `(BASELINE — Saturday Great Vespers, Tone ${tone}. ` +
-                            `A rank 1–2 fixed feast may override the resurrectional troparion; ` +
-                            `full feast-rank arbitration remains deferred.)`,
+                            `A qualifying fixed-date Menaion commemoration of rank 1–4 may override ` +
+                            `the resurrectional troparion. This Phase 1 arbitration is currently limited ` +
+                            `to the troparion and dismissal Theotokion only.)`,
                 source:     'Octoechos',
                 tone,
                 resolvedAs: 'resurrectional-troparion-saturday'
@@ -1200,54 +1316,44 @@ const pascha = _getOrthodoxPascha(year);
 
         if (!weekdayMeta) return null;
 
-        if (
-            dateObj &&
-            typeof window !== 'undefined' &&
-            window.MenaionResolver &&
-            typeof window.MenaionResolver.queryTroparion === 'function'
-        ) {
-            try {
-                const mm   = String(dateObj.getMonth() + 1).padStart(2, '0');
-                const dd   = String(dateObj.getDate()).padStart(2, '0');
-                const mmdd = `${mm}-${dd}`;
-                const mr   = await window.MenaionResolver.queryTroparion(mmdd);
+        if (menaionResult && menaionResult.status === 'menaion-text-unavailable') {
+            return {
+                type:          'rubric',
+                key:           'troparion-or-apolytikion',
+                label:         'Troparion / Apolytikion',
+                text:
+                    `(Weekday Vespers — ${_capitalise(weekdayKey)}, Tone ${tone}. ` +
+                    `The appointed Menaion troparion is for ${menaionResult.name || 'the day’s commemoration'}, ` +
+                    `but the text is not yet available in the imported corpus. ` +
+                    `Weekday theme: ${weekdayMeta.theme}.` +
+                    (weekdayMeta.fasting_day ? ' This is a fasting day.' : '') +
+                    `)`,
+                tone,
+                weekdayTheme:  weekdayMeta.theme_short || weekdayMeta.theme || null,
+                commemoration: menaionResult.name || null,
+                resolvedAs:    'menaion-text-unavailable'
+            };
+        }
 
-                if (mr && mr.status === 'menaion-resolved' && mr.text) {
-                    return {
-                        type:         'text',
-                        key:          'troparion-or-apolytikion',
-                        label:        mr.title || `Troparion of ${mr.name || 'the Day'}`,
-                        text:         mr.text,
-                        source:       'Menaion',
-                        tone:         mr.tone || null,
-                        rank:         mr.rank || null,
-                        commemoration: mr.name || null,
-                        weekdayTheme: weekdayMeta.theme_short || weekdayMeta.theme || null,
-                        resolvedAs:   'menaion-troparion'
-                    };
-                }
-
-                if (mr && mr.status === 'menaion-text-unavailable') {
-                    return {
-                        type:         'rubric',
-                        key:          'troparion-or-apolytikion',
-                        label:        'Troparion / Apolytikion',
-                        text:
-                            `(Weekday Vespers — ${_capitalise(weekdayKey)}, Tone ${tone}. ` +
-                            `The appointed Menaion troparion is for ${mr.name || 'the day’s commemoration'}, ` +
-                            `but the text is not yet available in the imported corpus. ` +
-                            `Weekday theme: ${weekdayMeta.theme}.` +
-                            (weekdayMeta.fasting_day ? ' This is a fasting day.' : '') +
-                            `)`,
-                        tone,
-                        weekdayTheme: weekdayMeta.theme_short || weekdayMeta.theme || null,
-                        commemoration: mr.name || null,
-                        resolvedAs:   'menaion-text-unavailable'
-                    };
-                }
-            } catch (err) {
-                console.warn('[HorologionEngine] Menaion weekday troparion lookup failed:', err.message);
-            }
+        if (overrideContext.hasOverride) {
+            return {
+                type:          'text',
+                key:           'troparion-or-apolytikion',
+                label:         menaionResult.title || `Troparion of ${menaionResult.name || 'the Day'}`,
+                text:          menaionResult.text,
+                source:        'Menaion',
+                tone:          overrideContext.governingTone,
+                rank:          overrideContext.rank,
+                commemoration: menaionResult.name || null,
+                weekdayTheme:  weekdayMeta.theme_short || weekdayMeta.theme || null,
+                overrideType:  overrideContext.overrideType,
+                appliesTo:     overrideContext.appliesTo.slice(),
+                governingTone: overrideContext.governingTone,
+                feastRankOverride: overrideContext.rank !== null && overrideContext.rank <= 2,
+                menaionName:   menaionResult.name || null,
+                menaionRank:   overrideContext.rank,
+                resolvedAs:    'menaion-feast-troparion'
+            };
         }
 
         return {
@@ -1265,9 +1371,6 @@ const pascha = _getOrthodoxPascha(year);
             resolvedAs:   'weekday-theme-rubric'
         };
     }
-
-    async function _loadTheotokionData() {    }
-
     async function _loadTheotokionData() {
         if (_theotokionData !== null) return; // already loaded or attempted
 
@@ -1351,57 +1454,19 @@ const pascha = _getOrthodoxPascha(year);
 
 
     // ──────────────────────────────────────────────────────────────────────
-    // v1.7: _resolveTheotokionSlot(dayOfWeek, toneResult)
-    //
-    // Returns a resolved item for the theotokion-dismissal slot,
-    // or null if the data file has not loaded (graceful degradation).
-    //
-    // dayOfWeek: JS Date.getDay() value (0 = Sunday … 6 = Saturday)
-    // toneResult: object from _computeBaselineTone() — { tone, brightWeek, ... }
-    //
-    // RULE: Dismissal Theotokion of the current Octoechos tone.
-    //
-    // SATURDAY (ordinary Great Vespers):
-    //   Returns the full dismissal Theotokion text for the computed tone.
-    //   These are the apolytikion-paired dismissal Theotokia of the Octoechos,
-    //   invariable for each tone. Require no Menaion.
-    //   Source: data/horologion/vespers-theotokion.json, keyed by tone string.
-    //   resolvedAs: 'dismissal-theotokion-saturday'
-    //
-    // BRIGHT WEEK (Pascha Sunday through Thomas Saturday):
-    //   The Paschal Troparion itself serves as the dismissal during Bright Week;
-    //   there is no separate dismissal Theotokion. This is a liturgical omission,
-    //   not a data gap. Returns an explanatory rubric.
-    //   resolvedAs: 'bright-week-no-theotokion'
-    //
-    // WEEKDAY (Monday–Friday) ORDINARY — v1.9:
-    //   Returns full Octoechos weekday Theotokion text (type:'text') for the
-    //   current tone + day. Mon, Tue, Thu: standard weekday Theotokion.
-    //   Wed, Fri: Stavrotheotokion (Cross Theotokion), the standard Byzantine
-    //   practice for the weekly fasting days.
-    //   Source: data/horologion/vespers-weekday-theotokion.json (40 entries).
-    //   LIMITATION: The ideal Theotokion follows the tone of the Menaion
-    //   troparion, which may differ from the weekly Octoechos tone. This
-    //   baseline uses the Octoechos tone — correct when the two agree (ordinary
-    //   weeks with no feast). The limitation is stated openly in the output.
-    //   resolvedAs: 'weekday-octoechos-theotokion'
-    //   Graceful degradation: if weekday data file failed to load, falls back
-    //   to the v1.7 tone-identified rubric stub (resolvedAs: 'weekday-menaion-required').
-    //
-    // SUNDAY:
-    //
-    // FESTAL OVERRIDES:
-    //   Not implemented. When a Great Feast falls on Saturday, its proper
-    //   Theotokion replaces the ordinary tone Theotokion. Requires feast-rank
-    //   engine. The Saturday output states this limitation explicitly.
-    //
-    // Returns: a resolved item object, or null on data load failure.
     // ──────────────────────────────────────────────────────────────────────
-        function _resolveTheotokionSlot(dayOfWeek, toneResult, resolvedTroparionItem) {
-        // If data file failed to load, degrade to placeholder.
+    // v3.5: _resolveTheotokionSlot(dayOfWeek, toneResult, resolvedTroparionItem)
+    //
+    // Returns a resolved item for the theotokion-dismissal slot.
+    //
+    // Phase 1 feast-rank override support:
+    // If the troparion came from a qualifying Menaion feast,
+    // the dismissal Theotokion follows the Menaion tone.
+    // Otherwise, existing Octoechos weekday/Saturday/Sunday behavior is preserved.
+    // ──────────────────────────────────────────────────────────────────────
+    function _resolveTheotokionSlot(dayOfWeek, toneResult, resolvedTroparionItem) {
         if (_theotokionData === null) return null;
 
-        // ── Bright Week: no dismissal Theotokion ───────────────────────────────
         if (toneResult.brightWeek) {
             return {
                 type:       'rubric',
@@ -1417,44 +1482,64 @@ const pascha = _getOrthodoxPascha(year);
         const tone = toneResult.tone;
         if (!tone) return null;
 
-        // ── Sunday Small Vespers ───────────────────────────────────────────────
+        const isFeastOverride =
+            resolvedTroparionItem &&
+            resolvedTroparionItem.overrideType === 'menaion-troparion';
+
+        const feastTone =
+            isFeastOverride &&
+            typeof resolvedTroparionItem.governingTone === 'number' &&
+            resolvedTroparionItem.governingTone >= 1 &&
+            resolvedTroparionItem.governingTone <= 8
+                ? resolvedTroparionItem.governingTone
+                : null;
+
+        const governingTone = feastTone || tone;
+
+        // Sunday Small Vespers
         if (dayOfWeek === 0) {
             const theotokia = _theotokionData.dismissal_theotokia;
-            const entry = theotokia && theotokia[String(tone)];
+            const entry = theotokia && theotokia[String(governingTone)];
             if (!entry) return null;
 
             return {
                 type:       'text',
                 key:        'theotokion-dismissal',
                 label:      entry.title,
-                text:       entry.text,
+                text:       isFeastOverride
+                    ? entry.text + '\n\n' +
+                      `(FEAST-RANK OVERRIDE — dismissal Theotokion governed by the Menaion troparion tone, Tone ${governingTone}.)`
+                    : entry.text,
                 source:     'Octoechos',
-                tone,
-                resolvedAs: 'dismissal-theotokion-sunday'
+                tone:       governingTone,
+                resolvedAs: isFeastOverride ? 'menaion-feast-theotokion' : 'dismissal-theotokion-sunday'
             };
         }
 
-        // ── Saturday Great Vespers ─────────────────────────────────────────────
+        // Saturday Great Vespers
         if (dayOfWeek === 6) {
             const theotokia = _theotokionData.dismissal_theotokia;
-            const entry = theotokia && theotokia[String(tone)];
+            const entry = theotokia && theotokia[String(governingTone)];
             if (!entry) return null;
 
             return {
                 type:       'text',
                 key:        'theotokion-dismissal',
                 label:      entry.title,
-                text:       entry.text + '\n\n' +
-                            `(BASELINE — Saturday Great Vespers, Tone ${tone}. ` +
-                            `A major fixed feast may alter the dismissal structure; ` +
-                            `full feast-rank arbitration remains deferred.)`,
+                text:       isFeastOverride
+                    ? entry.text + '\n\n' +
+                      `(FEAST-RANK OVERRIDE — dismissal Theotokion governed by the Menaion troparion tone, Tone ${governingTone}.)`
+                    : entry.text + '\n\n' +
+                      `(BASELINE — Saturday Great Vespers, Tone ${governingTone}. ` +
+                      `A major fixed feast may alter the dismissal structure; ` +
+                      `full feast-rank arbitration remains deferred outside the Phase 1 troparion/Theotokion layer.)`,
                 source:     'Octoechos',
-                tone,
-                resolvedAs: 'dismissal-theotokion-saturday'
+                tone:       governingTone,
+                resolvedAs: isFeastOverride ? 'menaion-feast-theotokion' : 'dismissal-theotokion-saturday'
             };
         }
 
-        // ── Weekday Vespers (Mon–Fri) ──────────────────────────────────────────
+        // Weekday Vespers (Mon–Fri)
         const weekdayMap = {
             1: 'monday',
             2: 'tuesday',
@@ -1468,8 +1553,8 @@ const pascha = _getOrthodoxPascha(year);
         const weekdayEntry =
             _weekdayTheotokionData &&
             _weekdayTheotokionData.weekday_theotokia &&
-            _weekdayTheotokionData.weekday_theotokia[String(tone)] &&
-            _weekdayTheotokionData.weekday_theotokia[String(tone)][weekdayKey];
+            _weekdayTheotokionData.weekday_theotokia[String(governingTone)] &&
+            _weekdayTheotokionData.weekday_theotokia[String(governingTone)][weekdayKey];
 
         if (!weekdayEntry) {
             return {
@@ -1477,12 +1562,16 @@ const pascha = _getOrthodoxPascha(year);
                 key:        'theotokion-dismissal',
                 label:      'Theotokion',
                 text:
-                    `(Weekday Vespers — ${_capitalise(weekdayKey)}, Tone ${tone}. ` +
-                    `The weekday dismissal Theotokion could not be loaded. ` +
-                    `In ordinary weeks it normally follows the tone in use; in fuller implementation ` +
-                    `it should track the tone of the Menaion troparion when that differs from the Octoechos.)`,
-                tone,
-                resolvedAs: 'weekday-theotokion-data-missing'
+                    isFeastOverride
+                        ? `(Weekday Vespers — ${_capitalise(weekdayKey)}, Tone ${governingTone}. ` +
+                          `A qualifying Menaion commemoration governs the dismissal Theotokion tone for this slot, ` +
+                          `but the corresponding weekday Theotokion could not be loaded.)`
+                        : `(Weekday Vespers — ${_capitalise(weekdayKey)}, Tone ${governingTone}. ` +
+                          `The weekday dismissal Theotokion could not be loaded. ` +
+                          `In ordinary weeks it normally follows the tone in use; in fuller implementation ` +
+                          `it should track the tone of the Menaion troparion when that differs from the Octoechos.)`,
+                tone:       governingTone,
+                resolvedAs: isFeastOverride ? 'menaion-feast-theotokion-missing' : 'weekday-theotokion-data-missing'
             };
         }
 
@@ -1490,14 +1579,17 @@ const pascha = _getOrthodoxPascha(year);
             type:       'text',
             key:        'theotokion-dismissal',
             label:      weekdayEntry.title || 'Theotokion',
-            text:       weekdayEntry.text + '\n\n' +
-                        `(BASELINE — Weekday Vespers, ${_capitalise(weekdayKey)}, Tone ${tone}. ` +
-                        `This uses the Octoechos weekday Theotokion. In full implementation, ` +
-                        `the dismissal Theotokion ideally follows the tone of the Menaion troparion ` +
-                        `when that differs from the weekly Octoechos tone.)`,
+            text:       isFeastOverride
+                ? weekdayEntry.text + '\n\n' +
+                  `(FEAST-RANK OVERRIDE — dismissal Theotokion governed by the Menaion troparion tone, Tone ${governingTone}.)`
+                : weekdayEntry.text + '\n\n' +
+                  `(BASELINE — Weekday Vespers, ${_capitalise(weekdayKey)}, Tone ${governingTone}. ` +
+                  `This uses the Octoechos weekday Theotokion. In full implementation, ` +
+                  `the dismissal Theotokion ideally follows the tone of the Menaion troparion ` +
+                  `when that differs from the weekly Octoechos tone.)`,
             source:     'Octoechos',
-            tone,
-            resolvedAs: 'weekday-octoechos-theotokion'
+            tone:       governingTone,
+            resolvedAs: isFeastOverride ? 'menaion-feast-theotokion' : 'weekday-octoechos-theotokion'
         };
     }
     function _capitalise(str) {
@@ -1761,7 +1853,7 @@ const pascha = _getOrthodoxPascha(year);
 
                 // ── troparion-of-the-day ──────────────────────────────────
                 if (item.key === 'troparion-of-the-day') {
-                    const resolved = await _resolveTroparionSlot(dayOfWeek, toneResult, dateObj);
+                    const resolved = await _resolveLittleHourTroparionSlot(dayOfWeek, toneResult, dateObj);
                     if (resolved) {
                         section.items[i] = Object.assign({}, resolved, {
                             key: 'troparion-of-the-day'
@@ -1848,7 +1940,7 @@ async function _loadThirdHourFixedData() {
                 }
 
                 if (item.key === 'troparion-of-the-day') {
-                    const resolved = await _resolveTroparionSlot(dayOfWeek, toneResult, dateObj);
+                       const resolved = await _resolveLittleHourTroparionSlot(dayOfWeek, toneResult, dateObj);
                     if (resolved) {
                         section.items[i] = Object.assign({}, resolved, {
                             key: 'troparion-of-the-day'
@@ -1934,7 +2026,7 @@ async function _loadThirdHourFixedData() {
                 }
 
                 if (item.key === 'troparion-of-the-day') {
-                    const resolved = await _resolveTroparionSlot(dayOfWeek, toneResult, dateObj);
+                    const resolved = await _resolveLittleHourTroparionSlot(dayOfWeek, toneResult, dateObj);
                     if (resolved) {
                         section.items[i] = Object.assign({}, resolved, {
                             key: 'troparion-of-the-day'
@@ -2020,7 +2112,7 @@ async function _loadThirdHourFixedData() {
                 }
 
                 if (item.key === 'troparion-of-the-day') {
-                    const resolved = await _resolveTroparionSlot(dayOfWeek, toneResult, dateObj);
+                    const resolved = await _resolveLittleHourTroparionSlot(dayOfWeek, toneResult, dateObj);
                     if (resolved) {
                         section.items[i] = Object.assign({}, resolved, {
                             key: 'troparion-of-the-day'
@@ -2043,6 +2135,81 @@ async function _loadThirdHourFixedData() {
                     continue;
                 }
             }
+        }
+    }
+        // ──────────────────────────────────────────────────────────────────────
+    // v3.7: _resolveFestalRubricOverrideSlot(slotKey, slotLabel, resolvedTroparionItem)
+    //
+    // Reuses the existing feast-override metadata already produced by the
+    // Vespers troparion arbitration layer.
+    //
+    // Scope in this phase:
+    //   - stichera-at-lord-i-have-cried
+    //   - aposticha
+    //
+    // Returns:
+    //   - rubric item if a qualifying feast governs the slot
+    //   - null if no rubric override applies
+    //
+    // Non-throwing.
+    // ──────────────────────────────────────────────────────────────────────
+    function _resolveFestalRubricOverrideSlot(slotKey, slotLabel, resolvedTroparionItem) {
+        try {
+            if (
+                !resolvedTroparionItem ||
+                resolvedTroparionItem.overrideType !== 'menaion-troparion'
+            ) {
+                return null;
+            }
+
+            const commemoration =
+                resolvedTroparionItem.commemoration ||
+                resolvedTroparionItem.menaionName ||
+                null;
+
+            const rank =
+                typeof resolvedTroparionItem.rank === 'number'
+                    ? resolvedTroparionItem.rank
+                    : (
+                        typeof resolvedTroparionItem.menaionRank === 'number'
+                            ? resolvedTroparionItem.menaionRank
+                            : null
+                    );
+
+            const governingTone =
+                typeof resolvedTroparionItem.governingTone === 'number'
+                    ? resolvedTroparionItem.governingTone
+                    : null;
+
+            let text = null;
+
+            if (slotKey === 'stichera-at-lord-i-have-cried') {
+                text =
+                    `Proper festal stichera from the Menaion should be appointed here` +
+                    (commemoration ? ` for ${commemoration}` : '') +
+                    `. Ordinary weekday Octoechos stichera are displaced by the qualifying feast.`;
+            } else if (slotKey === 'aposticha') {
+                text =
+                    `Proper festal aposticha from the Menaion should be appointed here` +
+                    (commemoration ? ` for ${commemoration}` : '') +
+                    `. Ordinary weekday Octoechos aposticha are displaced by the qualifying feast.`;
+            } else {
+                return null;
+            }
+
+            return {
+                type:          'rubric',
+                key:           slotKey,
+                label:         slotLabel,
+                text:          text,
+                resolvedAs:    'menaion-feast-rubric',
+                overrideType:  'menaion-troparion',
+                governingTone: governingTone,
+                rank:          rank,
+                commemoration: commemoration
+            };
+        } catch (err) {
+            return null;
         }
     }
     // ──────────────────────────────────────────────────────────────────────
@@ -2359,7 +2526,6 @@ async function _loadThirdHourFixedData() {
 
             for (let i = 0; i < section.items.length; i++) {
                 const item = section.items[i];
-
                 // ── daily-prokeimenon (v1.2) ──────────────────────────────
                 if (item.key === 'daily-prokeimenon') {
                     const pk = _prokeimenaByDay && _prokeimenaByDay[dayOfWeek];
@@ -2434,7 +2600,7 @@ async function _loadThirdHourFixedData() {
                         };
                     }
                 }
-                // ── stichera-at-lord-i-have-cried (v1.3 / v2.3) ──────────
+                // ── stichera-at-lord-i-have-cried (v1.3 / v3.7) ──────────
                 else if (item.key === 'stichera-at-lord-i-have-cried') {
                     if (toneResult.brightWeek) {
                         // Bright Week: Paschal hymns, not Octoechos — unchanged
@@ -2442,50 +2608,55 @@ async function _loadThirdHourFixedData() {
                             type:       'rubric',
                             key:        'stichera-at-lord-i-have-cried',
                             label:      'Stichera at "Lord, I have cried"',
-                            text:       '(Bright Week — Paschal Tone. During Bright Week (Pascha Sunday through Thomas Saturday), the Resurrectional Stichera of Tone 1 are replaced by Paschal hymns. Ordinary Octoechos stichera are not used this week.)',
+                            text:       '(Bright Week — Paschal Tone. During Bright Week (Pascha Sunday through Thomas Saturday), the stichera at "Lord, I have cried" are Paschal hymns, not the ordinary Octoechos stichera.)',
                             resolvedAs: 'bright-week-paschal-tone'
                         };
-                        } else if (isHolyWeek) {
-                        // v2.7: Holy Week override — replaces ordinary/Lent output
+                    } else if (isHolyWeek) {
+                        // v2.7: Holy Week override
                         section.items[i] = _buildHolyWeekRubric(
                             'stichera-at-lord-i-have-cried',
                             'Stichera at "Lord, I have cried"',
                             holyWeekDay
                         );
-                    } else if (isWeekday && _preResolvedTroparion && _preResolvedTroparion.feastRankOverride === true) {
-                        // v2.3: rank-1/2 weekday feast — unchanged
-                        section.items[i] = {
-                            type:       'rubric',
-                            key:        'stichera-at-lord-i-have-cried',
-                            label:      'Stichera at "Lord, I have cried"',
-                            text:       `(FEAST-RANK OVERRIDE — ${_preResolvedTroparion.menaionName}, ` +
-                                        `Rank ${_preResolvedTroparion.menaionRank}. ` +
-                                        `The ordinary weekday Octoechos stichera (${octoechosWeekdayKey} theme) are displaced by this feast. ` +
-                                        `Proper festal stichera for this commemoration are not yet in the corpus. ` +
-                                        `When available, the appointed stichera from the Menaion for this feast will appear here.)`,
-                            menaionName: _preResolvedTroparion.menaionName,
-                            menaionRank: _preResolvedTroparion.menaionRank,
-                            resolvedAs:  'weekday-feast-stichera-pending'
-                        };
-                    } else if (isGreatLentWeekday) {
-                        // v2.6: Great Lent weekday — ordinary Octoechos weekday stichera
-                        // are not sung during Great Lent. Triodion stichera corpus not yet
-                        // available; render an explicit Lenten seasonal rubric.
-                        section.items[i] = {
-                            type:       'rubric',
-                            key:        'stichera-at-lord-i-have-cried',
-                            label:      'Stichera at "Lord, I have cried"',
-                            text:       '(GREAT LENT — weekday Vespers. ' +
-                                        'The ordinary Octoechos weekday stichera are not appointed during Great Lent. ' +
-                                        'The stichera at "Lord, I have cried" on Lenten weekdays are drawn from the Triodion. ' +
-                                        'The Triodion corpus is not yet available in this engine. ' +
-                                        'When available, the appointed Lenten stichera will appear here.)',
-                            resolvedAs: 'great-lent-stichera-pending'
-                        };
+                    } else if (isWeekday) {
+                        const festalRubricOverride = _resolveFestalRubricOverrideSlot(
+                            'stichera-at-lord-i-have-cried',
+                            'Stichera at "Lord, I have cried"',
+                            _preResolvedTroparion
+                        );
+
+                        if (festalRubricOverride) {
+                            section.items[i] = festalRubricOverride;
+                        } else if (isGreatLentWeekday) {
+                            section.items[i] = {
+                                type:       'rubric',
+                                key:        'stichera-at-lord-i-have-cried',
+                                label:      'Stichera at "Lord, I have cried"',
+                                text:       '(GREAT LENT — weekday Vespers. ' +
+                                            'The ordinary Octoechos weekday stichera are not appointed during Great Lent. ' +
+                                            'The stichera at "Lord, I have cried" on Lenten weekdays are drawn from the Triodion. ' +
+                                            'The Triodion corpus is not yet available in this engine. ' +
+                                            'When available, the appointed Lenten stichera will appear here.)',
+                                resolvedAs: 'great-lent-stichera-pending'
+                            };
+                        } else if (toneResult.tone) {
+                            const resolved = _resolveSticheraSlot(
+                                toneResult.tone,
+                                octoechosWeekdayKey,
+                                'stichera_at_lord_i_have_cried',
+                                toneResult
+                            );
+                            if (resolved) {
+                                section.items[i] = resolved;
+                            }
+                            // If null (data load failed), slot remains placeholder
+                        }
                     } else if (toneResult.tone) {
                         const resolved = _resolveSticheraSlot(
-                            toneResult.tone, octoechosWeekdayKey,
-                            'stichera_at_lord_i_have_cried', toneResult
+                            toneResult.tone,
+                            octoechosWeekdayKey,
+                            'stichera_at_lord_i_have_cried',
+                            toneResult
                         );
                         if (resolved) {
                             // v1.8: Sunday Small Vespers label patch.
@@ -2509,7 +2680,7 @@ async function _loadThirdHourFixedData() {
                     }
                 }
 
-                // ── aposticha (v1.3 / v2.3) ───────────────────────────────
+                // ── aposticha (v1.3 / v3.7) ───────────────────────────────
                 else if (item.key === 'aposticha') {
                     if (toneResult.brightWeek) {
                         // Bright Week unchanged
@@ -2520,47 +2691,52 @@ async function _loadThirdHourFixedData() {
                             text:       '(Bright Week — Paschal Tone. During Bright Week, the Aposticha are Paschal hymns, not the ordinary Octoechos aposticha.)',
                             resolvedAs: 'bright-week-paschal-tone'
                         };
-                        } else if (isHolyWeek) {
+                    } else if (isHolyWeek) {
                         // v2.7: Holy Week override
                         section.items[i] = _buildHolyWeekRubric(
                             'aposticha',
                             'Aposticha',
                             holyWeekDay
                         );
-                    } else if (isWeekday && _preResolvedTroparion && _preResolvedTroparion.feastRankOverride === true) {
-                        // v2.3: rank-1/2 weekday feast — unchanged
-                        section.items[i] = {
-                            type:       'rubric',
-                            key:        'aposticha',
-                            label:      'Aposticha',
-                            text:       `(FEAST-RANK OVERRIDE — ${_preResolvedTroparion.menaionName}, ` +
-                                        `Rank ${_preResolvedTroparion.menaionRank}. ` +
-                                        `The ordinary weekday Octoechos aposticha (${octoechosWeekdayKey} theme) are displaced by this feast. ` +
-                                        `Proper festal aposticha for this commemoration are not yet in the corpus. ` +
-                                        `When available, the appointed aposticha from the Menaion for this feast will appear here.)`,
-                            menaionName: _preResolvedTroparion.menaionName,
-                            menaionRank: _preResolvedTroparion.menaionRank,
-                            resolvedAs:  'weekday-feast-aposticha-pending'
-                        };
-                    } else if (isGreatLentWeekday) {
-                        // v2.6: Great Lent weekday — ordinary Octoechos weekday aposticha
-                        // are not sung during Great Lent. Triodion aposticha corpus not yet
-                        // available; render an explicit Lenten seasonal rubric.
-                        section.items[i] = {
-                            type:       'rubric',
-                            key:        'aposticha',
-                            label:      'Aposticha',
-                            text:       '(GREAT LENT — weekday Vespers. ' +
-                                        'The ordinary Octoechos weekday aposticha are not appointed during Great Lent. ' +
-                                        'The aposticha on Lenten weekdays are drawn from the Triodion. ' +
-                                        'The Triodion corpus is not yet available in this engine. ' +
-                                        'When available, the appointed Lenten aposticha will appear here.)',
-                            resolvedAs: 'great-lent-aposticha-pending'
-                        };
+                    } else if (isWeekday) {
+                        const festalRubricOverride = _resolveFestalRubricOverrideSlot(
+                            'aposticha',
+                            'Aposticha',
+                            _preResolvedTroparion
+                        );
+
+                        if (festalRubricOverride) {
+                            section.items[i] = festalRubricOverride;
+                        } else if (isGreatLentWeekday) {
+                            section.items[i] = {
+                                type:       'rubric',
+                                key:        'aposticha',
+                                label:      'Aposticha',
+                                text:       '(GREAT LENT — weekday Vespers. ' +
+                                            'The ordinary Octoechos weekday aposticha are not appointed during Great Lent. ' +
+                                            'The aposticha on Lenten weekdays are drawn from the Triodion. ' +
+                                            'The Triodion corpus is not yet available in this engine. ' +
+                                            'When available, the appointed Lenten aposticha will appear here.)',
+                                resolvedAs: 'great-lent-aposticha-pending'
+                            };
+                        } else if (toneResult.tone) {
+                            const resolved = _resolveSticheraSlot(
+                                toneResult.tone,
+                                octoechosWeekdayKey,
+                                'aposticha',
+                                toneResult
+                            );
+                            if (resolved) {
+                                section.items[i] = resolved;
+                            }
+                            // If null (data load failed), slot remains placeholder
+                        }
                     } else if (toneResult.tone) {
                         const resolved = _resolveSticheraSlot(
-                            toneResult.tone, octoechosWeekdayKey,
-                            'aposticha', toneResult
+                            toneResult.tone,
+                            octoechosWeekdayKey,
+                            'aposticha',
+                            toneResult
                         );
                         if (resolved) {
                             // v1.8: Sunday Small Vespers label patch.
@@ -2581,18 +2757,6 @@ async function _loadThirdHourFixedData() {
                         }
                         // If null (data load failed), slot remains placeholder
                     }
-                }
-
-                // ── kathisma-reading (v1.5) ───────────────────────────────
-                // Baseline: standard Byzantine Psalter weekly cycle, Mon–Sat.
-                // Sunday and Bright Week are handled with explicit honest notes.
-                // Festal/Lenten overrides are NOT implemented in this pass.
-                else if (item.key === 'kathisma-reading') {
-                    const resolved = _resolveKathismaSlot(dayOfWeek, toneResult.brightWeek);
-                    if (resolved) {
-                        section.items[i] = resolved;
-                    }
-                    // If null (data load failed), slot remains placeholder.
                 }
 
                 // ── troparion-or-apolytikion (v1.6 / v2.3) ───────────────
@@ -2654,7 +2818,12 @@ async function _loadThirdHourFixedData() {
                     // retain that troparion's tone-corrected Theotokion.
                     const troparionItem = section.items.find(it => it.key === 'troparion-or-apolytikion');
                     const hasMenaionTroparion = troparionItem &&
-                        troparionItem.resolvedAs === 'menaion-resolved';
+                        (
+                            troparionItem.overrideType === 'menaion-troparion' ||
+                            troparionItem.resolvedAs === 'menaion-feast-troparion' ||
+                            troparionItem.resolvedAs === 'menaion-troparion' ||
+                            troparionItem.resolvedAs === 'menaion-resolved'
+                        );
 
                     if (isHolyWeek) {
                         // v2.7: Holy Week override
@@ -2687,43 +2856,19 @@ async function _loadThirdHourFixedData() {
     }
 
     function _deepCopySections(sections) {
-        // Simple structured clone; avoids mutating cached skeleton
         try {
             return JSON.parse(JSON.stringify(sections));
         } catch (e) {
             console.error('[HorologionEngine] _deepCopySections: clone failed', e);
             return sections;
         }
-    }
+}
 
-    function _officeTitleFallback(officeKey) {
-        const titles = {
-            vespers:           'Vespers',
-            orthros:           'Orthros (Matins)',
-            'midnight-office': 'Midnight Office',
-            'first-hour':      'First Hour',
-            'third-hour':      'Third Hour',
-            'sixth-hour':      'Sixth Hour',
-            'ninth-hour':      'Ninth Hour',
-            compline:          'Compline (Small Apodeipnon)'
-        };
-        return titles[officeKey] || officeKey;
-    }
-
-
-    // ══════════════════════════════════════════════════════════════════════
-    // Public API
-    // ══════════════════════════════════════════════════════════════════════
-    return {
-        getOfficeSkeleton,
-        resolveOffice,
-        validateOfficePayload,
-        /** Read-only list of offices supported in v1 */
-        SUPPORTED_OFFICES: Object.freeze(SUPPORTED_OFFICES),
-        /** Tradition code for this engine */
-        TRADITION: TRADITION
-    };
+return {
+    getOfficeSkeleton,
+    resolveOffice,
+    validateOfficePayload
+};
 })();
 
-// Expose globally for the no-build-step SPA pattern
 window.HorologionEngine = HorologionEngine;
