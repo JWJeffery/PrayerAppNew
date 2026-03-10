@@ -728,7 +728,61 @@ const HorologionEngine = (() => {
             };
         }
 
-        return await _resolveTroparionSlot(dayOfWeek, toneResult, dateObj);
+               return await _resolveTroparionSlot(dayOfWeek, toneResult, dateObj);
+    }
+
+    // ──────────────────────────────────────────────────────────────────────
+    // v4.0: _normalizeOrdinaryTroparionFallbackForOffice(officeKey, resolved)
+    //
+    // Rewrites the inherited Vespers-oriented weekday-theme-rubric so that
+    // Small Compline and the Little Hours emit office-appropriate rubric text.
+    //
+    // This function ONLY fires for:
+    //   resolvedAs === 'weekday-theme-rubric'
+    //
+    // It does not alter:
+    //   - feast overrides
+    //   - seasonal overrides
+    //   - Vespers output
+    // ──────────────────────────────────────────────────────────────────────
+    function _normalizeOrdinaryTroparionFallbackForOffice(officeKey, resolved) {
+        if (!resolved || resolved.resolvedAs !== 'weekday-theme-rubric') {
+            return resolved;
+        }
+
+        const OFFICE_TEXT = {
+            'small-compline':
+                'On ordinary weekdays, the proper troparion appointment for Small Compline belongs here. ' +
+                'The full weekday text requires the Menaion and is not yet available in this office.',
+
+            'first-hour':
+                'On ordinary weekdays, the proper troparion appointment for the First Hour belongs here. ' +
+                'The full weekday text requires the Menaion and is not yet available in this office.',
+
+            'third-hour':
+                'On ordinary weekdays, the proper troparion appointment for the Third Hour belongs here. ' +
+                'The full weekday text requires the Menaion and is not yet available in this office.',
+
+            'sixth-hour':
+                'On ordinary weekdays, the proper troparion appointment for the Sixth Hour belongs here. ' +
+                'The full weekday text requires the Menaion and is not yet available in this office.',
+
+            'ninth-hour':
+                'On ordinary weekdays, the proper troparion appointment for the Ninth Hour belongs here. ' +
+                'The full weekday text requires the Menaion and is not yet available in this office.'
+        };
+
+        if (!OFFICE_TEXT[officeKey]) {
+            return resolved;
+        }
+
+        return {
+            ...resolved,
+            key:       'troparion-of-the-day',
+            label:     'Troparion of the Day',
+            text:      OFFICE_TEXT[officeKey],
+            officeKey: officeKey
+        };
     }
 
     // ──────────────────────────────────────────────────────────────────────
@@ -804,141 +858,8 @@ const HorologionEngine = (() => {
             };
         }
 
-        return resolved;
+        return _normalizeOrdinaryTroparionFallbackForOffice(officeKey, resolved);
     }
-
-    // ──────────────────────────────────────────────────────────────────────
-    // v3.9: _resolveComplineSeasonalTroparionSlot(dayOfWeek, dateObj, toneResult)
-    //
-    // Small Compline seasonal override layer (Phase 4B).
-    //
-    // Precedence:
-    //   1. existing qualifying feast behaviour already resolved through
-    //      _resolveTroparionSlot()
-    //   2. Great Lent weekday seasonal rubric override
-    //   3. existing ordinary fallback behaviour
-    //
-    // Scope in this phase:
-    //   - small-compline
-    //   - troparion-of-the-day
-    //   - Great Lent weekdays only (Mon–Fri)
-    //
-    // This helper does not author Triodion text. It returns a truthful rubric
-    // item when the current Small Compline path would otherwise fall through
-    // to the ordinary non-feast weekday rubric path.
-    // ──────────────────────────────────────────────────────────────────────
-    async function _resolveComplineSeasonalTroparionSlot(dayOfWeek, dateObj, toneResult) {
-        const resolved = await _resolveTroparionSlot(dayOfWeek, toneResult, dateObj);
-
-        // Preserve any existing feast-winning behaviour.
-        if (resolved && resolved.resolvedAs === 'menaion-feast-troparion') {
-            return resolved;
-        }
-
-        const seasonResult = _computeLiturgicalSeason(dateObj, toneResult);
-        const isGreatLentWeekday =
-            seasonResult &&
-            seasonResult.season === 'great-lent' &&
-            dayOfWeek >= 1 &&
-            dayOfWeek <= 5;
-
-        // Only displace the ordinary non-feast weekday fallback path.
-        if (
-            isGreatLentWeekday &&
-            resolved &&
-            resolved.resolvedAs === 'weekday-theme-rubric'
-        ) {
-            const WEEKDAY_NAMES = {
-                1: 'monday',
-                2: 'tuesday',
-                3: 'wednesday',
-                4: 'thursday',
-                5: 'friday'
-            };
-
-            return {
-                type:         'rubric',
-                key:          'troparion-of-the-day',
-                label:        'Troparion of the Day',
-                text:         'On Great Lent weekdays, the seasonal troparion appointment for Small Compline belongs here. The ordinary baseline troparion-of-the-day path is displaced by the season.',
-                resolvedAs:   'compline-lenten-rubric',
-                overrideType: 'seasonal-lent',
-                season:       'great-lent',
-                officeKey:    'small-compline',
-                weekday:      WEEKDAY_NAMES[dayOfWeek] || null,
-                source:       'Seasonal'
-            };
-        }
-
-        return resolved;
-    }
-
-    // ──────────────────────────────────────────────────────────────────────
-    // v3.9: _resolveComplineSeasonalTroparionSlot(dayOfWeek, dateObj, toneResult)
-    //
-    // Small Compline seasonal override layer (Phase 4B).
-    //
-    // Precedence:
-    //   1. existing qualifying feast behaviour already resolved through
-    //      _resolveTroparionSlot()
-    //   2. Great Lent weekday seasonal rubric override
-    //   3. existing ordinary fallback behaviour
-    //
-    // Scope in this phase:
-    //   - small-compline
-    //   - troparion-of-the-day
-    //   - Great Lent weekdays only (Mon–Fri)
-    //
-    // This helper does not author Triodion text. It returns a truthful rubric
-    // item when the current Small Compline path would otherwise fall through
-    // to the ordinary non-feast weekday rubric path.
-    // ──────────────────────────────────────────────────────────────────────
-    async function _resolveComplineSeasonalTroparionSlot(dayOfWeek, dateObj, toneResult) {
-        const resolved = await _resolveTroparionSlot(dayOfWeek, toneResult, dateObj);
-
-        // Preserve any existing feast-winning behaviour.
-        if (resolved && resolved.resolvedAs === 'menaion-feast-troparion') {
-            return resolved;
-        }
-
-        const seasonResult = _computeLiturgicalSeason(dateObj, toneResult);
-        const isGreatLentWeekday =
-            seasonResult &&
-            seasonResult.season === 'great-lent' &&
-            dayOfWeek >= 1 &&
-            dayOfWeek <= 5;
-
-        // Only displace the ordinary non-feast weekday fallback path.
-        if (
-            isGreatLentWeekday &&
-            resolved &&
-            resolved.resolvedAs === 'weekday-theme-rubric'
-        ) {
-            const WEEKDAY_NAMES = {
-                1: 'monday',
-                2: 'tuesday',
-                3: 'wednesday',
-                4: 'thursday',
-                5: 'friday'
-            };
-
-            return {
-                type:         'rubric',
-                key:          'troparion-of-the-day',
-                label:        'Troparion of the Day',
-                text:         'On Great Lent weekdays, the seasonal troparion appointment for Small Compline belongs here. The ordinary baseline troparion-of-the-day path is displaced by the season.',
-                resolvedAs:   'compline-lenten-rubric',
-                overrideType: 'seasonal-lent',
-                season:       'great-lent',
-                officeKey:    'small-compline',
-                weekday:      WEEKDAY_NAMES[dayOfWeek] || null,
-                source:       'Seasonal'
-            };
-        }
-
-        return resolved;
-    }
-
     // ──────────────────────────────────────────────────────────────────────
     // v1.3: _computeOrthodoxPascha(gregorianYear)
     //
@@ -1931,6 +1852,72 @@ const pascha = _getOrthodoxPascha(year);
     //
     // Non-throwing. On data file failure, fixed slots remain as placeholders.
     // ──────────────────────────────────────────────────────────────────────
+    // ──────────────────────────────────────────────────────────────────────
+    // v3.9: _resolveComplineSeasonalTroparionSlot(dayOfWeek, dateObj, toneResult)
+    //
+    // Small Compline seasonal override layer (Phase 4B).
+    //
+    // Precedence:
+    //   1. existing qualifying feast behaviour already resolved through
+    //      _resolveTroparionSlot()
+    //   2. Great Lent weekday seasonal rubric override
+    //   3. existing ordinary fallback behaviour
+    //
+    // Scope in this phase:
+    //   - small-compline
+    //   - troparion-of-the-day
+    //   - Great Lent weekdays only (Mon–Fri)
+    //
+    // This helper does not author Triodion text. It returns a truthful rubric
+    // item when the current Small Compline path would otherwise fall through
+    // to the ordinary non-feast weekday rubric path.
+    // ──────────────────────────────────────────────────────────────────────
+    async function _resolveComplineSeasonalTroparionSlot(dayOfWeek, dateObj, toneResult) {
+        const resolved = await _resolveTroparionSlot(dayOfWeek, toneResult, dateObj);
+
+        // Preserve any existing feast-winning behaviour.
+        if (resolved && resolved.resolvedAs === 'menaion-feast-troparion') {
+            return resolved;
+        }
+
+        const seasonResult = _computeLiturgicalSeason(dateObj, toneResult);
+        const isGreatLentWeekday =
+            seasonResult &&
+            seasonResult.season === 'great-lent' &&
+            dayOfWeek >= 1 &&
+            dayOfWeek <= 5;
+
+        // Only displace the ordinary non-feast weekday fallback path.
+        if (
+            isGreatLentWeekday &&
+            resolved &&
+            resolved.resolvedAs === 'weekday-theme-rubric'
+        ) {
+            const WEEKDAY_NAMES = {
+                1: 'monday',
+                2: 'tuesday',
+                3: 'wednesday',
+                4: 'thursday',
+                5: 'friday'
+            };
+
+            return {
+                type:         'rubric',
+                key:          'troparion-of-the-day',
+                label:        'Troparion of the Day',
+                text:         'On Great Lent weekdays, the seasonal troparion appointment for Small Compline belongs here. The ordinary baseline troparion-of-the-day path is displaced by the season.',
+                resolvedAs:   'compline-lenten-rubric',
+                overrideType: 'seasonal-lent',
+                season:       'great-lent',
+                officeKey:    'small-compline',
+                weekday:      WEEKDAY_NAMES[dayOfWeek] || null,
+                source:       'Seasonal'
+            };
+        }
+
+        return _normalizeOrdinaryTroparionFallbackForOffice('small-compline', resolved);
+    }
+
     async function _resolveComplineSlots(sections, dateObj) {
         await Promise.all([
             _loadComplineFixedData(),
