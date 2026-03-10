@@ -784,7 +784,165 @@ const HorologionEngine = (() => {
             officeKey: officeKey
         };
     }
+        // ──────────────────────────────────────────────────────────────────────
+    // v4.1: _normalizeTheotokionRubricForOffice(officeKey, resolvedItem)
+    //
+    // Rewrites deferred Little Hours Theotokion rubric outputs so that the
+    // user-facing wording is office-specific and truthful.
+    //
+    // This function ONLY fires for:
+    //   - first-hour-theotokion-deferred
+    //   - third-hour-theotokion-deferred
+    //   - sixth-hour-theotokion-deferred
+    //   - ninth-hour-theotokion-deferred
+    //
+    // It does not alter:
+    //   - authored text paths
+    //   - Vespers logic
+    //   - feast override logic
+    //   - seasonal override logic
+    // ──────────────────────────────────────────────────────────────────────
+    function _normalizeTheotokionRubricForOffice(officeKey, resolvedItem) {
+        const NORMALIZABLE = new Set([
+            'first-hour-theotokion-deferred',
+            'third-hour-theotokion-deferred',
+            'sixth-hour-theotokion-deferred',
+            'ninth-hour-theotokion-deferred'
+        ]);
 
+        if (
+            !resolvedItem ||
+            resolvedItem.type !== 'rubric' ||
+            !NORMALIZABLE.has(resolvedItem.resolvedAs)
+        ) {
+            return resolvedItem;
+        }
+
+        const OFFICE_CONFIG = {
+            'first-hour': {
+                key:   'first-hour-theotokion',
+                label: 'Theotokion of the First Hour',
+                text:
+                    'On ordinary days, the proper Theotokion appointment for the First Hour belongs here. ' +
+                    'The full text for this office is not yet available in this path.'
+            },
+            'third-hour': {
+                key:   'third-hour-theotokion',
+                label: 'Theotokion of the Third Hour',
+                text:
+                    'On ordinary days, the proper Theotokion appointment for the Third Hour belongs here. ' +
+                    'The full text for this office is not yet available in this path.'
+            },
+            'sixth-hour': {
+                key:   'sixth-hour-theotokion',
+                label: 'Theotokion of the Sixth Hour',
+                text:
+                    'On ordinary days, the proper Theotokion appointment for the Sixth Hour belongs here. ' +
+                    'The full text for this office is not yet available in this path.'
+            },
+            'ninth-hour': {
+                key:   'ninth-hour-theotokion',
+                label: 'Theotokion of the Ninth Hour',
+                text:
+                    'On ordinary days, the proper Theotokion appointment for the Ninth Hour belongs here. ' +
+                    'The full text for this office is not yet available in this path.'
+            }
+        };
+
+        const config = OFFICE_CONFIG[officeKey];
+        if (!config) {
+            return resolvedItem;
+        }
+
+        return {
+            ...resolvedItem,
+            key:       config.key,
+            label:     config.label,
+            text:      config.text,
+            officeKey: officeKey
+        };
+    }
+    // ──────────────────────────────────────────────────────────────────────
+    // v4.1: _normalizeTheotokionRubricForOffice(officeKey, resolvedItem)
+    //
+    // Rewrites deferred/rubric Theotokion outputs for the Little Hours so
+    // that office-facing wording is truthful and office-specific.
+    //
+    // This function ONLY fires for the current deferred rubric paths:
+    //   - first-hour-theotokion-deferred
+    //   - third-hour-theotokion-deferred
+    //   - sixth-hour-theotokion-deferred
+    //   - ninth-hour-theotokion-deferred
+    //
+    // It does not alter:
+    //   - authored text paths
+    //   - Vespers Theotokion logic
+    //   - feast override logic
+    //   - seasonal override logic
+    // ──────────────────────────────────────────────────────────────────────
+    function _normalizeTheotokionRubricForOffice(officeKey, resolvedItem) {
+        const NORMALIZABLE_RESOLVED_AS = new Set([
+            'first-hour-theotokion-deferred',
+            'third-hour-theotokion-deferred',
+            'sixth-hour-theotokion-deferred',
+            'ninth-hour-theotokion-deferred'
+        ]);
+
+        if (
+            !resolvedItem ||
+            resolvedItem.type !== 'rubric' ||
+            !NORMALIZABLE_RESOLVED_AS.has(resolvedItem.resolvedAs)
+        ) {
+            return resolvedItem;
+        }
+
+        const OFFICE_CONFIG = {
+            'first-hour': {
+                key:   'first-hour-theotokion',
+                label: 'Theotokion of the First Hour',
+                text:
+                    'On ordinary days, the proper Theotokion appointment for the First Hour belongs here. ' +
+                    'The full text for this office is not yet available in this path.'
+            },
+
+            'third-hour': {
+                key:   'third-hour-theotokion',
+                label: 'Theotokion of the Third Hour',
+                text:
+                    'On ordinary days, the proper Theotokion appointment for the Third Hour belongs here. ' +
+                    'The full text for this office is not yet available in this path.'
+            },
+
+            'sixth-hour': {
+                key:   'sixth-hour-theotokion',
+                label: 'Theotokion of the Sixth Hour',
+                text:
+                    'On ordinary days, the proper Theotokion appointment for the Sixth Hour belongs here. ' +
+                    'The full text for this office is not yet available in this path.'
+            },
+
+            'ninth-hour': {
+                key:   'ninth-hour-theotokion',
+                label: 'Theotokion of the Ninth Hour',
+                text:
+                    'On ordinary days, the proper Theotokion appointment for the Ninth Hour belongs here. ' +
+                    'The full text for this office is not yet available in this path.'
+            }
+        };
+
+        const config = OFFICE_CONFIG[officeKey];
+        if (!config) {
+            return resolvedItem;
+        }
+
+        return {
+            ...resolvedItem,
+            key:       config.key,
+            label:     config.label,
+            text:      config.text,
+            officeKey: officeKey
+        };
+    }
     // ──────────────────────────────────────────────────────────────────────
     // v3.8: _resolveLittleHourSeasonalTroparionSlot(officeKey, dayOfWeek, dateObj, toneResult)
     //
@@ -2081,16 +2239,13 @@ const pascha = _getOrthodoxPascha(year);
 
                 // ── first-hour-theotokion — deferred baseline ─────────────
                 if (item.key === 'first-hour-theotokion') {
-                    const toneName = toneResult && toneResult.tone
-                        ? `Tone ${toneResult.tone}`
-                        : 'tone not resolved';
-                    section.items[i] = {
+                    section.items[i] = _normalizeTheotokionRubricForOffice('first-hour', {
                         type:       'rubric',
                         key:        'first-hour-theotokion',
                         label:      item.label || 'Theotokion of the First Hour',
-                        text:       `[First Hour Theotokion — ${toneName}. The dismissal Theotokion of the First Hour is tone-dependent and drawn from the Octoechos. Full text deferred pending First Hour Octoechos data. Source: Byzantine Horologion, Jordanville 2008.]`,
+                        text:       'On ordinary days, the proper Theotokion appointment for the First Hour belongs here. The full text for this office is not yet available in this path.',
                         resolvedAs: 'first-hour-theotokion-deferred'
-                    };
+                    });
                     continue;
                 }
 
@@ -2167,16 +2322,13 @@ async function _loadThirdHourFixedData() {
                 }
 
                 if (item.key === 'third-hour-theotokion') {
-                    const toneName = toneResult && toneResult.tone
-                        ? `Tone ${toneResult.tone}`
-                        : 'tone not resolved';
-                    section.items[i] = {
+                    section.items[i] = _normalizeTheotokionRubricForOffice('third-hour', {
                         type:       'rubric',
                         key:        'third-hour-theotokion',
                         label:      item.label || 'Theotokion of the Third Hour',
-                        text:       `[Third Hour Theotokion — ${toneName}. Tone-dependent; drawn from the Octoechos. Full text deferred pending Third Hour Octoechos data. Source: Byzantine Horologion, Jordanville 2008.]`,
+                        text:       'On ordinary days, the proper Theotokion appointment for the Third Hour belongs here. The full text for this office is not yet available in this path.',
                         resolvedAs: 'third-hour-theotokion-deferred'
-                    };
+                    });
                     continue;
                 }
             }
@@ -2253,16 +2405,13 @@ async function _loadThirdHourFixedData() {
                 }
 
                 if (item.key === 'sixth-hour-theotokion') {
-                    const toneName = toneResult && toneResult.tone
-                        ? `Tone ${toneResult.tone}`
-                        : 'tone not resolved';
-                    section.items[i] = {
+                    section.items[i] = _normalizeTheotokionRubricForOffice('sixth-hour', {
                         type:       'rubric',
                         key:        'sixth-hour-theotokion',
                         label:      item.label || 'Theotokion of the Sixth Hour',
-                        text:       `[Sixth Hour Theotokion — ${toneName}. Tone-dependent; drawn from the Octoechos. Full text deferred pending Sixth Hour Octoechos data. Source: Byzantine Horologion, Jordanville 2008.]`,
+                        text:       'On ordinary days, the proper Theotokion appointment for the Sixth Hour belongs here. The full text for this office is not yet available in this path.',
                         resolvedAs: 'sixth-hour-theotokion-deferred'
-                    };
+                    });
                     continue;
                 }
             }
@@ -2338,17 +2487,14 @@ async function _loadThirdHourFixedData() {
                     continue;
                 }
 
-                if (item.key === 'ninth-hour-theotokion') {
-                    const toneName = toneResult && toneResult.tone
-                        ? `Tone ${toneResult.tone}`
-                        : 'tone not resolved';
-                    section.items[i] = {
+                                if (item.key === 'ninth-hour-theotokion') {
+                    section.items[i] = _normalizeTheotokionRubricForOffice('ninth-hour', {
                         type:       'rubric',
                         key:        'ninth-hour-theotokion',
                         label:      item.label || 'Theotokion of the Ninth Hour',
-                        text:       `[Ninth Hour Theotokion — ${toneName}. Tone-dependent; drawn from the Octoechos. Full text deferred pending Ninth Hour Octoechos data. Source: Byzantine Horologion, Jordanville 2008.]`,
+                        text:       'On ordinary days, the proper Theotokion appointment for the Ninth Hour belongs here. The full text for this office is not yet available in this path.',
                         resolvedAs: 'ninth-hour-theotokion-deferred'
-                    };
+                    });
                     continue;
                 }
             }
