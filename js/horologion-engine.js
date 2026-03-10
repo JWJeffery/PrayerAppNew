@@ -785,100 +785,29 @@ const HorologionEngine = (() => {
         };
     }
         // ──────────────────────────────────────────────────────────────────────
-    // v4.1: _normalizeTheotokionRubricForOffice(officeKey, resolvedItem)
+    // v4.1/v4.3: Little Hours Theotokion normalization + festal rubric override
     //
-    // Rewrites deferred Little Hours Theotokion rubric outputs so that the
-    // user-facing wording is office-specific and truthful.
+    // _normalizeTheotokionRubricForOffice(...)
+    //   Rewrites deferred/rubric Theotokion outputs for the Little Hours so
+    //   that office-facing wording is truthful and office-specific.
     //
-    // This function ONLY fires for:
-    //   - first-hour-theotokion-deferred
-    //   - third-hour-theotokion-deferred
-    //   - sixth-hour-theotokion-deferred
-    //   - ninth-hour-theotokion-deferred
+    // _resolveLittleHourFestalTheotokionRubric(...)
+    //   Reuses the already-resolved troparion-of-the-day item from the same
+    //   office section. If that troparion resolved as a qualifying Menaion
+    //   feast troparion, the ordinary deferred Theotokion rubric is displaced
+    //   by an explicit festal rubric item.
     //
-    // It does not alter:
-    //   - authored text paths
-    //   - Vespers logic
-    //   - feast override logic
-    //   - seasonal override logic
-    // ──────────────────────────────────────────────────────────────────────
-    function _normalizeTheotokionRubricForOffice(officeKey, resolvedItem) {
-        const NORMALIZABLE = new Set([
-            'first-hour-theotokion-deferred',
-            'third-hour-theotokion-deferred',
-            'sixth-hour-theotokion-deferred',
-            'ninth-hour-theotokion-deferred'
-        ]);
-
-        if (
-            !resolvedItem ||
-            resolvedItem.type !== 'rubric' ||
-            !NORMALIZABLE.has(resolvedItem.resolvedAs)
-        ) {
-            return resolvedItem;
-        }
-
-        const OFFICE_CONFIG = {
-            'first-hour': {
-                key:   'first-hour-theotokion',
-                label: 'Theotokion of the First Hour',
-                text:
-                    'On ordinary days, the proper Theotokion appointment for the First Hour belongs here. ' +
-                    'The full text for this office is not yet available in this path.'
-            },
-            'third-hour': {
-                key:   'third-hour-theotokion',
-                label: 'Theotokion of the Third Hour',
-                text:
-                    'On ordinary days, the proper Theotokion appointment for the Third Hour belongs here. ' +
-                    'The full text for this office is not yet available in this path.'
-            },
-            'sixth-hour': {
-                key:   'sixth-hour-theotokion',
-                label: 'Theotokion of the Sixth Hour',
-                text:
-                    'On ordinary days, the proper Theotokion appointment for the Sixth Hour belongs here. ' +
-                    'The full text for this office is not yet available in this path.'
-            },
-            'ninth-hour': {
-                key:   'ninth-hour-theotokion',
-                label: 'Theotokion of the Ninth Hour',
-                text:
-                    'On ordinary days, the proper Theotokion appointment for the Ninth Hour belongs here. ' +
-                    'The full text for this office is not yet available in this path.'
-            }
-        };
-
-        const config = OFFICE_CONFIG[officeKey];
-        if (!config) {
-            return resolvedItem;
-        }
-
-        return {
-            ...resolvedItem,
-            key:       config.key,
-            label:     config.label,
-            text:      config.text,
-            officeKey: officeKey
-        };
-    }
-    // ──────────────────────────────────────────────────────────────────────
-    // v4.1: _normalizeTheotokionRubricForOffice(officeKey, resolvedItem)
+    // Scope:
+    //   - first-hour
+    //   - third-hour
+    //   - sixth-hour
+    //   - ninth-hour
     //
-    // Rewrites deferred/rubric Theotokion outputs for the Little Hours so
-    // that office-facing wording is truthful and office-specific.
-    //
-    // This function ONLY fires for the current deferred rubric paths:
-    //   - first-hour-theotokion-deferred
-    //   - third-hour-theotokion-deferred
-    //   - sixth-hour-theotokion-deferred
-    //   - ninth-hour-theotokion-deferred
-    //
-    // It does not alter:
-    //   - authored text paths
-    //   - Vespers Theotokion logic
-    //   - feast override logic
-    //   - seasonal override logic
+    // Does not alter:
+    //   - Vespers
+    //   - Small Compline
+    //   - season logic
+    //   - authored/full-text Theotokion paths
     // ──────────────────────────────────────────────────────────────────────
     function _normalizeTheotokionRubricForOffice(officeKey, resolvedItem) {
         const NORMALIZABLE_RESOLVED_AS = new Set([
@@ -943,26 +872,70 @@ const HorologionEngine = (() => {
             officeKey: officeKey
         };
     }
-    // ──────────────────────────────────────────────────────────────────────
-    // v3.8: _resolveLittleHourSeasonalTroparionSlot(officeKey, dayOfWeek, dateObj, toneResult)
-    //
-    // Little Hours seasonal override layer (Phase 4A).
-    //
-    // Precedence:
-    //   1. qualifying Menaion feast override
-    //   2. Great Lent weekday seasonal rubric override
-    //   3. existing ordinary fallback behaviour
-    //
-    // Scope:
-    //   - first-hour
-    //   - third-hour
-    //   - sixth-hour
-    //   - ninth-hour
-    //
-    // This helper does NOT invent seasonal text. It returns an explicit rubric
-    // item when a Great Lent weekday would otherwise fall through to the
-    // ordinary non-feast weekday baseline path.
-    // ──────────────────────────────────────────────────────────────────────
+
+    function _resolveLittleHourFestalTheotokionRubric(officeKey, troparionItem, fallbackRubric) {
+        if (
+            !troparionItem ||
+            troparionItem.resolvedAs !== 'menaion-feast-troparion'
+        ) {
+            return fallbackRubric;
+        }
+
+        const OFFICE_CONFIG = {
+            'first-hour': {
+                key:   'first-hour-theotokion',
+                label: 'Theotokion of the First Hour',
+                text:
+                    'When a qualifying feast provides the troparion of the day, the ordinary Theotokion of the First Hour is displaced by the proper festal Theotokion or other festal appointment.',
+                resolvedAs: 'little-hour-feast-theotokion-rubric'
+            },
+
+            'third-hour': {
+                key:   'third-hour-theotokion',
+                label: 'Theotokion of the Third Hour',
+                text:
+                    'When a qualifying feast provides the troparion of the day, the ordinary Theotokion of the Third Hour is displaced by the proper festal Theotokion or other festal appointment.',
+                resolvedAs: 'little-hour-feast-theotokion-rubric'
+            },
+
+            'sixth-hour': {
+                key:   'sixth-hour-theotokion',
+                label: 'Theotokion of the Sixth Hour',
+                text:
+                    'When a qualifying feast provides the troparion of the day, the ordinary Theotokion of the Sixth Hour is displaced by the proper festal Theotokion or other festal appointment.',
+                resolvedAs: 'little-hour-feast-theotokion-rubric'
+            },
+
+            'ninth-hour': {
+                key:   'ninth-hour-theotokion',
+                label: 'Theotokion of the Ninth Hour',
+                text:
+                    'When a qualifying feast provides the troparion of the day, the ordinary Theotokion of the Ninth Hour is displaced by the proper festal Theotokion or other festal appointment.',
+                resolvedAs: 'little-hour-feast-theotokion-rubric'
+            }
+        };
+
+        const config = OFFICE_CONFIG[officeKey];
+        if (!config) {
+            return fallbackRubric;
+        }
+
+        return {
+            type:          'rubric',
+            key:           config.key,
+            label:         config.label,
+            text:          config.text,
+            resolvedAs:    config.resolvedAs,
+            overrideType:  'menaion-troparion',
+            
+            officeKey:     officeKey,
+            source:        'Menaion',
+            commemoration: troparionItem.commemoration || null,
+            governingTone: troparionItem.governingTone || troparionItem.tone || null,
+            rank:          typeof troparionItem.rank === 'number' ? troparionItem.rank : null
+        };
+    }
+
     async function _resolveLittleHourSeasonalTroparionSlot(officeKey, dayOfWeek, dateObj, toneResult) {
         const resolved = await _resolveLittleHourTroparionSlot(dayOfWeek, toneResult, dateObj);
 
@@ -1037,27 +1010,6 @@ const HorologionEngine = (() => {
     // correct for all dates from 1900 through 2099 — the operational range
     // of this application.
     // ──────────────────────────────────────────────────────────────────────
-    function _computeOrthodoxPascha(gregorianYear) {
-        const y = gregorianYear;
-        const a = y % 4;
-        const b = y % 7;
-        const c = y % 19;
-        const d = (19 * c + 15) % 30;
-        const e = (2 * a + 4 * b - d + 34) % 7;
-        const f = Math.floor((d + e + 114) / 31); // 3 = March, 4 = April
-        const g = ((d + e + 114) % 31) + 1;
-
-        // Julian date (f, g) → Gregorian: add 13 days (correct 1900–2099)
-        const JULIAN_TO_GREGORIAN_OFFSET_DAYS = 13;
-        // Convert Julian date to a JS Date via a neutral calculation:
-        // JS Date constructor with year/month/day handles overflow automatically.
-        // Month index: f=3 → month 2 (0-based March), f=4 → month 3 (0-based April).
-        const julianDay   = new Date(y, f - 1, g);
-        const gregMs      = julianDay.getTime() + JULIAN_TO_GREGORIAN_OFFSET_DAYS * 86400000;
-        const raw         = new Date(gregMs);
-        // Return local midnight (no time component)
-        return new Date(raw.getFullYear(), raw.getMonth(), raw.getDate());
-    }
     function _computeOrthodoxPascha(gregorianYear) {
         const y = gregorianYear;
         const a = y % 4;
@@ -2237,15 +2189,24 @@ const pascha = _getOrthodoxPascha(year);
                     continue;
                 }
 
-                // ── first-hour-theotokion — deferred baseline ─────────────
+                // ── first-hour-theotokion — deferred baseline / festal rubric override ──
                 if (item.key === 'first-hour-theotokion') {
-                    section.items[i] = _normalizeTheotokionRubricForOffice('first-hour', {
+                    const troparionItem =
+                        section.items.find(it => it && it.key === 'troparion-of-the-day') || null;
+
+                    const fallbackRubric = _normalizeTheotokionRubricForOffice('first-hour', {
                         type:       'rubric',
                         key:        'first-hour-theotokion',
                         label:      item.label || 'Theotokion of the First Hour',
                         text:       'On ordinary days, the proper Theotokion appointment for the First Hour belongs here. The full text for this office is not yet available in this path.',
                         resolvedAs: 'first-hour-theotokion-deferred'
                     });
+
+                    section.items[i] = _resolveLittleHourFestalTheotokionRubric(
+                        'first-hour',
+                        troparionItem,
+                        fallbackRubric
+                    );
                     continue;
                 }
 
@@ -2321,14 +2282,23 @@ async function _loadThirdHourFixedData() {
                     continue;
                 }
 
-                if (item.key === 'third-hour-theotokion') {
-                    section.items[i] = _normalizeTheotokionRubricForOffice('third-hour', {
+                                if (item.key === 'third-hour-theotokion') {
+                    const troparionItem =
+                        section.items.find(it => it && it.key === 'troparion-of-the-day') || null;
+
+                    const fallbackRubric = _normalizeTheotokionRubricForOffice('third-hour', {
                         type:       'rubric',
                         key:        'third-hour-theotokion',
                         label:      item.label || 'Theotokion of the Third Hour',
                         text:       'On ordinary days, the proper Theotokion appointment for the Third Hour belongs here. The full text for this office is not yet available in this path.',
                         resolvedAs: 'third-hour-theotokion-deferred'
                     });
+
+                    section.items[i] = _resolveLittleHourFestalTheotokionRubric(
+                        'third-hour',
+                        troparionItem,
+                        fallbackRubric
+                    );
                     continue;
                 }
             }
@@ -2404,14 +2374,23 @@ async function _loadThirdHourFixedData() {
                     continue;
                 }
 
-                if (item.key === 'sixth-hour-theotokion') {
-                    section.items[i] = _normalizeTheotokionRubricForOffice('sixth-hour', {
+                                if (item.key === 'sixth-hour-theotokion') {
+                    const troparionItem =
+                        section.items.find(it => it && it.key === 'troparion-of-the-day') || null;
+
+                    const fallbackRubric = _normalizeTheotokionRubricForOffice('sixth-hour', {
                         type:       'rubric',
                         key:        'sixth-hour-theotokion',
                         label:      item.label || 'Theotokion of the Sixth Hour',
                         text:       'On ordinary days, the proper Theotokion appointment for the Sixth Hour belongs here. The full text for this office is not yet available in this path.',
                         resolvedAs: 'sixth-hour-theotokion-deferred'
                     });
+
+                    section.items[i] = _resolveLittleHourFestalTheotokionRubric(
+                        'sixth-hour',
+                        troparionItem,
+                        fallbackRubric
+                    );
                     continue;
                 }
             }
@@ -2487,14 +2466,23 @@ async function _loadThirdHourFixedData() {
                     continue;
                 }
 
-                                if (item.key === 'ninth-hour-theotokion') {
-                    section.items[i] = _normalizeTheotokionRubricForOffice('ninth-hour', {
+                                               if (item.key === 'ninth-hour-theotokion') {
+                    const troparionItem =
+                        section.items.find(it => it && it.key === 'troparion-of-the-day') || null;
+
+                    const fallbackRubric = _normalizeTheotokionRubricForOffice('ninth-hour', {
                         type:       'rubric',
                         key:        'ninth-hour-theotokion',
                         label:      item.label || 'Theotokion of the Ninth Hour',
                         text:       'On ordinary days, the proper Theotokion appointment for the Ninth Hour belongs here. The full text for this office is not yet available in this path.',
                         resolvedAs: 'ninth-hour-theotokion-deferred'
                     });
+
+                    section.items[i] = _resolveLittleHourFestalTheotokionRubric(
+                        'ninth-hour',
+                        troparionItem,
+                        fallbackRubric
+                    );
                     continue;
                 }
             }
