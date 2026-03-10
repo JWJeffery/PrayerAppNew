@@ -927,7 +927,6 @@ const HorologionEngine = (() => {
             text:          config.text,
             resolvedAs:    config.resolvedAs,
             overrideType:  'menaion-troparion',
-            
             officeKey:     officeKey,
             source:        'Menaion',
             commemoration: troparionItem.commemoration || null,
@@ -1983,122 +1982,174 @@ const pascha = _getOrthodoxPascha(year);
     // to the ordinary non-feast weekday rubric path.
     // ──────────────────────────────────────────────────────────────────────
     async function _resolveComplineSeasonalTroparionSlot(dayOfWeek, dateObj, toneResult) {
-        const resolved = await _resolveTroparionSlot(dayOfWeek, toneResult, dateObj);
+    const resolved = await _resolveTroparionSlot(dayOfWeek, toneResult, dateObj);
 
-        // Preserve any existing feast-winning behaviour.
-        if (resolved && resolved.resolvedAs === 'menaion-feast-troparion') {
-            return resolved;
-        }
-
-        const seasonResult = _computeLiturgicalSeason(dateObj, toneResult);
-        const isGreatLentWeekday =
-            seasonResult &&
-            seasonResult.season === 'great-lent' &&
-            dayOfWeek >= 1 &&
-            dayOfWeek <= 5;
-
-        // Only displace the ordinary non-feast weekday fallback path.
-        if (
-            isGreatLentWeekday &&
-            resolved &&
-            resolved.resolvedAs === 'weekday-theme-rubric'
-        ) {
-            const WEEKDAY_NAMES = {
-                1: 'monday',
-                2: 'tuesday',
-                3: 'wednesday',
-                4: 'thursday',
-                5: 'friday'
-            };
-
-            return {
-                type:         'rubric',
-                key:          'troparion-of-the-day',
-                label:        'Troparion of the Day',
-                text:         'On Great Lent weekdays, the seasonal troparion appointment for Small Compline belongs here. The ordinary baseline troparion-of-the-day path is displaced by the season.',
-                resolvedAs:   'compline-lenten-rubric',
-                overrideType: 'seasonal-lent',
-                season:       'great-lent',
-                officeKey:    'small-compline',
-                weekday:      WEEKDAY_NAMES[dayOfWeek] || null,
-                source:       'Seasonal'
-            };
-        }
-
-        return _normalizeOrdinaryTroparionFallbackForOffice('small-compline', resolved);
+    // Preserve any existing feast-winning behaviour.
+    if (resolved && resolved.resolvedAs === 'menaion-feast-troparion') {
+        return resolved;
     }
 
+    const seasonResult = _computeLiturgicalSeason(dateObj, toneResult);
+    const isGreatLentWeekday =
+        seasonResult &&
+        seasonResult.season === 'great-lent' &&
+        dayOfWeek >= 1 &&
+        dayOfWeek <= 5;
+
+    // Only displace the ordinary non-feast weekday fallback path.
+    if (
+        isGreatLentWeekday &&
+        resolved &&
+        resolved.resolvedAs === 'weekday-theme-rubric'
+    ) {
+        const WEEKDAY_NAMES = {
+            1: 'monday',
+            2: 'tuesday',
+            3: 'wednesday',
+            4: 'thursday',
+            5: 'friday'
+        };
+
+        return {
+            type:         'rubric',
+            key:          'troparion-of-the-day',
+            label:        'Troparion of the Day',
+            text:         'On Great Lent weekdays, the seasonal troparion appointment for Small Compline belongs here. The ordinary baseline troparion-of-the-day path is displaced by the season.',
+            resolvedAs:   'compline-lenten-rubric',
+            overrideType: 'seasonal-lent',
+            season:       'great-lent',
+            officeKey:    'small-compline',
+            weekday:      WEEKDAY_NAMES[dayOfWeek] || null,
+            source:       'Seasonal'
+        };
+    }
+
+    return _normalizeOrdinaryTroparionFallbackForOffice('small-compline', resolved);
+}
+
+// ──────────────────────────────────────────────────────────────────────
+// v4.4: _resolveComplineFestalTheotokionRubric(officeKey, troparionItem, fallbackRubric)
+//
+// Small Compline festal Theotokion rubric arbitration.
+//
+// Precedence:
+//   1. feast troparion override already governs the office
+//   2. this helper displaces the ordinary Compline Theotokion rubric
+//   3. otherwise the normalized ordinary fallback rubric remains unchanged
+//
+// Scope:
+//   - small-compline
+//   - Theotokion branch only
+//
+// Non-throwing.
+// ──────────────────────────────────────────────────────────────────────
+function _resolveComplineFestalTheotokionRubric(officeKey, troparionItem, fallbackRubric) {
+    if (
+        !troparionItem ||
+        troparionItem.resolvedAs !== 'menaion-feast-troparion'
+    ) {
+        return fallbackRubric;
+    }
+
+    return {
+        type:          'rubric',
+        key:           'compline-theotokion',
+        label:         'Theotokion of Compline',
+        text:          'On a qualifying feast, the proper Theotokion appointment for Small Compline follows the festal office. The ordinary Compline Theotokion rubric is displaced here. Full festal text is not yet available in this path.',
+        resolvedAs:    'compline-feast-theotokion-rubric',
+        overrideType:  'menaion-troparion',
+        officeKey:     'small-compline',
+        source:        'Menaion',
+        commemoration: troparionItem.commemoration || null,
+        governingTone: troparionItem.governingTone || troparionItem.tone || null,
+        rank:          troparionItem.rank || null
+    };
+}
     async function _resolveComplineSlots(sections, dateObj) {
-        await Promise.all([
-            _loadComplineFixedData(),
-            _loadTroparionData(),
-            _loadWeekdayTroparionMeta()
-        ]);
+    await Promise.all([
+        _loadComplineFixedData(),
+        _loadTroparionData(),
+        _loadWeekdayTroparionMeta()
+    ]);
 
-        const dayOfWeek  = dateObj.getDay();
-        const toneResult = _computeBaselineTone(dateObj);
+    const dayOfWeek  = dateObj.getDay();
+    const toneResult = _computeBaselineTone(dateObj);
 
-        const FIXED_SLOT_KEYS = new Set([
-            'usual-beginning',
-            'psalm-50',
-            'psalm-69',
-            'psalm-142',
-            'doxology',
-            'creed',
-            'trisagion-prayers',
-            'compline-theotokion',
-            'prayer-of-basil',
-            'into-thy-hands'
-        ]);
+    const FIXED_SLOT_KEYS = new Set([
+        'usual-beginning',
+        'psalm-50',
+        'psalm-69',
+        'psalm-142',
+        'doxology',
+        'creed',
+        'trisagion-prayers',
+        'prayer-of-basil',
+        'into-thy-hands'
+    ]);
 
-        for (const section of sections) {
-            if (!Array.isArray(section.items)) continue;
+    for (const section of sections) {
+        if (!Array.isArray(section.items)) continue;
 
-            for (let i = 0; i < section.items.length; i++) {
-                const item = section.items[i];
+        for (let i = 0; i < section.items.length; i++) {
+            const item = section.items[i];
 
-                // ── Fixed slots ───────────────────────────────────────────
-                if (FIXED_SLOT_KEYS.has(item.key)) {
-                    const slotData = _complineFixedData &&
-                        _complineFixedData.slots &&
-                        _complineFixedData.slots[item.key];
+            // ── Fixed slots ───────────────────────────────────────────
+            if (FIXED_SLOT_KEYS.has(item.key)) {
+                const slotData = _complineFixedData &&
+                    _complineFixedData.slots &&
+                    _complineFixedData.slots[item.key];
 
-                    if (slotData) {
-                        section.items[i] = {
-                            type:       slotData.type || 'text',
-                            key:        item.key,
-                            label:      slotData.label || item.label,
-                            text:       slotData.text,
-                            lxxNumber:  slotData.lxxNumber,
-                            resolvedAs: 'compline-fixed'
-                        };
-                    }
-                    // If data not loaded: item remains placeholder — correct degradation.
-                    continue;
+                if (slotData) {
+                    section.items[i] = {
+                        type:       slotData.type || 'text',
+                        key:        item.key,
+                        label:      slotData.label || item.label,
+                        text:       slotData.text,
+                        lxxNumber:  slotData.lxxNumber,
+                        resolvedAs: 'compline-fixed'
+                    };
                 }
-
-                                // ── troparion-of-the-day ──────────────────────────────────
-                if (item.key === 'troparion-of-the-day') {
-                    const resolved = await _resolveComplineSeasonalTroparionSlot(dayOfWeek, dateObj, toneResult);
-                    if (resolved) {
-                        section.items[i] = Object.assign({}, resolved, {
-                            key: 'troparion-of-the-day'
-                        });
-                    }
-                    // If null (data load failed): slot remains placeholder.
-                }
-                // All other items (baked rubrics) pass through unchanged.
+                continue;
             }
+
+            // ── troparion-of-the-day ──────────────────────────────────
+            if (item.key === 'troparion-of-the-day') {
+                const resolved = await _resolveComplineSeasonalTroparionSlot(dayOfWeek, dateObj, toneResult);
+                if (resolved) {
+                    section.items[i] = Object.assign({}, resolved, {
+                        key: 'troparion-of-the-day'
+                    });
+                }
+                // If null (data load failed): slot remains placeholder.
+                continue;
+            }
+
+            // ── compline-theotokion (v4.4) ────────────────────────────
+            if (item.key === 'compline-theotokion') {
+                const troparionItem =
+                    section.items.find(it => it && it.key === 'troparion-of-the-day') || null;
+
+                const fallbackRubric = {
+                    type:       'rubric',
+                    key:        'compline-theotokion',
+                    label:      item.label || 'Theotokion of Compline',
+                    text:       'On ordinary days, the proper Theotokion appointment for Small Compline belongs here. The full text for this office is not yet available in this path.',
+                    resolvedAs: 'compline-theotokion-deferred'
+                };
+
+                section.items[i] =
+                    _resolveComplineFestalTheotokionRubric(
+                        'small-compline',
+                        troparionItem,
+                        fallbackRubric
+                    );
+                continue;
+            }
+
+            // All other items (baked rubrics) pass through unchanged.
         }
     }
-
-   // ──────────────────────────────────────────────────────────────────────
-    // v3.1: _loadFirstHourFixedData()
-    //
-    // Fetches and caches data/horologion/first-hour-fixed.json.
-    // Non-throwing: on failure logs a warning; fixed slots remain as
-    // visible placeholders rather than crashing.
-    // ──────────────────────────────────────────────────────────────────────
+}
     async function _loadFirstHourFixedData() {
         if (_firstHourFixedData !== null) return;
 
