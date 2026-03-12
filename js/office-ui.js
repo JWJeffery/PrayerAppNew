@@ -1262,13 +1262,9 @@ function _renderHorologionItem(item) {
             `</div>`;
     }
 
-    if (item.type === 'rubric') {
-        return `<span class="rubric-text">${item.text || ''}</span>`;
-    }
-
     // Shared HTML-escape helper used by all resolved text branches.
     function escapeHtml(str) {
-        return str
+        return String(str)
             .replace(/&/g, '&amp;')
             .replace(/</g, '&lt;')
             .replace(/>/g, '&gt;')
@@ -1276,31 +1272,69 @@ function _renderHorologionItem(item) {
             .replace(/'/g, '&#39;');
     }
 
+    function formatParagraphText(text) {
+        const safe = escapeHtml(String(text || ''));
+        return safe
+            .replace(/\n\n+/g, '</p><p>')
+            .replace(/\n/g, '<br>');
+    }
+
+    function renderRepeatedText(text, repeat) {
+        const count = Number(repeat);
+
+        if (!Number.isInteger(count) || count <= 1) {
+            return `<div class="horologion-text"><p>${formatParagraphText(text)}</p></div>`;
+        }
+
+        // Governance rule:
+        // 1–3 = spell out in full
+        // 4+  = compress as (×N)
+        if (count <= 3) {
+            let out = '<div class="horologion-text">';
+            for (let i = 0; i < count; i++) {
+                out += `<p>${formatParagraphText(text)}</p>`;
+            }
+            out += '</div>';
+            return out;
+        }
+
+        const compressed = `${String(text || '')} (×${count})`;
+        return `<div class="horologion-text"><p>${formatParagraphText(compressed)}</p></div>`;
+    }
+
+    if (item.type === 'rubric') {
+        return `<span class="rubric-text">${item.text || ''}</span>`;
+    }
+
+    // New: ordered liturgical sequence container.
+    // Each child item is rendered recursively through the same renderer.
+    if (item.type === 'sequence') {
+        const label = item.label
+            ? `<p class="rubric-text" style="margin-bottom:0.4em;">${escapeHtml(item.label)}</p>`
+            : '';
+
+        const children = Array.isArray(item.items)
+            ? item.items.map(child => _renderHorologionItem(child)).join('')
+            : '';
+
+        return `<div class="horologion-sequence">${label}${children}</div>`;
+    }
+
     // type: "psalm" — render label then body text.
     if (item.type === 'psalm') {
         const label = item.label ? `<p class="rubric-text" style="margin-bottom:0.4em;">${escapeHtml(item.label)}</p>` : '';
-        const safe  = escapeHtml(String(item.text || ''));
-        const body  = safe
-            .replace(/\n\n+/g, '</p><p>')
-            .replace(/\n/g, '<br>');
+        const body  = formatParagraphText(item.text || '');
         return `<div class="horologion-text">${label}<p>${body}</p></div>`;
     }
 
     // type: "stichera" — render rubric label then verse text (same layout as psalm).
-    // Produced by HorologionEngine v1.3 for stichera-at-lord-i-have-cried and aposticha.
     if (item.type === 'stichera') {
         const label = item.label ? `<p class="rubric-text" style="margin-bottom:0.4em;">${escapeHtml(item.label)}</p>` : '';
-        const safe  = escapeHtml(String(item.text || ''));
-        const body  = safe
-            .replace(/\n\n+/g, '</p><p>')
-            .replace(/\n/g, '<br>');
+        const body  = formatParagraphText(item.text || '');
         return `<div class="horologion-text">${label}<p>${body}</p></div>`;
     }
 
     // type: "litany" — render each line role-tagged.
-    // Lines beginning "Deacon:", "Priest:", "Reader:" are rubrics.
-    // Lines beginning "Choir:" are congregational responses.
-    // Blank lines produce a small vertical gap.
     if (item.type === 'litany') {
         const lines = String(item.text || '').split('\n');
         let out = '<div class="horologion-litany">';
@@ -1320,15 +1354,18 @@ function _renderHorologionItem(item) {
         return out;
     }
 
-    // type: "text" or any other resolved item — paragraph/line-break formatting.
-    const safe      = escapeHtml(String(item.text || ''));
-    const formatted = safe
-        .replace(/\n\n+/g, '</p><p>')
-        .replace(/\n/g, '<br>');
+    // New: repeat-aware plain text rendering.
+    if (item.type === 'text' && item.repeat !== undefined) {
+        const label = item.label
+            ? `<p class="rubric-text" style="margin-bottom:0.4em;">${escapeHtml(item.label)}</p>`
+            : '';
+        return `${label}${renderRepeatedText(item.text || '', item.repeat)}`;
+    }
+
+    // Fallback: type "text" or any other resolved item.
+    const formatted = formatParagraphText(item.text || '');
     return `<div class="horologion-text"><p>${formatted}</p></div>`;
 }
-
-
 async function renderBcpOffice() {
     if (!isHydrationComplete) {
         return;

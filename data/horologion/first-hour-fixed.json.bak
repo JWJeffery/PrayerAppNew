@@ -17,68 +17,9 @@
   ],
   "slots": {
     "usual-beginning": {
-      "type": "sequence",
+      "type": "text",
       "label": "The Usual Beginning",
-      "items": [
-        {
-          "type": "text",
-          "key": "usual-beginning-1",
-          "text": "Glory to Thee, our God, glory to Thee."
-        },
-        {
-          "type": "text",
-          "key": "usual-beginning-2",
-          "text": "O Heavenly King, O Comforter, the Spirit of Truth, Who art everywhere present and fillest all things, Treasury of blessings and Giver of life: come and abide in us, and cleanse us from every impurity, and save our souls, O Good One."
-        },
-        {
-          "type": "text",
-          "key": "usual-beginning-3",
-          "text": "Holy God, Holy Mighty, Holy Immortal, have mercy on us.",
-          "repeat": 3
-        },
-        {
-          "type": "text",
-          "key": "usual-beginning-4",
-          "text": "Glory to the Father, and to the Son, and to the Holy Spirit, both now and ever, and unto ages of ages. Amen."
-        },
-        {
-          "type": "text",
-          "key": "usual-beginning-5",
-          "text": "All-holy Trinity, have mercy on us. Lord, cleanse us from our sins. Master, pardon our iniquities. Holy One, visit and heal our infirmities for Thy Name's sake."
-        },
-        {
-          "type": "text",
-          "key": "usual-beginning-6",
-          "text": "Lord, have mercy.",
-          "repeat": 3
-        },
-        {
-          "type": "text",
-          "key": "usual-beginning-7",
-          "text": "Glory to the Father, and to the Son, and to the Holy Spirit, both now and ever, and unto ages of ages. Amen."
-        },
-        {
-          "type": "text",
-          "key": "usual-beginning-8",
-          "text": "Our Father, Who art in Heaven, hallowed be Thy Name. Thy Kingdom come, Thy will be done, on earth as it is in Heaven. Give us this day our daily bread; and forgive us our trespasses, as we forgive those who trespass against us; and lead us not into temptation, but deliver us from evil."
-        },
-        {
-          "type": "text",
-          "key": "usual-beginning-9",
-          "text": "For Thine is the Kingdom, and the power, and the glory, of the Father, and of the Son, and of the Holy Spirit, now and ever, and unto ages of ages. Amen."
-        },
-        {
-          "type": "text",
-          "key": "usual-beginning-10",
-          "text": "Lord, have mercy.",
-          "repeat": 12
-        },
-        {
-          "type": "text",
-          "key": "usual-beginning-11",
-          "text": "Come, let us worship God our King.\nCome, let us worship and fall down before Christ our King and God.\nCome, let us worship and fall down before Christ Himself, our King and our God."
-        }
-      ]
+      "text": "Glory to Thee, our God, glory to Thee.\n\nO Heavenly King, O Comforter, the Spirit of Truth, Who art everywhere present and fillest all things, Treasury of blessings and Giver of life: come and abide in us, and cleanse us from every impurity, and save our souls, O Good One.\n\nHoly God, Holy Mighty, Holy Immortal, have mercy on us. (×3)\n\nGlory to the Father, and to the Son, and to the Holy Spirit, both now and ever, and unto ages of ages. Amen.\n\nAll-holy Trinity, have mercy on us. Lord, cleanse us from our sins. Master, pardon our iniquities. Holy One, visit and heal our infirmities for Thy Name's sake.\n\nLord, have mercy. (×3)\n\nGlory to the Father, and to the Son, and to the Holy Spirit, both now and ever, and unto ages of ages. Amen.\n\nOur Father, Who art in Heaven, hallowed be Thy Name. Thy Kingdom come, Thy will be done, on earth as it is in Heaven. Give us this day our daily bread; and forgive us our trespasses, as we forgive those who trespass against us; and lead us not into temptation, but deliver us from evil.\n\nFor Thine is the Kingdom, and the power, and the glory, of the Father, and of the Son, and of the Holy Spirit, now and ever, and unto ages of ages. Amen.\n\nLord, have mercy. (×12)\n\nCome, let us worship God our King.\nCome, let us worship and fall down before Christ our King and God.\nCome, let us worship and fall down before Christ Himself, our King and our God."
     },
     "psalm-5": {
       "type": "psalm",
@@ -102,53 +43,9 @@
       "text": "I will sing of mercy and judgment; unto Thee, O Lord, will I chant. I will behave wisely in a blameless way. When wilt Thou come unto me? I walked in the innocence of my heart in the midst of my house.\n\nI set no wicked thing before mine eyes; I hated the workers of transgressions; they cleaved not unto me. A crooked heart departed from me; I knew not an evil man.\n\nHim that privily slandered his neighbour, him did I drive away. He that is proud in look and insatiable in heart — with him I did not eat.\n\nMine eyes were upon the faithful of the land, that they should sit with me; the man who walked in a blameless way, he ministered unto me.\n\nThe proud doer dwelled not in the midst of my house; the speaker of unrighteous things prospered not before mine eyes.\n\nIn the mornings I slew all the sinners of the land, that I might cut off from the city of the Lord all them that work iniquity.\n\nGlory to the Father, and to the Son, and to the Holy Spirit, both now and ever, and unto ages of ages. Amen."
     },
     "trisagion-prayers": {
-      "type": "sequence",
+      "type": "text",
       "label": "Trisagion Prayers",
-      "items": [
-        {
-          "type": "text",
-          "key": "trisagion-prayers-1",
-          "text": "Holy God, Holy Mighty, Holy Immortal, have mercy on us.",
-          "repeat": 3
-        },
-        {
-          "type": "text",
-          "key": "trisagion-prayers-2",
-          "text": "Glory to the Father, and to the Son, and to the Holy Spirit, both now and ever, and unto ages of ages. Amen."
-        },
-        {
-          "type": "text",
-          "key": "trisagion-prayers-3",
-          "text": "All-holy Trinity, have mercy on us. Lord, cleanse us from our sins. Master, pardon our iniquities. Holy One, visit and heal our infirmities for Thy Name's sake."
-        },
-        {
-          "type": "text",
-          "key": "trisagion-prayers-4",
-          "text": "Lord, have mercy.",
-          "repeat": 3
-        },
-        {
-          "type": "text",
-          "key": "trisagion-prayers-5",
-          "text": "Glory to the Father, and to the Son, and to the Holy Spirit, both now and ever, and unto ages of ages. Amen."
-        },
-        {
-          "type": "text",
-          "key": "trisagion-prayers-6",
-          "text": "Our Father, Who art in Heaven, hallowed be Thy Name. Thy Kingdom come, Thy will be done, on earth as it is in Heaven. Give us this day our daily bread; and forgive us our trespasses, as we forgive those who trespass against us; and lead us not into temptation, but deliver us from evil."
-        },
-        {
-          "type": "text",
-          "key": "trisagion-prayers-7",
-          "text": "For Thine is the Kingdom, and the power, and the glory, of the Father, and of the Son, and of the Holy Spirit, now and ever, and unto ages of ages. Amen."
-        },
-        {
-          "type": "text",
-          "key": "trisagion-prayers-8",
-          "text": "Lord, have mercy.",
-          "repeat": 12
-        }
-      ]
+      "text": "Holy God, Holy Mighty, Holy Immortal, have mercy on us. (×3)\n\nGlory to the Father, and to the Son, and to the Holy Spirit, both now and ever, and unto ages of ages. Amen.\n\nAll-holy Trinity, have mercy on us. Lord, cleanse us from our sins. Master, pardon our iniquities. Holy One, visit and heal our infirmities for Thy Name's sake.\n\nLord, have mercy. (×3)\n\nGlory to the Father, and to the Son, and to the Holy Spirit, both now and ever, and unto ages of ages. Amen.\n\nOur Father, Who art in Heaven, hallowed be Thy Name. Thy Kingdom come, Thy will be done, on earth as it is in Heaven. Give us this day our daily bread; and forgive us our trespasses, as we forgive those who trespass against us; and lead us not into temptation, but deliver us from evil.\n\nFor Thine is the Kingdom, and the power, and the glory, of the Father, and of the Son, and of the Holy Spirit, now and ever, and unto ages of ages. Amen.\n\nLord, have mercy. (×12)"
     },
     "prayer-of-the-first-hour": {
       "type": "text",

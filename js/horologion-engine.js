@@ -746,11 +746,13 @@ const HorologionEngine = (() => {
     //   - Vespers output
     // ──────────────────────────────────────────────────────────────────────
     function _normalizeOrdinaryTroparionFallbackForOffice(officeKey, resolved) {
-        if (!resolved || resolved.resolvedAs !== 'weekday-theme-rubric') {
-            return resolved;
-        }
+    resolved = _normalizeUnavailableTroparionFallbackForOffice(officeKey, resolved);
 
-        const OFFICE_TEXT = {
+    if (!resolved || resolved.resolvedAs !== 'weekday-theme-rubric') {
+        return resolved;
+    }
+
+    const OFFICE_TEXT = {
             'small-compline':
                 'On ordinary weekdays, the proper troparion appointment for Small Compline belongs here. ' +
                 'The full weekday text requires the Menaion and is not yet available in this office.',
@@ -873,6 +875,61 @@ const HorologionEngine = (() => {
         };
     }
 
+    function _normalizeUnavailableTroparionFallbackForOffice(officeKey, resolved) {
+
+    if (!resolved || resolved.resolvedAs !== 'menaion-text-unavailable') {
+        return resolved;
+    }
+
+    const officeLabels = {
+        'vespers': 'Vespers',
+        'small-compline': 'Small Compline',
+        'first-hour': 'First Hour',
+        'third-hour': 'Third Hour',
+        'sixth-hour': 'Sixth Hour',
+        'ninth-hour': 'Ninth Hour'
+    };
+
+    const weekdayLabels = {
+        0: 'Sunday',
+        1: 'Monday',
+        2: 'Tuesday',
+        3: 'Wednesday',
+        4: 'Thursday',
+        5: 'Friday',
+        6: 'Saturday'
+    };
+
+    const officeLabel = officeLabels[officeKey] || 'Office';
+
+    const weekdayLabel =
+        typeof resolved.dayOfWeek === 'number'
+            ? weekdayLabels[resolved.dayOfWeek]
+            : null;
+
+    const tonePart =
+        resolved.tone ? `Tone ${resolved.tone}` : '';
+
+    const weekdayPart =
+        weekdayLabel ? `${weekdayLabel}, ${tonePart}` : tonePart;
+
+    const commemorationPart =
+        resolved.commemoration
+            ? `The appointed Menaion troparion is for ${resolved.commemoration}, but the text is not yet available in the imported corpus.`
+            : `The appointed Menaion troparion text is not yet available in the imported corpus.`;
+
+    const weekdayThemePart =
+        resolved.weekdayTheme
+            ? ` Weekday theme: ${resolved.weekdayTheme}.`
+            : '';
+
+    return {
+        ...resolved,
+        label: 'Troparion of the Day',
+        text: `(${officeLabel} — ${weekdayPart}. ${commemorationPart}${weekdayThemePart})`
+    };
+}
+
     function _resolveLittleHourFestalTheotokionRubric(officeKey, troparionItem, fallbackRubric) {
         if (
             !troparionItem ||
@@ -936,7 +993,7 @@ const HorologionEngine = (() => {
     }
 
     async function _resolveLittleHourSeasonalTroparionSlot(officeKey, dayOfWeek, dateObj, toneResult) {
-        const resolved = await _resolveLittleHourTroparionSlot(dayOfWeek, toneResult, dateObj);
+        let resolved = await _resolveLittleHourTroparionSlot(dayOfWeek, toneResult, dateObj);
 
         // Feast override always wins.
         if (resolved && resolved.resolvedAs === 'menaion-feast-troparion') {
@@ -988,7 +1045,8 @@ const HorologionEngine = (() => {
             };
         }
 
-        return _normalizeOrdinaryTroparionFallbackForOffice(officeKey, resolved);
+        resolved = _normalizeUnavailableTroparionFallbackForOffice('first-hour', resolved);
+return _normalizeOrdinaryTroparionFallbackForOffice('first-hour', resolved);
     }
     // ──────────────────────────────────────────────────────────────────────
     // v1.3: _computeOrthodoxPascha(gregorianYear)
@@ -2024,7 +2082,8 @@ const pascha = _getOrthodoxPascha(year);
         };
     }
 
-    return _normalizeOrdinaryTroparionFallbackForOffice('small-compline', resolved);
+    return resolved = _normalizeUnavailableTroparionFallbackForOffice('small-compline', resolved);
+return _normalizeOrdinaryTroparionFallbackForOffice('small-compline', resolved);;
 }
 
 // ──────────────────────────────────────────────────────────────────────
@@ -2106,6 +2165,7 @@ function _resolveComplineFestalTheotokionRubric(officeKey, troparionItem, fallba
                         label:      slotData.label || item.label,
                         text:       slotData.text,
                         lxxNumber:  slotData.lxxNumber,
+                        items:      Array.isArray(slotData.items) ? slotData.items : undefined,
                         resolvedAs: 'compline-fixed'
                     };
                 }
@@ -2222,6 +2282,7 @@ function _resolveComplineFestalTheotokionRubric(officeKey, troparionItem, fallba
                             label:      slotData.label || item.label,
                             text:       slotData.text,
                             lxxNumber:  slotData.lxxNumber,
+                            items:      Array.isArray(slotData.items) ? slotData.items : undefined,
                             resolvedAs: 'first-hour-fixed'
                         };
                     }
@@ -2317,6 +2378,7 @@ async function _loadThirdHourFixedData() {
                             label:      slotData.label || item.label,
                             text:       slotData.text,
                             lxxNumber:  slotData.lxxNumber,
+                            items:      Array.isArray(slotData.items) ? slotData.items : undefined,
                             resolvedAs: 'third-hour-fixed'
                         };
                     }
@@ -2409,6 +2471,7 @@ async function _loadThirdHourFixedData() {
                             label:      slotData.label || item.label,
                             text:       slotData.text,
                             lxxNumber:  slotData.lxxNumber,
+                            items:      Array.isArray(slotData.items) ? slotData.items : undefined,
                             resolvedAs: 'sixth-hour-fixed'
                         };
                     }
@@ -2501,6 +2564,7 @@ async function _loadThirdHourFixedData() {
                             label:      slotData.label || item.label,
                             text:       slotData.text,
                             lxxNumber:  slotData.lxxNumber,
+                            items:      Array.isArray(slotData.items) ? slotData.items : undefined,
                             resolvedAs: 'ninth-hour-fixed'
                         };
                     }
@@ -2929,27 +2993,33 @@ async function _loadThirdHourFixedData() {
             for (let i = 0; i < section.items.length; i++) {
                 const item = section.items[i];
                 // ── daily-prokeimenon (v1.2) ──────────────────────────────
-                if (item.key === 'daily-prokeimenon') {
-                    const pk = _prokeimenaByDay && _prokeimenaByDay[dayOfWeek];
-                    if (pk) {
-                        section.items[i] = {
-                            type:       'prokeimenon',
-                            key:        'daily-prokeimenon',
-                            label:      pk.label,
-                            tone:       pk.tone,
-                            rubric:     pk.rubric,
-                            text:       pk.text,
-                            textRef:    pk.textRef,
-                            verse:      pk.verse,
-                            verseRef:   pk.verseRef,
-                            resolvedAs: 'ordinary-weekday',
-                            weekday:    pk.weekday
-                        };
-                    }
-                    // If pk is null (load failed), item remains as-is (placeholder).
-                }
+              if (item.key === 'daily-prokeimenon') {
+    const pk = _prokeimenaByDay && _prokeimenaByDay[dayOfWeek];
+    if (pk) {
+        section.items[i] = {
+            type:       'prokeimenon',
+            key:        'daily-prokeimenon',
+            label:      pk.label,
+            tone:       pk.tone,
+            rubric:     pk.rubric,
+            text:       pk.text,
+            textRef:    pk.textRef,
+            verse:      pk.verse,
+            verseRef:   pk.verseRef,
+            resolvedAs: 'ordinary-weekday',
+            weekday:    pk.weekday
+        };
+    }
+    // If pk is null (load failed), item remains as-is (placeholder).
+}
 
-                // ── vesperal-reading (v1.2 / v2.4) ───────────────────────
+else if (item.key === 'kathisma-reading') {
+    const resolved = _resolveKathismaSlot(dayOfWeek, toneResult.brightWeek);
+    if (resolved) {
+        section.items[i] = resolved;
+    }
+    // If null (data load failed), item remains as-is (placeholder).
+}
                 else if (item.key === 'vesperal-reading') {
                     if (isHolyWeek) {
                         // v2.7: Holy Week override

@@ -30,9 +30,8 @@
             },
             {
               "type": "text",
-               "key": "usual-beginning-3",
-               "text": "Holy God, Holy Mighty, Holy Immortal, have mercy on us.",
-               "repeat": 3
+              "key": "usual-beginning-3",
+              "text": "Holy God, Holy Mighty, Holy Immortal, have mercy on us. (×3)"
             },
             {
               "type": "text",
@@ -46,10 +45,9 @@
             },
             {
               "type": "text",
-             "key": "usual-beginning-6",
-              "text": "Lord, have mercy.",
-              "repeat": 3
-},
+              "key": "usual-beginning-6",
+              "text": "Lord, have mercy. (×3)"
+            },
             {
               "type": "text",
               "key": "usual-beginning-7",
@@ -66,10 +64,10 @@
               "text": "For Thine is the Kingdom, and the power, and the glory, of the Father, and of the Son, and of the Holy Spirit, now and ever, and unto ages of ages. Amen."
             },
             {
-             "type": "text",
-             "key": "usual-beginning-10",
-             "text": "Lord, have mercy.",
-              "repeat": 12
+              "type": "text",
+              "key": "usual-beginning-10",
+              "text": "Lord, have mercy.",
+              "repeat": 2
             },
             {
               "type": "text",
@@ -184,28 +182,11 @@
           "note": "Variable stichera with psalm verses, appointed by day of week or feast. Requires Octoechos or Menaion resolution. Not yet implemented."
         },
         {
-  "type": "sequence",
-  "key": "nunc-dimittis",
-  "label": "Song of Simeon (Nunc Dimittis)",
-  "items": [
-    {
-      "type": "text",
-      "key": "nunc-dimittis-1",
-      "text": "Lord, now lettest Thou Thy servant depart in peace, according to Thy word; for mine eyes have seen Thy salvation, which Thou hast prepared before the face of all peoples: a light of revelation for the Gentiles, and the glory of Thy people Israel."
-    },
-    {
-      "type": "text",
-      "key": "nunc-dimittis-2",
-      "text": "Holy God, Holy Mighty, Holy Immortal, have mercy on us.",
-      "repeat": 3
-    },
-    {
-      "type": "text",
-      "key": "nunc-dimittis-3",
-      "text": "Glory to the Father, and to the Son, and to the Holy Spirit, both now and ever, and unto ages of ages. Amen."
-    }
-  ]
-}
+          "type": "text",
+          "key": "nunc-dimittis",
+          "label": "Song of Simeon (Nunc Dimittis)",
+          "text": "Lord, now lettest Thou Thy servant depart in peace, according to Thy word; for mine eyes have seen Thy salvation, which Thou hast prepared before the face of all peoples: a light of revelation for the Gentiles, and the glory of Thy people Israel.\n\nHoly God, Holy Mighty, Holy Immortal, have mercy on us. (×3)\n\nGlory to the Father, and to the Son, and to the Holy Spirit, both now and ever, and unto ages of ages. Amen."
+        }
       ]
     },
     {
