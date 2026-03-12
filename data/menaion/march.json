@@ -11,7 +11,7 @@
     "total_days": 31
   },
   "dates": {
-    "03-01": {
+        "03-01": {
       "commemorations": [
         {
           "id": "martyr-eudokia",
@@ -19,10 +19,14 @@
           "type": "martyr",
           "rank": 4,
           "troparion_tone": 8,
-          "troparion": null,
-          "troparion_status": "text-unavailable",
+          "troparion": {
+            "tone": 8,
+            "title": "Troparion of Martyr Eudokia of Heliopolis",
+            "text": "With an upright mind you bound your soul to the love of Christ. As a disciple of the Word you turned from corruption and all that passes away, for you were not moved by earthly beauty. First you mortified the passions through fasting, then you put the enemy to shame by your suffering. Therefore, Christ has granted you a two-fold crown. Glorious Eudokia, venerable passion-bearer, entreat Christ God that our souls may be saved."
+          },
+          "troparion_status": "resolved",
           "tradition_tags": ["EOR"],
-          "notes": "Eudokia of Heliopolis (+2nd c.), penitent and martyr. Rank 4. Troparion text not securely confirmed."
+          "notes": "Eudokia of Heliopolis (+2nd c.), penitent and martyr. Rank 4. Troparion imported from OCA March 1 troparion witness."
         }
       ]
     },
@@ -208,32 +212,40 @@
       ]
     },
     "03-13": {
-      "commemorations": [
-        {
-          "id": "nikephoros-patriarch-constantinople",
-          "name": "St. Nikephoros, Patriarch of Constantinople",
-          "type": "hierarch",
-          "rank": 4,
-          "troparion_tone": 4,
-          "troparion": null,
-          "troparion_status": "text-unavailable",
-          "tradition_tags": ["EOR"],
-          "notes": "Nikephoros I of Constantinople (+828), patriarch and confessor during the Second Iconoclasm. Rank 4. Troparion text not securely confirmed."
-        }
-      ]
-    },
-    "03-14": {
+  "commemorations": [
+    {
+      "id": "nikephoros-patriarch-constantinople",
+      "name": "St. Nikephoros, Patriarch of Constantinople",
+      "type": "hierarch",
+      "rank": 4,
+      "troparion_tone": 4,
+      "troparion": {
+        "tone": 4,
+        "title": "Troparion of St. Nikephoros of Constantinople",
+        "text": "By sharing in the ways of the Apostles, thou didst become a successor to their throne. Through the practice of virtue, thou didst find the way to divine contemplation, O inspired one of God. By teaching the word of truth without error, thou didst defend the Faith even to the shedding of thy blood. Hieromartyr Nikephoros, entreat Christ God to save our souls."
+      },
+      "troparion_status": "resolved",
+      "tradition_tags": ["EOR"],
+      "notes": "Nikephoros I of Constantinople (+828), patriarch and confessor during the Second Iconoclasm. Troparion imported from Byzantine witness corpus."
+    }
+  ]
+},
+        "03-14": {
       "commemorations": [
         {
           "id": "benedict-nursia",
           "name": "Venerable Benedict of Nursia",
           "type": "monastic",
           "rank": 4,
-          "troparion_tone": 8,
-          "troparion": null,
-          "troparion_status": "text-unavailable",
+          "troparion_tone": 1,
+          "troparion": {
+            "tone": 1,
+            "title": "Troparion of Venerable Benedict of Nursia",
+            "text": "By your ascetical contests, O God-bearer Benedict, you were true to the name that you bear; for you blossomed as a son of benediction, and became a Rule for all who desire to emulate your life. Thus, with one voice we cry: Glory to Him Who strengthened you; glory to Him Who crowned you; glory to Him Who, through you, works healings for all."
+          },
+          "troparion_status": "resolved",
           "tradition_tags": ["EOR", "LAT", "ANG"],
-          "notes": "Benedict of Nursia (+ca. 547), Father of Western monasticism. Venerated in the Byzantine Menaion on Mar 14; primary feast in the West is July 11. Eastern troparion text not securely confirmed for corpus."
+          "notes": "Benedict of Nursia (+ca. 547), Father of Western monasticism. Venerated in the Byzantine Menaion on Mar 14; primary feast in the West is July 11. Troparion imported from OCA March 14 troparion witness."
         }
       ]
     },
@@ -310,20 +322,24 @@
       ]
     },
     "03-19": {
-      "commemorations": [
-        {
-          "id": "chrysanthos-daria",
-          "name": "Holy Martyrs Chrysanthos and Daria",
-          "type": "martyr",
-          "rank": 4,
-          "troparion_tone": 4,
-          "troparion": null,
-          "troparion_status": "text-unavailable",
-          "tradition_tags": ["EOR", "LAT"],
-          "notes": "Chrysanthos and Daria (+3rd c.), martyrs of Rome. Rank 4. Troparion text not securely confirmed."
-        }
-      ]
-    },
+  "commemorations": [
+    {
+      "id": "chrysanthos-daria",
+      "name": "Holy Martyrs Chrysanthos and Daria",
+      "type": "martyr",
+      "rank": 4,
+      "troparion_tone": 4,
+      "troparion": {
+        "tone": 4,
+        "title": "Troparion of Martyrs Chrysanthos and Daria",
+        "text": "Thy martyrs, O Lord, through their sufferings have received incorruptible crowns from Thee, our God. For having Thy strength, they laid low their adversaries and shattered the powerless boldness of demons. Through their intercessions save our souls."
+      },
+      "troparion_status": "resolved",
+      "tradition_tags": ["EOR", "LAT"],
+      "notes": "Chrysanthos and Daria (+3rd c.), martyrs of Rome. Standard martyr troparion form in Tone 4."
+    }
+  ]
+},
     "03-20": {
       "commemorations": [
         {

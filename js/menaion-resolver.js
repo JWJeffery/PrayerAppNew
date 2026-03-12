@@ -99,9 +99,14 @@ const MenaionResolver = (() => {
         return _monthCache[monthNum];
     }
 
-    // ── Internal: select best troparion from a date's commemoration array ──
+    // ── Internal: select governing commemoration from a date's array ───────
     // Returns the commemoration object with the highest rank (lowest rank number),
-    // or the first entry on ties. Skips any entry without a resolved troparion.
+    // or the first entry on ties.
+    //
+    // Important: this does NOT filter by troparion text presence.
+    // A governing commemoration with troparion_status:'text-unavailable'
+    // must still be selected so queryTroparion(mmdd) can return the honest
+    // status 'menaion-text-unavailable' rather than falling through.
     function _selectBestCommemoration(commemorations) {
         if (!Array.isArray(commemorations) || commemorations.length === 0) return null;
 
