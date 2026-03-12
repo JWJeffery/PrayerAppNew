@@ -297,13 +297,13 @@
   "ninth-hour"
 ],
       "tradition_code": "BYZC",
-      "architecture_note": "Horologion v3.5: feast-rank arbitration layer introduced. Qualifying fixed-date Menaion commemorations (rank 1–4) may override the Vespers troparion/apolytikion and govern the dismissal Theotokion tone. Scope in this phase is limited to Vespers troparion and dismissal Theotokion; Little Hours and broader festal slot replacement remain deferred.",
+      "architecture_note": "Horologion v4.4 (current). v3.5: feast-rank arbitration introduced — _resolveFeastOverrideContext() governs Vespers troparion/apolytikion and dismissal Theotokion. v3.6: _resolveLittleHourTroparionSlot() extends feast-rank override to Little Hours troparion-of-the-day. v3.7: _resolveFestalRubricOverrideSlot() applies qualifying feast rubric override to Vespers stichera-at-lord-i-have-cried and aposticha. v3.8: Great Lent seasonal layer added inside _resolveLittleHourSeasonalTroparionSlot() — displaces ordinary weekday fallback on Great Lent Mon–Fri for all four Little Hours. v3.9: _resolveComplineSeasonalTroparionSlot() applies parallel Great Lent seasonal override for Small Compline troparion-of-the-day. v4.0: _normalizeOrdinaryTroparionFallbackForOffice() rewrites the inherited Vespers weekday-theme-rubric into office-appropriate text for Small Compline and all Little Hours. v4.1/v4.3: _normalizeTheotokionRubricForOffice() + _resolveLittleHourFestalTheotokionRubric() — Little Hours Theotokion normalization and festal rubric arbitration for First through Ninth Hour. v4.4: _resolveComplineFestalTheotokionRubric() — Small Compline festal Theotokion rubric arbitration. _normalizeUnavailableTroparionFallbackForOffice() rewrites menaion-text-unavailable fallback rubrics to use the consuming office name rather than Vespers wording; invoked as the first call inside _normalizeOrdinaryTroparionFallbackForOffice() and independently at the base of _resolveLittleHourSeasonalTroparionSlot() and _resolveComplineSeasonalTroparionSlot().",
       "supported_offices_next": []
     },
     "data/horologion/": {
       "role": "Horologion office skeleton data files",
       "status": "Active — Horologion v3.4 (2026-03-08). Vespers + Small Compline + First Hour + Third Hour + Sixth Hour + Ninth Hour operational.",
-      "milestone_status": "Horologion v3.5 complete: Feast-Rank Override Engine (Phase 1) implemented for Vespers troparion/apolytikion and dismissal Theotokion.",
+      "milestone_status": "Horologion v4.4 complete. All milestone layers v3.5 through v4.4 implemented and live: feast-rank override (v3.5), Little Hours feast troparion arbitration (v3.6), Vespers stichera/aposticha festal override (v3.7), Little Hours Great Lent seasonal troparion layer (v3.8), Small Compline Great Lent seasonal troparion layer (v3.9), office-specific ordinary fallback normalization (v4.0), Little Hours Theotokion normalization and festal rubric arbitration (v4.1/v4.3), Small Compline festal Theotokion rubric arbitration (v4.4). Unavailable-troparion fallback normalizer active across all Little Hours and Small Compline.",
       "files": {
         "_ref": "Full per-file status in structure-reference.json horologion_files.",
         "vespers.json": {
@@ -343,9 +343,9 @@
   "status": "Active — Horologion v3.4 (2026-03-08). Ninth Hour skeleton: fixed slots resolved from ninth-hour-fixed.json; troparion-of-the-day resolved dynamically; ninth-hour-theotokion remains a rubric stub (deferred)."
 },
 "ninth-hour-fixed.json": {
-  "status": "Active — Horologion v3.4 (2026-03-08). Fixed-text corpus for the Ninth Hour: usual-beginning, psalm-83 (LXX), psalm-84 (LXX), psalm-85 (LXX), trisagion-prayers, prayer-of-the-ninth-hour. Variable slots (troparion-of-the-day, ninth-hour-theotokion) are not here; resolved dynamically by HorologionEngine. Source: Jordanville 2008 edition."
+  "status": "Active — Horologion v4.4 (2026-03-12). Vespers + Small Compline + First Hour + Third Hour + Sixth Hour + Ninth Hour operational."
 },
-"next_required": "Horologion v3.6: reuse feast-rank override context for Little Hours troparion arbitration."
+"next_required": "Horologion v4.5: align structure.json and structure-reference.json to the live engine; then proceed to the next unresolved implementation target, prioritizing Triodion/Pentecostarion overlay expansion, Menaion text-unavailable entry resolution, and kathisma full psalm text."
       }
     },
     "js/menaion-resolver.js": {

@@ -811,7 +811,18 @@ const HorologionEngine = (() => {
     //   - season logic
     //   - authored/full-text Theotokion paths
     // ──────────────────────────────────────────────────────────────────────
-    function _normalizeTheotokionRubricForOffice(officeKey, resolvedItem) {
+    // v4.5: _normalizeTheotokionRubricForOffice — enriched rubric with tone/weekday context
+    //
+    // Accepts an optional toneResult and dayOfWeek so the rubric can name the
+    // current Octoechos tone and weekday character (including Stavrotheotokion
+    // note for Wednesday/Friday). Both are optional: if absent the rubric
+    // degrades gracefully to the previous office-only wording.
+    //
+    // Called from all four Little Hours Theotokion branches. The festal
+    // arbitration layer (_resolveLittleHourFestalTheotokionRubric) runs after
+    // this function and will displace the rubric when a feast governs the office.
+    // ──────────────────────────────────────────────────────────────────────
+    function _normalizeTheotokionRubricForOffice(officeKey, resolvedItem, toneResult, dayOfWeek) {
         const NORMALIZABLE_RESOLVED_AS = new Set([
             'first-hour-theotokion-deferred',
             'third-hour-theotokion-deferred',
@@ -827,52 +838,51 @@ const HorologionEngine = (() => {
             return resolvedItem;
         }
 
-        const OFFICE_CONFIG = {
-            'first-hour': {
-                key:   'first-hour-theotokion',
-                label: 'Theotokion of the First Hour',
-                text:
-                    'On ordinary days, the proper Theotokion appointment for the First Hour belongs here. ' +
-                    'The full text for this office is not yet available in this path.'
-            },
-
-            'third-hour': {
-                key:   'third-hour-theotokion',
-                label: 'Theotokion of the Third Hour',
-                text:
-                    'On ordinary days, the proper Theotokion appointment for the Third Hour belongs here. ' +
-                    'The full text for this office is not yet available in this path.'
-            },
-
-            'sixth-hour': {
-                key:   'sixth-hour-theotokion',
-                label: 'Theotokion of the Sixth Hour',
-                text:
-                    'On ordinary days, the proper Theotokion appointment for the Sixth Hour belongs here. ' +
-                    'The full text for this office is not yet available in this path.'
-            },
-
-            'ninth-hour': {
-                key:   'ninth-hour-theotokion',
-                label: 'Theotokion of the Ninth Hour',
-                text:
-                    'On ordinary days, the proper Theotokion appointment for the Ninth Hour belongs here. ' +
-                    'The full text for this office is not yet available in this path.'
-            }
+        const OFFICE_LABELS = {
+            'first-hour': { key: 'first-hour-theotokion', label: 'Theotokion of the First Hour',  hour: 'First Hour'  },
+            'third-hour': { key: 'third-hour-theotokion', label: 'Theotokion of the Third Hour',  hour: 'Third Hour'  },
+            'sixth-hour': { key: 'sixth-hour-theotokion', label: 'Theotokion of the Sixth Hour',  hour: 'Sixth Hour'  },
+            'ninth-hour': { key: 'ninth-hour-theotokion', label: 'Theotokion of the Ninth Hour',  hour: 'Ninth Hour'  }
         };
 
-        const config = OFFICE_CONFIG[officeKey];
+        const config = OFFICE_LABELS[officeKey];
         if (!config) {
             return resolvedItem;
         }
+
+        // Build tone/weekday context string if data is available.
+        const WEEKDAY_NAMES = {
+            1: 'Monday', 2: 'Tuesday', 3: 'Wednesday', 4: 'Thursday', 5: 'Friday',
+            6: 'Saturday', 0: 'Sunday'
+        };
+        const tone        = (toneResult && toneResult.tone)  ? toneResult.tone  : null;
+        const weekdayName = (typeof dayOfWeek === 'number')  ? (WEEKDAY_NAMES[dayOfWeek] || null) : null;
+        const isCrossDay  = dayOfWeek === 3 || dayOfWeek === 5; // Wednesday or Friday
+
+        let contextLine = '';
+        if (tone && weekdayName) {
+            contextLine = isCrossDay
+                ? ` (${weekdayName}, Tone ${tone} — a Stavrotheotokion / Cross Theotokion is appointed for this day.)`
+                : ` (${weekdayName}, Tone ${tone}.)`;
+        } else if (tone) {
+            contextLine = ` (Tone ${tone}.)`;
+        } else if (weekdayName) {
+            contextLine = ` (${weekdayName}.)`;
+        }
+
+        const text =
+            `The proper Theotokion of the ${config.hour} belongs here.${contextLine} ` +
+            `Each of the Little Hours has its own appointed Theotokion from the Horologion, ` +
+            `distinct from the Vespers dismissal Theotokion. ` +
+            `The full text corpus for the Little Hours Theotokia is not yet imported into this application.`;
 
         return {
             ...resolvedItem,
             key:       config.key,
             label:     config.label,
-            text:      config.text,
+            text:      text,
             officeKey: officeKey
-        };
+};
     }
 
 function _normalizeUnavailableTroparionFallbackForOffice(officeKey, resolved, dayOfWeek = null) {
@@ -2308,7 +2318,7 @@ function _resolveComplineFestalTheotokionRubric(officeKey, troparionItem, fallba
                         label:      item.label || 'Theotokion of the First Hour',
                         text:       'On ordinary days, the proper Theotokion appointment for the First Hour belongs here. The full text for this office is not yet available in this path.',
                         resolvedAs: 'first-hour-theotokion-deferred'
-                    });
+                    }, toneResult, dayOfWeek);
 
                     section.items[i] = _resolveLittleHourFestalTheotokionRubric(
                         'first-hour',
@@ -2401,7 +2411,7 @@ async function _loadThirdHourFixedData() {
                         label:      item.label || 'Theotokion of the Third Hour',
                         text:       'On ordinary days, the proper Theotokion appointment for the Third Hour belongs here. The full text for this office is not yet available in this path.',
                         resolvedAs: 'third-hour-theotokion-deferred'
-                    });
+                    }, toneResult, dayOfWeek);
 
                     section.items[i] = _resolveLittleHourFestalTheotokionRubric(
                         'third-hour',
@@ -2494,7 +2504,7 @@ async function _loadThirdHourFixedData() {
                         label:      item.label || 'Theotokion of the Sixth Hour',
                         text:       'On ordinary days, the proper Theotokion appointment for the Sixth Hour belongs here. The full text for this office is not yet available in this path.',
                         resolvedAs: 'sixth-hour-theotokion-deferred'
-                    });
+                    }, toneResult, dayOfWeek);
 
                     section.items[i] = _resolveLittleHourFestalTheotokionRubric(
                         'sixth-hour',
@@ -2587,7 +2597,7 @@ async function _loadThirdHourFixedData() {
                         label:      item.label || 'Theotokion of the Ninth Hour',
                         text:       'On ordinary days, the proper Theotokion appointment for the Ninth Hour belongs here. The full text for this office is not yet available in this path.',
                         resolvedAs: 'ninth-hour-theotokion-deferred'
-                    });
+                    }, toneResult, dayOfWeek);
 
                     section.items[i] = _resolveLittleHourFestalTheotokionRubric(
                         'ninth-hour',
