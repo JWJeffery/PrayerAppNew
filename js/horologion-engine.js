@@ -745,8 +745,8 @@ const HorologionEngine = (() => {
     //   - seasonal overrides
     //   - Vespers output
     // ──────────────────────────────────────────────────────────────────────
-    function _normalizeOrdinaryTroparionFallbackForOffice(officeKey, resolved) {
-    resolved = _normalizeUnavailableTroparionFallbackForOffice(officeKey, resolved);
+    function _normalizeOrdinaryTroparionFallbackForOffice(officeKey, resolved, dayOfWeek = null) {
+    resolved = _normalizeUnavailableTroparionFallbackForOffice(officeKey, resolved, dayOfWeek);
 
     if (!resolved || resolved.resolvedAs !== 'weekday-theme-rubric') {
         return resolved;
@@ -875,14 +875,17 @@ const HorologionEngine = (() => {
         };
     }
 
-    function _normalizeUnavailableTroparionFallbackForOffice(officeKey, resolved) {
-
+function _normalizeUnavailableTroparionFallbackForOffice(officeKey, resolved, dayOfWeek = null) {
     if (!resolved || resolved.resolvedAs !== 'menaion-text-unavailable') {
         return resolved;
     }
 
-    const officeLabels = {
-        'vespers': 'Vespers',
+    if (resolved.type !== 'rubric') {
+        return resolved;
+    }
+
+    const OFFICE_LABELS = {
+        'vespers': 'Weekday Vespers',
         'small-compline': 'Small Compline',
         'first-hour': 'First Hour',
         'third-hour': 'Third Hour',
@@ -890,46 +893,39 @@ const HorologionEngine = (() => {
         'ninth-hour': 'Ninth Hour'
     };
 
-    const weekdayLabels = {
-        0: 'Sunday',
-        1: 'Monday',
-        2: 'Tuesday',
-        3: 'Wednesday',
-        4: 'Thursday',
-        5: 'Friday',
-        6: 'Saturday'
-    };
+    const officeLabel = OFFICE_LABELS[officeKey];
+    if (!officeLabel) {
+        return resolved;
+    }
 
-    const officeLabel = officeLabels[officeKey] || 'Office';
+    const weekdayTheme =
+        resolved.weekdayTheme === 'St. John the Baptist'
+            ? 'St. John the Baptist and the Prophets'
+            : (resolved.weekdayTheme || null);
 
-    const weekdayLabel =
-        typeof resolved.dayOfWeek === 'number'
-            ? weekdayLabels[resolved.dayOfWeek]
-            : null;
+    const themeSentence = weekdayTheme
+        ? ` Weekday theme: ${weekdayTheme}.`
+        : '';
 
-    const tonePart =
-        resolved.tone ? `Tone ${resolved.tone}` : '';
-
-    const weekdayPart =
-        weekdayLabel ? `${weekdayLabel}, ${tonePart}` : tonePart;
-
-    const commemorationPart =
-        resolved.commemoration
-            ? `The appointed Menaion troparion is for ${resolved.commemoration}, but the text is not yet available in the imported corpus.`
-            : `The appointed Menaion troparion text is not yet available in the imported corpus.`;
-
-    const weekdayThemePart =
-        resolved.weekdayTheme
-            ? ` Weekday theme: ${resolved.weekdayTheme}.`
-            : '';
+    const weekdayName =
+    Number.isInteger(dayOfWeek) && dayOfWeek >= 0 && dayOfWeek <= 6
+        ? ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'][dayOfWeek]
+        : null;
 
     return {
         ...resolved,
-        label: 'Troparion of the Day',
-        text: `(${officeLabel} — ${weekdayPart}. ${commemorationPart}${weekdayThemePart})`
+        key: 'troparion-of-the-day',
+        label: 'Troparion / Apolytikion',
+        text:
+            `(${officeLabel}` +
+            (weekdayName ? ` — ${weekdayName}` : '') +
+            (typeof resolved.tone === 'number' ? `, Tone ${resolved.tone}. ` : '. ') +
+            `The appointed Menaion troparion is for ${resolved.commemoration || 'the day’s commemoration'}, ` +
+            `but the text is not yet available in the imported corpus.` +
+            themeSentence +
+            `)`
     };
 }
-
     function _resolveLittleHourFestalTheotokionRubric(officeKey, troparionItem, fallbackRubric) {
         if (
             !troparionItem ||
@@ -1045,8 +1041,8 @@ const HorologionEngine = (() => {
             };
         }
 
-        resolved = _normalizeUnavailableTroparionFallbackForOffice('first-hour', resolved);
-return _normalizeOrdinaryTroparionFallbackForOffice('first-hour', resolved);
+        resolved = _normalizeUnavailableTroparionFallbackForOffice(officeKey, resolved);
+        return _normalizeOrdinaryTroparionFallbackForOffice(officeKey, resolved, dayOfWeek);
     }
     // ──────────────────────────────────────────────────────────────────────
     // v1.3: _computeOrthodoxPascha(gregorianYear)
@@ -2040,7 +2036,7 @@ const pascha = _getOrthodoxPascha(year);
     // to the ordinary non-feast weekday rubric path.
     // ──────────────────────────────────────────────────────────────────────
     async function _resolveComplineSeasonalTroparionSlot(dayOfWeek, dateObj, toneResult) {
-    const resolved = await _resolveTroparionSlot(dayOfWeek, toneResult, dateObj);
+    let resolved = await _resolveTroparionSlot(dayOfWeek, toneResult, dateObj);
 
     // Preserve any existing feast-winning behaviour.
     if (resolved && resolved.resolvedAs === 'menaion-feast-troparion') {
@@ -2082,8 +2078,8 @@ const pascha = _getOrthodoxPascha(year);
         };
     }
 
-    return resolved = _normalizeUnavailableTroparionFallbackForOffice('small-compline', resolved);
-return _normalizeOrdinaryTroparionFallbackForOffice('small-compline', resolved);;
+    resolved = _normalizeUnavailableTroparionFallbackForOffice('small-compline', resolved);
+    return _normalizeOrdinaryTroparionFallbackForOffice('small-compline', resolved, dayOfWeek);
 }
 
 // ──────────────────────────────────────────────────────────────────────
