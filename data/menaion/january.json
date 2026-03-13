@@ -53,14 +53,33 @@
   "commemorations": [
     {
       "id": "prophet-malachi",
-      "name": "Prophet Malachi; Martyr Gordius of Caesarea",
+      "name": "Holy Prophet Malachi",
       "type": "prophet",
       "rank": 4,
       "troparion_tone": 2,
-      "troparion": null,
-      "troparion_status": "text-unavailable",
+      "troparion": {
+        "tone": 2,
+        "title": "Troparion of the Holy Prophet Malachi",
+        "text": "We celebrate the memory of Your prophet Malachi, O Lord; through him we entreat You, save our souls."
+      },
+      "troparion_status": "resolved",
       "tradition_tags": ["EOR"],
-      "notes": "Prophet Malachi: hold — prophet type, no verified unique troparion. Martyr Gordius of Caesarea: hold — joint entry with prophet, treated as block hold. Troparion text not securely confirmed for corpus."
+      "notes": "Holy Prophet Malachi, last of the Old Testament prophets. Rank 4. Troparion Tone 2 per OCA. Source: oca.org/saints/troparia, January 3."
+    },
+    {
+      "id": "gordius-caesarea",
+      "name": "Holy Martyr Gordius of Caesarea",
+      "type": "martyr",
+      "rank": 4,
+      "troparion_tone": 4,
+      "troparion": {
+        "tone": 4,
+        "title": "Troparion of the Holy Martyr Gordius of Caesarea",
+        "text": "Your holy martyr Gordius, O Lord, through his suffering has received an incorruptible crown from You, our God. For having Your strength, he laid low his adversaries, and shattered the powerless boldness of demons. Through his intercessions, save our souls!"
+      },
+      "troparion_status": "resolved",
+      "tradition_tags": ["EOR"],
+      "notes": "Gordius of Caesarea (+314), centurion and martyr under Licinius. Rank 4. Troparion Tone 4 per OCA. Source: oca.org/saints/troparia, January 3."
     }
   ]
 },

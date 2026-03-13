@@ -361,10 +361,14 @@
       "type": "prophet",
       "rank": 4,
       "troparion_tone": 2,
-      "troparion": null,
-      "troparion_status": "text-unavailable",
+      "troparion": {
+        "tone": 2,
+        "title": "Troparion of the Holy Prophet Obadiah",
+        "text": "We celebrate the memory of Your prophet Obadiah, O Lord; through him we entreat You, save our souls."
+      },
+      "troparion_status": "resolved",
       "tradition_tags": ["EOR", "OOR"],
-      "notes": "Hold — prophet type. Troparion text not securely confirmed."
+      "notes": "Holy Prophet Obadiah, fourth of the Twelve Minor Prophets. Rank 4. Troparion Tone 2 per OCA. Source: oca.org/saints/troparia, November 19."
     }
   ]
 },

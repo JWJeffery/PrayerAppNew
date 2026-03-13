@@ -18,15 +18,19 @@
       "name": "Holy Prophet Nahum",
       "type": "prophet",
       "rank": 4,
-      "troparion_tone": 2,
-      "troparion": null,
-      "troparion_status": "text-unavailable",
+      "troparion_tone": 4,
+      "troparion": {
+        "tone": 4,
+        "title": "Troparion of the Holy Prophet Nahum",
+        "text": "We celebrate the memory of Your prophet Nahum, O Lord; through him we entreat You, save our souls."
+      },
+      "troparion_status": "resolved",
       "tradition_tags": ["EOR", "OOR"],
-      "notes": "Hold — prophet type. Troparion text not securely confirmed."
+      "notes": "Holy Prophet Nahum, seventh of the Twelve Minor Prophets. Rank 4. Troparion Tone 4 per OCA. Note: queue carried troparion_tone 2 (stale); corrected to 4 per verified OCA source. Source: oca.org/saints/troparia, December 1."
     }
   ]
 },
-    "12-02": {
+   "12-02": {
   "commemorations": [
     {
       "id": "prophet-habakkuk",
@@ -34,10 +38,14 @@
       "type": "prophet",
       "rank": 4,
       "troparion_tone": 2,
-      "troparion": null,
-      "troparion_status": "text-unavailable",
+      "troparion": {
+        "tone": 2,
+        "title": "Troparion of the Holy Prophet Habakkuk",
+        "text": "We celebrate the memory of Your prophet Habakkuk, O Lord; through him we entreat You, save our souls."
+      },
+      "troparion_status": "resolved",
       "tradition_tags": ["EOR", "OOR"],
-      "notes": "Hold — prophet type. Troparion text not securely confirmed."
+      "notes": "Holy Prophet Habakkuk, eighth of the Twelve Minor Prophets. Rank 4. Troparion Tone 2 per OCA. Source: oca.org/saints/troparia, December 2."
     }
   ]
 },
@@ -49,10 +57,14 @@
       "type": "prophet",
       "rank": 4,
       "troparion_tone": 2,
-      "troparion": null,
-      "troparion_status": "text-unavailable",
+      "troparion": {
+        "tone": 2,
+        "title": "Troparion of the Holy Prophet Zephaniah",
+        "text": "We celebrate the memory of Your prophet Zephaniah, O Lord; through him we entreat You, save our souls."
+      },
+      "troparion_status": "resolved",
       "tradition_tags": ["EOR", "OOR"],
-      "notes": "Hold — prophet type. Troparion text not securely confirmed."
+      "notes": "Holy Prophet Zephaniah (Sophonias), ninth of the Twelve Minor Prophets. Rank 4. Troparion Tone 2 per OCA. Source: oca.org/saints/troparia, December 3."
     }
   ]
 },
@@ -299,10 +311,14 @@
       "type": "prophet",
       "rank": 4,
       "troparion_tone": 2,
-      "troparion": null,
-      "troparion_status": "text-unavailable",
+      "troparion": {
+        "tone": 2,
+        "title": "Troparion of the Holy Prophet Haggai",
+        "text": "We celebrate the memory of Your prophet Haggai, O Lord; through him we entreat You, save our souls."
+      },
+      "troparion_status": "resolved",
       "tradition_tags": ["EOR", "OOR"],
-      "notes": "Hold — prophet type. Troparion text not securely confirmed."
+      "notes": "Holy Prophet Haggai, tenth of the Twelve Minor Prophets. Rank 4. Troparion Tone 2 per OCA. Source: oca.org/saints/troparia, December 16."
     }
   ]
 },
