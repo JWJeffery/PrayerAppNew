@@ -50,35 +50,39 @@
       ]
     },
     "08-03": {
-      "commemorations": [
-        {
-          "id": "isaakios-dalmatos-dalmatian",
-          "name": "Venerable Isaakios, Dalmatos, and Faustus",
-          "type": "monastic",
-          "rank": 4,
-          "troparion_tone": 8,
-          "troparion": null,
-          "troparion_status": "text-unavailable",
-          "tradition_tags": ["EOR"],
-          "notes": "Dalmatos (+440) and Faustus, abbots of the Dalmatian Monastery in Constantinople. Rank 4. Troparion text not securely confirmed."
-        }
-      ]
-    },
-    "08-04": {
-      "commemorations": [
-        {
-          "id": "seven-sleepers-ephesus",
-          "name": "The Seven Youths (Sleepers) of Ephesus",
-          "type": "martyr",
-          "rank": 4,
-          "troparion_tone": 4,
-          "troparion": null,
-          "troparion_status": "text-unavailable",
-          "tradition_tags": ["EOR"],
-          "notes": "The Seven Sleepers of Ephesus (+3rd c., awakened 5th c.). Rank 4. Troparion text not securely confirmed."
-        }
-      ]
-    },
+  "commemorations": [
+    {
+      "id": "isaakios-dalmatos-dalmatian",
+      "name": "Venerable Isaakios, Dalmatos, and Faustus",
+      "type": "monastic",
+      "rank": 4,
+      "troparion_tone": 8,
+      "troparion": null,
+      "troparion_status": "text-unavailable",
+      "tradition_tags": ["EOR"],
+      "notes": "Hold — monastic type. Troparion text not securely confirmed."
+    }
+  ]
+},
+   "08-04": {
+  "commemorations": [
+    {
+      "id": "seven-sleepers-ephesus",
+      "name": "The Seven Youths (Sleepers) of Ephesus",
+      "type": "martyr",
+      "rank": 4,
+      "troparion_tone": 4,
+      "troparion": {
+        "tone": 4,
+        "title": "Troparion of the Seven Youths (Sleepers) of Ephesus",
+        "text": "Your holy martyrs, the Seven Sleepers of Ephesus, O Lord, through their sufferings have received incorruptible crowns from You, our God. For having Your strength, they laid low their adversaries and shattered the powerless boldness of demons. Through their intercessions save our souls."
+      },
+      "troparion_status": "resolved",
+      "tradition_tags": ["EOR"],
+      "notes": "The Seven Sleepers of Ephesus (+3rd c., awakened 5th c.). Rank 4. Standard martyr troparion Tone 4, plural form applied. No unique text confirmed at OCA; standard form used per corpus rules."
+    }
+  ]
+},
     "08-05": {
       "commemorations": [
         {
@@ -118,35 +122,43 @@
       ]
     },
     "08-07": {
-      "commemorations": [
-        {
-          "id": "dometius-persia",
-          "name": "Venerable Martyr Dometios of Persia",
-          "type": "martyr",
-          "rank": 4,
-          "troparion_tone": 4,
-          "troparion": null,
-          "troparion_status": "text-unavailable",
-          "tradition_tags": ["EOR"],
-          "notes": "Dometios of Persia (+363), monk and martyr under Julian the Apostate. Rank 4. Troparion text not securely confirmed."
-        }
-      ]
-    },
-    "08-08": {
-      "commemorations": [
-        {
-          "id": "emilian-bishop-cyzicus",
-          "name": "St. Emilian the Confessor, Bishop of Cyzicus",
-          "type": "hierarch",
-          "rank": 4,
-          "troparion_tone": 4,
-          "troparion": null,
-          "troparion_status": "text-unavailable",
-          "tradition_tags": ["EOR"],
-          "notes": "Emilian of Cyzicus (+9th c.), confessor bishop under the Second Iconoclasm. Rank 4. Troparion text not securely confirmed."
-        }
-      ]
-    },
+  "commemorations": [
+    {
+      "id": "dometius-persia",
+      "name": "Venerable Martyr Dometios of Persia",
+      "type": "martyr",
+      "rank": 4,
+      "troparion_tone": 4,
+      "troparion": {
+        "tone": 4,
+        "title": "Troparion of the Venerable Martyr Dometios of Persia",
+        "text": "Your holy martyr Dometios, O Lord, through his sufferings has received an incorruptible crown from You, our God. For having Your strength, he laid low his adversaries and shattered the powerless boldness of demons. Through his intercessions save our souls."
+      },
+      "troparion_status": "resolved",
+      "tradition_tags": ["EOR"],
+      "notes": "Dometios of Persia (+363), monk and martyr under Julian the Apostate. Type is 'martyr' in batch; promoted accordingly. Rank 4. Standard martyr troparion Tone 4 applied. No unique text confirmed at OCA; standard form used per corpus rules."
+    }
+  ]
+},
+   "08-08": {
+  "commemorations": [
+    {
+      "id": "emilian-bishop-cyzicus",
+      "name": "St. Emilian the Confessor, Bishop of Cyzicus",
+      "type": "hierarch",
+      "rank": 4,
+      "troparion_tone": 4,
+      "troparion": {
+        "tone": 4,
+        "title": "Troparion of St. Emilian the Confessor, Bishop of Cyzicus",
+        "text": "In truth you were revealed to your flock as a rule of faith, an image of humility and a teacher of abstinence. Your humility exalted you; your poverty enriched you. Hierarch Father Emilian, entreat Christ our God that our souls may be saved."
+      },
+      "troparion_status": "resolved",
+      "tradition_tags": ["EOR"],
+      "notes": "Emilian of Cyzicus (+9th c.), confessor bishop under the Second Iconoclasm. Rank 4. Standard hierarch troparion Tone 4 applied. No unique text confirmed at OCA; standard form used per corpus rules."
+    }
+  ]
+},
     "08-09": {
       "commemorations": [
         {
@@ -167,50 +179,58 @@
       ]
     },
     "08-10": {
-      "commemorations": [
-        {
-          "id": "lawrence-archdeacon-rome",
-          "name": "Holy Martyr and Archdeacon Lawrence of Rome",
-          "type": "martyr",
-          "rank": 4,
-          "troparion_tone": 4,
-          "troparion": null,
-          "troparion_status": "text-unavailable",
-          "tradition_tags": ["EOR", "LAT", "ANG"],
-          "notes": "Lawrence of Rome (+258), archdeacon and martyr under Valerian. Widely venerated East and West. Eastern troparion text not securely confirmed for corpus."
-        }
-      ]
-    },
-    "08-11": {
-      "commemorations": [
-        {
-          "id": "euplus-catania-deacon",
-          "name": "Holy Martyr Euplus (Euplius) of Catania",
-          "type": "martyr",
-          "rank": 4,
-          "troparion_tone": 4,
-          "troparion": null,
-          "troparion_status": "text-unavailable",
-          "tradition_tags": ["EOR"],
-          "notes": "Euplus of Catania (+304), deacon-martyr under Diocletian. Rank 4. Troparion text not securely confirmed."
-        }
-      ]
-    },
-    "08-12": {
-      "commemorations": [
-        {
-          "id": "phoebe-deaconess",
-          "name": "Holy Deaconess Phoebe",
-          "type": "saint",
-          "rank": 4,
-          "troparion_tone": 3,
-          "troparion": null,
-          "troparion_status": "text-unavailable",
-          "tradition_tags": ["EOR"],
-          "notes": "Phoebe the Deaconess (Romans 16:1), one of the Seventy. Rank 4. Troparion text not securely confirmed."
-        }
-      ]
-    },
+  "commemorations": [
+    {
+      "id": "lawrence-archdeacon-rome",
+      "name": "Holy Martyr and Archdeacon Lawrence of Rome",
+      "type": "martyr",
+      "rank": 4,
+      "troparion_tone": 4,
+      "troparion": {
+        "tone": 4,
+        "title": "Troparion of the Holy Martyr and Archdeacon Lawrence of Rome",
+        "text": "Your holy martyr Lawrence, O Lord, through his sufferings has received an incorruptible crown from You, our God. For having Your strength, he laid low his adversaries and shattered the powerless boldness of demons. Through his intercessions save our souls."
+      },
+      "troparion_status": "resolved",
+      "tradition_tags": ["EOR", "LAT", "ANG"],
+      "notes": "Lawrence of Rome (+258), archdeacon and martyr under Valerian. Rank 4. Standard martyr troparion Tone 4 applied. No unique Eastern text confirmed at OCA; standard form used per corpus rules."
+    }
+  ]
+},
+  "08-11": {
+  "commemorations": [
+    {
+      "id": "euplus-catania-deacon",
+      "name": "Holy Martyr Euplus (Euplius) of Catania",
+      "type": "martyr",
+      "rank": 4,
+      "troparion_tone": 4,
+      "troparion": {
+        "tone": 4,
+        "title": "Troparion of the Holy Martyr Euplus of Catania",
+        "text": "Your holy martyr Euplus, O Lord, through his sufferings has received an incorruptible crown from You, our God. For having Your strength, he laid low his adversaries and shattered the powerless boldness of demons. Through his intercessions save our souls."
+      },
+      "troparion_status": "resolved",
+      "tradition_tags": ["EOR"],
+      "notes": "Euplus of Catania (+304), deacon-martyr under Diocletian. Rank 4. Standard martyr troparion Tone 4 applied. No unique text confirmed at OCA; standard form used per corpus rules."
+    }
+  ]
+},
+   "08-12": {
+  "commemorations": [
+    {
+      "id": "phoebe-deaconess",
+      "name": "Holy Deaconess Phoebe",
+      "type": "saint",
+      "rank": 4,
+      "troparion_tone": 3,
+      "troparion": null,
+      "troparion_status": "text-unavailable",
+      "tradition_tags": ["EOR"],
+      "notes": "Hold — type 'saint' is not in the auto-promote list. Troparion text not securely confirmed."
+    }
+  ]
+},
     "08-13": {
       "commemorations": [
         {
@@ -287,51 +307,63 @@
         }
       ]
     },
-    "08-17": {
-      "commemorations": [
-        {
-          "id": "myron-martyr-cyzicus",
-          "name": "Holy Martyr Myron of Cyzicus",
-          "type": "martyr",
-          "rank": 4,
-          "troparion_tone": 4,
-          "troparion": null,
-          "troparion_status": "text-unavailable",
-          "tradition_tags": ["EOR"],
-          "notes": "Myron of Cyzicus (+3rd c.), presbyter-martyr. Rank 4. Troparion text not securely confirmed."
-        }
-      ]
-    },
+   "08-17": {
+  "commemorations": [
+    {
+      "id": "myron-martyr-cyzicus",
+      "name": "Holy Martyr Myron of Cyzicus",
+      "type": "martyr",
+      "rank": 4,
+      "troparion_tone": 4,
+      "troparion": {
+        "tone": 4,
+        "title": "Troparion of the Holy Martyr Myron of Cyzicus",
+        "text": "Your holy martyr Myron, O Lord, through his sufferings has received an incorruptible crown from You, our God. For having Your strength, he laid low his adversaries and shattered the powerless boldness of demons. Through his intercessions save our souls."
+      },
+      "troparion_status": "resolved",
+      "tradition_tags": ["EOR"],
+      "notes": "Myron of Cyzicus (+3rd c.), presbyter-martyr. Rank 4. Standard martyr troparion Tone 4 applied. No unique text confirmed at OCA; standard form used per corpus rules."
+    }
+  ]
+},
     "08-18": {
-      "commemorations": [
-        {
-          "id": "floros-lavros-martyrs",
-          "name": "Holy Martyrs Floros and Lavros",
-          "type": "martyr",
-          "rank": 4,
-          "troparion_tone": 4,
-          "troparion": null,
-          "troparion_status": "text-unavailable",
-          "tradition_tags": ["EOR"],
-          "notes": "Floros and Lavros (+2nd c.), stonemason-martyrs of Illyria. Rank 4. Patrons of horses in Slavic tradition. Troparion text not securely confirmed."
-        }
-      ]
-    },
+  "commemorations": [
+    {
+      "id": "floros-lavros-martyrs",
+      "name": "Holy Martyrs Floros and Lavros",
+      "type": "martyr",
+      "rank": 4,
+      "troparion_tone": 4,
+      "troparion": {
+        "tone": 4,
+        "title": "Troparion of the Holy Martyrs Floros and Lavros",
+        "text": "Your holy martyrs Floros and Lavros, O Lord, through their sufferings have received incorruptible crowns from You, our God. For having Your strength, they laid low their adversaries and shattered the powerless boldness of demons. Through their intercessions save our souls."
+      },
+      "troparion_status": "resolved",
+      "tradition_tags": ["EOR"],
+      "notes": "Floros and Lavros (+2nd c.), stonemason-martyrs of Illyria. Rank 4. Standard martyr troparion Tone 4, plural form applied. No unique text confirmed at OCA; standard form used per corpus rules."
+    }
+  ]
+},
     "08-19": {
-      "commemorations": [
-        {
-          "id": "andrew-stratelates",
-          "name": "Holy Martyr Andrew Stratelates and companions",
-          "type": "martyr",
-          "rank": 4,
-          "troparion_tone": 4,
-          "troparion": null,
-          "troparion_status": "text-unavailable",
-          "tradition_tags": ["EOR"],
-          "notes": "Andrew Stratelates (+4th c.) and 2,593 companions, martyrs of Cilicia. Rank 4. Troparion text not securely confirmed."
-        }
-      ]
-    },
+  "commemorations": [
+    {
+      "id": "andrew-stratelates",
+      "name": "Holy Martyr Andrew Stratelates and companions",
+      "type": "martyr",
+      "rank": 4,
+      "troparion_tone": 4,
+      "troparion": {
+        "tone": 4,
+        "title": "Troparion of the Holy Martyr Andrew Stratelates and companions",
+        "text": "Your holy martyrs Andrew Stratelates and companions, O Lord, through their sufferings have received incorruptible crowns from You, our God. For having Your strength, they laid low their adversaries and shattered the powerless boldness of demons. Through their intercessions save our souls."
+      },
+      "troparion_status": "resolved",
+      "tradition_tags": ["EOR"],
+      "notes": "Andrew Stratelates and 2,593 companions (+4th c.), martyrs of Cilicia. Rank 4. Standard martyr troparion Tone 4, plural form applied. No unique text confirmed at OCA; standard form used per corpus rules."
+    }
+  ]
+},
     "08-20": {
       "commemorations": [
         {
@@ -371,20 +403,24 @@
       ]
     },
     "08-22": {
-      "commemorations": [
-        {
-          "id": "agathonikos-martyr",
-          "name": "Holy Martyr Agathonikos and companions",
-          "type": "martyr",
-          "rank": 4,
-          "troparion_tone": 4,
-          "troparion": null,
-          "troparion_status": "text-unavailable",
-          "tradition_tags": ["EOR"],
-          "notes": "Agathonikos and companions (+3rd c.), martyrs of Nicomedia. Rank 4. Troparion text not securely confirmed."
-        }
-      ]
-    },
+  "commemorations": [
+    {
+      "id": "agathonikos-martyr",
+      "name": "Holy Martyr Agathonikos and companions",
+      "type": "martyr",
+      "rank": 4,
+      "troparion_tone": 4,
+      "troparion": {
+        "tone": 4,
+        "title": "Troparion of the Holy Martyr Agathonikos and companions",
+        "text": "Your holy martyrs Agathonikos and companions, O Lord, through their sufferings have received incorruptible crowns from You, our God. For having Your strength, they laid low their adversaries and shattered the powerless boldness of demons. Through their intercessions save our souls."
+      },
+      "troparion_status": "resolved",
+      "tradition_tags": ["EOR"],
+      "notes": "Agathonikos and companions (+3rd c.), martyrs of Nicomedia. Rank 4. Standard martyr troparion Tone 4, plural form applied. No unique text confirmed at OCA; standard form used per corpus rules."
+    }
+  ]
+},
     "08-23": {
       "commemorations": [
         {
@@ -404,21 +440,25 @@
         }
       ]
     },
-    "08-24": {
-      "commemorations": [
-        {
-          "id": "eutyches-hieromartyr",
-          "name": "Hieromartyr Eutyches, Disciple of John the Theologian",
-          "type": "martyr",
-          "rank": 4,
-          "troparion_tone": 4,
-          "troparion": null,
-          "troparion_status": "text-unavailable",
-          "tradition_tags": ["EOR"],
-          "notes": "Eutyches (+1st c.), disciple of John and Paul, bishop and martyr. Rank 4. Troparion text not securely confirmed."
-        }
-      ]
-    },
+   "08-24": {
+  "commemorations": [
+    {
+      "id": "eutyches-hieromartyr",
+      "name": "Hieromartyr Eutyches, Disciple of John the Theologian",
+      "type": "martyr",
+      "rank": 4,
+      "troparion_tone": 4,
+      "troparion": {
+        "tone": 4,
+        "title": "Troparion of the Hieromartyr Eutyches, Disciple of John the Theologian",
+        "text": "Your holy martyr Eutyches, O Lord, through his sufferings has received an incorruptible crown from You, our God. For having Your strength, he laid low his adversaries and shattered the powerless boldness of demons. Through his intercessions save our souls."
+      },
+      "troparion_status": "resolved",
+      "tradition_tags": ["EOR"],
+      "notes": "Eutyches (+1st c.), disciple of John and Paul, bishop and martyr. Rank 4. Standard martyr troparion Tone 4 applied. No unique text confirmed at OCA; standard form used per corpus rules."
+    }
+  ]
+},
     "08-25": {
       "commemorations": [
         {
@@ -458,35 +498,35 @@
       ]
     },
     "08-27": {
-      "commemorations": [
-        {
-          "id": "pimen-great",
-          "name": "Venerable Pimen (Poemen) the Great",
-          "type": "monastic",
-          "rank": 4,
-          "troparion_tone": 8,
-          "troparion": null,
-          "troparion_status": "text-unavailable",
-          "tradition_tags": ["EOR"],
-          "notes": "Poemen the Great (+5th c.), Egyptian desert father, one of the most-quoted in the Apophthegmata Patrum. Rank 4. Troparion text not securely confirmed."
-        }
-      ]
-    },
+  "commemorations": [
+    {
+      "id": "pimen-great",
+      "name": "Venerable Pimen (Poemen) the Great",
+      "type": "monastic",
+      "rank": 4,
+      "troparion_tone": 8,
+      "troparion": null,
+      "troparion_status": "text-unavailable",
+      "tradition_tags": ["EOR"],
+      "notes": "Hold — monastic type. Troparion text not securely confirmed."
+    }
+  ]
+},
     "08-28": {
-      "commemorations": [
-        {
-          "id": "moses-prophet-ethiopia",
-          "name": "Venerable Moses the Ethiopian (the Black)",
-          "type": "monastic",
-          "rank": 4,
-          "troparion_tone": 8,
-          "troparion": null,
-          "troparion_status": "text-unavailable",
-          "tradition_tags": ["EOR"],
-          "notes": "Moses the Ethiopian (+ca. 405), former robber turned desert father in Scetis. Rank 4. Troparion text not securely confirmed."
-        }
-      ]
-    },
+  "commemorations": [
+    {
+      "id": "moses-prophet-ethiopia",
+      "name": "Venerable Moses the Ethiopian (the Black)",
+      "type": "monastic",
+      "rank": 4,
+      "troparion_tone": 8,
+      "troparion": null,
+      "troparion_status": "text-unavailable",
+      "tradition_tags": ["EOR"],
+      "notes": "Hold — monastic type. Troparion text not securely confirmed."
+    }
+  ]
+},
     "08-29": {
       "commemorations": [
         {
@@ -507,20 +547,24 @@
       ]
     },
     "08-30": {
-      "commemorations": [
-        {
-          "id": "alexander-john-paul-cp-patriarchs",
-          "name": "Sts. Alexander, John, and Paul the New, Patriarchs of Constantinople",
-          "type": "hierarch",
-          "rank": 4,
-          "troparion_tone": 4,
-          "troparion": null,
-          "troparion_status": "text-unavailable",
-          "tradition_tags": ["EOR"],
-          "notes": "Alexander (+340), John (+595), and Paul the New (+784), patriarchs of Constantinople. Rank 4. Troparion text not securely confirmed."
-        }
-      ]
-    },
+  "commemorations": [
+    {
+      "id": "alexander-john-paul-cp-patriarchs",
+      "name": "Sts. Alexander, John, and Paul the New, Patriarchs of Constantinople",
+      "type": "hierarch",
+      "rank": 4,
+      "troparion_tone": 4,
+      "troparion": {
+        "tone": 4,
+        "title": "Troparion of Sts. Alexander, John, and Paul the New, Patriarchs of Constantinople",
+        "text": "In truth you were revealed to your flocks as rules of faith, images of humility and teachers of abstinence. Your humility exalted you; your poverty enriched you. Hierarchs Alexander, John, and Paul, entreat Christ our God that our souls may be saved."
+      },
+      "troparion_status": "resolved",
+      "tradition_tags": ["EOR"],
+      "notes": "Alexander (+340), John (+595), Paul the New (+784), patriarchs of Constantinople. Rank 4. Standard hierarch troparion Tone 4, plural adaptation applied. No unique text confirmed at OCA; standard form used per corpus rules."
+    }
+  ]
+},
     "08-31": {
       "commemorations": [
         {

@@ -69,65 +69,77 @@
       ]
     },
     "02-04": {
-      "commemorations": [
-        {
-          "id": "isidore-pelusiot",
-          "name": "Venerable Isidore of Pelusium",
-          "type": "monastic",
-          "rank": 4,
-          "troparion_tone": 8,
-          "troparion": null,
-          "troparion_status": "text-unavailable",
-          "tradition_tags": ["EOR"],
-          "notes": "Isidore of Pelusium (+ca. 450), Egyptian monk and prolific letter-writer. Rank 4. Troparion text not securely confirmed."
-        }
-      ]
-    },
-    "02-05": {
-      "commemorations": [
-        {
-          "id": "agatha-catania",
-          "name": "Holy Martyr Agatha of Catania",
-          "type": "martyr",
-          "rank": 4,
-          "troparion_tone": 4,
-          "troparion": null,
-          "troparion_status": "text-unavailable",
-          "tradition_tags": ["EOR", "LAT", "ANG"],
-          "notes": "Agatha of Catania (+251). Venerated in both East and West. Eastern Menaion troparion text not securely confirmed for corpus."
-        }
-      ]
-    },
+  "commemorations": [
+    {
+      "id": "isidore-pelusiot",
+      "name": "Venerable Isidore of Pelusium",
+      "type": "monastic",
+      "rank": 4,
+      "troparion_tone": 8,
+      "troparion": null,
+      "troparion_status": "text-unavailable",
+      "tradition_tags": ["EOR"],
+      "notes": "Hold — monastic type. Troparion text not securely confirmed."
+    }
+  ]
+},
+   "02-05": {
+  "commemorations": [
+    {
+      "id": "agatha-catania",
+      "name": "Holy Martyr Agatha of Catania",
+      "type": "martyr",
+      "rank": 4,
+      "troparion_tone": 4,
+      "troparion": {
+        "tone": 4,
+        "title": "Troparion of the Holy Martyr Agatha of Catania",
+        "text": "Your holy martyr Agatha, O Lord, through her sufferings has received an incorruptible crown from You, our God. For having Your strength, she laid low her adversaries and shattered the powerless boldness of demons. Through her intercessions save our souls."
+      },
+      "troparion_status": "resolved",
+      "tradition_tags": ["EOR", "LAT", "ANG"],
+      "notes": "Agatha of Catania (+251), virgin martyr under Decius. Rank 4. Standard martyr troparion Tone 4, feminine form applied. No unique Eastern troparion text confirmed at OCA; standard form used per corpus rules."
+    }
+  ]
+},
     "02-06": {
-      "commemorations": [
-        {
-          "id": "bucolus-smyrna",
-          "name": "Hieromartyr Bucolus, Bishop of Smyrna",
-          "type": "hierarch",
-          "rank": 4,
-          "troparion_tone": 4,
-          "troparion": null,
-          "troparion_status": "text-unavailable",
-          "tradition_tags": ["EOR"],
-          "notes": "Bucolus of Smyrna (+2nd c.), disciple of the Apostle John. Rank 4. Troparion text not securely confirmed."
-        }
-      ]
-    },
+  "commemorations": [
+    {
+      "id": "bucolus-smyrna",
+      "name": "St. Bucolus, Bishop of Smyrna",
+      "type": "hierarch",
+      "rank": 4,
+      "troparion_tone": 4,
+      "troparion": {
+        "tone": 4,
+        "title": "Troparion of St. Bucolus of Smyrna",
+        "text": "You shone with the rays of virtue received from him who leaned on the Master's breast. Resplendent, God-inspired hierarch, you led your flock to the pastures of truth. Entreat Christ our God for those who honor you, father Bucolus."
+      },
+      "troparion_status": "resolved",
+      "tradition_tags": ["EOR"],
+      "notes": "Bucolus of Smyrna (+2nd c.), disciple of the Apostle John, first Bishop of Smyrna. Rank 4. Troparion Tone 4 confirmed: OCA (Feb. 6); corroborated by Basilica.ro."
+    }
+  ]
+},
     "02-07": {
-      "commemorations": [
-        {
-          "id": "parthenius-lampsacus",
-          "name": "Hieromartyr Parthenius, Bishop of Lampsacus",
-          "type": "hierarch",
-          "rank": 4,
-          "troparion_tone": 4,
-          "troparion": null,
-          "troparion_status": "text-unavailable",
-          "tradition_tags": ["EOR"],
-          "notes": "Parthenius of Lampsacus (+4th c.). Rank 4. Troparion text not securely confirmed."
-        }
-      ]
-    },
+  "commemorations": [
+    {
+      "id": "parthenius-lampsacus",
+      "name": "St. Parthenius, Bishop of Lampsacus",
+      "type": "hierarch",
+      "rank": 4,
+      "troparion_tone": 4,
+      "troparion": {
+        "tone": 4,
+        "title": "Troparion of St. Parthenius of Lampsacus",
+        "text": "O God of our Fathers, ever dealing with us according to Your compassion, take not Your mercy from us, but direct our lives in peace through the prayers of Saint Parthenios."
+      },
+      "troparion_status": "resolved",
+      "tradition_tags": ["EOR"],
+      "notes": "Parthenius of Lampsacus (+4th c.), bishop and wonderworker. Rank 4. Troparion Tone 4 confirmed: OCA (Feb. 7); corroborated by Basilica.ro and MCI Menaion."
+    }
+  ]
+},
     "02-08": {
       "commemorations": [
         {
@@ -186,20 +198,24 @@
       ]
     },
     "02-11": {
-      "commemorations": [
-        {
-          "id": "blase-sebaste",
-          "name": "Hieromartyr Blaise (Vlasios), Bishop of Sebaste",
-          "type": "martyr",
-          "rank": 4,
-          "troparion_tone": 4,
-          "troparion": null,
-          "troparion_status": "text-unavailable",
-          "tradition_tags": ["EOR", "LAT", "ANG"],
-          "notes": "Blaise of Sebaste (+316). Widely venerated East and West. Eastern troparion text not securely confirmed for corpus."
-        }
-      ]
-    },
+  "commemorations": [
+    {
+      "id": "blase-sebaste",
+      "name": "Hieromartyr Blaise (Vlasios), Bishop of Sebaste",
+      "type": "martyr",
+      "rank": 4,
+      "troparion_tone": 4,
+      "troparion": {
+        "tone": 4,
+        "title": "Troparion of the Hieromartyr Blaise of Sebaste",
+        "text": "Your holy martyr Blaise, O Lord, through his sufferings has received an incorruptible crown from You, our God. For having Your strength, he laid low his adversaries and shattered the powerless boldness of demons. Through his intercessions save our souls."
+      },
+      "troparion_status": "resolved",
+      "tradition_tags": ["EOR", "LAT", "ANG"],
+      "notes": "Blaise of Sebaste (+316), bishop and martyr. Rank 4. Standard martyr troparion Tone 4 applied. No unique Eastern troparion text confirmed at OCA; standard form used per corpus rules."
+    }
+  ]
+},
     "02-12": {
       "commemorations": [
         {
@@ -219,21 +235,21 @@
         }
       ]
     },
-    "02-13": {
-      "commemorations": [
-        {
-          "id": "martinian-caesarea",
-          "name": "Venerable Martinian of Caesarea",
-          "type": "monastic",
-          "rank": 4,
-          "troparion_tone": 8,
-          "troparion": null,
-          "troparion_status": "text-unavailable",
-          "tradition_tags": ["EOR"],
-          "notes": "Martinian of Caesarea in Palestine (+5th c.). Rank 4. Troparion text not securely confirmed."
-        }
-      ]
-    },
+   "02-13": {
+  "commemorations": [
+    {
+      "id": "martinian-caesarea",
+      "name": "Venerable Martinian of Caesarea",
+      "type": "monastic",
+      "rank": 4,
+      "troparion_tone": 8,
+      "troparion": null,
+      "troparion_status": "text-unavailable",
+      "tradition_tags": ["EOR"],
+      "notes": "Hold — monastic type. Troparion text not securely confirmed."
+    }
+  ]
+},
     "02-14": {
       "commemorations": [
         {
@@ -273,20 +289,24 @@
       ]
     },
     "02-16": {
-      "commemorations": [
-        {
-          "id": "pamphilius-caesarea",
-          "name": "Martyr Pamphilius and companions of Caesarea",
-          "type": "martyr",
-          "rank": 4,
-          "troparion_tone": 4,
-          "troparion": null,
-          "troparion_status": "text-unavailable",
-          "tradition_tags": ["EOR"],
-          "notes": "Pamphilius (+309), presbyter and martyr of Caesarea in Palestine. Rank 4. Troparion text not securely confirmed."
-        }
-      ]
-    },
+  "commemorations": [
+    {
+      "id": "pamphilius-caesarea",
+      "name": "Martyr Pamphilius and companions of Caesarea",
+      "type": "martyr",
+      "rank": 4,
+      "troparion_tone": 4,
+      "troparion": {
+        "tone": 4,
+        "title": "Troparion of the Martyr Pamphilius and companions of Caesarea",
+        "text": "Your holy martyrs Pamphilius and companions, O Lord, through their sufferings have received incorruptible crowns from You, our God. For having Your strength, they laid low their adversaries and shattered the powerless boldness of demons. Through their intercessions save our souls."
+      },
+      "troparion_status": "resolved",
+      "tradition_tags": ["EOR"],
+      "notes": "Pamphilius of Caesarea (+309), presbyter, and companions. Rank 4. Standard martyr troparion Tone 4, plural form applied. No unique text confirmed at OCA; standard form used per corpus rules."
+    }
+  ]
+},
     "02-17": {
       "commemorations": [
         {
@@ -360,20 +380,20 @@
       ]
     },
     "02-21": {
-      "commemorations": [
-        {
-          "id": "timothy-symbola",
-          "name": "Venerable Timothy of Symbola",
-          "type": "monastic",
-          "rank": 4,
-          "troparion_tone": 8,
-          "troparion": null,
-          "troparion_status": "text-unavailable",
-          "tradition_tags": ["EOR"],
-          "notes": "Timothy of Symbola (+9th c.), hesychast of Mt. Olympus in Bithynia. Rank 4. Troparion text not securely confirmed."
-        }
-      ]
-    },
+  "commemorations": [
+    {
+      "id": "timothy-symbola",
+      "name": "Venerable Timothy of Symbola",
+      "type": "monastic",
+      "rank": 4,
+      "troparion_tone": 8,
+      "troparion": null,
+      "troparion_status": "text-unavailable",
+      "tradition_tags": ["EOR"],
+      "notes": "Hold — monastic type. Troparion text not securely confirmed."
+    }
+  ]
+},
     "02-22": {
       "commemorations": [
         {
@@ -447,49 +467,53 @@
       ]
     },
     "02-26": {
-      "commemorations": [
-        {
-          "id": "porphyry-gaza",
-          "name": "Hieromartyr Porphyry, Bishop of Gaza",
-          "type": "hierarch",
-          "rank": 4,
-          "troparion_tone": 4,
-          "troparion": null,
-          "troparion_status": "text-unavailable",
-          "tradition_tags": ["EOR"],
-          "notes": "Porphyry of Gaza (+420), bishop who oversaw the destruction of the pagan temples of Gaza. Rank 4. Troparion text not securely confirmed."
-        }
-      ]
-    },
-    "02-27": {
-      "commemorations": [
-        {
-          "id": "procopius-decapolites",
-          "name": "Venerable Procopius of Decapolis",
-          "type": "monastic",
-          "rank": 4,
-          "troparion_tone": 8,
-          "troparion": null,
-          "troparion_status": "text-unavailable",
-          "tradition_tags": ["EOR"],
-          "notes": "Procopius of Decapolis (+8th c.), confessor during the Iconoclast controversy. Rank 4. Troparion text not securely confirmed."
-        }
-      ]
-    },
-    "02-28": {
-      "commemorations": [
-        {
-          "id": "basil-confessor",
-          "name": "Venerable Basil the Confessor",
-          "type": "monastic",
-          "rank": 4,
-          "troparion_tone": 8,
-          "troparion": null,
-          "troparion_status": "text-unavailable",
-          "tradition_tags": ["EOR"],
-          "notes": "Basil the Confessor (+8th c.), companion of Procopius, confessor under Iconoclasm. Rank 4. Troparion text not securely confirmed."
-        }
-      ]
+  "commemorations": [
+    {
+      "id": "porphyry-gaza",
+      "name": "St. Porphyrius, Bishop of Gaza",
+      "type": "hierarch",
+      "rank": 4,
+      "troparion_tone": 4,
+      "troparion": {
+        "tone": 4,
+        "title": "Troparion of St. Porphyrius of Gaza",
+        "text": "Who can tell of your labors and illnesses leading to godly devotion, O Father? For you labored incessantly day and night, cleansing Gaza of its wickedness, and planting piety; therefore, as the protector of your flock, O Porphyrios, entreat Christ God for the salvation of our souls."
+      },
+      "troparion_status": "resolved",
+      "tradition_tags": ["EOR"],
+      "notes": "Porphyrius of Gaza (+420), bishop who oversaw the Christianization of Gaza. Rank 4. Troparion Tone 4 confirmed: OCA (Feb. 26). Name corrected: Porphyrius died peacefully and was not a martyr; Hieromartyr label removed."
     }
+  ]
+},
+    "02-27": {
+  "commemorations": [
+    {
+      "id": "procopius-decapolites",
+      "name": "Venerable Procopius of Decapolis",
+      "type": "monastic",
+      "rank": 4,
+      "troparion_tone": 8,
+      "troparion": null,
+      "troparion_status": "text-unavailable",
+      "tradition_tags": ["EOR"],
+      "notes": "Hold — monastic type. Troparion text not securely confirmed."
+    }
+  ]
+},
+    "02-28": {
+  "commemorations": [
+    {
+      "id": "basil-confessor",
+      "name": "Venerable Basil the Confessor",
+      "type": "monastic",
+      "rank": 4,
+      "troparion_tone": 8,
+      "troparion": null,
+      "troparion_status": "text-unavailable",
+      "tradition_tags": ["EOR"],
+      "notes": "Hold — monastic type. Troparion text not securely confirmed."
+    }
+  ]
+}
   }
 }

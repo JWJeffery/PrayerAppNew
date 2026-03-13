@@ -50,20 +50,24 @@
       ]
     },
     "07-03": {
-      "commemorations": [
-        {
-          "id": "hyacinth-caesarea",
-          "name": "Holy Martyr Hyacinth of Caesarea",
-          "type": "martyr",
-          "rank": 4,
-          "troparion_tone": 4,
-          "troparion": null,
-          "troparion_status": "text-unavailable",
-          "tradition_tags": ["EOR"],
-          "notes": "Hyacinth of Caesarea (+108), martyr under Trajan. Rank 4. Troparion text not securely confirmed."
-        }
-      ]
-    },
+  "commemorations": [
+    {
+      "id": "hyacinth-caesarea",
+      "name": "Holy Martyr Hyacinth of Caesarea",
+      "type": "martyr",
+      "rank": 4,
+      "troparion_tone": 4,
+      "troparion": {
+        "tone": 4,
+        "title": "Troparion of the Holy Martyr Hyacinth of Caesarea",
+        "text": "Your holy martyr Hyacinth, O Lord, through his sufferings has received an incorruptible crown from You, our God. For having Your strength, he laid low his adversaries and shattered the powerless boldness of demons. Through his intercessions save our souls."
+      },
+      "troparion_status": "resolved",
+      "tradition_tags": ["EOR"],
+      "notes": "Hyacinth of Caesarea (+108), martyr under Trajan. Rank 4. Standard martyr troparion Tone 4 applied. No unique text confirmed at OCA; standard form used per corpus rules."
+    }
+  ]
+},
     "07-04": {
       "commemorations": [
         {
@@ -103,20 +107,20 @@
       ]
     },
     "07-06": {
-      "commemorations": [
-        {
-          "id": "sisoes-great",
-          "name": "Venerable Sisoes the Great",
-          "type": "monastic",
-          "rank": 4,
-          "troparion_tone": 8,
-          "troparion": null,
-          "troparion_status": "text-unavailable",
-          "tradition_tags": ["EOR"],
-          "notes": "Sisoes the Great (+429), Egyptian desert father. Rank 4. Troparion text not securely confirmed."
-        }
-      ]
-    },
+  "commemorations": [
+    {
+      "id": "sisoes-great",
+      "name": "Venerable Sisoes the Great",
+      "type": "monastic",
+      "rank": 4,
+      "troparion_tone": 8,
+      "troparion": null,
+      "troparion_status": "text-unavailable",
+      "tradition_tags": ["EOR"],
+      "notes": "Hold — monastic type. Troparion text not securely confirmed."
+    }
+  ]
+},
     "07-07": {
       "commemorations": [
         {
@@ -156,35 +160,39 @@
       ]
     },
     "07-09": {
-      "commemorations": [
-        {
-          "id": "paisios-great",
-          "name": "Venerable Paisios the Great",
-          "type": "monastic",
-          "rank": 4,
-          "troparion_tone": 8,
-          "troparion": null,
-          "troparion_status": "text-unavailable",
-          "tradition_tags": ["EOR"],
-          "notes": "Paisios the Great (+400), Egyptian monastic, disciple of Pambo. Rank 4. Troparion text not securely confirmed."
-        }
-      ]
-    },
+  "commemorations": [
+    {
+      "id": "paisios-great",
+      "name": "Venerable Paisios the Great",
+      "type": "monastic",
+      "rank": 4,
+      "troparion_tone": 8,
+      "troparion": null,
+      "troparion_status": "text-unavailable",
+      "tradition_tags": ["EOR"],
+      "notes": "Hold — monastic type. Troparion text not securely confirmed."
+    }
+  ]
+},
     "07-10": {
-      "commemorations": [
-        {
-          "id": "forty-five-martyrs-nicopolis",
-          "name": "Holy Forty-Five Martyrs of Nicopolis in Armenia",
-          "type": "martyr",
-          "rank": 4,
-          "troparion_tone": 4,
-          "troparion": null,
-          "troparion_status": "text-unavailable",
-          "tradition_tags": ["EOR"],
-          "notes": "Forty-five martyrs of Nicopolis in Armenia (+319), burned alive under Licinius. Rank 4. Troparion text not securely confirmed."
-        }
-      ]
-    },
+  "commemorations": [
+    {
+      "id": "forty-five-martyrs-nicopolis",
+      "name": "Holy Forty-Five Martyrs of Nicopolis in Armenia",
+      "type": "martyr",
+      "rank": 4,
+      "troparion_tone": 4,
+      "troparion": {
+        "tone": 4,
+        "title": "Troparion of the Holy Forty-Five Martyrs of Nicopolis in Armenia",
+        "text": "Your holy martyrs of Nicopolis, O Lord, through their sufferings have received incorruptible crowns from You, our God. For having Your strength, they laid low their adversaries and shattered the powerless boldness of demons. Through their intercessions save our souls."
+      },
+      "troparion_status": "resolved",
+      "tradition_tags": ["EOR"],
+      "notes": "Forty-five martyrs of Nicopolis in Armenia (+319), burned alive under Licinius. Rank 4. Standard martyr troparion Tone 4, plural form applied. No unique text confirmed at OCA; standard form used per corpus rules."
+    }
+  ]
+},
     "07-11": {
       "commemorations": [
         {
@@ -205,20 +213,24 @@
       ]
     },
     "07-12": {
-      "commemorations": [
-        {
-          "id": "proclus-hilary-martyrs",
-          "name": "Holy Martyrs Proclus and Hilary",
-          "type": "martyr",
-          "rank": 4,
-          "troparion_tone": 4,
-          "troparion": null,
-          "troparion_status": "text-unavailable",
-          "tradition_tags": ["EOR"],
-          "notes": "Proclus and Hilary (+115), martyrs under Trajan. Rank 4. Troparion text not securely confirmed."
-        }
-      ]
-    },
+  "commemorations": [
+    {
+      "id": "proclus-hilary-martyrs",
+      "name": "Holy Martyrs Proclus and Hilary",
+      "type": "martyr",
+      "rank": 4,
+      "troparion_tone": 4,
+      "troparion": {
+        "tone": 4,
+        "title": "Troparion of the Holy Martyrs Proclus and Hilary",
+        "text": "Your holy martyrs Proclus and Hilary, O Lord, through their sufferings have received incorruptible crowns from You, our God. For having Your strength, they laid low their adversaries and shattered the powerless boldness of demons. Through their intercessions save our souls."
+      },
+      "troparion_status": "resolved",
+      "tradition_tags": ["EOR"],
+      "notes": "Proclus and Hilary (+115), martyrs under Trajan. Rank 4. Standard martyr troparion Tone 4, plural form applied. No unique text confirmed at OCA; standard form used per corpus rules."
+    }
+  ]
+},
     "07-13": {
       "commemorations": [
         {
@@ -239,20 +251,20 @@
       ]
     },
     "07-14": {
-      "commemorations": [
-        {
-          "id": "joseph-arimathea-nicodemus",
-          "name": "Holy Joseph of Arimathea and Nicodemus",
-          "type": "saint",
-          "rank": 4,
-          "troparion_tone": 2,
-          "troparion": null,
-          "troparion_status": "text-unavailable",
-          "tradition_tags": ["EOR"],
-          "notes": "Joseph of Arimathea and Nicodemus, those who buried Christ. Rank 4. Troparion text not securely confirmed."
-        }
-      ]
-    },
+  "commemorations": [
+    {
+      "id": "joseph-arimathea-nicodemus",
+      "name": "Holy Joseph of Arimathea and Nicodemus",
+      "type": "saint",
+      "rank": 4,
+      "troparion_tone": 2,
+      "troparion": null,
+      "troparion_status": "text-unavailable",
+      "tradition_tags": ["EOR"],
+      "notes": "Hold — type 'saint' is not in the auto-promote list. Troparion text not securely confirmed."
+    }
+  ]
+},
     "07-15": {
       "commemorations": [
         {
@@ -273,20 +285,20 @@
       ]
     },
     "07-16": {
-      "commemorations": [
-        {
-          "id": "translation-robe-lord-moscow",
-          "name": "Translation of the Robe of Our Lord Jesus Christ to Moscow",
-          "type": "feast",
-          "rank": 4,
-          "troparion_tone": 8,
-          "troparion": null,
-          "troparion_status": "text-unavailable",
-          "tradition_tags": ["EOR"],
-          "notes": "Translation of a portion of the robe of Christ to Moscow (1625). Russian Orthodox calendar. Rank 4. Troparion text not securely confirmed."
-        }
-      ]
-    },
+  "commemorations": [
+    {
+      "id": "translation-robe-lord-moscow",
+      "name": "Translation of the Robe of Our Lord Jesus Christ to Moscow",
+      "type": "feast",
+      "rank": 4,
+      "troparion_tone": 8,
+      "troparion": null,
+      "troparion_status": "text-unavailable",
+      "tradition_tags": ["EOR"],
+      "notes": "Hold — feast type. Troparion text not securely confirmed."
+    }
+  ]
+},
     "07-17": {
       "commemorations": [
         {
@@ -306,36 +318,40 @@
         }
       ]
     },
-    "07-18": {
-      "commemorations": [
-        {
-          "id": "emilian-dorystolon",
-          "name": "Holy Martyr Emilian of Dorystolon",
-          "type": "martyr",
-          "rank": 4,
-          "troparion_tone": 4,
-          "troparion": null,
-          "troparion_status": "text-unavailable",
-          "tradition_tags": ["EOR"],
-          "notes": "Emilian of Dorystolon (+362), slave-martyr under Julian the Apostate. Rank 4. Troparion text not securely confirmed."
-        }
-      ]
-    },
-    "07-19": {
-      "commemorations": [
-        {
-          "id": "macrina-sister-basil",
-          "name": "Venerable Macrina, Sister of Basil the Great",
-          "type": "monastic",
-          "rank": 4,
-          "troparion_tone": 8,
-          "troparion": null,
-          "troparion_status": "text-unavailable",
-          "tradition_tags": ["EOR"],
-          "notes": "Macrina the Younger (+379), sister of Basil the Great and Gregory of Nyssa. Rank 4. Troparion text not securely confirmed."
-        }
-      ]
-    },
+   "07-18": {
+  "commemorations": [
+    {
+      "id": "emilian-dorystolon",
+      "name": "Holy Martyr Emilian of Dorystolon",
+      "type": "martyr",
+      "rank": 4,
+      "troparion_tone": 4,
+      "troparion": {
+        "tone": 4,
+        "title": "Troparion of the Holy Martyr Emilian of Dorystolon",
+        "text": "Your holy martyr Emilian, O Lord, through his sufferings has received an incorruptible crown from You, our God. For having Your strength, he laid low his adversaries and shattered the powerless boldness of demons. Through his intercessions save our souls."
+      },
+      "troparion_status": "resolved",
+      "tradition_tags": ["EOR"],
+      "notes": "Emilian of Dorystolon (+362), slave-martyr under Julian the Apostate. Rank 4. Standard martyr troparion Tone 4 applied. No unique text confirmed at OCA; standard form used per corpus rules."
+    }
+  ]
+},
+   "07-19": {
+  "commemorations": [
+    {
+      "id": "macrina-sister-basil",
+      "name": "Venerable Macrina, Sister of Basil the Great",
+      "type": "monastic",
+      "rank": 4,
+      "troparion_tone": 8,
+      "troparion": null,
+      "troparion_status": "text-unavailable",
+      "tradition_tags": ["EOR"],
+      "notes": "Hold — monastic type. Troparion text not securely confirmed."
+    }
+  ]
+},
     "07-20": {
       "commemorations": [
         {
@@ -356,20 +372,20 @@
       ]
     },
     "07-21": {
-      "commemorations": [
-        {
-          "id": "symeon-fool-for-christ",
-          "name": "Venerable Symeon the Fool for Christ and John the Eremite",
-          "type": "monastic",
-          "rank": 4,
-          "troparion_tone": 8,
-          "troparion": null,
-          "troparion_status": "text-unavailable",
-          "tradition_tags": ["EOR"],
-          "notes": "Symeon of Emesa (+590), holy fool for Christ, and his companion John the Eremite. Rank 4. Troparion text not securely confirmed."
-        }
-      ]
-    },
+  "commemorations": [
+    {
+      "id": "symeon-fool-for-christ",
+      "name": "Venerable Symeon the Fool for Christ and John the Eremite",
+      "type": "monastic",
+      "rank": 4,
+      "troparion_tone": 8,
+      "troparion": null,
+      "troparion_status": "text-unavailable",
+      "tradition_tags": ["EOR"],
+      "notes": "Hold — monastic type. Troparion text not securely confirmed."
+    }
+  ]
+},
     "07-22": {
       "commemorations": [
         {
@@ -389,36 +405,44 @@
         }
       ]
     },
-    "07-23": {
-      "commemorations": [
-        {
-          "id": "phocas-bishop-sinope",
-          "name": "Hieromartyr Phocas, Bishop of Sinope",
-          "type": "martyr",
-          "rank": 4,
-          "troparion_tone": 4,
-          "troparion": null,
-          "troparion_status": "text-unavailable",
-          "tradition_tags": ["EOR"],
-          "notes": "Phocas of Sinope (+117), bishop and martyr under Trajan. Rank 4. Troparion text not securely confirmed."
-        }
-      ]
-    },
-    "07-24": {
-      "commemorations": [
-        {
-          "id": "christina-tire-martyr",
-          "name": "Holy Great Martyr Christina of Tyre",
-          "type": "martyr",
-          "rank": 4,
-          "troparion_tone": 4,
-          "troparion": null,
-          "troparion_status": "text-unavailable",
-          "tradition_tags": ["EOR"],
-          "notes": "Christina of Tyre (+3rd c.), great martyr. Rank 4. Troparion text not securely confirmed."
-        }
-      ]
-    },
+   "07-23": {
+  "commemorations": [
+    {
+      "id": "phocas-bishop-sinope",
+      "name": "Hieromartyr Phocas, Bishop of Sinope",
+      "type": "martyr",
+      "rank": 4,
+      "troparion_tone": 4,
+      "troparion": {
+        "tone": 4,
+        "title": "Troparion of the Hieromartyr Phocas, Bishop of Sinope",
+        "text": "Your holy martyr Phocas, O Lord, through his sufferings has received an incorruptible crown from You, our God. For having Your strength, he laid low his adversaries and shattered the powerless boldness of demons. Through his intercessions save our souls."
+      },
+      "troparion_status": "resolved",
+      "tradition_tags": ["EOR"],
+      "notes": "Phocas of Sinope (+117), bishop and martyr under Trajan. Rank 4. Standard martyr troparion Tone 4 applied. No unique text confirmed at OCA; standard form used per corpus rules."
+    }
+  ]
+},
+   "07-24": {
+  "commemorations": [
+    {
+      "id": "christina-tire-martyr",
+      "name": "Holy Great Martyr Christina of Tyre",
+      "type": "martyr",
+      "rank": 4,
+      "troparion_tone": 4,
+      "troparion": {
+        "tone": 4,
+        "title": "Troparion of the Holy Great Martyr Christina of Tyre",
+        "text": "Your holy martyr Christina, O Lord, through her sufferings has received an incorruptible crown from You, our God. For having Your strength, she laid low her adversaries and shattered the powerless boldness of demons. Through her intercessions save our souls."
+      },
+      "troparion_status": "resolved",
+      "tradition_tags": ["EOR"],
+      "notes": "Christina of Tyre (+3rd c.), great martyr. Rank 4. Standard martyr troparion Tone 4, feminine form applied. No unique text confirmed at OCA; standard form used per corpus rules."
+    }
+  ]
+},
     "07-25": {
       "commemorations": [
         {
@@ -439,20 +463,24 @@
       ]
     },
     "07-26": {
-      "commemorations": [
-        {
-          "id": "hermolaus-hieromartyr",
-          "name": "Hieromartyr Hermolaus and companions",
-          "type": "martyr",
-          "rank": 4,
-          "troparion_tone": 4,
-          "troparion": null,
-          "troparion_status": "text-unavailable",
-          "tradition_tags": ["EOR"],
-          "notes": "Hermolaus and companions (+305), martyrs under Diocletian in Nicomedia. Rank 4. Troparion text not securely confirmed."
-        }
-      ]
-    },
+  "commemorations": [
+    {
+      "id": "hermolaus-hieromartyr",
+      "name": "Hieromartyr Hermolaus and companions",
+      "type": "martyr",
+      "rank": 4,
+      "troparion_tone": 4,
+      "troparion": {
+        "tone": 4,
+        "title": "Troparion of the Hieromartyr Hermolaus and companions",
+        "text": "Your holy martyrs Hermolaus and companions, O Lord, through their sufferings have received incorruptible crowns from You, our God. For having Your strength, they laid low their adversaries and shattered the powerless boldness of demons. Through their intercessions save our souls."
+      },
+      "troparion_status": "resolved",
+      "tradition_tags": ["EOR"],
+      "notes": "Hermolaus and companions (+305), martyrs under Diocletian in Nicomedia. Rank 4. Standard martyr troparion Tone 4, plural form applied. No unique text confirmed at OCA; standard form used per corpus rules."
+    }
+  ]
+},
     "07-27": {
       "commemorations": [
         {
@@ -492,20 +520,24 @@
       ]
     },
     "07-29": {
-      "commemorations": [
-        {
-          "id": "callinicos-martyr",
-          "name": "Holy Martyr Callinicos of Gangra",
-          "type": "martyr",
-          "rank": 4,
-          "troparion_tone": 4,
-          "troparion": null,
-          "troparion_status": "text-unavailable",
-          "tradition_tags": ["EOR"],
-          "notes": "Callinicos of Gangra (+4th c.), martyr. Rank 4. Troparion text not securely confirmed."
-        }
-      ]
-    },
+  "commemorations": [
+    {
+      "id": "callinicos-martyr",
+      "name": "Holy Martyr Callinicos of Gangra",
+      "type": "martyr",
+      "rank": 4,
+      "troparion_tone": 4,
+      "troparion": {
+        "tone": 4,
+        "title": "Troparion of the Holy Martyr Callinicos of Gangra",
+        "text": "Your holy martyr Callinicos, O Lord, through his sufferings has received an incorruptible crown from You, our God. For having Your strength, he laid low his adversaries and shattered the powerless boldness of demons. Through his intercessions save our souls."
+      },
+      "troparion_status": "resolved",
+      "tradition_tags": ["EOR"],
+      "notes": "Callinicos of Gangra (+4th c.), martyr. Rank 4. Standard martyr troparion Tone 4 applied. No unique text confirmed at OCA; standard form used per corpus rules."
+    }
+  ]
+},
     "07-30": {
       "commemorations": [
         {
@@ -525,20 +557,20 @@
         }
       ]
     },
-    "07-31": {
-      "commemorations": [
-        {
-          "id": "eudocimus-cappadocia",
-          "name": "Righteous Eudocimus of Cappadocia",
-          "type": "righteous",
-          "rank": 4,
-          "troparion_tone": 8,
-          "troparion": null,
-          "troparion_status": "text-unavailable",
-          "tradition_tags": ["EOR"],
-          "notes": "Eudocimus of Cappadocia (+9th c.), pious military officer. Rank 4. Troparion text not securely confirmed."
-        }
-      ]
+   "07-31": {
+  "commemorations": [
+    {
+      "id": "eudocimus-cappadocia",
+      "name": "Righteous Eudocimos of Cappadocia",
+      "type": "righteous",
+      "rank": 4,
+      "troparion_tone": 8,
+      "troparion": null,
+      "troparion_status": "text-unavailable",
+      "tradition_tags": ["EOR"],
+      "notes": "Hold — type 'righteous' is not in the auto-promote list. Troparion text not securely confirmed."
     }
+  ]
+}
   }
 }

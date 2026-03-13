@@ -31,50 +31,62 @@
       ]
     },
     "09-02": {
-      "commemorations": [
-        {
-          "id": "mamas-martyr",
-          "name": "Holy Martyr Mamas of Caesarea",
-          "type": "martyr",
-          "rank": 4,
-          "troparion_tone": 4,
-          "troparion": null,
-          "troparion_status": "text-unavailable",
-          "tradition_tags": ["EOR"],
-          "notes": "Mamas of Caesarea (+275), shepherd-martyr under Aurelian. Rank 4. Troparion text not securely confirmed."
-        }
-      ]
-    },
+  "commemorations": [
+    {
+      "id": "mamas-martyr",
+      "name": "Holy Martyr Mamas of Caesarea",
+      "type": "martyr",
+      "rank": 4,
+      "troparion_tone": 4,
+      "troparion": {
+        "tone": 4,
+        "title": "Troparion of the Holy Martyr Mamas of Caesarea",
+        "text": "Your holy martyr Mamas, O Lord, through his sufferings has received an incorruptible crown from You, our God. For having Your strength, he laid low his adversaries and shattered the powerless boldness of demons. Through his intercessions save our souls."
+      },
+      "troparion_status": "resolved",
+      "tradition_tags": ["EOR"],
+      "notes": "Mamas of Caesarea (+275), shepherd-martyr under Aurelian. Rank 4. Standard martyr troparion Tone 4 applied. No unique text confirmed at OCA; standard form used per corpus rules."
+    }
+  ]
+},
     "09-03": {
-      "commemorations": [
-        {
-          "id": "anthimos-bishop-nicomedia",
-          "name": "Hieromartyr Anthimos, Bishop of Nicomedia",
-          "type": "martyr",
-          "rank": 4,
-          "troparion_tone": 4,
-          "troparion": null,
-          "troparion_status": "text-unavailable",
-          "tradition_tags": ["EOR"],
-          "notes": "Anthimos of Nicomedia (+302), bishop and martyr under Diocletian. Rank 4. Troparion text not securely confirmed."
-        }
-      ]
-    },
-    "09-04": {
-      "commemorations": [
-        {
-          "id": "babylas-bishop-antioch",
-          "name": "Hieromartyr Babylas, Bishop of Antioch, and companions",
-          "type": "martyr",
-          "rank": 4,
-          "troparion_tone": 4,
-          "troparion": null,
-          "troparion_status": "text-unavailable",
-          "tradition_tags": ["EOR"],
-          "notes": "Babylas of Antioch (+250), bishop and martyr under Decius. Rank 4. Troparion text not securely confirmed."
-        }
-      ]
-    },
+  "commemorations": [
+    {
+      "id": "anthimos-bishop-nicomedia",
+      "name": "Hieromartyr Anthimos, Bishop of Nicomedia",
+      "type": "martyr",
+      "rank": 4,
+      "troparion_tone": 4,
+      "troparion": {
+        "tone": 4,
+        "title": "Troparion of the Hieromartyr Anthimos, Bishop of Nicomedia",
+        "text": "Your holy martyr Anthimos, O Lord, through his sufferings has received an incorruptible crown from You, our God. For having Your strength, he laid low his adversaries and shattered the powerless boldness of demons. Through his intercessions save our souls."
+      },
+      "troparion_status": "resolved",
+      "tradition_tags": ["EOR"],
+      "notes": "Anthimos of Nicomedia (+302), bishop and martyr under Diocletian. Rank 4. Standard martyr troparion Tone 4 applied. No unique text confirmed at OCA; standard form used per corpus rules."
+    }
+  ]
+},
+   "09-04": {
+  "commemorations": [
+    {
+      "id": "babylas-bishop-antioch",
+      "name": "Hieromartyr Babylas, Bishop of Antioch, and companions",
+      "type": "martyr",
+      "rank": 4,
+      "troparion_tone": 4,
+      "troparion": {
+        "tone": 4,
+        "title": "Troparion of the Hieromartyr Babylas, Bishop of Antioch, and companions",
+        "text": "Your holy martyrs Babylas and companions, O Lord, through their sufferings have received incorruptible crowns from You, our God. For having Your strength, they laid low their adversaries and shattered the powerless boldness of demons. Through their intercessions save our souls."
+      },
+      "troparion_status": "resolved",
+      "tradition_tags": ["EOR"],
+      "notes": "Babylas of Antioch (+250) and companions, martyrs under Decius. Rank 4. Standard martyr troparion Tone 4, plural form applied. No unique text confirmed at OCA; standard form used per corpus rules."
+    }
+  ]
+},
     "09-05": {
       "commemorations": [
         {
@@ -171,50 +183,58 @@
       ]
     },
     "09-10": {
-      "commemorations": [
-        {
-          "id": "menodora-metrodora-nymphodora",
-          "name": "Holy Martyrs Menodora, Metrodora, and Nymphodora",
-          "type": "martyr",
-          "rank": 4,
-          "troparion_tone": 4,
-          "troparion": null,
-          "troparion_status": "text-unavailable",
-          "tradition_tags": ["EOR"],
-          "notes": "Menodora, Metrodora, and Nymphodora (+305), sisters and martyrs under Galerius. Rank 4. Troparion text not securely confirmed."
-        }
-      ]
-    },
-    "09-11": {
-      "commemorations": [
-        {
-          "id": "theodora-alexandria",
-          "name": "Venerable Theodora of Alexandria",
-          "type": "monastic",
-          "rank": 4,
-          "troparion_tone": 8,
-          "troparion": null,
-          "troparion_status": "text-unavailable",
-          "tradition_tags": ["EOR"],
-          "notes": "Theodora of Alexandria (+5th c.), penitent who lived in a men's monastery disguised as a man. Rank 4. Troparion text not securely confirmed."
-        }
-      ]
-    },
-    "09-12": {
-      "commemorations": [
-        {
-          "id": "autonomus-bishop-martyr",
-          "name": "Hieromartyr Autonomus, Bishop",
-          "type": "martyr",
-          "rank": 4,
-          "troparion_tone": 4,
-          "troparion": null,
-          "troparion_status": "text-unavailable",
-          "tradition_tags": ["EOR"],
-          "notes": "Autonomus (+4th c.), bishop and martyr in Paphlagonia. Rank 4. Troparion text not securely confirmed."
-        }
-      ]
-    },
+  "commemorations": [
+    {
+      "id": "menodora-metrodora-nymphodora",
+      "name": "Holy Martyrs Menodora, Metrodora, and Nymphodora",
+      "type": "martyr",
+      "rank": 4,
+      "troparion_tone": 4,
+      "troparion": {
+        "tone": 4,
+        "title": "Troparion of the Holy Martyrs Menodora, Metrodora, and Nymphodora",
+        "text": "Your holy martyrs Menodora, Metrodora, and Nymphodora, O Lord, through their sufferings have received incorruptible crowns from You, our God. For having Your strength, they laid low their adversaries and shattered the powerless boldness of demons. Through their intercessions save our souls."
+      },
+      "troparion_status": "resolved",
+      "tradition_tags": ["EOR"],
+      "notes": "Menodora, Metrodora, and Nymphodora (+305), sisters and martyrs. Rank 4. Standard martyr troparion Tone 4, plural feminine group — three solo females treated as group, masculine form applied per corpus rules. No unique text confirmed at OCA; standard form used per corpus rules."
+    }
+  ]
+},
+   "09-11": {
+  "commemorations": [
+    {
+      "id": "theodora-alexandria",
+      "name": "Venerable Theodora of Alexandria",
+      "type": "monastic",
+      "rank": 4,
+      "troparion_tone": 8,
+      "troparion": null,
+      "troparion_status": "text-unavailable",
+      "tradition_tags": ["EOR"],
+      "notes": "Hold — monastic type. Troparion text not securely confirmed."
+    }
+  ]
+},
+   "09-12": {
+  "commemorations": [
+    {
+      "id": "autonomus-bishop-martyr",
+      "name": "Hieromartyr Autonomus, Bishop",
+      "type": "martyr",
+      "rank": 4,
+      "troparion_tone": 4,
+      "troparion": {
+        "tone": 4,
+        "title": "Troparion of the Hieromartyr Autonomus, Bishop",
+        "text": "Your holy martyr Autonomus, O Lord, through his sufferings has received an incorruptible crown from You, our God. For having Your strength, he laid low his adversaries and shattered the powerless boldness of demons. Through his intercessions save our souls."
+      },
+      "troparion_status": "resolved",
+      "tradition_tags": ["EOR"],
+      "notes": "Autonomus (+4th c.), bishop and martyr in Paphlagonia. Rank 4. Standard martyr troparion Tone 4 applied. No unique text confirmed at OCA; standard form used per corpus rules."
+    }
+  ]
+},
     "09-13": {
       "commemorations": [
         {
@@ -254,20 +274,24 @@
       ]
     },
     "09-15": {
-      "commemorations": [
-        {
-          "id": "niketas-goth-martyr",
-          "name": "Holy Great Martyr Niketas the Goth",
-          "type": "martyr",
-          "rank": 4,
-          "troparion_tone": 4,
-          "troparion": null,
-          "troparion_status": "text-unavailable",
-          "tradition_tags": ["EOR"],
-          "notes": "Niketas the Goth (+372). Also commemorated Mar 20. Rank 4. Troparion text not securely confirmed."
-        }
-      ]
-    },
+  "commemorations": [
+    {
+      "id": "niketas-goth-martyr",
+      "name": "Holy Great Martyr Niketas the Goth",
+      "type": "martyr",
+      "rank": 4,
+      "troparion_tone": 4,
+      "troparion": {
+        "tone": 4,
+        "title": "Troparion of the Holy Great Martyr Niketas the Goth",
+        "text": "Your holy martyr Niketas, O Lord, through his sufferings has received an incorruptible crown from You, our God. For having Your strength, he laid low his adversaries and shattered the powerless boldness of demons. Through his intercessions save our souls."
+      },
+      "troparion_status": "resolved",
+      "tradition_tags": ["EOR"],
+      "notes": "Niketas the Goth (+372). Rank 4. Standard martyr troparion Tone 4 applied. Also commemorated Mar 20. No unique text confirmed at OCA; standard form used per corpus rules."
+    }
+  ]
+},
     "09-16": {
       "commemorations": [
         {
@@ -288,50 +312,62 @@
       ]
     },
     "09-17": {
-      "commemorations": [
-        {
-          "id": "sophia-vera-nadezda-lyubov",
-          "name": "Holy Martyrs Sophia (Faith) and her daughters Vera, Nadezhda, and Lyubov",
-          "type": "martyr",
-          "rank": 4,
-          "troparion_tone": 4,
-          "troparion": null,
-          "troparion_status": "text-unavailable",
-          "tradition_tags": ["EOR"],
-          "notes": "Faith, Hope, Love, and their mother Sophia (+137), martyrs under Hadrian. Rank 4. Troparion text not securely confirmed."
-        }
-      ]
-    },
+  "commemorations": [
+    {
+      "id": "sophia-vera-nadezda-lyubov",
+      "name": "Holy Martyrs Sophia (Faith) and her daughters Vera, Nadezhda, and Lyubov",
+      "type": "martyr",
+      "rank": 4,
+      "troparion_tone": 4,
+      "troparion": {
+        "tone": 4,
+        "title": "Troparion of the Holy Martyrs Faith, Hope, Love, and their mother Sophia",
+        "text": "Your holy martyrs Faith, Hope, Love, and their mother Sophia, O Lord, through their sufferings have received incorruptible crowns from You, our God. For having Your strength, they laid low their adversaries and shattered the powerless boldness of demons. Through their intercessions save our souls."
+      },
+      "troparion_status": "resolved",
+      "tradition_tags": ["EOR"],
+      "notes": "Faith, Hope, Love (Vera, Nadezhda, Lyubov), and their mother Sophia (+137), martyrs under Hadrian. Rank 4. Standard martyr troparion Tone 4, plural form applied (all-female group treated as group, masculine form per corpus rules). No unique text confirmed at OCA; standard form used per corpus rules."
+    }
+  ]
+},
     "09-18": {
-      "commemorations": [
-        {
-          "id": "eumenios-bishop-gortyna",
-          "name": "St. Eumenios, Bishop of Gortyna",
-          "type": "hierarch",
-          "rank": 4,
-          "troparion_tone": 4,
-          "troparion": null,
-          "troparion_status": "text-unavailable",
-          "tradition_tags": ["EOR"],
-          "notes": "Eumenios of Gortyna (+7th c.), wonder-working bishop of Crete. Rank 4. Troparion text not securely confirmed."
-        }
-      ]
-    },
+  "commemorations": [
+    {
+      "id": "eumenios-bishop-gortyna",
+      "name": "St. Eumenios, Bishop of Gortyna",
+      "type": "hierarch",
+      "rank": 4,
+      "troparion_tone": 4,
+      "troparion": {
+        "tone": 4,
+        "title": "Troparion of St. Eumenios, Bishop of Gortyna",
+        "text": "In truth you were revealed to your flock as a rule of faith, an image of humility and a teacher of abstinence. Your humility exalted you; your poverty enriched you. Hierarch Father Eumenios, entreat Christ our God that our souls may be saved."
+      },
+      "troparion_status": "resolved",
+      "tradition_tags": ["EOR"],
+      "notes": "Eumenios of Gortyna (+7th c.), wonder-working bishop of Crete. Rank 4. Standard hierarch troparion Tone 4 applied. No unique text confirmed at OCA; standard form used per corpus rules."
+    }
+  ]
+},
     "09-19": {
-      "commemorations": [
-        {
-          "id": "trophimos-sabbatios-dorymedon",
-          "name": "Holy Martyrs Trophimos, Sabbatios, and Dorymedon",
-          "type": "martyr",
-          "rank": 4,
-          "troparion_tone": 4,
-          "troparion": null,
-          "troparion_status": "text-unavailable",
-          "tradition_tags": ["EOR"],
-          "notes": "Trophimos, Sabbatios, and Dorymedon (+276), martyrs under Probus. Rank 4. Troparion text not securely confirmed."
-        }
-      ]
-    },
+  "commemorations": [
+    {
+      "id": "trophimos-sabbatios-dorymedon",
+      "name": "Holy Martyrs Trophimos, Sabbatios, and Dorymedon",
+      "type": "martyr",
+      "rank": 4,
+      "troparion_tone": 4,
+      "troparion": {
+        "tone": 4,
+        "title": "Troparion of the Holy Martyrs Trophimos, Sabbatios, and Dorymedon",
+        "text": "Your holy martyrs Trophimos, Sabbatios, and Dorymedon, O Lord, through their sufferings have received incorruptible crowns from You, our God. For having Your strength, they laid low their adversaries and shattered the powerless boldness of demons. Through their intercessions save our souls."
+      },
+      "troparion_status": "resolved",
+      "tradition_tags": ["EOR"],
+      "notes": "Trophimos, Sabbatios, and Dorymedon (+276), martyrs under Probus. Rank 4. Standard martyr troparion Tone 4, plural form applied. No unique text confirmed at OCA; standard form used per corpus rules."
+    }
+  ]
+},
     "09-20": {
       "commemorations": [
         {
@@ -371,20 +407,24 @@
       ]
     },
     "09-22": {
-      "commemorations": [
-        {
-          "id": "phocas-gardener-sinope",
-          "name": "Hieromartyr Phocas the Gardener of Sinope",
-          "type": "martyr",
-          "rank": 4,
-          "troparion_tone": 4,
-          "troparion": null,
-          "troparion_status": "text-unavailable",
-          "tradition_tags": ["EOR"],
-          "notes": "Phocas the Gardener (+320), martyred at Sinope. Rank 4. Distinct from Phocas of Sinope the bishop (Jul 23). Troparion text not securely confirmed."
-        }
-      ]
-    },
+  "commemorations": [
+    {
+      "id": "phocas-gardener-sinope",
+      "name": "Hieromartyr Phocas the Gardener of Sinope",
+      "type": "martyr",
+      "rank": 4,
+      "troparion_tone": 4,
+      "troparion": {
+        "tone": 4,
+        "title": "Troparion of the Hieromartyr Phocas the Gardener of Sinope",
+        "text": "Your holy martyr Phocas, O Lord, through his sufferings has received an incorruptible crown from You, our God. For having Your strength, he laid low his adversaries and shattered the powerless boldness of demons. Through his intercessions save our souls."
+      },
+      "troparion_status": "resolved",
+      "tradition_tags": ["EOR"],
+      "notes": "Phocas the Gardener (+320), martyr at Sinope. Distinct from Phocas the bishop (Jul 23). Rank 4. Standard martyr troparion Tone 4 applied. No unique text confirmed at OCA; standard form used per corpus rules."
+    }
+  ]
+},
     "09-23": {
       "commemorations": [
         {
@@ -424,20 +464,20 @@
       ]
     },
     "09-25": {
-      "commemorations": [
-        {
-          "id": "euphrosyne-alexandria",
-          "name": "Venerable Euphrosyne of Alexandria",
-          "type": "monastic",
-          "rank": 4,
-          "troparion_tone": 8,
-          "troparion": null,
-          "troparion_status": "text-unavailable",
-          "tradition_tags": ["EOR"],
-          "notes": "Euphrosyne of Alexandria (+5th c.), maiden who lived in a men's monastery as Brother Smaragdus. Rank 4. Troparion text not securely confirmed."
-        }
-      ]
-    },
+  "commemorations": [
+    {
+      "id": "euphrosyne-alexandria",
+      "name": "Venerable Euphrosyne of Alexandria",
+      "type": "monastic",
+      "rank": 4,
+      "troparion_tone": 8,
+      "troparion": null,
+      "troparion_status": "text-unavailable",
+      "tradition_tags": ["EOR"],
+      "notes": "Hold — monastic type. Troparion text not securely confirmed."
+    }
+  ]
+},
     "09-26": {
       "commemorations": [
         {
@@ -458,50 +498,54 @@
       ]
     },
     "09-27": {
-      "commemorations": [
-        {
-          "id": "callistratos-companions",
-          "name": "Holy Martyr Callistratos and companions",
-          "type": "martyr",
-          "rank": 4,
-          "troparion_tone": 4,
-          "troparion": null,
-          "troparion_status": "text-unavailable",
-          "tradition_tags": ["EOR"],
-          "notes": "Callistratos and 49 companions (+304), martyrs under Diocletian. Rank 4. Troparion text not securely confirmed."
-        }
-      ]
-    },
+  "commemorations": [
+    {
+      "id": "callistratos-companions",
+      "name": "Holy Martyr Callistratos and companions",
+      "type": "martyr",
+      "rank": 4,
+      "troparion_tone": 4,
+      "troparion": {
+        "tone": 4,
+        "title": "Troparion of the Holy Martyr Callistratos and companions",
+        "text": "Your holy martyrs Callistratos and companions, O Lord, through their sufferings have received incorruptible crowns from You, our God. For having Your strength, they laid low their adversaries and shattered the powerless boldness of demons. Through their intercessions save our souls."
+      },
+      "troparion_status": "resolved",
+      "tradition_tags": ["EOR"],
+      "notes": "Callistratos and 49 companions (+304), martyrs under Diocletian. Rank 4. Standard martyr troparion Tone 4, plural form applied. No unique text confirmed at OCA; standard form used per corpus rules."
+    }
+  ]
+},
     "09-28": {
-      "commemorations": [
-        {
-          "id": "chariton-confessor",
-          "name": "Venerable Chariton the Confessor",
-          "type": "monastic",
-          "rank": 4,
-          "troparion_tone": 8,
-          "troparion": null,
-          "troparion_status": "text-unavailable",
-          "tradition_tags": ["EOR"],
-          "notes": "Chariton the Confessor (+4th c.), founder of several lauras in Palestine. Rank 4. Troparion text not securely confirmed."
-        }
-      ]
-    },
+  "commemorations": [
+    {
+      "id": "chariton-confessor",
+      "name": "Venerable Chariton the Confessor",
+      "type": "monastic",
+      "rank": 4,
+      "troparion_tone": 8,
+      "troparion": null,
+      "troparion_status": "text-unavailable",
+      "tradition_tags": ["EOR"],
+      "notes": "Hold — monastic type. Troparion text not securely confirmed."
+    }
+  ]
+},
     "09-29": {
-      "commemorations": [
-        {
-          "id": "cyriacus-hermit",
-          "name": "Venerable Cyriacus the Anchorite",
-          "type": "monastic",
-          "rank": 4,
-          "troparion_tone": 8,
-          "troparion": null,
-          "troparion_status": "text-unavailable",
-          "tradition_tags": ["EOR"],
-          "notes": "Cyriacus the Anchorite (+556), Palestinian desert father. Rank 4. Troparion text not securely confirmed."
-        }
-      ]
-    },
+  "commemorations": [
+    {
+      "id": "cyriacus-hermit",
+      "name": "Venerable Cyriacus the Anchorite",
+      "type": "monastic",
+      "rank": 4,
+      "troparion_tone": 8,
+      "troparion": null,
+      "troparion_status": "text-unavailable",
+      "tradition_tags": ["EOR"],
+      "notes": "Hold — monastic type. Troparion text not securely confirmed."
+    }
+  ]
+},
     "09-30": {
       "commemorations": [
         {

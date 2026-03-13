@@ -49,51 +49,63 @@
         }
       ]
     },
-    "05-03": {
-      "commemorations": [
-        {
-          "id": "timothy-maura-martyrs",
-          "name": "Holy Martyrs Timothy and Maura",
-          "type": "martyr",
-          "rank": 4,
-          "troparion_tone": 4,
-          "troparion": null,
-          "troparion_status": "text-unavailable",
-          "tradition_tags": ["EOR"],
-          "notes": "Timothy and Maura (+286), martyrs of Egypt under Diocletian, martyred nine days after their wedding. Rank 4. Troparion text not securely confirmed."
-        }
-      ]
-    },
-    "05-04": {
-      "commemorations": [
-        {
-          "id": "pelagia-tarsus",
-          "name": "Holy Martyr Pelagia of Tarsus",
-          "type": "martyr",
-          "rank": 4,
-          "troparion_tone": 4,
-          "troparion": null,
-          "troparion_status": "text-unavailable",
-          "tradition_tags": ["EOR"],
-          "notes": "Pelagia of Tarsus (+3rd c.), virgin martyr under Diocletian. Rank 4. Troparion text not securely confirmed."
-        }
-      ]
-    },
-    "05-05": {
-      "commemorations": [
-        {
-          "id": "irene-thessalonica",
-          "name": "Holy Martyr Irene of Thessalonica",
-          "type": "martyr",
-          "rank": 4,
-          "troparion_tone": 4,
-          "troparion": null,
-          "troparion_status": "text-unavailable",
-          "tradition_tags": ["EOR"],
-          "notes": "Irene of Thessalonica (+304), martyr under Diocletian. Rank 4. Distinct from Great Martyr Irene (Apr 16). Troparion text not securely confirmed."
-        }
-      ]
-    },
+   "05-03": {
+  "commemorations": [
+    {
+      "id": "timothy-maura-martyrs",
+      "name": "Holy Martyrs Timothy and Maura",
+      "type": "martyr",
+      "rank": 4,
+      "troparion_tone": 4,
+      "troparion": {
+        "tone": 4,
+        "title": "Troparion of the Holy Martyrs Timothy and Maura",
+        "text": "Your holy martyrs Timothy and Maura, O Lord, through their sufferings have received incorruptible crowns from You, our God. For having Your strength, they laid low their adversaries and shattered the powerless boldness of demons. Through their intercessions save our souls."
+      },
+      "troparion_status": "resolved",
+      "tradition_tags": ["EOR"],
+      "notes": "Timothy and Maura (+286), martyrs of Egypt. Rank 4. Standard martyr troparion Tone 4, plural form applied. Mixed-gender group uses masculine form per corpus rules. No unique text confirmed at OCA; standard form used per corpus rules."
+    }
+  ]
+},
+   "05-04": {
+  "commemorations": [
+    {
+      "id": "pelagia-tarsus",
+      "name": "Holy Martyr Pelagia of Tarsus",
+      "type": "martyr",
+      "rank": 4,
+      "troparion_tone": 4,
+      "troparion": {
+        "tone": 4,
+        "title": "Troparion of the Holy Martyr Pelagia of Tarsus",
+        "text": "Your holy martyr Pelagia, O Lord, through her sufferings has received an incorruptible crown from You, our God. For having Your strength, she laid low her adversaries and shattered the powerless boldness of demons. Through her intercessions save our souls."
+      },
+      "troparion_status": "resolved",
+      "tradition_tags": ["EOR"],
+      "notes": "Pelagia of Tarsus (+3rd c.), virgin martyr. Rank 4. Standard martyr troparion Tone 4, feminine form applied. No unique text confirmed at OCA; standard form used per corpus rules."
+    }
+  ]
+},
+   "05-05": {
+  "commemorations": [
+    {
+      "id": "irene-thessalonica",
+      "name": "Holy Martyr Irene of Thessalonica",
+      "type": "martyr",
+      "rank": 4,
+      "troparion_tone": 4,
+      "troparion": {
+        "tone": 4,
+        "title": "Troparion of the Holy Martyr Irene of Thessalonica",
+        "text": "Your holy martyr Irene, O Lord, through her sufferings has received an incorruptible crown from You, our God. For having Your strength, she laid low her adversaries and shattered the powerless boldness of demons. Through her intercessions save our souls."
+      },
+      "troparion_status": "resolved",
+      "tradition_tags": ["EOR"],
+      "notes": "Irene of Thessalonica (+304), martyr under Diocletian. Rank 4. Standard martyr troparion Tone 4, feminine form applied. No unique text confirmed at OCA; standard form used per corpus rules."
+    }
+  ]
+},
     "05-06": {
       "commemorations": [
         {
@@ -114,20 +126,24 @@
       ]
     },
     "05-07": {
-      "commemorations": [
-        {
-          "id": "appearance-cross-jerusalem",
-          "name": "Appearance of the Sign of the Cross over Jerusalem",
-          "type": "feast",
-          "rank": 4,
-          "troparion_tone": 1,
-          "troparion": null,
-          "troparion_status": "text-unavailable",
-          "tradition_tags": ["EOR"],
-          "notes": "Appearance of the luminous Cross in the sky over Jerusalem (351 AD), witnessed during the reign of Constantius. Rank 4. Troparion text not securely confirmed."
-        }
-      ]
-    },
+  "commemorations": [
+    {
+      "id": "appearance-cross-jerusalem",
+      "name": "Appearance of the Sign of the Cross over Jerusalem",
+      "type": "feast",
+      "rank": 4,
+      "troparion_tone": 8,
+      "troparion": {
+        "tone": 8,
+        "title": "Troparion of the Appearance of the Cross over Jerusalem",
+        "text": "Now the image of Your Cross has shone brighter than the sun, spreading from the Holy Mountain to the Place of the Skull, and in it O Savior, You revealed Your power, thereby strengthening us. Keep us always in peace, through the intercessions of the Theotokos, O Christ God, and save us."
+      },
+      "troparion_status": "resolved",
+      "tradition_tags": ["EOR"],
+      "notes": "Appearance of the luminous Cross in the sky over Jerusalem (351 AD), during the reign of Constantius. Rank 4. Troparion Tone 8 confirmed: OCA (May 7). Tone corrected from 1 to 8; Antiochian gives Tone 1 with different text, OCA used per source hierarchy."
+    }
+  ]
+},
     "05-08": {
       "commemorations": [
         {
@@ -204,51 +220,78 @@
         }
       ]
     },
-    "05-12": {
-      "commemorations": [
-        {
-          "id": "epiphanius-constantine",
-          "name": "St. Epiphanius, Archbishop of Cyprus; St. Germanus of Constantinople",
-          "type": "hierarch",
-          "rank": 4,
-          "troparion_tone": 4,
-          "troparion": null,
-          "troparion_status": "text-unavailable",
-          "tradition_tags": ["EOR"],
-          "notes": "Epiphanius of Salamis (+403), encyclopedic theologian and bishop. Also commemorated with Germanus of Constantinople (+740). Rank 4. Troparion text not securely confirmed."
-        }
-      ]
+  "05-12": {
+  "commemorations": [
+    {
+      "id": "epiphanius-cyprus",
+      "name": "St. Epiphanius, Archbishop of Cyprus",
+      "type": "hierarch",
+      "rank": 4,
+      "troparion_tone": 4,
+      "troparion": {
+        "tone": 4,
+        "title": "Troparion of St. Epiphanius of Cyprus",
+        "text": "In truth you were revealed to your flock as a rule of faith, an image of humility and a teacher of abstinence; your humility exalted you; your poverty enriched you. Hierarch Father Epiphanius, entreat Christ our God that our souls may be saved."
+      },
+      "troparion_status": "resolved",
+      "tradition_tags": ["EOR"],
+      "notes": "Epiphanius of Salamis (+403), Archbishop of Cyprus and defender of orthodoxy. Rank 4. Standard hierarch troparion Tone 4 used per OCA."
     },
-    "05-13": {
-      "commemorations": [
-        {
-          "id": "glyceria-martyr",
-          "name": "Holy Martyr Glyceria",
-          "type": "martyr",
-          "rank": 4,
-          "troparion_tone": 4,
-          "troparion": null,
-          "troparion_status": "text-unavailable",
-          "tradition_tags": ["EOR"],
-          "notes": "Glyceria (+177), virgin martyr under Marcus Aurelius. Rank 4. Troparion text not securely confirmed."
-        }
-      ]
-    },
-    "05-14": {
-      "commemorations": [
-        {
-          "id": "isidore-chios",
-          "name": "Holy Martyr Isidore of Chios",
-          "type": "martyr",
-          "rank": 4,
-          "troparion_tone": 4,
-          "troparion": null,
-          "troparion_status": "text-unavailable",
-          "tradition_tags": ["EOR"],
-          "notes": "Isidore of Chios (+251), soldier-martyr under Decius. Rank 4. Troparion text not securely confirmed."
-        }
-      ]
-    },
+    {
+      "id": "germanus-constantinople",
+      "name": "St. Germanus, Patriarch of Constantinople",
+      "type": "hierarch",
+      "rank": 4,
+      "troparion_tone": 4,
+      "troparion": {
+        "tone": 4,
+        "title": "Troparion of St. Germanus of Constantinople",
+        "text": "In truth you were revealed to your flock as a rule of faith, an image of humility and a teacher of abstinence; your humility exalted you; your poverty enriched you. Hierarch Father Germanus, entreat Christ our God that our souls may be saved."
+      },
+      "troparion_status": "resolved",
+      "tradition_tags": ["EOR"],
+      "notes": "Germanus I of Constantinople (+740), defender of the veneration of icons during the first Iconoclasm. Rank 4. Standard hierarch troparion Tone 4 used per OCA."
+    }
+  ]
+},
+  "05-13": {
+  "commemorations": [
+    {
+      "id": "glyceria-martyr",
+      "name": "Holy Martyr Glyceria",
+      "type": "martyr",
+      "rank": 4,
+      "troparion_tone": 4,
+      "troparion": {
+        "tone": 4,
+        "title": "Troparion of the Holy Martyr Glyceria",
+        "text": "Your holy martyr Glyceria, O Lord, through her sufferings has received an incorruptible crown from You, our God. For having Your strength, she laid low her adversaries and shattered the powerless boldness of demons. Through her intercessions save our souls."
+      },
+      "troparion_status": "resolved",
+      "tradition_tags": ["EOR"],
+      "notes": "Glyceria (+177), virgin martyr under Marcus Aurelius. Rank 4. Standard martyr troparion Tone 4, feminine form applied. No unique text confirmed at OCA; standard form used per corpus rules."
+    }
+  ]
+},
+   "05-14": {
+  "commemorations": [
+    {
+      "id": "isidore-chios",
+      "name": "Holy Martyr Isidore of Chios",
+      "type": "martyr",
+      "rank": 4,
+      "troparion_tone": 4,
+      "troparion": {
+        "tone": 4,
+        "title": "Troparion of the Holy Martyr Isidore of Chios",
+        "text": "Your holy martyr Isidore, O Lord, through his sufferings has received an incorruptible crown from You, our God. For having Your strength, he laid low his adversaries and shattered the powerless boldness of demons. Through his intercessions save our souls."
+      },
+      "troparion_status": "resolved",
+      "tradition_tags": ["EOR"],
+      "notes": "Isidore of Chios (+251), soldier-martyr under Decius. Rank 4. Standard martyr troparion Tone 4 applied. No unique text confirmed at OCA; standard form used per corpus rules."
+    }
+  ]
+},
     "05-15": {
       "commemorations": [
         {
@@ -268,21 +311,25 @@
         }
       ]
     },
-    "05-16": {
-      "commemorations": [
-        {
-          "id": "theodotus-ancyra",
-          "name": "Holy Martyr Theodotus of Ancyra",
-          "type": "martyr",
-          "rank": 4,
-          "troparion_tone": 4,
-          "troparion": null,
-          "troparion_status": "text-unavailable",
-          "tradition_tags": ["EOR"],
-          "notes": "Theodotus of Ancyra (+303), innkeeper and martyr under Diocletian. Rank 4. Troparion text not securely confirmed."
-        }
-      ]
-    },
+   "05-16": {
+  "commemorations": [
+    {
+      "id": "theodotus-ancyra",
+      "name": "Holy Martyr Theodotus of Ancyra",
+      "type": "martyr",
+      "rank": 4,
+      "troparion_tone": 4,
+      "troparion": {
+        "tone": 4,
+        "title": "Troparion of the Holy Martyr Theodotus of Ancyra",
+        "text": "Your holy martyr Theodotus, O Lord, through his sufferings has received an incorruptible crown from You, our God. For having Your strength, he laid low his adversaries and shattered the powerless boldness of demons. Through his intercessions save our souls."
+      },
+      "troparion_status": "resolved",
+      "tradition_tags": ["EOR"],
+      "notes": "Theodotus of Ancyra (+303), innkeeper and martyr under Diocletian. Rank 4. Standard martyr troparion Tone 4 applied. No unique text confirmed at OCA; standard form used per corpus rules."
+    }
+  ]
+},
     "05-17": {
       "commemorations": [
         {
@@ -303,50 +350,58 @@
       ]
     },
     "05-18": {
-      "commemorations": [
-        {
-          "id": "peter-caesarea-cappadocia",
-          "name": "Venerable Peter of Caesarea in Cappadocia",
-          "type": "monastic",
-          "rank": 4,
-          "troparion_tone": 8,
-          "troparion": null,
-          "troparion_status": "text-unavailable",
-          "tradition_tags": ["EOR"],
-          "notes": "Peter of Caesarea in Cappadocia (+9th c.), monk and confessor. Rank 4. Troparion text not securely confirmed."
-        }
-      ]
-    },
-    "05-19": {
-      "commemorations": [
-        {
-          "id": "patrick-bishop-prusa",
-          "name": "Hieromartyr Patrick, Bishop of Prusa, and companions",
-          "type": "martyr",
-          "rank": 4,
-          "troparion_tone": 4,
-          "troparion": null,
-          "troparion_status": "text-unavailable",
-          "tradition_tags": ["EOR"],
-          "notes": "Patrick of Prusa (+4th c.), bishop and martyr. Rank 4. Troparion text not securely confirmed."
-        }
-      ]
-    },
+  "commemorations": [
+    {
+      "id": "peter-caesarea-cappadocia",
+      "name": "Venerable Peter of Caesarea in Cappadocia",
+      "type": "monastic",
+      "rank": 4,
+      "troparion_tone": 8,
+      "troparion": null,
+      "troparion_status": "text-unavailable",
+      "tradition_tags": ["EOR"],
+      "notes": "Hold — monastic type. Troparion text not securely confirmed."
+    }
+  ]
+},
+   "05-19": {
+  "commemorations": [
+    {
+      "id": "patrick-bishop-prusa",
+      "name": "Hieromartyr Patrick, Bishop of Prusa, and companions",
+      "type": "martyr",
+      "rank": 4,
+      "troparion_tone": 4,
+      "troparion": {
+        "tone": 4,
+        "title": "Troparion of the Hieromartyr Patrick, Bishop of Prusa, and companions",
+        "text": "Your holy martyrs Patrick and companions, O Lord, through their sufferings have received incorruptible crowns from You, our God. For having Your strength, they laid low their adversaries and shattered the powerless boldness of demons. Through their intercessions save our souls."
+      },
+      "troparion_status": "resolved",
+      "tradition_tags": ["EOR"],
+      "notes": "Patrick of Prusa (+4th c.), bishop and martyr, and companions. Rank 4. Standard martyr troparion Tone 4, plural form applied. No unique text confirmed at OCA; standard form used per corpus rules."
+    }
+  ]
+},
     "05-20": {
-      "commemorations": [
-        {
-          "id": "thallelaeus-martyr",
-          "name": "Holy Martyr Thallelaeus",
-          "type": "martyr",
-          "rank": 4,
-          "troparion_tone": 4,
-          "troparion": null,
-          "troparion_status": "text-unavailable",
-          "tradition_tags": ["EOR"],
-          "notes": "Thallelaeus (+284), physician-martyr under Numerian. Rank 4. Troparion text not securely confirmed."
-        }
-      ]
-    },
+  "commemorations": [
+    {
+      "id": "thallelaeus-martyr",
+      "name": "Holy Martyr Thallelaeus",
+      "type": "martyr",
+      "rank": 4,
+      "troparion_tone": 4,
+      "troparion": {
+        "tone": 4,
+        "title": "Troparion of the Holy Martyr Thallelaeus",
+        "text": "Your holy martyr Thallelaeus, O Lord, through his sufferings has received an incorruptible crown from You, our God. For having Your strength, he laid low his adversaries and shattered the powerless boldness of demons. Through his intercessions save our souls."
+      },
+      "troparion_status": "resolved",
+      "tradition_tags": ["EOR"],
+      "notes": "Thallelaeus (+284), physician-martyr under Numerian. Rank 4. Standard martyr troparion Tone 4 applied. No unique text confirmed at OCA; standard form used per corpus rules."
+    }
+  ]
+},
     "05-21": {
       "commemorations": [
         {
@@ -366,51 +421,59 @@
         }
       ]
     },
-    "05-22": {
-      "commemorations": [
-        {
-          "id": "basiliscus-comana",
-          "name": "Holy Martyr Basiliscus of Comana",
-          "type": "martyr",
-          "rank": 4,
-          "troparion_tone": 4,
-          "troparion": null,
-          "troparion_status": "text-unavailable",
-          "tradition_tags": ["EOR"],
-          "notes": "Basiliscus of Comana (+308), companion of Theodore Tyron, martyr. Rank 4. Troparion text not securely confirmed."
-        }
-      ]
-    },
-    "05-23": {
-      "commemorations": [
-        {
-          "id": "michael-bishop-synnada",
-          "name": "St. Michael, Bishop of Synnada",
-          "type": "hierarch",
-          "rank": 4,
-          "troparion_tone": 4,
-          "troparion": null,
-          "troparion_status": "text-unavailable",
-          "tradition_tags": ["EOR"],
-          "notes": "Michael of Synnada (+821), confessor bishop under the Second Iconoclasm. Rank 4. Troparion text not securely confirmed."
-        }
-      ]
-    },
-    "05-24": {
-      "commemorations": [
-        {
-          "id": "simeon-stylites-junior",
-          "name": "Venerable Simeon the Stylite the Younger",
-          "type": "monastic",
-          "rank": 4,
-          "troparion_tone": 1,
-          "troparion": null,
-          "troparion_status": "text-unavailable",
-          "tradition_tags": ["EOR"],
-          "notes": "Simeon Stylites the Younger (+592), stylite of the Wondrous Mountain near Antioch. Rank 4. Troparion text not securely confirmed."
-        }
-      ]
-    },
+   "05-22": {
+  "commemorations": [
+    {
+      "id": "basiliscus-comana",
+      "name": "Holy Martyr Basiliscus of Comana",
+      "type": "martyr",
+      "rank": 4,
+      "troparion_tone": 4,
+      "troparion": {
+        "tone": 4,
+        "title": "Troparion of the Holy Martyr Basiliscus of Comana",
+        "text": "Your holy martyr Basiliscus, O Lord, through his sufferings has received an incorruptible crown from You, our God. For having Your strength, he laid low his adversaries and shattered the powerless boldness of demons. Through his intercessions save our souls."
+      },
+      "troparion_status": "resolved",
+      "tradition_tags": ["EOR"],
+      "notes": "Basiliscus of Comana (+308), companion of Theodore Tyron. Rank 4. Standard martyr troparion Tone 4 applied. No unique text confirmed at OCA; standard form used per corpus rules."
+    }
+  ]
+},
+   "05-23": {
+  "commemorations": [
+    {
+      "id": "michael-bishop-synnada",
+      "name": "St. Michael the Confessor, Bishop of Synnada",
+      "type": "hierarch",
+      "rank": 4,
+      "troparion_tone": 4,
+      "troparion": {
+        "tone": 4,
+        "title": "Troparion of St. Michael the Confessor of Synnada",
+        "text": "In truth you were revealed to your flock as a rule of faith, an image of humility and a teacher of abstinence; your humility exalted you; your poverty enriched you. Hierarch Father Michael, entreat Christ our God that our souls may be saved."
+      },
+      "troparion_status": "resolved",
+      "tradition_tags": ["EOR"],
+      "notes": "Michael of Synnada (+821), confessor bishop during the second Iconoclasm. Rank 4. Standard hierarch troparion Tone 4 used per OCA."
+    }
+  ]
+},
+   "05-24": {
+  "commemorations": [
+    {
+      "id": "simeon-stylites-junior",
+      "name": "Venerable Simeon the Stylite the Younger",
+      "type": "monastic",
+      "rank": 4,
+      "troparion_tone": 1,
+      "troparion": null,
+      "troparion_status": "text-unavailable",
+      "tradition_tags": ["EOR"],
+      "notes": "Hold — monastic type. Troparion text not securely confirmed."
+    }
+  ]
+},
     "05-25": {
       "commemorations": [
         {
@@ -449,80 +512,92 @@
         }
       ]
     },
-    "05-27": {
-      "commemorations": [
-        {
-          "id": "john-constantine-russia",
-          "name": "Sts. John the Russian and Constantine-Cyril Equal-to-Apostles",
-          "type": "saint",
-          "rank": 4,
-          "troparion_tone": 4,
-          "troparion": null,
-          "troparion_status": "text-unavailable",
-          "tradition_tags": ["EOR"],
-          "notes": "John the Russian (+1730), confessor slave in Ottoman Cappadocia. Rank 4. Troparion text not securely confirmed."
-        }
-      ]
-    },
-    "05-28": {
-      "commemorations": [
-        {
-          "id": "nikita-bishop-chalcedon",
-          "name": "St. Nikita, Bishop of Chalcedon",
-          "type": "hierarch",
-          "rank": 4,
-          "troparion_tone": 4,
-          "troparion": null,
-          "troparion_status": "text-unavailable",
-          "tradition_tags": ["EOR"],
-          "notes": "Nikita of Chalcedon (+9th c.), confessor bishop under Iconoclasm. Rank 4. Troparion text not securely confirmed."
-        }
-      ]
-    },
-    "05-29": {
-      "commemorations": [
-        {
-          "id": "theodosia-caesarea-cappadocia",
-          "name": "Holy Martyr Theodosia of Caesarea in Cappadocia",
-          "type": "martyr",
-          "rank": 4,
-          "troparion_tone": 4,
-          "troparion": null,
-          "troparion_status": "text-unavailable",
-          "tradition_tags": ["EOR"],
-          "notes": "Theodosia of Caesarea (+308), virgin martyr under Maximinus. Rank 4. Troparion text not securely confirmed."
-        }
-      ]
-    },
-    "05-30": {
-      "commemorations": [
-        {
-          "id": "isaakios-dalmatian",
-          "name": "Venerable Isaakios, Abbot of the Dalmatian Monastery",
-          "type": "monastic",
-          "rank": 4,
-          "troparion_tone": 8,
-          "troparion": null,
-          "troparion_status": "text-unavailable",
-          "tradition_tags": ["EOR"],
-          "notes": "Isaakios of the Dalmatian Monastery (+383), confessor under Valens, founder of the Dalmatian monastery in Constantinople. Rank 4. Troparion text not securely confirmed."
-        }
-      ]
-    },
-    "05-31": {
-      "commemorations": [
-        {
-          "id": "hermias-martyr",
-          "name": "Holy Martyr Hermias",
-          "type": "martyr",
-          "rank": 4,
-          "troparion_tone": 4,
-          "troparion": null,
-          "troparion_status": "text-unavailable",
-          "tradition_tags": ["EOR"],
-          "notes": "Hermias (+2nd c.), soldier-martyr under Antoninus Pius. Rank 4. Troparion text not securely confirmed."
-        }
-      ]
+   "05-27": {
+  "commemorations": [
+    {
+      "id": "john-constantine-russia",
+      "name": "Sts. John the Russian and Constantine-Cyril Equal-to-Apostles",
+      "type": "saint",
+      "rank": 4,
+      "troparion_tone": 4,
+      "troparion": null,
+      "troparion_status": "text-unavailable",
+      "tradition_tags": ["EOR"],
+      "notes": "Hold — type 'saint' is not in the auto-promote list. Troparion text not securely confirmed."
     }
+  ]
+},
+    "05-28": {
+  "commemorations": [
+    {
+      "id": "nikita-bishop-chalcedon",
+      "name": "St. Nikita (Niketas), Bishop of Chalcedon",
+      "type": "hierarch",
+      "rank": 4,
+      "troparion_tone": 4,
+      "troparion": {
+        "tone": 4,
+        "title": "Troparion of St. Niketas of Chalcedon",
+        "text": "In truth you were revealed to your flock as a rule of faith, an image of humility and a teacher of abstinence; your humility exalted you; your poverty enriched you. Hierarch Father Nicetas, entreat Christ our God that our souls may be saved."
+      },
+      "troparion_status": "resolved",
+      "tradition_tags": ["EOR"],
+      "notes": "Niketas (Nikita) of Chalcedon (+9th c.), confessor bishop under Iconoclasm. Rank 4. Troparion Tone 4 confirmed: OCA (May 28)."
+    }
+  ]
+},
+    "05-29": {
+  "commemorations": [
+    {
+      "id": "theodosia-caesarea-cappadocia",
+      "name": "Holy Martyr Theodosia of Caesarea in Cappadocia",
+      "type": "martyr",
+      "rank": 4,
+      "troparion_tone": 4,
+      "troparion": {
+        "tone": 4,
+        "title": "Troparion of the Holy Martyr Theodosia of Caesarea in Cappadocia",
+        "text": "Your holy martyr Theodosia, O Lord, through her sufferings has received an incorruptible crown from You, our God. For having Your strength, she laid low her adversaries and shattered the powerless boldness of demons. Through her intercessions save our souls."
+      },
+      "troparion_status": "resolved",
+      "tradition_tags": ["EOR"],
+      "notes": "Theodosia of Caesarea (+308), virgin martyr under Maximinus. Rank 4. Standard martyr troparion Tone 4, feminine form applied. No unique text confirmed at OCA; standard form used per corpus rules."
+    }
+  ]
+},
+    "05-30": {
+  "commemorations": [
+    {
+      "id": "isaakios-dalmatian",
+      "name": "Venerable Isaakios, Abbot of the Dalmatian Monastery",
+      "type": "monastic",
+      "rank": 4,
+      "troparion_tone": 8,
+      "troparion": null,
+      "troparion_status": "text-unavailable",
+      "tradition_tags": ["EOR"],
+      "notes": "Hold — monastic type. Troparion text not securely confirmed."
+    }
+  ]
+},
+    "05-31": {
+  "commemorations": [
+    {
+      "id": "hermias-martyr",
+      "name": "Holy Martyr Hermias",
+      "type": "martyr",
+      "rank": 4,
+      "troparion_tone": 4,
+      "troparion": {
+        "tone": 4,
+        "title": "Troparion of the Holy Martyr Hermias",
+        "text": "Your holy martyr Hermias, O Lord, through his sufferings has received an incorruptible crown from You, our God. For having Your strength, he laid low his adversaries and shattered the powerless boldness of demons. Through his intercessions save our souls."
+      },
+      "troparion_status": "resolved",
+      "tradition_tags": ["EOR"],
+      "notes": "Hermias (+2nd c.), soldier-martyr under Antoninus Pius. Rank 4. Standard martyr troparion Tone 4 applied. No unique text confirmed at OCA; standard form used per corpus rules."
+    }
+  ]
+}
   }
 }

@@ -50,20 +50,20 @@
       ]
     },
     "01-03": {
-      "commemorations": [
-        {
-          "id": "prophet-malachi",
-          "name": "Prophet Malachi; Martyr Gordius of Caesarea",
-          "type": "prophet",
-          "rank": 4,
-          "troparion_tone": 2,
-          "troparion": null,
-          "troparion_status": "text-unavailable",
-          "tradition_tags": ["EOR"],
-          "notes": "Forefeast of Theophany begins Jan 2 on some typika; Jan 3 is a commemoration day. Troparion text not securely confirmed for corpus."
-        }
-      ]
-    },
+  "commemorations": [
+    {
+      "id": "prophet-malachi",
+      "name": "Prophet Malachi; Martyr Gordius of Caesarea",
+      "type": "prophet",
+      "rank": 4,
+      "troparion_tone": 2,
+      "troparion": null,
+      "troparion_status": "text-unavailable",
+      "tradition_tags": ["EOR"],
+      "notes": "Prophet Malachi: hold — prophet type, no verified unique troparion. Martyr Gordius of Caesarea: hold — joint entry with prophet, treated as block hold. Troparion text not securely confirmed for corpus."
+    }
+  ]
+},
     "01-04": {
       "commemorations": [
         {
@@ -141,35 +141,39 @@
       ]
     },
     "01-08": {
-      "commemorations": [
-        {
-          "id": "george-chozebite-domnica",
-          "name": "Venerable George the Chozebite; Venerable Domnica of Constantinople",
-          "type": "monastic",
-          "rank": 4,
-          "troparion_tone": 8,
-          "troparion": null,
-          "troparion_status": "text-unavailable",
-          "tradition_tags": ["EOR"],
-          "notes": "Afterfeast of Theophany. Rank 4 commemorations. Troparion text not securely confirmed."
-        }
-      ]
-    },
+  "commemorations": [
+    {
+      "id": "george-chozebite-domnica",
+      "name": "Venerable George the Chozebite; Venerable Domnica of Constantinople",
+      "type": "monastic",
+      "rank": 4,
+      "troparion_tone": 8,
+      "troparion": null,
+      "troparion_status": "text-unavailable",
+      "tradition_tags": ["EOR"],
+      "notes": "Hold — monastic type. Troparion text not securely confirmed."
+    }
+  ]
+},
     "01-09": {
-      "commemorations": [
-        {
-          "id": "martyr-polyeuctus",
-          "name": "Holy Martyr Polyeuctus of Melitene",
-          "type": "martyr",
-          "rank": 4,
-          "troparion_tone": 4,
-          "troparion": null,
-          "troparion_status": "text-unavailable",
-          "tradition_tags": ["EOR"],
-          "notes": "Afterfeast of Theophany. Troparion text not securely confirmed."
-        }
-      ]
-    },
+  "commemorations": [
+    {
+      "id": "martyr-polyeuctus",
+      "name": "Holy Martyr Polyeuctus of Melitene",
+      "type": "martyr",
+      "rank": 4,
+      "troparion_tone": 4,
+      "troparion": {
+        "tone": 4,
+        "title": "Troparion of the Holy Martyr Polyeuctus of Melitene",
+        "text": "Your holy martyr Polyeuctus, O Lord, through his sufferings has received an incorruptible crown from You, our God. For having Your strength, he laid low his adversaries and shattered the powerless boldness of demons. Through his intercessions save our souls."
+      },
+      "troparion_status": "resolved",
+      "tradition_tags": ["EOR"],
+      "notes": "Polyeuctus of Melitene (+259), soldier-martyr under Valerian. Rank 4. Standard martyr troparion Tone 4 applied. No unique text found at OCA; standard form used per corpus rules."
+    }
+  ]
+},
     "01-10": {
       "commemorations": [
         {
@@ -209,20 +213,24 @@
       ]
     },
     "01-12": {
-      "commemorations": [
-        {
-          "id": "tatiana-rome",
-          "name": "Holy Martyr Tatiana of Rome",
-          "type": "martyr",
-          "rank": 4,
-          "troparion_tone": 4,
-          "troparion": null,
-          "troparion_status": "text-unavailable",
-          "tradition_tags": ["EOR"],
-          "notes": "Leavetaking of Theophany on some typika. Tatiana of Rome. Troparion text not securely confirmed."
-        }
-      ]
-    },
+  "commemorations": [
+    {
+      "id": "tatiana-rome",
+      "name": "Holy Martyr Tatiana of Rome",
+      "type": "martyr",
+      "rank": 4,
+      "troparion_tone": 4,
+      "troparion": {
+        "tone": 4,
+        "title": "Troparion of the Holy Martyr Tatiana of Rome",
+        "text": "Your holy martyr Tatiana, O Lord, through her sufferings has received an incorruptible crown from You, our God. For having Your strength, she laid low her adversaries and shattered the powerless boldness of demons. Through her intercessions save our souls."
+      },
+      "troparion_status": "resolved",
+      "tradition_tags": ["EOR"],
+      "notes": "Tatiana of Rome (+226), deaconess and martyr. Rank 4. Standard martyr troparion Tone 4, feminine form applied. No unique text found at OCA; standard form used per corpus rules."
+    }
+  ]
+},
     "01-13": {
       "commemorations": [
         {
@@ -414,35 +422,39 @@
       ]
     },
     "01-23": {
-      "commemorations": [
-        {
-          "id": "clement-ancyra-agathangelus",
-          "name": "Hieromartyr Clement of Ancyra; Martyr Agathangelus",
-          "type": "martyr",
-          "rank": 4,
-          "troparion_tone": 4,
-          "troparion": null,
-          "troparion_status": "text-unavailable",
-          "tradition_tags": ["EOR"],
-          "notes": "Hieromartyr Clement (+296). Troparion text not securely confirmed for corpus."
-        }
-      ]
-    },
+  "commemorations": [
+    {
+      "id": "clement-ancyra-agathangelus",
+      "name": "Hieromartyr Clement of Ancyra; Martyr Agathangelus",
+      "type": "martyr",
+      "rank": 4,
+      "troparion_tone": 4,
+      "troparion": {
+        "tone": 4,
+        "title": "Troparion of the Hieromartyr Clement of Ancyra and Martyr Agathangelus",
+        "text": "Your holy martyrs Clement and Agathangelus, O Lord, through their sufferings have received incorruptible crowns from You, our God. For having Your strength, they laid low their adversaries and shattered the powerless boldness of demons. Through their intercessions save our souls."
+      },
+      "troparion_status": "resolved",
+      "tradition_tags": ["EOR"],
+      "notes": "Clement of Ancyra (+296), hieromartyr, and Agathangelus, his companion. Rank 4. Standard martyr troparion Tone 4, plural masculine form applied. No unique text found at OCA; standard form used per corpus rules."
+    }
+  ]
+},
     "01-24": {
-      "commemorations": [
-        {
-          "id": "xenia-rome",
-          "name": "Venerable Xenia of Rome (Eusebeia)",
-          "type": "saint",
-          "rank": 4,
-          "troparion_tone": 4,
-          "troparion": null,
-          "troparion_status": "text-unavailable",
-          "tradition_tags": ["EOR"],
-          "notes": "Venerable Xenia (+5th c.). Troparion text not securely confirmed."
-        }
-      ]
-    },
+  "commemorations": [
+    {
+      "id": "xenia-rome",
+      "name": "Venerable Xenia of Rome (Eusebeia)",
+      "type": "saint",
+      "rank": 4,
+      "troparion_tone": 4,
+      "troparion": null,
+      "troparion_status": "text-unavailable",
+      "tradition_tags": ["EOR"],
+      "notes": "Hold — type 'saint' is not in the auto-promote list. Troparion text not securely confirmed."
+    }
+  ]
+},
     "01-25": {
       "commemorations": [
         {
@@ -463,20 +475,20 @@
       ]
     },
     "01-26": {
-      "commemorations": [
-        {
-          "id": "xenophon-family",
-          "name": "Venerable Xenophon and Mary, and their sons Arcadius and John",
-          "type": "monastic",
-          "rank": 4,
-          "troparion_tone": 8,
-          "troparion": null,
-          "troparion_status": "text-unavailable",
-          "tradition_tags": ["EOR"],
-          "notes": "5th-6th c. Constantinople. Rank 4. Troparion text not securely confirmed."
-        }
-      ]
-    },
+  "commemorations": [
+    {
+      "id": "xenophon-family",
+      "name": "Venerable Xenophon and Mary, and their sons Arcadius and John",
+      "type": "monastic",
+      "rank": 4,
+      "troparion_tone": 8,
+      "troparion": null,
+      "troparion_status": "text-unavailable",
+      "tradition_tags": ["EOR"],
+      "notes": "Hold — monastic type. Troparion text not securely confirmed."
+    }
+  ]
+},
     "01-27": {
       "commemorations": [
         {

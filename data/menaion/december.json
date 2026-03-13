@@ -11,51 +11,51 @@
     "total_days": 31
   },
   "dates": {
-    "12-01": {
-      "commemorations": [
-        {
-          "id": "prophet-nahum",
-          "name": "Holy Prophet Nahum",
-          "type": "prophet",
-          "rank": 4,
-          "troparion_tone": 2,
-          "troparion": null,
-          "troparion_status": "text-unavailable",
-          "tradition_tags": ["EOR", "OOR"],
-          "notes": "One of the Twelve Minor Prophets. Rank 4. Troparion text not confirmed from published Antiochian/OCA source for this corpus."
-        }
-      ]
-    },
+   "12-01": {
+  "commemorations": [
+    {
+      "id": "prophet-nahum",
+      "name": "Holy Prophet Nahum",
+      "type": "prophet",
+      "rank": 4,
+      "troparion_tone": 2,
+      "troparion": null,
+      "troparion_status": "text-unavailable",
+      "tradition_tags": ["EOR", "OOR"],
+      "notes": "Hold — prophet type. Troparion text not securely confirmed."
+    }
+  ]
+},
     "12-02": {
-      "commemorations": [
-        {
-          "id": "prophet-habakkuk",
-          "name": "Holy Prophet Habakkuk",
-          "type": "prophet",
-          "rank": 4,
-          "troparion_tone": 2,
-          "troparion": null,
-          "troparion_status": "text-unavailable",
-          "tradition_tags": ["EOR", "OOR"],
-          "notes": "One of the Twelve Minor Prophets. Rank 4. Troparion text not confirmed for this corpus."
-        }
-      ]
-    },
+  "commemorations": [
+    {
+      "id": "prophet-habakkuk",
+      "name": "Holy Prophet Habakkuk",
+      "type": "prophet",
+      "rank": 4,
+      "troparion_tone": 2,
+      "troparion": null,
+      "troparion_status": "text-unavailable",
+      "tradition_tags": ["EOR", "OOR"],
+      "notes": "Hold — prophet type. Troparion text not securely confirmed."
+    }
+  ]
+},
     "12-03": {
-      "commemorations": [
-        {
-          "id": "prophet-zephaniah",
-          "name": "Holy Prophet Zephaniah (Sophonias)",
-          "type": "prophet",
-          "rank": 4,
-          "troparion_tone": 2,
-          "troparion": null,
-          "troparion_status": "text-unavailable",
-          "tradition_tags": ["EOR", "OOR"],
-          "notes": "One of the Twelve Minor Prophets. Rank 4. Troparion text not confirmed for this corpus."
-        }
-      ]
-    },
+  "commemorations": [
+    {
+      "id": "prophet-zephaniah",
+      "name": "Holy Prophet Zephaniah (Sophonias)",
+      "type": "prophet",
+      "rank": 4,
+      "troparion_tone": 2,
+      "troparion": null,
+      "troparion_status": "text-unavailable",
+      "tradition_tags": ["EOR", "OOR"],
+      "notes": "Hold — prophet type. Troparion text not securely confirmed."
+    }
+  ]
+},
     "12-04": {
       "commemorations": [
         {
@@ -148,20 +148,20 @@
       ]
     },
     "12-08": {
-      "commemorations": [
-        {
-          "id": "patapius-thebes",
-          "name": "Venerable Patapius of Thebes",
-          "type": "monastic",
-          "rank": 4,
-          "troparion_tone": 8,
-          "troparion": null,
-          "troparion_status": "text-unavailable",
-          "tradition_tags": ["EOR", "OOR"],
-          "notes": "Hermit of Constantinople, +7th c. Rank 4. Troparion text not confirmed for this corpus."
-        }
-      ]
-    },
+  "commemorations": [
+    {
+      "id": "patapius-thebes",
+      "name": "Venerable Patapius of Thebes",
+      "type": "monastic",
+      "rank": 4,
+      "troparion_tone": 8,
+      "troparion": null,
+      "troparion_status": "text-unavailable",
+      "tradition_tags": ["EOR", "OOR"],
+      "notes": "Hold — monastic type. Troparion text not securely confirmed."
+    }
+  ]
+},
     "12-09": {
       "commemorations": [
         {
@@ -181,21 +181,25 @@
         }
       ]
     },
-    "12-10": {
-      "commemorations": [
-        {
-          "id": "menas-hermogenes-eugraphus",
-          "name": "Holy Martyrs Menas, Hermogenes, and Eugraphus",
-          "type": "martyr",
-          "rank": 4,
-          "troparion_tone": 4,
-          "troparion": null,
-          "troparion_status": "text-unavailable",
-          "tradition_tags": ["EOR", "OOR"],
-          "notes": "Martyrs at Alexandria. Rank 4. Troparion text not confirmed for this corpus."
-        }
-      ]
-    },
+   "12-10": {
+  "commemorations": [
+    {
+      "id": "menas-hermogenes-eugraphus",
+      "name": "Holy Martyrs Menas, Hermogenes, and Eugraphus",
+      "type": "martyr",
+      "rank": 4,
+      "troparion_tone": 4,
+      "troparion": {
+        "tone": 4,
+        "title": "Troparion of the Holy Martyrs Menas, Hermogenes, and Eugraphus",
+        "text": "Your holy martyrs Menas, Hermogenes, and Eugraphus, O Lord, through their sufferings have received incorruptible crowns from You, our God. For having Your strength, they laid low their adversaries and shattered the powerless boldness of demons. Through their intercessions save our souls."
+      },
+      "troparion_status": "resolved",
+      "tradition_tags": ["EOR", "OOR"],
+      "notes": "Menas, Hermogenes, and Eugraphus, martyrs at Alexandria. Rank 4. Standard martyr troparion Tone 4, plural form applied. No unique text confirmed at OCA; standard form used per corpus rules."
+    }
+  ]
+},
     "12-11": {
       "commemorations": [
         {
@@ -235,65 +239,73 @@
       ]
     },
     "12-13": {
-      "commemorations": [
-        {
-          "id": "lucy-syracuse",
-          "name": "Holy Martyr Lucy of Syracuse",
-          "type": "martyr",
-          "rank": 4,
-          "troparion_tone": 4,
-          "troparion": null,
-          "troparion_status": "text-unavailable",
-          "tradition_tags": ["EOR", "OOR"],
-          "notes": "Holy Virgin Martyr Lucy of Syracuse, +304. Rank 4. Troparion text not confirmed from published Antiochian/OCA source for this corpus."
-        }
-      ]
-    },
+  "commemorations": [
+    {
+      "id": "lucy-syracuse",
+      "name": "Holy Martyr Lucy of Syracuse",
+      "type": "martyr",
+      "rank": 4,
+      "troparion_tone": 4,
+      "troparion": {
+        "tone": 4,
+        "title": "Troparion of the Holy Martyr Lucy of Syracuse",
+        "text": "Your holy martyr Lucy, O Lord, through her sufferings has received an incorruptible crown from You, our God. For having Your strength, she laid low her adversaries and shattered the powerless boldness of demons. Through her intercessions save our souls."
+      },
+      "troparion_status": "resolved",
+      "tradition_tags": ["EOR", "OOR"],
+      "notes": "Lucy of Syracuse (+304), virgin martyr under Diocletian. Rank 4. Standard martyr troparion Tone 4, feminine form applied. No unique Eastern text confirmed at OCA; standard form used per corpus rules."
+    }
+  ]
+},
     "12-14": {
-      "commemorations": [
-        {
-          "id": "thyrsus-leucius-philemon",
-          "name": "Holy Martyrs Thyrsus, Leucius, and Philemon",
-          "type": "martyr",
-          "rank": 4,
-          "troparion_tone": 4,
-          "troparion": null,
-          "troparion_status": "text-unavailable",
-          "tradition_tags": ["EOR", "OOR"],
-          "notes": "Martyrs at Caesarea in Phrygia. Rank 4. Troparion text not confirmed for this corpus."
-        }
-      ]
-    },
+  "commemorations": [
+    {
+      "id": "thyrsus-leucius-philemon",
+      "name": "Holy Martyrs Thyrsus, Leucius, and Philemon",
+      "type": "martyr",
+      "rank": 4,
+      "troparion_tone": 4,
+      "troparion": {
+        "tone": 4,
+        "title": "Troparion of the Holy Martyrs Thyrsus, Leucius, and Philemon",
+        "text": "Your holy martyrs Thyrsus, Leucius, and Philemon, O Lord, through their sufferings have received incorruptible crowns from You, our God. For having Your strength, they laid low their adversaries and shattered the powerless boldness of demons. Through their intercessions save our souls."
+      },
+      "troparion_status": "resolved",
+      "tradition_tags": ["EOR", "OOR"],
+      "notes": "Thyrsus, Leucius, and Philemon, martyrs at Caesarea in Phrygia. Rank 4. Standard martyr troparion Tone 4, plural form applied. No unique text confirmed at OCA; standard form used per corpus rules."
+    }
+  ]
+},
     "12-15": {
-      "commemorations": [
-        {
-          "id": "stephen-younger-sabaite",
-          "name": "Venerable Stephen the Sabaite, Hymnographer",
-          "type": "monastic",
-          "rank": 4,
-          "troparion_tone": 8,
-          "troparion": null,
-          "troparion_status": "text-unavailable",
-          "tradition_tags": ["EOR", "OOR"],
-          "notes": "Stephen the Younger, monk of the Great Laura and hymnographer, +794. Rank 4. Troparion text not confirmed for this corpus."
-        }
-      ]
-    },
+  "commemorations": [
+    {
+      "id": "stephen-younger-sabaite",
+      "name": "Venerable Stephen the Sabaite, Hymnographer",
+      "type": "monastic",
+      "rank": 4,
+      "troparion_tone": 8,
+      "troparion": null,
+      "troparion_status": "text-unavailable",
+      "tradition_tags": ["EOR", "OOR"],
+      "notes": "Hold — monastic type. Troparion text not securely confirmed."
+    }
+  ]
+},
     "12-16": {
-      "commemorations": [
-        {
-          "id": "prophet-haggai",
-          "name": "Holy Prophet Haggai",
-          "type": "prophet",
-          "rank": 4,
-          "troparion_tone": 2,
-          "troparion": null,
-          "troparion_status": "text-unavailable",
-          "tradition_tags": ["EOR", "OOR"],
-          "notes": "One of the Twelve Minor Prophets. Rank 4. Troparion text not confirmed for this corpus."
-        }
-      ]
-    },
+  "commemorations": [
+    {
+      "id": "prophet-haggai",
+      "name": "Holy Prophet Haggai",
+      "type": "prophet",
+      "rank": 4,
+      "troparion_tone": 2,
+      "troparion": null,
+      "troparion_status": "text-unavailable",
+      "tradition_tags": ["EOR", "OOR"],
+      "notes": "Hold — prophet type. Troparion text not securely confirmed."
+    }
+  ]
+},
     "12-17": {
       "commemorations": [
         {
@@ -313,36 +325,44 @@
         }
       ]
     },
-    "12-18": {
-      "commemorations": [
-        {
-          "id": "sebastian-rome",
-          "name": "Holy Martyr Sebastian and his Companions",
-          "type": "martyr",
-          "rank": 4,
-          "troparion_tone": 4,
-          "troparion": null,
-          "troparion_status": "text-unavailable",
-          "tradition_tags": ["EOR", "OOR"],
-          "notes": "Martyr Sebastian of Rome, +288. Rank 4. Troparion text not confirmed from published Antiochian/OCA source for this corpus."
-        }
-      ]
-    },
+   "12-18": {
+  "commemorations": [
+    {
+      "id": "sebastian-rome",
+      "name": "Holy Martyr Sebastian and his Companions",
+      "type": "martyr",
+      "rank": 4,
+      "troparion_tone": 4,
+      "troparion": {
+        "tone": 4,
+        "title": "Troparion of the Holy Martyr Sebastian and his Companions",
+        "text": "Your holy martyrs Sebastian and companions, O Lord, through their sufferings have received incorruptible crowns from You, our God. For having Your strength, they laid low their adversaries and shattered the powerless boldness of demons. Through their intercessions save our souls."
+      },
+      "troparion_status": "resolved",
+      "tradition_tags": ["EOR", "OOR"],
+      "notes": "Sebastian of Rome (+288) and companions, martyrs. Rank 4. Standard martyr troparion Tone 4, plural form applied. No unique Eastern text confirmed at OCA; standard form used per corpus rules."
+    }
+  ]
+},
     "12-19": {
-      "commemorations": [
-        {
-          "id": "boniface-tarsus",
-          "name": "Holy Martyr Boniface of Tarsus",
-          "type": "martyr",
-          "rank": 4,
-          "troparion_tone": 4,
-          "troparion": null,
-          "troparion_status": "text-unavailable",
-          "tradition_tags": ["EOR", "OOR"],
-          "notes": "Martyr at Tarsus in Cilicia. Rank 4. Troparion text not confirmed for this corpus."
-        }
-      ]
-    },
+  "commemorations": [
+    {
+      "id": "boniface-tarsus",
+      "name": "Holy Martyr Boniface of Tarsus",
+      "type": "martyr",
+      "rank": 4,
+      "troparion_tone": 4,
+      "troparion": {
+        "tone": 4,
+        "title": "Troparion of the Holy Martyr Boniface of Tarsus",
+        "text": "Your holy martyr Boniface, O Lord, through his sufferings has received an incorruptible crown from You, our God. For having Your strength, he laid low his adversaries and shattered the powerless boldness of demons. Through his intercessions save our souls."
+      },
+      "troparion_status": "resolved",
+      "tradition_tags": ["EOR", "OOR"],
+      "notes": "Boniface of Tarsus (+290), martyr in Cilicia. Rank 4. Standard martyr troparion Tone 4 applied. No unique text confirmed at OCA; standard form used per corpus rules."
+    }
+  ]
+},
     "12-20": {
       "commemorations": [
         {
@@ -431,18 +451,22 @@
       ]
     },
     "12-23": {
-      "commemorations": [
-        {
-          "id": "ten-martyrs-crete",
-          "name": "The Ten Holy Martyrs of Crete",
-          "type": "martyr",
-          "rank": 4,
-          "troparion_tone": 4,
-          "troparion": null,
-          "troparion_status": "text-unavailable",
-          "tradition_tags": ["EOR", "OOR"],
-          "notes": "The Ten Martyrs of Crete who suffered under Decius. Rank 4. Forefeast also continues. Troparion text not confirmed for this corpus."
-        },
+  "commemorations": [
+    {
+      "id": "ten-martyrs-crete",
+      "name": "The Ten Holy Martyrs of Crete",
+      "type": "martyr",
+      "rank": 4,
+      "troparion_tone": 4,
+      "troparion": {
+        "tone": 4,
+        "title": "Troparion of the Ten Holy Martyrs of Crete",
+        "text": "Your holy martyrs of Crete, O Lord, through their sufferings have received incorruptible crowns from You, our God. For having Your strength, they laid low their adversaries and shattered the powerless boldness of demons. Through their intercessions save our souls."
+      },
+      "troparion_status": "resolved",
+      "tradition_tags": ["EOR", "OOR"],
+      "notes": "Ten Martyrs of Crete who suffered under Decius. Rank 4. Standard martyr troparion Tone 4, plural form applied. No unique text confirmed at OCA; standard form used per corpus rules."
+    },
         {
           "id": "forefeast-nativity-4",
           "name": "Forefeast of the Nativity of Christ (Day 4)",
@@ -536,21 +560,25 @@
         }
       ]
     },
-    "12-28": {
-      "commemorations": [
-        {
-          "id": "twenty-thousand-martyrs-nicomedia",
-          "name": "The Twenty Thousand Holy Martyrs Burned in Nicomedia",
-          "type": "martyr",
-          "rank": 3,
-          "troparion_tone": 2,
-          "troparion": null,
-          "troparion_status": "text-unavailable",
-          "tradition_tags": ["EOR", "OOR"],
-          "notes": "The twenty thousand martyrs who were burned in a church in Nicomedia on Christmas Day 302 under Diocletian. Rank 3. Troparion text not confirmed from published Antiochian/OCA source for this corpus."
-        }
-      ]
-    },
+   "12-28": {
+  "commemorations": [
+    {
+      "id": "twenty-thousand-martyrs-nicomedia",
+      "name": "The Twenty Thousand Holy Martyrs Burned in Nicomedia",
+      "type": "martyr",
+      "rank": 3,
+      "troparion_tone": 2,
+      "troparion": {
+        "tone": 2,
+        "title": "Troparion of the Twenty Thousand Holy Martyrs Burned in Nicomedia",
+        "text": "Your holy martyrs burned in Nicomedia, O Lord, through their sufferings have received incorruptible crowns from You, our God. For having Your strength, they laid low their adversaries and shattered the powerless boldness of demons. Through their intercessions save our souls."
+      },
+      "troparion_status": "resolved",
+      "tradition_tags": ["EOR", "OOR"],
+      "notes": "Twenty thousand martyrs burned in a church on Christmas Day 302 in Nicomedia under Diocletian. Rank 3. Tone is 2 per batch entry — preserved. Standard martyr troparion text applied at Tone 2 per live entry tone. No unique text confirmed at OCA; standard form used per corpus rules."
+    }
+  ]
+},
     "12-29": {
       "commemorations": [
         {
@@ -571,34 +599,38 @@
       ]
     },
     "12-30": {
-      "commemorations": [
-        {
-          "id": "anysia-thessalonica",
-          "name": "Holy Martyr Anysia of Thessalonica",
-          "type": "martyr",
-          "rank": 4,
-          "troparion_tone": 4,
-          "troparion": null,
-          "troparion_status": "text-unavailable",
-          "tradition_tags": ["EOR", "OOR"],
-          "notes": "Holy Martyr Anysia of Thessalonica, +285. Rank 4. Troparion text not confirmed for this corpus."
-        }
-      ]
-    },
-    "12-31": {
-      "commemorations": [
-        {
-          "id": "melania-roman",
-          "name": "Venerable Melania the Younger, Roman",
-          "type": "monastic",
-          "rank": 4,
-          "troparion_tone": 8,
-          "troparion": null,
-          "troparion_status": "text-unavailable",
-          "tradition_tags": ["EOR", "OOR"],
-          "notes": "Venerable Melania the Younger, foundress of monasteries in Jerusalem, +439. Rank 4. Last day of the Afterfeast of Christmas in many traditions. Troparion text not confirmed for this corpus."
-        }
-      ]
+  "commemorations": [
+    {
+      "id": "anysia-thessalonica",
+      "name": "Holy Martyr Anysia of Thessalonica",
+      "type": "martyr",
+      "rank": 4,
+      "troparion_tone": 4,
+      "troparion": {
+        "tone": 4,
+        "title": "Troparion of the Holy Martyr Anysia of Thessalonica",
+        "text": "Your holy martyr Anysia, O Lord, through her sufferings has received an incorruptible crown from You, our God. For having Your strength, she laid low her adversaries and shattered the powerless boldness of demons. Through her intercessions save our souls."
+      },
+      "troparion_status": "resolved",
+      "tradition_tags": ["EOR", "OOR"],
+      "notes": "Anysia of Thessalonica (+285), virgin martyr. Rank 4. Standard martyr troparion Tone 4, feminine form applied. No unique text confirmed at OCA; standard form used per corpus rules."
     }
+  ]
+},
+    "12-31": {
+  "commemorations": [
+    {
+      "id": "melania-roman",
+      "name": "Venerable Melania the Younger, Roman",
+      "type": "monastic",
+      "rank": 4,
+      "troparion_tone": 8,
+      "troparion": null,
+      "troparion_status": "text-unavailable",
+      "tradition_tags": ["EOR", "OOR"],
+      "notes": "Hold — monastic type. Troparion text not securely confirmed."
+    }
+  ]
+}
   }
 }

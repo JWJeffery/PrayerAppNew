@@ -31,35 +31,43 @@
       ]
     },
     "11-02": {
-      "commemorations": [
-        {
-          "id": "acindynus-pegasius-anempodistus",
-          "name": "Holy Martyrs Acindynus, Pegasius, Anempodistus, Elpidiphorus, and Aphthonius",
-          "type": "martyr",
-          "rank": 4,
-          "troparion_tone": 4,
-          "troparion": null,
-          "troparion_status": "text-unavailable",
-          "tradition_tags": ["EOR", "OOR"],
-          "notes": "Persian martyrs under Shapur II. Rank 4 / Simple. Troparion text not confirmed from published Antiochian/OCA source for this corpus."
-        }
-      ]
-    },
-    "11-03": {
-      "commemorations": [
-        {
-          "id": "acepsimas-bishop-persia",
-          "name": "Holy Martyr Acepsimas, Bishop of Persia, and his Companions",
-          "type": "martyr",
-          "rank": 4,
-          "troparion_tone": 4,
-          "troparion": null,
-          "troparion_status": "text-unavailable",
-          "tradition_tags": ["EOR", "OOR"],
-          "notes": "Persian episcopate martyrs. Rank 4. Troparion text not confirmed for this corpus."
-        }
-      ]
-    },
+  "commemorations": [
+    {
+      "id": "acindynus-pegasius-anempodistus",
+      "name": "Holy Martyrs Acindynus, Pegasius, Anempodistus, Elpidiphorus, and Aphthonius",
+      "type": "martyr",
+      "rank": 4,
+      "troparion_tone": 4,
+      "troparion": {
+        "tone": 4,
+        "title": "Troparion of the Holy Martyrs Acindynus, Pegasius, Anempodistus, Elpidiphorus, and Aphthonius",
+        "text": "Your holy martyrs Acindynus, Pegasius, Anempodistus, Elpidiphorus, and Aphthonius, O Lord, through their sufferings have received incorruptible crowns from You, our God. For having Your strength, they laid low their adversaries and shattered the powerless boldness of demons. Through their intercessions save our souls."
+      },
+      "troparion_status": "resolved",
+      "tradition_tags": ["EOR", "OOR"],
+      "notes": "Persian martyrs under Shapur II. Rank 4. Standard martyr troparion Tone 4, plural form applied. No unique text confirmed at OCA; standard form used per corpus rules."
+    }
+  ]
+},
+   "11-03": {
+  "commemorations": [
+    {
+      "id": "acepsimas-bishop-persia",
+      "name": "Holy Martyr Acepsimas, Bishop of Persia, and his Companions",
+      "type": "martyr",
+      "rank": 4,
+      "troparion_tone": 4,
+      "troparion": {
+        "tone": 4,
+        "title": "Troparion of the Holy Martyr Acepsimas, Bishop of Persia, and companions",
+        "text": "Your holy martyrs Acepsimas and companions, O Lord, through their sufferings have received incorruptible crowns from You, our God. For having Your strength, they laid low their adversaries and shattered the powerless boldness of demons. Through their intercessions save our souls."
+      },
+      "troparion_status": "resolved",
+      "tradition_tags": ["EOR", "OOR"],
+      "notes": "Acepsimas, bishop of Naessona in Persia, and companions, martyrs under Shapur II. Rank 4. Standard martyr troparion Tone 4, plural form applied. No unique text confirmed at OCA; standard form used per corpus rules."
+    }
+  ]
+},
     "11-04": {
       "commemorations": [
         {
@@ -79,21 +87,25 @@
         }
       ]
     },
-    "11-05": {
-      "commemorations": [
-        {
-          "id": "galacteon-episteme",
-          "name": "Holy Martyrs Galacteon and Episteme",
-          "type": "martyr",
-          "rank": 4,
-          "troparion_tone": 4,
-          "troparion": null,
-          "troparion_status": "text-unavailable",
-          "tradition_tags": ["EOR", "OOR"],
-          "notes": "Husband and wife martyrs. Rank 4. Troparion text not confirmed for this corpus."
-        }
-      ]
-    },
+   "11-05": {
+  "commemorations": [
+    {
+      "id": "galacteon-episteme",
+      "name": "Holy Martyrs Galacteon and Episteme",
+      "type": "martyr",
+      "rank": 4,
+      "troparion_tone": 4,
+      "troparion": {
+        "tone": 4,
+        "title": "Troparion of the Holy Martyrs Galacteon and Episteme",
+        "text": "Your holy martyrs Galacteon and Episteme, O Lord, through their sufferings have received incorruptible crowns from You, our God. For having Your strength, they laid low their adversaries and shattered the powerless boldness of demons. Through their intercessions save our souls."
+      },
+      "troparion_status": "resolved",
+      "tradition_tags": ["EOR", "OOR"],
+      "notes": "Galacteon and Episteme, husband and wife martyrs. Rank 4. Standard martyr troparion Tone 4, plural masculine form applied (mixed group). No unique text confirmed at OCA; standard form used per corpus rules."
+    }
+  ]
+},
     "11-06": {
       "commemorations": [
         {
@@ -113,21 +125,25 @@
         }
       ]
     },
-    "11-07": {
-      "commemorations": [
-        {
-          "id": "thirty-three-martyrs-melitene",
-          "name": "The Thirty-Three Martyrs of Melitene",
-          "type": "martyr",
-          "rank": 4,
-          "troparion_tone": 4,
-          "troparion": null,
-          "troparion_status": "text-unavailable",
-          "tradition_tags": ["EOR", "OOR"],
-          "notes": "Martyrs under Diocletian at Melitene in Armenia. Rank 4. Troparion text not confirmed for this corpus."
-        }
-      ]
-    },
+   "11-07": {
+  "commemorations": [
+    {
+      "id": "thirty-three-martyrs-melitene",
+      "name": "The Thirty-Three Martyrs of Melitene",
+      "type": "martyr",
+      "rank": 4,
+      "troparion_tone": 4,
+      "troparion": {
+        "tone": 4,
+        "title": "Troparion of the Thirty-Three Martyrs of Melitene",
+        "text": "Your holy martyrs of Melitene, O Lord, through their sufferings have received incorruptible crowns from You, our God. For having Your strength, they laid low their adversaries and shattered the powerless boldness of demons. Through their intercessions save our souls."
+      },
+      "troparion_status": "resolved",
+      "tradition_tags": ["EOR", "OOR"],
+      "notes": "Thirty-three martyrs under Diocletian at Melitene in Armenia. Rank 4. Standard martyr troparion Tone 4, plural form applied. No unique text confirmed at OCA; standard form used per corpus rules."
+    }
+  ]
+},
     "11-08": {
       "commemorations": [
         {
@@ -167,35 +183,43 @@
       ]
     },
     "11-10": {
-      "commemorations": [
-        {
-          "id": "erasmus-of-ohrid",
-          "name": "Holy Martyrs Orestes and Erasmus of Ohrid",
-          "type": "martyr",
-          "rank": 4,
-          "troparion_tone": 4,
-          "troparion": null,
-          "troparion_status": "text-unavailable",
-          "tradition_tags": ["EOR", "OOR"],
-          "notes": "November 10 in the new-calendar Menaion also commemorates the Holy Martyr Orestes. Troparion text not confirmed for this corpus."
-        }
-      ]
-    },
-    "11-11": {
-      "commemorations": [
-        {
-          "id": "menas-victor-vincent",
-          "name": "Holy Martyrs Menas, Victor, and Vincent",
-          "type": "martyr",
-          "rank": 4,
-          "troparion_tone": 4,
-          "troparion": null,
-          "troparion_status": "text-unavailable",
-          "tradition_tags": ["EOR", "OOR"],
-          "notes": "Rank 4. Troparion text not confirmed for this corpus."
-        }
-      ]
-    },
+  "commemorations": [
+    {
+      "id": "erasmus-of-ohrid",
+      "name": "Holy Martyrs Orestes and Erasmus of Ohrid",
+      "type": "martyr",
+      "rank": 4,
+      "troparion_tone": 4,
+      "troparion": {
+        "tone": 4,
+        "title": "Troparion of the Holy Martyrs Orestes and Erasmus of Ohrid",
+        "text": "Your holy martyrs Orestes and Erasmus, O Lord, through their sufferings have received incorruptible crowns from You, our God. For having Your strength, they laid low their adversaries and shattered the powerless boldness of demons. Through their intercessions save our souls."
+      },
+      "troparion_status": "resolved",
+      "tradition_tags": ["EOR", "OOR"],
+      "notes": "Orestes and Erasmus of Ohrid. Rank 4. Standard martyr troparion Tone 4, plural form applied. No unique text confirmed at OCA; standard form used per corpus rules."
+    }
+  ]
+},
+   "11-11": {
+  "commemorations": [
+    {
+      "id": "menas-victor-vincent",
+      "name": "Holy Martyrs Menas, Victor, and Vincent",
+      "type": "martyr",
+      "rank": 4,
+      "troparion_tone": 4,
+      "troparion": {
+        "tone": 4,
+        "title": "Troparion of the Holy Martyrs Menas, Victor, and Vincent",
+        "text": "Your holy martyrs Menas, Victor, and Vincent, O Lord, through their sufferings have received incorruptible crowns from You, our God. For having Your strength, they laid low their adversaries and shattered the powerless boldness of demons. Through their intercessions save our souls."
+      },
+      "troparion_status": "resolved",
+      "tradition_tags": ["EOR", "OOR"],
+      "notes": "Menas, Victor, and Vincent, martyrs. Rank 4. Standard martyr troparion Tone 4, plural form applied. No unique text confirmed at OCA; standard form used per corpus rules."
+    }
+  ]
+},
     "11-12": {
       "commemorations": [
         {
@@ -253,21 +277,25 @@
         }
       ]
     },
-    "11-15": {
-      "commemorations": [
-        {
-          "id": "martyrs-persia-shapur",
-          "name": "Holy Martyrs and Confessors of Persia",
-          "type": "martyr",
-          "rank": 4,
-          "troparion_tone": 4,
-          "troparion": null,
-          "troparion_status": "text-unavailable",
-          "tradition_tags": ["EOR", "OOR"],
-          "notes": "November 15 commemorates a group of Persian martyrs. Rank 4. Troparion text not confirmed for this corpus. Note: November 15 is also the start of the Philip Fast (Advent fast) in Orthodox practice."
-        }
-      ]
-    },
+   "11-15": {
+  "commemorations": [
+    {
+      "id": "martyrs-persia-shapur",
+      "name": "Holy Martyrs and Confessors of Persia",
+      "type": "martyr",
+      "rank": 4,
+      "troparion_tone": 4,
+      "troparion": {
+        "tone": 4,
+        "title": "Troparion of the Holy Martyrs and Confessors of Persia",
+        "text": "Your holy martyrs and confessors of Persia, O Lord, through their sufferings have received incorruptible crowns from You, our God. For having Your strength, they laid low their adversaries and shattered the powerless boldness of demons. Through their intercessions save our souls."
+      },
+      "troparion_status": "resolved",
+      "tradition_tags": ["EOR", "OOR"],
+      "notes": "Persian martyrs group commemoration. Rank 4. Standard martyr troparion Tone 4, plural form applied. No unique text confirmed at OCA; standard form used per corpus rules."
+    }
+  ]
+},
     "11-16": {
       "commemorations": [
         {
@@ -306,36 +334,40 @@
         }
       ]
     },
-    "11-18": {
-      "commemorations": [
-        {
-          "id": "plato-roman",
-          "name": "Holy Martyr Plato of Ancyra",
-          "type": "martyr",
-          "rank": 4,
-          "troparion_tone": 4,
-          "troparion": null,
-          "troparion_status": "text-unavailable",
-          "tradition_tags": ["EOR", "OOR"],
-          "notes": "Martyr at Ancyra under Diocletian. Rank 4. Troparion text not confirmed for this corpus."
-        }
-      ]
-    },
+   "11-18": {
+  "commemorations": [
+    {
+      "id": "plato-roman",
+      "name": "Holy Martyr Plato of Ancyra",
+      "type": "martyr",
+      "rank": 4,
+      "troparion_tone": 4,
+      "troparion": {
+        "tone": 4,
+        "title": "Troparion of the Holy Martyr Plato of Ancyra",
+        "text": "Your holy martyr Plato, O Lord, through his sufferings has received an incorruptible crown from You, our God. For having Your strength, he laid low his adversaries and shattered the powerless boldness of demons. Through his intercessions save our souls."
+      },
+      "troparion_status": "resolved",
+      "tradition_tags": ["EOR", "OOR"],
+      "notes": "Plato of Ancyra (+286), martyr under Diocletian. Rank 4. Standard martyr troparion Tone 4 applied. No unique text confirmed at OCA; standard form used per corpus rules."
+    }
+  ]
+},
     "11-19": {
-      "commemorations": [
-        {
-          "id": "abdias-prophet",
-          "name": "Holy Prophet Obadiah (Abdias)",
-          "type": "prophet",
-          "rank": 4,
-          "troparion_tone": 2,
-          "troparion": null,
-          "troparion_status": "text-unavailable",
-          "tradition_tags": ["EOR", "OOR"],
-          "notes": "Prophet Obadiah. Rank 4. Troparion text not confirmed for this corpus."
-        }
-      ]
-    },
+  "commemorations": [
+    {
+      "id": "abdias-prophet",
+      "name": "Holy Prophet Obadiah (Abdias)",
+      "type": "prophet",
+      "rank": 4,
+      "troparion_tone": 2,
+      "troparion": null,
+      "troparion_status": "text-unavailable",
+      "tradition_tags": ["EOR", "OOR"],
+      "notes": "Hold — prophet type. Troparion text not securely confirmed."
+    }
+  ]
+},
     "11-20": {
       "commemorations": [
         {
@@ -394,20 +426,24 @@
       ]
     },
     "11-23": {
-      "commemorations": [
-        {
-          "id": "amphilochius-iconium",
-          "name": "Our Father among the Saints Amphilochius, Bishop of Iconium",
-          "type": "hierarch",
-          "rank": 3,
-          "troparion_tone": 4,
-          "troparion": null,
-          "troparion_status": "text-unavailable",
-          "tradition_tags": ["EOR", "OOR"],
-          "notes": "Amphilochius of Iconium, friend of the Cappadocian Fathers, +394. Rank 3. Also: Afterfeast of Entrance continues. Troparion text not confirmed for this corpus; the feast troparion (Entrance) would normally be sung alongside."
-        }
-      ]
-    },
+  "commemorations": [
+    {
+      "id": "amphilochius-iconium",
+      "name": "Our Father among the Saints Amphilochius, Bishop of Iconium",
+      "type": "hierarch",
+      "rank": 3,
+      "troparion_tone": 4,
+      "troparion": {
+        "tone": 4,
+        "title": "Troparion of Our Father among the Saints Amphilochius, Bishop of Iconium",
+        "text": "In truth you were revealed to your flock as a rule of faith, an image of humility and a teacher of abstinence. Your humility exalted you; your poverty enriched you. Hierarch Father Amphilochius, entreat Christ our God that our souls may be saved."
+      },
+      "troparion_status": "resolved",
+      "tradition_tags": ["EOR", "OOR"],
+      "notes": "Amphilochius of Iconium (+394), friend of the Cappadocian Fathers. Rank 3. Standard hierarch troparion Tone 4 applied. No unique text confirmed at OCA; standard form used per corpus rules."
+    }
+  ]
+},
     "11-24": {
       "commemorations": [
         {
@@ -462,20 +498,20 @@
       ]
     },
     "11-26": {
-      "commemorations": [
-        {
-          "id": "alypius-stylite",
-          "name": "Venerable Alypius the Stylite",
-          "type": "monastic",
-          "rank": 4,
-          "troparion_tone": 1,
-          "troparion": null,
-          "troparion_status": "text-unavailable",
-          "tradition_tags": ["EOR", "OOR"],
-          "notes": "Alypius the Stylite of Adrianopolis, +640. Rank 4. Troparion text not confirmed for this corpus."
-        }
-      ]
-    },
+  "commemorations": [
+    {
+      "id": "alypius-stylite",
+      "name": "Venerable Alypius the Stylite",
+      "type": "monastic",
+      "rank": 4,
+      "troparion_tone": 1,
+      "troparion": null,
+      "troparion_status": "text-unavailable",
+      "tradition_tags": ["EOR", "OOR"],
+      "notes": "Hold — monastic type. Troparion text not securely confirmed."
+    }
+  ]
+},
     "11-27": {
       "commemorations": [
         {
@@ -496,35 +532,43 @@
       ]
     },
     "11-28": {
-      "commemorations": [
-        {
-          "id": "stephen-younger",
-          "name": "Our Father among the Saints Stephen the Younger, Martyr",
-          "type": "hierarch",
-          "rank": 4,
-          "troparion_tone": 8,
-          "troparion": null,
-          "troparion_status": "text-unavailable",
-          "tradition_tags": ["EOR", "OOR"],
-          "notes": "Stephen the Younger, martyr under Constantine V Copronymus for veneration of icons, +764. Rank 4. Troparion text not confirmed for this corpus."
-        }
-      ]
-    },
-    "11-29": {
-      "commemorations": [
-        {
-          "id": "martyr-paramon",
-          "name": "Holy Martyr Paramon and his Three Hundred and Seventy Companions",
-          "type": "martyr",
-          "rank": 4,
-          "troparion_tone": 4,
-          "troparion": null,
-          "troparion_status": "text-unavailable",
-          "tradition_tags": ["EOR", "OOR"],
-          "notes": "Martyrs in Bithynia under Decius. Rank 4. Troparion text not confirmed for this corpus."
-        }
-      ]
-    },
+  "commemorations": [
+    {
+      "id": "stephen-younger",
+      "name": "Our Father among the Saints Stephen the Younger, Martyr",
+      "type": "hierarch",
+      "rank": 4,
+      "troparion_tone": 8,
+      "troparion": {
+        "tone": 8,
+        "title": "Troparion of Our Father among the Saints Stephen the Younger, Martyr",
+        "text": "In truth you were revealed to your flock as a rule of faith, an image of humility and a teacher of abstinence. Your humility exalted you; your poverty enriched you. Hierarch Father Stephen, entreat Christ our God that our souls may be saved."
+      },
+      "troparion_status": "resolved",
+      "tradition_tags": ["EOR", "OOR"],
+      "notes": "Stephen the Younger (+764), monk and martyr under Constantine V. Type is 'hierarch' in batch; standard hierarch troparion applied. Tone retained as 8 per batch entry — note this conflicts with standard hierarch Tone 4; tone preserved from live entry per no-modification rule. No unique text confirmed at OCA; standard form used per corpus rules."
+    }
+  ]
+},
+   "11-29": {
+  "commemorations": [
+    {
+      "id": "martyr-paramon",
+      "name": "Holy Martyr Paramon and his Three Hundred and Seventy Companions",
+      "type": "martyr",
+      "rank": 4,
+      "troparion_tone": 4,
+      "troparion": {
+        "tone": 4,
+        "title": "Troparion of the Holy Martyr Paramon and his Three Hundred and Seventy Companions",
+        "text": "Your holy martyrs Paramon and companions, O Lord, through their sufferings have received incorruptible crowns from You, our God. For having Your strength, they laid low their adversaries and shattered the powerless boldness of demons. Through their intercessions save our souls."
+      },
+      "troparion_status": "resolved",
+      "tradition_tags": ["EOR", "OOR"],
+      "notes": "Paramon and 370 companions (+250), martyrs in Bithynia under Decius. Rank 4. Standard martyr troparion Tone 4, plural form applied. No unique text confirmed at OCA; standard form used per corpus rules."
+    }
+  ]
+},
     "11-30": {
       "commemorations": [
         {

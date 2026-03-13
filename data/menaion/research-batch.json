@@ -1,0 +1,251 @@
+{
+  "_meta": {
+    "description": "Next research batch for troparion import",
+    "batch_size": 12
+  },
+  "entries": [
+    {
+      "date": "02-20",
+      "month": "February",
+      "source_file": "data/menaion/february.json",
+      "id": "leo-catania",
+      "name": "Hieromartyr Leo, Bishop of Catania",
+      "type": "hierarch",
+      "rank": 4,
+      "troparion_tone": 4,
+      "tradition_tags": [
+        "EOR"
+      ],
+      "notes": "Leo of Catania (+8th c.), bishop and wonderworker. Rank 4. Troparion text not securely confirmed.",
+      "priority": "high",
+      "research_bucket": "hierarchs",
+      "verdict": "",
+      "verified_tone": null,
+      "source_witness": "",
+      "action": ""
+    },
+    {
+      "date": "02-25",
+      "month": "February",
+      "source_file": "data/menaion/february.json",
+      "id": "tarasius-patriarch-constantinople",
+      "name": "St. Tarasius, Patriarch of Constantinople",
+      "type": "hierarch",
+      "rank": 4,
+      "troparion_tone": 4,
+      "tradition_tags": [
+        "EOR"
+      ],
+      "notes": "Tarasius of Constantinople (+806), patriarch who presided at the Seventh Ecumenical Council (Nicaea II). Rank 4. Troparion text not securely confirmed.",
+      "priority": "high",
+      "research_bucket": "hierarchs",
+      "verdict": "",
+      "verified_tone": null,
+      "source_witness": "",
+      "action": ""
+    },
+    {
+      "date": "06-04",
+      "month": "June",
+      "source_file": "data/menaion/june.json",
+      "id": "metrophanes-cp",
+      "name": "St. Metrophanes, First Patriarch of Constantinople",
+      "type": "hierarch",
+      "rank": 4,
+      "troparion_tone": 4,
+      "tradition_tags": [
+        "EOR"
+      ],
+      "notes": "Metrophanes of Constantinople (+325), first patriarch. Rank 4. Troparion text not securely confirmed.",
+      "priority": "high",
+      "research_bucket": "hierarchs",
+      "verdict": "",
+      "verified_tone": null,
+      "source_witness": "",
+      "action": ""
+    },
+    {
+      "date": "06-15",
+      "month": "June",
+      "source_file": "data/menaion/june.json",
+      "id": "augustine-hippo",
+      "name": "Blessed Augustine, Bishop of Hippo",
+      "type": "hierarch",
+      "rank": 4,
+      "troparion_tone": 4,
+      "tradition_tags": [
+        "EOR",
+        "LAT",
+        "ANG"
+      ],
+      "notes": "Augustine of Hippo (+430), Doctor of the Western Church. Venerated in Byzantine Menaion on Jun 15. Eastern troparion text not securely confirmed for corpus.",
+      "priority": "high",
+      "research_bucket": "hierarchs",
+      "verdict": "",
+      "verified_tone": null,
+      "source_witness": "",
+      "action": ""
+    },
+    {
+      "date": "06-16",
+      "month": "June",
+      "source_file": "data/menaion/june.json",
+      "id": "tikhon-amathous",
+      "name": "St. Tikhon, Bishop of Amathous in Cyprus",
+      "type": "hierarch",
+      "rank": 4,
+      "troparion_tone": 4,
+      "tradition_tags": [
+        "EOR"
+      ],
+      "notes": "Tikhon of Amathous (+5th c.), Cypriot bishop and wonder-worker. Rank 4. Troparion text not securely confirmed.",
+      "priority": "high",
+      "research_bucket": "hierarchs",
+      "verdict": "",
+      "verified_tone": null,
+      "source_witness": "",
+      "action": ""
+    },
+    {
+      "date": "07-16",
+      "month": "July",
+      "source_file": "data/menaion/july.json",
+      "id": "translation-robe-lord-moscow",
+      "name": "Translation of the Robe of Our Lord Jesus Christ to Moscow",
+      "type": "feast",
+      "rank": 4,
+      "troparion_tone": 8,
+      "tradition_tags": [
+        "EOR"
+      ],
+      "notes": "Translation of a portion of the robe of Christ to Moscow (1625). Russian Orthodox calendar. Rank 4. Troparion text not securely confirmed.",
+      "priority": "high",
+      "research_bucket": "major-feasts",
+      "verdict": "",
+      "verified_tone": null,
+      "source_witness": "",
+      "action": ""
+    },
+    {
+      "date": "08-08",
+      "month": "August",
+      "source_file": "data/menaion/august.json",
+      "id": "emilian-bishop-cyzicus",
+      "name": "St. Emilian the Confessor, Bishop of Cyzicus",
+      "type": "hierarch",
+      "rank": 4,
+      "troparion_tone": 4,
+      "tradition_tags": [
+        "EOR"
+      ],
+      "notes": "Emilian of Cyzicus (+9th c.), confessor bishop under the Second Iconoclasm. Rank 4. Troparion text not securely confirmed.",
+      "priority": "high",
+      "research_bucket": "hierarchs",
+      "verdict": "",
+      "verified_tone": null,
+      "source_witness": "",
+      "action": ""
+    },
+    {
+      "date": "08-30",
+      "month": "August",
+      "source_file": "data/menaion/august.json",
+      "id": "alexander-john-paul-cp-patriarchs",
+      "name": "Sts. Alexander, John, and Paul the New, Patriarchs of Constantinople",
+      "type": "hierarch",
+      "rank": 4,
+      "troparion_tone": 4,
+      "tradition_tags": [
+        "EOR"
+      ],
+      "notes": "Alexander (+340), John (+595), and Paul the New (+784), patriarchs of Constantinople. Rank 4. Troparion text not securely confirmed.",
+      "priority": "high",
+      "research_bucket": "hierarchs",
+      "verdict": "",
+      "verified_tone": null,
+      "source_witness": "",
+      "action": ""
+    },
+    {
+      "date": "09-18",
+      "month": "September",
+      "source_file": "data/menaion/september.json",
+      "id": "eumenios-bishop-gortyna",
+      "name": "St. Eumenios, Bishop of Gortyna",
+      "type": "hierarch",
+      "rank": 4,
+      "troparion_tone": 4,
+      "tradition_tags": [
+        "EOR"
+      ],
+      "notes": "Eumenios of Gortyna (+7th c.), wonder-working bishop of Crete. Rank 4. Troparion text not securely confirmed.",
+      "priority": "high",
+      "research_bucket": "hierarchs",
+      "verdict": "",
+      "verified_tone": null,
+      "source_witness": "",
+      "action": ""
+    },
+    {
+      "date": "10-04",
+      "month": "October",
+      "source_file": "data/menaion/october.json",
+      "id": "hierotheos-bishop-athens",
+      "name": "St. Hierotheos, Bishop of Athens",
+      "type": "hierarch",
+      "rank": 4,
+      "troparion_tone": 4,
+      "tradition_tags": [
+        "EOR"
+      ],
+      "notes": "Hierotheos of Athens (+1st c.), companion of Dionysius, ordained by Paul. Rank 4. Troparion text not securely confirmed.",
+      "priority": "high",
+      "research_bucket": "hierarchs",
+      "verdict": "",
+      "verified_tone": null,
+      "source_witness": "",
+      "action": ""
+    },
+    {
+      "date": "10-22",
+      "month": "October",
+      "source_file": "data/menaion/october.json",
+      "id": "abercius-bishop-hieropolis",
+      "name": "Equal-to-the-Apostles Abercius, Bishop of Hieropolis",
+      "type": "hierarch",
+      "rank": 4,
+      "troparion_tone": 4,
+      "tradition_tags": [
+        "EOR"
+      ],
+      "notes": "Abercius of Hieropolis (+2nd c.), bishop and wonder-worker, known from his famous epitaph. Rank 4. Troparion text not securely confirmed.",
+      "priority": "high",
+      "research_bucket": "hierarchs",
+      "verdict": "",
+      "verified_tone": null,
+      "source_witness": "",
+      "action": ""
+    },
+    {
+      "date": "11-23",
+      "month": "November",
+      "source_file": "data/menaion/november.json",
+      "id": "amphilochius-iconium",
+      "name": "Our Father among the Saints Amphilochius, Bishop of Iconium",
+      "type": "hierarch",
+      "rank": 3,
+      "troparion_tone": 4,
+      "tradition_tags": [
+        "EOR",
+        "OOR"
+      ],
+      "notes": "Amphilochius of Iconium, friend of the Cappadocian Fathers, +394. Rank 3. Also: Afterfeast of Entrance continues. Troparion text not confirmed for this corpus; the feast troparion (Entrance) would normally be sung alongside.",
+      "priority": "high",
+      "research_bucket": "hierarchs",
+      "verdict": "",
+      "verified_tone": null,
+      "source_witness": "",
+      "action": ""
+    }
+  ]
+}
