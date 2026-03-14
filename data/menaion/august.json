@@ -220,10 +220,10 @@
     }
   ]
 },
-    "08-13": {
+     "08-13": {
       "commemorations": [
         {
-          "id": "maximus-confessor",
+          "id": "maximus-confessor-repose",
           "name": "Venerable Maximus the Confessor",
           "type": "monastic",
           "rank": 4,
