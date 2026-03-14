@@ -468,52 +468,71 @@ Replace with:
 
 ## 3. What Was Actually Imported / What Is Now Resolvable / What Remains Deferred
 
-### What was actually imported
+### What was actually imported (cumulative — v1.0 through v1.8)
 - `data/menaion/schema.json` — schema contract (new namespace)
-- `data/menaion/november.json` — 12 fixed-date November commemorations with full troparion texts. This is a demonstrator corpus, not a full Menaion.
-- `js/menaion-resolver.js` — query boundary module
+- `data/menaion/november.json` — v1.0 pilot, 12 dates; expanded to 30/30 in v1.1
+- `data/menaion/december.json` — 31/31 dates (v1.1)
+- `data/menaion/january.json` — 31/31 dates (v1.2)
+- `data/menaion/february.json` — 28/28 dates (v1.3)
+- `data/menaion/march.json` — 31/31 dates (v1.4)
+- `data/menaion/april.json` — 30/30 dates (v1.5)
+- `data/menaion/may.json` — 31/31 dates (v1.6)
+- `data/menaion/june.json` — 30/30 dates (v1.6)
+- `data/menaion/july.json` — 31/31 dates (v1.7)
+- `data/menaion/august.json` — 31/31 dates (v1.7)
+- `data/menaion/september.json` — 30/30 dates (v1.8)
+- `data/menaion/october.json` — 31/31 dates (v1.8) — **FINAL MONTH**
+- `js/menaion-resolver.js` — query boundary module; all 12 MONTH_FILES entries active
+
+**Annual fixed-date Menaion corpus is complete.** Total commemorations: approximately 370. Resolved: 369. One intentional hold: 05-18 (Venerable Peter of Caesarea in Cappadocia) — `troparion_status: "text-unavailable"`. No month returns `menaion-not-imported`.
 
 ### What is now resolvable
-- Any **weekday Vespers** falling on one of the 12 imported November dates will now yield a **full troparion text** (`type:'text'`) with saint name, tone, and rank annotation.
-  - Example: If today is a weekday and the date is November 8, the troparion of the Synaxis of the Bodiless Hosts (Tone 4) will render as live text.
-  - Example: If today is a weekday and the date is November 21 (Entrance of the Theotokos), the feast troparion (Tone 4) will render.
-- All other November weekday dates return `menaion-not-imported` rubric (honest, not a crash).
-- All non-November months return `menaion-not-imported` rubric.
-- Saturday, Sunday, and Bright Week troparion paths are **unchanged**.
+- Any weekday falling on any date in any month will now attempt a MenaionResolver query. No date returns `menaion-not-imported`.
+- Dates with a `resolved` troparion return full troparion text (`type:'text'`) with saint name, tone, and rank annotation.
+- Dates with `text-unavailable` status return `menaion-text-unavailable` — an honest rubric stub, not a crash.
+- Feast-rank arbitration is live through HorologionEngine v3.5–v4.4: _resolveFeastOverrideContext() (Vespers), _resolveLittleHourTroparionSlot() (Little Hours), _resolveFestalRubricOverrideSlot() (Vespers stichera/aposticha), _resolveComplineFestalTheotokionRubric() (Small Compline Theotokion).
+- **Season-aware feast qualification is live and verified:**
+  - Outside Great Lent weekdays: ranks 1–4 qualify as feast overrides
+  - During Great Lent weekdays (Clean Monday through Great Friday): only ranks 1–2 qualify
+  - Consequence: ordinary rank 4 saint commemorations do not displace the Lenten weekday seasonal path; major feasts (e.g., Annunciation rank 1) still override during Lent
+- Great Lent seasonal troparion layers are live for all four Little Hours (v3.8) and Small Compline (v3.9).
+- Saturday, Sunday, and Bright Week troparion paths are unchanged.
+- Verified runtime examples: 2026-03-02 First Hour → `little-hour-lenten-rubric`; 2026-03-02 Small Compline → `compline-lenten-rubric`; 2026-03-25 First Hour → `menaion-feast-troparion`; 2026-03-25 Small Compline → `menaion-feast-troparion`; 2026-02-20 Vespers → `menaion-feast-troparion`.
 
 ### What remains deferred
-- Full annual Menaion corpus (January–October, December not imported)
-- Full November corpus (18 of 30 dates not imported)
-- Full feast-rank engine (displacing Octoechos stichera when a ranked feast is present — the troparion is now resolved, but the stichera are still Octoechos baseline)
-- Full Great Lent / Triodion overrides
-- Weekday stichera override by Menaion feast
-- Tone-conflict handling (when Menaion troparion tone differs from Octoechos weekly tone, the Theotokion should follow the Menaion tone — this is documented but not yet wired)
+- Full festal text resolution: proper feast apolytikia and Theotokia as `type:'text'` — currently the feast-rank engine emits rubric stubs, not full liturgical text. This is the next major data task.
+- ~200 `text-unavailable` Menaion entries (troparion text not yet confirmed from source)
+- Triodion/Pentecostarion overlay (movable feasts: Lenten Triodion, Bright Week, Pentecostarion cycle)
+- Menaion-tone Theotokion conflict: when Menaion troparion tone differs from the Octoechos weekly tone, the dismissal Theotokion should follow the Menaion tone — not yet implemented
+- Kathisma full psalm text
 - Old-calendar offset (all pilot data is new-calendar / Revised Julian)
 
 ---
 
 ## 4. Regression Checklist
 
-Before deploying, verify the following manually:
+Before deploying any engine change, verify the following manually:
 
 | Check | Expected | Notes |
 |---|---|---|
 | Saturday Vespers, any date | Full Resurrectional Troparion of current tone renders as text | No change to Saturday path |
 | Sunday Vespers, any date | Full Resurrectional Troparion of current tone renders as text | No change to Sunday path |
 | Bright Week (any day Pascha–Thomas Sat) | Paschal Troparion renders as text | No change |
-| Weekday (Mon–Fri), non-November date | Weekday-theme rubric ("Menaion required") renders | `menaion-not-imported` falls through to theme rubric |
-| Weekday, November 8 (Synaxis of Archangels) | Full troparion text renders: "O Commanders of God's armies..." Tone 4 | Primary live-resolution test |
-| Weekday, November 21 (Entrance of Theotokos) | Full feast troparion text renders: "Today is the prelude..." Tone 4 | Rank 1 Great Feast test |
-| Weekday, November 13 (John Chrysostom) | Full troparion text renders: "Grace shining forth from thy mouth..." Tone 8 | Rank 2 Polyeleos test |
-| Weekday, November 15 (not imported) | Weekday-theme rubric ("not yet imported") renders | Gap-in-coverage test |
-| Weekday, November 25 (two commemorations) | Leavetaking of Entrance (rank 3) OR Clement of Rome (rank 3) troparion renders (first entry wins on tie) | Multi-commemoration priority test |
-| All other office slots (prokeimenon, kathisma, stichera, aposticha, theotokion) | Unchanged from v2.0 state | Engine changes are scoped to troparion-or-apolytikion weekday branch only |
-| BCP Daily Office | Unchanged | MenaionResolver is not loaded in the BCP path; typeof guard in engine prevents interference |
+| Weekday (Mon–Fri), any date in any month | Either full troparion text (resolved) or honest rubric stub (text-unavailable) renders | No month returns menaion-not-imported |
+| Great Lent weekday, rank 4 saint date | Lenten seasonal rubric renders (rank 4 suppressed) | Season-aware qualification in effect |
+| Great Lent weekday, rank 1–2 feast date | Full feast troparion renders (rank 1–2 override Lent) | E.g., 2026-03-25 Annunciation → menaion-feast-troparion |
+| Ordinary weekday, rank 4 saint date | Full troparion text renders | Outside Lent, ranks 1–4 all qualify |
+| Weekday, November 8 (Synaxis of Archangels) | Full troparion text: "O Commanders of God's armies..." Tone 4 | Primary live-resolution test |
+| Weekday, November 21 (Entrance of Theotokos) | Full feast troparion: "Today is the prelude..." Tone 4 | Rank 1 Great Feast test |
+| Weekday, November 13 (John Chrysostom) | Full troparion: "Grace shining forth from thy mouth..." Tone 8 | Rank 2 Polyeleos test |
+| Weekday, May 18 (Peter of Caesarea) | text-unavailable rubric stub | Intentional hold — only remaining gap in annual corpus |
+| All other office slots (prokeimenon, kathisma, stichera, aposticha, theotokion) | Unchanged from pre-Menaion state for ordinary dates | Engine changes are scoped to troparion and feast-override paths |
+| BCP Daily Office | Unchanged | MenaionResolver is not loaded in the BCP path |
 | Ethiopian Sa'atat | Unchanged | |
 | Church of the East / Hudra | Unchanged | |
-| MenaionResolver not yet loaded (script load error) | Weekday-theme rubric renders (no crash) | typeof guard in engine |
-| Console: no errors on app load | Clean | MenaionResolver loads November data lazily on first weekday troparion query |
+| Console: no errors on app load | Clean | MenaionResolver loads month data lazily on first query |
 
 ---
 
-*Menaion v1 — architecture established, boundary honest, pilot corpus November only. Full annual import is the next data task.*
+*Menaion v1 — architecture established and annual corpus complete. Sections 1–2 above are historical record of the pilot architecture decisions. Section 3 reflects the current fully-integrated state.*
+

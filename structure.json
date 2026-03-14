@@ -1,10 +1,10 @@
 {
   "project_manifest": {
     "name": "Universal Office",
-    "version": "3.5.0",
-    "last_updated": "2026-03-08",
+    "version": "3.6.0",
+    "last_updated": "2026-03-13",
     "bcp_compliance": "100%",
-    "operational_status": "Weekday Theotokion tone-correction extended to all resolved Menaion commemorations rank 1–4 (v2.5). Great Lent weekday seasonal override layer implemented (v2.6): stichera, aposticha, paremiae, troparion, and Theotokion slots now render explicit Lenten rubrics on Great Lent weekdays (Clean Monday through Great Friday) when no Menaion troparion is resolved; Menaion-resolved commemorations during Lent retain their proper troparion and Theotokion. Holy Week structural override live (v2.7): Palm Sunday through Great Saturday emit explicit day-specific rubrics across the five target Vespers slots. Unified Horologion navigation live (v3.0): single horologion mode, generic sidebar office selector for Vespers and Small Compline, old split mode strings eliminated. Small Compline (Mikron Apodeipnon) baseline live (v3.0): fixed slots resolved from compline-fixed.json, troparion-of-the-day via existing Vespers troparion infrastructure. Triodion corpus deferred. First Hour (Prima) baseline live (v3.1): fixed corpus (usual-beginning, psalm-5, psalm-89, psalm-100, trisagion-prayers, prayer-of-the-first-hour) resolved from first-hour-fixed.json; troparion-of-the-day and first-hour-theotokion resolved dynamically; Theotokion remains a rubric stub (deferred). Third Hour (Tertia) baseline live (v3.2): fixed corpus (usual-beginning, psalm-16, psalm-24, psalm-50, trisagion-prayers, prayer-of-the-third-hour) resolved from third-hour-fixed.json; troparion-of-the-day and third-hour-theotokion resolved dynamically; Theotokion remains a rubric stub (deferred). Sixth Hour (Sexta) baseline live (v3.3): fixed corpus (usual-beginning, psalm-53, psalm-54, psalm-90, trisagion-prayers, prayer-of-the-sixth-hour) resolved from sixth-hour-fixed.json; troparion-of-the-day and sixth-hour-theotokion resolved dynamically; Theotokion remains a rubric stub (deferred). Ninth Hour (Nona) baseline live (v3.4): fixed corpus (usual-beginning, psalm-83, psalm-84, psalm-85, trisagion-prayers, prayer-of-the-ninth-hour) resolved from ninth-hour-fixed.json; troparion-of-the-day and ninth-hour-theotokion resolved dynamically; Theotokion remains a rubric stub (deferred).",
+    "operational_status": "Weekday Theotokion tone-correction extended to all resolved Menaion commemorations rank 1–4 (v2.5). Great Lent weekday seasonal override layer implemented (v2.6): stichera, aposticha, paremiae, troparion, and Theotokion slots now render explicit Lenten rubrics on Great Lent weekdays (Clean Monday through Great Friday) when no Menaion troparion is resolved; Menaion-resolved commemorations during Lent retain their proper troparion and Theotokion. Holy Week structural override live (v2.7): Palm Sunday through Great Saturday emit explicit day-specific rubrics across the five target Vespers slots. Unified Horologion navigation live (v3.0): single horologion mode, generic sidebar office selector for Vespers and Small Compline, old split mode strings eliminated. Small Compline (Mikron Apodeipnon) baseline live (v3.0): fixed slots resolved from compline-fixed.json, troparion-of-the-day via existing Vespers troparion infrastructure. Triodion corpus deferred. First Hour (Prima) baseline live (v3.1): fixed corpus (usual-beginning, psalm-5, psalm-89, psalm-100, trisagion-prayers, prayer-of-the-first-hour) resolved from first-hour-fixed.json; troparion-of-the-day and first-hour-theotokion resolved dynamically; Theotokion remains a rubric stub (deferred). Third Hour (Tertia) baseline live (v3.2): fixed corpus (usual-beginning, psalm-16, psalm-24, psalm-50, trisagion-prayers, prayer-of-the-third-hour) resolved from third-hour-fixed.json; troparion-of-the-day and third-hour-theotokion resolved dynamically; Theotokion remains a rubric stub (deferred). Sixth Hour (Sexta) baseline live (v3.3): fixed corpus (usual-beginning, psalm-53, psalm-54, psalm-90, trisagion-prayers, prayer-of-the-sixth-hour) resolved from sixth-hour-fixed.json; troparion-of-the-day and sixth-hour-theotokion resolved dynamically; Theotokion remains a rubric stub (deferred). Ninth Hour (Nona) baseline live (v3.4): fixed corpus (usual-beginning, psalm-83, psalm-84, psalm-85, trisagion-prayers, prayer-of-the-ninth-hour) resolved from ninth-hour-fixed.json; troparion-of-the-day and ninth-hour-theotokion resolved dynamically; Theotokion remains a rubric stub (deferred). Horologion engine v3.5–v4.4 now live: feast-rank arbitration introduced (_resolveFeastOverrideContext(), v3.5); Little Hours feast troparion override (_resolveLittleHourTroparionSlot(), v3.6); Vespers stichera/aposticha festal override (_resolveFestalRubricOverrideSlot(), v3.7); Great Lent seasonal troparion layer for all four Little Hours (_resolveLittleHourSeasonalTroparionSlot(), v3.8); Great Lent seasonal troparion layer for Small Compline (_resolveComplineSeasonalTroparionSlot(), v3.9); office-specific ordinary fallback normalization (_normalizeOrdinaryTroparionFallbackForOffice(), v4.0); Little Hours Theotokion normalization and festal rubric arbitration (v4.1/v4.3); Small Compline festal Theotokion rubric arbitration (v4.4). Season-aware feast qualification rule (v3.6/v3.8 — VERIFIED): outside Great Lent weekdays, Menaion rank 1–4 qualifies as a feast override; during Great Lent weekdays (Clean Monday through Great Friday), only ranks 1–2 qualify. Consequence: ordinary rank 4 saint commemorations no longer displace the Lenten weekday seasonal path on Great Lent weekdays; major feasts (e.g., Annunciation rank 1) still override during Lent; rank 4 saint overrides function normally outside Lent. Menaion corpus integration complete (all 12 months, 369/370 resolved; 05-18 held intentionally as text-unavailable). Resolver integration verified at runtime: date resolution, month loading, rank selection, troparion extraction, text-unavailable handling, and feast override integration all confirmed correct. Pascha boundary and Bright Week tone suppression verified; Thomas Sunday tone resumption verified. Small Compline festal Theotokion arbitration verified. Tone computation year-rollback bug (_computeBaselineTone) corrected and verified.",
     "audit_findings": {
       "open_bugs": [
         "1. Rubric logic: [rite] placeholder resolution in rubrics.json is fragile and prone to null returns. (LOW — see known_outstanding_issues.rite_placeholder_resolution)"
@@ -281,7 +281,7 @@
     },
     "js/horologion-engine.js": {
       "role": "Byzantine Horologion office engine — skeleton loading, payload resolution, validation",
-      "status": "Active — Horologion engine v3.4 (2026-03-08)",
+      "status": "Active — Horologion engine v4.4 (2026-03-13)",
       "global_api": "window.HorologionEngine",
       "public_methods": [
         "getOfficeSkeleton(officeKey, traditionVariant) — fetches and caches data/horologion/<officeKey>.json",
@@ -303,11 +303,11 @@
     "data/horologion/": {
       "role": "Horologion office skeleton data files",
       "status": "Active — Horologion v3.4 (2026-03-08). Vespers + Small Compline + First Hour + Third Hour + Sixth Hour + Ninth Hour operational.",
-      "milestone_status": "Horologion v4.4 complete. All milestone layers v3.5 through v4.4 implemented and live: feast-rank override (v3.5), Little Hours feast troparion arbitration (v3.6), Vespers stichera/aposticha festal override (v3.7), Little Hours Great Lent seasonal troparion layer (v3.8), Small Compline Great Lent seasonal troparion layer (v3.9), office-specific ordinary fallback normalization (v4.0), Little Hours Theotokion normalization and festal rubric arbitration (v4.1/v4.3), Small Compline festal Theotokion rubric arbitration (v4.4). Unavailable-troparion fallback normalizer active across all Little Hours and Small Compline.",
+      "milestone_status": "Horologion v4.4 complete and verified. All milestone layers v3.5 through v4.4 implemented and confirmed live at runtime: feast-rank arbitration (v3.5), Little Hours feast troparion arbitration (v3.6), Vespers stichera/aposticha festal override (v3.7), Little Hours Great Lent seasonal troparion layer (v3.8), Small Compline Great Lent seasonal troparion layer (v3.9), office-specific ordinary fallback normalization (v4.0), Little Hours Theotokion normalization and festal rubric arbitration (v4.1/v4.3), Small Compline festal Theotokion rubric arbitration (v4.4). Unavailable-troparion fallback normalizer active across all Little Hours and Small Compline. Season-aware feast qualification rule verified: ranks 1–4 outside Great Lent weekdays; ranks 1–2 only during Great Lent weekdays.",
       "files": {
         "_ref": "Full per-file status in structure-reference.json horologion_files.",
         "vespers.json": {
-          "status": "BASELINE COMPLETE — fixed/invariable content complete. v1.2: daily-prokeimenon and vesperal-reading resolved. v1.3: Octoechos tone engine; Saturday stichera/aposticha fully populated (tones 1–8). v1.4: Monday–Friday stichera/aposticha materially populated (tones 1–8). v1.5: kathisma-reading resolved for ordinary Mon–Sat as appointment rubric. v1.6: troparion-or-apolytikion — Saturday full Resurrectional Troparion; Bright Week Paschal Troparion; Mon–Fri tone stub; Sunday deferred. v1.7: theotokion-dismissal — Saturday full dismissal Theotokion (tones 1–8, distinct from Dogmatikon); Bright Week explicit omission; Mon–Fri tone stub; Sunday deferred. v1.8: Sunday Small Vespers implemented as a real baseline path. All five Sunday-case variable slots resolved: stichera/aposticha use resurrectional tone corpus with explicit Sunday Small Vespers labeling; kathisma-reading resolves to actionable omission rubric; troparion and theotokion resolve to full tone texts (type:'text'). Every variable slot across all day-of-week paths now yields full text, an explicit rubric stub, or an explicit omission rubric. v1.9: weekday theotokion-dismissal (Mon–Fri) upgraded from tone-identified rubric stub to type:'text' full resolution using new data/horologion/vespers-weekday-theotokion.json (40 entries: 8 tones × 5 weekdays). Mon/Tue/Thu: standard Octoechos weekday Theotokion. Wed/Fri: Stavrotheotokion (Cross Theotokion). resolvedAs:'weekday-octoechos-theotokion'. Remaining work: weekday troparion (Mon–Fri) Menaion-deferred; feast-rank override system; Great Lent overrides; kathisma full psalm text."
+          "status": "BASELINE COMPLETE — fixed/invariable content complete. v1.2: daily-prokeimenon and vesperal-reading resolved. v1.3: Octoechos tone engine; Saturday stichera/aposticha fully populated (tones 1–8). v1.4: Monday–Friday stichera/aposticha materially populated (tones 1–8). v1.5: kathisma-reading resolved for ordinary Mon–Sat as appointment rubric. v1.6: troparion-or-apolytikion — Saturday full Resurrectional Troparion; Bright Week Paschal Troparion; Mon–Fri tone stub; Sunday deferred. v1.7: theotokion-dismissal — Saturday full dismissal Theotokion (tones 1–8, distinct from Dogmatikon); Bright Week explicit omission; Mon–Fri tone stub; Sunday deferred. v1.8: Sunday Small Vespers implemented as a real baseline path. Every variable slot across all day-of-week paths now yields full text, an explicit rubric stub, or an explicit omission rubric. v1.9: weekday theotokion-dismissal (Mon–Fri) upgraded to type:'text' full resolution (vespers-weekday-theotokion.json, 40 entries). Engine v3.5: feast-rank arbitration live — _resolveFeastOverrideContext() governs troparion/apolytikion and dismissal Theotokion; season-aware qualification (ranks 1–4 outside Great Lent weekdays; ranks 1–2 only during Great Lent weekdays). Engine v3.7: _resolveFestalRubricOverrideSlot() governs stichera/aposticha feast override. Remaining work: full festal text beyond rubric stubs; kathisma full psalm text; Triodion/Pentecostarion overlay."
         },
         "small-compline.json": {
           "status": "Active — Horologion v3.0 (2026-03-08) — NEW in v3.0"
@@ -343,9 +343,9 @@
   "status": "Active — Horologion v3.4 (2026-03-08). Ninth Hour skeleton: fixed slots resolved from ninth-hour-fixed.json; troparion-of-the-day resolved dynamically; ninth-hour-theotokion remains a rubric stub (deferred)."
 },
 "ninth-hour-fixed.json": {
-  "status": "Active — Horologion v4.4 (2026-03-12). Vespers + Small Compline + First Hour + Third Hour + Sixth Hour + Ninth Hour operational."
+  "status": "Active — Horologion v3.4 (2026-03-08). Fixed-text corpus for the Ninth Hour: usual-beginning, psalm-83 (LXX), psalm-84 (LXX), psalm-85 (LXX), trisagion-prayers, prayer-of-the-ninth-hour. Variable slots (troparion-of-the-day, ninth-hour-theotokion) are not here; resolved dynamically by HorologionEngine. Source: Jordanville 2008 edition."
 },
-"next_required": "Horologion v4.5: align structure.json and structure-reference.json to the live engine; then proceed to the next unresolved implementation target, prioritizing Triodion/Pentecostarion overlay expansion, Menaion text-unavailable entry resolution, and kathisma full psalm text."
+"next_required": "Feast-rank override engine (proper feast apolytikia/Theotokia for Vespers and all Little Hours). Menaion text-unavailable entry resolution (~200 entries). Triodion/Pentecostarion overlay expansion. Kathisma full psalm text."
       }
     },
     "js/menaion-resolver.js": {
@@ -570,8 +570,8 @@
     },
     "horologion_variable_engine": {
       "severity": "LOW",
-      "description": "Vespers: all slots resolved across all day-of-week paths (v1.9/v3.0). Small Compline: fixed slots + troparion-of-the-day resolved (v3.0). Remaining: (a) feast-rank override engine — proper feast apolytikia/Theotokia; (b) ~200 menaion text-unavailable entries; (c) Menaion-tone Theotokion conflict; (d) Great Lent/Kathisma overrides — lowest priority.",
-      "action": "Little Hours baseline complete. Next concrete tasks: (1) feast-rank override engine (proper feast apolytikia/Theotokia), (2) Menaion text-unavailable resolution, (3) Menaion-tone Theotokion conflict handling, (4) seasonal refinement for Compline and Little Hours (Triodion / Great Lent / Kathisma override layers).",
+      "description": "Engine layers v3.5–v4.4 now live (see operational_status for full detail). Vespers: all slots resolved across all day-of-week paths; feast-rank arbitration active (_resolveFeastOverrideContext()); festal stichera/aposticha override active (_resolveFestalRubricOverrideSlot()). Small Compline: fixed slots + troparion-of-the-day resolved; Great Lent seasonal troparion layer active; festal Theotokion arbitration active. All four Little Hours: fixed slots + troparion-of-the-day + Theotokion normalization resolved; Great Lent seasonal troparion layer active; festal troparion override active. Season-aware feast qualification rule VERIFIED: ranks 1–4 qualify outside Great Lent weekdays; ranks 1–2 only during Great Lent weekdays. Menaion corpus complete — all 12 months, 369/370 resolved; 05-18 held as intentional text-unavailable. Remaining work: (a) full feast-rank override engine for proper feast apolytikia/Theotokia beyond rubric stubs — Triodion/Pentecostarion overlay; (b) ~200 menaion text-unavailable entry resolution; (c) Menaion-tone Theotokion conflict; (d) kathisma full psalm text.",
+      "action": "Next concrete tasks: (1) full feast-rank text resolution (proper festal apolytikia/Theotokia text, not just rubric stubs), (2) Menaion text-unavailable resolution, (3) Triodion/Pentecostarion overlay expansion, (4) kathisma full psalm text.",
       "files": [
         "js/horologion-engine.js",
         "js/menaion-resolver.js",
@@ -585,9 +585,9 @@
     }
   },
   "roadmap_summary": {
-    "completed": "Phases 6-8 (BCP, Ethiopian Sa'atat, Senkessar). v2.8.x: COE three-layer model, saints resolver boundary, hydration-race gating, tags[] schema migration, EO admin diagnostics. Horologion v1-v3.0: vespers skeleton through full slot resolution, Menaion annual corpus complete (all 12 months), Small Compline baseline. v2.9.7: generic sidebar shell. Little Hours baseline live: First Hour (v3.1), Third Hour (v3.2), Sixth Hour (v3.3), Ninth Hour (v3.4).",
-    "next_required": "1. Feast-rank override engine (proper apolytikia/Theotokia). 2. EO app integration.",
-    "next_planned": "Feast-rank engine after Little Hours stable. Text-unavailable resolution (~200 Menaion entries). Horologion seasonal refinement (Triodion/Great Lent Compline/Little Hours overrides).",
+    "completed": "Phases 6-8 (BCP, Ethiopian Sa'atat, Senkessar). v2.8.x: COE three-layer model, saints resolver boundary, hydration-race gating, tags[] schema migration, EO admin diagnostics. Horologion v1–v3.0: vespers skeleton through full slot resolution, Menaion annual corpus complete (all 12 months, 369/370 resolved), Small Compline baseline. v2.9.7: generic sidebar shell. Little Hours baseline live: First Hour (v3.1), Third Hour (v3.2), Sixth Hour (v3.3), Ninth Hour (v3.4). Engine layers v3.5–v4.4: feast-rank arbitration, Little Hours festal troparion override, Vespers festal stichera/aposticha override, Great Lent seasonal troparion layer for all Little Hours and Small Compline, office-specific fallback normalization, Little Hours Theotokion normalization/festal arbitration, Small Compline festal Theotokion arbitration. Season-aware feast qualification rule verified: ranks 1–4 outside Great Lent weekdays; ranks 1–2 only during Great Lent weekdays. Resolver integration audit complete and verified. Pascha boundary and tone suppression verified. Menaion integration verified at runtime across all offices.",
+    "next_required": "1. Full feast-rank text resolution (proper festal apolytikia/Theotokia text beyond rubric stubs). 2. EO app integration.",
+    "next_planned": "Menaion text-unavailable entry resolution (~200 entries). Triodion/Pentecostarion overlay expansion. Kathisma full psalm text. Menaion-tone Theotokion conflict resolution.",
     "future": "Phase 6.7 — Performance polish (timezone warning, LRU seasonal cache, prefetch, service worker); Phase 7.5 — Coptic Agpeya as standalone tradition entry; Phase 9.0 — Mobile app; Phase 9.1 — Cross-Tradition Search (Comparative scripture view across AR, ET, and SY canons); COE-IIC — Optional Layer 2 expansion: major Hudra fixed feasts (Denha/Epiphany, Sleeba/Exaltation, Annunciation, All Saints)"
   },
   "admin": {
@@ -665,12 +665,12 @@
       },
       {
         "id": "horologion-vespers-variable-slots",
-        "title": "Horologion Vespers: Menaion corpus expansion and feast-rank engine",
-        "description": "IN PROGRESS — Menaion v1.2 active (2026-03-07). Live Menaion path active for Mon–Fri weekday troparion. All 12 months imported and resolving — annual fixed-date corpus COMPLETE (v1.8). No month returns menaion-not-imported. Remaining work: (a) Feast-rank override engine — proper feast apolytikia and Theotokia; (b) Text-unavailable entry resolution (~200 entries); (c) Lenten/Paschal override system. The architecture (MenaionResolver + monthly JSON schema) is proven; expansion is a data-import pass. (b) Feast-rank override system — proper feast apolytikia and Theotokia require a feast-rank engine that compares Menaion rank to Octoechos defaults; deferred beyond corpus. (c) Menaion-tone Theotokion conflict — when Menaion troparion tone differs from Octoechos weekly tone, dismissal Theotokion should follow Menaion tone; not yet implemented. (d) Great Lent overrides and kathisma full psalm text — lowest priority. All other Vespers variable slots are resolved: Saturday, Sunday, Bright Week, weekday stichera/aposticha/kathisma/prokeimenon/theotokion all have full text or explicit rubric/omission.",
+        "title": "Horologion: Menaion corpus and feast-rank engine",
+        "description": "IN PROGRESS — engine v4.4 active (2026-03-13). Annual fixed-date Menaion corpus COMPLETE (v1.8): all 12 months imported; 369/370 resolved; 05-18 intentional text-unavailable hold. No month returns menaion-not-imported. Feast-rank arbitration now live: _resolveFeastOverrideContext() (v3.5) governs Vespers troparion/apolytikion and dismissal Theotokion; _resolveLittleHourTroparionSlot() (v3.6) extends to Little Hours; _resolveFestalRubricOverrideSlot() (v3.7) governs Vespers stichera/aposticha; _resolveComplineFestalTheotokionRubric() (v4.4) governs Small Compline Theotokion. Season-aware qualification: ranks 1–4 outside Great Lent weekdays; ranks 1–2 only during Great Lent weekdays — VERIFIED. Great Lent seasonal troparion layers live for all Little Hours (v3.8) and Small Compline (v3.9). Remaining: (a) full feast-rank text resolution — proper festal apolytikia/Theotokia text rather than rubric stubs; (b) ~200 text-unavailable entry resolution; (c) Menaion-tone Theotokion conflict; (d) Triodion/Pentecostarion overlay; (e) kathisma full psalm text.",
         "severity": "LOW",
         "status": "in-progress",
         "area": "js/menaion-resolver.js + data/menaion/ + js/horologion-engine.js",
-        "phase": "Menaion corpus expansion"
+        "phase": "Horologion v4.x"
       },
       {
         "id": "horologion-compline-v1",
@@ -700,9 +700,79 @@
   },
   "documentation_manifest": {
     "status": "internal",
-    "last_realigned": "2026-03-07"
+    "last_realigned": "2026-03-13"
   },
   "recent_logic_changes": [
+    {
+      "date": "2026-03-13",
+      "phase": "v3.6.0 — Documentation synchronization pass",
+      "file": "structure.json + documentation/structure-reference.json + documentation/menaion-v1-architecture-and-diffs.md + documentation/OFFICE_UI_DOCUMENTATION.md + data/menaion/schema.json",
+      "change": "Full documentation corpus aligned to live engine state and verified governance decisions.",
+      "detail": "Synchronized all documentation files to reflect: (1) engine v3.5–v4.4 milestone layers now live; (2) season-aware feast qualification rule verified (ranks 1–2 during Great Lent weekdays, ranks 1–4 outside); (3) Menaion corpus integration effectively complete (369/370; 05-18 intentional hold); (4) resolver integration audit complete and verified at runtime across all offices; (5) tone computation year-rollback bug corrected and verified; (6) ninth-hour-fixed.json status corrected from erroneous v4.4 label to v3.4; (7) horologion-vespers-variable-slots todo updated to v4.4 state; (8) horologion_variable_engine issue description updated; (9) roadmap_summary completed field updated. Stale 'next_required' text referencing documentation alignment removed."
+    },
+    {
+      "date": "2026-03-13",
+      "phase": "Horologion engine v4.4 — Menaion integration verification pass",
+      "file": "js/horologion-engine.js",
+      "change": "Runtime verification of full Menaion integration and season-aware feast qualification rule.",
+      "detail": "Verified: date resolution correct; month loading correct; commemoration ranking correct; troparion extraction correct; text-unavailable handling correct; feast override integration correct. Verified: Pascha suppresses numbered tone correctly; Bright Week suppresses numbered tone correctly; Thomas Sunday resumes tone counting correctly. Menaion override integration verified working across Vespers, First Hour, Third Hour, Sixth Hour, Ninth Hour, and Small Compline. Small Compline festal Theotokion arbitration working. Season-aware feast qualification verified via concrete examples: 2026-03-02 First Hour → little-hour-lenten-rubric (rank 4 saint suppressed during Great Lent weekday); 2026-03-02 Small Compline → compline-lenten-rubric; 2026-03-25 First Hour → menaion-feast-troparion (rank 1 Annunciation overrides Lent); 2026-03-25 Small Compline → menaion-feast-troparion; 2026-02-20 Vespers → menaion-feast-troparion."
+    },
+    {
+      "date": "2026-03-13",
+      "phase": "Horologion engine v4.4 — Small Compline festal Theotokion arbitration",
+      "file": "js/horologion-engine.js",
+      "change": "_resolveComplineFestalTheotokionRubric() added. _normalizeUnavailableTroparionFallbackForOffice() added.",
+      "detail": "_resolveComplineFestalTheotokionRubric(): Small Compline festal Theotokion rubric arbitration — parallel to Little Hours festal Theotokion arbitration. Invoked from _resolveComplineSeasonalTroparionSlot() and independently for feast path. _normalizeUnavailableTroparionFallbackForOffice(): rewrites menaion-text-unavailable fallback rubrics to use the consuming office name rather than Vespers wording; invoked as the first call inside _normalizeOrdinaryTroparionFallbackForOffice() and independently at the base of _resolveLittleHourSeasonalTroparionSlot() and _resolveComplineSeasonalTroparionSlot()."
+    },
+    {
+      "date": "2026-03-13",
+      "phase": "Horologion engine v4.1/v4.3 — Little Hours Theotokion normalization and festal arbitration",
+      "file": "js/horologion-engine.js",
+      "change": "_normalizeTheotokionRubricForOffice() + _resolveLittleHourFestalTheotokionRubric() added.",
+      "detail": "v4.1: _normalizeTheotokionRubricForOffice() normalizes the Theotokion rubric slot text for each Little Hour office by name. v4.3: _resolveLittleHourFestalTheotokionRubric() arbitrates whether the Theotokion slot should use the festal override or the ordinary Octoechos rubric, applying the season-aware rank qualification rule. Applies to First Hour, Third Hour, Sixth Hour, and Ninth Hour."
+    },
+    {
+      "date": "2026-03-13",
+      "phase": "Horologion engine v4.0 — Office-specific ordinary fallback normalization",
+      "file": "js/horologion-engine.js",
+      "change": "_normalizeOrdinaryTroparionFallbackForOffice() added.",
+      "detail": "Rewrites the inherited Vespers weekday-theme-rubric into office-appropriate text for Small Compline and all Little Hours. Ensures the fallback rubric displayed to the user names the correct office rather than always saying 'Vespers'. Invoked as the terminal fallback in all troparion-of-the-day paths."
+    },
+    {
+      "date": "2026-03-13",
+      "phase": "Horologion engine v3.9 — Small Compline Great Lent seasonal troparion layer",
+      "file": "js/horologion-engine.js",
+      "change": "_resolveComplineSeasonalTroparionSlot() added.",
+      "detail": "Applies Great Lent seasonal override for Small Compline troparion-of-the-day on Great Lent weekdays (Clean Monday through Great Friday). Parallel to _resolveLittleHourSeasonalTroparionSlot(). Season-aware rank qualification: ranks 1–2 qualify as feast override during Great Lent weekdays; ranks 3–4 fall through to Lenten seasonal rubric. Verified: 2026-03-02 Small Compline → compline-lenten-rubric; 2026-03-25 Small Compline → menaion-feast-troparion."
+    },
+    {
+      "date": "2026-03-13",
+      "phase": "Horologion engine v3.8 — Little Hours Great Lent seasonal troparion layer",
+      "file": "js/horologion-engine.js",
+      "change": "_resolveLittleHourSeasonalTroparionSlot() added inside _resolveLittleHourTroparionSlot().",
+      "detail": "Applies Great Lent seasonal override for all four Little Hours troparion-of-the-day on Great Lent weekdays. Season-aware rank qualification: ranks 1–2 qualify as feast override during Great Lent weekdays; ranks 3–4 fall through to Lenten seasonal rubric. Displaces ordinary weekday fallback on Great Lent Mon–Fri. Verified: 2026-03-02 First Hour → little-hour-lenten-rubric; 2026-03-25 First Hour → menaion-feast-troparion."
+    },
+    {
+      "date": "2026-03-13",
+      "phase": "Horologion engine v3.7 — Vespers stichera/aposticha festal override",
+      "file": "js/horologion-engine.js",
+      "change": "_resolveFestalRubricOverrideSlot() added.",
+      "detail": "Applies qualifying feast rubric override to Vespers stichera-at-lord-i-have-cried and aposticha slots. Qualification uses the season-aware rule: ranks 1–4 outside Great Lent weekdays; ranks 1–2 only during Great Lent weekdays. Verified: 2026-02-20 Vespers → menaion-feast-troparion (and corresponding stichera override)."
+    },
+    {
+      "date": "2026-03-13",
+      "phase": "Horologion engine v3.6 — Little Hours feast troparion override",
+      "file": "js/horologion-engine.js",
+      "change": "_resolveLittleHourTroparionSlot() extended with feast-rank arbitration.",
+      "detail": "Extends feast-rank override to Little Hours troparion-of-the-day. Qualification uses the season-aware rule. Called from _resolveFirstHourSlots(), _resolveThirdHourSlots(), _resolveSixthHourSlots(), _resolveNinthHourSlots()."
+    },
+    {
+      "date": "2026-03-13",
+      "phase": "Horologion engine v3.5 — feast-rank arbitration",
+      "file": "js/horologion-engine.js",
+      "change": "_resolveFeastOverrideContext() added.",
+      "detail": "Central feast-rank arbitration function. Governs Vespers troparion/apolytikion and dismissal Theotokion slots. Queries MenaionResolver, applies rank qualification (season-aware), and returns override context for downstream slot resolution."
+    },
     {
       "date": "2026-03-08",
       "phase": "Horologion v3.1 — First Hour baseline",

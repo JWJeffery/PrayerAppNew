@@ -5,9 +5,9 @@
 This is the single-page application entry point for **The Universal Office**. It serves as the UI layer only — all calendar logic, date calculation, and scripture fetching have been extracted into separate modules. The file handles DOM rendering, user settings, and office output assembly.
 
 **Production Status:** ✅ OPERATIONAL  
-**Last Updated:** February 24, 2026  
+**Last Updated:** 2026-03-13  
 **Current Line Count:** ~1,175 lines  
-**Dependencies:** `js/calendar-engine.js`, `js/calendar-ethiopian.js`, `js/scripture-resolver.js`, `js/office-ui.js`, `js/prayers.js`, `js/tooltip.js`  
+**Dependencies:** `js/calendar-engine.js`, `js/calendar-ethiopian.js`, `js/calendar-east-syriac.js`, `js/scripture-resolver.js`, `js/saints-resolver.js`, `js/menaion-resolver.js`, `js/horologion-engine.js`, `js/office-ui.js`, `js/prayers.js`, `js/tooltip.js`  
 **Architecture Role:** UI layer only — no business logic
 
 ---
@@ -19,6 +19,8 @@ This is the single-page application entry point for **The Universal Office**. It
 | **Daily Office** | `selectMode('daily')` | Full BCP liturgical office (Morning Prayer, Evening Prayer, Noonday, Compline) with sidebar |
 | **Individual Prayers** | `selectMode('prayers')` | Single component lookup and display |
 | **Ethiopian Sa'atat** | `selectMode('ethiopian-saatat')` | Ethiopian Orthodox Tewahedo canonical hours — nine watches, time-resolved, Senkessar commemoration, dedicated sidebar |
+| **Church of the East — Hudra** | `selectMode('east-syriac')` | All seven East Syriac canonical hours, cathedral/monastic sequences, Qdham/Wathar cycle, dedicated sidebar |
+| **The Horologion — Byzantine Offices** | `selectMode('horologion')` | Byzantine Horologion offices (Vespers, Small Compline, First–Ninth Hours) via HorologionEngine; generic sidebar with office selector |
 
 Mode stored in `selectedMode` variable. Controls which HTML section is visible.
 
@@ -26,16 +28,26 @@ Mode stored in `selectedMode` variable. Controls which HTML section is visible.
 
 ## Script Load Order
 
-Scripts must be loaded in this order — `calendar-ethiopian.js` must precede `office-ui.js` because `EthiopianCalendar` is called synchronously within `renderOffice()`:
+Scripts must be loaded in this order — each module must precede any script that calls it synchronously:
 
 ```html
-<script src="js/calendar-engine.js"></script>
-<script src="js/calendar-ethiopian.js"></script>
-<script src="js/scripture-resolver.js"></script>
-<script src="js/office-ui.js"></script>
+<script src="js/calendar-engine.js" defer></script>
+<script src="js/calendar-ethiopian.js" defer></script>
+<script src="js/calendar-east-syriac.js" defer></script>
+<script src="js/scripture-resolver.js" defer></script>
+<script src="js/saints-resolver.js" defer></script>
+<script src="js/menaion-resolver.js" defer></script>
+<script src="js/horologion-engine.js" defer></script>
+<script src="js/office-ui.js" defer></script>
 <script src="js/prayers.js"></script>
 <script src="js/tooltip.js"></script>
 ```
+
+**Load order rationale:**
+- `calendar-east-syriac.js` must precede `office-ui.js` (EastSyriacCalendar called in renderEastSyriac())
+- `saints-resolver.js` must precede `office-ui.js` (SaintsResolver called in resolveCommemorations())
+- `menaion-resolver.js` must precede `horologion-engine.js` (MenaionResolver queried inside HorologionEngine)
+- `horologion-engine.js` must precede `office-ui.js` (HorologionEngine called in renderHorologionOffice())
 
 ---
 
@@ -45,19 +57,25 @@ Scripts must be loaded in this order — `calendar-ethiopian.js` must precede `o
 
 ```
 #mode-selection              → Splash screen with mode buttons
-#daily-office-section        → Full office layout (sidebar + content) — used by both Daily Office AND Ethiopian Sa'atat
+#daily-office-section        → Full office layout (sidebar + content) — used by Daily Office, Ethiopian Sa'atat, and East Syriac
 #individual-prayers-section  → Single prayer lookup UI
 ```
 
+The Horologion reuses `#daily-office-section` with the `#generic-settings` sidebar active.
+
 ### Mode Selection Buttons
 
-Three buttons on the splash screen, in order:
+Five buttons on the splash screen, in order:
 
 | Button Label | Class | Action |
 |---|---|---|
-| The Daily Office | `mode-btn` | `selectMode('daily')` |
+| Daily Office | `mode-btn` | `selectMode('daily')` |
 | The Book of Needs | `mode-btn` | `selectMode('prayers')` |
 | The Ethiopian Sa'atat (Book of Hours) | `ethiopian-btn` | `selectMode('ethiopian-saatat')` |
+| Church of the East — Hudra | `mode-btn` | `selectMode('east-syriac')` |
+| The Horologion — Byzantine Offices | `mode-btn` | `selectMode('horologion')` |
+
+A sponsored link (Musings, Ancient and Modern Substack) appears below the buttons.
 
 ### Daily Office Layout
 
@@ -96,6 +114,18 @@ Three buttons on the splash screen, in order:
     ├── Back to Modes button
     └── [Ethiopian-specific settings — future phases]
 
+#east-syriac-settings (fixed left sidebar, 300px wide) — CHURCH OF THE EAST ONLY
+    ├── Back to Modes button
+    ├── Date navigator (East Syriac calendar info)
+    ├── Hour selector (Sapra, Quta'a, Endana, D-tsha' Sa'in, Ramsha, Lelya, Suba'a)
+    └── Mode selector (Cathedral / Monastic)
+
+#generic-settings (fixed left sidebar, 300px wide) — HOROLOGION ONLY
+    ├── #generic-tradition-label (h3 — "The Horologion")
+    ├── Date navigator (generic-display-date, generic-date-picker, Prev/Today/Next)
+    └── Office selector buttons: #hor-btn-vespers, #hor-btn-small-compline, #hor-btn-first-hour,
+        #hor-btn-third-hour, #hor-btn-sixth-hour, #hor-btn-ninth-hour
+
 #main-content (scrollable, margin-left: 300px; shifts to 24px when sidebar hidden)
     ├── #date-header (liturgical title bar — hidden in Ethiopian Sa'atat mode)
     └── #office-display (rendered office HTML)
@@ -118,9 +148,11 @@ A `#sidebar-toggle` strip — 24px wide, full viewport height — sits flush aga
 
 | Element | Class Added | Effect |
 |---|---|---|
-| `#settings-panel` / `#ethiopian-settings` | `sidebar-hidden` | `transform: translateX(-300px); pointer-events: none` |
+| Active sidebar (`#settings-panel`, `#ethiopian-settings`, `#east-syriac-settings`, or `#generic-settings`) | `sidebar-hidden` | `transform: translateX(-300px); pointer-events: none` |
 | `#sidebar-toggle` | `sidebar-hidden` | `left: 0` |
 | `#main-content` | `sidebar-hidden` | `margin-left: 24px` |
+
+`toggleSidebar()` detects the active panel by checking which panel does NOT have `mode-hidden` — priority order: East Syriac → Ethiopian → Generic → BCP.
 
 ---
 
@@ -196,8 +228,9 @@ Applied to `body` when `selectMode('ethiopian-saatat')` is called. Activates the
 |---|---|---|
 | `appData` | Object/null | Loaded `components` + `rubrics` + Senkessar cache after `init()` |
 | `currentDate` | Date | Currently displayed date |
-| `selectedMode` | String/null | `'daily'`, `'prayers'`, or `'ethiopian-saatat'` |
-| `monthNames` | Array | Month name strings for saints file loading |
+| `selectedMode` | String/null | Active mode: `'daily'`, `'prayers'`, `'ethiopian-saatat'`, `'east-syriac'`, or `'horologion'` |
+| `selectedHorologionOffice` | String | Active Horologion office key; defaults to `'vespers'` |
+| `monthNames` | Array | Month name strings for date display formatting |
 | `psalterCycle` | Array | 31-entry array for 30-day BCP Psalter |
 | `window._forcedOfficeId` | String/undefined | Set to `'ethiopian-saatat'` by `selectMode()` when no radio input exists for that tradition; read by `renderOffice()` |
 | `window._temporalOverride` | Object/undefined | Set in browser console to force a specific Ethiopian canonical hour for testing |
@@ -210,11 +243,13 @@ Applied to `body` when `selectMode('ethiopian-saatat')` is called. Activates the
 Bootstraps the app. Fetches `data/rubrics.json`, then concatenates Ethiopian rubrics from `components/traditions/ethiopian/rubrics.json`, then loads all five component shards, calls `CalendarEngine.init()`, and `renderOffice()`.
 
 ### `selectMode(mode)` — sync
-Accepts `'daily'`, `'prayers'`, or `'ethiopian-saatat'`.
+Accepts `'daily'`, `'prayers'`, `'ethiopian-saatat'`, `'east-syriac'`, or `'horologion'`.
 
 - `'daily'`: shows `#settings-panel`, loads settings, calls `init()` or `renderOffice()`
 - `'prayers'`: shows individual prayers section, hides sidebars
 - `'ethiopian-saatat'`: reuses `#daily-office-section`, hides `#settings-panel`, shows `#ethiopian-settings`, applies `.ethiopian-theme` to body, hides main `<h1>`, sets `window._forcedOfficeId = 'ethiopian-saatat'`, calls `init()` or `renderOffice()`
+- `'east-syriac'`: shows `#east-syriac-settings`, calls `hydrateForEastSyriac()`, calls `renderOffice()`
+- `'horologion'`: shows `#generic-settings`, sets `#generic-tradition-label`, calls `updateGenericDateDisplay()`, calls `renderHorologionOffice(selectedHorologionOffice)`. `selectedHorologionOffice` defaults to `'vespers'` on first entry. Office changed via `selectHorologionOffice(key)` bound to sidebar buttons.
 
 ### `toggleSidebar()` — sync
 Toggles `sidebar-hidden` class on the active panel, the strip, and main content.
@@ -229,11 +264,13 @@ Collapses/expands ecumenical sidebar sections and force-unchecks ecumenical togg
 
 ## Saints Integration
 
-Saints data loaded from `data/saints/saints-{month}.json`. Cached in `appData.saints` / `appData.saintsMonth`.
+Saints data is resolved via `js/saints-resolver.js` (SaintsResolver), the canonical saints boundary as of v2.8.6. `appData.saints` is not used; no direct saints-cache fetches occur outside SaintsResolver.
 
-**BCP offices:** Displays all commemorations for the current date below the office in `#saint-display`.
+**BCP offices:** `resolveCommemorations(currentDate, 'ANG')` warms the cache; results populate `#saint-display`.
 
-**Ethiopian Sa'atat:** `#date-header` and `#saint-display` are emptied and hidden. The `eth-saints-commemoration` slot runs the full Senkessar pipeline (Ethiopian calendar date → `senkessar-index.json` → per-day narrative), falling back to an Oriental Orthodox saints filter, then to a generic intercession for the Oriental Orthodox Communion.
+**Ethiopian Sa'atat:** `#date-header` and `#saint-display` are emptied and hidden. The `eth-saints-commemoration` slot runs the full Senkessar pipeline (Ethiopian calendar date → `senkessar-index.json` → per-day narrative), falling back to `SaintsResolver.filterCachedByTradition(currentDate, 'OOR')`, then to a generic intercession for the Oriental Orthodox Communion.
+
+**East Syriac:** `resolveCommemorations(currentDate, 'COE')` warms the cache; Layer 3 display is gated via `CoeEligibility.filter()`.
 
 ---
 
@@ -247,10 +284,24 @@ Saints data loaded from `data/saints/saints-{month}.json`. Cached in `appData.sa
 
 **EthiopianCalendar** (`js/calendar-ethiopian.js`):
 - `EthiopianCalendar.getEthiopianDate(date)` — called in `eth-saints-commemoration` for Senkessar date resolution
-- `EthiopianCalendar.formatEthiopianDate(date)` — available for Phase 8.5 Ge'ez date display; not yet wired to UI
+- `EthiopianCalendar.formatEthiopianDate(date)` — returns display string; used for Ge'ez dual-date display in Sa'atat sidebar and BCP date header (Phase 8.5, complete)
+
+**EastSyriacCalendar** (`js/calendar-east-syriac.js`):
+- `EastSyriacCalendar.getSeason(date)` — season, cycle, week label for East Syriac offices
+- `EastSyriacCalendar.getDayClass(date)` — full day classification including Layer 2 fixed commemorations
 
 **Scripture Resolver** (`js/scripture-resolver.js`):
 - `getScriptureText(citation)` — global function
+
+**SaintsResolver** (`js/saints-resolver.js`):
+- `SaintsResolver.resolveCommemorations(date, tradition)` — canonical saints boundary
+- `SaintsResolver.filterCachedByTradition(date, tradition)` — synchronous OOR filter
+
+**MenaionResolver** (`js/menaion-resolver.js`):
+- `MenaionResolver.queryTroparion(mmdd)` — Promise; queried by HorologionEngine only
+
+**HorologionEngine** (`js/horologion-engine.js`):
+- `HorologionEngine.resolveOffice(date, officeKey, context)` — called by `renderHorologionOffice()` in office-ui.js
 
 ---
 
@@ -269,7 +320,7 @@ Saints data loaded from `data/saints/saints-{month}.json`. Cached in `appData.sa
 
 Before deploying changes to `index.html`:
 
-- [ ] Script load order: `calendar-engine.js` → `calendar-ethiopian.js` → `scripture-resolver.js` → `office-ui.js`
+- [ ] Script load order: `calendar-engine.js` → `calendar-ethiopian.js` → `calendar-east-syriac.js` → `scripture-resolver.js` → `saints-resolver.js` → `menaion-resolver.js` → `horologion-engine.js` → `office-ui.js` → `prayers.js` → `tooltip.js`
 - [ ] All `CalendarEngine.*` calls use correct method names
 - [ ] `renderOffice()` guards against null `appData`
 - [ ] `saveSettings()` and `loadSettings()` keys are in sync
@@ -298,7 +349,10 @@ Before deploying changes to `index.html`:
 | 7.4 | ✅ Complete | `js/calendar-ethiopian.js` added to script load order; `EthiopianCalendar` available globally |
 | 8.1–8.2 | ✅ Complete | Senkessar pipeline fully operational; all 13 months complete |
 | v2.6.1 | ✅ Complete | Tselote Meweta, Metsehafe Tselot CSS, Sixth Hour sentence, legibility fixes |
-| 8.5 | 📋 Planned | Ge'ez date display in Sa'atat UI — `formatEthiopianDate()` ready; requires UI element in `#ethiopian-settings` or header |
+| v2.8.x | ✅ Complete | COE three-layer model, saints resolver boundary (SaintsResolver), hydration-race gating, East Syriac minor hours, Barekmar, generic sidebar shell |
+| Horologion v1–v3.4 | ✅ Complete | Vespers through Ninth Hour baseline; Menaion annual corpus; Small Compline |
+| Horologion v3.5–v4.4 | ✅ Complete | Feast-rank arbitration; Great Lent seasonal layers; Theotokion normalization; season-aware feast qualification rule verified |
+| 8.5 | ✅ Complete | Ge'ez dual-date display in Sa'atat sidebar and BCP date header — both rendering via `EthiopianCalendar.formatEthiopianDate()` |
 | 7.5 | 📋 Planned | Coptic Agpeya as standalone tradition entry point |
 | 9.0 | 📋 Planned | Mobile app |
 

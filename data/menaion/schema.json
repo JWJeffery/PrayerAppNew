@@ -18,10 +18,18 @@
     "  rank 3 — Six-stichera feast (Doxology). Apolytikion used.",
     "  rank 4 — Three-stichera commemoration. Troparion used after Octoechos.",
     "",
-    "  For weekday Vespers troparion resolution, any commemoration with rank 1–4",
-    "  and a troparion entry is considered 'resolved'. When multiple saints share",
-    "  a date, the highest-rank commemoration's troparion is used. Ties resolved",
-    "  by the first entry in the commemorations array (traditional precedence order).",
+    "  SEASON-AWARE FEAST QUALIFICATION (live — engine v3.6/v3.8, verified 2026-03-13):",
+    "  Outside Great Lent weekdays: ranks 1–4 qualify as feast overrides.",
+    "  During Great Lent weekdays (Clean Monday through Great Friday): only",
+    "  ranks 1–2 qualify. Ranks 3–4 fall through to the Lenten seasonal path.",
+    "  This means ordinary rank 4 saint commemorations do not displace the",
+    "  Lenten weekday office; major feasts (rank 1–2, e.g. Annunciation) still",
+    "  override. This rule is enforced by HorologionEngine — it is NOT encoded",
+    "  in this schema. The schema stores rank only; the engine applies the gate.",
+    "",
+    "  When multiple saints share a date, the highest-rank commemoration's",
+    "  troparion is used. Ties resolved by the first entry in the array",
+    "  (traditional precedence order).",
     "",
     "TONE: Byzantine tones 1–8 (integer). Required when troparion is present.",
     "",
@@ -29,9 +37,11 @@
     "DATE KEY: MM-DD string (zero-padded month and day). Not year-dependent.",
     "  Examples: '11-08', '11-16', '12-25'.",
     "",
-    "COVERAGE FIELD: Each monthly file carries a top-level coverage object",
-    "  stating which dates have been imported, which are empty (no fixed feast)",
-    "  and which are known to exist but not yet imported.",
+    "COVERAGE FIELD: Each monthly file carries a top-level _meta object",
+    "  stating coverage status (imported_date_count, total_days, coverage_note).",
+    "  Annual corpus COMPLETE as of v1.8 (2026-03-07). All 12 months imported.",
+    "  Total commemorations ~370. Resolved: 369. One intentional hold: 05-18",
+    "  (Venerable Peter of Caesarea in Cappadocia) — troparion_status: 'text-unavailable'.",
     "",
     "TROPARION OBJECT: See troparionShape below.",
     "  A null troparion means: we know the commemorand exists but do not have",
@@ -90,7 +100,7 @@
     },
     "not_imported": {
       "code": "menaion-not-imported",
-      "description": "This date's month has not been imported into the Menaion corpus yet. A rubric is returned.",
+      "description": "This date's month has not been imported into the Menaion corpus. A rubric is returned. NOTE: As of v1.8 (2026-03-07) all 12 months are imported; this code is no longer returned in normal operation. Retained for forward compatibility if future months are added or a month file fails to load.",
       "output_type": "rubric"
     },
     "no_commemoration": {
@@ -112,3 +122,4 @@
     "COE": "Church of the East"
   }
 }
+
