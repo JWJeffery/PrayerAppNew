@@ -459,18 +459,22 @@
     }
   ]
 },
-    "01-24": {
+   "01-24": {
   "commemorations": [
     {
       "id": "xenia-rome",
       "name": "Venerable Xenia of Rome (Eusebeia)",
-      "type": "saint",
+      "type": "monastic",
       "rank": 4,
-      "troparion_tone": 4,
-      "troparion": null,
-      "troparion_status": "text-unavailable",
+      "troparion_tone": 3,
+      "troparion": {
+        "tone": 3,
+        "title": "Troparion of Venerable Xenia of Rome",
+        "text": "Living the life of a stranger in the world, you estranged yourself from every sin; you abandoned comforts and fleeting honors and betrothed yourself to your Immortal Bridegroom. Glorious Xenia, entreat Christ our God to grant us His great mercy."
+      },
+      "troparion_status": "resolved",
       "tradition_tags": ["EOR"],
-      "notes": "Hold — type 'saint' is not in the auto-promote list. Troparion text not securely confirmed."
+      "notes": "Xenia of Rome (Eusebeia), venerable ascetic and foundress. Rank 4. Proper troparion Tone 3 confirmed from OCA and Jordanville tradition."
     }
   ]
 },

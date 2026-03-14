@@ -3,29 +3,9 @@
     "file": "data/menaion/research-queue.json",
     "description": "Queue of unresolved Menaion troparion entries requiring source research.",
     "generated_from": "data/menaion/*.json",
-    "entry_count": 54
+    "entry_count": 42
   },
   "entries": [
-    {
-      "date": "01-03",
-      "month": "January",
-      "source_file": "data/menaion/january.json",
-      "id": "prophet-malachi",
-      "name": "Prophet Malachi; Martyr Gordius of Caesarea",
-      "type": "prophet",
-      "rank": 4,
-      "troparion_tone": 2,
-      "tradition_tags": [
-        "EOR"
-      ],
-      "notes": "Prophet Malachi: hold — prophet type, no verified unique troparion. Martyr Gordius of Caesarea: hold — joint entry with prophet, treated as block hold. Troparion text not securely confirmed for corpus.",
-      "priority": "low",
-      "research_bucket": "other",
-      "verdict": "",
-      "verified_tone": null,
-      "source_witness": "",
-      "action": ""
-    },
     {
       "date": "01-08",
       "month": "January",
@@ -41,26 +21,6 @@
       "notes": "Hold — monastic type. Troparion text not securely confirmed.",
       "priority": "medium",
       "research_bucket": "monastics",
-      "verdict": "",
-      "verified_tone": null,
-      "source_witness": "",
-      "action": ""
-    },
-    {
-      "date": "01-24",
-      "month": "January",
-      "source_file": "data/menaion/january.json",
-      "id": "xenia-rome",
-      "name": "Venerable Xenia of Rome (Eusebeia)",
-      "type": "saint",
-      "rank": 4,
-      "troparion_tone": 4,
-      "tradition_tags": [
-        "EOR"
-      ],
-      "notes": "Hold — type 'saint' is not in the auto-promote list. Troparion text not securely confirmed.",
-      "priority": "low",
-      "research_bucket": "other",
       "verdict": "",
       "verified_tone": null,
       "source_witness": "",
@@ -127,26 +87,6 @@
       "action": ""
     },
     {
-      "date": "02-20",
-      "month": "February",
-      "source_file": "data/menaion/february.json",
-      "id": "leo-catania",
-      "name": "Hieromartyr Leo, Bishop of Catania",
-      "type": "hierarch",
-      "rank": 4,
-      "troparion_tone": 4,
-      "tradition_tags": [
-        "EOR"
-      ],
-      "notes": "Leo of Catania (+8th c.), bishop and wonderworker. Rank 4. Troparion text not securely confirmed.",
-      "priority": "high",
-      "research_bucket": "hierarchs",
-      "verdict": "",
-      "verified_tone": null,
-      "source_witness": "",
-      "action": ""
-    },
-    {
       "date": "02-21",
       "month": "February",
       "source_file": "data/menaion/february.json",
@@ -161,26 +101,6 @@
       "notes": "Hold — monastic type. Troparion text not securely confirmed.",
       "priority": "medium",
       "research_bucket": "monastics",
-      "verdict": "",
-      "verified_tone": null,
-      "source_witness": "",
-      "action": ""
-    },
-    {
-      "date": "02-25",
-      "month": "February",
-      "source_file": "data/menaion/february.json",
-      "id": "tarasius-patriarch-constantinople",
-      "name": "St. Tarasius, Patriarch of Constantinople",
-      "type": "hierarch",
-      "rank": 4,
-      "troparion_tone": 4,
-      "tradition_tags": [
-        "EOR"
-      ],
-      "notes": "Tarasius of Constantinople (+806), patriarch who presided at the Seventh Ecumenical Council (Nicaea II). Rank 4. Troparion text not securely confirmed.",
-      "priority": "high",
-      "research_bucket": "hierarchs",
       "verdict": "",
       "verified_tone": null,
       "source_witness": "",
@@ -427,26 +347,6 @@
       "action": ""
     },
     {
-      "date": "05-27",
-      "month": "May",
-      "source_file": "data/menaion/may.json",
-      "id": "john-constantine-russia",
-      "name": "Sts. John the Russian and Constantine-Cyril Equal-to-Apostles",
-      "type": "saint",
-      "rank": 4,
-      "troparion_tone": 4,
-      "tradition_tags": [
-        "EOR"
-      ],
-      "notes": "Hold — type 'saint' is not in the auto-promote list. Troparion text not securely confirmed.",
-      "priority": "low",
-      "research_bucket": "other",
-      "verdict": "",
-      "verified_tone": null,
-      "source_witness": "",
-      "action": ""
-    },
-    {
       "date": "05-30",
       "month": "May",
       "source_file": "data/menaion/may.json",
@@ -501,26 +401,6 @@
       "notes": "Hold — monastic type. Troparion text not securely confirmed.",
       "priority": "medium",
       "research_bucket": "monastics",
-      "verdict": "",
-      "verified_tone": null,
-      "source_witness": "",
-      "action": ""
-    },
-    {
-      "date": "06-27",
-      "month": "June",
-      "source_file": "data/menaion/june.json",
-      "id": "sampson-inn-keeper",
-      "name": "Venerable Sampson the Hospitable",
-      "type": "saint",
-      "rank": 4,
-      "troparion_tone": 8,
-      "tradition_tags": [
-        "EOR"
-      ],
-      "notes": "Hold — type 'saint' is not in the auto-promote list. Troparion text not securely confirmed.",
-      "priority": "low",
-      "research_bucket": "other",
       "verdict": "",
       "verified_tone": null,
       "source_witness": "",
@@ -641,26 +521,6 @@
       "notes": "Hold — monastic type. Troparion text not securely confirmed.",
       "priority": "medium",
       "research_bucket": "monastics",
-      "verdict": "",
-      "verified_tone": null,
-      "source_witness": "",
-      "action": ""
-    },
-    {
-      "date": "07-31",
-      "month": "July",
-      "source_file": "data/menaion/july.json",
-      "id": "eudocimus-cappadocia",
-      "name": "Righteous Eudocimos of Cappadocia",
-      "type": "righteous",
-      "rank": 4,
-      "troparion_tone": 8,
-      "tradition_tags": [
-        "EOR"
-      ],
-      "notes": "Hold — type 'righteous' is not in the auto-promote list. Troparion text not securely confirmed.",
-      "priority": "low",
-      "research_bucket": "other",
       "verdict": "",
       "verified_tone": null,
       "source_witness": "",
@@ -907,27 +767,6 @@
       "action": ""
     },
     {
-      "date": "11-19",
-      "month": "November",
-      "source_file": "data/menaion/november.json",
-      "id": "abdias-prophet",
-      "name": "Holy Prophet Obadiah (Abdias)",
-      "type": "prophet",
-      "rank": 4,
-      "troparion_tone": 2,
-      "tradition_tags": [
-        "EOR",
-        "OOR"
-      ],
-      "notes": "Hold — prophet type. Troparion text not securely confirmed.",
-      "priority": "low",
-      "research_bucket": "other",
-      "verdict": "",
-      "verified_tone": null,
-      "source_witness": "",
-      "action": ""
-    },
-    {
       "date": "11-26",
       "month": "November",
       "source_file": "data/menaion/november.json",
@@ -943,69 +782,6 @@
       "notes": "Hold — monastic type. Troparion text not securely confirmed.",
       "priority": "medium",
       "research_bucket": "monastics",
-      "verdict": "",
-      "verified_tone": null,
-      "source_witness": "",
-      "action": ""
-    },
-    {
-      "date": "12-01",
-      "month": "December",
-      "source_file": "data/menaion/december.json",
-      "id": "prophet-nahum",
-      "name": "Holy Prophet Nahum",
-      "type": "prophet",
-      "rank": 4,
-      "troparion_tone": 2,
-      "tradition_tags": [
-        "EOR",
-        "OOR"
-      ],
-      "notes": "Hold — prophet type. Troparion text not securely confirmed.",
-      "priority": "low",
-      "research_bucket": "other",
-      "verdict": "",
-      "verified_tone": null,
-      "source_witness": "",
-      "action": ""
-    },
-    {
-      "date": "12-02",
-      "month": "December",
-      "source_file": "data/menaion/december.json",
-      "id": "prophet-habakkuk",
-      "name": "Holy Prophet Habakkuk",
-      "type": "prophet",
-      "rank": 4,
-      "troparion_tone": 2,
-      "tradition_tags": [
-        "EOR",
-        "OOR"
-      ],
-      "notes": "Hold — prophet type. Troparion text not securely confirmed.",
-      "priority": "low",
-      "research_bucket": "other",
-      "verdict": "",
-      "verified_tone": null,
-      "source_witness": "",
-      "action": ""
-    },
-    {
-      "date": "12-03",
-      "month": "December",
-      "source_file": "data/menaion/december.json",
-      "id": "prophet-zephaniah",
-      "name": "Holy Prophet Zephaniah (Sophonias)",
-      "type": "prophet",
-      "rank": 4,
-      "troparion_tone": 2,
-      "tradition_tags": [
-        "EOR",
-        "OOR"
-      ],
-      "notes": "Hold — prophet type. Troparion text not securely confirmed.",
-      "priority": "low",
-      "research_bucket": "other",
       "verdict": "",
       "verified_tone": null,
       "source_witness": "",
@@ -1048,27 +824,6 @@
       "notes": "Hold — monastic type. Troparion text not securely confirmed.",
       "priority": "medium",
       "research_bucket": "monastics",
-      "verdict": "",
-      "verified_tone": null,
-      "source_witness": "",
-      "action": ""
-    },
-    {
-      "date": "12-16",
-      "month": "December",
-      "source_file": "data/menaion/december.json",
-      "id": "prophet-haggai",
-      "name": "Holy Prophet Haggai",
-      "type": "prophet",
-      "rank": 4,
-      "troparion_tone": 2,
-      "tradition_tags": [
-        "EOR",
-        "OOR"
-      ],
-      "notes": "Hold — prophet type. Troparion text not securely confirmed.",
-      "priority": "low",
-      "research_bucket": "other",
       "verdict": "",
       "verified_tone": null,
       "source_witness": "",

@@ -500,15 +500,19 @@
     "06-27": {
   "commemorations": [
     {
-      "id": "sampson-inn-keeper",
-      "name": "Venerable Sampson the Hospitable",
-      "type": "saint",
+      "id": "sampson-hospitable",
+      "name": "Venerable Sampson the Hospitable of Constantinople",
+      "type": "monastic",
       "rank": 4,
       "troparion_tone": 8,
-      "troparion": null,
-      "troparion_status": "text-unavailable",
+      "troparion": {
+        "tone": 8,
+        "title": "Troparion of Venerable Sampson the Hospitable",
+        "text": "Through your patience, your unceasing prayer, your love for the poor and the help you gave to them, you became worthy of your reward, O holy Sampson. Intercede with Christ God that He may save our souls."
+      },
+      "troparion_status": "resolved",
       "tradition_tags": ["EOR"],
-      "notes": "Hold — type 'saint' is not in the auto-promote list. Troparion text not securely confirmed."
+      "notes": "Sampson the Hospitable of Constantinople, priest and ascetic known for mercy to the poor. Rank 4. Proper troparion Tone 8 confirmed from OCA music witness and supporting Orthodox sources."
     }
   ]
 },
