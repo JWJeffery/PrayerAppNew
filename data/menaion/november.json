@@ -509,10 +509,14 @@
       "type": "monastic",
       "rank": 4,
       "troparion_tone": 1,
-      "troparion": null,
-      "troparion_status": "text-unavailable",
+      "troparion": {
+        "tone": 1,
+        "title": "Troparion of the Venerable Alypius the Stylite",
+        "text": "You were a pillar of patient endurance, having imitated the forefathers, O Venerable One: Job in suffering, and Joseph in temptations. You lived like the Bodiless Ones while yet in the flesh, O Alypius, our Father. Beseech Christ God that our souls may be saved."
+      },
+      "troparion_status": "resolved",
       "tradition_tags": ["EOR", "OOR"],
-      "notes": "Hold — monastic type. Troparion text not securely confirmed."
+      "notes": "Stylite of Adrianopolis in Paphlagonia (+640), stood on his pillar for 53 years; two monasteries grew around him. Tone 1 confirmed OCA November 26 troparia page (direct fetch). Queue held Tone 1 — correct. Tradition tags ['EOR','OOR'] preserved from live entry."
     }
   ]
 },

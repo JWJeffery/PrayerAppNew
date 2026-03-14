@@ -167,10 +167,14 @@
       "type": "monastic",
       "rank": 4,
       "troparion_tone": 8,
-      "troparion": null,
-      "troparion_status": "text-unavailable",
+      "troparion": {
+        "tone": 8,
+        "title": "Troparion of the Venerable Patapius of Thebes",
+        "text": "The image of God was truly preserved in you, O Father, for you took up the Cross and followed Christ. By so doing you taught us to disregard the flesh for it passes away but to care instead for the soul, since it is immortal. Therefore your spirit, venerable Patapius, rejoices with the angels."
+      },
+      "troparion_status": "resolved",
       "tradition_tags": ["EOR", "OOR"],
-      "notes": "Hold — monastic type. Troparion text not securely confirmed."
+      "notes": "Egyptian ascetic from Thebes, healer at Constantinople near Blachernae (+c.7th c.); incorrupt relics venerated at Loutraki, Greece. Tone 8 confirmed from multiple OCA-sourced witnesses. Queue held Tone 8 — correct. Tradition tags ['EOR','OOR'] preserved from live entry."
     }
   ]
 },
@@ -285,21 +289,6 @@
       "troparion_status": "resolved",
       "tradition_tags": ["EOR", "OOR"],
       "notes": "Thyrsus, Leucius, and Philemon, martyrs at Caesarea in Phrygia. Rank 4. Standard martyr troparion Tone 4, plural form applied. No unique text confirmed at OCA; standard form used per corpus rules."
-    }
-  ]
-},
-    "12-15": {
-  "commemorations": [
-    {
-      "id": "stephen-younger-sabaite",
-      "name": "Venerable Stephen the Sabaite, Hymnographer",
-      "type": "monastic",
-      "rank": 4,
-      "troparion_tone": 8,
-      "troparion": null,
-      "troparion_status": "text-unavailable",
-      "tradition_tags": ["EOR", "OOR"],
-      "notes": "Hold — monastic type. Troparion text not securely confirmed."
     }
   ]
 },
@@ -633,7 +622,7 @@
     }
   ]
 },
-    "12-31": {
+   "12-31": {
   "commemorations": [
     {
       "id": "melania-roman",
@@ -641,10 +630,14 @@
       "type": "monastic",
       "rank": 4,
       "troparion_tone": 8,
-      "troparion": null,
-      "troparion_status": "text-unavailable",
+      "troparion": {
+        "tone": 8,
+        "title": "Troparion of the Venerable Melania the Younger of Rome",
+        "text": "The image of God was truly preserved in you, O Mother, for you took up the Cross and followed Christ. By so doing, you taught us to disregard the flesh, for it passes away; but to care instead for the soul, since it is immortal. Therefore your spirit, O holy Mother Melania, rejoices with the angels."
+      },
+      "troparion_status": "resolved",
       "tradition_tags": ["EOR", "OOR"],
-      "notes": "Hold — monastic type. Troparion text not securely confirmed."
+      "notes": "Roman aristocrat (+439) who, with her husband Pinian, renounced vast wealth and founded monasteries in North Africa and Jerusalem; reposed on the Mount of Olives. Tone 8 confirmed OCA December 31 all-troparia page (direct fetch). Standard 'image of God' women's monastic troparion. Live tone was already 8 — tone was correct, text was missing."
     }
   ]
 }

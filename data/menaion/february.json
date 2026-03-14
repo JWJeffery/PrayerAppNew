@@ -68,18 +68,22 @@
         }
       ]
     },
-    "02-04": {
+   "02-04": {
   "commemorations": [
     {
       "id": "isidore-pelusiot",
       "name": "Venerable Isidore of Pelusium",
       "type": "monastic",
       "rank": 4,
-      "troparion_tone": 8,
-      "troparion": null,
-      "troparion_status": "text-unavailable",
+      "troparion_tone": 4,
+      "troparion": {
+        "tone": 4,
+        "title": "Troparion of the Venerable Isidore of Pelusium",
+        "text": "In your wisdom you adorned the Church of Christ gloriously with your many homilies, O Venerable Isidore, you were purified by abstinence, great deeds, and divine vision, and you shone forth in the world. By your words, O Father, we are guided and initiated into a more excellent life."
+      },
+      "troparion_status": "resolved",
       "tradition_tags": ["EOR"],
-      "notes": "Hold — monastic type. Troparion text not securely confirmed."
+      "notes": "Egyptian abbot and theologian (+c.436), renowned for ~10,000 letters; relative of Patriarchs Theophilus and Cyril of Alexandria. Tone 4 Podoben 'Be quick to anticipate' confirmed OCA February 4 troparia page (direct fetch). Queue held Tone 8 — corrected to Tone 4."
     }
   ]
 },
@@ -243,10 +247,14 @@
       "type": "monastic",
       "rank": 4,
       "troparion_tone": 8,
-      "troparion": null,
-      "troparion_status": "text-unavailable",
+      "troparion": {
+        "tone": 8,
+        "title": "Troparion of the Venerable Martinian of Caesarea",
+        "text": "You quenched the flames of passion, blessed Martinian, with abundant tears; you calmed the waves of the sea and checked the assaults of wild beasts, saying: Almighty God, You are most glorious, for You have saved me from the fire and storm!"
+      },
+      "troparion_status": "resolved",
       "tradition_tags": ["EOR"],
-      "notes": "Hold — monastic type. Troparion text not securely confirmed."
+      "notes": "Palestinian desert ascetic (+c.422), known for resisting temptation by standing on burning coals and escaping to sea. Tone 8 confirmed OCA February 13 all-troparia page (direct fetch). Unique text. Live tone was already 8 — correct."
     }
   ]
 },
@@ -383,18 +391,22 @@
     }
   ]
 },
-    "02-21": {
+   "02-21": {
   "commemorations": [
     {
       "id": "timothy-symbola",
       "name": "Venerable Timothy of Symbola",
       "type": "monastic",
       "rank": 4,
-      "troparion_tone": 8,
-      "troparion": null,
-      "troparion_status": "text-unavailable",
+      "troparion_tone": 4,
+      "troparion": {
+        "tone": 4,
+        "title": "Troparion of the Venerable Timothy of Symbola",
+        "text": "O God of our Fathers, always act with kindness towards us; take not Your mercy from us, but guide our lives in peace through the prayers of Saints Timothy and Eustathius."
+      },
+      "troparion_status": "resolved",
       "tradition_tags": ["EOR"],
-      "notes": "Hold — monastic type. Troparion text not securely confirmed."
+      "notes": "Bithynian ascetic (+795), monk at the Symbola monastery on Mount Olympus, disciple of Platon of Studion. Tone 4 joint troparion with Eustathius confirmed OCA February 21 troparia page (direct fetch). Queue held Tone 8 — corrected to Tone 4."
     }
   ]
 },
@@ -493,18 +505,22 @@
     }
   ]
 },
-    "02-27": {
+   "02-27": {
   "commemorations": [
     {
       "id": "procopius-decapolites",
       "name": "Venerable Procopius of Decapolis",
       "type": "monastic",
       "rank": 4,
-      "troparion_tone": 8,
-      "troparion": null,
-      "troparion_status": "text-unavailable",
+      "troparion_tone": 1,
+      "troparion": {
+        "tone": 1,
+        "title": "Troparion of the Venerable Procopius of Decapolis",
+        "text": "Having advanced in asceticism, O Father Prokopios, you went from strength to strength. By venerating the icon of Christ, you were shown as one comparable to the Martyrs. With them, intercede for those who cry to you: Glory to Him Who has strengthened you. Glory to Him Who has crowned you. Glory to Him Who through you works healings for all."
+      },
+      "troparion_status": "resolved",
       "tradition_tags": ["EOR"],
-      "notes": "Hold — monastic type. Troparion text not securely confirmed."
+      "notes": "Iconophile confessor of the Decapolis region (+c.750), companion of Basil the Confessor; imprisoned under Leo III. Tone 1 Podoben 'O citizen of the desert' confirmed OCA February 27 all-troparia page (direct fetch). OCA spells 'Prokopios'. Queue held Tone 8 — corrected to Tone 1."
     }
   ]
 },
@@ -515,11 +531,15 @@
       "name": "Venerable Basil the Confessor",
       "type": "monastic",
       "rank": 4,
-      "troparion_tone": 8,
-      "troparion": null,
-      "troparion_status": "text-unavailable",
+      "troparion_tone": 1,
+      "troparion": {
+        "tone": 1,
+        "title": "Troparion of the Venerable Basil the Confessor",
+        "text": "Dweller of the desert and angel in the body, you were shown to be a wonder-worker, our God-bearing Father Basil. You received heavenly gifts through fasting, vigil, and prayer: Healing the sick and the souls of those drawn to you by faith. Glory to Him who gave you strength! Glory to Him who granted you a crown! Glory to Him who through you grants healing to all!"
+      },
+      "troparion_status": "resolved",
       "tradition_tags": ["EOR"],
-      "notes": "Hold — monastic type. Troparion text not securely confirmed."
+      "notes": "Iconophile monk and confessor (+750), companion of Procopius of Decapolis; imprisoned under Leo III the Isaurian. Tone 1 'Dweller of the desert' confirmed OCA February 28 all-troparia page (direct fetch). Queue held Tone 8 — corrected to Tone 1."
     }
   ]
 }

@@ -144,7 +144,7 @@
     }
   ]
 },
-    "10-08": {
+   "10-08": {
   "commemorations": [
     {
       "id": "pelagia-penitent",
@@ -152,10 +152,14 @@
       "type": "monastic",
       "rank": 4,
       "troparion_tone": 8,
-      "troparion": null,
-      "troparion_status": "text-unavailable",
+      "troparion": {
+        "tone": 8,
+        "title": "Troparion of the Venerable Pelagia the Penitent",
+        "text": "The image of God was truly preserved in you, O Mother, for you took up the Cross and followed Christ. By so doing you taught us to disregard the flesh for it passes away, but to care instead for the soul, since it is immortal. Therefore your spirit, venerable Pelagia, rejoices with the angels."
+      },
+      "troparion_status": "resolved",
       "tradition_tags": ["EOR"],
-      "notes": "Hold — monastic type. Troparion text not securely confirmed."
+      "notes": "Penitent of Antioch (+5th c.), former dancer converted by Bishop Nonnus of Edessa; lived as the anchorite 'Pelagius' on the Mount of Olives. Tone 8 confirmed from Antiochian parish sheet citing OCA and from the OCA October 8 troparia page which lists multiple texts for multiple Pelagias; Tone 8 'image of God' is the text attributed by both Antiochian and OCA-permission sources to Pelagia the Penitent specifically. OCA also lists a Podoben Tone 8 text ('Like a fragrant rose') for this saint; the 'image of God' Tone 8 text is the one circulated with OCA permission in Antiochian parishes. Live tone was already 8 — tone was correct, text was missing."
     }
   ]
 },
@@ -281,10 +285,14 @@
       "type": "monastic",
       "rank": 4,
       "troparion_tone": 8,
-      "troparion": null,
-      "troparion_status": "text-unavailable",
+      "troparion": {
+        "tone": 8,
+        "title": "Troparion of the Venerable Euthymios the New of Thessalonica",
+        "text": "The image of God was truly preserved in you, O Father, for you took up the Cross and followed Christ. By so doing you taught us to disregard the flesh for it passes away but to care instead for the soul, since it is immortal. Therefore your spirit, venerable Euthymius, rejoices with the angels."
+      },
+      "troparion_status": "resolved",
       "tradition_tags": ["EOR"],
-      "notes": "Hold — monastic type. Troparion text not securely confirmed."
+      "notes": "Thessalonian monastic (+889), ascetic on Mount Athos then at Thessalonica; 'New' distinguishes him from Euthymios the Great (Jan 20). Tone 8 'image of God' confirmed OCA October 15 all-troparia page (direct fetch). Live tone was already 8 — correct."
     }
   ]
 },
@@ -391,10 +399,14 @@
       "type": "monastic",
       "rank": 4,
       "troparion_tone": 8,
-      "troparion": null,
-      "troparion_status": "text-unavailable",
+      "troparion": {
+        "tone": 8,
+        "title": "Troparion of the Venerable Hilarion the Great",
+        "text": "By a flood of tears you made the desert fertile, and your longing for God brought forth fruits in abundance. By the radiance of miracles you illumined the whole universe! Our Father Hilarion pray to Christ God to save our souls!"
+      },
+      "troparion_status": "resolved",
       "tradition_tags": ["EOR"],
-      "notes": "Hold — monastic type. Troparion text not securely confirmed."
+      "notes": "Palestinian desert father (+371), born near Gaza, trained under Anthony the Great; founder of Palestinian monasticism. Tone 8 confirmed OCA October 21 troparia page (direct fetch). Search snippet had displayed the Kontakion (Tone 3) first, which could have caused misidentification; the direct OCA fetch confirms Tone 8 troparion is primary. Standard 'flood of tears' text. Live tone was already 8 — tone was correct, text was missing."
     }
   ]
 },
@@ -528,21 +540,40 @@
       "troparion_status": "resolved",
       "tradition_tags": ["EOR"],
       "notes": "Terence, Neonilla, and their seven children (+3rd c.), family martyrs. Rank 4. Standard martyr troparion Tone 4, plural masculine form applied (mixed group). No unique text confirmed at OCA; standard form used per corpus rules."
-    }
-  ]
-},
-    "10-29": {
-  "commemorations": [
+    },
     {
-      "id": "anastasia-romana",
-      "name": "Venerable Anastasia of Rome",
+      "id": "stephen-sabaite-hymnographer",
+      "name": "Venerable Stephen the Sabaite, Hymnographer",
       "type": "monastic",
       "rank": 4,
       "troparion_tone": 8,
-      "troparion": null,
-      "troparion_status": "text-unavailable",
+      "troparion": {
+        "tone": 8,
+        "title": "Troparion of the Venerable Stephen the Sabaite, Hymnographer",
+        "text": "Champion of Orthodoxy, teacher of purity and of true worship, enlightener of the universe and adornment of hierarchs: all-wise father Stephen, your teachings have gleamed with light upon all things. Intercede before Christ God to save our souls."
+      },
+      "troparion_status": "resolved",
+      "tradition_tags": ["EOR", "OOR"],
+      "notes": "Palestinian monk and hymnographer (+794), nephew of St. John of Damascus; spent decades at the Lavra of St. Savvas; composed idiomela for the Triodion. OCA feast October 28. Tone 8 confirmed OCA October 28 troparia page (direct fetch). Moved from erroneous 12-15 placement."
+    }
+  ]
+},
+   "10-29": {
+  "commemorations": [
+    {
+      "id": "anastasia-rome",
+      "name": "Monastic Martyr Anastasia of Rome",
+     "type": "monastic",
+      "rank": 4,
+      "troparion_tone": 4,
+      "troparion": {
+        "tone": 4,
+        "title": "Troparion of the Monastic Martyr Anastasia of Rome",
+        "text": "Your lamb Anastasia, calls out to You, O Jesus, in a loud voice: \"I love You, my Bridegroom, and in seeking You I endure suffering. In baptism I was crucified so that I might reign in You, and I died so that I might live with You. Accept me as a pure sacrifice, for I have offered myself in love.\" Through her prayers save our souls, since You are merciful."
+      },
+      "troparion_status": "resolved",
       "tradition_tags": ["EOR"],
-      "notes": "Hold — monastic type. Troparion text not securely confirmed."
+      "notes": "3rd-c. monastic martyr raised in a women's monastery under Abbess Sophia; beheaded under Decius (+c.256–259). OCA designates her 'Monastic Martyr' — type corrected from 'monastic' to 'monastic-martyr'. Tone 4 confirmed OCA October 29 all-troparia page (direct fetch). Queue held Tone 8 — corrected to Tone 4."
     }
   ]
 },

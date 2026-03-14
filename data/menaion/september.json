@@ -49,7 +49,7 @@
     }
   ]
 },
-    "09-03": {
+"09-03": {
   "commemorations": [
     {
       "id": "anthimos-bishop-nicomedia",
@@ -65,6 +65,21 @@
       "troparion_status": "resolved",
       "tradition_tags": ["EOR"],
       "notes": "Anthimos of Nicomedia (+302), bishop and martyr under Diocletian. Rank 4. Standard martyr troparion Tone 4 applied. No unique text confirmed at OCA; standard form used per corpus rules."
+    },
+    {
+      "id": "phoebe-deaconess-cenchreae",
+      "name": "Holy Deaconess Phoebe of Cenchreae",
+      "type": "righteous",
+      "rank": 4,
+      "troparion_tone": 1,
+      "troparion": {
+        "tone": 1,
+        "title": "Troparion of the Holy Deaconess Phoebe of Cenchreae",
+        "text": "O Phoebe, converser with Saint Paul and divinely-inspired servant of God in the Church of Cenchrea, as Christ's handmaiden, and filled with heavenly virtues, therefore, we honor you with spiritual hymns. Glory to Christ, Who glorified you. Glory to Him Who crowned you. Glory to Him Who, through you, grants us better things."
+      },
+      "troparion_status": "resolved",
+      "tradition_tags": ["EOR"],
+      "notes": "Feast September 3, confirmed by OCA and GOARCH. Deaconess of the church at Cenchreae near Corinth; commended by Paul in Romans 16:1-2. Troparion Tone 1 confirmed from OCA September 3 troparia. Earlier corpus draft confused the kontakion with the troparion and used the wrong tone."
     }
   ]
 },
@@ -208,11 +223,15 @@
       "name": "Venerable Theodora of Alexandria",
       "type": "monastic",
       "rank": 4,
-      "troparion_tone": 8,
-      "troparion": null,
-      "troparion_status": "text-unavailable",
+      "troparion_tone": 4,
+      "troparion": {
+        "tone": 4,
+        "title": "Troparion of the Venerable Theodora of Alexandria",
+        "text": "You offered your life as a holy gift, O righteous Theodora, for resplendent with the light of repentance, you illumined mankind. Now pray to Christ who has magnified you to grant us his great mercy!"
+      },
+      "troparion_status": "resolved",
       "tradition_tags": ["EOR"],
-      "notes": "Hold — monastic type. Troparion text not securely confirmed."
+      "notes": "Alexandrian monastic penitent (+490), entered men's monastery disguised as 'Brother Theodore'. OCA September 11 troparia page lists two troparia: Tone 4 is listed first (primary); Tone 8 'image of God' text is secondary. Antiochian parish sheet also confirms Tone 4 text with OCA attribution. Live entry had troparion_tone: 8 — corrected to Tone 4."
     }
   ]
 },
@@ -470,11 +489,15 @@
       "name": "Venerable Euphrosyne of Alexandria",
       "type": "monastic",
       "rank": 4,
-      "troparion_tone": 8,
-      "troparion": null,
-      "troparion_status": "text-unavailable",
+      "troparion_tone": 1,
+      "troparion": {
+        "tone": 1,
+        "title": "Troparion of the Venerable Euphrosyne of Alexandria",
+        "text": "You concealed your womanliness in asceticism, and at your repose everyone was amazed, O Euphrosyne. As a young girl you toiled like a man, and by your intercessions you deliver those who honor you from dangers."
+      },
+      "troparion_status": "resolved",
       "tradition_tags": ["EOR"],
-      "notes": "Hold — monastic type. Troparion text not securely confirmed."
+      "notes": "Alexandrian monastic (+470), entered men's monastery as 'Brother Smaragdos', spending 38 years there. Tone 1 confirmed OCA September 25 troparia page (direct fetch). Live entry had troparion_tone: 8 — corrected to Tone 1."
     }
   ]
 },
@@ -524,25 +547,33 @@
       "type": "monastic",
       "rank": 4,
       "troparion_tone": 8,
-      "troparion": null,
-      "troparion_status": "text-unavailable",
+      "troparion": {
+        "tone": 8,
+        "title": "Troparion of the Venerable Chariton the Confessor",
+        "text": "By a flood of tears you made the desert fertile, and your longing for God brought forth fruits in abundance. By the radiance of miracles you illumined the whole universe! Our Father Chariton, pray to Christ God to save our souls!"
+      },
+      "troparion_status": "resolved",
       "tradition_tags": ["EOR"],
-      "notes": "Hold — monastic type. Troparion text not securely confirmed."
+      "notes": "Palestinian monastic (+350), founder of the Pharan, Douka, and Souka lavras; confessor under Aurelian. Tone 8 confirmed from OCA search snippet for September 28 and Antiochian parish website citing OCA. Standard 'flood of tears' Tone 8 troparion. Live tone was already 8 — tone was correct, text was missing."
     }
   ]
 },
-    "09-29": {
+   "09-29": {
   "commemorations": [
     {
       "id": "cyriacus-hermit",
       "name": "Venerable Cyriacus the Anchorite",
       "type": "monastic",
       "rank": 4,
-      "troparion_tone": 8,
-      "troparion": null,
-      "troparion_status": "text-unavailable",
+      "troparion_tone": 1,
+      "troparion": {
+        "tone": 1,
+        "title": "Troparion of the Venerable Cyriacus the Anchorite",
+        "text": "You were shown to be a citizen of the desert, an Angel in the body and a wonderworker. O our God-bearing Father Kyriacos, through fasting, vigil and prayer you received heavenly gifts, healing the sick and the souls of those who hasten to you with faith. Glory to Him Who gave you strength. Glory to Him Who crowned you. Glory to Him Who, through you, grants healing to all."
+      },
+      "troparion_status": "resolved",
       "tradition_tags": ["EOR"],
-      "notes": "Hold — monastic type. Troparion text not securely confirmed."
+      "notes": "Palestinian anchorite (+557), disciple of Euthymius and Gerasimus, lived 109 years. Tone 1 confirmed OCA September 29 troparia page (direct fetch). OCA uses the spelling 'Kyriakos'; the corpus id and name retain 'Cyriacus' as already established. Live entry had troparion_tone: 8 — corrected to Tone 1."
     }
   ]
 },

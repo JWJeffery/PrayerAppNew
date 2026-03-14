@@ -467,10 +467,14 @@
       "type": "monastic",
       "rank": 4,
       "troparion_tone": 1,
-      "troparion": null,
-      "troparion_status": "text-unavailable",
+      "troparion": {
+        "tone": 1,
+        "title": "Troparion of the Venerable Simeon the Stylite the Younger",
+        "text": "Dweller of the desert and angel in the body, you were shown to be a wonder-worker, our God-bearing Father Simeon. You received heavenly gifts through fasting, vigil, and prayer: healing the sick and the souls of those drawn to you by faith. Glory to Him who gave you strength! Glory to Him who granted you a crown! Glory to Him who through you grants healing to all!"
+      },
+      "troparion_status": "resolved",
       "tradition_tags": ["EOR"],
-      "notes": "Hold — monastic type. Troparion text not securely confirmed."
+      "notes": "Syrian stylite (+592) on the Wonderful Mountain near Antioch; not to be confused with Simeon the Elder (Sept 1). Tone 1 confirmed OCA May 24 troparia page (direct fetch). Queue held Tone 1 — correct."
     }
   ]
 },

@@ -531,11 +531,15 @@
       "name": "Venerable Hilarion the New, Abbot of Pelekete",
       "type": "monastic",
       "rank": 4,
-      "troparion_tone": 8,
-      "troparion": null,
-      "troparion_status": "text-unavailable",
+      "troparion_tone": 5,
+      "troparion": {
+        "tone": 5,
+        "title": "Troparion of the Venerable Hilarion the New, Abbot of Pelekete",
+        "text": "Adorned with gladness of soul as a pure vessel of the wisdom of Christ, you were a reflection of the life in God. Therefore you are resplendent with the light of virtues, O Father Hilarion, and you guide us unerringly to the salvation of our souls!"
+      },
+      "troparion_status": "resolved",
       "tradition_tags": ["EOR"],
-      "notes": "Hold — monastic type. Troparion text not securely confirmed."
+      "notes": "Abbot of Pelekete monastery near the Dardanelles, martyr under the Iconoclast persecution of Emperor Constantine V (+754). Tone 5 confirmed OCA March 28 troparia page (direct fetch). Queue held Tone 8 — corrected to Tone 5."
     }
   ]
 },

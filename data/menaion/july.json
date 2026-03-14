@@ -113,11 +113,15 @@
       "name": "Venerable Sisoes the Great",
       "type": "monastic",
       "rank": 4,
-      "troparion_tone": 8,
-      "troparion": null,
-      "troparion_status": "text-unavailable",
+      "troparion_tone": 1,
+      "troparion": {
+        "tone": 1,
+        "title": "Troparion of the Venerable Sisoes the Great",
+        "text": "Dweller of the desert and angel in the body, you were shown to be a wonder-worker, our God-bearing Father Sisoes. You received heavenly gifts through fasting, vigil, and prayer: healing the sick and the souls of those drawn to you by faith. Glory to Him who gave you strength! Glory to Him who granted you a crown! Glory to Him who through you grants healing to all!"
+      },
+      "troparion_status": "resolved",
       "tradition_tags": ["EOR"],
-      "notes": "Hold — monastic type. Troparion text not securely confirmed."
+      "notes": "Egyptian desert father (+429), disciple of Anthony the Great on Abba Anthony's mount. Tone 1 primary troparion confirmed OCA July 6. OCA also lists a secondary Tone 5 troparion; Tone 1 listed first and is standard. Live entry had troparion_tone: 8 — corrected."
     }
   ]
 },
@@ -159,37 +163,41 @@
         }
       ]
     },
-    "07-09": {
+   "07-09": {
   "commemorations": [
     {
       "id": "paisios-great",
       "name": "Venerable Paisios the Great",
       "type": "monastic",
       "rank": 4,
-      "troparion_tone": 8,
-      "troparion": null,
-      "troparion_status": "text-unavailable",
+      "troparion_tone": 4,
+      "troparion": {
+        "tone": 4,
+        "title": "Troparion of the Venerable Paisios the Great",
+        "text": "The incarnate Angel, and the boast and summit of monks, the bodiless man, the citizen of Heaven, the great God-bearing Paisios celebrateth with us in divine jubilation, granting grace to all them that extol him with reverence. With fervour let us honour this day, offering him songs of praise."
+      },
+      "troparion_status": "resolved",
       "tradition_tags": ["EOR"],
-      "notes": "Hold — monastic type. Troparion text not securely confirmed."
+      "notes": "Egyptian desert father (+400), trained under Abba Pambo of Scete. Tone 4 troparion confirmed GOARCH chapel saints. OCA July 9 all-troparia page does not include a troparion for Paisios the Great; GOARCH is the primary source used here. Live entry had troparion_tone: 8 — corrected."
     }
   ]
 },
-    "07-10": {
+   "07-10": {
   "commemorations": [
     {
-      "id": "forty-five-martyrs-nicopolis",
-      "name": "Holy Forty-Five Martyrs of Nicopolis in Armenia",
-      "type": "martyr",
+      "id": "placing-robe-lord-moscow",
+      "name": "The Placing of the Honorable Robe of Our Lord Jesus Christ at Moscow",
+      "type": "lord",
       "rank": 4,
       "troparion_tone": 4,
       "troparion": {
         "tone": 4,
-        "title": "Troparion of the Holy Forty-Five Martyrs of Nicopolis in Armenia",
-        "text": "Your holy martyrs of Nicopolis, O Lord, through their sufferings have received incorruptible crowns from You, our God. For having Your strength, they laid low their adversaries and shattered the powerless boldness of demons. Through their intercessions save our souls."
+        "title": "Troparion of the Placing of the Honorable Robe of the Lord at Moscow",
+        "text": "On this day let us the faithful run to the divine and healing robe of our Saviour and God, Who was pleased to wear our flesh and pour out His holy Blood on the Cross, whereby He hath redeemed us from slavery to the enemy. Wherefore, we thankfully cry to Him: By Thy precious robe save and defend Orthodox Christians, and bishops, and cities, and all men everywhere, and save our souls, for Thou art the Friend of man."
       },
       "troparion_status": "resolved",
-      "tradition_tags": ["EOR"],
-      "notes": "Forty-five martyrs of Nicopolis in Armenia (+319), burned alive under Licinius. Rank 4. Standard martyr troparion Tone 4, plural form applied. No unique text confirmed at OCA; standard form used per corpus rules."
+      "tradition_tags": ["byzantine", "russian", "oca", "goarch"],
+      "notes": "Historical event: Robe received in Moscow March 1625 (during Great Lent); feast established July 10 O.S. (= July 23 N.S.) on eve of Tsar Mikhail's enthronement anniversary. Troparion Tone 4 confirmed from GOARCH and Holy Transfiguration Monastery sources. Robe preserved at Dormition Cathedral, Moscow. Not to be confused with the Georgian Chiton feast (Oct 1)."
     }
   ]
 },
@@ -250,21 +258,6 @@
         }
       ]
     },
-    "07-14": {
-  "commemorations": [
-    {
-      "id": "joseph-arimathea-nicodemus",
-      "name": "Holy Joseph of Arimathea and Nicodemus",
-      "type": "saint",
-      "rank": 4,
-      "troparion_tone": 2,
-      "troparion": null,
-      "troparion_status": "text-unavailable",
-      "tradition_tags": ["EOR"],
-      "notes": "Hold — type 'saint' is not in the auto-promote list. Troparion text not securely confirmed."
-    }
-  ]
-},
     "07-15": {
       "commemorations": [
         {
@@ -284,21 +277,6 @@
         }
       ]
     },
-    "07-16": {
-  "commemorations": [
-    {
-      "id": "translation-robe-lord-moscow",
-      "name": "Translation of the Robe of Our Lord Jesus Christ to Moscow",
-      "type": "feast",
-      "rank": 4,
-      "troparion_tone": 8,
-      "troparion": null,
-      "troparion_status": "text-unavailable",
-      "tradition_tags": ["EOR"],
-      "notes": "Hold — feast type. Troparion text not securely confirmed."
-    }
-  ]
-},
     "07-17": {
       "commemorations": [
         {
@@ -337,7 +315,7 @@
     }
   ]
 },
-   "07-19": {
+  "07-19": {
   "commemorations": [
     {
       "id": "macrina-sister-basil",
@@ -345,10 +323,14 @@
       "type": "monastic",
       "rank": 4,
       "troparion_tone": 8,
-      "troparion": null,
-      "troparion_status": "text-unavailable",
+      "troparion": {
+        "tone": 8,
+        "title": "Troparion of the Venerable Macrina",
+        "text": "The image of God was truly preserved in you, O Mother, for you took up the Cross and followed Christ. By so doing, you taught us to disregard the flesh, for it passes away, but to care instead for the soul, since it is immortal. Therefore your spirit, O Holy Mother Macrina, rejoices with the Angels!"
+      },
+      "troparion_status": "resolved",
       "tradition_tags": ["EOR"],
-      "notes": "Hold — monastic type. Troparion text not securely confirmed."
+      "notes": "Elder sister of Basil the Great and Gregory of Nyssa (+379). Tone 8 confirmed OCA July 19 all-troparia page. Standard 'image of God' women's monastic troparion in Tone 8. Live tone was already 8 — tone was correct, text was missing."
     }
   ]
 },
@@ -371,18 +353,22 @@
         }
       ]
     },
-    "07-21": {
+   "07-21": {
   "commemorations": [
     {
       "id": "symeon-fool-for-christ",
       "name": "Venerable Symeon the Fool for Christ and John the Eremite",
       "type": "monastic",
       "rank": 4,
-      "troparion_tone": 8,
-      "troparion": null,
-      "troparion_status": "text-unavailable",
+      "troparion_tone": 1,
+      "troparion": {
+        "tone": 1,
+        "title": "Troparion of Venerable Symeon the Fool for Christ",
+        "text": "Having heard the voice of Your Apostle Paul: we are fools for Christ's sake! Your servant Simeon, O Christ God, lived the life of a fool here on earth for Your sake. Therefore as we venerate his memory, we entreat You, O Lord, to save our souls!"
+      },
+      "troparion_status": "resolved",
       "tradition_tags": ["EOR"],
-      "notes": "Hold — monastic type. Troparion text not securely confirmed."
+      "notes": "6th-c. Syrian ascetic (+c.590) who feigned madness in Emessa to minister to sinners; companion John the hermit shared his earlier ascetic life at the Dead Sea. Tone 1 confirmed OCA July 21 all-troparia page (direct fetch). Live tone was already 8 — corrected to Tone 1."
     }
   ]
 },
@@ -560,19 +546,19 @@
    "07-31": {
   "commemorations": [
     {
-      "id": "eudocimos-cappadocia",
-      "name": "Righteous Eudocimos of Cappadocia",
-      "type": "saint",
+      "id": "joseph-of-arimathea-nicodemus",
+      "name": "Holy Joseph of Arimathea and Nicodemus the Righteous",
+      "type": "righteous",
       "rank": 4,
-      "troparion_tone": 4,
+      "troparion_tone": 2,
       "troparion": {
-        "tone": 4,
-        "title": "Troparion of Righteous Eudocimos of Cappadocia",
-        "text": "He who called you from earth to heaven keeps your body unharmed after death, holy Eudocimos; for you lived a sober and holy life and did not defile your flesh; so with boldness intercede with Christ that we may be saved."
+        "tone": 2,
+        "title": "Troparion of the Righteous Joseph of Arimathea",
+        "text": "The Noble Joseph, when he had taken down Your most pure Body from the tree, wrapped it in fine linen and anointed it with spices, and placed it in a new tomb. But You rose on the third day, O Lord, granting the world great mercy."
       },
       "troparion_status": "resolved",
       "tradition_tags": ["EOR"],
-      "notes": "Eudocimos of Cappadocia, righteous layman venerated for purity of life. Rank 4. Proper troparion Tone 4 confirmed from Antiochian and OCA witnesses."
+      "notes": "Fixed Menaion feast July 31. Both figures also commemorated on the Sunday of the Myrrhbearers (movable). Troparion is proper to Joseph and serves the joint commemoration per OCA July 31. Do not confuse with Venerable Nicodemus of Mt. Athos (d. 1809), whose feast falls July 14."
     }
   ]
 }

@@ -52,15 +52,19 @@
     "08-03": {
   "commemorations": [
     {
-      "id": "isaakios-dalmatos-dalmatian",
-      "name": "Venerable Isaakios, Dalmatos, and Faustus",
+      "id": "isaakios-dalmatos-faustus",
+      "name": "Venerable Isaakios, Dalmatos, and Faustus of the Dalmatian Monastery",
       "type": "monastic",
       "rank": 4,
-      "troparion_tone": 8,
-      "troparion": null,
-      "troparion_status": "text-unavailable",
+      "troparion_tone": 4,
+      "troparion": {
+        "tone": 4,
+        "title": "Troparion of the Venerable Isaakios, Dalmatos, and Faustus",
+        "text": "O God of our Fathers, always act with kindness towards us; take not Your mercy from us, but guide our lives in peace through the prayers of Venerable Isaac, Dalmatus, and Faustus."
+      },
+      "troparion_status": "resolved",
       "tradition_tags": ["EOR"],
-      "notes": "Hold — monastic type. Troparion text not securely confirmed."
+      "notes": "4th–5th-c. fathers of the Dalmatian Monastery in Constantinople: Isaakios (+383, also May 30 and March 22), Dalmatos (archimandrite, +after 446), Faustus (Dalmatos's son, igumen after him). Tone 4 joint troparion confirmed OCA August 3 all-troparia page (direct fetch). Queue held Tone 8 — corrected to Tone 4."
     }
   ]
 },
@@ -213,21 +217,6 @@
       "troparion_status": "resolved",
       "tradition_tags": ["EOR"],
       "notes": "Euplus of Catania (+304), deacon-martyr under Diocletian. Rank 4. Standard martyr troparion Tone 4 applied. No unique text confirmed at OCA; standard form used per corpus rules."
-    }
-  ]
-},
-   "08-12": {
-  "commemorations": [
-    {
-      "id": "phoebe-deaconess",
-      "name": "Holy Deaconess Phoebe",
-      "type": "saint",
-      "rank": 4,
-      "troparion_tone": 3,
-      "troparion": null,
-      "troparion_status": "text-unavailable",
-      "tradition_tags": ["EOR"],
-      "notes": "Hold — type 'saint' is not in the auto-promote list. Troparion text not securely confirmed."
     }
   ]
 },
@@ -497,7 +486,7 @@
         }
       ]
     },
-    "08-27": {
+   "08-27": {
   "commemorations": [
     {
       "id": "pimen-great",
@@ -505,25 +494,33 @@
       "type": "monastic",
       "rank": 4,
       "troparion_tone": 8,
-      "troparion": null,
-      "troparion_status": "text-unavailable",
+      "troparion": {
+        "tone": 8,
+        "title": "Troparion of the Venerable Pimen the Great",
+        "text": "By a flood of tears you made the desert fertile, and your longing for God brought forth fruits in abundance. By the radiance of miracles you illumined the whole universe! Our Father Pimen, pray to Christ God to save our souls!"
+      },
+      "troparion_status": "resolved",
       "tradition_tags": ["EOR"],
-      "notes": "Hold — monastic type. Troparion text not securely confirmed."
+      "notes": "Egyptian desert abba (+450), one of the principal Apophthegmata fathers. Tone 8 confirmed OCA August 27 all-troparia page, listed as the primary troparion for Pimen the Great. Standard 'flood of tears' Tone 8 monastic troparion. Live tone was already 8 — tone was correct, text was missing."
     }
   ]
 },
-    "08-28": {
+   "08-28": {
   "commemorations": [
     {
       "id": "moses-prophet-ethiopia",
       "name": "Venerable Moses the Ethiopian (the Black)",
       "type": "monastic",
       "rank": 4,
-      "troparion_tone": 8,
-      "troparion": null,
-      "troparion_status": "text-unavailable",
+      "troparion_tone": 1,
+      "troparion": {
+        "tone": 1,
+        "title": "Troparion of the Venerable Moses the Ethiopian",
+        "text": "You abandoned the Egypt of the passions, O Father, ascending the mount of the virtues with fervent faith, taking the Cross of Christ upon your shoulders; and being glorified in godly works, you proved to be a model for monastics, O Moses, summit of the Fathers. With them, pray unceasingly that our souls may find mercy."
+      },
+      "troparion_status": "resolved",
       "tradition_tags": ["EOR"],
-      "notes": "Hold — monastic type. Troparion text not securely confirmed."
+      "notes": "Egyptian desert father of Ethiopian origin (+405), martyred at Scete. Tone 1 primary troparion confirmed OCA August 28 all-troparia page (listed first). OCA also lists a secondary Tone 1 Podoben text ('When the stone had been sealed'); the non-Podoben primary text is used here. Live entry had troparion_tone: 8 — corrected to Tone 1."
     }
   ]
 },

@@ -30,18 +30,22 @@
         }
       ]
     },
-    "04-02": {
+   "04-02": {
   "commemorations": [
     {
       "id": "titus-wonder-worker",
       "name": "Venerable Titus the Wonder-Worker",
       "type": "monastic",
       "rank": 4,
-      "troparion_tone": 8,
-      "troparion": null,
-      "troparion_status": "text-unavailable",
+      "troparion_tone": 4,
+      "troparion": {
+        "tone": 4,
+        "title": "Troparion of the Venerable Titus the Wonder-Worker",
+        "text": "You were dedicated to the Lord from childhood, living in the world as an angel; and you received from God the grace of working miracles; therefore, you were a guide of monks and a wise steward, O most blessed Titus. Do not cease to intercede with God for the world, O Father."
+      },
+      "troparion_status": "resolved",
       "tradition_tags": ["EOR"],
-      "notes": "Hold — monastic type. Troparion text not securely confirmed."
+      "notes": "9th-c. Studite monk at Constantinople, ordained priest, wonder-worker. Tone 4 Podoben 'You appeared today' confirmed OCA April 2 troparia page (direct fetch). Live tone was already 8 — corrected to Tone 4."
     }
   ]
 },
@@ -53,25 +57,33 @@
       "type": "monastic",
       "rank": 4,
       "troparion_tone": 4,
-      "troparion": null,
-      "troparion_status": "text-unavailable",
+      "troparion": {
+        "tone": 4,
+        "title": "Troparion of the Venerable Nicetas, Hegumen of Medikion",
+        "text": "You were a firm pillar and an undaunted guardian of sacred tradition, O Nicetas; you were adorned with holy dispassion and became an illustrious confessor of the Faith. Accept the prayers of those who cry to you, interceding for them with Christ our God."
+      },
+      "troparion_status": "resolved",
       "tradition_tags": ["EOR"],
-      "notes": "Hold — monastic type. Troparion text not securely confirmed."
+      "notes": "Abbot of Medikion monastery in Bithynia, confessor under Iconoclast Emperor Leo the Armenian (+824). Tone 4 confirmed OCA April 3 troparia page (direct fetch). Queue held Tone 4 — correct."
     }
   ]
 },
     "04-04": {
   "commemorations": [
     {
-      "id": "george-mtsmindeli",
-      "name": "Venerable George the Hagiorite (of Mt. Athos)",
+      "id": "george-maleon",
+      "name": "Venerable George of Mount Maleon in the Peloponnesus",
       "type": "monastic",
       "rank": 4,
       "troparion_tone": 8,
-      "troparion": null,
-      "troparion_status": "text-unavailable",
+      "troparion": {
+        "tone": 8,
+        "title": "Troparion of the Venerable George of Mount Maleon",
+        "text": "By a flood of tears you made the desert fertile, and your longing for God brought forth fruits in abundance. By the radiance of miracles you illumined the whole universe! O our holy father George, pray to Christ our God to save our souls!"
+      },
+      "troparion_status": "resolved",
       "tradition_tags": ["EOR"],
-      "notes": "Hold — monastic type. Troparion text not securely confirmed."
+      "notes": "9th-c. Greek monastic; refused betrothal, entered the monastery on Mount Maleon in the Peloponnesus; clairvoyant, predicted his own death three years before it occurred. Tone 8 confirmed OCA April 4 all-troparia page (direct fetch). Moved from erroneous 04-07 placement; former 04-04 occupant (George the Hagiorite) retired — correct OCA feast is June 27."
     }
   ]
 },
@@ -110,21 +122,6 @@
       "troparion_status": "resolved",
       "tradition_tags": ["EOR"],
       "notes": "Eutychios of Constantinople (+582), twice patriarch, defender of Chalcedonian Christology. Rank 4. Troparion Tone 4 confirmed: OCA (Apr. 6)."
-    }
-  ]
-},
-   "04-07": {
-  "commemorations": [
-    {
-      "id": "george-maleon",
-      "name": "Venerable George of Maleon",
-      "type": "monastic",
-      "rank": 4,
-      "troparion_tone": 8,
-      "troparion": null,
-      "troparion_status": "text-unavailable",
-      "tradition_tags": ["EOR"],
-      "notes": "Hold — monastic type. Troparion text not securely confirmed."
     }
   ]
 },
@@ -326,25 +323,33 @@
       "type": "monastic",
       "rank": 4,
       "troparion_tone": 8,
-      "troparion": null,
-      "troparion_status": "text-unavailable",
+      "troparion": {
+        "tone": 8,
+        "title": "Troparion of the Venerable John, Disciple of Gregory the Theologian",
+        "text": "The image of God was truly preserved in you, O Father, for you took up the Cross and followed Christ. By so doing you taught us to disregard the flesh for it passes away but to care instead for the soul, since it is immortal. Therefore your spirit, venerable John, rejoices with the angels."
+      },
+      "troparion_status": "resolved",
       "tradition_tags": ["EOR"],
-      "notes": "Hold — monastic type. Troparion text not securely confirmed."
+      "notes": "Late 8th-c. disciple of St. Gregory of Decapolis (Nov 20), tonsured at Thessalonica. Tone 8 'image of God' confirmed OCA April 18 all-troparia page (direct fetch). Live tone was already 8 — correct."
     }
   ]
 },
-    "04-19": {
+   "04-19": {
   "commemorations": [
     {
       "id": "john-of-old-lavra",
       "name": "Venerable John of the Old Lavra",
       "type": "monastic",
       "rank": 4,
-      "troparion_tone": 8,
-      "troparion": null,
-      "troparion_status": "text-unavailable",
+      "troparion_tone": 1,
+      "troparion": {
+        "tone": 1,
+        "title": "Troparion of the Venerable John of the Old Lavra",
+        "text": "Dweller of the desert and angel in the body, you were shown to be a wonderworker, our God-bearing Father John. You received heavenly gifts through fasting, vigil, and prayer: healing the sick and the souls of those drawn to you by faith. Glory to Him who gave you strength. Glory to Him who granted you a crown. Glory to Him Who, through you, grants healing to all."
+      },
+      "troparion_status": "resolved",
       "tradition_tags": ["EOR"],
-      "notes": "Hold — monastic type. Troparion text not securely confirmed."
+      "notes": "Palestinian anchorite of the Old (Chariton) Lavra, 8th c. Tone 1 'Dweller of the desert' confirmed OCA April 19 all-troparia page search result. Live tone was already 8 — corrected to Tone 1."
     }
   ]
 },
@@ -432,10 +437,14 @@
       "type": "monastic",
       "rank": 4,
       "troparion_tone": 8,
-      "troparion": null,
-      "troparion_status": "text-unavailable",
+      "troparion": {
+        "tone": 8,
+        "title": "Troparion of the Venerable Elizabeth the Wonder-Worker",
+        "text": "In you, O Mother, was preserved with exactness what is according to the image; for you took up the Cross and followed Christ. By so doing, you taught us to disregard the flesh, for it passes away; but to care for the soul, since it is immortal. Therefore, O Venerable Elizabeth, your spirit rejoices with the Angels."
+      },
+      "troparion_status": "resolved",
       "tradition_tags": ["EOR"],
-      "notes": "Hold — monastic type. Troparion text not securely confirmed."
+      "notes": "Wonder-worker of Constantinople, 6th–7th c., abbess famed for healings. Tone 8 'image of God' confirmed OCA April 24 all-troparia page search snippet. Live tone was already 8 — correct."
     }
   ]
 },

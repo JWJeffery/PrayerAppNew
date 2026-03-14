@@ -162,15 +162,34 @@
     "01-08": {
   "commemorations": [
     {
-      "id": "george-chozebite-domnica",
-      "name": "Venerable George the Chozebite; Venerable Domnica of Constantinople",
+      "id": "george-chozebite",
+      "name": "Venerable George the Chozebite, Abbot",
       "type": "monastic",
       "rank": 4,
-      "troparion_tone": 8,
-      "troparion": null,
-      "troparion_status": "text-unavailable",
+      "troparion_tone": 5,
+      "troparion": {
+        "tone": 5,
+        "title": "Troparion of the Venerable George the Chozebite",
+        "text": "God-bearing Father George, you cultivated the word of grace and gathered the splendid fruits of righteousness, having chosen the way of godliness. Therefore, you partook of the glory of Christ; intercede with Him unceasingly that He may have mercy on our souls."
+      },
+      "troparion_status": "resolved",
       "tradition_tags": ["EOR"],
-      "notes": "Hold — monastic type. Troparion text not securely confirmed."
+      "notes": "Palestinian abbot (+625/630), head of the Chozeba monastery between Jordan and Jerusalem. Tone 5 confirmed OCA January 8 all-troparia page (direct fetch). Split from joint entry: George and Domnica carry different troparia and tones and must be separate commemoration objects."
+    },
+    {
+      "id": "domnica-constantinople",
+      "name": "Venerable Domnica of Constantinople",
+      "type": "monastic",
+      "rank": 4,
+      "troparion_tone": 4,
+      "troparion": {
+        "tone": 4,
+        "title": "Troparion of the Venerable Domnica of Constantinople",
+        "text": "Love for that which is better illumined your nous, and you shone in asceticism like a radiant lamp, O Domnika. Hence, the Master revealed you as a light-bearing guide of monastics by your life and word. Intercede with Him, O God-bearer, that all may be saved."
+      },
+      "troparion_status": "resolved",
+      "tradition_tags": ["EOR"],
+      "notes": "Monastic from Carthage, baptized by Patriarch Nectarius in Constantinople, founder of a women's monastery (+c.473). Tone 4 Podoben confirmed OCA January 8 all-troparia page (direct fetch). Split from joint entry: see George the Chozebite."
     }
   ]
 },
@@ -501,14 +520,18 @@
   "commemorations": [
     {
       "id": "xenophon-family",
-      "name": "Venerable Xenophon and Mary, and their sons Arcadius and John",
+      "name": "Venerable Xenophon and Mary, and their sons Arcadius and John, of Constantinople",
       "type": "monastic",
       "rank": 4,
-      "troparion_tone": 8,
-      "troparion": null,
-      "troparion_status": "text-unavailable",
+      "troparion_tone": 4,
+      "troparion": {
+        "tone": 4,
+        "title": "Troparion of the Venerable Xenophon and His Family",
+        "text": "O God of our Fathers, always act with kindness towards us; take not Your mercy from us, but guide our lives in peace through the prayers of Venerable Xenophon and his family."
+      },
+      "troparion_status": "resolved",
       "tradition_tags": ["EOR"],
-      "notes": "Hold — monastic type. Troparion text not securely confirmed."
+      "notes": "5th-c. Constantinopolitan nobleman and family, all became monastics after sons were shipwrecked. Tone 4 confirmed OCA January 26 all-troparia page (direct fetch). Standard 'O God of our Fathers' family troparion."
     }
   ]
 },
