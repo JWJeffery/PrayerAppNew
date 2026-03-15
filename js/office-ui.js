@@ -1,4 +1,3 @@
-// ── State ─────────────────────────────────────────────────────────────────────
 let appData = null;
 let currentDate = new Date();
 let selectedMode = null;
@@ -1358,6 +1357,53 @@ function _renderHorologionItem(item) {
         const body  = formatParagraphText(item.text || '');
         const base  = `<div class="horologion-text">${label}<p>${body}</p></div>`;
         return base + _renderHorologionDiagnostics(item, escapeHtml);
+    }
+
+    // v5.5: type: "kathisma" — full psalm text organized by stasis.
+    // item.stases: [ { stasis: number, psalms: [ { number, title, verses: string[] } ] } ]
+    // Inter-stasis Glory doxology prompts appended after each stasis.
+    if (item.type === 'kathisma') {
+        const headerLabel = item.label
+            ? `<p class="rubric-text" style="margin-bottom:0.3em;">${escapeHtml(item.label)}</p>`
+            : '';
+        const lxxNote = item.psalmsLxx
+            ? `<p class="rubric-text" style="font-size:0.82em; opacity:0.8; margin-bottom:0.6em;">` +
+              `Psalms ${escapeHtml(item.psalmsLxx)} (LXX) — OCA/Antiochian English Psalter</p>`
+            : '';
+
+        const stases = Array.isArray(item.stases) ? item.stases : [];
+        let stasisHtml = '';
+
+        for (let si = 0; si < stases.length; si++) {
+            const stasis = stases[si];
+            const psalms = Array.isArray(stasis.psalms) ? stasis.psalms : [];
+            let psalmHtml = '';
+
+            for (const psalm of psalms) {
+                const psalmTitle = psalm.title
+                    ? `<p class="rubric-text" style="margin:0.6em 0 0.2em; font-size:0.9em;">${escapeHtml(psalm.title)}</p>`
+                    : '';
+                const verses = Array.isArray(psalm.verses) ? psalm.verses : [];
+                const verseHtml = verses.map((v, idx) =>
+                    `<p style="margin:0.15em 0;">${escapeHtml(String(idx + 1))}.&nbsp;${escapeHtml(v)}</p>`
+                ).join('');
+                psalmHtml += `<div class="horologion-psalm-block">${psalmTitle}${verseHtml}</div>`;
+            }
+
+            const isLast = (si === stases.length - 1);
+            const doxology = isLast
+                ? `<p class="rubric-text" style="margin:0.7em 0 0.2em; font-size:0.88em; font-style:italic;">Glory to the Father, and to the Son, and to the Holy Spirit, both now and ever and unto the ages of ages. Amen. Alleluia, alleluia, alleluia. Glory to Thee, O God. (×3)</p>`
+                : `<p class="rubric-text" style="margin:0.7em 0 0.2em; font-size:0.88em; font-style:italic;">Glory to the Father, and to the Son, and to the Holy Spirit, both now and ever and unto the ages of ages. Amen.</p>`;
+
+            stasisHtml += `<div class="horologion-kathisma-stasis">${psalmHtml}${doxology}</div>`;
+        }
+
+        const variantNote = item.variantNote
+            ? `<p class="rubric-text" style="font-size:0.8em; opacity:0.75; margin-top:0.5em;">(${escapeHtml(item.variantNote)})</p>`
+            : '';
+
+        return `<div class="horologion-kathisma">${headerLabel}${lxxNote}${stasisHtml}${variantNote}</div>` +
+               _renderHorologionDiagnostics(item, escapeHtml);
     }
 
     // type: "litany" — render each line role-tagged.

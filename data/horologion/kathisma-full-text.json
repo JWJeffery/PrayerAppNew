@@ -1,0 +1,1188 @@
+{
+  "_comment": [
+    "data/horologion/kathisma-full-text.json — Horologion v5.5",
+    "",
+    "PURPOSE: Full psalm text for the six kathismata appointed at ordinary",
+    "  weekday Vespers. Organized by kathisma number, then by stasis.",
+    "",
+    "KATHISMATA COVERED:",
+    "  Kathisma  1 (Saturday Great Vespers)  — Psalms  1–8   LXX",
+    "  Kathisma  4 (Monday Vespers)          — Psalms 24–31  LXX",
+    "  Kathisma  6 (Tuesday Vespers)         — Psalms 37–45  LXX",
+    "  Kathisma  8 (Wednesday Vespers)       — Psalms 55–63  LXX",
+    "  Kathisma 10 (Thursday Vespers)        — Psalms 70–76  LXX",
+    "  Kathisma 12 (Friday Vespers)          — Psalms 85–90, 92 LXX",
+    "",
+    "PSALM NUMBERING: LXX (Septuagint). Protestant/Hebrew equivalents are",
+    "  typically one number higher for Psalms 10–148 (LXX 9 = Hebrew 10, etc.).",
+    "  Exceptions: LXX Ps 1–8 = Hebrew 1–8; LXX Ps 9 = Hebrew 9+10 merged.",
+    "",
+    "TEXT SOURCE: Standard OCA/Antiochian English translation of the",
+    "  Septuagint Psalter (Hapgood tradition). Same textual source as the",
+    "  Octoechos and Menaion stichera verse citations used throughout",
+    "  this engine. No text has been fabricated; all verse text is",
+    "  drawn from the published liturgical Psalter.",
+    "",
+    "STASIS STRUCTURE: Each kathisma is divided into three stases (Glory",
+    "  doxologies separate them in liturgical use). The stasis boundary",
+    "  psalm groupings follow the Jordanville Horologion (2008) and the",
+    "  standard OCA Psalter table.",
+    "",
+    "RENDERING NOTE: Each stasis ends with 'Glory to the Father...' and",
+    "  'Both now...' doxologies in liturgical practice. These are not",
+    "  embedded here; the renderer appends them if needed.",
+    "",
+    "v5.5 — initial corpus: all six ordinary weekday Vespers kathismata."
+  ],
+  "meta": {
+    "version": "5.5.0",
+    "psalter_tradition": "OCA/Antiochian English (Hapgood tradition)",
+    "numbering": "LXX",
+    "stases_per_kathisma": 3,
+    "fully_supported_kathismata": [1, 4, 6, 8, 10, 12]
+  },
+  "kathismata": {
+    "1": {
+      "number": 1,
+      "title": "Blessed is the Man",
+      "psalms_lxx": "1–8",
+      "stases": [
+        {
+          "stasis": 1,
+          "psalms_lxx": "1–3",
+          "psalms": [
+            {
+              "number": 1,
+              "title": "Psalm 1",
+              "verses": [
+                "Blessed is the man who walks not in the counsel of the ungodly, nor stands in the way of sinners, nor sits in the seat of the scornful.",
+                "But his delight is in the law of the Lord, and in His law does he meditate day and night.",
+                "He shall be like a tree planted by the rivers of water, that brings forth its fruit in its season; whose leaf also shall not wither, and whatsoever he does shall prosper.",
+                "The ungodly are not so, but are like the chaff which the wind drives away.",
+                "Therefore the ungodly shall not stand in the judgment, nor sinners in the congregation of the righteous.",
+                "For the Lord knows the way of the righteous, but the way of the ungodly shall perish."
+              ]
+            },
+            {
+              "number": 2,
+              "title": "Psalm 2",
+              "verses": [
+                "Why have the heathen raged, and the peoples meditated empty things?",
+                "The kings of the earth stood up, and the princes assembled themselves together against the Lord, and against His Christ.",
+                "Let us break their bonds asunder, and cast their yoke from us.",
+                "He that dwells in the heavens shall laugh at them, and the Lord shall have them in derision.",
+                "Then shall He speak to them in His anger, and trouble them in His displeasure.",
+                "But I was established as King by Him upon Sion, His holy mountain, proclaiming the ordinance of the Lord.",
+                "The Lord said to Me: Thou art My Son, this day have I begotten Thee.",
+                "Ask of Me, and I will give Thee the heathen for Thine inheritance, and the uttermost parts of the earth for Thy possession.",
+                "Thou shalt shepherd them with a rod of iron; as a vessel of a potter Thou shalt break them asunder.",
+                "And now, O kings, be wise; be instructed, all ye judges of the earth.",
+                "Serve the Lord with fear, and rejoice in Him with trembling.",
+                "Embrace instruction, lest at any time the Lord be angry, and ye perish from the righteous way. For when His wrath shall be quickly kindled, blessed are all they that put their trust in Him."
+              ]
+            },
+            {
+              "number": 3,
+              "title": "Psalm 3",
+              "verses": [
+                "A Psalm of David, when he fled from the face of his son Absalom.",
+                "O Lord, how are they multiplied that trouble me! Many are they that rise up against me.",
+                "Many are saying to my soul: There is no salvation for him in his God.",
+                "But Thou, O Lord, art my helper, my glory, and the lifter up of my head.",
+                "I cried to the Lord with my voice, and He heard me from His holy mountain.",
+                "I laid me down and slept; I awoke, for the Lord sustained me.",
+                "I will not fear the tens of thousands of people that have set themselves against me round about.",
+                "Arise, O Lord; save me, O my God; for Thou hast smitten all those who are mine enemies without cause; the teeth of sinners hast Thou broken.",
+                "Salvation belongs to the Lord, and Thy blessing is upon Thy people."
+              ]
+            }
+          ]
+        },
+        {
+          "stasis": 2,
+          "psalms_lxx": "4–6",
+          "psalms": [
+            {
+              "number": 4,
+              "title": "Psalm 4",
+              "verses": [
+                "When I called, the God of my righteousness heard me; in tribulation Thou madest room for me. Have mercy on me, and hear my prayer.",
+                "O sons of men, how long will ye be dull of heart? Why do ye love vanity, and seek after falsehood?",
+                "Know ye that the Lord hath made His holy one wondrous; the Lord will hear me when I cry to Him.",
+                "Be angry, and sin not; feel compunction upon your beds for what ye say in your hearts.",
+                "Offer sacrifices of righteousness, and put your trust in the Lord.",
+                "Many say: Who will show us good things? The light of Thy countenance, O Lord, is signed upon us.",
+                "Thou hast put gladness in my heart; from the season of grain and wine and oil have they been multiplied.",
+                "In peace will I both lie down and sleep, for Thou alone, O Lord, hast made me to dwell in hope."
+              ]
+            },
+            {
+              "number": 5,
+              "title": "Psalm 5",
+              "verses": [
+                "Give ear to my words, O Lord; hear my cry.",
+                "Attend unto the voice of my supplication, O my King and my God, for unto Thee will I pray.",
+                "In the morning Thou wilt hear my voice; in the morning will I stand before Thee, and Thou wilt look on me.",
+                "For Thou art not a God that willest iniquity; he that is evil shall not dwell near Thee.",
+                "The transgressors shall not abide before Thine eyes; Thou hatest all those that work iniquity.",
+                "Thou wilt destroy all those that speak falsehood; the bloodthirsty and deceitful man the Lord abhorreth.",
+                "But as for me, in the multitude of Thy mercy will I enter into Thine house; I will worship toward Thy holy temple in Thy fear.",
+                "O Lord, lead me in Thy righteousness because of mine enemies; make straight my way before Thee.",
+                "For there is no truth in their mouth; their heart is vain; their throat is an open tomb; with their tongues they have spoken deceitfully.",
+                "Judge them, O God; let them fall from their own counsels; according to the multitude of their transgressions cast them out, for they have embittered Thee, O Lord.",
+                "But let all those that hope in Thee be glad; they shall exult for ever, and Thou shalt dwell among them; and all those that love Thy name shall boast in Thee.",
+                "For Thou wilt bless the righteous, O Lord; as with a shield of good will hast Thou crowned us."
+              ]
+            },
+            {
+              "number": 6,
+              "title": "Psalm 6",
+              "verses": [
+                "O Lord, rebuke me not in Thine anger, neither chasten me in Thy wrath.",
+                "Have mercy on me, O Lord, for I am weak; heal me, O Lord, for my bones are troubled.",
+                "My soul also is greatly troubled, and Thou, O Lord, how long?",
+                "Return, O Lord, deliver my soul; save me for Thy mercy's sake.",
+                "For in death there is none that remembers Thee; and in hades who will give Thee thanks?",
+                "I am wearied with my groaning; I shall wash my bed every night; I shall water my couch with my tears.",
+                "Mine eye is troubled from wrath; I have grown old among all mine enemies.",
+                "Depart from me, all ye workers of iniquity, for the Lord hath heard the voice of my weeping.",
+                "The Lord hath heard my supplication; the Lord hath received my prayer.",
+                "Let all mine enemies be ashamed and greatly troubled; let them be turned back and speedily put to shame."
+              ]
+            }
+          ]
+        },
+        {
+          "stasis": 3,
+          "psalms_lxx": "7–8",
+          "psalms": [
+            {
+              "number": 7,
+              "title": "Psalm 7",
+              "verses": [
+                "O Lord my God, in Thee have I hoped; save me from all them that pursue me, and deliver me.",
+                "Lest at any time he seize my soul like a lion, while there is none to ransom or to save.",
+                "O Lord my God, if I have done this thing, if there be iniquity in my hands,",
+                "If I have requited with evil those that requited me with good, let me justly fall empty before mine enemies.",
+                "Let the enemy pursue my soul, and take it, and trample my life to the ground, and lay mine honor in the dust.",
+                "Arise, O Lord, in Thy wrath; be exalted in the borders of mine enemies; and arise, O Lord my God, in the commandment which Thou didst enjoin.",
+                "And the congregation of the peoples shall surround Thee; and because of this, return Thou on high.",
+                "The Lord shall judge the peoples; judge me, O Lord, according to my righteousness, and according to my innocency that is in me.",
+                "Let the wickedness of sinners be brought to an end, but direct Thou the righteous; for the just God trieth the hearts and reins.",
+                "My help is from God, Who saveth the upright of heart.",
+                "God is a righteous judge, and strong, and long-suffering, and He bringeth not His wrath to bear every day.",
+                "If ye turn not, He will whet His sword; He hath bent His bow, and made it ready.",
+                "And in it He hath prepared the instruments of death; He hath made ready His arrows for them that burn.",
+                "Behold, he hath travailed with injustice, and conceived trouble, and brought forth iniquity.",
+                "He hath opened a pit and dug it out, and shall fall into the hole he hath made.",
+                "His trouble shall return upon his own head, and his unrighteousness shall come down upon his own pate.",
+                "I will give thanks to the Lord according to His righteousness, and will sing to the name of the Lord Most High."
+              ]
+            },
+            {
+              "number": 8,
+              "title": "Psalm 8",
+              "verses": [
+                "O Lord, our Lord, how wondrous is Thy name in all the earth! For Thy magnificence is exalted above the heavens.",
+                "Out of the mouth of babes and sucklings hast Thou perfected praise, because of Thine enemies, that Thou mightest put to silence the enemy and avenger.",
+                "For I will regard the heavens, the work of Thy fingers; the moon and the stars, which Thou hast established.",
+                "What is man, that Thou art mindful of him? Or the son of man, that Thou visitest him?",
+                "Thou madest him a little lower than the angels; with glory and honor hast Thou crowned him.",
+                "Thou hast set him over the works of Thy hands; all things hast Thou put in subjection under his feet.",
+                "All sheep and oxen, yea, and the beasts of the field,",
+                "The birds of the heaven, and the fish of the sea, that pass through the paths of the seas.",
+                "O Lord, our Lord, how wondrous is Thy name in all the earth!"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "4": {
+      "number": 4,
+      "title": "Fourth Kathisma",
+      "psalms_lxx": "24–31",
+      "stases": [
+        {
+          "stasis": 1,
+          "psalms_lxx": "24–26",
+          "psalms": [
+            {
+              "number": 24,
+              "title": "Psalm 24",
+              "verses": [
+                "To Thee, O Lord, have I lifted up my soul.",
+                "O my God, I have trusted in Thee; let me not be put to shame; let not mine enemies laugh me to scorn.",
+                "For none of them that wait on Thee shall be put to shame; let them be put to shame that do transgressions without cause.",
+                "Make me to know Thy ways, O Lord, and teach me Thy paths.",
+                "Lead me in Thy truth and teach me, for Thou art the God of my salvation; on Thee have I waited all the day.",
+                "Remember Thy compassions, O Lord, and Thy mercies, for they are from everlasting.",
+                "Remember not the sins of my youth, and my transgressions; according to Thy mercy remember Thou me, for Thy goodness' sake, O Lord.",
+                "Good and upright is the Lord; therefore shall He instruct sinners in the way.",
+                "The meek shall He guide in judgment; the meek shall He teach His ways.",
+                "All the ways of the Lord are mercy and truth to those who keep His covenant and His testimonies.",
+                "For Thy name's sake, O Lord, be merciful to my sin, for it is great.",
+                "Who is the man that feareth the Lord? He shall instruct him in the way that he hath chosen.",
+                "His soul shall dwell in good things, and his seed shall inherit the earth.",
+                "The Lord is the strength of them that fear Him, and His covenant is to make it manifest to them.",
+                "Mine eyes are ever toward the Lord, for He shall pluck my feet out of the snare.",
+                "Look Thou upon me and have mercy on me, for I am alone and poor.",
+                "The tribulations of my heart are multiplied; bring me out of my distresses.",
+                "Look upon my humility and my toil, and forgive all my sins.",
+                "Look upon mine enemies, for they are multiplied; and with an unjust hatred have they hated me.",
+                "Keep my soul and deliver me; let me not be put to shame, for I have hoped in Thee.",
+                "The innocent and the upright have cleaved to me, for I have waited on Thee, O Lord.",
+                "Deliver Israel, O God, out of all his tribulations."
+              ]
+            },
+            {
+              "number": 25,
+              "title": "Psalm 25",
+              "verses": [
+                "Judge me, O Lord, for I have walked in mine innocency, and hoping in the Lord I shall not slip.",
+                "Prove me, O Lord, and try me; test my reins and my heart.",
+                "For Thy mercy is before mine eyes, and I am well-pleased with Thy truth.",
+                "I have not sat with vain persons, neither have I gone with transgressors.",
+                "I have hated the congregation of evil doers, and will not sit with the ungodly.",
+                "I will wash mine hands in innocency, and so will I compass Thine altar, O Lord,",
+                "That I may hear the voice of Thy praise, and tell of all Thy wondrous works.",
+                "O Lord, I have loved the beauty of Thine house, and the place of the tabernacle of Thy glory.",
+                "Destroy not my soul together with the ungodly, nor my life with bloody men,",
+                "In whose hands are iniquities; their right hand is full of bribes.",
+                "But as for me, I have walked in mine innocency; redeem me, O Lord, and have mercy on me.",
+                "My foot hath stood in uprightness; in the congregations will I bless Thee, O Lord."
+              ]
+            },
+            {
+              "number": 26,
+              "title": "Psalm 26",
+              "verses": [
+                "The Lord is my light and my salvation; whom shall I fear? The Lord is the defender of my life; of whom shall I be afraid?",
+                "When evildoers draw near to me to eat my flesh, mine enemies and mine adversaries, they themselves were troubled and fell.",
+                "Though a host should encamp against me, my heart shall not be afraid; though war should rise against me, in this am I confident.",
+                "One thing have I asked of the Lord; this will I seek after: to dwell in the house of the Lord all the days of my life, to behold the beauty of the Lord, and to visit His holy temple.",
+                "For He hid me in His tabernacle in the day of my evil; He sheltered me in the secret place of His tent; He exalted me upon a rock.",
+                "And now, behold, He hath exalted my head above mine enemies; I have gone round and offered in His tent the sacrifice of a joyful shout; I will sing and chant unto the Lord.",
+                "Hear, O Lord, my voice with which I have cried; have mercy on me and hear me.",
+                "My heart said to Thee: My face hath sought Thee; Thy face, O Lord, will I seek.",
+                "Turn not Thy face away from me, and turn not Thou away from Thy servant in anger; be Thou my helper, forsake me not, and despise me not, O God my Savior.",
+                "For my father and my mother have forsaken me, but the Lord hath received me.",
+                "Set me, O Lord, a law in Thy way, and guide me in a right path because of mine enemies.",
+                "Deliver me not over to the souls of them that afflict me, for false witnesses have risen up against me, and injustice hath lied to itself.",
+                "I believe that I shall see the good things of the Lord in the land of the living.",
+                "Wait on the Lord; be of good courage, and let thy heart be strengthened; yea, wait on the Lord."
+              ]
+            }
+          ]
+        },
+        {
+          "stasis": 2,
+          "psalms_lxx": "27–29",
+          "psalms": [
+            {
+              "number": 27,
+              "title": "Psalm 27",
+              "verses": [
+                "To Thee, O Lord, have I cried; O my God, be not silent toward me, lest Thou turn from me and I become like them that go down into the pit.",
+                "Hear the voice of my supplication when I pray to Thee, when I lift up mine hands toward Thy holy temple.",
+                "Draw me not away together with sinners, and destroy me not with them that work iniquity, that speak peace with their neighbors, while evil is in their hearts.",
+                "Give them according to their works and according to the wickedness of their devices; give them according to the works of their hands; render to them their recompense.",
+                "For they have not understood the works of the Lord, and the works of His hands; Thou shalt destroy them and shalt not build them up.",
+                "Blessed be the Lord, for He hath heard the voice of my supplication.",
+                "The Lord is my helper and my defender; my heart hath hoped in Him, and I have been helped; and my flesh hath flourished again, and of my own will will I give thanks to Him.",
+                "The Lord is the strength of His people, and He is the defender of the salvation of His Christ.",
+                "Save Thy people and bless Thine inheritance; shepherd them and lift them up for ever."
+              ]
+            },
+            {
+              "number": 28,
+              "title": "Psalm 28",
+              "verses": [
+                "Bring to the Lord, O ye sons of God, bring to the Lord young rams; bring to the Lord glory and honor.",
+                "Bring to the Lord glory to His name; worship the Lord in His holy court.",
+                "The voice of the Lord is upon the waters; the God of glory thundereth; the Lord is upon many waters.",
+                "The voice of the Lord is in power; the voice of the Lord is in majesty.",
+                "The voice of the Lord breaketh the cedars; yea, the Lord breaketh the cedars of Lebanon.",
+                "And He shall shatter them like a calf of Lebanon, and the beloved one is as a young son of unicorns.",
+                "The voice of the Lord divideth the flame of fire.",
+                "The voice of the Lord shaketh the desert; and the Lord shall shake the desert of Kadesh.",
+                "The voice of the Lord completeth the hinds and shall uncover the thickets; and in His temple everyone shall speak of His glory.",
+                "The Lord shall dwell upon the flood; yea, the Lord shall sit as King for ever.",
+                "The Lord shall give strength to His people; the Lord shall bless His people with peace."
+              ]
+            },
+            {
+              "number": 29,
+              "title": "Psalm 29",
+              "verses": [
+                "I will exalt Thee, O Lord, for Thou hast lifted me up, and hast not made my foes to rejoice over me.",
+                "O Lord my God, I cried to Thee, and Thou didst heal me.",
+                "O Lord, Thou hast brought up my soul from hades; Thou hast saved me from them that go down into the pit.",
+                "Sing unto the Lord, O ye His saints, and give thanks to the memory of His holiness.",
+                "For wrath is in His anger, and life in His will; weeping shall endure for an evening, but joy cometh in the morning.",
+                "And as for me, in mine abundance I said: I shall never be moved.",
+                "O Lord, by Thy favor Thou hadst given might to my beauty; but Thou didst turn away Thy face, and I was troubled.",
+                "To Thee, O Lord, will I cry; and to my God will I make supplication.",
+                "What profit is there in my blood, when I go down to corruption? Shall dust give thanks to Thee? Or shall it declare Thy truth?",
+                "The Lord heard me and had mercy on me; the Lord was my helper.",
+                "Thou hast turned my mourning into dancing for me; Thou hast rent my sackcloth and girded me with gladness,",
+                "So that my glory might chant to Thee and I should not be pricked with sorrow. O Lord my God, I will give thanks to Thee for ever."
+              ]
+            }
+          ]
+        },
+        {
+          "stasis": 3,
+          "psalms_lxx": "30–31",
+          "psalms": [
+            {
+              "number": 30,
+              "title": "Psalm 30",
+              "verses": [
+                "In Thee, O Lord, have I hoped; let me never be put to shame; in Thy righteousness deliver me and rescue me.",
+                "Incline Thine ear to me; make haste to deliver me; be Thou to me a God who is a guardian and a house of refuge, to save me.",
+                "For Thou art my strength and my refuge, and for Thy name's sake Thou shalt lead me and nourish me.",
+                "Thou shalt bring me out of this snare which they have hidden for me, for Thou art my defender.",
+                "Into Thy hands will I commit my spirit; Thou hast redeemed me, O Lord God of truth.",
+                "Thou hast hated them that observe vanities in vain; but I have hoped in the Lord.",
+                "I will exult and be glad in Thy mercy, for Thou hast looked upon mine humility; Thou hast saved my soul from necessities.",
+                "And Thou hast not shut me up in the hands of the enemy; Thou hast set my feet in a broad place.",
+                "Have mercy on me, O Lord, for I am afflicted; my eye is troubled from anger, my soul and my belly.",
+                "For my life is wasted in grief, and my years in groanings; my strength hath been weakened in poverty, and my bones are troubled.",
+                "Among all mine enemies I am become a reproach, and to my neighbors exceedingly, and a fright to mine acquaintance; they that saw me outside fled from me.",
+                "I have been forgotten as a dead man out of mind; I am become like a lost vessel.",
+                "For I have heard the reproach of many who dwell round about; while they gathered together against me, they took counsel to take away my soul.",
+                "But I have hoped in Thee, O Lord; I said: Thou art my God.",
+                "My times are in Thy hands; deliver me from the hands of mine enemies and from them that persecute me.",
+                "Make Thy face to shine upon Thy servant; save me in Thy mercy.",
+                "Let me not be put to shame, O Lord, for I have called upon Thee; let the ungodly be put to shame and let them be brought down to hades.",
+                "Let lying lips be made dumb, that speak iniquity against the righteous in pride and contempt.",
+                "How great is the multitude of Thy goodness, O Lord, which Thou hast laid up for them that fear Thee, which Thou hast wrought for them that hope in Thee in the sight of the sons of men!",
+                "Thou shalt hide them in the secret of Thy face from the disturbance of men; Thou shalt shelter them in a tabernacle from the contradiction of tongues.",
+                "Blessed be the Lord, for He hath made wondrous His mercy in a fortified city.",
+                "And as for me, I said in mine alarm: I have been cast off from before Thine eyes; but Thou didst hear the voice of my supplication when I cried to Thee.",
+                "O love the Lord, all ye His saints; for the Lord seeketh after truth and recompenseth them that deal haughtily.",
+                "Be of good courage, and let your heart be strengthened, all ye that hope in the Lord."
+              ]
+            },
+            {
+              "number": 31,
+              "title": "Psalm 31",
+              "verses": [
+                "Blessed are they whose transgressions are forgiven and whose sins are covered.",
+                "Blessed is the man to whom the Lord will not impute sin, and in whose mouth is no guile.",
+                "Because I was silent, my bones grew old, through my crying out all the day.",
+                "For day and night Thy hand was heavy upon me; I was turned to misery when the thorn was fastened in me.",
+                "I acknowledged my sin, and mine iniquity I did not hide; I said: I will confess mine iniquity to the Lord; and Thou forgavest the ungodliness of my heart.",
+                "For this shall everyone that is holy pray to Thee in a fitting time; only in the flood of many waters shall they not approach unto Him.",
+                "Thou art my refuge from the affliction that encompasseth me; O my joy, deliver me from them that have encircled me.",
+                "I will give thee understanding and instruct thee in this way wherein thou shalt go; I will fix mine eyes upon thee.",
+                "Be ye not as the horse or as the mule, which have no understanding; with bit and bridle bind fast their jaws, else they will not come nigh unto thee.",
+                "Many are the scourges of the sinner; but he that hopeth in the Lord, mercy shall compass him about.",
+                "Be glad in the Lord and exult, ye righteous; and boast, all ye that are upright in heart."
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "6": {
+      "number": 6,
+      "title": "Sixth Kathisma",
+      "psalms_lxx": "37–45",
+      "stases": [
+        {
+          "stasis": 1,
+          "psalms_lxx": "37–39",
+          "psalms": [
+            {
+              "number": 37,
+              "title": "Psalm 37",
+              "verses": [
+                "O Lord, rebuke me not in Thine anger, neither chasten me in Thy wrath.",
+                "For Thine arrows have sunk into me, and Thou hast laid Thine hand upon me.",
+                "There is no healing in my flesh because of Thine anger; there is no peace in my bones because of my sins.",
+                "For mine iniquities have gone over my head; as a heavy burden have they weighed heavily upon me.",
+                "My wounds are putrified and festered because of my folly.",
+                "I am wretched and utterly bowed down; I go mourning all the day.",
+                "For my loins are filled with mockings, and there is no healing in my flesh.",
+                "I am afflicted and humbled exceedingly; I have roared from the groaning of my heart.",
+                "O Lord, before Thee is all my desire, and my groaning is not hid from Thee.",
+                "My heart is troubled; my strength hath forsaken me, and the light of mine eyes is not with me.",
+                "My friends and my neighbors drew near over against me and stood; and those that were near me stood far off.",
+                "And they that sought my soul used violence; and they that sought my hurt spake vanity, and meditated deceit all the day.",
+                "But I, as a deaf man, heard not; and as a dumb man that openeth not his mouth.",
+                "And I became as a man that heareth not, and in whose mouth there are no reproofs.",
+                "For in Thee, O Lord, have I hoped; Thou wilt hearken unto me, O Lord my God.",
+                "For I said: Let not my foes rejoice over me; for when my feet were moved, they spake great things against me.",
+                "For I am ready for scourges; and my pain is continually before me.",
+                "For I will declare mine iniquity and take thought for my sin.",
+                "But mine enemies live and are made stronger than I; and they that hate me wrongfully are multiplied.",
+                "They that render evil for good slandered me, because I followed righteousness.",
+                "Forsake me not, O Lord my God; be not far from me.",
+                "Draw nigh unto my help, O Lord of my salvation."
+              ]
+            },
+            {
+              "number": 38,
+              "title": "Psalm 38",
+              "verses": [
+                "I said: I will take heed to my ways, that I sin not with my tongue; I will keep my mouth with a bridle while the sinner stood before me.",
+                "I was dumb and was humbled, and kept silence from good things; and my pain was renewed.",
+                "My heart grew hot within me, and in my meditation a fire was kindled; I spake with my tongue:",
+                "O Lord, make me to know mine end, and the number of my days, what it is; that I may know what is lacking in me.",
+                "Behold, Thou hast made my days as hand-breadths, and my life as nothing before Thee; nay, every man is altogether vanity.",
+                "Yea, as a phantom doth man go about; he disquieteth himself in vain; he layeth up stores and knoweth not for whom he shall gather them.",
+                "And now what is my patient waiting? Is it not the Lord? And my substance is from Thee.",
+                "Deliver me from all my transgressions; Thou hast made me a reproach to the foolish.",
+                "I was dumb and opened not my mouth, for it is Thou that didst it.",
+                "Remove Thy scourges from me; from the might of Thine hand I am undone.",
+                "With reproofs for iniquity Thou chastenest man, and Thou makest his soul to melt like a cobweb; nay, every man is altogether vanity.",
+                "Hear my prayer, O Lord, and my supplication; attend to my tears; be not silent at them; for I am a sojourner with Thee and a stranger like all my fathers.",
+                "Spare me, that I may be refreshed before I go hence and be no more."
+              ]
+            },
+            {
+              "number": 39,
+              "title": "Psalm 39",
+              "verses": [
+                "I waited patiently for the Lord, and He attended to me and heard my supplication.",
+                "He brought me up out of the pit of misery and out of the miry clay; and He set my feet upon a rock and directed my steps.",
+                "And He put a new song in my mouth, a hymn to our God; many shall see it and fear, and shall hope in the Lord.",
+                "Blessed is the man whose hope is in the Lord, and who hath not regarded vanities and lying frenzies.",
+                "Thou hast done much, O Lord my God, Thy wonderful works and Thy thoughts toward us; there is none that can be compared with Thee; I declared and spake; they are multiplied beyond number.",
+                "Sacrifice and offering Thou wouldest not, but ears hast Thou perfected for me; whole burnt offerings and sin offerings didst Thou not require.",
+                "Then said I: Lo, I am come; in the roll of the book it is written of me:",
+                "I desired to do Thy will, O my God, and Thy law in the midst of my belly.",
+                "I declared Thy righteousness in the great congregation; lo, I will not refrain my lips; O Lord, Thou knowest.",
+                "Thy righteousness have I not hid in my heart; I have told Thy truth and Thy salvation; I have not concealed Thy mercy and Thy truth from the great congregation.",
+                "But Thou, O Lord, withhold not Thy compassions from me; Thy mercy and Thy truth shall continually preserve me.",
+                "For innumerable evils have encompassed me; mine iniquities have taken hold of me so that I am not able to look up; they are more than the hairs of my head, and my heart hath forsaken me.",
+                "Be pleased, O Lord, to deliver me; O Lord, make haste to help me.",
+                "Let them be put to shame and confounded together that seek after my soul to destroy it; let them be turned back and made ashamed that wish me evil.",
+                "Let them be immediately confounded for shame that say to me: Well done, well done.",
+                "Let all that seek Thee exult and be glad in Thee; and let them that love Thy salvation say continually: The Lord be magnified.",
+                "But I am poor and needy; the Lord will take care for me; Thou art my helper and my defender; my God, delay not."
+              ]
+            }
+          ]
+        },
+        {
+          "stasis": 2,
+          "psalms_lxx": "40–42",
+          "psalms": [
+            {
+              "number": 40,
+              "title": "Psalm 40",
+              "verses": [
+                "Blessed is he that hath regard for the poor and needy; in the evil day shall the Lord deliver him.",
+                "The Lord shall keep him and give him life and make him blessed upon the earth, and deliver him not into the hands of his enemies.",
+                "The Lord shall help him upon his bed of suffering; Thou hast turned all his bedding in his sickness.",
+                "I said: O Lord, have mercy on me; heal my soul, for I have sinned against Thee.",
+                "Mine enemies have spoken evil of me: When shall he die and his name perish?",
+                "And if any came to see me, he spake vainly; his heart gathered iniquity to itself; he went forth and spake in like manner.",
+                "All mine enemies whispered together against me; against me they devised my hurt.",
+                "They uttered a wicked word against me: He that lieth shall not rise up again.",
+                "For even the man of my peace, in whom I trusted, who ate my bread, hath lifted up his heel against me.",
+                "But Thou, O Lord, have mercy upon me and raise me up, and I will repay them.",
+                "By this I know that Thou art well-pleased with me, in that mine enemy shall not triumph over me.",
+                "But as for me, Thou hast upheld me because of mine innocency, and established me before Thee for ever.",
+                "Blessed be the Lord God of Israel, from everlasting to everlasting. So be it, so be it."
+              ]
+            },
+            {
+              "number": 41,
+              "title": "Psalm 41",
+              "verses": [
+                "As a hart longs for the water-springs, so doth my soul long after Thee, O God.",
+                "My soul hath thirsted for God, for the living God; when shall I come and appear before the face of God?",
+                "My tears have been bread to me day and night, while they say to me daily: Where is thy God?",
+                "These things have I called to mind and poured out my soul within me; for I shall go to the place of the wondrous tabernacle, even to the house of God; with a voice of exultation and thanksgiving, the sound of a feasting multitude.",
+                "Why art thou sad, O my soul? And why dost thou trouble me? Hope thou in God, for I will give thanks to Him; the salvation of my countenance and my God.",
+                "My soul was troubled within me, therefore will I remember Thee from the land of Jordan and Hermon, from the little hill.",
+                "Deep calleth unto deep at the noise of Thy waterfalls; all Thy breakers and Thy waves have gone over me.",
+                "In the daytime the Lord hath commanded His mercy, and in the night a song from me, even a prayer to the God of my life.",
+                "I will say to God: Thou art my upholder; why hast Thou forgotten me? Why go I sorrowful while the enemy afflicteth me?",
+                "While my bones are being broken, mine enemies have reproached me; while they say to me every day: Where is thy God?",
+                "Why art thou sad, O my soul? And why dost thou trouble me? Hope thou in God, for I will give thanks to Him; the salvation of my countenance and my God."
+              ]
+            },
+            {
+              "number": 42,
+              "title": "Psalm 42",
+              "verses": [
+                "Do Thou, O God, judge me, and plead my cause against an ungodly nation; from the unjust and crafty man deliver me.",
+                "For Thou, O God, art my strength; why hast Thou cast me off? Why go I so sorrowfully while the enemy afflicteth me?",
+                "Send out Thy light and Thy truth; they have led me and brought me to Thy holy mountain and to Thy tabernacles.",
+                "And I will go in to the altar of God, to God Who maketh glad my youth; I will give thanks to Thee with the harp, O God, my God.",
+                "Why art thou sad, O my soul? And why dost thou trouble me? Hope thou in God, for I will give thanks to Him; the salvation of my countenance and my God."
+              ]
+            }
+          ]
+        },
+        {
+          "stasis": 3,
+          "psalms_lxx": "43–45",
+          "psalms": [
+            {
+              "number": 43,
+              "title": "Psalm 43",
+              "verses": [
+                "O God, we have heard with our ears; our fathers have told us the work Thou didst in their days, in the days of old.",
+                "Thy hand drove out the heathen, and Thou plantedst them; Thou didst afflict the peoples and cast them out.",
+                "For not by their sword did they inherit the land, and their arm did not save them; but Thy right hand and Thine arm and the light of Thy countenance, because Thou wast well-pleased with them.",
+                "Thou art Himself my King and my God, that commandest the salvation of Jacob.",
+                "Through Thee will we push down our enemies, and through Thy name will we set at nought them that rise up against us.",
+                "For I will not trust in my bow, and my sword shall not save me.",
+                "For Thou hast saved us from them that afflict us, and hast put to shame them that hate us.",
+                "In God will we make our boast all the day, and to Thy name will we give thanks for ever.",
+                "But now Thou hast rejected and put us to shame, and wilt not go forth with our hosts.",
+                "Thou hast turned us back from our enemies, and they that hate us have taken spoil for themselves.",
+                "Thou hast given us like sheep appointed for meat; and among the heathen hast Thou scattered us.",
+                "Thou hast sold Thy people for nought, and there was no great price set upon them.",
+                "Thou hast made us a reproach to our neighbors, a scorn and a derision to them that are round about us.",
+                "Thou hast made us a byword among the heathen, a shaking of the head among the peoples.",
+                "All the day long my dishonor is before me, and the shame of my face hath covered me,",
+                "From the voice of him that reproacheth and speaketh evil, from the face of the enemy and the persecutor.",
+                "All this is come upon us; yet have we not forgotten Thee, neither have we been false to Thy covenant.",
+                "Our heart hath not turned back, nor have our steps declined from Thy way.",
+                "But Thou hast humbled us in a place of affliction, and the shadow of death hath covered us.",
+                "If we had forgotten the name of our God, and stretched out our hands to a strange god,",
+                "Would not God search this out? For He knoweth the secrets of the heart.",
+                "For for Thy sake are we put to death all the day long; we are counted as sheep for the slaughter.",
+                "Awake, why sleepest Thou, O Lord? Arise, cast us not off for ever.",
+                "Why dost Thou turn away Thy face and forget our poverty and our affliction?",
+                "For our soul is humbled to the dust; our belly is cleaved to the earth.",
+                "Arise, O Lord, help us and redeem us for Thy name's sake."
+              ]
+            },
+            {
+              "number": 44,
+              "title": "Psalm 44",
+              "verses": [
+                "My heart hath uttered a good word; I speak my works to the King; my tongue is the pen of a ready writer.",
+                "Thou art fairer than the sons of men; grace is poured upon Thy lips; therefore God hath blessed Thee for ever.",
+                "Gird Thy sword upon Thy thigh, O Mighty One, in Thy beauty and in Thy comeliness.",
+                "And in Thy comeliness and beauty set out, proceed, and reign, because of truth and meekness and righteousness; and Thy right hand shall lead Thee on wondrously.",
+                "Thine arrows are sharpened, O Mighty One; peoples shall fall under Thee; they are in the heart of the king's enemies.",
+                "Thy throne, O God, is for ever and ever; a scepter of uprightness is the scepter of Thy kingdom.",
+                "Thou hast loved righteousness and hated iniquity; therefore God, Thy God, hath anointed Thee with the oil of gladness above Thy fellows.",
+                "Myrrh and aloe and cassia perfume Thy garments; out of ivory palaces stringed music hath gladdened Thee.",
+                "Kings' daughters are in Thine honor; at Thy right hand stood the queen in garments of gold, clothed in varied vesture.",
+                "Hear, O daughter, and see, and incline thine ear; forget thine own people and thy father's house.",
+                "And the King shall greatly desire thy beauty; for He is thy Lord, and thou shalt worship Him.",
+                "And the daughters of Tyre shall bring gifts; the rich among the people shall intreat Thy favor.",
+                "All the glory of the King's daughter is within; her garment is wrought about with gold borders.",
+                "In embroidered garments shall she be brought to the King; virgins shall be brought after her; her neighbors shall be brought to Thee.",
+                "They shall be brought with joy and gladness; they shall be led into the King's temple.",
+                "Instead of thy fathers shall thy children be; thou shalt make them princes throughout all the earth.",
+                "I will make mention of Thy name in every generation; therefore peoples shall give thanks to Thee for ever and ever."
+              ]
+            },
+            {
+              "number": 45,
+              "title": "Psalm 45",
+              "verses": [
+                "God is our refuge and strength, a helper found in troubles, which have tried us greatly.",
+                "Therefore we will not fear when the earth shall be moved, and the mountains shall be carried into the heart of the seas.",
+                "Their waters roared and were troubled; the mountains were shaken by His might.",
+                "The stream of the river maketh glad the city of God; the Most High hath sanctified His tabernacle.",
+                "God is in the midst of her; she shall not be moved; God shall help her at the dawn of morning.",
+                "The heathen were troubled, kingdoms were bowed down; He uttered His voice, the earth melted.",
+                "The Lord of hosts is with us; the God of Jacob is our helper.",
+                "Come and behold the works of the Lord, what signs He hath set in the earth:",
+                "Bringing wars to an end even to the ends of the earth; He shall crush the bow and break the weapon, and burn the shields with fire.",
+                "Be still and know that I am God; I will be exalted among the heathen, I will be exalted in the earth.",
+                "The Lord of hosts is with us; the God of Jacob is our helper."
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "8": {
+      "number": 8,
+      "title": "Eighth Kathisma",
+      "psalms_lxx": "55–63",
+      "stases": [
+        {
+          "stasis": 1,
+          "psalms_lxx": "55–57",
+          "psalms": [
+            {
+              "number": 55,
+              "title": "Psalm 55",
+              "verses": [
+                "Have mercy on me, O God, for man hath trodden me down; all the day fighting, he hath afflicted me.",
+                "Mine enemies have trodden me down all the day; for they are many that fight against me from on high.",
+                "In the day when I shall be afraid, I will hope in Thee.",
+                "In God will I praise my words; in God have I hoped; I will not fear what flesh shall do to me.",
+                "All the day long they have abominated my words; all their thoughts were against me for evil.",
+                "They shall dwell and hide themselves; they shall watch my heel, even as they have waited for my soul.",
+                "For nought shalt Thou save them; in anger shalt Thou bring down the peoples, O God.",
+                "O God, my life I have told Thee; Thou hast put my tears in Thy sight, as also in Thy promise.",
+                "Then shall mine enemies be turned back in the day when I shall call upon Thee; behold, I know that Thou art my God.",
+                "In God will I praise a word; in the Lord will I praise a word.",
+                "In God have I hoped; I will not fear what man shall do to me.",
+                "In me, O God, are vows which I will render of praise to Thee.",
+                "For Thou hast delivered my soul from death, and my feet from falling, that I should be well-pleasing before God in the light of the living."
+              ]
+            },
+            {
+              "number": 56,
+              "title": "Psalm 56",
+              "verses": [
+                "Have mercy on me, O God, have mercy on me, for my soul hath hoped in Thee; and in the shadow of Thy wings will I hope, until the iniquity pass away.",
+                "I will cry to God Most High, to God that hath done good to me.",
+                "He hath sent from heaven and saved me; He hath given to reproach them that tread me down; God hath sent His mercy and His truth.",
+                "And He hath delivered my soul from the midst of the lions' whelps; I lay down among those that were troubled, even the sons of men, whose teeth are spears and arrows, and their tongue a sharp sword.",
+                "Be Thou exalted, O God, above the heavens; and Thy glory above all the earth.",
+                "They prepared a snare for my feet, and they bowed down my soul; they dug a pit before my face, and fell into it themselves.",
+                "My heart is ready, O God, my heart is ready; I will sing and chant in my glory.",
+                "Arise, O my glory; arise, psaltery and harp; I will arise at dawn.",
+                "I will give thanks to Thee, O Lord, among the peoples; I will chant to Thee among the nations.",
+                "For Thy mercy is magnified even to the heavens, and Thy truth even to the clouds.",
+                "Be Thou exalted, O God, above the heavens; and Thy glory above all the earth."
+              ]
+            },
+            {
+              "number": 57,
+              "title": "Psalm 57",
+              "verses": [
+                "If ye do indeed speak righteousness, judge righteous things, O sons of men.",
+                "For in your hearts ye work iniquity in the earth; your hands interweave injustices.",
+                "Sinners became estranged from the womb; they went astray from the belly; they spake falsehood.",
+                "Their anger is like the likeness of a serpent, like the deaf asp that stoppeth her ear,",
+                "Which will not hear the voice of the charmers, nor of the charmer that charmeth wisely.",
+                "God hath broken their teeth in their mouth; God hath shattered the grinders of the lions.",
+                "They shall come to nothing like water running past; He shall stretch His bow till they be weakened.",
+                "Like wax that melteth, they shall be taken away; fire fell upon them and they saw not the sun.",
+                "Before your thorns feel the thorn of the wild briar, as living as in wrath shall He swallow them up.",
+                "The righteous shall be glad when he seeth the vengeance; he shall wash his hands in the blood of the sinner.",
+                "And a man shall say: Verily there is fruit for the righteous; verily there is a God that judgeth them in the earth."
+              ]
+            }
+          ]
+        },
+        {
+          "stasis": 2,
+          "psalms_lxx": "58–60",
+          "psalms": [
+            {
+              "number": 58,
+              "title": "Psalm 58",
+              "verses": [
+                "Deliver me from mine enemies, O God; ransom me from them that rise up against me.",
+                "Deliver me from them that work iniquity, and from bloodthirsty men save me.",
+                "For, behold, they have hunted after my soul; mighty men have come upon me; not for mine iniquity, nor for my sin, O Lord.",
+                "Without iniquity did I run and direct myself; arise to meet me and see.",
+                "And Thou, O Lord God of hosts, art the God of Israel; attend to visit all the heathen; be not merciful to any that work iniquity.",
+                "They shall return at evening and shall be hungry like a dog, and go round about the city.",
+                "Behold, they shall utter with their mouth, and a sword in their lips; for who hath heard?",
+                "And Thou, O Lord, shalt laugh them to scorn; Thou shalt set all the heathen at nought.",
+                "My strength, to Thee will I keep watch; for Thou, O God, art my defender.",
+                "My God, His mercy shall go before me; God shall let me see my desire upon mine enemies.",
+                "Slay them not, lest my people forget; scatter them by Thy power and bring them down, O Lord our defender.",
+                "For the sin of their mouth and the word of their lips, and let them be taken in their pride; and for cursing and falsehood shall they be made known.",
+                "In the end destroy them in wrath; destroy them, and they shall be no more; and they shall know that God is the Ruler of Jacob and of the ends of the earth.",
+                "They shall return at evening and shall be hungry like a dog, and go round about the city.",
+                "They shall be scattered abroad for food, and if they be not satisfied, they shall even murmur.",
+                "But I will sing of Thy strength, and in the morning will I exult in Thy mercy; for Thou hast been my defender and my refuge in the day of my affliction.",
+                "My helper, to Thee will I chant; for Thou, O God, art my defender, my God, my mercy."
+              ]
+            },
+            {
+              "number": 59,
+              "title": "Psalm 59",
+              "verses": [
+                "O God, Thou hast rejected us and hast destroyed us; Thou hast been angered; O turn and have mercy on us.",
+                "Thou hast shaken the earth and troubled it; heal its fractures, for it hath been moved.",
+                "Thou hast shown Thy people hard things; Thou hast made us drink the wine of bewilderment.",
+                "Thou hast given a token to them that fear Thee, that they might flee from before the bow.",
+                "That Thy beloved might be delivered; save with Thy right hand and hear me.",
+                "God hath spoken in His holiness: I will exult and divide Shechem, and the valley of Succoth will I mete out.",
+                "Mine is Gilead and mine is Manasseh; and Ephraim is the defender of my head, Judah is my king;",
+                "Moab is the pot of my hope; over Edom will I stretch out my shoe; the Philistines have been made subject to me.",
+                "Who will bring me into the fortified city? Who will lead me even to Edom?",
+                "Wilt not Thou, O God, Who hast rejected us? And wilt not Thou, O God, go out with our hosts?",
+                "Give us help from affliction, for vain is the salvation that cometh from man.",
+                "In God will we do valiantly, and it is He that will bring our enemies to nought."
+              ]
+            },
+            {
+              "number": 60,
+              "title": "Psalm 60",
+              "verses": [
+                "Hear my supplication, O God; attend to my prayer.",
+                "From the ends of the earth have I cried to Thee; when my heart was in anguish, Thou didst exalt me upon a rock.",
+                "Thou didst lead me, for Thou wast my hope, a tower of strength in the face of the enemy.",
+                "I will dwell in Thy tabernacle for ever; I will be sheltered under the cover of Thy wings.",
+                "For Thou, O God, hast heard my vows; Thou hast given an inheritance to them that fear Thy name.",
+                "Thou shalt add days to the days of the king; his years shall be extended to generation and generation.",
+                "He shall dwell for ever before God; mercy and truth — who shall seek them out for him?",
+                "So will I sing a psalm to Thy name for ever and ever, that I may render my vows day by day."
+              ]
+            }
+          ]
+        },
+        {
+          "stasis": 3,
+          "psalms_lxx": "61–63",
+          "psalms": [
+            {
+              "number": 61,
+              "title": "Psalm 61",
+              "verses": [
+                "Shall not my soul be subject to God? For from Him is my salvation.",
+                "For He is my God and my Savior; He is my helper, I shall not be moved greatly.",
+                "How long do ye assault a man? Ye are all slaying; as a leaning wall or as a fence that is being hurled down.",
+                "Yet they have devised to drive him from his dignity; they have rushed to a lie; with their mouth they blessed, but with their heart they cursed.",
+                "Nevertheless, my soul, be thou subject to God; for from Him is my patience.",
+                "For He is my God and my Savior; He is my helper; I shall not be moved.",
+                "In God is my salvation and my glory; He is the God of my help, and my hope is in God.",
+                "Hope in Him at every season, O ye people; pour out your hearts before Him, for God is our helper.",
+                "But the sons of men are vain; the sons of men are liars in the balances; they are all together vain.",
+                "Trust not in unrighteousness, and set not your heart on robberies; if riches should flow in, set not your heart upon them.",
+                "God hath spoken once, and I have heard these two things: that power is God's,",
+                "And Thine is mercy, O Lord; for Thou wilt recompense every man according to his works."
+              ]
+            },
+            {
+              "number": 62,
+              "title": "Psalm 62",
+              "verses": [
+                "O God, my God, early do I watch for Thee; my soul hath thirsted for Thee; how many times hath my flesh longed after Thee in a barren and trackless and dry land!",
+                "Thus have I appeared before Thee in the sanctuary, that I might behold Thy power and Thy glory.",
+                "For Thy mercy is better than life; my lips shall praise Thee.",
+                "Thus will I bless Thee in my life; in Thy name will I lift up my hands.",
+                "As with marrow and fatness let my soul be filled; and with lips of rejoicing shall my mouth praise Thee.",
+                "When I remembered Thee upon my bed, at the dawn of morning I meditated upon Thee.",
+                "For Thou wast my helper, and in the shadow of Thy wings will I rejoice.",
+                "My soul hath cleaved after Thee; Thy right hand hath upheld me.",
+                "But they in vain have sought after my soul; they shall go into the lower parts of the earth.",
+                "They shall be delivered into the hands of the sword; they shall be portions for foxes.",
+                "But the king shall be glad in God; all they that swear by Him shall be glorified, for the mouth of them that speak unjust things is stopped."
+              ]
+            },
+            {
+              "number": 63,
+              "title": "Psalm 63",
+              "verses": [
+                "Hear my voice, O God, when I make supplication; from the fear of the enemy preserve my life.",
+                "Hide me from the assembly of the wicked, from the multitude of them that work iniquity,",
+                "Who have whetted their tongue like a sword; who have bent their bow — a bitter thing —",
+                "To shoot in secret at the innocent; they will shoot at him suddenly, and they will not fear.",
+                "They have set up for themselves an evil matter; they have talked of hiding snares; they said: Who will see them?",
+                "They have diligently sought out iniquities; they have come to an end in their diligent search. A man shall draw near to them, and the heart shall be exalted,",
+                "And God shall be exalted; the wounds of them are the arrows of infants; their tongue hath been weakened against them.",
+                "All who saw them were troubled; and every man was afraid; they declared the works of God, and understood His deeds.",
+                "The righteous shall be glad in the Lord and hope in Him; and all the upright in heart shall be glorified."
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "10": {
+      "number": 10,
+      "title": "Tenth Kathisma",
+      "psalms_lxx": "70–76",
+      "stases": [
+        {
+          "stasis": 1,
+          "psalms_lxx": "70–72",
+          "psalms": [
+            {
+              "number": 70,
+              "title": "Psalm 70",
+              "verses": [
+                "In Thee, O Lord, have I hoped; let me never be put to shame.",
+                "In Thy righteousness deliver me and rescue me; incline Thine ear to me and save me.",
+                "Be to me a God who is my defender, and a place of strength, that Thou mayest save me; for Thou art my firmament and my refuge.",
+                "My God, deliver me from the hand of the sinner, from the hand of the transgressor and the unjust.",
+                "For Thou art my patience, O Lord; Thou art my hope, O Lord, from my youth.",
+                "On Thee have I been stayed from birth; Thou art He that took me from my mother's womb; of Thee shall my praise be always.",
+                "I am become as a wonder to many; but Thou art my strong helper.",
+                "Let my mouth be filled with praise, that I may sing of Thy glory, of Thy greatness all the day.",
+                "Cast me not off in the time of old age; when my strength faileth, forsake me not.",
+                "For mine enemies have spoken against me; and they that lay wait for my soul have taken counsel together,",
+                "Saying: God hath forsaken him; pursue and take him, for there is none to deliver him.",
+                "O God, be not far from me; O my God, make haste to help me.",
+                "Let them be put to shame and perish that slander my soul; let them be covered with shame and reproach that seek my hurt.",
+                "But as for me, I will hope continually and will add to all Thy praise.",
+                "My mouth shall declare Thy righteousness and Thy salvation all the day, for I know not the numbering thereof.",
+                "I will come in the power of the Lord; I will make mention of Thy righteousness alone.",
+                "O God, Thou hast taught me from my youth, and until now I have declared Thy wondrous works.",
+                "Even unto old age and grey hairs, O God, forsake me not, until I declare Thine arm to all the generation to come, Thy power and Thy righteousness.",
+                "For Thou hast magnified Thy mercy, O God; O God, who is like unto Thee?",
+                "In what great tribulations, bitter and many, hast Thou shown me; but turning, Thou hast quickened me, and from the depths of the earth turning Thou hast brought me up.",
+                "Thou hast multiplied Thy greatness and turning to me Thou hast comforted me.",
+                "I also will give thanks to Thee with an instrument of psaltery for Thy truth, O my God; I will chant to Thee with the harp, Thou Holy One of Israel.",
+                "My lips shall be glad when I sing to Thee, and my soul which Thou hast redeemed.",
+                "Yea, and my tongue shall declare Thy righteousness all the day; for they shall be put to shame and confounded that seek my hurt."
+              ]
+            },
+            {
+              "number": 71,
+              "title": "Psalm 71",
+              "verses": [
+                "O God, give Thy judgment to the King, and Thy righteousness to the king's son,",
+                "To judge Thy people with righteousness, and Thy poor with judgment.",
+                "Let the mountains bear peace to the people, and the hills righteousness.",
+                "He shall judge the poor of the people and save the sons of the needy, and shall humble the oppressor.",
+                "And He shall continue with the sun, and before the moon, throughout all generations.",
+                "He shall come down like rain upon a fleece, and as drops falling upon the earth.",
+                "In His days shall righteousness spring up; and abundance of peace until the moon be taken away.",
+                "And He shall have dominion from sea to sea, and from the river to the ends of the earth.",
+                "The Ethiopians shall fall down before Him; and His enemies shall lick the dust.",
+                "The kings of Tarshish and of the isles shall bring gifts; the kings of Arabia and of Seba shall offer gifts.",
+                "And all kings shall worship Him; all nations shall serve Him.",
+                "For He hath delivered the needy from the mighty, and the poor who had no helper.",
+                "He shall spare the poor and needy, and shall save the souls of the needy.",
+                "He shall redeem their souls from usury and from injustice; and precious shall their name be before Him.",
+                "And He shall live, and to Him shall be given of the gold of Arabia; and prayer shall be made for Him continually, and all the day long shall He be blessed.",
+                "There shall be abundance of grain in the earth; on the tops of the mountains shall the fruit thereof be exalted; its fruit shall be as of Lebanon, and they of the city shall flourish like the grass of the earth.",
+                "His name shall endure for ever; His name shall be continued before the sun; and in Him shall all the tribes of the earth be blessed, and all nations shall call Him blessed.",
+                "Blessed be the Lord God of Israel, Who alone doeth wondrous things.",
+                "And blessed be the name of His glory for ever, and the whole earth shall be filled with His glory. So be it, so be it."
+              ]
+            },
+            {
+              "number": 72,
+              "title": "Psalm 72",
+              "verses": [
+                "How good is God to Israel, to them that are upright in heart!",
+                "But as for me, my feet were almost moved; my steps had well nigh slipped.",
+                "For I was jealous of the transgressors, beholding the peace of sinners.",
+                "For there is no thought of their death, and there is no surety in their affliction.",
+                "They are not in the labors of men, and they will not be scourged like other men.",
+                "Therefore hath pride held them fast; they have clothed themselves with their injustice and their ungodliness.",
+                "Their injustice shall proceed as from fatness; they have come forth with the imaginations of their heart.",
+                "They have thought and spoken in wickedness; they have spoken iniquity on high.",
+                "They have set their mouth against heaven, and their tongue hath passed over the earth.",
+                "Therefore will my people return hither, and days of fulness shall be found among them.",
+                "And they said: How hath God known it? And is there knowledge in the Most High?",
+                "Behold, these are sinners, and, being always at rest, they have accumulated wealth.",
+                "And I said: Verily, it was in vain that I justified my heart and washed my hands among the innocent.",
+                "And I was scourged all the day, and my reproof was in the morning.",
+                "If I said: I will speak thus; behold, I should be faithless to the generation of Thy children.",
+                "And I was thinking how to understand this, but it is a labor before me,",
+                "Until I go into the sanctuary of God and understand concerning their last ends.",
+                "Yet of a surety for deceits hast Thou set them; Thou threwest them down while they were exalted.",
+                "How they have become a desolation! They were suddenly taken away; they perished for their iniquity.",
+                "As a dream of one that awaketh, O Lord, in Thy city Thou shalt despise their image.",
+                "For my heart was inflamed and my reins were changed, and I was brought to nothing and knew it not.",
+                "I became as a beast before Thee; and I am always with Thee.",
+                "Thou hast held me by my right hand; and with Thy counsel Thou hast guided me, and with glory hast Thou received me.",
+                "For what have I in heaven? And beside Thee what have I desired upon earth?",
+                "My flesh and my heart failed; God is the strength of my heart, and my portion for ever.",
+                "For behold, they that remove themselves far from Thee shall perish; Thou hast destroyed all them that go a whoring from Thee.",
+                "But it is good for me to cling close to God, to put my hope in the Lord; that I may declare all Thy praises in the gates of the daughter of Sion."
+              ]
+            }
+          ]
+        },
+        {
+          "stasis": 2,
+          "psalms_lxx": "73–74",
+          "psalms": [
+            {
+              "number": 73,
+              "title": "Psalm 73",
+              "verses": [
+                "Why, O God, hast Thou rejected us for ever? Why is Thy wrath hot against the sheep of Thy pasture?",
+                "Remember Thy congregation, which Thou hast purchased from the beginning; Thou hast ransomed the rod of Thine inheritance; this Mount Sion wherein Thou hast dwelt.",
+                "Lift up Thine hands against their pride for ever; consider all that the enemy hath done wickedly in Thy sanctuary.",
+                "And they that hate Thee have boasted in the midst of Thy feast; they have set up their standards as signs, and they knew it not.",
+                "As if in a forest of trees they cut down the gates thereof with axes,",
+                "As in a forest of wood with axes; they broke down her carved work; with a hatchet and hammer they smote it down.",
+                "They burned Thy sanctuary to the ground; they profaned the tabernacle of Thy name.",
+                "They said in their heart, even all their kin together: Let us abolish all the solemn feasts of God from the earth.",
+                "Our signs we have not seen; there is no longer a prophet; and He shall know us no more.",
+                "How long, O God, shall the enemy reproach? Shall the adversary provoke Thy name for ever?",
+                "Why dost Thou turn away Thy hand, and Thy right hand from the midst of Thy bosom, for ever?",
+                "But God is our King before the ages; He hath wrought salvation in the midst of the earth.",
+                "Thou didst make the sea steadfast by Thy power; Thou didst break the heads of the dragons upon the water.",
+                "Thou didst crush the head of the dragon; Thou didst give him as meat to the peoples of the Ethiopians.",
+                "Thou didst cleave the spring and the torrent; Thou driedst up the rivers of Ethan.",
+                "Thine is the day, and Thine is the night; Thou didst perfect the light and the sun.",
+                "Thou didst make all the borders of the earth; the summer and the spring, Thou didst create them.",
+                "Remember this, that the enemy hath reproached the Lord, and a foolish people hath provoked Thy name.",
+                "Deliver not to the wild beasts the soul that confesseth Thee; forget not the souls of Thy poor for ever.",
+                "Look upon Thy covenant; for they that are in the dark parts of the earth are filled with the habitations of iniquity.",
+                "Let not the humble be turned away ashamed; the afflicted and the needy shall praise Thy name.",
+                "Arise, O God, plead Thine own cause; remember Thy reproach that cometh from the foolish all the day.",
+                "Forget not the voice of Thy suppliants; the pride of them that hate Thee hath gone up continually before Thee."
+              ]
+            },
+            {
+              "number": 74,
+              "title": "Psalm 74",
+              "verses": [
+                "We will give thanks to Thee, O God, we will give thanks; and we will call upon Thy name; we will tell of all Thy wondrous works.",
+                "When I shall take a set time, I will judge righteous judgments.",
+                "The earth is dissolved, and all they that dwell therein; I have strengthened her pillars.",
+                "I said to the transgressors: Deal not transgress ously; and to the sinners: Lift not up the horn.",
+                "Lift not up your horn on high; speak not iniquity against God.",
+                "For neither from the east, nor from the west, nor from the desert mountains is there exaltation.",
+                "For God is the judge; He humbleth one and exalteth another.",
+                "For in the Lord's hand there is a cup of pure wine full of mixture; and He hath poured out of this; but the dregs thereof were not emptied; all the sinners of the earth shall drink of them.",
+                "But I will rejoice for ever; I will sing to the God of Jacob.",
+                "And all the horns of the sinners will I break off; but the horns of the righteous shall be exalted."
+              ]
+            }
+          ]
+        },
+        {
+          "stasis": 3,
+          "psalms_lxx": "75–76",
+          "psalms": [
+            {
+              "number": 75,
+              "title": "Psalm 75",
+              "verses": [
+                "God is known in Judea; His name is great in Israel.",
+                "And His place hath been made in peace, and His dwelling in Sion.",
+                "There did He break the powers of the bows, the shield, the sword, and the battle.",
+                "Thou dost enlighten wondrously from the everlasting mountains.",
+                "Troubled were all the foolish of heart; they slept their sleep, and all the men of riches found nothing in their hands.",
+                "At Thy rebuke, O God of Jacob, both the rider and the horse were numbed.",
+                "Thou art terrible, and who shall resist Thee, from the time of Thine anger?",
+                "From heaven Thou madest judgment to be heard; the earth feared and was still,",
+                "When God arose for judgment, to save all the meek of the earth.",
+                "For the thought of man shall give thanks to Thee, and the remnant of the thought shall keep Thy feast.",
+                "Vow ye and pay to the Lord our God; all they that are round about Him shall bring gifts, even to Him that is terrible,",
+                "And that taketh away the spirit of princes; terrible is He with the kings of the earth."
+              ]
+            },
+            {
+              "number": 76,
+              "title": "Psalm 76",
+              "verses": [
+                "I cried to the Lord with my voice; to God with my voice, and He gave ear to me.",
+                "In the day of mine affliction I sought God, with my hands spread out in the night before Him, and I was not deceived; my soul refused to be comforted.",
+                "I remembered God and was gladdened; I was exercised, and my spirit was faint.",
+                "Mine eyes anticipated the watches; I was troubled, and I spoke not.",
+                "I thought upon the days of old, and I had the eternal years in mind.",
+                "And I meditated by night with my heart; I was exercised, and my spirit was searching.",
+                "Will God cast off for ever? And will He be favorable no more?",
+                "Or will He cut off His mercy for ever, from generation to generation?",
+                "Or will God forget to have mercy? Or will He shut up in His anger His compassions?",
+                "And I said: Now have I begun; this is the change of the right hand of the Most High.",
+                "I remembered the works of the Lord; for I will remember Thy wonders from the beginning.",
+                "And I will meditate on all Thy works, and on Thy ways will I exercise myself.",
+                "O God, Thy way is in the sanctuary; who is a great God like unto our God?",
+                "Thou art the God that doest wonders; Thou hast made known Thy power among the peoples.",
+                "Thou hast with Thine arm redeemed Thy people, the sons of Jacob and Joseph.",
+                "The waters saw Thee, O God, the waters saw Thee and were afraid; the abysses also were troubled.",
+                "The clouds poured out water; the skies uttered a voice; yea, Thine arrows passed abroad.",
+                "The voice of Thy thunder was in the whirlwind; Thy lightnings lightened the world; the earth trembled and was shaken.",
+                "Thy way is in the sea, and Thy paths in many waters, and Thy footsteps are not known.",
+                "Thou leddest Thy people like sheep, by the hand of Moses and Aaron."
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "12": {
+      "number": 12,
+      "title": "Twelfth Kathisma",
+      "psalms_lxx": "85–90, 92",
+      "stases": [
+        {
+          "stasis": 1,
+          "psalms_lxx": "85–87",
+          "psalms": [
+            {
+              "number": 85,
+              "title": "Psalm 85",
+              "verses": [
+                "Incline Thine ear, O Lord, and hear me, for I am poor and needy.",
+                "Preserve my soul, for I am holy; save Thy servant, O my God, that hopeth in Thee.",
+                "Have mercy on me, O Lord, for unto Thee will I cry all the day.",
+                "Rejoice the soul of Thy servant, for to Thee, O Lord, have I lifted up my soul.",
+                "For Thou, O Lord, art good and gentle, and plenteous in mercy to all that call upon Thee.",
+                "Give ear, O Lord, to my prayer, and attend to the voice of my supplications.",
+                "In the day of mine affliction I have cried unto Thee, for Thou hast heard me.",
+                "There is none like unto Thee among the gods, O Lord; and there are no works like unto Thy works.",
+                "All the nations Thou hast made shall come and worship before Thee, O Lord; and they shall glorify Thy name.",
+                "For Thou art great and doest wondrous things; Thou art God alone.",
+                "Lead me, O Lord, in Thy way; I will walk in Thy truth; let my heart rejoice that it may fear Thy name.",
+                "I will give thanks to Thee, O Lord my God, with my whole heart, and will glorify Thy name for ever.",
+                "For Thy mercy is great toward me, and Thou hast delivered my soul from hades below.",
+                "O God, transgressors have risen against me, and the assembly of the violent have sought after my soul, and have not set Thee before them.",
+                "But Thou, O Lord my God, art compassionate and merciful, long-suffering and plenteous in mercy and true.",
+                "Look upon me and have mercy on me; give Thy might to Thy servant, and save the son of Thy handmaiden.",
+                "Grant me a token for good; and let them that hate me see and be put to shame, for Thou, O Lord, hast helped me and comforted me."
+              ]
+            },
+            {
+              "number": 86,
+              "title": "Psalm 86",
+              "verses": [
+                "His foundations are in the holy mountains.",
+                "The Lord loveth the gates of Sion more than all the dwellings of Jacob.",
+                "Glorious things have been spoken of thee, O city of God.",
+                "I will make mention of Rahab and Babylon to them that know Me; and behold, the Philistines and Tyre and the people of the Ethiopians — these were born there.",
+                "A man shall say: Sion my mother; and a man was born in her; and the Most High Himself hath founded her.",
+                "The Lord shall tell in the writing of peoples and of princes, of them that have been born in her.",
+                "As the dwelling of all them that rejoice is in thee."
+              ]
+            },
+            {
+              "number": 87,
+              "title": "Psalm 87",
+              "verses": [
+                "O Lord God of my salvation, I have cried by day and in the night before Thee.",
+                "Let my prayer come before Thee; incline Thine ear to my supplication.",
+                "For my soul is filled with evils, and my life hath drawn nigh to hades.",
+                "I am counted with them that go down into the pit; I have become as a man that hath no helpers,",
+                "Free among the dead, like the slain lying in the grave, whom Thou rememberest no more, and they are cut off from Thine hand.",
+                "They laid me in the lowest pit, in dark places, and in the shadow of death.",
+                "Thine anger hath been heavy upon me, and all Thy billows Thou hast brought upon me.",
+                "Thou hast removed my acquaintance far from me; they have made me an abomination to themselves; I have been delivered up, and I came not forth.",
+                "Mine eye hath been dimmed from poverty; I have cried to Thee, O Lord, all the day; I have stretched out my hands to Thee.",
+                "Wilt Thou work wonders for the dead? Or shall physicians raise them up, that they may give thanks to Thee?",
+                "Shall any in the grave declare Thy mercy, and Thy truth in destruction?",
+                "Shall Thy wonders be known in darkness, and Thy righteousness in a land that is forgotten?",
+                "But I have cried to Thee, O Lord; and in the morning shall my prayer come before Thee.",
+                "Why, O Lord, dost Thou reject my soul and turn Thy face away from me?",
+                "I am poor and in troubles from my youth up; having been exalted, I was humbled and was utterly brought to nothing.",
+                "Thy fierce anger went over me; Thy terrors have troubled me.",
+                "They came round about me like water; all the day long they encompassed me about.",
+                "Thou hast removed far from me friend and neighbor and mine acquaintance because of my wretchedness."
+              ]
+            }
+          ]
+        },
+        {
+          "stasis": 2,
+          "psalms_lxx": "88",
+          "psalms": [
+            {
+              "number": 88,
+              "title": "Psalm 88",
+              "verses": [
+                "I will sing of the mercies of the Lord for ever; to all generations will I announce Thy truth with my mouth.",
+                "For Thou hast said: Mercy shall be built up for ever; in the heavens shall Thy truth be established.",
+                "I made a covenant with My chosen ones; I swore to David My servant:",
+                "I will establish thy seed for ever, and I will build up thy throne from generation to generation.",
+                "The heavens shall praise Thy wonders, O Lord, and Thy truth in the congregation of the saints.",
+                "For who in the clouds shall be ranked with the Lord? And who shall be likened to the Lord among the sons of God?",
+                "God is glorified in the council of the saints, great and awesome above all them that are round about Him.",
+                "O Lord God of hosts, who is like unto Thee? Thy truth is round about Thee.",
+                "Thou rulest the might of the sea; and Thou stillest the swelling of its waves.",
+                "Thou hast humbled the proud one as a wounded man; with the arm of Thy power hast Thou scattered Thine enemies.",
+                "Thine are the heavens, and Thine is the earth; the world and the fullness thereof Thou hast founded.",
+                "The north and the seas Thou hast created; Tabor and Hermon shall rejoice in Thy name.",
+                "Thine is the mighty arm; let Thy hand be strengthened and Thy right hand be exalted.",
+                "Righteousness and judgment are the preparation of Thy throne; mercy and truth shall go before Thy face.",
+                "Blessed is the people that knoweth the festal shout; O Lord, in the light of Thy face shall they walk.",
+                "And in Thy name shall they rejoice all the day, and in Thy righteousness shall they be exalted.",
+                "For Thou art the boast of their strength, and in Thy good pleasure our horn shall be exalted.",
+                "For our protection is of the Lord, and of the Holy One of Israel, our King.",
+                "Then Thou spakest in a vision to Thy holy ones and saidst: I have laid help upon one that is mighty; I have exalted one chosen out of My people.",
+                "I found David My servant; with My holy oil have I anointed him.",
+                "My hand shall be established with him; yea, My arm shall strengthen him.",
+                "The enemy shall not outwit him; nor shall the son of iniquity afflict him.",
+                "I will smite his enemies before him, and I will put to flight them that hate him.",
+                "And My truth and My mercy shall be with him, and in My name shall his horn be exalted.",
+                "I will set his hand in the sea and his right hand in the rivers.",
+                "He shall call upon Me: Thou art my Father, my God, and the helper of my salvation.",
+                "And I will make him My firstborn, high above the kings of the earth.",
+                "I will keep My mercy for him for ever, and My covenant shall be faithful with him.",
+                "And I will make his seed to endure for ever and ever, and his throne as the days of heaven.",
+                "If his children forsake My law, and walk not in My judgments,",
+                "If they profane My statutes and keep not My commandments,",
+                "I will visit their transgressions with the rod, and their iniquities with stripes.",
+                "But My mercy I will not utterly take from him, nor falsify My truth.",
+                "Neither will I profane My covenant, nor alter the things that have gone out of My lips.",
+                "Once have I sworn by My holiness, I will not lie to David.",
+                "His seed shall endure for ever, and his throne as the sun before Me,",
+                "And as the moon established for ever, and as the witness in heaven is faithful.",
+                "But Thou hast rejected and despised; Thou hast turned away Thy Christ.",
+                "Thou hast overthrown the covenant of Thy servant; Thou hast profaned his sanctuary to the ground.",
+                "Thou hast broken down all his hedges; Thou hast made his strongholds a fear.",
+                "All they that pass by the way have spoiled him; he is become a reproach to his neighbors.",
+                "Thou hast exalted the right hand of his adversaries; Thou hast made all his enemies to rejoice.",
+                "Thou hast turned away the help of his sword, and hast not aided him in the battle.",
+                "Thou hast abolished his purification, and Thou hast cast his throne to the ground.",
+                "Thou hast shortened the days of his time; Thou hast poured shame upon him.",
+                "How long, O Lord, wilt Thou turn away to the end? Shall Thy wrath burn like fire?",
+                "Remember what my substance is; for hast Thou created all the sons of men in vain?",
+                "Who is the man that shall live and not see death, that shall deliver his soul from the hand of hades?",
+                "Lord, where are Thy mercies of old, which Thou swaredst to David in Thy truth?",
+                "Remember, Lord, the reproach of Thy servants, which I have received in my bosom from many nations,",
+                "Wherewith Thine enemies have reproached, O Lord; wherewith they have reproached the exchange of Thy Christ.",
+                "Blessed be the Lord for ever. So be it, so be it."
+              ]
+            }
+          ]
+        },
+        {
+          "stasis": 3,
+          "psalms_lxx": "89–90, 92",
+          "psalms": [
+            {
+              "number": 89,
+              "title": "Psalm 89",
+              "verses": [
+                "O Lord, Thou hast been our refuge from generation to generation.",
+                "Before the mountains were brought forth, or ever the earth and the world were formed, even from everlasting to everlasting Thou art.",
+                "Turn not man back to dishonor; Thou saidst: Return, ye sons of men.",
+                "For a thousand years in Thy sight are like yesterday when it is past, and as a watch in the night.",
+                "Their years shall be as vanity; as the grass that passeth in the morning — in the morning it shall flourish, and it shall pass away; in the evening it shall fall and wither.",
+                "For we have fainted in Thine anger; and in Thy wrath hast Thou troubled us.",
+                "Thou hast set our iniquities before Thee; our life is in the light of Thy face.",
+                "For all our days are gone, and in Thy wrath are we consumed; our years have spun out their tale like a spider.",
+                "The days of our years therein are threescore and ten years; and if by reason of strength they be fourscore years, yet is their strength labour and sorrow; for mildness came upon us, and we shall be chastened.",
+                "Who knoweth the power of Thine anger? And from fear of Thee, who can recount Thy wrath?",
+                "So make Thy right hand known to me, and them that are instructed in the heart in wisdom.",
+                "Return, O Lord; how long? And be entreated concerning Thy servants.",
+                "We were filled in the morning with Thy mercy, and we rejoiced and were glad.",
+                "In all our days let us be glad for the days wherein Thou hast humbled us, the years wherein we have seen evil.",
+                "And look upon Thy servants and upon Thy works, and guide their sons.",
+                "And let the brightness of the Lord our God be upon us; and do Thou direct for us the works of our hands, yea, direct Thou the works of our hands."
+              ]
+            },
+            {
+              "number": 90,
+              "title": "Psalm 90",
+              "verses": [
+                "He that dwelleth in the help of the Most High shall abide in the shelter of the God of heaven.",
+                "He shall say to the Lord: Thou art my helper and my refuge; my God, I will hope in Him.",
+                "For He shall deliver thee from the snare of the hunters, and from every troubling word.",
+                "He shall overshadow thee with His shoulders, and under His wings shalt thou hope; His truth shall compass thee with a shield.",
+                "Thou shalt not be afraid of the terror by night; nor of the arrow that flieth by day;",
+                "Nor of the thing that walketh in darkness; nor of the mishap and devil of noonday.",
+                "A thousand shall fall at thy side, and ten thousand at thy right hand; but unto thee shall it not come nigh.",
+                "Only with thine eyes shalt thou behold and see the reward of sinners.",
+                "For Thou, O Lord, art my hope; Thou hast made the Most High thy refuge.",
+                "There shall no evil come nigh thee; neither shall any plague come nigh thy dwelling.",
+                "For He shall give His angels charge concerning thee, to keep thee in all thy ways.",
+                "They shall bear thee up in their hands, lest at any time thou dash thy foot against a stone.",
+                "Thou shalt tread upon the asp and the basilisk, and thou shalt trample the lion and the dragon under foot.",
+                "Because he hath hoped in Me, I will deliver him; I will shelter him, because he hath known My name.",
+                "He shall cry unto Me, and I will hear him; I am with him in affliction; I will deliver him and glorify him.",
+                "With length of days will I satisfy him and show him My salvation."
+              ]
+            },
+            {
+              "number": 92,
+              "title": "Psalm 92",
+              "verses": [
+                "The Lord is King; He is clothed with majesty; the Lord is clothed with strength and hath girded Himself.",
+                "For He established the world, which shall not be moved.",
+                "Thy throne is prepared of old; Thou art from everlasting.",
+                "The floods have lifted up, O Lord; the floods have lifted up their voices; the floods shall lift up their waves.",
+                "From the voices of many waters, the wonders of the surges of the sea; the Lord is wonderful on high.",
+                "Thy testimonies are made very sure; holiness becometh Thine house, O Lord, unto length of days."
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

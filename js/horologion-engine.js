@@ -244,6 +244,11 @@ const HorologionEngine = (() => {
     // ── v1.5: Kathisma appointment table URL ───────────────────────────────
     const KATHISMA_URL = 'data/horologion/vespers-kathisma.json';
 
+    // ── v5.5: Kathisma full psalm text corpus URL ──────────────────────────
+    // Six kathismata appointed at ordinary weekday Vespers (1, 4, 6, 8, 10, 12).
+    // Shape: { kathismata: { "1": { stases: [ { stasis, psalms: [...] } ] }, ... } }
+    const KATHISMA_FULL_TEXT_URL = 'data/horologion/kathisma-full-text.json';
+
     // ── v1.6: Troparion/Apolytikion data file URL ──────────────────────────
     const TROPARION_URL = 'data/horologion/vespers-troparion.json';
 
@@ -270,6 +275,13 @@ const HorologionEngine = (() => {
     // Shape: { assignments: [ { weekday, weekdayIndex, kathismaNumber, ... }, ... ] }
     // assignments[0] = Sunday (deferred), assignments[1] = Monday, etc.
     let _kathismaData = null;
+
+    // ── v5.5: Kathisma full psalm text data object (null until first fetch) ─
+    // Populated lazily by _loadKathismaFullTextData().
+    // Shape: { kathismata: { "1": { stases: [ { stasis, psalms: [...] } ] }, ... } }
+    // Covers kathismata 1, 4, 6, 8, 10, 12 (all ordinary weekday Vespers assignments).
+    // null if file fails to load — _resolveKathismaSlot degrades to rubric output.
+    let _kathismaFullTextData = null;
 
     // ── v1.6: Troparion data object (null until first fetch) ───────────────
     // Populated lazily by _loadTroparionData().
@@ -1367,6 +1379,61 @@ function _normalizeUnavailableTroparionFallbackForOffice(officeKey, resolved, da
 
 
     // ──────────────────────────────────────────────────────────────────────
+    // v5.5: _loadKathismaFullTextData()
+    //
+    // Fetches and caches the full psalm text corpus for the six kathismata
+    // appointed at ordinary weekday Vespers.
+    //
+    // Non-throwing: on failure, leaves _kathismaFullTextData null.
+    // _resolveKathismaSlot degrades to the existing rubric appointment output.
+    // ──────────────────────────────────────────────────────────────────────
+    async function _loadKathismaFullTextData() {
+        if (_kathismaFullTextData !== null) return;
+
+        try {
+            const response = await fetch(KATHISMA_FULL_TEXT_URL);
+            if (!response.ok) {
+                console.warn(`[HorologionEngine] Could not load kathisma full text (HTTP ${response.status}); kathisma-reading will fall back to rubric output.`);
+                return;
+            }
+            _kathismaFullTextData = await response.json();
+            console.log('[HorologionEngine] Loaded kathisma full psalm text corpus (kathismata 1, 4, 6, 8, 10, 12).');
+        } catch (err) {
+            console.warn('[HorologionEngine] _loadKathismaFullTextData failed:', err.message, '— kathisma-reading will fall back to rubric output.');
+        }
+    }
+
+
+    // ──────────────────────────────────────────────────────────────────────
+    // v5.5: _resolveKathismaFullText(kathismaNumber, title, psalmsLxx)
+    //
+    // Returns a type:'kathisma' item with full stasis-organized psalm text,
+    // or null if the corpus does not cover this kathisma number.
+    // Non-throwing.
+    // ──────────────────────────────────────────────────────────────────────
+    function _resolveKathismaFullText(kathismaNumber, title, psalmsLxx) {
+        try {
+            if (!_kathismaFullTextData || !_kathismaFullTextData.kathismata) return null;
+            const kathismaData = _kathismaFullTextData.kathismata[String(kathismaNumber)];
+            if (!kathismaData || !Array.isArray(kathismaData.stases) || kathismaData.stases.length === 0) return null;
+            return {
+                type:           'kathisma',
+                key:            'kathisma-reading',
+                label:          `Kathisma ${kathismaNumber} — ${title}`,
+                kathismaNumber: kathismaNumber,
+                psalmsLxx:      psalmsLxx,
+                stases:         kathismaData.stases,
+                source:         'Psalter (OCA/Antiochian English)',
+                resolvedAs:     'ordinary-weekday-full-text'
+            };
+        } catch (err) {
+            console.warn('[HorologionEngine] _resolveKathismaFullText failed:', err.message);
+            return null;
+        }
+    }
+
+
+    // ──────────────────────────────────────────────────────────────────────
     // v1.5: _resolveKathismaSlot(dayOfWeek, brightWeek)
     //
     // Returns a resolved item for the kathisma-reading slot, or null if
@@ -1403,7 +1470,7 @@ function _normalizeUnavailableTroparionFallbackForOffice(officeKey, resolved, da
     //
     // Returns: a resolved item object (type:'rubric'), or null on data failure.
     // ──────────────────────────────────────────────────────────────────────
-    function _resolveKathismaSlot(dayOfWeek, brightWeek) {
+    function _resolveKathismaSlot(dayOfWeek, brightWeek, isGreatLent) {
         // If data file failed to load, degrade to placeholder.
         if (_kathismaData === null) return null;
 
@@ -1446,22 +1513,43 @@ function _normalizeUnavailableTroparionFallbackForOffice(officeKey, resolved, da
             };
         }
 
-        // ── Ordinary weekday: name the appointed kathisma ─────────────────
-        // Produces a rubric that identifies the kathisma and its psalm range.
-        // Full text is NOT rendered here; this tells the officiant what to read.
+        // ── Ordinary weekday: full text when available, rubric fallback ───
+        // v5.5: Full psalm text returned on ordinary (non-Lenten) days.
+        // Great Lent uses a different Psalter distribution; the ordinary
+        // cycle assignment is liturgically inapplicable during Lent.
         const k = assignment.kathismaNumber;
         const title = assignment.title;
         const psalmsLxx = assignment.psalms_lxx;
         const psalmsProt = assignment.psalms_heb_protestant;
         const incipit = assignment.incipit;
 
+        if (!isGreatLent) {
+            const fullTextResolved = _resolveKathismaFullText(k, title, psalmsLxx);
+            if (fullTextResolved) {
+                fullTextResolved.weekday = assignment.weekday;
+                if (assignment.variant_note) {
+                    fullTextResolved.variantNote = assignment.variant_note;
+                }
+                return fullTextResolved;
+            }
+        }
+
+        // Fallback: rubric appointment output.
+        // Used during Great Lent and when full-text corpus fails to load.
+        const lentenNote = isGreatLent
+            ? `(GREAT LENT — the ordinary weekday Psalter cycle is not in use. ` +
+              `During Great Lent the entire Psalter is read twice weekly; ` +
+              `the specific kathisma appointments differ from the ordinary cycle. ` +
+              `Lenten Psalter distribution is not yet implemented in this engine.)`
+            : `(BASELINE — ordinary weekday weekly cycle only. ` +
+              `Great Feast and Great Lent kathisma overrides are not yet implemented. ` +
+              `Full psalm text corpus not yet loaded.)`;
+
         let text = `${assignment.rubric}\n\n` +
             `Incipit: "${incipit}"\n\n` +
             `(LXX Psalm numbers used throughout, as per Byzantine liturgical practice. ` +
             `Protestant/Hebrew equivalents: Psalms ${psalmsProt}.)\n\n` +
-            `(BASELINE — ordinary weekday weekly cycle only. ` +
-            `Great Feast and Great Lent kathisma overrides are not yet implemented. ` +
-            `Full psalm text is deferred; read the appointed kathisma from a Psalter.)`;
+            lentenNote;
 
         // Append variant note for Friday if present
         if (assignment.variant_note) {
@@ -1476,7 +1564,7 @@ function _normalizeUnavailableTroparionFallbackForOffice(officeKey, resolved, da
             kathismaNumber: k,
             psalmsLxx:      psalmsLxx,
             weekday:        assignment.weekday,
-            resolvedAs:     'ordinary-weekday-baseline'
+            resolvedAs:     isGreatLent ? 'great-lent-ordinary-cycle-inapplicable' : 'ordinary-weekday-baseline'
         };
     }
 
@@ -3290,6 +3378,7 @@ async function _loadThirdHourFixedData() {
             _loadVespersProkeimena(),
             _loadOctoechosData(),
             _loadKathismaData(),
+            _loadKathismaFullTextData(),
             _loadTroparionData(),
             _loadTheotokionData(),
             _loadWeekdayTheotokionData(),
@@ -3360,7 +3449,7 @@ async function _loadThirdHourFixedData() {
 }
 
 else if (item.key === 'kathisma-reading') {
-    const resolved = _resolveKathismaSlot(dayOfWeek, toneResult.brightWeek);
+    const resolved = _resolveKathismaSlot(dayOfWeek, toneResult.brightWeek, isGreatLentWeekday);
     if (resolved) {
         section.items[i] = resolved;
     }

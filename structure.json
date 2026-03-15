@@ -1,10 +1,10 @@
 {
   "project_manifest": {
     "name": "Universal Office",
-    "version": "3.6.0",
-    "last_updated": "2026-03-13",
+    "version": "3.7.0",
+    "last_updated": "2026-03-15",
     "bcp_compliance": "100%",
-    "operational_status": "Weekday Theotokion tone-correction extended to all resolved Menaion commemorations rank 1–4 (v2.5). Great Lent weekday seasonal override layer implemented (v2.6): stichera, aposticha, paremiae, troparion, and Theotokion slots now render explicit Lenten rubrics on Great Lent weekdays (Clean Monday through Great Friday) when no Menaion troparion is resolved; Menaion-resolved commemorations during Lent retain their proper troparion and Theotokion. Holy Week structural override live (v2.7): Palm Sunday through Great Saturday emit explicit day-specific rubrics across the five target Vespers slots. Unified Horologion navigation live (v3.0): single horologion mode, generic sidebar office selector for Vespers and Small Compline, old split mode strings eliminated. Small Compline (Mikron Apodeipnon) baseline live (v3.0): fixed slots resolved from compline-fixed.json, troparion-of-the-day via existing Vespers troparion infrastructure. Triodion corpus deferred. First Hour (Prima) baseline live (v3.1): fixed corpus (usual-beginning, psalm-5, psalm-89, psalm-100, trisagion-prayers, prayer-of-the-first-hour) resolved from first-hour-fixed.json; troparion-of-the-day and first-hour-theotokion resolved dynamically; Theotokion remains a rubric stub (deferred). Third Hour (Tertia) baseline live (v3.2): fixed corpus (usual-beginning, psalm-16, psalm-24, psalm-50, trisagion-prayers, prayer-of-the-third-hour) resolved from third-hour-fixed.json; troparion-of-the-day and third-hour-theotokion resolved dynamically; Theotokion remains a rubric stub (deferred). Sixth Hour (Sexta) baseline live (v3.3): fixed corpus (usual-beginning, psalm-53, psalm-54, psalm-90, trisagion-prayers, prayer-of-the-sixth-hour) resolved from sixth-hour-fixed.json; troparion-of-the-day and sixth-hour-theotokion resolved dynamically; Theotokion remains a rubric stub (deferred). Ninth Hour (Nona) baseline live (v3.4): fixed corpus (usual-beginning, psalm-83, psalm-84, psalm-85, trisagion-prayers, prayer-of-the-ninth-hour) resolved from ninth-hour-fixed.json; troparion-of-the-day and ninth-hour-theotokion resolved dynamically; Theotokion remains a rubric stub (deferred). Horologion engine v3.5–v4.4 now live: feast-rank arbitration introduced (_resolveFeastOverrideContext(), v3.5); Little Hours feast troparion override (_resolveLittleHourTroparionSlot(), v3.6); Vespers stichera/aposticha festal override (_resolveFestalRubricOverrideSlot(), v3.7); Great Lent seasonal troparion layer for all four Little Hours (_resolveLittleHourSeasonalTroparionSlot(), v3.8); Great Lent seasonal troparion layer for Small Compline (_resolveComplineSeasonalTroparionSlot(), v3.9); office-specific ordinary fallback normalization (_normalizeOrdinaryTroparionFallbackForOffice(), v4.0); Little Hours Theotokion normalization and festal rubric arbitration (v4.1/v4.3); Small Compline festal Theotokion rubric arbitration (v4.4). Season-aware feast qualification rule (v3.6/v3.8 — VERIFIED): outside Great Lent weekdays, Menaion rank 1–4 qualifies as a feast override; during Great Lent weekdays (Clean Monday through Great Friday), only ranks 1–2 qualify. Consequence: ordinary rank 4 saint commemorations no longer displace the Lenten weekday seasonal path on Great Lent weekdays; major feasts (e.g., Annunciation rank 1) still override during Lent; rank 4 saint overrides function normally outside Lent. Menaion corpus integration complete (all 12 months, 369/370 resolved; 05-18 held intentionally as text-unavailable). Resolver integration verified at runtime: date resolution, month loading, rank selection, troparion extraction, text-unavailable handling, and feast override integration all confirmed correct. Pascha boundary and Bright Week tone suppression verified; Thomas Sunday tone resumption verified. Small Compline festal Theotokion arbitration verified. Tone computation year-rollback bug (_computeBaselineTone) corrected and verified.",
+    "operational_status": "Weekday Theotokion tone-correction extended to all resolved Menaion commemorations rank 1–4 (v2.5). Great Lent weekday seasonal override layer implemented (v2.6): stichera, aposticha, paremiae, troparion, and Theotokion slots now render explicit Lenten rubrics on Great Lent weekdays (Clean Monday through Great Friday) when no Menaion troparion is resolved; Menaion-resolved commemorations during Lent retain their proper troparion and Theotokion. Holy Week structural override live (v2.7): Palm Sunday through Great Saturday emit explicit day-specific rubrics across the five target Vespers slots. Unified Horologion navigation live (v3.0): single horologion mode, generic sidebar office selector for Vespers and Small Compline, old split mode strings eliminated. Small Compline (Mikron Apodeipnon) baseline live (v3.0): fixed slots resolved from compline-fixed.json, troparion-of-the-day via existing Vespers troparion infrastructure. Triodion corpus deferred. First Hour (Prima) baseline live (v3.1): fixed corpus (usual-beginning, psalm-5, psalm-89, psalm-100, trisagion-prayers, prayer-of-the-first-hour) resolved from first-hour-fixed.json; troparion-of-the-day and first-hour-theotokion resolved dynamically; Theotokion remains a rubric stub (deferred). Third Hour (Tertia) baseline live (v3.2): fixed corpus (usual-beginning, psalm-16, psalm-24, psalm-50, trisagion-prayers, prayer-of-the-third-hour) resolved from third-hour-fixed.json; troparion-of-the-day and third-hour-theotokion resolved dynamically; Theotokion remains a rubric stub (deferred). Sixth Hour (Sexta) baseline live (v3.3): fixed corpus (usual-beginning, psalm-53, psalm-54, psalm-90, trisagion-prayers, prayer-of-the-sixth-hour) resolved from sixth-hour-fixed.json; troparion-of-the-day and sixth-hour-theotokion resolved dynamically; Theotokion remains a rubric stub (deferred). Ninth Hour (Nona) baseline live (v3.4): fixed corpus (usual-beginning, psalm-83, psalm-84, psalm-85, trisagion-prayers, prayer-of-the-ninth-hour) resolved from ninth-hour-fixed.json; troparion-of-the-day and ninth-hour-theotokion resolved dynamically; Theotokion remains a rubric stub (deferred). Horologion engine v3.5–v4.4 now live: feast-rank arbitration introduced (_resolveFeastOverrideContext(), v3.5); Little Hours feast troparion override (_resolveLittleHourTroparionSlot(), v3.6); Vespers stichera/aposticha festal override (_resolveFestalRubricOverrideSlot(), v3.7); Great Lent seasonal troparion layer for all four Little Hours (_resolveLittleHourSeasonalTroparionSlot(), v3.8); Great Lent seasonal troparion layer for Small Compline (_resolveComplineSeasonalTroparionSlot(), v3.9); office-specific ordinary fallback normalization (_normalizeOrdinaryTroparionFallbackForOffice(), v4.0); Little Hours Theotokion normalization and festal rubric arbitration (v4.1/v4.3); Small Compline festal Theotokion rubric arbitration (v4.4). Season-aware feast qualification rule (v3.6/v3.8 — VERIFIED): outside Great Lent weekdays, Menaion rank 1–4 qualifies as a feast override; during Great Lent weekdays (Clean Monday through Great Friday), only ranks 1–2 qualify. Consequence: ordinary rank 4 saint commemorations no longer displace the Lenten weekday seasonal path on Great Lent weekdays; major feasts (e.g., Annunciation rank 1) still override during Lent; rank 4 saint overrides function normally outside Lent. Menaion corpus integration complete (all 12 months, 369/370 resolved; 05-18 held intentionally as text-unavailable). Resolver integration verified at runtime: date resolution, month loading, rank selection, troparion extraction, text-unavailable handling, and feast override integration all confirmed correct. Pascha boundary and Bright Week tone suppression verified; Thomas Sunday tone resumption verified. Small Compline festal Theotokion arbitration verified. Tone computation year-rollback bug (_computeBaselineTone) corrected and verified. Horologion v5.0 — Triodion Great Lent weekday overlay live: _loadTriodionData() / _resolveTriodionTroparion() insert Triodion-backed text on Great Lent weekdays after feast arbitration. Corpus covers Weeks 1–6 (data/triodion/triodion-lenten-weekday.json); verified across multiple Lent weeks including feast-override precedence (Annunciation rank 1 still wins). Horologion v5.1 — Holy Week text overlay live: _loadHolyWeekData() / _resolveHolyWeekText() provide actual troparion text for all seven Holy Week days (data/triodion/holy-week/holy-week.json); stichera/aposticha/paremiae/theotokion remain as informed rubrics. Holy Week structurally separate from the Great Lent weekday layer. Verified: Holy Monday, Holy Wednesday, Holy Friday, Holy Saturday. Horologion v5.2 — Pentecostarion / Bright Week overlay live: _loadPentecostarionData() / _resolvePentecostarionText() provide Paschal stichera and aposticha text for Bright Week (data/pentecostarion/pentecostarion-bright-week.json). Troparion already resolved from vespers-troparion.json; kathisma and theotokion correctly omitted. Thomas Sunday returns to ordinary Sunday resurrectional path. Verified: Pascha, Bright Wednesday, Thomas Saturday, Thomas Sunday. Horologion v5.3 — Menaion text-unavailable audit: corpus is effectively complete at 369/370 resolved across all 12 months. The prior 'approximately 200 text-unavailable' count reflects an earlier state; the resolution pass was completed before this tranche. One intentional holdout remains: 05-18 (Venerable Peter of Caesarea in Cappadocia) — no confirmed Hapgood/OCA/Jordanville source. Verified: May 25, May 21 resolve as menaion-feast-troparion; May 18 degrades honestly as menaion-text-unavailable in both Vespers and Small Compline. Horologion v5.4 — diagnostics and UI polish: _horDiagnosticsEnabled flag and toggleHorologionDiagnostics() added to office-ui.js. _renderHorologionDiagnostics(item, escapeHtml) module-level helper wired into rubric, stichera, and fallback-text branches of _renderHorologionItem(). Diagnostics toggle button added to #generic-settings sidebar in index.html. When enabled, surfaces resolvedAs, type, tone, inferred layer for variable Horologion slots including: menaion-feast-troparion, menaion-text-unavailable, triodion-lenten-troparion, holy-week-troparion, bright-week-paschal-stichera, bright-week-paschal-aposticha, weekday-theme-rubric, paschal-troparion. Off by default; non-destructive to normal rendering.",
     "audit_findings": {
       "open_bugs": [
         "1. Rubric logic: [rite] placeholder resolution in rubrics.json is fragile and prone to null returns. (LOW — see known_outstanding_issues.rite_placeholder_resolution)"
@@ -74,20 +74,21 @@
       "role": "Markup and DOM structure only",
       "lines": "~1175",
       "contains_logic": false,
-      "status": "Current — v3.4 (2026-03-08)",
+      "status": "Current — v5.4 (2026-03-15)",
       "changes": [
-  "1. Added third mode button: 'The Ethiopian Sa'atat (Book of Hours)' with class ethiopian-btn, calling selectMode('ethiopian-saatat') [Phase 7.1]",
-  "2. Added four minor hours to esy-time radio group: qutaa, endana, dtsha-sain, subaa [v2.8.0]",
-  "3. Added 'Byzantine Vespers — Horologion' splash button calling selectMode('horologion-vespers'), placed between 'Church of the East — Hudra' and 'Admin Dashboard' [Horologion v1]",
-  "4. Added js/saints-resolver.js (before js/office-ui.js) and js/horologion-engine.js (before js/office-ui.js) to script load block [Horologion v1]",
-  "5. Added js/menaion-resolver.js immediately before js/horologion-engine.js in script load block [Menaion v1 pilot]",
-  "6. Added #generic-settings panel — neutral sidebar shell for Horologion and future non-BCP traditions. Inserted between #east-syriac-settings and the main content area. Contains: tradition label (#generic-tradition-label), .ordo-control date navigator (generic-display-date, generic-date-picker, generic-ordo-btn buttons, generic-calendar-info). Opened with class='mode-hidden sidebar-hidden'. [v2.9.7 — generic sidebar shell]",
-  "7. Unified Horologion navigation (v3.0): splash button updated to call selectMode('horologion'). #generic-settings sidebar expanded with office selector buttons #hor-btn-vespers (Vespers) and #hor-btn-small-compline (Small Compline). Old selectMode('horologion-vespers') string eliminated.",
-  "8. First Hour added to Horologion office selector (v3.1): #hor-btn-first-hour button added to #generic-settings, calling selectHorologionOffice('first-hour'). Placed after #hor-btn-small-compline.",
-  "9. Third Hour added to Horologion office selector (v3.2): #hor-btn-third-hour button added to #generic-settings, calling selectHorologionOffice('third-hour').",
-  "10. Sixth Hour added to Horologion office selector (v3.3): #hor-btn-sixth-hour button added to #generic-settings, calling selectHorologionOffice('sixth-hour').",
-  "11. Ninth Hour added to Horologion office selector (v3.4): #hor-btn-ninth-hour button added to #generic-settings, calling selectHorologionOffice('ninth-hour')."
-],
+        "1. Added third mode button: 'The Ethiopian Sa'atat (Book of Hours)' with class ethiopian-btn, calling selectMode('ethiopian-saatat') [Phase 7.1]",
+        "2. Added four minor hours to esy-time radio group: qutaa, endana, dtsha-sain, subaa [v2.8.0]",
+        "3. Added 'Byzantine Vespers — Horologion' splash button calling selectMode('horologion-vespers'), placed between 'Church of the East — Hudra' and 'Admin Dashboard' [Horologion v1]",
+        "4. Added js/saints-resolver.js (before js/office-ui.js) and js/horologion-engine.js (before js/office-ui.js) to script load block [Horologion v1]",
+        "5. Added js/menaion-resolver.js immediately before js/horologion-engine.js in script load block [Menaion v1 pilot]",
+        "6. Added #generic-settings panel — neutral sidebar shell for Horologion and future non-BCP traditions. Inserted between #east-syriac-settings and the main content area. Contains: tradition label (#generic-tradition-label), .ordo-control date navigator (generic-display-date, generic-date-picker, generic-ordo-btn buttons, generic-calendar-info). Opened with class='mode-hidden sidebar-hidden'. [v2.9.7 — generic sidebar shell]",
+        "7. Unified Horologion navigation (v3.0): splash button updated to call selectMode('horologion'). #generic-settings sidebar expanded with office selector buttons #hor-btn-vespers (Vespers) and #hor-btn-small-compline (Small Compline). Old selectMode('horologion-vespers') string eliminated.",
+        "8. First Hour added to Horologion office selector (v3.1): #hor-btn-first-hour button added to #generic-settings, calling selectHorologionOffice('first-hour'). Placed after #hor-btn-small-compline.",
+        "9. Third Hour added to Horologion office selector (v3.2): #hor-btn-third-hour button added to #generic-settings, calling selectHorologionOffice('third-hour').",
+        "10. Sixth Hour added to Horologion office selector (v3.3): #hor-btn-sixth-hour button added to #generic-settings, calling selectHorologionOffice('sixth-hour').",
+        "11. Ninth Hour added to Horologion office selector (v3.4): #hor-btn-ninth-hour button added to #generic-settings, calling selectHorologionOffice('ninth-hour').",
+        "12. Diagnostics toggle added to #generic-settings sidebar (v5.4): #hor-btn-diag button calls toggleHorologionDiagnostics() in office-ui.js. Button label and border color reflect active/inactive state. Default: OFF. Visible only in Horologion mode."
+      ],
       "script_load_order": [
         "js/calendar-engine.js",
         "js/calendar-ethiopian.js",
@@ -104,7 +105,7 @@
     },
     "js/office-ui.js": {
       "role": "All Daily Office UI logic",
-      "status": "Current — v3.4 (2026-03-08)",
+      "status": "Current — v5.4 (2026-03-15)",
       "primary_functions": [
         "init()",
         "renderOffice()",
@@ -149,692 +150,702 @@
         "19. _updateHorologionOfficeButtons() — highlights the active office button in #generic-settings for offices ['vespers','small-compline','first-hour','third-hour','sixth-hour','ninth-hour'].",
         "20. _horologionOfficeLabel(officeKey) — returns display label for officeKey: 'vespers'→'Vespers', 'small-compline'→'Small Compline', 'first-hour'→'First Hour', 'third-hour'→'Third Hour', 'sixth-hour'→'Sixth Hour', 'ninth-hour'→'Ninth Hour'."
       ],
-  
       "js/calendar-engine.js": {
-      "role": "All date and liturgical calendar logic",
-      "status": "Current — v2.8.9 + 2026-03-06 admin EO diagnostics patch",
-      "global_api": "window.CalendarEngine",
-      "architecture_note": "v2.8.1: Hardcoded SEASON_RANGES array (was valid through Dec 2030 only) replaced with algorithmic generator. getLiturgicalYear() is now fully algorithmic. Both are valid for any year indefinitely. Admin/devtool extension now adds EO snapshot helpers for old_calendar vs new_calendar diagnostics; this does not by itself expose EO mode in the main app.",
-      "public_methods": [
-        "init() — loads bcp-propers.json; must be called before fetchLectionaryData()",
-        "getSeasonAndFile(date) — returns { season, file, liturgicalColor, litYear }",
-        "getLiturgicalYear(date) — returns 'year1' or 'year2'; algorithmic, anchored to Advent 2025 = Year 2",
-        "getCurrentProper(date) — returns Proper number 3–29",
-        "fetchLectionaryData(date) — returns daily entry object from seasonal JSON",
-        "getCurrentDate()",
-        "setCurrentDate(date)",
-        "changeDate(days)",
-        "resetDate()",
-        "formatDateForLookup(date) — returns 'February 17, 2026'",
-        "formatDateISO(date) — returns '2026-02-17'",
-        "getYearSnapshot(year, config) — admin/devtool snapshot adapter; routes EOR to EasternOrthodoxCalendar when available",
-        "getEOSeasonRanges(year, eoMode) — admin/devtool EO fixed-feast + season-range diagnostics for new_calendar vs old_calendar"
-      ],
-      "backward_compatibility": "SEASON_RANGES static getter retained — returns algorithmically generated ranges for current and prior calendar year. Any external code referencing CalendarEngine.SEASON_RANGES continues to work."
-    },
-    "js/calendar-east-syriac.js": {
-      "role": "Church of the East liturgical calendar — nine seasons, Qdham/Wathar cycle, seasonal colour",
-      "status": "COMPLETE AND OPERATIONAL — All 20 self-tests passing (confirmed in console 2026-02-27)",
-      "global_api": "EastSyriacCalendar (IIFE, window-scoped)",
-      "public_methods": [
-        "getSeason(date) — returns { season, weekInSeason, cycle, weekLabel, seasonLabel, easter }",
-        "getDayClass(date) — returns full day-classification object including isFriday, isLenten, isNinevehFast, dayClass, commemorations[], and all getSeason fields",
-        "getEaster(gregorianYear) — returns Date (Gregorian JS Date of d'Qyamta for that year)",
-        "getLiturgicalYear(date) — returns { subaraStart, easter, seasons, nextSubara }",
-        "getFixedCommemorationsForDate(date) — returns commemoration records for Layer 2 fixed observances",
-        "SEASON_META — read-only season metadata object"
-      ],
-      "seasons": [
-        "subara — Annunciation/Advent",
-        "denkha — Epiphany",
-        "sauma — Great Fast (Lent)",
-        "qyamta — Resurrection (Easter)",
-        "shlihe — Apostles",
-        "qayta — Summer",
-        "eliya-sliwa — Elijah and the Holy Cross",
-        "muse — Moses",
-        "qudash-idta — Dedication of the Church"
-      ],
-      "cycle_note": "Qdham (Before) and Wathar (After) are the two-week rotating cycles anchored to Subara Sunday. Drives Qanona, Marmitha, and Barekmar selection."
-    },
-    "js/calendar-ethiopian.js": {
-      "role": "Ethiopian (Ge'ez) calendar conversion and date resolution",
-      "status": "COMPLETE AND OPERATIONAL — Phase 7.4. Fully integrated.",
-      "global_api": "EthiopianCalendar (IIFE, window-scoped)",
-      "public_methods": [
-        "getEthiopianDate(gregorianDate) — returns { day, month, monthIndex, year } in Amete Mihret era",
-        "getCopticDate(gregorianDate) — same algorithm, Coptic month names, EC-276 era",
-        "formatEthiopianDate(gregorianDate) — returns display string e.g. '15 Yekatit 2018'",
-        "isEthiopianLeapYear(ethiopianYear) — boolean; leap when year % 4 === 3",
-        "MONTH_NAMES — exported array of 13 Ge'ez month name strings",
-        "COPTIC_MONTH_NAMES — exported array of 13 Coptic month name strings"
-      ],
-      "implementation_notes": [
-        "1. Julian Day Number (JDN) method — valid across all historical and future dates",
-        "2. Epoch: 1 Meskerem 1 EC = JDN 1724221 = 29 August 8 AD (Julian)",
-        "3. Pagume: 5 days normally, 6 in leap years (year % 4 === 3)",
-        "4. Self-test suite on load — 9 verified reference points logged to console",
-        "5. Called in office-ui.js eth-saints-commemoration: EthiopianCalendar.getEthiopianDate(currentDate)"
-      ]
-    },
-    "js/scripture-resolver.js": {
-      "role": "Scripture text fetching, citation parsing, LRU book cache",
-      "lines": 254,
-      "status": "Current (2026-02-17)",
-      "global_function": "getScriptureText(citation)",
-      "cache": "LRU — max 20 Bible books",
-      "example_citations": [
-        "Isaiah 40:12-23",
-        "Psalm 119:105-112",
-        "Joel 2:1-2, 12-17"
-      ]
-    },
-    "css/office.css": {
-      "role": "All application styles — theming, sidebar, layout, print",
-      "status": "Current — v2.9.7 (2026-03-07)",
-      "changes": [
-        "1. Added .ethiopian-btn — gold/yellow color scheme [Phase 7.1]",
-        "2. Added .ethiopian-btn:hover — subtle gold wash [Phase 7.1]",
-        "3. Added .ethiopian-theme .rubric-text — Metsehafe Tselot aesthetic [v2.6.1]",
-        "4. Added .ethiopian-theme .rubric-text::before — ☩ glyph prefix [v2.6.1]",
-        "5. Added .ethiopian-theme .component-text — font-weight 500 for hierarchy of voice [v2.6.1]",
-        "6. Added @media print override — collapses Ethiopian rubric border-left and padding [v2.6.1]",
-        "7. Added #east-syriac-settings — sidebar geometry matching #settings-panel and #ethiopian-settings",
-        "8. Added #generic-settings — fourth sidebar geometry block: position:fixed, top:0, left:36px, width:300px, height:100vh, same visual treatment as #east-syriac-settings. #generic-settings.sidebar-hidden: transform:translateX(-336px). #generic-settings.mode-hidden: display:none !important. [v2.9.7]",
-        "9. Mobile @media (max-width:768px): #generic-settings added to overlay position/flex selector and to .sidebar-hidden transform selector alongside the three existing panels. [v2.9.7]",
-        "10. Mobile dim overlay: :has() selector updated to include #daily-office-section:has(#generic-settings:not(.sidebar-hidden))::after. [v2.9.7]",
-        "11. @media print: #generic-settings added to display:none !important list. [v2.9.7]"
-      ],
-      "key_rules": [
-        "#settings-panel — BCP sidebar, transition: transform 0.3s ease, translateX(-336px) when hidden",
-        "#ethiopian-settings — Ethiopian Sa'atat sidebar, same geometry",
-        "#east-syriac-settings — Church of the East sidebar, same geometry",
-        "#main-content — flex content area, padding-left 80px when sidebar hidden",
-        "#sidebar-toggle — 36px fixed toggle column",
-        ".ethiopian-btn — gold-bordered splash button for Sa'atat entry",
-        ".ethiopian-theme .rubric-text — Metsehafe Tselot rubric style",
-        ".ethiopian-theme .component-text — heavier weight, dominant voice",
-        "CSS custom properties on :root — --gold, --accent, --rubric, --bg-color, etc.",
-        "@media print — removes all UI chrome",
-        "#generic-settings — Horologion/generic sidebar, same geometry as other tradition panels"
-      ]
-    },
-    "js/css/office.css": {
-      "role": "DELETED — orphaned duplicate of css/office.css",
-      "status": "DELETED 2026-02-24",
-      "note": "Was never referenced by index.html or any JS module. Deleted to eliminate confusion."
-    },
-    "js/calendar-eastern-orthodox.js": {
-      "role": "Eastern Orthodox movable-feast engine for admin/year-day snapshot diagnostics",
-      "status": "Current — admin/devtool path only (2026-03-06 wiring confirmed)",
-      "global_api": "window.EasternOrthodoxCalendar",
-      "public_methods": [
-        "getYearSnapshot(year, options) — returns EO year snapshot using Julian Paschalion",
-        "getDaySnapshot(date, options) — returns EO day snapshot",
-        "_verifyPascha(year) — internal verification helper exposed on module"
-      ],
-      "implementation_notes": [
-        "Julian Paschalion (Meeus/standard Orthodox method), then Julian→Gregorian conversion by century-based offset.",
-        "Zero dependency design: no private CalendarEngine calls.",
-        "Loaded by admin/admin.html for diagnostics; not loaded by main app index.html."
-      ]
-    },
-    "js/horologion-engine.js": {
-      "role": "Byzantine Horologion office engine — skeleton loading, payload resolution, validation",
-      "status": "Active — Horologion engine v4.4 (2026-03-13)",
-      "global_api": "window.HorologionEngine",
-      "public_methods": [
-        "getOfficeSkeleton(officeKey, traditionVariant) — fetches and caches data/horologion/<officeKey>.json",
-        "resolveOffice(date, officeKey, context) — returns normalized payload; non-throwing; status:'error' on all failure paths",
-        "validateOfficePayload(payload) — returns { valid, errors[], warnings[] }"
-      ],
-      "supported_offices_v1": [
-  "vespers",
-  "small-compline",
-  "first-hour",
-  "third-hour",
-  "sixth-hour",
-  "ninth-hour"
-],
-      "tradition_code": "BYZC",
-      "architecture_note": "Horologion v4.4 (current). v3.5: feast-rank arbitration introduced — _resolveFeastOverrideContext() governs Vespers troparion/apolytikion and dismissal Theotokion. v3.6: _resolveLittleHourTroparionSlot() extends feast-rank override to Little Hours troparion-of-the-day. v3.7: _resolveFestalRubricOverrideSlot() applies qualifying feast rubric override to Vespers stichera-at-lord-i-have-cried and aposticha. v3.8: Great Lent seasonal layer added inside _resolveLittleHourSeasonalTroparionSlot() — displaces ordinary weekday fallback on Great Lent Mon–Fri for all four Little Hours. v3.9: _resolveComplineSeasonalTroparionSlot() applies parallel Great Lent seasonal override for Small Compline troparion-of-the-day. v4.0: _normalizeOrdinaryTroparionFallbackForOffice() rewrites the inherited Vespers weekday-theme-rubric into office-appropriate text for Small Compline and all Little Hours. v4.1/v4.3: _normalizeTheotokionRubricForOffice() + _resolveLittleHourFestalTheotokionRubric() — Little Hours Theotokion normalization and festal rubric arbitration for First through Ninth Hour. v4.4: _resolveComplineFestalTheotokionRubric() — Small Compline festal Theotokion rubric arbitration. _normalizeUnavailableTroparionFallbackForOffice() rewrites menaion-text-unavailable fallback rubrics to use the consuming office name rather than Vespers wording; invoked as the first call inside _normalizeOrdinaryTroparionFallbackForOffice() and independently at the base of _resolveLittleHourSeasonalTroparionSlot() and _resolveComplineSeasonalTroparionSlot().",
-      "supported_offices_next": []
-    },
-    "data/horologion/": {
-      "role": "Horologion office skeleton data files",
-      "status": "Active — Horologion v3.4 (2026-03-08). Vespers + Small Compline + First Hour + Third Hour + Sixth Hour + Ninth Hour operational.",
-      "milestone_status": "Horologion v4.4 complete and verified. All milestone layers v3.5 through v4.4 implemented and confirmed live at runtime: feast-rank arbitration (v3.5), Little Hours feast troparion arbitration (v3.6), Vespers stichera/aposticha festal override (v3.7), Little Hours Great Lent seasonal troparion layer (v3.8), Small Compline Great Lent seasonal troparion layer (v3.9), office-specific ordinary fallback normalization (v4.0), Little Hours Theotokion normalization and festal rubric arbitration (v4.1/v4.3), Small Compline festal Theotokion rubric arbitration (v4.4). Unavailable-troparion fallback normalizer active across all Little Hours and Small Compline. Season-aware feast qualification rule verified: ranks 1–4 outside Great Lent weekdays; ranks 1–2 only during Great Lent weekdays.",
-      "files": {
-        "_ref": "Full per-file status in structure-reference.json horologion_files.",
-        "vespers.json": {
-          "status": "BASELINE COMPLETE — fixed/invariable content complete. v1.2: daily-prokeimenon and vesperal-reading resolved. v1.3: Octoechos tone engine; Saturday stichera/aposticha fully populated (tones 1–8). v1.4: Monday–Friday stichera/aposticha materially populated (tones 1–8). v1.5: kathisma-reading resolved for ordinary Mon–Sat as appointment rubric. v1.6: troparion-or-apolytikion — Saturday full Resurrectional Troparion; Bright Week Paschal Troparion; Mon–Fri tone stub; Sunday deferred. v1.7: theotokion-dismissal — Saturday full dismissal Theotokion (tones 1–8, distinct from Dogmatikon); Bright Week explicit omission; Mon–Fri tone stub; Sunday deferred. v1.8: Sunday Small Vespers implemented as a real baseline path. Every variable slot across all day-of-week paths now yields full text, an explicit rubric stub, or an explicit omission rubric. v1.9: weekday theotokion-dismissal (Mon–Fri) upgraded to type:'text' full resolution (vespers-weekday-theotokion.json, 40 entries). Engine v3.5: feast-rank arbitration live — _resolveFeastOverrideContext() governs troparion/apolytikion and dismissal Theotokion; season-aware qualification (ranks 1–4 outside Great Lent weekdays; ranks 1–2 only during Great Lent weekdays). Engine v3.7: _resolveFestalRubricOverrideSlot() governs stichera/aposticha feast override. Remaining work: full festal text beyond rubric stubs; kathisma full psalm text; Triodion/Pentecostarion overlay."
-        },
-        "small-compline.json": {
-          "status": "Active — Horologion v3.0 (2026-03-08) — NEW in v3.0"
-        },
-        "compline-fixed.json": {
-          "status": "Active — Horologion v3.0 (2026-03-08) — NEW in v3.0"
-        },
-        "octoechos-vespers.json": {
-          "status": "Active — Horologion v1.4 (2026-03-07)"
-        },
-        "vespers-weekday-theotokion.json": {
-          "status": "Active — Horologion v1.9 (2026-03-07) — NEW in v1.9"
-        },
-        "first-hour.json": {
-          "status": "Active — Horologion v3.1 (2026-03-08) — NEW in v3.1. First Hour skeleton: fixed slots resolved from first-hour-fixed.json; troparion-of-the-day resolved dynamically; first-hour-theotokion remains a rubric stub (deferred)."
-        },
-        "first-hour-fixed.json": {
-          "status": "Active — Horologion v3.1 (2026-03-08) — NEW in v3.1. Fixed-text corpus for the First Hour: usual-beginning, psalm-5 (LXX), psalm-89 (LXX), psalm-100 (LXX), trisagion-prayers, prayer-of-the-first-hour. Variable slots (troparion-of-the-day, first-hour-theotokion) are not here; resolved dynamically by HorologionEngine. Source: Jordanville 2008 edition."
-        },
-        "third-hour.json": {
-  "status": "Active — Horologion v3.2 (2026-03-08). Third Hour skeleton: fixed slots resolved from third-hour-fixed.json; troparion-of-the-day resolved dynamically; third-hour-theotokion remains a rubric stub (deferred)."
-},
-"third-hour-fixed.json": {
-  "status": "Active — Horologion v3.2 (2026-03-08). Fixed-text corpus for the Third Hour: usual-beginning, psalm-16 (LXX), psalm-24 (LXX), psalm-50 (LXX), trisagion-prayers, prayer-of-the-third-hour. Variable slots (troparion-of-the-day, third-hour-theotokion) are not here; resolved dynamically by HorologionEngine. Source: Jordanville 2008 edition."
-},
-"sixth-hour.json": {
-  "status": "Active — Horologion v3.3 (2026-03-08). Sixth Hour skeleton: fixed slots resolved from sixth-hour-fixed.json; troparion-of-the-day resolved dynamically; sixth-hour-theotokion remains a rubric stub (deferred)."
-},
-"sixth-hour-fixed.json": {
-  "status": "Active — Horologion v3.3 (2026-03-08). Fixed-text corpus for the Sixth Hour: usual-beginning, psalm-53 (LXX), psalm-54 (LXX), psalm-90 (LXX), trisagion-prayers, prayer-of-the-sixth-hour. Variable slots (troparion-of-the-day, sixth-hour-theotokion) are not here; resolved dynamically by HorologionEngine. Source: Jordanville 2008 edition."
-},
-"ninth-hour.json": {
-  "status": "Active — Horologion v3.4 (2026-03-08). Ninth Hour skeleton: fixed slots resolved from ninth-hour-fixed.json; troparion-of-the-day resolved dynamically; ninth-hour-theotokion remains a rubric stub (deferred)."
-},
-"ninth-hour-fixed.json": {
-  "status": "Active — Horologion v3.4 (2026-03-08). Fixed-text corpus for the Ninth Hour: usual-beginning, psalm-83 (LXX), psalm-84 (LXX), psalm-85 (LXX), trisagion-prayers, prayer-of-the-ninth-hour. Variable slots (troparion-of-the-day, ninth-hour-theotokion) are not here; resolved dynamically by HorologionEngine. Source: Jordanville 2008 edition."
-},
-"next_required": "Feast-rank override engine (proper feast apolytikia/Theotokia for Vespers and all Little Hours). Menaion text-unavailable entry resolution (~200 entries). Triodion/Pentecostarion overlay expansion. Kathisma full psalm text."
-      }
-    },
-    "js/menaion-resolver.js": {
-      "role": "Menaion pilot resolver — query boundary between the Horologion engine and Menaion date corpora",
-      "status": "Current — v1.8 (2026-03-07) — ANNUAL CORPUS COMPLETE",
-      "global_api": "window.MenaionResolver",
-      "public_methods": [
-        "queryTroparion(mmdd) — Promise<ResultObject>. Accepts 'MM-DD' string. Returns status + troparion text (if resolved) or fallback code. Non-throwing.",
-        "isMonthImported(monthNum) — boolean. Returns true only if the month's JSON has been registered in MONTH_FILES.",
-        "importedMonths() — returns array of imported month numbers."
-      ],
-      "result_status_codes": [
-        "menaion-resolved — text found; full troparion text + name + tone + rank returned",
-        "menaion-text-unavailable — commemoration identified but troparion text not yet in corpus",
-        "menaion-not-imported — month has not been imported into the pilot corpus",
-        "menaion-no-ranked-commemoration — date imported but no commemoration meets minimum rank threshold",
-        "menaion-load-error — JSON fetch failed; engine falls through to theme rubric"
-      ],
-      "architecture_note": "IIFE pattern (same as HorologionEngine). Soft dependency: if this file fails to load or the query throws, horologion-engine.js degrades silently to the weekday-theme rubric. This module owns all Menaion data loading; the engine owns none. Rank selection rule: if multiple commemorations exist on a date, the highest-rank entry (lowest integer) is selected; ties resolved by first entry. CURRENT SCOPE: COMPLETE — all 12 months imported. November (30/30), December (31/31), January (31/31), February (28/28), March (31/31), April (30/30), May (31/31), June (30/30), July (31/31), August (31/31), September (30/30), October (31/31). No month returns 'menaion-not-imported'. Full annual fixed-date Menaion corpus is present. Moveable feasts (Pascha cycle) and feast-rank override engine remain deferred."
-    },
-    "data/menaion/": {
-      "role": "Menaion pilot corpus and schema — fixed-date Byzantine saint troparion data",
-      "status": "Active — Menaion v1.8 corpus COMPLETE (2026-03-07) — all 12 months",
-      "files": {
-        "schema.json": {
-          "status": "Active — Menaion v1 pilot schema contract (2026-03-07)",
-          "coverage": "Documents the canonical shape for all future monthly Menaion files. Rank model: rank 1 (Great Feast / Theotokos), rank 2 (Polyeleos), rank 3 (Six-stichera / Doxology), rank 4 (Simple commemoration). Date key: MM-DD string (zero-padded, not year-dependent). Commemoration shape: id, name, type, rank, troparion_tone, troparion { tone, title, text }, troparion_status, tradition_tags, notes. Resolution contract codes documented."
-        },
-        "november.json": {
-          "status": "Active — Menaion v1.1 tranche 2 (2026-03-08). FULL CORPUS: all 30 November dates imported. Dates with unconfirmed troparion text carry troparion_status:'text-unavailable' and return 'menaion-text-unavailable' from the resolver.",
-          "coverage_note": "FULL CORPUS — all 30 November dates imported. December and January also complete; corpus expansion continuing."
-        },
-        "december.json": {
-          "status": "Active — Menaion v1.1 tranche 2 (2026-03-08). FULL CORPUS: all 31 December dates imported. Includes Nativity Fast commemorations, Forefeast (Dec 20–24), Christmas Day rank-1 feast (Dec 25), and Afterfeast (Dec 26–31). Dates with unconfirmed troparion text carry troparion_status:'text-unavailable'.",
-          "coverage_note": "FULL CORPUS — all 31 December dates imported. January also complete; February is next."
-        },
-        "january.json": {
-          "status": "Active — Menaion v1.2 (2026-03-07). FULL CORPUS: all 31 January dates imported.",
-          "troparion_status_summary": "24 resolved, 7 text-unavailable",
-          "coverage_note": "FULL CORPUS. All 31 dates present. Unconfirmed troparion texts carry troparion_status:'text-unavailable' and return 'menaion-text-unavailable' from the resolver."
-        },
-        "february.json": {
-          "status": "Active — Menaion v1.3 (2026-03-07). FULL CORPUS: all 28 February dates imported.",
-          "troparion_status_summary": "15 resolved, 13 text-unavailable",
-          "coverage_note": "FULL CORPUS — all 28 dates imported. Dates with unconfirmed troparion text carry troparion_status:'text-unavailable' and return 'menaion-text-unavailable' from the resolver."
-        },
-        "march.json": {
-          "status": "Active — Menaion v1.4 (2026-03-07). FULL CORPUS: all 31 March dates imported.",
-          "troparion_status_summary": "11 resolved, 20 text-unavailable",
-          "coverage_note": "FULL CORPUS — all 31 dates imported. March is heavily Lenten in most years; Great Lent feast-rank overrides are deferred per governance. Dates with unconfirmed troparion text carry troparion_status:'text-unavailable' and return 'menaion-text-unavailable' from the resolver."
-        },
-        "april.json": {
-          "status": "Active — Menaion v1.5 (2026-03-07). FULL CORPUS: all 30 April dates imported.",
-          "troparion_status_summary": "11 resolved, 19 text-unavailable",
-          "coverage_note": "FULL CORPUS — all 30 dates imported. Pascha and Bright Week may fall in April; Paschal and Bright Week feast-rank overrides are deferred per governance. Dates with unconfirmed troparion text carry troparion_status:'text-unavailable' and return 'menaion-text-unavailable' from the resolver."
-        },
-        "may.json": {
-          "status": "Active — Menaion v1.6 (2026-03-07). FULL CORPUS: all 31 May dates imported.",
-          "troparion_status_summary": "12 resolved, 19 text-unavailable",
-          "coverage_note": "FULL CORPUS — all 31 dates imported."
-        },
-        "june.json": {
-          "status": "Active — Menaion v1.6 (2026-03-07). FULL CORPUS: all 30 June dates imported.",
-          "troparion_status_summary": "12 resolved, 18 text-unavailable",
-          "coverage_note": "FULL CORPUS — all 30 dates imported."
-        },
-        "july.json": {
-          "status": "Active — Menaion v1.7 (2026-03-07). FULL CORPUS: all 31 July dates imported.",
-          "troparion_status_summary": "16 resolved, 15 text-unavailable",
-          "coverage_note": "FULL CORPUS — all 31 dates imported."
-        },
-        "august.json": {
-          "status": "Active — Menaion v1.7 (2026-03-07). FULL CORPUS: all 31 August dates imported.",
-          "troparion_status_summary": "16 resolved, 15 text-unavailable",
-          "coverage_note": "FULL CORPUS — all 31 dates imported. August contains two Great Feasts (Transfiguration, Dormition)."
-        },
-        "september.json": {
-          "status": "Active — Menaion v1.8 (2026-03-07). FULL CORPUS: all 30 September dates imported.",
-          "troparion_status_summary": "15 resolved, 15 text-unavailable",
-          "coverage_note": "FULL CORPUS — all 30 dates imported. September begins the Byzantine ecclesiastical year and contains two Great Feasts."
-        },
-        "october.json": {
-          "status": "Active — Menaion v1.8 (2026-03-07). FULL CORPUS: all 31 October dates imported. FINAL MONTH — annual corpus now complete.",
-          "troparion_status_summary": "15 resolved, 16 text-unavailable",
-          "coverage_note": "FULL CORPUS — all 31 dates imported. October is the final month; the annual fixed-date Menaion corpus is now complete."
+        "role": "All date and liturgical calendar logic",
+        "status": "Current — v2.8.9 + 2026-03-06 admin EO diagnostics patch",
+        "global_api": "window.CalendarEngine",
+        "architecture_note": "v2.8.1: Hardcoded SEASON_RANGES array (was valid through Dec 2030 only) replaced with algorithmic generator. getLiturgicalYear() is now fully algorithmic. Both are valid for any year indefinitely. Admin/devtool extension now adds EO snapshot helpers for old_calendar vs new_calendar diagnostics; this does not by itself expose EO mode in the main app.",
+        "public_methods": [
+          "init() — loads bcp-propers.json; must be called before fetchLectionaryData()",
+          "getSeasonAndFile(date) — returns { season, file, liturgicalColor, litYear }",
+          "getLiturgicalYear(date) — returns 'year1' or 'year2'; algorithmic, anchored to Advent 2025 = Year 2",
+          "getCurrentProper(date) — returns Proper number 3–29",
+          "fetchLectionaryData(date) — returns daily entry object from seasonal JSON",
+          "getCurrentDate()",
+          "setCurrentDate(date)",
+          "changeDate(days)",
+          "resetDate()",
+          "formatDateForLookup(date) — returns 'February 17, 2026'",
+          "formatDateISO(date) — returns '2026-02-17'",
+          "getYearSnapshot(year, config) — admin/devtool snapshot adapter; routes EOR to EasternOrthodoxCalendar when available",
+          "getEOSeasonRanges(year, eoMode) — admin/devtool EO fixed-feast + season-range diagnostics for new_calendar vs old_calendar"
+        ],
+        "backward_compatibility": "SEASON_RANGES static getter retained — returns algorithmically generated ranges for current and prior calendar year. Any external code referencing CalendarEngine.SEASON_RANGES continues to work."
+      },
+      "js/calendar-east-syriac.js": {
+        "role": "Church of the East liturgical calendar — nine seasons, Qdham/Wathar cycle, seasonal colour",
+        "status": "COMPLETE AND OPERATIONAL — All 20 self-tests passing (confirmed in console 2026-02-27)",
+        "global_api": "EastSyriacCalendar (IIFE, window-scoped)",
+        "public_methods": [
+          "getSeason(date) — returns { season, weekInSeason, cycle, weekLabel, seasonLabel, easter }",
+          "getDayClass(date) — returns full day-classification object including isFriday, isLenten, isNinevehFast, dayClass, commemorations[], and all getSeason fields",
+          "getEaster(gregorianYear) — returns Date (Gregorian JS Date of d'Qyamta for that year)",
+          "getLiturgicalYear(date) — returns { subaraStart, easter, seasons, nextSubara }",
+          "getFixedCommemorationsForDate(date) — returns commemoration records for Layer 2 fixed observances",
+          "SEASON_META — read-only season metadata object"
+        ],
+        "seasons": [
+          "subara — Annunciation/Advent",
+          "denkha — Epiphany",
+          "sauma — Great Fast (Lent)",
+          "qyamta — Resurrection (Easter)",
+          "shlihe — Apostles",
+          "qayta — Summer",
+          "eliya-sliwa — Elijah and the Holy Cross",
+          "muse — Moses",
+          "qudash-idta — Dedication of the Church"
+        ],
+        "cycle_note": "Qdham (Before) and Wathar (After) are the two-week rotating cycles anchored to Subara Sunday. Drives Qanona, Marmitha, and Barekmar selection."
+      },
+      "js/calendar-ethiopian.js": {
+        "role": "Ethiopian (Ge'ez) calendar conversion and date resolution",
+        "status": "COMPLETE AND OPERATIONAL — Phase 7.4. Fully integrated.",
+        "global_api": "EthiopianCalendar (IIFE, window-scoped)",
+        "public_methods": [
+          "getEthiopianDate(gregorianDate) — returns { day, month, monthIndex, year } in Amete Mihret era",
+          "getCopticDate(gregorianDate) — same algorithm, Coptic month names, EC-276 era",
+          "formatEthiopianDate(gregorianDate) — returns display string e.g. '15 Yekatit 2018'",
+          "isEthiopianLeapYear(ethiopianYear) — boolean; leap when year % 4 === 3",
+          "MONTH_NAMES — exported array of 13 Ge'ez month name strings",
+          "COPTIC_MONTH_NAMES — exported array of 13 Coptic month name strings"
+        ],
+        "implementation_notes": [
+          "1. Julian Day Number (JDN) method — valid across all historical and future dates",
+          "2. Epoch: 1 Meskerem 1 EC = JDN 1724221 = 29 August 8 AD (Julian)",
+          "3. Pagume: 5 days normally, 6 in leap years (year % 4 === 3)",
+          "4. Self-test suite on load — 9 verified reference points logged to console",
+          "5. Called in office-ui.js eth-saints-commemoration: EthiopianCalendar.getEthiopianDate(currentDate)"
+        ]
+      },
+      "js/scripture-resolver.js": {
+        "role": "Scripture text fetching, citation parsing, LRU book cache",
+        "lines": 254,
+        "status": "Current (2026-02-17)",
+        "global_function": "getScriptureText(citation)",
+        "cache": "LRU — max 20 Bible books",
+        "example_citations": [
+          "Isaiah 40:12-23",
+          "Psalm 119:105-112",
+          "Joel 2:1-2, 12-17"
+        ]
+      },
+      "css/office.css": {
+        "role": "All application styles — theming, sidebar, layout, print",
+        "status": "Current — v2.9.7 (2026-03-07)",
+        "changes": [
+          "1. Added .ethiopian-btn — gold/yellow color scheme [Phase 7.1]",
+          "2. Added .ethiopian-btn:hover — subtle gold wash [Phase 7.1]",
+          "3. Added .ethiopian-theme .rubric-text — Metsehafe Tselot aesthetic [v2.6.1]",
+          "4. Added .ethiopian-theme .rubric-text::before — ☩ glyph prefix [v2.6.1]",
+          "5. Added .ethiopian-theme .component-text — font-weight 500 for hierarchy of voice [v2.6.1]",
+          "6. Added @media print override — collapses Ethiopian rubric border-left and padding [v2.6.1]",
+          "7. Added #east-syriac-settings — sidebar geometry matching #settings-panel and #ethiopian-settings",
+          "8. Added #generic-settings — fourth sidebar geometry block: position:fixed, top:0, left:36px, width:300px, height:100vh, same visual treatment as #east-syriac-settings. #generic-settings.sidebar-hidden: transform:translateX(-336px). #generic-settings.mode-hidden: display:none !important. [v2.9.7]",
+          "9. Mobile @media (max-width:768px): #generic-settings added to overlay position/flex selector and to .sidebar-hidden transform selector alongside the three existing panels. [v2.9.7]",
+          "10. Mobile dim overlay: :has() selector updated to include #daily-office-section:has(#generic-settings:not(.sidebar-hidden))::after. [v2.9.7]",
+          "11. @media print: #generic-settings added to display:none !important list. [v2.9.7]"
+        ],
+        "key_rules": [
+          "#settings-panel — BCP sidebar, transition: transform 0.3s ease, translateX(-336px) when hidden",
+          "#ethiopian-settings — Ethiopian Sa'atat sidebar, same geometry",
+          "#east-syriac-settings — Church of the East sidebar, same geometry",
+          "#main-content — flex content area, padding-left 80px when sidebar hidden",
+          "#sidebar-toggle — 36px fixed toggle column",
+          ".ethiopian-btn — gold-bordered splash button for Sa'atat entry",
+          ".ethiopian-theme .rubric-text — Metsehafe Tselot rubric style",
+          ".ethiopian-theme .component-text — heavier weight, dominant voice",
+          "CSS custom properties on :root — --gold, --accent, --rubric, --bg-color, etc.",
+          "@media print — removes all UI chrome",
+          "#generic-settings — Horologion/generic sidebar, same geometry as other tradition panels"
+        ]
+      },
+      "js/css/office.css": {
+        "role": "DELETED — orphaned duplicate of css/office.css",
+        "status": "DELETED 2026-02-24",
+        "note": "Was never referenced by index.html or any JS module. Deleted to eliminate confusion."
+      },
+      "js/calendar-eastern-orthodox.js": {
+        "role": "Eastern Orthodox movable-feast engine for admin/year-day snapshot diagnostics",
+        "status": "Current — admin/devtool path only (2026-03-06 wiring confirmed)",
+        "global_api": "window.EasternOrthodoxCalendar",
+        "public_methods": [
+          "getYearSnapshot(year, options) — returns EO year snapshot using Julian Paschalion",
+          "getDaySnapshot(date, options) — returns EO day snapshot",
+          "_verifyPascha(year) — internal verification helper exposed on module"
+        ],
+        "implementation_notes": [
+          "Julian Paschalion (Meeus/standard Orthodox method), then Julian→Gregorian conversion by century-based offset.",
+          "Zero dependency design: no private CalendarEngine calls.",
+          "Loaded by admin/admin.html for diagnostics; not loaded by main app index.html."
+        ]
+      },
+      "js/horologion-engine.js": {
+        "role": "Byzantine Horologion office engine — skeleton loading, payload resolution, validation",
+        "status": "Active — Horologion engine v5.4 (2026-03-15)",
+        "global_api": "window.HorologionEngine",
+        "public_methods": [
+          "getOfficeSkeleton(officeKey, traditionVariant) — fetches and caches data/horologion/<officeKey>.json",
+          "resolveOffice(date, officeKey, context) — returns normalized payload; non-throwing; status:'error' on all failure paths",
+          "validateOfficePayload(payload) — returns { valid, errors[], warnings[] }"
+        ],
+        "supported_offices_v1": [
+          "vespers",
+          "small-compline",
+          "first-hour",
+          "third-hour",
+          "sixth-hour",
+          "ninth-hour"
+        ],
+        "tradition_code": "BYZC",
+        "architecture_note": "Horologion v5.4 (current). v3.5: feast-rank arbitration introduced — _resolveFeastOverrideContext() governs Vespers troparion/apolytikion and dismissal Theotokion. v3.6: _resolveLittleHourTroparionSlot() extends feast-rank override to Little Hours troparion-of-the-day. v3.7: _resolveFestalRubricOverrideSlot() applies qualifying feast rubric override to Vespers stichera-at-lord-i-have-cried and aposticha. v3.8: Great Lent seasonal layer added inside _resolveLittleHourSeasonalTroparionSlot() — displaces ordinary weekday fallback on Great Lent Mon–Fri for all four Little Hours. v3.9: _resolveComplineSeasonalTroparionSlot() applies parallel Great Lent seasonal override for Small Compline troparion-of-the-day. v4.0: _normalizeOrdinaryTroparionFallbackForOffice() rewrites the inherited Vespers weekday-theme-rubric into office-appropriate text for Small Compline and all Little Hours. v4.1/v4.3: _normalizeTheotokionRubricForOffice() + _resolveLittleHourFestalTheotokionRubric() — Little Hours Theotokion normalization and festal rubric arbitration for First through Ninth Hour. v4.4: _resolveComplineFestalTheotokionRubric() — Small Compline festal Theotokion rubric arbitration. _normalizeUnavailableTroparionFallbackForOffice() rewrites menaion-text-unavailable fallback rubrics to use the consuming office name rather than Vespers wording; invoked as the first call inside _normalizeOrdinaryTroparionFallbackForOffice() and independently at the base of _resolveLittleHourSeasonalTroparionSlot() and _resolveComplineSeasonalTroparionSlot(). v5.0: _loadTriodionData() + _resolveTriodionTroparion() — Triodion Great Lent weekday overlay; fires after feast arbitration on Great Lent weekdays when no qualifying feast resolved; corpus covers Weeks 1–6 (data/triodion/triodion-lenten-weekday.json). v5.1: _loadHolyWeekData() + _resolveHolyWeekText() — Holy Week text overlay; troparion slot populated all 7 Holy Week days (data/triodion/holy-week/holy-week.json); stichera/aposticha/paremiae/theotokion remain as informed rubrics. v5.2: _loadPentecostarionData() + _resolvePentecostarionText() — Pentecostarion Bright Week stichera and aposticha (data/pentecostarion/pentecostarion-bright-week.json); wired into stichera-at-lord-i-have-cried and aposticha Bright Week branches in _resolveVespersSlots(). v5.4: _renderHorologionDiagnostics(item, escapeHtml) added to office-ui.js — optional inline diagnostics annotation for variable Horologion slots. Wired into rubric, stichera, and fallback-text branches of _renderHorologionItem(). Controlled by _horDiagnosticsEnabled flag; toggle via sidebar button or console.",
+        "supported_offices_next": []
+      },
+      "data/horologion/": {
+        "role": "Horologion office skeleton data files",
+        "status": "Active — Horologion v3.4 (2026-03-08). Vespers + Small Compline + First Hour + Third Hour + Sixth Hour + Ninth Hour operational.",
+        "milestone_status": "Horologion v5.4 complete and verified. Engine arbitration stack stable through v4.4. Seasonal overlay stack stable through v5.2: Triodion Great Lent weekday (v5.0), Holy Week troparion (v5.1), Pentecostarion Bright Week stichera/aposticha (v5.2). Menaion corpus 369/370 resolved (v5.3). Diagnostics UI active (v5.4). Season-aware feast qualification rule verified: ranks 1–4 outside Great Lent weekdays; ranks 1–2 only during Great Lent weekdays.",
+        "files": {
+          "_ref": "Full per-file status in structure-reference.json horologion_files.",
+          "vespers.json": {
+            "status": "BASELINE COMPLETE — fixed/invariable content complete. v1.2: daily-prokeimenon and vesperal-reading resolved. v1.3: Octoechos tone engine; Saturday stichera/aposticha fully populated (tones 1–8). v1.4: Monday–Friday stichera/aposticha materially populated (tones 1–8). v1.5: kathisma-reading resolved for ordinary Mon–Sat as appointment rubric. v1.6: troparion-or-apolytikion — Saturday full Resurrectional Troparion; Bright Week Paschal Troparion; Mon–Fri tone stub; Sunday deferred. v1.7: theotokion-dismissal — Saturday full dismissal Theotokion (tones 1–8, distinct from Dogmatikon); Bright Week explicit omission; Mon–Fri tone stub; Sunday deferred. v1.8: Sunday Small Vespers implemented as a real baseline path. Every variable slot across all day-of-week paths now yields full text, an explicit rubric stub, or an explicit omission rubric. v1.9: weekday theotokion-dismissal (Mon–Fri) upgraded to type:'text' full resolution (vespers-weekday-theotokion.json, 40 entries). Engine v3.5: feast-rank arbitration live — _resolveFeastOverrideContext() governs troparion/apolytikion and dismissal Theotokion; season-aware qualification (ranks 1–4 outside Great Lent weekdays; ranks 1–2 only during Great Lent weekdays). Engine v3.7: _resolveFestalRubricOverrideSlot() governs stichera/aposticha feast override. Triodion Great Lent weekday overlay live (v5.0); Holy Week troparion overlay live (v5.1); Pentecostarion Bright Week stichera/aposticha live (v5.2). Remaining: kathisma full psalm text (v5.5 target); full festal text for Holy Week stichera/aposticha/paremiae/theotokion slots not yet in corpus."
+          },
+          "small-compline.json": {
+            "status": "Active — Horologion v3.0 (2026-03-08) — NEW in v3.0"
+          },
+          "compline-fixed.json": {
+            "status": "Active — Horologion v3.0 (2026-03-08) — NEW in v3.0"
+          },
+          "octoechos-vespers.json": {
+            "status": "Active — Horologion v1.4 (2026-03-07)"
+          },
+          "vespers-weekday-theotokion.json": {
+            "status": "Active — Horologion v1.9 (2026-03-07) — NEW in v1.9"
+          },
+          "first-hour.json": {
+            "status": "Active — Horologion v3.1 (2026-03-08) — NEW in v3.1. First Hour skeleton: fixed slots resolved from first-hour-fixed.json; troparion-of-the-day resolved dynamically; first-hour-theotokion remains a rubric stub (deferred)."
+          },
+          "first-hour-fixed.json": {
+            "status": "Active — Horologion v3.1 (2026-03-08) — NEW in v3.1. Fixed-text corpus for the First Hour: usual-beginning, psalm-5 (LXX), psalm-89 (LXX), psalm-100 (LXX), trisagion-prayers, prayer-of-the-first-hour. Variable slots (troparion-of-the-day, first-hour-theotokion) are not here; resolved dynamically by HorologionEngine. Source: Jordanville 2008 edition."
+          },
+          "third-hour.json": {
+            "status": "Active — Horologion v3.2 (2026-03-08). Third Hour skeleton: fixed slots resolved from third-hour-fixed.json; troparion-of-the-day resolved dynamically; third-hour-theotokion remains a rubric stub (deferred)."
+          },
+          "third-hour-fixed.json": {
+            "status": "Active — Horologion v3.2 (2026-03-08). Fixed-text corpus for the Third Hour: usual-beginning, psalm-16 (LXX), psalm-24 (LXX), psalm-50 (LXX), trisagion-prayers, prayer-of-the-third-hour. Variable slots (troparion-of-the-day, third-hour-theotokion) are not here; resolved dynamically by HorologionEngine. Source: Jordanville 2008 edition."
+          },
+          "sixth-hour.json": {
+            "status": "Active — Horologion v3.3 (2026-03-08). Sixth Hour skeleton: fixed slots resolved from sixth-hour-fixed.json; troparion-of-the-day resolved dynamically; sixth-hour-theotokion remains a rubric stub (deferred)."
+          },
+          "sixth-hour-fixed.json": {
+            "status": "Active — Horologion v3.3 (2026-03-08). Fixed-text corpus for the Sixth Hour: usual-beginning, psalm-53 (LXX), psalm-54 (LXX), psalm-90 (LXX), trisagion-prayers, prayer-of-the-sixth-hour. Variable slots (troparion-of-the-day, sixth-hour-theotokion) are not here; resolved dynamically by HorologionEngine. Source: Jordanville 2008 edition."
+          },
+          "ninth-hour.json": {
+            "status": "Active — Horologion v3.4 (2026-03-08). Ninth Hour skeleton: fixed slots resolved from ninth-hour-fixed.json; troparion-of-the-day resolved dynamically; ninth-hour-theotokion remains a rubric stub (deferred)."
+          },
+          "ninth-hour-fixed.json": {
+            "status": "Active — Horologion v3.4 (2026-03-08). Fixed-text corpus for the Ninth Hour: usual-beginning, psalm-83 (LXX), psalm-84 (LXX), psalm-85 (LXX), trisagion-prayers, prayer-of-the-ninth-hour. Variable slots (troparion-of-the-day, ninth-hour-theotokion) are not here; resolved dynamically by HorologionEngine. Source: Jordanville 2008 edition."
+          },
+          "next_required": "v5.5 — Kathisma full psalm text: upgrade kathisma-reading from rubric-only appointment to full Psalter text. Currently returns a rubric naming the appointed kathisma and psalm range; full text requires Psalter import. v5.6 — Orthros / Matins structural baseline: next office family after Kathisma work complete."
+        }
+      },
+      "js/menaion-resolver.js": {
+        "role": "Menaion pilot resolver — query boundary between the Horologion engine and Menaion date corpora",
+        "status": "Current — v1.8 (2026-03-07) — ANNUAL CORPUS COMPLETE",
+        "global_api": "window.MenaionResolver",
+        "public_methods": [
+          "queryTroparion(mmdd) — Promise<ResultObject>. Accepts 'MM-DD' string. Returns status + troparion text (if resolved) or fallback code. Non-throwing.",
+          "isMonthImported(monthNum) — boolean. Returns true only if the month's JSON has been registered in MONTH_FILES.",
+          "importedMonths() — returns array of imported month numbers."
+        ],
+        "result_status_codes": [
+          "menaion-resolved — text found; full troparion text + name + tone + rank returned",
+          "menaion-text-unavailable — commemoration identified but troparion text not yet in corpus",
+          "menaion-not-imported — month has not been imported into the pilot corpus",
+          "menaion-no-ranked-commemoration — date imported but no commemoration meets minimum rank threshold",
+          "menaion-load-error — JSON fetch failed; engine falls through to theme rubric"
+        ],
+        "architecture_note": "IIFE pattern (same as HorologionEngine). Soft dependency: if this file fails to load or the query throws, horologion-engine.js degrades silently to the weekday-theme rubric. This module owns all Menaion data loading; the engine owns none. Rank selection rule: if multiple commemorations exist on a date, the highest-rank entry (lowest integer) is selected; ties resolved by first entry. CURRENT SCOPE: COMPLETE — all 12 months imported. November (30/30), December (31/31), January (31/31), February (28/28), March (31/31), April (30/30), May (31/31), June (30/30), July (31/31), August (31/31), September (30/30), October (31/31). No month returns 'menaion-not-imported'. Full annual fixed-date Menaion corpus is present. Feast-rank override engine live through engine v3.5–v4.4 (see horologion-engine.js). Triodion, Holy Week, and Pentecostarion seasonal overlays live through v5.0–v5.2. Corpus audit complete through v5.3: 369/370 resolved; 05-18 intentional holdout."
+      },
+      "data/menaion/": {
+        "role": "Menaion pilot corpus and schema — fixed-date Byzantine saint troparion data",
+        "status": "Active — Menaion v1.8 corpus COMPLETE (2026-03-07) — all 12 months",
+        "files": {
+          "schema.json": {
+            "status": "Active — Menaion v1 pilot schema contract (2026-03-07)",
+            "coverage": "Documents the canonical shape for all future monthly Menaion files. Rank model: rank 1 (Great Feast / Theotokos), rank 2 (Polyeleos), rank 3 (Six-stichera / Doxology), rank 4 (Simple commemoration). Date key: MM-DD string (zero-padded, not year-dependent). Commemoration shape: id, name, type, rank, troparion_tone, troparion { tone, title, text }, troparion_status, tradition_tags, notes. Resolution contract codes documented."
+          },
+          "november.json": {
+            "status": "Active — Menaion v1.1 tranche 2 (2026-03-08). FULL CORPUS: all 30 November dates imported. All dates resolved. Annual corpus complete through v5.3.",
+            "coverage_note": "FULL CORPUS — all 30 November dates imported. Annual corpus complete through v5.3."
+          },
+          "december.json": {
+            "status": "Active — Menaion v1.1 tranche 2 (2026-03-08). FULL CORPUS: all 31 December dates imported. Includes Nativity Fast commemorations, Forefeast (Dec 20–24), Christmas Day rank-1 feast (Dec 25), and Afterfeast (Dec 26–31). All dates resolved. Annual corpus complete through v5.3.",
+            "coverage_note": "FULL CORPUS — all 31 December dates imported. Annual corpus complete through v5.3."
+          },
+          "january.json": {
+            "status": "Active — Menaion v1.2 (2026-03-07). FULL CORPUS: all 31 January dates imported.",
+            "troparion_status_summary": "33 resolved, 0 text-unavailable — corpus complete",
+            "coverage_note": "FULL CORPUS. All 31 dates present. Unconfirmed troparion texts carry troparion_status:'text-unavailable' and return 'menaion-text-unavailable' from the resolver."
+          },
+          "february.json": {
+            "status": "Active — Menaion v1.3 (2026-03-07). FULL CORPUS: all 28 February dates imported.",
+            "troparion_status_summary": "28 resolved, 0 text-unavailable — corpus complete",
+            "coverage_note": "FULL CORPUS — all 28 dates imported. Dates with unconfirmed troparion text carry troparion_status:'text-unavailable' and return 'menaion-text-unavailable' from the resolver."
+          },
+          "march.json": {
+            "status": "Active — Menaion v1.4 (2026-03-07). FULL CORPUS: all 31 March dates imported.",
+            "troparion_status_summary": "31 resolved, 0 text-unavailable — corpus complete",
+            "coverage_note": "FULL CORPUS — all 31 dates imported. March is heavily Lenten in most years; Great Lent feast-rank overrides are deferred per governance. Dates with unconfirmed troparion text carry troparion_status:'text-unavailable' and return 'menaion-text-unavailable' from the resolver."
+          },
+          "april.json": {
+            "status": "Active — Menaion v1.5 (2026-03-07). FULL CORPUS: all 30 April dates imported.",
+            "troparion_status_summary": "29 resolved, 0 text-unavailable — corpus complete",
+            "coverage_note": "FULL CORPUS — all 30 dates imported. Pascha and Bright Week may fall in April; Paschal and Bright Week feast-rank overrides are deferred per governance. Dates with unconfirmed troparion text carry troparion_status:'text-unavailable' and return 'menaion-text-unavailable' from the resolver."
+          },
+          "may.json": {
+            "status": "Active — Menaion v1.6 (2026-03-07). FULL CORPUS: all 31 May dates imported.",
+            "troparion_status_summary": "30 resolved, 1 text-unavailable — 05-18 (Venerable Peter of Caesarea in Cappadocia) is an intentional holdout; no confirmed Hapgood/OCA/Jordanville source",
+            "coverage_note": "FULL CORPUS — all 31 dates imported."
+          },
+          "june.json": {
+            "status": "Active — Menaion v1.6 (2026-03-07). FULL CORPUS: all 30 June dates imported.",
+            "troparion_status_summary": "30 resolved, 0 text-unavailable — corpus complete",
+            "coverage_note": "FULL CORPUS — all 30 dates imported."
+          },
+          "july.json": {
+            "status": "Active — Menaion v1.7 (2026-03-07). FULL CORPUS: all 31 July dates imported.",
+            "troparion_status_summary": "29 resolved, 0 text-unavailable — corpus complete",
+            "coverage_note": "FULL CORPUS — all 31 dates imported."
+          },
+          "august.json": {
+            "status": "Active — Menaion v1.7 (2026-03-07). FULL CORPUS: all 31 August dates imported.",
+            "troparion_status_summary": "30 resolved, 0 text-unavailable — corpus complete",
+            "coverage_note": "FULL CORPUS — all 31 dates imported. August contains two Great Feasts (Transfiguration, Dormition)."
+          },
+          "september.json": {
+            "status": "Active — Menaion v1.8 (2026-03-07). FULL CORPUS: all 30 September dates imported.",
+            "troparion_status_summary": "31 resolved, 0 text-unavailable — corpus complete",
+            "coverage_note": "FULL CORPUS — all 30 dates imported. September begins the Byzantine ecclesiastical year and contains two Great Feasts."
+          },
+          "october.json": {
+            "status": "Active — Menaion v1.8 (2026-03-07). FULL CORPUS: all 31 October dates imported. FINAL MONTH — annual corpus now complete.",
+            "troparion_status_summary": "32 resolved, 0 text-unavailable — corpus complete",
+            "coverage_note": "FULL CORPUS — all 31 dates imported. October is the final month; the annual fixed-date Menaion corpus is now complete."
+          }
         }
       }
-    }
-  },
-  "east_syriac_tradition": {
-    "status": "OPERATIONAL — v2.8.1. All seven canonical hours. See structure-reference.json.",
-    "entry_point": "selectMode('east-syriac')"
-  },
-  "ethiopian_tradition": {
-    "status": "OPERATIONAL — v2.8.1. Full 24-hour canonical cycle, Senkessar wired. See structure-reference.json.",
-    "entry_point": "selectMode('ethiopian-saatat')"
-  },
-  "ethiopian_synaxarium": {
-    "status": "OPERATIONAL — All 13 months complete. See structure-reference.json.",
-    "index_file": "data/synaxarium/ethiopian/senkessar-index.json"
-  },
-  "data_summary": {
-    "note": "Individual data files not enumerated here. See historical structure file for full listings.",
-    "data/bible/": "[600+ Scripture files across NT, OT, ET, SY, AR, ODES subdirectories]",
-    "data/season/": "[9 seasonal JSON files — 353 total BCP 1979 daily lectionary entries, Year One and Year Two]",
-    "data/saints/": "12 monthly JSON files — 1568 saint records (post v2.8.2 migration). Schema: id, day, name, description, type, tags[], verification_status, notes?. Tags: ANG | LAT | EOR | OOR | COE. ECU derived at render time. Generated monthly files are cache/display artifacts, not canonical source.",
-    "data/components.json": "DEPRECATED — do not use. Stale pre-modularization monolith.",
-    "data/rubrics.json": "BCP office sequence definitions",
-    "data/season/bcp-propers.json": "Proper 1–29 reference table for CalendarEngine.init()",
-    "data/synaxarium/ethiopian/senkessar-index.json": "Master index — 13 months, 385 entries. Validated 2026-02-23.",
-    "data/synaxarium/ethiopian/[all months]/": "Complete narrative corpora confirmed for all 13 months.",
-    "components/common.json": "5 shared components",
-    "components/anglican.json": "179 BCP components",
-    "components/coptic.json": "2 Coptic components",
-    "components/ecumenical.json": "9 ecumenical components",
-    "components/ethiopian.json": "~19 Ethiopian Tewahedo components",
-    "components/east-syriac.json": "92 Church of the East components (v2.8.0: +8 minor hours components; v2.8.1: +9 Barekmar components, -3 duplicate removals = net +6)",
-    "components/traditions/ethiopian/rubrics.json": "Ethiopian Sa'atat rubric sequences — eth-hour-7 Phase 2B stale note removed v2.8.1",
-    "components/traditions/east-syriac/rubrics.json": "Church of the East rubric sequences — 15 sequences total (3 legacy, 6 existing, 8 new minor hours [v2.8.0]). 11 dynamic tokens, all implemented [v2.8.1]."
-  },
-  "saints_model": {
-    "status": "normalized-all-months-generated",
-    "status_note": "All 12 monthly cache files are present as of v2.8.2 and last regenerated in v2.8.8 (Phase 4 duplicate consolidation). js/saints-resolver.js (SaintsResolver) is the sole monthly-cache owner and the canonical saints boundary. office-ui.js and admin.html route all saints paths through SaintsResolver. No appData.saints usage or direct saints-cache fetches remain outside saints-resolver.js. Phase 4 duplicate identity consolidation complete: 46 pairs resolved, 1,228 unique identities remain.",
-    "source_of_truth": [
-      "data/saints/identities.json",
-      "data/saints/commemorations.json"
-    ],
-    "generated_cache": [
-      "data/saints/saints-january.json",
-      "data/saints/saints-february.json",
-      "data/saints/saints-march.json",
-      "data/saints/saints-april.json",
-      "data/saints/saints-may.json",
-      "data/saints/saints-june.json",
-      "data/saints/saints-july.json",
-      "data/saints/saints-august.json",
-      "data/saints/saints-september.json",
-      "data/saints/saints-october.json",
-      "data/saints/saints-november.json",
-      "data/saints/saints-december.json"
-    ],
-    "shared_module": "js/saints-resolver.js",
-    "generator": "tools/build_saints_cache.js",
-    "workflow": "Edit identities.json or commemorations.json → run `npm run saints:regen` (validates then regenerates all months) → commit modified source files and all regenerated monthly cache files together. To regenerate a single month: `node tools/build_saints_cache.js <month>`.",
-    "rules": [
-      "Do not edit saints-<month>.json files manually.",
-      "All dates in source-of-truth files must use numeric { month, day }.",
-      "Tradition is defined only in commemorations.json.",
-      "ECU is derived by generator when identity has commemorations in all five traditions on the same date.",
-      "Generated cache records carry a `type` field derived from identity.type. Do not flatten type distinctions (saint / feast / commemoration / apostle / prophet / marian_feast) at the UI layer."
-    ],
-    "migrated_months": [
-      "january",
-      "february",
-      "march",
-      "april",
-      "may",
-      "june",
-      "july",
-      "august",
-      "september",
-      "october",
-      "november",
-      "december"
-    ],
-    "pending_months": [],
-    "unfinished_work": [
-      "Normalized-source runtime adapter: SaintsResolver reads generated cache files at runtime. A true adapter would query identities.json + commemorations.json directly."
-    ]
-  },
-  "known_outstanding_issues": {
-    "hydration_race_condition": {
-      "severity": "CLOSED",
-      "description": "RESOLVED — v2.8.6 (doc closure). The hydration-race gating layer is implemented and verified in code. renderOffice() returns early unless isHydrationComplete is true. selectMode() awaits the correct hydration function before setting isHydrationComplete = true and calling requestRender(). requestRender() / flushRender() coalesce concurrent render requests and serialise execution via activeRender. init() is kernel-only and no longer silently triggers Daily Office hydration.",
-      "residual_note": "No automated regression test covers the isHydrationComplete gating path. A future test pass should add coverage to guard against silent regressions if the boot sequence is refactored.",
-      "file": "js/office-ui.js"
     },
-    "rite_placeholder_resolution": {
-      "severity": "LOW",
-      "description": "Rubric logic: [rite] placeholder resolution in rubrics.json is fragile and prone to null returns.",
-      "action": "Audit all rubric sequence entries that use [rite] interpolation and add null-safe fallback handling.",
-      "file": "data/rubrics.json + js/office-ui.js"
+    "east_syriac_tradition": {
+      "status": "OPERATIONAL — v2.8.1. All seven canonical hours. See structure-reference.json.",
+      "entry_point": "selectMode('east-syriac')"
     },
-    "innerHTML_architecture": {
-      "severity": "LOW",
-      "description": "Heavy reliance on .innerHTML string building in office-ui.js. No immediate breakage risk but creates maintenance burden and XSS surface.",
-      "action": "Long-term: transition to a template system (e.g. document.createElement + insertAdjacentHTML patterns). Not blocking current release.",
-      "file": "js/office-ui.js"
+    "ethiopian_tradition": {
+      "status": "OPERATIONAL — v2.8.1. Full 24-hour canonical cycle, Senkessar wired. See structure-reference.json.",
+      "entry_point": "selectMode('ethiopian-saatat')"
     },
-    "gloria_patri_normalization": {
-      "severity": "LOW",
-      "description": "Redundant liturgical fragments (Gloria Patri, Kyrie) appear in multiple tradition JSON files rather than being normalised into common.json.",
-      "action": "Audit duplicated fragments across east-syriac.json, ethiopian.json, and ecumenical.json. Consolidate into common.json with tradition-specific rendering where needed.",
-      "files": [
-        "components/common.json",
-        "components/east-syriac.json",
-        "components/ethiopian.json",
-        "components/ecumenical.json"
-      ]
+    "ethiopian_synaxarium": {
+      "status": "OPERATIONAL — All 13 months complete. See structure-reference.json.",
+      "index_file": "data/synaxarium/ethiopian/senkessar-index.json"
     },
-    "saints_schema_refactor": {
-      "severity": "LOW",
-      "description": "Saints resolver boundary complete as of v2.8.6. js/saints-resolver.js (SaintsResolver) is the sole monthly-cache owner. office-ui.js resolveCommemorations() is a pure delegation wrapper. OOR inline fallback filters route through SaintsResolver.filterCachedByTradition(). admin.html routes through SaintsResolver.loadSaintsForDate(). No appData.saints usage or direct saints-cache fetches remain outside saints-resolver.js. Duplicate identity consolidation (saints-cleanup-queue.md Phase 4) complete as of v2.8.8: 46 duplicate identity pairs resolved; identities.json reduced from 1,274 to 1,228 records; all 12 monthly caches regenerated. COE saint-tag audit and governance complete as of v2.8.9 (see known_outstanding_issues.coe_calendar_model). Remaining internal work: normalized-source runtime adapter only — SaintsResolver currently reads generated monthly cache files at runtime rather than querying identities.json + commemorations.json directly.",
-      "action": "Implement normalized-source runtime adapter in saints-resolver.js.",
-      "files": [
-        "js/saints-resolver.js",
+    "data_summary": {
+      "note": "Individual data files not enumerated here. See historical structure file for full listings.",
+      "data/bible/": "[600+ Scripture files across NT, OT, ET, SY, AR, ODES subdirectories]",
+      "data/season/": "[9 seasonal JSON files — 353 total BCP 1979 daily lectionary entries, Year One and Year Two]",
+      "data/saints/": "12 monthly JSON files — 1568 saint records (post v2.8.2 migration). Schema: id, day, name, description, type, tags[], verification_status, notes?. Tags: ANG | LAT | EOR | OOR | COE. ECU derived at render time. Generated monthly files are cache/display artifacts, not canonical source.",
+      "data/components.json": "DEPRECATED — do not use. Stale pre-modularization monolith.",
+      "data/rubrics.json": "BCP office sequence definitions",
+      "data/season/bcp-propers.json": "Proper 1–29 reference table for CalendarEngine.init()",
+      "data/synaxarium/ethiopian/senkessar-index.json": "Master index — 13 months, 385 entries. Validated 2026-02-23.",
+      "data/synaxarium/ethiopian/[all months]/": "Complete narrative corpora confirmed for all 13 months.",
+      "components/common.json": "5 shared components",
+      "components/anglican.json": "179 BCP components",
+      "components/coptic.json": "2 Coptic components",
+      "components/ecumenical.json": "9 ecumenical components",
+      "components/ethiopian.json": "~19 Ethiopian Tewahedo components",
+      "components/east-syriac.json": "92 Church of the East components (v2.8.0: +8 minor hours components; v2.8.1: +9 Barekmar components, -3 duplicate removals = net +6)",
+      "components/traditions/ethiopian/rubrics.json": "Ethiopian Sa'atat rubric sequences — eth-hour-7 Phase 2B stale note removed v2.8.1",
+      "components/traditions/east-syriac/rubrics.json": "Church of the East rubric sequences — 15 sequences total (3 legacy, 6 existing, 8 new minor hours [v2.8.0]). 11 dynamic tokens, all implemented [v2.8.1]."
+    },
+    "saints_model": {
+      "status": "normalized-all-months-generated",
+      "status_note": "All 12 monthly cache files are present as of v2.8.2 and last regenerated in v2.8.8 (Phase 4 duplicate consolidation). js/saints-resolver.js (SaintsResolver) is the sole monthly-cache owner and the canonical saints boundary. office-ui.js and admin.html route all saints paths through SaintsResolver. No appData.saints usage or direct saints-cache fetches remain outside saints-resolver.js. Phase 4 duplicate identity consolidation complete: 46 pairs resolved, 1,228 unique identities remain.",
+      "source_of_truth": [
         "data/saints/identities.json",
         "data/saints/commemorations.json"
+      ],
+      "generated_cache": [
+        "data/saints/saints-january.json",
+        "data/saints/saints-february.json",
+        "data/saints/saints-march.json",
+        "data/saints/saints-april.json",
+        "data/saints/saints-may.json",
+        "data/saints/saints-june.json",
+        "data/saints/saints-july.json",
+        "data/saints/saints-august.json",
+        "data/saints/saints-september.json",
+        "data/saints/saints-october.json",
+        "data/saints/saints-november.json",
+        "data/saints/saints-december.json"
+      ],
+      "shared_module": "js/saints-resolver.js",
+      "generator": "tools/build_saints_cache.js",
+      "workflow": "Edit identities.json or commemorations.json → run `npm run saints:regen` (validates then regenerates all months) → commit modified source files and all regenerated monthly cache files together. To regenerate a single month: `node tools/build_saints_cache.js <month>`.",
+      "rules": [
+        "Do not edit saints-<month>.json files manually.",
+        "All dates in source-of-truth files must use numeric { month, day }.",
+        "Tradition is defined only in commemorations.json.",
+        "ECU is derived by generator when identity has commemorations in all five traditions on the same date.",
+        "Generated cache records carry a `type` field derived from identity.type. Do not flatten type distinctions (saint / feast / commemoration / apostle / prophet / marian_feast) at the UI layer."
+      ],
+      "migrated_months": [
+        "january",
+        "february",
+        "march",
+        "april",
+        "may",
+        "june",
+        "july",
+        "august",
+        "september",
+        "october",
+        "november",
+        "december"
+      ],
+      "pending_months": [],
+      "unfinished_work": [
+        "Normalized-source runtime adapter: SaintsResolver reads generated cache files at runtime. A true adapter would query identities.json + commemorations.json directly."
       ]
     },
-    "eo_mode_app_integration": {
-      "severity": "MEDIUM",
-      "description": "EO old/new calendar mode is only partially implemented. Admin tooling now supports eoMode-aware diagnostics through CalendarEngine.getEOSeasonRanges() and admin/admin.html Year Snapshot rendering, but the main application has no EO mode selector, no production render path consuming eoMode, and index.html does not load js/calendar-eastern-orthodox.js.",
-      "action": "Add EO mode selection to the main app, load/wire the Orthodox calendar module on the production path, and ensure live office/day rendering consumes eoMode instead of relying on admin-only snapshot tooling.",
-      "files": [
-        "index.html",
-        "js/office-ui.js",
-        "js/calendar-engine.js",
-        "js/calendar-eastern-orthodox.js",
-        "admin/admin.html"
-      ]
-    },
-    "horologion_variable_engine": {
-      "severity": "LOW",
-      "description": "Engine layers v3.5–v4.4 now live (see operational_status for full detail). Vespers: all slots resolved across all day-of-week paths; feast-rank arbitration active (_resolveFeastOverrideContext()); festal stichera/aposticha override active (_resolveFestalRubricOverrideSlot()). Small Compline: fixed slots + troparion-of-the-day resolved; Great Lent seasonal troparion layer active; festal Theotokion arbitration active. All four Little Hours: fixed slots + troparion-of-the-day + Theotokion normalization resolved; Great Lent seasonal troparion layer active; festal troparion override active. Season-aware feast qualification rule VERIFIED: ranks 1–4 qualify outside Great Lent weekdays; ranks 1–2 only during Great Lent weekdays. Menaion corpus complete — all 12 months, 369/370 resolved; 05-18 held as intentional text-unavailable. Remaining work: (a) full feast-rank override engine for proper feast apolytikia/Theotokia beyond rubric stubs — Triodion/Pentecostarion overlay; (b) ~200 menaion text-unavailable entry resolution; (c) Menaion-tone Theotokion conflict; (d) kathisma full psalm text.",
-      "action": "Next concrete tasks: (1) full feast-rank text resolution (proper festal apolytikia/Theotokia text, not just rubric stubs), (2) Menaion text-unavailable resolution, (3) Triodion/Pentecostarion overlay expansion, (4) kathisma full psalm text.",
-      "files": [
-        "js/horologion-engine.js",
-        "js/menaion-resolver.js",
-        "data/horologion/",
-        "data/menaion/"
-      ]
-    },
-    "coe_calendar_model": {
-      "severity": "CLOSED",
-      "description": "Three-layer model complete v2.8.9. Detail in structure-reference.json coe_calendar_model."
-    }
-  },
-  "roadmap_summary": {
-    "completed": "Phases 6-8 (BCP, Ethiopian Sa'atat, Senkessar). v2.8.x: COE three-layer model, saints resolver boundary, hydration-race gating, tags[] schema migration, EO admin diagnostics. Horologion v1–v3.0: vespers skeleton through full slot resolution, Menaion annual corpus complete (all 12 months, 369/370 resolved), Small Compline baseline. v2.9.7: generic sidebar shell. Little Hours baseline live: First Hour (v3.1), Third Hour (v3.2), Sixth Hour (v3.3), Ninth Hour (v3.4). Engine layers v3.5–v4.4: feast-rank arbitration, Little Hours festal troparion override, Vespers festal stichera/aposticha override, Great Lent seasonal troparion layer for all Little Hours and Small Compline, office-specific fallback normalization, Little Hours Theotokion normalization/festal arbitration, Small Compline festal Theotokion arbitration. Season-aware feast qualification rule verified: ranks 1–4 outside Great Lent weekdays; ranks 1–2 only during Great Lent weekdays. Resolver integration audit complete and verified. Pascha boundary and tone suppression verified. Menaion integration verified at runtime across all offices.",
-    "next_required": "The computational arbitration architecture (v3.5–v4.4) is stable. Remaining work is liturgical text-layer completion, not arbitration logic. Milestones in sequence: (1) Horologion v5.0 — Triodion Overlay Engine: replace current Great Lent weekday rubric placeholders with Triodion-backed text resolution in offices that already detect the Lenten season. Initial scope: Vespers weekday paremiae during Great Lent; Lenten weekday troparion/dismissal paths; Small Compline and Little Hours seasonal troparion paths currently returning rubric placeholders. This introduces Triodion text integration — no new arbitration logic required. (2) Horologion v5.1 — Pentecostarion / Paschal-cycle overlay: extend the same seasonal overlay architecture into the Paschal cycle. Scope: Paschal-period hymnography; Pentecostarion seasonal text substitution; moveable-festal office layers. (3) Horologion v5.2 — Menaion text-unavailable resolution pass: resolve the ~200 remaining entries where troparion text is marked text-unavailable. Research tooling already present (data/menaion/research-queue.json, batch scripts). Corpus completion work, not architectural change. (4) Horologion v5.3 — Kathisma full-text expansion: move Vespers kathisma resolution from rubric-only appointment to full psalm text presentation, enabling Vespers psalter display and future psalter navigation. (5) Horologion v5.4 — Horologion diagnostics and UI polish: expose resolution context for debugging and verification (governing tone, resolution source — menaion / triodion / octoechos / seasonal, office resolution path, developer diagnostics). (6) EO app integration (ongoing parallel track): add EO mode selection to main app, load js/calendar-eastern-orthodox.js on production path.",
-    "next_planned": "After v5 milestones are stable: Orthros / Midnight Office family (highest structural complexity — Canon of 9 odes, variable kathisma readings, Lauds Psalms, Exapostilarion). Further Byzantine office-family expansion. Menaion-tone Theotokion conflict resolution (when Menaion troparion tone differs from Octoechos weekly tone, dismissal Theotokion should follow Menaion tone).",
-    "future": "Phase 6.7 — Performance polish (timezone warning, LRU seasonal cache, prefetch, service worker); Phase 7.5 — Coptic Agpeya as standalone tradition entry; Phase 9.0 — Mobile app; Phase 9.1 — Cross-Tradition Search (Comparative scripture view across AR, ET, and SY canons); COE-IIC — Optional Layer 2 expansion: major Hudra fixed feasts (Denha/Epiphany, Sleeba/Exaltation, Annunciation, All Saints)"
-  },
-  "admin": {
-    "_note": "Admin dashboard configuration. todos are the authoritative task list consumed by the /admin UI. Completed items remain in the array as ledger history; do not delete them when reclassifying work.",
-    "_how_to_add_todo": "Add an object to the todos array with: id (kebab-case unique), title (short), description (full), severity (HIGH|MEDIUM|LOW), status (open|in-progress|done), area (code-area or file), and optionally phase.",
-    "todos": [
-      {
-        "id": "coe-calendar-rebuild",
-        "title": "COE-II: Three-layer COE calendar rebuild",
-        "description": "COMPLETE — v2.8.9. Three-layer model fully implemented. Layer 1 (season engine): operational. Layer 2 (fixed feasts: Sawma Rabba Friday martyrs, Faithful Departed): implemented via getDayClass(). Layer 3 (sparse individual saints): CoeEligibility.filter() gate active; display re-enabled. COE-IIB audit complete: saint-grid model eliminated. External holdout: mar-augustine / mar-augustine-commemoration excluded from Layer 3 pending external Syriac manuscript research. No further internal action.",
-        "severity": "HIGH",
-        "status": "done",
-        "area": "js/calendar-east-syriac.js + js/office-ui.js",
-        "phase": "COE-II"
+    "known_outstanding_issues": {
+      "hydration_race_condition": {
+        "severity": "CLOSED",
+        "description": "RESOLVED — v2.8.6 (doc closure). The hydration-race gating layer is implemented and verified in code. renderOffice() returns early unless isHydrationComplete is true. selectMode() awaits the correct hydration function before setting isHydrationComplete = true and calling requestRender(). requestRender() / flushRender() coalesce concurrent render requests and serialise execution via activeRender. init() is kernel-only and no longer silently triggers Daily Office hydration.",
+        "residual_note": "No automated regression test covers the isHydrationComplete gating path. A future test pass should add coverage to guard against silent regressions if the boot sequence is refactored.",
+        "file": "js/office-ui.js"
       },
-      {
-        "id": "saints-schema-refactor",
-        "title": "Saints resolver: normalized-source runtime adapter",
-        "description": "Resolver boundary complete (v2.8.6). Phase 4 duplicate identity consolidation complete (v2.8.8): 46 pairs resolved, 1,228 identities remain. COE audit and governance complete (v2.8.9). Remaining: implement normalized-source runtime adapter in saints-resolver.js so SaintsResolver queries identities.json + commemorations.json directly rather than generated monthly cache files at runtime.",
+      "rite_placeholder_resolution": {
         "severity": "LOW",
-        "status": "in-progress",
-        "area": "js/saints-resolver.js + data/saints/",
-        "phase": "Phase TBD"
+        "description": "Rubric logic: [rite] placeholder resolution in rubrics.json is fragile and prone to null returns.",
+        "action": "Audit all rubric sequence entries that use [rite] interpolation and add null-safe fallback handling.",
+        "file": "data/rubrics.json + js/office-ui.js"
       },
-      {
-        "id": "rite-placeholder-fragility",
-        "title": "Fix [rite] placeholder resolution fragility",
-        "description": "Rubric [rite] interpolation in rubrics.json is fragile and prone to null returns. Audit all sequence entries that use [rite] and add null-safe fallback handling.",
+      "innerHTML_architecture": {
         "severity": "LOW",
-        "status": "open",
-        "area": "data/rubrics.json + js/office-ui.js"
+        "description": "Heavy reliance on .innerHTML string building in office-ui.js. No immediate breakage risk but creates maintenance burden and XSS surface.",
+        "action": "Long-term: transition to a template system (e.g. document.createElement + insertAdjacentHTML patterns). Not blocking current release.",
+        "file": "js/office-ui.js"
       },
-      {
-        "id": "gloria-patri-normalization",
-        "title": "Normalize duplicated liturgical fragments",
-        "description": "Gloria Patri and Kyrie appear in multiple tradition JSON files. Consolidate into common.json with tradition-specific rendering where needed.",
+      "gloria_patri_normalization": {
         "severity": "LOW",
-        "status": "open",
-        "area": "components/common.json + components/*.json"
+        "description": "Redundant liturgical fragments (Gloria Patri, Kyrie) appear in multiple tradition JSON files rather than being normalised into common.json.",
+        "action": "Audit duplicated fragments across east-syriac.json, ethiopian.json, and ecumenical.json. Consolidate into common.json with tradition-specific rendering where needed.",
+        "files": [
+          "components/common.json",
+          "components/east-syriac.json",
+          "components/ethiopian.json",
+          "components/ecumenical.json"
+        ]
       },
-      {
-        "id": "innerHTML-architecture",
-        "title": "Migrate from innerHTML string-building",
-        "description": "Heavy reliance on .innerHTML string building in office-ui.js creates maintenance burden and XSS surface. Long-term: migrate to template system (createElement + insertAdjacentHTML patterns).",
+      "saints_schema_refactor": {
         "severity": "LOW",
-        "status": "open",
-        "area": "js/office-ui.js"
+        "description": "Saints resolver boundary complete as of v2.8.6. js/saints-resolver.js (SaintsResolver) is the sole monthly-cache owner. office-ui.js resolveCommemorations() is a pure delegation wrapper. OOR inline fallback filters route through SaintsResolver.filterCachedByTradition(). admin.html routes through SaintsResolver.loadSaintsForDate(). No appData.saints usage or direct saints-cache fetches remain outside saints-resolver.js. Duplicate identity consolidation (saints-cleanup-queue.md Phase 4) complete as of v2.8.8: 46 duplicate identity pairs resolved; identities.json reduced from 1,274 to 1,228 records; all 12 monthly caches regenerated. COE saint-tag audit and governance complete as of v2.8.9 (see known_outstanding_issues.coe_calendar_model). Remaining internal work: normalized-source runtime adapter only — SaintsResolver currently reads generated monthly cache files at runtime rather than querying identities.json + commemorations.json directly.",
+        "action": "Implement normalized-source runtime adapter in saints-resolver.js.",
+        "files": [
+          "js/saints-resolver.js",
+          "data/saints/identities.json",
+          "data/saints/commemorations.json"
+        ]
       },
-      {
-        "id": "eo-calendar-modes",
-        "title": "EO old/new calendar mode: main-app integration",
-        "description": "PARTIAL — admin/devtool diagnostics are now implemented, but the feature is not complete in the actual app. CalendarEngine.getEOSeasonRanges(year, eoMode) and admin/admin.html support EO old_calendar vs new_calendar year snapshots, including fixed-feast anchor differences. Remaining work: add EO mode selection to the main app, load js/calendar-eastern-orthodox.js on the production path, and ensure live office/day rendering consumes eoMode rather than admin-only snapshot tooling.",
+      "eo_mode_app_integration": {
         "severity": "MEDIUM",
-        "status": "in-progress",
-        "area": "index.html + js/office-ui.js + js/calendar-engine.js + js/calendar-eastern-orthodox.js + admin/admin.html",
-        "phase": "EO app integration"
+        "description": "EO old/new calendar mode is only partially implemented. Admin tooling now supports eoMode-aware diagnostics through CalendarEngine.getEOSeasonRanges() and admin/admin.html Year Snapshot rendering, but the main application has no EO mode selector, no production render path consuming eoMode, and index.html does not load js/calendar-eastern-orthodox.js.",
+        "action": "Add EO mode selection to the main app, load/wire the Orthodox calendar module on the production path, and ensure live office/day rendering consumes eoMode instead of relying on admin-only snapshot tooling.",
+        "files": [
+          "index.html",
+          "js/office-ui.js",
+          "js/calendar-engine.js",
+          "js/calendar-eastern-orthodox.js",
+          "admin/admin.html"
+        ]
       },
-      {
-        "id": "eo-admin-diagnostics",
-        "title": "EO admin diagnostics: old/new calendar snapshot support",
-        "description": "COMPLETE — 2026-03-06. Admin/devtool coverage exists for EO old_calendar vs new_calendar diagnostics. CalendarEngine.getEOSeasonRanges(year, eoMode) computes fixed-feast civil placement (Nativity/Theophany) while EasternOrthodoxCalendar continues to own the Julian Paschalion/movable-feast cycle. admin/admin.html Year Snapshot consumes eoMode and renders the differing anchor dates. This does not expose EO mode in the main application.",
-        "severity": "MEDIUM",
-        "status": "done",
-        "area": "js/calendar-engine.js + admin/admin.html",
-        "phase": "EO admin diagnostics"
-      },
-      {
-        "id": "horologion-v1-architecture",
-        "title": "Horologion v1: architecture boundary",
-        "description": "COMPLETE — 2026-03-07. js/horologion-engine.js (HorologionEngine) established as engine layer (non-throwing resolveOffice(), skeleton cache, validateOfficePayload()). data/horologion/vespers.json: 7-section skeleton with fixed content complete (Usual Beginning, Psalm 103 LXX, Great Litany, O Gladsome Light, Nunc Dimittis, rubrics). data/horologion/schema.json: payload contract documented. Thin UI adapter (renderHorologionOffice, _renderHorologionItem) added to office-ui.js. selectMode('horologion-vespers') branch active. index.html: splash button and script loads confirmed present in live app.",
-        "severity": "HIGH",
-        "status": "done",
-        "area": "js/horologion-engine.js + data/horologion/ + js/office-ui.js + index.html",
-        "phase": "Horologion v1"
-      },
-      {
-        "id": "horologion-vespers-variable-slots",
-        "title": "Horologion: Menaion corpus and feast-rank engine",
-        "description": "IN PROGRESS — engine v4.4 active (2026-03-13). Annual fixed-date Menaion corpus COMPLETE (v1.8): all 12 months imported; 369/370 resolved; 05-18 intentional text-unavailable hold. No month returns menaion-not-imported. Feast-rank arbitration now live: _resolveFeastOverrideContext() (v3.5) governs Vespers troparion/apolytikion and dismissal Theotokion; _resolveLittleHourTroparionSlot() (v3.6) extends to Little Hours; _resolveFestalRubricOverrideSlot() (v3.7) governs Vespers stichera/aposticha; _resolveComplineFestalTheotokionRubric() (v4.4) governs Small Compline Theotokion. Season-aware qualification: ranks 1–4 outside Great Lent weekdays; ranks 1–2 only during Great Lent weekdays — VERIFIED. Great Lent seasonal troparion layers live for all Little Hours (v3.8) and Small Compline (v3.9). Remaining: (a) full feast-rank text resolution — proper festal apolytikia/Theotokia text rather than rubric stubs; (b) ~200 text-unavailable entry resolution; (c) Menaion-tone Theotokion conflict; (d) Triodion/Pentecostarion overlay; (e) kathisma full psalm text.",
+      "horologion_variable_engine": {
         "severity": "LOW",
-        "status": "in-progress",
-        "area": "js/menaion-resolver.js + data/menaion/ + js/horologion-engine.js",
-        "phase": "Horologion v4.x"
+        "description": "The seasonal arbitration and text-layer stack is now stable through v5.4. Engine layers v3.5–v4.4 live (see operational_status). Seasonal overlays: v5.0 Triodion Great Lent weekday (Weeks 1–6 verified); v5.1 Holy Week troparion (all 7 days); v5.2 Pentecostarion Bright Week stichera/aposticha. Menaion corpus 369/370 resolved; 05-18 (Venerable Peter of Caesarea in Cappadocia) is an intentional holdout — no confirmed Hapgood/OCA/Jordanville source. Diagnostics toggle (v5.4) surfaces resolvedAs, type, tone, and layer for variable slots in the UI. Remaining open work: (a) Kathisma full psalm text — kathisma-reading currently returns rubric-only appointment; full Psalter import required (v5.5 target); (b) Orthros / Matins structural baseline (v5.6 target — high complexity, deferred); (c) Menaion-tone Theotokion conflict — weekday dismissal Theotokion uses Octoechos tone as baseline; when Menaion troparion tone differs this is a stated limitation; (d) full festal apolytikia/Theotokia text beyond rubric stubs for Holy Week slots not yet populated.",
+        "action": "Next: v5.5 Kathisma full-text expansion (data import task). Then: v5.6 Orthros structural baseline. Ongoing: EO app integration.",
+        "files": [
+          "js/horologion-engine.js",
+          "js/menaion-resolver.js",
+          "js/office-ui.js",
+          "data/horologion/",
+          "data/menaion/",
+          "data/triodion/",
+          "data/pentecostarion/"
+        ]
+      },
+      "coe_calendar_model": {
+        "severity": "CLOSED",
+        "description": "Three-layer model complete v2.8.9. Detail in structure-reference.json coe_calendar_model."
+      }
+    },
+    "roadmap_summary": {
+      "completed": "Phases 6-8 (BCP, Ethiopian Sa'atat, Senkessar). v2.8.x: COE three-layer model, saints resolver boundary, hydration-race gating, tags[] schema migration, EO admin diagnostics. Horologion v1–v3.0: vespers skeleton through full slot resolution, Menaion annual corpus complete (all 12 months, 369/370 resolved), Small Compline baseline. v2.9.7: generic sidebar shell. Little Hours baseline live: First Hour (v3.1), Third Hour (v3.2), Sixth Hour (v3.3), Ninth Hour (v3.4). Engine layers v3.5–v4.4: feast-rank arbitration, Little Hours festal troparion override, Vespers festal stichera/aposticha override, Great Lent seasonal troparion layer for all Little Hours and Small Compline, office-specific fallback normalization, Little Hours Theotokion normalization/festal arbitration, Small Compline festal Theotokion arbitration. Season-aware feast qualification rule verified: ranks 1–4 outside Great Lent weekdays; ranks 1–2 only during Great Lent weekdays. Resolver integration audit complete and verified. Pascha boundary and tone suppression verified. Menaion integration verified at runtime across all offices. v5.0 — Triodion Great Lent weekday overlay: Triodion text resolution for Great Lent weekdays Weeks 1–6; overlay runs after feast arbitration; feast precedence preserved. v5.1 — Holy Week text overlay: troparion text for all 7 Holy Week days from data/triodion/holy-week/holy-week.json; structurally separate from Great Lent layer; stichera/aposticha/paremiae/theotokion remain as informed rubrics. v5.2 — Pentecostarion / Paschal-cycle overlay: Bright Week stichera and aposticha from data/pentecostarion/pentecostarion-bright-week.json; troparion already resolved; Thomas Sunday returns to ordinary resurrectional path. v5.3 — Menaion text-unavailable audit: corpus confirmed at 369/370; one intentional holdout (05-18 Venerable Peter of Caesarea in Cappadocia) remains; no broad unresolved batch remains. v5.4 — Horologion diagnostics and UI polish: diagnostics toggle in Horologion sidebar; _renderHorologionDiagnostics() wired into rubric, stichera, and text branches; off by default; surfaces resolvedAs, type, tone, and inferred layer for variable slots.",
+      "next_required": "v5.5 — Kathisma full-text expansion: move Vespers kathisma resolution from rubric-only appointment to full psalm text presentation. Currently all six offices return a rubric naming the appointed kathisma and its psalm range; full text requires importing the Psalter corpus (LXX). This is a data-import task, not an engine redesign. v5.6 — Orthros / Matins structural baseline: begin the next office family once the current seasonal stack is stably recorded. Orthros is the most structurally complex Byzantine office (two variable kathisma readings, Lauds Psalms, Exapostilarion, Canon of 9 odes). Do not begin before v5.5 is complete. EO app integration (ongoing parallel track): add EO mode selection to main app, load js/calendar-eastern-orthodox.js on production path.",
+      "next_planned": "After v5.5–v5.6 are stable: broader Byzantine office-family expansion. Menaion-tone Theotokion conflict resolution (when Menaion troparion tone differs from Octoechos weekly tone, dismissal Theotokion should follow Menaion tone — currently uses Octoechos baseline tone as a stated limitation). COE-IIC — optional Layer 2 expansion: major Hudra fixed feasts.",
+      "future": "Phase 6.7 — Performance polish (timezone warning, LRU seasonal cache, prefetch, service worker); Phase 7.5 — Coptic Agpeya as standalone tradition entry; Phase 9.0 — Mobile app; Phase 9.1 — Cross-Tradition Search (Comparative scripture view across AR, ET, and SY canons); COE-IIC — Optional Layer 2 expansion: major Hudra fixed feasts (Denha/Epiphany, Sleeba/Exaltation, Annunciation, All Saints)"
+    },
+    "admin": {
+      "_note": "Admin dashboard configuration. todos are the authoritative task list consumed by the /admin UI. Completed items remain in the array as ledger history; do not delete them when reclassifying work.",
+      "_how_to_add_todo": "Add an object to the todos array with: id (kebab-case unique), title (short), description (full), severity (HIGH|MEDIUM|LOW), status (open|in-progress|done), area (code-area or file), and optionally phase.",
+      "todos": [
+        {
+          "id": "coe-calendar-rebuild",
+          "title": "COE-II: Three-layer COE calendar rebuild",
+          "description": "COMPLETE — v2.8.9. Three-layer model fully implemented. Layer 1 (season engine): operational. Layer 2 (fixed feasts: Sawma Rabba Friday martyrs, Faithful Departed): implemented via getDayClass(). Layer 3 (sparse individual saints): CoeEligibility.filter() gate active; display re-enabled. COE-IIB audit complete: saint-grid model eliminated. External holdout: mar-augustine / mar-augustine-commemoration excluded from Layer 3 pending external Syriac manuscript research. No further internal action.",
+          "severity": "HIGH",
+          "status": "done",
+          "area": "js/calendar-east-syriac.js + js/office-ui.js",
+          "phase": "COE-II"
+        },
+        {
+          "id": "saints-schema-refactor",
+          "title": "Saints resolver: normalized-source runtime adapter",
+          "description": "Resolver boundary complete (v2.8.6). Phase 4 duplicate identity consolidation complete (v2.8.8): 46 pairs resolved, 1,228 identities remain. COE audit and governance complete (v2.8.9). Remaining: implement normalized-source runtime adapter in saints-resolver.js so SaintsResolver queries identities.json + commemorations.json directly rather than generated monthly cache files at runtime.",
+          "severity": "LOW",
+          "status": "in-progress",
+          "area": "js/saints-resolver.js + data/saints/",
+          "phase": "Phase TBD"
+        },
+        {
+          "id": "rite-placeholder-fragility",
+          "title": "Fix [rite] placeholder resolution fragility",
+          "description": "Rubric [rite] interpolation in rubrics.json is fragile and prone to null returns. Audit all sequence entries that use [rite] and add null-safe fallback handling.",
+          "severity": "LOW",
+          "status": "open",
+          "area": "data/rubrics.json + js/office-ui.js"
+        },
+        {
+          "id": "gloria-patri-normalization",
+          "title": "Normalize duplicated liturgical fragments",
+          "description": "Gloria Patri and Kyrie appear in multiple tradition JSON files. Consolidate into common.json with tradition-specific rendering where needed.",
+          "severity": "LOW",
+          "status": "open",
+          "area": "components/common.json + components/*.json"
+        },
+        {
+          "id": "innerHTML-architecture",
+          "title": "Migrate from innerHTML string-building",
+          "description": "Heavy reliance on .innerHTML string building in office-ui.js creates maintenance burden and XSS surface. Long-term: migrate to template system (createElement + insertAdjacentHTML patterns).",
+          "severity": "LOW",
+          "status": "open",
+          "area": "js/office-ui.js"
+        },
+        {
+          "id": "eo-calendar-modes",
+          "title": "EO old/new calendar mode: main-app integration",
+          "description": "PARTIAL — admin/devtool diagnostics are now implemented, but the feature is not complete in the actual app. CalendarEngine.getEOSeasonRanges(year, eoMode) and admin/admin.html support EO old_calendar vs new_calendar year snapshots, including fixed-feast anchor differences. Remaining work: add EO mode selection to the main app, load js/calendar-eastern-orthodox.js on the production path, and ensure live office/day rendering consumes eoMode rather than admin-only snapshot tooling.",
+          "severity": "MEDIUM",
+          "status": "in-progress",
+          "area": "index.html + js/office-ui.js + js/calendar-engine.js + js/calendar-eastern-orthodox.js + admin/admin.html",
+          "phase": "EO app integration"
+        },
+        {
+          "id": "eo-admin-diagnostics",
+          "title": "EO admin diagnostics: old/new calendar snapshot support",
+          "description": "COMPLETE — 2026-03-06. Admin/devtool coverage exists for EO old_calendar vs new_calendar diagnostics. CalendarEngine.getEOSeasonRanges(year, eoMode) computes fixed-feast civil placement (Nativity/Theophany) while EasternOrthodoxCalendar continues to own the Julian Paschalion/movable-feast cycle. admin/admin.html Year Snapshot consumes eoMode and renders the differing anchor dates. This does not expose EO mode in the main application.",
+          "severity": "MEDIUM",
+          "status": "done",
+          "area": "js/calendar-engine.js + admin/admin.html",
+          "phase": "EO admin diagnostics"
+        },
+        {
+          "id": "horologion-v1-architecture",
+          "title": "Horologion v1: architecture boundary",
+          "description": "COMPLETE — 2026-03-07. js/horologion-engine.js (HorologionEngine) established as engine layer (non-throwing resolveOffice(), skeleton cache, validateOfficePayload()). data/horologion/vespers.json: 7-section skeleton with fixed content complete (Usual Beginning, Psalm 103 LXX, Great Litany, O Gladsome Light, Nunc Dimittis, rubrics). data/horologion/schema.json: payload contract documented. Thin UI adapter (renderHorologionOffice, _renderHorologionItem) added to office-ui.js. selectMode('horologion-vespers') branch active. index.html: splash button and script loads confirmed present in live app.",
+          "severity": "HIGH",
+          "status": "done",
+          "area": "js/horologion-engine.js + data/horologion/ + js/office-ui.js + index.html",
+          "phase": "Horologion v1"
+        },
+        {
+          "id": "horologion-vespers-variable-slots",
+          "title": "Horologion: v5.x seasonal tranche — complete through v5.4",
+          "description": "COMPLETE through v5.4 (2026-03-15). Seasonal overlay stack fully implemented and verified: v5.0 Triodion Great Lent weekday (Weeks 1–6, data/triodion/triodion-lenten-weekday.json); v5.1 Holy Week troparion all 7 days (data/triodion/holy-week/holy-week.json); v5.2 Pentecostarion Bright Week stichera/aposticha (data/pentecostarion/pentecostarion-bright-week.json). Menaion corpus 369/370 resolved; 05-18 intentional holdout. Diagnostics toggle active in Horologion sidebar (v5.4). Next: v5.5 Kathisma full-text expansion.",
+          "severity": "LOW",
+          "status": "done",
+          "area": "js/menaion-resolver.js + data/menaion/ + js/horologion-engine.js",
+          "phase": "Horologion v5.4"
+        },
+        {
+          "id": "horologion-compline-v1",
+          "title": "Horologion: Small Compline (Mikron Apodeipnon) v1",
+          "description": "COMPLETE — v3.0 (2026-03-08). data/horologion/small-compline.json skeleton added. data/horologion/compline-fixed.json fixed-text corpus added (usual-beginning, psalm-50, psalm-69, psalm-142, doxology, creed, trisagion-prayers, compline-theotokion, prayer-of-basil, into-thy-hands). HorologionEngine v3.0: _loadComplineFixedData() + _resolveComplineSlots() added. SUPPORTED_OFFICES expanded to ['vespers','small-compline']. Unified Horologion navigation: selectMode('horologion') with sidebar office selector buttons; old mode strings eliminated. troparion-of-the-day resolved via existing _resolveTroparionSlot() infrastructure. Holy Week and Great Lent overrides for Compline deferred.",
+          "severity": "LOW",
+          "status": "done",
+          "area": "data/horologion/ + js/horologion-engine.js + js/office-ui.js + index.html",
+          "phase": "Horologion v3.0"
+        },
+        {
+          "id": "horologion-orthros-v1",
+          "title": "Horologion: Orthros (Matins) v1 — DEFERRED, high complexity",
+          "description": "DEFERRED — do not begin until Octoechos tone engine is stable from Vespers work. Orthros is the most structurally complex Byzantine office: two variable kathisma readings per day (Psalter weekly cycle), Canon of 9 odes with variable troparia per tone/week/feast, Lauds Psalms (148–150), variable Exapostilarion, variable Ainoi stichera. Blocked on: v5.5 Kathisma full-text expansion (horologion-vespers-variable-slots is now complete through v5.4; Orthros should not begin until Kathisma full-text expansion is stable).",
+          "severity": "LOW",
+          "status": "open",
+          "phase": "Horologion v5.6 (deferred)"
+        }
+      ]
+    },
+    "governance": {
+      "architectural_charter": {
+        "path": "documentation/governance/architectural_charter.md",
+        "version": "0.2",
+        "status": "active"
+      }
+    },
+    "documentation_manifest": {
+      "status": "internal",
+      "last_realigned": "2026-03-13"
+    },
+    "recent_logic_changes": [
+      {
+        "date": "2026-03-13",
+        "phase": "v3.6.0 — Documentation synchronization pass",
+        "file": "structure.json + documentation/structure-reference.json + documentation/menaion-v1-architecture-and-diffs.md + documentation/OFFICE_UI_DOCUMENTATION.md + data/menaion/schema.json",
+        "change": "Full documentation corpus aligned to live engine state and verified governance decisions.",
+        "detail": "Synchronized all documentation files to reflect: (1) engine v3.5–v4.4 milestone layers now live; (2) season-aware feast qualification rule verified (ranks 1–2 during Great Lent weekdays, ranks 1–4 outside); (3) Menaion corpus integration effectively complete (369/370; 05-18 intentional hold); (4) resolver integration audit complete and verified at runtime across all offices; (5) tone computation year-rollback bug corrected and verified; (6) ninth-hour-fixed.json status corrected from erroneous v4.4 label to v3.4; (7) horologion-vespers-variable-slots todo updated to v4.4 state; (8) horologion_variable_engine issue description updated; (9) roadmap_summary completed field updated. Stale 'next_required' text referencing documentation alignment removed."
       },
       {
-        "id": "horologion-compline-v1",
-        "title": "Horologion: Small Compline (Mikron Apodeipnon) v1",
-        "description": "COMPLETE — v3.0 (2026-03-08). data/horologion/small-compline.json skeleton added. data/horologion/compline-fixed.json fixed-text corpus added (usual-beginning, psalm-50, psalm-69, psalm-142, doxology, creed, trisagion-prayers, compline-theotokion, prayer-of-basil, into-thy-hands). HorologionEngine v3.0: _loadComplineFixedData() + _resolveComplineSlots() added. SUPPORTED_OFFICES expanded to ['vespers','small-compline']. Unified Horologion navigation: selectMode('horologion') with sidebar office selector buttons; old mode strings eliminated. troparion-of-the-day resolved via existing _resolveTroparionSlot() infrastructure. Holy Week and Great Lent overrides for Compline deferred.",
-        "severity": "LOW",
-        "status": "done",
-        "area": "data/horologion/ + js/horologion-engine.js + js/office-ui.js + index.html",
-        "phase": "Horologion v3.0"
+        "date": "2026-03-13",
+        "phase": "Horologion engine v4.4 — Menaion integration verification pass",
+        "file": "js/horologion-engine.js",
+        "change": "Runtime verification of full Menaion integration and season-aware feast qualification rule.",
+        "detail": "Verified: date resolution correct; month loading correct; commemoration ranking correct; troparion extraction correct; text-unavailable handling correct; feast override integration correct. Verified: Pascha suppresses numbered tone correctly; Bright Week suppresses numbered tone correctly; Thomas Sunday resumes tone counting correctly. Menaion override integration verified working across Vespers, First Hour, Third Hour, Sixth Hour, Ninth Hour, and Small Compline. Small Compline festal Theotokion arbitration working. Season-aware feast qualification verified via concrete examples: 2026-03-02 First Hour → little-hour-lenten-rubric (rank 4 saint suppressed during Great Lent weekday); 2026-03-02 Small Compline → compline-lenten-rubric; 2026-03-25 First Hour → menaion-feast-troparion (rank 1 Annunciation overrides Lent); 2026-03-25 Small Compline → menaion-feast-troparion; 2026-02-20 Vespers → menaion-feast-troparion."
       },
       {
-        "id": "horologion-orthros-v1",
-        "title": "Horologion: Orthros (Matins) v1 — DEFERRED, high complexity",
-        "description": "DEFERRED — do not begin until Octoechos tone engine is stable from Vespers work. Orthros is the most structurally complex Byzantine office: two variable kathisma readings per day (Psalter weekly cycle), Canon of 9 odes with variable troparia per tone/week/feast, Lauds Psalms (148–150), variable Exapostilarion, variable Ainoi stichera. Blocked on: horologion-vespers-variable-slots completion.",
-        "severity": "LOW",
-        "status": "open",
-        "phase": "Horologion v3 (deferred)"
+        "date": "2026-03-13",
+        "phase": "Horologion engine v4.4 — Small Compline festal Theotokion arbitration",
+        "file": "js/horologion-engine.js",
+        "change": "_resolveComplineFestalTheotokionRubric() added. _normalizeUnavailableTroparionFallbackForOffice() added.",
+        "detail": "_resolveComplineFestalTheotokionRubric(): Small Compline festal Theotokion rubric arbitration — parallel to Little Hours festal Theotokion arbitration. Invoked from _resolveComplineSeasonalTroparionSlot() and independently for feast path. _normalizeUnavailableTroparionFallbackForOffice(): rewrites menaion-text-unavailable fallback rubrics to use the consuming office name rather than Vespers wording; invoked as the first call inside _normalizeOrdinaryTroparionFallbackForOffice() and independently at the base of _resolveLittleHourSeasonalTroparionSlot() and _resolveComplineSeasonalTroparionSlot()."
+      },
+      {
+        "date": "2026-03-13",
+        "phase": "Horologion engine v4.1/v4.3 — Little Hours Theotokion normalization and festal arbitration",
+        "file": "js/horologion-engine.js",
+        "change": "_normalizeTheotokionRubricForOffice() + _resolveLittleHourFestalTheotokionRubric() added.",
+        "detail": "v4.1: _normalizeTheotokionRubricForOffice() normalizes the Theotokion rubric slot text for each Little Hour office by name. v4.3: _resolveLittleHourFestalTheotokionRubric() arbitrates whether the Theotokion slot should use the festal override or the ordinary Octoechos rubric, applying the season-aware rank qualification rule. Applies to First Hour, Third Hour, Sixth Hour, and Ninth Hour."
+      },
+      {
+        "date": "2026-03-13",
+        "phase": "Horologion engine v4.0 — Office-specific ordinary fallback normalization",
+        "file": "js/horologion-engine.js",
+        "change": "_normalizeOrdinaryTroparionFallbackForOffice() added.",
+        "detail": "Rewrites the inherited Vespers weekday-theme-rubric into office-appropriate text for Small Compline and all Little Hours. Ensures the fallback rubric displayed to the user names the correct office rather than always saying 'Vespers'. Invoked as the terminal fallback in all troparion-of-the-day paths."
+      },
+      {
+        "date": "2026-03-13",
+        "phase": "Horologion engine v3.9 — Small Compline Great Lent seasonal troparion layer",
+        "file": "js/horologion-engine.js",
+        "change": "_resolveComplineSeasonalTroparionSlot() added.",
+        "detail": "Applies Great Lent seasonal override for Small Compline troparion-of-the-day on Great Lent weekdays (Clean Monday through Great Friday). Parallel to _resolveLittleHourSeasonalTroparionSlot(). Season-aware rank qualification: ranks 1–2 qualify as feast override during Great Lent weekdays; ranks 3–4 fall through to Lenten seasonal rubric. Verified: 2026-03-02 Small Compline → compline-lenten-rubric; 2026-03-25 Small Compline → menaion-feast-troparion."
+      },
+      {
+        "date": "2026-03-13",
+        "phase": "Horologion engine v3.8 — Little Hours Great Lent seasonal troparion layer",
+        "file": "js/horologion-engine.js",
+        "change": "_resolveLittleHourSeasonalTroparionSlot() added inside _resolveLittleHourTroparionSlot().",
+        "detail": "Applies Great Lent seasonal override for all four Little Hours troparion-of-the-day on Great Lent weekdays. Season-aware rank qualification: ranks 1–2 qualify as feast override during Great Lent weekdays; ranks 3–4 fall through to Lenten seasonal rubric. Displaces ordinary weekday fallback on Great Lent Mon–Fri. Verified: 2026-03-02 First Hour → little-hour-lenten-rubric; 2026-03-25 First Hour → menaion-feast-troparion."
+      },
+      {
+        "date": "2026-03-13",
+        "phase": "Horologion engine v3.7 — Vespers stichera/aposticha festal override",
+        "file": "js/horologion-engine.js",
+        "change": "_resolveFestalRubricOverrideSlot() added.",
+        "detail": "Applies qualifying feast rubric override to Vespers stichera-at-lord-i-have-cried and aposticha slots. Qualification uses the season-aware rule: ranks 1–4 outside Great Lent weekdays; ranks 1–2 only during Great Lent weekdays. Verified: 2026-02-20 Vespers → menaion-feast-troparion (and corresponding stichera override)."
+      },
+      {
+        "date": "2026-03-13",
+        "phase": "Horologion engine v3.6 — Little Hours feast troparion override",
+        "file": "js/horologion-engine.js",
+        "change": "_resolveLittleHourTroparionSlot() extended with feast-rank arbitration.",
+        "detail": "Extends feast-rank override to Little Hours troparion-of-the-day. Qualification uses the season-aware rule. Called from _resolveFirstHourSlots(), _resolveThirdHourSlots(), _resolveSixthHourSlots(), _resolveNinthHourSlots()."
+      },
+      {
+        "date": "2026-03-13",
+        "phase": "Horologion engine v3.5 — feast-rank arbitration",
+        "file": "js/horologion-engine.js",
+        "change": "_resolveFeastOverrideContext() added.",
+        "detail": "Central feast-rank arbitration function. Governs Vespers troparion/apolytikion and dismissal Theotokion slots. Queries MenaionResolver, applies rank qualification (season-aware), and returns override context for downstream slot resolution."
+      },
+      {
+        "date": "2026-03-08",
+        "phase": "Horologion v3.1 — First Hour baseline",
+        "file": "js/horologion-engine.js + data/horologion/first-hour.json + data/horologion/first-hour-fixed.json + js/office-ui.js + index.html",
+        "change": "First Hour (Prima) baseline live. Fixed corpus, office selector button, engine wiring.",
+        "detail": "data/horologion/first-hour-fixed.json: new fixed-text corpus — usual-beginning, psalm-5, psalm-89, psalm-100 (LXX numeration), trisagion-prayers, prayer-of-the-first-hour. Source: Jordanville 2008. Variable slots (troparion-of-the-day, first-hour-theotokion) resolved dynamically by engine, not stored in fixed corpus. data/horologion/first-hour.json: skeleton file added, officeKey:'first-hour', tradition:'BYZC'. js/horologion-engine.js: v3.0→v3.1. SUPPORTED_OFFICES expanded to ['vespers','small-compline','first-hour']. _resolveFirstHourSlots() added; parallel structure to _resolveComplineSlots(). js/office-ui.js: _updateHorologionOfficeButtons() and _horologionOfficeLabel() updated to include 'first-hour'→'First Hour'. index.html: #hor-btn-first-hour button added to #generic-settings after #hor-btn-small-compline."
+      },
+      {
+        "date": "2026-03-08",
+        "phase": "Horologion v3.0 — Small Compline + unified navigation",
+        "file": "js/horologion-engine.js + data/horologion/small-compline.json + data/horologion/compline-fixed.json + js/office-ui.js + index.html",
+        "change": "Small Compline (Mikron Apodeipnon) baseline live. Unified Horologion navigation: single horologion mode, office selector in generic sidebar.",
+        "detail": "js/horologion-engine.js: version v2.1→v3.0. SUPPORTED_OFFICES expanded to ['vespers','small-compline']. COMPLINE_FIXED_URL constant added. _complineFixedData cache variable added (null until first load). _loadComplineFixedData(): lazy fetch of data/horologion/compline-fixed.json; non-throwing — on failure logs warning; fixed slots degrade to visible placeholders. _resolveComplineSlots(sections, dateObj): parallel-loads compline-fixed, troparion, weekday-troparion-meta data. Fixed slot keys: usual-beginning, psalm-50, psalm-69, psalm-142, doxology, creed, trisagion-prayers, compline-theotokion, prayer-of-basil, into-thy-hands — all resolved unconditionally from compline-fixed.json slots map. troparion-of-the-day: delegates to _resolveTroparionSlot() with key remapped; all fallback paths (weekday-theme rubric, Resurrectional Troparion, Paschal Troparion) inherited unchanged. Non-throwing throughout. resolveOffice() routes normalizedKey==='small-compline' to _resolveComplineSlots(). data/horologion/small-compline.json: new skeleton file, officeKey:'small-compline', tradition:'BYZC', fixed slots as placeholders with compline-fixed.json resolution notes. data/horologion/compline-fixed.json: new fixed-text corpus, invariable slots keyed by name, LXX psalm numeration, source Jordanville 2008. js/office-ui.js: selectMode branch renamed horologion-vespers→horologion. selectHorologionOffice(), _updateHorologionOfficeButtons(), _horologionOfficeLabel() added. selectedHorologionOffice state variable defaults 'vespers'. _updateHorologionOfficeButtons() highlights active button in #generic-settings for ['vespers','small-compline']. renderHorologionOffice(selectedHorologionOffice) called from renderOffice(). updateGenericDateDisplay() and changeDate()/resetDate()/setCustomDate() guard updated to check selectedMode==='horologion'. backToSplash() unchanged (already resets all panels). index.html: splash button updated selectMode('horologion-vespers')→selectMode('horologion'). Text updated 'The Horologion — Byzantine Offices'. #hor-btn-vespers and #hor-btn-small-compline office selector buttons added to #generic-settings. Old mode strings horologion-vespers and horologion-small-compline absent from all files. office-ui.js _renderHorologionItem(): NO CHANGES — existing type handlers cover all Compline slot types."
+      },
+      {
+        "date": "2026-03-07",
+        "phase": "Menaion v1.8 — September + October corpus (ANNUAL CORPUS COMPLETE)",
+        "file": "data/menaion/september.json + october.json + js/menaion-resolver.js",
+        "change": "September (30/30) and October (31/31) imported. Annual fixed-date Menaion corpus complete.",
+        "detail": "data/menaion/september.json: 30 dates. 15 resolved, 15 text-unavailable. Notable: Indiction/Church New Year (Sep 1, rank 4); Archangel Michael at Chonae (Sep 6, rank 3); Nativity of the Theotokos (Sep 8, rank 1 Great Feast); Exaltation of the Holy Cross (Sep 14, rank 1 Great Feast); Euphemia (Sep 16, rank 3); Eustathios (Sep 20, rank 3); Thekla Equal-to-Apostles (Sep 24, rank 3); John the Theologian repose (Sep 26, rank 2); Gregory the Illuminator (Sep 30, rank 3). data/menaion/october.json: 31 dates. 15 resolved, 16 text-unavailable. Notable: Protection of the Theotokos/Pokrov (Oct 1, rank 2); James son of Alphaeus (Oct 9, rank 3); Paraskeva of Serbia (Oct 14, rank 3); Luke the Evangelist (Oct 18, rank 2); John of Kronstadt (Oct 19, rank 3); Demetrios of Thessalonica (Oct 26, rank 2). js/menaion-resolver.js: MONTH_FILES entries 9:'september' and 10:'october' uncommented. All 12 MONTH_FILES entries now active; no month returns menaion-not-imported. office-ui.js: NO CHANGES. horologion-engine.js: NO CHANGES. index.html: NO CHANGES. Resolver semantics and status codes: UNCHANGED."
+      },
+      {
+        "date": "2026-03-07",
+        "phase": "v2.9.7 — generic sidebar shell",
+        "file": "index.html + js/office-ui.js + css/office.css",
+        "change": "Generic sidebar shell implemented; Horologion mode-shell repaired",
+        "detail": "index.html: #generic-settings div added as fourth sidebar panel (class='mode-hidden sidebar-hidden'). Contains #generic-tradition-label (h3), .ordo-control date navigator with #generic-display-date, #generic-date-picker, three ordo-btn buttons (Prev/Today/Next), and #generic-calendar-info. Inserted between #east-syriac-settings and the main content area. js/office-ui.js: (1) selectMode('horologion-vespers') branch replaced — now correctly references #generic-settings (not #east-syriac-settings as horSettings); removes mode-hidden/sidebar-hidden from genSettings; removes sidebar-hidden from mainContent (prior branch incorrectly added it); sets #generic-tradition-label text; calls updateGenericDateDisplay(). (2) toggleSidebar() updated — genPanel lookup added; priority chain is now East Syriac → Ethiopian → Generic → BCP. (3) backToSplash() updated — genSettings now included in the all-panels-hidden reset; no panel leaks onto splash screen. (4) updateGenericDateDisplay() new helper added — syncs generic date display/picker/info; called by selectMode, changeDate(), resetDate(), and setCustomDate() when mode is horologion-vespers. css/office.css: #generic-settings geometry block added (position:fixed, left:36px, width:300px, height:100vh); .sidebar-hidden transform and .mode-hidden display:none rules added; mobile overlay and @media print selectors updated to include #generic-settings. ROOT CAUSE OF BUG: selectMode('horologion-vespers') aliased east-syriac-settings as horSettings and hid it, leaving #generic-settings perpetually mode-hidden and mainContent with sidebar-hidden. This pass corrects all three files."
+      },
+      {
+        "date": "2026-03-06",
+        "phase": "v2.8.9",
+        "file": "js/calendar-engine.js + admin/admin.html",
+        "change": "EO old/new calendar mode — admin diagnostics implemented",
+        "detail": "CalendarEngine now exposes getEOSeasonRanges(year, eoMode) with explicit old_calendar vs new_calendar fixed-feast handling, using EasternOrthodoxCalendar for the Julian Paschalion/movable-feast cycle. admin/admin.html now consumes eoMode in the Year Snapshot path and surfaces Nativity/Theophany anchor differences. This is admin/devtool coverage only; the main app still has no EO mode UI or production wiring."
+      },
+      {
+        "date": "2026-03-06",
+        "phase": "v2.8.9",
+        "file": "structure.json",
+        "change": "EO work reclassified from generic implementation task to app-integration task",
+        "detail": "structure.json now records the split accurately: admin-side EO diagnostics are implemented, while the actual remaining work is production integration. admin.todos and known_outstanding_issues were updated to preserve the completed admin/devtool step and keep the end-user EO mode gap open."
+      },
+      {
+        "date": "2026-03-06",
+        "phase": "v2.8.9",
+        "file": "structure.json + documentation/COE_II_ARCHITECTURE.md + js/coe-eligibility.js",
+        "change": "COE governance closure — all internal COE work marked complete",
+        "detail": "COE-II declared complete. Three-layer model fully operational. known_outstanding_issues.coe_calendar_model severity set to CLOSED. admin.todos coe-calendar-rebuild marked done. roadmap_summary updated: COE-II removed from next_required; COE-IIC (optional Layer 2 expansion) noted as future work only. External holdout: mar-augustine / mar-augustine-commemoration excluded from Layer 3 by CoeEligibility.filter(); requires external Syriac manuscript research before any change. No internal COE refactor work remains open."
+      },
+      {
+        "date": "2026-03-06",
+        "phase": "v2.8.8",
+        "file": "data/saints/commemorations.json + data/saints/saints-february/october/december.json",
+        "change": "COE final five adjudication — 3 REMOVE_COE_TAG, 2 external-research holdout",
+        "detail": "saint-ignatius-of-antioch (COE 10/17, 12/20): removed — mechanical two-date following (LAT on 10/17, EOR/OOR on 12/20); Antioch is Syriac Orthodox jurisdiction, not COE. saint-nicholas-of-myra (COE 12/6): removed — five-tradition sweep; identity description itself says \"celebrated across all traditions\"; Myra geographically outside COE heartland. saint-abraham-of-carrhae (COE 2/14): removed — Harran is west of Euphrates, Roman/Byzantine territory, Antiochene jurisdiction; COE followed OOR mechanically. mar-augustine / mar-augustine-commemoration: STILL_UNRESOLVED — retained as external-research holdout. Mar- prefix is genuine East Syriac evidence but three-date structure across two identity records is architecturally abnormal; cannot adjudicate without external Syriac manuscript evidence. Excluded from Layer 3 by eligibility gate. commemorations.json: 1808 → 1804 rows. February, October, December caches regenerated."
+      },
+      {
+        "date": "2026-03-06",
+        "phase": "v2.8.7",
+        "file": "js/office-ui.js — renderEastSyriac() + js/coe-eligibility.js",
+        "change": "COE Layer 3 cautiously re-enabled via CoeEligibility.filter() allowlist gate",
+        "detail": "Layer 3 display re-enabled in renderEastSyriac() after COE-IIB source-data corrections and eligibility gate implementation. Two surgical edits only: (1) resolveCommemorations(currentDate, \"COE\") cache warm-up added before office HTML assembly. (2) Silenced Layer 3 tail replaced with gated block: coeRaw → CoeEligibility.filter() → render .saint-section if eligible saints present, hide if none. CoeEligibility.filter() is mandatory — no \"filter all COE-tagged\" shortcut. No saint-grid fallback. Silence is correct when no eligible saint is present. Layer 2 (getDayClass() commemorations[]) renders before Layer 3 lookup. typeof CoeEligibility guard degrades silently if file fails to load."
+      },
+      {
+        "date": "2026-03-15",
+        "phase": "Horologion v5.0–v5.4",
+        "file": "js/horologion-engine.js + js/office-ui.js + index.html + data/triodion/ + data/pentecostarion/",
+        "change": "Horologion v5 seasonal tranche and diagnostics — complete through v5.4",
+        "detail": "v5.0: _loadTriodionData() + _resolveTriodionTroparion(dateObj, dayOfWeek, officeKey) — Triodion Great Lent weekday overlay. Computes lent week from days since Clean Monday, looks up data/triodion/triodion-lenten-weekday.json. Fires after feast arbitration; returns null on corpus miss (honest degradation). Wired into Promise.all of all 6 office resolvers. Corpus: Weeks 1–6, fixed penitential troparion (Tone 6, Jordanville/Hapgood). Verified: week 1–6 resolve; Annunciation rank 1 still wins. v5.1: _loadHolyWeekData() + _resolveHolyWeekText(slotKey, holyWeekDay) — Holy Week text overlay. Keyed by holyWeekDay string matching _computeLiturgicalSeason() output. data/triodion/holy-week/holy-week.json: troparion slot populated all 7 Holy Week days (Palm Sunday Tone 1; Bridegroom Tone 8 Mon/Tue/Wed; Great Thursday Tone 6; Great Friday/Saturday Tone 2). hwText || _buildHolyWeekRubric() pattern at all 5 isHolyWeek branches. Structurally separate from Great Lent weekday layer. Verified: Holy Monday, Holy Wednesday, Holy Friday, Holy Saturday. v5.2: _loadPentecostarionData() + _resolvePentecostarionText(slotKey) — Pentecostarion Bright Week overlay. data/pentecostarion/pentecostarion-bright-week.json: stichera-at-lord-i-have-cried and aposticha populated (fixed Paschal texts, same for all 7 Bright Week days). pentResolved || {rubric} pattern in both branches. Detected via toneResult.brightWeek === true — structurally distinct from Triodion and Holy Week paths. Troparion already resolved from vespers-troparion.json; kathisma and theotokion correctly omitted. Verified: Pascha, Bright Wednesday, Thomas Saturday, Thomas Sunday (resurrectional path). v5.3: Menaion text-unavailable audit. Corpus confirmed at 369/370; no broad unresolved batch remains. 05-18 (Venerable Peter of Caesarea in Cappadocia) is intentional holdout — no confirmed source. Verified: May 25, May 21 → menaion-feast-troparion; May 18 → menaion-text-unavailable in Vespers and Small Compline. v5.4: _renderHorologionDiagnostics(item, escapeHtml) added to office-ui.js — module-level helper called from rubric, stichera, and fallback-text branches of _renderHorologionItem(). Returns '' when disabled or resolvedAs not in DIAG_SLOTS. _horDiagnosticsEnabled flag; toggleHorologionDiagnostics() function; #hor-btn-diag button in #generic-settings sidebar (index.html). Surfaces resolvedAs, type, tone, inferred layer (Menaion/Triodion/Holy Week/Pentecostarion/Octoechos/Fallback). Off by default. Non-destructive."
       }
     ]
-  },
-  "governance": {
-    "architectural_charter": {
-      "path": "documentation/governance/architectural_charter.md",
-      "version": "0.2",
-      "status": "active"
-    }
-  },
-  "documentation_manifest": {
-    "status": "internal",
-    "last_realigned": "2026-03-13"
-  },
-  "recent_logic_changes": [
-    {
-      "date": "2026-03-13",
-      "phase": "v3.6.0 — Documentation synchronization pass",
-      "file": "structure.json + documentation/structure-reference.json + documentation/menaion-v1-architecture-and-diffs.md + documentation/OFFICE_UI_DOCUMENTATION.md + data/menaion/schema.json",
-      "change": "Full documentation corpus aligned to live engine state and verified governance decisions.",
-      "detail": "Synchronized all documentation files to reflect: (1) engine v3.5–v4.4 milestone layers now live; (2) season-aware feast qualification rule verified (ranks 1–2 during Great Lent weekdays, ranks 1–4 outside); (3) Menaion corpus integration effectively complete (369/370; 05-18 intentional hold); (4) resolver integration audit complete and verified at runtime across all offices; (5) tone computation year-rollback bug corrected and verified; (6) ninth-hour-fixed.json status corrected from erroneous v4.4 label to v3.4; (7) horologion-vespers-variable-slots todo updated to v4.4 state; (8) horologion_variable_engine issue description updated; (9) roadmap_summary completed field updated. Stale 'next_required' text referencing documentation alignment removed."
-    },
-    {
-      "date": "2026-03-13",
-      "phase": "Horologion engine v4.4 — Menaion integration verification pass",
-      "file": "js/horologion-engine.js",
-      "change": "Runtime verification of full Menaion integration and season-aware feast qualification rule.",
-      "detail": "Verified: date resolution correct; month loading correct; commemoration ranking correct; troparion extraction correct; text-unavailable handling correct; feast override integration correct. Verified: Pascha suppresses numbered tone correctly; Bright Week suppresses numbered tone correctly; Thomas Sunday resumes tone counting correctly. Menaion override integration verified working across Vespers, First Hour, Third Hour, Sixth Hour, Ninth Hour, and Small Compline. Small Compline festal Theotokion arbitration working. Season-aware feast qualification verified via concrete examples: 2026-03-02 First Hour → little-hour-lenten-rubric (rank 4 saint suppressed during Great Lent weekday); 2026-03-02 Small Compline → compline-lenten-rubric; 2026-03-25 First Hour → menaion-feast-troparion (rank 1 Annunciation overrides Lent); 2026-03-25 Small Compline → menaion-feast-troparion; 2026-02-20 Vespers → menaion-feast-troparion."
-    },
-    {
-      "date": "2026-03-13",
-      "phase": "Horologion engine v4.4 — Small Compline festal Theotokion arbitration",
-      "file": "js/horologion-engine.js",
-      "change": "_resolveComplineFestalTheotokionRubric() added. _normalizeUnavailableTroparionFallbackForOffice() added.",
-      "detail": "_resolveComplineFestalTheotokionRubric(): Small Compline festal Theotokion rubric arbitration — parallel to Little Hours festal Theotokion arbitration. Invoked from _resolveComplineSeasonalTroparionSlot() and independently for feast path. _normalizeUnavailableTroparionFallbackForOffice(): rewrites menaion-text-unavailable fallback rubrics to use the consuming office name rather than Vespers wording; invoked as the first call inside _normalizeOrdinaryTroparionFallbackForOffice() and independently at the base of _resolveLittleHourSeasonalTroparionSlot() and _resolveComplineSeasonalTroparionSlot()."
-    },
-    {
-      "date": "2026-03-13",
-      "phase": "Horologion engine v4.1/v4.3 — Little Hours Theotokion normalization and festal arbitration",
-      "file": "js/horologion-engine.js",
-      "change": "_normalizeTheotokionRubricForOffice() + _resolveLittleHourFestalTheotokionRubric() added.",
-      "detail": "v4.1: _normalizeTheotokionRubricForOffice() normalizes the Theotokion rubric slot text for each Little Hour office by name. v4.3: _resolveLittleHourFestalTheotokionRubric() arbitrates whether the Theotokion slot should use the festal override or the ordinary Octoechos rubric, applying the season-aware rank qualification rule. Applies to First Hour, Third Hour, Sixth Hour, and Ninth Hour."
-    },
-    {
-      "date": "2026-03-13",
-      "phase": "Horologion engine v4.0 — Office-specific ordinary fallback normalization",
-      "file": "js/horologion-engine.js",
-      "change": "_normalizeOrdinaryTroparionFallbackForOffice() added.",
-      "detail": "Rewrites the inherited Vespers weekday-theme-rubric into office-appropriate text for Small Compline and all Little Hours. Ensures the fallback rubric displayed to the user names the correct office rather than always saying 'Vespers'. Invoked as the terminal fallback in all troparion-of-the-day paths."
-    },
-    {
-      "date": "2026-03-13",
-      "phase": "Horologion engine v3.9 — Small Compline Great Lent seasonal troparion layer",
-      "file": "js/horologion-engine.js",
-      "change": "_resolveComplineSeasonalTroparionSlot() added.",
-      "detail": "Applies Great Lent seasonal override for Small Compline troparion-of-the-day on Great Lent weekdays (Clean Monday through Great Friday). Parallel to _resolveLittleHourSeasonalTroparionSlot(). Season-aware rank qualification: ranks 1–2 qualify as feast override during Great Lent weekdays; ranks 3–4 fall through to Lenten seasonal rubric. Verified: 2026-03-02 Small Compline → compline-lenten-rubric; 2026-03-25 Small Compline → menaion-feast-troparion."
-    },
-    {
-      "date": "2026-03-13",
-      "phase": "Horologion engine v3.8 — Little Hours Great Lent seasonal troparion layer",
-      "file": "js/horologion-engine.js",
-      "change": "_resolveLittleHourSeasonalTroparionSlot() added inside _resolveLittleHourTroparionSlot().",
-      "detail": "Applies Great Lent seasonal override for all four Little Hours troparion-of-the-day on Great Lent weekdays. Season-aware rank qualification: ranks 1–2 qualify as feast override during Great Lent weekdays; ranks 3–4 fall through to Lenten seasonal rubric. Displaces ordinary weekday fallback on Great Lent Mon–Fri. Verified: 2026-03-02 First Hour → little-hour-lenten-rubric; 2026-03-25 First Hour → menaion-feast-troparion."
-    },
-    {
-      "date": "2026-03-13",
-      "phase": "Horologion engine v3.7 — Vespers stichera/aposticha festal override",
-      "file": "js/horologion-engine.js",
-      "change": "_resolveFestalRubricOverrideSlot() added.",
-      "detail": "Applies qualifying feast rubric override to Vespers stichera-at-lord-i-have-cried and aposticha slots. Qualification uses the season-aware rule: ranks 1–4 outside Great Lent weekdays; ranks 1–2 only during Great Lent weekdays. Verified: 2026-02-20 Vespers → menaion-feast-troparion (and corresponding stichera override)."
-    },
-    {
-      "date": "2026-03-13",
-      "phase": "Horologion engine v3.6 — Little Hours feast troparion override",
-      "file": "js/horologion-engine.js",
-      "change": "_resolveLittleHourTroparionSlot() extended with feast-rank arbitration.",
-      "detail": "Extends feast-rank override to Little Hours troparion-of-the-day. Qualification uses the season-aware rule. Called from _resolveFirstHourSlots(), _resolveThirdHourSlots(), _resolveSixthHourSlots(), _resolveNinthHourSlots()."
-    },
-    {
-      "date": "2026-03-13",
-      "phase": "Horologion engine v3.5 — feast-rank arbitration",
-      "file": "js/horologion-engine.js",
-      "change": "_resolveFeastOverrideContext() added.",
-      "detail": "Central feast-rank arbitration function. Governs Vespers troparion/apolytikion and dismissal Theotokion slots. Queries MenaionResolver, applies rank qualification (season-aware), and returns override context for downstream slot resolution."
-    },
-    {
-      "date": "2026-03-08",
-      "phase": "Horologion v3.1 — First Hour baseline",
-      "file": "js/horologion-engine.js + data/horologion/first-hour.json + data/horologion/first-hour-fixed.json + js/office-ui.js + index.html",
-      "change": "First Hour (Prima) baseline live. Fixed corpus, office selector button, engine wiring.",
-      "detail": "data/horologion/first-hour-fixed.json: new fixed-text corpus — usual-beginning, psalm-5, psalm-89, psalm-100 (LXX numeration), trisagion-prayers, prayer-of-the-first-hour. Source: Jordanville 2008. Variable slots (troparion-of-the-day, first-hour-theotokion) resolved dynamically by engine, not stored in fixed corpus. data/horologion/first-hour.json: skeleton file added, officeKey:'first-hour', tradition:'BYZC'. js/horologion-engine.js: v3.0→v3.1. SUPPORTED_OFFICES expanded to ['vespers','small-compline','first-hour']. _resolveFirstHourSlots() added; parallel structure to _resolveComplineSlots(). js/office-ui.js: _updateHorologionOfficeButtons() and _horologionOfficeLabel() updated to include 'first-hour'→'First Hour'. index.html: #hor-btn-first-hour button added to #generic-settings after #hor-btn-small-compline."
-    },
-    {
-      "date": "2026-03-08",
-      "phase": "Horologion v3.0 — Small Compline + unified navigation",
-      "file": "js/horologion-engine.js + data/horologion/small-compline.json + data/horologion/compline-fixed.json + js/office-ui.js + index.html",
-      "change": "Small Compline (Mikron Apodeipnon) baseline live. Unified Horologion navigation: single horologion mode, office selector in generic sidebar.",
-      "detail": "js/horologion-engine.js: version v2.1→v3.0. SUPPORTED_OFFICES expanded to ['vespers','small-compline']. COMPLINE_FIXED_URL constant added. _complineFixedData cache variable added (null until first load). _loadComplineFixedData(): lazy fetch of data/horologion/compline-fixed.json; non-throwing — on failure logs warning; fixed slots degrade to visible placeholders. _resolveComplineSlots(sections, dateObj): parallel-loads compline-fixed, troparion, weekday-troparion-meta data. Fixed slot keys: usual-beginning, psalm-50, psalm-69, psalm-142, doxology, creed, trisagion-prayers, compline-theotokion, prayer-of-basil, into-thy-hands — all resolved unconditionally from compline-fixed.json slots map. troparion-of-the-day: delegates to _resolveTroparionSlot() with key remapped; all fallback paths (weekday-theme rubric, Resurrectional Troparion, Paschal Troparion) inherited unchanged. Non-throwing throughout. resolveOffice() routes normalizedKey==='small-compline' to _resolveComplineSlots(). data/horologion/small-compline.json: new skeleton file, officeKey:'small-compline', tradition:'BYZC', fixed slots as placeholders with compline-fixed.json resolution notes. data/horologion/compline-fixed.json: new fixed-text corpus, invariable slots keyed by name, LXX psalm numeration, source Jordanville 2008. js/office-ui.js: selectMode branch renamed horologion-vespers→horologion. selectHorologionOffice(), _updateHorologionOfficeButtons(), _horologionOfficeLabel() added. selectedHorologionOffice state variable defaults 'vespers'. _updateHorologionOfficeButtons() highlights active button in #generic-settings for ['vespers','small-compline']. renderHorologionOffice(selectedHorologionOffice) called from renderOffice(). updateGenericDateDisplay() and changeDate()/resetDate()/setCustomDate() guard updated to check selectedMode==='horologion'. backToSplash() unchanged (already resets all panels). index.html: splash button updated selectMode('horologion-vespers')→selectMode('horologion'). Text updated 'The Horologion — Byzantine Offices'. #hor-btn-vespers and #hor-btn-small-compline office selector buttons added to #generic-settings. Old mode strings horologion-vespers and horologion-small-compline absent from all files. office-ui.js _renderHorologionItem(): NO CHANGES — existing type handlers cover all Compline slot types."
-    },
-    {
-      "date": "2026-03-07",
-      "phase": "Menaion v1.8 — September + October corpus (ANNUAL CORPUS COMPLETE)",
-      "file": "data/menaion/september.json + october.json + js/menaion-resolver.js",
-      "change": "September (30/30) and October (31/31) imported. Annual fixed-date Menaion corpus complete.",
-      "detail": "data/menaion/september.json: 30 dates. 15 resolved, 15 text-unavailable. Notable: Indiction/Church New Year (Sep 1, rank 4); Archangel Michael at Chonae (Sep 6, rank 3); Nativity of the Theotokos (Sep 8, rank 1 Great Feast); Exaltation of the Holy Cross (Sep 14, rank 1 Great Feast); Euphemia (Sep 16, rank 3); Eustathios (Sep 20, rank 3); Thekla Equal-to-Apostles (Sep 24, rank 3); John the Theologian repose (Sep 26, rank 2); Gregory the Illuminator (Sep 30, rank 3). data/menaion/october.json: 31 dates. 15 resolved, 16 text-unavailable. Notable: Protection of the Theotokos/Pokrov (Oct 1, rank 2); James son of Alphaeus (Oct 9, rank 3); Paraskeva of Serbia (Oct 14, rank 3); Luke the Evangelist (Oct 18, rank 2); John of Kronstadt (Oct 19, rank 3); Demetrios of Thessalonica (Oct 26, rank 2). js/menaion-resolver.js: MONTH_FILES entries 9:'september' and 10:'october' uncommented. All 12 MONTH_FILES entries now active; no month returns menaion-not-imported. office-ui.js: NO CHANGES. horologion-engine.js: NO CHANGES. index.html: NO CHANGES. Resolver semantics and status codes: UNCHANGED."
-    },
-    {
-      "date": "2026-03-07",
-      "phase": "v2.9.7 — generic sidebar shell",
-      "file": "index.html + js/office-ui.js + css/office.css",
-      "change": "Generic sidebar shell implemented; Horologion mode-shell repaired",
-      "detail": "index.html: #generic-settings div added as fourth sidebar panel (class='mode-hidden sidebar-hidden'). Contains #generic-tradition-label (h3), .ordo-control date navigator with #generic-display-date, #generic-date-picker, three ordo-btn buttons (Prev/Today/Next), and #generic-calendar-info. Inserted between #east-syriac-settings and the main content area. js/office-ui.js: (1) selectMode('horologion-vespers') branch replaced — now correctly references #generic-settings (not #east-syriac-settings as horSettings); removes mode-hidden/sidebar-hidden from genSettings; removes sidebar-hidden from mainContent (prior branch incorrectly added it); sets #generic-tradition-label text; calls updateGenericDateDisplay(). (2) toggleSidebar() updated — genPanel lookup added; priority chain is now East Syriac → Ethiopian → Generic → BCP. (3) backToSplash() updated — genSettings now included in the all-panels-hidden reset; no panel leaks onto splash screen. (4) updateGenericDateDisplay() new helper added — syncs generic date display/picker/info; called by selectMode, changeDate(), resetDate(), and setCustomDate() when mode is horologion-vespers. css/office.css: #generic-settings geometry block added (position:fixed, left:36px, width:300px, height:100vh); .sidebar-hidden transform and .mode-hidden display:none rules added; mobile overlay and @media print selectors updated to include #generic-settings. ROOT CAUSE OF BUG: selectMode('horologion-vespers') aliased east-syriac-settings as horSettings and hid it, leaving #generic-settings perpetually mode-hidden and mainContent with sidebar-hidden. This pass corrects all three files."
-    },
-    {
-      "date": "2026-03-06",
-      "phase": "v2.8.9",
-      "file": "js/calendar-engine.js + admin/admin.html",
-      "change": "EO old/new calendar mode — admin diagnostics implemented",
-      "detail": "CalendarEngine now exposes getEOSeasonRanges(year, eoMode) with explicit old_calendar vs new_calendar fixed-feast handling, using EasternOrthodoxCalendar for the Julian Paschalion/movable-feast cycle. admin/admin.html now consumes eoMode in the Year Snapshot path and surfaces Nativity/Theophany anchor differences. This is admin/devtool coverage only; the main app still has no EO mode UI or production wiring."
-    },
-    {
-      "date": "2026-03-06",
-      "phase": "v2.8.9",
-      "file": "structure.json",
-      "change": "EO work reclassified from generic implementation task to app-integration task",
-      "detail": "structure.json now records the split accurately: admin-side EO diagnostics are implemented, while the actual remaining work is production integration. admin.todos and known_outstanding_issues were updated to preserve the completed admin/devtool step and keep the end-user EO mode gap open."
-    },
-    {
-      "date": "2026-03-06",
-      "phase": "v2.8.9",
-      "file": "structure.json + documentation/COE_II_ARCHITECTURE.md + js/coe-eligibility.js",
-      "change": "COE governance closure — all internal COE work marked complete",
-      "detail": "COE-II declared complete. Three-layer model fully operational. known_outstanding_issues.coe_calendar_model severity set to CLOSED. admin.todos coe-calendar-rebuild marked done. roadmap_summary updated: COE-II removed from next_required; COE-IIC (optional Layer 2 expansion) noted as future work only. External holdout: mar-augustine / mar-augustine-commemoration excluded from Layer 3 by CoeEligibility.filter(); requires external Syriac manuscript research before any change. No internal COE refactor work remains open."
-    },
-    {
-      "date": "2026-03-06",
-      "phase": "v2.8.8",
-      "file": "data/saints/commemorations.json + data/saints/saints-february/october/december.json",
-      "change": "COE final five adjudication — 3 REMOVE_COE_TAG, 2 external-research holdout",
-      "detail": "saint-ignatius-of-antioch (COE 10/17, 12/20): removed — mechanical two-date following (LAT on 10/17, EOR/OOR on 12/20); Antioch is Syriac Orthodox jurisdiction, not COE. saint-nicholas-of-myra (COE 12/6): removed — five-tradition sweep; identity description itself says \"celebrated across all traditions\"; Myra geographically outside COE heartland. saint-abraham-of-carrhae (COE 2/14): removed — Harran is west of Euphrates, Roman/Byzantine territory, Antiochene jurisdiction; COE followed OOR mechanically. mar-augustine / mar-augustine-commemoration: STILL_UNRESOLVED — retained as external-research holdout. Mar- prefix is genuine East Syriac evidence but three-date structure across two identity records is architecturally abnormal; cannot adjudicate without external Syriac manuscript evidence. Excluded from Layer 3 by eligibility gate. commemorations.json: 1808 → 1804 rows. February, October, December caches regenerated."
-    },
-    {
-      "date": "2026-03-06",
-      "phase": "v2.8.7",
-      "file": "js/office-ui.js — renderEastSyriac() + js/coe-eligibility.js",
-      "change": "COE Layer 3 cautiously re-enabled via CoeEligibility.filter() allowlist gate",
-      "detail": "Layer 3 display re-enabled in renderEastSyriac() after COE-IIB source-data corrections and eligibility gate implementation. Two surgical edits only: (1) resolveCommemorations(currentDate, \"COE\") cache warm-up added before office HTML assembly. (2) Silenced Layer 3 tail replaced with gated block: coeRaw → CoeEligibility.filter() → render .saint-section if eligible saints present, hide if none. CoeEligibility.filter() is mandatory — no \"filter all COE-tagged\" shortcut. No saint-grid fallback. Silence is correct when no eligible saint is present. Layer 2 (getDayClass() commemorations[]) renders before Layer 3 lookup. typeof CoeEligibility guard degrades silently if file fails to load."
-    }
-  ]
-}}
+  }
+}
