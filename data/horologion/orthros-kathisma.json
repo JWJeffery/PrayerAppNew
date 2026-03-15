@@ -1,0 +1,189 @@
+{
+  "_comment": [
+    "data/horologion/orthros-kathisma.json — Horologion v5.7",
+    "",
+    "PURPOSE: Appointment table for the two Psalter kathismata read at",
+    "  ordinary weekday Orthros (Matins). Keyed by weekday (JS Date.getDay()).",
+    "",
+    "RULE: Standard Byzantine Psalter weekly cycle for Orthros (not Vespers).",
+    "SOURCE: OCA/Antiochian Typikon; Jordanville Horologion (2008 edition).",
+    "  The Orthros kathisma cycle is wholly distinct from the Vespers cycle.",
+    "  At Vespers only one kathisma is read (Mon–Fri); at Orthros two are read",
+    "  (Mon–Sat ordinary). Do not conflate these tables.",
+    "",
+    "RELATIONSHIP TO VESPERS-KATHISMA.JSON:",
+    "  Vespers reads Kathismata 1, 4, 6, 8, 10, 12 (Mon–Sat one each).",
+    "  Orthros reads Kathismata 4–15 in pairs across Mon–Sat, plus",
+    "  Kathisma 2 or Polyeleos on Sunday. These are separate datasets.",
+    "",
+    "KATHISMA PAIRS (ordinary weekday, non-vigil Orthros):",
+    "  Monday    — Kathismata 4 + 5   (Ps 24–31 + Ps 32–36 LXX)",
+    "  Tuesday   — Kathismata 6 + 7   (Ps 37–45 + Ps 46–54 LXX)",
+    "  Wednesday — Kathismata 8 + 9   (Ps 55–63 + Ps 64–69 LXX)",
+    "  Thursday  — Kathismata 10 + 11 (Ps 70–76 + Ps 77–84 LXX)",
+    "  Friday    — Kathismata 12 + 13 (Ps 85–91 + Ps 92–100 LXX)",
+    "  Saturday  — Kathismata 14 + 15 (Ps 101–108 + Ps 109–117 LXX)",
+    "    NOTE: At the Saturday All-Night Vigil, Kathisma 17 (Ps 118) is",
+    "    assigned at Orthros in place of ordinary practice. This file encodes",
+    "    ordinary non-vigil Saturday only.",
+    "  Sunday    — See note below.",
+    "",
+    "SUNDAY NOTE:",
+    "  On Sundays when the Polyeleos is appointed (Ps 134–135), the ordinary",
+    "  Kathisma reading is replaced. On non-Polyeleos Sundays the assignment",
+    "  varies by local use (some sources: Kathisma 2; others: see Typikon).",
+    "  Sunday is explicitly deferred in this baseline. No appointment is",
+    "  fabricated.",
+    "",
+    "GREAT LENT:",
+    "  During Great Lent the entire Psalter is read twice weekly, resulting",
+    "  in a substantially expanded kathisma distribution (up to 3 kathismata",
+    "  per service on some days). The ordinary cycle given here does not apply",
+    "  during Great Lent. This baseline renders an honest Lenten rubric note",
+    "  instead of a false ordinary-cycle assignment.",
+    "",
+    "BRIGHT WEEK (Pascha–Thomas Saturday):",
+    "  No kathisma is read. The Paschal Canon replaces all Psalter reading.",
+    "  An explicit omission rubric is returned.",
+    "",
+    "OVERRIDES NOT IMPLEMENTED (explicitly noted, not silently absent):",
+    "  - Great Feasts: kathisma typically replaced by Polyeleos or omitted",
+    "  - All-Night Vigil (Saturday): Kathisma 17 (Ps 118) at Matins",
+    "  - Sunday: practice varies; explicitly deferred",
+    "  - Feast-rank engine: deferred to a future pass",
+    "",
+    "WEEKDAY INDEX: JS Date.getDay() — 0=Sunday, 1=Monday, 6=Saturday."
+  ],
+  "meta": {
+    "version": "5.7.0",
+    "rule": "standard-weekly-cycle-ordinary-orthros",
+    "numbering": "LXX (Septuagint) psalm numbers used throughout",
+    "kathismata_per_service": 2,
+    "overrides_implemented": false,
+    "overrides_deferred": [
+      "great-feasts",
+      "great-lent",
+      "bright-week",
+      "sunday-polyeleos",
+      "saturday-all-night-vigil"
+    ]
+  },
+  "assignments": [
+    {
+      "weekday": "sunday",
+      "weekdayIndex": 0,
+      "sunday_deferred": true,
+      "note": "Sunday Orthros kathisma practice varies by occasion. On Sundays with the Polyeleos (Ps 134–135), the ordinary kathisma reading is supplanted. On non-Polyeleos Sundays some sources appoint Kathisma 2. Practice depends on whether a vigil was held on Saturday. Sunday Orthros kathisma is explicitly deferred in this baseline."
+    },
+    {
+      "weekday": "monday",
+      "weekdayIndex": 1,
+      "kathismaFirst": {
+        "number": 4,
+        "title": "Fourth Kathisma",
+        "psalms_lxx": "24–31",
+        "psalms_heb_protestant": "25–32",
+        "incipit": "To Thee, O Lord, have I lifted up my soul"
+      },
+      "kathismaSecond": {
+        "number": 5,
+        "title": "Fifth Kathisma",
+        "psalms_lxx": "32–36",
+        "psalms_heb_protestant": "33–37",
+        "incipit": "Rejoice in the Lord, O ye righteous"
+      }
+    },
+    {
+      "weekday": "tuesday",
+      "weekdayIndex": 2,
+      "kathismaFirst": {
+        "number": 6,
+        "title": "Sixth Kathisma",
+        "psalms_lxx": "37–45",
+        "psalms_heb_protestant": "38–46",
+        "incipit": "Rebuke me not, O Lord, in Thine anger"
+      },
+      "kathismaSecond": {
+        "number": 7,
+        "title": "Seventh Kathisma",
+        "psalms_lxx": "46–54",
+        "psalms_heb_protestant": "47–55",
+        "incipit": "O clap your hands, all ye nations"
+      }
+    },
+    {
+      "weekday": "wednesday",
+      "weekdayIndex": 3,
+      "kathismaFirst": {
+        "number": 8,
+        "title": "Eighth Kathisma",
+        "psalms_lxx": "55–63",
+        "psalms_heb_protestant": "56–64",
+        "incipit": "Have mercy on me, O God, for man hath trodden me down"
+      },
+      "kathismaSecond": {
+        "number": 9,
+        "title": "Ninth Kathisma",
+        "psalms_lxx": "64–69",
+        "psalms_heb_protestant": "65–70",
+        "incipit": "A hymn becometh Thee, O God, in Sion"
+      }
+    },
+    {
+      "weekday": "thursday",
+      "weekdayIndex": 4,
+      "kathismaFirst": {
+        "number": 10,
+        "title": "Tenth Kathisma",
+        "psalms_lxx": "70–76",
+        "psalms_heb_protestant": "71–77",
+        "incipit": "In Thee, O Lord, have I hoped"
+      },
+      "kathismaSecond": {
+        "number": 11,
+        "title": "Eleventh Kathisma",
+        "psalms_lxx": "77–84",
+        "psalms_heb_protestant": "78–85",
+        "incipit": "Give ear, O my people, to my law"
+      }
+    },
+    {
+      "weekday": "friday",
+      "weekdayIndex": 5,
+      "kathismaFirst": {
+        "number": 12,
+        "title": "Twelfth Kathisma",
+        "psalms_lxx": "85–90",
+        "psalms_heb_protestant": "86–91",
+        "incipit": "Incline Thine ear, O Lord, and hear me"
+      },
+      "kathismaSecond": {
+        "number": 13,
+        "title": "Thirteenth Kathisma",
+        "psalms_lxx": "91–100",
+        "psalms_heb_protestant": "92–101",
+        "incipit": "It is good to give thanks unto the Lord",
+        "note": "Some editions separate Ps 91 (LXX) into Kathisma 12 or begin Kathisma 13 at Ps 92. The above follows the standard OCA/Jordanville enumeration."
+      }
+    },
+    {
+      "weekday": "saturday",
+      "weekdayIndex": 6,
+      "kathismaFirst": {
+        "number": 14,
+        "title": "Fourteenth Kathisma",
+        "psalms_lxx": "101–108",
+        "psalms_heb_protestant": "102–109",
+        "incipit": "Hear my prayer, O Lord, and let my cry come unto Thee"
+      },
+      "kathismaSecond": {
+        "number": 15,
+        "title": "Fifteenth Kathisma",
+        "psalms_lxx": "109–117",
+        "psalms_heb_protestant": "110–118",
+        "incipit": "The Lord said unto my Lord, Sit Thou at my right hand"
+      },
+      "saturday_note": "At the Saturday All-Night Vigil, Kathisma 17 (Psalm 118 LXX) is appointed at Orthros in place of this ordinary assignment. This file encodes ordinary non-vigil Saturday Orthros only."
+    }
+  ]
+}

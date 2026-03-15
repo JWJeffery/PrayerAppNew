@@ -346,6 +346,17 @@ const HorologionEngine = (() => {
     // Shape: { slots: { "usual-beginning": {...}, "psalm-3": {...}, ... } }
     let _orthrosFixedData = null;
 
+    // ── v5.7: Orthros kathisma appointment table URL and cache ─────────────
+    // Weekday pair assignments (Mon–Sat) for ordinary non-vigil Orthros.
+    // Shape: { assignments: [ { weekdayIndex, kathismaFirst: {...}, kathismaSecond: {...} }, ... ] }
+    // Distinct from vespers-kathisma.json — the Orthros cycle uses Kathismata 4–15;
+    // the Vespers cycle uses Kathismata 1, 4, 6, 8, 10, 12.
+    const ORTHROS_KATHISMA_URL = 'data/horologion/orthros-kathisma.json';
+
+    // Populated lazily by _loadOrthrosKathismaData().
+    // null until first load attempt.
+    let _orthrosKathismaData = null;
+
     // ── v5.0: Triodion lenten weekday data file URL and cache ─────────────
     // Keyed by lent week number (1–6), then weekday name (monday … friday).
     // Shape: { lenten_weekday_troparion: { "1": { monday: { troparion: {...} }, ... }, ... } }
@@ -2576,9 +2587,153 @@ function _resolveComplineFestalTheotokionRubric(officeKey, troparionItem, fallba
             console.warn('[HorologionEngine] _loadOrthrosFixedData failed:', err.message, '— fixed slots will remain as placeholders.');
         }
     }
-    // ── v5.6: Orthros (Matins) slot resolver ─────────────────────────────
+    // ──────────────────────────────────────────────────────────────────────
+    // v5.7: _loadOrthrosKathismaData()
     //
-    // Structural baseline only. Resolves:
+    // Fetches and caches the Orthros kathisma appointment table from
+    // data/horologion/orthros-kathisma.json.
+    //
+    // Non-throwing: on failure, leaves _orthrosKathismaData null.
+    // The resolver degrades to honest rubric stubs without crashing.
+    // ──────────────────────────────────────────────────────────────────────
+    async function _loadOrthrosKathismaData() {
+        if (_orthrosKathismaData !== null) return;
+
+        try {
+            const response = await fetch(ORTHROS_KATHISMA_URL);
+            if (!response.ok) {
+                console.warn(`[HorologionEngine] Could not load Orthros kathisma table (HTTP ${response.status}); kathisma slots will degrade to appointment rubrics.`);
+                return;
+            }
+            _orthrosKathismaData = await response.json();
+            console.log('[HorologionEngine] Loaded Orthros kathisma appointment table (Mon–Sat ordinary).');
+        } catch (err) {
+            console.warn('[HorologionEngine] _loadOrthrosKathismaData failed:', err.message, '— kathisma slots will degrade to appointment rubrics.');
+        }
+    }
+
+
+    // ──────────────────────────────────────────────────────────────────────
+    // v5.7: _resolveOrthrosKathismaPair(slotKey, dayOfWeek, brightWeek, isGreatLent)
+    //
+    // Returns a resolved item for kathisma-first or kathisma-second, or null
+    // if the appointment data has not loaded (graceful degradation).
+    //
+    // slotKey: 'kathisma-first' | 'kathisma-second'
+    // dayOfWeek: JS Date.getDay() (0 = Sunday … 6 = Saturday)
+    // brightWeek: boolean — true during Pascha–Thomas Saturday
+    // isGreatLent: boolean — true on Great Lent weekdays (Mon–Fri)
+    //
+    // RULE: Standard Byzantine Psalter weekly cycle for ordinary Orthros.
+    //   Each ordinary weekday reads TWO kathismata. Assignment pairs:
+    //     Monday    → 4 + 5   (Ps 24–31 + Ps 32–36 LXX)
+    //     Tuesday   → 6 + 7   (Ps 37–45 + Ps 46–54 LXX)
+    //     Wednesday → 8 + 9   (Ps 55–63 + Ps 64–69 LXX)
+    //     Thursday  → 10 + 11 (Ps 70–76 + Ps 77–84 LXX)
+    //     Friday    → 12 + 13 (Ps 85–91 + Ps 92–100 LXX)
+    //     Saturday  → 14 + 15 (Ps 101–108 + Ps 109–117 LXX)
+    //       At Saturday All-Night Vigil, Kathisma 17 (Ps 118) is used instead.
+    //     Sunday    → explicitly deferred (practice varies)
+    //
+    // This is wholly DIFFERENT from the Vespers kathisma cycle
+    // (Kathismata 1, 4, 6, 8, 10, 12). Do not conflate these tables.
+    //
+    // Returns: a resolved item object (type:'rubric'), or null on data failure.
+    // ──────────────────────────────────────────────────────────────────────
+    function _resolveOrthrosKathismaPair(slotKey, dayOfWeek, brightWeek, isGreatLent) {
+        const isFirst = slotKey === 'kathisma-first';
+
+        // ── Bright Week: no kathisma ──────────────────────────────────────
+        if (brightWeek) {
+            return {
+                type:       'rubric',
+                key:        slotKey,
+                label:      isFirst ? 'First Kathisma' : 'Second Kathisma',
+                text:       '(Bright Week — no Kathisma. During Bright Week (Pascha Sunday through Thomas Saturday) the Paschal Canon replaces Psalter reading. The kathismata are not read.)',
+                resolvedAs: 'orthros-bright-week-no-kathisma'
+            };
+        }
+
+        // ── Great Lent: ordinary cycle inapplicable ───────────────────────
+        if (isGreatLent) {
+            return {
+                type:       'rubric',
+                key:        slotKey,
+                label:      isFirst ? 'First Kathisma (Great Lent)' : 'Second Kathisma (Great Lent)',
+                text:       '(GREAT LENT — the ordinary weekday Orthros kathisma cycle is not in use. ' +
+                            'The Lenten Typikon prescribes reading the entire Psalter twice weekly, with a ' +
+                            'substantially expanded distribution — up to three kathismata per service on ' +
+                            'some days. The specific Lenten Orthros kathisma appointments are not yet ' +
+                            'implemented in this engine.)',
+                resolvedAs: 'orthros-great-lent-kathisma-not-implemented'
+            };
+        }
+
+        // ── Sunday: deferred ─────────────────────────────────────────────
+        if (dayOfWeek === 0) {
+            return {
+                type:       'rubric',
+                key:        slotKey,
+                label:      isFirst ? 'First Kathisma (Sunday)' : 'Second Kathisma (Sunday)',
+                text:       '(Sunday Orthros — Kathisma: On Sundays when the Polyeleos is appointed ' +
+                            '(Psalms 134–135 LXX), it replaces the ordinary Kathisma reading. ' +
+                            'On other Sundays the assignment varies by local use and whether a vigil ' +
+                            'was served on Saturday. Sunday Orthros kathisma is explicitly deferred ' +
+                            'in this baseline.)',
+                resolvedAs: 'orthros-sunday-kathisma-deferred'
+            };
+        }
+
+        // ── Ordinary weekday: resolve from appointment table ──────────────
+        if (_orthrosKathismaData === null) return null; // data failed to load — degrade to placeholder
+
+        const assignments = _orthrosKathismaData.assignments;
+        if (!Array.isArray(assignments)) return null;
+
+        const assignment = assignments.find(a => a.weekdayIndex === dayOfWeek);
+        if (!assignment || assignment.sunday_deferred) return null;
+
+        const kathismaData = isFirst ? assignment.kathismaFirst : assignment.kathismaSecond;
+        if (!kathismaData) return null;
+
+        const k          = kathismaData.number;
+        const title      = kathismaData.title;
+        const psalmsLxx  = kathismaData.psalms_lxx;
+        const psalmsProt = kathismaData.psalms_heb_protestant;
+        const incipit    = kathismaData.incipit;
+        const ordinal    = isFirst ? 'First' : 'Second';
+
+        let text = `Orthros ${ordinal} Kathisma: Kathisma ${k} — ${title}\n\n` +
+                   `Psalms ${psalmsLxx} (LXX)\n` +
+                   `Incipit: "${incipit}"\n\n` +
+                   `(LXX psalm numbers used throughout. Protestant/Hebrew equivalents: Psalms ${psalmsProt}.)\n\n` +
+                   `(ORDINARY WEEKDAY — standard Byzantine Orthros weekly cycle. ` +
+                   `Great Feast, Great Lent, and vigil kathisma overrides are not yet implemented. ` +
+                   `Full psalm text for this kathisma is not yet embedded; read from a Psalter.)`;
+
+        if (kathismaData.note) {
+            text += `\n\n(${kathismaData.note})`;
+        }
+        if (dayOfWeek === 6 && assignment.saturday_note) {
+            text += `\n\n(${assignment.saturday_note})`;
+        }
+
+        return {
+            type:           'rubric',
+            key:            slotKey,
+            label:          `Kathisma ${k} — ${title}`,
+            text:           text,
+            kathismaNumber: k,
+            psalmsLxx:      psalmsLxx,
+            weekday:        assignment.weekday,
+            resolvedAs:     'orthros-ordinary-weekday-kathisma-appointment'
+        };
+    }
+
+
+    // ── v5.6 / v5.7 / v5.8: Orthros (Matins) slot resolver ──────────────
+    //
+    // v5.6 baseline. Resolves:
     //   Fixed slots (from orthros-fixed.json):
     //     usual-beginning, psalm-3, psalm-37, psalm-62, psalm-87, psalm-102,
     //     psalm-142, praises-psalms, great-doxology
@@ -2587,25 +2742,39 @@ function _resolveComplineFestalTheotokionRubric(officeKey, troparionItem, fallba
     //                        Alleluia (Great Lent weekdays) or Paschal Troparion
     //                        (Bright Week) or Holy Week rubric.
     //     troparion-of-the-day — delegates to _resolveLittleHourSeasonalTroparionSlot()
-    //                            (same infrastructure as Little Hours).
-    //     orthros-theotokion   — honest rubric stub (Matins Theotokion corpus deferred).
-    //   Deferred placeholders (pass through unchanged):
-    //     kathisma-first, kathisma-second, sessional-hymns, canon,
-    //     praises-stichera
+    //     orthros-theotokion   — honest rubric stub (Matins Theotokion corpus deferred)
     //
-    // Non-throwing throughout.
+    // v5.7 additions:
+    //   kathisma-first, kathisma-second — resolved via _resolveOrthrosKathismaPair()
+    //   praises-stichera — honest season-discriminating rubric
+    //
+    // v5.8 additions:
+    //   sessional-hymns — season-aware rubric (5 cases)
+    //   canon — structured season-aware rubric (6 cases); no corpus imported
+    //
+    // All skeleton placeholders now resolved. Non-throwing throughout.
     // ──────────────────────────────────────────────────────────────────────
     async function _resolveOrthrosSlots(sections, dateObj) {
         await Promise.all([
             _loadOrthrosFixedData(),
+            _loadOrthrosKathismaData(),
             _loadTroparionData(),
             _loadWeekdayTroparionMeta(),
             _loadTriodionData()
         ]);
 
-        const dayOfWeek  = dateObj.getDay();
-        const toneResult = _computeBaselineTone(dateObj);
+        const dayOfWeek    = dateObj.getDay();
+        const toneResult   = _computeBaselineTone(dateObj);
         const seasonResult = _computeLiturgicalSeason(dateObj, toneResult);
+
+        // Hoist season booleans once — used by multiple slot branches below.
+        const isBrightWeek = toneResult && toneResult.brightWeek;
+        const isHolyWeek   = seasonResult && seasonResult.season === 'holy-week';
+        const isGreatLentWeekday =
+            seasonResult &&
+            seasonResult.season === 'great-lent' &&
+            dayOfWeek >= 1 &&
+            dayOfWeek <= 5;
 
         const FIXED_SLOT_KEYS = new Set([
             'usual-beginning',
@@ -2648,20 +2817,7 @@ function _resolveComplineFestalTheotokionRubric(officeKey, troparionItem, fallba
 
                 // ── god-is-the-lord / Alleluia path ──────────────────────
                 if (item.key === 'god-is-the-lord') {
-                    const isGreatLentWeekday =
-                        seasonResult &&
-                        seasonResult.season === 'great-lent' &&
-                        dayOfWeek >= 1 &&
-                        dayOfWeek <= 5;
-
-                    const isHolyWeek =
-                        seasonResult &&
-                        (seasonResult.season === 'holy-week' || seasonResult.isHolyWeek);
-
-                    const isBrightWeek = toneResult && toneResult.brightWeek;
-
                     if (isBrightWeek) {
-                        // Bright Week: Paschal Troparion in place of God is the Lord
                         section.items[i] = {
                             type:       'rubric',
                             key:        'god-is-the-lord',
@@ -2732,6 +2888,279 @@ function _resolveComplineFestalTheotokionRubric(officeKey, troparionItem, fallba
                         troparionItem,
                         fallbackRubric
                     );
+                    continue;
+                }
+
+                // ── v5.7: kathisma-first ──────────────────────────────────
+                if (item.key === 'kathisma-first') {
+                    const resolved = _resolveOrthrosKathismaPair(
+                        'kathisma-first', dayOfWeek, isBrightWeek, isGreatLentWeekday
+                    );
+                    if (resolved) section.items[i] = resolved;
+                    // null → data load failure → slot remains skeleton placeholder (correct degradation)
+                    continue;
+                }
+
+                // ── v5.7: kathisma-second ─────────────────────────────────
+                if (item.key === 'kathisma-second') {
+                    const resolved = _resolveOrthrosKathismaPair(
+                        'kathisma-second', dayOfWeek, isBrightWeek, isGreatLentWeekday
+                    );
+                    if (resolved) section.items[i] = resolved;
+                    continue;
+                }
+
+                // ── v5.7: praises-stichera — honest discriminating rubric ─
+                // Upgraded from silent pass-through to a rubric that truthfully
+                // distinguishes the five liturgical contexts.
+                if (item.key === 'praises-stichera') {
+                    let sticheraText;
+                    let sticheraResolvedAs;
+
+                    if (isBrightWeek) {
+                        sticheraText =
+                            'BRIGHT WEEK — Praises Stichera: The Paschal stichera are sung at the Praises ' +
+                            '("Let everything that hath breath praise the Lord"). The standard Paschal stichera ' +
+                            'corpus is appointed for the entire Bright Week at this point. Full Bright Week ' +
+                            'Praises stichera text is not yet embedded in this path.';
+                        sticheraResolvedAs = 'orthros-bright-week-praises-stichera-rubric';
+                    } else if (isHolyWeek) {
+                        sticheraText =
+                            'HOLY WEEK — Praises Stichera: During Holy Week, stichera at the Praises ' +
+                            'are appointed from the Triodion for each specific day. Full Holy Week ' +
+                            'Praises stichera text is not yet embedded in this path.';
+                        sticheraResolvedAs = 'orthros-holy-week-praises-stichera-rubric';
+                    } else if (isGreatLentWeekday) {
+                        sticheraText =
+                            'GREAT LENT (Weekday) — Praises Stichera: On ordinary Great Lent weekdays ' +
+                            'the Praises (Psalms 148–150) are typically read without appended stichera — ' +
+                            'the Great Lent feria service (the Alleluia service) does not add Ainoi stichera ' +
+                            'on ordinary Lenten weekdays. The service proceeds from the Praises directly ' +
+                            'to the Great Doxology (read, not sung, on feria days).';
+                        sticheraResolvedAs = 'orthros-great-lent-praises-stichera-rubric';
+                    } else if (dayOfWeek === 0) {
+                        // Sunday
+                        const tone = toneResult && toneResult.tone ? toneResult.tone : null;
+                        const toneNote = tone ? ` Current Octoechos tone: Tone ${tone}.` : '';
+                        sticheraText =
+                            'SUNDAY — Praises Stichera (Ainoi): On Sundays the Resurrectional stichera ' +
+                            'of the current Octoechos tone are sung at the Praises, concluding with the ' +
+                            'Theotokion of the Ainoi.' + toneNote + '\n\n' +
+                            'Full Sunday Resurrectional Ainoi stichera corpus (Octoechos, tones 1–8) is ' +
+                            'not yet embedded in this path. The appointment is correct; the text is deferred.';
+                        sticheraResolvedAs = 'orthros-sunday-praises-stichera-rubric';
+                    } else {
+                        // Ordinary weekday (Mon–Sat)
+                        const WEEKDAY_NAMES = ['', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+                        const WEEKDAY_THEMES = {
+                            1: 'the Bodiless Powers (Angels)',
+                            2: 'St. John the Baptist and the Prophets',
+                            3: 'the Holy Cross and the Theotokos',
+                            4: 'the Holy Apostles and St. Nicholas',
+                            5: 'the Holy Cross and the Theotokos (penitential)',
+                            6: 'All Saints and the Departed'
+                        };
+                        const dayName = WEEKDAY_NAMES[dayOfWeek] || 'this weekday';
+                        const theme   = WEEKDAY_THEMES[dayOfWeek] || 'the day\'s theme';
+                        sticheraText =
+                            `ORDINARY WEEKDAY (${dayName}) — Praises Stichera: On ordinary ferial days ` +
+                            `the Praises (Psalms 148–150) are read without appended stichera, and the service ` +
+                            `proceeds directly to the Great Doxology (read, not sung). The Octoechos theme ` +
+                            `for ${dayName} is ${theme}.\n\n` +
+                            `(If a Menaion commemoration of sufficient rank is appointed, stichera at the ` +
+                            `Praises would be drawn from the Menaion. This festal override is not yet implemented.)`;
+                        sticheraResolvedAs = 'orthros-ordinary-weekday-praises-stichera-rubric';
+                    }
+
+                    section.items[i] = {
+                        type:       'rubric',
+                        key:        'praises-stichera',
+                        label:      'Stichera at the Praises',
+                        text:       sticheraText,
+                        resolvedAs: sticheraResolvedAs
+                    };
+                    continue;
+                }
+
+                // ── v5.8: sessional-hymns — season-aware rubric ──────────
+                if (item.key === 'sessional-hymns') {
+                    let sessText;
+                    let sessResolvedAs;
+
+                    if (isBrightWeek) {
+                        sessText =
+                            'BRIGHT WEEK — Sessional Hymns: During Bright Week the ordinary Sessional ' +
+                            'Hymns (Sedalia) are replaced by the Paschal Sessional Hymn: ' +
+                            '"Having beheld the Resurrection of Christ..." This is sung after the ' +
+                            'Paschal Canon in place of the weekday Octoechos sedalia. ' +
+                            'Full Bright Week Sessional Hymn text is not yet embedded in this path.';
+                        sessResolvedAs = 'orthros-bright-week-sessional-hymns-rubric';
+                    } else if (isHolyWeek) {
+                        sessText =
+                            'HOLY WEEK — Sessional Hymns: During Holy Week the Sessional Hymns are ' +
+                            'appointed specifically from the Triodion for each day, replacing the ' +
+                            'ordinary Octoechos sedalia. The texts are day-specific and structurally ' +
+                            'distinct from ordinary week sedalia. Full Holy Week Sessional Hymn texts ' +
+                            'are not yet embedded in this path.';
+                        sessResolvedAs = 'orthros-holy-week-sessional-hymns-rubric';
+                    } else if (isGreatLentWeekday) {
+                        sessText =
+                            'GREAT LENT (Weekday) — Sessional Hymns: On Great Lent weekdays the ' +
+                            'Sessional Hymns are appointed from the Triodion (penitential sedalia) ' +
+                            'and sometimes from the Menaion for major feasts. The ordinary Octoechos ' +
+                            'sedalia cycle is not used on feria Lenten days. Full Lenten Sessional ' +
+                            'Hymn texts are not yet embedded in this path.';
+                        sessResolvedAs = 'orthros-great-lent-sessional-hymns-rubric';
+                    } else if (dayOfWeek === 0) {
+                        // Sunday
+                        const tone = toneResult && toneResult.tone ? toneResult.tone : null;
+                        const toneNote = tone ? ` Current Octoechos tone: Tone ${tone}.` : '';
+                        sessText =
+                            'SUNDAY — Sessional Hymns (Resurrectional Sedalia): On Sundays the ' +
+                            'Resurrectional Sessional Hymns (Hypakoe and Anavathmoi) of the current ' +
+                            'Octoechos tone are sung after the Polyeleos or after each kathisma. ' +
+                            'These include the Hypakoe, the Anavathmoi (Antiphons of the Degrees), ' +
+                            'and the Prokeimenon before the Gospel.' + toneNote + '\n\n' +
+                            'Full Sunday Resurrectional Sessional Hymn corpus (tones 1–8) is not yet ' +
+                            'embedded in this path. The appointment is structurally correct; text is deferred.';
+                        sessResolvedAs = 'orthros-sunday-sessional-hymns-rubric';
+                    } else {
+                        // Ordinary weekday (Mon–Sat)
+                        const WEEKDAY_NAMES = ['', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+                        const WEEKDAY_THEMES = {
+                            1: 'the Bodiless Powers (Angels)',
+                            2: 'St. John the Baptist and the Prophets',
+                            3: 'the Holy Cross and the Theotokos',
+                            4: 'the Holy Apostles and St. Nicholas',
+                            5: 'the Holy Cross and the Theotokos (penitential)',
+                            6: 'All Saints and the Departed'
+                        };
+                        const tone    = toneResult && toneResult.tone ? toneResult.tone : null;
+                        const dayName = WEEKDAY_NAMES[dayOfWeek] || 'this weekday';
+                        const theme   = WEEKDAY_THEMES[dayOfWeek] || 'the day\'s theme';
+                        const toneNote = tone ? ` Tone ${tone}.` : '';
+                        sessText =
+                            `ORDINARY WEEKDAY (${dayName}) — Sessional Hymns (Sedalia): After each ` +
+                            `kathisma a Sessional Hymn (Sedalion) is sung seated. On ordinary weekdays ` +
+                            `these are drawn from the Octoechos for the current tone and day.` + toneNote + '\n\n' +
+                            `The Octoechos theme for ${dayName} is ${theme}. ` +
+                            `The appointed sedalia follow this theme.\n\n` +
+                            `(If a Menaion commemoration of sufficient rank is appointed, the Menaion ` +
+                            `sedalia replace or supplement the Octoechos sedalia. Full Octoechos and ` +
+                            `Menaion Sessional Hymn corpora are not yet embedded in this path.)`;
+                        sessResolvedAs = 'orthros-ordinary-weekday-sessional-hymns-rubric';
+                    }
+
+                    section.items[i] = {
+                        type:       'rubric',
+                        key:        'sessional-hymns',
+                        label:      'Sessional Hymns (Sedalia)',
+                        text:       sessText,
+                        resolvedAs: sessResolvedAs
+                    };
+                    continue;
+                }
+
+                // ── v5.8: canon — structured season-aware rubric ──────────
+                if (item.key === 'canon') {
+                    let canonText;
+                    let canonResolvedAs;
+
+                    // Canon structure note (used in several cases below)
+                    const canonStructureNote =
+                        'The Canon consists of nine Odes (Ode 2 is omitted on most days outside ' +
+                        'Great Lent; it appears on Tuesdays of Great Lent). Each Ode begins with ' +
+                        'an Irmos (model melody) followed by Troparia. After Ode 3 the Sessional ' +
+                        'Hymn is read; after Ode 6 the Kontakion and Ikos are sung; Ode 9 concludes ' +
+                        'with the Magnificat refrain and the Exapostilarion. Katavasiae (the Irmoi ' +
+                        'sung again after Odes 1, 3, 4, 5, 6, 7, 8, 9 or as appointed) close each Ode.';
+
+                    if (isBrightWeek) {
+                        canonText =
+                            'BRIGHT WEEK — The Paschal Canon: During Bright Week the Paschal Canon ' +
+                            '("It is the Day of Resurrection" — Canon of Pascha, composed by St. John ' +
+                            'of Damascus, Tone 1) is sung in its entirety at every Orthros of the week. ' +
+                            'It replaces all other canons. All nine Odes are sung with full Paschal ' +
+                            'refrains ("Christ is risen from the dead"). The katavasiae are the Irmoi ' +
+                            'of the Paschal Canon themselves.\n\n' +
+                            canonStructureNote + '\n\n' +
+                            '(Full Paschal Canon text is not yet embedded in this path. The appointment ' +
+                            'and structure described above are correct.)';
+                        canonResolvedAs = 'orthros-bright-week-canon-rubric';
+                    } else if (isHolyWeek) {
+                        const hwDay = seasonResult && seasonResult.holyWeekDay
+                            ? seasonResult.holyWeekDay.replace(/-/g, ' ') : 'Holy Week';
+                        canonText =
+                            `HOLY WEEK — Canon (${hwDay}): During Holy Week the Canon is appointed ` +
+                            'specifically from the Triodion for each day. Palm Sunday uses the Canon ' +
+                            'of the Triodion with the Lazarus Saturday Canon at Sunday Orthros. ' +
+                            'Great Monday through Great Wednesday use the Canon of the Bridegroom. ' +
+                            'Great Thursday: Canon of Holy Thursday (Last Supper). ' +
+                            'Great Friday: Canon of the Crucifixion. ' +
+                            'Great Saturday: Canon of the Descent into Hades (composed by St. Cosmas).\n\n' +
+                            canonStructureNote + '\n\n' +
+                            '(Full Holy Week Canon texts are not yet embedded in this path.)';
+                        canonResolvedAs = 'orthros-holy-week-canon-rubric';
+                    } else if (isGreatLentWeekday) {
+                        canonText =
+                            'GREAT LENT (Weekday) — Canon: On Great Lent weekdays the Canon is ' +
+                            'appointed from the Triodion (penitential canons, often by St. Andrew of ' +
+                            'Crete or St. Theophanes). Ode 2 is included on Tuesdays of Great Lent ' +
+                            '(otherwise omitted). The Great Canon of St. Andrew of Crete is read in ' +
+                            'full across the first four evenings of the first week and in its entirety ' +
+                            'on Great Thursday Matins. The katavasiae during Great Lent are typically ' +
+                            'from the appointed Triodion canon.\n\n' +
+                            canonStructureNote + '\n\n' +
+                            '(Full Lenten Canon texts are not yet embedded in this path.)';
+                        canonResolvedAs = 'orthros-great-lent-canon-rubric';
+                    } else if (dayOfWeek === 0) {
+                        // Sunday
+                        const tone = toneResult && toneResult.tone ? toneResult.tone : null;
+                        const toneNote = tone ? ` Current Octoechos tone: Tone ${tone}.` : '';
+                        canonText =
+                            'SUNDAY — Resurrectional Canon: On Sundays the Canon is appointed from ' +
+                            'the Octoechos (Resurrectional Canon of the current tone), sometimes ' +
+                            'combined with the Canon of the Theotokos (Cross-Resurrection Canon) ' +
+                            'and the Menaion Canon if a feast is ranked appropriately.' + toneNote + '\n\n' +
+                            canonStructureNote + '\n\n' +
+                            '(Full Sunday Resurrectional Canon corpus for tones 1–8 is not yet ' +
+                            'embedded in this path. Appointment and structure are correct.)';
+                        canonResolvedAs = 'orthros-sunday-canon-rubric';
+                    } else {
+                        // Ordinary weekday (Mon–Sat)
+                        const WEEKDAY_NAMES = ['', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+                        const WEEKDAY_THEMES = {
+                            1: 'the Bodiless Powers (Angels)',
+                            2: 'St. John the Baptist and the Prophets',
+                            3: 'the Holy Cross and the Theotokos',
+                            4: 'the Holy Apostles and St. Nicholas',
+                            5: 'the Holy Cross and the Theotokos (penitential)',
+                            6: 'All Saints and the Departed'
+                        };
+                        const tone    = toneResult && toneResult.tone ? toneResult.tone : null;
+                        const dayName = WEEKDAY_NAMES[dayOfWeek] || 'this weekday';
+                        const theme   = WEEKDAY_THEMES[dayOfWeek] || 'the day\'s theme';
+                        const toneNote = tone ? ` Tone ${tone},` : '';
+                        canonText =
+                            `ORDINARY WEEKDAY (${dayName}) — Canon: The Canon is appointed from the ` +
+                            `Octoechos (${toneNote} theme: ${theme}) and the Menaion (for any saint of ` +
+                            `the day). On ordinary weekdays two canons are typically combined — the ` +
+                            `Octoechos Canon and the Menaion Canon — with troparia interleaved per the ` +
+                            `Typikon. The katavasiae are the Irmoi of the appointed katavasiae series ` +
+                            `(varies by season and proximity to feasts).\n\n` +
+                            canonStructureNote + '\n\n' +
+                            '(Full Octoechos and Menaion Canon texts are not yet embedded in this path. ' +
+                            'Appointment, structure, and thematic identity are correct.)';
+                        canonResolvedAs = 'orthros-ordinary-weekday-canon-rubric';
+                    }
+
+                    section.items[i] = {
+                        type:       'rubric',
+                        key:        'canon',
+                        label:      'The Canon',
+                        text:       canonText,
+                        resolvedAs: canonResolvedAs
+                    };
                     continue;
                 }
 
