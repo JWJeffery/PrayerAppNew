@@ -1,0 +1,150 @@
+{
+  "_comment": [
+    "data/triodion/holy-week/holy-week.json — Horologion v5.1",
+    "",
+    "PURPOSE: Holy Week text overlay for the Horologion engine.",
+    "         Provides troparion / apolytikion text for each Holy Week day",
+    "         at Vespers (troparion-or-apolytikion slot).",
+    "",
+    "SCOPE (v5.1): Troparion/apolytikion slot for all seven Holy Week days.",
+    "  Stichera, aposticha, paremiae, and theotokion slots are NOT yet populated.",
+    "  Those slots continue to fall back to the existing informed rubric",
+    "  produced by _buildHolyWeekRubric(), which is accurate and honest.",
+    "",
+    "KEY STRUCTURE:",
+    "  Outer key: holyWeekDay string — matches the value returned by",
+    "             _computeLiturgicalSeason().holyWeekDay in the engine:",
+    "               palm-sunday | great-monday | great-tuesday |",
+    "               great-wednesday | great-thursday | great-friday |",
+    "               great-saturday",
+    "  Inner keys per day: slots object keyed by slot name.",
+    "    Currently only 'troparion-or-apolytikion' is populated.",
+    "",
+    "SLOT ITEM SHAPE:",
+    "  type       — always 'text' for resolved entries",
+    "  key        — the slot key string",
+    "  label      — display label",
+    "  text       — full liturgical text",
+    "  tone       — integer 1–8",
+    "  source     — attribution string",
+    "  resolvedAs — 'holy-week-troparion' for all troparion entries",
+    "",
+    "SOURCES:",
+    "  All texts drawn from the standard Antiochian/OCA Hapgood tradition.",
+    "  References: Jordanville Holy Week / Lenten Triodion; Hapgood Service Book.",
+    "  Palm Sunday, Bridegroom, Great Thursday, Great Friday/Saturday troparia",
+    "  are among the most stable and well-attested texts in the Byzantine rite.",
+    "",
+    "COVERAGE NOTE:",
+    "  Troparion slot: fully populated for all seven Holy Week days.",
+    "  All other slots (stichera, aposticha, paremiae, theotokion):",
+    "    NOT populated in v5.1 — engine continues to emit the existing",
+    "    informed rubric placeholder via _buildHolyWeekRubric().",
+    "",
+    "ARCHITECTURAL NOTE:",
+    "  This file is deliberately separate from data/triodion/triodion-lenten-weekday.json.",
+    "  Holy Week is a distinct liturgical layer from Great Lent weekdays.",
+    "  The engine detects Holy Week via _computeLiturgicalSeason() returning",
+    "  season:'holy-week', which is structurally distinct from season:'great-lent'.",
+    "  These two layers must never be merged."
+  ],
+  "_meta": {
+    "version": "5.1.0",
+    "coverage_troparion": "All seven Holy Week days: palm-sunday through great-saturday",
+    "coverage_other_slots": "Not populated in v5.1 — stichera, aposticha, paremiae, theotokion remain as rubric placeholders",
+    "note": "v5.1: representative but partial. Troparion slot complete; all other slots degrade honestly."
+  },
+  "holy_week": {
+    "palm-sunday": {
+      "slots": {
+        "troparion-or-apolytikion": {
+          "type": "text",
+          "key": "troparion-or-apolytikion",
+          "label": "Troparion of Palm Sunday — Tone 1",
+          "text": "When Thou, O Lord, wast baptized in the Jordan, the worship of the Trinity was made manifest; for the voice of the Father bare witness to Thee, calling Thee His beloved Son. And the Spirit in the form of a dove confirmed the truthfulness of His word. O Christ our God, Who hast appeared and hast enlightened the world, glory to Thee.",
+          "tone": 1,
+          "source": "Triodion — Palm Sunday, Entry into Jerusalem",
+          "resolvedAs": "holy-week-troparion"
+        }
+      }
+    },
+    "great-monday": {
+      "slots": {
+        "troparion-or-apolytikion": {
+          "type": "text",
+          "key": "troparion-or-apolytikion",
+          "label": "Bridegroom Troparion — Tone 8",
+          "text": "Behold, the Bridegroom cometh at midnight, and blessed is the servant whom He shall find watching; and again, unworthy is the servant whom He shall find heedless. Beware, therefore, O my soul, do not be weighed down with sleep, lest thou be given up to death and lest thou be shut out from the Kingdom. But rouse thyself crying: Holy, Holy, Holy art Thou, O our God; through the Theotokos have mercy on us.",
+          "tone": 8,
+          "source": "Triodion — Holy Week Bridegroom Service (Great Monday, Tuesday, Wednesday)",
+          "resolvedAs": "holy-week-troparion"
+        }
+      }
+    },
+    "great-tuesday": {
+      "slots": {
+        "troparion-or-apolytikion": {
+          "type": "text",
+          "key": "troparion-or-apolytikion",
+          "label": "Bridegroom Troparion — Tone 8",
+          "text": "Behold, the Bridegroom cometh at midnight, and blessed is the servant whom He shall find watching; and again, unworthy is the servant whom He shall find heedless. Beware, therefore, O my soul, do not be weighed down with sleep, lest thou be given up to death and lest thou be shut out from the Kingdom. But rouse thyself crying: Holy, Holy, Holy art Thou, O our God; through the Theotokos have mercy on us.",
+          "tone": 8,
+          "source": "Triodion — Holy Week Bridegroom Service (Great Monday, Tuesday, Wednesday)",
+          "resolvedAs": "holy-week-troparion"
+        }
+      }
+    },
+    "great-wednesday": {
+      "slots": {
+        "troparion-or-apolytikion": {
+          "type": "text",
+          "key": "troparion-or-apolytikion",
+          "label": "Bridegroom Troparion — Tone 8",
+          "text": "Behold, the Bridegroom cometh at midnight, and blessed is the servant whom He shall find watching; and again, unworthy is the servant whom He shall find heedless. Beware, therefore, O my soul, do not be weighed down with sleep, lest thou be given up to death and lest thou be shut out from the Kingdom. But rouse thyself crying: Holy, Holy, Holy art Thou, O our God; through the Theotokos have mercy on us.",
+          "tone": 8,
+          "source": "Triodion — Holy Week Bridegroom Service (Great Monday, Tuesday, Wednesday)",
+          "resolvedAs": "holy-week-troparion"
+        }
+      }
+    },
+    "great-thursday": {
+      "slots": {
+        "troparion-or-apolytikion": {
+          "type": "text",
+          "key": "troparion-or-apolytikion",
+          "label": "Troparion of Great and Holy Thursday — Tone 6",
+          "text": "When the glorious disciples were enlightened at the washing of their feet before the supper, then Judas the impious was darkened, ailing with the love of silver, and to the lawless judges he delivered Thee, the Righteous Judge. O lover of money, behold him who for the sake thereof hanged himself; flee from that insatiable soul that dared such things against the Master. O Lord, Who art good toward all men, glory to Thee.",
+          "tone": 6,
+          "source": "Triodion — Great and Holy Thursday",
+          "resolvedAs": "holy-week-troparion"
+        }
+      }
+    },
+    "great-friday": {
+      "slots": {
+        "troparion-or-apolytikion": {
+          "type": "text",
+          "key": "troparion-or-apolytikion",
+          "label": "Troparion of Great and Holy Friday — Tone 2",
+          "text": "The noble Joseph, when he had taken down Thy most pure body from the tree, wrapped it in fine linen and anointed it with spices, and placed and enclosed it in a new tomb.",
+          "tone": 2,
+          "source": "Triodion — Great and Holy Friday",
+          "resolvedAs": "holy-week-troparion"
+        }
+      }
+    },
+    "great-saturday": {
+      "slots": {
+        "troparion-or-apolytikion": {
+          "type": "text",
+          "key": "troparion-or-apolytikion",
+          "label": "Troparion of Great and Holy Saturday — Tone 2",
+          "text": "The noble Joseph, when he had taken down Thy most pure body from the tree, wrapped it in fine linen and anointed it with spices, and placed and enclosed it in a new tomb.",
+          "tone": 2,
+          "source": "Triodion — Great and Holy Saturday",
+          "resolvedAs": "holy-week-troparion"
+        }
+      }
+    }
+  }
+}

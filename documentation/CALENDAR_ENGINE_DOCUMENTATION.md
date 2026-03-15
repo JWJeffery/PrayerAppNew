@@ -408,7 +408,7 @@ Same algorithm as `getEthiopianDate()` but uses Coptic month names and the EC-27
 **Parameters:** `gregorianDate` — JavaScript `Date` object  
 **Returns:** Display string, e.g., `"15 Yekatit 2018"`
 
-**Current status:** Fully implemented and available. Not yet wired to any UI element. Phase 8.5 target: display in the Sa'atat header area using `#ethiopian-settings` or a dedicated `#eth-date-display` element.
+**Current status:** Implemented and wired. Called in `renderEthiopianSaatat()` in `office-ui.js` — the result is appended to the Gregorian date string and displayed in `eth-active-date-label` in the Sa'atat sidebar (Phase 8.5, complete).
 
 ---
 
@@ -513,3 +513,6 @@ Render { id, title, narrative } in office HTML
 **END OF DOCUMENTATION**
 
 *For UI rendering logic see `OFFICE_UI_DOCUMENTATION.md`. For Ethiopian Sa'atat architecture see `ETHIOPIAN_SAATAT_DOCUMENTATION.md`. For scripture fetching see `SCRIPTURE_RESOLVER_DOCUMENTATION.md`.*
+
+
+================================================

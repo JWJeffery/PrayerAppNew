@@ -416,7 +416,7 @@ officeHtml += `<div ...>${applyParagraphBreaks(normalizedNarrative)}</div>`;
 |---|---|---|
 | `getEthiopianDate(date)` | `{ day, month, monthIndex, year }` | Amete Mihret era. Called every render. |
 | `getCopticDate(date)` | `{ day, month, monthIndex, year }` | Same algorithm, Coptic names, EC-276 era offset |
-| `formatEthiopianDate(date)` | `"15 Yekatit 2018"` | Display string — ready for Phase 8.5 Ge'ez header |
+| `formatEthiopianDate(date)` | `"15 Yekatit 2018"` | Display string — used for Ge'ez dual-date display in Sa'atat sidebar (Phase 8.5, complete) |
 | `isEthiopianLeapYear(year)` | boolean | `year % 4 === 3`; Pagume has 6 days in leap years |
 | `MONTH_NAMES` | Array\[13\] | Ge'ez month name strings exported for reuse |
 
@@ -566,7 +566,7 @@ Before deploying changes to the Ethiopian Sa'atat:
 | 8.1 | ✅ Complete | Senkessar index corrected and validated (13 months, 385 entries); Tir narrative corpus complete (30 days, full Timqat arc) |
 | 8.2 | ✅ Complete | Full Senkessar pipeline operational: EthiopianCalendar → index lookup → per-day fetch → three-tier fallback; all 13 months complete including Hamle (verified 2026-02-24) |
 | v2.6.1 | ✅ Complete | `eth-introduction-to-every-hour` (Tselote Meweta) mandatory opening; Metsehafe Tselot rubric aesthetic (CSS); Sixth Hour commemorative sentence; `#8B0000`→`#C0392B` legibility fix; `eth-liku`→`eth-lika` ID corrected; `eth-prayer-thanksgiving` retired from sequence |
-| 8.5 | 📋 Planned | Ge'ez date display in Sa'atat UI header — `EthiopianCalendar.formatEthiopianDate()` is already available; UI-only change |
+| 8.5 | ✅ Complete | Ge'ez dual-date display in Sa'atat sidebar — `EthiopianCalendar.formatEthiopianDate()` called in `renderEthiopianSaatat()`, appended to `eth-active-date-label` |
 | 7.5 | 📋 Planned | Coptic Agpeya as standalone tradition entry point (parallel architecture to Sa'atat) |
 | 7.6 | 📋 Planned | Dedicated `eth-trisagion` and `eth-lords-prayer` components; hour-variant Anqaşa Birhān texts |
 
@@ -582,3 +582,5 @@ Before deploying changes to the Ethiopian Sa'atat:
 ---
 
 *For application entry point and mode selection see `INDEX_HTML_DOCUMENTATION.md`. For rendering engine see `OFFICE_UI_DOCUMENTATION.md`. For calendar modules see `CALENDAR_ENGINE_DOCUMENTATION.md`.*
+
+

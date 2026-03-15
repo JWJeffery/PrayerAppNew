@@ -1,0 +1,309 @@
+{
+  "_comment": [
+    "data/triodion/triodion-lenten-weekday.json — Horologion v5.0",
+    "",
+    "PURPOSE: Triodion text dataset for Great Lent weekday troparion resolution",
+    "         in the Little Hours, Small Compline, and Vespers.",
+    "",
+    "SCOPE (v5.0): Weeks 1–6 of Great Lent weekdays (Mon–Fri).",
+    "  Holy Week (Palm Sunday through Great Saturday) is NOT included here.",
+    "  The engine computes Lent week number from daysSinceCleanMonday / 7 + 1.",
+    "  Weeks 1–6 cover Clean Monday through the Friday before Palm Sunday.",
+    "",
+    "KEY STRUCTURE:",
+    "  Outer key: lent_week integer string (1–6).",
+    "    Week 1 begins on Clean Monday (Pascha - 48 days).",
+    "    Week 6 ends on the Friday before Palm Sunday (Pascha - 15 days).",
+    "  Inner key: weekday name string (monday | tuesday | wednesday |",
+    "             thursday | friday).",
+    "",
+    "TROPARION SHAPE:",
+    "  text  — full troparion text as used in the Little Hours and Compline",
+    "  label — display label for this troparion slot",
+    "  tone  — integer 1–8; the tone of the troparion",
+    "  source — canonical source name for attribution",
+    "",
+    "LITURGICAL NOTE ON FIXED TEXT:",
+    "  In standard Byzantine practice (Antiochian/OCA, Jordanville/Hapgood tradition),",
+    "  the dismissal troparion appointed at the Little Hours (First, Third, Sixth,",
+    "  Ninth Hour) and Small Compline throughout Great Lent weekdays is a fixed",
+    "  penitential text. It does not vary by week. The same troparion is used on",
+    "  all Lenten weekdays from Clean Monday through the Friday of the Sixth Week.",
+    "  Week-specific Triodion material (kanons, stichera, sedalions) governs",
+    "  Matins/Orthros, not the Little Hours.",
+    "  Source: Jordanville Horologion (2008); Hapgood Service Book tradition.",
+    "",
+    "FIXED FEAST INTERACTION:",
+    "  On days where a qualifying Menaion feast occurs (e.g. Annunciation, St. Joseph),",
+    "  the engine's existing feast-arbitration layer wins and this Triodion text",
+    "  does not fire. No special handling is needed in this file.",
+    "",
+    "WEEK NUMBERING REFERENCE (2026):",
+    "  Week 1: Feb 23 (Clean Mon) – Feb 27",
+    "  Week 2: Mar 02 – Mar 06",
+    "  Week 3: Mar 09 – Mar 13",
+    "  Week 4: Mar 16 – Mar 20  (St. Joseph Mar 19 = feast override, Triodion suppressed)",
+    "  Week 5: Mar 23 – Mar 27  (Annunciation Mar 25 = feast override, Triodion suppressed)",
+    "  Week 6: Mar 30 – Apr 03  (Holy Week begins Apr 06; Wk 6 ends Apr 03)"
+  ],
+  "_meta": {
+    "version": "5.1.0",
+    "coverage": "Weeks 1–6 (Clean Monday through Friday of the Sixth Week of Great Lent)",
+    "total_weeks_in_corpus": 6,
+    "note": "Full Great Lent weekday corpus. Holy Week not included. Fixed penitential troparion used throughout per Jordanville/Hapgood tradition."
+  },
+  "lenten_weekday_troparion": {
+    "1": {
+      "monday": {
+        "troparion": {
+          "text": "Have mercy on us, O Lord, have mercy on us; for at a loss for any defence, this prayer do we sinners offer unto Thee as Master: have mercy on us.",
+          "label": "Lenten Troparion — Clean Monday, First Week of Great Lent",
+          "tone": 6,
+          "source": "Triodion — First Week of Great Lent"
+        }
+      },
+      "tuesday": {
+        "troparion": {
+          "text": "Have mercy on us, O Lord, have mercy on us; for at a loss for any defence, this prayer do we sinners offer unto Thee as Master: have mercy on us.",
+          "label": "Lenten Troparion — Tuesday, First Week of Great Lent",
+          "tone": 6,
+          "source": "Triodion — First Week of Great Lent"
+        }
+      },
+      "wednesday": {
+        "troparion": {
+          "text": "Have mercy on us, O Lord, have mercy on us; for at a loss for any defence, this prayer do we sinners offer unto Thee as Master: have mercy on us.",
+          "label": "Lenten Troparion — Wednesday, First Week of Great Lent",
+          "tone": 6,
+          "source": "Triodion — First Week of Great Lent"
+        }
+      },
+      "thursday": {
+        "troparion": {
+          "text": "Have mercy on us, O Lord, have mercy on us; for at a loss for any defence, this prayer do we sinners offer unto Thee as Master: have mercy on us.",
+          "label": "Lenten Troparion — Thursday, First Week of Great Lent",
+          "tone": 6,
+          "source": "Triodion — First Week of Great Lent"
+        }
+      },
+      "friday": {
+        "troparion": {
+          "text": "Have mercy on us, O Lord, have mercy on us; for at a loss for any defence, this prayer do we sinners offer unto Thee as Master: have mercy on us.",
+          "label": "Lenten Troparion — Friday, First Week of Great Lent",
+          "tone": 6,
+          "source": "Triodion — First Week of Great Lent"
+        }
+      }
+    },
+    "2": {
+      "monday": {
+        "troparion": {
+          "text": "Have mercy on us, O Lord, have mercy on us; for at a loss for any defence, this prayer do we sinners offer unto Thee as Master: have mercy on us.",
+          "label": "Lenten Troparion — Monday, Second Week of Great Lent",
+          "tone": 6,
+          "source": "Triodion — Great Lent weekday fixed troparion"
+        }
+      },
+      "tuesday": {
+        "troparion": {
+          "text": "Have mercy on us, O Lord, have mercy on us; for at a loss for any defence, this prayer do we sinners offer unto Thee as Master: have mercy on us.",
+          "label": "Lenten Troparion — Tuesday, Second Week of Great Lent",
+          "tone": 6,
+          "source": "Triodion — Great Lent weekday fixed troparion"
+        }
+      },
+      "wednesday": {
+        "troparion": {
+          "text": "Have mercy on us, O Lord, have mercy on us; for at a loss for any defence, this prayer do we sinners offer unto Thee as Master: have mercy on us.",
+          "label": "Lenten Troparion — Wednesday, Second Week of Great Lent",
+          "tone": 6,
+          "source": "Triodion — Great Lent weekday fixed troparion"
+        }
+      },
+      "thursday": {
+        "troparion": {
+          "text": "Have mercy on us, O Lord, have mercy on us; for at a loss for any defence, this prayer do we sinners offer unto Thee as Master: have mercy on us.",
+          "label": "Lenten Troparion — Thursday, Second Week of Great Lent",
+          "tone": 6,
+          "source": "Triodion — Great Lent weekday fixed troparion"
+        }
+      },
+      "friday": {
+        "troparion": {
+          "text": "Have mercy on us, O Lord, have mercy on us; for at a loss for any defence, this prayer do we sinners offer unto Thee as Master: have mercy on us.",
+          "label": "Lenten Troparion — Friday, Second Week of Great Lent",
+          "tone": 6,
+          "source": "Triodion — Great Lent weekday fixed troparion"
+        }
+      }
+    },
+    "3": {
+      "monday": {
+        "troparion": {
+          "text": "Have mercy on us, O Lord, have mercy on us; for at a loss for any defence, this prayer do we sinners offer unto Thee as Master: have mercy on us.",
+          "label": "Lenten Troparion — Monday, Third Week of Great Lent",
+          "tone": 6,
+          "source": "Triodion — Great Lent weekday fixed troparion"
+        }
+      },
+      "tuesday": {
+        "troparion": {
+          "text": "Have mercy on us, O Lord, have mercy on us; for at a loss for any defence, this prayer do we sinners offer unto Thee as Master: have mercy on us.",
+          "label": "Lenten Troparion — Tuesday, Third Week of Great Lent",
+          "tone": 6,
+          "source": "Triodion — Great Lent weekday fixed troparion"
+        }
+      },
+      "wednesday": {
+        "troparion": {
+          "text": "Have mercy on us, O Lord, have mercy on us; for at a loss for any defence, this prayer do we sinners offer unto Thee as Master: have mercy on us.",
+          "label": "Lenten Troparion — Wednesday, Third Week of Great Lent",
+          "tone": 6,
+          "source": "Triodion — Great Lent weekday fixed troparion"
+        }
+      },
+      "thursday": {
+        "troparion": {
+          "text": "Have mercy on us, O Lord, have mercy on us; for at a loss for any defence, this prayer do we sinners offer unto Thee as Master: have mercy on us.",
+          "label": "Lenten Troparion — Thursday, Third Week of Great Lent",
+          "tone": 6,
+          "source": "Triodion — Great Lent weekday fixed troparion"
+        }
+      },
+      "friday": {
+        "troparion": {
+          "text": "Have mercy on us, O Lord, have mercy on us; for at a loss for any defence, this prayer do we sinners offer unto Thee as Master: have mercy on us.",
+          "label": "Lenten Troparion — Friday, Third Week of Great Lent",
+          "tone": 6,
+          "source": "Triodion — Great Lent weekday fixed troparion"
+        }
+      }
+    },
+    "4": {
+      "monday": {
+        "troparion": {
+          "text": "Have mercy on us, O Lord, have mercy on us; for at a loss for any defence, this prayer do we sinners offer unto Thee as Master: have mercy on us.",
+          "label": "Lenten Troparion — Monday, Fourth Week of Great Lent",
+          "tone": 6,
+          "source": "Triodion — Great Lent weekday fixed troparion"
+        }
+      },
+      "tuesday": {
+        "troparion": {
+          "text": "Have mercy on us, O Lord, have mercy on us; for at a loss for any defence, this prayer do we sinners offer unto Thee as Master: have mercy on us.",
+          "label": "Lenten Troparion — Tuesday, Fourth Week of Great Lent",
+          "tone": 6,
+          "source": "Triodion — Great Lent weekday fixed troparion"
+        }
+      },
+      "wednesday": {
+        "troparion": {
+          "text": "Have mercy on us, O Lord, have mercy on us; for at a loss for any defence, this prayer do we sinners offer unto Thee as Master: have mercy on us.",
+          "label": "Lenten Troparion — Wednesday, Fourth Week of Great Lent",
+          "tone": 6,
+          "source": "Triodion — Great Lent weekday fixed troparion"
+        }
+      },
+      "thursday": {
+        "troparion": {
+          "text": "Have mercy on us, O Lord, have mercy on us; for at a loss for any defence, this prayer do we sinners offer unto Thee as Master: have mercy on us.",
+          "label": "Lenten Troparion — Thursday, Fourth Week of Great Lent",
+          "tone": 6,
+          "source": "Triodion — Great Lent weekday fixed troparion"
+        }
+      },
+      "friday": {
+        "troparion": {
+          "text": "Have mercy on us, O Lord, have mercy on us; for at a loss for any defence, this prayer do we sinners offer unto Thee as Master: have mercy on us.",
+          "label": "Lenten Troparion — Friday, Fourth Week of Great Lent",
+          "tone": 6,
+          "source": "Triodion — Great Lent weekday fixed troparion"
+        }
+      }
+    },
+    "5": {
+      "monday": {
+        "troparion": {
+          "text": "Have mercy on us, O Lord, have mercy on us; for at a loss for any defence, this prayer do we sinners offer unto Thee as Master: have mercy on us.",
+          "label": "Lenten Troparion — Monday, Fifth Week of Great Lent",
+          "tone": 6,
+          "source": "Triodion — Great Lent weekday fixed troparion"
+        }
+      },
+      "tuesday": {
+        "troparion": {
+          "text": "Have mercy on us, O Lord, have mercy on us; for at a loss for any defence, this prayer do we sinners offer unto Thee as Master: have mercy on us.",
+          "label": "Lenten Troparion — Tuesday, Fifth Week of Great Lent",
+          "tone": 6,
+          "source": "Triodion — Great Lent weekday fixed troparion"
+        }
+      },
+      "wednesday": {
+        "troparion": {
+          "text": "Have mercy on us, O Lord, have mercy on us; for at a loss for any defence, this prayer do we sinners offer unto Thee as Master: have mercy on us.",
+          "label": "Lenten Troparion — Wednesday, Fifth Week of Great Lent",
+          "tone": 6,
+          "source": "Triodion — Great Lent weekday fixed troparion"
+        }
+      },
+      "thursday": {
+        "troparion": {
+          "text": "Have mercy on us, O Lord, have mercy on us; for at a loss for any defence, this prayer do we sinners offer unto Thee as Master: have mercy on us.",
+          "label": "Lenten Troparion — Thursday, Fifth Week of Great Lent",
+          "tone": 6,
+          "source": "Triodion — Great Lent weekday fixed troparion"
+        }
+      },
+      "friday": {
+        "troparion": {
+          "text": "Have mercy on us, O Lord, have mercy on us; for at a loss for any defence, this prayer do we sinners offer unto Thee as Master: have mercy on us.",
+          "label": "Lenten Troparion — Friday, Fifth Week of Great Lent",
+          "tone": 6,
+          "source": "Triodion — Great Lent weekday fixed troparion"
+        }
+      }
+    },
+    "6": {
+      "monday": {
+        "troparion": {
+          "text": "Have mercy on us, O Lord, have mercy on us; for at a loss for any defence, this prayer do we sinners offer unto Thee as Master: have mercy on us.",
+          "label": "Lenten Troparion — Monday, Sixth Week of Great Lent",
+          "tone": 6,
+          "source": "Triodion — Great Lent weekday fixed troparion"
+        }
+      },
+      "tuesday": {
+        "troparion": {
+          "text": "Have mercy on us, O Lord, have mercy on us; for at a loss for any defence, this prayer do we sinners offer unto Thee as Master: have mercy on us.",
+          "label": "Lenten Troparion — Tuesday, Sixth Week of Great Lent",
+          "tone": 6,
+          "source": "Triodion — Great Lent weekday fixed troparion"
+        }
+      },
+      "wednesday": {
+        "troparion": {
+          "text": "Have mercy on us, O Lord, have mercy on us; for at a loss for any defence, this prayer do we sinners offer unto Thee as Master: have mercy on us.",
+          "label": "Lenten Troparion — Wednesday, Sixth Week of Great Lent",
+          "tone": 6,
+          "source": "Triodion — Great Lent weekday fixed troparion"
+        }
+      },
+      "thursday": {
+        "troparion": {
+          "text": "Have mercy on us, O Lord, have mercy on us; for at a loss for any defence, this prayer do we sinners offer unto Thee as Master: have mercy on us.",
+          "label": "Lenten Troparion — Thursday, Sixth Week of Great Lent",
+          "tone": 6,
+          "source": "Triodion — Great Lent weekday fixed troparion"
+        }
+      },
+      "friday": {
+        "troparion": {
+          "text": "Have mercy on us, O Lord, have mercy on us; for at a loss for any defence, this prayer do we sinners offer unto Thee as Master: have mercy on us.",
+          "label": "Lenten Troparion — Friday, Sixth Week of Great Lent",
+          "tone": 6,
+          "source": "Triodion — Great Lent weekday fixed troparion"
+        }
+      }
+    }
+  }
+}

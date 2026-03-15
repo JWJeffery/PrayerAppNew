@@ -326,6 +326,30 @@ const HorologionEngine = (() => {
     // Populated lazily by _loadNinthHourFixedData().
     // Shape: { slots: { "usual-beginning": {...}, "psalm-83": {...}, ... } }
     let _ninthHourFixedData = null;
+
+    // ── v5.0: Triodion lenten weekday data file URL and cache ─────────────
+    // Keyed by lent week number (1–6), then weekday name (monday … friday).
+    // Shape: { lenten_weekday_troparion: { "1": { monday: { troparion: {...} }, ... }, ... } }
+    // Populated lazily by _loadTriodionData(). null until first load attempt.
+    const TRIODION_LENTEN_WEEKDAY_URL = 'data/triodion/triodion-lenten-weekday.json';
+    let _triodionLentenData = null;
+
+    // ── v5.1: Holy Week text overlay data file URL and cache ──────────────
+    // Keyed by holyWeekDay string (palm-sunday … great-saturday), then slot key.
+    // Shape: { holy_week: { "palm-sunday": { slots: { "troparion-or-apolytikion": {...} } }, ... } }
+    // Populated lazily by _loadHolyWeekData(). null until first load attempt.
+    const HOLY_WEEK_URL = 'data/triodion/holy-week/holy-week.json';
+    let _holyWeekData = null;
+
+    // ── v5.2: Pentecostarion Bright Week text overlay data file URL and cache
+    // Keyed by slot name ('stichera-at-lord-i-have-cried' | 'aposticha').
+    // Shape: { bright_week: { "stichera-at-lord-i-have-cried": {...}, "aposticha": {...} } }
+    // Populated lazily by _loadPentecostarionData(). null until first load attempt.
+    // Note: troparion, kathisma, and theotokion slots are already correctly
+    // handled by existing engine logic and need no Pentecostarion overlay.
+    const PENTECOSTARION_BRIGHT_WEEK_URL = 'data/pentecostarion/pentecostarion-bright-week.json';
+    let _pentecostarionData = null;
+
     // ── v2.0: Weekday troparion meta object (null until first fetch) ───────
     // Populated lazily by _loadWeekdayTroparionMeta().
     // Shape: { weekday_themes: { monday: { theme, theme_short, fasting_day? }, ... } }
@@ -1066,13 +1090,23 @@ function _normalizeUnavailableTroparionFallbackForOffice(officeKey, resolved, da
 
             const officeLabel = OFFICE_LABELS[officeKey] || 'Little Hour';
 
+            // v5.0: Attempt Triodion text resolution before falling back to rubric.
+            // Feast arbitration has already run above and found nothing qualifying.
+            // _resolveTriodionTroparion returns null if the week is not yet in corpus.
+            const triodionResolved = _resolveTriodionTroparion(dateObj, dayOfWeek, officeKey);
+            if (triodionResolved) {
+                return triodionResolved;
+            }
+
+            // Triodion text not available for this week — emit truthful placeholder.
             return {
                 type:         'rubric',
                 key:          'troparion-of-the-day',
                 label:        'Troparion of the Day',
                 text:
                     `On Great Lent weekdays, the seasonal troparion appointment for the ${officeLabel} belongs here. ` +
-                    `The ordinary baseline troparion-of-the-day path is displaced by the season.`,
+                    `The ordinary baseline troparion-of-the-day path is displaced by the season. ` +
+                    `Triodion text for this week is not yet available in the corpus.`,
                 resolvedAs:   'little-hour-lenten-rubric',
                 overrideType: 'seasonal-lent',
                 season:       'great-lent',
@@ -2016,6 +2050,265 @@ const pascha = _getOrthodoxPascha(year);
     }
 
     // ──────────────────────────────────────────────────────────────────────
+    // v5.0: _loadTriodionData()
+    //
+    // Fetches and caches data/triodion/triodion-lenten-weekday.json.
+    //
+    // Shape: { lenten_weekday_troparion: { "1": { monday: { troparion: {...} }, ... } } }
+    // Keyed by lent week number (outer) and weekday name (inner).
+    //
+    // Non-throwing: on failure, logs a warning and leaves _triodionLentenData
+    // null. Callers degrade gracefully to the existing placeholder rubric.
+    // ──────────────────────────────────────────────────────────────────────
+    async function _loadTriodionData() {
+        if (_triodionLentenData !== null) return;
+
+        try {
+            const response = await fetch(TRIODION_LENTEN_WEEKDAY_URL);
+            if (!response.ok) {
+                console.warn(`[HorologionEngine] Could not load Triodion lenten weekday data (HTTP ${response.status}); Lenten troparion slots will remain as rubric placeholders.`);
+                return;
+            }
+            _triodionLentenData = await response.json();
+            console.log('[HorologionEngine] Loaded Triodion lenten weekday troparion data (v5.0 demonstrator corpus).');
+        } catch (err) {
+            console.warn('[HorologionEngine] _loadTriodionData failed:', err.message, '— Lenten troparion slots will remain as rubric placeholders.');
+            // _triodionLentenData remains null; next call will retry
+        }
+    }
+
+
+    // ──────────────────────────────────────────────────────────────────────
+    // v5.0: _resolveTriodionTroparion(dateObj, dayOfWeek, officeKey)
+    //
+    // Overlay dispatcher for Great Lent weekday troparion resolution.
+    // Runs ONLY after feast arbitration has already failed to produce a
+    // qualifying override (i.e. no menaion-feast-troparion was returned).
+    //
+    // Resolution:
+    //   1. Compute days elapsed since Clean Monday (Pascha - 48).
+    //   2. Derive lent week number (1-based integer).
+    //   3. Derive weekday name string from dayOfWeek.
+    //   4. Look up _triodionLentenData.lenten_weekday_troparion[week][weekday].
+    //   5. If found: return a type:'text' item using the Triodion troparion.
+    //   6. If not found (week not yet in corpus): return null so the caller
+    //      falls through to the existing truthful placeholder rubric.
+    //
+    // Non-throwing. Returns null on any failure.
+    //
+    // Scope: Little Hours (first-hour, third-hour, sixth-hour, ninth-hour),
+    //        Small Compline, Vespers weekday troparion path.
+    // ──────────────────────────────────────────────────────────────────────
+    function _resolveTriodionTroparion(dateObj, dayOfWeek, officeKey) {
+        try {
+            if (!_triodionLentenData || !_triodionLentenData.lenten_weekday_troparion) {
+                return null;
+            }
+
+            // Compute Clean Monday = Pascha - 48 days
+            const year        = dateObj.getFullYear();
+            const pascha      = _getOrthodoxPascha(year);
+            const MS_PER_DAY  = 86400000;
+            const cleanMonday = new Date(pascha.getTime() - 48 * MS_PER_DAY);
+
+            const localDate   = new Date(
+                dateObj.getFullYear(),
+                dateObj.getMonth(),
+                dateObj.getDate()
+            );
+
+            const daysSinceCleanMonday = Math.round(
+                (localDate.getTime() - cleanMonday.getTime()) / MS_PER_DAY
+            );
+
+            // daysSinceCleanMonday 0 = Clean Monday (week 1)
+            // week number: 1-based, each 7 days
+            const lentWeek = Math.floor(daysSinceCleanMonday / 7) + 1;
+
+            const WEEKDAY_NAMES = {
+                1: 'monday',
+                2: 'tuesday',
+                3: 'wednesday',
+                4: 'thursday',
+                5: 'friday'
+            };
+            const weekdayName = WEEKDAY_NAMES[dayOfWeek];
+
+            if (!weekdayName) return null;
+
+            const weekData = _triodionLentenData.lenten_weekday_troparion[String(lentWeek)];
+            if (!weekData) {
+                // Week not yet in corpus — degrade honestly
+                return null;
+            }
+
+            const dayData = weekData[weekdayName];
+            if (!dayData || !dayData.troparion || !dayData.troparion.text) {
+                return null;
+            }
+
+            const t = dayData.troparion;
+
+            return {
+                type:       'text',
+                key:        'troparion-of-the-day',
+                label:      t.label || 'Triodion Troparion',
+                text:       t.text,
+                source:     t.source || 'Triodion',
+                tone:       typeof t.tone === 'number' ? t.tone : null,
+                resolvedAs: 'triodion-lenten-troparion',
+                overrideType: 'seasonal-lent',
+                season:     'great-lent',
+                lentWeek:   lentWeek,
+                weekday:    weekdayName,
+                officeKey:  officeKey
+            };
+        } catch (err) {
+            console.warn('[HorologionEngine] _resolveTriodionTroparion failed:', err.message);
+            return null;
+        }
+    }
+
+
+
+
+    // ──────────────────────────────────────────────────────────────────────
+    // v5.1: _loadHolyWeekData()
+    //
+    // Fetches and caches data/triodion/holy-week/holy-week.json.
+    //
+    // Shape: { holy_week: { "palm-sunday": { slots: { "troparion-or-apolytikion": {...} } }, ... } }
+    // Keyed by holyWeekDay string matching _computeLiturgicalSeason().holyWeekDay.
+    //
+    // Non-throwing: on failure, logs a warning and leaves _holyWeekData null.
+    // All callers degrade gracefully to _buildHolyWeekRubric() on null.
+    // ──────────────────────────────────────────────────────────────────────
+    async function _loadHolyWeekData() {
+        if (_holyWeekData !== null) return;
+
+        try {
+            const response = await fetch(HOLY_WEEK_URL);
+            if (!response.ok) {
+                console.warn(`[HorologionEngine] Could not load Holy Week data (HTTP ${response.status}); Holy Week slots will remain as rubric placeholders.`);
+                return;
+            }
+            _holyWeekData = await response.json();
+            console.log('[HorologionEngine] Loaded Holy Week text overlay data (v5.1).');
+        } catch (err) {
+            console.warn('[HorologionEngine] _loadHolyWeekData failed:', err.message, '— Holy Week slots will remain as rubric placeholders.');
+            // _holyWeekData remains null; next call will retry
+        }
+    }
+
+
+    // ──────────────────────────────────────────────────────────────────────
+    // v5.1: _resolveHolyWeekText(slotKey, holyWeekDay)
+    //
+    // Looks up a resolved text item for a Holy Week slot from the corpus.
+    // Returns a type:'text' item if corpus data exists for this day + slot,
+    // or null if not present (caller falls through to _buildHolyWeekRubric).
+    //
+    // slotKey:     slot key string ('troparion-or-apolytikion', etc.)
+    // holyWeekDay: Holy Week day string from _computeLiturgicalSeason()
+    //
+    // Non-throwing. Returns null on any failure.
+    //
+    // Scope: Vespers — troparion-or-apolytikion slot only in v5.1.
+    //   All other slots not yet in corpus; null returned for those, causing
+    //   the caller to fall through to the existing honest rubric placeholder.
+    // ──────────────────────────────────────────────────────────────────────
+    function _resolveHolyWeekText(slotKey, holyWeekDay) {
+        try {
+            if (!_holyWeekData || !_holyWeekData.holy_week) return null;
+
+            const dayData = _holyWeekData.holy_week[holyWeekDay];
+            if (!dayData || !dayData.slots) return null;
+
+            const slotData = dayData.slots[slotKey];
+            if (!slotData || !slotData.text || slotData.type !== 'text') return null;
+
+            return {
+                type:        slotData.type,
+                key:         slotKey,
+                label:       slotData.label || slotKey,
+                text:        slotData.text,
+                tone:        typeof slotData.tone === 'number' ? slotData.tone : null,
+                source:      slotData.source || 'Triodion',
+                resolvedAs:  slotData.resolvedAs || 'holy-week-text',
+                holyWeekDay: holyWeekDay
+            };
+        } catch (err) {
+            console.warn('[HorologionEngine] _resolveHolyWeekText failed:', err.message);
+            return null;
+        }
+    }
+
+
+    // ──────────────────────────────────────────────────────────────────────
+    // v5.2: _loadPentecostarionData()
+    //
+    // Fetches and caches data/pentecostarion/pentecostarion-bright-week.json.
+    //
+    // Shape: { bright_week: { "stichera-at-lord-i-have-cried": {...}, "aposticha": {...} } }
+    //
+    // Non-throwing: on failure, logs a warning and leaves _pentecostarionData null.
+    // Callers degrade gracefully to the existing Bright Week rubric on null.
+    // ──────────────────────────────────────────────────────────────────────
+    async function _loadPentecostarionData() {
+        if (_pentecostarionData !== null) return;
+
+        try {
+            const response = await fetch(PENTECOSTARION_BRIGHT_WEEK_URL);
+            if (!response.ok) {
+                console.warn(`[HorologionEngine] Could not load Pentecostarion Bright Week data (HTTP ${response.status}); Bright Week stichera/aposticha will remain as rubric placeholders.`);
+                return;
+            }
+            _pentecostarionData = await response.json();
+            console.log('[HorologionEngine] Loaded Pentecostarion Bright Week text overlay data (v5.2).');
+        } catch (err) {
+            console.warn('[HorologionEngine] _loadPentecostarionData failed:', err.message, '— Bright Week stichera/aposticha will remain as rubric placeholders.');
+            // _pentecostarionData remains null; next call will retry
+        }
+    }
+
+
+    // ──────────────────────────────────────────────────────────────────────
+    // v5.2: _resolvePentecostarionText(slotKey)
+    //
+    // Looks up a resolved text item for a Bright Week Vespers slot.
+    // Returns a type:'text' item if corpus data exists for this slot,
+    // or null if not present (caller keeps existing rubric output).
+    //
+    // slotKey: 'stichera-at-lord-i-have-cried' | 'aposticha'
+    //
+    // Non-throwing. Returns null on any failure.
+    //
+    // Only called when toneResult.brightWeek === true (Pascha through Thomas Sat).
+    // Does not affect any other seasonal path.
+    // ──────────────────────────────────────────────────────────────────────
+    function _resolvePentecostarionText(slotKey) {
+        try {
+            if (!_pentecostarionData || !_pentecostarionData.bright_week) return null;
+
+            const slotData = _pentecostarionData.bright_week[slotKey];
+            if (!slotData || !slotData.text || slotData.type !== 'text') return null;
+
+            return {
+                type:       slotData.type,
+                key:        slotKey,
+                label:      slotData.label || slotKey,
+                text:       slotData.text,
+                source:     slotData.source || 'Pentecostarion',
+                resolvedAs: slotData.resolvedAs || 'bright-week-pentecostarion'
+            };
+        } catch (err) {
+            console.warn('[HorologionEngine] _resolvePentecostarionText failed:', err.message);
+            return null;
+        }
+    }
+
+
+    // ──────────────────────────────────────────────────────────────────────
     // v3.0: _loadComplineFixedData()
     //
     // Fetches and caches data/horologion/compline-fixed.json.
@@ -2105,11 +2398,19 @@ const pascha = _getOrthodoxPascha(year);
             5: 'friday'
         };
 
+        // v5.0: Attempt Triodion text resolution before falling back to rubric.
+        // Feast arbitration has already run above and found nothing qualifying.
+        const triodionResolved = _resolveTriodionTroparion(dateObj, dayOfWeek, 'small-compline');
+        if (triodionResolved) {
+            return triodionResolved;
+        }
+
+        // Triodion text not available for this week — emit truthful placeholder.
         return {
             type:         'rubric',
             key:          'troparion-of-the-day',
             label:        'Troparion of the Day',
-            text:         'On Great Lent weekdays, the seasonal troparion appointment for Small Compline belongs here. The ordinary baseline troparion-of-the-day path is displaced by the season.',
+            text:         'On Great Lent weekdays, the seasonal troparion appointment for Small Compline belongs here. The ordinary baseline troparion-of-the-day path is displaced by the season. Triodion text for this week is not yet available in the corpus.',
             resolvedAs:   'compline-lenten-rubric',
             overrideType: 'seasonal-lent',
             season:       'great-lent',
@@ -2165,7 +2466,8 @@ function _resolveComplineFestalTheotokionRubric(officeKey, troparionItem, fallba
     await Promise.all([
         _loadComplineFixedData(),
         _loadTroparionData(),
-        _loadWeekdayTroparionMeta()
+        _loadWeekdayTroparionMeta(),
+        _loadTriodionData()
     ]);
 
     const dayOfWeek  = dateObj.getDay();
@@ -2285,7 +2587,8 @@ function _resolveComplineFestalTheotokionRubric(officeKey, troparionItem, fallba
         await Promise.all([
             _loadFirstHourFixedData(),
             _loadTroparionData(),
-            _loadWeekdayTroparionMeta()
+            _loadWeekdayTroparionMeta(),
+            _loadTriodionData()
         ]);
 
         const dayOfWeek  = dateObj.getDay();
@@ -2382,7 +2685,8 @@ async function _loadThirdHourFixedData() {
         await Promise.all([
             _loadThirdHourFixedData(),
             _loadTroparionData(),
-            _loadWeekdayTroparionMeta()
+            _loadWeekdayTroparionMeta(),
+            _loadTriodionData()
         ]);
 
         const dayOfWeek  = dateObj.getDay();
@@ -2475,7 +2779,8 @@ async function _loadThirdHourFixedData() {
         await Promise.all([
             _loadSixthHourFixedData(),
             _loadTroparionData(),
-            _loadWeekdayTroparionMeta()
+            _loadWeekdayTroparionMeta(),
+            _loadTriodionData()
         ]);
 
         const dayOfWeek  = dateObj.getDay();
@@ -2568,7 +2873,8 @@ async function _loadThirdHourFixedData() {
         await Promise.all([
             _loadNinthHourFixedData(),
             _loadTroparionData(),
-            _loadWeekdayTroparionMeta()
+            _loadWeekdayTroparionMeta(),
+            _loadTriodionData()
         ]);
 
         const dayOfWeek  = dateObj.getDay();
@@ -2979,7 +3285,7 @@ async function _loadThirdHourFixedData() {
     //   Great Lent variable overrides — deferred
     // ──────────────────────────────────────────────────────────────────────
     async function _resolveVespersSlots(sections, dateObj) {
-        // Load all data files in parallel (seven loaders as of v2.0)
+        // Load all data files in parallel
         await Promise.all([
             _loadVespersProkeimena(),
             _loadOctoechosData(),
@@ -2987,7 +3293,10 @@ async function _loadThirdHourFixedData() {
             _loadTroparionData(),
             _loadTheotokionData(),
             _loadWeekdayTheotokionData(),
-            _loadWeekdayTroparionMeta()
+            _loadWeekdayTroparionMeta(),
+            _loadTriodionData(),
+            _loadHolyWeekData(),
+            _loadPentecostarionData()
         ]);
 
         const dayOfWeek = dateObj.getDay(); // 0 = Sunday, 6 = Saturday
@@ -3059,8 +3368,9 @@ else if (item.key === 'kathisma-reading') {
 }
                 else if (item.key === 'vesperal-reading') {
                     if (isHolyWeek) {
-                        // v2.7: Holy Week override
-                        section.items[i] = _buildHolyWeekRubric(
+                        // v5.1: attempt Holy Week text overlay before rubric fallback
+                        const hwText = _resolveHolyWeekText('vesperal-reading', holyWeekDay);
+                        section.items[i] = hwText || _buildHolyWeekRubric(
                             'vesperal-reading',
                             'Paremiae (Vesperal Readings)',
                             holyWeekDay
@@ -3112,8 +3422,9 @@ else if (item.key === 'kathisma-reading') {
                 // ── stichera-at-lord-i-have-cried (v1.3 / v3.7) ──────────
                 else if (item.key === 'stichera-at-lord-i-have-cried') {
                     if (toneResult.brightWeek) {
-                        // Bright Week: Paschal hymns, not Octoechos — unchanged
-                        section.items[i] = {
+                        // v5.2: attempt Pentecostarion text before rubric fallback
+                        const pentResolved = _resolvePentecostarionText('stichera-at-lord-i-have-cried');
+                        section.items[i] = pentResolved || {
                             type:       'rubric',
                             key:        'stichera-at-lord-i-have-cried',
                             label:      'Stichera at "Lord, I have cried"',
@@ -3121,8 +3432,9 @@ else if (item.key === 'kathisma-reading') {
                             resolvedAs: 'bright-week-paschal-tone'
                         };
                     } else if (isHolyWeek) {
-                        // v2.7: Holy Week override
-                        section.items[i] = _buildHolyWeekRubric(
+                        // v5.1: attempt Holy Week text overlay before rubric fallback
+                        const hwText = _resolveHolyWeekText('stichera-at-lord-i-have-cried', holyWeekDay);
+                        section.items[i] = hwText || _buildHolyWeekRubric(
                             'stichera-at-lord-i-have-cried',
                             'Stichera at "Lord, I have cried"',
                             holyWeekDay
@@ -3192,8 +3504,9 @@ else if (item.key === 'kathisma-reading') {
                 // ── aposticha (v1.3 / v3.7) ───────────────────────────────
                 else if (item.key === 'aposticha') {
                     if (toneResult.brightWeek) {
-                        // Bright Week unchanged
-                        section.items[i] = {
+                        // v5.2: attempt Pentecostarion text before rubric fallback
+                        const pentResolved = _resolvePentecostarionText('aposticha');
+                        section.items[i] = pentResolved || {
                             type:       'rubric',
                             key:        'aposticha',
                             label:      'Aposticha',
@@ -3201,8 +3514,9 @@ else if (item.key === 'kathisma-reading') {
                             resolvedAs: 'bright-week-paschal-tone'
                         };
                     } else if (isHolyWeek) {
-                        // v2.7: Holy Week override
-                        section.items[i] = _buildHolyWeekRubric(
+                        // v5.1: attempt Holy Week text overlay before rubric fallback
+                        const hwText = _resolveHolyWeekText('aposticha', holyWeekDay);
+                        section.items[i] = hwText || _buildHolyWeekRubric(
                             'aposticha',
                             'Aposticha',
                             holyWeekDay
@@ -3276,8 +3590,9 @@ else if (item.key === 'kathisma-reading') {
                 // Sunday: Resurrectional Troparion of the tone.
                 else if (item.key === 'troparion-or-apolytikion') {
                     if (isHolyWeek) {
-                        // v2.7: Holy Week override — fires before Menaion query
-                        section.items[i] = _buildHolyWeekRubric(
+                        // v5.1: attempt Holy Week text overlay before rubric fallback
+                        const hwText = _resolveHolyWeekText('troparion-or-apolytikion', holyWeekDay);
+                        section.items[i] = hwText || _buildHolyWeekRubric(
                             'troparion-or-apolytikion',
                             'Troparion / Apolytikion of the Day',
                             holyWeekDay
@@ -3295,18 +3610,30 @@ else if (item.key === 'kathisma-reading') {
                             // commemorations during Lent retain their proper troparion.
                             if (isGreatLentWeekday &&
                                 resolved.resolvedAs === 'weekday-theme-rubric') {
-                                section.items[i] = {
-                                    type:       'rubric',
-                                    key:        'troparion-or-apolytikion',
-                                    label:      'Troparion / Apolytikion of the Day',
-                                    text:       '(GREAT LENT — weekday Vespers. ' +
-                                                'The ordinary weekday Octoechos troparion theme is not used during Great Lent. ' +
-                                                'On Lenten weekdays without a ranked Menaion commemoration, ' +
-                                                'the dismissal troparion follows Lenten practice from the Triodion. ' +
-                                                'The Triodion corpus is not yet available in this engine. ' +
-                                                'When available, the appointed Lenten troparion will appear here.)',
-                                    resolvedAs: 'great-lent-troparion-pending'
-                                };
+
+                                // v5.0: Attempt Triodion text resolution before falling back.
+                                // Feast arbitration has already run (_preResolvedTroparion) and
+                                // found nothing qualifying. Key is patched to troparion-or-apolytikion
+                                // for Vespers slot naming consistency.
+                                const triodionResolved = _resolveTriodionTroparion(dateObj, dayOfWeek, 'vespers');
+                                if (triodionResolved) {
+                                    section.items[i] = Object.assign({}, triodionResolved, {
+                                        key: 'troparion-or-apolytikion'
+                                    });
+                                } else {
+                                    // Triodion text not available — emit truthful placeholder.
+                                    section.items[i] = {
+                                        type:       'rubric',
+                                        key:        'troparion-or-apolytikion',
+                                        label:      'Troparion / Apolytikion of the Day',
+                                        text:       '(GREAT LENT — weekday Vespers. ' +
+                                                    'The ordinary weekday Octoechos troparion theme is not used during Great Lent. ' +
+                                                    'On Lenten weekdays without a ranked Menaion commemoration, ' +
+                                                    'the dismissal troparion follows Lenten practice from the Triodion. ' +
+                                                    'Triodion text for this week is not yet available in this engine.)',
+                                        resolvedAs: 'great-lent-troparion-pending'
+                                    };
+                                }
                             } else {
                                 section.items[i] = resolved;
                             }
@@ -3335,8 +3662,9 @@ else if (item.key === 'kathisma-reading') {
                         );
 
                     if (isHolyWeek) {
-                        // v2.7: Holy Week override
-                        section.items[i] = _buildHolyWeekRubric(
+                        // v5.1: attempt Holy Week text overlay before rubric fallback
+                        const hwText = _resolveHolyWeekText('theotokion-dismissal', holyWeekDay);
+                        section.items[i] = hwText || _buildHolyWeekRubric(
                             'theotokion-dismissal',
                             'Theotokion',
                             holyWeekDay
