@@ -4,6 +4,30 @@ let currentDate = new Date();
 let selectedMode = null;
 let isHydrationComplete        = false;
 let selectedHorologionOffice   = 'vespers'; // tracks active office within Horologion mode
+
+// ── v5.4: Horologion diagnostics toggle ──────────────────────────────────────
+// Off by default. Enable via the sidebar toggle button or from the console:
+//   toggleHorologionDiagnostics()
+// When enabled, variable Horologion slots show a small inline diagnostics line
+// with resolvedAs, type, tone, and source layer. Fixed/liturgical text is
+// never annotated — diagnostics appear only on the slots that vary by date.
+let _horDiagnosticsEnabled = false;
+
+function toggleHorologionDiagnostics() {
+    _horDiagnosticsEnabled = !_horDiagnosticsEnabled;
+    const btn = document.getElementById('hor-btn-diag');
+    if (btn) {
+        btn.textContent      = _horDiagnosticsEnabled ? 'Diagnostics: ON' : 'Diagnostics: OFF';
+        btn.style.borderColor = _horDiagnosticsEnabled
+            ? 'rgba(100,200,100,0.8)'
+            : 'rgba(201,168,76,0.3)';
+        btn.style.color = _horDiagnosticsEnabled
+            ? 'rgba(100,220,100,0.95)'
+            : 'rgba(201,168,76,0.5)';
+    }
+    // Re-render immediately so the toggle is instant.
+    if (selectedMode === 'horologion') requestRender();
+}
 let activeRender = null;
 let pendingRender = false;
 let renderScheduled = false;
@@ -1303,7 +1327,8 @@ function _renderHorologionItem(item) {
     }
 
     if (item.type === 'rubric') {
-        return `<span class="rubric-text">${item.text || ''}</span>`;
+        const base = `<span class="rubric-text">${item.text || ''}</span>`;
+        return base + _renderHorologionDiagnostics(item, escapeHtml);
     }
 
     // New: ordered liturgical sequence container.
@@ -1331,7 +1356,8 @@ function _renderHorologionItem(item) {
     if (item.type === 'stichera') {
         const label = item.label ? `<p class="rubric-text" style="margin-bottom:0.4em;">${escapeHtml(item.label)}</p>` : '';
         const body  = formatParagraphText(item.text || '');
-        return `<div class="horologion-text">${label}<p>${body}</p></div>`;
+        const base  = `<div class="horologion-text">${label}<p>${body}</p></div>`;
+        return base + _renderHorologionDiagnostics(item, escapeHtml);
     }
 
     // type: "litany" — render each line role-tagged.
@@ -1364,7 +1390,82 @@ function _renderHorologionItem(item) {
 
     // Fallback: type "text" or any other resolved item.
     const formatted = formatParagraphText(item.text || '');
-    return `<div class="horologion-text"><p>${formatted}</p></div>`;
+    const baseHtml = `<div class="horologion-text"><p>${formatted}</p></div>`;
+    return baseHtml + _renderHorologionDiagnostics(item, escapeHtml);
+}
+
+// ── v5.4: Diagnostics annotation helper ──────────────────────────────────────
+// Returns a diagnostics HTML string when _horDiagnosticsEnabled is true and
+// the item's resolvedAs is in the known variable-slot set.
+// Returns '' (empty string) in all other cases — safe to concatenate unconditionally.
+//
+// Called from: rubric branch, stichera branch, and fallback text branch of
+// _renderHorologionItem(). Fixed corpus items never carry a recognized resolvedAs
+// and will always receive ''.
+//
+// escapeHtml is passed in from the caller's closure to avoid duplication.
+function _renderHorologionDiagnostics(item, escapeHtml) {
+    if (!_horDiagnosticsEnabled || !item.resolvedAs) return '';
+
+    const DIAG_SLOTS = new Set([
+        'menaion-feast-troparion',   'menaion-text-unavailable',
+        'triodion-lenten-troparion',
+        'holy-week-troparion',
+        'bright-week-paschal-stichera', 'bright-week-paschal-aposticha',
+        'paschal-troparion',
+        'weekday-theme-rubric',      'little-hour-lenten-rubric',
+        'compline-lenten-rubric',    'great-lent-troparion-pending',
+        'resurrectional-troparion-saturday', 'resurrectional-troparion-sunday',
+        'weekday-octoechos-theotokion', 'menaion-feast-theotokion',
+        'ordinary-weekday-baseline', 'octoechos-baseline-ordinary',
+        'sunday-small-vespers-resurrectional-stichera',
+        'sunday-small-vespers-resurrectional-aposticha'
+    ]);
+
+    if (!DIAG_SLOTS.has(item.resolvedAs)) return '';
+
+    const layer   = _horDiagLayer(item.resolvedAs);
+    const toneStr = (typeof item.tone === 'number') ? `tone ${item.tone}` : null;
+    const parts   = [
+        `resolvedAs: ${item.resolvedAs}`,
+        `type: ${item.type}`,
+        toneStr,
+        layer  ? `layer: ${layer}`   : null,
+        item.source ? `source: ${item.source}` : null
+    ].filter(Boolean);
+
+    return (
+        `<div style="` +
+            `font-size:0.68em; font-family:monospace; ` +
+            `color:rgba(100,180,100,0.7); ` +
+            `margin:-2px 0 6px 0; padding:2px 6px; ` +
+            `border-left:2px solid rgba(100,180,100,0.3); ` +
+            `letter-spacing:0.02em; line-height:1.4;` +
+        `">` +
+        escapeHtml(parts.join('  ·  ')) +
+        `</div>`
+    );
+}
+
+// ── v5.4: Map resolvedAs to a human-readable layer label ─────────────────────
+// Called only when diagnostics are enabled. Returns null for unknown values
+// so we never display fabricated metadata.
+function _horDiagLayer(resolvedAs) {
+    if (!resolvedAs) return null;
+    if (resolvedAs.startsWith('menaion-'))                          return 'Menaion';
+    if (resolvedAs.startsWith('triodion-'))                         return 'Triodion';
+    if (resolvedAs.startsWith('holy-week-'))                        return 'Holy Week';
+    if (resolvedAs.startsWith('bright-week-') ||
+        resolvedAs === 'paschal-troparion')                         return 'Pentecostarion';
+    if (resolvedAs.startsWith('resurrectional-') ||
+        resolvedAs.startsWith('octoechos-') ||
+        resolvedAs === 'weekday-octoechos-theotokion' ||
+        resolvedAs.startsWith('sunday-small-vespers-') ||
+        resolvedAs === 'ordinary-weekday-baseline')                 return 'Octoechos';
+    if (resolvedAs === 'weekday-theme-rubric' ||
+        resolvedAs.endsWith('-lenten-rubric') ||
+        resolvedAs.endsWith('-pending'))                            return 'Fallback';
+    return null;
 }
 async function renderBcpOffice() {
     if (!isHydrationComplete) {
@@ -2753,4 +2854,4 @@ async function renderEastSyriac() {
         if (dateHeader)   dateHeader.style.display   = 'none';
         if (saintDisplay) saintDisplay.innerHTML      = '';
     }
-}   
+}

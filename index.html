@@ -323,6 +323,18 @@
         </div>
     </div>
 
+    <!-- v5.4: Diagnostics toggle — Horologion mode only, off by default -->
+    <div style="margin: 0 0 10px 0; text-align:right;">
+        <button id="hor-btn-diag"
+            onclick="toggleHorologionDiagnostics()"
+            style="background:transparent; border:1px solid rgba(201,168,76,0.3);
+                   color:rgba(201,168,76,0.5); font-family:'Cinzel',serif;
+                   font-size:0.68em; letter-spacing:0.06em; padding:3px 8px;
+                   cursor:pointer; border-radius:2px; transition:all 0.15s;">
+            Diagnostics: OFF
+        </button>
+    </div>
+
     <div class="ordo-control">
         <strong>Liturgical Ordo</strong>
         <div class="ordo-date" id="generic-display-date">Loading...</div>
