@@ -2895,7 +2895,9 @@ function _resolveComplineFestalTheotokionRubric(officeKey, troparionItem, fallba
                                 // ── orthros-theotokion — deferred baseline rubric ─────────
                 if (item.key === 'orthros-theotokion') {
                     const troparionItem =
-                        section.items.find(it => it && it.key === 'troparion-of-the-day') || null;
+    sections
+        .flatMap(sec => Array.isArray(sec.items) ? sec.items : [])
+        .find(it => it && it.key === 'troparion-of-the-day') || null;
 
                     const isFeast =
                         troparionItem &&
@@ -2957,19 +2959,63 @@ function _resolveComplineFestalTheotokionRubric(officeKey, troparionItem, fallba
                     let sticheraResolvedAs;
 
                     const troparionItem =
-    sections
-        .flatMap(sec => Array.isArray(sec.items) ? sec.items : [])
-        .find(it => it && it.key === 'troparion-of-the-day') || null;
-                    const isFeast = troparionItem && troparionItem.resolvedAs === 'menaion-feast-troparion';
+                        sections
+                            .flatMap(sec => Array.isArray(sec.items) ? sec.items : [])
+                            .find(it => it && it.key === 'troparion-of-the-day') || null;
 
-                    if (isFeast) {
+                    const isFeast = troparionItem && troparionItem.resolvedAs === 'menaion-feast-troparion';
+                    const feastRank =
+                        isFeast && typeof troparionItem.rank === 'number'
+                            ? troparionItem.rank
+                            : null;
+
+                    const isMajorFeastForPraises =
+                        isFeast &&
+                        feastRank !== null &&
+                        feastRank >= 1 &&
+                        feastRank <= 2;
+
+                    const sundayPraisesData =
+                        typeof window !== 'undefined' &&
+                        window.ORTHROS_SUNDAY_PRAISES &&
+                        toneResult &&
+                        toneResult.tone
+                            ? window.ORTHROS_SUNDAY_PRAISES[String(toneResult.tone)] ||
+                              window.ORTHROS_SUNDAY_PRAISES[toneResult.tone] ||
+                              null
+                            : null;
+
+                    const hasSundayPraisesText =
+                     dayOfWeek === 0 &&
+                     !isMajorFeastForPraises &&
+                     !isBrightWeek &&
+                      !isHolyWeek &&
+                      !isGreatLentWeekday &&
+                     Array.isArray(sundayPraisesData) &&
+                     sundayPraisesData.length > 0;
+                    if (isMajorFeastForPraises) {
                         const feastName = troparionItem.commemoration || troparionItem.label || 'the feast of the day';
                         sticheraText =
-                            `FEAST — Praises Stichera: A qualifying Menaion feast (${feastName}) is appointed today. ` +
+                            `FEAST — Praises Stichera: A major Menaion feast (${feastName}) is appointed today. ` +
                             'The Praises stichera are taken from the Menaion for this feast rather than from the ' +
                             'ordinary Octoechos or resurrectional cycle. The feast Menaion Ainoi stichera corpus ' +
                             'is not yet embedded in this path. The appointment is correct; the text is deferred.';
                         sticheraResolvedAs = 'orthros-feast-praises-rubric';
+                                        } else if (hasSundayPraisesText) {
+                        section.items[i] = {
+                            type:       'stichera',
+                            key:        'praises-stichera',
+                            label:      'Stichera at the Praises',
+                            items:      sundayPraisesData.map((entry, idx) => ({
+                                type:      'text',
+                                sticheron: entry.sticheron || idx + 1,
+                                text:      entry.text || ''
+                            })),
+                            source:     'Octoechos',
+                            tone:       toneResult.tone,
+                            resolvedAs: 'orthros-sunday-resurrectional-praises-text'
+                        };
+                        continue;
                     } else if (isBrightWeek) {
                         sticheraText =
                             'BRIGHT WEEK — Praises Stichera: The Paschal stichera are sung at the Praises ' +
@@ -3024,7 +3070,6 @@ function _resolveComplineFestalTheotokionRubric(officeKey, troparionItem, fallba
                             `Praises would be drawn from the Menaion. This festal override is not yet implemented.)`;
                         sticheraResolvedAs = 'orthros-ordinary-weekday-praises-stichera-rubric';
                     }
-
                     section.items[i] = {
                         type:       'rubric',
                         key:        'praises-stichera',
@@ -3045,6 +3090,17 @@ function _resolveComplineFestalTheotokionRubric(officeKey, troparionItem, fallba
         .flatMap(sec => Array.isArray(sec.items) ? sec.items : [])
         .find(it => it && it.key === 'troparion-of-the-day') || null;
                     const isFeast = troparionItem && troparionItem.resolvedAs === 'menaion-feast-troparion';
+
+const feastRank =
+    isFeast && typeof troparionItem.rank === 'number'
+        ? troparionItem.rank
+        : null;
+
+const isMajorFeastForPraises =
+    isFeast &&
+    feastRank !== null &&
+    feastRank >= 1 &&
+    feastRank <= 2;
 
                     if (isFeast) {
                         const feastName = troparionItem.commemoration || troparionItem.label || 'the feast of the day';
