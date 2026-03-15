@@ -1,0 +1,205 @@
+{
+  "officeKey": "orthros",
+  "label": "Orthros (Matins)",
+  "tradition": "BYZC",
+  "description": "The Byzantine Morning Office (Orthros / Matins). Preceded by the Midnight Office on solemn occasions and followed by the First Hour. The structure presented here is the ordinary Orthros of the Constantinopolitan Horologion. Full festal, resurrectional, and Lenten Matins corpora are deferred beyond this baseline.",
+  "sections": [
+    {
+      "id": "opening",
+      "label": "Opening",
+      "notes": "The Priest blesses and the Usual Beginning is read.",
+      "items": [
+        {
+          "type": "rubric",
+          "key": "opening-blessing-rubric",
+          "text": "The Priest blesses: Blessed is our God, always, now and ever and unto ages of ages."
+        },
+        {
+          "type": "placeholder",
+          "key": "usual-beginning",
+          "label": "The Usual Beginning",
+          "status": "unresolved",
+          "note": "Trisagion prayers sequence. Resolved from orthros-fixed.json by HorologionEngine."
+        }
+      ]
+    },
+    {
+      "id": "six-psalms",
+      "label": "Six Psalms (Hexapsalmos)",
+      "notes": "The Six Psalms (3, 37, 62, 87, 102, 142 LXX) are the invariable opening psalmody of Orthros, read in a subdued manner while the lights are dimmed. They are unchanged throughout the year.",
+      "items": [
+        {
+          "type": "rubric",
+          "key": "six-psalms-rubric",
+          "text": "The lights are dimmed. The Reader begins the Six Psalms in a quiet and attentive manner."
+        },
+        {
+          "type": "placeholder",
+          "key": "psalm-3",
+          "label": "Psalm 3 (LXX) — Lord, how are they increased that trouble me",
+          "status": "unresolved",
+          "note": "Resolved from orthros-fixed.json by HorologionEngine."
+        },
+        {
+          "type": "placeholder",
+          "key": "psalm-37",
+          "label": "Psalm 37 (LXX) — O Lord, rebuke me not in Thy wrath",
+          "status": "unresolved",
+          "note": "Resolved from orthros-fixed.json by HorologionEngine."
+        },
+        {
+          "type": "placeholder",
+          "key": "psalm-62",
+          "label": "Psalm 62 (LXX) — O God, my God, early do I seek Thee",
+          "status": "unresolved",
+          "note": "Resolved from orthros-fixed.json by HorologionEngine."
+        },
+        {
+          "type": "placeholder",
+          "key": "psalm-87",
+          "label": "Psalm 87 (LXX) — O Lord God of my salvation",
+          "status": "unresolved",
+          "note": "Resolved from orthros-fixed.json by HorologionEngine."
+        },
+        {
+          "type": "placeholder",
+          "key": "psalm-102",
+          "label": "Psalm 102 (LXX) — Bless the Lord, O my soul",
+          "status": "unresolved",
+          "note": "Resolved from orthros-fixed.json by HorologionEngine."
+        },
+        {
+          "type": "placeholder",
+          "key": "psalm-142",
+          "label": "Psalm 142 (LXX) — Lord, hear my prayer",
+          "status": "unresolved",
+          "note": "Resolved from orthros-fixed.json by HorologionEngine."
+        }
+      ]
+    },
+    {
+      "id": "god-is-the-lord",
+      "label": "God is the Lord / Alleluia",
+      "notes": "On ordinary days and Sundays, 'God is the Lord' is chanted in the current Octoechos tone before the apolytikion. On Great Lent weekdays, 'Alleluia' replaces it. Resolved dynamically by HorologionEngine based on the liturgical season.",
+      "items": [
+        {
+          "type": "placeholder",
+          "key": "god-is-the-lord",
+          "label": "God is the Lord (or Alleluia in Great Lent)",
+          "status": "unresolved",
+          "note": "Variable: 'God is the Lord' on ordinary days and Sundays; 'Alleluia' on Great Lent weekdays; Paschal Troparion substitutes during Bright Week. Resolved dynamically by HorologionEngine."
+        }
+      ]
+    },
+    {
+      "id": "troparia",
+      "label": "Troparion(s) / Apolytikion",
+      "notes": "The dismissal troparion(s) of the day. On Sundays the Resurrectional Troparion of the current tone. On ferial days the Menaion apolytikion or weekday theme rubric.",
+      "items": [
+        {
+          "type": "placeholder",
+          "key": "troparion-of-the-day",
+          "label": "Troparion of the Day",
+          "status": "unresolved",
+          "note": "Variable: resolved via Menaion resolver or weekday-theme rubric. Identical infrastructure to First Hour and other Little Hours."
+        },
+        {
+          "type": "placeholder",
+          "key": "orthros-theotokion",
+          "label": "Theotokion (Matins)",
+          "status": "unresolved",
+          "note": "Tone-dependent Theotokion following the troparion(s). Full Octoechos Matins Theotokion corpus deferred; rubric stub at baseline."
+        }
+      ]
+    },
+    {
+      "id": "kathismata",
+      "label": "Psalter Kathismata",
+      "notes": "One or two Psalter kathismata are read. The number and assignment vary by day of the week and liturgical season. This section presents the rubric for the appointed kathismata at baseline.",
+      "items": [
+        {
+          "type": "placeholder",
+          "key": "kathisma-first",
+          "label": "First Kathisma",
+          "status": "unresolved",
+          "note": "Variable: Psalter kathisma appointed for this day of the week at Orthros. Two kathismata read Monday–Saturday; one on Sunday (where Kathisma 1 'Blessed is the Man' is divided). Full kathisma text deferred; rubric stub at baseline."
+        },
+        {
+          "type": "placeholder",
+          "key": "kathisma-second",
+          "label": "Second Kathisma",
+          "status": "unresolved",
+          "note": "Second Psalter kathisma at Orthros (Monday–Saturday). Omitted on Sunday when the full Polyeleos or Resurrection Gospel sequence applies. Deferred."
+        }
+      ]
+    },
+    {
+      "id": "sessional-hymns",
+      "label": "Sessional Hymns (Sedalia / Kathismata)",
+      "notes": "Hymns sung seated after each kathisma. Variable by tone, feast, and season. Requires Octoechos or Menaion corpus not yet available at this baseline.",
+      "items": [
+        {
+          "type": "placeholder",
+          "key": "sessional-hymns",
+          "label": "Sessional Hymns (Sedalia)",
+          "status": "unresolved",
+          "note": "Variable: sessional hymns from the Octoechos or Menaion appointed after the kathismata. Full corpus deferred; explicit placeholder at baseline."
+        }
+      ]
+    },
+    {
+      "id": "canon",
+      "label": "The Canon",
+      "notes": "The Canon is the central hymnographic unit of Orthros, consisting of nine Odes (Ode 2 omitted on most days). Each Ode contains an Irmos and several Troparia. The Canon is supplied from the Octoechos, Menaion, Triodion, or Pentecostarion. Full canon corpus is deferred beyond v5.6 baseline.",
+      "items": [
+        {
+          "type": "placeholder",
+          "key": "canon",
+          "label": "The Canon (Nine Odes)",
+          "status": "unresolved",
+          "note": "Central hymnographic block of Orthros. Variable by tone, day, feast, and season. Requires Octoechos / Menaion / Triodion / Pentecostarion canon corpus. Explicitly deferred at v5.6 baseline — full canon text is outside scope of this structural pass."
+        }
+      ]
+    },
+    {
+      "id": "praises",
+      "label": "Praises (Ainoi) / Lauds",
+      "notes": "Psalms 148–150 (LXX) with appended stichera from the Octoechos or Menaion. The psalms are fixed; the stichera are variable.",
+      "items": [
+        {
+          "type": "placeholder",
+          "key": "praises-psalms",
+          "label": "Psalms of Praise (148–150 LXX)",
+          "status": "unresolved",
+          "note": "Fixed psalmody of the Praises section. Resolved from orthros-fixed.json by HorologionEngine."
+        },
+        {
+          "type": "placeholder",
+          "key": "praises-stichera",
+          "label": "Stichera at the Praises",
+          "status": "unresolved",
+          "note": "Variable stichera appended to Psalms 148–150. Appointed from Octoechos or Menaion. Full corpus deferred; honest rubric at baseline."
+        }
+      ]
+    },
+    {
+      "id": "great-doxology",
+      "label": "Great Doxology and Dismissal",
+      "notes": "The Great Doxology (Gloria in Excelsis) is the climax of Orthros, sung on Sundays and feasts, or read on ordinary days. The Dismissal follows.",
+      "items": [
+        {
+          "type": "placeholder",
+          "key": "great-doxology",
+          "label": "Great Doxology (Gloria in Excelsis)",
+          "status": "unresolved",
+          "note": "Resolved from orthros-fixed.json by HorologionEngine."
+        },
+        {
+          "type": "rubric",
+          "key": "dismissal-rubric",
+          "text": "Priest: Christ our true God, through the intercessions of His all-pure Mother, of all the Saints, have mercy on us and save us, as He is good and the Lover of mankind.\nChoir: Amen."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,117 @@
+{
+  "officeKey": "orthros",
+  "label": "Orthros / Matins — Invariable Fixed Texts",
+  "note": "All entries resolved unconditionally by _resolveOrthrosSlots(). Psalm translations follow LXX numeration used in Byzantine practice. Source: Standard Antiochian/OCA Horologion (Jordanville 2008 edition / Hapgood).",
+  "slots": {
+    "usual-beginning": {
+      "type": "sequence",
+      "key": "usual-beginning",
+      "label": "The Usual Beginning",
+      "items": [
+        { "type": "text", "key": "usual-beginning-1", "text": "Amen. Glory to Thee, our God, glory to Thee." },
+        { "type": "text", "key": "usual-beginning-2", "text": "O Heavenly King, O Comforter, the Spirit of Truth, Who art everywhere present and fillest all things, Treasury of blessings and Giver of life: come and abide in us, and cleanse us from every impurity, and save our souls, O Good One." },
+        { "type": "text", "key": "usual-beginning-3", "text": "Holy God, Holy Mighty, Holy Immortal, have mercy on us.", "repeat": 3 },
+        { "type": "text", "key": "usual-beginning-4", "text": "Glory to the Father, and to the Son, and to the Holy Spirit, both now and ever, and unto ages of ages. Amen." },
+        { "type": "text", "key": "usual-beginning-5", "text": "All-holy Trinity, have mercy on us. Lord, cleanse us from our sins. Master, pardon our iniquities. Holy One, visit and heal our infirmities for Thy Name's sake." },
+        { "type": "text", "key": "usual-beginning-6", "text": "Lord, have mercy.", "repeat": 3 },
+        { "type": "text", "key": "usual-beginning-7", "text": "Glory to the Father, and to the Son, and to the Holy Spirit, both now and ever, and unto ages of ages. Amen." },
+        { "type": "text", "key": "usual-beginning-8", "text": "Our Father, Who art in Heaven, hallowed be Thy Name. Thy Kingdom come, Thy will be done, on earth as it is in Heaven. Give us this day our daily bread; and forgive us our trespasses, as we forgive those who trespass against us; and lead us not into temptation, but deliver us from evil." },
+        { "type": "text", "key": "usual-beginning-9", "text": "For Thine is the Kingdom, and the power, and the glory, of the Father, and of the Son, and of the Holy Spirit, now and ever, and unto ages of ages. Amen." },
+        { "type": "text", "key": "usual-beginning-10", "text": "Lord, have mercy.", "repeat": 12 },
+        { "type": "text", "key": "usual-beginning-11", "text": "Come, let us worship God our King.\nCome, let us worship and fall down before Christ our King and God.\nCome, let us worship and fall down before Christ Himself, our King and our God." }
+      ]
+    },
+    "psalm-3": {
+      "type": "psalm",
+      "key": "psalm-3",
+      "lxxNumber": 3,
+      "label": "Psalm 3 (LXX) — Lord, how are they increased that trouble me",
+      "text": "Lord, how are they increased that trouble me! Many are they that rise up against me. Many there be which say of my soul: There is no help for him in God.\n\nBut Thou, O Lord, art a shield for me, my glory, and the lifter up of mine head. I cried unto the Lord with my voice, and He heard me out of His holy hill.\n\nI laid me down and slept; I awaked, for the Lord sustained me. I will not be afraid of ten thousands of people that have set themselves against me round about.\n\nArise, O Lord; save me, O my God: for Thou hast smitten all mine enemies upon the cheek bone; Thou hast broken the teeth of the ungodly. Salvation belongeth unto the Lord: Thy blessing is upon Thy people.\n\nGlory to the Father, and to the Son, and to the Holy Spirit, both now and ever, and unto ages of ages. Amen.\n\nAlleluia, Alleluia, Alleluia. Glory to Thee, O God. (×3)"
+    },
+    "psalm-37": {
+      "type": "psalm",
+      "key": "psalm-37",
+      "lxxNumber": 37,
+      "label": "Psalm 37 (LXX) — O Lord, rebuke me not in Thy wrath",
+      "text": "O Lord, rebuke me not in Thy wrath: neither chasten me in Thy hot displeasure. For Thine arrows stick fast in me, and Thy hand presseth me sore.\n\nThere is no soundness in my flesh because of Thine anger; neither is there any rest in my bones because of my sin. For mine iniquities are gone over mine head: as a heavy burden they are too heavy for me.\n\nMy wounds stink and are corrupt because of my foolishness. I am troubled; I am bowed down greatly; I go mourning all the day long. For my loins are filled with a loathsome disease: and there is no soundness in my flesh.\n\nI am feeble and sore broken: I have roared by reason of the disquietness of my heart. Lord, all my desire is before Thee; and my groaning is not hid from Thee.\n\nMy heart panteth, my strength faileth me: as for the light of mine eyes, it also is gone from me. My lovers and my friends stand aloof from my sore; and my kinsmen stand afar off.\n\nThey also that seek after my life lay snares for me: and they that seek my hurt speak mischievous things, and imagine deceits all the day long. But I, as a deaf man, heard not; and I was as a dumb man that openeth not his mouth.\n\nThus I was as a man that heareth not, and in whose mouth are no reproofs. For in Thee, O Lord, do I hope: Thou wilt hear, O Lord my God.\n\nFor I said: Hear me, lest otherwise they should rejoice over me: when my foot slippeth, they magnify themselves against me. For I am ready to halt, and my sorrow is continually before me.\n\nFor I will declare mine iniquity; I will be sorry for my sin. But mine enemies are lively, and they are strong: and they that hate me wrongfully are multiplied.\n\nThey also that render evil for good are mine adversaries; because I follow the thing that good is. Forsake me not, O Lord: O my God, be not far from me.\n\nMake haste to help me, O Lord my salvation.\n\nGlory to the Father, and to the Son, and to the Holy Spirit, both now and ever, and unto ages of ages. Amen.\n\nAlleluia, Alleluia, Alleluia. Glory to Thee, O God. (×3)"
+    },
+    "psalm-62": {
+      "type": "psalm",
+      "key": "psalm-62",
+      "lxxNumber": 62,
+      "label": "Psalm 62 (LXX) — O God, my God, early do I seek Thee",
+      "text": "O God, my God, early do I seek Thee: my soul thirsteth for Thee, my flesh longeth for Thee in a dry and thirsty land, where no water is; To see Thy power and Thy glory, so as I have seen Thee in the sanctuary.\n\nBecause Thy lovingkindness is better than life, my lips shall praise Thee. Thus will I bless Thee while I live: I will lift up my hands in Thy name.\n\nMy soul shall be satisfied as with marrow and fatness; and my mouth shall praise Thee with joyful lips: When I remember Thee upon my bed, and meditate on Thee in the night watches.\n\nBecause Thou hast been my help, therefore in the shadow of Thy wings will I rejoice. My soul followeth hard after Thee: Thy right hand upholdeth me.\n\nBut those that seek my soul, to destroy it, shall go into the lower parts of the earth. They shall fall by the sword: they shall be a portion for foxes. But the king shall rejoice in God; every one that sweareth by Him shall glory: but the mouth of them that speak lies shall be stopped.\n\nGlory to the Father, and to the Son, and to the Holy Spirit, both now and ever, and unto ages of ages. Amen.\n\nAlleluia, Alleluia, Alleluia. Glory to Thee, O God. (×3)\n\nLord, have mercy. (×3)\n\nGlory to the Father, and to the Son, and to the Holy Spirit, both now and ever, and unto ages of ages. Amen."
+    },
+    "psalm-87": {
+      "type": "psalm",
+      "key": "psalm-87",
+      "lxxNumber": 87,
+      "label": "Psalm 87 (LXX) — O Lord God of my salvation",
+      "text": "O Lord God of my salvation, I have cried day and night before Thee. Let my prayer come before Thee: incline Thine ear unto my cry; For my soul is full of troubles: and my life draweth nigh unto the grave.\n\nI am counted with them that go down into the pit: I am as a man that hath no strength: Free among the dead, like the slain that lie in the grave, whom Thou rememberest no more: and they are cut off from Thy hand.\n\nThou hast laid me in the lowest pit, in darkness, in the deeps. Thy wrath lieth hard upon me, and Thou hast afflicted me with all Thy waves.\n\nThou hast put away mine acquaintance far from me; Thou hast made me an abomination unto them: I am shut up, and I cannot come forth. Mine eye mourneth by reason of affliction: Lord, I have called daily upon Thee, I have stretched out my hands unto Thee.\n\nWilt Thou show wonders to the dead? Shall the dead arise and praise Thee? Shall Thy lovingkindness be declared in the grave? Or Thy faithfulness in destruction? Shall Thy wonders be known in the dark? And Thy righteousness in the land of forgetfulness?\n\nBut unto Thee have I cried, O Lord; and in the morning shall my prayer prevent Thee. Lord, why castest Thou off my soul? Why hidest Thou Thy face from me?\n\nI am afflicted and ready to die from my youth up: while I suffer Thy terrors I am distracted. Thy fierce wrath goeth over me; Thy terrors have cut me off. They came round about me daily like water; they compassed me about together. Lover and friend hast Thou put far from me, and mine acquaintance into darkness.\n\nGlory to the Father, and to the Son, and to the Holy Spirit, both now and ever, and unto ages of ages. Amen.\n\nAlleluia, Alleluia, Alleluia. Glory to Thee, O God. (×3)"
+    },
+    "psalm-102": {
+      "type": "psalm",
+      "key": "psalm-102",
+      "lxxNumber": 102,
+      "label": "Psalm 102 (LXX) — Bless the Lord, O my soul",
+      "text": "Bless the Lord, O my soul: and all that is within me, bless His holy name. Bless the Lord, O my soul, and forget not all His benefits: Who forgiveth all thine iniquities; Who healeth all thy diseases; Who redeemeth thy life from destruction; Who crowneth thee with lovingkindness and tender mercies; Who satisfieth thy mouth with good things; so that thy youth is renewed like the eagle's.\n\nThe Lord executeth righteousness and judgment for all that are oppressed. He made known His ways unto Moses, His acts unto the children of Israel. The Lord is merciful and gracious, slow to anger, and plenteous in mercy.\n\nHe will not always chide: neither will He keep His anger forever. He hath not dealt with us after our sins; nor rewarded us according to our iniquities.\n\nFor as the heaven is high above the earth, so great is His mercy toward them that fear Him. As far as the east is from the west, so far hath He removed our transgressions from us. Like as a father pitieth his children, so the Lord pitieth them that fear Him.\n\nFor He knoweth our frame; He remembereth that we are dust. As for man, his days are as grass: as a flower of the field, so he flourisheth. For the wind passeth over it, and it is gone; and the place thereof shall know it no more.\n\nBut the mercy of the Lord is from everlasting to everlasting upon them that fear Him, and His righteousness unto children's children; To such as keep His covenant, and to those that remember His commandments to do them.\n\nThe Lord hath prepared His throne in the heavens; and His kingdom ruleth over all. Bless the Lord, ye His angels, that excel in strength, that do His commandments, hearkening unto the voice of His word. Bless ye the Lord, all ye His hosts; ye ministers of His, that do His pleasure. Bless the Lord, all His works in all places of His dominion: bless the Lord, O my soul.\n\nGlory to the Father, and to the Son, and to the Holy Spirit, both now and ever, and unto ages of ages. Amen.\n\nAlleluia, Alleluia, Alleluia. Glory to Thee, O God. (×3)"
+    },
+    "psalm-142": {
+      "type": "psalm",
+      "key": "psalm-142",
+      "lxxNumber": 142,
+      "label": "Psalm 142 (LXX) — Lord, hear my prayer",
+      "text": "Hear my prayer, O Lord, give ear to my supplications: in Thy faithfulness answer me, and in Thy righteousness. And enter not into judgment with Thy servant: for in Thy sight shall no man living be justified.\n\nFor the enemy hath persecuted my soul; he hath smitten my life down to the ground; he hath made me to dwell in darkness, as those that have been long dead. Therefore is my spirit overwhelmed within me; my heart within me is desolate.\n\nI remember the days of old; I meditate on all Thy works; I muse on the work of Thy hands. I stretch forth my hands unto Thee: my soul thirsteth after Thee, as a thirsty land.\n\nHear me speedily, O Lord: my spirit faileth: hide not Thy face from me, lest I be like unto them that go down into the pit. Cause me to hear Thy lovingkindness in the morning; for in Thee do I trust: cause me to know the way wherein I should walk; for I lift up my soul unto Thee.\n\nDeliver me, O Lord, from mine enemies: I flee unto Thee to hide me. Teach me to do Thy will; for Thou art my God: Thy spirit is good; lead me into the land of uprightness.\n\nQuicken me, O Lord, for Thy name's sake: for Thy righteousness' sake bring my soul out of trouble. And of Thy mercy cut off mine enemies, and destroy all them that afflict my soul: for I am Thy servant.\n\nGlory to the Father, and to the Son, and to the Holy Spirit, both now and ever, and unto ages of ages. Amen.\n\nAlleluia, Alleluia, Alleluia. Glory to Thee, O God. (×3)\n\nLord, have mercy. (×3)\n\nGlory to the Father, and to the Son, and to the Holy Spirit, both now and ever, and unto ages of ages. Amen."
+    },
+    "praises-psalms": {
+      "type": "sequence",
+      "key": "praises-psalms",
+      "label": "Psalms of Praise (148, 149, 150 LXX)",
+      "items": [
+        {
+          "type": "rubric",
+          "key": "praises-intro-rubric",
+          "text": "Praise ye the Lord from the heavens: praise Him in the heights. Praise ye Him, all His angels: praise ye Him, all His hosts. Praise ye Him, sun and moon: praise Him, all ye stars of light."
+        },
+        {
+          "type": "psalm",
+          "key": "praises-psalm-148",
+          "lxxNumber": 148,
+          "label": "Psalm 148 (LXX)",
+          "text": "Praise ye the Lord from the heavens: praise Him in the heights. Praise ye Him, all His angels: praise ye Him, all His hosts. Praise ye Him, sun and moon: praise Him, all ye stars of light. Praise Him, ye heavens of heavens, and ye waters that be above the heavens. Let them praise the name of the Lord: for He commanded, and they were created. He hath also stablished them for ever and ever: He hath made a decree which shall not pass.\n\nPraise the Lord from the earth, ye dragons, and all deeps: Fire, and hail; snow, and vapour; stormy wind fulfilling His word: Mountains, and all hills; fruitful trees, and all cedars: Beasts, and all cattle; creeping things, and flying fowl: Kings of the earth, and all people; princes, and all judges of the earth: Both young men, and maidens; old men, and children: Let them praise the name of the Lord: for His name alone is excellent; His glory is above the earth and heaven.\n\nHe also exalteth the horn of His people, the praise of all His saints; even of the children of Israel, a people near unto Him. Praise ye the Lord."
+        },
+        {
+          "type": "psalm",
+          "key": "praises-psalm-149",
+          "lxxNumber": 149,
+          "label": "Psalm 149 (LXX)",
+          "text": "Praise ye the Lord. Sing unto the Lord a new song, and His praise in the congregation of saints. Let Israel rejoice in Him that made him: let the children of Zion be joyful in their King. Let them praise His name in the dance: let them sing praises unto Him with the timbrel and harp. For the Lord taketh pleasure in His people: He will beautify the meek with salvation.\n\nLet the saints be joyful in glory: let them sing aloud upon their beds. Let the high praises of God be in their mouth, and a two-edged sword in their hand; To execute vengeance upon the heathen, and punishments upon the people; To bind their kings with chains, and their nobles with fetters of iron; To execute upon them the judgment written: this honour have all His saints. Praise ye the Lord."
+        },
+        {
+          "type": "psalm",
+          "key": "praises-psalm-150",
+          "lxxNumber": 150,
+          "label": "Psalm 150 (LXX)",
+          "text": "Praise ye the Lord. Praise God in His sanctuary: praise Him in the firmament of His power. Praise Him for His mighty acts: praise Him according to His excellent greatness. Praise Him with the sound of the trumpet: praise Him with the psaltery and harp. Praise Him with the timbrel and dance: praise Him with stringed instruments and organs. Praise Him upon the loud cymbals: praise Him upon the high sounding cymbals. Let every thing that hath breath praise the Lord. Praise ye the Lord.\n\nGlory to the Father, and to the Son, and to the Holy Spirit, both now and ever, and unto ages of ages. Amen."
+        }
+      ]
+    },
+    "great-doxology": {
+      "type": "sequence",
+      "key": "great-doxology",
+      "label": "Great Doxology (Gloria in Excelsis)",
+      "items": [
+        {
+          "type": "rubric",
+          "key": "great-doxology-rubric",
+          "text": "On Sundays and Feasts the Great Doxology is sung. On ordinary weekdays it is read. The lights are restored."
+        },
+        {
+          "type": "text",
+          "key": "great-doxology-text",
+          "text": "Glory to God in the highest, and on earth peace, goodwill among men.\n\nWe praise Thee, we bless Thee, we worship Thee, we glorify Thee, we give thanks to Thee for Thy great glory.\n\nO Lord, heavenly King, God the Father Almighty; O Lord, the Only-begotten Son, Jesus Christ; and O Holy Spirit.\n\nO Lord God, Lamb of God, Son of the Father, that takest away the sin of the world, have mercy on us; Thou that takest away the sins of the world, receive our prayer; Thou that sittest at the right hand of the Father, have mercy on us.\n\nFor Thou only art holy; Thou only art the Lord Jesus Christ, to the glory of God the Father. Amen.\n\nEvery day will I bless Thee, and I will praise Thy name forever, yea, forever and ever.\n\nVouchsafe, O Lord, to keep us this day without sin. Blessed art Thou, O Lord God of our fathers, and praised and glorified is Thy name forever. Amen.\n\nLet Thy mercy, O Lord, be upon us, according as we have hoped in Thee.\n\nBlessed art Thou, O Lord; teach me Thy statutes.\n\nBlessed art Thou, O Master; make me to understand Thy statutes.\n\nBlessed art Thou, O Holy One; enlighten me with Thy statutes.\n\nThy mercy, O Lord, endureth forever. O despise not the works of Thine hands. To Thee belongeth worship, to Thee belongeth praise, to Thee belongeth glory, to the Father, and to the Son, and to the Holy Spirit, now and ever, and unto ages of ages. Amen."
+        }
+      ]
+    }
+  }
+}

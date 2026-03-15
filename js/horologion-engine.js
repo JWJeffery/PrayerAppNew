@@ -230,7 +230,7 @@ const HorologionEngine = (() => {
     const _skeletonCache = {};
 
     // ── Supported offices in this version ─────────────────────────────────
-   const SUPPORTED_OFFICES = ['vespers', 'small-compline', 'first-hour', 'third-hour', 'sixth-hour', 'ninth-hour'];
+   const SUPPORTED_OFFICES = ['vespers', 'small-compline', 'first-hour', 'third-hour', 'sixth-hour', 'ninth-hour', 'orthros'];
 
     // ── Tradition code for this engine ────────────────────────────────────
     const TRADITION = 'BYZC';
@@ -338,6 +338,13 @@ const HorologionEngine = (() => {
     // Populated lazily by _loadNinthHourFixedData().
     // Shape: { slots: { "usual-beginning": {...}, "psalm-83": {...}, ... } }
     let _ninthHourFixedData = null;
+
+    // ── v5.6: Orthros (Matins) fixed-text data file URL and cache ─────────
+    const ORTHROS_FIXED_URL = 'data/horologion/orthros-fixed.json';
+
+    // Populated lazily by _loadOrthrosFixedData().
+    // Shape: { slots: { "usual-beginning": {...}, "psalm-3": {...}, ... } }
+    let _orthrosFixedData = null;
 
     // ── v5.0: Triodion lenten weekday data file URL and cache ─────────────
     // Keyed by lent week number (1–6), then weekday name (monday … friday).
@@ -500,6 +507,8 @@ const HorologionEngine = (() => {
             await _resolveSixthHourSlots(sections, dateObj);
         } else if (normalizedKey === 'ninth-hour') {
             await _resolveNinthHourSlots(sections, dateObj);
+        } else if (normalizedKey === 'orthros') {
+            await _resolveOrthrosSlots(sections, dateObj);
         } else {
             // v1.2 / v1.3: Vespers resolver (default for 'vespers' and any
             // future office that shares it until it has its own resolver).
@@ -659,13 +668,14 @@ const HorologionEngine = (() => {
     // future skeleton is added without one.
     // ──────────────────────────────────────────────────────────────────────
     function _officeTitleFallback(normalizedKey) {
-        const TITLES = {
+         const TITLES = {
             'vespers':        'Vespers',
             'small-compline': 'Small Compline',
             'first-hour':     'First Hour',
             'third-hour':     'Third Hour',
             'sixth-hour':     'Sixth Hour',
-            'ninth-hour':     'Ninth Hour'
+            'ninth-hour':     'Ninth Hour',
+            'orthros':        'Orthros (Matins)'
         };
         return TITLES[normalizedKey] || normalizedKey;
     }
@@ -2550,6 +2560,185 @@ function _resolveComplineFestalTheotokionRubric(officeKey, troparionItem, fallba
         rank:          troparionItem.rank || null
     };
 }
+ // ── v5.6: Orthros (Matins) fixed-text loader ──────────────────────────
+    async function _loadOrthrosFixedData() {
+        if (_orthrosFixedData !== null) return;
+
+        try {
+            const response = await fetch(ORTHROS_FIXED_URL);
+            if (!response.ok) {
+                console.warn(`[HorologionEngine] Could not load Orthros fixed data (HTTP ${response.status}); fixed slots will remain as placeholders.`);
+                return;
+            }
+            _orthrosFixedData = await response.json();
+            console.log('[HorologionEngine] Loaded Orthros fixed text data.');
+        } catch (err) {
+            console.warn('[HorologionEngine] _loadOrthrosFixedData failed:', err.message, '— fixed slots will remain as placeholders.');
+        }
+    }
+    // ── v5.6: Orthros (Matins) slot resolver ─────────────────────────────
+    //
+    // Structural baseline only. Resolves:
+    //   Fixed slots (from orthros-fixed.json):
+    //     usual-beginning, psalm-3, psalm-37, psalm-62, psalm-87, psalm-102,
+    //     psalm-142, praises-psalms, great-doxology
+    //   Variable slots (dynamic resolution):
+    //     god-is-the-lord  — tone-aware: God is the Lord (ordinary/Sunday) or
+    //                        Alleluia (Great Lent weekdays) or Paschal Troparion
+    //                        (Bright Week) or Holy Week rubric.
+    //     troparion-of-the-day — delegates to _resolveLittleHourSeasonalTroparionSlot()
+    //                            (same infrastructure as Little Hours).
+    //     orthros-theotokion   — honest rubric stub (Matins Theotokion corpus deferred).
+    //   Deferred placeholders (pass through unchanged):
+    //     kathisma-first, kathisma-second, sessional-hymns, canon,
+    //     praises-stichera
+    //
+    // Non-throwing throughout.
+    // ──────────────────────────────────────────────────────────────────────
+    async function _resolveOrthrosSlots(sections, dateObj) {
+        await Promise.all([
+            _loadOrthrosFixedData(),
+            _loadTroparionData(),
+            _loadWeekdayTroparionMeta(),
+            _loadTriodionData()
+        ]);
+
+        const dayOfWeek  = dateObj.getDay();
+        const toneResult = _computeBaselineTone(dateObj);
+        const seasonResult = _computeLiturgicalSeason(dateObj, toneResult);
+
+        const FIXED_SLOT_KEYS = new Set([
+            'usual-beginning',
+            'psalm-3',
+            'psalm-37',
+            'psalm-62',
+            'psalm-87',
+            'psalm-102',
+            'psalm-142',
+            'praises-psalms',
+            'great-doxology'
+        ]);
+
+        for (const section of sections) {
+            if (!Array.isArray(section.items)) continue;
+
+            for (let i = 0; i < section.items.length; i++) {
+                const item = section.items[i];
+
+                // ── Fixed slots ───────────────────────────────────────────
+                if (FIXED_SLOT_KEYS.has(item.key)) {
+                    const slotData = _orthrosFixedData &&
+                        _orthrosFixedData.slots &&
+                        _orthrosFixedData.slots[item.key];
+
+                    if (slotData) {
+                        section.items[i] = {
+                            type:       slotData.type || 'text',
+                            key:        item.key,
+                            label:      slotData.label || item.label,
+                            text:       slotData.text,
+                            lxxNumber:  slotData.lxxNumber,
+                            items:      Array.isArray(slotData.items) ? slotData.items : undefined,
+                            resolvedAs: 'orthros-fixed'
+                        };
+                    }
+                    // If data not loaded: item remains placeholder — correct degradation.
+                    continue;
+                }
+
+                // ── god-is-the-lord / Alleluia path ──────────────────────
+                if (item.key === 'god-is-the-lord') {
+                    const isGreatLentWeekday =
+                        seasonResult &&
+                        seasonResult.season === 'great-lent' &&
+                        dayOfWeek >= 1 &&
+                        dayOfWeek <= 5;
+
+                    const isHolyWeek =
+                        seasonResult &&
+                        (seasonResult.season === 'holy-week' || seasonResult.isHolyWeek);
+
+                    const isBrightWeek = toneResult && toneResult.brightWeek;
+
+                    if (isBrightWeek) {
+                        // Bright Week: Paschal Troparion in place of God is the Lord
+                        section.items[i] = {
+                            type:       'rubric',
+                            key:        'god-is-the-lord',
+                            label:      'Paschal Troparion (Bright Week)',
+                            text:       'Bright Week: The Paschal Troparion ("Christ is risen from the dead, trampling down death by death, and upon those in the tombs bestowing life") is sung three times in place of "God is the Lord." The tone of the week is the Paschal tone.',
+                            resolvedAs: 'orthros-bright-week-paschal-path'
+                        };
+                    } else if (isHolyWeek) {
+                        section.items[i] = {
+                            type:       'rubric',
+                            key:        'god-is-the-lord',
+                            label:      'Holy Week — Alleluia',
+                            text:       'During Holy Week, "Alleluia" is sung in place of "God is the Lord," as on Great Lent weekdays. The troparion of the Bridegroom (or the appointed day\'s troparion) follows.',
+                            resolvedAs: 'orthros-holy-week-alleluia-path'
+                        };
+                    } else if (isGreatLentWeekday) {
+                        section.items[i] = {
+                            type:       'rubric',
+                            key:        'god-is-the-lord',
+                            label:      'Alleluia (Great Lent)',
+                            text:       'On Great Lent weekdays, "Alleluia" (Mode 8 / Tone 8) is chanted in place of "God is the Lord." The penitential troparia and the Triodion troparion follow in place of the apolytikion.',
+                            resolvedAs: 'orthros-great-lent-alleluia-path'
+                        };
+                    } else {
+                        // Ordinary day or Sunday: God is the Lord
+                        const tone = toneResult && toneResult.tone ? toneResult.tone : null;
+                        const toneNote = tone
+                            ? ` Chanted in Tone ${tone}.`
+                            : ' (Tone: computed by Octoechos cycle.)';
+                        section.items[i] = {
+                            type:       'rubric',
+                            key:        'god-is-the-lord',
+                            label:      'God is the Lord',
+                            text:       'God is the Lord, and hath appeared unto us. Blessed is He that cometh in the name of the Lord.' + toneNote + '\n\nVerse: Give thanks unto the Lord, for He is good; for His mercy endureth forever.\nVerse: All nations compassed me about; but in the name of the Lord will I destroy them.\nVerse: This is the Lord\'s doing; it is marvellous in our eyes.',
+                            resolvedAs: 'orthros-god-is-the-lord-ordinary',
+                            tone:       tone || undefined
+                        };
+                    }
+                    continue;
+                }
+
+                // ── troparion-of-the-day ──────────────────────────────────
+                if (item.key === 'troparion-of-the-day') {
+                    const resolved = await _resolveLittleHourSeasonalTroparionSlot('orthros', dayOfWeek, dateObj, toneResult);
+                    if (resolved) {
+                        section.items[i] = Object.assign({}, resolved, {
+                            key: 'troparion-of-the-day'
+                        });
+                    }
+                    continue;
+                }
+
+                // ── orthros-theotokion — deferred baseline rubric ─────────
+                if (item.key === 'orthros-theotokion') {
+                    const troparionItem =
+                        section.items.find(it => it && it.key === 'troparion-of-the-day') || null;
+
+                    const fallbackRubric = _normalizeTheotokionRubricForOffice('orthros', {
+                        type:       'rubric',
+                        key:        'orthros-theotokion',
+                        label:      item.label || 'Theotokion (Matins)',
+                        text:       'On ordinary days, the Theotokion appointed for Orthros belongs here. The full Matins Theotokion corpus is not yet available in this path.',
+                        resolvedAs: 'orthros-theotokion-deferred'
+                    }, toneResult, dayOfWeek);
+
+                    section.items[i] = _resolveLittleHourFestalTheotokionRubric(
+                        'orthros',
+                        troparionItem,
+                        fallbackRubric
+                    );
+                    continue;
+                }
+
+                // All other items (deferred placeholders, baked rubrics) pass through unchanged.
+            }
+        }
+    }
     async function _resolveComplineSlots(sections, dateObj) {
     await Promise.all([
         _loadComplineFixedData(),

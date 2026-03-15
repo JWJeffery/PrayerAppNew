@@ -859,7 +859,7 @@ function selectHorologionOffice(officeKey) {
 }
 
 function _updateHorologionOfficeButtons() {
-    const offices = ['vespers', 'small-compline', 'first-hour', 'third-hour', 'sixth-hour', 'ninth-hour'];
+    const offices = ['vespers', 'small-compline', 'first-hour', 'third-hour', 'sixth-hour', 'ninth-hour', 'orthros'];
     for (const key of offices) {
         const btn = document.getElementById(`hor-btn-${key}`);
         if (!btn) continue;
@@ -882,7 +882,8 @@ function _horologionOfficeLabel(officeKey) {
         'first-hour':     'First Hour',
         'third-hour':     'Third Hour',
         'sixth-hour':     'Sixth Hour',
-        'ninth-hour':     'Ninth Hour'
+        'ninth-hour':     'Ninth Hour',
+        'orthros':        'Orthros (Matins)'
     };
     return labels[officeKey] || officeKey;
 }
