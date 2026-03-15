@@ -2862,36 +2862,75 @@ function _resolveComplineFestalTheotokionRubric(officeKey, troparionItem, fallba
                 // ── troparion-of-the-day ──────────────────────────────────
                 if (item.key === 'troparion-of-the-day') {
                     const resolved = await _resolveLittleHourSeasonalTroparionSlot('orthros', dayOfWeek, dateObj, toneResult);
+
                     if (resolved) {
-                        section.items[i] = Object.assign({}, resolved, {
-                            key: 'troparion-of-the-day'
-                        });
+                        if (dayOfWeek === 0 && resolved.resolvedAs !== 'menaion-feast-troparion') {
+
+                            const tone = toneResult && toneResult.tone ? toneResult.tone : null;
+                            const toneNote = tone ? ` Current Octoechos tone: Tone ${tone}.` : '';
+
+                            section.items[i] = {
+                                type: 'rubric',
+                                key: 'troparion-of-the-day',
+                                label: 'Troparion of the Day',
+                                text:
+                                    'On Sundays, the resurrectional troparion of the Octoechos is appointed according to the tone of the week unless displaced by a qualifying feast.' +
+                                    toneNote,
+                                resolvedAs: 'orthros-sunday-resurrectional-troparion-rubric',
+                                tone: tone || undefined
+                            };
+
+                        } else {
+
+                            section.items[i] = Object.assign({}, resolved, {
+                                key: 'troparion-of-the-day'
+                            });
+
+                        }
                     }
+
                     continue;
                 }
 
-                // ── orthros-theotokion — deferred baseline rubric ─────────
+                                // ── orthros-theotokion — deferred baseline rubric ─────────
                 if (item.key === 'orthros-theotokion') {
                     const troparionItem =
                         section.items.find(it => it && it.key === 'troparion-of-the-day') || null;
 
-                    const fallbackRubric = _normalizeTheotokionRubricForOffice('orthros', {
-                        type:       'rubric',
-                        key:        'orthros-theotokion',
-                        label:      item.label || 'Theotokion (Matins)',
-                        text:       'On ordinary days, the Theotokion appointed for Orthros belongs here. The full Matins Theotokion corpus is not yet available in this path.',
-                        resolvedAs: 'orthros-theotokion-deferred'
-                    }, toneResult, dayOfWeek);
+                    const isFeast =
+                        troparionItem &&
+                        troparionItem.resolvedAs === 'menaion-feast-troparion';
 
-                    section.items[i] = _resolveLittleHourFestalTheotokionRubric(
-                        'orthros',
-                        troparionItem,
-                        fallbackRubric
-                    );
+                    if (isFeast) {
+                        const feastName =
+                            troparionItem.commemoration ||
+                            troparionItem.label ||
+                            'the feast of the day';
+
+                        section.items[i] = {
+                            type:       'rubric',
+                            key:        'orthros-theotokion',
+                            label:      item.label || 'Theotokion (Matins)',
+                            text:
+                                `FEAST — Theotokion: A qualifying Menaion feast (${feastName}) is appointed today. ` +
+                                'The Theotokion appointed at Orthros follows the festal office rather than the ordinary Matins appointment. ' +
+                                'The festal Orthros Theotokion corpus is not yet embedded in this path. The appointment is correct; the text is deferred.',
+                            resolvedAs: 'orthros-feast-theotokion-rubric',
+                            commemoration: troparionItem.commemoration || null,
+                            governingTone: troparionItem.governingTone || troparionItem.tone || null,
+                            rank: typeof troparionItem.rank === 'number' ? troparionItem.rank : null
+                        };
+                    } else {
+                        section.items[i] = _normalizeTheotokionRubricForOffice('orthros', {
+                            type:       'rubric',
+                            key:        'orthros-theotokion',
+                            label:      item.label || 'Theotokion (Matins)',
+                            text:       'On ordinary days, the Theotokion appointed for Orthros belongs here. The full Matins Theotokion corpus is not yet available in this path.',
+                            resolvedAs: 'orthros-theotokion-deferred'
+                        }, toneResult, dayOfWeek);
+                    }
                     continue;
                 }
-
-                // ── v5.7: kathisma-first ──────────────────────────────────
                 if (item.key === 'kathisma-first') {
                     const resolved = _resolveOrthrosKathismaPair(
                         'kathisma-first', dayOfWeek, isBrightWeek, isGreatLentWeekday
@@ -2910,14 +2949,28 @@ function _resolveComplineFestalTheotokionRubric(officeKey, troparionItem, fallba
                     continue;
                 }
 
-                // ── v5.7: praises-stichera — honest discriminating rubric ─
+                 // ── v5.7: praises-stichera — honest discriminating rubric ─
                 // Upgraded from silent pass-through to a rubric that truthfully
                 // distinguishes the five liturgical contexts.
                 if (item.key === 'praises-stichera') {
                     let sticheraText;
                     let sticheraResolvedAs;
 
-                    if (isBrightWeek) {
+                    const troparionItem =
+    sections
+        .flatMap(sec => Array.isArray(sec.items) ? sec.items : [])
+        .find(it => it && it.key === 'troparion-of-the-day') || null;
+                    const isFeast = troparionItem && troparionItem.resolvedAs === 'menaion-feast-troparion';
+
+                    if (isFeast) {
+                        const feastName = troparionItem.commemoration || troparionItem.label || 'the feast of the day';
+                        sticheraText =
+                            `FEAST — Praises Stichera: A qualifying Menaion feast (${feastName}) is appointed today. ` +
+                            'The Praises stichera are taken from the Menaion for this feast rather than from the ' +
+                            'ordinary Octoechos or resurrectional cycle. The feast Menaion Ainoi stichera corpus ' +
+                            'is not yet embedded in this path. The appointment is correct; the text is deferred.';
+                        sticheraResolvedAs = 'orthros-feast-praises-rubric';
+                    } else if (isBrightWeek) {
                         sticheraText =
                             'BRIGHT WEEK — Praises Stichera: The Paschal stichera are sung at the Praises ' +
                             '("Let everything that hath breath praise the Lord"). The standard Paschal stichera ' +
@@ -2938,17 +2991,17 @@ function _resolveComplineFestalTheotokionRubric(officeKey, troparionItem, fallba
                             'on ordinary Lenten weekdays. The service proceeds from the Praises directly ' +
                             'to the Great Doxology (read, not sung, on feria days).';
                         sticheraResolvedAs = 'orthros-great-lent-praises-stichera-rubric';
-                    } else if (dayOfWeek === 0) {
+                     } else if (dayOfWeek === 0) {
                         // Sunday
                         const tone = toneResult && toneResult.tone ? toneResult.tone : null;
                         const toneNote = tone ? ` Current Octoechos tone: Tone ${tone}.` : '';
                         sticheraText =
-                            'SUNDAY — Praises Stichera (Ainoi): On Sundays the Resurrectional stichera ' +
-                            'of the current Octoechos tone are sung at the Praises, concluding with the ' +
-                            'Theotokion of the Ainoi.' + toneNote + '\n\n' +
-                            'Full Sunday Resurrectional Ainoi stichera corpus (Octoechos, tones 1–8) is ' +
-                            'not yet embedded in this path. The appointment is correct; the text is deferred.';
-                        sticheraResolvedAs = 'orthros-sunday-praises-stichera-rubric';
+                            'On Sundays, the Praises stichera are taken from the resurrectional cycle of the ' +
+                            'Octoechos according to the tone of the week, unless displaced by a qualifying feast.' +
+                            toneNote + '\n\n' +
+                            '(Full Sunday Resurrectional Ainoi stichera corpus, Octoechos tones 1–8, is not yet ' +
+                            'embedded in this path. The appointment is correct; the text is deferred.)';
+                        sticheraResolvedAs = 'orthros-sunday-resurrectional-praises-rubric';
                     } else {
                         // Ordinary weekday (Mon–Sat)
                         const WEEKDAY_NAMES = ['', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
@@ -2982,12 +3035,26 @@ function _resolveComplineFestalTheotokionRubric(officeKey, troparionItem, fallba
                     continue;
                 }
 
-                // ── v5.8: sessional-hymns — season-aware rubric ──────────
+                 // ── v5.8: sessional-hymns — season-aware rubric ──────────
                 if (item.key === 'sessional-hymns') {
                     let sessText;
                     let sessResolvedAs;
 
-                    if (isBrightWeek) {
+                    const troparionItem =
+    sections
+        .flatMap(sec => Array.isArray(sec.items) ? sec.items : [])
+        .find(it => it && it.key === 'troparion-of-the-day') || null;
+                    const isFeast = troparionItem && troparionItem.resolvedAs === 'menaion-feast-troparion';
+
+                    if (isFeast) {
+                        const feastName = troparionItem.commemoration || troparionItem.label || 'the feast of the day';
+                        sessText =
+                            `FEAST — Sessional Hymns: A qualifying Menaion feast (${feastName}) is appointed today. ` +
+                            'The sessional hymns (sedalia) following the kathismata are taken from the Menaion for ' +
+                            'this feast rather than from the ordinary Octoechos cycle. The feast Menaion sedalia ' +
+                            'corpus is not yet embedded in this path. The appointment is correct; the text is deferred.';
+                        sessResolvedAs = 'orthros-feast-sessional-hymns-rubric';
+                    } else if (isBrightWeek) {
                         sessText =
                             'BRIGHT WEEK — Sessional Hymns: During Bright Week the ordinary Sessional ' +
                             'Hymns (Sedalia) are replaced by the Paschal Sessional Hymn: ' +
@@ -3011,19 +3078,17 @@ function _resolveComplineFestalTheotokionRubric(officeKey, troparionItem, fallba
                             'sedalia cycle is not used on feria Lenten days. Full Lenten Sessional ' +
                             'Hymn texts are not yet embedded in this path.';
                         sessResolvedAs = 'orthros-great-lent-sessional-hymns-rubric';
-                    } else if (dayOfWeek === 0) {
+                     } else if (dayOfWeek === 0) {
                         // Sunday
                         const tone = toneResult && toneResult.tone ? toneResult.tone : null;
                         const toneNote = tone ? ` Current Octoechos tone: Tone ${tone}.` : '';
                         sessText =
-                            'SUNDAY — Sessional Hymns (Resurrectional Sedalia): On Sundays the ' +
-                            'Resurrectional Sessional Hymns (Hypakoe and Anavathmoi) of the current ' +
-                            'Octoechos tone are sung after the Polyeleos or after each kathisma. ' +
-                            'These include the Hypakoe, the Anavathmoi (Antiphons of the Degrees), ' +
-                            'and the Prokeimenon before the Gospel.' + toneNote + '\n\n' +
-                            'Full Sunday Resurrectional Sessional Hymn corpus (tones 1–8) is not yet ' +
-                            'embedded in this path. The appointment is structurally correct; text is deferred.';
-                        sessResolvedAs = 'orthros-sunday-sessional-hymns-rubric';
+                            'On Sundays, the sessional hymns following the kathismata are taken from the ' +
+                            'resurrectional cycle of the Octoechos according to the tone of the week, ' +
+                            'unless displaced by a qualifying feast.' + toneNote + '\n\n' +
+                            '(Full Sunday Resurrectional Sessional Hymn corpus, Octoechos tones 1–8, is not yet ' +
+                            'embedded in this path. The appointment is structurally correct; text is deferred.)';
+                        sessResolvedAs = 'orthros-sunday-resurrectional-sessional-hymns-rubric';
                     } else {
                         // Ordinary weekday (Mon–Sat)
                         const WEEKDAY_NAMES = ['', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
@@ -3061,7 +3126,7 @@ function _resolveComplineFestalTheotokionRubric(officeKey, troparionItem, fallba
                     continue;
                 }
 
-                // ── v5.8: canon — structured season-aware rubric ──────────
+                 // ── v5.8: canon — structured season-aware rubric ──────────
                 if (item.key === 'canon') {
                     let canonText;
                     let canonResolvedAs;
@@ -3075,7 +3140,22 @@ function _resolveComplineFestalTheotokionRubric(officeKey, troparionItem, fallba
                         'with the Magnificat refrain and the Exapostilarion. Katavasiae (the Irmoi ' +
                         'sung again after Odes 1, 3, 4, 5, 6, 7, 8, 9 or as appointed) close each Ode.';
 
-                    if (isBrightWeek) {
+                    const troparionItem =
+    sections
+        .flatMap(sec => Array.isArray(sec.items) ? sec.items : [])
+        .find(it => it && it.key === 'troparion-of-the-day') || null;
+                    const isFeast = troparionItem && troparionItem.resolvedAs === 'menaion-feast-troparion';
+
+                    if (isFeast) {
+                        const feastName = troparionItem.commemoration || troparionItem.label || 'the feast of the day';
+                        canonText =
+                            `FEAST — Canon: A qualifying Menaion feast (${feastName}) is appointed today. ` +
+                            'The canon appointed at Orthros is the feast canon from the Menaion, unless displaced ' +
+                            'by a higher-ranking seasonal canon. The feast Menaion canon corpus is not yet embedded ' +
+                            'in this path. The appointment is correct; the text is deferred.\n\n' +
+                            canonStructureNote;
+                        canonResolvedAs = 'orthros-feast-canon-rubric';
+                    } else if (isBrightWeek) {
                         canonText =
                             'BRIGHT WEEK — The Paschal Canon: During Bright Week the Paschal Canon ' +
                             '("It is the Day of Resurrection" — Canon of Pascha, composed by St. John ' +
@@ -3113,19 +3193,18 @@ function _resolveComplineFestalTheotokionRubric(officeKey, troparionItem, fallba
                             canonStructureNote + '\n\n' +
                             '(Full Lenten Canon texts are not yet embedded in this path.)';
                         canonResolvedAs = 'orthros-great-lent-canon-rubric';
-                    } else if (dayOfWeek === 0) {
+                     } else if (dayOfWeek === 0) {
                         // Sunday
                         const tone = toneResult && toneResult.tone ? toneResult.tone : null;
                         const toneNote = tone ? ` Current Octoechos tone: Tone ${tone}.` : '';
                         canonText =
-                            'SUNDAY — Resurrectional Canon: On Sundays the Canon is appointed from ' +
-                            'the Octoechos (Resurrectional Canon of the current tone), sometimes ' +
-                            'combined with the Canon of the Theotokos (Cross-Resurrection Canon) ' +
-                            'and the Menaion Canon if a feast is ranked appropriately.' + toneNote + '\n\n' +
+                            'On Sundays, the canon appointed at Orthros is the resurrectional canon from the ' +
+                            'Octoechos according to the tone of the week, unless displaced by a qualifying feast.' +
+                            toneNote + '\n\n' +
                             canonStructureNote + '\n\n' +
-                            '(Full Sunday Resurrectional Canon corpus for tones 1–8 is not yet ' +
+                            '(Full Sunday Resurrectional Canon corpus, Octoechos tones 1–8, is not yet ' +
                             'embedded in this path. Appointment and structure are correct.)';
-                        canonResolvedAs = 'orthros-sunday-canon-rubric';
+                        canonResolvedAs = 'orthros-sunday-resurrectional-canon-rubric';
                     } else {
                         // Ordinary weekday (Mon–Sat)
                         const WEEKDAY_NAMES = ['', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
