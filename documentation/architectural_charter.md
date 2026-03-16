@@ -154,3 +154,34 @@ Future profiles (for example Antiochian or Greek usages) will be implemented thr
 
 The office structure and resolver framework remain shared wherever possible.
 
+---
+
+## 10. Octoechos Tone Computation
+
+The Octoechos tone of the week is computed algorithmically from Pascha rather than stored by date.
+
+The governing rule is:
+
+- Tone 1 begins on Thomas Sunday.
+- The tone advances by one each week.
+- After Tone 8, the cycle returns to Tone 1.
+- Bright Week suspends the ordinary Octoechos weekly cycle.
+
+This means hymnographic corpora store texts by tone, while the calendar engine supplies the tone index for a given date.
+
+---
+
+## 11. Liturgical Education Layer
+
+The Universal Office is intended not only for devotional use but also for liturgical formation.
+
+Educational explanation is therefore a first-class architectural layer.
+
+Three explanatory depths should be supported:
+
+1. **Micro-explanation** — short tooltip or inline gloss answering “what is this?”
+2. **Structural explanation** — short expandable explanation answering “how does this fit into the office?”
+3. **Tradition explanation** — broader comparative explanation answering “how does this tradition work, and how does it differ from others?”
+
+Educational content must preserve tradition-specific logic and must not flatten distinctions between traditions for convenience.
+

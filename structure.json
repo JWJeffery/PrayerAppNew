@@ -777,6 +777,34 @@
             "Example: window.OCTOECHOS.orthros.praises.sunday.tones.",
             "Repetitive hymnographic items may be stored as compact string arrays and expanded into structured objects by the resolver at runtime."
           ]
+        },
+        {
+          "date": "2026-03-15",
+          "phase": "Horologion v6.1",
+          "title": "Octoechos Tone-of-Week Computation",
+          "type": "calendar-governance",
+          "status": "active",
+          "summary": "The Octoechos tone of the week is computed algorithmically from Pascha rather than stored by date in corpus files.",
+          "details": [
+            "The weekly tone cycle begins with Tone 1 on Thomas Sunday and advances by one each week, cycling 1–8.",
+            "Bright Week suspends the ordinary Octoechos weekly cycle.",
+            "Corpus files store hymnography by tone, not by civil date.",
+            "Seasonal and festal layers may override tone-governed hymnography, but they do not replace the anchor calculation."
+          ]
+        },
+        {
+          "date": "2026-03-15",
+          "phase": "Universal Office pedagogy governance",
+          "title": "Liturgical Education Layer",
+          "type": "product-governance",
+          "status": "active",
+          "summary": "The Universal Office is governed as both a devotional tool and a pedagogical tool. Educational explanation is a first-class architectural layer, not incidental UI ornament.",
+          "details": [
+            "Each prayer tradition should support educational explanation appropriate to its own structure and terminology.",
+            "Educational content should distinguish terminology, office structure, and tradition-specific practice.",
+            "The system should support layered explanation: micro-explanation, structural explanation, and tradition explanation.",
+            "Educational notes must clarify differences between traditions without flattening them."
+          ]
         }
       ]
     },
@@ -785,6 +813,13 @@
       "last_realigned": "2026-03-13"
     },
     "recent_logic_changes": [
+      {
+        "date": "2026-03-15",
+        "phase": "Horologion v6.1 — Orthros text-depth expansion entry point",
+        "file": "js/octoechos/orthros-praises-sunday.js + js/horologion-engine.js + structure.json",
+        "change": "Orthros Sunday Praises corpus entry point opened. Resolver now supports real Octoechos Sunday Praises text output through normalized namespace + compatibility bridge.",
+        "detail": "The v6.1 text-depth phase has formally begun at a bounded entry point: Orthros Sunday resurrectional Praises. Octoechos corpus data is now normalized under window.OCTOECHOS.orthros.praises.sunday.tones, with a compatibility bridge for the current resolver path. Policy C governance is active for Praises: major feasts (rank 1–2) suppress Sunday resurrectional Praises; lesser qualifying feasts do not. This marks the beginning of Orthros hymnographic text-depth expansion without reopening resolver architecture."
+      },
       {
         "date": "2026-03-14",
         "phase": "Horologion v5.8 — Orthros sessional hymn / canon discipline",
