@@ -3174,15 +3174,7 @@ const isMajorFeastForPraises =
     feastRank >= 1 &&
     feastRank <= 2;
 
-                    if (isFeast) {
-                        const feastName = troparionItem.commemoration || troparionItem.label || 'the feast of the day';
-                        sessText =
-                            `FEAST — Sessional Hymns: A qualifying Menaion feast (${feastName}) is appointed today. ` +
-                            'The sessional hymns (sedalia) following the kathismata are taken from the Menaion for ' +
-                            'this feast rather than from the ordinary Octoechos cycle. The feast Menaion sedalia ' +
-                            'corpus is not yet embedded in this path. The appointment is correct; the text is deferred.';
-                        sessResolvedAs = 'orthros-feast-sessional-hymns-rubric';
-                    } else if (isBrightWeek) {
+                    if (isBrightWeek) {
                         sessText =
                             'BRIGHT WEEK — Sessional Hymns: During Bright Week the ordinary Sessional ' +
                             'Hymns (Sedalia) are replaced by the Paschal Sessional Hymn: ' +
@@ -3206,7 +3198,7 @@ const isMajorFeastForPraises =
                             'sedalia cycle is not used on feria Lenten days. Full Lenten Sessional ' +
                             'Hymn texts are not yet embedded in this path.';
                         sessResolvedAs = 'orthros-great-lent-sessional-hymns-rubric';
-                     } else if (dayOfWeek === 0) {
+                                         } else if (dayOfWeek === 0 && !isMajorFeastForPraises) {
                         // Sunday — v6.1: resolve from corpus if available
                         const tone = toneResult && toneResult.tone ? toneResult.tone : null;
                         const corpusTones =
@@ -3235,7 +3227,7 @@ const isMajorFeastForPraises =
                                 ],
                                 resolvedAs: 'orthros-sunday-resurrectional-sessional-hymns-text'
                             };
-                            continue;
+                            continue; 
                         }
 
                         // Corpus not loaded or tone missing — honest rubric fallback
@@ -3243,7 +3235,7 @@ const isMajorFeastForPraises =
                         sessText =
                             'On Sundays, the sessional hymns following the kathismata are taken from the ' +
                             'resurrectional cycle of the Octoechos according to the tone of the week, ' +
-                            'unless displaced by a qualifying feast.' + toneNote + '\n\n' +
+                            'unless displaced by a major feast.' + toneNote + '\n\n' +
                             '(Sunday Resurrectional Sessional Hymn corpus not loaded or tone entry missing.)';
                         sessResolvedAs = 'orthros-sunday-resurrectional-sessional-hymns-rubric';
                     } else {
@@ -3303,10 +3295,7 @@ const isMajorFeastForPraises =
         .find(it => it && it.key === 'troparion-of-the-day') || null;
                     const isFeast = troparionItem && troparionItem.resolvedAs === 'menaion-feast-troparion';
 
-                    if (isFeast) {
-                        const feastName = troparionItem.commemoration || troparionItem.label || 'the feast of the day';
-                        canonText =
-                            `FEAST — Canon: A qualifying Menaion feast (${feastName}) is appointed today. ` +
+                    if (isBrightWeek) {
                             'The canon appointed at Orthros is the feast canon from the Menaion, unless displaced ' +
                             'by a higher-ranking seasonal canon. The feast Menaion canon corpus is not yet embedded ' +
                             'in this path. The appointment is correct; the text is deferred.\n\n' +
