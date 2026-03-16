@@ -749,7 +749,36 @@
         "path": "documentation/governance/architectural_charter.md",
         "version": "0.2",
         "status": "active"
-      }
+      },
+      "decisions": [
+        {
+          "date": "2026-03-15",
+          "phase": "Horologion v6.1",
+          "title": "Byzantine Tradition Profile Governance",
+          "type": "architectural-decision",
+          "status": "active",
+          "summary": "The Universal Office Horologion is governed as multi-tradition capable. The first fully implemented recension remains Slavic Byzantine, but the architecture is designed to support additional Byzantine tradition profiles (e.g. Antiochian, Greek) through profile-specific corpora and rubrical overlays.",
+          "details": [
+            "Office structure and resolver architecture remain common across traditions wherever possible.",
+            "Textual corpora such as Octoechos, Menaion, and other hymnographic collections may be tradition-profile specific.",
+            "Future tradition profiles should be implemented through data overlays rather than separate engines."
+          ]
+        },
+        {
+          "date": "2026-03-15",
+          "phase": "Horologion v6.1",
+          "title": "Octoechos Corpus Namespace Standard",
+          "type": "data-schema",
+          "status": "active",
+          "summary": "Octoechos hymnographic corpora are normalized under a single namespace keyed by office → family → case → tone.",
+          "details": [
+            "Octoechos data should live under window.OCTOECHOS.",
+            "Recommended access pattern: window.OCTOECHOS.<office>.<family>.<case>.tones.",
+            "Example: window.OCTOECHOS.orthros.praises.sunday.tones.",
+            "Repetitive hymnographic items may be stored as compact string arrays and expanded into structured objects by the resolver at runtime."
+          ]
+        }
+      ]
     },
     "documentation_manifest": {
       "status": "internal",
