@@ -162,6 +162,20 @@
       ]
     },
     {
+      "id": "exapostilarion",
+      "label": "Exapostilarion (Svetilen)",
+      "notes": "A short hymn illuminating the theme of the day, sung after the Canon. On Sundays the resurrectional Exapostilarion (Svetilen) of the current Octoechos tone. Variable by tone, feast, and season.",
+      "items": [
+        {
+          "type": "placeholder",
+          "key": "exapostilarion",
+          "label": "Exapostilarion (Svetilen)",
+          "status": "unresolved",
+          "note": "Variable: Sunday resurrectional Exapostilarion from the Octoechos by tone; festal or Theotokion Exapostilarion on qualifying feasts. Resolved dynamically by HorologionEngine."
+        }
+      ]
+    },
+    {
       "id": "praises",
       "label": "Praises (Ainoi) / Lauds",
       "notes": "Psalms 148–150 (LXX) with appended stichera from the Octoechos or Menaion. The psalms are fixed; the stichera are variable.",

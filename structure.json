@@ -604,7 +604,7 @@
     "roadmap_summary": {
       "completed": "Phases 6-8 (BCP, Ethiopian Sa'atat, Senkessar). v2.8.x: COE three-layer model, saints resolver boundary, hydration-race gating, tags[] schema migration, EO admin diagnostics. Horologion v1–v3.0: vespers skeleton through full slot resolution, Menaion annual corpus complete (all 12 months, 369/370 resolved), Small Compline baseline. v2.9.7: generic sidebar shell. Little Hours baseline live: First Hour (v3.1), Third Hour (v3.2), Sixth Hour (v3.3), Ninth Hour (v3.4). Engine layers v3.5–v4.4: feast-rank arbitration, Little Hours festal troparion override, Vespers festal stichera/aposticha override, Great Lent seasonal troparion layer for all Little Hours and Small Compline, office-specific fallback normalization, Little Hours Theotokion normalization/festal arbitration, Small Compline festal Theotokion arbitration. Season-aware feast qualification rule verified: ranks 1–4 outside Great Lent weekdays; ranks 1–2 only during Great Lent weekdays. Resolver integration audit complete and verified. Pascha boundary and tone suppression verified. Menaion integration verified at runtime across all offices. v5.0 — Triodion Great Lent weekday overlay: Triodion text resolution for Great Lent weekdays Weeks 1–6; overlay runs after feast arbitration; feast precedence preserved. v5.1 — Holy Week text overlay: troparion text for all 7 Holy Week days from data/triodion/holy-week/holy-week.json; structurally separate from Great Lent layer; stichera/aposticha/paremiae/theotokion remain as informed rubrics. v5.2 — Pentecostarion / Paschal-cycle overlay: Bright Week stichera and aposticha from data/pentecostarion/pentecostarion-bright-week.json; troparion already resolved; Thomas Sunday returns to ordinary resurrectional path. v5.3 — Menaion text-unavailable audit: corpus confirmed at 369/370; one intentional holdout (05-18 Venerable Peter of Caesarea in Cappadocia) remains; no broad unresolved batch remains. v5.4 — Horologion diagnostics and UI polish: diagnostics toggle in Horologion sidebar; _renderHorologionDiagnostics() wired into rubric, stichera, and text branches; off by default; surfaces resolvedAs, type, tone, and inferred layer for variable slots. v5.5 — Vespers kathisma full-text integration: ordinary weekday kathisma slots resolve to full Psalter text for kathismata 1,4,6,8,10,12; Great Lent guard returns great-lent-ordinary-cycle-inapplicable; Bright Week and Sunday Small Vespers return explicit omission rubrics. v5.6 — Orthros structural baseline: Orthros added as selectable office; fixed content live; god-is-the-lord / Alleluia path resolved across ordinary, Great Lent weekday, Holy Week, Bright Week; troparion delegates to existing seasonal/feast stack. v5.7 — Orthros kathisma and praises expansion: kathisma appointments and Praises stichera upgraded to explicit season-aware rubrics; Orthros 18 implemented / 2 placeholders. v5.8 — Orthros sessional hymn / canon discipline: sessional hymns and canon upgraded to season-aware structural rubric logic distinguishing ordinary weekday, Sunday, Great Lent weekday, Holy Week, and Bright Week; feast inheritance intact; Orthros 20 implemented / 0 placeholder slots. Orthros is structurally complete at the rubrical level as of v5.8. v5.9 — Orthros Sunday resurrectional / Polyeleos discipline: completed Sunday-specific structural layer; deepened resurrectional and Polyeleos-aware branching beyond generic weekday structure. v6.0 — Orthros festal / major-feast discipline: completed feast-aware handling for canon, Praises, sessional hymns, and Matins divergence; established stable festal framework. v6.1 — Orthros text-depth expansion (ACTIVE): bounded entry point through Orthros Sunday resurrectional Praises implemented; ongoing corpus-build phase for hymnographic text families.",
       "next_required": "v6.1 — Orthros text-depth expansion (ACTIVE): the bounded entry point through Orthros Sunday resurrectional Praises is implemented. Remaining work includes exapostilarion/svetilen, fuller Sunday sessional hymn text, and canon corpus expansion. This phase is now an ongoing corpus-build task rather than a structural engine-opening task. v6.2 — next office-family expansion: after Orthros text-depth is sufficiently mature, expand into the next office family (likely Midnight Office or another adjacent daily-cycle office). EO app integration remains an ongoing parallel track: add EO mode selection to the main app and load js/calendar-eastern-orthodox.js on the production path.",
-      "next_planned": "After v6.1 text-depth is sufficiently mature: full office-family expansion (v6.2). Menaion-tone Theotokion conflict resolution (when Menaion troparion tone differs from Octoechos weekly tone, dismissal Theotokion should follow Menaion tone — currently uses Octoechos baseline tone as a stated limitation). COE-IIC — optional Layer 2 expansion: major Hudra fixed feasts.",
+      "next_planned": "After v6.1 text-depth is sufficiently mature: full office-family expansion (v6.2). Menaion-tone Theotokion conflict resolution (when Menaion troparion tone differs from Octoechos weekly tone, dismissal Theotokion should follow Menaion tone — currently uses Octoechos baseline tone as a stated limitation). COE-IIC — optional Layer 2 expansion: major Hudra fixed feasts. Future Byzantine tradition profiles (Slavic, Greek, Antiochian) should be implemented through overlay-first corpus design after the current v6.1 family build matures.",
       "future": "Phase 6.7 — Performance polish (timezone warning, LRU seasonal cache, prefetch, service worker); Phase 7.5 — Coptic Agpeya as standalone tradition entry; Phase 9.0 — Mobile app; Phase 9.1 — Cross-Tradition Search (Comparative scripture view across AR, ET, and SY canons); COE-IIC — Optional Layer 2 expansion: major Hudra fixed feasts (Denha/Epiphany, Sleeba/Exaltation, Annunciation, All Saints)"
     },
     "admin": {
@@ -747,6 +747,7 @@
     },
     "governance": {
       "state_model_note": "Governance decisions record durable architectural commitments. recent_logic_changes records implementation history. roadmap/todo entries describe remaining and active work and may lag until explicitly updated.",
+      "octoechos_overlay_note": "Preferred future namespace model: window.OCTOECHOS.base.<office>.<family>.<case>.tones with optional tradition overlays under window.OCTOECHOS.overlays.<profile>.",
       "architectural_charter": {
         "path": "documentation/governance/architectural_charter.md",
         "version": "0.2",
@@ -807,6 +808,21 @@
             "The system should support layered explanation: micro-explanation, structural explanation, and tradition explanation.",
             "Educational notes must clarify differences between traditions without flattening them."
           ]
+        },
+        {
+          "date": "2026-03-15",
+          "phase": "Horologion v6.1",
+          "title": "Octoechos Base Corpus + Tradition Overlay Model",
+          "type": "data-architecture",
+          "status": "active",
+          "summary": "Octoechos hymnographic corpora are to be governed by a shared base corpus with tradition-profile overlays rather than duplicated full corpora wherever textual divergence is limited.",
+          "details": [
+            "Shared Byzantine material should live in a base corpus namespace.",
+            "Tradition-specific differences (for example Slavic, Greek, Antiochian) should be represented as overlays whenever possible.",
+            "Resolver logic should merge a selected tradition overlay onto the shared base corpus at runtime.",
+            "Full separate family corpora should be used only when divergence is too large for overlay-based maintenance to remain coherent.",
+            "This governance rule applies especially to Orthros hymnographic families such as Praises, Exapostilarion, Sessional Hymns, and Canon."
+          ]
         }
       ]
     },
@@ -815,6 +831,13 @@
       "last_realigned": "2026-03-13"
     },
     "recent_logic_changes": [
+      {
+        "date": "2026-03-15",
+        "phase": "Horologion v6.1 — Octoechos overlay architecture governance",
+        "file": "structure.json",
+        "change": "Governance now defines Octoechos corpus growth through a shared base corpus plus tradition-profile overlays rather than duplicated full corpora.",
+        "detail": "This is a forward architectural decision, not an immediate namespace rewrite. Current live corpora may remain in the provisional namespace until a clean migration point is reached. Future Slavic, Greek, Antiochian, and other Byzantine profiles should be implemented through overlay-first corpus design wherever possible."
+      },
       {
         "date": "2026-03-15",
         "phase": "Horologion v6.1 — Orthros text-depth expansion entry point",
