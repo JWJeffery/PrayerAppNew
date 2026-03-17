@@ -3279,6 +3279,7 @@ const isMajorFeastForPraises =
                 if (item.key === 'canon') {
                     let canonText;
                     let canonResolvedAs;
+                    let canonTone = null;
 
                     // Canon structure note (used in several cases below)
                     const canonStructureNote =
@@ -3340,16 +3341,58 @@ const isMajorFeastForPraises =
                             '(Full Lenten Canon texts are not yet embedded in this path.)';
                         canonResolvedAs = 'orthros-great-lent-canon-rubric';
                      } else if (dayOfWeek === 0) {
-                        // Sunday
+                        // Sunday — v6.1: resolve from corpus if available
                         const tone = toneResult && toneResult.tone ? toneResult.tone : null;
+                        canonTone = tone;
+                        const canonCorpus =
+                            typeof window !== 'undefined' &&
+                            window.OCTOECHOS &&
+                            window.OCTOECHOS.orthros &&
+                            window.OCTOECHOS.orthros.canon &&
+                            window.OCTOECHOS.orthros.canon.sunday &&
+                            window.OCTOECHOS.orthros.canon.sunday.tones
+                                ? window.OCTOECHOS.orthros.canon.sunday.tones
+                                : null;
+                        const toneData = canonCorpus && tone
+                            ? (canonCorpus[tone] || canonCorpus[String(tone)] || null)
+                            : null;
+
+                        if (toneData && toneData.odes) {
+                            const odeItems = Object.entries(toneData.odes).map(([odeNum, ode]) => ({
+                                type:  'hymn-group',
+                                key:   `ode-${odeNum}`,
+                                label: `Ode ${odeNum}`,
+                                items: [
+                                    { type: 'text', key: 'irmos',       label: 'Irmos',       text: ode.irmos      || '' },
+                                    ...(ode.troparia || []).map((t, idx) => ({
+                                        type: 'text', key: `troparion-${idx + 1}`, label: `Troparion ${idx + 1}`, text: t
+                                    })),
+                                    { type: 'text', key: 'theotokion',  label: 'Theotokion',  text: ode.theotokion || '' }
+                                ]
+                            }));
+
+                            section.items[i] = {
+                                type:       'hymn-group',
+                                key:        'canon',
+                                label:      'Canon',
+                                source:     'Octoechos',
+                                tone:       tone,
+                                resolvedAs: 'orthros-sunday-resurrectional-canon-text',
+                                family:     'sunday-resurrectional-canon',
+                                items:      odeItems,
+                                metadata:   toneData.metadata || { ode2Omitted: true, provisional: true }
+                            };
+                            continue;
+                        }
+
+                        // Corpus not loaded or tone missing — honest rubric fallback
                         const toneNote = tone ? ` Current Octoechos tone: Tone ${tone}.` : '';
                         canonText =
                             'On Sundays, the canon appointed at Orthros is the resurrectional canon from the ' +
                             'Octoechos according to the tone of the week, unless displaced by a qualifying feast.' +
                             toneNote + '\n\n' +
                             canonStructureNote + '\n\n' +
-                            '(Full Sunday Resurrectional Canon corpus, Octoechos tones 1–8, is not yet ' +
-                            'embedded in this path. Appointment and structure are correct.)';
+                            '(Sunday Resurrectional Canon corpus not loaded or tone entry missing.)';
                         canonResolvedAs = 'orthros-sunday-resurrectional-canon-rubric';
                     } else {
                         // Ordinary weekday (Mon–Sat)
@@ -3384,6 +3427,7 @@ const isMajorFeastForPraises =
                         key:        'canon',
                         label:      'The Canon',
                         text:       canonText,
+                        tone:       canonTone,
                         resolvedAs: canonResolvedAs
                     };
                     continue;
