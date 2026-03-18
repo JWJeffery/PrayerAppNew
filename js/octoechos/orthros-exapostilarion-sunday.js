@@ -1,12 +1,16 @@
-/* Orthros — Sunday Resurrectional Exapostilarion / Svetilen (Octoechos)
+/* Orthros — Sunday Resurrectional Exapostilarion / Svetilen
  *
  * Namespace : window.OCTOECHOS.orthros.exapostilarion.sunday.tones
- * Status    : Schema + placeholder corpus scaffold only.
- *             Texts below are placeholder strings pending source confirmation
- *             against the Slavic Octoechos (Jordanville / Hapgood tradition).
- * Integration: NOT YET wired into _resolveOrthrosSlots().
- *              The Orthros skeleton has no exapostilarion slot yet.
- *              Pipeline integration belongs to a later v6.1 step.
+ * Status    : SCHEMA ERROR — NOT USED BY RESOLVER.
+ *             The Sunday Resurrectional Exapostilarion follows the eleven-part
+ *             Eothinon cycle (keyed to the Resurrectional Matins Gospel), not
+ *             the eight-tone Octoechos cycle. This tone-keyed structure is
+ *             incorrect for this slot. The engine resolver no longer reads from
+ *             this namespace. This file is retained for reference only pending
+ *             a proper Eothinon implementation with gospel-number tracking.
+ * Integration: Deliberately NOT read by _resolveOrthrosSlots() as of v6.1
+ *              schema correction. The exapostilarion slot emits an explicit
+ *              deferral rubric on all paths.
  */
 
 window.OCTOECHOS = window.OCTOECHOS || {};

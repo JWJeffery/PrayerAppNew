@@ -3080,75 +3080,44 @@ function _resolveComplineFestalTheotokionRubric(officeKey, troparionItem, fallba
                     continue;
                 }
 
-                 // ── v6.1: exapostilarion — Sunday resurrectional path ─────
+                 // ── v6.1 corrected: exapostilarion — honest deferral ─────
+                 // Schema correction: The Sunday Resurrectional Exapostilarion
+                 // follows the eleven-part Eothinon/Matins-Gospel cycle, not the
+                 // eight-tone Octoechos cycle. The engine has no gospel-number
+                 // tracking. The tone-keyed corpus in orthros-exapostilarion-sunday.js
+                 // is a schema error and is not read here. All Sunday paths emit an
+                 // explicit deferral. Gospel-cycle implementation is deferred.
                 if (item.key === 'exapostilarion') {
-                    const corpusTones =
-                        typeof window !== 'undefined' &&
-                        window.OCTOECHOS &&
-                        window.OCTOECHOS.orthros &&
-                        window.OCTOECHOS.orthros.exapostilarion &&
-                        window.OCTOECHOS.orthros.exapostilarion.sunday &&
-                        window.OCTOECHOS.orthros.exapostilarion.sunday.tones
-                            ? window.OCTOECHOS.orthros.exapostilarion.sunday.tones
-                            : null;
-
                     const tone = toneResult && toneResult.tone ? toneResult.tone : null;
-                    const resolvedText = corpusTones && tone
-                        ? (corpusTones[String(tone)] || corpusTones[tone] || null)
-                        : null;
+                    const toneNote = tone ? ` Octoechos tone: ${tone}.` : '';
+                    let deferralText;
+                    let deferralResolvedAs;
 
-                    const isSundayResurrectional =
-                        dayOfWeek === 0 &&
-                        !isBrightWeek &&
-                        !isHolyWeek &&
-                        !isGreatLentWeekday &&
-                        tone !== null &&
-                        resolvedText !== null;
-
-                    if (isSundayResurrectional) {
-                        section.items[i] = {
-                            type:       'hymn',
-                            key:        'exapostilarion',
-                            label:      'Exapostilarion (Svetilen)',
-                            source:     'Octoechos',
-                            tone:       tone,
-                            text:       resolvedText,
-                            resolvedAs: 'orthros-sunday-resurrectional-exapostilarion'
-                        };
+                    if (isBrightWeek) {
+                        deferralText       = 'BRIGHT WEEK — Exapostilarion: The Paschal Exapostilarion ("Holy is the Lord our God") is appointed. Full Bright Week Exapostilarion text is not yet embedded in this path.';
+                        deferralResolvedAs = 'orthros-bright-week-exapostilarion-rubric';
+                    } else if (isHolyWeek) {
+                        deferralText       = 'HOLY WEEK — Exapostilarion: The Exapostilarion is appointed from the Triodion for each specific Holy Week day. Full Holy Week Exapostilarion text is not yet embedded in this path.';
+                        deferralResolvedAs = 'orthros-holy-week-exapostilarion-rubric';
+                    } else if (isGreatLentWeekday) {
+                        deferralText       = 'GREAT LENT (Weekday) — Exapostilarion: On Great Lent weekdays the Exapostilarion is not used in the ordinary sense; the feria Alleluia service does not include a Svetilen. The service proceeds without it.';
+                        deferralResolvedAs = 'orthros-great-lent-exapostilarion-omitted';
+                    } else if (dayOfWeek === 0) {
+                        deferralText       = 'SUNDAY — Exapostilarion: The Sunday Resurrectional Exapostilarion follows the eleven-part Eothinon cycle (keyed to the Resurrectional Matins Gospel), not the eight-tone Octoechos cycle. Gospel-number tracking is not yet implemented in this engine. Not resolved.' + toneNote;
+                        deferralResolvedAs = 'orthros-sunday-exapostilarion-eothina-not-implemented';
                     } else {
-                        const toneNote = tone ? ` Octoechos tone: ${tone}.` : '';
-                        let deferralText;
-                        let deferralResolvedAs;
-
-                        if (isBrightWeek) {
-                            deferralText       = 'BRIGHT WEEK — Exapostilarion: The Paschal Exapostilarion ("Holy is the Lord our God") is appointed. Full Bright Week Exapostilarion text is not yet embedded in this path.';
-                            deferralResolvedAs = 'orthros-bright-week-exapostilarion-rubric';
-                        } else if (isHolyWeek) {
-                            deferralText       = 'HOLY WEEK — Exapostilarion: The Exapostilarion is appointed from the Triodion for each specific Holy Week day. Full Holy Week Exapostilarion text is not yet embedded in this path.';
-                            deferralResolvedAs = 'orthros-holy-week-exapostilarion-rubric';
-                        } else if (isGreatLentWeekday) {
-                            deferralText       = 'GREAT LENT (Weekday) — Exapostilarion: On Great Lent weekdays the Exapostilarion is not used in the ordinary sense; the feria Alleluia service does not include a Svetilen. The service proceeds without it.';
-                            deferralResolvedAs = 'orthros-great-lent-exapostilarion-omitted';
-                        } else if (dayOfWeek === 0 && !corpusTones) {
-                            deferralText       = 'SUNDAY — Exapostilarion: Sunday resurrectional Exapostilarion corpus file not loaded.' + toneNote;
-                            deferralResolvedAs = 'orthros-exapostilarion-corpus-unavailable';
-                        } else if (dayOfWeek === 0 && !resolvedText) {
-                            deferralText       = `SUNDAY — Exapostilarion: No corpus entry found for Tone ${tone}. Text pending source confirmation.`;
-                            deferralResolvedAs = 'orthros-sunday-exapostilarion-tone-missing';
-                        } else {
-                            // Ordinary weekday
-                            deferralText       = 'ORDINARY WEEKDAY — Exapostilarion: The weekday Exapostilarion corpus is not yet implemented. On ferial days the Exapostilarion is appointed from the Octoechos according to the tone and weekday theme.' + toneNote;
-                            deferralResolvedAs = 'orthros-ordinary-weekday-exapostilarion-rubric';
-                        }
-
-                        section.items[i] = {
-                            type:       'rubric',
-                            key:        'exapostilarion',
-                            label:      'Exapostilarion (Svetilen)',
-                            text:       deferralText,
-                            resolvedAs: deferralResolvedAs
-                        };
+                        // Ordinary weekday
+                        deferralText       = 'ORDINARY WEEKDAY — Exapostilarion: The weekday Exapostilarion corpus is not yet implemented. On ferial days the Exapostilarion is appointed from the Octoechos according to the tone and weekday theme.' + toneNote;
+                        deferralResolvedAs = 'orthros-ordinary-weekday-exapostilarion-rubric';
                     }
+
+                    section.items[i] = {
+                        type:       'rubric',
+                        key:        'exapostilarion',
+                        label:      'Exapostilarion (Svetilen)',
+                        text:       deferralText,
+                        resolvedAs: deferralResolvedAs
+                    };
                     continue;
                 }
 
