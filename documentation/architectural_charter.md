@@ -1,9 +1,16 @@
 # Architectural Charter — Universal Office
-**Version:** 0.2  
+**Version:** 0.3  
 **Status:** Active  
 **Scope:** Repository architecture, data modeling, calendar engines, saints/commemoration system, merge governance
 
 ## Changelog
+
+- **0.3 (2026-03-19)** — Horologion engine boundary formalization:
+  - Added `## 6A. Horologion Engine Boundary`.
+  - Declared `js/horologion-engine.js` the deterministic orchestration and arbitration layer for Horologion offices.
+  - Prohibited direct in-engine growth of large hymnographic corpora, reusable cycle systems, and duplicated resolver trees.
+  - Required extraction of new global or reusable liturgical systems into helper modules and/or corpus files.
+  - Formalized corpus-first expansion pattern for Orthros hymnographic families.
 
 - **0.2 (2026-03-03)** — Documentation realignment and contracts formalization:
   - Declared `structure.json` as an operational governance ledger (consumed by admin dashboard) and documented its contract.
@@ -115,6 +122,96 @@ Architectural approval is required for:
 
 ---
 
+## 6A. Horologion Engine Boundary
+
+### 6A.1 Definition
+`js/horologion-engine.js` is the deterministic orchestration and arbitration layer for Horologion offices.
+
+It may own:
+- office resolution
+- `item.key` slot dispatch
+- season / feast / tone arbitration
+- `resolvedAs` classification
+- normalized payload construction
+- small helper logic tightly coupled to slot resolution
+
+It is **not** a primary corpus layer and must not become one.
+
+### 6A.2 Allowed In-Engine Responsibilities
+The following may remain in `js/horologion-engine.js`:
+- bounded slot-specific resolver branches
+- localized seasonal / festal / tonal gates
+- output shaping and diagnostics
+- small helper functions that are tightly coupled to the engine and not independently reusable
+
+These are considered acceptable bounded resolver patches.
+
+### 6A.3 Prohibited Growth Patterns
+The following must not be added directly to `js/horologion-engine.js` except by explicit architectural exception:
+- large hymnographic corpora
+- long inlined tone-by-tone or day-by-day text maps
+- new standalone liturgical cycle systems
+- duplicated arbitration logic across multiple slot families
+- reusable logic that could be shared by a helper or module
+- logic that is naturally corpus-owned but embedded inline for convenience
+
+If introduced inline, this constitutes architectural drift.
+
+### 6A.4 Mandatory Extraction Triggers
+Extraction is required when a proposed change introduces:
+- a new cycle or indexing system
+- a reusable liturgical subsystem
+- repeated tone/day/theme selection logic across branches
+- more than one long conditional tree for the same slot family
+- arbitration logic spanning multiple offices or multiple hymnographic families
+- enough new logic that the implementation is no longer naturally understandable as a local slot patch
+
+In such cases, the new logic must be implemented as:
+- a dedicated helper module, and/or
+- a dedicated corpus/data file
+
+The engine must call these systems, not absorb them wholesale.
+
+### 6A.5 Preferred Horologion Expansion Pattern
+Horologion expansion must prefer this order:
+
+1. Define or extend corpus in dedicated data/corpus files.
+2. Add helper/module if a new isolated system is introduced.
+3. Add a minimal engine hook to dispatch, arbitrate, and shape output.
+
+The engine orchestrates corpora and helpers. It does not store or own them wholesale.
+
+### 6A.6 Orthros-Specific Application
+This rule applies especially to Orthros hymnographic expansion.
+
+Families such as:
+- Praises
+- Exapostilarion
+- Sessional Hymns
+- Canon
+
+must grow through corpus-first implementations with bounded resolver hooks.
+
+Major systems, especially those requiring separate cycle computation or multi-family arbitration, must not be embedded wholesale into `js/horologion-engine.js`.
+
+### 6A.7 Stability Principle
+Engine growth is acceptable when:
+- the change is bounded to a single slot family
+- the logic remains locally understandable
+- no reusable subsystem is embedded inline
+- verification remains straightforward
+
+Engine growth is not acceptable when it materially increases:
+- cross-branch coupling
+- duplicated logic
+- stale-branch risk
+- hidden fallback behavior
+- regression difficulty
+
+In such cases, extraction is required regardless of implementation convenience.
+
+---
+
 ## 7. Amendments
 
 This charter may be revised only through:
@@ -184,4 +281,3 @@ Three explanatory depths should be supported:
 3. **Tradition explanation** — broader comparative explanation answering “how does this tradition work, and how does it differ from others?”
 
 Educational content must preserve tradition-specific logic and must not flatten distinctions between traditions for convenience.
-

@@ -397,10 +397,9 @@ const HorologionEngine = (() => {
         friday:    { theme: 'Cross and Theotokos (penitential)',     theme_short: 'the Holy Cross',         fasting_day: true  }
     };
 
-    // ── v1.3: Pascha cache ─────────────────────────────────────────────────
-    // Keyed by Gregorian year string. Avoids recomputing Pascha repeatedly
-    // for the same year within a session.
-    const _paschaCache = {};
+    // ── v1.3: Pascha authority ─────────────────────────────────────────────
+    // Delegated to window.ByzantinePaschalion (js/byzantine-paschalion.js).
+    // Cache is owned there; no local cache needed.
 
 
     // ──────────────────────────────────────────────────────────────────────
@@ -1152,58 +1151,16 @@ function _normalizeUnavailableTroparionFallbackForOffice(officeKey, resolved, da
         return _normalizeOrdinaryTroparionFallbackForOffice(officeKey, resolved, dayOfWeek);
     }
     // ──────────────────────────────────────────────────────────────────────
-    // v1.3: _computeOrthodoxPascha(gregorianYear)
-    //
-    // BASELINE TONE CALC — Meeus Julian Paschalion.
-    //
-    // Returns Orthodox Pascha as a plain JS Date (local midnight).
-    //
-    // This is a self-contained copy of the same algorithm in
-    // js/calendar-eastern-orthodox.js. It is duplicated here because
-    // calendar-eastern-orthodox.js is NOT loaded on the main app path
-    // (it is admin-only as of v1.3). When/if calendar-eastern-orthodox.js
-    // is promoted to the main path, this function should be replaced with
-    // a delegation call to EasternOrthodoxCalendar.computeOrthodoxPascha().
-    //
-    // The Julian-to-Gregorian offset is 13 days for the 21st century and
-    // most of the 20th. This function uses a static offset of 13, which is
-    // correct for all dates from 1900 through 2099 — the operational range
-    // of this application.
     // ──────────────────────────────────────────────────────────────────────
-    function _computeOrthodoxPascha(gregorianYear) {
-        const y = gregorianYear;
-        const a = y % 4;
-        const b = y % 7;
-        const c = y % 19;
-        const d = (19 * c + 15) % 30;
-        const e = (2 * a + 4 * b - d + 34) % 7;
-        const f = Math.floor((d + e + 114) / 31); // 3 = March, 4 = April
-        const g = ((d + e + 114) % 31) + 1;
-
-        // Julian date (f, g) → Gregorian: add 13 days (correct 1900–2099)
-        const JULIAN_TO_GREGORIAN_OFFSET_DAYS = 13;
-        // Convert Julian date to a JS Date via a neutral calculation:
-        // JS Date constructor with year/month/day handles overflow automatically.
-        // Month index: f=3 → month 2 (0-based March), f=4 → month 3 (0-based April).
-        const julianDay   = new Date(y, f - 1, g);
-        const gregMs      = julianDay.getTime() + JULIAN_TO_GREGORIAN_OFFSET_DAYS * 86400000;
-        const raw         = new Date(gregMs);
-        // Return local midnight (no time component)
-        return new Date(raw.getFullYear(), raw.getMonth(), raw.getDate());
-    }
-
-
-    // ──────────────────────────────────────────────────────────────────────
-    // v1.3: _getOrthodoxPascha(gregorianYear)
+    // v1.3 → v1.x: _getOrthodoxPascha(gregorianYear)
     //
-    // Cached wrapper around _computeOrthodoxPascha().
+    // Formerly a self-contained Meeus Julian Paschalion implementation.
+    // Now delegated to window.ByzantinePaschalion (js/byzantine-paschalion.js),
+    // which is the single source of truth for Orthodox Pascha computation.
+    // Cache is owned by ByzantinePaschalion; no local _paschaCache needed.
     // ──────────────────────────────────────────────────────────────────────
     function _getOrthodoxPascha(gregorianYear) {
-        const key = String(gregorianYear);
-        if (!_paschaCache[key]) {
-            _paschaCache[key] = _computeOrthodoxPascha(gregorianYear);
-        }
-        return _paschaCache[key];
+        return window.ByzantinePaschalion.getOrthodoxPascha(gregorianYear);
     }
 
 
@@ -3106,8 +3063,10 @@ function _resolveComplineFestalTheotokionRubric(officeKey, troparionItem, fallba
                         deferralText       = 'SUNDAY — Exapostilarion: The Sunday Resurrectional Exapostilarion follows the eleven-part Eothinon cycle (keyed to the Resurrectional Matins Gospel), not the eight-tone Octoechos cycle. Gospel-number tracking is not yet implemented in this engine. Not resolved.' + toneNote;
                         deferralResolvedAs = 'orthros-sunday-exapostilarion-eothina-not-implemented';
                     } else {
-                        // Ordinary weekday
-                        deferralText       = 'ORDINARY WEEKDAY — Exapostilarion: The weekday Exapostilarion corpus is not yet implemented. On ferial days the Exapostilarion is appointed from the Octoechos according to the tone and weekday theme.' + toneNote;
+                        // Ordinary weekday — prefix with actual day name
+                        const _dayNames = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+                        const _dayLabel = (_dayNames[dayOfWeek] || 'WEEKDAY').toUpperCase();
+                        deferralText       = _dayLabel + ' — Exapostilarion: The weekday Exapostilarion corpus is not yet implemented. On ferial days the Exapostilarion is appointed from the Octoechos according to the tone and weekday theme.' + toneNote;
                         deferralResolvedAs = 'orthros-ordinary-weekday-exapostilarion-rubric';
                     }
 
