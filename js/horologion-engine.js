@@ -3006,7 +3006,7 @@ function _resolveComplineFestalTheotokionRubric(officeKey, troparionItem, fallba
                             'embedded in this path. The appointment is correct; the text is deferred.)';
                         sticheraResolvedAs = 'orthros-sunday-resurrectional-praises-rubric';
                     } else {
-                        // Ordinary weekday (Mon–Sat)
+                        // Ordinary weekday (Mon–Sat) — v6.3: probe corpus before rubric
                         const WEEKDAY_NAMES = ['', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
                         const WEEKDAY_THEMES = {
                             1: 'the Bodiless Powers (Angels)',
@@ -3016,8 +3016,52 @@ function _resolveComplineFestalTheotokionRubric(officeKey, troparionItem, fallba
                             5: 'the Holy Cross and the Theotokos (penitential)',
                             6: 'All Saints and the Departed'
                         };
+
+                        const tone = toneResult && toneResult.tone ? toneResult.tone : null;
                         const dayName = WEEKDAY_NAMES[dayOfWeek] || 'this weekday';
                         const theme   = WEEKDAY_THEMES[dayOfWeek] || 'the day\'s theme';
+
+                        // Corpus probe — window.OCTOECHOS.orthros.praisesStichera.weekday.tones[tone][dayOfWeek]
+                        const wdPraisesCorpus =
+                            typeof window !== 'undefined' &&
+                            window.OCTOECHOS &&
+                            window.OCTOECHOS.orthros &&
+                            window.OCTOECHOS.orthros.praisesStichera &&
+                            window.OCTOECHOS.orthros.praisesStichera.weekday &&
+                            window.OCTOECHOS.orthros.praisesStichera.weekday.tones
+                                ? window.OCTOECHOS.orthros.praisesStichera.weekday.tones
+                                : null;
+
+                        const wdPraisesToneBlock = wdPraisesCorpus && tone
+                            ? (wdPraisesCorpus[tone] || wdPraisesCorpus[String(tone)] || null)
+                            : null;
+
+                        const wdPraisesEntry = wdPraisesToneBlock && dayOfWeek
+                            ? (wdPraisesToneBlock[dayOfWeek] || wdPraisesToneBlock[String(dayOfWeek)] || null)
+                            : null;
+
+                        // Future-ready structured output:
+                        // only fire when a real transcribed array exists.
+                        if (Array.isArray(wdPraisesEntry) && wdPraisesEntry.length > 0) {
+                            section.items[i] = {
+                                type:       'stichera',
+                                key:        'praises-stichera',
+                                label:      'Stichera at the Praises',
+                                items:      wdPraisesEntry.map((entry, idx) => ({
+                                    type:      'text',
+                                    sticheron: entry && entry.sticheron ? entry.sticheron : idx + 1,
+                                    text:      entry && entry.text ? entry.text : ''
+                                })),
+                                source:     'Octoechos',
+                                tone:       tone,
+                                day:        dayOfWeek,
+                                family:     'weekday-praises-stichera',
+                                resolvedAs: 'orthros-ordinary-weekday-praises-text'
+                            };
+                            continue;
+                        }
+
+                        // Null, missing key, or corpus absent — honest rubric fallback
                         sticheraText =
                             `ORDINARY WEEKDAY (${dayName}) — Praises Stichera: On ordinary ferial days ` +
                             `the Praises (Psalms 148–150) are read without appended stichera, and the service ` +
@@ -3025,8 +3069,9 @@ function _resolveComplineFestalTheotokionRubric(officeKey, troparionItem, fallba
                             `for ${dayName} is ${theme}.\n\n` +
                             `(If a Menaion commemoration of sufficient rank is appointed, stichera at the ` +
                             `Praises would be drawn from the Menaion. This festal override is not yet implemented.)`;
-                        sticheraResolvedAs = 'orthros-ordinary-weekday-praises-stichera-rubric';
+                                                sticheraResolvedAs = 'orthros-ordinary-weekday-praises-stichera-rubric';
                     }
+
                     section.items[i] = {
                         type:       'rubric',
                         key:        'praises-stichera',
@@ -3465,7 +3510,7 @@ const isMajorFeastForPraises =
                             '(Sunday Resurrectional Canon corpus not loaded or tone entry missing.)';
                         canonResolvedAs = 'orthros-sunday-resurrectional-canon-rubric';
                     } else {
-                        // Ordinary weekday (Mon–Sat)
+                        // Ordinary weekday (Mon–Sat) — v6.2: probe corpus before rubric
                         const WEEKDAY_NAMES = ['', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
                         const WEEKDAY_THEMES = {
                             1: 'the Bodiless Powers (Angels)',
@@ -3475,9 +3520,77 @@ const isMajorFeastForPraises =
                             5: 'the Holy Cross and the Theotokos (penitential)',
                             6: 'All Saints and the Departed'
                         };
+
                         const tone    = toneResult && toneResult.tone ? toneResult.tone : null;
                         const dayName = WEEKDAY_NAMES[dayOfWeek] || 'this weekday';
                         const theme   = WEEKDAY_THEMES[dayOfWeek] || 'the day\'s theme';
+                        canonTone = tone;
+
+                        // Corpus probe — window.OCTOECHOS.orthros.canon.weekday.tones[tone][dayOfWeek]
+                        const wdCanonCorpus =
+                            typeof window !== 'undefined' &&
+                            window.OCTOECHOS &&
+                            window.OCTOECHOS.orthros &&
+                            window.OCTOECHOS.orthros.canon &&
+                            window.OCTOECHOS.orthros.canon.weekday &&
+                            window.OCTOECHOS.orthros.canon.weekday.tones
+                                ? window.OCTOECHOS.orthros.canon.weekday.tones
+                                : null;
+
+                        const wdCanonToneBlock = wdCanonCorpus && tone
+                            ? (wdCanonCorpus[tone] || wdCanonCorpus[String(tone)] || null)
+                            : null;
+
+                        const wdCanonEntry = wdCanonToneBlock && dayOfWeek
+                            ? (wdCanonToneBlock[dayOfWeek] || wdCanonToneBlock[String(dayOfWeek)] || null)
+                            : null;
+
+                        // Future-ready structured path:
+                        // only fire when a real transcribed object exists.
+                        if (wdCanonEntry && wdCanonEntry.odes) {
+                            const odeItems = Object.entries(wdCanonEntry.odes).map(([odeNum, ode]) => ({
+                                type:  'hymn-group',
+                                key:   `ode-${odeNum}`,
+                                label: `Ode ${odeNum}`,
+                                items: [
+                                    { type: 'text', key: 'irmos', label: 'Irmos', text: ode.irmos || '' },
+                                    ...(ode.troparia || []).map((t, idx) => ({
+                                        type: 'text',
+                                        key: `troparion-${idx + 1}`,
+                                        label: `Troparion ${idx + 1}`,
+                                        text: t
+                                    })),
+                                    ...(ode.menaionTroparia || []).map((t, idx) => ({
+                                        type: 'text',
+                                        key: `menaion-troparion-${idx + 1}`,
+                                        label: `Menaion Troparion ${idx + 1}`,
+                                        text: t
+                                    })),
+                                    ...(ode.theotokion ? [{
+                                        type: 'text',
+                                        key: 'theotokion',
+                                        label: 'Theotokion',
+                                        text: ode.theotokion
+                                    }] : [])
+                                ]
+                            }));
+
+                            section.items[i] = {
+                                type:       'hymn-group',
+                                key:        'canon',
+                                label:      'The Canon',
+                                source:     'Octoechos',
+                                family:     'weekday-canon',
+                                tone:       tone,
+                                day:        dayOfWeek,
+                                metadata:   wdCanonEntry.metadata || { provisional: true },
+                                items:      odeItems,
+                                resolvedAs: 'orthros-ordinary-weekday-canon-text'
+                            };
+                            continue;
+                        }
+
+                        // Null, missing key, or corpus absent — honest rubric fallback
                         const toneNote = tone ? ` Tone ${tone},` : '';
                         canonText =
                             `ORDINARY WEEKDAY (${dayName}) — Canon: The Canon is appointed from the ` +
