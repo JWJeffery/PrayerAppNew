@@ -1,23 +1,23 @@
 /* Orthros — Weekday Praises Stichera (Octoechos)
  *
- * Namespace : window.OCTOECHOS.orthros.praisesStichera.weekday.tones[tone][dayOfWeek]
+ * Namespace : window.OCTOECHOS.orthros.praises.weekday.tones[tone][dayOfWeek]
  * dayOfWeek : JS Date.getDay() — 1=Monday … 6=Saturday (0=Sunday not used here)
  * Schema    : each slot is either null (untranscribed) or a direct array of
  *             stichera entry objects: [{ sticheron: N, text: '...' }, ...]
  * Status    : Scaffolded — all slots null pending source-secure transcription.
  * Integration: wired into _resolveOrthrosSlots() praises-stichera weekday
- *              else-branch in horologion-engine.js.
+ *              else-branch in horologion-engine.js (v6.3).
  */
 
 window.OCTOECHOS = window.OCTOECHOS || {};
 window.OCTOECHOS.orthros = window.OCTOECHOS.orthros || {};
-window.OCTOECHOS.orthros.praisesStichera = window.OCTOECHOS.orthros.praisesStichera || {};
+window.OCTOECHOS.orthros.praises = window.OCTOECHOS.orthros.praises || {};
 
-window.OCTOECHOS.orthros.praisesStichera.weekday = {
+window.OCTOECHOS.orthros.praises.weekday = {
     meta: {
         label:  'Weekday Praises Stichera (Orthros)',
         office: 'orthros',
-        family: 'praises-stichera',
+        family: 'praises',
         source: 'UNTRANSCRIBED'
     },
 

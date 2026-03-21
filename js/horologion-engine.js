@@ -3021,15 +3021,15 @@ function _resolveComplineFestalTheotokionRubric(officeKey, troparionItem, fallba
                         const dayName = WEEKDAY_NAMES[dayOfWeek] || 'this weekday';
                         const theme   = WEEKDAY_THEMES[dayOfWeek] || 'the day\'s theme';
 
-                        // Corpus probe — window.OCTOECHOS.orthros.praisesStichera.weekday.tones[tone][dayOfWeek]
+                        // Corpus probe — window.OCTOECHOS.orthros.praises.weekday.tones[tone][dayOfWeek]
                         const wdPraisesCorpus =
                             typeof window !== 'undefined' &&
                             window.OCTOECHOS &&
                             window.OCTOECHOS.orthros &&
-                            window.OCTOECHOS.orthros.praisesStichera &&
-                            window.OCTOECHOS.orthros.praisesStichera.weekday &&
-                            window.OCTOECHOS.orthros.praisesStichera.weekday.tones
-                                ? window.OCTOECHOS.orthros.praisesStichera.weekday.tones
+                            window.OCTOECHOS.orthros.praises &&
+                            window.OCTOECHOS.orthros.praises.weekday &&
+                            window.OCTOECHOS.orthros.praises.weekday.tones
+                                ? window.OCTOECHOS.orthros.praises.weekday.tones
                                 : null;
 
                         const wdPraisesToneBlock = wdPraisesCorpus && tone
