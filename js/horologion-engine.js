@@ -3272,8 +3272,8 @@ const isMajorFeastForPraises =
                             'unless displaced by a major feast.' + toneNote + '\n\n' +
                             '(Sunday Resurrectional Sessional Hymn corpus not loaded or tone entry missing.)';
                         sessResolvedAs = 'orthros-sunday-resurrectional-sessional-hymns-rubric';
-                    } else {
-                        // Ordinary weekday (Mon–Sat)
+                   } else {
+                        // Ordinary weekday (Mon–Sat) — v6.2: probe corpus before rubric
                         const WEEKDAY_NAMES = ['', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
                         const WEEKDAY_THEMES = {
                             1: 'the Bodiless Powers (Angels)',
@@ -3287,6 +3287,42 @@ const isMajorFeastForPraises =
                         const dayName = WEEKDAY_NAMES[dayOfWeek] || 'this weekday';
                         const theme   = WEEKDAY_THEMES[dayOfWeek] || 'the day\'s theme';
                         const toneNote = tone ? ` Tone ${tone}.` : '';
+
+                        // Corpus probe — window.OCTOECHOS.orthros.sessional.weekday.tones[tone][dayOfWeek]
+                        const wdCorpus =
+                            typeof window !== 'undefined' &&
+                            window.OCTOECHOS &&
+                            window.OCTOECHOS.orthros &&
+                            window.OCTOECHOS.orthros.sessional &&
+                            window.OCTOECHOS.orthros.sessional.weekday &&
+                            window.OCTOECHOS.orthros.sessional.weekday.tones
+                                ? window.OCTOECHOS.orthros.sessional.weekday.tones
+                                : null;
+                        const wdToneBlock = wdCorpus && tone
+                            ? (wdCorpus[tone] || wdCorpus[String(tone)] || null)
+                            : null;
+                        const wdEntry = wdToneBlock && dayOfWeek
+                            ? (wdToneBlock[dayOfWeek] || wdToneBlock[String(dayOfWeek)] || null)
+                            : null;
+
+                        if (wdEntry && (wdEntry.afterKathisma1 || wdEntry.afterKathisma2)) {
+                            section.items[i] = {
+                                type:       'hymn-group',
+                                key:        'sessional-hymns',
+                                label:      'Sessional Hymns (Sedalia / Kathismata)',
+                                source:     'Octoechos',
+                                tone:       tone,
+                                day:        dayOfWeek,
+                                items: [
+                                    { position: 'afterKathisma1', text: wdEntry.afterKathisma1 || wdEntry.afterKathisma2 },
+                                    { position: 'afterKathisma2', text: wdEntry.afterKathisma2 || wdEntry.afterKathisma1 }
+                                ],
+                                resolvedAs: 'orthros-ordinary-weekday-sessional-hymns-text'
+                            };
+                            continue;
+                        }
+
+                        // Corpus absent or entry null — honest rubric fallback
                         sessText =
                             `ORDINARY WEEKDAY (${dayName}) — Sessional Hymns (Sedalia): After each ` +
                             `kathisma a Sessional Hymn (Sedalion) is sung seated. On ordinary weekdays ` +
