@@ -2849,23 +2849,23 @@ function _resolveComplineFestalTheotokionRubric(officeKey, troparionItem, fallba
                     continue;
                 }
 
-                                // ── orthros-theotokion — deferred baseline rubric ─────────
+                             // ── orthros-theotokion — v6.5: corpus probe + explicit rubric ──
                 if (item.key === 'orthros-theotokion') {
                     const troparionItem =
     sections
         .flatMap(sec => Array.isArray(sec.items) ? sec.items : [])
         .find(it => it && it.key === 'troparion-of-the-day') || null;
-
+ 
                     const isFeast =
                         troparionItem &&
                         troparionItem.resolvedAs === 'menaion-feast-troparion';
-
+ 
                     if (isFeast) {
                         const feastName =
                             troparionItem.commemoration ||
                             troparionItem.label ||
                             'the feast of the day';
-
+ 
                         section.items[i] = {
                             type:       'rubric',
                             key:        'orthros-theotokion',
@@ -2879,15 +2879,74 @@ function _resolveComplineFestalTheotokionRubric(officeKey, troparionItem, fallba
                             governingTone: troparionItem.governingTone || troparionItem.tone || null,
                             rank: typeof troparionItem.rank === 'number' ? troparionItem.rank : null
                         };
-                    } else {
-                        section.items[i] = _normalizeTheotokionRubricForOffice('orthros', {
+                        continue;
+                    }
+ 
+                    if (!isBrightWeek && !isHolyWeek && !isGreatLentWeekday && dayOfWeek !== 0) {
+                        // Ordinary weekday (Mon–Sat)
+                        const WEEKDAY_NAMES_TH = ['', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+                        const tone       = toneResult && toneResult.tone ? toneResult.tone : null;
+                        const dayName    = WEEKDAY_NAMES_TH[dayOfWeek] || 'this weekday';
+                        const isCrossDay = dayOfWeek === 3 || dayOfWeek === 5;
+ 
+                        // Corpus probe — window.OCTOECHOS.orthros.theotokion.weekday.tones[tone][dayOfWeek]
+                        const wdTheotokionCorpus =
+                            typeof window !== 'undefined' &&
+                            window.OCTOECHOS &&
+                            window.OCTOECHOS.orthros &&
+                            window.OCTOECHOS.orthros.theotokion &&
+                            window.OCTOECHOS.orthros.theotokion.weekday &&
+                            window.OCTOECHOS.orthros.theotokion.weekday.tones
+                                ? window.OCTOECHOS.orthros.theotokion.weekday.tones
+                                : null;
+ 
+                        const wdTheotokionToneBlock = wdTheotokionCorpus && tone
+                            ? (wdTheotokionCorpus[tone] || wdTheotokionCorpus[String(tone)] || null)
+                            : null;
+ 
+                        const wdTheotokionEntry = wdTheotokionToneBlock && dayOfWeek
+                            ? (wdTheotokionToneBlock[dayOfWeek] || wdTheotokionToneBlock[String(dayOfWeek)] || null)
+                            : null;
+ 
+                        // Emit text only if a real transcribed string exists.
+                        if (typeof wdTheotokionEntry === 'string' && wdTheotokionEntry.length > 0) {
+                            section.items[i] = {
+                                type:       'text',
+                                key:        'orthros-theotokion',
+                                label:      isCrossDay ? 'Stavrotheotokion (Matins)' : 'Theotokion (Matins)',
+                                text:       wdTheotokionEntry,
+                                source:     'Octoechos',
+                                tone:       tone,
+                                day:        dayOfWeek,
+                                family:     'weekday-theotokion',
+                                resolvedAs: 'orthros-ordinary-weekday-theotokion-text'
+                            };
+                            continue;
+                        }
+ 
+                        // Null, missing key, or corpus absent — explicit Orthros-specific rubric fallback
+                        const toneNote    = tone ? ` Tone ${tone}.` : '';
+                        const crossNote   = isCrossDay
+                            ? ` On ${dayName} a Stavrotheotokion (Cross Theotokion) is appointed.`
+                            : '';
+                        section.items[i] = {
                             type:       'rubric',
                             key:        'orthros-theotokion',
-                            label:      item.label || 'Theotokion (Matins)',
-                            text:       'On ordinary days, the Theotokion appointed for Orthros belongs here. The full Matins Theotokion corpus is not yet available in this path.',
-                            resolvedAs: 'orthros-theotokion-deferred'
-                        }, toneResult, dayOfWeek);
+                            label:      isCrossDay ? 'Stavrotheotokion (Matins)' : 'Theotokion (Matins)',
+                            text:       `ORDINARY WEEKDAY (${dayName}) — Theotokion: The Theotokion appointed at Orthros follows the Octoechos tone for the week.${toneNote}${crossNote} The full Matins Theotokion corpus is not yet transcribed into this path.`,
+                            resolvedAs: 'orthros-ordinary-weekday-theotokion-rubric'
+                        };
+                        continue;
                     }
+ 
+                    // Sunday, Great Lent, Holy Week, Bright Week — explicit deferred rubric
+                    section.items[i] = {
+                        type:       'rubric',
+                        key:        'orthros-theotokion',
+                        label:      item.label || 'Theotokion (Matins)',
+                        text:       'THEOTOKION — Deferred: This Orthros Theotokion path is not yet implemented in the current tranche. Ordinary weekday Octoechos Theotokion alone are scaffolded here.',
+                        resolvedAs: 'orthros-theotokion-deferred-rubric'
+                    };
                     continue;
                 }
                 if (item.key === 'kathisma-first') {
