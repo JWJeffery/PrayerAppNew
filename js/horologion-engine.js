@@ -864,8 +864,12 @@ const HorologionEngine = (() => {
                 'On ordinary weekdays, the proper troparion appointment for the Sixth Hour belongs here. ' +
                 'The full weekday text requires the Menaion and is not yet available in this office.',
 
-            'ninth-hour':
+         'ninth-hour':
                 'On ordinary weekdays, the proper troparion appointment for the Ninth Hour belongs here. ' +
+                'The full weekday text requires the Menaion and is not yet available in this office.',
+ 
+            'midnight-office':
+                'On ordinary weekdays, the proper troparion appointment for the Midnight Office belongs here. ' +
                 'The full weekday text requires the Menaion and is not yet available in this office.'
         };
 
@@ -3833,9 +3837,15 @@ const isMajorFeastForPraises =
     //
     // Non-throwing. On data file failure, fixed slots remain as placeholders.
     // ─────────────────────────────────────────────────────────────────────
-    async function _resolveMidnightOfficeSlots(sections, dateObj) {
-        await _loadMidnightOfficeFixedData();
+   async function _resolveMidnightOfficeSlots(sections, dateObj) {
+        await Promise.all([
+            _loadMidnightOfficeFixedData(),
+            _loadTroparionData(),
+            _loadWeekdayTroparionMeta(),
+            _loadTriodionData()
+        ]);
  
+        const dayOfWeek  = dateObj.getDay();
         const toneResult = _computeBaselineTone(dateObj);
  
         const FIXED_SLOT_KEYS = new Set([
@@ -3871,18 +3881,17 @@ const isMajorFeastForPraises =
                     continue;
                 }
  
-                // ── troparion-of-the-day — honest rubric stub ─────────────
+                // ── troparion-of-the-day — v6.2: delegate to shared stack ─
                 if (item.key === 'troparion-of-the-day') {
-                    const tone = toneResult && toneResult.tone ? toneResult.tone : null;
-                    const toneNote = tone ? ` Current Octoechos tone: Tone ${tone}.` : '';
-                    section.items[i] = {
-                        type:       'rubric',
-                        key:        'troparion-of-the-day',
-                        label:      'Troparion of the Day',
-                        text:       'At the Midnight Office the troparion of the day is appointed from the Octoechos according to the tone of the week, or from the Menaion for a commemorated saint.' + toneNote + ' Full troparion resolution for the Midnight Office is deferred beyond tranche 1.',
-                        resolvedAs: 'midnight-office-troparion-deferred',
-                        tone:       tone || undefined
-                    };
+                    const resolved = await _resolveLittleHourSeasonalTroparionSlot(
+                        'midnight-office', dayOfWeek, dateObj, toneResult
+                    );
+                    if (resolved) {
+                        section.items[i] = Object.assign({}, resolved, {
+                            key: 'troparion-of-the-day'
+                        });
+                    }
+                    // If null (data load failed): slot remains placeholder.
                     continue;
                 }
  
