@@ -3072,7 +3072,7 @@ function _resolveComplineFestalTheotokionRubric(officeKey, troparionItem, fallba
                                                 sticheraResolvedAs = 'orthros-ordinary-weekday-praises-stichera-rubric';
                     }
 
-                    section.items[i] = {
+                     section.items[i] = {
                         type:       'rubric',
                         key:        'praises-stichera',
                         label:      'Stichera at the Praises',
@@ -3081,7 +3081,92 @@ function _resolveComplineFestalTheotokionRubric(officeKey, troparionItem, fallba
                     };
                     continue;
                 }
-
+ 
+                // ── Aposticha (ordinary weekday) — v6.4 ──────────────────
+                // Bounded tranche: ordinary weekday corpus probe + rubric fallback.
+                // All other paths (Sunday, Great Lent, Holy Week, Bright Week)
+                // emit an explicit deferred rubric — never a silent pass-through.
+                // Corpus: window.OCTOECHOS.orthros.aposticha.weekday.tones[tone][dayOfWeek]
+                // Emits structured stichera only when a real non-null array
+                // entry exists. Otherwise: honest rubric fallback preserved.
+                if (item.key === 'aposticha') {
+                    if (!isBrightWeek && !isHolyWeek && !isGreatLentWeekday && dayOfWeek !== 0) {
+                        // Ordinary weekday (Mon–Sat)
+                        const WEEKDAY_NAMES_AP = ['', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+                        const WEEKDAY_THEMES_AP = {
+                            1: 'the Bodiless Powers (Angels)',
+                            2: 'St. John the Baptist and the Prophets',
+                            3: 'the Holy Cross and the Theotokos',
+                            4: 'the Holy Apostles and St. Nicholas',
+                            5: 'the Holy Cross and the Theotokos (penitential)',
+                            6: 'All Saints and the Departed'
+                        };
+ 
+                        const tone    = toneResult && toneResult.tone ? toneResult.tone : null;
+                        const dayName = WEEKDAY_NAMES_AP[dayOfWeek] || 'this weekday';
+                        const theme   = WEEKDAY_THEMES_AP[dayOfWeek] || 'the day\'s theme';
+ 
+                        // Corpus probe — window.OCTOECHOS.orthros.aposticha.weekday.tones[tone][dayOfWeek]
+                        const wdApostichaCorpus =
+                            typeof window !== 'undefined' &&
+                            window.OCTOECHOS &&
+                            window.OCTOECHOS.orthros &&
+                            window.OCTOECHOS.orthros.aposticha &&
+                            window.OCTOECHOS.orthros.aposticha.weekday &&
+                            window.OCTOECHOS.orthros.aposticha.weekday.tones
+                                ? window.OCTOECHOS.orthros.aposticha.weekday.tones
+                                : null;
+ 
+                        const wdApostichaToneBlock = wdApostichaCorpus && tone
+                            ? (wdApostichaCorpus[tone] || wdApostichaCorpus[String(tone)] || null)
+                            : null;
+ 
+                        const wdApostichaEntry = wdApostichaToneBlock && dayOfWeek
+                            ? (wdApostichaToneBlock[dayOfWeek] || wdApostichaToneBlock[String(dayOfWeek)] || null)
+                            : null;
+ 
+                        // Emit structured text only if a real transcribed array exists.
+                        if (Array.isArray(wdApostichaEntry) && wdApostichaEntry.length > 0) {
+                            section.items[i] = {
+                                type:       'stichera',
+                                key:        'aposticha',
+                                label:      'Aposticha',
+                                items:      wdApostichaEntry.map((entry, idx) => ({
+                                    type:      'text',
+                                    sticheron: entry && entry.sticheron ? entry.sticheron : idx + 1,
+                                    text:      entry && entry.text ? entry.text : ''
+                                })),
+                                source:     'Octoechos',
+                                tone:       tone,
+                                day:        dayOfWeek,
+                                family:     'weekday-aposticha',
+                                resolvedAs: 'orthros-ordinary-weekday-aposticha-text'
+                            };
+                            continue;
+                        }
+ 
+                        // Null, missing key, or corpus absent — honest rubric fallback
+                        section.items[i] = {
+                            type:       'rubric',
+                            key:        'aposticha',
+                            label:      'Aposticha',
+                            text:       `ORDINARY WEEKDAY (${dayName}) — Aposticha: The Aposticha are appointed from the Octoechos (tone ${tone || '?'}, theme: ${theme}) and optionally the Menaion for any commemoration of sufficient rank. Full Aposticha corpus text is not yet embedded in this path.`,
+                            resolvedAs: 'orthros-ordinary-weekday-aposticha-rubric'
+                        };
+                        continue;
+                    }
+ 
+                    // Non-ordinary paths (Sunday, feast, seasonal) — explicit deferred rubric
+                    section.items[i] = {
+                        type:       'rubric',
+                        key:        'aposticha',
+                        label:      'Aposticha',
+                        text:       'APOSTICHA — Deferred: This Orthros Aposticha path is not yet implemented in the current tranche. Ordinary weekday Octoechos Aposticha alone are scaffolded here.',
+                        resolvedAs: 'orthros-aposticha-deferred-rubric'
+                    };
+                    continue;
+                }
+ 
                 // ── v6.1 implemented: exapostilarion — Eothinon cycle ──────
                 // Sunday Resurrectional Exapostilarion follows the 11-part
                 // Eothinon (Morning Gospel) cycle, not the 8-tone Octoechos.

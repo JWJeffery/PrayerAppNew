@@ -187,12 +187,19 @@
           "status": "unresolved",
           "note": "Fixed psalmody of the Praises section. Resolved from orthros-fixed.json by HorologionEngine."
         },
-        {
+         {
           "type": "placeholder",
           "key": "praises-stichera",
           "label": "Stichera at the Praises",
           "status": "unresolved",
           "note": "Variable stichera appended to Psalms 148–150. Appointed from Octoechos or Menaion. Full corpus deferred; honest rubric at baseline."
+        },
+        {
+          "type": "placeholder",
+          "key": "aposticha",
+          "label": "Aposticha",
+          "status": "unresolved",
+          "note": "Aposticha of Orthros (the stichera sung before the Great Doxology on ferial days). Appointed from the Octoechos according to tone and weekday theme. Full corpus deferred; honest rubric at baseline."
         }
       ]
     },
