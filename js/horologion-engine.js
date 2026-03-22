@@ -230,7 +230,7 @@ const HorologionEngine = (() => {
     const _skeletonCache = {};
 
     // ── Supported offices in this version ─────────────────────────────────
-   const SUPPORTED_OFFICES = ['vespers', 'small-compline', 'first-hour', 'third-hour', 'sixth-hour', 'ninth-hour', 'orthros'];
+    const SUPPORTED_OFFICES = ['vespers', 'small-compline', 'first-hour', 'third-hour', 'sixth-hour', 'ninth-hour', 'orthros', 'midnight-office'];
 
     // ── Tradition code for this engine ────────────────────────────────────
     const TRADITION = 'BYZC';
@@ -340,11 +340,18 @@ const HorologionEngine = (() => {
     let _ninthHourFixedData = null;
 
     // ── v5.6: Orthros (Matins) fixed-text data file URL and cache ─────────
-    const ORTHROS_FIXED_URL = 'data/horologion/orthros-fixed.json';
-
+     const ORTHROS_FIXED_URL = 'data/horologion/orthros-fixed.json';
+ 
     // Populated lazily by _loadOrthrosFixedData().
     // Shape: { slots: { "usual-beginning": {...}, "psalm-3": {...}, ... } }
     let _orthrosFixedData = null;
+ 
+    // ── v6.2: Midnight Office (Mesoniktikon) fixed text URL and cache ──────
+    const MIDNIGHT_OFFICE_FIXED_URL = 'data/horologion/midnight-office-fixed.json';
+ 
+    // Populated lazily by _loadMidnightOfficeFixedData().
+    // Shape: { slots: { "usual-beginning": {...}, "psalm-50": {...}, ... } }
+    let _midnightOfficeFixedData = null;
 
     // ── v5.7: Orthros kathisma appointment table URL and cache ─────────────
     // Weekday pair assignments (Mon–Sat) for ordinary non-vigil Orthros.
@@ -517,8 +524,10 @@ const HorologionEngine = (() => {
             await _resolveSixthHourSlots(sections, dateObj);
         } else if (normalizedKey === 'ninth-hour') {
             await _resolveNinthHourSlots(sections, dateObj);
-        } else if (normalizedKey === 'orthros') {
+       } else if (normalizedKey === 'orthros') {
             await _resolveOrthrosSlots(sections, dateObj);
+        } else if (normalizedKey === 'midnight-office') {
+            await _resolveMidnightOfficeSlots(sections, dateObj);
         } else {
             // v1.2 / v1.3: Vespers resolver (default for 'vespers' and any
             // future office that shares it until it has its own resolver).
@@ -2817,35 +2826,53 @@ function _resolveComplineFestalTheotokionRubric(officeKey, troparionItem, fallba
                 }
 
                 // ── troparion-of-the-day ──────────────────────────────────
-                if (item.key === 'troparion-of-the-day') {
+              if (item.key === 'troparion-of-the-day') {
                     const resolved = await _resolveLittleHourSeasonalTroparionSlot('orthros', dayOfWeek, dateObj, toneResult);
-
+ 
                     if (resolved) {
                         if (dayOfWeek === 0 && resolved.resolvedAs !== 'menaion-feast-troparion') {
-
+ 
+                            // Sunday non-feast: probe resurrectional_troparia from loaded data.
                             const tone = toneResult && toneResult.tone ? toneResult.tone : null;
-                            const toneNote = tone ? ` Current Octoechos tone: Tone ${tone}.` : '';
-
-                            section.items[i] = {
-                                type: 'rubric',
-                                key: 'troparion-of-the-day',
-                                label: 'Troparion of the Day',
-                                text:
-                                    'On Sundays, the resurrectional troparion of the Octoechos is appointed according to the tone of the week unless displaced by a qualifying feast.' +
-                                    toneNote,
-                                resolvedAs: 'orthros-sunday-resurrectional-troparion-rubric',
-                                tone: tone || undefined
-                            };
-
+                            const troparia = _troparionData && _troparionData.resurrectional_troparia
+                                ? _troparionData.resurrectional_troparia
+                                : null;
+                            const entry = troparia && tone
+                                ? (troparia[String(tone)] || troparia[tone] || null)
+                                : null;
+ 
+                            if (entry && entry.text) {
+                                section.items[i] = {
+                                    type:       'text',
+                                    key:        'troparion-of-the-day',
+                                    label:      entry.title || `Resurrectional Troparion, Tone ${tone}`,
+                                    text:       entry.text,
+                                    source:     'Octoechos',
+                                    tone:       tone,
+                                    resolvedAs: 'orthros-sunday-resurrectional-troparion-text'
+                                };
+                            } else {
+                                // Corpus absent or tone missing — honest rubric fallback
+                                const toneNote = tone ? ` Current Octoechos tone: Tone ${tone}.` : '';
+                                section.items[i] = {
+                                    type:       'rubric',
+                                    key:        'troparion-of-the-day',
+                                    label:      'Troparion of the Day',
+                                    text:       'On Sundays, the resurrectional troparion of the Octoechos is appointed according to the tone of the week unless displaced by a qualifying feast.' + toneNote,
+                                    resolvedAs: 'orthros-sunday-resurrectional-troparion-rubric',
+                                    tone:       tone || undefined
+                                };
+                            }
+ 
                         } else {
-
+ 
                             section.items[i] = Object.assign({}, resolved, {
                                 key: 'troparion-of-the-day'
                             });
-
+ 
                         }
                     }
-
+ 
                     continue;
                 }
 
@@ -2856,11 +2883,22 @@ function _resolveComplineFestalTheotokionRubric(officeKey, troparionItem, fallba
         .flatMap(sec => Array.isArray(sec.items) ? sec.items : [])
         .find(it => it && it.key === 'troparion-of-the-day') || null;
  
-                    const isFeast =
+                   const isFeast =
                         troparionItem &&
                         troparionItem.resolvedAs === 'menaion-feast-troparion';
  
-                    if (isFeast) {
+                    const feastRankTH =
+                        isFeast && typeof troparionItem.rank === 'number'
+                            ? troparionItem.rank
+                            : null;
+ 
+                    const isMajorFeastForTheotokion =
+                        isFeast &&
+                        feastRankTH !== null &&
+                        feastRankTH >= 1 &&
+                        feastRankTH <= 2;
+ 
+                    if (isMajorFeastForTheotokion) {
                         const feastName =
                             troparionItem.commemoration ||
                             troparionItem.label ||
@@ -3764,6 +3802,110 @@ const isMajorFeastForPraises =
             }
         }
     }
+   // ── v6.2: _loadMidnightOfficeFixedData() ─────────────────────────────
+    async function _loadMidnightOfficeFixedData() {
+        if (_midnightOfficeFixedData !== null) return;
+ 
+        try {
+            const response = await fetch(MIDNIGHT_OFFICE_FIXED_URL);
+            if (!response.ok) {
+                console.warn(`[HorologionEngine] Could not load Midnight Office fixed data (HTTP ${response.status}); fixed slots will remain as placeholders.`);
+                return;
+            }
+            _midnightOfficeFixedData = await response.json();
+            console.log('[HorologionEngine] Loaded Midnight Office fixed text data.');
+        } catch (err) {
+            console.warn('[HorologionEngine] _loadMidnightOfficeFixedData failed:', err.message, '— fixed slots will remain as placeholders.');
+        }
+    }
+ 
+    // ── v6.2: _resolveMidnightOfficeSlots(sections, dateObj) ─────────────
+    //
+    // Slot resolution pass for the Midnight Office (Mesoniktikon).
+    //
+    // Fixed slots resolved from midnight-office-fixed.json:
+    //   usual-beginning, psalm-50, psalm-117, psalm-118,
+    //   trisagion-prayers, prayer-of-the-midnight-office
+    //
+    // Variable slots (honest rubric stubs — deferred beyond tranche 1):
+    //   troparion-of-the-day
+    //   midnight-office-theotokion
+    //
+    // Non-throwing. On data file failure, fixed slots remain as placeholders.
+    // ─────────────────────────────────────────────────────────────────────
+    async function _resolveMidnightOfficeSlots(sections, dateObj) {
+        await _loadMidnightOfficeFixedData();
+ 
+        const toneResult = _computeBaselineTone(dateObj);
+ 
+        const FIXED_SLOT_KEYS = new Set([
+            'usual-beginning',
+            'psalm-50',
+            'psalm-117',
+            'psalm-118',
+            'trisagion-prayers',
+            'prayer-of-the-midnight-office'
+        ]);
+ 
+        for (const section of sections) {
+            if (!Array.isArray(section.items)) continue;
+ 
+            for (let i = 0; i < section.items.length; i++) {
+                const item = section.items[i];
+ 
+                // ── Fixed slots ───────────────────────────────────────────
+                if (FIXED_SLOT_KEYS.has(item.key)) {
+                    const slotData = _midnightOfficeFixedData &&
+                        _midnightOfficeFixedData.slots &&
+                        _midnightOfficeFixedData.slots[item.key];
+ 
+                    if (slotData) {
+    section.items[i] = {
+        ...slotData,
+        key:        item.key,
+        label:      slotData.label || item.label,
+        resolvedAs: 'midnight-office-fixed'
+    };
+}
+                    // If data not loaded: item remains placeholder — correct degradation.
+                    continue;
+                }
+ 
+                // ── troparion-of-the-day — honest rubric stub ─────────────
+                if (item.key === 'troparion-of-the-day') {
+                    const tone = toneResult && toneResult.tone ? toneResult.tone : null;
+                    const toneNote = tone ? ` Current Octoechos tone: Tone ${tone}.` : '';
+                    section.items[i] = {
+                        type:       'rubric',
+                        key:        'troparion-of-the-day',
+                        label:      'Troparion of the Day',
+                        text:       'At the Midnight Office the troparion of the day is appointed from the Octoechos according to the tone of the week, or from the Menaion for a commemorated saint.' + toneNote + ' Full troparion resolution for the Midnight Office is deferred beyond tranche 1.',
+                        resolvedAs: 'midnight-office-troparion-deferred',
+                        tone:       tone || undefined
+                    };
+                    continue;
+                }
+ 
+                // ── midnight-office-theotokion — honest rubric stub ───────
+                if (item.key === 'midnight-office-theotokion') {
+                    const tone = toneResult && toneResult.tone ? toneResult.tone : null;
+                    const toneNote = tone ? ` Tone ${tone}.` : '';
+                    section.items[i] = {
+                        type:       'rubric',
+                        key:        'midnight-office-theotokion',
+                        label:      'Theotokion of the Midnight Office',
+                        text:       'The Theotokion appointed for the Midnight Office follows the Octoechos tone of the week.' + toneNote + ' Full Theotokion corpus for the Midnight Office is deferred beyond tranche 1.',
+                        resolvedAs: 'midnight-office-theotokion-deferred',
+                        tone:       tone || undefined
+                    };
+                    continue;
+                }
+ 
+                // All other items (baked rubrics) pass through unchanged.
+            }
+        }
+    }
+ 
     async function _resolveComplineSlots(sections, dateObj) {
     await Promise.all([
         _loadComplineFixedData(),

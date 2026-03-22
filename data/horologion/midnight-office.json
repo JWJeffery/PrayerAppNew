@@ -1,0 +1,109 @@
+{
+  "officeKey": "midnight-office",
+  "label": "Midnight Office (Mesoniktikon)",
+  "tradition": "BYZC",
+  "description": "The Byzantine Midnight Office (Mesoniktikon), appointed for the midnight hour. It precedes Orthros on solemn occasions and constitutes one of the canonical hours of the daily cycle. The structure presented here is the ordinary (weekday/Sunday) Midnight Office of the Constantinopolitan Horologion. Variable Octoechos and Theotokion corpora are deferred beyond this baseline.",
+  "sections": [
+    {
+      "id": "opening",
+      "label": "Opening",
+      "notes": "The Usual Beginning opens the office.",
+      "items": [
+        {
+          "type": "rubric",
+          "key": "opening-blessing-rubric",
+          "text": "The Priest blesses: Blessed is our God, always, now and ever and unto ages of ages."
+        },
+        {
+          "type": "placeholder",
+          "key": "usual-beginning",
+          "label": "The Usual Beginning",
+          "status": "unresolved",
+          "note": "Trisagion prayers sequence. Resolved from midnight-office-fixed.json by HorologionEngine."
+        }
+      ]
+    },
+    {
+      "id": "psalmody",
+      "label": "Fixed Psalmody",
+      "notes": "The Midnight Office appoints three fixed psalms: 50, 117, and 118 (LXX). Psalm 118 (the Great Psalm) is the principal psalm of the office and is divided into three parts (stases) in the solemn form; on ordinary days it is read complete.",
+      "items": [
+        {
+          "type": "placeholder",
+          "key": "psalm-50",
+          "label": "Psalm 50 (LXX) — Have mercy on me, O God",
+          "status": "unresolved",
+          "note": "Resolved from midnight-office-fixed.json by HorologionEngine."
+        },
+        {
+          "type": "placeholder",
+          "key": "psalm-117",
+          "label": "Psalm 117 (LXX) — O give thanks unto the Lord, for He is good",
+          "status": "unresolved",
+          "note": "Resolved from midnight-office-fixed.json by HorologionEngine."
+        },
+        {
+          "type": "placeholder",
+          "key": "psalm-118",
+          "label": "Psalm 118 (LXX) — Blessed are the undefiled in the way",
+          "status": "unresolved",
+          "note": "Resolved from midnight-office-fixed.json by HorologionEngine."
+        }
+      ]
+    },
+    {
+      "id": "trisagion",
+      "label": "Trisagion Prayers",
+      "notes": "The Trisagion prayer sequence follows the psalmody.",
+      "items": [
+        {
+          "type": "placeholder",
+          "key": "trisagion-prayers",
+          "label": "Trisagion Prayers",
+          "status": "unresolved",
+          "note": "Resolved from midnight-office-fixed.json by HorologionEngine."
+        }
+      ]
+    },
+    {
+      "id": "troparia",
+      "label": "Troparia",
+      "notes": "The troparion of the day and the Theotokion of the Midnight Office are sung here. These are variable slots; full corpus resolution is deferred beyond tranche 1.",
+      "items": [
+        {
+          "type": "placeholder",
+          "key": "troparion-of-the-day",
+          "label": "Troparion of the Day",
+          "status": "unresolved",
+          "note": "Variable troparion: rubric fallback at baseline. Full Octoechos/Menaion resolution deferred."
+        },
+        {
+          "type": "placeholder",
+          "key": "midnight-office-theotokion",
+          "label": "Theotokion of the Midnight Office",
+          "status": "unresolved",
+          "note": "Tone-dependent Theotokion of the Midnight Office. Rubric fallback at baseline. Full corpus deferred."
+        }
+      ]
+    },
+    {
+      "id": "closing",
+      "label": "Closing Prayer and Dismissal",
+      "notes": "The Prayer of the Midnight Office and the dismissal conclude the service.",
+      "items": [
+        {
+          "type": "placeholder",
+          "key": "prayer-of-the-midnight-office",
+          "label": "Prayer of the Midnight Office",
+          "status": "unresolved",
+          "note": "Resolved from midnight-office-fixed.json by HorologionEngine."
+        },
+        {
+          "type": "rubric",
+          "key": "dismissal-rubric",
+          "text": "Priest: Christ our true God, through the intercessions of His all-pure Mother, of all the Saints, have mercy on us and save us, as He is good and the Lover of mankind.\nChoir: Amen."
+        }
+      ]
+    }
+  ]
+}
