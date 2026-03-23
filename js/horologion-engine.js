@@ -3921,47 +3921,33 @@ const isMajorFeastForPraises =
                     continue;
                 }
  
-                // ── midnight-office-theotokion — v6.3: corpus-aware resolver ──
+                  // ── midnight-office-theotokion — v6.4: fixed-backed positional slot ──
                 if (item.key === 'midnight-office-theotokion') {
-                    const tone    = toneResult && toneResult.tone ? toneResult.tone : null;
-                    const dow     = dateObj.getDay();
- 
-                    // Corpus probe: tones[tone][dayOfWeek]
-                    const toneMap = _midnightOfficeTheotokionData &&
-                        _midnightOfficeTheotokionData.tones
-                            ? _midnightOfficeTheotokionData.tones
+                    // Policy (v6.4): positional, office-specific node.
+                    // No tone, no day-of-week, no feast override, no Stavrotheotokion.
+                    // Probe flat fixed-slot structure: slots["midnight-office-theotokion"].
+                    const entry =
+                        _midnightOfficeTheotokionData &&
+                        _midnightOfficeTheotokionData.slots
+                            ? (_midnightOfficeTheotokionData.slots['midnight-office-theotokion'] ?? null)
                             : null;
  
-                    const dayMap  = toneMap && tone
-                        ? (toneMap[String(tone)] || toneMap[tone] || null)
-                        : null;
- 
-                    const entry   = dayMap
-                        ? (dayMap[String(dow)] !== undefined ? dayMap[String(dow)] : (dayMap[dow] !== undefined ? dayMap[dow] : null))
-                        : null;
- 
                     if (typeof entry === 'string' && entry.length > 0) {
-                        // Real transcribed text exists — emit as text
                         section.items[i] = {
                             type:       'text',
                             key:        'midnight-office-theotokion',
                             label:      'Theotokion of the Midnight Office',
                             text:       entry,
-                            source:     'Octoechos',
-                            tone:       tone,
-                            day:        dow,
-                            resolvedAs: 'midnight-office-ordinary-theotokion-text'
+                            source:     'Horologion',
+                            resolvedAs: 'midnight-office-theotokion-text'
                         };
                     } else {
-                        // Null sentinel or corpus absent — honest explicit rubric
-                        const toneNote = tone ? ` Tone ${tone}.` : '';
                         section.items[i] = {
                             type:       'rubric',
                             key:        'midnight-office-theotokion',
                             label:      'Theotokion of the Midnight Office',
-                            text:       'MIDNIGHT OFFICE — Theotokion: The Theotokion is appointed from the Octoechos according to the tone of the week.' + toneNote + ' The Midnight Office Theotokion corpus for this appointment is not yet transcribed.',
-                            resolvedAs: 'midnight-office-theotokion-not-transcribed',
-                            tone:       tone || undefined
+                            text:       'MIDNIGHT OFFICE — Theotokion: The fixed Theotokion of the Midnight Office has not yet been transcribed.',
+                            resolvedAs: 'midnight-office-theotokion-not-transcribed'
                         };
                     }
                     continue;

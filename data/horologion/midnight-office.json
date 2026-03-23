@@ -77,12 +77,12 @@
           "status": "unresolved",
           "note": "Variable troparion: rubric fallback at baseline. Full Octoechos/Menaion resolution deferred."
         },
-        {
+      {
           "type": "placeholder",
           "key": "midnight-office-theotokion",
           "label": "Theotokion of the Midnight Office",
           "status": "unresolved",
-          "note": "Tone-dependent Theotokion of the Midnight Office. Rubric fallback at baseline. Full corpus deferred."
+          "note": "Fixed positional Theotokion of the Midnight Office. No tone or day-of-week dependency. Resolved from data/horologion/midnight-office-theotokion.json by HorologionEngine (v6.4). Corpus null pending transcription."
         }
       ]
     },

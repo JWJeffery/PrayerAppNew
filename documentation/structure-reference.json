@@ -433,8 +433,8 @@
       "coverage": "Invariable fixed texts for the Midnight Office. Slots: usual-beginning, psalm-50 (LXX), psalm-117 (LXX), psalm-118 (LXX), trisagion-prayers, prayer-of-the-midnight-office. Source: Jordanville 2008 edition / Hapgood tradition. Variable slots (troparion-of-the-day, midnight-office-theotokion) are not here; resolved dynamically by HorologionEngine."
     },
     "midnight-office-theotokion.json": {
-      "status": "Active — Horologion v6.3 — NEW in v6.3",
-      "coverage": "Midnight Office Theotokion corpus. Keyed by tone string ('1'–'8') then day-of-week integer string ('0'–'6'). All 56 entries currently null (untranscribed). Schema: null = untranscribed; string = full Theotokion text. Corpus-aware resolver in _resolveMidnightOfficeSlots: emits type:'text' resolvedAs:'midnight-office-ordinary-theotokion-text' when a real string is present; emits type:'rubric' resolvedAs:'midnight-office-theotokion-not-transcribed' when null or absent. Appointment policy (feast override threshold, Wednesday/Friday Stavrotheotokion) explicitly deferred pending source-of-truth confirmation. Source when transcribed: Jordanville 2008 Horologion / Hapgood tradition (to be confirmed)."
+      "status": "Active — Horologion v6.4 — schema replaced in v6.4",
+      "coverage": "Fixed positional Theotokion of the Midnight Office. Architectural policy (v6.4): positional, office-specific node — no tone dependency, no day-of-week dependency, no feast override, no Stavrotheotokion branching. Schema: flat slots object — slots[\"midnight-office-theotokion\"] is null (untranscribed) or a plain string (full Theotokion text). Replaces the v6.3 tone × day grid (8 tones × 7 days, 56 null entries), which is retired. Resolver in _resolveMidnightOfficeSlots: emits type:'text' resolvedAs:'midnight-office-theotokion-text' when string present; emits type:'rubric' resolvedAs:'midnight-office-theotokion-not-transcribed' when null or absent. Source confirmed: Jordanville 2008 Horologion / Hapgood tradition. Transcription unblocked — populate slots[\"midnight-office-theotokion\"] directly."
     }
   },
   "coe_calendar_model": {

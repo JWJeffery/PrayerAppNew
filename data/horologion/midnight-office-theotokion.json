@@ -1,29 +1,6 @@
 {
-  "_comment": [
-    "data/horologion/midnight-office-theotokion.json — Horologion v6.3",
-    "",
-    "Midnight Office (Mesoniktikon) Theotokia, keyed by Octoechos tone (1–8)",
-    "and day-of-week (0=Sunday … 6=Saturday).",
-    "",
-    "Schema: each entry is either null (untranscribed) or a plain string",
-    "containing the full Theotokion text for that tone/day appointment.",
-    "",
-    "Status: all entries null pending source-secure transcription.",
-    "Source to be confirmed: Jordanville 2008 Horologion / Hapgood tradition.",
-    "",
-    "Integration: loaded by _loadMidnightOfficeTheotokionData() in",
-    "js/horologion-engine.js; probed inline by _resolveMidnightOfficeSlots().",
-    "",
-    "Keying note: day 0 = Sunday, 1 = Monday … 6 = Saturday."
-  ],
-  "tones": {
-    "1": { "0": null, "1": null, "2": null, "3": null, "4": null, "5": null, "6": null },
-    "2": { "0": null, "1": null, "2": null, "3": null, "4": null, "5": null, "6": null },
-    "3": { "0": null, "1": null, "2": null, "3": null, "4": null, "5": null, "6": null },
-    "4": { "0": null, "1": null, "2": null, "3": null, "4": null, "5": null, "6": null },
-    "5": { "0": null, "1": null, "2": null, "3": null, "4": null, "5": null, "6": null },
-    "6": { "0": null, "1": null, "2": null, "3": null, "4": null, "5": null, "6": null },
-    "7": { "0": null, "1": null, "2": null, "3": null, "4": null, "5": null, "6": null },
-    "8": { "0": null, "1": null, "2": null, "3": null, "4": null, "5": null, "6": null }
-  }
+  "slots": {
+    "midnight-office-theotokion": "In all generations we call thee blessed, O Virgin Theotokos, for in thee the uncontainable Christ our God was pleased to be contained. Blessed are we also, having thee as mediatress; for day and night pleadest thou for us, and the sceptres of kingdoms are strengthened by thine intercessions. Wherefore in hymns we cry unto thee: Rejoice! O thou who art full of grace, the Lord is with thee."
+  },
+  "_comment": "Fixed positional Theotokion of the Midnight Office (weekday/Saturday form), per Slavonic/Jordanville tradition."
 }
