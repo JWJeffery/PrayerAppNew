@@ -1,6 +1,6 @@
 {
   "_note": "Live reference dossiers extracted from structure.json. Tradition architecture, hour maps, component inventories, horologion file details, COE calendar model. Updated in sync with structure.json.",
-  "last_updated": "2026-03-13",
+  "last_updated": "2026-03-22",
   "east_syriac_tradition": {
     "status": "OPERATIONAL \u2014 v2.8.1. All seven canonical hours implemented. Cathedral and monastic sequences for all hours. Full Qdham/Wathar Qanona rotation (layered hour-specific + seasonal for Sapra/Ramsha/Lelya), Marmitha psalmody, Barekmar intercessions (all 9 components now present), and Onitha-with-Qala rendering active in monastic mode.",
     "entry_point": "selectMode('east-syriac') \u2014 hides BCP and Ethiopian sidebars, shows east-syriac-settings, awaits hydrateForEastSyriac(), calls renderOffice()",
@@ -422,7 +422,19 @@
     },
     "vespers-weekday-theotokion.json": {
       "status": "Active \u2014 Horologion v1.9 (2026-03-07) \u2014 NEW in v1.9",
-      "coverage": "weekday_theotokia: 40 entries keyed by tone string ('1'\u2013'8') then weekday name ('monday'|'tuesday'|'wednesday'|'thursday'|'friday'). Each entry: tone, weekday, title, full liturgical text (Antiochian/OCA Hapgood-tradition English). Monday/Tuesday/Thursday: standard Octoechos weekday Theotokion for that tone + day. Wednesday/Friday: Stavrotheotokion (Cross Theotokion) \u2014 standard Byzantine fasting-day Theotokia. Applicable days: Mon\u2013Fri ordinary weekday Vespers. Resolves theotokion-dismissal slot for all five weekdays at baseline. Limitation: baseline uses current Octoechos weekly tone; if Menaion troparion is of a different tone, Theotokion should follow Menaion tone \u2014 not yet implemented. Overrides not implemented: great-feasts, great-lent, Menaion-tone conflict."
+       "coverage": "weekday_theotokia: 40 entries keyed by tone string ('1'–'8') then weekday name ('monday'|'tuesday'|'wednesday'|'thursday'|'friday'). Each entry: tone, weekday, title, full liturgical text (Antiochian/OCA Hapgood-tradition English). Monday/Tuesday/Thursday: standard Octoechos weekday Theotokion for that tone + day. Wednesday/Friday: Stavrotheotokion (Cross Theotokion) — standard Byzantine fasting-day Theotokia. Applicable days: Mon–Fri ordinary weekday Vespers. Resolves theotokion-dismissal slot for all five weekdays at baseline. Limitation: baseline uses current Octoechos weekly tone; if Menaion troparion is of a different tone, Theotokion should follow Menaion tone — not yet implemented. Overrides not implemented: great-feasts, great-lent, Menaion-tone conflict."
+    },
+    "midnight-office.json": {
+      "status": "Active — Horologion v6.2",
+      "coverage": "Midnight Office (Mesoniktikon) skeleton. officeKey:'midnight-office', tradition:'BYZC'. Sections: opening (opening-blessing-rubric, usual-beginning), psalmody (psalm-50, psalm-117, psalm-118), trisagion (trisagion-prayers), troparia (troparion-of-the-day, midnight-office-theotokion), closing (prayer-of-the-midnight-office, dismissal-rubric). Fixed slots resolved from midnight-office-fixed.json. Variable slots resolved by _resolveMidnightOfficeSlots() in HorologionEngine."
+    },
+    "midnight-office-fixed.json": {
+      "status": "Active — Horologion v6.2 — NEW in v6.2",
+      "coverage": "Invariable fixed texts for the Midnight Office. Slots: usual-beginning, psalm-50 (LXX), psalm-117 (LXX), psalm-118 (LXX), trisagion-prayers, prayer-of-the-midnight-office. Source: Jordanville 2008 edition / Hapgood tradition. Variable slots (troparion-of-the-day, midnight-office-theotokion) are not here; resolved dynamically by HorologionEngine."
+    },
+    "midnight-office-theotokion.json": {
+      "status": "Active — Horologion v6.3 — NEW in v6.3",
+      "coverage": "Midnight Office Theotokion corpus. Keyed by tone string ('1'–'8') then day-of-week integer string ('0'–'6'). All 56 entries currently null (untranscribed). Schema: null = untranscribed; string = full Theotokion text. Corpus-aware resolver in _resolveMidnightOfficeSlots: emits type:'text' resolvedAs:'midnight-office-ordinary-theotokion-text' when a real string is present; emits type:'rubric' resolvedAs:'midnight-office-theotokion-not-transcribed' when null or absent. Appointment policy (feast override threshold, Wednesday/Friday Stavrotheotokion) explicitly deferred pending source-of-truth confirmation. Source when transcribed: Jordanville 2008 Horologion / Hapgood tradition (to be confirmed)."
     }
   },
   "coe_calendar_model": {

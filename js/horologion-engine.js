@@ -352,6 +352,14 @@ const HorologionEngine = (() => {
     // Populated lazily by _loadMidnightOfficeFixedData().
     // Shape: { slots: { "usual-beginning": {...}, "psalm-50": {...}, ... } }
     let _midnightOfficeFixedData = null;
+ 
+    // ── v6.3: Midnight Office theotokion corpus URL and cache ─────────────
+    // Tone × day-of-week grid. null = untranscribed; string = full text.
+    // Shape: { tones: { "1": { "0": null|string, … "6": null|string }, … } }
+    const MIDNIGHT_OFFICE_THEOTOKION_URL = 'data/horologion/midnight-office-theotokion.json';
+ 
+    // Populated lazily by _loadMidnightOfficeTheotokionData().
+    let _midnightOfficeTheotokionData = null;
 
     // ── v5.7: Orthros kathisma appointment table URL and cache ─────────────
     // Weekday pair assignments (Mon–Sat) for ordinary non-vigil Orthros.
@@ -3806,6 +3814,23 @@ const isMajorFeastForPraises =
             }
         }
     }
+  // ── v6.3: _loadMidnightOfficeTheotokionData() ─────────────────────────
+    async function _loadMidnightOfficeTheotokionData() {
+        if (_midnightOfficeTheotokionData !== null) return;
+ 
+        try {
+            const response = await fetch(MIDNIGHT_OFFICE_THEOTOKION_URL);
+            if (!response.ok) {
+                console.warn(`[HorologionEngine] Could not load Midnight Office theotokion data (HTTP ${response.status}); theotokion slot will use rubric fallback.`);
+                return;
+            }
+            _midnightOfficeTheotokionData = await response.json();
+            console.log('[HorologionEngine] Loaded Midnight Office theotokion data.');
+        } catch (err) {
+            console.warn('[HorologionEngine] _loadMidnightOfficeTheotokionData failed:', err.message, '— theotokion slot will use rubric fallback.');
+        }
+    }
+ 
    // ── v6.2: _loadMidnightOfficeFixedData() ─────────────────────────────
     async function _loadMidnightOfficeFixedData() {
         if (_midnightOfficeFixedData !== null) return;
@@ -3838,8 +3863,9 @@ const isMajorFeastForPraises =
     // Non-throwing. On data file failure, fixed slots remain as placeholders.
     // ─────────────────────────────────────────────────────────────────────
    async function _resolveMidnightOfficeSlots(sections, dateObj) {
-        await Promise.all([
+       await Promise.all([
             _loadMidnightOfficeFixedData(),
+            _loadMidnightOfficeTheotokionData(),
             _loadTroparionData(),
             _loadWeekdayTroparionMeta(),
             _loadTriodionData()
@@ -3895,18 +3921,49 @@ const isMajorFeastForPraises =
                     continue;
                 }
  
-                // ── midnight-office-theotokion — honest rubric stub ───────
+                // ── midnight-office-theotokion — v6.3: corpus-aware resolver ──
                 if (item.key === 'midnight-office-theotokion') {
-                    const tone = toneResult && toneResult.tone ? toneResult.tone : null;
-                    const toneNote = tone ? ` Tone ${tone}.` : '';
-                    section.items[i] = {
-                        type:       'rubric',
-                        key:        'midnight-office-theotokion',
-                        label:      'Theotokion of the Midnight Office',
-                        text:       'The Theotokion appointed for the Midnight Office follows the Octoechos tone of the week.' + toneNote + ' Full Theotokion corpus for the Midnight Office is deferred beyond tranche 1.',
-                        resolvedAs: 'midnight-office-theotokion-deferred',
-                        tone:       tone || undefined
-                    };
+                    const tone    = toneResult && toneResult.tone ? toneResult.tone : null;
+                    const dow     = dateObj.getDay();
+ 
+                    // Corpus probe: tones[tone][dayOfWeek]
+                    const toneMap = _midnightOfficeTheotokionData &&
+                        _midnightOfficeTheotokionData.tones
+                            ? _midnightOfficeTheotokionData.tones
+                            : null;
+ 
+                    const dayMap  = toneMap && tone
+                        ? (toneMap[String(tone)] || toneMap[tone] || null)
+                        : null;
+ 
+                    const entry   = dayMap
+                        ? (dayMap[String(dow)] !== undefined ? dayMap[String(dow)] : (dayMap[dow] !== undefined ? dayMap[dow] : null))
+                        : null;
+ 
+                    if (typeof entry === 'string' && entry.length > 0) {
+                        // Real transcribed text exists — emit as text
+                        section.items[i] = {
+                            type:       'text',
+                            key:        'midnight-office-theotokion',
+                            label:      'Theotokion of the Midnight Office',
+                            text:       entry,
+                            source:     'Octoechos',
+                            tone:       tone,
+                            day:        dow,
+                            resolvedAs: 'midnight-office-ordinary-theotokion-text'
+                        };
+                    } else {
+                        // Null sentinel or corpus absent — honest explicit rubric
+                        const toneNote = tone ? ` Tone ${tone}.` : '';
+                        section.items[i] = {
+                            type:       'rubric',
+                            key:        'midnight-office-theotokion',
+                            label:      'Theotokion of the Midnight Office',
+                            text:       'MIDNIGHT OFFICE — Theotokion: The Theotokion is appointed from the Octoechos according to the tone of the week.' + toneNote + ' The Midnight Office Theotokion corpus for this appointment is not yet transcribed.',
+                            resolvedAs: 'midnight-office-theotokion-not-transcribed',
+                            tone:       tone || undefined
+                        };
+                    }
                     continue;
                 }
  

@@ -1,11 +1,17 @@
 # Architectural Charter — Universal Office
-**Version:** 0.3  
+**Version:** 0.4  
 **Status:** Active  
 **Scope:** Repository architecture, data modeling, calendar engines, saints/commemoration system, merge governance
-
+ 
 ## Changelog
-
+ 
+- **0.4 (2026-03-22)** — Horologion office-scoped Theotokion and null-sentinel corpus patterns:
+  - Added `## 12. Office-Scoped Theotokion Handling`.
+  - Added `## 13. Null-Sentinel Corpus Scaffolds`.
+  - Reflects proven patterns established through Orthros v6.1 and Midnight Office v6.2–v6.3.
+ 
 - **0.3 (2026-03-19)** — Horologion engine boundary formalization:
+ 
   - Added `## 6A. Horologion Engine Boundary`.
   - Declared `js/horologion-engine.js` the deterministic orchestration and arbitration layer for Horologion offices.
   - Prohibited direct in-engine growth of large hymnographic corpora, reusable cycle systems, and duplicated resolver trees.
@@ -269,15 +275,54 @@ This means hymnographic corpora store texts by tone, while the calendar engine s
 ---
 
 ## 11. Liturgical Education Layer
-
+ 
 The Universal Office is intended not only for devotional use but also for liturgical formation.
-
+ 
 Educational explanation is therefore a first-class architectural layer.
-
+ 
 Three explanatory depths should be supported:
-
-1. **Micro-explanation** — short tooltip or inline gloss answering “what is this?”
-2. **Structural explanation** — short expandable explanation answering “how does this fit into the office?”
-3. **Tradition explanation** — broader comparative explanation answering “how does this tradition work, and how does it differ from others?”
-
+ 
+1. **Micro-explanation** — short tooltip or inline gloss answering "what is this?"
+2. **Structural explanation** — short expandable explanation answering "how does this fit into the office?"
+3. **Tradition explanation** — broader comparative explanation answering "how does this tradition work, and how does it differ from others?"
+ 
 Educational content must preserve tradition-specific logic and must not flatten distinctions between traditions for convenience.
+ 
+---
+ 
+## 12. Office-Scoped Theotokion Handling
+ 
+Each office that has a Theotokion slot resolves that slot through its own scoped resolver path.
+ 
+The Little Hours (`first-hour` through `ninth-hour`) share `_normalizeTheotokionRubricForOffice()` and `_resolveLittleHourFestalTheotokionRubric()` because they are structurally homogeneous.
+ 
+Offices that are not Little Hours — including Orthros and the Midnight Office — must not be registered into the Little Hours helpers. Their Theotokion slots must be resolved through inline branches in their own resolver functions.
+ 
+For offices without an existing corpus, the correct baseline is an explicit honest rubric that states the appointment without fabricating text. Hard-coded deferred stubs are acceptable only at initial scaffolding. Once a corpus resolver path is established, the stub must be replaced by a corpus-aware branch that:
+ 
+- emits `type:'text'` when a real corpus string is present
+- emits `type:'rubric'` with a specific `resolvedAs` when the corpus entry is null or absent
+ 
+Appointment policy (feast override rules, weekday differentiation) must not be assumed by analogy from another office. Each office's appointment policy requires explicit confirmation from the governing source edition before it is encoded.
+ 
+---
+ 
+## 13. Null-Sentinel Corpus Scaffolds
+ 
+Corpus files that are created before transcription is complete use null-sentinel scaffolds.
+ 
+The pattern:
+ 
+- All corpus entries are initialized to `null`.
+- The engine probe treats `null` as "not yet transcribed" and emits an honest rubric fallback.
+- When a real string is populated, the probe automatically routes to `type:'text'` without any engine change.
+ 
+This pattern is now established and proven for:
+- Orthros weekday corpus families (`sessional-hymns`, `canon`, `praises`, `aposticha`, `theotokion`)
+- Midnight Office Theotokion (`data/horologion/midnight-office-theotokion.json`)
+ 
+The schema for JSON-file-based null-sentinel corpora is: outer key = tone string (`'1'`–`'8'`), inner key = day-of-week string (`'0'`–`'6'`), value = `null` or full text string.
+ 
+The schema for JS-module-based null-sentinel corpora (Octoechos families) is: `window.OCTOECHOS.<office>.<family>.<case>.tones[tone][key] = null | <value>`.
+ 
+No transcription may begin without explicit approval of the governing source edition. No appointment policy may be encoded without explicit architectural approval.
