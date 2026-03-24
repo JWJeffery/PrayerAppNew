@@ -1,9 +1,13 @@
+================================================
 # Architectural Charter — Universal Office
-**Version:** 0.4  
+**Version:** 0.5  
 **Status:** Active  
 **Scope:** Repository architecture, data modeling, calendar engines, saints/commemoration system, merge governance
  
 ## Changelog
+
+- **0.5 (2026-03-23)** — Governance update for Horologion v6.5:
+  - Updated `## 13. Null-Sentinel Corpus Scaffolds` to reflect completion of the Orthros weekday Theotokion corpus (Tones I–VIII, Mon–Sat). Theotokion removed from the pending scaffold list and documented as the first completed Orthros weekday hymnographic corpus.
  
 - **0.4 (2026-03-22)** — Horologion office-scoped Theotokion and null-sentinel corpus patterns:
   - Added `## 12. Office-Scoped Theotokion Handling`.
@@ -318,8 +322,11 @@ The pattern:
 - When a real string is populated, the probe automatically routes to `type:'text'` without any engine change.
  
 This pattern is now established and proven for:
-- Orthros weekday corpus families (`sessional-hymns`, `canon`, `praises`, `aposticha`, `theotokion`)
-- Midnight Office Theotokion (`data/horologion/midnight-office-theotokion.json`)
+- Orthros weekday corpus families (`sessional-hymns`, `canon`, `praises`, `aposticha`) — null-sentinel scaffolds, awaiting source-secure transcription
+- Midnight Office Theotokion (`data/horologion/midnight-office-theotokion.json`) — null-sentinel, transcription unblocked
+
+The following corpus previously using this pattern has been fully transcribed and the null-sentinel scaffold retired:
+- Orthros weekday `theotokion` — **COMPLETE (v6.5)**. All 48 entries (Tones I–VIII × Monday–Saturday) populated from Lambertsen, *The Octoechos* Vols. I–IV. The resolver emits `type:'text'` / `resolvedAs:'orthros-ordinary-weekday-theotokion-text'` for all ordinary weekdays with no rubric fallback. This corpus establishes the completion pattern for the remaining Orthros weekday families listed above.
  
 The schema for JSON-file-based null-sentinel corpora is: outer key = tone string (`'1'`–`'8'`), inner key = day-of-week string (`'0'`–`'6'`), value = `null` or full text string.
  
