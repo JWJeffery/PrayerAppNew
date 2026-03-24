@@ -38,9 +38,9 @@ window.OCTOECHOS.orthros.theotokion.weekday = {
   meta: {
   slot: "orthros-theotokion",
   corpus: "weekday",
- source: "Lambertsen, Octoechos Vol. 1–3 — Tones 1–5 complete",
-tones_active: [1, 2, 3, 4, 5],
-tones_pending: [6, 7, 8]
+ source: "Lambertsen, Octoechos Vol. 1–4 — Tones 1–8 complete",
+tones_active: [1, 2, 3, 4, 5, 6, 7, 8],
+tones_pending: []
 },
 
   tones: {
@@ -217,8 +217,47 @@ tones_pending: [6, 7, 8]
      "in the future. Deliver me therefrom, for I come to thee with unwavering heart, " +
      "and I call upon thy divine protection."
 },
-    6: { 1: null, 2: null, 3: null, 4: null, 5: null, 6: null },
-    7: { 1: null, 2: null, 3: null, 4: null, 5: null, 6: null },
-    8: { 1: null, 2: null, 3: null, 4: null, 5: null, 6: null }
+    6: {
+      1: "O thou who gavest birth to the Light of dispassion, enlighten me who have " +
+         "been benighted by sins, that I may hymn thee, O pure Ever-virgin.",
+
+      2: "Thou wast shown to be holier than the cherubim, O Virgin, for thou gavest " +
+         "birth to the all-holy God. Sanctify us all, who day and night hallow thee " +
+         "with holy voices and faith.",
+
+      3: "When of old the undefiled ewe-lamb, the unblemished Mistress, beheld her " +
+         "Lamb upon the tree of the Cross, she exclaimed maternally, and marveling " +
+         "cried out: \"O my Child most sweet, what is this new and all-glorious thing " +
+         "that I see? How hath the ungrateful assembly given Thee over to the tribunal " +
+         "of Pilate and condemned to death the Life of all? I hymn Thine ineffable " +
+         "condescension, O Word!\"",
+
+      4: "O most hymned one, who gavest birth to the Savior, enlighten the blinded " +
+         "eye of my heart, that, saved because of thee, I may hymn thee.",
+
+      5: "Thou wast truly more highly exalted than all creation, for thou gavest birth " +
+         "unto God in the flesh; wherefore, O Mistress, we, who hope to receive " +
+         "salvation through thee, have thee as an intercessor, a sure hope and a " +
+         "firm bulwark.",
+
+      6: "O Virgin who gavest birth to the Light, enlighten my soul, driving away " +
+         "the darkness of my slothfulness and sin."
+    },
+    7: {
+  1: "As a mother now possessed of boldness before thy Son, O most holy Theotokos, deliver those who hymn thee with love from grievous transgressions, ailments and tribulations, that we may all ever magnify thee.", // PDF page 27
+  2: "The Lord Who clothed Himself in me issued forth from thee, O all-pure one; wherefore, beseech Him to illumine me with the vesture of light, having now stripped from me the most grievous rags of the passions, O Virgin.", // PDF page 36
+  3: "O Maiden who wast the dwelling-place of the Godhead, bathing me with tears, cleanse me, who have become a den of soul-destroying thieves and a place where every iniquity is wrought; and show me to be an abode of the divine Spirit.", // PDF page 45
+  4: "In thy holy arms thou bearest Him Who upholdeth all things. Him do thou beseech, O pure one, that we be saved unharmed by the malefactions of the alien one.", // PDF page 54
+  5: "O blessed one, who art holier than the cherubim, and gavest birth in the flesh unto the Word of God, Who was uplifted upon the Cross of His own will: Earnestly pray to Him in behalf of us all.", // PDF page 62
+  6: "Sin-loving, I tremble before the dread judgment of Him Who was born of thee, O pure one. But preserve me uncondemned thereat, O good one." // PDF page 71
+},
+    8: {
+  1: "O Mistress, portal of the Light, enlighten the eyes of my heart which the thick darkness of sin hath benighted; and send down upon me a ray of repentance, O pure one, and by thy mediation free me from everlasting fire.", // PDF page 99
+  2: "O chosen ewe-lamb of the Word of God, entreat God Who became incarnate of thee, that at the dread hour He number me with His chosen sheep.", // PDF page 108
+  3: "Having escaped maternal pangs when I gave birth to Thee, O Long-suffering One, I now suffer pangs in my womb, and my soul is filled with pain, as Thou now dost accept pain!\", cried the all-pure one, whom we magnify as is meet.", // PDF page 118
+  4: "In that thou art merciful, O thou who gavest birth to the all-good God, heal my soul, which hath become sick through grievous passions; and ever deliver me from enemies who goad and attack me, O all-pure one, that, saved, I may diligently magnify thee, whom our generation hath magnified.", // PDF page 128
+  5: "O Virgin, thou wast shown to be a radiant bridal-chamber for Him Who made His abode within thine incorrupt womb, Who by His will endured His blessed passion, and in His ineffable mercy granted dispassion unto all. Worshipping Him with faith, we piously magnify thee.", // PDF page 139
+  6: "Save me, O Mother of God, who gavest birth to Christ my Savior, God and man, in two natures but a single Hypostasis: He is the only-begotten of the Father, and issued forth from thee as the firstborn of all creation. Him do we magnify in two natures." // PDF page 148
+},
     }
    }
