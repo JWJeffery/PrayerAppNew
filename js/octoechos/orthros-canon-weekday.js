@@ -1,7 +1,21 @@
 /* Orthros — Weekday Canon (Octoechos)
  *
  * Namespace : window.OCTOECHOS.orthros.canon.weekday.tones
- * Status    : Tone 1 fully populated. Tones 2–8 scaffold only.
+ *
+ * Key contract
+ *   tones[tone][day]
+ *     tone : 1–8  (Octoechos tone)
+ *     day  : 1=Monday  2=Tuesday  3=Wednesday  4=Thursday  5=Friday  6=Saturday
+ *   Each slot is either a structured canon entry object (with metadata + odes)
+ *   or explicit null (placeholder, not yet authored).
+ *
+ * Live status
+ *   Tone 1          : all six day slots fully populated
+ *   Tone 2, day 1   : fully populated
+ *   Tone 2, days 2–6: null
+ *   Tones 3–8       : null grids (all six day slots null)
+ *
+ * Consumed by : Orthros weekday canon resolver
  */
 
 window.OCTOECHOS = window.OCTOECHOS || {};
@@ -686,16 +700,180 @@ tones: {
         ],
         theotokion: "Spare me, spare me, O Lord, when Thou shalt render judgment! Condemn me not to the fire, neither rebuke me in Thine anger. The Virgin who gave Thee birth entreateth Thee, O Christ, as doth the multitude of the angels and the company of martyrs."
       }
+    }
+  },
+
+    2: {
+      metadata: {
+        day:             "Tuesday",
+        theme:           "Repentance and the Holy Martyrs; the Forerunner",
+        canons:          ["Canon of Repentance to our Lord Jesus Christ and His holy martyrs", "Canon of the holy prophet John the Forerunner"],
+        flatteningOrder: "Canon of Repentance irmos governs; troparia: Canon of Repentance then Canon of the Forerunner per ode, in source order (Martyricon troparia excluded); theotokion: final theotokion of the ode sequence",
+        ode2Present:     false,
+        source:          "Lambertsen, The Octoechos Vol. I (Tones I & II), St. John of Kronstadt Press, 1999",
+        pages:           "106–111",
+        verified:        true
+      },
+      odes: {
+        1: {
+          irmos: "Taking up the hymn of Moses, cry aloud, O my soul: My Helper and Protector hath He been for my salvation! He is my God, and I shall glorify Him!",
+          troparia: [
+            "Before our departure let us weep bitterly over ourselves, O brethren, that by goodly tears we, who are devoid of ought that is profitable, may avoid torment at that time.",
+            "Ten thousands of times I vowed to repent, O Christ, but my soul is numb, and I fall into transgressions. Have pity on my weakness, O Savior.",
+            "O Baptist and Forerunner of Christ, pilot my mind, which is ever overwhelmed by bodily pleasures, and still the waves of the passions, that I may hymn thee in divine serenity.",
+            "Illumined with inconceivable enlightenment, like a star of great radiance thou didst advance before the noetic Dawn. Thereby, O Baptist, I pray: Let my heart be enlightened which hath been benighted by all the assaults of the demons.",
+            "In the river, O most wise one, thou didst once immerse the Abyss Who by grace doth accomplish the drowning of all transgression. And I pray, O blessed one: By thy divine mediation dry up the torrents of my transgressions."
+          ],
+          theotokion: "Thou wast the kinsman of the pure Virgin who gave flesh unto God; and we who now dwell in thy divine temple honor thee with her, and we pray: Make us also temples of the Holy Spirit."
+        },
+
+        3: {
+          irmos: "By Thy compassion show forth my barren mind to be fruitful, O God, Thou Husbandman of good things and Planter of blessings.",
+          troparia: [
+            "I have weighed my soul down with the slumber of slothfulness. But rouse me, O Christ unto the wakefulness of repentance, that I may do Thy commandments.",
+            "I have defiled my hands and eyes, having done those things which I ought not to have done, O Lord; and I have turned Thy compassions to wrath, squandering Thy long-suffering. But look down, O Good One, and have pity on me.",
+            "Heal the stripes of my soul, O Forerunner of the Lord, and with thy divine mediation illumine my mind, which hath been obscured by indifference; and deliver me from every machination of the adversary, I pray.",
+            "Born in accordance with the providence of God, O all-wise prophet, thou didst free thy mother from barrenness; wherefore, by thy mediation make my barren heart now fruitful, O Forerunner of the Lord, that it may put forth the virtues as shoots.",
+            "In thy love pray that those who with faith serve thy temple may receive the heavenly life of Him Who createth the divine abode; and by thy mediation, O Baptist and Forerunner, make them temples of the divine Spirit."
+          ],
+          theotokion: "Carried in the womb of thy mother, O Forerunner, thou didst rejoice and pay homage to the Lord, Who was borne in the womb of her who is full of grace. Him do thou entreat, that He deliver me from all tribulation."
+        },
+
+        4: {
+          irmos: "Foreseeing thy nativity from the Virgin, the prophet lifted his voice in proclamation, crying: I heard report of Thee, and I was afraid, O Christ, for Thou hast come from Thæman, from the holy mountain which is overshadowed!",
+          troparia: [
+            "Seeing me everywhere robbed and reduced to penury, the enemy, the crafty deceiver, rejoiceth, O Word. But deliver me from his malefactions, O Lord of glory, O Enricher of the poor.",
+            "With thy right hand, thou didst bow the head of Him Who bowed down the heavens and conversed with men, O thou who art most rich. Preserve me also thereby, maintaining my heart in humility.",
+            "The trackless desert had thee dwelling within it, O blessed Forerunner; wherefore, I cry unto thee: Keep safe my soul, which is devoid of any divine activity.",
+            "Observing the law of God, thou wast iniquitously slain; wherefore, I pray to thee: Set me aright, who ever commit iniquity and am led astray by the deceptions of the demons.",
+            "Having made thyself a temple for the King and Master, O Forerunner, thou hast now passed over to the divine habitations. Pray thou that those who have raised up a divine house unto thee may receive it."
+          ],
+          theotokion: "Look down upon me who am ailing, O most immaculate one, and free me from my grievous and nigh incurable passions, that I may magnify thee who hast magnified all humanity."
+        },
+
+        5: {
+          irmos: "Dispelling the darkness of my soul, O my Savior, with the light of the commandments illumine me, in that Thou alone art the King of peace.",
+          troparia: [
+            "Mindlessly do I heap sins upon sins, and there is no uplifting in my death. Woe is me! How shall I appear before Christ?",
+            "Misfortune hath smitten me like a ship, and I have cast overboard the freight Thou gavest me, O Compassionate One; and, now impoverished, I cry: Disdain me not, O Christ!",
+            "O Forerunner, who baptized Christ, the Stream of incorruption, in the torrents of the Jordan: Beseech Him to dry up the effluvia of my passions, that I may inherit torrents of sweetness and the beautiful joy of the righteous.",
+            "Already I lament, and am constrained by fear, and am ever stuck fast in perplexity, thinking upon the things I have done and the terrible judgment which is to come. O compassionate Lord, have pity on me, through the entreaties of Thy Forerunner.",
+            "O Forerunner, who didst tell the people that the law of salvation lieth in repentance for their transgressions, thou didst stand before the law and grace; wherefore, we entreat thee: Enlighten us with examples of repentance.",
+            "Time to repent do Thou grant unto me who have wasted all the time I have despondently passed through, O Benefactor and Word, for Thou hast John, the great Forerunner and universal preacher of repentance, entreating Thee for this."
+          ],
+          theotokion: "I have been done to death by the assaults and pursuit of the deceiver, O most immaculate Mistress. Enliven me, O Theotokos who gavest birth to the hypostatic Life of all, that with piety I may hymn thee, the most immaculate one."
+        },
+
+        6: {
+          irmos: "Stuck fast am I in the abyss of sin, O Savior, and tempest-tossed on the deep of life; yet lead me up from the passions and save me, as Thou didst Jonah from the sea monster.",
+          troparia: [
+            "Like the Canaanite woman of old do I cry unto Thee: O Son of God, have mercy and pity on me! For my soul suffereth in its grievous deeds, and doth not itself desire to come to its senses.",
+            "The tempest of countless passions vexeth me. As once Thou didst rebuke the sea and save Thy holy disciples, O Jesus Christ, so raise me up and save me.",
+            "O voice who proclaimed the Word, accepting the cries of us all, ask that He grant forgiveness of sins unto those who hymn Him with faith.",
+            "Heal the broken state of my soul, loose the burden of my sins, and by thy supplications save me who am beyond hope, O blessed Forerunner.",
+            "Entreat Jesus, Whom thou didst baptize with thy hand, O most glorious Forerunner, that from the hand of sin He deliver me who ever lift up my hands unto Him."
+          ],
+          theotokion: "I am stuck fast in the slumber of slothfulness, and the sleep of sin weigheth heavily upon my heart. But by thy vigilant mediation raise me up, O all-pure one, and save me."
+        },
+
+        7: {
+          irmos: "Emulating the cherubim, the youths danced in the midst of the furnace, crying: Blessed art Thou, O God, for in truth and judgment Thou hast brought all these things upon us because of our sins! All-hymned and all-glorious art Thou for all ages!",
+          troparia: [
+            "I have rejected Thy laws and made myself subject to irrational lusts, doing unseemly things, O Christ, for I have become vain in my mindlessness more than any other men on earth. But in Thy loving-kindness leave me not to perish, O Savior.",
+            "Behold, I have been conceived in iniquities, O Lord: like David I cry out, like the harlot I weep, and like an offensive servant I have offended Thee, the only good God. But in Thy loving-kindness leave me not to perish, O Savior.",
+            "Having hewn down the wounds of my passion-plagued heart with thine axe of repentance, O Forerunner, plant in their stead divine dispassion and the most pure fear of God, which remove me from all evil.",
+            "As thou didst baptize in the streams of the Jordan the Lord Who covereth His chambers with the waters, beseech Him ever to give the water of divine compunction to mine eyes, O glorious Forerunner.",
+            "Having preached the Lamb of God, Who taketh away the sin of the world, O glorious Forerunner, beseech Him to deliver me from the lot of the goats, and to number me among the lambs at His right hand."
+          ],
+          theotokion: "A barren womb bore thee, O Virgin, who didst bear in thy womb the Word incarnate, Whom the great Forerunner, rejoicing, acknowledged with godly leaps as the most holy and seedless Fruit, bowing down before Him."
+        },
+
+        8: {
+          irmos: "Hymn and bless Him Who, on Mount Sinai of old, prefigured the miracle of the Virgin in the bush for Moses, and exalt Him supremely for all ages!",
+          troparia: [
+            "That Thou mightest deify us, in Thy mercy Thou becamest incarnate. This have I not understood, in thrall as I am to pleasures. But in Thy goodness convert me, O Christ, Thou salvation of all.",
+            "O Word, good Shepherd, turn Thou and save my wretched soul, which hath become lost in the mountains of transgression, and let not the deceiving foe slay me utterly.",
+            "Extend thy right hand unto me who lie on the ground, O Forerunner who, extending thy right hand, didst wash the Undefiled One in the waters. Deliver me from bodily corruption, cleansing me wholly with repentance; and save me.",
+            "As thou hast time to repent, O my soul, shake off the heavy sleep of slothfulness, and hasten to keep watch, crying out to thy Master: Have pity on me, O Thou Who art full of loving-kindness, through the entreaties of him who baptized Thee.",
+            "The torrents of the passions and the waters of evil have entered in unto my soul, O blessed Forerunner. Haste thou quickly to rescue me, O thou who in the river's streams did wash the most tranquil Deep of dispassion."
+          ],
+          theotokion: null
+        },
+
+        9: {
+          irmos: "Who among mortals hath ever heard or seen such a thing as a virgin being found to have conceived in her womb and given birth to a babe without pain? Such a miracle was thine, O pure Theotokos, and we magnify thee.",
+          troparia: [
+            "O how awesome is the tribunal at which I shall await judgment, O Christ; yet I in nowise feel terror thereof, spending all my time in idleness. But convert me, O only Creator, Who converted the sinful Manasseh.",
+            "Stanch the torrents of my boundless evils, I cry unto Thee, O Christ, granting me outpourings of tears which wash away the defilement in which I wallowed in mine insanity; and in Thy mercy save me, O Thou Who didst save the harlot who repented with all her soul.",
+            "Deliver me from the mire of sin, O only sinless and greatly merciful Lord, through the entreaties of the Baptist who to the whole world proclaimed Thee the Lamb of God Who taketh away the sins of men.",
+            "Having thee as a fragrant rose, as a right redolent cypress-tree, as a never-fading lily, as precious myrrh, O Forerunner of the Lord, running to thy protection I am delivered from the stench of my deeds by thy supplications.",
+            "O most blessed one, make me ever fruitful in the virtues who am become barren through my fruitless deeds, making me a child of the Lord, a dweller with the council of the saints.",
+            "From heaven grant remission of evils, correction of life and deliverance from transgressions unto us who love thee, who honor thee with love and join chorus in thy divine temple, O Forerunner of the Lord."
+          ],
+          theotokion: "Thou didst pay homage unto Him Who was borne in the womb of the Mother of God and holdeth all things in His hand, O prophet. With her pray that my lowly soul may be saved, for every day it falleth into many offenses."
+        }
+      }
     },
 
+    3: null,
     4: null,
     5: null,
     6: null
-}
-        }        // closes tones[2]
-    }            // closes tones
-    // 
-    
-    
-  // closes window.OCTOECHOS.orthros.canon.weekday      
+        },
+
+        3: {
+            1: null,
+            2: null,
+            3: null,
+            4: null,
+            5: null,
+            6: null
+        },
+
+        4: {
+            1: null,
+            2: null,
+            3: null,
+            4: null,
+            5: null,
+            6: null
+        },
+
+        5: {
+            1: null,
+            2: null,
+            3: null,
+            4: null,
+            5: null,
+            6: null
+        },
+
+        6: {
+            1: null,
+            2: null,
+            3: null,
+            4: null,
+            5: null,
+            6: null
+        },
+
+        7: {
+            1: null,
+            2: null,
+            3: null,
+            4: null,
+            5: null,
+            6: null
+        },
+
+        8: {
+            1: null,
+            2: null,
+            3: null,
+            4: null,
+            5: null,
+            6: null
+        }
+
+    }
 }
