@@ -815,14 +815,569 @@ tones: {
       }
     },
 
-    3: null,
-    4: null,
-    5: null,
-    6: null
+3: {
+      metadata: {
+        day:             "Wednesday",
+        theme:           "The Precious and Life-creating Cross and the Theotokos",
+        canons:          ["Canon to the precious and life-creating Cross of the Lord", "Canon of the all-holy Theotokos"],
+        flatteningOrder: "Canon of the Cross irmos governs; troparia: Canon of the Cross then Canon of the Theotokos per ode, in source order (Martyrica excluded); theotokion: final theotokion of the ode sequence",
+        ode2Present:     false,
+        source:          "Lambertsen, The Octoechos Vol. I (Tones I & II), St. John of Kronstadt Press, 1999",
+        pages:           "115–120",
+        verified:        true
+      },
+      odes: {
+        1: {
+          irmos: "Overwhelming power once laid low the whole army of Pharaoh in the deep, and the incarnate Word hath destroyed pernicious sin. All-glorious is the Lord, for gloriously hath He been glorified.",
+          troparia: [
+            "Of old, through the tree death befell the first-created man, when he broke the first commandment; but the Immortal One, Who was lifted up upon the Tree and tasted death, hath given immortality to all men.",
+            "When the Cross was planted in the earth the arrogance of the enemy fell and was thus destroyed; and man, who before was cast out, entereth again into paradise. Glory to Thee, our only God, Whose good pleasure this was!",
+            "Come, all ye faithful, and together let us chant unto the Theotokos; for she gave birth to Christ in manner past all human understanding, and unceasingly prayeth that He save us all.",
+            "He Who is the image of the Hypostasis of the Father took on matter from thee, O Theotokos, and hath glorified our corrupted form and restored it.",
+            "As one higher in honor than the cherubim, thou transcendest the circles of heaven; for in manner past understanding thou didst contain God in thy womb without suffering.",
+            "Thou gavest birth unto the Lord and Benefactor, the deliverance from our sins, changing the mortality of our forefather Adam; and thou hast lifted our nature up to the heavens."
+          ],
+          theotokion: "Thou gavest birth unto the Lord and Benefactor, the deliverance from our sins, changing the mortality of our forefather Adam; and thou hast lifted our nature up to the heavens."
+        },
+        3: {
+          irmos: "The desert, the barren Church of the nations, blossomed like a lily at Thine advent, O Lord; and therein hath my heart been established.",
+          troparia: [
+            "When Thou wast crucified, Thou didst shake all creation, O Lord, but didst make steadfast the faithful, who hymn Thy power and Thine ineffable condescension, O Word.",
+            "By Thy Cross Thou didst open paradise, O Master, and didst lead therein the thief who acknowledged Thy kingship and the richness of Thy divine loving-kindness.",
+            "O Virgin, we all truly call thee the golden censer, the jar of manna, the mountain of God and the divine and beauteous palace.",
+            "In that thou art the temple and sacred dwelling-place of the Word, O all-pure and Ever-virgin Theotokos, be thou for me the cleansing of offenses.",
+            "Neither the tongue of mortals nor the mind of the incorporeal beings is able to describe thy birthgiving, O Theotokos, for thou gavest birth to the Creator in manner transcending nature and comprehension.",
+            "O Virgin Theotokos, be thou the confirmation and refuge of those who have recourse unto thee with faith and declare thee to be the Mother of God."
+          ],
+          theotokion: "O Virgin Theotokos, be thou the confirmation and refuge of those who have recourse unto thee with faith and declare thee to be the Mother of God."
+        },
+        4: {
+          irmos: "Thou didst come forth from the Virgin, neither a mediator nor an angel, but Thyself incarnate, O Lord, and hast saved me, the whole man; wherefore, I cry to thee: Glory to Thy power, O Lord!",
+          troparia: [
+            "When Thou wast uplifted upon the Tree Thou didst abolish the rule of the cruel prince of this world, and didst annul the curse. Wherefore, saved by Thee, O only Lord, we glorify Thee.",
+            "Beholding Thee stretched out upon the Tree, the sun hid its light, the mountains and rocks split asunder, and the veil of the temple was rent in twain, O Almighty One.",
+            "O Theotokos, we, the faithful, have come to know the Son Who was born, incarnate, of thee without seed: true God and man by nature. Wherefore, we glorify thee.",
+            "Ever fleeing with faith beneath thy protection and help, O all-pure Virgin, because of thee we are delivered from every grievous circumstance.",
+            "Deliver us from temptations, from the tempest of thoughts, from all wrath and every sin, from famine and plague, and from everlasting torment, O all-pure Virgin.",
+            "As thou art our intercessor, salvation and the hope of Christians, O Mistress, save those who ever hymn thee with faith and love, O most hymned Virgin."
+          ],
+          theotokion: "As thou art our intercessor, salvation and the hope of Christians, O Mistress, save those who ever hymn thee with faith and love, O most hymned Virgin."
+        },
+        5: {
+          irmos: "Thou art a Mediator between God and man, O Christ God; for by Thee, O Master, are we led up out of the night of ignorance to Thy Father, the Source of light.",
+          troparia: [
+            "Nailed to the Cross, Thou didst shake the foundations of the earth; and pierced by the spear, Thou didst slay the serpent, the author of evil, and didst pour forth streams of salvation upon all, O Christ.",
+            "Thou couldst not bear to see lost that which Thou didst create with Thine own hands; and, slain, Thou didst stretch out Thy hands upon the Tree, O Word; and by the Tree Thou didst bring life unto him who died of old.",
+            "O Theotokos, we, the faithful, have come to know the Son Who was born, incarnate, of thee without seed: true God and man by nature. Wherefore, we glorify thee.",
+            "Ever fleeing with faith beneath thy protection and help, O all-pure Virgin, because of thee we are delivered from every grievous circumstance.",
+            "Deliver us from temptations, from the tempest of thoughts, from all wrath and every sin, from famine and plague, and from everlasting torment, O all-pure Virgin.",
+            "As thou art our intercessor, salvation and the hope of Christians, O Mistress, save those who ever hymn thee with faith and love, O most hymned Virgin."
+          ],
+          theotokion: "As thou art our intercessor, salvation and the hope of Christians, O Mistress, save those who ever hymn thee with faith and love, O most hymned Virgin."
+        },
+        6: {
+          irmos: "From the belly of the sea monster, Jonah cried out: Lead me up from the abyss of hell, I pray, that with a spirit of truth and in a voice of praise I may sacrifice to Thee, as to my Deliverer!",
+          troparia: [
+            "Jacob once laid his hands upon the heads of his grandsons, prefiguring the Cross on which Thou, O Word, didst stretch out Thy hands; and Thou didst deliver mankind from the hand of the lying adversary, O Christ.",
+            "When Thou wast crucified of Thine own will, O Christ our King, reigning sin was overthrown; and Adam, who once, of old, was driven out of paradise, was brought to dwell therein again, hymning Thee.",
+            "He Who of His own will created all things deigned to make His abode within the womb of her who knew not wedlock; and, in that He is full of loving-kindness, He enriched with incorruption those sick with corruption.",
+            "O all-immaculate One, who art more exalted and holy than the hosts on high, in supernatural manner thou didst contain in thy womb the uncontainable Word.",
+            "O Mistress, unto the ways of repentance guide me who have strayed from the path of life and often wander lost amid the trackless wilderness of sin.",
+            "Disdain not our entreaties of us, thy servants, who set our hope on thee, O pure one; for thou art the refuge and cleansing of men's souls, O Mistress."
+          ],
+          theotokion: "Disdain not our entreaties of us, thy servants, who set our hope on thee, O pure one; for thou art the refuge and cleansing of men's souls, O Mistress."
+        },
+        7: {
+          irmos: "The command of the iniquitous tyrant, opposed to God, raised up a lofty flame; but Christ, Who is blessed and all-glorious, spread a spiritual dew upon the pious youths.",
+          troparia: [
+            "The sword which before was unsheathed is now withdrawn for me since Thou, O compassionate Lord, wast lifted up upon the Cross and pierced with a spear; wherefore, finding dispassion through thy precious suffering, I magnify thee.",
+            "The serpent which was lifted up by Moses on a tree prefigured the divine lifting up of Christ, Who slew the lying serpent and hath given life unto all, who became dead through disobedience.",
+            "As thou art my strength and song, my salvation, firm help and invincible bulwark, O Mistress, vanquish the demons which war against me, ever seeking to slay me.",
+            "Giving flesh to God of thy virginal blood, O Virgin, thou hast deified mankind; wherefore, I pray thee: by thy supplications deliver me, who have been defiled by the passions and corrupted by the wiles of the enemy.",
+            "The furnace prefigured thy birthgiving, O most immaculate one, for it did not consume the children, just as the unbearable Fire did not consume thy womb. Wherefore, we entreat thee: Deliver thy servants from eternal fire.",
+            "Remaining a virgin, thou alone didst show forth an all-pure conception and an incorrupt birthgiving, for thou didst conceive Christ, Who is God over all and became man, O pure one, for the salvation and deliverance of the faithful."
+          ],
+          theotokion: "Remaining a virgin, thou alone didst show forth an all-pure conception and an incorrupt birthgiving, for thou didst conceive Christ, Who is God over all and became man, O pure one, for the salvation and deliverance of the faithful."
+        },
+        8: {
+          irmos: "Once, in Babylon, the fiery furnace divided its activity at the command of God, consuming the Chaldæans, but bedewing the faithful, who chant: Bless the Lord, all ye works of the Lord!",
+          troparia: [
+            "By the blood which flowed from Thine incorrupt side hath creation been sanctified, O Long-suffering One, the rivers of polytheism were dried up, and showers of piety have brought an end to the drought of deceptions.",
+            "The sun was appalled by Thy crucifixion and hid its rays; the rocks split asunder, and hades, below, was terrified; and the souls of the righteous leapt up, trusting in their ultimate deliverance, O Word.",
+            "O unblemished Ewe-lamb, who gavest birth unto the Lamb of God, the living and abundant salvation of us mortals: Spurn me not who cry: Bless the Lord, all ye works of the Lord!",
+            "O all-pure one, thy divine Offspring hath restored us and shown us all to be sons of the day and light; and, saved, we cry out: Bless the Lord, all ye works of the Lord!",
+            "O pure one, from thy virgin womb thou gavest birth to the living Water, and hast poured forth remission upon the faithful from thy well-spring of healings; wherefore, we all cry out: Bless the Lord, all ye works of the Lord!",
+            "Thou gavest rise to the ripe Grapes of life, O pure one; for thou art the vine which sweeteneth the earth with good things, and hymning thee, we cry: Bless the Lord, all ye works of the Lord!"
+          ],
+          theotokion: null
+        },
+        9: {
+          irmos: "God the Lord, the Son of the unoriginate Father, hath revealed Himself to us incarnate of the Virgin, to enlighten those in darkness and to gather the dispersed. Wherefore, we magnify the all-hymned Theotokos.",
+          troparia: [
+            "By Thy wounds mend my broken and contrite state, O unfathomable Word, and by Thy suffering, O Lord God of my salvation, cleanse mine image, which hath been buried under wicked passions.",
+            "In Thy goodness Thou wast seen to be uplifted upon the cypress, the pine and the cedar, that Thou mightest save mankind, O Master, Who art One of the Holy Trinity, possessed of a single Hypostasis in two natures.",
+            "O pure one, who for us gavest birth to the hypostatic Life Who manifestly destroyed death by His death, slay thou the passions of my soul, and grant me a fountain of tears, that I may ever glorify thee.",
+            "Hope unashamed, certain trust, an unassailable rampart, protection and helper, O most immaculate one, be thou unto me who set my hope on thee; and guide me to the light of repentance and compunction, O pure one.",
+            "That thy servant may be delivered from all the evil of the demons, from grief and damnation, and from everlasting fire, entreat thy Son, that I may ever glorify thee with faith.",
+            "Thou alone hast been shown to be the one whose conception was all-pure and whose birthgiving was incorrupt, so that thou didst remain a virgin; for thou didst conceive Christ, the God of all, O pure one, for the salvation and deliverance of the faithful."
+          ],
+          theotokion: "Thou alone hast been shown to be the one whose conception was all-pure and whose birthgiving was incorrupt, so that thou didst remain a virgin; for thou didst conceive Christ, the God of all, O pure one, for the salvation and deliverance of the faithful."
+        }
+      }
+    },
+4: {
+      metadata: {
+        day:             "Thursday",
+        theme:           "The Holy Apostles and St. Nicholas the Wonderworker",
+        canons:          ["Canon of the holy apostles", "Canon of St. Nicholas the great wonderworker"],
+        flatteningOrder: "Canon of the Apostles irmos governs; troparia: Canon of the Apostles then Canon of St. Nicholas per ode, in source order (Martyrica excluded); theotokion: final theotokion of the ode sequence",
+        ode2Present:     false,
+        source:          "Lambertsen, The Octoechos Vol. I (Tones I & II), St. John of Kronstadt Press, 1999",
+        pages:           "124–129",
+        verified:        true
+      },
+      odes: {
+        1: {
+          irmos: "Overwhelming power once laid low the whole army of Pharaoh in the deep, and the incarnate Word hath destroyed pernicious sin. All-glorious is the Lord, for gloriously hath He been glorified.",
+          troparia: [
+            "O radiant apostles of the Savior, who through faith became the lightning-bolts of the divine Light, enlighten me, who have wholly become darkened by the blackness of pleasures and have passed all my life in slothfulness.",
+            "O disciples and friends of Christ, deliver me who, because of mine affinity for evils, am become a friend of the enemy, and impel my soul toward the love of Him Who, in His goodness, hath loved the human race.",
+            "O my lowly soul, before my death haste thou to repent, and weep for thyself, who hast been given to death, that He Who in His loving-kindness raised up Lazarus who was four days dead might raise thee up also, at the entreaties of the apostles.",
+            "Ever standing before the divine throne of grace, O Nicholas, pray that grace and mercy be given to thy servants, who call upon thee with faith.",
+            "O father Nicholas, primate of the people of Myra, with thy good works thou didst perfume the assemblies of the faithful. Deliver me from fœtid transgression.",
+            "Having acquired a heart more brilliant than the sun, O father Nicholas, wholly enlighten me, dispelling the darkness of temptations and tribulations."
+          ],
+          theotokion: "O most immaculate one, thou art my might, joy and gladness, a steadfast bulwark and intercessor, delivering me from temptations and misfortunes."
+        },
+        3: {
+          irmos: "The desert, the barren Church of the nations, blossomed like a lily at Thine advent, O Lord; and therein hath my heart been established.",
+          troparia: [
+            "Having acquired the Wisdom of God as your Teacher through the Spirit, O saints, ye rendered foolish the wisdom of the pagans, O right wondrous beholders of God.",
+            "Loose ye the barrenness of my soul, O most lauded ones, and cause it to produce fruitful acts in the virtues, in that ye are right blessed eye-witnesses of the Word.",
+            "At the entreaties of Thine apostles, O greatly merciful Benefactor of all, heal me, who have now been grievously wounded by the venomous sting of the enemy.",
+            "As thou art a well-spring of healings, O holy one, cure the passions of my soul and preserve my life, keeping me, thy servant, free from harm.",
+            "Granting my mind recovery from defeat, O great Nicholas, as mine intercessor save me from the harm wrought by the enemy, visible and invisible, who wage war on me.",
+            "He Who alone is good hath given thee to men as a good helper; wherefore, I beseech thee: Free me from all evils!"
+          ],
+          theotokion: "O most immaculate one, thou art my might, joy and gladness, a steadfast bulwark and intercessor, delivering me from temptations and misfortunes."
+        },
+        4: {
+          irmos: "Foreseeing thy nativity from the Virgin, the prophet lifted his voice in proclamation, crying: I heard report of Thee, and I was afraid, O Christ, for Thou hast come from Thæman, from the holy mountain which is overshadowed!",
+          troparia: [
+            "O Thou Who alone lovest mankind, at the divine entreaties of the apostles who preached Thee throughout the world, nourish with the food of salvation me who am ever starving and famished by hunger.",
+            "Into the sea of the world Thou didst ride all Thy glorious apostles like steeds, O Thou Who lovest mankind, and they roil its salty waters of bitter unbelief.",
+            "O all-praised apostles, who announced Christ the Sun to those in darkness, enlighten me who lie in the darkness of sin, and restrain the wicked thoughts of my heart.",
+            "Adorning thy cathedra with the virtues, O Nicholas, thou wast shown to be the precious ornament of hierarchs; wherefore, I entreat thee: Make beautiful the ugliness of my soul, and save me from the temptations of the world.",
+            "Smooth thou the way which leadeth to heaven, O all-blessed one; let me ride lightly upon the waves of life; and steer me into the harbor of life, for I have been made rich by thee, the great intercessor, O Nicholas.",
+            "O great Nicholas, who hearest words divine, hearkening unto my words deliver me from the temptations of the enemy, from iniquitous men, and from the evil circumstances which beset me."
+          ],
+          theotokion: "O holy Mistress Theotokos, sanctify me night and day, and preserve and guide me to salvation, for I have fallen into many sins and am brought low by the assaults of the demons."
+        },
+        5: {
+          irmos: "Thou art a Mediator between God and man, O Christ God; for by Thee, O Master, are we led up out of the night of ignorance to Thy Father, the Source of light.",
+          troparia: [
+            "The great Shepherd sent you forth, His godly apostles, like sheep among wolves, transforming them by the divine grace of baptism and the goodness of your words.",
+            "With divine light ye illumined the hearts of those who languished in the darkness of deception, O apostles; wherefore, I beseech you: Enlighten me who have been benighted by dark pleasures, O divinely blessed ones.",
+            "O my wretched soul, before the end make haste and repent, crying out to the Lord: I have sinned against Thee, O Master! For the sake of the apostles forgive and save me, in that Thou art full of loving-kindness.",
+            "O fulfiller of the law of God, entreat the good God, that I may observe the laws of God; and rescue me from the iniquitous foe and the harm wrought by the demons, O most blessed Nicholas.",
+            "As of old thou didst stand forth, delivering the three youths, O holy one, so now by thy supplications deliver me from every sin, O divinely wise Nicholas.",
+            "O great wonderworker, sacred minister of Christ, surety of sinners: Entreat God, the Bestower of good, that He not put me to shame at the hour of judgment."
+          ],
+          theotokion: "O pure one who gavest birth to the Lord, in that thou art good stand forth and deliver me who am beset by many passions, that, saved, I may hymn thee with soul, heart and tongue."
+        },
+        6: {
+          irmos: "Whirled about in the abyss of sin, I call upon the unfathomable abyss of Thy loving-kindness: Lead me up from corruption, O God!",
+          troparia: [
+            "In that ye bear the Water of life, O disciples of the Savior, give drink to my soul, which withereth away under the burning heat of sin, I pray.",
+            "As noetic heavens, O divinely radiant apostles, ye declared the ineffable glory of God. Pray ye that all of us may also receive it.",
+            "Tempest-tossed on the cruel deep, I come to Thee Who art the Helmsman of all, O Christ. For the sake of Thine apostles pilot me to the harbor of salvation.",
+            "O Nicholas, primate of the people of Myra, with thy good works thou didst perfume the assemblies of the faithful. O wise one who receivest the grace of healings, by thy supplications loose the bonds of mine evils, and bind me to the divine love of the Master Who desired to become man.",
+            "Visit me day and night with thy divine presence, smoothing the way for my lowly soul, O holy Nicholas; and preserve me unwounded by the temptations of the evil one, which assail me.",
+            "Grant me a hand to stretch forth for the help of God, and preserve me from the cruel expectation of the enemy, O Nicholas who once didst deliver the youths from bitter death, that I may honor thee as my good intercessor."
+          ],
+          theotokion: "Ineffably giving birth without tasting of wedlock, thou wast not consumed by the fire of the Godhead, O Virgin; wherefore, O pure one, pray with the apostles that He free me, who glorify thee, from the everlasting flame."
+        },
+        7: {
+          irmos: "The command of the iniquitous tyrant, opposed to God, raised up a lofty flame; but Christ, Who is blessed and all-glorious, spread a spiritual dew upon the pious youths.",
+          troparia: [
+            "Having first been ignited by the fire of the divine Spirit, O apostles, ye quenched the burning coals of deception and enkindled the love of God in the minds of all the faithful; wherefore, we honor you aloud.",
+            "Ye hated the world and those in the world, and ye loved Christ, Who in the world united Himself to the flesh of men. Him do ye beseech, O divine apostles, that He free me from all evils in this life.",
+            "O righteous Judge Who knowest the hearts of men, Who alone knowest my secret offenses: At the hour of judgment condemn me not, neither send me into the fire, through the supplications of Thine apostles.",
+            "Having first been ignited by the fire of the divine Spirit, O apostles, ye quenched the burning coals of deception and enkindled the love of God in the minds of all the faithful; wherefore, we honor you aloud.",
+            "Every day I experience the fire of temptations, O father Nicholas; I pass among snares like a bird, and hasten under thy compassionate protection. Preserve me untouched by harm, entreating the good God and Lord.",
+            "Swiftly hearkening to my words, O father Nicholas, haste thou to come to the aid of me who am bestormed by the tribulations and necessities of life and the affliction of the demons, that, saved, I may hymn thine intercession.",
+            "O father Nicholas, who of old appeared in a dream to the emperor, delivering the innocent who were set to be executed, ever deliver me from the assaults which beset me, from sickness of body and pain of soul."
+          ],
+          theotokion: "Thee alone do I have as a helper, O all-pure one; thee do I declare to be the preserver of the life of all. Disdain me not, thy servant, O thou who alone art the intercessor for the world, but save me who chant: Blessed is the God of our fathers!"
+        },
+        8: {
+          irmos: "Once, in Babylon, the fiery furnace divided its activity at the command of God, consuming the Chaldæans, but bedewing the faithful, who chant: Bless the Lord, all ye works of the Lord!",
+          troparia: [
+            "The all-holy Spirit, in material form descending on you in the guise of fire, made you torches burning up ungodliness and enlightening all the pious, O divine apostles of the Word.",
+            "O Compassionate One, I pray: Heal Thou my heart, which is bestormed by the passions and is not set aright. And at the entreaties of Thine apostles, enlighten my soul, and direct my mind, which hath inclined unto evil.",
+            "Sigh, O my soul, shed tears in earnest, and weep for thyself before the end, lest inconsolable lamentation overtake thee; and cry out to the Lord: Save me, O Merciful One, at the supplications of Thine apostles!",
+            "O divinely wise father Nicholas, who received from God the authority to loose and to bind, by thy supplications loose the bonds of mine evils, and bind me to the divine love of the Master Who desired to become man.",
+            "Visit me day and night with thy divine presence, smoothing the way for my lowly soul, O holy Nicholas; and preserve me unwounded by the temptations of the evil one, which assail me.",
+            "When Thou shalt sit on Thy dread throne to judge the world, O God, enter not into judgment with Thy servant, but, through the supplications of Nicholas, vouchsafe unto me the portion of the saved."
+          ],
+          theotokion: null
+        },
+        9: {
+          irmos: "God the Lord, the Son of the unoriginate Father, hath revealed Himself to us incarnate of the Virgin, to enlighten those in darkness and to gather the dispersed. Wherefore, we magnify the all-hymned Theotokos.",
+          troparia: [
+            "O glorious apostles, blessed disciples of the Savior, most wise preachers: Deliver me from all harm, from all wrath, from all sin, from every evil circumstance, and from divers perils.",
+            "At the prayers of Thine apostles, O Lord, return me who am condemned, who am incorrigible, who have ignored Thy precepts and, sick of mind, have followed the beguilements of the demons.",
+            "I possess a soul which is incorrigible, a conscience buried under transgressions, a heart defiled and a mind bemired, O Thou Who lovest mankind, yet I cry unto Thee: For the sake of the apostles have pity on me in Thy mercy!",
+            "I know thee to be a standard for the priesthood and model of meekness, O wise Nicholas. By thy supplications still thou the storm of passions and misfortunes which assaileth me all the days of my life, and keep me unharmed, O most sacred father.",
+            "As a most sacred vessel deemed worthy of the divine Myrrh which is mercifully poured forth upon the earth, perfume the hearts of us all, O wise one who wast the chief hierarch of the people of Myra, dispelling the stench of temptation by thy supplications.",
+            "Bring peace to my soul, which is sorely vexed by the invisible horde; and allay for me the countless temptations which the deceiver hurleth at me day and night, showing thyself to be my good intercessor, O Nicholas."
+          ],
+          theotokion: "Have pity, have pity on me, O Lord, when Thou shalt come to render judgment, and condemn me not to the fire, neither rebuke me in Thine anger; for the Virgin who gave Thee birth, the multitude of the apostles, and the glorious Nicholas entreat Thee, O Christ."
+        }
+      }
+    },
+5: {
+      metadata: {
+        day:             "Friday",
+        theme:           "The Precious and Life-creating Cross and the Theotokos",
+        canons:          ["Canon of the precious and life-creating Cross of the Lord", "Canon of the all-holy Theotokos"],
+        flatteningOrder: "Canon of the Cross irmos governs; troparia: Canon of the Cross then Canon of the Theotokos per ode, in source order (Martyrica excluded); theotokion: final theotokion of the ode sequence",
+        ode2Present:     false,
+        source:          "Lambertsen, The Octoechos Vol. I (Tones I & II), St. John of Kronstadt Press, 1999",
+        pages:           "133–138",
+        verified:        true
+      },
+      odes: {
+        1: {
+          irmos: "Traversing the impassable, uncommon path of the sea dryshod, Israel the chosen cried aloud: Let us chant unto the Lord, for He hath been glorified!",
+          troparia: [
+            "Thou didst accept crucifixion, being ignominiously pierced with nails, O Word, desiring to honor all men who glorify Thy voluntary sufferings.",
+            "Thou didst stretch out Thy hands upon the Cross, O Savior Who stretched out the sky like a skin, and thereby didst embrace the nations and men who glorify Thy voluntary sufferings.",
+            "O Maiden, who gavest birth to the Source of dispassion, heal me who am wounded by the passions, and rescue me from the everlasting fire, O thou who alone art full of divine joy.",
+            "Deliver me from bodily illness, and cure the unseemly passions of my soul, and rescue me from the everlasting fire, O thou who alone art full of the grace of God.",
+            "Thou gavest birth unto the Lord and Benefactor, the deliverance from our sins, changing the mortality of our forefather Adam; and thou hast lifted our nature up to the heavens."
+          ],
+          theotokion: "Thou gavest birth unto the Lord and Benefactor, the deliverance from our sins, changing the mortality of our forefather Adam; and thou hast lifted our nature up to the heavens."
+        },
+        3: {
+          irmos: "Establishing me upon the rock of faith, Thou hast enlarged my mouth against mine enemies, for my spirit doth exult when I chant: There is none holy as our God, and none righteous save Thee, O Lord!",
+          troparia: [
+            "Hanging upon the Tree, the incorrupt Grapes—Jesus, the Deliverer of our souls—exuded the divine sweetness which gladdeneth the hearts of men and which by grace taketh away the drunkenness of evil.",
+            "Of Thine own will Thou wast raised up upon the Tree, O Jesus, and didst foil all the malefactions of the devil; and Thou didst raise up men who had fallen into destruction through their depraved minds, O greatly Merciful One.",
+            "Unto the King, Who is without beginning and Who had received flesh from thee, O Virgin Mother, thou gavest birth. Entreat Him as the One Who loveth mankind, that He save thy servant from all tribulation and the damnation which is to come.",
+            "Resolve the perplexity of my heart, heal my wounds and rid me of festering corruption by thy divine power; and grant me a stream of compunction, O thou who gavest birth to the Source of everlasting life.",
+            "O Theotokos, heal my soul, which hath become sick through despondency and the assaults of the demons; grant tears of repentance to my heart, and cleanse me, guiding me to the light of repentance and rescuing me from the fire which is to come."
+          ],
+          theotokion: "O Theotokos, heal my soul, which hath become sick through despondency and the assaults of the demons; grant tears of repentance to my heart, and cleanse me, guiding me to the light of repentance and rescuing me from the fire which is to come."
+        },
+        4: {
+          irmos: "I hymn Thee, O Lord, for I heard report of Thee, and I was afraid; for Thou comest to me, seeking me who am lost. Wherefore, I glorify Thy great condescension toward me, O greatly Merciful One.",
+          troparia: [
+            "Thou wast suspended upon the Tree, O Almighty, Who suspended the earth upon the waters; and, pierced in the side by a spear, Thou didst pour forth blood and water for the salvation of all.",
+            "When Thy side was pierced, it healed my sickness; when thou wast smitten on the cheek by the hand of man, I received freedom; and by Thy tasting of gall, O Christ, we have been delivered from the sweet taste of the fruit in Eden.",
+            "I truly hymn thee, O most hymned one, who supernaturally gavest birth to the all-hymned Word of God; and I pray: Heal the pangs of my lowly soul, and deliver me from grievous condemnation.",
+            "Rain down upon us the riches of thy mercy, as is thy wont, O Virgin, ending our infirmities and loosing the divers passions of our souls; and free my heart from the bonds of sin and from many pangs.",
+            "I have defiled my soul with the passions; but do thou, who becamest the most pure dwelling-place of the All-pure One, O Theotokos, cleanse me, guiding me to the light of repentance and rescuing me from the fire which is to come."
+          ],
+          theotokion: "I have defiled my soul with the passions; but do thou, who becamest the most pure dwelling-place of the All-pure One, O Theotokos, cleanse me, guiding me to the light of repentance and rescuing me from the fire which is to come."
+        },
+        5: {
+          irmos: "The Sun—the live Coal which was revealed beforehand to Isaiah—shone forth from the Virgin's womb, granting the enlightenment of divine knowledge to those gone astray in darkness.",
+          troparia: [
+            "Having accepted the Cross in Thy loving-kindness, O Master, Thou didst draw me forth from the abyss of evils, and by sitting with the Father Thou didst honor me, who of mine own will have become dishonored.",
+            "Crowned with thorns, O Word Who crownest the whole world with flowers, Thou dost hew down the thorns of my passions at the root, and plantest the understanding of Thee within me.",
+            "Having wasted my life in slothfulness and defiled my heart with the passions, I come to thee in compunction of soul, O Mistress, and pray: Have pity and save me, making me steadfast by models of repentance.",
+            "O most immaculate Mistress Theotokos, who gavest birth to the hypostatic Life of all, enliven me who have been done to death by the assaults and pursuit of the deceiver, that I may piously hymn thee, the most immaculate one.",
+            "Enlighten my mind, O all-pure Mistress, I pray thee; and still the waves of my passion-plagued heart, putting down carnal desires and leading me to the divine haven."
+          ],
+          theotokion: "Enlighten my mind, O all-pure Mistress, I pray thee; and still the waves of my passion-plagued heart, putting down carnal desires and leading me to the divine haven."
+        },
+        6: {
+          irmos: "Hearkening to the sound of the cries of entreaty which issue forth from a soul in pain, O Master, deliver me from my grievous sins, for Thou alone art the Cause of our salvation.",
+          troparia: [
+            "Having given Thy shoulders over to stripes, Thy cheek to buffeting, and Thy face to spitting, Thou didst save me who have sinned greatly against Thee in knowledge and in ignorance.",
+            "Thou wast led like a lamb to the slaughter, O Christ my God, leading back to life those who had been slain by the poisonous bite of the noetic wolf. Glory to Thy crucifixion!",
+            "I flee now unto thee, O all-hymned one. Save and preserve me by thy supplications; for whatsoever thou desirest, thou canst do, in that thou art the Mother of Him Who strengtheneth all.",
+            "O Virgin Theotokos, save thy servant, who am bestormed by the tempest of griefs and am overwhelmed by the battery of threefold waves.",
+            "Vouchsafe thy loving-kindness unto me who am an object of pitilessness and malice; and rescue me from the retribution which lieth before me and from everlasting fire."
+          ],
+          theotokion: "Vouchsafe thy loving-kindness unto me who am an object of pitilessness and malice; and rescue me from the retribution which lieth before me and from everlasting fire."
+        },
+        7: {
+          irmos: "The command of the iniquitous tyrant, opposed to God, raised up a lofty flame; but Christ, Who is blessed and all-glorious, spread a spiritual dew upon the pious youths.",
+          troparia: [
+            "When Thou wast uplifted upon the Cross, O Word Who art the resurrection and uplifting of all, Thou didst raise me up who had fallen through disobedience; and Thou didst cast down the adversary who caused me to fall, showing him to be wholly impotent and dead. Glory to Thy dominion!",
+            "By Thy nails Thou didst transfix the sins of our forefather; and, beaten with the reed, thou didst sign a writ of manumission for all men. Glory to Thy suffering, whereby we have been delivered from the darkness of the passions!",
+            "As thou art my confirmation, O Mistress, vouchsafe that I may behold the beauty of thy glory when my soul shall be sundered from my flesh, that I may thus know remission.",
+            "By thy supplications to God deliver thy servants, who have recourse to thee with faith, from perils, misfortunes and sorrows, O holy Mistress.",
+            "O my Christ Who art Thyself the Word, Who of old delivered the three youths from the furnace, by the entreaties of Thy Mother who knew not wedlock, bedew me and deliver me from the flame which I have kindled by my boundless evil deeds.",
+            "Coming upon my material heart, the corrupter hath slain it; but by thy divine power cause rain to fall upon me, O Mother who knewest not wedlock, and vouchsafe that I may vanquish him, that I may cry out with faith: Blessed art thou who gavest birth to God in the flesh!"
+          ],
+          theotokion: "Coming upon my material heart, the corrupter hath slain it; but by thy divine power cause rain to fall upon me, O Mother who knewest not wedlock, and vouchsafe that I may vanquish him, that I may cry out with faith: Blessed art thou who gavest birth to God in the flesh!"
+        },
+        8: {
+          irmos: "The thrice-blessed youths, disdaining the golden image and beholding the immutable and living image of God, chanting in the midst of the flame: Let all existing creation hymn the Lord and exalt Him supremely for all ages!",
+          troparia: [
+            "Disobedient men, who without compunction wrought all manner of iniquities, raised up Thee two malefactors, O Thou Who dost justify sinners, crucifying Thee, O Compassionate One; but all creation glorifieth Thee as Lord and Master, hymning Thy long-suffering.",
+            "Nailed to the Tree, Thou didst bloody Thy fingers, O Christ, and Thou didst bring an end to the blood sacrificed of old to the demons unto the damnation of those who offered it up. Wherefore, all creation glorifieth Thee, hymning Thy love for mankind, O God of all.",
+            "Be zealous for good works, O my soul, withdrawing from evils with care for godly acts, having the Theotokos praying for thee, the unashamed helper of all, in that she is merciful and loving.",
+            "Thou hast broken the bonds of men's ancient condemnation; wherefore, I beseech thee, O Theotokos: Loose all the evil bonds of my heart, binding me with the divine love of the Creator, O all-pure one.",
+            "Having given birth to the Effulgence of the Father's glory, O Theotokos, illumine mine heart, which hath become downcast because of the infamy of my transgressions, and show me forth to share in everlasting glory, that I may glorify thee with faith.",
+            "Through thee, O Theotokos, hath the true Sun of righteousness been revealed to us, illumining all things with rays of divinity. Him, the Most High incarnate, do we hymn."
+          ],
+          theotokion: null
+        },
+        9: {
+          irmos: "Every tongue is at a loss how to praise thee as is meet, and even an intelligence from above the world is in doubt how to hymn thee, O Theotokos; yet, as thou art good, accept our faith, for thou knowest our longing inspired by God; for thou art the intercessor of Christians, and we magnify thee.",
+          troparia: [
+            "Of old, Isaac was bound, that he might provide an image of Thy suffering; and as a symbol of remission [Abraham] freed the lamb who was caught in the thicket, and then truly released the involuntary sacrifice. For when Thou wast sacrificed of Thine own will, we were freed from evils.",
+            "Glory to Thy loving-kindness, O only loving Lord Christ, Who art comely in beauty more than the sons of men, yet wast bereft of form and beauty when Thou wast hung upon the tree of the Cross, transforming the ugliness of the whole human race into beauty!",
+            "Vouchsafe unto me God's love for man, O Maiden who alone ineffably gavest birth to God Who loveth mankind, Who borrowed flesh from thee, and deliver me from the coming flame and all torment, for I glorify thee with love.",
+            "Having acquired thee alone as a sure intercessor, our hope, bulwark and trust, steadfast protection, an unassailable foundation, a harbor unbeset by storms and a refuge of strength, O all-hymned one, we are all saved.",
+            "O all-hymned Mother of the Light, drive away the clouds from my soul, and grant that I may gaze in purity upon the saving beauty which shone forth ineffably from thine all-holy womb to enlighten the nations.",
+            "O Virgin Maiden Who gavest birth to the divine Light, illumine my heart, which hath been darkened by the many assaults of the passions and the plots of the alien one, and ever let fall upon me the drop which cleanseth me of the defilements of sin, O Virgin."
+          ],
+          theotokion: "O Virgin Maiden Who gavest birth to the divine Light, illumine my heart, which hath been darkened by the many assaults of the passions and the plots of the alien one, and ever let fall upon me the drop which cleanseth me of the defilements of sin, O Virgin."
+        }
+      }
+    },
+    6: {
+      metadata: {
+        day:             "Saturday",
+        theme:           "All Saints and the Departed",
+        canons:          ["Canon of the holy martyrs, hierarchs, the venerable and the departed", "Canon of the Departed"],
+        flatteningOrder: "Canon of All Saints irmos governs; troparia: Canon of All Saints then Canon of the Departed per ode, in source order (Nekrosima included in source order); theotokion: final theotokion of the ode sequence",
+        ode2Present:     false,
+        source:          "Lambertsen, The Octoechos Vol. I (Tones I & II), St. John of Kronstadt Press, 1999",
+        pages:           "143–149",
+        verified:        true
+      },
+      odes: {
+        1: {
+          irmos: "Taking up the hymn of Moses, cry aloud, O my soul: My Helper and Protector hath He been for my salvation! He is my God, and I shall glorify Him!",
+          troparia: [
+            "Cruel banishments and grievous wounds did ye patiently endure, O athletes, and by divine power ye drove all deception from the ends of the earth.",
+            "The ministers and holy hierarchs of God, manifestly shining with noetic light, guided the fullness of all the pious to the light of piety.",
+            "Humbling the prideful mind, O venerable ones, ye passed over to the good land; and having been exalted by your godly ideals, ye ever help all the lowly.",
+            "Nekrosimon: Thy faithful servants whom Thou hast transported from transitory things, O our all-good God, do Thou show forth as sharers in the most radiant light and everlasting gladness, in that Thou art God.",
+            "Trampling down death by Thy death, Thou didst pour forth the eternity of life divine, which do Thou bestow upon the souls of the departed, O Good One, at the entreaties of Thy martyrs, granting them remission of transgressions.",
+            "O Christ, Who ever pourest forth rich mercy, in that Thou art full of loving-kindness grant a place of ease in Thy dwelling-place, in Thy wondrous tabernacle, unto Thy servants who ever piously accept Thee.",
+            "Nekrosimon: Thou wast stronger than death, O Christ; wherefore, binding it, Thou didst deliver us, and hast now, as God, delivered the departed from its prison. Grant that they may share in Thine effulgence."
+          ],
+          theotokion: "Making my wavering mind steadfast, O Mother of God, strengthen me with the divine precepts of Him Who was born of thy sanctified womb and hath abolished the dark kingdom of hades, O Mistress."
+        },
+        3: {
+          irmos: "By Thy compassion show forth my barren mind to be fruitful, O God, Thou Husbandman of good things and Planter of blessings.",
+          troparia: [
+            "Aflame with the fire of the love of Christ, O passion-bearers, ye quenched the burning of torments with the dew of the all-accomplishing Spirit.",
+            "O most holy hierarchs of Christ, and ye honored assemblies of the venerable, in behalf of us all entreat God Who loveth mankind.",
+            "The most sacred choir of the divine prophets was magnified, and the multitude of the women who suffered manfully hath received glory.",
+            "Nekrosimon: Dying on the Cross, O Christ, Thou didst grant immortality unto the dead. Grant that they who have departed unto Thee in faith may also receive it.",
+            "Aflame with the fire of the love of Christ, O passion-bearers, ye quenched the burning of torments with the dew of the all-accomplishing Spirit.",
+            "O most holy hierarchs of Christ, and ye honored assemblies of the venerable, in behalf of us all entreat God Who loveth mankind.",
+            "Nekrosimon: Vouchsafe life everlasting, O Master, unto the great multitude of those who worshipped Thee in the Orthodox Faith, and whom Thou hast taken away from this transitory life, reckoning them among the multitude of the saved."
+          ],
+          theotokion: "With all the prophets and the sacred women do thou now earnestly entreat Him Who was born of thee, O Virgin, that He have pity on us."
+        },
+        4: {
+          irmos: "Foreseeing thy nativity from the Virgin, the prophet lifted his voice in proclamation, crying: I heard report of Thee, and I was afraid, O Christ, for Thou hast come from Thæman, from the holy mountain which is overshadowed!",
+          troparia: [
+            "The right glorious passion-bearers, who emulated well the sufferings of Christ, rejoiced when they were racked by many tortures, looking forward to their heavenly rewards; and having received them, they are ever called blessed.",
+            "Keeping the laws of the Spirit, O ye primates of the Churches, like most excellent pilots ye all-wisely guided the people into the divine harbor; and having turned away from the tumults of life, ye have passed over to the tranquillity of Life.",
+            "Ye showed yourselves to be sojourners on the earth, O fathers, turning your life unto heaven with pious mind, and taming the passions of the flesh with the pangs of asceticism by the power of Christ.",
+            "The honorable women, desiring a godly death, and truly asking thee to pray for endless life, O all-pure Mistress, have through thee been vouchsafed it; and they pray to thy Son and God in our behalf.",
+            "In Thy great love for mankind, and at the entreaties of the chosen martyrs, O Christ, vouchsafe Thy glory, which is past understanding, unto Thy servants, who live by hope, love and an Orthodox understanding.",
+            "In that Thou art possessed of an ever-flowing torrent of sweetness, O Lord, ever give drink unto the elect; and in Thine ineffable loving-kindness, O Christ, with them Thou dost feed by the rivers of remission those who have now departed unto Thee.",
+            "Nekrosimon: Thou art Lord of the living and hast dominion over the dead, O Master, and by Thy power Thou dost raise up the dust of the earth; wherefore, those who have passed over to Thee, O Savior, do Thou cause to dwell in Thy courts."
+          ],
+          theotokion: "O all-pure Virgin Theotokos, thou mend the broken state of Eve and annul the ancient curse; for thou gavest birth to the Creator, Who is able to set us aright who have been cast down by transgressions, O Theotokos, only Mother of God."
+        },
+        5: {
+          irmos: "Dispelling the darkness of my soul, O my Savior, with the light of the commandments illumine me, in that Thou alone art the King of peace.",
+          troparia: [
+            "O holy hierarchs, prophets and ye God-bearing venerable ones, ye enlighten the world with the rays of the Spirit, dispelling the darkness of the passions.",
+            "O holy martyrs, taking up the Cross of Christ as an ensign of victory, ye set at nought all the power of the devil; and receiving heavenly crowns, ye are become bulwarks for us, praying to the Lord in our behalf.",
+            "Nekrosimon: We beseech Thee, O Word: Enrolling those Thou hast taken from among us in the choir of Thine elect, show them to be sharers in the higher life.",
+            "O passion-bearers of the Lord, blessed is the ground which drank your blood, and holy the temples which have received your bodies; for ye rebuked the enemy at your trials, and preached Christ with boldness. Entreat Him, in that He is good, we pray, that our souls may be saved.",
+            "In the great love for mankind of the chosen martyrs, O Christ, do Thou vouchsafe Thy glory unto Thy servants who have departed in faith.",
+            "O Christ Who alone art free among the dead, and Thou didst shake off the mortality of death. Deliver Thy servants now from the mortality of sin, O Master, showing them to be heirs of Thy kingdom."
+          ],
+          theotokion: "They who trust in thee find safety beneath thy protection, O Theotokos. Let us not fall away from hope, but save us from misfortunes, O helper of the perplexed, and set at nought the counsels of the adversary. For thou art our salvation, O blessed one."
+        },
+        6: {
+          irmos: "Stuck fast am I in the abyss of sin, O Savior, and tempest-tossed on the deep of life; yet lead me up from the passions and save me, as Thou didst Jonah from the sea monster.",
+          troparia: [
+            "Arrayed in strength of heart against the enemy, the athletes cast him down and have received crowns of victory from God; and they now pray earnestly in behalf of all mortals.",
+            "Saved from all wrath, tribulation and the assault of the enemy by their entreaties, with faith let us honor the holy hierarchs of God and bless His venerable ones.",
+            "The godly choir of women suffered, and pleased God in fasting, and hath received the heavenly kingdom. At their supplications have pity on Thy world, O God.",
+            "Nekrosimon: O Christ, Bestower of life, Who fashioned man out of earth, give rest unto those whom Thou hast taken from us, granting them remission of evils, in that Thou art full of loving-kindness and lovest mankind.",
+            "Unto those whom Thou hast taken from the earth by Thine all-accomplishing will, O Thou Who lovest mankind, do Thou vouchsafe ineffable and divine radiance where the choirs of the martyrs are.",
+            "O Christ, Who ever pourest forth rich mercy, in that Thou art full of loving-kindness grant a place of ease in Thy dwelling-place, in Thy wondrous tabernacle, unto Thy servants who ever piously accept Thee.",
+            "Nekrosimon: Only Thou art free among the dead, O Christ, and Thou didst shake off the mortality of death. Deliver Thy servants now from the mortality of sin, O Master, showing them to be heirs of Thy kingdom."
+          ],
+          theotokion: "Thou didst mend the broken state of Eve and annul the ancient curse; for thou gavest birth to the Creator, Who is able to set us aright who have been cast down by transgressions, O Theotokos, only Mother of God."
+        },
+        7: {
+          irmos: "Emulating the cherubim, the youths danced in the midst of the furnace, crying: Blessed art Thou, O God, for in truth and judgment Thou hast brought all these things upon us because of our sins! All-hymned and all-glorious art Thou for all ages!",
+          troparia: [
+            "The saints cast down the enemy by their patience, enduring every temptation of cruel tortures, for they truly loved God Who suffered for our sins. At their supplications, O Word, from perils and misfortunes save all of us who glorify Thee.",
+            "O holy martyrs, taking up the Cross of Christ as an ensign of victory, ye set at nought all the power of the devil; and receiving heavenly crowns, ye are become bulwarks for us, praying to the Lord in our behalf.",
+            "O holy hierarchs, prophets and ye God-bearing venerable ones, ye enlighten the world with the rays of the Spirit, dispelling the darkness of the passions.",
+            "The venerable fathers, prophets and hierarchs, and the ever-glorious women earnestly pray to Thee, the Master of all, in our behalf.",
+            "Nekrosimon: We beseech Thee, O Word: Enrolling those Thou hast taken from among us in the choir of Thine elect, show them to be sharers in the higher life.",
+            "O Lord Who art everywhere present, Thou didst come down to save the human race, which was led astray of old; wherefore, the martyrs entreat Thee: Unto those whom Thou hast translated from the earth, O Savior, grant rest in the land of the meek.",
+            "Only Thou art free among the dead, O Christ, and Thou didst shake off the mortality of death. Deliver Thy servants now from the mortality of sin, O Master, showing them to be heirs of Thy kingdom.",
+            "Nekrosimon: In Thy great and ineffable loving-kindness and the unfathomable depths of Thy love for mankind, O Christ, grant remission of transgressions unto the departed, and show them to be cleansed by Thy grace."
+          ],
+          theotokion: "O holy Theotokos, sanctify our thoughts, strengthen our mind, and preserve unharmed by the arrows of the enemy us who glorify thy mighty works, O most hymned one."
+        },
+        8: {
+          irmos: "Hymn and bless Him Who, on Mount Sinai of old, prefigured the miracle of the Virgin in the bush for Moses, and exalt Him supremely for all ages!",
+          troparia: [
+            "The streams of your blood sanctified all creation and manifestly dried up the effluvia of deception, O passion-bearers of the Lord; and they give drink in abundance to the souls of the faithful.",
+            "With the assembly of holy hierarchs and women, and the glorious prophets, the choir of ascetics hath appeared, which is equal to that of the angels; for on earth they lived the life of the angels through the Spirit.",
+            "O passion-bearers of the Lord, ye primates and prophets, ye multitude of the venerable, and holy women: From the arrows of the enemy deliver all of us who praise you.",
+            "Nekrosimon: Those whom Thou hast taken from us, O Savior, do Thou cause to dwell in the bosom of Abraham, and give them rest with all the elect, for They cry out to Thee: Thou art our God, and none is righteous save Thee, O Lord.",
+            "O radiant hierarchs, ye venerable and righteous, O right glorious multitude of hieromartyrs, and sacred company of holy women who shone forth in suffering and asceticism: Ever make entreaty unto God, that He have mercy on us.",
+            "The multitude of the martyrs entreateth Thee, O Christ our Benefactor. From all woes, tribulations, grievous perils, all transgressions, and from harm, do Thou save me who am perishing, O Word.",
+            "Nekrosimon: Where the light of Thy countenance shineth, O Christ, whence all sickness, sighing and grief are fled, and where the assemblies of the saints now join chorus, do Thou number the souls of all who have departed unto Thee, overlooking all their transgressions, in that Thou alone art merciful, O Thou lovest mankind."
+          ],
+          theotokion: null
+        },
+        9: {
+          irmos: "O ye faithful, in unceasing hymnody let us magnify her who supernaturally conceived in the flesh of her womb the Word Who shone forth from the Father before time began.",
+          troparia: [
+            "Shown to be mighty against the passions and powerful against the enemy, O passion-bearers, having contended lawfully ye took the prize and were crowned by God.",
+            "As godly sacred ministers and emulators of the good Shepherd, O divinely glorious primates, ye tended His sheep in holiness.",
+            "With the venerable, the ascetics and the sacred prophets let us honor the multitude of women who suffered and cast down the enemy by fasting.",
+            "Nekrosimon: The all-glorious multitude of Thy saints unceasingly entreateth Thee, O Lord: Show forth as sharers in everlasting life those in the Faith, whom Thou hast brought over to Thyself, O Christ.",
+            "O pure Virgin Mother, thou boast of the martyrs, the venerable and the righteous, free us from all the tyranny of the evil one.",
+            "Nekrosimon: O Ruler Who hast authority over the living and the dead: Unto those who have passed over to Thee from life do Thou grant the inheritance of heaven and the splendor of the saints and Thine all-glorious passion-bearers, O Master.",
+            "O Lord Who art everywhere present, Thou didst come down to save the human race, which was led astray of old; wherefore, the martyrs entreat Thee: Unto those whom Thou hast translated from the earth, O Savior, grant rest in the land of the meek.",
+            "Only Thou art free among the dead, O Christ, and Thou didst shake off the mortality of death. Deliver Thy servants now from the mortality of sin, O Master, showing them to be heirs of Thy kingdom."
+          ],
+          theotokion: "When my soul must needs sever its fleshly bond and depart this life, then stand before me, O Mistress. Set at nought the counsels of the incorporeal foe, and crush the jaws of those who seek to slaughter me without pity, that, unhindered, I may elude the myriad princes of darkness who inhabit the air, O Bride of God."
+        }
+      }
+    }
         },
 
-        3: {
-            1: null,
+3: {
+            1: {
+  metadata: {
+    day:             "Monday",
+    theme:           "Repentance and the Bodiless Powers",
+    canons:          ["Canon of Repentance", "Canon of the Incorporeal Hosts"],
+    flatteningOrder: "Canon of Repentance irmos governs; troparia: Canon of Repentance then Canon of the Incorporeal Hosts per ode, in source order; theotokion: final theotokion of the ode sequence (Canon of Repentance theotokion); Ode 8 theotokion null per rule",
+    ode2Present:     false,
+    source:          "Lambertsen, The Octoechos Vol. II (Tones III & IV), St. John of Kronstadt Press",
+    pages:           "22–26",
+    verified:        true
+  },
+  odes: {
+    1: {
+      irmos: "Thou didst part the sea, O Lord, covering the chariots of Pharaoh in the deep, and didst save the people of Israel, who praised Thee with hymns.",
+      troparia: [
+        "O Sinless One, deliver me from the myriads of transgressions I have mindlessly committed, granting me tears of compunction, as once Thou did to the harlot.",
+        "Through the virtues show me to be Thy temple, though I am become a den of thieves through mine unseemly deeds, O Thou Who, loving mankind, wast of Thine own will born in a cave.",
+        "Piloted by the divine Spirit, ye navigated the tempest of torments, O divinely inspired martyr, and have put in at the harbor of God.",
+        "Enlightened by the grace of the Spirit, O all-praised martyrs, rejoicing, ye escaped the most profound darkness of the madness of idolatry.",
+        "As the Light without beginning, imparting all radiance, O Christ God, enlighten my thoughts at the intercession of Thy hosts.",
+        "Rejoicing angelically, the choirs of the angels are mystically illumined by a most rich communion of Thy beauteous splendors, O Savior.",
+        "As the good Creator of life, the Spirit, Who doth good and Who proceedeth from the Father, hath made steadfast the heavenly hosts by His intangible divine grace."
+      ],
+      theotokion: "O most holy and all-pure one, helper of sinners, restoration of the fallen: Grant the repentance of compunction unto me who have sinned greatly."
+    },
+    3: {
+      irmos: "Make me steadfast, O Lord Who alone art greatly merciful; extend Thy hand unto me, as Thou didst to Peter, and save me.",
+      troparia: [
+        "As Thou didst save drowning Peter, O Thou Who lovest mankind, so do Thou lead me up from the depths of my transgressions.",
+        "The deceiver hath brought death upon me, slaying me with the passions; but do Thou, O Bestower of life, revive me by examples of repentance.",
+        "Unjustly consumed by material fire, O martyrs, ye were immaterially consumed by the desire for the Immaterial One.",
+        "Torn asunder, the martyrs set at naught the maimings and pursuits of the deceiver; and they were vouchsafed crowns.",
+        "O Good One, Thou hast shown the angelic choirs to be rivers and streams flowing with goodness, shining with the radiance of Thy hidden mystery.",
+        "That Thou mightest manifestly show forth the treasures of Thy riches and Thy might, O Master Christ, Thou didst bring forth the noetic hosts to share in Thy glory.",
+        "Standing with trembling before Thee and ministering to Thee, the angelic luminaries ever hymn Thine infinite power, O Christ."
+      ],
+      theotokion: "O Mary of lordly name, by thy supplications free me who am beset by many soul-destroying passions."
+    },
+    4: {
+      irmos: "Nay, with the rivers wast Thou wroth, O Lord? Nay, against the rivers was Thine anger, or against the sea Thine attack?",
+      troparia: [
+        "Loose the bonds of my passions, O Lord, and, binding me with repentance, show me to be a sharer in Thy good things.",
+        "Illumine me with splendid examples of repentance, O Christ my Sun, dispelling the deep nighttime of mine evils.",
+        "O wise athletes, ye were shown to be burning coals consuming the tinder of ungodliness and enlightening those in darkness.",
+        "Ye emulated the death of Christ, O martyrs, having been subjected to divers pangs; wherefore, ye have inherited life divine.",
+        "O clouds who received the effulgence of the threefold Sun, ornaments of the Trinity: Impelled by the power of the Spirit ye were upborne by the divine will.",
+        "The angels were sent into the world as guardians of the salvation of the pious who would believe on Thee, O Savior; and they preserve Thy servants.",
+        "The angels are mystically illumined by their pure proximity to Thee and Thy divine effulgence; and they cry: Glory to Thy power, O Thou Who lovest mankind!"
+      ],
+      theotokion: "Grant me true repentance, and still the tumult of my passions, O pure intercessor for the sinful."
+    },
+    5: {
+      irmos: "With Thy never-waning light, O Christ God, illumine my lowly soul, and guide me to the fear of Thee, to the light of Thy commandments.",
+      troparia: [
+        "Leave me not stripped naked of good deeds at Thy tribunal, O Thou Who lovest mankind; but through repentance clothe me in the raiment of godly deeds.",
+        "I have been wounded by the sword of the passions and cast into the pit of despair. Disdain me not, O Master, but cure me with the medicine of conversion.",
+        "Though your nails were cruelly torn out, and ye were lacerated with wounds and slain with the sword, ye did not bend your knees before the graven images.",
+        "The world is ever adorned by your sufferings, O martyrs; wherefore, ye have received a dwelling-place with the angels.",
+        "Illumined with thrice-radiant light, O ye faithful, with the angelic armies let us hymn the one Godhead—the Father, the Son and the Spirit.",
+        "Luminaries revolving within the never-waning radiance of the all-divine Godhead, the angelic ranks, manifestly enriched, give utterance.",
+        "The seraphim, angels illumined by the Spirit of the Godhead, teach us to worship the one divine Principle which is wholly without beginning, manifestly giving utterance to the thrice-holy cry."
+      ],
+      theotokion: "O thou who, at the word of the archangel, didst alone give birth to the Word in the flesh, yet didst remain a virgin, deliver me from irrational acts, that I may hymn thee with honorable words."
+    },
+    6: {
+      irmos: "O Thou Who lovest mankind, disdain not those who have reached the end of time and are assailed with destruction by the threefold billows of perils, yet cry: O Savior, save us, as Thou didst save the prophet from the sea monster!",
+      troparia: [
+        "Puffed up in mind, like the Pharisee of old I have grievously fallen through transgressions, O Christ, and seeing me, the deceiver is gladdened. O Thou Who didst humble him by the Cross, have pity on me who am now brought low.",
+        "Sin-loving in this life like no other man, O Master, I have wasted Thy long-suffering, wretch that I am, and am still senseless. But by Thy lovingkindness convert me.",
+        "With wrathful eagerness condemning the divinely wise to be run through and to be consumed by fire, the violators of the law showed them to be truly more lustrous than gold, and heirs to Christ.",
+        "Passing through trials full of battles and tremendous struggles, and wounds beyond human nature to endure, ye defeated the prince of darkness and received crowns from God, O athletes.",
+        "Their voices never stilled, the archangels and angels, the principalities, authorities and powers mightily hymn the primal and all-accomplishing effulgence of the Godhead.",
+        "O Thou Who didst invisibly adorn the noetic world with a harmonious arrangement of the ranks of angels, Thou wast well-pleased that the honored Church emulate its goodly order."
+      ],
+      theotokion: "We hymn thee, the true Mother of the Creator, as the ark of the law, the table truly holy, our mercy-seat, the animate temple of God, and the lampstand all of gold."
+    },
+    7: {
+      irmos: "The three children in the furnace prefigured the Trinity: they trampled the threat of the fire underfoot and cried aloud, chanting: Blessed art Thou, O God of our fathers!",
+      troparia: [
+        "My time draweth to a close, O my soul. My departure is at hand. Wherefore, show forth the fruits of repentance before the doors are closed to thee, and cry out unto Christ: Save me, O Lord!",
+        "Let us till our hearts with the plough of true understanding, sowing the wheat of repentance, that we may reap the grain of righteousness for Christ, the Husbandman of our souls.",
+        "O martyrs of the Lord, ye beacons of piety who fought against ungodliness and enrichers of the poor: Enrich with the virtues mine all-accursed, impoverished soul.",
+        "O Christ Who saved the publican who sighed from the depths of his heart, accept my feeble sighing and save me, for the sake of the passion-bearers who glorified Thee by their own members.",
+        "Gazing upon the primal effulgence with steadfast mind and undaunted gaze, O ye angelic choirs, ye became secondary luminaries through partaking thereof, crying out: Blessed art Thou, O God of our fathers!",
+        "Led on by unwavering desire and steadfast love, by proximity ye became secondary luminaries through the beauties of the Creator, O ye angelic choirs, crying out: Blessed art Thou, O God of our fathers!"
+      ],
+      theotokion: "O well-spring who pourest forth the water of remission, dry up the effluvia of my transgressions, granting me a shower of tears, that I may ever hymn thee as the Theotokos."
+    },
+    8: {
+      irmos: "O ye priests, bless the Lord Who with divine power descended unto the Hebrew children in the flame and hath manifested Himself as Lord, and exalt Him supremely for all ages.",
+      troparia: [
+        "For his mockery Ham was declared a slave by his father's sentence. And what dost thou do, O my soul, enslaving thyself to the passions and riotously giving thyself over to mockery, lacking all sense of shame before the heavenly father?",
+        "Mindlessly surrendering to enmity, Cain became the slayer of his brother. And thou hast shown thyself to be like unto him, for though thou hast not slain anyone, yet thou hast done thyself to death through the love of pleasures and the deceptions of life, O my soul.",
+        "Assembling in faith, let us hymn as is meet the choice pearls of the Lord, the precious vessels, the lamps shining with the radiance of divine grace, the passion-bearers of the Lord.",
+        "Accepting the blood of the wise passion-bearers like incense, O Word, at their entreaties save those who fall down before Thee in repentance, for Thou alone art merciful.",
+        "As the Creator of all, by Thy thought Thou didst bring the angels into being; and they stand before Thee with fear, crying out: Bless the Lord, all ye works of the Lord, and exalt Him supremely for all ages!",
+        "Becoming like flames by partaking of the divine fire, the celestial intelligences cry out: Bless the Lord, all ye works of the Lord, and exalt Him supremely for all ages!",
+        "Before visible things Thou didst create the immaterial and noetic angels, who unceasingly cry out to Thee: Bless the Lord, all ye works of the Lord, and exalt Him supremely for all ages!"
+      ],
+      theotokion: null
+    },
+    9: {
+      irmos: "On Mount Sinai Moses beheld in the bush thee who without being consumed didst conceive the fire of the Godhead within thy womb. Daniel beheld thee as the unquarried mountain. And Isaiah cried aloud: Thou art the rod sprung forth from the root of David!",
+      troparia: [
+        "Once, because of his temperance, Jacob received the birthright, and, unable to restrain his stomach, Esau fell from his position as elder son. How evil is intemperance, and how great is abstinence! Cease committing evil deeds, O my soul, and love the increase of good things.",
+        "Having endured many evils, the blameless Job was crowned; for the torrents of temptations, rushing at him, did not shake the tower of his heart. Him do thou ever emulate, remaining unaffected by the wiles of the evil one, O my soul.",
+        "Forged in the fire of the divine Spirit, ye were manifestly shown to be swords which cut down the hordes of the adversary, O passion-bearers of Christ; and, glorified by great victories, ye have been crowned by the almighty right hand of the King of all.",
+        "O ye multitude of martyrs, entreat God the Master, Who hath accepted your ineffable toils and enrolled you in the armies of the incorporeal ones, that He wash away the multitude of my countless evils.",
+        "Standing now before the great and primal Light, O most divine angels of God, ye have become most powerful advocates for all of us who magnify you as far as we are able.",
+        "Clearly vouchsafed to glorify the Trinity equal in power, and first illumined by the effulgence thereof, vouchsafe us who piously magnify you, that we may be illumined with reflected radiance."
+      ],
+      theotokion: "O splendid palace of the Master, show me to be a dwelling-place of light; O impassable gate, open unto me the ways of repentance; O holy land, guide me to the land of the meek. O Mistress, show me to be free of all the dominion of the passions."
+    }
+  }
+},
             2: null,
             3: null,
             4: null,
