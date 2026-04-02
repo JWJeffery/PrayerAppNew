@@ -1378,7 +1378,108 @@ tones: {
     }
   }
 },
-            2: null,
+2: {
+  metadata: {
+    day:             "Tuesday",
+    theme:           "Repentance and the Holy Forerunner",
+    canons:          ["Canon of Repentance to our Lord Jesus Christ and His martyrs", "Canon of John the Forerunner"],
+    flatteningOrder: "Canon of Repentance irmos governs; troparia: Canon of Repentance then Canon of the Forerunner per ode, in source order (Martyrica excluded); theotokion: final theotokion of the ode sequence (Canon of the Forerunner theotokion in most odes); Ode 8 theotokion null per rule",
+    ode2Present:     false,
+    source:          "Lambertsen, The Octoechos Vol. II (Tones III & IV), St. John of Kronstadt Press",
+    pages:           "31–36",
+    verified:        true
+  },
+  odes: {
+    1: {
+      irmos: "Thou, O God, art He Who wondrously and gloriously wrought miracles, Who made the deep land, Who engulfed the chariots, and saved the people, who sang unto Thee as our King and God.",
+      troparia: [
+        "Before the end, O ye faithful, let us weep for ourselves with all our soul. The Bridegroom approacheth; let us light our deeds as though they were radiant lamps, that together we may enter the divine bridal-chamber.",
+        "Repenting with all his soul, Manasseh of old was saved; for he cried out to the one Master from the midst of his fetters. Him do thou emulate, O my soul, and thou shalt easily find salvation.",
+        "O Forerunner of the Lord, godly offspring of a barren womb: Pray to God, that I may produce the fruits of the virtues, and loose the barrenness of my sin, dispelling the gloom from my mind.",
+        "On earth thou wast shown by faith to be a star preceding the great Sun of glory Who hath illumined the whole world. Wherefore, entreat Him, O Forerunner, that He enlighten my soul, which hath been benighted by evil thoughts.",
+        "O Prophet, who by the divine Spirit didst announce beforehand to those in hades the Light Who was drawing nigh: By thine entreaties give life to my deadened soul, and raise me up from my transgressions as from a grave, I pray, O glorious Forerunner."
+      ],
+      theotokion: "With the archangels and angels, and all the saints, entreat the Lord Who through thee revealed Himself to us, we pray, O Virgin, that we who confess thee to be the true Theotokos may be delivered from misfortunes."
+    },
+    3: {
+      irmos: "O barren and sterile soul, acquire thou right glorious fruit, and cry out in gladness: I have been made steadfast by Thee, O God! There is none so holy or so righteous as Thee, O Lord!",
+      troparia: [
+        "I have senselessly broken the law of God, and must needs be condemned. And what I shall do, I know not. O most righteous Judge, have pity and save me in Thy lovingkindness.",
+        "O greatly Merciful One Who lovest mankind, Thou Dayspring of the East: Shine forth the light of righteousness upon me, I pray, rescuing me from the gloom of the passions and the darkness of torment.",
+        "As thou art the voice of the Word, O Baptist, unto Him direct now the cries of those who honor thee, and by thy mediation grant us remission of transgressions.",
+        "I have sinned against Thee, and have committed iniquity and sorely transgressed, O Savior, and I have defiled my soul. Wherefore, I pray Thee: Have pity on me for the sake of him who baptized Thee.",
+        "I beseech thee, O Forerunner, thou child of the desert and guide of the new people of God: To the paths of repentance guide me, who through pleasures have gone astray in the wilderness."
+      ],
+      theotokion: "With the apostles, the sacred prophets, the martyrs and the heavenly hosts entreat thy Son, O all-pure one, that He have pity on us who hymn thee."
+    },
+    4: {
+      irmos: "O pure one, Habbakuk foresaw thine all-pure womb as a mountain overshadowed; wherefore, he cried aloud: God cometh from Thæman, the Holy One from a mountain overshadowed and densely wooded.",
+      troparia: [
+        "O Christ God, Who upon the disobedient and gainsaying people didst pour forth of old water from a rock, slaking their thirst: From my stony soul draw forth a drop of compunction to wash me clean.",
+        "O Physician of the sick, as a gesture of compassion cure my heart of the passions, applying repentance to it as a poultice of divine medicine, O Savior, in that Thou art good, that I may glorify Thee with faith.",
+        "O Forerunner of the Lord, I entreat thee, the voice of the Word Who appeared in the flesh: From irrational actions deliver me who honor thee with my words and bless thee with faith, as is meet.",
+        "Sigh, O my soul, and cry out to God, thy Creator: I have sinned! Cleanse me, O Christ, and at the entreaties of the divine Forerunner deliver me from dreadful torment, misfortunes and tribulations.",
+        "Rescue me, who am drowning in the many waves of grievous passions, am cruelly beset by the storm and am ever foundering therein, O Baptist, and guide me to the harbor of repentance."
+      ],
+      theotokion: "O most immaculate Mother of God, O chariot more exalted than the cherubim: With the immaterial ministers and all the saints entreat Christ to Whom thou gavest birth, that He save me, the accursed one."
+    },
+    5: {
+      irmos: "Rising early, we hymn Thee, O Word, Thou only-begotten Son of God. Grant us Thy peace, and have mercy upon us who hymn and worship Thee with faith.",
+      troparia: [
+        "Sprinkling me with the hyssop of repentance, purify me of the defilements of the passions, O Jesus, that I may appear before Thee clean when Thou shalt judge all men in Thy righteous judgment.",
+        "The wounds of mine all-wretched soul have festered, O Savior. O Healer of the sick and Bestower of good things, heal Thou and save me in Thy surpassing mercy.",
+        "On earth thou didst manifestly live like an angel in the flesh, O blessed one; wherefore, I pray to thee: Free my soul from carnalmindedness.",
+        "O Forerunner of the Lord, save me, who have fallen into the abyss of sin, who have defiled my soul with pleasures, and am in distress, yet flee unto thee.",
+        "Thou wast shown to be more exalted than the prophets, O Prophet, for thou thyself didst see Him Whom thou didst proclaim. Him do thou unceasingly entreat, that He enlighten our souls."
+      ],
+      theotokion: "O divinely joyous one, who by the indwelling of the Word wast shown to be more spacious than the heavens: Free me from the sins which constrict me."
+    },
+    6: {
+      irmos: "The abyss of the passions and the tempest of contrary winds have risen up against me; but going before me, save me, O Savior, and deliver me from corruption, as Thou didst save the prophet from the beast.",
+      troparia: [
+        "I have been benighted by the gloom of sin and lie wholly dormant. O Christ God, Who wast once wounded by a spear for my sake, have pity on me in Thy lovingkindness.",
+        "I groan, yet I remain sunk in evils; I weep, yet I tremble not before the judgment; I experience pain, but am yet unfeeling. O Word of God, have pity and save me by Thy good judgments!",
+        "In the waters thou didst baptize the Torrent of sweetness, Who bowed His head beneath thy hand. Him do thou entreat, O wise one, that He send down the water of compunction upon me who have greatly sinned.",
+        "In the river, O Forerunner, thou didst wash Jesus Who loveth mankind, the Abyss of lovingkindness Who covereth the chambers of the heavens with waters. Him do thou entreat, that He pour forth remission upon me.",
+        "'Repent, for the kingdom of heaven is at hand!' thou didst cry out, O Forerunner. Wherefore, vouchsafe that those who honor thee with love and flee beneath thine honored protection may receive it."
+      ],
+      theotokion: "O all-pure one, who didst lend thy flesh to the Creator: With the heavenly hosts, all the prophets, the apostles and martyrs, beseech Him to have pity and save me."
+    },
+    7: {
+      irmos: "O Lord God of our fathers, Who bedewed the flame of the furnace and saved the children unconsumed: Blessed art Thou forever!",
+      troparia: [
+        "I have stripped myself of the garments of incorruption and clothed myself in deeds of ungodliness; wherefore, I cry out to Thee: O Compassionate One, make me splendid in the raiment of the virtues.",
+        "I have sullied myself with lustful gazes and defiled myself by unseemly touching, and am become vile in Thy sight. O Jesus, accept me as Thou didst the prodigal!",
+        "O Forerunner and Baptist of Christ, star of the Sun, my soul, which hath been darkened and blinded by slothfulness, do thou illumine, guiding me to the path of repentance.",
+        "Mindful of the hour of judgment, I am wholly seized with fear; for I wallow in a multitude of unseemly deeds. But stand before me, O thou who didst baptize the Lord, and deliver me from the impending fire.",
+        "O intercessor for my life, O Forerunner my helper, preserve and protect me from enemies, visible and invisible, and cause me to share in the heavenly kingdom."
+      ],
+      theotokion: "O Virgin Theotokos, with the prophets, apostles and martyrs beseech thy Son, that from impending need He deliver us who ever honor thee."
+    },
+    8: {
+      irmos: "O ye heavens of heavens, O earth, ye mountains and hills, O abyss, ye whole generation of mankind, with hymns bless God Who is glorified unceasingly by the angels in the highest, and exalt Him supremely as Creator and Deliverer for all ages.",
+      troparia: [
+        "I have not had the fear of Thee dwelling in my heart, and, devoid of conscience, have brought carnal pleasure to fulfillment; and I tremble before Thy judgment, O King of all. Disdain me not, who am now penitent.",
+        "Washing earthly sin from me by repentance, vouchsafe that I may pass over to the holy land wherein the meek dwell, O greatly Merciful One Who wast sinlessly born on earth of the Virgin.",
+        "Thou didst preach the Lamb of God Who taketh away the sins of men, O godly John the Forerunner. Him do thou beseech, that He loose the burden of my sins and vouchsafe unto me the portion of the saved.",
+        "From the furnace of burning flame and the outer darkness which is devoid of light deliver me who am wholly held fast in the darkness of evil deeds, for the sake of Thy glorious and divine Baptist, I pray Thee, O Word of God, Who art wholly without beginning.",
+        "O divine Prophet of the Lord, who through repentance preached fruitfulness to souls empty and barren: Clear my thorn-choked soul of all the pleasures, that I may produce the grain of good works."
+      ],
+      theotokion: null
+    },
+    9: {
+      irmos: "Blessed is the Lord God of Israel, Who hath exalted the horn of our salvation in the house of David His child, for the sake of His lovingkindness; and therein He hath visited us, the Dayspring from on high, and hath guided us to the path of peace.",
+      troparia: [
+        "Now is the right acceptable time and the day of purification! Turn, O my soul, and make it thy will henceforth to bring forth fruits of repentance, lest the dread axe of death find thee barren and, hewing thee down like the fig-tree of old, send thee into the fire.",
+        "Like the rich man of old do I wallow in the pleasures, lacking any great love for my neighbor; and I am not daunted by the unquenchable fire. Wherefore, soften the hardness of my soul, O Master, that in the end I who am benighted may but a little be enlightened by lovingkindness.",
+        "Having entered the tabernacle of the law, thou didst richly gaze upon the splendor of divine grace, O wise prophet, enlightening the ends of the earth and dispelling the darkness of ignorance; wherefore, we honor thee.",
+        "In that thou art a martyr of Christ, the godly one who baptized Him, a beacon of repentance, the dawning of piety, the mediator between the Old and New Covenants, enlighten my lowly soul, which hath grown old through evil, renewing it with divine understanding.",
+        "At the hour of horror, the hour of terror, the hour of condemnation, from the threats that await me beyond do thou deliver me who am condemned, O wise one, for thou hast the Bridegroom, the Savior of our souls, hearkening to thine entreaties as a friend."
+      ],
+      theotokion: "As the Mother of God, as the Mother of the Word of God Who was born of thee in the flesh, O pure one, ever pray with the incorporeal ones, with the apostles and prophets, the holy hierarchs and martyrs, that He have pity on the world, O all-pure Virgin Mother."
+    }
+  }
+},
             3: null,
             4: null,
             5: null,
