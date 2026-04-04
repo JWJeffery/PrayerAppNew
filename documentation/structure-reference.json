@@ -1,6 +1,6 @@
 {
   "_note": "Live reference dossiers extracted from structure.json. Tradition architecture, hour maps, component inventories, horologion file details, COE calendar model. Updated in sync with structure.json.",
-  "last_updated": "2026-03-22",
+ "last_updated": "2026-04-04",
   "east_syriac_tradition": {
     "status": "OPERATIONAL \u2014 v2.8.1. All seven canonical hours implemented. Cathedral and monastic sequences for all hours. Full Qdham/Wathar Qanona rotation (layered hour-specific + seasonal for Sapra/Ramsha/Lelya), Marmitha psalmody, Barekmar intercessions (all 9 components now present), and Onitha-with-Qala rendering active in monastic mode.",
     "entry_point": "selectMode('east-syriac') \u2014 hides BCP and Ethiopian sidebars, shows east-syriac-settings, awaits hydrateForEastSyriac(), calls renderOffice()",

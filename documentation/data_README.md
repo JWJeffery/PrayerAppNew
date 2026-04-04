@@ -4,7 +4,7 @@
 
 ### Orthros (Byzantine Matins)
 
-**Current version:** v6.5
+**Current version:** v6.6
 
 **Weekday Theotokion corpus** — COMPLETE  
 All 48 slots (Tones I–VIII × Monday–Saturday) are fully transcribed and live.  
@@ -13,8 +13,14 @@ Data path: `window.OCTOECHOS.orthros.theotokion.weekday.tones[tone][day]`
 Runtime resolution: `type:'text'`, `resolvedAs:'orthros-ordinary-weekday-theotokion-text'`. No rubric fallback. The previous null-sentinel scaffold has been retired.  
 Wednesday and Friday correctly resolve as Stavrotheotokion by label; no separate resolver path is required.
 
+**Weekday canon corpus** — COMPLETE  
+All 48 slots (Tones I–VIII × Monday–Saturday) are fully transcribed and live.  
+Source: Lambertsen, *The Octoechos*, Vols. I–IV, St. John of Kronstadt Press.  
+Data path: `window.OCTOECHOS.orthros.canon.weekday.tones[tone][day]`  
+The previous null-sentinel scaffold has been retired. No engine change was required.
+
 **Remaining weekday corpus families** (null-sentinel scaffolds, awaiting source-secure transcription):  
-`sessional-hymns`, `canon`, `praises`, `aposticha`
+`praises`, `aposticha`
 
 **Sunday corpora** — COMPLETE  
 Resurrectional Praises (tones 1–8), Eothinon Exapostilarion (gospels 1–11), Sessional Hymns (tones 1–8), Resurrectional Canon (tones 1–8).
