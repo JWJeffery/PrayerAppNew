@@ -2,13 +2,16 @@
  *
  * Namespace : window.OCTOECHOS.orthros.praises.weekday.tones[tone][dayOfWeek]
  * dayOfWeek : JS Date.getDay() — 1=Monday … 6=Saturday (0=Sunday not used here)
- * Schema    : each slot is either null (untranscribed) or a direct array of
- *             stichera entry objects: [{ sticheron: N, text: '...' }, ...]
- * Status    : Scaffolded — all slots null pending source-secure transcription.
+ * Schema    : each slot is either null (no weekday Praises block present in the
+ *             current source witness) or a direct array of stichera entry
+ *             objects: [{ sticheron: N, text: '...' }, ...]
+ * Status    : Partially populated from source-secure witnesses. Current corpus
+ *             pattern: Tone 1 Monday–Saturday populated; Tones 2–8 Saturday
+ *             populated; other weekday slots null where no Praises block was
+ *             present in the source witness reviewed.
  * Integration: wired into _resolveOrthrosSlots() praises-stichera weekday
  *              else-branch in horologion-engine.js (v6.3).
  */
-
 window.OCTOECHOS = window.OCTOECHOS || {};
 window.OCTOECHOS.orthros = window.OCTOECHOS.orthros || {};
 window.OCTOECHOS.orthros.praises = window.OCTOECHOS.orthros.praises || {};
@@ -18,7 +21,7 @@ window.OCTOECHOS.orthros.praises.weekday = {
         label:  'Weekday Praises Stichera (Orthros)',
         office: 'orthros',
         family: 'praises',
-        source: 'UNTRANSCRIBED'
+        source: 'PARTIAL_SOURCE_SECURE_TRANSCRIPTION'
     },
 
     tones: {
