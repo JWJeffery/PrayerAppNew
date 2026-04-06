@@ -284,7 +284,35 @@ window.OCTOECHOS.orthros.praises.weekday = {
                 }
             ]
         },
-        6: { 1: null, 2: null, 3: null, 4: null, 5: null, 6: null },
+        6: {
+            1: null,
+            2: null,
+            3: null,
+            4: null,
+            5: null,
+            6: [
+                {
+                    sticheron: 1,
+                    text: 'All creation celebrateth on the memorial of Thy saints, O Lord: the heavens rejoice with the angels, and the earth maketh merry with men. By their supplications have mercy on us.'
+                },
+                {
+                    sticheron: 2,
+                    text: 'O Lord, if we did not have Thy saints as advocates and Thy goodness having mercy upon us, how would we dare to hymn Thee, Whom the angels glorify without ceasing. O Thou Who knowest the hearts of men, spare Thou our souls!'
+                },
+                {
+                    sticheron: 3,
+                    text: 'The memory of the martyrs is a joy to those who fear the Lord; for, having suffered for the sake of Christ, they have received crowns from Him; and they now pray with boldness in behalf of our souls.'
+                },
+                {
+                    sticheron: 4,
+                    text: 'Our God hath made wondrous His chosen saints. Rejoice and be glad, all ye His servants, for you have crowns and His kingdom been made ready! We pray you: Forget us not!'
+                },
+                {
+                    sticheron: 5,
+                    text: 'Nekrosimon: Of old, the eating of the tree in Eden became infirmity for Adam when the serpent spewed forth his venom; for this cause did universal death come about, devouring man. But the Master came, and cast down the serpent and hath given us resurrection. Unto Him, therefore, let us now cry out: Have pity on those whom Thou hast taken to Thyself, O Savior, and, as Thou lovest mankind, grant them rest with the saints.'
+                }
+            ]
+        },
         7: { 1: null, 2: null, 3: null, 4: null, 5: null, 6: null },
         8: { 1: null, 2: null, 3: null, 4: null, 5: null, 6: null }
     }
