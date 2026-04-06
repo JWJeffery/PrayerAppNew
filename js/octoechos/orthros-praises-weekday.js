@@ -313,7 +313,27 @@ window.OCTOECHOS.orthros.praises.weekday = {
                 }
             ]
         },
-        7: { 1: null, 2: null, 3: null, 4: null, 5: null, 6: null },
+        7: {
+            1: null,
+            2: null,
+            3: null,
+            4: null,
+            5: null,
+            6: [
+                {
+                    sticheron: 1,
+                    text: 'Celebrating the memorial of Thy passion-bearers, O Christ, we chant, crying aloud: Glory to Thee, O Lord!'
+                },
+                {
+                    sticheron: 2,
+                    text: 'Rejoicing in the midst of the tribunal of the lawless, the passion-bearers cried out, O Christ: Glory to Thee, O Lord!'
+                },
+                {
+                    sticheron: 3,
+                    text: 'Breathing forth one thing, and looking toward one thing, the passion-bearing martyrs, having found the one path of life, which is death for Christ, urged one another on to death. O the wonder! For, snatching up the treasures of torment, they said to each other: "If we die not now, we shall die in any case; wherefore, let us do things worthy of life: let us do what needs be done with love of honor, that we may sell what we have and buy life with death!" Through their supplications, O God, have mercy on us.'
+                }
+            ]
+        },
         8: { 1: null, 2: null, 3: null, 4: null, 5: null, 6: null }
     }
 };
