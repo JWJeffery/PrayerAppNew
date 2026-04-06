@@ -234,7 +234,27 @@ window.OCTOECHOS.orthros.praises.weekday = {
                 { sticheron: 4, text: 'Having fought the good fight, even after death ye shine in the world like beacons, O holy martyrs; wherefore, possessed of boldness, entreat Christ to have mercy on our souls.' }
             ]
         },
-        4: { 1: null, 2: null, 3: null, 4: null, 5: null, 6: null },
+        4: {
+            1: null,
+            2: null,
+            3: null,
+            4: null,
+            5: null,
+            6: [
+                {
+                    sticheron: 1,
+                    text: 'Who is not filled with awe, beholding the good contest wherein ye struggled, O holy martyrs? How have ye, who are fleshly beings, vanquished incorporeal enemies. The threats of tyrants did not frighten you, neither did the infliction of tortures daunt you. Ye have truly been glorified by Christ, as is meet. Ask ye great mercy for our souls.'
+                },
+                {
+                    sticheron: 2,
+                    text: 'Ye have become fellow partakers with the angels, O holy martyrs who manfully preached Christ at the tribunal; for ye forsook all the beautiful things of this world as though they did not exist, and clung to the Faith as your steadfast hope. Wherefore, having driven deception away, ye pour forth gifts of healing upon the faithful, unceasingly praying that our souls be saved.'
+                },
+                {
+                    sticheron: 3,
+                    text: 'How can we fail to marvel at your struggles, O holy martyrs? For, clad in mortal bodies, ye vanquished incorporeal enemies. The threats of tyrants did not frighten you, neither did the infliction of tortures daunt you. Ye have truly been glorified by Christ, as is meet. Ask ye great mercy for our souls.'
+                }
+            ]
+        },
         5: { 1: null, 2: null, 3: null, 4: null, 5: null, 6: null },
         6: { 1: null, 2: null, 3: null, 4: null, 5: null, 6: null },
         7: { 1: null, 2: null, 3: null, 4: null, 5: null, 6: null },
