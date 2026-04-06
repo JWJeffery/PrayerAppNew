@@ -1106,9 +1106,31 @@ function _normalizeUnavailableTroparionFallbackForOffice(officeKey, resolved, da
     }
 
     async function _resolveLittleHourSeasonalTroparionSlot(officeKey, dayOfWeek, dateObj, toneResult) {
+        // v6.8: Holy Week pre-emption — must run before Menaion feast arbitration.
+        // During Holy Week the Triodion/Holy Week overlay governs the troparion for
+        // all offices; no Menaion rank (including rank 1–4) displaces the Holy Week text.
+        const _hwSeasonCheck = _computeLiturgicalSeason(dateObj, toneResult);
+        if (_hwSeasonCheck && _hwSeasonCheck.season === 'holy-week') {
+            const _hwDay = _hwSeasonCheck.holyWeekDay;
+            await _loadHolyWeekData();
+            const _hwResolved = _resolveHolyWeekText('troparion-or-apolytikion', _hwDay);
+            if (_hwResolved) {
+                return Object.assign({}, _hwResolved, { key: 'troparion-of-the-day' });
+            }
+            // No text in corpus for this slot/day — return honest Holy Week rubric.
+            return {
+                type:       'rubric',
+                key:        'troparion-of-the-day',
+                label:      'Troparion of the Day',
+                text:       `Holy Week (${_hwDay}): the appointed troparion is from the Triodion. Text not yet available in corpus.`,
+                resolvedAs: 'holy-week-troparion-rubric',
+                holyWeekDay: _hwDay
+            };
+        }
+
         let resolved = await _resolveLittleHourTroparionSlot(dayOfWeek, toneResult, dateObj);
 
-        // Feast override always wins.
+        // Feast override always wins (outside Holy Week).
         if (resolved && resolved.resolvedAs === 'menaion-feast-troparion') {
             return resolved;
         }
