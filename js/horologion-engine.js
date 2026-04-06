@@ -3656,9 +3656,17 @@ const isMajorFeastForPraises =
                         canonResolvedAs = 'orthros-bright-week-canon-rubric';
                     } else if (isHolyWeek) {
                         const hwDay = seasonResult && seasonResult.holyWeekDay
-                            ? seasonResult.holyWeekDay.replace(/-/g, ' ') : 'Holy Week';
+                            ? seasonResult.holyWeekDay : null;
+                        const hwCanonResolved = hwDay
+                            ? _resolveHolyWeekText('canon', hwDay)
+                            : null;
+                        if (hwCanonResolved) {
+                            section.items[i] = hwCanonResolved;
+                            continue;
+                        }
+                        const hwDayLabel = hwDay ? hwDay.replace(/-/g, ' ') : 'Holy Week';
                         canonText =
-                            `HOLY WEEK — Canon (${hwDay}): During Holy Week the Canon is appointed ` +
+                            `HOLY WEEK — Canon (${hwDayLabel}): During Holy Week the Canon is appointed ` +
                             'specifically from the Triodion for each day. Palm Sunday uses the Canon ' +
                             'of the Triodion with the Lazarus Saturday Canon at Sunday Orthros. ' +
                             'Great Monday through Great Wednesday use the Canon of the Bridegroom. ' +
