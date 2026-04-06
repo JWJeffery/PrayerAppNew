@@ -255,7 +255,35 @@ window.OCTOECHOS.orthros.praises.weekday = {
                 }
             ]
         },
-        5: { 1: null, 2: null, 3: null, 4: null, 5: null, 6: null },
+        5: {
+            1: null,
+            2: null,
+            3: null,
+            4: null,
+            5: null,
+            6: [
+                {
+                    sticheron: 1,
+                    text: 'Blessed is the army of the King of heaven, for though the passion-bearers were mortals, yet did they strive to attain the dignity of the angels; and they spurned the pangs of their bodies, and by their sufferings were vouchsafed the honor of the incorporeal ones. Wherefore, by their supplications, O Lord, send down upon us great mercy.'
+                },
+                {
+                    sticheron: 2,
+                    text: 'Thy passion-bearers, O Lord, emulators of the angelic ranks, endured tortures as though incorporeal, in oneness of mind possessed of the hope that they would enjoy the good things promised them. By their supplications, O Christ God, grant peace to Thy world and great mercy to our souls.'
+                },
+                {
+                    sticheron: 3,
+                    text: 'Struggling on earth, the holy martyrs endured the cold and gave themselves over to the fire. And as the waters received them their cry was: "We went through fire and water, and Thou didst bring us out into refreshment!" By their supplications, O Christ God, have mercy upon us!'
+                },
+                {
+                    sticheron: 4,
+                    text: 'Rejoicing in the midst of their torments, the saints cried out: "These things are wares for us to trade with the Lord: for, instead of the wounds we bear on our bodies, radiant vesture shall blossom forth for us unto our resurrection; instead of dishonor, we shall receive crowns; instead of fetters in prison, we shall receive paradise; and instead of condemnation with malefactors, we shall have life with the angels!" By their supplications, O Lord, save Thou our souls!'
+                },
+                {
+                    sticheron: 5,
+                    text: 'Nekrosimon: O Lord Who created me, Thou didst set Thy hand upon me, and commanding me didst say: "Thou shalt return unto the earth": Guide me to Thy right path, forgiving me my transgressions; and absolve and save me, I pray, in that Thou lovest mankind.'
+                }
+            ]
+        },
         6: { 1: null, 2: null, 3: null, 4: null, 5: null, 6: null },
         7: { 1: null, 2: null, 3: null, 4: null, 5: null, 6: null },
         8: { 1: null, 2: null, 3: null, 4: null, 5: null, 6: null }
