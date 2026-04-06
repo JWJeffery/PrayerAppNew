@@ -19,7 +19,7 @@ window.OCTOECHOS.orthros.aposticha.weekday = {
         label:  'Weekday Aposticha (Orthros)',
         office: 'orthros',
         family: 'aposticha',
-        source: 'PARTIALLY TRANSCRIBED — Lambertsen Octoechos (weekday aposticha in progress)'
+       source: 'FULL_SOURCE_SECURE_TRANSCRIPTION — Lambertsen Octoechos (weekday aposticha complete)'
     },
 
     tones: {
