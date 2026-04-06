@@ -194,6 +194,15 @@
           "tone": null,
           "source": "Triodion — Great and Holy Wednesday Vespers (Hapgood/Jordanville witness; Exodus 2:11–22, Job 2:1–10)",
           "resolvedAs": "holy-week-paremiae-text"
+        },
+        "sessional-hymns": {
+          "type": "text",
+          "key": "sessional-hymns",
+          "label": "Sessional Hymns — Great and Holy Wednesday Orthros (Bridegroom Matins)",
+          "text": "After the First Kathisma:\n\nTone VIII:\nBehold, the Bridegroom cometh at midnight, and blessed is the servant whom He shall find watching; and again, unworthy is the servant whom He shall find heedless. Beware, therefore, O my soul, do not be weighed down with sleep, lest thou be given up to death and lest thou be shut out from the Kingdom. But rouse thyself crying: Holy, Holy, Holy art Thou, O our God; through the Theotokos have mercy on us.\n\nTheotokion, Tone VIII:\nGabriel stood before thee, O Virgin, and announced to thee the good tidings; and, as thou didst receive the divine greeting, thou didst conceive the incorporeal Son, and thou wast found to be, as it hath been written, the spacious palace of the inexpressible God. O Theotokos, save them that magnify thee.\n\nAfter the Second Kathisma:\n\nTone VIII:\nBehold, the Bridegroom cometh at midnight, and blessed is the servant whom He shall find watching; and again, unworthy is the servant whom He shall find heedless. Beware, therefore, O my soul, do not be weighed down with sleep, lest thou be given up to death and lest thou be shut out from the Kingdom. But rouse thyself crying: Holy, Holy, Holy art Thou, O our God; through the Theotokos have mercy on us.\n\nTheotokion, Tone VIII:\nGabriel stood before thee, O Virgin, and announced to thee the good tidings; and, as thou didst receive the divine greeting, thou didst conceive the incorporeal Son, and thou wast found to be, as it hath been written, the spacious palace of the inexpressible God. O Theotokos, save them that magnify thee.",
+          "tone": 8,
+          "source": "Triodion — Great and Holy Wednesday, Bridegroom Matins (Hapgood/Jordanville witness)",
+          "resolvedAs": "holy-week-sessional-hymns-text"
         }
       }
     },
