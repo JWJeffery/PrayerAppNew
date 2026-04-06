@@ -1822,7 +1822,7 @@ function _normalizeUnavailableTroparionFallbackForOffice(officeKey, resolved, da
                 rank:          overrideContext.rank,
                 commemoration: menaionResult.name || null,
                 weekdayTheme:  weekdayMeta.theme_short || weekdayMeta.theme || null,
-                overrideType:  overrideContext.overrideType,
+                overrideType:  'menaion-troparion',
                 appliesTo:     overrideContext.appliesTo.slice(),
                 governingTone: overrideContext.governingTone,
                 feastRankOverride: overrideContext.rank !== null && overrideContext.rank <= 2,
