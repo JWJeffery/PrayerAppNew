@@ -334,6 +334,30 @@ window.OCTOECHOS.orthros.praises.weekday = {
                 }
             ]
         },
-        8: { 1: null, 2: null, 3: null, 4: null, 5: null, 6: null }
+        8: {
+            1: null,
+            2: null,
+            3: null,
+            4: null,
+            5: null,
+            6: [
+                {
+                    sticheron: 1,
+                    text: 'Ye struggled greatly, O saints, valiantly enduring tortures at the hands of the iniquitous; and though ye have passed from this life, ye still work wonders in this world and heal those made sick by their passions. O holy ones, pray ye that our souls be saved.'
+                },
+                {
+                    sticheron: 2,
+                    text: 'O invincible martyrs of Christ, having vanquished falsehood with the power of the Cross, ye received the grace of eternal life; and undaunted by the threats of the tyrants, ye rejoiced as ye were wounded with tortures: and your blood hath now become healing for our souls. Pray ye, that our souls be saved.'
+                },
+                {
+                    sticheron: 3,
+                    text: 'Fitted well with the breastplate of the Faith, and armed with the Cross as a sword, ye showed yourselves to be mighty warriors, manfully opposed the tyrants and cast down the deception of the devil; and, victorious, ye were vouchsafed crowns. Pray ye ever in our behalf, that our souls be saved.'
+                },
+                {
+                    sticheron: 4,
+                    text: 'Nekrosimon: For those who have lived in fornication infinite is the torment, the gnashing of teeth, the inconsolable weeping, the fiery Gehenna, the outer darkness, the worm which sleepeth not, the ineffectual tears, and the implacable judgment; wherefore, before the end let us cry out, saying: O Master Christ, grant rest with the elect unto those Thou hast taken to Thyself!'
+                }
+            ]
+        }
     }
 };
