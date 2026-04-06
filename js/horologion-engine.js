@@ -3478,6 +3478,15 @@ const isMajorFeastForPraises =
                             'Full Bright Week Sessional Hymn text is not yet embedded in this path.';
                         sessResolvedAs = 'orthros-bright-week-sessional-hymns-rubric';
                     } else if (isHolyWeek) {
+                        const hwDay = seasonResult && seasonResult.holyWeekDay
+                            ? seasonResult.holyWeekDay : null;
+                        const hwSessResolved = hwDay
+                            ? _resolveHolyWeekText('sessional-hymns', hwDay)
+                            : null;
+                        if (hwSessResolved) {
+                            section.items[i] = hwSessResolved;
+                            continue;
+                        }
                         sessText =
                             'HOLY WEEK — Sessional Hymns: During Holy Week the Sessional Hymns are ' +
                             'appointed specifically from the Triodion for each day, replacing the ' +
