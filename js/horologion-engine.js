@@ -354,12 +354,16 @@ const HorologionEngine = (() => {
     let _midnightOfficeFixedData = null;
  
     // ── v6.3: Midnight Office theotokion corpus URL and cache ─────────────
-    // Tone × day-of-week grid. null = untranscribed; string = full text.
-    // Shape: { tones: { "1": { "0": null|string, … "6": null|string }, … } }
-    const MIDNIGHT_OFFICE_THEOTOKION_URL = 'data/horologion/midnight-office-theotokion.json';
- 
-    // Populated lazily by _loadMidnightOfficeTheotokionData().
-    let _midnightOfficeTheotokionData = null;
+// Tone × day-of-week grid. null = untranscribed; string = full text.
+// Shape: { tones: { "1": { "0": null|string, … "6": null|string }, … } }
+const MIDNIGHT_OFFICE_THEOTOKION_URL = 'data/horologion/midnight-office-theotokion.json';
+
+// Populated lazily by _loadMidnightOfficeTheotokionData().
+let _midnightOfficeTheotokionData = null;
+
+// ── v6.7: Great Compline fixed text URL and cache ─────────────────────
+const GREAT_COMPLINE_FIXED_URL = 'data/horologion/great-compline-fixed.json';
+let _greatComplineFixedData = null;
 
     // ── v5.7: Orthros kathisma appointment table URL and cache ─────────────
     // Weekday pair assignments (Mon–Sat) for ordinary non-vigil Orthros.
@@ -535,8 +539,10 @@ const HorologionEngine = (() => {
        } else if (normalizedKey === 'orthros') {
             await _resolveOrthrosSlots(sections, dateObj);
         } else if (normalizedKey === 'midnight-office') {
-            await _resolveMidnightOfficeSlots(sections, dateObj);
-        } else {
+    await _resolveMidnightOfficeSlots(sections, dateObj);
+} else if (normalizedKey === 'great-compline') {
+    await _resolveGreatComplineSlots(sections, dateObj);
+} else {
             // v1.2 / v1.3: Vespers resolver (default for 'vespers' and any
             // future office that shares it until it has its own resolver).
             await _resolveVespersSlots(sections, dateObj);
@@ -3869,7 +3875,290 @@ const isMajorFeastForPraises =
             console.warn('[HorologionEngine] _loadMidnightOfficeTheotokionData failed:', err.message, '— theotokion slot will use rubric fallback.');
         }
     }
- 
+ // ── v6.7: _loadGreatComplineFixedData() ──────────────────────────────
+async function _loadGreatComplineFixedData() {
+    if (_greatComplineFixedData !== null) return;
+    try {
+        const response = await fetch(GREAT_COMPLINE_FIXED_URL);
+        if (!response.ok) {
+            console.warn(`[HorologionEngine] Could not load Great Compline fixed data (HTTP ${response.status}).`);
+            return;
+        }
+        _greatComplineFixedData = await response.json();
+        console.log('[HorologionEngine] Loaded Great Compline fixed text data (v6.7).');
+    } catch (err) {
+        console.warn('[HorologionEngine] _loadGreatComplineFixedData failed:', err.message);
+    }
+}
+
+// ── v6.7: _resolveGreatComplineSlots(sections, dateObj) ──────────────
+async function _resolveGreatComplineSlots(sections, dateObj) {
+    await _loadGreatComplineFixedData();
+
+    const dayOfWeek = dateObj.getDay();
+    const isFriday = (dayOfWeek === 5);
+    // Governed appointment gate for Great Compline (source witness baseline)
+    // Appointed:
+    //   - Monday–Thursday in Great Lent
+    //   - Friday in the 1st, 2nd, 3rd, 4th, and 6th weeks of Lent
+    //   - Tuesday and Thursday in the week before Lent
+    //   - Monday and Tuesday in Holy Week
+    // Not appointed:
+    //   - Saturday
+    //   - Sunday
+    //   - other weekdays outside those bounded periods
+
+    const localDate = new Date(dateObj.getFullYear(), dateObj.getMonth(), dateObj.getDate());
+    const MS_PER_DAY = 86400000;
+    const pascha = _getOrthodoxPascha(dateObj.getFullYear());
+    const cleanMonday = new Date(pascha.getTime() - 48 * MS_PER_DAY);
+    const holyMonday = new Date(pascha.getTime() - 6 * MS_PER_DAY);
+    const holyTuesday = new Date(pascha.getTime() - 5 * MS_PER_DAY);
+    const preLentWeekStart = new Date(cleanMonday.getTime() - 7 * MS_PER_DAY);
+
+    const sameDay = (a, b) =>
+        a.getFullYear() === b.getFullYear() &&
+        a.getMonth() === b.getMonth() &&
+        a.getDate() === b.getDate();
+
+    const daysSinceCleanMonday = Math.round((localDate.getTime() - cleanMonday.getTime()) / MS_PER_DAY);
+    const inGreatLentProper = localDate >= cleanMonday && localDate < holyMonday;
+    const inPreLentWeek = localDate >= preLentWeekStart && localDate < cleanMonday;
+    const inHolyWeekMondayTuesday = sameDay(localDate, holyMonday) || sameDay(localDate, holyTuesday);
+
+    let greatComplineAppointed = false;
+
+    if (inGreatLentProper) {
+        if (dayOfWeek >= 1 && dayOfWeek <= 4) {
+            greatComplineAppointed = true;
+        } else if (dayOfWeek === 5) {
+            const lentenWeek = Math.floor(daysSinceCleanMonday / 7) + 1;
+            greatComplineAppointed = [1, 2, 3, 4, 6].includes(lentenWeek);
+        }
+    } else if (inPreLentWeek) {
+        greatComplineAppointed = (dayOfWeek === 2 || dayOfWeek === 4);
+    } else if (inHolyWeekMondayTuesday) {
+        greatComplineAppointed = true;
+    }
+
+    if (!greatComplineAppointed) {
+        sections.length = 0;
+        sections.push({
+            id: 'great-compline-not-appointed',
+            label: 'Great Compline Not Appointed',
+            items: [
+                {
+                    type: 'rubric',
+                    key: 'gc-not-appointed-rubric',
+                    text: 'Per the current Great Compline source witness, Great Compline is not appointed for this day. Appointed days in this baseline are: Monday–Thursday in Great Lent; Friday in Lent weeks 1, 2, 3, 4, and 6; Tuesday and Thursday in the week before Lent; and Monday and Tuesday in Holy Week.'
+                }
+            ]
+        });
+        return;
+    }
+    let isFirstWeekOfLent = false;
+    try {
+        const toneResult = _computeBaselineTone(dateObj);
+        const seasonResult = _computeLiturgicalSeason(dateObj, toneResult);
+        if (seasonResult && seasonResult.season === 'great-lent') {
+            const pascha = _getOrthodoxPascha(dateObj.getFullYear());
+            const cleanMonday = new Date(pascha.getTime() - 48 * 86400000);
+            const local = new Date(dateObj.getFullYear(), dateObj.getMonth(), dateObj.getDate());
+            const daysSince = Math.round((local.getTime() - cleanMonday.getTime()) / 86400000);
+            isFirstWeekOfLent = (daysSince >= 0 && daysSince < 7);
+        }
+    } catch (e) {
+        console.warn('[HorologionEngine] _resolveGreatComplineSlots: lent week detection failed:', e.message);
+    }
+
+    const FIXED_KEYS = new Set([
+            'gc-usual-beginning', 'gc-psalm-4', 'gc-psalm-6', 'gc-psalm-12',
+            'gc-inter-doxology-1',
+            'gc-psalm-24', 'gc-psalm-30', 'gc-psalm-90',
+            'gc-inter-doxology-2',
+            'gc-angelic-hymn',
+            'gc-god-is-with-us', 'gc-day-being-past', 'gc-creed',
+            'gc-litanic-intercessions', 'gc-trisagion-1',
+            'gc-kyrie-40-prayer-of-basil',
+            'gc-psalm-50', 'gc-psalm-101', 'gc-prayer-of-manasseh',
+            'gc-trisagion-2', 'gc-come-worship-2',
+            'gc-sixth-tone-troparia',
+            'gc-kyrie-40-maradius', 'gc-come-worship-3',
+            'gc-psalm-142', 'gc-small-doxology',
+            'gc-closing-prayer-block',
+            'gc-trisagion-4', 'gc-save-help-protect',
+            'gc-supplicatory-prayer-theotokos', 'gc-prayer-antiochus',
+            'gc-prayer-joannicius', 'gc-prayer-guardian-angel',
+            'gc-ave-maria', 'gc-dismissal-prayers'
+        ]);
+
+    const _slot = (key) =>
+        _greatComplineFixedData &&
+        _greatComplineFixedData.slots &&
+        _greatComplineFixedData.slots[key];
+
+    const _applyFixed = (item, key) => {
+    const s = _slot(key);
+    if (!s) return item;
+
+    const resolved = {
+        key: item.key,
+        type: s.type || 'text',
+        label: s.label || item.label,
+        resolvedAs: 'great-compline-fixed'
+    };
+
+    if (typeof s.text !== 'undefined') resolved.text = s.text;
+    if (Array.isArray(s.items)) resolved.items = s.items;
+    if (typeof s.lxxNumber !== 'undefined') resolved.lxxNumber = s.lxxNumber;
+    if (typeof s.hebrewNumber !== 'undefined') resolved.hebrewNumber = s.hebrewNumber;
+    if (typeof s.rubric !== 'undefined') resolved.rubric = s.rubric;
+    if (typeof s.repeat !== 'undefined') resolved.repeat = s.repeat;
+
+    return resolved;
+};
+
+    for (const section of sections) {
+        if (!Array.isArray(section.items)) continue;
+
+        for (let i = 0; i < section.items.length; i++) {
+            const item = section.items[i];
+
+            if (FIXED_KEYS.has(item.key)) {
+                section.items[i] = _applyFixed(section.items[i], item.key);
+                continue;
+            }
+
+            if (item.key === 'gc-psalm-69-week1') {
+                if (isFirstWeekOfLent) {
+                    section.items[i] = _applyFixed(section.items[i], 'gc-psalm-69-week1');
+                } else {
+                    section.items[i] = {
+                        type: 'rubric',
+                        key: item.key,
+                        label: 'Psalm 69 — omitted',
+                        text: '(Psalm 69 is read only in the first week of Great Lent at this position. Omitted today.)',
+                        resolvedAs: 'great-compline-conditional-omitted'
+                    };
+                }
+                continue;
+            }
+
+            if (item.key === 'gc-psalm-69-second') {
+                if (!isFirstWeekOfLent) {
+                    section.items[i] = _applyFixed(section.items[i], 'gc-psalm-69-second');
+                } else {
+                    section.items[i] = {
+                        type: 'rubric',
+                        key: item.key,
+                        label: 'Psalm 69 — omitted (first week)',
+                        text: '(Psalm 69 is omitted in the first week of Great Lent at this position.)',
+                        resolvedAs: 'great-compline-conditional-omitted'
+                    };
+                }
+                continue;
+            }
+
+            if (item.key === 'gc-lord-of-hosts') {
+                if (!isFriday) {
+                    section.items[i] = _applyFixed(section.items[i], 'gc-lord-of-hosts');
+                } else {
+                    section.items[i] = {
+                        type: 'rubric',
+                        key: item.key,
+                        label: 'O Lord of Hosts — omitted (Friday)',
+                        text: '(On Friday evenings "O Lord of Hosts" is omitted. The Kontakion of the Saturday commemoration is substituted; corpus not yet implemented.)',
+                        resolvedAs: 'great-compline-friday-omission'
+                    };
+                }
+                continue;
+            }
+
+            if (item.key === 'gc-prayer-of-ephraim') {
+                if (!isFriday) {
+                    section.items[i] = _applyFixed(section.items[i], 'gc-prayer-of-ephraim');
+                } else {
+                    section.items[i] = {
+                        type: 'rubric',
+                        key: item.key,
+                        label: 'Prayer of St. Ephraim — omitted (Friday)',
+                        text: '(The Prayer of St. Ephraim the Syrian is not said on Friday evenings.)',
+                        resolvedAs: 'great-compline-friday-omission'
+                    };
+                }
+                continue;
+            }
+
+            if (item.key === 'gc-weekday-troparia') {
+                const DAY = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+                const d = DAY[dayOfWeek] || 'this day';
+                let text, resolvedAs;
+
+                if (dayOfWeek === 1 || dayOfWeek === 3) {
+                    text = `${d} — Weekday Troparia in Tone 2 (Mon/Wed): “Enlighten mine eyes, O Christ God…” Theotokion follows. Full text deferred to corpus tranche.`;
+                    resolvedAs = 'great-compline-weekday-troparia-mon-wed-rubric';
+                } else if (dayOfWeek === 2 || dayOfWeek === 4) {
+                    text = `${d} — Weekday Troparia in Tone 8 (Tue/Thu): “O Lord, You know the unsleeping vigilance…” Theotokion follows. Full text deferred to corpus tranche.`;
+                    resolvedAs = 'great-compline-weekday-troparia-tue-thu-rubric';
+                } else {
+                    text = `${d}: Weekday troparia not prescribed for this day in the standard Great Lent cycle. If a feast is appointed, the Troparion of the Feast is substituted.`;
+                    resolvedAs = 'great-compline-weekday-troparia-unscheduled';
+                }
+
+                section.items[i] = {
+                    type: 'rubric',
+                    key: item.key,
+                    label: `Weekday Troparia — ${d}`,
+                    text,
+                    resolvedAs
+                };
+                continue;
+            }
+
+            if (item.key === 'gc-canon') {
+                section.items[i] = {
+                    type: 'rubric',
+                    key: item.key,
+                    label: 'Canon',
+                    text: isFirstWeekOfLent
+                        ? 'FIRST WEEK OF GREAT LENT — The Great Canon of Saint Andrew of Crete is appointed here (Lenten Triodion). Canon corpus not yet implemented.'
+                        : 'GREAT COMPLINE — A canon from the Menaion or Octoechos is appointed here. Canon corpus not yet implemented.',
+                    resolvedAs: isFirstWeekOfLent
+                        ? 'great-compline-great-canon-rubric'
+                        : 'great-compline-canon-rubric'
+                };
+                continue;
+            }
+
+            if (item.key === 'gc-closing-theotokion') {
+                const isTueThu = (dayOfWeek === 2 || dayOfWeek === 4);
+                const theotokKey = isTueThu ? 'gc-theotokion-tue-thu' : 'gc-theotokion-mon-wed-fri';
+                const s = _slot(theotokKey);
+
+                if (s) {
+                    section.items[i] = {
+                        type: 'text',
+                        key: item.key,
+                        label: s.label || 'Closing Theotokion',
+                        text: s.text,
+                        resolvedAs: isTueThu ? 'great-compline-cross-theotokion' : 'great-compline-joy-theotokion'
+                    };
+                } else {
+                    section.items[i] = {
+                        type: 'rubric',
+                        key: item.key,
+                        label: 'Closing Theotokion',
+                        text: isTueThu
+                            ? 'Tue/Thu: Cross Theotokion (Tone 1) — data not loaded.'
+                            : 'Mon/Wed/Fri: Theotokion (Tone 2) — data not loaded.',
+                        resolvedAs: 'great-compline-theotokion-data-unavailable'
+                    };
+                }
+                continue;
+            }
+        }
+    }
+}
    // ── v6.2: _loadMidnightOfficeFixedData() ─────────────────────────────
     async function _loadMidnightOfficeFixedData() {
         if (_midnightOfficeFixedData !== null) return;

@@ -385,6 +385,107 @@ header {
 .status-open        { background: rgba(224,82,82,0.1);  color: var(--status-open);        border: 1px solid rgba(224,82,82,0.2); }
 .status-in-progress { background: rgba(212,146,74,0.1); color: var(--status-in-progress); border: 1px solid rgba(212,146,74,0.2); }
 
+/* ── Release Status panel ──────────────────────────────────────────────── */
+.release-section-label {
+  font-size: 0.68em;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  padding-bottom: 5px;
+  margin-bottom: 8px;
+  border-bottom: 1px solid var(--border);
+}
+.release-narrative {
+  font-size: 0.78em;
+  color: var(--text-dim);
+  line-height: 1.6;
+  margin-bottom: 14px;
+  white-space: pre-wrap;
+}
+.blocker-row {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  padding: 8px 12px;
+  background: rgba(224,82,82,0.06);
+  border: 1px solid rgba(224,82,82,0.2);
+  border-radius: var(--radius);
+  margin-bottom: 6px;
+  font-size: 0.78em;
+  line-height: 1.5;
+}
+.blocker-icon { color: var(--sev-high); flex-shrink: 0; margin-top: 1px; }
+.debt-row {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  padding: 8px 12px;
+  background: rgba(212,146,74,0.06);
+  border: 1px solid rgba(212,146,74,0.18);
+  border-radius: var(--radius);
+  margin-bottom: 6px;
+  font-size: 0.78em;
+  line-height: 1.5;
+  color: var(--text-dim);
+}
+.debt-icon { color: var(--sev-med); flex-shrink: 0; margin-top: 1px; }
+
+/* ── Active Milestones panel ───────────────────────────────────────────── */
+.milestone-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.milestone-row {
+  padding: 10px 14px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface-2);
+  transition: border-color 0.15s;
+}
+.milestone-row:hover { border-color: var(--border-bright); }
+.milestone-head {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 4px;
+}
+.milestone-phase {
+  font-size: 0.65em;
+  letter-spacing: 0.1em;
+  color: var(--accent);
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+.milestone-title { font-size: 0.84em; font-weight: 500; flex: 1; }
+.milestone-type {
+  font-size: 0.65em;
+  padding: 1px 6px;
+  border-radius: 3px;
+  border: 1px solid var(--border-bright);
+  color: var(--text-dim);
+  white-space: nowrap;
+}
+.milestone-summary { font-size: 0.75em; color: var(--text-dim); line-height: 1.5; }
+
+/* ── Daily focus checklist ─────────────────────────────────────────────── */
+.focus-row {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 10px 12px;
+  align-items: start;
+  padding: 9px 12px;
+  border: 1px solid rgba(212,146,74,0.22);
+  border-radius: var(--radius);
+  background: rgba(212,146,74,0.04);
+  margin-bottom: 6px;
+}
+.focus-row:hover { border-color: rgba(212,146,74,0.4); }
+.focus-body { display: flex; flex-direction: column; gap: 2px; }
+.focus-title { font-size: 0.85em; font-weight: 500; }
+.focus-area  { font-size: 0.72em; color: var(--text-dim); }
+.focus-phase { font-size: 0.65em; color: var(--accent); margin-top: 1px; }
+
 /* ── Empty / loading states ────────────────────────────────────────────── */
 .empty-state {
   padding: 24px;
@@ -537,6 +638,39 @@ header {
         <span style="margin-left:auto; font-size:0.68em; color:var(--text-dim)">source: structure.json → admin.todos</span>
       </div>
       <div class="panel-body" id="todos-body">
+        <div class="empty-state loading-dot">Loading</div>
+      </div>
+    </div>
+
+    <!-- Byzantine Release Roadmap -->
+    <div class="panel" id="panel-release-roadmap">
+      <div class="panel-head">
+        <span class="panel-title">Byzantine Release Roadmap</span>
+        <span style="margin-left:auto; font-size:0.68em; color:var(--text-dim)">source: structure.json → governance.byzantine_release_roadmap</span>
+      </div>
+      <div class="panel-body" id="release-roadmap-body">
+        <div class="empty-state loading-dot">Loading</div>
+      </div>
+    </div>
+
+    <!-- Release Status -->
+    <div class="panel" id="panel-release-status">
+      <div class="panel-head">
+        <span class="panel-title">Release Status</span>
+        <span style="margin-left:auto; font-size:0.68em; color:var(--text-dim)">source: structure.json → roadmap_summary · audit_findings</span>
+      </div>
+      <div class="panel-body" id="release-status-body">
+        <div class="empty-state loading-dot">Loading</div>
+      </div>
+    </div>
+
+    <!-- Active Milestones + Daily Focus -->
+    <div class="panel" id="panel-milestones">
+      <div class="panel-head">
+        <span class="panel-title">Active Governance &amp; Open Work</span>
+        <span style="margin-left:auto; font-size:0.68em; color:var(--text-dim)">source: structure.json → governance.decisions · admin.todos</span>
+      </div>
+      <div class="panel-body" id="milestones-body">
         <div class="empty-state loading-dot">Loading</div>
       </div>
     </div>
@@ -1051,6 +1185,68 @@ function renderDaySnapshotResult(body, dateISO, season, comms) {
   `;
 }
 
+// ── Release Roadmap renderer ──────────────────────────────────────────────
+function renderReleaseRoadmap() {
+  const body = document.getElementById('release-roadmap-body');
+  if (!body) return;
+
+  fetch('../structure.json')
+    .then(r => r.json())
+    .then(data => {
+      const rm = data?.governance?.byzantine_release_roadmap;
+      if (!rm) {
+        body.innerHTML = `<div class="empty-state">No byzantine_release_roadmap found in structure.json → governance.</div>`;
+        return;
+      }
+
+      const gateColor = rm.monastic_first ? 'var(--accent)' : 'var(--text-dim)';
+      const gateDateStr = rm.release_gate_date
+        ? ` <span style="color:var(--text-dim);font-size:0.88em">(${rm.release_gate_date})</span>`
+        : '';
+
+      const monastic = rm.monastic_first
+        ? `<div style="font-size:0.76em;color:var(--text-dim);margin-bottom:10px;padding:8px 10px;
+                       background:rgba(201,168,76,0.07);border:1px solid rgba(201,168,76,0.18);border-radius:4px;">
+             ☩ Monastic-first — ${rm.monastic_first_rationale || ''}
+           </div>`
+        : '';
+
+      const statusColor = { open: 'var(--status-open)', 'in-progress': 'var(--status-in-progress)', done: 'var(--status-done)' };
+      const offices = (rm.critical_path_offices || []).map(o => `
+        <div style="display:grid;grid-template-columns:1fr auto;gap:6px 10px;align-items:start;
+                    padding:8px 10px;background:var(--surface-2);border:1px solid var(--border);
+                    border-radius:4px;margin-bottom:6px;">
+          <div>
+            <div style="font-size:0.84em;font-weight:500">${o.title}</div>
+            <div style="font-size:0.72em;color:var(--text-dim);margin-top:2px">${o.note || ''}</div>
+          </div>
+          <span style="font-size:0.68em;padding:2px 7px;border-radius:3px;white-space:nowrap;
+                       color:${statusColor[o.status] || 'var(--text-dim)'};
+                       background:rgba(0,0,0,0.3);border:1px solid currentColor">${o.status}</span>
+        </div>`).join('');
+
+      const nonBlocking = (rm.non_blocking_open || []).map(s =>
+        `<div style="font-size:0.72em;color:var(--text-dim);padding:3px 0;border-bottom:1px solid var(--border)">${s}</div>`
+      ).join('');
+
+      body.innerHTML = `
+        <div style="margin-bottom:12px">
+          <span style="font-size:0.72em;letter-spacing:0.1em;text-transform:uppercase;color:var(--text-dim)">Release Gate: </span>
+          <span style="font-size:0.84em;color:${gateColor};font-weight:600">${rm.release_gate || '—'}${gateDateStr}</span>
+        </div>
+        ${monastic}
+        <div style="font-size:0.68em;letter-spacing:0.12em;text-transform:uppercase;color:var(--text-dim);margin-bottom:8px">
+          Critical-Path Offices
+        </div>
+        ${offices}
+        ${nonBlocking ? `<div style="font-size:0.68em;letter-spacing:0.12em;text-transform:uppercase;color:var(--text-dim);margin:10px 0 6px">Non-Blocking Open</div>${nonBlocking}` : ''}
+      `;
+    })
+    .catch(err => {
+      body.innerHTML = `<div class="empty-state">Failed to load structure.json: ${err.message}</div>`;
+    });
+}
+
 // ── To-Dos renderer ───────────────────────────────────────────────────────
 function renderTodos() {
   const body = document.getElementById('todos-body');
@@ -1090,6 +1286,147 @@ function renderTodos() {
     });
 }
 
+// ── Release Status renderer ───────────────────────────────────────────────
+function renderReleaseStatus() {
+  const body = document.getElementById('release-status-body');
+
+  fetch('../structure.json')
+    .then(r => r.json())
+    .then(data => {
+      const summary  = data?.roadmap_summary || {};
+      const findings = data?.project_manifest?.audit_findings || {};
+      const bugs     = findings.open_bugs || [];
+      const debt = (findings.architectural_debt || []).filter(d => {
+  const s = String(d ?? '').trim();
+  return s && !s.includes('[CLOSED');
+});
+      const nextReq  = summary.next_required  || '';
+      const nextPlan = summary.next_planned   || '';
+      // Next required narrative (truncated to ~400 chars for readability)
+      const reqSnippet = nextReq.length > 420
+        ? nextReq.slice(0, 420).replace(/\s\S*$/, '') + ' …'
+        : nextReq;
+      const planSnippet = nextPlan.length > 280
+        ? nextPlan.slice(0, 280).replace(/\s\S*$/, '') + ' …'
+        : nextPlan;
+      const bugsHtml = bugs.length
+        ? bugs.map(b => `
+            <div class="blocker-row">
+              <span class="blocker-icon">⚑</span>
+              <span>${b}</span>
+            </div>`).join('')
+        : '<div class="empty-state" style="padding:8px 0; text-align:left">No open bugs recorded.</div>';
+
+      const debtHtml = debt.length
+        ? debt.map(d => `
+            <div class="debt-row">
+              <span class="debt-icon">△</span>
+              <span>${d}</span>
+            </div>`).join('')
+        : '';
+
+      body.innerHTML = `
+        <div class="release-section-label">Next Required</div>
+        <div class="release-narrative">${reqSnippet}</div>
+        ${planSnippet ? `<div class="release-section-label">Next Planned</div>
+        <div class="release-narrative">${planSnippet}</div>` : ''}
+        <div class="release-section-label" style="margin-top:4px">Open Bugs</div>
+        ${bugsHtml}
+        ${debtHtml ? `<div class="release-section-label" style="margin-top:10px">Architectural Debt (open)</div>${debtHtml}` : ''}
+      `;
+    })
+    .catch(err => {
+      body.innerHTML = `<div class="empty-state">Failed to load structure.json: ${err.message}</div>`;
+    });
+}
+
+// ── Active Milestones + Daily Focus renderer ───────────────────────────────
+function renderActiveMilestones() {
+  const body = document.getElementById('milestones-body');
+  if (!body) return;
+
+  fetch('../structure.json')
+    .then(r => r.json())
+    .then(data => {
+      const sevOrder = { HIGH: 0, MEDIUM: 1, LOW: 2 };
+      const safe = (v) => String(v ?? '');
+
+      const decisions = (Array.isArray(data?.governance?.decisions) ? data.governance.decisions : [])
+        .filter(d => d && d.status === 'active');
+
+      const allTodos = Array.isArray(data?.admin?.todos) ? data.admin.todos : [];
+
+      const priorityTodos = allTodos
+        .filter(t => t && t.status !== 'done' && (t.severity === 'HIGH' || t.severity === 'MEDIUM'))
+        .sort((a, b) => (sevOrder[a?.severity] ?? 9) - (sevOrder[b?.severity] ?? 9));
+
+      const fallbackTodos = priorityTodos.length
+        ? priorityTodos
+        : allTodos
+            .filter(t => t && t.status !== 'done')
+            .sort((a, b) => (sevOrder[a?.severity] ?? 9) - (sevOrder[b?.severity] ?? 9))
+            .slice(0, 5);
+
+      const displayTodos = priorityTodos.length ? priorityTodos : fallbackTodos;
+
+      let html = '';
+
+      if (displayTodos.length) {
+        const label = priorityTodos.length ? 'Priority Open Work' : 'Open Work Queue';
+
+        html += `<div class="release-section-label" style="margin-bottom:10px">${label}</div>`;
+        html += displayTodos.map(t => {
+          const severity = safe(t?.severity);
+          const title = safe(t?.title);
+          const area = safe(t?.area);
+          const phase = safe(t?.phase);
+          const status = safe(t?.status);
+
+          return `
+            <div class="todo-row" style="margin-bottom:6px">
+              <span class="todo-sev sev-${severity}">${severity}</span>
+              <div class="todo-body">
+                <div class="todo-title">${title}</div>
+                <div class="todo-area">${area}</div>
+                ${phase ? `<div class="todo-area" style="color:var(--accent);opacity:0.7">${phase}</div>` : ''}
+              </div>
+              <span class="todo-status">${status}</span>
+            </div>
+          `;
+        }).join('');
+      }
+
+      if (decisions.length) {
+        html += `<div class="release-section-label" style="margin-top:${displayTodos.length ? 18 : 0}px; margin-bottom:10px">Active Governance Decisions</div>`;
+        html += `<div class="milestone-grid">` + decisions.map(d => {
+          const phase = safe(d?.phase || d?.date);
+          const title = safe(d?.title || '(untitled)');
+          const type = safe(d?.type);
+          const summary = safe(d?.summary);
+
+          return `
+            <div class="milestone-row">
+              <div class="milestone-head">
+                <span class="milestone-phase">${phase}</span>
+                <span class="milestone-title">${title}</span>
+                ${type ? `<span class="milestone-type">${type}</span>` : ''}
+              </div>
+              <div class="milestone-summary">${summary}</div>
+            </div>
+          `;
+        }).join('') + `</div>`;
+      }
+
+      if (!html) {
+        html = `<div class="empty-state">No active milestones or open todos found.</div>`;
+      }
+
+      body.innerHTML = html;
+    })
+    .catch(err => {
+      body.innerHTML = `<div class="empty-state">Failed to load structure.json: ${String(err?.message ?? err)}</div>`;
+    });
+}
 // ── Version display ───────────────────────────────────────────────────────
 function loadVersion() {
   fetch('../structure.json')
@@ -1170,6 +1507,13 @@ document.getElementById('day-snap-btn').addEventListener('click', () => {
 
   // Load todos
   renderTodos();
+
+  // Load Byzantine release roadmap
+  renderReleaseRoadmap();
+
+  // Load release status and active milestones
+  renderReleaseStatus();
+  renderActiveMilestones();
 
   // Load version
   loadVersion();

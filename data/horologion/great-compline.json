@@ -1,0 +1,367 @@
+{
+  "officeKey": "great-compline",
+  "label": "Great Compline (Mega Apodeipnon)",
+  "tradition": "BYZC",
+  "description": "Great Compline (Mega Apodeipnon) is the solemn Byzantine night office appointed on weekday evenings during Great Lent and on the eves of Nativity and Theophany. It is substantially longer than Small Compline, with two psalm cycles, the Prayer of Manasseh, a variable canon, and an extended closing prayer sequence. Source witness: orthodoxprayer.org Great Compline. Baseline skeleton only — conditional and variable material deferred.",
+  "sections": [
+    {
+      "id": "opening",
+      "label": "Opening",
+      "items": [
+        {
+          "type": "rubric",
+          "key": "gc-opening-blessing-rubric",
+          "text": "The Priest blesses: Through the prayers of our holy Fathers, O Lord Jesus Christ our God, have mercy on us. Amen."
+        },
+        {
+          "type": "placeholder",
+          "key": "gc-usual-beginning",
+          "label": "The Usual Beginning",
+          "status": "unresolved",
+          "note": "Trisagion prayers sequence. Resolved from great-compline-fixed.json."
+        }
+      ]
+    },
+    {
+      "id": "first-psalm-cycle",
+      "label": "First Psalm Cycle",
+      "notes": "Psalms 4, 6, and 12 (LXX). In the first week of Great Lent, Psalm 69 precedes. Inter-psalm doxology follows.",
+      "items": [
+        {
+          "type": "placeholder",
+          "key": "gc-psalm-69-week1",
+          "label": "Psalm 69 (first week of Great Lent only)",
+          "status": "unresolved",
+          "note": "Conditional: first week of Great Lent only. Resolved from great-compline-fixed.json; conditioned by _resolveGreatComplineSlots()."
+        },
+        {
+          "type": "placeholder",
+          "key": "gc-psalm-4",
+          "label": "Psalm 4 (LXX)",
+          "status": "unresolved",
+          "note": "Resolved from great-compline-fixed.json."
+        },
+        {
+          "type": "placeholder",
+          "key": "gc-psalm-6",
+          "label": "Psalm 6 (LXX)",
+          "status": "unresolved",
+          "note": "Resolved from great-compline-fixed.json."
+        },
+        {
+          "type": "placeholder",
+          "key": "gc-psalm-12",
+          "label": "Psalm 12 (LXX)",
+          "status": "unresolved",
+          "note": "Resolved from great-compline-fixed.json."
+        },
+        {
+          "type": "placeholder",
+          "key": "gc-inter-doxology-1",
+          "label": "Doxology between first and second psalm cycles",
+          "status": "unresolved",
+          "note": "Fixed. Glory… Alleluia × 3… Lord have mercy × 3… Glory…. Resolved from great-compline-fixed.json."
+        }
+      ]
+    },
+    {
+      "id": "second-psalm-cycle",
+      "label": "Second Psalm Cycle",
+      "notes": "Psalms 24, 30, and 90 (LXX). Inter-psalm doxology follows.",
+      "items": [
+        {
+          "type": "placeholder",
+          "key": "gc-psalm-24",
+          "label": "Psalm 24 (LXX)",
+          "status": "unresolved",
+          "note": "Resolved from great-compline-fixed.json."
+        },
+        {
+          "type": "placeholder",
+          "key": "gc-psalm-30",
+          "label": "Psalm 30 (LXX)",
+          "status": "unresolved",
+          "note": "Resolved from great-compline-fixed.json."
+        },
+        {
+          "type": "placeholder",
+          "key": "gc-psalm-90",
+          "label": "Psalm 90 (LXX)",
+          "status": "unresolved",
+          "note": "Resolved from great-compline-fixed.json."
+        },
+        {
+          "type": "placeholder",
+          "key": "gc-inter-doxology-2",
+          "label": "Doxology between second and third psalm cycles",
+          "status": "unresolved",
+          "note": "Fixed. Glory… Alleluia × 3… Lord have mercy × 3… Glory…. Resolved from great-compline-fixed.json."
+        }
+      ]
+    },
+    {
+      "id": "god-is-with-us",
+      "label": "God is with Us / Day Being Past / Creed",
+      "notes": "The Isaiah 8 versicle antiphon, the 'Day being past' troparia, the Angelic Hymn (Tone 6), the Creed, and the litanic intercessions. All fixed. Friday: read, not chanted.",
+      "items": [
+        {
+          "type": "placeholder",
+          "key": "gc-god-is-with-us",
+          "label": "God is with us (Isaiah 8 versicles)",
+          "status": "unresolved",
+          "note": "Resolved from great-compline-fixed.json."
+        },
+        {
+          "type": "placeholder",
+          "key": "gc-day-being-past",
+          "label": "Troparia: The Day Being Past",
+          "status": "unresolved",
+          "note": "Fixed. Three stanzas. Resolved from great-compline-fixed.json."
+        },
+        {
+          "type": "placeholder",
+          "key": "gc-angelic-hymn",
+          "label": "Angelic Hymn (Tone 6)",
+          "status": "unresolved",
+          "note": "Fixed. 'The bodiless nature of the Cherubim…'. Friday: read not chanted. Resolved from great-compline-fixed.json."
+        },
+        {
+          "type": "placeholder",
+          "key": "gc-creed",
+          "label": "The Creed",
+          "status": "unresolved",
+          "note": "Resolved from great-compline-fixed.json."
+        },
+        {
+          "type": "placeholder",
+          "key": "gc-litanic-intercessions",
+          "label": "Litanic Intercessions (O most holy Lady Theotokos…)",
+          "status": "unresolved",
+          "note": "Fixed. Resolved from great-compline-fixed.json."
+        }
+      ]
+    },
+    {
+      "id": "first-trisagion-troparia",
+      "label": "Trisagion / Weekday Troparia / Prayer of Basil",
+      "notes": "Trisagion and Our Father, weekday troparia (variable by day), Lord have mercy × 40, and Prayer of Basil the Great.",
+      "items": [
+        {
+          "type": "placeholder",
+          "key": "gc-trisagion-1",
+          "label": "Trisagion and Our Father",
+          "status": "unresolved",
+          "note": "Resolved from great-compline-fixed.json."
+        },
+        {
+          "type": "placeholder",
+          "key": "gc-weekday-troparia",
+          "label": "Weekday Troparia (day-dependent)",
+          "status": "unresolved",
+          "note": "Variable: Mon/Wed = Tone 2; Tue/Thu = Tone 8; Feasts = Troparion of the Feast. Resolved by _resolveGreatComplineSlots()."
+        },
+        {
+          "type": "placeholder",
+          "key": "gc-kyrie-40-prayer-of-basil",
+          "label": "Lord have mercy × 40 and Prayer of Basil the Great",
+          "status": "unresolved",
+          "note": "Resolved from great-compline-fixed.json."
+        }
+      ]
+    },
+    {
+      "id": "second-psalm-block",
+      "label": "Psalms 50, 101 / Prayer of Manasseh / Sixth-Tone Troparia",
+      "notes": "Psalms 50 and 101 (LXX), Prayer of Manasseh, Trisagion, second 'O come, let us worship', sixth-tone troparia, Lord have mercy × 40, Prayer of Maradius, and third 'O come, let us worship'.",
+      "items": [
+        {
+          "type": "placeholder",
+          "key": "gc-psalm-50",
+          "label": "Psalm 50 (LXX)",
+          "status": "unresolved",
+          "note": "Resolved from great-compline-fixed.json."
+        },
+        {
+          "type": "placeholder",
+          "key": "gc-psalm-101",
+          "label": "Psalm 101 (LXX)",
+          "status": "unresolved",
+          "note": "Resolved from great-compline-fixed.json."
+        },
+        {
+          "type": "placeholder",
+          "key": "gc-prayer-of-manasseh",
+          "label": "Prayer of Manasseh",
+          "status": "unresolved",
+          "note": "Resolved from great-compline-fixed.json."
+        },
+        {
+          "type": "placeholder",
+          "key": "gc-trisagion-2",
+          "label": "Trisagion and Our Father (after Manasseh)",
+          "status": "unresolved",
+          "note": "Fixed. Resolved from great-compline-fixed.json."
+        },
+        {
+          "type": "placeholder",
+          "key": "gc-come-worship-2",
+          "label": "O come, let us worship (second occurrence)",
+          "status": "unresolved",
+          "note": "Fixed reopener before Psalms 50 and 101. Resolved from great-compline-fixed.json."
+        },
+        {
+          "type": "placeholder",
+          "key": "gc-sixth-tone-troparia",
+          "label": "Troparia in Sixth Tone (Have mercy on us, O Lord…)",
+          "status": "unresolved",
+          "note": "Fixed. Resolved from great-compline-fixed.json."
+        },
+        {
+          "type": "placeholder",
+          "key": "gc-kyrie-40-maradius",
+          "label": "Lord have mercy × 40 and Prayer of Saint Maradius",
+          "status": "unresolved",
+          "note": "Fixed. Resolved from great-compline-fixed.json."
+        },
+        {
+          "type": "placeholder",
+          "key": "gc-come-worship-3",
+          "label": "O come, let us worship (third occurrence)",
+          "status": "unresolved",
+          "note": "Fixed reopener before Psalms 69 and 142. Resolved from great-compline-fixed.json."
+        }
+      ]
+    },
+    {
+      "id": "psalm-142-and-canon",
+      "label": "Psalm 142 / Small Doxology / Canon",
+      "notes": "Psalm 69 (omitted first week), Psalm 142, Small Doxology (read), and the canon. The canon is variable: first week = Great Canon of St. Andrew (Triodion); all other weeks = Menaion or Octoechos canon.",
+      "items": [
+        {
+          "type": "placeholder",
+          "key": "gc-psalm-69-second",
+          "label": "Psalm 69 (omitted in first week of Great Lent)",
+          "status": "unresolved",
+          "note": "Conditional: omitted in first week of Great Lent. Resolved from great-compline-fixed.json; conditioned by _resolveGreatComplineSlots()."
+        },
+        {
+          "type": "placeholder",
+          "key": "gc-psalm-142",
+          "label": "Psalm 142 (LXX)",
+          "status": "unresolved",
+          "note": "Resolved from great-compline-fixed.json."
+        },
+        {
+          "type": "placeholder",
+          "key": "gc-small-doxology",
+          "label": "Small Doxology (read)",
+          "status": "unresolved",
+          "note": "Resolved from great-compline-fixed.json."
+        },
+        {
+          "type": "placeholder",
+          "key": "gc-canon",
+          "label": "Canon",
+          "status": "unresolved",
+          "note": "Variable. First week of Great Lent: Great Canon of St. Andrew. All other weeks: Menaion or Octoechos canon. Rubric-safe placeholder at baseline. Resolved by _resolveGreatComplineSlots()."
+        }
+      ]
+    },
+    {
+      "id": "closing",
+      "label": "Closing Prayers and Dismissal",
+      "notes": "Lord of Hosts kontakion (omitted Fridays), Theotokos prayers, Lord have mercy × 40, Prayer of Ephraim (omitted Fridays), closing prayers, day-dependent Theotokion, and dismissal. All deferred or conditionally resolved at baseline.",
+      "items": [
+        {
+          "type": "placeholder",
+          "key": "gc-lord-of-hosts",
+          "label": "O Lord of Hosts (kontakion; omitted on Fridays)",
+          "status": "unresolved",
+          "note": "Conditional: omitted on Friday evenings. Resolved from great-compline-fixed.json; conditioned by _resolveGreatComplineSlots()."
+        },
+        {
+          "type": "placeholder",
+          "key": "gc-closing-prayer-block",
+          "label": "Closing Prayer Block",
+          "status": "unresolved",
+          "note": "Fixed sequence: Theotokos prayers, Lord have mercy × 40, You Who at all times, Lord have mercy × 3, More honorable, Through the prayers. Resolved from great-compline-fixed.json."
+        },
+        {
+          "type": "placeholder",
+          "key": "gc-prayer-of-ephraim",
+          "label": "Prayer of St. Ephraim (omitted on Fridays)",
+          "status": "unresolved",
+          "note": "Conditional: omitted on Friday evenings. Resolved from great-compline-fixed.json; conditioned by _resolveGreatComplineSlots()."
+        },
+        {
+          "type": "placeholder",
+          "key": "gc-trisagion-4",
+          "label": "Trisagion, Our Father, and Lord have mercy × 12 (after prostrations)",
+          "status": "unresolved",
+          "note": "Fixed. Resolved from great-compline-fixed.json."
+        },
+        {
+          "type": "placeholder",
+          "key": "gc-save-help-protect",
+          "label": "Save, help, and protect us, O Virgin Theotokos",
+          "status": "unresolved",
+          "note": "Fixed. Resolved from great-compline-fixed.json."
+        },
+        {
+          "type": "placeholder",
+          "key": "gc-supplicatory-prayer-theotokos",
+          "label": "Supplicatory Prayer to the Most Holy Theotokos",
+          "status": "unresolved",
+          "note": "Fixed. Resolved from great-compline-fixed.json."
+        },
+        {
+          "type": "placeholder",
+          "key": "gc-prayer-antiochus",
+          "label": "Prayer to our Lord Jesus Christ (Antiochus the Monk)",
+          "status": "unresolved",
+          "note": "Fixed. Resolved from great-compline-fixed.json."
+        },
+        {
+          "type": "placeholder",
+          "key": "gc-prayer-joannicius",
+          "label": "Prayer of Saint Joannicius",
+          "status": "unresolved",
+          "note": "Fixed. Resolved from great-compline-fixed.json."
+        },
+        {
+          "type": "placeholder",
+          "key": "gc-prayer-guardian-angel",
+          "label": "Prayer to the Guardian Angel",
+          "status": "unresolved",
+          "note": "Fixed. Resolved from great-compline-fixed.json."
+        },
+        {
+          "type": "placeholder",
+          "key": "gc-ave-maria",
+          "label": "O Theotokos and Virgin, rejoice (thrice)",
+          "status": "unresolved",
+          "note": "Fixed. Resolved from great-compline-fixed.json."
+        },
+        {
+          "type": "placeholder",
+          "key": "gc-dismissal-prayers",
+          "label": "Dismissal, Remit/Pardon, and Intercessions",
+          "status": "unresolved",
+          "note": "Fixed. Resolved from great-compline-fixed.json."
+        },
+        {
+          "type": "placeholder",
+          "key": "gc-closing-theotokion",
+          "label": "Closing Theotokion (day-dependent)",
+          "status": "unresolved",
+          "note": "Variable: Mon/Wed/Fri = Joy of all who sorrow (Tone 2); Tue/Thu = Cross Theotokion (Tone 1). Resolved by _resolveGreatComplineSlots()."
+        },
+        {
+          "type": "rubric",
+          "key": "gc-dismissal-rubric",
+          "text": "Through the prayers of our holy Fathers, O Lord Jesus Christ our God, have mercy on us. Amen."
+        }
+      ]
+    }
+  ]
+}
