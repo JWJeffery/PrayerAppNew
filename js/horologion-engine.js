@@ -4089,44 +4089,91 @@ async function _resolveGreatComplineSlots(sections, dateObj) {
                 continue;
             }
 
-            if (item.key === 'gc-weekday-troparia') {
+         if (item.key === 'gc-weekday-troparia') {
                 const DAY = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
                 const d = DAY[dayOfWeek] || 'this day';
-                let text, resolvedAs;
 
-                if (dayOfWeek === 1 || dayOfWeek === 3) {
-                    text = `${d} — Weekday Troparia in Tone 2 (Mon/Wed): “Enlighten mine eyes, O Christ God…” Theotokion follows. Full text deferred to corpus tranche.`;
-                    resolvedAs = 'great-compline-weekday-troparia-mon-wed-rubric';
-                } else if (dayOfWeek === 2 || dayOfWeek === 4) {
-                    text = `${d} — Weekday Troparia in Tone 8 (Tue/Thu): “O Lord, You know the unsleeping vigilance…” Theotokion follows. Full text deferred to corpus tranche.`;
-                    resolvedAs = 'great-compline-weekday-troparia-tue-thu-rubric';
+                const fixedKey = (dayOfWeek === 1 || dayOfWeek === 3) ? 'gc-weekday-troparia-mon-wed'
+                               : (dayOfWeek === 2 || dayOfWeek === 4) ? 'gc-weekday-troparia-tue-thu'
+                               : null;
+                const fixedEntry = fixedKey ? _slot(fixedKey) : null;
+
+                if (fixedEntry) {
+                    section.items[i] = _applyFixed(section.items[i], fixedKey);
+                    section.items[i].resolvedAs = fixedKey === 'gc-weekday-troparia-mon-wed'
+                        ? 'great-compline-weekday-troparia-mon-wed-text'
+                        : 'great-compline-weekday-troparia-tue-thu-text';
                 } else {
-                    text = `${d}: Weekday troparia not prescribed for this day in the standard Great Lent cycle. If a feast is appointed, the Troparion of the Feast is substituted.`;
-                    resolvedAs = 'great-compline-weekday-troparia-unscheduled';
+                    let text, resolvedAs;
+                    if (dayOfWeek === 1 || dayOfWeek === 3) {
+                        text = `${d} — Weekday Troparia in Tone 2 (Mon/Wed): "Enlighten mine eyes, O Christ God…" Theotokion follows. Full text deferred to corpus tranche.`;
+                        resolvedAs = 'great-compline-weekday-troparia-mon-wed-rubric';
+                    } else if (dayOfWeek === 2 || dayOfWeek === 4) {
+                        text = `${d} — Weekday Troparia in Tone 8 (Tue/Thu): "O Lord, You know the unsleeping vigilance…" Theotokion follows. Full text deferred to corpus tranche.`;
+                        resolvedAs = 'great-compline-weekday-troparia-tue-thu-rubric';
+                    } else {
+                        text = `${d}: Weekday troparia not prescribed for this day in the standard Great Lent cycle. If a feast is appointed, the Troparion of the Feast is substituted.`;
+                        resolvedAs = 'great-compline-weekday-troparia-unscheduled';
+                    }
+                    section.items[i] = {
+                        type: 'rubric',
+                        key: item.key,
+                        label: `Weekday Troparia — ${d}`,
+                        text,
+                        resolvedAs
+                    };
                 }
-
-                section.items[i] = {
-                    type: 'rubric',
-                    key: item.key,
-                    label: `Weekday Troparia — ${d}`,
-                    text,
-                    resolvedAs
-                };
                 continue;
             }
 
             if (item.key === 'gc-canon') {
-                section.items[i] = {
-                    type: 'rubric',
-                    key: item.key,
-                    label: 'Canon',
-                    text: isFirstWeekOfLent
-                        ? 'FIRST WEEK OF GREAT LENT — The Great Canon of Saint Andrew of Crete is appointed here (Lenten Triodion). Canon corpus not yet implemented.'
-                        : 'GREAT COMPLINE — A canon from the Menaion or Octoechos is appointed here. Canon corpus not yet implemented.',
-                    resolvedAs: isFirstWeekOfLent
-                        ? 'great-compline-great-canon-rubric'
-                        : 'great-compline-canon-rubric'
-                };
+                if (isFirstWeekOfLent) {
+                    section.items[i] = {
+                        type: 'rubric',
+                        key: item.key,
+                        label: 'Canon — Great Canon of Saint Andrew of Crete',
+                        text: 'FIRST WEEK OF GREAT LENT — The Great Canon of Saint Andrew of Crete (+740) is appointed at Great Compline in place of the ordinary Menaion or Octoechos canon. It is read across Monday through Thursday evenings of the first week (approximately one quarter per evening). Canon corpus not yet implemented. See the Lenten Triodion for the full text.',
+                        resolvedAs: 'great-compline-great-canon-rubric'
+                    };
+                } else {
+                    // Ordinary appointed day: probe Menaion for a named commemoration.
+                    // MenaionResolver has no canon text — it is called only to identify
+                    // whether a saint is commemorated so the rubric can be informative.
+                    let canonItem = null;
+                    try {
+                        if (window.MenaionResolver && typeof window.MenaionResolver.queryTroparion === 'function') {
+                            const month = dateObj.getMonth() + 1;
+                            const day   = dateObj.getDate();
+                            const mmdd  = String(month).padStart(2, '0') + '-' + String(day).padStart(2, '0');
+                            const mResult = await window.MenaionResolver.queryTroparion(mmdd);
+                            const hasSaint = mResult &&
+                                (mResult.status === 'menaion-resolved' ||
+                                 mResult.status === 'menaion-text-unavailable');
+                            if (hasSaint) {
+                                const saintName = mResult.name || 'the saint of the day';
+                                canonItem = {
+                                    type: 'rubric',
+                                    key: item.key,
+                                    label: 'Canon (Menaion)',
+                                    text: `The canon appointed at Great Compline today is the Menaion canon for ${saintName}. Following the canon, the appointed stichera for the commemoration are sung. Menaion canon text is not yet in this corpus. See the Menaion for the full canon.`,
+                                    resolvedAs: 'great-compline-canon-menaion-rubric'
+                                };
+                            }
+                        }
+                    } catch (e) {
+                        console.warn('[HorologionEngine] gc-canon Menaion probe failed:', e.message);
+                    }
+                    if (!canonItem) {
+                        canonItem = {
+                            type: 'rubric',
+                            key: item.key,
+                            label: 'Canon (Octoechos — Theotokos)',
+                            text: 'The canon appointed at Great Compline today is the canon to the Theotokos from the Octoechos. Following the canon, the appointed stichera are sung. Octoechos Great Compline canon corpus is not yet in this build. See the Octoechos for the full text.',
+                            resolvedAs: 'great-compline-canon-octoechos-rubric'
+                        };
+                    }
+                    section.items[i] = canonItem;
+                }
                 continue;
             }
 

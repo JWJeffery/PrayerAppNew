@@ -361,6 +361,83 @@
       "type": "text",
       "label": "Closing Theotokion — Tuesday, Thursday (Cross Theotokion, Tone 1)",
       "text": "On seeing Your unjust slaughter, O Christ, Your pure Mother cried in grief: O most sweet Child, how is it that You died lawlessly? How is it that You, Who suspended all the earth upon the flood of waters, are now Yourself suspended from the Tree? O most merciful Benefactor, do not leave me, Your Mother and handmaid, alone."
+    },
+    "gc-weekday-troparia-mon-wed": {
+      "type": "sequence",
+      "label": "Weekday Troparia — Monday and Wednesday (Tone 2)",
+      "rubric": "On Monday and Wednesday evenings, in the Second Tone.",
+      "items": [
+        {
+          "type": "text",
+          "key": "gc-wt-mw-1",
+          "text": "Enlighten mine eyes, O Christ God, lest at any time I sleep unto death, lest at any time mine enemy say: I have prevailed against him."
+        },
+        {
+          "type": "text",
+          "key": "gc-wt-mw-gl",
+          "text": "Glory to the Father, and to the Son, and to the Holy Spirit."
+        },
+        {
+          "type": "text",
+          "key": "gc-wt-mw-2",
+          "text": "Be my soul's helper, O God, for I pass through the midst of many snares; deliver me out of them, and save me, O Good One, for You are the Lover of Mankind."
+        },
+        {
+          "type": "text",
+          "key": "gc-wt-mw-now",
+          "text": "Both now and ever, and unto the ages of ages. Amen."
+        },
+        {
+          "type": "text",
+          "key": "gc-wt-mw-th",
+          "label": "Theotokion",
+          "text": "Seeing that we have no boldness on account of our many sins, do You beseech Him that was born of You, O Virgin Theotokos, for the supplication of a mother avails much to win the Master's favor. Disdain not the prayers of sinners, O all-pure one, for merciful and mighty to save is He Who deigned also to suffer for our sake."
+        }
+      ]
+    },
+    "gc-weekday-troparia-tue-thu": {
+      "type": "sequence",
+      "label": "Weekday Troparia — Tuesday and Thursday (Tone 8)",
+      "rubric": "On Tuesday and Thursday evenings, in the Eighth Tone.",
+      "items": [
+        {
+          "type": "text",
+          "key": "gc-wt-tt-1",
+          "text": "O Lord, You know the unsleeping vigilance of mine invisible enemies, and the weakness of my miserable flesh knows You Who have fashioned me: into Your hands, therefore, I will commit my spirit; shelter me with the wings of Your goodness, lest at any time I sleep unto death, and enlighten the eyes of my mind to the enjoyment of Your divine words, and raise me up in a seasonable time unto Your glorification, for You alone are good and the Lover of mankind."
+        },
+        {
+          "type": "text",
+          "key": "gc-wt-tt-stichos",
+          "label": "Stichos",
+          "text": "Look upon me and hear me, O Lord my God."
+        },
+        {
+          "type": "text",
+          "key": "gc-wt-tt-2",
+          "text": "How terrible is Your judgment, O Lord, with the angels standing round about, the men being led in, the books opened, the deeds examined, the thoughts weighed. What judgment shall be awarded unto me who was conceived in sins? Who shall quench the flame for me, who shall enlighten the darkness for me, if not You, O Lord, Who have mercy on me as the Lover of mankind."
+        },
+        {
+          "type": "text",
+          "key": "gc-wt-tt-gl",
+          "text": "Glory to the Father, and to the Son, and to the Holy Spirit."
+        },
+        {
+          "type": "text",
+          "key": "gc-wt-tt-3",
+          "text": "Grant me tears, O God, as You didst once give to the sinning woman, and vouchsafe me to moisten Your feet which have freed me from the path of delusion, and to offer to You as fragrant myrrh a pure life, fashioned in me by repentance, that I may hear Your desired voice: Your faith has saved you, go in peace."
+        },
+        {
+          "type": "text",
+          "key": "gc-wt-tt-now",
+          "text": "Both now and ever, and unto the ages of ages. Amen."
+        },
+        {
+          "type": "text",
+          "key": "gc-wt-tt-th",
+          "label": "Theotokion",
+          "text": "Having in You, O Theotokos, a hope that cannot be put to shame, I shall be saved; having obtained Your mediation, O most pure one, I shall not fear. I shall pursue enemies and triumph over them, having covered myself, as in a breastplate, only with Your protection; and imploring Your all-powerful aid, I cry unto You: O Sovereign Lady, save me through Your intercessions, and raise me up from somber sleep to Your glorification, by the might of the Son of God Who was incarnate of You."
+        }
+      ]
     }
   }
 }
