@@ -5,6 +5,8 @@
     "Baseline tranche only. Conditional slots (gc-psalm-69-week1,",
     "gc-psalm-69-second, gc-lord-of-hosts, gc-prayer-of-ephraim,",
     "gc-weekday-troparia, gc-canon, gc-closing-theotokion) are NOT here;",
+    "Friday substitution for gc-lord-of-hosts (Kontakion of the Departed, Tone 8) is",
+    "stored here as gc-saturday-kontakion and routed by the engine.",
     "their text is gated or rubric-only in the resolver.",
     "Source: orthodoxprayer.org Great Compline witness."
   ],
@@ -438,6 +440,12 @@
           "text": "Having in You, O Theotokos, a hope that cannot be put to shame, I shall be saved; having obtained Your mediation, O most pure one, I shall not fear. I shall pursue enemies and triumph over them, having covered myself, as in a breastplate, only with Your protection; and imploring Your all-powerful aid, I cry unto You: O Sovereign Lady, save me through Your intercessions, and raise me up from somber sleep to Your glorification, by the might of the Son of God Who was incarnate of You."
         }
       ]
+    },
+    "gc-saturday-kontakion": {
+      "type": "text",
+      "label": "Kontakion of the Saturday Commemoration (Tone 8)",
+      "rubric": "Said in place of \"O Lord of Hosts\" on Friday evenings.",
+      "text": "With the saints give rest, O Christ, to the souls of Your servants, where there is neither sickness, nor sorrow, nor sighing, but life everlasting."
     }
   }
 }

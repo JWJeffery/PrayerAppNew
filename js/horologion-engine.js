@@ -4094,13 +4094,25 @@ async function _resolveGreatComplineSlots(sections, dateObj) {
                 if (!isFriday) {
                     section.items[i] = _applyFixed(section.items[i], 'gc-lord-of-hosts');
                 } else {
-                    section.items[i] = {
-                        type: 'rubric',
-                        key: item.key,
-                        label: 'O Lord of Hosts — omitted (Friday)',
-                        text: '(On Friday evenings "O Lord of Hosts" is omitted. The Kontakion of the Saturday commemoration is substituted; corpus not yet implemented.)',
-                        resolvedAs: 'great-compline-friday-omission'
-                    };
+                    const satKontakion = _slot('gc-saturday-kontakion');
+                    if (satKontakion) {
+                        section.items[i] = {
+                            type: satKontakion.type || 'text',
+                            key: item.key,
+                            label: satKontakion.label || 'Kontakion of the Saturday Commemoration',
+                            rubric: satKontakion.rubric,
+                            text: satKontakion.text,
+                            resolvedAs: 'great-compline-friday-saturday-kontakion'
+                        };
+                    } else {
+                        section.items[i] = {
+                            type: 'rubric',
+                            key: item.key,
+                            label: 'O Lord of Hosts — omitted (Friday)',
+                            text: '(On Friday evenings "O Lord of Hosts" is omitted. Saturday kontakion corpus not loaded.)',
+                            resolvedAs: 'great-compline-friday-omission'
+                        };
+                    }
                 }
                 continue;
             }
