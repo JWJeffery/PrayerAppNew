@@ -1,0 +1,81 @@
+{
+  "officeKey": "interhour-third",
+  "label": "Interhour of the Third Hour",
+  "tradition": "BYZC",
+  "description": "The Interhour of the Third Hour (Mezhduchasiye) is a brief interstitial office appended to the Third Hour in monastic practice. It consists of three psalms, the Trisagion, a troparion of the day, and a Theotokion proper to this hour.",
+  "sections": [
+    {
+      "id": "psalmody",
+      "label": "Fixed Psalmody",
+      "notes": "The Interhour of the Third Hour appoints Psalms 34, 35, and 36 (LXX).",
+      "items": [
+        {
+          "type": "placeholder",
+          "key": "psalm-34",
+          "label": "Psalm 34 (LXX) — Judge Thou, O Lord, them that harm me",
+          "status": "unresolved",
+          "note": "Resolved from interhour-third-fixed.json by HorologionEngine."
+        },
+        {
+          "type": "placeholder",
+          "key": "psalm-35",
+          "label": "Psalm 35 (LXX) — The transgression of the ungodly",
+          "status": "unresolved",
+          "note": "Resolved from interhour-third-fixed.json by HorologionEngine."
+        },
+        {
+          "type": "placeholder",
+          "key": "psalm-36",
+          "label": "Psalm 36 (LXX) — Fret not thyself because of evil-doers",
+          "status": "unresolved",
+          "note": "Resolved from interhour-third-fixed.json by HorologionEngine."
+        }
+      ]
+    },
+    {
+      "id": "trisagion",
+      "label": "Trisagion Prayers",
+      "items": [
+        {
+          "type": "placeholder",
+          "key": "trisagion-prayers",
+          "label": "Trisagion Prayers",
+          "status": "unresolved",
+          "note": "Resolved from interhour-third-fixed.json by HorologionEngine."
+        }
+      ]
+    },
+    {
+      "id": "troparia",
+      "label": "Troparia",
+      "notes": "The troparion of the day followed by the Theotokion of the Interhour of the Third Hour.",
+      "items": [
+        {
+          "type": "placeholder",
+          "key": "troparion-of-the-day",
+          "label": "Troparion of the Day",
+          "status": "unresolved",
+          "note": "Variable troparion: resolved via Menaion resolver or weekday-theme rubric by HorologionEngine."
+        },
+        {
+          "type": "placeholder",
+          "key": "interhour-third-theotokion",
+          "label": "Theotokion of the Interhour of the Third Hour",
+          "status": "unresolved",
+          "note": "Resolved from interhour-third-fixed.json by HorologionEngine."
+        }
+      ]
+    },
+    {
+      "id": "dismissal",
+      "label": "Dismissal",
+      "items": [
+        {
+          "type": "rubric",
+          "key": "dismissal-rubric",
+          "text": "Priest: Christ our true God, through the intercessions of His all-pure Mother, of all the Saints, have mercy on us and save us, as He is good and the Lover of mankind.\nChoir: Amen."
+        }
+      ]
+    }
+  ]
+}

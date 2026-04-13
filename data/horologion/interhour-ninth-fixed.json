@@ -1,0 +1,29 @@
+{
+  "slots": {
+    "psalm-86": {
+      "type": "rubric",
+      "label": "Psalm 86 (LXX)",
+      "text": "Psalm 86 (LXX) is appointed here. Full text not yet transcribed."
+    },
+    "psalm-87": {
+      "type": "rubric",
+      "label": "Psalm 87 (LXX)",
+      "text": "Psalm 87 (LXX) is appointed here. Full text not yet transcribed."
+    },
+    "psalm-88": {
+      "type": "rubric",
+      "label": "Psalm 88 (LXX)",
+      "text": "Psalm 88 (LXX) is appointed here. Full text not yet transcribed."
+    },
+    "trisagion-prayers": {
+      "type": "rubric",
+      "label": "Trisagion Prayers",
+      "text": "The Trisagion prayers are appointed here. Full text not yet transcribed."
+    },
+    "interhour-ninth-theotokion": {
+      "type": "text",
+      "label": "Theotokion of the Interhour of the Ninth Hour",
+      "text": "O most glorious Mother of Christ our God, cease not to intercede for us who hymn thee, that He may deliver us from every sorrow and grant us good things; for thou art the sole helper of Christians."
+    }
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "slots": {
+    "psalm-34": {
+      "type": "rubric",
+      "label": "Psalm 34 (LXX)",
+      "text": "Psalm 34 (LXX) is appointed here. Full text not yet transcribed."
+    },
+    "psalm-35": {
+      "type": "rubric",
+      "label": "Psalm 35 (LXX)",
+      "text": "Psalm 35 (LXX) is appointed here. Full text not yet transcribed."
+    },
+    "psalm-36": {
+      "type": "rubric",
+      "label": "Psalm 36 (LXX)",
+      "text": "Psalm 36 (LXX) is appointed here. Full text not yet transcribed."
+    },
+    "trisagion-prayers": {
+      "type": "rubric",
+      "label": "Trisagion Prayers",
+      "text": "The Trisagion prayers are appointed here. Full text not yet transcribed."
+    },
+    "interhour-third-theotokion": {
+      "type": "text",
+      "label": "Theotokion of the Interhour of the Third Hour",
+      "text": "O Lady, full of grace, dwelling-place of the Lord of all: entreat thy Son to grant our souls forgiveness of transgressions."
+    }
+  }
+}

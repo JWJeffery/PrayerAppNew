@@ -1,0 +1,29 @@
+{
+  "slots": {
+    "psalm-60": {
+      "type": "rubric",
+      "label": "Psalm 60 (LXX)",
+      "text": "Psalm 60 (LXX) is appointed here. Full text not yet transcribed."
+    },
+    "psalm-61": {
+      "type": "rubric",
+      "label": "Psalm 61 (LXX)",
+      "text": "Psalm 61 (LXX) is appointed here. Full text not yet transcribed."
+    },
+    "psalm-62": {
+      "type": "rubric",
+      "label": "Psalm 62 (LXX)",
+      "text": "Psalm 62 (LXX) is appointed here. Full text not yet transcribed."
+    },
+    "trisagion-prayers": {
+      "type": "rubric",
+      "label": "Trisagion Prayers",
+      "text": "The Trisagion prayers are appointed here. Full text not yet transcribed."
+    },
+    "interhour-sixth-theotokion": {
+      "type": "text",
+      "label": "Theotokion of the Interhour of the Sixth Hour",
+      "text": "O Theotokos, thou art a vine bearing the true Grape, who hast blossomed for us the fruit of life. Wherefore we beseech thee, intercede with Him for our souls, that He may grant them forgiveness of sins."
+    }
+  }
+}

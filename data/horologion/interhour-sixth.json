@@ -1,0 +1,81 @@
+{
+  "officeKey": "interhour-sixth",
+  "label": "Interhour of the Sixth Hour",
+  "tradition": "BYZC",
+  "description": "The Interhour of the Sixth Hour (Mezhduchasiye) is a brief interstitial office appended to the Sixth Hour in monastic practice. It consists of three psalms, the Trisagion, a troparion of the day, and a Theotokion proper to this hour.",
+  "sections": [
+    {
+      "id": "psalmody",
+      "label": "Fixed Psalmody",
+      "notes": "The Interhour of the Sixth Hour appoints Psalms 60, 61, and 62 (LXX).",
+      "items": [
+        {
+          "type": "placeholder",
+          "key": "psalm-60",
+          "label": "Psalm 60 (LXX) — Hear my cry, O God",
+          "status": "unresolved",
+          "note": "Resolved from interhour-sixth-fixed.json by HorologionEngine."
+        },
+        {
+          "type": "placeholder",
+          "key": "psalm-61",
+          "label": "Psalm 61 (LXX) — Shall not my soul be subjected unto God?",
+          "status": "unresolved",
+          "note": "Resolved from interhour-sixth-fixed.json by HorologionEngine."
+        },
+        {
+          "type": "placeholder",
+          "key": "psalm-62",
+          "label": "Psalm 62 (LXX) — O God, my God, early do I seek Thee",
+          "status": "unresolved",
+          "note": "Resolved from interhour-sixth-fixed.json by HorologionEngine."
+        }
+      ]
+    },
+    {
+      "id": "trisagion",
+      "label": "Trisagion Prayers",
+      "items": [
+        {
+          "type": "placeholder",
+          "key": "trisagion-prayers",
+          "label": "Trisagion Prayers",
+          "status": "unresolved",
+          "note": "Resolved from interhour-sixth-fixed.json by HorologionEngine."
+        }
+      ]
+    },
+    {
+      "id": "troparia",
+      "label": "Troparia",
+      "notes": "The troparion of the day followed by the Theotokion of the Interhour of the Sixth Hour.",
+      "items": [
+        {
+          "type": "placeholder",
+          "key": "troparion-of-the-day",
+          "label": "Troparion of the Day",
+          "status": "unresolved",
+          "note": "Variable troparion: resolved via Menaion resolver or weekday-theme rubric by HorologionEngine."
+        },
+        {
+          "type": "placeholder",
+          "key": "interhour-sixth-theotokion",
+          "label": "Theotokion of the Interhour of the Sixth Hour",
+          "status": "unresolved",
+          "note": "Resolved from interhour-sixth-fixed.json by HorologionEngine."
+        }
+      ]
+    },
+    {
+      "id": "dismissal",
+      "label": "Dismissal",
+      "items": [
+        {
+          "type": "rubric",
+          "key": "dismissal-rubric",
+          "text": "Priest: Christ our true God, through the intercessions of His all-pure Mother, of all the Saints, have mercy on us and save us, as He is good and the Lover of mankind.\nChoir: Amen."
+        }
+      ]
+    }
+  ]
+}

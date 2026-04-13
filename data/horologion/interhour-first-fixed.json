@@ -1,0 +1,29 @@
+{
+  "slots": {
+    "psalm-20": {
+      "type": "rubric",
+      "label": "Psalm 20 (LXX)",
+      "text": "Psalm 20 (LXX) is appointed here. Full text not yet transcribed."
+    },
+    "psalm-21": {
+      "type": "rubric",
+      "label": "Psalm 21 (LXX)",
+      "text": "Psalm 21 (LXX) is appointed here. Full text not yet transcribed."
+    },
+    "psalm-22": {
+      "type": "rubric",
+      "label": "Psalm 22 (LXX)",
+      "text": "Psalm 22 (LXX) is appointed here. Full text not yet transcribed."
+    },
+    "trisagion-prayers": {
+      "type": "rubric",
+      "label": "Trisagion Prayers",
+      "text": "The Trisagion prayers are appointed here. Full text not yet transcribed."
+    },
+    "interhour-first-theotokion": {
+      "type": "text",
+      "label": "Theotokion of the Interhour of the First Hour",
+      "text": "O pure Theotokos and Virgin, intercede with Christ our God, that He may save our souls."
+    }
+  }
+}

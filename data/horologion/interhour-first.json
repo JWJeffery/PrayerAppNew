@@ -1,0 +1,81 @@
+{
+  "officeKey": "interhour-first",
+  "label": "Interhour of the First Hour",
+  "tradition": "BYZC",
+  "description": "The Interhour of the First Hour (Mezhduchasiye) is a brief interstitial office appended to the First Hour in monastic practice. It consists of three psalms, the Trisagion, a troparion of the day, and a Theotokion proper to this hour.",
+  "sections": [
+    {
+      "id": "psalmody",
+      "label": "Fixed Psalmody",
+      "notes": "The Interhour of the First Hour appoints Psalms 20, 21, and 22 (LXX).",
+      "items": [
+        {
+          "type": "placeholder",
+          "key": "psalm-20",
+          "label": "Psalm 20 (LXX) — O Lord, in Thy strength the king shall be glad",
+          "status": "unresolved",
+          "note": "Resolved from interhour-first-fixed.json by HorologionEngine."
+        },
+        {
+          "type": "placeholder",
+          "key": "psalm-21",
+          "label": "Psalm 21 (LXX) — O God, my God, attend to me",
+          "status": "unresolved",
+          "note": "Resolved from interhour-first-fixed.json by HorologionEngine."
+        },
+        {
+          "type": "placeholder",
+          "key": "psalm-22",
+          "label": "Psalm 22 (LXX) — The Lord is my shepherd",
+          "status": "unresolved",
+          "note": "Resolved from interhour-first-fixed.json by HorologionEngine."
+        }
+      ]
+    },
+    {
+      "id": "trisagion",
+      "label": "Trisagion Prayers",
+      "items": [
+        {
+          "type": "placeholder",
+          "key": "trisagion-prayers",
+          "label": "Trisagion Prayers",
+          "status": "unresolved",
+          "note": "Resolved from interhour-first-fixed.json by HorologionEngine."
+        }
+      ]
+    },
+    {
+      "id": "troparia",
+      "label": "Troparia",
+      "notes": "The troparion of the day followed by the Theotokion of the Interhour of the First Hour.",
+      "items": [
+        {
+          "type": "placeholder",
+          "key": "troparion-of-the-day",
+          "label": "Troparion of the Day",
+          "status": "unresolved",
+          "note": "Variable troparion: resolved via Menaion resolver or weekday-theme rubric by HorologionEngine."
+        },
+        {
+          "type": "placeholder",
+          "key": "interhour-first-theotokion",
+          "label": "Theotokion of the Interhour of the First Hour",
+          "status": "unresolved",
+          "note": "Resolved from interhour-first-fixed.json by HorologionEngine."
+        }
+      ]
+    },
+    {
+      "id": "dismissal",
+      "label": "Dismissal",
+      "items": [
+        {
+          "type": "rubric",
+          "key": "dismissal-rubric",
+          "text": "Priest: Christ our true God, through the intercessions of His all-pure Mother, of all the Saints, have mercy on us and save us, as He is good and the Lover of mankind.\nChoir: Amen."
+        }
+      ]
+    }
+  ]
+}

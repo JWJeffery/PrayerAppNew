@@ -230,7 +230,7 @@ const HorologionEngine = (() => {
     const _skeletonCache = {};
 
     // ── Supported offices in this version ─────────────────────────────────
-    const SUPPORTED_OFFICES = ['vespers', 'small-compline', 'first-hour', 'third-hour', 'sixth-hour', 'ninth-hour', 'orthros', 'midnight-office', 'typika'];
+    const SUPPORTED_OFFICES = ['vespers', 'small-compline', 'first-hour', 'third-hour', 'sixth-hour', 'ninth-hour', 'orthros', 'midnight-office', 'typika', 'interhour-first', 'interhour-third', 'interhour-sixth', 'interhour-ninth'];
 
     // ── Tradition code for this engine ────────────────────────────────────
     const TRADITION = 'BYZC';
@@ -368,6 +368,15 @@ let _greatComplineFixedData = null;
 // ── v6.9: Typika (Obednitsa) fixed text URL and cache ─────────────────
 const TYPIKA_FIXED_URL = 'data/horologion/typika-fixed.json';
 let _typikaFixedData = null;
+
+// ── v7.0: Interhours fixed text URLs and cache ────────────────────────
+const INTERHOUR_FIRST_FIXED_URL = 'data/horologion/interhour-first-fixed.json';
+const INTERHOUR_THIRD_FIXED_URL = 'data/horologion/interhour-third-fixed.json';
+const INTERHOUR_SIXTH_FIXED_URL = 'data/horologion/interhour-sixth-fixed.json';
+const INTERHOUR_NINTH_FIXED_URL = 'data/horologion/interhour-ninth-fixed.json';
+
+// Populated lazily by _loadInterhourFixedData(officeKey).
+const _interhourFixedDataCache = {};
 
     // ── v5.7: Orthros kathisma appointment table URL and cache ─────────────
     // Weekday pair assignments (Mon–Sat) for ordinary non-vigil Orthros.
@@ -548,6 +557,13 @@ let _typikaFixedData = null;
     await _resolveGreatComplineSlots(sections, dateObj);
 } else if (normalizedKey === 'typika') {
     await _resolveTypikaSlots(sections, dateObj);
+} else if (
+    normalizedKey === 'interhour-first' ||
+    normalizedKey === 'interhour-third' ||
+    normalizedKey === 'interhour-sixth' ||
+    normalizedKey === 'interhour-ninth'
+) {
+    await _resolveInterhourSlots(normalizedKey, sections, dateObj);
 } else {
             // v1.2 / v1.3: Vespers resolver (default for 'vespers' and any
             // future office that shares it until it has its own resolver).
@@ -715,7 +731,11 @@ let _typikaFixedData = null;
             'sixth-hour':     'Sixth Hour',
             'ninth-hour':     'Ninth Hour',
             'orthros':        'Orthros (Matins)',
-            'typika':         'Typika (Obednitsa)'
+            'typika':         'Typika (Obednitsa)',
+            'interhour-first': 'Interhour of the First Hour',
+            'interhour-third': 'Interhour of the Third Hour',
+            'interhour-sixth': 'Interhour of the Sixth Hour',
+            'interhour-ninth': 'Interhour of the Ninth Hour'
         };
         return TITLES[normalizedKey] || normalizedKey;
     }
@@ -5715,6 +5735,113 @@ async function _resolveTypikaSlots(sections, dateObj) {
 
             if (item.key === 'troparion-of-the-day') {
                 const resolved = await _resolveLittleHourSeasonalTroparionSlot('typika', dayOfWeek, dateObj, toneResult);
+                if (resolved) {
+                    section.items[i] = Object.assign({}, resolved, {
+                        key: 'troparion-of-the-day'
+                    });
+                }
+                continue;
+            }
+        }
+    }
+}
+
+// ── v7.0: _loadInterhourFixedData(officeKey) ──────────────────────────
+async function _loadInterhourFixedData(officeKey) {
+    if (Object.prototype.hasOwnProperty.call(_interhourFixedDataCache, officeKey)) return;
+
+    const URL_MAP = {
+        'interhour-first': INTERHOUR_FIRST_FIXED_URL,
+        'interhour-third': INTERHOUR_THIRD_FIXED_URL,
+        'interhour-sixth': INTERHOUR_SIXTH_FIXED_URL,
+        'interhour-ninth': INTERHOUR_NINTH_FIXED_URL
+    };
+
+    const url = URL_MAP[officeKey];
+    if (!url) {
+        console.warn(`[HorologionEngine] _loadInterhourFixedData: unknown officeKey "${officeKey}".`);
+        _interhourFixedDataCache[officeKey] = null;
+        return;
+    }
+
+    try {
+        const response = await fetch(url);
+        if (!response.ok) {
+            console.warn(`[HorologionEngine] Could not load Interhour fixed data for "${officeKey}" (HTTP ${response.status}); fixed slots will remain as placeholders.`);
+            _interhourFixedDataCache[officeKey] = null;
+            return;
+        }
+        _interhourFixedDataCache[officeKey] = await response.json();
+        console.log(`[HorologionEngine] Loaded Interhour fixed text data: ${officeKey}.`);
+    } catch (err) {
+        console.warn(`[HorologionEngine] _loadInterhourFixedData(${officeKey}) failed:`, err.message, '— fixed slots will remain as placeholders.');
+        _interhourFixedDataCache[officeKey] = null;
+    }
+}
+
+// ── v7.0: _resolveInterhourSlots(officeKey, sections, dateObj) ────────
+async function _resolveInterhourSlots(officeKey, sections, dateObj) {
+    await Promise.all([
+        _loadInterhourFixedData(officeKey),
+        _loadTroparionData(),
+        _loadWeekdayTroparionMeta(),
+        _loadTriodionData()
+    ]);
+
+    const dayOfWeek = dateObj.getDay();
+    const toneResult = _computeBaselineTone(dateObj);
+    const fixedData = _interhourFixedDataCache[officeKey] || null;
+
+    const PSALM_KEY_MAP = {
+        'interhour-first': new Set(['psalm-20', 'psalm-21', 'psalm-22']),
+        'interhour-third': new Set(['psalm-34', 'psalm-35', 'psalm-36']),
+        'interhour-sixth': new Set(['psalm-60', 'psalm-61', 'psalm-62']),
+        'interhour-ninth': new Set(['psalm-86', 'psalm-87', 'psalm-88'])
+    };
+
+    const THEOTOKION_KEY_MAP = {
+        'interhour-first': 'interhour-first-theotokion',
+        'interhour-third': 'interhour-third-theotokion',
+        'interhour-sixth': 'interhour-sixth-theotokion',
+        'interhour-ninth': 'interhour-ninth-theotokion'
+    };
+
+    const psalmKeys = PSALM_KEY_MAP[officeKey] || new Set();
+    const theotokionKey = THEOTOKION_KEY_MAP[officeKey] || null;
+
+    const FIXED_SLOT_KEYS = new Set([
+        ...psalmKeys,
+        'trisagion-prayers',
+        theotokionKey
+    ].filter(Boolean));
+
+    for (const section of sections) {
+        if (!Array.isArray(section.items)) continue;
+
+        for (let i = 0; i < section.items.length; i++) {
+            const item = section.items[i];
+
+            if (FIXED_SLOT_KEYS.has(item.key)) {
+                const slotData = fixedData &&
+                    fixedData.slots &&
+                    fixedData.slots[item.key];
+
+                if (slotData) {
+                    section.items[i] = {
+                        type: slotData.type || 'text',
+                        key: item.key,
+                        label: slotData.label || item.label,
+                        text: slotData.text,
+                        lxxNumber: slotData.lxxNumber,
+                        items: Array.isArray(slotData.items) ? slotData.items : undefined,
+                        resolvedAs: officeKey + '-fixed'
+                    };
+                }
+                continue;
+            }
+
+            if (item.key === 'troparion-of-the-day') {
+                const resolved = await _resolveLittleHourSeasonalTroparionSlot(officeKey, dayOfWeek, dateObj, toneResult);
                 if (resolved) {
                     section.items[i] = Object.assign({}, resolved, {
                         key: 'troparion-of-the-day'

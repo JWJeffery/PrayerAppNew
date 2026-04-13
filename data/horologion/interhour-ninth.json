@@ -1,0 +1,81 @@
+{
+  "officeKey": "interhour-ninth",
+  "label": "Interhour of the Ninth Hour",
+  "tradition": "BYZC",
+  "description": "The Interhour of the Ninth Hour (Mezhduchasiye) is a brief interstitial office appended to the Ninth Hour in monastic practice. It consists of three psalms, the Trisagion, a troparion of the day, and a Theotokion proper to this hour.",
+  "sections": [
+    {
+      "id": "psalmody",
+      "label": "Fixed Psalmody",
+      "notes": "The Interhour of the Ninth Hour appoints Psalms 86, 87, and 88 (LXX).",
+      "items": [
+        {
+          "type": "placeholder",
+          "key": "psalm-86",
+          "label": "Psalm 86 (LXX) — His foundations are in the holy mountains",
+          "status": "unresolved",
+          "note": "Resolved from interhour-ninth-fixed.json by HorologionEngine."
+        },
+        {
+          "type": "placeholder",
+          "key": "psalm-87",
+          "label": "Psalm 87 (LXX) — O Lord God of my salvation",
+          "status": "unresolved",
+          "note": "Resolved from interhour-ninth-fixed.json by HorologionEngine."
+        },
+        {
+          "type": "placeholder",
+          "key": "psalm-88",
+          "label": "Psalm 88 (LXX) — I will sing of Thy mercies, O Lord",
+          "status": "unresolved",
+          "note": "Resolved from interhour-ninth-fixed.json by HorologionEngine."
+        }
+      ]
+    },
+    {
+      "id": "trisagion",
+      "label": "Trisagion Prayers",
+      "items": [
+        {
+          "type": "placeholder",
+          "key": "trisagion-prayers",
+          "label": "Trisagion Prayers",
+          "status": "unresolved",
+          "note": "Resolved from interhour-ninth-fixed.json by HorologionEngine."
+        }
+      ]
+    },
+    {
+      "id": "troparia",
+      "label": "Troparia",
+      "notes": "The troparion of the day followed by the Theotokion of the Interhour of the Ninth Hour.",
+      "items": [
+        {
+          "type": "placeholder",
+          "key": "troparion-of-the-day",
+          "label": "Troparion of the Day",
+          "status": "unresolved",
+          "note": "Variable troparion: resolved via Menaion resolver or weekday-theme rubric by HorologionEngine."
+        },
+        {
+          "type": "placeholder",
+          "key": "interhour-ninth-theotokion",
+          "label": "Theotokion of the Interhour of the Ninth Hour",
+          "status": "unresolved",
+          "note": "Resolved from interhour-ninth-fixed.json by HorologionEngine."
+        }
+      ]
+    },
+    {
+      "id": "dismissal",
+      "label": "Dismissal",
+      "items": [
+        {
+          "type": "rubric",
+          "key": "dismissal-rubric",
+          "text": "Priest: Christ our true God, through the intercessions of His all-pure Mother, of all the Saints, have mercy on us and save us, as He is good and the Lover of mankind.\nChoir: Amen."
+        }
+      ]
+    }
+  ]
+}
