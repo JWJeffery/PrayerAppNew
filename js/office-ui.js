@@ -859,7 +859,7 @@ function selectHorologionOffice(officeKey) {
 }
 
 function _updateHorologionOfficeButtons() {
-    const offices = ['vespers', 'small-compline', 'first-hour', 'third-hour', 'sixth-hour', 'ninth-hour', 'orthros', 'midnight-office', 'great-compline', 'typika'];
+    const offices = ['vespers', 'small-compline', 'first-hour', 'third-hour', 'sixth-hour', 'ninth-hour', 'orthros', 'midnight-office', 'great-compline', 'typika', 'interhour-first', 'interhour-third', 'interhour-sixth', 'interhour-ninth'];
     for (const key of offices) {
         const btn = document.getElementById(`hor-btn-${key}`);
         if (!btn) continue;
@@ -886,7 +886,11 @@ function _horologionOfficeLabel(officeKey) {
   'orthros':         'Orthros (Matins)',
 'midnight-office': 'Midnight Office',
 'great-compline':  'Great Compline',
-'typika':          'Typika (Obednitsa)'
+'typika':          'Typika (Obednitsa)',
+'interhour-first': 'Interhour of the First Hour',
+'interhour-third': 'Interhour of the Third Hour',
+'interhour-sixth': 'Interhour of the Sixth Hour',
+'interhour-ninth': 'Interhour of the Ninth Hour'
     };
     return labels[officeKey] || officeKey;
 }
