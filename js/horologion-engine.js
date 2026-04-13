@@ -230,7 +230,7 @@ const HorologionEngine = (() => {
     const _skeletonCache = {};
 
     // ── Supported offices in this version ─────────────────────────────────
-    const SUPPORTED_OFFICES = ['vespers', 'small-compline', 'first-hour', 'third-hour', 'sixth-hour', 'ninth-hour', 'orthros', 'midnight-office'];
+    const SUPPORTED_OFFICES = ['vespers', 'small-compline', 'first-hour', 'third-hour', 'sixth-hour', 'ninth-hour', 'orthros', 'midnight-office', 'typika'];
 
     // ── Tradition code for this engine ────────────────────────────────────
     const TRADITION = 'BYZC';
@@ -364,6 +364,10 @@ let _midnightOfficeTheotokionData = null;
 // ── v6.7: Great Compline fixed text URL and cache ─────────────────────
 const GREAT_COMPLINE_FIXED_URL = 'data/horologion/great-compline-fixed.json';
 let _greatComplineFixedData = null;
+
+// ── v6.9: Typika (Obednitsa) fixed text URL and cache ─────────────────
+const TYPIKA_FIXED_URL = 'data/horologion/typika-fixed.json';
+let _typikaFixedData = null;
 
     // ── v5.7: Orthros kathisma appointment table URL and cache ─────────────
     // Weekday pair assignments (Mon–Sat) for ordinary non-vigil Orthros.
@@ -542,6 +546,8 @@ let _greatComplineFixedData = null;
     await _resolveMidnightOfficeSlots(sections, dateObj);
 } else if (normalizedKey === 'great-compline') {
     await _resolveGreatComplineSlots(sections, dateObj);
+} else if (normalizedKey === 'typika') {
+    await _resolveTypikaSlots(sections, dateObj);
 } else {
             // v1.2 / v1.3: Vespers resolver (default for 'vespers' and any
             // future office that shares it until it has its own resolver).
@@ -708,7 +714,8 @@ let _greatComplineFixedData = null;
             'third-hour':     'Third Hour',
             'sixth-hour':     'Sixth Hour',
             'ninth-hour':     'Ninth Hour',
-            'orthros':        'Orthros (Matins)'
+            'orthros':        'Orthros (Matins)',
+            'typika':         'Typika (Obednitsa)'
         };
         return TITLES[normalizedKey] || normalizedKey;
     }
@@ -884,7 +891,11 @@ let _greatComplineFixedData = null;
  
             'midnight-office':
                 'On ordinary weekdays, the proper troparion appointment for the Midnight Office belongs here. ' +
-                'The full weekday text requires the Menaion and is not yet available in this office.'
+                'The full weekday text requires the Menaion and is not yet available in this office.',
+
+            'typika':
+                'On ordinary days, the proper dismissal troparion for the Typika belongs here. ' +
+                'The full troparion text requires the Menaion and is not yet available in this office.'
         };
 
         if (!OFFICE_TEXT[officeKey]) {
@@ -5637,6 +5648,82 @@ function _resolveOrthrosSundayExapostilarion(tone) {
         text:       text,
         resolvedAs: 'orthros-sunday-resurrectional-exapostilarion'
     };
+}
+
+// ── v6.9: _loadTypikaFixedData() ─────────────────────────────────────
+async function _loadTypikaFixedData() {
+    if (_typikaFixedData !== null) return;
+    try {
+        const response = await fetch(TYPIKA_FIXED_URL);
+        if (!response.ok) {
+            console.warn(`[HorologionEngine] Could not load Typika fixed data (HTTP ${response.status}); fixed slots will remain as placeholders.`);
+            return;
+        }
+        _typikaFixedData = await response.json();
+        console.log('[HorologionEngine] Loaded Typika fixed text data (v6.9).');
+    } catch (err) {
+        console.warn('[HorologionEngine] _loadTypikaFixedData failed:', err.message, '— fixed slots will remain as placeholders.');
+    }
+}
+
+// ── v6.9: _resolveTypikaSlots(sections, dateObj) ──────────────────────
+async function _resolveTypikaSlots(sections, dateObj) {
+    await Promise.all([
+        _loadTypikaFixedData(),
+        _loadTroparionData(),
+        _loadWeekdayTroparionMeta(),
+        _loadTriodionData()
+    ]);
+
+    const dayOfWeek  = dateObj.getDay();
+    const toneResult = _computeBaselineTone(dateObj);
+
+    const FIXED_SLOT_KEYS = new Set([
+        'typika-usual-beginning',
+        'typika-beatitudes',
+        'typika-psalm-102',
+        'typika-psalm-145',
+        'typika-creed',
+        'typika-trisagion-prayers',
+        'typika-lords-prayer'
+    ]);
+
+    for (const section of sections) {
+        if (!Array.isArray(section.items)) continue;
+
+        for (let i = 0; i < section.items.length; i++) {
+            const item = section.items[i];
+
+            if (FIXED_SLOT_KEYS.has(item.key)) {
+                const slotData = _typikaFixedData &&
+                    _typikaFixedData.slots &&
+                    _typikaFixedData.slots[item.key];
+
+                if (slotData) {
+                    section.items[i] = {
+                        type:       slotData.type || 'text',
+                        key:        item.key,
+                        label:      slotData.label || item.label,
+                        text:       slotData.text,
+                        lxxNumber:  slotData.lxxNumber,
+                        items:      Array.isArray(slotData.items) ? slotData.items : undefined,
+                        resolvedAs: 'typika-fixed'
+                    };
+                }
+                continue;
+            }
+
+            if (item.key === 'troparion-of-the-day') {
+                const resolved = await _resolveLittleHourSeasonalTroparionSlot('typika', dayOfWeek, dateObj, toneResult);
+                if (resolved) {
+                    section.items[i] = Object.assign({}, resolved, {
+                        key: 'troparion-of-the-day'
+                    });
+                }
+                continue;
+            }
+        }
+    }
 }
 
 return {

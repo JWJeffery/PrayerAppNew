@@ -1,0 +1,140 @@
+{
+  "officeKey": "typika",
+  "label": "Typika (Obednitsa)",
+  "tradition": "BYZC",
+  "description": "The Reader's Office of the Typika (Obednitsa). Celebrated in the absence of a priest or Divine Liturgy on Sundays and feasts, in place of Holy Communion. Consists of the Beatitudes, Psalms 102 and 145, the Symbol of Faith, the Trisagion Prayers, and the Lord's Prayer, with appointed Epistle and Gospel readings.",
+  "sections": [
+    {
+      "id": "opening",
+      "label": "Opening",
+      "notes": "The Typika opens with the Usual Beginning, as do all Byzantine offices.",
+      "items": [
+        {
+          "type": "rubric",
+          "key": "typika-opening-rubric",
+          "text": "The Priest blesses: Blessed is our God, always, now and ever and unto ages of ages.\nIf no Priest is present, the Reader begins: Through the prayers of our holy fathers, Lord Jesus Christ our God, have mercy on us and save us. Amen."
+        },
+        {
+          "type": "placeholder",
+          "key": "typika-usual-beginning",
+          "label": "The Usual Beginning",
+          "status": "unresolved",
+          "note": "Trisagion prayers sequence. Resolved from typika-fixed.json by HorologionEngine."
+        }
+      ]
+    },
+    {
+      "id": "beatitudes",
+      "label": "The Beatitudes",
+      "notes": "The Beatitudes (Matthew 5:3–12) with refrains. Appointed at the Typika in place of the Antiphons of the Liturgy.",
+      "items": [
+        {
+          "type": "placeholder",
+          "key": "typika-beatitudes",
+          "label": "The Beatitudes (Matthew 5:3–12)",
+          "status": "unresolved",
+          "note": "Fixed text. Resolved from typika-fixed.json by HorologionEngine."
+        }
+      ]
+    },
+    {
+      "id": "psalmody",
+      "label": "Psalms 102 and 145",
+      "notes": "Two psalms appointed at the Typika: Psalm 102 (LXX) — Bless the Lord, O my soul; and Psalm 145 (LXX) — Praise the Lord, O my soul.",
+      "items": [
+        {
+          "type": "placeholder",
+          "key": "typika-psalm-102",
+          "label": "Psalm 102 (LXX) — Bless the Lord, O my soul",
+          "status": "unresolved",
+          "note": "Resolved from typika-fixed.json by HorologionEngine."
+        },
+        {
+          "type": "placeholder",
+          "key": "typika-psalm-145",
+          "label": "Psalm 145 (LXX) — Praise the Lord, O my soul",
+          "status": "unresolved",
+          "note": "Resolved from typika-fixed.json by HorologionEngine."
+        }
+      ]
+    },
+    {
+      "id": "creed",
+      "label": "Symbol of Faith",
+      "notes": "The Nicene-Constantinopolitan Creed is recited at the Typika.",
+      "items": [
+        {
+          "type": "placeholder",
+          "key": "typika-creed",
+          "label": "The Symbol of Faith (Nicene-Constantinopolitan Creed)",
+          "status": "unresolved",
+          "note": "Resolved from typika-fixed.json by HorologionEngine."
+        }
+      ]
+    },
+    {
+      "id": "trisagion",
+      "label": "Trisagion Prayers",
+      "notes": "The Trisagion prayer sequence.",
+      "items": [
+        {
+          "type": "placeholder",
+          "key": "typika-trisagion-prayers",
+          "label": "Trisagion Prayers",
+          "status": "unresolved",
+          "note": "Resolved from typika-fixed.json by HorologionEngine."
+        }
+      ]
+    },
+    {
+      "id": "troparia",
+      "label": "Troparion of the Day",
+      "notes": "The dismissal troparion of the day, resolved dynamically from the Menaion/Octoechos stack.",
+      "items": [
+        {
+          "type": "placeholder",
+          "key": "troparion-of-the-day",
+          "label": "Troparion of the Day",
+          "status": "unresolved",
+          "note": "Variable. Resolved via existing Menaion/Octoechos troparion stack by HorologionEngine."
+        }
+      ]
+    },
+    {
+      "id": "readings",
+      "label": "Epistle and Gospel",
+      "notes": "The appointed Epistle and Gospel for the day are read. Appointments follow the Apostol and Evangelist.",
+      "items": [
+        {
+          "type": "rubric",
+          "key": "typika-epistle-rubric",
+          "text": "EPISTLE: The appointed Epistle reading for the day from the Apostol is read here. (Appointed Epistle and Gospel readings from the Lectionarion/Apostol are not yet resolved in this baseline. The full lectionary appointment belongs here.)"
+        },
+        {
+          "type": "rubric",
+          "key": "typika-gospel-rubric",
+          "text": "GOSPEL: The appointed Gospel reading for the day from the Evangelist is read here. (Appointed Epistle and Gospel readings from the Lectionarion/Evangelist are not yet resolved in this baseline. The full lectionary appointment belongs here.)"
+        }
+      ]
+    },
+    {
+      "id": "lords-prayer",
+      "label": "Lord's Prayer and Dismissal",
+      "notes": "The Lord's Prayer is read. A structural dismissal rubric closes the office.",
+      "items": [
+        {
+          "type": "placeholder",
+          "key": "typika-lords-prayer",
+          "label": "The Lord's Prayer",
+          "status": "unresolved",
+          "note": "Resolved from typika-fixed.json by HorologionEngine."
+        },
+        {
+          "type": "rubric",
+          "key": "typika-dismissal-rubric",
+          "text": "Lord, have mercy. (×3)\nGlory to the Father, and to the Son, and to the Holy Spirit, both now and ever, and unto ages of ages. Amen.\n\n[Dismissal according to the day and feast. If a Priest is present: Priest gives the dismissal. If no Priest: Through the prayers of our holy fathers, Lord Jesus Christ our God, have mercy on us and save us. Amen.]"
+        }
+      ]
+    }
+  ]
+}
