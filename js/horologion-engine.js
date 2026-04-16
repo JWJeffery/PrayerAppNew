@@ -365,6 +365,23 @@ let _midnightOfficeTheotokionData = null;
 const GREAT_COMPLINE_FIXED_URL = 'data/horologion/great-compline-fixed.json';
 let _greatComplineFixedData = null;
 
+// ── v7.1: Octoechos Great Compline canon corpus (null-sentinel) ──────────────
+// window.GC_CANON_OCTOECHOS is loaded from js/octoechos/gc-canon-theotokos.js.
+// All eight tone slots are null sentinels until the corpus transcription tranche.
+// The engine probes this object and degrades to the gc-canon-octoechos rubric
+// slot when the sentinel is null. No engine redesign will be required when
+// corpus text is added: replace null with the text object per tone.
+function _getGcCanonOctoechos(tone) {
+    if (
+        window.GC_CANON_OCTOECHOS &&
+        window.GC_CANON_OCTOECHOS.tones &&
+        window.GC_CANON_OCTOECHOS.tones[tone] !== undefined
+    ) {
+        return window.GC_CANON_OCTOECHOS.tones[tone]; // null or text object
+    }
+    return undefined; // corpus file not loaded at all
+}
+
 // ── v6.9: Typika (Obednitsa) fixed text URL and cache ─────────────────
 const TYPIKA_FIXED_URL = 'data/horologion/typika-fixed.json';
 let _typikaFixedData = null;
@@ -4295,22 +4312,50 @@ async function _resolveGreatComplineSlots(sections, dateObj) {
                         console.warn('[HorologionEngine] gc-canon Menaion probe failed:', e.message);
                     }
                     if (!canonItem) {
-                        const octoechosSlot = _slot('gc-canon-octoechos');
-                        canonItem = octoechosSlot
-                            ? {
-                                type:       octoechosSlot.type || 'rubric',
+                        // ── v7.1: probe null-sentinel corpus before rubric fallback ──
+                        let toneForCanon = null;
+                        try {
+                            const tr = _computeBaselineTone(dateObj);
+                            toneForCanon = tr && tr.tone ? String(tr.tone) : null;
+                        } catch (e) {
+                            console.warn('[HorologionEngine] gc-canon: tone computation failed:', e.message);
+                        }
+
+                        const corpusEntry = toneForCanon !== null
+                            ? _getGcCanonOctoechos(toneForCanon)
+                            : undefined;
+
+                        if (corpusEntry && typeof corpusEntry.text === 'string') {
+                            // Corpus text is populated for this tone.
+                            canonItem = {
+                                type:       'text',
                                 key:        item.key,
-                                label:      octoechosSlot.label || 'Canon (Octoechos — Theotokos)',
-                                text:       octoechosSlot.text,
-                                resolvedAs: 'gc-canon-octoechos'
-                              }
-                            : {
-                                type:       'rubric',
-                                key:        item.key,
-                                label:      'Canon (Octoechos — Theotokos)',
-                                text:       '(Great Compline canon slot: data/horologion/great-compline-fixed.json gc-canon-octoechos not loaded.)',
-                                resolvedAs: 'gc-canon-octoechos-data-unavailable'
-                              };
+                                label:      corpusEntry.label || `Canon (Octoechos — Theotokos, Tone ${toneForCanon})`,
+                                text:       corpusEntry.text,
+                                tone:       toneForCanon,
+                                resolvedAs: 'gc-canon-octoechos-text'
+                            };
+                        } else {
+                            // Sentinel is null, or corpus not loaded — honest rubric degradation.
+                            const octoechosSlot = _slot('gc-canon-octoechos');
+                            const toneLabel = toneForCanon ? ` Tone ${toneForCanon}.` : '';
+                            canonItem = octoechosSlot
+                                ? {
+                                    type:       octoechosSlot.type || 'rubric',
+                                    key:        item.key,
+                                    label:      octoechosSlot.label || 'Canon (Octoechos — Theotokos)',
+                                    text:       octoechosSlot.text + toneLabel,
+                                    tone:       toneForCanon,
+                                    resolvedAs: 'gc-canon-octoechos'
+                                  }
+                                : {
+                                    type:       'rubric',
+                                    key:        item.key,
+                                    label:      'Canon (Octoechos — Theotokos)',
+                                    text:       '(Great Compline canon slot: data/horologion/great-compline-fixed.json gc-canon-octoechos not loaded.)',
+                                    resolvedAs: 'gc-canon-octoechos-data-unavailable'
+                                  };
+                        }
                     }
                     section.items[i] = canonItem;
                 }
