@@ -7,6 +7,7 @@
     "gc-weekday-troparia, gc-canon, gc-closing-theotokion) are NOT here;",
     "Friday substitution for gc-lord-of-hosts (Kontakion of the Departed, Tone 8) is",
     "stored here as gc-saturday-kontakion and routed by the engine.",
+    "Menaion feast override for gc-weekday-troparia routes to gc-weekday-troparia-menaion.",
     "their text is gated or rubric-only in the resolver.",
     "Source: orthodoxprayer.org Great Compline witness."
   ],
@@ -446,6 +447,11 @@
       "label": "Kontakion of the Saturday Commemoration (Tone 8)",
       "rubric": "Said in place of \"O Lord of Hosts\" on Friday evenings.",
       "text": "With the saints give rest, O Christ, to the souls of Your servants, where there is neither sickness, nor sorrow, nor sighing, but life everlasting."
+    },
+    "gc-weekday-troparia-menaion": {
+      "type": "rubric",
+      "label": "Weekday Troparia — Menaion Feast Override",
+      "text": "A qualifying feast of rank 1–2 is commemorated today. The Menaion weekday troparia are appointed here in place of the ordinary Great Compline weekday troparia sequence. Great Compline Menaion troparia corpus is not yet loaded in this build. See the Menaion for the proper troparion text."
     }
   }
 }

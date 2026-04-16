@@ -4136,6 +4136,65 @@ async function _resolveGreatComplineSlots(sections, dateObj) {
                 const DAY = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
                 const d = DAY[dayOfWeek] || 'this day';
 
+                // Great Compline is appointed only in bounded seasons.
+                // During Great Lent, only rank 1–2 commemorations displace the ordinary weekday troparia.
+                const GC_TROPARIA_MAX_QUALIFYING_RANK = 2;
+                let gcTropariaFeastOverride = false;
+                let gcTropariaSaintName = null;
+                let gcTropariaRank = null;
+
+                try {
+                    if (window.MenaionResolver && typeof window.MenaionResolver.queryTroparion === 'function') {
+                        const month = dateObj.getMonth() + 1;
+                        const day   = dateObj.getDate();
+                        const mmdd  = String(month).padStart(2, '0') + '-' + String(day).padStart(2, '0');
+                        const mResult = await window.MenaionResolver.queryTroparion(mmdd);
+
+                        const hasCommemoration = mResult &&
+                            (mResult.status === 'menaion-resolved' ||
+                             mResult.status === 'menaion-text-unavailable');
+
+                        const rank = hasCommemoration && typeof mResult.rank === 'number'
+                            ? mResult.rank
+                            : null;
+
+                        if (hasCommemoration && rank !== null && rank >= 1 && rank <= GC_TROPARIA_MAX_QUALIFYING_RANK) {
+                            gcTropariaFeastOverride = true;
+                            gcTropariaSaintName = mResult.name || 'the feast of the day';
+                            gcTropariaRank = rank;
+                        }
+                    }
+                } catch (e) {
+                    console.warn('[HorologionEngine] gc-weekday-troparia Menaion probe failed:', e.message);
+                }
+
+                if (gcTropariaFeastOverride) {
+                    const menaionSlot = _slot('gc-weekday-troparia-menaion');
+
+                    if (menaionSlot) {
+                        section.items[i] = {
+                            type: menaionSlot.type || 'rubric',
+                            key: item.key,
+                            label: `Weekday Troparia — ${d} (Menaion Feast Override)`,
+                            text: `${menaionSlot.text} Feast: ${gcTropariaSaintName} (rank ${gcTropariaRank}).`,
+                            resolvedAs: 'great-compline-weekday-troparia-menaion-feast-override',
+                            commemoration: gcTropariaSaintName,
+                            rank: gcTropariaRank
+                        };
+                    } else {
+                        section.items[i] = {
+                            type: 'rubric',
+                            key: item.key,
+                            label: `Weekday Troparia — ${d} (Menaion Feast Override)`,
+                            text: `${d} — A qualifying feast (${gcTropariaSaintName}, rank ${gcTropariaRank}) is commemorated today. The Menaion weekday troparia are appointed here in place of the ordinary Great Compline weekday troparia sequence. Menaion Great Compline troparia slot data is not loaded in this build.`,
+                            resolvedAs: 'great-compline-weekday-troparia-menaion-feast-override',
+                            commemoration: gcTropariaSaintName,
+                            rank: gcTropariaRank
+                        };
+                    }
+                    continue;
+                }
+
                 const fixedKey = (dayOfWeek === 1 || dayOfWeek === 3) ? 'gc-weekday-troparia-mon-wed'
                                : (dayOfWeek === 2 || dayOfWeek === 4) ? 'gc-weekday-troparia-tue-thu'
                                : null;
