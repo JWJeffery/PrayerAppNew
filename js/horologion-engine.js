@@ -4229,23 +4229,36 @@ async function _resolveGreatComplineSlots(sections, dateObj) {
             }
 
             if (item.key === 'gc-canon') {
+                // ── gc-canon: route to fixed-data slot paths ──────────────
+                // Three governed states:
+                //   1. First week of Great Lent → gc-canon-great-canon
+                //   2. Rank 1–2 Menaion feast on appointed day → gc-canon-menaion
+                //      (saint name injected into rubric text at runtime)
+                //   3. All other appointed days → gc-canon-octoechos
+                // Governing logic is preserved exactly from prior inline form.
+
                 if (isFirstWeekOfLent) {
-                    section.items[i] = {
-                        type: 'rubric',
-                        key: item.key,
-                        label: 'Canon — Great Canon of Saint Andrew of Crete',
-                        text: 'FIRST WEEK OF GREAT LENT — The Great Canon of Saint Andrew of Crete (+740) is appointed at Great Compline in place of the ordinary Menaion or Octoechos canon. It is read across Monday through Thursday evenings of the first week (approximately one quarter per evening). Canon corpus not yet implemented. See the Lenten Triodion for the full text.',
-                        resolvedAs: 'great-compline-great-canon-rubric'
-                    };
+                    const greatCanonSlot = _slot('gc-canon-great-canon');
+                    if (greatCanonSlot) {
+                        section.items[i] = {
+                            type:       greatCanonSlot.type || 'rubric',
+                            key:        item.key,
+                            label:      greatCanonSlot.label || 'Canon — Great Canon of Saint Andrew of Crete',
+                            text:       greatCanonSlot.text,
+                            resolvedAs: 'gc-canon-great-canon'
+                        };
+                    } else {
+                        section.items[i] = {
+                            type:       'rubric',
+                            key:        item.key,
+                            label:      'Canon — Great Canon of Saint Andrew of Crete',
+                            text:       '(FIRST WEEK OF GREAT LENT — Great Canon slot: data/horologion/great-compline-fixed.json gc-canon-great-canon not loaded.)',
+                            resolvedAs: 'gc-canon-great-canon-data-unavailable'
+                        };
+                    }
                 } else {
-                    // Ordinary appointed day: probe Menaion for a qualifying commemoration.
-                    // Only a commemoration of rank 1–2 displaces the Octoechos Theotokos canon
-                    // during Great Lent (the exclusive season for Great Compline).
-                    // Any date with a lower-ranked saint (rank 3+, null, or 99) falls through
-                    // to the Octoechos Theotokos canon — that is the correct rubric default.
-                    // MenaionResolver has no canon text; it is called only to identify
-                    // whether a qualifying saint is commemorated so the rubric can be informative.
-                    const GC_MAX_QUALIFYING_RANK = 2; // Great Lent: rank 1 (Great Feast) or rank 2 (Polyeleos/Vigil)
+                    // Probe Menaion for a qualifying rank 1–2 commemoration.
+                    const GC_MAX_QUALIFYING_RANK = 2;
                     let canonItem = null;
                     try {
                         if (window.MenaionResolver && typeof window.MenaionResolver.queryTroparion === 'function') {
@@ -4257,20 +4270,24 @@ async function _resolveGreatComplineSlots(sections, dateObj) {
                                 (mResult.status === 'menaion-resolved' ||
                                  mResult.status === 'menaion-text-unavailable');
                             const rank = hasCommemoration && typeof mResult.rank === 'number'
-                                ? mResult.rank
-                                : null;
+                                ? mResult.rank : null;
                             const qualifies = hasCommemoration &&
-                                rank !== null &&
-                                rank >= 1 &&
-                                rank <= GC_MAX_QUALIFYING_RANK;
+                                rank !== null && rank >= 1 && rank <= GC_MAX_QUALIFYING_RANK;
                             if (qualifies) {
                                 const saintName = mResult.name || 'the saint of the day';
+                                const menaionSlotBase = _slot('gc-canon-menaion');
+                                const menaionText = menaionSlotBase
+                                    ? menaionSlotBase.text.replace(
+                                        'A qualifying feast (rank 1–2) is commemorated today.',
+                                        `${saintName} (rank ${rank}) is commemorated today.`
+                                      )
+                                    : `A qualifying feast (${saintName}, rank ${rank}) is commemorated today. Menaion canon corpus not loaded.`;
                                 canonItem = {
-                                    type: 'rubric',
-                                    key: item.key,
-                                    label: 'Canon (Menaion)',
-                                    text: `The canon appointed at Great Compline today is the Menaion canon for ${saintName} (rank ${rank}). Following the canon, the appointed stichera for the commemoration are sung. Menaion canon text is not yet in this corpus. See the Menaion for the full canon.`,
-                                    resolvedAs: 'great-compline-canon-menaion-rubric'
+                                    type:       'rubric',
+                                    key:        item.key,
+                                    label:      menaionSlotBase ? (menaionSlotBase.label || 'Canon (Menaion)') : 'Canon (Menaion)',
+                                    text:       menaionText,
+                                    resolvedAs: 'gc-canon-menaion'
                                 };
                             }
                         }
@@ -4278,13 +4295,22 @@ async function _resolveGreatComplineSlots(sections, dateObj) {
                         console.warn('[HorologionEngine] gc-canon Menaion probe failed:', e.message);
                     }
                     if (!canonItem) {
-                        canonItem = {
-                            type: 'rubric',
-                            key: item.key,
-                            label: 'Canon (Octoechos — Theotokos)',
-                            text: 'The canon appointed at Great Compline today is the canon to the Theotokos from the Octoechos. Following the canon, the appointed stichera are sung. Octoechos Great Compline canon corpus is not yet in this build. See the Octoechos for the full text.',
-                            resolvedAs: 'great-compline-canon-octoechos-rubric'
-                        };
+                        const octoechosSlot = _slot('gc-canon-octoechos');
+                        canonItem = octoechosSlot
+                            ? {
+                                type:       octoechosSlot.type || 'rubric',
+                                key:        item.key,
+                                label:      octoechosSlot.label || 'Canon (Octoechos — Theotokos)',
+                                text:       octoechosSlot.text,
+                                resolvedAs: 'gc-canon-octoechos'
+                              }
+                            : {
+                                type:       'rubric',
+                                key:        item.key,
+                                label:      'Canon (Octoechos — Theotokos)',
+                                text:       '(Great Compline canon slot: data/horologion/great-compline-fixed.json gc-canon-octoechos not loaded.)',
+                                resolvedAs: 'gc-canon-octoechos-data-unavailable'
+                              };
                     }
                     section.items[i] = canonItem;
                 }

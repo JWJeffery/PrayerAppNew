@@ -452,6 +452,24 @@
       "type": "rubric",
       "label": "Weekday Troparia — Menaion Feast Override",
       "text": "A qualifying feast of rank 1–2 is commemorated today. The Menaion weekday troparia are appointed here in place of the ordinary Great Compline weekday troparia sequence. Great Compline Menaion troparia corpus is not yet loaded in this build. See the Menaion for the proper troparion text."
+    },
+    "gc-canon-great-canon": {
+      "type": "rubric",
+      "label": "Canon — Great Canon of Saint Andrew of Crete",
+      "text": "FIRST WEEK OF GREAT LENT — The Great Canon of Saint Andrew of Crete (+740) is appointed at Great Compline in place of the ordinary Menaion or Octoechos canon. It is read across Monday through Thursday evenings of the first week (approximately one quarter per evening). Canon corpus not yet implemented. See the Lenten Triodion for the full text.",
+      "resolvedAs": "gc-canon-great-canon"
+    },
+    "gc-canon-octoechos": {
+      "type": "rubric",
+      "label": "Canon (Octoechos — Theotokos)",
+      "text": "The canon appointed at Great Compline today is the canon to the Theotokos from the Octoechos. Following the canon, the appointed stichera are sung. Octoechos Great Compline canon corpus is not yet in this build. See the Octoechos for the full text.",
+      "resolvedAs": "gc-canon-octoechos"
+    },
+    "gc-canon-menaion": {
+      "type": "rubric",
+      "label": "Canon (Menaion)",
+      "text": "A qualifying feast (rank 1–2) is commemorated today. The Menaion canon for the saint of the day is appointed at Great Compline in place of the Octoechos Theotokos canon. Following the canon, the appointed stichera for the commemoration are sung. Menaion canon corpus is not yet loaded in this build. See the Menaion for the full canon.",
+      "resolvedAs": "gc-canon-menaion"
     }
   }
 }
