@@ -383,6 +383,16 @@ function _getGcCanonOctoechos(tone) {
 }
 
 // ── v7.2: Great Canon corpus (null-sentinel) ─────────────────────────────────
+// window.GC_CANON_MENAION is loaded from js/octoechos/gc-canon-menaion.js.
+// Corpus contract: window.GC_CANON_MENAION.dates["MM-DD"]
+//   key present with { label, text } → use corpus text
+//   key absent                       → degrade to gc-canon-menaion rubric slot
+// Returns { label, text } or undefined.
+function _getGcCanonMenaion(mmdd) {
+    if (!window.GC_CANON_MENAION || !window.GC_CANON_MENAION.dates) return undefined;
+    return window.GC_CANON_MENAION.dates[mmdd] || undefined;
+}
+
 // window.GC_CANON_GREAT_CANON is loaded from js/octoechos/gc-canon-great-canon.js.
 // Four evening slots (monday–thursday) are null sentinels until the corpus
 // transcription tranche. The engine probes this object in the isFirstWeekOfLent
@@ -4327,20 +4337,32 @@ async function _resolveGreatComplineSlots(sections, dateObj) {
                                 rank !== null && rank >= 1 && rank <= GC_MAX_QUALIFYING_RANK;
                             if (qualifies) {
                                 const saintName = mResult.name || 'the saint of the day';
-                                const menaionSlotBase = _slot('gc-canon-menaion');
-                                const menaionText = menaionSlotBase
-                                    ? menaionSlotBase.text.replace(
-                                        'A qualifying feast (rank 1–2) is commemorated today.',
-                                        `${saintName} (rank ${rank}) is commemorated today.`
-                                      )
-                                    : `A qualifying feast (${saintName}, rank ${rank}) is commemorated today. Menaion canon corpus not loaded.`;
-                                canonItem = {
-                                    type:       'rubric',
-                                    key:        item.key,
-                                    label:      menaionSlotBase ? (menaionSlotBase.label || 'Canon (Menaion)') : 'Canon (Menaion)',
-                                    text:       menaionText,
-                                    resolvedAs: 'gc-canon-menaion'
-                                };
+                                // ── v7.3: probe null-sentinel Menaion canon corpus ──
+                                const menaionCorpus = _getGcCanonMenaion(mmdd);
+                                if (menaionCorpus) {
+                                    canonItem = {
+                                        type:       'text',
+                                        key:        item.key,
+                                        label:      menaionCorpus.label || `Canon (Menaion) — ${saintName}`,
+                                        text:       menaionCorpus.text,
+                                        resolvedAs: 'gc-canon-menaion-text'
+                                    };
+                                } else {
+                                    const menaionSlotBase = _slot('gc-canon-menaion');
+                                    const menaionText = menaionSlotBase
+                                        ? menaionSlotBase.text.replace(
+                                            'A qualifying feast (rank 1–2) is commemorated today.',
+                                            `${saintName} (rank ${rank}) is commemorated today.`
+                                          )
+                                        : `A qualifying feast (${saintName}, rank ${rank}) is commemorated today. Menaion canon corpus not loaded.`;
+                                    canonItem = {
+                                        type:       'rubric',
+                                        key:        item.key,
+                                        label:      menaionSlotBase ? (menaionSlotBase.label || 'Canon (Menaion)') : 'Canon (Menaion)',
+                                        text:       menaionText,
+                                        resolvedAs: 'gc-canon-menaion'
+                                    };
+                                }
                             }
                         }
                     } catch (e) {
