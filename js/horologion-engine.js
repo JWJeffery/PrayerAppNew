@@ -382,6 +382,24 @@ function _getGcCanonOctoechos(tone) {
     return undefined; // corpus file not loaded at all
 }
 
+// ── v7.2: Great Canon corpus (null-sentinel) ─────────────────────────────────
+// window.GC_CANON_GREAT_CANON is loaded from js/octoechos/gc-canon-great-canon.js.
+// Four evening slots (monday–thursday) are null sentinels until the corpus
+// transcription tranche. The engine probes this object in the isFirstWeekOfLent
+// branch and degrades to the gc-canon-great-canon rubric slot when the sentinel
+// is null. No engine redesign will be required when corpus text is added:
+// replace null with the text object per evening.
+function _getGcCanonGreatCanon(dayName) {
+    if (
+        window.GC_CANON_GREAT_CANON &&
+        window.GC_CANON_GREAT_CANON.evenings &&
+        window.GC_CANON_GREAT_CANON.evenings[dayName] !== undefined
+    ) {
+        return window.GC_CANON_GREAT_CANON.evenings[dayName]; // null or text object
+    }
+    return undefined; // corpus file not loaded at all
+}
+
 // ── v6.9: Typika (Obednitsa) fixed text URL and cache ─────────────────
 const TYPIKA_FIXED_URL = 'data/horologion/typika-fixed.json';
 let _typikaFixedData = null;
@@ -4255,23 +4273,40 @@ async function _resolveGreatComplineSlots(sections, dateObj) {
                 // Governing logic is preserved exactly from prior inline form.
 
                 if (isFirstWeekOfLent) {
-                    const greatCanonSlot = _slot('gc-canon-great-canon');
-                    if (greatCanonSlot) {
+                    // ── v7.2: probe null-sentinel corpus before rubric fallback ──
+                    const DAY_NAMES = ['sunday','monday','tuesday','wednesday','thursday','friday','saturday'];
+                    const dayName = DAY_NAMES[dateObj.getDay()] || null;
+                    const greatCanonCorpus = dayName ? _getGcCanonGreatCanon(dayName) : undefined;
+                    if (greatCanonCorpus && typeof greatCanonCorpus.text === 'string') {
+                        // Corpus text is populated for this evening.
                         section.items[i] = {
-                            type:       greatCanonSlot.type || 'rubric',
+                            type:       'text',
                             key:        item.key,
-                            label:      greatCanonSlot.label || 'Canon — Great Canon of Saint Andrew of Crete',
-                            text:       greatCanonSlot.text,
-                            resolvedAs: 'gc-canon-great-canon'
+                            label:      greatCanonCorpus.label || `Canon — Great Canon of Saint Andrew of Crete (${dayName.charAt(0).toUpperCase() + dayName.slice(1)})`,
+                            text:       greatCanonCorpus.text,
+                            day:        dayName,
+                            resolvedAs: 'gc-canon-great-canon-text'
                         };
                     } else {
-                        section.items[i] = {
-                            type:       'rubric',
-                            key:        item.key,
-                            label:      'Canon — Great Canon of Saint Andrew of Crete',
-                            text:       '(FIRST WEEK OF GREAT LENT — Great Canon slot: data/horologion/great-compline-fixed.json gc-canon-great-canon not loaded.)',
-                            resolvedAs: 'gc-canon-great-canon-data-unavailable'
-                        };
+                        // Sentinel is null, or corpus not loaded — honest rubric degradation.
+                        const greatCanonSlot = _slot('gc-canon-great-canon');
+                        if (greatCanonSlot) {
+                            section.items[i] = {
+                                type:       greatCanonSlot.type || 'rubric',
+                                key:        item.key,
+                                label:      greatCanonSlot.label || 'Canon — Great Canon of Saint Andrew of Crete',
+                                text:       greatCanonSlot.text,
+                                resolvedAs: 'gc-canon-great-canon'
+                            };
+                        } else {
+                            section.items[i] = {
+                                type:       'rubric',
+                                key:        item.key,
+                                label:      'Canon — Great Canon of Saint Andrew of Crete',
+                                text:       '(FIRST WEEK OF GREAT LENT — Great Canon slot: data/horologion/great-compline-fixed.json gc-canon-great-canon not loaded.)',
+                                resolvedAs: 'gc-canon-great-canon-data-unavailable'
+                            };
+                        }
                     }
                 } else {
                     // Probe Menaion for a qualifying rank 1–2 commemoration.
