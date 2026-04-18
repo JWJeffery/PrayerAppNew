@@ -18,7 +18,10 @@
 
 window.GC_CANON_OCTOECHOS = {
     tones: {
-        "1": null,
+        "1": {
+            label: "Canon (Octoechos — Theotokos, Tone 1)",
+            text: `[TRANSCRIPTION PENDING — Octoechos Tone 1, Great Compline Canon to the Theotokos, Lambertsen Vol. I, pp. 6–8]`
+        },
         "2": null,
         "3": null,
         "4": null,
