@@ -106,7 +106,106 @@ Glory... Since thou art good and hast given birth unto the Abyss of goodness, O 
 Both now... O pure one, quench the flame of my passions and the furnace of temptations, that with faith and love I may magnify thee without ceasing.
 `
         },
-        "2": null,
+        "2": {
+            label: "Canon (Octoechos — Theotokos, Tone 2)",
+            text: `
+Ode I
+
+Irmos: Overwhelming power once laid low the whole army of Pharaoh in the deep, and the incarnate Word hath destroyed pernicious sin. All-glorious is the Lord, for gloriously hath He been glorified.
+
+O good Theotokos, who dost readily hear all in tribulation and helpest those in grief: grant grace unto those who make bold to hymn thee, O Mistress, thou joy of those who sorrow.
+
+Having acquired grace of abundant richness, O Mistress, by thy bold supplication most gloriously rescue me, thy poor servant, from temptations, O joy of those who sorrow.
+
+Glory...: From enemies visible and invisible deliver us who have recourse to thee, we pray, O Theotokos, and confound every counsel of those who war against us.
+
+Now & ever...: Take from me the reproach of men and the false accusations of the traitorous, I pray thee, O Theotokos, that I may eagerly glorify the Lord Whom thou didst nourish.
+
+Ode III
+
+Irmos: Establish us in thee, O Lord Who hast slain sin by the Tree, and plant the fear of Thee in the hearts of us who hymn Thee.
+
+Scatter the vain plots of the enemy, O most hymned Theotokos, and by thy supplications fail not to keep us safe who praise thee.
+
+With thy merciful eye, O pure one, look upon me, and deliver me from every plot of enemies, visible and invisible, blinding their eyes.
+
+Glory...: With the dew of thy prayers, O Virgin, quench the evil assault, burning like fire, of the enemies who ever seek to destroy us.
+
+Now & ever...: O inextinguishable lamp, ever-shining ray, who gavest birth to Christ, the Sun of glory: By thy supplications illumine me who am beset by the night of afflictions.
+
+Ode IV
+
+Irmos: He whom Thou didst call "the voice of one crying in the wilderness" heard Thy voice as Thou didst thunder over many waters, bearing witness to Thy Son. And, wholly filled with the Spirit which had come, he cried out: Thou art Christ, the Wisdom and Power of God!
+
+We entreat thee, thou bridge of salvation, tireless entreaty and steadfast help: Have pity and behold our unbearable grief, our pangs, afflictions and sufferings, O Mother of God, and visit us for the better, granting us speedy joy.
+
+We are not without a share of thine aid amid afflictions, O Mistress; wherefore, quickly help us now, who are grievously tempest-tossed, stretching forth thy hand, O pure one. Be thou merciful to our pain, O Mother of God, granting us speedy joy.
+
+Glory...: They who are iniquitous, who roar to shed unjustly the blood of their neighbor, have not set their hope on thee, O Mistress, but have trusted in a boastful tongue, the tongue of man, which ever poureth forth jealously; but do thou, O pure one, break their jaws.
+
+Now & ever...: O Mistress, humble thou the haughty neck of the boastful enemy, their counsels and malignant ways, and their hearts which daily meditate evils against me; and give strength and victory to those who call upon thee, O Mother of God, granting us speedy joy.
+
+Ode V
+
+Irmos: The Sun—the live Coal which was revealed beforehand to Isaiah—shone forth from the Virgin's womb, granting the enlightenment of divine knowledge to those gone astray in darkness.
+
+O true supplicant, hope of Christians, O joyous one, accept the entreaties of us who earnestly call upon and pray to thee.
+
+Acknowledging thee to be the well-spring of Life, pouring forth the waters of immortality, O pure one, we, the earthborn, call thee blessed.
+
+Glory...: The enemy hath wickedly armed himself against us, desiring to destroy us with his tongue, as with a sword; but go before us, O Theotokos, in thy might.
+
+Now & ever...: Who can measure the abyss of the assistance of thy power, O pure one? Wherefore, quickly go before us who are in need.
+
+Ode VI
+
+Irmos: Whirled about in the abyss of sin, I call upon the unfathomable abyss of Thy lovingkindness: Lead me up from corruption, O God!
+
+As the mediatress of chastity, reveal thyself now to those who call upon thee, and deliver them from all misfortunes and perils, O Bride of God.
+
+Destroy the evil works of the enemy and scatter the false accusations of the unjust, O all-pure and blessed one, delivering the innocent from tribulation.
+
+Glory...: Surrounded by grievous sins and drowning in perilous misfortunes, O Mother of Christ God, we flee beneath thy divine protection.
+
+Now & ever...: Having given birth to the Lord without knowing man, thou hast been shown to be a virgin still, even after giving birth. O the all-glorious wonder that was wrought within thee, O Bride of God!
+
+Ode VII
+
+Irmos: That Thou mightest manifestly prefigure Thine all-glorious nativity from a virgin, O Christ, in the furnace Thou didst preserve unconsumed the youths who chanted to Thee in hymns: O God of our fathers, blessed art Thou!
+
+O thy compassion, O pure Virgin! For thou dost loose immeasurable griefs and misfortunes for those who cry out in need and adverse circumstances. Wherefore, O blessed one, even now help those who praise thee.
+
+Show forth thy speedy assistance; show it forth, as thou art able, in that thou art the Mother of God. We call upon thee with all our heart, falling down in tears: Quickly ease the affliction and pain of thy servants.
+
+Glory...: The mouths of men, like those of ferocious lions, have yawned more terribly than the grave, bitterly to swallow me; but as thou art revealed as the hope of the hopeless, O blessed Theotokos, cast down their strength.
+
+Now & ever...: Let the enemy behold and be ashamed, and let them understand and see thy power, which warreth for us against them. Cast them down into the nethermost gulf, O blessed one, thou hope of the hopeless.
+
+Ode VIII
+
+Irmos: Once, in Babylon, the fiery furnace divided its activity at the command of God, consuming the Chaldæans, but bedewing the faithful, who chant: Bless the Lord, all ye works of the Lord!
+
+O Theotokos, our refuge, joy of the world: haste thou to take pity, and quickly grant thy grace unto us who are afflicted, O good one, and help thy servants.
+
+The vain council of the assembly of the ungodly took counsel wickedly against us, like Ahitophel of old. Yet we cry out: Scatter it by thy supplications, O Theotokos, casting down their strength!
+
+Glory...: Quickly hearken, O Theotokos, to those who truly call upon thee from their soul amid every tribulation and divers pangs and grievous perils, ever delivering them by thy supplications, O Mistress.
+
+Now & ever...: That thy name might be glorified on the earth, O Theotokos, He Who shone forth from thee hath given thee to sinners as a mighty hope and rampart; for through thee doth everything that hath breath hasten to God.
+
+Ode IX
+
+Irmos: Every tongue is at a loss how to praise thee as is meet, and even an intelligence from above the world is in doubt how to hymn thee, O Theotokos; yet, as thou art good, accept our faith, for thou knowest our longing inspired by God; for thou art the intercessor of Christians, and we magnify thee.
+
+Let every tongue which meditateth evils be stopped; and let false lips and mouths, which unjustly speak iniquity against the righteous man with pride and hostile envy, fall silent, through the supplications of the Theotokos and the saints of Christ.
+
+Afflicted with pain and sorrow, we all call upon the pure Theotokos, who is vigilant in prayer, crying: O pure Mistress, ever deliver thy servants quickly from besetting pain, for, after God, we have none other helper.
+
+Glory...: O Theotokos, thou art a great refuge for the despairing, a calm haven for the tempest-tossed; wherefore, we have recourse unto thee, crying: Let us not be put to shame, O Mother of the true Life, but let us magnify thee, giving thanks with fervor.
+
+Now & ever...: O all-pure Maiden, accept our divine hymn, imparting grace unto those who trust in thee, and ask that peace ever be sent upon the churches of God and victory and triumph to the Orthodox, that the tongue of every Christian may magnify thee.
+`
+        },
         "3": null,
         "4": null,
         "5": null,
