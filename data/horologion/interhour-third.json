@@ -73,11 +73,7 @@
         {
           "type": "rubric",
           "key": "dismissal-rubric",
-                  {
-          "type": "rubric",
-          "key": "dismissal-rubric",
           "text": "Through the prayers of our holy fathers, Lord Jesus Christ our God, have mercy on us and save us.\nAmen."
-        }
         }
       ]
     }

@@ -3734,12 +3734,6 @@ const isMajorFeastForPraises =
                     const isFeast = troparionItem && troparionItem.resolvedAs === 'menaion-feast-troparion';
 
                     if (isBrightWeek) {
-                            'The canon appointed at Orthros is the feast canon from the Menaion, unless displaced ' +
-                            'by a higher-ranking seasonal canon. The feast Menaion canon corpus is not yet embedded ' +
-                            'in this path. The appointment is correct; the text is deferred.\n\n' +
-                            canonStructureNote;
-                        canonResolvedAs = 'orthros-feast-canon-rubric';
-                    } else if (isBrightWeek) {
                         canonText =
                             'BRIGHT WEEK — The Paschal Canon: During Bright Week the Paschal Canon ' +
                             '("It is the Day of Resurrection" — Canon of Pascha, composed by St. John ' +
@@ -3751,6 +3745,13 @@ const isMajorFeastForPraises =
                             '(Full Paschal Canon text is not yet embedded in this path. The appointment ' +
                             'and structure described above are correct.)';
                         canonResolvedAs = 'orthros-bright-week-canon-rubric';
+                    } else if (isFeast) {
+                        canonText =
+                            'The canon appointed at Orthros is the feast canon from the Menaion, unless displaced ' +
+                            'by a higher-ranking seasonal canon. The feast Menaion canon corpus is not yet embedded ' +
+                            'in this path. The appointment is correct; the text is deferred.\n\n' +
+                            canonStructureNote;
+                        canonResolvedAs = 'orthros-feast-canon-rubric';
                     } else if (isHolyWeek) {
                         const hwDay = seasonResult && seasonResult.holyWeekDay
                             ? seasonResult.holyWeekDay : null;
