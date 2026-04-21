@@ -15,7 +15,7 @@ window.OCTOECHOS.orthros.theotokion.sunday.tones = {
     3: "Awed by the beauty of thy virginity and thine all-radiant purity, Gabriel, marvelling, cried out to thee, O Theotokos: “What praise can I bring which is worthy of thee? What shall I call thee? I am at a loss and filled with awe! Wherefore, as I have been commanded, I cry unto thee: Rejoice, O thou who art full of grace!”",
     4: "The mystery hidden from before the ages and unknown even to the angels, through thee, O Theotokos, hath been revealed to those on earth: God incarnate in unconfused union, Who willingly accepted the Cross for our sake and, thereby raising up the first-formed man, hath saved our souls from death.",
     5: "Rejoice, O holy mountain trodden by God! Rejoice, animate bush which was not consumed! Rejoice, bridge to God for the world, who alone bearest mortals to everlasting life! Rejoice, incorrupt Maiden who without knowing man gavest birth unto the Salvation of our souls.",
-    6: null,
+    6: "Come, all ye nations, and with a cry of rejoicing let us praise the all-holy Virgin and Theotokos, the crucible of human nature, the workshop of ineffable miracles; for new things have come to pass through her: the Unoriginate taketh on a beginning, the Word receiveth substance, God becometh man, that He might make man divine, not by altering nature, but through enhypostatic union. For He alone proceedeth from two different natures, being known in two perfect natures indivisibly, and in both substances as to will and energy. Christ our God hath Himself given surety of the truth of the dispensation of salvation, granting the world cleansing, peace and great mercy.",
     7: null,
     8: null
 };
