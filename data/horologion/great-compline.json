@@ -176,6 +176,13 @@
       "items": [
         {
           "type": "placeholder",
+          "key": "gc-come-worship-2",
+          "label": "O come, let us worship (second occurrence)",
+          "status": "unresolved",
+          "note": "Fixed reopener before Psalms 50 and 101. Resolved from great-compline-fixed.json."
+        },
+        {
+          "type": "placeholder",
           "key": "gc-psalm-50",
           "label": "Psalm 50 (LXX)",
           "status": "unresolved",
@@ -204,10 +211,10 @@
         },
         {
           "type": "placeholder",
-          "key": "gc-come-worship-2",
-          "label": "O come, let us worship (second occurrence)",
+          "key": "gc-come-worship-trisagion",
+          "label": "O come, let us worship (third occurrence — before sixth-tone troparia)",
           "status": "unresolved",
-          "note": "Fixed reopener before Psalms 50 and 101. Resolved from great-compline-fixed.json."
+          "note": "Fixed reopener before sixth-tone troparia. Resolved from great-compline-fixed.json."
         },
         {
           "type": "placeholder",

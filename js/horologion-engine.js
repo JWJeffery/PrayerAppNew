@@ -4115,7 +4115,7 @@ async function _resolveGreatComplineSlots(sections, dateObj) {
             'gc-litanic-intercessions', 'gc-trisagion-1',
             'gc-kyrie-40-prayer-of-basil',
             'gc-psalm-50', 'gc-psalm-101', 'gc-prayer-of-manasseh',
-            'gc-trisagion-2', 'gc-come-worship-2',
+            'gc-trisagion-2', 'gc-come-worship-2', 'gc-come-worship-trisagion',
             'gc-sixth-tone-troparia',
             'gc-kyrie-40-maradius', 'gc-come-worship-3',
             'gc-psalm-142', 'gc-small-doxology',

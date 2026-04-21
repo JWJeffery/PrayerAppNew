@@ -204,6 +204,11 @@
       "label": "O come, let us worship (second occurrence)",
       "text": "O come, let us worship God our King.\nO come, let us worship and fall down before Christ our King and God.\nO come, let us worship and fall down before Christ Himself, our King and our God."
     },
+    "gc-come-worship-trisagion": {
+      "type": "text",
+      "label": "O come, let us worship (third occurrence — before sixth-tone troparia)",
+      "text": "O come, let us worship God our King.\nO come, let us worship and fall down before Christ our King and God.\nO come, let us worship and fall down before Christ Himself, our King and our God."
+    },
     "gc-sixth-tone-troparia": {
       "type": "sequence",
       "label": "Troparia in the Sixth Tone",
