@@ -113,12 +113,12 @@
         {
           "type": "rubric",
           "key": "typika-epistle-rubric",
-          "text": "EPISTLE: The appointed Epistle reading for the day from the Apostol is read here. (Appointed Epistle and Gospel readings from the Lectionarion/Apostol are not yet resolved in this baseline. The full lectionary appointment belongs here.)"
+          "text": "EPISTLE: The appointed Epistle reading for the day from the Apostol is read here. Consult the Apostol for the appointed pericope according to the day and tone."
         },
         {
           "type": "rubric",
           "key": "typika-gospel-rubric",
-          "text": "GOSPEL: The appointed Gospel reading for the day from the Evangelist is read here. (Appointed Epistle and Gospel readings from the Lectionarion/Evangelist are not yet resolved in this baseline. The full lectionary appointment belongs here.)"
+          "text": "GOSPEL: The appointed Gospel reading for the day from the Evangelist is read here. Consult the Evangelist for the appointed pericope according to the day and tone."
         }
       ]
     },
@@ -137,7 +137,7 @@
         {
           "type": "rubric",
           "key": "typika-dismissal-rubric",
-          "text": "Lord, have mercy. (×3)\nGlory to the Father, and to the Son, and to the Holy Spirit, both now and ever, and unto ages of ages. Amen.\n\n[Dismissal according to the day and feast. If a Priest is present: Priest gives the dismissal. If no Priest: Through the prayers of our holy fathers, Lord Jesus Christ our God, have mercy on us and save us. Amen.]"
+          "text": "Lord, have mercy. (×3)\nGlory to the Father, and to the Son, and to the Holy Spirit, both now and ever, and unto ages of ages. Amen.\n\nIf a Priest is present: the Priest gives the dismissal according to the day and feast.\nIf no Priest is present: Through the prayers of our holy fathers, Lord Jesus Christ our God, have mercy on us and save us. Amen."
         }
       ]
     }

@@ -959,7 +959,23 @@ const _interhourFixedDataCache = {};
 
             'typika':
                 'On ordinary days, the proper dismissal troparion for the Typika belongs here. ' +
-                'The full troparion text requires the Menaion and is not yet available in this office.'
+                'The full troparion text requires the Menaion.',
+
+            'interhour-first':
+                'On ordinary weekdays, the proper troparion appointment for the Interhour of the First Hour belongs here. ' +
+                'Consult the Menaion for the appointed text.',
+
+            'interhour-third':
+                'On ordinary weekdays, the proper troparion appointment for the Interhour of the Third Hour belongs here. ' +
+                'Consult the Menaion for the appointed text.',
+
+            'interhour-sixth':
+                'On ordinary weekdays, the proper troparion appointment for the Interhour of the Sixth Hour belongs here. ' +
+                'Consult the Menaion for the appointed text.',
+
+            'interhour-ninth':
+                'On ordinary weekdays, the proper troparion appointment for the Interhour of the Ninth Hour belongs here. ' +
+                'Consult the Menaion for the appointed text.'
         };
 
         if (!OFFICE_TEXT[officeKey]) {

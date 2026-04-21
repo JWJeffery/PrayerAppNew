@@ -70,11 +70,8 @@
       "id": "dismissal",
       "label": "Dismissal",
       "items": [
-        {
-          "type": "rubric",
-          "key": "dismissal-rubric",
-          "text": "Priest: Christ our true God, through the intercessions of His all-pure Mother, of all the Saints, have mercy on us and save us, as He is good and the Lover of mankind.\nChoir: Amen."
-        }
+"label": "Dismissal",
+          "text": "Through the prayers of our holy fathers, Lord Jesus Christ our God, have mercy on us and save us.\nAmen."
       ]
     }
   ]
