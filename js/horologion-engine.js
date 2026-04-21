@@ -3108,7 +3108,49 @@ function _resolveComplineFestalTheotokionRubric(officeKey, troparionItem, fallba
                         continue;
                     }
  
-                    // Sunday, Great Lent, Holy Week, Bright Week — explicit deferred rubric
+                    // ── Sunday — v6.8: corpus probe ───────────────────────────────────────
+                    if (dayOfWeek === 0) {
+                        const tone = toneResult && toneResult.tone ? toneResult.tone : null;
+                        const sundayTheotokionCorpus =
+                            typeof window !== 'undefined' &&
+                            window.OCTOECHOS &&
+                            window.OCTOECHOS.orthros &&
+                            window.OCTOECHOS.orthros.theotokion &&
+                            window.OCTOECHOS.orthros.theotokion.sunday &&
+                            window.OCTOECHOS.orthros.theotokion.sunday.tones
+                                ? window.OCTOECHOS.orthros.theotokion.sunday.tones
+                                : null;
+                        const sundayTheotokionEntry = sundayTheotokionCorpus && tone
+                            ? (sundayTheotokionCorpus[tone] || sundayTheotokionCorpus[String(tone)] || null)
+                            : null;
+
+                        if (typeof sundayTheotokionEntry === 'string' && sundayTheotokionEntry.length > 0) {
+                            section.items[i] = {
+                                type:       'text',
+                                key:        'orthros-theotokion',
+                                label:      'Theotokion (Matins)',
+                                text:       sundayTheotokionEntry,
+                                source:     'Octoechos',
+                                tone:       tone,
+                                family:     'sunday-theotokion',
+                                resolvedAs: 'orthros-sunday-theotokion-text'
+                            };
+                            continue;
+                        }
+
+                        // Corpus absent or tone entry null — honest Sunday-specific rubric
+                        const toneNote = tone ? ` Octoechos tone: Tone ${tone}.` : '';
+                        section.items[i] = {
+                            type:       'rubric',
+                            key:        'orthros-theotokion',
+                            label:      'Theotokion (Matins)',
+                            text:       `SUNDAY — Theotokion: The Theotokion at Sunday Orthros follows the resurrectional cycle of the Octoechos.${toneNote} The Sunday Matins Theotokion corpus for this tone is not yet transcribed into this path.`,
+                            resolvedAs: 'orthros-sunday-theotokion-rubric'
+                        };
+                        continue;
+                    }
+
+                    // Great Lent, Holy Week, Bright Week — explicit deferred rubric
                     section.items[i] = {
                         type:       'rubric',
                         key:        'orthros-theotokion',

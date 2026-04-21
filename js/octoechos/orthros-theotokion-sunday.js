@@ -11,9 +11,9 @@ window.OCTOECHOS.orthros.theotokion.sunday = window.OCTOECHOS.orthros.theotokion
 
 window.OCTOECHOS.orthros.theotokion.sunday.tones = {
     1: "When Gabriel announced to thee, \u201cRejoice!\u201d, O Virgin, the Master of all became incarnate within thee, the holy ark, at his cry, as the righteous David said. Thou wast shown to be more spacious than the heavens, having borne thy Creator. Glory to Him Who made His abode within thee! Glory to Him Who came forth from thee! Glory to Him Who hath set us free by thy birthgiving!",
-    2: null,
-    3: null,
-    4: null,
+    2: "All-blessed art thou, O Virgin Theotokos, for by Him Who became incarnate through thee hath hades been made captive, Adam restored, the curse annulled, Eve set free, death slain, and we have been given life. Wherefore, chanting, we cry aloud: Blessed is Christ God Who hath been thus well pleased! Glory to Thee!",
+    3: "Awed by the beauty of thy virginity and thine all-radiant purity, Gabriel, marvelling, cried out to thee, O Theotokos: “What praise can I bring which is worthy of thee? What shall I call thee? I am at a loss and filled with awe! Wherefore, as I have been commanded, I cry unto thee: Rejoice, O thou who art full of grace!”",
+    4: "The mystery hidden from before the ages and unknown even to the angels, through thee, O Theotokos, hath been revealed to those on earth: God incarnate in unconfused union, Who willingly accepted the Cross for our sake and, thereby raising up the first-formed man, hath saved our souls from death.",
     5: null,
     6: null,
     7: null,
