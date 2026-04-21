@@ -402,9 +402,401 @@ Having sharpened his sword, the iniquitous and false Moslem taketh counsel again
 Thou hast been given to me as strength against the enemy and deliverance amid trials. What I shall offer thee I know not, O pure one. Yet that which I have — my thanks — I offer unto thee, O Mistress. Accept them from thy servant, and save me.
 `
         },
-        "5": null,
-        "6": null,
-        "7": null,
-        "8": null
+     "5": {
+            label: "Canon of Supplication to the All-Holy Theotokos (Octoechos, Tone 5)",
+            text: `
+Ode I
+
+Irmos: Bringing battles to nought with His upraised arm, Christ hath overthrown horse and rider in the Red Sea, and hath saved Israel, who chanteth a hymn of victory.
+
+We are all at a loss how to offer thee fitting hymnody, O Mistress; for thy glory surpasseth all. Yet, O Bride of God, disdain not the entreaty offered to thee with fear and love.
+
+We all have recourse to the water of thine inexhaustible well-spring, O Virgin Theotokos, crying out: O all-pure one, thou sole joy of our race, ask peace for thy Churches.
+
+Glory...: God Who was well-pleased to receive flesh from thee hath appointed thee as a haven for all amid misfortunes, O pure one; wherefore, falling down before thee, we cry aloud: Grant thine aid unto thy servants!
+
+Now & ever...: Let thy supplication, O all-pure Virgin, be for thy servants alleviation, the dispelling of the passions, the eradication of sins and the washing away of all manner of pain, O Theotokos.
+
+Ode III
+
+Irmos: O Christ Who by Thy command fixed the earth upon naught and suspended its weight unsupported: establish Thou Thy Church upon the immovable rock of Thy commandments, O Thou Who alone art good and lovest mankind.
+
+Thou art the hope of mortals, their help and joy, protection and refuge, O Mistress, Mother of Life; wherefore, we pray thee: Send down thy help upon all who hymn thee, O all-pure one.
+
+O compassionate Author, God and Savior of all, we who are infirm and are beset by grievous perils set Thy Mother before Thee as an all-pure tabernacle, to supplicate Thee. Loose Thou the bonds of our transgressions.
+
+Glory...: God Who was well-pleased to receive flesh from thee hath appointed thee as a haven for all amid misfortunes, O pure one; wherefore, falling down before thee, we cry aloud: Grant thine aid unto thy servants!
+
+Now & ever...: Let thy supplication, O all-pure Virgin, be for thy servants alleviation, the dispelling of the passions, the eradication of sins and the washing away of all manner of pain, O Theotokos.
+
+Ode IV
+
+Irmos: Perceiving Thy divine condescension prophetically, O Christ, Habbakuk cried out to Thee with trembling: Thou art come for the salvation of Thy people, to save Thine anointed ones!
+
+In that thou art more exalted than all creation, O all-hymned Theotokos, God hath given thee to those on earth as a source of mediation before Him.
+
+Knowing thee to be the temple of God, O Virgin Mother, we who honor thee do earnestly pray: Shut not the portals of thy mercy against thy servants, O Theotokos!
+
+Glory...: Knowing thee to be the true raiment of God all-adorned, O Mother who knewest not wedlock, we who honor thee all pray: Array us in the vesture of remission!
+
+Now & ever...: The whole world was filled with joy at thy nativity, O all-pure one; wherefore, the great Gabriel announced to thee: Rejoice, O Virgin Mother Mary!
+
+Ode V
+
+Irmos: O Thou Who art clothed in light as with a garment: I rise at dawn unto Thee, and to Thee do I cry: enlighten Thou my gloom-enshrouded soul, O Christ, in that Thou alone art compassionate!
+
+Truly we are not chastised according to the measure of our offenses! O all-pure Virgin Mother, avert from us all the wrath of thy Son!
+
+O pure one who gavest birth, without knowing wedlock, to God Who alone brought forth light out of darkness, earnestly beseech Him, that He send down divine light upon thy servants.
+
+Glory...: With the incense of thy supplication, O pure Mother of the Creator, whom Solomon foretold as the divine bride out of Lebanon, spread fragrance upon thy servants.
+
+Now & ever...: Having given birth without seed to Christ, our justification and deliverance, O Theotokos, thou hast rendered the nature of our first parents free of the curse.
+
+Ode VI
+
+Irmos: O Christ Master, still Thou the sea of the passions which rageth with a soul-destroying tempest, and lead me up from corruption, in that Thou art compassionate.
+
+O Mistress Theotokos who gavest birth to the Creator, ask remission for thy servants, and raise us up in might, that we may hymn thee.
+
+Be thou a help to us thy servants who entreat thee with faith, O pure Mistress, in that thou art merciful, and raise us up in might, that we may hymn thee.
+
+Glory...: As thou hast the power to do what thou desirest, as is meet, O pure Mistress, look upon thy servants with a merciful eye, and raise us up out of corruption.
+
+Now & ever...: Unceasingly pouring forth streams of compassion upon those who ask, O all-immaculate and good one, rain down upon me also the light of thy Son's commandments.
+
+Ode VII
+
+Irmos: The supremely exalted Lord of our fathers quenched the flame and bedewed the children, who sang together: Blessed art Thou, O God!
+
+O Christ, Thou unfathomable Wisdom of God, have pity upon Thy servants, for the sake of her who gave Thee birth, for we unceasingly chant: Blessed art Thou, O God!
+
+O Lord, we entreat Thy goodness: heal Thou our wounds, for the sake of her who gave Thee birth, for we chant with fear: Blessed art Thou, O God!
+
+Glory...: With thy merciful eye, O Mother of God, look down and deliver thy servants from every evil circumstance, for we chant with faith: Blessed art Thou, O God!
+
+Now & ever...: Committing evil deeds, we have fallen away from thee, O Mistress; yet have we straightway found thy help, O all-pure one, when we have cried: Blessed art Thou, O God!
+
+Ode VIII
+
+Irmos: The Son and God, Who was begotten of the Father before the ages, and in latter times became incarnate of the Virgin Mother, hymn, ye priests. Ye people, exalt Him supremely for all ages!
+
+O our Mistress, bestower of good things: grant the healing of the passions unto thy servants, O Virgin, that we may unceasingly hymn and exalt thee supremely forever.
+
+O pure one who gavest birth indescribably to the Deliverer, thou didst ineffably give suck to Him while remaining a virgin. Him do thou entreat in behalf of those who hymn and glorify thee for all ages.
+
+Glory...: Forming ourselves into a most beautiful choir, we sing to thee, the radiant lamp of the Deliverer: O all ye works of the Lord, unceasingly hymn the Virgin Mary, and exalt her supremely forever!
+
+Now & ever...: O pure ewe-lamb, Virgin Maiden and Mother, cleanse me of the carnal passions, that I may be delivered from the snares of the deceiver, chanting hymns to thee, O divinely joyous one.
+
+Ode IX
+
+Irmos: Rejoice, O Isaiah! The Virgin hath conceived in her womb and borne a Son, Immanuel, both God and man. Orient is His name; and, magnifying Him, we call the Virgin blessed.
+
+Our hymnody is completed, O Christ Master, but our hope in Thee, our Creator, like Thy grace, knoweth no limitation. Wherefore, grant mighty power to Thy servants on either side, through the supplications of her who gave Thee birth.
+
+As thou art the true Mother of Life, O pure one, thou art the strength of the sick and infirm; wherefore, fleeing unto thee, O Mistress, we have found the surcease of all sorrows and have been saved by thy protection.
+
+Glory...: Beholding thy divine countenance in thine images, O Mistress, we perceive thee therein as it were clearly, in all ways hating the mindlessness of heretics on earth. And falling down before the icons, we receive healing.
+
+Now & ever...: O pure one, we sinners know thee to be an abyss of healings and a sea of grace; wherefore, we beseech thee: O all-pure one, from all want rescue us who have recourse to thy protection.
+`
+        },
+        "6": {
+            label: "Canon of Supplication to the All-Holy Theotokos (Octoechos, Tone 6)",
+            text: `
+Ode I
+
+Irmos: Traversing the deep on foot, as though it were dry land, and seeing the tyrant Pharaoh drowned, Israel cried aloud: Let us chant unto God a hymn of victory!
+
+In that thou art possessed of abundant divine grace, O Mother who knewest not wedlock, disdain not those who have recourse unto thee, ever saving them from misfortunes and tribulations.
+
+Lo! the time of despair hath arrived for me. Arise, O all-pure Mistress, and extend unto me thy helping hand; for thou hast filled the world with divine gladness.
+
+Glory...: As thou art our ally, O Theotokos, quickly grant thy mighty protection unto me who am beset by perils, and preserve me unharmed by them.
+
+Now & ever...: Death rusheth headlong upon my soul, and the temptations of those who hate me have surrounded me like adders, to destroy me; but do thou save me, O Theotokos.
+
+Ode III
+
+Irmos: My mouth hath been enlarged over mine enemies, for my heart hath been made steadfast in the Lord.
+
+In that thou gavest birth to Life, O Theotokos, enliven my soul, which hath been slain by transgressions.
+
+From every temptation preserve those who have recourse unto thee, O Theotokos, our hope.
+
+Glory...: Save me from those perils which rise up against me, O all-immaculate Mother of my Lord.
+
+Now & ever...: O thou who by thy divine birthgiving dost grant salvation to the world, deliver me from misfortunes.
+
+Ode IV
+
+Irmos: The prophet heard of Thine advent, O Lord, and was afraid, for Thou didst desire to be born of the Virgin and reveal Thyself to men; and he said: "I heard report of Thee and was afraid." Glory to Thy power, O Lord!
+
+The strength of my soul hath grown weak through poverty, O Theotokos, and the cruel darkness which ariseth from transgressions hath fallen upon me; but as thou art the light-bearing cloud of God, look down and illumine me, I pray.
+
+As thou art a calm haven, O most immaculate one, transform the storms of mine evil deeds and the tumult of my transgressions into the tranquility of salvation, for, roaring like lions, they seek to slay me. Deliver me from destruction by them, I pray.
+
+Ode V
+
+Irmos: O Christ Who shineth Thy light upon the world, illumine the heart of me who cry to Thee out of the night, and save me.
+
+Unafraid of the assaults of men, we glorify thee, the shelter of salvation, O most immaculate Mother of the Word.
+
+Having thee as an insuperable rampart, O all-pure one, we are delivered from the uprisings of temptations and grief.
+
+Glory...: Rescue me from the tongue of evil men, O pure one, for they have sharpened it like a razor, to wreak bitter destruction upon my soul.
+
+Now & ever...: Earnestly do I fall down before thee, praying: As thou art the Mother of my Creator, free me from the misfortunes which encompass me.
+
+Ode VI
+
+Irmos: Slain by the monster of sin, I cry to Thee, O Christ: Free me from corruption, as Thou didst the prophet.
+
+Tasting bitterness, I have become a stranger to divine sweetness, O all-pure one; wherefore, I cry unto thee: Grant me thy help.
+
+The darkness of the passions hath made me the slave of corruption; wherefore, free me, O Mistress who gavest birth to the Light.
+
+Glory...: With faith and concord do I confess thee, O all-pure one, and, delivered from sorrow by thee, I offer thee sacrifice.
+
+Now & ever...: The mouths of the unjust have been opened against me, O Mistress; wherefore, as thou art my helper, free me quickly from them.
+
+Ode VII
+
+Irmos: The Angel caused the furnace to pour forth dew upon the pious youths, and the command of God, which consumed the Chaldæans, prevailed upon the tyrant to cry out: Blessed art Thou, O God of our fathers!
+
+O all-holy Virgin, do thou thyself free my soul from the temptations which have now surrounded it like fat bulls.
+
+Earnestly defending those in misfortune and grief, O Theotokos, ever grant them joy.
+
+Glory...: As thou art an indestructible shelter for all, O Virgin, protect me who am wholly overcome by grief and despair for my deeds.
+
+Now & ever...: By thine intercession are we delivered from misfortunes and sorrows, and we find great riches which are inexhaustible.
+
+Ode VIII
+
+Irmos: From the flame didst Thou pour forth dew upon the venerable ones, and didst consume the sacrifice of the righteous one with water; for Thou, O Christ, dost do all things soever Thou desirest. Thee do we exalt supremely for all ages!
+
+Consumed am I by the afflictions of men, O Theotokos, and I pray: Deliver me from their vain counsel.
+
+I have been vanquished in grief by my temptations, O Mistress, and I pray: Preserve me unharmed by them.
+
+Glory...: O pure one, save me from the lying man, from his tongue, mouth and tyranny, and from all want.
+
+Now & ever...: Led astray is my character, and, as I have no response, I cry to the Theotokos: Deliver me from all evils.
+
+Ode IX
+
+Irmos: O Virgin who received the angel's salutation and gavest birth to thine own Creator, save those who magnify thee.
+
+Be thou merciful unto me amid the griefs of life, O Theotokos, and save me from misfortunes who now flee unto thee.
+
+Truly thou, alone upon the earth and the sea, hast been shown to be an indestructible shelter for those who flee to thee with unwavering soul.
+
+Glory...: By thine entreaties, O most hymned one, do thou grant freedom unto me who have mindlessly become a slave through all manner of evil falls.
+
+Now & ever...: Having acquired thee as my hope and steadfast help, O pure one, I bring this hymn to an end with faith, magnifying thee as the Theotokos.
+`
+        },
+        "7": {
+            label: "Canon of Supplication to the All-Holy Theotokos (Octoechos, Tone 7)",
+            text: `
+Ode I
+
+Irmos: Unto Him Who crushed battles with His arm and drowned the mounted captains let us sing, as to our God and Deliverer, for He hath been glorified.
+
+We entreat thee, O all-pure one, the cause of our salvation and divine deliverance: Pray thou that we be saved.
+
+Wholly sunk am I in grievous temptations, in misfortunes and transgressions; and I cry to thee, O all-pure one: Save me, thy servant!
+
+Glory...: We beseech thee, the pure Virgin and the Mother of the Creator: Deliver us from all the oppression of the demons.
+
+Now & ever...: O thou who ineffably gavest birth in the flesh to the Word, entreat Christ our God, the Author of life, that we be saved.
+
+Ode III
+
+Irmos: The Church of Christ hath been made steadfast through faith; for it unceasingly crieth out in hymns, chanting: Holy art Thou, O Lord! My spirit doth hymn Thee!
+
+Treading the path of most pernicious evil, I have not found the path of my salvation. Do thou guide me to it, O all-immaculate Mistress.
+
+Thee alone, O most immaculate one, do I describe as my might and confirmation, my help and hope. Be thou for me a helper on the day of my departure.
+
+Glory...: I ever beseech thee, O all-immaculate one: At the hour of my death stand thou before me, and deliver thy servant from torment.
+
+Now & ever...: Thou wast ineffably born of the Virgin, O Lord our Savior, hast revealed Thyself as Thou didst will, and restored the world.
+
+Ode IV
+
+Irmos: I heard report of Thee and was afraid; I understood Thy works and was filled with awe, O Lord.
+
+Having violated the precepts of my Master, I am shown to be easy prey to mine enemies. Deliver me, O Mistress.
+
+At the hour of my death deliver me, O all-pure one, and save my passion-fraught soul from the demons.
+
+Glory...: O all-pure Mistress, break asunder the bonds of my transgressions, and in thy supplications be for me a mediator for life everlasting.
+
+Now & ever...: We hymn thee who even after giving birth didst remain a virgin, O all-pure one, and we glorify thee as the Mother of our God.
+
+Ode V
+
+Irmos: Rising at dawn unto Thy glory and laudation, O Word, we unceasingly praise the image of Thy Cross, which Thou hast given us as a weapon to help us.
+
+O good Virgin, thou haven amid the storm for those who are grievously troubled, thou portal of salvation for those who are saved by faith: Save me, thy servant!
+
+Richly show forth upon me, thy servant, thy manifold compassions, O Virgin Theotokos, delivering me from the dread judgment which is to come.
+
+Glory...: The inconstant night of the passions besetteth my soul and sendeth it into the pit of destruction. With the light of thy supplication, O Theotokos, save me, thy servant.
+
+Now & ever...: O all-holy and joyous Virgin who ineffably gavest birth to the Word in time: Entreat Him do save our souls.
+
+Ode VI
+
+Irmos: Jonah cried out from the belly of hades: Lead up my life from corruption! And we cry out to Thee: O almighty Savior, have mercy on us!
+
+Thee do we have as a sure aid amid perils, our mighty salvation amid tribulations, a place of rest for us amid all griefs, and our help amid misfortunes, O Ever-virgin.
+
+O all-pure one, show thyself to be the preserver of my whole life: deliver me from the demons at the hour of my death, and grant me rest after my death.
+
+Glory...: O Virgin Theotokos, thou art the beauty of the honorable and holy angels, and the joy of all men. Do thou guide me unto life.
+
+Now & ever...: O all-immaculate one, heal thou my wretched soul, which hath become incurably sick through the deceptions of life and the closing of many doors.
+
+Ode VII
+
+Irmos: Cast into the fiery furnace, the venerable children transformed the fire into dew, crying out thus in hymnody: Blessed art Thou, O Lord God of our fathers!
+
+Calling to mind the multitude of my transgressions, I am in despair, O all-immaculate one. Wherefore, I cry unto thee: Help me, lest I perish utterly!
+
+Knowing thee to be the Mother of Life, O pure one, I cry to thee: Deliver me from the death of the soul, and vouchsafe unto me eternal life!
+
+Glory...: O all-immaculate one, from misfortunes and the passions, from pain and affliction, from the offenses of life and the unquenchable eternal fire do thou deliver those who faithfully honor thee with hymns.
+
+Now & ever...: Every tongue doth glorify thee, O pure and all-hymned Theotokos, who art the glory and boast of our race and the guide of the lost.
+
+Ode VIII
+
+Irmos: O ye priests and servants, and ye souls of the righteous, hymn and bless the Creator of the world, Who is awesome to the cherubim and wondrous to the seraphim, and exalt Him supremely forever.
+
+My whole life have I wasted in slothfulness, utter wretch that I am; and now I am cast into confusion and have drawn nigh unto mine end. Help me, O Mistress!
+
+Thou art the refuge of sinners and the setting aright of those who have been brought low, O Mistress; wherefore, I flee to thy protection. Save me!
+
+Glory...: As thy supplication never faileth, O most immaculate Mistress of the world, from the judgment which is to come deliver those who with faith venerate thine image.
+
+Now & ever...: Every tongue which rendereth glory hymneth thee, O Virgin Bride of God, for thou gavest birth to the all-hymned God. Him do thou unceasingly entreat, that He save the souls of those who hymn thee.
+
+Ode IX
+
+Irmos: O ye faithful, with hymns let us magnify the Theotokos, who became a mother in manner transcending nature, is a Virgin by nature, and is blessed among women!
+
+They who with faith flee beneath thy lovingkindness are delivered from the sorrowful tribulations of life; wherefore, I also have fled to thy protection, O Theotokos.
+
+O pure one, thou mighty helper, invincible bulwark against griefs, save me from sinful passions and from the everlasting fire.
+
+Glory...: O pure Virgin, with the radiant effulgence of the Word Who shone forth from thee illumine me, save me and rescue me from torments, in that thou art good.
+
+Now & ever...: In thine arms thou dost carry Him Who sustaineth all things. Him do thou entreat, O pure one, that He save us who are beset by the malice of him who is alien to us.
+`
+        },
+        "8": {
+            label: "Canon of Supplication to the All-Holy Theotokos (Octoechos, Tone 8)",
+            text: `
+Ode I
+
+Irmos: Let us chant unto the Lord, Who led His people through the Red Sea, for He alone hath gloriously been glorified.
+
+All-glorious things have been said of thee, O all-pure one, who alone art the glory of the faithful; wherefore, by thy supplications show me, who glorify thee, to be a partaker of the glory which is to come, O all-holy and most hymned Virgin.
+
+Blessed is the Fruit of thy womb, O all-pure, most pure and blessed one, whereby all of us mortals have been delivered from the curse. O the ineffable wonder, the indescribable report, the salvation of the all the faithful!
+
+Glory...: A multitude of angels, the assembly of the disciples and prophets, the company of the martyrs and Thy venerable ones ever entreat Thee, O Lord. For the sake of the Theotokos grant us forgiveness of sins, in that Thou lovest mankind.
+
+Now & ever...: Thee, the all-pure one, who received in thy womb the unbearable Fire, do I entreat with faith, that I may be delivered and rescued from the fire of Gehenna, and by thy right acceptable supplications may be freed from everlasting torment.
+
+Ode III
+
+Irmos: O Lord, Fashioner of the vault of heaven and Creator of the Church: establish me in Thy love, O summit of desire, confirmation of the faithful, Who alone lovest mankind.
+
+Having fallen away from a life of purity, O all-pure one, I have become like unto the dumb beasts and am wholly condemned. O thou who gavest birth to the Judge, deliver and save me from all damnation.
+
+O pure Maiden, grant me groaning, spiritual tears and constant compunction, that I may weep over the passions which beset me because of mine indifference, O thou who art full of the grace of God.
+
+Glory...: The ranks of heaven, the ministering spirits, the assembly of prophets and apostles, and Thy martyrs unceasingly beseech Thee, O Compassionate One: Grant remission of transgressions unto Thy people.
+
+Now & ever...: With arrows of sin hath the enemy wounded my soul; he hath defiled my heart with lusts, and drawn me away from the straight path. Wherefore, I cry to thee, O Virgin: Turning me, heal and save me.
+
+Ode IV
+
+Irmos: Thou art my strength, O Lord, Thou art my power; Thou art my God, Thou art my joy, Who, without leaving the bosom of the Father, hast visited our lowliness. Wherefore, with the Prophet Habbakuk I cry unto Thee: Glory to Thy power, O Thou Who lovest mankind!
+
+Rend asunder the record of my wicked sins with the divine spear which pierced the divine side of Him Who desired to become a man through thee, O all-pure one, and entreat Him to write me in the Book of the Saved, even though I have foolishly estranged myself from Him.
+
+Let me glorify thee with cries of thanksgiving, let me magnify thee with divine love, O all-immaculate one. O thou who by thy great birthgiving hast exalted all who have estranged themselves, vouchsafe divine forgiveness unto me who have greatly estranged myself and have fallen grievously.
+
+Glory...: In thee were the laws of nature suspended; for in manner transcending nature thou gavest birth to God the Word. Wherefore, I entreat thee with faith, O all-immaculate one: By thy supplications save and convert me who have greatly sinned, surpassing human nature, and have gone far away from God.
+
+Now & ever...: As thou art merciful, O all-pure one, do thou now entreat Him Who is full of lovingkindness, that He vouchsafe unto us divine lovingkindness; for having unmercifully acquired unmerciful ways, I have become worthy of everlasting fire.
+
+Ode V
+
+Irmos: Wherefore hast Thou turned Thy face from me, O Light never-waning? And why hath a strange darkness covered me, wretch that I am? But turn me, and direct my steps to the light of Thy commandments, I pray.
+
+Generations of generations now bless thee, the ever-blessed one, and the hosts of heaven praise thee as the one who hath united those below with those on high, the only one blessed among women, the restoration of fallen Adam.
+
+O good one who gavest birth to the Word, beseech the Good One Who hath delivered us from irrationality, that I may remain whole, may attain an unshakable stand, and may journey well, doing those things which are pleasing unto God.
+
+Glory...: O Word Who didst shed Thine own blood upon the Cross in the surpassing depths of Thy mercy, dry up the abyss of my passions, and for the sake of the Theotokos vouchsafe that I may please Thee, my God, in humility.
+
+Now & ever...: O Virgin Mother and Maiden, who gavest birth to the Infinite One in the flesh, the glory of the angels and the wounding of the demons: Vouchsafe divine healing unto my heart which hath been wounded by sin, O Bride of God.
+
+Ode VI
+
+Irmos: Cleanse me, O Savior, for many are my transgressions; and lead me up from the abyss of evils, I pray, for to Thee have I cried, and Thou hast hearkened to me, O God of my salvation.
+
+In thee hath human nature found mercy, O merciful Mistress; for thou gavest birth to the Merciful One, O all-pure one. Wherefore, I beseech thee: Have mercy upon my soul!
+
+The ranks of the incorporeal beings, of the martyrs, prophets and Thine apostles, entreat Thee, O Christ: For the sake of her who gave Thee birth, save Thy people from every evil circumstance.
+
+Glory...: O unploughed earth who gavest rise to the Husbandman and Creator of all, through divine understanding show forth as fertile my soul which hath been rendered hard and stony by the passions.
+
+Now & ever...: I have violated the commandments which lead me to God, and without desiring it have become enslaved to wicked passions; wherefore, I entreat thee, O Ever-virgin: Rescue me from their dominion.
+
+Ode VII
+
+Irmos: Once, in Babylon, the fire stood in awe of the condescension of God; wherefore, the youths, dancing with joyous step in the furnace, as in a meadow, chanted: Blessed art Thou, O God of our fathers!
+
+By thine ineffable birthgiving thou hast vouchsafed unto us ineffable things, O Theotokos; wherefore, deliver me from terrifying torment, and fill me with ineffable joy, that I may ever hymn thee who art most hymned.
+
+Having wasted my life in slothfulness, I have become barren, and I fear interrogation and the unquenchable fire of Gehenna. O Theotokos who gavest birth to the unbearable Fire, by thy supplications persuade Him to deliver me.
+
+Glory...: Surpassing all wonders is the miracle of thy birthgiving, O pure Virgin; wherefore, I cry unto thee, O Theotokos: Show forth upon me the wonders of thy mercies; deliver me from the coming wrath, and save me.
+
+Now & ever...: O Christ my Savior, for the sake of her who gave Thee birth have pity on me who have lived in slothfulness and have spurned Thy holy laws and Thine honored precepts, in that Thou art a beneficent and greatly merciful God.
+
+Ode VIII
+
+Irmos: Madly did the Chaldæan tyrant heat the furnace sevenfold for the pious ones; but, beholding them saved by a higher Power, he cried out to the Creator and Deliverer: Ye children, bless; ye priests, hymn; ye people, exalt Him supremely for all ages!
+
+Give life to my soul, for it is dying; raise it up, for it hath fallen; heal it, for it hath been wounded. Grant peace to my mind; still thou the waves of temptations, O Virgin; and save me who cry: Ye children, bless; ye priests, hymn; ye people, exalt Him forever!
+
+Like the thief I cry out to Thee: Have mercy upon me, O Thou Who lovest mankind! Like the harlot, I weep and cry aloud: I have sinned like the prodigal of old! For the sake of the Theotokos accept me, a wretched penitent, that with zeal I may cry out to Thee: Ye priests, hymn; ye people, exalt Him supremely forever!
+
+Glory...: As befitteth a servant, I cry out to thee, O most hymned Theotokos: With the countless noetic hosts, with the prophets and the venerable, the apostles and the martyrs, make thou entreaty for all men who chant in godly manner: Ye priests, hymn; ye people, exalt Him supremely forever!
+
+Now & ever...: O most immaculate Theotokos, thou art more honorable than the angelic ranks of heaven, for through thy virginal womb which knew not wedlock thou gavest birth to their Creator and Lord in two natures, without confusion or change, incarnate in a single Hypostasis, O Theotokos.
+
+Ode IX
+
+Irmos: Every ear trembleth to hear of the ineffable condescension of God, for the Most High willingly came down even to the flesh, becoming man through the Virgin's womb. Wherefore, we the faithful magnify the all-pure Theotokos.
+
+O divine couch of Solomon, upon which God hath rested, and who art now surrounded by sixty mighty utterances from the divine Scriptures: By thy power, O pure Ever-virgin, preserve me unharmed, who am ever surrounded by myriads of demons.
+
+O thou who pourest forth divine sweetness, O thou who hast given birth to the Sweetness of all, sweeten thou my soul which hath become bitter through the venom of the serpent, by thy mediation ever removing bitter harm from me, O unashamed intercessor for the faithful.
+
+Glory...: O Jesus, thou Sun of glory, enlighten my wretched soul through the entreaties of the pure divine Maiden who gave Thee birth, of the incorporeal ministers, Thine honored apostles, the holy hierarchs and prophets, Thy chosen martyrs and the venerable.
+
+Now & ever...: Wholly condemned and at a loss what to do, I fear Thy dread second coming, O only King and Lord; wherefore, before the end I cry unto Thee: For the sake of her who gave Thee birth take pity upon me and save me, O Merciful and Good One Who lovest mankind.
+`
+        }
     }
 };
