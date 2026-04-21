@@ -266,9 +266,7 @@
         { "type": "text", "key": "gc-loh-s6", "text": "Stichos 6: Praise ye God in His saints, praise Him in the firmament of His power.\nO Lord of hosts, be with us, for beside You we have no other helper in adversity; O Lord of hosts, have mercy on us." },
         { "type": "text", "key": "gc-loh-glory", "text": "Glory to the Father, and to the Son, and to the Holy Spirit.\nO Lord, if we had not had Your saints as intercessors, and Your goodness being merciful to us, how should we have dared, O Savior, to hymn You, Whom angels do unceasingly glorify? O You that knows the hearts, spare our souls." },
         { "type": "text", "key": "gc-loh-now", "text": "Both now and ever, and unto the ages of ages. Amen.\nGreatly multiplied, O Theotokos, are my sins, and unto You have I fled, O pure one, imploring salvation. Do You visit mine enfeebled soul, and pray to Your Son and our God that He grant me forgiveness for the evil I have done, O You only blessed one." },
-        { "type": "text", "key": "gc-loh-theotokion-1", "text": "O all-holy Theotokos, throughout my lifetime forsake me not; to human protection entrust me not; but do You Yourself defend me and have mercy on me." },
-        { "type": "text", "key": "gc-loh-theotokion-2", "text": "All my hope I place in You, O Mother of God; keep me under Your protection." }
-      ]
+        ]
     },
     "gc-closing-prayer-block": {
       "type": "sequence",

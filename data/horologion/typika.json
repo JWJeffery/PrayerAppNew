@@ -97,6 +97,11 @@
           "label": "Troparion of the Day",
           "status": "unresolved",
           "note": "Variable. Resolved via existing Menaion/Octoechos troparion stack by HorologionEngine."
+        },
+        {
+          "type": "rubric",
+          "key": "typika-kontakion-rubric",
+          "text": "KONTAKION: The appointed kontakion of the day is read here. On ordinary weekdays, the kontakion of the saint from the Menaion; on Sundays and great feasts, the kontakion of the feast. If no proper kontakion is appointed, the kontakion to the Theotokos is read: 'To thee, the Champion Leader, we thy servants dedicate a feast of victory and of thanksgiving, as ones rescued out of sufferings, O Theotokos: but as thou art one with might which is invincible, from all dangers that can be do thou deliver us, that we may cry to thee: Rejoice, thou Bride unwedded.'"
         }
       ]
     },
