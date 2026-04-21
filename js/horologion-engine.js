@@ -367,7 +367,6 @@ let _greatComplineFixedData = null;
 
 // ── v7.1: Octoechos Great Compline canon corpus (null-sentinel) ──────────────
 // window.GC_CANON_OCTOECHOS is loaded from js/octoechos/gc-canon-theotokos.js.
-// All eight tone slots are null sentinels until the corpus transcription tranche.
 // The engine probes this object and degrades to the gc-canon-octoechos rubric
 // slot when the sentinel is null. No engine redesign will be required when
 // corpus text is added: replace null with the text object per tone.

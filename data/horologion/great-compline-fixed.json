@@ -462,13 +462,13 @@
     "gc-canon-octoechos": {
       "type": "rubric",
       "label": "Canon (Octoechos — Theotokos)",
-      "text": "The canon appointed at Great Compline today is the canon to the Theotokos from the Octoechos. Following the canon, the appointed stichera are sung. Octoechos Great Compline canon corpus is not yet in this build. See the Octoechos for the full text.",
+      "text": "The canon appointed at Great Compline today is the canon to the Theotokos from the Octoechos. Following the canon, the appointed stichera are sung.",
       "resolvedAs": "gc-canon-octoechos"
     },
     "gc-canon-menaion": {
       "type": "rubric",
       "label": "Canon (Menaion)",
-      "text": "A qualifying feast (rank 1–2) is commemorated today. The Menaion canon for the saint of the day is appointed at Great Compline in place of the Octoechos Theotokos canon. Following the canon, the appointed stichera for the commemoration are sung. Menaion canon corpus is not yet loaded in this build. See the Menaion for the full canon.",
+      "text": "A qualifying feast (rank 1–2) is commemorated today. The Menaion canon for the saint of the day is appointed at Great Compline in place of the Octoechos Theotokos canon. Following the canon, the appointed stichera for the commemoration are sung.",
       "resolvedAs": "gc-canon-menaion"
     }
   }
