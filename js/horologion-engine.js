@@ -5990,12 +5990,47 @@ async function _resolveTypikaSlots(sections, dateObj) {
                 continue;
             }
 
+            if (item.key === 'typika-kontakion-rubric' && dayOfWeek === 0) {
+                const SUNDAY_RESURRECTIONAL_KONTAKIA = {
+                    1: "Thou didst arise from the grave in glory as God * and thus raised up the world with Thee; * and mortal nature singeth Thy praises as God, * and death hath disappeared; * Adam danceth, O Master, * and now Eve, freed from her chains, * rejoiceth as she cries aloud: ** It is Thee, O Christ, who grantest the Resurrection to all.",
+                    2: "Thou didst arise from the tomb, * O all-powerful Savior, * and seeing the marvel Hades was struck with fear, * the dead arose, and creation with Adam seeing this rejoiceth with Thee, ** therefore the world doth glorify Thee, my Savior."
+                };
+                const tone = toneResult && toneResult.tone;
+                if (tone && SUNDAY_RESURRECTIONAL_KONTAKIA[tone]) {
+                    section.items[i] = {
+                        type:       'text',
+                        key:        'typika-kontakion-rubric',
+                        label:      'Kontakion',
+                        text:       SUNDAY_RESURRECTIONAL_KONTAKIA[tone],
+                        resolvedAs: 'typika-sunday-resurrectional-kontakion-tone-' + tone
+                    };
+                }
+                continue;
+            }
+
             if (item.key === 'troparion-of-the-day') {
                 const resolved = await _resolveLittleHourSeasonalTroparionSlot('typika', dayOfWeek, dateObj, toneResult);
                 if (resolved) {
                     section.items[i] = Object.assign({}, resolved, {
                         key: 'troparion-of-the-day'
                     });
+                }
+                continue;
+            }
+            if (item.key === 'typika-kontakion-rubric' && dayOfWeek === 0) {
+                const SUNDAY_RESURRECTIONAL_KONTAKIA = {
+                    1: "Thou didst arise from the grave in glory as God * and thus raised up the world with Thee; * and mortal nature singeth Thy praises as God, * and death hath disappeared; * Adam danceth, O Master, * and now Eve, freed from her chains, * rejoiceth as she cries aloud: ** It is Thee, O Christ, who grantest the Resurrection to all.",
+                    2: "Thou didst arise from the tomb, * O all-powerful Savior, * and seeing the marvel Hades was struck with fear, * the dead arose, and creation with Adam seeing this rejoiceth with Thee, ** therefore the world doth glorify Thee, my Savior."
+                };
+                const tone = toneResult && toneResult.tone;
+                if (tone && SUNDAY_RESURRECTIONAL_KONTAKIA[tone]) {
+                    section.items[i] = {
+                        type:       'text',
+                        key:        'typika-kontakion-rubric',
+                        label:      'Kontakion',
+                        text:       SUNDAY_RESURRECTIONAL_KONTAKIA[tone],
+                        resolvedAs: 'typika-sunday-resurrectional-kontakion-tone-' + tone
+                    };
                 }
                 continue;
             }
