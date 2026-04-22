@@ -3449,12 +3449,18 @@ function _resolveComplineFestalTheotokionRubric(officeKey, troparionItem, fallba
                     const toneNote = tone ? ` Octoechos tone: ${tone}.` : '';
 
                     if (isBrightWeek) {
+                        const _bwText =
+                            'Having fallen asleep in the flesh, as a mortal, O King and Lord, on the third day ' +
+                            'Thou didst rise again, raising up Adam from corruption, and abolishing death: ' +
+                            'O Pascha of incorruption, Salvation of the world!';
                         section.items[i] = {
-                            type:       'rubric',
+                            type:       'text',
                             key:        'exapostilarion',
-                            label:      'Exapostilarion (Svetilen)',
-                            text:       'BRIGHT WEEK — Exapostilarion: The Paschal Exapostilarion (“Holy is the Lord our God”) is appointed. Full Bright Week Exapostilarion text is not yet embedded in this path.',
-                            resolvedAs: 'orthros-bright-week-exapostilarion-rubric'
+                            label:      'Exapostilarion (Svetilen) — Paschal / Bright Week, Tone III',
+                            text:       _bwText + '\n\n' + _bwText + '\n\n' + _bwText,
+                            source:     'Pentecostarion',
+                            tone:       3,
+                            resolvedAs: 'orthros-bright-week-exapostilarion-text'
                         };
                         continue;
                     }
