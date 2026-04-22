@@ -5995,7 +5995,9 @@ async function _resolveTypikaSlots(sections, dateObj) {
                     1: "Thou didst arise from the grave in glory as God * and thus raised up the world with Thee; * and mortal nature singeth Thy praises as God, * and death hath disappeared; * Adam danceth, O Master, * and now Eve, freed from her chains, * rejoiceth as she cries aloud: ** It is Thee, O Christ, who grantest the Resurrection to all.",
                     2: "Thou didst arise from the tomb, * O all-powerful Savior, * and seeing the marvel Hades was struck with fear, * the dead arose, and creation with Adam seeing this rejoiceth with Thee, ** therefore the world doth glorify Thee, my Savior.",
                     3: "Thou didst arise today, O Merciful One, * and hast led us out from the gates of death. * Adam danceth today, and Eve rejoiceth. * The Prophets also, along with Patriarchs, ** ceaselessly praise the divine might of Thine authority.",
-                    4: "My Savior and Redeemer * from the grave, as God, * hath raised those born on earth from their chains, * and shattered the gates of Hades; ** and as Lord arisen on the third day."
+                    4: "My Savior and Redeemer * from the grave, as God, * hath raised those born on earth from their chains, * and shattered the gates of Hades; ** and as Lord arisen on the third day.",
+                    5: "Thou didst descend into Hades, O my Savior, * and having shattered its gates, as All-powerful, * Thou didst raise the dead with Thyself, as Creator, * and didst deliver Adam from the curse, * O Lover of mankind. ** Therefore, we all cry to Thee: \"Save us, O Lord!\"",
+                    6: "Having raised all the dead from the valleys of darkness * by His life-giving hand, * Christ our God hath granted resurrection to the race of mankind. * For He is the Savior of all, * the Resurrection and the Life ** and the God of all."
                 };
                 const tone = toneResult && toneResult.tone;
                 if (tone && SUNDAY_RESURRECTIONAL_KONTAKIA[tone]) {
