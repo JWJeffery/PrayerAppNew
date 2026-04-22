@@ -1,25 +1,25 @@
-// js/octoechos/orthros-exapostilarion-great-lent-weekday.js
-// Great Lent Weekday Exapostilarion (Svetilen) — Orthros / Matins
-// Monday–Friday and Saturday. Saturday data added v6.x tranche.
-// Tone 1: null — body is abbreviated in the supplied source witness;
-//         full text requires a complete witness before it can be entered.
-// Tones 2–8: transcribed from the supplied source witness.
+// js/octoechos/orthros-exapostilarion-weekday.js
+// Ordinary Weekday Exapostilarion (Svetilen) — Orthros / Matins
+// Monday–Friday. One body per tone (Tones 1–8).
+// Day differentiation is carried by endings, not separate daily bodies.
+// Source: Lambertsen Octoechos, "Hymns of Light (Svetilen) at Matins
+//         in the Eight Tones from the Oktoechos" (Daily Exapostilaria section).
 
 window.OCTOECHOS = window.OCTOECHOS || {};
 window.OCTOECHOS.orthros = window.OCTOECHOS.orthros || {};
 window.OCTOECHOS.orthros.exapostilarion = window.OCTOECHOS.orthros.exapostilarion || {};
 
-window.OCTOECHOS.orthros.exapostilarion.greatLentWeekday = {
+window.OCTOECHOS.orthros.exapostilarion.weekday = {
 
     tones: {
-        1: null,
-        2: 'Send forth Thine eternal light, O Christ my God, * and illumine the hidden eyes of my heart,',
-        3: 'Send forth Thy light, O Christ my God, * and illumine my heart,',
-        4: 'O Thou who dost make light shine forth upon Thy world, * cleanse my darkened soul from every sin,',
-        5: 'O Lord the Giver of Light, * send down Thy light and illumine my heart,',
-        6: 'Send down upon our souls * Thine everlasting light,',
-        7: 'Stir me up to sing Thy praises, O Lord, * and teach me to do Thy will, O Holy One,',
-        8: 'Thou art Light, O Christ, * fill me with Thine effulgent radiance,'
+        1: 'O Christ who doth make the light to shine, * cleanse Thou my soul from every sin.',
+        2: 'Send forth Thine eternal light, O Christ my God, * and illumine the hidden eyes of my heart.',
+        3: 'Send forth Thy light, O Christ my God, * and illumine my heart.',
+        4: 'O Thou who dost make light shine forth upon Thy world, * cleanse my darkened soul from every sin.',
+        5: 'O Lord the Giver of Light, * send down Thy light and illumine my heart.',
+        6: 'Send down upon our souls * Thine everlasting light.',
+        7: 'Stir me up to sing Thy praises, O Lord, * and teach me to do Thy will, O Holy One.',
+        8: 'Thou art Light, O Christ, * fill me with Thine effulgent radiance.'
     },
 
     firstEndings: {
@@ -31,22 +31,6 @@ window.OCTOECHOS.orthros.exapostilarion.greatLentWeekday = {
     },
 
     secondEnding: 'By the prayers of Thy saints, O Lord, and save me.',
-    thirdEnding:  'By the prayers of the Theotokos, O Lord, and save me.',
-
-    saturdayFirstEnding:  'By the prayers of Thy saints, O Lord, and save me.',
-    saturdaySecondEnding: 'By the prayers of the Theotokos, O Lord, and save me.',
-
-    saturdayReposedThird:
-        'As Thou art God who hast dominion over both the living and the dead, * ' +
-        'grant rest to Thy servants in the dwelling-place of the elect, * ' +
-        'for though they have sinned, O Savior, ** yet they did not turn away from Thee.',
-
-    firstSaturdaySpecial:
-        'O crowned Saint, thou who standest now with the angels before the throne of the King of all, ' +
-        'pray that we who faithfully celebrate thy memory may receive remission of our sins.',
-
-    fifthSaturdaySpecial:
-        'The mystery hidden from all ages and unknown to the angels is made manifest through thee, ' +
-        'O Theotokos, to those on earth.'
+    thirdEnding:  'By the prayers of the Theotokos, O Lord, and save me.'
 
 };

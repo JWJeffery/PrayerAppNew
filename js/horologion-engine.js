@@ -3759,7 +3759,76 @@ function _resolveComplineFestalTheotokionRubric(officeKey, troparionItem, fallba
                         continue;
                     }
 
-                    // ── Ordinary weekday deferral (unchanged) ─────
+                    // ── Ordinary weekday Exapostilarion — Monday–Friday ───────
+                    if (dayOfWeek >= 1 && dayOfWeek <= 5) {
+                        const _wdDayMap = { 1: 'monday', 2: 'tuesday', 3: 'wednesday', 4: 'thursday', 5: 'friday' };
+                        const _wdDayKey = _wdDayMap[dayOfWeek];
+
+                        const _wdCorpus =
+                            window.OCTOECHOS &&
+                            window.OCTOECHOS.orthros &&
+                            window.OCTOECHOS.orthros.exapostilarion &&
+                            window.OCTOECHOS.orthros.exapostilarion.weekday
+                                ? window.OCTOECHOS.orthros.exapostilarion.weekday
+                                : null;
+
+                        if (!_wdCorpus) {
+                            section.items[i] = {
+                                type:       'rubric',
+                                key:        'exapostilarion',
+                                label:      'Exapostilarion (Svetilen)',
+                                text:       'ORDINARY WEEKDAY — Exapostilarion: Corpus not loaded. Ensure js/octoechos/orthros-exapostilarion-weekday.js is present in index.html before horologion-engine.js.',
+                                resolvedAs: 'orthros-ordinary-weekday-exapostilarion-corpus-unavailable'
+                            };
+                            continue;
+                        }
+
+                        if (!tone) {
+                            section.items[i] = {
+                                type:       'rubric',
+                                key:        'exapostilarion',
+                                label:      'Exapostilarion (Svetilen)',
+                                text:       'ORDINARY WEEKDAY — Exapostilarion: Tone could not be determined for this date.',
+                                resolvedAs: 'orthros-ordinary-weekday-exapostilarion-tone-unavailable'
+                            };
+                            continue;
+                        }
+
+                        const _wdBody = _wdCorpus.tones[tone] || null;
+
+                        if (!_wdBody) {
+                            section.items[i] = {
+                                type:       'rubric',
+                                key:        'exapostilarion',
+                                label:      'Exapostilarion (Svetilen)',
+                                text:       `ORDINARY WEEKDAY — Exapostilarion (Tone ${tone}): Body text not found in corpus for this tone.`,
+                                resolvedAs: 'orthros-ordinary-weekday-exapostilarion-tone-body-missing'
+                            };
+                            continue;
+                        }
+
+                        const _wdFirstEnding  = _wdCorpus.firstEndings[_wdDayKey];
+                        const _wdSecondEnding = _wdCorpus.secondEnding;
+                        const _wdThirdEnding  = _wdCorpus.thirdEnding;
+
+                        const _wdFullText =
+                            _wdBody + ' ' + _wdFirstEnding +
+                            '\n\n' + _wdBody + ' ' + _wdSecondEnding +
+                            '\n\n' + _wdBody + ' ' + _wdThirdEnding;
+
+                        section.items[i] = {
+                            type:       'text',
+                            key:        'exapostilarion',
+                            label:      `Exapostilarion (Svetilen) — Tone ${tone}`,
+                            text:       _wdFullText,
+                            source:     'Octoechos',
+                            tone:       tone,
+                            resolvedAs: 'orthros-ordinary-weekday-exapostilarion-text'
+                        };
+                        continue;
+                    }
+
+                    // ── Ordinary Saturday — not yet implemented ───────────────
                     const _dayNames = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
                     const _dayLabel = (_dayNames[dayOfWeek] || 'WEEKDAY').toUpperCase();
                     section.items[i] = {
