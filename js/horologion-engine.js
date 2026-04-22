@@ -5997,7 +5997,9 @@ async function _resolveTypikaSlots(sections, dateObj) {
                     3: "Thou didst arise today, O Merciful One, * and hast led us out from the gates of death. * Adam danceth today, and Eve rejoiceth. * The Prophets also, along with Patriarchs, ** ceaselessly praise the divine might of Thine authority.",
                     4: "My Savior and Redeemer * from the grave, as God, * hath raised those born on earth from their chains, * and shattered the gates of Hades; ** and as Lord arisen on the third day.",
                     5: "Thou didst descend into Hades, O my Savior, * and having shattered its gates, as All-powerful, * Thou didst raise the dead with Thyself, as Creator, * and didst deliver Adam from the curse, * O Lover of mankind. ** Therefore, we all cry to Thee: \"Save us, O Lord!\"",
-                    6: "Having raised all the dead from the valleys of darkness * by His life-giving hand, * Christ our God hath granted resurrection to the race of mankind. * For He is the Savior of all, * the Resurrection and the Life ** and the God of all."
+                    6: "Having raised all the dead from the valleys of darkness * by His life-giving hand, * Christ our God hath granted resurrection to the race of mankind. * For He is the Savior of all, * the Resurrection and the Life ** and the God of all.",
+                    7: "No longer does the might of death * have power to keep mortals captive; * for Christ hath come down, smashing it and destroying its power. * Now that Hades is bound, the Prophets with one voice joyously declare, * \"The Savior hath appeared to those with faith. ** Come out O ye faithful, to adore the Resurrection!\"",
+                    8: "Having risen from the tomb, Thou didst raise the dead and resurrect Adam, * Eve now dances with joy at Thy Resurrection. * And all the ends of the earth keep festival at Thine Arising from the dead, ** O greatly Merciful One."
                 };
                 const tone = toneResult && toneResult.tone;
                 if (tone && SUNDAY_RESURRECTIONAL_KONTAKIA[tone]) {
