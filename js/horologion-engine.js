@@ -3471,12 +3471,80 @@ function _resolveComplineFestalTheotokionRubric(officeKey, troparionItem, fallba
                     }
 
                     if (isGreatLentWeekday) {
+                        const _gleWeekdayKeys = [null, 'monday', 'tuesday', 'wednesday', 'thursday', 'friday'];
+
+                        if (dayOfWeek < 1 || dayOfWeek > 5) {
+                            section.items[i] = {
+                                type:       'rubric',
+                                key:        'exapostilarion',
+                                label:      'Exapostilarion (Svetilen)',
+                                text:       'GREAT LENT — Exapostilarion: No weekday Exapostilarion is implemented for this day in the current tranche.',
+                                resolvedAs: 'orthros-great-lent-exapostilarion-day-not-implemented'
+                            };
+                            continue;
+                        }
+
+                        const _gleDayKey = _gleWeekdayKeys[dayOfWeek];
+                        const _gleCorpus =
+                            window.OCTOECHOS &&
+                            window.OCTOECHOS.orthros &&
+                            window.OCTOECHOS.orthros.exapostilarion &&
+                            window.OCTOECHOS.orthros.exapostilarion.greatLentWeekday
+                                ? window.OCTOECHOS.orthros.exapostilarion.greatLentWeekday
+                                : null;
+
+                        if (!_gleCorpus) {
+                            section.items[i] = {
+                                type:       'rubric',
+                                key:        'exapostilarion',
+                                label:      'Exapostilarion (Svetilen)',
+                                text:       'GREAT LENT (Weekday) — Exapostilarion: Corpus not loaded. Ensure js/octoechos/orthros-exapostilarion-great-lent-weekday.js is present in index.html before horologion-engine.js.',
+                                resolvedAs: 'orthros-great-lent-exapostilarion-corpus-unavailable'
+                            };
+                            continue;
+                        }
+
+                        if (!tone) {
+                            section.items[i] = {
+                                type:       'rubric',
+                                key:        'exapostilarion',
+                                label:      'Exapostilarion (Svetilen)',
+                                text:       'GREAT LENT (Weekday) — Exapostilarion: Tone could not be determined for this date.',
+                                resolvedAs: 'orthros-great-lent-exapostilarion-tone-unavailable'
+                            };
+                            continue;
+                        }
+
+                        const _gleBody = _gleCorpus.tones[tone] || null;
+
+                        if (!_gleBody) {
+                            section.items[i] = {
+                                type:       'rubric',
+                                key:        'exapostilarion',
+                                label:      'Exapostilarion (Svetilen)',
+                                text:       `GREAT LENT (Weekday) — Exapostilarion (Tone ${tone}): Hymn body text not yet verified from a complete source witness.`,
+                                resolvedAs: 'orthros-great-lent-exapostilarion-text-unverified'
+                            };
+                            continue;
+                        }
+
+                        const _gleFirst  = _gleCorpus.firstEndings[_gleDayKey] || _gleCorpus.firstEndings.monday;
+                        const _gleSecond = _gleCorpus.secondEnding;
+                        const _gleThird  = _gleCorpus.thirdEnding;
+
+                        const _gleFullText =
+                            _gleBody + ' ' + _gleFirst +
+                            '\n\n' + _gleBody + ' ' + _gleSecond +
+                            '\n\n' + _gleBody + ' ' + _gleThird;
+
                         section.items[i] = {
-                            type:       'rubric',
+                            type:       'text',
                             key:        'exapostilarion',
-                            label:      'Exapostilarion (Svetilen)',
-                            text:       'GREAT LENT (Weekday) — Exapostilarion: On Great Lent weekdays the Exapostilarion is not used in the ordinary sense; the feria Alleluia service does not include a Svetilen. The service proceeds without it.',
-                            resolvedAs: 'orthros-great-lent-exapostilarion-omitted'
+                            label:      `Exapostilarion (Svetilen) — Tone ${tone}`,
+                            text:       _gleFullText,
+                            source:     'Octoechos',
+                            tone:       tone,
+                            resolvedAs: 'orthros-great-lent-weekday-exapostilarion'
                         };
                         continue;
                     }
