@@ -3582,15 +3582,14 @@ function _resolveComplineFestalTheotokionRubric(officeKey, troparionItem, fallba
                             dateObj.getDate()
                         );
                         const _glsYear = _glsLocalDate.getFullYear();
-                        let _glsPascha = _getOrthodoxPascha(_glsYear);
-                        if (_glsPascha > _glsLocalDate) {
-                            _glsPascha = _getOrthodoxPascha(_glsYear - 1);
-                        }
+                        const _glsPascha = _getOrthodoxPascha(_glsYear);
                         const _glsDaysBeforePascha = Math.round(
                             (_glsPascha.getTime() - _glsLocalDate.getTime()) / 86400000
                         );
-                        const _glsOrdinalMap = { 43: 1, 36: 2, 29: 3, 22: 4, 15: 5, 8: 6 };
-                        const _glsOrdinal = _glsOrdinalMap[_glsDaysBeforePascha] || null;
+                        const _glsOrdinalRaw = (43 - _glsDaysBeforePascha) / 7 + 1;
+                        const _glsOrdinal = (_glsDaysBeforePascha >= 8 && _glsDaysBeforePascha <= 43 && Number.isInteger(_glsOrdinalRaw))
+                            ? _glsOrdinalRaw
+                            : null;
 
                         if (_glsOrdinal === 1) {
                             section.items[i] = {
