@@ -3555,6 +3555,119 @@ function _resolveComplineFestalTheotokionRubric(officeKey, troparionItem, fallba
                         continue;
                     }
 
+                    // ── Great Lent Saturday ───────────────────────────────
+                    if (seasonResult && seasonResult.season === 'great-lent' && dayOfWeek === 6) {
+                        const _glsCorpus =
+                            window.OCTOECHOS &&
+                            window.OCTOECHOS.orthros &&
+                            window.OCTOECHOS.orthros.exapostilarion &&
+                            window.OCTOECHOS.orthros.exapostilarion.greatLentWeekday
+                                ? window.OCTOECHOS.orthros.exapostilarion.greatLentWeekday
+                                : null;
+
+                        if (!_glsCorpus) {
+                            section.items[i] = {
+                                type:       'rubric',
+                                key:        'exapostilarion',
+                                label:      'Exapostilarion (Svetilen)',
+                                text:       'GREAT LENT (Saturday) — Exapostilarion: Corpus not loaded. Ensure js/octoechos/orthros-exapostilarion-great-lent-weekday.js is present in index.html before horologion-engine.js.',
+                                resolvedAs: 'orthros-great-lent-saturday-corpus-unavailable'
+                            };
+                            continue;
+                        }
+
+                        const _glsLocalDate = new Date(
+                            dateObj.getFullYear(),
+                            dateObj.getMonth(),
+                            dateObj.getDate()
+                        );
+                        const _glsYear = _glsLocalDate.getFullYear();
+                        let _glsPascha = _getOrthodoxPascha(_glsYear);
+                        if (_glsPascha > _glsLocalDate) {
+                            _glsPascha = _getOrthodoxPascha(_glsYear - 1);
+                        }
+                        const _glsDaysBeforePascha = Math.round(
+                            (_glsPascha.getTime() - _glsLocalDate.getTime()) / 86400000
+                        );
+                        const _glsOrdinalMap = { 43: 1, 36: 2, 29: 3, 22: 4, 15: 5, 8: 6 };
+                        const _glsOrdinal = _glsOrdinalMap[_glsDaysBeforePascha] || null;
+
+                        if (_glsOrdinal === 1) {
+                            section.items[i] = {
+                                type:       'text',
+                                key:        'exapostilarion',
+                                label:      'Exapostilarion (Svetilen) — 1st Saturday of Great Lent',
+                                text:       _glsCorpus.firstSaturdaySpecial,
+                                source:     'Triodion',
+                                resolvedAs: 'orthros-great-lent-saturday-1-exapostilarion'
+                            };
+                            continue;
+                        }
+
+                        if (_glsOrdinal !== null && _glsOrdinal >= 2 && _glsOrdinal <= 4) {
+                            if (!tone) {
+                                section.items[i] = {
+                                    type:       'rubric',
+                                    key:        'exapostilarion',
+                                    label:      'Exapostilarion (Svetilen)',
+                                    text:       `GREAT LENT (Saturday ${_glsOrdinal}) — Exapostilarion: Tone could not be determined for this date.`,
+                                    resolvedAs: 'orthros-great-lent-saturday-tone-unavailable'
+                                };
+                                continue;
+                            }
+
+                            const _glsBody = _glsCorpus.tones[tone] || null;
+
+                            if (!_glsBody) {
+                                section.items[i] = {
+                                    type:       'rubric',
+                                    key:        'exapostilarion',
+                                    label:      'Exapostilarion (Svetilen)',
+                                    text:       `GREAT LENT (Saturday ${_glsOrdinal}, Tone ${tone}) — Exapostilarion: Tone body text not yet verified from a complete source witness.`,
+                                    resolvedAs: 'orthros-great-lent-saturday-tone-body-unverified'
+                                };
+                                continue;
+                            }
+
+                            const _glsFullText =
+                                _glsBody + ' ' + _glsCorpus.saturdayFirstEnding +
+                                '\n\n' + _glsBody + ' ' + _glsCorpus.saturdaySecondEnding +
+                                '\n\n' + _glsCorpus.saturdayReposedThird;
+
+                            section.items[i] = {
+                                type:       'text',
+                                key:        'exapostilarion',
+                                label:      `Exapostilarion (Svetilen) — Saturday of Great Lent, Tone ${tone}`,
+                                text:       _glsFullText,
+                                source:     'Octoechos / Triodion',
+                                tone:       tone,
+                                resolvedAs: `orthros-great-lent-saturday-${_glsOrdinal}-exapostilarion`
+                            };
+                            continue;
+                        }
+
+                        if (_glsOrdinal === 5) {
+                            section.items[i] = {
+                                type:       'text',
+                                key:        'exapostilarion',
+                                label:      'Exapostilarion (Svetilen) — 5th Saturday of Great Lent (Akathist)',
+                                text:       _glsCorpus.fifthSaturdaySpecial,
+                                source:     'Triodion',
+                                resolvedAs: 'orthros-great-lent-saturday-5-exapostilarion'
+                            };
+                            continue;
+                        }
+
+                        section.items[i] = {
+                            type:       'rubric',
+                            key:        'exapostilarion',
+                            label:      'Exapostilarion (Svetilen)',
+                            text:       'GREAT LENT (Saturday) — Exapostilarion: This Saturday is outside the standard 1st–5th Saturday pattern. A special Exapostilarion is appointed from the Triodion for this day and is not yet implemented in this path.',
+                            resolvedAs: 'orthros-great-lent-saturday-special-unimplemented'
+                        };
+                        continue;
+                    }
+
                     // ── Sunday: resolve via Eothinon cycle ────
                     if (dayOfWeek === 0) {
                         const eothinonResult =

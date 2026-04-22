@@ -1,6 +1,6 @@
 // js/octoechos/orthros-exapostilarion-great-lent-weekday.js
 // Great Lent Weekday Exapostilarion (Svetilen) — Orthros / Matins
-// Monday–Friday only. Saturday is not in scope.
+// Monday–Friday and Saturday. Saturday data added v6.x tranche.
 // Tone 1: null — body is abbreviated in the supplied source witness;
 //         full text requires a complete witness before it can be entered.
 // Tones 2–8: transcribed from the supplied source witness.
@@ -31,6 +31,22 @@ window.OCTOECHOS.orthros.exapostilarion.greatLentWeekday = {
     },
 
     secondEnding: 'By the prayers of Thy saints, O Lord, and save me.',
-    thirdEnding:  'By the prayers of the Theotokos, O Lord, and save me.'
+    thirdEnding:  'By the prayers of the Theotokos, O Lord, and save me.',
+
+    saturdayFirstEnding:  'By the prayers of Thy saints, O Lord, and save me.',
+    saturdaySecondEnding: 'By the prayers of the Theotokos, O Lord, and save me.',
+
+    saturdayReposedThird:
+        'As Thou art God who hast dominion over both the living and the dead, * ' +
+        'grant rest to Thy servants in the dwelling-place of the elect, * ' +
+        'for though they have sinned, O Savior, ** yet they did not turn away from Thee.',
+
+    firstSaturdaySpecial:
+        'O crowned Saint, thou who standest now with the angels before the throne of the King of all, ' +
+        'pray that we who faithfully celebrate thy memory may receive remission of our sins.',
+
+    fifthSaturdaySpecial:
+        'The mystery hidden from all ages and unknown to the angels is made manifest through thee, ' +
+        'O Theotokos, to those on earth.'
 
 };
