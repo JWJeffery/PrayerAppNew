@@ -319,6 +319,15 @@
           "tone": 2,
           "source": "Triodion — Great and Holy Friday Vespers, dismissal troparia (75A witness)",
           "resolvedAs": "holy-week-theotokion-dismissal-text"
+        },
+        "exapostilarion": {
+          "type": "text",
+          "key": "exapostilarion",
+          "label": "Exapostilarion (Svetilen) — Great and Holy Friday, Tone III",
+          "text": "The Good Thief O Lord, * on this very day * wast deemed worthy of Paradise. * By the Wood of the Cross * do Thou also enlighten me and save me.\n\nThe Good Thief O Lord, * on this very day * wast deemed worthy of Paradise. * By the Wood of the Cross * do Thou also enlighten me and save me.\n\nThe Good Thief O Lord, * on this very day * wast deemed worthy of Paradise. * By the Wood of the Cross * do Thou also enlighten me and save me.",
+          "tone": 3,
+          "source": "Triodion — Great and Holy Friday, Matins of the Holy Passion (75A witness)",
+          "resolvedAs": "holy-week-exapostilarion-text"
         }
       }
     },
@@ -368,6 +377,15 @@
           "tone": null,
           "source": "Triodion — Great and Holy Saturday, Vesperal Liturgy of St. Basil (76A witness); Irmos of Ode IX",
           "resolvedAs": "holy-week-theotokion-dismissal-text"
+        },
+        "exapostilarion": {
+          "type": "text",
+          "key": "exapostilarion",
+          "label": "Exapostilarion (Svetilen) — Great and Holy Saturday, Tone II",
+          "text": "The myrrh-bearing women rejoiced when they beheld the great stone rolled away from the tomb, * and a young man seated therein on the right side, addressing them and saying: * \"Lo, Christ hath arisen from the dead. * Go and tell His disciples and Peter, that He goeth before you into Galilee unto the mountain, ** for there He shall appear unto you His friends, as He foretold you.\"\n\nGlory ..., Both now ..., in Tone II:\nPrior to thy conception an Angel conveyed unto the Virgin the salutation, \"Rejoice\", * and now, O Christ, an Angel hath rolled away the stone from Thy tomb. * The one, instead of sorrow, brought tokens of ineffable joy; * the other instead of death, heralded Thee the Giver of life ** magnifying Thee and telling of the resurrection unto the women and unto Thine apostles.",
+          "tone": 2,
+          "source": "Triodion — Great and Holy Saturday, Matins (76A witness)",
+          "resolvedAs": "holy-week-exapostilarion-text"
         }
       }
     }
