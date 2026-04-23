@@ -114,6 +114,15 @@
           "tone": 8,
           "source": "Triodion — Great and Holy Monday, Bridegroom Matins (Hapgood/Jordanville witness)",
           "resolvedAs": "holy-week-sessional-hymns-text"
+        },
+        "exapostilarion": {
+          "type": "text",
+          "key": "exapostilarion",
+          "label": "Exapostilarion (Svetilen) — Great and Holy Monday, Tone III",
+          "text": "Thy bridal chamber do I see all-adorned, * O my Savior, * yet I have no wedding garment that I may enter therein. * Make the robe of my soul * to shine forth, O Giver of Light, * and save me.\n\nThy bridal chamber do I see all-adorned, * O my Savior, * yet I have no wedding garment that I may enter therein. * Make the robe of my soul * to shine forth, O Giver of Light, * and save me.\n\nThy bridal chamber do I see all-adorned, * O my Savior, * yet I have no wedding garment that I may enter therein. * Make the robe of my soul * to shine forth, O Giver of Light, * and save me.",
+          "tone": 3,
+          "source": "Triodion — Great and Holy Monday, Bridegroom Matins (PDF 71 witness)",
+          "resolvedAs": "holy-week-exapostilarion-text"
         }
       }
     },
@@ -163,6 +172,15 @@
           "tone": 8,
           "source": "Triodion — Great and Holy Tuesday, Bridegroom Matins (Hapgood/Jordanville witness)",
           "resolvedAs": "holy-week-sessional-hymns-text"
+        },
+        "exapostilarion": {
+          "type": "text",
+          "key": "exapostilarion",
+          "label": "Exapostilarion (Svetilen) — Great and Holy Tuesday, Tone III",
+          "text": "I behold Thy bridal chamber all-adorned, * O my Savior, * yet I have no wedding garment that I may enter therein. * make Thou the robe of my soul radiant, * O Giver of Light, ** and save me.\n\nI behold Thy bridal chamber all-adorned, * O my Savior, * yet I have no wedding garment that I may enter therein. * make Thou the robe of my soul radiant, * O Giver of Light, ** and save me.\n\nI behold Thy bridal chamber all-adorned, * O my Savior, * yet I have no wedding garment that I may enter therein. * make Thou the robe of my soul radiant, * O Giver of Light, ** and save me.",
+          "tone": 3,
+          "source": "Triodion — Great and Holy Tuesday, Bridegroom Matins (Hapgood/Jordanville witness)",
+          "resolvedAs": "holy-week-exapostilarion-text"
         }
       }
     },
@@ -203,6 +221,15 @@
           "tone": 8,
           "source": "Triodion — Great and Holy Wednesday, Bridegroom Matins (Hapgood/Jordanville witness)",
           "resolvedAs": "holy-week-sessional-hymns-text"
+        },
+        "exapostilarion": {
+          "type": "text",
+          "key": "exapostilarion",
+          "label": "Exapostilarion (Svetilen) — Great and Holy Wednesday, Tone III",
+          "text": "Thy bridal chamber do I see all-adorned, * O my Savior, * yet I have no wedding garment that I may enter therein. * Make the robe of my soul radiant, O Giver of Light, ** and save me.\n\nThy bridal chamber do I see all-adorned, * O my Savior, * yet I have no wedding garment that I may enter therein. * Make the robe of my soul radiant, O Giver of Light, ** and save me.\n\nThy bridal chamber do I see all-adorned, * O my Savior, * yet I have no wedding garment that I may enter therein. * Make the robe of my soul radiant, O Giver of Light, ** and save me.",
+          "tone": 3,
+          "source": "Triodion — Great and Holy Wednesday, Bridegroom Matins (Hapgood/Jordanville witness)",
+          "resolvedAs": "holy-week-exapostilarion-text"
         }
       }
     },
@@ -234,6 +261,15 @@
           "tone": null,
           "source": "Triodion — Great and Holy Thursday, Vesperal Liturgy of St. Basil (74A/74B witness); Exodus 19:10–19, Job 38:1–12; 42:1–5, Isaiah 50:4–11, 1 Cor 11:23–32, Matt 26:2–20",
           "resolvedAs": "holy-week-paremiae-text"
+        },
+        "exapostilarion": {
+          "type": "text",
+          "key": "exapostilarion",
+          "label": "Exapostilarion (Svetilen) — Great and Holy Thursday, Tone III",
+          "text": "Thy bridal chamber I see all-adorned, * O my Savior, * yet I have no wedding garment that I may enter therein. * Make the robe of my soul radiant, * O Giver of Light, ** and save me.\n\nThy bridal chamber I see all-adorned, * O my Savior, * yet I have no wedding garment that I may enter therein. * Make the robe of my soul radiant, * O Giver of Light, ** and save me.\n\nThy bridal chamber I see all-adorned, * O my Savior, * yet I have no wedding garment that I may enter therein. * Make the robe of my soul radiant, * O Giver of Light, ** and save me.",
+          "tone": 3,
+          "source": "Triodion — Great and Holy Thursday, Bridegroom Matins (Hapgood/Jordanville witness)",
+          "resolvedAs": "holy-week-exapostilarion-text"
         }
       }
     },

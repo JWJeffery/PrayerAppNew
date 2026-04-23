@@ -3466,12 +3466,28 @@ function _resolveComplineFestalTheotokionRubric(officeKey, troparionItem, fallba
                     }
 
                     if (isHolyWeek) {
+                        const hwDay = seasonResult && seasonResult.holyWeekDay
+                            ? seasonResult.holyWeekDay : null;
+                        if (hwDay === 'palm-sunday') {
+                            // Palm Sunday: no Exapostilarion is appointed (Triodion rubric, PDF 67 witness).
+                            // Slot is wholly omitted; emit nothing and advance.
+                            continue;
+                        }
+                        const hwExapResolved = hwDay
+                            ? _resolveHolyWeekText('exapostilarion', hwDay)
+                            : null;
+                        if (hwExapResolved) {
+                            section.items[i] = hwExapResolved;
+                            continue;
+                        }
+                        const _hwExapDayLabel = hwDay
+                            ? hwDay.replace(/-/g, ' ') : 'Holy Week';
                         section.items[i] = {
                             type:       'rubric',
                             key:        'exapostilarion',
                             label:      'Exapostilarion (Svetilen)',
-                            text:       'HOLY WEEK — Exapostilarion: The Exapostilarion is appointed from the Triodion for each specific Holy Week day. Full Holy Week Exapostilarion text is not yet embedded in this path.',
-                            resolvedAs: 'orthros-holy-week-exapostilarion-rubric'
+                            text:       `HOLY WEEK — Exapostilarion (${_hwExapDayLabel}): The Exapostilarion for this day is appointed from the Triodion. Text is not yet embedded in this path.`,
+                            resolvedAs: `orthros-holy-week-exapostilarion-rubric-${hwDay || 'unknown'}`
                         };
                         continue;
                     }
