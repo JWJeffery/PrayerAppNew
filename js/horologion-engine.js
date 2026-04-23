@@ -3828,17 +3828,77 @@ function _resolveComplineFestalTheotokionRubric(officeKey, troparionItem, fallba
                         continue;
                     }
 
-                    // ── Ordinary Saturday — not yet implemented ───────────────
-                    const _dayNames = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
-                    const _dayLabel = (_dayNames[dayOfWeek] || 'WEEKDAY').toUpperCase();
-                    section.items[i] = {
-                        type:       'rubric',
-                        key:        'exapostilarion',
-                        label:      'Exapostilarion (Svetilen)',
-                        text:       _dayLabel + ' — Exapostilarion: The weekday Exapostilarion corpus is not yet implemented. On ferial days the Exapostilarion is appointed from the Octoechos according to the tone and weekday theme.' + toneNote,
-                        resolvedAs: 'orthros-ordinary-weekday-exapostilarion-rubric'
-                    };
-                    continue;
+                    // ── Ordinary Saturday Exapostilarion ─────────────────────
+                    if (dayOfWeek === 6) {
+                        const _satCorpus =
+                            window.OCTOECHOS &&
+                            window.OCTOECHOS.orthros &&
+                            window.OCTOECHOS.orthros.exapostilarion &&
+                            window.OCTOECHOS.orthros.exapostilarion.weekday
+                                ? window.OCTOECHOS.orthros.exapostilarion.weekday
+                                : null;
+
+                        if (!_satCorpus) {
+                            section.items[i] = {
+                                type:       'rubric',
+                                key:        'exapostilarion',
+                                label:      'Exapostilarion (Svetilen)',
+                                text:       'SATURDAY — Exapostilarion: Corpus not loaded. Ensure js/octoechos/orthros-exapostilarion-weekday.js is present in index.html before horologion-engine.js.',
+                                resolvedAs: 'orthros-ordinary-saturday-exapostilarion-corpus-unavailable'
+                            };
+                            continue;
+                        }
+
+                        if (!tone) {
+                            section.items[i] = {
+                                type:       'rubric',
+                                key:        'exapostilarion',
+                                label:      'Exapostilarion (Svetilen)',
+                                text:       'SATURDAY — Exapostilarion: Tone could not be determined for this date.',
+                                resolvedAs: 'orthros-ordinary-saturday-exapostilarion-tone-unavailable'
+                            };
+                            continue;
+                        }
+
+                        const _satBody = _satCorpus.tones[tone] || null;
+
+                        if (!_satBody) {
+                            section.items[i] = {
+                                type:       'rubric',
+                                key:        'exapostilarion',
+                                label:      'Exapostilarion (Svetilen)',
+                                text:       `SATURDAY — Exapostilarion (Tone ${tone}): Body text not found in corpus for this tone.`,
+                                resolvedAs: 'orthros-ordinary-saturday-exapostilarion-tone-body-missing'
+                            };
+                            continue;
+                        }
+
+                        const _satFirst  = _satCorpus.saturdayFirstEnding  || null;
+                        const _satSecond = _satCorpus.saturdaySecondEnding || null;
+
+                        if (!_satFirst || !_satSecond) {
+                            section.items[i] = {
+                                type:       'rubric',
+                                key:        'exapostilarion',
+                                label:      'Exapostilarion (Svetilen)',
+                                text:       `SATURDAY — Exapostilarion (Tone ${tone}): Saturday endings missing from corpus. Add saturdayFirstEnding and saturdaySecondEnding to js/octoechos/orthros-exapostilarion-weekday.js.`,
+                                resolvedAs: 'orthros-ordinary-saturday-exapostilarion-endings-missing'
+                            };
+                            continue;
+                        }
+
+                        section.items[i] = {
+                            type:       'text',
+                            key:        'exapostilarion',
+                            label:      `Exapostilarion (Svetilen) — Tone ${tone}`,
+                            text:       _satBody + ' ' + _satFirst +
+                                        '\n\n' + _satBody + ' ' + _satSecond,
+                            source:     'Octoechos',
+                            tone:       tone,
+                            resolvedAs: 'orthros-ordinary-saturday-exapostilarion-text'
+                        };
+                        continue;
+                    }
                 }
 
                  // ── v5.8: sessional-hymns — season-aware rubric ──────────
