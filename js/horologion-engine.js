@@ -3290,8 +3290,8 @@ function _resolveComplineFestalTheotokionRubric(officeKey, troparionItem, fallba
                                 text:       sundayTheotokionEntry,
                                 source:     'Octoechos',
                                 tone:       tone,
-                                family:     'sunday-theotokion',
-                                resolvedAs: 'orthros-sunday-theotokion-text'
+                              family:     'sunday-theotokion',
+                                resolvedAs: `orthros-sunday-theotokion-tone-${tone}`
                             };
                             continue;
                         }
