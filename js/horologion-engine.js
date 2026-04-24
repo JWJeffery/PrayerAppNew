@@ -3296,16 +3296,15 @@ function _resolveComplineFestalTheotokionRubric(officeKey, troparionItem, fallba
                             continue;
                         }
 
-                        // Corpus absent or tone entry null — honest Sunday-specific rubric
+                         // Corpus object not loaded, tone unavailable, or tone entry absent from corpus
                         const toneNote = tone ? ` Octoechos tone: Tone ${tone}.` : '';
                         section.items[i] = {
                             type:       'rubric',
                             key:        'orthros-theotokion',
                             label:      'Theotokion (Matins)',
-                            text:       `SUNDAY — Theotokion: The Theotokion at Sunday Orthros follows the resurrectional cycle of the Octoechos.${toneNote} The Sunday Matins Theotokion corpus for this tone is not yet transcribed into this path.`,
-                            resolvedAs: 'orthros-sunday-theotokion-rubric'
-                        };
-                        continue;
+                            text:       `SUNDAY — Theotokion: The Theotokion at Sunday Orthros follows the resurrectional cycle of the Octoechos.${toneNote} The Sunday Matins Theotokion corpus object is not loaded or the entry for this tone is absent.`,
+                            resolvedAs: 'orthros-sunday-theotokion-corpus-missing'
+                        };                        continue;
                     }
 
                     // Great Lent, Holy Week, Bright Week — explicit deferred rubric
@@ -3771,8 +3770,8 @@ function _resolveComplineFestalTheotokionRubric(officeKey, troparionItem, fallba
                                     type:       'rubric',
                                     key:        'exapostilarion',
                                     label:      'Exapostilarion (Svetilen)',
-                                    text:       'GREAT LENT (1st Saturday) — Exapostilarion: Special Triodion text not yet transcribed. Add firstSaturdaySpecial to window.OCTOECHOS.orthros.exapostilarion.greatLentWeekday.',
-                                    resolvedAs: 'orthros-great-lent-saturday-1-special-missing'
+                                    text:       'GREAT LENT (1st Saturday) — Exapostilarion: firstSaturdaySpecial entry is absent from the corpus object. Ensure the property is present in window.OCTOECHOS.orthros.exapostilarion.greatLentWeekday.',
+                                    resolvedAs: 'orthros-great-lent-saturday-1-source-missing'
                                 };
                                 continue;
                             }
@@ -3821,8 +3820,8 @@ function _resolveComplineFestalTheotokionRubric(officeKey, troparionItem, fallba
                                     type:       'rubric',
                                     key:        'exapostilarion',
                                     label:      'Exapostilarion (Svetilen)',
-                                    text:       `GREAT LENT (Saturday ${_glsOrdinal}, Tone ${tone}) — Exapostilarion: Saturday ending or reposed-third text not yet transcribed. Add saturdayFirstEnding, saturdaySecondEnding, and saturdayReposedThird to window.OCTOECHOS.orthros.exapostilarion.greatLentWeekday.`,
-                                    resolvedAs: 'orthros-great-lent-saturday-endings-missing'
+                                    text:       `GREAT LENT (Saturday ${_glsOrdinal}, Tone ${tone}) — Exapostilarion: One or more Saturday ending entries (saturdayFirstEnding, saturdaySecondEnding, saturdayReposedThird) are absent from the corpus object.`,
+                                    resolvedAs: 'orthros-great-lent-saturday-endings-source-missing'
                                 };
                                 continue;
                             }
@@ -3845,13 +3844,13 @@ function _resolveComplineFestalTheotokionRubric(officeKey, troparionItem, fallba
                         }
 
                      if (_glsOrdinal === 5) {
-                            if (!_glsCorpus.fifthSaturdaySpecial) {
+                               if (!_glsCorpus.fifthSaturdaySpecial) {
                                 section.items[i] = {
                                     type:       'rubric',
                                     key:        'exapostilarion',
                                     label:      'Exapostilarion (Svetilen)',
-                                    text:       'GREAT LENT (5th Saturday — Akathist) — Exapostilarion: Special Triodion text not yet transcribed. Add fifthSaturdaySpecial to window.OCTOECHOS.orthros.exapostilarion.greatLentWeekday.',
-                                    resolvedAs: 'orthros-great-lent-saturday-5-special-missing'
+                                    text:       'GREAT LENT (5th Saturday — Akathist) — Exapostilarion: fifthSaturdaySpecial entry is absent from the corpus object. Ensure the property is present in window.OCTOECHOS.orthros.exapostilarion.greatLentWeekday.',
+                                    resolvedAs: 'orthros-great-lent-saturday-5-source-missing'
                                 };
                                 continue;
                             }
