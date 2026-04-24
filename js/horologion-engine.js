@@ -3765,7 +3765,17 @@ function _resolveComplineFestalTheotokionRubric(officeKey, troparionItem, fallba
                             ? _glsOrdinalRaw
                             : null;
 
-                        if (_glsOrdinal === 1) {
+                      if (_glsOrdinal === 1) {
+                            if (!_glsCorpus.firstSaturdaySpecial) {
+                                section.items[i] = {
+                                    type:       'rubric',
+                                    key:        'exapostilarion',
+                                    label:      'Exapostilarion (Svetilen)',
+                                    text:       'GREAT LENT (1st Saturday) — Exapostilarion: Special Triodion text not yet transcribed. Add firstSaturdaySpecial to window.OCTOECHOS.orthros.exapostilarion.greatLentWeekday.',
+                                    resolvedAs: 'orthros-great-lent-saturday-1-special-missing'
+                                };
+                                continue;
+                            }
                             section.items[i] = {
                                 type:       'text',
                                 key:        'exapostilarion',
@@ -3802,10 +3812,25 @@ function _resolveComplineFestalTheotokionRubric(officeKey, troparionItem, fallba
                                 continue;
                             }
 
+                             const _glsSatFirst   = _glsCorpus.saturdayFirstEnding  || null;
+                            const _glsSatSecond  = _glsCorpus.saturdaySecondEnding || null;
+                            const _glsSatReposed = _glsCorpus.saturdayReposedThird || null;
+
+                            if (!_glsSatFirst || !_glsSatSecond || !_glsSatReposed) {
+                                section.items[i] = {
+                                    type:       'rubric',
+                                    key:        'exapostilarion',
+                                    label:      'Exapostilarion (Svetilen)',
+                                    text:       `GREAT LENT (Saturday ${_glsOrdinal}, Tone ${tone}) — Exapostilarion: Saturday ending or reposed-third text not yet transcribed. Add saturdayFirstEnding, saturdaySecondEnding, and saturdayReposedThird to window.OCTOECHOS.orthros.exapostilarion.greatLentWeekday.`,
+                                    resolvedAs: 'orthros-great-lent-saturday-endings-missing'
+                                };
+                                continue;
+                            }
+
                             const _glsFullText =
-                                _glsBody + ' ' + _glsCorpus.saturdayFirstEnding +
-                                '\n\n' + _glsBody + ' ' + _glsCorpus.saturdaySecondEnding +
-                                '\n\n' + _glsCorpus.saturdayReposedThird;
+                                _glsBody + ' ' + _glsSatFirst +
+                                '\n\n' + _glsBody + ' ' + _glsSatSecond +
+                                '\n\n' + _glsSatReposed;
 
                             section.items[i] = {
                                 type:       'text',
@@ -3819,7 +3844,17 @@ function _resolveComplineFestalTheotokionRubric(officeKey, troparionItem, fallba
                             continue;
                         }
 
-                        if (_glsOrdinal === 5) {
+                     if (_glsOrdinal === 5) {
+                            if (!_glsCorpus.fifthSaturdaySpecial) {
+                                section.items[i] = {
+                                    type:       'rubric',
+                                    key:        'exapostilarion',
+                                    label:      'Exapostilarion (Svetilen)',
+                                    text:       'GREAT LENT (5th Saturday — Akathist) — Exapostilarion: Special Triodion text not yet transcribed. Add fifthSaturdaySpecial to window.OCTOECHOS.orthros.exapostilarion.greatLentWeekday.',
+                                    resolvedAs: 'orthros-great-lent-saturday-5-special-missing'
+                                };
+                                continue;
+                            }
                             section.items[i] = {
                                 type:       'text',
                                 key:        'exapostilarion',
