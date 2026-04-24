@@ -4293,6 +4293,80 @@ const isMajorFeastForPraises =
                     continue;
                 }
 
+                // ── v6.8: kontakion ───────────────────────────────────────
+                if (item.key === 'kontakion') {
+                    let _ktQR = null;
+                    try {
+                        if (typeof window !== 'undefined' &&
+                            window.MenaionResolver &&
+                            typeof window.MenaionResolver.queryDate === 'function') {
+                            const _ktMm = String(dateObj.getMonth() + 1).padStart(2, '0');
+                            const _ktDd = String(dateObj.getDate()).padStart(2, '0');
+                            _ktQR = await window.MenaionResolver.queryDate(`${_ktMm}-${_ktDd}`);
+                        }
+                    } catch (_ktErr) { /* degrade below */ }
+
+                    if (!_ktQR) {
+                        section.items[i] = {
+                            type:       'rubric',
+                            key:        'kontakion',
+                            label:      'Kontakion',
+                            text:       'KONTAKION — Menaion resolver unavailable. Kontakion appointment could not be determined.',
+                            resolvedAs: 'orthros-kontakion-resolver-unavailable'
+                        };
+                        continue;
+                    }
+
+                    if (_ktQR.status !== 'menaion-resolved' &&
+                        _ktQR.status !== 'menaion-text-unavailable') {
+                        section.items[i] = {
+                            type:       'rubric',
+                            key:        'kontakion',
+                            label:      'Kontakion',
+                            text:       `KONTAKION — No Menaion commemoration for this date. The ordinary weekday or seasonal kontakion applies; corpus not yet embedded in this slot.`,
+                            resolvedAs: 'orthros-kontakion-no-commemoration'
+                        };
+                        continue;
+                    }
+
+                    const _ktKon    = _ktQR.kontakion        || null;
+                    const _ktStatus = _ktQR.kontakion_status || null;
+                    const _ktName   = _ktQR.name             || 'the feast';
+
+                    if (_ktKon && _ktKon.text) {
+                        section.items[i] = {
+                            type:       'text',
+                            key:        'kontakion',
+                            label:      _ktKon.title || `Kontakion of ${_ktName}`,
+                            text:       _ktKon.text,
+                            tone:       _ktKon.tone || null,
+                            source:     'Menaion',
+                            resolvedAs: 'orthros-menaion-kontakion'
+                        };
+                        continue;
+                    }
+
+                    if (_ktStatus === 'text-unavailable') {
+                        section.items[i] = {
+                            type:       'rubric',
+                            key:        'kontakion',
+                            label:      'Kontakion',
+                            text:       `KONTAKION — ${_ktName}: Kontakion text recorded as unavailable from the governed source corpus.`,
+                            resolvedAs: 'orthros-menaion-kontakion-text-unavailable'
+                        };
+                        continue;
+                    }
+
+                    section.items[i] = {
+                        type:       'rubric',
+                        key:        'kontakion',
+                        label:      'Kontakion',
+                        text:       `KONTAKION — ${_ktName} (rank ${_ktQR.rank || '?'}): No kontakion corpus is embedded for this date.`,
+                        resolvedAs: 'orthros-menaion-kontakion-not-embedded'
+                    };
+                    continue;
+                }
+
                  // ── v5.8: canon — structured season-aware rubric ──────────
                 if (item.key === 'canon') {
                     let canonText;

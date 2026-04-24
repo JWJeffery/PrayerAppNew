@@ -522,8 +522,14 @@
             "text": "Thy Nativity, O Christ our God, hath shined upon the world the light of knowledge; for thereby they that worshipped the stars were taught by a star to worship Thee, the Sun of Righteousness, and to know Thee, the Dayspring from on high. O Lord, glory to Thee."
           },
           "troparion_status": "resolved",
+          "kontakion": {
+            "tone": 3,
+            "title": "Kontakion of the Nativity of Christ — Tone 3",
+            "text": "Today the Virgin giveth birth to the Transcendent One, and the earth offereth a cave to the Unapproachable One. Angels and shepherds glorify Him, and the wise men journey with the star. For our sake a young Child is born, even He Who is before all ages, God."
+          },
+          "kontakion_status": "resolved",
           "tradition_tags": ["EOR", "OOR"],
-          "notes": "The Nativity of Christ — one of the Twelve Great Feasts. Rank 1. Highest-rank entry; Octoechos entirely displaced. The troparion is sung throughout the Afterfeast (Dec 26 – Dec 31 / Jan 1 depending on calendar)."
+          "notes": "The Nativity of Christ — one of the Twelve Great Feasts. Rank 1. Highest-rank entry; Octoechos entirely displaced. The troparion is sung throughout the Afterfeast (Dec 26 – Dec 31 / Jan 1 depending on calendar). Kontakion (Tone 3, Romanos the Melodist) likewise sung throughout the Afterfeast. Source: OCA/Antiochian Hapgood tradition."
         }
       ]
     },

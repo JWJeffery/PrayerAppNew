@@ -246,9 +246,95 @@ const MenaionResolver = (() => {
         return Object.keys(MONTH_FILES).map(Number);
     }
 
+    // ── v1.2: queryDate(mmdd) ──────────────────────────────────────────────
+    // Returns the governing commemoration's data for the given fixed date,
+    // including kontakion and kontakion_status when present in the corpus.
+    // Status codes are identical to queryTroparion(). queryTroparion() is
+    // unchanged and continues to serve all existing callers.
+    async function queryDate(mmdd) {
+        if (typeof mmdd !== 'string' || !/^\d{2}-\d{2}$/.test(mmdd)) {
+            return {
+                status: 'menaion-load-error', mmdd,
+                name: null, rank: null, type: null,
+                troparion: null, troparion_tone: null, troparion_status: null,
+                kontakion: null, kontakion_status: null,
+                note: `MenaionResolver: invalid mmdd format '${mmdd}'`
+            };
+        }
+
+        const monthNum   = parseInt(mmdd.split('-')[0], 10);
+        const monthState = await _loadMonth(monthNum);
+
+        if (monthState.notImported) {
+            return {
+                status: 'menaion-not-imported', mmdd,
+                name: null, rank: null, type: null,
+                troparion: null, troparion_tone: null, troparion_status: null,
+                kontakion: null, kontakion_status: null,
+                note: `Menaion data for month ${monthNum} has not been imported.`
+            };
+        }
+
+        if (monthState.error || !monthState.loaded) {
+            return {
+                status: 'menaion-load-error', mmdd,
+                name: null, rank: null, type: null,
+                troparion: null, troparion_tone: null, troparion_status: null,
+                kontakion: null, kontakion_status: null,
+                note: `Menaion data for month ${monthNum} could not be loaded.`
+            };
+        }
+
+        const dateEntry = monthState.data &&
+                          monthState.data.dates &&
+                          monthState.data.dates[mmdd];
+
+        if (!dateEntry || !Array.isArray(dateEntry.commemorations) || dateEntry.commemorations.length === 0) {
+            return {
+                status: 'menaion-no-ranked-commemoration', mmdd,
+                name: null, rank: null, type: null,
+                troparion: null, troparion_tone: null, troparion_status: null,
+                kontakion: null, kontakion_status: null,
+                note: `No ranked commemoration recorded for ${mmdd}.`
+            };
+        }
+
+        const best = _selectBestCommemoration(dateEntry.commemorations);
+        if (!best) {
+            return {
+                status: 'menaion-no-ranked-commemoration', mmdd,
+                name: null, rank: null, type: null,
+                troparion: null, troparion_tone: null, troparion_status: null,
+                kontakion: null, kontakion_status: null,
+                note: `No valid-rank commemoration found for ${mmdd}.`
+            };
+        }
+
+        const troparionResolved =
+            best.troparion &&
+            best.troparion_status !== 'text-unavailable' &&
+            best.troparion.text;
+
+        return {
+            status:           troparionResolved ? 'menaion-resolved' : 'menaion-text-unavailable',
+            mmdd,
+            name:             best.name             || null,
+            rank:             best.rank             || null,
+            type:             best.type             || null,
+            troparion:        troparionResolved ? best.troparion : null,
+            troparion_tone:   best.troparion_tone   || null,
+            troparion_status: best.troparion_status || null,
+            kontakion:        best.kontakion        || null,
+            kontakion_status: best.kontakion_status || null,
+            note: troparionResolved ? null
+                : `Commemoration recorded for ${mmdd} but troparion text not yet in corpus.`
+        };
+    }
+
     // ── Expose public interface ────────────────────────────────────────────
     return {
         queryTroparion,
+        queryDate,
         isMonthImported,
         importedMonths
     };

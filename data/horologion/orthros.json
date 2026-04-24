@@ -165,6 +165,11 @@
           "label": "The Canon (Nine Odes)",
           "status": "unresolved",
           "note": "Central hymnographic block of Orthros. Variable by tone, day, feast, and season. Requires Octoechos / Menaion / Triodion / Pentecostarion canon corpus. Explicitly deferred at v5.6 baseline — full canon text is outside scope of this structural pass."
+        },
+        {
+          "type": "placeholder",
+          "key": "kontakion",
+          "label": "Kontakion"
         }
       ]
     },

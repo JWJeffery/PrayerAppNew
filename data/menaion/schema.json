@@ -57,7 +57,7 @@
     "  require a version bump and a note in the monthly files' _meta.schema_version.",
     "  Do not add fields to monthly files that are not declared here."
   ],
-  "version": "1.0.0",
+  "version": "1.1.0",
   "monthShape": {
     "_meta": {
       "file": "string — data/menaion/<monthname>.json",
@@ -84,6 +84,8 @@
     "troparion_tone": "integer 1–8 — required when troparion.text is present; null otherwise",
     "troparion": "null | troparionShape",
     "troparion_status": "string — 'resolved' | 'text-unavailable' | 'deferred'",
+    "kontakion": "OPTIONAL — null | kontakionShape. Absent key = not in scope for this commemoration.",
+    "kontakion_status": "OPTIONAL — 'resolved' | 'text-unavailable' | 'deferred'. Required when kontakion key is present.",
     "tradition_tags": "array of strings — ['EOR', 'OOR', 'ANG', 'LAT', 'COE']. EOR = Eastern Orthodox. 'BYZC' commemorations use 'EOR'.",
     "notes": "string | null — liturgical notes, alternate names, usage notes"
   },
@@ -91,6 +93,11 @@
     "tone": "integer 1–8",
     "title": "string — e.g. 'Troparion of the Holy Archangels, Tone 4'",
     "text": "string — full troparion text"
+  },
+  "kontakionShape": {
+    "tone": "integer 1–8",
+    "title": "string — e.g. 'Kontakion of the Nativity of Christ, Tone 3'",
+    "text": "string — full kontakion text"
   },
   "resolutionContract": {
     "resolved": {
