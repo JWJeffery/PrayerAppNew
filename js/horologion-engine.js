@@ -4319,13 +4319,6 @@ const isMajorFeastForPraises =
                             '(Full Paschal Canon text is not yet embedded in this path. The appointment ' +
                             'and structure described above are correct.)';
                         canonResolvedAs = 'orthros-bright-week-canon-rubric';
-                    } else if (isFeast) {
-                        canonText =
-                            'The canon appointed at Orthros is the feast canon from the Menaion, unless displaced ' +
-                            'by a higher-ranking seasonal canon. The feast Menaion canon corpus is not yet embedded ' +
-                            'in this path. The appointment is correct; the text is deferred.\n\n' +
-                            canonStructureNote;
-                        canonResolvedAs = 'orthros-feast-canon-rubric';
                     } else if (isHolyWeek) {
                         const hwDay = seasonResult && seasonResult.holyWeekDay
                             ? seasonResult.holyWeekDay : null;
@@ -4414,6 +4407,13 @@ const isMajorFeastForPraises =
                             canonStructureNote + '\n\n' +
                             '(Sunday Resurrectional Canon corpus not loaded or tone entry missing.)';
                         canonResolvedAs = 'orthros-sunday-resurrectional-canon-rubric';
+                    } else if (isFeast) {
+                        canonText =
+                            'The canon appointed at Orthros is the feast canon from the Menaion, unless displaced ' +
+                            'by a higher-ranking seasonal canon. The feast Menaion canon corpus is not yet embedded ' +
+                            'in this path. The appointment is correct; the text is deferred.\n\n' +
+                            canonStructureNote;
+                        canonResolvedAs = 'orthros-feast-canon-rubric';
                     } else {
                         // Ordinary weekday (Mon–Sat) — v6.2: probe corpus before rubric
                         const WEEKDAY_NAMES = ['', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
