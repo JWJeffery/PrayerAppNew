@@ -3679,7 +3679,7 @@ function _resolveComplineFestalTheotokionRubric(officeKey, troparionItem, fallba
                                 key:        'exapostilarion',
                                 label:      'Exapostilarion (Svetilen)',
                                 text:       'GREAT LENT (Weekday) — Exapostilarion: Corpus not loaded. Ensure js/octoechos/orthros-exapostilarion-great-lent-weekday.js is present in index.html before horologion-engine.js.',
-                                resolvedAs: 'orthros-great-lent-exapostilarion-corpus-unavailable'
+                                resolvedAs: 'orthros-great-lent-exapostilarion-corpus-missing'
                             };
                             continue;
                         }
@@ -3745,7 +3745,7 @@ function _resolveComplineFestalTheotokionRubric(officeKey, troparionItem, fallba
                                 key:        'exapostilarion',
                                 label:      'Exapostilarion (Svetilen)',
                                 text:       'GREAT LENT (Saturday) — Exapostilarion: Corpus not loaded. Ensure js/octoechos/orthros-exapostilarion-great-lent-weekday.js is present in index.html before horologion-engine.js.',
-                                resolvedAs: 'orthros-great-lent-saturday-corpus-unavailable'
+                                resolvedAs: 'orthros-great-lent-saturday-exapostilarion-corpus-missing'
                             };
                             continue;
                         }

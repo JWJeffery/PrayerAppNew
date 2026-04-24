@@ -9,8 +9,7 @@ window.OCTOECHOS = window.OCTOECHOS || {};
 window.OCTOECHOS.orthros = window.OCTOECHOS.orthros || {};
 window.OCTOECHOS.orthros.exapostilarion = window.OCTOECHOS.orthros.exapostilarion || {};
 
-window.OCTOECHOS.orthros.exapostilarion.weekday = {
-
+window.OCTOECHOS.orthros.exapostilarion.greatLentWeekday = {
     tones: {
         1: 'O Christ who doth make the light to shine, * cleanse Thou my soul from every sin.',
         2: 'Send forth Thine eternal light, O Christ my God, * and illumine the hidden eyes of my heart.',
