@@ -3776,11 +3776,11 @@ function _resolveComplineFestalTheotokionRubric(officeKey, troparionItem, fallba
                                 };
                                 continue;
                             }
-                            section.items[i] = {
+                           section.items[i] = {
                                 type:       'text',
                                 key:        'exapostilarion',
                                 label:      'Exapostilarion (Svetilen) — 1st Saturday of Great Lent',
-                                text:       _glsCorpus.firstSaturdaySpecial,
+                                text:       _glsCorpus.firstSaturdaySpecial + '\n\n' + _glsCorpus.firstSaturdaySpecial,
                                 source:     'Triodion',
                                 resolvedAs: 'orthros-great-lent-saturday-1-exapostilarion'
                             };
@@ -3855,11 +3855,11 @@ function _resolveComplineFestalTheotokionRubric(officeKey, troparionItem, fallba
                                 };
                                 continue;
                             }
-                            section.items[i] = {
+                          section.items[i] = {
                                 type:       'text',
                                 key:        'exapostilarion',
                                 label:      'Exapostilarion (Svetilen) — 5th Saturday of Great Lent (Akathist)',
-                                text:       _glsCorpus.fifthSaturdaySpecial,
+                                text:       _glsCorpus.fifthSaturdaySpecial + '\n\n' + _glsCorpus.fifthSaturdaySpecial + '\n\n' + _glsCorpus.fifthSaturdaySpecial,
                                 source:     'Triodion',
                                 resolvedAs: 'orthros-great-lent-saturday-5-exapostilarion'
                             };
