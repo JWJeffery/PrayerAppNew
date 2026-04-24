@@ -4204,6 +4204,15 @@ const isMajorFeastForPraises =
                             'unless displaced by a major feast.' + toneNote + '\n\n' +
                             '(Sunday Resurrectional Sessional Hymn corpus not loaded or tone entry missing.)';
                         sessResolvedAs = 'orthros-sunday-resurrectional-sessional-hymns-rubric';
+                   } else if (dayOfWeek === 0 && isMajorFeastForPraises) {
+                        // Sunday + major feast: Menaion sessional hymns displace the
+                        // Octoechos resurrectional sedalia. No Menaion corpus embedded.
+                        sessText =
+                            'SUNDAY FEAST — Sessional Hymns: On this Sunday feast day (rank 1–2) the ' +
+                            'Sessional Hymns are appointed from the Menaion for the feast, supplanting ' +
+                            'the ordinary resurrectional sedalia of the Octoechos. ' +
+                            '(Menaion Sessional Hymn corpus not yet embedded in this path.)';
+                        sessResolvedAs = 'orthros-sunday-feast-sessional-hymns-rubric';
                    } else {
                         // Ordinary weekday (Mon–Sat) — v6.2: probe corpus before rubric
                         const WEEKDAY_NAMES = ['', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
