@@ -30,6 +30,35 @@ window.OCTOECHOS.orthros.exapostilarion.greatLentWeekday = {
     },
 
     secondEnding: 'By the prayers of Thy saints, O Lord, and save me.',
-    thirdEnding:  'By the prayers of the Theotokos, O Lord, and save me.'
-
+    thirdEnding:  'By the prayers of the Theotokos, O Lord, and save me.',
+ 
+    // ── Great Lent Saturday endings ───────────────────────────────────────
+    // Source: Lambertsen / St. Sergius English Triodion,
+    //         "Hymns to the Trinity and Hymns of Light … from the Oktoechos",
+    //         Saturday rubrics.
+    // On Saturdays the Exapostilarion is said only twice.
+    // The Tone body from tones[n] is prepended by the engine before each ending.
+    saturdayFirstEnding:  'By the prayers of Thy saints, O Lord, and save me.',
+    saturdaySecondEnding: 'By the prayers of the Theotokos, O Lord, and save me.',
+ 
+    // Tone III reposed hymn (used in place of a third Exapostilarion on the
+    // 2nd, 3rd, and 4th Saturdays of Great Lent only).
+    saturdayReposedThird: 'As Thou art God who hast dominion over both the living and the dead, * grant rest to Thy servants in the dwelling-place of the elect, * for though they have sinned, O Savior, ** yet they did not turn away from Thee.',
+ 
+    // ── 1st Saturday of Great Lent: St. Theodore the Recruit ────────────
+    // Source: St. Sergius English Triodion, "First Week of Lent: Saturday Matins",
+    //         Exapostilarion of the holy great-martyr, Tone III.
+    // Rubric: said twice; then the Theotokion (a separate slot, not encoded here).
+    // The engine emits this field once. Full two-fold rendering is a known gap
+    // pending engine expansion for this path.
+    firstSaturdaySpecial: 'O crowned Saint, thou who standest now with the angels * before the judgment-seat of Christ: * Filled with the light of heaven, O passion-bearer, * intercede without ceasing for the peace of the whole world, * and for the salvation of us who reverently celebrate Thine effulgent memory, ** O spiritually rich martyr Theodore.',
+ 
+    // ── 5th Saturday of Great Lent: Akathist (Praise of the Theotokos) ──
+    // Source: St. Sergius English Triodion, "Saturday in the Fifth Week at Matins",
+    //         Exapostilarion of the most holy Theotokos, Tone III.
+    // Rubric: said thrice.
+    // The engine emits this field once. Full three-fold rendering is a known gap
+    // pending engine expansion for this path.
+    fifthSaturdaySpecial: 'The mystery hidden from all ages * hath been made known today. * God from God, the Word hath become in His compassion * the Son of the Virgin Mary, * and Gabriel proclaimeth the Gospel of joy. * With him let us all cry aloud: ** Rejoice! Mother of the Lord.'
+ 
 };
