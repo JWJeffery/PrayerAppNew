@@ -2710,68 +2710,153 @@ function _resolveComplineFestalTheotokionRubric(officeKey, troparionItem, fallba
     }
 
 
-    // ──────────────────────────────────────────────────────────────────────
-    // v5.7: _resolveOrthrosKathismaPair(slotKey, dayOfWeek, brightWeek, isGreatLent)
+     // ──────────────────────────────────────────────────────────────────────
+    // v5.7 / v6.x: _resolveOrthrosKathismaPair(slotKey, dayOfWeek, brightWeek, isGreatLent, dateObj, seasonResult)
     //
-    // Returns a resolved item for kathisma-first or kathisma-second, or null
-    // if the appointment data has not loaded (graceful degradation).
+    // Returns a resolved item for kathisma-first, kathisma-second, or
+    // kathisma-third. Returns null on data failure (graceful degradation).
     //
-    // slotKey: 'kathisma-first' | 'kathisma-second'
-    // dayOfWeek: JS Date.getDay() (0 = Sunday … 6 = Saturday)
-    // brightWeek: boolean — true during Pascha–Thomas Saturday
-    // isGreatLent: boolean — true on Great Lent weekdays (Mon–Fri)
+    // slotKey:      'kathisma-first' | 'kathisma-second' | 'kathisma-third'
+    // dayOfWeek:    JS Date.getDay() (0 = Sunday … 6 = Saturday)
+    // brightWeek:   boolean — true during Pascha–Thomas Saturday
+    // isGreatLent:  boolean — true on all Great Lent days (Mon–Sat inclusive);
+    //               does NOT include Holy Week (Holy Week is handled via seasonResult)
+    // dateObj:      Date — used for Lenten week number computation
+    // seasonResult: { season, holyWeekDay } from _computeLiturgicalSeason()
     //
-    // RULE: Standard Byzantine Psalter weekly cycle for ordinary Orthros.
-    //   Each ordinary weekday reads TWO kathismata. Assignment pairs:
+    // ORDINARY WEEKDAY RULE (unchanged):
+    //   Each ordinary weekday reads two kathismata. Assignment pairs:
     //     Monday    → 4 + 5   (Ps 24–31 + Ps 32–36 LXX)
     //     Tuesday   → 6 + 7   (Ps 37–45 + Ps 46–54 LXX)
     //     Wednesday → 8 + 9   (Ps 55–63 + Ps 64–69 LXX)
     //     Thursday  → 10 + 11 (Ps 70–76 + Ps 77–84 LXX)
     //     Friday    → 12 + 13 (Ps 85–91 + Ps 92–100 LXX)
-    //     Saturday  → 14 + 15 (Ps 101–108 + Ps 109–117 LXX)
-    //       At Saturday All-Night Vigil, Kathisma 17 (Ps 118) is used instead.
-    //     Sunday    → explicitly deferred (practice varies)
+    //     Saturday  → 14 + 15 (Ps 101–108 + Ps 109–117 LXX, ordinary non-vigil)
     //
-    // This is wholly DIFFERENT from the Vespers kathisma cycle
-    // (Kathismata 1, 4, 6, 8, 10, 12). Do not conflate these tables.
+    // GREAT LENT (Mon–Sat, up to three kathismata):
+    //   Weeks 1–4 & 6: Mon=4,5,6 / Tue=10,11,12 / Wed=19,20,1 / Thu=6,7,8 / Fri=13,14,15 / Sat=16,17
+    //   Week 5:        Mon=4,5,6 / Tue=11,12,13 / Wed=20,1,2  / Thu=8      / Fri=13,14,15 / Sat=16,17
     //
-    // Returns: a resolved item object (type:'rubric'), or null on data failure.
+    // HOLY WEEK (Mon–Sat):
+    //   Great Mon=4,5,6 / Great Tue=9,10,11 / Great Wed=14,15,16
+    //   Great Thu=no Psalter / Great Fri=no Psalter / Great Sat=17 only
+    //
+    // SOURCE: OCA (oca.org/liturgics/outlines/kathisma-readings-at-matins),
+    //   cross-checked against saintjonah.org/rub/kathismata.htm.
     // ──────────────────────────────────────────────────────────────────────
-    function _resolveOrthrosKathismaPair(slotKey, dayOfWeek, brightWeek, isGreatLent) {
-        const isFirst = slotKey === 'kathisma-first';
-
+    function _resolveOrthrosKathismaPair(slotKey, dayOfWeek, brightWeek, isGreatLent, dateObj, seasonResult) {
+        const SLOT_META = {
+            'kathisma-first':  { ordinal: 'First',  index: 0 },
+            'kathisma-second': { ordinal: 'Second', index: 1 },
+            'kathisma-third':  { ordinal: 'Third',  index: 2 }
+        };
+        const sm        = SLOT_META[slotKey] || { ordinal: 'First', index: 0 };
+        const ordinal   = sm.ordinal;
+        const slotIndex = sm.index;
+ 
         // ── Bright Week: no kathisma ──────────────────────────────────────
         if (brightWeek) {
             return {
                 type:       'rubric',
                 key:        slotKey,
-                label:      isFirst ? 'First Kathisma' : 'Second Kathisma',
+                label:      `${ordinal} Kathisma`,
                 text:       '(Bright Week — no Kathisma. During Bright Week (Pascha Sunday through Thomas Saturday) the Paschal Canon replaces Psalter reading. The kathismata are not read.)',
                 resolvedAs: 'orthros-bright-week-no-kathisma'
             };
         }
-
-        // ── Great Lent: ordinary cycle inapplicable ───────────────────────
-        if (isGreatLent) {
-            return {
-                type:       'rubric',
-                key:        slotKey,
-                label:      isFirst ? 'First Kathisma (Great Lent)' : 'Second Kathisma (Great Lent)',
-                text:       '(GREAT LENT — the ordinary weekday Orthros kathisma cycle is not in use. ' +
-                            'The Lenten Typikon prescribes reading the entire Psalter twice weekly, with a ' +
-                            'substantially expanded distribution — up to three kathismata per service on ' +
-                            'some days. The specific Lenten Orthros kathisma appointments are not yet ' +
-                            'implemented in this engine.)',
-                resolvedAs: 'orthros-great-lent-kathisma-not-implemented'
-            };
+ 
+        // ── Holy Week: Great Monday through Great Saturday ────────────────
+        const isHolyWeekPath = seasonResult && seasonResult.season === 'holy-week';
+        if (isHolyWeekPath && seasonResult.holyWeekDay !== 'palm-sunday') {
+            const hwDay = seasonResult.holyWeekDay;
+            if (_orthrosKathismaData === null) return null;
+            const hwTable = _orthrosKathismaData.lenten_appointments &&
+                            _orthrosKathismaData.lenten_appointments.holy_week;
+            if (!hwTable) return null;
+            const hwDayData = hwTable[hwDay];
+            if (!hwDayData) return null;
+ 
+            if (hwDayData.no_psalter_reading) {
+                // Great Thursday / Great Friday: no Psalter reading
+                const dayLabel = _hwDayLabel(hwDay);
+                return {
+                    type:       'rubric',
+                    key:        slotKey,
+                    label:      `${ordinal} Kathisma (${dayLabel})`,
+                    text:       `(${dayLabel} — No Psalter reading at Orthros. The kathismata are not appointed on ${dayLabel}.)`,
+                    resolvedAs: 'orthros-holy-week-no-psalter-reading'
+                };
+            }
+ 
+            const hwKathismata = hwDayData.kathismata;
+            if (slotIndex >= hwKathismata.length) {
+                // Slot not appointed (e.g., Great Saturday has only K17)
+                const dayLabel = _hwDayLabel(hwDay);
+                return {
+                    type:       'rubric',
+                    key:        slotKey,
+                    label:      `${ordinal} Kathisma — Not Appointed`,
+                    text:       `(${dayLabel} — ${hwKathismata.length === 1 ? 'only one kathisma' : `only ${hwKathismata.length} kathismata`} appointed at Orthros today. This slot is not read.)`,
+                    resolvedAs: 'orthros-holy-week-kathisma-slot-not-appointed'
+                };
+            }
+ 
+            const hwKNum  = hwKathismata[slotIndex];
+            const hwKMeta = _getKathismaMeta(hwKNum);
+            return _buildLentenKathismaRubric(slotKey, hwKNum, hwKMeta, ordinal,
+                                              'Holy Week', _hwDayLabel(hwDay));
         }
-
+ 
+        // ── Great Lent: Mon–Sat ───────────────────────────────────────────
+        if (isGreatLent) {
+            if (_orthrosKathismaData === null) return null;
+            if (!_orthrosKathismaData.lenten_appointments) return null;
+ 
+            // Compute lent week (1–6)
+            const glYear        = dateObj.getFullYear();
+            const glPascha      = _getOrthodoxPascha(glYear);
+            const GL_MS         = 86400000;
+            const glCleanMonday = new Date(glPascha.getTime() - 48 * GL_MS);
+            const glLocalDate   = new Date(dateObj.getFullYear(), dateObj.getMonth(), dateObj.getDate());
+            const glDaysSinceCM = Math.round((glLocalDate.getTime() - glCleanMonday.getTime()) / GL_MS);
+            const lentWeek      = Math.floor(glDaysSinceCM / 7) + 1;
+ 
+            const tableKey  = lentWeek === 5 ? 'week_5' : 'weeks_1_to_4_and_6';
+            const weekTable = _orthrosKathismaData.lenten_appointments[tableKey];
+            if (!weekTable) return null;
+ 
+            const GL_WEEKDAY_KEYS = ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'];
+            const glDayKey  = GL_WEEKDAY_KEYS[dayOfWeek];
+            const glDayData = weekTable[glDayKey];
+            if (!glDayData) return null;
+ 
+            const glKathismata = glDayData.kathismata;
+            if (slotIndex >= glKathismata.length) {
+                // Slot not appointed for this day (e.g., Wk 5 Thursday has only K8)
+                const weekLabel = lentWeek === 5 ? 'Great Lent Week 5' : `Great Lent Week ${lentWeek}`;
+                const dayLabel  = glDayKey.charAt(0).toUpperCase() + glDayKey.slice(1);
+                return {
+                    type:       'rubric',
+                    key:        slotKey,
+                    label:      `${ordinal} Kathisma — Not Appointed`,
+                    text:       `(${weekLabel}, ${dayLabel} — ${glKathismata.length === 1 ? 'only one kathisma' : `only ${glKathismata.length} kathismata`} appointed at Orthros today. This slot is not read.)`,
+                    resolvedAs: 'orthros-great-lent-kathisma-slot-not-appointed'
+                };
+            }
+ 
+            const glKNum  = glKathismata[slotIndex];
+            const glKMeta = _getKathismaMeta(glKNum);
+            const weekLabel = lentWeek === 5 ? 'Great Lent Week 5' : `Great Lent Week ${lentWeek}`;
+            return _buildLentenKathismaRubric(slotKey, glKNum, glKMeta, ordinal,
+                                              'Great Lent', weekLabel);
+        }
+ 
         // ── Sunday: deferred ─────────────────────────────────────────────
         if (dayOfWeek === 0) {
             return {
                 type:       'rubric',
                 key:        slotKey,
-                label:      isFirst ? 'First Kathisma (Sunday)' : 'Second Kathisma (Sunday)',
+                label:      `${ordinal} Kathisma (Sunday)`,
                 text:       '(Sunday Orthros — Kathisma: On Sundays when the Polyeleos is appointed ' +
                             '(Psalms 134–135 LXX), it replaces the ordinary Kathisma reading. ' +
                             'On other Sundays the assignment varies by local use and whether a vigil ' +
@@ -2780,26 +2865,37 @@ function _resolveComplineFestalTheotokionRubric(officeKey, troparionItem, fallba
                 resolvedAs: 'orthros-sunday-kathisma-deferred'
             };
         }
-
+ 
+        // ── kathisma-third: not appointed on ordinary weekdays ────────────
+        if (slotIndex === 2) {
+            return {
+                type:       'rubric',
+                key:        slotKey,
+                label:      'Third Kathisma — Not Appointed',
+                text:       '(Third Kathisma — not appointed on ordinary weekdays. A third Kathisma is prescribed only during Great Lent and Holy Week.)',
+                resolvedAs: 'orthros-kathisma-third-not-appointed-ordinary'
+            };
+        }
+ 
         // ── Ordinary weekday: resolve from appointment table ──────────────
-        if (_orthrosKathismaData === null) return null; // data failed to load — degrade to placeholder
-
+        if (_orthrosKathismaData === null) return null;
+ 
         const assignments = _orthrosKathismaData.assignments;
         if (!Array.isArray(assignments)) return null;
-
+ 
         const assignment = assignments.find(a => a.weekdayIndex === dayOfWeek);
         if (!assignment || assignment.sunday_deferred) return null;
-
+ 
+        const isFirst      = slotIndex === 0;
         const kathismaData = isFirst ? assignment.kathismaFirst : assignment.kathismaSecond;
         if (!kathismaData) return null;
-
+ 
         const k          = kathismaData.number;
         const title      = kathismaData.title;
         const psalmsLxx  = kathismaData.psalms_lxx;
         const psalmsProt = kathismaData.psalms_heb_protestant;
         const incipit    = kathismaData.incipit;
-        const ordinal    = isFirst ? 'First' : 'Second';
-
+ 
         let text = `Orthros ${ordinal} Kathisma: Kathisma ${k} — ${title}\n\n` +
                    `Psalms ${psalmsLxx} (LXX)\n` +
                    `Incipit: "${incipit}"\n\n` +
@@ -2807,14 +2903,14 @@ function _resolveComplineFestalTheotokionRubric(officeKey, troparionItem, fallba
                    `(ORDINARY WEEKDAY — standard Byzantine Orthros weekly cycle. ` +
                    `Great Feast, Great Lent, and vigil kathisma overrides are not yet implemented. ` +
                    `Full psalm text for this kathisma is not yet embedded; read from a Psalter.)`;
-
+ 
         if (kathismaData.note) {
             text += `\n\n(${kathismaData.note})`;
         }
         if (dayOfWeek === 6 && assignment.saturday_note) {
             text += `\n\n(${assignment.saturday_note})`;
         }
-
+ 
         return {
             type:           'rubric',
             key:            slotKey,
@@ -2825,6 +2921,68 @@ function _resolveComplineFestalTheotokionRubric(officeKey, troparionItem, fallba
             weekday:        assignment.weekday,
             resolvedAs:     'orthros-ordinary-weekday-kathisma-appointment'
         };
+    }
+ 
+    // ── v6.x helper: build a Lenten / Holy Week kathisma rubric item ──────
+    function _buildLentenKathismaRubric(slotKey, kNum, kMeta, ordinal, seasonLabel, subLabel) {
+        if (!kMeta) {
+            return {
+                type:           'rubric',
+                key:            slotKey,
+                label:          `${ordinal} Kathisma — Kathisma ${kNum}`,
+                text:           `${seasonLabel} (${subLabel}) — ${ordinal} Kathisma: Kathisma ${kNum} is appointed. (Psalm metadata not loaded — read Kathisma ${kNum} from a Psalter.)`,
+                kathismaNumber: kNum,
+                resolvedAs:     'orthros-lenten-kathisma-meta-absent'
+            };
+        }
+        let text = `${seasonLabel} (${subLabel}) — ${ordinal} Kathisma:\n` +
+                   `Kathisma ${kNum} — ${kMeta.title}\n\n` +
+                   `Psalms ${kMeta.psalms_lxx} (LXX)\n` +
+                   `Incipit: "${kMeta.incipit}"\n\n` +
+                   `(LXX psalm numbers. Protestant/Hebrew equivalents: Psalms ${kMeta.psalms_heb_protestant}.)\n\n` +
+                   `(Full psalm text: read from a Psalter.)`;
+        if (kMeta.note) {
+            text += `\n\n(${kMeta.note})`;
+        }
+        return {
+            type:           'rubric',
+            key:            slotKey,
+            label:          `Kathisma ${kNum} — ${kMeta.title}`,
+            text,
+            kathismaNumber: kNum,
+            psalmsLxx:      kMeta.psalms_lxx,
+            resolvedAs:     'orthros-lenten-kathisma-appointment'
+        };
+    }
+ 
+    // ── v6.x helper: look up kathisma metadata by number ─────────────────
+    // Checks kathisma_extended_meta first (Lenten OCA-standard definitions),
+    // then falls back to ordinary assignments array (K4–K13 etc.).
+    function _getKathismaMeta(kNum) {
+        if (_orthrosKathismaData && Array.isArray(_orthrosKathismaData.kathisma_extended_meta)) {
+            const found = _orthrosKathismaData.kathisma_extended_meta.find(m => m.number === kNum);
+            if (found) return found;
+        }
+        if (_orthrosKathismaData && Array.isArray(_orthrosKathismaData.assignments)) {
+            for (const a of _orthrosKathismaData.assignments) {
+                if (a.kathismaFirst  && a.kathismaFirst.number  === kNum) return a.kathismaFirst;
+                if (a.kathismaSecond && a.kathismaSecond.number === kNum) return a.kathismaSecond;
+            }
+        }
+        return null;
+    }
+ 
+    // ── v6.x helper: Holy Week day key → display label ───────────────────
+    function _hwDayLabel(hwDay) {
+        const LABELS = {
+            'great-monday':    'Great Monday',
+            'great-tuesday':   'Great Tuesday',
+            'great-wednesday': 'Great Wednesday',
+            'great-thursday':  'Great Thursday',
+            'great-friday':    'Great Friday',
+            'great-saturday':  'Great Saturday'
+        };
+        return LABELS[hwDay] || hwDay;
     }
 
 
@@ -3160,21 +3318,21 @@ function _resolveComplineFestalTheotokionRubric(officeKey, troparionItem, fallba
                     };
                     continue;
                 }
-                if (item.key === 'kathisma-first') {
+                // ── v5.7 / v6.x: kathisma-first, kathisma-second, kathisma-third ──
+                // kathisma-third is only appointed during Great Lent and Holy Week.
+                // isGreatLentDay covers Mon–Sat (unlike isGreatLentWeekday which is Mon–Fri only).
+                // Holy Week resolution is handled inside _resolveOrthrosKathismaPair via seasonResult.
+                if (item.key === 'kathisma-first' ||
+                    item.key === 'kathisma-second' ||
+                    item.key === 'kathisma-third') {
+                    const isGreatLentDay = seasonResult && seasonResult.season === 'great-lent';
                     const resolved = _resolveOrthrosKathismaPair(
-                        'kathisma-first', dayOfWeek, isBrightWeek, isGreatLentWeekday
+                        item.key, dayOfWeek, isBrightWeek,
+                        isGreatLentDay,
+                        dateObj, seasonResult
                     );
                     if (resolved) section.items[i] = resolved;
                     // null → data load failure → slot remains skeleton placeholder (correct degradation)
-                    continue;
-                }
-
-                // ── v5.7: kathisma-second ─────────────────────────────────
-                if (item.key === 'kathisma-second') {
-                    const resolved = _resolveOrthrosKathismaPair(
-                        'kathisma-second', dayOfWeek, isBrightWeek, isGreatLentWeekday
-                    );
-                    if (resolved) section.items[i] = resolved;
                     continue;
                 }
 

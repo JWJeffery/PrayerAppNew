@@ -129,7 +129,14 @@
           "key": "kathisma-second",
           "label": "Second Kathisma",
           "status": "unresolved",
-          "note": "Second Psalter kathisma at Orthros (Monday–Saturday). Omitted on Sunday when the full Polyeleos or Resurrection Gospel sequence applies. Deferred."
+         "note": "Second Psalter kathisma at Orthros (Monday–Saturday). Omitted on Sunday when the full Polyeleos or Resurrection Gospel sequence applies. Deferred."
+        },
+        {
+          "type": "placeholder",
+          "key": "kathisma-third",
+          "label": "Third Kathisma",
+          "status": "unresolved",
+          "note": "Third Psalter kathisma at Orthros. Appointed only during Great Lent (Monday–Saturday, up to three kathismata per service) and on Holy Week Monday–Wednesday. Not read on ordinary weekdays, Sundays, Holy Week Thursday–Friday (no Psalter reading), or Bright Week. Resolved by HorologionEngine."
         }
       ]
     },
