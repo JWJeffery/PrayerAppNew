@@ -4387,7 +4387,7 @@ const isMajorFeastForPraises =
                                     ...(ode.troparia || []).map((t, idx) => ({
                                         type: 'text', key: `troparion-${idx + 1}`, label: `Troparion ${idx + 1}`, text: t
                                     })),
-                                    { type: 'text', key: 'theotokion',  label: 'Theotokion',  text: ode.theotokion || '' }
+                                    ...(ode.theotokion ? [{ type: 'text', key: 'theotokion', label: 'Theotokion', text: ode.theotokion }] : [])
                                 ]
                             }));
 
