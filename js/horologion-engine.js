@@ -3625,9 +3625,16 @@ function _resolveComplineFestalTheotokionRubric(officeKey, troparionItem, fallba
                     if (isHolyWeek) {
                         const hwDay = seasonResult && seasonResult.holyWeekDay
                             ? seasonResult.holyWeekDay : null;
-                        if (hwDay === 'palm-sunday') {
+                       if (hwDay === 'palm-sunday') {
                             // Palm Sunday: no Exapostilarion is appointed (Triodion rubric, PDF 67 witness).
-                            // Slot is wholly omitted; emit nothing and advance.
+                            // Explicit rubric replaces the skeleton placeholder; slot is marked not-appointed.
+                            section.items[i] = {
+                                type:       'rubric',
+                                key:        'exapostilarion',
+                                label:      'Exapostilarion (Svetilen)',
+                                text:       'PALM SUNDAY — Exapostilarion: No Exapostilarion is appointed at Palm Sunday Orthros per the Triodion rubric. The service proceeds from the Canon directly to the Praises.',
+                                resolvedAs: 'orthros-palm-sunday-exapostilarion-not-appointed'
+                            };
                             continue;
                         }
                         const hwExapResolved = hwDay
