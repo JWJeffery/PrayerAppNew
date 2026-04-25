@@ -135,8 +135,14 @@
             "text": "The truth of things revealed thee to thy flock as a rule of faith, a model of meekness, and a teacher of temperance; therefore thou hast achieved the heights by humility, riches by poverty. O Holy Father Nicholas, intercede with Christ God that our souls may be saved."
           },
           "troparion_status": "resolved",
+          "kontakion": {
+            "tone": 3,
+            "title": "Kontakion of St. Nicholas of Myra — Tone 3",
+            "text": "In Myra thou didst prove thyself a priest of holy life, O Nicholas; for, having fulfilled the Gospel of Christ, thou didst lay down thy soul for the people, and didst save the innocent from death. Wherefore, thou art sanctified as a great initiate of the grace of God."
+          },
+          "kontakion_status": "resolved",
           "tradition_tags": ["EOR", "OOR"],
-          "notes": "Major feast of St. Nicholas of Myra. Rank 2 / Polyeleos. One of the most celebrated saints of the Byzantine calendar."
+          "notes": "Major feast of St. Nicholas of Myra. Rank 2 / Polyeleos. One of the most celebrated saints of the Byzantine calendar. Kontakion Tone 3. Source: Hapgood/OCA/Antiochian tradition."
         }
       ]
     },

@@ -359,8 +359,14 @@
             "text": "Emulating the ways of Elias the zealot, and following the straight path of the Baptist, thou didst become a Father of Fathers in the desert, O Anthony. Through thy prayers, restore our souls O Father."
           },
           "troparion_status": "resolved",
+          "kontakion": {
+            "tone": 2,
+            "title": "Kontakion of St. Anthony the Great — Tone 2",
+            "text": "Renouncing the noise of the world and passing thy life in silence, thou didst emulate John the Baptist by thy ways, O righteous one; and with him we honor thee, O Anthony, adorner of the desert."
+          },
+          "kontakion_status": "resolved",
           "tradition_tags": ["EOR", "OOR", "ANG", "LAT"],
-          "notes": "Anthony the Great (+356), Father of monasticism. Rank 2 (Polyeleos). Pan-traditional celebration."
+          "notes": "Anthony the Great (+356), Father of monasticism. Rank 2 (Polyeleos). Pan-traditional celebration. Kontakion Tone 2. Source: OCA/Antiochian tradition."
         }
       ]
     },

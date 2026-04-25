@@ -424,8 +424,14 @@
             "text": "As a deliverer of captives and a defender of the poor, a physician to the sick and a champion of kings, O trophy-bearing Great Martyr George, intercede with Christ God that our souls may be saved."
           },
           "troparion_status": "resolved",
+          "kontakion": {
+            "tone": 8,
+            "title": "Kontakion of the Holy Great Martyr George — Tone 8",
+            "text": "Cultivated by God, thou wast shown to be an honorable farmer of piety, gathering the sheaves of virtue for thyself; for thou didst sow in tears, but reap in joy; fighting in battle thou didst exhaust all the power of the enemy, O Trophy-bearer George, and by thine intercessions thou dost save our souls."
+          },
+          "kontakion_status": "resolved",
           "tradition_tags": ["EOR", "OOR", "ANG", "LAT"],
-          "notes": "George the Great Martyr (+ca. 303), trophy-bearer and victory-martyr. Rank 2 (Polyeleos). Patron of England, Georgia, and many cities. Note: if Apr 23 falls during Bright Week or Holy Week the commemoration is moved; feast-rank override deferred."
+          "notes": "George the Great Martyr (+ca. 303), trophy-bearer and victory-martyr. Rank 2 (Polyeleos). Patron of England, Georgia, and many cities. Note: if Apr 23 falls during Bright Week or Holy Week the commemoration is moved; feast-rank override deferred. Kontakion Tone 8. Source: OCA/Antiochian tradition."
         }
       ]
     },
