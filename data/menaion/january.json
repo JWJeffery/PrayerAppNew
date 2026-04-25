@@ -612,8 +612,14 @@
             "text": "As the three outstanding lights of the three-sunned Godhead, who filled all the world with divine light, the God-inspired speakers of holy words: let us praise them as three golden mouths of wisdom, for they dispersed doctrines of divinity and they now intercede with the Master before all to have mercy on our souls."
           },
           "troparion_status": "resolved",
+          "kontakion": {
+            "tone": 2,
+            "title": "Kontakion of the Three Hierarchs — Tone 2",
+            "text": "O Lord, You have received the Holy and God-proclaiming heralds, the crown of Your Teachers, for the enjoyment of Your good things and for repose; for You have accepted their sufferings and labors above every sacrifice, for You alone glorify Your Saints."
+          },
+          "kontakion_status": "resolved",
           "tradition_tags": ["EOR", "OOR"],
-          "notes": "Feast of the Three Hierarchs. Established by Patriarch John Mauropos of Constantinople (+1100). Rank 2 (Polyeleos). All three are commemorated on their individual feast days as well."
+          "notes": "Feast of the Three Hierarchs. Established by Patriarch John Mauropos of Constantinople (+1100). Rank 2 (Polyeleos). All three are commemorated on their individual feast days as well. Kontakion Tone 2. Source: OCA."
         }
       ]
     },

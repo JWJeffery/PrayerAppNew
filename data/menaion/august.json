@@ -550,8 +550,14 @@
             "text": "The memory of the righteous is celebrated with praise, but the Lord's testimony is sufficient for thee, O Forerunner; for thou hast proved to be truly more venerable than the Prophets, since thou wast granted to baptize in the stream Him Whom they proclaimed. Wherefore, having contested for the truth, thou didst rejoice to announce to those in Hades the good tidings of God Who had appeared in the flesh; Who takes away the sin of the world, and grants us great mercy."
           },
           "troparion_status": "resolved",
+          "kontakion": {
+            "tone": 5,
+            "title": "Kontakion of the Beheading of John the Baptist — Tone 5",
+            "text": "The glorious beheading of the Forerunner became an act of divine dispensation, for he preached to those in hell the coming of the Savior. Let Herodias lament, for she entreated lawless murder, loving not the law of God, nor eternal life, but that which is false and temporal."
+          },
+          "kontakion_status": "resolved",
           "tradition_tags": ["EOR", "OOR", "ANG", "LAT"],
-          "notes": "Beheading of John the Baptist. Rank 2 (Polyeleos). A strict fast day. Same Troparion tone as the Synaxis of the Baptist (Jan 7)."
+          "notes": "Beheading of John the Baptist. Rank 2 (Polyeleos). A strict fast day. Same Troparion tone as the Synaxis of the Baptist (Jan 7). Kontakion Tone 5. Source: OCA."
         }
       ]
     },

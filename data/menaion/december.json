@@ -572,8 +572,14 @@
             "text": "Crowned with the diadem of the royal purple of thy blood, O holy Protomartyr Stephen, thou didst receive the crown of victory from Christ, Who through the crown of thorns blotted out the sin of our forefather. Beseech Him that He save our souls."
           },
           "troparion_status": "resolved",
+          "kontakion": {
+            "tone": 3,
+            "title": "Kontakion of the Protomartyr Stephen — Tone 3",
+            "text": "Yesterday the Master came to us in the flesh, today His servant departs from the flesh; yesterday the King was born in the flesh, and today His servant is stoned; for His sake, the Protomartyr and divine Stephen is perfected."
+          },
+          "kontakion_status": "resolved",
           "tradition_tags": ["EOR", "OOR"],
-          "notes": "Holy Protomartyr and Archdeacon Stephen, first martyr of the Church. Rank 2 / Polyeleos. Feast observed within the Afterfeast of Christmas."
+          "notes": "Holy Protomartyr and Archdeacon Stephen, first martyr of the Church. Rank 2 / Polyeleos. Feast observed within the Afterfeast of Christmas. Kontakion Tone 3. Source: OCA."
         }
       ]
     },
