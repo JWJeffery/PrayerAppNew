@@ -25,8 +25,14 @@
             "text": "Thy sound has gone forth into all the earth, which has received thy word. Thereby thou hast taught the Faith in a manner befitting God; thou hast made manifest the nature of created things; thou hast adorned the customs of men. O Father, royal Priesthood, intercede with Christ God that our souls be saved."
           },
           "troparion_status": "resolved",
+          "kontakion": {
+            "tone": 4,
+            "title": "Kontakion of St. Basil the Great — Tone 4",
+            "text": "You were revealed as the sure foundation of the Church, / granting all mankind a lordship which cannot be taken away, / sealing it with your precepts, / O venerable and heavenly Father Basil."
+          },
+          "kontakion_status": "resolved",
           "tradition_tags": ["EOR", "OOR"],
-          "notes": "Jan 1 commemorates both the Circumcision (rank 1 feast of the Lord) and St. Basil the Great. The Troparion of St. Basil is used at Vespers; the feast rank recorded here reflects St. Basil as Polyeleos saint."
+          "notes": "Jan 1 commemorates both the Circumcision (rank 1 feast of the Lord) and St. Basil the Great. The Troparion of St. Basil is used at Vespers; the feast rank recorded here reflects St. Basil as Polyeleos saint. Kontakion Tone 4. Source: OCA."
         }
       ]
     },
@@ -44,8 +50,14 @@
             "text": "From thy youth thou didst love Christ above all things, O blessed one, and desiring to serve Him alone thou didst wander in the wilderness and strengthen thyself by constant prayer. Filled with love for God and neighbor, thou art a speedy helper to all who come to thee. O Holy Father Seraphim, intercede for the salvation of our souls."
           },
           "troparion_status": "resolved",
+          "kontakion": {
+            "tone": 2,
+            "title": "Kontakion of St. Seraphim of Sarov — Tone 2",
+            "text": "Forsaking the beauty as well as the corruption of this world, / you settled in the monastery of Sarov, O Saint. / There you lived an angelic life, / becoming for many the way to salvation. / Therefore, Christ has glorified you, Father Seraphim, / enriching you with abundant healing and miracles. / So we cry to you: Save us by your prayers, venerable Seraphim, our father."
+          },
+          "kontakion_status": "resolved",
           "tradition_tags": ["EOR"],
-          "notes": "St. Seraphim of Sarov (+1833). Glorified 1903. Rank 2 (Polyeleos). OCA calendar."
+          "notes": "St. Seraphim of Sarov (+1833). Glorified 1903. Rank 2 (Polyeleos). OCA calendar. Kontakion Tone 2. Source: OCA."
         }
       ]
     },
@@ -384,8 +396,14 @@
             "text": "Pillars of Orthodoxy, who truly supported the Church with divine doctrines, filling the whole world with your teachings, O blessed Athanasius and wise Cyril: you are now standing before the Lord of all. Pray ye ever for the salvation of our souls."
           },
           "troparion_status": "resolved",
+          "kontakion": {
+            "tone": 4,
+            "title": "Kontakion of Sts. Athanasius and Cyril of Alexandria — Tone 4",
+            "text": "Athanasius and Cyril, great hierarchs of true piety, and noble champions of the Church of Christ, / preserve all who sing: / O Compassionate Lord, save those who honor You."
+          },
+          "kontakion_status": "resolved",
           "tradition_tags": ["EOR", "OOR", "ANG", "LAT"],
-          "notes": "Athanasius (+373) and Cyril (+444) of Alexandria. Defenders of Nicene orthodoxy. Rank 2."
+          "notes": "Athanasius (+373) and Cyril (+444) of Alexandria. Defenders of Nicene orthodoxy. Rank 2. Kontakion Tone 4. Source: OCA."
         }
       ]
     },
@@ -574,8 +592,14 @@
             "text": "Emulator of the angels and support of the afflicted, thee, O God-wise Ephrem, thy Lord filled with the gifts of the Holy Spirit, for thou hast bent low before His footstool. Wherefore from the spring of thy words thou dost pour forth rivers of repentance. O Father, intercede with God for the salvation of our souls."
           },
           "troparion_status": "resolved",
+          "kontakion": {
+            "tone": 2,
+            "title": "Kontakion of St. Ephrem the Syrian — Tone 2",
+            "text": "Ever anticipating the hour of Judgment, / you lamented bitterly, venerable Ephraim. / Through your deeds you were a teacher by example; / therefore, universal Father, you rouse the slothful to repentance."
+          },
+          "kontakion_status": "resolved",
           "tradition_tags": ["EOR", "OOR", "ANG", "LAT", "COE"],
-          "notes": "Ephrem the Syrian (+373). Deacon, hymnographer, Doctor of the Church. Pan-traditional. Rank 2."
+          "notes": "Ephrem the Syrian (+373). Deacon, hymnographer, Doctor of the Church. Pan-traditional. Rank 2. Kontakion Tone 2. Source: OCA."
         }
       ]
     },

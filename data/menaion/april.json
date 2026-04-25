@@ -468,8 +468,14 @@
             "text": "O Holy Apostle and Evangelist Mark, intercede with the merciful God that He may grant our souls forgiveness of transgressions."
           },
           "troparion_status": "resolved",
+          "kontakion": {
+            "tone": 2,
+            "title": "Kontakion of the Holy Apostle and Evangelist Mark — Tone 2",
+            "text": "Receiving the grace of the Spirit from on high, / you destroyed the snares of the rhetoricians, / and like a net cast wide you gathered all the Gentiles, / presenting them to Christ your Master. / O glorious Evangelist Mark, we praise you."
+          },
+          "kontakion_status": "resolved",
           "tradition_tags": ["EOR", "OOR", "ANG", "LAT"],
-          "notes": "Mark the Evangelist, author of the Second Gospel, first bishop of Alexandria (+68 AD). Rank 2 (Polyeleos). Pan-traditional."
+          "notes": "Mark the Evangelist, author of the Second Gospel, first bishop of Alexandria (+68 AD). Rank 2 (Polyeleos). Pan-traditional. Kontakion Tone 2. Source: OCA/Antiochian tradition."
         }
       ]
     },

@@ -116,8 +116,14 @@
             "text": "In thee, O Father Sabas, was exactly preserved that which was according to the image of God; for taking up thy cross thou didst follow Christ, teaching by deeds to despise the flesh since it passes away, and to care for the soul as an immortal thing. Therefore thy soul rejoiceth with the angels."
           },
           "troparion_status": "resolved",
+           "kontakion": {
+            "tone": 8,
+            "title": "Kontakion of St. Sabas the Sanctified — Tone 8",
+            "text": "From your youth you were offered to God as an unblemished sacrifice because of your virtue, / having been dedicated to Him before your birth, O blessed Savva. / You were an adornment of monastics and a praiseworthy citizen of the desert. / Therefore, we cry to you: Hail, greatly renowned Father."
+          },
+          "kontakion_status": "resolved",
           "tradition_tags": ["EOR", "OOR"],
-          "notes": "Abbot of the Great Laura near Jerusalem, founder of Palestinian monasticism, +532. Rank 2 / Polyeleos."
+          "notes": "Abbot of the Great Laura near Jerusalem, founder of Palestinian monasticism, +532. Rank 2 / Polyeleos. Kontakion Tone 8. Source: OCA."
         }
       ]
     },

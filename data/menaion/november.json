@@ -278,8 +278,14 @@
             "text": "Thou wast a disciple of the light, and like an eagle soaring high, thou didst proclaim the Logos, the Pre-eternal Word, Who took flesh of the Virgin. O Apostle Philip, intercede with Christ our God to save our souls."
           },
           "troparion_status": "resolved",
+           "kontakion": {
+            "tone": 8,
+            "title": "Kontakion of the Holy Apostle Philip — Tone 8",
+            "text": "Philip, Your disciple and friend, the emulator of Your sufferings, / who spoke with God, proclaimed You as God to all the world. / By his supplications, and through the intercession of the Theotokos, / preserve Your Church, and every city, O most merciful One."
+          },
+          "kontakion_status": "resolved",
           "tradition_tags": ["EOR", "OOR"],
-          "notes": "Feast of Holy Apostle Philip. Rank 2 / Polyeleos. Philip Fast begins the following day (Nov 15)."
+          "notes": "Feast of Holy Apostle Philip. Rank 2 / Polyeleos. Philip Fast begins the following day (Nov 15). Kontakion Tone 8. Source: OCA."
         }
       ]
     },
@@ -603,8 +609,14 @@
             "text": "As the first-called of the apostles and the brother of the foremost disciple, entreat the Master of all, O Andrew, to grant peace to the world and to our souls great mercy."
           },
           "troparion_status": "resolved",
+          "kontakion": {
+            "tone": 2,
+            "title": "Kontakion of the Holy Apostle Andrew the First-Called — Tone 2",
+            "text": "Let us praise the zealous herald of Andrew, / the first-called of the Savior's disciples, / and the brother of Peter: / as he once called to his brother, so now he cries to us: / Come, for we have found the One Whom the world desired!"
+          },
+          "kontakion_status": "resolved",
           "tradition_tags": ["EOR", "OOR"],
-          "notes": "Holy Apostle Andrew the First-Called. Rank 2 / Polyeleos. Patron of Constantinople, Greece, Russia, and Scotland."
+          "notes": "Holy Apostle Andrew the First-Called. Rank 2 / Polyeleos. Patron of Constantinople, Greece, Russia, and Scotland. Kontakion Tone 2. Source: OCA/Hapgood tradition."
         }
       ]
     }
