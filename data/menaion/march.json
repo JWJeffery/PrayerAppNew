@@ -481,8 +481,14 @@
             "text": "Today is the beginning of our salvation and the revelation of the mystery which was before all ages; the Son of God becomes the Son of the Virgin, and Gabriel announces the good tidings of grace. With him let us also cry to the Theotokos: Rejoice, thou who art full of grace, the Lord is with thee."
           },
           "troparion_status": "resolved",
+          "kontakion": {
+            "tone": 8,
+            "title": "Kontakion of the Annunciation — Tone 8",
+            "text": "To Thee, the Champion Leader, we Thy servants dedicate a feast of victory and of thanksgiving as ones rescued out of sufferings, O Theotokos; but as Thou art one with might which is invincible, from all dangers that can be do Thou deliver us, that we may cry to Thee: Rejoice, thou Bride unwedded."
+          },
+          "kontakion_status": "resolved",
           "tradition_tags": ["EOR", "OOR", "ANG", "LAT"],
-          "notes": "Great Feast — Annunciation. Rank 1. The Annunciation always falls on Mar 25 regardless of Lenten season; if it coincides with Holy Week or Pascha special rubrics apply (feast-rank override system, deferred)."
+          "notes": "Great Feast — Annunciation. Rank 1. The Annunciation always falls on Mar 25 regardless of Lenten season; if it coincides with Holy Week or Pascha special rubrics apply (feast-rank override system, deferred). Kontakion Tone 8 (Akathist prooemion). Source: Hapgood/OCA/Antiochian tradition."
         }
       ]
     },

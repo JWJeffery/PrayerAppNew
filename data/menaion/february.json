@@ -43,9 +43,15 @@
             "title": "Troparion of the Presentation of the Lord",
             "text": "Rejoice, O Virgin Theotokos, full of grace; for from thee shone the Sun of Righteousness, Christ our God, enlightening those who sat in darkness. Rejoice and be glad, O righteous Elder, as thou receivest in thine arms the Redeemer of our souls, Who grants us also the Resurrection."
           },
-          "troparion_status": "resolved",
+         "troparion_status": "resolved",
+          "kontakion": {
+            "tone": 1,
+            "title": "Kontakion of the Presentation of the Lord — Tone 1",
+            "text": "Thou Who didst sanctify the Virgin's womb by Thy birth, and didst bless Simeon's arms as was meet, didst also come to save us, O Christ our God. Preserve Thy people in peace, and strengthen Orthodox Christians whom Thou hast loved, O only Lover of mankind."
+          },
+          "kontakion_status": "resolved",
           "tradition_tags": ["EOR", "OOR", "ANG", "LAT"],
-          "notes": "Great Feast — Presentation / Hypapante. Rank 1. The Troparion is sung throughout the festal period (Feb 2–9 with Leavetaking on Feb 9)."
+          "notes": "Great Feast — Presentation / Hypapante. Rank 1. The Troparion is sung throughout the festal period (Feb 2–9 with Leavetaking on Feb 9). Kontakion Tone 1. Source: Hapgood/OCA/Antiochian tradition."
         }
       ]
     },

@@ -405,8 +405,14 @@
             "text": "Today is the prelude of God's good will and the proclamation of the salvation of men. The Virgin appears in the temple of God, and foretells Christ to all. Let us also cry out to her with a mighty voice: Rejoice, thou fulfilment of the Creator's dispensation."
           },
           "troparion_status": "resolved",
+          "kontakion": {
+            "tone": 4,
+            "title": "Kontakion of the Entry of the Theotokos into the Temple — Tone 4",
+            "text": "The most pure Temple of the Savior, the most precious bridal chamber and Virgin, the sacred treasury of the glory of God, on this day is introduced into the house of the Lord, and bringeth with her the grace of the divine Spirit. Her do the Angels of God praise: She is the heavenly tabernacle."
+          },
+          "kontakion_status": "resolved",
           "tradition_tags": ["EOR", "OOR"],
-          "notes": "One of the Twelve Great Feasts. Rank 1. Great Feast — highest priority; Octoechos displaced entirely."
+          "notes": "One of the Twelve Great Feasts. Rank 1. Great Feast — highest priority; Octoechos displaced entirely. Kontakion Tone 4. Source: Hapgood/OCA/Antiochian tradition."
         }
       ]
     },

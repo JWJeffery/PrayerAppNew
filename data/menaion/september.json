@@ -159,7 +159,7 @@
         }
       ]
     },
-    "09-08": {
+     "09-08": {
       "commemorations": [
         {
           "id": "nativity-theotokos",
@@ -173,8 +173,14 @@
             "text": "Thy nativity, O Theotokos Virgin, has proclaimed joy to the whole universe; for from thee arose the Sun of Righteousness, Christ our God, Who, having abolished the curse, hath given the blessing, and having abolished death, hath granted us life everlasting."
           },
           "troparion_status": "resolved",
+          "kontakion": {
+            "tone": 4,
+            "title": "Kontakion of the Nativity of the Theotokos — Tone 4",
+            "text": "By thy nativity, O most pure Virgin, Joachim and Anna are freed from the reproach of barrenness, and Adam and Eve from the corruption of death. And thy people, redeemed from the guilt of sins, celebrate thee and cry: The barren woman giveth birth to the Theotokos, who is the nourisher of our Life."
+          },
+          "kontakion_status": "resolved",
           "tradition_tags": ["EOR", "OOR", "ANG", "LAT"],
-          "notes": "Great Feast — Nativity of the Theotokos. Rank 1. One of the Twelve Great Feasts."
+          "notes": "Great Feast — Nativity of the Theotokos. Rank 1. One of the Twelve Great Feasts. Kontakion Tone 4. Source: Hapgood/OCA/Antiochian tradition."
         }
       ]
     },
@@ -286,9 +292,15 @@
             "title": "Troparion of the Exaltation of the Holy Cross",
             "text": "Save, O Lord, Thy people and bless Thine inheritance; grant victories to the Orthodox Christians over their adversaries; and by virtue of Thy Cross, preserve Thy habitation."
           },
-          "troparion_status": "resolved",
+           "troparion_status": "resolved",
+          "kontakion": {
+            "tone": 4,
+            "title": "Kontakion of the Exaltation of the Holy Cross — Tone 4",
+            "text": "O Thou Who in Thy will wast lifted up upon the Cross, bestow Thy bounties upon the new community that is called by Thy name, O Christ our God; make glad with Thy power the Orthodox Christians, granting them victories over adversaries; may they have as Thy help a weapon of peace, an invincible trophy."
+          },
+          "kontakion_status": "resolved",
           "tradition_tags": ["EOR", "OOR", "ANG", "LAT"],
-          "notes": "Great Feast — Exaltation of the Holy Cross. Rank 1. One of the Twelve Great Feasts. A strict fast day."
+          "notes": "Great Feast — Exaltation of the Holy Cross. Rank 1. One of the Twelve Great Feasts. A strict fast day. Kontakion Tone 4. Source: Hapgood/OCA/Antiochian tradition."
         }
       ]
     },

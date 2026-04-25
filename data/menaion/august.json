@@ -120,8 +120,14 @@
             "text": "Thou wast transfigured on the mount, O Christ our God, revealing Thy glory to Thy disciples as far as they could bear it. Let Thine everlasting Light shine upon us sinners, through the intercessions of the Theotokos. O Giver of Light, glory to Thee."
           },
           "troparion_status": "resolved",
+          "kontakion": {
+            "tone": 7,
+            "title": "Kontakion of the Transfiguration — Tone 7",
+            "text": "Thou wast transfigured upon the mount, O Christ our God; and Thy disciples, in so far as they were able, beheld Thy glory; so that when they should behold Thee crucified, they would understand that Thy suffering was voluntary, and proclaim to all the world that Thou art truly the Radiance of the Father."
+          },
+          "kontakion_status": "resolved",
           "tradition_tags": ["EOR", "OOR", "ANG", "LAT"],
-          "notes": "Great Feast — Transfiguration of Our Lord. Rank 1. One of the Twelve Great Feasts."
+          "notes": "Great Feast — Transfiguration of Our Lord. Rank 1. One of the Twelve Great Feasts. Kontakion Tone 7. Source: Hapgood/OCA/Antiochian tradition."
         }
       ]
     },
@@ -272,8 +278,14 @@
             "text": "In thy birth thou didst preserve thy virginity; in thy falling asleep thou didst not forsake the world, O Theotokos. Thou wast translated to life, O Mother of Life, and by thine intercessions dost deliver our souls from death."
           },
           "troparion_status": "resolved",
+          "kontakion": {
+            "tone": 2,
+            "title": "Kontakion of the Dormition of the Theotokos — Tone 2",
+            "text": "Neither the tomb nor death could hold the Theotokos, who is sleepless in her intercessions and an unfailing hope in her mediations. For as the Mother of Life she was translated to life by Him Who dwelt in her ever-virgin womb."
+          },
+          "kontakion_status": "resolved",
           "tradition_tags": ["EOR", "OOR", "ANG", "LAT"],
-          "notes": "Great Feast — Dormition (Falling Asleep) of the Theotokos. Rank 1. One of the Twelve Great Feasts. Leavetaking Aug 23."
+          "notes": "Great Feast — Dormition (Falling Asleep) of the Theotokos. Rank 1. One of the Twelve Great Feasts. Leavetaking Aug 23. Kontakion Tone 2. Source: Hapgood/OCA/Antiochian tradition."
         }
       ]
     },
