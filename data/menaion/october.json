@@ -25,8 +25,14 @@
             "text": "Today the Virgin stands in the midst of the Church and with choirs of saints she invisibly prays to God for us. Angels and bishops worship, apostles and prophets rejoice together, since for our sake she prays to the Pre-eternal God."
           },
           "troparion_status": "resolved",
+          "kontakion": {
+            "tone": 3,
+            "title": "Kontakion of the Protection of the Theotokos — Tone 3",
+            "text": "The Virgin today stands in the midst of the Church, and with the choirs of Saints invisibly prays to God for us. Angels and Bishops worship, Apostles and Prophets rejoice together, since for our sake the Theotokos prays to the pre-eternal God."
+          },
+          "kontakion_status": "resolved",
           "tradition_tags": ["EOR"],
-          "notes": "Protection (Pokrov) of the Theotokos — vision of Andrew the Fool-for-Christ in Blachernae (+10th c.). Rank 2 in Slavic calendars (Polyeleos); rank 3 in Greek. Entered here as rank 2 per OCA usage."
+          "notes": "Protection (Pokrov) of the Theotokos — vision of Andrew the Fool-for-Christ in Blachernae (+10th c.). Rank 2 in Slavic calendars (Polyeleos); rank 3 in Greek. Entered here as rank 2 per OCA usage. Kontakion Tone 3. Source: Hapgood/OCA/Antiochian tradition."
         }
       ]
     },
