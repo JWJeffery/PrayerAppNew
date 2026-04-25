@@ -165,10 +165,15 @@
             "title": "Troparion of St. John the Baptist",
             "text": "The memory of the righteous is celebrated with praise, but the Lord's testimony is sufficient for thee, O Forerunner; for thou hast proved to be truly more venerable than the Prophets, since thou wast granted to baptize in the stream Him Whom they proclaimed. Wherefore, having contested for the truth, thou didst rejoice to announce to those in Hades the good tidings of God Who had appeared in the flesh; Who takes away the sin of the world, and grants us great mercy."
           },
-          "troparion_status": "resolved",
+            "troparion_status": "resolved",
+          "kontakion": {
+            "tone": 6,
+            "title": "Kontakion of the Synaxis of the Forerunner — Tone 6",
+            "text": "The river Jordan trembled and was driven back filled with fear at Your coming in the flesh, / while John drew back in awe as he fulfilled the ministry of a prophet. / The ranks of angels stood amazed, / when they beheld You in the flesh being baptized in the streams. / And we, who were in darkness, are filled with light as we praise You, / who have appeared to enlighten all."
+          },
+          "kontakion_status": "resolved",
           "tradition_tags": ["EOR", "OOR"],
-          "notes": "Synaxis of the Baptist — the day after Theophany, celebrating the Forerunner. Rank 2."
-        }
+          "notes": "Synaxis of the Baptist — the day after Theophany, celebrating the Forerunner. Rank 2. Kontakion Tone 6. Source: OCA."        }
       ]
     },
     "01-08": {

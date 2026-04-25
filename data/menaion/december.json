@@ -261,8 +261,14 @@
             "text": "Thou didst prove to be a fellow-citizen with the angels, O divinely wise and venerable Spyridon; for thou didst cause a dead woman to speak and didst turn a snake to gold. And when thou wast chanting the holy prayers, O sacred hierarch, thou hadst angels celebrating with thee. Glory to Him Who glorified thee, glory to Him Who crowned thee, glory to Him Who worketh healings for all through thee."
           },
           "troparion_status": "resolved",
+          "kontakion": {
+            "tone": 2,
+            "title": "Kontakion of St. Spyridon the Wonderworker — Tone 2",
+            "text": "Wounded by the love of Christ, most holy one, your mind was given wings by the radiance of the Spirit, O God-inspired one, / you found your work in active contemplation, O God-pleasing Spyridon, / becoming a godly sacrifice, and entreating divine illumination for all."
+          },
+          "kontakion_status": "resolved",
           "tradition_tags": ["EOR", "OOR"],
-          "notes": "Bishop of Trimythous in Cyprus, wonderworker, participant at Nicaea, +348. Rank 2 / Polyeleos. Greatly venerated especially in Greek Orthodox tradition."
+          "notes": "Bishop of Trimythous in Cyprus, wonderworker, participant at Nicaea, +348. Rank 2 / Polyeleos. Greatly venerated especially in Greek Orthodox tradition. Kontakion Tone 2. Source: OCA."
         }
       ]
     },
