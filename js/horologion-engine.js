@@ -4434,6 +4434,26 @@ const isMajorFeastForPraises =
                             canonStructureNote + '\n\n' +
                             '(Full Lenten Canon texts are not yet embedded in this path.)';
                         canonResolvedAs = 'orthros-great-lent-canon-rubric';
+                    } else if (dayOfWeek === 0 && isFeast &&
+                               troparionItem && typeof troparionItem.rank === 'number' &&
+                               troparionItem.rank <= 2) {
+                        // Sunday + rank 1–2 Menaion feast — honest dual-canon rubric
+                        const feastRank = troparionItem.rank;
+                        const feastName = troparionItem.name || troparionItem.label || 'the feast of the day';
+                        const tone = toneResult && toneResult.tone ? toneResult.tone : null;
+                        canonTone = tone;
+                        const toneNote = tone ? ` (Octoechos Tone ${tone})` : '';
+                        canonText =
+                            `SUNDAY + RANK ${feastRank} FEAST — Canon: On this Sunday a rank ${feastRank} ` +
+                            `Menaion feast (${feastName}) coincides with the Lord's Day. The Sunday ` +
+                            `resurrectional canon of the Octoechos${toneNote} is retained and sung ` +
+                            `according to the tone of the week. The Menaion festal canon for ` +
+                            `${feastName} is appointed in supplement and sung alongside the ` +
+                            `resurrectional canon according to the Typikon, with troparia interleaved ` +
+                            `per the appointed order. The Menaion festal canon corpus is not yet ` +
+                            `embedded in this path; the appointment described above is correct.\n\n` +
+                            canonStructureNote;
+                        canonResolvedAs = 'orthros-sunday-feast-canon-rubric';
                      } else if (dayOfWeek === 0) {
                         // Sunday — v6.1: resolve from corpus if available
                         const tone = toneResult && toneResult.tone ? toneResult.tone : null;
