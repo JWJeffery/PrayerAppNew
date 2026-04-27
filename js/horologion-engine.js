@@ -4022,7 +4022,7 @@ function _resolveComplineFestalTheotokionRubric(officeKey, troparionItem, fallba
                             continue;
                         }
 
-                        const _wdFirstEnding  = _wdCorpus.firstEndings[_wdDayKey];const _wdFirstEnding  = _wdCorpus.firstEndings[_wdDayKey] || _wdCorpus.firstEndings.monday || '';
+                        const _wdFirstEnding  = _wdCorpus.firstEndings[_wdDayKey] || _wdCorpus.firstEndings.monday || '';
                         const _wdSecondEnding = _wdCorpus.secondEnding;
                         const _wdThirdEnding  = _wdCorpus.thirdEnding;
 
