@@ -519,7 +519,44 @@ header {
 ::-webkit-scrollbar { width: 6px; }
 ::-webkit-scrollbar-track { background: transparent; }
 ::-webkit-scrollbar-thumb { background: #2a2e36; border-radius: 3px; }
-::-webkit-scrollbar-thumb:hover { background: #3a3e46; }
+::-webkit-scrollbar-thumb:hover { background: #3a3e46; border-radius: 3px; }
+
+/* ── Release-Governance Cockpit ─────────────────────────────────────────── */
+.countdown-block {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 6px;
+}
+.countdown-days {
+  font-size: 1.6em;
+  font-weight: 700;
+  color: var(--accent);
+  line-height: 1;
+}
+.countdown-label {
+  font-size: 0.72em;
+  color: var(--text-dim);
+}
+.gate-passed {
+  font-size: 0.82em;
+  color: var(--status-done);
+  font-weight: 600;
+  letter-spacing: 0.04em;
+}
+.release-critical-marker {
+  display: inline-block;
+  font-size: 0.62em;
+  letter-spacing: 0.08em;
+  font-weight: 700;
+  padding: 1px 6px;
+  border-radius: 3px;
+  background: rgba(201,168,76,0.15);
+  color: var(--accent);
+  border: 1px solid rgba(201,168,76,0.35);
+  white-space: nowrap;
+  vertical-align: middle;
+  margin-left: 6px;
+}
 </style>
 </head>
 <body>
@@ -645,7 +682,7 @@ header {
     <!-- Byzantine Release Roadmap -->
     <div class="panel" id="panel-release-roadmap">
       <div class="panel-head">
-        <span class="panel-title">Byzantine Release Roadmap</span>
+        <span class="panel-title">Release-Governance Cockpit</span>
         <span style="margin-left:auto; font-size:0.68em; color:var(--text-dim)">source: structure.json → governance.byzantine_release_roadmap</span>
       </div>
       <div class="panel-body" id="release-roadmap-body">
@@ -1185,7 +1222,7 @@ function renderDaySnapshotResult(body, dateISO, season, comms) {
   `;
 }
 
-// ── Release Roadmap renderer ──────────────────────────────────────────────
+// ── Release-Governance Cockpit renderer ───────────────────────────────────
 function renderReleaseRoadmap() {
   const body = document.getElementById('release-roadmap-body');
   if (!body) return;
@@ -1199,47 +1236,94 @@ function renderReleaseRoadmap() {
         return;
       }
 
-      const gateColor = rm.monastic_first ? 'var(--accent)' : 'var(--text-dim)';
-      const gateDateStr = rm.release_gate_date
-        ? ` <span style="color:var(--text-dim);font-size:0.88em">(${rm.release_gate_date})</span>`
-        : '';
+      // ── A: Release Gate + Countdown ──────────────────────────────────────
+      const gateName    = rm.release_gate      || '—';
+      const gateDateISO = rm.release_gate_date || null;
 
-      const monastic = rm.monastic_first
-        ? `<div style="font-size:0.76em;color:var(--text-dim);margin-bottom:10px;padding:8px 10px;
-                       background:rgba(201,168,76,0.07);border:1px solid rgba(201,168,76,0.18);border-radius:4px;">
-             ☩ Monastic-first — ${rm.monastic_first_rationale || ''}
+      let countdownHtml = '';
+      if (gateDateISO) {
+        const today = new Date();
+        today.setHours(0, 0, 0, 0);
+        const [gy, gm, gd] = gateDateISO.split('-').map(Number);
+        const gateDate = new Date(gy, gm - 1, gd);
+        gateDate.setHours(0, 0, 0, 0);
+        const diffDays = Math.round((gateDate.getTime() - today.getTime()) / 86400000);
+        if (diffDays < 0) {
+          countdownHtml = `<div class="gate-passed">✓ Release gate date passed (${gateDateISO})</div>`;
+        } else if (diffDays === 0) {
+          countdownHtml = `<div class="countdown-block">
+            <span class="countdown-days">TODAY</span>
+            <span class="countdown-label">— release gate date (${gateDateISO})</span>
+          </div>`;
+        } else {
+          countdownHtml = `<div class="countdown-block">
+            <span class="countdown-days">${diffDays}</span>
+            <span class="countdown-label">days to ${gateDateISO}</span>
+          </div>`;
+        }
+      }
+
+      const gateHtml = `
+        <div style="margin-bottom:14px;padding:12px 14px;background:var(--surface-2);
+                    border:1px solid var(--border-bright);border-radius:var(--radius)">
+          <div style="font-size:0.65em;letter-spacing:0.14em;text-transform:uppercase;
+                      color:var(--text-dim);margin-bottom:6px">Release Gate</div>
+          <div style="font-size:0.9em;font-weight:600;color:var(--accent);margin-bottom:8px">${gateName}</div>
+          ${countdownHtml}
+        </div>`;
+
+      // ── A: Monastic-first status ─────────────────────────────────────────
+      const monasticHtml = rm.monastic_first
+        ? `<div style="font-size:0.76em;color:var(--text-dim);margin-bottom:14px;padding:8px 10px;
+                       background:rgba(201,168,76,0.07);border:1px solid rgba(201,168,76,0.18);border-radius:4px;line-height:1.6">
+             ☩ <strong style="color:var(--accent)">Monastic-first</strong> — ${rm.monastic_first_rationale || ''}
            </div>`
         : '';
 
-      const statusColor = { open: 'var(--status-open)', 'in-progress': 'var(--status-in-progress)', done: 'var(--status-done)' };
-      const offices = (rm.critical_path_offices || []).map(o => `
+      // ── B: Critical-Path Offices ─────────────────────────────────────────
+      const statusColor = {
+        open:          'var(--status-open)',
+        'in-progress': 'var(--status-in-progress)',
+        done:          'var(--status-done)'
+      };
+      const officesHtml = (rm.critical_path_offices || []).map(o => `
         <div style="display:grid;grid-template-columns:1fr auto;gap:6px 10px;align-items:start;
                     padding:8px 10px;background:var(--surface-2);border:1px solid var(--border);
                     border-radius:4px;margin-bottom:6px;">
           <div>
-            <div style="font-size:0.84em;font-weight:500">${o.title}</div>
-            <div style="font-size:0.72em;color:var(--text-dim);margin-top:2px">${o.note || ''}</div>
+            <div style="font-size:0.84em;font-weight:500">${o.title || ''}</div>
+            ${o.engine_key
+              ? `<div style="font-size:0.67em;color:var(--text-muted);font-family:var(--mono);margin-top:2px">engine: ${o.engine_key}</div>`
+              : ''}
+            <div style="font-size:0.72em;color:var(--text-dim);margin-top:3px;line-height:1.5">${o.note || ''}</div>
           </div>
-          <span style="font-size:0.68em;padding:2px 7px;border-radius:3px;white-space:nowrap;
+          <span style="font-size:0.68em;padding:2px 7px;border-radius:3px;white-space:nowrap;align-self:start;
                        color:${statusColor[o.status] || 'var(--text-dim)'};
-                       background:rgba(0,0,0,0.3);border:1px solid currentColor">${o.status}</span>
+                       background:rgba(0,0,0,0.3);border:1px solid currentColor">${o.status || ''}</span>
         </div>`).join('');
 
-      const nonBlocking = (rm.non_blocking_open || []).map(s =>
-        `<div style="font-size:0.72em;color:var(--text-dim);padding:3px 0;border-bottom:1px solid var(--border)">${s}</div>`
-      ).join('');
+      // ── C: Non-blocking Open Items ───────────────────────────────────────
+      const nonBlockingItems = rm.non_blocking_open || [];
+      const nonBlockingHtml = nonBlockingItems.length
+        ? `<div class="release-section-label" style="margin-top:14px;margin-bottom:8px">
+             Non-Blocking Open Items
+             <span style="font-size:0.85em;letter-spacing:0;text-transform:none;color:var(--text-muted);margin-left:8px">
+               — not required for ${gateName} release
+             </span>
+           </div>` +
+           nonBlockingItems.map(s =>
+             `<div style="font-size:0.76em;color:var(--text-dim);padding:5px 8px;margin-bottom:4px;
+                          border-left:2px solid var(--border-bright);background:var(--surface-2);
+                          border-radius:0 3px 3px 0;line-height:1.5">${s}</div>`
+           ).join('')
+        : '';
 
       body.innerHTML = `
-        <div style="margin-bottom:12px">
-          <span style="font-size:0.72em;letter-spacing:0.1em;text-transform:uppercase;color:var(--text-dim)">Release Gate: </span>
-          <span style="font-size:0.84em;color:${gateColor};font-weight:600">${rm.release_gate || '—'}${gateDateStr}</span>
-        </div>
-        ${monastic}
-        <div style="font-size:0.68em;letter-spacing:0.12em;text-transform:uppercase;color:var(--text-dim);margin-bottom:8px">
-          Critical-Path Offices
-        </div>
-        ${offices}
-        ${nonBlocking ? `<div style="font-size:0.68em;letter-spacing:0.12em;text-transform:uppercase;color:var(--text-dim);margin:10px 0 6px">Non-Blocking Open</div>${nonBlocking}` : ''}
+        ${gateHtml}
+        ${monasticHtml}
+        <div class="release-section-label" style="margin-bottom:8px">Critical-Path Offices</div>
+        ${officesHtml || '<div class="empty-state" style="padding:8px 0;text-align:left">No critical-path offices recorded.</div>'}
+        ${nonBlockingHtml}
       `;
     })
     .catch(err => {
@@ -1268,11 +1352,17 @@ function renderTodos() {
         return;
       }
 
+      const isReleaseCritical = t =>
+        t.severity === 'HIGH' &&
+        (String(t.phase || '').toLowerCase().includes('pentecost') ||
+         String(t.title || '').toLowerCase().includes('release') ||
+         String(t.description || '').toLowerCase().includes('release'));
+
       const html = open.map(t => `
         <div class="todo-row">
           <span class="todo-sev sev-${t.severity}">${t.severity}</span>
           <div class="todo-body">
-            <div class="todo-title">${t.title}</div>
+            <div class="todo-title">${t.title}${isReleaseCritical(t) ? ' <span class="release-critical-marker">⚑ RELEASE</span>' : ''}</div>
             <div class="todo-area">${t.area || ''}</div>
             <div class="todo-desc">${t.description}</div>
           </div>
