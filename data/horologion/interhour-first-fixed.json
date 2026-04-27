@@ -1,19 +1,25 @@
 {
   "slots": {
     "psalm-20": {
-      "type": "rubric",
-      "label": "Psalm 20 (LXX)",
-      "text": "Psalm 20 (LXX) is appointed here. Full text not yet transcribed."
+      "type": "psalm",
+      "lxxNumber": 20,
+      "hebrewNumber": 21,
+      "label": "Psalm 20 (LXX) — O Lord, in Thy strength the king shall be glad",
+      "text": "O Lord, in Thy strength the king shall be glad, and in Thy salvation shall he rejoice exceedingly.\n\nThe desire of his heart hast Thou granted unto him, and hast not denied him the requests of his lips.\n\nThou wentest before him with the blessings of goodness, Thou hast set upon his head a crown of precious stone.\n\nHe asked life of Thee, and Thou gavest him length of days unto ages of ages.\n\nGreat is his glory in Thy salvation; glory and majesty shalt Thou lay upon him.\n\nFor Thou shalt give him blessing for ever and ever, Thou shalt gladden him in joy with Thy countenance.\n\nFor the king hopeth in the Lord, and through the mercy of the Most High shall he not be shaken.\n\nLet Thy hand be found on all Thine enemies; let Thy right hand find all that hate Thee.\n\nFor Thou wilt make them as an oven of fire in the time of Thy presence; the Lord in His wrath will trouble them sorely and fire shall devour them.\n\nTheir fruit wilt Thou destroy from the earth, and their seed from the sons of men.\n\nFor they have intended evil against Thee, they have devised counsels which they shall not be able to establish.\n\nFor Thou shalt make them turn their backs; among those that are Thy remnant, Thou shalt make ready their countenance.\n\nBe Thou exalted, O Lord, in Thy strength; we will sing and chant of Thy mighty acts.\n\nGlory to the Father, and to the Son, and to the Holy Spirit, both now and ever, and unto ages of ages. Amen."
     },
     "psalm-21": {
-      "type": "rubric",
-      "label": "Psalm 21 (LXX)",
-      "text": "Psalm 21 (LXX) is appointed here. Full text not yet transcribed."
+      "type": "psalm",
+      "lxxNumber": 21,
+      "hebrewNumber": 22,
+      "label": "Psalm 21 (LXX) — O God, my God, attend to me",
+      "text": "O God, my God, attend to me; why hast Thou forsaken me? Far from my salvation are the words of my transgressions.\n\nMy God, I will cry by day, and wilt Thou not hearken? and by night, and it shall not be unto folly for me.\n\nBut as for Thee, Thou dwellest in the sanctuary, O Praise of Israel.\n\nIn Thee have our fathers hoped; they hoped, and Thou didst deliver them.\n\nUnto Thee they cried, and were saved; in Thee they hoped, and were not brought to shame.\n\nBut as for me, I am a worm, and not a man, a reproach of men, and the outcast of the people.\n\nAll that look upon me have laughed me to scorn; they have spoken with their lips and have wagged their heads:\n\nHe hoped in the Lord; let Him deliver him, let Him save him, for He desireth him.\n\nFor Thou art He that drewest me forth from the womb; my hope from the breasts of my mother.\n\nOn Thee was I cast from the womb; from my mother's womb, Thou art my God.\n\nDepart not from me, for tribulation is nigh, for there is none to help me.\n\nMany bullocks have encircled me, fat bulls have surrounded me.\n\nThey have opened their mouth against me, as might a lion ravenous and roaring.\n\nI have been poured out like water, and scattered are all my bones; my heart is become like wax melting in the midst of my bowels.\n\nMy strength is dried up like a potsherd, and my tongue hath cleaved to my throat, and into the dust of death hast Thou brought me down.\n\nFor many dogs have encircled me, the congregation of evil doers hath surrounded me; they have pierced my hands and my feet.\n\nThey have numbered all my bones, and they themselves have looked and stared upon me.\n\nThey have parted my garments amongst themselves, and for my vesture have they cast lots.\n\nBut Thou, O Lord, remove not Thy help far from me; attend unto mine aid.\n\nRescue my soul from the sword, even this only-begotten one of mine from the hand of the dog.\n\nSave me from the mouth of the lion, and my lowliness from the horns of the unicorns.\n\nI will declare Thy name unto my brethren, in the midst of the church will I hymn Thee.\n\nYe that fear the Lord, praise Him; all ye that are of the seed of Jacob, glorify Him; let all fear Him that are of the seed of Israel.\n\nFor He hath not set at naught nor abhorred the supplications of the pauper, nor hath He turned His face from me; and when I cried unto Him, He hearkened unto me.\n\nFrom Thee is my praise; in the great church will I confess Thee; my vows will I pay before them that fear Thee.\n\nThe poor shall eat and be filled, and they that seek the Lord shall praise Him; their hearts shall live for ever and ever.\n\nAll the ends of the earth shall remember and shall turn unto the Lord, and all the kindreds of the nations shall worship before Him.\n\nFor the kingdom is the Lord's and He Himself is sovereign of the nations.\n\nAll they that be fat upon the earth have eaten and worshipped; all they that go down into the earth shall fall down before Him.\n\nYea, my soul liveth for Him, and my seed shall serve Him.\n\nThe generation that cometh shall be told of the Lord, and they shall proclaim His righteousness to a people that shall be born, which the Lord hath made.\n\nGlory to the Father, and to the Son, and to the Holy Spirit, both now and ever, and unto ages of ages. Amen."
     },
     "psalm-22": {
-      "type": "rubric",
-      "label": "Psalm 22 (LXX)",
-      "text": "Psalm 22 (LXX) is appointed here. Full text not yet transcribed."
+      "type": "psalm",
+      "lxxNumber": 22,
+      "hebrewNumber": 23,
+      "label": "Psalm 22 (LXX) — The Lord is my shepherd",
+      "text": "The Lord is my shepherd, and I shall not want.\n\nIn a place of green pasture, there hath He made me to dwell; beside the water of rest hath He nurtured me.\n\nHe hath converted my soul, He hath led me on the paths of righteousness for His name's sake.\n\nFor though I should walk in the midst of the shadow of death, I will fear no evil, for Thou art with me; Thy rod and Thy staff, they have comforted me.\n\nThou hast prepared a table for me in the presence of them that afflict me.\n\nThou hast anointed my head with oil, and Thy cup which filleth me, how excellent it is!\n\nAnd Thy mercy shall pursue me all the days of my life, and I will dwell in the house of the Lord unto length of days.\n\nGlory to the Father, and to the Son, and to the Holy Spirit, both now and ever, and unto ages of ages. Amen."
     },
     "trisagion-prayers": {
       "type": "sequence",
