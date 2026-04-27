@@ -1,24 +1,74 @@
 {
   "slots": {
     "psalm-60": {
-      "type": "rubric",
-      "label": "Psalm 60 (LXX)",
-      "text": "Psalm 60 (LXX) is appointed here. Full text not yet transcribed."
+      "type": "psalm",
+      "lxxNumber": 60,
+      "hebrewNumber": 61,
+      "label": "Psalm 60 (LXX) — Hear my supplication, O God",
+      "text": "Hear my supplication, O God; attend to my prayer.\n\nFrom the ends of the earth have I cried to Thee; when my heart was in anguish, Thou didst exalt me upon a rock.\n\nThou didst lead me, for Thou wast my hope, a tower of strength in the face of the enemy.\n\nI will dwell in Thy tabernacle for ever; I will be sheltered under the cover of Thy wings.\n\nFor Thou, O God, hast heard my vows; Thou hast given an inheritance to them that fear Thy name.\n\nThou shalt add days to the days of the king; his years shall be extended to generation and generation.\n\nHe shall dwell for ever before God; mercy and truth — who shall seek them out for him?\n\nSo will I sing a psalm to Thy name for ever and ever, that I may render my vows day by day.\n\nGlory to the Father, and to the Son, and to the Holy Spirit, both now and ever, and unto ages of ages. Amen."
     },
     "psalm-61": {
-      "type": "rubric",
-      "label": "Psalm 61 (LXX)",
-      "text": "Psalm 61 (LXX) is appointed here. Full text not yet transcribed."
+      "type": "psalm",
+      "lxxNumber": 61,
+      "hebrewNumber": 62,
+      "label": "Psalm 61 (LXX) — Shall not my soul be subject to God?",
+      "text": "Shall not my soul be subject to God? For from Him is my salvation.\n\nFor He is my God and my Savior; He is my helper, I shall not be moved greatly.\n\nHow long do ye assault a man? Ye are all slaying; as a leaning wall or as a fence that is being hurled down.\n\nYet they have devised to drive him from his dignity; they have rushed to a lie; with their mouth they blessed, but with their heart they cursed.\n\nNevertheless, my soul, be thou subject to God; for from Him is my patience.\n\nFor He is my God and my Savior; He is my helper; I shall not be moved.\n\nIn God is my salvation and my glory; He is the God of my help, and my hope is in God.\n\nHope in Him at every season, O ye people; pour out your hearts before Him, for God is our helper.\n\nBut the sons of men are vain; the sons of men are liars in the balances; they are all together vain.\n\nTrust not in unrighteousness, and set not your heart on robberies; if riches should flow in, set not your heart upon them.\n\nGod hath spoken once, and I have heard these two things: that power is God's,\n\nAnd Thine is mercy, O Lord; for Thou wilt recompense every man according to his works.\n\nGlory to the Father, and to the Son, and to the Holy Spirit, both now and ever, and unto ages of ages. Amen."
     },
     "psalm-62": {
-      "type": "rubric",
-      "label": "Psalm 62 (LXX)",
-      "text": "Psalm 62 (LXX) is appointed here. Full text not yet transcribed."
+      "type": "psalm",
+      "lxxNumber": 62,
+      "hebrewNumber": 63,
+      "label": "Psalm 62 (LXX) — O God, my God, early do I watch for Thee",
+      "text": "O God, my God, early do I watch for Thee; my soul hath thirsted for Thee; how many times hath my flesh longed after Thee in a barren and trackless and dry land!\n\nThus have I appeared before Thee in the sanctuary, that I might behold Thy power and Thy glory.\n\nFor Thy mercy is better than life; my lips shall praise Thee.\n\nThus will I bless Thee in my life; in Thy name will I lift up my hands.\n\nAs with marrow and fatness let my soul be filled; and with lips of rejoicing shall my mouth praise Thee.\n\nWhen I remembered Thee upon my bed, at the dawn of morning I meditated upon Thee.\n\nFor Thou wast my helper, and in the shadow of Thy wings will I rejoice.\n\nMy soul hath cleaved after Thee; Thy right hand hath upheld me.\n\nBut they in vain have sought after my soul; they shall go into the lower parts of the earth.\n\nThey shall be delivered into the hands of the sword; they shall be portions for foxes.\n\nBut the king shall be glad in God; all they that swear by Him shall be glorified, for the mouth of them that speak unjust things is stopped.\n\nGlory to the Father, and to the Son, and to the Holy Spirit, both now and ever, and unto ages of ages. Amen."
     },
     "trisagion-prayers": {
-      "type": "rubric",
+      "type": "sequence",
       "label": "Trisagion Prayers",
-      "text": "The Trisagion prayers are appointed here. Full text not yet transcribed."
+      "items": [
+        {
+          "type": "text",
+          "key": "trisagion-prayers-1",
+          "text": "Holy God, Holy Mighty, Holy Immortal, have mercy on us.",
+          "repeat": 3
+        },
+        {
+          "type": "text",
+          "key": "trisagion-prayers-2",
+          "text": "Glory to the Father, and to the Son, and to the Holy Spirit, both now and ever, and unto ages of ages. Amen."
+        },
+        {
+          "type": "text",
+          "key": "trisagion-prayers-3",
+          "text": "All-holy Trinity, have mercy on us. Lord, cleanse us from our sins. Master, pardon our iniquities. Holy One, visit and heal our infirmities for Thy Name's sake."
+        },
+        {
+          "type": "text",
+          "key": "trisagion-prayers-4",
+          "text": "Lord, have mercy.",
+          "repeat": 3
+        },
+        {
+          "type": "text",
+          "key": "trisagion-prayers-5",
+          "text": "Glory to the Father, and to the Son, and to the Holy Spirit, both now and ever, and unto ages of ages. Amen."
+        },
+        {
+          "type": "text",
+          "key": "trisagion-prayers-6",
+          "text": "Our Father, Who art in Heaven, hallowed be Thy Name. Thy Kingdom come, Thy will be done, on earth as it is in Heaven. Give us this day our daily bread; and forgive us our trespasses, as we forgive those who trespass against us; and lead us not into temptation, but deliver us from evil."
+        },
+        {
+          "type": "text",
+          "key": "trisagion-prayers-7",
+          "text": "For Thine is the Kingdom, and the power, and the glory, of the Father, and of the Son, and of the Holy Spirit, now and ever, and unto ages of ages. Amen."
+        },
+        {
+          "type": "text",
+          "key": "trisagion-prayers-8",
+          "text": "Lord, have mercy.",
+          "repeat": 12
+        }
+      ]
     },
     "interhour-sixth-theotokion": {
       "type": "text",
