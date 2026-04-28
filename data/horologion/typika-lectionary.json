@@ -1,0 +1,58 @@
+{
+  "_comment": [
+    "data/horologion/typika-lectionary.json",
+    "Byzantine Sunday Liturgy lectionary — Typika epistle and gospel.",
+    "Key: Sunday After Pentecost integer string '1'–'31'.",
+    "Tone and Sunday After Pentecost are independent cycles. Do not index by tone.",
+    "Tradition family: Slavic / OCA / ROCOR / Antiochian.",
+    "Source: ByzCath.org Byzantine Lectionary, Great Church / Constantinople tradition.",
+    "Weeks 22–30 use the Slavic gospel sequence. Greek variants are metadata only.",
+    "Week 1 All Saints is type:special and remains rubric fallback until composite rendering is explicitly enabled.",
+    "Week 19 epistle is cross-chapter and stored as segments."
+  ],
+  "sundays": {
+    "1":  {
+      "label": "First Sunday After Pentecost (All Saints)",
+      "type": "special",
+      "epistle": "Hebrews 11:32-12:2",
+      "gospel_segments": ["Matthew 10:32-33", "Matthew 10:37-38", "Matthew 19:27-30"],
+      "note": "All Saints Sunday. Gospel is composite. Engine emits rubric fallback for type:special."
+    },
+    "2":  { "label": "Second Sunday After Pentecost",           "type": "resurrectional", "epistle": "Romans 2:10-16",                  "gospel": "Matthew 4:18-23"   },
+    "3":  { "label": "Third Sunday After Pentecost",            "type": "resurrectional", "epistle": "Romans 5:1-10",                   "gospel": "Matthew 6:22-33"   },
+    "4":  { "label": "Fourth Sunday After Pentecost",           "type": "resurrectional", "epistle": "Romans 6:18-23",                  "gospel": "Matthew 8:5-13"    },
+    "5":  { "label": "Fifth Sunday After Pentecost",            "type": "resurrectional", "epistle": "Romans 10:1-10",                  "gospel": "Matthew 8:28-9:1"  },
+    "6":  { "label": "Sixth Sunday After Pentecost",            "type": "resurrectional", "epistle": "Romans 12:6-14",                  "gospel": "Matthew 9:1-8"     },
+    "7":  { "label": "Seventh Sunday After Pentecost",          "type": "resurrectional", "epistle": "Romans 15:1-7",                   "gospel": "Matthew 9:27-35"   },
+    "8":  { "label": "Eighth Sunday After Pentecost",           "type": "resurrectional", "epistle": "1 Corinthians 1:10-18",           "gospel": "Matthew 14:14-22"  },
+    "9":  { "label": "Ninth Sunday After Pentecost",            "type": "resurrectional", "epistle": "1 Corinthians 3:9-17",            "gospel": "Matthew 14:22-34"  },
+    "10": { "label": "Tenth Sunday After Pentecost",            "type": "resurrectional", "epistle": "1 Corinthians 4:9-16",            "gospel": "Matthew 17:14-23"  },
+    "11": { "label": "Eleventh Sunday After Pentecost",         "type": "resurrectional", "epistle": "1 Corinthians 9:2-12",            "gospel": "Matthew 18:23-35"  },
+    "12": { "label": "Twelfth Sunday After Pentecost",          "type": "resurrectional", "epistle": "1 Corinthians 15:1-11",           "gospel": "Matthew 19:16-26"  },
+    "13": { "label": "Thirteenth Sunday After Pentecost",       "type": "resurrectional", "epistle": "1 Corinthians 16:13-24",          "gospel": "Matthew 21:33-42"  },
+    "14": { "label": "Fourteenth Sunday After Pentecost",       "type": "resurrectional", "epistle": "2 Corinthians 1:21-2:4",          "gospel": "Matthew 22:1-14"   },
+    "15": { "label": "Fifteenth Sunday After Pentecost",        "type": "resurrectional", "epistle": "2 Corinthians 4:6-15",            "gospel": "Matthew 22:35-46"  },
+    "16": { "label": "Sixteenth Sunday After Pentecost",        "type": "resurrectional", "epistle": "2 Corinthians 6:1-10",            "gospel": "Matthew 25:14-30"  },
+    "17": { "label": "Seventeenth Sunday After Pentecost",      "type": "resurrectional", "epistle": "2 Corinthians 6:16-7:1",          "gospel": "Matthew 15:21-28"  },
+    "18": { "label": "Eighteenth Sunday After Pentecost",       "type": "resurrectional", "epistle": "2 Corinthians 9:6-11",            "gospel": "Luke 5:1-11"       },
+    "19": {
+      "label": "Nineteenth Sunday After Pentecost",
+      "type": "resurrectional",
+      "epistle_segments": ["2 Corinthians 11:31-33", "2 Corinthians 12:1-9"],
+      "gospel": "Luke 6:31-36",
+      "note": "Cross-chapter epistle. Stored as segments; plain epistle field absent."
+    },
+    "20": { "label": "Twentieth Sunday After Pentecost",        "type": "resurrectional", "epistle": "Galatians 1:11-19",               "gospel": "Luke 7:11-16"      },
+    "21": { "label": "Twenty-First Sunday After Pentecost",     "type": "resurrectional", "epistle": "Galatians 2:16-20",               "gospel": "Luke 8:5-15"       },
+    "22": { "label": "Twenty-Second Sunday After Pentecost",    "type": "resurrectional", "epistle": "Galatians 6:11-18",               "gospel": "Luke 16:19-31",    "greek_gospel": "Luke 8:26-39"  },
+    "23": { "label": "Twenty-Third Sunday After Pentecost",     "type": "resurrectional", "epistle": "Ephesians 2:4-10",                "gospel": "Luke 8:26-39",     "greek_gospel": "Luke 8:41-56"  },
+    "24": { "label": "Twenty-Fourth Sunday After Pentecost",    "type": "resurrectional", "epistle": "Ephesians 2:4-22",                "gospel": "Luke 8:41-56",     "greek_gospel": "Luke 16:19-31" },
+    "25": { "label": "Twenty-Fifth Sunday After Pentecost",     "type": "resurrectional", "epistle": "Ephesians 4:1-6",                 "gospel": "Luke 10:25-37"     },
+    "26": { "label": "Twenty-Sixth Sunday After Pentecost",     "type": "resurrectional", "epistle": "Ephesians 5:9-19",                "gospel": "Luke 12:16-21"     },
+    "27": { "label": "Twenty-Seventh Sunday After Pentecost",   "type": "resurrectional", "epistle": "Ephesians 6:10-17",               "gospel": "Luke 13:10-17",    "greek_gospel": "Luke 18:18-27" },
+    "28": { "label": "Twenty-Eighth Sunday After Pentecost",    "type": "resurrectional", "epistle": "Colossians 1:12-18",              "gospel": "Luke 18:35-43"     },
+    "29": { "label": "Twenty-Ninth Sunday After Pentecost",     "type": "resurrectional", "epistle": "Colossians 3:12-16",              "gospel": "Luke 17:12-19",    "greek_gospel": "Luke 13:10-17" },
+    "30": { "label": "Thirtieth Sunday After Pentecost",        "type": "resurrectional", "epistle": "Colossians 3:12-16",              "gospel": "Luke 18:18-27",    "greek_gospel": "Luke 14:16-24" },
+    "31": { "label": "Thirty-First Sunday After Pentecost",     "type": "resurrectional", "epistle": "1 Timothy 1:15-17",               "gospel": "Luke 18:35-43"     }
+  }
+}

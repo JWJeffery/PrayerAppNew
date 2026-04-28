@@ -412,6 +412,8 @@ function _getGcCanonGreatCanon(dayName) {
 // ── v6.9: Typika (Obednitsa) fixed text URL and cache ─────────────────
 const TYPIKA_FIXED_URL = 'data/horologion/typika-fixed.json';
 let _typikaFixedData = null;
+const TYPIKA_LECTIONARY_URL = 'data/horologion/typika-lectionary.json';
+let _typikaLectionaryData = null;
 
 // ── v7.0: Interhours fixed text URLs and cache ────────────────────────
 const INTERHOUR_FIRST_FIXED_URL = 'data/horologion/interhour-first-fixed.json';
@@ -1390,15 +1392,89 @@ function _normalizeUnavailableTroparionFallbackForOffice(officeKey, resolved, da
         const toneIndex = ((weekCount % 8) + 8) % 8; // 0–7
         const tone      = toneIndex + 1;              // 1–8
 
-        return {
+      return {
             tone,
             brightWeek: false,
             toneLabel:  `Tone ${tone}`,
             paschaISO:  _formatLocalISODate(pascha)
         };
     }
-
-
+ 
+ 
+    // ──────────────────────────────────────────────────────────────────────
+    // _computeSundayAfterPentecost(dateObj)
+    //
+    // Returns the Sunday After Pentecost number (integer 1–31+) for the
+    // given date, or null if the date is not in the post-Pentecost ordinary
+    // season.
+    //
+    // Math:
+    //   Thomas Sunday = Pascha + 7 = start of Tone 1 = weekCount 0
+    //   Pentecost     = Pascha + 49 = thomasSunday + 42 = weekCount 6
+    //   1st SAP       = weekCount 7  →  SAP = 1
+    //   nth SAP       = weekCount n+6  →  SAP = weekCount − 6
+    //
+    // Returns null when:
+    //   weekCount < 7 (still in Pentecostarion/Paschal period)
+    //   season is not 'ordinary' (Holy Week, Great Lent, Bright Week,
+    //   or pre-Lenten cycle)
+    // ──────────────────────────────────────────────────────────────────────
+    function _computeSundayAfterPentecost(dateObj) {
+        const localDate = new Date(
+            dateObj.getFullYear(),
+            dateObj.getMonth(),
+            dateObj.getDate()
+        );
+ 
+        // Step 1: Pascha for the current liturgical year.
+        const year = localDate.getFullYear();
+        let pascha = _getOrthodoxPascha(year);
+        if (pascha > localDate) pascha = _getOrthodoxPascha(year - 1);
+ 
+        // Step 2: Thomas Sunday = Pascha + 7.
+        const thomasSunday = new Date(
+            pascha.getFullYear(),
+            pascha.getMonth(),
+            pascha.getDate() + 7
+        );
+ 
+        // Step 3: Saturday advance — liturgical day is Sunday.
+        let toneDate = localDate;
+        if (localDate.getDay() === 6) {
+            toneDate = new Date(
+                localDate.getFullYear(),
+                localDate.getMonth(),
+                localDate.getDate() + 1
+            );
+        }
+ 
+        // Step 4: Sunday of toneDate's week.
+        const dowTone   = toneDate.getDay(); // 0 = Sunday
+        const weekSunday = new Date(
+            toneDate.getFullYear(),
+            toneDate.getMonth(),
+            toneDate.getDate() - dowTone
+        );
+ 
+        // Step 5: Weeks from Thomas Sunday.
+        const msPerDay  = 86400000;
+        const dayDiff   = Math.round(
+            (weekSunday.getTime() - thomasSunday.getTime()) / msPerDay
+        );
+        const weekCount = Math.floor(dayDiff / 7);
+ 
+        // Step 6: Must be on or after 1st Sunday After Pentecost.
+        if (weekCount < 7) return null;
+ 
+        // Step 7: Season gate — ordinary time only.
+        const toneResult   = _computeBaselineTone(dateObj);
+        const seasonResult = _computeLiturgicalSeason(dateObj, toneResult);
+        if (seasonResult.season !== 'ordinary') return null;
+ 
+        return weekCount - 6;
+    }
+ 
+ 
     // ──────────────────────────────────────────────────────────────────────
     // v1.2: _loadVespersProkeimena()
     //
@@ -6572,22 +6648,44 @@ async function _loadTypikaFixedData() {
         _typikaFixedData = await response.json();
         console.log('[HorologionEngine] Loaded Typika fixed text data (v6.9).');
     } catch (err) {
-        console.warn('[HorologionEngine] _loadTypikaFixedData failed:', err.message, '— fixed slots will remain as placeholders.');
+         console.warn('[HorologionEngine] _loadTypikaFixedData failed:', err.message, '— fixed slots will remain as placeholders.');
     }
 }
-
+ 
+// ── v6.10: _loadTypikaLectionaryData() ────────────────────────────────
+async function _loadTypikaLectionaryData() {
+    if (_typikaLectionaryData !== null) return;
+    try {
+        const response = await fetch(TYPIKA_LECTIONARY_URL);
+        if (!response.ok) {
+            console.warn(`[HorologionEngine] Could not load Typika lectionary data (HTTP ${response.status}); epistle/gospel slots will remain as rubric placeholders.`);
+            _typikaLectionaryData = null;
+            return;
+        }
+        _typikaLectionaryData = await response.json();
+        console.log('[HorologionEngine] Loaded Typika lectionary data (v6.10).');
+    } catch (err) {
+        console.warn('[HorologionEngine] _loadTypikaLectionaryData failed:', err.message, '— epistle/gospel slots will remain as rubric placeholders.');
+        _typikaLectionaryData = null;
+    }
+}
+ 
 // ── v6.9: _resolveTypikaSlots(sections, dateObj) ──────────────────────
 async function _resolveTypikaSlots(sections, dateObj) {
     await Promise.all([
         _loadTypikaFixedData(),
+        _loadTypikaLectionaryData(),
         _loadTroparionData(),
         _loadWeekdayTroparionMeta(),
         _loadTriodionData()
     ]);
 
-    const dayOfWeek  = dateObj.getDay();
+     const dayOfWeek  = dateObj.getDay();
     const toneResult = _computeBaselineTone(dateObj);
-
+    const sundayAfterPentecost = (dayOfWeek === 0)
+        ? _computeSundayAfterPentecost(dateObj)
+        : null;
+ 
     const FIXED_SLOT_KEYS = new Set([
         'typika-usual-beginning',
         'typika-beatitudes',
@@ -6653,6 +6751,112 @@ async function _resolveTypikaSlots(sections, dateObj) {
                     section.items[i] = Object.assign({}, resolved, {
                         key: 'troparion-of-the-day'
                     });
+                }
+                continue;
+            }
+ 
+            if (item.key === 'typika-epistle-rubric') {
+                if (sundayAfterPentecost === null || !_typikaLectionaryData) continue;
+                const entry = _typikaLectionaryData.sundays[String(sundayAfterPentecost)];
+                if (!entry) continue;
+ 
+                if (entry.type === 'special') {
+                    section.items[i] = {
+                        type:       'rubric',
+                        key:        item.key,
+                        text:       'EPISTLE: The appointed Epistle for the First Sunday After Pentecost (All Saints). Reading: Hebrews 11:32\u201312:2. Consult the Apostol for the full pericope.',
+                        resolvedAs: 'typika-sunday-lectionary-epistle-sap-1-special'
+                    };
+                    continue;
+                }
+ 
+                const epistleSegments = entry.epistle_segments || [entry.epistle];
+                const epistleLabel    = entry.epistle_segments
+                    ? entry.epistle_segments.join('; ')
+                    : entry.epistle;
+ 
+                try {
+                    const parts = await Promise.all(
+                        epistleSegments.map(seg => getScriptureText(seg))
+                    );
+                    const unavailable = parts.some(
+                        p => typeof p === 'string' && p.includes('[Scripture unavailable:')
+                    );
+                    if (unavailable) {
+                        section.items[i] = {
+                            type:       'rubric',
+                            key:        item.key,
+                            text:       `EPISTLE: ${epistleLabel} \u2014 text unavailable. Consult the Apostol for the full pericope.`,
+                            resolvedAs: 'typika-sunday-lectionary-epistle-text-unavailable'
+                        };
+                    } else {
+                        section.items[i] = {
+                            type:                'text',
+                            key:                 item.key,
+                            label:               'The Epistle \u2014 ' + epistleLabel,
+                            text:                parts.join('\n\n'),
+                            resolvedAs:          'typika-sunday-lectionary-epistle-sap-' + sundayAfterPentecost,
+                            tone:                toneResult.tone,
+                            sundayAfterPentecost: sundayAfterPentecost,
+                            source:              'ByzCath.org Byzantine Lectionary \u2014 Slavic sequence'
+                        };
+                    }
+                } catch (err) {
+                    console.warn('[HorologionEngine] Typika epistle resolution failed:', err.message);
+                    // fall through: leave existing rubric in place
+                }
+                continue;
+            }
+ 
+            if (item.key === 'typika-gospel-rubric') {
+                if (sundayAfterPentecost === null || !_typikaLectionaryData) continue;
+                const entry = _typikaLectionaryData.sundays[String(sundayAfterPentecost)];
+                if (!entry) continue;
+ 
+                if (entry.type === 'special') {
+                    section.items[i] = {
+                        type:       'rubric',
+                        key:        item.key,
+                        text:       'GOSPEL: The appointed Gospel for the First Sunday After Pentecost (All Saints). Reading: Matthew 10:32\u201333, 37\u201338; 19:27\u201330. Consult the Evangelist for the full pericope.',
+                        resolvedAs: 'typika-sunday-lectionary-gospel-sap-1-special'
+                    };
+                    continue;
+                }
+ 
+                const gospelSegments = entry.gospel_segments || [entry.gospel];
+                const gospelLabel    = entry.gospel_segments
+                    ? entry.gospel_segments.join('; ')
+                    : entry.gospel;
+ 
+                try {
+                    const parts = await Promise.all(
+                        gospelSegments.map(seg => getScriptureText(seg))
+                    );
+                    const unavailable = parts.some(
+                        p => typeof p === 'string' && p.includes('[Scripture unavailable:')
+                    );
+                    if (unavailable) {
+                        section.items[i] = {
+                            type:       'rubric',
+                            key:        item.key,
+                            text:       `GOSPEL: ${gospelLabel} \u2014 text unavailable. Consult the Evangelist for the full pericope.`,
+                            resolvedAs: 'typika-sunday-lectionary-gospel-text-unavailable'
+                        };
+                    } else {
+                        section.items[i] = {
+                            type:                'text',
+                            key:                 item.key,
+                            label:               'The Holy Gospel \u2014 ' + gospelLabel,
+                            text:                parts.join('\n\n'),
+                            resolvedAs:          'typika-sunday-lectionary-gospel-sap-' + sundayAfterPentecost,
+                            tone:                toneResult.tone,
+                            sundayAfterPentecost: sundayAfterPentecost,
+                            source:              'ByzCath.org Byzantine Lectionary \u2014 Slavic sequence'
+                        };
+                    }
+                } catch (err) {
+                    console.warn('[HorologionEngine] Typika gospel resolution failed:', err.message);
+                    // fall through: leave existing rubric in place
                 }
                 continue;
             }
