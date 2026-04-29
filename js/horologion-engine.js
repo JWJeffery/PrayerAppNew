@@ -1599,26 +1599,30 @@ function _normalizeUnavailableTroparionFallbackForOffice(officeKey, resolved, da
 
 
     // ──────────────────────────────────────────────────────────────────────
-    // v5.5: _resolveKathismaFullText(kathismaNumber, title, psalmsLxx)
+    // v5.5 / v5.9: _resolveKathismaFullText(kathismaNumber, title, psalmsLxx, slotKey, resolvedAsOverride)
     //
     // Returns a type:'kathisma' item with full stasis-organized psalm text,
     // or null if the corpus does not cover this kathisma number.
     // Non-throwing.
+    //
+    // slotKey defaults to 'kathisma-reading' (Vespers call sites unchanged).
+    // resolvedAsOverride defaults to 'ordinary-weekday-full-text' (Vespers unchanged).
+    // Orthros call sites pass slotKey='kathisma-first' and a distinct resolvedAs.
     // ──────────────────────────────────────────────────────────────────────
-    function _resolveKathismaFullText(kathismaNumber, title, psalmsLxx) {
+    function _resolveKathismaFullText(kathismaNumber, title, psalmsLxx, slotKey = 'kathisma-reading', resolvedAsOverride = 'ordinary-weekday-full-text') {
         try {
             if (!_kathismaFullTextData || !_kathismaFullTextData.kathismata) return null;
             const kathismaData = _kathismaFullTextData.kathismata[String(kathismaNumber)];
             if (!kathismaData || !Array.isArray(kathismaData.stases) || kathismaData.stases.length === 0) return null;
             return {
                 type:           'kathisma',
-                key:            'kathisma-reading',
+                key:            slotKey,
                 label:          `Kathisma ${kathismaNumber} — ${title}`,
                 kathismaNumber: kathismaNumber,
                 psalmsLxx:      psalmsLxx,
                 stases:         kathismaData.stases,
                 source:         'Psalter (OCA/Antiochian English)',
-                resolvedAs:     'ordinary-weekday-full-text'
+                resolvedAs:     resolvedAsOverride
             };
         } catch (err) {
             console.warn('[HorologionEngine] _resolveKathismaFullText failed:', err.message);
@@ -2966,12 +2970,31 @@ function _resolveComplineFestalTheotokionRubric(officeKey, troparionItem, fallba
         const kathismaData = isFirst ? assignment.kathismaFirst : assignment.kathismaSecond;
         if (!kathismaData) return null;
  
-        const k          = kathismaData.number;
+       const k          = kathismaData.number;
         const title      = kathismaData.title;
         const psalmsLxx  = kathismaData.psalms_lxx;
         const psalmsProt = kathismaData.psalms_heb_protestant;
         const incipit    = kathismaData.incipit;
- 
+
+        // ── v5.9: Full-text attempt — kathisma-first, Mon–Fri only ────────
+        // K4/K6/K8/K10/K12 are in corpus; K14 (Saturday) is not.
+        // kathisma-second (slotIndex===1) must remain rubric fallback.
+        // If _resolveKathismaFullText returns null (corpus gap), fall through.
+        if (slotIndex === 0 && dayOfWeek >= 1 && dayOfWeek <= 5) {
+            const fullTextResult = _resolveKathismaFullText(
+                k,
+                title,
+                psalmsLxx,
+                slotKey,
+                'orthros-ordinary-weekday-kathisma-full-text'
+            );
+            if (fullTextResult !== null) {
+                return Object.assign({}, fullTextResult, {
+                    weekday: assignment.weekday
+                });
+            }
+        }
+
         let text = `Orthros ${ordinal} Kathisma: Kathisma ${k} — ${title}\n\n` +
                    `Psalms ${psalmsLxx} (LXX)\n` +
                    `Incipit: "${incipit}"\n\n` +
