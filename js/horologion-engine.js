@@ -2976,11 +2976,12 @@ function _resolveComplineFestalTheotokionRubric(officeKey, troparionItem, fallba
         const psalmsProt = kathismaData.psalms_heb_protestant;
         const incipit    = kathismaData.incipit;
 
-        // ── v5.9: Full-text attempt — kathisma-first, Mon–Fri only ────────
-        // K4/K6/K8/K10/K12 are in corpus; K14 (Saturday) is not.
-        // kathisma-second (slotIndex===1) must remain rubric fallback.
-        // If _resolveKathismaFullText returns null (corpus gap), fall through.
-        if (slotIndex === 0 && dayOfWeek >= 1 && dayOfWeek <= 5) {
+        // ── v5.9: Full-text attempt — kathisma-first and kathisma-second, Mon–Fri only ────────
+        // K4/K6/K8/K10/K12 support kathisma-first (slotIndex===0) Monday–Friday.
+        // K5/K7/K9/K11/K13 support kathisma-second (slotIndex===1) Monday–Friday.
+        // Saturday K14/K15 remain excluded (numbering conflict; corpus not populated).
+        // If _resolveKathismaFullText returns null (corpus gap), fall through to rubric.
+        if ((slotIndex === 0 || slotIndex === 1) && dayOfWeek >= 1 && dayOfWeek <= 5) {
             const fullTextResult = _resolveKathismaFullText(
                 k,
                 title,
