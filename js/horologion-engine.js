@@ -3035,6 +3035,30 @@ function _resolveComplineFestalTheotokionRubric(officeKey, troparionItem, fallba
                 resolvedAs:     'orthros-lenten-kathisma-meta-absent'
             };
         }
+
+        // Attempt full-text resolution for corpus-backed kathismata (K1, K4–K13).
+        const resolvedAsToken = (seasonLabel === 'Holy Week')
+            ? 'orthros-holy-week-kathisma-full-text'
+            : 'orthros-great-lent-kathisma-full-text';
+        const fullText = _resolveKathismaFullText(
+            kNum,
+            kMeta.title,
+            kMeta.psalms_lxx,
+            slotKey,
+            resolvedAsToken
+        );
+        if (fullText) {
+            return Object.assign({}, fullText, {
+                key:            slotKey,
+                kathismaNumber: kNum,
+                seasonLabel,
+                subLabel,
+                ordinal,
+                resolvedAs:     resolvedAsToken
+            });
+        }
+
+        // Corpus absent — fall back to rubric.
         let text = `${seasonLabel} (${subLabel}) — ${ordinal} Kathisma:\n` +
                    `Kathisma ${kNum} — ${kMeta.title}\n\n` +
                    `Psalms ${kMeta.psalms_lxx} (LXX)\n` +
