@@ -44,7 +44,7 @@
     "psalter_tradition": "OCA/Antiochian English (Hapgood tradition)",
     "numbering": "LXX",
     "stases_per_kathisma": 3,
-    "fully_supported_kathismata": [1, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14]
+    "fully_supported_kathismata": [1, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]
   },
   "kathismata": {
     "1": {
@@ -2394,6 +2394,189 @@
                 "And He led forth His people with rejoicing, and His chosen ones with gladness.",
                 "And He gave unto them the lands of the heathen, and the labours of peoples they inherited,",
                 "That they might keep His statutes and might seek after his law."
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "15": {
+      "number": 15,
+      "title": "Fifteenth Kathisma",
+      "psalms_lxx": "105–108",
+      "stases": [
+        {
+          "stasis": 1,
+          "psalms_lxx": "105",
+          "psalms": [
+            {
+              "number": 105,
+              "title": "Psalm 105",
+              "verses": [
+                "O give thanks unto the Lord, for He is good, for His mercy endureth forever.",
+                "Who shall tell of the mighty acts of the Lord? Who shall make all his praises to be heard?",
+                "Blessed are they that keep judgement and do righteousness at all times.",
+                "Remember us, O Lord, in Thy favour for Thy people; visit us with Thy salvation,",
+                "That we may see it in the goodness of Thy chosen, that we may be glad in the gladness of Thy nation, that we may glory with Thine inheritance.",
+                "We have sinned with our fathers, we have done iniquity, we have done unrighteousness.",
+                "Our fathers in Egypt understood not Thy wonders, and they remembered not the multitude of Thy mercy.",
+                "And they embittered Thee as they went up by the Red Sea.",
+                "And He saved them for His name's sake, that He might make known His mighty power.",
+                "And He rebuked the Red Sea, and it was dried up; and He led them into the deep as in a wilderness.",
+                "And He saved them from the hand of him that hated them, and redeemed them from the hand of enemies.",
+                "The waters covered their oppressors; not one of them was left.",
+                "And they believed His word, and they sang His praise.",
+                "They made haste, they forgot His works, they awaited not His counsel.",
+                "And they desired a desire in the wilderness, and made trial of God in the waterless place.",
+                "And He gave them their request, and sent forth fullness into their souls.",
+                "And they provoked Moses in the camp, and Aaron the holy one of the Lord.",
+                "The earth opened and swallowed up Dathan, and covered over the congregation of Abiron.",
+                "And a fire was kindled in their congregation, a flame burned up the sinners.",
+                "And they made a calf in Horeb, and they worshipped the graven thing.",
+                "And they changed His glory into the likeness of a calf that eateth grass.",
+                "And they forgot God Who had saved them, Who had done great things in Egypt, wonders in the land of Ham, terrible things at the Red Sea.",
+                "And He said that He would destroy them, had not Moses His chosen stood in the breach before Him, to turn away His wrath, lest He should destroy them.",
+                "And they set at nought the desirable land; they believed not His word.",
+                "And they murmured in their tents; they hearkened not unto the voice of the Lord.",
+                "And He lifted up His hand against them, to cast them down in the wilderness,",
+                "To cast down their seed among the nations, and to scatter them in the lands.",
+                "And they were made initiates of Baal-phegor, and ate the sacrifices of the dead.",
+                "And they provoked Him with their inventions, and destruction was multiplied among them.",
+                "And Phineas stood up and made appeasement; and the plague was abated.",
+                "And it was counted unto him for righteousness, unto generation and generation for evermore.",
+                "And they provoked Him at the water of gainsaying, and Moses suffered hurt for their sakes; for they embittered his spirit, and he gave judgement with his lips.",
+                "They did not destroy the heathen, concerning which the Lord had spoken to them.",
+                "They mingled among the nations and learned their works; and they served their graven things, and it became for them a stumbling-block.",
+                "And they sacrificed their sons and their daughters unto demons.",
+                "And they poured out innocent blood, the blood of their sons and daughters, whom they sacrificed to the graven things of Canaan.",
+                "And the land was befouled with the blood of murder, and it was defiled with their works; and they went a whoring with their own inventions.",
+                "And with anger was the Lord wroth against His people, and He abhorred His inheritance.",
+                "And He gave them into the hands of enemies, and they that hated them were lords over them.",
+                "And their enemies afflicted them; and they were humbled under their hands.",
+                "Many times He delivered them; but they embittered Him with their counsel, and they were humbled in their iniquities.",
+                "And the Lord saw when they were in affliction, when He hearkened unto their supplication.",
+                "And He remembered His covenant and repented according to the multitude of His mercy.",
+                "And He caused them to be pitied in the sight of all that had taken them captive.",
+                "Save us, O Lord our God, and gather us from among the nations,",
+                "That we may confess Thy holy name, that we may glory in Thy praise.",
+                "Blessed is the Lord God of Israel, from everlasting to everlasting; and all the peoples shall say: So be it. So be it."
+              ]
+            }
+          ]
+        },
+        {
+          "stasis": 2,
+          "psalms_lxx": "106",
+          "psalms": [
+            {
+              "number": 106,
+              "title": "Psalm 106",
+              "verses": [
+                "O give thanks unto the Lord, for He is good, for His mercy endureth for ever.",
+                "So let them say that have been redeemed by the Lord, whom He hath redeemed from the hand of the enemy.",
+                "From the lands hath He gathered them, from the east, from the west, from the north, and from the sea.",
+                "They wandered in the wilderness, in a waterless land; they found not the path to a city of habitation.",
+                "Hungering and thirsting, their soul within them fainted.",
+                "And they cried unto the Lord in their affliction, and out of their distresses He delivered them.",
+                "And He guided them into the right way that they might go to a city for habitation.",
+                "Let them give thanks unto the Lord for His mercies, and for His wondrous works for the sons of men.",
+                "For He satisfied the empty soul, and the hungry soul hath He filled with good things.",
+                "As for them that sit in darkness and the shadow of death, fettered with beggary and iron,",
+                "Because they were embittered against the sayings of God and provoked the counsel of the Most High,",
+                "Yea, with labours was their heart brought low; they waxed feeble, and there was none to help.",
+                "And they cried unto the Lord in their affliction, and out of their distresses He saved them.",
+                "And He brought them out of darkness and the shadow of death, and their bonds He brake asunder.",
+                "Let them give thanks unto the Lord for His mercies, and for His wondrous works for the sons of men.",
+                "For He shattered the gates of brass, and brake the bars of iron.",
+                "He helped them out of the way of their lawlessness; for on account of their iniquities had they been brought low.",
+                "All food did their soul abhor, and they drew nigh even unto the gates of death.",
+                "And they cried unto the Lord in their affliction, and out of their distresses He saved them.",
+                "He sent forth His Word and He healed them, and He delivered them from their corruption.",
+                "Let them give thanks unto the Lord for His mercies, and for His wondrous works for the sons of men.",
+                "And let them sacrifice to Him a sacrifice of praise, and let them proclaim His works with rejoicing.",
+                "They that go down to the sea in ships, doing their work in many waters,",
+                "These have seen the works of the Lord, and His wonders in the deep.",
+                "He spake, and a wind of tempest arose, and the waves thereof were lifted up.",
+                "They mount as high as the heavens, and they go down into the abysses; their soul was melted with evils.",
+                "They were troubled, and they reeled like one drunken, and all their wisdom was swallowed up.",
+                "And they cried unto the Lord in their affliction, and out of their distresses He brought them.",
+                "And He commanded the tempest, and it was calmed into a breeze, and the waves thereof fell silent.",
+                "And they were glad, because they were quiet, and He guided them to the haven of His will.",
+                "Let them give thanks unto the Lord for His mercies, and for His wondrous works for the sons of men.",
+                "Let them exalt Him in the assembly of the people, and in the seat of the elders let them praise Him.",
+                "He turned rivers into a wilderness, and the coursings of waters into a thirsting land,",
+                "A fruitful land into saltiness, for the wickedness of them that dwell therein.",
+                "He turned a wilderness into pools of waters, and a parched land into streams of water.",
+                "And He made the hungry to dwell therein, and they established cities for habitation.",
+                "And they sowed field and planted vineyards, and they made fruits of increase.",
+                "And He blessed them and they were multiplied greatly, and He diminished not the number of their cattle.",
+                "And again they became few and were brought low by affliction, evils, and sorrows.",
+                "Contempt was poured out upon their princes, and He caused them to wander in a land untrodden, where there is no way.",
+                "And He helped the poor man out of his poverty, and made his kindred like a flock.",
+                "The upright shall see it and shall be glad, and all iniquity shall stop its mouth.",
+                "Who is wise and will keep these things, and will understand the mercies of the Lord?"
+              ]
+            }
+          ]
+        },
+        {
+          "stasis": 3,
+          "psalms_lxx": "107–108",
+          "psalms": [
+            {
+              "number": 107,
+              "title": "Psalm 107",
+              "verses": [
+                "Ready is my heart, O God, ready is my heart; I will sing and chant in my glory.",
+                "Awake, O my glory; awake, O psaltery and harp; I myself will awake at dawn.",
+                "I will confess Thee among the peoples, O Lord, I will chant unto Thee among the nations.",
+                "For great above the heavens is Thy mercy, and even unto the clouds is Thy truth.",
+                "Be Thou exalted above the heavens, O God, and Thy glory above all the earth.",
+                "That Thy beloved ones may be delivered, save Thou with Thy right hand and hearken unto me.",
+                "God hath spoken in His sanctuary: I will be exalted, and I will divide Sikima, and the vale of tabernacles will I measure out.",
+                "Mine is Galaad, and Mine is Manasses, and Ephraim is the protection of My head.",
+                "Judah is My king, Moab is the cauldron of My hope.",
+                "Upon Idumea will I stretch out My shoe; the foreign tribes have been subjected unto Me.",
+                "Who will bring me into a fortified city? Or who will lead me into Idumea?",
+                "Wilt Thou not, O God, Who hast spurned us? And wilt Thou not, O God, go forth with our forces?",
+                "Give us help from affliction, for vain is the salvation of man.",
+                "In God we shall work mighty deeds, and He will bring to nought our enemies."
+              ]
+            },
+            {
+              "number": 108,
+              "title": "Psalm 108",
+              "verses": [
+                "O God, my praise do not pass over in silence; for the mouth of the sinner and the mouth of the deceitful man are opened against me.",
+                "They have spoken against me with a deceitful tongue, and with words of hatred have they encompassed me, and they have warred against me without a cause.",
+                "In return for my love, they have falsely accused me; but as for me, I gave myself to prayer.",
+                "And they repaid me evil for good, and hatred for my love.",
+                "Set Thou a sinner over him, and let the devil stand at his right hand.",
+                "When he is judged, let him go forth condemned, and let his prayer become sin.",
+                "Let his days be few, and his bishopric let another take.",
+                "Let his children be fatherless, and his wife a widow.",
+                "Let his children be vagabonds without a dwelling-place, and let them beg; let them be cast out from their ruined dwellings.",
+                "Let his creditor search out all his substance, and let strangers plunder all his labours.",
+                "Let there be for him no helper, nor anyone to pity his fatherless children.",
+                "Let his children be given over to utter destruction; in a single generation let his name be blotted out.",
+                "Let the iniquity of his fathers be remembered before the Lord, and let not the sin of his mother be blotted out.",
+                "Let them be before the Lord continually, and let the memory of them perish from off the earth,",
+                "Because he remembered not to show mercy; and persecuted a man that was poor and a beggar, and one broken in heart, that he might slay him.",
+                "And he loved cursing, and it shall come upon him; and he delighted not in blessing, and it shall be far from him.",
+                "And he put on cursing like a garment, and it went in like water into his bowels, and like oil into his bones.",
+                "Let it be for him like a garment wherewith he is clothed, and like a girdle wherewith continually he is girded.",
+                "This is the dealing of the Lord with them that slander me, and with them that speak evil things against my soul.",
+                "But Thou, O Lord, O Lord, deal Thou with me for Thy name's sake; for Thy mercy is good.",
+                "Deliver me, for a poor man am I and a pauper, and my heart is troubled within me.",
+                "Like a shadow when it declineth am I taken away, I am shaken off as the locusts.",
+                "My knees are grown weak through fasting, and my flesh is changed for want of oil.",
+                "And I am become a reproach unto them; they saw me and wagged their heads.",
+                "Help me, O Lord my God, and save me according to Thy mercy.",
+                "And let them know that this is Thy hand and that Thou, O Lord, hast wrought it.",
+                "They will curse, and Thou wilt bless; let them that rise up against me be put to shame, but Thy servant shall be glad.",
+                "Let them that slander me be clothed with confusion, and let them be covered with shame as with a mantle.",
+                "I will greatly praise the Lord with my mouth, and in the midst of many will I praise Him.",
+                "For He hath stood at the right hand of the poor, to save my soul from them that persecute me."
               ]
             }
           ]
