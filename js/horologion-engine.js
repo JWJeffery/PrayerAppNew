@@ -6784,16 +6784,46 @@ async function _resolveTypikaSlots(sections, dateObj) {
                 const entry = _typikaLectionaryData.sundays[String(sundayAfterPentecost)];
                 if (!entry) continue;
  
-                if (entry.type === 'special') {
-                    section.items[i] = {
-                        type:       'rubric',
-                        key:        item.key,
-                        text:       'EPISTLE: The appointed Epistle for the First Sunday After Pentecost (All Saints). Reading: Hebrews 11:32\u201312:2. Consult the Apostol for the full pericope.',
-                        resolvedAs: 'typika-sunday-lectionary-epistle-sap-1-special'
-                    };
+               if (entry.type === 'special') {
+                    const sap1EpistleSegs  = [entry.epistle];
+                    const sap1EpistleLabel = entry.epistle;
+                    try {
+                        const sap1EpistleParts = await Promise.all(
+                            sap1EpistleSegs.map(seg => getScriptureText(seg))
+                        );
+                        const sap1EpistleUnavail = sap1EpistleParts.some(
+  p => !p || (typeof p === 'string' && p.includes('[Scripture unavailable:'))
+);
+                        if (sap1EpistleUnavail) {
+                            section.items[i] = {
+                                type:       'rubric',
+                                key:        item.key,
+                                text:       'EPISTLE: The appointed Epistle for the First Sunday After Pentecost (All Saints). Reading: Hebrews 11:32\u201312:2. Consult the Apostol for the full pericope.',
+                                resolvedAs: 'typika-sunday-lectionary-epistle-sap-1-special'
+                            };
+                        } else {
+                            section.items[i] = {
+                                type:                 'text',
+                                key:                  item.key,
+                                label:                'The Epistle \u2014 ' + sap1EpistleLabel,
+                                text:                 sap1EpistleParts.join('\n\n'),
+                                resolvedAs:           'typika-sunday-lectionary-epistle-sap-1',
+                                tone:                 toneResult.tone,
+                                sundayAfterPentecost: sundayAfterPentecost,
+                                source:               'ByzCath.org Byzantine Lectionary \u2014 All Saints Sunday'
+                            };
+                        }
+                    } catch (err) {
+                        console.warn('[HorologionEngine] Typika Week 1 epistle resolution failed:', err.message);
+                        section.items[i] = {
+                            type:       'rubric',
+                            key:        item.key,
+                            text:       'EPISTLE: The appointed Epistle for the First Sunday After Pentecost (All Saints). Reading: Hebrews 11:32\u201312:2. Consult the Apostol for the full pericope.',
+                            resolvedAs: 'typika-sunday-lectionary-epistle-sap-1-special'
+                        };
+                    }
                     continue;
-                }
- 
+                } 
                 const epistleSegments = entry.epistle_segments || [entry.epistle];
                 const epistleLabel    = entry.epistle_segments
                     ? entry.epistle_segments.join('; ')
@@ -6837,16 +6867,47 @@ async function _resolveTypikaSlots(sections, dateObj) {
                 const entry = _typikaLectionaryData.sundays[String(sundayAfterPentecost)];
                 if (!entry) continue;
  
-                if (entry.type === 'special') {
-                    section.items[i] = {
-                        type:       'rubric',
-                        key:        item.key,
-                        text:       'GOSPEL: The appointed Gospel for the First Sunday After Pentecost (All Saints). Reading: Matthew 10:32\u201333, 37\u201338; 19:27\u201330. Consult the Evangelist for the full pericope.',
-                        resolvedAs: 'typika-sunday-lectionary-gospel-sap-1-special'
-                    };
+               if (entry.type === 'special') {
+                    const sap1GospelSegs  = entry.gospel_segments;
+                    const sap1GospelLabel = entry.gospel_segments.join('; ');
+                    try {
+                        const sap1GospelParts = await Promise.all(
+                            sap1GospelSegs.map(seg => getScriptureText(seg))
+                        );
+                        const sap1GospelUnavail = sap1GospelParts.some(
+  p => !p || (typeof p === 'string' && p.includes('[Scripture unavailable:'))
+);
+                        if (sap1GospelUnavail) {
+                            section.items[i] = {
+                                type:       'rubric',
+                                key:        item.key,
+                                text:       'GOSPEL: The appointed Gospel for the First Sunday After Pentecost (All Saints). Reading: Matthew 10:32\u201333, 37\u201338; 19:27\u201330. Consult the Evangelist for the full pericope.',
+                                resolvedAs: 'typika-sunday-lectionary-gospel-sap-1-special'
+                            };
+                        } else {
+                            section.items[i] = {
+                                type:                 'text',
+                                key:                  item.key,
+                                label:                'The Holy Gospel \u2014 ' + sap1GospelLabel,
+                                text:                 sap1GospelParts.join('\n\n'),
+                                resolvedAs:           'typika-sunday-lectionary-gospel-sap-1',
+                                tone:                 toneResult.tone,
+                                sundayAfterPentecost: sundayAfterPentecost,
+                                source:               'ByzCath.org Byzantine Lectionary \u2014 All Saints Sunday'
+                            };
+                        }
+                    } catch (err) {
+                        console.warn('[HorologionEngine] Typika Week 1 gospel resolution failed:', err.message);
+                        section.items[i] = {
+                            type:       'rubric',
+                            key:        item.key,
+                            text:       'GOSPEL: The appointed Gospel for the First Sunday After Pentecost (All Saints). Reading: Matthew 10:32\u201333, 37\u201338; 19:27\u201330. Consult the Evangelist for the full pericope.',
+                            resolvedAs: 'typika-sunday-lectionary-gospel-sap-1-special'
+                        };
+                    }
                     continue;
                 }
- 
+
                 const gospelSegments = entry.gospel_segments || [entry.gospel];
                 const gospelLabel    = entry.gospel_segments
                     ? entry.gospel_segments.join('; ')
