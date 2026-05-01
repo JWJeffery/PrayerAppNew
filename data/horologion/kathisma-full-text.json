@@ -44,7 +44,7 @@
     "psalter_tradition": "OCA/Antiochian English (Hapgood tradition)",
     "numbering": "LXX",
     "stases_per_kathisma": 3,
-    "fully_supported_kathismata": [1, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
+    "fully_supported_kathismata": [1, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14]
   },
   "kathismata": {
     "1": {
@@ -2216,6 +2216,184 @@
                 "Mine eyes were upon the faithful of the land, that they might sit with me; the man that walked in the blameless path, he ministered unto me.",
                 "The proud doer dwelt not in the midst of my house; the speaker of unjust things prospered not before mine eyes.",
                 "In the morning I slew all the sinners of the land, utterly to destroy out of the city of the Lord all them that work iniquity."
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "14": {
+      "number": 14,
+      "title": "Fourteenth Kathisma",
+      "psalms_lxx": "101–104",
+      "stases": [
+        {
+          "stasis": 1,
+          "psalms_lxx": "101–102",
+          "psalms": [
+            {
+              "number": 101,
+              "title": "Psalm 101",
+              "verses": [
+                "O Lord, hear my prayer, and let my cry come unto Thee.",
+                "Turn not Thy face away from me; in the day when I am afflicted, incline Thine ear unto me.",
+                "In the day when I call upon Thee, quickly hearken unto me.",
+                "For my days are vanished like smoke, and my bones consumed like wood for the burning.",
+                "I am smitten like grass, and withered is my heart, for I forgot to eat my bread.",
+                "By reason of the voice of my groaning, my bone hath cleaved unto my flesh.",
+                "I am become like a pelican of the wilderness, I am like an owl in a ruined house.",
+                "I have watched, and am like a sparrow that sitteth alone upon the house-top.",
+                "The whole day long mine enemies reproached me, and they that praised me made an oath against me.",
+                "For before the face of Thy wrath and Thine anger I ate ashes like bread, and my drink I mingled with weeping; for after uplifting me, Thou hast dashed me down.",
+                "My days like a shadow have declined, and I like grass am withered.",
+                "But Thou, O Lord, for ever abidest, and Thy remembrance is unto generation and generation.",
+                "Thou shalt rise up and have pity upon Sion, for it is time to have compassion on her, yea, the time is come.",
+                "For Thy servants have taken pleasure in her stones, and they shall feel pity for her dust.",
+                "And the nations shall fear Thy name, O Lord, and all the kings of the earth Thy glory.",
+                "For the Lord shall build up Sion, and He shall be seen in His glory.",
+                "He hath regarded the prayer of the humble, and hath not despised their supplication.",
+                "Let this be written for another generation, and the people that is being created shall praise the Lord.",
+                "For He hath looked out from His holy height, the Lord from heaven hath looked upon the earth,",
+                "To hear the groaning of them that be in fetters, to loose the sons of the slain,",
+                "To declare in Sion the name of the Lord, and His praise in Jerusalem,",
+                "When the peoples are gathered together, and the kings to serve the Lord.",
+                "He answered Him in the way of his strength: The fewness of my days declare unto me.",
+                "Take me not away at the half of my days; in generations and generations are Thy years.",
+                "In the beginning, O Lord, Thou didst lay the foundation of the earth, and the heavens are the works of Thy hands.",
+                "They shall perish, but Thou abidest; and all like a garment shall grow old,",
+                "And as a vesture shalt Thou fold them, and they shall be changed; but Thou art the same, and Thy years shall not fail.",
+                "The sons of Thy servants shall have their dwelling, and their seed for ever shall be guided aright."
+              ]
+            },
+            {
+              "number": 102,
+              "title": "Psalm 102",
+              "verses": [
+                "Bless the Lord, O my soul, and all that is within me bless His holy name.",
+                "Bless the Lord, O my soul, and forget not all that He hath done for thee,",
+                "Who is gracious unto all thine iniquities, Who healeth all thine infirmities,",
+                "Who redeemeth thy life from corruption, Who crowneth thee with mercy and compassion,",
+                "Who fulfilleth thy desire with good things; thy youth shall be renewed as the eagle's.",
+                "The Lord performeth deeds of mercy, and executeth judgement for all them that are wronged.",
+                "He hath made His ways known unto Moses, unto the sons of Israel the things that He hath willed.",
+                "Compassionate and merciful is the Lord, long-suffering and plenteous in mercy; not unto the end will He be angered, neither unto eternity will He be wroth.",
+                "Not according to our iniquities hath He dealt with us, neither according to our sins hath He rewarded us.",
+                "For according to the height of heaven from the earth, the Lord hath made His mercy to prevail over them that fear Him.",
+                "As far as the east is from the west, so far hath He removed our iniquities from us.",
+                "Like as a father hath compassion upon his sons, so hath the Lord had compassion upon them that fear Him; for He knoweth whereof we are made, He hath remembered that we are dust.",
+                "As for man, his days are as the grass; as a flower of the field, so shall he blossom forth.",
+                "For when the wind is passed over it, then it shall be gone, and no longer will it know the place thereof.",
+                "But the mercy of the Lord is from eternity, even unto eternity, upon them that fear Him.",
+                "And His righteousness is upon sons of sons, upon them that keep His testament and remember His commandments to do them.",
+                "The Lord in heaven hath prepared His throne, and His kingdom ruleth over all.",
+                "Bless the Lord, all ye His angels, mighty in strength, that perform His word, to hear the voice of His words.",
+                "Bless the Lord, all ye His hosts, His ministers that do His will.",
+                "Bless the Lord, all ye His works, in every place of His dominion. Bless the Lord, O my soul."
+              ]
+            }
+          ]
+        },
+        {
+          "stasis": 2,
+          "psalms_lxx": "103",
+          "psalms": [
+            {
+              "number": 103,
+              "title": "Psalm 103",
+              "verses": [
+                "Bless the Lord, O my soul; O Lord my God, Thou hast been magnified exceedingly.",
+                "Confession and majesty hast Thou put on, Who coverest Thyself with light as with a garment,",
+                "Who stretchest out the heaven as it were a curtain; Who supporteth His chambers in the waters,",
+                "Who appointeth the clouds for His ascent, Who walketh upon the wings of the winds,",
+                "Who maketh His angels spirits, and His ministers a flame of fire,",
+                "Who establisheth the earth in the sureness thereof; it shall not be turned back for ever and ever.",
+                "The abyss like a garment is His mantle; upon the mountains shall the waters stand.",
+                "At Thy rebuke they will flee, at the voice of Thy thunder shall they be afraid.",
+                "The mountains rise up and the plains sink down, unto the place where Thou hast established them.",
+                "Thou appointedst a bound that they shall not pass, neither return to cover the earth.",
+                "He sendeth forth springs in the valleys; between the mountains will the waters run.",
+                "They shall give drink to all the beasts of the field; the wild asses will wait to quench their thirst.",
+                "Beside them will the birds of the heaven lodge, from the midst of the rocks will they give voice.",
+                "He watereth the mountains from His chambers; the earth shall be satisfied with the fruit of Thy works.",
+                "He causeth the grass to grow for the cattle, and green herb for the service of men,",
+                "To bring forth bread out of the earth; and wine maketh glad the heart of man.",
+                "To make his face cheerful with oil; and bread strengtheneth man's heart.",
+                "The trees of the plain shall be satisfied, the cedars of Lebanon, which Thou hast planted.",
+                "There will the sparrows make their nests; the house of the heron is chief among them.",
+                "The high mountains are a refuge for the harts, and so is the rock for the hares.",
+                "He hath made the moon for seasons; the sun knoweth his going down.",
+                "Thou appointedst the darkness, and there was the night, wherein all the beasts of the forest will go abroad.",
+                "Young lions roaring after their prey, and seeking their food from God.",
+                "The sun ariseth, and they are gathered together, and they lay them down in their dens.",
+                "But man shall go forth unto his work, and to his labour until the evening.",
+                "How magnified are Thy works, O Lord! In wisdom hast Thou made them all; the earth is filled with Thy creation.",
+                "So is this great and spacious sea, therein are things creeping innumerable, small living creatures with the great.",
+                "There go the ships; there this dragon, whom Thou hast made to play therein.",
+                "All things wait on Thee, to give them their food in due season; when Thou givest it them, they will gather it.",
+                "When Thou openest Thy hand, all things shall be filled with goodness; when Thou turnest away Thy face, they shall be troubled.",
+                "Thou wilt take their spirit, and they shall cease; and unto their dust shall they return.",
+                "Thou wilt send forth Thy Spirit, and they shall be created; and Thou shalt renew the face of the earth.",
+                "Let the glory of the Lord be unto the ages; the Lord will rejoice in His works.",
+                "Who looketh on the earth and maketh it tremble, Who toucheth the mountains and they smoke.",
+                "I will sing unto the Lord throughout my life, I will chant to my God for as long as I have my being.",
+                "May my words be sweet unto Him, and I will rejoice in the Lord.",
+                "O that sinners would cease from the earth, and they that work iniquity, that they should be no more. Bless the Lord, O my soul."
+              ]
+            }
+          ]
+        },
+        {
+          "stasis": 3,
+          "psalms_lxx": "104",
+          "psalms": [
+            {
+              "number": 104,
+              "title": "Psalm 104",
+              "verses": [
+                "O give thanks unto the Lord and call upon His name; declare among the nations His works.",
+                "Sing unto Him and chant unto Him; tell forth all His wonders.",
+                "Glory in His holy name; let the heart of them be glad that seek the Lord.",
+                "Seek ye the Lord, and be strengthened; seek ye His face at all times.",
+                "Remember His wonders which He wrought, His marvels, and the judgements of His mouth,",
+                "Ye that are the seed of Abraham, His servants, ye sons of Jacob, His chosen.",
+                "He is the Lord our God, in all the earth are His judgements.",
+                "He hath remembered His covenant unto eternity, the word which He commanded unto a thousand generations,",
+                "Which He made to Abraham, and His oath to Isaac.",
+                "And He established it to Jacob for an ordinance, and to Israel for an everlasting covenant,",
+                "Saying: Unto thee will I give the land of Canaan, the portion of your inheritance.",
+                "When they were few in number, very few and sojourners therein,",
+                "And they went from nation to nation, and from one kingdom to another people,",
+                "He allowed no man to wrong them; and He reproved kings for their sake,",
+                "Saying: Touch not Mine anointed ones, and to My prophets do no evil.",
+                "And He called a famine upon the land, He brake all the staff of bread.",
+                "He sent a man before them, Joseph was sold for a slave.",
+                "They humbled his feet with fetters, his life was spent in irons, until his word came to pass.",
+                "The oracle of the Lord proved him; the king sent and loosed him, even the ruler of the people, and released him.",
+                "He made him lord of his house, and ruler over all his substance,",
+                "To instruct his princes as himself, and to teach his elders wisdom.",
+                "And Israel went into Egypt, and Jacob sojourned in the land of Ham.",
+                "And He increased His people greatly, and made them stronger than their enemies.",
+                "He turned their heart to hate His people, to deal craftily with His servants.",
+                "He sent forth Moses His servant, Aaron whom He had chosen for Himself.",
+                "He set in them the words of His signs and of His marvels in the land of Ham.",
+                "He sent forth darkness and made it dark, for they were embittered against His words.",
+                "He turned their waters into blood, and He slew their fish.",
+                "Their land teemed with frogs, even unto the secret chambers of their kings.",
+                "He spake, and the dog-fly came, and gnats in all their borders.",
+                "He gave them hail for rain, flaming fire in their land.",
+                "And He smote their vines and their fig trees, and brake every tree of their border.",
+                "He spake, and the locust came, and the caterpillar, and that without number.",
+                "And devoured all the grass in their land, and devoured all the fruit of their land.",
+                "And He smote every firstborn of their land, the firstlings of all their labour.",
+                "And He led them out with silver and gold, and there was not among their tribes one man that was feeble.",
+                "Egypt was glad when they departed, for fear of them had fallen upon them.",
+                "He spread out a cloud for a shelter to them, and a fire to give them light by night.",
+                "They made request and the quail came, and with the bread of heaven He filled them.",
+                "He clave the rock and the waters flowed, in waterless places rivers ran.",
+                "For He remembered His holy word which He spake unto Abraham His servant.",
+                "And He led forth His people with rejoicing, and His chosen ones with gladness.",
+                "And He gave unto them the lands of the heathen, and the labours of peoples they inherited,",
+                "That they might keep His statutes and might seek after his law."
               ]
             }
           ]
