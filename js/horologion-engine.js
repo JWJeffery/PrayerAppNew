@@ -3036,17 +3036,22 @@ function _resolveComplineFestalTheotokionRubric(officeKey, troparionItem, fallba
             };
         }
 
-        // Attempt full-text resolution for corpus-backed kathismata (K1, K4–K13).
+        // Attempt full-text resolution — explicit whitelist only.
+        // K14, K15, K16 are blocked regardless of corpus snapshot state.
+        // K2, K17, K19, K20 remain rubric-only.
+        const LENTEN_FULL_TEXT_WHITELIST = [1, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13];
         const resolvedAsToken = (seasonLabel === 'Holy Week')
             ? 'orthros-holy-week-kathisma-full-text'
             : 'orthros-great-lent-kathisma-full-text';
-        const fullText = _resolveKathismaFullText(
-            kNum,
-            kMeta.title,
-            kMeta.psalms_lxx,
-            slotKey,
-            resolvedAsToken
-        );
+        const fullText = LENTEN_FULL_TEXT_WHITELIST.includes(kNum)
+            ? _resolveKathismaFullText(
+                kNum,
+                kMeta.title,
+                kMeta.psalms_lxx,
+                slotKey,
+                resolvedAsToken
+              )
+            : null;
         if (fullText) {
             return Object.assign({}, fullText, {
                 key:            slotKey,
@@ -3137,6 +3142,7 @@ function _resolveComplineFestalTheotokionRubric(officeKey, troparionItem, fallba
         await Promise.all([
             _loadOrthrosFixedData(),
             _loadOrthrosKathismaData(),
+            _loadKathismaFullTextData(),
             _loadTroparionData(),
             _loadWeekdayTroparionMeta(),
             _loadTriodionData()
