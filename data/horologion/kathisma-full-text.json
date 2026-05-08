@@ -39,14 +39,15 @@
     "  liturgy.io (psalt=DEF). Text is distinct from the OCA/Antiochian/Hapgood",
     "  tradition used for K1/K4/K6/K8/K10/K12.",
    "v5.5.2 — K17 corpus: Psalm 118 LXX (176 verses, 3 stases). Source: Psalter According to the Seventy, HTM 1974, via liturgy.io (PSALTER70). Stases: vv. 1–72 / 73–131 / 132–176.",
-    "v5.5.3 — K19/K20 corpus: Psalms 134–142 LXX and Psalms 143–150 LXX. Source: Psalter According to the Seventy, HTM 1974, via liturgy.io (PSALTER70). Appointed: Clean Wednesday, Great Lent Weeks 1–4 and 6."
+    "v5.5.3 — K19/K20 corpus: Psalms 134–142 LXX and Psalms 143–150 LXX. Source: Psalter According to the Seventy, HTM 1974, via liturgy.io (PSALTER70). Appointed: Clean Wednesday, Great Lent Weeks 1–4 and 6.",
+    "v5.5.4 — K2 corpus: Psalms 9–16 LXX (3 stases). Source: Psalter According to the Seventy, HTM 1974, via liturgy.io (PSALTER70). Appointed: Great Lent Week 5 Wednesday."
   ],
   "meta": {
-    "version": "5.5.3",
+    "version": "5.5.4",
     "psalter_tradition": "OCA/Antiochian English (Hapgood tradition)",
     "numbering": "LXX",
     "stases_per_kathisma": 3,
-    "fully_supported_kathismata": [1, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 19, 20]
+    "fully_supported_kathismata": [1, 2, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 19, 20]
   },
   "kathismata": {
     "1": {
@@ -199,6 +200,269 @@
                 "All sheep and oxen, yea, and the beasts of the field,",
                 "The birds of the heaven, and the fish of the sea, that pass through the paths of the seas.",
                 "O Lord, our Lord, how wondrous is Thy name in all the earth!"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "2": {
+      "number": 2,
+      "title": "Second Kathisma",
+      "psalms_lxx": "9–16",
+      "stases": [
+        {
+          "stasis": 1,
+          "psalms_lxx": "9–10",
+          "psalms": [
+            {
+              "number": 9,
+              "title": "Psalm 9",
+              "verses": [
+                "I will confess Thee, O Lord, with my whole heart, I will tell of all Thy wonders.",
+                "2",
+                "I will be glad and rejoice in Thee, I will chant unto Thy name, O Most High.",
+                "3",
+                "4",
+                "For Thou hast maintained my judgement and my cause; Thou hast sat upon a throne, O Thou that judgest righteousness.",
+                "5",
+                "Thou hast rebuked the heathen, and the ungodly man hath perished; his name Thou hast blotted out for ever, and unto ages of ages.",
+                "6",
+                "The swords of the enemy have utterly failed, and his cities Thou hast destroyed.",
+                "7",
+                "The remembrance of him hath perished with a resounding noise, but the Lord for ever abideth.",
+                "8",
+                "In judgement hath He prepared His throne, and He himself will judge the world in righteousness; He will judge the peoples in uprightness.",
+                "9",
+                "And the Lord is become a refuge for the poor man, a helper in times of well-being and in afflictions.",
+                "10",
+                "And let them that know Thy name hope in Thee, for Thou hast not forsaken them that seek Thee, O Lord.",
+                "11",
+                "Chant unto the Lord Who dwelleth in Sion, proclaim ye His ways among the nations.",
+                "12",
+                "For He that maketh enquiry for blood hath remembered them, He hath not forgotten the cry of the paupers.",
+                "13",
+                "Have mercy on me, O Lord; see my humiliation which I have suffered from mine enemies, O Thou that dost raise me up from the gates of death,",
+                "14",
+                "That I may declare all Thy praises in the gates of the daughter of Sion. We will rejoice in Thy salvation.",
+                "15",
+                "The heathen are ensnared in the destruction which they have wrought; in this snare which they hid hath their foot been caught.",
+                "16",
+                "The Lord is known by the judgements which He executeth; in the works of his own hands hath the sinner been caught.",
+                "17",
+                "Let sinners be turned away unto hades, yea, all the nations that are forgetful of God.",
+                "18",
+                "For the poor man shall not be forgotten to the end; the patience of the paupers shall not perish for ever.",
+                "19",
+                "Arise, O Lord, let not man prevail; let the nations be judged before Thee.",
+                "20",
+                "O Lord, set a lawgiver over them; let the heathen know that they are but men.",
+                "21",
+                "Why, O Lord, hast Thou gone to stand afar off? Why dost Thou overlook us in times of well-being and in afflictions?",
+                "22",
+                "23",
+                "For the sinner praiseth himself in the lusts of his soul, and the unrighteous man likewise blesseth himself therein.",
+                "24",
+                "The sinner hath provoked the Lord; according to the magnitude of his wrath, he careth not; God is not before him.",
+                "25",
+                "Profane are his ways in every season, Thy judgements are removed from his sight, over all his enemies shall he gain dominion.",
+                "26",
+                "For he said in his heart: I shall not be shaken; from generation to generation shall I be without harm.",
+                "27",
+                "With cursing is his mouth filled, and with bitterness and deceit; under his tongue are toil and travail.",
+                "28",
+                "He sitteth in ambush with the rich in secret places, that he may slay the innocent; his eyes are set upon the poor man.",
+                "29",
+                "He lieth in wait in a secret place like a lion in his den; he lieth in wait to seize upon the poor man, to seize upon the poor man when he draweth him in.",
+                "30",
+                "In his snare will he humble himself, he will bow down and fall while gaining dominion over the poor.",
+                "31",
+                "For he said in his heart: God hath forgotten; He hath turned away His face, that He might not see unto the end.",
+                "32",
+                "Arise, O Lord my God, let Thy hand be lifted high; forget not Thy paupers to the end.",
+                "33",
+                "Why hath the ungodly one provoked God? For he hath said in his heart: He will not make enquiry.",
+                "34",
+                "Thou seest, for Thou understandest travail and anger, that Thou mightest deliver him into Thy hands. To Thee hath the beggar been abandoned; for the orphan art Thou a helper.",
+                "35",
+                "Break Thou the arm of the sinner and of the evil man; his sin shall be sought out and be found no more.",
+                "36",
+                "The Lord shall be king for ever, and unto the ages of ages. Ye heathen shall perish out of His land.",
+                "37",
+                "The desire of the poor hast Thou heard, O Lord; to the preparation of their heart hath Thine ear been attentive,",
+                "38",
+                "To judge for the orphan and the humble, that man may no more presume to be haughty upon the earth."
+              ]
+            },
+            {
+              "number": 10,
+              "title": "Psalm 10",
+              "verses": [
+                "In the Lord have I hoped; how will ye say to my soul: Flee unto the mountains like a sparrow?",
+                "2",
+                "For behold, the sinners have bent their bow, they have prepared arrows for the quiver, to shoot down in a moonless night the upright of heart.",
+                "3",
+                "For what Thou hast formed they have destroyed; and the righteous man, what hath he done?",
+                "4",
+                "The Lord is in His holy temple; the Lord, in heaven is His throne; His eyes are set upon the poor man, His eyelids examine the sons of men.",
+                "5",
+                "The Lord examineth the righteous man and the ungodly; but he that loveth unrighteousness hateth his own soul.",
+                "6",
+                "He will rain down snares upon sinners; fire and brimstone and wind of tempest shall be the portion of their cup.",
+                "7",
+                "For the Lord is righteous and hath loved righteousness; upon uprightness hath His countenance looked."
+              ]
+            }
+          ]
+        },
+        {
+          "stasis": 2,
+          "psalms_lxx": "11–13",
+          "psalms": [
+            {
+              "number": 11,
+              "title": "Psalm 11",
+              "verses": [
+                "Save me, O Lord, for a righteous man there is no more; for truths have diminished from the sons of men.",
+                "2",
+                "Vain things hath each man spoken to his neighbour; deceitful lips are in his heart, and in his heart hath he spoken evils.",
+                "3",
+                "Let the Lord destroy all deceitful lips and the tongue that speaketh boastful words, which have said:",
+                "4",
+                "Our tongue will we magnify, our lips are our own. Who is lord over us?",
+                "5",
+                "Because of the distress of the beggars and the groaning of the poor, now will I arise, saith the Lord; I will establish them in salvation, I will be manifest therein.",
+                "6",
+                "The words of the Lord are pure words, silver that is fired, tried in the earth, brought to sevenfold purity.",
+                "7",
+                "Thou, O Lord, shalt keep us and shalt preserve us from this generation, and for evermore.",
+                "8",
+                "The ungodly walk round about; to the measure of Thy loftiness hast Thou esteemed the sons of men."
+              ]
+            },
+            {
+              "number": 12,
+              "title": "Psalm 12",
+              "verses": [
+                "How long, O Lord, wilt Thou utterly forget me? How long wilt Thou turn Thy face away from me?",
+                "2",
+                "How long shall I take counsel in my soul with grievings in my heart by day and by night? How long shall mine enemy be exalted over me?",
+                "3",
+                "Look upon me, hear me, O Lord my God; enlighten mine eyes, lest at any time I sleep unto death.",
+                "4",
+                "Lest at any time mine enemy say: I have prevailed against him.",
+                "5",
+                "They that afflict me will rejoice if I am shaken; but as for me, I have hoped in Thy mercy. My heart will rejoice in Thy salvation.",
+                "6",
+                "I will sing unto the Lord, Who is my benefactor, and I will chant unto the name of the Lord Most High."
+              ]
+            },
+            {
+              "number": 13,
+              "title": "Psalm 13",
+              "verses": [
+                "The fool hath said in his heart: There is no God.",
+                "2",
+                "They are become corrupt and loathsome in their ways; there is none that doeth good, no not one.",
+                "3",
+                "The Lord looked down from heaven upon the sons of men, to see if there be any that understand or seek after God.",
+                "4",
+                "They are all gone astray, they are altogether useless, there is none that doeth good, no not one.",
+                "5",
+                "Shall not all they that work iniquity come to understanding? They that eat up my people as they eat bread have not called upon the Lord.",
+                "6",
+                "There have they feared with fear where there is no fear; for the Lord is in the generation of the righteous.",
+                "7",
+                "The counsel of the poor man have ye shamed, but the Lord is his hope.",
+                "8",
+                "Who shall give out of Sion the salvation of Israel? When the Lord hath turned back the captivity of His people, Jacob shall rejoice and Israel shall be glad."
+              ]
+            }
+          ]
+        },
+        {
+          "stasis": 3,
+          "psalms_lxx": "14–16",
+          "psalms": [
+            {
+              "number": 14,
+              "title": "Psalm 14",
+              "verses": [
+                "O Lord, who shall abide in Thy tabernacle? and who shall dwell in Thy holy mountain?",
+                "2",
+                "He that walketh blameless and worketh righteousness, speaking truth in his heart,",
+                "3",
+                "Who hath not spoken deceitfully with his tongue, neither hath done evil to his neighbour, nor taken up a reproach against those near him.",
+                "4",
+                "In his sight he that worketh evil is set at nought, be he glorifieth them that fear the Lord. He giveth oath to his neighbour, and forsweareth not.",
+                "5",
+                "He hath not lent his money on usury, and hath not received bribes against the innocent. He that doeth these things shall never be shaken."
+              ]
+            },
+            {
+              "number": 15,
+              "title": "Psalm 15",
+              "verses": [
+                "A Pillar of Inscription of David.",
+                "Keep me, O Lord, for in Thee have I hoped.",
+                "2",
+                "I said unto the Lord: Thou art my Lord; for of my goods, no need hast Thou.",
+                "3",
+                "In the saints that are in His earth hath the Lord been wondrous; He hath wrought all His desires in them.",
+                "4",
+                "Their infirmities increased; thereupon they hastened. (Diapsalm) I will not assemble their assemblies of blood, nor will I make remembrance of their name through my lips.",
+                "5",
+                "The Lord is the portion of mine inheritance and of my cup. Thou art He that restorest mine inheritance unto me.",
+                "6",
+                "Portions have fallen to me that are among the best, for mine inheritance is most excellent to me.",
+                "7",
+                "I will bless the Lord Who hath given me understanding; moreover, even till night have my reins instructed me.",
+                "8",
+                "I beheld the Lord ever before me, for He is at my right hand, that I might not be shaken.",
+                "9",
+                "Therefore did my heart rejoice and my tongue was glad; moreover, my flesh shall dwell in hope.",
+                "10",
+                "For Thou wilt not abandon my soul in hades, nor wilt Thou suffer Thy Holy One to see corruption.",
+                "11",
+                "Thou hast made known to me the ways of life, Thou wilt fill me with gladness with Thy countenance; delights are in Thy right hand for ever."
+              ]
+            },
+            {
+              "number": 16,
+              "title": "Psalm 16",
+              "verses": [
+                "A Prayer of David.",
+                "Hearken, O Lord, unto my righteousness, attend unto my supplication. Give ear unto my prayer, which cometh not from deceitful lips.",
+                "2",
+                "From before Thy face let my judgement come forth, let mine eyes behold uprightness.",
+                "3",
+                "Thou hast proved my heart, Thou hast visited it in the night, Thou hast tried me by fire, and unrighteousness was not found in me.",
+                "4",
+                "That my mouth might not speak of the works of men, for the sake of the words of Thy lips have I kept the ways that are hard.",
+                "5",
+                "Set my footsteps in Thy paths, that my steps may not be shaken.",
+                "6",
+                "I have cried for Thou hast hearkened unto me, O God. Incline Thine ear unto me, and hearken unto my words.",
+                "7",
+                "Let Thy mercies be made wonderful, O Thou that savest them that hope in Thee.",
+                "8",
+                "From them that have resisted Thy right hand, keep me, O Lord, as the apple of Thine eye.",
+                "9",
+                "In the shelter of Thy wings wilt Thou shelter me, from the face of the ungodly which have oppressed me.",
+                "10",
+                "Mine enemies have surrounded my soul, they have enclosed themselves with their own fat, their mouth hath spoken pride.",
+                "11",
+                "They that cast me out have now encircled me, they have set their eyes to look askance on the earth.",
+                "12",
+                "They have taken me as might a lion ready for his prey, and as might a lion's whelp that dwelleth in hiding.",
+                "13",
+                "Arise, O Lord, overtake them and trip their heels; deliver my soul from ungodly men, Thy sword from the enemies of Thy hand.",
+                "14",
+                "O Lord, from Thy few do Thou separate them from the earth in their life; yea, with Thy hidden treasures hath their belly been filled.",
+                "15",
+                "They have satisfied themselves with swine and have left the remnants to their babes.",
+                "16",
+                "But as for me, in righteousness shall I appear before Thy face; I shall be filled when Thy glory is made manifest to me."
               ]
             }
           ]
