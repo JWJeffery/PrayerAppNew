@@ -3037,8 +3037,8 @@ function _resolveComplineFestalTheotokionRubric(officeKey, troparionItem, fallba
         }
 
         // Attempt full-text resolution — explicit whitelist only.
-        // K2, K17, K19, K20 remain rubric-only.
-        const LENTEN_FULL_TEXT_WHITELIST = [1, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16];
+        // K2, K19, and K20 remain rubric-only (corpus absent).
+        const LENTEN_FULL_TEXT_WHITELIST = [1, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17];
         const resolvedAsToken = (seasonLabel === 'Holy Week')
             ? 'orthros-holy-week-kathisma-full-text'
             : 'orthros-great-lent-kathisma-full-text';
