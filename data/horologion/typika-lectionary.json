@@ -55,5 +55,45 @@
     "29": { "label": "Twenty-Ninth Sunday After Pentecost",     "type": "resurrectional", "epistle": "Colossians 3:12-16",              "gospel": "Luke 17:12-19",    "greek_gospel": "Luke 13:10-17" },
     "30": { "label": "Thirtieth Sunday After Pentecost",        "type": "resurrectional", "epistle": "Colossians 3:12-16",              "gospel": "Luke 18:18-27",    "greek_gospel": "Luke 14:16-24" },
     "31": { "label": "Thirty-First Sunday After Pentecost",     "type": "resurrectional", "epistle": "1 Timothy 1:15-17",               "gospel": "Luke 18:35-43"     }
+  },
+  "pentecostarion": {
+    "thomas-sunday": {
+      "label": "Thomas Sunday (Antipascha)",
+      "epistle": "Acts 5:12-20",
+      "gospel":  "John 20:19-31"
+    },
+    "myrrhbearers": {
+      "label": "Sunday of the Myrrhbearers",
+      "epistle": "Acts 6:1-7",
+      "gospel_segments": ["Mark 15:43-47", "Mark 16:1-8"],
+      "note": "Cross-chapter gospel stored as segments."
+    },
+    "paralytic": {
+      "label": "Sunday of the Paralytic",
+      "epistle": "Acts 9:32-42",
+      "gospel":  "John 5:1-15"
+    },
+    "samaritan-woman": {
+      "label": "Sunday of the Samaritan Woman",
+      "epistle": "Acts 11:19-30",
+      "gospel":  "John 4:5-42"
+    },
+    "blind-man": {
+      "label": "Sunday of the Blind Man",
+      "epistle": "Acts 16:16-34",
+      "gospel":  "John 9:1-38"
+    },
+    "holy-fathers": {
+      "label": "Sunday of the Holy Fathers of the First Council",
+      "epistle_segments": ["Acts 20:16-18", "Acts 20:28-36"],
+      "gospel":  "John 17:1-13",
+      "note": "Cross-passage epistle stored as segments."
+    },
+    "pentecost": {
+      "label": "Pentecost Sunday",
+      "epistle": "Acts 2:1-11",
+      "gospel_segments": ["John 7:37-52", "John 8:12"],
+      "note": "Gospel is composite; stored as segments."
+    }
   }
 }

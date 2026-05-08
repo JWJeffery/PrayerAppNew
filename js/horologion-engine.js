@@ -6738,6 +6738,25 @@ async function _resolveTypikaSlots(sections, dateObj) {
     const sundayAfterPentecost = (dayOfWeek === 0)
         ? _computeSundayAfterPentecost(dateObj)
         : null;
+
+    const pentecostarionKey = (() => {
+        if (dayOfWeek !== 0) return null;
+        const _year     = dateObj.getFullYear();
+        const localDate = new Date(_year, dateObj.getMonth(), dateObj.getDate());
+        let   _pascha   = _getOrthodoxPascha(_year);
+        if (_pascha > localDate) _pascha = _getOrthodoxPascha(_year - 1);
+        const diffDays  = Math.round((localDate - _pascha) / 86400000);
+        const PENT_MAP  = {
+            7:  'thomas-sunday',
+            14: 'myrrhbearers',
+            21: 'paralytic',
+            28: 'samaritan-woman',
+            35: 'blind-man',
+            42: 'holy-fathers',
+            49: 'pentecost'
+        };
+        return PENT_MAP[diffDays] || null;
+    })();
  
     const FIXED_SLOT_KEYS = new Set([
         'typika-usual-beginning',
@@ -6809,6 +6828,44 @@ async function _resolveTypikaSlots(sections, dateObj) {
             }
  
             if (item.key === 'typika-epistle-rubric') {
+                if (pentecostarionKey && _typikaLectionaryData && _typikaLectionaryData.pentecostarion) {
+                    const pEntry = _typikaLectionaryData.pentecostarion[pentecostarionKey];
+                    if (pEntry) {
+                        const pEpistleSegments = pEntry.epistle_segments || [pEntry.epistle];
+                        const pEpistleLabel    = pEntry.epistle_segments
+                            ? pEntry.epistle_segments.join('; ')
+                            : pEntry.epistle;
+                        try {
+                            const parts = await Promise.all(
+                                pEpistleSegments.map(seg => getScriptureText(seg))
+                            );
+                            const unavailable = parts.some(
+                                p => !p || (typeof p === 'string' && p.includes('[Scripture unavailable:'))
+                            );
+                            if (unavailable) {
+                                section.items[i] = {
+                                    type:       'rubric',
+                                    key:        item.key,
+                                    text:       `EPISTLE: ${pEpistleLabel} \u2014 text unavailable. Consult the Apostol for the full pericope.`,
+                                    resolvedAs: 'typika-pentecostarion-epistle-' + pentecostarionKey
+                                };
+                            } else {
+                                section.items[i] = {
+                                    type:       'text',
+                                    key:        item.key,
+                                    label:      'The Epistle \u2014 ' + pEpistleLabel,
+                                    text:       parts.join('\n\n'),
+                                    resolvedAs: 'typika-pentecostarion-epistle-' + pentecostarionKey,
+                                    source:     'ByzCath.org Byzantine Lectionary \u2014 Pentecostarion'
+                                };
+                            }
+                        } catch (err) {
+                            console.warn('[HorologionEngine] Typika Pentecostarion epistle resolution failed:', err.message);
+                            // fall through: leave existing rubric in place
+                        }
+                        continue;
+                    }
+                }
                 if (sundayAfterPentecost === null || !_typikaLectionaryData) continue;
                 const entry = _typikaLectionaryData.sundays[String(sundayAfterPentecost)];
                 if (!entry) continue;
@@ -6892,6 +6949,44 @@ async function _resolveTypikaSlots(sections, dateObj) {
             }
  
             if (item.key === 'typika-gospel-rubric') {
+                if (pentecostarionKey && _typikaLectionaryData && _typikaLectionaryData.pentecostarion) {
+                    const pEntry = _typikaLectionaryData.pentecostarion[pentecostarionKey];
+                    if (pEntry) {
+                        const pGospelSegments = pEntry.gospel_segments || [pEntry.gospel];
+                        const pGospelLabel    = pEntry.gospel_segments
+                            ? pEntry.gospel_segments.join('; ')
+                            : pEntry.gospel;
+                        try {
+                            const parts = await Promise.all(
+                                pGospelSegments.map(seg => getScriptureText(seg))
+                            );
+                            const unavailable = parts.some(
+                                p => !p || (typeof p === 'string' && p.includes('[Scripture unavailable:'))
+                            );
+                            if (unavailable) {
+                                section.items[i] = {
+                                    type:       'rubric',
+                                    key:        item.key,
+                                    text:       `GOSPEL: ${pGospelLabel} \u2014 text unavailable. Consult the Evangelist for the full pericope.`,
+                                    resolvedAs: 'typika-pentecostarion-gospel-' + pentecostarionKey
+                                };
+                            } else {
+                                section.items[i] = {
+                                    type:       'text',
+                                    key:        item.key,
+                                    label:      'The Holy Gospel \u2014 ' + pGospelLabel,
+                                    text:       parts.join('\n\n'),
+                                    resolvedAs: 'typika-pentecostarion-gospel-' + pentecostarionKey,
+                                    source:     'ByzCath.org Byzantine Lectionary \u2014 Pentecostarion'
+                                };
+                            }
+                        } catch (err) {
+                            console.warn('[HorologionEngine] Typika Pentecostarion gospel resolution failed:', err.message);
+                            // fall through: leave existing rubric in place
+                        }
+                        continue;
+                    }
+                }
                 if (sundayAfterPentecost === null || !_typikaLectionaryData) continue;
                 const entry = _typikaLectionaryData.sundays[String(sundayAfterPentecost)];
                 if (!entry) continue;
