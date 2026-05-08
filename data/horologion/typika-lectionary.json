@@ -15,6 +15,7 @@
       "label": "First Sunday After Pentecost (All Saints)",
       "type": "special",
       "epistle": "Hebrews 11:32-12:2",
+      "epistle_segments": ["Hebrews 11:32-40", "Hebrews 12:1-2"],
       "gospel_segments": ["Matthew 10:32-33", "Matthew 10:37-38", "Matthew 19:27-30"],
       "note": "All Saints Sunday. Gospel is composite. Engine emits rubric fallback for type:special."
     },

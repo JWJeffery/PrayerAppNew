@@ -6814,8 +6814,8 @@ async function _resolveTypikaSlots(sections, dateObj) {
                 if (!entry) continue;
  
                if (entry.type === 'special') {
-                    const sap1EpistleSegs  = [entry.epistle];
-                    const sap1EpistleLabel = entry.epistle;
+                    const sap1EpistleSegs  = entry.epistle_segments || [entry.epistle];
+                    const sap1EpistleLabel = entry.epistle || (entry.epistle_segments ? entry.epistle_segments.join('; ') : '');
                     try {
                         const sap1EpistleParts = await Promise.all(
                             sap1EpistleSegs.map(seg => getScriptureText(seg))
