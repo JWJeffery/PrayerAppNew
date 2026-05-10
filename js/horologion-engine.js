@@ -5299,7 +5299,34 @@ async function _resolveGreatComplineSlots(sections, dateObj) {
     //
     // Non-throwing. On data file failure, fixed slots remain as placeholders.
     // ─────────────────────────────────────────────────────────────────────
+   function _applyMidnightOfficeBrightWeekDisplacement(sections, dateObj) {
+       const toneResult = _computeBaselineTone(dateObj);
+       if (!toneResult || !toneResult.brightWeek) return false;
+
+       if (!Array.isArray(sections)) return false;
+
+       sections.splice(0, sections.length, {
+           id: 'bright-week-paschal-office-displacement',
+           label: 'Midnight Office — Bright Week / Paschal Office',
+           items: [
+               {
+                   type:       'rubric',
+                   key:        'midnight-office-bright-week-displacement-rubric',
+                   label:      'Midnight Office displaced by the Paschal Office',
+                   text:       '(Bright Week — Paschal Office. During Bright Week, from Pascha through Bright Saturday, the ordinary Midnight Office is displaced by the Paschal Office. The ordinary Midnight Office psalmody, Trisagion prayers, ordinary Theotokion, and ordinary prayer of the Midnight Office are not appointed in the usual form. Full Paschal Office text is deferred.)',
+                   resolvedAs: 'midnight-office-bright-week-paschal-office-displacement'
+               }
+           ]
+       });
+
+       return true;
+   }
+
    async function _resolveMidnightOfficeSlots(sections, dateObj) {
+       if (_applyMidnightOfficeBrightWeekDisplacement(sections, dateObj)) {
+           return;
+       }
+
        await Promise.all([
             _loadMidnightOfficeFixedData(),
             _loadMidnightOfficeTheotokionData(),
