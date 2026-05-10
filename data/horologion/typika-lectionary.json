@@ -134,5 +134,43 @@
       "gospel": "Matthew 6:14-21",
       "days_before_pascha": 49
     }
+  },
+  "great_lent": {
+    "_comment": "Great Lent Sundays. Keyed by liturgical name. days_before_pascha counts from upcoming Pascha. Tradition family: Slavic/OCA/ROCOR/Antiochian. Source: ByzCath.org Byzantine Lectionary.",
+    "orthodoxy": {
+      "label": "Sunday of Orthodoxy",
+      "type": "great-lent",
+      "epistle_segments": ["Hebrews 11:24-26", "Hebrews 11:32-40", "Hebrews 12:1-2"],
+      "gospel": "John 1:43-51",
+      "days_before_pascha": 42
+    },
+    "gregory-palamas": {
+      "label": "Sunday of St. Gregory Palamas",
+      "type": "great-lent",
+      "epistle_segments": ["Hebrews 1:10-14", "Hebrews 2:1-3"],
+      "gospel": "Mark 2:1-12",
+      "days_before_pascha": 35
+    },
+    "holy-cross": {
+      "label": "Sunday of the Holy Cross",
+      "type": "great-lent",
+      "epistle_segments": ["Hebrews 4:14-16", "Hebrews 5:1-6"],
+      "gospel_segments": ["Mark 8:34-38", "Mark 9:1"],
+      "days_before_pascha": 28
+    },
+    "john-climacus": {
+      "label": "Sunday of St. John Climacus",
+      "type": "great-lent",
+      "epistle": "Hebrews 6:13-20",
+      "gospel": "Mark 9:17-31",
+      "days_before_pascha": 21
+    },
+    "mary-of-egypt": {
+      "label": "Sunday of St. Mary of Egypt",
+      "type": "great-lent",
+      "epistle": "Hebrews 9:11-14",
+      "gospel": "Mark 10:32-45",
+      "days_before_pascha": 14
+    }
   }
 }
