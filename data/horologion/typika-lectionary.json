@@ -187,6 +187,222 @@
       "pascha_offset": 6
     }
   },
+  "ordinary_weekdays_after_pentecost": {
+    "_comment": [
+      "Ordinary Byzantine weekday Typika Epistle/Gospel readings.",
+      "Keyed by ordinary_week_after_pentecost + weekday.",
+      "Week 1 begins Monday of the Holy Spirit, the day after Pentecost.",
+      "Saturday is a keyed weekday under the same week but uses its own Saturday row from the lectionary.",
+      "Scope of this data family: Weeks 1-17, Monday-Saturday, before the Lukan Jump.",
+      "Current populated tranche: Weeks 1-6, Monday-Saturday.",
+      "Lukan Jump / Luke-cycle Gospel readings are out of scope.",
+      "Menaion and fixed-feast overlays are out of scope; this table is ordinary-cycle fallback data."
+    ],
+    "weeks": {
+      "1": {
+        "monday": {
+          "label": "Monday of the 1st Week after Pentecost",
+          "epistle": "Ephesians 5:8-19",
+          "gospel": "Matthew 18:10-20",
+          "note": "Epistle source begins at Ephesians 5:8b; resolver uses full verse 8."
+        },
+        "tuesday": {
+          "label": "Tuesday of the 1st Week after Pentecost",
+          "epistle": "Romans 1:1-7, 13-17",
+          "gospel": "Matthew 4:25-5:12",
+          "note": "Gospel source ends at Matthew 5:12a; resolver uses full verse 12."
+        },
+        "wednesday": {
+          "label": "Wednesday of the 1st Week after Pentecost",
+          "epistle": "Romans 1:18-27",
+          "gospel": "Matthew 5:20-26"
+        },
+        "thursday": {
+          "label": "Thursday of the 1st Week after Pentecost",
+          "epistle": "Romans 1:28-2:9",
+          "gospel": "Matthew 5:27-32"
+        },
+        "friday": {
+          "label": "Friday of the 1st Week after Pentecost",
+          "epistle": "Romans 2:14-29",
+          "gospel": "Matthew 5:33-41"
+        },
+        "saturday": {
+          "label": "Saturday of the 1st Week after Pentecost",
+          "epistle": "Romans 1:7-12",
+          "gospel": "Matthew 5:42-48",
+          "note": "Epistle source begins at Romans 1:7b; resolver uses full verse 7."
+        }
+      },
+      "2": {
+        "monday": {
+          "label": "Monday of the 2nd Week after Pentecost",
+          "epistle": "Romans 2:28-3:18",
+          "gospel": "Matthew 6:31-34; 7:9-11"
+        },
+        "tuesday": {
+          "label": "Tuesday of the 2nd Week after Pentecost",
+          "epistle": "Romans 4:4-12",
+          "gospel": "Matthew 7:15-21"
+        },
+        "wednesday": {
+          "label": "Wednesday of the 2nd Week after Pentecost",
+          "epistle": "Romans 4:13-25",
+          "gospel": "Matthew 7:21-23"
+        },
+        "thursday": {
+          "label": "Thursday of the 2nd Week after Pentecost",
+          "epistle": "Romans 5:10-16",
+          "gospel": "Matthew 8:23-27"
+        },
+        "friday": {
+          "label": "Friday of the 2nd Week after Pentecost",
+          "epistle": "Romans 5:17-6:2",
+          "gospel": "Matthew 9:14-17"
+        },
+        "saturday": {
+          "label": "Saturday of the 2nd Week after Pentecost",
+          "epistle": "Romans 3:19-26",
+          "gospel": "Matthew 7:1-8"
+        }
+      },
+      "3": {
+        "monday": {
+          "label": "Monday of the 3rd Week after Pentecost",
+          "epistle": "Romans 7:1-13",
+          "gospel": "Matthew 9:36-10:8"
+        },
+        "tuesday": {
+          "label": "Tuesday of the 3rd Week after Pentecost",
+          "epistle": "Romans 7:14-8:2",
+          "gospel": "Matthew 10:9-15"
+        },
+        "wednesday": {
+          "label": "Wednesday of the 3rd Week after Pentecost",
+          "epistle": "Romans 8:2-13",
+          "gospel": "Matthew 10:16-22"
+        },
+        "thursday": {
+          "label": "Thursday of the 3rd Week after Pentecost",
+          "epistle": "Romans 8:22-27",
+          "gospel": "Matthew 10:23-31"
+        },
+        "friday": {
+          "label": "Friday of the 3rd Week after Pentecost",
+          "epistle": "Romans 9:6-19",
+          "gospel": "Matthew 10:32-36; 11:1"
+        },
+        "saturday": {
+          "label": "Saturday of the 3rd Week after Pentecost",
+          "epistle": "Romans 3:28-4:3",
+          "gospel": "Matthew 7:24-8:4"
+        }
+      },
+      "4": {
+        "monday": {
+          "label": "Monday of the 4th Week after Pentecost",
+          "epistle": "Romans 9:18-23",
+          "gospel": "Matthew 11:2-15"
+        },
+        "tuesday": {
+          "label": "Tuesday of the 4th Week after Pentecost",
+          "epistle": "Romans 10:11-11:2",
+          "gospel": "Matthew 11:16-20",
+          "note": "Epistle source ends at Romans 11:2a; resolver uses full verse 2."
+        },
+        "wednesday": {
+          "label": "Wednesday of the 4th Week after Pentecost",
+          "epistle": "Romans 11:2-12",
+          "gospel": "Matthew 11:20-26",
+          "note": "Epistle source begins at Romans 11:2b; resolver uses full verse 2."
+        },
+        "thursday": {
+          "label": "Thursday of the 4th Week after Pentecost",
+          "epistle": "Romans 11:13-24",
+          "gospel": "Matthew 11:27-30"
+        },
+        "friday": {
+          "label": "Friday of the 4th Week after Pentecost",
+          "epistle": "Romans 11:25-36",
+          "gospel": "Matthew 12:1-8"
+        },
+        "saturday": {
+          "label": "Saturday of the 4th Week after Pentecost",
+          "epistle": "Romans 6:11-17",
+          "gospel": "Matthew 8:14-23"
+        }
+      },
+      "5": {
+        "monday": {
+          "label": "Monday of the 5th Week after Pentecost",
+          "epistle": "Romans 12:4-5, 15-21",
+          "gospel": "Matthew 12:9-13"
+        },
+        "tuesday": {
+          "label": "Tuesday of the 5th Week after Pentecost",
+          "epistle": "Romans 14:9-18",
+          "gospel": "Matthew 12:14-16, 22-30"
+        },
+        "wednesday": {
+          "label": "Wednesday of the 5th Week after Pentecost",
+          "epistle": "Romans 15:7-16",
+          "gospel": "Matthew 12:38-45"
+        },
+        "thursday": {
+          "label": "Thursday of the 5th Week after Pentecost",
+          "epistle": "Romans 15:17-29",
+          "gospel": "Matthew 12:46-13:3",
+          "note": "Gospel source ends at Matthew 13:3a; resolver uses full verse 3."
+        },
+        "friday": {
+          "label": "Friday of the 5th Week after Pentecost",
+          "epistle": "Romans 16:1-16",
+          "gospel": "Matthew 13:3-9",
+          "note": "Gospel source begins at Matthew 13:3b; resolver uses full verse 3."
+        },
+        "saturday": {
+          "label": "Saturday of the 5th Week after Pentecost",
+          "epistle": "Romans 8:14-21",
+          "gospel": "Matthew 9:9-13"
+        }
+      },
+      "6": {
+        "monday": {
+          "label": "Monday of the 6th Week after Pentecost",
+          "epistle": "Romans 16:17-24",
+          "gospel": "Matthew 13:10-23"
+        },
+        "tuesday": {
+          "label": "Tuesday of the 6th Week after Pentecost",
+          "epistle": "1 Corinthians 1:1-9",
+          "gospel": "Matthew 13:24-30"
+        },
+        "wednesday": {
+          "label": "Wednesday of the 6th Week after Pentecost",
+          "epistle": "1 Corinthians 2:9-3:8",
+          "gospel": "Matthew 13:31-36",
+          "note": "Gospel source ends at Matthew 13:36a; resolver uses full verse 36."
+        },
+        "thursday": {
+          "label": "Thursday of the 6th Week after Pentecost",
+          "epistle": "1 Corinthians 3:18-23",
+          "gospel": "Matthew 13:36-43",
+          "note": "Gospel source begins at Matthew 13:36b; resolver uses full verse 36."
+        },
+        "friday": {
+          "label": "Friday of the 6th Week after Pentecost",
+          "epistle": "1 Corinthians 4:5-8",
+          "gospel": "Matthew 13:44-54",
+          "note": "Gospel source ends at Matthew 13:54a; resolver uses full verse 54."
+        },
+        "saturday": {
+          "label": "Saturday of the 6th Week after Pentecost",
+          "epistle": "Romans 9:1-5",
+          "gospel": "Matthew 9:18-26"
+        }
+      }
+    }
+  },
   "great_lent": {
     "_comment": "Great Lent Sundays. Keyed by liturgical name. days_before_pascha counts from upcoming Pascha. Tradition family: Slavic/OCA/ROCOR/Antiochian. Source: ByzCath.org Byzantine Lectionary.",
     "orthodoxy": {

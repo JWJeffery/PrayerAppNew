@@ -6818,6 +6818,41 @@ async function _resolveTypikaSlots(sections, dateObj) {
         return GREAT_LENT_MAP[daysUntil] || null;
     })();
  
+    const ordinaryWeekdayAfterPentecostKey = (() => {
+        if (dayOfWeek === 0) return null;
+
+        const WEEKDAY_MAP = {
+            1: 'monday',
+            2: 'tuesday',
+            3: 'wednesday',
+            4: 'thursday',
+            5: 'friday',
+            6: 'saturday'
+        };
+
+        const weekday = WEEKDAY_MAP[dayOfWeek];
+        if (!weekday) return null;
+
+        const _year     = dateObj.getFullYear();
+        const localDate = new Date(_year, dateObj.getMonth(), dateObj.getDate());
+        let   _pascha   = _getOrthodoxPascha(_year);
+        if (_pascha > localDate) _pascha = _getOrthodoxPascha(_year - 1);
+
+        const diffDays = Math.round((localDate - _pascha) / 86400000);
+
+        // Week 1 begins Monday of the Holy Spirit: Pascha + 50.
+        // Sundays are excluded above; Saturdays use their own keyed row.
+        if (diffDays < 50) return null;
+
+        const week = Math.floor((diffDays - 50) / 7) + 1;
+        if (week < 1 || week > 17) return null;
+
+        return {
+            week: String(week),
+            weekday
+        };
+    })();
+
     const FIXED_SLOT_KEYS = new Set([
         'typika-usual-beginning',
         'typika-beatitudes',
@@ -7036,6 +7071,45 @@ async function _resolveTypikaSlots(sections, dateObj) {
                         continue;
                     }
                 }
+                if (ordinaryWeekdayAfterPentecostKey && _typikaLectionaryData && _typikaLectionaryData.ordinary_weekdays_after_pentecost) {
+                    const owWeeks = _typikaLectionaryData.ordinary_weekdays_after_pentecost.weeks || {};
+                    const owEntry = owWeeks[ordinaryWeekdayAfterPentecostKey.week] &&
+                        owWeeks[ordinaryWeekdayAfterPentecostKey.week][ordinaryWeekdayAfterPentecostKey.weekday];
+
+                    if (owEntry) {
+                        const owEpistleRef = owEntry.epistle_segments || owEntry.epistle;
+                        try {
+                            const result = await resolveScripturePericope(owEpistleRef);
+                            if (result.unavailable) {
+                                section.items[i] = {
+                                    type:       'rubric',
+                                    key:        item.key,
+                                    text:       `EPISTLE: ${result.label} — text unavailable. Consult the Apostol for the full pericope.`,
+                                    resolvedAs: 'typika-ordinary-weekday-epistle-week-' +
+                                        ordinaryWeekdayAfterPentecostKey.week + '-' +
+                                        ordinaryWeekdayAfterPentecostKey.weekday
+                                };
+                            } else {
+                                section.items[i] = {
+                                    type:                         'text',
+                                    key:                          item.key,
+                                    label:                        'The Epistle — ' + result.label,
+                                    text:                         result.text,
+                                    resolvedAs:                   'typika-ordinary-weekday-epistle-week-' +
+                                        ordinaryWeekdayAfterPentecostKey.week + '-' +
+                                        ordinaryWeekdayAfterPentecostKey.weekday,
+                                    ordinaryWeekAfterPentecost:   Number(ordinaryWeekdayAfterPentecostKey.week),
+                                    weekday:                      ordinaryWeekdayAfterPentecostKey.weekday,
+                                    source:                       'Metropolitan Cantor Institute — ordinary after-Pentecost weekday lectionary'
+                                };
+                            }
+                        } catch (err) {
+                            console.warn('[HorologionEngine] Typika ordinary weekday epistle resolution failed:', err.message);
+                            // fall through: leave existing rubric in place
+                        }
+                        continue;
+                    }
+                }
                 if (sundayAfterPentecost === null || !_typikaLectionaryData) continue;
                 const entry = _typikaLectionaryData.sundays[String(sundayAfterPentecost)];
                 if (!entry) continue;
@@ -7248,6 +7322,45 @@ async function _resolveTypikaSlots(sections, dateObj) {
                             }
                         } catch (err) {
                             console.warn('[HorologionEngine] Typika Great Lent gospel resolution failed:', err.message);
+                            // fall through: leave existing rubric in place
+                        }
+                        continue;
+                    }
+                }
+                if (ordinaryWeekdayAfterPentecostKey && _typikaLectionaryData && _typikaLectionaryData.ordinary_weekdays_after_pentecost) {
+                    const owWeeks = _typikaLectionaryData.ordinary_weekdays_after_pentecost.weeks || {};
+                    const owEntry = owWeeks[ordinaryWeekdayAfterPentecostKey.week] &&
+                        owWeeks[ordinaryWeekdayAfterPentecostKey.week][ordinaryWeekdayAfterPentecostKey.weekday];
+
+                    if (owEntry) {
+                        const owGospelRef = owEntry.gospel_segments || owEntry.gospel;
+                        try {
+                            const result = await resolveScripturePericope(owGospelRef);
+                            if (result.unavailable) {
+                                section.items[i] = {
+                                    type:       'rubric',
+                                    key:        item.key,
+                                    text:       `GOSPEL: ${result.label} — text unavailable. Consult the Evangelist for the full pericope.`,
+                                    resolvedAs: 'typika-ordinary-weekday-gospel-week-' +
+                                        ordinaryWeekdayAfterPentecostKey.week + '-' +
+                                        ordinaryWeekdayAfterPentecostKey.weekday
+                                };
+                            } else {
+                                section.items[i] = {
+                                    type:                         'text',
+                                    key:                          item.key,
+                                    label:                        'The Holy Gospel — ' + result.label,
+                                    text:                         result.text,
+                                    resolvedAs:                   'typika-ordinary-weekday-gospel-week-' +
+                                        ordinaryWeekdayAfterPentecostKey.week + '-' +
+                                        ordinaryWeekdayAfterPentecostKey.weekday,
+                                    ordinaryWeekAfterPentecost:   Number(ordinaryWeekdayAfterPentecostKey.week),
+                                    weekday:                      ordinaryWeekdayAfterPentecostKey.weekday,
+                                    source:                       'Metropolitan Cantor Institute — ordinary after-Pentecost weekday lectionary'
+                                };
+                            }
+                        } catch (err) {
+                            console.warn('[HorologionEngine] Typika ordinary weekday gospel resolution failed:', err.message);
                             // fall through: leave existing rubric in place
                         }
                         continue;
