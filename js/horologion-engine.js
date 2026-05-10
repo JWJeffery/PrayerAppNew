@@ -6821,6 +6821,8 @@ async function _resolveTypikaSlots(sections, dateObj) {
     const ordinaryWeekdayAfterPentecostKey = (() => {
         if (dayOfWeek === 0) return null;
 
+        const MS_PER_DAY = 86400000;
+
         const WEEKDAY_MAP = {
             1: 'monday',
             2: 'tuesday',
@@ -6846,22 +6848,60 @@ async function _resolveTypikaSlots(sections, dateObj) {
             return new Date(year, month - 1, day + 13);
         }
 
+        function sundayAfterTheophany(year) {
+            const theophany = new Date(year, 0, 6);
+            let daysToSunday = (7 - theophany.getDay()) % 7;
+            if (daysToSunday === 0) daysToSunday = 7;
+            return new Date(year, 0, 6 + daysToSunday);
+        }
+
         const localDate = new Date(dateObj.getFullYear(), dateObj.getMonth(), dateObj.getDate());
+
+        const paschaThisYear = orthodoxPascha(localDate.getFullYear());
+        const upcomingPascha = localDate <= paschaThisYear
+            ? paschaThisYear
+            : orthodoxPascha(localDate.getFullYear() + 1);
+
+        const publicanAndPhariseeSunday = new Date(upcomingPascha.getTime() - (70 * MS_PER_DAY));
+        const postTheophanyStartBase = sundayAfterTheophany(publicanAndPhariseeSunday.getFullYear());
+        const postTheophanyWeekdayStart = new Date(
+            postTheophanyStartBase.getFullYear(),
+            postTheophanyStartBase.getMonth(),
+            postTheophanyStartBase.getDate() + 1
+        );
+
+        // After Sunday after Theophany, weekday lectionary numbering realigns
+        // by countdown toward Publican and Pharisee Sunday. The final
+        // Monday-Saturday block before Publican and Pharisee is Week 33,
+        // regardless of the raw Sunday-after-Pentecost ordinal.
+        if (localDate >= postTheophanyWeekdayStart && localDate < publicanAndPhariseeSunday) {
+            const daysUntilPublicanAndPharisee = Math.round((publicanAndPhariseeSunday - localDate) / MS_PER_DAY);
+            const week = 33 - Math.floor((daysUntilPublicanAndPharisee - 1) / 7);
+
+            if (week >= 1 && week <= 33) {
+                return {
+                    week: String(week),
+                    weekday,
+                    source: 'post-theophany-countdown'
+                };
+            }
+        }
 
         let pascha = orthodoxPascha(localDate.getFullYear());
         if (localDate < pascha) {
             pascha = orthodoxPascha(localDate.getFullYear() - 1);
         }
 
-        const diffDays = Math.round((localDate - pascha) / 86400000);
+        const diffDays = Math.round((localDate - pascha) / MS_PER_DAY);
         if (diffDays < 50) return null;
 
         const week = Math.floor((diffDays - 50) / 7) + 1;
-        if (week < 1 || week > 32) return null;
+        if (week < 1 || week > 33) return null;
 
         return {
             week: String(week),
-            weekday
+            weekday,
+            source: 'raw-pascha-distance'
         };
     })();
 

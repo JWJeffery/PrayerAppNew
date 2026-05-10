@@ -194,7 +194,7 @@
       "Week 1 begins Monday of the Holy Spirit, the day after Pentecost.",
       "Saturday is a keyed weekday under the same week but uses its own Saturday row from the lectionary.",
       "Scope of this data family: Weeks 1-17, Monday-Saturday. Gospel rows serve the ordinary pre-Lukan cycle; after the Lukan boundary, Epistle rows may continue as ordinary-cycle data while Gospel resolves from lukan_weekday_gospels.",
-      "Current populated tranche: Weeks 1-32, Monday-Saturday. Weeks 18-32 are Epistle support rows for the post-Lukan split-key cycle.",
+      "Current populated tranche: Weeks 1-33, Monday-Saturday. Weeks 18-33 are Epistle support rows for the post-Lukan split-key cycle.",
       "Lukan Jump / Luke-cycle Gospel readings are modeled separately in lukan_weekday_gospels.",
       "Menaion and fixed-feast overlays are out of scope; this table is ordinary-cycle fallback data."
     ],
@@ -1240,6 +1240,34 @@
           "label": "Saturday of the 32nd Week after Pentecost",
           "epistle": "1 Thessalonians 5:14-23"
         }
+      },
+      "33": {
+        "monday": {
+          "label": "Monday of the 33rd Week after Pentecost",
+          "epistle": "1 Peter 2:21-3:9",
+          "note": "Source begins at 1 Peter 2:21b; resolver uses full verse 21."
+        },
+        "tuesday": {
+          "label": "Tuesday of the 33rd Week after Pentecost",
+          "epistle": "1 Peter 3:10-22"
+        },
+        "wednesday": {
+          "label": "Wednesday of the 33rd Week after Pentecost",
+          "epistle": "1 Peter 4:1-11"
+        },
+        "thursday": {
+          "label": "Thursday of the 33rd Week after Pentecost",
+          "epistle": "1 Peter 4:12-5:5"
+        },
+        "friday": {
+          "label": "Friday of the 33rd Week after Pentecost",
+          "epistle": "2 Peter 1:1-10",
+          "note": "Source ends at 2 Peter 1:10a; resolver uses full verse 10."
+        },
+        "saturday": {
+          "label": "Saturday of the 33rd Week after Pentecost",
+          "epistle": "2 Timothy 2:11-19"
+        }
       }
     }
   },
@@ -1611,7 +1639,7 @@
       "Post-Lukan weekday Gospel cycle after the true Monday-Saturday Lukan weekday table ends.",
       "Keyed by ordinary_week_after_pentecost + weekday, not by lukan_week.",
       "After Lukan Week 12 / ordinary Week 29, Monday-Friday use Mark while Saturday retains Luke.",
-      "Current populated tranche: ordinary Weeks 30-32.",
+      "Current populated tranche: ordinary Weeks 30-33. Week 34+ belongs to the pre-Lenten/Triodion weekday family, not this ordinary post-Lukan family.",
       "Nativity/Theophany and Triodion/pre-Lenten interruption gates are engine-level guards; fixed-feast overlays remain out of scope."
     ],
     "weeks": {
@@ -1699,6 +1727,33 @@
           "label": "Saturday of the 32nd Week after Pentecost",
           "gospel": "Luke 17:3-10",
           "note": "Saturday remains Luke while Monday-Friday use Mark."
+        }
+      },
+      "33": {
+        "monday": {
+          "label": "Monday of the 33rd Week after Pentecost",
+          "gospel": "Mark 12:13-17"
+        },
+        "tuesday": {
+          "label": "Tuesday of the 33rd Week after Pentecost",
+          "gospel": "Mark 12:18-27"
+        },
+        "wednesday": {
+          "label": "Wednesday of the 33rd Week after Pentecost",
+          "gospel": "Mark 12:28-37"
+        },
+        "thursday": {
+          "label": "Thursday of the 33rd Week after Pentecost",
+          "gospel": "Mark 12:38-44"
+        },
+        "friday": {
+          "label": "Friday of the 33rd Week after Pentecost",
+          "gospel": "Mark 13:1-8"
+        },
+        "saturday": {
+          "label": "Saturday of the 33rd Week after Pentecost",
+          "gospel": "Luke 18:2-8",
+          "note": "Source ends at Luke 18:8a; resolver uses full verse 8. Saturday remains Luke while Monday-Friday use Mark."
         }
       }
     }
