@@ -7027,6 +7027,34 @@ async function _resolveTypikaSlots(sections, dateObj) {
             }
         }
 
+        if (dayOfWeek === 6) {
+            if (month === 12 && day >= 18 && day <= 24) {
+                keys.push('nativity_saturday_before');
+            }
+
+            if (month === 12 && day >= 26 && day <= 31) {
+                keys.push('nativity_saturday_after');
+            }
+
+            // If Nativity falls on Saturday, the Saturday after Nativity is January 1.
+            // This may collide with Circumcision/St Basil and Saturday before Theophany;
+            // the overlay system appends/combines rather than silently replacing.
+            if (month === 1 && day === 1) {
+                const previousNativity = new Date(year - 1, 11, 25);
+                if (previousNativity.getDay() === 6) {
+                    keys.push('nativity_saturday_after');
+                }
+            }
+
+            if (month === 1 && day >= 1 && day <= 5) {
+                keys.push('theophany_saturday_before');
+            }
+
+            if (month === 1 && day >= 7 && day <= 13) {
+                keys.push('theophany_saturday_after');
+            }
+        }
+
         // In Slavic/OCA-style collision practice, when Nativity itself falls
         // on Sunday, the Sunday-after-Nativity readings may be combined with
         // December 26 / Synaxis of the Theotokos.

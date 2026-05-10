@@ -1773,6 +1773,13 @@
         "Nativity Eve and Theophany Eve use service_context metadata for Vesperal Liturgy readings; Royal Hours readings are explicitly out of scope."
       ],
       "entries": {
+        "nativity_saturday_before": {
+          "label": "Saturday before Nativity",
+          "kind": "relative_saturday",
+          "date_rule": "Saturday before Nativity, normally between December 18 and December 24 inclusive.",
+          "epistle": "Galatians 3:8-12",
+          "gospel": "Luke 13:18-29"
+        },
         "nativity_sunday_before": {
           "label": "Sunday before Nativity / Holy Fathers",
           "kind": "relative_sunday",
@@ -1817,6 +1824,13 @@
           "epistle": "Hebrews 2:11-18",
           "gospel": "Matthew 2:13-23"
         },
+        "nativity_saturday_after": {
+          "label": "Saturday after Nativity",
+          "kind": "relative_saturday",
+          "date_rule": "Saturday after Nativity, normally between December 26 and January 1 depending on the weekday of Nativity.",
+          "epistle": "1 Timothy 6:11-16",
+          "gospel": "Matthew 12:15-21"
+        },
         "nativity_sunday_after": {
           "label": "Sunday after Nativity",
           "kind": "relative_sunday",
@@ -1846,6 +1860,13 @@
               "gospel": "Luke 6:17-23"
             }
           ]
+        },
+        "theophany_saturday_before": {
+          "label": "Saturday before Theophany",
+          "kind": "relative_saturday",
+          "date_rule": "Saturday before Theophany, between January 1 and January 5 inclusive.",
+          "epistle": "1 Timothy 3:14-4:5",
+          "gospel": "Matthew 3:1-11"
         },
         "theophany_sunday_before": {
           "label": "Sunday before Theophany",
@@ -1885,6 +1906,13 @@
           "service_context": "divine_liturgy",
           "epistle": "Acts 19:1-8",
           "gospel": "John 1:29-34"
+        },
+        "theophany_saturday_after": {
+          "label": "Saturday after Theophany",
+          "kind": "relative_saturday",
+          "date_rule": "Saturday after Theophany, between January 7 and January 13 inclusive.",
+          "epistle": "Ephesians 6:10-17",
+          "gospel": "Matthew 4:1-11"
         },
         "theophany_sunday_after": {
           "label": "Sunday after Theophany",
