@@ -6894,6 +6894,65 @@ async function _resolveTypikaSlots(sections, dateObj) {
         };
     })();
 
+    const typikaWeekdayCycleBlocked = (() => {
+        if (dayOfWeek === 0) return false;
+
+        const MS_PER_DAY = 86400000;
+        const localDate = new Date(dateObj.getFullYear(), dateObj.getMonth(), dateObj.getDate());
+
+        function orthodoxPascha(year) {
+            const a = year % 4;
+            const b = year % 7;
+            const c = year % 19;
+            const d = (19 * c + 15) % 30;
+            const e = (2 * a + 4 * b - d + 34) % 7;
+            const month = Math.floor((d + e + 114) / 31);
+            const day = ((d + e + 114) % 31) + 1;
+
+            // Julian Pascha converted to Gregorian by +13 days for the current project range.
+            return new Date(year, month - 1, day + 13);
+        }
+
+        function twoSundaysBeforeNativity(year) {
+            const nativity = new Date(year, 11, 25);
+            const daysBackToPreviousSunday = nativity.getDay() === 0 ? 7 : nativity.getDay();
+            const sundayBeforeNativity = new Date(year, 11, 25 - daysBackToPreviousSunday);
+            return new Date(
+                sundayBeforeNativity.getFullYear(),
+                sundayBeforeNativity.getMonth(),
+                sundayBeforeNativity.getDate() - 7
+            );
+        }
+
+        function sundayAfterTheophany(year) {
+            const theophany = new Date(year, 0, 6);
+            let daysToSunday = (7 - theophany.getDay()) % 7;
+            if (daysToSunday === 0) daysToSunday = 7;
+            return new Date(year, 0, 6 + daysToSunday);
+        }
+
+        function inNativityTheophanyCycle(date) {
+            const year = date.getFullYear();
+            for (const nativityYear of [year - 1, year]) {
+                const start = twoSundaysBeforeNativity(nativityYear);
+                const end = sundayAfterTheophany(nativityYear + 1);
+                if (date >= start && date <= end) return true;
+            }
+            return false;
+        }
+
+        function inTriodionPreLentenStop(date) {
+            const year = date.getFullYear();
+            const paschaThisYear = orthodoxPascha(year);
+            const upcomingPascha = date <= paschaThisYear ? paschaThisYear : orthodoxPascha(year + 1);
+            const publicanAndPharisee = new Date(upcomingPascha.getTime() - (70 * MS_PER_DAY));
+
+            return date >= publicanAndPharisee && date < upcomingPascha;
+        }
+
+        return inNativityTheophanyCycle(localDate) || inTriodionPreLentenStop(localDate);
+    })();
+
     const FIXED_SLOT_KEYS = new Set([
         'typika-usual-beginning',
         'typika-beatitudes',
@@ -7112,7 +7171,7 @@ async function _resolveTypikaSlots(sections, dateObj) {
                         continue;
                     }
                 }
-                if (ordinaryWeekdayAfterPentecostKey && _typikaLectionaryData && _typikaLectionaryData.ordinary_weekdays_after_pentecost) {
+                if (!typikaWeekdayCycleBlocked && ordinaryWeekdayAfterPentecostKey && _typikaLectionaryData && _typikaLectionaryData.ordinary_weekdays_after_pentecost) {
                     const owWeeks = _typikaLectionaryData.ordinary_weekdays_after_pentecost.weeks || {};
                     const owEntry = owWeeks[ordinaryWeekdayAfterPentecostKey.week] &&
                         owWeeks[ordinaryWeekdayAfterPentecostKey.week][ordinaryWeekdayAfterPentecostKey.weekday];
@@ -7368,7 +7427,7 @@ async function _resolveTypikaSlots(sections, dateObj) {
                         continue;
                     }
                 }
-                if (lukanWeekdayGospelKey && _typikaLectionaryData && _typikaLectionaryData.lukan_weekday_gospels) {
+                if (!typikaWeekdayCycleBlocked && lukanWeekdayGospelKey && _typikaLectionaryData && _typikaLectionaryData.lukan_weekday_gospels) {
                     const lwWeeks = _typikaLectionaryData.lukan_weekday_gospels.weeks || {};
                     const lwEntry = lwWeeks[lukanWeekdayGospelKey.week] &&
                         lwWeeks[lukanWeekdayGospelKey.week][lukanWeekdayGospelKey.weekday];
@@ -7407,7 +7466,7 @@ async function _resolveTypikaSlots(sections, dateObj) {
                         continue;
                     }
                 }
-                if (!lukanWeekdayGospelKey && ordinaryWeekdayAfterPentecostKey && _typikaLectionaryData && _typikaLectionaryData.ordinary_weekdays_after_pentecost) {
+                if (!typikaWeekdayCycleBlocked && !lukanWeekdayGospelKey && ordinaryWeekdayAfterPentecostKey && _typikaLectionaryData && _typikaLectionaryData.ordinary_weekdays_after_pentecost) {
                     const owWeeks = _typikaLectionaryData.ordinary_weekdays_after_pentecost.weeks || {};
                     const owEntry = owWeeks[ordinaryWeekdayAfterPentecostKey.week] &&
                         owWeeks[ordinaryWeekdayAfterPentecostKey.week][ordinaryWeekdayAfterPentecostKey.weekday];
