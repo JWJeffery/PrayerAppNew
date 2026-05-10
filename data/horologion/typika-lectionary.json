@@ -135,6 +135,58 @@
       "days_before_pascha": 49
     }
   },
+  "palm_sunday": {
+    "label": "Palm Sunday — Entrance of the Lord into Jerusalem",
+    "type": "palm-sunday",
+    "epistle": "Philippians 4:4-9",
+    "gospel": "John 12:1-18",
+    "days_before_pascha": 7
+  },
+  "bright_week": {
+    "_comment": "Bright Week Typika readings. Keyed by weekday after Pascha; pascha_offset counts days after Pascha.",
+    "bright-monday": {
+      "label": "Bright Monday",
+      "type": "bright-week",
+      "epistle": "Acts 1:12-17, 21-26",
+      "gospel": "John 1:18-28",
+      "pascha_offset": 1
+    },
+    "bright-tuesday": {
+      "label": "Bright Tuesday",
+      "type": "bright-week",
+      "epistle": "Acts 2:14-21",
+      "gospel": "Luke 24:12-35",
+      "pascha_offset": 2
+    },
+    "bright-wednesday": {
+      "label": "Bright Wednesday",
+      "type": "bright-week",
+      "epistle": "Acts 2:22-36",
+      "gospel": "John 1:35-51",
+      "pascha_offset": 3
+    },
+    "bright-thursday": {
+      "label": "Bright Thursday",
+      "type": "bright-week",
+      "epistle": "Acts 2:38-43",
+      "gospel": "John 3:1-15",
+      "pascha_offset": 4
+    },
+    "bright-friday": {
+      "label": "Bright Friday",
+      "type": "bright-week",
+      "epistle": "Acts 3:1-8",
+      "gospel": "John 2:12-22",
+      "pascha_offset": 5
+    },
+    "bright-saturday": {
+      "label": "Bright Saturday",
+      "type": "bright-week",
+      "epistle": "Acts 3:11-16",
+      "gospel": "John 3:22-33",
+      "pascha_offset": 6
+    }
+  },
   "great_lent": {
     "_comment": "Great Lent Sundays. Keyed by liturgical name. days_before_pascha counts from upcoming Pascha. Tradition family: Slavic/OCA/ROCOR/Antiochian. Source: ByzCath.org Byzantine Lectionary.",
     "orthodoxy": {

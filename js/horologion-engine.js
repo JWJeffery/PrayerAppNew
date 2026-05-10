@@ -6739,6 +6739,33 @@ async function _resolveTypikaSlots(sections, dateObj) {
         ? _computeSundayAfterPentecost(dateObj)
         : null;
 
+    const palmSundayKey = (() => {
+        if (dayOfWeek !== 0) return null;
+        const _year     = dateObj.getFullYear();
+        const localDate = new Date(_year, dateObj.getMonth(), dateObj.getDate());
+        let   _pascha   = _getOrthodoxPascha(_year);
+        if (_pascha <= localDate) _pascha = _getOrthodoxPascha(_year + 1);
+        const daysUntil = Math.round((_pascha - localDate) / 86400000);
+        return daysUntil === 7 ? 'palm_sunday' : null;
+    })();
+
+    const brightWeekKey = (() => {
+        const _year     = dateObj.getFullYear();
+        const localDate = new Date(_year, dateObj.getMonth(), dateObj.getDate());
+        let   _pascha   = _getOrthodoxPascha(_year);
+        if (_pascha > localDate) _pascha = _getOrthodoxPascha(_year - 1);
+        const diffDays  = Math.round((localDate - _pascha) / 86400000);
+        const BRIGHT_WEEK_MAP = {
+            1: 'bright-monday',
+            2: 'bright-tuesday',
+            3: 'bright-wednesday',
+            4: 'bright-thursday',
+            5: 'bright-friday',
+            6: 'bright-saturday'
+        };
+        return BRIGHT_WEEK_MAP[diffDays] || null;
+    })();
+
     const pentecostarionKey = (() => {
         if (dayOfWeek !== 0) return null;
         const _year     = dateObj.getFullYear();
@@ -6861,6 +6888,64 @@ async function _resolveTypikaSlots(sections, dateObj) {
             }
  
             if (item.key === 'typika-epistle-rubric') {
+                if (palmSundayKey && _typikaLectionaryData && _typikaLectionaryData.palm_sunday) {
+                    const psEntry = _typikaLectionaryData.palm_sunday;
+                    const psEpistleRef = psEntry.epistle || psEntry.epistle_segments;
+                    try {
+                        const result = await resolveScripturePericope(psEpistleRef);
+                        if (result.unavailable) {
+                            section.items[i] = {
+                                type:       'rubric',
+                                key:        item.key,
+                                text:       `EPISTLE: ${result.label} — text unavailable. Consult the Apostol for the full pericope.`,
+                                resolvedAs: 'typika-palm-sunday-epistle'
+                            };
+                        } else {
+                            section.items[i] = {
+                                type:       'text',
+                                key:        item.key,
+                                label:      'The Epistle — ' + result.label,
+                                text:       result.text,
+                                resolvedAs: 'typika-palm-sunday-epistle',
+                                source:     'Byzantine Lectionary — Palm Sunday'
+                            };
+                        }
+                    } catch (err) {
+                        console.warn('[HorologionEngine] Typika Palm Sunday epistle resolution failed:', err.message);
+                        // fall through: leave existing rubric in place
+                    }
+                    continue;
+                }
+                if (brightWeekKey && _typikaLectionaryData && _typikaLectionaryData.bright_week) {
+                    const bwEntry = _typikaLectionaryData.bright_week[brightWeekKey];
+                    if (bwEntry) {
+                        const bwEpistleRef = bwEntry.epistle || bwEntry.epistle_segments;
+                        try {
+                            const result = await resolveScripturePericope(bwEpistleRef);
+                            if (result.unavailable) {
+                                section.items[i] = {
+                                    type:       'rubric',
+                                    key:        item.key,
+                                    text:       `EPISTLE: ${result.label} — text unavailable. Consult the Apostol for the full pericope.`,
+                                    resolvedAs: 'typika-bright-week-epistle-' + brightWeekKey
+                                };
+                            } else {
+                                section.items[i] = {
+                                    type:       'text',
+                                    key:        item.key,
+                                    label:      'The Epistle — ' + result.label,
+                                    text:       result.text,
+                                    resolvedAs: 'typika-bright-week-epistle-' + brightWeekKey,
+                                    source:     'Byzantine Lectionary — Bright Week'
+                                };
+                            }
+                        } catch (err) {
+                            console.warn('[HorologionEngine] Typika Bright Week epistle resolution failed:', err.message);
+                            // fall through: leave existing rubric in place
+                        }
+                        continue;
+                    }
+                }
                 if (pentecostarionKey && _typikaLectionaryData && _typikaLectionaryData.pentecostarion) {
                     const pEntry = _typikaLectionaryData.pentecostarion[pentecostarionKey];
                     if (pEntry) {
@@ -7020,6 +7105,64 @@ async function _resolveTypikaSlots(sections, dateObj) {
             }
  
             if (item.key === 'typika-gospel-rubric') {
+                if (palmSundayKey && _typikaLectionaryData && _typikaLectionaryData.palm_sunday) {
+                    const psEntry = _typikaLectionaryData.palm_sunday;
+                    const psGospelRef = psEntry.gospel || psEntry.gospel_segments;
+                    try {
+                        const result = await resolveScripturePericope(psGospelRef);
+                        if (result.unavailable) {
+                            section.items[i] = {
+                                type:       'rubric',
+                                key:        item.key,
+                                text:       `GOSPEL: ${result.label} — text unavailable. Consult the Evangelist for the full pericope.`,
+                                resolvedAs: 'typika-palm-sunday-gospel'
+                            };
+                        } else {
+                            section.items[i] = {
+                                type:       'text',
+                                key:        item.key,
+                                label:      'The Holy Gospel — ' + result.label,
+                                text:       result.text,
+                                resolvedAs: 'typika-palm-sunday-gospel',
+                                source:     'Byzantine Lectionary — Palm Sunday'
+                            };
+                        }
+                    } catch (err) {
+                        console.warn('[HorologionEngine] Typika Palm Sunday gospel resolution failed:', err.message);
+                        // fall through: leave existing rubric in place
+                    }
+                    continue;
+                }
+                if (brightWeekKey && _typikaLectionaryData && _typikaLectionaryData.bright_week) {
+                    const bwEntry = _typikaLectionaryData.bright_week[brightWeekKey];
+                    if (bwEntry) {
+                        const bwGospelRef = bwEntry.gospel || bwEntry.gospel_segments;
+                        try {
+                            const result = await resolveScripturePericope(bwGospelRef);
+                            if (result.unavailable) {
+                                section.items[i] = {
+                                    type:       'rubric',
+                                    key:        item.key,
+                                    text:       `GOSPEL: ${result.label} — text unavailable. Consult the Evangelist for the full pericope.`,
+                                    resolvedAs: 'typika-bright-week-gospel-' + brightWeekKey
+                                };
+                            } else {
+                                section.items[i] = {
+                                    type:       'text',
+                                    key:        item.key,
+                                    label:      'The Holy Gospel — ' + result.label,
+                                    text:       result.text,
+                                    resolvedAs: 'typika-bright-week-gospel-' + brightWeekKey,
+                                    source:     'Byzantine Lectionary — Bright Week'
+                                };
+                            }
+                        } catch (err) {
+                            console.warn('[HorologionEngine] Typika Bright Week gospel resolution failed:', err.message);
+                            // fall through: leave existing rubric in place
+                        }
+                        continue;
+                    }
+                }
                 if (pentecostarionKey && _typikaLectionaryData && _typikaLectionaryData.pentecostarion) {
                     const pEntry = _typikaLectionaryData.pentecostarion[pentecostarionKey];
                     if (pEntry) {
