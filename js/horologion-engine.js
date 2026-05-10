@@ -6946,6 +6946,110 @@ async function _resolveTypikaSlots(sections, dateObj) {
         };
     })();
 
+    const feastLectionaryOverlayKeys = (() => {
+        const keys = [];
+
+        const localDate = new Date(dateObj.getFullYear(), dateObj.getMonth(), dateObj.getDate());
+        const year = localDate.getFullYear();
+        const month = localDate.getMonth() + 1;
+        const day = localDate.getDate();
+        const mm = String(month).padStart(2, '0');
+        const dd = String(day).padStart(2, '0');
+        const mmdd = mm + '-' + dd;
+
+        const fixedKeyMap = {
+            '12-24': '12-24_nativity_eve',
+            '12-25': '12-25_nativity',
+            '12-26': '12-26_synaxis_theotokos',
+            '01-01': '01-01_circumcision_basil',
+            '01-05': '01-05_theophany_eve',
+            '01-06': '01-06_theophany',
+            '01-07': '01-07_synaxis_forerunner'
+        };
+
+        if (fixedKeyMap[mmdd]) {
+            keys.push(fixedKeyMap[mmdd]);
+        }
+
+        if (dayOfWeek === 0) {
+            if (month === 12 && day >= 18 && day <= 24) {
+                keys.push('nativity_sunday_before');
+            }
+
+            if (month === 12 && day >= 26 && day <= 31) {
+                keys.push('nativity_sunday_after');
+            }
+
+            if (month === 1 && day >= 1 && day <= 5) {
+                keys.push('theophany_sunday_before');
+            }
+
+            if (month === 1 && day >= 7 && day <= 13) {
+                keys.push('theophany_sunday_after');
+            }
+        }
+
+        // In Slavic/OCA-style collision practice, when Nativity itself falls
+        // on Sunday, the Sunday-after-Nativity readings may be combined with
+        // December 26 / Synaxis of the Theotokos.
+        if (mmdd === '12-26') {
+            const nativity = new Date(year, 11, 25);
+            if (nativity.getDay() === 0 && !keys.includes('nativity_sunday_after')) {
+                keys.push('nativity_sunday_after');
+            }
+        }
+
+        return keys;
+    })();
+
+    async function resolveTypikaFeastOverlayReading(entries, field) {
+        const segmentsKey = field + '_segments';
+        const readingLabel = field === 'epistle' ? 'EPISTLE' : 'GOSPEL';
+        const sourceBook = field === 'epistle' ? 'Apostol' : 'Evangelist';
+
+        const labelParts = [];
+        const textParts = [];
+
+        async function appendReading(label, source) {
+            const ref = source[segmentsKey] || source[field];
+            if (!ref) return;
+
+            const result = await resolveScripturePericope(ref);
+            labelParts.push(label + ': ' + result.label);
+
+            if (result.unavailable) {
+                textParts.push(
+                    label + ' — ' + readingLabel + ': ' +
+                    result.label +
+                    ' — text unavailable. Consult the ' +
+                    sourceBook +
+                    ' for the full pericope.'
+                );
+            } else {
+                textParts.push(label + ' — ' + result.label + '\n\n' + result.text);
+            }
+        }
+
+        for (const entry of entries) {
+            if (!entry) continue;
+
+            if (Array.isArray(entry.reading_sets)) {
+                for (const set of entry.reading_sets) {
+                    await appendReading(set.label || entry.label || 'Reading', set);
+                }
+            } else {
+                await appendReading(entry.label || 'Reading', entry);
+            }
+        }
+
+        if (!textParts.length) return null;
+
+        return {
+            label: labelParts.join(' / '),
+            text:  textParts.join('\n\n')
+        };
+    }
+
     const preLentenWeekdayKey = (() => {
         if (dayOfWeek === 0) return null;
 
@@ -7064,7 +7168,6 @@ async function _resolveTypikaSlots(sections, dateObj) {
         if (dayOfWeek === 0) return false;
 
         const MS_PER_DAY = 86400000;
-        const localDate = new Date(dateObj.getFullYear(), dateObj.getMonth(), dateObj.getDate());
 
         function orthodoxPascha(year) {
             const a = year % 4;
@@ -7079,45 +7182,21 @@ async function _resolveTypikaSlots(sections, dateObj) {
             return new Date(year, month - 1, day + 13);
         }
 
-        function twoSundaysBeforeNativity(year) {
-            const nativity = new Date(year, 11, 25);
-            const daysBackToPreviousSunday = nativity.getDay() === 0 ? 7 : nativity.getDay();
-            const sundayBeforeNativity = new Date(year, 11, 25 - daysBackToPreviousSunday);
-            return new Date(
-                sundayBeforeNativity.getFullYear(),
-                sundayBeforeNativity.getMonth(),
-                sundayBeforeNativity.getDate() - 7
-            );
-        }
+        const localDate = new Date(dateObj.getFullYear(), dateObj.getMonth(), dateObj.getDate());
 
-        function sundayAfterTheophany(year) {
-            const theophany = new Date(year, 0, 6);
-            let daysToSunday = (7 - theophany.getDay()) % 7;
-            if (daysToSunday === 0) daysToSunday = 7;
-            return new Date(year, 0, 6 + daysToSunday);
-        }
+        const paschaThisYear = orthodoxPascha(localDate.getFullYear());
+        const upcomingPascha = localDate <= paschaThisYear
+            ? paschaThisYear
+            : orthodoxPascha(localDate.getFullYear() + 1);
 
-        function inNativityTheophanyCycle(date) {
-            const year = date.getFullYear();
-            for (const nativityYear of [year - 1, year]) {
-                const start = twoSundaysBeforeNativity(nativityYear);
-                const end = sundayAfterTheophany(nativityYear + 1);
-                if (date >= start && date <= end) return true;
-            }
-            return false;
-        }
+        const cleanMonday = new Date(upcomingPascha.getTime() - (48 * MS_PER_DAY));
 
-        function inTriodionPreLentenStop(date) {
-            const year = date.getFullYear();
-            const paschaThisYear = orthodoxPascha(year);
-            const upcomingPascha = date <= paschaThisYear ? paschaThisYear : orthodoxPascha(year + 1);
-            const publicanAndPharisee = new Date(upcomingPascha.getTime() - (70 * MS_PER_DAY));
-
-            return date >= publicanAndPharisee && date < upcomingPascha;
-        }
-
-        return inNativityTheophanyCycle(localDate) || inTriodionPreLentenStop(localDate);
+        // The former Nativity/Theophany block is intentionally removed:
+        // winter-cycle feast overlays now route first, while ordinary readings
+        // resume on afterfeast weekdays without a fixed/relative overlay.
+        return localDate >= cleanMonday && localDate < upcomingPascha;
     })();
+
 
     const FIXED_SLOT_KEYS = new Set([
         'typika-usual-beginning',
@@ -7189,6 +7268,35 @@ async function _resolveTypikaSlots(sections, dateObj) {
             }
  
             if (item.key === 'typika-epistle-rubric') {
+                if (feastLectionaryOverlayKeys.length && _typikaLectionaryData && _typikaLectionaryData.feast_lectionary_overlays) {
+                    const winter = _typikaLectionaryData.feast_lectionary_overlays.winter_cycle || {};
+                    const entriesMap = winter.entries || {};
+                    const entries = feastLectionaryOverlayKeys
+                        .map(key => entriesMap[key])
+                        .filter(Boolean);
+
+                    if (entries.length) {
+                        try {
+                            const result = await resolveTypikaFeastOverlayReading(entries, 'epistle');
+                            if (result) {
+                                section.items[i] = {
+                                    type:       'text',
+                                    key:        item.key,
+                                    label:      'The Epistle — ' + result.label,
+                                    text:       result.text,
+                                    resolvedAs: 'typika-feast-overlay-epistle-' +
+                                        feastLectionaryOverlayKeys.join('+'),
+                                    feastOverlayKeys: feastLectionaryOverlayKeys.slice(),
+                                    source:     'Byzantine feast lectionary overlay — winter cycle'
+                                };
+                                continue;
+                            }
+                        } catch (err) {
+                            console.warn('[HorologionEngine] Typika feast overlay epistle resolution failed:', err.message);
+                            // fall through: leave existing rubric in place
+                        }
+                    }
+                }
                 if (preLentenWeekdayKey && _typikaLectionaryData && _typikaLectionaryData.pre_lenten_weekdays) {
                     const plWeeks = _typikaLectionaryData.pre_lenten_weekdays.weeks || {};
                     const plWeek = plWeeks[preLentenWeekdayKey.key];
@@ -7501,6 +7609,35 @@ async function _resolveTypikaSlots(sections, dateObj) {
             }
  
             if (item.key === 'typika-gospel-rubric') {
+                if (feastLectionaryOverlayKeys.length && _typikaLectionaryData && _typikaLectionaryData.feast_lectionary_overlays) {
+                    const winter = _typikaLectionaryData.feast_lectionary_overlays.winter_cycle || {};
+                    const entriesMap = winter.entries || {};
+                    const entries = feastLectionaryOverlayKeys
+                        .map(key => entriesMap[key])
+                        .filter(Boolean);
+
+                    if (entries.length) {
+                        try {
+                            const result = await resolveTypikaFeastOverlayReading(entries, 'gospel');
+                            if (result) {
+                                section.items[i] = {
+                                    type:       'text',
+                                    key:        item.key,
+                                    label:      'The Holy Gospel — ' + result.label,
+                                    text:       result.text,
+                                    resolvedAs: 'typika-feast-overlay-gospel-' +
+                                        feastLectionaryOverlayKeys.join('+'),
+                                    feastOverlayKeys: feastLectionaryOverlayKeys.slice(),
+                                    source:     'Byzantine feast lectionary overlay — winter cycle'
+                                };
+                                continue;
+                            }
+                        } catch (err) {
+                            console.warn('[HorologionEngine] Typika feast overlay gospel resolution failed:', err.message);
+                            // fall through: leave existing rubric in place
+                        }
+                    }
+                }
                 if (preLentenWeekdayKey && _typikaLectionaryData && _typikaLectionaryData.pre_lenten_weekdays) {
                     const plWeeks = _typikaLectionaryData.pre_lenten_weekdays.weeks || {};
                     const plWeek = plWeeks[preLentenWeekdayKey.key];

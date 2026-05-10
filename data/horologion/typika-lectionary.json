@@ -1758,6 +1758,145 @@
       }
     }
   },
+  "feast_lectionary_overlays": {
+    "_comment": [
+      "General Typika Epistle/Gospel overlay family for fixed and relative feast readings.",
+      "First populated family: winter_cycle for Nativity/Theophany core fixed days and relative Sundays.",
+      "This is Scripture citation metadata only; Royal Hours, hymns, prokeimena, alleluia verses, antiphons, and full Menaion propers remain out of scope.",
+      "If a fixed day and relative Sunday collide, readings are appended/combined rather than silently replacing one another.",
+      "Ordinary/Lukan/post-Lukan weekday readings should continue on afterfeast weekdays where no overlay key applies."
+    ],
+    "winter_cycle": {
+      "_comment": [
+        "Core winter-cycle fixed and relative Sunday readings.",
+        "Relative Saturdays and full afterfeast/forefeast weekday overlays are deferred.",
+        "Nativity Eve and Theophany Eve use service_context metadata for Vesperal Liturgy readings; Royal Hours readings are explicitly out of scope."
+      ],
+      "entries": {
+        "nativity_sunday_before": {
+          "label": "Sunday before Nativity / Holy Fathers",
+          "kind": "relative_sunday",
+          "date_rule": "Sunday between December 18 and December 24 inclusive.",
+          "epistle": "Hebrews 11:9-10, 17-23, 32-40",
+          "epistle_segments": [
+            "Hebrews 11:9-10",
+            "Hebrews 11:17-23",
+            "Hebrews 11:32-40"
+          ],
+          "gospel": "Matthew 1:1-25",
+          "ordinary_fallback_allowed": false
+        },
+        "12-24_nativity_eve": {
+          "label": "Eve of the Nativity of Christ",
+          "kind": "fixed_date",
+          "fixed_date": "12-24",
+          "service_context": "vesperal_liturgy",
+          "royal_hours_out_of_scope": true,
+          "epistle": "Hebrews 1:1-12",
+          "gospel": "Luke 2:1-20",
+          "weekend_alternate": {
+            "note": "Saturday/Sunday collision practice may appoint Galatians 3:15-22 with Luke 2:1-20 at Vespers. Royal Hours and transferred-service handling remain out of scope for this tranche.",
+            "epistle": "Galatians 3:15-22",
+            "gospel": "Luke 2:1-20"
+          }
+        },
+        "12-25_nativity": {
+          "label": "Nativity of Our Lord God and Savior Jesus Christ",
+          "kind": "fixed_date",
+          "fixed_date": "12-25",
+          "service_context": "divine_liturgy",
+          "epistle": "Galatians 4:4-7",
+          "gospel": "Matthew 2:1-12",
+          "ordinary_fallback_allowed": false
+        },
+        "12-26_synaxis_theotokos": {
+          "label": "Synaxis of the Theotokos",
+          "kind": "fixed_date",
+          "fixed_date": "12-26",
+          "service_context": "divine_liturgy",
+          "epistle": "Hebrews 2:11-18",
+          "gospel": "Matthew 2:13-23"
+        },
+        "nativity_sunday_after": {
+          "label": "Sunday after Nativity",
+          "kind": "relative_sunday",
+          "date_rule": "Sunday between December 26 and December 31 inclusive; also appended on December 26 when Nativity itself falls on Sunday.",
+          "epistle": "Galatians 1:11-19",
+          "gospel": "Matthew 2:13-23",
+          "ordinary_fallback_allowed": false
+        },
+        "01-01_circumcision_basil": {
+          "label": "Circumcision of Christ and St Basil the Great",
+          "kind": "fixed_date",
+          "fixed_date": "01-01",
+          "service_context": "divine_liturgy",
+          "reading_sets": [
+            {
+              "label": "Circumcision",
+              "epistle": "Colossians 2:8-12",
+              "gospel": "Luke 2:20-21, 40-52",
+              "gospel_segments": [
+                "Luke 2:20-21",
+                "Luke 2:40-52"
+              ]
+            },
+            {
+              "label": "St Basil",
+              "epistle": "Hebrews 7:26-8:2",
+              "gospel": "Luke 6:17-23"
+            }
+          ]
+        },
+        "theophany_sunday_before": {
+          "label": "Sunday before Theophany",
+          "kind": "relative_sunday",
+          "date_rule": "Sunday between January 1 and January 5 inclusive.",
+          "epistle": "2 Timothy 4:5-8",
+          "gospel": "Mark 1:1-8",
+          "ordinary_fallback_allowed": false
+        },
+        "01-05_theophany_eve": {
+          "label": "Eve of Theophany",
+          "kind": "fixed_date",
+          "fixed_date": "01-05",
+          "service_context": "vesperal_liturgy",
+          "paramony": true,
+          "royal_hours_out_of_scope": true,
+          "epistle": "1 Corinthians 9:19-27",
+          "gospel": "Luke 3:1-18"
+        },
+        "01-06_theophany": {
+          "label": "Theophany / Baptism of the Lord",
+          "kind": "fixed_date",
+          "fixed_date": "01-06",
+          "service_context": "divine_liturgy",
+          "epistle": "Titus 2:11-14; Titus 3:4-7",
+          "epistle_segments": [
+            "Titus 2:11-14",
+            "Titus 3:4-7"
+          ],
+          "gospel": "Matthew 3:13-17",
+          "ordinary_fallback_allowed": false
+        },
+        "01-07_synaxis_forerunner": {
+          "label": "Synaxis of the Holy Glorious Prophet, Forerunner, and Baptist John",
+          "kind": "fixed_date",
+          "fixed_date": "01-07",
+          "service_context": "divine_liturgy",
+          "epistle": "Acts 19:1-8",
+          "gospel": "John 1:29-34"
+        },
+        "theophany_sunday_after": {
+          "label": "Sunday after Theophany",
+          "kind": "relative_sunday",
+          "date_rule": "Sunday between January 7 and January 13 inclusive.",
+          "epistle": "Ephesians 4:7-13",
+          "gospel": "Matthew 4:12-17",
+          "ordinary_fallback_allowed": false
+        }
+      }
+    }
+  },
   "pre_lenten_weekdays": {
     "_comment": [
       "Temporal weekday Epistle/Gospel metadata for the pre-Lenten Triodion period.",
