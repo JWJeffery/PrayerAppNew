@@ -6894,30 +6894,22 @@ async function _resolveTypikaSlots(sections, dateObj) {
                 if (preLentenKey && _typikaLectionaryData && _typikaLectionaryData.pre_lenten) {
                     const plEntry = _typikaLectionaryData.pre_lenten[preLentenKey];
                     if (plEntry) {
-                        const plEpistleSegments = plEntry.epistle_segments || [plEntry.epistle];
-                        const plEpistleLabel    = plEntry.epistle_segments
-                            ? plEntry.epistle_segments.join('; ')
-                            : plEntry.epistle;
+                        const plEpistleRef = plEntry.epistle || plEntry.epistle_segments;
                         try {
-                            const parts = await Promise.all(
-                                plEpistleSegments.map(seg => getScriptureText(seg))
-                            );
-                            const unavailable = parts.some(
-                                p => !p || (typeof p === 'string' && p.includes('[Scripture unavailable:'))
-                            );
-                            if (unavailable) {
+                            const result = await resolveScripturePericope(plEpistleRef);
+                            if (result.unavailable) {
                                 section.items[i] = {
                                     type:       'rubric',
                                     key:        item.key,
-                                    text:       `EPISTLE: ${plEpistleLabel} \u2014 text unavailable. Consult the Apostol for the full pericope.`,
+                                    text:       `EPISTLE: ${result.label} \u2014 text unavailable. Consult the Apostol for the full pericope.`,
                                     resolvedAs: 'typika-pre-lenten-epistle-' + preLentenKey
                                 };
                             } else {
                                 section.items[i] = {
                                     type:       'text',
                                     key:        item.key,
-                                    label:      'The Epistle \u2014 ' + plEpistleLabel,
-                                    text:       parts.join('\n\n'),
+                                    label:      'The Epistle \u2014 ' + result.label,
+                                    text:       result.text,
                                     resolvedAs: 'typika-pre-lenten-epistle-' + preLentenKey,
                                     source:     'Byzantine Lectionary \u2014 Pre-Lenten Triodion'
                                 };
@@ -6932,30 +6924,22 @@ async function _resolveTypikaSlots(sections, dateObj) {
                 if (greatLentKey && _typikaLectionaryData && _typikaLectionaryData.great_lent) {
                     const glEntry = _typikaLectionaryData.great_lent[greatLentKey];
                     if (glEntry) {
-                        const glEpistleSegments = glEntry.epistle_segments || [glEntry.epistle];
-                        const glEpistleLabel    = glEntry.epistle_segments
-                            ? glEntry.epistle_segments.join('; ')
-                            : glEntry.epistle;
+                        const glEpistleRef = glEntry.epistle || glEntry.epistle_segments;
                         try {
-                            const parts = await Promise.all(
-                                glEpistleSegments.map(seg => getScriptureText(seg))
-                            );
-                            const unavailable = parts.some(
-                                p => !p || (typeof p === 'string' && p.includes('[Scripture unavailable:'))
-                            );
-                            if (unavailable) {
+                            const result = await resolveScripturePericope(glEpistleRef);
+                            if (result.unavailable) {
                                 section.items[i] = {
                                     type:       'rubric',
                                     key:        item.key,
-                                    text:       `EPISTLE: ${glEpistleLabel} \u2014 text unavailable. Consult the Apostol for the full pericope.`,
+                                    text:       `EPISTLE: ${result.label} \u2014 text unavailable. Consult the Apostol for the full pericope.`,
                                     resolvedAs: 'typika-great-lent-epistle-' + greatLentKey
                                 };
                             } else {
                                 section.items[i] = {
                                     type:       'text',
                                     key:        item.key,
-                                    label:      'The Epistle \u2014 ' + glEpistleLabel,
-                                    text:       parts.join('\n\n'),
+                                    label:      'The Epistle \u2014 ' + result.label,
+                                    text:       result.text,
                                     resolvedAs: 'typika-great-lent-epistle-' + greatLentKey,
                                     source:     'ByzCath.org Byzantine Lectionary \u2014 Great Lent'
                                 };
@@ -6972,16 +6956,10 @@ async function _resolveTypikaSlots(sections, dateObj) {
                 if (!entry) continue;
  
                if (entry.type === 'special') {
-                    const sap1EpistleSegs  = entry.epistle_segments || [entry.epistle];
-                    const sap1EpistleLabel = entry.epistle || (entry.epistle_segments ? entry.epistle_segments.join('; ') : '');
+                    const sap1EpistleRef = entry.epistle || entry.epistle_segments;
                     try {
-                        const sap1EpistleParts = await Promise.all(
-                            sap1EpistleSegs.map(seg => getScriptureText(seg))
-                        );
-                        const sap1EpistleUnavail = sap1EpistleParts.some(
-  p => !p || (typeof p === 'string' && p.includes('[Scripture unavailable:'))
-);
-                        if (sap1EpistleUnavail) {
+                        const result = await resolveScripturePericope(sap1EpistleRef);
+                        if (result.unavailable) {
                             section.items[i] = {
                                 type:       'rubric',
                                 key:        item.key,
@@ -6992,8 +6970,8 @@ async function _resolveTypikaSlots(sections, dateObj) {
                             section.items[i] = {
                                 type:                 'text',
                                 key:                  item.key,
-                                label:                'The Epistle \u2014 ' + sap1EpistleLabel,
-                                text:                 sap1EpistleParts.join('\n\n'),
+                                label:                'The Epistle \u2014 ' + result.label,
+                                text:                 result.text,
                                 resolvedAs:           'typika-sunday-lectionary-epistle-sap-1',
                                 tone:                 toneResult.tone,
                                 sundayAfterPentecost: sundayAfterPentecost,
@@ -7011,31 +6989,23 @@ async function _resolveTypikaSlots(sections, dateObj) {
                     }
                     continue;
                 } 
-                const epistleSegments = entry.epistle_segments || [entry.epistle];
-                const epistleLabel    = entry.epistle_segments
-                    ? entry.epistle_segments.join('; ')
-                    : entry.epistle;
+                const epistleRef = entry.epistle || entry.epistle_segments;
  
                 try {
-                    const parts = await Promise.all(
-                        epistleSegments.map(seg => getScriptureText(seg))
-                    );
-                    const unavailable = parts.some(
-                        p => typeof p === 'string' && p.includes('[Scripture unavailable:')
-                    );
-                    if (unavailable) {
+                    const result = await resolveScripturePericope(epistleRef);
+                    if (result.unavailable) {
                         section.items[i] = {
                             type:       'rubric',
                             key:        item.key,
-                            text:       `EPISTLE: ${epistleLabel} \u2014 text unavailable. Consult the Apostol for the full pericope.`,
+                            text:       `EPISTLE: ${result.label} \u2014 text unavailable. Consult the Apostol for the full pericope.`,
                             resolvedAs: 'typika-sunday-lectionary-epistle-text-unavailable'
                         };
                     } else {
                         section.items[i] = {
                             type:                'text',
                             key:                 item.key,
-                            label:               'The Epistle \u2014 ' + epistleLabel,
-                            text:                parts.join('\n\n'),
+                            label:               'The Epistle \u2014 ' + result.label,
+                            text:                result.text,
                             resolvedAs:          'typika-sunday-lectionary-epistle-sap-' + sundayAfterPentecost,
                             tone:                toneResult.tone,
                             sundayAfterPentecost: sundayAfterPentecost,
@@ -7083,30 +7053,22 @@ async function _resolveTypikaSlots(sections, dateObj) {
                 if (preLentenKey && _typikaLectionaryData && _typikaLectionaryData.pre_lenten) {
                     const plEntry = _typikaLectionaryData.pre_lenten[preLentenKey];
                     if (plEntry) {
-                        const plGospelSegments = plEntry.gospel_segments || [plEntry.gospel];
-                        const plGospelLabel    = plEntry.gospel_segments
-                            ? plEntry.gospel_segments.join('; ')
-                            : plEntry.gospel;
+                        const plGospelRef = plEntry.gospel || plEntry.gospel_segments;
                         try {
-                            const parts = await Promise.all(
-                                plGospelSegments.map(seg => getScriptureText(seg))
-                            );
-                            const unavailable = parts.some(
-                                p => !p || (typeof p === 'string' && p.includes('[Scripture unavailable:'))
-                            );
-                            if (unavailable) {
+                            const result = await resolveScripturePericope(plGospelRef);
+                            if (result.unavailable) {
                                 section.items[i] = {
                                     type:       'rubric',
                                     key:        item.key,
-                                    text:       `GOSPEL: ${plGospelLabel} \u2014 text unavailable. Consult the Evangelist for the full pericope.`,
+                                    text:       `GOSPEL: ${result.label} \u2014 text unavailable. Consult the Evangelist for the full pericope.`,
                                     resolvedAs: 'typika-pre-lenten-gospel-' + preLentenKey
                                 };
                             } else {
                                 section.items[i] = {
                                     type:       'text',
                                     key:        item.key,
-                                    label:      'The Holy Gospel \u2014 ' + plGospelLabel,
-                                    text:       parts.join('\n\n'),
+                                    label:      'The Holy Gospel \u2014 ' + result.label,
+                                    text:       result.text,
                                     resolvedAs: 'typika-pre-lenten-gospel-' + preLentenKey,
                                     source:     'Byzantine Lectionary \u2014 Pre-Lenten Triodion'
                                 };
@@ -7121,30 +7083,22 @@ async function _resolveTypikaSlots(sections, dateObj) {
                 if (greatLentKey && _typikaLectionaryData && _typikaLectionaryData.great_lent) {
                     const glEntry = _typikaLectionaryData.great_lent[greatLentKey];
                     if (glEntry) {
-                        const glGospelSegments = glEntry.gospel_segments || [glEntry.gospel];
-                        const glGospelLabel    = glEntry.gospel_segments
-                            ? glEntry.gospel_segments.join('; ')
-                            : glEntry.gospel;
+                        const glGospelRef = glEntry.gospel || glEntry.gospel_segments;
                         try {
-                            const parts = await Promise.all(
-                                glGospelSegments.map(seg => getScriptureText(seg))
-                            );
-                            const unavailable = parts.some(
-                                p => !p || (typeof p === 'string' && p.includes('[Scripture unavailable:'))
-                            );
-                            if (unavailable) {
+                            const result = await resolveScripturePericope(glGospelRef);
+                            if (result.unavailable) {
                                 section.items[i] = {
                                     type:       'rubric',
                                     key:        item.key,
-                                    text:       `GOSPEL: ${glGospelLabel} \u2014 text unavailable. Consult the Evangelist for the full pericope.`,
+                                    text:       `GOSPEL: ${result.label} \u2014 text unavailable. Consult the Evangelist for the full pericope.`,
                                     resolvedAs: 'typika-great-lent-gospel-' + greatLentKey
                                 };
                             } else {
                                 section.items[i] = {
                                     type:       'text',
                                     key:        item.key,
-                                    label:      'The Holy Gospel \u2014 ' + glGospelLabel,
-                                    text:       parts.join('\n\n'),
+                                    label:      'The Holy Gospel \u2014 ' + result.label,
+                                    text:       result.text,
                                     resolvedAs: 'typika-great-lent-gospel-' + greatLentKey,
                                     source:     'ByzCath.org Byzantine Lectionary \u2014 Great Lent'
                                 };
@@ -7161,16 +7115,10 @@ async function _resolveTypikaSlots(sections, dateObj) {
                 if (!entry) continue;
  
                if (entry.type === 'special') {
-                    const sap1GospelSegs  = entry.gospel_segments;
-                    const sap1GospelLabel = entry.gospel_segments.join('; ');
+                    const sap1GospelRef = entry.gospel || entry.gospel_segments;
                     try {
-                        const sap1GospelParts = await Promise.all(
-                            sap1GospelSegs.map(seg => getScriptureText(seg))
-                        );
-                        const sap1GospelUnavail = sap1GospelParts.some(
-  p => !p || (typeof p === 'string' && p.includes('[Scripture unavailable:'))
-);
-                        if (sap1GospelUnavail) {
+                        const result = await resolveScripturePericope(sap1GospelRef);
+                        if (result.unavailable) {
                             section.items[i] = {
                                 type:       'rubric',
                                 key:        item.key,
@@ -7181,8 +7129,8 @@ async function _resolveTypikaSlots(sections, dateObj) {
                             section.items[i] = {
                                 type:                 'text',
                                 key:                  item.key,
-                                label:                'The Holy Gospel \u2014 ' + sap1GospelLabel,
-                                text:                 sap1GospelParts.join('\n\n'),
+                                label:                'The Holy Gospel \u2014 ' + result.label,
+                                text:                 result.text,
                                 resolvedAs:           'typika-sunday-lectionary-gospel-sap-1',
                                 tone:                 toneResult.tone,
                                 sundayAfterPentecost: sundayAfterPentecost,
@@ -7201,31 +7149,23 @@ async function _resolveTypikaSlots(sections, dateObj) {
                     continue;
                 }
 
-                const gospelSegments = entry.gospel_segments || [entry.gospel];
-                const gospelLabel    = entry.gospel_segments
-                    ? entry.gospel_segments.join('; ')
-                    : entry.gospel;
+                const gospelRef = entry.gospel || entry.gospel_segments;
  
                 try {
-                    const parts = await Promise.all(
-                        gospelSegments.map(seg => getScriptureText(seg))
-                    );
-                    const unavailable = parts.some(
-                        p => typeof p === 'string' && p.includes('[Scripture unavailable:')
-                    );
-                    if (unavailable) {
+                    const result = await resolveScripturePericope(gospelRef);
+                    if (result.unavailable) {
                         section.items[i] = {
                             type:       'rubric',
                             key:        item.key,
-                            text:       `GOSPEL: ${gospelLabel} \u2014 text unavailable. Consult the Evangelist for the full pericope.`,
+                            text:       `GOSPEL: ${result.label} \u2014 text unavailable. Consult the Evangelist for the full pericope.`,
                             resolvedAs: 'typika-sunday-lectionary-gospel-text-unavailable'
                         };
                     } else {
                         section.items[i] = {
                             type:                'text',
                             key:                 item.key,
-                            label:               'The Holy Gospel \u2014 ' + gospelLabel,
-                            text:                parts.join('\n\n'),
+                            label:               'The Holy Gospel \u2014 ' + result.label,
+                            text:                result.text,
                             resolvedAs:          'typika-sunday-lectionary-gospel-sap-' + sundayAfterPentecost,
                             tone:                toneResult.tone,
                             sundayAfterPentecost: sundayAfterPentecost,
