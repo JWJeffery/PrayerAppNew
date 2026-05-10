@@ -1895,6 +1895,117 @@
           "ordinary_fallback_allowed": false
         }
       }
+    },
+    "fixed_cycle": {
+      "_comment": [
+        "Major fixed-date feast overlays beyond the winter cycle.",
+        "Annunciation is intentionally excluded from this tranche pending Lent/Pascha collision policy.",
+        "These entries are Scripture citation metadata only; feast propers, hymns, prokeimena, alleluia verses, and full annual Typikon suppression rules remain out of scope.",
+        "Fixed-date overlays append/combine with temporal readings under the current policy."
+      ],
+      "entries": {
+        "02-02_meeting_lord": {
+          "label": "Meeting of our Lord God and Savior Jesus Christ in the Temple",
+          "kind": "fixed_date",
+          "fixed_date": "02-02",
+          "service_context": "divine_liturgy",
+          "epistle": "Hebrews 7:7-17",
+          "gospel": "Luke 2:22-40"
+        },
+        "06-24_nativity_forerunner": {
+          "label": "Nativity of the Holy Glorious Prophet, Forerunner and Baptist John",
+          "kind": "fixed_date",
+          "fixed_date": "06-24",
+          "service_context": "divine_liturgy",
+          "epistle": "Romans 13:11-14:4",
+          "gospel": "Luke 1:1-25, 57-68, 76, 80",
+          "gospel_segments": [
+            "Luke 1:1-25",
+            "Luke 1:57-68",
+            "Luke 1:76",
+            "Luke 1:80"
+          ],
+          "note": "Discontinuous Gospel."
+        },
+        "06-29_peter_paul": {
+          "label": "Holy Glorious and All-Praised Leaders of the Apostles, Peter and Paul",
+          "kind": "fixed_date",
+          "fixed_date": "06-29",
+          "service_context": "divine_liturgy",
+          "epistle": "2 Corinthians 11:21-12:9",
+          "gospel": "Matthew 16:13-19"
+        },
+        "08-06_transfiguration": {
+          "label": "Holy Transfiguration of our Lord God and Savior Jesus Christ",
+          "kind": "fixed_date",
+          "fixed_date": "08-06",
+          "service_context": "divine_liturgy",
+          "epistle": "2 Peter 1:10-19",
+          "gospel": "Matthew 17:1-9"
+        },
+        "08-15_dormition_theotokos": {
+          "label": "Dormition of our Most Holy Lady, Theotokos and Ever-Virgin Mary",
+          "kind": "fixed_date",
+          "fixed_date": "08-15",
+          "service_context": "divine_liturgy",
+          "epistle": "Philippians 2:5-11",
+          "gospel": "Luke 10:38-42; Luke 11:27-28",
+          "gospel_segments": [
+            "Luke 10:38-42",
+            "Luke 11:27-28"
+          ],
+          "note": "Standard discontinuous Theotokos Gospel."
+        },
+        "08-29_beheading_forerunner": {
+          "label": "Beheading of the Holy Glorious Prophet, Forerunner and Baptist John",
+          "kind": "fixed_date",
+          "fixed_date": "08-29",
+          "service_context": "divine_liturgy",
+          "epistle": "Acts 13:25-33",
+          "gospel": "Mark 6:14-30"
+        },
+        "09-08_nativity_theotokos": {
+          "label": "Nativity of our Most Holy Lady, Theotokos and Ever-Virgin Mary",
+          "kind": "fixed_date",
+          "fixed_date": "09-08",
+          "service_context": "divine_liturgy",
+          "epistle": "Philippians 2:5-11",
+          "gospel": "Luke 10:38-42; Luke 11:27-28",
+          "gospel_segments": [
+            "Luke 10:38-42",
+            "Luke 11:27-28"
+          ],
+          "note": "Standard discontinuous Theotokos Gospel."
+        },
+        "09-14_exaltation_cross": {
+          "label": "Universal Exaltation of the Precious and Life-Giving Cross",
+          "kind": "fixed_date",
+          "fixed_date": "09-14",
+          "service_context": "divine_liturgy",
+          "epistle": "1 Corinthians 1:18-24",
+          "gospel": "John 19:6-11, 13-20, 25-28, 30-35",
+          "gospel_segments": [
+            "John 19:6-11",
+            "John 19:13-20",
+            "John 19:25-28",
+            "John 19:30-35"
+          ],
+          "note": "Fixed-date Exaltation readings only; Sunday before/after Exaltation and Lukan Jump boundary logic remain separate."
+        },
+        "11-21_entry_theotokos": {
+          "label": "Entry of our Most Holy Lady, Theotokos and Ever-Virgin Mary, into the Temple",
+          "kind": "fixed_date",
+          "fixed_date": "11-21",
+          "service_context": "divine_liturgy",
+          "epistle": "Hebrews 9:1-7",
+          "gospel": "Luke 10:38-42; Luke 11:27-28",
+          "gospel_segments": [
+            "Luke 10:38-42",
+            "Luke 11:27-28"
+          ],
+          "note": "Standard discontinuous Theotokos Gospel."
+        }
+      }
     }
   },
   "pre_lenten_weekdays": {

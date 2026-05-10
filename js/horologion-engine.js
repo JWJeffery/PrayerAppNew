@@ -6964,7 +6964,16 @@ async function _resolveTypikaSlots(sections, dateObj) {
             '01-01': '01-01_circumcision_basil',
             '01-05': '01-05_theophany_eve',
             '01-06': '01-06_theophany',
-            '01-07': '01-07_synaxis_forerunner'
+            '01-07': '01-07_synaxis_forerunner',
+            '02-02': '02-02_meeting_lord',
+            '06-24': '06-24_nativity_forerunner',
+            '06-29': '06-29_peter_paul',
+            '08-06': '08-06_transfiguration',
+            '08-15': '08-15_dormition_theotokos',
+            '08-29': '08-29_beheading_forerunner',
+            '09-08': '09-08_nativity_theotokos',
+            '09-14': '09-14_exaltation_cross',
+            '11-21': '11-21_entry_theotokos'
         };
 
         if (fixedKeyMap[mmdd]) {
@@ -7269,8 +7278,14 @@ async function _resolveTypikaSlots(sections, dateObj) {
  
             if (item.key === 'typika-epistle-rubric') {
                 if (feastLectionaryOverlayKeys.length && _typikaLectionaryData && _typikaLectionaryData.feast_lectionary_overlays) {
-                    const winter = _typikaLectionaryData.feast_lectionary_overlays.winter_cycle || {};
-                    const entriesMap = winter.entries || {};
+                    const overlays = _typikaLectionaryData.feast_lectionary_overlays || {};
+                    const winter = overlays.winter_cycle || {};
+                    const fixed = overlays.fixed_cycle || {};
+                    const entriesMap = Object.assign(
+                        {},
+                        winter.entries || {},
+                        fixed.entries || {}
+                    );
                     const entries = feastLectionaryOverlayKeys
                         .map(key => entriesMap[key])
                         .filter(Boolean);
@@ -7610,8 +7625,14 @@ async function _resolveTypikaSlots(sections, dateObj) {
  
             if (item.key === 'typika-gospel-rubric') {
                 if (feastLectionaryOverlayKeys.length && _typikaLectionaryData && _typikaLectionaryData.feast_lectionary_overlays) {
-                    const winter = _typikaLectionaryData.feast_lectionary_overlays.winter_cycle || {};
-                    const entriesMap = winter.entries || {};
+                    const overlays = _typikaLectionaryData.feast_lectionary_overlays || {};
+                    const winter = overlays.winter_cycle || {};
+                    const fixed = overlays.fixed_cycle || {};
+                    const entriesMap = Object.assign(
+                        {},
+                        winter.entries || {},
+                        fixed.entries || {}
+                    );
                     const entries = feastLectionaryOverlayKeys
                         .map(key => entriesMap[key])
                         .filter(Boolean);
