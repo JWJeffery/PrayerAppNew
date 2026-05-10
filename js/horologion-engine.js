@@ -6757,6 +6757,22 @@ async function _resolveTypikaSlots(sections, dateObj) {
         };
         return PENT_MAP[diffDays] || null;
     })();
+
+    const preLentenKey = (() => {
+        if (dayOfWeek !== 0) return null;
+        const _year     = dateObj.getFullYear();
+        const localDate = new Date(_year, dateObj.getMonth(), dateObj.getDate());
+        let   _pascha   = _getOrthodoxPascha(_year);
+        if (_pascha <= localDate) _pascha = _getOrthodoxPascha(_year + 1);
+        const daysUntil = Math.round((_pascha - localDate) / 86400000);
+        const PRE_LENTEN_MAP = {
+            70: 'publican-pharisee',
+            63: 'prodigal-son',
+            56: 'meatfare',
+            49: 'cheesefare'
+        };
+        return PRE_LENTEN_MAP[daysUntil] || null;
+    })();
  
     const FIXED_SLOT_KEYS = new Set([
         'typika-usual-beginning',
@@ -6861,6 +6877,44 @@ async function _resolveTypikaSlots(sections, dateObj) {
                             }
                         } catch (err) {
                             console.warn('[HorologionEngine] Typika Pentecostarion epistle resolution failed:', err.message);
+                            // fall through: leave existing rubric in place
+                        }
+                        continue;
+                    }
+                }
+                if (preLentenKey && _typikaLectionaryData && _typikaLectionaryData.pre_lenten) {
+                    const plEntry = _typikaLectionaryData.pre_lenten[preLentenKey];
+                    if (plEntry) {
+                        const plEpistleSegments = plEntry.epistle_segments || [plEntry.epistle];
+                        const plEpistleLabel    = plEntry.epistle_segments
+                            ? plEntry.epistle_segments.join('; ')
+                            : plEntry.epistle;
+                        try {
+                            const parts = await Promise.all(
+                                plEpistleSegments.map(seg => getScriptureText(seg))
+                            );
+                            const unavailable = parts.some(
+                                p => !p || (typeof p === 'string' && p.includes('[Scripture unavailable:'))
+                            );
+                            if (unavailable) {
+                                section.items[i] = {
+                                    type:       'rubric',
+                                    key:        item.key,
+                                    text:       `EPISTLE: ${plEpistleLabel} \u2014 text unavailable. Consult the Apostol for the full pericope.`,
+                                    resolvedAs: 'typika-pre-lenten-epistle-' + preLentenKey
+                                };
+                            } else {
+                                section.items[i] = {
+                                    type:       'text',
+                                    key:        item.key,
+                                    label:      'The Epistle \u2014 ' + plEpistleLabel,
+                                    text:       parts.join('\n\n'),
+                                    resolvedAs: 'typika-pre-lenten-epistle-' + preLentenKey,
+                                    source:     'Byzantine Lectionary \u2014 Pre-Lenten Triodion'
+                                };
+                            }
+                        } catch (err) {
+                            console.warn('[HorologionEngine] Typika pre-lenten epistle resolution failed:', err.message);
                             // fall through: leave existing rubric in place
                         }
                         continue;
@@ -6982,6 +7036,44 @@ async function _resolveTypikaSlots(sections, dateObj) {
                             }
                         } catch (err) {
                             console.warn('[HorologionEngine] Typika Pentecostarion gospel resolution failed:', err.message);
+                            // fall through: leave existing rubric in place
+                        }
+                        continue;
+                    }
+                }
+                if (preLentenKey && _typikaLectionaryData && _typikaLectionaryData.pre_lenten) {
+                    const plEntry = _typikaLectionaryData.pre_lenten[preLentenKey];
+                    if (plEntry) {
+                        const plGospelSegments = plEntry.gospel_segments || [plEntry.gospel];
+                        const plGospelLabel    = plEntry.gospel_segments
+                            ? plEntry.gospel_segments.join('; ')
+                            : plEntry.gospel;
+                        try {
+                            const parts = await Promise.all(
+                                plGospelSegments.map(seg => getScriptureText(seg))
+                            );
+                            const unavailable = parts.some(
+                                p => !p || (typeof p === 'string' && p.includes('[Scripture unavailable:'))
+                            );
+                            if (unavailable) {
+                                section.items[i] = {
+                                    type:       'rubric',
+                                    key:        item.key,
+                                    text:       `GOSPEL: ${plGospelLabel} \u2014 text unavailable. Consult the Evangelist for the full pericope.`,
+                                    resolvedAs: 'typika-pre-lenten-gospel-' + preLentenKey
+                                };
+                            } else {
+                                section.items[i] = {
+                                    type:       'text',
+                                    key:        item.key,
+                                    label:      'The Holy Gospel \u2014 ' + plGospelLabel,
+                                    text:       parts.join('\n\n'),
+                                    resolvedAs: 'typika-pre-lenten-gospel-' + preLentenKey,
+                                    source:     'Byzantine Lectionary \u2014 Pre-Lenten Triodion'
+                                };
+                            }
+                        } catch (err) {
+                            console.warn('[HorologionEngine] Typika pre-lenten gospel resolution failed:', err.message);
                             // fall through: leave existing rubric in place
                         }
                         continue;

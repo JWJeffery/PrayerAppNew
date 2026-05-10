@@ -95,5 +95,44 @@
       "gospel_segments": ["John 7:37-52", "John 8:12"],
       "note": "Gospel is composite; stored as segments."
     }
+  },
+  "pre_lenten": {
+    "_comment": "Pre-Lenten Triodion Sundays. Keyed by liturgical name. days_before_pascha counts from upcoming Pascha. Tradition family: Slavic/OCA/ROCOR/Antiochian.",
+    "zacchaeus": {
+      "label": "Sunday of Zacchaeus",
+      "type": "pre-lenten-deferred",
+      "epistle": "1 Timothy 4:9-15",
+      "gospel": "Luke 19:1-10",
+      "days_before_pascha": 77,
+      "tradition_note": "Greek/Antiochian tradition only; not routed until a tradition-variant gate exists."
+    },
+    "publican-pharisee": {
+      "label": "Sunday of the Publican and Pharisee",
+      "type": "pre-lenten",
+      "epistle": "2 Timothy 3:10-15",
+      "gospel": "Luke 18:10-14",
+      "days_before_pascha": 70
+    },
+    "prodigal-son": {
+      "label": "Sunday of the Prodigal Son",
+      "type": "pre-lenten",
+      "epistle": "1 Corinthians 6:12-20",
+      "gospel": "Luke 15:11-32",
+      "days_before_pascha": 63
+    },
+    "meatfare": {
+      "label": "Meatfare Sunday",
+      "type": "pre-lenten",
+      "epistle_segments": ["1 Corinthians 8:8-13", "1 Corinthians 9:1-2"],
+      "gospel": "Matthew 25:31-46",
+      "days_before_pascha": 56
+    },
+    "cheesefare": {
+      "label": "Cheesefare Sunday (Forgiveness Sunday)",
+      "type": "pre-lenten",
+      "epistle_segments": ["Romans 13:11-14", "Romans 14:1-4"],
+      "gospel": "Matthew 6:14-21",
+      "days_before_pascha": 49
+    }
   }
 }
