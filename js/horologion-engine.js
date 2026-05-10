@@ -6857,7 +6857,7 @@ async function _resolveTypikaSlots(sections, dateObj) {
         if (diffDays < 50) return null;
 
         const week = Math.floor((diffDays - 50) / 7) + 1;
-        if (week < 1 || week > 30) return null;
+        if (week < 1 || week > 32) return null;
 
         return {
             week: String(week),
