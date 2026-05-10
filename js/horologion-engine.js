@@ -6864,30 +6864,22 @@ async function _resolveTypikaSlots(sections, dateObj) {
                 if (pentecostarionKey && _typikaLectionaryData && _typikaLectionaryData.pentecostarion) {
                     const pEntry = _typikaLectionaryData.pentecostarion[pentecostarionKey];
                     if (pEntry) {
-                        const pEpistleSegments = pEntry.epistle_segments || [pEntry.epistle];
-                        const pEpistleLabel    = pEntry.epistle_segments
-                            ? pEntry.epistle_segments.join('; ')
-                            : pEntry.epistle;
+                        const pEpistleRef = pEntry.epistle || pEntry.epistle_segments;
                         try {
-                            const parts = await Promise.all(
-                                pEpistleSegments.map(seg => getScriptureText(seg))
-                            );
-                            const unavailable = parts.some(
-                                p => !p || (typeof p === 'string' && p.includes('[Scripture unavailable:'))
-                            );
-                            if (unavailable) {
+                            const result = await resolveScripturePericope(pEpistleRef);
+                            if (result.unavailable) {
                                 section.items[i] = {
                                     type:       'rubric',
                                     key:        item.key,
-                                    text:       `EPISTLE: ${pEpistleLabel} \u2014 text unavailable. Consult the Apostol for the full pericope.`,
+                                    text:       `EPISTLE: ${result.label} \u2014 text unavailable. Consult the Apostol for the full pericope.`,
                                     resolvedAs: 'typika-pentecostarion-epistle-' + pentecostarionKey
                                 };
                             } else {
                                 section.items[i] = {
                                     type:       'text',
                                     key:        item.key,
-                                    label:      'The Epistle \u2014 ' + pEpistleLabel,
-                                    text:       parts.join('\n\n'),
+                                    label:      'The Epistle \u2014 ' + result.label,
+                                    text:       result.text,
                                     resolvedAs: 'typika-pentecostarion-epistle-' + pentecostarionKey,
                                     source:     'ByzCath.org Byzantine Lectionary \u2014 Pentecostarion'
                                 };
@@ -7061,30 +7053,22 @@ async function _resolveTypikaSlots(sections, dateObj) {
                 if (pentecostarionKey && _typikaLectionaryData && _typikaLectionaryData.pentecostarion) {
                     const pEntry = _typikaLectionaryData.pentecostarion[pentecostarionKey];
                     if (pEntry) {
-                        const pGospelSegments = pEntry.gospel_segments || [pEntry.gospel];
-                        const pGospelLabel    = pEntry.gospel_segments
-                            ? pEntry.gospel_segments.join('; ')
-                            : pEntry.gospel;
+                        const pGospelRef = pEntry.gospel || pEntry.gospel_segments;
                         try {
-                            const parts = await Promise.all(
-                                pGospelSegments.map(seg => getScriptureText(seg))
-                            );
-                            const unavailable = parts.some(
-                                p => !p || (typeof p === 'string' && p.includes('[Scripture unavailable:'))
-                            );
-                            if (unavailable) {
+                            const result = await resolveScripturePericope(pGospelRef);
+                            if (result.unavailable) {
                                 section.items[i] = {
                                     type:       'rubric',
                                     key:        item.key,
-                                    text:       `GOSPEL: ${pGospelLabel} \u2014 text unavailable. Consult the Evangelist for the full pericope.`,
+                                    text:       `GOSPEL: ${result.label} \u2014 text unavailable. Consult the Evangelist for the full pericope.`,
                                     resolvedAs: 'typika-pentecostarion-gospel-' + pentecostarionKey
                                 };
                             } else {
                                 section.items[i] = {
                                     type:       'text',
                                     key:        item.key,
-                                    label:      'The Holy Gospel \u2014 ' + pGospelLabel,
-                                    text:       parts.join('\n\n'),
+                                    label:      'The Holy Gospel \u2014 ' + result.label,
+                                    text:       result.text,
                                     resolvedAs: 'typika-pentecostarion-gospel-' + pentecostarionKey,
                                     source:     'ByzCath.org Byzantine Lectionary \u2014 Pentecostarion'
                                 };
