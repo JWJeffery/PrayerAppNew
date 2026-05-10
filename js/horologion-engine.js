@@ -5499,6 +5499,46 @@ async function _resolveGreatComplineSlots(sections, dateObj) {
     }
 
     // ──────────────────────────────────────────────────────────────────────
+    // Release gate: Bright Week / Paschal Hours displacement for Little Hours
+    //
+    // During Bright Week, the ordinary First, Third, Sixth, and Ninth Hours
+    // are displaced by the Paschal Hours. Until the full Paschal Hours text is
+    // implemented, preempt the ordinary Little Hour structure with an honest
+    // rubric-only payload instead of rendering ordinary psalmody and prayers.
+    // ──────────────────────────────────────────────────────────────────────
+    function _applyLittleHourBrightWeekDisplacement(officeKey, sections, dateObj) {
+        const toneResult = _computeBaselineTone(dateObj);
+        if (!toneResult || !toneResult.brightWeek) return false;
+
+        const OFFICE_LABELS = {
+            'first-hour': 'First Hour',
+            'third-hour': 'Third Hour',
+            'sixth-hour': 'Sixth Hour',
+            'ninth-hour': 'Ninth Hour'
+        };
+
+        const officeLabel = OFFICE_LABELS[officeKey] || 'Little Hour';
+
+        if (!Array.isArray(sections)) return false;
+
+        sections.splice(0, sections.length, {
+            id: 'bright-week-paschal-hours-displacement',
+            label: `${officeLabel} — Bright Week / Paschal Hours`,
+            items: [
+                {
+                    type:       'rubric',
+                    key:        `${officeKey}-bright-week-displacement-rubric`,
+                    label:      `${officeLabel} displaced by the Paschal Hours`,
+                    text:       '(Bright Week — Paschal Hours. During Bright Week, from Pascha through Bright Saturday, the ordinary Little Hours are displaced by the Paschal Hours. The fixed psalmody, Trisagion prayers, ordinary Theotokion of the Hour, and ordinary prayer of the Hour are not appointed in the usual form. Full Paschal Hours text is deferred.)',
+                    resolvedAs: `${officeKey}-bright-week-paschal-hours-displacement`
+                }
+            ]
+        });
+
+        return true;
+    }
+
+    // ──────────────────────────────────────────────────────────────────────
     // v3.1: _resolveFirstHourSlots(sections, dateObj)
     //
     // Slot resolution pass for the First Hour (Prima).
@@ -5526,6 +5566,10 @@ async function _resolveGreatComplineSlots(sections, dateObj) {
 
         const dayOfWeek  = dateObj.getDay();
         const toneResult = _computeBaselineTone(dateObj);
+
+        if (_applyLittleHourBrightWeekDisplacement('first-hour', sections, dateObj)) {
+            return;
+        }
 
         const FIXED_SLOT_KEYS = new Set([
             'usual-beginning',
@@ -5625,6 +5669,10 @@ async function _loadThirdHourFixedData() {
         const dayOfWeek  = dateObj.getDay();
         const toneResult = _computeBaselineTone(dateObj);
 
+        if (_applyLittleHourBrightWeekDisplacement('third-hour', sections, dateObj)) {
+            return;
+        }
+
         const FIXED_SLOT_KEYS = new Set([
             'usual-beginning',
             'psalm-16',
@@ -5719,6 +5767,10 @@ async function _loadThirdHourFixedData() {
         const dayOfWeek  = dateObj.getDay();
         const toneResult = _computeBaselineTone(dateObj);
 
+        if (_applyLittleHourBrightWeekDisplacement('sixth-hour', sections, dateObj)) {
+            return;
+        }
+
         const FIXED_SLOT_KEYS = new Set([
             'usual-beginning',
             'psalm-53',
@@ -5812,6 +5864,10 @@ async function _loadThirdHourFixedData() {
 
         const dayOfWeek  = dateObj.getDay();
         const toneResult = _computeBaselineTone(dateObj);
+
+        if (_applyLittleHourBrightWeekDisplacement('ninth-hour', sections, dateObj)) {
+            return;
+        }
 
         const FIXED_SLOT_KEYS = new Set([
             'usual-beginning',
