@@ -194,7 +194,7 @@
       "Week 1 begins Monday of the Holy Spirit, the day after Pentecost.",
       "Saturday is a keyed weekday under the same week but uses its own Saturday row from the lectionary.",
       "Scope of this data family: Weeks 1-17, Monday-Saturday. Gospel rows serve the ordinary pre-Lukan cycle; after the Lukan boundary, Epistle rows may continue as ordinary-cycle data while Gospel resolves from lukan_weekday_gospels.",
-      "Current populated tranche: Weeks 1-17, Monday-Saturday.",
+      "Current populated tranche: Weeks 1-25, Monday-Saturday. Weeks 18-25 are Epistle-only support rows for the post-Lukan split-key cycle.",
       "Lukan Jump / Luke-cycle Gospel readings are modeled separately in lukan_weekday_gospels.",
       "Menaion and fixed-feast overlays are out of scope; this table is ordinary-cycle fallback data."
     ],
@@ -897,6 +897,120 @@
           "label": "Saturday of the 21st Week after Pentecost",
           "epistle": "2 Corinthians 3:12-18"
         }
+      },
+      "22": {
+        "monday": {
+          "label": "Monday of the 22nd Week after Pentecost",
+          "epistle": "Colossians 2:13-20"
+        },
+        "tuesday": {
+          "label": "Tuesday of the 22nd Week after Pentecost",
+          "epistle": "Colossians 2:20-3:3"
+        },
+        "wednesday": {
+          "label": "Wednesday of the 22nd Week after Pentecost",
+          "epistle": "Colossians 3:17-4:1"
+        },
+        "thursday": {
+          "label": "Thursday of the 22nd Week after Pentecost",
+          "epistle": "Colossians 4:2-9"
+        },
+        "friday": {
+          "label": "Friday of the 22nd Week after Pentecost",
+          "epistle": "Colossians 4:10-18"
+        },
+        "saturday": {
+          "label": "Saturday of the 22nd Week after Pentecost",
+          "epistle": "2 Corinthians 5:1-10",
+          "note": "Source gives 2 Corinthians 5:1-10a; resolver uses full verse 10."
+        }
+      },
+      "23": {
+        "monday": {
+          "label": "Monday of the 23rd Week after Pentecost",
+          "epistle": "1 Thessalonians 1:1-5"
+        },
+        "tuesday": {
+          "label": "Tuesday of the 23rd Week after Pentecost",
+          "epistle": "1 Thessalonians 1:6-10"
+        },
+        "wednesday": {
+          "label": "Wednesday of the 23rd Week after Pentecost",
+          "epistle": "1 Thessalonians 2:1-8"
+        },
+        "thursday": {
+          "label": "Thursday of the 23rd Week after Pentecost",
+          "epistle": "1 Thessalonians 2:9-14",
+          "note": "Source gives 1 Thessalonians 2:9-14a; resolver uses full verse 14."
+        },
+        "friday": {
+          "label": "Friday of the 23rd Week after Pentecost",
+          "epistle": "1 Thessalonians 2:14-19",
+          "note": "Overlaps prior day at 1 Thessalonians 2:14."
+        },
+        "saturday": {
+          "label": "Saturday of the 23rd Week after Pentecost",
+          "epistle": "2 Corinthians 8:1-5"
+        }
+      },
+      "24": {
+        "monday": {
+          "label": "Monday of the 24th Week after Pentecost",
+          "epistle": "1 Thessalonians 2:20-3:8"
+        },
+        "tuesday": {
+          "label": "Tuesday of the 24th Week after Pentecost",
+          "epistle": "1 Thessalonians 3:9-13"
+        },
+        "wednesday": {
+          "label": "Wednesday of the 24th Week after Pentecost",
+          "epistle": "1 Thessalonians 4:1-12"
+        },
+        "thursday": {
+          "label": "Thursday of the 24th Week after Pentecost",
+          "epistle": "1 Thessalonians 5:1-8"
+        },
+        "friday": {
+          "label": "Friday of the 24th Week after Pentecost",
+          "epistle": "1 Thessalonians 5:9-13, 24-28",
+          "epistle_segments": [
+            "1 Thessalonians 5:9-13",
+            "1 Thessalonians 5:24-28"
+          ],
+          "note": "Discontinuous Epistle."
+        },
+        "saturday": {
+          "label": "Saturday of the 24th Week after Pentecost",
+          "epistle": "2 Corinthians 11:1-6"
+        }
+      },
+      "25": {
+        "monday": {
+          "label": "Monday of the 25th Week after Pentecost",
+          "epistle": "2 Thessalonians 1:1-10"
+        },
+        "tuesday": {
+          "label": "Tuesday of the 25th Week after Pentecost",
+          "epistle": "2 Thessalonians 1:10-2:2",
+          "note": "Source gives 2 Thessalonians 1:10b-2:2; resolver uses full verse 10."
+        },
+        "wednesday": {
+          "label": "Wednesday of the 25th Week after Pentecost",
+          "epistle": "2 Thessalonians 2:1-12",
+          "note": "Overlaps prior day at 2 Thessalonians 2:1-2."
+        },
+        "thursday": {
+          "label": "Thursday of the 25th Week after Pentecost",
+          "epistle": "2 Thessalonians 2:13-3:5"
+        },
+        "friday": {
+          "label": "Friday of the 25th Week after Pentecost",
+          "epistle": "2 Thessalonians 3:6-18"
+        },
+        "saturday": {
+          "label": "Saturday of the 25th Week after Pentecost",
+          "epistle": "Galatians 1:3-10"
+        }
       }
     }
   },
@@ -905,7 +1019,7 @@
       "Weekday Gospel cycle after the Lukan Jump.",
       "Begins Monday following the Sunday after the Exaltation of the Cross.",
       "Gospel-only table; Epistles continue from ordinary_weekdays_after_pentecost where ordinary-cycle Epistle data exists.",
-      "Current populated tranche: Week 1, Monday-Saturday.",
+      "Current populated tranche: Weeks 1-9, Monday-Saturday.",
       "Menaion and fixed-feast overlays are out of scope."
     ],
     "weeks": {
@@ -1047,6 +1161,129 @@
         "saturday": {
           "label": "Saturday of the 5th Week of Luke",
           "gospel": "Luke 7:1-10"
+        }
+      },
+      "6": {
+        "monday": {
+          "label": "Monday of the 6th Week of Luke",
+          "gospel": "Luke 10:22-25"
+        },
+        "tuesday": {
+          "label": "Tuesday of the 6th Week of Luke",
+          "gospel": "Luke 11:1-10"
+        },
+        "wednesday": {
+          "label": "Wednesday of the 6th Week of Luke",
+          "gospel": "Luke 11:9-13",
+          "note": "Overlaps prior day at Luke 11:9-10."
+        },
+        "thursday": {
+          "label": "Thursday of the 6th Week of Luke",
+          "gospel": "Luke 11:14-23"
+        },
+        "friday": {
+          "label": "Friday of the 6th Week of Luke",
+          "gospel": "Luke 11:23-26",
+          "note": "Overlaps prior day at Luke 11:23."
+        },
+        "saturday": {
+          "label": "Saturday of the 6th Week of Luke",
+          "gospel": "Luke 8:16-21"
+        }
+      },
+      "7": {
+        "monday": {
+          "label": "Monday of the 7th Week of Luke",
+          "gospel": "Luke 11:29-33"
+        },
+        "tuesday": {
+          "label": "Tuesday of the 7th Week of Luke",
+          "gospel": "Luke 11:34-41"
+        },
+        "wednesday": {
+          "label": "Wednesday of the 7th Week of Luke",
+          "gospel": "Luke 11:42-46"
+        },
+        "thursday": {
+          "label": "Thursday of the 7th Week of Luke",
+          "gospel": "Luke 11:47-12:1"
+        },
+        "friday": {
+          "label": "Friday of the 7th Week of Luke",
+          "gospel": "Luke 12:2-12"
+        },
+        "saturday": {
+          "label": "Saturday of the 7th Week of Luke",
+          "gospel": "Luke 9:1-6"
+        }
+      },
+      "8": {
+        "monday": {
+          "label": "Monday of the 8th Week of Luke",
+          "gospel": "Luke 12:13-15, 22-31",
+          "gospel_segments": [
+            "Luke 12:13-15",
+            "Luke 12:22-31"
+          ],
+          "note": "Source gives Luke 12:13-15, 22b-31; resolver uses full verse 22."
+        },
+        "tuesday": {
+          "label": "Tuesday of the 8th Week of Luke",
+          "gospel": "Luke 12:42-48"
+        },
+        "wednesday": {
+          "label": "Wednesday of the 8th Week of Luke",
+          "gospel": "Luke 12:48-59",
+          "note": "Source gives Luke 12:48b-59; resolver uses full verse 48."
+        },
+        "thursday": {
+          "label": "Thursday of the 8th Week of Luke",
+          "gospel": "Luke 13:1-9"
+        },
+        "friday": {
+          "label": "Friday of the 8th Week of Luke",
+          "gospel": "Luke 13:31-35"
+        },
+        "saturday": {
+          "label": "Saturday of the 8th Week of Luke",
+          "gospel": "Luke 9:37-43",
+          "note": "Source gives Luke 9:37-43a; resolver uses full verse 43."
+        }
+      },
+      "9": {
+        "monday": {
+          "label": "Monday of the 9th Week of Luke",
+          "gospel": "Luke 14:1, 12-15",
+          "gospel_segments": [
+            "Luke 14:1",
+            "Luke 14:12-15"
+          ],
+          "note": "Discontinuous Gospel; single-verse opening segment."
+        },
+        "tuesday": {
+          "label": "Tuesday of the 9th Week of Luke",
+          "gospel": "Luke 14:25-35"
+        },
+        "wednesday": {
+          "label": "Wednesday of the 9th Week of Luke",
+          "gospel": "Luke 15:1-10"
+        },
+        "thursday": {
+          "label": "Thursday of the 9th Week of Luke",
+          "gospel": "Luke 16:1-9"
+        },
+        "friday": {
+          "label": "Friday of the 9th Week of Luke",
+          "gospel": "Luke 16:15-18; Luke 17:1-4",
+          "gospel_segments": [
+            "Luke 16:15-18",
+            "Luke 17:1-4"
+          ],
+          "note": "Discontinuous cross-chapter Gospel; omits Luke 16:19-31."
+        },
+        "saturday": {
+          "label": "Saturday of the 9th Week of Luke",
+          "gospel": "Luke 9:57-62"
         }
       }
     }
