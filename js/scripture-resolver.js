@@ -129,3 +129,115 @@ function extractBookRange(bookData, bookName, range, lastChapter) {
     });
     return { text: tempText + '\n\n', lastChapter };
 }
+
+// ─── resolveScripturePericope ────────────────────────────────────────────────
+// Global helper: normalize and resolve a scripture citation or explicit segment
+// array into a structured result. Does not modify getScriptureText() or callers.
+
+function _parseSubrange(s, inheritedChapter) {
+    // C1:V1-C2:V2
+    let m = s.match(/^(\d+):(\d+)-(\d+):(\d+)$/);
+    if (m) return { startChapter: +m[1], startVerse: +m[2], endChapter: +m[3], endVerse: +m[4] };
+    // C:V-V
+    m = s.match(/^(\d+):(\d+)-(\d+)$/);
+    if (m) return { startChapter: +m[1], startVerse: +m[2], endChapter: +m[1], endVerse: +m[3] };
+    // C:V  (single verse with chapter)
+    m = s.match(/^(\d+):(\d+)$/);
+    if (m) return { startChapter: +m[1], startVerse: +m[2], endChapter: +m[1], endVerse: +m[2] };
+    // V-C:V  (inherits chapter, crosses to new chapter)
+    m = s.match(/^(\d+)-(\d+):(\d+)$/);
+    if (m) return { startChapter: inheritedChapter || 1, startVerse: +m[1], endChapter: +m[2], endVerse: +m[3] };
+    // V-V  (inherits chapter, same chapter)
+    m = s.match(/^(\d+)-(\d+)$/);
+    if (m) return { startChapter: inheritedChapter || 1, startVerse: +m[1], endChapter: inheritedChapter || 1, endVerse: +m[2] };
+    // V  (single verse, inherits chapter)
+    m = s.match(/^(\d+)$/);
+    if (m) { const ch = inheritedChapter || 1; const v = +m[1]; return { startChapter: ch, startVerse: v, endChapter: ch, endVerse: v }; }
+    throw new Error('Cannot parse subrange: ' + s);
+}
+
+async function _getLastVerse(book, chapter) {
+    let bookName = book.toLowerCase().replace(/\s/g, '');
+    if (BOOK_ALIASES[bookName]) bookName = BOOK_ALIASES[bookName];
+    const filename = bookName + '.json';
+    const folder = NT_BOOKS.includes(bookName) ? 'NT' : 'OT';
+    if (!bibleCache.books[filename]) {
+        try {
+            const res = await fetch(`data/bible/${folder}/${filename}`);
+            bibleCache.books[filename] = await res.json();
+            bibleCache.accessOrder.push(filename);
+            if (bibleCache.accessOrder.length > bibleCache.MAX_CACHED_BOOKS) {
+                delete bibleCache.books[bibleCache.accessOrder.shift()];
+            }
+        } catch (err) { throw new Error('Cannot load book data for ' + book); }
+    }
+    const bookData = Array.isArray(bibleCache.books[filename])
+        ? bibleCache.books[filename][0] : bibleCache.books[filename];
+    const ch = bookData.chapters.find(c => c.num === chapter);
+    if (!ch || !ch.verses || ch.verses.length === 0) throw new Error('Chapter ' + chapter + ' not found in ' + book);
+    return Math.max(...ch.verses.map(v => v.num));
+}
+
+async function _normalizeCitationToSegments(citation) {
+    const segments = [];
+    const semiParts = citation.split(';').map(s => s.trim()).filter(Boolean);
+    let inheritedBook = null;
+    for (const semiPart of semiParts) {
+        const bookMatch = semiPart.match(/^((?:[1-3]\s+)?[A-Za-z]+(?:\s+[A-Za-z]+)*)\s+(\d.*)$/);
+        let book, rangeBlock;
+        if (bookMatch) {
+            book = bookMatch[1].trim();
+            inheritedBook = book;
+            rangeBlock = bookMatch[2].trim();
+        } else {
+            book = inheritedBook;
+            rangeBlock = semiPart;
+        }
+        if (!book) throw new Error('Cannot determine book name in: ' + semiPart);
+        const commaSubranges = rangeBlock.split(',').map(s => s.trim()).filter(Boolean);
+        let inheritedChapter = null;
+        for (const sub of commaSubranges) {
+            const p = _parseSubrange(sub, inheritedChapter);
+            inheritedChapter = p.startChapter;
+            if (p.endChapter > p.startChapter) {
+                const lastV = await _getLastVerse(book, p.startChapter);
+                segments.push(book + ' ' + p.startChapter + ':' + p.startVerse + '-' + lastV);
+                for (let ch = p.startChapter + 1; ch < p.endChapter; ch++) {
+                    const lv = await _getLastVerse(book, ch);
+                    segments.push(book + ' ' + ch + ':1-' + lv);
+                }
+                segments.push(book + ' ' + p.endChapter + ':1-' + p.endVerse);
+            } else {
+                segments.push(book + ' ' + p.startChapter + ':' + p.startVerse + '-' + p.endVerse);
+            }
+        }
+    }
+    return segments;
+}
+
+async function _resolveSegmentList(segments, label) {
+    const texts = [];
+    let unavailable = false;
+    for (const seg of segments) {
+        const t = await getScriptureText(seg);
+        if (!t || t.includes('[Scripture unavailable:')) unavailable = true;
+        texts.push(t || '');
+    }
+    return { text: texts.join('\n\n'), label, segments, unavailable, error: null };
+}
+
+async function resolveScripturePericope(refOrSegments) {
+    if (Array.isArray(refOrSegments)) {
+        const label = refOrSegments.join('; ');
+        return _resolveSegmentList(refOrSegments, label);
+    }
+    const label = String(refOrSegments);
+    try {
+        const segs = await _normalizeCitationToSegments(label);
+        return _resolveSegmentList(segs, label);
+    } catch (e) {
+        return { text: '', label, segments: [], unavailable: true, error: e.message };
+    }
+}
+
+window.resolveScripturePericope = resolveScripturePericope;
