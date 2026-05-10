@@ -193,9 +193,9 @@
       "Keyed by ordinary_week_after_pentecost + weekday.",
       "Week 1 begins Monday of the Holy Spirit, the day after Pentecost.",
       "Saturday is a keyed weekday under the same week but uses its own Saturday row from the lectionary.",
-      "Scope of this data family: Weeks 1-17, Monday-Saturday, before the Lukan Jump.",
+      "Scope of this data family: Weeks 1-17, Monday-Saturday. Gospel rows serve the ordinary pre-Lukan cycle; after the Lukan boundary, Epistle rows may continue as ordinary-cycle data while Gospel resolves from lukan_weekday_gospels.",
       "Current populated tranche: Weeks 1-17, Monday-Saturday.",
-      "Lukan Jump / Luke-cycle Gospel readings are out of scope.",
+      "Lukan Jump / Luke-cycle Gospel readings are modeled separately in lukan_weekday_gospels.",
       "Menaion and fixed-feast overlays are out of scope; this table is ordinary-cycle fallback data."
     ],
     "weeks": {
@@ -781,6 +781,50 @@
           "label": "Saturday of the 17th Week after Pentecost",
           "epistle": "1 Corinthians 14:20-25",
           "gospel": "Matthew 25:1-13"
+        }
+      }
+    }
+  },
+  "lukan_weekday_gospels": {
+    "_comment": [
+      "Weekday Gospel cycle after the Lukan Jump.",
+      "Begins Monday following the Sunday after the Exaltation of the Cross.",
+      "Gospel-only table; Epistles continue from ordinary_weekdays_after_pentecost where ordinary-cycle Epistle data exists.",
+      "Current populated tranche: Week 1, Monday-Saturday.",
+      "Menaion and fixed-feast overlays are out of scope."
+    ],
+    "weeks": {
+      "1": {
+        "monday": {
+          "label": "Monday of the 1st Week of Luke",
+          "gospel": "Luke 3:19-22"
+        },
+        "tuesday": {
+          "label": "Tuesday of the 1st Week of Luke",
+          "gospel": "Luke 3:23-38; Luke 4:1",
+          "gospel_segments": [
+            "Luke 3:23-38",
+            "Luke 4:1"
+          ],
+          "note": "Crosses chapter boundary; stored as explicit segments."
+        },
+        "wednesday": {
+          "label": "Wednesday of the 1st Week of Luke",
+          "gospel": "Luke 4:1-14"
+        },
+        "thursday": {
+          "label": "Thursday of the 1st Week of Luke",
+          "gospel": "Luke 4:16-22",
+          "note": "Source gives Luke 4:16-22a; resolver uses full verse 22."
+        },
+        "friday": {
+          "label": "Friday of the 1st Week of Luke",
+          "gospel": "Luke 4:22-30",
+          "note": "Overlaps verse 22 with Thursday; this reflects the lectionary sequence."
+        },
+        "saturday": {
+          "label": "Saturday of the 1st Week of Luke",
+          "gospel": "Luke 4:31-36"
         }
       }
     }

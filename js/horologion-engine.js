@@ -6853,6 +6853,47 @@ async function _resolveTypikaSlots(sections, dateObj) {
         };
     })();
 
+    const lukanWeekdayGospelKey = (() => {
+        if (dayOfWeek === 0) return null;
+
+        const WEEKDAY_MAP = {
+            1: 'monday',
+            2: 'tuesday',
+            3: 'wednesday',
+            4: 'thursday',
+            5: 'friday',
+            6: 'saturday'
+        };
+
+        const weekday = WEEKDAY_MAP[dayOfWeek];
+        if (!weekday) return null;
+
+        const localDate = new Date(dateObj.getFullYear(), dateObj.getMonth(), dateObj.getDate());
+
+        function lukanStartForYear(year) {
+            const elevation = new Date(year, 8, 14); // September 14 — Exaltation of the Cross
+            let daysToSundayAfter = (7 - elevation.getDay()) % 7;
+            if (daysToSundayAfter === 0) daysToSundayAfter = 7;
+
+            const sundayAfterElevation = new Date(year, 8, 14 + daysToSundayAfter);
+            return new Date(
+                sundayAfterElevation.getFullYear(),
+                sundayAfterElevation.getMonth(),
+                sundayAfterElevation.getDate() + 1
+            );
+        }
+
+        const lukanStart = lukanStartForYear(localDate.getFullYear());
+        if (localDate < lukanStart) return null;
+
+        const diffDays = Math.round((localDate - lukanStart) / 86400000);
+
+        return {
+            week: String(Math.floor(diffDays / 7) + 1),
+            weekday
+        };
+    })();
+
     const FIXED_SLOT_KEYS = new Set([
         'typika-usual-beginning',
         'typika-beatitudes',
@@ -7327,7 +7368,46 @@ async function _resolveTypikaSlots(sections, dateObj) {
                         continue;
                     }
                 }
-                if (ordinaryWeekdayAfterPentecostKey && _typikaLectionaryData && _typikaLectionaryData.ordinary_weekdays_after_pentecost) {
+                if (lukanWeekdayGospelKey && _typikaLectionaryData && _typikaLectionaryData.lukan_weekday_gospels) {
+                    const lwWeeks = _typikaLectionaryData.lukan_weekday_gospels.weeks || {};
+                    const lwEntry = lwWeeks[lukanWeekdayGospelKey.week] &&
+                        lwWeeks[lukanWeekdayGospelKey.week][lukanWeekdayGospelKey.weekday];
+
+                    if (lwEntry) {
+                        const lwGospelRef = lwEntry.gospel_segments || lwEntry.gospel;
+                        try {
+                            const result = await resolveScripturePericope(lwGospelRef);
+                            if (result.unavailable) {
+                                section.items[i] = {
+                                    type:       'rubric',
+                                    key:        item.key,
+                                    text:       `GOSPEL: ${result.label} — text unavailable. Consult the Evangelist for the full pericope.`,
+                                    resolvedAs: 'typika-lukan-weekday-gospel-week-' +
+                                        lukanWeekdayGospelKey.week + '-' +
+                                        lukanWeekdayGospelKey.weekday
+                                };
+                            } else {
+                                section.items[i] = {
+                                    type:       'text',
+                                    key:        item.key,
+                                    label:      'The Holy Gospel — ' + result.label,
+                                    text:       result.text,
+                                    resolvedAs: 'typika-lukan-weekday-gospel-week-' +
+                                        lukanWeekdayGospelKey.week + '-' +
+                                        lukanWeekdayGospelKey.weekday,
+                                    lukanWeek:  Number(lukanWeekdayGospelKey.week),
+                                    weekday:    lukanWeekdayGospelKey.weekday,
+                                    source:     'Metropolitan Cantor Institute — Lukan Jump weekday Gospel cycle'
+                                };
+                            }
+                        } catch (err) {
+                            console.warn('[HorologionEngine] Typika Lukan weekday gospel resolution failed:', err.message);
+                            // fall through: leave existing rubric in place
+                        }
+                        continue;
+                    }
+                }
+                if (!lukanWeekdayGospelKey && ordinaryWeekdayAfterPentecostKey && _typikaLectionaryData && _typikaLectionaryData.ordinary_weekdays_after_pentecost) {
                     const owWeeks = _typikaLectionaryData.ordinary_weekdays_after_pentecost.weeks || {};
                     const owEntry = owWeeks[ordinaryWeekdayAfterPentecostKey.week] &&
                         owWeeks[ordinaryWeekdayAfterPentecostKey.week][ordinaryWeekdayAfterPentecostKey.weekday];
