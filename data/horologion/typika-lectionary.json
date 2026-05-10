@@ -194,7 +194,7 @@
       "Week 1 begins Monday of the Holy Spirit, the day after Pentecost.",
       "Saturday is a keyed weekday under the same week but uses its own Saturday row from the lectionary.",
       "Scope of this data family: Weeks 1-17, Monday-Saturday, before the Lukan Jump.",
-      "Current populated tranche: Weeks 1-12, Monday-Saturday.",
+      "Current populated tranche: Weeks 1-17, Monday-Saturday.",
       "Lukan Jump / Luke-cycle Gospel readings are out of scope.",
       "Menaion and fixed-feast overlays are out of scope; this table is ordinary-cycle fallback data."
     ],
@@ -602,6 +602,185 @@
           "label": "Saturday of the 12th Week after Pentecost",
           "epistle": "1 Corinthians 1:26-29",
           "gospel": "Matthew 20:29-34"
+        }
+      },
+      "13": {
+        "monday": {
+          "label": "Monday of the 13th Week after Pentecost",
+          "epistle": "2 Corinthians 8:7-15",
+          "gospel": "Mark 3:6-12"
+        },
+        "tuesday": {
+          "label": "Tuesday of the 13th Week after Pentecost",
+          "epistle": "2 Corinthians 8:16-9:5",
+          "gospel": "Mark 3:13-19",
+          "note": "Gospel source ends at Mark 3:19a; resolver uses full verse 19."
+        },
+        "wednesday": {
+          "label": "Wednesday of the 13th Week after Pentecost",
+          "epistle": "2 Corinthians 9:12-10:7",
+          "gospel": "Mark 3:20-27"
+        },
+        "thursday": {
+          "label": "Thursday of the 13th Week after Pentecost",
+          "epistle": "2 Corinthians 10:7-18",
+          "gospel": "Mark 3:28-35",
+          "note": "Epistle source begins at 2 Corinthians 10:7b; resolver uses full verse 7."
+        },
+        "friday": {
+          "label": "Friday of the 13th Week after Pentecost",
+          "epistle": "2 Corinthians 11:5-21",
+          "gospel": "Mark 4:1-9",
+          "note": "Epistle source ends at 2 Corinthians 11:21a; resolver uses full verse 21."
+        },
+        "saturday": {
+          "label": "Saturday of the 13th Week after Pentecost",
+          "epistle": "1 Corinthians 2:5-9",
+          "gospel": "Matthew 22:15-22"
+        }
+      },
+      "14": {
+        "monday": {
+          "label": "Monday of the 14th Week after Pentecost",
+          "epistle": "2 Corinthians 12:10-19",
+          "gospel": "Mark 4:10-23"
+        },
+        "tuesday": {
+          "label": "Tuesday of the 14th Week after Pentecost",
+          "epistle": "2 Corinthians 12:20-13:2",
+          "gospel": "Mark 4:24-34"
+        },
+        "wednesday": {
+          "label": "Wednesday of the 14th Week after Pentecost",
+          "epistle": "2 Corinthians 13:3-13",
+          "gospel": "Mark 4:35-41"
+        },
+        "thursday": {
+          "label": "Thursday of the 14th Week after Pentecost",
+          "epistle": "Galatians 1:1-10; Galatians 1:20-24; Galatians 2:1-5",
+          "epistle_segments": [
+            "Galatians 1:1-10",
+            "Galatians 1:20-24",
+            "Galatians 2:1-5"
+          ],
+          "gospel": "Mark 5:1-20",
+          "note": "Complex discontinuous cross-chapter Epistle."
+        },
+        "friday": {
+          "label": "Friday of the 14th Week after Pentecost",
+          "epistle": "Galatians 2:6-10",
+          "gospel": "Mark 5:22-25; Mark 5:35-43; Mark 6:1-1",
+          "gospel_segments": [
+            "Mark 5:22-25",
+            "Mark 5:35-43",
+            "Mark 6:1-1"
+          ],
+          "note": "Complex discontinuous cross-chapter Gospel."
+        },
+        "saturday": {
+          "label": "Saturday of the 14th Week after Pentecost",
+          "epistle": "1 Corinthians 4:1-5",
+          "gospel": "Matthew 23:1-12"
+        }
+      },
+      "15": {
+        "monday": {
+          "label": "Monday of the 15th Week after Pentecost",
+          "epistle": "Galatians 2:11-16",
+          "gospel": "Mark 5:24-34",
+          "note": "Gospel source begins at Mark 5:24b; resolver uses full verse 24."
+        },
+        "tuesday": {
+          "label": "Tuesday of the 15th Week after Pentecost",
+          "epistle": "Galatians 2:21-3:7",
+          "gospel": "Mark 6:1-7"
+        },
+        "wednesday": {
+          "label": "Wednesday of the 15th Week after Pentecost",
+          "epistle": "Galatians 3:15-22",
+          "gospel": "Mark 6:7-13"
+        },
+        "thursday": {
+          "label": "Thursday of the 15th Week after Pentecost",
+          "epistle": "Galatians 3:23-4:5",
+          "gospel": "Mark 6:30-45"
+        },
+        "friday": {
+          "label": "Friday of the 15th Week after Pentecost",
+          "epistle": "Galatians 4:8-21",
+          "gospel": "Mark 6:45-53"
+        },
+        "saturday": {
+          "label": "Saturday of the 15th Week after Pentecost",
+          "epistle": "1 Corinthians 4:17-5:5",
+          "gospel": "Matthew 24:1-13"
+        }
+      },
+      "16": {
+        "monday": {
+          "label": "Monday of the 16th Week after Pentecost",
+          "epistle": "Galatians 4:28-5:10",
+          "gospel": "Mark 6:54-7:8",
+          "note": "Gospel source ends at Mark 7:8a; resolver uses full verse 8."
+        },
+        "tuesday": {
+          "label": "Tuesday of the 16th Week after Pentecost",
+          "epistle": "Galatians 5:11-21",
+          "gospel": "Mark 7:5-16"
+        },
+        "wednesday": {
+          "label": "Wednesday of the 16th Week after Pentecost",
+          "epistle": "Galatians 6:2-10",
+          "gospel": "Mark 7:14-24",
+          "note": "Gospel source ends at Mark 7:24a; resolver uses full verse 24."
+        },
+        "thursday": {
+          "label": "Thursday of the 16th Week after Pentecost",
+          "epistle": "Ephesians 1:1-9",
+          "gospel": "Mark 7:24-30"
+        },
+        "friday": {
+          "label": "Friday of the 16th Week after Pentecost",
+          "epistle": "Ephesians 1:7-17",
+          "gospel": "Mark 8:1-10"
+        },
+        "saturday": {
+          "label": "Saturday of the 16th Week after Pentecost",
+          "epistle": "1 Corinthians 10:23-28",
+          "gospel": "Matthew 24:34-44"
+        }
+      },
+      "17": {
+        "monday": {
+          "label": "Monday of the 17th Week after Pentecost",
+          "epistle": "Ephesians 1:22-2:3",
+          "gospel": "Mark 10:46-52"
+        },
+        "tuesday": {
+          "label": "Tuesday of the 17th Week after Pentecost",
+          "epistle": "Ephesians 2:19-3:7",
+          "gospel": "Mark 11:11-23"
+        },
+        "wednesday": {
+          "label": "Wednesday of the 17th Week after Pentecost",
+          "epistle": "Ephesians 3:8-21",
+          "gospel": "Mark 11:23-26"
+        },
+        "thursday": {
+          "label": "Thursday of the 17th Week after Pentecost",
+          "epistle": "Ephesians 4:14-19",
+          "gospel": "Mark 11:27-33"
+        },
+        "friday": {
+          "label": "Friday of the 17th Week after Pentecost",
+          "epistle": "Ephesians 4:17-25",
+          "gospel": "Mark 12:1-12",
+          "note": "Epistle source ends at Ephesians 4:25a; resolver uses full verse 25."
+        },
+        "saturday": {
+          "label": "Saturday of the 17th Week after Pentecost",
+          "epistle": "1 Corinthians 14:20-25",
+          "gospel": "Matthew 25:1-13"
         }
       }
     }
