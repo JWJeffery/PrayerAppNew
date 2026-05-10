@@ -6845,7 +6845,7 @@ async function _resolveTypikaSlots(sections, dateObj) {
         if (diffDays < 50) return null;
 
         const week = Math.floor((diffDays - 50) / 7) + 1;
-        if (week < 1 || week > 17) return null;
+        if (week < 1 || week > 29) return null;
 
         return {
             week: String(week),
@@ -7412,7 +7412,7 @@ async function _resolveTypikaSlots(sections, dateObj) {
                     const owEntry = owWeeks[ordinaryWeekdayAfterPentecostKey.week] &&
                         owWeeks[ordinaryWeekdayAfterPentecostKey.week][ordinaryWeekdayAfterPentecostKey.weekday];
 
-                    if (owEntry) {
+                    if (owEntry && (owEntry.gospel_segments || owEntry.gospel)) {
                         const owGospelRef = owEntry.gospel_segments || owEntry.gospel;
                         try {
                             const result = await resolveScripturePericope(owGospelRef);

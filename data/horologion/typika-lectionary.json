@@ -782,6 +782,121 @@
           "epistle": "1 Corinthians 14:20-25",
           "gospel": "Matthew 25:1-13"
         }
+      },
+      "18": {
+        "monday": {
+          "label": "Monday of the 18th Week after Pentecost",
+          "epistle": "Ephesians 4:25-32"
+        },
+        "tuesday": {
+          "label": "Tuesday of the 18th Week after Pentecost",
+          "epistle": "Ephesians 5:20-26"
+        },
+        "wednesday": {
+          "label": "Wednesday of the 18th Week after Pentecost",
+          "epistle": "Ephesians 5:25-33",
+          "note": "Source gives Ephesians 5:25-33a; resolver uses full verse 33."
+        },
+        "thursday": {
+          "label": "Thursday of the 18th Week after Pentecost",
+          "epistle": "Ephesians 5:33-6:9"
+        },
+        "friday": {
+          "label": "Friday of the 18th Week after Pentecost",
+          "epistle": "Ephesians 6:18-24"
+        },
+        "saturday": {
+          "label": "Saturday of the 18th Week after Pentecost",
+          "epistle": "1 Corinthians 15:39-45"
+        }
+      },
+      "19": {
+        "monday": {
+          "label": "Monday of the 19th Week after Pentecost",
+          "epistle": "Philippians 1:1-7"
+        },
+        "tuesday": {
+          "label": "Tuesday of the 19th Week after Pentecost",
+          "epistle": "Philippians 1:8-14"
+        },
+        "wednesday": {
+          "label": "Wednesday of the 19th Week after Pentecost",
+          "epistle": "Philippians 1:12-20",
+          "note": "Source gives Philippians 1:12-20a; resolver uses full verse 20."
+        },
+        "thursday": {
+          "label": "Thursday of the 19th Week after Pentecost",
+          "epistle": "Philippians 1:20-27",
+          "note": "Source gives Philippians 1:20b-27a; resolver uses full boundary verses."
+        },
+        "friday": {
+          "label": "Friday of the 19th Week after Pentecost",
+          "epistle": "Philippians 1:27-2:4"
+        },
+        "saturday": {
+          "label": "Saturday of the 19th Week after Pentecost",
+          "epistle": "1 Corinthians 15:58-16:3"
+        }
+      },
+      "20": {
+        "monday": {
+          "label": "Monday of the 20th Week after Pentecost",
+          "epistle": "Philippians 2:12-16",
+          "note": "Source gives Philippians 2:12-16a; resolver uses full verse 16."
+        },
+        "tuesday": {
+          "label": "Tuesday of the 20th Week after Pentecost",
+          "epistle": "Philippians 2:16-23",
+          "note": "Source gives Philippians 2:16b-23; resolver uses full verse 16."
+        },
+        "wednesday": {
+          "label": "Wednesday of the 20th Week after Pentecost",
+          "epistle": "Philippians 2:24-30"
+        },
+        "thursday": {
+          "label": "Thursday of the 20th Week after Pentecost",
+          "epistle": "Philippians 3:1-8"
+        },
+        "friday": {
+          "label": "Friday of the 20th Week after Pentecost",
+          "epistle": "Philippians 3:8-19",
+          "note": "Source gives Philippians 3:8b-19; resolver uses full verse 8."
+        },
+        "saturday": {
+          "label": "Saturday of the 20th Week after Pentecost",
+          "epistle": "2 Corinthians 1:8-11"
+        }
+      },
+      "21": {
+        "monday": {
+          "label": "Monday of the 21st Week after Pentecost",
+          "epistle": "Philippians 4:10-23"
+        },
+        "tuesday": {
+          "label": "Tuesday of the 21st Week after Pentecost",
+          "epistle": "Colossians 1:1-2, 7-11",
+          "epistle_segments": [
+            "Colossians 1:1-2",
+            "Colossians 1:7-11"
+          ],
+          "note": "Source gives Colossians 1:1-2a, 7-11; resolver uses full verse 2."
+        },
+        "wednesday": {
+          "label": "Wednesday of the 21st Week after Pentecost",
+          "epistle": "Colossians 1:18-23"
+        },
+        "thursday": {
+          "label": "Thursday of the 21st Week after Pentecost",
+          "epistle": "Colossians 1:24-29"
+        },
+        "friday": {
+          "label": "Friday of the 21st Week after Pentecost",
+          "epistle": "Colossians 2:1-7"
+        },
+        "saturday": {
+          "label": "Saturday of the 21st Week after Pentecost",
+          "epistle": "2 Corinthians 3:12-18"
+        }
       }
     }
   },
@@ -825,6 +940,113 @@
         "saturday": {
           "label": "Saturday of the 1st Week of Luke",
           "gospel": "Luke 4:31-36"
+        }
+      },
+      "2": {
+        "monday": {
+          "label": "Monday of the 2nd Week of Luke",
+          "gospel": "Luke 4:37-44"
+        },
+        "tuesday": {
+          "label": "Tuesday of the 2nd Week of Luke",
+          "gospel": "Luke 5:12-16"
+        },
+        "wednesday": {
+          "label": "Wednesday of the 2nd Week of Luke",
+          "gospel": "Luke 5:33-39"
+        },
+        "thursday": {
+          "label": "Thursday of the 2nd Week of Luke",
+          "gospel": "Luke 6:12-19"
+        },
+        "friday": {
+          "label": "Friday of the 2nd Week of Luke",
+          "gospel": "Luke 6:17-23",
+          "note": "Source gives Luke 6:17-23a; resolver uses full verse 23."
+        },
+        "saturday": {
+          "label": "Saturday of the 2nd Week of Luke",
+          "gospel": "Luke 5:17-26"
+        }
+      },
+      "3": {
+        "monday": {
+          "label": "Monday of the 3rd Week of Luke",
+          "gospel": "Luke 6:24-30"
+        },
+        "tuesday": {
+          "label": "Tuesday of the 3rd Week of Luke",
+          "gospel": "Luke 6:37-45"
+        },
+        "wednesday": {
+          "label": "Wednesday of the 3rd Week of Luke",
+          "gospel": "Luke 6:46-7:1"
+        },
+        "thursday": {
+          "label": "Thursday of the 3rd Week of Luke",
+          "gospel": "Luke 7:17-30"
+        },
+        "friday": {
+          "label": "Friday of the 3rd Week of Luke",
+          "gospel": "Luke 7:31-35"
+        },
+        "saturday": {
+          "label": "Saturday of the 3rd Week of Luke",
+          "gospel": "Luke 5:27-32"
+        }
+      },
+      "4": {
+        "monday": {
+          "label": "Monday of the 4th Week of Luke",
+          "gospel": "Luke 7:36-50"
+        },
+        "tuesday": {
+          "label": "Tuesday of the 4th Week of Luke",
+          "gospel": "Luke 8:1-3"
+        },
+        "wednesday": {
+          "label": "Wednesday of the 4th Week of Luke",
+          "gospel": "Luke 8:22-25"
+        },
+        "thursday": {
+          "label": "Thursday of the 4th Week of Luke",
+          "gospel": "Luke 9:7-11"
+        },
+        "friday": {
+          "label": "Friday of the 4th Week of Luke",
+          "gospel": "Luke 9:12-18",
+          "note": "Source gives Luke 9:12b-18a; resolver uses full boundary verses."
+        },
+        "saturday": {
+          "label": "Saturday of the 4th Week of Luke",
+          "gospel": "Luke 6:1-10"
+        }
+      },
+      "5": {
+        "monday": {
+          "label": "Monday of the 5th Week of Luke",
+          "gospel": "Luke 9:18-22"
+        },
+        "tuesday": {
+          "label": "Tuesday of the 5th Week of Luke",
+          "gospel": "Luke 9:23-27"
+        },
+        "wednesday": {
+          "label": "Wednesday of the 5th Week of Luke",
+          "gospel": "Luke 9:44-50"
+        },
+        "thursday": {
+          "label": "Thursday of the 5th Week of Luke",
+          "gospel": "Luke 9:49-56",
+          "note": "Overlaps prior day at Luke 9:49-50."
+        },
+        "friday": {
+          "label": "Friday of the 5th Week of Luke",
+          "gospel": "Luke 10:1-15"
+        },
+        "saturday": {
+          "label": "Saturday of the 5th Week of Luke",
+          "gospel": "Luke 7:1-10"
         }
       }
     }
