@@ -1912,6 +1912,22 @@
           "epistle": "Hebrews 7:7-17",
           "gospel": "Luke 2:22-40"
         },
+        "03-25_annunciation": {
+          "label": "Annunciation of our Most Holy Lady, Theotokos and Ever-Virgin Mary",
+          "kind": "fixed_date",
+          "fixed_date": "03-25",
+          "rank": "great_feast",
+          "feast_type": "theotokos_lordly",
+          "collision_class": "lenten_high_collision",
+          "collision_policy": "guarded_fixed_overlay; Sunday and Lazarus-or-later collisions deferred pending annual Typikon merge policy",
+          "service_context": "annunciation_divine_liturgy",
+          "service_context_lenten_weekday": "vespers_liturgy_of_annunciation",
+          "annual_typikon_exact_order": "deferred",
+          "matins_gospel_metadata_only": "Luke 1:39-49, 56",
+          "epistle": "Hebrews 2:11-18",
+          "gospel": "Luke 1:24-38",
+          "note": "Annunciation is allowed as a guarded fixed-date overlay on non-Sunday March 25 dates before Lazarus Saturday. Sunday and Lazarus-or-later collisions require a later temporal-feast merge / annual Typikon policy."
+        },
         "06-24_nativity_forerunner": {
           "label": "Nativity of the Holy Glorious Prophet, Forerunner and Baptist John",
           "kind": "fixed_date",

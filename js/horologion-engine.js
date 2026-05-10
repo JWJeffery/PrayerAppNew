@@ -6966,6 +6966,7 @@ async function _resolveTypikaSlots(sections, dateObj) {
             '01-06': '01-06_theophany',
             '01-07': '01-07_synaxis_forerunner',
             '02-02': '02-02_meeting_lord',
+            '03-25': '03-25_annunciation',
             '06-24': '06-24_nativity_forerunner',
             '06-29': '06-29_peter_paul',
             '08-06': '08-06_transfiguration',
@@ -6976,8 +6977,36 @@ async function _resolveTypikaSlots(sections, dateObj) {
             '11-21': '11-21_entry_theotokos'
         };
 
-        if (fixedKeyMap[mmdd]) {
-            keys.push(fixedKeyMap[mmdd]);
+        function orthodoxPaschaForAnnunciationGuard(year) {
+            const a = year % 4;
+            const b = year % 7;
+            const c = year % 19;
+            const d = (19 * c + 15) % 30;
+            const e = (2 * a + 4 * b - d + 34) % 7;
+            const month = Math.floor((d + e + 114) / 31);
+            const day = ((d + e + 114) % 31) + 1;
+
+            // Julian Pascha converted to Gregorian by +13 days for the current project range.
+            return new Date(year, month - 1, day + 13);
+        }
+
+        function shouldRouteAnnunciationOverlay() {
+            if (mmdd !== '03-25') return true;
+
+            // Current safe tranche: route Annunciation on weekdays/Saturdays before Lazarus Saturday.
+            // Sunday collisions need temporal + fixed-feast merge policy. Lazarus-or-later collisions
+            // need annual Typikon handling. Do not silently replace those temporal branches.
+            if (dayOfWeek === 0) return false;
+
+            const pascha = orthodoxPaschaForAnnunciationGuard(year);
+            const daysBeforePascha = Math.round((pascha - localDate) / 86400000);
+
+            return daysBeforePascha > 8;
+        }
+
+        const fixedKey = fixedKeyMap[mmdd];
+        if (fixedKey && shouldRouteAnnunciationOverlay()) {
+            keys.push(fixedKey);
         }
 
         if (dayOfWeek === 0) {
