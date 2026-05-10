@@ -194,7 +194,7 @@
       "Week 1 begins Monday of the Holy Spirit, the day after Pentecost.",
       "Saturday is a keyed weekday under the same week but uses its own Saturday row from the lectionary.",
       "Scope of this data family: Weeks 1-17, Monday-Saturday. Gospel rows serve the ordinary pre-Lukan cycle; after the Lukan boundary, Epistle rows may continue as ordinary-cycle data while Gospel resolves from lukan_weekday_gospels.",
-      "Current populated tranche: Weeks 1-29, Monday-Saturday. Weeks 18-29 are Epistle-only support rows for the post-Lukan split-key cycle.",
+      "Current populated tranche: Weeks 1-30, Monday-Saturday. Weeks 18-30 are Epistle-only support rows for the post-Lukan split-key cycle.",
       "Lukan Jump / Luke-cycle Gospel readings are modeled separately in lukan_weekday_gospels.",
       "Menaion and fixed-feast overlays are out of scope; this table is ordinary-cycle fallback data."
     ],
@@ -1136,6 +1136,42 @@
           "label": "Saturday of the 29th Week after Pentecost",
           "epistle": "Ephesians 2:11-13"
         }
+      },
+      "30": {
+        "monday": {
+          "label": "Monday of the 30th Week after Pentecost",
+          "epistle": "Hebrews 8:7-13"
+        },
+        "tuesday": {
+          "label": "Tuesday of the 30th Week after Pentecost",
+          "epistle": "Hebrews 9:8-10, 15-23",
+          "epistle_segments": [
+            "Hebrews 9:8-10",
+            "Hebrews 9:15-23"
+          ],
+          "note": "Discontinuous Epistle."
+        },
+        "wednesday": {
+          "label": "Wednesday of the 30th Week after Pentecost",
+          "epistle": "Hebrews 10:1-18"
+        },
+        "thursday": {
+          "label": "Thursday of the 30th Week after Pentecost",
+          "epistle": "Hebrews 10:35-11:7"
+        },
+        "friday": {
+          "label": "Friday of the 30th Week after Pentecost",
+          "epistle": "Hebrews 11:8, 11-16",
+          "epistle_segments": [
+            "Hebrews 11:8",
+            "Hebrews 11:11-16"
+          ],
+          "note": "Single verse plus range."
+        },
+        "saturday": {
+          "label": "Saturday of the 30th Week after Pentecost",
+          "epistle": "Ephesians 5:1-8"
+        }
       }
     }
   },
@@ -1498,6 +1534,46 @@
         "saturday": {
           "label": "Saturday of the 12th Week of Luke",
           "gospel": "Luke 13:18-29"
+        }
+      }
+    }
+  },
+  "post_lukan_weekday_gospels": {
+    "_comment": [
+      "Post-Lukan weekday Gospel cycle after the true Monday-Saturday Lukan weekday table ends.",
+      "Keyed by ordinary_week_after_pentecost + weekday, not by lukan_week.",
+      "After Lukan Week 12 / ordinary Week 29, Monday-Friday use Mark while Saturday retains Luke.",
+      "Current populated pilot: ordinary Week 30 only.",
+      "Nativity/Theophany and Triodion/pre-Lenten interruption gates are engine-level guards; fixed-feast overlays remain out of scope."
+    ],
+    "weeks": {
+      "30": {
+        "monday": {
+          "label": "Monday of the 30th Week after Pentecost",
+          "gospel": "Mark 8:11-21"
+        },
+        "tuesday": {
+          "label": "Tuesday of the 30th Week after Pentecost",
+          "gospel": "Mark 8:22-26"
+        },
+        "wednesday": {
+          "label": "Wednesday of the 30th Week after Pentecost",
+          "gospel": "Mark 8:30-34",
+          "note": "Skipped verses before Mark 8:30 are intentional in the lectionary table."
+        },
+        "thursday": {
+          "label": "Thursday of the 30th Week after Pentecost",
+          "gospel": "Mark 9:10-16"
+        },
+        "friday": {
+          "label": "Friday of the 30th Week after Pentecost",
+          "gospel": "Mark 9:33-41",
+          "note": "Skipped intervening verses are intentional in the lectionary table."
+        },
+        "saturday": {
+          "label": "Saturday of the 30th Week after Pentecost",
+          "gospel": "Luke 14:1-11",
+          "note": "Saturday remains Luke while Monday-Friday use Mark."
         }
       }
     }

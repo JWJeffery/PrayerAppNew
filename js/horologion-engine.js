@@ -6833,19 +6833,31 @@ async function _resolveTypikaSlots(sections, dateObj) {
         const weekday = WEEKDAY_MAP[dayOfWeek];
         if (!weekday) return null;
 
-        const _year     = dateObj.getFullYear();
-        const localDate = new Date(_year, dateObj.getMonth(), dateObj.getDate());
-        let   _pascha   = _getOrthodoxPascha(_year);
-        if (_pascha > localDate) _pascha = _getOrthodoxPascha(_year - 1);
+        function orthodoxPascha(year) {
+            const a = year % 4;
+            const b = year % 7;
+            const c = year % 19;
+            const d = (19 * c + 15) % 30;
+            const e = (2 * a + 4 * b - d + 34) % 7;
+            const month = Math.floor((d + e + 114) / 31);
+            const day = ((d + e + 114) % 31) + 1;
 
-        const diffDays = Math.round((localDate - _pascha) / 86400000);
+            // Julian Pascha converted to Gregorian by +13 days for the current project range.
+            return new Date(year, month - 1, day + 13);
+        }
 
-        // Week 1 begins Monday of the Holy Spirit: Pascha + 50.
-        // Sundays are excluded above; Saturdays use their own keyed row.
+        const localDate = new Date(dateObj.getFullYear(), dateObj.getMonth(), dateObj.getDate());
+
+        let pascha = orthodoxPascha(localDate.getFullYear());
+        if (localDate < pascha) {
+            pascha = orthodoxPascha(localDate.getFullYear() - 1);
+        }
+
+        const diffDays = Math.round((localDate - pascha) / 86400000);
         if (diffDays < 50) return null;
 
         const week = Math.floor((diffDays - 50) / 7) + 1;
-        if (week < 1 || week > 29) return null;
+        if (week < 1 || week > 30) return null;
 
         return {
             week: String(week),
@@ -7461,6 +7473,45 @@ async function _resolveTypikaSlots(sections, dateObj) {
                             }
                         } catch (err) {
                             console.warn('[HorologionEngine] Typika Lukan weekday gospel resolution failed:', err.message);
+                            // fall through: leave existing rubric in place
+                        }
+                        continue;
+                    }
+                }
+                if (!typikaWeekdayCycleBlocked && ordinaryWeekdayAfterPentecostKey && _typikaLectionaryData && _typikaLectionaryData.post_lukan_weekday_gospels) {
+                    const plWeeks = _typikaLectionaryData.post_lukan_weekday_gospels.weeks || {};
+                    const plEntry = plWeeks[ordinaryWeekdayAfterPentecostKey.week] &&
+                        plWeeks[ordinaryWeekdayAfterPentecostKey.week][ordinaryWeekdayAfterPentecostKey.weekday];
+
+                    if (plEntry) {
+                        const plGospelRef = plEntry.gospel_segments || plEntry.gospel;
+                        try {
+                            const result = await resolveScripturePericope(plGospelRef);
+                            if (result.unavailable) {
+                                section.items[i] = {
+                                    type:       'rubric',
+                                    key:        item.key,
+                                    text:       `GOSPEL: ${result.label} — text unavailable. Consult the Evangelist for the full pericope.`,
+                                    resolvedAs: 'typika-post-lukan-weekday-gospel-week-' +
+                                        ordinaryWeekdayAfterPentecostKey.week + '-' +
+                                        ordinaryWeekdayAfterPentecostKey.weekday
+                                };
+                            } else {
+                                section.items[i] = {
+                                    type:       'text',
+                                    key:        item.key,
+                                    label:      'The Holy Gospel — ' + result.label,
+                                    text:       result.text,
+                                    resolvedAs: 'typika-post-lukan-weekday-gospel-week-' +
+                                        ordinaryWeekdayAfterPentecostKey.week + '-' +
+                                        ordinaryWeekdayAfterPentecostKey.weekday,
+                                    ordinaryWeekAfterPentecost: Number(ordinaryWeekdayAfterPentecostKey.week),
+                                    weekday:                    ordinaryWeekdayAfterPentecostKey.weekday,
+                                    source:                     'Metropolitan Cantor Institute / Byzantine weekday post-Lukan Gospel cycle'
+                                };
+                            }
+                        } catch (err) {
+                            console.warn('[HorologionEngine] Typika post-Lukan weekday gospel resolution failed:', err.message);
                             // fall through: leave existing rubric in place
                         }
                         continue;
