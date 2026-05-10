@@ -194,7 +194,7 @@
       "Week 1 begins Monday of the Holy Spirit, the day after Pentecost.",
       "Saturday is a keyed weekday under the same week but uses its own Saturday row from the lectionary.",
       "Scope of this data family: Weeks 1-17, Monday-Saturday. Gospel rows serve the ordinary pre-Lukan cycle; after the Lukan boundary, Epistle rows may continue as ordinary-cycle data while Gospel resolves from lukan_weekday_gospels.",
-      "Current populated tranche: Weeks 1-25, Monday-Saturday. Weeks 18-25 are Epistle-only support rows for the post-Lukan split-key cycle.",
+      "Current populated tranche: Weeks 1-29, Monday-Saturday. Weeks 18-29 are Epistle-only support rows for the post-Lukan split-key cycle.",
       "Lukan Jump / Luke-cycle Gospel readings are modeled separately in lukan_weekday_gospels.",
       "Menaion and fixed-feast overlays are out of scope; this table is ordinary-cycle fallback data."
     ],
@@ -1011,6 +1011,131 @@
           "label": "Saturday of the 25th Week after Pentecost",
           "epistle": "Galatians 1:3-10"
         }
+      },
+      "26": {
+        "monday": {
+          "label": "Monday of the 26th Week after Pentecost",
+          "epistle": "1 Timothy 1:1-7"
+        },
+        "tuesday": {
+          "label": "Tuesday of the 26th Week after Pentecost",
+          "epistle": "1 Timothy 1:8-14"
+        },
+        "wednesday": {
+          "label": "Wednesday of the 26th Week after Pentecost",
+          "epistle": "1 Timothy 1:18-20; 1 Timothy 2:8-15",
+          "epistle_segments": [
+            "1 Timothy 1:18-20",
+            "1 Timothy 2:8-15"
+          ],
+          "note": "Discontinuous cross-chapter Epistle."
+        },
+        "thursday": {
+          "label": "Thursday of the 26th Week after Pentecost",
+          "epistle": "1 Timothy 3:1-13"
+        },
+        "friday": {
+          "label": "Friday of the 26th Week after Pentecost",
+          "epistle": "1 Timothy 4:4-8, 16",
+          "epistle_segments": [
+            "1 Timothy 4:4-8",
+            "1 Timothy 4:16"
+          ],
+          "note": "Discontinuous Epistle."
+        },
+        "saturday": {
+          "label": "Saturday of the 26th Week after Pentecost",
+          "epistle": "Galatians 3:8-12"
+        }
+      },
+      "27": {
+        "monday": {
+          "label": "Monday of the 27th Week after Pentecost",
+          "epistle": "1 Timothy 5:1-10"
+        },
+        "tuesday": {
+          "label": "Tuesday of the 27th Week after Pentecost",
+          "epistle": "1 Timothy 5:11-21"
+        },
+        "wednesday": {
+          "label": "Wednesday of the 27th Week after Pentecost",
+          "epistle": "1 Timothy 5:22-6:11",
+          "note": "Source gives 1 Timothy 5:22-6:11a; resolver uses full verse 11."
+        },
+        "thursday": {
+          "label": "Thursday of the 27th Week after Pentecost",
+          "epistle": "1 Timothy 6:17-21"
+        },
+        "friday": {
+          "label": "Friday of the 27th Week after Pentecost",
+          "epistle": "2 Timothy 1:1-2, 8-18",
+          "epistle_segments": [
+            "2 Timothy 1:1-2",
+            "2 Timothy 1:8-18"
+          ],
+          "note": "Discontinuous Epistle."
+        },
+        "saturday": {
+          "label": "Saturday of the 27th Week after Pentecost",
+          "epistle": "Galatians 5:22-6:2"
+        }
+      },
+      "28": {
+        "monday": {
+          "label": "Monday of the 28th Week after Pentecost",
+          "epistle": "2 Timothy 2:20-26"
+        },
+        "tuesday": {
+          "label": "Tuesday of the 28th Week after Pentecost",
+          "epistle": "2 Timothy 3:16-4:4"
+        },
+        "wednesday": {
+          "label": "Wednesday of the 28th Week after Pentecost",
+          "epistle": "2 Timothy 4:9-22"
+        },
+        "thursday": {
+          "label": "Thursday of the 28th Week after Pentecost",
+          "epistle": "Titus 1:5-2:1"
+        },
+        "friday": {
+          "label": "Friday of the 28th Week after Pentecost",
+          "epistle": "Titus 1:15-2:10"
+        },
+        "saturday": {
+          "label": "Saturday of the 28th Week after Pentecost",
+          "epistle": "Ephesians 1:16-23"
+        }
+      },
+      "29": {
+        "monday": {
+          "label": "Monday of the 29th Week after Pentecost",
+          "epistle": "Hebrews 3:5-11, 17-19",
+          "epistle_segments": [
+            "Hebrews 3:5-11",
+            "Hebrews 3:17-19"
+          ],
+          "note": "Discontinuous Epistle."
+        },
+        "tuesday": {
+          "label": "Tuesday of the 29th Week after Pentecost",
+          "epistle": "Hebrews 4:1-13"
+        },
+        "wednesday": {
+          "label": "Wednesday of the 29th Week after Pentecost",
+          "epistle": "Hebrews 5:11-6:8"
+        },
+        "thursday": {
+          "label": "Thursday of the 29th Week after Pentecost",
+          "epistle": "Hebrews 7:1-6"
+        },
+        "friday": {
+          "label": "Friday of the 29th Week after Pentecost",
+          "epistle": "Hebrews 7:18-25"
+        },
+        "saturday": {
+          "label": "Saturday of the 29th Week after Pentecost",
+          "epistle": "Ephesians 2:11-13"
+        }
       }
     }
   },
@@ -1019,7 +1144,7 @@
       "Weekday Gospel cycle after the Lukan Jump.",
       "Begins Monday following the Sunday after the Exaltation of the Cross.",
       "Gospel-only table; Epistles continue from ordinary_weekdays_after_pentecost where ordinary-cycle Epistle data exists.",
-      "Current populated tranche: Weeks 1-9, Monday-Saturday.",
+      "Current populated tranche: Weeks 1-12, Monday-Saturday.",
       "Menaion and fixed-feast overlays are out of scope."
     ],
     "weeks": {
@@ -1284,6 +1409,95 @@
         "saturday": {
           "label": "Saturday of the 9th Week of Luke",
           "gospel": "Luke 9:57-62"
+        }
+      },
+      "10": {
+        "monday": {
+          "label": "Monday of the 10th Week of Luke",
+          "gospel": "Luke 17:20-25"
+        },
+        "tuesday": {
+          "label": "Tuesday of the 10th Week of Luke",
+          "gospel": "Luke 17:26-37"
+        },
+        "wednesday": {
+          "label": "Wednesday of the 10th Week of Luke",
+          "gospel": "Luke 18:15-17, 26-30",
+          "gospel_segments": [
+            "Luke 18:15-17",
+            "Luke 18:26-30"
+          ],
+          "note": "Discontinuous Gospel."
+        },
+        "thursday": {
+          "label": "Thursday of the 10th Week of Luke",
+          "gospel": "Luke 18:31-34"
+        },
+        "friday": {
+          "label": "Friday of the 10th Week of Luke",
+          "gospel": "Luke 19:12-28"
+        },
+        "saturday": {
+          "label": "Saturday of the 10th Week of Luke",
+          "gospel": "Luke 10:19-21"
+        }
+      },
+      "11": {
+        "monday": {
+          "label": "Monday of the 11th Week of Luke",
+          "gospel": "Luke 19:37-44"
+        },
+        "tuesday": {
+          "label": "Tuesday of the 11th Week of Luke",
+          "gospel": "Luke 19:45-48"
+        },
+        "wednesday": {
+          "label": "Wednesday of the 11th Week of Luke",
+          "gospel": "Luke 20:1-8"
+        },
+        "thursday": {
+          "label": "Thursday of the 11th Week of Luke",
+          "gospel": "Luke 20:9-18"
+        },
+        "friday": {
+          "label": "Friday of the 11th Week of Luke",
+          "gospel": "Luke 20:19-26"
+        },
+        "saturday": {
+          "label": "Saturday of the 11th Week of Luke",
+          "gospel": "Luke 12:32-40"
+        }
+      },
+      "12": {
+        "monday": {
+          "label": "Monday of the 12th Week of Luke",
+          "gospel": "Luke 20:27-44"
+        },
+        "tuesday": {
+          "label": "Tuesday of the 12th Week of Luke",
+          "gospel": "Luke 21:12-19"
+        },
+        "wednesday": {
+          "label": "Wednesday of the 12th Week of Luke",
+          "gospel": "Luke 21:5-7, 10-11, 20-24",
+          "gospel_segments": [
+            "Luke 21:5-7",
+            "Luke 21:10-11",
+            "Luke 21:20-24"
+          ],
+          "note": "Discontinuous Gospel with multiple omitted intervals."
+        },
+        "thursday": {
+          "label": "Thursday of the 12th Week of Luke",
+          "gospel": "Luke 21:28-33"
+        },
+        "friday": {
+          "label": "Friday of the 12th Week of Luke",
+          "gospel": "Luke 21:37-22:8"
+        },
+        "saturday": {
+          "label": "Saturday of the 12th Week of Luke",
+          "gospel": "Luke 13:18-29"
         }
       }
     }
