@@ -22,7 +22,7 @@
     "2":  { "label": "Second Sunday After Pentecost",           "type": "resurrectional", "epistle": "Romans 2:10-16",                  "gospel": "Matthew 4:18-23"   },
     "3":  { "label": "Third Sunday After Pentecost",            "type": "resurrectional", "epistle": "Romans 5:1-10",                   "gospel": "Matthew 6:22-33"   },
     "4":  { "label": "Fourth Sunday After Pentecost",           "type": "resurrectional", "epistle": "Romans 6:18-23",                  "gospel": "Matthew 8:5-13"    },
-    "5":  { "label": "Fifth Sunday After Pentecost",            "type": "resurrectional", "epistle": "Romans 10:1-10",                  "gospel": "Matthew 8:28-9:1"  },
+    "5":  { "label": "Fifth Sunday After Pentecost",            "type": "resurrectional", "epistle": "Romans 10:1-10",                  "gospel": "Matthew 8:28-9:1",  "gospel_segments": ["Matthew 8:28-34", "Matthew 9:1-1"]  },
     "6":  { "label": "Sixth Sunday After Pentecost",            "type": "resurrectional", "epistle": "Romans 12:6-14",                  "gospel": "Matthew 9:1-8"     },
     "7":  { "label": "Seventh Sunday After Pentecost",          "type": "resurrectional", "epistle": "Romans 15:1-7",                   "gospel": "Matthew 9:27-35"   },
     "8":  { "label": "Eighth Sunday After Pentecost",           "type": "resurrectional", "epistle": "1 Corinthians 1:10-18",           "gospel": "Matthew 14:14-22"  },
@@ -31,10 +31,10 @@
     "11": { "label": "Eleventh Sunday After Pentecost",         "type": "resurrectional", "epistle": "1 Corinthians 9:2-12",            "gospel": "Matthew 18:23-35"  },
     "12": { "label": "Twelfth Sunday After Pentecost",          "type": "resurrectional", "epistle": "1 Corinthians 15:1-11",           "gospel": "Matthew 19:16-26"  },
     "13": { "label": "Thirteenth Sunday After Pentecost",       "type": "resurrectional", "epistle": "1 Corinthians 16:13-24",          "gospel": "Matthew 21:33-42"  },
-    "14": { "label": "Fourteenth Sunday After Pentecost",       "type": "resurrectional", "epistle": "2 Corinthians 1:21-2:4",          "gospel": "Matthew 22:1-14"   },
+    "14": { "label": "Fourteenth Sunday After Pentecost",       "type": "resurrectional", "epistle": "2 Corinthians 1:21-2:4",          "epistle_segments": ["2 Corinthians 1:21-24", "2 Corinthians 2:1-4"],  "gospel": "Matthew 22:1-14"   },
     "15": { "label": "Fifteenth Sunday After Pentecost",        "type": "resurrectional", "epistle": "2 Corinthians 4:6-15",            "gospel": "Matthew 22:35-46"  },
     "16": { "label": "Sixteenth Sunday After Pentecost",        "type": "resurrectional", "epistle": "2 Corinthians 6:1-10",            "gospel": "Matthew 25:14-30"  },
-    "17": { "label": "Seventeenth Sunday After Pentecost",      "type": "resurrectional", "epistle": "2 Corinthians 6:16-7:1",          "gospel": "Matthew 15:21-28"  },
+    "17": { "label": "Seventeenth Sunday After Pentecost",      "type": "resurrectional", "epistle": "2 Corinthians 6:16-7:1",          "epistle_segments": ["2 Corinthians 6:16-18", "2 Corinthians 7:1-1"],  "gospel": "Matthew 15:21-28"  },
     "18": { "label": "Eighteenth Sunday After Pentecost",       "type": "resurrectional", "epistle": "2 Corinthians 9:6-11",            "gospel": "Luke 5:1-11"       },
     "19": {
       "label": "Nineteenth Sunday After Pentecost",
@@ -155,7 +155,7 @@
       "label": "Sunday of the Holy Cross",
       "type": "great-lent",
       "epistle_segments": ["Hebrews 4:14-16", "Hebrews 5:1-6"],
-      "gospel_segments": ["Mark 8:34-38", "Mark 9:1"],
+      "gospel_segments": ["Mark 8:34-38", "Mark 9:1-1"],
       "days_before_pascha": 28
     },
     "john-climacus": {
