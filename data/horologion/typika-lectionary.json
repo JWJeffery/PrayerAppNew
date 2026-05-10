@@ -1758,6 +1758,181 @@
       }
     }
   },
+  "pre_lenten_weekdays": {
+    "_comment": [
+      "Temporal weekday Epistle/Gospel metadata for the pre-Lenten Triodion period.",
+      "Keys are named by liturgical week, not ordinary after-Pentecost lookup.",
+      "publican_pharisee = Week 34 after Pentecost, Monday-Saturday after Publican and Pharisee Sunday.",
+      "meatfare = Week 35 after Pentecost, Monday-Saturday after Prodigal Son Sunday, culminating in Meatfare Sunday.",
+      "cheesefare = Week 36 after Pentecost, Monday-Saturday after Meatfare Sunday, culminating in Forgiveness Sunday.",
+      "Cheesefare Wednesday and Friday have no Divine Liturgy Epistle/Gospel in the temporal table; Sixth Hour and Vespers Old Testament readings belong to office-reading handling, not these Typika Epistle/Gospel slots.",
+      "Fixed-feast and Menaion overlays remain out of scope."
+    ],
+    "weeks": {
+      "publican_pharisee": {
+        "label": "Week after Publican and Pharisee Sunday",
+        "lectionary_week_after_pentecost": 34,
+        "monday": {
+          "label": "Monday after Publican and Pharisee Sunday",
+          "epistle": "2 Peter 1:20-2:9",
+          "gospel": "Mark 13:9-13"
+        },
+        "tuesday": {
+          "label": "Tuesday after Publican and Pharisee Sunday",
+          "epistle": "2 Peter 2:9-22",
+          "gospel": "Mark 13:14-23"
+        },
+        "wednesday": {
+          "label": "Wednesday after Publican and Pharisee Sunday",
+          "epistle": "2 Peter 3:1-18",
+          "gospel": "Mark 13:24-31"
+        },
+        "thursday": {
+          "label": "Thursday after Publican and Pharisee Sunday",
+          "epistle": "1 John 1:8-2:6",
+          "gospel": "Mark 13:31-14:2",
+          "note": "Gospel begins at Mark 13:31, overlapping the prior day's endpoint; source-governed."
+        },
+        "friday": {
+          "label": "Friday after Publican and Pharisee Sunday",
+          "epistle": "1 John 2:7-17",
+          "gospel": "Mark 14:3-9"
+        },
+        "saturday": {
+          "label": "Saturday after Publican and Pharisee Sunday",
+          "epistle": "2 Timothy 3:1-9",
+          "gospel": "Luke 20:46-21:4"
+        }
+      },
+      "meatfare": {
+        "label": "Meatfare Week",
+        "lectionary_week_after_pentecost": 35,
+        "monday": {
+          "label": "Monday of Meatfare Week",
+          "epistle": "1 John 2:18-3:10",
+          "note": "Source ends at 1 John 3:10a; resolver uses full verse 10.",
+          "gospel": "Mark 11:1-11"
+        },
+        "tuesday": {
+          "label": "Tuesday of Meatfare Week",
+          "epistle": "1 John 3:10-20",
+          "note": "Source begins at 1 John 3:10b; resolver uses full verse 10.",
+          "gospel": "Mark 14:10-42"
+        },
+        "wednesday": {
+          "label": "Wednesday of Meatfare Week",
+          "epistle": "1 John 3:21-4:6",
+          "gospel": "Mark 14:43-15:1"
+        },
+        "thursday": {
+          "label": "Thursday of Meatfare Week",
+          "epistle": "1 John 4:20-5:21",
+          "gospel": "Mark 15:1-15",
+          "note": "Mark 15:1 overlaps the prior day's endpoint; source-governed."
+        },
+        "friday": {
+          "label": "Friday of Meatfare Week",
+          "epistle": "2 John 1:1-13",
+          "gospel": "Mark 15:22, 25, 33-41",
+          "gospel_segments": [
+            "Mark 15:22",
+            "Mark 15:25",
+            "Mark 15:33-41"
+          ],
+          "note": "Discontinuous Gospel."
+        },
+        "saturday": {
+          "label": "Meatfare Saturday / Saturday of Souls",
+          "special_day": "saturday_of_souls",
+          "reading_sets": [
+            {
+              "label": "Day",
+              "epistle": "1 Corinthians 10:23-28",
+              "gospel": "Luke 21:8-9, 25-27, 33-36",
+              "gospel_segments": [
+                "Luke 21:8-9",
+                "Luke 21:25-27",
+                "Luke 21:33-36"
+              ]
+            },
+            {
+              "label": "Departed",
+              "epistle": "1 Thessalonians 4:13-17",
+              "gospel": "John 5:24-30"
+            }
+          ],
+          "note": "Special Saturday with day and departed reading sets."
+        }
+      },
+      "cheesefare": {
+        "label": "Cheesefare Week",
+        "lectionary_week_after_pentecost": 36,
+        "monday": {
+          "label": "Monday of Cheesefare Week",
+          "epistle": "3 John 1:1-15",
+          "gospel": "Luke 19:29-40; Luke 22:7-39",
+          "gospel_segments": [
+            "Luke 19:29-40",
+            "Luke 22:7-39"
+          ]
+        },
+        "tuesday": {
+          "label": "Tuesday of Cheesefare Week",
+          "epistle": "Jude 1:1-10",
+          "gospel": "Luke 22:39-42, 45-23:1",
+          "gospel_segments": [
+            "Luke 22:39-42",
+            "Luke 22:45-23:1"
+          ],
+          "note": "Source begins second Gospel segment at Luke 22:45b; resolver uses full verse 45."
+        },
+        "wednesday": {
+          "label": "Wednesday of Cheesefare Week",
+          "no_liturgy": true,
+          "rubric": "No Divine Liturgy Epistle/Gospel is appointed in the temporal table for Cheesefare Wednesday. Sixth Hour and Vespers Old Testament readings belong to office-reading handling and are not rendered in these Typika Epistle/Gospel slots.",
+          "sixth_hour": "Joel 2:12-26",
+          "vespers": "Joel 4:12-21"
+        },
+        "thursday": {
+          "label": "Thursday of Cheesefare Week",
+          "epistle": "Jude 1:11-25",
+          "gospel": "Luke 23:1-34, 44-56",
+          "gospel_segments": [
+            "Luke 23:1-34",
+            "Luke 23:44-56"
+          ]
+        },
+        "friday": {
+          "label": "Friday of Cheesefare Week",
+          "no_liturgy": true,
+          "rubric": "No Divine Liturgy Epistle/Gospel is appointed in the temporal table for Cheesefare Friday. Sixth Hour and Vespers Old Testament readings belong to office-reading handling and are not rendered in these Typika Epistle/Gospel slots.",
+          "sixth_hour": "Zechariah 8:7-17",
+          "vespers": "Zechariah 8:19-23"
+        },
+        "saturday": {
+          "label": "Cheesefare Saturday / Commemoration of Holy Ascetics",
+          "special_day": "holy_ascetics",
+          "reading_sets": [
+            {
+              "label": "Day",
+              "epistle": "Romans 14:19-23; Romans 16:25-27",
+              "epistle_segments": [
+                "Romans 14:19-23",
+                "Romans 16:25-27"
+              ],
+              "gospel": "Matthew 6:1-13"
+            },
+            {
+              "label": "Holy Ascetics",
+              "epistle": "Galatians 5:22-6:2",
+              "gospel": "Matthew 11:27-30"
+            }
+          ],
+          "note": "Special Saturday with day and Holy Ascetics reading sets."
+        }
+      }
+    }
+  },
   "great_lent": {
     "_comment": "Great Lent Sundays. Keyed by liturgical name. days_before_pascha counts from upcoming Pascha. Tradition family: Slavic/OCA/ROCOR/Antiochian. Source: ByzCath.org Byzantine Lectionary.",
     "orthodoxy": {

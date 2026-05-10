@@ -6946,6 +6946,120 @@ async function _resolveTypikaSlots(sections, dateObj) {
         };
     })();
 
+    const preLentenWeekdayKey = (() => {
+        if (dayOfWeek === 0) return null;
+
+        const MS_PER_DAY = 86400000;
+
+        const WEEKDAY_MAP = {
+            1: 'monday',
+            2: 'tuesday',
+            3: 'wednesday',
+            4: 'thursday',
+            5: 'friday',
+            6: 'saturday'
+        };
+
+        const weekday = WEEKDAY_MAP[dayOfWeek];
+        if (!weekday) return null;
+
+        function orthodoxPascha(year) {
+            const a = year % 4;
+            const b = year % 7;
+            const c = year % 19;
+            const d = (19 * c + 15) % 30;
+            const e = (2 * a + 4 * b - d + 34) % 7;
+            const month = Math.floor((d + e + 114) / 31);
+            const day = ((d + e + 114) % 31) + 1;
+
+            // Julian Pascha converted to Gregorian by +13 days for the current project range.
+            return new Date(year, month - 1, day + 13);
+        }
+
+        const localDate = new Date(dateObj.getFullYear(), dateObj.getMonth(), dateObj.getDate());
+
+        const paschaThisYear = orthodoxPascha(localDate.getFullYear());
+        const upcomingPascha = localDate <= paschaThisYear
+            ? paschaThisYear
+            : orthodoxPascha(localDate.getFullYear() + 1);
+
+        const publicanAndPhariseeSunday = new Date(upcomingPascha.getTime() - (70 * MS_PER_DAY));
+        const prodigalSonSunday = new Date(upcomingPascha.getTime() - (63 * MS_PER_DAY));
+        const meatfareSunday = new Date(upcomingPascha.getTime() - (56 * MS_PER_DAY));
+        const forgivenessSunday = new Date(upcomingPascha.getTime() - (49 * MS_PER_DAY));
+
+        function betweenExclusiveStartInclusiveEnd(startSunday, nextSunday, key) {
+            if (localDate > startSunday && localDate < nextSunday) {
+                return {
+                    key,
+                    weekday
+                };
+            }
+            return null;
+        }
+
+        return betweenExclusiveStartInclusiveEnd(publicanAndPhariseeSunday, prodigalSonSunday, 'publican_pharisee') ||
+            betweenExclusiveStartInclusiveEnd(prodigalSonSunday, meatfareSunday, 'meatfare') ||
+            betweenExclusiveStartInclusiveEnd(meatfareSunday, forgivenessSunday, 'cheesefare');
+    })();
+
+    async function resolveTypikaTemporalReading(entry, field) {
+        const segmentsKey = field + '_segments';
+        const readingLabel = field === 'epistle' ? 'EPISTLE' : 'GOSPEL';
+        const sourceBook = field === 'epistle' ? 'Apostol' : 'Evangelist';
+
+        if (Array.isArray(entry.reading_sets)) {
+            const labelParts = [];
+            const textParts = [];
+
+            for (const set of entry.reading_sets) {
+                const ref = set[segmentsKey] || set[field];
+                if (!ref) continue;
+
+                const result = await resolveScripturePericope(ref);
+                const setLabel = set.label || 'Reading';
+                labelParts.push(setLabel + ': ' + result.label);
+
+                if (result.unavailable) {
+                    textParts.push(
+                        setLabel + ' — ' + readingLabel + ': ' +
+                        result.label +
+                        ' — text unavailable. Consult the ' +
+                        sourceBook +
+                        ' for the full pericope.'
+                    );
+                } else {
+                    textParts.push(setLabel + ' — ' + result.label + '\n\n' + result.text);
+                }
+            }
+
+            if (!textParts.length) return null;
+
+            return {
+                label: labelParts.join(' / '),
+                text:  textParts.join('\n\n')
+            };
+        }
+
+        const ref = entry[segmentsKey] || entry[field];
+        if (!ref) return null;
+
+        const result = await resolveScripturePericope(ref);
+
+        if (result.unavailable) {
+            return {
+                label:       result.label,
+                text:        readingLabel + ': ' + result.label + ' — text unavailable. Consult the ' + sourceBook + ' for the full pericope.',
+                unavailable: true
+            };
+        }
+
+        return {
+            label: result.label,
+            text:  result.text
+        };
+    }
+
     const typikaWeekdayCycleBlocked = (() => {
         if (dayOfWeek === 0) return false;
 
@@ -7075,6 +7189,62 @@ async function _resolveTypikaSlots(sections, dateObj) {
             }
  
             if (item.key === 'typika-epistle-rubric') {
+                if (preLentenWeekdayKey && _typikaLectionaryData && _typikaLectionaryData.pre_lenten_weekdays) {
+                    const plWeeks = _typikaLectionaryData.pre_lenten_weekdays.weeks || {};
+                    const plWeek = plWeeks[preLentenWeekdayKey.key];
+                    const plEntry = plWeek && plWeek[preLentenWeekdayKey.weekday];
+
+                    if (plEntry) {
+                        if (plEntry.no_liturgy) {
+                            section.items[i] = {
+                                type:       'rubric',
+                                key:        item.key,
+                                text:       'NO DIVINE LITURGY EPISTLE: ' + (plEntry.rubric || 'No temporal Epistle is appointed for this pre-Lenten weekday.'),
+                                resolvedAs: 'typika-pre-lenten-no-liturgy-epistle-' +
+                                    preLentenWeekdayKey.key + '-' +
+                                    preLentenWeekdayKey.weekday,
+                                preLentenWeek: preLentenWeekdayKey.key,
+                                weekday:       preLentenWeekdayKey.weekday
+                            };
+                            continue;
+                        }
+
+                        try {
+                            const result = await resolveTypikaTemporalReading(plEntry, 'epistle');
+                            if (result) {
+                                if (result.unavailable) {
+                                    section.items[i] = {
+                                        type:       'rubric',
+                                        key:        item.key,
+                                        text:       result.text,
+                                        resolvedAs: 'typika-pre-lenten-weekday-epistle-' +
+                                            preLentenWeekdayKey.key + '-' +
+                                            preLentenWeekdayKey.weekday,
+                                        preLentenWeek: preLentenWeekdayKey.key,
+                                        weekday:       preLentenWeekdayKey.weekday
+                                    };
+                                } else {
+                                    section.items[i] = {
+                                        type:       'text',
+                                        key:        item.key,
+                                        label:      'The Epistle — ' + result.label,
+                                        text:       result.text,
+                                        resolvedAs: 'typika-pre-lenten-weekday-epistle-' +
+                                            preLentenWeekdayKey.key + '-' +
+                                            preLentenWeekdayKey.weekday,
+                                        preLentenWeek: preLentenWeekdayKey.key,
+                                        weekday:       preLentenWeekdayKey.weekday,
+                                        source:        'Byzantine Triodion pre-Lenten weekday lectionary'
+                                    };
+                                }
+                                continue;
+                            }
+                        } catch (err) {
+                            console.warn('[HorologionEngine] Typika pre-Lenten weekday epistle resolution failed:', err.message);
+                            // fall through: leave existing rubric in place
+                        }
+                    }
+                }
                 if (palmSundayKey && _typikaLectionaryData && _typikaLectionaryData.palm_sunday) {
                     const psEntry = _typikaLectionaryData.palm_sunday;
                     const psEpistleRef = psEntry.epistle || psEntry.epistle_segments;
@@ -7331,6 +7501,62 @@ async function _resolveTypikaSlots(sections, dateObj) {
             }
  
             if (item.key === 'typika-gospel-rubric') {
+                if (preLentenWeekdayKey && _typikaLectionaryData && _typikaLectionaryData.pre_lenten_weekdays) {
+                    const plWeeks = _typikaLectionaryData.pre_lenten_weekdays.weeks || {};
+                    const plWeek = plWeeks[preLentenWeekdayKey.key];
+                    const plEntry = plWeek && plWeek[preLentenWeekdayKey.weekday];
+
+                    if (plEntry) {
+                        if (plEntry.no_liturgy) {
+                            section.items[i] = {
+                                type:       'rubric',
+                                key:        item.key,
+                                text:       'NO DIVINE LITURGY GOSPEL: ' + (plEntry.rubric || 'No temporal Gospel is appointed for this pre-Lenten weekday.'),
+                                resolvedAs: 'typika-pre-lenten-no-liturgy-gospel-' +
+                                    preLentenWeekdayKey.key + '-' +
+                                    preLentenWeekdayKey.weekday,
+                                preLentenWeek: preLentenWeekdayKey.key,
+                                weekday:       preLentenWeekdayKey.weekday
+                            };
+                            continue;
+                        }
+
+                        try {
+                            const result = await resolveTypikaTemporalReading(plEntry, 'gospel');
+                            if (result) {
+                                if (result.unavailable) {
+                                    section.items[i] = {
+                                        type:       'rubric',
+                                        key:        item.key,
+                                        text:       result.text,
+                                        resolvedAs: 'typika-pre-lenten-weekday-gospel-' +
+                                            preLentenWeekdayKey.key + '-' +
+                                            preLentenWeekdayKey.weekday,
+                                        preLentenWeek: preLentenWeekdayKey.key,
+                                        weekday:       preLentenWeekdayKey.weekday
+                                    };
+                                } else {
+                                    section.items[i] = {
+                                        type:       'text',
+                                        key:        item.key,
+                                        label:      'The Holy Gospel — ' + result.label,
+                                        text:       result.text,
+                                        resolvedAs: 'typika-pre-lenten-weekday-gospel-' +
+                                            preLentenWeekdayKey.key + '-' +
+                                            preLentenWeekdayKey.weekday,
+                                        preLentenWeek: preLentenWeekdayKey.key,
+                                        weekday:       preLentenWeekdayKey.weekday,
+                                        source:        'Byzantine Triodion pre-Lenten weekday lectionary'
+                                    };
+                                }
+                                continue;
+                            }
+                        } catch (err) {
+                            console.warn('[HorologionEngine] Typika pre-Lenten weekday gospel resolution failed:', err.message);
+                            // fall through: leave existing rubric in place
+                        }
+                    }
+                }
                 if (palmSundayKey && _typikaLectionaryData && _typikaLectionaryData.palm_sunday) {
                     const psEntry = _typikaLectionaryData.palm_sunday;
                     const psGospelRef = psEntry.gospel || psEntry.gospel_segments;
