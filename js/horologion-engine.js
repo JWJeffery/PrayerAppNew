@@ -6446,6 +6446,17 @@ async function _loadThirdHourFixedData() {
                 const item = section.items[i];
                 // ── daily-prokeimenon (v1.2) ──────────────────────────────
               if (item.key === 'daily-prokeimenon') {
+                  if (isGreatLentWeekday) {
+                      section.items[i] = {
+                          type:       'rubric',
+                          key:        item.key,
+                          label:      'Prokeimenon — Great Lent Weekday',
+                          text:       '(Great Lent weekday Vespers has appointed prokeimena proper to the Lenten weekday cycle. Full Great Lent prokeimenon text is deferred.)',
+                          resolvedAs: 'vespers-great-lent-weekday-prokeimenon-pending'
+                      };
+                      continue;
+                  }
+
     const pk = _prokeimenaByDay && _prokeimenaByDay[dayOfWeek];
     if (pk) {
         section.items[i] = {
