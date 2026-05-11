@@ -5087,6 +5087,30 @@ function _applyGreatComplineFestalEveSpecialForm(sections, dateObj) {
     return true;
 }
 
+// ── v6.9: _isGreatComplineGreatFeastEve(dateObj) ─────────────────────────
+// Returns { feastLabel, feastMmdd } for the bounded set of rank-1 Great Feast
+// eves outside the Lenten/Holy Week window on which Great Compline is appointed.
+// feastMmdd is the canonical feast date key (e.g., '09-14') used to probe the
+// Menaion canon corpus; the civil eve date is always the day before feastMmdd.
+// Nativity Eve (12-24) and Theophany Eve (01-05) are handled by the earlier
+// _applyGreatComplineFestalEveSpecialForm gate and are intentionally absent here.
+// Annunciation is excluded per tranche policy.
+// Returns null for all other dates.
+function _isGreatComplineGreatFeastEve(dateObj) {
+    if (!dateObj) return null;
+    const _gcm = dateObj.getMonth() + 1;  // 1-based month
+    const _gcd = dateObj.getDate();
+    // Sept 13 — eve of Universal Exaltation of the Holy Cross (09-14)
+    if (_gcm === 9  && _gcd === 13) return { feastLabel: 'Universal Exaltation of the Holy Cross',      feastMmdd: '09-14' };
+    // Aug 14 — eve of Dormition of the Theotokos (08-15)
+    if (_gcm === 8  && _gcd === 14) return { feastLabel: 'Dormition of the Theotokos',                  feastMmdd: '08-15' };
+    // Sept 7 — eve of Nativity of the Theotokos (09-08)
+    if (_gcm === 9  && _gcd === 7)  return { feastLabel: 'Nativity of the Theotokos',                   feastMmdd: '09-08' };
+    // Nov 20 — eve of Entry of the Theotokos into the Temple (11-21)
+    if (_gcm === 11 && _gcd === 20) return { feastLabel: 'Entry of the Theotokos into the Temple',      feastMmdd: '11-21' };
+    return null;
+}
+
 // ── v6.7: _resolveGreatComplineSlots(sections, dateObj) ──────────────
 async function _resolveGreatComplineSlots(sections, dateObj) {
     if (_applyGreatComplineFestalEveSpecialForm(sections, dateObj)) {
@@ -5097,6 +5121,8 @@ async function _resolveGreatComplineSlots(sections, dateObj) {
 
     const dayOfWeek = dateObj.getDay();
     const isFriday = (dayOfWeek === 5);
+    // v6.9: probe for bounded Great Feast eve appointment outside Lenten/Holy Week windows
+    const gcFeastEveResult = _isGreatComplineGreatFeastEve(dateObj);
     // Governed appointment gate for Great Compline (source witness baseline)
     // Appointed:
     //   - Monday–Thursday in Great Lent
@@ -5138,6 +5164,9 @@ async function _resolveGreatComplineSlots(sections, dateObj) {
     } else if (inPreLentWeek) {
         greatComplineAppointed = (dayOfWeek === 2 || dayOfWeek === 4);
     } else if (inHolyWeekMondayTuesday) {
+        greatComplineAppointed = true;
+    } else if (gcFeastEveResult) {
+        // v6.9 — bounded Great Feast eve outside Lenten/Holy Week window
         greatComplineAppointed = true;
     }
 
@@ -5399,12 +5428,51 @@ async function _resolveGreatComplineSlots(sections, dateObj) {
 
             if (item.key === 'gc-canon') {
                 // ── gc-canon: route to fixed-data slot paths ──────────────
-                // Three governed states:
+                // Four governed states (v6.9 addition in state 0):
+                //   0. Great Feast eve (v6.9) → gc-canon-menaion-text (corpus) or gc-canon-menaion (rubric)
+                //      Canon corpus is keyed by the feast date (feastMmdd), not the civil eve date.
                 //   1. First week of Great Lent → gc-canon-great-canon
                 //   2. Rank 1–2 Menaion feast on appointed day → gc-canon-menaion
                 //      (saint name injected into rubric text at runtime)
                 //   3. All other appointed days → gc-canon-octoechos
-                // Governing logic is preserved exactly from prior inline form.
+                // Governing logic for states 1–3 is preserved exactly from prior inline form.
+
+                // ── v6.9: state 0 — Great Feast eve canon resolution ─────
+                if (gcFeastEveResult) {
+                    // Probe Menaion canon corpus using the feast date key (not the civil eve date).
+                    // Sept 13 probes '09-14' so the existing Exaltation corpus is reachable.
+                    const gcFeastEveCorpus = _getGcCanonMenaion(gcFeastEveResult.feastMmdd);
+                    if (gcFeastEveCorpus && typeof gcFeastEveCorpus.text === 'string') {
+                        // Corpus text found (e.g., 09-14 Exaltation canon).
+                        section.items[i] = {
+                            type:       'text',
+                            key:        item.key,
+                            label:      gcFeastEveCorpus.label || `Canon (Menaion) — ${gcFeastEveResult.feastLabel}`,
+                            text:       gcFeastEveCorpus.text,
+                            resolvedAs: 'gc-canon-menaion-text'
+                        };
+                    } else {
+                        // No corpus entry yet — degrade to the Menaion canon rubric slot.
+                        // This is honest degradation, not "not appointed".
+                        const gcFeastEveSlot = _slot('gc-canon-menaion');
+                        const gcFeastEveText = gcFeastEveSlot
+                            ? gcFeastEveSlot.text.replace(
+                                'A qualifying feast (rank 1–2) is commemorated today.',
+                                `${gcFeastEveResult.feastLabel} is celebrated tomorrow. ` +
+                                `Great Compline Menaion canon for ${gcFeastEveResult.feastMmdd} is not yet transcribed.`
+                              )
+                            : `Great Compline is appointed on the eve of ${gcFeastEveResult.feastLabel}. ` +
+                              `Menaion canon corpus for ${gcFeastEveResult.feastMmdd} is not yet transcribed.`;
+                        section.items[i] = {
+                            type:       'rubric',
+                            key:        item.key,
+                            label:      `Canon (Menaion) — ${gcFeastEveResult.feastLabel} Eve`,
+                            text:       gcFeastEveText,
+                            resolvedAs: 'gc-canon-menaion-feast-eve-deferred'
+                        };
+                    }
+                    continue;
+                }
 
                 if (isFirstWeekOfLent) {
                     // ── v7.2: probe null-sentinel corpus before rubric fallback ──
