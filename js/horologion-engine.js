@@ -4787,8 +4787,48 @@ async function _loadGreatComplineFixedData() {
     }
 }
 
+function _applyGreatComplineFestalEveSpecialForm(sections, dateObj) {
+    if (!dateObj || !Array.isArray(sections)) return false;
+
+    const month = dateObj.getMonth() + 1;
+    const day = dateObj.getDate();
+
+    let feastKey = null;
+    let feastLabel = null;
+
+    if (month === 12 && day === 24) {
+        feastKey = 'nativity-eve';
+        feastLabel = 'Nativity Eve';
+    } else if (month === 1 && day === 5) {
+        feastKey = 'theophany-eve';
+        feastLabel = 'Theophany Eve';
+    }
+
+    if (!feastKey || !feastLabel) return false;
+
+    sections.splice(0, sections.length, {
+        id: `great-compline-${feastKey}-special-form`,
+        label: `Great Compline — ${feastLabel}`,
+        items: [
+            {
+                type:       'rubric',
+                key:        `great-compline-${feastKey}-special-form-rubric`,
+                label:      `${feastLabel} Great Compline special form not yet implemented`,
+                text:       `(${feastLabel}. Great Compline is appointed on this eve in a festal vigil form. The ordinary/Lenten Great Compline structure is not rendered here. Full ${feastLabel} Great Compline vigil text is deferred.)`,
+                resolvedAs: `great-compline-${feastKey}-special-form-deferred`
+            }
+        ]
+    });
+
+    return true;
+}
+
 // ── v6.7: _resolveGreatComplineSlots(sections, dateObj) ──────────────
 async function _resolveGreatComplineSlots(sections, dateObj) {
+    if (_applyGreatComplineFestalEveSpecialForm(sections, dateObj)) {
+        return;
+    }
+
     await _loadGreatComplineFixedData();
 
     const dayOfWeek = dateObj.getDay();
@@ -5079,7 +5119,7 @@ async function _resolveGreatComplineSlots(sections, dateObj) {
                         text = `${d} — Weekday Troparia in Tone 8 (Tue/Thu): "O Lord, You know the unsleeping vigilance…" Theotokion follows. Full text deferred to corpus tranche.`;
                         resolvedAs = 'great-compline-weekday-troparia-tue-thu-rubric';
                     } else {
-                        text = `${d}: Weekday troparia not prescribed for this day in the standard Great Lent cycle. If a feast is appointed, the Troparion of the Feast is substituted.`;
+                        text = `Friday Lenten Great Compline is appointed, but the Friday-specific modifications and appointed hymnody are not yet transcribed.`;
                         resolvedAs = 'great-compline-weekday-troparia-unscheduled';
                     }
                     section.items[i] = {
