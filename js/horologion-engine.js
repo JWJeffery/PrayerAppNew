@@ -5462,7 +5462,56 @@ async function _resolveGreatComplineSlots(sections, dateObj) {
         }
     }
  
+    function _applySmallComplineBrightWeekDisplacement(sections, dateObj) {
+ 
+        const toneResult = _computeBaselineTone(dateObj);
+ 
+        if (!toneResult || !toneResult.brightWeek) return false;
+
+ 
+        if (!Array.isArray(sections)) return false;
+
+ 
+        sections.splice(0, sections.length, {
+ 
+            id: 'small-compline-bright-week-paschal-hours-displacement',
+ 
+            label: 'Small Compline — Bright Week / Paschal Hours',
+ 
+            items: [
+ 
+                {
+ 
+                    type:       'rubric',
+ 
+                    key:        'small-compline-bright-week-displacement-rubric',
+ 
+                    label:      'Small Compline displaced by the Paschal Hours appointed for Compline',
+ 
+                    text:       '(During Pascha and Bright Week, ordinary Small Compline is displaced by the Paschal Hours appointed for Compline. The ordinary Small Compline psalmody, Creed, Trisagion prayers, Theotokion, and fixed-prayer structure are not served in the usual form. Full Paschal Hours text for Compline is deferred.)',
+ 
+                    resolvedAs: 'small-compline-bright-week-paschal-hours-displacement'
+ 
+                }
+ 
+            ]
+ 
+        });
+
+ 
+        return true;
+ 
+    }
+
+ 
     async function _resolveComplineSlots(sections, dateObj) {
+ 
+        if (_applySmallComplineBrightWeekDisplacement(sections, dateObj)) {
+ 
+            return;
+ 
+        }
+
     await Promise.all([
         _loadComplineFixedData(),
         _loadTroparionData(),
