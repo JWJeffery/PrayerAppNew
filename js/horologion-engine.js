@@ -597,6 +597,7 @@ const _interhourFixedDataCache = {};
             await _resolveNinthHourSlots(sections, dateObj);
        } else if (normalizedKey === 'orthros') {
             await _resolveOrthrosSlots(sections, dateObj);
+            _finalizeOrthrosReleaseHonestyPatch(sections, dateObj);
         } else if (normalizedKey === 'midnight-office') {
     await _resolveMidnightOfficeSlots(sections, dateObj);
 } else if (normalizedKey === 'great-compline') {
@@ -1101,6 +1102,7 @@ function _normalizeUnavailableTroparionFallbackForOffice(officeKey, resolved, da
     }
 
     const OFFICE_LABELS = {
+        'orthros': 'Orthros',
         'vespers': 'Weekday Vespers',
         'small-compline': 'Small Compline',
         'first-hour': 'First Hour',
@@ -3137,7 +3139,268 @@ function _resolveComplineFestalTheotokionRubric(officeKey, troparionItem, fallba
     //
     // All skeleton placeholders now resolved. Non-throwing throughout.
     // ──────────────────────────────────────────────────────────────────────
+    function _finalizeOrthrosReleaseHonestyPatch(sections, dateObj) {
+
+        if (!Array.isArray(sections)) return;
+
+
+        let isBrightWeek = false;
+
+        try {
+
+            const toneResult = _computeBaselineTone(dateObj);
+
+            isBrightWeek = !!(toneResult && toneResult.brightWeek);
+
+        } catch (e) {
+
+            isBrightWeek = false;
+
+        }
+
+
+        const allItems = () => {
+
+            const out = [];
+
+            for (const section of sections) {
+
+                if (!Array.isArray(section.items)) continue;
+
+                for (const item of section.items) out.push(item);
+
+            }
+
+            return out;
+
+        };
+
+
+        const hasResolvedAs = (token) => allItems().some(item => item && item.resolvedAs === token);
+
+        const hasKey = (key) => allItems().some(item => item && item.key === key);
+
+
+        const sectionLooksLike = (section, needle) => {
+
+            const hay = `${section && section.id || ''} ${section && section.label || ''}`.toLowerCase();
+
+            return hay.includes(needle);
+
+        };
+
+
+        const insertAfterPredicate = (predicate, newItem) => {
+
+            for (const section of sections) {
+
+                if (!Array.isArray(section.items)) continue;
+
+                const index = section.items.findIndex(predicate);
+
+                if (index !== -1) {
+
+                    section.items.splice(index + 1, 0, newItem);
+
+                    return true;
+
+                }
+
+            }
+
+            return false;
+
+        };
+
+
+        const insertBeforePredicate = (predicate, newItem) => {
+
+            for (const section of sections) {
+
+                if (!Array.isArray(section.items)) continue;
+
+                const index = section.items.findIndex(predicate);
+
+                if (index !== -1) {
+
+                    section.items.splice(index, 0, newItem);
+
+                    return true;
+
+                }
+
+            }
+
+            return false;
+
+        };
+
+
+        const appendToFirstMatchingSection = (needle, newItem) => {
+
+            const section = sections.find(s => sectionLooksLike(s, needle));
+
+            if (!section) return false;
+
+            if (!Array.isArray(section.items)) section.items = [];
+
+            section.items.push(newItem);
+
+            return true;
+
+        };
+
+
+        if (!isBrightWeek && !hasResolvedAs('orthros-great-litany-deferred-rubric')) {
+
+            const litanyRubric = {
+
+                type:       'rubric',
+
+                key:        'orthros-great-litany-deferred-rubric',
+
+                label:      'Great Litany / Orthros Litany Structure — Deferred',
+
+                text:       '(The Great Litany and related priest/deacon litany structure at Orthros are appointed here. Full Orthros litany text is deferred.)',
+
+                resolvedAs: 'orthros-great-litany-deferred-rubric'
+
+            };
+
+
+            if (!insertAfterPredicate(item => {
+
+                const hay = `${item && item.key || ''} ${item && item.label || ''} ${item && item.resolvedAs || ''}`.toLowerCase();
+
+                return hay.includes('psalm-142') || hay.includes('psalm 142');
+
+            }, litanyRubric)) {
+
+                appendToFirstMatchingSection('six', litanyRubric);
+
+            }
+
+        }
+
+
+        if (!isBrightWeek && !hasResolvedAs('orthros-psalm-50-deferred-rubric')) {
+
+            const psalm50Rubric = {
+
+                type:       'rubric',
+
+                key:        'orthros-psalm-50-deferred-rubric',
+
+                label:      'Psalm 50 — Deferred',
+
+                text:       '(Psalm 50 is appointed here before the canon. Full Psalm 50 text in the Orthros structure is deferred.)',
+
+                resolvedAs: 'orthros-psalm-50-deferred-rubric'
+
+            };
+
+
+            if (!insertBeforePredicate(item => {
+
+                const hay = `${item && item.key || ''} ${item && item.label || ''} ${item && item.resolvedAs || ''}`.toLowerCase();
+
+                return hay === 'canon' || hay.includes(' canon') || hay.includes('orthros-canon');
+
+            }, psalm50Rubric)) {
+
+                appendToFirstMatchingSection('canon', psalm50Rubric);
+
+            }
+
+        }
+
+
+        if (!isBrightWeek && dateObj && dateObj.getDay && dateObj.getDay() === 6) {
+
+            for (const section of sections) {
+
+                if (!Array.isArray(section.items)) continue;
+
+                for (let i = 0; i < section.items.length; i++) {
+
+                    const item = section.items[i];
+
+                    if (!item || item.key !== 'troparion-of-the-day') continue;
+
+                    const resolvedAs = String(item.resolvedAs || '');
+
+                    if (resolvedAs !== 'resurrectional-troparion-saturday') continue;
+
+
+                    section.items[i] = {
+
+                        type:       'rubric',
+
+                        key:        item.key,
+
+                        label:      'Troparion — Saturday Orthros',
+
+                        text:       '(Saturday Orthros has appointed troparion logic distinct from the Saturday evening resurrectional/Vespers path. Full Saturday Orthros troparion appointment logic is deferred.)',
+
+                        resolvedAs: 'orthros-saturday-troparion-deferred-rubric'
+
+                    };
+
+                    break;
+
+                }
+
+            }
+
+        }
+
+
+        if (!isBrightWeek && dateObj && dateObj.getDay && dateObj.getDay() === 0) {
+
+            for (const section of sections) {
+
+                if (!Array.isArray(section.items)) continue;
+
+                for (let i = 0; i < section.items.length; i++) {
+
+                    const item = section.items[i];
+
+                    if (!item || item.key !== 'sessional-hymns') continue;
+
+                    const resolvedAs = String(item.resolvedAs || '');
+
+                    if (item.type === 'rubric') continue;
+
+                    if (!resolvedAs.includes('sunday') || !resolvedAs.includes('sessional')) continue;
+
+
+                    section.items[i] = {
+
+                        type:       'rubric',
+
+                        key:        item.key,
+
+                        label:      'Sessional Hymns — Sunday',
+
+                        text:       '(Sunday Orthros sessional hymns are appointed here, but the currently loaded Sunday sessional hymn corpus is pending source confirmation. Full confirmed Sunday sessional hymn text is deferred.)',
+
+                        resolvedAs: 'orthros-sunday-sessional-hymns-source-pending-rubric'
+
+                    };
+
+                    break;
+
+                }
+
+            }
+
+        }
+
+    }
+
+
     async function _resolveOrthrosSlots(sections, dateObj) {
+
         await Promise.all([
             _loadOrthrosFixedData(),
             _loadOrthrosKathismaData(),
@@ -4754,7 +5017,8 @@ const isMajorFeastForPraises =
                 // All other items (deferred placeholders, baked rubrics) pass through unchanged.
             }
         }
-    }
+    
+}
   // ── v6.3: _loadMidnightOfficeTheotokionData() ─────────────────────────
     async function _loadMidnightOfficeTheotokionData() {
         if (_midnightOfficeTheotokionData !== null) return;
