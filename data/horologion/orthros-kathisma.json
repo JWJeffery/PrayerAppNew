@@ -22,10 +22,10 @@
     "  Wednesday — Kathismata 8 + 9   (Ps 55–63 + Ps 64–69 LXX)",
     "  Thursday  — Kathismata 10 + 11 (Ps 70–76 + Ps 77–84 LXX)",
     "  Friday    — Kathismata 12 + 13 (Ps 85–91 + Ps 92–100 LXX)",
-    "  Saturday  — Kathismata 14 + 15 (Ps 101–108 + Ps 109–117 LXX)",
+    "  Saturday  — Kathismata 16 + 17 (Ps 109–117 + Ps 118 LXX)",
     "    NOTE: At the Saturday All-Night Vigil, Kathisma 17 (Ps 118) is",
-    "    assigned at Orthros in place of ordinary practice. This file encodes",
-    "    ordinary non-vigil Saturday only.",
+    "    appointed alone at Orthros, supplanting the ordinary K16+K17 pair.",
+    "    This file encodes ordinary non-vigil Saturday only.",
     "  Sunday    — See note below.",
     "",
     "SUNDAY NOTE:",
@@ -170,20 +170,20 @@
       "weekday": "saturday",
       "weekdayIndex": 6,
       "kathismaFirst": {
-        "number": 14,
-        "title": "Fourteenth Kathisma",
-        "psalms_lxx": "101–108",
-        "psalms_heb_protestant": "102–109",
-        "incipit": "Hear my prayer, O Lord, and let my cry come unto Thee"
-      },
-      "kathismaSecond": {
-        "number": 15,
-        "title": "Fifteenth Kathisma",
+        "number": 16,
+        "title": "Sixteenth Kathisma",
         "psalms_lxx": "109–117",
         "psalms_heb_protestant": "110–118",
         "incipit": "The Lord said unto my Lord, Sit Thou at my right hand"
       },
-     "saturday_note": "At the Saturday All-Night Vigil, Kathisma 17 (Psalm 118 LXX) is appointed at Orthros in place of this ordinary assignment. This file encodes ordinary non-vigil Saturday Orthros only."
+      "kathismaSecond": {
+        "number": 17,
+        "title": "Seventeenth Kathisma (The Great Kathisma / Amomos)",
+        "psalms_lxx": "118",
+        "psalms_heb_protestant": "119",
+        "incipit": "Blessed are the undefiled in the way, who walk in the law of the Lord"
+      },
+      "saturday_note": "The All-Night Vigil (Saturday Vigil) appoints Kathisma 17 (Psalm 118 LXX) alone at Orthros, supplanting the ordinary Kathismata 16 + 17 pair. This file encodes ordinary non-vigil Saturday Orthros only."
     }
   ],
   "kathisma_extended_meta": [
@@ -259,30 +259,128 @@
     ],
     "weeks_1_to_4_and_6": {
       "_comment": "Great Lent Weeks 1, 2, 3, 4, and 6 (lentWeek !== 5). Three kathismata Mon–Fri; two on Saturday.",
-      "monday":    { "kathismata": [4, 5, 6] },
-      "tuesday":   { "kathismata": [10, 11, 12] },
-      "wednesday": { "kathismata": [19, 20, 1] },
-      "thursday":  { "kathismata": [6, 7, 8] },
-      "friday":    { "kathismata": [13, 14, 15] },
-      "saturday":  { "kathismata": [16, 17] }
+      "monday": {
+        "kathismata": [
+          4,
+          5,
+          6
+        ]
+      },
+      "tuesday": {
+        "kathismata": [
+          10,
+          11,
+          12
+        ]
+      },
+      "wednesday": {
+        "kathismata": [
+          19,
+          20,
+          1
+        ]
+      },
+      "thursday": {
+        "kathismata": [
+          6,
+          7,
+          8
+        ]
+      },
+      "friday": {
+        "kathismata": [
+          13,
+          14,
+          15
+        ]
+      },
+      "saturday": {
+        "kathismata": [
+          16,
+          17
+        ]
+      }
     },
     "week_5": {
       "_comment": "Great Lent Week 5 only (lentWeek === 5). Thursday has only one kathisma; all others unchanged except Tuesday and Wednesday.",
-      "monday":    { "kathismata": [4, 5, 6] },
-      "tuesday":   { "kathismata": [11, 12, 13] },
-      "wednesday": { "kathismata": [20, 1, 2] },
-      "thursday":  { "kathismata": [8] },
-      "friday":    { "kathismata": [13, 14, 15] },
-      "saturday":  { "kathismata": [16, 17] }
+      "monday": {
+        "kathismata": [
+          4,
+          5,
+          6
+        ]
+      },
+      "tuesday": {
+        "kathismata": [
+          11,
+          12,
+          13
+        ]
+      },
+      "wednesday": {
+        "kathismata": [
+          20,
+          1,
+          2
+        ]
+      },
+      "thursday": {
+        "kathismata": [
+          8
+        ]
+      },
+      "friday": {
+        "kathismata": [
+          13,
+          14,
+          15
+        ]
+      },
+      "saturday": {
+        "kathismata": [
+          16,
+          17
+        ]
+      }
     },
     "holy_week": {
       "_comment": "Holy Week Monday–Saturday. Great Thursday and Great Friday have no Psalter reading at Orthros. Great Saturday reads only Kathisma 17 (the Amōmos, Ps 118 LXX).",
-      "great-monday":    { "kathismata": [4, 5, 6] },
-      "great-tuesday":   { "kathismata": [9, 10, 11] },
-      "great-wednesday": { "kathismata": [14, 15, 16] },
-      "great-thursday":  { "kathismata": [], "no_psalter_reading": true, "note": "No Psalter reading. The kathismata are not appointed at Orthros on Great Thursday." },
-      "great-friday":    { "kathismata": [], "no_psalter_reading": true, "note": "No Psalter reading. The kathismata are not appointed at Orthros on Great Friday." },
-      "great-saturday":  { "kathismata": [17] }
+      "great-monday": {
+        "kathismata": [
+          4,
+          5,
+          6
+        ]
+      },
+      "great-tuesday": {
+        "kathismata": [
+          9,
+          10,
+          11
+        ]
+      },
+      "great-wednesday": {
+        "kathismata": [
+          14,
+          15,
+          16
+        ]
+      },
+      "great-thursday": {
+        "kathismata": [],
+        "no_psalter_reading": true,
+        "note": "No Psalter reading. The kathismata are not appointed at Orthros on Great Thursday."
+      },
+      "great-friday": {
+        "kathismata": [],
+        "no_psalter_reading": true,
+        "note": "No Psalter reading. The kathismata are not appointed at Orthros on Great Friday."
+      },
+      "great-saturday": {
+        "kathismata": [
+          17
+        ]
+      }
     }
   }
 }
