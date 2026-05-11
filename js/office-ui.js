@@ -2037,11 +2037,6 @@ async function renderBcpOffice() {
             }
 
 
-            // If Pagumen 6 is in view, allow rendering even if the index file has not yet been extended to 6 days.
-            if (!indexEntry && monthSlug === 'pagumen' && ethDate.day === 6) {
-                indexEntry = { title: '6 Pagumen — The Seal of the Year' };
-            }
-
 
             if (indexEntry) {
                 // 5. Fetch the monthly narrative file (cached in appData.senkessarCache by monthSlug)
