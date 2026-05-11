@@ -888,6 +888,65 @@ body.light-mode .ethiopian-theme .rubric-text {
         width: 100vw !important;
         margin-left: 0 !important;
     }
+
+    /* ── Horologion mobile stacked shell repair ─────────────────────────────
+       The generic Horologion sidebar is intentionally visible as the office
+       selector. On narrow screens, keeping it fixed/overlayed leaves the
+       office body with zero usable width. Stack the Horologion selector above
+       the office content instead. */
+    #daily-office-section:has(#generic-settings:not(.mode-hidden)) {
+        flex-direction: column !important;
+        overflow-x: hidden !important;
+        overflow-y: auto !important;
+        height: 100vh !important;
+        width: 100vw !important;
+    }
+
+    #daily-office-section:has(#generic-settings:not(.mode-hidden)) #generic-settings {
+        position: relative !important;
+        top: auto !important;
+        left: auto !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        height: auto !important;
+        max-height: 48vh !important;
+        flex: 0 0 auto !important;
+        transform: none !important;
+        margin-left: 0 !important;
+        overflow-y: auto !important;
+        overflow-x: hidden !important;
+        border-right: none !important;
+        border-bottom: 1px solid rgba(201,168,76,0.3) !important;
+        box-sizing: border-box !important;
+    }
+
+    #daily-office-section:has(#generic-settings:not(.mode-hidden)) #main-content {
+        flex: 0 0 auto !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        min-width: 0 !important;
+        height: auto !important;
+        min-height: 52vh !important;
+        padding: 22px 14px 44px !important;
+        margin-left: 0 !important;
+        overflow: visible !important;
+        box-sizing: border-box !important;
+    }
+
+    #daily-office-section:has(#generic-settings:not(.mode-hidden)) #office-display {
+        display: block !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        min-width: 0 !important;
+        box-sizing: border-box !important;
+    }
+
+    #daily-office-section:has(#generic-settings:not(.mode-hidden)) .office-container {
+        width: 100% !important;
+        max-width: 100% !important;
+        padding: 44px 22px 54px !important;
+        box-sizing: border-box !important;
+    }
     /* Dim content behind open sidebar */
     #daily-office-section:has(#settings-panel:not(.sidebar-hidden))::after,
     #daily-office-section:has(#ethiopian-settings:not(.sidebar-hidden))::after,
