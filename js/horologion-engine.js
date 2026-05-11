@@ -7150,60 +7150,6 @@ else if (item.key === 'kathisma-reading') {
         }
 }
 
-// ── v6.1: _resolveOrthrosSundayExapostilarion(tone) ──────────────────────────
-//
-//  Resolver stub for the Sunday resurrectional Exapostilarion (Svetilen).
-//  Reads from window.OCTOECHOS.orthros.exapostilarion.sunday.tones[tone].
-//  NOT YET wired into _resolveOrthrosSlots() — pipeline integration deferred.
-//
-//  Call site (future): _resolveOrthrosSlots(), after the Praises stichera block,
-//  gated on dayOfWeek === 0 && !isBrightWeek && !isHolyWeek && !isGreatLentWeekday.
-//
-function _resolveOrthrosSundayExapostilarion(tone) {
-    const toneKey = String(tone);
-    const corpus  =
-        typeof window !== 'undefined' &&
-        window.OCTOECHOS &&
-        window.OCTOECHOS.orthros &&
-        window.OCTOECHOS.orthros.exapostilarion &&
-        window.OCTOECHOS.orthros.exapostilarion.sunday &&
-        window.OCTOECHOS.orthros.exapostilarion.sunday.tones
-            ? window.OCTOECHOS.orthros.exapostilarion.sunday.tones
-            : null;
-
-    if (!corpus) {
-        return {
-            type:       'rubric',
-            key:        'exapostilarion',
-            label:      'Exapostilarion (Svetilen)',
-            text:       'Sunday Resurrectional Exapostilarion: corpus file not loaded.',
-            resolvedAs: 'orthros-exapostilarion-corpus-unavailable'
-        };
-    }
-
-    const text = corpus[toneKey] || corpus[Number(tone)] || null;
-
-    if (!text) {
-        return {
-            type:       'rubric',
-            key:        'exapostilarion',
-            label:      'Exapostilarion (Svetilen)',
-            text:       `Sunday Resurrectional Exapostilarion: no entry found for Tone ${tone}.`,
-            resolvedAs: 'orthros-exapostilarion-tone-missing'
-        };
-    }
-
-    return {
-        type:       'hymn',
-        key:        'exapostilarion',
-        label:      'Exapostilarion (Svetilen)',
-        source:     'Octoechos',
-        tone:       Number(tone),
-        text:       text,
-        resolvedAs: 'orthros-sunday-resurrectional-exapostilarion'
-    };
-}
-
 // ── v6.9: _loadTypikaFixedData() ─────────────────────────────────────
 async function _loadTypikaFixedData() {
     if (_typikaFixedData !== null) return;
