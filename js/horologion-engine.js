@@ -7439,7 +7439,10 @@ async function _resolveTypikaSlots(sections, dateObj) {
             '09-14': '09-14_exaltation_cross',
             '10-26': '10-26_demetrios',
             '11-08': '11-08_archangels',
+            '11-13': '11-13_john_chrysostom',
+            '11-14': '11-14_apostle_philip',
             '11-21': '11-21_entry_theotokos',
+            '11-30': '11-30_apostle_andrew',
             '12-06': '12-06_st_nicholas'
         };
 

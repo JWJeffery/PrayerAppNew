@@ -2109,6 +2109,22 @@
           "epistle": "Hebrews 2:2-10",
           "gospel": "Luke 10:16-21"
         },
+        "11-13_john_chrysostom": {
+          "label": "Our Father among the Saints John Chrysostom, Archbishop of Constantinople",
+          "kind": "fixed_date",
+          "fixed_date": "11-13",
+          "service_context": "divine_liturgy",
+          "epistle": "Hebrews 7:26-8:2",
+          "gospel": "John 10:9-16"
+        },
+        "11-14_apostle_philip": {
+          "label": "Holy and All-Praised Apostle Philip",
+          "kind": "fixed_date",
+          "fixed_date": "11-14",
+          "service_context": "divine_liturgy",
+          "epistle": "1 Corinthians 4:9-16",
+          "gospel": "John 1:43-51"
+        },
         "11-21_entry_theotokos": {
           "label": "Entry of our Most Holy Lady, Theotokos and Ever-Virgin Mary, into the Temple",
           "kind": "fixed_date",
@@ -2121,6 +2137,14 @@
             "Luke 11:27-28"
           ],
           "note": "Standard discontinuous Theotokos Gospel."
+        },
+        "11-30_apostle_andrew": {
+          "label": "Holy and All-Praised Apostle Andrew the First-Called",
+          "kind": "fixed_date",
+          "fixed_date": "11-30",
+          "service_context": "divine_liturgy",
+          "epistle": "1 Corinthians 4:9-16",
+          "gospel": "John 1:35-51"
         },
         "12-06_st_nicholas": {
           "label": "Holy Hierarch Nicholas, Archbishop of Myra, Wonderworker",
