@@ -7430,12 +7430,15 @@ async function _resolveTypikaSlots(sections, dateObj) {
             '03-25': '03-25_annunciation',
             '06-24': '06-24_nativity_forerunner',
             '06-29': '06-29_peter_paul',
+            '06-30': '06-30_synaxis_twelve_apostles',
             '08-06': '08-06_transfiguration',
             '08-15': '08-15_dormition_theotokos',
             '08-29': '08-29_beheading_forerunner',
             '09-08': '09-08_nativity_theotokos',
             '09-14': '09-14_exaltation_cross',
-            '11-21': '11-21_entry_theotokos'
+            '11-08': '11-08_archangels',
+            '11-21': '11-21_entry_theotokos',
+            '12-06': '12-06_st_nicholas'
         };
 
         function orthodoxPaschaForAnnunciationGuard(year) {

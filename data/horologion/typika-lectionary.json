@@ -2015,6 +2015,14 @@
           "epistle": "2 Corinthians 11:21-12:9",
           "gospel": "Matthew 16:13-19"
         },
+        "06-30_synaxis_twelve_apostles": {
+          "label": "Synaxis of the Holy Glorious and All-Praised Twelve Apostles",
+          "kind": "fixed_date",
+          "fixed_date": "06-30",
+          "service_context": "divine_liturgy",
+          "epistle": "1 Corinthians 4:9-16",
+          "gospel": "Mark 3:13-19"
+        },
         "08-06_transfiguration": {
           "label": "Holy Transfiguration of our Lord God and Savior Jesus Christ",
           "kind": "fixed_date",
@@ -2072,6 +2080,14 @@
           ],
           "note": "Fixed-date Exaltation readings only; Sunday before/after Exaltation and Lukan Jump boundary logic remain separate."
         },
+        "11-08_archangels": {
+          "label": "Synaxis of the Holy Bodiless Heavenly Powers",
+          "kind": "fixed_date",
+          "fixed_date": "11-08",
+          "service_context": "divine_liturgy",
+          "epistle": "Hebrews 2:2-10",
+          "gospel": "Luke 10:16-21"
+        },
         "11-21_entry_theotokos": {
           "label": "Entry of our Most Holy Lady, Theotokos and Ever-Virgin Mary, into the Temple",
           "kind": "fixed_date",
@@ -2084,6 +2100,14 @@
             "Luke 11:27-28"
           ],
           "note": "Standard discontinuous Theotokos Gospel."
+        },
+        "12-06_st_nicholas": {
+          "label": "Holy Hierarch Nicholas, Archbishop of Myra, Wonderworker",
+          "kind": "fixed_date",
+          "fixed_date": "12-06",
+          "service_context": "divine_liturgy",
+          "epistle": "Hebrews 13:17-21",
+          "gospel": "Luke 6:17-23"
         }
       }
     }
