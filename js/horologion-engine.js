@@ -7428,6 +7428,7 @@ async function _resolveTypikaSlots(sections, dateObj) {
             '01-07': '01-07_synaxis_forerunner',
             '02-02': '02-02_meeting_lord',
             '03-25': '03-25_annunciation',
+            '05-08': '05-08_john_theologian',
             '06-24': '06-24_nativity_forerunner',
             '06-29': '06-29_peter_paul',
             '06-30': '06-30_synaxis_twelve_apostles',
@@ -7436,6 +7437,7 @@ async function _resolveTypikaSlots(sections, dateObj) {
             '08-29': '08-29_beheading_forerunner',
             '09-08': '09-08_nativity_theotokos',
             '09-14': '09-14_exaltation_cross',
+            '10-26': '10-26_demetrios',
             '11-08': '11-08_archangels',
             '11-21': '11-21_entry_theotokos',
             '12-06': '12-06_st_nicholas'

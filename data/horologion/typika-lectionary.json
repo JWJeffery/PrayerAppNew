@@ -1992,6 +1992,19 @@
           "gospel": "Luke 1:24-38",
           "note": "Annunciation is allowed as a guarded fixed-date overlay on non-Sunday March 25 dates before Lazarus Saturday. Sunday and Lazarus-or-later collisions require a later temporal-feast merge / annual Typikon policy."
         },
+        "05-08_john_theologian": {
+          "label": "Holy Apostle and Evangelist John the Theologian",
+          "kind": "fixed_date",
+          "fixed_date": "05-08",
+          "service_context": "divine_liturgy",
+          "epistle": "1 John 1:1-7",
+          "gospel": "John 19:25-27; John 21:24-25",
+          "gospel_segments": [
+            "John 19:25-27",
+            "John 21:24-25"
+          ],
+          "note": "Discontinuous Gospel stored as segments for resolver compatibility."
+        },
         "06-24_nativity_forerunner": {
           "label": "Nativity of the Holy Glorious Prophet, Forerunner and Baptist John",
           "kind": "fixed_date",
@@ -2079,6 +2092,14 @@
             "John 19:30-35"
           ],
           "note": "Fixed-date Exaltation readings only; Sunday before/after Exaltation and Lukan Jump boundary logic remain separate."
+        },
+        "10-26_demetrios": {
+          "label": "Holy, Glorious Demetrios the Myrrh-gusher of Thessaloniki",
+          "kind": "fixed_date",
+          "fixed_date": "10-26",
+          "service_context": "divine_liturgy",
+          "epistle": "2 Timothy 2:1-10",
+          "gospel": "John 15:17-16:2"
         },
         "11-08_archangels": {
           "label": "Synaxis of the Holy Bodiless Heavenly Powers",
