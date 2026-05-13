@@ -5429,7 +5429,7 @@ async function _resolveGreatComplineSlots(sections, dateObj) {
             if (item.key === 'gc-canon') {
                 // ── gc-canon: route to fixed-data slot paths ──────────────
                 // Four governed states (v6.9 addition in state 0):
-                //   0. Great Feast eve (v6.9) → gc-canon-menaion-text (corpus) or gc-canon-menaion (rubric)
+                //   0. Great Feast eve (v6.9) → gc-canon-menaion-text (corpus) or gc-canon-menaion-feast-eve-deferred (rubric)
                 //      Canon corpus is keyed by the feast date (feastMmdd), not the civil eve date.
                 //   1. First week of Great Lent → gc-canon-great-canon
                 //   2. Rank 1–2 Menaion feast on appointed day → gc-canon-menaion
