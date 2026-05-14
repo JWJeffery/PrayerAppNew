@@ -120,6 +120,195 @@ The earth covered thee, but heaven received thee and manifestly opened unto thee
 Theotokion: The tabernacle of the witness, wherein were the tablets of the law, the jar of manna and the golden ark, prefigured thee, O most pure one; for like it, O Theotokos, thou didst contain the beginningless Word, incarnate, within thy womb.`
         },
 
+        "08-15": {
+        label: "Canon of the Dormition of Our All-holy, Glorious Mistress, the Theotokos and Ever-virgin Mary",
+        text: `Two canons, with a total of 12 troparia, including the irmoi.
+
+Ode I
+
+Canon I of the Dormition, the acrostic whereof is: "Let the divinely wise hold festival", the composition of Cosmas of Maiuma, in Tone I—
+
+Irmos: Thy sacred and glorious memorial, all-adorned with divine glory, O Virgin, hath assembled the faithful in gladness, as Miriam beginneth, with choirs and drums, to chant unto Thine only-begotten Son, for gloriously hath He been glorified.
+
+Let the immaterial ranks accompany thy divine and immaterial body to Sion. For the multitude of the apostles, coming together of a sudden from the ends of the earth, stood before thee, O Theotokos. With them we also glorify thine honored memory, O pure one.
+
+The honors of victory over nature hast thou taken, having given birth unto God, O pure one; yet, emulating thy Creator and Son, thou submittest to the laws of nature in supernatural manner. Wherefore, having died, thou risest with thy Son unto everlasting life.
+
+Canon II of the dormition, the composition of John of Damascus, in Tone IV—
+
+Irmos: I will open my mouth, and with the Spirit will it be filled; and I shall utter discourse unto the Queen and Mother, and shall appear, keeping splendid festival; and, rejoicing, I will hymn her dormition.
+
+O virgin maidens, with Miriam the prophetess raise ye now a hymn of parting! For she who alone is Virgin and Mother of God is translated and received into heaven.
+
+The divine mansions of heaven received thee as an animate heaven, as is meet, O all-pure one; and thou hast taken thy place as a bride, splendidly adorned, before thy King and God, O most immaculate one.
+
+Katavasia: The right choir chanteth the irmos of Canon I, and the left choir that of Canon II.
+
+Ode III
+
+Canon I
+
+Irmos: O Christ, Thou creative and almighty Wisdom and Power of God, establish the Church immovable and unshaken; for Thou alone art holy Who restest in the saints.
+
+The glorious apostles, seeing thee to be a mortal woman, yet, in manner transcending nature, the Mother of God, O all-immaculate one, with awe touched with their hands thee who art resplendent in glory, perceiving thee to be a habitation acceptable to God.
+
+When God preserved with the glory of His divinity the honor of the animate ark wherein the Word became flesh, the judgment of retribution overtook the insolent one through the severing of his audacious hands.
+
+Canon II
+
+Irmos: O Theotokos, thou living and abundant fountain: in thy divine commemoration establish those who hymn thee and spiritually form themselves into a choir; and vouchsafe unto them crowns of glory.
+
+Having issued forth from a mortal womb, O pure one, thou didst receive an end conforming to nature; but, having given birth unto Him Who is Life, Thou hast been translated to the divine and hypostatic Life.
+
+At the behest of the Almighty, the choir of theologians journeyed from the ends of the earth, and multitudes of angels came from on high to Sion, to minister at thy burial as was meet, O Mistress.
+
+Hypacoï, in Tone VIII—
+
+All of us, the generations of men, bless thee, O Virgin Theotokos; for Christ our God, Who is infinite, was well-pleased to be contained within thee. Blessed are we to enjoy thine intercession; for thou prayest for us day and night, and by thy supplications are the scepters of kingdoms made steadfast. Wherefore, chanting, we cry aloud to thee: Rejoice, O thou who art full of grace! The Lord is with thee!
+
+Ode IV
+
+Canon I
+
+Irmos: The sayings and indistinct images of the prophets showed forth Thine incarnation from the Virgin, O Christ. The effulgence of Thy radiance issueth forth to enlighten the nations, and the deep crieth out to Thee with gladness: Glory to Thy power, O Thou Who lovest mankind!
+
+Behold, O ye people, and marvel, for the holy and openly manifest mountain of God is exalted on high to the mansions of heaven: the earthly heaven becometh a celestial and incorrupt habitation.
+
+Thy death became a passage to an everlasting and better life, O pure one, translating thee from transitory life to that which is truly divine and eternal, that thou mightest behold thy Son and Lord in gladness, O pure one.
+
+The gates of heaven were raised and the angelic choirs chanted; and Christ received the vessel of His Mother's virginity. The cherubim lifted her up with gladness, and the seraphim glorify her, rejoicing.
+
+Canon II
+
+Irmos: Perceiving the inscrutable counsel of God — the Incarnation of Thee, the Most High, from the Virgin — the Prophet Habbakuk cried aloud: Glory to Thy power, O Lord!
+
+A wonder was it to see the animate heaven of the King of all, which surpasseth the barren places of the earth. How wondrous are Thy works! Glory to Thy power, O Lord!
+
+If her unapproachable Fruit, through Whom the heavens arose, chose of His own will to accept burial as a mortal, how can she, who gave birth to Him without knowing wedlock, refuse burial?
+
+At thy repose, O Mother of God, with trembling and joy the armies of the angels covered with their sacred wings thy most spacious body, which had held God.
+
+Ode V
+
+Canon I
+
+Irmos: We confess the divine and ineffable beauty of Thy virtues, O Christ; for having shone forth from eternal Glory as the co-eternal and hypostatic Effulgence, incarnate of the Virgin's womb Thou hast shone forth like the Sun upon those in darkness and shadow.
+
+The choir of the apostles assembled, borne as on a cloud to Sion from the ends of the earth, to serve thee, the light cloud through whom God Most High, the Sun of righteousness, hath shone forth upon those who are in darkness and shadow.
+
+More melodious than clarions, the God-pleasing tongues of the theologizing men sounded forth to the Theotokos, playing a funeral hymn inspired by the Spirit: Rejoice, O incorrupt fountain of God's life-creating incarnation which saveth all!
+
+Canon II
+
+Irmos: All things are filled with awe at thine honored dormition; for thou, O Virgin who hast not known wedlock, hast passed from earth to the everlasting mansions, and to never-ending life, bestowing salvation upon all who hymn thee.
+
+Let the clarions of the theologians trumpet forth today, and let the eloquent tongues of men now render praise; let the air resound, shining with boundless light, and let the angels hymn the dormition of the all-pure Virgin.
+
+It was fitting for thee, O most lauded Virgin Theotokos, to be the chosen vessel, which is wholly marvelled at in hymnody at thy departure, wholly consecrated to God, divinely pleasing unto all, and truly shown to be such.
+
+Ode VI
+
+Canon I
+
+Irmos: The inner fire of the sea from the deep which giveth rise to the whales was a prefiguring of Thy three-day burial, whereof Jonah was shown to be the proclaimer; for, remaining unharmed as he was before he was sent forth, he cried: I will sacrifice to Thee with a voice of praise, O Lord!
+
+God, the King of all, giveth thee that which transcendeth nature; for, as He kept thee a virgin during thy birthgiving, so did He preserve thy body untouched by corruption in the tomb; and He glorified thee with Himself by a divine translation, rendering thee honor as a Son to His Mother.
+
+Truly, O Virgin, thine Offspring set thee in the Holy of Holies as the splendid candlestick of the immaterial Light, the golden censer of the divine Coal, the jar and the staff, the divinely inscribed tablet, the holy ark, the table of the Word of life.
+
+Canon II
+
+Irmos: Celebrating this divine and most honored festival of the Mother of God, come, ye divinely wise, let us clap our hands and glorify God Who was born of her.
+
+From thee did Life shine forth, leaving intact the seal of thy virginity. How, therefore, hast thine all-pure and life-giving body been permitted to be tempted by death?
+
+As the temple of Life, thou didst attain life everlasting; for, having given birth to the hypostatic Life, thou didst pass through death on to life.
+
+Kontakion of the feast, in Tone II—
+
+The tomb and mortality could not hold the Theotokos, who is untiring in her supplications and our certain hope in her intercessions. For, as the Mother of Life, she hath passed over to the Life Who dwelt within her ever-virgin womb.
+
+Ikos: Guard thou my thoughts, O my Christ, for I make bold to hymn the bulwark of the world, Thy pure Mother. Establish me firmly in the bastion of my words, and help me in the midst of difficult thoughts; for Thou fulfillest the entreaties of those who cry out and ask with faith. Wherefore, grant unto me a deft tongue and a ready mind, for every good deed of enlightenment cometh down from Thee, O Bestower of light, Who dwelt within her ever-virgin womb.
+
+Ode VII
+
+Canon I
+
+Irmos: The divine will, opposing the shameless rage and the fire, bedewed the fire and put wrath to shame by the divinely inspired three-stringed lyre of the venerable youths, opposing the musical instruments amid the flames, chanting: O all-glorious God of our fathers, blessed art Thou!
+
+Enraged, Moses smashed the divinely wrought tablets which had been inscribed by the divine Spirit; but the Master, preserving unharmed her who gave birth to Him, hath now caused her to dwell in the mansions of heaven. Celebrating with her, let us cry out to Christ: O all-glorious God of our fathers, blessed art Thou!
+
+On the cymbals of pure lips, with the music of a radiant heart, on the high-sounding clarion of exalted thought, clapping our diligent hands on the renowned and chosen day of the repose of the pure Virgin, let us cry aloud: O all-glorious God of our fathers, blessed art Thou!
+
+Gather ye together, O divinely wise people, for the dwelling-place of the glory of God is translated from Sion to the habitation of heaven, where is the pure voice of those who keep festival, the voice of the unutterable rejoicing of those who cry out to Christ in gladness: O all-glorious God of our fathers, blessed art Thou!
+
+Canon II
+
+Irmos: The divinely wise youths worshipped not a creation rather than the Creator, but, manfully trampling the threat of the fire underfoot, they rejoice, chanting: Blessed art Thou, the all-hymned God of our fathers!
+
+Honoring the memory of the Mother of God, O youths and virgins, elders and princes, kings and judges, chant ye: O Lord and God of our fathers, blessed art Thou!
+
+Let the mountains of heaven sound the trumpet of the Spirit! Let the hills rejoice and the divine apostles dance! The Queen passeth over to her Son, reigning with Him!
+
+The most sacred repose of Thy divine and incorrupt Mother hath united the celestial ranks of the exalted hosts to rejoice with those on earth, chanting unto Thee: Blessed art Thou, O God!
+
+Ode VIII
+
+Canon I
+
+Irmos: The almighty Angel of God showed forth for the youths a flame which bedewed the venerable and utterly consumed the ungodly; and He made the Theotokos a life-creating wellspring pouring forth destruction for death and life for those who chant: O ye who have been delivered, let us hymn and exalt the one Creator for all ages!
+
+With discourses the whole multitude of theologians accompanied the sacred coffin of the Theotokos in Sion, exclaiming: Whither goest thou, O tabernacle of the living God? Cease not to regard those who chant with faith: O ye who have been delivered, let us hymn and exalt the one Creator for all ages!
+
+Thou goest forth, O all-immaculate one, lifting up thine hands, the hands wherewith thou didst bear God in the flesh; and as a Mother thou didst with boldness say to Him Who was born of thee: Preserve Thou forever those whom Thou hast given to me, who cry out to Thee: O ye who have been delivered, let us hymn and exalt the one Creator for all ages!
+
+Canon II
+
+Irmos: The birthgiving of the Theotokos saved the pious children in the furnace — then in figure, but now in deed — and it moveth all the world to chant to Thee: Hymn ye the Lord and exalt Him supremely for all ages!
+
+The principalities, authorities and powers, the angels, archangels, thrones, dominions, the cherubim and the dread seraphim, glorify thy memory, O pure Virgin; and we, the race of men, hymn and exalt it supremely for all ages.
+
+He Who, in manner strange, made His abode, incarnate, within thy pure womb, O Theotokos, receiveth thy most sacred spirit and, as thy Son and One in thy debt, hath given it rest by His side. Wherefore, we hymn and exalt thee supremely for all ages, O Virgin.
+
+O the wonders of the Ever-virgin and Mother of God, which pass understanding! For, taking up her abode in the grave, she hath shown it to be paradise; and standing before it today, rejoicing, we chant: Hymn the Lord, ye works, and exalt Him supremely for all ages!
+
+We do not chant the Magnificat before Ode IX, but sing instead the refrain of the feast:
+
+All of us, the generation of men, bless thee, the only Theotokos.
+
+Or:
+
+Beholding the dormition of the all-pure one, the angels were amazed that the Virgin ascended from earth to heaven.
+
+And thereafter the irmos of Ode IX of Canon I. The second choir chanteth the same refrain and irmos. And at each troparion of the canons the refrain is chanted.
+
+Ode IX
+
+Canon I
+
+Irmos: In thee are the laws of nature overcome, O pure Virgin, for thy birthgiving is virginal and death is betrothed to life. A Virgin giving birth and alive after death, O Theotokos, thou hast saved thine inheritance.
+
+The angelic hosts were amazed, seeing their Master in Sion, bearing in His arms a woman's soul; for as befitteth a Son, He exclaimed to her in all-pure manner: Come, O pure one, and be glorified with thy Son and God!
+
+The choir of angels buried thy body, which had received God, gazing upon it with fear, and exclaiming with a loud voice: O Theotokos who ascendest to thy Son in the heavenly mansions, thou ever savest thine inheritance!
+
+Canon II
+
+Magnify, O my soul, the honored passing of the Mother of God from earth to heaven.
+
+And then the irmos of Canon II. This refrain is chanted before each of the troparia of Canon II.
+
+Irmos: Let every mortal leap for joy, enlightened by the Spirit; and let the nature of the incorporeal intelligences keep festival, honoring the sacred repose of the Mother of God, and let them cry aloud: Rejoice, O most blessed Theotokos, pure Ever-virgin!
+
+Come ye to Sion, the divine and fertile mountain of the living God, and let us behold the Theotokos; for Christ hath translated her, as His Mother, to the Holy of Holies of a far better and divine tabernacle.
+
+Come, ye faithful, let us approach the tomb of the Mother of God and kiss it with hearts and lips, touching to it your eyes and faces, and drawing gifts of abundant healings from the ever-flowing fountain.
+
+Accept from us a hymn of parting, O Mother of the living God, and with thy light-bearing and divine grace overshadow us, granting victory to Orthodox hierarchs over heresies, and forgiveness to all Christian people who hymn thee, and salvation to their souls.
+
+Then both choirs, having gone down together, chant the refrain of Canon I and its irmos, and the refrain of Canon II and its irmos. Prostration.`
+        },
+
         "09-08": {
         label: "Canon of the Nativity of Our All-holy Mistress, the Theotokos and Ever-virgin Mary",
         text: `Two canons of the feast, with a total of 12 troparia, each irmos being chanted twice.
