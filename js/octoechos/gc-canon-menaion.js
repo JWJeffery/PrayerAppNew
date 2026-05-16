@@ -685,5 +685,365 @@ That Thou mightest show forth to the world the image of the Cross venerated amon
 
 Then, as katavasiae, the ninth irmoi of both canons, with their refrains, after which we make a prostration.`
         },
+        "11-21": {
+            label: "Canon of the Entry of Our All-holy Mistress, the Theotokos and Ever-virgin Mary, into the Temple",
+            text: `Two canons of the Theotokos: the first with 8, the irmos being chanted twice, followed by 6 troparia; and the second like the first, with 8, the irmos being chanted twice, followed by 6 troparia.
+
+Ode I
+
+Canon I of the Theotokos, the acrostic whereof is: "O Mistress, grant me the grace of discourse", the composition of George, in Tone IV—
+
+Irmos: I will open my mouth, and with the Spirit will it be filled; and I shall utter discourse unto the Queen and Mother, and shall appear, keeping splendid festival; and, rejoicing, I will hymn her Entry.
+
+O all-pure one, we know thee to be a treasury of wisdom and an ever-flowing fountain of grace; and we pray thee: Rain down drops of knowledge upon us, that we may praise thee forever.
+
+Being a temple and palace more exalted than the heavens, O all-pure one, thou wast set apart in the Temple of God to be prepared as a divine dwelling-place for His advent.
+
+Shining with the Light of grace, the Theotokos hath illumined all and assembled them to adorn her most splendid festival. Come ye, let us draw nigh to her!
+
+The glorious portal which thoughts cannot pass, having opened the doors of the Temple of God, doth now command us that have assembled to delight in her divine wonders.
+
+Canon II of the Theotokos, the composition of Basil, in Tone I—
+
+Irmos: Let us all chant a hymn of victory unto God, Who hath wrought marvelous wonders with His upraised arm and saved Israel, for He is glorious.
+
+Let us hasten today, honoring the Theotokos with hymns, and let us celebrate a spiritual feast; for she is offered to God in the temple as a gift.
+
+With songs let us hymn the glorious arrival of the Theotokos; for today, as the prophets foretold, she is borne into the temple as a gift of great price, though she is herself the temple of God.
+
+The blameless Anna rejoiced, maternally bringing a gift of great price to God in the temple; and with her Joachim keepeth splendid festival.
+
+Of old, David, thine ancestor, hymned thee, O Virgin Bride of God, calling thee the daughter of Christ the King; and, having given birth to Him, as a Mother thou didst feed Him with milk as a babe.
+
+Three years of age in the flesh, the Theotokos is borne unto the Lord; and, receiving her, Zachariah the priest of God hath installed her in the temple, rejoicing.
+
+Ye candle-bearing virgins, join chorus! O ye mothers, do ye likewise today! Chant ye unto the Queen and Mother who cometh to the temple of Christ the King!
+
+Glory…: Triadicon: O Trinity One in essence — Father, Word and Holy Spirit: Thee do we glorify with faith as the Creator of all, and unto Thee do we piously cry aloud: Save us, O God!
+
+Now & ever…: Theotokion: Arrayed in purple vesture dyed in thy blood, O all-pure one, God the King, issuing forth, hath restored the whole human race in His compassion.
+
+Katavasia: Christ is born, give ye glory! Christ cometh from heaven, meet ye Him! Christ is on earth, be ye exalted! O all the earth, sing ye unto the Lord, and chant with gladness, ye people, for He hath been glorified!
+
+Ode III
+
+Canon I
+
+Irmos: O Theotokos, thou living and abundant fountain: in thy divine glory establish those who hymn thee and spiritually form themselves into a choir; and vouchsafe unto them crowns of glory.
+
+Receiving the pure and undefiled one, who is more splendid than all creation, the animate bridal chamber of God, the beautiful Temple and chamber doth today appear as that which adorneth the bride for her wedding.
+
+David, preceding the chorus, doth leap and dance with us, and declareth thee, O all-pure one, the queen adorned, who standeth in the Temple before our King and God, O most pure one.
+
+From her, from whom transgressions went forth among the human race, hath her correction and incorruption blossomed forth, the Theotokos, who is led today into the house of God.
+
+The angelic armies and a multitude of all men leap for joy, and they advance as lamp-bearers before thy countenance, proclaiming thy majesty in the house of God.
+
+Canon II
+
+Irmos: Let my heart be made steadfast in Thy will, O Christ God, Who didst establish the second heaven above the waters and didst found the earth upon the waters, O Almighty One.
+
+O ye who love the feasts of the Church, let us keep festival and rejoice together in spirit, revelling today on the holy feast of the daughter of the King, the Mother of our God.
+
+Rejoice today, O Joachim! Be thou glad in spirit, O Anna, leading to the Lord the three-year old child born of thee, as though she were a pure and most immaculate heifer.
+
+Mary, the Theotokos, the habitation of God, is led into the holy temple, being three years of age in the flesh; and, going before her, virgins bear lighted lamps.
+
+The pure ewe-lamb of God, the undefiled turtle-dove, the tabernacle containing God, the sanctuary of glory, hath chosen to dwell within the holy tabernacle.
+
+With hymns let the Bride of God be praised, who is more spacious than the heavens and more exalted than the heavenly hosts, and who, though but three years in the flesh, is yet mature in spirit.
+
+Celebrating the arrival of the Theotokos in the precincts which cannot be entered, joyously bearing candles noetically today, let us draw nigh unto the temple with the virgins.
+
+Ye priests of God, clothe yourselves in righteousness through grace and go forth in splendor to greet the daughter of God the King, granting her entry into the Holy of holies.
+
+Glory…: Triadicon: The Father is light; His Son is light; and the comforting Spirit is also light: for the Trinity, shining forth as from a single sun, doth divinely illumine and preserve our souls.
+
+Now & ever…: O pure one, the prophets proclaimed thee as the ark of the sanctuary, the gold censer, the lampstand and table; and we hymn thee as the tabernacle which held God.
+
+Katavasia: To Christ God, the Son Who was begotten of the Father without corruption before time began, and in latter times without seed became incarnate of the Virgin, let us cry aloud: O Lord Who liftest up our horn, holy art Thou!
+
+Sessional hymn, in Tone IV: Spec. Mel.: "Joseph marvelled…"—
+
+Tell us, O David: what is this present festival? Who is she whom thou once didst hymn in the Book of Psalms as daughter, divine Maiden and Virgin? "The virgins that follow after her, together with those near her," said he, "shall be mystically brought unto the King." Make this a wondrous and universal feast for those who cry: The Theotokos is come unto us, the mediatress of salvation!
+
+Glory…, Now & ever…, in the same tone & melody—
+
+With gladness Mary, the Theotokos, is all-gloriously brought into the house of God: the unblemished ewe-lamb, the undefiled bridal-chamber, whom the angels of God escort with faith and all the faithful ever call blessed and hymn her unceasingly with a loud voice in thanksgiving: Thou art our glory and salvation, O most immaculate one!
+
+Ode IV
+
+Canon I
+
+Irmos: Perceiving the inscrutable counsel of God—the Incarnation of Thee, the Most High, from the Virgin—the Prophet Habbakuk cried aloud: Glory to Thy power, O Lord!
+
+The Temple of God, receiving today the portal through whom none may pass, hath ceased to perform any service of the Law, crying: Truly truth hath appeared to those who are on earth!
+
+The mountain overshadowed, which Habbakuk beheld of old, prefigured her who hath made her abode in the inaccessible chambers of the Temple, flourishing with virtues, for she doth cover the ends of the earth therewith.
+
+All the earth hath seen most glorious things, things strange and marvellous; for the Virgin, receiving food from an angel, doth receive tokens of God's dispensation.
+
+Revealed as temple and palace and animate heaven, O divine bride of the King, thou art brought today to the Temple of the Law to be kept for Him, O all-pure one.
+
+Canon II
+
+Irmos: Foreseeing in the Spirit the incarnation of the Word, O Prophet Habbakuk, thou didst announce, crying out: When the years draw nigh, Thou shalt be acknowledged; when the season cometh, Thou shalt be shown forth! Glory to Thy power, O Lord!
+
+O Prophet Isaiah, prophesy unto us: Who is the Virgin who will conceive in her womb, who, springing forth from the root of Judah, shall give birth to the right glorious Fruit of the holy seed of King David?
+
+O virgins, commence ye to chant hymns, holding candles in your hands, and praising the arrival of the pure Theotokos who now cometh to the temple of God, and celebrating with us!
+
+Rejoice now, O Joachim and Anna, leading into the temple of the Lord, like a heifer three years of age, the pure one born of you, who will become the Mother of God.
+
+As the holy of holies, O pure one, thou didst love to dwell in the holy temple, and thou dost remain, conversing all-gloriously with the angels, receiving bread from heaven, O Virgin, thou nourisher of Life.
+
+Having given birth beyond hope to the all-pure Virgin, Joachim and Anna piously vowed to offer her unto God; and they fulfill their oath, giving up to the house of God as a sacrifice her who was born of them.
+
+The rod of Aaron once budded forth, prefiguring the divine birthgiving, O pure one: for thou dost conceive without seed and hast remained incorrupt; and even after giving birth thou art shown to be a virgin, nurturing the God of all as an infant.
+
+Ye virgins and mothers, haste ye together with us to honor the Virgin and Mother who hath been born; and let us all splendidly celebrate her as an unblemished sacrifice brought forth as fruitful for God.
+
+Glory…: Triadicon: Let us piously glorify the true God, the Trinity of Persons, the Unity in image, Whom the ranks of angels and archangels hymn as the Master of creation, and whom men ever worship with faith.
+
+Now & ever…: Theotokion: O all-pure and pure one, unceasingly entreat thy Son and God to Whom thou gavest birth in the flesh, that He deliver all thy servants from the multifarious snares of the devil and from every assailing temptation.
+
+Katavasia: A rod from the root of Jesse and blossom therefrom, O Christ, Thou didst spring forth from the Virgin; from the mountain overshadowed and densely wooded hast Thou come, incarnate of her who knew not man, O Thou praised and immaterial God. Glory to Thy power, O Lord!
+
+Ode V
+
+Canon I
+
+Irmos: All things are filled with awe at thy divine glory; for thou, O Virgin who hast not known wedlock, didst contain within thy womb Him Who is God over all, and gavest birth to the timeless Son, granting peace unto all who hymn thee.
+
+The all-pure Virgin, the glorious sanctity and sacred offering which is brought today to the Temple of God, is preserved as a habitation for our one God, the King of all, as He Himself doth know.
+
+Zachariah, beholding once the beauty of thy soul, cried out in faith: Thou art the deliverance, thou art the joy of all, thou art our restoration, through whom the Uncontainable One shall appear unto me contained.
+
+O, thy wonders which pass understanding, O all-pure one! Strange is thy birthgiving; strange is the manner of thy growth; strange also, most glorious and unutterable by men, are all thy wonders, O Bride of God.
+
+A most radiant lamp, O Bride of God, thou hast shone forth today in the house of the Lord and dost illumine us with the precious gifts of thy wonders, O pure and all-hymned Theotokos.
+
+Canon II
+
+Irmos: Shine forth thy radiant and everlasting light upon us who rise early unto the judgments of Thy commandments, O Master Christ our God, Who lovest mankind.
+
+O all ye Orthodox, let us take up lamps, hastening to glorify the Mother of God, for she is led to the Lord today as a right acceptable sacrifice.
+
+Let thine ancestors be glad today, O Mistress; and let her who gave thee birth rejoice with thy father, for their fruit is offered to the Lord.
+
+Celebrating with faith, let us all hymn the unblemished heifer, most glorious and of great renown, for she gave birth to the divine Bullock in the flesh.
+
+The divine tokens of thy betrothal, of thy birthgiving which passeth understanding, O pure Virgin, are recorded today by the Holy Spirit in the house of God.
+
+Let the outer doors of the glory of our God be opened, and let them receive as an unblemished heifer of three years the Mother of God, who will not taste of wedlock.
+
+Let us hymn the Ever-virgin who hath become the Mother of God, the most honorable mountain overshadowed; for she hath shone forth light upon the ends of the earth.
+
+Glory…: Triadicon: Glorifying the one all-originating and ever-existing Godhead, we worship the indivisible Essence in three Persons, equal in honor and glory.
+
+Now & ever…: Theotokion: Ever delivered from misfortunes and tribulations, O Theotokos, we have acquired thy prayer as a right tranquil haven and an invincible bulwark amid evil circumstances.
+
+Katavasia: As God of peace and Father of compassion, Thou didst send Thine Angel of Great Counsel, Who granteth us peace. Therefore, guided to the light of knowledge divine, and waking at dawn out of the night, we glorify Thee, Who lovest mankind.
+
+Ode VI
+
+Canon I
+
+Irmos: Celebrating this divine and most honored festival of the Mother of God, come, ye divinely wise, let us clap our hands and glorify God Who was born of her.
+
+Thou Who hast upheld all things by Thy word hast hearkened to the prayer of the righteous ones. Wherefore, Thou hast loosed the infirmity of the barren woman, in that Thou art compassionate, and hast given them her who is the cause of joy.
+
+Desiring to make His salvation known to the gentiles, the Lord hath now taken from among men her who hath not known wedlock, as a sign of reconciliation and renewal.
+
+As a house of grace, wherein treasures of the ineffable dispensation of God are laid up, O most pure one, thou didst share in unfading delight in the Temple.
+
+Receiving thee as a royal diadem, O Bride of God, the Temple hath been made splendid and hath mounted to higher things, beholding in thee the fulfillment of the prophecies.
+
+Canon II
+
+Irmos: Emulating the Prophet Jonah, I cry out: O Good One, free me from corruption! O Savior of the world, save me who cry out: Glory to Thee!
+
+O ye faithful, let us celebrate the spiritual feast of the Mother of God, chanting piously; for she is more holy than the heavenly intelligences.
+
+With spiritual hymns let us praise the Mother of the Light, O ye faithful, for she hath appeared to us today, going forth into the temple of God.
+
+The unblemished ewe-lamb, the pure turtle-dove, is brought to dwell in the house of God, for, as immaculate, she was chosen beforehand to be the Mother of God.
+
+The temple of God, the heavenly tabernacle, maketh entry into the temple of the law, and from her hath the Light shone forth upon us who are in darkness.
+
+A child in the flesh, though perfect in soul, the holy ark entereth the house of God, to be nurtured with grace divine.
+
+By thine entreaties free us who have recourse unto thee, from all temptations and spiritual misfortunes, O Mother of Christ God.
+
+Glory…: Triadicon: O Father, Son and upright Spirit, Unity in three Hypostases, indivisible Trinity: have mercy upon those who worship Thy divine might.
+
+Now & ever…: Theotokion: Contained in thy womb, O all-pure Mother of God, He Whom nought could contain issued forth from thee in two natures: God and man.
+
+Katavasia: The sea monster thrust forth, like a babe from the womb, Jonah whom it had swallowed; and the Word, Who dwelt within the Virgin and took flesh of her, issued forth, preserving her incorrupt. He kept her who gave Him birth unharmed, for He Himself was not subject to corruption.
+
+Kontakion of the feast, in Tone IV: Spec. Mel.: "Having been lifted up…"—
+
+The most pure temple of the Savior, the precious bridal chamber and Virgin, the sacred treasury of the glory of God, is on this day brought into the house of the Lord, bringing with her the grace that is in the divine Spirit. To her do the angels of God chant the hymn: She is the heavenly tabernacle!
+
+Ikos: Beholding the grace of the ineffable and divine mysteries of God made plainly manifest in and filling the Virgin, I rejoice; yet I know not how to understand this strange and ineffable image. How hath the pure one alone been shown to be above all creation, visible and noetic? Wherefore, desiring to praise her, I am greatly in awe in mind and word; yet, making bold, I proclaim and magnify her, saying: She is the heavenly tabernacle!
+
+Ode VII
+
+Canon I
+
+Irmos: The divinely wise youths worshipped not a creation rather than the Creator, but, manfully trampling the threat of the fire underfoot, they rejoice, chanting: Blessed art Thou, the all-hymned God of our fathers!
+
+Lo, today a joyous spring hath burst forth upon the ends of the earth, enlightening our souls, thoughts and minds with grace: the festival of the Theotokos. Let us mystically hold feast this day!
+
+Let all things—heaven and earth, the ranks of angels and the multitude of men—bear gifts today unto the Queen and Mother of God; and let them cry out: Our joy and deliverance is brought to the Temple!
+
+The Scriptures have come to pass, the Law hath faded like a shadow, and rays of grace have shone forth upon thee who hast entered into the Temple of God, O pure Virgin Mother, wherein thou art blessed.
+
+Heaven and earth and the netherworld are subject to thine Offspring as Creator and God, O most pure one, and every nation of mortals doth confess that the Lord and Savior of our souls hath appeared.
+
+Canon II
+
+Irmos: The furnace was bedewed, O Savior, and the children, dancing, chanted: O God of our fathers, blessed art Thou!
+
+O ye who love the feasts of the Church, let us join chorus and hymn the pure Mistress, honoring Joachim and Anna as is meet.
+
+Prophesy, O David, giving utterance in the Spirit: The virgins that follow after thee shall be brought to thee into the temple of the Queen and Mother.
+
+The ranks of the angels rejoiced and the souls of the righteous were gladdened, for the Mother of God is led into the Holy of holies.
+
+Receiving heavenly food, she who was to become the Mother of Christ God in the flesh excelled in wisdom and grace.
+
+Abiding in the temple of God as a most sacred vessel, the immaculate Mary rejoiced in body and spirit.
+
+Thy chaste parents brought thee to the innermost chamber of the temple, O all-pure one, to be raised as the dwelling-place of Christ God in strange manner.
+
+Glory…: Triadicon: We glorify the indivisible Trinity, and we hymn the one Divinity: the Father, the Word and the most Holy Spirit.
+
+Now & ever…: Theotokion: The Lord to Whom thou gavest birth, do thou entreat, in that He is compassionate by nature, O Theotokos, that He save the souls of those who hymn thee.
+
+Katavasia: The children raised together in piety, disdaining the ungodly command, feared not the threat of the fire, but, standing in the midst of the flame, they chanted: O God of our fathers, blessed art Thou!
+
+Ode VIII
+
+Canon I
+
+Irmos: Hearken, O pure Virgin Maiden! Let Gabriel give utterance unto the true and ancient counsel of the Most High: "Make ready to receive God, for through thee hath the Infinite One come to dwell with men!" Wherefore, rejoicing, I cry out: Bless the Lord, all ye works of the Lord!
+
+Anna, once, leading the all-pure temple to the house of God, faithfully said unto the priest, crying aloud: Now accept thou this child, given me by God; lead her into the Temple of the Creator; and, rejoicing, chant unto Him: Bless the Lord, all ye works of the Lord!
+
+And Zachariah then, beholding them in the Spirit, said unto Anna: Thou dost bring hither the true Mother of Life, whom the prophets of God have clearly foretold as the Theotokos! How, therefore, can the Temple hold her? Wherefore, marvelling, I cry out: Bless the Lord, all ye works of the Lord!
+
+The handmaid of God have I been, answered Anna unto him, and I call upon Him with faith and prayer to accept the fruit of my birth-pangs, that, having received this child, I might bring her who was born unto Him Who bestowed her. Wherefore, I cry aloud: Bless the Lord, all ye works of the Lord!
+
+Truly this is a matter of the Law, the priest said to her, and strange doth this thing seem unto me, beholding her who doth most gloriously surpass the holy ones in grace led into the house of God. Wherefore, rejoicing, I cry out: Bless the Lord, all ye works of the Lord!
+
+Canon II
+
+Irmos: Him of Whom the angels and all the hosts of heaven stand in awe as their Creator and Lord, hymn, ye priests; glorify, ye children; bless, ye people, and exalt Him supremely for all ages!
+
+Joachim rejoiceth today in splendor, and the blameless Anna offereth to the Lord God a sacrifice: the holy daughter given her according to God's promise.
+
+The holy David and Jesse render praise, and Judah offereth homage; for the pure Virgin, of whom the preëternal God was born, grew forth as fruit from their root.
+
+The all-pure Mary, the animate tabernacle, is brought today into the house of God; and Zachariah taketh her in his arms as the sanctified treasure of the Lord.
+
+O ye faithful, let us truly honor the Virgin Mother of God, who is blessed by the hands of the priests, as the portal of salvation, the noetic mountain and the animate ladder.
+
+O ye prophets, apostles and martyrs of Christ, ye ranks of angels, and all ye mortals, with hymns let us honor the pure Virgin as the blessed Mother of the Most High.
+
+O pure and most immaculate one, they who divinely gave thee birth have brought thee to the temple as a pure sacrifice; and thou dost strangely abide in the impassable precincts of God, to be prepared as the dwelling-place of the Word.
+
+We bless the Father, the Son and the Holy Spirit: the Lord.
+
+Triadicon: Let the Thrice-holy One be hymned: the Father, the Son and the Holy Spirit, the indivisible Unity, the one Godhead, Who holdeth all creation in His hand for all ages!
+
+Now & ever…: Theotokion: The Word Who is without beginning receiveth a beginning in the flesh, being born of the Virgin Maiden as was His good pleasure: both God and man, restoring us who before were fallen, in His extreme loving-kindness.
+
+Katavasia: The dew-bearing furnace showed forth the image of a supernatural wonder; for it burned not the youths whom it had received, just as the fire of the Godhead burned not the Virgin, whose womb it entered. Wherefore, chanting, let us sing: Let all creation bless the Lord and exalt Him supremely for all ages!
+
+At Ode IX we do not chant the Magnificat, but sing instead the refrains of the feast:
+
+The angels, beholding the entry of the all-pure one, were amazed to see the Virgin enter into the Holy of holies.
+
+The irmos of Canon I is then chanted: "May the hands of the profane in nowise touch…", whereupon the second choir chanteth the same refrain and irmos. A refrain is also chanted before each troparion of the ode, alternating between both choirs.
+
+Ode IX
+
+Canon I
+
+Irmos: May the hands of the profane in nowise touch the Theotokos, the animate ark of God; but let the lips of the faithful, unceasingly chanting the cry of the angel, joyfully cry out: Truly thou art more highly exalted than all, O pure Virgin!
+
+Refrain: The angels, beholding the entry of the most pure one, were amazed at how she entered into the Holy of holies with glory.
+
+O pure Theotokos, as thou hast the most radiant beauty of purity of soul and art full of the grace of God from heaven, with the eternal light thou dost ever enlighten those who cry out with joy: Truly thou art more highly exalted than all, O pure Virgin!
+
+Refrain: The angels, beholding the entry of the Virgin, were amazed at how she entered into the Holy of holies all-gloriously.
+
+Thy wonder doth surpass the power of words, O pure Theotokos, for in thee I perceive a body impervious to the movement of sin. Wherefore, thankfully I cry out to thee: Truly thou art more highly exalted than all, O pure Virgin!
+
+Refrain: The angels and we men honor the entry of the Virgin: how she entered the Holy of holies with glory.
+
+Most gloriously did the Law prefigure thee, O pure one, as the tabernacle, the divine jar, the awesome ark, the veil, the staff, the inviolable temple and portal of God. Wherefore, all these things teach us to cry to thee: Truly thou art more highly exalted than all, O pure Virgin!
+
+Refrain: The angels, beholding the entry of the Virgin, were amazed to see her enter the Holy of holies in God-pleasing manner.
+
+In hymnody David cried out to thee prophetically, calling thee the daughter of the King in the comeliness of thy virtues, beholding thee standing, elaborately adorned, at the right hand of God. Wherefore, in prophecy he cried out: Truly thou art more highly exalted than all, O pure Virgin!
+
+Refrain: O ye angels, leap up with the saints! Ye virgins, dance together! For the divine Maiden hath entered into the Holy of holies!
+
+Foreseeing thee who art pleasing to God, Solomon proclaimed thee to be the bower of the King, the living and sealed fountain, from whence untroubled waters have issued forth for us who cry out with faith: Truly thou art more highly exalted than all, O pure Virgin!
+
+Refrain: O ye angels and men, let us magnify the Virgin with hymns; for in godly manner she hath entered the Holy of holies.
+
+O Theotokos, thou givest to my soul the tranquility of thy gifts, pouring forth life upon those who honor thee as is meet, defending, protecting and preserving them thyself, that they might cry to thee: Truly thou art more highly exalted than all, O pure Virgin!
+
+Then the first choir chanteth the refrain of Canon II of the feast:
+
+Refrain: Magnify, O my soul, her who was led into the temple of the Lord and blessed by the hands of the priest.
+
+Then the irmos is chanted: "The radiant cloud…" The second choir then chanteth the same refrain and irmos of the feast. And before each troparion of the canon we chant the above festal refrain.
+
+Canon II
+
+Irmos: The radiant cloud upon which the unoriginate Master of all descended from heaven, like rain upon the fleece, and of whom He was incarnate, becoming man for our sake, let us all magnify as the pure Mother of God.
+
+Refrain: Magnify, O my soul…
+
+The divine maiden Mary, the fruit of the promise, issued forth from the righteous Joachim and Anna, and, a babe in the flesh, she is brought into the holy sanctuary like pleasing incense, to dwell in the Holy of holies.
+
+Refrain: Magnify, O my soul…
+
+With hymns let us praise her who was a babe by nature and was supernaturally revealed as the Mother of God; for she is led unto the Lord in the temple of the law, as the fragrance of sweet savor for the righteous, as the spiritual fruit of her righteous parents.
+
+Refrain: Magnify, O my soul…
+
+O ye faithful, with the angel let us as is meet cry out to the Theotokos "Rejoice!" Rejoice, O most comely Bride! Rejoice, O radiant cloud, from whom the Lord hath shone forth upon us who sit in the darkness of ignorance! Rejoice, thou hope of all!
+
+Refrain: Magnify, O my soul…
+
+O pure Mary Mother of God, thou Holy of holies, from the snares of the enemy and from all heresy and tribulation do thou free us by thy supplications, who bow down with faith before the image of thy holy countenance.
+
+Refrain: Magnify, O my soul…
+
+With the Angel Gabriel all creation uttereth a fitting hymn to the Theotokos, crying: Rejoice, O most immaculate Mother of God, by whom we have been delivered from the primal curse, coming to share in incorruption!
+
+Refrain: Magnify, O my soul…
+
+O Virgin, thou hast been shown to be greater than the cherubim, more exalted than the seraphim and more spacious than the heavens, for thou didst contain within thy womb our God Whom nought can contain, and gavest birth to Him ineffably. Him do thou earnestly beseech in our behalf.
+
+Refrain: Magnify, O my soul, the dominion of the indivisible Godhead in three Hypostases.
+
+Triadicon: Let us glorify the indivisible Trinity, the Essence in three Hypostases, the undivided glory, Who, in a single Godhead, is unceasingly hymned in heaven and on earth, piously worshipping the Father, the Son and the Spirit.
+
+Refrain: Magnify, O my soul, the all-pure Theotokos, who is more honorable and more glorious than the armies on high.
+
+O Virgin Theotokos, pray thou, that we who flee with faith beneath thy compassion and piously worship thy Son as God and Lord of the world be delivered from corruption, misfortunes and all manner of temptations.
+
+Then both choirs, descending together, chant the refrain of Canon I, followed by the katavasia:
+
+The angels, beholding the entry of the all-pure one, were amazed to see the Virgin enter into the Holy of holies.
+
+A strange and most glorious mystery do I behold: the cave is heaven; the Virgin, the throne of the cherubim; the manger, the place wherein lay Christ God, Whom naught can contain, Whom praising, we magnify.`
+        },
     }
 };
