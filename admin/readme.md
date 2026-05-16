@@ -9,7 +9,7 @@ This is a development-only tool. It is not linked from the main application.
 
 The admin dashboard is a release-governance cockpit and diagnostic tool. It provides:
 
-- **Release-Governance Cockpit** — countdown to the Western Pentecost 2026 release gate, critical-path office status, monastic-first rationale, and non-blocking open items; sourced from `structure.json → governance.byzantine_release_roadmap`
+- **Release-Governance Cockpit** — post-Pentecost stabilization / EO production-readiness status, critical-path office status, monastic-first rationale, and readiness/deferred items; sourced from `structure.json → governance.byzantine_release_roadmap`
 - **Release Status panel** — roadmap summary (next required / next planned), open bugs, and open architectural debt; sourced from `structure.json → roadmap_summary` and `project_manifest.audit_findings`
 - **Active Governance & Open Work panel** — priority open todos and active governance decisions; sourced from `structure.json → admin.todos` and `governance.decisions`
 - **Top 5 Open To-Dos panel** — open tasks ranked by severity; `done` todos remain in the ledger as history but are hidden from this panel; sourced from `structure.json → admin.todos`
@@ -20,7 +20,7 @@ The admin dashboard is a release-governance cockpit and diagnostic tool. It prov
 
 ## Release-Governance Cockpit
 
-The Release-Governance Cockpit is the primary panel for tracking the Western Pentecost 2026 release gate.
+The Release-Governance Cockpit is the primary panel for tracking post-Pentecost stabilization and public-beta readiness. Western Pentecost 2026 is preserved as the prior aspirational gate, not the current active release target.
 
 All release panel data is sourced from `structure.json` under `governance.byzantine_release_roadmap`. The dashboard reads that section at page load and does not hard-code roadmap content. If a field is absent, the panel shows graceful fallback text rather than an error.
 
@@ -33,14 +33,14 @@ All release panel data is sourced from `structure.json` under `governance.byzant
 | `monastic_first` | Boolean — shows the monastic-first rationale block when true |
 | `monastic_first_rationale` | Short governance rationale shown under the gate block |
 | `critical_path_offices` | Array of offices with `title`, `status`, `engine_key`, and `note` |
-| `non_blocking_open` | Array of open items explicitly not required for this release gate |
+| `non_blocking_open` | Array of items explicitly deferred from current public-beta readiness |
 
 **Countdown behavior:**
 - If the gate date is in the future, the panel shows the number of days remaining.
 - If the gate date is today, it shows "TODAY."
 - If the gate date has passed, it shows "✓ Release gate date passed" in green. Negative days are never displayed.
 
-**Non-blocking label:** The non-blocking open items section includes an explicit note that these items are not required for the Western Pentecost 2026 release gate. EO production-path integration (`eo-calendar-modes`) is recorded here and is non-blocking.
+**Deferred/readiness label:** The readiness/deferred items section distinguishes public-beta blockers from items intentionally deferred beyond the current readiness gate. EO production-path integration (`eo-calendar-modes`) is no longer documented as non-blocking under the retired Western Pentecost target.
 
 **Release-critical todo marker:** The Top 5 Open To-Dos panel marks items with a `⚑ RELEASE` badge when the todo has `severity: HIGH` and either its `phase` contains "Pentecost," or its `title` or `description` contains the word "release."
 
@@ -88,14 +88,14 @@ To add a critical-path office, append an object to `critical_path_offices`:
 To add a non-blocking open item, append a string to `non_blocking_open`:
 
 ```json
-"my-item-id — Short description of why this is deferred from the release gate."
+"my-item-id — Short description of why this is deferred from current public-beta readiness."
 ```
 
 ---
 
 ## Eastern Orthodox calendar mode
 
-The EO mode selector (old_calendar / new_calendar) is active in the YearSnapshot panel. Admin/devtool diagnostics use `CalendarEngine.getEOSeasonRanges(year, eoMode)` and `EasternOrthodoxCalendar.getYearSnapshot()`. This is admin-only coverage; the main application does not yet expose EO calendar mode on the production path. This is tracked as `eo-calendar-modes` in the todo ledger and is explicitly non-blocking for the Western Pentecost 2026 release gate.
+The EO mode selector (old_calendar / new_calendar) is active in the YearSnapshot panel. Admin/devtool diagnostics use `CalendarEngine.getEOSeasonRanges(year, eoMode)` and `EasternOrthodoxCalendar.getYearSnapshot()`. This is admin-only coverage; the main application does not yet expose EO calendar mode on the production path. This is tracked as `eo-calendar-modes` in the todo ledger and is part of public-beta readiness under the post-Pentecost stabilization track.
 
 ---
 
