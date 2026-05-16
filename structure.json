@@ -622,14 +622,14 @@
         "title": "Byzantine Horologion — Monastic-First Default and Retired Pentecost Gate",
         "type": "product-governance",
         "status": "active",
-        "summary": "The Byzantine Horologion remains governed as monastic-first by default. Western Pentecost 2026 is retired as an active release target and preserved as the prior aspirational gate. Current release governance is post-Pentecost stabilization, EO production-path integration, and public-beta readiness gating.",
+        "summary": "The Byzantine Horologion remains governed as monastic-first by default. Western Pentecost 2026 is retired as an active release target and preserved as the prior aspirational gate. Current release governance is post-Pentecost stabilization and public-beta readiness gating; EO production-path integration is complete as of 2026-05-16.",
         "details": [
           "Monastic-first means the full daily cycle as observed in monastic typika (Great Compline, Midnight Office, Orthros, Hours, Typika, Vespers) is the governing completeness target, not the secular or cathedral parish subset.",
           "Great Compline (Mega Apodeipnon) baseline is already live: the office is structurally distinct from Small Compline and remains release-critical in the broader monastic completeness sense, but its remaining work is corpus expansion and refinement rather than baseline implementation.",
           "Typika (Obednitsa) baseline is already live: Sunday resurrectional kontakion layer (tones 1–8) is complete; dismissal is rubric-only by present design; remaining work is lectionary infrastructure rather than baseline implementation.",
           "Interhours (Mezhduchasiye — First, Third, Sixth, Ninth) baseline is already live: remaining work is fixed-text deepening rather than baseline implementation.",
           "The immediate governed Byzantine task is now the monastic audit: festal/seasonal replacement logic, kathisma depth, and remaining rubric-only pressure points across already-live offices.",
-          "EO main-app integration (eo-calendar-modes todo) remains open and is now part of public-beta readiness; it is no longer treated as non-blocking under a retired Western Pentecost gate.",
+          "EO main-app integration (eo-calendar-modes todo) is complete as of 2026-05-16: js/calendar-eastern-orthodox.js is loaded on the main-app production path, the Horologion sidebar exposes the EO calendar mode selector, and HorologionEngine.resolveOffice() consumes eoMode for fixed-date lookups. Remaining EO calendar governance concerns annual Typikon collision policy for fixed/movable overlaps and is deferred separately.",
           "The former Western Pentecost 2026 release gate is retired as an active target. Current readiness is defined as: honest monastic structural baseline in hand, release-honesty defects closed or explicitly deferred, EO production-path integration completed, and public-beta blockers stated plainly."
         ]
       }
@@ -698,6 +698,15 @@
     "last_realigned": "2026-04-21"
   },
 "recent_logic_changes": [
+    {
+      "phase": "Governance decision cleanup — EO production-path completion",
+      "date": "2026-05-16",
+      "file": "structure.json",
+      "change": "Removed stale EO-open language from the active governance decision 'Byzantine Horologion — Monastic-First Default and Retired Pentecost Gate.' The decision now states that EO production-path integration is complete as of 2026-05-16 and that remaining EO calendar governance is the separate deferred annual Typikon collision-policy question.",
+      "status": "complete",
+      "deferred": "No runtime code, admin renderer, UI, calendar, engine, or liturgical data changed. Public-beta blocker census, monastic audit triage, reduction-settings planning, and annual Typikon collision governance remain separate bounded work."
+    },
+
     {
       "phase": "Governance documentation reconciliation — EO production-path state",
       "date": "2026-05-16",
