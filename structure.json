@@ -701,6 +701,14 @@
   },
   "recent_logic_changes": [
     {
+      "phase": "Public-beta rubric wording normalization — Typika and placeholders",
+      "date": "2026-05-16",
+      "file": "js/horologion-engine.js + js/office-ui.js + structure.json",
+      "status": "complete",
+      "change": "Typika no-Liturgy Epistle/Gospel notices and office-ui unresolved/placeholder banner wording normalized to public-beta rubric language. NO DIVINE LITURGY EPISTLE/GOSPEL prefixes replaced with clarifying wording confirming Typika may still be prayed and the notice concerns the Divine Liturgy reading table only. Diagnostic banner updated from stale Horologion v1 skeleton language to public-beta notice language. Placeholder item label updated from Not yet implemented to Unresolved public-beta slot. No appointment logic, Typika routing, placeholder visibility, display-depth behavior, or corpus text changed.",
+      "deferred": "Broader deferred-rubric UX normalization, technical load-failure wording, special-form wording, schema-level notice taxonomy."
+    },
+    {
       "phase": "Public-beta rubric wording normalization — Menaion rank labels",
       "date": "2026-05-16",
       "file": "js/horologion-engine.js + structure.json",

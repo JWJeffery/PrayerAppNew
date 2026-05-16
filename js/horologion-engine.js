@@ -7958,7 +7958,7 @@ async function _resolveTypikaSlots(sections, dateObj) {
                             section.items[i] = {
                                 type:       'rubric',
                                 key:        item.key,
-                                text:       'NO DIVINE LITURGY EPISTLE: ' + (plEntry.rubric || 'No temporal Epistle is appointed for this pre-Lenten weekday.'),
+                                text:       'No Divine Liturgy Epistle appointed today. ' + (plEntry.rubric || 'No temporal Epistle is appointed for this pre-Lenten weekday. Typika may still be prayed; this notice concerns the Divine Liturgy reading table only.'),
                                 resolvedAs: 'typika-pre-lenten-no-liturgy-epistle-' +
                                     preLentenWeekdayKey.key + '-' +
                                     preLentenWeekdayKey.weekday,
@@ -8305,7 +8305,7 @@ async function _resolveTypikaSlots(sections, dateObj) {
                             section.items[i] = {
                                 type:       'rubric',
                                 key:        item.key,
-                                text:       'NO DIVINE LITURGY GOSPEL: ' + (plEntry.rubric || 'No temporal Gospel is appointed for this pre-Lenten weekday.'),
+                                text:       'No Divine Liturgy Gospel appointed today. ' + (plEntry.rubric || 'No temporal Gospel is appointed for this pre-Lenten weekday. Typika may still be prayed; this notice concerns the Divine Liturgy reading table only.'),
                                 resolvedAs: 'typika-pre-lenten-no-liturgy-gospel-' +
                                     preLentenWeekdayKey.key + '-' +
                                     preLentenWeekdayKey.weekday,

@@ -1386,9 +1386,8 @@ async function renderHorologionOffice(officeKey) {
             `<div style="border:1px solid var(--rubric); border-radius:4px; ` +
             `padding:10px 14px; margin:12px 0; font-size:0.8em; color:var(--rubric); ` +
             `font-family:'Cinzel',serif; letter-spacing:0.04em;">` +
-            `⚠ Horologion v1 — Baseline skeleton only. ` +
-            `${payload.diagnostics.placeholderSlots} variable slot(s) not yet resolved. ` +
-            `Sections marked below require Octoechos, Menaion, or calendar data.` +
+            `⚠ Public-beta notice: unresolved slot(s) remain visible below. ` +
+            `${payload.diagnostics.placeholderSlots} slot(s) require Octoechos, Menaion, or calendar data.` +
             `</div>`;
     }
 
@@ -1421,7 +1420,7 @@ function _renderHorologionItem(item) {
             : '';
         return `<div style="border:1px dashed var(--rubric); border-radius:3px; ` +
             `padding:8px 12px; margin:8px 0; opacity:0.75;">` +
-            `<span class="rubric-text" style="font-size:0.85em;">Not yet implemented: ${label}</span>` +
+            `<span class="rubric-text" style="font-size:0.85em;">Unresolved public-beta slot: ${label}.</span>` +
             devNote +
             `</div>`;
     }
