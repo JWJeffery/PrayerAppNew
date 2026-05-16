@@ -4646,6 +4646,20 @@ const isMajorFeastForPraises =
                             '(Menaion Sessional Hymn corpus not yet embedded in this path.)';
                         sessResolvedAs = 'orthros-sunday-feast-sessional-hymns-rubric';
                    } else {
+                        // ── non-Sunday rank 1–2 Menaion feast guard ───────────────────
+                        if (isMajorFeastForPraises) {
+                            const _sessHymnFeastName = (troparionItem && troparionItem.label)
+                                ? troparionItem.label : 'this feast';
+                            section.items[i] = {
+                                type:       'rubric',
+                                key:        'sessional-hymns',
+                                label:      'Sessional Hymns — Menaion Feast',
+                                text:       `MENAION FEAST (Rank ${feastRank}) — Sessional Hymns: The appointed Menaion Sessional Hymns / Sedalia for ${_sessHymnFeastName} are not yet text-backed in the corpus and should be taken from the Menaion.`,
+                                resolvedAs: 'orthros-menaion-feast-sessional-hymns-rubric'
+                            };
+                            continue;
+                        }
+
                         // Ordinary weekday (Mon–Sat) — v6.2: probe corpus before rubric
                         const WEEKDAY_NAMES = ['', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
                         const WEEKDAY_THEMES = {
