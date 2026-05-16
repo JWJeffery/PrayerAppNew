@@ -675,6 +675,15 @@
   },
 "recent_logic_changes": [
     {
+      "phase": "Horologion sidebar UI normalization — BCP house style alignment",
+      "date": "2026-05-16",
+      "file": "index.html + css/office.css + structure.json",
+      "change": "Reworked #generic-settings sidebar markup to match the BCP sidebar visual grammar without changing Horologion engine, calendar, or data behavior. Moved the generic Horologion date navigator to the top, grouped office selection and EO calendar mode under BCP-style setting-group / nested-group hierarchy, and grouped diagnostics under a Display section. Office buttons now use shared .hor-office-btn styling inside .hor-office-list instead of per-button inline utility styling. All office button IDs, selectHorologionOffice(...) handlers, EO selector id/value/onchange behavior, diagnostics toggle id/onClick behavior, and generic date-control IDs were preserved. Added .hor-office-list and .hor-office-btn styles to css/office.css.",
+      "status": "complete",
+      "deferred": "No engine, calendar, Menaion, Typika, EO fixed-date lookup, or office-rendering logic changed. Further responsive polish remains optional after browser visual QC."
+    },
+
+    {
       "phase": "EO production-path integration — main-app calendar mode bridge",
       "date": "2026-05-16",
       "file": "index.html + js/office-ui.js + js/horologion-engine.js + structure.json + admin/readme.md",

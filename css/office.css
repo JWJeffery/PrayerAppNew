@@ -361,6 +361,35 @@ body.light-mode .mode-btn:hover {
 #generic-settings.mode-hidden {
     display: none !important;
 }
+
+/* ── Horologion office selector button list ─────────────────────────────── */
+.hor-office-list {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin-top: 6px;
+}
+
+.hor-office-btn {
+    background: transparent;
+    border: 1px solid rgba(201,168,76,0.5);
+    color: var(--gold);
+    font-family: 'Cinzel', serif;
+    font-size: 0.88em;
+    letter-spacing: 0.06em;
+    padding: 7px 12px;
+    text-align: left;
+    cursor: pointer;
+    border-radius: 2px;
+    transition: background 0.15s, border-color 0.15s;
+    width: 100%;
+}
+
+.hor-office-btn:hover {
+    background: rgba(201,168,76,0.10);
+    border-color: rgba(201,168,76,0.75);
+}
+
 .setting-group {
     margin-bottom: 25px;
     text-align: left;
