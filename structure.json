@@ -701,6 +701,14 @@
   },
   "recent_logic_changes": [
     {
+      "phase": "Public-beta rubric wording normalization — Great Compline special forms",
+      "date": "2026-05-16",
+      "file": "js/horologion-engine.js + structure.json",
+      "status": "complete",
+      "change": "Great Compline special-form deferred notices normalized to public-beta rubrical language. Nativity Eve and Theophany Eve rubric label updated from implementation-style wording to 'Special form appointed: [feast/day]'. Rubric text updated to match preferred wording pattern, ending with 'deferred in the current public-beta corpus.' No appointment logic, Great Compline routing, resolvedAs tokens, display-depth behavior, or corpus text changed.",
+      "deferred": "Broader 'this path / this engine' wording, remaining technical load-failure wording outside Exapostilarion, schema-level notice taxonomy, annual Typikon collision notices."
+    },
+    {
     "phase": "Public-beta rubric wording normalization — Exapostilarion load failures",
     "date": "2026-05-16",
     "file": "js/horologion-engine.js + structure.json",

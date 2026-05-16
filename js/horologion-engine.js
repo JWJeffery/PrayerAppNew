@@ -5205,8 +5205,8 @@ function _applyGreatComplineFestalEveSpecialForm(sections, dateObj) {
             {
                 type:       'rubric',
                 key:        `great-compline-${feastKey}-special-form-rubric`,
-                label:      `${feastLabel} Great Compline special form not yet implemented`,
-                text:       `(${feastLabel}. Great Compline is appointed on this eve in a festal vigil form. The ordinary/Lenten Great Compline structure is not rendered here. Full ${feastLabel} Great Compline vigil text is deferred.)`,
+                label:      `Special form appointed: ${feastLabel}`,
+                text:       `Special form appointed: ${feastLabel}. Great Compline is appointed on this eve in a festal vigil form. The ordinary/Lenten Great Compline form is not shown here. Full ${feastLabel} special-form text is deferred in the current public-beta corpus.`,
                 resolvedAs: `great-compline-${feastKey}-special-form-deferred`
             }
         ]
