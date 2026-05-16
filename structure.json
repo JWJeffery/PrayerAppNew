@@ -701,6 +701,14 @@
   },
   "recent_logic_changes": [
     {
+      "phase": "Public-beta rubric wording normalization — Menaion rank labels",
+      "date": "2026-05-16",
+      "file": "js/horologion-engine.js + structure.json",
+      "status": "complete",
+      "change": "User-facing FEAST-RANK OVERRIDE and RANK 3 MENAION COMMEMORATION wording normalized to public-beta rubrical language. FEAST-RANK OVERRIDE replaced with 'Menaion feast appointment' at four sites (three theotokion-dismissal notices, one paremiae notice). RANK 3 MENAION COMMEMORATION replaced with 'Menaion commemoration — rank 3' at three sites (Praises Stichera, Exapostilarion, Sessional Hymns). No appointment logic, resolvedAs tokens, rank policy, branch conditions, display-depth behavior, or corpus text changed.",
+      "deferred": "Broader deferred-rubric UX normalization, technical load-failure wording, Typika no-Liturgy wording, special-form wording, office-ui placeholder banners, schema-level notice taxonomy."
+    },
+    {
       "phase": "Horologion display-depth reduction profiles",
       "date": "2026-05-16",
       "file": "index.html + css/office.css + js/office-ui.js + structure.json",

@@ -2226,7 +2226,7 @@ function _normalizeUnavailableTroparionFallbackForOffice(officeKey, resolved, da
                 label:      entry.title,
                 text:       isFeastOverride
                     ? entry.text + '\n\n' +
-                      `(FEAST-RANK OVERRIDE — dismissal Theotokion governed by the Menaion troparion tone, Tone ${governingTone}.)`
+                      `(Menaion feast appointment — dismissal Theotokion follows the Menaion troparion tone, Tone ${governingTone}.)`
                     : entry.text,
                 source:     'Octoechos',
                 tone:       governingTone,
@@ -2246,7 +2246,7 @@ function _normalizeUnavailableTroparionFallbackForOffice(officeKey, resolved, da
                 label:      entry.title,
                 text:       isFeastOverride
                     ? entry.text + '\n\n' +
-                      `(FEAST-RANK OVERRIDE — dismissal Theotokion governed by the Menaion troparion tone, Tone ${governingTone}.)`
+                      `(Menaion feast appointment — dismissal Theotokion follows the Menaion troparion tone, Tone ${governingTone}.)`
                     : entry.text + '\n\n' +
                       `(BASELINE — Saturday Great Vespers, Tone ${governingTone}. ` +
                       `A major fixed feast may alter the dismissal structure; ` +
@@ -2299,7 +2299,7 @@ function _normalizeUnavailableTroparionFallbackForOffice(officeKey, resolved, da
             label:      weekdayEntry.title || 'Theotokion',
             text:       isFeastOverride
                 ? weekdayEntry.text + '\n\n' +
-                  `(FEAST-RANK OVERRIDE — dismissal Theotokion governed by the Menaion troparion tone, Tone ${governingTone}.)`
+                  `(Menaion feast appointment — dismissal Theotokion follows the Menaion troparion tone, Tone ${governingTone}.)`
                 : weekdayEntry.text + '\n\n' +
                   `(BASELINE — Weekday Vespers, ${_capitalise(weekdayKey)}, Tone ${governingTone}. ` +
                   `This uses the Octoechos weekday Theotokion. In full implementation, ` +
@@ -3874,7 +3874,7 @@ function _resolveComplineFestalTheotokionRubric(officeKey, troparionItem, fallba
                                 type:       'rubric',
                                 key:        'praises-stichera',
                                 label:      'Stichera at the Praises — Menaion Commemoration',
-                                text:       `RANK 3 MENAION COMMEMORATION — Praises Stichera: Today has a rank 3 Menaion commemoration (${_r3PraisesName}). The Praises stichera (Ainoi) appointed from the Menaion according to the Typikon are not yet present in the current corpus.`,
+                                text:       `Menaion commemoration — rank 3: Praises Stichera (${_r3PraisesName}). The Praises stichera (Ainoi) appointed from the Menaion according to the Typikon are not yet present in the current public-beta corpus.`,
                                 resolvedAs: 'orthros-rank3-menaion-praises-deferred-rubric'
                             };
                             continue;
@@ -4369,7 +4369,7 @@ function _resolveComplineFestalTheotokionRubric(officeKey, troparionItem, fallba
                             type:       'rubric',
                             key:        'exapostilarion',
                             label:      'Exapostilarion (Svetilen) — Menaion Commemoration',
-                            text:       `RANK 3 MENAION COMMEMORATION — Exapostilarion: Today has a rank 3 Menaion commemoration (${_r3ExapName}). The Exapostilarion (Svetilen) appointed from the Menaion according to the Typikon is not yet present in the current corpus.`,
+                            text:       `Menaion commemoration — rank 3: Exapostilarion (${_r3ExapName}). The Exapostilarion (Svetilen) appointed from the Menaion according to the Typikon is not yet present in the current public-beta corpus.`,
                             resolvedAs: 'orthros-rank3-menaion-exapostilarion-deferred-rubric'
                         };
                         continue;
@@ -4736,7 +4736,7 @@ const isMajorFeastForPraises =
                                 type:       'rubric',
                                 key:        'sessional-hymns',
                                 label:      'Sessional Hymns — Menaion Commemoration',
-                                text:       `RANK 3 MENAION COMMEMORATION — Sessional Hymns: Today has a rank 3 Menaion commemoration (${_r3SessName}). The Sessional Hymns (Sedalia) appointed from the Menaion according to the Typikon are not yet present in the current corpus.`,
+                                text:       `Menaion commemoration — rank 3: Sessional Hymns (${_r3SessName}). The Sessional Hymns (Sedalia) appointed from the Menaion according to the Typikon are not yet present in the current public-beta corpus.`,
                                 resolvedAs: 'orthros-rank3-menaion-sessional-hymns-deferred-rubric'
                             };
                             continue;
@@ -6958,7 +6958,7 @@ else if (item.key === 'kathisma-reading') {
                             type:        'rubric',
                             key:         'vesperal-reading',
                             label:       'Paremiae (Vesperal Readings)',
-                            text:        `(FEAST-RANK OVERRIDE — ${_preResolvedTroparion.menaionName}, ` +
+                            text:        `(Menaion feast appointment — ${_preResolvedTroparion.menaionName}, ` +
                                          `Rank ${_preResolvedTroparion.menaionRank}. ` +
                                          `Paremiae (Old Testament vesperal readings) are appointed at Vespers for feasts of rank 1 and rank 2. ` +
                                          `The proper festal readings for this commemoration are not yet in the corpus. ` +
