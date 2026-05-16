@@ -3866,6 +3866,19 @@ function _resolveComplineFestalTheotokionRubric(officeKey, troparionItem, fallba
                             'embedded in this path. The appointment is correct; the text is deferred.)';
                         sticheraResolvedAs = 'orthros-sunday-resurrectional-praises-rubric';
                     } else {
+                        // ── rank 3 Menaion visibility guard (non-Sunday) ─────────────────
+                        if (isFeast && feastRank !== null && feastRank === 3) {
+                            const _r3PraisesName = (troparionItem && troparionItem.label)
+                                ? troparionItem.label : 'the commemoration';
+                            section.items[i] = {
+                                type:       'rubric',
+                                key:        'praises-stichera',
+                                label:      'Stichera at the Praises — Menaion Commemoration',
+                                text:       `RANK 3 MENAION COMMEMORATION — Praises Stichera: Today has a rank 3 Menaion commemoration (${_r3PraisesName}). The Praises stichera (Ainoi) appointed from the Menaion according to the Typikon are not yet present in the current corpus.`,
+                                resolvedAs: 'orthros-rank3-menaion-praises-deferred-rubric'
+                            };
+                            continue;
+                        }
                         // Ordinary weekday (Mon–Sat) — v6.3: probe corpus before rubric
                         const WEEKDAY_NAMES = ['', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
                         const WEEKDAY_THEMES = {
@@ -4348,6 +4361,20 @@ function _resolveComplineFestalTheotokionRubric(officeKey, troparionItem, fallba
                         continue;
                     }
 
+                    // ── rank 3 Menaion visibility guard (non-Sunday only) ─────────────────
+                    if (_exapFeastRank !== null && _exapFeastRank === 3 && dayOfWeek !== 0) {
+                        const _r3ExapName = (_exapTroparionItem && _exapTroparionItem.label)
+                            ? _exapTroparionItem.label : 'the commemoration';
+                        section.items[i] = {
+                            type:       'rubric',
+                            key:        'exapostilarion',
+                            label:      'Exapostilarion (Svetilen) — Menaion Commemoration',
+                            text:       `RANK 3 MENAION COMMEMORATION — Exapostilarion: Today has a rank 3 Menaion commemoration (${_r3ExapName}). The Exapostilarion (Svetilen) appointed from the Menaion according to the Typikon is not yet present in the current corpus.`,
+                            resolvedAs: 'orthros-rank3-menaion-exapostilarion-deferred-rubric'
+                        };
+                        continue;
+                    }
+
                     // ── Sunday: resolve via Eothinon cycle ────
                     if (dayOfWeek === 0) {
                         const eothinonResult =
@@ -4697,6 +4724,20 @@ const isMajorFeastForPraises =
                                 label:      'Sessional Hymns — Menaion Feast',
                                 text:       `MENAION FEAST (Rank ${feastRank}) — Sessional Hymns: The appointed Menaion Sessional Hymns / Sedalia for ${_sessHymnFeastName} are not yet text-backed in the corpus and should be taken from the Menaion.`,
                                 resolvedAs: 'orthros-menaion-feast-sessional-hymns-rubric'
+                            };
+                            continue;
+                        }
+
+                        // ── rank 3 Menaion visibility guard (non-Sunday) ─────────────────
+                        if (isFeast && feastRank !== null && feastRank === 3) {
+                            const _r3SessName = (troparionItem && troparionItem.label)
+                                ? troparionItem.label : 'the commemoration';
+                            section.items[i] = {
+                                type:       'rubric',
+                                key:        'sessional-hymns',
+                                label:      'Sessional Hymns — Menaion Commemoration',
+                                text:       `RANK 3 MENAION COMMEMORATION — Sessional Hymns: Today has a rank 3 Menaion commemoration (${_r3SessName}). The Sessional Hymns (Sedalia) appointed from the Menaion according to the Typikon are not yet present in the current corpus.`,
+                                resolvedAs: 'orthros-rank3-menaion-sessional-hymns-deferred-rubric'
                             };
                             continue;
                         }
