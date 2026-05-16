@@ -2,7 +2,7 @@
   "_meta": {
     "file": "data/menaion/august.json",
     "version": "1.0.0",
-    "schema_version": "1.0.0",
+    "schema_version": "1.1.0",
     "month_number": 8,
     "month_name": "August",
     "calendar_style": "new-calendar",

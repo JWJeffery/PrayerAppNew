@@ -2,7 +2,7 @@
   "_meta": {
     "file": "data/menaion/april.json",
     "version": "1.0.0",
-    "schema_version": "1.0.0",
+    "schema_version": "1.1.0",
     "month_number": 4,
     "month_name": "April",
     "calendar_style": "new-calendar",

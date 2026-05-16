@@ -2,7 +2,7 @@
   "_meta": {
     "file": "data/menaion/november.json",
     "version": "1.1.0",
-    "schema_version": "1.0.0",
+    "schema_version": "1.1.0",
     "month_number": 11,
     "month_name": "November",
     "calendar_style": "new-calendar",

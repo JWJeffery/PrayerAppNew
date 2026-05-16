@@ -2,7 +2,7 @@
   "_meta": {
     "file": "data/menaion/may.json",
     "version": "1.0.0",
-    "schema_version": "1.0.0",
+    "schema_version": "1.1.0",
     "month_number": 5,
     "month_name": "May",
     "calendar_style": "new-calendar",

@@ -2,7 +2,7 @@
   "_meta": {
     "file": "data/menaion/january.json",
     "version": "1.0.0",
-    "schema_version": "1.0.0",
+    "schema_version": "1.1.0",
     "month_number": 1,
     "month_name": "January",
     "calendar_style": "new-calendar",

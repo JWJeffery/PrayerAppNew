@@ -1,32 +1,34 @@
 // ── js/menaion-resolver.js ─────────────────────────────────────────────────
 //
-// MenaionResolver v1.1
+// MenaionResolver v1.2
 // Architecture layer: DATA RESOLVER (not UI, not calendar, not engine)
 //
 // This module owns:
 //   - Loading and caching Menaion monthly data files from data/menaion/
-//   - Answering single-date queries: queryTroparion(mmdd) → result object
-//   - Applying the minimal rank/priority model for weekday troparion selection
+//   - Answering fixed-date queries via two public entry points:
+//       queryTroparion(mmdd) → troparion-focused result for existing callers
+//       queryDate(mmdd)      → commemoration result including targeted kontakion metadata
+//   - Applying the rank/priority model for troparion/kontakion selection
 //   - Returning honest status codes when data is absent or not yet imported
 //
 // This module does NOT own:
 //   - Rendering HTML
 //   - Octoechos tone computation
 //   - Calendar arithmetic (Julian/Gregorian, Paschalion, etc.)
-//   - Office structure (vespers.json slots)
-//   - Liturgical logic beyond: "for this MM-DD, what troparion is appointed?"
+//   - Office structure
+//   - Liturgical logic beyond: "for this MM-DD, what troparion/kontakion is appointed?"
 //
 // Exposed globally as: window.MenaionResolver
 //
-// DATA NAMESPACE: data/menaion/<monthname>.json (12 files planned; pilot: november.json)
-// SCHEMA CONTRACT: data/menaion/schema.json
+// DATA NAMESPACE: data/menaion/<monthname>.json
+// SCHEMA CONTRACT: data/menaion/schema.json (v1.1.0 — troparion plus targeted kontakion fields)
 //
 // RESOLUTION STATUS CODES:
-//   'menaion-resolved'              — troparion text returned; use it.
-//   'menaion-not-imported'          — month file not in corpus yet; render rubric.
+//   'menaion-resolved'                — troparion text returned; use it.
+//   'menaion-not-imported'            — month file not in corpus yet; render rubric.
 //   'menaion-no-ranked-commemoration' — date in corpus but no troparion found; weekday theme applies.
-//   'menaion-text-unavailable'      — commemoration known but text not yet in corpus; render rubric.
-//   'menaion-load-error'            — data file could not be fetched; degrade gracefully.
+//   'menaion-text-unavailable'        — commemoration known but text not yet in corpus; render rubric.
+//   'menaion-load-error'              — data file could not be fetched; degrade gracefully.
 //
 // RANK MODEL (v1):
 //   rank 1 — Great Feast / Feast of the Theotokos  (always takes troparion slot exclusively)
@@ -40,9 +42,9 @@
 //       (traditional liturgical precedence order as recorded in data file).
 //
 // CALENDAR STYLE:
-//   All v1 data is new-calendar (Revised Julian / Gregorian). The resolver
-//   uses the civil date's MM-DD directly. Old-calendar offset is not applied
-//   in this version; that is a future engine-level concern.
+//   Current fixed-date Menaion data is new-calendar (Revised Julian / Gregorian).
+//   The resolver uses the civil date's MM-DD directly. Old-calendar offset is not
+//   applied here; that remains a future engine-level concern.
 //
 // ──────────────────────────────────────────────────────────────────────────
 

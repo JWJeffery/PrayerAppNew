@@ -1,6 +1,6 @@
 {
   "_comment": [
-    "data/menaion/schema.json — Menaion v1.0",
+    "data/menaion/schema.json — Menaion v1.1",
     "",
     "CONTRACT: This schema governs all files under data/menaion/.",
     "Every monthly file must conform to this structure.",
@@ -8,8 +8,11 @@
     "SCOPE (v1): Fixed-date commemorations only.",
     "  - Movable feasts (Triodion, Pentecostarion) are not in this namespace.",
     "  - Octoechos weekday themes are not in this namespace.",
-    "  - Only troparion/apolytikion text is stored in v1.",
-    "  - Full stichera corpus is deferred.",
+    "  - Troparion/apolytikion text is stored for all commemorations.",
+    "  - Kontakion and kontakion_status fields are declared in the schema",
+    "    and are in active use for selected commemorations (v1.1).",
+    "  - Full stichera corpus, exapostilarion, canon, sessional hymns,",
+    "    praises, Theotokion, ikos, and broader hymn-family expansion are deferred.",
     "",
     "RANK MODEL (v1 — four ranks only):",
     "  rank 1 — Great Feast / Feast of the Lord / Feast of the Theotokos.",
