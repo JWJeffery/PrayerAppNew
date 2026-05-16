@@ -12,6 +12,7 @@ let selectedEoMode = 'new_calendar'; // 'new_calendar' | 'old_calendar' — pers
 // with resolvedAs, type, tone, and source layer. Fixed/liturgical text is
 // never annotated — diagnostics appear only on the slots that vary by date.
 let _horDiagnosticsEnabled = false;
+let selectedHorologionReductionProfile = 'full'; // 'full' | 'reader' | 'educational' — display-layer only, never passed to HorologionEngine
 
 function toggleHorologionDiagnostics() {
     _horDiagnosticsEnabled = !_horDiagnosticsEnabled;
@@ -739,6 +740,8 @@ async function selectMode(mode) {
         // v7.1: sync EO mode selector and calendar info line on every Horologion entry
         const _eoSelEntry = document.getElementById('hor-eo-calendar-select');
         if (_eoSelEntry) _eoSelEntry.value = selectedEoMode;
+        const _depthSelEntry = document.getElementById('hor-depth-select');
+        if (_depthSelEntry) _depthSelEntry.value = selectedHorologionReductionProfile;
         _updateGenericCalendarInfo();
 
         document.getElementById('office-display').innerHTML =
@@ -937,6 +940,76 @@ function _horologionOfficeLabel(officeKey) {
     return labels[officeKey] || officeKey;
 }
 
+// ── v8.0: Horologion display-depth reduction profiles ────────────────────────
+// Allowed values: 'full' | 'reader' | 'educational'. Default: 'full'.
+// State persists in universalOfficeSettings.horologionReductionProfile.
+// Profile is NEVER passed to HorologionEngine.resolveOffice().
+
+function selectHorologionReductionProfile(profile) {
+    const ALLOWED = ['full', 'reader', 'educational'];
+    if (!ALLOWED.includes(profile)) {
+        console.warn('[selectHorologionReductionProfile] Unknown profile:', profile);
+        return;
+    }
+    selectedHorologionReductionProfile = profile;
+    saveSettings();
+    if (selectedMode === 'horologion') requestRender();
+}
+
+// Expose for inline HTML onchange and browser-console QC.
+window.selectHorologionReductionProfile = selectHorologionReductionProfile;
+
+// Returns true if item is a release-honesty notice that must never be collapsed.
+function _isHonestyNotice(item) {
+    if (item.type === 'rubric' || item.type === 'placeholder') return true;
+    const HONESTY_KEYWORDS = [
+        'source-unavailable', 'text-unavailable', 'deferred', 'not-appointed',
+        'displaced', 'displacement', 'special-form', 'menaion', 'rank3', 'feast',
+        'no-liturgy', 'unavailable', 'pending', 'appointed'
+    ];
+    const haystack = [
+        String(item.resolvedAs || ''),
+        String(item.text       || ''),
+        String(item.note       || ''),
+        String(item.label      || ''),
+        String(item.key        || '')
+    ].join('  ').toLowerCase();
+    return HONESTY_KEYWORDS.some(kw => haystack.includes(kw));
+}
+
+// Wraps body HTML in a disclosure control for reader/educational profiles.
+// Full profile and honesty notices always return html unchanged.
+function _horologionBodyWrap(html, item, summaryLabel) {
+    const profile = selectedHorologionReductionProfile;
+    if (profile === 'full') return html;
+    if (_isHonestyNotice(item)) return html;
+
+    // Reader: collapse kathismata and genuinely long body text only.
+    // This preserves short fixed prayers/sequences needed for ordinary lay use.
+    // Educational: collapse broad body-text categories while preserving honesty notices.
+    const EDUC_TYPES = new Set(['kathisma', 'psalm', 'sequence', 'stichera', 'text']);
+
+    const plainHtml = String(html || '').replace(/<[^>]*>/g, ' ');
+    const textLen   = Math.max(String(item.text || '').length, plainHtml.length);
+    const childCnt  = Array.isArray(item.items) ? item.items.length : 0;
+    const isLong    = item.type === 'kathisma' || textLen > 1400 || childCnt > 8;
+    const readerCollapsibleType =
+        item.type === 'kathisma' || item.type === 'psalm' || item.type === 'stichera' || item.type === 'text' || item.type === 'sequence';
+
+    const shouldCollapse =
+        (profile === 'reader'      && readerCollapsibleType && isLong) ||
+        (profile === 'educational' && (EDUC_TYPES.has(item.type) || !item.type));
+
+    if (!shouldCollapse) return html;
+
+    const raw  = String(summaryLabel || item.label || item.key || 'Show text');
+    const safe = raw.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+    return `<details class="hor-depth-disclosure">`
+         + `<summary class="rubric-text" style="cursor:pointer;">${safe}</summary>`
+         + html
+         + `</details>`;
+}
+
 // ── Tradition sidebar compatibility wrappers ──────────────────────────────
 // index.html sidebar buttons for Ethiopian and East Syriac use these names.
 // All delegate to the shared date helpers — no logic lives here.
@@ -1028,8 +1101,9 @@ function saveSettings() {
         prayerBeforeReading: document.getElementById('toggle-prayer-before-reading')?.checked || false,
         examen:              document.getElementById('toggle-examen')?.checked || false,
         kyriePantocrator:    document.getElementById('toggle-kyrie-pantocrator')?.checked || false,
-        studyMode:           appSettings.studyMode,
-        eoMode:              selectedEoMode
+        studyMode:                     appSettings.studyMode,
+        eoMode:                        selectedEoMode,
+        horologionReductionProfile:    selectedHorologionReductionProfile
     };
     try {
         localStorage.setItem('universalOfficeSettings', JSON.stringify(settings));
@@ -1090,6 +1164,14 @@ function loadSettings() {
             selectedEoMode = s.eoMode;
             const eoSelLoad = document.getElementById('hor-eo-calendar-select');
             if (eoSelLoad) eoSelLoad.value = selectedEoMode;
+        }
+
+        // v8.0: restore Horologion display-depth profile
+        if (typeof s.horologionReductionProfile === 'string' &&
+            ['full', 'reader', 'educational'].includes(s.horologionReductionProfile)) {
+            selectedHorologionReductionProfile = s.horologionReductionProfile;
+            const _depthSelLoad = document.getElementById('hor-depth-select');
+            if (_depthSelLoad) _depthSelLoad.value = selectedHorologionReductionProfile;
         }
 
         if (document.getElementById('creed-type'))
@@ -1400,22 +1482,25 @@ function _renderHorologionItem(item) {
             ? item.items.map(child => _renderHorologionItem(child)).join('')
             : '';
 
-        return `<div class="horologion-sequence">${label}${children}</div>`;
+        const seqHtml = `<div class="horologion-sequence">${children}</div>`;
+        return `${label}${_horologionBodyWrap(seqHtml, item, item.label || 'Section')}`;
     }
 
     // type: "psalm" — render label then body text.
     if (item.type === 'psalm') {
-        const label = item.label ? `<p class="rubric-text" style="margin-bottom:0.4em;">${escapeHtml(item.label)}</p>` : '';
-        const body  = formatParagraphText(item.text || '');
-        return `<div class="horologion-text">${label}<p>${body}</p></div>`;
+        const label    = item.label ? `<p class="rubric-text" style="margin-bottom:0.4em;">${escapeHtml(item.label)}</p>` : '';
+        const body     = formatParagraphText(item.text || '');
+        const bodyHtml = `<div class="horologion-text"><p>${body}</p></div>`;
+        return `${label}${_horologionBodyWrap(bodyHtml, item, item.label || 'Psalm')}`;
     }
 
     // type: "stichera" — render rubric label then verse text (same layout as psalm).
     if (item.type === 'stichera') {
-        const label = item.label ? `<p class="rubric-text" style="margin-bottom:0.4em;">${escapeHtml(item.label)}</p>` : '';
-        const body  = formatParagraphText(item.text || '');
-        const base  = `<div class="horologion-text">${label}<p>${body}</p></div>`;
-        return base + _renderHorologionDiagnostics(item, escapeHtml);
+        const label    = item.label ? `<p class="rubric-text" style="margin-bottom:0.4em;">${escapeHtml(item.label)}</p>` : '';
+        const body     = formatParagraphText(item.text || '');
+        const bodyHtml = `<div class="horologion-text"><p>${body}</p></div>`;
+        return `${label}${_horologionBodyWrap(bodyHtml, item, item.label || 'Sticheron')}` +
+               _renderHorologionDiagnostics(item, escapeHtml);
     }
 
     // v5.5: type: "kathisma" — full psalm text organized by stasis.
@@ -1461,7 +1546,8 @@ function _renderHorologionItem(item) {
             ? `<p class="rubric-text" style="font-size:0.8em; opacity:0.75; margin-top:0.5em;">(${escapeHtml(item.variantNote)})</p>`
             : '';
 
-        return `<div class="horologion-kathisma">${headerLabel}${lxxNote}${stasisHtml}${variantNote}</div>` +
+        const kathismaHtml = `<div class="horologion-kathisma">${headerLabel}${lxxNote}${stasisHtml}${variantNote}</div>`;
+        return _horologionBodyWrap(kathismaHtml, item, item.label || 'Kathisma') +
                _renderHorologionDiagnostics(item, escapeHtml);
     }
 
@@ -1490,13 +1576,14 @@ function _renderHorologionItem(item) {
         const label = item.label
             ? `<p class="rubric-text" style="margin-bottom:0.4em;">${escapeHtml(item.label)}</p>`
             : '';
-        return `${label}${renderRepeatedText(item.text || '', item.repeat)}`;
+        return `${label}${_horologionBodyWrap(renderRepeatedText(item.text || '', item.repeat), item, item.label || 'Text')}`;
     }
 
     // Fallback: type "text" or any other resolved item.
     const formatted = formatParagraphText(item.text || '');
-    const baseHtml = `<div class="horologion-text"><p>${formatted}</p></div>`;
-    return baseHtml + _renderHorologionDiagnostics(item, escapeHtml);
+    const baseHtml  = `<div class="horologion-text"><p>${formatted}</p></div>`;
+    return _horologionBodyWrap(baseHtml, item, item.label || item.key || 'Text') +
+           _renderHorologionDiagnostics(item, escapeHtml);
 }
 
 // ── v5.4: Diagnostics annotation helper ──────────────────────────────────────

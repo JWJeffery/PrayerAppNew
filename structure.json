@@ -701,6 +701,14 @@
   },
   "recent_logic_changes": [
     {
+      "phase": "Horologion display-depth reduction profiles",
+      "date": "2026-05-16",
+      "file": "index.html + css/office.css + js/office-ui.js + structure.json",
+      "status": "complete",
+      "change": "Full / Monastic, Reader / Lay Use, and Educational / Structure View added as display-layer Horologion profiles. Control placed in #generic-settings Display section as a compact select (#hor-depth-select). State variable selectedHorologionReductionProfile (default 'full') persists in universalOfficeSettings as horologionReductionProfile. Display-layer classifier (_horologionBodyWrap, _isHonestyNotice) applied inside _renderHorologionItem only: Full renders exactly as current; Reader collapses kathisma, psalm, and sequence body text into disclosure controls; Educational collapses those plus stichera and plain text. No engine appointment logic changed; HorologionEngine.resolveOffice() receives no profile parameter. Release-honesty notices (type:rubric, type:placeholder, and any item whose resolvedAs/text/label contains honesty-critical keywords) remain visible and non-collapsible in all profiles.",
+      "deferred": "Parish / Abbreviated, Custom, engine-level reduction profiles, schema-rich reduction metadata, annual Typikon collision policy."
+    },
+    {
       "phase": "Orthros rank 3 Menaion visibility guards",
       "date": "2026-05-16",
       "file": "js/horologion-engine.js + structure.json",

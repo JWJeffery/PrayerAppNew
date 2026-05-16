@@ -395,6 +395,27 @@ body.light-mode .mode-btn:hover {
     font-weight: 700;
 }
 
+/* v8.0: Horologion display-depth disclosure controls */
+.hor-depth-disclosure {
+    margin: 4px 0;
+}
+.hor-depth-disclosure > summary {
+    list-style: none;
+    outline: none;
+    padding: 2px 0;
+}
+.hor-depth-disclosure > summary::-webkit-details-marker {
+    display: none;
+}
+.hor-depth-disclosure > summary::before {
+    content: '\25B8 ';
+    opacity: 0.55;
+    font-size: 0.82em;
+}
+.hor-depth-disclosure[open] > summary::before {
+    content: '\25BE ';
+}
+
 .setting-group {
     margin-bottom: 25px;
     text-align: left;
