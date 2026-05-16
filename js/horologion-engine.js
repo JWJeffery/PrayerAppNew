@@ -980,28 +980,22 @@ const _interhourFixedDataCache = {};
 
     const OFFICE_TEXT = {
             'small-compline':
-                'On ordinary weekdays, the proper troparion appointment for Small Compline belongs here. ' +
-                'The full weekday text requires the Menaion and is not yet available in this office.',
+                'Full ordinary weekday troparion text for Small Compline is deferred in the current public-beta corpus.',
 
             'first-hour':
-                'On ordinary weekdays, the proper troparion appointment for the First Hour belongs here. ' +
-                'The full weekday text requires the Menaion and is not yet available in this office.',
+                'Full ordinary weekday troparion text for the First Hour is deferred in the current public-beta corpus.',
 
             'third-hour':
-                'On ordinary weekdays, the proper troparion appointment for the Third Hour belongs here. ' +
-                'The full weekday text requires the Menaion and is not yet available in this office.',
+                'Full ordinary weekday troparion text for the Third Hour is deferred in the current public-beta corpus.',
 
             'sixth-hour':
-                'On ordinary weekdays, the proper troparion appointment for the Sixth Hour belongs here. ' +
-                'The full weekday text requires the Menaion and is not yet available in this office.',
+                'Full ordinary weekday troparion text for the Sixth Hour is deferred in the current public-beta corpus.',
 
          'ninth-hour':
-                'On ordinary weekdays, the proper troparion appointment for the Ninth Hour belongs here. ' +
-                'The full weekday text requires the Menaion and is not yet available in this office.',
+                'Full ordinary weekday troparion text for the Ninth Hour is deferred in the current public-beta corpus.',
  
             'midnight-office':
-                'On ordinary weekdays, the proper troparion appointment for the Midnight Office belongs here. ' +
-                'The full weekday text requires the Menaion and is not yet available in this office.',
+                'Full ordinary weekday troparion text for the Midnight Office is deferred in the current public-beta corpus.',
 
             'typika':
                 'On ordinary days, the proper dismissal troparion for the Typika belongs here. ' +
