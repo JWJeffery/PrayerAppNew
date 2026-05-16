@@ -95,7 +95,7 @@ To add a non-blocking open item, append a string to `non_blocking_open`:
 
 ## Eastern Orthodox calendar mode
 
-The EO mode selector (old_calendar / new_calendar) is active in the YearSnapshot panel. Admin/devtool diagnostics use `CalendarEngine.getEOSeasonRanges(year, eoMode)` and `EasternOrthodoxCalendar.getYearSnapshot()`. This is admin-only coverage; the main application does not yet expose EO calendar mode on the production path. This is tracked as `eo-calendar-modes` in the todo ledger and is part of public-beta readiness under the post-Pentecost stabilization track.
+The EO mode selector (old_calendar / new_calendar) first appeared in the YearSnapshot panel as admin/devtool diagnostics. `CalendarEngine.getEOSeasonRanges(year, eoMode)` and `EasternOrthodoxCalendar.getYearSnapshot()` continue to provide admin coverage. As of v7.1 (2026-05-16), EO calendar mode is also exposed on the main-app Horologion production path: `js/calendar-eastern-orthodox.js` is loaded in the production script chain, a calendar mode selector (`#hor-eo-calendar-select`) appears in the Horologion sidebar, and `HorologionEngine.resolveOffice()` consumes `eoMode` for all fixed-date Menaion and Typika lookups. Movable-cycle behavior (Pascha, Bright Week, Great Lent, Holy Week, after-Pentecost ordinale) remains governed by the Julian Paschalion and is unaffected by eoMode. The `eo-calendar-modes` todo is closed as the main-app production bridge is complete. Annual Typikon collision policy for fixed vs movable cycle overlaps remains a separate deferred item.
 
 ---
 

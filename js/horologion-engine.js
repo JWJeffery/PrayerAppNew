@@ -235,6 +235,44 @@ const HorologionEngine = (() => {
     // ── Tradition code for this engine ────────────────────────────────────
     const TRADITION = 'BYZC';
 
+    // ── v7.1: Active EO calendar mode ────────────────────────────────────
+    // Set at the start of each resolveOffice() call from context.eoMode.
+    // Consumed by _getFixedCalendarMmdd() and feastLectionaryOverlayKeys.
+    let _currentEoMode = 'new_calendar';
+
+    // ── v7.1: Julian-to-Gregorian offset (century-aware) ──────────────────
+    // Mirrors CalendarEngine._julianToGregorianOffset without a cross-module dependency.
+    function _juliOffset(y) {
+        if (y >= 2100) return 14;
+        if (y >= 1900) return 13;
+        if (y >= 1800) return 12;
+        if (y >= 1700) return 11;
+        return 10;
+    }
+
+    // ── v7.1: _getFixedCalendarMmdd(dateObj) ───────────────────────────────
+    // Returns the MM-DD key for fixed-date Menaion/Typika lookups.
+    //   new_calendar: civil MM-DD (Revised Julian = Gregorian).
+    //   old_calendar: Julian MM-DD, derived by subtracting the century offset.
+    //     e.g. civil Jan 7 → Julian Dec 25 → '12-25'.
+    //     e.g. civil Sep 26 → Julian Sep 13 → '09-13' (Exaltation eve).
+    // Non-throwing: falls back to civil MM-DD on any error.
+    function _getFixedCalendarMmdd(d) {
+        try {
+            if (_currentEoMode !== 'old_calendar') {
+                return String(d.getMonth() + 1).padStart(2, '0') + '-' +
+                       String(d.getDate()).padStart(2, '0');
+            }
+            const off  = _juliOffset(d.getFullYear());
+            const julD = new Date(d.getFullYear(), d.getMonth(), d.getDate() - off);
+            return String(julD.getMonth() + 1).padStart(2, '0') + '-' +
+                   String(julD.getDate()).padStart(2, '0');
+        } catch (e) {
+            return String(d.getMonth() + 1).padStart(2, '0') + '-' +
+                   String(d.getDate()).padStart(2, '0');
+        }
+    }
+
     // ── v1.2: Prokeimena data file URL ─────────────────────────────────────
     const PROKEIMENA_URL = 'data/horologion/vespers-prokeimena.json';
 
@@ -556,6 +594,11 @@ const _interhourFixedDataCache = {};
             throw new Error(`[HorologionEngine] resolveOffice: invalid date value "${date}".`);
         }
 
+        // ── v7.1: normalise eoMode from caller context ────────────────────────
+        // Invalid or missing values default to 'new_calendar' (non-throwing).
+        const _rawEoMode = (context && typeof context.eoMode === 'string') ? context.eoMode : '';
+        _currentEoMode   = (_rawEoMode === 'old_calendar') ? 'old_calendar' : 'new_calendar';
+
         const isoDate = _formatLocalISODate(dateObj);
         const normalizedKey = (officeKey || '').toLowerCase().trim();
 
@@ -652,7 +695,9 @@ const _interhourFixedDataCache = {};
             diagnostics: {
                 implementedSlots,
                 placeholderSlots,
-                warnings
+                warnings,
+                eoMode:            _currentEoMode,
+                fixedCalendarMode: _currentEoMode === 'old_calendar' ? 'julian' : 'revised-julian'
             }
         };
 
@@ -884,9 +929,7 @@ const _interhourFixedDataCache = {};
             typeof window.MenaionResolver.queryTroparion === 'function'
         ) {
             try {
-                const mm   = String(dateObj.getMonth() + 1).padStart(2, '0');
-                const dd   = String(dateObj.getDate()).padStart(2, '0');
-                const mmdd = `${mm}-${dd}`;
+                const mmdd = _getFixedCalendarMmdd(dateObj); // v7.1
 
                 menaionResult   = await window.MenaionResolver.queryTroparion(mmdd);
                 overrideContext = _resolveFeastOverrideContext(dateObj, dayOfWeek, menaionResult);
@@ -1881,9 +1924,7 @@ function _normalizeUnavailableTroparionFallbackForOffice(officeKey, resolved, da
             typeof window.MenaionResolver.queryTroparion === 'function'
         ) {
             try {
-                const mm   = String(dateObj.getMonth() + 1).padStart(2, '0');
-                const dd   = String(dateObj.getDate()).padStart(2, '0');
-                const mmdd = `${mm}-${dd}`;
+                const mmdd = _getFixedCalendarMmdd(dateObj); // v7.1
 
                 menaionResult   = await window.MenaionResolver.queryTroparion(mmdd);
                 overrideContext = _resolveFeastOverrideContext(dateObj, dayOfWeek, menaionResult);
@@ -4739,9 +4780,8 @@ const isMajorFeastForPraises =
                         if (typeof window !== 'undefined' &&
                             window.MenaionResolver &&
                             typeof window.MenaionResolver.queryDate === 'function') {
-                            const _ktMm = String(dateObj.getMonth() + 1).padStart(2, '0');
-                            const _ktDd = String(dateObj.getDate()).padStart(2, '0');
-                            _ktQR = await window.MenaionResolver.queryDate(`${_ktMm}-${_ktDd}`);
+                            const _ktMmdd = _getFixedCalendarMmdd(dateObj); // v7.1
+                            _ktQR = await window.MenaionResolver.queryDate(_ktMmdd);
                         }
                     } catch (_ktErr) { /* degrade below */ }
 
@@ -5145,16 +5185,17 @@ function _applyGreatComplineFestalEveSpecialForm(sections, dateObj) {
 // Returns null for all other dates.
 function _isGreatComplineGreatFeastEve(dateObj) {
     if (!dateObj) return null;
-    const _gcm = dateObj.getMonth() + 1;  // 1-based month
-    const _gcd = dateObj.getDate();
-    // Sept 13 — eve of Universal Exaltation of the Holy Cross (09-14)
-    if (_gcm === 9  && _gcd === 13) return { feastLabel: 'Universal Exaltation of the Holy Cross',      feastMmdd: '09-14' };
-    // Aug 14 — eve of Dormition of the Theotokos (08-15)
-    if (_gcm === 8  && _gcd === 14) return { feastLabel: 'Dormition of the Theotokos',                  feastMmdd: '08-15' };
-    // Sept 7 — eve of Nativity of the Theotokos (09-08)
-    if (_gcm === 9  && _gcd === 7)  return { feastLabel: 'Nativity of the Theotokos',                   feastMmdd: '09-08' };
-    // Nov 20 — eve of Entry of the Theotokos into the Temple (11-21)
-    if (_gcm === 11 && _gcd === 20) return { feastLabel: 'Entry of the Theotokos into the Temple',      feastMmdd: '11-21' };
+    // v7.1: use fixed-calendar MM-DD so old_calendar civil eves map correctly.
+    // e.g. civil Sep 26 (old_cal) → Julian Sep 13 → eve of 09-14 Exaltation.
+    const _eveFixedMmdd = _getFixedCalendarMmdd(dateObj);
+    // Julian/Revised-Julian Sept 13 — eve of Universal Exaltation of the Holy Cross (09-14)
+    if (_eveFixedMmdd === '09-13') return { feastLabel: 'Universal Exaltation of the Holy Cross',      feastMmdd: '09-14' };
+    // Julian/Revised-Julian Aug 14 — eve of Dormition of the Theotokos (08-15)
+    if (_eveFixedMmdd === '08-14') return { feastLabel: 'Dormition of the Theotokos',                  feastMmdd: '08-15' };
+    // Julian/Revised-Julian Sept 7 — eve of Nativity of the Theotokos (09-08)
+    if (_eveFixedMmdd === '09-07') return { feastLabel: 'Nativity of the Theotokos',                   feastMmdd: '09-08' };
+    // Julian/Revised-Julian Nov 20 — eve of Entry of the Theotokos into the Temple (11-21)
+    if (_eveFixedMmdd === '11-20') return { feastLabel: 'Entry of the Theotokos into the Temple',      feastMmdd: '11-21' };
     return null;
 }
 
@@ -5390,9 +5431,7 @@ async function _resolveGreatComplineSlots(sections, dateObj) {
 
                 try {
                     if (window.MenaionResolver && typeof window.MenaionResolver.queryTroparion === 'function') {
-                        const month = dateObj.getMonth() + 1;
-                        const day   = dateObj.getDate();
-                        const mmdd  = String(month).padStart(2, '0') + '-' + String(day).padStart(2, '0');
+                        const mmdd  = _getFixedCalendarMmdd(dateObj); // v7.1
                         const mResult = await window.MenaionResolver.queryTroparion(mmdd);
 
                         const hasCommemoration = mResult &&
@@ -5563,9 +5602,7 @@ async function _resolveGreatComplineSlots(sections, dateObj) {
                     let canonItem = null;
                     try {
                         if (window.MenaionResolver && typeof window.MenaionResolver.queryTroparion === 'function') {
-                            const month = dateObj.getMonth() + 1;
-                            const day   = dateObj.getDate();
-                            const mmdd  = String(month).padStart(2, '0') + '-' + String(day).padStart(2, '0');
+                            const mmdd  = _getFixedCalendarMmdd(dateObj); // v7.1
                             const mResult = await window.MenaionResolver.queryTroparion(mmdd);
                             const hasCommemoration = mResult &&
                                 (mResult.status === 'menaion-resolved' ||
@@ -7463,7 +7500,7 @@ async function _resolveTypikaSlots(sections, dateObj) {
         const day = localDate.getDate();
         const mm = String(month).padStart(2, '0');
         const dd = String(day).padStart(2, '0');
-        const mmdd = mm + '-' + dd;
+        const mmdd = _getFixedCalendarMmdd(dateObj); // v7.1: fixed-calendar key
 
         const fixedKeyMap = {
             '12-24': '12-24_nativity_eve',
@@ -7525,58 +7562,43 @@ async function _resolveTypikaSlots(sections, dateObj) {
             keys.push(fixedKey);
         }
 
+        // v7.1: eoMode-aware relative Sunday/Saturday window checks.
+        // Compute the civil date of Nativity and Theophany under the active eoMode,
+        // then check whether localDate falls within ±7 days of each feast.
+        // Month-aware year selection handles the Dec/Jan boundary correctly.
+        const _fOff    = _juliOffset(year);
+        const natiCivil = (_currentEoMode === 'old_calendar')
+            ? (month === 12 ? new Date(year + 1, 0, _fOff - 6) : new Date(year, 0, _fOff - 6))
+            : (month === 1  ? new Date(year - 1, 11, 25)       : new Date(year, 11, 25));
+        const theoCivil = (_currentEoMode === 'old_calendar')
+            ? (month === 12 ? new Date(year + 1, 0, 6 + _fOff) : new Date(year, 0, 6 + _fOff))
+            : (month === 1  ? new Date(year, 0, 6)             : new Date(year + 1, 0, 6));
+        function _dfn(feast) { return Math.round((localDate - feast) / 86400000); }
+
         if (dayOfWeek === 0) {
-            if (month === 12 && day >= 18 && day <= 24) {
-                keys.push('nativity_sunday_before');
-            }
-
-            if (month === 12 && day >= 26 && day <= 31) {
-                keys.push('nativity_sunday_after');
-            }
-
-            if (month === 1 && day >= 1 && day <= 5) {
-                keys.push('theophany_sunday_before');
-            }
-
-            if (month === 1 && day >= 7 && day <= 13) {
-                keys.push('theophany_sunday_after');
-            }
+            const dn = _dfn(natiCivil);
+            if (dn >= -7 && dn <= -1) keys.push('nativity_sunday_before');
+            if (dn >=  1 && dn <=  7) keys.push('nativity_sunday_after');
+            const dt = _dfn(theoCivil);
+            if (dt >= -5 && dt <= -1) keys.push('theophany_sunday_before');
+            if (dt >=  1 && dt <=  7) keys.push('theophany_sunday_after');
         }
 
         if (dayOfWeek === 6) {
-            if (month === 12 && day >= 18 && day <= 24) {
-                keys.push('nativity_saturday_before');
-            }
-
-            if (month === 12 && day >= 26 && day <= 31) {
-                keys.push('nativity_saturday_after');
-            }
-
-            // If Nativity falls on Saturday, the Saturday after Nativity is January 1.
-            // This may collide with Circumcision/St Basil and Saturday before Theophany;
-            // the overlay system appends/combines rather than silently replacing.
-            if (month === 1 && day === 1) {
-                const previousNativity = new Date(year - 1, 11, 25);
-                if (previousNativity.getDay() === 6) {
-                    keys.push('nativity_saturday_after');
-                }
-            }
-
-            if (month === 1 && day >= 1 && day <= 5) {
-                keys.push('theophany_saturday_before');
-            }
-
-            if (month === 1 && day >= 7 && day <= 13) {
-                keys.push('theophany_saturday_after');
-            }
+            const dn = _dfn(natiCivil);
+            if (dn >= -7 && dn <= -1) keys.push('nativity_saturday_before');
+            if (dn >=  1 && dn <=  7) keys.push('nativity_saturday_after');
+            const dt = _dfn(theoCivil);
+            if (dt >= -5 && dt <= -1) keys.push('theophany_saturday_before');
+            if (dt >=  1 && dt <=  7) keys.push('theophany_saturday_after');
         }
 
         // In Slavic/OCA-style collision practice, when Nativity itself falls
         // on Sunday, the Sunday-after-Nativity readings may be combined with
         // December 26 / Synaxis of the Theotokos.
+        // v7.1: check civil Nativity date so old_calendar Jan 8 (= Julian Dec 26) is handled.
         if (mmdd === '12-26') {
-            const nativity = new Date(year, 11, 25);
-            if (nativity.getDay() === 0 && !keys.includes('nativity_sunday_after')) {
+            if (natiCivil.getDay() === 0 && !keys.includes('nativity_sunday_after')) {
                 keys.push('nativity_sunday_after');
             }
         }

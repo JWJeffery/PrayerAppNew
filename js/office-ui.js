@@ -3,6 +3,7 @@ let currentDate = new Date();
 let selectedMode = null;
 let isHydrationComplete        = false;
 let selectedHorologionOffice   = 'vespers'; // tracks active office within Horologion mode
+let selectedEoMode = 'new_calendar'; // 'new_calendar' | 'old_calendar' — persisted in universalOfficeSettings
 
 // ── v5.4: Horologion diagnostics toggle ──────────────────────────────────────
 // Off by default. Enable via the sidebar toggle button or from the console:
@@ -26,6 +27,34 @@ function toggleHorologionDiagnostics() {
     }
     // Re-render immediately so the toggle is instant.
     if (selectedMode === 'horologion') requestRender();
+}
+
+// ── v7.1: EO calendar mode selector ───────────────────────────────────────────────
+function selectEoMode(mode) {
+    if (mode !== 'new_calendar' && mode !== 'old_calendar') {
+        console.warn('[selectEoMode] Invalid mode:', mode, '— defaulting to new_calendar.');
+        mode = 'new_calendar';
+    }
+    selectedEoMode = mode;
+    // Sync selector DOM in case this was called programmatically
+    const sel = document.getElementById('hor-eo-calendar-select');
+    if (sel && sel.value !== mode) sel.value = mode;
+    saveSettings();
+    if (selectedMode === 'horologion') {
+        _updateGenericCalendarInfo();
+        requestRender();
+    }
+}
+
+// Update #generic-calendar-info with the active EO calendar mode label.
+// Replaces the old BCP-mirror behaviour for the Horologion sidebar.
+function _updateGenericCalendarInfo() {
+    const infoEl = document.getElementById('generic-calendar-info');
+    if (!infoEl) return;
+    const label = selectedEoMode === 'old_calendar'
+        ? 'Old Calendar (Julian fixed feasts)'
+        : 'New Calendar (Revised Julian fixed feasts)';
+    infoEl.textContent = 'EO Calendar Mode: ' + label;
 }
 let activeRender = null;
 let pendingRender = false;
@@ -707,6 +736,10 @@ async function selectMode(mode) {
 
         updateGenericDateDisplay();
         _updateHorologionOfficeButtons();
+        // v7.1: sync EO mode selector and calendar info line on every Horologion entry
+        const _eoSelEntry = document.getElementById('hor-eo-calendar-select');
+        if (_eoSelEntry) _eoSelEntry.value = selectedEoMode;
+        _updateGenericCalendarInfo();
 
         document.getElementById('office-display').innerHTML =
             `<div class="office-container"><h3>Preparing ${_horologionOfficeLabel(selectedHorologionOffice)}…</h3><p>Loading the Byzantine Office.</p></div>`;
@@ -832,12 +865,8 @@ function updateGenericDateDisplay() {
         pickerEl.value = `${year}-${month}-${day}`;
     }
     if (infoEl) {
-        // Mirror whatever the BCP calendar-info line already computed,
-        // if it has been populated by the render cycle.
-        const bcpInfo = document.getElementById('calendar-info');
-        if (bcpInfo && bcpInfo.textContent && bcpInfo.textContent !== 'Exploring the Ordo...') {
-            infoEl.textContent = bcpInfo.textContent;
-        }
+        // v7.1: show active EO calendar mode rather than mirroring stale BCP info
+        _updateGenericCalendarInfo();
     }
 }
 function setCustomDate(dateStr) {
@@ -986,7 +1015,8 @@ function saveSettings() {
         prayerBeforeReading: document.getElementById('toggle-prayer-before-reading')?.checked || false,
         examen:              document.getElementById('toggle-examen')?.checked || false,
         kyriePantocrator:    document.getElementById('toggle-kyrie-pantocrator')?.checked || false,
-        studyMode:           appSettings.studyMode
+        studyMode:           appSettings.studyMode,
+        eoMode:              selectedEoMode
     };
     try {
         localStorage.setItem('universalOfficeSettings', JSON.stringify(settings));
@@ -1039,6 +1069,14 @@ function loadSettings() {
 
         if (typeof s.studyMode === 'boolean') {
             appSettings.studyMode = s.studyMode;
+        }
+
+        // v7.1: restore EO calendar mode
+        if (typeof s.eoMode === 'string' &&
+            (s.eoMode === 'new_calendar' || s.eoMode === 'old_calendar')) {
+            selectedEoMode = s.eoMode;
+            const eoSelLoad = document.getElementById('hor-eo-calendar-select');
+            if (eoSelLoad) eoSelLoad.value = selectedEoMode;
         }
 
         if (document.getElementById('creed-type'))
@@ -1219,7 +1257,7 @@ async function renderHorologionOffice(officeKey) {
     if (!display) return;
 
     // resolveOffice() is non-throwing: all failures come back as status:"error"
-    const payload = await HorologionEngine.resolveOffice(currentDate, officeKey);
+    const payload = await HorologionEngine.resolveOffice(currentDate, officeKey, { eoMode: selectedEoMode });
 
     // ── Error state: surface explicitly, never silently blank ────────────────
     if (payload.status === 'error') {

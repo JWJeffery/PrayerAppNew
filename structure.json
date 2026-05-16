@@ -379,7 +379,7 @@
       {
         "id": "eo-calendar-modes",
         "title": "EO old/new calendar mode: main-app integration",
-        "description": "PARTIAL — admin/devtool diagnostics are now implemented, but the feature is not complete in the actual app. CalendarEngine.getEOSeasonRanges(year, eoMode) and admin/admin.html support EO old_calendar vs new_calendar year snapshots, including fixed-feast anchor differences. Remaining work: add EO mode selection to the main app, load js/calendar-eastern-orthodox.js on the production path, and ensure live office/day rendering consumes eoMode rather than admin-only snapshot tooling.",
+        "description": "COMPLETE — 2026-05-16. Main-app Horologion production bridge implemented. js/calendar-eastern-orthodox.js is now loaded on the production path before js/byzantine-paschalion.js. #generic-settings contains an EO calendar mode selector (#hor-eo-calendar-select, values new_calendar / old_calendar). js/office-ui.js exposes selectEoMode(), persists selectedEoMode in universalOfficeSettings, syncs the selector on Horologion entry, updates #generic-calendar-info with the active mode label, and passes { eoMode: selectedEoMode } into HorologionEngine.resolveOffice(). js/horologion-engine.js normalizes context.eoMode as _currentEoMode, and _getFixedCalendarMmdd() is wired into all fixed-date lookup sites: Little Hours troparion, Vespers troparion, Orthros kontakion queryDate, Great Compline weekday troparia probe, Great Compline canon probe, Great Compline feast-eve detection, and feastLectionaryOverlayKeys fixed-cycle mmdd routing including Nativity/Theophany relative Sunday/Saturday window checks. Movable-cycle behavior (Pascha, Bright Week, Great Lent, Holy Week, after-Pentecost ordinale) is unchanged. Diagnostic payload surfaces eoMode and fixedCalendarMode. Annual Typikon collision policy for fixed vs movable cycle overlaps remains a separate deferred item.",
         "severity": "MEDIUM",
         "status": "in-progress",
         "area": "index.html + js/office-ui.js + js/calendar-engine.js + js/calendar-eastern-orthodox.js + admin/admin.html",
@@ -674,6 +674,15 @@
     "last_realigned": "2026-04-21"
   },
 "recent_logic_changes": [
+    {
+      "phase": "EO production-path integration — main-app calendar mode bridge",
+      "date": "2026-05-16",
+      "file": "index.html + js/office-ui.js + js/horologion-engine.js + structure.json + admin/readme.md",
+      "change": "Exposed EO calendar mode (new_calendar / old_calendar) on the main-app Horologion production path. index.html: js/calendar-eastern-orthodox.js loaded before js/byzantine-paschalion.js; EO calendar mode selector (#hor-eo-calendar-select) added to #generic-settings. js/office-ui.js: selectedEoMode state variable (default new_calendar); selectEoMode(mode) handler with validation and persistence; saveSettings/loadSettings extended with eoMode field; selectMode('horologion') syncs selector and calls _updateGenericCalendarInfo(); updateGenericDateDisplay() updated; renderHorologionOffice() passes { eoMode: selectedEoMode } to HorologionEngine.resolveOffice(). js/horologion-engine.js: _currentEoMode module variable; _juliOffset(y) and _getFixedCalendarMmdd(d) helpers; resolveOffice() normalizes context.eoMode before dispatch; all fixed-date Menaion/Typika lookup sites wired to _getFixedCalendarMmdd(): Little Hours troparion, Vespers troparion, Orthros kontakion queryDate, Great Compline weekday troparia probe, Great Compline canon probe, Great Compline feast-eve detection (_isGreatComplineGreatFeastEve migrated to fixed-key comparison), feastLectionaryOverlayKeys fixed-cycle mmdd and Nativity/Theophany relative Sunday/Saturday windows (static month/day ranges replaced with eoMode-aware civil feast date arithmetic). Diagnostic payload includes eoMode and fixedCalendarMode. Expected behavior: new_calendar Dec 25 → key 12-25; old_calendar civil Jan 7 → key 12-25; old_calendar civil Sep 26 → key 09-13 (Exaltation eve); old_calendar civil Jan 19 → Typika Theophany overlay. Movable cycle unchanged.",
+      "status": "complete",
+      "deferred": "Annual Typikon collision policy for fixed vs movable cycle overlaps (Annunciation Sunday/Holy Week/Pascha/Bright, Nativity/Theophany Holy Week collisions, etc.), broader Menaion canon/exapostilarion/sessional-hymn corpus expansion, Royal Hours, reduction-settings tranche, and public-beta blocker census remain separate bounded work."
+    },
+    
     {
       "phase": "Release roadmap reset — retire Western Pentecost active gate",
       "date": "2026-05-12",
