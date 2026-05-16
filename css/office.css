@@ -362,32 +362,37 @@ body.light-mode .mode-btn:hover {
     display: none !important;
 }
 
-/* ── Horologion office selector button list ─────────────────────────────── */
+/* ── Horologion office selector radio list ──────────────────────────────── */
 .hor-office-list {
     display: flex;
     flex-direction: column;
-    gap: 5px;
+    gap: 2px;
     margin-top: 6px;
 }
 
-.hor-office-btn {
-    background: transparent;
-    border: 1px solid rgba(201,168,76,0.5);
-    color: var(--gold);
-    font-family: 'Cinzel', serif;
-    font-size: 0.88em;
-    letter-spacing: 0.06em;
-    padding: 7px 12px;
-    text-align: left;
+.hor-office-option {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #c8bfa8;
+    font-family: 'IM Fell English', serif;
+    font-size: 1.02em;
+    line-height: 1.25;
     cursor: pointer;
-    border-radius: 2px;
-    transition: background 0.15s, border-color 0.15s;
-    width: 100%;
+    padding: 2px 0;
 }
 
-.hor-office-btn:hover {
-    background: rgba(201,168,76,0.10);
-    border-color: rgba(201,168,76,0.75);
+.hor-office-option input[type="radio"] {
+    flex: 0 0 auto;
+}
+
+.hor-office-option span {
+    display: inline-block;
+}
+
+.hor-office-option.is-active {
+    color: var(--gold);
+    font-weight: 700;
 }
 
 .setting-group {

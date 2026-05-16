@@ -675,6 +675,15 @@
   },
 "recent_logic_changes": [
     {
+      "phase": "Horologion office selector UI normalization — BCP radio-list alignment",
+      "date": "2026-05-16",
+      "file": "index.html + css/office.css + js/office-ui.js + structure.json",
+      "change": "Converted the Horologion office selector from boxed utility-style buttons to BCP-style radio-list controls. The #generic-settings Office group now uses a name=horologion-office radio group with the existing hor-btn-* IDs preserved on the input controls and the existing selectHorologionOffice(...) onchange handlers preserved. css/office.css replaces .hor-office-btn button styling with .hor-office-option radio-row styling, using IM Fell English label typography and a simple .is-active emphasis state. js/office-ui.js updates _updateHorologionOfficeButtons() to synchronize radio checked state and .is-active row class instead of applying boxed-button inline style overrides. No Horologion engine, EO calendar, Menaion, Typika, or office-rendering behavior changed.",
+      "status": "complete",
+      "deferred": "Further sidebar polish may later normalize EO calendar mode away from select styling if desired, but this patch specifically aligns office selection with the BCP radio-list control language."
+    },
+
+    {
       "phase": "Horologion sidebar UI normalization — BCP house style alignment",
       "date": "2026-05-16",
       "file": "index.html + css/office.css + structure.json",

@@ -307,21 +307,63 @@
 
             <div class="nested-group">
                 <strong style="color:#aaa; font-size:1em;">Office</strong>
-                <div class="hor-office-list">
-                    <button id="hor-btn-vespers"         class="hor-office-btn" onclick="selectHorologionOffice('vespers')">Vespers</button>
-                    <button id="hor-btn-small-compline"  class="hor-office-btn" onclick="selectHorologionOffice('small-compline')">Small Compline</button>
-                    <button id="hor-btn-great-compline"  class="hor-office-btn" onclick="selectHorologionOffice('great-compline')">Great Compline</button>
-                    <button id="hor-btn-midnight-office" class="hor-office-btn" onclick="selectHorologionOffice('midnight-office')">Midnight Office</button>
-                    <button id="hor-btn-orthros"         class="hor-office-btn" onclick="selectHorologionOffice('orthros')">Orthros (Matins)</button>
-                    <button id="hor-btn-first-hour"      class="hor-office-btn" onclick="selectHorologionOffice('first-hour')">First Hour</button>
-                    <button id="hor-btn-third-hour"      class="hor-office-btn" onclick="selectHorologionOffice('third-hour')">Third Hour</button>
-                    <button id="hor-btn-sixth-hour"      class="hor-office-btn" onclick="selectHorologionOffice('sixth-hour')">Sixth Hour</button>
-                    <button id="hor-btn-ninth-hour"      class="hor-office-btn" onclick="selectHorologionOffice('ninth-hour')">Ninth Hour</button>
-                    <button id="hor-btn-typika"          class="hor-office-btn" onclick="selectHorologionOffice('typika')">Typika</button>
-                    <button id="hor-btn-interhour-first" class="hor-office-btn" onclick="selectHorologionOffice('interhour-first')">Interhour of the First Hour</button>
-                    <button id="hor-btn-interhour-third" class="hor-office-btn" onclick="selectHorologionOffice('interhour-third')">Interhour of the Third Hour</button>
-                    <button id="hor-btn-interhour-sixth" class="hor-office-btn" onclick="selectHorologionOffice('interhour-sixth')">Interhour of the Sixth Hour</button>
-                    <button id="hor-btn-interhour-ninth" class="hor-office-btn" onclick="selectHorologionOffice('interhour-ninth')">Interhour of the Ninth Hour</button>
+                <div class="hor-office-list" role="radiogroup" aria-label="Horologion office">
+                    <label class="hor-office-option" for="hor-btn-vespers">
+                        <input type="radio" name="horologion-office" id="hor-btn-vespers" value="vespers" onchange="selectHorologionOffice('vespers')">
+                        <span>Vespers</span>
+                    </label>
+                    <label class="hor-office-option" for="hor-btn-small-compline">
+                        <input type="radio" name="horologion-office" id="hor-btn-small-compline" value="small-compline" onchange="selectHorologionOffice('small-compline')">
+                        <span>Small Compline</span>
+                    </label>
+                    <label class="hor-office-option" for="hor-btn-great-compline">
+                        <input type="radio" name="horologion-office" id="hor-btn-great-compline" value="great-compline" onchange="selectHorologionOffice('great-compline')">
+                        <span>Great Compline</span>
+                    </label>
+                    <label class="hor-office-option" for="hor-btn-midnight-office">
+                        <input type="radio" name="horologion-office" id="hor-btn-midnight-office" value="midnight-office" onchange="selectHorologionOffice('midnight-office')">
+                        <span>Midnight Office</span>
+                    </label>
+                    <label class="hor-office-option" for="hor-btn-orthros">
+                        <input type="radio" name="horologion-office" id="hor-btn-orthros" value="orthros" onchange="selectHorologionOffice('orthros')">
+                        <span>Orthros (Matins)</span>
+                    </label>
+                    <label class="hor-office-option" for="hor-btn-first-hour">
+                        <input type="radio" name="horologion-office" id="hor-btn-first-hour" value="first-hour" onchange="selectHorologionOffice('first-hour')">
+                        <span>First Hour</span>
+                    </label>
+                    <label class="hor-office-option" for="hor-btn-third-hour">
+                        <input type="radio" name="horologion-office" id="hor-btn-third-hour" value="third-hour" onchange="selectHorologionOffice('third-hour')">
+                        <span>Third Hour</span>
+                    </label>
+                    <label class="hor-office-option" for="hor-btn-sixth-hour">
+                        <input type="radio" name="horologion-office" id="hor-btn-sixth-hour" value="sixth-hour" onchange="selectHorologionOffice('sixth-hour')">
+                        <span>Sixth Hour</span>
+                    </label>
+                    <label class="hor-office-option" for="hor-btn-ninth-hour">
+                        <input type="radio" name="horologion-office" id="hor-btn-ninth-hour" value="ninth-hour" onchange="selectHorologionOffice('ninth-hour')">
+                        <span>Ninth Hour</span>
+                    </label>
+                    <label class="hor-office-option" for="hor-btn-typika">
+                        <input type="radio" name="horologion-office" id="hor-btn-typika" value="typika" onchange="selectHorologionOffice('typika')">
+                        <span>Typika</span>
+                    </label>
+                    <label class="hor-office-option" for="hor-btn-interhour-first">
+                        <input type="radio" name="horologion-office" id="hor-btn-interhour-first" value="interhour-first" onchange="selectHorologionOffice('interhour-first')">
+                        <span>Interhour of the First Hour</span>
+                    </label>
+                    <label class="hor-office-option" for="hor-btn-interhour-third">
+                        <input type="radio" name="horologion-office" id="hor-btn-interhour-third" value="interhour-third" onchange="selectHorologionOffice('interhour-third')">
+                        <span>Interhour of the Third Hour</span>
+                    </label>
+                    <label class="hor-office-option" for="hor-btn-interhour-sixth">
+                        <input type="radio" name="horologion-office" id="hor-btn-interhour-sixth" value="interhour-sixth" onchange="selectHorologionOffice('interhour-sixth')">
+                        <span>Interhour of the Sixth Hour</span>
+                    </label>
+                    <label class="hor-office-option" for="hor-btn-interhour-ninth">
+                        <input type="radio" name="horologion-office" id="hor-btn-interhour-ninth" value="interhour-ninth" onchange="selectHorologionOffice('interhour-ninth')">
+                        <span>Interhour of the Ninth Hour</span>
+                    </label>
                 </div>
             </div>
 

@@ -888,20 +888,33 @@ function selectHorologionOffice(officeKey) {
 }
 
 function _updateHorologionOfficeButtons() {
-    const offices = ['vespers', 'small-compline', 'first-hour', 'third-hour', 'sixth-hour', 'ninth-hour', 'orthros', 'midnight-office', 'great-compline', 'typika', 'interhour-first', 'interhour-third', 'interhour-sixth', 'interhour-ninth'];
-    for (const key of offices) {
-        const btn = document.getElementById(`hor-btn-${key}`);
-        if (!btn) continue;
-        if (key === selectedHorologionOffice) {
-            btn.style.background  = 'rgba(201,168,76,0.18)';
-            btn.style.borderColor = 'rgba(201,168,76,0.9)';
-            btn.style.fontWeight  = 'bold';
-        } else {
-            btn.style.background  = 'transparent';
-            btn.style.borderColor = 'rgba(201,168,76,0.5)';
-            btn.style.fontWeight  = 'normal';
-        }
-    }
+    const keys = [
+        'vespers',
+        'small-compline',
+        'great-compline',
+        'midnight-office',
+        'orthros',
+        'first-hour',
+        'third-hour',
+        'sixth-hour',
+        'ninth-hour',
+        'typika',
+        'interhour-first',
+        'interhour-third',
+        'interhour-sixth',
+        'interhour-ninth'
+    ];
+
+    keys.forEach(key => {
+        const input = document.getElementById(`hor-btn-${key}`);
+        if (!input) return;
+
+        const isActive = key === selectedHorologionOffice;
+        input.checked = isActive;
+
+        const row = input.closest('.hor-office-option');
+        if (row) row.classList.toggle('is-active', isActive);
+    });
 }
 
 function _horologionOfficeLabel(officeKey) {
