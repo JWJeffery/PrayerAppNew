@@ -4274,6 +4274,39 @@ function _resolveComplineFestalTheotokionRubric(officeKey, troparionItem, fallba
                         continue;
                     }
 
+                    // ── v3.8.56: rank 1–2 Menaion feast guard — release-honesty ────────
+                    // On major fixed Menaion feasts (rank 1 or 2) outside the special
+                    // seasonal paths already guarded above (Bright Week, Holy Week,
+                    // Great Lent weekday, Great Lent Saturday), emit an honest deferred
+                    // Menaion Exapostilarion/Svetilen rubric instead of falling through
+                    // to ordinary weekday Octoechos or Sunday Eothinon text.
+                    const _exapTroparionItem = sections
+                        .flatMap(sec => Array.isArray(sec.items) ? sec.items : [])
+                        .find(it => it && it.key === 'troparion-of-the-day') || null;
+                    const _exapIsFeast = _exapTroparionItem &&
+                        _exapTroparionItem.resolvedAs === 'menaion-feast-troparion';
+                    const _exapFeastRankRaw = _exapIsFeast ? _exapTroparionItem.rank : null;
+                    const _exapFeastRank = _exapFeastRankRaw !== null &&
+                        _exapFeastRankRaw !== undefined &&
+                        Number.isFinite(Number(_exapFeastRankRaw))
+                            ? Number(_exapFeastRankRaw) : null;
+                    const _exapIsMajorFeast = _exapFeastRank !== null &&
+                        _exapFeastRank >= 1 &&
+                        _exapFeastRank <= 2;
+
+                    if (_exapIsMajorFeast) {
+                        const _exapFeastName = (_exapTroparionItem && _exapTroparionItem.label)
+                            ? _exapTroparionItem.label : 'this feast';
+                        section.items[i] = {
+                            type:       'rubric',
+                            key:        'exapostilarion',
+                            label:      'Exapostilarion (Svetilen) — Menaion Feast',
+                            text:       `MENAION FEAST (Rank ${_exapFeastRank}) — Exapostilarion: The appointed Menaion Exapostilarion/Svetilen for ${_exapFeastName} is not yet text-backed in the corpus and should be taken from the Menaion.`,
+                            resolvedAs: 'orthros-menaion-feast-exapostilarion-rubric'
+                        };
+                        continue;
+                    }
+
                     // ── Sunday: resolve via Eothinon cycle ────
                     if (dayOfWeek === 0) {
                         const eothinonResult =
