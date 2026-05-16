@@ -2781,7 +2781,7 @@ function _resolveComplineFestalTheotokionRubric(officeKey, troparionItem, fallba
         type:          'rubric',
         key:           'compline-theotokion',
         label:         'Theotokion of Compline',
-        text:          'On a qualifying feast, the proper Theotokion appointment for Small Compline follows the festal office. The ordinary Compline Theotokion rubric is displaced here. Full festal text is not yet available in this path.',
+        text:          'On a qualifying feast, the proper Theotokion appointment for Small Compline follows the festal office. The ordinary Compline Theotokion rubric is displaced here. Full festal Theotokion text for Small Compline is deferred in the current public-beta corpus.',
         resolvedAs:    'compline-feast-theotokion-rubric',
         overrideType:  'menaion-troparion',
         officeKey:     'small-compline',
@@ -6038,7 +6038,7 @@ async function _resolveGreatComplineSlots(sections, dateObj) {
                     type:       'rubric',
                     key:        'compline-theotokion',
                     label:      item.label || 'Theotokion of Compline',
-                    text:       'On ordinary days, the proper Theotokion appointment for Small Compline belongs here. The full text for this office is not yet available in this path.',
+                    text:       'On ordinary days, the proper Theotokion appointment for Small Compline belongs here. Full Small Compline Theotokion text is deferred in the current public-beta corpus.',
                     resolvedAs: 'compline-theotokion-deferred'
                 };
 
@@ -6200,7 +6200,7 @@ async function _resolveGreatComplineSlots(sections, dateObj) {
                         type:       'rubric',
                         key:        'first-hour-theotokion',
                         label:      item.label || 'Theotokion of the First Hour',
-                        text:       'On ordinary days, the proper Theotokion appointment for the First Hour belongs here. The full text for this office is not yet available in this path.',
+                        text:       'On ordinary days, the proper Theotokion appointment for the First Hour belongs here. Full First Hour Theotokion text is deferred in the current public-beta corpus.',
                         resolvedAs: 'first-hour-theotokion-deferred'
                     }, toneResult, dayOfWeek);
 
@@ -6298,7 +6298,7 @@ async function _loadThirdHourFixedData() {
                         type:       'rubric',
                         key:        'third-hour-theotokion',
                         label:      item.label || 'Theotokion of the Third Hour',
-                        text:       'On ordinary days, the proper Theotokion appointment for the Third Hour belongs here. The full text for this office is not yet available in this path.',
+                        text:       'On ordinary days, the proper Theotokion appointment for the Third Hour belongs here. Full Third Hour Theotokion text is deferred in the current public-beta corpus.',
                         resolvedAs: 'third-hour-theotokion-deferred'
                     }, toneResult, dayOfWeek);
 
@@ -6396,7 +6396,7 @@ async function _loadThirdHourFixedData() {
                         type:       'rubric',
                         key:        'sixth-hour-theotokion',
                         label:      item.label || 'Theotokion of the Sixth Hour',
-                        text:       'On ordinary days, the proper Theotokion appointment for the Sixth Hour belongs here. The full text for this office is not yet available in this path.',
+                        text:       'On ordinary days, the proper Theotokion appointment for the Sixth Hour belongs here. Full Sixth Hour Theotokion text is deferred in the current public-beta corpus.',
                         resolvedAs: 'sixth-hour-theotokion-deferred'
                     }, toneResult, dayOfWeek);
 
@@ -6494,7 +6494,7 @@ async function _loadThirdHourFixedData() {
                         type:       'rubric',
                         key:        'ninth-hour-theotokion',
                         label:      item.label || 'Theotokion of the Ninth Hour',
-                        text:       'On ordinary days, the proper Theotokion appointment for the Ninth Hour belongs here. The full text for this office is not yet available in this path.',
+                        text:       'On ordinary days, the proper Theotokion appointment for the Ninth Hour belongs here. Full Ninth Hour Theotokion text is deferred in the current public-beta corpus.',
                         resolvedAs: 'ninth-hour-theotokion-deferred'
                     }, toneResult, dayOfWeek);
 
