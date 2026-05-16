@@ -4130,7 +4130,7 @@ function _resolveComplineFestalTheotokionRubric(officeKey, troparionItem, fallba
                                 type:       'rubric',
                                 key:        'exapostilarion',
                                 label:      'Exapostilarion (Svetilen)',
-                                text:       'GREAT LENT (Weekday) — Exapostilarion: Corpus not loaded. Ensure js/octoechos/orthros-exapostilarion-great-lent-weekday.js is present in index.html before horologion-engine.js.',
+                                text:       'The appointed Exapostilarion text could not be loaded in this view.',
                                 resolvedAs: 'orthros-great-lent-exapostilarion-corpus-missing'
                             };
                             continue;
@@ -4196,7 +4196,7 @@ function _resolveComplineFestalTheotokionRubric(officeKey, troparionItem, fallba
                                 type:       'rubric',
                                 key:        'exapostilarion',
                                 label:      'Exapostilarion (Svetilen)',
-                                text:       'GREAT LENT (Saturday) — Exapostilarion: Corpus not loaded. Ensure js/octoechos/orthros-exapostilarion-great-lent-weekday.js is present in index.html before horologion-engine.js.',
+                                text:       'The appointed Exapostilarion text could not be loaded in this view.',
                                 resolvedAs: 'orthros-great-lent-saturday-exapostilarion-corpus-missing'
                             };
                             continue;
@@ -4223,7 +4223,7 @@ function _resolveComplineFestalTheotokionRubric(officeKey, troparionItem, fallba
                                     type:       'rubric',
                                     key:        'exapostilarion',
                                     label:      'Exapostilarion (Svetilen)',
-                                    text:       'GREAT LENT (1st Saturday) — Exapostilarion: firstSaturdaySpecial entry is absent from the corpus object. Ensure the property is present in window.OCTOECHOS.orthros.exapostilarion.greatLentWeekday.',
+                                    text:       'The appointed Exapostilarion text could not be loaded in this view.',
                                     resolvedAs: 'orthros-great-lent-saturday-1-source-missing'
                                 };
                                 continue;
@@ -4302,7 +4302,7 @@ function _resolveComplineFestalTheotokionRubric(officeKey, troparionItem, fallba
                                     type:       'rubric',
                                     key:        'exapostilarion',
                                     label:      'Exapostilarion (Svetilen)',
-                                    text:       'GREAT LENT (5th Saturday — Akathist) — Exapostilarion: fifthSaturdaySpecial entry is absent from the corpus object. Ensure the property is present in window.OCTOECHOS.orthros.exapostilarion.greatLentWeekday.',
+                                    text:       'The appointed Exapostilarion text could not be loaded in this view.',
                                     resolvedAs: 'orthros-great-lent-saturday-5-source-missing'
                                 };
                                 continue;
@@ -4400,7 +4400,7 @@ function _resolveComplineFestalTheotokionRubric(officeKey, troparionItem, fallba
                                 type:       'rubric',
                                 key:        'exapostilarion',
                                 label:      'Exapostilarion (Svetilen)',
-                                text:       'SUNDAY — Exapostilarion: OrthrosEothinonEngine is not available. Cannot determine Eothinon number.',
+                                text:       'The Sunday Eothinon Exapostilarion could not be determined in this view.',
                                 resolvedAs: 'orthros-sunday-exapostilarion-engine-unavailable'
                             };
                             continue;
@@ -4426,7 +4426,7 @@ function _resolveComplineFestalTheotokionRubric(officeKey, troparionItem, fallba
                                 type:       'rubric',
                                 key:        'exapostilarion',
                                 label:      'Exapostilarion (Svetilen)',
-                                text:       `SUNDAY — Exapostilarion (Eothinon ${gospelNum}): Corpus not loaded. Ensure js/octoechos/orthros-exapostilarion-eothinon.js is present in index.html before horologion-engine.js.`,
+                                text:       'The appointed Exapostilarion text could not be loaded in this view.',
                                 resolvedAs: 'orthros-sunday-exapostilarion-corpus-unavailable'
                             };
                             continue;
@@ -4438,7 +4438,7 @@ function _resolveComplineFestalTheotokionRubric(officeKey, troparionItem, fallba
                                 type:       'rubric',
                                 key:        'exapostilarion',
                                 label:      'Exapostilarion (Svetilen)',
-                                text:       `SUNDAY — Exapostilarion (Eothinon ${gospelNum}): No entry exists for Eothinon ${gospelNum} in corpus object. Key required at window.OCTOECHOS.orthros.exapostilarion.sunday.eothinon.gospels[${gospelNum}].`,
+                                text:       'No text entry is present in the current public-beta corpus for this Eothinon.',
                                 resolvedAs: 'orthros-sunday-exapostilarion-gospel-missing'
                             };
                             continue;
@@ -4450,7 +4450,7 @@ function _resolveComplineFestalTheotokionRubric(officeKey, troparionItem, fallba
                                 type:       'rubric',
                                 key:        'exapostilarion',
                                 label:      'Exapostilarion (Svetilen)',
-                                text:       `SUNDAY — Exapostilarion (Eothinon ${gospelNum}): Text not yet transcribed from verified source. Transcribe from Jordanville Horologion 2008 or OCA/Antiochian Orthros into window.OCTOECHOS.orthros.exapostilarion.sunday.eothinon.gospels[${gospelNum}].`,
+                                text:       'Full text is deferred pending verified source transcription.',
                                 resolvedAs: 'orthros-sunday-exapostilarion-eothinon-text-untranscribed'
                             };
                             continue;
@@ -4485,7 +4485,7 @@ function _resolveComplineFestalTheotokionRubric(officeKey, troparionItem, fallba
                                 type:       'rubric',
                                 key:        'exapostilarion',
                                 label:      'Exapostilarion (Svetilen)',
-                                text:       'ORDINARY WEEKDAY — Exapostilarion: Corpus not loaded. Ensure js/octoechos/orthros-exapostilarion-weekday.js is present in index.html before horologion-engine.js.',
+                                text:       'The appointed Exapostilarion text could not be loaded in this view.',
                                 resolvedAs: 'orthros-ordinary-weekday-exapostilarion-corpus-unavailable'
                             };
                             continue;
@@ -4551,7 +4551,7 @@ function _resolveComplineFestalTheotokionRubric(officeKey, troparionItem, fallba
                                 type:       'rubric',
                                 key:        'exapostilarion',
                                 label:      'Exapostilarion (Svetilen)',
-                                text:       'SATURDAY — Exapostilarion: Corpus not loaded. Ensure js/octoechos/orthros-exapostilarion-weekday.js is present in index.html before horologion-engine.js.',
+                                text:       'The appointed Exapostilarion text could not be loaded in this view.',
                                 resolvedAs: 'orthros-ordinary-saturday-exapostilarion-corpus-unavailable'
                             };
                             continue;

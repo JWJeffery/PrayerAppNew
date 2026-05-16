@@ -701,6 +701,14 @@
   },
   "recent_logic_changes": [
     {
+    "phase": "Public-beta rubric wording normalization — Exapostilarion load failures",
+    "date": "2026-05-16",
+    "file": "js/horologion-engine.js + structure.json",
+    "status": "complete",
+    "change": "Orthros Exapostilarion and Eothinon user-facing load-failure and corpus-missing notices normalized away from developer/runtime language. Five ‘Corpus not loaded. Ensure js/…’ notices replaced with ‘The appointed Exapostilarion text could not be loaded in this view.’ Two corpus-property-absent notices exposing window.OCTOECHOS paths replaced with the same. One ‘OrthrosEothinonEngine is not available’ notice replaced with ‘The Sunday Eothinon Exapostilarion could not be determined in this view.’ One ‘No entry exists … window.OCTOECHOS…’ notice replaced with ‘No text entry is present in the current public-beta corpus for this Eothinon.’ One ‘Transcribe from Jordanville…’ notice replaced with ‘Full text is deferred pending verified source transcription.’ No appointment logic, Eothinon calculation, branch conditions, resolvedAs tokens, display-depth behavior, or corpus text changed.",
+    "deferred": "Broader ‘this path / this engine’ wording, special-form wording, remaining technical load-failure wording outside Exapostilarion, schema-level notice taxonomy."
+  },
+  {
       "phase": "Public-beta rubric wording normalization — Typika and placeholders",
       "date": "2026-05-16",
       "file": "js/horologion-engine.js + js/office-ui.js + structure.json",
