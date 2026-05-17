@@ -4944,7 +4944,7 @@ const isMajorFeastForPraises =
                             'on Great Thursday Matins. The katavasiae during Great Lent are typically ' +
                             'from the appointed Triodion canon.\n\n' +
                             canonStructureNote + '\n\n' +
-                            '(Full Lenten Canon texts are not yet embedded in this path.)';
+                            '(Full appointed Lenten Canon texts are deferred in the current public-beta corpus.)';
                         canonResolvedAs = 'orthros-great-lent-canon-rubric';
                     } else if (dayOfWeek === 0 && isFeast &&
                                troparionItem && typeof troparionItem.rank === 'number' &&
@@ -6732,7 +6732,7 @@ async function _loadThirdHourFixedData() {
             type:        'rubric',
             key:         slotKey,
             label:       `${slotLabel} — ${dayLabel}`,
-            text:        `(HOLY WEEK — ${dayLabel}. ${noteText} Triodion corpus not yet available in this engine; the full text will appear here when the corpus is added.)`,
+            text:        `(HOLY WEEK — ${dayLabel}. ${noteText} Full appointed Triodion text for this Holy Week slot is deferred in the current public-beta corpus.)`,
             holyWeekDay: holyWeekDay,
             resolvedAs:  RESOLVED_AS_MAP[slotKey] || 'holy-week-pending'
         };
@@ -6971,8 +6971,7 @@ else if (item.key === 'kathisma-reading') {
                             text:       '(GREAT LENT — weekday Vespers. ' +
                                         'Paremiae (Old Testament vesperal readings) are appointed at every weekday Vespers during Great Lent. ' +
                                         'Typically two readings are appointed Monday through Friday, drawn from Genesis and Proverbs. ' +
-                                        'The Lenten lectionary corpus is not yet available in this engine. ' +
-                                        'When available, the appointed paremiae will appear here.)',
+                                        'Full appointed Lenten paremiae text is deferred in the current public-beta corpus.)',
                             resolvedAs: 'great-lent-paremiae-pending'
                         };
                     } else {
@@ -7022,8 +7021,7 @@ else if (item.key === 'kathisma-reading') {
                                 text:       '(GREAT LENT — weekday Vespers. ' +
                                             'The ordinary Octoechos weekday stichera are not appointed during Great Lent. ' +
                                             'The stichera at "Lord, I have cried" on Lenten weekdays are drawn from the Triodion. ' +
-                                            'The Triodion corpus is not yet available in this engine. ' +
-                                            'When available, the appointed Lenten stichera will appear here.)',
+                                            'Full appointed Triodion stichera text is deferred in the current public-beta corpus.)',
                                 resolvedAs: 'great-lent-stichera-pending'
                             };
                         } else if (toneResult.tone) {
@@ -7104,8 +7102,7 @@ else if (item.key === 'kathisma-reading') {
                                 text:       '(GREAT LENT — weekday Vespers. ' +
                                             'The ordinary Octoechos weekday aposticha are not appointed during Great Lent. ' +
                                             'The aposticha on Lenten weekdays are drawn from the Triodion. ' +
-                                            'The Triodion corpus is not yet available in this engine. ' +
-                                            'When available, the appointed Lenten aposticha will appear here.)',
+                                            'Full appointed Triodion Aposticha text is deferred in the current public-beta corpus.)',
                                 resolvedAs: 'great-lent-aposticha-pending'
                             };
                         } else if (toneResult.tone) {
@@ -7196,7 +7193,7 @@ else if (item.key === 'kathisma-reading') {
                                                     'The ordinary weekday Octoechos troparion theme is not used during Great Lent. ' +
                                                     'On Lenten weekdays without a ranked Menaion commemoration, ' +
                                                     'the dismissal troparion follows Lenten practice from the Triodion. ' +
-                                                    'Triodion text for this week is not yet available in this engine.)',
+                                                    'Full appointed Triodion troparion text for this week is deferred in the current public-beta corpus.)',
                                         resolvedAs: 'great-lent-troparion-pending'
                                     };
                                 }
@@ -7243,8 +7240,7 @@ else if (item.key === 'kathisma-reading') {
                             text:       '(GREAT LENT — weekday Vespers. ' +
                                         'The ordinary Octoechos weekday Theotokion is not appointed on Lenten weekdays without a Menaion commemoration. ' +
                                         'The dismissal Theotokion on Lenten weekdays follows Triodion practice. ' +
-                                        'The Triodion corpus is not yet available in this engine. ' +
-                                        'When available, the appointed Lenten Theotokion will appear here.)',
+                                        'Full appointed Triodion Theotokion text is deferred in the current public-beta corpus.)',
                             resolvedAs: 'great-lent-theotokion-pending'
                         };
                     } else {
