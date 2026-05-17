@@ -1260,7 +1260,7 @@ function _normalizeUnavailableTroparionFallbackForOffice(officeKey, resolved, da
                 type:       'rubric',
                 key:        'troparion-of-the-day',
                 label:      'Troparion of the Day',
-                text:       `Holy Week (${_hwDay}): the appointed troparion is from the Triodion. Text not yet available in corpus.`,
+                text:       `Holy Week (${_hwDay}): the appointed troparion is from the Triodion. Full appointed Holy Week troparion text for this Little Hour is deferred in the current public-beta corpus.`,
                 resolvedAs: 'holy-week-troparion-rubric',
                 holyWeekDay: _hwDay
             };
@@ -1318,8 +1318,8 @@ function _normalizeUnavailableTroparionFallbackForOffice(officeKey, resolved, da
                 label:        'Troparion of the Day',
                 text:
                     `On Great Lent weekdays, the seasonal troparion appointment for the ${officeLabel} belongs here. ` +
-                    `The ordinary baseline troparion-of-the-day path is displaced by the season. ` +
-                    `Triodion text for this week is not yet available in the corpus.`,
+                    `The ordinary weekday troparion is displaced by the Lenten seasonal appointment. ` +
+                    `Full Triodion troparion text for this week is deferred in the current public-beta corpus.`,
                 resolvedAs:   'little-hour-lenten-rubric',
                 overrideType: 'seasonal-lent',
                 season:       'great-lent',
@@ -1777,7 +1777,7 @@ function _normalizeUnavailableTroparionFallbackForOffice(officeKey, resolved, da
             ? `(GREAT LENT — the ordinary weekday Psalter cycle is not in use. ` +
               `During Great Lent the entire Psalter is read twice weekly; ` +
               `the specific kathisma appointments differ from the ordinary cycle. ` +
-              `Lenten Psalter distribution is not yet implemented in this engine.)`
+              `The appointed Lenten Psalter distribution is deferred in the current public-beta corpus.)`
             : `(BASELINE — ordinary weekday weekly cycle only. ` +
               `Great Feast and Great Lent kathisma overrides are not yet implemented. ` +
               `Full psalm text corpus not yet loaded.)`;
@@ -2733,7 +2733,7 @@ const pascha = _getOrthodoxPascha(year);
             type:         'rubric',
             key:          'troparion-of-the-day',
             label:        'Troparion of the Day',
-            text:         'On Great Lent weekdays, the seasonal troparion appointment for Small Compline belongs here. The ordinary baseline troparion-of-the-day path is displaced by the season. Triodion text for this week is not yet available in the corpus.',
+            text:         'On Great Lent weekdays, the seasonal troparion appointment for Small Compline belongs here. The ordinary weekday troparion is displaced by the Lenten seasonal appointment. Full Triodion troparion text for this week is deferred in the current public-beta corpus.',
             resolvedAs:   'compline-lenten-rubric',
             overrideType: 'seasonal-lent',
             season:       'great-lent',
@@ -3739,7 +3739,7 @@ function _resolveComplineFestalTheotokionRubric(officeKey, troparionItem, fallba
                         type:       'rubric',
                         key:        'orthros-theotokion',
                         label:      item.label || 'Theotokion (Matins)',
-                        text:       'THEOTOKION — Deferred: This Orthros Theotokion path is not yet implemented in the current tranche. Ordinary weekday Octoechos Theotokion alone are scaffolded here.',
+                        text:       'THEOTOKION — The appointed Orthros Theotokion for this seasonal path is deferred in the current public-beta corpus. Ordinary weekday Octoechos Theotokia are available only where appointed.',
                         resolvedAs: 'orthros-theotokion-deferred-rubric'
                     };
                     continue;
@@ -4090,7 +4090,7 @@ function _resolveComplineFestalTheotokionRubric(officeKey, troparionItem, fallba
                             type:       'rubric',
                             key:        'exapostilarion',
                             label:      'Exapostilarion (Svetilen)',
-                            text:       `HOLY WEEK — Exapostilarion (${_hwExapDayLabel}): The Exapostilarion for this day is appointed from the Triodion. Text is not yet embedded in this path.`,
+                            text:       `HOLY WEEK — Exapostilarion (${_hwExapDayLabel}): The Exapostilarion for this day is appointed from the Triodion. Full appointed Holy Week Exapostilarion text is deferred in the current public-beta corpus.`,
                             resolvedAs: `orthros-holy-week-exapostilarion-rubric-${hwDay || 'unknown'}`
                         };
                         continue;
@@ -4316,7 +4316,7 @@ function _resolveComplineFestalTheotokionRubric(officeKey, troparionItem, fallba
                             type:       'rubric',
                             key:        'exapostilarion',
                             label:      'Exapostilarion (Svetilen)',
-                            text:       'GREAT LENT (Saturday) — Exapostilarion: This Saturday is outside the standard 1st–5th Saturday pattern. A special Exapostilarion is appointed from the Triodion for this day and is not yet implemented in this path.',
+                            text:       'GREAT LENT (Saturday) — Exapostilarion: This Saturday is outside the standard 1st–5th Saturday pattern. A special Exapostilarion is appointed from the Triodion for this day and Full appointed Exapostilarion text for this Saturday is deferred in the current public-beta corpus.',
                             resolvedAs: 'orthros-great-lent-saturday-special-unimplemented'
                         };
                         continue;
@@ -4647,16 +4647,14 @@ const isMajorFeastForPraises =
                             'HOLY WEEK — Sessional Hymns: During Holy Week the Sessional Hymns are ' +
                             'appointed specifically from the Triodion for each day, replacing the ' +
                             'ordinary Octoechos sedalia. The texts are day-specific and structurally ' +
-                            'distinct from ordinary week sedalia. Full Holy Week Sessional Hymn texts ' +
-                            'are not yet embedded in this path.';
+                            'distinct from ordinary week sedalia. Full appointed Holy Week Sessional Hymn texts are deferred in the current public-beta corpus.';
                         sessResolvedAs = 'orthros-holy-week-sessional-hymns-rubric';
                     } else if (isGreatLentWeekday) {
                         sessText =
                             'GREAT LENT (Weekday) — Sessional Hymns: On Great Lent weekdays the ' +
                             'Sessional Hymns are appointed from the Triodion (penitential sedalia) ' +
                             'and sometimes from the Menaion for major feasts. The ordinary Octoechos ' +
-                            'sedalia cycle is not used on feria Lenten days. Full Lenten Sessional ' +
-                            'Hymn texts are not yet embedded in this path.';
+                            'sedalia cycle is not used on feria Lenten days. Full appointed Lenten Sessional Hymn texts are deferred in the current public-beta corpus.';
                         sessResolvedAs = 'orthros-great-lent-sessional-hymns-rubric';
                                          } else if (dayOfWeek === 0 && !isMajorFeastForPraises) {
                         // Sunday — v6.1: resolve from corpus if available
@@ -4934,7 +4932,7 @@ const isMajorFeastForPraises =
                             'Great Friday: Canon of the Crucifixion. ' +
                             'Great Saturday: Canon of the Descent into Hades (composed by St. Cosmas).\n\n' +
                             canonStructureNote + '\n\n' +
-                            '(Full Holy Week Canon texts are not yet embedded in this path.)';
+                            '(Full appointed Holy Week Canon texts are deferred in the current public-beta corpus.)';
                         canonResolvedAs = 'orthros-holy-week-canon-rubric';
                     } else if (isGreatLentWeekday) {
                         canonText =
