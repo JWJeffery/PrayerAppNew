@@ -3482,6 +3482,12 @@ function _resolveComplineFestalTheotokionRubric(officeKey, troparionItem, fallba
 
                 // ── Fixed slots ───────────────────────────────────────────
                 if (FIXED_SLOT_KEYS.has(item.key)) {
+                    if (isBrightWeek && (item.key === 'great-litany' || item.key === 'psalm-50')) {
+                        section.items.splice(i, 1);
+                        i -= 1;
+                        continue;
+                    }
+
                     const slotData = _orthrosFixedData &&
                         _orthrosFixedData.slots &&
                         _orthrosFixedData.slots[item.key];
