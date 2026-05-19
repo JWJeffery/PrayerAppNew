@@ -74,6 +74,13 @@
           "label": "Psalm 142 (LXX) — Lord, hear my prayer",
           "status": "unresolved",
           "note": "Resolved from orthros-fixed.json by HorologionEngine."
+        },
+        {
+          "type": "placeholder",
+          "key": "great-litany",
+          "label": "The Great Litany (Mirnaya Ektenia)",
+          "status": "unresolved",
+          "note": "Resolved from orthros-fixed.json by HorologionEngine."
         }
       ]
     },
@@ -159,6 +166,13 @@
       "label": "The Canon",
       "notes": "The Canon is the central hymnographic unit of Orthros, consisting of nine Odes (Ode 2 omitted on most days). Each Ode contains an Irmos and several Troparia. The Canon is supplied from the Octoechos, Menaion, Triodion, or Pentecostarion. Full canon corpus is deferred beyond v5.6 baseline.",
       "items": [
+        {
+          "type": "placeholder",
+          "key": "psalm-50",
+          "label": "Psalm 50 (LXX) — Have mercy on me, O God",
+          "status": "unresolved",
+          "note": "Resolved from orthros-fixed.json by HorologionEngine."
+        },
         {
           "type": "placeholder",
           "key": "canon",

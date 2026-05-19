@@ -3286,7 +3286,8 @@ function _resolveComplineFestalTheotokionRubric(officeKey, troparionItem, fallba
         };
 
 
-        if (!isBrightWeek && !hasResolvedAs('orthros-great-litany-deferred-rubric')) {
+        const _greatLitanyFixed = allItems().some(item => item && item.key === 'great-litany' && item.resolvedAs === 'orthros-fixed');
+        if (!isBrightWeek && !hasResolvedAs('orthros-great-litany-deferred-rubric') && !_greatLitanyFixed) {
 
             const litanyRubric = {
 
@@ -3318,7 +3319,8 @@ function _resolveComplineFestalTheotokionRubric(officeKey, troparionItem, fallba
         }
 
 
-        if (!isBrightWeek && !hasResolvedAs('orthros-psalm-50-deferred-rubric')) {
+        const _psalm50Fixed = allItems().some(item => item && item.key === 'psalm-50' && item.resolvedAs === 'orthros-fixed');
+        if (!isBrightWeek && !hasResolvedAs('orthros-psalm-50-deferred-rubric') && !_psalm50Fixed) {
 
             const psalm50Rubric = {
 
@@ -3466,6 +3468,8 @@ function _resolveComplineFestalTheotokionRubric(officeKey, troparionItem, fallba
             'psalm-87',
             'psalm-102',
             'psalm-142',
+            'great-litany',
+            'psalm-50',
             'praises-psalms',
             'great-doxology'
         ]);
