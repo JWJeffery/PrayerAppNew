@@ -2970,18 +2970,30 @@ function _resolveComplineFestalTheotokionRubric(officeKey, troparionItem, fallba
  
         // ── Sunday: one governed decision slot + not-appointed follow-up slots ───
         if (dayOfWeek === 0) {
-            // kathisma-first: single governed Sunday kathisma / Polyeleos decision point
+            // kathisma-first: ordinary Sunday — full Kathisma 2 text (ADOPT_K2_NOW)
+            // Routes through _resolveKathismaFullText() matching the existing weekday call shape.
+            // title and psalms_lxx sourced from _kathismaFullTextData.kathismata['2'] because
+            // the Sunday assignment entry carries sunday_deferred:true with no kathismaFirst block.
             if (slotIndex === 0) {
+                const k2Meta = _kathismaFullTextData &&
+                               _kathismaFullTextData.kathismata &&
+                               _kathismaFullTextData.kathismata['2'];
+                if (k2Meta) {
+                    const k2Result = _resolveKathismaFullText(
+                        2,
+                        k2Meta.title      || 'Second Kathisma',
+                        k2Meta.psalms_lxx || '9–16',
+                        slotKey,
+                        'orthros-sunday-kathisma-2-full-text'
+                    );
+                    if (k2Result !== null) return k2Result;
+                }
+                // Corpus not loaded — honest fallback (should not occur in normal runtime)
                 return {
                     type:       'rubric',
                     key:        slotKey,
                     label:      'First Kathisma (Sunday)',
-                    text:       '(Sunday Orthros — Kathisma: On Sundays when the Polyeleos is appointed ' +
-                                '(Psalms 134–135 LXX), it replaces the ordinary Kathisma reading. ' +
-                                'On other Sundays the assignment varies by local use and whether a vigil ' +
-                                'was served on Saturday. The Sunday kathisma / Polyeleos appointment ' +
-                                'policy is the single governed deferred decision point for Sunday kathisma ' +
-                                'in this baseline.)',
+                    text:       '(Sunday Orthros — Kathisma 2 appointed. Full psalm text unavailable; read Kathisma 2 (Psalms 9–16 LXX) from a Psalter.)',
                     resolvedAs: 'orthros-sunday-kathisma-deferred'
                 };
             }
