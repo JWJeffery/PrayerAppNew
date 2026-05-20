@@ -4089,7 +4089,7 @@ function _resolveComplineFestalTheotokionRubric(officeKey, troparionItem, fallba
                             type:       'rubric',
                             key:        'aposticha',
                             label:      'Aposticha',
-                            text:       'APOSTICHA — Deferred: This Orthros Aposticha path is not yet implemented in the current tranche. Ordinary weekday Octoechos Aposticha alone are scaffolded here.',
+                            text:       'Seasonal or festal Orthros Aposticha are appointed from the proper seasonal or Menaion office where applicable. Full seasonal/festal Aposticha text is deferred in the current public-beta corpus.',
                             resolvedAs: 'orthros-aposticha-deferred-rubric'
                         };
                     }
