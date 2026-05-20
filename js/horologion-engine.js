@@ -2968,19 +2968,47 @@ function _resolveComplineFestalTheotokionRubric(officeKey, troparionItem, fallba
                                               'Great Lent', weekLabel);
         }
  
-        // ── Sunday: deferred ─────────────────────────────────────────────
+        // ── Sunday: one governed decision slot + not-appointed follow-up slots ───
         if (dayOfWeek === 0) {
-            return {
-                type:       'rubric',
-                key:        slotKey,
-                label:      `${ordinal} Kathisma (Sunday)`,
-                text:       '(Sunday Orthros — Kathisma: On Sundays when the Polyeleos is appointed ' +
-                            '(Psalms 134–135 LXX), it replaces the ordinary Kathisma reading. ' +
-                            'On other Sundays the assignment varies by local use and whether a vigil ' +
-                            'was served on Saturday. Sunday Orthros kathisma is explicitly deferred ' +
-                            'in this baseline.)',
-                resolvedAs: 'orthros-sunday-kathisma-deferred'
-            };
+            // kathisma-first: single governed Sunday kathisma / Polyeleos decision point
+            if (slotIndex === 0) {
+                return {
+                    type:       'rubric',
+                    key:        slotKey,
+                    label:      'First Kathisma (Sunday)',
+                    text:       '(Sunday Orthros — Kathisma: On Sundays when the Polyeleos is appointed ' +
+                                '(Psalms 134–135 LXX), it replaces the ordinary Kathisma reading. ' +
+                                'On other Sundays the assignment varies by local use and whether a vigil ' +
+                                'was served on Saturday. The Sunday kathisma / Polyeleos appointment ' +
+                                'policy is the single governed deferred decision point for Sunday kathisma ' +
+                                'in this baseline.)',
+                    resolvedAs: 'orthros-sunday-kathisma-deferred'
+                };
+            }
+            // kathisma-second: not appointed in ordinary Sunday Orthros
+            if (slotIndex === 1) {
+                return {
+                    type:       'rubric',
+                    key:        slotKey,
+                    label:      'Second Kathisma — Not Appointed (Sunday)',
+                    text:       '(Second Kathisma — not appointed in ordinary Sunday Orthros under the ' +
+                                'current governed profile. The unresolved Sunday kathisma / Polyeleos ' +
+                                'appointment policy is represented by the First Kathisma slot.)',
+                    resolvedAs: 'orthros-sunday-kathisma-second-not-appointed'
+                };
+            }
+            // kathisma-third: not appointed in ordinary Sunday Orthros
+            if (slotIndex === 2) {
+                return {
+                    type:       'rubric',
+                    key:        slotKey,
+                    label:      'Third Kathisma — Not Appointed (Sunday)',
+                    text:       '(Third Kathisma — not appointed in ordinary Sunday Orthros under the ' +
+                                'current governed profile. The unresolved Sunday kathisma / Polyeleos ' +
+                                'appointment policy is represented by the First Kathisma slot.)',
+                    resolvedAs: 'orthros-sunday-kathisma-third-not-appointed'
+                };
+            }
         }
  
         // ── kathisma-third: not appointed on ordinary weekdays ────────────

@@ -129,14 +129,14 @@
           "key": "kathisma-first",
           "label": "First Kathisma",
           "status": "unresolved",
-          "note": "Variable: Psalter kathisma appointed for this day of the week at Orthros. Two kathismata read Monday–Saturday; one on Sunday (where Kathisma 1 'Blessed is the Man' is divided). Full kathisma text deferred; rubric stub at baseline."
+          "note": "Variable: Psalter kathisma appointed for this day of the week at Orthros. Two kathismata read Monday–Saturday. On Sunday, the kathisma / Polyeleos appointment is the single governed deferred decision point; no settled Sunday appointment is claimed in this baseline."
         },
         {
           "type": "placeholder",
           "key": "kathisma-second",
           "label": "Second Kathisma",
           "status": "unresolved",
-         "note": "Second Psalter kathisma at Orthros (Monday–Saturday). Omitted on Sunday when the full Polyeleos or Resurrection Gospel sequence applies. Deferred."
+         "note": "Second Psalter kathisma at Orthros (Monday–Saturday). Not appointed in ordinary Sunday Orthros. The Sunday kathisma / Polyeleos decision is represented by the First Kathisma slot."
         },
         {
           "type": "placeholder",
