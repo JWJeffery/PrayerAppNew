@@ -4061,14 +4061,26 @@ function _resolveComplineFestalTheotokionRubric(officeKey, troparionItem, fallba
                         continue;
                     }
  
-                    // Non-ordinary paths (Sunday, feast, seasonal) — explicit deferred rubric
-                    section.items[i] = {
-                        type:       'rubric',
-                        key:        'aposticha',
-                        label:      'Aposticha',
-                        text:       'APOSTICHA — Deferred: This Orthros Aposticha path is not yet implemented in the current tranche. Ordinary weekday Octoechos Aposticha alone are scaffolded here.',
-                        resolvedAs: 'orthros-aposticha-deferred-rubric'
-                    };
+                    // Non-ordinary paths — Sunday baseline: not appointed; seasonal/depth: deferred rubric
+                    if (dayOfWeek === 0 && !isBrightWeek && !isHolyWeek && !isGreatLentWeekday) {
+                        // Ordinary Sunday — ferial Aposticha not appointed under governed Slavic/Horologion baseline
+                        section.items[i] = {
+                            type:       'rubric',
+                            key:        'aposticha',
+                            label:      'Aposticha',
+                            text:       'Ferial Orthros Aposticha are not appointed in ordinary Sunday Orthros under the governed Slavic/Horologion baseline. The Aposticha position is omitted; the service proceeds to the Great Doxology.',
+                            resolvedAs: 'orthros-sunday-aposticha-not-appointed'
+                        };
+                    } else {
+                        // Seasonal / depth paths (Great Lent, Holy Week, Bright Week, feast) — deferred
+                        section.items[i] = {
+                            type:       'rubric',
+                            key:        'aposticha',
+                            label:      'Aposticha',
+                            text:       'APOSTICHA — Deferred: This Orthros Aposticha path is not yet implemented in the current tranche. Ordinary weekday Octoechos Aposticha alone are scaffolded here.',
+                            resolvedAs: 'orthros-aposticha-deferred-rubric'
+                        };
+                    }
                     continue;
                 }
  
