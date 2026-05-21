@@ -625,6 +625,59 @@ header {
   color: #d07840;
   line-height: 1.5;
 }
+/* PHASE-1.2-CSS-START */
+/* ── Phase 1.2: Family Coverage Matrix ──────────────────────────────────────── */
+.ubr-matrix-table { width:100%; border-collapse:collapse; font-size:0.78em; margin-bottom:14px; }
+.ubr-matrix-table th {
+  text-align:left; padding:5px 10px; color:var(--text-dim); font-size:0.88em;
+  letter-spacing:0.08em; text-transform:uppercase;
+  border-bottom:1px solid var(--border); background:var(--surface-2); font-weight:500;
+}
+.ubr-matrix-table td { padding:7px 10px; border-bottom:1px solid var(--border); vertical-align:top; line-height:1.5; }
+.ubr-matrix-row-blocker td { background:rgba(224,82,82,0.04); }
+.ubr-matrix-row-ok td      { background:transparent; }
+.ubr-matrix-family { font-weight:500; }
+.ubr-matrix-lane   { color:var(--text-dim); font-size:0.92em; }
+.ubr-matrix-role   { color:var(--text-dim); font-size:0.88em; }
+.ubr-matrix-cur    { font-size:0.88em; }
+.ubr-beta-status   { font-size:0.72em; letter-spacing:0.04em; padding:2px 7px; border-radius:3px; white-space:nowrap; }
+.ubr-beta-blocker  { background:rgba(224,82,82,0.15);  color:var(--sev-high);  border:1px solid rgba(224,82,82,0.3); }
+.ubr-beta-ok       { background:rgba(74,124,89,0.12);  color:#5a9b6a;          border:1px solid rgba(74,124,89,0.25); }
+.ubr-beta-warn     { background:rgba(212,146,74,0.12); color:var(--sev-med);   border:1px solid rgba(212,146,74,0.25); }
+.ubr-blocks-yes    { color:var(--sev-high); font-weight:600; font-size:0.88em; }
+.ubr-blocks-no     { color:var(--text-dim); font-size:0.88em; }
+.ubr-blocker-note  { font-size:0.88em; color:var(--text-dim); line-height:1.5; }
+/* ── Phase 1.2: Phase / Tranche Board ───────────────────────────────────────── */
+.ubr-board              { display:flex; flex-direction:column; gap:8px; margin-bottom:14px; }
+.ubr-board-phase        { border:1px solid var(--border); border-radius:var(--radius); overflow:hidden; }
+.ubr-board-phase-head   {
+  display:flex; align-items:center; gap:8px; padding:7px 12px;
+  background:var(--surface-2); border-bottom:1px solid var(--border);
+}
+.ubr-board-phase-id     { color:var(--accent); font-size:0.82em; white-space:nowrap; min-width:64px; }
+.ubr-board-phase-title  { flex:1; font-size:0.82em; font-weight:500; }
+.ubr-board-beta-flag    {
+  font-size:0.65em; padding:1px 6px; border-radius:3px;
+  border:1px solid rgba(224,82,82,0.3); background:rgba(224,82,82,0.1);
+  color:var(--sev-high); white-space:nowrap;
+}
+.ubr-board-tranches     { display:flex; flex-direction:column; gap:0; }
+.ubr-board-tranche      {
+  display:flex; align-items:center; gap:8px;
+  padding:5px 12px 5px 22px; border-top:1px solid var(--border);
+  font-size:0.78em; background:transparent;
+}
+.ubr-board-tranche-id    { color:var(--text-dim); white-space:nowrap; min-width:36px; font-size:0.9em; }
+.ubr-board-tranche-title { flex:1; color:var(--text); }
+.ubr-board-tranche-size  {
+  font-size:0.72em; color:var(--text-dim); padding:1px 5px;
+  border:1px solid var(--border); border-radius:3px; white-space:nowrap;
+}
+.ubr-status-done        { background:rgba(74,124,89,0.15);  color:#5a9b6a;         border:1px solid rgba(74,124,89,0.3); }
+.ubr-status-not_started { background:rgba(58,56,53,0.5);    color:var(--text-dim); border:1px solid var(--border); }
+.ubr-status-blocked     { background:rgba(224,82,82,0.15);  color:var(--sev-high); border:1px solid rgba(224,82,82,0.3); }
+.ubr-status-deferred    { background:rgba(58,56,53,0.5);    color:var(--text-muted);border:1px solid var(--border); }
+/* PHASE-1.2-CSS-END */
 </style>
 </head>
 <body>
@@ -1682,8 +1735,93 @@ function renderUniversalBetaRoadmap(roadmap) {
     });
   }
 
+  // PHASE-1.2-CALLS
+  html += renderFamilyCoverageMatrix(families, esc);
+  html += renderPhaseTrancheBoard(phases, tranches, esc);
+
   body.innerHTML = html;
 }
+
+// PHASE-1.2-HELPERS-START
+// ── Phase 1.2: Family Coverage Matrix renderer ────────────────────────────────
+function renderFamilyCoverageMatrix(families, esc) {
+  if (!Array.isArray(families) || !families.length) return '';
+  let h = '<div class="release-section-label" style="margin-top:18px;margin-bottom:8px">Major Tradition-Family Coverage Matrix</div>';
+  h += '<table class="ubr-matrix-table"><thead><tr>';
+  h += '<th>Family</th><th>First Release Lane</th><th>Beta Role</th>';
+  h += '<th>Current Status</th><th>Beta Status</th><th>Blocks Beta?</th><th>Note</th>';
+  h += '</tr></thead><tbody>';
+  families.forEach(f => {
+    const rowClass = f.blocks_beta ? 'ubr-matrix-row-blocker' : 'ubr-matrix-row-ok';
+    const bs = String(f.beta_status || '');
+    const betaStatusClass = f.blocks_beta ? 'ubr-beta-blocker'
+      : (bs.includes('requires') || bs.includes('refinement') || bs.includes('hardening')) ? 'ubr-beta-warn'
+      : 'ubr-beta-ok';
+    const blocksStr = f.blocks_beta
+      ? '<span class="ubr-blocks-yes">⚑ yes</span>'
+      : '<span class="ubr-blocks-no">no</span>';
+    let note = '';
+    if (f.blocker_reason) {
+      note = esc(f.blocker_reason);
+    } else if (Array.isArray(f.deferred_depth) && f.deferred_depth.length) {
+      note = 'Deferred: ' + f.deferred_depth.slice(0, 2).map(s => esc(s)).join('; ')
+        + (f.deferred_depth.length > 2 ? '…' : '');
+    } else {
+      note = '—';
+    }
+    h += '<tr class="' + rowClass + '">';
+    h += '<td class="ubr-matrix-family">' + esc(f.family) + '</td>';
+    h += '<td class="ubr-matrix-lane">'   + esc(f.first_release_lane) + '</td>';
+    h += '<td class="ubr-matrix-role">'   + esc(f.public_beta_role) + '</td>';
+    h += '<td class="ubr-matrix-cur">'    + esc(f.current_status) + '</td>';
+    h += '<td><span class="ubr-beta-status ' + betaStatusClass + '">' + esc(f.beta_status) + '</span></td>';
+    h += '<td>' + blocksStr + '</td>';
+    h += '<td class="ubr-blocker-note">' + note + '</td>';
+    h += '</tr>';
+  });
+  h += '</tbody></table>';
+  return h;
+}
+
+// ── Phase 1.2: Phase / Tranche Board renderer ─────────────────────────────────
+function renderPhaseTrancheBoard(phases, tranches, esc) {
+  if (!Array.isArray(phases) || !phases.length) return '';
+  let h = '<div class="release-section-label" style="margin-top:18px;margin-bottom:8px">Phase and Tranche Roadmap</div>';
+  h += '<div class="ubr-board">';
+  phases.forEach(p => {
+    const pTranches = Array.isArray(tranches) ? tranches.filter(t => t.phase_id === p.id) : [];
+    const safeStatus = String(p.status || 'not_started').replace(/[^a-z_]/g, '');
+    const statusLabel = String(p.status || '').replace(/_/g, ' ');
+    const betaFlag = p.blocks_beta
+      ? '<span class="ubr-board-beta-flag">⚑ beta blocker</span>'
+      : '';
+    h += '<div class="ubr-board-phase">';
+    h += '<div class="ubr-board-phase-head">';
+    h += '<span class="ubr-board-phase-id">' + esc(p.id) + '</span>';
+    h += '<span class="ubr-board-phase-title">' + esc(p.title) + '</span>';
+    h += betaFlag;
+    h += '<span class="ubr-status-badge ubr-status-' + safeStatus + '">' + esc(statusLabel) + '</span>';
+    h += '</div>';
+    if (pTranches.length) {
+      h += '<div class="ubr-board-tranches">';
+      pTranches.forEach(t => {
+        const tSafeStatus = String(t.status || 'not_started').replace(/[^a-z_]/g, '');
+        const tStatusLabel = String(t.status || '').replace(/_/g, ' ');
+        h += '<div class="ubr-board-tranche">';
+        h += '<span class="ubr-board-tranche-id">' + esc(t.id) + '</span>';
+        h += '<span class="ubr-board-tranche-title">' + esc(t.title) + '</span>';
+        h += '<span class="ubr-board-tranche-size">' + esc(t.tranche_size) + '</span>';
+        h += '<span class="ubr-status-badge ubr-status-' + tSafeStatus + '">' + esc(tStatusLabel) + '</span>';
+        h += '</div>';
+      });
+      h += '</div>';
+    }
+    h += '</div>';
+  });
+  h += '</div>';
+  return h;
+}
+// PHASE-1.2-HELPERS-END
 
 function loadUniversalBetaRoadmap() {
   const body = document.getElementById('universal-roadmap-body');
