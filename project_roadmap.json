@@ -6,8 +6,8 @@
   "name": "Universal Office Beta Release Roadmap",
   "purpose": "Canonical machine-readable roadmap for Beta Release planning, phase sequencing, governance questions, tranche sizing, and Admin Dashboard visualization.",
   "current_repo_state": {
-    "latest_known_commit": "0de3cda",
-    "latest_known_commit_message": "Add universal beta roadmap admin panel",
+    "latest_known_commit": "3a59acf",
+    "latest_known_commit_message": "Add universal beta roadmap matrix and phase board",
     "structure_json_version": "3.8.73",
     "roadmap_source_of_truth": "project_roadmap.json",
     "structure_json_role": "Project manifest, implementation ledger, governance history, legacy admin todo source, and current state pointer.",
@@ -292,7 +292,7 @@
       "id": "1.2",
       "phase_id": "phase_1",
       "title": "Render family coverage matrix and phase board",
-      "status": "in_progress",
+      "status": "done",
       "tranche_size": "standard",
       "files": [
         "admin/admin.html",
@@ -309,7 +309,7 @@
       "id": "1.3",
       "phase_id": "phase_1",
       "title": "Render governance-question board",
-      "status": "not_started",
+      "status": "in_progress",
       "tranche_size": "standard",
       "files": [
         "admin/admin.html",

@@ -10,7 +10,7 @@ This is a development-only tool. It is not linked from the main application.
 The admin dashboard is a release-governance cockpit and diagnostic tool.
 
 Current state:
-- **Universal Beta Roadmap panel** — Phase 1.1 complete; Phase 1.2 complete. The panel now renders roadmap identity, required tradition families, active beta blockers, the full Major Tradition-Family Coverage Matrix, the full Phase and Tranche Roadmap board, and open beta-blocking governance questions. All sourced from `project_roadmap.json`. Phase 1.3 will add a deeper governance-question board by category and status.
+- **Universal Beta Roadmap panel** — Phase 1.1, 1.2, and 1.3 complete. The panel renders roadmap identity, required tradition families, active beta blockers, the full Major Tradition-Family Coverage Matrix, the full Phase and Tranche Roadmap board, open beta-blocking governance questions, and the full governance-question board grouped by category and status. All sourced from `project_roadmap.json`. Phase 1 is now functionally complete pending Lucy/Josh review.
 - **Legacy Byzantine Release-Governance Cockpit** — post-Pentecost stabilization / EO production-readiness status, critical-path office status, monastic-first rationale, and readiness/deferred items; currently sourced from `structure.json → governance.byzantine_release_roadmap`
 - **Release Status panel** — roadmap summary (next required / next planned), open bugs, and open architectural debt; sourced from `structure.json → roadmap_summary` and `project_manifest.audit_findings`
 - **Active Governance & Open Work panel** — priority open todos and active governance decisions; sourced from `structure.json → admin.todos` and `governance.decisions`
@@ -101,7 +101,7 @@ Rendered from `phase_plan` and `tranche_plan`. Shows every phase with its status
 | Beta-blocker flag | `blocks_beta === true` on phase |
 | Tranche size | `tranche_size` |
 
-**Phase 1.3 (future):** A deeper governance-question board by category and status. It will expose open, decided, and deferred questions with owner and beta-blocking classification.
+**Phase 1.3:** Adds the governance-question board grouped by category and status. See the Phase 1.3 section below.
 
 **The Byzantine Release-Governance Cockpit** (`#panel-release-roadmap`) remains present below the new panel. It is sourced from `structure.json → governance.byzantine_release_roadmap` and is unchanged by Phase 1.1.
 
@@ -299,6 +299,49 @@ interface CalendarConfig {
   eoMode?:        EoMode;
 }
 ```
+
+---
+
+## Universal Beta Roadmap Panel — Phase 1.3
+
+Phase 1.3 adds a deeper governance-question board to the Universal Beta Roadmap panel. It is sourced from `project_roadmap.json → governance_questions` and appears below the Phase 1.2 content (family coverage matrix and phase/tranche board).
+
+### Governance-Question Board
+
+The board renders **all** governance questions, not only beta blockers. Questions are grouped by category, with visual status distinction and blocker flags.
+
+**Grouping and ordering:**
+
+- Questions are grouped by `category`. Canonical order: source_governance → release_governance → architecture_governance, then any additional categories alphabetically.
+- Within each category, questions are sorted: `open` first, then `decided`, then `deferred`. Within the same status, beta-blocking questions come before non-blocking.
+
+**Visible fields:**
+
+| Field | Source field |
+|---|---|
+| Question text | `question` |
+| Category (group header) | `category` |
+| Status badge | `status` (open / decided / deferred) |
+| Owner | `owner` |
+| Blocks Beta? | `blocks_beta` — shown as ⚑ flag when true |
+| Blocks v1? | `blocks_v1` — shown as ◈ flag when true, less urgent than beta-blocking |
+| Recommended default | `recommended_default` (rendered in italic inset block when present) |
+
+**Visual distinction:**
+
+- **Beta-blocking questions** (`.ugb-q-row-blocker`): red left border and red tint. Most urgent.
+- **v1-blocking questions** (`.ugb-q-row-v1`): amber left border and amber tint. Less urgent than beta-blocking.
+- **Decided questions** (`.ugb-q-row-decided`): green tint, slightly muted opacity.
+- **Deferred questions** (`.ugb-q-row-deferred`): no tint, reduced opacity.
+- Open questions with no blocking flag receive no extra decoration.
+
+**CSS prefix:** `.ugb-` (Governance Question Board). Distinct from `.ubr-` (Universal Beta Roadmap matrix and phase board classes added in Phase 1.2).
+
+**No hard-coded question text.** All question content is rendered from `project_roadmap.json`. Labels, CSS classes, and category ordering are hard-coded.
+
+**Graceful failure:** If `governance_questions` is absent or empty the board renders nothing (the function returns an empty string). Upstream JSON load failures are handled by the existing `loadUniversalBetaRoadmap` error path, which renders a visible `.ubr-warning` block without crashing the dashboard.
+
+**Phase 1 exit gate:** Phase 1 (Admin Dashboard roadmap visualization) is now functionally complete pending Lucy/Josh review. Exit gate: Admin Dashboard displays release identity, major-family coverage matrix, active beta blockers, phase/tranche board, and governance-question queue, all sourced from `project_roadmap.json`.
 
 ---
 

@@ -678,6 +678,32 @@ header {
 .ubr-status-blocked     { background:rgba(224,82,82,0.15);  color:var(--sev-high); border:1px solid rgba(224,82,82,0.3); }
 .ubr-status-deferred    { background:rgba(58,56,53,0.5);    color:var(--text-muted);border:1px solid var(--border); }
 /* PHASE-1.2-CSS-END */
+/* PHASE-1.3-CSS-START */
+/* ── Phase 1.3: Governance-Question Board ───────────────────────────────────── */
+.ugb-board           { display:flex; flex-direction:column; gap:14px; margin-bottom:14px; }
+.ugb-category        { border:1px solid var(--border); border-radius:var(--radius); overflow:hidden; }
+.ugb-category-head   {
+  display:flex; align-items:center; gap:8px; padding:7px 12px;
+  background:var(--surface-2); border-bottom:1px solid var(--border);
+}
+.ugb-category-label  { flex:1; font-size:0.8em; font-weight:500; color:var(--accent); letter-spacing:0.06em; text-transform:uppercase; }
+.ugb-category-count  { font-size:0.7em; color:var(--text-dim); }
+.ugb-q-list          { display:flex; flex-direction:column; gap:0; }
+.ugb-q-row           { padding:9px 12px; border-top:1px solid var(--border); font-size:0.78em; line-height:1.5; }
+.ugb-q-row-blocker   { background:rgba(224,82,82,0.05); border-left:3px solid rgba(224,82,82,0.5); }
+.ugb-q-row-v1        { background:rgba(212,146,74,0.04); border-left:3px solid rgba(212,146,74,0.35); }
+.ugb-q-row-decided   { background:rgba(74,124,89,0.04); opacity:0.85; }
+.ugb-q-row-deferred  { background:transparent; opacity:0.65; }
+.ugb-q-question      { color:var(--text); margin-bottom:4px; }
+.ugb-q-meta          { font-size:0.88em; color:var(--text-dim); display:flex; flex-wrap:wrap; gap:8px; align-items:center; margin-top:2px; }
+.ugb-q-default       { font-size:0.82em; color:var(--text-dim); font-style:italic; margin-top:4px; padding:5px 9px; background:var(--surface-2); border-radius:3px; border-left:2px solid var(--border-bright); }
+.ugb-status-open     { font-size:0.72em; padding:1px 6px; border-radius:3px; background:rgba(224,82,82,0.12); color:var(--sev-high); border:1px solid rgba(224,82,82,0.25); white-space:nowrap; }
+.ugb-status-decided  { font-size:0.72em; padding:1px 6px; border-radius:3px; background:rgba(74,124,89,0.12); color:#5a9b6a; border:1px solid rgba(74,124,89,0.25); white-space:nowrap; }
+.ugb-status-deferred { font-size:0.72em; padding:1px 6px; border-radius:3px; background:rgba(58,56,53,0.5); color:var(--text-dim); border:1px solid var(--border); white-space:nowrap; }
+.ugb-beta-flag       { font-size:0.7em; padding:1px 6px; border-radius:3px; background:rgba(224,82,82,0.1); color:var(--sev-high); border:1px solid rgba(224,82,82,0.28); white-space:nowrap; }
+.ugb-v1-flag         { font-size:0.7em; padding:1px 6px; border-radius:3px; background:rgba(212,146,74,0.1); color:var(--sev-med); border:1px solid rgba(212,146,74,0.25); white-space:nowrap; }
+.ugb-owner           { font-size:0.82em; color:var(--text-dim); white-space:nowrap; }
+/* PHASE-1.3-CSS-END */
 </style>
 </head>
 <body>
@@ -1738,6 +1764,8 @@ function renderUniversalBetaRoadmap(roadmap) {
   // PHASE-1.2-CALLS
   html += renderFamilyCoverageMatrix(families, esc);
   html += renderPhaseTrancheBoard(phases, tranches, esc);
+  // PHASE-1.3-CALL
+  html += renderGovernanceQuestionBoard(govQs, esc);
 
   body.innerHTML = html;
 }
@@ -1822,6 +1850,92 @@ function renderPhaseTrancheBoard(phases, tranches, esc) {
   return h;
 }
 // PHASE-1.2-HELPERS-END
+
+// PHASE-1.3-HELPERS-START
+// ── Phase 1.3: Governance-Question Board renderer ─────────────────────────────
+function renderGovernanceQuestionBoard(govQs, esc) {
+  if (!Array.isArray(govQs) || !govQs.length) return '';
+
+  // Group by category
+  const categories = {};
+  govQs.forEach(q => {
+    const cat = q.category || 'uncategorized';
+    if (!categories[cat]) categories[cat] = [];
+    categories[cat].push(q);
+  });
+
+  // Canonical category ordering; extras fall through alphabetically
+  const CAT_ORDER = ['source_governance', 'release_governance', 'architecture_governance'];
+  const STATUS_ORDER = { open: 0, decided: 1, deferred: 2 };
+
+  const sortedCats = Object.keys(categories).sort((a, b) => {
+    const ia = CAT_ORDER.indexOf(a);
+    const ib = CAT_ORDER.indexOf(b);
+    if (ia === -1 && ib === -1) return a.localeCompare(b);
+    if (ia === -1) return 1;
+    if (ib === -1) return -1;
+    return ia - ib;
+  });
+
+  let h = '<div class="release-section-label" style="margin-top:18px;margin-bottom:8px">Governance Questions by Category</div>';
+  h += '<div class="ugb-board">';
+
+  sortedCats.forEach(cat => {
+    const qs = categories[cat].slice().sort((a, b) => {
+      const sa = STATUS_ORDER[a.status] !== undefined ? STATUS_ORDER[a.status] : 99;
+      const sb = STATUS_ORDER[b.status] !== undefined ? STATUS_ORDER[b.status] : 99;
+      if (sa !== sb) return sa - sb;
+      // Within same status: beta blockers first
+      if (a.blocks_beta && !b.blocks_beta) return -1;
+      if (!a.blocks_beta && b.blocks_beta) return 1;
+      return 0;
+    });
+
+    const catLabel = esc(String(cat).replace(/_/g, ' '));
+    h += '<div class="ugb-category">';
+    h += '<div class="ugb-category-head">';
+    h += '<span class="ugb-category-label">' + catLabel + '</span>';
+    h += '<span class="ugb-category-count">' + qs.length + ' question' + (qs.length !== 1 ? 's' : '') + '</span>';
+    h += '</div>';
+    h += '<div class="ugb-q-list">';
+
+    qs.forEach(q => {
+      // Row class: blocker > v1-blocker > decided > deferred > plain
+      let rowClass = 'ugb-q-row';
+      if (q.blocks_beta) {
+        rowClass += ' ugb-q-row-blocker';
+      } else if (q.blocks_v1) {
+        rowClass += ' ugb-q-row-v1';
+      } else if (q.status === 'decided') {
+        rowClass += ' ugb-q-row-decided';
+      } else if (q.status === 'deferred') {
+        rowClass += ' ugb-q-row-deferred';
+      }
+
+      // Safe status string for CSS class suffix
+      const safeStatus = String(q.status || 'open').replace(/[^a-z]/g, '');
+
+      h += '<div class="' + rowClass + '">';
+      h += '<div class="ugb-q-question">' + esc(q.question) + '</div>';
+      h += '<div class="ugb-q-meta">';
+      h += '<span class="ugb-status-' + safeStatus + '">' + esc(q.status || '—') + '</span>';
+      if (q.owner) h += '<span class="ugb-owner">owner: ' + esc(q.owner) + '</span>';
+      if (q.blocks_beta) h += '<span class="ugb-beta-flag">⚑ blocks beta</span>';
+      if (q.blocks_v1)   h += '<span class="ugb-v1-flag">◈ blocks v1</span>';
+      h += '</div>';
+      if (q.recommended_default) {
+        h += '<div class="ugb-q-default">Default: ' + esc(q.recommended_default) + '</div>';
+      }
+      h += '</div>';
+    });
+
+    h += '</div></div>'; // close ugb-q-list, ugb-category
+  });
+
+  h += '</div>'; // close ugb-board
+  return h;
+}
+// PHASE-1.3-HELPERS-END
 
 function loadUniversalBetaRoadmap() {
   const body = document.getElementById('universal-roadmap-body');
