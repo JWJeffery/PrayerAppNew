@@ -10,7 +10,7 @@ This is a development-only tool. It is not linked from the main application.
 The admin dashboard is a release-governance cockpit and diagnostic tool.
 
 Current state:
-- **Universal Beta Roadmap source of truth** — `project_roadmap.json`; created in Phase 0.1. Dashboard rendering from this file is pending Phase 1.
+- **Universal Beta Roadmap panel** — Phase 1.1 complete. An initial summary panel now renders from `project_roadmap.json` in the Admin Dashboard. It shows roadmap identity, required tradition families, active beta blockers, active phases/tranches, and open beta-blocking governance questions. Later Phase 1 tranches (1.2, 1.3) will add the family coverage matrix, full phase/tranche board, and governance-question board depth.
 - **Legacy Byzantine Release-Governance Cockpit** — post-Pentecost stabilization / EO production-readiness status, critical-path office status, monastic-first rationale, and readiness/deferred items; currently sourced from `structure.json → governance.byzantine_release_roadmap`
 - **Release Status panel** — roadmap summary (next required / next planned), open bugs, and open architectural debt; sourced from `structure.json → roadmap_summary` and `project_manifest.audit_findings`
 - **Active Governance & Open Work panel** — priority open todos and active governance decisions; sourced from `structure.json → admin.todos` and `governance.decisions`
@@ -28,7 +28,7 @@ The Beta Release roadmap is no longer governed by the Byzantine lane alone. `pro
 
 The current dashboard still contains the existing Byzantine Release-Governance Cockpit. That panel tracks post-Pentecost stabilization and EO production-readiness only. Western Pentecost 2026 is preserved as the prior aspirational gate, not the current active release target.
 
-Until Phase 1 dashboard wiring is complete, the existing release panel data is still sourced from `structure.json` under `governance.byzantine_release_roadmap`. The dashboard reads that section at page load and does not hard-code roadmap content. If a field is absent, the panel shows graceful fallback text rather than an error.
+Phase 1.1 has added an initial Universal Beta Roadmap summary panel sourced from `project_roadmap.json`. The panel is fetched at page load; if the file is missing or malformed it renders a clear warning without crashing. The existing Byzantine Release-Governance Cockpit remains and continues to be sourced from `structure.json` under `governance.byzantine_release_roadmap`. The dashboard reads that section at page load and does not hard-code roadmap content. If a field is absent, the panel shows graceful fallback text rather than an error.
 
 **Fields consumed:**
 
@@ -49,6 +49,32 @@ Until Phase 1 dashboard wiring is complete, the existing release panel data is s
 **Deferred/readiness label:** The readiness/deferred items section distinguishes public-beta blockers from items intentionally deferred beyond the current readiness gate. EO production-path integration (`eo-calendar-modes`) is no longer documented as non-blocking under the retired Western Pentecost target.
 
 **Release-critical todo marker:** The Top 5 Open To-Dos panel marks items with a `⚑ RELEASE` badge when the todo has `severity: HIGH` and either its `phase` contains "Pentecost," or its `title` or `description` contains the word "release."
+
+---
+
+## Universal Beta Roadmap Panel (Phase 1.1)
+
+The Universal Beta Roadmap panel (`#panel-universal-roadmap`) was added in Phase 1.1. It is sourced entirely from `project_roadmap.json` at the project root.
+
+**What the Phase 1.1 panel renders:**
+
+| Section | Source field |
+|---|---|
+| Roadmap title and version | `name`, `roadmap_version`, `last_updated`, `status` |
+| Beta release focus | `release_identity.beta_release_focus` |
+| Required major tradition families | `release_identity.major_tradition_families_required_for_beta` |
+| Beta blockers — tradition families | `major_tradition_families` where `blocks_beta === true` |
+| Active/in-progress phases | `phase_plan` where `status === "in_progress"` |
+| Active/in-progress tranches | `tranche_plan` where `status === "in_progress"` |
+| Total phase and tranche counts | `phase_plan.length`, `tranche_plan.length` |
+| Open beta-blocking governance questions | `governance_questions` where `status === "open"` and `blocks_beta === true` |
+
+**Graceful failure:** If `project_roadmap.json` cannot be fetched or fails to parse, the panel renders a visible warning in place of the data. It does not throw or crash the dashboard.
+
+**What Phase 1.1 does not add:** The family coverage matrix, full phase/tranche board with all statuses, and governance-question board by category are planned for Phase 1.2 and 1.3.
+
+**The Byzantine Release-Governance Cockpit** (`#panel-release-roadmap`) remains present below the new panel. It is sourced from `structure.json → governance.byzantine_release_roadmap` and is unchanged by Phase 1.1.
+
 
 ---
 

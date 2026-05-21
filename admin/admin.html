@@ -557,6 +557,74 @@ header {
   vertical-align: middle;
   margin-left: 6px;
 }
+
+/* ── Universal Beta Roadmap panel ────────────────────────────────────────── */
+.ubr-meta-row { display:flex; flex-wrap:wrap; gap:8px; margin-bottom:14px; }
+.ubr-chip {
+  background: var(--surface-2);
+  border: 1px solid var(--border-bright);
+  border-radius: 4px;
+  padding: 4px 10px;
+  font-size: 0.78em;
+  display: flex;
+  gap: 8px;
+}
+.ubr-chip-key { color: var(--text-dim); }
+.ubr-chip-val { color: var(--accent); font-weight: 500; }
+.ubr-blocker-row {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  padding: 8px 12px;
+  background: rgba(224,82,82,0.06);
+  border: 1px solid rgba(224,82,82,0.2);
+  border-radius: var(--radius);
+  margin-bottom: 6px;
+  font-size: 0.78em;
+  line-height: 1.5;
+}
+.ubr-blocker-icon { color: var(--sev-high); flex-shrink: 0; margin-top: 1px; }
+.ubr-phase-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 12px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface-2);
+  margin-bottom: 5px;
+  font-size: 0.8em;
+}
+.ubr-phase-id { color: var(--accent); font-size: 0.85em; white-space: nowrap; min-width: 72px; }
+.ubr-phase-title { flex: 1; }
+.ubr-status-badge {
+  font-size: 0.68em;
+  letter-spacing: 0.06em;
+  padding: 1px 7px;
+  border-radius: 3px;
+  white-space: nowrap;
+}
+.ubr-status-in_progress { background: rgba(212,146,74,0.15); color: var(--sev-med); border: 1px solid rgba(212,146,74,0.25); }
+.ubr-gov-row {
+  padding: 8px 12px;
+  border: 1px solid rgba(224,82,82,0.2);
+  border-radius: var(--radius);
+  background: rgba(224,82,82,0.04);
+  margin-bottom: 5px;
+  font-size: 0.78em;
+  line-height: 1.5;
+}
+.ubr-gov-question { color: var(--text); margin-bottom: 3px; }
+.ubr-gov-meta { font-size: 0.88em; color: var(--text-dim); }
+.ubr-warning {
+  padding: 14px 16px;
+  background: rgba(208,88,36,0.08);
+  border: 1px solid rgba(208,88,36,0.25);
+  border-radius: var(--radius);
+  font-size: 0.8em;
+  color: #d07840;
+  line-height: 1.5;
+}
 </style>
 </head>
 <body>
@@ -679,7 +747,18 @@ header {
       </div>
     </div>
 
-    <!-- Byzantine Release Roadmap -->
+    <!-- Universal Beta Roadmap -->
+    <div class="panel" id="panel-universal-roadmap">
+      <div class="panel-head">
+        <span class="panel-title">Universal Beta Roadmap</span>
+        <span style="margin-left:auto; font-size:0.68em; color:var(--text-dim)">source: project_roadmap.json</span>
+      </div>
+      <div class="panel-body" id="universal-roadmap-body">
+        <div class="empty-state loading-dot">Loading</div>
+      </div>
+    </div>
+
+    <!-- Byzantine Release Roadmap (legacy cockpit — source: structure.json → governance.byzantine_release_roadmap) -->
     <div class="panel" id="panel-release-roadmap">
       <div class="panel-head">
         <span class="panel-title">Release-Governance Cockpit</span>
@@ -1517,6 +1596,115 @@ function renderActiveMilestones() {
       body.innerHTML = `<div class="empty-state">Failed to load structure.json: ${String(err?.message ?? err)}</div>`;
     });
 }
+// ── Universal Beta Roadmap ────────────────────────────────────────────────
+function renderUniversalBetaRoadmap(roadmap) {
+  const body = document.getElementById('universal-roadmap-body');
+  if (!body) return;
+
+  const esc = (v) => String(v ?? '—')
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;');
+
+  const ri = roadmap.release_identity || {};
+  const families = Array.isArray(roadmap.major_tradition_families) ? roadmap.major_tradition_families : [];
+  const phases = Array.isArray(roadmap.phase_plan) ? roadmap.phase_plan : [];
+  const tranches = Array.isArray(roadmap.tranche_plan) ? roadmap.tranche_plan : [];
+  const govQs = Array.isArray(roadmap.governance_questions) ? roadmap.governance_questions : [];
+
+  let html = '';
+
+  html += `<div class="ubr-meta-row">`;
+  html += `<div class="ubr-chip"><span class="ubr-chip-key">name</span><span class="ubr-chip-val">${esc(roadmap.name)}</span></div>`;
+  html += `<div class="ubr-chip"><span class="ubr-chip-key">version</span><span class="ubr-chip-val">${esc(roadmap.roadmap_version)}</span></div>`;
+  html += `<div class="ubr-chip"><span class="ubr-chip-key">updated</span><span class="ubr-chip-val">${esc(roadmap.last_updated)}</span></div>`;
+  html += `<div class="ubr-chip"><span class="ubr-chip-key">status</span><span class="ubr-chip-val">${esc(roadmap.status)}</span></div>`;
+  html += `</div>`;
+
+  html += `<div class="release-section-label" style="margin-bottom:8px">Beta Release Focus</div>`;
+  html += `<div class="release-narrative" style="margin-bottom:14px">${esc(ri.beta_release_focus)}</div>`;
+
+  const required = Array.isArray(ri.major_tradition_families_required_for_beta) ? ri.major_tradition_families_required_for_beta : [];
+  if (required.length) {
+    html += `<div class="release-section-label" style="margin-bottom:8px">Required Tradition Families for Beta</div>`;
+    html += `<div class="ubr-meta-row" style="margin-bottom:14px">`;
+    required.forEach(f => html += `<div class="ubr-chip"><span class="ubr-chip-val">${esc(f)}</span></div>`);
+    html += `</div>`;
+  }
+
+  const blockers = families.filter(f => f.blocks_beta === true);
+  if (blockers.length) {
+    html += `<div class="release-section-label" style="margin-bottom:8px">Beta Blockers — Tradition Families (${blockers.length})</div>`;
+    blockers.forEach(f => {
+      html += `<div class="ubr-blocker-row">` +
+        `<span class="ubr-blocker-icon">⚑</span>` +
+        `<div><strong>${esc(f.family)}</strong> — ${esc(f.first_release_lane)}<br>` +
+        `<span style="color:var(--text-dim)">${esc(f.blocker_reason)}</span></div>` +
+        `</div>`;
+    });
+  }
+
+  const activePhases = phases.filter(p => p.status === 'in_progress');
+  const activeTranches = tranches.filter(t => t.status === 'in_progress');
+
+  html += `<div class="release-section-label" style="margin-top:14px; margin-bottom:8px">Phase / Tranche Overview — ${phases.length} phases · ${tranches.length} tranches total</div>`;
+
+  if (activePhases.length) {
+    activePhases.forEach(p => {
+      html += `<div class="ubr-phase-row">` +
+        `<span class="ubr-phase-id">${esc(p.id)}</span>` +
+        `<span class="ubr-phase-title">${esc(p.title)}</span>` +
+        `<span class="ubr-status-badge ubr-status-in_progress">in progress</span>` +
+        `</div>`;
+    });
+  } else {
+    html += `<div class="ubr-phase-row"><span class="ubr-phase-title" style="color:var(--text-dim)">No phases currently in progress.</span></div>`;
+  }
+
+  activeTranches.forEach(t => {
+    html += `<div class="ubr-phase-row" style="margin-left:16px; border-left:2px solid var(--border-bright)">` +
+      `<span class="ubr-phase-id" style="font-size:0.78em">${esc(t.id)}</span>` +
+      `<span class="ubr-phase-title">${esc(t.title)}</span>` +
+      `<span class="ubr-status-badge ubr-status-in_progress">in progress</span>` +
+      `</div>`;
+  });
+
+  const openBlockerQs = govQs.filter(q => q.status === 'open' && q.blocks_beta === true);
+  if (openBlockerQs.length) {
+    html += `<div class="release-section-label" style="margin-top:14px; margin-bottom:8px">Open Beta-Blocking Governance Questions (${openBlockerQs.length})</div>`;
+    openBlockerQs.forEach(q => {
+      html += `<div class="ubr-gov-row">` +
+        `<div class="ubr-gov-question">${esc(q.question)}</div>` +
+        `<div class="ubr-gov-meta">owner: ${esc(q.owner)} · category: ${esc(q.category)}</div>` +
+        `</div>`;
+    });
+  }
+
+  body.innerHTML = html;
+}
+
+function loadUniversalBetaRoadmap() {
+  const body = document.getElementById('universal-roadmap-body');
+  if (!body) return;
+
+  fetch('../project_roadmap.json')
+    .then(r => {
+      if (!r.ok) throw new Error(`HTTP ${r.status}`);
+      return r.json();
+    })
+    .then(data => renderUniversalBetaRoadmap(data))
+    .catch(err => {
+      const msg = String(err?.message ?? err)
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;');
+
+      body.innerHTML = `<div class="ubr-warning">⚠ Could not load project_roadmap.json: ${msg}<br>The Universal Beta Roadmap panel requires project_roadmap.json at the project root.</div>`;
+    });
+}
+
 // ── Version display ───────────────────────────────────────────────────────
 function loadVersion() {
   fetch('../structure.json')
@@ -1598,7 +1786,10 @@ document.getElementById('day-snap-btn').addEventListener('click', () => {
   // Load todos
   renderTodos();
 
-  // Load Byzantine release roadmap
+  // Load Universal Beta Roadmap
+  loadUniversalBetaRoadmap();
+
+  // Load Byzantine release roadmap (legacy cockpit)
   renderReleaseRoadmap();
 
   // Load release status and active milestones

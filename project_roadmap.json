@@ -6,9 +6,9 @@
   "name": "Universal Office Beta Release Roadmap",
   "purpose": "Canonical machine-readable roadmap for Beta Release planning, phase sequencing, governance questions, tranche sizing, and Admin Dashboard visualization.",
   "current_repo_state": {
-    "latest_known_commit": "b50b4ff",
-    "latest_known_commit_message": "Archive pre-closure structure history",
-    "structure_json_version": "3.8.72",
+    "latest_known_commit": "e7e230e",
+    "latest_known_commit_message": "Record universal beta roadmap source",
+    "structure_json_version": "3.8.73",
     "roadmap_source_of_truth": "project_roadmap.json",
     "structure_json_role": "Project manifest, implementation ledger, governance history, legacy admin todo source, and current state pointer.",
     "roadmap_role": "Canonical release architecture and phase/tranche planning source for Admin Dashboard roadmap visualization."
@@ -164,7 +164,7 @@
     {
       "id": "phase_0",
       "title": "Roadmap extraction and mission reset",
-      "status": "in_progress",
+      "status": "done",
       "blocks_beta": true,
       "purpose": "Create the roadmap source of truth and stop coding against stale Byzantine-centered release assumptions.",
       "exit_gate": "project_roadmap.json exists, validates, and accurately encodes BCP-facing beta identity, major-family representation requirements, Roman Catholic release blocker status, and phase/tranche doctrine."
@@ -172,7 +172,7 @@
     {
       "id": "phase_1",
       "title": "Admin Dashboard roadmap visualization",
-      "status": "not_started",
+      "status": "in_progress",
       "blocks_beta": true,
       "purpose": "Make the Admin Dashboard visualize the whole Universal Office beta roadmap instead of only the Byzantine release lane.",
       "exit_gate": "Admin Dashboard displays release identity, major-family coverage matrix, blockers, phase/tranche board, and governance-question queue from project_roadmap.json."
@@ -239,7 +239,7 @@
       "id": "0.1",
       "phase_id": "phase_0",
       "title": "Seed project_roadmap.json",
-      "status": "in_progress",
+      "status": "done",
       "tranche_size": "standard",
       "files": [
         "project_roadmap.json"
@@ -255,7 +255,7 @@
       "id": "0.2",
       "phase_id": "phase_0",
       "title": "Point repo governance toward roadmap source",
-      "status": "not_started",
+      "status": "done",
       "tranche_size": "standard",
       "files": [
         "README.md",
@@ -273,7 +273,7 @@
       "id": "1.1",
       "phase_id": "phase_1",
       "title": "Add Admin roadmap loader and summary panel",
-      "status": "not_started",
+      "status": "in_progress",
       "tranche_size": "campaign",
       "files": [
         "admin/admin.html",
