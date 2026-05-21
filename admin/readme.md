@@ -7,22 +7,28 @@ This is a development-only tool. It is not linked from the main application.
 
 ## Overview
 
-The admin dashboard is a release-governance cockpit and diagnostic tool. It provides:
+The admin dashboard is a release-governance cockpit and diagnostic tool.
 
-- **Release-Governance Cockpit** — post-Pentecost stabilization / EO production-readiness status, critical-path office status, monastic-first rationale, and readiness/deferred items; sourced from `structure.json → governance.byzantine_release_roadmap`
+Current state:
+- **Universal Beta Roadmap source of truth** — `project_roadmap.json`; created in Phase 0.1. Dashboard rendering from this file is pending Phase 1.
+- **Legacy Byzantine Release-Governance Cockpit** — post-Pentecost stabilization / EO production-readiness status, critical-path office status, monastic-first rationale, and readiness/deferred items; currently sourced from `structure.json → governance.byzantine_release_roadmap`
 - **Release Status panel** — roadmap summary (next required / next planned), open bugs, and open architectural debt; sourced from `structure.json → roadmap_summary` and `project_manifest.audit_findings`
 - **Active Governance & Open Work panel** — priority open todos and active governance decisions; sourced from `structure.json → admin.todos` and `governance.decisions`
 - **Top 5 Open To-Dos panel** — open tasks ranked by severity; `done` todos remain in the ledger as history but are hidden from this panel; sourced from `structure.json → admin.todos`
 - **YearSnapshot panel** — computed season timeline for any year and tradition, with anchor dates (Easter, Advent, etc.)
 - **DaySnapshot panel** — pick any date, see season, liturgical color, and commemorations
 
+The Beta Release roadmap is no longer governed by the Byzantine lane alone. `project_roadmap.json` is the canonical roadmap source for the BCP-facing Universal Office beta, including major-family representation requirements and release blockers.
+
 ---
 
-## Release-Governance Cockpit
+## Universal Beta Roadmap and Legacy Release-Governance Cockpit
 
-The Release-Governance Cockpit is the primary panel for tracking post-Pentecost stabilization and public-beta readiness. Western Pentecost 2026 is preserved as the prior aspirational gate, not the current active release target.
+`project_roadmap.json` is now the canonical roadmap source for Beta Release architecture. It governs release identity, major tradition-family representation, beta blockers, phase/tranche sequencing, governance questions, and the future Admin Dashboard roadmap visualization.
 
-All release panel data is sourced from `structure.json` under `governance.byzantine_release_roadmap`. The dashboard reads that section at page load and does not hard-code roadmap content. If a field is absent, the panel shows graceful fallback text rather than an error.
+The current dashboard still contains the existing Byzantine Release-Governance Cockpit. That panel tracks post-Pentecost stabilization and EO production-readiness only. Western Pentecost 2026 is preserved as the prior aspirational gate, not the current active release target.
+
+Until Phase 1 dashboard wiring is complete, the existing release panel data is still sourced from `structure.json` under `governance.byzantine_release_roadmap`. The dashboard reads that section at page load and does not hard-code roadmap content. If a field is absent, the panel shows graceful fallback text rather than an error.
 
 **Fields consumed:**
 
@@ -71,9 +77,19 @@ The Top 5 panel renders the top 5 open/in-progress todos by severity. `done` tod
 
 ## How to update the release roadmap
 
-All release roadmap data lives in `structure.json` under `governance.byzantine_release_roadmap`. Edit that section directly; the dashboard picks up changes on the next page load.
+Canonical Beta Release roadmap data now lives in `project_roadmap.json`.
 
-To add a critical-path office, append an object to `critical_path_offices`:
+Use `project_roadmap.json` for:
+- release identity
+- major tradition-family representation
+- beta blockers
+- phase/tranche planning
+- governance questions
+- dashboard roadmap views
+
+The older Byzantine roadmap remains in `structure.json → governance.byzantine_release_roadmap` for the existing Byzantine cockpit until Phase 1 dashboard wiring is complete. Do not use the Byzantine roadmap as the whole-project release roadmap.
+
+For the existing Byzantine cockpit only, add a critical-path office by appending an object to `critical_path_offices`:
 
 ```json
 {
@@ -152,6 +168,70 @@ interface ByzantineReleaseRoadmap {
   monastic_first_rationale?: string;
   critical_path_offices:    CriticalPathOffice[];
   non_blocking_open:        string[];
+}
+
+interface ProjectRoadmap {
+  schema_version:             string;
+  roadmap_version:            string;
+  last_updated:               string;  // YYYY-MM-DD
+  status:                     'active' | 'draft' | 'archived';
+  name:                       string;
+  purpose:                    string;
+  release_identity:           object;
+  release_doctrine:           object;
+  major_tradition_families:   MajorTraditionFamily[];
+  phase_plan:                 RoadmapPhase[];
+  tranche_plan:               RoadmapTranche[];
+  governance_questions:       GovernanceQuestion[];
+  dashboard_views:            DashboardView[];
+}
+
+interface MajorTraditionFamily {
+  id:                 string;
+  family:             string;
+  first_release_lane: string;
+  public_beta_role:   string;
+  current_status:     string;
+  beta_status:        string;
+  blocks_beta:        boolean;
+  blocker_reason?:    string | null;
+}
+
+interface RoadmapPhase {
+  id:          string;
+  title:       string;
+  status:      'not_started' | 'in_progress' | 'blocked' | 'done' | 'deferred';
+  blocks_beta: boolean;
+  purpose:     string;
+  exit_gate:   string;
+}
+
+interface RoadmapTranche {
+  id:            string;
+  phase_id:      string;
+  title:         string;
+  status:        'not_started' | 'in_progress' | 'blocked' | 'done' | 'deferred';
+  tranche_size:  'micro' | 'standard' | 'campaign' | 'governance';
+  files:         string[];
+  purpose:       string;
+  qc:            string[];
+}
+
+interface GovernanceQuestion {
+  id:          string;
+  category:    string;
+  question:    string;
+  status:      'open' | 'decided' | 'deferred';
+  blocks_beta: boolean;
+  blocks_v1?:  boolean;
+  owner:       string;
+}
+
+interface DashboardView {
+  id:          string;
+  title:       string;
+  data_source: string;
+  purpose:     string;
 }
 
 type CalendarSystem = 'gregorian' | 'julian' | 'revised_julian';
