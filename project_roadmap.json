@@ -1,0 +1,871 @@
+{
+  "schema_version": "1.0.0",
+  "roadmap_version": "0.1.0",
+  "last_updated": "2026-05-20",
+  "status": "active",
+  "name": "Universal Office Beta Release Roadmap",
+  "purpose": "Canonical machine-readable roadmap for Beta Release planning, phase sequencing, governance questions, tranche sizing, and Admin Dashboard visualization.",
+  "current_repo_state": {
+    "latest_known_commit": "b50b4ff",
+    "latest_known_commit_message": "Archive pre-closure structure history",
+    "structure_json_version": "3.8.72",
+    "roadmap_source_of_truth": "project_roadmap.json",
+    "structure_json_role": "Project manifest, implementation ledger, governance history, legacy admin todo source, and current state pointer.",
+    "roadmap_role": "Canonical release architecture and phase/tranche planning source for Admin Dashboard roadmap visualization."
+  },
+  "release_identity": {
+    "beta_release_focus": "BCP-facing Anglican public beta",
+    "public_facing_center": "Anglican / BCP Daily Office",
+    "release_model": "First release represents each major apostolic tradition family through one governed initial recension or tradition lane, then expands by tradition, jurisdiction, calendar, and depth over time.",
+    "major_tradition_families_required_for_beta": [
+      "Anglican",
+      "Roman Catholic",
+      "Eastern Orthodox",
+      "Oriental Orthodox",
+      "Church of the East"
+    ],
+    "non_negotiables": [
+      "Beta Release is not Byzantine-centered in public presentation.",
+      "BCP / Anglican Daily Office is the public-facing focus.",
+      "Roman Catholic Divine Office / Liturgy of the Hours representation is a Beta Release blocker.",
+      "Russian / Slavic Byzantine Horologion is the first Eastern Orthodox recension.",
+      "Ethiopian / Tewahedo Sa'atat is the first Oriental Orthodox lane.",
+      "East Syriac Hudra is the first Church of the East lane.",
+      "Other traditions, jurisdictions, and profiles are later expansions, not first-release requirements."
+    ]
+  },
+  "release_doctrine": {
+    "beta_blocker_definition": "A defect, absence, or governance gap that prevents honest first public release under the required major-family representation model.",
+    "beta_blockers_include": [
+      "A required major apostolic family has no honest first-release representation.",
+      "A public-facing beta path crashes or fails to render.",
+      "A baseline office is advertised as present but lacks enough structure or text to be liturgically honest.",
+      "The Admin Dashboard misrepresents project state or release blockers.",
+      "Ordinary user flow exposes development placeholders, undefined values, stale implementation language, or hidden silent fallbacks.",
+      "Roman Catholic Divine Office / Liturgy of the Hours baseline is absent."
+    ],
+    "not_beta_blockers_if_honestly_deferred": [
+      "Full Byzantine seasonal/festal/Menaion depth.",
+      "Greek, Antiochian, or other non-Slavic Eastern Orthodox profiles.",
+      "Coptic Agpeya as a separate Oriental Orthodox lane, provided Ethiopian is stable as first OO representation.",
+      "Armenian, Syriac Orthodox, and other Oriental Orthodox additions beyond the Ethiopian first lane.",
+      "1960 Roman Breviary, Benedictine, monastic, or other Latin variants if the first Roman Catholic Divine Office baseline is present.",
+      "Full database/typed-element Phase 5 migration, provided release data remains honest and stable.",
+      "Advanced cross-tradition search and comparison.",
+      "Mobile-app packaging."
+    ],
+    "honesty_rules": [
+      "Do not hide true corpus gaps as UX polish.",
+      "Do not present one jurisdictional recension as the entire tradition family.",
+      "Do not conflate Ethiopian Sa'atat with Coptic Agpeya.",
+      "Do not treat East Syriac Hudra as missing.",
+      "Do not call the Universal Office release-ready while Roman Catholic Divine Office representation is absent.",
+      "Do not claim Phase 5 typed architecture is complete until it is pressure-tested against Anglican, Roman Catholic, Byzantine, East Syriac, Ethiopian, and any distinct Coptic Agpeya lane pursued before that milestone."
+    ]
+  },
+  "major_tradition_families": [
+    {
+      "id": "anglican",
+      "family": "Anglican",
+      "first_release_lane": "BCP Daily Office",
+      "public_beta_role": "Primary public-facing focus",
+      "current_status": "present",
+      "beta_status": "requires_hardening",
+      "blocks_beta": true,
+      "blocker_reason": "The BCP path is the public-facing beta center and must pass public-flow hardening.",
+      "later_expansions": [
+        "Additional Anglican office books",
+        "Local calendars",
+        "Anglo-Catholic and monastic profiles",
+        "Expanded pastoral/devotional integrations"
+      ]
+    },
+    {
+      "id": "roman_catholic",
+      "family": "Roman Catholic",
+      "first_release_lane": "Divine Office / Liturgy of the Hours",
+      "public_beta_role": "Required major-family representation",
+      "current_status": "absent_or_not_yet_governed",
+      "beta_status": "release_blocker",
+      "blocks_beta": true,
+      "blocker_reason": "Roman Catholic Divine Office / Liturgy of the Hours baseline is required before Beta Release.",
+      "source_governance_required": true,
+      "recommended_first_profile": "Current Roman Liturgy of the Hours / Divine Office ordinary form",
+      "later_expansions": [
+        "1960 Roman Breviary",
+        "Benedictine / monastic office profiles",
+        "Traditional Latin variants",
+        "Local calendars and sanctoral expansions"
+      ]
+    },
+    {
+      "id": "eastern_orthodox",
+      "family": "Eastern Orthodox",
+      "first_release_lane": "Russian / Slavic Byzantine Horologion",
+      "public_beta_role": "Required major-family representation",
+      "current_status": "present_and_strong",
+      "beta_status": "ordinary_baseline_recovered_depth_deferred",
+      "blocks_beta": false,
+      "blocker_reason": null,
+      "deferred_depth": [
+        "Polyeleos / rank selection",
+        "Distinct Psalms 134-135 Polyeleos corpus",
+        "Seasonal / festal Orthros depth",
+        "Menaion hymn-family depth",
+        "Annual Typikon collision policy",
+        "Additional EO jurisdictional overlays"
+      ],
+      "later_expansions": [
+        "Greek Byzantine profile",
+        "Antiochian profile",
+        "Old Calendar / New Calendar profile refinement",
+        "Full seasonal and festal depth",
+        "Broader Menaion and Typikon collision handling"
+      ]
+    },
+    {
+      "id": "oriental_orthodox",
+      "family": "Oriental Orthodox",
+      "first_release_lane": "Ethiopian / Tewahedo Sa'atat",
+      "public_beta_role": "Required major-family representation",
+      "current_status": "present",
+      "beta_status": "requires_refinement_audit",
+      "blocks_beta": true,
+      "blocker_reason": "Ethiopian lane must be audited and stabilized enough to serve as honest first Oriental Orthodox representation.",
+      "do_not_conflate": [
+        "Ethiopian Sa'atat is not Coptic Agpeya.",
+        "Coptic Agpeya is a separate later Oriental Orthodox lane unless explicitly pulled into Beta Release by governance decision."
+      ],
+      "later_expansions": [
+        "Coptic Agpeya",
+        "Armenian office traditions",
+        "Syriac Orthodox office traditions",
+        "Additional Oriental Orthodox calendars and synaxaria"
+      ]
+    },
+    {
+      "id": "church_of_the_east",
+      "family": "Church of the East",
+      "first_release_lane": "East Syriac Hudra",
+      "public_beta_role": "Required major-family representation",
+      "current_status": "present",
+      "beta_status": "requires_refinement_audit",
+      "blocks_beta": true,
+      "blocker_reason": "Hudra lane must be audited and stabilized enough to serve as honest first Church of the East representation.",
+      "later_expansions": [
+        "Major fixed feasts",
+        "Deeper Hudra seasonal material",
+        "Expanded sanctoral handling",
+        "Additional East Syriac profile refinement"
+      ]
+    }
+  ],
+  "phase_plan": [
+    {
+      "id": "phase_0",
+      "title": "Roadmap extraction and mission reset",
+      "status": "in_progress",
+      "blocks_beta": true,
+      "purpose": "Create the roadmap source of truth and stop coding against stale Byzantine-centered release assumptions.",
+      "exit_gate": "project_roadmap.json exists, validates, and accurately encodes BCP-facing beta identity, major-family representation requirements, Roman Catholic release blocker status, and phase/tranche doctrine."
+    },
+    {
+      "id": "phase_1",
+      "title": "Admin Dashboard roadmap visualization",
+      "status": "not_started",
+      "blocks_beta": true,
+      "purpose": "Make the Admin Dashboard visualize the whole Universal Office beta roadmap instead of only the Byzantine release lane.",
+      "exit_gate": "Admin Dashboard displays release identity, major-family coverage matrix, blockers, phase/tranche board, and governance-question queue from project_roadmap.json."
+    },
+    {
+      "id": "phase_2",
+      "title": "BCP public-facing hardening",
+      "status": "not_started",
+      "blocks_beta": true,
+      "purpose": "Harden the Anglican / BCP Daily Office path because it is the public-facing center of Beta Release.",
+      "exit_gate": "BCP Daily Office, Book of Needs, mode switching, BCP-only behavior, and public UI flow pass browser QC and human review."
+    },
+    {
+      "id": "phase_3",
+      "title": "Roman Catholic Divine Office baseline",
+      "status": "not_started",
+      "blocks_beta": true,
+      "purpose": "Add required Roman Catholic Divine Office / Liturgy of the Hours first-release representation.",
+      "exit_gate": "Roman Catholic Divine Office lane exists, renders an honest ordinary baseline, and no longer blocks Beta Release."
+    },
+    {
+      "id": "phase_4",
+      "title": "Eastern Orthodox Russian / Slavic release closeout",
+      "status": "not_started",
+      "blocks_beta": false,
+      "purpose": "Confirm the existing Slavic Byzantine Horologion lane is stable and honestly scoped for Beta Release.",
+      "exit_gate": "Russian / Slavic EO lane passes release-visible QC and dashboard correctly classifies deferred Byzantine depth as non-blocking."
+    },
+    {
+      "id": "phase_5",
+      "title": "Oriental Orthodox Ethiopian release closeout",
+      "status": "not_started",
+      "blocks_beta": true,
+      "purpose": "Confirm Ethiopian Sa'atat is stable and honestly scoped as first Oriental Orthodox representation.",
+      "exit_gate": "Ethiopian lane passes release-visible QC and dashboard correctly distinguishes Ethiopian Sa'atat from future Coptic Agpeya."
+    },
+    {
+      "id": "phase_6",
+      "title": "Church of the East Hudra release closeout",
+      "status": "not_started",
+      "blocks_beta": true,
+      "purpose": "Confirm East Syriac Hudra is stable and honestly scoped as first Church of the East representation.",
+      "exit_gate": "Hudra lane passes release-visible QC and dashboard treats it as present but refinement-pending, not missing."
+    },
+    {
+      "id": "phase_7",
+      "title": "Cross-family shell and release-hardening pass",
+      "status": "not_started",
+      "blocks_beta": true,
+      "purpose": "Verify the app behaves as one coherent product across all first-release lanes.",
+      "exit_gate": "All public modes, sidebars, dashboard views, deferred-language handling, mobile layout, and ordinary user flows pass final hardening checks."
+    },
+    {
+      "id": "phase_8",
+      "title": "Final Beta gate",
+      "status": "not_started",
+      "blocks_beta": true,
+      "purpose": "Run final Beta Release QC, close or explicitly defer every known item, and prepare release ledger/tag.",
+      "exit_gate": "No beta blockers remain; deferred depth ledger is explicit; README, dashboard, and release identity agree."
+    }
+  ],
+  "tranche_plan": [
+    {
+      "id": "0.1",
+      "phase_id": "phase_0",
+      "title": "Seed project_roadmap.json",
+      "status": "in_progress",
+      "tranche_size": "standard",
+      "files": [
+        "project_roadmap.json"
+      ],
+      "purpose": "Create canonical roadmap source of truth.",
+      "qc": [
+        "JSON parse",
+        "Manual governance review",
+        "Confirm release identity and blocker doctrine"
+      ]
+    },
+    {
+      "id": "0.2",
+      "phase_id": "phase_0",
+      "title": "Point repo governance toward roadmap source",
+      "status": "not_started",
+      "tranche_size": "standard",
+      "files": [
+        "README.md",
+        "structure.json",
+        "admin/readme.md"
+      ],
+      "purpose": "Correct stale release-focus language and record project_roadmap.json as roadmap source without migrating dashboard logic yet.",
+      "qc": [
+        "JSON parse",
+        "README language review",
+        "No admin runtime change"
+      ]
+    },
+    {
+      "id": "1.1",
+      "phase_id": "phase_1",
+      "title": "Add Admin roadmap loader and summary panel",
+      "status": "not_started",
+      "tranche_size": "campaign",
+      "files": [
+        "admin/admin.html",
+        "admin/readme.md",
+        "project_roadmap.json"
+      ],
+      "purpose": "Fetch project_roadmap.json and render Universal Beta Roadmap summary without removing existing Byzantine cockpit.",
+      "qc": [
+        "Admin page loads",
+        "Roadmap fetch succeeds",
+        "Graceful failure if roadmap missing",
+        "Existing admin panels still render"
+      ]
+    },
+    {
+      "id": "1.2",
+      "phase_id": "phase_1",
+      "title": "Render family coverage matrix and phase board",
+      "status": "not_started",
+      "tranche_size": "standard",
+      "files": [
+        "admin/admin.html",
+        "project_roadmap.json"
+      ],
+      "purpose": "Visualize major tradition-family coverage and phase/tranche progress.",
+      "qc": [
+        "Coverage rows render from JSON",
+        "Phase statuses render from JSON",
+        "No hard-coded roadmap content beyond labels"
+      ]
+    },
+    {
+      "id": "1.3",
+      "phase_id": "phase_1",
+      "title": "Render governance-question board",
+      "status": "not_started",
+      "tranche_size": "standard",
+      "files": [
+        "admin/admin.html",
+        "admin/readme.md",
+        "project_roadmap.json"
+      ],
+      "purpose": "Expose open source, release, architecture, UI, and future-expansion governance questions.",
+      "qc": [
+        "Questions display by category",
+        "Blocker flags display",
+        "Deferred decisions are visually distinct from blockers"
+      ]
+    },
+    {
+      "id": "2.1",
+      "phase_id": "phase_2",
+      "title": "BCP public-flow QC",
+      "status": "not_started",
+      "tranche_size": "standard",
+      "files": [
+        "project_roadmap.json",
+        "documentation/OFFICE_UI_DOCUMENTATION.md"
+      ],
+      "purpose": "Define and run browser QC for BCP public-facing path.",
+      "qc": [
+        "Morning Prayer",
+        "Noonday Prayer",
+        "Evening Prayer",
+        "Compline",
+        "Rite I / Rite II",
+        "Priest / layperson",
+        "BCP Only Mode",
+        "Gospel placement",
+        "30-day Psalter",
+        "Ecumenical add-on hiding"
+      ]
+    },
+    {
+      "id": "2.2",
+      "phase_id": "phase_2",
+      "title": "Fix BCP beta-visible defects",
+      "status": "not_started",
+      "tranche_size": "standard",
+      "files": [
+        "js/office-ui.js",
+        "components/anglican.json",
+        "components/common.json",
+        "data/rubrics.json",
+        "project_roadmap.json"
+      ],
+      "purpose": "Repair defects discovered in BCP public-flow QC.",
+      "qc": [
+        "Targeted browser regression",
+        "No undefined leakage",
+        "No BCP Only Mode regression"
+      ]
+    },
+    {
+      "id": "2.3",
+      "phase_id": "phase_2",
+      "title": "Book of Needs public-flow QC and polish",
+      "status": "not_started",
+      "tranche_size": "standard",
+      "files": [
+        "index.html",
+        "js/prayers.js",
+        "data/prayers.json",
+        "project_roadmap.json"
+      ],
+      "purpose": "Ensure Book of Needs selector, rendering, and back-navigation are beta-ready.",
+      "qc": [
+        "Prayer selector works",
+        "All visible options have content",
+        "Back navigation works",
+        "No empty prayer display"
+      ]
+    },
+    {
+      "id": "3.1",
+      "phase_id": "phase_3",
+      "title": "Roman Catholic Divine Office source-governance ruling",
+      "status": "not_started",
+      "tranche_size": "governance",
+      "files": [
+        "project_roadmap.json",
+        "structure.json",
+        "components/common.json",
+        "components/ecumenical.json",
+        "index.html",
+        "js/office-ui.js",
+        "documentation/STATIC_OFFICES_DOCUMENTATION.md",
+        "documentation/COMPONENTS_JSON_DOCUMENTATION.md"
+      ],
+      "purpose": "Use Marissa to settle first-release Roman Catholic office profile, source strategy, minimum baseline, and what blocks beta.",
+      "qc": [
+        "Marissa ruling received",
+        "No code patch before source ruling",
+        "Ruling classifies required offices, source constraints, and deferrable depth"
+      ]
+    },
+    {
+      "id": "3.2",
+      "phase_id": "phase_3",
+      "title": "Catholic office data schema scaffold",
+      "status": "not_started",
+      "tranche_size": "standard",
+      "files": [
+        "project_roadmap.json",
+        "data/latin-hours/schema.json",
+        "data/latin-hours/ordinary.json",
+        "components/latin.json"
+      ],
+      "purpose": "Create first Roman Catholic office-family data contract after source-governance ruling.",
+      "qc": [
+        "JSON parse",
+        "Schema review",
+        "No renderer dependency yet"
+      ]
+    },
+    {
+      "id": "3.3",
+      "phase_id": "phase_3",
+      "title": "Catholic engine scaffold",
+      "status": "not_started",
+      "tranche_size": "standard",
+      "files": [
+        "js/latin-hours-engine.js",
+        "index.html",
+        "js/office-ui.js",
+        "project_roadmap.json"
+      ],
+      "purpose": "Add non-throwing Roman Catholic Divine Office resolver scaffold.",
+      "qc": [
+        "node -c",
+        "Resolver returns non-throwing payloads",
+        "No public UI route until shell tranche completes"
+      ]
+    },
+    {
+      "id": "3.4",
+      "phase_id": "phase_3",
+      "title": "Catholic UI mode shell",
+      "status": "not_started",
+      "tranche_size": "campaign",
+      "files": [
+        "index.html",
+        "css/office.css",
+        "js/office-ui.js",
+        "project_roadmap.json"
+      ],
+      "purpose": "Add Roman Catholic Divine Office entry, sidebar shell, office selector, and basic renderer route.",
+      "qc": [
+        "Mode switching works",
+        "Sidebar works",
+        "Back-to-modes works",
+        "No other mode regression"
+      ]
+    },
+    {
+      "id": "3.5",
+      "phase_id": "phase_3",
+      "title": "Catholic ordinary baseline corpus tranche 1",
+      "status": "not_started",
+      "tranche_size": "standard",
+      "files": [
+        "data/latin-hours/ordinary.json",
+        "data/latin-hours/night-prayer.json",
+        "js/latin-hours-engine.js",
+        "project_roadmap.json"
+      ],
+      "purpose": "Start with bounded Night Prayer / Compline baseline.",
+      "qc": [
+        "Night Prayer renders",
+        "No source-policy violation",
+        "No undefined leakage"
+      ]
+    },
+    {
+      "id": "3.6",
+      "phase_id": "phase_3",
+      "title": "Catholic Morning and Evening Prayer baseline",
+      "status": "not_started",
+      "tranche_size": "standard",
+      "files": [
+        "data/latin-hours/morning-prayer.json",
+        "data/latin-hours/evening-prayer.json",
+        "js/latin-hours-engine.js",
+        "project_roadmap.json"
+      ],
+      "purpose": "Add honest ordinary baseline structure for Lauds and Vespers.",
+      "qc": [
+        "Morning Prayer renders",
+        "Evening Prayer renders",
+        "Ordinary baseline is honest about deferred propers"
+      ]
+    },
+    {
+      "id": "3.7",
+      "phase_id": "phase_3",
+      "title": "Catholic Office of Readings and Daytime Prayer baseline",
+      "status": "not_started",
+      "tranche_size": "standard",
+      "files": [
+        "data/latin-hours/office-of-readings.json",
+        "data/latin-hours/daytime-prayer.json",
+        "js/latin-hours-engine.js",
+        "project_roadmap.json"
+      ],
+      "purpose": "Add honest ordinary baseline structure for Office of Readings and Daytime Prayer.",
+      "qc": [
+        "Office of Readings renders",
+        "Daytime Prayer renders",
+        "Deferred seasonal/sanctoral material classified honestly"
+      ]
+    },
+    {
+      "id": "3.8",
+      "phase_id": "phase_3",
+      "title": "Catholic baseline release classification",
+      "status": "not_started",
+      "tranche_size": "standard",
+      "files": [
+        "project_roadmap.json",
+        "structure.json",
+        "admin/admin.html"
+      ],
+      "purpose": "Mark Catholic representation from blocker to baseline-present only if QC supports it.",
+      "qc": [
+        "All Catholic baseline offices render",
+        "Dashboard updates blocker state",
+        "No overclaiming of Latin depth"
+      ]
+    },
+    {
+      "id": "4.1",
+      "phase_id": "phase_4",
+      "title": "Russian / Slavic Horologion release QC",
+      "status": "not_started",
+      "tranche_size": "standard",
+      "files": [
+        "project_roadmap.json",
+        "documentation/HOROLOGION_TESTING_PROTOCOL.md"
+      ],
+      "purpose": "Run release-visible QC for the existing EO first-recension lane.",
+      "qc": [
+        "Ordinary weekday / Sunday baseline",
+        "Bright Week controls",
+        "Great Lent controls",
+        "Holy Week controls",
+        "EO old/new calendar selector",
+        "Display depth",
+        "Diagnostics off/on"
+      ]
+    },
+    {
+      "id": "4.2",
+      "phase_id": "phase_4",
+      "title": "Fix EO beta-visible defects only",
+      "status": "not_started",
+      "tranche_size": "standard",
+      "files": [
+        "js/horologion-engine.js",
+        "js/office-ui.js",
+        "data/horologion/",
+        "project_roadmap.json"
+      ],
+      "purpose": "Repair only release-visible EO defects, not full seasonal/festal depth.",
+      "qc": [
+        "Targeted browser regression",
+        "No new placeholder leakage",
+        "Deferred depth remains clearly classified"
+      ]
+    },
+    {
+      "id": "5.1",
+      "phase_id": "phase_5",
+      "title": "Ethiopian release-lane audit",
+      "status": "not_started",
+      "tranche_size": "standard",
+      "files": [
+        "components/ethiopian.json",
+        "components/traditions/ethiopian/rubrics.json",
+        "js/calendar-ethiopian.js",
+        "js/office-ui.js",
+        "documentation/ETHIOPIAN_SAATAT_DOCUMENTATION.md",
+        "project_roadmap.json"
+      ],
+      "purpose": "Audit Ethiopian Sa'atat as first Oriental Orthodox release lane.",
+      "qc": [
+        "Nine watches reachable",
+        "Date/time override works",
+        "Full/abbreviated mode works",
+        "Weddase Maryam toggle works",
+        "Senkessar does not break public flow"
+      ]
+    },
+    {
+      "id": "6.1",
+      "phase_id": "phase_6",
+      "title": "East Syriac Hudra release-lane audit",
+      "status": "not_started",
+      "tranche_size": "standard",
+      "files": [
+        "components/east-syriac.json",
+        "components/traditions/east-syriac/rubrics.json",
+        "js/calendar-east-syriac.js",
+        "js/coe-eligibility.js",
+        "js/office-ui.js",
+        "documentation/COE_GOVERNANCE_CLOSURE.md",
+        "project_roadmap.json"
+      ],
+      "purpose": "Audit East Syriac Hudra as first Church of the East release lane.",
+      "qc": [
+        "All seven hours reachable",
+        "Cathedral/monastic mode works",
+        "Cycle display works",
+        "Fasting/anaphora boxes are not misleading",
+        "Saint silence remains governed where applicable"
+      ]
+    },
+    {
+      "id": "7.1",
+      "phase_id": "phase_7",
+      "title": "Cross-family shell QC",
+      "status": "not_started",
+      "tranche_size": "standard",
+      "files": [
+        "project_roadmap.json"
+      ],
+      "purpose": "Test app as a single product across all public modes.",
+      "qc": [
+        "Daily Office",
+        "Book of Needs",
+        "Roman Catholic Divine Office",
+        "Ethiopian",
+        "East Syriac",
+        "Horologion",
+        "Admin Dashboard",
+        "Back-to-modes behavior",
+        "Sidebar visibility",
+        "Mobile layout"
+      ]
+    },
+    {
+      "id": "8.1",
+      "phase_id": "phase_8",
+      "title": "Final Beta QC matrix",
+      "status": "not_started",
+      "tranche_size": "standard",
+      "files": [
+        "project_roadmap.json",
+        "structure.json",
+        "README.md"
+      ],
+      "purpose": "Run final release matrix and prepare release ledger.",
+      "qc": [
+        "No beta blockers remain",
+        "Deferred depth ledger explicit",
+        "README, dashboard, and roadmap agree",
+        "Release tag only after clean pass"
+      ]
+    }
+  ],
+  "governance_questions": [
+    {
+      "id": "catholic-first-profile",
+      "category": "source_governance",
+      "question": "Should first-release Roman Catholic representation use the current Liturgy of the Hours / Divine Office as the first profile?",
+      "status": "open",
+      "blocks_beta": true,
+      "owner": "Marissa",
+      "recommended_default": "Yes. Use the current Roman Liturgy of the Hours / Divine Office ordinary form first; defer 1960 Breviary, Benedictine, and other Latin variants."
+    },
+    {
+      "id": "catholic-source-strategy",
+      "category": "source_governance",
+      "question": "What source/copyright strategy governs the Roman Catholic Divine Office baseline?",
+      "status": "open",
+      "blocks_beta": true,
+      "owner": "Marissa"
+    },
+    {
+      "id": "catholic-minimum-baseline",
+      "category": "release_governance",
+      "question": "What is the minimum Roman Catholic Divine Office baseline that counts as honest Beta Release representation?",
+      "status": "open",
+      "blocks_beta": true,
+      "owner": "Marissa + Lucy"
+    },
+    {
+      "id": "bcp-public-hardening",
+      "category": "release_governance",
+      "question": "What defects, if any, remain in the BCP-facing public beta path?",
+      "status": "open",
+      "blocks_beta": true,
+      "owner": "Lucy"
+    },
+    {
+      "id": "ethiopian-release-scope",
+      "category": "release_governance",
+      "question": "What exact Ethiopian Sa'atat depth is required to represent Oriental Orthodoxy honestly in Beta Release?",
+      "status": "open",
+      "blocks_beta": true,
+      "owner": "Marissa + Lucy"
+    },
+    {
+      "id": "hudra-release-scope",
+      "category": "release_governance",
+      "question": "What exact East Syriac Hudra depth is required to represent Church of the East honestly in Beta Release?",
+      "status": "open",
+      "blocks_beta": true,
+      "owner": "Marissa + Lucy"
+    },
+    {
+      "id": "byzantine-polyeleos",
+      "category": "source_governance",
+      "question": "What source-governed policy should control Polyeleos / rank selection and Psalms 134-135 corpus?",
+      "status": "deferred",
+      "blocks_beta": false,
+      "owner": "Marissa"
+    },
+    {
+      "id": "annual-typikon-collisions",
+      "category": "source_governance",
+      "question": "How should annual fixed/movable Typikon collisions be handled across EO old/new calendar modes?",
+      "status": "deferred",
+      "blocks_beta": false,
+      "owner": "Marissa"
+    },
+    {
+      "id": "phase-5-pressure-test",
+      "category": "architecture_governance",
+      "question": "When are the major office families sufficiently represented to begin typed-element/database migration pressure-testing?",
+      "status": "deferred",
+      "blocks_beta": false,
+      "blocks_v1": true,
+      "owner": "Lucy"
+    }
+  ],
+  "dashboard_views": [
+    {
+      "id": "release_identity_header",
+      "title": "Release Identity",
+      "data_source": "release_identity",
+      "purpose": "Show BCP-facing beta identity and required major-family representation."
+    },
+    {
+      "id": "major_family_matrix",
+      "title": "Major Tradition-Family Coverage Matrix",
+      "data_source": "major_tradition_families",
+      "purpose": "Show which required families are present, blocked, deferred, or ready."
+    },
+    {
+      "id": "beta_blocker_board",
+      "title": "Beta Blockers",
+      "data_source": "major_tradition_families + governance_questions + phase_plan",
+      "purpose": "Show blockers separately from honest deferred depth."
+    },
+    {
+      "id": "phase_tranche_board",
+      "title": "Phase and Tranche Roadmap",
+      "data_source": "phase_plan + tranche_plan",
+      "purpose": "Show efficient staged work plan."
+    },
+    {
+      "id": "governance_question_board",
+      "title": "Governance Questions",
+      "data_source": "governance_questions",
+      "purpose": "Show open, decided, deferred, beta-blocking, and v1-blocking decisions."
+    }
+  ],
+  "tranche_sizing_doctrine": {
+    "micro_tranche": {
+      "definition": "One dangerous targeted repair, usually one file or one narrow bug.",
+      "use_when": [
+        "Parser or syntax risk is high.",
+        "The change touches fragile engine logic.",
+        "A prior patch failed and must be corrected narrowly."
+      ]
+    },
+    "standard_tranche": {
+      "definition": "Default tranche size: 2-5 files, one coherent architectural purpose, complete QC.",
+      "use_when": [
+        "Normal implementation work.",
+        "Dashboard view additions.",
+        "One office-family feature or audit correction."
+      ]
+    },
+    "campaign_tranche": {
+      "definition": "3-8 files allowed when changes are coherent, low-risk, and structurally repetitive.",
+      "use_when": [
+        "Scaffolding a new mode.",
+        "Adding dashboard rendering from an already-defined schema.",
+        "Updating related documentation and roadmap state together."
+      ]
+    },
+    "forbidden_patterns": [
+      "One tiny patch at a time when changes are safely batchable.",
+      "Massive unbounded patches that cannot be reviewed manually.",
+      "Full-file rewrites of structure.json or other large JSON files unless explicitly authorized.",
+      "Claude-generated source-governance decisions.",
+      "Dashboard hard-coding that duplicates roadmap JSON content."
+    ]
+  },
+  "role_workflow": {
+    "lucy": {
+      "role": "Architecture, roadmap governance, tranche sizing, Claude prompt design, patch review, QC design, and release classification.",
+      "must_do": [
+        "Review roadmap after each phase.",
+        "Write or approve QC scripts.",
+        "Check whether Claude's patch size is safe.",
+        "Keep BCP-facing beta identity and major-family release model in view."
+      ]
+    },
+    "marissa": {
+      "role": "Source-governance and liturgical-data rulings.",
+      "must_do": [
+        "Settle source questions before implementation.",
+        "Classify appointed vs not-appointed vs deferred depth.",
+        "Identify what blocks beta versus what can be honestly deferred."
+      ],
+      "must_not_do": [
+        "Write implementation patches.",
+        "Act as code authority."
+      ]
+    },
+    "claude": {
+      "role": "Bounded patch generation after architecture and source-governance are settled.",
+      "must_do": [
+        "Use bounded anchors.",
+        "Return only requested patches.",
+        "Avoid narration.",
+        "Avoid full-file rewrites unless explicitly authorized."
+      ],
+      "must_not_do": [
+        "Decide source-governance questions.",
+        "Reformat structure.json.",
+        "Infer release architecture.",
+        "Produce unbounded giant patches."
+      ]
+    }
+  },
+  "phase_review_protocol": {
+    "required_after_each_phase": true,
+    "purpose": "Prevent stale-roadmap drift and reassess project topology after each completed phase.",
+    "questions": [
+      "Did this phase change the topology of the project?",
+      "Did we discover hidden release blockers?",
+      "Were any blockers reclassified as honest deferred depth?",
+      "Did any deferred item become beta-blocking?",
+      "Did Claude exceed safe patch complexity?",
+      "Did Marissa need narrower or better-sourced questions?",
+      "Did browser QC contradict static assumptions?",
+      "Did Lucy's roadmap remain accurate?",
+      "Should the next phase be split, merged, reordered, or paused?",
+      "Does the Admin Dashboard still visualize the true release state?"
+    ]
+  }
+}
