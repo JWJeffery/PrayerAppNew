@@ -351,7 +351,7 @@
       "id": "2.2",
       "phase_id": "phase_2",
       "title": "Fix BCP beta-visible defects",
-      "status": "in_progress",
+      "status": "done",
       "tranche_size": "standard",
       "files": [
         "js/office-ui.js",
