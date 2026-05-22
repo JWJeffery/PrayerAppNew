@@ -6,8 +6,8 @@
   "name": "Universal Office Beta Release Roadmap",
   "purpose": "Canonical machine-readable roadmap for Beta Release planning, phase sequencing, governance questions, tranche sizing, and Admin Dashboard visualization.",
   "current_repo_state": {
-    "latest_known_commit": "bcebc9c",
-    "latest_known_commit_message": "Add universal beta roadmap governance board",
+    "latest_known_commit": "e6885e5",
+    "latest_known_commit_message": "Fix BCP Compline component IDs",
     "structure_json_version": "3.8.73",
     "roadmap_source_of_truth": "project_roadmap.json",
     "structure_json_role": "Project manifest, implementation ledger, governance history, legacy admin todo source, and current state pointer.",
@@ -180,7 +180,7 @@
     {
       "id": "phase_2",
       "title": "BCP public-facing hardening",
-      "status": "in_progress",
+      "status": "done",
       "blocks_beta": true,
       "purpose": "Harden the Anglican / BCP Daily Office path because it is the public-facing center of Beta Release.",
       "exit_gate": "BCP Daily Office, Book of Needs, mode switching, BCP-only behavior, and public UI flow pass browser QC and human review."
@@ -371,7 +371,7 @@
       "id": "2.3",
       "phase_id": "phase_2",
       "title": "Book of Needs public-flow QC and polish",
-      "status": "not_started",
+      "status": "done",
       "tranche_size": "standard",
       "files": [
         "index.html",
