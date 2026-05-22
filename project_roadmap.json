@@ -6,8 +6,8 @@
   "name": "Universal Office Beta Release Roadmap",
   "purpose": "Canonical machine-readable roadmap for Beta Release planning, phase sequencing, governance questions, tranche sizing, and Admin Dashboard visualization.",
   "current_repo_state": {
-    "latest_known_commit": "3a59acf",
-    "latest_known_commit_message": "Add universal beta roadmap matrix and phase board",
+    "latest_known_commit": "bcebc9c",
+    "latest_known_commit_message": "Add universal beta roadmap governance board",
     "structure_json_version": "3.8.73",
     "roadmap_source_of_truth": "project_roadmap.json",
     "structure_json_role": "Project manifest, implementation ledger, governance history, legacy admin todo source, and current state pointer.",
@@ -172,7 +172,7 @@
     {
       "id": "phase_1",
       "title": "Admin Dashboard roadmap visualization",
-      "status": "in_progress",
+      "status": "done",
       "blocks_beta": true,
       "purpose": "Make the Admin Dashboard visualize the whole Universal Office beta roadmap instead of only the Byzantine release lane.",
       "exit_gate": "Admin Dashboard displays release identity, major-family coverage matrix, blockers, phase/tranche board, and governance-question queue from project_roadmap.json."
@@ -180,7 +180,7 @@
     {
       "id": "phase_2",
       "title": "BCP public-facing hardening",
-      "status": "not_started",
+      "status": "in_progress",
       "blocks_beta": true,
       "purpose": "Harden the Anglican / BCP Daily Office path because it is the public-facing center of Beta Release.",
       "exit_gate": "BCP Daily Office, Book of Needs, mode switching, BCP-only behavior, and public UI flow pass browser QC and human review."
@@ -309,7 +309,7 @@
       "id": "1.3",
       "phase_id": "phase_1",
       "title": "Render governance-question board",
-      "status": "in_progress",
+      "status": "done",
       "tranche_size": "standard",
       "files": [
         "admin/admin.html",
@@ -327,7 +327,7 @@
       "id": "2.1",
       "phase_id": "phase_2",
       "title": "BCP public-flow QC",
-      "status": "not_started",
+      "status": "done",
       "tranche_size": "standard",
       "files": [
         "project_roadmap.json",
@@ -351,7 +351,7 @@
       "id": "2.2",
       "phase_id": "phase_2",
       "title": "Fix BCP beta-visible defects",
-      "status": "not_started",
+      "status": "in_progress",
       "tranche_size": "standard",
       "files": [
         "js/office-ui.js",
