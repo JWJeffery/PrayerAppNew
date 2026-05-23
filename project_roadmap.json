@@ -85,11 +85,21 @@
       "family": "Roman Catholic",
       "first_release_lane": "Divine Office / Liturgy of the Hours",
       "public_beta_role": "Required major-family representation",
-      "current_status": "absent_or_not_yet_governed",
+      "current_status": "external_private_corpus_scaffolded_permission_pending",
       "beta_status": "release_blocker",
       "blocks_beta": true,
       "blocker_reason": "Roman Catholic Divine Office / Liturgy of the Hours baseline is required before Beta Release.",
       "source_governance_required": true,
+      "corpus_repo": "JWJeffery/LOTH",
+      "corpus_repo_visibility": "private",
+      "corpus_repo_note": "Restricted private corpus/governance repository for Roman Liturgy of the Hours. Contains source governance, permission registry, office structure, calendar scaffold, and synthetic fixtures. No official LOTH text present at scaffold date.",
+      "permission_inquiry": {
+        "contact": "DivineOffice.org / Surgeworks",
+        "date_sent": "2026-05-23",
+        "status": "pending"
+      },
+      "render_policy": "blocked_until_authorized",
+      "render_disabled_note": "Roman LOTH rendering in PrayerAppNew remains disabled until a permission record in JWJeffery/LOTH explicitly authorizes external display. No public UI path. No fetch from private repo.",
       "recommended_first_profile": "Current Roman Liturgy of the Hours / Divine Office ordinary form",
       "later_expansions": [
         "1960 Roman Breviary",
@@ -191,7 +201,8 @@
       "status": "not_started",
       "blocks_beta": true,
       "purpose": "Add required Roman Catholic Divine Office / Liturgy of the Hours first-release representation.",
-      "exit_gate": "Roman Catholic Divine Office lane exists, renders an honest ordinary baseline, and no longer blocks Beta Release."
+      "exit_gate": "Roman Catholic Divine Office lane exists, renders an honest ordinary baseline, and no longer blocks Beta Release.",
+      "governance_note": "External private corpus repository JWJeffery/LOTH scaffolded 2026-05-23. Permission inquiry sent to DivineOffice.org / Surgeworks 2026-05-23; status pending. Phase 3 implementation work remains gated on permission authorization in JWJeffery/LOTH before rendering is enabled."
     },
     {
       "id": "phase_4",
