@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0.0",
   "roadmap_version": "0.1.0",
-  "last_updated": "2026-05-20",
+  "last_updated": "2026-05-23",
   "status": "active",
   "name": "Universal Office Beta Release Roadmap",
   "purpose": "Canonical machine-readable roadmap for Beta Release planning, phase sequencing, governance questions, tranche sizing, and Admin Dashboard visualization.",
@@ -85,28 +85,41 @@
       "family": "Roman Catholic",
       "first_release_lane": "Divine Office / Liturgy of the Hours",
       "public_beta_role": "Required major-family representation",
-      "current_status": "external_private_corpus_scaffolded_permission_pending",
+      "current_status": "external_private_corpus_synthetic_resolver_verified_permission_pending",
       "beta_status": "release_blocker",
       "blocks_beta": true,
       "blocker_reason": "Roman Catholic Divine Office / Liturgy of the Hours baseline is required before Beta Release.",
       "source_governance_required": true,
       "corpus_repo": "JWJeffery/LOTH",
       "corpus_repo_visibility": "private",
-      "corpus_repo_note": "Restricted private corpus/governance repository for Roman Liturgy of the Hours. Contains source governance, permission registry, office structure, calendar scaffold, and synthetic fixtures. No official LOTH text present at scaffold date.",
+      "corpus_repo_note": "Restricted private corpus/governance repository for Roman Liturgy of the Hours. Contains source governance, permission registry, office structure, calendar scaffold, office-slot resolver map, calendar-office context map, source-unit target map, and a verified synthetic resolver. No official LOTH text is present or rendered.",
       "permission_inquiry": {
         "contact": "DivineOffice.org / Surgeworks",
         "date_sent": "2026-05-23",
         "status": "pending"
       },
       "render_policy": "blocked_until_authorized",
-      "render_disabled_note": "Roman LOTH rendering in PrayerAppNew remains disabled until a permission record in JWJeffery/LOTH explicitly authorizes external display. No public UI path. No fetch from private repo.",
+      "render_disabled_note": "Roman LOTH rendering in PrayerAppNew remains disabled until a permission record in JWJeffery/LOTH explicitly authorizes external display. The private LOTH repo now has a verified synthetic resolver, but no public UI path, no official text rendering, and no fetch from the private repo.",
       "recommended_first_profile": "Current Roman Liturgy of the Hours / Divine Office ordinary form",
       "later_expansions": [
         "1960 Roman Breviary",
         "Benedictine / monastic office profiles",
         "Traditional Latin variants",
         "Local calendars and sanctoral expansions"
-      ]
+      ],
+      "synthetic_resolver": {
+        "repo": "JWJeffery/LOTH",
+        "status": "verified",
+        "verified_date": "2026-05-23",
+        "verification_command": "npm run verify:synthetic",
+        "json_files_checked": 26,
+        "office_count": 9,
+        "smoke_test": "roman_loth_synthetic_all_offices_v1",
+        "emits_official_text": false,
+        "synthetic_only": true,
+        "render_policy": "blocked_until_authorized",
+        "notes": "All nine Roman LOTH office IDs resolve synthetically. Daytime aliases bind to the Daytime Prayer template. This proves architecture flow only; it does not authorize or enable public rendering."
+      }
     },
     {
       "id": "eastern_orthodox",
@@ -198,11 +211,11 @@
     {
       "id": "phase_3",
       "title": "Roman Catholic Divine Office baseline",
-      "status": "not_started",
+      "status": "architecture_scaffold_verified_permission_pending",
       "blocks_beta": true,
       "purpose": "Add required Roman Catholic Divine Office / Liturgy of the Hours first-release representation.",
       "exit_gate": "Roman Catholic Divine Office lane exists, renders an honest ordinary baseline, and no longer blocks Beta Release.",
-      "governance_note": "External private corpus repository JWJeffery/LOTH scaffolded 2026-05-23. Permission inquiry sent to DivineOffice.org / Surgeworks 2026-05-23; status pending. Phase 3 implementation work remains gated on permission authorization in JWJeffery/LOTH before rendering is enabled."
+      "governance_note": "External private corpus repository JWJeffery/LOTH scaffolded 2026-05-23. Permission inquiry sent to DivineOffice.org / Surgeworks 2026-05-23; status pending. As of 2026-05-23, LOTH/main validates 26 JSON files and npm run verify:synthetic passes: all nine Roman LOTH office IDs resolve through the synthetic resolver, including Daytime Prayer aliases, with emitsOfficialText=false and renderPolicy=blocked_until_authorized. Phase 3 public rendering remains gated on permission authorization before any official text display is enabled."
     },
     {
       "id": "phase_4",
@@ -402,7 +415,7 @@
       "id": "3.1",
       "phase_id": "phase_3",
       "title": "Roman Catholic Divine Office source-governance ruling",
-      "status": "not_started",
+      "status": "done",
       "tranche_size": "governance",
       "files": [
         "project_roadmap.json",
@@ -414,11 +427,13 @@
         "documentation/STATIC_OFFICES_DOCUMENTATION.md",
         "documentation/COMPONENTS_JSON_DOCUMENTATION.md"
       ],
-      "purpose": "Use Marissa to settle first-release Roman Catholic office profile, source strategy, minimum baseline, and what blocks beta.",
+      "purpose": "Source-governance and private-corpus architecture scaffold established for the current Roman Liturgy of the Hours / Divine Office ordinary form. Permission remains pending; public rendering remains blocked.",
       "qc": [
-        "Marissa ruling received",
-        "No code patch before source ruling",
-        "Ruling classifies required offices, source constraints, and deferrable depth"
+        "Private LOTH repo created and governed",
+        "Permission inquiry sent to DivineOffice.org / Surgeworks",
+        "No public rendering enabled",
+        "No official LOTH text imported into PrayerAppNew",
+        "Synthetic resolver verified in JWJeffery/LOTH with npm run verify:synthetic"
       ]
     },
     {
@@ -689,18 +704,20 @@
       "id": "catholic-first-profile",
       "category": "source_governance",
       "question": "Should first-release Roman Catholic representation use the current Liturgy of the Hours / Divine Office as the first profile?",
-      "status": "open",
+      "status": "answered",
       "blocks_beta": true,
       "owner": "Marissa",
-      "recommended_default": "Yes. Use the current Roman Liturgy of the Hours / Divine Office ordinary form first; defer 1960 Breviary, Benedictine, and other Latin variants."
+      "recommended_default": "Yes. Use the current Roman Liturgy of the Hours / Divine Office ordinary form first; defer 1960 Breviary, Benedictine, and other Latin variants.",
+      "resolution": "Use the current Roman Liturgy of the Hours / Divine Office ordinary form as the first Roman Catholic profile; defer 1960 Breviary, Benedictine, monastic, and other Latin variants."
     },
     {
       "id": "catholic-source-strategy",
       "category": "source_governance",
       "question": "What source/copyright strategy governs the Roman Catholic Divine Office baseline?",
-      "status": "open",
+      "status": "partially_answered_permission_pending",
       "blocks_beta": true,
-      "owner": "Marissa"
+      "owner": "Marissa",
+      "resolution": "Private JWJeffery/LOTH corpus/governance repo holds source identification, permission records, architecture maps, and synthetic resolver. External rendering remains blocked until permission is granted."
     },
     {
       "id": "catholic-minimum-baseline",
@@ -708,7 +725,8 @@
       "question": "What is the minimum Roman Catholic Divine Office baseline that counts as honest Beta Release representation?",
       "status": "open",
       "blocks_beta": true,
-      "owner": "Marissa + Lucy"
+      "owner": "Marissa + Lucy",
+      "notes": "Synthetic resolver proves office architecture, not a public baseline. Minimum baseline still requires permission-authorized text/rendering decision."
     },
     {
       "id": "bcp-public-hardening",
