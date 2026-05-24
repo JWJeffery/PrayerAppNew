@@ -92,14 +92,14 @@
       "source_governance_required": true,
       "corpus_repo": "JWJeffery/LOTH",
       "corpus_repo_visibility": "private",
-      "corpus_repo_note": "Restricted private corpus/governance repository for Roman Liturgy of the Hours. Contains source governance, permission registry, office structure, calendar scaffold, office-slot resolver map, calendar-office context map, source-unit target map, and a verified synthetic resolver. No official LOTH text is present or rendered.",
+      "corpus_repo_note": "Restricted private corpus/governance repository for Roman Liturgy of the Hours. Contains source governance, permission registry, office structure, calendar scaffold, office-slot resolver map, calendar-office context map, source-unit target map, and a verified synthetic resolver. Private restricted corpus build-out may proceed in JWJeffery/LOTH while permission is pending. Official LOTH text must not be exposed publicly, fetched by PrayerAppNew, or rendered externally until permission authorizes it.",
       "permission_inquiry": {
         "contact": "DivineOffice.org / Surgeworks",
         "date_sent": "2026-05-23",
         "status": "pending"
       },
       "render_policy": "blocked_until_authorized",
-      "render_disabled_note": "Roman LOTH rendering in PrayerAppNew remains disabled until a permission record in JWJeffery/LOTH explicitly authorizes external display. The private LOTH repo now has a verified synthetic resolver, but no public UI path, no official text rendering, and no fetch from the private repo.",
+      "render_disabled_note": "Roman LOTH public rendering in PrayerAppNew remains disabled until a permission record in JWJeffery/LOTH explicitly authorizes external display. Private restricted corpus development may continue in JWJeffery/LOTH while permission is pending. PrayerAppNew must not fetch from the private repo or expose official LOTH text publicly before authorization.",
       "recommended_first_profile": "Current Roman Liturgy of the Hours / Divine Office ordinary form",
       "later_expansions": [
         "1960 Roman Breviary",
@@ -118,7 +118,7 @@
         "emits_official_text": false,
         "synthetic_only": true,
         "render_policy": "blocked_until_authorized",
-        "notes": "All nine Roman LOTH office IDs resolve synthetically. Daytime aliases bind to the Daytime Prayer template. This proves architecture flow only; it does not authorize or enable public rendering."
+        "notes": "All nine Roman LOTH office IDs resolve synthetically. Daytime aliases bind to the Daytime Prayer template. This proves architecture flow only; it does not authorize or enable public rendering. It also does not prohibit private restricted corpus build-out in JWJeffery/LOTH while permission is pending."
       }
     },
     {
@@ -215,7 +215,7 @@
       "blocks_beta": true,
       "purpose": "Add required Roman Catholic Divine Office / Liturgy of the Hours first-release representation.",
       "exit_gate": "Roman Catholic Divine Office lane exists, renders an honest ordinary baseline, and no longer blocks Beta Release.",
-      "governance_note": "External private corpus repository JWJeffery/LOTH scaffolded 2026-05-23. Permission inquiry sent to DivineOffice.org / Surgeworks 2026-05-23; status pending. As of 2026-05-23, LOTH/main validates 26 JSON files and npm run verify:synthetic passes: all nine Roman LOTH office IDs resolve through the synthetic resolver, including Daytime Prayer aliases, with emitsOfficialText=false and renderPolicy=blocked_until_authorized. Phase 3 public rendering remains gated on permission authorization before any official text display is enabled."
+      "governance_note": "External private corpus repository JWJeffery/LOTH scaffolded 2026-05-23. Permission inquiry sent to DivineOffice.org / Surgeworks 2026-05-23; status pending. As of 2026-05-23, LOTH/main validates 26 JSON files and npm run verify:synthetic passes: all nine Roman LOTH office IDs resolve through the synthetic resolver, including Daytime Prayer aliases, with emitsOfficialText=false and renderPolicy=blocked_until_authorized. Phase 3 may continue building the private restricted LOTH corpus and internal resolver architecture while permission is pending. Public app rendering, external display, and PrayerAppNew-side private-repo fetch remain blocked until permission authorization is recorded."
     },
     {
       "id": "phase_4",
@@ -427,12 +427,14 @@
         "documentation/STATIC_OFFICES_DOCUMENTATION.md",
         "documentation/COMPONENTS_JSON_DOCUMENTATION.md"
       ],
-      "purpose": "Source-governance and private-corpus architecture scaffold established for the current Roman Liturgy of the Hours / Divine Office ordinary form. Permission remains pending; public rendering remains blocked.",
+      "purpose": "Source-governance and private-corpus architecture scaffold established for the current Roman Liturgy of the Hours / Divine Office ordinary form. Permission remains pending; public rendering remains blocked. Private restricted corpus build-out may continue in JWJeffery/LOTH while awaiting permission.",
       "qc": [
         "Private LOTH repo created and governed",
         "Permission inquiry sent to DivineOffice.org / Surgeworks",
-        "No public rendering enabled",
-        "No official LOTH text imported into PrayerAppNew",
+        "Public rendering remains disabled",
+        "PrayerAppNew does not fetch from the private repo",
+        "Official LOTH text is not exposed publicly",
+        "Private restricted corpus build-out may continue in JWJeffery/LOTH while permission is pending",
         "Synthetic resolver verified in JWJeffery/LOTH with npm run verify:synthetic"
       ]
     },
@@ -717,7 +719,7 @@
       "status": "partially_answered_permission_pending",
       "blocks_beta": true,
       "owner": "Marissa",
-      "resolution": "Private JWJeffery/LOTH corpus/governance repo holds source identification, permission records, architecture maps, and synthetic resolver. External rendering remains blocked until permission is granted."
+      "resolution": "Private JWJeffery/LOTH corpus/governance repo holds source identification, permission records, architecture maps, and synthetic resolver. Private restricted corpus build-out may continue while permission is pending. Public rendering and external display remain blocked until permission is granted."
     },
     {
       "id": "catholic-minimum-baseline",
