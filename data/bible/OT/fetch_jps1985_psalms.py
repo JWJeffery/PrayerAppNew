@@ -101,6 +101,19 @@ def verify_reference_only(data):
         )
 
 
+def validate_formatted_psalm(psalm_id, formatted):
+    lines = [line.strip() for line in formatted.splitlines() if line.strip()]
+    if not lines:
+        raise SystemExit(f"BLOCKED: {psalm_id} produced no verse lines")
+
+    psalm_num = psalm_id.split()[1]
+    if not all(line.startswith(f"{psalm_num}:") for line in lines):
+        raise SystemExit(f"BLOCKED: {psalm_id} has a malformed verse prefix")
+
+    if len(formatted) < 20:
+        raise SystemExit(f"BLOCKED: {psalm_id} output is implausibly short")
+
+
 def main():
     data = json.loads(PSALMS_PATH.read_text(encoding="utf-8"))
     verify_reference_only(data)
@@ -115,9 +128,7 @@ def main():
 
         fetched = api_get(f"Psalms.{n}", SOURCE_VERSION_TITLE)
         formatted = format_verses(n, fetched.get("text"))
-
-        if "..." in formatted or "…" in formatted:
-            raise SystemExit(f"BLOCKED: {psalm_id} contains ellipsis/incomplete marker")
+        validate_formatted_psalm(psalm_id, formatted)
 
         item.setdefault("text", {})
         item["text"]["JPS1985"] = formatted
