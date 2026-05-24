@@ -27,13 +27,47 @@ def api_get(ref, version_title):
         return json.load(response)
 
 
-def strip_html(value):
-    value = re.sub(r"<[^>]+>", "", str(value))
-    return unescape(value)
+def clean_source_html(value):
+    """Remove Sefaria footnote/appartus markup while preserving verse text.
+
+    Sefaria exports this JPS source with inline HTML footnote markers and note
+    bodies. A plain tag strip leaves artifacts such as `aOr...` in the verse.
+    This function removes note bodies/markers first, then turns layout tags into
+    spaces before collapsing whitespace.
+    """
+    value = str(value)
+
+    # Remove common Sefaria note/footnote bodies before stripping tags.
+    value = re.sub(
+        r"<(i|span)[^>]*(footnote|foot-note|inline-footnote|note|refLink|commentary|tooltip)[^>]*>.*?</\1>",
+        " ",
+        value,
+        flags=re.IGNORECASE | re.DOTALL,
+    )
+
+    # Remove standalone superscript footnote markers.
+    value = re.sub(r"<sup[^>]*>.*?</sup>", " ", value, flags=re.IGNORECASE | re.DOTALL)
+
+    # Treat structural/layout tags as word boundaries.
+    value = re.sub(r"<\s*(br|p|div|span)[^>]*>", " ", value, flags=re.IGNORECASE)
+    value = re.sub(r"<\s*/\s*(p|div|span)[^>]*>", " ", value, flags=re.IGNORECASE)
+
+    # Strip any remaining tags and decode entities.
+    value = re.sub(r"<[^>]+>", " ", value)
+    value = unescape(value)
+
+    # Normalize whitespace and punctuation spacing.
+    value = re.sub(r"\s+", " ", value).strip()
+    value = re.sub(r"\s+([,.;:!?])", r"\1", value)
+    value = re.sub(r"([,;!?])(?=\S)", r"\1 ", value)
+    value = re.sub(r"(?<!\d):(?!\s|\d)", ": ", value)
+    value = re.sub(r"\s+", " ", value).strip()
+
+    return value
 
 
 def normalize_for_match(value):
-    value = strip_html(value)
+    value = clean_source_html(value)
     value = re.sub(r"\b\d+\s*:\s*\d+\b", " ", value)
     value = re.sub(r"[^A-Za-z0-9]+", " ", value)
     value = re.sub(r"\s+", " ", value).strip().lower()
@@ -46,7 +80,7 @@ def format_verses(psalm_num, api_text):
 
     lines = []
     for verse_num, verse in enumerate(api_text, start=1):
-        verse = strip_html(verse).strip()
+        verse = clean_source_html(verse)
         if not verse:
             continue
         verse = re.sub(rf"^{psalm_num}\s*:\s*{verse_num}\s*", "", verse).strip()
@@ -68,10 +102,10 @@ def find_psalm(data, psalm_id):
 def verify_reference_only(data):
     """Verify the selected source against one known-good local sample.
 
-    The existing JPS1985 lane is known to be mixed after Psalm 120, so later local
-    samples must not veto the overwrite. This guard only confirms that the fixed
-    Sefaria version agrees with the early modern-JPS local material before the
-    script rewrites Psalms 1-150 from one consistent source.
+    The existing JPS1985 lane was previously mixed after Psalm 120, so later
+    local samples must not veto the overwrite. This guard only confirms that the
+    fixed Sefaria version agrees with the early modern-JPS local material before
+    the script rewrites Psalms 1-150 from one consistent source.
     """
     print(f"Using Sefaria source version: {SOURCE_VERSION_TITLE!r}")
 
@@ -112,6 +146,16 @@ def validate_formatted_psalm(psalm_id, formatted):
 
     if len(formatted) < 20:
         raise SystemExit(f"BLOCKED: {psalm_id} output is implausibly short")
+
+    forbidden_patterns = [
+        r"\b[a-z]Or\b",
+        r"\b[a-z]Others\b",
+        r"\b[a-z]Meaning of Heb\.",
+        r"\blit\.\b",
+    ]
+    for pattern in forbidden_patterns:
+        if re.search(pattern, formatted):
+            raise SystemExit(f"BLOCKED: {psalm_id} still appears to contain inline apparatus: {pattern}")
 
 
 def main():
