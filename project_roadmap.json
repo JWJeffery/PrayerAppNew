@@ -1,12 +1,12 @@
 {
   "schema_version": "1.0.0",
   "roadmap_version": "0.1.0",
-  "last_updated": "2026-05-23",
+  "last_updated": "2026-05-25",
   "status": "active",
   "name": "Universal Office Beta Release Roadmap",
   "purpose": "Canonical machine-readable roadmap for Beta Release planning, phase sequencing, governance questions, tranche sizing, and Admin Dashboard visualization.",
   "current_repo_state": {
-    "latest_known_commit": "e6885e5",
+    "latest_known_commit": "584c3ee",
     "latest_known_commit_message": "Fix BCP Compline component IDs",
     "structure_json_version": "3.8.73",
     "roadmap_source_of_truth": "project_roadmap.json",
@@ -439,6 +439,26 @@
       ]
     },
     {
+      "id": "3.1b",
+      "phase_id": "phase_3",
+      "title": "Roman LOTH composition-map and source-navigation governance",
+      "status": "done",
+      "tranche_size": "governance",
+      "files": [
+        "project_roadmap.json",
+        "structure.json",
+        "documentation/ROMAN_LOTH_COMPOSITION_MAP_SOURCE_NAVIGATION.md"
+      ],
+      "purpose": "Wire the accepted composition-map/source-navigation governance decision into the canonical project control files. Records: composition map accepted as core liturgical-assembly disclosure model; ribbon placement accepted as source-navigation metadata; current LOTH remains internal/restricted architecture-prototype track; future public-domain Roman-family corpus track follows internal LOTH stabilization; Roman office engine must remain source-edition-aware and not hardwired to current licensed LOTH text.",
+      "qc": [
+        "JSON parse on project_roadmap.json",
+        "JSON parse on structure.json",
+        "documentation/ROMAN_LOTH_COMPOSITION_MAP_SOURCE_NAVIGATION.md present in repo",
+        "No runtime JS, CSS, HTML, or corpus file modified",
+        "No implementation tasks added"
+      ]
+    },
+    {
       "id": "3.2",
       "phase_id": "phase_3",
       "title": "Catholic office data schema scaffold",
@@ -778,6 +798,17 @@
       "blocks_beta": false,
       "blocks_v1": true,
       "owner": "Lucy"
+    },
+    {
+      "id": "roman-loth-composition-map-source-navigation",
+      "category": "source_governance",
+      "question": "How should the Roman office engine disclose liturgical composition, handle printed-source navigation, and remain source-edition-agnostic across current restricted and future public-domain corpus tracks?",
+      "status": "answered",
+      "blocks_beta": false,
+      "owner": "Marissa",
+      "date": "2026-05-25",
+      "documentation": "documentation/ROMAN_LOTH_COMPOSITION_MAP_SOURCE_NAVIGATION.md",
+      "resolution": "Composition map accepted as a core liturgical-assembly disclosure model. Ribbon placement accepted as source-navigation metadata and physical-book expression of liturgical composition. Current LOTH implementation remains an internal/restricted architecture-prototype track. After internal LOTH stabilization, a future public-domain Roman-family corpus track will reuse the Roman office engine and composition-map architecture. Roman office engine must remain source-edition-aware — distinguishing office-family architecture, source edition, calendar/rubrical regime, textual corpus, navigation affordances, source status, and public/restricted release status — and must not be hardwired to current licensed LOTH text."
     }
   ],
   "dashboard_views": [
