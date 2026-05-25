@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0.0",
-  "roadmap_version": "0.1.0",
+  "roadmap_version": "0.1.1",
   "last_updated": "2026-05-25",
   "status": "active",
   "name": "Universal Office Beta Release Roadmap",
@@ -8,7 +8,7 @@
   "current_repo_state": {
     "latest_known_commit": "584c3ee",
     "latest_known_commit_message": "Fix BCP Compline component IDs",
-    "structure_json_version": "3.8.73",
+    "structure_json_version": "3.8.77",
     "roadmap_source_of_truth": "project_roadmap.json",
     "structure_json_role": "Project manifest, implementation ledger, governance history, legacy admin todo source, and current state pointer.",
     "roadmap_role": "Canonical release architecture and phase/tranche planning source for Admin Dashboard roadmap visualization."
@@ -31,8 +31,15 @@
       "Russian / Slavic Byzantine Horologion is the first Eastern Orthodox recension.",
       "Ethiopian / Tewahedo Sa'atat is the first Oriental Orthodox lane.",
       "East Syriac Hudra is the first Church of the East lane.",
-      "Other traditions, jurisdictions, and profiles are later expansions, not first-release requirements."
-    ]
+      "Other traditions, jurisdictions, and profiles are later expansions, not first-release requirements.",
+      "Mobile onboarding must not present the traditions as a smorgasbord of liturgical options.",
+      "Anglicanism is the default grammar and fallback, but the first-use experience must not be Anglican-anxious or denominationally defensive.",
+      "Eastern Christian routing must not make Byzantine Christianity normative; Church of the East, Oriental Orthodox, and Eastern Orthodox should be listed in chronological order of differentiation.",
+      "Tradition-expansion notification is pastoral service, not marketing."
+    ],
+    "mobile_product_thesis": "A design-forward digital breviary that opens like a chapel: Anglican in grammar, catholic and orthodox in inheritance, beautiful because the prayer itself is beautiful.",
+    "accepted_welcome_copy": "The Church's daily prayer, appointed for the hour. Begin where you pray, and let the office lead you.",
+    "anglican_default_posture": "Anglican-first by default grammar and fallback, not Anglican-forward as a self-conscious public posture. The app receives the user, routes them to their tradition, and explains the Anglican center only when needed."
   },
   "release_doctrine": {
     "beta_blocker_definition": "A defect, absence, or governance gap that prevents honest first public release under the required major-family representation model.",
@@ -61,7 +68,74 @@
       "Do not treat East Syriac Hudra as missing.",
       "Do not call the Universal Office release-ready while Roman Catholic Divine Office representation is absent.",
       "Do not claim Phase 5 typed architecture is complete until it is pressure-tested against Anglican, Roman Catholic, Byzantine, East Syriac, Ethiopian, and any distinct Coptic Agpeya lane pursued before that milestone."
-    ]
+    ],
+    "mobile_onboarding_doctrine": {
+      "welcome_copy": "The Church's daily prayer, appointed for the hour. Begin where you pray, and let the office lead you.",
+      "first_question": "Where do you pray?",
+      "first_branch": [
+        "Western Christian",
+        "Eastern Christian",
+        "I'm not sure"
+      ],
+      "western_branch": {
+        "prompt": "Select your tradition.",
+        "current": [
+          "Anglican",
+          "Latin Catholic"
+        ],
+        "later": [
+          "Lutheran",
+          "Methodist"
+        ],
+        "current_routes": {
+          "Anglican": "TEC 1979 BCP Daily Office",
+          "Latin Catholic": "Liturgy of the Hours / Roman office baseline, subject to source-governance and public rendering authorization"
+        }
+      },
+      "eastern_branch": {
+        "prompt": "Select your tradition.",
+        "order": [
+          "Church of the East",
+          "Oriental Orthodox",
+          "Eastern Orthodox"
+        ],
+        "order_note": "Listed in chronological order of differentiation so Byzantine/Eastern Orthodox does not become the implicit norm for all Eastern Christianity.",
+        "current_routes": {
+          "Church of the East": "East Syriac Hudra",
+          "Oriental Orthodox": "Ethiopian / Tewahedo Sa'atat",
+          "Eastern Orthodox": "Russian / Slavic Byzantine Horologion"
+        }
+      },
+      "unsure_branch": {
+        "route": "Anglican Daily Office",
+        "copy_rule": "Explain the Anglican default only after the user selects I'm not sure; do not surface this as a standing note on the main routing screen."
+      },
+      "branching_rule": "Once the user is in a primary tradition, offer further branching from there only when multiple governed forms exist."
+    },
+    "mobile_visual_design_doctrine": {
+      "core_metaphor": "A digital breviary that opens like a chapel.",
+      "register": [
+        "vigil-dark",
+        "text-first",
+        "rubrically precise",
+        "quietly illuminated",
+        "immersive but disciplined"
+      ],
+      "anti_slop_rule": "Every visible design decision should arise from liturgical function, theological meaning, ecclesial beauty, or the office's own order, not from generic sacred vibes.",
+      "beauty_rule": "Beauty is not ornament; it is prayer made visible. The app should evoke incense, monastery, cathedral, and Easter Vigil beauty while avoiding cartoon high-church overload and AI sacred luxury.",
+      "tradition_register_rule": "Tradition-specific aesthetics may subtly modify atmosphere, accent, typography, ornamental grammar, and terminology when rooted in that tradition's own prayer, book culture, calendar, or ecclesial memory. They must not become costume skins."
+    },
+    "coverage_notice_doctrine": {
+      "rule": "When a selected tradition-family has only partial current coverage, show a calm threshold information screen before routing to the available governed form.",
+      "phrase": "This release begins with...",
+      "oriental_orthodox_notice": "This release currently begins with the Ethiopian tradition. The liturgies of the other Oriental Orthodox churches, including Coptic, Armenian, West Syriac / Malankara, and Eritrean traditions, will be included in future updates of The Universal Office.",
+      "eastern_orthodox_notice": "This release currently begins with the Byzantine Horologion, with English-language coverage slanted toward Slavic usage. Future updates will broaden jurisdictional and local-use support, including Greek, Antiochian, OCA, ROCOR, and other received Orthodox usages where source-governed material is available.",
+      "notification_signup": {
+        "allowed": true,
+        "primary_label": "Notify me when this tradition expands",
+        "rule": "The signup must be opt-in, visually secondary, scoped to the selected tradition-family, and framed as service rather than marketing."
+      }
+    }
   },
   "major_tradition_families": [
     {
@@ -77,8 +151,10 @@
         "Additional Anglican office books",
         "Local calendars",
         "Anglo-Catholic and monastic profiles",
-        "Expanded pastoral/devotional integrations"
-      ]
+        "Expanded pastoral/devotional integrations",
+        "ACNA 2019 Book of Common Prayer"
+      ],
+      "current_default_recension": "TEC 1979 Book of Common Prayer"
     },
     {
       "id": "roman_catholic",
@@ -119,7 +195,8 @@
         "synthetic_only": true,
         "render_policy": "blocked_until_authorized",
         "notes": "All nine Roman LOTH office IDs resolve synthetically. Daytime aliases bind to the Daytime Prayer template. This proves architecture flow only; it does not authorize or enable public rendering. It also does not prohibit private restricted corpus build-out in JWJeffery/LOTH while permission is pending."
-      }
+      },
+      "ui_label": "Latin Catholic"
     },
     {
       "id": "eastern_orthodox",
@@ -143,8 +220,11 @@
         "Antiochian profile",
         "Old Calendar / New Calendar profile refinement",
         "Full seasonal and festal depth",
-        "Broader Menaion and Typikon collision handling"
-      ]
+        "Broader Menaion and Typikon collision handling",
+        "OCA usage support",
+        "ROCOR usage support"
+      ],
+      "mobile_coverage_notice": "This release currently begins with the Byzantine Horologion, with English-language coverage slanted toward Slavic usage. Future updates will broaden jurisdictional and local-use support, including Greek, Antiochian, OCA, ROCOR, and other received Orthodox usages where source-governed material is available."
     },
     {
       "id": "oriental_orthodox",
@@ -163,8 +243,11 @@
         "Coptic Agpeya",
         "Armenian office traditions",
         "Syriac Orthodox office traditions",
-        "Additional Oriental Orthodox calendars and synaxaria"
-      ]
+        "Additional Oriental Orthodox calendars and synaxaria",
+        "West Syriac / Malankara office traditions",
+        "Eritrean office traditions"
+      ],
+      "mobile_coverage_notice": "This release currently begins with the Ethiopian tradition. The liturgies of the other Oriental Orthodox churches, including Coptic, Armenian, West Syriac / Malankara, and Eritrean traditions, will be included in future updates of The Universal Office."
     },
     {
       "id": "church_of_the_east",
@@ -180,7 +263,8 @@
         "Deeper Hudra seasonal material",
         "Expanded sanctoral handling",
         "Additional East Syriac profile refinement"
-      ]
+      ],
+      "mobile_routing_order_note": "Listed before Oriental Orthodox and Eastern Orthodox in the Eastern Christian branch to avoid Byzantine normativity and preserve chronological differentiation."
     }
   ],
   "phase_plan": [
@@ -718,6 +802,24 @@
         "Deferred depth ledger explicit",
         "README, dashboard, and roadmap agree",
         "Release tag only after clean pass"
+      ]
+    },
+    {
+      "id": "7.0",
+      "phase_id": "phase_7",
+      "title": "Mobile product design and onboarding doctrine",
+      "status": "done",
+      "tranche_size": "governance",
+      "files": [
+        "structure.json",
+        "project_roadmap.json"
+      ],
+      "purpose": "Record accepted mobile packaging doctrine: design-forward but not Anglican-forward; Anglican default without anxiety; received-tradition onboarding; East/West routing; chronological Eastern branch order; subtle tradition-specific visual registers; coverage honesty screens; and scoped tradition-expansion notification.",
+      "qc": [
+        "JSON parse on structure.json",
+        "JSON parse on project_roadmap.json",
+        "No runtime JS, CSS, HTML, or corpus file modified",
+        "No mobile UI implementation started"
       ]
     }
   ],
