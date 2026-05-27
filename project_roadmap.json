@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0.0",
-  "roadmap_version": "0.1.1",
-  "last_updated": "2026-05-25",
+  "roadmap_version": "0.1.2",
+  "last_updated": "2026-05-27",
   "status": "active",
   "name": "Universal Office Beta Release Roadmap",
   "purpose": "Canonical machine-readable roadmap for Beta Release planning, phase sequencing, governance questions, tranche sizing, and Admin Dashboard visualization.",
@@ -911,6 +911,17 @@
       "date": "2026-05-25",
       "documentation": "documentation/ROMAN_LOTH_COMPOSITION_MAP_SOURCE_NAVIGATION.md",
       "resolution": "Composition map accepted as a core liturgical-assembly disclosure model. Ribbon placement accepted as source-navigation metadata and physical-book expression of liturgical composition. Current LOTH implementation remains an internal/restricted architecture-prototype track. After internal LOTH stabilization, a future public-domain Roman-family corpus track will reuse the Roman office engine and composition-map architecture. Roman office engine must remain source-edition-aware — distinguishing office-family architecture, source edition, calendar/rubrical regime, textual corpus, navigation affordances, source status, and public/restricted release status — and must not be hardwired to current licensed LOTH text."
+    },
+    {
+      "id": "universal-source-rights-ledger",
+      "category": "source_governance",
+      "question": "After the Roman Office build lane stabilizes, should Universal Office add a cross-corpus source-rights posture ledger covering all major office families?",
+      "status": "deferred",
+      "blocks_beta": false,
+      "blocks_current_roman_office_build": false,
+      "owner": "Lucy + Marissa",
+      "defer_until": "After active Roman LOTH baseline build work is no longer the immediate Phase 3 bottleneck.",
+      "notes": "Roman LOTH requires unusually strict permission gating because it is a modern restricted corpus. That standard should eventually inform a wider source-rights posture ledger, but app-wide rights management must not interrupt the current Roman Office build lane. Future work should classify source posture across corpus families without treating every tradition as if it has the same legal/permission problem."
     }
   ],
   "dashboard_views": [
