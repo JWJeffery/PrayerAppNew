@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0.0",
-  "roadmap_version": "0.1.8",
+  "roadmap_version": "0.1.9",
   "last_updated": "2026-05-27",
   "status": "active",
   "name": "Universal Office Beta Release Roadmap",
@@ -315,7 +315,7 @@
       "blocks_beta": true,
       "purpose": "Build the current Roman LOTH / Divine Office first as a private restricted control corpus in JWJeffery/LOTH, then use that corpus as the guide for a public Roman-family derivative lane built from authorized, public-domain, or source-cleared materials.",
       "exit_gate": "Private current LOTH control corpus has enough office coverage and source-class governance to guide a public Roman-family derivative; public beta blocker is cleared only when an honest public-renderable Roman Catholic office baseline exists or permission authorizes the current LOTH lane.",
-      "governance_note": "Private-current-LOTH-first/public-LOTH-second strategy accepted 2026-05-27. JWJeffery/LOTH is the active Roman LOTH control-corpus repository. Night Prayer weekly-cycle population is closed for the current build scope. Grail 1963 psalter corpus lives under resources/psalter/grail-1963/psalms.json; psalm-numbering registry resolves Hebrew/Masoretic and Septuagint/Vulgate numbering; source supplement policy governs Universalis divergence by content class. Universalis remains useful for structure/calendar/source discovery but is not approved for automatic population. Office of Readings source-unit/materialization planning closed in LOTH commit c73bc1d. Next private office target: bounded Office of Readings pilot ingestion, chosen for the user's devotional priority and for its strong pressure-test value across psalmody, biblical readings, patristic/hagiographic second readings, responsories, Te Deum, and collects. Office of Readings pilot-ingestion audit closed in LOTH commits 3734157 and 592cce7 after anchor repair; next private Roman LOTH target is ordinary-week Office of Readings expansion. Office of Readings ordinary-week expansion planning closed in LOTH commit c02c74b; next LOTH work is population of the selected ordinary-week set. Office of Readings ordinary-week population closed in LOTH commit e80f945; next work moves to the next Roman LOTH core-office expansion target. Morning Prayer source-unit/materialization planning closed in LOTH commit a4ee4ce; next LOTH work is the planned 2026-06-16 Morning Prayer pilot population."
+      "governance_note": "Private-current-LOTH-first/public-LOTH-second strategy accepted 2026-05-27. JWJeffery/LOTH is the active Roman LOTH control-corpus repository. Night Prayer weekly-cycle population is closed for the current build scope. Grail 1963 psalter corpus lives under resources/psalter/grail-1963/psalms.json; psalm-numbering registry resolves Hebrew/Masoretic and Septuagint/Vulgate numbering; source supplement policy governs Universalis divergence by content class. Universalis remains useful for structure/calendar/source discovery but is not approved for automatic population. Office of Readings source-unit/materialization planning closed in LOTH commit c73bc1d. Next private office target: bounded Office of Readings pilot ingestion, chosen for the user's devotional priority and for its strong pressure-test value across psalmody, biblical readings, patristic/hagiographic second readings, responsories, Te Deum, and collects. Office of Readings pilot-ingestion audit closed in LOTH commits 3734157 and 592cce7 after anchor repair; next private Roman LOTH target is ordinary-week Office of Readings expansion. Office of Readings ordinary-week expansion planning closed in LOTH commit c02c74b; next LOTH work is population of the selected ordinary-week set. Office of Readings ordinary-week population closed in LOTH commit e80f945; next work moves to the next Roman LOTH core-office expansion target. Morning Prayer source-unit/materialization planning closed in LOTH commit a4ee4ce; next LOTH work is the planned 2026-06-16 Morning Prayer pilot population. Roadmap correction 2026-05-27: Morning Prayer source planning remains future-ready, but active build work returns to Office of Readings continuation before moving deeper into other core offices."
     },
     {
       "id": "phase_4",
@@ -690,12 +690,14 @@
         "npm run verify:corpus",
         "npm run smoke:synthetic"
       ],
-      "notes": "Morning Prayer source plan is closed. Next subtarget is the planned 2026-06-16 Morning Prayer pilot population, with URL preflight first.",
-      "active_subtarget": "morning_prayer_pilot_population",
+      "notes": "Morning Prayer source plan is closed and parked for later use. Active work returns to Office of Readings continuation until that office has a larger usable ordinary-cycle baseline.",
+      "active_subtarget": "office_of_readings_continuation",
       "completed_source_plan_commit": "a4ee4ce",
       "evidence": [
-        "a4ee4ce Add Morning Prayer source plan"
-      ]
+        "a4ee4ce Add Morning Prayer source plan",
+        "2026-05-27 roadmap correction: Office of Readings continuation remains active after Morning Prayer planning"
+      ],
+      "next_subtarget": "office_of_readings_next_ordinary_week_or_psalter_cycle_expansion"
     },
     {
       "id": "3.7",
