@@ -1,19 +1,19 @@
 {
   "schema_version": "1.0.0",
-  "roadmap_version": "0.1.4",
+  "roadmap_version": "0.1.5",
   "last_updated": "2026-05-27",
   "status": "active",
   "name": "Universal Office Beta Release Roadmap",
   "purpose": "Canonical machine-readable roadmap for Beta Release planning, phase sequencing, governance questions, tranche sizing, and Admin Dashboard visualization.",
   "current_repo_state": {
-    "latest_known_commit": "5e8706d",
-    "latest_known_commit_message": "Record private LOTH control corpus roadmap",
-    "structure_json_version": "3.8.114",
+    "latest_known_commit": "d4d5709",
+    "latest_known_commit_message": "Record Office of Readings source plan",
+    "structure_json_version": "3.8.115",
     "roadmap_source_of_truth": "project_roadmap.json",
     "structure_json_role": "Project manifest, implementation ledger, governance history, legacy admin todo source, and current state pointer.",
     "roadmap_role": "Canonical release architecture and phase/tranche planning source for Admin Dashboard roadmap visualization.",
-    "latest_known_loth_commit": "c73bc1d",
-    "latest_known_loth_commit_message": "Add Office of Readings source plan",
+    "latest_known_loth_commit": "592cce7",
+    "latest_known_loth_commit_message": "Fix Office of Readings pilot audit anchors",
     "roman_loth_control_corpus_repo": "JWJeffery/LOTH"
   },
   "release_identity": {
@@ -209,9 +209,9 @@
           "grail_1963_psalter": "resources/psalter/grail-1963/psalms.json",
           "universalis": "structure_calendar_source_discovery_comparator_not_automatic_population_source",
           "source_supplement_policy": "registry/roman-loth-source-supplement-policy.json",
-          "office_of_readings": "source_unit_and_materialization_plan_closed_next_pilot_ingestion"
+          "office_of_readings": "pilot_ingestion_audit_closed_for_2026_05_26_memorial_philip_neri"
         },
-        "next_private_office_target": "office_of_readings_pilot_ingestion"
+        "next_private_office_target": "office_of_readings_ordinary_week_expansion"
       }
     },
     {
@@ -315,7 +315,7 @@
       "blocks_beta": true,
       "purpose": "Build the current Roman LOTH / Divine Office first as a private restricted control corpus in JWJeffery/LOTH, then use that corpus as the guide for a public Roman-family derivative lane built from authorized, public-domain, or source-cleared materials.",
       "exit_gate": "Private current LOTH control corpus has enough office coverage and source-class governance to guide a public Roman-family derivative; public beta blocker is cleared only when an honest public-renderable Roman Catholic office baseline exists or permission authorizes the current LOTH lane.",
-      "governance_note": "Private-current-LOTH-first/public-LOTH-second strategy accepted 2026-05-27. JWJeffery/LOTH is the active Roman LOTH control-corpus repository. Night Prayer weekly-cycle population is closed for the current build scope. Grail 1963 psalter corpus lives under resources/psalter/grail-1963/psalms.json; psalm-numbering registry resolves Hebrew/Masoretic and Septuagint/Vulgate numbering; source supplement policy governs Universalis divergence by content class. Universalis remains useful for structure/calendar/source discovery but is not approved for automatic population. Office of Readings source-unit/materialization planning closed in LOTH commit c73bc1d. Next private office target: bounded Office of Readings pilot ingestion, chosen for the user's devotional priority and for its strong pressure-test value across psalmody, biblical readings, patristic/hagiographic second readings, responsories, Te Deum, and collects."
+      "governance_note": "Private-current-LOTH-first/public-LOTH-second strategy accepted 2026-05-27. JWJeffery/LOTH is the active Roman LOTH control-corpus repository. Night Prayer weekly-cycle population is closed for the current build scope. Grail 1963 psalter corpus lives under resources/psalter/grail-1963/psalms.json; psalm-numbering registry resolves Hebrew/Masoretic and Septuagint/Vulgate numbering; source supplement policy governs Universalis divergence by content class. Universalis remains useful for structure/calendar/source discovery but is not approved for automatic population. Office of Readings source-unit/materialization planning closed in LOTH commit c73bc1d. Next private office target: bounded Office of Readings pilot ingestion, chosen for the user's devotional priority and for its strong pressure-test value across psalmody, biblical readings, patristic/hagiographic second readings, responsories, Te Deum, and collects. Office of Readings pilot-ingestion audit closed in LOTH commits 3734157 and 592cce7 after anchor repair; next private Roman LOTH target is ordinary-week Office of Readings expansion."
     },
     {
       "id": "phase_4",
@@ -611,7 +611,7 @@
       "id": "3.4",
       "phase_id": "phase_3",
       "title": "Office of Readings pilot ingestion",
-      "status": "next",
+      "status": "done",
       "tranche_size": "standard",
       "repository": "JWJeffery/LOTH",
       "files": [
@@ -623,19 +623,25 @@
       ],
       "purpose": "Populate one bounded private current LOTH Office of Readings pilot day after source-plan closure, without public rendering and without treating Universalis as an automatic text source.",
       "qc": [
-        "Pilot day resolves all required Office of Readings slots",
-        "No public render authorization implied",
-        "Source supplement policy is respected by slot class",
-        "verify:office remains green",
-        "verify:corpus remains green"
+        "node --check scripts/audit-office-of-readings-pilot-population.mjs",
+        "npm run audit:office-of-readings-pilot-population",
+        "npm run audit:office-of-readings-source-plan",
+        "npm run audit:roman-loth-source-supplement-policy",
+        "npm run verify:office",
+        "npm run verify:corpus",
+        "npm run smoke:synthetic"
       ],
-      "notes": "Pilot ingestion should preserve strict source-class discipline for biblical first reading, patristic/hagiographic second reading, responsories, Te Deum, collect, psalmody, antiphons, and hymn."
+      "notes": "Pilot-ingestion audit is closed after repair. The original audit commit had bad expected anchors; the follow-up commit corrected the audit to validate the actual governed Office of Readings pilot corpus. The pilot uses the 2026-05-26 Memorial of Saint Philip Neri witness, with ten populated units and the Te Deum intentionally empty for the observed context.",
+      "completed_commit_sequence": [
+        "3734157 Add Office of Readings pilot population audit",
+        "592cce7 Fix Office of Readings pilot audit anchors"
+      ]
     },
     {
       "id": "3.5",
       "phase_id": "phase_3",
       "title": "Office of Readings ordinary-week expansion",
-      "status": "not_started",
+      "status": "next",
       "tranche_size": "campaign",
       "repository": "JWJeffery/LOTH",
       "files": [
@@ -650,7 +656,8 @@
         "No public rendering",
         "No source-class ambiguity",
         "Office of Readings resolver diagnostics remain honest"
-      ]
+      ],
+      "notes": "Next active LOTH tranche after Office of Readings pilot audit closure. Require quiet QC wrapper and keep the tranche bounded to a small ordinary-week expansion."
     },
     {
       "id": "3.6",
