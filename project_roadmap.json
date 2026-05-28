@@ -1,19 +1,19 @@
 {
   "schema_version": "1.0.0",
-  "roadmap_version": "0.1.12",
+  "roadmap_version": "0.1.13",
   "last_updated": "2026-05-27",
   "status": "active",
   "name": "Universal Office Beta Release Roadmap",
   "purpose": "Canonical machine-readable roadmap for Beta Release planning, phase sequencing, governance questions, tranche sizing, and Admin Dashboard visualization.",
   "current_repo_state": {
-    "latest_known_commit": "c930b91",
-    "latest_known_commit_message": "Record Office of Readings four-week block",
-    "structure_json_version": "3.8.122",
+    "latest_known_commit": "d7e56ae",
+    "latest_known_commit_message": "Record Office of Readings second four-week block",
+    "structure_json_version": "3.8.123",
     "roadmap_source_of_truth": "project_roadmap.json",
     "structure_json_role": "Project manifest, implementation ledger, governance history, legacy admin todo source, and current state pointer.",
     "roadmap_role": "Canonical release architecture and phase/tranche planning source for Admin Dashboard roadmap visualization.",
-    "latest_known_loth_commit": "2dab35d",
-    "latest_known_loth_commit_message": "Populate Office of Readings second four-week block",
+    "latest_known_loth_commit": "b88e8b0",
+    "latest_known_loth_commit_message": "Populate Office of Readings first eight-week block",
     "roman_loth_control_corpus_repo": "JWJeffery/LOTH"
   },
   "release_identity": {
@@ -315,7 +315,7 @@
       "blocks_beta": true,
       "purpose": "Build the current Roman LOTH / Divine Office first as a private restricted control corpus in JWJeffery/LOTH, then use that corpus as the guide for a public Roman-family derivative lane built from authorized, public-domain, or source-cleared materials.",
       "exit_gate": "Private current LOTH control corpus has enough office coverage and source-class governance to guide a public Roman-family derivative; public beta blocker is cleared only when an honest public-renderable Roman Catholic office baseline exists or permission authorizes the current LOTH lane.",
-      "governance_note": "Private-current-LOTH-first/public-LOTH-second strategy accepted 2026-05-27. JWJeffery/LOTH is the active Roman LOTH control-corpus repository. Night Prayer weekly-cycle population is closed for the current build scope. Grail 1963 psalter corpus lives under resources/psalter/grail-1963/psalms.json; psalm-numbering registry resolves Hebrew/Masoretic and Septuagint/Vulgate numbering; source supplement policy governs Universalis divergence by content class. Universalis remains useful for structure/calendar/source discovery but is not approved for automatic population. Office of Readings source-unit/materialization planning closed in LOTH commit c73bc1d. Next private office target: bounded Office of Readings pilot ingestion, chosen for the user's devotional priority and for its strong pressure-test value across psalmody, biblical readings, patristic/hagiographic second readings, responsories, Te Deum, and collects. Office of Readings pilot-ingestion audit closed in LOTH commits 3734157 and 592cce7 after anchor repair; next private Roman LOTH target is ordinary-week Office of Readings expansion. Office of Readings ordinary-week expansion planning closed in LOTH commit c02c74b; next LOTH work is population of the selected ordinary-week set. Office of Readings ordinary-week population closed in LOTH commit e80f945; next work moves to the next Roman LOTH core-office expansion target. Morning Prayer source-unit/materialization planning closed in LOTH commit a4ee4ce; next LOTH work is the planned 2026-06-16 Morning Prayer pilot population. Roadmap correction 2026-05-27: Morning Prayer source planning remains future-ready, but active build work returns to Office of Readings continuation before moving deeper into other core offices. Office of Readings 2026-06-22 week expansion planning closed in LOTH commit 0dadd12; next LOTH work is URL preflight followed by population of that selected week. Office of Readings four-week block population closed in LOTH commit 3a0135e, covering 2026-06-22 through 2026-07-18 Monday-Saturday with 264 slot files. Office of Readings population now defaults to four-week blocks unless concrete QC risk requires a smaller tranche. Office of Readings second four-week block population closed in LOTH commit 2dab35d, covering 2026-07-20 through 2026-08-15 Monday-Saturday with 264 slot files. After two clean four-week blocks, Office of Readings population now defaults to eight-week blocks unless concrete QC risk requires a smaller tranche."
+      "governance_note": "Private-current-LOTH-first/public-LOTH-second strategy accepted 2026-05-27. JWJeffery/LOTH is the active Roman LOTH control-corpus repository. Night Prayer weekly-cycle population is closed for the current build scope. Grail 1963 psalter corpus lives under resources/psalter/grail-1963/psalms.json; psalm-numbering registry resolves Hebrew/Masoretic and Septuagint/Vulgate numbering; source supplement policy governs Universalis divergence by content class. Universalis remains useful for structure/calendar/source discovery but is not approved for automatic population. Office of Readings source-unit/materialization planning closed in LOTH commit c73bc1d. Next private office target: bounded Office of Readings pilot ingestion, chosen for the user's devotional priority and for its strong pressure-test value across psalmody, biblical readings, patristic/hagiographic second readings, responsories, Te Deum, and collects. Office of Readings pilot-ingestion audit closed in LOTH commits 3734157 and 592cce7 after anchor repair; next private Roman LOTH target is ordinary-week Office of Readings expansion. Office of Readings ordinary-week expansion planning closed in LOTH commit c02c74b; next LOTH work is population of the selected ordinary-week set. Office of Readings ordinary-week population closed in LOTH commit e80f945; next work moves to the next Roman LOTH core-office expansion target. Morning Prayer source-unit/materialization planning closed in LOTH commit a4ee4ce; next LOTH work is the planned 2026-06-16 Morning Prayer pilot population. Roadmap correction 2026-05-27: Morning Prayer source planning remains future-ready, but active build work returns to Office of Readings continuation before moving deeper into other core offices. Office of Readings 2026-06-22 week expansion planning closed in LOTH commit 0dadd12; next LOTH work is URL preflight followed by population of that selected week. Office of Readings four-week block population closed in LOTH commit 3a0135e, covering 2026-06-22 through 2026-07-18 Monday-Saturday with 264 slot files. Office of Readings population now defaults to four-week blocks unless concrete QC risk requires a smaller tranche. Office of Readings second four-week block population closed in LOTH commit 2dab35d, covering 2026-07-20 through 2026-08-15 Monday-Saturday with 264 slot files. After two clean four-week blocks, Office of Readings population now defaults to eight-week blocks unless concrete QC risk requires a smaller tranche. Office of Readings first eight-week block population closed in LOTH commit b88e8b0, covering 2026-08-17 through 2026-10-10 Monday-Saturday with 528 slot files. Eight-week Office of Readings batching is now confirmed after a successful 48-date block."
     },
     {
       "id": "phase_4",
@@ -683,14 +683,15 @@
       ],
       "purpose": "After Night Prayer and Office of Readings are stable, expand private current LOTH control-corpus coverage into Morning Prayer, Evening Prayer, and Daytime Prayer baselines.",
       "qc": [
-        "node --check scripts/audit-office-of-readings-block-2026-07-20-population.mjs",
+        "node --check scripts/audit-office-of-readings-block-2026-08-17-population.mjs",
+        "npm run audit:office-of-readings-block-2026-08-17-population",
         "npm run audit:office-of-readings-block-2026-07-20-population",
         "npm run audit:office-of-readings-block-2026-06-22-population",
         "npm run verify:office",
         "npm run verify:corpus",
         "npm run smoke:synthetic"
       ],
-      "notes": "Office of Readings 2026-07-20 through 2026-08-15 block is populated and audited. Two consecutive four-week blocks are now clean; continue Office of Readings in eight-week blocks by default.",
+      "notes": "Office of Readings 2026-08-17 through 2026-10-10 block is populated and audited. Continue Office of Readings in eight-week blocks by default.",
       "active_subtarget": "office_of_readings_next_eight_week_block",
       "completed_source_plan_commit": "a4ee4ce",
       "evidence": [
@@ -700,14 +701,17 @@
         "3a0135e Populate Office of Readings four-week block",
         "2026-05-27 batching rule: Office of Readings population moves to four-week blocks by default",
         "2dab35d Populate Office of Readings second four-week block",
-        "2026-05-27 batching rule update: Office of Readings population moves to eight-week blocks after two clean four-week blocks"
+        "2026-05-27 batching rule update: Office of Readings population moves to eight-week blocks after two clean four-week blocks",
+        "b88e8b0 Populate Office of Readings first eight-week block",
+        "2026-05-27 eight-week batching confirmed: first 48-date Office of Readings block populated and audited"
       ],
       "next_subtarget": "office_of_readings_next_eight_week_block",
       "completed_week_20260622_plan_commit": "0dadd12",
       "completed_block_20260622_20260718_commit": "3a0135e",
       "default_population_batch_size": "eight_week_blocks",
-      "batching_rule": "After two clean four-week Office of Readings population blocks (3a0135e and 2dab35d), use eight-week Office of Readings population blocks by default; reduce only for parser failures, dense calendar interruptions, or other concrete QC risk.",
-      "completed_block_20260720_20260815_commit": "2dab35d"
+      "batching_rule": "Use eight-week Office of Readings population blocks by default after two clean four-week blocks and one clean eight-week block; reduce only for parser failures, dense calendar interruptions, or other concrete QC risk.",
+      "completed_block_20260720_20260815_commit": "2dab35d",
+      "completed_block_20260817_20261010_commit": "b88e8b0"
     },
     {
       "id": "3.7",
