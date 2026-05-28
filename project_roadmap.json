@@ -1,17 +1,20 @@
 {
   "schema_version": "1.0.0",
-  "roadmap_version": "0.1.2",
+  "roadmap_version": "0.1.3",
   "last_updated": "2026-05-27",
   "status": "active",
   "name": "Universal Office Beta Release Roadmap",
   "purpose": "Canonical machine-readable roadmap for Beta Release planning, phase sequencing, governance questions, tranche sizing, and Admin Dashboard visualization.",
   "current_repo_state": {
-    "latest_known_commit": "584c3ee",
-    "latest_known_commit_message": "Fix BCP Compline component IDs",
-    "structure_json_version": "3.8.77",
+    "latest_known_commit": "af17dfe",
+    "latest_known_commit_message": "Record LOTH Grail psalter source policy",
+    "structure_json_version": "3.8.113",
     "roadmap_source_of_truth": "project_roadmap.json",
     "structure_json_role": "Project manifest, implementation ledger, governance history, legacy admin todo source, and current state pointer.",
-    "roadmap_role": "Canonical release architecture and phase/tranche planning source for Admin Dashboard roadmap visualization."
+    "roadmap_role": "Canonical release architecture and phase/tranche planning source for Admin Dashboard roadmap visualization.",
+    "latest_known_loth_commit": "8cfdd9e",
+    "latest_known_loth_commit_message": "Add Grail psalter corpus and source supplement policy",
+    "roman_loth_control_corpus_repo": "JWJeffery/LOTH"
   },
   "release_identity": {
     "beta_release_focus": "BCP-facing Anglican public beta",
@@ -161,21 +164,21 @@
       "family": "Roman Catholic",
       "first_release_lane": "Divine Office / Liturgy of the Hours",
       "public_beta_role": "Required major-family representation",
-      "current_status": "external_private_corpus_synthetic_resolver_verified_permission_pending",
-      "beta_status": "release_blocker",
+      "current_status": "private_current_control_corpus_buildout_active_public_derivative_pending",
+      "beta_status": "release_blocker_private_control_corpus_in_progress",
       "blocks_beta": true,
-      "blocker_reason": "Roman Catholic Divine Office / Liturgy of the Hours baseline is required before Beta Release.",
+      "blocker_reason": "Roman Catholic Divine Office / Liturgy of the Hours baseline remains a Beta Release blocker. The private current LOTH control corpus is being built first in JWJeffery/LOTH; a public Roman-family derivative lane will be built afterward using the private corpus as structural and liturgical guide, subject to permission/source-clearing.",
       "source_governance_required": true,
       "corpus_repo": "JWJeffery/LOTH",
       "corpus_repo_visibility": "private",
-      "corpus_repo_note": "Restricted private corpus/governance repository for Roman Liturgy of the Hours. Contains source governance, permission registry, office structure, calendar scaffold, office-slot resolver map, calendar-office context map, source-unit target map, and a verified synthetic resolver. Private restricted corpus build-out may proceed in JWJeffery/LOTH while permission is pending. Official LOTH text must not be exposed publicly, fetched by PrayerAppNew, or rendered externally until permission authorizes it.",
+      "corpus_repo_note": "Restricted private corpus/governance repository for Roman Liturgy of the Hours. The current working strategy is private current LOTH first, public Roman-family derivative second. JWJeffery/LOTH now contains source governance, permission registry, office structure, resolver maps, Night Prayer weekly-cycle population, Grail 1963 psalter corpus resource, psalm-numbering registry, source supplement policy, and Universalis comparison tooling. Private restricted corpus build-out may proceed while permission is pending. Official/current LOTH text must not be exposed publicly, fetched by PrayerAppNew, or rendered externally until permission authorizes it.",
       "permission_inquiry": {
         "contact": "DivineOffice.org / Surgeworks",
         "date_sent": "2026-05-23",
         "status": "pending"
       },
       "render_policy": "blocked_until_authorized",
-      "render_disabled_note": "Roman LOTH public rendering in PrayerAppNew remains disabled until a permission record in JWJeffery/LOTH explicitly authorizes external display. Private restricted corpus development may continue in JWJeffery/LOTH while permission is pending. PrayerAppNew must not fetch from the private repo or expose official LOTH text publicly before authorization.",
+      "render_disabled_note": "Roman LOTH public rendering in PrayerAppNew remains disabled until a permission/source-clearing record authorizes external display. PrayerAppNew must not fetch from the private repo or expose official/current LOTH text publicly before authorization. A later public Roman-family derivative lane may be built from authorized or public-domain materials after the private current LOTH control corpus establishes the structural guide.",
       "recommended_first_profile": "Current Roman Liturgy of the Hours / Divine Office ordinary form",
       "later_expansions": [
         "1960 Roman Breviary",
@@ -196,7 +199,19 @@
         "render_policy": "blocked_until_authorized",
         "notes": "All nine Roman LOTH office IDs resolve synthetically. Daytime aliases bind to the Daytime Prayer template. This proves architecture flow only; it does not authorize or enable public rendering. It also does not prohibit private restricted corpus build-out in JWJeffery/LOTH while permission is pending."
       },
-      "ui_label": "Latin Catholic"
+      "ui_label": "Latin Catholic",
+      "private_current_loth_first_public_loth_second": {
+        "private_current_loth_role": "Private restricted control corpus for the current Roman Liturgy of the Hours / Divine Office ordinary form. This lane may contain governed current LOTH source units and remains blocked from public rendering unless authorized.",
+        "public_loth_role": "Later public-facing Roman-family derivative lane built from authorized, public-domain, or otherwise cleared source materials, using the private current LOTH control corpus to preserve liturgical structure, source-class mapping, and office logic.",
+        "current_private_build_status": {
+          "night_prayer": "weekly_cycle_populated_and_seasonally_honest_for_current_build_scope",
+          "psalm_numbering": "registry_added",
+          "grail_1963_psalter": "resources/psalter/grail-1963/psalms.json",
+          "universalis": "structure_calendar_source_discovery_comparator_not_automatic_population_source",
+          "source_supplement_policy": "registry/roman-loth-source-supplement-policy.json"
+        },
+        "next_private_office_target": "office_of_readings"
+      }
     },
     {
       "id": "eastern_orthodox",
@@ -294,12 +309,12 @@
     },
     {
       "id": "phase_3",
-      "title": "Roman Catholic Divine Office baseline",
-      "status": "architecture_scaffold_verified_permission_pending",
+      "title": "Roman Catholic Divine Office private control corpus and public derivative baseline",
+      "status": "private_current_control_corpus_buildout_active",
       "blocks_beta": true,
-      "purpose": "Add required Roman Catholic Divine Office / Liturgy of the Hours first-release representation.",
-      "exit_gate": "Roman Catholic Divine Office lane exists, renders an honest ordinary baseline, and no longer blocks Beta Release.",
-      "governance_note": "External private corpus repository JWJeffery/LOTH scaffolded 2026-05-23. Permission inquiry sent to DivineOffice.org / Surgeworks 2026-05-23; status pending. As of 2026-05-23, LOTH/main validates 26 JSON files and npm run verify:synthetic passes: all nine Roman LOTH office IDs resolve through the synthetic resolver, including Daytime Prayer aliases, with emitsOfficialText=false and renderPolicy=blocked_until_authorized. Phase 3 may continue building the private restricted LOTH corpus and internal resolver architecture while permission is pending. Public app rendering, external display, and PrayerAppNew-side private-repo fetch remain blocked until permission authorization is recorded."
+      "purpose": "Build the current Roman LOTH / Divine Office first as a private restricted control corpus in JWJeffery/LOTH, then use that corpus as the guide for a public Roman-family derivative lane built from authorized, public-domain, or source-cleared materials.",
+      "exit_gate": "Private current LOTH control corpus has enough office coverage and source-class governance to guide a public Roman-family derivative; public beta blocker is cleared only when an honest public-renderable Roman Catholic office baseline exists or permission authorizes the current LOTH lane.",
+      "governance_note": "Private-current-LOTH-first/public-LOTH-second strategy accepted 2026-05-27. JWJeffery/LOTH is the active Roman LOTH control-corpus repository. Night Prayer weekly-cycle population is closed for the current build scope. Grail 1963 psalter corpus lives under resources/psalter/grail-1963/psalms.json; psalm-numbering registry resolves Hebrew/Masoretic and Septuagint/Vulgate numbering; source supplement policy governs Universalis divergence by content class. Universalis remains useful for structure/calendar/source discovery but is not approved for automatic population. Next private office target: Office of Readings, chosen for the user's devotional priority and for its strong pressure-test value across psalmody, biblical readings, patristic/hagiographic second readings, responsories, Te Deum, and collects."
     },
     {
       "id": "phase_4",
@@ -545,122 +560,135 @@
     {
       "id": "3.2",
       "phase_id": "phase_3",
-      "title": "Catholic office data schema scaffold",
-      "status": "not_started",
-      "tranche_size": "standard",
+      "title": "Private-current-LOTH/public-LOTH roadmap correction",
+      "status": "done",
+      "tranche_size": "governance",
       "files": [
         "project_roadmap.json",
-        "data/latin-hours/schema.json",
-        "data/latin-hours/ordinary.json",
-        "components/latin.json"
+        "structure.json"
       ],
-      "purpose": "Create first Roman Catholic office-family data contract after source-governance ruling.",
+      "purpose": "Record that the current Roman LOTH is being built first as a private restricted control corpus in JWJeffery/LOTH, and that the public Roman-family lane will be derived later from authorized or cleared materials using that control corpus as guide.",
       "qc": [
         "JSON parse",
-        "Schema review",
-        "No renderer dependency yet"
+        "Roman Catholic phase status reflects private control corpus buildout",
+        "Roadmap no longer treats data/latin-hours in PrayerAppNew as the active Phase 3 build path"
+      ],
+      "evidence": [
+        "8cfdd9e Add Grail psalter corpus and source supplement policy",
+        "af17dfe Record LOTH Grail psalter source policy"
       ]
     },
     {
       "id": "3.3",
       "phase_id": "phase_3",
-      "title": "Catholic engine scaffold",
-      "status": "not_started",
+      "title": "Office of Readings source-unit and materialization plan",
+      "status": "next",
       "tranche_size": "standard",
+      "repository": "JWJeffery/LOTH",
       "files": [
-        "js/latin-hours-engine.js",
-        "index.html",
-        "js/office-ui.js",
-        "project_roadmap.json"
+        "registry/roman-loth-source-unit-target-map.json",
+        "registry/roman-loth-planned-unit-materialization-map.json",
+        "registry/roman-loth-source-supplement-policy.json",
+        "scripts/audit-office-of-readings-containers.mjs",
+        "scripts/audit-office-of-readings-source-plan.mjs"
       ],
-      "purpose": "Add non-throwing Roman Catholic Divine Office resolver scaffold.",
+      "purpose": "Plan private current LOTH Office of Readings ingestion before population. Classify each slot by source family and supplement need: ordinary opening/conclusion, hymn witness, Grail 1963 psalmody plus antiphons, verse, NAB 1970 first-reading stream, first responsory, patristic/hagiographic/proper second reading, second responsory, Te Deum, and collect.",
       "qc": [
-        "node -c",
-        "Resolver returns non-throwing payloads",
-        "No public UI route until shell tranche completes"
+        "JSON parse",
+        "Office of Readings slot plan covers all eleven office-index sections",
+        "No corpus text population in planning tranche",
+        "verify:office remains green"
       ]
     },
     {
       "id": "3.4",
       "phase_id": "phase_3",
-      "title": "Catholic UI mode shell",
+      "title": "Office of Readings pilot day ingestion",
       "status": "not_started",
-      "tranche_size": "campaign",
+      "tranche_size": "standard",
+      "repository": "JWJeffery/LOTH",
       "files": [
-        "index.html",
-        "css/office.css",
-        "js/office-ui.js",
-        "project_roadmap.json"
+        "texts/en-us/office-of-readings/",
+        "registry/roman-loth-source-witnesses.json",
+        "scripts/audit-office-of-readings-pilot-population.mjs",
+        "scripts/resolve-synthetic-office.mjs"
       ],
-      "purpose": "Add Roman Catholic Divine Office entry, sidebar shell, office selector, and basic renderer route.",
+      "purpose": "Populate one bounded private current LOTH Office of Readings pilot day after the source-unit plan is accepted. This is for private devotional/control-corpus use only and remains blocked from public rendering unless authorized.",
       "qc": [
-        "Mode switching works",
-        "Sidebar works",
-        "Back-to-modes works",
-        "No other mode regression"
+        "Quiet QC wrapper required",
+        "node --check relevant scripts",
+        "npm run audit:office-of-readings-pilot-population",
+        "npm run verify:office",
+        "npm run verify:corpus",
+        "npm run smoke:synthetic"
       ]
     },
     {
       "id": "3.5",
       "phase_id": "phase_3",
-      "title": "Catholic ordinary baseline corpus tranche 1",
+      "title": "Office of Readings ordinary-week expansion",
       "status": "not_started",
-      "tranche_size": "standard",
+      "tranche_size": "campaign",
+      "repository": "JWJeffery/LOTH",
       "files": [
-        "data/latin-hours/ordinary.json",
-        "data/latin-hours/night-prayer.json",
-        "js/latin-hours-engine.js",
-        "project_roadmap.json"
+        "texts/en-us/office-of-readings/",
+        "resources/psalter/grail-1963/psalms.json",
+        "registry/psalm-numbering-map.json",
+        "scripts/audit-office-of-readings-week-population.mjs"
       ],
-      "purpose": "Start with bounded Night Prayer / Compline baseline.",
+      "purpose": "Expand from one pilot day to a small ordinary-week Office of Readings set, using Grail 1963 psalter resources and explicit source-supplement classification for readings and responsories.",
       "qc": [
-        "Night Prayer renders",
-        "No source-policy violation",
-        "No undefined leakage"
+        "Quiet QC wrapper required",
+        "No public rendering",
+        "No source-class ambiguity",
+        "Office of Readings resolver diagnostics remain honest"
       ]
     },
     {
       "id": "3.6",
       "phase_id": "phase_3",
-      "title": "Catholic Morning and Evening Prayer baseline",
+      "title": "Private current LOTH core-office expansion",
       "status": "not_started",
-      "tranche_size": "standard",
+      "tranche_size": "campaign",
+      "repository": "JWJeffery/LOTH",
       "files": [
-        "data/latin-hours/morning-prayer.json",
-        "data/latin-hours/evening-prayer.json",
-        "js/latin-hours-engine.js",
-        "project_roadmap.json"
+        "texts/en-us/morning-prayer/",
+        "texts/en-us/evening-prayer/",
+        "texts/en-us/daytime-prayer/",
+        "scripts/resolve-synthetic-office.mjs"
       ],
-      "purpose": "Add honest ordinary baseline structure for Lauds and Vespers.",
+      "purpose": "After Night Prayer and Office of Readings are stable, expand private current LOTH control-corpus coverage into Morning Prayer, Evening Prayer, and Daytime Prayer baselines.",
       "qc": [
-        "Morning Prayer renders",
-        "Evening Prayer renders",
-        "Ordinary baseline is honest about deferred propers"
+        "Quiet QC wrapper required",
+        "Office-specific audits",
+        "verify:office",
+        "verify:corpus",
+        "smoke:synthetic"
       ]
     },
     {
       "id": "3.7",
       "phase_id": "phase_3",
-      "title": "Catholic Office of Readings and Daytime Prayer baseline",
+      "title": "Public Roman-family derivative source selection",
       "status": "not_started",
-      "tranche_size": "standard",
+      "tranche_size": "governance",
+      "repository": "JWJeffery/PrayerAppNew",
       "files": [
-        "data/latin-hours/office-of-readings.json",
-        "data/latin-hours/daytime-prayer.json",
-        "js/latin-hours-engine.js",
-        "project_roadmap.json"
+        "project_roadmap.json",
+        "structure.json",
+        "documentation/ROMAN_LOTH_PUBLIC_DERIVATIVE_POLICY.md"
       ],
-      "purpose": "Add honest ordinary baseline structure for Office of Readings and Daytime Prayer.",
+      "purpose": "Define the public Roman-family derivative lane after enough private current LOTH structure exists to guide authorized/public-domain/source-cleared substitution.",
       "qc": [
-        "Office of Readings renders",
-        "Daytime Prayer renders",
-        "Deferred seasonal/sanctoral material classified honestly"
+        "No official/current LOTH text exposed",
+        "Public source families explicitly named",
+        "Dashboard blocker language remains honest"
       ]
     },
     {
       "id": "3.8",
       "phase_id": "phase_3",
-      "title": "Catholic baseline release classification",
+      "title": "Roman Catholic baseline release classification",
       "status": "not_started",
       "tranche_size": "standard",
       "files": [
@@ -668,11 +696,12 @@
         "structure.json",
         "admin/admin.html"
       ],
-      "purpose": "Mark Catholic representation from blocker to baseline-present only if QC supports it.",
+      "purpose": "Mark Catholic representation from blocker to baseline-present only if public-renderable Roman office QC supports it or permission authorizes current LOTH rendering.",
       "qc": [
-        "All Catholic baseline offices render",
+        "All required Roman baseline offices render in an authorized/public-safe path",
         "Dashboard updates blocker state",
-        "No overclaiming of Latin depth"
+        "No overclaiming of Latin depth",
+        "Private current LOTH and public derivative lanes remain clearly distinguished"
       ]
     },
     {
