@@ -1,19 +1,19 @@
 {
   "schema_version": "1.0.0",
-  "roadmap_version": "0.1.18",
+  "roadmap_version": "0.1.19",
   "last_updated": "2026-05-29",
   "status": "active",
   "name": "Universal Office Beta Release Roadmap",
   "purpose": "Canonical machine-readable roadmap for Beta Release planning, phase sequencing, governance questions, tranche sizing, and Admin Dashboard visualization.",
   "current_repo_state": {
-    "latest_known_commit": "d60344d",
-    "latest_known_commit_message": "Record Office of Readings appointment parser audit",
-    "structure_json_version": "3.8.128",
+    "latest_known_commit": "fa780a4",
+    "latest_known_commit_message": "Record Office of Readings Grail psalmody pair",
+    "structure_json_version": "3.8.129",
     "roadmap_source_of_truth": "project_roadmap.json",
     "structure_json_role": "Project manifest, implementation ledger, governance history, legacy admin todo source, and current state pointer.",
     "roadmap_role": "Canonical release architecture and phase/tranche planning source for Admin Dashboard roadmap visualization.",
-    "latest_known_loth_commit": "86e8fb3",
-    "latest_known_loth_commit_message": "Add Grail psalmody mapping dry run",
+    "latest_known_loth_commit": "17dd352",
+    "latest_known_loth_commit_message": "Split Office of Readings QC from live preflight",
     "roman_loth_control_corpus_repo": "JWJeffery/LOTH"
   },
   "release_identity": {
@@ -315,7 +315,7 @@
       "blocks_beta": true,
       "purpose": "Build the current Roman LOTH / Divine Office first as a private restricted control corpus in JWJeffery/LOTH, then use that corpus as the guide for a public Roman-family derivative lane built from authorized, public-domain, or source-cleared materials.",
       "exit_gate": "Private current LOTH control corpus has enough office coverage and source-class governance to guide a public Roman-family derivative; public beta blocker is cleared only when an honest public-renderable Roman Catholic office baseline exists or permission authorizes the current LOTH lane.",
-      "governance_note": "Private-current-LOTH-first/public-LOTH-second strategy accepted 2026-05-27. JWJeffery/LOTH is the active Roman LOTH control-corpus repository. Night Prayer weekly-cycle population is closed for the current build scope. Grail 1963 psalter corpus lives under resources/psalter/grail-1963/psalms.json; psalm-numbering registry resolves Hebrew/Masoretic and Septuagint/Vulgate numbering; source supplement policy governs Universalis divergence by content class. Universalis remains useful for structure/calendar/source discovery but is not approved for automatic population. Office of Readings source-unit/materialization planning closed in LOTH commit c73bc1d. Next private office target: bounded Office of Readings pilot ingestion, chosen for the user's devotional priority and for its strong pressure-test value across psalmody, biblical readings, patristic/hagiographic second readings, responsories, Te Deum, and collects. Office of Readings pilot-ingestion audit closed in LOTH commits 3734157 and 592cce7 after anchor repair; next private Roman LOTH target is ordinary-week Office of Readings expansion. Office of Readings ordinary-week expansion planning closed in LOTH commit c02c74b; next LOTH work is population of the selected ordinary-week set. Office of Readings ordinary-week population closed in LOTH commit e80f945; next work moves to the next Roman LOTH core-office expansion target. Morning Prayer source-unit/materialization planning closed in LOTH commit a4ee4ce; next LOTH work is the planned 2026-06-16 Morning Prayer pilot population. Roadmap correction 2026-05-27: Morning Prayer source planning remains future-ready, but active build work returns to Office of Readings continuation before moving deeper into other core offices. Office of Readings 2026-06-22 week expansion planning closed in LOTH commit 0dadd12; next LOTH work is URL preflight followed by population of that selected week. Office of Readings four-week block population closed in LOTH commit 3a0135e, covering 2026-06-22 through 2026-07-18 Monday-Saturday with 264 slot files. Office of Readings population now defaults to four-week blocks unless concrete QC risk requires a smaller tranche. Office of Readings second four-week block population closed in LOTH commit 2dab35d, covering 2026-07-20 through 2026-08-15 Monday-Saturday with 264 slot files. After two clean four-week blocks, Office of Readings population now defaults to eight-week blocks unless concrete QC risk requires a smaller tranche. Office of Readings first eight-week block population closed in LOTH commit b88e8b0, covering 2026-08-17 through 2026-10-10 Monday-Saturday with 528 slot files. Eight-week Office of Readings batching is now confirmed after a successful 48-date block. Office of Readings second eight-week block population closed in LOTH commit 936cc7d, covering 2026-10-12 through 2026-12-05 Monday-Saturday with 528 slot files. Eight-week Office of Readings batching remains the default after a second successful 48-date block. Office of Readings third eight-week block population closed in LOTH commit acacbd0, covering 2026-12-07 through 2027-01-30 Monday-Saturday with 528 slot files. Office of Readings fourth eight-week block population closed in LOTH commit c794db7, covering 2027-02-01 through 2027-03-27 Monday-Saturday with 528 slot files. PrayerAppNew recording cadence is now every two successful LOTH population tranches unless a concrete failure or architecture change requires an immediate record. Office of Readings forward completion model corrected in LOTH commits 8fa1e12 and d5ea617: Universalis now governs appointment/structure discovery, the local Grail psalter governs psalm-body materialization, and existing DivineOffice-derived date blocks are retained only as near-window comparison/source-witness blocks. The pipeline audit is offline governance; live future-date source availability belongs in separate preflight checks. Office of Readings Universalis appointment parser audit closed in LOTH commit cf1bfd5: current Universalis source shape is now source-tested for psalm appointment extraction, alternate psalm-number normalization, reading/responsory markers, and local Grail lookup probes without writing text units. Next source-pipeline target is Grail-backed psalmody materialization planning/audit. Office of Readings Grail psalmody materialization plan and mapping dry-run closed in LOTH commits c9cdf52 and 86e8fb3: Universalis psalm appointments now have a governed non-writing path toward local Grail psalter body references. The tranche writes no Office of Readings text units; next source-pipeline target is a bounded Grail psalmody materialization pilot."
+      "governance_note": "Private-current-LOTH-first/public-LOTH-second strategy accepted 2026-05-27. JWJeffery/LOTH is the active Roman LOTH control-corpus repository. Night Prayer weekly-cycle population is closed for the current build scope. Grail 1963 psalter corpus lives under resources/psalter/grail-1963/psalms.json; psalm-numbering registry resolves Hebrew/Masoretic and Septuagint/Vulgate numbering; source supplement policy governs Universalis divergence by content class. Universalis remains useful for structure/calendar/source discovery but is not approved for automatic population. Office of Readings source-unit/materialization planning closed in LOTH commit c73bc1d. Next private office target: bounded Office of Readings pilot ingestion, chosen for the user's devotional priority and for its strong pressure-test value across psalmody, biblical readings, patristic/hagiographic second readings, responsories, Te Deum, and collects. Office of Readings pilot-ingestion audit closed in LOTH commits 3734157 and 592cce7 after anchor repair; next private Roman LOTH target is ordinary-week Office of Readings expansion. Office of Readings ordinary-week expansion planning closed in LOTH commit c02c74b; next LOTH work is population of the selected ordinary-week set. Office of Readings ordinary-week population closed in LOTH commit e80f945; next work moves to the next Roman LOTH core-office expansion target. Morning Prayer source-unit/materialization planning closed in LOTH commit a4ee4ce; next LOTH work is the planned 2026-06-16 Morning Prayer pilot population. Roadmap correction 2026-05-27: Morning Prayer source planning remains future-ready, but active build work returns to Office of Readings continuation before moving deeper into other core offices. Office of Readings 2026-06-22 week expansion planning closed in LOTH commit 0dadd12; next LOTH work is URL preflight followed by population of that selected week. Office of Readings four-week block population closed in LOTH commit 3a0135e, covering 2026-06-22 through 2026-07-18 Monday-Saturday with 264 slot files. Office of Readings population now defaults to four-week blocks unless concrete QC risk requires a smaller tranche. Office of Readings second four-week block population closed in LOTH commit 2dab35d, covering 2026-07-20 through 2026-08-15 Monday-Saturday with 264 slot files. After two clean four-week blocks, Office of Readings population now defaults to eight-week blocks unless concrete QC risk requires a smaller tranche. Office of Readings first eight-week block population closed in LOTH commit b88e8b0, covering 2026-08-17 through 2026-10-10 Monday-Saturday with 528 slot files. Eight-week Office of Readings batching is now confirmed after a successful 48-date block. Office of Readings second eight-week block population closed in LOTH commit 936cc7d, covering 2026-10-12 through 2026-12-05 Monday-Saturday with 528 slot files. Eight-week Office of Readings batching remains the default after a second successful 48-date block. Office of Readings third eight-week block population closed in LOTH commit acacbd0, covering 2026-12-07 through 2027-01-30 Monday-Saturday with 528 slot files. Office of Readings fourth eight-week block population closed in LOTH commit c794db7, covering 2027-02-01 through 2027-03-27 Monday-Saturday with 528 slot files. PrayerAppNew recording cadence is now every two successful LOTH population tranches unless a concrete failure or architecture change requires an immediate record. Office of Readings forward completion model corrected in LOTH commits 8fa1e12 and d5ea617: Universalis now governs appointment/structure discovery, the local Grail psalter governs psalm-body materialization, and existing DivineOffice-derived date blocks are retained only as near-window comparison/source-witness blocks. The pipeline audit is offline governance; live future-date source availability belongs in separate preflight checks. Office of Readings Universalis appointment parser audit closed in LOTH commit cf1bfd5: current Universalis source shape is now source-tested for psalm appointment extraction, alternate psalm-number normalization, reading/responsory markers, and local Grail lookup probes without writing text units. Next source-pipeline target is Grail-backed psalmody materialization planning/audit. Office of Readings Grail psalmody materialization plan and mapping dry-run closed in LOTH commits c9cdf52 and 86e8fb3: Universalis psalm appointments now have a governed non-writing path toward local Grail psalter body references. The tranche writes no Office of Readings text units; next source-pipeline target is a bounded Grail psalmody materialization pilot. Office of Readings source-pipeline four-tranche bundle closed in LOTH commits f6fe1ee, 4773b75, 16c2e37, and 17dd352. The bundle added Grail psalmody materialization and unit pilots, reusable Universalis/Grail helper code, committed source-pipeline QC, an offline fixture audit, and a separate live-source preflight. Governance update: ordinary LOTH progress is recorded in PrayerAppNew every four tranches by default; architecture/source-model/failed-course corrections remain immediate-record exceptions; stable source-pipeline work should prefer reusable helper modules and committed QC scripts; live source checks are explicit preflights rather than core offline governance audits."
     },
     {
       "id": "phase_4",
@@ -683,17 +683,11 @@
       ],
       "purpose": "After Night Prayer and Office of Readings are stable, expand private current LOTH control-corpus coverage into Morning Prayer, Evening Prayer, and Daytime Prayer baselines.",
       "qc": [
-        "node --check scripts/audit-office-of-readings-grail-psalmody-mapping-dry-run.mjs",
-        "npm run audit:office-of-readings-grail-psalmody-mapping-dry-run",
-        "npm run audit:office-of-readings-grail-psalmody-materialization-plan",
-        "npm run audit:office-of-readings-universalis-appointment-parser",
-        "npm run audit:office-of-readings-universalis-grail-pipeline",
-        "npm run verify:office",
-        "npm run verify:corpus",
-        "npm run smoke:synthetic"
+        "npm run qc:office-of-readings-source-pipeline",
+        "npm run preflight:office-of-readings-live-source"
       ],
-      "notes": "Grail psalmody materialization plan and dry-run mapping adapter closed in LOTH commits c9cdf52 and 86e8fb3. Next work is a bounded Grail psalmody materialization pilot, not broad date-block population.",
-      "active_subtarget": "office_of_readings_grail_psalmody_mapping_dry_run_closed",
+      "notes": "Four-tranche Office of Readings source-pipeline bundle closed in LOTH commits f6fe1ee, 4773b75, 16c2e37, and 17dd352. Next work should deepen controlled source-pipeline/unit-pilot coverage before broad date-block population resumes.",
+      "active_subtarget": "office_of_readings_source_pipeline_qc_preflight_split_closed",
       "completed_source_plan_commit": "a4ee4ce",
       "evidence": [
         "a4ee4ce Add Morning Prayer source plan",
@@ -719,24 +713,47 @@
         "2026-05-29 parser audit: Universalis current Office of Readings source shape extracts psalm appointments, alternate numbering, readings, and responsories without writing text units",
         "c9cdf52 Plan Grail psalmody materialization for Office of Readings",
         "86e8fb3 Add Grail psalmody mapping dry run",
-        "2026-05-29 materialization pair: Grail psalmody materialization plan plus non-writing mapping dry-run closed without broad date-block population"
+        "2026-05-29 materialization pair: Grail psalmody materialization plan plus non-writing mapping dry-run closed without broad date-block population",
+        "f6fe1ee Add Grail psalmody materialization pilot",
+        "4773b75 Add Office of Readings source pipeline helpers",
+        "16c2e37 Add Grail psalmody unit pilot",
+        "17dd352 Split Office of Readings QC from live preflight",
+        "2026-05-29 governance: PrayerAppNew records ordinary LOTH progress every four tranches by default, with immediate exceptions for architecture/source-model/failed-course corrections",
+        "2026-05-29 governance: committed QC scripts and reusable helpers are preferred over one-off copied audit helpers",
+        "2026-05-29 governance: live source checks are explicit preflights, not core offline governance QC"
       ],
-      "next_subtarget": "office_of_readings_bounded_grail_psalmody_materialization_pilot",
+      "next_subtarget": "office_of_readings_controlled_multi_source_psalmody_unit_pilot",
       "completed_week_20260622_plan_commit": "0dadd12",
       "completed_block_20260622_20260718_commit": "3a0135e",
-      "default_population_batch_size": "source_pipeline_first",
-      "batching_rule": "Continue source-pipeline work before any further broad Office of Readings population blocks. The Universalis appointment parser, Grail psalmody materialization plan, and dry-run mapping adapter are now closed. Next step: a bounded Grail-backed psalmody materialization pilot, limited to controlled psalmody units and preserving separate lanes for antiphons, readings, responsories, collects, and hymns. Do not resume broad date-block population until the bounded pilot passes audit.",
+      "default_population_batch_size": "source_pipeline_first_then_four_tranche_records",
+      "batching_rule": "Continue source-pipeline work before broad Office of Readings date-block population resumes. The current pipeline now has a Grail psalmody materialization pilot, shared helper module, Grail psalmody unit pilot, offline fixture QC, and separate live-source preflight. Next step: deepen the controlled unit pilot across another bounded source shape or source fixture before broad population.",
       "completed_block_20260720_20260815_commit": "2dab35d",
       "completed_block_20260817_20261010_commit": "b88e8b0",
       "completed_block_20261012_20261205_commit": "936cc7d",
       "completed_block_20261207_20270130_commit": "acacbd0",
       "completed_block_20270201_20270327_commit": "c794db7",
-      "recording_cadence": "record_every_two_successful_loth_population_tranches_or_immediately_for_architecture_corrections",
+      "recording_cadence": "record_every_four_successful_loth_tranches_by_default; record_immediately_for_architecture_or_source_model_corrections",
       "completed_universalis_grail_pipeline_plan_commit": "8fa1e12",
       "completed_universalis_grail_pipeline_audit_semantics_commit": "d5ea617",
       "completed_universalis_appointment_parser_commit": "cf1bfd5",
       "completed_grail_psalmody_materialization_plan_commit": "c9cdf52",
-      "completed_grail_psalmody_mapping_dry_run_commit": "86e8fb3"
+      "completed_grail_psalmody_mapping_dry_run_commit": "86e8fb3",
+      "completed_grail_psalmody_materialization_pilot_commit": "f6fe1ee",
+      "completed_source_pipeline_helpers_commit": "4773b75",
+      "completed_grail_psalmody_unit_pilot_commit": "16c2e37",
+      "completed_qc_live_preflight_split_commit": "17dd352",
+      "workflow_governance": {
+        "prayer_app_recording_cadence": "Update structure.json/project_roadmap.json after four ordinary LOTH tranches by default.",
+        "immediate_record_exceptions": [
+          "architecture corrections",
+          "source-model corrections",
+          "failed-course corrections",
+          "material governance changes"
+        ],
+        "prayer_app_recording_commands": "For low-risk PrayerAppNew recording patches, pair QC and commit/push in the same command block.",
+        "source_pipeline_implementation": "Prefer reusable helper modules and committed QC scripts over one-off copied helper code.",
+        "source_pipeline_qc": "Keep core governance QC offline/source-fixture based; run live source checks as explicit preflights."
+      }
     },
     {
       "id": "3.7",
