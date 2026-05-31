@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0.0",
-  "roadmap_version": "0.1.20",
+  "roadmap_version": "0.1.21",
   "last_updated": "2026-05-30",
   "status": "active",
   "name": "Universal Office Beta Release Roadmap",
@@ -8,12 +8,12 @@
   "current_repo_state": {
     "latest_known_commit": "1803dbc",
     "latest_known_commit_message": "Record Office of Readings source pipeline bundle",
-    "structure_json_version": "3.8.130",
+    "structure_json_version": "3.8.131",
     "roadmap_source_of_truth": "project_roadmap.json",
     "structure_json_role": "Project manifest, implementation ledger, governance history, legacy admin todo source, and current state pointer.",
     "roadmap_role": "Canonical release architecture and phase/tranche planning source for Admin Dashboard roadmap visualization.",
-    "latest_known_loth_commit": "10d93fa",
-    "latest_known_loth_commit_message": "Retire Office of Readings legacy date-block population",
+    "latest_known_loth_commit": "d9fdea1",
+    "latest_known_loth_commit_message": "Add Office of Readings cycle proper resolver plan",
     "roman_loth_control_corpus_repo": "JWJeffery/LOTH"
   },
   "release_identity": {
@@ -164,14 +164,14 @@
       "family": "Roman Catholic",
       "first_release_lane": "Divine Office / Liturgy of the Hours",
       "public_beta_role": "Required major-family representation",
-      "current_status": "private_current_control_corpus_buildout_active_source_model_corrected",
-      "beta_status": "release_blocker_private_control_corpus_in_progress_source_model_corrected",
+      "current_status": "private_current_control_corpus_buildout_active_oor_cycle_resolver_plan_recorded",
+      "beta_status": "release_blocker_private_control_corpus_in_progress_oor_cycle_resolver_plan_recorded",
       "blocks_beta": true,
       "blocker_reason": "Roman Catholic Divine Office / Liturgy of the Hours baseline remains a Beta Release blocker. The private current LOTH control corpus is being built first in JWJeffery/LOTH; a public Roman-family derivative lane will be built afterward using the private corpus as structural and liturgical guide, subject to permission/source-clearing.",
       "source_governance_required": true,
       "corpus_repo": "JWJeffery/LOTH",
       "corpus_repo_visibility": "private",
-      "corpus_repo_note": "Restricted private corpus/governance repository for Roman Liturgy of the Hours. The current working strategy is private current LOTH first, public Roman-family derivative second. JWJeffery/LOTH now contains source governance, permission registry, office structure, resolver maps, Night Prayer weekly-cycle population, Grail 1963 psalter corpus resource, psalm-numbering registry, source supplement policy, and Universalis comparison tooling. Private restricted corpus build-out may proceed while permission is pending. Official/current LOTH text must not be exposed publicly, fetched by PrayerAppNew, or rendered externally until permission authorizes it. Office of Readings failed-course correction closed in LOTH commits 9409041, be68b90, and 10d93fa: controlled source-shape fixture coverage was deepened, contaminated conclusion slots were repaired, and the legacy DivineOffice-derived daily date-block population was retired from the active corpus. Broad resolved Office of Readings date-block snapshots are no longer the forward architecture.",
+      "corpus_repo_note": "Restricted private corpus/governance repository for Roman Liturgy of the Hours. The current working strategy is private current LOTH first, public Roman-family derivative second. JWJeffery/LOTH now contains source governance, permission registry, office structure, resolver maps, Night Prayer weekly-cycle population, Grail 1963 psalter corpus resource, psalm-numbering registry, source supplement policy, and Universalis comparison tooling. Private restricted corpus build-out may proceed while permission is pending. Official/current LOTH text must not be exposed publicly, fetched by PrayerAppNew, or rendered externally until permission authorizes it. Office of Readings failed-course correction closed in LOTH commits 9409041, be68b90, and 10d93fa: controlled source-shape fixture coverage was deepened, contaminated conclusion slots were repaired, and the legacy DivineOffice-derived daily date-block population was retired from the active corpus. Broad resolved Office of Readings date-block snapshots are no longer the forward architecture. Office of Readings forward architecture plan closed in LOTH commit d9fdea1: the active OOR model is now formally cycle/proper/resolver, with 11 resolver layers, composition-map output, unitRefs-only slot resolution, no text-unit writes, and no broad daily date-block snapshots.",
       "permission_inquiry": {
         "contact": "DivineOffice.org / Surgeworks",
         "date_sent": "2026-05-23",
@@ -209,10 +209,11 @@
           "grail_1963_psalter": "resources/psalter/grail-1963/psalms.json",
           "universalis": "structure_calendar_source_discovery_comparator_not_automatic_population_source",
           "source_supplement_policy": "registry/roman-loth-source-supplement-policy.json",
-          "office_of_readings": "source_pipeline_corrected_legacy_date_blocks_retired_controlled_grail_psalmody_fixtures_active",
-          "office_of_readings_forward_model": "cycle_proper_resolver_architecture_required; no broad daily date-block snapshots"
+          "office_of_readings": "cycle_proper_resolver_architecture_plan_active_after_legacy_date_blocks_retired",
+          "office_of_readings_forward_model": "cycle_proper_resolver_architecture_required; no broad daily date-block snapshots",
+          "office_of_readings_cycle_proper_resolver_plan": "closed_in_loth_d9fdea1; composition_map_unitrefs_only_no_text_writes_no_date_blocks"
         },
-        "next_private_office_target": "office_of_readings_cycle_proper_resolver_architecture"
+        "next_private_office_target": "office_of_readings_metadata_composition_pilot"
       }
     },
     {
@@ -316,7 +317,7 @@
       "blocks_beta": true,
       "purpose": "Build the current Roman LOTH / Divine Office first as a private restricted control corpus in JWJeffery/LOTH, then use that corpus as the guide for a public Roman-family derivative lane built from authorized, public-domain, or source-cleared materials.",
       "exit_gate": "Private current LOTH control corpus has enough office coverage and source-class governance to guide a public Roman-family derivative; public beta blocker is cleared only when an honest public-renderable Roman Catholic office baseline exists or permission authorizes the current LOTH lane.",
-      "governance_note": "Private-current-LOTH-first/public-LOTH-second strategy accepted 2026-05-27. JWJeffery/LOTH is the active Roman LOTH control-corpus repository. Night Prayer weekly-cycle population is closed for the current build scope. Grail 1963 psalter corpus lives under resources/psalter/grail-1963/psalms.json; psalm-numbering registry resolves Hebrew/Masoretic and Septuagint/Vulgate numbering; source supplement policy governs Universalis divergence by content class. Universalis remains useful for structure/calendar/source discovery but is not approved for automatic population. Office of Readings source-unit/materialization planning closed in LOTH commit c73bc1d. Next private office target: bounded Office of Readings pilot ingestion, chosen for the user's devotional priority and for its strong pressure-test value across psalmody, biblical readings, patristic/hagiographic second readings, responsories, Te Deum, and collects. Office of Readings pilot-ingestion audit closed in LOTH commits 3734157 and 592cce7 after anchor repair; next private Roman LOTH target is ordinary-week Office of Readings expansion. Office of Readings ordinary-week expansion planning closed in LOTH commit c02c74b; next LOTH work is population of the selected ordinary-week set. Office of Readings ordinary-week population closed in LOTH commit e80f945; next work moves to the next Roman LOTH core-office expansion target. Morning Prayer source-unit/materialization planning closed in LOTH commit a4ee4ce; next LOTH work is the planned 2026-06-16 Morning Prayer pilot population. Roadmap correction 2026-05-27: Morning Prayer source planning remains future-ready, but active build work returns to Office of Readings continuation before moving deeper into other core offices. Office of Readings 2026-06-22 week expansion planning closed in LOTH commit 0dadd12; next LOTH work is URL preflight followed by population of that selected week. Office of Readings four-week block population closed in LOTH commit 3a0135e, covering 2026-06-22 through 2026-07-18 Monday-Saturday with 264 slot files. Office of Readings population now defaults to four-week blocks unless concrete QC risk requires a smaller tranche. Office of Readings second four-week block population closed in LOTH commit 2dab35d, covering 2026-07-20 through 2026-08-15 Monday-Saturday with 264 slot files. After two clean four-week blocks, Office of Readings population now defaults to eight-week blocks unless concrete QC risk requires a smaller tranche. Office of Readings first eight-week block population closed in LOTH commit b88e8b0, covering 2026-08-17 through 2026-10-10 Monday-Saturday with 528 slot files. Eight-week Office of Readings batching is now confirmed after a successful 48-date block. Office of Readings second eight-week block population closed in LOTH commit 936cc7d, covering 2026-10-12 through 2026-12-05 Monday-Saturday with 528 slot files. Eight-week Office of Readings batching remains the default after a second successful 48-date block. Office of Readings third eight-week block population closed in LOTH commit acacbd0, covering 2026-12-07 through 2027-01-30 Monday-Saturday with 528 slot files. Office of Readings fourth eight-week block population closed in LOTH commit c794db7, covering 2027-02-01 through 2027-03-27 Monday-Saturday with 528 slot files. PrayerAppNew recording cadence is now every two successful LOTH population tranches unless a concrete failure or architecture change requires an immediate record. Office of Readings forward completion model corrected in LOTH commits 8fa1e12 and d5ea617: Universalis now governs appointment/structure discovery and the local Grail psalter governs psalm-body materialization. The earlier DivineOffice-derived date-block path was later identified as a failed architecture: resolved daily snapshots are not the forward corpus model. The pipeline audit is offline governance; live future-date source availability belongs in separate preflight checks. Office of Readings Universalis appointment parser audit closed in LOTH commit cf1bfd5: current Universalis source shape is now source-tested for psalm appointment extraction, alternate psalm-number normalization, reading/responsory markers, and local Grail lookup probes without writing text units. Next source-pipeline target is Grail-backed psalmody materialization planning/audit. Office of Readings Grail psalmody materialization plan and mapping dry-run closed in LOTH commits c9cdf52 and 86e8fb3: Universalis psalm appointments now have a governed non-writing path toward local Grail psalter body references. The tranche writes no Office of Readings text units; next source-pipeline target is a bounded Grail psalmody materialization pilot. Office of Readings source-pipeline four-tranche bundle closed in LOTH commits f6fe1ee, 4773b75, 16c2e37, and 17dd352. The bundle added Grail psalmody materialization and unit pilots, reusable Universalis/Grail helper code, committed source-pipeline QC, an offline fixture audit, and a separate live-source preflight. Governance update: ordinary LOTH progress is recorded in PrayerAppNew every four tranches by default; architecture/source-model/failed-course corrections remain immediate-record exceptions; stable source-pipeline work should prefer reusable helper modules and committed QC scripts; live source checks are explicit preflights rather than core offline governance audits. Failed-course correction closed in LOTH commits 9409041, be68b90, and 10d93fa: the controlled Office of Readings source-shape fixture was deepened, conclusion-slot spillover contamination was repaired, and the legacy daily date-block population was retired from active corpus with a guard audit. Forward Office of Readings work must now use reusable cycle/proper/resolver architecture with unitRefs and source-class separation; broad daily date-block population is prohibited unless a future explicit governance decision reverses this."
+      "governance_note": "Private-current-LOTH-first/public-LOTH-second strategy accepted 2026-05-27. JWJeffery/LOTH is the active Roman LOTH control-corpus repository. Night Prayer weekly-cycle population is closed for the current build scope. Grail 1963 psalter corpus lives under resources/psalter/grail-1963/psalms.json; psalm-numbering registry resolves Hebrew/Masoretic and Septuagint/Vulgate numbering; source supplement policy governs Universalis divergence by content class. Universalis remains useful for structure/calendar/source discovery but is not approved for automatic population. Office of Readings source-unit/materialization planning closed in LOTH commit c73bc1d. Next private office target: bounded Office of Readings pilot ingestion, chosen for the user's devotional priority and for its strong pressure-test value across psalmody, biblical readings, patristic/hagiographic second readings, responsories, Te Deum, and collects. Office of Readings pilot-ingestion audit closed in LOTH commits 3734157 and 592cce7 after anchor repair; next private Roman LOTH target is ordinary-week Office of Readings expansion. Office of Readings ordinary-week expansion planning closed in LOTH commit c02c74b; next LOTH work is population of the selected ordinary-week set. Office of Readings ordinary-week population closed in LOTH commit e80f945; next work moves to the next Roman LOTH core-office expansion target. Morning Prayer source-unit/materialization planning closed in LOTH commit a4ee4ce; next LOTH work is the planned 2026-06-16 Morning Prayer pilot population. Roadmap correction 2026-05-27: Morning Prayer source planning remains future-ready, but active build work returns to Office of Readings continuation before moving deeper into other core offices. Office of Readings 2026-06-22 week expansion planning closed in LOTH commit 0dadd12; next LOTH work is URL preflight followed by population of that selected week. Office of Readings four-week block population closed in LOTH commit 3a0135e, covering 2026-06-22 through 2026-07-18 Monday-Saturday with 264 slot files. Office of Readings population now defaults to four-week blocks unless concrete QC risk requires a smaller tranche. Office of Readings second four-week block population closed in LOTH commit 2dab35d, covering 2026-07-20 through 2026-08-15 Monday-Saturday with 264 slot files. After two clean four-week blocks, Office of Readings population now defaults to eight-week blocks unless concrete QC risk requires a smaller tranche. Office of Readings first eight-week block population closed in LOTH commit b88e8b0, covering 2026-08-17 through 2026-10-10 Monday-Saturday with 528 slot files. Eight-week Office of Readings batching is now confirmed after a successful 48-date block. Office of Readings second eight-week block population closed in LOTH commit 936cc7d, covering 2026-10-12 through 2026-12-05 Monday-Saturday with 528 slot files. Eight-week Office of Readings batching remains the default after a second successful 48-date block. Office of Readings third eight-week block population closed in LOTH commit acacbd0, covering 2026-12-07 through 2027-01-30 Monday-Saturday with 528 slot files. Office of Readings fourth eight-week block population closed in LOTH commit c794db7, covering 2027-02-01 through 2027-03-27 Monday-Saturday with 528 slot files. PrayerAppNew recording cadence is now every two successful LOTH population tranches unless a concrete failure or architecture change requires an immediate record. Office of Readings forward completion model corrected in LOTH commits 8fa1e12 and d5ea617: Universalis now governs appointment/structure discovery and the local Grail psalter governs psalm-body materialization. The earlier DivineOffice-derived date-block path was later identified as a failed architecture: resolved daily snapshots are not the forward corpus model. The pipeline audit is offline governance; live future-date source availability belongs in separate preflight checks. Office of Readings Universalis appointment parser audit closed in LOTH commit cf1bfd5: current Universalis source shape is now source-tested for psalm appointment extraction, alternate psalm-number normalization, reading/responsory markers, and local Grail lookup probes without writing text units. Next source-pipeline target is Grail-backed psalmody materialization planning/audit. Office of Readings Grail psalmody materialization plan and mapping dry-run closed in LOTH commits c9cdf52 and 86e8fb3: Universalis psalm appointments now have a governed non-writing path toward local Grail psalter body references. The tranche writes no Office of Readings text units; next source-pipeline target is a bounded Grail psalmody materialization pilot. Office of Readings source-pipeline four-tranche bundle closed in LOTH commits f6fe1ee, 4773b75, 16c2e37, and 17dd352. The bundle added Grail psalmody materialization and unit pilots, reusable Universalis/Grail helper code, committed source-pipeline QC, an offline fixture audit, and a separate live-source preflight. Governance update: ordinary LOTH progress is recorded in PrayerAppNew every four tranches by default; architecture/source-model/failed-course corrections remain immediate-record exceptions; stable source-pipeline work should prefer reusable helper modules and committed QC scripts; live source checks are explicit preflights rather than core offline governance audits. Failed-course correction closed in LOTH commits 9409041, be68b90, and 10d93fa: the controlled Office of Readings source-shape fixture was deepened, conclusion-slot spillover contamination was repaired, and the legacy daily date-block population was retired from active corpus with a guard audit. Forward Office of Readings work must now use reusable cycle/proper/resolver architecture with unitRefs and source-class separation; broad daily date-block population is prohibited unless a future explicit governance decision reverses this. Office of Readings cycle/proper/resolver architecture plan closed in LOTH commit d9fdea1: the plan defines 11 resolver layers and 11 slot contracts, requires composition-map output with unitRefs only, keeps source-class separation, and explicitly forbids text-unit writes and broad resolved date snapshots. Next OOR work should be a metadata-only composition pilot or psalmody-cycle-map skeleton, not population."
     },
     {
       "id": "phase_4",
@@ -684,12 +685,12 @@
       ],
       "purpose": "Correct and continue the private current LOTH control corpus after Night Prayer and Office of Readings source-pipeline work. Office of Readings must proceed through cycle/proper/resolver architecture and controlled source-pipeline units, not broad daily date-block snapshots.",
       "qc": [
-        "npm run audit:office-of-readings-no-legacy-date-block-population",
-        "npm run qc:office-of-readings-source-pipeline",
-        "npm run verify:corpus"
+        "node --check scripts/audit-office-of-readings-cycle-proper-resolver-plan.mjs",
+        "npm run audit:office-of-readings-cycle-proper-resolver-plan",
+        "python -m json.tool registry/roman-loth-office-of-readings-cycle-proper-resolver-plan.json"
       ],
-      "notes": "Office of Readings source-model failed-course correction closed in LOTH commits 9409041, be68b90, and 10d93fa. The previous broad DivineOffice-derived daily date-block population model was retired from active corpus. The active forward path is controlled Universalis appointment/structure discovery plus local Grail psalm-body materialization, followed by cycle/proper/resolver architecture for reusable units. Broad resolved daily Office of Readings snapshots must not resume.",
-      "active_subtarget": "office_of_readings_legacy_date_block_population_retired",
+      "notes": "Office of Readings source-model failed-course correction closed in LOTH commits 9409041, be68b90, and 10d93fa. The previous broad DivineOffice-derived daily date-block population model was retired from active corpus. The active forward path is controlled Universalis appointment/structure discovery plus local Grail psalm-body materialization, followed by cycle/proper/resolver architecture for reusable units. Broad resolved daily Office of Readings snapshots must not resume. LOTH commit d9fdea1 closed the Office of Readings cycle/proper/resolver architecture plan. This is a non-materializing architecture contract: 11 slots, 11 resolver layers, composition-map output, unitRefs-only resolution, no official text emission, no Office text-unit writes, and no broad daily date-block snapshots.",
+      "active_subtarget": "office_of_readings_cycle_proper_resolver_architecture_plan_closed",
       "completed_source_plan_commit": "a4ee4ce",
       "evidence": [
         "a4ee4ce Add Morning Prayer source plan",
@@ -728,9 +729,12 @@
         "10d93fa Retire Office of Readings legacy date-block population",
         "2026-05-30 failed-course correction: broad Office of Readings date-block population is retired from active corpus",
         "2026-05-30 governance: Office of Readings forward architecture is cycle/proper/resolver with reusable unitRefs, not resolved daily snapshots",
-        "2026-05-30 guardrail: audit:office-of-readings-no-legacy-date-block-population must prevent reintroduction of the retired path"
+        "2026-05-30 guardrail: audit:office-of-readings-no-legacy-date-block-population must prevent reintroduction of the retired path",
+        "d9fdea1 Add Office of Readings cycle proper resolver plan",
+        "2026-05-30 Office of Readings architecture: cycle/proper/resolver plan closed with 11 slots and 11 resolver layers",
+        "2026-05-30 governance: next OOR implementation must be metadata-only composition/pilot work before any text population"
       ],
-      "next_subtarget": "office_of_readings_cycle_proper_resolver_architecture_plan",
+      "next_subtarget": "office_of_readings_metadata_composition_pilot",
       "completed_week_20260622_plan_commit": "0dadd12",
       "completed_block_20260622_20260718_commit": "3a0135e",
       "default_population_batch_size": "not_applicable_legacy_date_blocks_retired",
@@ -763,7 +767,9 @@
         "source_pipeline_qc": "Keep core governance QC offline/source-fixture based; run live source checks as explicit preflights.",
         "office_of_readings_forward_model": "Cycle/proper/resolver architecture with reusable unitRefs; Universalis appointment/structure discovery; local Grail psalm-body materialization; source-class separation.",
         "forbidden_office_of_readings_model": "Broad resolved daily DivineOffice-derived date-block snapshots in texts/en-us/office-of-readings/block-* or ordinary-week-*.",
-        "legacy_date_block_guard": "audit:office-of-readings-no-legacy-date-block-population"
+        "legacy_date_block_guard": "audit:office-of-readings-no-legacy-date-block-population",
+        "office_of_readings_cycle_proper_resolver_plan": "Closed in LOTH d9fdea1. Architecture contract emits composition maps/unitRefs only and writes no text units or date snapshots.",
+        "next_oor_allowed_implementation": "metadata-only composition pilot, psalmody cycle map skeleton, or biblical reading cycle map skeleton; all must write no text units and no broad date blocks"
       },
       "completed_controlled_source_shape_fixture_commit": "9409041",
       "completed_conclusion_slot_contamination_repair_commit": "be68b90",
@@ -776,9 +782,25 @@
           "10d93fa Retire Office of Readings legacy date-block population"
         ],
         "retiredModel": "broad DivineOffice-derived resolved daily date-block snapshots",
-        "forwardModel": "cycle/proper/resolver architecture using reusable units and source-class-separated source-pipeline fixtures",
+        "forwardModel": "cycle/proper/resolver architecture using reusable units, composition maps, unitRefs-only slot resolution, and source-class-separated source-pipeline fixtures",
         "guardAudit": "audit:office-of-readings-no-legacy-date-block-population",
-        "sizeSignal": "LOTH repo collapsed to approximately 5.3M and texts/en-us/office-of-readings to approximately 52K after retirement and git gc."
+        "sizeSignal": "LOTH repo collapsed to approximately 5.3M and texts/en-us/office-of-readings to approximately 52K after retirement and git gc.",
+        "forwardArchitecturePlanCommit": "d9fdea1"
+      },
+      "completed_cycle_proper_resolver_plan_commit": "d9fdea1",
+      "office_of_readings_cycle_proper_resolver_architecture": {
+        "status": "closed",
+        "commit": "d9fdea1",
+        "commit_message": "Add Office of Readings cycle proper resolver plan",
+        "plan": "registry/roman-loth-office-of-readings-cycle-proper-resolver-plan.json",
+        "audit": "audit:office-of-readings-cycle-proper-resolver-plan",
+        "slot_count": 11,
+        "resolver_layer_count": 11,
+        "output_kind": "composition_map",
+        "slot_resolution_output": "unitRefs_only",
+        "writesOfficeTextUnits": false,
+        "writesBroadDateBlocks": false,
+        "global_verification_status": "not_wired_until_stable"
       }
     },
     {
