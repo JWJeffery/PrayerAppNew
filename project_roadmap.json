@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0.0",
-  "roadmap_version": "0.1.29",
+  "roadmap_version": "0.1.30",
   "last_updated": "2026-05-30",
   "status": "active",
   "name": "Universal Office Beta Release Roadmap",
@@ -8,12 +8,12 @@
   "current_repo_state": {
     "latest_known_commit": "1803dbc",
     "latest_known_commit_message": "Record Office of Readings source pipeline bundle",
-    "structure_json_version": "3.8.140",
+    "structure_json_version": "3.8.141",
     "roadmap_source_of_truth": "project_roadmap.json",
     "structure_json_role": "Project manifest, implementation ledger, governance history, legacy admin todo source, and current state pointer.",
     "roadmap_role": "Canonical release architecture and phase/tranche planning source for Admin Dashboard roadmap visualization.",
-    "latest_known_loth_commit": "e0b8cc1",
-    "latest_known_loth_commit_message": "Bind Office of Readings source alignment to source pipeline",
+    "latest_known_loth_commit": "925e7f6",
+    "latest_known_loth_commit_message": "Record Office of Readings source class rights posture",
     "roman_loth_control_corpus_repo": "JWJeffery/LOTH"
   },
   "release_identity": {
@@ -209,8 +209,8 @@
           "grail_1963_psalter": "resources/psalter/grail-1963/psalms.json",
           "universalis": "structure_calendar_source_discovery_comparator_not_automatic_population_source",
           "source_supplement_policy": "registry/roman-loth-source-supplement-policy.json",
-          "office_of_readings": "metadata_pilot_population_complete_private_blocked_candidate_reusable_units_source_alignment_pipeline_bound",
-          "office_of_readings_forward_model": "cycle_proper_resolver_architecture_required; source_alignment_bound_to_universalis_grail_source_plan_contracts; no broad daily date-block snapshots",
+          "office_of_readings": "metadata_pilot_population_complete_private_blocked_candidate_reusable_units_source_verification_and_rights_posture_recorded",
+          "office_of_readings_forward_model": "cycle_proper_resolver_architecture_required; source_verification_and_rights_posture_recorded; source_alignment_bound_to_universalis_grail_source_plan_contracts; no broad daily date-block snapshots",
           "office_of_readings_cycle_proper_resolver_plan": "closed_in_loth_d9fdea1; composition_map_unitrefs_only_no_text_writes_no_date_blocks",
           "office_of_readings_metadata_composition_pilot": "closed_in_loth_fa10584; composition-map samples with 11 unitRefs-only slots",
           "office_of_readings_psalmody_cycle_map_skeleton": "closed_in_loth_f530cd5_and_bound_in_8ae8a49; refs-only appointment map skeleton bound to composition pilot",
@@ -234,21 +234,25 @@
           "office_of_readings_remaining_source_gated_refs_report": "added_in_loth_0a98778 and refreshed through 3ca5dbd; now reports 3 remaining source-gated slots across 3 contexts",
           "office_of_readings_candidate_first_responsory_units": "closed_in_loth_9b54a97; three pilot first-responsory refs populated as public-domain scripture-style candidate reusable units pending final LOTH/NAB alignment",
           "office_of_readings_candidate_second_responsory_units": "closed_in_loth_3ca5dbd; three pilot second-responsory refs populated as public-domain scripture-style candidate reusable units pending final LOTH/NAB alignment",
-          "office_of_readings_hydration_state": "after_loth_e0b8cc1 metadata pilot remains 10 hydrated slots for ordinary/Lenten contexts with Te Deum rule-not-applicable and 11 hydrated slots for solemnity context",
+          "office_of_readings_hydration_state": "after_loth_925e7f6 metadata pilot remains 10 hydrated slots for ordinary/Lenten contexts with Te Deum rule-not-applicable and 11 hydrated slots for solemnity context",
           "office_of_readings_remaining_source_gated_slots": [],
           "office_of_readings_candidate_first_reading_units": "closed_in_loth_96253d7; three pilot first-reading refs populated as public-domain scripture candidate reusable units pending final LOTH/NAB alignment",
           "office_of_readings_candidate_second_reading_units": "closed_in_loth_794f624; three pilot second-reading refs populated as public-domain patristic/ecclesial candidate reusable units pending final LOTH source alignment",
           "office_of_readings_candidate_psalmody_units": "closed_in_loth_a4849c8; three pilot psalmody refs populated as public-domain psalmody candidate reusable units pending final LOTH/Grail alignment",
           "office_of_readings_text_population_eligibility": "after_loth_a4849c8 eligibility reports 11 populated slots and 0 source-gated slots in the metadata pilot",
-          "office_of_readings_completion_scope": "metadata_pilot_population_and_source_alignment_pipeline_binding_complete_only; not full OOR cycle completion, not public rendering authorization, not broad daily date-block authorization",
-          "office_of_readings_latest_recorded_loth_commit": "e0b8cc1",
+          "office_of_readings_completion_scope": "metadata_pilot_population_source_alignment_source_verification_and_rights_posture_complete_only; not full OOR cycle completion, not public rendering authorization, not broad daily date-block authorization",
+          "office_of_readings_latest_recorded_loth_commit": "925e7f6",
           "office_of_readings_source_alignment_status": "closed_in_loth_8294623; non-text source-alignment status report records all 11 OOR slots, 11 populated or rule-not-applicable slots, 0 source-gated slots, and blocked rendering/daily snapshots",
           "office_of_readings_reading_citation_refs": "closed_in_loth_e3eda12; metadata-only first-reading and second-reading citation/source refs populated for the three pilot contexts; not official-current LOTH/NAB/ICEL/Grail assertions",
           "office_of_readings_source_alignment_audit": "closed_in_loth_01616d2; quiet source-alignment audit added and kept out of broad verify chains pending explicit promotion",
           "office_of_readings_source_pipeline_binding": "closed_in_loth_e0b8cc1; source-alignment report bound to existing source-plan, Universalis/Grail pipeline, Grail psalmody materialization plan, controlled source-shape fixtures, current Universalis psalmody unit pilot, and local Grail 1963 psalter",
-          "office_of_readings_source_model": "Universalis=appointment/structure discovery not automatic text population; Grail 1963=local psalm-body corpus blocked until authorized; DivineOffice=legacy comparison/regression not forward completion path; non-psalm material remains source-class-separated"
+          "office_of_readings_source_model": "Universalis=appointment/structure discovery not automatic text population; Grail 1963=local psalm-body corpus blocked until authorized; DivineOffice=legacy comparison/regression not forward completion path; non-psalm material remains source-class-separated",
+          "office_of_readings_source_verification_matrix": "closed_in_loth_497033d; all 11 OOR slots classified by source lane, appointment discovery source, material source lane, verification posture, and blocked rendering status",
+          "office_of_readings_psalmody_appointment_verification": "closed_in_loth_493f959; three current unit-pilot Universalis psalmody appointments verified against local Grail 1963 psalter refs with no Office text-unit writes",
+          "office_of_readings_reading_source_ref_verification": "closed_in_loth_5e72050; first-reading and second-reading candidate source refs internally verified across metadata composition, eligibility, candidate text units, source-verification matrix, and source-alignment report",
+          "office_of_readings_source_class_rights_permission_posture": "closed_in_loth_925e7f6; all 11 slots remain private-governance-cleared but not public-rendering-cleared; rights/permission verification still required by source class"
         },
-        "next_private_office_target": "office_of_readings_source_pipeline_appointment_verification_or_broader_cycle_expansion",
+        "next_private_office_target": "responsory_source_witness_verification_or_broader_non_materializing_cycle_expansion",
         "current_status": "private_control_corpus_in_progress",
         "render_policy": "blocked_until_authorized",
         "blocks_beta": true
@@ -1385,6 +1389,22 @@
       "summary": "Recorded the four-tranche Office of Readings source-alignment/source-pipeline bundle after metadata-pilot population completion. The bundle added the non-text source-alignment status report, populated metadata-only first/second reading citation and source refs for the three pilot contexts, added a quiet source-alignment audit, and bound the report to the existing Universalis/Grail/source-plan contracts.",
       "public_rendering_authorized": false,
       "broad_daily_date_blocks_authorized": false
+    },
+    {
+      "id": "roman_loth_oor_source_verification_rights_posture_bundle_2026_05_30",
+      "status": "closed",
+      "date": "2026-05-30",
+      "repository": "JWJeffery/LOTH",
+      "commit_sequence": [
+        "497033d Add Office of Readings source verification matrix",
+        "493f959 Verify Office of Readings psalmody appointment matrix",
+        "5e72050 Verify Office of Readings reading source refs",
+        "925e7f6 Record Office of Readings source class rights posture"
+      ],
+      "summary": "Closed the four-tranche Office of Readings source-verification and rights-posture bundle. The bundle added a source-verification matrix for all 11 slots, verified the psalmody appointment-to-local-Grail unit-pilot mappings, verified first-reading and second-reading source refs internally across the metadata pilot and candidate units, and recorded source-class rights/permission posture while preserving blocked rendering and private-governance-only status.",
+      "public_rendering_authorized": false,
+      "broad_daily_date_blocks_authorized": false,
+      "official_current_text_assertions_authorized": false
     }
   ],
   "governance_questions": [
