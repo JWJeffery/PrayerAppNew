@@ -1,10 +1,10 @@
 {
   "project_manifest": {
     "name": "Universal Office",
-    "version": "3.8.135",
+    "version": "3.8.136",
     "last_updated": "2026-05-30",
     "bcp_compliance": "100%",
-    "operational_status": "Current operational status as of 2026-05-30: PrayerAppNew remains the universal app shell and governance manifest. Byzantine/Horologion public-beta ordinary baseline remains governed with deferred depth tracked separately. Roman LOTH remains a restricted/private control-corpus lane: public rendering of current official LOTH text remains blocked until permission authorization is recorded. Office of Readings active forward architecture is non-materializing composition-map/unitRefs/citationRefs/ruleRefs-only. LOTH is recorded through commit 2ba1bb2: all 11 pilot Office of Readings slots are now bound by refs/rules or rule-not-applicable in the metadata composition resolver. No Office of Readings text-unit writes, official-text emission, or broad daily date-block snapshots are authorized. Historical operational-status narrative and older recent_logic_changes entries remain archived in documentation/structure-archive-2026-05-30-roman-loth-oor-composition.json.",
+    "operational_status": "Current operational status as of 2026-05-30: PrayerAppNew remains the universal app shell and governance manifest. Byzantine/Horologion public-beta ordinary baseline remains governed with deferred depth tracked separately. Roman LOTH remains a restricted/private control-corpus lane: public rendering of current official LOTH text remains blocked until permission authorization is recorded. Office of Readings active forward architecture is now resolver-driven with governed reusable text-unit population started. LOTH is recorded through commit d46268b: all 11 pilot OOR slots are bound by refs/rules or rule-not-applicable; opening versicle, conclusion, and Te Deum are populated as reusable root text units and hydrated where applicable. No broad daily Office of Readings date-block snapshots are authorized.",
     "architectural_decisions_2026_05_25": [
       {
         "id": "roman_loth_composition_map_source_navigation",
@@ -522,7 +522,7 @@
     "roadmap_source": {
       "canonical_file": "project_roadmap.json",
       "status": "active",
-      "roadmap_version": "0.1.24",
+      "roadmap_version": "0.1.25",
       "release_identity": "BCP-facing Anglican public beta",
       "admin_dashboard_status": "pending Phase 1 dashboard wiring",
       "structure_json_role": "Project manifest, implementation ledger, governance history, legacy admin todo source, and current state pointer.",
@@ -1152,7 +1152,7 @@
         "publicFacing": false,
         "appSideFetchEnabled": false,
         "scaffoldDate": "2026-05-23",
-        "architectureStatus": "synthetic_resolver_verified_office_of_readings_full_metadata_slot_binding_recorded",
+        "architectureStatus": "synthetic_resolver_verified_office_of_readings_text_unit_hydration_recorded",
         "syntheticResolver": {
           "status": "verified",
           "verifiedDate": "2026-05-23",
@@ -1164,11 +1164,43 @@
           "syntheticOnly": true,
           "renderPolicy": "blocked_until_authorized"
         },
-        "notes": "Private restricted corpus architecture is operational. Synthetic resolver verification emits placeholders only. Private restricted official-text build-out may continue in JWJeffery/LOTH while permission is pending. PrayerAppNew must not fetch, expose, or publicly render official LOTH text until permission authorization is recorded. Office of Readings source-model correction closed in LOTH commits 9409041, be68b90, and 10d93fa: legacy daily date-block population retired from active corpus; forward model is cycle/proper/resolver with controlled source-pipeline fixtures. Office of Readings cycle/proper/resolver plan closed in LOTH commit d9fdea1: composition-map/unitRefs-only resolver architecture is now the forward OOR model after retirement of daily date-block population. Office of Readings metadata/cycle-map bundle closed in LOTH commits fa10584, f530cd5, 8ae8a49, and e7171d3: metadata composition pilot, psalmody cycle-map skeleton, psalmody binding, and biblical first-reading cycle-map skeleton are active and non-materializing. Office of Readings composition-resolver bundle closed in LOTH commits a4a9761, 503ebdc, dff67ea, and 0367a90: first-reading, first-responsory, and second-reading refs are bound into the metadata composition resolver, which now emits complete ordered 11-slot OOR composition maps. Office of Readings full metadata slot-binding bundle closed in LOTH commits e0bab4a, 7c8bbd8, f237a42, and 2ba1bb2: second-responsory, Te Deum, collect, hymn, and verse refs/rules are bound into the metadata composition resolver. All 11 pilot slots are now represented as refs/rules or rule-not-applicable."
+        "notes": "Private restricted corpus architecture is operational. Synthetic resolver verification emits placeholders only. Private restricted official-text build-out may continue in JWJeffery/LOTH while permission is pending. PrayerAppNew must not fetch, expose, or publicly render official LOTH text until permission authorization is recorded. Office of Readings source-model correction closed in LOTH commits 9409041, be68b90, and 10d93fa: legacy daily date-block population retired from active corpus; forward model is cycle/proper/resolver with controlled source-pipeline fixtures. Office of Readings cycle/proper/resolver plan closed in LOTH commit d9fdea1: composition-map/unitRefs-only resolver architecture is now the forward OOR model after retirement of daily date-block population. Office of Readings metadata/cycle-map bundle closed in LOTH commits fa10584, f530cd5, 8ae8a49, and e7171d3: metadata composition pilot, psalmody cycle-map skeleton, psalmody binding, and biblical first-reading cycle-map skeleton are active and non-materializing. Office of Readings composition-resolver bundle closed in LOTH commits a4a9761, 503ebdc, dff67ea, and 0367a90: first-reading, first-responsory, and second-reading refs are bound into the metadata composition resolver, which now emits complete ordered 11-slot OOR composition maps. Office of Readings full metadata slot-binding bundle closed in LOTH commits e0bab4a, 7c8bbd8, f237a42, and 2ba1bb2: second-responsory, Te Deum, collect, hymn, and verse refs/rules are bound into the metadata composition resolver. All 11 pilot slots are now represented as refs/rules or rule-not-applicable. Office of Readings text-unit hydration bundle closed in LOTH commits e2b51ca, 293f33a, 91c3039, and d46268b: complete metadata pilot audit is active; opening versicle, conclusion, and Te Deum are populated as reusable root text units; hydration now injects those populated units into blocked/private resolver output where applicable. Daily date-block snapshots remain prohibited."
       }
     ]
   },
   "recent_logic_changes": [
+    {
+      "date": "2026-05-30",
+      "phase": "Roman LOTH Office of Readings governed text-unit hydration bundle",
+      "status": "closed",
+      "repository": "JWJeffery/LOTH",
+      "commit_sequence": [
+        "e2b51ca Add Office of Readings complete metadata pilot audit",
+        "293f33a Populate Office of Readings stable ordinary units",
+        "91c3039 Hydrate Office of Readings populated text units",
+        "d46268b Populate Office of Readings Te Deum unit"
+      ],
+      "summary": "Closed the first governed reusable text-unit population bundle after OOR full metadata slot binding. The bundle adds the complete metadata pilot audit, populates opening versicle and conclusion as stable ordinary reusable text units, adds text-unit hydration for populated reusable units, and populates the Te Deum reusable unit.",
+      "artifacts": [
+        "scripts/audit-office-of-readings-complete-metadata-pilot.mjs",
+        "texts/en-us/office-of-readings/opening-versicle.json",
+        "texts/en-us/office-of-readings/conclusion.json",
+        "scripts/audit-office-of-readings-stable-ordinary-units.mjs",
+        "scripts/hydrate-office-of-readings-populated-text-units.mjs",
+        "scripts/audit-office-of-readings-populated-text-unit-hydration.mjs",
+        "texts/en-us/office-of-readings/te-deum.json",
+        "scripts/audit-office-of-readings-te-deum-unit.mjs",
+        "package.json"
+      ],
+      "verification": [
+        "PASS office-of-readings-complete-metadata-pilot (3 resolutions, 11 slots each, 0 unresolved)",
+        "PASS office-of-readings-stable-ordinary-units (2 reusable text units populated)",
+        "PASS office-of-readings-populated-text-unit-hydration (2 hydrated slots across 3 resolutions)",
+        "PASS office-of-readings-te-deum-unit (1 reusable text unit populated)",
+        "PASS office-of-readings-populated-text-unit-hydration (3 populated text units; Te Deum hydrated where applicable)"
+      ],
+      "governance_result": "OOR has begun real text-unit population through governed reusable root units. Hydration is private/blocked and source-safe; daily date-block snapshots remain prohibited."
+    },
     {
       "date": "2026-05-30",
       "phase": "Roman LOTH Office of Readings full metadata slot-binding bundle",
@@ -1506,36 +1538,10 @@
         "npm run smoke:synthetic"
       ],
       "notes": "This is the second successful eight-week Office of Readings population block. Continue Office of Readings in eight-week blocks by default unless parser failures, dense calendar interruptions, or other concrete QC risks require a smaller tranche."
-    },
-    {
-      "date": "2026-05-27",
-      "phase": "Roman LOTH Office of Readings first eight-week block population",
-      "status": "closed",
-      "repository": "JWJeffery/LOTH",
-      "commit_sequence": [
-        "b88e8b0 Populate Office of Readings first eight-week block"
-      ],
-      "summary": "Populated the Office of Readings block for 2026-08-17 through 2026-10-10, Monday through Saturday only, creating 528 slot files across 48 dates with an eight-week block-level population audit.",
-      "artifacts": [
-        "texts/en-us/office-of-readings/block-2026-08-17-to-2026-10-10/",
-        "registry/roman-loth-office-of-readings-block-2026-08-17-to-2026-10-10.json",
-        "scripts/audit-office-of-readings-block-2026-08-17-population.mjs",
-        "package.json"
-      ],
-      "verification": [
-        "node --check scripts/audit-office-of-readings-block-2026-08-17-population.mjs",
-        "npm run audit:office-of-readings-block-2026-08-17-population",
-        "npm run audit:office-of-readings-block-2026-07-20-population",
-        "npm run audit:office-of-readings-block-2026-06-22-population",
-        "npm run verify:office",
-        "npm run verify:corpus",
-        "npm run smoke:synthetic"
-      ],
-      "notes": "This is the first successful eight-week Office of Readings population block after two clean four-week blocks. Continue Office of Readings in eight-week blocks by default unless parser failures, dense calendar interruptions, or other concrete QC risks require a smaller tranche."
     }
   ],
   "roadmap_source": {
-    "roadmap_version": "0.1.24",
+    "roadmap_version": "0.1.25",
     "status": "active"
   }
 }
