@@ -1,0 +1,1677 @@
+{
+  "_note": "Archived data from structure.json during Roman LOTH / Office of Readings composition-resolver cleanup. Preserves the prior verbose project_manifest.operational_status and older recent_logic_changes entries so live structure.json can remain a current-state governance manifest.",
+  "archive_id": "structure_archive_2026_05_30_roman_loth_oor_composition",
+  "archived_at": "2026-05-30",
+  "source_file": "structure.json",
+  "source_version_before_archive": "3.8.133",
+  "source_version_after_archive": "3.8.134",
+  "archived_sections": {
+    "project_manifest.operational_status": {
+      "reason": "Historical append-only status trail had become too long for active governance use.",
+      "value": "Weekday Theotokion tone-correction extended to all resolved Menaion commemorations rank 1–4 (v2.5). Great Lent weekday seasonal override layer implemented (v2.6): stichera, aposticha, paremiae, troparion, and Theotokion slots now render explicit Lenten rubrics on Great Lent weekdays (Clean Monday through Great Friday) when no Menaion troparion is resolved; Menaion-resolved commemorations during Lent retain their proper troparion and Theotokion. Holy Week structural override live (v2.7): Palm Sunday through Great Saturday emit explicit day-specific rubrics across the five target Vespers slots. Unified Horologion navigation live (v3.0): single horologion mode, generic sidebar office selector for Vespers and Small Compline, old split mode strings eliminated. Small Compline (Mikron Apodeipnon) baseline live (v3.0): fixed slots resolved from compline-fixed.json, troparion-of-the-day via existing Vespers troparion infrastructure. Triodion corpus deferred. First Hour (Prima) baseline live (v3.1): fixed corpus (usual-beginning, psalm-5, psalm-89, psalm-100, trisagion-prayers, prayer-of-the-first-hour) resolved from first-hour-fixed.json; troparion-of-the-day and first-hour-theotokion resolved dynamically; Theotokion remains a rubric stub (deferred). Third Hour (Tertia) baseline live (v3.2): fixed corpus (usual-beginning, psalm-16, psalm-24, psalm-50, trisagion-prayers, prayer-of-the-third-hour) resolved from third-hour-fixed.json; troparion-of-the-day and third-hour-theotokion resolved dynamically; Theotokion remains a rubric stub (deferred). Sixth Hour (Sexta) baseline live (v3.3): fixed corpus (usual-beginning, psalm-53, psalm-54, psalm-90, trisagion-prayers, prayer-of-the-sixth-hour) resolved from sixth-hour-fixed.json; troparion-of-the-day and sixth-hour-theotokion resolved dynamically; Theotokion remains a rubric stub (deferred). Ninth Hour (Nona) baseline live (v3.4): fixed corpus (usual-beginning, psalm-83, psalm-84, psalm-85, trisagion-prayers, prayer-of-the-ninth-hour) resolved from ninth-hour-fixed.json; troparion-of-the-day and ninth-hour-theotokion resolved dynamically; Theotokion remains a rubric stub (deferred). Horologion engine v3.5–v4.4 now live: feast-rank arbitration introduced (_resolveFeastOverrideContext(), v3.5); Little Hours feast troparion override (_resolveLittleHourTroparionSlot(), v3.6); Vespers stichera/aposticha festal override (_resolveFestalRubricOverrideSlot(), v3.7); Great Lent seasonal troparion layer for all four Little Hours (_resolveLittleHourSeasonalTroparionSlot(), v3.8); Great Lent seasonal troparion layer for Small Compline (_resolveComplineSeasonalTroparionSlot(), v3.9); office-specific ordinary fallback normalization (_normalizeOrdinaryTroparionFallbackForOffice(), v4.0); Little Hours Theotokion normalization and festal rubric arbitration (v4.1/v4.3); Small Compline festal Theotokion rubric arbitration (v4.4). Season-aware feast qualification rule (v3.6/v3.8 — VERIFIED): outside Great Lent weekdays, Menaion rank 1–4 qualifies as a feast override; during Great Lent weekdays (Clean Monday through Great Friday), only ranks 1–2 qualify. Consequence: ordinary rank 4 saint commemorations no longer displace the Lenten weekday seasonal path on Great Lent weekdays; major feasts (e.g., Annunciation rank 1) still override during Lent; rank 4 saint overrides function normally outside Lent. Menaion corpus integration complete (all 12 months, 369/370 resolved; 05-18 held intentionally as text-unavailable). Resolver integration verified at runtime: date resolution, month loading, rank selection, troparion extraction, text-unavailable handling, and feast override integration all confirmed correct. Pascha boundary and Bright Week tone suppression verified; Thomas Sunday tone resumption verified. Small Compline festal Theotokion arbitration verified. Tone computation year-rollback bug (_computeBaselineTone) corrected and verified. Horologion v5.0 — Triodion Great Lent weekday overlay live: _loadTriodionData() / _resolveTriodionTroparion() insert Triodion-backed text on Great Lent weekdays after feast arbitration. Corpus covers Weeks 1–6 (data/triodion/triodion-lenten-weekday.json); verified across multiple Lent weeks including feast-override precedence (Annunciation rank 1 still wins). Horologion v5.1 — Holy Week text overlay live: _loadHolyWeekData() / _resolveHolyWeekText() provide actual troparion text for all seven Holy Week days (data/triodion/holy-week/holy-week.json). Holy Week structurally separate from the Great Lent weekday layer. Verified: Holy Monday, Holy Wednesday, Holy Friday, Holy Saturday. Holy Week Vespers text-depth expansion (post-v5.1): stichera text-backed for Great Monday–Saturday; paremiae text-backed for Great Monday–Saturday; aposticha text-backed for Great Monday, Tuesday, and Friday only; aposticha absent (no slot) at Great Wednesday and Thursday; aposticha rubric/not-appointed at Great Saturday (slot present but not appointed in this rite); theotokion-dismissal text-backed for Great Friday and Great Saturday; theotokion-dismissal remains rubric for Great Monday, Tuesday, Wednesday, and Thursday. Horologion v5.2 — Pentecostarion / Bright Week overlay live: _loadPentecostarionData() / _resolvePentecostarionText() provide Paschal stichera and aposticha text for Bright Week (data/pentecostarion/pentecostarion-bright-week.json). Troparion already resolved from vespers-troparion.json; kathisma and theotokion correctly omitted. Thomas Sunday returns to ordinary Sunday resurrectional path. Verified: Pascha, Bright Wednesday, Thomas Saturday, Thomas Sunday. Horologion v5.3 — Menaion text-unavailable audit: corpus is effectively complete at 369/370 resolved across all 12 months. The prior 'approximately 200 text-unavailable' count reflects an earlier state; the resolution pass was completed before this tranche. One intentional holdout remains: 05-18 (Venerable Peter of Caesarea in Cappadocia) — no confirmed Hapgood/OCA/Jordanville source. Verified: May 25, May 21 resolve as menaion-feast-troparion; May 18 degrades honestly as menaion-text-unavailable in both Vespers and Small Compline. Horologion v5.4 — diagnostics and UI polish: _horDiagnosticsEnabled flag and toggleHorologionDiagnostics() added to office-ui.js. _renderHorologionDiagnostics(item, escapeHtml) module-level helper wired into rubric, stichera, and fallback-text branches of _renderHorologionItem(). Diagnostics toggle button added to #generic-settings sidebar in index.html. When enabled, surfaces resolvedAs, type, tone, inferred layer for variable Horologion slots including: menaion-feast-troparion, menaion-text-unavailable, triodion-lenten-troparion, holy-week-troparion, bright-week-paschal-stichera, bright-week-paschal-aposticha, weekday-theme-rubric, paschal-troparion. Off by default; non-destructive to normal rendering. Horologion v5.5 — Vespers kathisma full-text integration: ordinary weekday Vespers kathismata now support full-text rendering where corpus exists; supported kathismata: 1, 4, 6, 8, 10, 12. Great Lent guard added — ordinary-cycle full kathisma text suppressed during Great Lent; returns great-lent-ordinary-cycle-inapplicable. Verified outcomes: ordinary weekday Vespers → type:'kathisma', resolvedAs:'ordinary-weekday-full-text'; Bright Week → bright-week-no-kathisma; Sunday Small Vespers → sunday-small-vespers-kathisma-ordinary-omitted. Horologion v5.6 — Orthros / Matins structural baseline: Orthros added as a real selectable office. Fixed baseline content added: Usual Beginning, Six Psalms, Praises Psalms, Great Doxology. god-is-the-lord / Alleluia path resolves across: ordinary, Great Lent weekday, Holy Week, Bright Week. Troparion path delegates correctly to existing seasonal / feast stack. Verified: ordinary weekday Orthros → orthros-god-is-the-lord-ordinary; Great Lent weekday → orthros-great-lent-alleluia-path; Holy Week → orthros-holy-week-alleluia-path; Bright Week → orthros-bright-week-paschal-path. Horologion v5.7 — Orthros kathisma and praises expansion: kathisma appointments upgraded from placeholders to explicit rubrics; Praises stichera upgraded from placeholder to differentiated rubric logic. Verified: 2026-05-04 Orthros — kathisma-first → orthros-ordinary-weekday-kathisma-appointment; kathisma-second → orthros-ordinary-weekday-kathisma-appointment; praises-stichera → orthros-ordinary-weekday-praises-stichera-rubric. Orthros improved from 15 implemented / 5 placeholders to 18 implemented / 2 placeholders. Horologion v5.8 — Orthros sessional hymn / canon discipline: sessional-hymns and canon upgraded from vague placeholders to season-aware rubric logic. Verified cases now distinguish: ordinary weekday, Sunday, Great Lent weekday, Holy Week, Bright Week. Feast inheritance intact. Representative results: Holy Monday / Holy Wednesday → orthros-holy-week-sessional-hymns-rubric + orthros-holy-week-canon-rubric; Bright Monday / Bright Tuesday → orthros-bright-week-sessional-hymns-rubric + orthros-bright-week-canon-rubric; Tuesday after Thomas Sunday → orthros-ordinary-weekday-sessional-hymns-rubric + orthros-ordinary-weekday-canon-rubric. Orthros now resolves with 20 implemented / 0 placeholder slots. Horologion v6.7 — Orthros weekday aposticha corpus complete: all eight tones, Monday–Saturday fully populated under window.OCTOECHOS.orthros.aposticha.weekday.tones[tone][dayOfWeek]; null-sentinel scaffold retired; integration live in the ordinary-weekday aposticha branch. Horologion weekday praises adjudication: the weekday praises corpus (orthros-praises-weekday.js) is source-complete as transcribed. Tone 1 Monday–Saturday and Tones 2–8 Saturday are populated. Tones 2–8 Monday–Friday are null by source-witness determination — no Praises block was present in the reviewed source witness for those slots; these nulls are not pending transcription. The engine corpus-probe path degrades correctly to rubric on null. The weekday Octoechos hymnographic corpus tranche is functionally closed. 2026-04-24 — Orthros pre-Menaion-ready closure: all implemented Orthros variable slots verified; no placeholder leakage, no literal 'undefined' leakage, no broad Menaion rank override of Sunday resurrectional canon. Verified complete: Sunday Theotokion (tones 1–8), Great Lent weekday Exapostilarion (tones 1–8 including day-specific endings), Great Lent Saturday Exapostilarion (1st Saturday special; 2nd–4th Saturday tone body and Saturday endings) including repetition rendering, Sessional Hymns Sunday-feast routing (fixed), Sunday canon null-Theotokion guard (fixed), canon routing order (fixed), Palm Sunday Exapostilarion placeholder leak (fixed), Great Lent and Holy Week Kathisma system (complete), Aposticha weekday corpus (tones 1–8), weekday Theotokia (tones 1–8). Ordinary weekday Exapostilarion firstEnding hardening resolved 2026-04-26: Monday fallback + empty-string guard applied; runtime QC 5 PASS / 0 FAIL; no undefined leakage. Orthros Sunday rank 1–2 feast canon audit completed 2026-04-26: sessional hymns, Praises, and Theotokion were already typikon-honest with rubrics; canon branch patched to resolvedAs orthros-sunday-feast-canon-rubric; QC 3 PASS / 0 FAIL (ordinary Sunday control PASS, St Nicholas Sunday rank-2 feast 2026-12-06 PASS, Great Lent weekday control PASS). Typika Sunday lectionary infrastructure v6.10 complete: data/horologion/typika-lectionary.json added; lookup keyed by Sunday After Pentecost, not Octoechos tone; Slavic/OCA/ROCOR/Antiochian gospel sequence governs Weeks 22–30; Week 1 All Saints Gospel segmented composite rendering complete; Week 1 All Saints Epistle full-text rendering complete as of 2026-05-07 via epistle_segments [Hebrews 11:32-40, Hebrews 12:1-2]; Week 19 cross-chapter epistle uses resolver-compatible segments; runtime QC previously 5 PASS / 0 FAIL, with Week 1 Epistle payload QC now PASS on 2026-06-07. Typika epistle/gospel no longer broadly blocked for ordinary post-Pentecost Sundays; Pentecostarion Sunday readings are live as of 2026-05-09; pre-Lenten Sunday readings are live as of 2026-05-09 with Zacchaeus deferred pending tradition-variant gate; Great Lent Sunday readings are live as of 2026-05-09; Typika Epistle/Gospel scripture resolution hardened as of 2026-05-10 via resolveScripturePericope() helper and full Typika caller migration; Palm Sunday and Bright Week readings are live as of 2026-05-10; ordinary weekday readings after Pentecost Weeks 1-33 are live as split-key weekday support as of 2026-05-10: Weeks 1-17 provide pre-Lukan ordinary Epistle/Gospel fallback, Weeks 18-33 provide post-Lukan Epistle support, and post-Lukan Gospel Weeks 30-33 are live in a separate post_lukan_weekday_gospels family keyed by ordinary week after Pentecost; Lukan weekday Gospel Weeks 1-12 are live as of 2026-05-10. Typika weekday interruption gates are live for Nativity/Theophany and Triodion/pre-Lenten stop conditions; post-Theophany weekday realignment is live using countdown keying toward Publican and Pharisee Sunday, so Week 33 resolves correctly after Zacchaeus Sunday even when raw Sunday-after-Pentecost ordinals differ. Typika pre-Lenten weekday readings are live as a named pre_lenten_weekdays family for Publican-and-Pharisee week, Meatfare week, and Cheesefare week, including no-Divine-Liturgy handling for Cheesefare Wednesday and Friday and multi-reading-set handling for Meatfare Saturday of Souls and Cheesefare Saturday Holy Ascetics. General feast lectionary overlays are live with feast_lectionary_overlays.winter_cycle populated for core Nativity/Theophany fixed days, relative Sundays, and relative Saturdays; feast_lectionary_overlays.fixed_cycle is populated for low/moderate-risk major fixed feasts; guarded Annunciation overlay support is live for non-Sunday March 25 dates before Lazarus Saturday. Final Typika release regression is closed as of 2026-05-10: corrected large matrix 243 PASS / 2 transient scripture-fetch failures; direct Bible static fetch and resolver checks recovered; Sunday Epistle recovery check 12 PASS / 0 FAIL. Typika lectionary is release-grade with known deferred gaps. Deferred work: Annunciation Sunday/Lazarus-or-later/Holy Week/Pascha/Bright collision policy, broader Menaion/fixed-feast overlay expansion, fuller forefeast/afterfeast coverage if later required, Royal Hours/office-reading handling, and other special-cycle coverage. Remaining Menaion canon and exapostilarion corpus expansion is deferred data work, not an open investigation target. Roman LOTH restricted private corpus status updated 2026-05-23: JWJeffery/LOTH now has a verified synthetic resolver. npm run verify:synthetic passes with 26 JSON files checked and all nine Roman LOTH office IDs resolving synthetically. Daytime aliases bind correctly to the Daytime Prayer template. The synthetic resolver emits no official LOTH text. Private restricted corpus build-out may continue in JWJeffery/LOTH while permission is pending; public rendering remains blocked_until_authorized. Roman LOTH composition-map/source-navigation governance accepted 2026-05-25: composition map accepted as core liturgical-assembly disclosure model; ribbon placement accepted as source-navigation metadata; current LOTH remains internal/restricted architecture-prototype track; future public-domain Roman-family corpus track follows internal stabilization; Roman office engine must remain source-edition-aware and not hardwired to current licensed LOTH text. See documentation/ROMAN_LOTH_COMPOSITION_MAP_SOURCE_NAVIGATION.md. Mobile product design doctrine accepted 2026-05-25: mobile packaging should be design-forward, not Anglican-forward; Anglicanism remains the app's default grammar without self-conscious denominational anxiety; onboarding receives the user and asks only what is needed; tradition-family routing, coverage honesty screens, scoped tradition-expansion notification, and subtle tradition-specific visual registers are governance requirements before mobile shell implementation. Roman LOTH Office of Readings source-model correction recorded 2026-05-30: LOTH commits 9409041, be68b90, and 10d93fa deepened controlled source-shape fixtures, repaired conclusion-slot spillover contamination, and retired the legacy broad daily date-block population from active corpus. Forward Office of Readings architecture is cycle/proper/resolver with reusable unitRefs and source-class-separated pipeline fixtures, not resolved daily snapshots. Roman LOTH Office of Readings cycle/proper/resolver architecture plan recorded 2026-05-30: LOTH commit d9fdea1 added the non-materializing OOR resolver contract with 11 slots, 11 resolver layers, composition-map output, unitRefs-only resolution, and explicit prohibitions on text-unit writes and daily date-block snapshots. Roman LOTH Office of Readings post-architecture metadata/cycle-map bundle recorded 2026-05-30: LOTH commits fa10584, f530cd5, 8ae8a49, and e7171d3 added a non-materializing metadata composition pilot, psalmody cycle-map skeleton, psalmody-to-composition binding, and biblical first-reading cycle-map skeleton. The OOR forward path remains composition-map/unitRefs/citationRefs-only with no text-unit writes and no broad daily date-block snapshots. Roman LOTH Office of Readings composition-resolver bundle recorded 2026-05-30: LOTH commits a4a9761, 503ebdc, dff67ea, and 0367a90 bound first reading, first responsory, and second reading into the metadata composition pilot and added a resolver that emits complete ordered 11-slot Office of Readings composition maps for three pilot contexts. The resolver remains non-materializing: unitRefs/citationRefs only, no text-unit writes, and no broad daily date-block snapshots."
+    },
+    "recent_logic_changes_archived_tail": {
+      "reason": "Only the latest 12 recent_logic_changes entries remain live; older entries are preserved here.",
+      "count": 59,
+      "entries": [
+        {
+          "date": "2026-05-27",
+          "phase": "Roman LOTH Office of Readings four-week block population",
+          "status": "closed",
+          "repository": "JWJeffery/LOTH",
+          "commit_sequence": [
+            "3a0135e Populate Office of Readings four-week block"
+          ],
+          "summary": "Populated the Office of Readings block for 2026-06-22 through 2026-07-18, Monday through Saturday only, creating 264 slot files across 24 dates with a block-level population audit.",
+          "artifacts": [
+            "texts/en-us/office-of-readings/block-2026-06-22-to-2026-07-18/",
+            "registry/roman-loth-office-of-readings-block-2026-06-22-to-2026-07-18.json",
+            "scripts/audit-office-of-readings-block-2026-06-22-population.mjs",
+            "package.json"
+          ],
+          "verification": [
+            "node --check scripts/audit-office-of-readings-block-2026-06-22-population.mjs",
+            "npm run audit:office-of-readings-block-2026-06-22-population",
+            "npm run audit:office-of-readings-week-2026-06-22-expansion-plan",
+            "npm run audit:office-of-readings-ordinary-week-population",
+            "npm run verify:office",
+            "npm run verify:corpus",
+            "npm run smoke:synthetic"
+          ],
+          "notes": "The block population succeeded after replacing the false Te Deum expectation with observed-state auditing. June 24 remains flagged for later fixed-day source review. Default Office of Readings population batch size is now four-week blocks unless parser or calendar complexity requires a smaller tranche."
+        },
+        {
+          "date": "2026-05-27",
+          "phase": "Roman LOTH Office of Readings 2026-06-22 week expansion plan",
+          "status": "closed",
+          "repository": "JWJeffery/LOTH",
+          "commit_sequence": [
+            "0dadd12 Plan Office of Readings week with June interruption"
+          ],
+          "summary": "Added a bounded Office of Readings expansion plan for 2026-06-22 through 2026-06-27, deliberately including the June 24 fixed-day interruption.",
+          "artifacts": [
+            "registry/roman-loth-office-of-readings-week-2026-06-22-expansion-plan.json",
+            "scripts/audit-office-of-readings-week-2026-06-22-expansion-plan.mjs",
+            "package.json"
+          ],
+          "verification": [
+            "node --check scripts/audit-office-of-readings-week-2026-06-22-expansion-plan.mjs",
+            "npm run audit:office-of-readings-week-2026-06-22-expansion-plan",
+            "npm run audit:office-of-readings-ordinary-week-population",
+            "npm run verify:office",
+            "npm run verify:corpus",
+            "npm run smoke:synthetic"
+          ],
+          "notes": "The selected week is planned and ready for URL preflight followed by population."
+        },
+        {
+          "date": "2026-05-27",
+          "phase": "Roman LOTH Office of Readings continuation correction",
+          "status": "closed",
+          "marker": "office_of_readings_continuation_correction_20260527",
+          "summary": "Corrected the active Phase 3 build lane so the next work continues Office of Readings rather than moving immediately to Morning Prayer.",
+          "artifacts": [
+            "project_roadmap.json",
+            "structure.json"
+          ],
+          "notes": "Morning Prayer source planning remains useful future-ready work. The active next build target returns to Office of Readings continuation."
+        },
+        {
+          "date": "2026-05-27",
+          "phase": "Roman LOTH Morning Prayer source-unit and materialization plan",
+          "status": "closed",
+          "repository": "JWJeffery/LOTH",
+          "commit_sequence": [
+            "a4ee4ce Add Morning Prayer source plan"
+          ],
+          "summary": "Added the Morning Prayer source-unit and materialization plan, including slot-by-slot source-family classification, pilot recommendation, and a dedicated audit.",
+          "artifacts": [
+            "registry/roman-loth-morning-prayer-source-plan.json",
+            "scripts/audit-morning-prayer-source-plan.mjs",
+            "package.json"
+          ],
+          "verification": [
+            "node --check scripts/audit-morning-prayer-source-plan.mjs",
+            "npm run audit:morning-prayer-source-plan",
+            "npm run audit:office-of-readings-ordinary-week-population",
+            "npm run verify:office",
+            "npm run verify:corpus",
+            "npm run smoke:synthetic"
+          ],
+          "notes": "Morning Prayer planning is closed. The next LOTH tranche should populate the planned 2026-06-16 Morning Prayer pilot, using a URL preflight before population."
+        },
+        {
+          "date": "2026-05-27",
+          "phase": "Roman LOTH Office of Readings ordinary-week population",
+          "status": "closed",
+          "repository": "JWJeffery/LOTH",
+          "commit_sequence": [
+            "e80f945 Populate Office of Readings ordinary week"
+          ],
+          "summary": "Populated the selected 2026-06-15 through 2026-06-20 Office of Readings ordinary-week set, creating sixty-six slot files and adding a week-population audit. The tranche used verified date-root source URLs after the initial slug-pattern preflight failed.",
+          "artifacts": [
+            "texts/en-us/office-of-readings/ordinary-week-11-2026/",
+            "registry/roman-loth-office-of-readings-ordinary-week-expansion-plan.json",
+            "scripts/audit-office-of-readings-ordinary-week-expansion-plan.mjs",
+            "scripts/audit-office-of-readings-ordinary-week-population.mjs",
+            "package.json"
+          ],
+          "verification": [
+            "node --check scripts/audit-office-of-readings-ordinary-week-population.mjs",
+            "node --check scripts/audit-office-of-readings-ordinary-week-expansion-plan.mjs",
+            "npm run audit:office-of-readings-ordinary-week-population",
+            "npm run audit:office-of-readings-ordinary-week-expansion-plan",
+            "npm run audit:office-of-readings-pilot-population",
+            "npm run verify:office",
+            "npm run verify:corpus",
+            "npm run smoke:synthetic"
+          ],
+          "notes": "The selected ordinary-week set is now populated and audited. The next tranche should move to the next Roman LOTH core-office expansion target rather than repeat the same Office of Readings week."
+        },
+        {
+          "date": "2026-05-27",
+          "phase": "Roman LOTH Office of Readings ordinary-week expansion plan",
+          "status": "closed",
+          "repository": "JWJeffery/LOTH",
+          "commit_sequence": [
+            "c02c74b Plan Office of Readings ordinary week expansion"
+          ],
+          "summary": "Added a bounded Office of Readings ordinary-week expansion plan for the selected Monday–Saturday set, with a registry and audit before population.",
+          "artifacts": [
+            "registry/roman-loth-office-of-readings-ordinary-week-expansion-plan.json",
+            "scripts/audit-office-of-readings-ordinary-week-expansion-plan.mjs",
+            "package.json"
+          ],
+          "verification": [
+            "node --check scripts/audit-office-of-readings-ordinary-week-expansion-plan.mjs",
+            "npm run audit:office-of-readings-ordinary-week-expansion-plan",
+            "npm run audit:office-of-readings-pilot-population",
+            "npm run audit:office-of-readings-source-plan",
+            "npm run verify:office",
+            "npm run verify:corpus",
+            "npm run smoke:synthetic"
+          ],
+          "notes": "The planning pass is closed. The next LOTH tranche should populate the selected ordinary-week Office of Readings set, keeping the work bounded and using the quiet QC wrapper."
+        },
+        {
+          "date": "2026-05-27",
+          "phase": "Roman LOTH Office of Readings pilot ingestion audit and repair",
+          "status": "closed",
+          "repository": "JWJeffery/LOTH",
+          "commit_sequence": [
+            "3734157 Add Office of Readings pilot population audit",
+            "592cce7 Fix Office of Readings pilot audit anchors"
+          ],
+          "summary": "Closed the bounded Office of Readings pilot-ingestion audit for the 2026-05-26 Memorial of Saint Philip Neri witness. The pilot audit verifies all eleven Office of Readings slots, with ten populated source-unit files and the Te Deum intentionally empty for the observed memorial context. A follow-up repair commit corrected bad expected anchors in the first audit so the audit now tests the actual governed corpus files rather than invented expectations.",
+          "artifacts": [
+            "scripts/audit-office-of-readings-pilot-population.mjs",
+            "registry/roman-loth-office-of-readings-source-plan.json",
+            "package.json",
+            "texts/en-us/office-of-readings/"
+          ],
+          "verification": [
+            "node --check scripts/audit-office-of-readings-pilot-population.mjs",
+            "npm run audit:office-of-readings-pilot-population",
+            "npm run audit:office-of-readings-source-plan",
+            "npm run audit:roman-loth-source-supplement-policy",
+            "npm run verify:office",
+            "npm run verify:corpus",
+            "npm run smoke:synthetic"
+          ],
+          "notes": "This records the corrected state after the failed-anchor audit was repaired. The next LOTH tranche should expand Office of Readings from the single pilot witness toward a small ordinary-week set, with the quiet QC wrapper required and with special attention to the long biblical reading, reading responsories, second reading, psalmody/antiphons, collect, and hymn source classes."
+        },
+        {
+          "date": "2026-05-27",
+          "phase": "Roman LOTH Office of Readings source-unit and materialization plan",
+          "status": "closed",
+          "repository": "JWJeffery/LOTH",
+          "commit_sequence": [
+            "c73bc1d Add Office of Readings source plan"
+          ],
+          "summary": "Added a private current Roman LOTH Office of Readings source-unit/materialization plan before population. The plan covers all eleven Office of Readings slots and classifies each by source family, supplement need, planned category, and population risk without importing official text.",
+          "artifacts": [
+            "registry/roman-loth-office-of-readings-source-plan.json",
+            "registry/roman-loth-source-supplement-policy.json",
+            "scripts/audit-office-of-readings-source-plan.mjs",
+            "package.json"
+          ],
+          "verification": [
+            "node --check scripts/audit-office-of-readings-source-plan.mjs",
+            "npm run audit:office-of-readings-source-plan",
+            "npm run audit:roman-loth-source-supplement-policy",
+            "npm run verify:office",
+            "npm run verify:corpus",
+            "npm run smoke:synthetic"
+          ],
+          "notes": "This closes the planning tranche for the user's next private devotional target: Office of Readings. No official text was populated. The next LOTH tranche should be a bounded Office of Readings pilot ingestion, preferably one ordinary weekday, with special care for the biblical first reading, first responsory, patristic/hagiographic second reading, second responsory, Te Deum rule, collect, psalmody, and hymn source discipline."
+        },
+        {
+          "date": "2026-05-27",
+          "phase": "Roman LOTH Grail psalter corpus and source supplement policy",
+          "status": "closed",
+          "repository": "JWJeffery/LOTH",
+          "commit_sequence": [
+            "8cfdd9e Add Grail psalter corpus and source supplement policy"
+          ],
+          "summary": "Added a governed Grail 1963 psalter corpus resource, psalm-numbering registry, and Roman LOTH source supplement policy. The Universalis Night Prayer alignment audit now normalizes alternate psalm numbering and reports aggregate source-supplement needs by slot/source class rather than treating all divergence as generic mismatch.",
+          "artifacts": [
+            "resources/psalter/grail-1963/psalms.json",
+            "registry/psalm-numbering-map.json",
+            "registry/roman-loth-source-supplement-policy.json",
+            "scripts/audit-grail-1963-psalter-corpus.mjs",
+            "scripts/audit-roman-loth-source-supplement-policy.mjs",
+            "scripts/audit-universalis-night-prayer-alignment.mjs"
+          ],
+          "verification": [
+            "npm run audit:grail-1963-psalter",
+            "npm run audit:roman-loth-source-supplement-policy",
+            "npm run audit:universalis-night-prayer-alignment",
+            "npm run verify:office",
+            "npm run verify:corpus",
+            "npm run smoke:synthetic"
+          ],
+          "notes": "This closes the psalm-numbering architecture issue for current Roman LOTH source governance. Grail psalter material is kept under resources/ rather than texts/en-us/ because texts/en-us is reserved for individual renderable LOTH text units. Universalis remains a structure/calendar/source-discovery comparator; supplement policy identifies Grail 1963 for psalmody, NAB 1970 first edition for short readings, official current US LOTH/ICEL oration witnesses for collects/concluding prayers, official current US LOTH antiphon witnesses for antiphons, and separate manual review for hymns."
+        },
+        {
+          "date": "2026-05-27",
+          "phase": "Roman LOTH Universalis Night Prayer source-alignment audit",
+          "status": "closed_governance_finding",
+          "repository": "JWJeffery/LOTH",
+          "commit_sequence": [
+            "25d32bc Add Universalis Night Prayer alignment audit",
+            "25cbe88 Fix Universalis Night Prayer alignment audit syntax"
+          ],
+          "summary": "Added and repaired an optional Universalis Night Prayer alignment audit. The audit compares Universalis compline.htm against the completed internal Roman LOTH Night Prayer source units without populating corpus text and without adding the audit to verify:office.",
+          "verification": [
+            "node --check scripts/audit-universalis-night-prayer-alignment.mjs",
+            "npm run audit:universalis-night-prayer-alignment"
+          ],
+          "notes": "Governance finding: Universalis is useful as a build-time source-discovery and comparison candidate, but it is not approved as an automatic population source. The initial Night Prayer audit checked 8 cases: 4 likely aligned, 3 mixed/manual-review, and 1 substantial-divergence-or-parser-noise case. The audit recommendation was to avoid automatic Universalis population until mixed/divergent cases are manually reviewed and extraction is improved."
+        },
+        {
+          "date": "2026-05-27",
+          "phase": "Roman LOTH Night Prayer Sunday II ordinary variant population",
+          "status": "closed",
+          "repository": "JWJeffery/LOTH",
+          "commit_sequence": [
+            "faf5534 Add Roman LOTH Night Prayer Sunday II ordinary variant"
+          ],
+          "summary": "Added a separate current-English Roman LOTH Night Prayer after Evening Prayer II ordinary/non-Easter variant for Sundays and solemnities. Six ordinary Sunday-II variant shells were populated: examination of conscience, hymn, psalmody, short reading, collect, and Marian antiphon. Resolver routing now distinguishes Eastertide Sunday II from ordinary/non-Easter Sunday II rather than overwriting the Easter witness.",
+          "verification": [
+            "npm run audit:night-prayer-sunday-ii-ordinary-population",
+            "npm run audit:night-prayer-sunday-ii-easter-population",
+            "npm run audit:night-prayer-weekly-routing",
+            "npm run verify:office",
+            "npm run verify:corpus",
+            "npm run verify:synthetic",
+            "npm run smoke:synthetic"
+          ],
+          "notes": "This was a Roman Office construction tranche using a current English DivineOffice LOTH witness for Night Prayer after Evening Prayer II on Sundays and Solemnities. Ordinary/non-Easter Sunday II now routes to texts/en-us/night-prayer/weekly-cycle/sunday-after-second-evening-prayer-ordinary/, while Eastertide Sunday II continues to route to the prior Easter Sunday-II witness path. Night Prayer weekly-cycle population is now seasonally honest for the Sunday-II boundary."
+        },
+        {
+          "date": "2026-05-27",
+          "phase": "Roman LOTH Night Prayer remaining weekday weekly-cycle population",
+          "status": "closed",
+          "repository": "JWJeffery/LOTH",
+          "commit_sequence": [
+            "8bba7d3 Populate Roman LOTH Night Prayer remaining weekday cycle"
+          ],
+          "summary": "Populated the remaining current English Roman LOTH weekday Night Prayer weekly-cycle forms: Monday, Tuesday, Thursday, and Friday. Twenty-four weekly-cycle shells were populated, six per weekday: examination of conscience, hymn, psalmody, short reading, collect, and Marian antiphon. The five stable ordinary/populated Night Prayer slots remain outside the weekly-cycle shell path.",
+          "verification": [
+            "npm run audit:night-prayer-remaining-weekday-population",
+            "npm run audit:night-prayer-weekly-routing",
+            "npm run verify:office",
+            "npm run verify:corpus",
+            "npm run verify:synthetic",
+            "npm run smoke:synthetic"
+          ],
+          "notes": "This was a Roman Office construction tranche using current English DivineOffice LOTH witnesses supplied for Monday, Tuesday, Thursday, and Friday. Each of those weekday Night Prayer forms now resolves with 11 populated corpus units, 0 empty containers, and 0 placeholders. Together with prior Sunday I, Sunday II Easter, and Wednesday tranches, the Night Prayer weekly-cycle population is functionally complete except for any later decision to model ordinary-season Sunday II separately from the Easter Sunday-II witness."
+        },
+        {
+          "date": "2026-05-27",
+          "phase": "Roman LOTH Night Prayer Wednesday weekly-cycle population",
+          "status": "closed",
+          "repository": "JWJeffery/LOTH",
+          "commit_sequence": [
+            "9f1dd07 Populate Roman LOTH Night Prayer Wednesday cycle"
+          ],
+          "summary": "Populated the current English Roman LOTH Wednesday Night Prayer weekly-cycle form from a DivineOffice.org witness captured from the ordinary Wednesday Week II/IV page. Six Wednesday weekly-cycle shells were populated: examination of conscience, hymn, psalmody, short reading, collect, and Marian antiphon. The five stable ordinary/populated Night Prayer slots remain outside the weekly-cycle shell path.",
+          "verification": [
+            "npm run audit:night-prayer-wednesday-population",
+            "npm run audit:night-prayer-weekly-routing",
+            "npm run verify:office",
+            "npm run verify:corpus",
+            "npm run verify:synthetic",
+            "npm run smoke:synthetic"
+          ],
+          "notes": "This was a Roman Office construction tranche using a current English DivineOffice LOTH witness, not a substitute Roman-adjacent source. Wednesday Night Prayer now resolves with 11 populated corpus units, 0 empty containers, and 0 placeholders. The DivineOffice slug included w2-w4 and is retained as source-witness metadata rather than generalized beyond the witnessed form."
+        },
+        {
+          "date": "2026-05-27",
+          "phase": "Roman LOTH Night Prayer Sunday II Easter Marian antiphon completion",
+          "status": "closed",
+          "repository": "JWJeffery/LOTH",
+          "commit_sequence": [
+            "04fb30f Complete Roman LOTH Night Prayer Sunday II Easter Marian antiphon",
+            "82a391a Fix Roman LOTH Night Prayer Sunday II Marian witness audit"
+          ],
+          "summary": "Completed the Sunday after Second Evening Prayer / Easter Night Prayer weekly-cycle form by populating the previously empty Marian antiphon shell with the Eastertide Regina Caeli text from a current-English DivineOffice witness. The focused Sunday-II Easter audit was repaired to distinguish the primary Pentecost Sunday Night Prayer II witness from the separate Regina Caeli witness.",
+          "verification": [
+            "npm run audit:night-prayer-sunday-ii-easter-population",
+            "npm run audit:night-prayer-weekly-routing",
+            "npm run verify:office",
+            "npm run verify:corpus",
+            "npm run verify:synthetic",
+            "npm run smoke:synthetic"
+          ],
+          "notes": "This was a Roman Office construction tranche. Sunday after Second Evening Prayer in Easter now resolves with 11 populated corpus units, 0 empty containers, and 0 placeholders. The Marian antiphon population used a current English DivineOffice Eastertide Regina Caeli witness, while the primary Sunday-II Easter office content remains sourced to the 2026-05-24 DivineOffice Pentecost Sunday Night Prayer II witness. Public rendering remains blocked_until_authorized."
+        },
+        {
+          "date": "2026-05-27",
+          "phase": "Roman LOTH Night Prayer Sunday II Easter weekly-cycle population",
+          "status": "closed",
+          "repository": "JWJeffery/LOTH",
+          "commit_sequence": [
+            "26b543b Populate Roman LOTH Night Prayer Sunday II Easter cycle"
+          ],
+          "summary": "Populated the current English Roman LOTH Night Prayer after Evening Prayer II in the Season of Easter from a DivineOffice.org witness for Pentecost Sunday, 2026-05-24. Five Sunday-after-Second-Evening-Prayer weekly-cycle shells were populated: examination of conscience, hymn, psalmody, short reading, and collect. The Marian antiphon shell was intentionally left unpopulated because the supplied witness capture included only the Marian heading and no Marian text.",
+          "verification": [
+            "npm run audit:night-prayer-sunday-ii-easter-population",
+            "npm run audit:night-prayer-weekly-routing",
+            "npm run verify:office",
+            "npm run verify:corpus",
+            "npm run verify:synthetic",
+            "npm run smoke:synthetic"
+          ],
+          "notes": "This was a Roman Office construction tranche using a current English LOTH witness, not a substituted Latin/French/older-office source. Sunday after Second Evening Prayer in Easter now resolves with 10 populated corpus units, 1 intentionally empty weekly shell for the unwitnessed Marian antiphon, and 0 placeholders. Sunday after First Evening Prayer remains fully populated from the prior tranche."
+        },
+        {
+          "date": "2026-05-27",
+          "phase": "Roman LOTH Night Prayer Sunday I weekly-cycle population",
+          "status": "closed",
+          "repository": "JWJeffery/LOTH",
+          "commit_sequence": [
+            "4d5e715 Populate Roman LOTH Night Prayer Sunday I weekly cycle"
+          ],
+          "summary": "Populated the first concrete Roman LOTH Night Prayer weekly-cycle form: Sunday after First Evening Prayer / Saturday Night Prayer I. Six weekly-cycle shells were populated from the existing generic Night Prayer Saturday/Sunday I source units: examination of conscience, hymn, psalmody, short reading, collect, and Marian antiphon. The five stable ordinary/populated slots remain outside the weekly-cycle shell path.",
+          "verification": [
+            "npm run audit:planned-unit-materialization-map",
+            "npm run audit:planned-unit-shells",
+            "npm run audit:night-prayer-weekly-routing",
+            "npm run audit:night-prayer-sunday-i-population",
+            "npm run verify:office",
+            "npm run verify:corpus",
+            "npm run verify:synthetic",
+            "npm run smoke:synthetic"
+          ],
+          "notes": "This was a Roman Office construction tranche. Sunday after First Evening Prayer now resolves as a fully populated Night Prayer office with 11 corpus containers, 11 populated units, 0 empty containers, and 0 placeholders. Other Night Prayer weekly-cycle days remain structurally routed but unpopulated in their six weekly slots until future population tranches. Public rendering remains blocked_until_authorized."
+        },
+        {
+          "date": "2026-05-27",
+          "phase": "Roman LOTH Night Prayer weekly-cycle routing",
+          "status": "closed",
+          "repository": "JWJeffery/LOTH",
+          "commit_sequence": [
+            "fd8bc52 Add Roman LOTH Night Prayer weekly cycle routing"
+          ],
+          "summary": "Added real Night Prayer weekly-cycle routing to the Roman LOTH resolver. Night Prayer now computes a nightPrayerWeekDay key from the civil date, supports explicit --night-prayer-weekday override for QC, routes six weekly-cycle slots through the planned metadata shell materialization map, and preserves five stable ordinary/populated slots outside the weekly-cycle shell path.",
+          "verification": [
+            "npm run audit:night-prayer-weekly-routing",
+            "npm run verify:office",
+            "npm run verify:corpus",
+            "npm run verify:synthetic",
+            "npm run smoke:synthetic"
+          ],
+          "notes": "This tranche is a Roman Office construction tranche, not a permission-governance tranche. It moved Night Prayer from generic slot resolution toward a real weekly-cycle office structure. Post-routing diagnostics show Night Prayer resolving 11 corpus containers with 5 populated ordinary/stable units and 6 empty weekly-cycle metadata shells, with no placeholders and no public render posture change."
+        },
+        {
+          "date": "2026-05-27",
+          "phase": "Roman LOTH planned unit metadata shells",
+          "status": "closed",
+          "repository": "JWJeffery/LOTH",
+          "commit_sequence": [
+            "ad19b14 Add Roman LOTH planned unit metadata shells"
+          ],
+          "summary": "Created 115 validator-compatible metadata-only planned source-unit shell files for the Roman LOTH psalter/ordinary boundary lane. The shells cover Daytime Prayer selected-hour psalter boundary units, Night Prayer weekly-cycle boundary units, and ordinary fixed boundary units. The tranche also added a planned-unit shell audit and updated the materialization-map audit so generated metadata shells are accepted only when they match the approved planned key, path, render policy, private status, and non-text-emitting posture.",
+          "verification": [
+            "npm run validate",
+            "npm run audit:planned-unit-materialization-map",
+            "npm run audit:planned-unit-shells",
+            "npm run verify:office",
+            "npm run verify:corpus",
+            "npm run verify:synthetic",
+            "npm run smoke:synthetic"
+          ],
+          "notes": "This tranche stayed inside the active Roman Office build lane. It created metadata-only shell files but did not populate official LOTH text, did not alter public rendering posture, and did not open app-wide source-rights management. Shells are validator-compatible Roman LOTH text-unit records with empty sourceRefs, empty permissionRecordRefs, sourceStatus not_collected, auditStatus not_reviewed, populationStatus not_populated, and renderPolicy blocked_until_authorized."
+        },
+        {
+          "date": "2026-05-27",
+          "phase": "Roman LOTH planned unit materialization map",
+          "status": "closed",
+          "repository": "JWJeffery/LOTH",
+          "commit_sequence": [
+            "347c59a Add Roman LOTH planned unit materialization map"
+          ],
+          "summary": "Added a metadata-only planned source-unit materialization map for the Roman LOTH psalter/ordinary boundary lane. The map projects future file paths for the 115 planned unit keys covering Daytime Prayer selected-hour psalter boundary units, Night Prayer weekly-cycle boundary units, and ordinary fixed boundary units. The audit verifies path generation, uniqueness, target-directory alignment, target-category/unit-type compatibility, slot-map compatibility, no existing-file overwrite, private status, blocked render policy, source/permission requirements, and absence of renderable text payload keys.",
+          "verification": [
+            "npm run audit:planned-unit-materialization-map",
+            "npm run verify:office",
+            "npm run verify:corpus",
+            "npm run verify:synthetic",
+            "npm run smoke:synthetic"
+          ],
+          "notes": "This tranche stayed inside the active Roman Office build lane. It did not create actual text-unit shell files, did not populate official LOTH text, did not alter public rendering posture, and did not open app-wide source-rights management. verify:office now includes audit:planned-unit-materialization-map after planned unit-key enumeration and before calendar variability."
+        },
+        {
+          "date": "2026-05-27",
+          "phase": "Roman LOTH planned unit-key enumeration",
+          "status": "closed",
+          "repository": "JWJeffery/LOTH",
+          "commit_sequence": [
+            "00a889b Add Roman LOTH planned unit key enumeration"
+          ],
+          "summary": "Added a metadata-only planned source-unit key enumeration for the Roman LOTH psalter/ordinary boundary scaffold. The enumeration generates 115 planned unit keys covering Daytime Prayer selected-hour psalter boundary units, Night Prayer weekly-cycle boundary units, and ordinary fixed boundary units. The audit verifies expected key generation from the scaffold, uniqueness, target-category/unit-type compatibility, selected Daytime Prayer aliases, psalter-week metadata, Night Prayer weekday keys, source/permission requirements, blocked render policy, and absence of renderable text payload keys.",
+          "verification": [
+            "npm run audit:planned-unit-key-enumeration",
+            "npm run verify:office",
+            "npm run verify:corpus",
+            "npm run verify:synthetic",
+            "npm run smoke:synthetic"
+          ],
+          "notes": "This tranche stayed inside the active Roman Office build lane. It did not populate official LOTH text, did not alter public rendering posture, and did not open app-wide source-rights management. verify:office now includes audit:planned-unit-key-enumeration after the psalter/ordinary boundary scaffold audit and before calendar variability."
+        },
+        {
+          "date": "2026-05-27",
+          "phase": "Roman LOTH psalter/ordinary boundary scaffold",
+          "status": "closed",
+          "repository": "JWJeffery/LOTH",
+          "commit_sequence": [
+            "1b3250e Add Roman LOTH psalter ordinary boundary scaffold"
+          ],
+          "summary": "Added a metadata-only Roman LOTH psalter/ordinary boundary scaffold and audit for the first active source-unit expansion lane. The scaffold covers Daytime Prayer selected-hour psalter boundary units, Night Prayer weekly-cycle boundary units, and ordinary fixed boundary units. It defines planned unit-key templates, slot families, target categories, required metadata, selected Daytime Prayer aliases, Night Prayer weekday keys, and render/payload guardrails without importing or exposing official LOTH text.",
+          "verification": [
+            "npm run audit:psalter-ordinary-boundary-scaffold",
+            "npm run verify:office",
+            "npm run verify:corpus",
+            "npm run verify:synthetic",
+            "npm run smoke:synthetic"
+          ],
+          "notes": "This tranche stayed inside the active Roman Office build lane and implements the first scaffold under the source-unit expansion plan. It did not populate new official text, did not alter public rendering posture, and did not open app-wide source-rights management. verify:office now includes audit:psalter-ordinary-boundary-scaffold after the source-unit expansion-plan audit and before calendar variability."
+        },
+        {
+          "date": "2026-05-27",
+          "phase": "Roman LOTH source-unit expansion plan",
+          "status": "closed",
+          "repository": "JWJeffery/LOTH",
+          "commit_sequence": [
+            "a8a3503 Add Roman LOTH source unit expansion plan"
+          ],
+          "summary": "Added a Roman LOTH source-unit expansion plan and audit. The plan identifies the first active expansion lane as the psalter/ordinary boundary for Daytime Prayer selected hours and Night Prayer, with deferred lanes for temporal-cycle units and sanctoral/commons units. The audit verifies plan coherence against target categories, office IDs, resolver families, required metadata, private status, blocked render posture, and no-official-text exposure.",
+          "verification": [
+            "npm run audit:source-unit-expansion-plan",
+            "npm run verify:office",
+            "npm run verify:corpus",
+            "npm run verify:synthetic",
+            "npm run smoke:synthetic"
+          ],
+          "notes": "This tranche stayed inside the active Roman Office build lane. It did not populate new official text, did not alter public rendering posture, and did not open app-wide source-rights management. It establishes a governed next-step plan for source-unit population after source-unit target-map, source-witness, resolver-target-routing, and calendar-variability audits."
+        },
+        {
+          "date": "2026-05-27",
+          "phase": "Roman LOTH resolver target routing audit",
+          "status": "closed",
+          "repository": "JWJeffery/LOTH",
+          "commit_sequence": [
+            "519a904 Add Roman LOTH resolver target routing audit"
+          ],
+          "summary": "Added a Roman LOTH resolver-family to source-unit target-category routing audit. The audit verifies that resolver families, office-slot mappings, unit types, target categories, permission-gate order, blocked render policy, and source-unit target-map allowances remain coherent before deeper temporal, sanctoral, commons, psalter, and ordinary corpus expansion.",
+          "verification": [
+            "npm run audit:resolver-target-routing",
+            "npm run verify:office",
+            "npm run verify:corpus",
+            "npm run verify:synthetic",
+            "npm run smoke:synthetic"
+          ],
+          "notes": "This tranche stayed inside the active Roman Office build lane. It did not expose official LOTH text and did not change public rendering posture. It hardened the bridge between resolver architecture and future source-unit population. The target map now explicitly allows selected-hour hymn routing under the psalter target category and gospel-canticle-antiphon routing under the ordinary target category."
+        },
+        {
+          "date": "2026-05-27",
+          "phase": "Roman LOTH calendar variability audit",
+          "status": "closed",
+          "repository": "JWJeffery/LOTH",
+          "commit_sequence": [
+            "64406aa Add Roman LOTH calendar variability audit"
+          ],
+          "summary": "Added a Roman LOTH calendar/context variability pressure-test audit. The audit runs the synthetic Roman LOTH resolver across ordinary, Advent, Lent, Easter Octave, and Christmas/Solemnity contexts for all nine office IDs, verifying stable office/template binding, selected Daytime Prayer hour handling, psalter-week/context metadata, blocked render policy, no official-text emission, no placeholder leakage, and stable corpus-container diagnostics.",
+          "verification": [
+            "npm run audit:calendar-variability",
+            "npm run verify:office",
+            "npm run verify:corpus",
+            "npm run verify:synthetic",
+            "npm run smoke:synthetic"
+          ],
+          "notes": "This tranche stayed inside the active Roman Office build lane. It did not modify corpus text, did not change public rendering posture, and did not open app-wide rights management work. verify:office now includes audit:calendar-variability before smoke:office."
+        },
+        {
+          "date": "2026-05-27",
+          "phase": "Roman LOTH source-unit target-map audit governance",
+          "status": "closed",
+          "repository": "JWJeffery/LOTH",
+          "commit_sequence": [
+            "e9dbaa7 Add source unit target map audit",
+            "1a66dc5 Fix source unit target map permission audit"
+          ],
+          "summary": "Added and repaired a dedicated source-unit target-map audit for the restricted Roman LOTH corpus repository. The audit cross-checks source-unit target categories, taxonomy categories, target directories, office IDs, unit types, source-identification references, permission-record references, blocked render posture, no-text output contract, and active source permission posture.",
+          "verification": [
+            "npm run audit:source-unit-target-map",
+            "npm run verify:office",
+            "npm run verify:corpus",
+            "npm run verify:synthetic",
+            "npm run smoke:synthetic"
+          ],
+          "notes": "This governance tranche did not reopen the closed synthetic-office placeholder lane and did not modify corpus text. verify:office now includes audit:source-unit-target-map before source-witness governance and smoke:office."
+        },
+        {
+          "date": "2026-05-27",
+          "repo": "JWJeffery/LOTH",
+          "commit": "145b10d",
+          "commit_message": "Add full corpus verification chain",
+          "phase": "LOTH — full corpus verification chain",
+          "summary": "Added verify:corpus as the canonical full LOTH corpus gate and updated verify:synthetic to run verify:corpus. The full chain now runs verify:office, source-witness governance, synthetic office smoke, and all per-office audits for Daytime Prayer, selected Daytime hours, Evening Prayer, Morning Prayer, Office of Readings, Invitatory, and Night Prayer.",
+          "validation_passed": [
+            "npm run verify:office",
+            "npm run verify:corpus",
+            "npm run verify:synthetic",
+            "npm run smoke:synthetic"
+          ],
+          "verification_chain": {
+            "verify:office": "validate + source-witness governance audit + smoke:office",
+            "verify:corpus": "verify:office + all per-office audits",
+            "verify:synthetic": "verify:corpus"
+          },
+          "source_witness_governance_audit_result": {
+            "audit": "source_witness_governance_audit_v2",
+            "witnessCount": 9,
+            "sourceRecordCount": 5,
+            "sourceIdentificationCount": 5,
+            "permissionRecordCount": 2,
+            "corpusUnitCount": 76,
+            "populatedCorpusUnitCount": 68,
+            "emptyCorpusUnitCount": 8,
+            "warnings": [],
+            "failures": [],
+            "status": "OK"
+          },
+          "synthetic_office_result": {
+            "officeCount": 9,
+            "placeholderCount": 0,
+            "genericDaytime": "7 governed-empty template containers",
+            "selectedDaytimeHours": "Midmorning, Midday, and Midafternoon each 7/7 populated",
+            "officeOfReadings": "10 populated, 1 observed-empty Te Deum",
+            "status": "OK"
+          },
+          "architectural_consequence": "The LOTH repo now has a canonical full corpus verification command. Routine verification can use npm run verify:corpus or npm run verify:synthetic to catch JSON/schema failures, source-witness governance failures, resolver smoke failures, and per-office audit failures in one chain.",
+          "status": "complete"
+        },
+        {
+          "date": "2026-05-27",
+          "repo": "JWJeffery/LOTH",
+          "commit": "24dd0e9",
+          "commit_message": "Include source witness audit in office verification",
+          "phase": "LOTH — verification-chain governance hardening",
+          "summary": "Promoted the reusable source-witness governance audit into the default office verification chain. npm run verify:office now runs JSON validation, source-witness governance audit, and synthetic office smoke resolution, so source/source-identification/permission/witness linkage failures are no longer optional checks.",
+          "validation_passed": [
+            "npm run verify:office",
+            "npm run audit:daytime-prayer",
+            "npm run audit:daytime-selected-hours",
+            "npm run audit:evening-prayer",
+            "npm run audit:morning-prayer",
+            "npm run audit:office-of-readings",
+            "npm run audit:invitatory",
+            "npm run audit:night-prayer",
+            "npm run smoke:synthetic"
+          ],
+          "verify_office_chain": {
+            "validate": "npm run validate",
+            "sourceWitnessGovernance": "npm run audit:source-witness-governance",
+            "smokeOffice": "npm run smoke:office"
+          },
+          "source_witness_governance_audit_result": {
+            "audit": "source_witness_governance_audit_v2",
+            "witnessCount": 9,
+            "sourceRecordCount": 5,
+            "sourceIdentificationCount": 5,
+            "permissionRecordCount": 2,
+            "corpusUnitCount": 76,
+            "populatedCorpusUnitCount": 68,
+            "emptyCorpusUnitCount": 8,
+            "warnings": [],
+            "failures": [],
+            "status": "OK"
+          },
+          "synthetic_office_smoke_result": {
+            "officeCount": 9,
+            "placeholderCount": 0,
+            "genericDaytime": "7 governed-empty template containers",
+            "selectedDaytimeHours": "Midmorning, Midday, and Midafternoon each 7/7 populated",
+            "status": "OK"
+          },
+          "architectural_consequence": "Source-witness governance is now part of the default verification gate for the LOTH corpus. Future changes cannot pass verify:office while breaking witness/source/permission integrity or selected-hour source-witness matching.",
+          "status": "complete"
+        },
+        {
+          "date": "2026-05-27",
+          "repo": "JWJeffery/LOTH",
+          "commits": [
+            "33d8975",
+            "37a2b6b"
+          ],
+          "commit_messages": [
+            "Add source witness governance audit",
+            "Fix source witness public-facing audit semantics"
+          ],
+          "phase": "LOTH — source-witness governance audit",
+          "summary": "Added a reusable source-witness governance audit and repaired its public-facing semantics so older text units that omit publicFacing do not fail unless they explicitly set publicFacing true. The audit now verifies source witness registry integrity, source and source-identification registry links, permission record blocking posture, witness intended slot matching, selected Daytime hour witness matching, corpus-unit file existence, sourceRefs, permissionRecordRefs, render policy, and permission status.",
+          "validation_passed": [
+            "npm run validate",
+            "npm run audit:source-witness-governance",
+            "npm run audit:daytime-prayer",
+            "npm run audit:daytime-selected-hours",
+            "npm run audit:evening-prayer",
+            "npm run audit:morning-prayer",
+            "npm run audit:office-of-readings",
+            "npm run audit:invitatory",
+            "npm run audit:night-prayer",
+            "npm run verify:office",
+            "npm run smoke:synthetic"
+          ],
+          "source_witness_governance_audit_result": {
+            "audit": "source_witness_governance_audit_v2",
+            "witnessCount": 9,
+            "sourceRecordCount": 5,
+            "sourceIdentificationCount": 5,
+            "permissionRecordCount": 2,
+            "corpusUnitCount": 76,
+            "populatedCorpusUnitCount": 68,
+            "emptyCorpusUnitCount": 8,
+            "warnings": [],
+            "failures": [],
+            "status": "OK"
+          },
+          "selected_daytime_governance_result": {
+            "genericDaytime": "7 empty governed template containers, 0 placeholders",
+            "midmorning_prayer": "7/7 populated selected-hour units",
+            "midday_prayer": "7/7 populated selected-hour units",
+            "midafternoon_prayer": "7/7 populated selected-hour units"
+          },
+          "fixed_office_regression_result": {
+            "invitatory": "4/4 populated, 0 placeholders",
+            "office_of_readings": "10 populated, 1 observed-empty Te Deum, 0 placeholders",
+            "morning_prayer": "11/11 populated, 0 placeholders",
+            "evening_prayer": "11/11 populated, 0 placeholders",
+            "night_prayer": "11/11 populated, 0 placeholders"
+          },
+          "architectural_consequence": "LOTH source-witness governance now has an explicit reusable audit layer above the per-office audits. This hardens the corpus against broken witness/source/permission links and preserves the render-blocked permission posture while allowing older corpus units that predate explicit file-level publicFacing flags to remain valid unless they explicitly become public-facing.",
+          "status": "complete"
+        },
+        {
+          "date": "2026-05-27",
+          "repo": "JWJeffery/LOTH",
+          "phase": "LOTH — synthetic fixed-office intake closure",
+          "summary": "Closed the initial Roman LOTH synthetic fixed-office intake sequence after the Midafternoon selected-hour population milestone. All nine synthetic office lanes now resolve without runtime placeholders: Invitatory, Office of Readings, Morning Prayer, generic Daytime Prayer, Midmorning Prayer, Midday Prayer, Midafternoon Prayer, Evening Prayer, and Night Prayer. Generic Daytime Prayer remains governed-empty by design, while Midmorning, Midday, and Midafternoon each resolve to distinct populated selected-hour corpus units.",
+          "closing_loth_commits": [
+            "714a257",
+            "4273cba",
+            "a730e5b",
+            "e80d12f",
+            "2c4f648",
+            "26e2768",
+            "4c2fb19",
+            "50b84d7",
+            "a3135e5",
+            "8a85926",
+            "2694fa0",
+            "0b2c1f5",
+            "34780f5",
+            "116baef",
+            "eb1192c",
+            "9f358c4"
+          ],
+          "validation_passed": [
+            "npm run validate",
+            "npm run audit:daytime-prayer",
+            "npm run audit:daytime-selected-hours",
+            "npm run audit:evening-prayer",
+            "npm run audit:morning-prayer",
+            "npm run audit:office-of-readings",
+            "npm run audit:invitatory",
+            "npm run audit:night-prayer",
+            "npm run verify:office",
+            "npm run smoke:synthetic"
+          ],
+          "synthetic_office_resolution_result": {
+            "officeCount": 9,
+            "placeholderCount": 0,
+            "invitatory": {
+              "corpusContainerCount": 4,
+              "populatedCorpusUnitCount": 4,
+              "emptyCorpusContainerCount": 0
+            },
+            "office_of_readings": {
+              "corpusContainerCount": 11,
+              "populatedCorpusUnitCount": 10,
+              "emptyCorpusContainerCount": 1,
+              "observed_empty_unit": "te_deum"
+            },
+            "morning_prayer": {
+              "corpusContainerCount": 11,
+              "populatedCorpusUnitCount": 11,
+              "emptyCorpusContainerCount": 0
+            },
+            "daytime_prayer": {
+              "corpusContainerCount": 7,
+              "populatedCorpusUnitCount": 0,
+              "emptyCorpusContainerCount": 7,
+              "status": "generic template remains governed-empty"
+            },
+            "midmorning_prayer": {
+              "templateOfficeId": "daytime_prayer",
+              "selectedDaytimeHour": "midmorning_prayer",
+              "corpusContainerCount": 7,
+              "populatedCorpusUnitCount": 7,
+              "emptyCorpusContainerCount": 0
+            },
+            "midday_prayer": {
+              "templateOfficeId": "daytime_prayer",
+              "selectedDaytimeHour": "midday_prayer",
+              "corpusContainerCount": 7,
+              "populatedCorpusUnitCount": 7,
+              "emptyCorpusContainerCount": 0
+            },
+            "midafternoon_prayer": {
+              "templateOfficeId": "daytime_prayer",
+              "selectedDaytimeHour": "midafternoon_prayer",
+              "corpusContainerCount": 7,
+              "populatedCorpusUnitCount": 7,
+              "emptyCorpusContainerCount": 0
+            },
+            "evening_prayer": {
+              "corpusContainerCount": 11,
+              "populatedCorpusUnitCount": 11,
+              "emptyCorpusContainerCount": 0
+            },
+            "night_prayer": {
+              "corpusContainerCount": 11,
+              "populatedCorpusUnitCount": 11,
+              "emptyCorpusContainerCount": 0
+            }
+          },
+          "architectural_consequence": "The LOTH synthetic-office resolver and governed corpus intake path are now proven across fixed offices, mixed observed-empty states, generic Daytime template handling, and selected-hour Daytime variants. The next LOTH tranche should move from fixed-office placeholder elimination into either permission-governance hardening, source-witness normalization, or deeper calendar/seasonal variability rather than more placeholder-removal work for these nine lanes.",
+          "status": "complete"
+        },
+        {
+          "date": "2026-05-27",
+          "repo": "JWJeffery/LOTH",
+          "commit": "9f358c4",
+          "commit_message": "Populate Midafternoon Prayer source-governed units",
+          "phase": "LOTH — Midafternoon Prayer selected-hour source-governed text population",
+          "summary": "Populated the seven Midafternoon Prayer selected-hour Daytime containers from the observed DivineOffice.org Midafternoon Prayer source for 2026-05-26, Saint Philip Neri, Priest. Updated the selected-hour audit to require all three selected Daytime hour lanes — Midmorning, Midday, and Midafternoon — as populated while preserving the generic Daytime Prayer template containers as governed empty containers.",
+          "validation_passed": [
+            "npm run validate",
+            "npm run audit:daytime-prayer",
+            "npm run audit:daytime-selected-hours",
+            "npm run audit:evening-prayer",
+            "npm run audit:morning-prayer",
+            "npm run audit:office-of-readings",
+            "npm run audit:invitatory",
+            "npm run audit:night-prayer",
+            "npm run verify:office",
+            "npm run smoke:synthetic"
+          ],
+          "daytime_template_audit_result": {
+            "sourceWitnessStatus": "registered",
+            "witnesses": [
+              "divineoffice_org_midday_prayer_memorial_philip_neri_20260526",
+              "divineoffice_org_midmorning_prayer_memorial_philip_neri_20260526",
+              "divineoffice_org_midafternoon_prayer_memorial_philip_neri_20260526"
+            ],
+            "corpusContainerCount": 7,
+            "populatedCorpusUnitCount": 0,
+            "emptyCorpusContainerCount": 7,
+            "placeholderCount": 0
+          },
+          "daytime_selected_hour_audit_result": {
+            "generalDaytime": {
+              "corpusContainerCount": 7,
+              "populatedCorpusUnitCount": 0,
+              "emptyCorpusContainerCount": 7,
+              "placeholderCount": 0
+            },
+            "midmorning_prayer": {
+              "selectedDaytimeHour": "midmorning_prayer",
+              "expectedPopulated": true,
+              "selectedCorpusUnitCount": 7,
+              "corpusContainerCount": 7,
+              "populatedCorpusUnitCount": 7,
+              "emptyCorpusContainerCount": 0,
+              "placeholderCount": 0
+            },
+            "midday_prayer": {
+              "selectedDaytimeHour": "midday_prayer",
+              "expectedPopulated": true,
+              "selectedCorpusUnitCount": 7,
+              "corpusContainerCount": 7,
+              "populatedCorpusUnitCount": 7,
+              "emptyCorpusContainerCount": 0,
+              "placeholderCount": 0
+            },
+            "midafternoon_prayer": {
+              "selectedDaytimeHour": "midafternoon_prayer",
+              "expectedPopulated": true,
+              "selectedCorpusUnitCount": 7,
+              "corpusContainerCount": 7,
+              "populatedCorpusUnitCount": 7,
+              "emptyCorpusContainerCount": 0,
+              "placeholderCount": 0
+            }
+          },
+          "fixed_office_regression_result": {
+            "invitatory": "4/4 populated, 0 placeholders",
+            "office_of_readings": "10 populated, 1 observed-empty Te Deum, 0 placeholders",
+            "morning_prayer": "11/11 populated, 0 placeholders",
+            "evening_prayer": "11/11 populated, 0 placeholders",
+            "night_prayer": "11/11 populated, 0 placeholders"
+          },
+          "architectural_consequence": "The selected-hour Daytime model is now fully proven across all three selected Daytime lanes. Midmorning, Midday, and Midafternoon resolve to distinct populated selected-hour corpus units, while generic Daytime Prayer remains governed but empty and does not leak selected-hour text across offices.",
+          "status": "complete"
+        },
+        {
+          "date": "2026-05-27",
+          "repo": "JWJeffery/LOTH",
+          "commit": "eb1192c",
+          "commit_message": "Populate Midmorning Prayer source-governed units",
+          "phase": "LOTH — Midmorning Prayer selected-hour source-governed text population",
+          "summary": "Populated the seven Midmorning Prayer selected-hour Daytime containers from the observed DivineOffice.org Midmorning Prayer source for 2026-05-26, Saint Philip Neri, Priest. Updated the selected-hour audit to require both Midmorning and Midday as populated while preserving generic Daytime and Midafternoon as governed empty containers.",
+          "validation_passed": [
+            "npm run validate",
+            "npm run audit:daytime-prayer",
+            "npm run audit:daytime-selected-hours",
+            "npm run audit:evening-prayer",
+            "npm run audit:morning-prayer",
+            "npm run audit:office-of-readings",
+            "npm run audit:invitatory",
+            "npm run audit:night-prayer",
+            "npm run verify:office",
+            "npm run smoke:synthetic"
+          ],
+          "daytime_template_audit_result": {
+            "sourceWitnessStatus": "registered",
+            "witnesses": [
+              "divineoffice_org_midday_prayer_memorial_philip_neri_20260526",
+              "divineoffice_org_midmorning_prayer_memorial_philip_neri_20260526"
+            ],
+            "corpusContainerCount": 7,
+            "populatedCorpusUnitCount": 0,
+            "emptyCorpusContainerCount": 7,
+            "placeholderCount": 0
+          },
+          "daytime_selected_hour_audit_result": {
+            "generalDaytime": {
+              "corpusContainerCount": 7,
+              "populatedCorpusUnitCount": 0,
+              "emptyCorpusContainerCount": 7,
+              "placeholderCount": 0
+            },
+            "midmorning_prayer": {
+              "selectedDaytimeHour": "midmorning_prayer",
+              "expectedPopulated": true,
+              "selectedCorpusUnitCount": 7,
+              "corpusContainerCount": 7,
+              "populatedCorpusUnitCount": 7,
+              "emptyCorpusContainerCount": 0,
+              "placeholderCount": 0
+            },
+            "midday_prayer": {
+              "selectedDaytimeHour": "midday_prayer",
+              "expectedPopulated": true,
+              "selectedCorpusUnitCount": 7,
+              "corpusContainerCount": 7,
+              "populatedCorpusUnitCount": 7,
+              "emptyCorpusContainerCount": 0,
+              "placeholderCount": 0
+            },
+            "midafternoon_prayer": {
+              "selectedDaytimeHour": "midafternoon_prayer",
+              "expectedPopulated": false,
+              "selectedCorpusUnitCount": 7,
+              "corpusContainerCount": 7,
+              "populatedCorpusUnitCount": 0,
+              "emptyCorpusContainerCount": 7,
+              "placeholderCount": 0
+            }
+          },
+          "fixed_office_regression_result": {
+            "invitatory": "4/4 populated, 0 placeholders",
+            "office_of_readings": "10 populated, 1 observed-empty Te Deum, 0 placeholders",
+            "morning_prayer": "11/11 populated, 0 placeholders",
+            "evening_prayer": "11/11 populated, 0 placeholders",
+            "night_prayer": "11/11 populated, 0 placeholders"
+          },
+          "architectural_consequence": "The selected-hour Daytime model is now proven through two populated selected-hour lanes. Midmorning and Midday can be populated independently without leaking text into generic Daytime Prayer or Midafternoon Prayer. Midafternoon remains a governed empty selected-hour lane pending its own observed source witness and text-intake tranche.",
+          "status": "complete"
+        },
+        {
+          "date": "2026-05-27",
+          "repo": "JWJeffery/LOTH",
+          "commits": [
+            "34780f5",
+            "116baef"
+          ],
+          "commit_messages": [
+            "Populate Midday Prayer source-governed units",
+            "Fix Midday Prayer witness office binding"
+          ],
+          "phase": "LOTH — Midday Prayer selected-hour source-governed text population",
+          "summary": "Populated the seven Midday Prayer selected-hour Daytime containers from the observed DivineOffice.org Midday Prayer source for 2026-05-26, Saint Philip Neri, Priest. Then repaired the source witness office binding so the witness is bound to the Daytime Prayer template office while preserving Midday specificity through witnessId, officeTitle, sourceUrl, selected-hour corpus targets, and selected-hour audit logic.",
+          "validation_passed": [
+            "npm run validate",
+            "npm run audit:daytime-prayer",
+            "npm run audit:daytime-selected-hours",
+            "npm run audit:evening-prayer",
+            "npm run audit:morning-prayer",
+            "npm run audit:office-of-readings",
+            "npm run audit:invitatory",
+            "npm run audit:night-prayer",
+            "npm run verify:office",
+            "npm run smoke:synthetic"
+          ],
+          "daytime_template_audit_result": {
+            "sourceWitnessStatus": "registered",
+            "witnessId": "divineoffice_org_midday_prayer_memorial_philip_neri_20260526",
+            "sourceRef": "divineoffice_org_digital_loth_candidate",
+            "corpusContainerCount": 7,
+            "populatedCorpusUnitCount": 0,
+            "emptyCorpusContainerCount": 7,
+            "placeholderCount": 0
+          },
+          "daytime_selected_hour_audit_result": {
+            "generalDaytime": {
+              "corpusContainerCount": 7,
+              "populatedCorpusUnitCount": 0,
+              "emptyCorpusContainerCount": 7,
+              "placeholderCount": 0
+            },
+            "midmorning_prayer": {
+              "selectedDaytimeHour": "midmorning_prayer",
+              "expectedPopulated": false,
+              "selectedCorpusUnitCount": 7,
+              "corpusContainerCount": 7,
+              "populatedCorpusUnitCount": 0,
+              "emptyCorpusContainerCount": 7,
+              "placeholderCount": 0
+            },
+            "midday_prayer": {
+              "selectedDaytimeHour": "midday_prayer",
+              "expectedPopulated": true,
+              "selectedCorpusUnitCount": 7,
+              "corpusContainerCount": 7,
+              "populatedCorpusUnitCount": 7,
+              "emptyCorpusContainerCount": 0,
+              "placeholderCount": 0
+            },
+            "midafternoon_prayer": {
+              "selectedDaytimeHour": "midafternoon_prayer",
+              "expectedPopulated": false,
+              "selectedCorpusUnitCount": 7,
+              "corpusContainerCount": 7,
+              "populatedCorpusUnitCount": 0,
+              "emptyCorpusContainerCount": 7,
+              "placeholderCount": 0
+            }
+          },
+          "fixed_office_regression_result": {
+            "invitatory": "4/4 populated, 0 placeholders",
+            "office_of_readings": "10 populated, 1 observed-empty Te Deum, 0 placeholders",
+            "morning_prayer": "11/11 populated, 0 placeholders",
+            "evening_prayer": "11/11 populated, 0 placeholders",
+            "night_prayer": "11/11 populated, 0 placeholders"
+          },
+          "architectural_consequence": "The selected-hour Daytime model is now proven through one populated selected-hour lane. Midday Prayer can be populated without leaking its text into generic Daytime Prayer, Midmorning Prayer, or Midafternoon Prayer. Midmorning and Midafternoon remain governed empty containers pending their own observed source witnesses and text-intake tranches.",
+          "status": "complete"
+        },
+        {
+          "date": "2026-05-26",
+          "repo": "JWJeffery/LOTH",
+          "commit": "0b2c1f5",
+          "commit_message": "Add Daytime selected-hour container governance",
+          "phase": "LOTH — Daytime selected-hour container governance",
+          "summary": "Added selectedDaytimeHour governance for Daytime Prayer so Midmorning, Midday, and Midafternoon resolve to their own selected-hour container sets rather than accidentally sharing one generic Daytime corpus text. Added selected-hour metadata to the LOTH text-unit schema, added 21 selected-hour Daytime corpus containers, updated the resolver to prefer selected-hour units when a selectedDaytimeHour is bound, guarded the generic populated-office audit against counting selected-hour variants as duplicate generic Daytime owners, and added scripts/audit-daytime-selected-hour-containers.mjs.",
+          "validation_passed": [
+            "npm run validate",
+            "npm run audit:daytime-prayer",
+            "npm run audit:daytime-selected-hours",
+            "npm run audit:evening-prayer",
+            "npm run audit:morning-prayer",
+            "npm run audit:office-of-readings",
+            "npm run audit:invitatory",
+            "npm run audit:night-prayer",
+            "npm run verify:office",
+            "npm run smoke:synthetic"
+          ],
+          "daytime_selected_hour_audit_result": {
+            "generalDaytime": {
+              "corpusContainerCount": 7,
+              "populatedCorpusUnitCount": 0,
+              "emptyCorpusContainerCount": 7,
+              "placeholderCount": 0
+            },
+            "midmorning_prayer": {
+              "selectedDaytimeHour": "midmorning_prayer",
+              "selectedCorpusUnitCount": 7,
+              "corpusContainerCount": 7,
+              "populatedCorpusUnitCount": 0,
+              "emptyCorpusContainerCount": 7,
+              "placeholderCount": 0
+            },
+            "midday_prayer": {
+              "selectedDaytimeHour": "midday_prayer",
+              "selectedCorpusUnitCount": 7,
+              "corpusContainerCount": 7,
+              "populatedCorpusUnitCount": 0,
+              "emptyCorpusContainerCount": 7,
+              "placeholderCount": 0
+            },
+            "midafternoon_prayer": {
+              "selectedDaytimeHour": "midafternoon_prayer",
+              "selectedCorpusUnitCount": 7,
+              "corpusContainerCount": 7,
+              "populatedCorpusUnitCount": 0,
+              "emptyCorpusContainerCount": 7,
+              "placeholderCount": 0
+            }
+          },
+          "fixed_office_regression_result": {
+            "invitatory": "4/4 populated, 0 placeholders",
+            "office_of_readings": "10 populated, 1 observed-empty Te Deum, 0 placeholders",
+            "morning_prayer": "11/11 populated, 0 placeholders",
+            "evening_prayer": "11/11 populated, 0 placeholders",
+            "night_prayer": "11/11 populated, 0 placeholders"
+          },
+          "architectural_consequence": "Daytime source text population is now safe to perform by selected hour. A Midmorning source witness can populate only Midmorning containers; Midday and Midafternoon remain distinct empty governed containers until their own witnesses are registered and populated.",
+          "status": "complete"
+        },
+        {
+          "date": "2026-05-26",
+          "repo": "JWJeffery/LOTH",
+          "commit": "2694fa0",
+          "commit_message": "Add Daytime Prayer empty corpus containers",
+          "phase": "LOTH — Daytime Prayer empty governed corpus containers",
+          "summary": "Added seven empty governed Daytime Prayer corpus containers, updated the LOTH text-unit schema category enum and corpus index, added an audit:daytime-prayer package script, and added scripts/audit-daytime-prayer-containers.mjs as a generic populated-office audit consumer. No source witness was registered and no official Liturgy of the Hours text was ingested.",
+          "validation_passed": [
+            "npm run validate",
+            "npm run audit:daytime-prayer",
+            "npm run audit:evening-prayer",
+            "npm run audit:morning-prayer",
+            "npm run audit:office-of-readings",
+            "npm run audit:invitatory",
+            "npm run audit:night-prayer",
+            "npm run verify:office",
+            "npm run smoke:synthetic"
+          ],
+          "daytime_prayer_audit_result": {
+            "sourceWitnessStatus": "pending_observed_source",
+            "corpusContainerCount": 7,
+            "populatedCorpusUnitCount": 0,
+            "emptyCorpusContainerCount": 7,
+            "placeholderCount": 0
+          },
+          "derived_daytime_lane_result": {
+            "midmorning_prayer": {
+              "corpusContainerCount": 7,
+              "populatedCorpusUnitCount": 0,
+              "emptyCorpusContainerCount": 7,
+              "placeholderCount": 0
+            },
+            "midday_prayer": {
+              "corpusContainerCount": 7,
+              "populatedCorpusUnitCount": 0,
+              "emptyCorpusContainerCount": 7,
+              "placeholderCount": 0
+            },
+            "midafternoon_prayer": {
+              "corpusContainerCount": 7,
+              "populatedCorpusUnitCount": 0,
+              "emptyCorpusContainerCount": 7,
+              "placeholderCount": 0
+            }
+          },
+          "evening_prayer_regression_result": {
+            "corpusContainerCount": 11,
+            "populatedCorpusUnitCount": 11,
+            "emptyCorpusContainerCount": 0,
+            "placeholderCount": 0
+          },
+          "morning_prayer_regression_result": {
+            "corpusContainerCount": 11,
+            "populatedCorpusUnitCount": 11,
+            "emptyCorpusContainerCount": 0,
+            "placeholderCount": 0
+          },
+          "office_of_readings_regression_result": {
+            "corpusContainerCount": 11,
+            "populatedCorpusUnitCount": 10,
+            "emptyCorpusContainerCount": 1,
+            "placeholderCount": 0
+          },
+          "invitatory_regression_result": {
+            "corpusContainerCount": 4,
+            "populatedCorpusUnitCount": 4,
+            "emptyCorpusContainerCount": 0,
+            "placeholderCount": 0
+          },
+          "night_prayer_regression_result": {
+            "corpusContainerCount": 11,
+            "populatedCorpusUnitCount": 11,
+            "emptyCorpusContainerCount": 0,
+            "placeholderCount": 0
+          },
+          "architectural_consequence": "Daytime Prayer now resolves as empty governed corpus containers rather than runtime placeholders. The shared Daytime Prayer template also removes placeholders from Midmorning, Midday, and Midafternoon Prayer resolver lanes while preserving their selectedDaytimeHour identities.",
+          "status": "complete"
+        },
+        {
+          "date": "2026-05-26",
+          "repo": "JWJeffery/LOTH",
+          "commit": "8a85926",
+          "commit_message": "Populate Evening Prayer source-governed units",
+          "phase": "LOTH — Evening Prayer source-governed text population",
+          "summary": "Registered the observed DivineOffice.org Evening Prayer source witness for 2026-05-26, Saint Philip Neri, Priest, then populated all eleven governed Evening Prayer units from that witness. Updated the Evening Prayer audit from empty-container expectations to populated-unit expectations while preserving render blocking, permission-pending posture, source references, and review-pending audit status.",
+          "validation_passed": [
+            "npm run validate",
+            "npm run audit:evening-prayer",
+            "npm run audit:morning-prayer",
+            "npm run audit:office-of-readings",
+            "npm run audit:invitatory",
+            "npm run audit:night-prayer",
+            "npm run verify:office",
+            "npm run smoke:synthetic"
+          ],
+          "evening_prayer_audit_result": {
+            "sourceWitnessStatus": "registered",
+            "witnessId": "divineoffice_org_evening_prayer_memorial_philip_neri_20260526",
+            "sourceRef": "divineoffice_org_digital_loth_candidate",
+            "intendedSlotCount": 11,
+            "textImported": false,
+            "corpusContainerCount": 11,
+            "populatedCorpusUnitCount": 11,
+            "emptyCorpusContainerCount": 0,
+            "placeholderCount": 0
+          },
+          "morning_prayer_regression_result": {
+            "corpusContainerCount": 11,
+            "populatedCorpusUnitCount": 11,
+            "emptyCorpusContainerCount": 0,
+            "placeholderCount": 0
+          },
+          "office_of_readings_regression_result": {
+            "corpusContainerCount": 11,
+            "populatedCorpusUnitCount": 10,
+            "emptyCorpusContainerCount": 1,
+            "placeholderCount": 0
+          },
+          "invitatory_regression_result": {
+            "corpusContainerCount": 4,
+            "populatedCorpusUnitCount": 4,
+            "emptyCorpusContainerCount": 0,
+            "placeholderCount": 0
+          },
+          "night_prayer_regression_result": {
+            "corpusContainerCount": 11,
+            "populatedCorpusUnitCount": 11,
+            "emptyCorpusContainerCount": 0,
+            "placeholderCount": 0
+          },
+          "architectural_consequence": "Evening Prayer has now completed the governed intake path through containers, audit coverage, source-witness registration, and source-governed population. The LOTH corpus now has five major fixed office lanes with zero runtime placeholders: Night Prayer, Invitatory, Office of Readings, Morning Prayer, and Evening Prayer.",
+          "status": "complete"
+        },
+        {
+          "date": "2026-05-26",
+          "repo": "JWJeffery/LOTH",
+          "commit": "a3135e5",
+          "commit_message": "Add Evening Prayer empty corpus containers",
+          "phase": "LOTH — Evening Prayer empty governed corpus containers",
+          "summary": "Added eleven empty governed Evening Prayer corpus containers, updated the LOTH text-unit schema category enum and corpus index, added an audit:evening-prayer package script, and added scripts/audit-evening-prayer-containers.mjs as a generic populated-office audit consumer. No source witness was registered and no official Liturgy of the Hours text was ingested.",
+          "validation_passed": [
+            "npm run validate",
+            "npm run audit:evening-prayer",
+            "npm run audit:morning-prayer",
+            "npm run audit:office-of-readings",
+            "npm run audit:invitatory",
+            "npm run audit:night-prayer",
+            "npm run verify:office",
+            "npm run smoke:synthetic"
+          ],
+          "evening_prayer_audit_result": {
+            "sourceWitnessStatus": "pending_observed_source",
+            "corpusContainerCount": 11,
+            "populatedCorpusUnitCount": 0,
+            "emptyCorpusContainerCount": 11,
+            "placeholderCount": 0
+          },
+          "morning_prayer_regression_result": {
+            "corpusContainerCount": 11,
+            "populatedCorpusUnitCount": 11,
+            "emptyCorpusContainerCount": 0,
+            "placeholderCount": 0
+          },
+          "office_of_readings_regression_result": {
+            "corpusContainerCount": 11,
+            "populatedCorpusUnitCount": 10,
+            "emptyCorpusContainerCount": 1,
+            "placeholderCount": 0
+          },
+          "invitatory_regression_result": {
+            "corpusContainerCount": 4,
+            "populatedCorpusUnitCount": 4,
+            "emptyCorpusContainerCount": 0,
+            "placeholderCount": 0
+          },
+          "night_prayer_regression_result": {
+            "corpusContainerCount": 11,
+            "populatedCorpusUnitCount": 11,
+            "emptyCorpusContainerCount": 0,
+            "placeholderCount": 0
+          },
+          "architectural_consequence": "Evening Prayer now resolves as empty governed corpus containers rather than runtime placeholders. The reusable populated-office audit pattern is now proven across the major fixed LOTH office lanes: Night Prayer, Invitatory, Office of Readings, Morning Prayer, and Evening Prayer.",
+          "status": "complete"
+        },
+        {
+          "date": "2026-05-26",
+          "repo": "JWJeffery/LOTH",
+          "commit": "50b84d7",
+          "commit_message": "Populate Morning Prayer source-governed units",
+          "phase": "LOTH — Morning Prayer source-governed text population",
+          "summary": "Registered the observed DivineOffice.org Morning Prayer source witness for 2026-05-26, Saint Philip Neri, Priest, then populated all eleven governed Morning Prayer units from that witness. Updated the Morning Prayer audit from empty-container expectations to populated-unit expectations while preserving render blocking, permission-pending posture, source references, and review-pending audit status.",
+          "validation_passed": [
+            "npm run validate",
+            "npm run audit:morning-prayer",
+            "npm run audit:office-of-readings",
+            "npm run audit:invitatory",
+            "npm run audit:night-prayer",
+            "npm run verify:office",
+            "npm run smoke:synthetic"
+          ],
+          "morning_prayer_audit_result": {
+            "sourceWitnessStatus": "registered",
+            "witnessId": "divineoffice_org_morning_prayer_memorial_philip_neri_20260526",
+            "sourceRef": "divineoffice_org_digital_loth_candidate",
+            "intendedSlotCount": 11,
+            "textImported": false,
+            "corpusContainerCount": 11,
+            "populatedCorpusUnitCount": 11,
+            "emptyCorpusContainerCount": 0,
+            "placeholderCount": 0
+          },
+          "office_of_readings_regression_result": {
+            "corpusContainerCount": 11,
+            "populatedCorpusUnitCount": 10,
+            "emptyCorpusContainerCount": 1,
+            "placeholderCount": 0
+          },
+          "invitatory_regression_result": {
+            "corpusContainerCount": 4,
+            "populatedCorpusUnitCount": 4,
+            "emptyCorpusContainerCount": 0,
+            "placeholderCount": 0
+          },
+          "night_prayer_regression_result": {
+            "corpusContainerCount": 11,
+            "populatedCorpusUnitCount": 11,
+            "emptyCorpusContainerCount": 0,
+            "placeholderCount": 0
+          },
+          "architectural_consequence": "Morning Prayer has now completed the governed intake path through containers, audit coverage, source-witness registration, and source-governed population. The LOTH corpus now has four governed office lanes with zero runtime placeholders: Night Prayer, Invitatory, Office of Readings, and Morning Prayer.",
+          "status": "complete"
+        },
+        {
+          "date": "2026-05-26",
+          "repo": "JWJeffery/LOTH",
+          "commit": "4c2fb19",
+          "commit_message": "Add Morning Prayer empty corpus containers",
+          "phase": "LOTH — Morning Prayer empty governed corpus containers",
+          "summary": "Added eleven empty governed Morning Prayer corpus containers, updated the LOTH text-unit schema category enum and corpus index, added an audit:morning-prayer package script, and added scripts/audit-morning-prayer-containers.mjs as a generic populated-office audit consumer. No source witness was registered and no official Liturgy of the Hours text was ingested.",
+          "validation_passed": [
+            "npm run validate",
+            "npm run audit:morning-prayer",
+            "npm run audit:office-of-readings",
+            "npm run audit:invitatory",
+            "npm run audit:night-prayer",
+            "npm run verify:office",
+            "npm run smoke:synthetic"
+          ],
+          "morning_prayer_audit_result": {
+            "sourceWitnessStatus": "pending_observed_source",
+            "corpusContainerCount": 11,
+            "populatedCorpusUnitCount": 0,
+            "emptyCorpusContainerCount": 11,
+            "placeholderCount": 0
+          },
+          "office_of_readings_regression_result": {
+            "corpusContainerCount": 11,
+            "populatedCorpusUnitCount": 10,
+            "emptyCorpusContainerCount": 1,
+            "placeholderCount": 0
+          },
+          "invitatory_regression_result": {
+            "corpusContainerCount": 4,
+            "populatedCorpusUnitCount": 4,
+            "emptyCorpusContainerCount": 0,
+            "placeholderCount": 0
+          },
+          "night_prayer_regression_result": {
+            "corpusContainerCount": 11,
+            "populatedCorpusUnitCount": 11,
+            "emptyCorpusContainerCount": 0,
+            "placeholderCount": 0
+          },
+          "architectural_consequence": "Morning Prayer now resolves as empty governed corpus containers rather than runtime placeholders. The reusable populated-office audit pattern is now proven across Night Prayer, Invitatory, Office of Readings, and Morning Prayer.",
+          "status": "complete"
+        },
+        {
+          "date": "2026-05-26",
+          "repo": "JWJeffery/LOTH",
+          "commit": "26e2768",
+          "commit_message": "Populate Office of Readings source-governed units",
+          "phase": "LOTH — Office of Readings source-governed text population",
+          "summary": "Registered the observed DivineOffice.org Office of Readings source witness for 2026-05-26, Saint Philip Neri, Priest, then populated the governed Office of Readings units from that witness. Ten Office of Readings units are populated. The Te Deum container remains intentionally empty with observed-not-applicable posture because the observed memorial source page did not appoint a Te Deum.",
+          "validation_passed": [
+            "npm run validate",
+            "npm run audit:office-of-readings",
+            "npm run audit:invitatory",
+            "npm run audit:night-prayer",
+            "npm run verify:office",
+            "npm run smoke:synthetic"
+          ],
+          "office_of_readings_audit_result": {
+            "sourceWitnessStatus": "registered",
+            "witnessId": "divineoffice_org_office_of_readings_memorial_philip_neri_20260526",
+            "sourceRef": "divineoffice_org_digital_loth_candidate",
+            "intendedSlotCount": 11,
+            "textImported": false,
+            "corpusContainerCount": 11,
+            "populatedCorpusUnitCount": 10,
+            "emptyCorpusContainerCount": 1,
+            "placeholderCount": 0,
+            "teDeumStatus": "observed_not_applicable"
+          },
+          "invitatory_regression_result": {
+            "corpusContainerCount": 4,
+            "populatedCorpusUnitCount": 4,
+            "emptyCorpusContainerCount": 0,
+            "placeholderCount": 0
+          },
+          "night_prayer_regression_result": {
+            "corpusContainerCount": 11,
+            "populatedCorpusUnitCount": 11,
+            "emptyCorpusContainerCount": 0,
+            "placeholderCount": 0
+          },
+          "architectural_consequence": "Office of Readings has now completed the governed intake path through containers, audit coverage, source-witness registration, and source-governed population. The audit/resolver model now handles a mixed populated/observed-empty office state: ten populated units plus one intentionally empty Te Deum container with zero runtime placeholders.",
+          "status": "complete"
+        },
+        {
+          "date": "2026-05-26",
+          "repo": "JWJeffery/LOTH",
+          "commit": "2c4f648",
+          "commit_message": "Add Office of Readings empty corpus containers",
+          "phase": "LOTH — Office of Readings empty governed corpus containers",
+          "summary": "Added eleven empty governed Office of Readings corpus containers, updated the LOTH text-unit schema category enum and corpus index, added an audit:office-of-readings package script, and added scripts/audit-office-of-readings-containers.mjs as a generic populated-office audit consumer. No source witness was registered and no official Liturgy of the Hours text was ingested.",
+          "validation_passed": [
+            "npm run validate",
+            "npm run audit:office-of-readings",
+            "npm run audit:invitatory",
+            "npm run audit:night-prayer",
+            "npm run verify:office",
+            "npm run smoke:synthetic"
+          ],
+          "office_of_readings_audit_result": {
+            "sourceWitnessStatus": "pending_observed_source",
+            "corpusContainerCount": 11,
+            "populatedCorpusUnitCount": 0,
+            "emptyCorpusContainerCount": 11,
+            "placeholderCount": 0
+          },
+          "invitatory_regression_result": {
+            "corpusContainerCount": 4,
+            "populatedCorpusUnitCount": 4,
+            "emptyCorpusContainerCount": 0,
+            "placeholderCount": 0
+          },
+          "night_prayer_regression_result": {
+            "corpusContainerCount": 11,
+            "populatedCorpusUnitCount": 11,
+            "emptyCorpusContainerCount": 0,
+            "placeholderCount": 0
+          },
+          "architectural_consequence": "Office of Readings now resolves as empty governed corpus containers rather than runtime placeholders. The reusable populated-office audit pattern is now proven across Night Prayer, Invitatory, and Office of Readings, including both populated and empty-container office states.",
+          "status": "complete"
+        },
+        {
+          "date": "2026-05-26",
+          "repo": "JWJeffery/LOTH",
+          "commit": "e80d12f",
+          "commit_message": "Populate Invitatory source-governed units",
+          "phase": "LOTH — Invitatory source-governed text population",
+          "summary": "Populated the four governed Invitatory units from the registered DivineOffice.org source witness for 2026-05-26. Updated the Invitatory audit from empty-container expectations to populated-unit expectations while preserving render blocking, permission-pending posture, source references, and review-pending audit status.",
+          "validation_passed": [
+            "npm run validate",
+            "npm run audit:invitatory",
+            "npm run audit:night-prayer",
+            "npm run verify:office",
+            "npm run smoke:synthetic"
+          ],
+          "invitatory_audit_result": {
+            "sourceWitnessStatus": "registered",
+            "witnessId": "divineoffice_org_invitatory_common_of_pastors_20260526",
+            "sourceRef": "divineoffice_org_digital_loth_candidate",
+            "intendedSlotCount": 4,
+            "textImported": false,
+            "corpusContainerCount": 4,
+            "populatedCorpusUnitCount": 4,
+            "emptyCorpusContainerCount": 0,
+            "placeholderCount": 0
+          },
+          "night_prayer_regression_result": {
+            "corpusContainerCount": 11,
+            "populatedCorpusUnitCount": 11,
+            "emptyCorpusContainerCount": 0,
+            "placeholderCount": 0
+          },
+          "architectural_consequence": "Invitatory has now completed the first full LOTH office intake path after Night Prayer: containers, generic audit coverage, source-witness governance, source-witness registration, and source-governed population. The reusable audit pattern is proven across one populated fixed office and one populated Invitatory office.",
+          "status": "complete"
+        },
+        {
+          "date": "2026-05-26",
+          "repo": "JWJeffery/LOTH",
+          "commits": [
+            "1667cd9",
+            "a730e5b"
+          ],
+          "commit_messages": [
+            "Add Invitatory source witness readiness audit",
+            "Register Invitatory source witness"
+          ],
+          "phase": "LOTH — Invitatory source-witness governance",
+          "summary": "Added source-witness readiness governance to the Invitatory audit, then registered the observed DivineOffice.org Invitatory source witness for 2026-05-26, Saint Philip Neri / Common of Pastors. The witness covers all four Invitatory slots and remains metadata-only with textImported false.",
+          "validation_passed": [
+            "npm run validate",
+            "npm run audit:invitatory",
+            "npm run audit:night-prayer",
+            "npm run verify:office",
+            "npm run smoke:synthetic"
+          ],
+          "invitatory_audit_result": {
+            "sourceWitnessStatus": "registered",
+            "witnessId": "divineoffice_org_invitatory_common_of_pastors_20260526",
+            "sourceRef": "divineoffice_org_digital_loth_candidate",
+            "intendedSlotCount": 4,
+            "textImported": false,
+            "corpusContainerCount": 4,
+            "populatedCorpusUnitCount": 0,
+            "emptyCorpusContainerCount": 4,
+            "placeholderCount": 0
+          },
+          "night_prayer_regression_result": {
+            "corpusContainerCount": 11,
+            "populatedCorpusUnitCount": 11,
+            "emptyCorpusContainerCount": 0,
+            "placeholderCount": 0
+          },
+          "architectural_consequence": "Invitatory now has the complete pre-text governance chain: empty governed containers, generic audit coverage, source-witness readiness checks, and one registered observed source witness. Text population may proceed only as a separate governed intake tranche.",
+          "status": "complete"
+        },
+        {
+          "date": "2026-05-26",
+          "repo": "JWJeffery/LOTH",
+          "commit": "4273cba",
+          "commit_message": "Add Invitatory empty corpus containers",
+          "phase": "LOTH — Invitatory empty governed corpus containers",
+          "summary": "Added four empty governed Invitatory corpus containers for opening versicle, antiphon, psalm, and doxology. Updated the LOTH text-unit schema category enum, corpus index, and package scripts. Added scripts/audit-invitatory-containers.mjs as the second consumer/proof of the generic populated-office audit helper. No official Liturgy of the Hours text was ingested.",
+          "validation_passed": [
+            "npm run validate",
+            "npm run audit:invitatory",
+            "npm run audit:night-prayer",
+            "npm run verify:office",
+            "npm run smoke:synthetic"
+          ],
+          "invitatory_audit_result": {
+            "corpusContainerCount": 4,
+            "populatedCorpusUnitCount": 0,
+            "emptyCorpusContainerCount": 4,
+            "placeholderCount": 0
+          },
+          "night_prayer_regression_result": {
+            "corpusContainerCount": 11,
+            "populatedCorpusUnitCount": 11,
+            "emptyCorpusContainerCount": 0,
+            "placeholderCount": 0
+          },
+          "architectural_consequence": "The generic populated-office audit pattern has now been proven against a second office. Invitatory now resolves as empty governed corpus containers rather than runtime placeholders, while remaining non-public and unpopulated pending source collection and permission review.",
+          "status": "complete"
+        },
+        {
+          "date": "2026-05-26",
+          "repo": "JWJeffery/LOTH",
+          "commit": "714a257",
+          "commit_message": "Add generic populated office audit core",
+          "phase": "LOTH — generic populated-office audit core",
+          "summary": "Added scripts/lib/audit-populated-office.mjs as a reusable generic audit helper for LOTH office intake validation. Refactored scripts/audit-night-prayer-containers.mjs to consume the generic helper. Night Prayer-specific DivineOffice and eBreviary witness checks remain local to the Night Prayer audit and were not prematurely generalized.",
+          "validation_passed": [
+            "npm run validate",
+            "npm run audit:night-prayer",
+            "npm run verify:office",
+            "npm run smoke:synthetic"
+          ],
+          "night_prayer_audit_result": {
+            "corpusContainerCount": 11,
+            "populatedCorpusUnitCount": 11,
+            "emptyCorpusContainerCount": 0,
+            "placeholderCount": 0
+          },
+          "architectural_consequence": "Future LOTH office intakes should use the generic populated-office audit pattern rather than duplicating Night Prayer audit logic. Witness-specific provenance checks should remain office/source-specific until repeated patterns justify a second abstraction.",
+          "status": "complete"
+        },
+        {
+          "date": "2026-05-23",
+          "phase": "Roman LOTH private corpus — exposure boundary correction",
+          "summary": "Corrected metadata language: the project is not barred from building official Roman LOTH corpus material inside the private restricted JWJeffery/LOTH repository while permission is pending. The actual boundary is public exposure: PrayerAppNew must not fetch, expose, or publicly render official LOTH text until permission authorization is recorded.",
+          "files": [
+            "project_roadmap.json",
+            "structure.json"
+          ],
+          "status": "metadata_corrected",
+          "renderPolicy": "blocked_until_authorized"
+        },
+        {
+          "date": "2026-05-23",
+          "phase": "Roman LOTH private corpus — synthetic resolver verification",
+          "summary": "Recorded JWJeffery/LOTH synthetic resolver verification in PrayerAppNew metadata. LOTH/main passes npm run verify:synthetic: validation checks 26 JSON files and smoke test resolves all 9 Roman LOTH office IDs synthetically. Public rendering remains blocked_until_authorized pending permission.",
+          "files": [
+            "project_roadmap.json",
+            "structure.json"
+          ],
+          "status": "metadata_recorded",
+          "renderPolicy": "blocked_until_authorized"
+        },
+        {
+          "phase": "Roman LOTH governance scaffold — external private corpus registration",
+          "date": "2026-05-23",
+          "file": "project_roadmap.json + structure.json",
+          "status": "complete",
+          "change": "Registered JWJeffery/LOTH as the external private restricted corpus/governance repository for Roman Liturgy of the Hours. Updated roman_catholic current_status to external_private_corpus_scaffolded_permission_pending in project_roadmap.json; added corpus_repo, permission_inquiry, render_policy, and render_disabled_note governance fields to roman_catholic entry; added governance_note to phase_3 recording permission inquiry to DivineOffice.org / Surgeworks sent 2026-05-23 status pending. Added restricted_external_corpora config object to structure.json. No official LOTH text added. No render path opened. No public UI change. BCP public beta identity unchanged. Roman LOTH beta_status remains release_blocker.",
+          "deferred": "Phase 3 implementation remains gated on permission authorization from JWJeffery/LOTH permission registry. No Roman LOTH rendering until authorized."
+        },
+        {
+          "phase": "Universal beta roadmap — source pointer",
+          "date": "2026-05-20",
+          "file": "README.md + structure.json + admin/readme.md",
+          "status": "complete",
+          "change": "Recorded project_roadmap.json as the canonical roadmap source for Beta Release architecture and corrected stale repo-facing release language. README now identifies the public beta as BCP-facing / Anglican-centered while requiring first-release representation of Anglican, Roman Catholic, Eastern Orthodox, Oriental Orthodox, and Church of the East families. Admin documentation now distinguishes the current legacy Byzantine cockpit from the pending Universal Beta Roadmap dashboard wiring.",
+          "deferred": "Admin Dashboard rendering from project_roadmap.json remains Phase 1. Roman Catholic Divine Office / Liturgy of the Hours remains a Beta Release blocker until implemented and QC-verified."
+        },
+        {
+          "phase": "structure.json hygiene — ordinary-baseline archive",
+          "date": "2026-05-20",
+          "file": "structure.json + documentation/structure-archive-2026-05-17-ordinary-baseline.json",
+          "status": "complete",
+          "change": "Archived recent_logic_changes entries dated before 2026-05-17 into a dedicated documentation archive file. Live structure.json now retains the ordinary-baseline closure sweep entries and current governance state while preserving prior implementation history outside the runtime manifest.",
+          "deferred": "Further structure.json reduction is deferred until project_roadmap.json exists and Admin Dashboard roadmap rendering has moved to that source."
+        },
+        {
+          "phase": "Public-beta closure sweep — ordinary baseline",
+          "date": "2026-05-17",
+          "file": "structure.json",
+          "status": "passed",
+          "change": "Recorded public-beta ordinary-baseline closure sweep after Orthros corpus recovery. Browser-console verification passed 15 of 15 cases across ordinary weekday and ordinary Sunday baseline offices, with seasonal Orthros controls also clear after Aposticha fallback wording normalization.",
+          "deferred": "Polyeleos/rank selection, distinct Psalms 134–135 Polyeleos corpus, seasonal/festal Orthros depth, and Menaion depth remain deferred governance rather than ordinary-baseline public-beta blockers."
+        },
+        {
+          "phase": "Orthros Aposticha seasonal fallback wording cleanup",
+          "date": "2026-05-17",
+          "file": "js/horologion-engine.js + structure.json",
+          "status": "complete",
+          "change": "Normalized the remaining seasonal/festal Orthros Aposticha deferred fallback wording after ordinary Sunday Aposticha was reclassified as not appointed. The fallback now identifies seasonal or Menaion Aposticha as deferred public-beta corpus depth instead of saying the path is not implemented in the current tranche.",
+          "deferred": "Full seasonal/festal Orthros Aposticha text remains deferred as Great Lent, Holy Week, Bright Week, and Menaion/festal depth work. Ordinary weekday and ordinary Sunday Aposticha behavior is unchanged."
+        },
+        {
+          "phase": "Orthros corpus recovery — ordinary baseline blocker cleanup",
+          "date": "2026-05-17",
+          "file": "structure.json",
+          "status": "complete",
+          "change": "Cleaned up the Byzantine public-beta corpus recovery roadmap after Orthros ordinary-baseline recovery. Psalm 50, Great Litany, ordinary Sunday Kathisma 2, and ordinary Sunday Aposticha are no longer listed as confirmed public-beta blockers. The remaining Polyeleos/rank-selection work is recorded as deferred seasonal/festal governance rather than an ordinary non-Polyeleos baseline blocker.",
+          "deferred": "Polyeleos/rank selection and a distinct Psalms 134–135 Polyeleos corpus remain deferred. Seasonal and Menaion/festal Orthros depth remains governed separately."
+        },
+        {
+          "phase": "Orthros corpus recovery — ordinary Sunday Kathisma 2",
+          "date": "2026-05-17",
+          "file": "js/horologion-engine.js + structure.json",
+          "status": "complete",
+          "change": "Implemented the source-governed ordinary non-Polyeleos Sunday Orthros kathisma profile. Ordinary Sunday kathisma-first now renders full Kathisma 2 text using the existing kathisma full-text resolver, while kathisma-second and kathisma-third remain Sunday not-appointed. No Polyeleos text, K19-as-Polyeleos rendering, K3 corpus, rank/Polyeleos selection logic, weekday, Great Lent, Holy Week, Bright Week, Vespers, or Sunday Aposticha behavior was changed.",
+          "deferred": "Polyeleos/rank selection remains deferred. Psalms 134–135 require a distinct source-governed Polyeleos corpus item before Polyeleos rendering is implemented."
+        },
+        {
+          "phase": "Orthros corpus recovery — Sunday Aposticha baseline correction",
+          "date": "2026-05-17",
+          "file": "js/horologion-engine.js + structure.json",
+          "status": "complete",
+          "change": "Corrected ordinary Sunday Orthros Aposticha baseline handling. Source-governance confirmed that ferial Orthros Aposticha are not appointed in ordinary Sunday Orthros under the governed Slavic/Horologion baseline, so ordinary Sunday now resolves to an honest not-appointed rubric instead of the generic Aposticha deferred-corpus fallback. Ordinary weekday Aposticha text resolution remains unchanged.",
+          "deferred": "Seasonal Aposticha depth remains unresolved for Great Lent weekdays, Holy Week, Bright Week, and Menaion/festal cases. Ordinary Sunday Aposticha is no longer treated as a missing corpus blocker."
+        },
+        {
+          "phase": "Orthros corpus recovery — Sunday kathisma placeholder correction",
+          "date": "2026-05-17",
+          "file": "js/horologion-engine.js + data/horologion/orthros.json + structure.json",
+          "status": "complete",
+          "change": "Corrected ordinary Sunday Orthros kathisma runtime behavior so the three skeleton kathisma slots no longer render as three identical deferred Sunday kathisma notices. The first kathisma slot remains the single governed Sunday kathisma / Polyeleos decision point, while the second and third kathisma slots resolve as Sunday not-appointed outside Great Lent, Holy Week, and Bright Week. No K2 default, K19/Polyeleos rendering, K3 corpus, full psalm text, Great Lent, Holy Week, Bright Week, weekday, Vespers, display-depth, or renderer behavior was changed.",
+          "deferred": "A source-governed Sunday appointment policy remains required before full-text Sunday kathisma or Polyeleos rendering can be implemented. K2 and K19 corpus exist; K3 is absent; Polyeleos Psalms 134–135 require a distinct source-governed corpus item if adopted."
+        },
+        {
+          "phase": "Orthros corpus recovery — Psalm 50 and Great Litany",
+          "date": "2026-05-17",
+          "file": "data/horologion/orthros.json + data/horologion/orthros-fixed.json + js/horologion-engine.js + structure.json",
+          "status": "complete",
+          "change": "Added source-verified Orthros fixed-text support for Psalm 50 and the Great Litany using existing in-repo fixed-text corpora. Orthros now has explicit skeleton slots for Great Litany after the Six Psalms and Psalm 50 before the Canon, and the engine fixed-slot route recognizes both keys. The Orthros release-honesty finalizer no longer injects Psalm 50 or Great Litany deferred rubrics when the real fixed slots resolve. No broader repeated litany structure, Sunday kathismata, Aposticha, seasonal hymnography, or Menaion depth was changed.",
+          "deferred": "Orthros corpus recovery remains active: Sunday kathismata full psalm text, Orthros Aposticha baseline handling, and broader Orthros hymnographic depth triage remain governed follow-up phases."
+        },
+        {
+          "phase": "Byzantine public-beta corpus recovery — Orthros blocker posture correction",
+          "date": "2026-05-17",
+          "file": "structure.json",
+          "status": "active",
+          "change": "Recorded runtime corpus-gap verification findings and revised the prior unqualified no-blocker posture. Runtime testing cleared several ordinary office paths but confirmed Orthros baseline corpus blockers, including Great Litany, Psalm 50, and Sunday kathismata under the project's full-psalm-text policy. The issue is now governed as corpus recovery, not merely wording normalization or deferred-notice UX polish.",
+          "deferred": "Implementation of Orthros baseline corpus fixes remains next: source audit, Psalm 50 and Great Litany insertion, Sunday kathisma full-text handling, Aposticha baseline decision, and browser-console runtime re-test."
+        },
+        {
+          "phase": "Public-beta rubric wording normalization — Great Lent and Holy Week tranche 2",
+          "date": "2026-05-17",
+          "file": "js/horologion-engine.js + structure.json",
+          "status": "complete",
+          "change": "Normalized the second Great Lent / Holy Week deferred-rubric wording tranche away from developer-facing implementation language. Updated the Orthros Great Lent Canon fallback, Vespers Holy Week rubric helper wording, and Vespers Great Lent Paremiae, stichera, Aposticha, troparion, and Theotokion notices. Notices now use public-beta corpus-deferred language while preserving the existing appointment claims. No appointment logic, resolvedAs tokens, seasonal routing, display-depth behavior, source text, or corpus data changed.",
+          "deferred": "Broader deferred-text UX census remains next: count and classify all rendered notices where appointed text is missing, deferred, pending transcription, or source-witness incomplete."
+        },
+        {
+          "phase": "Public-beta rubric wording normalization — Great Lent and Holy Week tranche 1",
+          "date": "2026-05-17",
+          "file": "js/horologion-engine.js + structure.json",
+          "status": "complete",
+          "change": "Normalized the first Great Lent / Holy Week deferred-rubric wording tranche away from developer-facing implementation language. Updated Little Hours and Small Compline seasonal troparion notices, the Vespers Great Lent kathisma fallback, and selected Orthros seasonal/Holy Week notices for Theotokion, Exapostilarion, Sessional Hymns, and Canon. Notices now use public-beta corpus-deferred language while preserving the existing appointment claims. No appointment logic, resolvedAs tokens, seasonal routing, display-depth behavior, source text, or corpus data changed.",
+          "deferred": "Great Lent / Holy Week wording tranche 2 remains separate: Orthros Great Lent Canon fallback, Vespers Holy Week helper wording, and Vespers Great Lent Paremiae, stichera, Aposticha, troparion, and Theotokion notices."
+        }
+      ]
+    }
+  },
+  "live_structure_after_archive_policy": {
+    "project_manifest.operational_status": "Concise current-state summary only.",
+    "recent_logic_changes": "Latest 12 entries only unless a future archive changes the retention count.",
+    "full_history": "Preserved in documentation archive files and git history."
+  }
+}
