@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0.0",
-  "roadmap_version": "0.1.33",
+  "roadmap_version": "0.1.34",
   "last_updated": "2026-06-01",
   "status": "active",
   "name": "Universal Office Beta Release Roadmap",
@@ -8,14 +8,14 @@
   "current_repo_state": {
     "latest_known_commit": "1803dbc",
     "latest_known_commit_message": "Record Office of Readings source pipeline bundle",
-    "structure_json_version": "3.8.144",
+    "structure_json_version": "3.8.145",
     "roadmap_source_of_truth": "project_roadmap.json",
     "structure_json_role": "Project manifest, implementation ledger, governance history, legacy admin todo source, and current state pointer.",
     "roadmap_role": "Canonical release architecture and phase/tranche planning source for Admin Dashboard roadmap visualization.",
-    "latest_known_loth_commit": "38bddeb",
-    "latest_known_loth_commit_message": "Compile Office of Readings private psalmody corpus book",
+    "latest_known_loth_commit": "bed7f3a",
+    "latest_known_loth_commit_message": "Fix Office of Readings private Grail appointment psalmody audit",
     "roman_loth_control_corpus_repo": "JWJeffery/LOTH",
-    "loth_recording_cadence": "every_six_loth_tranches"
+    "loth_recording_cadence": "every_six_corpus_producing_loth_tranches"
   },
   "release_identity": {
     "beta_release_focus": "BCP-facing Anglican public beta",
@@ -210,7 +210,7 @@
           "grail_1963_psalter": "resources/psalter/grail-1963/psalms.json",
           "universalis": "structure_calendar_source_discovery_comparator_not_automatic_population_source",
           "source_supplement_policy": "registry/roman-loth-source-supplement-policy.json",
-          "office_of_readings": "private_psalmody_corpus_bundle_compiled_after_private_pilot_context_exports",
+          "office_of_readings": "full_grail_private_psalmody_corpus_bundle_recorded",
           "office_of_readings_forward_model": "private corpus construction with actual text/source data where available; public rendering decisions tracked separately; no broad daily date-block snapshots",
           "office_of_readings_cycle_proper_resolver_plan": "closed_in_loth_d9fdea1; composition_map_unitrefs_only_no_text_writes_no_date_blocks",
           "office_of_readings_metadata_composition_pilot": "closed_in_loth_fa10584; composition-map samples with 11 unitRefs-only slots",
@@ -241,8 +241,8 @@
           "office_of_readings_candidate_second_reading_units": "closed_in_loth_794f624; three pilot second-reading refs populated as public-domain patristic/ecclesial candidate reusable units pending final LOTH source alignment",
           "office_of_readings_candidate_psalmody_units": "closed_in_loth_a4849c8; three pilot psalmody refs populated as public-domain psalmody candidate reusable units pending final LOTH/Grail alignment",
           "office_of_readings_text_population_eligibility": "after_loth_a4849c8 eligibility reports 11 populated slots and 0 source-gated slots in the metadata pilot",
-          "office_of_readings_completion_scope": "private pilot context exports and private psalmody corpus book compiled; continue corpus-producing expansion toward fuller OOR coverage",
-          "office_of_readings_latest_recorded_loth_commit": "38bddeb",
+          "office_of_readings_completion_scope": "full private Grail psalmody corpus and resolver support compiled; continue corpus-producing expansion toward fuller OOR cycle/proper coverage",
+          "office_of_readings_latest_recorded_loth_commit": "bed7f3a",
           "office_of_readings_source_alignment_status": "closed_in_loth_8294623; non-text source-alignment status report records all 11 OOR slots, 11 populated or rule-not-applicable slots, 0 source-gated slots, and blocked rendering/daily snapshots",
           "office_of_readings_reading_citation_refs": "closed_in_loth_e3eda12; metadata-only first-reading and second-reading citation/source refs populated for the three pilot contexts; not official-current LOTH/NAB/ICEL/Grail assertions",
           "office_of_readings_source_alignment_audit": "closed_in_loth_01616d2; quiet source-alignment audit added and kept out of broad verify chains pending explicit promotion",
@@ -261,23 +261,31 @@
           "office_of_readings_private_psalmody_section": "closed_in_loth_af11acf; three-unit private psalmody section hydrated for corpus consumption",
           "office_of_readings_private_pilot_context_corpus": "closed_in_loth_bc0a69b; ordinary weekday, Christmas Dec. 25, and Lenten weekday private pilot contexts assembled with 33 slots from populated reusable text units",
           "office_of_readings_private_corpus_metrics": {
-            "privatePilotContextTextExports": 3,
-            "privatePilotCorpusBooks": 1,
-            "privatePilotSlotTextIndexes": 1,
-            "additionalControlledFixturePsalmodyTextUnits": 3,
-            "totalRecordedPrivatePsalmodyTextUnits": 6,
-            "privatePsalmodySections": 2,
-            "privatePsalmodyCorpusBooks": 1
+            "fullGrailPrivatePsalmodyTextUnits": 152,
+            "fullGrailPrivatePsalmodyBooks": 1,
+            "fullGrailLookupRecords": 152,
+            "fullGrailLineIndexCreated": true,
+            "fixtureToFullGrailAppointmentMappings": 6,
+            "hydratedAppointmentPsalmodySections": 2,
+            "hydratedAppointmentEntries": 6
           },
-          "office_of_readings_recording_cadence": "every_six_loth_tranches",
+          "office_of_readings_recording_cadence": "every_six_corpus_producing_loth_tranches",
           "office_of_readings_private_pilot_context_text_exports": "closed_in_loth_871c966; three private pilot context text exports created for ordinary weekday, Christmas Dec. 25, and Lenten weekday",
           "office_of_readings_private_pilot_corpus_book": "closed_in_loth_8289c4b; three private Office exports compiled into one private pilot corpus book",
           "office_of_readings_private_pilot_slot_text_index": "closed_in_loth_21fc9e0; slot-level private text index created from assembled pilot contexts",
           "office_of_readings_private_psalmody_controlled_fixture_corpus": "closed_in_loth_7131d35; three additional private Grail psalmody text units populated from controlled mixed-numbering fixture",
           "office_of_readings_private_controlled_fixture_psalmody_section": "closed_in_loth_dee4836; controlled-fixture psalmody section hydrated from three private text units",
-          "office_of_readings_private_psalmody_corpus_book": "closed_in_loth_38bddeb; current-Universalis and controlled-fixture psalmody sections compiled into one private psalmody corpus book with six private psalmody units"
+          "office_of_readings_private_psalmody_corpus_book": "closed_in_loth_38bddeb; current-Universalis and controlled-fixture psalmody sections compiled into one private psalmody corpus book with six private psalmody units",
+          "office_of_readings_latest_corpus_tranche_commit": "ba47630",
+          "office_of_readings_latest_audit_repair_commit": "bed7f3a",
+          "office_of_readings_full_grail_psalmody_corpus": "closed_in_loth_147d2f3; full local Grail 1963 psalter materialized as 152 reusable private OOR psalmody text units",
+          "office_of_readings_full_grail_psalmody_book": "closed_in_loth_6243e28; 152 private psalmody units compiled into one private full-Grail psalmody book",
+          "office_of_readings_full_grail_psalmody_lookup_index": "closed_in_loth_ca1ce56; 152 resolver lookup records created over the full-Grail private corpus",
+          "office_of_readings_full_grail_psalmody_line_index": "closed_in_loth_e6bfb6f; line-level index created over the full-Grail private psalmody corpus",
+          "office_of_readings_private_grail_psalmody_appointment_map": "closed_in_loth_d41d641; six appointment/source-shape mappings resolve into full-Grail private psalmody units",
+          "office_of_readings_private_grail_appointment_psalmody_sections": "closed_in_loth_ba47630 and audit-repaired in bed7f3a; two text-bearing appointment psalmody sections hydrated from six appointment mappings"
         },
-        "next_private_office_target": "expand_actual_private_oor_context_coverage",
+        "next_private_office_target": "expand_actual_private_oor_cycle_proper_context_coverage",
         "current_status": "private_control_corpus_in_progress",
         "render_policy": "private_corpus_public_rendering_separate",
         "blocks_beta": true
@@ -1498,6 +1506,40 @@
       "recording_cadence": "every_six_loth_tranches",
       "standaloneGovernanceTranchesCountAsProgress": false,
       "next_allowed_loth_step": "expand_actual_private_oor_context_coverage"
+    },
+    {
+      "id": "roman_loth_oor_full_grail_psalmody_corpus_bundle_2026_06_01",
+      "status": "closed",
+      "date": "2026-06-01",
+      "repository": "JWJeffery/LOTH",
+      "corpus_commit_sequence": [
+        "147d2f3 Populate Office of Readings private full Grail psalmody corpus",
+        "6243e28 Compile Office of Readings private full Grail psalmody book",
+        "ca1ce56 Index Office of Readings private full Grail psalmody lookup",
+        "e6bfb6f Index Office of Readings private full Grail psalmody lines",
+        "d41d641 Map Office of Readings private Grail psalmody appointments",
+        "ba47630 Hydrate Office of Readings private Grail appointment psalmody sections"
+      ],
+      "repair_commit_sequence": [
+        "bed7f3a Fix Office of Readings private Grail appointment psalmody audit"
+      ],
+      "summary": "Recorded the six-tranche Office of Readings full Grail psalmody corpus bundle after PrayerAppNew be00809. The bundle materialized the full local Grail 1963 psalter as 152 reusable private OOR psalmody text units, compiled a full-Grail private psalmody book, created resolver lookup and line-level indexes, mapped existing psalmody appointment fixtures into the full-Grail corpus, and hydrated those appointment mappings into text-bearing private psalmody sections. The follow-up repair commit bed7f3a fixed the appointment-section audit without counting as a new corpus tranche.",
+      "corpus_metrics": {
+        "full_grail_private_psalmody_text_units": 152,
+        "full_grail_private_psalmody_books": 1,
+        "full_grail_lookup_records": 152,
+        "full_grail_line_index_created": true,
+        "fixture_to_full_grail_appointment_mappings": 6,
+        "hydrated_appointment_psalmody_sections": 2,
+        "hydrated_appointment_entries": 6,
+        "actual_private_text_payloads_present": true,
+        "broad_daily_date_blocks_written": false,
+        "audit_repair_attached_to_sixth_tranche": "bed7f3a"
+      },
+      "recording_cadence": "every_six_corpus_producing_loth_tranches",
+      "standaloneGovernanceTranchesCountAsProgress": false,
+      "auditRepairCommitsCountAsCorpusTranches": false,
+      "next_allowed_loth_step": "expand_actual_private_oor_cycle_proper_context_coverage"
     }
   ],
   "governance_questions": [
