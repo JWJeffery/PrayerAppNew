@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0.0",
-  "roadmap_version": "0.1.35",
+  "roadmap_version": "0.1.36",
   "last_updated": "2026-06-01",
   "status": "active",
   "name": "Universal Office Beta Release Roadmap",
@@ -8,12 +8,12 @@
   "current_repo_state": {
     "latest_known_commit": "1803dbc",
     "latest_known_commit_message": "Record Office of Readings source pipeline bundle",
-    "structure_json_version": "3.8.146",
+    "structure_json_version": "3.8.147",
     "roadmap_source_of_truth": "project_roadmap.json",
     "structure_json_role": "Project manifest, implementation ledger, governance history, legacy admin todo source, and current state pointer.",
     "roadmap_role": "Canonical release architecture and phase/tranche planning source for Admin Dashboard roadmap visualization.",
-    "latest_known_loth_commit": "f03ee32",
-    "latest_known_loth_commit_message": "Compile Office of Readings private full Grail slot text export book",
+    "latest_known_loth_commit": "715ba19",
+    "latest_known_loth_commit_message": "Compile Office of Readings private full Grail cycle expansion fixture context slot text export book",
     "roman_loth_control_corpus_repo": "JWJeffery/LOTH",
     "loth_recording_cadence": "every_six_corpus_producing_loth_tranches"
   },
@@ -210,7 +210,7 @@
           "grail_1963_psalter": "resources/psalter/grail-1963/psalms.json",
           "universalis": "structure_calendar_source_discovery_comparator_not_automatic_population_source",
           "source_supplement_policy": "registry/roman-loth-source-supplement-policy.json",
-          "office_of_readings": "full_grail_pilot_context_corpus_bundle_recorded",
+          "office_of_readings": "full_grail_cycle_expansion_fixture_corpus_bundle_recorded",
           "office_of_readings_forward_model": "private corpus construction with actual text/source data where available; public rendering decisions tracked separately; no broad daily date-block snapshots",
           "office_of_readings_cycle_proper_resolver_plan": "closed_in_loth_d9fdea1; composition_map_unitrefs_only_no_text_writes_no_date_blocks",
           "office_of_readings_metadata_composition_pilot": "closed_in_loth_fa10584; composition-map samples with 11 unitRefs-only slots",
@@ -241,8 +241,8 @@
           "office_of_readings_candidate_second_reading_units": "closed_in_loth_794f624; three pilot second-reading refs populated as public-domain patristic/ecclesial candidate reusable units pending final LOTH source alignment",
           "office_of_readings_candidate_psalmody_units": "closed_in_loth_a4849c8; three pilot psalmody refs populated as public-domain psalmody candidate reusable units pending final LOTH/Grail alignment",
           "office_of_readings_text_population_eligibility": "after_loth_a4849c8 eligibility reports 11 populated slots and 0 source-gated slots in the metadata pilot",
-          "office_of_readings_completion_scope": "full-Grail-backed pilot context and slot-level private corpus artifacts compiled; continue corpus-producing expansion toward broader OOR cycle/proper context coverage",
-          "office_of_readings_latest_recorded_loth_commit": "f03ee32",
+          "office_of_readings_completion_scope": "full-Grail cycle-expansion fixture layer compiled as private text-bearing corpus artifacts; continue corpus-producing expansion toward actual additional OOR cycle/proper context coverage",
+          "office_of_readings_latest_recorded_loth_commit": "715ba19",
           "office_of_readings_source_alignment_status": "closed_in_loth_8294623; non-text source-alignment status report records all 11 OOR slots, 11 populated or rule-not-applicable slots, 0 source-gated slots, and blocked rendering/daily snapshots",
           "office_of_readings_reading_citation_refs": "closed_in_loth_e3eda12; metadata-only first-reading and second-reading citation/source refs populated for the three pilot contexts; not official-current LOTH/NAB/ICEL/Grail assertions",
           "office_of_readings_source_alignment_audit": "closed_in_loth_01616d2; quiet source-alignment audit added and kept out of broad verify chains pending explicit promotion",
@@ -261,12 +261,13 @@
           "office_of_readings_private_psalmody_section": "closed_in_loth_af11acf; three-unit private psalmody section hydrated for corpus consumption",
           "office_of_readings_private_pilot_context_corpus": "closed_in_loth_bc0a69b; ordinary weekday, Christmas Dec. 25, and Lenten weekday private pilot contexts assembled with 33 slots from populated reusable text units",
           "office_of_readings_private_corpus_metrics": {
-            "fullGrailIntegratedPilotContexts": 3,
-            "fullGrailPilotContextTextExports": 3,
-            "fullGrailPilotContextBooks": 1,
-            "fullGrailPilotContextSlotTextIndexes": 1,
-            "fullGrailPilotContextSlotTextExportsCreated": true,
-            "fullGrailPilotContextSlotTextExportBooks": 1
+            "materializedFullGrailCycleExpansionFixtureContexts": 3,
+            "fixtureContextTextExports": 3,
+            "fixtureContextBooks": 1,
+            "fixtureContextSlotTextIndexes": 1,
+            "fixtureContextSlotTextExports": 31,
+            "fixtureContextSlotTextExportBooks": 1,
+            "claimsNewCycleCoverage": false
           },
           "office_of_readings_recording_cadence": "every_six_corpus_producing_loth_tranches",
           "office_of_readings_private_pilot_context_text_exports": "closed_in_loth_871c966; three private pilot context text exports created for ordinary weekday, Christmas Dec. 25, and Lenten weekday",
@@ -288,7 +289,13 @@
           "office_of_readings_full_grail_pilot_context_book": "closed_in_loth_7effb3e; three context exports compiled into one private full-Grail pilot context book",
           "office_of_readings_full_grail_pilot_context_slot_text_index": "closed_in_loth_f509a76; context-slot text index created across the three full-Grail pilot contexts",
           "office_of_readings_full_grail_pilot_context_slot_text_exports": "closed_in_loth_6c9fa31; every indexed text-bearing slot exported as a private slot text artifact",
-          "office_of_readings_full_grail_slot_text_export_book": "closed_in_loth_f03ee32; slot-level private text exports compiled into one private slot-text export book"
+          "office_of_readings_full_grail_slot_text_export_book": "closed_in_loth_f03ee32; slot-level private text exports compiled into one private slot-text export book",
+          "office_of_readings_full_grail_cycle_expansion_fixture_contexts": "closed_in_loth_9a5d654; three refs-only cycle-expansion fixture contexts materialized as private full-Grail text-bearing contexts",
+          "office_of_readings_full_grail_cycle_expansion_fixture_context_text_exports": "closed_in_loth_4d02d4d; three private fixture-context text exports created",
+          "office_of_readings_full_grail_cycle_expansion_fixture_context_book": "closed_in_loth_58f8360; three fixture-context exports compiled into one private fixture-context book",
+          "office_of_readings_full_grail_cycle_expansion_fixture_context_slot_text_index": "closed_in_loth_b74b4e5; fixture-context slot text index created",
+          "office_of_readings_full_grail_cycle_expansion_fixture_context_slot_text_exports": "closed_in_loth_912746b; 31 fixture-context slot text exports created",
+          "office_of_readings_full_grail_cycle_expansion_fixture_context_slot_text_export_book": "closed_in_loth_715ba19; fixture-context slot exports compiled into one private slot-text export book"
         },
         "next_private_office_target": "expand_actual_private_oor_cycle_proper_context_coverage",
         "current_status": "private_control_corpus_in_progress",
@@ -1573,6 +1580,36 @@
       "recording_cadence": "every_six_corpus_producing_loth_tranches",
       "standaloneGovernanceTranchesCountAsProgress": false,
       "auditRepairCommitsCountAsCorpusTranches": false,
+      "next_allowed_loth_step": "expand_actual_private_oor_cycle_proper_context_coverage"
+    },
+    {
+      "id": "roman_loth_oor_full_grail_cycle_expansion_fixture_corpus_bundle_2026_06_01",
+      "status": "closed",
+      "date": "2026-06-01",
+      "repository": "JWJeffery/LOTH",
+      "corpus_commit_sequence": [
+        "9a5d654 Materialize Office of Readings private full Grail cycle expansion fixture contexts",
+        "4d02d4d Export Office of Readings private full Grail cycle expansion fixture texts",
+        "58f8360 Compile Office of Readings private full Grail cycle expansion fixture context book",
+        "b74b4e5 Index Office of Readings private full Grail cycle expansion fixture context slots",
+        "912746b Export Office of Readings private full Grail cycle expansion fixture context slot texts",
+        "715ba19 Compile Office of Readings private full Grail cycle expansion fixture context slot text export book"
+      ],
+      "summary": "Recorded the six-tranche Office of Readings full-Grail cycle-expansion fixture bundle after PrayerAppNew 0f2e0e3. The bundle materialized the three refs-only cycle-expansion fixture contexts as private full-Grail text-bearing contexts, exported them, compiled a fixture-context book, indexed fixture-context slot text, exported every indexed fixture-context slot, and compiled those slot exports into one private slot-level corpus book.",
+      "corpus_metrics": {
+        "materialized_full_grail_cycle_expansion_fixture_contexts": 3,
+        "fixture_context_text_exports": 3,
+        "fixture_context_books": 1,
+        "fixture_context_slot_text_indexes": 1,
+        "fixture_context_slot_text_exports": 31,
+        "fixture_context_slot_text_export_books": 1,
+        "actual_private_text_payloads_present": true,
+        "claims_new_cycle_coverage": false,
+        "broad_daily_date_blocks_written": false
+      },
+      "recording_cadence": "every_six_corpus_producing_loth_tranches",
+      "standaloneGovernanceTranchesCountAsProgress": false,
+      "fixtureShapeMaterializationClaimsNewCycleCoverage": false,
       "next_allowed_loth_step": "expand_actual_private_oor_cycle_proper_context_coverage"
     }
   ],
