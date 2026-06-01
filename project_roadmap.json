@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0.0",
-  "roadmap_version": "0.1.36",
+  "roadmap_version": "0.1.37",
   "last_updated": "2026-06-01",
   "status": "active",
   "name": "Universal Office Beta Release Roadmap",
@@ -8,14 +8,17 @@
   "current_repo_state": {
     "latest_known_commit": "1803dbc",
     "latest_known_commit_message": "Record Office of Readings source pipeline bundle",
-    "structure_json_version": "3.8.147",
+    "structure_json_version": "3.8.148",
     "roadmap_source_of_truth": "project_roadmap.json",
     "structure_json_role": "Project manifest, implementation ledger, governance history, legacy admin todo source, and current state pointer.",
     "roadmap_role": "Canonical release architecture and phase/tranche planning source for Admin Dashboard roadmap visualization.",
     "latest_known_loth_commit": "715ba19",
     "latest_known_loth_commit_message": "Compile Office of Readings private full Grail cycle expansion fixture context slot text export book",
     "roman_loth_control_corpus_repo": "JWJeffery/LOTH",
-    "loth_recording_cadence": "every_six_corpus_producing_loth_tranches"
+    "loth_recording_cadence": "every_six_corpus_producing_loth_tranches",
+    "active_oor_completion_plan": "roman_loth_office_of_readings_completion_plan_2026_06_01",
+    "active_oor_completion_plan_remaining_loth_tranches": 24,
+    "active_oor_completion_plan_next_loth_tranche": "OOR-C01-real-context-coverage-spine"
   },
   "release_identity": {
     "beta_release_focus": "BCP-facing Anglican public beta",
@@ -210,7 +213,7 @@
           "grail_1963_psalter": "resources/psalter/grail-1963/psalms.json",
           "universalis": "structure_calendar_source_discovery_comparator_not_automatic_population_source",
           "source_supplement_policy": "registry/roman-loth-source-supplement-policy.json",
-          "office_of_readings": "full_grail_cycle_expansion_fixture_corpus_bundle_recorded",
+          "office_of_readings": "completion_plan_active_actual_coverage_next",
           "office_of_readings_forward_model": "private corpus construction with actual text/source data where available; public rendering decisions tracked separately; no broad daily date-block snapshots",
           "office_of_readings_cycle_proper_resolver_plan": "closed_in_loth_d9fdea1; composition_map_unitrefs_only_no_text_writes_no_date_blocks",
           "office_of_readings_metadata_composition_pilot": "closed_in_loth_fa10584; composition-map samples with 11 unitRefs-only slots",
@@ -241,7 +244,7 @@
           "office_of_readings_candidate_second_reading_units": "closed_in_loth_794f624; three pilot second-reading refs populated as public-domain patristic/ecclesial candidate reusable units pending final LOTH source alignment",
           "office_of_readings_candidate_psalmody_units": "closed_in_loth_a4849c8; three pilot psalmody refs populated as public-domain psalmody candidate reusable units pending final LOTH/Grail alignment",
           "office_of_readings_text_population_eligibility": "after_loth_a4849c8 eligibility reports 11 populated slots and 0 source-gated slots in the metadata pilot",
-          "office_of_readings_completion_scope": "full-Grail cycle-expansion fixture layer compiled as private text-bearing corpus artifacts; continue corpus-producing expansion toward actual additional OOR cycle/proper context coverage",
+          "office_of_readings_completion_scope": "execute active completion plan; next work must add real non-fixture Office of Readings context/coverage spine",
           "office_of_readings_latest_recorded_loth_commit": "715ba19",
           "office_of_readings_source_alignment_status": "closed_in_loth_8294623; non-text source-alignment status report records all 11 OOR slots, 11 populated or rule-not-applicable slots, 0 source-gated slots, and blocked rendering/daily snapshots",
           "office_of_readings_reading_citation_refs": "closed_in_loth_e3eda12; metadata-only first-reading and second-reading citation/source refs populated for the three pilot contexts; not official-current LOTH/NAB/ICEL/Grail assertions",
@@ -295,7 +298,11 @@
           "office_of_readings_full_grail_cycle_expansion_fixture_context_book": "closed_in_loth_58f8360; three fixture-context exports compiled into one private fixture-context book",
           "office_of_readings_full_grail_cycle_expansion_fixture_context_slot_text_index": "closed_in_loth_b74b4e5; fixture-context slot text index created",
           "office_of_readings_full_grail_cycle_expansion_fixture_context_slot_text_exports": "closed_in_loth_912746b; 31 fixture-context slot text exports created",
-          "office_of_readings_full_grail_cycle_expansion_fixture_context_slot_text_export_book": "closed_in_loth_715ba19; fixture-context slot exports compiled into one private slot-text export book"
+          "office_of_readings_full_grail_cycle_expansion_fixture_context_slot_text_export_book": "closed_in_loth_715ba19; fixture-context slot exports compiled into one private slot-text export book",
+          "office_of_readings_active_completion_plan": "roman_loth_office_of_readings_completion_plan_2026_06_01",
+          "office_of_readings_remaining_corpus_producing_loth_tranches": 24,
+          "office_of_readings_next_required_loth_tranche": "OOR-C01-real-context-coverage-spine",
+          "office_of_readings_build_rule": "build_means_real_coverage; standalone governance/fixture/export/book/index work does not count as progress"
         },
         "next_private_office_target": "expand_actual_private_oor_cycle_proper_context_coverage",
         "current_status": "private_control_corpus_in_progress",
@@ -1611,6 +1618,18 @@
       "standaloneGovernanceTranchesCountAsProgress": false,
       "fixtureShapeMaterializationClaimsNewCycleCoverage": false,
       "next_allowed_loth_step": "expand_actual_private_oor_cycle_proper_context_coverage"
+    },
+    {
+      "id": "roman_loth_oor_completion_plan_2026_06_01",
+      "status": "active_controlling_plan",
+      "date": "2026-06-01",
+      "repository": "PrayerAppNew",
+      "planId": "roman_loth_office_of_readings_completion_plan_2026_06_01",
+      "remainingCorpusProducingLothTranches": 24,
+      "nextRequiredLothTranche": "OOR-C01-real-context-coverage-spine",
+      "recordingCadence": "every_six_corpus_producing_loth_tranches",
+      "standaloneGovernanceTranchesCountAsProgress": false,
+      "standaloneFixtureExportBookIndexWorkCountsAsProgress": false
     }
   ],
   "governance_questions": [
@@ -1832,5 +1851,267 @@
       "Should the next phase be split, merged, reordered, or paused?",
       "Does the Admin Dashboard still visualize the true release state?"
     ]
+  },
+  "completion_plans": {
+    "roman_loth_office_of_readings": {
+      "id": "roman_loth_office_of_readings_completion_plan_2026_06_01",
+      "status": "active_controlling_plan",
+      "createdDate": "2026-06-01",
+      "scope": "Roman LOTH Office of Readings private current control corpus completion",
+      "baseline": {
+        "prayerAppNewRecordCommit": "4482441",
+        "lothRecordedThroughCommit": "715ba19",
+        "alreadyBuilt": [
+          "eleven-slot Office of Readings metadata composition pilot",
+          "three populated pilot contexts: ordinary weekday, Lenten weekday, and solemnity/Christmas",
+          "private full-Grail psalmody corpus with 152 psalmody text units",
+          "full-Grail psalmody lookup, line index, appointment map, and section hydration",
+          "three full-Grail pilot Office of Readings contexts with private context/slot artifacts",
+          "three full-Grail cycle-expansion fixture contexts with private context/slot artifacts"
+        ],
+        "stillRequired": [
+          "broad real non-fixture OOR context coverage",
+          "ordinary/temporal/sanctoral/common appointment matrices",
+          "broad first-reading cycle coverage",
+          "broad first-responsory coverage",
+          "broad second-reading cycle/proper/common coverage",
+          "broad second-responsory coverage",
+          "seasonal Temporale coverage",
+          "Sanctorale and Commons coverage",
+          "date resolver coverage over real OOR contexts",
+          "zero-gap private corpus completion report"
+        ],
+        "correction": "Fixture-expansion artifacts do not count as real expanded liturgical coverage. Future work must add real coverage."
+      },
+      "definitionOfDone": {
+        "privateCorpusDoneWhen": [
+          "real non-fixture OOR contexts exist for the planned ordinary, temporal, sanctoral, and common coverage scope",
+          "each covered context resolves the eleven OOR slots or marks Te Deum/rule-not-applicable slots explicitly",
+          "psalmody appointments bind to the private full-Grail psalmody corpus where applicable",
+          "first readings and first responsories are populated or source-bound across covered cycles",
+          "second readings and second responsories are populated or source-bound across covered cycles, propers, and commons",
+          "hymns, verses, collects, opening, conclusion, and Te Deum rules are bound for covered contexts",
+          "date/context resolver can assemble private OOR offices without broad daily date-block snapshots",
+          "coverage audit reports zero unresolved required slots for the planned private corpus scope"
+        ],
+        "notPartOfThisPlan": [
+          "public rendering authorization",
+          "public Roman-family derivative lane",
+          "broad daily date-block snapshots",
+          "1960 Breviary, Benedictine, monastic, or other Latin variants",
+          "optional post-completion polish exports/books that do not add coverage"
+        ]
+      },
+      "operatingRules": {
+        "buildMeansCoverage": true,
+        "coverageTrancheDefinition": "A LOTH tranche counts only if it increases real Office of Readings coverage: real contexts, real appointment mappings, real text/source units, real assembled offices, or real date-resolvable coverage.",
+        "nonCountingWork": [
+          "standalone governance",
+          "standalone audits",
+          "standalone fixture layers",
+          "standalone exports",
+          "standalone books",
+          "standalone indexes",
+          "repackaging the same contexts without new coverage"
+        ],
+        "allowedSupportWork": "Support scripts/audits/exports may appear only inside a tranche whose primary deliverable adds new real coverage.",
+        "recordingCadence": "Record in PrayerAppNew after every six corpus-producing LOTH tranches.",
+        "nextRequiredLothMove": "OOR-C01-real-context-coverage-spine",
+        "ifBlocked": "Return BLOCKED with exact missing source/data issue and propose a roadmap amendment; do not substitute governance or fixture packaging."
+      },
+      "trancheMath": {
+        "remainingCorpusProducingLothTranches": 24,
+        "prayerAppNewRecordPointsAfterLothTranches": [
+          6,
+          12,
+          18,
+          24
+        ],
+        "recordCommitsDoNotCountAsLothCorpusTranches": true,
+        "phaseCount": 7,
+        "calculationBasis": [
+          "2 tranches for real coverage spine and measurable gap inventory",
+          "3 tranches for psalmody appointment coverage using the existing 152-unit full-Grail corpus",
+          "5 tranches for ordinary-cycle readings, responsories, and assembled ordinary contexts",
+          "5 tranches for seasonal Temporale coverage",
+          "5 tranches for Sanctorale and Commons coverage",
+          "3 tranches for date resolver and representative cycle coverage audits/gap closure",
+          "1 tranche for final private corpus closure"
+        ],
+        "changeControl": "If the 24-tranche plan proves materially wrong, amend this roadmap entry explicitly before changing course."
+      },
+      "phases": [
+        {
+          "phaseId": "OOR-P01-coverage-spine",
+          "plannedLothTranches": 2,
+          "goal": "Create real non-fixture Office of Readings coverage spine and measurable gap inventory.",
+          "tranches": [
+            {
+              "trancheId": "OOR-C01-real-context-coverage-spine",
+              "status": "next",
+              "requiredCoverageDelta": "Create real non-fixture OOR context records/matrix for ordinary, temporal, sanctoral, and common coverage families."
+            },
+            {
+              "trancheId": "OOR-C02-coverage-gap-inventory",
+              "status": "planned",
+              "requiredCoverageDelta": "Attach required slot/source/status inventory to the real context matrix so every missing slot is measurable by context family."
+            }
+          ]
+        },
+        {
+          "phaseId": "OOR-P02-psalmody-appointments",
+          "plannedLothTranches": 3,
+          "goal": "Bind real OOR psalmody appointment coverage to the existing private full-Grail psalmody corpus.",
+          "tranches": [
+            {
+              "trancheId": "OOR-C03-ordinary-psalmody-appointment-map",
+              "status": "planned",
+              "requiredCoverageDelta": "Map ordinary OOR psalmody appointments to full-Grail psalmody text units."
+            },
+            {
+              "trancheId": "OOR-C04-seasonal-psalmody-appointment-map",
+              "status": "planned",
+              "requiredCoverageDelta": "Map Advent, Christmas, Lent, Easter, Holy Week, and other seasonal psalmody appointments/exceptions."
+            },
+            {
+              "trancheId": "OOR-C05-sanctoral-common-psalmody-appointment-map",
+              "status": "planned",
+              "requiredCoverageDelta": "Map Sanctorale/Common psalmody defaults and proper exceptions."
+            }
+          ]
+        },
+        {
+          "phaseId": "OOR-P03-ordinary-cycle-core",
+          "plannedLothTranches": 5,
+          "goal": "Build ordinary-cycle readings, responsories, and assembled ordinary OOR contexts in bulk.",
+          "tranches": [
+            {
+              "trancheId": "OOR-C06-ordinary-first-reading-cycle-bulk",
+              "status": "planned",
+              "requiredCoverageDelta": "Populate or bind ordinary-cycle first readings and source refs in bulk."
+            },
+            {
+              "trancheId": "OOR-C07-ordinary-first-responsory-cycle-bulk",
+              "status": "planned",
+              "requiredCoverageDelta": "Populate or bind ordinary-cycle first responsories paired to first readings."
+            },
+            {
+              "trancheId": "OOR-C08-ordinary-second-reading-cycle-bulk",
+              "status": "planned",
+              "requiredCoverageDelta": "Populate or bind ordinary-cycle second readings and source refs in bulk."
+            },
+            {
+              "trancheId": "OOR-C09-ordinary-second-responsory-cycle-bulk",
+              "status": "planned",
+              "requiredCoverageDelta": "Populate or bind ordinary-cycle second responsories paired to second readings."
+            },
+            {
+              "trancheId": "OOR-C10-ordinary-cycle-assembled-contexts",
+              "status": "planned",
+              "requiredCoverageDelta": "Assemble real ordinary-cycle OOR contexts with text-bearing required slots and measured gap report."
+            }
+          ]
+        },
+        {
+          "phaseId": "OOR-P04-temporale",
+          "plannedLothTranches": 5,
+          "goal": "Build seasonal Temporale Office of Readings coverage.",
+          "tranches": [
+            {
+              "trancheId": "OOR-C11-advent-temporale",
+              "status": "planned",
+              "requiredCoverageDelta": "Add Advent OOR contexts, appointment bindings, readings/responsories, and required seasonal units."
+            },
+            {
+              "trancheId": "OOR-C12-christmas-epiphany-temporale",
+              "status": "planned",
+              "requiredCoverageDelta": "Add Christmas/Epiphany OOR contexts, appointment bindings, readings/responsories, and required seasonal units."
+            },
+            {
+              "trancheId": "OOR-C13-lent-temporale",
+              "status": "planned",
+              "requiredCoverageDelta": "Add Lent OOR contexts, appointment bindings, readings/responsories, and required seasonal units."
+            },
+            {
+              "trancheId": "OOR-C14-holy-week-triduum-easter-octave",
+              "status": "planned",
+              "requiredCoverageDelta": "Add Holy Week, Triduum, and Easter Octave OOR contexts/rules and required proper texts."
+            },
+            {
+              "trancheId": "OOR-C15-easter-season-pentecost",
+              "status": "planned",
+              "requiredCoverageDelta": "Add Easter season through Pentecost OOR contexts, appointments, readings/responsories, and seasonal units."
+            }
+          ]
+        },
+        {
+          "phaseId": "OOR-P05-sanctorale-commons",
+          "plannedLothTranches": 5,
+          "goal": "Build Sanctorale and Commons Office of Readings coverage.",
+          "tranches": [
+            {
+              "trancheId": "OOR-C16-major-solemnities-feasts-propers",
+              "status": "planned",
+              "requiredCoverageDelta": "Add major solemnities and feasts with proper OOR contexts and required slots."
+            },
+            {
+              "trancheId": "OOR-C17-commons-core",
+              "status": "planned",
+              "requiredCoverageDelta": "Add Commons core text/appointment coverage for apostles, martyrs, pastors, doctors, virgins, holy men/women, dedication, and BVM where applicable."
+            },
+            {
+              "trancheId": "OOR-C18-sanctorale-proper-readings-bulk-a",
+              "status": "planned",
+              "requiredCoverageDelta": "Add fixed Sanctorale proper reading/responsory coverage, batch A."
+            },
+            {
+              "trancheId": "OOR-C19-sanctorale-proper-readings-bulk-b",
+              "status": "planned",
+              "requiredCoverageDelta": "Add fixed Sanctorale proper reading/responsory coverage, batch B."
+            },
+            {
+              "trancheId": "OOR-C20-memorial-common-fallback-resolver",
+              "status": "planned",
+              "requiredCoverageDelta": "Add memorial/common fallback behavior and assemble real Sanctorale/Common OOR contexts."
+            }
+          ]
+        },
+        {
+          "phaseId": "OOR-P06-date-resolver-and-gap-closure",
+          "plannedLothTranches": 3,
+          "goal": "Make real OOR coverage date/context resolvable and close measured gaps.",
+          "tranches": [
+            {
+              "trancheId": "OOR-C21-date-context-resolver-integration",
+              "status": "planned",
+              "requiredCoverageDelta": "Integrate real OOR context selection into the date/context resolver without broad date-block snapshots."
+            },
+            {
+              "trancheId": "OOR-C22-year-one-coverage-audit-gap-closure",
+              "status": "planned",
+              "requiredCoverageDelta": "Audit representative Year I/private-cycle coverage and fill required unresolved slots."
+            },
+            {
+              "trancheId": "OOR-C23-year-two-or-alternate-cycle-audit-gap-closure",
+              "status": "planned",
+              "requiredCoverageDelta": "Audit alternate-cycle/Year II or equivalent remaining source-cycle coverage and fill required unresolved slots."
+            }
+          ]
+        },
+        {
+          "phaseId": "OOR-P07-private-corpus-closure",
+          "plannedLothTranches": 1,
+          "goal": "Close the private Office of Readings corpus only after coverage gaps are resolved.",
+          "tranches": [
+            {
+              "trancheId": "OOR-C24-private-corpus-completion-closure",
+              "status": "planned",
+              "requiredCoverageDelta": "Produce final zero-gap private OOR completion manifest and close any remaining measured gaps."
+            }
+          ]
+        }
+      ],
+      "adherenceRule": "After each LOTH commit, choose the next incomplete trancheId in this plan. Do not substitute fixture/export/book/index work unless it is subordinate to that tranche's coverageDeltaRequired."
+    }
   }
 }
