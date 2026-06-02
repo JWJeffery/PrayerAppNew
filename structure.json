@@ -2029,5 +2029,46 @@
   "roadmap_source": {
     "roadmap_version": "0.1.37",
     "status": "active"
-  }
+  },
+  "external_repo_milestones": [
+    {
+      "id": "loth_oor_generated_artifact_retirement_2026_06_02",
+      "date": "2026-06-02",
+      "sourceRepo": "LOTH",
+      "commit": "18d296c",
+      "commitMessage": "Retire generated Office of Readings artifacts",
+      "category": "cleanup_governance_architecture",
+      "notCorpusProgress": true,
+      "summary": "Recorded LOTH Office of Readings cleanup tranche retiring generated private full-Grail artifact bloat, generated export books, slot-text export artifacts, and one-off audit scripts.",
+      "details": [
+        "Added canonical merged resources/psalter/psalms.json with Grail1963 integrated into the established multi-translation psalter model.",
+        "Retained the old Grail-only source witness temporarily at resources/psalter/grail-1963/psalms.json.",
+        "Created registry/roman-loth-office-of-readings-retired-generated-artifacts.json as the retirement ledger.",
+        "Removed generated Office of Readings private full-Grail books, slot-text exports, context text exports, and retired generated-artifact audit scripts.",
+        "Normalized Office of Readings text-unit metadata required by validation: language en, permissionStatus permission_application_pending, rubrics arrays, and roman_loth.en_us textUnitId namespace.",
+        "Normalized retained registry/resource/script references from roman_loth.office_of_readings to roman_loth.en_us.office_of_readings.",
+        "Preserved retained audit chain: private full-Grail psalmody corpus, line index, appointment map, appointment psalmody sections, ordinary psalmody source-table intake, real context coverage spine, and real context coverage gap inventory.",
+        "Closed with LOTH validation and retained audits passing before commit and push."
+      ],
+      "validation": {
+        "lothValidation": "npm run validate passed: 480 JSON files checked",
+        "retainedAudits": [
+          "audit:office-of-readings-private-full-grail-psalmody-corpus",
+          "audit:office-of-readings-private-full-grail-psalmody-line-index",
+          "audit:office-of-readings-private-grail-psalmody-appointment-map",
+          "audit:office-of-readings-private-grail-appointment-psalmody-sections",
+          "audit:office-of-readings-ordinary-psalmody-source-table-intake",
+          "audit:office-of-readings-real-context-coverage-spine",
+          "audit:office-of-readings-real-context-coverage-gap-inventory"
+        ],
+        "status": "passed"
+      },
+      "forwardNotes": [
+        "Do not treat this as new corpus coverage.",
+        "Do not reintroduce generated export books or one-off audit scripts as permanent artifacts.",
+        "Future psalter work should migrate consumers toward canonical resources/psalter/psalms.json before retiring the temporary lookup/index bridge.",
+        "One-tranche diagnostic or quiet-audit scripts should be deleted before commit unless promoted into a reusable audit harness."
+      ]
+    }
+  ]
 }
