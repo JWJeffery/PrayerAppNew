@@ -1,0 +1,101 @@
+{
+  "schema": "prayerappnew_rotherham_source_witness_intake_v1",
+  "date": "2026-06-02",
+  "status": "source_witness_confirmed_import_not_yet_authorized",
+  "translationKey": "Rotherham",
+  "translationLabel": "Rotherham: The Emphasised Bible by J. B. Rotherham",
+  "source": {
+    "provider": "scrollmapper/bible_databases",
+    "branch": "2025",
+    "path": "formats/json/Rotherham.json",
+    "url": "https://raw.githubusercontent.com/scrollmapper/bible_databases/2025/formats/json/Rotherham.json",
+    "sha256": "d63488b149aadf4430fea6ddbc7c07395a12321a1b58799ce2dcb384ebf97627",
+    "bytes": 8655063,
+    "license": "Public Domain",
+    "format": "json",
+    "topLevelShape": {
+      "type": "object",
+      "keys": [
+        "books",
+        "translation"
+      ]
+    }
+  },
+  "observedFingerprint": {
+    "bookCount": 66,
+    "firstBook": "Genesis",
+    "lastBook": "Revelation of John",
+    "yahwehCount": 6825,
+    "jehovahCount": 0,
+    "elohimCount": 17,
+    "selectedBookCoverage": {
+      "Genesis": {
+        "chapters": 50,
+        "verses": 1533
+      },
+      "Exodus": {
+        "chapters": 40,
+        "verses": 1213
+      },
+      "Deuteronomy": {
+        "chapters": 34,
+        "verses": 959
+      },
+      "Joshua": {
+        "chapters": 24,
+        "verses": 658
+      },
+      "Psalms": {
+        "chapters": 150,
+        "verses": 2461
+      },
+      "Matthew": {
+        "chapters": 28,
+        "verses": 1071
+      },
+      "Revelation of John": {
+        "chapters": 22,
+        "verses": 404
+      }
+    },
+    "verseShape": {
+      "book": "Genesis",
+      "chapterKey": "chapter",
+      "versesKey": "verses",
+      "verseKey": "verse",
+      "textKey": "text",
+      "textType": "string"
+    }
+  },
+  "governanceDecision": {
+    "doNotCommitFullSourceFileYet": true,
+    "reason": "The source is 8.6 MB and fetchable from a pinned URL. Import scripts should fetch it, verify SHA-256, then transform only bounded target books/psalms. Avoid adding large source artifacts unless a later governance decision explicitly requires local vendoring.",
+    "noHardcodedTextScripts": true,
+    "requiredPreflight": [
+      "npm run audit:bible-corpus-structure",
+      "verify source SHA-256 before transformation",
+      "block on source schema drift",
+      "block on book/chapter/verse alignment mismatch"
+    ]
+  },
+  "importDesignNotes": {
+    "runtimeModel": "one canonical app-facing file per biblical book with translation-keyed verse.text objects",
+    "sourceNameMappingRequired": {
+      "Revelation of John": "revelation"
+    },
+    "likelyDirectMappings": [
+      "Genesis -> genesis",
+      "Exodus -> exodus",
+      "Joshua -> joshua",
+      "Psalms -> psalms handling requires separate psalter-schema decision"
+    ],
+    "psalterCaution": "Rotherham Psalms are Hebrew/Masoretic 1-150 and should not be handled like Brenton/LXX. However, the repo psalms file uses a consolidated psalter list schema, not ordinary chapter/verse book schema.",
+    "firstRecommendedPilot": "Pilot on Joshua or another structurally ordinary book before attempting Psalms or full corpus import."
+  },
+  "notYetAuthorized": [
+    "No Rotherham text import in this record tranche.",
+    "No migration of any Bible book file in this record tranche.",
+    "No UI translation selector in this record tranche.",
+    "No vendored source file in this record tranche."
+  ]
+}
