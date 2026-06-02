@@ -2253,10 +2253,10 @@
   },
   "current_navigation_state": {
     "date": "2026-06-02",
-    "primaryImmediateWork": "Repair OT Bible target-corpus completeness defects from proper source or return to paused C03",
-    "bibleCorpusState": "Standing structural audit passes; standing OT non-Psalms completeness audit added and expected to fail until repair.",
+    "primaryImmediateWork": "Choose lawful Bible target-text repair path, or return to paused C03",
+    "bibleCorpusState": "Structural audit passes; OT non-Psalms completeness audit fails; source-basis diagnostic found no in-repo NRSV repair source.",
     "resolverState": "translation-compatible with scalar and translation-keyed verse text",
-    "activeSideProject": "Rotherham aligned ordinary-book import complete; blockers gated by completeness repair and mapping",
+    "activeSideProject": "Rotherham aligned ordinary-book import complete; blockers paused until target corpus repair/mapping",
     "pausedTranche": "OOR-C03-ordinary-psalmody-appointment-map",
     "c03ReturnPoint": "Map the 10 source-backed ordinary psalmody appointments into the private Grail appointment map, then decide how to acquire the 18 missing appointments without fabrication."
   },
@@ -2271,9 +2271,10 @@
   },
   "bible_corpus_integrity": {
     "date": "2026-06-02",
-    "status": "standing_completeness_audit_added_expected_to_fail_until_repair",
+    "status": "source_basis_diagnostic_recorded_repair_blocked",
     "plan": "documentation/bible-corpus-completeness-audit-and-repair-plan.json",
-    "nextStep": "Use audit findings to drive proper-source OT target-corpus repair.",
-    "standingCompletenessAudit": "npm run audit:bible-corpus-completeness"
+    "nextStep": "Choose lawful target-text repair path before editing Bible text.",
+    "standingCompletenessAudit": "npm run audit:bible-corpus-completeness",
+    "currentCompletenessResult": "FAIL with 18 OT non-Psalms findings"
   }
 }
