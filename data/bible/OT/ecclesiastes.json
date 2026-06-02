@@ -3,290 +3,1639 @@
     "name": "Ecclesiastes",
     "id": "ECCL",
     "version": "NRSV",
-    "copyright": "New Revised Standard Version Bible, copyright © 1989 National Council of the Churches of Christ in the United States of America. Used by permission. All rights reserved worldwide."
+    "copyright": "New Revised Standard Version Bible, copyright © 1989 National Council of the Churches of Christ in the United States of America. Used by permission. All rights reserved worldwide.",
+    "canon": "OT",
+    "defaultTranslation": "NRSV",
+    "versification": "hebrew_masoretic",
+    "translations": {
+      "NRSV": {
+        "label": "New Revised Standard Version",
+        "sourceType": "existing_corpus",
+        "rights": "New Revised Standard Version Bible, copyright © 1989 National Council of the Churches of Christ in the United States of America. Used by permission. All rights reserved worldwide."
+      },
+      "Rotherham": {
+        "label": "The Emphasised Bible",
+        "sourceType": "scrollmapper_bible_databases_2025_formats_json_source_witness",
+        "rights": "Public Domain",
+        "sourceWitness": "documentation/rotherham-source-witness-intake.json"
+      }
+    }
   },
   "chapters": [
     {
       "num": 1,
       "verses": [
-        { "num": 1, "text": "The words of the Teacher, the son of David, king in Jerusalem." },
-        { "num": 2, "text": "Vanity of vanities, says the Teacher, vanity of vanities! All is vanity." },
-        { "num": 3, "text": "What do people gain from all the toil at which they toil under the sun?" },
-        { "num": 4, "text": "A generation goes, and a generation comes, but the earth remains forever." },
-        { "num": 5, "text": "The sun rises and the sun goes down, and hurries to the place where it rises." },
-        { "num": 6, "text": "The wind blows to the south, and goes around to the north; round and round goes the wind, and on its circuits the wind returns." },
-        { "num": 7, "text": "All streams run to the sea, but the sea is not full; to the place where the streams flow, there they continue to flow." },
-        { "num": 8, "text": "All things are wearisome; more than one can express; the eye is not satisfied with seeing, or the ear filled with hearing." },
-        { "num": 9, "text": "What has been is what will be, and what has been done is what will be done; there is nothing new under the sun." },
-        { "num": 10, "text": "Is there a thing of which it is said, “See, this is new”? It has been already, in the ages before us." },
-        { "num": 11, "text": "The people of long ago are not remembered, nor will there be any remembrance of people yet to come by those who come after them." },
-        { "num": 12, "text": "I, the Teacher, when king over Israel in Jerusalem," },
-        { "num": 13, "text": "applied my mind to seek and to search out by wisdom all that is done under heaven; it is an unhappy business that God has given to human beings to be busy with." },
-        { "num": 14, "text": "I saw all the deeds that are done under the sun; and see, all is vanity and a chasing after wind." },
-        { "num": 15, "text": "What is crooked cannot be made straight, and what is lacking cannot be numbered." },
-        { "num": 16, "text": "I said to myself, “I have acquired great wisdom, surpassing all who were over Jerusalem before me; and my mind has had great experience of wisdom and knowledge.”" },
-        { "num": 17, "text": "And I applied my mind to know wisdom and to know madness and folly. I perceived that this also is but a chasing after wind." },
-        { "num": 18, "text": "For in much wisdom is much vexation, and those who increase knowledge increase sorrow." }
+        {
+          "num": 1,
+          "text": {
+            "NRSV": "The words of the Teacher, the son of David, king in Jerusalem.",
+            "Rotherham": "The words of the Proclaimer, son of David, king in Jerusalem."
+          }
+        },
+        {
+          "num": 2,
+          "text": {
+            "NRSV": "Vanity of vanities, says the Teacher, vanity of vanities! All is vanity.",
+            "Rotherham": "Vanity of vanities! saith the Proclaimer, vanity of vanities! all, is vanity."
+          }
+        },
+        {
+          "num": 3,
+          "text": {
+            "NRSV": "What do people gain from all the toil at which they toil under the sun?",
+            "Rotherham": "What profit hath Man, in all his toil wherewith he toileth under the sun? "
+          }
+        },
+        {
+          "num": 4,
+          "text": {
+            "NRSV": "A generation goes, and a generation comes, but the earth remains forever.",
+            "Rotherham": " Generation, goeth and, generation, cometh, but, the earth, unto times age-abiding, remaineth."
+          }
+        },
+        {
+          "num": 5,
+          "text": {
+            "NRSV": "The sun rises and the sun goes down, and hurries to the place where it rises.",
+            "Rotherham": "And the sun, breaketh forth, and the sun, goeth in,—yea, unto his own place, he panteth, from whence he brake forth."
+          }
+        },
+        {
+          "num": 6,
+          "text": {
+            "NRSV": "The wind blows to the south, and goes around to the north; round and round goes the wind, and on its circuits the wind returns.",
+            "Rotherham": "Going unto the south, and circling unto the north,—circling, circling continually, is, the wind, and, over its own circuits, returneth the wind."
+          }
+        },
+        {
+          "num": 7,
+          "text": {
+            "NRSV": "All streams run to the sea, but the sea is not full; to the place where the streams flow, there they continue to flow.",
+            "Rotherham": "All the streams, flow into the sea, yet, the sea, is not full,—unto the place whither the streams flow, thither, do they again flow."
+          }
+        },
+        {
+          "num": 8,
+          "text": {
+            "NRSV": "All things are wearisome; more than one can express; the eye is not satisfied with seeing, or the ear filled with hearing.",
+            "Rotherham": "All words, are weak, unable is any man to tell,—not satisfied is the eye by seeing, nor filled is the ear with hearing. "
+          }
+        },
+        {
+          "num": 9,
+          "text": {
+            "NRSV": "What has been is what will be, and what has been done is what will be done; there is nothing new under the sun.",
+            "Rotherham": " That which hath been, is the same that shall be, and, that which hath been done, is the same that shall be done,—and there is, nothing new, under the sun."
+          }
+        },
+        {
+          "num": 10,
+          "text": {
+            "NRSV": "Is there a thing of which it is said, “See, this is new”? It has been already, in the ages before us.",
+            "Rotherham": "Is there a thing, of which it can be said, See here, it is, new? Already, hath it been, for ages, [it is something] which was before us."
+          }
+        },
+        {
+          "num": 11,
+          "text": {
+            "NRSV": "The people of long ago are not remembered, nor will there be any remembrance of people yet to come by those who come after them.",
+            "Rotherham": "There is, no remembrance, of the thing before,—nor, even of the things after, which shall be, will there be any remembrance, with them who shall come after. "
+          }
+        },
+        {
+          "num": 12,
+          "text": {
+            "NRSV": "I, the Teacher, when king over Israel in Jerusalem,",
+            "Rotherham": " I, the Proclaimer, was king over Israel, in Jerusalem."
+          }
+        },
+        {
+          "num": 13,
+          "text": {
+            "NRSV": "applied my mind to seek and to search out by wisdom all that is done under heaven; it is an unhappy business that God has given to human beings to be busy with.",
+            "Rotherham": "And I gave my heart to seek and to search out, wisely, concerning all things which are done under the heavens,—the same, is the vexatious employment God hath given to the sons of men, to work toilsomely therein,"
+          }
+        },
+        {
+          "num": 14,
+          "text": {
+            "NRSV": "I saw all the deeds that are done under the sun; and see, all is vanity and a chasing after wind.",
+            "Rotherham": "I saw all the works which were done under the sun,—and lo! all, was vanity, and a feeding on wind."
+          }
+        },
+        {
+          "num": 15,
+          "text": {
+            "NRSV": "What is crooked cannot be made straight, and what is lacking cannot be numbered.",
+            "Rotherham": "That which is crooked, cannot be straight,—and, that which is wanting, cannot be reckoned."
+          }
+        },
+        {
+          "num": 16,
+          "text": {
+            "NRSV": "I said to myself, “I have acquired great wisdom, surpassing all who were over Jerusalem before me; and my mind has had great experience of wisdom and knowledge.”",
+            "Rotherham": "Spake, I, in my heart, saying, As for me, lo! I have become great, and have gathered wisdom, beyond any one who hath been before me over Jerusalem,—and, my heart, hath seen much wisdom and knowledge:"
+          }
+        },
+        {
+          "num": 17,
+          "text": {
+            "NRSV": "And I applied my mind to know wisdom and to know madness and folly. I perceived that this also is but a chasing after wind.",
+            "Rotherham": "yea I have given my heart, to know wisdom, and to know madness, and folly,—I know that, even this, is a feeding on wind."
+          }
+        },
+        {
+          "num": 18,
+          "text": {
+            "NRSV": "For in much wisdom is much vexation, and those who increase knowledge increase sorrow.",
+            "Rotherham": "For, in much wisdom, is much vexation,—and, he that increaseth knowledge, increaseth pain.  "
+          }
+        }
       ]
     },
     {
       "num": 2,
       "verses": [
-        { "num": 1, "text": "I said to myself, “Come now, I will make a test of pleasure; enjoy yourself.” But again, this also was vanity." },
-        { "num": 2, "text": "I said of laughter, “It is mad,” and of pleasure, “What use is it?”" },
-        { "num": 3, "text": "I searched with my mind how to cheer my body with wine—my mind still guiding me with wisdom—and how to lay hold on folly, until I might see what was good for mortals to do under heaven during the few days of their life." },
-        { "num": 4, "text": "I made great works; I built houses and planted vineyards for myself;" },
-        { "num": 5, "text": "I made myself gardens and parks, and planted in them all kinds of fruit trees." },
-        { "num": 6, "text": "I made myself pools from which to water the forest of growing trees." },
-        { "num": 7, "text": "I bought male and female slaves, and had slaves who were born in my house; I also had great possessions of herds and flocks, more than any who had been before me in Jerusalem." },
-        { "num": 8, "text": "I also gathered for myself silver and gold and the treasure of kings and of the provinces; I got singers, both men and women, and delights of the flesh, and many concubines." },
-        { "num": 9, "text": "So I became great and surpassed all who were before me in Jerusalem; also my wisdom remained with me." },
-        { "num": 10, "text": "Whatever my eyes desired I did not keep from them; I kept my heart from no pleasure, for my heart found pleasure in all my toil, and this was my reward for all my toil." },
-        { "num": 11, "text": "Then I considered all that my hands had done and the toil I had spent in doing it, and again, all was vanity and a chasing after wind, and there was nothing to be gained under the sun." },
-        { "num": 12, "text": "So I turned to consider wisdom and madness and folly; for what can the one do who comes after the king? Only what has already been done." },
-        { "num": 13, "text": "Then I saw that wisdom excels folly as light excels darkness." },
-        { "num": 14, "text": "The wise have eyes in their head, but fools walk in darkness. Yet I perceived that the same fate befalls all of them." },
-        { "num": 15, "text": "Then I said to myself, “What happens to the fool will happen to me also; why then have I been so very wise?” And I said to myself that this also is vanity." },
-        { "num": 16, "text": "For there is no enduring remembrance of the wise or of fools, seeing that in the days to come all will have been long forgotten. How can the wise die just like fools?" },
-        { "num": 17, "text": "So I hated life, because what is done under the sun was grievous to me; for all is vanity and a chasing after wind." },
-        { "num": 18, "text": "I hated all my toil in which I had toiled under the sun, seeing that I must leave it to those who come after me" },
-        { "num": 19, "text": "—and who knows whether they will be wise or foolish? Yet they will be master of all for which I toiled and used my wisdom under the sun. This also is vanity." },
-        { "num": 20, "text": "So I turned and gave my heart up to despair concerning all the toil of my labors under the sun," },
-        { "num": 21, "text": "because sometimes one who has toiled with wisdom and knowledge and skill must leave all to be enjoyed by another who did not toil for it. This also is vanity and a great evil." },
-        { "num": 22, "text": "What do mortals get from all the toil and strain they endure under the sun?" },
-        { "num": 23, "text": "For all their days are full of pain, and their work is a vexation; even at night their minds do not rest. This also is vanity." },
-        { "num": 24, "text": "There is nothing better for mortals than to eat and drink, and find enjoyment in their toil. This also, I saw, is from the hand of God;" },
-        { "num": 25, "text": "for apart from him who can eat or who can have enjoyment?" },
-        { "num": 26, "text": "For to the one who pleases him God gives wisdom and knowledge and joy; but to the sinner he gives the work of gathering and heaping, only to give to one who pleases God. This also is vanity and a chasing after wind." }
+        {
+          "num": 1,
+          "text": {
+            "NRSV": "I said to myself, “Come now, I will make a test of pleasure; enjoy yourself.” But again, this also was vanity.",
+            "Rotherham": "Said, I, in my heart, Come now! I will prove thee with gladness, and look thou on blessedness,—but lo! even that, was vanity."
+          }
+        },
+        {
+          "num": 2,
+          "text": {
+            "NRSV": "I said of laughter, “It is mad,” and of pleasure, “What use is it?”",
+            "Rotherham": "Of laughter, I said, Madness! and, of mirth, What can it do?"
+          }
+        },
+        {
+          "num": 3,
+          "text": {
+            "NRSV": "I searched with my mind how to cheer my body with wine—my mind still guiding me with wisdom—and how to lay hold on folly, until I might see what was good for mortals to do under heaven during the few days of their life.",
+            "Rotherham": "I sought out with my heart, to cherish with wine, my flesh,—but, my heart, was to guide with wisdom, even in laying hold of folly, until I should see which was blessedness for the sons of men, as to that which they could do, under the heavens, during the number of the days of their life."
+          }
+        },
+        {
+          "num": 4,
+          "text": {
+            "NRSV": "I made great works; I built houses and planted vineyards for myself;",
+            "Rotherham": "I enlarged my works,—I built me houses, I planted me vineyards;"
+          }
+        },
+        {
+          "num": 5,
+          "text": {
+            "NRSV": "I made myself gardens and parks, and planted in them all kinds of fruit trees.",
+            "Rotherham": "I made me gardens, and parks,—I planted in them trees of every kind of fruit;"
+          }
+        },
+        {
+          "num": 6,
+          "text": {
+            "NRSV": "I made myself pools from which to water the forest of growing trees.",
+            "Rotherham": "I made me pools of water,—to irrigate therefrom the thick-set saplings growing up into trees:"
+          }
+        },
+        {
+          "num": 7,
+          "text": {
+            "NRSV": "I bought male and female slaves, and had slaves who were born in my house; I also had great possessions of herds and flocks, more than any who had been before me in Jerusalem.",
+            "Rotherham": "I acquired, men-servants and women-servants, and, the children of the household, were mine,—also possessions, herds and flocks in abundance, were mine, beyond all who had been before me in Jerusalem;"
+          }
+        },
+        {
+          "num": 8,
+          "text": {
+            "NRSV": "I also gathered for myself silver and gold and the treasure of kings and of the provinces; I got singers, both men and women, and delights of the flesh, and many concubines.",
+            "Rotherham": "I heaped me up, both silver and gold, and the peculiar treasure of kings, and provinces,—I provided me singing-men and singing-women, and the delights of the sons of men, a wife and wives."
+          }
+        },
+        {
+          "num": 9,
+          "text": {
+            "NRSV": "So I became great and surpassed all who were before me in Jerusalem; also my wisdom remained with me.",
+            "Rotherham": "So I became great, and increased, more than any one who had been before me in Jerusalem,—moreover, my wisdom, remained with me;"
+          }
+        },
+        {
+          "num": 10,
+          "text": {
+            "NRSV": "Whatever my eyes desired I did not keep from them; I kept my heart from no pleasure, for my heart found pleasure in all my toil, and this was my reward for all my toil.",
+            "Rotherham": "and, nothing that mine eyes asked, withheld I from them,—I did not keep back my heart from any gladness, for, my heart, obtained gladness out of all my toil, and so, this, was my portion, out of all my toil."
+          }
+        },
+        {
+          "num": 11,
+          "text": {
+            "NRSV": "Then I considered all that my hands had done and the toil I had spent in doing it, and again, all was vanity and a chasing after wind, and there was nothing to be gained under the sun.",
+            "Rotherham": "When, I, looked upon all my works, which my hands had made, and on my toil, whereon I had toilsomely wrought, then lo! all, was vanity, and feeding on wind, and there was no profit under the sun. "
+          }
+        },
+        {
+          "num": 12,
+          "text": {
+            "NRSV": "So I turned to consider wisdom and madness and folly; for what can the one do who comes after the king? Only what has already been done.",
+            "Rotherham": " Thus turned, I, to look at wisdom, and madness and folly,—for what can the man [do more] who cometh after the king? [save] that which, already, men have done."
+          }
+        },
+        {
+          "num": 13,
+          "text": {
+            "NRSV": "Then I saw that wisdom excels folly as light excels darkness.",
+            "Rotherham": "Then saw, I, that wisdom doth excel folly,—as far as light excelleth darkness."
+          }
+        },
+        {
+          "num": 14,
+          "text": {
+            "NRSV": "The wise have eyes in their head, but fools walk in darkness. Yet I perceived that the same fate befalls all of them.",
+            "Rotherham": "As for the wise man, his eyes, are in his head, whereas, the dullard, in darkness, doth walk,—but, I myself, knew that, one destiny, happeneth to them, all."
+          }
+        },
+        {
+          "num": 15,
+          "text": {
+            "NRSV": "Then I said to myself, “What happens to the fool will happen to me also; why then have I been so very wise?” And I said to myself that this also is vanity.",
+            "Rotherham": "Then said, I, in my heart, As it happeneth to the dullard, even to me, will it happen, but wherefore, then, became, I, wise to excess? Therefore spake I, in my heart, Even this, is vanity."
+          }
+        },
+        {
+          "num": 16,
+          "text": {
+            "NRSV": "For there is no enduring remembrance of the wise or of fools, seeing that in the days to come all will have been long forgotten. How can the wise die just like fools?",
+            "Rotherham": "For there is no remembrance of a wise man, more than of a dullard, unto times age-abiding,—seeing that, already, in the days to come, all hath been forgotten, how then cometh it that the wise man dieth equally with the dullard? "
+          }
+        },
+        {
+          "num": 17,
+          "text": {
+            "NRSV": "So I hated life, because what is done under the sun was grievous to me; for all is vanity and a chasing after wind.",
+            "Rotherham": " Therefore I hated life, for, a vexation unto me, was the work which was done under the sun,—for, all, was vanity, and a feeding on wind."
+          }
+        },
+        {
+          "num": 18,
+          "text": {
+            "NRSV": "I hated all my toil in which I had toiled under the sun, seeing that I must leave it to those who come after me",
+            "Rotherham": "Therefore hated, I, all my toil, wherein I was toiling, under the sun,—in that I should leave it for the man who should come after me;"
+          }
+        },
+        {
+          "num": 19,
+          "text": {
+            "NRSV": "—and who knows whether they will be wise or foolish? Yet they will be master of all for which I toiled and used my wisdom under the sun. This also is vanity.",
+            "Rotherham": "and who could know whether a, wise man, he would be or a foolish, and yet he would lord it over all my toil, wherein I had toiled and wherein I had acted wisely, under the sun,—even this, was vanity."
+          }
+        },
+        {
+          "num": 20,
+          "text": {
+            "NRSV": "So I turned and gave my heart up to despair concerning all the toil of my labors under the sun,",
+            "Rotherham": "Then resolved I, to give my heart over to despair,—concerning all the toil, wherein I had toiled, under the sun."
+          }
+        },
+        {
+          "num": 21,
+          "text": {
+            "NRSV": "because sometimes one who has toiled with wisdom and knowledge and skill must leave all to be enjoyed by another who did not toil for it. This also is vanity and a great evil.",
+            "Rotherham": "For here is a man, whose toil hath been with wisdom and with knowledge and with skill,—yet, to a man who hath not toiled therein, shall he leave it as his portion, even this, was vanity and a great vexation."
+          }
+        },
+        {
+          "num": 22,
+          "text": {
+            "NRSV": "What do mortals get from all the toil and strain they endure under the sun?",
+            "Rotherham": "For what hath the man for all his toil, and for the striving of his heart,—wherein, he himself, toiled under the sun?"
+          }
+        },
+        {
+          "num": 23,
+          "text": {
+            "NRSV": "For all their days are full of pain, and their work is a vexation; even at night their minds do not rest. This also is vanity.",
+            "Rotherham": "For, all his days, are pains, and, vexatious, is his employment, even in the night, his heart lieth not down,—even this, was, vanity."
+          }
+        },
+        {
+          "num": 24,
+          "text": {
+            "NRSV": "There is nothing better for mortals than to eat and drink, and find enjoyment in their toil. This also, I saw, is from the hand of God;",
+            "Rotherham": "There was nothing more blessed for Man [than] that he should eat and drink, and see his desireth for blessedness in his toil,—even this, saw, I myself, that, from the hand of God, it was."
+          }
+        },
+        {
+          "num": 25,
+          "text": {
+            "NRSV": "for apart from him who can eat or who can have enjoyment?",
+            "Rotherham": "For who could eat and who could enjoy, so well as I?"
+          }
+        },
+        {
+          "num": 26,
+          "text": {
+            "NRSV": "For to the one who pleases him God gives wisdom and knowledge and joy; but to the sinner he gives the work of gathering and heaping, only to give to one who pleases God. This also is vanity and a chasing after wind.",
+            "Rotherham": "For, to a man who is good before him, hath he given wisdom and knowledge and gladness,—whereas, to the sinner, he hath given employment, to gather and heap up, to give to one who is good before God, even this, was vanity, and a feeding on wind.  "
+          }
+        }
       ]
     },
     {
       "num": 3,
       "verses": [
-        { "num": 1, "text": "For everything there is a season, and a time for every matter under heaven:" },
-        { "num": 2, "text": "a time to be born, and a time to die; a time to plant, and a time to pluck up what is planted;" },
-        { "num": 3, "text": "a time to kill, and a time to heal; a time to break down, and a time to build up;" },
-        { "num": 4, "text": "a time to weep, and a time to laugh; a time to mourn, and a time to dance;" },
-        { "num": 5, "text": "a time to throw away stones, and a time to gather stones together; a time to embrace, and a time to refrain from embracing;" },
-        { "num": 6, "text": "a time to seek, and a time to lose; a time to keep, and a time to throw away;" },
-        { "num": 7, "text": "a time to tear, and a time to sew; a time to keep silence, and a time to speak;" },
-        { "num": 8, "text": "a time for love, and a time for hate; a time for war, and a time for peace." },
-        { "num": 9, "text": "What gain have the workers from their toil?" },
-        { "num": 10, "text": "I have seen the business that God has given to everyone to be busy with." },
-        { "num": 11, "text": "He has made everything suitable for its time; moreover he has put a sense of past and future into their minds, yet they cannot find out what God has done from the beginning to the end." },
-        { "num": 12, "text": "I know that there is nothing better for them than to be happy and enjoy themselves as long as they live;" },
-        { "num": 13, "text": "moreover, it is God’s gift that all should eat and drink and take pleasure in all their toil." },
-        { "num": 14, "text": "I know that whatever God does endures forever; nothing can be added to it, nor anything taken from it; God has done this, so that all should stand in awe before him." },
-        { "num": 15, "text": "That which is, already has been; that which is to be, already is; and God seeks out what has gone by." },
-        { "num": 16, "text": "Moreover I saw under the sun that in the place of justice, wickedness was there, and in the place of righteousness, wickedness was there as well." },
-        { "num": 17, "text": "I said in my heart, God will judge the righteous and the wicked, for he has appointed a time for every matter, and for every work." },
-        { "num": 18, "text": "I said in my heart with regard to human beings that God is testing them to show that they are but animals." },
-        { "num": 19, "text": "For the fate of humans and the fate of animals is the same; as one dies, so dies the other. They all have the same breath, and humans have no advantage over the animals; for all is vanity." },
-        { "num": 20, "text": "All go to one place; all are from the dust, and all turn to dust again." },
-        { "num": 21, "text": "Who knows whether the human spirit goes upward and the spirit of animals goes downward to the earth?" },
-        { "num": 22, "text": "So I saw that there is nothing better than that all should enjoy their work, for that is their lot; who can bring them to see what will be after them?" }
+        {
+          "num": 1,
+          "text": {
+            "NRSV": "For everything there is a season, and a time for every matter under heaven:",
+            "Rotherham": "For, every thing, there is a season,—and a time for every pursuit, under the heavens:—"
+          }
+        },
+        {
+          "num": 2,
+          "text": {
+            "NRSV": "a time to be born, and a time to die; a time to plant, and a time to pluck up what is planted;",
+            "Rotherham": "A time to be born, and a time to die,—A time to plant, and a time to uproot what is planted;"
+          }
+        },
+        {
+          "num": 3,
+          "text": {
+            "NRSV": "a time to kill, and a time to heal; a time to break down, and a time to build up;",
+            "Rotherham": "A time to kill, and a time to heal,—A time to break down, and a time to build up;"
+          }
+        },
+        {
+          "num": 4,
+          "text": {
+            "NRSV": "a time to weep, and a time to laugh; a time to mourn, and a time to dance;",
+            "Rotherham": "A time to weep, and a time to laugh,—A time to wail, and a time to dance for joy;"
+          }
+        },
+        {
+          "num": 5,
+          "text": {
+            "NRSV": "a time to throw away stones, and a time to gather stones together; a time to embrace, and a time to refrain from embracing;",
+            "Rotherham": "A time to cast away stones, and a time to heap up stones,—A time to embrace, and a time to be far from loving embrace;"
+          }
+        },
+        {
+          "num": 6,
+          "text": {
+            "NRSV": "a time to seek, and a time to lose; a time to keep, and a time to throw away;",
+            "Rotherham": "A time to seek, and a time to give up as lost,—A time to keep, and a time to cast away;"
+          }
+        },
+        {
+          "num": 7,
+          "text": {
+            "NRSV": "a time to tear, and a time to sew; a time to keep silence, and a time to speak;",
+            "Rotherham": "A time to rend, and a time to sew,—A time to be silent, and a time to speak;"
+          }
+        },
+        {
+          "num": 8,
+          "text": {
+            "NRSV": "a time for love, and a time for hate; a time for war, and a time for peace.",
+            "Rotherham": "A time to love and a time to hate,—A time of war, and a time of peace."
+          }
+        },
+        {
+          "num": 9,
+          "text": {
+            "NRSV": "What gain have the workers from their toil?",
+            "Rotherham": "What profit hath he that worketh, in that wherein, himself, hath toiled?"
+          }
+        },
+        {
+          "num": 10,
+          "text": {
+            "NRSV": "I have seen the business that God has given to everyone to be busy with.",
+            "Rotherham": "I looked at the employment which God hath given to the sons of men, to work therein: "
+          }
+        },
+        {
+          "num": 11,
+          "text": {
+            "NRSV": "He has made everything suitable for its time; moreover he has put a sense of past and future into their minds, yet they cannot find out what God has done from the beginning to the end.",
+            "Rotherham": " Everything, hath he made beautiful in its own time,—also, intelligence, hath he put in their heart, without which men could not find out the work which God hath wrought, from the beginning even unto the end."
+          }
+        },
+        {
+          "num": 12,
+          "text": {
+            "NRSV": "I know that there is nothing better for them than to be happy and enjoy themselves as long as they live;",
+            "Rotherham": "I know that there is no blessedness in them,—save to be glad, and to do well with one’s life."
+          }
+        },
+        {
+          "num": 13,
+          "text": {
+            "NRSV": "moreover, it is God’s gift that all should eat and drink and take pleasure in all their toil.",
+            "Rotherham": "Though indeed, that any man should eat and drink, and see blessedness, in all his toil, it is, the gift of God."
+          }
+        },
+        {
+          "num": 14,
+          "text": {
+            "NRSV": "I know that whatever God does endures forever; nothing can be added to it, nor anything taken from it; God has done this, so that all should stand in awe before him.",
+            "Rotherham": "I know, that, whatsoever God doeth, the same, shall be age-abiding, unto it, there is nothing to add, and, from it, there is nothing to take away,—and, God, hath done it, that men should stand in awe before him."
+          }
+        },
+        {
+          "num": 15,
+          "text": {
+            "NRSV": "That which is, already has been; that which is to be, already is; and God seeks out what has gone by.",
+            "Rotherham": "That which was, already, had been, and, that which shall be, already, shall have been,—but, God, seeketh that which hath been chased away. "
+          }
+        },
+        {
+          "num": 16,
+          "text": {
+            "NRSV": "Moreover I saw under the sun that in the place of justice, wickedness was there, and in the place of righteousness, wickedness was there as well.",
+            "Rotherham": " Then, again, I saw under the sun, the place of justice, that there was lawlessness, and, the place of righteousness, that there was lawlessness."
+          }
+        },
+        {
+          "num": 17,
+          "text": {
+            "NRSV": "I said in my heart, God will judge the righteous and the wicked, for he has appointed a time for every matter, and for every work.",
+            "Rotherham": "Said, I, in my heart, Both the righteous and the lawless, will God judge,—for [there will be] a time for every pursuit, and concerning every work—there."
+          }
+        },
+        {
+          "num": 18,
+          "text": {
+            "NRSV": "I said in my heart with regard to human beings that God is testing them to show that they are but animals.",
+            "Rotherham": "Said, I, in my heart, as concerning the sons of men, That God was minded to prove them,—and that they might see, that they were beasts, of themselves."
+          }
+        },
+        {
+          "num": 19,
+          "text": {
+            "NRSV": "For the fate of humans and the fate of animals is the same; as one dies, so dies the other. They all have the same breath, and humans have no advantage over the animals; for all is vanity.",
+            "Rotherham": "For, as regardeth the destiny of the sons of men and the destiny of beasts, one fate, have they, as dieth the one, so, dieth the other, and, one spirit, have they all,—and, the pre-eminence of man over beast, is nothing, for, all, were vanity:"
+          }
+        },
+        {
+          "num": 20,
+          "text": {
+            "NRSV": "All go to one place; all are from the dust, and all turn to dust again.",
+            "Rotherham": "all, go unto one place,—all, came from the dust, and all, return to the dust."
+          }
+        },
+        {
+          "num": 21,
+          "text": {
+            "NRSV": "Who knows whether the human spirit goes upward and the spirit of animals goes downward to the earth?",
+            "Rotherham": "Who knoweth the spirit of the sons of men, whether it, ascendeth, above,—or the spirit of the beast, whether it, descendeth, below, to the earth?"
+          }
+        },
+        {
+          "num": 22,
+          "text": {
+            "NRSV": "So I saw that there is nothing better than that all should enjoy their work, for that is their lot; who can bring them to see what will be after them?",
+            "Rotherham": "So I saw, that there was nothing better than that a man should be glad in his works, for, that, is his portion,—for who can bring him in, to look upon that which shall be after him?  "
+          }
+        }
       ]
     },
     {
       "num": 4,
       "verses": [
-        { "num": 1, "text": "Again I saw all the oppressions that are practiced under the sun. Look, the tears of the oppressed—with no one to comfort them! On the side of their oppressors there was power—with no one to comfort them." },
-        { "num": 2, "text": "And I thought the dead, who have already died, more fortunate than the living, who are still alive;" },
-        { "num": 3, "text": "but better than both is the one who has not yet been, and has not seen the evil deeds that are done under the sun." },
-        { "num": 4, "text": "Then I saw that all toil and all skill in work come from one person’s envy of another. This also is vanity and a chasing after wind." },
-        { "num": 5, "text": "Fools fold their hands and consume their own flesh." },
-        { "num": 6, "text": "Better is a handful with quiet than two handfuls with toil, and a chasing after wind." },
-        { "num": 7, "text": "Again, I saw vanity under the sun:" },
-        { "num": 8, "text": "the case of solitary individuals, without companion or child or brother, yet there is no end to all their toil, and their eyes are never satisfied with riches. “For whom am I toiling,” they ask, “and depriving myself of pleasure?” This also is vanity and an unhappy business." },
-        { "num": 9, "text": "Two are better than one, because they have a good reward for their toil." },
-        { "num": 10, "text": "For if they fall, one will lift up the other; but woe to one who is alone and falls and does not have another to help." },
-        { "num": 11, "text": "Again, if two lie together, they keep warm; but how can one keep warm alone?" },
-        { "num": 12, "text": "And though one might prevail against another, two will withstand one. A threefold cord is not quickly broken." },
-        { "num": 13, "text": "Better is a poor but wise youth than an old but foolish king, who will no longer take advice." },
-        { "num": 14, "text": "One can indeed come out of prison to reign, even though born poor in the kingdom." },
-        { "num": 15, "text": "I saw all the living who, moving about under the sun, follow that youth, the king’s successor;" },
-        { "num": 16, "text": "there was no end to all those people whom he led. Yet those who come later will not rejoice in him. Surely this also is vanity and a chasing after wind." }
+        {
+          "num": 1,
+          "text": {
+            "NRSV": "Again I saw all the oppressions that are practiced under the sun. Look, the tears of the oppressed—with no one to comfort them! On the side of their oppressors there was power—with no one to comfort them.",
+            "Rotherham": "Then again, I, considered all the oppressive deeds which were done under the sun,—and lo! the tears of the oppressed, and they have no comforter, and, on the side of their oppressing, is power, and they have no comforter."
+          }
+        },
+        {
+          "num": 2,
+          "text": {
+            "NRSV": "And I thought the dead, who have already died, more fortunate than the living, who are still alive;",
+            "Rotherham": "So, I, pronounced happy the dead, who were, already, dead,—more than the living, who were living, still;"
+          }
+        },
+        {
+          "num": 3,
+          "text": {
+            "NRSV": "but better than both is the one who has not yet been, and has not seen the evil deeds that are done under the sun.",
+            "Rotherham": "and, as better than both, him who had not yet come into being,—who had not seen the vexatious work, which was done under the sun. "
+          }
+        },
+        {
+          "num": 4,
+          "text": {
+            "NRSV": "Then I saw that all toil and all skill in work come from one person’s envy of another. This also is vanity and a chasing after wind.",
+            "Rotherham": " Then saw, I, all the toil and all the skill of the work, that, for this, a man was envied of his neighbour,—even this, was vanity, and a feeding on wind."
+          }
+        },
+        {
+          "num": 5,
+          "text": {
+            "NRSV": "Fools fold their hands and consume their own flesh.",
+            "Rotherham": "The dullard, claspeth his hands, and consumeth his own flesh."
+          }
+        },
+        {
+          "num": 6,
+          "text": {
+            "NRSV": "Better is a handful with quiet than two handfuls with toil, and a chasing after wind.",
+            "Rotherham": "Better a handful—with quietness,—than both hands, full—with toil, and feeding on wind. "
+          }
+        },
+        {
+          "num": 7,
+          "text": {
+            "NRSV": "Again, I saw vanity under the sun:",
+            "Rotherham": " Then again, I, looked at a vain thing under the sun:—"
+          }
+        },
+        {
+          "num": 8,
+          "text": {
+            "NRSV": "the case of solitary individuals, without companion or child or brother, yet there is no end to all their toil, and their eyes are never satisfied with riches. “For whom am I toiling,” they ask, “and depriving myself of pleasure?” This also is vanity and an unhappy business.",
+            "Rotherham": "Here is one, without a second, even son or brother, he hath none, yet is there no end to all his toil, even his eye, is not satisfied with riches,—neither [saith he] For whom, am I toiling, and letting my soul want good? Even this, was vanity, yea a vexatious employment, it was!"
+          }
+        },
+        {
+          "num": 9,
+          "text": {
+            "NRSV": "Two are better than one, because they have a good reward for their toil.",
+            "Rotherham": "Better are two, than one,—in that they have a good reward for their toil."
+          }
+        },
+        {
+          "num": 10,
+          "text": {
+            "NRSV": "For if they fall, one will lift up the other; but woe to one who is alone and falls and does not have another to help.",
+            "Rotherham": "For, if the one should fall, [the other] would raise up his companion,—but alas! for him who is alone when he falleth, with no second to raise him up!"
+          }
+        },
+        {
+          "num": 11,
+          "text": {
+            "NRSV": "Again, if two lie together, they keep warm; but how can one keep warm alone?",
+            "Rotherham": "Moreover, if two lie together, then have they warmth,—but how can, one, have warmth?"
+          }
+        },
+        {
+          "num": 12,
+          "text": {
+            "NRSV": "And though one might prevail against another, two will withstand one. A threefold cord is not quickly broken.",
+            "Rotherham": "And, though an enemy should prevail against one, two, might make a stand before him,—and, a threefold cord, cannot soon be broken. "
+          }
+        },
+        {
+          "num": 13,
+          "text": {
+            "NRSV": "Better is a poor but wise youth than an old but foolish king, who will no longer take advice.",
+            "Rotherham": " Better a boy poor and wise,—than a king, old and stupid, who knoweth not how to take warning any longer."
+          }
+        },
+        {
+          "num": 14,
+          "text": {
+            "NRSV": "One can indeed come out of prison to reign, even though born poor in the kingdom.",
+            "Rotherham": "For, out of prison, came he forth to reign, yea, even in his own kingdom, was he born poor."
+          }
+        },
+        {
+          "num": 15,
+          "text": {
+            "NRSV": "I saw all the living who, moving about under the sun, follow that youth, the king’s successor;",
+            "Rotherham": "I saw all the living, who were going hither and thither under the sun,—[that they were] with the boy who was to be the second, who was to stand in the other’s place:—"
+          }
+        },
+        {
+          "num": 16,
+          "text": {
+            "NRSV": "there was no end to all those people whom he led. Yet those who come later will not rejoice in him. Surely this also is vanity and a chasing after wind.",
+            "Rotherham": "There was no end to all the people, to all before whom he came, yet, they who should come later, would not rejoice in him,—surely, even this, was vanity, and a feeding on wind.  "
+          }
+        }
       ]
     },
     {
       "num": 5,
       "verses": [
-        { "num": 1, "text": "Guard your steps when you go to the house of God; to draw near to listen is better than the sacrifice offered by fools; for they do not know how to keep from doing evil." },
-        { "num": 2, "text": "Never be rash with your mouth, nor let your heart be quick to utter a word before God, for God is in heaven, and you upon earth; therefore let your words be few." },
-        { "num": 3, "text": "For dreams come with many cares, and a fool’s voice with many words." },
-        { "num": 4, "text": "When you make a vow to God, do not delay fulfilling it; for he has no pleasure in fools. Fulfill what you vow." },
-        { "num": 5, "text": "It is better that you should not vow than that you should vow and not fulfill it." },
-        { "num": 6, "text": "Do not let your mouth lead you into sin, and do not say before the messenger that it was a mistake; why should God be angry at your words, and destroy the work of your hands?" },
-        { "num": 7, "text": "With many dreams come vanities and a multitude of words; but fear God." },
-        { "num": 8, "text": "If you see in a province the oppression of the poor and the violation of justice and right, do not be amazed at the matter; for the high official is watched by a higher, and there are yet higher ones over them." },
-        { "num": 9, "text": "But all things considered, this is an advantage for a land: a king for a plowed field." },
-        { "num": 10, "text": "The lover of money will not be satisfied with money; nor the lover of wealth, with gain. This also is vanity." },
-        { "num": 11, "text": "When goods increase, those who eat them increase; and what gain has their owner but to see them with his eyes?" },
-        { "num": 12, "text": "Sweet is the sleep of laborers, whether they eat little or much; but the abundance of the rich will not let them sleep." },
-        { "num": 13, "text": "There is a grievous ill that I have seen under the sun: riches were kept by their owner to his hurt," },
-        { "num": 14, "text": "and those riches were lost in a bad venture; though he is father of a son, he has nothing left." },
-        { "num": 15, "text": "As they came from their mother’s womb, so they shall go again, naked as they came; they shall take nothing for their toil, which they may carry away with them." },
-        { "num": 16, "text": "This also is a grievous ill: just as they came, so shall they go; and what gain do they have from toiling for the wind," },
-        { "num": 17, "text": "besides spending all their days in darkness and grief, in much vexation and sickness and resentment?" },
-        { "num": 18, "text": "This is what I have seen to be good: it is fitting to eat and drink and find enjoyment in all the toil with which one toils under the sun the few days of the life God gives us; for this is our lot." },
-        { "num": 19, "text": "Likewise all to whom God gives wealth and possessions and whom he enables to enjoy them, and to accept their lot and find enjoyment in their toil—this is the gift of God." },
-        { "num": 20, "text": "For they will scarcely brood over the days of their lives, because God keeps them occupied with the joy of their hearts." }
+        {
+          "num": 1,
+          "text": {
+            "NRSV": "Guard your steps when you go to the house of God; to draw near to listen is better than the sacrifice offered by fools; for they do not know how to keep from doing evil.",
+            "Rotherham": "Keep thy foot, when thou goest unto the house of God, and be more ready to hear, than dullards to offer sacrifice,—for they make no acknowledgment of doing wrong."
+          }
+        },
+        {
+          "num": 2,
+          "text": {
+            "NRSV": "Never be rash with your mouth, nor let your heart be quick to utter a word before God, for God is in heaven, and you upon earth; therefore let your words be few.",
+            "Rotherham": "Be not rash with thy mouth, and, with thy heart, be not in haste to bring forth a word, before God,—for, God, is in the heavens, and, thou, upon the earth, for this cause, let thy words be few."
+          }
+        },
+        {
+          "num": 3,
+          "text": {
+            "NRSV": "For dreams come with many cares, and a fool’s voice with many words.",
+            "Rotherham": "For a dream cometh through the multitude of business,—and, the voice of a dullard, is with a multitude of words. "
+          }
+        },
+        {
+          "num": 4,
+          "text": {
+            "NRSV": "When you make a vow to God, do not delay fulfilling it; for he has no pleasure in fools. Fulfill what you vow.",
+            "Rotherham": " When thou vowest a vow unto God, do not defer to pay it, for there is no pleasure in dullards,—what thou vowest, pay!"
+          }
+        },
+        {
+          "num": 5,
+          "text": {
+            "NRSV": "It is better that you should not vow than that you should vow and not fulfill it.",
+            "Rotherham": "Better that thou shouldest not vow,—than vow, and not pay."
+          }
+        },
+        {
+          "num": 6,
+          "text": {
+            "NRSV": "Do not let your mouth lead you into sin, and do not say before the messenger that it was a mistake; why should God be angry at your words, and destroy the work of your hands?",
+            "Rotherham": "Do not let thy mouth cause thy flesh to sin,—neither say thou, before the messenger, that it was, a mistake,—wherefore should God be indignant at thy voice, and destroy the work of thy hands?"
+          }
+        },
+        {
+          "num": 7,
+          "text": {
+            "NRSV": "With many dreams come vanities and a multitude of words; but fear God.",
+            "Rotherham": "For [it was done] amidst a multitude of dreams, and vanities, and many words,—but, towards God, be thou reverent."
+          }
+        },
+        {
+          "num": 8,
+          "text": {
+            "NRSV": "If you see in a province the oppression of the poor and the violation of justice and right, do not be amazed at the matter; for the high official is watched by a higher, and there are yet higher ones over them.",
+            "Rotherham": "If, the oppression of the poor, and the wresting of justice and righteousness, thou see in the province, do not be astonished over the matter,—for, one high above the highest, is watching, yea, the Most High, is over them. "
+          }
+        },
+        {
+          "num": 9,
+          "text": {
+            "NRSV": "But all things considered, this is an advantage for a land: a king for a plowed field.",
+            "Rotherham": " And, the profit of the earth, is, for all,—a king, by the field, is served."
+          }
+        },
+        {
+          "num": 10,
+          "text": {
+            "NRSV": "The lover of money will not be satisfied with money; nor the lover of wealth, with gain. This also is vanity.",
+            "Rotherham": "He that loveth silver, shall not be satisfied with silver nor, he that loveth abundance, with revenue,—even this, was vanity."
+          }
+        },
+        {
+          "num": 11,
+          "text": {
+            "NRSV": "When goods increase, those who eat them increase; and what gain has their owner but to see them with his eyes?",
+            "Rotherham": "When blessings are increased, increased are the eaters thereof,—what profit, then, to the owner of them saving the sight of his eyes?"
+          }
+        },
+        {
+          "num": 12,
+          "text": {
+            "NRSV": "Sweet is the sleep of laborers, whether they eat little or much; but the abundance of the rich will not let them sleep.",
+            "Rotherham": "Sweet the sleep of the labourer, whether, little or much, he eat,—but, the surfeit of the rich man, will not suffer him to sleep."
+          }
+        },
+        {
+          "num": 13,
+          "text": {
+            "NRSV": "There is a grievous ill that I have seen under the sun: riches were kept by their owner to his hurt,",
+            "Rotherham": "Here was an incurable evil, I had seen under the sun, riches kept by the owner thereof, to his hurt;"
+          }
+        },
+        {
+          "num": 14,
+          "text": {
+            "NRSV": "and those riches were lost in a bad venture; though he is father of a son, he has nothing left.",
+            "Rotherham": "and those riches perish, by being ill employed,—and though he begetteth a son, yet is there in his hand nothing at all."
+          }
+        },
+        {
+          "num": 15,
+          "text": {
+            "NRSV": "As they came from their mother’s womb, so they shall go again, naked as they came; they shall take nothing for their toil, which they may carry away with them.",
+            "Rotherham": "As he came from his mother’s womb, naked, he again departeth, as he came,—and, nothing, can he take of his toil, which he can carry in his hand."
+          }
+        },
+        {
+          "num": 16,
+          "text": {
+            "NRSV": "This also is a grievous ill: just as they came, so shall they go; and what gain do they have from toiling for the wind,",
+            "Rotherham": "Even this, moreover, is an incurable evil, altogether as he came, so, shall he depart,—what profit then shall he have who toileth for the wind?"
+          }
+        },
+        {
+          "num": 17,
+          "text": {
+            "NRSV": "besides spending all their days in darkness and grief, in much vexation and sickness and resentment?",
+            "Rotherham": "Even all his days, [are spent] in darkness and mourning,—and he is very morose, and is sad and angry. "
+          }
+        },
+        {
+          "num": 18,
+          "text": {
+            "NRSV": "This is what I have seen to be good: it is fitting to eat and drink and find enjoyment in all the toil with which one toils under the sun the few days of the life God gives us; for this is our lot.",
+            "Rotherham": " Lo! what, I myself, have seen—Better that it should be excellent to eat and to drink and to see blessedness, in all one’s toil wherein one toileth under the sun, for the number of the days of his life, in that God hath given it him, for, that, is his portion:"
+          }
+        },
+        {
+          "num": 19,
+          "text": {
+            "NRSV": "Likewise all to whom God gives wealth and possessions and whom he enables to enjoy them, and to accept their lot and find enjoyment in their toil—this is the gift of God.",
+            "Rotherham": "yet, as regardeth every man, to whom God hath given wealth and goods, and granted him power to eat thereof, and to take his portion, and to find gladness in his toil, this, is, the gift of God."
+          }
+        },
+        {
+          "num": 20,
+          "text": {
+            "NRSV": "For they will scarcely brood over the days of their lives, because God keeps them occupied with the joy of their hearts.",
+            "Rotherham": "Though it be not much, let him remember the days of his life,—for, God, beareth witness, by the gladness of his heart.  "
+          }
+        }
       ]
     },
     {
       "num": 6,
       "verses": [
-        { "num": 1, "text": "There is an evil that I have seen under the sun, and it lies heavy upon humankind:" },
-        { "num": 2, "text": "those to whom God gives wealth, possessions, and honor, so that they lack nothing of all that they desire, yet God does not enable them to enjoy these things, but a stranger enjoys them. This is vanity; it is a grievous ill." },
-        { "num": 3, "text": "A man may beget a hundred children, and live many years, so that they are many; but if he does not enjoy life’s good things, and has no burial, I say that a stillborn child is better off than he." },
-        { "num": 4, "text": "For it comes into vanity and goes into darkness, and in darkness its name is covered;" },
-        { "num": 5, "text": "moreover it has not seen the sun or known anything; yet it finds rest rather than he." },
-        { "num": 6, "text": "Even though he should live a thousand years twice over, yet enjoy no good—do not all go to one place?" },
-        { "num": 7, "text": "All human toil is for the mouth, yet the appetite is not satisfied." },
-        { "num": 8, "text": "For what advantage have the wise over fools? And what do the poor have who know how to conduct themselves before the living?" },
-        { "num": 9, "text": "Better is the sight of the eyes than the wandering of the desire; this also is vanity and a chasing after wind." },
-        { "num": 10, "text": "Whatever has come to be has already been named, and it is known what human beings are, and that they cannot contend with one who is stronger than they." },
-        { "num": 11, "text": "The more words, the more vanity, and how is one the better?" },
-        { "num": 12, "text": "For who knows what is good for mortals while they live the few days of their vain life, which they pass like a shadow? For who can tell them what will be after them under the sun?" }
+        {
+          "num": 1,
+          "text": {
+            "NRSV": "There is an evil that I have seen under the sun, and it lies heavy upon humankind:",
+            "Rotherham": "Here was an evil, I had seen under the sun,—and it is, common, among men:"
+          }
+        },
+        {
+          "num": 2,
+          "text": {
+            "NRSV": "those to whom God gives wealth, possessions, and honor, so that they lack nothing of all that they desire, yet God does not enable them to enjoy these things, but a stranger enjoys them. This is vanity; it is a grievous ill.",
+            "Rotherham": "A man to whom God giveth riches and gains and honour, so that nothing doth he lack for his soul—of all that he craveth, and yet God doth not give him power to eat thereof, but, a man unknown, eateth it,—this, was vanity, and, an incurable evil, it was."
+          }
+        },
+        {
+          "num": 3,
+          "text": {
+            "NRSV": "A man may beget a hundred children, and live many years, so that they are many; but if he does not enjoy life’s good things, and has no burial, I say that a stillborn child is better off than he.",
+            "Rotherham": "Though a man should beget a hundred children, and live, many years, so that many should be the days of his years but, his own soul, should not be satisfied with the good, and he should not even have, a burial, I said, Better than he, is an untimely birth!"
+          }
+        },
+        {
+          "num": 4,
+          "text": {
+            "NRSV": "For it comes into vanity and goes into darkness, and in darkness its name is covered;",
+            "Rotherham": "For, in vain, it came in, and, in darkness, it departeth,—and, with darkness, its name, is covered:"
+          }
+        },
+        {
+          "num": 5,
+          "text": {
+            "NRSV": "moreover it has not seen the sun or known anything; yet it finds rest rather than he.",
+            "Rotherham": "even the sun, it never saw, nor aught did it know,—more quietness, hath this than the other."
+          }
+        },
+        {
+          "num": 6,
+          "text": {
+            "NRSV": "Even though he should live a thousand years twice over, yet enjoy no good—do not all go to one place?",
+            "Rotherham": "Even though one hath lived a thousand years twice told, yet, good, hath he not seen,—is it not, unto one place, that, all, are going? "
+          }
+        },
+        {
+          "num": 7,
+          "text": {
+            "NRSV": "All human toil is for the mouth, yet the appetite is not satisfied.",
+            "Rotherham": " All the toil of man, is for his mouth,—though, even the desire, is not satisfied!"
+          }
+        },
+        {
+          "num": 8,
+          "text": {
+            "NRSV": "For what advantage have the wise over fools? And what do the poor have who know how to conduct themselves before the living?",
+            "Rotherham": "For what profit hath the wise man, over the dullard? What can, the poor man, know—so as to walk before the living?"
+          }
+        },
+        {
+          "num": 9,
+          "text": {
+            "NRSV": "Better is the sight of the eyes than the wandering of the desire; this also is vanity and a chasing after wind.",
+            "Rotherham": "Better what the eyes behold, than the wandering of desire,—even this, was vanity, and a feeding on wind."
+          }
+        },
+        {
+          "num": 10,
+          "text": {
+            "NRSV": "Whatever has come to be has already been named, and it is known what human beings are, and that they cannot contend with one who is stronger than they.",
+            "Rotherham": "Whatsoever one may be, long ago, was he called by his name, and it is known that it is—Son of Earth,—he cannot, therefore, contend with one stronger than he. "
+          }
+        },
+        {
+          "num": 11,
+          "text": {
+            "NRSV": "The more words, the more vanity, and how is one the better?",
+            "Rotherham": " Seeing there are things in abundance which make vanity abound, what profit hath man?"
+          }
+        },
+        {
+          "num": 12,
+          "text": {
+            "NRSV": "For who knows what is good for mortals while they live the few days of their vain life, which they pass like a shadow? For who can tell them what will be after them under the sun?",
+            "Rotherham": "For who knoweth what is good for a man throughout his life, for the number of the days of his life of vanity, seeing he will make them, like a shadow,—for who can tell a man, what shall be after him, under the sun?  "
+          }
+        }
       ]
     },
     {
       "num": 7,
       "verses": [
-        { "num": 1, "text": "A good name is better than precious ointment, and the day of death, than the day of birth." },
-        { "num": 2, "text": "It is better to go to the house of mourning than to go to the house of feasting; for this is the end of everyone, and the living will lay it to heart." },
-        { "num": 3, "text": "Sorrow is better than laughter, for by sadness of countenance the heart is made glad." },
-        { "num": 4, "text": "The heart of the wise is in the house of mourning; but the heart of fools is in the house of mirth." },
-        { "num": 5, "text": "It is better to hear the rebuke of the wise than to hear the song of fools." },
-        { "num": 6, "text": "For like the crackling of thorns under a pot, so is the laughter of fools; this also is vanity." },
-        { "num": 7, "text": "Surely oppression makes the wise foolish, and a bribe corrupts the heart." },
-        { "num": 8, "text": "Better is the end of a thing than its beginning; the patient in spirit are better than the proud in spirit." },
-        { "num": 9, "text": "Do not be quick to anger, for anger lodges in the bosom of fools." },
-        { "num": 10, "text": "Do not say, “Why were the former days better than these?” For it is not from wisdom that you ask this." },
-        { "num": 11, "text": "Wisdom is as good as an inheritance, an advantage to those who see the sun." },
-        { "num": 12, "text": "For the protection of wisdom is like the protection of money, and the advantage of knowledge is that wisdom gives life to its possessor." },
-        { "num": 13, "text": "Consider the work of God; who can make straight what he has made crooked?" },
-        { "num": 14, "text": "In the day of prosperity be joyful, and in the day of adversity consider; God has made the one as well as the other, so that mortals may not find out anything that will come after them." },
-        { "num": 15, "text": "In my vain life I have seen everything; there are righteous people who perish in their righteousness, and there are wicked people who prolong their life in their evildoing." },
-        { "num": 16, "text": "Do not be overrighteous, and do not make yourself overwise; why should you destroy yourself?" },
-        { "num": 17, "text": "Do not be overwicked, and do not be a fool; why should you die before your time?" },
-        { "num": 18, "text": "It is good that you should take hold of the one, without letting go of the other; for the one who fears God shall succeed with both." },
-        { "num": 19, "text": "Wisdom gives strength to the wise more than ten rulers that are in a city." },
-        { "num": 20, "text": "Surely there is no one on earth so righteous as to do good without ever sinning." },
-        { "num": 21, "text": "Do not give heed to everything that people say, or you may hear your servant cursing you;" },
-        { "num": 22, "text": "your heart knows that many times you have yourself cursed others." },
-        { "num": 23, "text": "All this I have tested by wisdom; I said, “I will be wise,” but it was far from me." },
-        { "num": 24, "text": "That which is, is far off, and deep, very deep; who can find it out?" },
-        { "num": 25, "text": "I turned my mind to know and to search out and to seek wisdom and the sum of things, and to know that wickedness is folly and that foolishness is madness." },
-        { "num": 26, "text": "I found more bitter than death the woman who is a trap, whose heart is snares and nets, and whose hands are fetters; one who pleases God escapes her, but the sinner is taken by her." },
-        { "num": 27, "text": "See, this is what I found, says the Teacher, adding one thing to another to find the sum," },
-        { "num": 28, "text": "which my mind has sought repeatedly, but I have not found. One man among a thousand I found, but a woman among all these I have not found." },
-        { "num": 29, "text": "See, this alone I found, that God made human beings straightforward, but they have devised many schemes." }
+        {
+          "num": 1,
+          "text": {
+            "NRSV": "A good name is better than precious ointment, and the day of death, than the day of birth.",
+            "Rotherham": "Better a name, than precious ointment,—and the day of death, than the day of one’s birth."
+          }
+        },
+        {
+          "num": 2,
+          "text": {
+            "NRSV": "It is better to go to the house of mourning than to go to the house of feasting; for this is the end of everyone, and the living will lay it to heart.",
+            "Rotherham": "Better to go to the house of mourning, than to go to the house of banqueting, for, that, is the end of all men,—and, the living, should take it to his heart."
+          }
+        },
+        {
+          "num": 3,
+          "text": {
+            "NRSV": "Sorrow is better than laughter, for by sadness of countenance the heart is made glad.",
+            "Rotherham": "Better is grief than laughter,—for, by the marring of the face, amended is the heart."
+          }
+        },
+        {
+          "num": 4,
+          "text": {
+            "NRSV": "The heart of the wise is in the house of mourning; but the heart of fools is in the house of mirth.",
+            "Rotherham": "The heart of the wise, is in the house of mourning, but, the heart of dullards, in the house of mirth."
+          }
+        },
+        {
+          "num": 5,
+          "text": {
+            "NRSV": "It is better to hear the rebuke of the wise than to hear the song of fools.",
+            "Rotherham": "Better to hear the rebuke of the wise, than for any man to hear the song of dullards,"
+          }
+        },
+        {
+          "num": 6,
+          "text": {
+            "NRSV": "For like the crackling of thorns under a pot, so is the laughter of fools; this also is vanity.",
+            "Rotherham": "For, as the crackling of thorns under a pot, so, is the laughter of the dullard,—even this, then, was vanity. "
+          }
+        },
+        {
+          "num": 7,
+          "text": {
+            "NRSV": "Surely oppression makes the wise foolish, and a bribe corrupts the heart.",
+            "Rotherham": " For, oppression, maddeneth the wise,—and a bribe, destroyeth the understanding."
+          }
+        },
+        {
+          "num": 8,
+          "text": {
+            "NRSV": "Better is the end of a thing than its beginning; the patient in spirit are better than the proud in spirit.",
+            "Rotherham": "Better the latter end of a thing, than the beginning thereof,—Better a patient spirit, than a haughty spirit."
+          }
+        },
+        {
+          "num": 9,
+          "text": {
+            "NRSV": "Do not be quick to anger, for anger lodges in the bosom of fools.",
+            "Rotherham": "Do not be rash in thy spirit, to be indignant,—for, indignation, in the bosom of dullards, doth remain."
+          }
+        },
+        {
+          "num": 10,
+          "text": {
+            "NRSV": "Do not say, “Why were the former days better than these?” For it is not from wisdom that you ask this.",
+            "Rotherham": "Do not say, What hath happened, that, the former days, were better than these? for, not wisely, askest thou concerning this. "
+          }
+        },
+        {
+          "num": 11,
+          "text": {
+            "NRSV": "Wisdom is as good as an inheritance, an advantage to those who see the sun.",
+            "Rotherham": " Good is wisdom, with an inheritance,—and a profit, to such as see the sun."
+          }
+        },
+        {
+          "num": 12,
+          "text": {
+            "NRSV": "For the protection of wisdom is like the protection of money, and the advantage of knowledge is that wisdom gives life to its possessor.",
+            "Rotherham": "For, a protection, is wisdom, and, a protection, is silver,—but, the advantage of knowledge, is, that, wisdom, giveth life to the possessors thereof."
+          }
+        },
+        {
+          "num": 13,
+          "text": {
+            "NRSV": "Consider the work of God; who can make straight what he has made crooked?",
+            "Rotherham": "Consider the work of God,—for who can straighten what he hath bent?"
+          }
+        },
+        {
+          "num": 14,
+          "text": {
+            "NRSV": "In the day of prosperity be joyful, and in the day of adversity consider; God has made the one as well as the other, so that mortals may not find out anything that will come after them.",
+            "Rotherham": "In the day of prosperity, be joyful, but, in the day of misfortune, consider,—Even the one equally with the other, hath God made, to the end man might find out—after him—nothing."
+          }
+        },
+        {
+          "num": 15,
+          "text": {
+            "NRSV": "In my vain life I have seen everything; there are righteous people who perish in their righteousness, and there are wicked people who prolong their life in their evildoing.",
+            "Rotherham": "Everything, had I seen, in my days of vanity,—Here was a righteous man, perishing in his righteousness, and there was a lawless man, continuing long in his wickedness."
+          }
+        },
+        {
+          "num": 16,
+          "text": {
+            "NRSV": "Do not be overrighteous, and do not make yourself overwise; why should you destroy yourself?",
+            "Rotherham": "Do not become so very righteous, neither count thyself wise beyond measure,—wherefore shouldst thou destroy thyself?"
+          }
+        },
+        {
+          "num": 17,
+          "text": {
+            "NRSV": "Do not be overwicked, and do not be a fool; why should you die before your time?",
+            "Rotherham": "Do not be so very lawless, neither become thou foolish,—wherefore shouldst thou die, before thy time?"
+          }
+        },
+        {
+          "num": 18,
+          "text": {
+            "NRSV": "It is good that you should take hold of the one, without letting go of the other; for the one who fears God shall succeed with both.",
+            "Rotherham": "It is well that thou shouldst lay fast hold of this, but, even from the other, do not withdraw thy hand,—for, he that revereth God, shall come forth out of them all."
+          }
+        },
+        {
+          "num": 19,
+          "text": {
+            "NRSV": "Wisdom gives strength to the wise more than ten rulers that are in a city.",
+            "Rotherham": "Wisdom, bringeth more strength to a wise man, than ten heroes, that are in the city."
+          }
+        },
+        {
+          "num": 20,
+          "text": {
+            "NRSV": "Surely there is no one on earth so righteous as to do good without ever sinning.",
+            "Rotherham": "For, as for men, there is none righteous in the earth, that doeth good, and sinneth not."
+          }
+        },
+        {
+          "num": 21,
+          "text": {
+            "NRSV": "Do not give heed to everything that people say, or you may hear your servant cursing you;",
+            "Rotherham": "Moreover, not to all the words which men speak, do thou apply thy heart,—lest thou hear thine own servant reviling thee!"
+          }
+        },
+        {
+          "num": 22,
+          "text": {
+            "NRSV": "your heart knows that many times you have yourself cursed others.",
+            "Rotherham": "For truly, many times, thy heart knoweth,—that, even thou thyself, hast reviled others. "
+          }
+        },
+        {
+          "num": 23,
+          "text": {
+            "NRSV": "All this I have tested by wisdom; I said, “I will be wise,” but it was far from me.",
+            "Rotherham": " All this, have I proved by wisdom,—I said, I will be wise, but, that, was far from me."
+          }
+        },
+        {
+          "num": 24,
+          "text": {
+            "NRSV": "That which is, is far off, and deep, very deep; who can find it out?",
+            "Rotherham": "Far away, is that which hath been,—and deep, deep, who can find it out?"
+          }
+        },
+        {
+          "num": 25,
+          "text": {
+            "NRSV": "I turned my mind to know and to search out and to seek wisdom and the sum of things, and to know that wickedness is folly and that foolishness is madness.",
+            "Rotherham": "Resolved, I, in my heart, to know and search out, and to seek wisdom, and a conclusion,—and to know lawlessness [to be] stupidity, and folly to be madness."
+          }
+        },
+        {
+          "num": 26,
+          "text": {
+            "NRSV": "I found more bitter than death the woman who is a trap, whose heart is snares and nets, and whose hands are fetters; one who pleases God escapes her, but the sinner is taken by her.",
+            "Rotherham": "I, could indeed find, to be, more bitter than death, the woman, whose heart is, snares and nets, and her hands, bonds,—whoso is pleasing before God, shall escape from her, but, he that sinneth, shall be captured by her."
+          }
+        },
+        {
+          "num": 27,
+          "text": {
+            "NRSV": "See, this is what I found, says the Teacher, adding one thing to another to find the sum,",
+            "Rotherham": "See! this, have I found, saith the Proclaimer [counting] one by one, to find a conclusion;"
+          }
+        },
+        {
+          "num": 28,
+          "text": {
+            "NRSV": "which my mind has sought repeatedly, but I have not found. One man among a thousand I found, but a woman among all these I have not found.",
+            "Rotherham": "what my soul still sought, yet I found not,—one man out of a thousand, have I found, but, a woman among all these, have I not found."
+          }
+        },
+        {
+          "num": 29,
+          "text": {
+            "NRSV": "See, this alone I found, that God made human beings straightforward, but they have devised many schemes.",
+            "Rotherham": "Only, see, this, have I found, That God made man upright, but, they, have sought out many devices.  "
+          }
+        }
       ]
     },
     {
       "num": 8,
       "verses": [
-        { "num": 1, "text": "Who is like the wise? And who knows the interpretation of a thing? Wisdom illumines the face, and the hardness of one’s countenance is changed." },
-        { "num": 2, "text": "Keep the king’s command because of your sacred oath." },
-        { "num": 3, "text": "Do not be terrified; go from his presence, do not delay when the matter is unpleasant, for he does whatever he pleases." },
-        { "num": 4, "text": "For the word of the king is powerful, and who can say to him, “What are you doing?”" },
-        { "num": 5, "text": "Whoever keeps a command will know no evil thing, and the wise mind will know the time and way." },
-        { "num": 6, "text": "For every matter has its time and way, although the troubles of mortals lie heavy upon them." },
-        { "num": 7, "text": "Indeed, they do not know what is to be, for who can tell them how it will be?" },
-        { "num": 8, "text": "No one has power over the wind to restrain the wind, or power over the day of death; there is no discharge from the battle, nor does wickedness deliver those who practice it." },
-        { "num": 9, "text": "All this I observed while applying my mind to all that is done under the sun, while one person exercises authority over another to the other’s hurt." },
-        { "num": 10, "text": "Then I saw the wicked buried; they used to go in and out of the holy place, and were praised in the city where they had done such things. This also is vanity." },
-        { "num": 11, "text": "Because sentence against an evil deed is not executed speedily, the human heart is fully set to do evil." },
-        { "num": 12, "text": "Though sinners do evil a hundred times and prolong their lives, yet I know that it will be well with those who fear God, because they stand in awe before him;" },
-        { "num": 13, "text": "but it will not be well with the wicked, neither will they prolong their days like a shadow, because they do not stand in awe before God." },
-        { "num": 14, "text": "There is a vanity that takes place on earth, that there are righteous people who are treated according to the conduct of the wicked, and there are wicked people who are treated according to the conduct of the righteous. I said that this also is vanity." },
-        { "num": 15, "text": "So I commend enjoyment, for there is nothing better for people under the sun than to eat and drink and enjoy themselves, for this will go with them in their toil through the days of life that God gives them under the sun." },
-        { "num": 16, "text": "When I applied my mind to know wisdom, and to see the business that is done on earth, how one’s eyes see sleep neither day nor night," },
-        { "num": 17, "text": "then I saw all the work of God, that no one can find out what is happening under the sun. However much they may toil in searching, they will not find it out; even though those who are wise claim to know, they cannot find it out." }
+        {
+          "num": 1,
+          "text": {
+            "NRSV": "Who is like the wise? And who knows the interpretation of a thing? Wisdom illumines the face, and the hardness of one’s countenance is changed.",
+            "Rotherham": "Who is really a wise man, and who knoweth the interpretation of a thing? The wisdom of a man, lighteth up his countenance, but, by defiance of countenance, one is disfigured."
+          }
+        },
+        {
+          "num": 2,
+          "text": {
+            "NRSV": "Keep the king’s command because of your sacred oath.",
+            "Rotherham": "I [said], The bidding of the king, observe thou, even out of regard to the oath of God."
+          }
+        },
+        {
+          "num": 3,
+          "text": {
+            "NRSV": "Do not be terrified; go from his presence, do not delay when the matter is unpleasant, for he does whatever he pleases.",
+            "Rotherham": "Not rashly from his presence, shouldst thou go: do not take thy stand in a vexatious thing,—for, whatsoever he pleaseth, he will do."
+          }
+        },
+        {
+          "num": 4,
+          "text": {
+            "NRSV": "For the word of the king is powerful, and who can say to him, “What are you doing?”",
+            "Rotherham": "Where the word of a king is, there is power,—who then may say to him, What wouldst thou do?"
+          }
+        },
+        {
+          "num": 5,
+          "text": {
+            "NRSV": "Whoever keeps a command will know no evil thing, and the wise mind will know the time and way.",
+            "Rotherham": "He that observeth the commandment, will not notice a vexatious thing,—and, of time and manner, will the heart of the wise take note. "
+          }
+        },
+        {
+          "num": 6,
+          "text": {
+            "NRSV": "For every matter has its time and way, although the troubles of mortals lie heavy upon them.",
+            "Rotherham": " For, to every pursuit, there is a time and a manner,—when, the vexation of man, is great concerning it."
+          }
+        },
+        {
+          "num": 7,
+          "text": {
+            "NRSV": "Indeed, they do not know what is to be, for who can tell them how it will be?",
+            "Rotherham": "For there is no one who knoweth what shall be, for, when it shall be, who will tell him?"
+          }
+        },
+        {
+          "num": 8,
+          "text": {
+            "NRSV": "No one has power over the wind to restrain the wind, or power over the day of death; there is no discharge from the battle, nor does wickedness deliver those who practice it.",
+            "Rotherham": "No man, hath power over the spirit, to retain the spirit, and, none, hath power over the day of death, and there is no furlough in war,—neither shall lawlessness deliver them who are given thereto. "
+          }
+        },
+        {
+          "num": 9,
+          "text": {
+            "NRSV": "All this I observed while applying my mind to all that is done under the sun, while one person exercises authority over another to the other’s hurt.",
+            "Rotherham": " All this, had I seen, and tried to apply my heart to every work which was done under the sun,—at such time as one man had power over another man, to his hurt."
+          }
+        },
+        {
+          "num": 10,
+          "text": {
+            "NRSV": "Then I saw the wicked buried; they used to go in and out of the holy place, and were praised in the city where they had done such things. This also is vanity.",
+            "Rotherham": "And, thereupon, I considered the lawless when buried, when they had entered, [their graves], that, from the place of the Holy One, they used to go and boast in the city that they had so done,—even this, was vanity."
+          }
+        },
+        {
+          "num": 11,
+          "text": {
+            "NRSV": "Because sentence against an evil deed is not executed speedily, the human heart is fully set to do evil.",
+            "Rotherham": "Because sentence against a wicked work is not executed speedily—on this account, the heart of the sons of men is fully set within them, to commit wickedness."
+          }
+        },
+        {
+          "num": 12,
+          "text": {
+            "NRSV": "Though sinners do evil a hundred times and prolong their lives, yet I know that it will be well with those who fear God, because they stand in awe before him;",
+            "Rotherham": "Though a sinner be committing wickedness a hundred times, and continuing long in his own way, yet I surely know that it shall be well to them who revere God, who stand in awe before him;"
+          }
+        },
+        {
+          "num": 13,
+          "text": {
+            "NRSV": "but it will not be well with the wicked, neither will they prolong their days like a shadow, because they do not stand in awe before God.",
+            "Rotherham": "but, well, shall it not be to the lawless man, neither shall he lengthen out his days like a shadow,—because he standeth not in awe before God. "
+          }
+        },
+        {
+          "num": 14,
+          "text": {
+            "NRSV": "There is a vanity that takes place on earth, that there are righteous people who are treated according to the conduct of the wicked, and there are wicked people who are treated according to the conduct of the righteous. I said that this also is vanity.",
+            "Rotherham": " Here was a vain thing which was done upon the earth—that there were righteous men unto whom it happened according to the work of the lawless, and there were lawless men, unto whom it happened according to the work of the righteous,—I said, that, even this, was vanity."
+          }
+        },
+        {
+          "num": 15,
+          "text": {
+            "NRSV": "So I commend enjoyment, for there is nothing better for people under the sun than to eat and drink and enjoy themselves, for this will go with them in their toil through the days of life that God gives them under the sun.",
+            "Rotherham": "Then extolled I, gladness, in that there was nothing better for a man, under the sun, than to eat and to drink, and to be glad,—since, that, should tarry with him in his toil, for the days of his life which God had given him under the sun."
+          }
+        },
+        {
+          "num": 16,
+          "text": {
+            "NRSV": "When I applied my mind to know wisdom, and to see the business that is done on earth, how one’s eyes see sleep neither day nor night,",
+            "Rotherham": "When I gave my heart, to know wisdom, and to consider the business that was done upon the earth, then surely, by day and by night, there was one who suffered not his eyes, to sleep."
+          }
+        },
+        {
+          "num": 17,
+          "text": {
+            "NRSV": "then I saw all the work of God, that no one can find out what is happening under the sun. However much they may toil in searching, they will not find it out; even though those who are wise claim to know, they cannot find it out.",
+            "Rotherham": "Then I considered all the work of God, that man could not find out the work that was done under the sun, inasmuch as man toileth in seeking and yet cannot find,—yea, even though the wise man should say he knoweth, yet can he not find it out.  "
+          }
+        }
       ]
     },
     {
       "num": 9,
       "verses": [
-        { "num": 1, "text": "All this I laid to heart, examining it all, how the righteous and the wise and their deeds are in the hand of God; whether it is love or hate one does not know. Everything that confronts them" },
-        { "num": 2, "text": "is the same for all, since one fate comes to all, to the righteous and the wicked, to the good and the evil, to the clean and the unclean, to those who sacrifice and those who do not sacrifice. As are the good, so are the sinners; and those who swear are like those who shun an oath." },
-        { "num": 3, "text": "This is an evil in all that happens under the sun, that the same fate comes to everyone. Moreover, the hearts of all are full of evil; madness is in their hearts while they live, and after that they go to the dead." },
-        { "num": 4, "text": "But whoever is joined with all the living has hope, for a living dog is better than a dead lion." },
-        { "num": 5, "text": "The living know that they will die, but the dead know nothing; they have no more reward, and even the memory of them is lost." },
-        { "num": 6, "text": "Their love and their hate and their envy have already perished; never again will they have any share in all that happens under the sun." },
-        { "num": 7, "text": "Go, eat your bread with enjoyment, and drink your wine with a merry heart; for God has long ago approved what you do." },
-        { "num": 8, "text": "Let your garments always be white; do not let oil be lacking on your head." },
-        { "num": 9, "text": "Enjoy life with the wife whom you love, all the days of your vain life that are given you under the sun, because that is your lot in life and in your toil at which you toil under the sun." },
-        { "num": 10, "text": "Whatever your hand finds to do, do with your might; for there is no work or thought or knowledge or wisdom in Sheol, to which you are going." },
-        { "num": 11, "text": "Again I saw that under the sun the race is not to the swift, nor the battle to the strong, nor bread to the wise, nor riches to the intelligent, nor favor to the skillful; but time and chance happen to them all." },
-        { "num": 12, "text": "For no one can anticipate the time of disaster. Like fish enumerated in a fatal net, and like birds caught in a snare, so mortals are snared at a time of calamity, when it suddenly falls upon them." },
-        { "num": 13, "text": "I have also seen this example of wisdom under the sun, and it seemed great to me." },
-        { "num": 14, "text": "There was a little city with few people in it. A great king came against it and besieged it, building great siegeworks against it." },
-        { "num": 15, "text": "Now there was found in it a poor wise man, and he by his wisdom delivered the city. Yet no one remembered that poor man." },
-        { "num": 16, "text": "So I said, “Wisdom is better than might; yet the poor man’s wisdom is despised, and his words are not heeded.”" },
-        { "num": 17, "text": "The quiet words of the wise are more to be heeded than the shouting of a ruler among fools." },
-        { "num": 18, "text": "Wisdom is better than weapons of war, but one sinner destroys much good." }
+        {
+          "num": 1,
+          "text": {
+            "NRSV": "All this I laid to heart, examining it all, how the righteous and the wise and their deeds are in the hand of God; whether it is love or hate one does not know. Everything that confronts them",
+            "Rotherham": "For, unto all this, I applied my heart, and, my heart, considered all this, that, the righteous and the wise and their servants, were in the hand of God,—neither love nor hatred, could any man know, every one, was before Him."
+          }
+        },
+        {
+          "num": 2,
+          "text": {
+            "NRSV": "is the same for all, since one fate comes to all, to the righteous and the wicked, to the good and the evil, to the clean and the unclean, to those who sacrifice and those who do not sacrifice. As are the good, so are the sinners; and those who swear are like those who shun an oath.",
+            "Rotherham": "Every one, was like every one else, one destiny, had the righteous and the lawless, the good and the pure and the impure, and he that sacrificed, and he that did not sacrifice,—as the good man, so, the sinner, he that took an oath, as he who, of an oath, stood in fear."
+          }
+        },
+        {
+          "num": 3,
+          "text": {
+            "NRSV": "This is an evil in all that happens under the sun, that the same fate comes to everyone. Moreover, the hearts of all are full of evil; madness is in their hearts while they live, and after that they go to the dead.",
+            "Rotherham": "This was a misfortune in all that was done under the sun, that, one destiny, had they all,—yea also, the heart of the sons of men, was full of wickedness, and, madness, was in their heart, while they lived, and, after that, [they went] unto the dead. "
+          }
+        },
+        {
+          "num": 4,
+          "text": {
+            "NRSV": "But whoever is joined with all the living has hope, for a living dog is better than a dead lion.",
+            "Rotherham": " For, whosoever was united to all the living, for him, there was hope,—inasmuch as, a living dog, fared better than a dead lion."
+          }
+        },
+        {
+          "num": 5,
+          "text": {
+            "NRSV": "The living know that they will die, but the dead know nothing; they have no more reward, and even the memory of them is lost.",
+            "Rotherham": "For, the living, knew that they should die,—but, the dead, knew not, anything, neither had they any longer a reward, because forgotten was their memory."
+          }
+        },
+        {
+          "num": 6,
+          "text": {
+            "NRSV": "Their love and their hate and their envy have already perished; never again will they have any share in all that happens under the sun.",
+            "Rotherham": "Both their love and their hatred and their envy, already had perished,—and, portion, had they none any longer, unto times age-abiding, in aught that was done under the sun."
+          }
+        },
+        {
+          "num": 7,
+          "text": {
+            "NRSV": "Go, eat your bread with enjoyment, and drink your wine with a merry heart; for God has long ago approved what you do.",
+            "Rotherham": "Go thy way—eat, with gladness, thy food, and drink, with a happy heart, thy wine,—when already God is well pleased with thy works."
+          }
+        },
+        {
+          "num": 8,
+          "text": {
+            "NRSV": "Let your garments always be white; do not let oil be lacking on your head.",
+            "Rotherham": "Continually, let thy garments be white,—and, ointment upon thy head, let it not be lacking."
+          }
+        },
+        {
+          "num": 9,
+          "text": {
+            "NRSV": "Enjoy life with the wife whom you love, all the days of your vain life that are given you under the sun, because that is your lot in life and in your toil at which you toil under the sun.",
+            "Rotherham": "Enjoy life, with thy wife whom thou lovest, all the days of thy life of vanity, which he hath given thee under the sun, all thy days of vanity,—for, that, is thy portion in life, and in thy toil wherewith, thou, art toiling under the sun."
+          }
+        },
+        {
+          "num": 10,
+          "text": {
+            "NRSV": "Whatever your hand finds to do, do with your might; for there is no work or thought or knowledge or wisdom in Sheol, to which you are going.",
+            "Rotherham": "Whatsoever thy hand findeth to do, with thy might, do,—for there is no work nor calculation nor knowledge nor wisdom, in hades, whither, thou, art going. "
+          }
+        },
+        {
+          "num": 11,
+          "text": {
+            "NRSV": "Again I saw that under the sun the race is not to the swift, nor the battle to the strong, nor bread to the wise, nor riches to the intelligent, nor favor to the skillful; but time and chance happen to them all.",
+            "Rotherham": " I again saw under the sun, that not, to the swift, was the race, nor, to the strong, the battle, nay! nor, to the wise, food, nor yet, to the intelligent, riches, nor, even to the well-informed, comeliness,—for, time and accident, happened to them all."
+          }
+        },
+        {
+          "num": 12,
+          "text": {
+            "NRSV": "For no one can anticipate the time of disaster. Like fish enumerated in a fatal net, and like birds caught in a snare, so mortals are snared at a time of calamity, when it suddenly falls upon them.",
+            "Rotherham": "For, indeed, man could not know his own time, like fishes which were caught in a cruel net, and like little birds which were caught in a trap,—like them, were ensnared the sons of men, by a time of misfortune, when it fell upon them suddenly. "
+          }
+        },
+        {
+          "num": 13,
+          "text": {
+            "NRSV": "I have also seen this example of wisdom under the sun, and it seemed great to me.",
+            "Rotherham": " Even this, had I seen of wisdom, under the sun,—and, of great import, was the same unto me:—"
+          }
+        },
+        {
+          "num": 14,
+          "text": {
+            "NRSV": "There was a little city with few people in it. A great king came against it and besieged it, building great siegeworks against it.",
+            "Rotherham": "A little city, and men therein few,—and there came against it a great king, and surrounded it, and built against it large siege-works;"
+          }
+        },
+        {
+          "num": 15,
+          "text": {
+            "NRSV": "Now there was found in it a poor wise man, and he by his wisdom delivered the city. Yet no one remembered that poor man.",
+            "Rotherham": "but there was found therein, a man, poor [but] wise, and, he, delivered the city by his wisdom,—yet, no one, remembered that poor man."
+          }
+        },
+        {
+          "num": 16,
+          "text": {
+            "NRSV": "So I said, “Wisdom is better than might; yet the poor man’s wisdom is despised, and his words are not heeded.”",
+            "Rotherham": "Then said, I, Better is wisdom than strength,—although, the wisdom of the poor man, be despised, and, his words, not heard."
+          }
+        },
+        {
+          "num": 17,
+          "text": {
+            "NRSV": "The quiet words of the wise are more to be heeded than the shouting of a ruler among fools.",
+            "Rotherham": "The words of the wise, in quietness, are heard,—beyond the outcry of one who ruleth over dullards."
+          }
+        },
+        {
+          "num": 18,
+          "text": {
+            "NRSV": "Wisdom is better than weapons of war, but one sinner destroys much good.",
+            "Rotherham": "Better is wisdom, than weapons of war,—but, one sinner, may destroy much good.  "
+          }
+        }
       ]
     },
     {
       "num": 10,
       "verses": [
-        { "num": 1, "text": "Dead flies make the perfumer’s ointment give off a fetid odor; so a little folly outweighs wisdom and honor." },
-        { "num": 2, "text": "The heart of the wise inclines to the right, but the heart of a fool to the left." },
-        { "num": 3, "text": "Even when fools walk along the road, they lack sense, and they show everyone that they are fools." },
-        { "num": 4, "text": "If the anger of the ruler rises against you, do not leave your post, for calmness will lay great offenses to rest." },
-        { "num": 5, "text": "There is an evil that I have seen under the sun, as it were an error proceeding from the ruler:" },
-        { "num": 6, "text": "folly is set in many high places, and the rich sit in a low place." },
-        { "num": 7, "text": "I have seen slaves on horseback, and princes walking on foot like slaves." },
-        { "num": 8, "text": "Whoever digs a pit will fall into it; and whoever breaks through a wall will be bitten by a snake." },
-        { "num": 9, "text": "Whoever quarries stones will be hurt by them; and whoever splits logs will be endangered by them." },
-        { "num": 10, "text": "If the iron is blunt, and one does not whet the edge, then more strength must be exerted; but wisdom helps one to succeed." },
-        { "num": 11, "text": "If the snake bites before it is charmed, there is no advantage in a charmer." },
-        { "num": 12, "text": "Words spoken by the wise bring them favor, but the lips of fools consume them." },
-        { "num": 13, "text": "The beginning of their words is folly, and the end of their talk is wicked madness;" },
-        { "num": 14, "text": "yet fools talk on and on. No one knows what is to happen, and who can tell them what will be after them?" },
-        { "num": 15, "text": "The toil of fools wears them out, for they do not even know the way to town." },
-        { "num": 16, "text": "Alas for you, O land, when your king is a lad, and your princes feast in the morning!" },
-        { "num": 17, "text": "Happy are you, O land, when your king is a nobleman, and your princes feast at the proper time—for strength, and not for drunkenness!" },
-        { "num": 18, "text": "Through sloth the roof sinks in, and through indolence the house leaks." },
-        { "num": 19, "text": "Feasts are made for laughter; wine gladdens life, and money answers everything." },
-        { "num": 20, "text": "Do not curse the king, even in your thoughts, or curse the rich, even in your bedroom; for a bird of the air may carry your voice, or some winged creature tell the matter." }
+        {
+          "num": 1,
+          "text": {
+            "NRSV": "Dead flies make the perfumer’s ointment give off a fetid odor; so a little folly outweighs wisdom and honor.",
+            "Rotherham": "Dead flies, cause to stink [and] ferment, the oil of the perfumer,—More costly than wisdom or honour, is a little folly."
+          }
+        },
+        {
+          "num": 2,
+          "text": {
+            "NRSV": "The heart of the wise inclines to the right, but the heart of a fool to the left.",
+            "Rotherham": "The sense of the wise, is on his right hand,—But, the sense of the dullard, on his left:"
+          }
+        },
+        {
+          "num": 3,
+          "text": {
+            "NRSV": "Even when fools walk along the road, they lack sense, and they show everyone that they are fools.",
+            "Rotherham": "Yea, even by the way, as the foolish man walketh along, his sense faileth him—and he telleth everyone that, foolish, is he! "
+          }
+        },
+        {
+          "num": 4,
+          "text": {
+            "NRSV": "If the anger of the ruler rises against you, do not leave your post, for calmness will lay great offenses to rest.",
+            "Rotherham": " If, the spirit of a ruler, riseth up against thee, thy place, do not leave, for gentleness, pacifieth such as have greatly erred."
+          }
+        },
+        {
+          "num": 5,
+          "text": {
+            "NRSV": "There is an evil that I have seen under the sun, as it were an error proceeding from the ruler:",
+            "Rotherham": "Here was a misfortune I had seen under the sun,—a veritable mistake that was going forth from the presence of one who had power:"
+          }
+        },
+        {
+          "num": 6,
+          "text": {
+            "NRSV": "folly is set in many high places, and the rich sit in a low place.",
+            "Rotherham": "Folly placed in great dignity,—while, the rich, in a low place, took their seat:"
+          }
+        },
+        {
+          "num": 7,
+          "text": {
+            "NRSV": "I have seen slaves on horseback, and princes walking on foot like slaves.",
+            "Rotherham": "I had seen, servants, upon horses,—and, rulers, walking like servants, on the ground."
+          }
+        },
+        {
+          "num": 8,
+          "text": {
+            "NRSV": "Whoever digs a pit will fall into it; and whoever breaks through a wall will be bitten by a snake.",
+            "Rotherham": "He that diggeth a pit, thereinto, may fall,—and, he that breaketh through a hedge, there may bite him a serpent."
+          }
+        },
+        {
+          "num": 9,
+          "text": {
+            "NRSV": "Whoever quarries stones will be hurt by them; and whoever splits logs will be endangered by them.",
+            "Rotherham": "He that removeth stones, may be hurt therewith,—and he that cleaveth wood, may be endangered thereby."
+          }
+        },
+        {
+          "num": 10,
+          "text": {
+            "NRSV": "If the iron is blunt, and one does not whet the edge, then more strength must be exerted; but wisdom helps one to succeed.",
+            "Rotherham": "If, blunt, be the iron, and, himself, hath not sharpened, the edge, then, much force, must he apply,—but, an advantage for giving success, is wisdom."
+          }
+        },
+        {
+          "num": 11,
+          "text": {
+            "NRSV": "If the snake bites before it is charmed, there is no advantage in a charmer.",
+            "Rotherham": "If a serpent will bite, unless he is charmed, then there is nothing better for him that owneth a tongue. "
+          }
+        },
+        {
+          "num": 12,
+          "text": {
+            "NRSV": "Words spoken by the wise bring them favor, but the lips of fools consume them.",
+            "Rotherham": " The words of a wise man’s mouth, are pleasant,—but, the lips of a dullard, will swallow him up:"
+          }
+        },
+        {
+          "num": 13,
+          "text": {
+            "NRSV": "The beginning of their words is folly, and the end of their talk is wicked madness;",
+            "Rotherham": "The beginning of the words of his mouth, is folly,—but, the latter end of his speech, is mischievous madness."
+          }
+        },
+        {
+          "num": 14,
+          "text": {
+            "NRSV": "yet fools talk on and on. No one knows what is to happen, and who can tell them what will be after them?",
+            "Rotherham": "Yet, a foolish man, multiplieth words,—[though] no man knoweth that which hath been, and, that which shall be after him, who can tell him?"
+          }
+        },
+        {
+          "num": 15,
+          "text": {
+            "NRSV": "The toil of fools wears them out, for they do not even know the way to town.",
+            "Rotherham": "The toil of dullards, shall weary a man, that he knoweth not how to go into the city. "
+          }
+        },
+        {
+          "num": 16,
+          "text": {
+            "NRSV": "Alas for you, O land, when your king is a lad, and your princes feast in the morning!",
+            "Rotherham": " Alas! for thee, O land, when thy king is a boy,—and, thy rulers, in the morning, do eat:"
+          }
+        },
+        {
+          "num": 17,
+          "text": {
+            "NRSV": "Happy are you, O land, when your king is a nobleman, and your princes feast at the proper time—for strength, and not for drunkenness!",
+            "Rotherham": "How happy art thou, O land, when thy king is a son of nobles,—and, thy rulers, in season, do eat, for strength, and not for debauchery."
+          }
+        },
+        {
+          "num": 18,
+          "text": {
+            "NRSV": "Through sloth the roof sinks in, and through indolence the house leaks.",
+            "Rotherham": "By two lazy arms, the framework sinketh in,—and, by the hanging down of the hands, the house may leak."
+          }
+        },
+        {
+          "num": 19,
+          "text": {
+            "NRSV": "Feasts are made for laughter; wine gladdens life, and money answers everything.",
+            "Rotherham": "Merrily people make bread, and, wine, gladdeneth life,—but, money, answereth all things."
+          }
+        },
+        {
+          "num": 20,
+          "text": {
+            "NRSV": "Do not curse the king, even in your thoughts, or curse the rich, even in your bedroom; for a bird of the air may carry your voice, or some winged creature tell the matter.",
+            "Rotherham": "Even in thy thought, do not revile, the king, nor, within thy bed-chambers, revile thou the rich,—for, a bird of the heavens, might carry the voice, yea, an owner of wings, might tell the matter.  "
+          }
+        }
       ]
     },
     {
       "num": 11,
       "verses": [
-        { "num": 1, "text": "Send out your bread upon the waters, for after many days you will get it back." },
-        { "num": 2, "text": "Divide your means seven ways, or even eight, for you do not know what disaster may happen on earth." },
-        { "num": 3, "text": "When clouds are full, they empty rain on the earth; whether a tree falls to the south or to the north, in the place where the tree falls, there it will lie." },
-        { "num": 4, "text": "Whoever watches the wind will not sow; and whoever looks at the clouds will not reap." },
-        { "num": 5, "text": "Just as you do not know how the breath comes to the bones in the mother’s womb, so you do not know the work of God, who makes everything." },
-        { "num": 6, "text": "In the morning sow your seed, and at evening do not let your hands be idle; for you do not know which will prosper, this or that, or whether both alike will be good." },
-        { "num": 7, "text": "Light is sweet, and it is pleasant for the eyes to see the sun." },
-        { "num": 8, "text": "Even those who live many years should rejoice in them all; yet let them remember that the days of darkness will be many. All that comes is vanity." },
-        { "num": 9, "text": "Rejoice, young man, while you are young, and let your heart cheer you in the days of your youth. Follow the inclination of your heart and the desire of your eyes, but know that for all these things God will bring you into judgment." },
-        { "num": 10, "text": "Banish anxiety from your mind, and put away pain from your body; for youth and the dawn of life are vanity." }
+        {
+          "num": 1,
+          "text": {
+            "NRSV": "Send out your bread upon the waters, for after many days you will get it back.",
+            "Rotherham": "Cast thy bread-corn, upon the face of the waters,—for, after many days, shalt thou find it:"
+          }
+        },
+        {
+          "num": 2,
+          "text": {
+            "NRSV": "Divide your means seven ways, or even eight, for you do not know what disaster may happen on earth.",
+            "Rotherham": "Give a portion to seven, yea even to eight,—for thou canst not know, what there shall be of misfortune, upon the earth."
+          }
+        },
+        {
+          "num": 3,
+          "text": {
+            "NRSV": "When clouds are full, they empty rain on the earth; whether a tree falls to the south or to the north, in the place where the tree falls, there it will lie.",
+            "Rotherham": "If the clouds be filled with a downpour, upon the earth, will they empty themselves, and, if a tree fall in the south or in the north, in the place where the tree falleth, there will it be found."
+          }
+        },
+        {
+          "num": 4,
+          "text": {
+            "NRSV": "Whoever watches the wind will not sow; and whoever looks at the clouds will not reap.",
+            "Rotherham": "He that observeth the wind, will not sow,—and, he that watcheth the clouds, will not reap."
+          }
+        },
+        {
+          "num": 5,
+          "text": {
+            "NRSV": "Just as you do not know how the breath comes to the bones in the mother’s womb, so you do not know the work of God, who makes everything.",
+            "Rotherham": "Just as thou knowest not what is the way of the spirit, when the body is in the womb of her that is with child, even, so, canst thou not know the work of God, who maketh all."
+          }
+        },
+        {
+          "num": 6,
+          "text": {
+            "NRSV": "In the morning sow your seed, and at evening do not let your hands be idle; for you do not know which will prosper, this or that, or whether both alike will be good.",
+            "Rotherham": "In the morning, sow thy seed, and, until evening, do not withhold thy hand,—for thou knowest not—whether shall thrive, either this or that, or whether, both alike, shall be fruitful. "
+          }
+        },
+        {
+          "num": 7,
+          "text": {
+            "NRSV": "Light is sweet, and it is pleasant for the eyes to see the sun.",
+            "Rotherham": " Truly sweet is the light,—and, pleasant to the eyes, to see the sun:"
+          }
+        },
+        {
+          "num": 8,
+          "text": {
+            "NRSV": "Even those who live many years should rejoice in them all; yet let them remember that the days of darkness will be many. All that comes is vanity.",
+            "Rotherham": "But, though, many years, a man live, through them all, let him rejoice; yet let him remember the days of darkness, for many they may be, all that cometh, may be vanity."
+          }
+        },
+        {
+          "num": 9,
+          "text": {
+            "NRSV": "Rejoice, young man, while you are young, and let your heart cheer you in the days of your youth. Follow the inclination of your heart and the desire of your eyes, but know that for all these things God will bring you into judgment.",
+            "Rotherham": "Rejoice, O young man, in thy youth, and let thy heart gladden thee in the days of thine early manhood, and walk thou—in the ways of thine own heart, and in that which is seen by thine own eyes,—yet know, that, for all these things, will God bring thee into judgment."
+          }
+        },
+        {
+          "num": 10,
+          "text": {
+            "NRSV": "Banish anxiety from your mind, and put away pain from your body; for youth and the dawn of life are vanity.",
+            "Rotherham": "Therefore remove thou vexation from thy heart, and put away discomfort from thy flesh,—for, youth and dawn, are vanity!  "
+          }
+        }
       ]
     },
     {
       "num": 12,
       "verses": [
-        { "num": 1, "text": "Remember your creator in the days of your youth, before the days of trouble come, and the years draw near when you will say, “I have no pleasure in them”;" },
-        { "num": 2, "text": "before the sun and the light and the moon and the stars are darkened and the clouds return with the rain;" },
-        { "num": 3, "text": "in the day when the keepers of the house tremble, and the strong men are bent, and the women who grind cease because they are few, and those who look through the windows see dimly;" },
-        { "num": 4, "text": "when the doors on the street are shut, and the sound of the grinding is low, and one rises up at the voice of a bird, and all the daughters of song are brought low;" },
-        { "num": 5, "text": "when one is afraid of heights, and terrors are in the road; the almond tree blossoms, the grasshopper drags itself along and desire fails; because all must go to their eternal home, and the mourners go about the streets;" },
-        { "num": 6, "text": "before the silver cord is snapped, and the golden bowl is broken, and the pitcher is broken at the fountain, and the wheel broken at the cistern," },
-        { "num": 7, "text": "and the dust returns to the earth as it was, and the breath returns to God who gave it." },
-        { "num": 8, "text": "Vanity of vanities, says the Teacher; all is vanity." },
-        { "num": 9, "text": "Besides being wise, the Teacher also taught the people knowledge, weighing and studying and arranging many proverbs." },
-        { "num": 10, "text": "The Teacher sought to find pleasing words, and he wrote words of truth plainly." },
-        { "num": 11, "text": "The sayings of the wise are like goads, and like nails firmly fixed are the collected sayings that are given by one shepherd." },
-        { "num": 12, "text": "Of anything beyond these, my child, beware. Of making many books there is no end, and much study is a weariness of the flesh." },
-        { "num": 13, "text": "The end of the matter; all has been heard. Fear God, and keep his commandments; for this is the whole duty of everyone." },
-        { "num": 14, "text": "For God will bring every deed into judgment, including every secret thing, whether good or evil." }
+        {
+          "num": 1,
+          "text": {
+            "NRSV": "Remember your creator in the days of your youth, before the days of trouble come, and the years draw near when you will say, “I have no pleasure in them”;",
+            "Rotherham": "Yet remember thy Creator, in the days of thy vigour,—or ever come in, the days of discomfort, and the years arrive, in which thou shalt say—I have, in them, no pleasure;"
+          }
+        },
+        {
+          "num": 2,
+          "text": {
+            "NRSV": "before the sun and the light and the moon and the stars are darkened and the clouds return with the rain;",
+            "Rotherham": "Or ever be darkened—the sun, and the light, and the moon, and the stars,—and the clouds return after a downpour of rain;"
+          }
+        },
+        {
+          "num": 3,
+          "text": {
+            "NRSV": "in the day when the keepers of the house tremble, and the strong men are bent, and the women who grind cease because they are few, and those who look through the windows see dimly;",
+            "Rotherham": "In the day when the keepers of the house shall tremble, and the men of might bow themselves,—and the grinders cease because they are few, and they who look through the windows are darkened;"
+          }
+        },
+        {
+          "num": 4,
+          "text": {
+            "NRSV": "when the doors on the street are shut, and the sound of the grinding is low, and one rises up at the voice of a bird, and all the daughters of song are brought low;",
+            "Rotherham": "And the doors in the street be closed, when the sound of the mill become low,—and one rise at the chirp of a small bird, and low-voiced be all the daughters of song;"
+          }
+        },
+        {
+          "num": 5,
+          "text": {
+            "NRSV": "when one is afraid of heights, and terrors are in the road; the almond tree blossoms, the grasshopper drags itself along and desire fails; because all must go to their eternal home, and the mourners go about the streets;",
+            "Rotherham": "Yea, at what is high, they be in fear, and there be, terrors, in the way, and the almond be rejected, and the grasshopper drag itself along, and desire perish,—for man is going to his age-abiding home, when the wailers shall go round in the streets;"
+          }
+        },
+        {
+          "num": 6,
+          "text": {
+            "NRSV": "before the silver cord is snapped, and the golden bowl is broken, and the pitcher is broken at the fountain, and the wheel broken at the cistern,",
+            "Rotherham": "Or ever the silver cord be loosed, or the golden bowl be broken,—or the bucket by the fountain be shivered, or the wheel at the well be broken;"
+          }
+        },
+        {
+          "num": 7,
+          "text": {
+            "NRSV": "and the dust returns to the earth as it was, and the breath returns to God who gave it.",
+            "Rotherham": "And the dust return to the earth, as it was,—and, the spirit, return unto God, who gave it. "
+          }
+        },
+        {
+          "num": 8,
+          "text": {
+            "NRSV": "Vanity of vanities, says the Teacher; all is vanity.",
+            "Rotherham": " Vanity of vanities, saith the Proclaimer, all, is vanity."
+          }
+        },
+        {
+          "num": 9,
+          "text": {
+            "NRSV": "Besides being wise, the Teacher also taught the people knowledge, weighing and studying and arranging many proverbs.",
+            "Rotherham": "Besides that, the Proclaimer being wise,—still further taught knowledge unto the people, and weighed and searched, arranged proverbs in abundance."
+          }
+        },
+        {
+          "num": 10,
+          "text": {
+            "NRSV": "The Teacher sought to find pleasing words, and he wrote words of truth plainly.",
+            "Rotherham": "The Proclaimer sought to find out words giving delight, and to note down rightly, the words of truth."
+          }
+        },
+        {
+          "num": 11,
+          "text": {
+            "NRSV": "The sayings of the wise are like goads, and like nails firmly fixed are the collected sayings that are given by one shepherd.",
+            "Rotherham": "The words of the wise, are as goads, yea, as driven nails, their well-ordered sayings,—given from one shepherd."
+          }
+        },
+        {
+          "num": 12,
+          "text": {
+            "NRSV": "Of anything beyond these, my child, beware. Of making many books there is no end, and much study is a weariness of the flesh.",
+            "Rotherham": "And besides, from them, my son, be admonished,—Of making many books, there is no end, and, much study, is a weariness of the flesh. "
+          }
+        },
+        {
+          "num": 13,
+          "text": {
+            "NRSV": "The end of the matter; all has been heard. Fear God, and keep his commandments; for this is the whole duty of everyone.",
+            "Rotherham": " The conclusion of the matter—the whole, let us hear,—Towards God, be reverent, and, his commandments, observe, for, this, [concerneth] all mankind."
+          }
+        },
+        {
+          "num": 14,
+          "text": {
+            "NRSV": "For God will bring every deed into judgment, including every secret thing, whether good or evil.",
+            "Rotherham": "For, every work, will God bring into judgment, with every hidden thing,—whether good, or evil.   "
+          }
+        }
       ]
     }
-  ]
+  ],
+  "schema": "bible_book_multiversion_v1"
 }

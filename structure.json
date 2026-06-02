@@ -2217,7 +2217,7 @@
     "rotherham_bible_translation": {
       "id": "rotherham_bible_translation_side_project",
       "date": "2026-06-02",
-      "status": "minor_prophets_imported",
+      "status": "short_wisdom_books_imported",
       "translationKeyCandidate": "Rotherham",
       "sourceName": "The Emphasised Bible / The Emphasized Bible",
       "scopeIntent": [
@@ -2232,7 +2232,7 @@
       "schemaGate": "documentation/bible-book-multiversion-schema-v1.json",
       "resolverCompatibilityCommit": "0af6124 Add Scripture resolver translation compatibility",
       "requiredPreflight": "npm run audit:bible-corpus-structure",
-      "nextStep": "Review Minor Prophets import and decide next bounded tranche from aligned books; Psalms and alignment blockers remain separate.",
+      "nextStep": "Run post-import alignment map, then choose next bounded aligned-book import tranche; Psalms and alignment blockers remain separate.",
       "sourceWitnessRecord": "documentation/rotherham-source-witness-intake.json",
       "sourceUrl": "https://raw.githubusercontent.com/scrollmapper/bible_databases/2025/formats/json/Rotherham.json",
       "sourceSha256": "d63488b149aadf4430fea6ddbc7c07395a12321a1b58799ce2dcb384ebf97627",
@@ -2246,159 +2246,75 @@
       "currentGate": "Source witness is confirmed. Next gate is a bounded pilot import plan, preferably one ordinary book, with source SHA verification and no hardcoded text-bearing patch script.",
       "pilotBook": "Joshua",
       "pilotFile": "data/bible/OT/joshua.json",
-      "importedVerseCount": 1050,
-      "migratedScalarNRSVVerseCount": 1050,
+      "importedVerseCount": 745,
+      "migratedScalarNRSVVerseCount": 745,
       "pilotVerification": {
         "rotherhamVerseCount": 658,
         "yahwehCount": 224,
         "jehovahCount": 0
       },
-      "latestImportTranche": "minor_prophets",
+      "latestImportTranche": "short_wisdom_books",
       "importedBooks": [
-        "Hosea",
-        "Joel",
-        "Amos",
-        "Obadiah",
-        "Jonah",
-        "Micah",
-        "Nahum",
-        "Habakkuk",
-        "Zephaniah",
-        "Haggai",
-        "Zechariah",
-        "Malachi"
+        "Ruth",
+        "Esther",
+        "Ecclesiastes",
+        "Song of Solomon",
+        "Lamentations"
       ],
-      "yahwehCount": 507,
+      "yahwehCount": 50,
       "bookStats": {
-        "Hosea": {
-          "file": "data/bible/OT/hosea.json",
-          "chapters": 14,
-          "importedVerseCount": 197,
-          "migratedScalarNRSVVerseCount": 197,
-          "verification": {
-            "rotherhamVerseCount": 197,
-            "yahwehCount": 46,
-            "jehovahCount": 0
-          }
-        },
-        "Joel": {
-          "file": "data/bible/OT/joel.json",
-          "chapters": 3,
-          "importedVerseCount": 73,
-          "migratedScalarNRSVVerseCount": 73,
-          "verification": {
-            "rotherhamVerseCount": 73,
-            "yahwehCount": 33,
-            "jehovahCount": 0
-          }
-        },
-        "Amos": {
-          "file": "data/bible/OT/amos.json",
-          "chapters": 9,
-          "importedVerseCount": 146,
-          "migratedScalarNRSVVerseCount": 146,
-          "verification": {
-            "rotherhamVerseCount": 146,
-            "yahwehCount": 81,
-            "jehovahCount": 0
-          }
-        },
-        "Obadiah": {
-          "file": "data/bible/OT/obadiah.json",
-          "chapters": 1,
-          "importedVerseCount": 21,
-          "migratedScalarNRSVVerseCount": 21,
-          "verification": {
-            "rotherhamVerseCount": 21,
-            "yahwehCount": 7,
-            "jehovahCount": 0
-          }
-        },
-        "Jonah": {
-          "file": "data/bible/OT/jonah.json",
+        "Ruth": {
+          "file": "data/bible/OT/ruth.json",
           "chapters": 4,
-          "importedVerseCount": 48,
-          "migratedScalarNRSVVerseCount": 48,
+          "importedVerseCount": 85,
+          "migratedScalarNRSVVerseCount": 85,
           "verification": {
-            "rotherhamVerseCount": 48,
-            "yahwehCount": 26,
+            "rotherhamVerseCount": 85,
+            "yahwehCount": 18,
             "jehovahCount": 0
           }
         },
-        "Micah": {
-          "file": "data/bible/OT/micah.json",
-          "chapters": 7,
-          "importedVerseCount": 105,
-          "migratedScalarNRSVVerseCount": 105,
+        "Esther": {
+          "file": "data/bible/OT/esther.json",
+          "chapters": 10,
+          "importedVerseCount": 167,
+          "migratedScalarNRSVVerseCount": 167,
           "verification": {
-            "rotherhamVerseCount": 105,
-            "yahwehCount": 40,
+            "rotherhamVerseCount": 167,
+            "yahwehCount": 0,
             "jehovahCount": 0
           }
         },
-        "Nahum": {
-          "file": "data/bible/OT/nahum.json",
-          "chapters": 3,
-          "importedVerseCount": 47,
-          "migratedScalarNRSVVerseCount": 47,
+        "Ecclesiastes": {
+          "file": "data/bible/OT/ecclesiastes.json",
+          "chapters": 12,
+          "importedVerseCount": 222,
+          "migratedScalarNRSVVerseCount": 222,
           "verification": {
-            "rotherhamVerseCount": 47,
-            "yahwehCount": 13,
+            "rotherhamVerseCount": 222,
+            "yahwehCount": 0,
             "jehovahCount": 0
           }
         },
-        "Habakkuk": {
-          "file": "data/bible/OT/habakkuk.json",
-          "chapters": 3,
-          "importedVerseCount": 56,
-          "migratedScalarNRSVVerseCount": 56,
+        "Song of Solomon": {
+          "file": "data/bible/OT/songofsolomon.json",
+          "chapters": 8,
+          "importedVerseCount": 117,
+          "migratedScalarNRSVVerseCount": 117,
           "verification": {
-            "rotherhamVerseCount": 56,
-            "yahwehCount": 13,
+            "rotherhamVerseCount": 117,
+            "yahwehCount": 0,
             "jehovahCount": 0
           }
         },
-        "Zephaniah": {
-          "file": "data/bible/OT/zephaniah.json",
-          "chapters": 3,
-          "importedVerseCount": 53,
-          "migratedScalarNRSVVerseCount": 53,
+        "Lamentations": {
+          "file": "data/bible/OT/lamentations.json",
+          "chapters": 5,
+          "importedVerseCount": 154,
+          "migratedScalarNRSVVerseCount": 154,
           "verification": {
-            "rotherhamVerseCount": 53,
-            "yahwehCount": 34,
-            "jehovahCount": 0
-          }
-        },
-        "Haggai": {
-          "file": "data/bible/OT/haggai.json",
-          "chapters": 2,
-          "importedVerseCount": 38,
-          "migratedScalarNRSVVerseCount": 38,
-          "verification": {
-            "rotherhamVerseCount": 38,
-            "yahwehCount": 35,
-            "jehovahCount": 0
-          }
-        },
-        "Zechariah": {
-          "file": "data/bible/OT/zechariah.json",
-          "chapters": 14,
-          "importedVerseCount": 211,
-          "migratedScalarNRSVVerseCount": 211,
-          "verification": {
-            "rotherhamVerseCount": 211,
-            "yahwehCount": 133,
-            "jehovahCount": 0
-          }
-        },
-        "Malachi": {
-          "file": "data/bible/OT/malachi.json",
-          "chapters": 4,
-          "importedVerseCount": 55,
-          "migratedScalarNRSVVerseCount": 55,
-          "verification": {
-            "rotherhamVerseCount": 55,
-            "yahwehCount": 46,
+            "rotherhamVerseCount": 154,
+            "yahwehCount": 32,
             "jehovahCount": 0
           }
         }

@@ -3,113 +3,640 @@
     "name": "Ruth",
     "id": "RUTH",
     "version": "NRSV",
-    "copyright": "New Revised Standard Version Bible, copyright © 1989 National Council of the Churches of Christ in the United States of America. Used by permission. All rights reserved worldwide."
+    "copyright": "New Revised Standard Version Bible, copyright © 1989 National Council of the Churches of Christ in the United States of America. Used by permission. All rights reserved worldwide.",
+    "canon": "OT",
+    "defaultTranslation": "NRSV",
+    "versification": "hebrew_masoretic",
+    "translations": {
+      "NRSV": {
+        "label": "New Revised Standard Version",
+        "sourceType": "existing_corpus",
+        "rights": "New Revised Standard Version Bible, copyright © 1989 National Council of the Churches of Christ in the United States of America. Used by permission. All rights reserved worldwide."
+      },
+      "Rotherham": {
+        "label": "The Emphasised Bible",
+        "sourceType": "scrollmapper_bible_databases_2025_formats_json_source_witness",
+        "rights": "Public Domain",
+        "sourceWitness": "documentation/rotherham-source-witness-intake.json"
+      }
+    }
   },
   "chapters": [
     {
       "num": 1,
       "verses": [
-        { "num": 1, "text": "In the days when the judges ruled, there was a famine in the land, and a certain man of Bethlehem in Judah went to live in the country of Moab, he and his wife and two sons." },
-        { "num": 2, "text": "The name of the man was Elimelech and the name of his wife Naomi, and the names of his two sons were Mahlon and Chilion; they were Ephrathites from Bethlehem in Judah. They went into the country of Moab and remained there." },
-        { "num": 3, "text": "But Elimelech, the husband of Naomi, died, and she was left with her two sons." },
-        { "num": 4, "text": "These took Moabite wives; the name of the one was Orpah and the name of the other Ruth. When they had lived there about ten years," },
-        { "num": 5, "text": "both Mahlon and Chilion also died, so that the woman was left without her two sons and her husband." },
-        { "num": 6, "text": "Then she started to return with her daughters-in-law from the country of Moab, for she had heard in the country of Moab that the Lord had considered his people and given them food." },
-        { "num": 7, "text": "So she set out from the place where she had been living, she and her two daughters-in-law, and they went on their way to go back to the land of Judah." },
-        { "num": 8, "text": "But Naomi said to her two daughters-in-law, “Go back each of you to your mother’s house. May the Lord deal kindly with you, as you have dealt with the dead and with me." },
-        { "num": 9, "text": "The Lord grant that you may find security, each of you in the house of your husband.” Then she kissed them, and they wept aloud." },
-        { "num": 10, "text": "They said to her, “No, we will return with you to your people.”" },
-        { "num": 11, "text": "But Naomi said, “Turn back, my daughters, why will you go with me? Do I still have sons in my womb that they may become your husbands?" },
-        { "num": 12, "text": "Turn back, my daughters, go your way, for I am too old to have a husband. Even if I thought there was hope for me, even if I should have a husband tonight and bear sons," },
-        { "num": 13, "text": "would you then wait until they were grown? Would you then refrain from marrying? No, my daughters, it has been far more bitter for me than for you, because the hand of the Lord has turned against me.”" },
-        { "num": 14, "text": "Then they wept aloud again. Orpah kissed her mother-in-law, but Ruth clung to her." },
-        { "num": 15, "text": "So she said, “See, your sister-in-law has gone back to her people and to her gods; return after your sister-in-law.”" },
-        { "num": 16, "text": "But Ruth said, “Do not press me to leave you or to turn back from following you! Where you go, I will go; where you lodge, I will lodge; your people shall be my people, and your God my God." },
-        { "num": 17, "text": "Where you die, I will die— there will I be buried. May the Lord do thus and so to me, and more as well, if even death parts me from you!”" },
-        { "num": 18, "text": "When Naomi saw that she was determined to go with her, she said no more to her." },
-        { "num": 19, "text": "So the two of them went on until they came to Bethlehem. When they came to Bethlehem, the whole town was stirred because of them; and the women said, “Is this Naomi?”" },
-        { "num": 20, "text": "She said to them, “Call me no longer Naomi, call me Mara, for the Almighty has dealt bitterly with me." },
-        { "num": 21, "text": "I went away full, but the Lord has brought me back empty; why call me Naomi when the Lord has dealt harshly with me, and the Almighty has brought calamity upon me?”" },
-        { "num": 22, "text": "So Naomi returned together with Ruth the Moabite, her daughter-in-law, who came back with her from the country of Moab. They came to Bethlehem at the beginning of the barley harvest." }
+        {
+          "num": 1,
+          "text": {
+            "NRSV": "In the days when the judges ruled, there was a famine in the land, and a certain man of Bethlehem in Judah went to live in the country of Moab, he and his wife and two sons.",
+            "Rotherham": "And it came to pass, in the days when the Judges administered justice, that there was a famine in the land,—and so a certain man went his way, out of Bethlehem-judah to sojourn in the country of Moab, he, and his wife, and his two sons."
+          }
+        },
+        {
+          "num": 2,
+          "text": {
+            "NRSV": "The name of the man was Elimelech and the name of his wife Naomi, and the names of his two sons were Mahlon and Chilion; they were Ephrathites from Bethlehem in Judah. They went into the country of Moab and remained there.",
+            "Rotherham": "And, the name of the man, was Elimelech, and, the name of his wife, Naomi, and, the name of his two sons, Mahlon and Chilion—Ephrathites out of Bethlehem-judah,—so they came into the country of Moab, and remained there."
+          }
+        },
+        {
+          "num": 3,
+          "text": {
+            "NRSV": "But Elimelech, the husband of Naomi, died, and she was left with her two sons.",
+            "Rotherham": "And Elimelech, husband of Naomi, died,—and she was left, she and her two sons."
+          }
+        },
+        {
+          "num": 4,
+          "text": {
+            "NRSV": "These took Moabite wives; the name of the one was Orpah and the name of the other Ruth. When they had lived there about ten years,",
+            "Rotherham": "And they took them wives, of the women of Moab, the name of the one, was Orpah, and, the name of the other, Ruth,—and they dwelt there, about ten years."
+          }
+        },
+        {
+          "num": 5,
+          "text": {
+            "NRSV": "both Mahlon and Chilion also died, so that the woman was left without her two sons and her husband.",
+            "Rotherham": "And, they also, both, died, Mahlon and Chilion,—so the woman was bereft of her two sons, and of her husband. "
+          }
+        },
+        {
+          "num": 6,
+          "text": {
+            "NRSV": "Then she started to return with her daughters-in-law from the country of Moab, for she had heard in the country of Moab that the Lord had considered his people and given them food.",
+            "Rotherham": " Then she arose, she and her daughters-in-law, and returned out of the country of Moab,—for she had heard, in the country of Moab, how that Yahweh had visited his people, in giving unto them, bread."
+          }
+        },
+        {
+          "num": 7,
+          "text": {
+            "NRSV": "So she set out from the place where she had been living, she and her two daughters-in-law, and they went on their way to go back to the land of Judah.",
+            "Rotherham": "So she went forth out of the dwelling-place where she had remained, and her two daughters-in-law with her,—and they went on the way, to return unto the land of Judah."
+          }
+        },
+        {
+          "num": 8,
+          "text": {
+            "NRSV": "But Naomi said to her two daughters-in-law, “Go back each of you to your mother’s house. May the Lord deal kindly with you, as you have dealt with the dead and with me.",
+            "Rotherham": "Then said Naomi to her two daughters-in-law: Go return, each one to the house of her mother,—Yahweh deal with you in lovingkindness, as ye have dealt with the dead, and with me."
+          }
+        },
+        {
+          "num": 9,
+          "text": {
+            "NRSV": "The Lord grant that you may find security, each of you in the house of your husband.” Then she kissed them, and they wept aloud.",
+            "Rotherham": "Yahweh grant you, that ye may find a place of rest, each one in the house of her husband,—And she kissed them, and they lifted up their voice, and wept."
+          }
+        },
+        {
+          "num": 10,
+          "text": {
+            "NRSV": "They said to her, “No, we will return with you to your people.”",
+            "Rotherham": "And they said to her,—With thee, will we return, unto thy people."
+          }
+        },
+        {
+          "num": 11,
+          "text": {
+            "NRSV": "But Naomi said, “Turn back, my daughters, why will you go with me? Do I still have sons in my womb that they may become your husbands?",
+            "Rotherham": "Then said Naomi—Go back, my daughters! wherefore should ye journey with me? Have I, yet, sons in my womb, that they should become your, husbands?"
+          }
+        },
+        {
+          "num": 12,
+          "text": {
+            "NRSV": "Turn back, my daughters, go your way, for I am too old to have a husband. Even if I thought there was hope for me, even if I should have a husband tonight and bear sons,",
+            "Rotherham": "Go back, my daughters, go your way, for I am too old to have a husband,—If I should say, I have, hope, if I should, even to-night have a husband, and should, even bear sons,"
+          }
+        },
+        {
+          "num": 13,
+          "text": {
+            "NRSV": "would you then wait until they were grown? Would you then refrain from marrying? No, my daughters, it has been far more bitter for me than for you, because the hand of the Lord has turned against me.”",
+            "Rotherham": "would ye, therefore, tarry until they were grown? would ye, therefore, shut yourselves up from having husbands? Nay! my daughters, for it is far more bitter for me than for you, that forth hath gone against me, the hand of Yahweh."
+          }
+        },
+        {
+          "num": 14,
+          "text": {
+            "NRSV": "Then they wept aloud again. Orpah kissed her mother-in-law, but Ruth clung to her.",
+            "Rotherham": "And they lifted up their voice and wept, yet more. Then Orpah kissed her mother-in- law, but, Ruth, clave unto her."
+          }
+        },
+        {
+          "num": 15,
+          "text": {
+            "NRSV": "So she said, “See, your sister-in-law has gone back to her people and to her gods; return after your sister-in-law.”",
+            "Rotherham": "And she said—Lo! thy sister-in-law hath gone back, unto her people, and unto her gods,—go thou back, after thy sister-in-law."
+          }
+        },
+        {
+          "num": 16,
+          "text": {
+            "NRSV": "But Ruth said, “Do not press me to leave you or to turn back from following you! Where you go, I will go; where you lodge, I will lodge; your people shall be my people, and your God my God.",
+            "Rotherham": "And Ruth said—Do not urge me to leave thee, to go back from following thee,—for, whither thou goest, I will go, and, where thou lodgest, I will lodge, thy people, shall be my people, and, thy God, my God;"
+          }
+        },
+        {
+          "num": 17,
+          "text": {
+            "NRSV": "Where you die, I will die— there will I be buried. May the Lord do thus and so to me, and more as well, if even death parts me from you!”",
+            "Rotherham": "where thou diest, I will die, and, there, will I be buried: So, let Yahweh do to me, and, so, let him add, if, death itself, part me and thee."
+          }
+        },
+        {
+          "num": 18,
+          "text": {
+            "NRSV": "When Naomi saw that she was determined to go with her, she said no more to her.",
+            "Rotherham": "And, when she saw that, bravely determined, was she to go with her, she ceased entreating her. "
+          }
+        },
+        {
+          "num": 19,
+          "text": {
+            "NRSV": "So the two of them went on until they came to Bethlehem. When they came to Bethlehem, the whole town was stirred because of them; and the women said, “Is this Naomi?”",
+            "Rotherham": " So, they two, went their way, until they entered Bethlehem. And it came to pass, when they entered Bethlehem, that all the city was moved concerning them, and the women said—Is this Naomi?"
+          }
+        },
+        {
+          "num": 20,
+          "text": {
+            "NRSV": "She said to them, “Call me no longer Naomi, call me Mara, for the Almighty has dealt bitterly with me.",
+            "Rotherham": "And she said unto them, Do not call me Naomi [=\"Sweet\"],—call me Mara [=\"Bitter\"], for the Almighty hath dealt very bitterly with me:"
+          }
+        },
+        {
+          "num": 21,
+          "text": {
+            "NRSV": "I went away full, but the Lord has brought me back empty; why call me Naomi when the Lord has dealt harshly with me, and the Almighty has brought calamity upon me?”",
+            "Rotherham": "I was full when I departed, but, empty, am I brought back of Yahweh,—wherefore should ye call me Naomi, when, Yahweh, hath given answer against me, and, the Almighty, hath crushed me?"
+          }
+        },
+        {
+          "num": 22,
+          "text": {
+            "NRSV": "So Naomi returned together with Ruth the Moabite, her daughter-in-law, who came back with her from the country of Moab. They came to Bethlehem at the beginning of the barley harvest.",
+            "Rotherham": "So Naomi returned, and Ruth the Moabitess, her daughter-in-law, with her, who returned out of the country of Moab,—and, they, entered Bethlehem in the beginning of barley harvest.  "
+          }
+        }
       ]
     },
     {
       "num": 2,
       "verses": [
-        { "num": 1, "text": "Now Naomi had a kinsman on her husband’s side, a prominent rich man, of the family of Elimelech, whose name was Boaz." },
-        { "num": 2, "text": "And Ruth the Moabite said to Naomi, “Let me go to the field and glean among the ears of grain, behind someone in whose sight I may find favor.” She said to her, “Go, my daughter.”" },
-        { "num": 3, "text": "So she went. She came and gleaned in the field behind the reapers. As it happened, she came to the part of the field belonging to Boaz, who was of the family of Elimelech." },
-        { "num": 4, "text": "Just then Boaz came from Bethlehem. He said to the reapers, “The Lord be with you.” They answered, “The Lord bless you.”" },
-        { "num": 5, "text": "Then Boaz said to his servant who was in charge of the reapers, “To whom does this young woman belong?”" },
-        { "num": 6, "text": "The servant who was in charge of the reapers answered, “She is the Moabite who came back with Naomi from the country of Moab." },
-        { "num": 7, "text": "She said, ‘Please, let me glean and gather among the sheaves behind the reapers.’ So she came, and she has been on her feet from early this morning until now, without resting even for a moment.”" },
-        { "num": 8, "text": "Then Boaz said to Ruth, “Now listen, my daughter, do not go to glean in another field or leave this one, but keep close to my young women." },
-        { "num": 9, "text": "Keep your eyes on the field that is being reaped, and follow behind them. I have ordered the young men not to bother you. If you get thirsty, go to the vessels and drink from what the young men have drawn.”" },
-        { "num": 10, "text": "Then she fell prostrate, with her face to the ground, and said to him, “Why have I found favor in your sight, that you should take notice of me, when I am a foreigner?”" },
-        { "num": 11, "text": "But Boaz answered her, “All that you have done for your mother-in-law since the death of your husband has been fully told me, and how you left your father and mother and your native land and came to a people that you did not know before." },
-        { "num": 12, "text": "May the Lord reward you for your deeds, and may you have a full reward from the Lord, the God of Israel, under whose wings you have come for refuge!”" },
-        { "num": 13, "text": "Then she said, “May I continue to find favor in your sight, my lord, for you have comforted me and spoken kindly to your servant, even though I am not one of your servants.”" },
-        { "num": 14, "text": "At mealtime Boaz said to her, “Come here, and eat some of this bread, and dip your morsel in the sour wine.” So she sat beside the reapers, and he heaped up for her some parched grain. She ate until she was satisfied, and she had some left over." },
-        { "num": 15, "text": "When she got up to glean, Boaz instructed his young men, “Let her glean even among the standing sheaves, and do not reproach her." },
-        { "num": 16, "text": "You must also pull out some handfuls for her from the bundles, and leave them for her to glean, and do not rebuke her.”" },
-        { "num": 17, "text": "So she gleaned in the field until evening. Then she beat out what she had gleaned, and it was about an ephah of barley." },
-        { "num": 18, "text": "She picked it up and came into the town, and her mother-in-law saw how much she had gleaned. Then she took out and gave her what was left over after she herself had been satisfied." },
-        { "num": 19, "text": "Her mother-in-law said to her, “Where did you glean today? And where have you worked? Blessed be the man who took notice of you.” So she told her mother-in-law with whom she had worked, and said, “The name of the man with whom I worked today is Boaz.”" },
-        { "num": 20, "text": "Then Naomi said to her daughter-in-law, “Blessed be he by the Lord, whose kindness has not forsaken the living or the dead!” Naomi also said to her, “The man is a relative of ours, one of our nearest kin.”" },
-        { "num": 21, "text": "Then Ruth the Moabite said, “He even said to me, ‘Stay close by my young men until they have finished all my harvest.’”" },
-        { "num": 22, "text": "Naomi said to Ruth, her daughter-in-law, “It is better, my daughter, that you go out with his young women, otherwise you might be bothered in another field.”" },
-        { "num": 23, "text": "So she stayed close to the young women of Boaz, gleaning until the end of the barley and wheat harvests; and she lived with her mother-in-law." }
+        {
+          "num": 1,
+          "text": {
+            "NRSV": "Now Naomi had a kinsman on her husband’s side, a prominent rich man, of the family of Elimelech, whose name was Boaz.",
+            "Rotherham": "Now, Naomi, had an acquaintance of her husband’s, a man of great integrity, of the family of Elimelech,—whose name, was Boaz."
+          }
+        },
+        {
+          "num": 2,
+          "text": {
+            "NRSV": "And Ruth the Moabite said to Naomi, “Let me go to the field and glean among the ears of grain, behind someone in whose sight I may find favor.” She said to her, “Go, my daughter.”",
+            "Rotherham": "And Ruth the Moabitess said unto Naomi—Let me go, I pray thee, to the field, and glean ears of corn after him in whose eyes I may find favour. And she said to her—Go, my daughter."
+          }
+        },
+        {
+          "num": 3,
+          "text": {
+            "NRSV": "So she went. She came and gleaned in the field behind the reapers. As it happened, she came to the part of the field belonging to Boaz, who was of the family of Elimelech.",
+            "Rotherham": "So she went her way, and came, and gleaned in the field, after the reapers,—and it happened to her, to light upon the portion of field-land belonging to Boaz, who was of the family of Elimelech. "
+          }
+        },
+        {
+          "num": 4,
+          "text": {
+            "NRSV": "Just then Boaz came from Bethlehem. He said to the reapers, “The Lord be with you.” They answered, “The Lord bless you.”",
+            "Rotherham": " And lo! Boaz coming from Bethlehem, and he said to the reapers, Yahweh, be with you! and they said to him, Yahweh bless thee!"
+          }
+        },
+        {
+          "num": 5,
+          "text": {
+            "NRSV": "Then Boaz said to his servant who was in charge of the reapers, “To whom does this young woman belong?”",
+            "Rotherham": "Then said Boaz to his young man, that was set over the reapers,—Whose is this maiden?"
+          }
+        },
+        {
+          "num": 6,
+          "text": {
+            "NRSV": "The servant who was in charge of the reapers answered, “She is the Moabite who came back with Naomi from the country of Moab.",
+            "Rotherham": "And the young man that was set over the reapers answered and said,—The Moabitish maiden, is she who came back with Naomi, out of the country of Moab;"
+          }
+        },
+        {
+          "num": 7,
+          "text": {
+            "NRSV": "She said, ‘Please, let me glean and gather among the sheaves behind the reapers.’ So she came, and she has been on her feet from early this morning until now, without resting even for a moment.”",
+            "Rotherham": "and she said—Let me glean, I pray thee, and gather among the sheaves, after the reapers; so she came in, and hath continued from that time, all the morning until just now, and hath not rested in the house, for a little."
+          }
+        },
+        {
+          "num": 8,
+          "text": {
+            "NRSV": "Then Boaz said to Ruth, “Now listen, my daughter, do not go to glean in another field or leave this one, but keep close to my young women.",
+            "Rotherham": "And Boaz said unto Ruth—Hearest thou not, my daughter? Do not go to glean in any other field, neither indeed shalt thou pass on, from hence,—but, here, shalt thou keep fast by my maidens:"
+          }
+        },
+        {
+          "num": 9,
+          "text": {
+            "NRSV": "Keep your eyes on the field that is being reaped, and follow behind them. I have ordered the young men not to bother you. If you get thirsty, go to the vessels and drink from what the young men have drawn.”",
+            "Rotherham": "thine eyes, be on the field which they shall reap, and go thou after them, Have I not commanded the young men, that they touch thee not? And, when thou art athirst, then go unto the vessels, and drink of what the young men shall draw."
+          }
+        },
+        {
+          "num": 10,
+          "text": {
+            "NRSV": "Then she fell prostrate, with her face to the ground, and said to him, “Why have I found favor in your sight, that you should take notice of me, when I am a foreigner?”",
+            "Rotherham": "Then she fell upon her face, and bowed herself to the ground,—and said unto him—Wherefore have I found favour in thine eyes, that thou shouldest take notice of me, seeing that, I, am, a stranger?"
+          }
+        },
+        {
+          "num": 11,
+          "text": {
+            "NRSV": "But Boaz answered her, “All that you have done for your mother-in-law since the death of your husband has been fully told me, and how you left your father and mother and your native land and came to a people that you did not know before.",
+            "Rotherham": "And Boaz answered, and said to her, It hath been, told, me—all that thou hast done unto thy mother-in-law, since the death of thy husband,—and how thou hast left thy father and thy mother, and the land of thy nativity, and come unto a people whom thou knewest not, aforetime."
+          }
+        },
+        {
+          "num": 12,
+          "text": {
+            "NRSV": "May the Lord reward you for your deeds, and may you have a full reward from the Lord, the God of Israel, under whose wings you have come for refuge!”",
+            "Rotherham": "Yahweh recompense thy deed,—and let thy reward be full from Yahweh, the God of Israel, unto whom thou hast come to take refuge under his wings."
+          }
+        },
+        {
+          "num": 13,
+          "text": {
+            "NRSV": "Then she said, “May I continue to find favor in your sight, my lord, for you have comforted me and spoken kindly to your servant, even though I am not one of your servants.”",
+            "Rotherham": "And she said—Let me find favour in thine eyes, my lord, for that thou hast comforted me, and for that thou hast spoken unto the heart of thy handmaid,—though, I, be not as, one of thine own handmaidens."
+          }
+        },
+        {
+          "num": 14,
+          "text": {
+            "NRSV": "At mealtime Boaz said to her, “Come here, and eat some of this bread, and dip your morsel in the sour wine.” So she sat beside the reapers, and he heaped up for her some parched grain. She ate until she was satisfied, and she had some left over.",
+            "Rotherham": "And Boaz said to her at mealtime—Draw nigh hither, and eat of the bread, and dip thy morsel in the vinegar. So she sat beside the reapers, and there was reached to her parched corn, and she did eat and was satisfied, and left thereof remaining."
+          }
+        },
+        {
+          "num": 15,
+          "text": {
+            "NRSV": "When she got up to glean, Boaz instructed his young men, “Let her glean even among the standing sheaves, and do not reproach her.",
+            "Rotherham": "And, when she rose up to glean, Boaz commanded his young men, saying—Even between the sheaves, let her glean, and reproach her not;"
+          }
+        },
+        {
+          "num": 16,
+          "text": {
+            "NRSV": "You must also pull out some handfuls for her from the bundles, and leave them for her to glean, and do not rebuke her.”",
+            "Rotherham": "yea moreover, draw out, for her, from the bundles,—and leave behind that she may glean it, and rebuke her not. "
+          }
+        },
+        {
+          "num": 17,
+          "text": {
+            "NRSV": "So she gleaned in the field until evening. Then she beat out what she had gleaned, and it was about an ephah of barley.",
+            "Rotherham": " So she gleaned in the field, until the evening,—and beat out that which she had gleaned, and there was about an ephah of barley."
+          }
+        },
+        {
+          "num": 18,
+          "text": {
+            "NRSV": "She picked it up and came into the town, and her mother-in-law saw how much she had gleaned. Then she took out and gave her what was left over after she herself had been satisfied.",
+            "Rotherham": "And she took it up, and came into the city, and, when her mother-in-law had seen what she had gleaned, she brought forth and gave her what had been left remaining, after that she was satisfied."
+          }
+        },
+        {
+          "num": 19,
+          "text": {
+            "NRSV": "Her mother-in-law said to her, “Where did you glean today? And where have you worked? Blessed be the man who took notice of you.” So she told her mother-in-law with whom she had worked, and said, “The name of the man with whom I worked today is Boaz.”",
+            "Rotherham": "And her mother-in-law said to her—In what place hast thou gleaned, today? and where hast thou wrought? May he that took notice of thee, be blessed! So she told her mother-in-law, with whom she had wrought, and said—The name of the man with whom I wrought today, is Boaz."
+          }
+        },
+        {
+          "num": 20,
+          "text": {
+            "NRSV": "Then Naomi said to her daughter-in-law, “Blessed be he by the Lord, whose kindness has not forsaken the living or the dead!” Naomi also said to her, “The man is a relative of ours, one of our nearest kin.”",
+            "Rotherham": "Then said Naomi, to her daughter-in-law—Blessed, be he of Yahweh, who hath not left off his lovingkindness to the living, and to the dead. And Naomi said to her—Near to us, is the man, of our own kinsmen, is he!"
+          }
+        },
+        {
+          "num": 21,
+          "text": {
+            "NRSV": "Then Ruth the Moabite said, “He even said to me, ‘Stay close by my young men until they have finished all my harvest.’”",
+            "Rotherham": "And Ruth the Moabitess said,—Yea for he said unto me—By my young men, shalt thou keep fast, until they have ended all my harvest."
+          }
+        },
+        {
+          "num": 22,
+          "text": {
+            "NRSV": "Naomi said to Ruth, her daughter-in-law, “It is better, my daughter, that you go out with his young women, otherwise you might be bothered in another field.”",
+            "Rotherham": "And Naomi said unto Ruth her daughter-in-law,—Good, is it, my daughter, that thou go forth with his maidens, and that they meet thee not, in any other field."
+          }
+        },
+        {
+          "num": 23,
+          "text": {
+            "NRSV": "So she stayed close to the young women of Boaz, gleaning until the end of the barley and wheat harvests; and she lived with her mother-in-law.",
+            "Rotherham": "So she kept fast by the maidens of Boaz, to glean, until the end of the barley harvest, and the wheat harvest,—and dwelt with her mother-in-law.  "
+          }
+        }
       ]
     },
     {
       "num": 3,
       "verses": [
-        { "num": 1, "text": "Naomi her mother-in-law said to her, “My daughter, I need to seek some security for you, so that it may be well with you." },
-        { "num": 2, "text": "Now here is our kinsman Boaz, with whose young women you have been working. See, he is winnowing barley tonight at the threshing floor." },
-        { "num": 3, "text": "Now wash and anoint yourself, and put on your best clothes and go down to the threshing floor; but do not make yourself known to the man until he has finished eating and drinking." },
-        { "num": 4, "text": "When he lies down, observe the place where he lies; then, go and uncover his feet and lie down; and he will tell you what to do.”" },
-        { "num": 5, "text": "She said to her, “All that you tell me I will do.”" },
-        { "num": 6, "text": "So she went down to the threshing floor and did just as her mother-in-law had instructed her." },
-        { "num": 7, "text": "When Boaz had eaten and drunk, and he was in a contented mood, he went to lie down at the end of the heap of grain. Then she came stealthily and uncovered his feet, and lay down." },
-        { "num": 8, "text": "At midnight the man was startled, and turned over, and there, lying at his feet, was a woman!" },
-        { "num": 9, "text": "He said, “Who are you?” And she answered, “I am Ruth, your servant; spread your cloak over your servant, for you are next-of-kin.”" },
-        { "num": 10, "text": "He said, “May you be blessed by the Lord, my daughter; this last instance of your loyalty is better than the first; you have not gone after young men, whether poor or rich." },
-        { "num": 11, "text": "And now, my daughter, do not be afraid, I will do for you all that you ask, for all the assembly of my people know that you are a worthy woman." },
-        { "num": 12, "text": "But now, though it is true that I am a near kinsman, there is another kinsman more closely related than I." },
-        { "num": 13, "text": "Remain this night, and in the morning, if he will act as next-of-kin for you, good; let him do it. If he is not willing to act as next-of-kin for you, then, as the Lord lives, I will act as next-of-kin for you. Lie down until the morning.”" },
-        { "num": 14, "text": "So she lay at his feet until morning, but got up before one person could recognize another; for he said, “It must not be known that the woman came to the threshing floor.”" },
-        { "num": 15, "text": "Then he said, “Bring the cloak you are wearing and hold it out.” So she held it, and he measured out six measures of barley, and put it on her back; then he went into the city." },
-        { "num": 16, "text": "She came to her mother-in-law, who said, “How did things go with you, my daughter?” Then she told her all that the man had done for her," },
-        { "num": 17, "text": "saying, “He gave me these six measures of barley, for he said, ‘Do not go back to your mother-in-law empty-handed.’”" },
-        { "num": 18, "text": "She replied, “Wait, my daughter, until you learn how the matter turns out, for the man will not rest, but will settle the matter today.”" }
+        {
+          "num": 1,
+          "text": {
+            "NRSV": "Naomi her mother-in-law said to her, “My daughter, I need to seek some security for you, so that it may be well with you.",
+            "Rotherham": "Then Naomi her mother-in-law said to her,—My daughter! shall I not seek for thee a place of rest, in which it may be well with thee?"
+          }
+        },
+        {
+          "num": 2,
+          "text": {
+            "NRSV": "Now here is our kinsman Boaz, with whose young women you have been working. See, he is winnowing barley tonight at the threshing floor.",
+            "Rotherham": "Now, therefore, is not, Boaz, of our kindred, with whose maidens thou hast been? Lo! he is winnowing the barley threshing-floor, to-night!"
+          }
+        },
+        {
+          "num": 3,
+          "text": {
+            "NRSV": "Now wash and anoint yourself, and put on your best clothes and go down to the threshing floor; but do not make yourself known to the man until he has finished eating and drinking.",
+            "Rotherham": "Thou wilt, therefore, bathe thee, and anoint thee, and put thine apparel upon thee, and go down to the threshing-floor,—do not make thyself known to the man, until he have done eating and drinking."
+          }
+        },
+        {
+          "num": 4,
+          "text": {
+            "NRSV": "When he lies down, observe the place where he lies; then, go and uncover his feet and lie down; and he will tell you what to do.”",
+            "Rotherham": "And it shall be, when he lieth down, that thou shalt mark the place where he doth lie, and shalt go in and turn aside the covering of his feet, and lay thee down,—and, he, will tell thee what thou shalt do."
+          }
+        },
+        {
+          "num": 5,
+          "text": {
+            "NRSV": "She said to her, “All that you tell me I will do.”",
+            "Rotherham": "And she said unto her,—All that thou sayest, will I do. "
+          }
+        },
+        {
+          "num": 6,
+          "text": {
+            "NRSV": "So she went down to the threshing floor and did just as her mother-in-law had instructed her.",
+            "Rotherham": " So she went down to the threshing-floor,—and did according to all that her mother-in-law had commanded her."
+          }
+        },
+        {
+          "num": 7,
+          "text": {
+            "NRSV": "When Boaz had eaten and drunk, and he was in a contented mood, he went to lie down at the end of the heap of grain. Then she came stealthily and uncovered his feet, and lay down.",
+            "Rotherham": "And, when Boaz had eaten, and drunk, and his heart was glad, he went in to lie down at the end of the heap of corn. Then came she in softly, and turned aside the covering of his feet, and laid her down."
+          }
+        },
+        {
+          "num": 8,
+          "text": {
+            "NRSV": "At midnight the man was startled, and turned over, and there, lying at his feet, was a woman!",
+            "Rotherham": "And it came to pass, in the middle of the night, that the man started up, and turned,—and lo! a woman, lying at his feet."
+          }
+        },
+        {
+          "num": 9,
+          "text": {
+            "NRSV": "He said, “Who are you?” And she answered, “I am Ruth, your servant; spread your cloak over your servant, for you are next-of-kin.”",
+            "Rotherham": "And he said, Who art, thou? And she said, I, am Ruth, thy handmaid, spread, therefore, thy wing over thy handmaid, for, a kinsman, thou art."
+          }
+        },
+        {
+          "num": 10,
+          "text": {
+            "NRSV": "He said, “May you be blessed by the Lord, my daughter; this last instance of your loyalty is better than the first; you have not gone after young men, whether poor or rich.",
+            "Rotherham": "And he said—Blessed, be thou of Yahweh, my daughter, for thou hast made thy last lovingkindness better than the first,—in not following after young men, whether poor, or rich."
+          }
+        },
+        {
+          "num": 11,
+          "text": {
+            "NRSV": "And now, my daughter, do not be afraid, I will do for you all that you ask, for all the assembly of my people know that you are a worthy woman.",
+            "Rotherham": "Now, therefore, my daughter, do not fear, whatsoever thou shalt say, I will do for thee,—for all the gate of my people doth know, that, a virtuous woman, thou art."
+          }
+        },
+        {
+          "num": 12,
+          "text": {
+            "NRSV": "But now, though it is true that I am a near kinsman, there is another kinsman more closely related than I.",
+            "Rotherham": "And, now, although it is true that, a kinsman, am I, yet is there a kinsman nearer than I."
+          }
+        },
+        {
+          "num": 13,
+          "text": {
+            "NRSV": "Remain this night, and in the morning, if he will act as next-of-kin for you, good; let him do it. If he is not willing to act as next-of-kin for you, then, as the Lord lives, I will act as next-of-kin for you. Lie down until the morning.”",
+            "Rotherham": "Tarry the night, and it shall be, in the morning, if he will act as kinsman to thee, well, let him so act, but, if he inclineth not to act as kinsman to thee, then will, I, so act to thee—by the life of Yahweh,—Lie still, until the morning. "
+          }
+        },
+        {
+          "num": 14,
+          "text": {
+            "NRSV": "So she lay at his feet until morning, but got up before one person could recognize another; for he said, “It must not be known that the woman came to the threshing floor.”",
+            "Rotherham": " So she lay at his feet, until the morning, and rose up before one could know his neighbour. And he said—Do not let it be known that a woman came into the threshing-floor."
+          }
+        },
+        {
+          "num": 15,
+          "text": {
+            "NRSV": "Then he said, “Bring the cloak you are wearing and hold it out.” So she held it, and he measured out six measures of barley, and put it on her back; then he went into the city.",
+            "Rotherham": "And he said—Bring the cloak that is upon thee, and hold it. So she held it,—and he measured six measures of barley, and laid it upon her, and he went into the city."
+          }
+        },
+        {
+          "num": 16,
+          "text": {
+            "NRSV": "She came to her mother-in-law, who said, “How did things go with you, my daughter?” Then she told her all that the man had done for her,",
+            "Rotherham": "And, when she came unto her mother-in- law, she said—Who art, thou, my daughter? And she told her all that the man had done for her."
+          }
+        },
+        {
+          "num": 17,
+          "text": {
+            "NRSV": "saying, “He gave me these six measures of barley, for he said, ‘Do not go back to your mother-in-law empty-handed.’”",
+            "Rotherham": "And she said—These six measures of barley, gave he unto me,—for he said, Do not go in empty, unto thy mother-in- law."
+          }
+        },
+        {
+          "num": 18,
+          "text": {
+            "NRSV": "She replied, “Wait, my daughter, until you learn how the matter turns out, for the man will not rest, but will settle the matter today.”",
+            "Rotherham": "And she said—Abide, my daughter, until that thou get to know, how the matter will fall out,—for the man will not rest, except he have finished the thing to-day.  "
+          }
+        }
       ]
     },
     {
       "num": 4,
       "verses": [
-        { "num": 1, "text": "No sooner had Boaz gone up to the gate and sat down there than the next-of-kin, of whom Boaz had spoken, came passing by. So Boaz said, “Come over, friend; sit down here.” And he went over and sat down." },
-        { "num": 2, "text": "Then Boaz took ten men of the elders of the town, and said, “Sit down here”; so they sat down." },
-        { "num": 3, "text": "He then said to the next-of-kin, “Naomi, who has come back from the country of Moab, is selling the parcel of land that belonged to our kinsman Elimelech." },
-        { "num": 4, "text": "So I thought I would tell you of it, and say: Buy it in the presence of those sitting here, and in the presence of my people’s elders. If you will redeem it, redeem it; but if you will not, tell me, so that I may know; for there is no one prior to you to redeem it, and I come after you.” So he said, “I will redeem it.”" },
-        { "num": 5, "text": "Then Boaz said, “The day you acquire the field from the hand of Naomi, you are also acquiring Ruth the Moabite, the widow of the dead man, to maintain the dead man’s name on his inheritance.”" },
-        { "num": 6, "text": "At this, the next-of-kin said, “I cannot redeem it for myself without damaging my own inheritance. Take my right of redemption yourself, for I cannot redeem it.”" },
-        { "num": 7, "text": "Now this was the custom in former times in Israel concerning redeeming and exchanging: to confirm a transaction, one party took off a sandal and gave it to the other; this was the manner of attesting in Israel." },
-        { "num": 8, "text": "So when the next-of-kin said to Boaz, “Acquire it for yourself,” he took off his sandal." },
-        { "num": 9, "text": "Then Boaz said to the elders and all the people, “Today you are witnesses that I have acquired from the hand of Naomi all that belonged to Elimelech and all that belonged to Chilion and to Mahlon." },
-        { "num": 10, "text": "Moreover I have acquired Ruth the Moabite, the wife of Mahlon, to be my wife, to maintain the name of the dead on his inheritance, in order that the name of the dead may not be cut off from his kindred and from the gate of his native place; today you are witnesses.”" },
-        { "num": 11, "text": "Then all the people who were at the gate, along with the elders, said, “We are witnesses. May the Lord make the woman who is coming into your house like Rachel and Leah, who together built up the house of Israel. May you produce children in Ephrathah and bestow a name in Bethlehem;" },
-        { "num": 12, "text": "and, through the children that the Lord will give you by this young woman, may your house be like the house of Perez, whom Tamar bore to Judah.”" },
-        { "num": 13, "text": "So Boaz took Ruth and she became his wife. When they came together, the Lord made her conceive, and she bore a son." },
-        { "num": 14, "text": "Then the women said to Naomi, “Blessed be the Lord, who has not left you this day without next-of-kin; and may his name be renowned in Israel!" },
-        { "num": 15, "text": "He shall be to you a restorer of life and a nourisher of your old age; for your daughter-in-law who loves you, who is more to you than seven sons, has borne him.”" },
-        { "num": 16, "text": "Then Naomi took the child and laid him in her bosom, and became his nurse." },
-        { "num": 17, "text": "The women of the neighborhood gave him a name, saying, “A son has been born to Naomi.” They named him Obed; he became the father of Jesse, the father of David." },
-        { "num": 18, "text": "Now these are the descendants of Perez: Perez became the father of Hezron," },
-        { "num": 19, "text": "Hezron of Ram, Ram of Amminadab," },
-        { "num": 20, "text": "Amminadab of Nahshon, Nahshon of Salmon," },
-        { "num": 21, "text": "Salmon of Boaz, Boaz of Obed," },
-        { "num": 22, "text": "Obed of Jesse, and Jesse of David." }
+        {
+          "num": 1,
+          "text": {
+            "NRSV": "No sooner had Boaz gone up to the gate and sat down there than the next-of-kin, of whom Boaz had spoken, came passing by. So Boaz said, “Come over, friend; sit down here.” And he went over and sat down.",
+            "Rotherham": "Now, Boaz, went up to the gate, and sat him down there, and lo! the kinsman, passing by, of whom Boaz had spoken, so he said—Turn aside! and sit down here, such a one! And he turned aside, and sat down."
+          }
+        },
+        {
+          "num": 2,
+          "text": {
+            "NRSV": "Then Boaz took ten men of the elders of the town, and said, “Sit down here”; so they sat down.",
+            "Rotherham": "Then fetched he ten men of the elders of the city, and said—Sit ye down here. And they sat down."
+          }
+        },
+        {
+          "num": 3,
+          "text": {
+            "NRSV": "He then said to the next-of-kin, “Naomi, who has come back from the country of Moab, is selling the parcel of land that belonged to our kinsman Elimelech.",
+            "Rotherham": "Then said he to the kinsman, The parcel of land that was our brother Elimelech’s, is to be disposed of by Naomi, who hath returned out of the country of Moab;"
+          }
+        },
+        {
+          "num": 4,
+          "text": {
+            "NRSV": "So I thought I would tell you of it, and say: Buy it in the presence of those sitting here, and in the presence of my people’s elders. If you will redeem it, redeem it; but if you will not, tell me, so that I may know; for there is no one prior to you to redeem it, and I come after you.” So he said, “I will redeem it.”",
+            "Rotherham": "and, I, thought, I would unveil thine ear, saying—Take it over in presence of such as are here seated, and in presence of the elders of my people. If thou wilt act as kinsman, act as kinsman, but, if thou wilt not so act, only tell me—that I may know, for there is none who can set thee aside as kinsman, but, I, am after thee. And he said, I, will act as kinsman."
+          }
+        },
+        {
+          "num": 5,
+          "text": {
+            "NRSV": "Then Boaz said, “The day you acquire the field from the hand of Naomi, you are also acquiring Ruth the Moabite, the widow of the dead man, to maintain the dead man’s name on his inheritance.”",
+            "Rotherham": "Then said Boaz, What day thou takest over the land from the hand of Naomi, also, of Ruth the Moabitess, wife of the dead, dost thou take [it], to raise up the name of the dead upon his inheritance."
+          }
+        },
+        {
+          "num": 6,
+          "text": {
+            "NRSV": "At this, the next-of-kin said, “I cannot redeem it for myself without damaging my own inheritance. Take my right of redemption yourself, for I cannot redeem it.”",
+            "Rotherham": "Then said the kinsman—I cannot act as kinsman for myself, lest I mar my own inheritance,—do, thou, for thyself act as kinsman in my right, for I cannot so redeem."
+          }
+        },
+        {
+          "num": 7,
+          "text": {
+            "NRSV": "Now this was the custom in former times in Israel concerning redeeming and exchanging: to confirm a transaction, one party took off a sandal and gave it to the other; this was the manner of attesting in Israel.",
+            "Rotherham": "Now, this aforetime, [was the way] in Israel, at a redeeming, and at an exchanging, to confirm every word: A man drew off his shoe, and gave it to his neighbour,—yea, this, was the way of taking to witness, in Israel."
+          }
+        },
+        {
+          "num": 8,
+          "text": {
+            "NRSV": "So when the next-of-kin said to Boaz, “Acquire it for yourself,” he took off his sandal.",
+            "Rotherham": "So the kinsman said unto Boaz, Take it over for thyself,—and he drew off his shoe. "
+          }
+        },
+        {
+          "num": 9,
+          "text": {
+            "NRSV": "Then Boaz said to the elders and all the people, “Today you are witnesses that I have acquired from the hand of Naomi all that belonged to Elimelech and all that belonged to Chilion and to Mahlon.",
+            "Rotherham": " Then said Boaz to the elders, and all the people—Witnesses, are ye to-day, that I have taken over all that was Elimelech’s, and all that was Chilion’s, and Mahlon’s,—from the hand of Naomi:"
+          }
+        },
+        {
+          "num": 10,
+          "text": {
+            "NRSV": "Moreover I have acquired Ruth the Moabite, the wife of Mahlon, to be my wife, to maintain the name of the dead on his inheritance, in order that the name of the dead may not be cut off from his kindred and from the gate of his native place; today you are witnesses.”",
+            "Rotherham": "Moreover, Ruth the Moabitess, wife of Mahlon, have I taken over, to be my wife, to raise up the name of the dead upon his inheritance, that the name of the dead be not cut off—from among his brethren, and from the gate of his dwelling- place,—Witnesses, are ye to-day!"
+          }
+        },
+        {
+          "num": 11,
+          "text": {
+            "NRSV": "Then all the people who were at the gate, along with the elders, said, “We are witnesses. May the Lord make the woman who is coming into your house like Rachel and Leah, who together built up the house of Israel. May you produce children in Ephrathah and bestow a name in Bethlehem;",
+            "Rotherham": "Then said all the people who were in the gate, and the elders—Witnesses!,—Yahweh grant the woman who is coming into thy house, to be as Rachel, and as Leah, which two of them did build the house of Israel. Do thou bravely, then, in Ephrathah, and proclaim thou a name in Bethlehem,"
+          }
+        },
+        {
+          "num": 12,
+          "text": {
+            "NRSV": "and, through the children that the Lord will give you by this young woman, may your house be like the house of Perez, whom Tamar bore to Judah.”",
+            "Rotherham": "And let thy house be like the house of Perez, whom Tamar bare to Judah,—of the seed which—may Yahweh give thee, of this young woman. "
+          }
+        },
+        {
+          "num": 13,
+          "text": {
+            "NRSV": "So Boaz took Ruth and she became his wife. When they came together, the Lord made her conceive, and she bore a son.",
+            "Rotherham": " So Boaz took Ruth, and she became his wife, and he went in unto her,—and Yahweh granted her conception, and she bare a son."
+          }
+        },
+        {
+          "num": 14,
+          "text": {
+            "NRSV": "Then the women said to Naomi, “Blessed be the Lord, who has not left you this day without next-of-kin; and may his name be renowned in Israel!",
+            "Rotherham": "Then said the women unto Naomi, Blessed, be Yahweh! who hath not let thee fail of a kinsman to-day,—and may his name, be proclaimed, in Israel;"
+          }
+        },
+        {
+          "num": 15,
+          "text": {
+            "NRSV": "He shall be to you a restorer of life and a nourisher of your old age; for your daughter-in-law who loves you, who is more to you than seven sons, has borne him.”",
+            "Rotherham": "So shall he become a restorer of thy life, and a nourisher of thine old age,—for, thy daughter-in-law who loveth thee, hath borne him, even, she, who is better to thee than seven sons."
+          }
+        },
+        {
+          "num": 16,
+          "text": {
+            "NRSV": "Then Naomi took the child and laid him in her bosom, and became his nurse.",
+            "Rotherham": "So Naomi took the boy, and laid him in her bosom, and she became his nurse."
+          }
+        },
+        {
+          "num": 17,
+          "text": {
+            "NRSV": "The women of the neighborhood gave him a name, saying, “A son has been born to Naomi.” They named him Obed; he became the father of Jesse, the father of David.",
+            "Rotherham": "And the women, her neighbours, gave him a name, saying, There is born a son to Naomi,—So they called his name Obed, he, was, the father of Jesse, the father of David."
+          }
+        },
+        {
+          "num": 18,
+          "text": {
+            "NRSV": "Now these are the descendants of Perez: Perez became the father of Hezron,",
+            "Rotherham": "These, then, are the generations of Perez: Perez, begat, Hezron;"
+          }
+        },
+        {
+          "num": 19,
+          "text": {
+            "NRSV": "Hezron of Ram, Ram of Amminadab,",
+            "Rotherham": "And, Hezron, begat, Ram, and, Ram, begat, Amminadab;"
+          }
+        },
+        {
+          "num": 20,
+          "text": {
+            "NRSV": "Amminadab of Nahshon, Nahshon of Salmon,",
+            "Rotherham": "And, Amminadab, begat Nahshon, and, Nahshon, begat, Salmon,"
+          }
+        },
+        {
+          "num": 21,
+          "text": {
+            "NRSV": "Salmon of Boaz, Boaz of Obed,",
+            "Rotherham": "And, Salmon, begat, Boaz, and, Boaz, begat, Obed;"
+          }
+        },
+        {
+          "num": 22,
+          "text": {
+            "NRSV": "Obed of Jesse, and Jesse of David.",
+            "Rotherham": "And, Obed, begat, Jesse, and, Jesse, begat, David.   "
+          }
+        }
       ]
     }
-  ]
+  ],
+  "schema": "bible_book_multiversion_v1"
 }
