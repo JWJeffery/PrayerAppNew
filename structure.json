@@ -2338,7 +2338,7 @@
   },
   "bible_corpus_integrity": {
     "date": "2026-06-02",
-    "status": "canonical_completeness_audit_and_repair_required",
+    "status": "standing_completeness_audit_added_expected_to_fail_until_repair",
     "plan": "documentation/bible-corpus-completeness-audit-and-repair-plan.json",
     "standingStructuralAudit": "passes but is insufficient for canonical completeness",
     "canonicalVerseCountAudit": "required next",
@@ -2350,6 +2350,9 @@
     ],
     "historyDiagnosticConclusion": "severe missing target verses were not recoverable from scanned git history and appear to date back to original import",
     "doNotRepairTargetTextFromRotherham": true,
-    "nextStep": "Add standing canonical verse-count completeness audit before target-text repair."
+    "nextStep": "Repair OT target-corpus completeness defects from proper source, then rerun audit.",
+    "standingCompletenessAudit": "npm run audit:bible-corpus-completeness",
+    "scope": "ordinary OT non-Psalms canonical verse counts",
+    "knownCurrentResult": "expected failure until target corpus repair"
   }
 }

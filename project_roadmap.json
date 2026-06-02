@@ -2253,10 +2253,10 @@
   },
   "current_navigation_state": {
     "date": "2026-06-02",
-    "primaryImmediateWork": "Add canonical Bible completeness audit, establish target repair source basis, or return to paused C03",
-    "bibleCorpusState": "Standing structural audit passes, but canonical verse-count completeness audit is now required; severe target-corpus defects are recorded for Genesis, Deuteronomy, II Kings, and Jeremiah.",
+    "primaryImmediateWork": "Repair OT Bible target-corpus completeness defects from proper source or return to paused C03",
+    "bibleCorpusState": "Standing structural audit passes; standing OT non-Psalms completeness audit added and expected to fail until repair.",
     "resolverState": "translation-compatible with scalar and translation-keyed verse text",
-    "activeSideProject": "Rotherham aligned ordinary-book import complete; Psalms and blocker cases remain gated by completeness audit, source repair, and governed mapping.",
+    "activeSideProject": "Rotherham aligned ordinary-book import complete; blockers gated by completeness repair and mapping",
     "pausedTranche": "OOR-C03-ordinary-psalmody-appointment-map",
     "c03ReturnPoint": "Map the 10 source-backed ordinary psalmody appointments into the private Grail appointment map, then decide how to acquire the 18 missing appointments without fabrication."
   },
@@ -2271,8 +2271,9 @@
   },
   "bible_corpus_integrity": {
     "date": "2026-06-02",
-    "status": "canonical_completeness_audit_and_repair_required",
+    "status": "standing_completeness_audit_added_expected_to_fail_until_repair",
     "plan": "documentation/bible-corpus-completeness-audit-and-repair-plan.json",
-    "nextStep": "Add standing canonical verse-count completeness audit, then repair severe target-corpus truncations from proper source."
+    "nextStep": "Use audit findings to drive proper-source OT target-corpus repair.",
+    "standingCompletenessAudit": "npm run audit:bible-corpus-completeness"
   }
 }

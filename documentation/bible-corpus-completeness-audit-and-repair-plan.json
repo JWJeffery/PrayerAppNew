@@ -1,7 +1,7 @@
 {
   "schema": "prayerappnew_bible_corpus_completeness_audit_and_repair_plan_v1",
   "date": "2026-06-02",
-  "status": "canonical_completeness_audit_required_before_further_bible_import_expansion",
+  "status": "standing_completeness_audit_added_expected_to_fail_until_repair",
   "currentRepoHead": "f1b061f Record severe Rotherham blocker inspection",
   "context": {
     "problemStatement": "The completed standing Bible corpus audit validates JSON/schema/chapter/verse structure, but it does not validate canonical expected verse counts for each book/chapter. Severe missing target verses were exposed by Rotherham source/target alignment checks.",
@@ -155,5 +155,16 @@
   "pausedNonBibleWork": {
     "tranche": "OOR-C03-ordinary-psalmody-appointment-map",
     "state": "Paused at LOTH 18d296c / PrayerAppNew roadmap fd9bcaa context. 10 ordinary psalmody appointments entered; 18 missing; map the 10 source-backed appointments first, then decide how to acquire the 18 missing appointments without fabrication."
+  },
+  "standingAudit": {
+    "date": "2026-06-02",
+    "script": "scripts/audit-bible-corpus-completeness.mjs",
+    "packageCommand": "npm run audit:bible-corpus-completeness",
+    "status": "added_expected_to_fail_until_repair",
+    "scope": {
+      "ordinaryOtNonPsalms": "enforced",
+      "psalms": "separate consolidated-psalter audit still required",
+      "nt": "separate governed expected-verse exception table required before enforcement"
+    }
   }
 }
