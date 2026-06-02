@@ -2217,7 +2217,7 @@
     "rotherham_bible_translation": {
       "id": "rotherham_bible_translation_side_project",
       "date": "2026-06-02",
-      "status": "final_current_coverage_recorded",
+      "status": "nt_versification_map_recorded_import_pending",
       "translationKeyCandidate": "Rotherham",
       "sourceName": "The Emphasised Bible / The Emphasized Bible",
       "scopeIntent": [
@@ -2232,7 +2232,7 @@
       "schemaGate": "documentation/bible-book-multiversion-schema-v1.json",
       "resolverCompatibilityCommit": "0af6124 Add Scripture resolver translation compatibility",
       "requiredPreflight": "npm run audit:bible-corpus-structure",
-      "nextStep": "Handle Psalms, plan NT Rotherham mapping, or return to paused C03.",
+      "nextStep": "Implement Rotherham NT overlay importer and resolver support.",
       "sourceWitnessRecord": "documentation/rotherham-source-witness-intake.json",
       "sourceUrl": "https://raw.githubusercontent.com/scrollmapper/bible_databases/2025/formats/json/Rotherham.json",
       "sourceSha256": "d63488b149aadf4430fea6ddbc7c07395a12321a1b58799ce2dcb384ebf97627",
@@ -2832,7 +2832,21 @@
       "finalCoverageAudit": "documentation/rotherham-final-coverage-audit.json",
       "rotherhamCompleteBookCount": 55,
       "rotherhamVerseCount": 22639,
-      "jehovahCount": 0
+      "jehovahCount": 0,
+      "ntVersificationMap": "documentation/rotherham-nt-versification-map.json",
+      "ntMappedBooks": [
+        "Matthew",
+        "Mark",
+        "Luke",
+        "John",
+        "Acts",
+        "Romans",
+        "II Corinthians",
+        "James",
+        "III John",
+        "Revelation of John"
+      ],
+      "ntMismatchChapterCount": 20
     }
   },
   "paused_work": {

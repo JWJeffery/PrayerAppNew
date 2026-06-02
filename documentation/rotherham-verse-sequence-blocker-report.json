@@ -1,7 +1,7 @@
 {
   "schema": "prayerappnew_rotherham_verse_sequence_blocker_report_v1",
   "date": "2026-06-02",
-  "status": "final_coverage_audit_recorded_after_ot_former_blocker_import",
+  "status": "nt_versification_map_recorded",
   "sourceWitness": {
     "translationKey": "Rotherham",
     "url": "https://raw.githubusercontent.com/scrollmapper/bible_databases/2025/formats/json/Rotherham.json",
@@ -1217,5 +1217,6 @@
     "jehovahCount": 0,
     "otRotherhamVerseCount": 20684,
     "ntRotherhamVerseCount": 1955
-  }
+  },
+  "ntVersificationMap": "documentation/rotherham-nt-versification-map.json"
 }

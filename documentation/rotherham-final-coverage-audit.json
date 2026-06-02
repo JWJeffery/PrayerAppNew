@@ -1,7 +1,7 @@
 {
   "schema": "prayerappnew_rotherham_final_coverage_audit_v1",
   "date": "2026-06-02",
-  "status": "recorded_final_current_rotherham_coverage_after_repaired_ot_blocker_import",
+  "status": "final_coverage_recorded_nt_versification_map_recorded",
   "latestRotherhamImportCommit": "bbfd0b3 Import Rotherham repaired OT blocker books",
   "sourceWitness": {
     "translationKey": "Rotherham",
@@ -852,5 +852,6 @@
     "Handle Psalms as a separate consolidated-psalter lane.",
     "Plan NT Rotherham edition/versification mapping.",
     "Return to paused OOR-C03 ordinary psalmody appointment map."
-  ]
+  ],
+  "ntVersificationMap": "documentation/rotherham-nt-versification-map.json"
 }
