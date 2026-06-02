@@ -2338,7 +2338,7 @@
   },
   "bible_corpus_integrity": {
     "date": "2026-06-02",
-    "status": "source_basis_diagnostic_recorded_repair_blocked",
+    "status": "missing_content_audit_recorded_source_required_before_repair",
     "plan": "documentation/bible-corpus-completeness-audit-and-repair-plan.json",
     "standingStructuralAudit": "passes but is insufficient for canonical completeness",
     "canonicalVerseCountAudit": "required next",
@@ -2350,7 +2350,7 @@
     ],
     "historyDiagnosticConclusion": "severe missing target verses were not recoverable from scanned git history and appear to date back to original import",
     "doNotRepairTargetTextFromRotherham": true,
-    "nextStep": "Choose lawful target-text repair path before editing Bible text.",
+    "nextStep": "Identify repair source and then repair missing/misfiled target content.",
     "standingCompletenessAudit": "npm run audit:bible-corpus-completeness",
     "scope": "ordinary OT non-Psalms canonical verse counts",
     "knownCurrentResult": "expected failure until target corpus repair",
@@ -2358,6 +2358,12 @@
     "targetTranslationMetadata": "NRSV copyright notice present in checked OT files",
     "inRepoRepairSource": "not found",
     "currentCompletenessResult": "FAIL with 18 OT non-Psalms findings",
-    "repairBlockedUntilSourceRightsBasisEstablished": true
+    "repairBlockedUntilSourceRightsBasisEstablished": true,
+    "missingContentAudit": "documentation/bible-corpus-missing-content-audit.json",
+    "affectedBookCount": 11,
+    "chapterFindingCount": 18,
+    "totalMissingVerseNumbers": 146,
+    "totalExtraVerseNumbers": 7,
+    "sourceFrame": "source identification and corpus repair, not rights analysis"
   }
 }

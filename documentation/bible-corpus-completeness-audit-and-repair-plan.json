@@ -1,7 +1,7 @@
 {
   "schema": "prayerappnew_bible_corpus_completeness_audit_and_repair_plan_v1",
   "date": "2026-06-02",
-  "status": "source_basis_diagnostic_recorded_repair_blocked_until_source_rights_decision",
+  "status": "missing_content_audit_recorded_source_required_before_repair",
   "currentRepoHead": "f1b061f Record severe Rotherham blocker inspection",
   "context": {
     "problemStatement": "The completed standing Bible corpus audit validates JSON/schema/chapter/verse structure, but it does not validate canonical expected verse counts for each book/chapter. Severe missing target verses were exposed by Rotherham source/target alignment checks.",
@@ -116,18 +116,24 @@
   "requiredNextWork": [
     {
       "order": 1,
-      "title": "Choose target-text repair source/rights path",
-      "description": "Determine whether the existing NRSV slot can lawfully be repaired from an available NRSV source, or whether the target translation slot must be replaced/re-keyed."
+      "title": "Audit what is missing",
+      "status": "complete",
+      "report": "documentation/bible-corpus-missing-content-audit.json"
     },
     {
       "order": 2,
-      "title": "Repair OT target-corpus completeness defects from the chosen lawful source path",
-      "description": "Repair only after source/rights basis is established; do not repair from Rotherham."
+      "title": "Identify source for repair",
+      "description": "Identify the source text for repairing the target corpus. This is source work, not rights work."
     },
     {
       "order": 3,
+      "title": "Repair missing and misfiled target content from the chosen source",
+      "description": "Repair only after source is identified; do not repair from Rotherham or placeholders."
+    },
+    {
+      "order": 4,
       "title": "Rerun structural and completeness audits",
-      "description": "Both audits must pass before resuming blocker imports dependent on repaired target chapters."
+      "description": "Both must pass before Rotherham blocker imports resume."
     }
   ],
   "notAuthorized": [
@@ -153,7 +159,7 @@
   },
   "sourceBasisDiagnostic": {
     "date": "2026-06-02",
-    "status": "in_repo_repair_source_not_found",
+    "status": "source_basis_diagnostic_superseded_by_missing_content_audit",
     "readOnlyDiagnostic": "SOURCE_BASIS_DIAGNOSTIC_EXIT=0_READ_ONLY",
     "printsBiblicalText": false,
     "targetFileMetadataConclusion": {
@@ -213,11 +219,11 @@
       }
     },
     "decision": {
-      "repairBlockedUntilSourceRightsBasisEstablished": true,
-      "doNotRepairNRSVFromRotherham": true,
+      "repairBlockedUntilRepairSourceIdentified": true,
+      "doNotRepairTargetTextFromRotherham": true,
       "doNotRepairFromGuessing": true,
       "doNotAddPlaceholders": true,
-      "requiredNextDecision": "Choose a lawful and source-governed target-text repair path for the existing NRSV slot or decide to replace/retire that target slot."
+      "requiredNextDecision": "Identify the target-text source used by the repo or choose a source-governed replacement/repair source."
     },
     "candidateRepairPathsNeedingDecision": [
       {
@@ -236,6 +242,13 @@
         "status": "safe but blocks Bible/Rotherham completion"
       }
     ],
-    "nextStep": "Pause target-text repair until source/rights path is chosen. Do not continue Rotherham blocker imports that depend on defective target chapters."
+    "nextStep": "Use the missing-content audit to identify and repair from the chosen source.",
+    "scopeCorrection": "Source identification only; do not frame this as rights litigation."
+  },
+  "missingContentAudit": "documentation/bible-corpus-missing-content-audit.json",
+  "sourceFrameCorrection": {
+    "date": "2026-06-02",
+    "correction": "Focus on source identification and corpus repair, not rights analysis.",
+    "repairRequirement": "Identify the source text before repairing target corpus defects."
   }
 }
