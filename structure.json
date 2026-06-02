@@ -2217,7 +2217,7 @@
     "rotherham_bible_translation": {
       "id": "rotherham_bible_translation_side_project",
       "date": "2026-06-02",
-      "status": "source_witness_confirmed_import_not_yet_authorized",
+      "status": "joshua_pilot_imported",
       "translationKeyCandidate": "Rotherham",
       "sourceName": "The Emphasised Bible / The Emphasized Bible",
       "scopeIntent": [
@@ -2232,7 +2232,7 @@
       "schemaGate": "documentation/bible-book-multiversion-schema-v1.json",
       "resolverCompatibilityCommit": "0af6124 Add Scripture resolver translation compatibility",
       "requiredPreflight": "npm run audit:bible-corpus-structure",
-      "nextStep": "Design bounded Rotherham pilot import for an ordinary book such as Joshua.",
+      "nextStep": "Review Joshua pilot output and decide whether to expand Rotherham import by bounded ordinary-book tranche, handle Psalms separately, or pause and return to C03.",
       "sourceWitnessRecord": "documentation/rotherham-source-witness-intake.json",
       "sourceUrl": "https://raw.githubusercontent.com/scrollmapper/bible_databases/2025/formats/json/Rotherham.json",
       "sourceSha256": "d63488b149aadf4430fea6ddbc7c07395a12321a1b58799ce2dcb384ebf97627",
@@ -2243,7 +2243,16 @@
         "Jehovah": 0,
         "Elohim": 17
       },
-      "currentGate": "Source witness is confirmed. Next gate is a bounded pilot import plan, preferably one ordinary book, with source SHA verification and no hardcoded text-bearing patch script."
+      "currentGate": "Source witness is confirmed. Next gate is a bounded pilot import plan, preferably one ordinary book, with source SHA verification and no hardcoded text-bearing patch script.",
+      "pilotBook": "Joshua",
+      "pilotFile": "data/bible/OT/joshua.json",
+      "importedVerseCount": 658,
+      "migratedScalarNRSVVerseCount": 658,
+      "pilotVerification": {
+        "rotherhamVerseCount": 658,
+        "yahwehCount": 224,
+        "jehovahCount": 0
+      }
     }
   },
   "paused_work": {

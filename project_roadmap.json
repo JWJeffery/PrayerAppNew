@@ -2198,7 +2198,7 @@
   "side_projects": {
     "rotherham_bible_translation": {
       "date": "2026-06-02",
-      "status": "source_witness_confirmed_import_not_yet_authorized",
+      "status": "joshua_pilot_imported",
       "notPushedAside": true,
       "sourceRecord": "structure.side_projects.rotherham_bible_translation",
       "summary": "Rotherham remains active as a downtime side project. Implementation waits for Bible corpus structural repair and multi-translation Bible-book schema decision.",
@@ -2209,7 +2209,15 @@
       "sourceWitnessRecord": "documentation/rotherham-source-witness-intake.json",
       "sourceUrl": "https://raw.githubusercontent.com/scrollmapper/bible_databases/2025/formats/json/Rotherham.json",
       "sourceSha256": "d63488b149aadf4430fea6ddbc7c07395a12321a1b58799ce2dcb384ebf97627",
-      "nextStep": "Design and run a single-book Rotherham pilot import with source SHA verification."
+      "nextStep": "Review pilot and choose next bounded import strategy before expanding.",
+      "pilotBook": "Joshua",
+      "pilotFile": "data/bible/OT/joshua.json",
+      "importedVerseCount": 658,
+      "pilotVerification": {
+        "rotherhamVerseCount": 658,
+        "yahwehCount": 224,
+        "jehovahCount": 0
+      }
     }
   },
   "paused_tranches": {
@@ -2225,10 +2233,10 @@
   },
   "current_navigation_state": {
     "date": "2026-06-02",
-    "primaryImmediateWork": "Rotherham bounded pilot import design or return to paused C03",
+    "primaryImmediateWork": "Review Rotherham Joshua pilot or return to paused C03",
     "bibleCorpusState": "structural repair complete; standing audit passing; multiversion schema adopted",
     "resolverState": "translation-compatible with scalar and translation-keyed verse text",
-    "activeSideProject": "Rotherham source witness confirmed; no import yet",
+    "activeSideProject": "Rotherham Joshua pilot imported",
     "pausedTranche": "OOR-C03-ordinary-psalmody-appointment-map",
     "c03ReturnPoint": "Map the 10 source-backed ordinary psalmody appointments into the private Grail appointment map, then decide how to acquire the 18 missing appointments without fabrication."
   },
