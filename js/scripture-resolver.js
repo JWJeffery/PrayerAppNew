@@ -2,11 +2,31 @@
  * SCRIPTURE RESOLVER - QC FIXED VERSION 2026-02-17
  */
 const bibleCache = { books: {}, accessOrder: [], MAX_CACHED_BOOKS: 20 };
+const DEFAULT_BIBLE_TRANSLATION = 'NRSV';
 const NT_BOOKS = ['1corinthians', '1john', '1peter', '1thessalonians', '1timothy', '2corinthians', '2john', '2peter', '2thessalonians', '2timothy', '3john', 'acts', 'colossians', 'ephesians', 'galatians', 'hebrews', 'james', 'john', 'jude', 'luke', 'mark', 'matthew', 'philemon', 'philippians', 'revelation', 'romans', 'titus'];
 const BOOK_ALIASES = { 'ecclesiasticus': 'sirach', 'wisdomofsolomon': 'wisdom', 'songofthreeyoungmen': 'daniel', 'songofthreeholychildren': 'daniel', 'belandthedragon': 'daniel', 'bel': 'daniel', 'susanna': 'daniel', 'prayerofazariah': 'daniel', 'therestofesther': 'estherGK', 'additionstoesther': 'estherGK', 'therestofdaniel': 'danielGK', 'additionstodaniel': 'danielGK', 'songsofsolomon': 'songofsolomon', 'canticles': 'songofsolomon', 'canticleofcanticles': 'songofsolomon' };
 
-async function getScriptureText(citation) {
+function _normalizeBibleTranslation(value) {
+    return (typeof value === 'string' && value.trim()) ? value.trim() : DEFAULT_BIBLE_TRANSLATION;
+}
+
+function _selectBibleText(textNode, translation = DEFAULT_BIBLE_TRANSLATION) {
+    if (typeof textNode === 'string') return textNode;
+    if (!textNode || typeof textNode !== 'object' || Array.isArray(textNode)) return '';
+
+    const preferred = _normalizeBibleTranslation(translation);
+    if (typeof textNode[preferred] === 'string') return textNode[preferred];
+    if (preferred !== DEFAULT_BIBLE_TRANSLATION && typeof textNode[DEFAULT_BIBLE_TRANSLATION] === 'string') {
+        return textNode[DEFAULT_BIBLE_TRANSLATION];
+    }
+
+    const firstKey = Object.keys(textNode).find(key => typeof textNode[key] === 'string');
+    return firstKey ? textNode[firstKey] : '';
+}
+
+async function getScriptureText(citation, options = {}) {
     if (!citation || citation === '') return 'No reference provided.';
+    const translation = _normalizeBibleTranslation(options && options.translation);
     
     // Smart split handles "Jeremiah 4:9, 19" by only splitting if a letter follows the comma
     const parts = citation.split(/,(?=\s*[a-zA-Z])/); 
@@ -31,14 +51,15 @@ async function getScriptureText(citation) {
         if (currentBook && range) {
             const rangeParts = range.split(',');
             let subRanges = rangeParts.map(r => r.trim());
-            const text = await extractFromBook(currentBook, subRanges);
+            const text = await extractFromBook(currentBook, subRanges, { translation });
             texts.push(text);
         }
     }
     return texts.join('\n\n');
 }
 
-async function extractFromBook(book, ranges) {
+async function extractFromBook(book, ranges, options = {}) {
+    const translation = _normalizeBibleTranslation(options && options.translation);
     const isPsalm = book.toLowerCase().startsWith('psalm');
     let bookName = book.toLowerCase().replace(/\s/g, '');
     if (BOOK_ALIASES[bookName]) bookName = BOOK_ALIASES[bookName];
@@ -63,9 +84,9 @@ async function extractFromBook(book, ranges) {
     let lastChapter = null;
     for (let range of ranges) {
         if (isPsalm) {
-            extractedText += await extractPsalmRange(bookData, range);
+            extractedText += await extractPsalmRange(bookData, range, translation);
         } else {
-            const result = extractBookRange(bookData, book, range, lastChapter);
+            const result = extractBookRange(bookData, book, range, lastChapter, translation);
             extractedText += result.text;
             lastChapter = result.lastChapter;
         }
@@ -73,7 +94,7 @@ async function extractFromBook(book, ranges) {
     return extractedText.replace(/\d+:\d+ /g, '').trim();
 }
 
-async function extractPsalmRange(psalmsData, range) {
+async function extractPsalmRange(psalmsData, range, translation = DEFAULT_BIBLE_TRANSLATION) {
     let psalmNum, verseStart, verseEnd;
     if (range.includes(':')) {
         const parts = range.split(':');
@@ -86,7 +107,9 @@ async function extractPsalmRange(psalmsData, range) {
     const psalm = psalmsData.find(p => p.id === `PSALM ${psalmNum}`.toUpperCase());
     if (!psalm) return `[Psalm ${psalmNum} unavailable]`;
     
-    const lines = psalm.text.NRSV.split('\n');
+    const psalmText = _selectBibleText(psalm.text, translation);
+    if (!psalmText) return `[Psalm ${psalmNum} unavailable in ${_normalizeBibleTranslation(translation)}]`;
+    const lines = psalmText.split('\n');
     let tempText = '';
     for (let line of lines) {
         const vMatch = line.match(/^(\d+:\d+)\s*(.*)$/);
@@ -99,7 +122,7 @@ async function extractPsalmRange(psalmsData, range) {
 }
 
 // Returns { text, lastChapter } so callers can thread chapter context without global state.
-function extractBookRange(bookData, bookName, range, lastChapter) {
+function extractBookRange(bookData, bookName, range, lastChapter, translation = DEFAULT_BIBLE_TRANSLATION) {
     if (!range || typeof range !== 'string') return { text: '', lastChapter };
 
     let chNum, vStart, vEnd;
@@ -124,7 +147,8 @@ function extractBookRange(bookData, bookName, range, lastChapter) {
     let tempText = '';
     chapter.verses.forEach(v => {
         if (v.num >= vStart && (vEnd === Infinity || v.num <= vEnd)) {
-            tempText += `${chNum}:${v.num} ${v.text}\n`;
+            const verseText = _selectBibleText(v.text, translation);
+            tempText += `${chNum}:${v.num} ${verseText}\n`;
         }
     });
     return { text: tempText + '\n\n', lastChapter };
@@ -215,26 +239,26 @@ async function _normalizeCitationToSegments(citation) {
     return segments;
 }
 
-async function _resolveSegmentList(segments, label) {
+async function _resolveSegmentList(segments, label, options = {}) {
     const texts = [];
     let unavailable = false;
     for (const seg of segments) {
-        const t = await getScriptureText(seg);
+        const t = await getScriptureText(seg, options);
         if (!t || t.includes('[Scripture unavailable:')) unavailable = true;
         texts.push(t || '');
     }
     return { text: texts.join('\n\n'), label, segments, unavailable, error: null };
 }
 
-async function resolveScripturePericope(refOrSegments) {
+async function resolveScripturePericope(refOrSegments, options = {}) {
     if (Array.isArray(refOrSegments)) {
         const label = refOrSegments.join('; ');
-        return _resolveSegmentList(refOrSegments, label);
+        return _resolveSegmentList(refOrSegments, label, options);
     }
     const label = String(refOrSegments);
     try {
         const segs = await _normalizeCitationToSegments(label);
-        return _resolveSegmentList(segs, label);
+        return _resolveSegmentList(segs, label, options);
     } catch (e) {
         return { text: '', label, segments: [], unavailable: true, error: e.message };
     }
