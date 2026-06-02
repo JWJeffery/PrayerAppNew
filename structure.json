@@ -2217,7 +2217,7 @@
     "rotherham_bible_translation": {
       "id": "rotherham_bible_translation_side_project",
       "date": "2026-06-02",
-      "status": "aligned_ordinary_imports_complete_blockers_recorded",
+      "status": "severe_blocker_inspection_recorded",
       "translationKeyCandidate": "Rotherham",
       "sourceName": "The Emphasised Bible / The Emphasized Bible",
       "scopeIntent": [
@@ -2232,7 +2232,7 @@
       "schemaGate": "documentation/bible-book-multiversion-schema-v1.json",
       "resolverCompatibilityCommit": "0af6124 Add Scripture resolver translation compatibility",
       "requiredPreflight": "npm run audit:bible-corpus-structure",
-      "nextStep": "Inspect severe OT truncation/incomplete-chapter cases before any blocker import mapping.",
+      "nextStep": "Identify source/rights basis for existing target Bible corpus before repairing missing target verses.",
       "sourceWitnessRecord": "documentation/rotherham-source-witness-intake.json",
       "sourceUrl": "https://raw.githubusercontent.com/scrollmapper/bible_databases/2025/formats/json/Rotherham.json",
       "sourceSha256": "d63488b149aadf4430fea6ddbc7c07395a12321a1b58799ce2dcb384ebf97627",
@@ -2301,7 +2301,14 @@
         "psalms": "separate consolidated-psalter schema task",
         "verseSequenceBlockerBookCount": 20,
         "doNotBlindImportBlockers": true
-      }
+      },
+      "severeTargetCorpusReviewRequired": [
+        "Genesis",
+        "Deuteronomy",
+        "II Kings",
+        "Jeremiah"
+      ],
+      "doNotRepairTargetTextFromRotherham": true
     }
   },
   "paused_work": {

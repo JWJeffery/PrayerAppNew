@@ -1,7 +1,7 @@
 {
   "schema": "prayerappnew_rotherham_verse_sequence_blocker_report_v1",
   "date": "2026-06-02",
-  "status": "recorded_import_blockers_do_not_blind_import",
+  "status": "recorded_import_blockers_and_confirmed_severe_target_corpus_review_required",
   "sourceWitness": {
     "translationKey": "Rotherham",
     "url": "https://raw.githubusercontent.com/scrollmapper/bible_databases/2025/formats/json/Rotherham.json",
@@ -52,7 +52,15 @@
         "III John",
         "Revelation of John"
       ]
-    }
+    },
+    "severeInspectionRecorded": true,
+    "severeTargetCorpusReviewRequired": [
+      "Genesis",
+      "Deuteronomy",
+      "II Kings",
+      "Jeremiah"
+    ],
+    "doNotRepairTargetTextFromRotherham": true
   },
   "recommendedNextWork": [
     {
@@ -729,5 +737,252 @@
       ],
       "notes": "Target has an extra verse relative to source; requires mapping decision."
     }
-  ]
+  ],
+  "severeBlockerInspection": {
+    "date": "2026-06-02",
+    "status": "confirmed_target_corpus_integrity_review_required",
+    "readOnlyDiagnostic": "SEVERE_BLOCKER_INSPECTION_EXIT=0_READ_ONLY",
+    "printsText": false,
+    "sourceWitnessSha256": "d63488b149aadf4430fea6ddbc7c07395a12321a1b58799ce2dcb384ebf97627",
+    "standingAuditResult": "npm run audit:bible-corpus-structure PASS; standing audit checks schema shape, not canonical expected verse counts",
+    "confirmedFindings": [
+      {
+        "book": "Genesis",
+        "target": "data/bible/OT/genesis.json",
+        "findingType": "terminal_truncation_likely",
+        "chapters": [
+          {
+            "chapter": 50,
+            "sourceCount": 26,
+            "targetCount": 10,
+            "missingInTarget": [
+              11,
+              12,
+              13,
+              14,
+              15,
+              16,
+              17,
+              18,
+              19,
+              20,
+              21,
+              22,
+              23,
+              24,
+              25,
+              26
+            ],
+            "terminalTruncationLikely": true
+          }
+        ]
+      },
+      {
+        "book": "Deuteronomy",
+        "target": "data/bible/OT/deuteronomy.json",
+        "findingType": "terminal_truncation_likely",
+        "chapters": [
+          {
+            "chapter": 32,
+            "sourceCount": 52,
+            "targetCount": 14,
+            "missingInTarget": [
+              15,
+              16,
+              17,
+              18,
+              19,
+              20,
+              21,
+              22,
+              23,
+              24,
+              25,
+              26,
+              27,
+              28,
+              29,
+              30,
+              31,
+              32,
+              33,
+              34,
+              35,
+              36,
+              37,
+              38,
+              39,
+              40,
+              41,
+              42,
+              43,
+              44,
+              45,
+              46,
+              47,
+              48,
+              49,
+              50,
+              51,
+              52
+            ],
+            "terminalTruncationLikely": true
+          },
+          {
+            "chapter": 33,
+            "sourceCount": 29,
+            "targetCount": 7,
+            "missingInTarget": [
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              15,
+              16,
+              17,
+              18,
+              19,
+              20,
+              21,
+              22,
+              23,
+              24,
+              25,
+              26,
+              27,
+              28,
+              29
+            ],
+            "terminalTruncationLikely": true
+          }
+        ]
+      },
+      {
+        "book": "II Kings",
+        "target": "data/bible/OT/2kings.json",
+        "findingType": "terminal_truncation_likely",
+        "chapters": [
+          {
+            "chapter": 2,
+            "sourceCount": 25,
+            "targetCount": 15,
+            "missingInTarget": [
+              16,
+              17,
+              18,
+              19,
+              20,
+              21,
+              22,
+              23,
+              24,
+              25
+            ],
+            "terminalTruncationLikely": true
+          },
+          {
+            "chapter": 17,
+            "sourceCount": 41,
+            "targetCount": 23,
+            "missingInTarget": [
+              24,
+              25,
+              26,
+              27,
+              28,
+              29,
+              30,
+              31,
+              32,
+              33,
+              34,
+              35,
+              36,
+              37,
+              38,
+              39,
+              40,
+              41
+            ],
+            "terminalTruncationLikely": true
+          }
+        ]
+      },
+      {
+        "book": "Jeremiah",
+        "target": "data/bible/OT/jeremiah.json",
+        "findingType": "mixed_terminal_truncation_and_internal_gap",
+        "chapters": [
+          {
+            "chapter": 11,
+            "sourceCount": 23,
+            "targetCount": 11,
+            "missingInTarget": [
+              12,
+              13,
+              14,
+              15,
+              16,
+              17,
+              18,
+              19,
+              20,
+              21,
+              22,
+              23
+            ],
+            "terminalTruncationLikely": true
+          },
+          {
+            "chapter": 40,
+            "sourceCount": 16,
+            "targetCount": 9,
+            "missingInTarget": [
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12
+            ],
+            "terminalTruncationLikely": false,
+            "internalGapLikely": true
+          }
+        ]
+      }
+    ],
+    "decision": {
+      "doNotRepairFromRotherham": true,
+      "doNotAddPlaceholders": true,
+      "doNotBlindImportRotherhamIntoTheseBooks": true,
+      "requiredNextStep": "Locate or establish legitimate target-translation source for missing target verses before corpus repair."
+    },
+    "recommendedNextWork": [
+      {
+        "step": 1,
+        "title": "Identify source/rights basis for the existing target Bible corpus",
+        "reason": "The missing target text appears to be NRSV or an existing project target translation; Rotherham cannot be used to repair that text."
+      },
+      {
+        "step": 2,
+        "title": "Repair confirmed target corpus truncations from the proper target source",
+        "books": [
+          "Genesis",
+          "Deuteronomy",
+          "II Kings",
+          "Jeremiah"
+        ],
+        "reason": "These findings affect the existing Bible corpus independently of Rotherham import."
+      },
+      {
+        "step": 3,
+        "title": "After target repair, rerun Rotherham alignment map",
+        "reason": "Some former blockers may become ordinary aligned imports once target corpus integrity is restored."
+      }
+    ]
+  }
 }
