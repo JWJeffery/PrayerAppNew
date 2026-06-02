@@ -2198,7 +2198,7 @@
   "side_projects": {
     "rotherham_bible_translation": {
       "date": "2026-06-02",
-      "status": "remaining_small_ot_imported",
+      "status": "historical_books_imported",
       "notPushedAside": true,
       "sourceRecord": "structure.side_projects.rotherham_bible_translation",
       "summary": "Rotherham remains active as a downtime side project. Implementation waits for Bible corpus structural repair and multi-translation Bible-book schema decision.",
@@ -2209,21 +2209,24 @@
       "sourceWitnessRecord": "documentation/rotherham-source-witness-intake.json",
       "sourceUrl": "https://raw.githubusercontent.com/scrollmapper/bible_databases/2025/formats/json/Rotherham.json",
       "sourceSha256": "d63488b149aadf4430fea6ddbc7c07395a12321a1b58799ce2dcb384ebf97627",
-      "nextStep": "Run post-import alignment map, then choose next bounded aligned-book import tranche or return to C03.",
+      "nextStep": "Run post-import alignment map, then choose aligned Torah import, Psalms, blocker analysis, or return to C03.",
       "pilotBook": "Joshua",
       "pilotFile": "data/bible/OT/joshua.json",
-      "importedVerseCount": 1272,
+      "importedVerseCount": 3139,
       "pilotVerification": {
         "rotherhamVerseCount": 658,
         "yahwehCount": 224,
         "jehovahCount": 0
       },
-      "latestImportTranche": "remaining_small_ot",
+      "latestImportTranche": "historical_books",
       "importedBooks": [
-        "Proverbs",
-        "Daniel"
+        "II Samuel",
+        "I Kings",
+        "I Chronicles",
+        "Ezra",
+        "Nehemiah"
       ],
-      "yahwehCount": 96
+      "yahwehCount": 640
     }
   },
   "paused_tranches": {
@@ -2239,10 +2242,10 @@
   },
   "current_navigation_state": {
     "date": "2026-06-02",
-    "primaryImmediateWork": "Review Rotherham remaining small OT import or return to paused C03",
+    "primaryImmediateWork": "Review Rotherham historical import or continue with aligned Torah books",
     "bibleCorpusState": "structural repair complete; standing audit passing; multiversion schema adopted",
     "resolverState": "translation-compatible with scalar and translation-keyed verse text",
-    "activeSideProject": "Rotherham aligned small/epistle tranches imported; large OT aligned tranches remain",
+    "activeSideProject": "Rotherham historical aligned tranche imported; Torah aligned tranche remains",
     "pausedTranche": "OOR-C03-ordinary-psalmody-appointment-map",
     "c03ReturnPoint": "Map the 10 source-backed ordinary psalmody appointments into the private Grail appointment map, then decide how to acquire the 18 missing appointments without fabrication."
   },
