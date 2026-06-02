@@ -2184,22 +2184,26 @@
   "active_blockers": {
     "bible_corpus_structural_integrity": {
       "date": "2026-06-02",
-      "status": "ordinary_ot_repaired_et_schema_exceptions_governed",
-      "priority": "immediate_before_bible_translation_import",
+      "status": "resolved_with_standing_audit",
+      "priority": "closed_for_structural_repair",
       "sourceRecord": "structure.audit_findings.bible_corpus_structural_integrity_blocker_2026_06_02",
-      "summary": "Critical nested-object corruption and ordinary OT structural errors have been repaired. Remaining ET non-ordinary schema and partial-sequence issues are governed exceptions, not ordinary book corruption.",
-      "nextStep": "Add or retain a quiet standing Bible corpus structural audit that consumes the governance registry before Rotherham import.",
-      "governanceFile": "documentation/bible-corpus-schema-governance.json"
+      "summary": "Critical nested-object corruption, ordinary OT structural errors, extensionless JSON files, and ET schema exceptions have been repaired or governed. A standing audit now protects data/bible structure.",
+      "nextStep": "Before Rotherham import, decide bible_book_multiversion_v1 and require npm run audit:bible-corpus-structure as a preflight.",
+      "governanceFile": "documentation/bible-corpus-schema-governance.json",
+      "standingAuditScript": "scripts/audit-bible-corpus-structure.mjs",
+      "packageScript": "audit:bible-corpus-structure",
+      "latestAuditResult": "PASS bible corpus structural audit: files=125 blocking=0"
     }
   },
   "side_projects": {
     "rotherham_bible_translation": {
       "date": "2026-06-02",
-      "status": "active_side_project_waiting_on_standing_bible_audit_and_multiversion_schema",
+      "status": "active_side_project_ready_for_multiversion_schema_decision",
       "notPushedAside": true,
       "sourceRecord": "structure.side_projects.rotherham_bible_translation",
       "summary": "Rotherham remains active as a downtime side project. Implementation waits for Bible corpus structural repair and multi-translation Bible-book schema decision.",
-      "currentGate": "ordinary Bible corpus structure repaired; standing audit and multiversion schema still required before import"
+      "currentGate": "Bible corpus structure is repaired and protected by standing audit; next gate is multiversion Bible-book schema.",
+      "requiredPreflight": "npm run audit:bible-corpus-structure"
     }
   },
   "paused_tranches": {
@@ -2215,10 +2219,10 @@
   },
   "current_navigation_state": {
     "date": "2026-06-02",
-    "primaryImmediateWork": "Bible corpus structural repair",
-    "reason": "Structural schema failure in data/bible must be repaired before further Bible-dependent tranche work.",
+    "primaryImmediateWork": "Bible multiversion schema decision before Rotherham import, unless returning to paused C03",
+    "bibleCorpusState": "structural repair complete; governed audit passing",
+    "activeSideProject": "Rotherham Bible translation import, gated by bible_book_multiversion_v1",
     "pausedTranche": "OOR-C03-ordinary-psalmody-appointment-map",
-    "activeSideProject": "Rotherham Bible translation import, gated by Bible corpus repair",
-    "roleGovernance": "Lucy/Anna architect-QC; Claude builder; Marissa source-audit/liturgical-data governance; Gemini and Grok removed."
+    "c03ReturnPoint": "Map the 10 source-backed ordinary psalmody appointments into the private Grail appointment map, then decide how to acquire the 18 missing appointments without fabrication."
   }
 }

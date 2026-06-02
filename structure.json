@@ -1466,18 +1466,24 @@
     },
     "bible_corpus_schema_governance_2026_06_02": {
       "date": "2026-06-02",
-      "status": "active",
+      "status": "standing_audit_installed",
       "governanceFile": "documentation/bible-corpus-schema-governance.json",
-      "summary": "Bible corpus structural audit now distinguishes ordinary book files, consolidated psalter list schema, named addition files, governed partial/excerpt sequences, and ET collection/hymn schemas.",
+      "summary": "Bible corpus structural repair is now protected by a quiet standing audit that consumes documentation/bible-corpus-schema-governance.json and reports blocking schema drift without terminal overflow.",
       "ordinaryOtRepairCommits": [
         "7efb4ed Repair nested Bible chapter objects",
-        "070e822 Repair ordinary OT Bible structure issues"
+        "070e822 Repair ordinary OT Bible structure issues",
+        "33bf62a Classify Bible corpus schema exceptions",
+        "cd9baaa Add governed Bible corpus structural audit"
       ],
       "renamedJsonFiles": {
         "data/bible/ET/ClementBookofRollsET": "data/bible/ET/ClementBookofRollsET.json",
         "data/bible/NT/2baruchCE": "data/bible/NT/2baruchCE.json"
       },
-      "remainingConcern": "ET partial/excerpt files remain source-completeness/provenance questions, not ordinary structural corruption."
+      "remainingConcern": "ET partial/excerpt files remain source-completeness/provenance questions, not ordinary structural corruption. Rotherham import still requires a multiversion Bible-book schema decision.",
+      "standingAuditScript": "scripts/audit-bible-corpus-structure.mjs",
+      "packageScript": "audit:bible-corpus-structure",
+      "latestAuditResult": "PASS bible corpus structural audit: files=125 blocking=0",
+      "standingAuditCommit": "cd9baaa Add governed Bible corpus structural audit"
     }
   },
   "documentation_manifest": {
