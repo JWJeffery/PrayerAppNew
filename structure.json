@@ -1449,6 +1449,20 @@
         "saints-schema-refactor — LOW priority maintenance; not a release blocker.",
         "annual-typikon-collision-policy — Annual Typikon collision policy for fixed vs movable cycle overlaps (Annunciation/Holy Week/Pascha/Bright, Nativity/Theophany/Holy Week collisions) is a separate deferred governance item; not a current public-beta release blocker."
       ]
+    },
+    "project_agent_governance_2026_06_02": {
+      "id": "project_agent_governance_2026_06_02",
+      "date": "2026-06-02",
+      "activeAgents": {
+        "LucyAnna": "architect_QC_governance",
+        "Claude": "builder",
+        "Marissa": "source_audit_liturgical_data_governance"
+      },
+      "permanentlyRemovedAgents": {
+        "Gemini": "permanently_fired_replaced_by_LucyAnna",
+        "Grok": "permanently_fired_replaced_by_Claude_and_Marissa"
+      },
+      "governanceNote": "Do not refer to Gemini or Grok as current project participants. Historical outputs from removed agents are not current authority and must be revalidated against current governance."
     }
   },
   "documentation_manifest": {
@@ -2094,5 +2108,120 @@
     "headingNext": "OOR-C03-ordinary-psalmody-appointment-map",
     "lothHead": "18d296c",
     "prayerAppNewHead": "55968d5"
+  },
+  "audit_findings": {
+    "bible_corpus_structural_integrity_blocker_2026_06_02": {
+      "id": "bible_corpus_structural_integrity_blocker_2026_06_02",
+      "date": "2026-06-02",
+      "status": "active_blocker",
+      "severity": "release_blocking_for_bible_dependent_work",
+      "scope": [
+        "PrayerAppNew data/bible corpus",
+        "future multi-translation Bible schema",
+        "Rotherham import side project",
+        "any tranche work depending on data/bible structural correctness"
+      ],
+      "summary": "Bible corpus structural integrity is now an immediate blocker before additional tranche work or Rotherham import work that depends on data/bible. Existing audits missed schema-shape defects because they were too permissive: JSON-validity and loose content-presence are not sufficient.",
+      "knownFindings": [
+        {
+          "file": "data/bible/OT/joshua.json",
+          "finding": "Observed Joshua-shaped nested book object inside chapters after chapter 10 in uploaded sample; must verify and repair actual repo file if present."
+        },
+        {
+          "file": "data/bible/OT/deuteronomy.json",
+          "finding": "Audit attempt indicated non-uniform chapter num handling and possible nested/malformed tail; requires corrected structural audit that supports governed named additions."
+        },
+        {
+          "file": "data/bible/OT/1samuel.json",
+          "finding": "Prior structural scan reported duplicate/repeated tail sequence around chapters 28-31; requires repo verification and repair."
+        },
+        {
+          "file": "data/bible/OT/exodus.json",
+          "finding": "Top-level list shape may represent a different schema from ordinary book files; must be classified as governed exception or migrated."
+        },
+        {
+          "file": "data/bible/OT/psalms.json",
+          "finding": "Top-level list shape is expected for consolidated psalter schema and should be treated as a governed exception, not an ordinary-book error."
+        },
+        {
+          "file": "data/bible/OT/estherGK.json",
+          "finding": "Named additions such as Addition A-F require explicit audit support; numeric chapter assumptions caused the first diagnostic script to fail."
+        }
+      ],
+      "requiredContract": {
+        "ordinaryBookFiles": [
+          "exactly one top-level meta object",
+          "exactly one top-level chapters array",
+          "each chapters[] item must be a chapter object, not another book object",
+          "each ordinary chapter must have num and verses",
+          "each verse must have num and text",
+          "no nested meta/chapters/schema object inside chapters[] or verses[]"
+        ],
+        "governedExceptions": [
+          "psalter list schema for data/bible/OT/psalms.json",
+          "Greek Esther named additions and similar explicitly governed named-section texts",
+          "Ethiopic/Armenian/Syriac extra-canonical lanes where chapter numbering may be non-standard but must still be schema-declared"
+        ],
+        "futureMultiTranslationRule": "Do not append Rotherham or any other whole-Bible translation into existing single-version book files until the multi-translation Bible-book schema is defined and the base corpus passes structural audit."
+      },
+      "nextActions": [
+        "Write a corrected read-only Bible corpus structural audit that permits governed named additions and psalter schema.",
+        "Run the audit against actual repo files, not pasted/upload-fragment assumptions.",
+        "Repair high-severity malformed book files before any Rotherham import or Bible-dependent tranche work.",
+        "Define bible_book_multiversion_v1 only after base corpus shape is clean.",
+        "Pilot multi-translation migration on one clean book before expanding."
+      ],
+      "blocks": [
+        "Rotherham import implementation",
+        "multi-translation Bible schema migration",
+        "any tranche relying on current data/bible structural correctness"
+      ],
+      "doesNotBlock": [
+        "non-Bible-dependent planning notes",
+        "source research for Rotherham as long as no repo import or schema migration is performed"
+      ],
+      "governanceNote": "This is a structural blocker, not a Rotherham de-prioritization. Rotherham remains an active side project, but implementation waits until the Bible corpus is structurally governed."
+    }
+  },
+  "side_projects": {
+    "rotherham_bible_translation": {
+      "id": "rotherham_bible_translation_side_project",
+      "date": "2026-06-02",
+      "status": "active_side_project_blocked_on_bible_corpus_repair",
+      "translationKeyCandidate": "Rotherham",
+      "sourceName": "The Emphasised Bible / The Emphasized Bible",
+      "scopeIntent": [
+        "eventual full Bible import where source coverage permits",
+        "possible Psalms-first proof of method only after Bible corpus structural repair",
+        "public-domain scholarly divine-name-preserving comparative track"
+      ],
+      "currentDecision": "Rotherham is preferred over Brenton/LXX for the next translation experiment because it follows Hebrew/Masoretic ordering and does not introduce the LXX psalm-numbering problem. However, it must not be imported until the Bible corpus structural blocker is resolved and a multi-translation schema is defined.",
+      "schemaImplication": "Current ordinary book files are single-version objects with meta.version and scalar verse.text. Future Rotherham support requires a multi-translation book schema with verse.text keyed by translation.",
+      "notPushedAside": true
+    }
+  },
+  "paused_work": {
+    "OOR-C03-ordinary-psalmody-appointment-map": {
+      "id": "OOR-C03-ordinary-psalmody-appointment-map",
+      "date": "2026-06-02",
+      "status": "paused_for_bible_corpus_structural_blocker",
+      "repoHeads": {
+        "LOTH": "18d296c",
+        "PrayerAppNewRoadmap": "fd9bcaa"
+      },
+      "activePlan": "roman_loth_office_of_readings_completion_plan_2026_06_01",
+      "pausedLeg": "OOR-C03-ordinary-psalmody-appointment-map",
+      "currentState": {
+        "sourceTableExists": true,
+        "sourceTableValidates": true,
+        "ordinaryPsalmodyAppointmentsRequired": 28,
+        "ordinaryPsalmodyAppointmentsEntered": 10,
+        "ordinaryPsalmodyAppointmentsMissing": 18,
+        "sourceTableStatus": "C03 incomplete",
+        "privateGrailAppointmentMapState": "Current private Grail appointment map has no ordinary keys from the source table; existing audit still passes for the older 6 appointment mappings."
+      },
+      "returnPoint": "We are paused at C03. Next we map the 10 source-backed ordinary psalmody appointments into the private Grail appointment map, and separately decide how to acquire the 18 missing ordinary appointments without fabrication.",
+      "notLostThreadQuestion": "We are paused at C03; how do we map the 10 source-backed appointments and source the 18 missing appointments?"
+    }
   }
 }

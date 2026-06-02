@@ -2180,5 +2180,43 @@
       "mapReadingRule": "At work resumption, read the roadmap as a current navigation instrument: identify current repo heads, active plan, current tranche, next tranche, and blockers first. Do not reconstruct long historical paths unless diagnosing drift, failure, or stale state.",
       "nonProgressClarification": "LOTH 18d296c was cleanup/governance/architecture, not corpus progress. Do not count artifact retirement, standalone exports, books, indexes, or one-off audit cleanup as OOR completion progress."
     }
-  ]
+  ],
+  "active_blockers": {
+    "bible_corpus_structural_integrity": {
+      "date": "2026-06-02",
+      "status": "active",
+      "priority": "immediate_before_tranche_work",
+      "sourceRecord": "structure.audit_findings.bible_corpus_structural_integrity_blocker_2026_06_02",
+      "summary": "Repair and harden data/bible structural schema before further Bible-dependent tranche work or Rotherham import.",
+      "nextStep": "Create corrected read-only Bible corpus structural audit, then repair high-severity malformed files."
+    }
+  },
+  "side_projects": {
+    "rotherham_bible_translation": {
+      "date": "2026-06-02",
+      "status": "active_side_project_waiting_on_bible_corpus_repair",
+      "notPushedAside": true,
+      "sourceRecord": "structure.side_projects.rotherham_bible_translation",
+      "summary": "Rotherham remains active as a downtime side project. Implementation waits for Bible corpus structural repair and multi-translation Bible-book schema decision."
+    }
+  },
+  "paused_tranches": {
+    "OOR-C03-ordinary-psalmody-appointment-map": {
+      "date": "2026-06-02",
+      "status": "paused",
+      "sourceRecord": "structure.paused_work.OOR-C03-ordinary-psalmody-appointment-map",
+      "LOTH": "18d296c",
+      "PrayerAppNewRoadmap": "fd9bcaa",
+      "activePlan": "roman_loth_office_of_readings_completion_plan_2026_06_01",
+      "summary": "C03 paused with 10 ordinary psalmody appointments entered and 18 missing. Return by mapping the 10 source-backed appointments and sourcing the 18 missing without fabrication."
+    }
+  },
+  "current_navigation_state": {
+    "date": "2026-06-02",
+    "primaryImmediateWork": "Bible corpus structural repair",
+    "reason": "Structural schema failure in data/bible must be repaired before further Bible-dependent tranche work.",
+    "pausedTranche": "OOR-C03-ordinary-psalmody-appointment-map",
+    "activeSideProject": "Rotherham Bible translation import, gated by Bible corpus repair",
+    "roleGovernance": "Lucy/Anna architect-QC; Claude builder; Marissa source-audit/liturgical-data governance; Gemini and Grok removed."
+  }
 }
