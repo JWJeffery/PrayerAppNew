@@ -2217,7 +2217,7 @@
     "rotherham_bible_translation": {
       "id": "rotherham_bible_translation_side_project",
       "date": "2026-06-02",
-      "status": "larger_nt_epistles_imported",
+      "status": "remaining_small_ot_imported",
       "translationKeyCandidate": "Rotherham",
       "sourceName": "The Emphasised Bible / The Emphasized Bible",
       "scopeIntent": [
@@ -2232,7 +2232,7 @@
       "schemaGate": "documentation/bible-book-multiversion-schema-v1.json",
       "resolverCompatibilityCommit": "0af6124 Add Scripture resolver translation compatibility",
       "requiredPreflight": "npm run audit:bible-corpus-structure",
-      "nextStep": "Run post-import alignment map, then choose next bounded aligned-book tranche; Psalms and alignment blockers remain separate.",
+      "nextStep": "Run post-import alignment map, then choose between aligned historical books, aligned Torah books, Psalms, or blocker analysis.",
       "sourceWitnessRecord": "documentation/rotherham-source-witness-intake.json",
       "sourceUrl": "https://raw.githubusercontent.com/scrollmapper/bible_databases/2025/formats/json/Rotherham.json",
       "sourceSha256": "d63488b149aadf4430fea6ddbc7c07395a12321a1b58799ce2dcb384ebf97627",
@@ -2246,39 +2246,39 @@
       "currentGate": "Source witness is confirmed. Next gate is a bounded pilot import plan, preferably one ordinary book, with source SHA verification and no hardcoded text-bearing patch script.",
       "pilotBook": "Joshua",
       "pilotFile": "data/bible/OT/joshua.json",
-      "importedVerseCount": 740,
-      "migratedScalarNRSVVerseCount": 740,
+      "importedVerseCount": 1272,
+      "migratedScalarNRSVVerseCount": 1272,
       "pilotVerification": {
         "rotherhamVerseCount": 658,
         "yahwehCount": 224,
         "jehovahCount": 0
       },
-      "latestImportTranche": "larger_nt_epistles",
+      "latestImportTranche": "remaining_small_ot",
       "importedBooks": [
-        "I Corinthians",
-        "Hebrews"
+        "Proverbs",
+        "Daniel"
       ],
-      "yahwehCount": 0,
+      "yahwehCount": 96,
       "bookStats": {
-        "I Corinthians": {
-          "file": "data/bible/NT/1corinthians.json",
-          "chapters": 16,
-          "importedVerseCount": 437,
-          "migratedScalarNRSVVerseCount": 437,
+        "Proverbs": {
+          "file": "data/bible/OT/proverbs.json",
+          "chapters": 31,
+          "importedVerseCount": 915,
+          "migratedScalarNRSVVerseCount": 915,
           "verification": {
-            "rotherhamVerseCount": 437,
-            "yahwehCount": 0,
+            "rotherhamVerseCount": 915,
+            "yahwehCount": 88,
             "jehovahCount": 0
           }
         },
-        "Hebrews": {
-          "file": "data/bible/NT/hebrews.json",
-          "chapters": 13,
-          "importedVerseCount": 303,
-          "migratedScalarNRSVVerseCount": 303,
+        "Daniel": {
+          "file": "data/bible/OT/daniel.json",
+          "chapters": 12,
+          "importedVerseCount": 357,
+          "migratedScalarNRSVVerseCount": 357,
           "verification": {
-            "rotherhamVerseCount": 303,
-            "yahwehCount": 0,
+            "rotherhamVerseCount": 357,
+            "yahwehCount": 8,
             "jehovahCount": 0
           }
         }
