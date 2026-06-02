@@ -2217,7 +2217,7 @@
     "rotherham_bible_translation": {
       "id": "rotherham_bible_translation_side_project",
       "date": "2026-06-02",
-      "status": "light_nt_epistles_imported",
+      "status": "larger_nt_epistles_imported",
       "translationKeyCandidate": "Rotherham",
       "sourceName": "The Emphasised Bible / The Emphasized Bible",
       "scopeIntent": [
@@ -2246,194 +2246,38 @@
       "currentGate": "Source witness is confirmed. Next gate is a bounded pilot import plan, preferably one ordinary book, with source SHA verification and no hardcoded text-bearing patch script.",
       "pilotBook": "Joshua",
       "pilotFile": "data/bible/OT/joshua.json",
-      "importedVerseCount": 1215,
-      "migratedScalarNRSVVerseCount": 1215,
+      "importedVerseCount": 740,
+      "migratedScalarNRSVVerseCount": 740,
       "pilotVerification": {
         "rotherhamVerseCount": 658,
         "yahwehCount": 224,
         "jehovahCount": 0
       },
-      "latestImportTranche": "light_nt_epistles",
+      "latestImportTranche": "larger_nt_epistles",
       "importedBooks": [
-        "Galatians",
-        "Ephesians",
-        "Philippians",
-        "Colossians",
-        "I Thessalonians",
-        "II Thessalonians",
-        "I Timothy",
-        "II Timothy",
-        "Titus",
-        "Philemon",
-        "I Peter",
-        "II Peter",
-        "I John",
-        "II John",
-        "Jude"
+        "I Corinthians",
+        "Hebrews"
       ],
       "yahwehCount": 0,
       "bookStats": {
-        "Galatians": {
-          "file": "data/bible/NT/galatians.json",
-          "chapters": 6,
-          "importedVerseCount": 149,
-          "migratedScalarNRSVVerseCount": 149,
+        "I Corinthians": {
+          "file": "data/bible/NT/1corinthians.json",
+          "chapters": 16,
+          "importedVerseCount": 437,
+          "migratedScalarNRSVVerseCount": 437,
           "verification": {
-            "rotherhamVerseCount": 149,
+            "rotherhamVerseCount": 437,
             "yahwehCount": 0,
             "jehovahCount": 0
           }
         },
-        "Ephesians": {
-          "file": "data/bible/NT/ephesians.json",
-          "chapters": 6,
-          "importedVerseCount": 155,
-          "migratedScalarNRSVVerseCount": 155,
+        "Hebrews": {
+          "file": "data/bible/NT/hebrews.json",
+          "chapters": 13,
+          "importedVerseCount": 303,
+          "migratedScalarNRSVVerseCount": 303,
           "verification": {
-            "rotherhamVerseCount": 155,
-            "yahwehCount": 0,
-            "jehovahCount": 0
-          }
-        },
-        "Philippians": {
-          "file": "data/bible/NT/philippians.json",
-          "chapters": 4,
-          "importedVerseCount": 104,
-          "migratedScalarNRSVVerseCount": 104,
-          "verification": {
-            "rotherhamVerseCount": 104,
-            "yahwehCount": 0,
-            "jehovahCount": 0
-          }
-        },
-        "Colossians": {
-          "file": "data/bible/NT/colossians.json",
-          "chapters": 4,
-          "importedVerseCount": 95,
-          "migratedScalarNRSVVerseCount": 95,
-          "verification": {
-            "rotherhamVerseCount": 95,
-            "yahwehCount": 0,
-            "jehovahCount": 0
-          }
-        },
-        "I Thessalonians": {
-          "file": "data/bible/NT/1thessalonians.json",
-          "chapters": 5,
-          "importedVerseCount": 89,
-          "migratedScalarNRSVVerseCount": 89,
-          "verification": {
-            "rotherhamVerseCount": 89,
-            "yahwehCount": 0,
-            "jehovahCount": 0
-          }
-        },
-        "II Thessalonians": {
-          "file": "data/bible/NT/2thessalonians.json",
-          "chapters": 3,
-          "importedVerseCount": 47,
-          "migratedScalarNRSVVerseCount": 47,
-          "verification": {
-            "rotherhamVerseCount": 47,
-            "yahwehCount": 0,
-            "jehovahCount": 0
-          }
-        },
-        "I Timothy": {
-          "file": "data/bible/NT/1timothy.json",
-          "chapters": 6,
-          "importedVerseCount": 113,
-          "migratedScalarNRSVVerseCount": 113,
-          "verification": {
-            "rotherhamVerseCount": 113,
-            "yahwehCount": 0,
-            "jehovahCount": 0
-          }
-        },
-        "II Timothy": {
-          "file": "data/bible/NT/2timothy.json",
-          "chapters": 4,
-          "importedVerseCount": 83,
-          "migratedScalarNRSVVerseCount": 83,
-          "verification": {
-            "rotherhamVerseCount": 83,
-            "yahwehCount": 0,
-            "jehovahCount": 0
-          }
-        },
-        "Titus": {
-          "file": "data/bible/NT/titus.json",
-          "chapters": 3,
-          "importedVerseCount": 46,
-          "migratedScalarNRSVVerseCount": 46,
-          "verification": {
-            "rotherhamVerseCount": 46,
-            "yahwehCount": 0,
-            "jehovahCount": 0
-          }
-        },
-        "Philemon": {
-          "file": "data/bible/NT/philemon.json",
-          "chapters": 1,
-          "importedVerseCount": 25,
-          "migratedScalarNRSVVerseCount": 25,
-          "verification": {
-            "rotherhamVerseCount": 25,
-            "yahwehCount": 0,
-            "jehovahCount": 0
-          }
-        },
-        "I Peter": {
-          "file": "data/bible/NT/1peter.json",
-          "chapters": 5,
-          "importedVerseCount": 105,
-          "migratedScalarNRSVVerseCount": 105,
-          "verification": {
-            "rotherhamVerseCount": 105,
-            "yahwehCount": 0,
-            "jehovahCount": 0
-          }
-        },
-        "II Peter": {
-          "file": "data/bible/NT/2peter.json",
-          "chapters": 3,
-          "importedVerseCount": 61,
-          "migratedScalarNRSVVerseCount": 61,
-          "verification": {
-            "rotherhamVerseCount": 61,
-            "yahwehCount": 0,
-            "jehovahCount": 0
-          }
-        },
-        "I John": {
-          "file": "data/bible/NT/1john.json",
-          "chapters": 5,
-          "importedVerseCount": 105,
-          "migratedScalarNRSVVerseCount": 105,
-          "verification": {
-            "rotherhamVerseCount": 105,
-            "yahwehCount": 0,
-            "jehovahCount": 0
-          }
-        },
-        "II John": {
-          "file": "data/bible/NT/2john.json",
-          "chapters": 1,
-          "importedVerseCount": 13,
-          "migratedScalarNRSVVerseCount": 13,
-          "verification": {
-            "rotherhamVerseCount": 13,
-            "yahwehCount": 0,
-            "jehovahCount": 0
-          }
-        },
-        "Jude": {
-          "file": "data/bible/NT/jude.json",
-          "chapters": 1,
-          "importedVerseCount": 25,
-          "migratedScalarNRSVVerseCount": 25,
-          "verification": {
-            "rotherhamVerseCount": 25,
+            "rotherhamVerseCount": 303,
             "yahwehCount": 0,
             "jehovahCount": 0
           }

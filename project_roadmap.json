@@ -2198,7 +2198,7 @@
   "side_projects": {
     "rotherham_bible_translation": {
       "date": "2026-06-02",
-      "status": "light_nt_epistles_imported",
+      "status": "larger_nt_epistles_imported",
       "notPushedAside": true,
       "sourceRecord": "structure.side_projects.rotherham_bible_translation",
       "summary": "Rotherham remains active as a downtime side project. Implementation waits for Bible corpus structural repair and multi-translation Bible-book schema decision.",
@@ -2212,29 +2212,16 @@
       "nextStep": "Run post-import alignment map, then choose next bounded aligned-book import tranche or return to C03.",
       "pilotBook": "Joshua",
       "pilotFile": "data/bible/OT/joshua.json",
-      "importedVerseCount": 1215,
+      "importedVerseCount": 740,
       "pilotVerification": {
         "rotherhamVerseCount": 658,
         "yahwehCount": 224,
         "jehovahCount": 0
       },
-      "latestImportTranche": "light_nt_epistles",
+      "latestImportTranche": "larger_nt_epistles",
       "importedBooks": [
-        "Galatians",
-        "Ephesians",
-        "Philippians",
-        "Colossians",
-        "I Thessalonians",
-        "II Thessalonians",
-        "I Timothy",
-        "II Timothy",
-        "Titus",
-        "Philemon",
-        "I Peter",
-        "II Peter",
-        "I John",
-        "II John",
-        "Jude"
+        "I Corinthians",
+        "Hebrews"
       ],
       "yahwehCount": 0
     }
@@ -2252,10 +2239,10 @@
   },
   "current_navigation_state": {
     "date": "2026-06-02",
-    "primaryImmediateWork": "Review Rotherham light NT epistles import or return to paused C03",
+    "primaryImmediateWork": "Review Rotherham larger NT epistles import or return to paused C03",
     "bibleCorpusState": "structural repair complete; standing audit passing; multiversion schema adopted",
     "resolverState": "translation-compatible with scalar and translation-keyed verse text",
-    "activeSideProject": "Rotherham OT pilot tranches and light NT epistles imported",
+    "activeSideProject": "Rotherham NT aligned epistles imported except blocker cases",
     "pausedTranche": "OOR-C03-ordinary-psalmody-appointment-map",
     "c03ReturnPoint": "Map the 10 source-backed ordinary psalmody appointments into the private Grail appointment map, then decide how to acquire the 18 missing appointments without fabrication."
   },
