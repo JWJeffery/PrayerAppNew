@@ -1,0 +1,733 @@
+{
+  "schema": "prayerappnew_rotherham_verse_sequence_blocker_report_v1",
+  "date": "2026-06-02",
+  "status": "recorded_import_blockers_do_not_blind_import",
+  "sourceWitness": {
+    "translationKey": "Rotherham",
+    "url": "https://raw.githubusercontent.com/scrollmapper/bible_databases/2025/formats/json/Rotherham.json",
+    "sha256": "d63488b149aadf4430fea6ddbc7c07395a12321a1b58799ce2dcb384ebf97627",
+    "sourceRecord": "documentation/rotherham-source-witness-intake.json"
+  },
+  "context": {
+    "latestAlignedOrdinaryImportCommit": "744487d Import Rotherham Torah books",
+    "alignedOrdinaryBookImportsStatus": "aligned ordinary-book imports exhausted after Torah",
+    "specialLanes": [
+      {
+        "sourceBook": "Psalms",
+        "target": "data/bible/OT/psalms.json",
+        "reason": "consolidated psalter schema; do not ordinary-book import"
+      }
+    ],
+    "blockingPrinciple": "If source and target verse-number sequences differ, do not add Rotherham text blindly. Each blocker requires either corpus-integrity repair, governed per-book mapping, or explicit leave-blocked decision."
+  },
+  "summary": {
+    "blockerBookCount": 20,
+    "classificationCounts": {
+      "severe_target_truncation_or_incomplete_chapter_review": 3,
+      "short_terminal_missing_verses_review": 3,
+      "numbering_offset_or_verse_renumbering_review": 2,
+      "target_extra_verse_review": 3,
+      "mixed_severe_and_internal_missing_review": 1,
+      "internal_missing_verses_review": 1,
+      "probable_traditional_text_omitted_verses": 7
+    },
+    "priorityInvestigations": {
+      "severeTargetTruncationOrIncompleteChapterReview": [
+        "Genesis",
+        "Deuteronomy",
+        "II Kings",
+        "Jeremiah"
+      ],
+      "probableTraditionalTextOmittedVerses": [
+        "Matthew",
+        "Mark",
+        "Luke",
+        "John",
+        "Acts",
+        "Romans",
+        "James"
+      ],
+      "targetExtraVerseReview": [
+        "Job",
+        "III John",
+        "Revelation of John"
+      ]
+    }
+  },
+  "recommendedNextWork": [
+    {
+      "step": 1,
+      "title": "Inspect severe OT truncation/incomplete-chapter cases first",
+      "books": [
+        "Genesis",
+        "Deuteronomy",
+        "II Kings",
+        "Jeremiah"
+      ],
+      "reason": "These may reveal existing corpus defects independent of Rotherham import."
+    },
+    {
+      "step": 2,
+      "title": "Classify short terminal and internal OT mismatch cases",
+      "books": [
+        "Judges",
+        "I Samuel",
+        "II Chronicles",
+        "Job",
+        "Isaiah",
+        "Ezekiel"
+      ],
+      "reason": "These may be source/target versification differences or smaller corpus issues."
+    },
+    {
+      "step": 3,
+      "title": "Create governed mapping for probable NT traditional-text omitted verses",
+      "books": [
+        "Matthew",
+        "Mark",
+        "Luke",
+        "John",
+        "Acts",
+        "Romans",
+        "James"
+      ],
+      "reason": "These likely reflect traditional-text verses absent from modern critical-text target files."
+    },
+    {
+      "step": 4,
+      "title": "Handle target-extra verse cases separately",
+      "books": [
+        "III John",
+        "Revelation of John"
+      ],
+      "reason": "The target has an extra verse relative to Rotherham source."
+    },
+    {
+      "step": 5,
+      "title": "Handle Psalms separately",
+      "books": [
+        "Psalms"
+      ],
+      "reason": "Psalms uses consolidated psalter schema rather than ordinary book/chapter schema."
+    }
+  ],
+  "blockers": [
+    {
+      "sourceBook": "Genesis",
+      "target": "data/bible/OT/genesis.json",
+      "classification": "severe_target_truncation_or_incomplete_chapter_review",
+      "chapters": [
+        {
+          "chapter": 50,
+          "sourceCount": 26,
+          "targetCount": 10,
+          "missingInTarget": [
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20,
+            21,
+            22,
+            23,
+            24,
+            25,
+            26
+          ],
+          "extraInTarget": []
+        }
+      ],
+      "notes": "Target chapter appears to stop at verse 10 while source continues through verse 26. Inspect existing corpus integrity before any Rotherham mapping."
+    },
+    {
+      "sourceBook": "Deuteronomy",
+      "target": "data/bible/OT/deuteronomy.json",
+      "classification": "severe_target_truncation_or_incomplete_chapter_review",
+      "chapters": [
+        {
+          "chapter": 32,
+          "sourceCount": 52,
+          "targetCount": 14,
+          "missingInTarget": [
+            15,
+            16,
+            17,
+            18,
+            19,
+            20,
+            21,
+            22,
+            23,
+            24,
+            25,
+            26,
+            27,
+            28,
+            29,
+            30,
+            31,
+            32,
+            33,
+            34,
+            35,
+            36,
+            37,
+            38,
+            39,
+            40,
+            41,
+            42,
+            43,
+            44,
+            45,
+            46,
+            47,
+            48,
+            49,
+            50,
+            51,
+            52
+          ],
+          "extraInTarget": []
+        },
+        {
+          "chapter": 33,
+          "sourceCount": 29,
+          "targetCount": 7,
+          "missingInTarget": [
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20,
+            21,
+            22,
+            23,
+            24,
+            25,
+            26,
+            27,
+            28,
+            29
+          ],
+          "extraInTarget": []
+        }
+      ],
+      "notes": "Large terminal omissions in target chapters. Inspect existing corpus integrity before any Rotherham mapping."
+    },
+    {
+      "sourceBook": "Judges",
+      "target": "data/bible/OT/judges.json",
+      "classification": "short_terminal_missing_verses_review",
+      "chapters": [
+        {
+          "chapter": 17,
+          "sourceCount": 13,
+          "targetCount": 12,
+          "missingInTarget": [
+            13
+          ],
+          "extraInTarget": []
+        },
+        {
+          "chapter": 18,
+          "sourceCount": 31,
+          "targetCount": 30,
+          "missingInTarget": [
+            31
+          ],
+          "extraInTarget": []
+        }
+      ],
+      "notes": "Small terminal omissions; inspect whether target corpus or source versification is responsible."
+    },
+    {
+      "sourceBook": "I Samuel",
+      "target": "data/bible/OT/1samuel.json",
+      "classification": "short_terminal_missing_verses_review",
+      "chapters": [
+        {
+          "chapter": 20,
+          "sourceCount": 42,
+          "targetCount": 40,
+          "missingInTarget": [
+            41,
+            42
+          ],
+          "extraInTarget": []
+        }
+      ],
+      "notes": "Small terminal omission; inspect before mapping."
+    },
+    {
+      "sourceBook": "II Kings",
+      "target": "data/bible/OT/2kings.json",
+      "classification": "severe_target_truncation_or_incomplete_chapter_review",
+      "chapters": [
+        {
+          "chapter": 2,
+          "sourceCount": 25,
+          "targetCount": 15,
+          "missingInTarget": [
+            16,
+            17,
+            18,
+            19,
+            20,
+            21,
+            22,
+            23,
+            24,
+            25
+          ],
+          "extraInTarget": []
+        },
+        {
+          "chapter": 17,
+          "sourceCount": 41,
+          "targetCount": 23,
+          "missingInTarget": [
+            24,
+            25,
+            26,
+            27,
+            28,
+            29,
+            30,
+            31,
+            32,
+            33,
+            34,
+            35,
+            36,
+            37,
+            38,
+            39,
+            40,
+            41
+          ],
+          "extraInTarget": []
+        }
+      ],
+      "notes": "Large terminal omissions in target chapters. Inspect existing corpus integrity before any Rotherham mapping."
+    },
+    {
+      "sourceBook": "II Chronicles",
+      "target": "data/bible/OT/2chronicles.json",
+      "classification": "numbering_offset_or_verse_renumbering_review",
+      "chapters": [
+        {
+          "chapter": 9,
+          "sourceCount": 31,
+          "targetCount": 31,
+          "missingInTarget": [
+            9
+          ],
+          "extraInTarget": [
+            32
+          ]
+        }
+      ],
+      "notes": "Same count but different verse set; likely numbering offset or source/target renumbering."
+    },
+    {
+      "sourceBook": "Job",
+      "target": "data/bible/OT/job.json",
+      "classification": "target_extra_verse_review",
+      "chapters": [
+        {
+          "chapter": 32,
+          "sourceCount": 22,
+          "targetCount": 23,
+          "missingInTarget": [],
+          "extraInTarget": [
+            23
+          ]
+        }
+      ],
+      "notes": "Target has an extra verse relative to source; requires mapping decision."
+    },
+    {
+      "sourceBook": "Isaiah",
+      "target": "data/bible/OT/isaiah.json",
+      "classification": "numbering_offset_or_verse_renumbering_review",
+      "chapters": [
+        {
+          "chapter": 25,
+          "sourceCount": 12,
+          "targetCount": 12,
+          "missingInTarget": [
+            9
+          ],
+          "extraInTarget": [
+            13
+          ]
+        }
+      ],
+      "notes": "Same count but different verse set; likely numbering offset or source/target renumbering."
+    },
+    {
+      "sourceBook": "Jeremiah",
+      "target": "data/bible/OT/jeremiah.json",
+      "classification": "mixed_severe_and_internal_missing_review",
+      "chapters": [
+        {
+          "chapter": 11,
+          "sourceCount": 23,
+          "targetCount": 11,
+          "missingInTarget": [
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20,
+            21,
+            22,
+            23
+          ],
+          "extraInTarget": []
+        },
+        {
+          "chapter": 40,
+          "sourceCount": 16,
+          "targetCount": 9,
+          "missingInTarget": [
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12
+          ],
+          "extraInTarget": []
+        }
+      ],
+      "notes": "Chapter 11 suggests severe truncation; chapter 40 has internal missing range. Inspect existing corpus integrity and versification."
+    },
+    {
+      "sourceBook": "Ezekiel",
+      "target": "data/bible/OT/ezekiel.json",
+      "classification": "internal_missing_verses_review",
+      "chapters": [
+        {
+          "chapter": 11,
+          "sourceCount": 25,
+          "targetCount": 19,
+          "missingInTarget": [
+            6,
+            7,
+            8,
+            9,
+            11,
+            12
+          ],
+          "extraInTarget": []
+        },
+        {
+          "chapter": 13,
+          "sourceCount": 23,
+          "targetCount": 18,
+          "missingInTarget": [
+            9,
+            11,
+            12,
+            15,
+            16
+          ],
+          "extraInTarget": []
+        },
+        {
+          "chapter": 43,
+          "sourceCount": 27,
+          "targetCount": 25,
+          "missingInTarget": [
+            9,
+            12
+          ],
+          "extraInTarget": []
+        }
+      ],
+      "notes": "Internal missing verses require per-chapter source comparison before mapping."
+    },
+    {
+      "sourceBook": "Matthew",
+      "target": "data/bible/NT/matthew.json",
+      "classification": "probable_traditional_text_omitted_verses",
+      "chapters": [
+        {
+          "chapter": 17,
+          "sourceCount": 27,
+          "targetCount": 26,
+          "missingInTarget": [
+            21
+          ],
+          "extraInTarget": []
+        },
+        {
+          "chapter": 18,
+          "sourceCount": 35,
+          "targetCount": 34,
+          "missingInTarget": [
+            11
+          ],
+          "extraInTarget": []
+        },
+        {
+          "chapter": 23,
+          "sourceCount": 39,
+          "targetCount": 38,
+          "missingInTarget": [
+            14
+          ],
+          "extraInTarget": []
+        }
+      ],
+      "notes": "Likely traditional-text verses absent from modern critical-text target corpus."
+    },
+    {
+      "sourceBook": "Mark",
+      "target": "data/bible/NT/mark.json",
+      "classification": "probable_traditional_text_omitted_verses",
+      "chapters": [
+        {
+          "chapter": 7,
+          "sourceCount": 37,
+          "targetCount": 36,
+          "missingInTarget": [
+            16
+          ],
+          "extraInTarget": []
+        },
+        {
+          "chapter": 9,
+          "sourceCount": 50,
+          "targetCount": 48,
+          "missingInTarget": [
+            44,
+            46
+          ],
+          "extraInTarget": []
+        },
+        {
+          "chapter": 11,
+          "sourceCount": 33,
+          "targetCount": 32,
+          "missingInTarget": [
+            26
+          ],
+          "extraInTarget": []
+        },
+        {
+          "chapter": 15,
+          "sourceCount": 47,
+          "targetCount": 46,
+          "missingInTarget": [
+            28
+          ],
+          "extraInTarget": []
+        }
+      ],
+      "notes": "Likely traditional-text verses absent from modern critical-text target corpus."
+    },
+    {
+      "sourceBook": "Luke",
+      "target": "data/bible/NT/luke.json",
+      "classification": "probable_traditional_text_omitted_verses",
+      "chapters": [
+        {
+          "chapter": 17,
+          "sourceCount": 37,
+          "targetCount": 36,
+          "missingInTarget": [
+            36
+          ],
+          "extraInTarget": []
+        },
+        {
+          "chapter": 23,
+          "sourceCount": 56,
+          "targetCount": 55,
+          "missingInTarget": [
+            17
+          ],
+          "extraInTarget": []
+        }
+      ],
+      "notes": "Likely traditional-text verse omissions or source/target edition differences."
+    },
+    {
+      "sourceBook": "John",
+      "target": "data/bible/NT/john.json",
+      "classification": "probable_traditional_text_omitted_verses",
+      "chapters": [
+        {
+          "chapter": 5,
+          "sourceCount": 47,
+          "targetCount": 46,
+          "missingInTarget": [
+            4
+          ],
+          "extraInTarget": []
+        }
+      ],
+      "notes": "Likely traditional-text verse absent from modern critical-text target corpus."
+    },
+    {
+      "sourceBook": "Acts",
+      "target": "data/bible/NT/acts.json",
+      "classification": "probable_traditional_text_omitted_verses",
+      "chapters": [
+        {
+          "chapter": 8,
+          "sourceCount": 40,
+          "targetCount": 39,
+          "missingInTarget": [
+            37
+          ],
+          "extraInTarget": []
+        },
+        {
+          "chapter": 15,
+          "sourceCount": 41,
+          "targetCount": 39,
+          "missingInTarget": [
+            18,
+            34
+          ],
+          "extraInTarget": []
+        },
+        {
+          "chapter": 23,
+          "sourceCount": 35,
+          "targetCount": 34,
+          "missingInTarget": [
+            26
+          ],
+          "extraInTarget": []
+        },
+        {
+          "chapter": 24,
+          "sourceCount": 27,
+          "targetCount": 26,
+          "missingInTarget": [
+            7
+          ],
+          "extraInTarget": []
+        },
+        {
+          "chapter": 28,
+          "sourceCount": 31,
+          "targetCount": 30,
+          "missingInTarget": [
+            29
+          ],
+          "extraInTarget": []
+        }
+      ],
+      "notes": "Likely traditional-text verse omissions or source/target edition differences."
+    },
+    {
+      "sourceBook": "Romans",
+      "target": "data/bible/NT/romans.json",
+      "classification": "probable_traditional_text_omitted_verses",
+      "chapters": [
+        {
+          "chapter": 16,
+          "sourceCount": 27,
+          "targetCount": 26,
+          "missingInTarget": [
+            24
+          ],
+          "extraInTarget": []
+        }
+      ],
+      "notes": "Likely traditional-text verse absent from modern critical-text target corpus."
+    },
+    {
+      "sourceBook": "II Corinthians",
+      "target": "data/bible/NT/2corinthians.json",
+      "classification": "short_terminal_missing_verses_review",
+      "chapters": [
+        {
+          "chapter": 13,
+          "sourceCount": 14,
+          "targetCount": 13,
+          "missingInTarget": [
+            14
+          ],
+          "extraInTarget": []
+        }
+      ],
+      "notes": "Small terminal omission; inspect source/target versification before mapping."
+    },
+    {
+      "sourceBook": "James",
+      "target": "data/bible/NT/james.json",
+      "classification": "probable_traditional_text_omitted_verses",
+      "chapters": [
+        {
+          "chapter": 1,
+          "sourceCount": 27,
+          "targetCount": 26,
+          "missingInTarget": [
+            8
+          ],
+          "extraInTarget": []
+        }
+      ],
+      "notes": "Likely source/target edition difference; inspect before mapping."
+    },
+    {
+      "sourceBook": "III John",
+      "target": "data/bible/NT/3john.json",
+      "classification": "target_extra_verse_review",
+      "chapters": [
+        {
+          "chapter": 1,
+          "sourceCount": 14,
+          "targetCount": 15,
+          "missingInTarget": [],
+          "extraInTarget": [
+            15
+          ]
+        }
+      ],
+      "notes": "Target has an extra verse relative to source; requires mapping decision."
+    },
+    {
+      "sourceBook": "Revelation of John",
+      "target": "data/bible/NT/revelation.json",
+      "classification": "target_extra_verse_review",
+      "chapters": [
+        {
+          "chapter": 12,
+          "sourceCount": 17,
+          "targetCount": 18,
+          "missingInTarget": [],
+          "extraInTarget": [
+            18
+          ]
+        }
+      ],
+      "notes": "Target has an extra verse relative to source; requires mapping decision."
+    }
+  ]
+}
