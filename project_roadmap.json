@@ -2253,8 +2253,8 @@
   },
   "current_navigation_state": {
     "date": "2026-06-02",
-    "primaryImmediateWork": "Identify Bible repair source and repair missing/misfiled OT target content, or return to paused C03",
-    "bibleCorpusState": "Structural audit passes; OT non-Psalms completeness audit fails; missing-content audit recorded.",
+    "primaryImmediateWork": "Identify source for remaining Bible repair/adjudication, or return to paused C03",
+    "bibleCorpusState": "Structural audit passes; OT completeness audit reduced after user-provided repair tranche; 10 findings remain.",
     "resolverState": "translation-compatible with scalar and translation-keyed verse text",
     "activeSideProject": "Rotherham aligned ordinary-book import complete; blockers paused until target corpus repair/mapping",
     "pausedTranche": "OOR-C03-ordinary-psalmody-appointment-map",
@@ -2271,13 +2271,14 @@
   },
   "bible_corpus_integrity": {
     "date": "2026-06-02",
-    "status": "missing_content_audit_recorded_source_required_before_repair",
+    "status": "user_provided_missing_content_tranche_repaired_remaining_defects_recorded",
     "plan": "documentation/bible-corpus-completeness-audit-and-repair-plan.json",
-    "nextStep": "Identify repair source and then repair from that source.",
+    "nextStep": "Identify source for remaining repair/adjudication.",
     "standingCompletenessAudit": "npm run audit:bible-corpus-completeness",
     "currentCompletenessResult": "FAIL with 18 OT non-Psalms findings",
     "missingContentAudit": "documentation/bible-corpus-missing-content-audit.json",
     "affectedBookCount": 11,
-    "chapterFindingCount": 18
+    "chapterFindingCount": 18,
+    "remainingCompletenessFindings": 10
   }
 }

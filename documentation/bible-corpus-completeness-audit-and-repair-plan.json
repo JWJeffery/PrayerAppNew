@@ -1,7 +1,7 @@
 {
   "schema": "prayerappnew_bible_corpus_completeness_audit_and_repair_plan_v1",
   "date": "2026-06-02",
-  "status": "missing_content_audit_recorded_source_required_before_repair",
+  "status": "user_provided_missing_content_tranche_repaired_remaining_defects_recorded",
   "currentRepoHead": "f1b061f Record severe Rotherham blocker inspection",
   "context": {
     "problemStatement": "The completed standing Bible corpus audit validates JSON/schema/chapter/verse structure, but it does not validate canonical expected verse counts for each book/chapter. Severe missing target verses were exposed by Rotherham source/target alignment checks.",
@@ -116,24 +116,16 @@
   "requiredNextWork": [
     {
       "order": 1,
-      "title": "Audit what is missing",
-      "status": "complete",
-      "report": "documentation/bible-corpus-missing-content-audit.json"
+      "title": "Identify source for remaining repair",
+      "description": "Remaining defects are in 2 Kings, 2 Chronicles, Job, Isaiah, Jeremiah, and Ezekiel."
     },
     {
       "order": 2,
-      "title": "Identify source for repair",
-      "description": "Identify the source text for repairing the target corpus. This is source work, not rights work."
+      "title": "Repair remaining true missing content from identified source"
     },
     {
       "order": 3,
-      "title": "Repair missing and misfiled target content from the chosen source",
-      "description": "Repair only after source is identified; do not repair from Rotherham or placeholders."
-    },
-    {
-      "order": 4,
-      "title": "Rerun structural and completeness audits",
-      "description": "Both must pass before Rotherham blocker imports resume."
+      "title": "Adjudicate remaining same-count/extra-verse sequence cases"
     }
   ],
   "notAuthorized": [
@@ -250,5 +242,20 @@
     "date": "2026-06-02",
     "correction": "Focus on source identification and corpus repair, not rights analysis.",
     "repairRequirement": "Identify the source text before repairing target corpus defects."
+  },
+  "latestRepairTranche": {
+    "date": "2026-06-02",
+    "source": "user_provided_text_in_chat",
+    "repairedReferences": [
+      "Genesis 50:11-26",
+      "Deuteronomy 32:15-52",
+      "Deuteronomy 33:8-29",
+      "Judges 17:13",
+      "Judges 18:31",
+      "1 Samuel 20:41-42"
+    ],
+    "insertedOrUpdatedVerseCount": 80,
+    "exodusExpectedCountCorrection": "Exodus 7 has 25 verses and Exodus 8 has 32; audit table corrected.",
+    "remainingCompletenessFindings": 10
   }
 }

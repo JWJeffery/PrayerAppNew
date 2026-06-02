@@ -2338,7 +2338,7 @@
   },
   "bible_corpus_integrity": {
     "date": "2026-06-02",
-    "status": "missing_content_audit_recorded_source_required_before_repair",
+    "status": "user_provided_missing_content_tranche_repaired_remaining_defects_recorded",
     "plan": "documentation/bible-corpus-completeness-audit-and-repair-plan.json",
     "standingStructuralAudit": "passes but is insufficient for canonical completeness",
     "canonicalVerseCountAudit": "required next",
@@ -2350,7 +2350,7 @@
     ],
     "historyDiagnosticConclusion": "severe missing target verses were not recoverable from scanned git history and appear to date back to original import",
     "doNotRepairTargetTextFromRotherham": true,
-    "nextStep": "Identify repair source and then repair missing/misfiled target content.",
+    "nextStep": "Identify source for remaining 2 Kings, 2 Chronicles, Job, Isaiah, Jeremiah, and Ezekiel repair/adjudication.",
     "standingCompletenessAudit": "npm run audit:bible-corpus-completeness",
     "scope": "ordinary OT non-Psalms canonical verse counts",
     "knownCurrentResult": "expected failure until target corpus repair",
@@ -2364,6 +2364,17 @@
     "chapterFindingCount": 18,
     "totalMissingVerseNumbers": 146,
     "totalExtraVerseNumbers": 7,
-    "sourceFrame": "source identification and corpus repair, not rights analysis"
+    "sourceFrame": "source identification and corpus repair, not rights analysis",
+    "latestRepairTranche": [
+      "Genesis 50:11-26",
+      "Deuteronomy 32:15-52",
+      "Deuteronomy 33:8-29",
+      "Judges 17:13",
+      "Judges 18:31",
+      "1 Samuel 20:41-42"
+    ],
+    "insertedOrUpdatedVerseCount": 80,
+    "exodusExpectedCountCorrected": true,
+    "remainingCompletenessFindings": 10
   }
 }
