@@ -1,7 +1,7 @@
 {
   "schema": "prayerappnew_bible_corpus_completeness_audit_and_repair_plan_v1",
   "date": "2026-06-02",
-  "status": "sequence_offset_chapters_repaired_job_extra_verse_remains",
+  "status": "ot_non_psalms_completeness_repaired_and_audit_passing",
   "currentRepoHead": "f1b061f Record severe Rotherham blocker inspection",
   "context": {
     "problemStatement": "The completed standing Bible corpus audit validates JSON/schema/chapter/verse structure, but it does not validate canonical expected verse counts for each book/chapter. Severe missing target verses were exposed by Rotherham source/target alignment checks.",
@@ -116,8 +116,17 @@
   "requiredNextWork": [
     {
       "order": 1,
-      "title": "Inspect Job 32 full chapter offset source",
-      "description": "Determine whether verse 23 should be deleted, merged, or whether an earlier split caused a chapter-wide offset."
+      "title": "Rerun Rotherham blocker alignment map",
+      "description": "Now that OT non-Psalms target completeness passes, determine which former Rotherham blockers are eligible for mapped/import repair."
+    },
+    {
+      "order": 2,
+      "title": "Handle Psalms separately",
+      "description": "Psalms remains a consolidated-psalter schema task."
+    },
+    {
+      "order": 3,
+      "title": "Return to paused C03 when Bible lane is parked"
     }
   ],
   "notAuthorized": [
@@ -238,26 +247,7 @@
   "latestRepairTranche": {
     "date": "2026-06-02",
     "source": "mechanical_correction_from_current_repo_inspection",
-    "renumberActions": [
-      {
-        "path": "data/bible/OT/2chronicles.json",
-        "book": "2 Chronicles",
-        "chapter": 9,
-        "rangeStart": 10,
-        "rangeEnd": 32,
-        "delta": -1,
-        "reason": "chapter has missing 9 and extra 32; inspected verse 10 contains the user-provided verse 9 text, so 10-32 are shifted +1"
-      },
-      {
-        "path": "data/bible/OT/isaiah.json",
-        "book": "Isaiah",
-        "chapter": 25,
-        "rangeStart": 10,
-        "rangeEnd": 13,
-        "delta": -1,
-        "reason": "chapter has missing 9 and extra 13; inspected verse 10 contains the user-provided verse 9 text, so 10-13 are shifted +1"
-      }
-    ],
-    "remainingCompletenessFindings": 1
+    "repairAction": "Merged split Job 32:6/7 and renumbered current 32:8-23 down to 32:7-22.",
+    "remainingCompletenessFindings": 0
   }
 }

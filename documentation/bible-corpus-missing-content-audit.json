@@ -1,7 +1,7 @@
 {
   "schema": "prayerappnew_bible_corpus_missing_content_audit_v1",
   "date": "2026-06-02",
-  "status": "sequence_offset_chapters_repaired_job_extra_verse_remains",
+  "status": "ot_non_psalms_completeness_repaired_and_audit_passing",
   "scope": {
     "ordinaryOtNonPsalms": "enforced by npm run audit:bible-corpus-completeness",
     "psalms": "excluded consolidated psalter schema; separate audit required",
@@ -16,18 +16,16 @@
   },
   "auditCommand": "npm run audit:bible-corpus-completeness -- --json",
   "auditResult": {
-    "status": "FAIL",
+    "status": "PASS",
     "checkedChapterCount": 779,
-    "findingCount": 1
+    "findingCount": 0
   },
   "summary": {
-    "affectedBookCount": 1,
-    "affectedBooks": [
-      "Job"
-    ],
-    "chapterFindingCount": 1,
+    "affectedBookCount": 0,
+    "affectedBooks": [],
+    "chapterFindingCount": 0,
     "totalMissingVerseNumbers": 0,
-    "totalExtraVerseNumbers": 1
+    "totalExtraVerseNumbers": 0
   },
   "missingReferences": [
     "Genesis 50:11-26",
@@ -57,60 +55,26 @@
     "Job 32:23",
     "Isaiah 25:13"
   ],
-  "findings": [
-    {
-      "book": "Job",
-      "path": "data/bible/OT/job.json",
-      "chapter": 32,
-      "kind": "VERSE_COUNT_OR_SEQUENCE_MISMATCH",
-      "expectedCount": 22,
-      "actualCount": 23,
-      "missingVerses": [],
-      "missingRanges": [],
-      "extraVerseNumbers": [
-        23
-      ],
-      "extraRanges": [
-        {
-          "start": 23,
-          "end": 23,
-          "label": "23"
-        }
-      ],
-      "repairDisposition": "job_32_extra_verse_adjudication_required"
-    }
-  ],
+  "findings": [],
   "recommendedNextWork": [
     {
       "step": 1,
-      "title": "Inspect Job 32 full chapter offset source",
-      "description": "Job 32 has one extra verse number. Do not delete verse 23 blindly until the offset source is identified."
+      "title": "Resume Rotherham blocker remap or return to paused C03",
+      "description": "OT non-Psalms target corpus completeness now passes; Psalms remains a separate consolidated-psalter audit lane."
     }
   ],
   "latestRepairTranche": {
     "date": "2026-06-02",
-    "source": "mechanical_correction_from_current_repo_inspection_and_user_provided_verse_9_text",
-    "repairType": "renumber shifted verse ranges; no new text inserted",
-    "renumberActions": [
-      {
-        "path": "data/bible/OT/2chronicles.json",
-        "book": "2 Chronicles",
-        "chapter": 9,
-        "rangeStart": 10,
-        "rangeEnd": 32,
-        "delta": -1,
-        "reason": "chapter has missing 9 and extra 32; inspected verse 10 contains the user-provided verse 9 text, so 10-32 are shifted +1"
-      },
-      {
-        "path": "data/bible/OT/isaiah.json",
-        "book": "Isaiah",
-        "chapter": 25,
-        "rangeStart": 10,
-        "rangeEnd": 13,
-        "delta": -1,
-        "reason": "chapter has missing 9 and extra 13; inspected verse 10 contains the user-provided verse 9 text, so 10-13 are shifted +1"
-      }
-    ],
-    "remainingCompletenessFindings": 1
+    "source": "mechanical_correction_from_current_repo_inspection",
+    "repairType": "merge split Job 32:6 speaker formula with following verse and renumber remainder",
+    "repairAction": {
+      "book": "Job",
+      "chapter": 32,
+      "merge": "current 32:6 plus current 32:7 -> canonical 32:6",
+      "renumber": "current 32:8-23 -> canonical 32:7-22",
+      "textInserted": false,
+      "textDeleted": false
+    },
+    "remainingCompletenessFindings": 0
   }
 }

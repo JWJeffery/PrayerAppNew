@@ -2253,10 +2253,10 @@
   },
   "current_navigation_state": {
     "date": "2026-06-02",
-    "primaryImmediateWork": "Inspect and adjudicate Job 32 extra verse, or return to paused C03",
-    "bibleCorpusState": "Structural audit passes; OT completeness audit reduced to one Job 32 extra-verse finding.",
+    "primaryImmediateWork": "Rerun Rotherham blocker alignment map, handle Psalms, or return to paused C03",
+    "bibleCorpusState": "Structural audit passes; OT non-Psalms completeness audit passes.",
     "resolverState": "translation-compatible with scalar and translation-keyed verse text",
-    "activeSideProject": "Rotherham aligned ordinary-book import complete; blocker imports paused until target corpus final audit passes",
+    "activeSideProject": "Rotherham aligned ordinary-book import complete; former blockers should be remapped after target corpus repair",
     "pausedTranche": "OOR-C03-ordinary-psalmody-appointment-map",
     "c03ReturnPoint": "Map the 10 source-backed ordinary psalmody appointments into the private Grail appointment map, then decide how to acquire the 18 missing appointments without fabrication."
   },
@@ -2271,14 +2271,14 @@
   },
   "bible_corpus_integrity": {
     "date": "2026-06-02",
-    "status": "sequence_offset_chapters_repaired_job_extra_verse_remains",
+    "status": "ot_non_psalms_completeness_repaired_and_audit_passing",
     "plan": "documentation/bible-corpus-completeness-audit-and-repair-plan.json",
-    "nextStep": "Inspect Job 32 full chapter offset source before final correction.",
+    "nextStep": "Rerun Rotherham blocker alignment map or return to paused C03.",
     "standingCompletenessAudit": "npm run audit:bible-corpus-completeness",
     "currentCompletenessResult": "FAIL with 18 OT non-Psalms findings",
     "missingContentAudit": "documentation/bible-corpus-missing-content-audit.json",
     "affectedBookCount": 11,
     "chapterFindingCount": 18,
-    "remainingCompletenessFindings": 1
+    "remainingCompletenessFindings": 0
   }
 }

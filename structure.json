@@ -2338,7 +2338,7 @@
   },
   "bible_corpus_integrity": {
     "date": "2026-06-02",
-    "status": "sequence_offset_chapters_repaired_job_extra_verse_remains",
+    "status": "ot_non_psalms_completeness_repaired_and_audit_passing",
     "plan": "documentation/bible-corpus-completeness-audit-and-repair-plan.json",
     "standingStructuralAudit": "passes but is insufficient for canonical completeness",
     "canonicalVerseCountAudit": "required next",
@@ -2350,7 +2350,7 @@
     ],
     "historyDiagnosticConclusion": "severe missing target verses were not recoverable from scanned git history and appear to date back to original import",
     "doNotRepairTargetTextFromRotherham": true,
-    "nextStep": "Inspect Job 32 full chapter offset source before final correction.",
+    "nextStep": "Rerun Rotherham blocker alignment map or return to paused C03.",
     "standingCompletenessAudit": "npm run audit:bible-corpus-completeness",
     "scope": "ordinary OT non-Psalms canonical verse counts",
     "knownCurrentResult": "expected failure until target corpus repair",
@@ -2365,10 +2365,10 @@
     "totalMissingVerseNumbers": 146,
     "totalExtraVerseNumbers": 7,
     "sourceFrame": "source identification and corpus repair, not rights analysis",
-    "latestRepairTranche": "2 Chronicles 9 and Isaiah 25 shifted ranges renumbered",
+    "latestRepairTranche": "Job 32 split verse merged and remainder renumbered",
     "insertedOrUpdatedVerseCount": 60,
     "exodusExpectedCountCorrected": true,
-    "remainingCompletenessFindings": 1,
+    "remainingCompletenessFindings": 0,
     "providedButDeferredForSequenceAdjudication": [
       {
         "reference": "2 Chronicles 9:9",
