@@ -1079,14 +1079,7 @@
           "text": "Then Joshua returned, and all Israel with him, to the camp at Gilgal."
         }
       ]
-    },{
-  "meta": {
-    "name": "Joshua",
-    "id": "JOSH",
-    "version": "NRSV",
-    "copyright": "New Revised Standard Version Bible, copyright © 1989 National Council of the Churches of Christ in the United States of America. Used by permission. All rights reserved worldwide."
-  },
-  "chapters": [
+    },
     {
       "num": 11,
       "verses": [
@@ -2765,7 +2758,5 @@
         }
       ]
     }
-  ]
-}
   ]
 }
