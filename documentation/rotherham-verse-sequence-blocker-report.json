@@ -1,7 +1,7 @@
 {
   "schema": "prayerappnew_rotherham_verse_sequence_blocker_report_v1",
   "date": "2026-06-02",
-  "status": "recorded_import_blockers_and_bible_completeness_audit_repair_required",
+  "status": "ot_former_blockers_imported_after_target_corpus_repair",
   "sourceWitness": {
     "translationKey": "Rotherham",
     "url": "https://raw.githubusercontent.com/scrollmapper/bible_databases/2025/formats/json/Rotherham.json",
@@ -989,5 +989,220 @@
       }
     ]
   },
-  "bibleCompletenessAuditAndRepairPlan": "documentation/bible-corpus-completeness-audit-and-repair-plan.json"
+  "bibleCompletenessAuditAndRepairPlan": "documentation/bible-corpus-completeness-audit-and-repair-plan.json",
+  "postOtCompletenessRotherhamImport": {
+    "date": "2026-06-02",
+    "latestImportCommitPending": "Import Rotherham repaired OT blocker books",
+    "importedFormerBlockerBooks": [
+      "Genesis",
+      "Deuteronomy",
+      "Judges",
+      "I Samuel",
+      "II Kings",
+      "II Chronicles",
+      "Job",
+      "Isaiah",
+      "Jeremiah",
+      "Ezekiel"
+    ],
+    "importedVerseCount": 10460,
+    "yahwehCount": 3513,
+    "bookStats": {
+      "Genesis": {
+        "file": "data/bible/OT/genesis.json",
+        "chapters": 50,
+        "importedVerseCount": 1533,
+        "migratedScalarNRSVVerseCount": 1533,
+        "verification": {
+          "rotherhamVerseCount": 1533,
+          "yahwehCount": 165,
+          "jehovahCount": 0
+        }
+      },
+      "Deuteronomy": {
+        "file": "data/bible/OT/deuteronomy.json",
+        "chapters": 34,
+        "importedVerseCount": 959,
+        "migratedScalarNRSVVerseCount": 959,
+        "verification": {
+          "rotherhamVerseCount": 959,
+          "yahwehCount": 551,
+          "jehovahCount": 0
+        }
+      },
+      "Judges": {
+        "file": "data/bible/OT/judges.json",
+        "chapters": 21,
+        "importedVerseCount": 618,
+        "migratedScalarNRSVVerseCount": 618,
+        "verification": {
+          "rotherhamVerseCount": 618,
+          "yahwehCount": 175,
+          "jehovahCount": 0
+        }
+      },
+      "I Samuel": {
+        "file": "data/bible/OT/1samuel.json",
+        "chapters": 31,
+        "importedVerseCount": 810,
+        "migratedScalarNRSVVerseCount": 810,
+        "verification": {
+          "rotherhamVerseCount": 810,
+          "yahwehCount": 320,
+          "jehovahCount": 0
+        }
+      },
+      "II Kings": {
+        "file": "data/bible/OT/2kings.json",
+        "chapters": 25,
+        "importedVerseCount": 719,
+        "migratedScalarNRSVVerseCount": 719,
+        "verification": {
+          "rotherhamVerseCount": 719,
+          "yahwehCount": 278,
+          "jehovahCount": 0
+        }
+      },
+      "II Chronicles": {
+        "file": "data/bible/OT/2chronicles.json",
+        "chapters": 36,
+        "importedVerseCount": 822,
+        "migratedScalarNRSVVerseCount": 822,
+        "verification": {
+          "rotherhamVerseCount": 822,
+          "yahwehCount": 382,
+          "jehovahCount": 0
+        }
+      },
+      "Job": {
+        "file": "data/bible/OT/job.json",
+        "chapters": 42,
+        "importedVerseCount": 1070,
+        "migratedScalarNRSVVerseCount": 1070,
+        "verification": {
+          "rotherhamVerseCount": 1070,
+          "yahwehCount": 32,
+          "jehovahCount": 0
+        }
+      },
+      "Isaiah": {
+        "file": "data/bible/OT/isaiah.json",
+        "chapters": 66,
+        "importedVerseCount": 1292,
+        "migratedScalarNRSVVerseCount": 1292,
+        "verification": {
+          "rotherhamVerseCount": 1292,
+          "yahwehCount": 450,
+          "jehovahCount": 0
+        }
+      },
+      "Jeremiah": {
+        "file": "data/bible/OT/jeremiah.json",
+        "chapters": 52,
+        "importedVerseCount": 1364,
+        "migratedScalarNRSVVerseCount": 1364,
+        "verification": {
+          "rotherhamVerseCount": 1364,
+          "yahwehCount": 726,
+          "jehovahCount": 0
+        }
+      },
+      "Ezekiel": {
+        "file": "data/bible/OT/ezekiel.json",
+        "chapters": 48,
+        "importedVerseCount": 1273,
+        "migratedScalarNRSVVerseCount": 1273,
+        "verification": {
+          "rotherhamVerseCount": 1273,
+          "yahwehCount": 434,
+          "jehovahCount": 0
+        }
+      }
+    },
+    "remainingSpecialLanes": {
+      "psalms": "separate consolidated-psalter schema",
+      "ntVerseSequenceBlockers": [
+        {
+          "source": "Matthew",
+          "target": "data/bible/NT/matthew.json",
+          "mismatchChapters": [
+            17,
+            18,
+            23
+          ]
+        },
+        {
+          "source": "Mark",
+          "target": "data/bible/NT/mark.json",
+          "mismatchChapters": [
+            7,
+            9,
+            11,
+            15
+          ]
+        },
+        {
+          "source": "Luke",
+          "target": "data/bible/NT/luke.json",
+          "mismatchChapters": [
+            17,
+            23
+          ]
+        },
+        {
+          "source": "John",
+          "target": "data/bible/NT/john.json",
+          "mismatchChapters": [
+            5
+          ]
+        },
+        {
+          "source": "Acts",
+          "target": "data/bible/NT/acts.json",
+          "mismatchChapters": [
+            8,
+            15,
+            23,
+            24,
+            28
+          ]
+        },
+        {
+          "source": "Romans",
+          "target": "data/bible/NT/romans.json",
+          "mismatchChapters": [
+            16
+          ]
+        },
+        {
+          "source": "II Corinthians",
+          "target": "data/bible/NT/2corinthians.json",
+          "mismatchChapters": [
+            13
+          ]
+        },
+        {
+          "source": "James",
+          "target": "data/bible/NT/james.json",
+          "mismatchChapters": [
+            1
+          ]
+        },
+        {
+          "source": "III John",
+          "target": "data/bible/NT/3john.json",
+          "mismatchChapters": [
+            1
+          ]
+        },
+        {
+          "source": "Revelation of John",
+          "target": "data/bible/NT/revelation.json",
+          "mismatchChapters": [
+            12
+          ]
+        }
+      ]
+    }
+  }
 }

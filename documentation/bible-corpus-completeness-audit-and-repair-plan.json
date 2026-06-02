@@ -1,7 +1,7 @@
 {
   "schema": "prayerappnew_bible_corpus_completeness_audit_and_repair_plan_v1",
   "date": "2026-06-02",
-  "status": "ot_non_psalms_completeness_repaired_and_audit_passing",
+  "status": "ot_non_psalms_completeness_repaired_and_former_rotherham_ot_blockers_imported",
   "currentRepoHead": "f1b061f Record severe Rotherham blocker inspection",
   "context": {
     "problemStatement": "The completed standing Bible corpus audit validates JSON/schema/chapter/verse structure, but it does not validate canonical expected verse counts for each book/chapter. Severe missing target verses were exposed by Rotherham source/target alignment checks.",
@@ -249,5 +249,107 @@
     "source": "mechanical_correction_from_current_repo_inspection",
     "repairAction": "Merged split Job 32:6/7 and renumbered current 32:8-23 down to 32:7-22.",
     "remainingCompletenessFindings": 0
+  },
+  "postCompletenessRotherhamImport": {
+    "date": "2026-06-02",
+    "importedFormerBlockerBooks": [
+      "Genesis",
+      "Deuteronomy",
+      "Judges",
+      "I Samuel",
+      "II Kings",
+      "II Chronicles",
+      "Job",
+      "Isaiah",
+      "Jeremiah",
+      "Ezekiel"
+    ],
+    "importedVerseCount": 10460,
+    "yahwehCount": 3513,
+    "remainingRotherhamWork": {
+      "psalms": "separate consolidated-psalter schema",
+      "ntVerseSequenceBlockers": [
+        {
+          "source": "Matthew",
+          "target": "data/bible/NT/matthew.json",
+          "mismatchChapters": [
+            17,
+            18,
+            23
+          ]
+        },
+        {
+          "source": "Mark",
+          "target": "data/bible/NT/mark.json",
+          "mismatchChapters": [
+            7,
+            9,
+            11,
+            15
+          ]
+        },
+        {
+          "source": "Luke",
+          "target": "data/bible/NT/luke.json",
+          "mismatchChapters": [
+            17,
+            23
+          ]
+        },
+        {
+          "source": "John",
+          "target": "data/bible/NT/john.json",
+          "mismatchChapters": [
+            5
+          ]
+        },
+        {
+          "source": "Acts",
+          "target": "data/bible/NT/acts.json",
+          "mismatchChapters": [
+            8,
+            15,
+            23,
+            24,
+            28
+          ]
+        },
+        {
+          "source": "Romans",
+          "target": "data/bible/NT/romans.json",
+          "mismatchChapters": [
+            16
+          ]
+        },
+        {
+          "source": "II Corinthians",
+          "target": "data/bible/NT/2corinthians.json",
+          "mismatchChapters": [
+            13
+          ]
+        },
+        {
+          "source": "James",
+          "target": "data/bible/NT/james.json",
+          "mismatchChapters": [
+            1
+          ]
+        },
+        {
+          "source": "III John",
+          "target": "data/bible/NT/3john.json",
+          "mismatchChapters": [
+            1
+          ]
+        },
+        {
+          "source": "Revelation of John",
+          "target": "data/bible/NT/revelation.json",
+          "mismatchChapters": [
+            12
+          ]
+        }
+      ]
+    }
   }
 }

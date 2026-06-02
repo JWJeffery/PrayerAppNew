@@ -2198,7 +2198,7 @@
   "side_projects": {
     "rotherham_bible_translation": {
       "date": "2026-06-02",
-      "status": "aligned_ordinary_imports_complete_bible_completeness_gate_required",
+      "status": "ot_former_blocker_books_imported",
       "notPushedAside": true,
       "sourceRecord": "structure.side_projects.rotherham_bible_translation",
       "summary": "Rotherham remains active as a downtime side project. Implementation waits for Bible corpus structural repair and multi-translation Bible-book schema decision.",
@@ -2209,27 +2209,34 @@
       "sourceWitnessRecord": "documentation/rotherham-source-witness-intake.json",
       "sourceUrl": "https://raw.githubusercontent.com/scrollmapper/bible_databases/2025/formats/json/Rotherham.json",
       "sourceSha256": "d63488b149aadf4430fea6ddbc7c07395a12321a1b58799ce2dcb384ebf97627",
-      "nextStep": "Pause blocker imports until canonical completeness audit and target repair path are established.",
+      "nextStep": "Handle Psalms separately, plan NT Rotherham edition/versification mapping, or return to paused C03.",
       "pilotBook": "Joshua",
       "pilotFile": "data/bible/OT/joshua.json",
-      "importedVerseCount": 3360,
+      "importedVerseCount": 10460,
       "pilotVerification": {
         "rotherhamVerseCount": 658,
         "yahwehCount": 224,
         "jehovahCount": 0
       },
-      "latestImportTranche": "torah_books",
+      "latestImportTranche": "repaired_ot_blocker_books",
       "importedBooks": [
-        "Exodus",
-        "Leviticus",
-        "Numbers"
+        "Genesis",
+        "Deuteronomy",
+        "Judges",
+        "I Samuel",
+        "II Kings",
+        "II Chronicles",
+        "Job",
+        "Isaiah",
+        "Jeremiah",
+        "Ezekiel"
       ],
-      "yahwehCount": 1106,
+      "yahwehCount": 3513,
       "latestImportCommit": "744487d Import Rotherham Torah books",
       "verseSequenceBlockerReport": "documentation/rotherham-verse-sequence-blocker-report.json",
       "remainingWork": {
-        "psalms": "separate consolidated-psalter schema task",
-        "verseSequenceBlockerBookCount": 20
+        "psalms": "separate consolidated-psalter schema",
+        "ntVerseSequenceBlockerCount": 10
       },
       "severeTargetCorpusReviewRequired": [
         "Genesis",
@@ -2253,10 +2260,10 @@
   },
   "current_navigation_state": {
     "date": "2026-06-02",
-    "primaryImmediateWork": "Rerun Rotherham blocker alignment map, handle Psalms, or return to paused C03",
-    "bibleCorpusState": "Structural audit passes; OT non-Psalms completeness audit passes.",
+    "primaryImmediateWork": "Handle Psalms, plan NT Rotherham mapping, or return to paused C03",
+    "bibleCorpusState": "Structural audit passes; OT non-Psalms completeness audit passes; repaired OT former Rotherham blockers imported.",
     "resolverState": "translation-compatible with scalar and translation-keyed verse text",
-    "activeSideProject": "Rotherham aligned ordinary-book import complete; former blockers should be remapped after target corpus repair",
+    "activeSideProject": "Rotherham ordinary OT/non-Psalms import complete except Psalms consolidated-psalter lane; NT blockers remain edition/versification lane",
     "pausedTranche": "OOR-C03-ordinary-psalmody-appointment-map",
     "c03ReturnPoint": "Map the 10 source-backed ordinary psalmody appointments into the private Grail appointment map, then decide how to acquire the 18 missing appointments without fabrication."
   },
@@ -2271,9 +2278,9 @@
   },
   "bible_corpus_integrity": {
     "date": "2026-06-02",
-    "status": "ot_non_psalms_completeness_repaired_and_audit_passing",
+    "status": "ot_non_psalms_completeness_repaired_and_former_rotherham_ot_blockers_imported",
     "plan": "documentation/bible-corpus-completeness-audit-and-repair-plan.json",
-    "nextStep": "Rerun Rotherham blocker alignment map or return to paused C03.",
+    "nextStep": "Handle Psalms separately, plan NT Rotherham edition/versification mapping, or return to paused C03.",
     "standingCompletenessAudit": "npm run audit:bible-corpus-completeness",
     "currentCompletenessResult": "FAIL with 18 OT non-Psalms findings",
     "missingContentAudit": "documentation/bible-corpus-missing-content-audit.json",
