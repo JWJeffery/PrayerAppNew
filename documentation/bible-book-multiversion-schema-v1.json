@@ -1,0 +1,88 @@
+{
+  "schema": "prayerappnew_bible_book_multiversion_v1",
+  "date": "2026-06-02",
+  "status": "adopted_for_future_migration",
+  "purpose": "Define the app-facing ordinary Bible book file shape for multiple translations while preserving compatibility with the existing scalar NRSV corpus during migration.",
+  "scope": {
+    "appliesTo": [
+      "ordinary chapter/verse Bible book files under data/bible",
+      "future full-Bible translation imports such as Rotherham"
+    ],
+    "doesNotReplace": [
+      "consolidated psalter list schema in data/bible/OT/psalms.json",
+      "governed non-chapter ET collection and hymn schemas",
+      "source-witness intake files"
+    ]
+  },
+  "currentCompatibilityState": {
+    "currentOrdinaryBookShape": "single-version book object with meta.version and scalar verse.text",
+    "resolverCompatibilityCommit": "0af6124 Add Scripture resolver translation compatibility",
+    "standingStructuralAudit": "npm run audit:bible-corpus-structure",
+    "resolverBehavior": [
+      "scalar verse.text remains valid and is returned as-is",
+      "object verse.text selects requested translation key",
+      "missing requested translation falls back to NRSV",
+      "missing NRSV falls back to first string-valued translation in the text object"
+    ]
+  },
+  "targetBookShape": {
+    "topLevel": {
+      "schema": "bible_book_multiversion_v1",
+      "meta": {
+        "name": "Joshua",
+        "id": "JOSH",
+        "canon": "OT",
+        "defaultTranslation": "NRSV",
+        "versification": "hebrew_masoretic",
+        "translations": {
+          "NRSV": {
+            "label": "New Revised Standard Version",
+            "sourceType": "existing_corpus",
+            "rights": "existing project rights/copyright metadata"
+          },
+          "Rotherham": {
+            "label": "The Emphasised Bible",
+            "sourceType": "public_domain_source_witness",
+            "rights": "Public Domain"
+          }
+        }
+      },
+      "chapters": [
+        {
+          "num": 1,
+          "verses": [
+            {
+              "num": 1,
+              "text": {
+                "NRSV": "existing verse text",
+                "Rotherham": "future imported verse text"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "migrationRules": [
+    "Do not create one book tree per translation as the app-facing runtime model.",
+    "Use one canonical file per biblical book, with translation keys under verse.text.",
+    "Preserve current scalar verse.text until a book is intentionally migrated.",
+    "When migrating a book, move existing scalar text into verse.text.NRSV without changing text content.",
+    "Add new translations under explicit source-named keys such as Rotherham, not theological category names.",
+    "Do not import a translation without a governed source witness or reproducible source-intake workflow.",
+    "Run npm run audit:bible-corpus-structure before and after any migration/import tranche.",
+    "Do not assume every translation exists for every book or every extra-canonical lane."
+  ],
+  "rotherhamRules": [
+    "Use translation key Rotherham.",
+    "Treat Rotherham as a full-Bible side project where source coverage permits.",
+    "Start with a bounded pilot only after source witness intake and book-level migration rules are implemented.",
+    "Do not import Rotherham by hardcoding long biblical text inside temporary patch scripts."
+  ],
+  "openQuestionsBeforeImport": [
+    "Where will governed Rotherham source witness files live?",
+    "Will source intake be committed as raw source, normalized source, or both?",
+    "Which single book should be the pilot import after Psalms/source testing?",
+    "How should UI expose translation selection without disrupting existing offices?"
+  ]
+}

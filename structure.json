@@ -1484,6 +1484,15 @@
       "packageScript": "audit:bible-corpus-structure",
       "latestAuditResult": "PASS bible corpus structural audit: files=125 blocking=0",
       "standingAuditCommit": "cd9baaa Add governed Bible corpus structural audit"
+    },
+    "bible_book_multiversion_v1_2026_06_02": {
+      "date": "2026-06-02",
+      "status": "adopted_for_future_migration",
+      "schemaFile": "documentation/bible-book-multiversion-schema-v1.json",
+      "resolverCompatibilityCommit": "0af6124 Add Scripture resolver translation compatibility",
+      "summary": "Future ordinary Bible book files may migrate from scalar verse.text to translation-keyed verse.text objects. The Scripture resolver now accepts both scalar and object text nodes and defaults to NRSV.",
+      "migrationRule": "One canonical file per biblical book remains the app-facing model; translations are nested under verse.text by source key.",
+      "rationale": "This matches the consolidated psalter direction while avoiding parallel per-translation book trees as runtime data."
     }
   },
   "documentation_manifest": {
@@ -2208,7 +2217,7 @@
     "rotherham_bible_translation": {
       "id": "rotherham_bible_translation_side_project",
       "date": "2026-06-02",
-      "status": "active_side_project_blocked_on_bible_corpus_repair",
+      "status": "active_side_project_ready_for_source_witness_planning",
       "translationKeyCandidate": "Rotherham",
       "sourceName": "The Emphasised Bible / The Emphasized Bible",
       "scopeIntent": [
@@ -2218,7 +2227,12 @@
       ],
       "currentDecision": "Rotherham is preferred over Brenton/LXX for the next translation experiment because it follows Hebrew/Masoretic ordering and does not introduce the LXX psalm-numbering problem. However, it must not be imported until the Bible corpus structural blocker is resolved and a multi-translation schema is defined.",
       "schemaImplication": "Current ordinary book files are single-version objects with meta.version and scalar verse.text. Future Rotherham support requires a multi-translation book schema with verse.text keyed by translation.",
-      "notPushedAside": true
+      "notPushedAside": true,
+      "translationKey": "Rotherham",
+      "schemaGate": "documentation/bible-book-multiversion-schema-v1.json",
+      "resolverCompatibilityCommit": "0af6124 Add Scripture resolver translation compatibility",
+      "requiredPreflight": "npm run audit:bible-corpus-structure",
+      "nextStep": "Define governed Rotherham source-witness intake path before importing any text."
     }
   },
   "paused_work": {
