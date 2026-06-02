@@ -1,0 +1,159 @@
+{
+  "schema": "prayerappnew_bible_corpus_completeness_audit_and_repair_plan_v1",
+  "date": "2026-06-02",
+  "status": "canonical_completeness_audit_required_before_further_bible_import_expansion",
+  "currentRepoHead": "f1b061f Record severe Rotherham blocker inspection",
+  "context": {
+    "problemStatement": "The completed standing Bible corpus audit validates JSON/schema/chapter/verse structure, but it does not validate canonical expected verse counts for each book/chapter. Severe missing target verses were exposed by Rotherham source/target alignment checks.",
+    "failedAssumption": "The project treated the prior structural audit as if it were a full Bible corpus completeness audit. That was incorrect.",
+    "standingAuditCurrentState": {
+      "script": "npm run audit:bible-corpus-structure",
+      "result": "PASS",
+      "limitation": "Schema/shape audit only; does not check canonical expected verse counts."
+    }
+  },
+  "rotherhamProgressState": {
+    "sourceWitness": {
+      "translationKey": "Rotherham",
+      "source": "scrollmapper/bible_databases 2025 formats/json/Rotherham.json",
+      "sha256": "d63488b149aadf4430fea6ddbc7c07395a12321a1b58799ce2dcb384ebf97627"
+    },
+    "alignedOrdinaryBookImports": {
+      "status": "complete",
+      "latestImportCommit": "744487d Import Rotherham Torah books",
+      "recordedBlockerCommit": "64a8155 Record Rotherham verse blocker report",
+      "severeInspectionCommit": "f1b061f Record severe Rotherham blocker inspection",
+      "importedTranches": [
+        "Joshua",
+        "Minor Prophets",
+        "short/wisdom books: Ruth, Esther, Ecclesiastes, Song of Solomon, Lamentations",
+        "light NT epistles",
+        "larger NT epistles: I Corinthians and Hebrews",
+        "remaining small OT: Proverbs and Daniel",
+        "historical books: II Samuel, I Kings, I Chronicles, Ezra, Nehemiah",
+        "Torah aligned books: Exodus, Leviticus, Numbers"
+      ]
+    },
+    "remainingRotherhamWork": {
+      "psalms": "separate consolidated-psalter schema task",
+      "verseSequenceBlockers": "20 recorded blocker books; do not blind-import"
+    }
+  },
+  "historyDiagnosticFindings": {
+    "readOnlyDiagnostic": "HISTORY_RECOVERY_DIAGNOSTIC_EXIT=0_READ_ONLY",
+    "printsText": false,
+    "conclusion": "The severe missing target verses were not introduced by Rotherham work and were not recoverable from earlier commits scanned by the diagnostic. The best available repo-history counts remained defective.",
+    "originalImportCommitObserved": "f5bb958 //Added entirety of NT, created NT and OT folders and moved files to them.",
+    "severeCases": [
+      {
+        "book": "Genesis",
+        "target": "data/bible/OT/genesis.json",
+        "chapterFindings": [
+          {
+            "chapter": 50,
+            "expectedCount": 26,
+            "bestRepoHistoryCount": 10,
+            "recoverableFromGitHistory": false
+          }
+        ]
+      },
+      {
+        "book": "Deuteronomy",
+        "target": "data/bible/OT/deuteronomy.json",
+        "chapterFindings": [
+          {
+            "chapter": 32,
+            "expectedCount": 52,
+            "bestRepoHistoryCount": 14,
+            "recoverableFromGitHistory": false
+          },
+          {
+            "chapter": 33,
+            "expectedCount": 29,
+            "bestRepoHistoryCount": 7,
+            "recoverableFromGitHistory": false
+          }
+        ]
+      },
+      {
+        "book": "II Kings",
+        "target": "data/bible/OT/2kings.json",
+        "chapterFindings": [
+          {
+            "chapter": 2,
+            "expectedCount": 25,
+            "bestRepoHistoryCount": 15,
+            "recoverableFromGitHistory": false
+          },
+          {
+            "chapter": 17,
+            "expectedCount": 41,
+            "bestRepoHistoryCount": 23,
+            "recoverableFromGitHistory": false
+          }
+        ]
+      },
+      {
+        "book": "Jeremiah",
+        "target": "data/bible/OT/jeremiah.json",
+        "chapterFindings": [
+          {
+            "chapter": 11,
+            "expectedCount": 23,
+            "bestRepoHistoryCount": 11,
+            "recoverableFromGitHistory": false
+          },
+          {
+            "chapter": 40,
+            "expectedCount": 16,
+            "bestRepoHistoryCount": 9,
+            "recoverableFromGitHistory": false
+          }
+        ]
+      }
+    ]
+  },
+  "requiredNextWork": [
+    {
+      "order": 1,
+      "title": "Add standing canonical Bible verse-count completeness audit",
+      "description": "Add a quiet audit that checks each ordinary Bible book/chapter against a governed canonical expected verse-count table or explicitly governed exception list.",
+      "mustPassBefore": [
+        "further Rotherham blocker imports",
+        "full Bible import expansion",
+        "any claim that the Bible corpus is complete"
+      ]
+    },
+    {
+      "order": 2,
+      "title": "Identify legitimate source/rights basis for the existing target translation",
+      "description": "Determine the source basis for repairing missing target text. Do not use Rotherham to repair NRSV or any existing target-translation slot."
+    },
+    {
+      "order": 3,
+      "title": "Repair confirmed target corpus truncations from the proper target source",
+      "books": [
+        "Genesis",
+        "Deuteronomy",
+        "II Kings",
+        "Jeremiah"
+      ],
+      "description": "Repair missing target verses only after source/rights basis is established, then rerun canonical completeness audit and standing structural audit."
+    },
+    {
+      "order": 4,
+      "title": "Rerun Rotherham alignment map after target repair",
+      "description": "Some recorded blockers may become ordinary aligned imports after target corpus completeness is restored."
+    }
+  ],
+  "notAuthorized": [
+    "Do not repair target translation text from Rotherham.",
+    "Do not add placeholders for missing target verses.",
+    "Do not blind-import Rotherham into blocker books.",
+    "Do not describe the Bible corpus audit as complete until canonical expected verse-count auditing exists and passes."
+  ],
+  "pausedNonBibleWork": {
+    "tranche": "OOR-C03-ordinary-psalmody-appointment-map",
+    "state": "Paused at LOTH 18d296c / PrayerAppNew roadmap fd9bcaa context. 10 ordinary psalmody appointments entered; 18 missing; map the 10 source-backed appointments first, then decide how to acquire the 18 missing appointments without fabrication."
+  }
+}

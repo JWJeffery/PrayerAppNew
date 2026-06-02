@@ -2198,7 +2198,7 @@
   "side_projects": {
     "rotherham_bible_translation": {
       "date": "2026-06-02",
-      "status": "severe_blocker_inspection_recorded",
+      "status": "aligned_ordinary_imports_complete_bible_completeness_gate_required",
       "notPushedAside": true,
       "sourceRecord": "structure.side_projects.rotherham_bible_translation",
       "summary": "Rotherham remains active as a downtime side project. Implementation waits for Bible corpus structural repair and multi-translation Bible-book schema decision.",
@@ -2209,7 +2209,7 @@
       "sourceWitnessRecord": "documentation/rotherham-source-witness-intake.json",
       "sourceUrl": "https://raw.githubusercontent.com/scrollmapper/bible_databases/2025/formats/json/Rotherham.json",
       "sourceSha256": "d63488b149aadf4430fea6ddbc7c07395a12321a1b58799ce2dcb384ebf97627",
-      "nextStep": "Identify source/rights basis for existing target Bible corpus before repairing missing target verses.",
+      "nextStep": "Pause blocker imports until canonical completeness audit and target repair path are established.",
       "pilotBook": "Joshua",
       "pilotFile": "data/bible/OT/joshua.json",
       "importedVerseCount": 3360,
@@ -2236,7 +2236,8 @@
         "Deuteronomy",
         "II Kings",
         "Jeremiah"
-      ]
+      ],
+      "bibleCompletenessAuditAndRepairPlan": "documentation/bible-corpus-completeness-audit-and-repair-plan.json"
     }
   },
   "paused_tranches": {
@@ -2252,10 +2253,10 @@
   },
   "current_navigation_state": {
     "date": "2026-06-02",
-    "primaryImmediateWork": "Identify target Bible corpus source basis, repair severe truncations, plan Psalms, or return to paused C03",
-    "bibleCorpusState": "structural repair complete; standing audit passing; severe verse-count defects now recorded for targeted review",
+    "primaryImmediateWork": "Add canonical Bible completeness audit, establish target repair source basis, or return to paused C03",
+    "bibleCorpusState": "Standing structural audit passes, but canonical verse-count completeness audit is now required; severe target-corpus defects are recorded for Genesis, Deuteronomy, II Kings, and Jeremiah.",
     "resolverState": "translation-compatible with scalar and translation-keyed verse text",
-    "activeSideProject": "Rotherham aligned ordinary-book import complete; severe blocker inspection recorded",
+    "activeSideProject": "Rotherham aligned ordinary-book import complete; Psalms and blocker cases remain gated by completeness audit, source repair, and governed mapping.",
     "pausedTranche": "OOR-C03-ordinary-psalmody-appointment-map",
     "c03ReturnPoint": "Map the 10 source-backed ordinary psalmody appointments into the private Grail appointment map, then decide how to acquire the 18 missing appointments without fabrication."
   },
@@ -2267,5 +2268,11 @@
       "resolverCompatibilityCommit": "0af6124 Add Scripture resolver translation compatibility",
       "summary": "Bible book multiversion target is one canonical book file with translation-keyed verse.text objects."
     }
+  },
+  "bible_corpus_integrity": {
+    "date": "2026-06-02",
+    "status": "canonical_completeness_audit_and_repair_required",
+    "plan": "documentation/bible-corpus-completeness-audit-and-repair-plan.json",
+    "nextStep": "Add standing canonical verse-count completeness audit, then repair severe target-corpus truncations from proper source."
   }
 }

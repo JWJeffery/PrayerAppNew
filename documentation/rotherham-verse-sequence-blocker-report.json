@@ -1,7 +1,7 @@
 {
   "schema": "prayerappnew_rotherham_verse_sequence_blocker_report_v1",
   "date": "2026-06-02",
-  "status": "recorded_import_blockers_and_confirmed_severe_target_corpus_review_required",
+  "status": "recorded_import_blockers_and_bible_completeness_audit_repair_required",
   "sourceWitness": {
     "translationKey": "Rotherham",
     "url": "https://raw.githubusercontent.com/scrollmapper/bible_databases/2025/formats/json/Rotherham.json",
@@ -60,7 +60,11 @@
       "II Kings",
       "Jeremiah"
     ],
-    "doNotRepairTargetTextFromRotherham": true
+    "doNotRepairTargetTextFromRotherham": true,
+    "bibleCompletenessAuditRequired": true,
+    "bibleCompletenessAuditAndRepairPlan": "documentation/bible-corpus-completeness-audit-and-repair-plan.json",
+    "historyRecoveryDiagnosticRecorded": true,
+    "severeTargetTextRepairMustUseProperTargetSource": true
   },
   "recommendedNextWork": [
     {
@@ -984,5 +988,6 @@
         "reason": "Some former blockers may become ordinary aligned imports once target corpus integrity is restored."
       }
     ]
-  }
+  },
+  "bibleCompletenessAuditAndRepairPlan": "documentation/bible-corpus-completeness-audit-and-repair-plan.json"
 }

@@ -2217,7 +2217,7 @@
     "rotherham_bible_translation": {
       "id": "rotherham_bible_translation_side_project",
       "date": "2026-06-02",
-      "status": "severe_blocker_inspection_recorded",
+      "status": "aligned_ordinary_imports_complete_bible_completeness_gate_required",
       "translationKeyCandidate": "Rotherham",
       "sourceName": "The Emphasised Bible / The Emphasized Bible",
       "scopeIntent": [
@@ -2232,7 +2232,7 @@
       "schemaGate": "documentation/bible-book-multiversion-schema-v1.json",
       "resolverCompatibilityCommit": "0af6124 Add Scripture resolver translation compatibility",
       "requiredPreflight": "npm run audit:bible-corpus-structure",
-      "nextStep": "Identify source/rights basis for existing target Bible corpus before repairing missing target verses.",
+      "nextStep": "Do not continue blocker imports until canonical completeness audit exists and severe target-corpus defects are repaired from the proper source.",
       "sourceWitnessRecord": "documentation/rotherham-source-witness-intake.json",
       "sourceUrl": "https://raw.githubusercontent.com/scrollmapper/bible_databases/2025/formats/json/Rotherham.json",
       "sourceSha256": "d63488b149aadf4430fea6ddbc7c07395a12321a1b58799ce2dcb384ebf97627",
@@ -2300,7 +2300,7 @@
       "remainingWork": {
         "psalms": "separate consolidated-psalter schema task",
         "verseSequenceBlockerBookCount": 20,
-        "doNotBlindImportBlockers": true
+        "blockersRequireCanonicalCompletenessAndMappingReview": true
       },
       "severeTargetCorpusReviewRequired": [
         "Genesis",
@@ -2308,7 +2308,8 @@
         "II Kings",
         "Jeremiah"
       ],
-      "doNotRepairTargetTextFromRotherham": true
+      "doNotRepairTargetTextFromRotherham": true,
+      "bibleCompletenessAuditAndRepairPlan": "documentation/bible-corpus-completeness-audit-and-repair-plan.json"
     }
   },
   "paused_work": {
@@ -2334,5 +2335,21 @@
       "returnPoint": "We are paused at C03. Next we map the 10 source-backed ordinary psalmody appointments into the private Grail appointment map, and separately decide how to acquire the 18 missing ordinary appointments without fabrication.",
       "notLostThreadQuestion": "We are paused at C03; how do we map the 10 source-backed appointments and source the 18 missing appointments?"
     }
+  },
+  "bible_corpus_integrity": {
+    "date": "2026-06-02",
+    "status": "canonical_completeness_audit_and_repair_required",
+    "plan": "documentation/bible-corpus-completeness-audit-and-repair-plan.json",
+    "standingStructuralAudit": "passes but is insufficient for canonical completeness",
+    "canonicalVerseCountAudit": "required next",
+    "severeTargetCorpusReviewRequired": [
+      "Genesis",
+      "Deuteronomy",
+      "II Kings",
+      "Jeremiah"
+    ],
+    "historyDiagnosticConclusion": "severe missing target verses were not recoverable from scanned git history and appear to date back to original import",
+    "doNotRepairTargetTextFromRotherham": true,
+    "nextStep": "Add standing canonical verse-count completeness audit before target-text repair."
   }
 }
