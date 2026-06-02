@@ -3,76 +3,381 @@
     "name": "Jonah",
     "id": "JON",
     "version": "NRSV",
-    "copyright": "New Revised Standard Version Bible, copyright © 1989 National Council of the Churches of Christ in the United States of America. Used by permission. All rights reserved worldwide."
+    "copyright": "New Revised Standard Version Bible, copyright © 1989 National Council of the Churches of Christ in the United States of America. Used by permission. All rights reserved worldwide.",
+    "canon": "OT",
+    "defaultTranslation": "NRSV",
+    "versification": "hebrew_masoretic",
+    "translations": {
+      "NRSV": {
+        "label": "New Revised Standard Version",
+        "sourceType": "existing_corpus",
+        "rights": "New Revised Standard Version Bible, copyright © 1989 National Council of the Churches of Christ in the United States of America. Used by permission. All rights reserved worldwide."
+      },
+      "Rotherham": {
+        "label": "The Emphasised Bible",
+        "sourceType": "scrollmapper_bible_databases_2025_formats_json_source_witness",
+        "rights": "Public Domain",
+        "sourceWitness": "documentation/rotherham-source-witness-intake.json"
+      }
+    }
   },
   "chapters": [
     {
       "num": 1,
       "verses": [
-        { "num": 1, "text": "Now the word of the Lord came to Jonah son of Amittai, saying," },
-        { "num": 2, "text": "“Go at once to Nineveh, that great city, and cry out against it; for their wickedness has come up before me.”" },
-        { "num": 3, "text": "But Jonah set out to flee to Tarshish from the presence of the Lord. He went down to Joppa and found a ship going to Tarshish; so he paid his fare and went on board, to go with them to Tarshish, away from the presence of the Lord." },
-        { "num": 4, "text": "But the Lord hurled a great wind upon the sea, and such a mighty storm came upon the sea that the ship threatened to break up." },
-        { "num": 5, "text": "Then the mariners were afraid, and each cried to his god. They threw the cargo that was in the ship into the sea, to lighten it for them. Jonah, meanwhile, had gone down into the hold of the ship and had lain down, and was fast asleep." },
-        { "num": 6, "text": "The captain came and said to him, “What are you doing sound asleep? Get up, call on your god! Perhaps the god will kindheartedly think of us so that we do not perish.”" },
-        { "num": 7, "text": "The sailors said to one another, “Come, let us cast lots, so that we may know on whose account this calamity has come upon us.” So they cast lots, and the lot fell on Jonah." },
-        { "num": 8, "text": "Then they said to him, “Tell us on whose account this calamity has come upon us. What is your occupation? Whence do you come? What is your country? And of what people are you?”" },
-        { "num": 9, "text": "“I am a Hebrew,” he replied. “I worship the Lord, the God of heaven, who made the sea and the dry land.”" },
-        { "num": 10, "text": "Then the men were even more afraid, and said to him, “What is this that you have done!” For the men knew that he was fleeing from the presence of the Lord, because he had told them so." },
-        { "num": 11, "text": "Then they said to him, “What shall we do to you, that the sea may quiet down for us?” For the sea was growing more and more tempestuous." },
-        { "num": 12, "text": "He said to them, “Pick me up and throw me into the sea; then the sea will quiet down for you; for I know it is on my account that this great storm has come upon you.”" },
-        { "num": 13, "text": "Nevertheless the men rowed hard to bring the ship back to land, but they could not, for the sea grew more and more tempestuous against them." },
-        { "num": 14, "text": "Then they cried out to the Lord, “Please, O Lord, we pray, do not let us perish on account of this man’s life. Do not make us guilty of innocent blood; for you, O Lord, have done as it pleased you.”" },
-        { "num": 15, "text": "So they picked up Jonah and threw him into the sea; and the sea ceased from its raging." },
-        { "num": 16, "text": "Then the men feared the Lord even more, and they offered a sacrifice to the Lord and made vows." },
-        { "num": 17, "text": "But the Lord provided a large fish to swallow up Jonah; and Jonah was in the belly of the fish three days and three nights." }
+        {
+          "num": 1,
+          "text": {
+            "NRSV": "Now the word of the Lord came to Jonah son of Amittai, saying,",
+            "Rotherham": "And the word of Yahweh came unto Jonah son of Amittai, saying:"
+          }
+        },
+        {
+          "num": 2,
+          "text": {
+            "NRSV": "“Go at once to Nineveh, that great city, and cry out against it; for their wickedness has come up before me.”",
+            "Rotherham": "Arise, get thee to Nineveh the great city, and proclaim unto it,—that their wickedness, hath come up, before me."
+          }
+        },
+        {
+          "num": 3,
+          "text": {
+            "NRSV": "But Jonah set out to flee to Tarshish from the presence of the Lord. He went down to Joppa and found a ship going to Tarshish; so he paid his fare and went on board, to go with them to Tarshish, away from the presence of the Lord.",
+            "Rotherham": "But Jonah arose to flee unto Tarshish, away from the presence of Yahweh,—and went down to Joppa, and found a ship going to Tarshish, so he paid the fare thereof, and went down into it, to go with them to Tarshish, away from the presence of Yahweh. "
+          }
+        },
+        {
+          "num": 4,
+          "text": {
+            "NRSV": "But the Lord hurled a great wind upon the sea, and such a mighty storm came upon the sea that the ship threatened to break up.",
+            "Rotherham": " But, Yahweh, hurled a great wind against the sea,—and, there arose a mighty tempest in the sea,—and, the ship, thought to be broken in pieces,"
+          }
+        },
+        {
+          "num": 5,
+          "text": {
+            "NRSV": "Then the mariners were afraid, and each cried to his god. They threw the cargo that was in the ship into the sea, to lighten it for them. Jonah, meanwhile, had gone down into the hold of the ship and had lain down, and was fast asleep.",
+            "Rotherham": "Then were the mariners, afraid, and made outcry every man unto his own god, and they hurled the wares which were in the ship, into the sea, to lighten it of them,—but, Jonah, had gone down into the hinder parts of the vessel, and had lain down, and fallen into a sound sleep."
+          }
+        },
+        {
+          "num": 6,
+          "text": {
+            "NRSV": "The captain came and said to him, “What are you doing sound asleep? Get up, call on your god! Perhaps the god will kindheartedly think of us so that we do not perish.”",
+            "Rotherham": "Then drew near unto him the shipmaster, and said to him, What meanest thou, O sound sleeper? Arise, cry unto thy God, Peradventure God will bethink himself of us, that we perish not."
+          }
+        },
+        {
+          "num": 7,
+          "text": {
+            "NRSV": "The sailors said to one another, “Come, let us cast lots, so that we may know on whose account this calamity has come upon us.” So they cast lots, and the lot fell on Jonah.",
+            "Rotherham": "And they said—every one unto his fellow, Come, and let us cast lots, that we may get to know for whose sake this calamity is upon us. So they cast lots, and the lot fell upon Jonah."
+          }
+        },
+        {
+          "num": 8,
+          "text": {
+            "NRSV": "Then they said to him, “Tell us on whose account this calamity has come upon us. What is your occupation? Whence do you come? What is your country? And of what people are you?”",
+            "Rotherham": "Then said they unto him, Tell us, we pray thee, for whose sake this calamity is upon us? What is thy business? and from whence comest thou? what is thy country? and of what people art thou?"
+          }
+        },
+        {
+          "num": 9,
+          "text": {
+            "NRSV": "“I am a Hebrew,” he replied. “I worship the Lord, the God of heaven, who made the sea and the dry land.”",
+            "Rotherham": "And he said unto them, A Hebrew, am I,—and, Yahweh, the God of the heavens, do, I, revere, him who made the sea, and the dry land."
+          }
+        },
+        {
+          "num": 10,
+          "text": {
+            "NRSV": "Then the men were even more afraid, and said to him, “What is this that you have done!” For the men knew that he was fleeing from the presence of the Lord, because he had told them so.",
+            "Rotherham": "Then did the men revere with great reverence, and said unto him, What is it thou hast done? For the men knew that, away from the presence of Yahweh, he was fleeing,—for he had told them. "
+          }
+        },
+        {
+          "num": 11,
+          "text": {
+            "NRSV": "Then they said to him, “What shall we do to you, that the sea may quiet down for us?” For the sea was growing more and more tempestuous.",
+            "Rotherham": " Then said they unto him, What shall we de to thee, that the sea may cease raging over us? For, the sea, was raging more and more."
+          }
+        },
+        {
+          "num": 12,
+          "text": {
+            "NRSV": "He said to them, “Pick me up and throw me into the sea; then the sea will quiet down for you; for I know it is on my account that this great storm has come upon you.”",
+            "Rotherham": "And he said unto them, Take me up, and hurl me into the sea, that the sea may cease raging over you,—for I do know that, for my sake, is this great tempest upon you."
+          }
+        },
+        {
+          "num": 13,
+          "text": {
+            "NRSV": "Nevertheless the men rowed hard to bring the ship back to land, but they could not, for the sea grew more and more tempestuous against them.",
+            "Rotherham": "Nevertheless the men, wrought hard, to bring it back unto the land, but could not,—for, the sea, was raging over them more and more."
+          }
+        },
+        {
+          "num": 14,
+          "text": {
+            "NRSV": "Then they cried out to the Lord, “Please, O Lord, we pray, do not let us perish on account of this man’s life. Do not make us guilty of innocent blood; for you, O Lord, have done as it pleased you.”",
+            "Rotherham": "Then cried they unto Yahweh, and said, Ah now, Yahweh, pray let it not be that we perish for this man’s life, neither lay upon us innocent blood,—for, thou, O Yahweh, as thou hast pleased, hast ever done."
+          }
+        },
+        {
+          "num": 15,
+          "text": {
+            "NRSV": "So they picked up Jonah and threw him into the sea; and the sea ceased from its raging.",
+            "Rotherham": "So they took up Jonah and hurled him into the sea,—and the sea, left off, her roaring."
+          }
+        },
+        {
+          "num": 16,
+          "text": {
+            "NRSV": "Then the men feared the Lord even more, and they offered a sacrifice to the Lord and made vows.",
+            "Rotherham": "Then did the men revere Yahweh with a great reverence,—and offered sacrifice to Yahweh, and vowed vows."
+          }
+        },
+        {
+          "num": 17,
+          "text": {
+            "NRSV": "But the Lord provided a large fish to swallow up Jonah; and Jonah was in the belly of the fish three days and three nights.",
+            "Rotherham": "Now Yahweh had appointed a great fish, to swallow up Jonah,—and Jonah was in the belly of the fish, three days and three nights.  "
+          }
+        }
       ]
     },
     {
       "num": 2,
       "verses": [
-        { "num": 1, "text": "Then Jonah prayed to the Lord his God from the belly of the fish," },
-        { "num": 2, "text": "saying, “I called to the Lord out of my distress, and he answered me; out of the belly of Sheol I cried, and you heard my voice." },
-        { "num": 3, "text": "You cast me into the deep, into the heart of the seas, and the flood surrounded me; all your waves and your billows passed over me." },
-        { "num": 4, "text": "Then I said, ‘I am driven away from your sight; how shall I ever look again upon your holy temple?’" },
-        { "num": 5, "text": "The waters closed in over me; the deep surrounded me; weeds were wrapped around my head" },
-        { "num": 6, "text": "at the roots of the mountains. I went down to the land whose bars closed upon me forever; yet you brought up my life from the Pit, O Lord my God." },
-        { "num": 7, "text": "As my life was ebbing away, I remembered the Lord; and my prayer came to you, into your holy temple." },
-        { "num": 8, "text": "Those who worship vain idols forsake their true loyalty." },
-        { "num": 9, "text": "But I with the voice of thanksgiving will sacrifice to you; what I have vowed I will pay. Deliverance belongs to the Lord!”" },
-        { "num": 10, "text": "Then the Lord spoke to the fish, and it spewed Jonah out upon the dry land." }
+        {
+          "num": 1,
+          "text": {
+            "NRSV": "Then Jonah prayed to the Lord his God from the belly of the fish,",
+            "Rotherham": "Then prayed Jonah, unto Yahweh, his God,—out of the belly of the fish;"
+          }
+        },
+        {
+          "num": 2,
+          "text": {
+            "NRSV": "saying, “I called to the Lord out of my distress, and he answered me; out of the belly of Sheol I cried, and you heard my voice.",
+            "Rotherham": "and said—I cried—out of my distress—unto Yahweh, and he answered me,—Out of the belly of hades, called I, Thou didst hear my voice."
+          }
+        },
+        {
+          "num": 3,
+          "text": {
+            "NRSV": "You cast me into the deep, into the heart of the seas, and the flood surrounded me; all your waves and your billows passed over me.",
+            "Rotherham": "For thou hast cast me into the deep, into the heart of the seas, and, a flood, enveloped me,—All thy breakers and thy rolling waves, over me, passed."
+          }
+        },
+        {
+          "num": 4,
+          "text": {
+            "NRSV": "Then I said, ‘I am driven away from your sight; how shall I ever look again upon your holy temple?’",
+            "Rotherham": "And, I, said, I am driven out from before thine eyes,—Yet will I again have regard unto thy holy temple:"
+          }
+        },
+        {
+          "num": 5,
+          "text": {
+            "NRSV": "The waters closed in over me; the deep surrounded me; weeds were wrapped around my head",
+            "Rotherham": "The waters, encompassed me, to the peril of my life, The roaring deep, enveloped me,—The sea-weed, was wrapped about my head:"
+          }
+        },
+        {
+          "num": 6,
+          "text": {
+            "NRSV": "at the roots of the mountains. I went down to the land whose bars closed upon me forever; yet you brought up my life from the Pit, O Lord my God.",
+            "Rotherham": "To the roots of the mountains, went I down, As for the earth, her bars, were about me, age-abidingly,—Then didst thou bring up—out of the pit—my life, O Yahweh my God."
+          }
+        },
+        {
+          "num": 7,
+          "text": {
+            "NRSV": "As my life was ebbing away, I remembered the Lord; and my prayer came to you, into your holy temple.",
+            "Rotherham": "When my soul, darkened itself over me, Yahweh, I remembered,—and my prayer, came in unto thee, unto thy holy temple."
+          }
+        },
+        {
+          "num": 8,
+          "text": {
+            "NRSV": "Those who worship vain idols forsake their true loyalty.",
+            "Rotherham": "They who take heed to the vanities of falsehood, do, their own lovingkindness, forsake."
+          }
+        },
+        {
+          "num": 9,
+          "text": {
+            "NRSV": "But I with the voice of thanksgiving will sacrifice to you; what I have vowed I will pay. Deliverance belongs to the Lord!”",
+            "Rotherham": "But, I, with the voice of praise, will sacrifice unto thee, What I have vowed, I will pay,—Salvation, belongeth to Yahweh! "
+          }
+        },
+        {
+          "num": 10,
+          "text": {
+            "NRSV": "Then the Lord spoke to the fish, and it spewed Jonah out upon the dry land.",
+            "Rotherham": " So then Yahweh spake unto the fish,—and it vomited out Jonah, upon the dry land.  "
+          }
+        }
       ]
     },
     {
       "num": 3,
       "verses": [
-        { "num": 1, "text": "The word of the Lord came to Jonah a second time, saying," },
-        { "num": 2, "text": "“Get up, go to Nineveh, that great city, and proclaim to it the message that I tell you.”" },
-        { "num": 3, "text": "So Jonah set out and went to Nineveh, according to the word of the Lord. Now Nineveh was an exceedingly large city, a three days’ walk across." },
-        { "num": 4, "text": "Jonah began to go into the city, going a day’s walk. And he cried out, “Forty days more, and Nineveh shall be overthrown!”" },
-        { "num": 5, "text": "And the people of Nineveh believed God; they proclaimed a fast, and everyone, great and small, put on sackcloth." },
-        { "num": 6, "text": "When the news reached the king of Nineveh, he rose from his throne, removed his robe, covered himself with sackcloth, and sat in ashes." },
-        { "num": 7, "text": "Then he had a proclamation made in Nineveh: “By the decree of the king and his nobles: No human being or animal, no herd or flock, shall taste anything. They shall not feed, nor shall they drink water." },
-        { "num": 8, "text": "Human beings and animals shall be covered with sackcloth, and they shall cry mightily to God. All shall turn from their evil ways and from the violence that is in their hands." },
-        { "num": 9, "text": "Who knows? God may relent and change his mind; he may turn from his fierce anger, so that we do not perish.”" },
-        { "num": 10, "text": "When God saw what they did, how they turned from their evil ways, God changed his mind about the calamity that he had said he would bring upon them; and he did not do it." }
+        {
+          "num": 1,
+          "text": {
+            "NRSV": "The word of the Lord came to Jonah a second time, saying,",
+            "Rotherham": "Then came the word of Yahweh unto Jonah, the second time, saying:"
+          }
+        },
+        {
+          "num": 2,
+          "text": {
+            "NRSV": "“Get up, go to Nineveh, that great city, and proclaim to it the message that I tell you.”",
+            "Rotherham": "Arise, get thee unto Nineveh, the great city,—and cry against it the cry that I am bidding thee."
+          }
+        },
+        {
+          "num": 3,
+          "text": {
+            "NRSV": "So Jonah set out and went to Nineveh, according to the word of the Lord. Now Nineveh was an exceedingly large city, a three days’ walk across.",
+            "Rotherham": "So Jonah arose, and went his way unto Nineveh, according to the word of Yahweh,—Nineveh, being a city great before God, of three days’ journey."
+          }
+        },
+        {
+          "num": 4,
+          "text": {
+            "NRSV": "Jonah began to go into the city, going a day’s walk. And he cried out, “Forty days more, and Nineveh shall be overthrown!”",
+            "Rotherham": "So Jonah began to enter into the city, one day’s journey,—and he cried out and said—Yet forty days, and, Nineveh, is to be overthrown! "
+          }
+        },
+        {
+          "num": 5,
+          "text": {
+            "NRSV": "And the people of Nineveh believed God; they proclaimed a fast, and everyone, great and small, put on sackcloth.",
+            "Rotherham": " And the people of Nineveh believed in God,—and proclaimed a fast, and clothed themselves in sackcloth, from the greatest of them, even unto the least of them."
+          }
+        },
+        {
+          "num": 6,
+          "text": {
+            "NRSV": "When the news reached the king of Nineveh, he rose from his throne, removed his robe, covered himself with sackcloth, and sat in ashes.",
+            "Rotherham": "And the word reached unto the king of Nineveh, so he arose from his throne, and laid aside his robe from off him,—and covered him with sackcloth, and sat on ashes."
+          }
+        },
+        {
+          "num": 7,
+          "text": {
+            "NRSV": "Then he had a proclamation made in Nineveh: “By the decree of the king and his nobles: No human being or animal, no herd or flock, shall taste anything. They shall not feed, nor shall they drink water.",
+            "Rotherham": "And he caused an outcry to be made—and said—throughout Nineveh, By decree of the king and of his great men, Be it known:—Man and beast, herd and flock, Let them taste, nothing, let them not feed, and, water, let them not drink:"
+          }
+        },
+        {
+          "num": 8,
+          "text": {
+            "NRSV": "Human beings and animals shall be covered with sackcloth, and they shall cry mightily to God. All shall turn from their evil ways and from the violence that is in their hands.",
+            "Rotherham": "Let both man and beast, cover themselves with sackcloth, and let them cry unto God, mightily,—Yea let them turn, every man from his wicked way, and from the violence which is in their hands:"
+          }
+        },
+        {
+          "num": 9,
+          "text": {
+            "NRSV": "Who knows? God may relent and change his mind; he may turn from his fierce anger, so that we do not perish.”",
+            "Rotherham": "Who knoweth whether God himself—may turn and grieve,—and turn away from the glow of his anger, that we perish not?"
+          }
+        },
+        {
+          "num": 10,
+          "text": {
+            "NRSV": "When God saw what they did, how they turned from their evil ways, God changed his mind about the calamity that he had said he would bring upon them; and he did not do it.",
+            "Rotherham": "And God saw their doings, that they turned from their wicked way,—and God was grieved over the calamity which he had spoken of executing upon them, and executed it not.  "
+          }
+        }
       ]
     },
     {
       "num": 4,
       "verses": [
-        { "num": 1, "text": "But this was very displeasing to Jonah, and he became angry." },
-        { "num": 2, "text": "He prayed to the Lord and said, “O Lord! Is not this what I said while I was still in my own country? That is why I fled to Tarshish at the beginning; for I knew that you are a gracious God and merciful, slow to anger, and abounding in steadfast love, and ready to relent from punishing." },
-        { "num": 3, "text": "And now, O Lord, please take my life from me, for it is better for me to die than to live.”" },
-        { "num": 4, "text": "And the Lord said, “Is it right for you to be angry?”" },
-        { "num": 5, "text": "Then Jonah went out of the city and sat down east of the city, and made a booth for himself there. He sat under it in the shade, waiting to see what would become of the city." },
-        { "num": 6, "text": "The Lord God appointed a bush, and made it come up over Jonah, to give shade over his head, to save him from his discomfort; so Jonah was very happy about the bush." },
-        { "num": 7, "text": "But when dawn came up the next day, God appointed a worm that attacked the bush, so that it withered." },
-        { "num": 8, "text": "When the sun rose, God prepared a sultry east wind, and the sun beat down on the head of Jonah so that he was faint and asked that he might die. He said, “It is better for me to die than to live.”" },
-        { "num": 9, "text": "But God said to Jonah, “Is it right for you to be angry about the bush?” And he said, “Yes, angry enough to die.”" },
-        { "num": 10, "text": "Then the Lord said, “You are concerned about the bush, for which you did not labor and which you did not grow; it came into being in a night and perished in a night." },
-        { "num": 11, "text": "And should I not be concerned about Nineveh, that great city, in which there are more than a hundred and twenty thousand persons who do not know their right hand from their left, and also many animals?”" }
+        {
+          "num": 1,
+          "text": {
+            "NRSV": "But this was very displeasing to Jonah, and he became angry.",
+            "Rotherham": "And it was vexing unto Jonah, with a great vexation,—and it angered him."
+          }
+        },
+        {
+          "num": 2,
+          "text": {
+            "NRSV": "He prayed to the Lord and said, “O Lord! Is not this what I said while I was still in my own country? That is why I fled to Tarshish at the beginning; for I knew that you are a gracious God and merciful, slow to anger, and abounding in steadfast love, and ready to relent from punishing.",
+            "Rotherham": "So he prayed unto Yahweh, and said—Ah now! Yahweh! Was not, this, my word, while I was yet upon mine own soil? For this cause, did I hasten to flee unto Tarshish,—because I knew that, thou, art a GOD of favour and compassion, slow to anger, and abundant in lovingkindness, and art grieved over calamity."
+          }
+        },
+        {
+          "num": 3,
+          "text": {
+            "NRSV": "And now, O Lord, please take my life from me, for it is better for me to die than to live.”",
+            "Rotherham": "Now, therefore, O Yahweh, take, I pray thee, my life from me,—for it were better for me, to die, than, to live."
+          }
+        },
+        {
+          "num": 4,
+          "text": {
+            "NRSV": "And the Lord said, “Is it right for you to be angry?”",
+            "Rotherham": "Then said Yahweh, Art thou rightly angry? "
+          }
+        },
+        {
+          "num": 5,
+          "text": {
+            "NRSV": "Then Jonah went out of the city and sat down east of the city, and made a booth for himself there. He sat under it in the shade, waiting to see what would become of the city.",
+            "Rotherham": " But Jonah, went forth, out of the city, and abode on the east side of the city; and made for himself there, a hut, and sat under it, in the shade, until he should see what would become of the city."
+          }
+        },
+        {
+          "num": 6,
+          "text": {
+            "NRSV": "The Lord God appointed a bush, and made it come up over Jonah, to give shade over his head, to save him from his discomfort; so Jonah was very happy about the bush.",
+            "Rotherham": "Now Yahweh God appointed a gourd, and caused it to come up over Jonah, that it might be a shade over his head, to deliver him from his vexation,—and Jonah rejoiced over the gourd, with great rejoicing."
+          }
+        },
+        {
+          "num": 7,
+          "text": {
+            "NRSV": "But when dawn came up the next day, God appointed a worm that attacked the bush, so that it withered.",
+            "Rotherham": "But God appointed a worm, at the uprisings of the dawn, the next day,—and it smote the gourd, that it withered."
+          }
+        },
+        {
+          "num": 8,
+          "text": {
+            "NRSV": "When the sun rose, God prepared a sultry east wind, and the sun beat down on the head of Jonah so that he was faint and asked that he might die. He said, “It is better for me to die than to live.”",
+            "Rotherham": "And it came to pass, at the breaking forth of the sun, that God appointed a sultry east wind, and the sun smote upon the head of Jonah, that he became faint,—and asked his life, that he might die, and said, It were better for me, to die, than, to live."
+          }
+        },
+        {
+          "num": 9,
+          "text": {
+            "NRSV": "But God said to Jonah, “Is it right for you to be angry about the bush?” And he said, “Yes, angry enough to die.”",
+            "Rotherham": "Then said God unto Jonah, Art thou rightly angry over the gourd? And he said, I am rightly angry, unto death."
+          }
+        },
+        {
+          "num": 10,
+          "text": {
+            "NRSV": "Then the Lord said, “You are concerned about the bush, for which you did not labor and which you did not grow; it came into being in a night and perished in a night.",
+            "Rotherham": "Then said Yahweh, Thou, wouldest have spared the gourd, for which thou hadst not toiled, neither hadst thou made it grow,—which, as the off-spring of a night, came up, and, as the offspring of a night, perished;"
+          }
+        },
+        {
+          "num": 11,
+          "text": {
+            "NRSV": "And should I not be concerned about Nineveh, that great city, in which there are more than a hundred and twenty thousand persons who do not know their right hand from their left, and also many animals?”",
+            "Rotherham": "And was not, I, to spare Nineveh, the great city,—wherein are more than twelve times ten thousand human beings, who cannot discern between their right hand and their left, besides much cattle?   "
+          }
+        }
       ]
     }
-  ]
+  ],
+  "schema": "bible_book_multiversion_v1"
 }

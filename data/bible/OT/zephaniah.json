@@ -3,76 +3,411 @@
     "name": "Zephaniah",
     "id": "ZEP",
     "version": "NRSV",
-    "copyright": "New Revised Standard Version Bible, copyright © 1989 National Council of the Churches of Christ in the United States of America. Used by permission. All rights reserved worldwide."
+    "copyright": "New Revised Standard Version Bible, copyright © 1989 National Council of the Churches of Christ in the United States of America. Used by permission. All rights reserved worldwide.",
+    "canon": "OT",
+    "defaultTranslation": "NRSV",
+    "versification": "hebrew_masoretic",
+    "translations": {
+      "NRSV": {
+        "label": "New Revised Standard Version",
+        "sourceType": "existing_corpus",
+        "rights": "New Revised Standard Version Bible, copyright © 1989 National Council of the Churches of Christ in the United States of America. Used by permission. All rights reserved worldwide."
+      },
+      "Rotherham": {
+        "label": "The Emphasised Bible",
+        "sourceType": "scrollmapper_bible_databases_2025_formats_json_source_witness",
+        "rights": "Public Domain",
+        "sourceWitness": "documentation/rotherham-source-witness-intake.json"
+      }
+    }
   },
   "chapters": [
     {
       "num": 1,
       "verses": [
-        { "num": 1, "text": "The word of the Lord that came to Zephaniah son of Cushi son of Gedaliah son of Amariah son of Hezekiah, in the days of King Josiah son of Amon of Judah." },
-        { "num": 2, "text": "I will utterly sweep away everything from the face of the earth, says the Lord." },
-        { "num": 3, "text": "I will sweep away humans and animals; I will sweep away the birds of the air and the fish of the sea. I will make the wicked stumble. I will cut off humanity from the face of the earth, says the Lord." },
-        { "num": 4, "text": "I will stretch out my hand against Judah, and against all the inhabitants of Jerusalem; and I will cut off from this place every remnant of Baal and the name of the idolatrous priests;" },
-        { "num": 5, "text": "those who bow down on the roofs to the host of the heavens; those who bow down and swear to the Lord, but also swear by Milcom;" },
-        { "num": 6, "text": "those who have turned back from following the Lord, who have not sought the Lord or inquired of him." },
-        { "num": 7, "text": "Be silent before the Lord God! For the day of the Lord is at hand; the Lord has prepared a sacrifice, he has consecrated his guests." },
-        { "num": 8, "text": "And on the day of the Lord’s sacrifice I will punish the officials and the king’s sons and all who dress themselves in foreign attire." },
-        { "num": 9, "text": "On that day I will punish all who leap over the threshold, who fill their master’s house with violence and fraud." },
-        { "num": 10, "text": "On that day, says the Lord, a cry will be heard from the Fish Gate, a wail from the Second Quarter, a loud crash from the hills." },
-        { "num": 11, "text": "Wail, O inhabitants of the Mortar! For all the traders are dead; all who weigh out silver are cut off." },
-        { "num": 12, "text": "At that time I will search Jerusalem with lamps, and I will punish the people who rest complacently on their dregs, those who say in their hearts, “The Lord will not do good, nor will he do harm.”" },
-        { "num": 13, "text": "Their wealth shall be plundered, and their houses laid waste. Though they build houses, they shall not inhabit them; though they plant vineyards, they shall not drink wine from them." },
-        { "num": 14, "text": "The great day of the Lord is near, near and hastening fast; the sound of the day of the Lord is bitter, the warrior cries aloud there." },
-        { "num": 15, "text": "That day will be a day of wrath, a day of distress and anguish, a day of ruin and devastation, a day of darkness and gloom, a day of clouds and thick darkness," },
-        { "num": 16, "text": "a day of trumpet blast and battle cry against the fortified cities and against the lofty battlements." },
-        { "num": 17, "text": "I will bring such distress upon people that they shall walk like the blind; because they have sinned against the Lord, their blood shall be poured out like dust, and their flesh like dung." },
-        { "num": 18, "text": "Neither their silver nor their gold will be able to save them on the day of the Lord’s wrath; in the fire of his passion the whole earth shall be consumed; for a full, a terrible end he will make of all the inhabitants of the earth." }
+        {
+          "num": 1,
+          "text": {
+            "NRSV": "The word of the Lord that came to Zephaniah son of Cushi son of Gedaliah son of Amariah son of Hezekiah, in the days of King Josiah son of Amon of Judah.",
+            "Rotherham": "The word of Yahweh which came unto Zephaniah, son of Cushi, son of Gedaliah, son of Amariah, son of Hezekiah,—in the days of Josiah son of Amon, king of Judah."
+          }
+        },
+        {
+          "num": 2,
+          "text": {
+            "NRSV": "I will utterly sweep away everything from the face of the earth, says the Lord.",
+            "Rotherham": "I will take clean away everything from off the face of the ground, Declareth Yahweh."
+          }
+        },
+        {
+          "num": 3,
+          "text": {
+            "NRSV": "I will sweep away humans and animals; I will sweep away the birds of the air and the fish of the sea. I will make the wicked stumble. I will cut off humanity from the face of the earth, says the Lord.",
+            "Rotherham": "I will take away man and beast, I will take away the bird of the heavens and the fishes of the sea, and the stumblingblocks, even them who are lawless,—and will cut off mankind, from off the face of the ground, Declareth Yahweh."
+          }
+        },
+        {
+          "num": 4,
+          "text": {
+            "NRSV": "I will stretch out my hand against Judah, and against all the inhabitants of Jerusalem; and I will cut off from this place every remnant of Baal and the name of the idolatrous priests;",
+            "Rotherham": "And I will stretch out my hand—over Judah, and over all the inhabitants of Jerusalem,—and will cut off out of this place, the name of Baal, the name of the priestlings, with the priests;"
+          }
+        },
+        {
+          "num": 5,
+          "text": {
+            "NRSV": "those who bow down on the roofs to the host of the heavens; those who bow down and swear to the Lord, but also swear by Milcom;",
+            "Rotherham": "And them who bow down upon the housetops to the host of the heavens,—and them who bow down—who swear to Yahweh, and swear by Milcom;"
+          }
+        },
+        {
+          "num": 6,
+          "text": {
+            "NRSV": "those who have turned back from following the Lord, who have not sought the Lord or inquired of him.",
+            "Rotherham": "And them who turn away from following Yahweh,—and have neither sought Yahweh, nor enquired for him. "
+          }
+        },
+        {
+          "num": 7,
+          "text": {
+            "NRSV": "Be silent before the Lord God! For the day of the Lord is at hand; the Lord has prepared a sacrifice, he has consecrated his guests.",
+            "Rotherham": " Hush! at the presence of My Lord, Yahweh,—for, near, is the day of Yahweh, for Yahweh hath prepared his sacrifice, hath hallowed his guests."
+          }
+        },
+        {
+          "num": 8,
+          "text": {
+            "NRSV": "And on the day of the Lord’s sacrifice I will punish the officials and the king’s sons and all who dress themselves in foreign attire.",
+            "Rotherham": "And it shall come to pass, in the day of Yahweh’s sacrifice, that I will punish the rulers, and the sons of the king,—and all such as are clothed with foreign apparel;"
+          }
+        },
+        {
+          "num": 9,
+          "text": {
+            "NRSV": "On that day I will punish all who leap over the threshold, who fill their master’s house with violence and fraud.",
+            "Rotherham": "And I will punish every one who leapeth over the threshold, in that day,—those who fill the house of their lords with violence and deceit."
+          }
+        },
+        {
+          "num": 10,
+          "text": {
+            "NRSV": "On that day, says the Lord, a cry will be heard from the Fish Gate, a wail from the Second Quarter, a loud crash from the hills.",
+            "Rotherham": "And there shall come to be, in that day, declareth Yahweh, The noise of an outcry from the fish-gate, and of a howling out of the new city,—and of a great crashing, from the hills."
+          }
+        },
+        {
+          "num": 11,
+          "text": {
+            "NRSV": "Wail, O inhabitants of the Mortar! For all the traders are dead; all who weigh out silver are cut off.",
+            "Rotherham": "Howl, ye inhabitants of the lower city,—because destroyed are all the people of traffic, cut off are all they who were laden with silver."
+          }
+        },
+        {
+          "num": 12,
+          "text": {
+            "NRSV": "At that time I will search Jerusalem with lamps, and I will punish the people who rest complacently on their dregs, those who say in their hearts, “The Lord will not do good, nor will he do harm.”",
+            "Rotherham": "And it shall come to pass, at that time, that I will search through Jerusalem, with lamps,—and will punish the men who are thickened upon their lees, who are saying in their heart, Yahweh, will not give blessing, neither will he bring calamity."
+          }
+        },
+        {
+          "num": 13,
+          "text": {
+            "NRSV": "Their wealth shall be plundered, and their houses laid waste. Though they build houses, they shall not inhabit them; though they plant vineyards, they shall not drink wine from them.",
+            "Rotherham": "Therefore shall their goods become a booty, and their houses, a desolation,—and they shall build houses, but not inhabit them, and plant vineyards, but not drink the wine thereof. "
+          }
+        },
+        {
+          "num": 14,
+          "text": {
+            "NRSV": "The great day of the Lord is near, near and hastening fast; the sound of the day of the Lord is bitter, the warrior cries aloud there.",
+            "Rotherham": " Near is the great day of Yahweh, near, and very speedy,—The noise of the day of Yahweh, a strong man—there!—bitterly crying out!"
+          }
+        },
+        {
+          "num": 15,
+          "text": {
+            "NRSV": "That day will be a day of wrath, a day of distress and anguish, a day of ruin and devastation, a day of darkness and gloom, a day of clouds and thick darkness,",
+            "Rotherham": "A day of indignation,—that day! day of danger and distress, day of rush, and of crash, day of obscurity, and deep gloom, day of cloud, and thick darkness;"
+          }
+        },
+        {
+          "num": 16,
+          "text": {
+            "NRSV": "a day of trumpet blast and battle cry against the fortified cities and against the lofty battlements.",
+            "Rotherham": "day of horn, and war-shout,—against the fortified cities, and against the high towers."
+          }
+        },
+        {
+          "num": 17,
+          "text": {
+            "NRSV": "I will bring such distress upon people that they shall walk like the blind; because they have sinned against the Lord, their blood shall be poured out like dust, and their flesh like dung.",
+            "Rotherham": "And I will bring distress to mankind, and they shall walk like them who are blind, because, against Yahweh, have they sinned,—and their blood, shall be poured out, as dust, and their bowels like dung."
+          }
+        },
+        {
+          "num": 18,
+          "text": {
+            "NRSV": "Neither their silver nor their gold will be able to save them on the day of the Lord’s wrath; in the fire of his passion the whole earth shall be consumed; for a full, a terrible end he will make of all the inhabitants of the earth.",
+            "Rotherham": "Neither their silver nor yet their gold, shall be able to deliver them, in the day of the indignation of Yahweh, but, in the fire of his jealousy, shall the whole earth be consumed; For, a destruction, surely a terrible one, will he make, with all them who dwell in the earth.  "
+          }
+        }
       ]
     },
     {
       "num": 2,
       "verses": [
-        { "num": 1, "text": "Gather together, gather, O shameless nation," },
-        { "num": 2, "text": "before you are driven away like the drifting chaff, before there comes upon you the fierce anger of the Lord, before there comes upon you the day of the Lord’s wrath." },
-        { "num": 3, "text": "Seek the Lord, all you humble of the land, who do his commands; seek righteousness, seek humility; perhaps you may be hidden on the day of the Lord’s wrath." },
-        { "num": 4, "text": "For Gaza shall be deserted, and Ashkelon shall become a desolation; Ashdod’s people shall be driven out at noon, and Ekron shall be uprooted." },
-        { "num": 5, "text": "Ah, inhabitants of the seacoast, you nation of the Cherethites! The word of the Lord is against you, O Canaan, land of the Philistines; and I will destroy you until no inhabitant is left." },
-        { "num": 6, "text": "And you, O seacoast, shall be pastures, meadows for shepherds and folds for flocks." },
-        { "num": 7, "text": "The seacoast shall become the possession of the remnant of the house of Judah, on which they shall pasture, and in the houses of Ashkelon they shall lie down at evening. For the Lord their God will be mindful of them and restore their fortunes." },
-        { "num": 8, "text": "I have heard the insults of Moab and the taunts of the Ammonites, with which they have insulted my people and made boasts against their territory." },
-        { "num": 9, "text": "Therefore, as I live, says the Lord of hosts, the God of Israel, Moab shall become like Sodom and the Ammonites like Gomorrah, a land possessed by nettles and salt pits, and a waste forever. The remnant of my people shall plunder them, and the survivors of my nation shall possess them." },
-        { "num": 10, "text": "This shall be their lot in return for their pride, because they scoffed and boasted against the people of the Lord of hosts." },
-        { "num": 11, "text": "The Lord will be terrible against them; he will shrivel all the gods of the earth, and to him shall bow down, each in its own place, all the coasts and islands of the nations." },
-        { "num": 12, "text": "You also, O Ethiopians, shall be killed by my sword." },
-        { "num": 13, "text": "And he will stretch out his hand against the north, and destroy Assyria; and he will make Nineveh a desolation, a dry waste like the desert." },
-        { "num": 14, "text": "Herds shall lie down in it, every wild animal; the desert-owl and the screech-owl shall lodge on its capitals; the owl shall howl in the window, the raven croak on the threshold; for its cedar work will be laid bare." },
-        { "num": 15, "text": "Is this the exultant city that lived secure, that said to itself, “I am, and there is no one else”? What a desolation it has become, a lair for wild animals! Everyone who passes by it hisses and shakes the fist." }
+        {
+          "num": 1,
+          "text": {
+            "NRSV": "Gather together, gather, O shameless nation,",
+            "Rotherham": "Collect your thoughts, aye collect them,—O nation, depressed!"
+          }
+        },
+        {
+          "num": 2,
+          "text": {
+            "NRSV": "before you are driven away like the drifting chaff, before there comes upon you the fierce anger of the Lord, before there comes upon you the day of the Lord’s wrath.",
+            "Rotherham": "Ere yet the decree, have given birth, like chaff, the day, have vanished,—ere yet shall come upon you, the glow of the anger of Yahweh, ere yet shall come upon you, the day of the anger of Yahweh."
+          }
+        },
+        {
+          "num": 3,
+          "text": {
+            "NRSV": "Seek the Lord, all you humble of the land, who do his commands; seek righteousness, seek humility; perhaps you may be hidden on the day of the Lord’s wrath.",
+            "Rotherham": "Seek Yahweh—all ye lowly of the land, who have wrought, what he appointed,—seek righteousness, seek humility, peradventure, ye shall be concealed, in the day of the anger of Yahweh? "
+          }
+        },
+        {
+          "num": 4,
+          "text": {
+            "NRSV": "For Gaza shall be deserted, and Ashkelon shall become a desolation; Ashdod’s people shall be driven out at noon, and Ekron shall be uprooted.",
+            "Rotherham": " For, Gaza, forsaken, shall be, and, Ashkelon, a desolation,—Ashdod! at high noon, shall they drive her forth, and, Ekron, be uprooted:"
+          }
+        },
+        {
+          "num": 5,
+          "text": {
+            "NRSV": "Ah, inhabitants of the seacoast, you nation of the Cherethites! The word of the Lord is against you, O Canaan, land of the Philistines; and I will destroy you until no inhabitant is left.",
+            "Rotherham": "Alas! for the inhabitants of the line of the sea, the nation of Kerethim,—The word of Yahweh, is against you, O Canaan of the land of the Philistines, therefore will I destroy thee, to the last inhabitant."
+          }
+        },
+        {
+          "num": 6,
+          "text": {
+            "NRSV": "And you, O seacoast, shall be pastures, meadows for shepherds and folds for flocks.",
+            "Rotherham": "So shall the line of the sea become a meadow, the wells of shepherds, and the folds of flocks;"
+          }
+        },
+        {
+          "num": 7,
+          "text": {
+            "NRSV": "The seacoast shall become the possession of the remnant of the house of Judah, on which they shall pasture, and in the houses of Ashkelon they shall lie down at evening. For the Lord their God will be mindful of them and restore their fortunes.",
+            "Rotherham": "And the line shall belong to the remnant of the house of Judah, Thereon, shall they feed their flocks,—In the houses of Ashkelon, shall they, at eventide, lie down, for Yahweh their God will visit them, and bring their captives back. "
+          }
+        },
+        {
+          "num": 8,
+          "text": {
+            "NRSV": "I have heard the insults of Moab and the taunts of the Ammonites, with which they have insulted my people and made boasts against their territory.",
+            "Rotherham": " I have heard the reproach of Moab, and the revilings of the sons of Ammon,—who have reproached my people, and have magnified themselves up to their bounds."
+          }
+        },
+        {
+          "num": 9,
+          "text": {
+            "NRSV": "Therefore, as I live, says the Lord of hosts, the God of Israel, Moab shall become like Sodom and the Ammonites like Gomorrah, a land possessed by nettles and salt pits, and a waste forever. The remnant of my people shall plunder them, and the survivors of my nation shall possess them.",
+            "Rotherham": "Wherefore, as I live, declareth Yahweh of hosts, God of Israel, Surely, Moab, like Sodom, shall become, and, the sons of Ammon, like Gomorrah, a possession for the thorn, and a pit of salt, Yea a desolation, unto times age-abiding: The remnant of my people, shall make of them a prey, and, the residue of my nation, shall inherit them."
+          }
+        },
+        {
+          "num": 10,
+          "text": {
+            "NRSV": "This shall be their lot in return for their pride, because they scoffed and boasted against the people of the Lord of hosts.",
+            "Rotherham": "This, shall they have, instead of their pride,—because they reproached and magnified themselves against the people of Yahweh of hosts."
+          }
+        },
+        {
+          "num": 11,
+          "text": {
+            "NRSV": "The Lord will be terrible against them; he will shrivel all the gods of the earth, and to him shall bow down, each in its own place, all the coasts and islands of the nations.",
+            "Rotherham": "Terrible will Yahweh be against them, for he hath caused to waste away all the gods of the earth, that men may bow down to him, every one from his place, all the coastlands of the nations: "
+          }
+        },
+        {
+          "num": 12,
+          "text": {
+            "NRSV": "You also, O Ethiopians, shall be killed by my sword.",
+            "Rotherham": " Even ye Ethiopians, the slain of my sword were they!"
+          }
+        },
+        {
+          "num": 13,
+          "text": {
+            "NRSV": "And he will stretch out his hand against the north, and destroy Assyria; and he will make Nineveh a desolation, a dry waste like the desert.",
+            "Rotherham": "And may he stretch out his hand against the North, and destroy Assyria,—and may he make of Nineveh a desolation, dry as the desert!"
+          }
+        },
+        {
+          "num": 14,
+          "text": {
+            "NRSV": "Herds shall lie down in it, every wild animal; the desert-owl and the screech-owl shall lodge on its capitals; the owl shall howl in the window, the raven croak on the threshold; for its cedar work will be laid bare.",
+            "Rotherham": "So shall lie down in her midst—flocks, each living thing of a nation, both pelican and bittern, in her capitals, shall roost,—a voice, shall resound in the window, the bustard, on the sill, for he hath destroyed, hath laid bare."
+          }
+        },
+        {
+          "num": 15,
+          "text": {
+            "NRSV": "Is this the exultant city that lived secure, that said to itself, “I am, and there is no one else”? What a desolation it has become, a lair for wild animals! Everyone who passes by it hisses and shakes the fist.",
+            "Rotherham": "This, is the city exultant, that sat secure, that said in her heart, I, [am] ! and no one besides! How hath she become a desolation! a lair of beasts, every one passing, by her doth hiss, shaketh his hand.  "
+          }
+        }
       ]
     },
     {
       "num": 3,
       "verses": [
-        { "num": 1, "text": "Ah, soiled, defiled, oppressing city!" },
-        { "num": 2, "text": "It has listened to no voice; it has accepted no correction. It has not trusted in the Lord; it has not drawn near to its God." },
-        { "num": 3, "text": "Its officials within it are roaring lions; its judges are evening wolves that leave nothing until the morning." },
-        { "num": 4, "text": "Its prophets are reckless, treacherous persons; its priests have profaned what is holy, they have done violence to the law." },
-        { "num": 5, "text": "The Lord within it is righteous; he does no wrong. Every morning he renders his judgment, each dawn without fail; but the unjust knows no shame." },
-        { "num": 6, "text": "I have cut off nations; their battlements are in ruins; I have laid waste their streets so that no one walks in them; their cities have been made desolate, without people, without inhabitants." },
-        { "num": 7, "text": "I said, “Surely the city will fear me, it will accept correction; it will not lose sight of all that I have brought upon it.” But they were the more eager to make all their deeds corrupt." },
-        { "num": 8, "text": "Therefore wait for me, says the Lord, for the day when I arise as a witness. Since my decision is to gather nations, to assemble kingdoms, to pour out upon them my indignation, all the heat of my anger; for in the fire of my passion all the earth shall be consumed." },
-        { "num": 9, "text": "At that time I will change the speech of the peoples to a pure speech, that all of them may call on the name of the Lord and serve him with one accord." },
-        { "num": 10, "text": "From beyond the rivers of Ethiopia my suppliants, my scattered ones, shall bring my offering." },
-        { "num": 11, "text": "On that day you shall not be put to shame because of all the deeds by which you have rebelled against me; for then I will remove from your midst your proudly exultant ones, and you shall no longer be haughty in my holy mountain." },
-        { "num": 12, "text": "For I will leave in the midst of you a people humble and lowly. They shall seek refuge in the name of the Lord—" },
-        { "num": 13, "text": "the remnant of Israel; they shall do no wrong and speak no lies; nor shall a deceitful tongue be found in their mouths. Then they shall pasture and lie down, and no one shall make them afraid." },
-        { "num": 14, "text": "Sing aloud, O daughter Zion; shout, O Israel! Rejoice and exult with all your heart, O daughter Jerusalem!" },
-        { "num": 15, "text": "The Lord has taken away the judgments against you, he has turned away your enemies. The king of Israel, the Lord, is in your midst; you shall fear disaster no more." },
-        { "num": 16, "text": "On that day it shall be said to Jerusalem: Do not fear, O Zion; do not let your hands grow weak." },
-        { "num": 17, "text": "The Lord, your God, is in your midst, a warrior who gives victory; he will rejoice over you with gladness, he will renew you in his love; he will exult over you with loud singing" },
-        { "num": 18, "text": "as on a day of festival. I will remove disaster from you, so that you will not bear reproach for it." },
-        { "num": 19, "text": "I will deal with all your oppressors at that time. And I will save the lame and gather the outcast, and I will change their shame into praise and renown in all the earth." },
-        { "num": 20, "text": "At that time I will bring you home, at the time when I gather you; for I will make you renowned and praised among all the peoples of the earth, when I restore your fortunes before your eyes, says the Lord." }
+        {
+          "num": 1,
+          "text": {
+            "NRSV": "Ah, soiled, defiled, oppressing city!",
+            "Rotherham": "Alas for her that is rebellious, and polluted, the city that oppresseth!"
+          }
+        },
+        {
+          "num": 2,
+          "text": {
+            "NRSV": "It has listened to no voice; it has accepted no correction. It has not trusted in the Lord; it has not drawn near to its God.",
+            "Rotherham": "She hath hearkened to no voice, accepted no correction; in Yahweh, hath not trusted, to her God, hath not drawn near:"
+          }
+        },
+        {
+          "num": 3,
+          "text": {
+            "NRSV": "Its officials within it are roaring lions; its judges are evening wolves that leave nothing until the morning.",
+            "Rotherham": "Her rulers in her midst, are roaring lions,—her judges, evening wolves, they have left nothing until morning!"
+          }
+        },
+        {
+          "num": 4,
+          "text": {
+            "NRSV": "Its prophets are reckless, treacherous persons; its priests have profaned what is holy, they have done violence to the law.",
+            "Rotherham": "Her prophets, are reckless, treacherous men! her priests, have profaned the holy, done violence to law."
+          }
+        },
+        {
+          "num": 5,
+          "text": {
+            "NRSV": "The Lord within it is righteous; he does no wrong. Every morning he renders his judgment, each dawn without fail; but the unjust knows no shame.",
+            "Rotherham": "Yahweh, the Righteous One, is in her midst, he dealeth not perversely,—Morning by morning, his justice, bringeth he forth the light, He is not found lacking, but the perverse man knoweth no shame."
+          }
+        },
+        {
+          "num": 6,
+          "text": {
+            "NRSV": "I have cut off nations; their battlements are in ruins; I have laid waste their streets so that no one walks in them; their cities have been made desolate, without people, without inhabitants.",
+            "Rotherham": "I have cut off nations, deserted are their towers, have made desolate their streets, that none passeth through; ruined are their cities, for want of men of note, from lack of any dweller!"
+          }
+        },
+        {
+          "num": 7,
+          "text": {
+            "NRSV": "I said, “Surely the city will fear me, it will accept correction; it will not lose sight of all that I have brought upon it.” But they were the more eager to make all their deeds corrupt.",
+            "Rotherham": "I said, Surely thou wilt reverence, Me, wilt accept correction, lest her abode, should be cut of, howsoever I had punished her; but, in truth, they soon corrupted all their deeds. "
+          }
+        },
+        {
+          "num": 8,
+          "text": {
+            "NRSV": "Therefore wait for me, says the Lord, for the day when I arise as a witness. Since my decision is to gather nations, to assemble kingdoms, to pour out upon them my indignation, all the heat of my anger; for in the fire of my passion all the earth shall be consumed.",
+            "Rotherham": " Wherefore, wait for me, urgeth Yahweh, until the day when I rise up as witness, for, my decision, is to gather nations, to assemble kingdoms, to pour out on them mine indignation, all the glow of mine anger, for, in the fire of my jealousy, shall be devoured the whole earth."
+          }
+        },
+        {
+          "num": 9,
+          "text": {
+            "NRSV": "At that time I will change the speech of the peoples to a pure speech, that all of them may call on the name of the Lord and serve him with one accord.",
+            "Rotherham": "Surely, then, will I turn unto the peoples a lip made pure,—that they all may call on the name of Yahweh, may serve him with one consent."
+          }
+        },
+        {
+          "num": 10,
+          "text": {
+            "NRSV": "From beyond the rivers of Ethiopia my suppliants, my scattered ones, shall bring my offering.",
+            "Rotherham": "From beyond the rivers of Ethiopia, [shall come] my suppliants, the daughter of my dispersed ones, shall bear along a gift for me."
+          }
+        },
+        {
+          "num": 11,
+          "text": {
+            "NRSV": "On that day you shall not be put to shame because of all the deeds by which you have rebelled against me; for then I will remove from your midst your proudly exultant ones, and you shall no longer be haughty in my holy mountain.",
+            "Rotherham": "In that day, wilt thou not turn pale for all thy deeds, wherein thou hast transgressed against me? For, then, will I take away out of thy midst thy proudly exulting ones, and thou shalt not again be haughty any more in my holy mountain:"
+          }
+        },
+        {
+          "num": 12,
+          "text": {
+            "NRSV": "For I will leave in the midst of you a people humble and lowly. They shall seek refuge in the name of the Lord—",
+            "Rotherham": "So will I leave remaining in thy midst, a people oppressed and poor,—who will seek refuge in the name of Yahweh:"
+          }
+        },
+        {
+          "num": 13,
+          "text": {
+            "NRSV": "the remnant of Israel; they shall do no wrong and speak no lies; nor shall a deceitful tongue be found in their mouths. Then they shall pasture and lie down, and no one shall make them afraid.",
+            "Rotherham": "The remnant of Israel—will not do perversity, nor speak falsehood, neither shall there be found in their mouth a tongue of deceit,—surely, they, shall feed and lie down, with none to make them afraid. "
+          }
+        },
+        {
+          "num": 14,
+          "text": {
+            "NRSV": "Sing aloud, O daughter Zion; shout, O Israel! Rejoice and exult with all your heart, O daughter Jerusalem!",
+            "Rotherham": " Sing out, O daughter of Zion, shout aloud, O Israel,—rejoice and exult with all thy heart, O daughter Jerusalem:"
+          }
+        },
+        {
+          "num": 15,
+          "text": {
+            "NRSV": "The Lord has taken away the judgments against you, he has turned away your enemies. The king of Israel, the Lord, is in your midst; you shall fear disaster no more.",
+            "Rotherham": "Yahweh, hath set aside, thy judgments, hath turned back thy foe,—The king of Israel, Yahweh, is in thy midst, thou shalt not fear calamity, any more."
+          }
+        },
+        {
+          "num": 16,
+          "text": {
+            "NRSV": "On that day it shall be said to Jerusalem: Do not fear, O Zion; do not let your hands grow weak.",
+            "Rotherham": "In that day, shall it be said—to Jerusalem, Do not fear,—O Zion, Let not thy hands hang down:"
+          }
+        },
+        {
+          "num": 17,
+          "text": {
+            "NRSV": "The Lord, your God, is in your midst, a warrior who gives victory; he will rejoice over you with gladness, he will renew you in his love; he will exult over you with loud singing",
+            "Rotherham": "Yahweh, thy God, in the midst of thee, as a mighty one, will save,—will be glad over thee with rejoicing, will be silent in his love, will exult over thee with shouts of triumph."
+          }
+        },
+        {
+          "num": 18,
+          "text": {
+            "NRSV": "as on a day of festival. I will remove disaster from you, so that you will not bear reproach for it.",
+            "Rotherham": "The sad exiles from the appointed meeting, have I gathered, from thee, had they been! [but were] a burden on thee—a reproach!"
+          }
+        },
+        {
+          "num": 19,
+          "text": {
+            "NRSV": "I will deal with all your oppressors at that time. And I will save the lame and gather the outcast, and I will change their shame into praise and renown in all the earth.",
+            "Rotherham": "Behold me! dealing with all thine oppressors, at that time,—and I will save her that is lame, and, her that hath been an outcast, will I carry, and I will make them to be a Praise and a Name, in the whole earth that hath witnessed their shame."
+          }
+        },
+        {
+          "num": 20,
+          "text": {
+            "NRSV": "At that time I will bring you home, at the time when I gather you; for I will make you renowned and praised among all the peoples of the earth, when I restore your fortunes before your eyes, says the Lord.",
+            "Rotherham": "At that time, will I bring you in, even at the time when I gather you,—Yea I will grant you to become a Name and a Praise, among all the peoples of the earth, when I cause them of your captivities to return before your eyes, saith Yahweh.   "
+          }
+        }
       ]
     }
-  ]
+  ],
+  "schema": "bible_book_multiversion_v1"
 }

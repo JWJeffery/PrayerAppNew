@@ -3,56 +3,301 @@
     "name": "Haggai",
     "id": "HAG",
     "version": "NRSV",
-    "copyright": "New Revised Standard Version Bible, copyright © 1989 National Council of the Churches of Christ in the United States of America. Used by permission. All rights reserved worldwide."
+    "copyright": "New Revised Standard Version Bible, copyright © 1989 National Council of the Churches of Christ in the United States of America. Used by permission. All rights reserved worldwide.",
+    "canon": "OT",
+    "defaultTranslation": "NRSV",
+    "versification": "hebrew_masoretic",
+    "translations": {
+      "NRSV": {
+        "label": "New Revised Standard Version",
+        "sourceType": "existing_corpus",
+        "rights": "New Revised Standard Version Bible, copyright © 1989 National Council of the Churches of Christ in the United States of America. Used by permission. All rights reserved worldwide."
+      },
+      "Rotherham": {
+        "label": "The Emphasised Bible",
+        "sourceType": "scrollmapper_bible_databases_2025_formats_json_source_witness",
+        "rights": "Public Domain",
+        "sourceWitness": "documentation/rotherham-source-witness-intake.json"
+      }
+    }
   },
   "chapters": [
     {
       "num": 1,
       "verses": [
-        { "num": 1, "text": "In the second year of King Darius, in the sixth month, on the first day of the month, the word of the Lord came by the prophet Haggai to Zerubbabel son of Shealtiel, governor of Judah, and to Joshua son of Jehozadak, the high priest:" },
-        { "num": 2, "text": "Thus says the Lord of hosts: These people say, “The time has not yet come to rebuild the Lord’s house.”" },
-        { "num": 3, "text": "Then the word of the Lord came by the prophet Haggai, saying:" },
-        { "num": 4, "text": "Is it a time for you yourselves to live in your paneled houses, while this house lies in ruins?" },
-        { "num": 5, "text": "Now therefore thus says the Lord of hosts: Consider how you have fared." },
-        { "num": 6, "text": "You have sown much, and harvested little; you eat, but you never have enough; you drink, but you never have your fill; you clothe yourselves, but no one is warm; and you that earn wages earn wages to put them into a bag with holes." },
-        { "num": 7, "text": "Thus says the Lord of hosts: Consider how you have fared." },
-        { "num": 8, "text": "Go up to the hills and bring wood and build the house, so that I may take pleasure in it and be honored, says the Lord." },
-        { "num": 9, "text": "You looked for much, and, lo, it came to little; and when you brought it home, I blew it away. Why? says the Lord of hosts. Because my house lies in ruins, while all of you hurry off to your own houses." },
-        { "num": 10, "text": "Therefore the heavens above you have withheld the dew, and the earth has withheld its produce." },
-        { "num": 11, "text": "And I have called for a drought on the land and the hills, on the grain, the new wine, the oil, on what the soil produces, on human beings and animals, and on all their labors." },
-        { "num": 12, "text": "Then Zerubbabel son of Shealtiel, and Joshua son of Jehozadak, the high priest, with all the remnant of the people, obeyed the voice of the Lord their God, and the words of the prophet Haggai, as the Lord their God had sent him; and the people feared the Lord." },
-        { "num": 13, "text": "Then Haggai, the messenger of the Lord, spoke to the people with the Lord’s message, saying, I am with you, says the Lord." },
-        { "num": 14, "text": "And the Lord stirred up the spirit of Zerubbabel son of Shealtiel, governor of Judah, and the spirit of Joshua son of Jehozadak, the high priest, and the spirit of all the remnant of the people; and they came and worked on the house of the Lord of hosts, their God," },
-        { "num": 15, "text": "on the twenty-fourth day of the month, in the sixth month, in the second year of King Darius." }
+        {
+          "num": 1,
+          "text": {
+            "NRSV": "In the second year of King Darius, in the sixth month, on the first day of the month, the word of the Lord came by the prophet Haggai to Zerubbabel son of Shealtiel, governor of Judah, and to Joshua son of Jehozadak, the high priest:",
+            "Rotherham": "In the second year of Darius the king, in the sixth month, on the first of the month, came the word of Yahweh, by the hand of Haggai the prophet, unto Zerubbabel son of Shealtiel, pasha of Judah, and unto Jehoshua son of Jehozadak the high priest, saying:"
+          }
+        },
+        {
+          "num": 2,
+          "text": {
+            "NRSV": "Thus says the Lord of hosts: These people say, “The time has not yet come to rebuild the Lord’s house.”",
+            "Rotherham": "Thus, speaketh Yahweh of hosts, saying,—This people, have said, Not yet hath come the time for the house of Yahweh to be built."
+          }
+        },
+        {
+          "num": 3,
+          "text": {
+            "NRSV": "Then the word of the Lord came by the prophet Haggai, saying:",
+            "Rotherham": "Therefore hath come the word of Yahweh by the hand of Haggai the prophet, saying:"
+          }
+        },
+        {
+          "num": 4,
+          "text": {
+            "NRSV": "Is it a time for you yourselves to live in your paneled houses, while this house lies in ruins?",
+            "Rotherham": "Is it a time that, ye yourselves, should be dwelling in your own paneled houses? and, this house, be in ruins?"
+          }
+        },
+        {
+          "num": 5,
+          "text": {
+            "NRSV": "Now therefore thus says the Lord of hosts: Consider how you have fared.",
+            "Rotherham": "Now, therefore, Thus, saith Yahweh of hosts,—Apply your heart unto your own experience—"
+          }
+        },
+        {
+          "num": 6,
+          "text": {
+            "NRSV": "You have sown much, and harvested little; you eat, but you never have enough; you drink, but you never have your fill; you clothe yourselves, but no one is warm; and you that earn wages earn wages to put them into a bag with holes.",
+            "Rotherham": "Ye have sown much, but have brought in little, have eaten, and not been filled, have drunk, and not been satisfied with drink, have clothed you, and none hath been warm,—and, he that hath hired himself out, hath put his wages into a bag with holes."
+          }
+        },
+        {
+          "num": 7,
+          "text": {
+            "NRSV": "Thus says the Lord of hosts: Consider how you have fared.",
+            "Rotherham": "Thus, saith Yahweh of hosts,—Apply your heart to your own experience:"
+          }
+        },
+        {
+          "num": 8,
+          "text": {
+            "NRSV": "Go up to the hills and bring wood and build the house, so that I may take pleasure in it and be honored, says the Lord.",
+            "Rotherham": "Ascend the mountain—and bring in wood and build the house,—that I may be pleased therewith and get myself glory, saith Yahweh."
+          }
+        },
+        {
+          "num": 9,
+          "text": {
+            "NRSV": "You looked for much, and, lo, it came to little; and when you brought it home, I blew it away. Why? says the Lord of hosts. Because my house lies in ruins, while all of you hurry off to your own houses.",
+            "Rotherham": "When ye looked for much, then lo! it came to little, when ye brought it home, then I did blow into it,— Because of what? Demandeth Yahweh of hosts, Because of my house, the which is in ruins, while ye keep running every man to his own house."
+          }
+        },
+        {
+          "num": 10,
+          "text": {
+            "NRSV": "Therefore the heavens above you have withheld the dew, and the earth has withheld its produce.",
+            "Rotherham": "Wherefore—on your account, have the heavens, held back, dew,— and, the earth, held back her fruit;"
+          }
+        },
+        {
+          "num": 11,
+          "text": {
+            "NRSV": "And I have called for a drought on the land and the hills, on the grain, the new wine, the oil, on what the soil produces, on human beings and animals, and on all their labors.",
+            "Rotherham": "And I have called for drought, upon the land and upon the mountains, and upon the corn and upon the new wine and upon the oil, and upon that which the ground, bringeth forth,—and upon man, and upon beast, and upon all the labour of the hands. "
+          }
+        },
+        {
+          "num": 12,
+          "text": {
+            "NRSV": "Then Zerubbabel son of Shealtiel, and Joshua son of Jehozadak, the high priest, with all the remnant of the people, obeyed the voice of the Lord their God, and the words of the prophet Haggai, as the Lord their God had sent him; and the people feared the Lord.",
+            "Rotherham": " Then hearkened Zerubbabel son of Shealtiel, and Jehoshua son of Jehozadak the high priest, and all the remnant of the people, unto the voice of Yahweh their God, and unto the words of Haggai the prophet, as Yahweh their God, had sent him,—and the people, stood in awe, before Yahweh."
+          }
+        },
+        {
+          "num": 13,
+          "text": {
+            "NRSV": "Then Haggai, the messenger of the Lord, spoke to the people with the Lord’s message, saying, I am with you, says the Lord.",
+            "Rotherham": "Then spake Haggai the messenger of Yahweh, in the message of Yahweh, to the people saying,—I, am with you, Declareth Yahweh."
+          }
+        },
+        {
+          "num": 14,
+          "text": {
+            "NRSV": "And the Lord stirred up the spirit of Zerubbabel son of Shealtiel, governor of Judah, and the spirit of Joshua son of Jehozadak, the high priest, and the spirit of all the remnant of the people; and they came and worked on the house of the Lord of hosts, their God,",
+            "Rotherham": "Thus did Yahweh, stir up—the spirit of Zerubbabel son of Shealtiel, pasha of Judah, and the spirit of Jehoshua son of Jehozadak the high priest, and the spirit of all the remnant of the people,—and they came in and did service in the house of Yahweh of hosts their God:"
+          }
+        },
+        {
+          "num": 15,
+          "text": {
+            "NRSV": "on the twenty-fourth day of the month, in the sixth month, in the second year of King Darius.",
+            "Rotherham": "on the twenty-fourth day of the month, in the sixth month,—in the second year of Darius the king.  "
+          }
+        }
       ]
     },
     {
       "num": 2,
       "verses": [
-        { "num": 1, "text": "In the second year of King Darius, in the seventh month, on the twenty-first day of the month, the word of the Lord came by the prophet Haggai, saying:" },
-        { "num": 2, "text": "Speak now to Zerubbabel son of Shealtiel, governor of Judah, and to Joshua son of Jehozadak, the high priest, and to the remnant of the people, and say," },
-        { "num": 3, "text": "Who is left among you that saw this house in its former glory? How does it look to you now? Is it not in your sight as nothing?" },
-        { "num": 4, "text": "Yet now take courage, O Zerubbabel, says the Lord; take courage, O Joshua son of Jehozadak, the high priest; take courage, all you people of the land, says the Lord; work, for I am with you, says the Lord of hosts," },
-        { "num": 5, "text": "according to the promise that I made you when you came out of Egypt. My spirit abides among you; do not fear." },
-        { "num": 6, "text": "For thus says the Lord of hosts: Once again, in a little while, I will shake the heavens and the earth and the sea and the dry land;" },
-        { "num": 7, "text": "and I will shake all the nations, so that the treasure of all nations shall come, and I will fill this house with splendor, says the Lord of hosts." },
-        { "num": 8, "text": "The silver is mine, and the gold is mine, says the Lord of hosts." },
-        { "num": 9, "text": "The latter splendor of this house shall be greater than the former, says the Lord of hosts; and in this place I will give prosperity, says the Lord of hosts." },
-        { "num": 10, "text": "On the twenty-fourth day of the ninth month, in the second year of Darius, the word of the Lord came by the prophet Haggai, saying:" },
-        { "num": 11, "text": "Thus says the Lord of hosts: Ask the priests for a ruling:" },
-        { "num": 12, "text": "If one carries consecrated meat in the fold of one’s garment, and with the fold touches bread, or stew, or wine, or oil, or any kind of food, does it become holy? The priests answered, “No.”" },
-        { "num": 13, "text": "Then Haggai said, “If one who is unclean by contact with a dead body touches any of these, does it become unclean?” The priests answered, “Yes, it becomes unclean.”" },
-        { "num": 14, "text": "Haggai then said, So is it with this people, and with this nation before me, says the Lord; and so with every work of their hands; and what they offer there is unclean." },
-        { "num": 15, "text": "But now, consider what will come to pass from this day on. Before a stone was placed upon a stone in the Lord’s temple," },
-        { "num": 16, "text": "how did you fare? When one came to a heap of twenty measures, there were but ten; when one came to the wine vat to draw fifty measures, there were but twenty." },
-        { "num": 17, "text": "I struck you and all the products of your toil with blight and mildew and hail; yet you did not return to me, says the Lord." },
-        { "num": 18, "text": "Consider from this day on, from the twenty-fourth day of the ninth month. Since the day that the foundation of the Lord’s temple was laid, consider:" },
-        { "num": 19, "text": "Is there any seed left in the barn? Do the vine, the fig tree, the pomegranate, and the olive tree still yield nothing? From this day on I will bless you." },
-        { "num": 20, "text": "The word of the Lord came a second time to Haggai on the twenty-fourth day of the month:" },
-        { "num": 21, "text": "Speak to Zerubbabel, governor of Judah, saying, I am about to shake the heavens and the earth," },
-        { "num": 22, "text": "and to overthrow the throne of kingdoms; I am about to destroy the strength of the kingdoms of the nations, and overthrow the chariots and their riders; and the horses and their riders shall fall, every one by the sword of a comrade." },
-        { "num": 23, "text": "On that day, says the Lord of hosts, I will take you, O Zerubbabel my servant, son of Shealtiel, says the Lord, and make you like a signet ring; for I have chosen you, says the Lord of hosts." }
+        {
+          "num": 1,
+          "text": {
+            "NRSV": "In the second year of King Darius, in the seventh month, on the twenty-first day of the month, the word of the Lord came by the prophet Haggai, saying:",
+            "Rotherham": "In the seventh month, on the twenty-first of the month, came the word of Yahweh, by the hand of Haggai the prophet, saying:"
+          }
+        },
+        {
+          "num": 2,
+          "text": {
+            "NRSV": "Speak now to Zerubbabel son of Shealtiel, governor of Judah, and to Joshua son of Jehozadak, the high priest, and to the remnant of the people, and say,",
+            "Rotherham": "Speak, I pray thee, unto Zerubbabel son of Shealtiel, pasha of Judah, and unto Jehoshua son of Jehozadak, the high priest,—and unto the remnant of the people, saying:—"
+          }
+        },
+        {
+          "num": 3,
+          "text": {
+            "NRSV": "Who is left among you that saw this house in its former glory? How does it look to you now? Is it not in your sight as nothing?",
+            "Rotherham": "Who is there among you that is left, that saw this house, in its former glory? And how do ye see it now? Is it not, in comparison with that, as nothing, in your eyes?"
+          }
+        },
+        {
+          "num": 4,
+          "text": {
+            "NRSV": "Yet now take courage, O Zerubbabel, says the Lord; take courage, O Joshua son of Jehozadak, the high priest; take courage, all you people of the land, says the Lord; work, for I am with you, says the Lord of hosts,",
+            "Rotherham": "Now, therefore—Be strong, O Zerubbabel, urgeth Yahweh, and be strong, O Jehoshua son of Jehozadak the high priest, and be strong, all ye people of the land, urgeth Yahweh, and work; For, I, am with you, Declareth Yahweh of hosts."
+          }
+        },
+        {
+          "num": 5,
+          "text": {
+            "NRSV": "according to the promise that I made you when you came out of Egypt. My spirit abides among you; do not fear.",
+            "Rotherham": "The very thing that I solemnized with you, when ye came forth out of the land of Egypt, That, my spirit abiding in your midst, ye should not fear."
+          }
+        },
+        {
+          "num": 6,
+          "text": {
+            "NRSV": "For thus says the Lord of hosts: Once again, in a little while, I will shake the heavens and the earth and the sea and the dry land;",
+            "Rotherham": "For, thus, saith Yahweh of hosts, Yet once, a little, it is,—and I am shaking the heavens and the earth, and the sea and the dry land;"
+          }
+        },
+        {
+          "num": 7,
+          "text": {
+            "NRSV": "and I will shake all the nations, so that the treasure of all nations shall come, and I will fill this house with splendor, says the Lord of hosts.",
+            "Rotherham": "And I will shake all the nations, and the delight of all the nations, shall come in,—and I will fill this house with glory, saith Yahweh of hosts."
+          }
+        },
+        {
+          "num": 8,
+          "text": {
+            "NRSV": "The silver is mine, and the gold is mine, says the Lord of hosts.",
+            "Rotherham": "Mine is the silver and Mine the gold, Declareth Yahweh of hosts:"
+          }
+        },
+        {
+          "num": 9,
+          "text": {
+            "NRSV": "The latter splendor of this house shall be greater than the former, says the Lord of hosts; and in this place I will give prosperity, says the Lord of hosts.",
+            "Rotherham": "Greater shall be the last glory of this house than the first, saith Yahweh of hosts,—and, in this place, will I give prosperity, Declareth Yahweh of hosts. "
+          }
+        },
+        {
+          "num": 10,
+          "text": {
+            "NRSV": "On the twenty-fourth day of the ninth month, in the second year of Darius, the word of the Lord came by the prophet Haggai, saying:",
+            "Rotherham": " On the twenty-fourth of the ninth month, in the second year of Darius, came the word of Yahweh unto Haggai the prophet, saying:"
+          }
+        },
+        {
+          "num": 11,
+          "text": {
+            "NRSV": "Thus says the Lord of hosts: Ask the priests for a ruling:",
+            "Rotherham": "Thus, saith Yahweh of hosts,—I pray you, ask the priests a direction, saying:"
+          }
+        },
+        {
+          "num": 12,
+          "text": {
+            "NRSV": "If one carries consecrated meat in the fold of one’s garment, and with the fold touches bread, or stew, or wine, or oil, or any kind of food, does it become holy? The priests answered, “No.”",
+            "Rotherham": "If a man carry holy flesh in the skirt of his garment, and then toucheth with his skirt bread or a cooked dish or wine or oil or any food, shall it be holy? And the priests answered and said, No."
+          }
+        },
+        {
+          "num": 13,
+          "text": {
+            "NRSV": "Then Haggai said, “If one who is unclean by contact with a dead body touches any of these, does it become unclean?” The priests answered, “Yes, it becomes unclean.”",
+            "Rotherham": "Then said Haggai, If one who is defiled for a dead person touch any of these, shall it be defiled? And the priests answered and said, It shall be defiled."
+          }
+        },
+        {
+          "num": 14,
+          "text": {
+            "NRSV": "Haggai then said, So is it with this people, and with this nation before me, says the Lord; and so with every work of their hands; and what they offer there is unclean.",
+            "Rotherham": "Then answered Haggai and said, So, is this people and, so, is this nation before me, Declareth Yahweh, and, so, is every work of their hands,—therefore, whatsoever they offer there, is, defiled."
+          }
+        },
+        {
+          "num": 15,
+          "text": {
+            "NRSV": "But now, consider what will come to pass from this day on. Before a stone was placed upon a stone in the Lord’s temple,",
+            "Rotherham": "Now, therefore, I pray you apply your heart, from this day and upwards,—So long as there had not been laid one stone upon another in the temple of Yahweh,"
+          }
+        },
+        {
+          "num": 16,
+          "text": {
+            "NRSV": "how did you fare? When one came to a heap of twenty measures, there were but ten; when one came to the wine vat to draw fifty measures, there were but twenty.",
+            "Rotherham": "So long were things thus, that, on coming unto a heap of twenty, then was it found to be ten,—on coming unto the vat to draw off fifty measures, then were there found to be twenty."
+          }
+        },
+        {
+          "num": 17,
+          "text": {
+            "NRSV": "I struck you and all the products of your toil with blight and mildew and hail; yet you did not return to me, says the Lord.",
+            "Rotherham": "I smote you with blight and with mildew and with hail, in all the work of your hands,—Yet ye did not return unto me, Declareth Yahweh."
+          }
+        },
+        {
+          "num": 18,
+          "text": {
+            "NRSV": "Consider from this day on, from the twenty-fourth day of the ninth month. Since the day that the foundation of the Lord’s temple was laid, consider:",
+            "Rotherham": "Apply your heart, I pray you, from this day and upwards,—from the twenty-fourth day of the ninth month, even from the day when was founded the temple of Yahweh, apply your heart:"
+          }
+        },
+        {
+          "num": 19,
+          "text": {
+            "NRSV": "Is there any seed left in the barn? Do the vine, the fig tree, the pomegranate, and the olive tree still yield nothing? From this day on I will bless you.",
+            "Rotherham": "Is the seed yet in the store-house? Howbeit, though at present neither, the vine nor the fig-tree nor the pomegranate nor the olive tree, hath brought forth, from this very day, will I bless you. "
+          }
+        },
+        {
+          "num": 20,
+          "text": {
+            "NRSV": "The word of the Lord came a second time to Haggai on the twenty-fourth day of the month:",
+            "Rotherham": " Then came the word of Yahweh, the second time unto Haggai, on the twenty-fourth of the month, saying:"
+          }
+        },
+        {
+          "num": 21,
+          "text": {
+            "NRSV": "Speak to Zerubbabel, governor of Judah, saying, I am about to shake the heavens and the earth,",
+            "Rotherham": "Speak thou unto Zerubbabel, pasha of Judah, saying,—I am shaking, the heavens and the earth;"
+          }
+        },
+        {
+          "num": 22,
+          "text": {
+            "NRSV": "and to overthrow the throne of kingdoms; I am about to destroy the strength of the kingdoms of the nations, and overthrow the chariots and their riders; and the horses and their riders shall fall, every one by the sword of a comrade.",
+            "Rotherham": "And I will overturn the throne of kingdoms, and will destroy the strength of the kingdoms of the nations,—and I will overturn the chariots and them who ride therein, and horses and their riders, shall come down, every man by the sword of his brother."
+          }
+        },
+        {
+          "num": 23,
+          "text": {
+            "NRSV": "On that day, says the Lord of hosts, I will take you, O Zerubbabel my servant, son of Shealtiel, says the Lord, and make you like a signet ring; for I have chosen you, says the Lord of hosts.",
+            "Rotherham": "On that day, declareth Yahweh of hosts, will I take thee, O Zerubbabel son of Shealtiel—my servant, declareth Yahweh, and will set thee as a signet-ring; For, thee, have I chosen, Declareth Yahweh of hosts.   "
+          }
+        }
       ]
     }
-  ]
+  ],
+  "schema": "bible_book_multiversion_v1"
 }

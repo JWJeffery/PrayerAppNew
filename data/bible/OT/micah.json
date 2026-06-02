@@ -3,148 +3,795 @@
     "name": "Micah",
     "id": "MIC",
     "version": "NRSV",
-    "copyright": "New Revised Standard Version Bible, copyright © 1989 National Council of the Churches of Christ in the United States of America. Used by permission. All rights reserved worldwide."
+    "copyright": "New Revised Standard Version Bible, copyright © 1989 National Council of the Churches of Christ in the United States of America. Used by permission. All rights reserved worldwide.",
+    "canon": "OT",
+    "defaultTranslation": "NRSV",
+    "versification": "hebrew_masoretic",
+    "translations": {
+      "NRSV": {
+        "label": "New Revised Standard Version",
+        "sourceType": "existing_corpus",
+        "rights": "New Revised Standard Version Bible, copyright © 1989 National Council of the Churches of Christ in the United States of America. Used by permission. All rights reserved worldwide."
+      },
+      "Rotherham": {
+        "label": "The Emphasised Bible",
+        "sourceType": "scrollmapper_bible_databases_2025_formats_json_source_witness",
+        "rights": "Public Domain",
+        "sourceWitness": "documentation/rotherham-source-witness-intake.json"
+      }
+    }
   },
   "chapters": [
     {
       "num": 1,
       "verses": [
-        { "num": 1, "text": "The word of the Lord that came to Micah of Moresheth in the days of Kings Jotham, Ahaz, and Hezekiah of Judah, which he saw concerning Samaria and Jerusalem." },
-        { "num": 2, "text": "Hear, you peoples, all of you; listen, O earth, and all that is in it; and let the Lord God be a witness against you, the Lord from his holy temple." },
-        { "num": 3, "text": "For lo, the Lord is coming out of his place, and will come down and tread upon the high places of the earth." },
-        { "num": 4, "text": "Then the mountains will melt under him and the valleys will burst open, like wax near the fire, like waters poured down a steep place." },
-        { "num": 5, "text": "All this is for the transgression of Jacob and for the sins of the house of Israel. What is the transgression of Jacob? Is it not Samaria? And what is the high place of Judah? Is it not Jerusalem?" },
-        { "num": 6, "text": "Therefore I will make Samaria a heap in the open country, a place for planting vineyards; I will pour down her stones into the valley, and uncover her foundations." },
-        { "num": 7, "text": "All her images shall be beaten to pieces, all her wages shall be burned with fire, and all her idols I will lay waste; for as the wages of a prostitute she gathered them, and as the wages of a prostitute they shall again be used." },
-        { "num": 8, "text": "For this I will lament and wail; I will go barefoot and naked; I will make lamentation like the jackals, and mourning like the ostriches." },
-        { "num": 9, "text": "For her wound is incurable. It has come to Judah; it has reached to the gate of my people, to Jerusalem." },
-        { "num": 10, "text": "Tell it not in Gath, weep not at all; in Beth-le-aphrah roll yourselves in the dust." },
-        { "num": 11, "text": "Pass on your way, inhabitants of Shaphir, in nakedness and shame; the inhabitants of Zaanan do not come forth; Beth-ezel is wailing and shall take its support from you." },
-        { "num": 12, "text": "For the inhabitants of Maroth wait anxiously for good, for evil has come down from the Lord to the gate of Jerusalem." },
-        { "num": 13, "text": "Harness the steeds to the chariots, inhabitants of Lachish; it was the beginning of sin to daughter Zion, for in you were found the transgressions of Israel." },
-        { "num": 14, "text": "Therefore you shall give parting gifts to Moresheth-gath; the houses of Achzib shall be a deception to the kings of Israel." },
-        { "num": 15, "text": "I will again bring a conqueror upon you, inhabitants of Mareshah; the glory of Israel shall come to Adullam." },
-        { "num": 16, "text": "Make yourselves bald and cut off your hair, for your pampered children; make yourselves as bald as the eagle, for they have gone from you into exile." }
+        {
+          "num": 1,
+          "text": {
+            "NRSV": "The word of the Lord that came to Micah of Moresheth in the days of Kings Jotham, Ahaz, and Hezekiah of Judah, which he saw concerning Samaria and Jerusalem.",
+            "Rotherham": "The word of Yahweh which came unto Micah the Morashtite, in the days of Jotham, Ahaz, Hezekiah, kings of Judah,—of which he had vision concerning Samaria, and Jerusalem:—"
+          }
+        },
+        {
+          "num": 2,
+          "text": {
+            "NRSV": "Hear, you peoples, all of you; listen, O earth, and all that is in it; and let the Lord God be a witness against you, the Lord from his holy temple.",
+            "Rotherham": "Hear ye peoples, all of you, Hearken, O earth and the fulness thereof,—and let My Lord Yahweh be among you for a witness, My Lord out of his holy temple."
+          }
+        },
+        {
+          "num": 3,
+          "text": {
+            "NRSV": "For lo, the Lord is coming out of his place, and will come down and tread upon the high places of the earth.",
+            "Rotherham": "For lo! Yahweh, coming forth out of his place,—that he may descend, and march along upon the high places of the earth."
+          }
+        },
+        {
+          "num": 4,
+          "text": {
+            "NRSV": "Then the mountains will melt under him and the valleys will burst open, like wax near the fire, like waters poured down a steep place.",
+            "Rotherham": "Then shall the mountains be melted beneath him, and, the valleys, be cleft,—as wax before the fire, as waters poured out in a steep place."
+          }
+        },
+        {
+          "num": 5,
+          "text": {
+            "NRSV": "All this is for the transgression of Jacob and for the sins of the house of Israel. What is the transgression of Jacob? Is it not Samaria? And what is the high place of Judah? Is it not Jerusalem?",
+            "Rotherham": "For the transgression of Jacob, is all this, and for the sin of the house of Israel,—Whose is the transgression of Jacob? Is it not Samaria’s? And whose is the sin of Judah? Is it not Jerusalem?"
+          }
+        },
+        {
+          "num": 6,
+          "text": {
+            "NRSV": "Therefore I will make Samaria a heap in the open country, a place for planting vineyards; I will pour down her stones into the valley, and uncover her foundations.",
+            "Rotherham": "Therefore will I make of Samaria a heap in a field, the plantings in a vineyard,—and I will pour down, into the valley, her stones, and, her foundations, will I lay bare;"
+          }
+        },
+        {
+          "num": 7,
+          "text": {
+            "NRSV": "All her images shall be beaten to pieces, all her wages shall be burned with fire, and all her idols I will lay waste; for as the wages of a prostitute she gathered them, and as the wages of a prostitute they shall again be used.",
+            "Rotherham": "And, all her images, shall be beaten in pieces, and, all her rewards for unchastity, shall be burned in the fire, and, all her idols, will I make a desolation,—for, out of the reward of unchastity, she gathered [them], and, unto the reward of unchastity, shall they return. "
+          }
+        },
+        {
+          "num": 8,
+          "text": {
+            "NRSV": "For this I will lament and wail; I will go barefoot and naked; I will make lamentation like the jackals, and mourning like the ostriches.",
+            "Rotherham": " For this cause, will I lament and howl, I will go stript and bare,—I will make a lamentation, like the wild dogs, and a mourning, like ostriches."
+          }
+        },
+        {
+          "num": 9,
+          "text": {
+            "NRSV": "For her wound is incurable. It has come to Judah; it has reached to the gate of my people, to Jerusalem.",
+            "Rotherham": "For dangerous are her wounds,—for she hath come as far as Judah, she hath reached as far as the gate of my people, as far as Jerusalem."
+          }
+        },
+        {
+          "num": 10,
+          "text": {
+            "NRSV": "Tell it not in Gath, weep not at all; in Beth-le-aphrah roll yourselves in the dust.",
+            "Rotherham": "In Gath, do not tell, in Accho, do not weep,—in Beth-l’aphrah, roll yourselves in dust."
+          }
+        },
+        {
+          "num": 11,
+          "text": {
+            "NRSV": "Pass on your way, inhabitants of Shaphir, in nakedness and shame; the inhabitants of Zaanan do not come forth; Beth-ezel is wailing and shall take its support from you.",
+            "Rotherham": "Pass thou over (for you), thou inhabitress of Shaphir, of disgraceful disclosure,—the inhabitress of Zaanan, hath not gone forth, at the lamentation of Beth-ezel, shall he take from you his station,"
+          }
+        },
+        {
+          "num": 12,
+          "text": {
+            "NRSV": "For the inhabitants of Maroth wait anxiously for good, for evil has come down from the Lord to the gate of Jerusalem.",
+            "Rotherham": "Though the inhabitress of Maroth waited for blessing,—yet there came down calamity from Yahweh, to the gate of Jerusalem."
+          }
+        },
+        {
+          "num": 13,
+          "text": {
+            "NRSV": "Harness the steeds to the chariots, inhabitants of Lachish; it was the beginning of sin to daughter Zion, for in you were found the transgressions of Israel.",
+            "Rotherham": "Bind the chariot to the steed, O inhabitress of Lachish,—the beginning of sin, was she to the daughter of Zion, for, in thee, have been found the transgressions of Israel."
+          }
+        },
+        {
+          "num": 14,
+          "text": {
+            "NRSV": "Therefore you shall give parting gifts to Moresheth-gath; the houses of Achzib shall be a deception to the kings of Israel.",
+            "Rotherham": "Therefore, shalt thou give a dismission, against Moresheth-gath,—The houses of Achzib, served for a deception to the kings of Israel."
+          }
+        },
+        {
+          "num": 15,
+          "text": {
+            "NRSV": "I will again bring a conqueror upon you, inhabitants of Mareshah; the glory of Israel shall come to Adullam.",
+            "Rotherham": "The time shall yet be when, the heir, I will bring unto thee, O inhabitress of Mareshah,—as far as Adullam, shall enter the glory of Israel."
+          }
+        },
+        {
+          "num": 16,
+          "text": {
+            "NRSV": "Make yourselves bald and cut off your hair, for your pampered children; make yourselves as bald as the eagle, for they have gone from you into exile.",
+            "Rotherham": "Make thee bald, and cut off thy hair, for the children of thy pleasures,—enlarge thy baldness, like a vulture, for they are exiled from thee.  "
+          }
+        }
       ]
     },
     {
       "num": 2,
       "verses": [
-        { "num": 1, "text": "Alas for those who devise wickedness and evil deeds on their beds! When the morning dawns, they perform it, because it is in their power." },
-        { "num": 2, "text": "They covet fields, and seize them; houses, and take them away; they oppress householder and house, people and their inheritance." },
-        { "num": 3, "text": "Therefore thus says the Lord: Now, I am devising against this family an evil from which you cannot remove your necks; and you shall not walk haughtily, for it will be an evil time." },
-        { "num": 4, "text": "On that day they shall take up a taunt-song against you, and utter a doleful lamentation, and say, “We are utterly ruined; the inheritance of my people is measured out; how it is removed from me! Among our captors our fields are divided.”" },
-        { "num": 5, "text": "Therefore you will have no one to cast the line by lot in the assembly of the Lord." },
-        { "num": 6, "text": "“Do not preach”—thus they preach— “one should not preach of such things; disgrace will not overtake us.”" },
-        { "num": 7, "text": "Should this be said, O house of Jacob? Is the Lord’s patience exhausted? Are these his deeds? Do not my words do good to one who walks uprightly?" },
-        { "num": 8, "text": "But you rise up against my people as an enemy; you strip the robe from the peaceful, from those who pass by trustingly with no thought of war." },
-        { "num": 9, "text": "The women of my people you drive out from their pleasant houses; from their young children you take away my glory forever." },
-        { "num": 10, "text": "Arise and go; for this is no place to rest, because of uncleanness that destroys with a grievous destruction." },
-        { "num": 11, "text": "If someone were to go about uttering empty falsehoods, saying, “I will preach to you of wine and strong drink,” such a one would be the preacher for this people!" },
-        { "num": 12, "text": "I will surely gather all of you, O Jacob, I will gather the survivors of Israel; I will set them together like sheep in a fold, like a flock in its pasture; it will resound with people." },
-        { "num": 13, "text": "The one who breaks out will go up before them; they will break through and pass the gate, going out by it. Their king will pass on before them, the Lord at their head." }
+        {
+          "num": 1,
+          "text": {
+            "NRSV": "Alas for those who devise wickedness and evil deeds on their beds! When the morning dawns, they perform it, because it is in their power.",
+            "Rotherham": "Alas for them who devise iniquity and work wickedness upon their beds,—in the light of the morning, they will execute it, for it is in the power of their hand."
+          }
+        },
+        {
+          "num": 2,
+          "text": {
+            "NRSV": "They covet fields, and seize them; houses, and take them away; they oppress householder and house, people and their inheritance.",
+            "Rotherham": "Thus do they covet fields and seize them, and houses and take them away,—and so they oppress the master and his household, the man and his inheritance."
+          }
+        },
+        {
+          "num": 3,
+          "text": {
+            "NRSV": "Therefore thus says the Lord: Now, I am devising against this family an evil from which you cannot remove your necks; and you shall not walk haughtily, for it will be an evil time.",
+            "Rotherham": "Therefore,—Thus, saith Yahweh, Behold me! devising, against this family, a calamity,—from which ye shall not remove your neck, neither shall ye walk loftily, for, a time of calamity, shall it be."
+          }
+        },
+        {
+          "num": 4,
+          "text": {
+            "NRSV": "On that day they shall take up a taunt-song against you, and utter a doleful lamentation, and say, “We are utterly ruined; the inheritance of my people is measured out; how it is removed from me! Among our captors our fields are divided.”",
+            "Rotherham": "In that day, shall one take up against you a by-word, and lament a lamentable lamentation, saying—we are made, utterly desolate, the portion of my people, he passeth to others,—How doth he set me aside! To an apostate, our fields, doth he apportion."
+          }
+        },
+        {
+          "num": 5,
+          "text": {
+            "NRSV": "Therefore you will have no one to cast the line by lot in the assembly of the Lord.",
+            "Rotherham": "Therefore, shalt thou have none to throw a measuring-line by lot,—in the convocation of Yahweh. "
+          }
+        },
+        {
+          "num": 6,
+          "text": {
+            "NRSV": "“Do not preach”—thus they preach— “one should not preach of such things; disgrace will not overtake us.”",
+            "Rotherham": " Do not sputter—So they sputter! They must not sputter as to these things, Must he not put away reproaches?"
+          }
+        },
+        {
+          "num": 7,
+          "text": {
+            "NRSV": "Should this be said, O house of Jacob? Is the Lord’s patience exhausted? Are these his deeds? Do not my words do good to one who walks uprightly?",
+            "Rotherham": "O thou who art said to be the house of Jacob, Is the spirit of Yahweh, impatient? Or are, these, his doings? Are not, his words, pleasant to him who is upright in his walk?"
+          }
+        },
+        {
+          "num": 8,
+          "text": {
+            "NRSV": "But you rise up against my people as an enemy; you strip the robe from the peaceful, from those who pass by trustingly with no thought of war.",
+            "Rotherham": "But, against my people, as an enemy, he setteth himself, from off the robe, they tear away, the cloak,—from such as are passing by with confidence, as men averse from war."
+          }
+        },
+        {
+          "num": 9,
+          "text": {
+            "NRSV": "The women of my people you drive out from their pleasant houses; from their young children you take away my glory forever.",
+            "Rotherham": "The wives of my people, ye do even drive out, each from the house of her darlings,—from over her children, ye do take away mine ornament, as long as life shall last."
+          }
+        },
+        {
+          "num": 10,
+          "text": {
+            "NRSV": "Arise and go; for this is no place to rest, because of uncleanness that destroys with a grievous destruction.",
+            "Rotherham": "Arise ye and depart, for, this, is not the place of rest,—Because it is defiled, it shall make desolate with a desolation that is ruthless."
+          }
+        },
+        {
+          "num": 11,
+          "text": {
+            "NRSV": "If someone were to go about uttering empty falsehoods, saying, “I will preach to you of wine and strong drink,” such a one would be the preacher for this people!",
+            "Rotherham": "If there be a man, who goeth after wind, and, falsehood, hath woven, [saying] —I will discourse to thee, concerning wine and strong drink, then shall he become a fountain of discourse unto this people. "
+          }
+        },
+        {
+          "num": 12,
+          "text": {
+            "NRSV": "I will surely gather all of you, O Jacob, I will gather the survivors of Israel; I will set them together like sheep in a fold, like a flock in its pasture; it will resound with people.",
+            "Rotherham": " I will, surely assemble, O Jacob, all of thee, I will, surely gather, the remnant of Israel, at once, will I make them like sheep in distress,—Like a flock in the midst of its pasture, shall they hum with men,"
+          }
+        },
+        {
+          "num": 13,
+          "text": {
+            "NRSV": "The one who breaks out will go up before them; they will break through and pass the gate, going out by it. Their king will pass on before them, the Lord at their head.",
+            "Rotherham": "One making a breach, hath gone up, before them, they have broken in, and passed through, and, by the gate, have departed,—and their king, hath passed through, before them, with, Yahweh, at their head!  "
+          }
+        }
       ]
     },
     {
       "num": 3,
       "verses": [
-        { "num": 1, "text": "And I said: Listen, you heads of Jacob and rulers of the house of Israel! Should you not know justice?—" },
-        { "num": 2, "text": "you who hate the good and love the evil, who tear the skin off my people, and the flesh off their bones;" },
-        { "num": 3, "text": "who eat the flesh of my people, flay their skin off them, break their bones in pieces, and chop them up like meat in a kettle, like flesh in a caldron." },
-        { "num": 4, "text": "Then they will cry to the Lord, but he will not answer them; he will hide his face from them at that time, because they have acted wickedly." },
-        { "num": 5, "text": "Thus says the Lord concerning the prophets who lead my people astray, who cry “Peace” when they have something to eat, but declare war against those who put nothing into their mouths." },
-        { "num": 6, "text": "Therefore it shall be night to you, without vision, and darkness to you, without revelation. The sun shall go down upon the prophets, and the day shall be black over them;" },
-        { "num": 7, "text": "the seers shall be disgraced, and the diviners put to shame; they shall all cover their lips, for there is no answer from God." },
-        { "num": 8, "text": "But as for me, I am filled with power, with the spirit of the Lord, and with justice and might, to declare to Jacob his transgression and to Israel his sin." },
-        { "num": 9, "text": "Hear this, you heads of the house of Jacob and rulers of the house of Israel, who abhor justice and pervert all equity," },
-        { "num": 10, "text": "who build Zion with blood and Jerusalem with wrong!" },
-        { "num": 11, "text": "Its heads give judgment for a bribe, its priests teach for a price, its prophets give oracles for money; yet they lean upon the Lord and say, “Surely the Lord is with us! No harm shall come upon us.”" },
-        { "num": 12, "text": "Therefore because of you Zion shall be plowed as a field; Jerusalem shall become a heap of ruins, and the mountain of the house a wooded height." }
+        {
+          "num": 1,
+          "text": {
+            "NRSV": "And I said: Listen, you heads of Jacob and rulers of the house of Israel! Should you not know justice?—",
+            "Rotherham": "Then said I, Hear, I pray you, ye heads of Jacob, and ye judges of the house of Israel,—Is it not yours to know justice?"
+          }
+        },
+        {
+          "num": 2,
+          "text": {
+            "NRSV": "you who hate the good and love the evil, who tear the skin off my people, and the flesh off their bones;",
+            "Rotherham": "Ye haters of right, and lovers of wrong,—tearing away their skin from off them, and their flesh from off their bones;"
+          }
+        },
+        {
+          "num": 3,
+          "text": {
+            "NRSV": "who eat the flesh of my people, flay their skin off them, break their bones in pieces, and chop them up like meat in a kettle, like flesh in a caldron.",
+            "Rotherham": "Who indeed have eaten the flesh of my people, and, their skin from off them, have stript, and, their bones, have they broken in pieces,—and will spread them out, as flesh with a fork, and as flesh, in the midst of a pot."
+          }
+        },
+        {
+          "num": 4,
+          "text": {
+            "NRSV": "Then they will cry to the Lord, but he will not answer them; he will hide his face from them at that time, because they have acted wickedly.",
+            "Rotherham": "Then, shall they make outcry unto Yahweh, but he will not answer them,—that he may hide his face from them, at that time, even as they have made wicked their doings."
+          }
+        },
+        {
+          "num": 5,
+          "text": {
+            "NRSV": "Thus says the Lord concerning the prophets who lead my people astray, who cry “Peace” when they have something to eat, but declare war against those who put nothing into their mouths.",
+            "Rotherham": "Thus, saith Yahweh, concerning the prophets who are leading astray my people,—who bite with their teeth, and then cry—Prosper! and whoso holdeth not to their mouth, they hallow against him a war!"
+          }
+        },
+        {
+          "num": 6,
+          "text": {
+            "NRSV": "Therefore it shall be night to you, without vision, and darkness to you, without revelation. The sun shall go down upon the prophets, and the day shall be black over them;",
+            "Rotherham": "Therefore, shall it be night to you, for lack of vision, and darkness to you, for lack of divination,—and the sun, shall go in, over the prophets, and the day, shall be overcast because of them;"
+          }
+        },
+        {
+          "num": 7,
+          "text": {
+            "NRSV": "the seers shall be disgraced, and the diviners put to shame; they shall all cover their lips, for there is no answer from God.",
+            "Rotherham": "And the men of vision, shall turn pale, and the diviners, shall blush, and shall put a covering upon their lip, all of them,—because there is no answer of God. "
+          }
+        },
+        {
+          "num": 8,
+          "text": {
+            "NRSV": "But as for me, I am filled with power, with the spirit of the Lord, and with justice and might, to declare to Jacob his transgression and to Israel his sin.",
+            "Rotherham": " But, in very deed, I, am full of vigour, with the spirit of Yahweh, and of justice and of valour,—to declare to Jacob, his transgression, and to Israel, his sin."
+          }
+        },
+        {
+          "num": 9,
+          "text": {
+            "NRSV": "Hear this, you heads of the house of Jacob and rulers of the house of Israel, who abhor justice and pervert all equity,",
+            "Rotherham": "Hear this, I pray you, ye heads of the house of Jacob, and ye judges of the house of Israel,—who abhor justice, and, all right, do pervert:"
+          }
+        },
+        {
+          "num": 10,
+          "text": {
+            "NRSV": "who build Zion with blood and Jerusalem with wrong!",
+            "Rotherham": "Building Zion, with deeds of blood,—and Jerusalem, with perversity."
+          }
+        },
+        {
+          "num": 11,
+          "text": {
+            "NRSV": "Its heads give judgment for a bribe, its priests teach for a price, its prophets give oracles for money; yet they lean upon the Lord and say, “Surely the Lord is with us! No harm shall come upon us.”",
+            "Rotherham": "Her heads, for a bribe, pronounce sentence, and, her priests, for a price, give direction, and, her prophets, for silver, divine,—yet, on Yahweh, they lean, saying, Is not, Yahweh, in our midst? there shall not come upon us, calamity."
+          }
+        },
+        {
+          "num": 12,
+          "text": {
+            "NRSV": "Therefore because of you Zion shall be plowed as a field; Jerusalem shall become a heap of ruins, and the mountain of the house a wooded height.",
+            "Rotherham": "Wherefore, for your sake, Zion, as a field, shall be ploughed, and, Jerusalem, unto heaps of ruins, shall be turned,—and, the mountain of the house, shall [be] like mounds in a jungle.  "
+          }
+        }
       ]
     },
     {
       "num": 4,
       "verses": [
-        { "num": 1, "text": "In days to come the mountain of the Lord’s house shall be established as the highest of the mountains, and shall be raised up above the hills. Peoples shall stream to it," },
-        { "num": 2, "text": "and many nations shall come and say: “Come, let us go up to the mountain of the Lord, to the house of the God of Jacob; that he may teach us his ways and that we may walk in his paths.” For out of Zion shall go forth instruction, and the word of the Lord from Jerusalem." },
-        { "num": 3, "text": "He shall judge between many peoples, and shall arbitrate between strong nations far away; they shall beat their swords into plowshares, and their spears into pruning hooks; nation shall not lift up sword against nation, neither shall they learn war any more;" },
-        { "num": 4, "text": "but they shall all sit under their own vines and under their own fig trees, and no one shall make them afraid; for the mouth of the Lord of hosts has spoken." },
-        { "num": 5, "text": "For all the peoples walk, each in the name of its god, but we will walk in the name of the Lord our God forever and ever." },
-        { "num": 6, "text": "In that day, says the Lord, I will assemble the lame and gather those who have been driven away, and those whom I have afflicted;" },
-        { "num": 7, "text": "the lame I will make a remnant, and those who were cast off, a strong nation; and the Lord will reign over them in Mount Zion now and forevermore." },
-        { "num": 8, "text": "And you, O tower of the flock, hill of daughter Zion, to you it shall come, the former dominion shall come, the sovereignty of daughter Jerusalem." },
-        { "num": 9, "text": "Now why do you cry aloud? Is there no king in you? Has your counselor perished, that pangs have seized you like a woman in labor?" },
-        { "num": 10, "text": "Writhe and groan, O daughter Zion, like a woman in labor; for now you shall go forth from the city and dwell in the open country; you shall go to Babylon. There you shall be rescued, there the Lord will redeem you from the hands of your enemies." },
-        { "num": 11, "text": "Now many nations are assembled against you, saying, “Let her be profaned, and let our eyes gaze upon Zion.”" },
-        { "num": 12, "text": "But they do not know the thoughts of the Lord; they do not understand his plan, that he has gathered them as sheaves to the threshing floor." },
-        { "num": 13, "text": "Arise and thresh, O daughter Zion, for I will make your horn iron and your hoofs bronze; you shall beat in pieces many peoples, and shall devote their gain to the Lord, their wealth to the Lord of the whole earth." }
+        {
+          "num": 1,
+          "text": {
+            "NRSV": "In days to come the mountain of the Lord’s house shall be established as the highest of the mountains, and shall be raised up above the hills. Peoples shall stream to it,",
+            "Rotherham": "But it shall come to pass, in the afterpart of the days, that the mountain of the house of Yahweh shall be, set up, as the head of the mountains, and, exalted, shall it be, above the hills,—and peoples, shall stream thereunto;"
+          }
+        },
+        {
+          "num": 2,
+          "text": {
+            "NRSV": "and many nations shall come and say: “Come, let us go up to the mountain of the Lord, to the house of the God of Jacob; that he may teach us his ways and that we may walk in his paths.” For out of Zion shall go forth instruction, and the word of the Lord from Jerusalem.",
+            "Rotherham": "Yea many nations, shall go, and say—come ye, and let us ascend unto the mountain of Yahweh, and unto the house of the God of Jacob, that he may teach us of his ways, and we may walk in his paths,—for, out of Zion, shall go forth a law, and, the word of Yahweh, out of Jerusalem;"
+          }
+        },
+        {
+          "num": 3,
+          "text": {
+            "NRSV": "He shall judge between many peoples, and shall arbitrate between strong nations far away; they shall beat their swords into plowshares, and their spears into pruning hooks; nation shall not lift up sword against nation, neither shall they learn war any more;",
+            "Rotherham": "And he will judge between many peoples, and be umpire to strong nations far and wide,—and they will beat their swords into ploughshares, and their spears into pruning-hooks, Nation—against nation—shall not lift up sword, neither shall they learn—any more—to make war."
+          }
+        },
+        {
+          "num": 4,
+          "text": {
+            "NRSV": "but they shall all sit under their own vines and under their own fig trees, and no one shall make them afraid; for the mouth of the Lord of hosts has spoken.",
+            "Rotherham": "And they shall dwell—every man—under his own vine and under his own fig-tree, with none to make them afraid,—for, the mouth of Yahweh of hosts, hath spoken."
+          }
+        },
+        {
+          "num": 5,
+          "text": {
+            "NRSV": "For all the peoples walk, each in the name of its god, but we will walk in the name of the Lord our God forever and ever.",
+            "Rotherham": "For, all the peoples, walk, every man in the name of his god,—we, therefore, will walk in the name of Yahweh our God, to times age-abiding and beyond."
+          }
+        },
+        {
+          "num": 6,
+          "text": {
+            "NRSV": "In that day, says the Lord, I will assemble the lame and gather those who have been driven away, and those whom I have afflicted;",
+            "Rotherham": "In that day, Declareth Yahweh, will I take up her teat is lame, and, her that hath been an outcast, will I carry,—even whomsoever I have afflicted;"
+          }
+        },
+        {
+          "num": 7,
+          "text": {
+            "NRSV": "the lame I will make a remnant, and those who were cast off, a strong nation; and the Lord will reign over them in Mount Zion now and forevermore.",
+            "Rotherham": "And will make of her that was lame a residue, and of her that was removed far away a strong nation,—and Yahweh, shall be king, over them, in Mount Zion, from henceforth, even unto times age-abiding. "
+          }
+        },
+        {
+          "num": 8,
+          "text": {
+            "NRSV": "And you, O tower of the flock, hill of daughter Zion, to you it shall come, the former dominion shall come, the sovereignty of daughter Jerusalem.",
+            "Rotherham": " Thou, therefore, O Migdal-eder, mound of the daughter of Zion, as far as thee, shall it come,—so shall arrive the chief dominion, the kingdom of the daughter of Jerusalem."
+          }
+        },
+        {
+          "num": 9,
+          "text": {
+            "NRSV": "Now why do you cry aloud? Is there no king in you? Has your counselor perished, that pangs have seized you like a woman in labor?",
+            "Rotherham": "Meanwhile, wherefore shouldst thou cry out aloud? King, is there none within thee? or hath, thy counselor, perished? for labour, hath seized thee, as a woman in child-birth:—"
+          }
+        },
+        {
+          "num": 10,
+          "text": {
+            "NRSV": "Writhe and groan, O daughter Zion, like a woman in labor; for now you shall go forth from the city and dwell in the open country; you shall go to Babylon. There you shall be rescued, there the Lord will redeem you from the hands of your enemies.",
+            "Rotherham": "Be in labour, and bear, O daughter of Zion, as a woman in child-birth,—for, meanwhile, shalt thou go forth out of the city, and dwell in the field, and shalt come as far as Babylon, there, shalt thou be delivered, there, will Yahweh, redeem thee, out of the grasp of thine enemies."
+          }
+        },
+        {
+          "num": 11,
+          "text": {
+            "NRSV": "Now many nations are assembled against you, saying, “Let her be profaned, and let our eyes gaze upon Zion.”",
+            "Rotherham": "Meanwhile, therefore, shall be gathered against thee many nations,—who are saying—Let her be defiled, and let our eyes gaze upon Zion."
+          }
+        },
+        {
+          "num": 12,
+          "text": {
+            "NRSV": "But they do not know the thoughts of the Lord; they do not understand his plan, that he has gathered them as sheaves to the threshing floor.",
+            "Rotherham": "But, they, know not the purposes of Yahweh, neither have they discerned his counsel,—for he hath gathered them, as sheaves, to a threshing-floor."
+          }
+        },
+        {
+          "num": 13,
+          "text": {
+            "NRSV": "Arise and thresh, O daughter Zion, for I will make your horn iron and your hoofs bronze; you shall beat in pieces many peoples, and shall devote their gain to the Lord, their wealth to the Lord of the whole earth.",
+            "Rotherham": "Arise and thresh, O daughter of Zion, for, thy horn, will I make to be iron, and, thy hoofs, will I make to he bronze, so shalt thou beat in pieces many peoples,—and shalt devote to Yahweh their unrighteous gain, and their substance, to the Lord of all the earth.  "
+          }
+        }
       ]
     },
     {
       "num": 5,
       "verses": [
-        { "num": 1, "text": "Now you are walled around with a wall; siege is laid against us; with a rod they strike the ruler of Israel upon the cheek." },
-        { "num": 2, "text": "But you, O Bethlehem of Ephrathah, who are one of the little clans of Judah, from you shall come forth for me one who is to rule in Israel, whose origin is from of old, from ancient days." },
-        { "num": 3, "text": "Therefore he shall give them up until the time when she who is in labor has brought forth; then the rest of his kindred shall return to the people of Israel." },
-        { "num": 4, "text": "And he shall stand and feed his flock in the strength of the Lord, in the majesty of the name of the Lord his God. And they shall live secure, for now he shall be great to the ends of the earth;" },
-        { "num": 5, "text": "and he shall be the one of peace. If the Assyrian comes into our land and treads upon our soil, we will raise against him seven shepherds and eight installments of the people;" },
-        { "num": 6, "text": "they shall rule the land of Assyria with the sword, and the land of Nimrod with the drawn sword; they shall rescue us from the Assyrian if he comes into our land and treads within our border." },
-        { "num": 7, "text": "Then the remnant of Jacob, surrounded by many peoples, shall be like dew from the Lord, like showers on the grass, which do not depend upon people or wait for any mortal." },
-        { "num": 8, "text": "And the remnant of Jacob, among the nations, in the midst of many peoples, shall be like a lion among the animals of the forest, like a young lion among the flocks of sheep, which, when it goes through, treads down and tears in pieces, with no one to deliver." },
-        { "num": 9, "text": "Your hand shall be lifted up over your adversaries, and all your enemies shall be cut off." },
-        { "num": 10, "text": "In that day, says the Lord, I will cut off your horses from among you and will destroy your chariots;" },
-        { "num": 11, "text": "and I will cut off the cities of your land and throw down all your strongholds;" },
-        { "num": 12, "text": "and I will cut off sorceries from your hand, and you shall have no more soothsayers;" },
-        { "num": 13, "text": "and I will cut off your images and your pillars from among you; and you shall bow down no more to the work of your hands;" },
-        { "num": 14, "text": "and I will uproot your sacred poles from among you and destroy your towns." },
-        { "num": 15, "text": "And in anger and wrath I will execute vengeance on the nations that did not obey." }
+        {
+          "num": 1,
+          "text": {
+            "NRSV": "Now you are walled around with a wall; siege is laid against us; with a rod they strike the ruler of Israel upon the cheek.",
+            "Rotherham": "Meanwhile, shalt thou gather together in troops, thou daughter of a troop, siege, hath he laid against us,—with a sceptre, will they smite on the cheek, the judge of Israel!"
+          }
+        },
+        {
+          "num": 2,
+          "text": {
+            "NRSV": "But you, O Bethlehem of Ephrathah, who are one of the little clans of Judah, from you shall come forth for me one who is to rule in Israel, whose origin is from of old, from ancient days.",
+            "Rotherham": "Thou, therefore, Bethlehem Ephrathah, though, little, to be among the thousands of Judah, out of thee, shall Mine come forth, to be ruler in Israel,—whose comings forth, have been from of old, from the days of age-past time."
+          }
+        },
+        {
+          "num": 3,
+          "text": {
+            "NRSV": "Therefore he shall give them up until the time when she who is in labor has brought forth; then the rest of his kindred shall return to the people of Israel.",
+            "Rotherham": "Therefore, will he give them up, until the time when, one who is to bring forth, hath brought forth,—and, the remainder of his brethren, return unto the sons of Israel."
+          }
+        },
+        {
+          "num": 4,
+          "text": {
+            "NRSV": "And he shall stand and feed his flock in the strength of the Lord, in the majesty of the name of the Lord his God. And they shall live secure, for now he shall be great to the ends of the earth;",
+            "Rotherham": "Then shall he stand, and tend his flock in the strength of Yahweh, In the excellency of the name of Yahweh his God, have they endured,—For, now, shall he be great unto the ends of the earth;"
+          }
+        },
+        {
+          "num": 5,
+          "text": {
+            "NRSV": "and he shall be the one of peace. If the Assyrian comes into our land and treads upon our soil, we will raise against him seven shepherds and eight installments of the people;",
+            "Rotherham": "So shall this one be Prosperity. As for Assyria—when he shall enter our land, and when he shall tread down in our palaces, then will we raise up against him, seven shepherds, and eight princes of mankind."
+          }
+        },
+        {
+          "num": 6,
+          "text": {
+            "NRSV": "they shall rule the land of Assyria with the sword, and the land of Nimrod with the drawn sword; they shall rescue us from the Assyrian if he comes into our land and treads within our border.",
+            "Rotherham": "Then shall they shepherd the land of Assyria with the sword, and the land of Nimrod in the entrances thereof,—So shall he deliver from Assyria, when he shall enter our land, and when he shall tread down within our bounds. "
+          }
+        },
+        {
+          "num": 7,
+          "text": {
+            "NRSV": "Then the remnant of Jacob, surrounded by many peoples, shall be like dew from the Lord, like showers on the grass, which do not depend upon people or wait for any mortal.",
+            "Rotherham": " And, the remnant of Jacob, shall be, in the midst of many peoples, as dew from Yahweh, as myriad drops on plants,—which tarrieth not for man, nor waiteth for the sons of Adam."
+          }
+        },
+        {
+          "num": 8,
+          "text": {
+            "NRSV": "And the remnant of Jacob, among the nations, in the midst of many peoples, shall be like a lion among the animals of the forest, like a young lion among the flocks of sheep, which, when it goes through, treads down and tears in pieces, with no one to deliver.",
+            "Rotherham": "And, the remnant of Jacob, shall be among the nations, in the midst of many peoples, as a lion among the beasts of the jungle, as a young lion among flocks of sheep,—who, if he passeth by, both treadeth down—and teareth in pieces, and none can deliver."
+          }
+        },
+        {
+          "num": 9,
+          "text": {
+            "NRSV": "Your hand shall be lifted up over your adversaries, and all your enemies shall be cut off.",
+            "Rotherham": "Let thy hand be uplifted against thine adversaries,—and, all thine enemies, shall be cut off."
+          }
+        },
+        {
+          "num": 10,
+          "text": {
+            "NRSV": "In that day, says the Lord, I will cut off your horses from among you and will destroy your chariots;",
+            "Rotherham": "And it shall come to pass, in that day, Declareth Yahweh, That I will cut off thy horses out of thy midst,—and will destroy thy chariots;"
+          }
+        },
+        {
+          "num": 11,
+          "text": {
+            "NRSV": "and I will cut off the cities of your land and throw down all your strongholds;",
+            "Rotherham": "And will cut off the cities of thy land,—and will pull down all thy fortresses;"
+          }
+        },
+        {
+          "num": 12,
+          "text": {
+            "NRSV": "and I will cut off sorceries from your hand, and you shall have no more soothsayers;",
+            "Rotherham": "And will cut off incantations, out of thy hand,—and, users of hidden arts, shalt thou not have;"
+          }
+        },
+        {
+          "num": 13,
+          "text": {
+            "NRSV": "and I will cut off your images and your pillars from among you; and you shall bow down no more to the work of your hands;",
+            "Rotherham": "And I will cut off thine images and thy pillars out of thy midst,—and thou shalt not bow thyself down, any more, to the work of thine own hands;"
+          }
+        },
+        {
+          "num": 14,
+          "text": {
+            "NRSV": "and I will uproot your sacred poles from among you and destroy your towns.",
+            "Rotherham": "And I will uproot thy Sacred Stems out of thy midst,—and will destroy thy cities:"
+          }
+        },
+        {
+          "num": 15,
+          "text": {
+            "NRSV": "And in anger and wrath I will execute vengeance on the nations that did not obey.",
+            "Rotherham": "Then will I execute, with anger and with indignation, vengeance upon the nations,—of which they have not heard.  "
+          }
+        }
       ]
     },
     {
       "num": 6,
       "verses": [
-        { "num": 1, "text": "Hear what the Lord says: Rise, plead your case before the mountains, and let the hills hear your voice." },
-        { "num": 2, "text": "Hear, you mountains, the controversy of the Lord, and you enduring foundations of the earth; for the Lord has a controversy with his people, and he will contend with Israel." },
-        { "num": 3, "text": "“O my people, what have I done to you? In what have I wearied you? Answer me!”" },
-        { "num": 4, "text": "“For I brought you up from the land of Egypt, and redeemed you from the house of slavery; and I sent before you Moses, Aaron, and Miriam.”" },
-        { "num": 5, "text": "“O my people, remember now what King Balak of Moab devised, what Balaam son of Beor answered him, and what happened from Shittim to Gilgal, that you may know the saving acts of the Lord.”" },
-        { "num": 6, "text": "“With what shall I come before the Lord, and bow myself before God on high? Shall I come before him with burnt offerings, with calves a year old?”" },
-        { "num": 7, "text": "“Will the Lord be pleased with thousands of rams, with ten thousands of rivers of oil? Shall I give my firstborn for my transgression, the fruit of my body for the sin of my soul?”" },
-        { "num": 8, "text": "He has told you, O mortal, what is good; and what does the Lord require of you but to do justice, and to love kindness, and to walk humbly with your God?" },
-        { "num": 9, "text": "The voice of the Lord cries to the city (it is sound wisdom to fear your name): Hear, O tribe and assembly of the city!" },
-        { "num": 10, "text": "Can I forget the treasures of wickedness in the house of the wicked, and the scant measure that is accursed?" },
-        { "num": 11, "text": "Can I tolerate wicked scales and a bag of deceitful weights?" },
-        { "num": 12, "text": "Your wealthy are full of violence; your inhabitants speak lies, with tongues of deceit in their mouths." },
-        { "num": 13, "text": "Therefore I have begun to strike you down, making you desolate because of your sins." },
-        { "num": 14, "text": "You shall eat, but not be satisfied, and there shall be a gnawing hunger within you; you shall put away, but not save, and what you save, I will hand over to the sword." },
-        { "num": 15, "text": "You shall sow, but not reap; you shall tread olives, but not anoint yourselves with oil; you shall tread grapes, but not drink wine." },
-        { "num": 16, "text": "For you have kept the statutes of Omri and all the works of the house of Ahab, and you have followed their counsels. Therefore I will make you a desolation, and your inhabitants an object of hissing; so you shall bear the scorn of my people." }
+        {
+          "num": 1,
+          "text": {
+            "NRSV": "Hear what the Lord says: Rise, plead your case before the mountains, and let the hills hear your voice.",
+            "Rotherham": "Hear, I pray you, what, Yahweh, is saying,—arise thou, maintain thy controversy before the mountains, and let the hills hear thy voice:—"
+          }
+        },
+        {
+          "num": 2,
+          "text": {
+            "NRSV": "Hear, you mountains, the controversy of the Lord, and you enduring foundations of the earth; for the Lord has a controversy with his people, and he will contend with Israel.",
+            "Rotherham": "Hear, ye mountains, the controversy of Yahweh, and ye lasting rocks, the foundations of the earth,—for, a controversy, hath Yahweh, with his people, and, with Israel, will he dispute."
+          }
+        },
+        {
+          "num": 3,
+          "text": {
+            "NRSV": "“O my people, what have I done to you? In what have I wearied you? Answer me!”",
+            "Rotherham": "O my people! what have I done to thee? and wherein have I wearied thee? Testify thou against me!"
+          }
+        },
+        {
+          "num": 4,
+          "text": {
+            "NRSV": "“For I brought you up from the land of Egypt, and redeemed you from the house of slavery; and I sent before you Moses, Aaron, and Miriam.”",
+            "Rotherham": "For I brought thee up out of the land of Egypt, and, out of the house of slaves, I ransomed thee,—and I sent before thee, Moses, Aaron and Miriam."
+          }
+        },
+        {
+          "num": 5,
+          "text": {
+            "NRSV": "“O my people, remember now what King Balak of Moab devised, what Balaam son of Beor answered him, and what happened from Shittim to Gilgal, that you may know the saving acts of the Lord.”",
+            "Rotherham": "O my people! remember, I pray you, what Balak king of Moab, counseled, and what Balaam son of Beor, answered him,—from the Acacias as far as Gilgal, that ye may know the righteousness of Yahweh. "
+          }
+        },
+        {
+          "num": 6,
+          "text": {
+            "NRSV": "“With what shall I come before the Lord, and bow myself before God on high? Shall I come before him with burnt offerings, with calves a year old?”",
+            "Rotherham": " Wherewith, shall I come before Yahweh? bow myself to God on high? Shall I come before him with ascending-sacrifice? with calves of a year old?"
+          }
+        },
+        {
+          "num": 7,
+          "text": {
+            "NRSV": "“Will the Lord be pleased with thousands of rams, with ten thousands of rivers of oil? Shall I give my firstborn for my transgression, the fruit of my body for the sin of my soul?”",
+            "Rotherham": "Will Yahweh, be pleased, with thousands of rams? with myriads of torrents of oil? Shall I give my firstborn for my transgression? the fruit of my body for the sin of my soul?"
+          }
+        },
+        {
+          "num": 8,
+          "text": {
+            "NRSV": "He has told you, O mortal, what is good; and what does the Lord require of you but to do justice, and to love kindness, and to walk humbly with your God?",
+            "Rotherham": "He hath told thee, O son of earth, what is good,—what then is, Yahweh, seeking of thee, but, to do justice, to delight in lovingkindness, and humbly to walk with thy God? "
+          }
+        },
+        {
+          "num": 9,
+          "text": {
+            "NRSV": "The voice of the Lord cries to the city (it is sound wisdom to fear your name): Hear, O tribe and assembly of the city!",
+            "Rotherham": " The voice of Yahweh, to the city, crieth out, With safety for him who regardeth his name,—Hear ye the rod, and who hath appointed it."
+          }
+        },
+        {
+          "num": 10,
+          "text": {
+            "NRSV": "Can I forget the treasures of wickedness in the house of the wicked, and the scant measure that is accursed?",
+            "Rotherham": "Even yet, are there, in the house of the lawless one, the treasures of lawlessness,—and the scant measure—accurst?"
+          }
+        },
+        {
+          "num": 11,
+          "text": {
+            "NRSV": "Can I tolerate wicked scales and a bag of deceitful weights?",
+            "Rotherham": "Shall I be pure with lawless balances? or with bag of deceitful weights?"
+          }
+        },
+        {
+          "num": 12,
+          "text": {
+            "NRSV": "Your wealthy are full of violence; your inhabitants speak lies, with tongues of deceit in their mouths.",
+            "Rotherham": "For, her rich men, are full of violence, and, her inhabitants, have spoken falsehood,—and, their tongue, is deceitful in their mouth."
+          }
+        },
+        {
+          "num": 13,
+          "text": {
+            "NRSV": "Therefore I have begun to strike you down, making you desolate because of your sins.",
+            "Rotherham": "Moreover also, I, have made thee sick with smiting thee,—laying thee waste because of thy sins."
+          }
+        },
+        {
+          "num": 14,
+          "text": {
+            "NRSV": "You shall eat, but not be satisfied, and there shall be a gnawing hunger within you; you shall put away, but not save, and what you save, I will hand over to the sword.",
+            "Rotherham": "Thou, shalt eat—and not be satisfied, but be shrunk with hunger within thee,—Though thou remove, yet shalt thou not set in safety, and, what thou dost set in safety, to the sword, will I deliver."
+          }
+        },
+        {
+          "num": 15,
+          "text": {
+            "NRSV": "You shall sow, but not reap; you shall tread olives, but not anoint yourselves with oil; you shall tread grapes, but not drink wine.",
+            "Rotherham": "Thou, shalt sow, but shalt not reap,—thou, shalt tread the olive, but shalt not anoint thee with oil, also the grape, but shalt not drink the wine."
+          }
+        },
+        {
+          "num": 16,
+          "text": {
+            "NRSV": "For you have kept the statutes of Omri and all the works of the house of Ahab, and you have followed their counsels. Therefore I will make you a desolation, and your inhabitants an object of hissing; so you shall bear the scorn of my people.",
+            "Rotherham": "For strictly observed are the statutes of Omri, and every doing of the house of Ahab, and ye have walked in their counsels,—to the end I may give thee up to desolation, and her inhabitants to hissing, that, the reproach of peoples, ye may bear.  "
+          }
+        }
       ]
     },
     {
       "num": 7,
       "verses": [
-        { "num": 1, "text": "Woe is me! For I have become like one who, after the summer fruit has been gathered, after the vintage has been gleaned, finds no cluster to eat; there is no first-ripe fig for which I hunger." },
-        { "num": 2, "text": "The faithful have disappeared from the land, and there is no one left who is upright; they all lie in wait for blood, and they hunt each other with nets." },
-        { "num": 3, "text": "Their hands are skilled to do evil; the official and the judge ask for a bribe, and the powerful dictate their heart’s desire; thus they pervert justice." },
-        { "num": 4, "text": "The best of them is like a brier, the most upright of them a thorn hedge. The day of their sentinels, of their punishment, has come; now their confusion is at hand." },
-        { "num": 5, "text": "Put no trust in a neighbor, have no confidence in a friend; guard the doors of your mouth from her who lies in your embrace." },
-        { "num": 6, "text": "For the son treats the father with contempt, the daughter rises up against her mother, the daughter-in-law against her mother-in-law; your enemies are members of your own household." },
-        { "num": 7, "text": "But as for me, I will look to the Lord, I will wait for the God of my salvation; my God will hear me." },
-        { "num": 8, "text": "Do not rejoice over me, O my enemy; when I fall, I shall rise; when I sit in darkness, the Lord will be a light to me." },
-        { "num": 9, "text": "I must bear the indignation of the Lord, because I have sinned against him, until he takes up my cause and executes judgment for me. He will bring me out to the light; I shall see his vindication." },
-        { "num": 10, "text": "Then my enemy will see, and shame will cover her who said to me, “Where is the Lord your God?” My eyes will gloat over her; now she will be trodden down like the mire of the streets." },
-        { "num": 11, "text": "A day for the building of your walls! In that day the boundary shall be far extended." },
-        { "num": 12, "text": "In that day they will come to you from Assyria and Egypt, and from Egypt to the River, from sea to sea and from mountain to mountain." },
-        { "num": 13, "text": "But the earth will be desolate because of its inhabitants, for the fruit of their doings." },
-        { "num": 14, "text": "Shepherd your people with your staff, the flock that belongs to you, which lives alone in a forest in the midst of a garden land; let them feed in Bashan and Gilead as in the days of old." },
-        { "num": 15, "text": "As in the days when you came out of the land of Egypt, show us marvelous things." },
-        { "num": 16, "text": "The nations shall see and be ashamed of all their might; they shall lay their hands on their mouths; their ears shall be deaf." },
-        { "num": 17, "text": "They shall lick dust like a snake, like the crawling things of the earth; they shall come trembling out of their fortresses; they shall turn in dread to the Lord our God, and they shall stand in fear of you." },
-        { "num": 18, "text": "Who is a God like you, pardoning iniquity and passing over transgression for the remnant of his possession? He does not retain his anger forever, because he delights in showing clemency." },
-        { "num": 19, "text": "He will again have compassion upon us; he will tread our iniquities under foot. You will cast all our sins into the depths of the sea." },
-        { "num": 20, "text": "You will show faithfulness to Jacob and unswerving loyalty to Abraham, as you have sworn to our ancestors from the days of old." }
+        {
+          "num": 1,
+          "text": {
+            "NRSV": "Woe is me! For I have become like one who, after the summer fruit has been gathered, after the vintage has been gleaned, finds no cluster to eat; there is no first-ripe fig for which I hunger.",
+            "Rotherham": "Alas for me! for I am become as gatherings of summer fruit, as gleaning-grapes in harvest, there is no cluster to eat, the first ripe fruit, my soul, craved."
+          }
+        },
+        {
+          "num": 2,
+          "text": {
+            "NRSV": "The faithful have disappeared from the land, and there is no one left who is upright; they all lie in wait for blood, and they hunt each other with nets.",
+            "Rotherham": "Perished is the man of lovingkindness out of the earth, and, upright among men, is there none,—they all, for bloodshed, lie in wait. Every man—for his brother, do they hunt as for one devoted to destruction."
+          }
+        },
+        {
+          "num": 3,
+          "text": {
+            "NRSV": "Their hands are skilled to do evil; the official and the judge ask for a bribe, and the powerful dictate their heart’s desire; thus they pervert justice.",
+            "Rotherham": "Of wickedness with both hands to make sure, the ruler, doth make demand—and the judge—for a recompense,—and, as for the great man, he, is putting into words the desire of his soul, So have they woven the net!"
+          }
+        },
+        {
+          "num": 4,
+          "text": {
+            "NRSV": "The best of them is like a brier, the most upright of them a thorn hedge. The day of their sentinels, of their punishment, has come; now their confusion is at hand.",
+            "Rotherham": "The best of them, is as a sharp briar, and, the most upright, worse than a thorn hedge, The day of thy watchmen—of thy visitation, hath come, Now, shall be their confusion!"
+          }
+        },
+        {
+          "num": 5,
+          "text": {
+            "NRSV": "Put no trust in a neighbor, have no confidence in a friend; guard the doors of your mouth from her who lies in your embrace.",
+            "Rotherham": "Do not trust in a friend, do not put confidence in an associate,—from her that lieth in thy bosom, keep thou the doors of thy mouth;"
+          }
+        },
+        {
+          "num": 6,
+          "text": {
+            "NRSV": "For the son treats the father with contempt, the daughter rises up against her mother, the daughter-in-law against her mother-in-law; your enemies are members of your own household.",
+            "Rotherham": "For, the son, treateth as foolish, the father, and, the daughter, riseth up against, her mother, the daughter-in-law against her mother-in-law,—The foes of a man, are the men of his own house. "
+          }
+        },
+        {
+          "num": 7,
+          "text": {
+            "NRSV": "But as for me, I will look to the Lord, I will wait for the God of my salvation; my God will hear me.",
+            "Rotherham": " But, I, for Yahweh, will watch, I will wait for the God of my salvation,—My God, will hear me."
+          }
+        },
+        {
+          "num": 8,
+          "text": {
+            "NRSV": "Do not rejoice over me, O my enemy; when I fall, I shall rise; when I sit in darkness, the Lord will be a light to me.",
+            "Rotherham": "Do not rejoice, O mine enemy, against me, Though I fall, I shall rise again! Though I sit in darkness, Yahweh, is a light to me."
+          }
+        },
+        {
+          "num": 9,
+          "text": {
+            "NRSV": "I must bear the indignation of the Lord, because I have sinned against him, until he takes up my cause and executes judgment for me. He will bring me out to the light; I shall see his vindication.",
+            "Rotherham": "The indignation of Yahweh, will I bear, for I have sinned against him,—until he take up my controversy, then will he do me justice, he will bring me forth to the light, I shall behold his righteousness."
+          }
+        },
+        {
+          "num": 10,
+          "text": {
+            "NRSV": "Then my enemy will see, and shame will cover her who said to me, “Where is the Lord your God?” My eyes will gloat over her; now she will be trodden down like the mire of the streets.",
+            "Rotherham": "So shall she who had been mine enemy fear, and shame, shall cover her, who used to say unto me—Where is Yahweh thy God? Mine own eyes, shall look upon her, Now, shall she become one to he trodden down, like the mire of the lanes."
+          }
+        },
+        {
+          "num": 11,
+          "text": {
+            "NRSV": "A day for the building of your walls! In that day the boundary shall be far extended.",
+            "Rotherham": "On the day for building thy walls,—on that day, far away shall be thy boundary:"
+          }
+        },
+        {
+          "num": 12,
+          "text": {
+            "NRSV": "In that day they will come to you from Assyria and Egypt, and from Egypt to the River, from sea to sea and from mountain to mountain.",
+            "Rotherham": "The very day, that, against thee, shall one come from Assyria, and [from] the cities of Egypt; yea from Egypt, even unto the River, and from sea to sea, and from mountain to mountain:"
+          }
+        },
+        {
+          "num": 13,
+          "text": {
+            "NRSV": "But the earth will be desolate because of its inhabitants, for the fruit of their doings.",
+            "Rotherham": "Though the land become a desolation, because of them that dwell therein,—by reason of the fruit of their doings. "
+          }
+        },
+        {
+          "num": 14,
+          "text": {
+            "NRSV": "Shepherd your people with your staff, the flock that belongs to you, which lives alone in a forest in the midst of a garden land; let them feed in Bashan and Gilead as in the days of old.",
+            "Rotherham": " Shepherd thou thy people with thy rod, the flock of thine inheritance, Dwell thou alone, a jungle in the midst of a fruitful field,—Let them feed in Bashan and in Gilead, as in the days of age-past times."
+          }
+        },
+        {
+          "num": 15,
+          "text": {
+            "NRSV": "As in the days when you came out of the land of Egypt, show us marvelous things.",
+            "Rotherham": "As in the days of thy coming forth out of the land of Egypt, will I shew him wonders."
+          }
+        },
+        {
+          "num": 16,
+          "text": {
+            "NRSV": "The nations shall see and be ashamed of all their might; they shall lay their hands on their mouths; their ears shall be deaf.",
+            "Rotherham": "Nations, shall see, that they may turn pale at all their valour,—they shall lay hand on mouth, their ears, shall be silent:"
+          }
+        },
+        {
+          "num": 17,
+          "text": {
+            "NRSV": "They shall lick dust like a snake, like the crawling things of the earth; they shall come trembling out of their fortresses; they shall turn in dread to the Lord our God, and they shall stand in fear of you.",
+            "Rotherham": "They shall lick the dust like the serpent, Like the crawlers of the earth, shall they come quaking out of their fastnesses,—Towards Yahweh our God, shall they pay adoration, and shall fear because of thee."
+          }
+        },
+        {
+          "num": 18,
+          "text": {
+            "NRSV": "Who is a God like you, pardoning iniquity and passing over transgression for the remnant of his possession? He does not retain his anger forever, because he delights in showing clemency.",
+            "Rotherham": "Who is a GOD like unto thee, taking away the iniquity—and passing over the transgression—of the remnant of his inheritance? He hath not held fast, perpetually, his anger, for, one who delighteth in lovingkindness, is he!"
+          }
+        },
+        {
+          "num": 19,
+          "text": {
+            "NRSV": "He will again have compassion upon us; he will tread our iniquities under foot. You will cast all our sins into the depths of the sea.",
+            "Rotherham": "He will again have compassion upon us, he will subdue our iniquities,—Thou wilt cast—into the depths of the sea—all their sins."
+          }
+        },
+        {
+          "num": 20,
+          "text": {
+            "NRSV": "You will show faithfulness to Jacob and unswerving loyalty to Abraham, as you have sworn to our ancestors from the days of old.",
+            "Rotherham": "Thou wilt grant—the faithfulness to Jacob, the lovingkindness to Abraham,—which thou didst swear to our fathers, from the days of ancient time.   "
+          }
+        }
       ]
     }
-  ]
+  ],
+  "schema": "bible_book_multiversion_v1"
 }
