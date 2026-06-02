@@ -2184,20 +2184,22 @@
   "active_blockers": {
     "bible_corpus_structural_integrity": {
       "date": "2026-06-02",
-      "status": "active",
-      "priority": "immediate_before_tranche_work",
+      "status": "ordinary_ot_repaired_et_schema_exceptions_governed",
+      "priority": "immediate_before_bible_translation_import",
       "sourceRecord": "structure.audit_findings.bible_corpus_structural_integrity_blocker_2026_06_02",
-      "summary": "Repair and harden data/bible structural schema before further Bible-dependent tranche work or Rotherham import.",
-      "nextStep": "Create corrected read-only Bible corpus structural audit, then repair high-severity malformed files."
+      "summary": "Critical nested-object corruption and ordinary OT structural errors have been repaired. Remaining ET non-ordinary schema and partial-sequence issues are governed exceptions, not ordinary book corruption.",
+      "nextStep": "Add or retain a quiet standing Bible corpus structural audit that consumes the governance registry before Rotherham import.",
+      "governanceFile": "documentation/bible-corpus-schema-governance.json"
     }
   },
   "side_projects": {
     "rotherham_bible_translation": {
       "date": "2026-06-02",
-      "status": "active_side_project_waiting_on_bible_corpus_repair",
+      "status": "active_side_project_waiting_on_standing_bible_audit_and_multiversion_schema",
       "notPushedAside": true,
       "sourceRecord": "structure.side_projects.rotherham_bible_translation",
-      "summary": "Rotherham remains active as a downtime side project. Implementation waits for Bible corpus structural repair and multi-translation Bible-book schema decision."
+      "summary": "Rotherham remains active as a downtime side project. Implementation waits for Bible corpus structural repair and multi-translation Bible-book schema decision.",
+      "currentGate": "ordinary Bible corpus structure repaired; standing audit and multiversion schema still required before import"
     }
   },
   "paused_tranches": {

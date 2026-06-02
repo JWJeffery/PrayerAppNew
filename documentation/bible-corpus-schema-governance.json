@@ -1,0 +1,228 @@
+{
+  "schema": "prayerappnew_bible_corpus_schema_governance_v1",
+  "date": "2026-06-02",
+  "status": "active",
+  "purpose": "Declare structural contracts and governed exceptions for data/bible so ordinary book corruption, partial source sequences, liturgical collection schemas, and consolidated psalter schemas are not conflated.",
+  "ordinaryBookContract": {
+    "topLevel": [
+      "meta",
+      "chapters"
+    ],
+    "chapterObjectRequiredFields": [
+      "num",
+      "verses"
+    ],
+    "verseObjectRequiredFields": [
+      "num",
+      "text"
+    ],
+    "forbiddenNestedKeysInsideChaptersOrVerses": [
+      "meta",
+      "chapters",
+      "schema"
+    ],
+    "sequenceRule": "ordinary numeric chapter sequences must be contiguous unless explicitly listed as governed partial/source-excerpt sequence"
+  },
+  "governedTopLevelListFiles": {
+    "data/bible/OT/psalms.json": {
+      "schemaKind": "consolidated_psalter_list_schema",
+      "status": "governed_exception"
+    }
+  },
+  "governedNamedChapterFiles": {
+    "data/bible/OT/estherGK.json": {
+      "schemaKind": "greek_esther_additions",
+      "status": "governed_exception"
+    },
+    "data/bible/OT/danielGK.json": {
+      "schemaKind": "greek_daniel_additions_possible",
+      "status": "governed_exception"
+    }
+  },
+  "governedPartialChapterSequenceFiles": {
+    "data/bible/ET/bookofjubileesET.json": {
+      "schemaKind": "partial_or_excerpted_chapter_sequence",
+      "status": "governed_exception_not_text_complete",
+      "expectedChapterNums": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44,
+        45,
+        46,
+        47,
+        48,
+        49,
+        50
+      ],
+      "sourceCompletenessNote": "This classification prevents the structural audit from treating the preserved non-contiguous sequence as ordinary-book corruption. It does not certify text completeness or authorize fabricated gap filling."
+    },
+    "data/bible/ET/clementstatutesET.json": {
+      "schemaKind": "partial_or_excerpted_chapter_sequence",
+      "status": "governed_exception_not_text_complete",
+      "expectedChapterNums": [
+        9,
+        10
+      ],
+      "sourceCompletenessNote": "This classification prevents the structural audit from treating the preserved non-contiguous sequence as ordinary-book corruption. It does not certify text completeness or authorize fabricated gap filling."
+    },
+    "data/bible/ET/fethanagastET.json": {
+      "schemaKind": "partial_or_excerpted_chapter_sequence",
+      "status": "governed_exception_not_text_complete",
+      "expectedChapterNums": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        44,
+        47,
+        48,
+        51
+      ],
+      "sourceCompletenessNote": "This classification prevents the structural audit from treating the preserved non-contiguous sequence as ordinary-book corruption. It does not certify text completeness or authorize fabricated gap filling."
+    },
+    "data/bible/ET/ClementBookofRollsET.json": {
+      "schemaKind": "partial_or_excerpted_chapter_sequence",
+      "status": "governed_exception_not_text_complete",
+      "expectedChapterNums": [
+        6,
+        7,
+        8
+      ],
+      "sourceCompletenessNote": "This classification prevents the structural audit from treating the preserved non-contiguous sequence as ordinary-book corruption. It does not certify text completeness or authorize fabricated gap filling."
+    }
+  },
+  "governedNonChapterSchemaFiles": {
+    "data/bible/ET/josipponET.json": {
+      "schemaKind": "books_collection",
+      "requiredTopLevelFields": [
+        "meta",
+        "books"
+      ],
+      "note": "Collection-shaped Ethiopic historical text; not an ordinary chapter/verse biblical book file.",
+      "status": "governed_exception"
+    },
+    "data/bible/ET/malke’aguba’eET.json": {
+      "schemaKind": "hymn_stanzas",
+      "requiredTopLevelFields": [
+        "meta",
+        "hymn_structure",
+        "stanzas"
+      ],
+      "note": "Ethiopic hymnody/stanza schema; not an ordinary chapter/verse biblical book file.",
+      "status": "governed_exception"
+    },
+    "data/bible/ET/malke’aiyasusET.json": {
+      "schemaKind": "hymn_stanzas",
+      "requiredTopLevelFields": [
+        "meta",
+        "hymn_structure",
+        "stanzas"
+      ],
+      "note": "Ethiopic hymnody/stanza schema; not an ordinary chapter/verse biblical book file.",
+      "status": "governed_exception"
+    },
+    "data/bible/ET/malke’avirginmaryET.json": {
+      "schemaKind": "hymn_stanzas",
+      "requiredTopLevelFields": [
+        "meta",
+        "hymn_structure",
+        "stanzas"
+      ],
+      "note": "Ethiopic hymnody/stanza schema; not an ordinary chapter/verse biblical book file.",
+      "status": "governed_exception"
+    },
+    "data/bible/ET/mazahetaET.json": {
+      "schemaKind": "sections_collection",
+      "requiredTopLevelFields": [
+        "meta",
+        "sections"
+      ],
+      "note": "Ethiopic liturgical hymn/prayer section schema; not an ordinary chapter/verse biblical book file.",
+      "status": "governed_exception"
+    },
+    "data/bible/ET/miraclesofmaryET.json": {
+      "schemaKind": "miracles_collection",
+      "requiredTopLevelFields": [
+        "meta",
+        "liturgical_prologue",
+        "miracles"
+      ],
+      "note": "Ethiopic Miracles of Mary narrative collection schema; not an ordinary chapter/verse biblical book file.",
+      "status": "governed_exception"
+    }
+  },
+  "renamedJsonFiles": {
+    "data/bible/ET/ClementBookofRollsET": {
+      "newPath": "data/bible/ET/ClementBookofRollsET.json",
+      "reason": "Valid JSON corpus file had no .json extension."
+    },
+    "data/bible/NT/2baruchCE": {
+      "newPath": "data/bible/NT/2baruchCE.json",
+      "reason": "Valid JSON corpus file had no .json extension."
+    }
+  },
+  "notes": [
+    "Rotherham import remains blocked until ordinary Bible structure is governed and multi-translation schema is defined.",
+    "ET partial/excerpt classifications are not source-completeness approvals.",
+    "This governance separates schema-shape validity from future source-acquisition and text-completeness work."
+  ]
+}

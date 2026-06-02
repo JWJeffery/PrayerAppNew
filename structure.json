@@ -1463,6 +1463,21 @@
         "Grok": "permanently_fired_replaced_by_Claude_and_Marissa"
       },
       "governanceNote": "Do not refer to Gemini or Grok as current project participants. Historical outputs from removed agents are not current authority and must be revalidated against current governance."
+    },
+    "bible_corpus_schema_governance_2026_06_02": {
+      "date": "2026-06-02",
+      "status": "active",
+      "governanceFile": "documentation/bible-corpus-schema-governance.json",
+      "summary": "Bible corpus structural audit now distinguishes ordinary book files, consolidated psalter list schema, named addition files, governed partial/excerpt sequences, and ET collection/hymn schemas.",
+      "ordinaryOtRepairCommits": [
+        "7efb4ed Repair nested Bible chapter objects",
+        "070e822 Repair ordinary OT Bible structure issues"
+      ],
+      "renamedJsonFiles": {
+        "data/bible/ET/ClementBookofRollsET": "data/bible/ET/ClementBookofRollsET.json",
+        "data/bible/NT/2baruchCE": "data/bible/NT/2baruchCE.json"
+      },
+      "remainingConcern": "ET partial/excerpt files remain source-completeness/provenance questions, not ordinary structural corruption."
     }
   },
   "documentation_manifest": {
