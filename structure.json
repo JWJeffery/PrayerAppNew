@@ -2217,7 +2217,7 @@
     "rotherham_bible_translation": {
       "id": "rotherham_bible_translation_side_project",
       "date": "2026-06-02",
-      "status": "historical_books_imported",
+      "status": "torah_books_imported",
       "translationKeyCandidate": "Rotherham",
       "sourceName": "The Emphasised Bible / The Emphasized Bible",
       "scopeIntent": [
@@ -2232,7 +2232,7 @@
       "schemaGate": "documentation/bible-book-multiversion-schema-v1.json",
       "resolverCompatibilityCommit": "0af6124 Add Scripture resolver translation compatibility",
       "requiredPreflight": "npm run audit:bible-corpus-structure",
-      "nextStep": "Run post-import alignment map, then import aligned Torah books or pause for Psalms/blocker analysis.",
+      "nextStep": "Run post-import alignment map; aligned ordinary-book imports should now be exhausted except Psalms and blocker cases.",
       "sourceWitnessRecord": "documentation/rotherham-source-witness-intake.json",
       "sourceUrl": "https://raw.githubusercontent.com/scrollmapper/bible_databases/2025/formats/json/Rotherham.json",
       "sourceSha256": "d63488b149aadf4430fea6ddbc7c07395a12321a1b58799ce2dcb384ebf97627",
@@ -2246,75 +2246,51 @@
       "currentGate": "Source witness is confirmed. Next gate is a bounded pilot import plan, preferably one ordinary book, with source SHA verification and no hardcoded text-bearing patch script.",
       "pilotBook": "Joshua",
       "pilotFile": "data/bible/OT/joshua.json",
-      "importedVerseCount": 3139,
-      "migratedScalarNRSVVerseCount": 3139,
+      "importedVerseCount": 3360,
+      "migratedScalarNRSVVerseCount": 3360,
       "pilotVerification": {
         "rotherhamVerseCount": 658,
         "yahwehCount": 224,
         "jehovahCount": 0
       },
-      "latestImportTranche": "historical_books",
+      "latestImportTranche": "torah_books",
       "importedBooks": [
-        "II Samuel",
-        "I Kings",
-        "I Chronicles",
-        "Ezra",
-        "Nehemiah"
+        "Exodus",
+        "Leviticus",
+        "Numbers"
       ],
-      "yahwehCount": 640,
+      "yahwehCount": 1106,
       "bookStats": {
-        "II Samuel": {
-          "file": "data/bible/OT/2samuel.json",
-          "chapters": 24,
-          "importedVerseCount": 695,
-          "migratedScalarNRSVVerseCount": 695,
+        "Exodus": {
+          "file": "data/bible/OT/exodus.json",
+          "chapters": 40,
+          "importedVerseCount": 1213,
+          "migratedScalarNRSVVerseCount": 1213,
           "verification": {
-            "rotherhamVerseCount": 695,
-            "yahwehCount": 155,
+            "rotherhamVerseCount": 1213,
+            "yahwehCount": 399,
             "jehovahCount": 0
           }
         },
-        "I Kings": {
-          "file": "data/bible/OT/1kings.json",
-          "chapters": 22,
-          "importedVerseCount": 816,
-          "migratedScalarNRSVVerseCount": 816,
+        "Leviticus": {
+          "file": "data/bible/OT/leviticus.json",
+          "chapters": 27,
+          "importedVerseCount": 859,
+          "migratedScalarNRSVVerseCount": 859,
           "verification": {
-            "rotherhamVerseCount": 816,
-            "yahwehCount": 257,
+            "rotherhamVerseCount": 859,
+            "yahwehCount": 311,
             "jehovahCount": 0
           }
         },
-        "I Chronicles": {
-          "file": "data/bible/OT/1chronicles.json",
-          "chapters": 29,
-          "importedVerseCount": 942,
-          "migratedScalarNRSVVerseCount": 942,
+        "Numbers": {
+          "file": "data/bible/OT/numbers.json",
+          "chapters": 36,
+          "importedVerseCount": 1288,
+          "migratedScalarNRSVVerseCount": 1288,
           "verification": {
-            "rotherhamVerseCount": 942,
-            "yahwehCount": 174,
-            "jehovahCount": 0
-          }
-        },
-        "Ezra": {
-          "file": "data/bible/OT/ezra.json",
-          "chapters": 10,
-          "importedVerseCount": 280,
-          "migratedScalarNRSVVerseCount": 280,
-          "verification": {
-            "rotherhamVerseCount": 280,
-            "yahwehCount": 37,
-            "jehovahCount": 0
-          }
-        },
-        "Nehemiah": {
-          "file": "data/bible/OT/nehemiah.json",
-          "chapters": 13,
-          "importedVerseCount": 406,
-          "migratedScalarNRSVVerseCount": 406,
-          "verification": {
-            "rotherhamVerseCount": 406,
-            "yahwehCount": 17,
+            "rotherhamVerseCount": 1288,
+            "yahwehCount": 396,
             "jehovahCount": 0
           }
         }
