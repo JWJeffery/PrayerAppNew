@@ -3,123 +3,710 @@
     "name": "Colossians",
     "id": "COL",
     "version": "NRSV",
-    "copyright": "New Revised Standard Version Bible, copyright © 1989 National Council of the Churches of Christ in the United States of America. Used by permission. All rights reserved worldwide."
+    "copyright": "New Revised Standard Version Bible, copyright © 1989 National Council of the Churches of Christ in the United States of America. Used by permission. All rights reserved worldwide.",
+    "canon": "NT",
+    "defaultTranslation": "NRSV",
+    "versification": "standard_nt_chapter_verse",
+    "translations": {
+      "NRSV": {
+        "label": "New Revised Standard Version",
+        "sourceType": "existing_corpus",
+        "rights": "New Revised Standard Version Bible, copyright © 1989 National Council of the Churches of Christ in the United States of America. Used by permission. All rights reserved worldwide."
+      },
+      "Rotherham": {
+        "label": "The Emphasised Bible",
+        "sourceType": "scrollmapper_bible_databases_2025_formats_json_source_witness",
+        "rights": "Public Domain",
+        "sourceWitness": "documentation/rotherham-source-witness-intake.json"
+      }
+    }
   },
   "chapters": [
     {
       "num": 1,
       "verses": [
-        { "num": 1, "text": "Paul, an apostle of Christ Jesus by the will of God, and Timothy our brother," },
-        { "num": 2, "text": "To the saints and faithful brothers and sisters in Christ in Colossae: Grace to you and peace from God our Father." },
-        { "num": 3, "text": "In our prayers for you we always thank God, the Father of our Lord Jesus Christ," },
-        { "num": 4, "text": "for we have heard of your faith in Christ Jesus and of the love that you have for all the saints," },
-        { "num": 5, "text": "because of the hope laid up for you in heaven. You have heard of this hope before in the word of the truth, the gospel" },
-        { "num": 6, "text": "that has come to you. Just as it is bearing fruit and growing in the whole world, so it has been bearing fruit among yourselves from the day you heard it and truly comprehended the grace of God." },
-        { "num": 7, "text": "This you learned from Epaphras, our beloved fellow servant. He is a faithful minister of Christ on your behalf," },
-        { "num": 8, "text": "and he has made known to us your love in the Spirit." },
-        { "num": 9, "text": "For this reason, since the day we heard it, we have not ceased praying for you and asking that you may be filled with the knowledge of God’s will in all spiritual wisdom and understanding," },
-        { "num": 10, "text": "so that you may lead a life worthy of the Lord, fully pleasing to him, as you bear fruit in every good work and as you grow in the knowledge of God." },
-        { "num": 11, "text": "May you be made strong with all the strength that comes from his glorious power, and may you be prepared to endure everything with patience, while joyfully" },
-        { "num": 12, "text": "giving thanks to the Father, who has enabled you to share in the inheritance of the saints in the light." },
-        { "num": 13, "text": "He has rescued us from the power of darkness and transferred us into the kingdom of his beloved Son," },
-        { "num": 14, "text": "in whom we have redemption, the forgiveness of sins." },
-        { "num": 15, "text": "He is the image of the invisible God, the firstborn of all creation;" },
-        { "num": 16, "text": "for in him all things in heaven and on earth were created, things visible and invisible, whether thrones or dominions or rulers or powers—all things have been created through him and for him." },
-        { "num": 17, "text": "He himself is before all things, and in him all things hold together." },
-        { "num": 18, "text": "He is the head of the body, the church; he is the beginning, the firstborn from the dead, so that he might come to have first place in everything." },
-        { "num": 19, "text": "For in him all the fullness of God was pleased to dwell," },
-        { "num": 20, "text": "and through him God was pleased to reconcile to himself all things, whether on earth or in heaven, by making peace through the blood of his cross." },
-        { "num": 21, "text": "And you who were once estranged and hostile in mind, doing evil deeds," },
-        { "num": 22, "text": "he has now reconciled in his fleshy body through death, so as to present you holy and blameless and irreproachable before him—" },
-        { "num": 23, "text": "provided that you continue securely established and steadfast in the faith, without shifting from the hope promised by the gospel that you heard, which has been proclaimed to every creature under heaven. I, Paul, became a servant of this gospel." },
-        { "num": 24, "text": "I am now rejoicing in my sufferings for your sake, and in my flesh I am completing what is lacking in Christ’s afflictions for the sake of his body, that is, the church." },
-        { "num": 25, "text": "I became its servant according to God’s commission that was given to me for you, to make the word of God fully known," },
-        { "num": 26, "text": "the mystery that has been kept hidden throughout the ages and generations but has now been revealed to his saints." },
-        { "num": 27, "text": "To them God chose to make known how great among the Gentiles are the riches of the glory of this mystery, which is Christ in you, the hope of glory." },
-        { "num": 28, "text": "It is he whom we proclaim, warning everyone and teaching everyone in all wisdom, so that we may present everyone mature in Christ." },
-        { "num": 29, "text": "For this I toil and struggle with all the energy that he powerfully inspires within me." }
+        {
+          "num": 1,
+          "text": {
+            "NRSV": "Paul, an apostle of Christ Jesus by the will of God, and Timothy our brother,",
+            "Rotherham": "Paul, an apostle of Christ Jesus through the will of God, and Timothy my brother,—"
+          }
+        },
+        {
+          "num": 2,
+          "text": {
+            "NRSV": "To the saints and faithful brothers and sisters in Christ in Colossae: Grace to you and peace from God our Father.",
+            "Rotherham": "Unto the holy and faithful brethren in Christ that are, in Colosse, favour unto you, and peace, from our God and Father. "
+          }
+        },
+        {
+          "num": 3,
+          "text": {
+            "NRSV": "In our prayers for you we always thank God, the Father of our Lord Jesus Christ,",
+            "Rotherham": " We are giving thanks unto God, the Father of our Lord Jesus [Christ], always, for you, offering prayer,—"
+          }
+        },
+        {
+          "num": 4,
+          "text": {
+            "NRSV": "for we have heard of your faith in Christ Jesus and of the love that you have for all the saints,",
+            "Rotherham": "Having heard of your faith in Christ Jesus and of the love which ye have unto all the saints,—"
+          }
+        },
+        {
+          "num": 5,
+          "text": {
+            "NRSV": "because of the hope laid up for you in heaven. You have heard of this hope before in the word of the truth, the gospel",
+            "Rotherham": "Because of the hope that is lying by for you in the heavens, of which ye heard before, in the word of the truth of the glad-message,"
+          }
+        },
+        {
+          "num": 6,
+          "text": {
+            "NRSV": "that has come to you. Just as it is bearing fruit and growing in the whole world, so it has been bearing fruit among yourselves from the day you heard it and truly comprehended the grace of God.",
+            "Rotherham": "When it presented itself unto you; even as, in all the world also, it is bearing fruit and growing, even as also among you, from the day when ye heard, and came personally to know the favour of God in truth,"
+          }
+        },
+        {
+          "num": 7,
+          "text": {
+            "NRSV": "This you learned from Epaphras, our beloved fellow servant. He is a faithful minister of Christ on your behalf,",
+            "Rotherham": "Even as ye learned [it] from Epaphras, our beloved fellow-servant, who is faithful in our behalf, as a minister of the Christ,"
+          }
+        },
+        {
+          "num": 8,
+          "text": {
+            "NRSV": "and he has made known to us your love in the Spirit.",
+            "Rotherham": "Who also hath made evident unto us your love in spirit. "
+          }
+        },
+        {
+          "num": 9,
+          "text": {
+            "NRSV": "For this reason, since the day we heard it, we have not ceased praying for you and asking that you may be filled with the knowledge of God’s will in all spiritual wisdom and understanding,",
+            "Rotherham": " For this cause, we also, from the day when we heard [of you], cease not, in your behalf, praying and asking—that ye may be filled unto the personal knowledge of his will, in all spiritual wisdom and discernment,"
+          }
+        },
+        {
+          "num": 10,
+          "text": {
+            "NRSV": "so that you may lead a life worthy of the Lord, fully pleasing to him, as you bear fruit in every good work and as you grow in the knowledge of God.",
+            "Rotherham": "So as to walk worthily of the Lord, unto all pleasing, in every good work, bearing fruit, and growing in the personal knowledge of God,"
+          }
+        },
+        {
+          "num": 11,
+          "text": {
+            "NRSV": "May you be made strong with all the strength that comes from his glorious power, and may you be prepared to endure everything with patience, while joyfully",
+            "Rotherham": "With all power, being empowered, according to the grasp of his glory, unto all endurance and long-suffering with joy, "
+          }
+        },
+        {
+          "num": 12,
+          "text": {
+            "NRSV": "giving thanks to the Father, who has enabled you to share in the inheritance of the saints in the light.",
+            "Rotherham": " Giving thanks unto the Father that hath made you sufficient for your share in the inheritance of the saints in the light,"
+          }
+        },
+        {
+          "num": 13,
+          "text": {
+            "NRSV": "He has rescued us from the power of darkness and transferred us into the kingdom of his beloved Son,",
+            "Rotherham": "Who hath rescued us out of the authority of the darkness, and translated [us] into the kingdom of the Son of his love;"
+          }
+        },
+        {
+          "num": 14,
+          "text": {
+            "NRSV": "in whom we have redemption, the forgiveness of sins.",
+            "Rotherham": "In whom, we have our redemption—the remission of our sins,—"
+          }
+        },
+        {
+          "num": 15,
+          "text": {
+            "NRSV": "He is the image of the invisible God, the firstborn of all creation;",
+            "Rotherham": "Who, is an image of the unseen God, Firstborn of all creation,—"
+          }
+        },
+        {
+          "num": 16,
+          "text": {
+            "NRSV": "for in him all things in heaven and on earth were created, things visible and invisible, whether thrones or dominions or rulers or powers—all things have been created through him and for him.",
+            "Rotherham": "Because, in him, were created all things in the heavens and upon the earth, the things seen and the things unseen, whether thrones or lordships or principalities or authorities,—they all, through him and for him, have been created,"
+          }
+        },
+        {
+          "num": 17,
+          "text": {
+            "NRSV": "He himself is before all things, and in him all things hold together.",
+            "Rotherham": "And, he, is before all, and, they all, in him, hold together;"
+          }
+        },
+        {
+          "num": 18,
+          "text": {
+            "NRSV": "He is the head of the body, the church; he is the beginning, the firstborn from the dead, so that he might come to have first place in everything.",
+            "Rotherham": "And, he, is the head of the body, the assembly, Who is the beginning, Firstborn from among the dead, in order that, he, might become, in all things, himself, pre-eminent;—"
+          }
+        },
+        {
+          "num": 19,
+          "text": {
+            "NRSV": "For in him all the fullness of God was pleased to dwell,",
+            "Rotherham": "Because, in him, was all the fullness well pleased to dwell,"
+          }
+        },
+        {
+          "num": 20,
+          "text": {
+            "NRSV": "and through him God was pleased to reconcile to himself all things, whether on earth or in heaven, by making peace through the blood of his cross.",
+            "Rotherham": "And, through him, fully to reconcile all things unto him, making peace through the blood of his cross,—[through him]—whether the things upon the earth or the things in the heavens;"
+          }
+        },
+        {
+          "num": 21,
+          "text": {
+            "NRSV": "And you who were once estranged and hostile in mind, doing evil deeds,",
+            "Rotherham": "And, you, who at one time were estranged and enemies in your mind in your wicked works, yet, now, hath he fully reconciled,"
+          }
+        },
+        {
+          "num": 22,
+          "text": {
+            "NRSV": "he has now reconciled in his fleshy body through death, so as to present you holy and blameless and irreproachable before him—",
+            "Rotherham": "In his body of flesh, through means of his death, to present you holy and blameless and unaccusable before him,—"
+          }
+        },
+        {
+          "num": 23,
+          "text": {
+            "NRSV": "provided that you continue securely established and steadfast in the faith, without shifting from the hope promised by the gospel that you heard, which has been proclaimed to every creature under heaven. I, Paul, became a servant of this gospel.",
+            "Rotherham": "If, at least, ye are abiding still in the faith, founded and firm, and not to be moved away from the hope of the glad-message which ye have heard, which hath been proclaimed in all creation which is under heaven,—of which, I Paul, have become minister."
+          }
+        },
+        {
+          "num": 24,
+          "text": {
+            "NRSV": "I am now rejoicing in my sufferings for your sake, and in my flesh I am completing what is lacking in Christ’s afflictions for the sake of his body, that is, the church.",
+            "Rotherham": "Now, am I rejoicing in the sufferings on your behalf, and am filling up the things that lack of the tribulations of the Christ, in my flesh, in behalf of his body, which is the assembly,"
+          }
+        },
+        {
+          "num": 25,
+          "text": {
+            "NRSV": "I became its servant according to God’s commission that was given to me for you, to make the word of God fully known,",
+            "Rotherham": "Of which, I, have become minister—according to the administration of God which hath been given unto me to you-ward, to fill up the word of God,"
+          }
+        },
+        {
+          "num": 26,
+          "text": {
+            "NRSV": "the mystery that has been kept hidden throughout the ages and generations but has now been revealed to his saints.",
+            "Rotherham": "The sacred secret which had been hidden away from the ages and from the generations, but, now, hath been made manifest unto his saints—"
+          }
+        },
+        {
+          "num": 27,
+          "text": {
+            "NRSV": "To them God chose to make known how great among the Gentiles are the riches of the glory of this mystery, which is Christ in you, the hope of glory.",
+            "Rotherham": "Unto whom God hath been pleased to make known what is the glorious wealth of this sacred secret among the nations, which is Christ in you, the hope of the glory,—"
+          }
+        },
+        {
+          "num": 28,
+          "text": {
+            "NRSV": "It is he whom we proclaim, warning everyone and teaching everyone in all wisdom, so that we may present everyone mature in Christ.",
+            "Rotherham": "Whom we are declaring, admonishing every man, and teaching every man, in all wisdom, in order that we may present every man complete in Christ;"
+          }
+        },
+        {
+          "num": 29,
+          "text": {
+            "NRSV": "For this I toil and struggle with all the energy that he powerfully inspires within me.",
+            "Rotherham": "Unto which I am even toiling, contending according to his energy which is energising itself in me with power.  "
+          }
+        }
       ]
     },
     {
       "num": 2,
       "verses": [
-        { "num": 1, "text": "For I want you to know how much I am struggling for you, and for those in Laodicea, and for all who have not seen me face to face." },
-        { "num": 2, "text": "I want their hearts to be encouraged and united in love, so that they may have all the riches of assured understanding and have the knowledge of God’s mystery, that is, Christ himself," },
-        { "num": 3, "text": "in whom are hidden all the treasures of wisdom and knowledge." },
-        { "num": 4, "text": "I am saying this so that no one may deceive you with plausible arguments." },
-        { "num": 5, "text": "For though I am absent in body, yet I am with you in spirit, and I rejoice to see your morale and the firmness of your faith in Christ." },
-        { "num": 6, "text": "As you therefore have received Christ Jesus the Lord, continue to live your lives in him," },
-        { "num": 7, "text": "rooted and built up in him and established in the faith, just as you were taught, abounding in thanksgiving." },
-        { "num": 8, "text": "See to it that no one takes you captive through philosophy and empty deceit, according to human tradition, according to the elemental spirits of the universe, and not according to Christ." },
-        { "num": 9, "text": "For in him the whole fullness of deity dwells bodily," },
-        { "num": 10, "text": "and you have come to fullness in him, who is the head of every ruler and authority." },
-        { "num": 11, "text": "In him also you were circumcised with a spiritual circumcision, by putting off the body of the flesh in the circumcision of Christ;" },
-        { "num": 12, "text": "when you were buried with him in baptism, you were also raised with him through faith in the power of God, who raised him from the dead." },
-        { "num": 13, "text": "And when you were dead in trespasses and the uncircumcision of your flesh, God made you alive together with him, when he forgave us all our trespasses," },
-        { "num": 14, "text": "erasing the record that stood against us with its legal demands. He set this aside, nailing it to the cross." },
-        { "num": 15, "text": "He disarmed the rulers and authorities and made a public example of them, triumphing over them in it." },
-        { "num": 16, "text": "Therefore do not let anyone condemn you in matters of food and drink or of observing festivals, new moons, or sabbaths." },
-        { "num": 17, "text": "These are only a shadow of what is to come, but the substance belongs to Christ." },
-        { "num": 18, "text": "Do not let anyone disqualify you, insisting on self-abasement and worship of angels, dwelling on visions, puffed up without cause by a human way of thinking," },
-        { "num": 19, "text": "and not holding fast to the head, from whom the whole body, nourished and held together by its ligaments and sinews, grows with a growth that is from God." },
-        { "num": 20, "text": "If with Christ you died to the elemental spirits of the universe, why do you live as if you still belonged to the world? Why do you submit to regulations," },
-        { "num": 21, "text": "“Do not handle, Do not taste, Do not touch”?" },
-        { "num": 22, "text": "All these regulations refer to things that perish with use; they are simply human commands and teachings." },
-        { "num": 23, "text": "These have indeed an appearance of wisdom in promoting self-imposed piety, humility, and severe treatment of the body, but they are of no value in checking self-indulgence." }
+        {
+          "num": 1,
+          "text": {
+            "NRSV": "For I want you to know how much I am struggling for you, and for those in Laodicea, and for all who have not seen me face to face.",
+            "Rotherham": "For I desire you to know, how great a contest I am having—in behalf of you, and of those in Laodicea, and as many as have not seen my face in the flesh;"
+          }
+        },
+        {
+          "num": 2,
+          "text": {
+            "NRSV": "I want their hearts to be encouraged and united in love, so that they may have all the riches of assured understanding and have the knowledge of God’s mystery, that is, Christ himself,",
+            "Rotherham": "In order that their hearts may be encouraged, being knit together in love, even unto all the riches of the full assurance of their understanding, unto a personal knowledge of the sacred secret of God,—Christ:"
+          }
+        },
+        {
+          "num": 3,
+          "text": {
+            "NRSV": "in whom are hidden all the treasures of wisdom and knowledge.",
+            "Rotherham": "In whom are all the treasures of wisdom and knowledge hidden away. "
+          }
+        },
+        {
+          "num": 4,
+          "text": {
+            "NRSV": "I am saying this so that no one may deceive you with plausible arguments.",
+            "Rotherham": " This I say, in order that, no one, may be reasoning, you, aside with plausible discourse;"
+          }
+        },
+        {
+          "num": 5,
+          "text": {
+            "NRSV": "For though I am absent in body, yet I am with you in spirit, and I rejoice to see your morale and the firmness of your faith in Christ.",
+            "Rotherham": "For, though, indeed, in the flesh, I am absent, yet, in the spirit, with you, I am—rejoicing, and beholding your order and the solid firmness of your Christ-ward faith."
+          }
+        },
+        {
+          "num": 6,
+          "text": {
+            "NRSV": "As you therefore have received Christ Jesus the Lord, continue to live your lives in him,",
+            "Rotherham": "As therefore ye have accepted the Anointed Jesus as your Lord, in him, be walking,—"
+          }
+        },
+        {
+          "num": 7,
+          "text": {
+            "NRSV": "rooted and built up in him and established in the faith, just as you were taught, abounding in thanksgiving.",
+            "Rotherham": "Rooted, and being built up, in him, and making yourselves sure in your faith, even as ye have been taught,—surpassing therein with thanksgiving."
+          }
+        },
+        {
+          "num": 8,
+          "text": {
+            "NRSV": "See to it that no one takes you captive through philosophy and empty deceit, according to human tradition, according to the elemental spirits of the universe, and not according to Christ.",
+            "Rotherham": "Be taking heed, lest there shall be anyone leading, you, off as a spoil, through means of their philosophy, and an empty deceit,—according to the instruction of men, according to the first principles of the world,—and not according to Christ:"
+          }
+        },
+        {
+          "num": 9,
+          "text": {
+            "NRSV": "For in him the whole fullness of deity dwells bodily,",
+            "Rotherham": "Because, in him, dwelleth all the fullness of the Godhead, bodily,"
+          }
+        },
+        {
+          "num": 10,
+          "text": {
+            "NRSV": "and you have come to fullness in him, who is the head of every ruler and authority.",
+            "Rotherham": "And ye are, in him, filled full,—Who, is the head of all principality and authority,"
+          }
+        },
+        {
+          "num": 11,
+          "text": {
+            "NRSV": "In him also you were circumcised with a spiritual circumcision, by putting off the body of the flesh in the circumcision of Christ;",
+            "Rotherham": "In whom, ye have also been circumcised with a circumcision not done by hand, in the despoiling of the body of flesh, in the circumcision of the Christ,—"
+          }
+        },
+        {
+          "num": 12,
+          "text": {
+            "NRSV": "when you were buried with him in baptism, you were also raised with him through faith in the power of God, who raised him from the dead.",
+            "Rotherham": "Having been buried together with him in your immersion, wherein also ye have been raised together, through your faith in the energising of God—Who raised him from among the dead. "
+          }
+        },
+        {
+          "num": 13,
+          "text": {
+            "NRSV": "And when you were dead in trespasses and the uncircumcision of your flesh, God made you alive together with him, when he forgave us all our trespasses,",
+            "Rotherham": " And, as for you—who were, dead, by your offences and by the uncircumcision of your flesh, he hath brought you to life together with him,—having in favour forgiven us all our offences,"
+          }
+        },
+        {
+          "num": 14,
+          "text": {
+            "NRSV": "erasing the record that stood against us with its legal demands. He set this aside, nailing it to the cross.",
+            "Rotherham": "Having blotted out the handwriting against us by the decrees, which was hostile to us,—and hath taken away, the same, out of the midst, nailing it up to the cross:"
+          }
+        },
+        {
+          "num": 15,
+          "text": {
+            "NRSV": "He disarmed the rulers and authorities and made a public example of them, triumphing over them in it.",
+            "Rotherham": "Spoiling the principalities and the authorities, he made of them an open example, celebrating a triumph over them thereby. "
+          }
+        },
+        {
+          "num": 16,
+          "text": {
+            "NRSV": "Therefore do not let anyone condemn you in matters of food and drink or of observing festivals, new moons, or sabbaths.",
+            "Rotherham": " Let no one, therefore, be judging, you,—in eating and in drinking, or in respect of feast, or new moon, or sabbath,—"
+          }
+        },
+        {
+          "num": 17,
+          "text": {
+            "NRSV": "These are only a shadow of what is to come, but the substance belongs to Christ.",
+            "Rotherham": "Which are a shadow of the things to come, whereas, the body, is of the Christ."
+          }
+        },
+        {
+          "num": 18,
+          "text": {
+            "NRSV": "Do not let anyone disqualify you, insisting on self-abasement and worship of angels, dwelling on visions, puffed up without cause by a human way of thinking,",
+            "Rotherham": "Let, no one, against you, be arbitrating, however wishful,—in respect of lowliness of mind, and of a religious observance of the messengers: upon what things he hath seen, taking his stand, in vain, puffed up by his carnal mind,—"
+          }
+        },
+        {
+          "num": 19,
+          "text": {
+            "NRSV": "and not holding fast to the head, from whom the whole body, nourished and held together by its ligaments and sinews, grows with a growth that is from God.",
+            "Rotherham": "And not holding fast the head: from which, all the body, through means of its joints and uniting bands, receiving supply, and connecting itself together, groweth with the growth of God."
+          }
+        },
+        {
+          "num": 20,
+          "text": {
+            "NRSV": "If with Christ you died to the elemental spirits of the universe, why do you live as if you still belonged to the world? Why do you submit to regulations,",
+            "Rotherham": "If ye have died, together with Christ, from the first principles of the world, why, as though alive in the world, are ye submitting to decrees,—"
+          }
+        },
+        {
+          "num": 21,
+          "text": {
+            "NRSV": "“Do not handle, Do not taste, Do not touch”?",
+            "Rotherham": "Do not handle, nor taste, nor touch;—"
+          }
+        },
+        {
+          "num": 22,
+          "text": {
+            "NRSV": "All these regulations refer to things that perish with use; they are simply human commands and teachings.",
+            "Rotherham": "Which things are all for decay in the using up;—according to the commandments and teachings of men?"
+          }
+        },
+        {
+          "num": 23,
+          "text": {
+            "NRSV": "These have indeed an appearance of wisdom in promoting self-imposed piety, humility, and severe treatment of the body, but they are of no value in checking self-indulgence.",
+            "Rotherham": "The which things, indeed, though they have, an appearance, of wisdom, in self-devised religious observance, and lowliness of mind, [and] ill-treatment of body, are, in no honourable way, unto a satisfying of the flesh.  "
+          }
+        }
       ]
     },
     {
       "num": 3,
       "verses": [
-        { "num": 1, "text": "So if you have been raised with Christ, seek the things that are above, where Christ is, seated at the right hand of God." },
-        { "num": 2, "text": "Set your minds on things that are above, not on things that are on earth," },
-        { "num": 3, "text": "for you have died, and your life is hidden with Christ in God." },
-        { "num": 4, "text": "When Christ who is your life is revealed, then you also will be revealed with him in glory." },
-        { "num": 5, "text": "Put to death, therefore, whatever in you is earthly: fornication, impurity, passion, evil desire, and greed (which is idolatry)." },
-        { "num": 6, "text": "On account of these the wrath of God is coming on those who are disobedient." },
-        { "num": 7, "text": "These are the ways you also once followed, when you were living that life." },
-        { "num": 8, "text": "But now you must get rid of all such things—anger, wrath, malice, slander, and abusive language from your mouth." },
-        { "num": 9, "text": "Do not lie to one another, seeing that you have stripped off the old self with its practices" },
-        { "num": 10, "text": "and have clothed yourselves with the new self, which is being renewed in knowledge according to the image of its creator." },
-        { "num": 11, "text": "In that renewal there is no longer Greek and Jew, circumcised and uncircumcised, barbarian, Scythian, slave and free; but Christ is all and in all!" },
-        { "num": 12, "text": "As God’s chosen ones, holy and beloved, clothe yourselves with compassion, kindness, humility, meekness, and patience." },
-        { "num": 13, "text": "Bear with one another and, if anyone has a complaint against another, forgive each other; just as the Lord has forgiven you, so you also must forgive." },
-        { "num": 14, "text": "Above all, clothe yourselves with love, which binds everything together in perfect harmony." },
-        { "num": 15, "text": "And let the peace of Christ rule in your hearts, to which indeed you were called in the one body. And be thankful." },
-        { "num": 16, "text": "Let the word of Christ dwell in you richly; teach and admonish one another in all wisdom; and with gratitude in your hearts sing psalms, hymns, and spiritual songs to God." },
-        { "num": 17, "text": "And whatever you do, in word or deed, do everything in the name of the Lord Jesus, giving thanks to God the Father through him." },
-        { "num": 18, "text": "Wives, be subject to your husbands, as is fitting in the Lord." },
-        { "num": 19, "text": "Husbands, love your wives and do not be harsh with them." },
-        { "num": 20, "text": "Children, obey your parents in everything, for this is your acceptable duty in the Lord." },
-        { "num": 21, "text": "Fathers, do not provoke your children, or they may lose heart." },
-        { "num": 22, "text": "Slaves, obey your earthly masters in everything, not only while being watched and in order to please them, but wholeheartedly, fearing the Lord." },
-        { "num": 23, "text": "Whatever your task, put yourselves into it, as done for the Lord and not for your masters," },
-        { "num": 24, "text": "knowing that from the Lord you will receive the inheritance as your reward; you serve the Lord Christ." },
-        { "num": 25, "text": "For the wrongdoer will be paid back for whatever wrong has been done, and there is no partiality." }
+        {
+          "num": 1,
+          "text": {
+            "NRSV": "So if you have been raised with Christ, seek the things that are above, where Christ is, seated at the right hand of God.",
+            "Rotherham": "If, therefore, ye have been raised together with the Christ, the things on high, be seeking, where, the Christ, is—on the right hand of God, sitting;"
+          }
+        },
+        {
+          "num": 2,
+          "text": {
+            "NRSV": "Set your minds on things that are above, not on things that are on earth,",
+            "Rotherham": "The things on high, hold in esteem, not the things upon the earth:"
+          }
+        },
+        {
+          "num": 3,
+          "text": {
+            "NRSV": "for you have died, and your life is hidden with Christ in God.",
+            "Rotherham": "For ye have died, and, your life, is hid, together with the Christ, in God,—"
+          }
+        },
+        {
+          "num": 4,
+          "text": {
+            "NRSV": "When Christ who is your life is revealed, then you also will be revealed with him in glory.",
+            "Rotherham": "As soon as, the Christ, shall be made manifest—our life, then, ye also, together with him, shall be made manifest in glory; "
+          }
+        },
+        {
+          "num": 5,
+          "text": {
+            "NRSV": "Put to death, therefore, whatever in you is earthly: fornication, impurity, passion, evil desire, and greed (which is idolatry).",
+            "Rotherham": " Make dead, therefore, your members that are on the earth—as regardeth fornication, impurity, passion, base coveting, and greed, the which, is idolatry,—"
+          }
+        },
+        {
+          "num": 6,
+          "text": {
+            "NRSV": "On account of these the wrath of God is coming on those who are disobedient.",
+            "Rotherham": "On account of which things cometh the anger of God,—"
+          }
+        },
+        {
+          "num": 7,
+          "text": {
+            "NRSV": "These are the ways you also once followed, when you were living that life.",
+            "Rotherham": "Wherein, ye also, walked, at one time, when ye were living in these things; "
+          }
+        },
+        {
+          "num": 8,
+          "text": {
+            "NRSV": "But now you must get rid of all such things—anger, wrath, malice, slander, and abusive language from your mouth.",
+            "Rotherham": " But, now, do, ye also, put them all away,—anger, wrath, baseness, defamation, shameful talk out of your mouth:"
+          }
+        },
+        {
+          "num": 9,
+          "text": {
+            "NRSV": "Do not lie to one another, seeing that you have stripped off the old self with its practices",
+            "Rotherham": "Be not guilty of falsehood one to another: having stript off the old man, together with his practices,"
+          }
+        },
+        {
+          "num": 10,
+          "text": {
+            "NRSV": "and have clothed yourselves with the new self, which is being renewed in knowledge according to the image of its creator.",
+            "Rotherham": "And having put on the new—who is being moulded afresh unto personal knowledge, after the image of him that hath created him,—"
+          }
+        },
+        {
+          "num": 11,
+          "text": {
+            "NRSV": "In that renewal there is no longer Greek and Jew, circumcised and uncircumcised, barbarian, Scythian, slave and free; but Christ is all and in all!",
+            "Rotherham": "Wherein there cannot be Greek and Jew, circumcision and uncircumcision, foreigner, Scythian, bond, free,—but, all things and in all, Christ: "
+          }
+        },
+        {
+          "num": 12,
+          "text": {
+            "NRSV": "As God’s chosen ones, holy and beloved, clothe yourselves with compassion, kindness, humility, meekness, and patience.",
+            "Rotherham": " Put on, therefore, as men chosen of God, holy and beloved, tender affections of compassion, graciousness, lowliness of mind, meekness, long-suffering,"
+          }
+        },
+        {
+          "num": 13,
+          "text": {
+            "NRSV": "Bear with one another and, if anyone has a complaint against another, forgive each other; just as the Lord has forgiven you, so you also must forgive.",
+            "Rotherham": "Bearing one with another, and in favour forgiving one another—if any, against any, have a complaint,—according as, the Lord, in favour forgave you, so also ye;"
+          }
+        },
+        {
+          "num": 14,
+          "text": {
+            "NRSV": "Above all, clothe yourselves with love, which binds everything together in perfect harmony.",
+            "Rotherham": "And, over all these things, love, which is a uniting-bond of completeness;"
+          }
+        },
+        {
+          "num": 15,
+          "text": {
+            "NRSV": "And let the peace of Christ rule in your hearts, to which indeed you were called in the one body. And be thankful.",
+            "Rotherham": "And let, the peace of Christ, act as umpire in your hearts, unto which ye have been called in [one] body, and be thankful:"
+          }
+        },
+        {
+          "num": 16,
+          "text": {
+            "NRSV": "Let the word of Christ dwell in you richly; teach and admonish one another in all wisdom; and with gratitude in your hearts sing psalms, hymns, and spiritual songs to God.",
+            "Rotherham": "Let, the word of the Christ, dwell within you richly,—in all wisdom, teaching and admonishing one another, with psalms, hymns, spiritual songs, with gratitude, raising song with your hearts unto God:"
+          }
+        },
+        {
+          "num": 17,
+          "text": {
+            "NRSV": "And whatever you do, in word or deed, do everything in the name of the Lord Jesus, giving thanks to God the Father through him.",
+            "Rotherham": "And whatsoever ye may be doing, in word, or in work, all things, [do] in the name of the Lord Jesus, giving thanks unto the Divine Father through him:— "
+          }
+        },
+        {
+          "num": 18,
+          "text": {
+            "NRSV": "Wives, be subject to your husbands, as is fitting in the Lord.",
+            "Rotherham": " Ye wives! be submitting yourselves unto your husbands, as is becoming in the Lord;"
+          }
+        },
+        {
+          "num": 19,
+          "text": {
+            "NRSV": "Husbands, love your wives and do not be harsh with them.",
+            "Rotherham": "Ye husbands! be loving your wives, and be not embittered against them;"
+          }
+        },
+        {
+          "num": 20,
+          "text": {
+            "NRSV": "Children, obey your parents in everything, for this is your acceptable duty in the Lord.",
+            "Rotherham": "Ye children! be obedient unto your parents in all things, for, this, is, well pleasing, in the Lord;"
+          }
+        },
+        {
+          "num": 21,
+          "text": {
+            "NRSV": "Fathers, do not provoke your children, or they may lose heart.",
+            "Rotherham": "Ye fathers! be not irritating your children, lest they be disheartened;"
+          }
+        },
+        {
+          "num": 22,
+          "text": {
+            "NRSV": "Slaves, obey your earthly masters in everything, not only while being watched and in order to please them, but wholeheartedly, fearing the Lord.",
+            "Rotherham": "Ye servants! be obedient, in all things, unto them who, according to the flesh, are your masters,—not with eye-service, as man-pleasers, but with singleness of heart, revering the Lord,—"
+          }
+        },
+        {
+          "num": 23,
+          "text": {
+            "NRSV": "Whatever your task, put yourselves into it, as done for the Lord and not for your masters,",
+            "Rotherham": "Whatsoever ye may be doing, from the soul, be working at it, as unto the Lord, and not unto men,-"
+          }
+        },
+        {
+          "num": 24,
+          "text": {
+            "NRSV": "knowing that from the Lord you will receive the inheritance as your reward; you serve the Lord Christ.",
+            "Rotherham": "Knowing that, from the Lord, ye shall duly receive the recompense of the inheritance,—unto the Lord Christ, are ye in service;"
+          }
+        },
+        {
+          "num": 25,
+          "text": {
+            "NRSV": "For the wrongdoer will be paid back for whatever wrong has been done, and there is no partiality.",
+            "Rotherham": "For, he that acteth unrighteously, shall get back what he had unrighteously done, and there is no respect of persons;  "
+          }
+        }
       ]
     },
     {
       "num": 4,
       "verses": [
-        { "num": 1, "text": "Masters, treat your slaves justly and fairly, for you know that you also have a Master in heaven." },
-        { "num": 2, "text": "Devote yourselves to prayer, keeping alert in it with thanksgiving." },
-        { "num": 3, "text": "At the same time pray for us as well that God will open to us a door for the word, that we may declare the mystery of Christ, for which I am in prison," },
-        { "num": 4, "text": "so that I may reveal it clearly, as I should." },
-        { "num": 5, "text": "Conduct yourselves wisely toward outsiders, making the most of the time." },
-        { "num": 6, "text": "Let your speech always be gracious, seasoned with salt, so that you may know how you ought to answer everyone." },
-        { "num": 7, "text": "Tychicus will tell you all the news about me; he is a beloved brother, a faithful minister, and a fellow servant in the Lord." },
-        { "num": 8, "text": "I have sent him to you for this very purpose, so that you may know how we are and that he may encourage your hearts;" },
-        { "num": 9, "text": "he is coming with Onesimus, the faithful and beloved brother, who is one of you. They will tell you about everything here." },
-        { "num": 10, "text": "Aristarchus my fellow prisoner greets you, as does Mark the cousin of Barnabas, concerning whom you have received instructions—if he comes to you, welcome him." },
-        { "num": 11, "text": "And Jesus who is called Justus greets you. These are the only ones of the circumcision among my co-workers for the kingdom of God, and they have been a comfort to me." },
-        { "num": 12, "text": "Epaphras, who is one of you, a servant of Christ Jesus, greets you. He is always wrestling in his prayers on your behalf, so that you may stand mature and fully assured in everything that God wills." },
-        { "num": 13, "text": "For I testify for him that he has worked hard for you and for those in Laodicea and in Hierapolis." },
-        { "num": 14, "text": "Luke, the beloved physician, and Demas greet you." },
-        { "num": 15, "text": "Give my greetings to the brothers and sisters in Laodicea, and to Nympha and the church in her house." },
-        { "num": 16, "text": "And when this letter has been read among you, have it read also in the church of the Laodiceans; and see that you read also the letter from Laodicea." },
-        { "num": 17, "text": "And say to Archippus, “See that you complete the task that you have received in the Lord.”" },
-        { "num": 18, "text": "I, Paul, write this greeting with my own hand. Remember my chains. Grace be with you." }
+        {
+          "num": 1,
+          "text": {
+            "NRSV": "Masters, treat your slaves justly and fairly, for you know that you also have a Master in heaven.",
+            "Rotherham": "Ye masters! that which is just and equitable, unto your servants, be rendering, knowing that, ye also, have a Master in heaven. "
+          }
+        },
+        {
+          "num": 2,
+          "text": {
+            "NRSV": "Devote yourselves to prayer, keeping alert in it with thanksgiving.",
+            "Rotherham": " Unto prayer, be devoting yourselves, watching therein with thanksgiving:"
+          }
+        },
+        {
+          "num": 3,
+          "text": {
+            "NRSV": "At the same time pray for us as well that God will open to us a door for the word, that we may declare the mystery of Christ, for which I am in prison,",
+            "Rotherham": "Praying, at the same time, for us also,—that, God, would open unto us a door for the word, so that we may speak the sacred secret of the Christ—for the sake of which also I am in bonds,"
+          }
+        },
+        {
+          "num": 4,
+          "text": {
+            "NRSV": "so that I may reveal it clearly, as I should.",
+            "Rotherham": "That I may make it manifest as behoveth me to speak. "
+          }
+        },
+        {
+          "num": 5,
+          "text": {
+            "NRSV": "Conduct yourselves wisely toward outsiders, making the most of the time.",
+            "Rotherham": " In wisdom, be walking towards them who are without,—the opportunity, buying out for yourselves,"
+          }
+        },
+        {
+          "num": 6,
+          "text": {
+            "NRSV": "Let your speech always be gracious, seasoned with salt, so that you may know how you ought to answer everyone.",
+            "Rotherham": "Your discourse being always with benefit, with salt, seasoned,—that ye may know how it behoveth you, unto each one, to be making answer. "
+          }
+        },
+        {
+          "num": 7,
+          "text": {
+            "NRSV": "Tychicus will tell you all the news about me; he is a beloved brother, a faithful minister, and a fellow servant in the Lord.",
+            "Rotherham": " All the things which relate unto myself, shall Tychicus make known unto you—the beloved brother and faithful minister and fellow-servant in the Lord,"
+          }
+        },
+        {
+          "num": 8,
+          "text": {
+            "NRSV": "I have sent him to you for this very purpose, so that you may know how we are and that he may encourage your hearts;",
+            "Rotherham": "Whom I have sent unto you, to this very end,—that ye may get to know the things which concern us, and he may encourage you hearts:"
+          }
+        },
+        {
+          "num": 9,
+          "text": {
+            "NRSV": "he is coming with Onesimus, the faithful and beloved brother, who is one of you. They will tell you about everything here.",
+            "Rotherham": "Together with Onesimus, the faithful and beloved brother, who is from among you:—all things, unto you, will they make known, that [are taking place] here."
+          }
+        },
+        {
+          "num": 10,
+          "text": {
+            "NRSV": "Aristarchus my fellow prisoner greets you, as does Mark the cousin of Barnabas, concerning whom you have received instructions—if he comes to you, welcome him.",
+            "Rotherham": "Aristarchus, my fellow-captive, saluteth you; and Mark, the first cousin of Barnabas,—concerning whom ye have received commands—if he come unto you, give him welcome;"
+          }
+        },
+        {
+          "num": 11,
+          "text": {
+            "NRSV": "And Jesus who is called Justus greets you. These are the only ones of the circumcision among my co-workers for the kingdom of God, and they have been a comfort to me.",
+            "Rotherham": "And Jesus, he that is called Justus,—they being of the circumcision; these only, [are my] fellow-workers unto the kingdom of God, men who have been, unto me, a comfort."
+          }
+        },
+        {
+          "num": 12,
+          "text": {
+            "NRSV": "Epaphras, who is one of you, a servant of Christ Jesus, greets you. He is always wrestling in his prayers on your behalf, so that you may stand mature and fully assured in everything that God wills.",
+            "Rotherham": "Epaphras who is from among you, a servant of Christ Jesus, saluteth you,—at all times, contending in your behalf in his prayers, that ye may be caused to stand complete and fully assured in everything willed by God;"
+          }
+        },
+        {
+          "num": 13,
+          "text": {
+            "NRSV": "For I testify for him that he has worked hard for you and for those in Laodicea and in Hierapolis.",
+            "Rotherham": "For I bear him witness, that he hath great toil in behalf of you, and them in Laodicea, and them in Hierapolis."
+          }
+        },
+        {
+          "num": 14,
+          "text": {
+            "NRSV": "Luke, the beloved physician, and Demas greet you.",
+            "Rotherham": "Luke, the beloved physician, and Demas, salute you."
+          }
+        },
+        {
+          "num": 15,
+          "text": {
+            "NRSV": "Give my greetings to the brothers and sisters in Laodicea, and to Nympha and the church in her house.",
+            "Rotherham": "Salute ye the brethren, in Laodicea, also Nymphas, and the assembly, which meeteth at her house."
+          }
+        },
+        {
+          "num": 16,
+          "text": {
+            "NRSV": "And when this letter has been read among you, have it read also in the church of the Laodiceans; and see that you read also the letter from Laodicea.",
+            "Rotherham": "And, as soon as the epistle hath been read amongst you, cause that, in the assembly of Laodiceans also, it be read; and, that from Laodicea, that, ye also, read."
+          }
+        },
+        {
+          "num": 17,
+          "text": {
+            "NRSV": "And say to Archippus, “See that you complete the task that you have received in the Lord.”",
+            "Rotherham": "And say to Archippus: be taking heed unto the ministry which thou hast accepted in the Lord,—that, the same, thou fulfil."
+          }
+        },
+        {
+          "num": 18,
+          "text": {
+            "NRSV": "I, Paul, write this greeting with my own hand. Remember my chains. Grace be with you.",
+            "Rotherham": "The salutation of me Paul, with my own hand:—keep in mind my bonds. Favour be with you!   "
+          }
+        }
       ]
     }
-  ]
+  ],
+  "schema": "bible_book_multiversion_v1"
 }

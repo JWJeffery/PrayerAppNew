@@ -3,193 +3,1140 @@
     "name": "Ephesians",
     "id": "EPH",
     "version": "NRSV",
-    "copyright": "New Revised Standard Version Bible, copyright © 1989 National Council of the Churches of Christ in the United States of America. Used by permission. All rights reserved worldwide."
+    "copyright": "New Revised Standard Version Bible, copyright © 1989 National Council of the Churches of Christ in the United States of America. Used by permission. All rights reserved worldwide.",
+    "canon": "NT",
+    "defaultTranslation": "NRSV",
+    "versification": "standard_nt_chapter_verse",
+    "translations": {
+      "NRSV": {
+        "label": "New Revised Standard Version",
+        "sourceType": "existing_corpus",
+        "rights": "New Revised Standard Version Bible, copyright © 1989 National Council of the Churches of Christ in the United States of America. Used by permission. All rights reserved worldwide."
+      },
+      "Rotherham": {
+        "label": "The Emphasised Bible",
+        "sourceType": "scrollmapper_bible_databases_2025_formats_json_source_witness",
+        "rights": "Public Domain",
+        "sourceWitness": "documentation/rotherham-source-witness-intake.json"
+      }
+    }
   },
   "chapters": [
     {
       "num": 1,
       "verses": [
-        { "num": 1, "text": "Paul, an apostle of Christ Jesus by the will of God, To the saints who are in Ephesus and are faithful in Christ Jesus:" },
-        { "num": 2, "text": "Grace to you and peace from God our Father and the Lord Jesus Christ." },
-        { "num": 3, "text": "Blessed be the God and Father of our Lord Jesus Christ, who has blessed us in Christ with every spiritual blessing in the heavenly places," },
-        { "num": 4, "text": "just as he chose us in Christ before the foundation of the world to be holy and blameless before him in love." },
-        { "num": 5, "text": "He destined us for adoption as his children through Jesus Christ, according to the good pleasure of his will," },
-        { "num": 6, "text": "to the praise of his glorious grace that he freely bestowed on us in the Beloved." },
-        { "num": 7, "text": "In him we have redemption through his blood, the forgiveness of our trespasses, according to the riches of his grace" },
-        { "num": 8, "text": "that he lavished on us. With all wisdom and insight" },
-        { "num": 9, "text": "he has made known to us the mystery of his will, according to his good pleasure that he set forth in Christ," },
-        { "num": 10, "text": "as a plan for the fullness of time, to gather up all things in him, things in heaven and things on earth." },
-        { "num": 11, "text": "In Christ we have also obtained an inheritance, having been destined according to the purpose of him who accomplishes all things according to his counsel and will," },
-        { "num": 12, "text": "so that we, who were the first to set our hope on Christ, might live for the praise of his glory." },
-        { "num": 13, "text": "In him you also, when you had heard the word of truth, the gospel of your salvation, and had believed in him, were marked with the seal of the promised Holy Spirit;" },
-        { "num": 14, "text": "this is the pledge of our inheritance toward redemption as God’s own people, to the praise of his glory." },
-        { "num": 15, "text": "I have heard of your faith in the Lord Jesus and your love toward all the saints, and for this reason" },
-        { "num": 16, "text": "I do not cease to give thanks for you as I remember you in my prayers." },
-        { "num": 17, "text": "I pray that the God of our Lord Jesus Christ, the Father of glory, may give you a spirit of wisdom and revelation as you come to know him," },
-        { "num": 18, "text": "so that, with the eyes of your heart enlightened, you may know what is the hope to which he has called you, what are the riches of his glorious inheritance among the saints," },
-        { "num": 19, "text": "and what is the immeasurable greatness of his power for us who believe, according to the working of his great power." },
-        { "num": 20, "text": "God put this power to work in Christ when he raised him from the dead and seated him at his right hand in the heavenly places," },
-        { "num": 21, "text": "far above all rule and authority and power and dominion, and above every name that is named, not only in this age but also in the age to come." },
-        { "num": 22, "text": "And he has put all things under his feet and has made him the head over all things for the church," },
-        { "num": 23, "text": "which is his body, the fullness of him who fills all in all." }
+        {
+          "num": 1,
+          "text": {
+            "NRSV": "Paul, an apostle of Christ Jesus by the will of God, To the saints who are in Ephesus and are faithful in Christ Jesus:",
+            "Rotherham": "Paul, an apostle of Christ Jesus, through God’s will, unto the saints who are [in Ephesus] and faithful in Christ Jesus,—"
+          }
+        },
+        {
+          "num": 2,
+          "text": {
+            "NRSV": "Grace to you and peace from God our Father and the Lord Jesus Christ.",
+            "Rotherham": "Favour unto you, and peace, from God our Father, and Lord Jesus Christ. "
+          }
+        },
+        {
+          "num": 3,
+          "text": {
+            "NRSV": "Blessed be the God and Father of our Lord Jesus Christ, who has blessed us in Christ with every spiritual blessing in the heavenly places,",
+            "Rotherham": " Blessed, be the God and Father of our Lord Jesus Christ, who hath blessed us with every spiritual blessing, in the heavenlies, in Christ,"
+          }
+        },
+        {
+          "num": 4,
+          "text": {
+            "NRSV": "just as he chose us in Christ before the foundation of the world to be holy and blameless before him in love.",
+            "Rotherham": "According as he made choice of us, in him, before the founding of a world, that we might be holy and blameless in his presence; in love,"
+          }
+        },
+        {
+          "num": 5,
+          "text": {
+            "NRSV": "He destined us for adoption as his children through Jesus Christ, according to the good pleasure of his will,",
+            "Rotherham": "marking us out beforehand unto sonship, through Jesus Christ, for himself, according to the good pleasure of his will,"
+          }
+        },
+        {
+          "num": 6,
+          "text": {
+            "NRSV": "to the praise of his glorious grace that he freely bestowed on us in the Beloved.",
+            "Rotherham": "Unto the praise of the glory of his favour wherewith he favoured us in the Beloved One,—"
+          }
+        },
+        {
+          "num": 7,
+          "text": {
+            "NRSV": "In him we have redemption through his blood, the forgiveness of our trespasses, according to the riches of his grace",
+            "Rotherham": "In whom we have the redemption through his blood, the remission of our offences, according to the riches of his favour,"
+          }
+        },
+        {
+          "num": 8,
+          "text": {
+            "NRSV": "that he lavished on us. With all wisdom and insight",
+            "Rotherham": "which he made to superabound towards us; in all wisdom and prudence,"
+          }
+        },
+        {
+          "num": 9,
+          "text": {
+            "NRSV": "he has made known to us the mystery of his will, according to his good pleasure that he set forth in Christ,",
+            "Rotherham": "making known to us the sacred secret of his will, according to his good pleasure which he purposed in him,—"
+          }
+        },
+        {
+          "num": 10,
+          "text": {
+            "NRSV": "as a plan for the fullness of time, to gather up all things in him, things in heaven and things on earth.",
+            "Rotherham": "For an administration of the fulness of the seasons, to reunite for himself (under one head) the all things in the Christ, the things upon the heavens, and the things upon the earth, in him:"
+          }
+        },
+        {
+          "num": 11,
+          "text": {
+            "NRSV": "In Christ we have also obtained an inheritance, having been destined according to the purpose of him who accomplishes all things according to his counsel and will,",
+            "Rotherham": "In whom also we were taken as an inheritance, according to the purpose of him who energiseth all things according to the counsel of his will,"
+          }
+        },
+        {
+          "num": 12,
+          "text": {
+            "NRSV": "so that we, who were the first to set our hope on Christ, might live for the praise of his glory.",
+            "Rotherham": "That we should be for the praise of his glory—we who had hoped beforehand in the Christ,—"
+          }
+        },
+        {
+          "num": 13,
+          "text": {
+            "NRSV": "In him you also, when you had heard the word of truth, the gospel of your salvation, and had believed in him, were marked with the seal of the promised Holy Spirit;",
+            "Rotherham": "In whom, ye also—hearing the word of the truth, the glad-message of your salvation,—in whom also believing,—were sealed with the Spirit of the promise, the Holy [Spirit],"
+          }
+        },
+        {
+          "num": 14,
+          "text": {
+            "NRSV": "this is the pledge of our inheritance toward redemption as God’s own people, to the praise of his glory.",
+            "Rotherham": "Which is an earnest of our inheritance, unto the redemption of the acquisition;—unto his glorious praise. "
+          }
+        },
+        {
+          "num": 15,
+          "text": {
+            "NRSV": "I have heard of your faith in the Lord Jesus and your love toward all the saints, and for this reason",
+            "Rotherham": " For this cause, I also,—having heard of the faith on your part in the Lord Jesus, and that towards all the saints,"
+          }
+        },
+        {
+          "num": 16,
+          "text": {
+            "NRSV": "I do not cease to give thanks for you as I remember you in my prayers.",
+            "Rotherham": "Cease not giving thanks in your behalf, making mention in my prayers,"
+          }
+        },
+        {
+          "num": 17,
+          "text": {
+            "NRSV": "I pray that the God of our Lord Jesus Christ, the Father of glory, may give you a spirit of wisdom and revelation as you come to know him,",
+            "Rotherham": "That, the God of our Lord Jesus Christ, the Father of glory, would give you a Spirit of wisdom and understanding in gaining a personal knowledge of him,—"
+          }
+        },
+        {
+          "num": 18,
+          "text": {
+            "NRSV": "so that, with the eyes of your heart enlightened, you may know what is the hope to which he has called you, what are the riches of his glorious inheritance among the saints,",
+            "Rotherham": "The eyes of your heart having been enlightened, that ye may know—what is the hope of his calling, what the riches of the glory of his inheritance in the saints,"
+          }
+        },
+        {
+          "num": 19,
+          "text": {
+            "NRSV": "and what is the immeasurable greatness of his power for us who believe, according to the working of his great power.",
+            "Rotherham": "And what the surpassing greatness of his power unto us who believe,—according to the energy of the grasp of his might"
+          }
+        },
+        {
+          "num": 20,
+          "text": {
+            "NRSV": "God put this power to work in Christ when he raised him from the dead and seated him at his right hand in the heavenly places,",
+            "Rotherham": "which he energised in the Christ, when he raised him from among the dead, and seated him at his right hand in the heavenlies,"
+          }
+        },
+        {
+          "num": 21,
+          "text": {
+            "NRSV": "far above all rule and authority and power and dominion, and above every name that is named, not only in this age but also in the age to come.",
+            "Rotherham": "Over-above all principality, authority, and power, and lordship, and every name that is named, not only in this age, but also in the coming one,"
+          }
+        },
+        {
+          "num": 22,
+          "text": {
+            "NRSV": "And he has put all things under his feet and has made him the head over all things for the church,",
+            "Rotherham": "And did put, all things, in subjection beneath his feet. And gave him to be head over all things unto the assembly,"
+          }
+        },
+        {
+          "num": 23,
+          "text": {
+            "NRSV": "which is his body, the fullness of him who fills all in all.",
+            "Rotherham": "Which, indeed, is his body, the fulness of him who, the all things in all, is for himself filling up.  "
+          }
+        }
       ]
     },
     {
       "num": 2,
       "verses": [
-        { "num": 1, "text": "You were dead through the trespasses and sins" },
-        { "num": 2, "text": "in which you once lived, following the course of this world, following the ruler of the power of the air, the spirit that is now at work among those who are disobedient." },
-        { "num": 3, "text": "All of us once lived among them in the passions of our flesh, following the desires of flesh and senses, and we were by nature children of wrath, like everyone else." },
-        { "num": 4, "text": "But God, who is rich in mercy, out of the great love with which he loved us" },
-        { "num": 5, "text": "even when we were dead through our trespasses, made us alive together with Christ—by grace you have been saved—" },
-        { "num": 6, "text": "and raised us up with him and seated us with him in the heavenly places in Christ Jesus," },
-        { "num": 7, "text": "so that in the ages to come he might show the immeasurable riches of his grace in kindness toward us in Christ Jesus." },
-        { "num": 8, "text": "For by grace you have been saved through faith, and this is not your own doing; it is the gift of God—" },
-        { "num": 9, "text": "not the result of works, so that no one may boast." },
-        { "num": 10, "text": "For we are what he has made us, created in Christ Jesus for good works, which God prepared beforehand to be our way of life." },
-        { "num": 11, "text": "So then, remember that at one time you Gentiles by birth, called “the uncircumcision” by those who are called “the circumcision”—a physical circumcision made in the flesh by human hands—" },
-        { "num": 12, "text": "remember that you were at that time without Christ, being aliens from the commonwealth of Israel, and strangers to the covenants of promise, having no hope and without God in the world." },
-        { "num": 13, "text": "But now in Christ Jesus you who once were far off have been brought near by the blood of Christ." },
-        { "num": 14, "text": "For he is our peace; in his flesh he has made both groups into one and has broken down the dividing wall, that is, the hostility between us." },
-        { "num": 15, "text": "He has abolished the law with its commandments and ordinances, that he might create in himself one new humanity in place of the two, thus making peace," },
-        { "num": 16, "text": "and might reconcile both groups to God in one body through the cross, thus putting to death that hostility through it." },
-        { "num": 17, "text": "So he came and proclaimed peace to you who were far off and peace to those who were near;" },
-        { "num": 18, "text": "for through him both of us have access in one Spirit to the Father." },
-        { "num": 19, "text": "So then you are no longer strangers and aliens, but you are citizens with the saints and also members of the household of God," },
-        { "num": 20, "text": "built upon the foundation of the apostles and prophets, with Christ Jesus himself as the cornerstone." },
-        { "num": 21, "text": "In him the whole structure is joined together and grows into a holy temple in the Lord;" },
-        { "num": 22, "text": "in whom you also are built together spiritually into a dwelling place for God." }
+        {
+          "num": 1,
+          "text": {
+            "NRSV": "You were dead through the trespasses and sins",
+            "Rotherham": "[Unto] you also—being dead by your offences and sins,"
+          }
+        },
+        {
+          "num": 2,
+          "text": {
+            "NRSV": "in which you once lived, following the course of this world, following the ruler of the power of the air, the spirit that is now at work among those who are disobedient.",
+            "Rotherham": "In which at one time ye walked, according to the age of the world, according to the prince of the authority of the air, of the spirit that now energiseth in the sons of disobedience,"
+          }
+        },
+        {
+          "num": 3,
+          "text": {
+            "NRSV": "All of us once lived among them in the passions of our flesh, following the desires of flesh and senses, and we were by nature children of wrath, like everyone else.",
+            "Rotherham": "Among whom also, we all, had our behaviour, at one time, in the covetings of our flesh, doing the things desired by the flesh and the mind, and were children, by nature, of anger—even as the rest,— "
+          }
+        },
+        {
+          "num": 4,
+          "text": {
+            "NRSV": "But God, who is rich in mercy, out of the great love with which he loved us",
+            "Rotherham": " But, God, being rich in mercy, by reason of the great love wherewith he loved us,"
+          }
+        },
+        {
+          "num": 5,
+          "text": {
+            "NRSV": "even when we were dead through our trespasses, made us alive together with Christ—by grace you have been saved—",
+            "Rotherham": "Although we were dead by our offences, gave us life together with the Christ,—by favour, ye have been saved,—"
+          }
+        },
+        {
+          "num": 6,
+          "text": {
+            "NRSV": "and raised us up with him and seated us with him in the heavenly places in Christ Jesus,",
+            "Rotherham": "And raised us up together, and seated us together in the heavenlies, in Christ:"
+          }
+        },
+        {
+          "num": 7,
+          "text": {
+            "NRSV": "so that in the ages to come he might show the immeasurable riches of his grace in kindness toward us in Christ Jesus.",
+            "Rotherham": "That he might point out, in the oncoming ages, the surpassing riches of his favour in graciousness upon us, in Christ Jesus;"
+          }
+        },
+        {
+          "num": 8,
+          "text": {
+            "NRSV": "For by grace you have been saved through faith, and this is not your own doing; it is the gift of God—",
+            "Rotherham": "For, by his favour, have ye been saved, through means of faith, and this [hath come to pass] —not from you, of God, the free-gift!"
+          }
+        },
+        {
+          "num": 9,
+          "text": {
+            "NRSV": "not the result of works, so that no one may boast.",
+            "Rotherham": "Not from works, lest anyone should boast."
+          }
+        },
+        {
+          "num": 10,
+          "text": {
+            "NRSV": "For we are what he has made us, created in Christ Jesus for good works, which God prepared beforehand to be our way of life.",
+            "Rotherham": "His, in fact we are—his workmanship, created in Christ Jesus upon a footing of good works, which God prepared beforehand, that, therein, we might walk. "
+          }
+        },
+        {
+          "num": 11,
+          "text": {
+            "NRSV": "So then, remember that at one time you Gentiles by birth, called “the uncircumcision” by those who are called “the circumcision”—a physical circumcision made in the flesh by human hands—",
+            "Rotherham": " Wherefore, keep in remembrance—that, at one time, ye, the nations in flesh, who are called Uncircumcision by the so-called Circumcision in flesh, made by hand,"
+          }
+        },
+        {
+          "num": 12,
+          "text": {
+            "NRSV": "remember that you were at that time without Christ, being aliens from the commonwealth of Israel, and strangers to the covenants of promise, having no hope and without God in the world.",
+            "Rotherham": "That ye were, in that season, separate from Christ, alienated from the citizenship of Israel, and strangers from the covenants of promise, having no hope, and godless in the world;"
+          }
+        },
+        {
+          "num": 13,
+          "text": {
+            "NRSV": "But now in Christ Jesus you who once were far off have been brought near by the blood of Christ.",
+            "Rotherham": "But, just now, in Christ Jesus, ye, who at one time were afar off, were made nigh in the blood of the Christ; "
+          }
+        },
+        {
+          "num": 14,
+          "text": {
+            "NRSV": "For he is our peace; in his flesh he has made both groups into one and has broken down the dividing wall, that is, the hostility between us.",
+            "Rotherham": " He, in fact, is our peace—who made both one, and, the enclosing middle-wall, took down,"
+          }
+        },
+        {
+          "num": 15,
+          "text": {
+            "NRSV": "He has abolished the law with its commandments and ordinances, that he might create in himself one new humanity in place of the two, thus making peace,",
+            "Rotherham": "The enmity, in his flesh—the law of commandments in decrees—bringing to nought,—that, the two, he might create in himself, into one man of new mould, making peace."
+          }
+        },
+        {
+          "num": 16,
+          "text": {
+            "NRSV": "and might reconcile both groups to God in one body through the cross, thus putting to death that hostility through it.",
+            "Rotherham": "And might fully reconcile them both, in one body, through means of the cross,—slaying the enmity thereby;—"
+          }
+        },
+        {
+          "num": 17,
+          "text": {
+            "NRSV": "So he came and proclaimed peace to you who were far off and peace to those who were near;",
+            "Rotherham": "And, coming, he announced the glad-message—of peace, unto you, the far off, and peace, unto them that were nigh;"
+          }
+        },
+        {
+          "num": 18,
+          "text": {
+            "NRSV": "for through him both of us have access in one Spirit to the Father.",
+            "Rotherham": "Because, through him, we have our introduction—we both—in one Spirit, unto the Father."
+          }
+        },
+        {
+          "num": 19,
+          "text": {
+            "NRSV": "So then you are no longer strangers and aliens, but you are citizens with the saints and also members of the household of God,",
+            "Rotherham": "Hence, then—no longer, are ye strangers and sojourners, but ye are fellow-citizens of the saints, and members of the household of God,—"
+          }
+        },
+        {
+          "num": 20,
+          "text": {
+            "NRSV": "built upon the foundation of the apostles and prophets, with Christ Jesus himself as the cornerstone.",
+            "Rotherham": "Having been built up on the foundation of the apostles and prophets, there being, for chief corner stone, Jesus Christ himself,—"
+          }
+        },
+        {
+          "num": 21,
+          "text": {
+            "NRSV": "In him the whole structure is joined together and grows into a holy temple in the Lord;",
+            "Rotherham": "In whom, an entire building, in process of being fitly joined together, is growing into a holy shrine in [the] Lord;"
+          }
+        },
+        {
+          "num": 22,
+          "text": {
+            "NRSV": "in whom you also are built together spiritually into a dwelling place for God.",
+            "Rotherham": "In whom, ye also, are being builded together, into a habitation of God in Spirit.  "
+          }
+        }
       ]
     },
     {
       "num": 3,
       "verses": [
-        { "num": 1, "text": "This is the reason that I, Paul, am a prisoner for Christ Jesus for the sake of you Gentiles—" },
-        { "num": 2, "text": "for surely you have already heard of the commission of God’s grace that was given me for you," },
-        { "num": 3, "text": "and how the mystery was made known to me by revelation, as I wrote above in a few words," },
-        { "num": 4, "text": "a reading of which will enable you to perceive my understanding of the mystery of Christ." },
-        { "num": 5, "text": "In former generations this mystery was not made known to humankind, as it has now been revealed to his holy apostles and prophets by the Spirit:" },
-        { "num": 6, "text": "that is, the Gentiles have become fellow heirs, members of the same body, and sharers in the promise in Christ Jesus through the gospel." },
-        { "num": 7, "text": "Of this gospel I have become a servant according to the gift of God’s grace that was given me by the working of his power." },
-        { "num": 8, "text": "Although I am the very least of all the saints, this grace was given to me to bring to the Gentiles the news of the boundless riches of Christ," },
-        { "num": 9, "text": "and to make everyone see what is the plan of the mystery hidden for ages in God who created all things;" },
-        { "num": 10, "text": "so that through the church the wisdom of God in its rich variety might now be made known to the rulers and authorities in the heavenly places." },
-        { "num": 11, "text": "This was according to the eternal purpose that he has carried out in Christ Jesus our Lord," },
-        { "num": 12, "text": "in whom we have access to God in boldness and confidence through faith in him." },
-        { "num": 13, "text": "I pray therefore that you may not lose heart over my sufferings for you; they are your glory." },
-        { "num": 14, "text": "For this reason I bow my knees before the Father," },
-        { "num": 15, "text": "from whom every family in heaven and on earth takes its name." },
-        { "num": 16, "text": "I pray that, according to the riches of his glory, he may grant that you may be strengthened in your inner being with power through his Spirit," },
-        { "num": 17, "text": "and that Christ may dwell in your hearts through faith, as you are being rooted and grounded in love." },
-        { "num": 18, "text": "I pray that you may have the power to comprehend, with all the saints, what is the breadth and length and height and depth," },
-        { "num": 19, "text": "and to know the love of Christ that surpasses knowledge, so that you may be filled with all the fullness of God." },
-        { "num": 20, "text": "Now to him who by the power at work within us is able to accomplish abundantly far more than all we can ask or imagine," },
-        { "num": 21, "text": "to him be glory in the church and in Christ Jesus to all generations, forever and ever. Amen." }
+        {
+          "num": 1,
+          "text": {
+            "NRSV": "This is the reason that I, Paul, am a prisoner for Christ Jesus for the sake of you Gentiles—",
+            "Rotherham": "For this cause, I, Paul, the prisoner of Christ Jesus in behalf of you the nations:—"
+          }
+        },
+        {
+          "num": 2,
+          "text": {
+            "NRSV": "for surely you have already heard of the commission of God’s grace that was given me for you,",
+            "Rotherham": "If at least ye have heard of the administration of the favour of God which hath been given unto me for you,"
+          }
+        },
+        {
+          "num": 3,
+          "text": {
+            "NRSV": "and how the mystery was made known to me by revelation, as I wrote above in a few words,",
+            "Rotherham": "[How that], by way of revelation, was made known unto me the sacred secret,—even as I before wrote in brief,—"
+          }
+        },
+        {
+          "num": 4,
+          "text": {
+            "NRSV": "a reading of which will enable you to perceive my understanding of the mystery of Christ.",
+            "Rotherham": "Respecting which ye can, by reading, perceive my discernment in the sacred secret of the Christ,—"
+          }
+        },
+        {
+          "num": 5,
+          "text": {
+            "NRSV": "In former generations this mystery was not made known to humankind, as it has now been revealed to his holy apostles and prophets by the Spirit:",
+            "Rotherham": "Which, in other generations, had not been made known unto the sons of men, as it hath, now, been revealed by his holy apostles and prophets, in Spirit;—"
+          }
+        },
+        {
+          "num": 6,
+          "text": {
+            "NRSV": "that is, the Gentiles have become fellow heirs, members of the same body, and sharers in the promise in Christ Jesus through the gospel.",
+            "Rotherham": "That they who are of the nations should be joint heirs, and a joint body, and joint partakers of the promise in Christ Jesus through means of the glad-message,—"
+          }
+        },
+        {
+          "num": 7,
+          "text": {
+            "NRSV": "Of this gospel I have become a servant according to the gift of God’s grace that was given me by the working of his power.",
+            "Rotherham": "Of which I was made a minister, according to the free-gift of the favour of God which was given unto me, according to the energy of his power:"
+          }
+        },
+        {
+          "num": 8,
+          "text": {
+            "NRSV": "Although I am the very least of all the saints, this grace was given to me to bring to the Gentiles the news of the boundless riches of Christ,",
+            "Rotherham": "Unto me—the less than least of all saints, was given this favour, unto the nations, to announce the glad-message of the untraceable riches of the Christ,"
+          }
+        },
+        {
+          "num": 9,
+          "text": {
+            "NRSV": "and to make everyone see what is the plan of the mystery hidden for ages in God who created all things;",
+            "Rotherham": "And to bring to light—what is the administration of the sacred secret which had been hidden away from the ages in God, who did all things create:"
+          }
+        },
+        {
+          "num": 10,
+          "text": {
+            "NRSV": "so that through the church the wisdom of God in its rich variety might now be made known to the rulers and authorities in the heavenly places.",
+            "Rotherham": "In order that now, unto the principalities and the authorities in the heavenlies, might be made known, through means of the assembly, the manifold wisdom of God,—"
+          }
+        },
+        {
+          "num": 11,
+          "text": {
+            "NRSV": "This was according to the eternal purpose that he has carried out in Christ Jesus our Lord,",
+            "Rotherham": "According to a plan of the ages which he made in the anointed Jesus our Lord,—"
+          }
+        },
+        {
+          "num": 12,
+          "text": {
+            "NRSV": "in whom we have access to God in boldness and confidence through faith in him.",
+            "Rotherham": "In whom we have our freedom of speech and introduction with assurance, through the faith of him;—"
+          }
+        },
+        {
+          "num": 13,
+          "text": {
+            "NRSV": "I pray therefore that you may not lose heart over my sufferings for you; they are your glory.",
+            "Rotherham": "Wherefore I request, that there be no fainting in my tribulations in your behalf, the which is your glory;— "
+          }
+        },
+        {
+          "num": 14,
+          "text": {
+            "NRSV": "For this reason I bow my knees before the Father,",
+            "Rotherham": " For this cause, I bow my knees unto the Father,—"
+          }
+        },
+        {
+          "num": 15,
+          "text": {
+            "NRSV": "from whom every family in heaven and on earth takes its name.",
+            "Rotherham": "From whom every fatherhood in [the] heavens and upon the earth is named,—"
+          }
+        },
+        {
+          "num": 16,
+          "text": {
+            "NRSV": "I pray that, according to the riches of his glory, he may grant that you may be strengthened in your inner being with power through his Spirit,",
+            "Rotherham": "In order that he may give unto you—according to his glorious riches, with power, to be strengthened, through his Spirit, in the inner man,"
+          }
+        },
+        {
+          "num": 17,
+          "text": {
+            "NRSV": "and that Christ may dwell in your hearts through faith, as you are being rooted and grounded in love.",
+            "Rotherham": "That the Christ may dwell, through means of your faith, in your hearts, in love, having become rooted and founded,"
+          }
+        },
+        {
+          "num": 18,
+          "text": {
+            "NRSV": "I pray that you may have the power to comprehend, with all the saints, what is the breadth and length and height and depth,",
+            "Rotherham": "In order that ye may be mighty enough to grasp firmly, with all the saints,—what is the breadth and length and depth and height,"
+          }
+        },
+        {
+          "num": 19,
+          "text": {
+            "NRSV": "and to know the love of Christ that surpasses knowledge, so that you may be filled with all the fullness of God.",
+            "Rotherham": "To get to know, also, the knowledge-surpassing, love of the Christ,—in order that ye may be filled unto all the fulness of God:"
+          }
+        },
+        {
+          "num": 20,
+          "text": {
+            "NRSV": "Now to him who by the power at work within us is able to accomplish abundantly far more than all we can ask or imagine,",
+            "Rotherham": "Now, unto him who is able to do, above all things, exceeding abundantly above the things which we ask or conceive,—according to the power which doth energise itself within us,—"
+          }
+        },
+        {
+          "num": 21,
+          "text": {
+            "NRSV": "to him be glory in the church and in Christ Jesus to all generations, forever and ever. Amen.",
+            "Rotherham": "Unto him, be the glory, in the assembly, and in Christ Jesus—unto all the generations of the age of ages; Amen:—  "
+          }
+        }
       ]
     },
     {
       "num": 4,
       "verses": [
-        { "num": 1, "text": "I therefore, the prisoner in the Lord, beg you to lead a life worthy of the calling to which you have been called," },
-        { "num": 2, "text": "with all humility and gentleness, with patience, bearing with one another in love," },
-        { "num": 3, "text": "making every effort to maintain the unity of the Spirit in the bond of peace." },
-        { "num": 4, "text": "There is one body and one Spirit, just as you were called to the one hope of your calling," },
-        { "num": 5, "text": "one Lord, one faith, one baptism," },
-        { "num": 6, "text": "one God and Father of all, who is above all and through all and in all." },
-        { "num": 7, "text": "But each of us was given grace according to the measure of Christ’s gift." },
-        { "num": 8, "text": "Therefore it is said, “When he ascended on high he made captivity itself a captive; he gave gifts to his people.”" },
-        { "num": 9, "text": "(When it says, “He ascended,” what does it mean but that he had also descended into the lower parts of the earth?" },
-        { "num": 10, "text": "He who descended is the same one who ascended far above all the heavens, so that he might fill all things.)" },
-        { "num": 11, "text": "The gifts he gave were that some would be apostles, some prophets, some evangelists, some pastors and teachers," },
-        { "num": 12, "text": "to equip the saints for the work of ministry, for building up the body of Christ," },
-        { "num": 13, "text": "until all of us come to the unity of the faith and of the knowledge of the Son of God, to maturity, to the measure of the full stature of Christ." },
-        { "num": 14, "text": "We must no longer be children, tossed to and fro and blown about by every wind of doctrine, by people’s trickery, by their craftiness in deceitful scheming." },
-        { "num": 15, "text": "But speaking the truth in love, we must grow up in every way into him who is the head, into Christ," },
-        { "num": 16, "text": "from whom the whole body, joined and knit together by every ligament with which it is equipped, as each part is working properly, promotes the body’s growth in building itself up in love." },
-        { "num": 17, "text": "Now this I affirm and insist on in the Lord: you must no longer live as the Gentiles live, in the futility of their minds." },
-        { "num": 18, "text": "They are darkened in their understanding, alienated from the life of God because of the ignorance that is in them, due to their hardness of heart." },
-        { "num": 19, "text": "They have lost all sensitivity and have abandoned themselves to licentiousness, greedy to practice every kind of impurity." },
-        { "num": 20, "text": "That is not the way you learned Christ!" },
-        { "num": 21, "text": "For surely you have heard about him and were taught in him, as the truth is in Jesus." },
-        { "num": 22, "text": "You were taught to put away your former way of life, your old self, corrupt and deluded by its lusts," },
-        { "num": 23, "text": "and to be renewed in the spirit of your minds," },
-        { "num": 24, "text": "and to clothe yourselves with the new self, created according to the likeness of God in true righteousness and holiness." },
-        { "num": 25, "text": "So then, putting away falsehood, let all of us speak the truth to our neighbors, for we are members one of another." },
-        { "num": 26, "text": "Be angry but do not sin; do not let the sun go down on your anger," },
-        { "num": 27, "text": "and do not make room for the devil." },
-        { "num": 28, "text": "Thieves must give up stealing; rather let them labor and work honestly with their own hands, so as to have something to share with the needy." },
-        { "num": 29, "text": "Let no evil talk come out of your mouths, but only what is useful for building up, as there is need, so that your words may give grace to those who hear." },
-        { "num": 30, "text": "And do not grieve the Holy Spirit of God, with which you were marked with a seal for the day of redemption." },
-        { "num": 31, "text": "Put away from you all bitterness and wrath and anger and wrangling and slander, together with all malice," },
-        { "num": 32, "text": "and be kind to one another, tenderhearted, forgiving one another, as God in Christ has forgiven you." }
+        {
+          "num": 1,
+          "text": {
+            "NRSV": "I therefore, the prisoner in the Lord, beg you to lead a life worthy of the calling to which you have been called,",
+            "Rotherham": "I exhort you, therefore, I, the prisoner in the Lord, to walk in a manner worthy of the calling wherewith ye were called:— "
+          }
+        },
+        {
+          "num": 2,
+          "text": {
+            "NRSV": "with all humility and gentleness, with patience, bearing with one another in love,",
+            "Rotherham": " With all lowliness and meekness, with long suffering, bearing one with another in love,"
+          }
+        },
+        {
+          "num": 3,
+          "text": {
+            "NRSV": "making every effort to maintain the unity of the Spirit in the bond of peace.",
+            "Rotherham": "Giving diligence to keep—the oneness of the Spirit in the uniting-bond of peace,—"
+          }
+        },
+        {
+          "num": 4,
+          "text": {
+            "NRSV": "There is one body and one Spirit, just as you were called to the one hope of your calling,",
+            "Rotherham": "One body, and one spirit, even as ye were also called in one hope of your calling,"
+          }
+        },
+        {
+          "num": 5,
+          "text": {
+            "NRSV": "one Lord, one faith, one baptism,",
+            "Rotherham": "One Lord, one faith, one immersion,"
+          }
+        },
+        {
+          "num": 6,
+          "text": {
+            "NRSV": "one God and Father of all, who is above all and through all and in all.",
+            "Rotherham": "One God and Father of all—who is over all, and through all, and in all."
+          }
+        },
+        {
+          "num": 7,
+          "text": {
+            "NRSV": "But each of us was given grace according to the measure of Christ’s gift.",
+            "Rotherham": "To each one of you, however, hath favour been given, according to the measure of the free-gift of the Christ;"
+          }
+        },
+        {
+          "num": 8,
+          "text": {
+            "NRSV": "Therefore it is said, “When he ascended on high he made captivity itself a captive; he gave gifts to his people.”",
+            "Rotherham": "Wherefore he saith—Ascending on high, he took captivity captive, [and] gave gifts unto men."
+          }
+        },
+        {
+          "num": 9,
+          "text": {
+            "NRSV": "(When it says, “He ascended,” what does it mean but that he had also descended into the lower parts of the earth?",
+            "Rotherham": "Now this, He ascended; what is it,—save—that he also descended into the under parts of the earth?"
+          }
+        },
+        {
+          "num": 10,
+          "text": {
+            "NRSV": "He who descended is the same one who ascended far above all the heavens, so that he might fill all things.)",
+            "Rotherham": "He that descended, he, it is who also ascended over-above all the heavens, that he might fill all things;"
+          }
+        },
+        {
+          "num": 11,
+          "text": {
+            "NRSV": "The gifts he gave were that some would be apostles, some prophets, some evangelists, some pastors and teachers,",
+            "Rotherham": "And, he, gave—some, indeed, to be apostles, and some, prophets, and some, evangelists, and some, shepherds and teachers,—"
+          }
+        },
+        {
+          "num": 12,
+          "text": {
+            "NRSV": "to equip the saints for the work of ministry, for building up the body of Christ,",
+            "Rotherham": "With a view to the fitting of the saints for the work of ministering, for an upbuilding of the body of the Christ;"
+          }
+        },
+        {
+          "num": 13,
+          "text": {
+            "NRSV": "until all of us come to the unity of the faith and of the knowledge of the Son of God, to maturity, to the measure of the full stature of Christ.",
+            "Rotherham": "Until we all advance—into the oneness of the faith, and the personal knowledge of the Son of God, into a man of full-growth, into the measure of the stature of the fulness of the Christ;"
+          }
+        },
+        {
+          "num": 14,
+          "text": {
+            "NRSV": "We must no longer be children, tossed to and fro and blown about by every wind of doctrine, by people’s trickery, by their craftiness in deceitful scheming.",
+            "Rotherham": "That we may, no longer, be infants—billow-tossed and shifted round with every wind of teaching,—in the craft of men, in knavery suited to the artifice of error;"
+          }
+        },
+        {
+          "num": 15,
+          "text": {
+            "NRSV": "But speaking the truth in love, we must grow up in every way into him who is the head, into Christ,",
+            "Rotherham": "But, pursuing truth—may, in love, grow into him in all things,—who is the head, Christ,—"
+          }
+        },
+        {
+          "num": 16,
+          "text": {
+            "NRSV": "from whom the whole body, joined and knit together by every ligament with which it is equipped, as each part is working properly, promotes the body’s growth in building itself up in love.",
+            "Rotherham": "Out of whom all the body—fitly framing itself together, and connecting itself, through means of every joint of supply, by way of energising in the measure of each single part—secureth the growing of the body, unto an upbuilding of itself in love. "
+          }
+        },
+        {
+          "num": 17,
+          "text": {
+            "NRSV": "Now this I affirm and insist on in the Lord: you must no longer live as the Gentiles live, in the futility of their minds.",
+            "Rotherham": " This, therefore, am I saying and protesting in the Lord:—that, no longer, ye walk even as, the nations, walk—in the vanity of their minds,"
+          }
+        },
+        {
+          "num": 18,
+          "text": {
+            "NRSV": "They are darkened in their understanding, alienated from the life of God because of the ignorance that is in them, due to their hardness of heart.",
+            "Rotherham": "Being darkened in their understanding, alienated from the life of God—by reason of the ignorance that existeth within them, by reason of their hearts being turned into stone,"
+          }
+        },
+        {
+          "num": 19,
+          "text": {
+            "NRSV": "They have lost all sensitivity and have abandoned themselves to licentiousness, greedy to practice every kind of impurity.",
+            "Rotherham": "Who, indeed, having become past feeling, have delivered, themselves, up, with wantonness, unto making a trade of all impurity with greed."
+          }
+        },
+        {
+          "num": 20,
+          "text": {
+            "NRSV": "That is not the way you learned Christ!",
+            "Rotherham": "Ye, however, have, not thus, learned the Christ:—"
+          }
+        },
+        {
+          "num": 21,
+          "text": {
+            "NRSV": "For surely you have heard about him and were taught in him, as the truth is in Jesus.",
+            "Rotherham": "If, at least, it is, him, ye have heard, and, in him, ye have been taught—even as truth is in Jesus,—"
+          }
+        },
+        {
+          "num": 22,
+          "text": {
+            "NRSV": "You were taught to put away your former way of life, your old self, corrupt and deluded by its lusts,",
+            "Rotherham": "That ye were to strip off—as regardeth the former behaviour—the old man, who corrupteth himself according to his deceitful covetings,"
+          }
+        },
+        {
+          "num": 23,
+          "text": {
+            "NRSV": "and to be renewed in the spirit of your minds,",
+            "Rotherham": "And were to be getting young again in the spirit of your mind,"
+          }
+        },
+        {
+          "num": 24,
+          "text": {
+            "NRSV": "and to clothe yourselves with the new self, created according to the likeness of God in true righteousness and holiness.",
+            "Rotherham": "And were to put on the man of new mould, who, after God, hath been created in his truthful righteousness and loving kindness."
+          }
+        },
+        {
+          "num": 25,
+          "text": {
+            "NRSV": "So then, putting away falsehood, let all of us speak the truth to our neighbors, for we are members one of another.",
+            "Rotherham": "Wherefore, stripping off what is false, be speaking truth each one with his neighbour, because we are members one of another;"
+          }
+        },
+        {
+          "num": 26,
+          "text": {
+            "NRSV": "Be angry but do not sin; do not let the sun go down on your anger,",
+            "Rotherham": "Be ye angry, and not committing sin, let not the sun be going down upon your angry mood,"
+          }
+        },
+        {
+          "num": 27,
+          "text": {
+            "NRSV": "and do not make room for the devil.",
+            "Rotherham": "Neither be giving place unto the adversary;"
+          }
+        },
+        {
+          "num": 28,
+          "text": {
+            "NRSV": "Thieves must give up stealing; rather let them labor and work honestly with their own hands, so as to have something to share with the needy.",
+            "Rotherham": "Let, the stealer, no more, steal, but rather let him be toiling,—working with his hands the thing that is good, that he may have [wherewith] to be giving away to him that hath need;"
+          }
+        },
+        {
+          "num": 29,
+          "text": {
+            "NRSV": "Let no evil talk come out of your mouths, but only what is useful for building up, as there is need, so that your words may give grace to those who hear.",
+            "Rotherham": "Let, no putrid discourse, out of your mouth, be going forth, but if anything is good—suited to the needful upbuilding,—that it may give benefit unto them that hear;"
+          }
+        },
+        {
+          "num": 30,
+          "text": {
+            "NRSV": "And do not grieve the Holy Spirit of God, with which you were marked with a seal for the day of redemption.",
+            "Rotherham": "And be not grieving the Holy Spirit of God, wherewith ye have been sealed unto a day of redemption;"
+          }
+        },
+        {
+          "num": 31,
+          "text": {
+            "NRSV": "Put away from you all bitterness and wrath and anger and wrangling and slander, together with all malice,",
+            "Rotherham": "All bitterness, and wrath, and anger, and outcry, and profane speaking, let it be taken away from you, with all baseness;"
+          }
+        },
+        {
+          "num": 32,
+          "text": {
+            "NRSV": "and be kind to one another, tenderhearted, forgiving one another, as God in Christ has forgiven you.",
+            "Rotherham": "And be ye gracious one to another, tenderly affectionate, in favour forgiving one another—even as, God also, in Christ, hath in favour forgiven you;  "
+          }
+        }
       ]
     },
     {
       "num": 5,
       "verses": [
-        { "num": 1, "text": "Therefore be imitators of God, as beloved children," },
-        { "num": 2, "text": "and walk in love, as Christ loved us and gave himself up for us, a fragrant offering and sacrifice to God." },
-        { "num": 3, "text": "But fornication and impurity of any kind, or greed, must not even be mentioned among you, as is proper among saints." },
-        { "num": 4, "text": "Entirely out of place is obscene, silly, or vulgar talk; but instead, let there be thanksgiving." },
-        { "num": 5, "text": "Be sure of this, that no fornicator or impure person, or one who is greedy (that is, an idolater), has any inheritance in the kingdom of Christ and of God." },
-        { "num": 6, "text": "Let no one deceive you with empty words, for because of these things the wrath of God comes on those who are disobedient." },
-        { "num": 7, "text": "Therefore do not be associated with them." },
-        { "num": 8, "text": "For once you were darkness, but now in the Lord you are light. Live as children of light," },
-        { "num": 9, "text": "for the fruit of the light is found in all that is good and right and true." },
-        { "num": 10, "text": "Try to find out what is pleasing to the Lord." },
-        { "num": 11, "text": "Take no part in the unfruitful works of darkness, but instead expose them." },
-        { "num": 12, "text": "For it is shameful even to mention what such people do secretly;" },
-        { "num": 13, "text": "but everything exposed by the light becomes visible," },
-        { "num": 14, "text": "for everything that becomes visible is light. Therefore it says, “Sleeper, awake! Rise from the dead, and Christ will shine on you.”" },
-        { "num": 15, "text": "Be careful then how you live, not as unwise people but as wise," },
-        { "num": 16, "text": "making the most of the time, because the days are evil." },
-        { "num": 17, "text": "So do not be foolish, but understand what the will of the Lord is." },
-        { "num": 18, "text": "Do not get drunk with wine, for that is debauchery; but be filled with the Spirit," },
-        { "num": 19, "text": "as you sing psalms and hymns and spiritual songs among yourselves, singing and making melody to the Lord in your hearts," },
-        { "num": 20, "text": "giving thanks to God the Father at all times and for everything in the name of our Lord Jesus Christ." },
-        { "num": 21, "text": "Be subject to one another out of reverence for Christ." },
-        { "num": 22, "text": "Wives, be subject to your husbands as you are to the Lord." },
-        { "num": 23, "text": "For the husband is the head of the wife just as Christ is the head of the church, the body of which he is the Savior." },
-        { "num": 24, "text": "Just as the church is subject to Christ, so also wives ought to be, in everything, to their husbands." },
-        { "num": 25, "text": "Husbands, love your wives, just as Christ loved the church and gave himself up for her," },
-        { "num": 26, "text": "in order to make her holy by cleansing her with the washing of water by the word," },
-        { "num": 27, "text": "so as to present the church to himself in splendor, without a spot or wrinkle or anything of the kind—yes, so that she may be holy and without blemish." },
-        { "num": 28, "text": "In the same way, husbands should love their wives as they do their own bodies. He who loves his wife loves himself." },
-        { "num": 29, "text": "For no one ever hates his own body, but he nourishes and tenderly cares for it, just as Christ does for the church," },
-        { "num": 30, "text": "because we are members of his body." },
-        { "num": 31, "text": "“For this reason a man will leave his father and mother and be joined to his wife, and the two will become one flesh.”" },
-        { "num": 32, "text": "This is a great mystery, and I am applying it to Christ and the church." },
-        { "num": 33, "text": "Each of you, however, should love his wife as himself, and a wife should respect her husband." }
+        {
+          "num": 1,
+          "text": {
+            "NRSV": "Therefore be imitators of God, as beloved children,",
+            "Rotherham": "Become ye, therefore, imitators of God, as children beloved,"
+          }
+        },
+        {
+          "num": 2,
+          "text": {
+            "NRSV": "and walk in love, as Christ loved us and gave himself up for us, a fragrant offering and sacrifice to God.",
+            "Rotherham": "And walk in love—even as, the Christ also, loved you, and delivered himself up in your behalf, an offering and sacrifice unto God, for a fragrance of sweet smell. "
+          }
+        },
+        {
+          "num": 3,
+          "text": {
+            "NRSV": "But fornication and impurity of any kind, or greed, must not even be mentioned among you, as is proper among saints.",
+            "Rotherham": " But, fornication, and all impurity, or covetousness, let it not be named among you—even as becometh saints;"
+          }
+        },
+        {
+          "num": 4,
+          "text": {
+            "NRSV": "Entirely out of place is obscene, silly, or vulgar talk; but instead, let there be thanksgiving.",
+            "Rotherham": "And shamelessness and foolish talking, or jesting,—which things are beneath you,—but, rather, giving of thanks;"
+          }
+        },
+        {
+          "num": 5,
+          "text": {
+            "NRSV": "Be sure of this, that no fornicator or impure person, or one who is greedy (that is, an idolater), has any inheritance in the kingdom of Christ and of God.",
+            "Rotherham": "For, this, ye know, if ye take note—that no fornicator, or impure or greedy person, who is an idolater, hath any inheritance in the kingdom of the Christ and God."
+          }
+        },
+        {
+          "num": 6,
+          "text": {
+            "NRSV": "Let no one deceive you with empty words, for because of these things the wrath of God comes on those who are disobedient.",
+            "Rotherham": "Let no one be deceiving you with empty words; for, because of these things, is coming the anger of God upon the sons of obstinacy:"
+          }
+        },
+        {
+          "num": 7,
+          "text": {
+            "NRSV": "Therefore do not be associated with them.",
+            "Rotherham": "Do not, then, become co-partners with them;"
+          }
+        },
+        {
+          "num": 8,
+          "text": {
+            "NRSV": "For once you were darkness, but now in the Lord you are light. Live as children of light,",
+            "Rotherham": "For ye were, at one time, darkness, but, now, are ye light in the Lord,—as children of light, be walking,"
+          }
+        },
+        {
+          "num": 9,
+          "text": {
+            "NRSV": "for the fruit of the light is found in all that is good and right and true.",
+            "Rotherham": "For, the fruit of the light, is in all goodness, and righteousness, and truth,—"
+          }
+        },
+        {
+          "num": 10,
+          "text": {
+            "NRSV": "Try to find out what is pleasing to the Lord.",
+            "Rotherham": "Putting to the test what is well-pleasing unto the Lord;"
+          }
+        },
+        {
+          "num": 11,
+          "text": {
+            "NRSV": "Take no part in the unfruitful works of darkness, but instead expose them.",
+            "Rotherham": "And be not joining in fellowship in the unfruitful works of darkness, but, rather, be even administering reproof;"
+          }
+        },
+        {
+          "num": 12,
+          "text": {
+            "NRSV": "For it is shameful even to mention what such people do secretly;",
+            "Rotherham": "For, of the secret things which are brought to pass by them, it is, shameful, even to speak!"
+          }
+        },
+        {
+          "num": 13,
+          "text": {
+            "NRSV": "but everything exposed by the light becomes visible,",
+            "Rotherham": "All things, however, when reproved by the light, become manifest, for, all that of itself maketh manifest, is, light;"
+          }
+        },
+        {
+          "num": 14,
+          "text": {
+            "NRSV": "for everything that becomes visible is light. Therefore it says, “Sleeper, awake! Rise from the dead, and Christ will shine on you.”",
+            "Rotherham": "Wherefore it saith—Up! thou sleeper, and arise from among the dead, and the Christ will shine upon thee."
+          }
+        },
+        {
+          "num": 15,
+          "text": {
+            "NRSV": "Be careful then how you live, not as unwise people but as wise,",
+            "Rotherham": "Be taking heed, therefore, exactly how ye are walking,—not as unwise, but as wise,—"
+          }
+        },
+        {
+          "num": 16,
+          "text": {
+            "NRSV": "making the most of the time, because the days are evil.",
+            "Rotherham": "Buying out for yourselves the opportunity, because, the days, are evil;"
+          }
+        },
+        {
+          "num": 17,
+          "text": {
+            "NRSV": "So do not be foolish, but understand what the will of the Lord is.",
+            "Rotherham": "For this cause, do not become foolish, but have discernment as to what is the will of the Lord;"
+          }
+        },
+        {
+          "num": 18,
+          "text": {
+            "NRSV": "Do not get drunk with wine, for that is debauchery; but be filled with the Spirit,",
+            "Rotherham": "And be not getting drunk with wine, in which is dissoluteness, but be getting filled in Spirit;—"
+          }
+        },
+        {
+          "num": 19,
+          "text": {
+            "NRSV": "as you sing psalms and hymns and spiritual songs among yourselves, singing and making melody to the Lord in your hearts,",
+            "Rotherham": "Speaking to yourselves, with psalms and hymns and spiritual songs; singing, and striking the strings, with your heart unto the Lord;"
+          }
+        },
+        {
+          "num": 20,
+          "text": {
+            "NRSV": "giving thanks to God the Father at all times and for everything in the name of our Lord Jesus Christ.",
+            "Rotherham": "Giving thanks, always, for all things, in the name of our Lord Jesus Christ, unto your God and Father; "
+          }
+        },
+        {
+          "num": 21,
+          "text": {
+            "NRSV": "Be subject to one another out of reverence for Christ.",
+            "Rotherham": " Submitting yourselves one to another in reverence of Christ,—"
+          }
+        },
+        {
+          "num": 22,
+          "text": {
+            "NRSV": "Wives, be subject to your husbands as you are to the Lord.",
+            "Rotherham": "Ye wives, unto your own husbands, as unto the Lord,"
+          }
+        },
+        {
+          "num": 23,
+          "text": {
+            "NRSV": "For the husband is the head of the wife just as Christ is the head of the church, the body of which he is the Savior.",
+            "Rotherham": "Because, a husband, is the head of his wife, as, the Christ also, is the head of the assembly, he, being the saviour of the body,—"
+          }
+        },
+        {
+          "num": 24,
+          "text": {
+            "NRSV": "Just as the church is subject to Christ, so also wives ought to be, in everything, to their husbands.",
+            "Rotherham": "Nevertheless, as, the assembly, submitteth herself unto the Christ, so, the wives, unto their husbands, in everything:"
+          }
+        },
+        {
+          "num": 25,
+          "text": {
+            "NRSV": "Husbands, love your wives, just as Christ loved the church and gave himself up for her,",
+            "Rotherham": "Ye husbands, be loving your wives, even as, the Christ also, loved the assembly, and delivered, himself, up in her behalf,"
+          }
+        },
+        {
+          "num": 26,
+          "text": {
+            "NRSV": "in order to make her holy by cleansing her with the washing of water by the word,",
+            "Rotherham": "That, her, he might sanctify, having purified [her] with the bath of water, in declaration,"
+          }
+        },
+        {
+          "num": 27,
+          "text": {
+            "NRSV": "so as to present the church to himself in splendor, without a spot or wrinkle or anything of the kind—yes, so that she may be holy and without blemish.",
+            "Rotherham": "That, he, might present, unto himself, the assembly, all glorious, not having spot or wrinkle or any of such things, but that she should be holy and blameless;"
+          }
+        },
+        {
+          "num": 28,
+          "text": {
+            "NRSV": "In the same way, husbands should love their wives as they do their own bodies. He who loves his wife loves himself.",
+            "Rotherham": "So, ought the husbands [also] to be loving their own wives, as their own bodies,—he that loveth his own wife, loveth himself,"
+          }
+        },
+        {
+          "num": 29,
+          "text": {
+            "NRSV": "For no one ever hates his own body, but he nourishes and tenderly cares for it, just as Christ does for the church,",
+            "Rotherham": "No one, in fact, ever yet hated, his own flesh, but nourisheth and cherisheth it,—even as, the Christ, the assembly,"
+          }
+        },
+        {
+          "num": 30,
+          "text": {
+            "NRSV": "because we are members of his body.",
+            "Rotherham": "Because, members, are we of his body;—"
+          }
+        },
+        {
+          "num": 31,
+          "text": {
+            "NRSV": "“For this reason a man will leave his father and mother and be joined to his wife, and the two will become one flesh.”",
+            "Rotherham": "For this cause, will a man leave his father and his mother, and will cleave unto his wife, and, they two, shall become, one flesh."
+          }
+        },
+        {
+          "num": 32,
+          "text": {
+            "NRSV": "This is a great mystery, and I am applying it to Christ and the church.",
+            "Rotherham": "This sacred secret, is, great,—I, however, am speaking as to Christ and [as to] the assembly;—"
+          }
+        },
+        {
+          "num": 33,
+          "text": {
+            "NRSV": "Each of you, however, should love his wife as himself, and a wife should respect her husband.",
+            "Rotherham": "Nevertheless, ye also, do ye, individually, each man be so loving, his own wife, as himself, and, the wife, [see] that she reverence her husband.  "
+          }
+        }
       ]
     },
     {
       "num": 6,
       "verses": [
-        { "num": 1, "text": "Children, obey your parents in the Lord, for this is right." },
-        { "num": 2, "text": "“Honor your father and mother”—this is the first commandment with a promise:" },
-        { "num": 3, "text": "“so that it may be well with you and you may live long on the earth.”" },
-        { "num": 4, "text": "And, fathers, do not provoke your children to anger, but bring them up in the discipline and instruction of the Lord." },
-        { "num": 5, "text": "Slaves, obey your earthly masters with fear and trembling, in singleness of heart, as you obey Christ;" },
-        { "num": 6, "text": "not only while being watched, and in order to please them, but as slaves of Christ, doing the will of God from the heart." },
-        { "num": 7, "text": "Render service with enthusiasm, as to the Lord and not to men and women," },
-        { "num": 8, "text": "knowing that whatever good we do, we will receive the same again from the Lord, whether we are slaves or free." },
-        { "num": 9, "text": "And, masters, do the same to them. Stop threatening them, for you know that both of you have the same Master in heaven, and with him there is no partiality." },
-        { "num": 10, "text": "Finally, be strong in the Lord and in the strength of his power." },
-        { "num": 11, "text": "Put on the whole armor of God, so that you may be able to stand against the wiles of the devil." },
-        { "num": 12, "text": "For our struggle is not against enemies of blood and flesh, but against the rulers, against the authorities, against the cosmic powers of this present darkness, against the spiritual forces of evil in the heavenly places." },
-        { "num": 13, "text": "Therefore take up the whole armor of God, so that you may be able to withstand on that evil day, and having done everything, to stand firm." },
-        { "num": 14, "text": "Stand therefore, and fasten the belt of truth around your waist, and put on the breastplate of righteousness." },
-        { "num": 15, "text": "As shoes for your feet put on whatever will make you ready to proclaim the gospel of peace." },
-        { "num": 16, "text": "With all of these, take the shield of faith, with which you will be able to quench all the flaming arrows of the evil one." },
-        { "num": 17, "text": "Take the helmet of salvation, and the sword of the Spirit, which is the word of God." },
-        { "num": 18, "text": "Pray at all times in the Spirit, with all prayer and supplication. To that end keep alert and always persevere in supplication for all the saints." },
-        { "num": 19, "text": "Pray also for me, so that when I speak, a message may be given to me to make known with boldness the mystery of the gospel," },
-        { "num": 20, "text": "for which I am an ambassador in chains. Pray that I may declare it boldly, as I must speak." },
-        { "num": 21, "text": "So that you also may know how I am and what I am doing, Tychicus will tell you everything. He is a dear brother and a faithful minister in the Lord." },
-        { "num": 22, "text": "I am sending him to you for this very purpose, to let you know how we are, and to encourage your hearts." },
-        { "num": 23, "text": "Peace be to the whole community, and love with faith, from God the Father and the Lord Jesus Christ." },
-        { "num": 24, "text": "Grace be with all who have an undying love for our Lord Jesus Christ." }
+        {
+          "num": 1,
+          "text": {
+            "NRSV": "Children, obey your parents in the Lord, for this is right.",
+            "Rotherham": "Ye children, be obedient unto your parents [in the Lord], for this is right:"
+          }
+        },
+        {
+          "num": 2,
+          "text": {
+            "NRSV": "“Honor your father and mother”—this is the first commandment with a promise:",
+            "Rotherham": "Honour thy father and thy mother,—which indeed is the first commandment with promise,"
+          }
+        },
+        {
+          "num": 3,
+          "text": {
+            "NRSV": "“so that it may be well with you and you may live long on the earth.”",
+            "Rotherham": "That it may come to be, well with thee, and thou shalt be long-lived upon the land."
+          }
+        },
+        {
+          "num": 4,
+          "text": {
+            "NRSV": "And, fathers, do not provoke your children to anger, but bring them up in the discipline and instruction of the Lord.",
+            "Rotherham": "And ye fathers, be not provoking your children to anger, but be nourishing them up in the discipline and admonition of the Lord."
+          }
+        },
+        {
+          "num": 5,
+          "text": {
+            "NRSV": "Slaves, obey your earthly masters with fear and trembling, in singleness of heart, as you obey Christ;",
+            "Rotherham": "Ye servants, be obedient unto them who, after the flesh, are your masters, with fear and trembling, in singleness of your heart, as unto the Christ;"
+          }
+        },
+        {
+          "num": 6,
+          "text": {
+            "NRSV": "not only while being watched, and in order to please them, but as slaves of Christ, doing the will of God from the heart.",
+            "Rotherham": "Not by way of eye-service as man-pleasers, but as servants of Christ, doing the will of God, from the soul,"
+          }
+        },
+        {
+          "num": 7,
+          "text": {
+            "NRSV": "Render service with enthusiasm, as to the Lord and not to men and women,",
+            "Rotherham": "with good will, rendering service—as unto the Lord, and not unto men;"
+          }
+        },
+        {
+          "num": 8,
+          "text": {
+            "NRSV": "knowing that whatever good we do, we will receive the same again from the Lord, whether we are slaves or free.",
+            "Rotherham": "Knowing that, each one, whatsoever he may do that is good, the same, shall he receive back from the Lord, whether bond or free."
+          }
+        },
+        {
+          "num": 9,
+          "text": {
+            "NRSV": "And, masters, do the same to them. Stop threatening them, for you know that both of you have the same Master in heaven, and with him there is no partiality.",
+            "Rotherham": "And ye masters, the same things, be doing towards them, forbearing your threat—knowing that, both their and your Master, is in the heavens, and, respect of persons, there is none, with him. "
+          }
+        },
+        {
+          "num": 10,
+          "text": {
+            "NRSV": "Finally, be strong in the Lord and in the strength of his power.",
+            "Rotherham": " For the rest, be empowering yourselves in the Lord, and in the grasp of his might:"
+          }
+        },
+        {
+          "num": 11,
+          "text": {
+            "NRSV": "Put on the whole armor of God, so that you may be able to stand against the wiles of the devil.",
+            "Rotherham": "Put on the complete armour of God, with a view to your having power to stand against the strategies of the adversary;"
+          }
+        },
+        {
+          "num": 12,
+          "text": {
+            "NRSV": "For our struggle is not against enemies of blood and flesh, but against the rulers, against the authorities, against the cosmic powers of this present darkness, against the spiritual forces of evil in the heavenly places.",
+            "Rotherham": "Because our struggle is not against blood and flesh, but, against the principalities, against the authorities, against the world-holders, of this darkness, against the spiritual forces of wickedness in the heavenlies."
+          }
+        },
+        {
+          "num": 13,
+          "text": {
+            "NRSV": "Therefore take up the whole armor of God, so that you may be able to withstand on that evil day, and having done everything, to stand firm.",
+            "Rotherham": "For this cause, take up the complete armour of God, in order that ye may receive power to withstand in the evil day, and, all things, having accomplished, to stand!"
+          }
+        },
+        {
+          "num": 14,
+          "text": {
+            "NRSV": "Stand therefore, and fasten the belt of truth around your waist, and put on the breastplate of righteousness.",
+            "Rotherham": "Stand therefore,—having girded your loins with truth, and put on the breastplate of righteousness,"
+          }
+        },
+        {
+          "num": 15,
+          "text": {
+            "NRSV": "As shoes for your feet put on whatever will make you ready to proclaim the gospel of peace.",
+            "Rotherham": "And shod your feet with the readiness of the glad-message of peace;"
+          }
+        },
+        {
+          "num": 16,
+          "text": {
+            "NRSV": "With all of these, take the shield of faith, with which you will be able to quench all the flaming arrows of the evil one.",
+            "Rotherham": "With all, having taken up the shield of faith, wherewith ye shall have power, all the ignited darts of the wicked one, to quench;"
+          }
+        },
+        {
+          "num": 17,
+          "text": {
+            "NRSV": "Take the helmet of salvation, and the sword of the Spirit, which is the word of God.",
+            "Rotherham": "And, the helmet of salvation, welcome ye, and the sword of the spirit, which is what God hath spoken,"
+          }
+        },
+        {
+          "num": 18,
+          "text": {
+            "NRSV": "Pray at all times in the Spirit, with all prayer and supplication. To that end keep alert and always persevere in supplication for all the saints.",
+            "Rotherham": "With all prayer and supplication, praying in every season, in spirit, and, thereunto, watching, with all perseverance and supplication, for all the saints,— "
+          }
+        },
+        {
+          "num": 19,
+          "text": {
+            "NRSV": "Pray also for me, so that when I speak, a message may be given to me to make known with boldness the mystery of the gospel,",
+            "Rotherham": " And on behalf of me;—that, unto me, may be given discourse in the opening of my mouth, with freedom of utterance, to make known the sacred secret [of the glad-message]"
+          }
+        },
+        {
+          "num": 20,
+          "text": {
+            "NRSV": "for which I am an ambassador in chains. Pray that I may declare it boldly, as I must speak.",
+            "Rotherham": "In behalf of which I am conducting an embassy in chains, that, therein, I may use freedom of utterance as it is needful for me to speak."
+          }
+        },
+        {
+          "num": 21,
+          "text": {
+            "NRSV": "So that you also may know how I am and what I am doing, Tychicus will tell you everything. He is a dear brother and a faithful minister in the Lord.",
+            "Rotherham": "In order, however, that, ye also, may know the things which relate to me—what I am accomplishing,—all things, shall Tychicus make known unto you, [he] the beloved brother and faithful minister in the Lord,"
+          }
+        },
+        {
+          "num": 22,
+          "text": {
+            "NRSV": "I am sending him to you for this very purpose, to let you know how we are, and to encourage your hearts.",
+            "Rotherham": "Whom I have sent unto you for this very purpose, that ye may get to know the things concerning us, and he may encourage your hearts."
+          }
+        },
+        {
+          "num": 23,
+          "text": {
+            "NRSV": "Peace be to the whole community, and love with faith, from God the Father and the Lord Jesus Christ.",
+            "Rotherham": "Peace unto the brethren, and love with faith,—from God our Father, and Lord Jesus Christ."
+          }
+        },
+        {
+          "num": 24,
+          "text": {
+            "NRSV": "Grace be with all who have an undying love for our Lord Jesus Christ.",
+            "Rotherham": "Favour be with all them that love our Lord Jesus Christ with incorruptness.   "
+          }
+        }
       ]
     }
-  ]
+  ],
+  "schema": "bible_book_multiversion_v1"
 }

@@ -3,38 +3,205 @@
     "name": "Philemon",
     "id": "PHILEM",
     "version": "NRSV",
-    "copyright": "New Revised Standard Version Bible, copyright © 1989 National Council of the Churches of Christ in the United States of America. Used by permission. All rights reserved worldwide."
+    "copyright": "New Revised Standard Version Bible, copyright © 1989 National Council of the Churches of Christ in the United States of America. Used by permission. All rights reserved worldwide.",
+    "canon": "NT",
+    "defaultTranslation": "NRSV",
+    "versification": "standard_nt_chapter_verse",
+    "translations": {
+      "NRSV": {
+        "label": "New Revised Standard Version",
+        "sourceType": "existing_corpus",
+        "rights": "New Revised Standard Version Bible, copyright © 1989 National Council of the Churches of Christ in the United States of America. Used by permission. All rights reserved worldwide."
+      },
+      "Rotherham": {
+        "label": "The Emphasised Bible",
+        "sourceType": "scrollmapper_bible_databases_2025_formats_json_source_witness",
+        "rights": "Public Domain",
+        "sourceWitness": "documentation/rotherham-source-witness-intake.json"
+      }
+    }
   },
   "chapters": [
     {
       "num": 1,
       "verses": [
-        { "num": 1, "text": "Paul, a prisoner of Christ Jesus, and Timothy our brother, To Philemon our dear friend and co-worker," },
-        { "num": 2, "text": "to Apphia our sister, to Archippus our fellow soldier, and to the church in your house:" },
-        { "num": 3, "text": "Grace to you and peace from God our Father and the Lord Jesus Christ." },
-        { "num": 4, "text": "When I remember you in my prayers, I always thank my God" },
-        { "num": 5, "text": "because I hear of your love for all the saints and your faith toward the Lord Jesus." },
-        { "num": 6, "text": "I pray that the sharing of your faith may become effective when you perceive all the good that we may do for Christ." },
-        { "num": 7, "text": "I have indeed received much joy and encouragement from your love, because the hearts of the saints have been refreshed through you, my brother." },
-        { "num": 8, "text": "For this reason, though I am bold enough in Christ to command you to do your duty," },
-        { "num": 9, "text": "yet I would rather appeal to you on the basis of love—and I, Paul, do this as an old man, and now also as a prisoner of Christ Jesus." },
-        { "num": 10, "text": "I am appealing to you for my child, Onesimus, whose father I have become during my imprisonment." },
-        { "num": 11, "text": "Formerly he was useless to you, but now he is indeed useful both to you and to me." },
-        { "num": 12, "text": "I am sending him, that is, my own heart, back to you." },
-        { "num": 13, "text": "I wanted to keep him with me, so that he might be of service to me in your place during my imprisonment for the gospel;" },
-        { "num": 14, "text": "but I preferred to do nothing without your consent, in order that your good deed might be voluntary and not something forced." },
-        { "num": 15, "text": "Perhaps this is why he was separated from you for a while, so that you might have him back forever," },
-        { "num": 16, "text": "no longer as a slave but more than a slave, a beloved brother—especially to me but how much more to you, both in the flesh and in the Lord." },
-        { "num": 17, "text": "So if you consider me your partner, welcome him as you would welcome me." },
-        { "num": 18, "text": "If he has wronged you in any way, or owes you anything, charge that to my account." },
-        { "num": 19, "text": "I, Paul, am writing this with my own hand: I will repay it. I say nothing about your owing me even your own self." },
-        { "num": 20, "text": "Yes, brother, let me have this benefit from you in the Lord! Refresh my heart in Christ." },
-        { "num": 21, "text": "Confident of your obedience, I am writing to you, knowing that you will do even more than I say." },
-        { "num": 22, "text": "One thing more—prepare a guest room for me, for I am hoping through your prayers to be restored to you." },
-        { "num": 23, "text": "Epaphras, my fellow prisoner in Christ Jesus, sends greetings to you," },
-        { "num": 24, "text": "and so do Mark, Aristarchus, Demas, and Luke, my co-workers." },
-        { "num": 25, "text": "The grace of the Lord Jesus Christ be with your spirit." }
+        {
+          "num": 1,
+          "text": {
+            "NRSV": "Paul, a prisoner of Christ Jesus, and Timothy our brother, To Philemon our dear friend and co-worker,",
+            "Rotherham": "Paul, prisoner of Christ Jesus, and Timothy my brother,—unto Philemon the beloved, and a fellow worker of ours,"
+          }
+        },
+        {
+          "num": 2,
+          "text": {
+            "NRSV": "to Apphia our sister, to Archippus our fellow soldier, and to the church in your house:",
+            "Rotherham": "And unto Apphia our sister. And unto Archippus our fellow-soldier, and unto the assembly which meeteth, at thy house:"
+          }
+        },
+        {
+          "num": 3,
+          "text": {
+            "NRSV": "Grace to you and peace from God our Father and the Lord Jesus Christ.",
+            "Rotherham": "Favour unto you, and peace, from God our Father, and Lord Jesus Christ."
+          }
+        },
+        {
+          "num": 4,
+          "text": {
+            "NRSV": "When I remember you in my prayers, I always thank my God",
+            "Rotherham": "I am giving thanks unto my God—always, making mention, of thee, in my prayers,"
+          }
+        },
+        {
+          "num": 5,
+          "text": {
+            "NRSV": "because I hear of your love for all the saints and your faith toward the Lord Jesus.",
+            "Rotherham": "Hearing of thy love, and of the faith which thou hast towards the Lord Jesus and towards all the saints,—"
+          }
+        },
+        {
+          "num": 6,
+          "text": {
+            "NRSV": "I pray that the sharing of your faith may become effective when you perceive all the good that we may do for Christ.",
+            "Rotherham": "To the end that, the fellowship of thy faith, may become, energetic, by a personal knowledge of every good thing that is in us towards Christ;"
+          }
+        },
+        {
+          "num": 7,
+          "text": {
+            "NRSV": "I have indeed received much joy and encouragement from your love, because the hearts of the saints have been refreshed through you, my brother.",
+            "Rotherham": "For, much joy, have I had, and encouragement, by occasion of thy love, in that, the tender affections of the saints, have had rest given them by thee, brother. "
+          }
+        },
+        {
+          "num": 8,
+          "text": {
+            "NRSV": "For this reason, though I am bold enough in Christ to command you to do your duty,",
+            "Rotherham": " Wherefore, though I have, much, freedom of speech, in Christ, to be enjoining upon thee that which is befitting,"
+          }
+        },
+        {
+          "num": 9,
+          "text": {
+            "NRSV": "yet I would rather appeal to you on the basis of love—and I, Paul, do this as an old man, and now also as a prisoner of Christ Jesus.",
+            "Rotherham": "Yet, for loves sake, I rather exhort,—being, such a one, as Paul the aged, now, also, even a prisoner of Christ Jesus,—"
+          }
+        },
+        {
+          "num": 10,
+          "text": {
+            "NRSV": "I am appealing to you for my child, Onesimus, whose father I have become during my imprisonment.",
+            "Rotherham": "I exhort thee concerning my own child, whom I have begotten in my bonds,—Onesimus:"
+          }
+        },
+        {
+          "num": 11,
+          "text": {
+            "NRSV": "Formerly he was useless to you, but now he is indeed useful both to you and to me.",
+            "Rotherham": "Him who, at one time, was, unto thee, unserviceable, but, now, unto thee and unto me, serviceable;"
+          }
+        },
+        {
+          "num": 12,
+          "text": {
+            "NRSV": "I am sending him, that is, my own heart, back to you.",
+            "Rotherham": "Whom I have sent back unto thee—him, that is, my own, tender affections!—"
+          }
+        },
+        {
+          "num": 13,
+          "text": {
+            "NRSV": "I wanted to keep him with me, so that he might be of service to me in your place during my imprisonment for the gospel;",
+            "Rotherham": "Whom, I, was minded, with myself, to detain, that, in thy behalf, unto me, he might be ministering in the bonds of the joyful message;"
+          }
+        },
+        {
+          "num": 14,
+          "text": {
+            "NRSV": "but I preferred to do nothing without your consent, in order that your good deed might be voluntary and not something forced.",
+            "Rotherham": "But, apart from thy mind, I wished to do, nothing, that, not as by necessity, thy goodness should be, but, by choice."
+          }
+        },
+        {
+          "num": 15,
+          "text": {
+            "NRSV": "Perhaps this is why he was separated from you for a while, so that you might have him back forever,",
+            "Rotherham": "For, peradventure, for this cause, was he separated for an hour, that, as an age-abiding possession, thou mightest have him back,—"
+          }
+        },
+        {
+          "num": 16,
+          "text": {
+            "NRSV": "no longer as a slave but more than a slave, a beloved brother—especially to me but how much more to you, both in the flesh and in the Lord.",
+            "Rotherham": "No longer as a servant, but above a servant—a brother beloved, very greatly to me, but, how much rather, to thee—both in the flesh and in the Lord!"
+          }
+        },
+        {
+          "num": 17,
+          "text": {
+            "NRSV": "So if you consider me your partner, welcome him as you would welcome me.",
+            "Rotherham": "If, therefore, thou holdest me as one in thy fellowship, take him unto thee, as myself;"
+          }
+        },
+        {
+          "num": 18,
+          "text": {
+            "NRSV": "If he has wronged you in any way, or owes you anything, charge that to my account.",
+            "Rotherham": "And, if he hath wronged thee at all or oweth thee aught, the same, unto me, do thou reckon:—"
+          }
+        },
+        {
+          "num": 19,
+          "text": {
+            "NRSV": "I, Paul, am writing this with my own hand: I will repay it. I say nothing about your owing me even your own self.",
+            "Rotherham": "I, Paul, have written [it] with, my own, hand,—I, will repay [it] ; that I may not tell thee—that, thyself, unto me, thou still owest."
+          }
+        },
+        {
+          "num": 20,
+          "text": {
+            "NRSV": "Yes, brother, let me have this benefit from you in the Lord! Refresh my heart in Christ.",
+            "Rotherham": "Yea! brother, I, would, from thee, have help, in the Lord: give rest unto my tender affections in Christ."
+          }
+        },
+        {
+          "num": 21,
+          "text": {
+            "NRSV": "Confident of your obedience, I am writing to you, knowing that you will do even more than I say.",
+            "Rotherham": "Confident of thine obedience, I have written unto thee, knowing that, even beyond what I say, thou wilt do:—"
+          }
+        },
+        {
+          "num": 22,
+          "text": {
+            "NRSV": "One thing more—prepare a guest room for me, for I am hoping through your prayers to be restored to you.",
+            "Rotherham": "At the same time, moreover, be also getting ready for me, a lodging; for I am hoping that, through your prayers, I shall be granted as a favour unto you."
+          }
+        },
+        {
+          "num": 23,
+          "text": {
+            "NRSV": "Epaphras, my fellow prisoner in Christ Jesus, sends greetings to you,",
+            "Rotherham": "There salute thee—Epaphras my fellow-captive in Christ Jesus,"
+          }
+        },
+        {
+          "num": 24,
+          "text": {
+            "NRSV": "and so do Mark, Aristarchus, Demas, and Luke, my co-workers.",
+            "Rotherham": "Mark, Aristarchus, Demas, Luke,—my fellow-workers."
+          }
+        },
+        {
+          "num": 25,
+          "text": {
+            "NRSV": "The grace of the Lord Jesus Christ be with your spirit.",
+            "Rotherham": "The favour of the Lord Jesus Christ, be with your spirit.   "
+          }
+        }
       ]
     }
-  ]
+  ],
+  "schema": "bible_book_multiversion_v1"
 }

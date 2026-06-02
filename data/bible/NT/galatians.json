@@ -3,187 +3,1098 @@
     "name": "Galatians",
     "id": "GAL",
     "version": "NRSV",
-    "copyright": "New Revised Standard Version Bible, copyright © 1989 National Council of the Churches of Christ in the United States of America. Used by permission. All rights reserved worldwide."
+    "copyright": "New Revised Standard Version Bible, copyright © 1989 National Council of the Churches of Christ in the United States of America. Used by permission. All rights reserved worldwide.",
+    "canon": "NT",
+    "defaultTranslation": "NRSV",
+    "versification": "standard_nt_chapter_verse",
+    "translations": {
+      "NRSV": {
+        "label": "New Revised Standard Version",
+        "sourceType": "existing_corpus",
+        "rights": "New Revised Standard Version Bible, copyright © 1989 National Council of the Churches of Christ in the United States of America. Used by permission. All rights reserved worldwide."
+      },
+      "Rotherham": {
+        "label": "The Emphasised Bible",
+        "sourceType": "scrollmapper_bible_databases_2025_formats_json_source_witness",
+        "rights": "Public Domain",
+        "sourceWitness": "documentation/rotherham-source-witness-intake.json"
+      }
+    }
   },
   "chapters": [
     {
       "num": 1,
       "verses": [
-        { "num": 1, "text": "Paul an apostle—sent neither by human commission nor from human authorities, but through Jesus Christ and God the Father, who raised him from the dead—" },
-        { "num": 2, "text": "and all the members of God’s family who are with me, To the churches of Galatia:" },
-        { "num": 3, "text": "Grace to you and peace from God our Father and the Lord Jesus Christ," },
-        { "num": 4, "text": "who gave himself for our sins to set us free from the present evil age, according to the will of our God and Father," },
-        { "num": 5, "text": "to whom be the glory forever and ever. Amen." },
-        { "num": 6, "text": "I am astonished that you are so quickly deserting the one who called you in the grace of Christ and are turning to a different gospel—" },
-        { "num": 7, "text": "not that there is another gospel, but there are some who are confusing you and want to pervert the gospel of Christ." },
-        { "num": 8, "text": "But even if we or an angel from heaven should proclaim to you a gospel contrary to what we proclaimed to you, let that one be accursed!" },
-        { "num": 9, "text": "As we have said before, so now I repeat, if anyone proclaims to you a gospel contrary to what you received, let that one be accursed!" },
-        { "num": 10, "text": "Am I now seeking human approval, or God’s approval? Or am I trying to please people? If I were still pleasing people, I would not be a servant of Christ." },
-        { "num": 11, "text": "For I want you to know, brothers and sisters, that the gospel that was proclaimed by me is not of human origin;" },
-        { "num": 12, "text": "for I did not receive it from a human source, nor was I taught it, but I received it through a revelation of Jesus Christ." },
-        { "num": 13, "text": "You have heard, no doubt, of my earlier life in Judaism. I was violently persecuting the church of God and was trying to destroy it." },
-        { "num": 14, "text": "I advanced in Judaism beyond many among my people of the same age, for I was far more zealous for the traditions of my ancestors." },
-        { "num": 15, "text": "But when God, who had set me apart before I was born and called me through his grace, was pleased" },
-        { "num": 16, "text": "to reveal his Son to me, so that I might proclaim him among the Gentiles, I did not confer with any human being," },
-        { "num": 17, "text": "nor did I go up to Jerusalem to those who were already apostles before me, but I went away at once into Arabia, and afterwards I returned to Damascus." },
-        { "num": 18, "text": "Then after three years I did go up to Jerusalem to visit Cephas and stayed with him fifteen days;" },
-        { "num": 19, "text": "but I did not see any other apostle except James the Lord’s brother." },
-        { "num": 20, "text": "In what I am writing to you, before God, I do not lie!" },
-        { "num": 21, "text": "Then I went into the regions of Syria and Cilicia," },
-        { "num": 22, "text": "and I was still unknown by sight to the churches of Judea that are in Christ;" },
-        { "num": 23, "text": "they only heard it said, “The one who formerly was persecuting us is now proclaiming the faith he once tried to destroy.”" },
-        { "num": 24, "text": "And they glorified God because of me." }
+        {
+          "num": 1,
+          "text": {
+            "NRSV": "Paul an apostle—sent neither by human commission nor from human authorities, but through Jesus Christ and God the Father, who raised him from the dead—",
+            "Rotherham": "Paul, an apostle,—not from men, nor through man, but through Jesus Christ, and God the Father who raised him from among the dead,"
+          }
+        },
+        {
+          "num": 2,
+          "text": {
+            "NRSV": "and all the members of God’s family who are with me, To the churches of Galatia:",
+            "Rotherham": "And all the brethren with me;—unto the assemblies of Galatia:"
+          }
+        },
+        {
+          "num": 3,
+          "text": {
+            "NRSV": "Grace to you and peace from God our Father and the Lord Jesus Christ,",
+            "Rotherham": "Favour unto you and peace, from God our Father, and Lord Jesus Christ,—"
+          }
+        },
+        {
+          "num": 4,
+          "text": {
+            "NRSV": "who gave himself for our sins to set us free from the present evil age, according to the will of our God and Father,",
+            "Rotherham": "Who gave himself for our sins, that he might deliver us out of the present evil age, according to the will of our God and Father,—"
+          }
+        },
+        {
+          "num": 5,
+          "text": {
+            "NRSV": "to whom be the glory forever and ever. Amen.",
+            "Rotherham": "Unto whom be the glory unto the ages of ages: Amen! "
+          }
+        },
+        {
+          "num": 6,
+          "text": {
+            "NRSV": "I am astonished that you are so quickly deserting the one who called you in the grace of Christ and are turning to a different gospel—",
+            "Rotherham": " I marvel that, thus quickly, ye are moving away from him that called you in the favour of Christ, unto a different glad-message,—"
+          }
+        },
+        {
+          "num": 7,
+          "text": {
+            "NRSV": "not that there is another gospel, but there are some who are confusing you and want to pervert the gospel of Christ.",
+            "Rotherham": "Which is not, another, only there are, some, that are troubling you, and wishing to change the glad-message of the Christ."
+          }
+        },
+        {
+          "num": 8,
+          "text": {
+            "NRSV": "But even if we or an angel from heaven should proclaim to you a gospel contrary to what we proclaimed to you, let that one be accursed!",
+            "Rotherham": "But, even if, we, or, a messenger out of heaven, announce a glad-message [unto you] aside from that which we announced unto you, accursed, let him be!"
+          }
+        },
+        {
+          "num": 9,
+          "text": {
+            "NRSV": "As we have said before, so now I repeat, if anyone proclaims to you a gospel contrary to what you received, let that one be accursed!",
+            "Rotherham": "As we have said before, even now, again, I say: If anyone is announcing unto you a glad-message aside from that which ye accepted, accursed, let him be! "
+          }
+        },
+        {
+          "num": 10,
+          "text": {
+            "NRSV": "Am I now seeking human approval, or God’s approval? Or am I trying to please people? If I were still pleasing people, I would not be a servant of Christ.",
+            "Rotherham": " For am I, even now, persuading, men, or God? Or am I seeking to please, men? If I had been still pleasing, men, Christ’s servant, had I not been!"
+          }
+        },
+        {
+          "num": 11,
+          "text": {
+            "NRSV": "For I want you to know, brothers and sisters, that the gospel that was proclaimed by me is not of human origin;",
+            "Rotherham": "For I make known unto you, brethren, as to the glad-message which was announced by me, that it is not after man;"
+          }
+        },
+        {
+          "num": 12,
+          "text": {
+            "NRSV": "for I did not receive it from a human source, nor was I taught it, but I received it through a revelation of Jesus Christ.",
+            "Rotherham": "For neither, from man, did I accept it, nor was taught [it],—but through a revealing of Jesus Christ."
+          }
+        },
+        {
+          "num": 13,
+          "text": {
+            "NRSV": "You have heard, no doubt, of my earlier life in Judaism. I was violently persecuting the church of God and was trying to destroy it.",
+            "Rotherham": "For ye have heard, as to my own manner of life, at one time, in Judaism, how that, exceedingly, was I persecuting the assembly of God, and laying it waste,"
+          }
+        },
+        {
+          "num": 14,
+          "text": {
+            "NRSV": "I advanced in Judaism beyond many among my people of the same age, for I was far more zealous for the traditions of my ancestors.",
+            "Rotherham": "And was making advancement, in Judaism, above many contemporaries in my nation, being, surpassingly zealous, of my paternal instructions."
+          }
+        },
+        {
+          "num": 15,
+          "text": {
+            "NRSV": "But when God, who had set me apart before I was born and called me through his grace, was pleased",
+            "Rotherham": "But, when God, who set me apart from my mother’s womb and called me through his favour, was well-pleased"
+          }
+        },
+        {
+          "num": 16,
+          "text": {
+            "NRSV": "to reveal his Son to me, so that I might proclaim him among the Gentiles, I did not confer with any human being,",
+            "Rotherham": "to reveal his Son in me, that I might announce the glad-message regarding him among the nations, straightway, I conferred not with flesh and blood,"
+          }
+        },
+        {
+          "num": 17,
+          "text": {
+            "NRSV": "nor did I go up to Jerusalem to those who were already apostles before me, but I went away at once into Arabia, and afterwards I returned to Damascus.",
+            "Rotherham": "Neither went I up unto Jerusalem unto them who, before me, were apostles,—but I went away into Arabia, and again returned unto Damascus."
+          }
+        },
+        {
+          "num": 18,
+          "text": {
+            "NRSV": "Then after three years I did go up to Jerusalem to visit Cephas and stayed with him fifteen days;",
+            "Rotherham": "Then, after three years, went I up unto Jerusalem, to become acquainted with Cephas, and tarried with him fifteen days;"
+          }
+        },
+        {
+          "num": 19,
+          "text": {
+            "NRSV": "but I did not see any other apostle except James the Lord’s brother.",
+            "Rotherham": "But, other of the apostles, saw I none, save James the brother of the Lord:—"
+          }
+        },
+        {
+          "num": 20,
+          "text": {
+            "NRSV": "In what I am writing to you, before God, I do not lie!",
+            "Rotherham": "Now, as touching the things which I am writing to you, lo! before God, I am not guilty of falsehood:—"
+          }
+        },
+        {
+          "num": 21,
+          "text": {
+            "NRSV": "Then I went into the regions of Syria and Cilicia,",
+            "Rotherham": "After that, I went into the regions of Syria and Cilicia,"
+          }
+        },
+        {
+          "num": 22,
+          "text": {
+            "NRSV": "and I was still unknown by sight to the churches of Judea that are in Christ;",
+            "Rotherham": "And was still unknown, by face, unto the assemblies of Judaea which were in Christ,—"
+          }
+        },
+        {
+          "num": 23,
+          "text": {
+            "NRSV": "they only heard it said, “The one who formerly was persecuting us is now proclaiming the faith he once tried to destroy.”",
+            "Rotherham": "Only they were hearing—He that was persecuting us formerly, now, is announcing the glad-message of the faith which he formerly laid waste;"
+          }
+        },
+        {
+          "num": 24,
+          "text": {
+            "NRSV": "And they glorified God because of me.",
+            "Rotherham": "And they were glorifying, God, in me.  "
+          }
+        }
       ]
     },
     {
       "num": 2,
       "verses": [
-        { "num": 1, "text": "Then after fourteen years I went up again to Jerusalem with Barnabas, taking Titus along with me." },
-        { "num": 2, "text": "I went up in response to a revelation. Then I laid before them (though only in a private meeting with the acknowledged leaders) the gospel that I proclaim among the Gentiles, in order to make sure that I was not running, or had not run, in vain." },
-        { "num": 3, "text": "But even Titus, who was with me, was not compelled to be circumcised, though he was a Greek." },
-        { "num": 4, "text": "But because of false believers secretly brought in, who slipped in to spy on the freedom we have in Christ Jesus, so that they might enslave us—" },
-        { "num": 5, "text": "we did not submit to them even for a moment, so that the truth of the gospel might always remain with you." },
-        { "num": 6, "text": "And from those who were supposed to be acknowledged leaders (what they actually were makes no difference to me; God shows no partiality)—those leaders contributed nothing to me." },
-        { "num": 7, "text": "On the contrary, when they saw that I had been entrusted with the gospel for the uncircumcised, just as Peter had been entrusted with the gospel for the circumcised" },
-        { "num": 8, "text": "(for he who worked through Peter making him an apostle to the circumcised also worked through me in sending me to the Gentiles)," },
-        { "num": 9, "text": "and when James and Cephas and John, who were acknowledged pillars, recognized the grace that had been given to me, they gave to Barnabas and me the right hand of fellowship, agreeing that we should go to the Gentiles and they to the circumcised." },
-        { "num": 10, "text": "They asked only one thing, that we remember the poor, which was actually what I was eager to do." },
-        { "num": 11, "text": "But when Cephas came to Antioch, I opposed him to his face, because he stood self-condemned;" },
-        { "num": 12, "text": "for until certain people came from James, he used to eat with the Gentiles. But after they came, he drew back and kept himself separate for fear of the circumcision faction." },
-        { "num": 13, "text": "And the other Jews joined him in this hypocrisy, so that even Barnabas was led astray by their hypocrisy." },
-        { "num": 14, "text": "But when I saw that they were not acting consistently with the truth of the gospel, I said to Cephas before them all, “If you, though a Jew, live like a Gentile and not like a Jew, how can you compel the Gentiles to live like Jews?”" },
-        { "num": 15, "text": "We ourselves are Jews by birth and not Gentile sinners;" },
-        { "num": 16, "text": "yet we know that a person is justified not by the works of the law but through faith in Jesus Christ. And we have come to believe in Christ Jesus, so that we might be justified by faith in Christ, and not by doing the works of the law, because no one will be justified by the works of the law." },
-        { "num": 17, "text": "But if, in our effort to be justified in Christ, we ourselves have been found to be sinners, is Christ then a servant of sin? Certainly not!" },
-        { "num": 18, "text": "But if I build up again the very things that I once tore down, then I demonstrate that I am a transgressor." },
-        { "num": 19, "text": "For through the law I died to the law, so that I might live to God. I have been crucified with Christ;" },
-        { "num": 20, "text": "and it is no longer I who live, but it is Christ who lives in me. And the life I now live in the flesh I live by faith in the Son of God, who loved me and gave himself for me." },
-        { "num": 21, "text": "I do not nullify the grace of God; for if justification comes through the law, then Christ died for nothing." }
+        {
+          "num": 1,
+          "text": {
+            "NRSV": "Then after fourteen years I went up again to Jerusalem with Barnabas, taking Titus along with me.",
+            "Rotherham": "After that, fourteen years later, I, again, went up unto Jerusalem, with Barnabas, taking with me Titus also;"
+          }
+        },
+        {
+          "num": 2,
+          "text": {
+            "NRSV": "I went up in response to a revelation. Then I laid before them (though only in a private meeting with the acknowledged leaders) the gospel that I proclaim among the Gentiles, in order to make sure that I was not running, or had not run, in vain.",
+            "Rotherham": "And I went up by revelation, and laid before them the glad-message which I proclaim among the nations; privately, however, to them of repute,—lest, by any means, in vain, I should be running, or had run."
+          }
+        },
+        {
+          "num": 3,
+          "text": {
+            "NRSV": "But even Titus, who was with me, was not compelled to be circumcised, though he was a Greek.",
+            "Rotherham": "But, not even Titus, who was with me, though he was a Greek, was compelled to be circumcised;—"
+          }
+        },
+        {
+          "num": 4,
+          "text": {
+            "NRSV": "But because of false believers secretly brought in, who slipped in to spy on the freedom we have in Christ Jesus, so that they might enslave us—",
+            "Rotherham": "But, [this was] because of the false brethren secretly introduced,—who, indeed, came in secretly to spy out our freedom, which we have in Christ Jesus, that they might bring us into bondage:—"
+          }
+        },
+        {
+          "num": 5,
+          "text": {
+            "NRSV": "we did not submit to them even for a moment, so that the truth of the gospel might always remain with you.",
+            "Rotherham": "Unto whom, not even for an hour, gave we place by the [required] submission,—in order that, the truth of the glad-message, might still abide with you."
+          }
+        },
+        {
+          "num": 6,
+          "text": {
+            "NRSV": "And from those who were supposed to be acknowledged leaders (what they actually were makes no difference to me; God shows no partiality)—those leaders contributed nothing to me.",
+            "Rotherham": "Moreover, from them who were reputed to be something,—whatsoever at one time, they were, maketh no difference to me, God accepteth not a man’s person,—unto me, in fact, they who were of repute added nothing further;"
+          }
+        },
+        {
+          "num": 7,
+          "text": {
+            "NRSV": "On the contrary, when they saw that I had been entrusted with the gospel for the uncircumcised, just as Peter had been entrusted with the gospel for the circumcised",
+            "Rotherham": "But, on the contrary,—when they saw that I had been entrusted with the glad-message to the uncircumcision, even as, Peter, [with that] to the circumcision,"
+          }
+        },
+        {
+          "num": 8,
+          "text": {
+            "NRSV": "(for he who worked through Peter making him an apostle to the circumcised also worked through me in sending me to the Gentiles),",
+            "Rotherham": "For, he that energised in Peter, into an apostleship to the circumcision, energised also in me, for the nations,—"
+          }
+        },
+        {
+          "num": 9,
+          "text": {
+            "NRSV": "and when James and Cephas and John, who were acknowledged pillars, recognized the grace that had been given to me, they gave to Barnabas and me the right hand of fellowship, agreeing that we should go to the Gentiles and they to the circumcised.",
+            "Rotherham": "And when they perceived the favour which had been given unto me, James and Cephas and John, who were reputed to be pillars, gave, the right hand of fellowship, unto me and Barnabas, in order that, we, [should go] unto the nations, and, they, unto the circumcision:—"
+          }
+        },
+        {
+          "num": 10,
+          "text": {
+            "NRSV": "They asked only one thing, that we remember the poor, which was actually what I was eager to do.",
+            "Rotherham": "Only that we should remember, the destitute,—as to which I had given diligence, this very thing, to do. "
+          }
+        },
+        {
+          "num": 11,
+          "text": {
+            "NRSV": "But when Cephas came to Antioch, I opposed him to his face, because he stood self-condemned;",
+            "Rotherham": " But, when Cephas came unto Antioch, to the face, [even], him, I resisted, because he stood condemned;"
+          }
+        },
+        {
+          "num": 12,
+          "text": {
+            "NRSV": "for until certain people came from James, he used to eat with the Gentiles. But after they came, he drew back and kept himself separate for fear of the circumcision faction.",
+            "Rotherham": "For, before that certain came from James, with them of the nations, used he to eat; whereas, when they came, he used to withdraw, and keep himself separate, fearing them of the circumcision;"
+          }
+        },
+        {
+          "num": 13,
+          "text": {
+            "NRSV": "And the other Jews joined him in this hypocrisy, so that even Barnabas was led astray by their hypocrisy.",
+            "Rotherham": "And the rest of the Jews [also] used hypocrisy with him, so that, even Barnabas, was carried away by their hypocrisy."
+          }
+        },
+        {
+          "num": 14,
+          "text": {
+            "NRSV": "But when I saw that they were not acting consistently with the truth of the gospel, I said to Cephas before them all, “If you, though a Jew, live like a Gentile and not like a Jew, how can you compel the Gentiles to live like Jews?”",
+            "Rotherham": "But, when I saw that they were not walking with straightforwardness as regardeth the truth of the glad-message, I said unto Cephas, before all: If, thou, although, a Jew, like them of the nations, and not like the Jews, dost live, how dost thou compel, them of the nations, to live like Jews?"
+          }
+        },
+        {
+          "num": 15,
+          "text": {
+            "NRSV": "We ourselves are Jews by birth and not Gentile sinners;",
+            "Rotherham": "We, by nature Jews, and not sinners from among the nations,"
+          }
+        },
+        {
+          "num": 16,
+          "text": {
+            "NRSV": "yet we know that a person is justified not by the works of the law but through faith in Jesus Christ. And we have come to believe in Christ Jesus, so that we might be justified by faith in Christ, and not by doing the works of the law, because no one will be justified by the works of the law.",
+            "Rotherham": "Knowing, however, that a man is not declared righteous by works of law, [nor at all] save through faith in Christ Jesus; even we, on Christ Jesus, believed, that we might be declared righteous—by faith in Christ, and not by works of law; because, by works of law, shall no flesh be declared righteous."
+          }
+        },
+        {
+          "num": 17,
+          "text": {
+            "NRSV": "But if, in our effort to be justified in Christ, we ourselves have been found to be sinners, is Christ then a servant of sin? Certainly not!",
+            "Rotherham": "Now, if in seeking to be declared righteous in Christ we, ourselves also, were found sinners,—is Christ, therefore, a minister, of sin? Far be it!"
+          }
+        },
+        {
+          "num": 18,
+          "text": {
+            "NRSV": "But if I build up again the very things that I once tore down, then I demonstrate that I am a transgressor.",
+            "Rotherham": "For, if, the things that I pulled down, these, again, I build, a transgressor, I prove, myself, to be."
+          }
+        },
+        {
+          "num": 19,
+          "text": {
+            "NRSV": "For through the law I died to the law, so that I might live to God. I have been crucified with Christ;",
+            "Rotherham": "For, I, through means of law, unto law, died, that, unto God, I might live:—"
+          }
+        },
+        {
+          "num": 20,
+          "text": {
+            "NRSV": "and it is no longer I who live, but it is Christ who lives in me. And the life I now live in the flesh I live by faith in the Son of God, who loved me and gave himself for me.",
+            "Rotherham": "With Christ, have I been crucified; and, living no longer, am, I, but, living in me, is, Christ,—while, so far as I now do live in flesh, by faith, I live—The faith in the Son of God, who loved me, and gave himself up in my behalf."
+          }
+        },
+        {
+          "num": 21,
+          "text": {
+            "NRSV": "I do not nullify the grace of God; for if justification comes through the law, then Christ died for nothing.",
+            "Rotherham": "I do not set aside the favour of God; for, if, through law, is righteousness, then, Christ, without cause, died.  "
+          }
+        }
       ]
     },
     {
       "num": 3,
       "verses": [
-        { "num": 1, "text": "You foolish Galatians! Who has bewitched you? It was before your eyes that Jesus Christ was publicly exhibited as crucified!" },
-        { "num": 2, "text": "The only thing I want to learn from you is this: Did you receive the Spirit by doing the works of the law or by believing what you heard?" },
-        { "num": 3, "text": "Are you so foolish? Having started with the Spirit, are you now ending with the flesh?" },
-        { "num": 4, "text": "Did you experience so much for nothing?—if it really was for nothing." },
-        { "num": 5, "text": "Well then, does God supply you with the Spirit and work miracles among you by your doing the works of the law, or by your believing what you heard?" },
-        { "num": 6, "text": "Just as Abraham “believed God, and it was reckoned to him as righteousness,”" },
-        { "num": 7, "text": "so, you see, those who believe are the descendants of Abraham." },
-        { "num": 8, "text": "And the scripture, foreseeing that God would justify the Gentiles by faith, declared the gospel beforehand to Abraham, saying, “All the Gentiles shall be blessed in you.”" },
-        { "num": 9, "text": "For this reason, those who believe are blessed with Abraham who believed." },
-        { "num": 10, "text": "For all who rely on the works of the law are under a curse; for it is written, “Cursed is everyone who does not observe and obey all the things written in the book of the law.”" },
-        { "num": 11, "text": "Now it is evident that no one is justified before God by the law; for “The one who is righteous will live by faith.”" },
-        { "num": 12, "text": "But the law does not rest on faith; on the contrary, “Whoever does the works of the law will live by them.”" },
-        { "num": 13, "text": "Christ redeemed us from the curse of the law by becoming a curse for us—for it is written, “Cursed is everyone who hangs on a tree”—" },
-        { "num": 14, "text": "in order that in Christ Jesus the blessing of Abraham might come to the Gentiles, so that we might receive the promise of the Spirit through faith." },
-        { "num": 15, "text": "Brothers and sisters, I give an example from daily life: once a person’s will has been ratified, no one adds to it or annuls it." },
-        { "num": 16, "text": "Now the promises were made to Abraham and to his offspring; it does not say, “And to offsprings,” as of many; but it says, “And to your offspring,” that is, to one person, who is Christ." },
-        { "num": 17, "text": "My point is this: the law, which came four hundred thirty years later, does not annul a covenant previously ratified by God, so as to nullify the promise." },
-        { "num": 18, "text": "For if the inheritance comes from the law, it no longer comes from the promise; but God gave it to Abraham through a promise." },
-        { "num": 19, "text": "Why then the law? It was added because of transgressions, until the offspring would come to whom the promise had been made; and it was ordained through angels by a mediator." },
-        { "num": 20, "text": "Now a mediator involves more than one party; but God is one." },
-        { "num": 21, "text": "Is the law then opposed to the promises of God? Certainly not! For if a law had been given that could make alive, then righteousness would indeed come through the law." },
-        { "num": 22, "text": "But the scripture has imprisoned all things under the power of sin, so that what was promised through faith in Jesus Christ might be given to those who believe." },
-        { "num": 23, "text": "Now before faith came, we were imprisoned and guarded under the law until faith would be revealed." },
-        { "num": 24, "text": "Therefore the law was our disciplinarian until Christ came, so that we might be justified by faith." },
-        { "num": 25, "text": "But now that faith has come, we are no longer subject to a disciplinarian," },
-        { "num": 26, "text": "for in Christ Jesus you are all children of God through faith." },
-        { "num": 27, "text": "As many of you as were baptized into Christ have clothed yourselves with Christ." },
-        { "num": 28, "text": "There is no longer Jew or Greek, there is no longer slave or free, there is no longer male and female; for all of you are one in Christ Jesus." },
-        { "num": 29, "text": "And if you belong to Christ, then you are Abraham’s offspring, heirs according to the promise." }
+        {
+          "num": 1,
+          "text": {
+            "NRSV": "You foolish Galatians! Who has bewitched you? It was before your eyes that Jesus Christ was publicly exhibited as crucified!",
+            "Rotherham": "O thoughtless Galatians! who hath bewitched you,—before whose very eyes, Jesus Christ, was openly set forth as a crucified one?"
+          }
+        },
+        {
+          "num": 2,
+          "text": {
+            "NRSV": "The only thing I want to learn from you is this: Did you receive the Spirit by doing the works of the law or by believing what you heard?",
+            "Rotherham": "This only, am I wishing to learn from you:—by works of law, received ye, the Spirit? or by a believed report?"
+          }
+        },
+        {
+          "num": 3,
+          "text": {
+            "NRSV": "Are you so foolish? Having started with the Spirit, are you now ending with the flesh?",
+            "Rotherham": "So thoughtless, are ye? Having made a beginning in Spirit, are ye, now, in flesh, to be made complete?"
+          }
+        },
+        {
+          "num": 4,
+          "text": {
+            "NRSV": "Did you experience so much for nothing?—if it really was for nothing.",
+            "Rotherham": "Such things, suffered ye, in vain,—if at least [it is] even in vain?"
+          }
+        },
+        {
+          "num": 5,
+          "text": {
+            "NRSV": "Well then, does God supply you with the Spirit and work miracles among you by your doing the works of the law, or by your believing what you heard?",
+            "Rotherham": "He then who was supplying unto you the Spirit, and energising mighty works among you, by works of law, or by a believed report [did he it] ? "
+          }
+        },
+        {
+          "num": 6,
+          "text": {
+            "NRSV": "Just as Abraham “believed God, and it was reckoned to him as righteousness,”",
+            "Rotherham": " Even as Abraham—believed in God, and it was reckoned unto him as righteousness."
+          }
+        },
+        {
+          "num": 7,
+          "text": {
+            "NRSV": "so, you see, those who believe are the descendants of Abraham.",
+            "Rotherham": "Be taking note, therefore—that, they who are of faith, the same, are, sons, of Abraham;"
+          }
+        },
+        {
+          "num": 8,
+          "text": {
+            "NRSV": "And the scripture, foreseeing that God would justify the Gentiles by faith, declared the gospel beforehand to Abraham, saying, “All the Gentiles shall be blessed in you.”",
+            "Rotherham": "And, the scripture, foreseeing, that, by faith, God would declare the nations righteous, fore-announced the good news unto Abraham, saying, All the nations shall be blessed in thee."
+          }
+        },
+        {
+          "num": 9,
+          "text": {
+            "NRSV": "For this reason, those who believe are blessed with Abraham who believed.",
+            "Rotherham": "So then, they who are of faith, are blessed with believing Abraham;"
+          }
+        },
+        {
+          "num": 10,
+          "text": {
+            "NRSV": "For all who rely on the works of the law are under a curse; for it is written, “Cursed is everyone who does not observe and obey all the things written in the book of the law.”",
+            "Rotherham": "For, as many as are of works of law, are, under a curse,—for it is written—Accursed, is everyone that continueth not in all things that are written in the book of the law to do them."
+          }
+        },
+        {
+          "num": 11,
+          "text": {
+            "NRSV": "Now it is evident that no one is justified before God by the law; for “The one who is righteous will live by faith.”",
+            "Rotherham": "Moreover, that, in law, no one, is declared righteous with God, [is] evident,—because, The righteous one, by faith, shall live;"
+          }
+        },
+        {
+          "num": 12,
+          "text": {
+            "NRSV": "But the law does not rest on faith; on the contrary, “Whoever does the works of the law will live by them.”",
+            "Rotherham": "And, the law, is not of faith, but—he that hath done them, shall live in them,"
+          }
+        },
+        {
+          "num": 13,
+          "text": {
+            "NRSV": "Christ redeemed us from the curse of the law by becoming a curse for us—for it is written, “Cursed is everyone who hangs on a tree”—",
+            "Rotherham": "Christ, hath redeemed, us, out of the curse of the law, having become, in our behalf, a curse;—because it is written—Cursed, is every one that hangeth upon a tree;—"
+          }
+        },
+        {
+          "num": 14,
+          "text": {
+            "NRSV": "in order that in Christ Jesus the blessing of Abraham might come to the Gentiles, so that we might receive the promise of the Spirit through faith.",
+            "Rotherham": "In order that, unto the nations, the blessing of Abraham, might come about in Jesus Christ,—in order that, the promise of the Spirit, we might receive through means of the faith."
+          }
+        },
+        {
+          "num": 15,
+          "text": {
+            "NRSV": "Brothers and sisters, I give an example from daily life: once a person’s will has been ratified, no one adds to it or annuls it.",
+            "Rotherham": "Brethren! in human fashion, am I speaking: yet still, a man’s confirmed covenant, no one setteth aside or addeth unto:"
+          }
+        },
+        {
+          "num": 16,
+          "text": {
+            "NRSV": "Now the promises were made to Abraham and to his offspring; it does not say, “And to offsprings,” as of many; but it says, “And to your offspring,” that is, to one person, who is Christ.",
+            "Rotherham": "Now, unto Abraham, were spoken the promises—and unto his seed;—He saith not—and unto thy seeds, as of many, but, as of one—and unto thy seed, which is Christ:"
+          }
+        },
+        {
+          "num": 17,
+          "text": {
+            "NRSV": "My point is this: the law, which came four hundred thirty years later, does not annul a covenant previously ratified by God, so as to nullify the promise.",
+            "Rotherham": "And, this, I say—a covenant previously confirmed by God, the law which, after four hundred and thirty years, hath been brought into being, doth not annul, so as to do away with the promise."
+          }
+        },
+        {
+          "num": 18,
+          "text": {
+            "NRSV": "For if the inheritance comes from the law, it no longer comes from the promise; but God gave it to Abraham through a promise.",
+            "Rotherham": "For, if, by law, is the inheritance, it is, no longer, by promise; but, unto Abraham, through promise, hath God favoured it. "
+          }
+        },
+        {
+          "num": 19,
+          "text": {
+            "NRSV": "Why then the law? It was added because of transgressions, until the offspring would come to whom the promise had been made; and it was ordained through angels by a mediator.",
+            "Rotherham": " Why, then, the law? Because of the transgressions, it was added, until such time as the seed should come, unto whom the promise had been made, and was given in charge through messengers, at the hand of a mediator;"
+          }
+        },
+        {
+          "num": 20,
+          "text": {
+            "NRSV": "Now a mediator involves more than one party; but God is one.",
+            "Rotherham": "Now, a mediator, is not [a mediator] of one, but, God, is, one."
+          }
+        },
+        {
+          "num": 21,
+          "text": {
+            "NRSV": "Is the law then opposed to the promises of God? Certainly not! For if a law had been given that could make alive, then righteousness would indeed come through the law.",
+            "Rotherham": "Is, the law, then, against the promises [of God]? Far be it! For, if a law had been given, which had been able to give life, verily, in law, would have been our righteousness;"
+          }
+        },
+        {
+          "num": 22,
+          "text": {
+            "NRSV": "But the scripture has imprisoned all things under the power of sin, so that what was promised through faith in Jesus Christ might be given to those who believe.",
+            "Rotherham": "But the Scripture, did shut up, all things, under sin, that, the promise by faith in Jesus Christ, might be given to them who have faith,"
+          }
+        },
+        {
+          "num": 23,
+          "text": {
+            "NRSV": "Now before faith came, we were imprisoned and guarded under the law until faith would be revealed.",
+            "Rotherham": "Before the coming of the faith, however, under law, were we being kept in ward, being shut up unto the faith which should afterwards, be revealed."
+          }
+        },
+        {
+          "num": 24,
+          "text": {
+            "NRSV": "Therefore the law was our disciplinarian until Christ came, so that we might be justified by faith.",
+            "Rotherham": "So that, the law, hath proved, our tutor, training us, for Christ, in order that, by faith, we might be declared righteous;"
+          }
+        },
+        {
+          "num": 25,
+          "text": {
+            "NRSV": "But now that faith has come, we are no longer subject to a disciplinarian,",
+            "Rotherham": "But, the faith having come, no longer, are we, under a tutor;—"
+          }
+        },
+        {
+          "num": 26,
+          "text": {
+            "NRSV": "for in Christ Jesus you are all children of God through faith.",
+            "Rotherham": "For ye, all, are, sons of God, through the faith in Christ Jesus;"
+          }
+        },
+        {
+          "num": 27,
+          "text": {
+            "NRSV": "As many of you as were baptized into Christ have clothed yourselves with Christ.",
+            "Rotherham": "For ye, as many as, into Christ, have been immersed, have put Christ, on:"
+          }
+        },
+        {
+          "num": 28,
+          "text": {
+            "NRSV": "There is no longer Jew or Greek, there is no longer slave or free, there is no longer male and female; for all of you are one in Christ Jesus.",
+            "Rotherham": "There cannot be Jew or Greek, there cannot be bond or free, there cannot be male and female, for, all ye, are one, in Christ Jesus:"
+          }
+        },
+        {
+          "num": 29,
+          "text": {
+            "NRSV": "And if you belong to Christ, then you are Abraham’s offspring, heirs according to the promise.",
+            "Rotherham": "Now, if, ye, are of Christ, by consequence ye are, Abraham’s seed, according to promise, heirs.  "
+          }
+        }
       ]
     },
     {
       "num": 4,
       "verses": [
-        { "num": 1, "text": "My point is this: heirs, as long as they are minors, are no better than slaves, though they are the owners of all the property;" },
-        { "num": 2, "text": "but they remain under guardians and trustees until the date set by the father." },
-        { "num": 3, "text": "So with us; while we were minors, we were enslaved to the elemental spirits of the world." },
-        { "num": 4, "text": "But when the fullness of time had come, God sent his Son, born of a woman, born under the law," },
-        { "num": 5, "text": "in order to redeem those who were under the law, so that we might receive adoption as children." },
-        { "num": 6, "text": "And because you are children, God has sent the Spirit of his Son into our hearts, crying, “Abba! Father!”" },
-        { "num": 7, "text": "So you are no longer a slave but a child, and if a child then also an heir, through God." },
-        { "num": 8, "text": "Formerly, when you did not know God, you were enslaved to beings that by nature are not gods." },
-        { "num": 9, "text": "Now, however, that you have come to know God, or rather to be known by God, how can you turn back again to the weak and beggarly elemental spirits? How can you want to be enslaved to them again?" },
-        { "num": 10, "text": "You are observing special days, and months, and seasons, and years." },
-        { "num": 11, "text": "I am afraid that my work for you may have been wasted." },
-        { "num": 12, "text": "Friends, I beg you, become as I am, for I also have become as you are. You have done me no wrong." },
-        { "num": 13, "text": "You know that it was because of a physical infirmity that I first announced the gospel to you;" },
-        { "num": 14, "text": "though my condition put you to the test, you did not scorn or despise me, but welcomed me as an angel of God, as Christ Jesus." },
-        { "num": 15, "text": "What has become of the goodwill you felt? For I testify that, had it been possible, you would have torn out your eyes and given them to me." },
-        { "num": 16, "text": "Have I now become your enemy by telling you the truth?" },
-        { "num": 17, "text": "They make much of you, but for no good purpose; they want to exclude you, so that you may make much of them." },
-        { "num": 18, "text": "It is always good to be made much of for a good purpose, and not only when I am present with you." },
-        { "num": 19, "text": "My little children, for whom I am again in the pain of childbirth until Christ is formed in you," },
-        { "num": 20, "text": "I wish I were present with you now and could change my tone, for I am perplexed about you." },
-        { "num": 21, "text": "Tell me, you who desire to be subject to the law, will you not listen to the law?" },
-        { "num": 22, "text": "For it is written that Abraham had two sons, one by a slave woman and one by a free woman." },
-        { "num": 23, "text": "One, the child of the slave, was born according to the flesh; the other, the child of the free woman, was born through the promise." },
-        { "num": 24, "text": "Now this is an allegory: these women are two covenants. One woman, in fact, is Hagar, from Mount Sinai, bearing children for slavery." },
-        { "num": 25, "text": "Now Hagar is Mount Sinai in Arabia and corresponds to the present Jerusalem, for she is in slavery with her children." },
-        { "num": 26, "text": "But the other woman corresponds to the Jerusalem above; she is free, and she is our mother." },
-        { "num": 27, "text": "For it is written, “Rejoice, you childless one, you who bear no children; burst into song and shout, you who endure no birth pangs; for the children of the desolate woman are more numerous than the children of the one who is married.”" },
-        { "num": 28, "text": "Now you, my friends, are children of the promise, like Isaac." },
-        { "num": 29, "text": "But just as at that time the child who was born according to the flesh persecuted the child who was born according to the Spirit, so it is now also." },
-        { "num": 30, "text": "But what does the scripture say? “Drive out the slave and her child; for the child of the slave shall not share the inheritance with the child of the free woman.”" },
-        { "num": 31, "text": "So then, friends, we are children, not of the slave but of the free woman." }
+        {
+          "num": 1,
+          "text": {
+            "NRSV": "My point is this: heirs, as long as they are minors, are no better than slaves, though they are the owners of all the property;",
+            "Rotherham": "But I say:—for as long a time as, the heir, is an infant, he differeth, nothing, from a servant, though, lord of all,"
+          }
+        },
+        {
+          "num": 2,
+          "text": {
+            "NRSV": "but they remain under guardians and trustees until the date set by the father.",
+            "Rotherham": "But is, under guardians, and stewards, until the [day] fore-appointed of the father:"
+          }
+        },
+        {
+          "num": 3,
+          "text": {
+            "NRSV": "So with us; while we were minors, we were enslaved to the elemental spirits of the world.",
+            "Rotherham": "So also, we, when we were infants, under the elementary principles of the world, were held in servitude;"
+          }
+        },
+        {
+          "num": 4,
+          "text": {
+            "NRSV": "But when the fullness of time had come, God sent his Son, born of a woman, born under the law,",
+            "Rotherham": "But, when the fulness of the time came, God sent forth his Son, who came to be of a woman, who came to be under law,—"
+          }
+        },
+        {
+          "num": 5,
+          "text": {
+            "NRSV": "in order to redeem those who were under the law, so that we might receive adoption as children.",
+            "Rotherham": "That, them who were under law, he might redeem, that, the sonship, we might duly receive;—"
+          }
+        },
+        {
+          "num": 6,
+          "text": {
+            "NRSV": "And because you are children, God has sent the Spirit of his Son into our hearts, crying, “Abba! Father!”",
+            "Rotherham": "And, because ye are sons, God hath sent forth the Spirit of his Son into our hearts, exclaiming, Abba! Oh Father!"
+          }
+        },
+        {
+          "num": 7,
+          "text": {
+            "NRSV": "So you are no longer a slave but a child, and if a child then also an heir, through God.",
+            "Rotherham": "So that, no longer, art thou a servant, but a son; and, if a son, an heir also, through God. "
+          }
+        },
+        {
+          "num": 8,
+          "text": {
+            "NRSV": "Formerly, when you did not know God, you were enslaved to beings that by nature are not gods.",
+            "Rotherham": " But, at that time—not knowing God, ye were in servitude unto them who, by nature, are not Gods;"
+          }
+        },
+        {
+          "num": 9,
+          "text": {
+            "NRSV": "Now, however, that you have come to know God, or rather to be known by God, how can you turn back again to the weak and beggarly elemental spirits? How can you want to be enslaved to them again?",
+            "Rotherham": "Whereas, now, having acknowledged God,—or rather, having been acknowledged by God, how turn ye back again unto the weak and beggarly elementary principles, unto which, over again, ye are wishing, to come into servitude?"
+          }
+        },
+        {
+          "num": 10,
+          "text": {
+            "NRSV": "You are observing special days, and months, and seasons, and years.",
+            "Rotherham": "Days, ye do narrowly observer, and months, and seasons, and years:—"
+          }
+        },
+        {
+          "num": 11,
+          "text": {
+            "NRSV": "I am afraid that my work for you may have been wasted.",
+            "Rotherham": "I am afraid of you—lest by any means, in vain, I should have toiled for you! "
+          }
+        },
+        {
+          "num": 12,
+          "text": {
+            "NRSV": "Friends, I beg you, become as I am, for I also have become as you are. You have done me no wrong.",
+            "Rotherham": " Become ye as, I, because, I also, [was] as, ye,—brethren, I entreat you. Not at all, have ye wronged me."
+          }
+        },
+        {
+          "num": 13,
+          "text": {
+            "NRSV": "You know that it was because of a physical infirmity that I first announced the gospel to you;",
+            "Rotherham": "Howbeit ye know that, by reason of a weakness of the flesh, I myself announced the glad-message unto you, formerly;"
+          }
+        },
+        {
+          "num": 14,
+          "text": {
+            "NRSV": "though my condition put you to the test, you did not scorn or despise me, but welcomed me as an angel of God, as Christ Jesus.",
+            "Rotherham": "And, your trial, in my flesh, ye despised not, neither spat ye [in disgust], but, as a messenger of God, ye welcomed me—as Christ Jesus."
+          }
+        },
+        {
+          "num": 15,
+          "text": {
+            "NRSV": "What has become of the goodwill you felt? For I testify that, had it been possible, you would have torn out your eyes and given them to me.",
+            "Rotherham": "Where, then, is the happiness ye accounted yours? For I bear you witness—that, if possible, your eyes, ye would have dug out, and given unto me."
+          }
+        },
+        {
+          "num": 16,
+          "text": {
+            "NRSV": "Have I now become your enemy by telling you the truth?",
+            "Rotherham": "So then, your enemy, have I become, by dealing truthfully with you? "
+          }
+        },
+        {
+          "num": 17,
+          "text": {
+            "NRSV": "They make much of you, but for no good purpose; they want to exclude you, so that you may make much of them.",
+            "Rotherham": " They shew a zeal for you, not honourably, but wish, to shut you out, in order that ye may be zealous for, them."
+          }
+        },
+        {
+          "num": 18,
+          "text": {
+            "NRSV": "It is always good to be made much of for a good purpose, and not only when I am present with you.",
+            "Rotherham": "Howbeit it is, honourable, to show zeal in what is honourable at all times, and not only when I am present with you;— "
+          }
+        },
+        {
+          "num": 19,
+          "text": {
+            "NRSV": "My little children, for whom I am again in the pain of childbirth until Christ is formed in you,",
+            "Rotherham": " My dear children! for whom I, again, am in birth-pains, until Christ be formed within you;—"
+          }
+        },
+        {
+          "num": 20,
+          "text": {
+            "NRSV": "I wish I were present with you now and could change my tone, for I am perplexed about you.",
+            "Rotherham": "I could wish, however, to be present with you, even now, and to change my voice,—because I am perplexed regarding you. "
+          }
+        },
+        {
+          "num": 21,
+          "text": {
+            "NRSV": "Tell me, you who desire to be subject to the law, will you not listen to the law?",
+            "Rotherham": " Tell me! ye who, under law, are wishing to be: The law, do ye not hear?"
+          }
+        },
+        {
+          "num": 22,
+          "text": {
+            "NRSV": "For it is written that Abraham had two sons, one by a slave woman and one by a free woman.",
+            "Rotherham": "For it is written, that, Abraham, had two sons—one by the bondmaid, and one by the free woman;"
+          }
+        },
+        {
+          "num": 23,
+          "text": {
+            "NRSV": "One, the child of the slave, was born according to the flesh; the other, the child of the free woman, was born through the promise.",
+            "Rotherham": "But, he that was of the bondmaid, after the flesh, had been born, whereas, he that was of the free woman, through means of a promise."
+          }
+        },
+        {
+          "num": 24,
+          "text": {
+            "NRSV": "Now this is an allegory: these women are two covenants. One woman, in fact, is Hagar, from Mount Sinai, bearing children for slavery.",
+            "Rotherham": "Which things, indeed, may bear another meaning; for, the same, are two covenants,—one, indeed, from Mount Sinai, into bondage, bringing forth, the which is Hagar,—"
+          }
+        },
+        {
+          "num": 25,
+          "text": {
+            "NRSV": "Now Hagar is Mount Sinai in Arabia and corresponds to the present Jerusalem, for she is in slavery with her children.",
+            "Rotherham": "And, the Hagar, is Mount Sinai, in Arabia,—she answereth, however, unto the present Jerusalem, for she is in bondage with her children;"
+          }
+        },
+        {
+          "num": 26,
+          "text": {
+            "NRSV": "But the other woman corresponds to the Jerusalem above; she is free, and she is our mother.",
+            "Rotherham": "But, the Jerusalem above, is free,—the which is our mother;"
+          }
+        },
+        {
+          "num": 27,
+          "text": {
+            "NRSV": "For it is written, “Rejoice, you childless one, you who bear no children; burst into song and shout, you who endure no birth pangs; for the children of the desolate woman are more numerous than the children of the one who is married.”",
+            "Rotherham": "For it is written—Be gladdened, O barren one! that wast not giving birth, break forth and shout, thou that wast not in birth-pains,—because, more, are the children of the deserted one, than of her that had the husband."
+          }
+        },
+        {
+          "num": 28,
+          "text": {
+            "NRSV": "Now you, my friends, are children of the promise, like Isaac.",
+            "Rotherham": "And, we, brethren, after the manner of Isaac, are children of a promise."
+          }
+        },
+        {
+          "num": 29,
+          "text": {
+            "NRSV": "But just as at that time the child who was born according to the flesh persecuted the child who was born according to the Spirit, so it is now also.",
+            "Rotherham": "But, just as, then, he that after the manner of the flesh had been born, did persecute him who [had been born] after the manner of the Spirit, thus, also now."
+          }
+        },
+        {
+          "num": 30,
+          "text": {
+            "NRSV": "But what does the scripture say? “Drive out the slave and her child; for the child of the slave shall not share the inheritance with the child of the free woman.”",
+            "Rotherham": "But, what saith the scripture? Cast out the serving woman and her son; for in nowise shall the son of the serving woman inherit with the son of the free."
+          }
+        },
+        {
+          "num": 31,
+          "text": {
+            "NRSV": "So then, friends, we are children, not of the slave but of the free woman.",
+            "Rotherham": "Wherefore, brethren, we are not children of a serving woman, but of the free:—  "
+          }
+        }
       ]
     },
     {
       "num": 5,
       "verses": [
-        { "num": 1, "text": "For freedom Christ has set us free. Stand firm, therefore, and do not submit again to a yoke of slavery." },
-        { "num": 2, "text": "Listen! I, Paul, am telling you that if you let yourselves be circumcised, Christ will be of no benefit to you." },
-        { "num": 3, "text": "Once again I testify to every man who lets himself be circumcised that he is obliged to obey the entire law." },
-        { "num": 4, "text": "You who want to be justified by the law have cut yourselves off from Christ; you have fallen away from grace." },
-        { "num": 5, "text": "For through the Spirit, by faith, we eagerly wait for the hope of righteousness." },
-        { "num": 6, "text": "For in Christ Jesus neither circumcision nor uncircumcision counts for anything; the only thing that counts is faith working through love." },
-        { "num": 7, "text": "You were running well; who prevented you from obeying the truth?" },
-        { "num": 8, "text": "Such persuasion does not come from the one who calls you." },
-        { "num": 9, "text": "A little yeast leavens the whole batch of dough." },
-        { "num": 10, "text": "I am confident about you in the Lord that you will not take any other view, and that the one who is confusing you will pay the penalty, whoever that may be." },
-        { "num": 11, "text": "But my friends, why am I still being persecuted if I am still preaching circumcision? In that case the offense of the cross has been removed." },
-        { "num": 12, "text": "I wish those who unsettle you would castrate themselves!" },
-        { "num": 13, "text": "For you were called to freedom, brothers and sisters; only do not use your freedom as an opportunity for self-indulgence, but through love become slaves to one another." },
-        { "num": 14, "text": "For the whole law is summed up in a single commandment, “You shall love your neighbor as yourself.”" },
-        { "num": 15, "text": "If, however, you bite and devour one another, take care that you are not consumed by one another." },
-        { "num": 16, "text": "Live by the Spirit, I say, and do not gratify the desires of the flesh." },
-        { "num": 17, "text": "For what the flesh desires is opposed to the Spirit, and what the Spirit desires is opposed to the flesh; for these are opposed to each other, to prevent you from doing what you want." },
-        { "num": 18, "text": "But if you are led by the Spirit, you are not subject to the law." },
-        { "num": 19, "text": "Now the works of the flesh are obvious: fornication, impurity, licentiousness," },
-        { "num": 20, "text": "idolatry, sorcery, enmities, strife, jealousy, anger, quarrels, dissensions, factions," },
-        { "num": 21, "text": "envy, drunkenness, carousing, and things like these. I am warning you, as I warned you before, that those who do such things will not inherit the kingdom of God." },
-        { "num": 22, "text": "By contrast, the fruit of the Spirit is love, joy, peace, patience, kindness, generosity, faithfulness," },
-        { "num": 23, "text": "gentleness, and self-control. There is no law against such things." },
-        { "num": 24, "text": "And those who belong to Christ Jesus have crucified the flesh with its passions and desires." },
-        { "num": 25, "text": "If we live by the Spirit, let us also be guided by the Spirit." },
-        { "num": 26, "text": "Let us not become conceited, competing against one another, envying one another." }
+        {
+          "num": 1,
+          "text": {
+            "NRSV": "For freedom Christ has set us free. Stand firm, therefore, and do not submit again to a yoke of slavery.",
+            "Rotherham": "With her freedom, Christ hath made you, free. Stand fast, therefore, and do not, again, with a yoke of servitude, be held fast!"
+          }
+        },
+        {
+          "num": 2,
+          "text": {
+            "NRSV": "Listen! I, Paul, am telling you that if you let yourselves be circumcised, Christ will be of no benefit to you.",
+            "Rotherham": "See! I, Paul, say unto you—if ye be getting circumcised, Christ will profit you, nothing."
+          }
+        },
+        {
+          "num": 3,
+          "text": {
+            "NRSV": "Once again I testify to every man who lets himself be circumcised that he is obliged to obey the entire law.",
+            "Rotherham": "Yea, I bear solemn witness again, unto every man getting circumcised,—that he is, a debtor, to do, the whole law."
+          }
+        },
+        {
+          "num": 4,
+          "text": {
+            "NRSV": "You who want to be justified by the law have cut yourselves off from Christ; you have fallen away from grace.",
+            "Rotherham": "Ye have been set aside from Christ, ye who, by law, are to be declared righteous,—out of his favour, ye have fallen;"
+          }
+        },
+        {
+          "num": 5,
+          "text": {
+            "NRSV": "For through the Spirit, by faith, we eagerly wait for the hope of righteousness.",
+            "Rotherham": "For, we, in Spirit, by faith, for a hope of righteousness, are ardently waiting,—"
+          }
+        },
+        {
+          "num": 6,
+          "text": {
+            "NRSV": "For in Christ Jesus neither circumcision nor uncircumcision counts for anything; the only thing that counts is faith working through love.",
+            "Rotherham": "For, in Christ [Jesus], neither, circumcision, availeth anything, nor uncircumcision, but faith, through love, energising."
+          }
+        },
+        {
+          "num": 7,
+          "text": {
+            "NRSV": "You were running well; who prevented you from obeying the truth?",
+            "Rotherham": "Ye were running well:—who hath hindered you, that, by truth, ye are not to be persuaded?"
+          }
+        },
+        {
+          "num": 8,
+          "text": {
+            "NRSV": "Such persuasion does not come from the one who calls you.",
+            "Rotherham": "The persuasion, [is] not of him that calleth you:—"
+          }
+        },
+        {
+          "num": 9,
+          "text": {
+            "NRSV": "A little yeast leavens the whole batch of dough.",
+            "Rotherham": "A little leaven, leaveneth, the whole lump."
+          }
+        },
+        {
+          "num": 10,
+          "text": {
+            "NRSV": "I am confident about you in the Lord that you will not take any other view, and that the one who is confusing you will pay the penalty, whoever that may be.",
+            "Rotherham": "I, am persuaded regarding you, in the Lord—that, for nothing else, ye will have any regard; but, he that is troubling you, shall bear the sentence,—whosoever he may be."
+          }
+        },
+        {
+          "num": 11,
+          "text": {
+            "NRSV": "But my friends, why am I still being persecuted if I am still preaching circumcision? In that case the offense of the cross has been removed.",
+            "Rotherham": "I, however, brethren—if, circumcision, I yet proclaim, why am I yet persecuted? After all, the stumbling-block of the cross hath been set aside."
+          }
+        },
+        {
+          "num": 12,
+          "text": {
+            "NRSV": "I wish those who unsettle you would castrate themselves!",
+            "Rotherham": "Oh! that they would even leave off in dismay, who are unsettling you! "
+          }
+        },
+        {
+          "num": 13,
+          "text": {
+            "NRSV": "For you were called to freedom, brothers and sisters; only do not use your freedom as an opportunity for self-indulgence, but through love become slaves to one another.",
+            "Rotherham": " For, ye, on a footing of freedom, were called, brethren,—only, [turn] not your freedom into an occasion to the flesh, but, by means of your love, be serving one another;"
+          }
+        },
+        {
+          "num": 14,
+          "text": {
+            "NRSV": "For the whole law is summed up in a single commandment, “You shall love your neighbor as yourself.”",
+            "Rotherham": "For, the whole law, in one word, is summed up—[namely] in this,—Thou shall love thy neighbour as thyself."
+          }
+        },
+        {
+          "num": 15,
+          "text": {
+            "NRSV": "If, however, you bite and devour one another, take care that you are not consumed by one another.",
+            "Rotherham": "If, however, one another, ye bite and devour, take heed lest, by one another, ye be consumed!"
+          }
+        },
+        {
+          "num": 16,
+          "text": {
+            "NRSV": "Live by the Spirit, I say, and do not gratify the desires of the flesh.",
+            "Rotherham": "I say, moreover—by Spirit, be walking, and, fleshly coveting, ye will in nowise fulfil;"
+          }
+        },
+        {
+          "num": 17,
+          "text": {
+            "NRSV": "For what the flesh desires is opposed to the Spirit, and what the Spirit desires is opposed to the flesh; for these are opposed to each other, to prevent you from doing what you want.",
+            "Rotherham": "For, the flesh, coveted against the Spirit, but, the Spirit, against the flesh,—for, these, unto one another, are opposed, lest, whatsoever things ye chance to desire, these, ye should be doing!"
+          }
+        },
+        {
+          "num": 18,
+          "text": {
+            "NRSV": "But if you are led by the Spirit, you are not subject to the law.",
+            "Rotherham": "And, if, by Spirit, ye are being led, ye are not under law."
+          }
+        },
+        {
+          "num": 19,
+          "text": {
+            "NRSV": "Now the works of the flesh are obvious: fornication, impurity, licentiousness,",
+            "Rotherham": "Manifest, however, are the works of the flesh, which, indeed, are—fornication, impurity, wantonness,"
+          }
+        },
+        {
+          "num": 20,
+          "text": {
+            "NRSV": "idolatry, sorcery, enmities, strife, jealousy, anger, quarrels, dissensions, factions,",
+            "Rotherham": "idolatry, enchantment, enmities, strife, jealousy, outbursts of wrath, factions, divisions, parties,"
+          }
+        },
+        {
+          "num": 21,
+          "text": {
+            "NRSV": "envy, drunkenness, carousing, and things like these. I am warning you, as I warned you before, that those who do such things will not inherit the kingdom of God.",
+            "Rotherham": "envyings, drunkenness, revellings;—and such things as these: as to which I forewarn you, even as I have forewarned you,—that, they who such things as these do practise, shall not inherit, God’s kingdom."
+          }
+        },
+        {
+          "num": 22,
+          "text": {
+            "NRSV": "By contrast, the fruit of the Spirit is love, joy, peace, patience, kindness, generosity, faithfulness,",
+            "Rotherham": "But, the fruit of the Spirit, is—love, joy, peace, long-suffering, graciousness, goodness, faithfulness,"
+          }
+        },
+        {
+          "num": 23,
+          "text": {
+            "NRSV": "gentleness, and self-control. There is no law against such things.",
+            "Rotherham": "meekness, self-control;—against such things as these, there is no law."
+          }
+        },
+        {
+          "num": 24,
+          "text": {
+            "NRSV": "And those who belong to Christ Jesus have crucified the flesh with its passions and desires.",
+            "Rotherham": "And, they who are of Christ Jesus, have crucified, the flesh, with its susceptibilities and covetings."
+          }
+        },
+        {
+          "num": 25,
+          "text": {
+            "NRSV": "If we live by the Spirit, let us also be guided by the Spirit.",
+            "Rotherham": "If we live by Spirit, by Spirit, let us also walk."
+          }
+        },
+        {
+          "num": 26,
+          "text": {
+            "NRSV": "Let us not become conceited, competing against one another, envying one another.",
+            "Rotherham": "Let us not become vain-glorious,—one another, challenging, one another, envying.  "
+          }
+        }
       ]
     },
     {
       "num": 6,
       "verses": [
-        { "num": 1, "text": "My friends, if anyone is detected in a transgression, you who have received the Spirit should restore such a one in a spirit of gentleness. Take care that you yourselves are not tempted." },
-        { "num": 2, "text": "Bear one another’s burdens, and in this way you will fulfill the law of Christ." },
-        { "num": 3, "text": "For if those who are nothing think they are something, they deceive themselves." },
-        { "num": 4, "text": "All must test their own work; then that work, rather than their neighbor’s work, will become a cause for pride." },
-        { "num": 5, "text": "For all must carry their own loads." },
-        { "num": 6, "text": "Those who are taught the word must share in all good things with their teacher." },
-        { "num": 7, "text": "Do not be deceived; God is not mocked, for you reap whatever you sow." },
-        { "num": 8, "text": "If you sow to your own flesh, you will reap corruption from the flesh; but if you sow to the Spirit, you will reap eternal life from the Spirit." },
-        { "num": 9, "text": "So let us not grow weary in doing what is right, for we will reap at harvest time, if we do not give up." },
-        { "num": 10, "text": "So then, whenever we have an opportunity, let us work for the good of all, and especially for those of the family of faith." },
-        { "num": 11, "text": "See what large letters I make when I am writing in my own hand!" },
-        { "num": 12, "text": "It is those who want to make a good showing in the flesh that try to compel you to be circumcised—only that they may not be persecuted for the cross of Christ." },
-        { "num": 13, "text": "Even the circumcised do not themselves obey the law, but they want you to be circumcised so that they may boast about your flesh." },
-        { "num": 14, "text": "May I never boast of anything except the cross of our Lord Jesus Christ, by which the world has been crucified to me, and I to the world." },
-        { "num": 15, "text": "For neither circumcision nor uncircumcision is anything; but a new creation is everything!" },
-        { "num": 16, "text": "As for those who will follow this rule—peace be upon them, and mercy, and upon the Israel of God." },
-        { "num": 17, "text": "From now on, let no one make trouble for me; for I carry the marks of Jesus branded on my body." },
-        { "num": 18, "text": "May the grace of our Lord Jesus Christ be with your spirit, brothers and sisters. Amen." }
+        {
+          "num": 1,
+          "text": {
+            "NRSV": "My friends, if anyone is detected in a transgression, you who have received the Spirit should restore such a one in a spirit of gentleness. Take care that you yourselves are not tempted.",
+            "Rotherham": "Brethren! if a man should even be overtaken in any fault, ye, the spiritual, be restoring such a one, in a spirit of meekness, looking to thyself, lest, even thou, be put to the test."
+          }
+        },
+        {
+          "num": 2,
+          "text": {
+            "NRSV": "Bear one another’s burdens, and in this way you will fulfill the law of Christ.",
+            "Rotherham": "One another’s burdens, be ye bearing, and, so, fill up the law of the Christ."
+          }
+        },
+        {
+          "num": 3,
+          "text": {
+            "NRSV": "For if those who are nothing think they are something, they deceive themselves.",
+            "Rotherham": "For, if any one thinketh he is something, when he is, nothing, he deceiveth himself;"
+          }
+        },
+        {
+          "num": 4,
+          "text": {
+            "NRSV": "All must test their own work; then that work, rather than their neighbor’s work, will become a cause for pride.",
+            "Rotherham": "But, his own work, let each one be putting to the proof, and, then, for himself alone, the matter of boasting, shall he have, and not for some other,"
+          }
+        },
+        {
+          "num": 5,
+          "text": {
+            "NRSV": "For all must carry their own loads.",
+            "Rotherham": "For, each one, his own proper load, shall bear:—"
+          }
+        },
+        {
+          "num": 6,
+          "text": {
+            "NRSV": "Those who are taught the word must share in all good things with their teacher.",
+            "Rotherham": "Howbeit, let him who is being orally instructed in the word, have fellowship with him that is so instructing him, in all good things."
+          }
+        },
+        {
+          "num": 7,
+          "text": {
+            "NRSV": "Do not be deceived; God is not mocked, for you reap whatever you sow.",
+            "Rotherham": "Be not deceiving yourselves! God, is not to be mocked; for, whatsoever a man soweth, the same, shall he also reap,—"
+          }
+        },
+        {
+          "num": 8,
+          "text": {
+            "NRSV": "If you sow to your own flesh, you will reap corruption from the flesh; but if you sow to the Spirit, you will reap eternal life from the Spirit.",
+            "Rotherham": "Because, he that soweth into his own flesh, out of the flesh, shall reap corruption, whereas, he that soweth into the Spirit, out of the Spirit, shall reap age-abiding life."
+          }
+        },
+        {
+          "num": 9,
+          "text": {
+            "NRSV": "So let us not grow weary in doing what is right, for we will reap at harvest time, if we do not give up.",
+            "Rotherham": "And, in doing that which is honourable, let us not be fainthearted; for, in due season, we shall reap, if we faint not."
+          }
+        },
+        {
+          "num": 10,
+          "text": {
+            "NRSV": "So then, whenever we have an opportunity, let us work for the good of all, and especially for those of the family of faith.",
+            "Rotherham": "Hence, then, as we have opportunity, let us be working what is good, towards all,—but, especially, towards the family of the faith. "
+          }
+        },
+        {
+          "num": 11,
+          "text": {
+            "NRSV": "See what large letters I make when I am writing in my own hand!",
+            "Rotherham": " See! with what large letters, unto you, I have written, with my own hand:—"
+          }
+        },
+        {
+          "num": 12,
+          "text": {
+            "NRSV": "It is those who want to make a good showing in the flesh that try to compel you to be circumcised—only that they may not be persecuted for the cross of Christ.",
+            "Rotherham": "As many as are wishing to make a good show in flesh, the same, are compelling you to get circumcised,—only that, for the cross of Christ [Jesus], they may not be suffering persecution!"
+          }
+        },
+        {
+          "num": 13,
+          "text": {
+            "NRSV": "Even the circumcised do not themselves obey the law, but they want you to be circumcised so that they may boast about your flesh.",
+            "Rotherham": "For, not even they who are getting circumcised, are, themselves, observing law,—but are wishing you to be circumcised, that, in your flesh, they may boast themselves."
+          }
+        },
+        {
+          "num": 14,
+          "text": {
+            "NRSV": "May I never boast of anything except the cross of our Lord Jesus Christ, by which the world has been crucified to me, and I to the world.",
+            "Rotherham": "With me, however, far be it! to be boasting, save in the cross of our Lord Jesus Christ,—whereby, unto me, a world hath been crucified, and, I, unto a world;"
+          }
+        },
+        {
+          "num": 15,
+          "text": {
+            "NRSV": "For neither circumcision nor uncircumcision is anything; but a new creation is everything!",
+            "Rotherham": "For neither circumcision is anything, nor uncircumcision, but a new creation;—"
+          }
+        },
+        {
+          "num": 16,
+          "text": {
+            "NRSV": "As for those who will follow this rule—peace be upon them, and mercy, and upon the Israel of God.",
+            "Rotherham": "And, as many as, by this rule, shall walk, peace be upon them, and mercy, and upon the Israel of God."
+          }
+        },
+        {
+          "num": 17,
+          "text": {
+            "NRSV": "From now on, let no one make trouble for me; for I carry the marks of Jesus branded on my body.",
+            "Rotherham": "For the rest, annoyances, unto me, let no one be offering; for, I, the brandmarks of Jesus, in my body, am bearing."
+          }
+        },
+        {
+          "num": 18,
+          "text": {
+            "NRSV": "May the grace of our Lord Jesus Christ be with your spirit, brothers and sisters. Amen.",
+            "Rotherham": "The favour of our Lord Jesus Christ, be with your spirit, brethren. Amen.   "
+          }
+        }
       ]
     }
-  ]
+  ],
+  "schema": "bible_book_multiversion_v1"
 }

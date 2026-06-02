@@ -3,138 +3,785 @@
     "name": "1 Peter",
     "id": "1PET",
     "version": "NRSV",
-    "copyright": "New Revised Standard Version Bible, copyright © 1989 National Council of the Churches of Christ in the United States of America. Used by permission. All rights reserved worldwide."
+    "copyright": "New Revised Standard Version Bible, copyright © 1989 National Council of the Churches of Christ in the United States of America. Used by permission. All rights reserved worldwide.",
+    "canon": "NT",
+    "defaultTranslation": "NRSV",
+    "versification": "standard_nt_chapter_verse",
+    "translations": {
+      "NRSV": {
+        "label": "New Revised Standard Version",
+        "sourceType": "existing_corpus",
+        "rights": "New Revised Standard Version Bible, copyright © 1989 National Council of the Churches of Christ in the United States of America. Used by permission. All rights reserved worldwide."
+      },
+      "Rotherham": {
+        "label": "The Emphasised Bible",
+        "sourceType": "scrollmapper_bible_databases_2025_formats_json_source_witness",
+        "rights": "Public Domain",
+        "sourceWitness": "documentation/rotherham-source-witness-intake.json"
+      }
+    }
   },
   "chapters": [
     {
       "num": 1,
       "verses": [
-        { "num": 1, "text": "Peter, an apostle of Jesus Christ, To the exiles of the Dispersion in Pontus, Galatia, Cappadocia, Asia, and Bithynia," },
-        { "num": 2, "text": "who have been chosen and destined by God the Father and sanctified by the Spirit to be obedient to Jesus Christ and to be sprinkled with his blood: May grace and peace be yours in abundance." },
-        { "num": 3, "text": "Blessed be the God and Father of our Lord Jesus Christ! By his great mercy he has given us a new birth into a living hope through the resurrection of Jesus Christ from the dead," },
-        { "num": 4, "text": "and into an inheritance that is imperishable, undefiled, and unfading, kept in heaven for you," },
-        { "num": 5, "text": "who are being protected by the power of God through faith for a salvation ready to be revealed in the last time." },
-        { "num": 6, "text": "In this you rejoice, even if now for a little while you have had to suffer various trials," },
-        { "num": 7, "text": "so that the genuineness of your faith—being more precious than gold that, though perishable, is tested by fire—may be found to result in praise and glory and honor when Jesus Christ is revealed." },
-        { "num": 8, "text": "Although you have not seen him, you love him; and even though you do not see him now, you believe in him and rejoice with an indescribable and glorious joy," },
-        { "num": 9, "text": "for you are receiving the outcome of your faith, the salvation of your souls." },
-        { "num": 10, "text": "Concerning this salvation, the prophets who prophesied of the grace that was to be yours made careful search and inquiry," },
-        { "num": 11, "text": "inquiring about the person or time that the Spirit of Christ within them indicated when it testified in advance to the sufferings destined for Christ and the subsequent glory." },
-        { "num": 12, "text": "It was revealed to them that they were serving not themselves but you, in regard to the things that have now been announced to you through those who brought you good news by the Holy Spirit sent from heaven—things into which angels long to look." },
-        { "num": 13, "text": "Therefore prepare your minds for action; discipline yourselves; set all your hope on the grace that Jesus Christ will bring you when he is revealed." },
-        { "num": 14, "text": "Like obedient children, do not be conformed to the desires that you formerly had in ignorance." },
-        { "num": 15, "text": "Instead, as he who called you is holy, be holy yourselves in all your conduct;" },
-        { "num": 16, "text": "for it is written, “You shall be holy, for I am holy.”" },
-        { "num": 17, "text": "If you invoke as Father the one who judges all people impartially according to their deeds, live in reverent fear during the time of your exile." },
-        { "num": 18, "text": "You know that you were ransomed from the futile ways inherited from your ancestors, not with perishable things like silver or gold," },
-        { "num": 19, "text": "but with the precious blood of Christ, like that of a lamb without defect or blemish." },
-        { "num": 20, "text": "He was destined before the foundation of the world, but was revealed at the end of the ages for your sake." },
-        { "num": 21, "text": "Through him you have come to trust in God, who raised him from the dead and gave him glory, so that your faith and hope are set on God." },
-        { "num": 22, "text": "Now that you have purified your souls by your obedience to the truth so that you have genuine mutual love, love one another deeply from the heart." },
-        { "num": 23, "text": "You have been born anew, not of perishable but of imperishable seed, through the living and enduring word of God." },
-        { "num": 24, "text": "For “All flesh is like grass and all its glory like the flower of grass. The grass withers, and the flower falls," },
-        { "num": 25, "text": "but the word of the Lord endures forever.” That word is the good news that was announced to you." }
+        {
+          "num": 1,
+          "text": {
+            "NRSV": "Peter, an apostle of Jesus Christ, To the exiles of the Dispersion in Pontus, Galatia, Cappadocia, Asia, and Bithynia,",
+            "Rotherham": "Peter, an apostle of Jesus Christ, unto the chosen pilgrims of the dispersion, throughout Pontus, Galatia, Cappadocia, Asia and Bithynia,—"
+          }
+        },
+        {
+          "num": 2,
+          "text": {
+            "NRSV": "who have been chosen and destined by God the Father and sanctified by the Spirit to be obedient to Jesus Christ and to be sprinkled with his blood: May grace and peace be yours in abundance.",
+            "Rotherham": "[Chosen] according to the fore-knowledge of God the Father, in sanctification of Spirit, unto obedience and the sprinkling of the blood of Jesus Christ, Favour unto you, and peace, be multiplied! "
+          }
+        },
+        {
+          "num": 3,
+          "text": {
+            "NRSV": "Blessed be the God and Father of our Lord Jesus Christ! By his great mercy he has given us a new birth into a living hope through the resurrection of Jesus Christ from the dead,",
+            "Rotherham": " Blessed be the God and Father of our Lord Jesus Christ, Who, according to his great mercy, hath regenerated us unto a living hope, through the resurrection of Jesus Christ from among the dead,"
+          }
+        },
+        {
+          "num": 4,
+          "text": {
+            "NRSV": "and into an inheritance that is imperishable, undefiled, and unfading, kept in heaven for you,",
+            "Rotherham": "Unto an inheritance, incorruptible and undefiled and unfading, reserved in the heavens for you"
+          }
+        },
+        {
+          "num": 5,
+          "text": {
+            "NRSV": "who are being protected by the power of God through faith for a salvation ready to be revealed in the last time.",
+            "Rotherham": "who, in God’s power, are being guarded through faith unto salvation—ready to be revealed in the last ripe time: "
+          }
+        },
+        {
+          "num": 6,
+          "text": {
+            "NRSV": "In this you rejoice, even if now for a little while you have had to suffer various trials,",
+            "Rotherham": " Wherein ye exult, though, for a little, just now, if needful, put to grief in manifold temptations,"
+          }
+        },
+        {
+          "num": 7,
+          "text": {
+            "NRSV": "so that the genuineness of your faith—being more precious than gold that, though perishable, is tested by fire—may be found to result in praise and glory and honor when Jesus Christ is revealed.",
+            "Rotherham": "In order that the proving of your faith—much more precious than of gold that perisheth even though, by means of fire, it is proved—may be found unto praise and glory and honour in the revealing of Jesus Christ,—"
+          }
+        },
+        {
+          "num": 8,
+          "text": {
+            "NRSV": "Although you have not seen him, you love him; and even though you do not see him now, you believe in him and rejoice with an indescribable and glorious joy,",
+            "Rotherham": "Whom, not having seen, ye love, on whom, though at present not looking, but believing, ye exult with joy unspeakable and filled with glory,"
+          }
+        },
+        {
+          "num": 9,
+          "text": {
+            "NRSV": "for you are receiving the outcome of your faith, the salvation of your souls.",
+            "Rotherham": "Being about to bear away the end of your faith—a salvation of souls: "
+          }
+        },
+        {
+          "num": 10,
+          "text": {
+            "NRSV": "Concerning this salvation, the prophets who prophesied of the grace that was to be yours made careful search and inquiry,",
+            "Rotherham": " Concerning which salvation, prophets—who concerning the favour for you, did prophesy—sought out and searched out,"
+          }
+        },
+        {
+          "num": 11,
+          "text": {
+            "NRSV": "inquiring about the person or time that the Spirit of Christ within them indicated when it testified in advance to the sufferings destined for Christ and the subsequent glory.",
+            "Rotherham": "Searching into what particular, or what manner, of season the Spirit of Christ which was in them was pointing to, when witnessing beforehand as to—The sufferings, for Christ, and the glories, after these,—"
+          }
+        },
+        {
+          "num": 12,
+          "text": {
+            "NRSV": "It was revealed to them that they were serving not themselves but you, in regard to the things that have now been announced to you through those who brought you good news by the Holy Spirit sent from heaven—things into which angels long to look.",
+            "Rotherham": "Unto whom it was revealed—that, Not unto themselves, but unto us, they were ministering them, which things have, now, been announced unto you through them who have told you the good tidings with Holy Spirit sent forth from heaven: into which things messengers are coveting to obtain a nearer view. "
+          }
+        },
+        {
+          "num": 13,
+          "text": {
+            "NRSV": "Therefore prepare your minds for action; discipline yourselves; set all your hope on the grace that Jesus Christ will bring you when he is revealed.",
+            "Rotherham": " Wherefore, girding up the loins of your mind, keeping sober, perseveringly direct your hope unto the favour, being borne along to you, in the revealing of Jesus Christ:"
+          }
+        },
+        {
+          "num": 14,
+          "text": {
+            "NRSV": "Like obedient children, do not be conformed to the desires that you formerly had in ignorance.",
+            "Rotherham": "As obedient persons, not configuring yourselves unto your former covetings in your ignorance:"
+          }
+        },
+        {
+          "num": 15,
+          "text": {
+            "NRSV": "Instead, as he who called you is holy, be holy yourselves in all your conduct;",
+            "Rotherham": "But, according as he that hath called you is holy, do, ye yourselves, also become, holy in all manner of behaviour,—"
+          }
+        },
+        {
+          "num": 16,
+          "text": {
+            "NRSV": "for it is written, “You shall be holy, for I am holy.”",
+            "Rotherham": "Inasmuch as it is written—Holy shall ye be, because, I, am holy."
+          }
+        },
+        {
+          "num": 17,
+          "text": {
+            "NRSV": "If you invoke as Father the one who judges all people impartially according to their deeds, live in reverent fear during the time of your exile.",
+            "Rotherham": "And, if, as Father, ye are invoking him who, without respect of persons, judgeth according to each man’s work, with reverence, for the time of your sojourning, behave ye;"
+          }
+        },
+        {
+          "num": 18,
+          "text": {
+            "NRSV": "You know that you were ransomed from the futile ways inherited from your ancestors, not with perishable things like silver or gold,",
+            "Rotherham": "Knowing that, Not with corruptible things, with silver or gold, have ye been redeemed from your unmeaning behaviour paternally handed down,"
+          }
+        },
+        {
+          "num": 19,
+          "text": {
+            "NRSV": "but with the precious blood of Christ, like that of a lamb without defect or blemish.",
+            "Rotherham": "But with precious blood, as of a lamb, unblemished and unspotted, of an Anointed One,—"
+          }
+        },
+        {
+          "num": 20,
+          "text": {
+            "NRSV": "He was destined before the foundation of the world, but was revealed at the end of the ages for your sake.",
+            "Rotherham": "Foreknown, indeed, before the foundation of the world, but made manifest at a last stage of the times, for the sake of you"
+          }
+        },
+        {
+          "num": 21,
+          "text": {
+            "NRSV": "Through him you have come to trust in God, who raised him from the dead and gave him glory, so that your faith and hope are set on God.",
+            "Rotherham": "who, through him, are faithful towards God,—Who raised him from among the dead, and glory to him gave, So that your faith and hope are directed towards God:"
+          }
+        },
+        {
+          "num": 22,
+          "text": {
+            "NRSV": "Now that you have purified your souls by your obedience to the truth so that you have genuine mutual love, love one another deeply from the heart.",
+            "Rotherham": "Having purified, your souls, by the obedience of the truth, unto unfeigned brotherly affection, from the heart, love, one another, earnestly;"
+          }
+        },
+        {
+          "num": 23,
+          "text": {
+            "NRSV": "You have been born anew, not of perishable but of imperishable seed, through the living and enduring word of God.",
+            "Rotherham": "Having been regenerated—Not out of corruptible seed, but incorruptible—through means of the word of a Living and Abiding God; "
+          }
+        },
+        {
+          "num": 24,
+          "text": {
+            "NRSV": "For “All flesh is like grass and all its glory like the flower of grass. The grass withers, and the flower falls,",
+            "Rotherham": " Inasmuch as—All flesh, is as grass, and, all the glory thereof, as the flower of grass,—The grass hath withered, and the flower hath fallen out,"
+          }
+        },
+        {
+          "num": 25,
+          "text": {
+            "NRSV": "but the word of the Lord endures forever.” That word is the good news that was announced to you.",
+            "Rotherham": "But the declaration of the Lord age-abidingly remaineth; And, this, is a declaration which in the joyful message hath been announced unto you.  "
+          }
+        }
       ]
     },
     {
       "num": 2,
       "verses": [
-        { "num": 1, "text": "Rid yourselves, therefore, of all malice, and all guile, insincerity, envy, and all slander." },
-        { "num": 2, "text": "Like newborn infants, long for the pure, spiritual milk, so that by it you may grow into salvation—" },
-        { "num": 3, "text": "if indeed you have tasted that the Lord is good." },
-        { "num": 4, "text": "Come to him, a living stone, though rejected by mortals yet chosen and precious in God’s sight, and" },
-        { "num": 5, "text": "like living stones, let yourselves be built into a spiritual house, to be a holy priesthood, to offer spiritual sacrifices acceptable to God through Jesus Christ." },
-        { "num": 6, "text": "For it stands in scripture: “See, I am laying in Zion a stone, a cornerstone chosen and precious; and whoever believes in him will not be put to shame.”" },
-        { "num": 7, "text": "To you then who believe, he is precious; but for those who do not believe, “The stone that the builders rejected has become the very head of the corner,”" },
-        { "num": 8, "text": "and “A stone that makes them stumble, and a rock that makes them fall.” They stumble because they disobey the word, as they were destined to do." },
-        { "num": 9, "text": "But you are a chosen race, a royal priesthood, a holy nation, God’s own people, in order that you may proclaim the mighty acts of him who called you out of darkness into his marvelous light." },
-        { "num": 10, "text": "Once you were not a people, but now you are God’s people; once you had not received mercy, but now you have received mercy." },
-        { "num": 11, "text": "Beloved, I urge you as aliens and exiles to abstain from the desires of the flesh that wage war against the soul." },
-        { "num": 12, "text": "Conduct yourselves honorably among the Gentiles, so that, though they malign you as evildoers, they may see your good deeds and glorify God on the day of visitation." },
-        { "num": 13, "text": "For the Lord’s sake accept the authority of every human institution, whether of the emperor as supreme," },
-        { "num": 14, "text": "or of governors, as sent by him to punish those who do wrong and to praise those who do right." },
-        { "num": 15, "text": "For it is God’s will that by doing right you should silence the ignorance of the foolish." },
-        { "num": 16, "text": "As servants of God, live as free people, yet do not use your freedom as a pretext for evil." },
-        { "num": 17, "text": "Honor everyone. Love the family of believers. Fear God. Honor the emperor." },
-        { "num": 18, "text": "Slaves, accept the authority of your masters with all deference, not only those who are kind and gentle but also those who are harsh." },
-        { "num": 19, "text": "For it is a credit to you if, being aware of God, you endure pain while suffering unjustly." },
-        { "num": 20, "text": "If you endure when you are beaten for doing wrong, what credit is that? But if you endure when you do right and suffer for it, you have God’s approval." },
-        { "num": 21, "text": "For to this you have been called, because Christ also suffered for you, leaving you an example, so that you should follow in his steps." },
-        { "num": 22, "text": "“He committed no sin, and no deceit was found in his mouth.”" },
-        { "num": 23, "text": "When he was abused, he did not return abuse; when he suffered, he did not threaten; but he entrusted himself to the one who judges justly." },
-        { "num": 24, "text": "He himself bore our sins in his body on the cross, so that, free from sins, we might live for righteousness; by his wounds you have been healed." },
-        { "num": 25, "text": "For you were going astray like sheep, but now you have returned to the shepherd and guardian of your souls." }
+        {
+          "num": 1,
+          "text": {
+            "NRSV": "Rid yourselves, therefore, of all malice, and all guile, insincerity, envy, and all slander.",
+            "Rotherham": "Putting away, therefore, all vice and all deceit and hypocrisy and envyings and all detractions,"
+          }
+        },
+        {
+          "num": 2,
+          "text": {
+            "NRSV": "Like newborn infants, long for the pure, spiritual milk, so that by it you may grow into salvation—",
+            "Rotherham": "As new-born babes, for the pure milk that is for the mind, eagerly crave, that, thereby, ye may grow unto salvation:—"
+          }
+        },
+        {
+          "num": 3,
+          "text": {
+            "NRSV": "if indeed you have tasted that the Lord is good.",
+            "Rotherham": "If ye have tasted for yourselves that, gracious, is the Lord,— "
+          }
+        },
+        {
+          "num": 4,
+          "text": {
+            "NRSV": "Come to him, a living stone, though rejected by mortals yet chosen and precious in God’s sight, and",
+            "Rotherham": " Unto whom coming near, as unto a living stone—by men, indeed, rejected, but, with God, chosen, held in honour,"
+          }
+        },
+        {
+          "num": 5,
+          "text": {
+            "NRSV": "like living stones, let yourselves be built into a spiritual house, to be a holy priesthood, to offer spiritual sacrifices acceptable to God through Jesus Christ.",
+            "Rotherham": "Yourselves also, as living stones, are being built up a spiritual house, for a holy priesthood, to offer spiritual sacrifices, well-pleasing unto God through Jesus Christ;"
+          }
+        },
+        {
+          "num": 6,
+          "text": {
+            "NRSV": "For it stands in scripture: “See, I am laying in Zion a stone, a cornerstone chosen and precious; and whoever believes in him will not be put to shame.”",
+            "Rotherham": "Inasmuch as it is contained in scripture—Lo! I lay in Zion an outmost corner stone, chosen, held in honour, and, he that resteth faith thereupon, shall not be put to shame."
+          }
+        },
+        {
+          "num": 7,
+          "text": {
+            "NRSV": "To you then who believe, he is precious; but for those who do not believe, “The stone that the builders rejected has become the very head of the corner,”",
+            "Rotherham": "Unto you, then, is the honour—[unto you] who believe; but, unto such as disbelieve, The stone which the builders rejected,—The same, hath become head of the corner,"
+          }
+        },
+        {
+          "num": 8,
+          "text": {
+            "NRSV": "and “A stone that makes them stumble, and a rock that makes them fall.” They stumble because they disobey the word, as they were destined to do.",
+            "Rotherham": "And a stone to strike against, and a rock to stumble over: Who stumble because, unto the word, they do not yield,—unto which also they have been appointed;"
+          }
+        },
+        {
+          "num": 9,
+          "text": {
+            "NRSV": "But you are a chosen race, a royal priesthood, a holy nation, God’s own people, in order that you may proclaim the mighty acts of him who called you out of darkness into his marvelous light.",
+            "Rotherham": "But, ye, are a chosen race, a royal priesthood, a holy nation, a people for a peculiar treasure, that, the excellences, ye may tell forth, of him who, out of darkness, hath called you into his marvellous light:—"
+          }
+        },
+        {
+          "num": 10,
+          "text": {
+            "NRSV": "Once you were not a people, but now you are God’s people; once you had not received mercy, but now you have received mercy.",
+            "Rotherham": "Who, at one time, were a No-people, but, now, are a people of God,—who had not been enjoying mercy, but, now, have received mercy."
+          }
+        },
+        {
+          "num": 11,
+          "text": {
+            "NRSV": "Beloved, I urge you as aliens and exiles to abstain from the desires of the flesh that wage war against the soul.",
+            "Rotherham": "Beloved! I exhort you, as sojourners and pilgrims, to abstain from fleshly covetings, such as take the field against the soul;"
+          }
+        },
+        {
+          "num": 12,
+          "text": {
+            "NRSV": "Conduct yourselves honorably among the Gentiles, so that, though they malign you as evildoers, they may see your good deeds and glorify God on the day of visitation.",
+            "Rotherham": "Having, your behaviour among the nations, honourable,—in order that, wherein they speak against you as evil-doers, they may, owing to the honourable works they are permitted to behold, glorify God in the day of visitation. "
+          }
+        },
+        {
+          "num": 13,
+          "text": {
+            "NRSV": "For the Lord’s sake accept the authority of every human institution, whether of the emperor as supreme,",
+            "Rotherham": " Submit yourselves unto every human creation, for the Lord’s sake,—whether unto a king, as one that protecteth,"
+          }
+        },
+        {
+          "num": 14,
+          "text": {
+            "NRSV": "or of governors, as sent by him to punish those who do wrong and to praise those who do right.",
+            "Rotherham": "Or unto governors, as, through him, sent—for vengeance on evil-doers, but praise to such as do good;"
+          }
+        },
+        {
+          "num": 15,
+          "text": {
+            "NRSV": "For it is God’s will that by doing right you should silence the ignorance of the foolish.",
+            "Rotherham": "Because, so, is the will of God,—by doing good, to be putting to silence, the ignorance of heedless men:"
+          }
+        },
+        {
+          "num": 16,
+          "text": {
+            "NRSV": "As servants of God, live as free people, yet do not use your freedom as a pretext for evil.",
+            "Rotherham": "As free, yet, not as a cloak of vice, holding your freedom, but, as God’s servants."
+          }
+        },
+        {
+          "num": 17,
+          "text": {
+            "NRSV": "Honor everyone. Love the family of believers. Fear God. Honor the emperor.",
+            "Rotherham": "Unto all men, give honour, unto the brotherhood, shew love, unto God, give reverence, the king, hold in honour."
+          }
+        },
+        {
+          "num": 18,
+          "text": {
+            "NRSV": "Slaves, accept the authority of your masters with all deference, not only those who are kind and gentle but also those who are harsh.",
+            "Rotherham": "Ye domestics, submitting yourselves, in all reverence, unto your masters,—not only unto the good and considerate, but also unto the perverse;"
+          }
+        },
+        {
+          "num": 19,
+          "text": {
+            "NRSV": "For it is a credit to you if, being aware of God, you endure pain while suffering unjustly.",
+            "Rotherham": "For, this, is thankworthy,—If, for the sake of conscience towards God, one beareth griefs, suffering wrongfully,—"
+          }
+        },
+        {
+          "num": 20,
+          "text": {
+            "NRSV": "If you endure when you are beaten for doing wrong, what credit is that? But if you endure when you do right and suffer for it, you have God’s approval.",
+            "Rotherham": "For what sort of honour is it—if, committing sin, and being buffeted, ye endure it? But, if, doing good, and suffering, ye endure it, this, is thankworthy with God."
+          }
+        },
+        {
+          "num": 21,
+          "text": {
+            "NRSV": "For to this you have been called, because Christ also suffered for you, leaving you an example, so that you should follow in his steps.",
+            "Rotherham": "For, hereunto, have ye been called; because, Christ also, suffered in your behalf, unto you, leaving behind a pattern, that ye might follow in his steps:"
+          }
+        },
+        {
+          "num": 22,
+          "text": {
+            "NRSV": "“He committed no sin, and no deceit was found in his mouth.”",
+            "Rotherham": "Who did not, a sin, commit, neither was deceit found in his mouth,—"
+          }
+        },
+        {
+          "num": 23,
+          "text": {
+            "NRSV": "When he was abused, he did not return abuse; when he suffered, he did not threaten; but he entrusted himself to the one who judges justly.",
+            "Rotherham": "Who, being reviled, was not reviling again, suffering, he was not threatening, but was making surrender unto him that judgeth righteously,—"
+          }
+        },
+        {
+          "num": 24,
+          "text": {
+            "NRSV": "He himself bore our sins in his body on the cross, so that, free from sins, we might live for righteousness; by his wounds you have been healed.",
+            "Rotherham": "Who, our sins, himself, bare up, in his body, unto the tree, in order that we, from our sins getting away, in righteousness, might live,—by whose stripes, ye have been healed;"
+          }
+        },
+        {
+          "num": 25,
+          "text": {
+            "NRSV": "For you were going astray like sheep, but now you have returned to the shepherd and guardian of your souls.",
+            "Rotherham": "For ye were as sheep going astray, but have now turned back unto the shepherd and overseer of your souls.  "
+          }
+        }
       ]
     },
     {
       "num": 3,
       "verses": [
-        { "num": 1, "text": "Wives, in the same way, accept the authority of your husbands, so that, even if some of them do not obey the word, they may be won over without a word by their wives’ conduct," },
-        { "num": 2, "text": "when they see the purity and reverence of your lives." },
-        { "num": 3, "text": "Do not adorn yourselves outwardly by braiding your hair, and by wearing gold ornaments or fine clothing;" },
-        { "num": 4, "text": "rather, let your adornment be the inner self with the lasting beauty of a gentle and quiet spirit, which is very precious in God’s sight." },
-        { "num": 5, "text": "It was in this way long ago that the holy women who hoped in God used to adorn themselves by accepting the authority of their husbands." },
-        { "num": 6, "text": "Thus Sarah obeyed Abraham and called him lord. You have become her daughters as long as you do what is good and never let fears alarm you." },
-        { "num": 7, "text": "Husbands, in the same way, show consideration for your wives in your life together, paying honor to the woman as the weaker sex, since they too are also heirs of the gracious gift of life—so that nothing may hinder your prayers." },
-        { "num": 8, "text": "Finally, all of you, have unity of spirit, sympathy, love for one another, a tender heart, and a humble mind." },
-        { "num": 9, "text": "Do not repay evil for evil or abuse for abuse; but, on the contrary, repay with a blessing. It is for this that you were called, that you might inherit a blessing." },
-        { "num": 10, "text": "For “Those who desire life and desire to see good days, let them keep their tongues from evil and their lips from speaking deceit;" },
-        { "num": 11, "text": "let them turn away from evil and do good; let them seek peace and pursue it." },
-        { "num": 12, "text": "For the eyes of the Lord are on the righteous, and his ears are open to their prayer. But the face of the Lord is against those who do evil.”" },
-        { "num": 13, "text": "Now who will harm you if you are eager to do what is good?" },
-        { "num": 14, "text": "But even if you do suffer for doing what is right, you are blessed. Do not fear what they fear, and do not be intimidated," },
-        { "num": 15, "text": "but in your hearts sanctify Christ as Lord. Always be ready to make your defense to anyone who demands from you an accounting for the hope that is in you;" },
-        { "num": 16, "text": "yet do it with gentleness and reverence. Keep your conscience clear, so that, when you are maligned, those who abuse you for your good conduct in Christ may be put to shame." },
-        { "num": 17, "text": "For it is better to suffer for doing good, if suffering should be God’s will, than to suffer for doing evil." },
-        { "num": 18, "text": "For Christ also suffered for sins once for all, the righteous for the unrighteous, in order to bring you to God. He was put to death in the flesh, but made alive in the spirit," },
-        { "num": 19, "text": "in which also he went and made a proclamation to the spirits in prison," },
-        { "num": 20, "text": "who in former times did not obey, when God waited patiently in the days of Noah, during the building of the ark, in which a few, that is, eight persons, were saved through water." },
-        { "num": 21, "text": "And baptism, which this prefigured, now saves you—not as a removal of dirt from the body, but as an appeal to God for a good conscience, through the resurrection of Jesus Christ," },
-        { "num": 22, "text": "who has gone into heaven and is at the right hand of God, with angels, authorities, and powers made subject to him." }
+        {
+          "num": 1,
+          "text": {
+            "NRSV": "Wives, in the same way, accept the authority of your husbands, so that, even if some of them do not obey the word, they may be won over without a word by their wives’ conduct,",
+            "Rotherham": "In like manner, ye wives,—submitting yourselves unto your own husbands; in order that, if any are not yielding unto the word, through their wives behaviour, they may, without the word, be won,"
+          }
+        },
+        {
+          "num": 2,
+          "text": {
+            "NRSV": "when they see the purity and reverence of your lives.",
+            "Rotherham": "Having been permitted to behold your reverently chaste behaviour,—"
+          }
+        },
+        {
+          "num": 3,
+          "text": {
+            "NRSV": "Do not adorn yourselves outwardly by braiding your hair, and by wearing gold ornaments or fine clothing;",
+            "Rotherham": "Whose adorning, let it be—not the outward, of plaiting the hair and wearing golden ornaments, or putting on of apparel,"
+          }
+        },
+        {
+          "num": 4,
+          "text": {
+            "NRSV": "rather, let your adornment be the inner self with the lasting beauty of a gentle and quiet spirit, which is very precious in God’s sight.",
+            "Rotherham": "But the hidden character, of the heart,—in the incorruptible [ornament] of the quiet, and meek, spirit, which is, in presence of God, of great price."
+          }
+        },
+        {
+          "num": 5,
+          "text": {
+            "NRSV": "It was in this way long ago that the holy women who hoped in God used to adorn themselves by accepting the authority of their husbands.",
+            "Rotherham": "For, so, at one time, the holy women also, who directed their hope towards God, used to adorn themselves, being in submission unto their own husbands:"
+          }
+        },
+        {
+          "num": 6,
+          "text": {
+            "NRSV": "Thus Sarah obeyed Abraham and called him lord. You have become her daughters as long as you do what is good and never let fears alarm you.",
+            "Rotherham": "As, Sarah, was obedient unto Abraham, calling him, lord,—whose children ye have become—so long as ye are doing good, and not bringing yourselves into fear of any single cause of alarm."
+          }
+        },
+        {
+          "num": 7,
+          "text": {
+            "NRSV": "Husbands, in the same way, show consideration for your wives in your life together, paying honor to the woman as the weaker sex, since they too are also heirs of the gracious gift of life—so that nothing may hinder your prayers.",
+            "Rotherham": "Ye husbands, in like manner, dwelling with them according to knowledge,—as unto a weaker vessel, unto the female [vessel], assigning honour, as joint—inheritors also of life’s favour,—to the end that unhindered may be, your prayers. "
+          }
+        },
+        {
+          "num": 8,
+          "text": {
+            "NRSV": "Finally, all of you, have unity of spirit, sympathy, love for one another, a tender heart, and a humble mind.",
+            "Rotherham": " And, finally, all, being of one mind, having fellow—feeling, attached to the brethren, of tender affection, of lowly mind:"
+          }
+        },
+        {
+          "num": 9,
+          "text": {
+            "NRSV": "Do not repay evil for evil or abuse for abuse; but, on the contrary, repay with a blessing. It is for this that you were called, that you might inherit a blessing.",
+            "Rotherham": "Not returning evil for evil, nor reviling for reviling, but, on the contrary, bestowing a blessing,—because, hereunto, have ye been called, in order that, a blessing, ye might inherit."
+          }
+        },
+        {
+          "num": 10,
+          "text": {
+            "NRSV": "For “Those who desire life and desire to see good days, let them keep their tongues from evil and their lips from speaking deceit;",
+            "Rotherham": "For, he that desireth to love, life, and to see good days, Let him cause his tongue to cease from mischief, and lips, that they speak not deceit;"
+          }
+        },
+        {
+          "num": 11,
+          "text": {
+            "NRSV": "let them turn away from evil and do good; let them seek peace and pursue it.",
+            "Rotherham": "Let him turn away from mischief, and do good, Let him seek peace, and pursue it;"
+          }
+        },
+        {
+          "num": 12,
+          "text": {
+            "NRSV": "For the eyes of the Lord are on the righteous, and his ears are open to their prayer. But the face of the Lord is against those who do evil.”",
+            "Rotherham": "Because, the eyes of the Lord, are towards the righteous, and his ears, unto their supplication,—Whereas, the face of the Lord, is against them that are doing mischievous things."
+          }
+        },
+        {
+          "num": 13,
+          "text": {
+            "NRSV": "Now who will harm you if you are eager to do what is good?",
+            "Rotherham": "Who, then, is he that shall harm you, if, for that which is good, ye become zealous?"
+          }
+        },
+        {
+          "num": 14,
+          "text": {
+            "NRSV": "But even if you do suffer for doing what is right, you are blessed. Do not fear what they fear, and do not be intimidated,",
+            "Rotherham": "Nevertheless, even if ye should suffer for righteousness’ sake, happy [are ye] ! Their fear, however, do not fear, neither be troubled;"
+          }
+        },
+        {
+          "num": 15,
+          "text": {
+            "NRSV": "but in your hearts sanctify Christ as Lord. Always be ready to make your defense to anyone who demands from you an accounting for the hope that is in you;",
+            "Rotherham": "But, the Lord Christ, hallow ye in your hearts, ready always for a defence, unto every one that is asking you a reason concerning, the hope within you,—nevertheless, with meekness and reverence: "
+          }
+        },
+        {
+          "num": 16,
+          "text": {
+            "NRSV": "yet do it with gentleness and reverence. Keep your conscience clear, so that, when you are maligned, those who abuse you for your good conduct in Christ may be put to shame.",
+            "Rotherham": " Having, a good conscience, in order that, wherein they speak against you, they may be put to shame who cast wanton insult on, your good behaviour in Christ."
+          }
+        },
+        {
+          "num": 17,
+          "text": {
+            "NRSV": "For it is better to suffer for doing good, if suffering should be God’s will, than to suffer for doing evil.",
+            "Rotherham": "For it is, better, as well-doers, if it should please the pleasure of God, to be suffering, than, as evil-doers: "
+          }
+        },
+        {
+          "num": 18,
+          "text": {
+            "NRSV": "For Christ also suffered for sins once for all, the righteous for the unrighteous, in order to bring you to God. He was put to death in the flesh, but made alive in the spirit,",
+            "Rotherham": " Because, Christ also, once for all, concerning sins, died,—Just in behalf of unjust,—in order that he might introduce us unto God; being put to death, indeed, in flesh, but made alive in spirit,—"
+          }
+        },
+        {
+          "num": 19,
+          "text": {
+            "NRSV": "in which also he went and made a proclamation to the spirits in prison,",
+            "Rotherham": "In which, even unto the spirits in prison, he went and proclaimed,—"
+          }
+        },
+        {
+          "num": 20,
+          "text": {
+            "NRSV": "who in former times did not obey, when God waited patiently in the days of Noah, during the building of the ark, in which a few, that is, eight persons, were saved through water.",
+            "Rotherham": "[Spirits] unyielding at one time, when the longsuffering of God was holding forth a welcome in the days of Noah, there being in preparation an ark—[going] into which, a few, that is eight, souls, were brought safely through by means of water,— "
+          }
+        },
+        {
+          "num": 21,
+          "text": {
+            "NRSV": "And baptism, which this prefigured, now saves you—not as a removal of dirt from the body, but as an appeal to God for a good conscience, through the resurrection of Jesus Christ,",
+            "Rotherham": " Which [water] in manner corresponding, doth, now, save, you also—even immersion,—not a putting away of the filth of the flesh, but the request unto God, for a good conscience, through the resurrection of Jesus Christ,—"
+          }
+        },
+        {
+          "num": 22,
+          "text": {
+            "NRSV": "who has gone into heaven and is at the right hand of God, with angels, authorities, and powers made subject to him.",
+            "Rotherham": "Who is on the right hand of God, having gone into heaven, messengers and authorities and powers, having been made subject unto him.  "
+          }
+        }
       ]
     },
     {
       "num": 4,
       "verses": [
-        { "num": 1, "text": "Since therefore Christ suffered in the flesh, arm yourselves also with the same intention (for whoever has suffered in the flesh has finished with sin)," },
-        { "num": 2, "text": "so as to live for the rest of your earthly life no longer by human desires but by the will of God." },
-        { "num": 3, "text": "You have already spent enough time in doing what the Gentiles like to do, living in licentiousness, passions, drunkenness, revels, carousing, and lawless idolatry." },
-        { "num": 4, "text": "They are surprised that you no longer join them in the same excesses of dissipation, and so they blaspheme." },
-        { "num": 5, "text": "But they will have to give an accounting to the one who stands ready to judge the living and the dead." },
-        { "num": 6, "text": "For this is the reason the gospel was proclaimed even to the dead, so that, though they had been judged in the flesh as everyone is judged, they might live in the spirit as God does." },
-        { "num": 7, "text": "The end of all things is near; therefore be serious and discipline yourselves for the sake of your prayers." },
-        { "num": 8, "text": "Above all, maintain constant love for one another, for love covers a multitude of sins." },
-        { "num": 9, "text": "Be hospitable to one another without complaining." },
-        { "num": 10, "text": "Like good stewards of the manifold grace of God, serve one another with whatever gift each of you has received." },
-        { "num": 11, "text": "Whoever speaks must do so as one speaking the very words of God; whoever serves must do so with the strength that God supplies, so that God may be glorified in all things through Jesus Christ. To him belong the glory and the power forever and ever. Amen." },
-        { "num": 12, "text": "Beloved, do not be surprised at the fiery ordeal that is taking place among you to test you, as though something strange were happening to you." },
-        { "num": 13, "text": "But rejoice insofar as you are sharing Christ’s sufferings, so that you may also be glad and shout for joy when his glory is revealed." },
-        { "num": 14, "text": "If you are reviled for the name of Christ, you are blessed, because the spirit of glory, which is the Spirit of God, is resting on you." },
-        { "num": 15, "text": "But let none of you suffer as a murderer, a thief, a criminal, or even as a mischief maker." },
-        { "num": 16, "text": "Yet if any of you suffers as a Christian, do not consider it a disgrace, but glorify God because you bear this name." },
-        { "num": 17, "text": "For the time has come for judgment to begin with the household of God; if it begins with us, what will be the end for those who do not obey the gospel of God?" },
-        { "num": 18, "text": "And “If it is hard for the righteous to be saved, what will become of the ungodly and the sinners?”" },
-        { "num": 19, "text": "Therefore, let those suffering according to God’s will entrust themselves to a faithful Creator, while continuing to do good." }
+        {
+          "num": 1,
+          "text": {
+            "NRSV": "Since therefore Christ suffered in the flesh, arm yourselves also with the same intention (for whoever has suffered in the flesh has finished with sin),",
+            "Rotherham": "Christ, then, having suffered in flesh, do, ye also, with the same purpose, arm yourselves,—because, he that hath suffered in flesh, hath done with sins,—"
+          }
+        },
+        {
+          "num": 2,
+          "text": {
+            "NRSV": "so as to live for the rest of your earthly life no longer by human desires but by the will of God.",
+            "Rotherham": "To the end that, no longer, in men’s covetings, but in God’s will, ye may live, the still remaining time."
+          }
+        },
+        {
+          "num": 3,
+          "text": {
+            "NRSV": "You have already spent enough time in doing what the Gentiles like to do, living in licentiousness, passions, drunkenness, revels, carousing, and lawless idolatry.",
+            "Rotherham": "For, sufficient, is the bygone time—to have wrought out, the will of the nations, having gone on in wanton ways, covetings, wine-drinkings, revellings, drinking-bouts, and impious idolatries:— "
+          }
+        },
+        {
+          "num": 4,
+          "text": {
+            "NRSV": "They are surprised that you no longer join them in the same excesses of dissipation, and so they blaspheme.",
+            "Rotherham": " Wherein they are taken by surprise that ye run not with them into the same overflow of riotous excess,—uttering defamation:"
+          }
+        },
+        {
+          "num": 5,
+          "text": {
+            "NRSV": "But they will have to give an accounting to the one who stands ready to judge the living and the dead.",
+            "Rotherham": "Who shall render an account unto him who is holding in readiness to judge living and dead;"
+          }
+        },
+        {
+          "num": 6,
+          "text": {
+            "NRSV": "For this is the reason the gospel was proclaimed even to the dead, so that, though they had been judged in the flesh as everyone is judged, they might live in the spirit as God does.",
+            "Rotherham": "For, unto this end, even unto the dead, was the glad-message delivered,—in order that they might be judged, indeed, according to men in flesh, but might live according to God in spirit. "
+          }
+        },
+        {
+          "num": 7,
+          "text": {
+            "NRSV": "The end of all things is near; therefore be serious and discipline yourselves for the sake of your prayers.",
+            "Rotherham": " But, the end of all things, hath drawn near:—be of sound mind, therefore, and be sober for prayers;"
+          }
+        },
+        {
+          "num": 8,
+          "text": {
+            "NRSV": "Above all, maintain constant love for one another, for love covers a multitude of sins.",
+            "Rotherham": "Before all things, keeping, fervent, your love, among yourselves, because, love, covereth a multitude of sins;"
+          }
+        },
+        {
+          "num": 9,
+          "text": {
+            "NRSV": "Be hospitable to one another without complaining.",
+            "Rotherham": "Showing hospitality one to another without murmuring,—"
+          }
+        },
+        {
+          "num": 10,
+          "text": {
+            "NRSV": "Like good stewards of the manifold grace of God, serve one another with whatever gift each of you has received.",
+            "Rotherham": "Each one, according as he hath received a gift of favour, unto one another, ministering the same, as careful stewards of the manifold favour of God:"
+          }
+        },
+        {
+          "num": 11,
+          "text": {
+            "NRSV": "Whoever speaks must do so as one speaking the very words of God; whoever serves must do so with the strength that God supplies, so that God may be glorified in all things through Jesus Christ. To him belong the glory and the power forever and ever. Amen.",
+            "Rotherham": "If any one speaketh, as oracles of God, if any one ministereth, as of strength which, God, supplieth,—that, in all things, God may be glorified through Jesus Christ,—unto whom are the glory and the dominion, unto the ages of ages. Amen! "
+          }
+        },
+        {
+          "num": 12,
+          "text": {
+            "NRSV": "Beloved, do not be surprised at the fiery ordeal that is taking place among you to test you, as though something strange were happening to you.",
+            "Rotherham": " Beloved! be not held in surprise by the burning among you, which, for putting you to the proof, is befalling you, as though a, surprising, thing were happening unto you;"
+          }
+        },
+        {
+          "num": 13,
+          "text": {
+            "NRSV": "But rejoice insofar as you are sharing Christ’s sufferings, so that you may also be glad and shout for joy when his glory is revealed.",
+            "Rotherham": "But, in so far as ye are taking fellowship in the Christ’s sufferings, rejoice! in order that, in the revealing of his glory also, ye may rejoice with exultation:"
+          }
+        },
+        {
+          "num": 14,
+          "text": {
+            "NRSV": "If you are reviled for the name of Christ, you are blessed, because the spirit of glory, which is the Spirit of God, is resting on you.",
+            "Rotherham": "If ye are being reproached in the name of Christ, happy [are ye] ! Because, the Spirit, of the glory, and the [Spirit] of God, unto you is bringing rest."
+          }
+        },
+        {
+          "num": 15,
+          "text": {
+            "NRSV": "But let none of you suffer as a murderer, a thief, a criminal, or even as a mischief maker.",
+            "Rotherham": "For let, none of you, be suffering as a murderer, or a thief, or an evil-doer, or as one prying into other men’s affairs;"
+          }
+        },
+        {
+          "num": 16,
+          "text": {
+            "NRSV": "Yet if any of you suffers as a Christian, do not consider it a disgrace, but glorify God because you bear this name.",
+            "Rotherham": "But, if as a Christian, let him not be ashamed, but be glorifying God in this name."
+          }
+        },
+        {
+          "num": 17,
+          "text": {
+            "NRSV": "For the time has come for judgment to begin with the household of God; if it begins with us, what will be the end for those who do not obey the gospel of God?",
+            "Rotherham": "For it is the ripe time for the judgment to begin with the house of God; but, if first with us, what shall be the end of them who yield not unto the glad-message of God?"
+          }
+        },
+        {
+          "num": 18,
+          "text": {
+            "NRSV": "And “If it is hard for the righteous to be saved, what will become of the ungodly and the sinners?”",
+            "Rotherham": "And, if, the righteous man, is, with difficulty, saved, where then shall, the ungodly and sinful man, appear?"
+          }
+        },
+        {
+          "num": 19,
+          "text": {
+            "NRSV": "Therefore, let those suffering according to God’s will entrust themselves to a faithful Creator, while continuing to do good.",
+            "Rotherham": "So then, let, them who are even suffering, according to the will of God, unto a faithful Creator, be committing their souls, in well-doing.  "
+          }
+        }
       ]
     },
     {
       "num": 5,
       "verses": [
-        { "num": 1, "text": "Now as an elder myself and a witness of the sufferings of Christ, as well as one who shares in the glory to be revealed, I exhort the elders among you" },
-        { "num": 2, "text": "to tend the flock of God that is in your charge, exercising the oversight, not under compulsion but willingly, as God would have you do it—not for sordid gain but eagerly." },
-        { "num": 3, "text": "Do not lord it over those in your charge, but be examples to the flock." },
-        { "num": 4, "text": "And when the chief shepherd appears, you will win the crown of glory that never fades away." },
-        { "num": 5, "text": "In the same way, you who are younger must accept the authority of the elders. And all of you must clothe yourselves with humility in your dealings with one another, for “God opposes the proud, but gives grace to the humble.”" },
-        { "num": 6, "text": "Humble yourselves therefore under the mighty hand of God, so that he may exalt you in due time." },
-        { "num": 7, "text": "Cast all your anxiety on him, because he cares for you." },
-        { "num": 8, "text": "Discipline yourselves, keep alert. Like a roaring lion your adversary the devil prowls around, looking for someone to devour." },
-        { "num": 9, "text": "Resist him, steadfast in your faith, for you know that your brothers and sisters in all the world are undergoing the same kinds of suffering." },
-        { "num": 10, "text": "And after you have suffered for a little while, the God of all grace, who has called you to his eternal glory in Christ, will himself restore, support, strengthen, and establish you." },
-        { "num": 11, "text": "To him be the power forever and ever. Amen." },
-        { "num": 12, "text": "Through Silvanus, whom I consider a faithful brother, I have written this short letter to encourage you and to testify that this is the true grace of God. Stand fast in it." },
-        { "num": 13, "text": "Your sister church in Babylon, chosen together with you, sends you greetings; and so does my son Mark." },
-        { "num": 14, "text": "Greet one another with a kiss of love. Peace to all of you who are in Christ." }
+        {
+          "num": 1,
+          "text": {
+            "NRSV": "Now as an elder myself and a witness of the sufferings of Christ, as well as one who shares in the glory to be revealed, I exhort the elders among you",
+            "Rotherham": "Elders, therefore, among you, I exhort—[I] who am their co-elder and a witness of the sufferings of the Christ, who also, in the glory about to be revealed, have, a share;—"
+          }
+        },
+        {
+          "num": 2,
+          "text": {
+            "NRSV": "to tend the flock of God that is in your charge, exercising the oversight, not under compulsion but willingly, as God would have you do it—not for sordid gain but eagerly.",
+            "Rotherham": "Shepherd the beloved flock of God, which is among you,—not by compulsion, but by choice, nor yet for base gain, but of a ready mind,—"
+          }
+        },
+        {
+          "num": 3,
+          "text": {
+            "NRSV": "Do not lord it over those in your charge, but be examples to the flock.",
+            "Rotherham": "Nor yet as lording it over the allotted portions, but becoming, ensamples, to the beloved flock;"
+          }
+        },
+        {
+          "num": 4,
+          "text": {
+            "NRSV": "And when the chief shepherd appears, you will win the crown of glory that never fades away.",
+            "Rotherham": "And, when the Chief Shepherd is manifested, ye shall bear away, the unfading crown of glory. "
+          }
+        },
+        {
+          "num": 5,
+          "text": {
+            "NRSV": "In the same way, you who are younger must accept the authority of the elders. And all of you must clothe yourselves with humility in your dealings with one another, for “God opposes the proud, but gives grace to the humble.”",
+            "Rotherham": " In like manner, ye younger men—submit yourselves unto elders;—All, however, one towards another, gird on humility; because, God, against the haughty, arrayeth himself, whereas, unto the lowly, he giveth favour."
+          }
+        },
+        {
+          "num": 6,
+          "text": {
+            "NRSV": "Humble yourselves therefore under the mighty hand of God, so that he may exalt you in due time.",
+            "Rotherham": "Be made lowly, therefore, under the strong hand of God, that he may lift, you, up in due time,—"
+          }
+        },
+        {
+          "num": 7,
+          "text": {
+            "NRSV": "Cast all your anxiety on him, because he cares for you.",
+            "Rotherham": "All your anxiety, casting upon him, because he careth for you. "
+          }
+        },
+        {
+          "num": 8,
+          "text": {
+            "NRSV": "Discipline yourselves, keep alert. Like a roaring lion your adversary the devil prowls around, looking for someone to devour.",
+            "Rotherham": " Be sober! be watchful! Your slanderous adversary, as a roaring lion, is walking about—seeking to devour:"
+          }
+        },
+        {
+          "num": 9,
+          "text": {
+            "NRSV": "Resist him, steadfast in your faith, for you know that your brothers and sisters in all the world are undergoing the same kinds of suffering.",
+            "Rotherham": "Whom resist, steadfast in your faith, knowing that, the same sufferings, in your brotherhood that is in the world, are being accomplished. "
+          }
+        },
+        {
+          "num": 10,
+          "text": {
+            "NRSV": "And after you have suffered for a little while, the God of all grace, who has called you to his eternal glory in Christ, will himself restore, support, strengthen, and establish you.",
+            "Rotherham": " Howbeit, the God of all favour—who hath called you unto his age-abiding glory in Christ—when, for a little, ye have suffered, Himself, will adjust, confirm, strengthen:—"
+          }
+        },
+        {
+          "num": 11,
+          "text": {
+            "NRSV": "To him be the power forever and ever. Amen.",
+            "Rotherham": "Unto him, be the dominion, unto the ages. Amen!"
+          }
+        },
+        {
+          "num": 12,
+          "text": {
+            "NRSV": "Through Silvanus, whom I consider a faithful brother, I have written this short letter to encourage you and to testify that this is the true grace of God. Stand fast in it.",
+            "Rotherham": "By Silvanus, the faithful brother, as I account him, have I briefly written, unto you, exhorting and adding testimony—that, this, is the true favour of God—within which, stand ye fast!"
+          }
+        },
+        {
+          "num": 13,
+          "text": {
+            "NRSV": "Your sister church in Babylon, chosen together with you, sends you greetings; and so does my son Mark.",
+            "Rotherham": "She who, in Babylon, is co-elect, and Mark my son, salute you:"
+          }
+        },
+        {
+          "num": 14,
+          "text": {
+            "NRSV": "Greet one another with a kiss of love. Peace to all of you who are in Christ.",
+            "Rotherham": "Salute ye one another with a kiss of love. Peace unto you all who are in Christ.   "
+          }
+        }
       ]
     }
-  ]
+  ],
+  "schema": "bible_book_multiversion_v1"
 }

@@ -3,132 +3,773 @@
     "name": "Philippians",
     "id": "PHIL",
     "version": "NRSV",
-    "copyright": "New Revised Standard Version Bible, copyright © 1989 National Council of the Churches of Christ in the United States of America. Used by permission. All rights reserved worldwide."
+    "copyright": "New Revised Standard Version Bible, copyright © 1989 National Council of the Churches of Christ in the United States of America. Used by permission. All rights reserved worldwide.",
+    "canon": "NT",
+    "defaultTranslation": "NRSV",
+    "versification": "standard_nt_chapter_verse",
+    "translations": {
+      "NRSV": {
+        "label": "New Revised Standard Version",
+        "sourceType": "existing_corpus",
+        "rights": "New Revised Standard Version Bible, copyright © 1989 National Council of the Churches of Christ in the United States of America. Used by permission. All rights reserved worldwide."
+      },
+      "Rotherham": {
+        "label": "The Emphasised Bible",
+        "sourceType": "scrollmapper_bible_databases_2025_formats_json_source_witness",
+        "rights": "Public Domain",
+        "sourceWitness": "documentation/rotherham-source-witness-intake.json"
+      }
+    }
   },
   "chapters": [
     {
       "num": 1,
       "verses": [
-        { "num": 1, "text": "Paul and Timothy, servants of Christ Jesus, To all the saints in Christ Jesus who are in Philippi, with the bishops and deacons:" },
-        { "num": 2, "text": "Grace to you and peace from God our Father and the Lord Jesus Christ." },
-        { "num": 3, "text": "I thank my God every time I remember you," },
-        { "num": 4, "text": "constantly in every prayer of mine for all of you, praying with joy" },
-        { "num": 5, "text": "because of your sharing in the gospel from the first day until now." },
-        { "num": 6, "text": "I am confident of this, that the one who began a good work among you will bring it to completion by the day of Jesus Christ." },
-        { "num": 7, "text": "It is right for me to think this way about all of you, because you hold me in your heart, for all of you share in God’s grace with me, both in my imprisonment and in the defense and confirmation of the gospel." },
-        { "num": 8, "text": "For God is my witness, how I long for all of you with the compassion of Christ Jesus." },
-        { "num": 9, "text": "And this is my prayer, that your love may overflow more and more with knowledge and full insight" },
-        { "num": 10, "text": "to help you determine what is best, so that in the day of Christ you may be pure and blameless," },
-        { "num": 11, "text": "having produced the harvest of righteousness that comes through Jesus Christ for the glory and praise of God." },
-        { "num": 12, "text": "I want you to know, beloved, that what has happened to me has actually helped to spread the gospel," },
-        { "num": 13, "text": "so that it has become known throughout the whole imperial guard and to everyone else that my imprisonment is for Christ;" },
-        { "num": 14, "text": "and most of the brothers and sisters, having been made confident in the Lord by my imprisonment, dare to speak the word with greater boldness and without fear." },
-        { "num": 15, "text": "Some proclaim Christ from envy and rivalry, but others from goodwill." },
-        { "num": 16, "text": "These proclaim Christ out of love, knowing that I have been put here for the defense of the gospel;" },
-        { "num": 17, "text": "the others proclaim Christ out of selfish ambition, not sincerely but intending to increase my suffering in my imprisonment." },
-        { "num": 18, "text": "What does it matter? Just this, that Christ is proclaimed in every way, whether out of false motives or true; and in that I rejoice. Yes, and I will continue to rejoice," },
-        { "num": 19, "text": "for I know that through your prayers and the help of the Spirit of Jesus Christ this will turn out for my deliverance." },
-        { "num": 20, "text": "It is my eager expectation and hope that I will not be put to shame in any way, but that by my speaking with all boldness, Christ will be exalted now as always in my body, whether by life or by death." },
-        { "num": 21, "text": "For to me, living is Christ and dying is gain." },
-        { "num": 22, "text": "If I am to live in the flesh, that means fruitful labor for me; and I do not know which I prefer." },
-        { "num": 23, "text": "I am hard pressed between the two: my desire is to depart and be with Christ, for that is far better;" },
-        { "num": 24, "text": "but to remain in the flesh is more necessary for you." },
-        { "num": 25, "text": "Since I am convinced of this, I know that I will remain and continue with all of you for your progress and joy in faith," },
-        { "num": 26, "text": "so that I may share abundantly in your boasting in Christ Jesus when I come to you again." },
-        { "num": 27, "text": "Only, live your life in a manner worthy of the gospel of Christ, so that, whether I come and see you or am absent and hear about you, I will know that you are standing firm in one spirit, striving side by side with one mind for the faith of the gospel," },
-        { "num": 28, "text": "and are in no way intimidated by your opponents. For them this is evidence of their destruction, but of your salvation. And this is God’s doing." },
-        { "num": 29, "text": "For he has graciously granted you the privilege not only of believing in Christ, but of suffering for him as well—" },
-        { "num": 30, "text": "since you are having the same struggle that you saw I had and now hear that I still have." }
+        {
+          "num": 1,
+          "text": {
+            "NRSV": "Paul and Timothy, servants of Christ Jesus, To all the saints in Christ Jesus who are in Philippi, with the bishops and deacons:",
+            "Rotherham": "Paul and Timothy, servants of Jesus Christ,—unto all the saints in Christ Jesus who are in Philippi, with overseers and ministers:—"
+          }
+        },
+        {
+          "num": 2,
+          "text": {
+            "NRSV": "Grace to you and peace from God our Father and the Lord Jesus Christ.",
+            "Rotherham": "Favour unto you, and peace, from God our Father and Lord Jesus Christ. "
+          }
+        },
+        {
+          "num": 3,
+          "text": {
+            "NRSV": "I thank my God every time I remember you,",
+            "Rotherham": " I am giving thanks unto my God, on occasion of all my remembrance of you,"
+          }
+        },
+        {
+          "num": 4,
+          "text": {
+            "NRSV": "constantly in every prayer of mine for all of you, praying with joy",
+            "Rotherham": "At all times, in every supplication of mine, in behalf of you all, with joy, my supplication, making,—"
+          }
+        },
+        {
+          "num": 5,
+          "text": {
+            "NRSV": "because of your sharing in the gospel from the first day until now.",
+            "Rotherham": "On account of your contribution unto the glad-message, from the first day until the present:"
+          }
+        },
+        {
+          "num": 6,
+          "text": {
+            "NRSV": "I am confident of this, that the one who began a good work among you will bring it to completion by the day of Jesus Christ.",
+            "Rotherham": "Being persuaded of this very thing—that, he who hath begun in you a good work, will perfect it, until the day of Jesus Christ; "
+          }
+        },
+        {
+          "num": 7,
+          "text": {
+            "NRSV": "It is right for me to think this way about all of you, because you hold me in your heart, for all of you share in God’s grace with me, both in my imprisonment and in the defense and confirmation of the gospel.",
+            "Rotherham": " According as it is right in me to have this regard in behalf of you all,—because ye have had me in your hearts, both in my bonds and in the defence and confirmation of the glad-message, all of you being, joint partakers of my favour."
+          }
+        },
+        {
+          "num": 8,
+          "text": {
+            "NRSV": "For God is my witness, how I long for all of you with the compassion of Christ Jesus.",
+            "Rotherham": "For God is, my witness, how I long for you all in the tender affections of Christ Jesus. "
+          }
+        },
+        {
+          "num": 9,
+          "text": {
+            "NRSV": "And this is my prayer, that your love may overflow more and more with knowledge and full insight",
+            "Rotherham": " And, this, I pray—that, your love, may be, yet more and more, pre-eminent in personal knowledge and all perception,"
+          }
+        },
+        {
+          "num": 10,
+          "text": {
+            "NRSV": "to help you determine what is best, so that in the day of Christ you may be pure and blameless,",
+            "Rotherham": "To the end ye may be putting to the test the things that differ, in order that ye may be incorrupt and may give no occasion of stumbling, unto the day of Christ,"
+          }
+        },
+        {
+          "num": 11,
+          "text": {
+            "NRSV": "having produced the harvest of righteousness that comes through Jesus Christ for the glory and praise of God.",
+            "Rotherham": "Filled with that fruit of righteousness which is through Jesus Christ unto the glory and praise of God. "
+          }
+        },
+        {
+          "num": 12,
+          "text": {
+            "NRSV": "I want you to know, beloved, that what has happened to me has actually helped to spread the gospel,",
+            "Rotherham": " Howbeit, I am minded, brethren, that ye should be, getting to know, that, the things which relate unto myself, rather, unto an advancement of the glad-message, have fallen out,"
+          }
+        },
+        {
+          "num": 13,
+          "text": {
+            "NRSV": "so that it has become known throughout the whole imperial guard and to everyone else that my imprisonment is for Christ;",
+            "Rotherham": "So that, my bonds, have become manifest in Christ, in the whole palace, and unto all the rest,—"
+          }
+        },
+        {
+          "num": 14,
+          "text": {
+            "NRSV": "and most of the brothers and sisters, having been made confident in the Lord by my imprisonment, dare to speak the word with greater boldness and without fear.",
+            "Rotherham": "And [so that], the most of the brethren in the Lord, assured by my bonds, are becoming more abundantly bold to be fearlessly speaking the word of God:—"
+          }
+        },
+        {
+          "num": 15,
+          "text": {
+            "NRSV": "Some proclaim Christ from envy and rivalry, but others from goodwill.",
+            "Rotherham": "Some, indeed, by reason of envy and strife—some, however, by reason of good will—are proclaiming, the Christ:"
+          }
+        },
+        {
+          "num": 16,
+          "text": {
+            "NRSV": "These proclaim Christ out of love, knowing that I have been put here for the defense of the gospel;",
+            "Rotherham": "These, indeed, out of love, knowing that, for the defence of the glad-message, I am set;"
+          }
+        },
+        {
+          "num": 17,
+          "text": {
+            "NRSV": "the others proclaim Christ out of selfish ambition, not sincerely but intending to increase my suffering in my imprisonment.",
+            "Rotherham": "But, those, out of faction, are declaring, the Christ, not purely—supposing to rouse up, tribulation, with my bonds."
+          }
+        },
+        {
+          "num": 18,
+          "text": {
+            "NRSV": "What does it matter? Just this, that Christ is proclaimed in every way, whether out of false motives or true; and in that I rejoice. Yes, and I will continue to rejoice,",
+            "Rotherham": "What then? That, in any way, whether in pretext, or in truth, Christ, is declared, and, in this, I rejoice—yea, and will rejoice!"
+          }
+        },
+        {
+          "num": 19,
+          "text": {
+            "NRSV": "for I know that through your prayers and the help of the Spirit of Jesus Christ this will turn out for my deliverance.",
+            "Rotherham": "For I know that, this, shall turn unto me for salvation—through your supplication, and the supply of the Spirit of Jesus Christ,—"
+          }
+        },
+        {
+          "num": 20,
+          "text": {
+            "NRSV": "It is my eager expectation and hope that I will not be put to shame in any way, but that by my speaking with all boldness, Christ will be exalted now as always in my body, whether by life or by death.",
+            "Rotherham": "According to my eager outlook and hope, that, in nothing, shall I be put to shame, but, with all freedom of speech, as always, now also, shall Christ be magnified in my body, whether through means of life, or of death. "
+          }
+        },
+        {
+          "num": 21,
+          "text": {
+            "NRSV": "For to me, living is Christ and dying is gain.",
+            "Rotherham": " For, unto me—living, is Christ, and, dying, gain."
+          }
+        },
+        {
+          "num": 22,
+          "text": {
+            "NRSV": "If I am to live in the flesh, that means fruitful labor for me; and I do not know which I prefer.",
+            "Rotherham": "But, if living in flesh, [is Christ], this, unto me, is a fruit of work,—and, what I shall choose, I make not known:"
+          }
+        },
+        {
+          "num": 23,
+          "text": {
+            "NRSV": "I am hard pressed between the two: my desire is to depart and be with Christ, for that is far better;",
+            "Rotherham": "I am held in constraint, however, by reason of the two,—having, the coveting, to be released, and to be with, Christ, for it were far better!"
+          }
+        },
+        {
+          "num": 24,
+          "text": {
+            "NRSV": "but to remain in the flesh is more necessary for you.",
+            "Rotherham": "But, to abide still in the flesh, is more needful for your sake;"
+          }
+        },
+        {
+          "num": 25,
+          "text": {
+            "NRSV": "Since I am convinced of this, I know that I will remain and continue with all of you for your progress and joy in faith,",
+            "Rotherham": "And, of, this, being assured, know that I shall abide,—yea abide with you all, for your advancement, and the joy of your faith;"
+          }
+        },
+        {
+          "num": 26,
+          "text": {
+            "NRSV": "so that I may share abundantly in your boasting in Christ Jesus when I come to you again.",
+            "Rotherham": "In order that, your matter of boasting, may be more abundant in Christ Jesus, regarding me, through my own presence again with you. "
+          }
+        },
+        {
+          "num": 27,
+          "text": {
+            "NRSV": "Only, live your life in a manner worthy of the gospel of Christ, so that, whether I come and see you or am absent and hear about you, I will know that you are standing firm in one spirit, striving side by side with one mind for the faith of the gospel,",
+            "Rotherham": " Only, in a manner worthy of the glad-message of the Christ, be using your citizenship; in order that—whether coming and seeing you, or being absent, I may hear of the things which concern you—that ye are standing fast in one spirit, with one soul, joining for the combat along with the faith of the glad-message;"
+          }
+        },
+        {
+          "num": 28,
+          "text": {
+            "NRSV": "and are in no way intimidated by your opponents. For them this is evidence of their destruction, but of your salvation. And this is God’s doing.",
+            "Rotherham": "And not being affrighted in anything by the opposers,—the which, is, unto them, a token of destruction, although of your salvation, and this from God;"
+          }
+        },
+        {
+          "num": 29,
+          "text": {
+            "NRSV": "For he has graciously granted you the privilege not only of believing in Christ, but of suffering for him as well—",
+            "Rotherham": "Because, unto you, hath it been given as a favour, in behalf of Christ, not only, on him, to believe, but also, in his behalf, to suffer:—"
+          }
+        },
+        {
+          "num": 30,
+          "text": {
+            "NRSV": "since you are having the same struggle that you saw I had and now hear that I still have.",
+            "Rotherham": "Having, the same contest, which ye have seen in me, and now hear to be in me.  "
+          }
+        }
       ]
     },
     {
       "num": 2,
       "verses": [
-        { "num": 1, "text": "If then there is any encouragement in Christ, any consolation from love, any sharing in the Spirit, any compassion and sympathy," },
-        { "num": 2, "text": "make my joy complete: be of the same mind, having the same love, being in full accord and of one mind." },
-        { "num": 3, "text": "Do nothing from selfish ambition or conceit, but in humility regard others as better than yourselves." },
-        { "num": 4, "text": "Let each of you look not to your own interests, but to the interests of others." },
-        { "num": 5, "text": "Let the same mind be in you that was in Christ Jesus," },
-        { "num": 6, "text": "who, though he was in the form of God, did not regard equality with God as something to be exploited," },
-        { "num": 7, "text": "but emptied himself, taking the form of a slave, being born in human likeness. And being found in human form," },
-        { "num": 8, "text": "he humbled himself and became obedient to the point of death— even death on a cross." },
-        { "num": 9, "text": "Therefore God also highly exalted him and gave him the name that is above every name," },
-        { "num": 10, "text": "so that at the name of Jesus every knee should bend, in heaven and on earth and under the earth," },
-        { "num": 11, "text": "and every tongue should confess that Jesus Christ is Lord, to the glory of God the Father." },
-        { "num": 12, "text": "Therefore, my beloved, just as you have always obeyed me, not only in my presence, but much more now in my absence, work out your own salvation with fear and trembling;" },
-        { "num": 13, "text": "for it is God who is at work in you, enabling you both to will and to work for his good pleasure." },
-        { "num": 14, "text": "Do all things without murmuring and arguing," },
-        { "num": 15, "text": "so that you may be blameless and innocent, children of God without blemish in the midst of a crooked and perverse generation, in which you shine like stars in the world." },
-        { "num": 16, "text": "It is by your holding fast to the word of life that I can boast on the day of Christ that I did not run in vain or labor in vain." },
-        { "num": 17, "text": "But even if I am being poured out as a libation over the sacrifice and the offering of your faith, I am glad and rejoice with all of you—" },
-        { "num": 18, "text": "and in the same way you also must be glad and rejoice with me." },
-        { "num": 19, "text": "I hope in the Lord Jesus to send Timothy to you soon, so that I may be cheered by news of you." },
-        { "num": 20, "text": "I have no one like him who will be genuinely concerned for your welfare." },
-        { "num": 21, "text": "All of them are seeking their own interests, not those of Jesus Christ." },
-        { "num": 22, "text": "But Timothy’s worth you know, how like a son with a father he has served with me in the work of the gospel." },
-        { "num": 23, "text": "I hope therefore to send him as soon as I see how things go with me;" },
-        { "num": 24, "text": "and I trust in the Lord that I will also come soon." },
-        { "num": 25, "text": "Still, I think it necessary to send to you Epaphroditus—my brother and co-worker and fellow soldier, your messenger and minister to my need;" },
-        { "num": 26, "text": "for he has been longing for all of you, and has been distressed because you heard that he was ill." },
-        { "num": 27, "text": "He was indeed so ill that he nearly died. But God had mercy on him, and not only on him but on me also, so that I would not have one sorrow after another." },
-        { "num": 28, "text": "I am the more eager to send him, therefore, in order that you may rejoice at seeing him again, and that I may be less anxious." },
-        { "num": 29, "text": "Welcome him then in the Lord with all joy, and honor such people," },
-        { "num": 30, "text": "because he came close to death for the work of Christ, risking his life to make up for those services that you could not give me." }
+        {
+          "num": 1,
+          "text": {
+            "NRSV": "If then there is any encouragement in Christ, any consolation from love, any sharing in the Spirit, any compassion and sympathy,",
+            "Rotherham": "If there be, therefore, any encouragement in Christ, if any comfort of love, if any fellowship of spirit, if any tender affections and compassions,"
+          }
+        },
+        {
+          "num": 2,
+          "text": {
+            "NRSV": "make my joy complete: be of the same mind, having the same love, being in full accord and of one mind.",
+            "Rotherham": "Fill ye up my joy—that, the same thing, ye esteem, the same love, possessing, joined in soul, the one thing, esteeming,—"
+          }
+        },
+        {
+          "num": 3,
+          "text": {
+            "NRSV": "Do nothing from selfish ambition or conceit, but in humility regard others as better than yourselves.",
+            "Rotherham": "Nothing by way of faction, nothing by way of vain-glory,—but, in lowliness of mind, accounting, one another, superior to yourselves,—"
+          }
+        },
+        {
+          "num": 4,
+          "text": {
+            "NRSV": "Let each of you look not to your own interests, but to the interests of others.",
+            "Rotherham": "Not, to your own things, severally looking, but, to the things of others, severally:—"
+          }
+        },
+        {
+          "num": 5,
+          "text": {
+            "NRSV": "Let the same mind be in you that was in Christ Jesus,",
+            "Rotherham": "The same thing, esteem, in yourselves, which also, in Christ Jesus, [ye esteem],—"
+          }
+        },
+        {
+          "num": 6,
+          "text": {
+            "NRSV": "who, though he was in the form of God, did not regard equality with God as something to be exploited,",
+            "Rotherham": "Who, in form of God, subsisting, not, a thing to be seized, accounted the being equal with God,"
+          }
+        },
+        {
+          "num": 7,
+          "text": {
+            "NRSV": "but emptied himself, taking the form of a slave, being born in human likeness. And being found in human form,",
+            "Rotherham": "But, himself, emptied, taking, a servant’s form, coming to be, in men’s likeness;"
+          }
+        },
+        {
+          "num": 8,
+          "text": {
+            "NRSV": "he humbled himself and became obedient to the point of death— even death on a cross.",
+            "Rotherham": "And, in fashion, being found, as a man, humbled himself, becoming obedient as far as death, yea, death upon a cross."
+          }
+        },
+        {
+          "num": 9,
+          "text": {
+            "NRSV": "Therefore God also highly exalted him and gave him the name that is above every name,",
+            "Rotherham": "Wherefore also, God, uplifted him far on high, and favoured him with the name which is above every name,—"
+          }
+        },
+        {
+          "num": 10,
+          "text": {
+            "NRSV": "so that at the name of Jesus every knee should bend, in heaven and on earth and under the earth,",
+            "Rotherham": "In order that, in the name of Jesus, every knee might bow—of beings in heaven, and on earth, and underground,—"
+          }
+        },
+        {
+          "num": 11,
+          "text": {
+            "NRSV": "and every tongue should confess that Jesus Christ is Lord, to the glory of God the Father.",
+            "Rotherham": "And, every tongue, might openly confess—that Jesus Christ is, Lord, unto the glory of God the Father. "
+          }
+        },
+        {
+          "num": 12,
+          "text": {
+            "NRSV": "Therefore, my beloved, just as you have always obeyed me, not only in my presence, but much more now in my absence, work out your own salvation with fear and trembling;",
+            "Rotherham": " So, then, my beloved—even as ye have always obeyed, not [as] in my presence only, but, now, much more, in my absence, with fear and trembling, your own salvation, be working out;"
+          }
+        },
+        {
+          "num": 13,
+          "text": {
+            "NRSV": "for it is God who is at work in you, enabling you both to will and to work for his good pleasure.",
+            "Rotherham": "For it is, God, who energiseth within you, both the desiring and the energising, in behalf of his good pleasure. "
+          }
+        },
+        {
+          "num": 14,
+          "text": {
+            "NRSV": "Do all things without murmuring and arguing,",
+            "Rotherham": " All things, be doing, apart from murmurings and disputings;"
+          }
+        },
+        {
+          "num": 15,
+          "text": {
+            "NRSV": "so that you may be blameless and innocent, children of God without blemish in the midst of a crooked and perverse generation, in which you shine like stars in the world.",
+            "Rotherham": "In order that ye may become faultless and inviolate, children of God, blameless amidst a crooked and perverted generation, amongst whom ye appear as luminaries in the world,"
+          }
+        },
+        {
+          "num": 16,
+          "text": {
+            "NRSV": "It is by your holding fast to the word of life that I can boast on the day of Christ that I did not run in vain or labor in vain.",
+            "Rotherham": "A word of light, holding forth,—as a matter of boasting unto me, for the day of Christ,—that, not in vain, I ran, nor, in vain, I toiled:—"
+          }
+        },
+        {
+          "num": 17,
+          "text": {
+            "NRSV": "But even if I am being poured out as a libation over the sacrifice and the offering of your faith, I am glad and rejoice with all of you—",
+            "Rotherham": "Nay! if I am even to be poured out as a drink-offering, upon the sacrifice and public ministry of your faith, I rejoice, yea rejoice together with you all,—"
+          }
+        },
+        {
+          "num": 18,
+          "text": {
+            "NRSV": "and in the same way you also must be glad and rejoice with me.",
+            "Rotherham": "For the same cause, moreover, do, ye also, rejoice, yea rejoice together with me."
+          }
+        },
+        {
+          "num": 19,
+          "text": {
+            "NRSV": "I hope in the Lord Jesus to send Timothy to you soon, so that I may be cheered by news of you.",
+            "Rotherham": "I am hoping, however, in the Lord Jesus—Timothy, shortly, to send unto you, in order that, I also, may be of cheerful soul, when I have ascertained the things that concern you."
+          }
+        },
+        {
+          "num": 20,
+          "text": {
+            "NRSV": "I have no one like him who will be genuinely concerned for your welfare.",
+            "Rotherham": "For, no one, have I, of equal soul, who, genuinely, as to the things that concern you, will be anxious;"
+          }
+        },
+        {
+          "num": 21,
+          "text": {
+            "NRSV": "All of them are seeking their own interests, not those of Jesus Christ.",
+            "Rotherham": "For, they all, their own things, do seek, not the things of Christ Jesus;"
+          }
+        },
+        {
+          "num": 22,
+          "text": {
+            "NRSV": "But Timothy’s worth you know, how like a son with a father he has served with me in the work of the gospel.",
+            "Rotherham": "But, of the proof of him, be taking note,—that, as child, with father, with me, hath he done service for the glad-message;"
+          }
+        },
+        {
+          "num": 23,
+          "text": {
+            "NRSV": "I hope therefore to send him as soon as I see how things go with me;",
+            "Rotherham": "Him, indeed, therefore, am I hoping to send—as soon as I can look off from the things that concern myself,—forthwith."
+          }
+        },
+        {
+          "num": 24,
+          "text": {
+            "NRSV": "and I trust in the Lord that I will also come soon.",
+            "Rotherham": "I am assured, however, in the Lord,—that I, myself, shall shortly come."
+          }
+        },
+        {
+          "num": 25,
+          "text": {
+            "NRSV": "Still, I think it necessary to send to you Epaphroditus—my brother and co-worker and fellow soldier, your messenger and minister to my need;",
+            "Rotherham": "Needful, nevertheless have I accounted it—Epaphroditus, my brother and fellow worker and fellow soldier, but your apostle and public minister to my need, to send unto you;"
+          }
+        },
+        {
+          "num": 26,
+          "text": {
+            "NRSV": "for he has been longing for all of you, and has been distressed because you heard that he was ill.",
+            "Rotherham": "Since he hath been longing to see, you all, and hath been in great distress, because ye had heard he was sick;—"
+          }
+        },
+        {
+          "num": 27,
+          "text": {
+            "NRSV": "He was indeed so ill that he nearly died. But God had mercy on him, and not only on him but on me also, so that I would not have one sorrow after another.",
+            "Rotherham": "And, in fact, he was sick, nigh unto death; but, God, had mercy on him,—and, not on him only, but, on me also, lest, sorrow upon sorrow, I should have."
+          }
+        },
+        {
+          "num": 28,
+          "text": {
+            "NRSV": "I am the more eager to send him, therefore, in order that you may rejoice at seeing him again, and that I may be less anxious.",
+            "Rotherham": "The more promptly, therefore, have I sent him, that, seeing him again, ye may rejoice, and, I, the less sorrowful, may be."
+          }
+        },
+        {
+          "num": 29,
+          "text": {
+            "NRSV": "Welcome him then in the Lord with all joy, and honor such people,",
+            "Rotherham": "Be giving him welcome, therefore, in the Lord, with all joy; and, such as he, in honour, be holding,—"
+          }
+        },
+        {
+          "num": 30,
+          "text": {
+            "NRSV": "because he came close to death for the work of Christ, risking his life to make up for those services that you could not give me.",
+            "Rotherham": "Because, for the sake of the work of the Lord, unto death, he drew nigh, running hazard with his life, that he might fill up your lack of the public service, towards me.  "
+          }
+        }
       ]
     },
     {
       "num": 3,
       "verses": [
-        { "num": 1, "text": "Finally, my brothers and sisters, rejoice in the Lord. To write the same things to you is not troublesome to me, and for you it is a safeguard." },
-        { "num": 2, "text": "Beware of the dogs, beware of the evil workers, beware of those who mutilate the flesh!" },
-        { "num": 3, "text": "For it is we who are the circumcision, who worship in the Spirit of God and boast in Christ Jesus and have no confidence in the flesh—" },
-        { "num": 4, "text": "even though I, too, have reason for confidence in the flesh. If anyone else has reason to be confident in the flesh, I have more:" },
-        { "num": 5, "text": "circumcised on the eighth day, a member of the people of Israel, of the tribe of Benjamin, a Hebrew born of Hebrews; as to the law, a Pharisee;" },
-        { "num": 6, "text": "as to zeal, a persecutor of the church; as to righteousness under the law, blameless." },
-        { "num": 7, "text": "Yet whatever gains I had, these I have come to regard as loss because of Christ." },
-        { "num": 8, "text": "More than that, I regard everything as loss because of the surpassing value of knowing Christ Jesus my Lord. For his sake I have suffered the loss of all things, and I regard them as rubbish, in order that I may gain Christ" },
-        { "num": 9, "text": "and be found in him, not having a righteousness of my own that comes from the law, but one that comes through faith in Christ, the righteousness from God based on faith." },
-        { "num": 10, "text": "I want to know Christ and the power of his resurrection and the sharing of his sufferings by becoming like him in his death," },
-        { "num": 11, "text": "if somehow I may attain the resurrection from the dead." },
-        { "num": 12, "text": "Not that I have already obtained this or have already reached the goal; but I press on to make it my own, because Christ Jesus has made me his own." },
-        { "num": 13, "text": "Beloved, I do not consider that I have made it my own; but this one thing I do: forgetting what lies behind and straining forward to what lies ahead," },
-        { "num": 14, "text": "I press on toward the goal for the prize of the heavenly call of God in Christ Jesus." },
-        { "num": 15, "text": "Let those of us then who are mature be of the same mind; and if you think differently about anything, this too God will reveal to you." },
-        { "num": 16, "text": "Only let us hold fast to what we have attained." },
-        { "num": 17, "text": "Brothers and sisters, join in imitating me, and observe those who live according to the example you have in us." },
-        { "num": 18, "text": "For many live as enemies of the cross of Christ; I have often told you of them, and now I tell you even with tears." },
-        { "num": 19, "text": "Their end is destruction; their god is the belly; and their glory is in their shame; their minds are set on earthly things." },
-        { "num": 20, "text": "But our citizenship is in heaven, and it is from there that we are expecting a Savior, the Lord Jesus Christ." },
-        { "num": 21, "text": "He will transform the body of our humiliation that it may be conformed to the body of his glory, by the power that also enables him to make all things subject to himself." }
+        {
+          "num": 1,
+          "text": {
+            "NRSV": "Finally, my brothers and sisters, rejoice in the Lord. To write the same things to you is not troublesome to me, and for you it is a safeguard.",
+            "Rotherham": "For the rest, my brethren—rejoice in the Lord. To be writing, the same things, unto you, to me, is not irksome, while, for you, is safe:—"
+          }
+        },
+        {
+          "num": 2,
+          "text": {
+            "NRSV": "Beware of the dogs, beware of the evil workers, beware of those who mutilate the flesh!",
+            "Rotherham": "Beware of the dogs, beware of mischievous workers, beware of the mutilation;"
+          }
+        },
+        {
+          "num": 3,
+          "text": {
+            "NRSV": "For it is we who are the circumcision, who worship in the Spirit of God and boast in Christ Jesus and have no confidence in the flesh—",
+            "Rotherham": "For, we, are the circumcision, who in the Spirit of God, are doing divine service, and are boasting in Christ Jesus, and, not in flesh, having confidence,— "
+          }
+        },
+        {
+          "num": 4,
+          "text": {
+            "NRSV": "even though I, too, have reason for confidence in the flesh. If anyone else has reason to be confident in the flesh, I have more:",
+            "Rotherham": " Although, indeed, I, might have confidence even in flesh. If any other thinketh to have confidence in flesh, I, more:—"
+          }
+        },
+        {
+          "num": 5,
+          "text": {
+            "NRSV": "circumcised on the eighth day, a member of the people of Israel, of the tribe of Benjamin, a Hebrew born of Hebrews; as to the law, a Pharisee;",
+            "Rotherham": "Circumcised, the eighth day, of the race of Israel, of the tribe of Benjamin, a Hebrew of Hebrews,—regarding law, a Pharisee,"
+          }
+        },
+        {
+          "num": 6,
+          "text": {
+            "NRSV": "as to zeal, a persecutor of the church; as to righteousness under the law, blameless.",
+            "Rotherham": "Regarding zeal, persecuting the assembly, regarding the righteousness that is in law, having become blameless."
+          }
+        },
+        {
+          "num": 7,
+          "text": {
+            "NRSV": "Yet whatever gains I had, these I have come to regard as loss because of Christ.",
+            "Rotherham": "But, whatever things, unto me, were gain, the same, have I accounted, for the Christ’s sake, loss;"
+          }
+        },
+        {
+          "num": 8,
+          "text": {
+            "NRSV": "More than that, I regard everything as loss because of the surpassing value of knowing Christ Jesus my Lord. For his sake I have suffered the loss of all things, and I regard them as rubbish, in order that I may gain Christ",
+            "Rotherham": "Yea, doubtless! and I account all things to be, loss, because of the excellency of the knowledge of Christ Jesus my Lord, for the sake of whom, the loss, of all things, have I suffered, and do account them refuse, in order that, Christ, I may win, "
+          }
+        },
+        {
+          "num": 9,
+          "text": {
+            "NRSV": "and be found in him, not having a righteousness of my own that comes from the law, but one that comes through faith in Christ, the righteousness from God based on faith.",
+            "Rotherham": " And be found in him—not having a righteousness of my own, that which is by law, but that which is through faith in Christ, the righteousness which is, of God, upon my faith,—"
+          }
+        },
+        {
+          "num": 10,
+          "text": {
+            "NRSV": "I want to know Christ and the power of his resurrection and the sharing of his sufferings by becoming like him in his death,",
+            "Rotherham": "To get to know him, and the power of his resurrection and fellowship of his sufferings, becoming conformed unto his death,—"
+          }
+        },
+        {
+          "num": 11,
+          "text": {
+            "NRSV": "if somehow I may attain the resurrection from the dead.",
+            "Rotherham": "If by any means I may advance to the earlier resurrection, which is from among the dead:"
+          }
+        },
+        {
+          "num": 12,
+          "text": {
+            "NRSV": "Not that I have already obtained this or have already reached the goal; but I press on to make it my own, because Christ Jesus has made me his own.",
+            "Rotherham": "Not that I have, already, received, or have, already, reached perfection, but I am pressing on—if I may even lay hold of that for which I have also been laid hold of by Christ [Jesus]:—"
+          }
+        },
+        {
+          "num": 13,
+          "text": {
+            "NRSV": "Beloved, I do not consider that I have made it my own; but this one thing I do: forgetting what lies behind and straining forward to what lies ahead,",
+            "Rotherham": "Brethren! I, as to myself, reckon that I have, not yet, laid hold; one thing, however,—the things behind, forgetting, and, unto the things before, eagerly reaching out,"
+          }
+        },
+        {
+          "num": 14,
+          "text": {
+            "NRSV": "I press on toward the goal for the prize of the heavenly call of God in Christ Jesus.",
+            "Rotherham": "With the goal in view, I press on for the prize of the upward calling of God in Christ Jesus. "
+          }
+        },
+        {
+          "num": 15,
+          "text": {
+            "NRSV": "Let those of us then who are mature be of the same mind; and if you think differently about anything, this too God will reveal to you.",
+            "Rotherham": " As many, therefore, as are full-grown, let, this, be our resolve; and, if, somewhat differently, ye are resolved, this, also, shall, God, unto you reveal."
+          }
+        },
+        {
+          "num": 16,
+          "text": {
+            "NRSV": "Only let us hold fast to what we have attained.",
+            "Rotherham": "Nevertheless, whereunto we have advanced, in the same rank, stepping along. "
+          }
+        },
+        {
+          "num": 17,
+          "text": {
+            "NRSV": "Brothers and sisters, join in imitating me, and observe those who live according to the example you have in us.",
+            "Rotherham": " Imitators together of me, become ye, brethren, and keep an eye on them who, thus, are walking,—even as ye have, us, for, an ensample."
+          }
+        },
+        {
+          "num": 18,
+          "text": {
+            "NRSV": "For many live as enemies of the cross of Christ; I have often told you of them, and now I tell you even with tears.",
+            "Rotherham": "For, many, are walking—of whom I have often been telling you, and, now, even weeping, am telling,—the enemies of the cross of the Christ;"
+          }
+        },
+        {
+          "num": 19,
+          "text": {
+            "NRSV": "Their end is destruction; their god is the belly; and their glory is in their shame; their minds are set on earthly things.",
+            "Rotherham": "Whose, end, is destruction, whose, God, is the belly, and [whose], glory, is in their shame, who, upon the earthly things, are resolved."
+          }
+        },
+        {
+          "num": 20,
+          "text": {
+            "NRSV": "But our citizenship is in heaven, and it is from there that we are expecting a Savior, the Lord Jesus Christ.",
+            "Rotherham": "For, our citizenship, in the heavens, hath its rise; wherefore, a Saviour also, do we ardently await,—The Lord Jesus Christ,—"
+          }
+        },
+        {
+          "num": 21,
+          "text": {
+            "NRSV": "He will transform the body of our humiliation that it may be conformed to the body of his glory, by the power that also enables him to make all things subject to himself.",
+            "Rotherham": "Who will transfigure our humbled body, into conformity with his glorified body, according to the energy wherewith he is able even to subdue, unto himself, all things.  "
+          }
+        }
       ]
     },
     {
       "num": 4,
       "verses": [
-        { "num": 1, "text": "Therefore, my brothers and sisters, whom I love and long for, my joy and crown, stand firm in the Lord in this way, my beloved." },
-        { "num": 2, "text": "I urge Euodia and I urge Syntyche to be of the same mind in the Lord." },
-        { "num": 3, "text": "Yes, and I ask you also, my loyal companion, help these women, for they have struggled beside me in the work of the gospel, together with Clement and the rest of my co-workers, whose names are in the book of life." },
-        { "num": 4, "text": "Rejoice in the Lord always; again I will say, Rejoice." },
-        { "num": 5, "text": "Let your gentleness be known to everyone. The Lord is near." },
-        { "num": 6, "text": "Do not worry about anything, but in everything by prayer and supplication with thanksgiving let your requests be made known to God." },
-        { "num": 7, "text": "And the peace of God, which surpasses all understanding, will guard your hearts and your minds in Christ Jesus." },
-        { "num": 8, "text": "Finally, beloved, whatever is true, whatever is honorable, whatever is just, whatever is pure, whatever is pleasing, whatever is commendable, if there is any excellence and if there is anything worthy of praise, think about these things." },
-        { "num": 9, "text": "Keep on doing the things that you have learned and received and heard and seen in me, and the God of peace will be with you." },
-        { "num": 10, "text": "I rejoice in the Lord greatly that now at last you have revived your concern for me; indeed, you were concerned for me, but had no opportunity to show it." },
-        { "num": 11, "text": "Not that I am referring to being in need; for I have learned to be content with whatever I have." },
-        { "num": 12, "text": "I know what it is to have little, and I know what it is to have plenty. In any and all circumstances I have learned the secret of being well-fed and of going hungry, of having plenty and of being in need." },
-        { "num": 13, "text": "I can do all things through him who strengthens me." },
-        { "num": 14, "text": "In any case, it was kind of you to share my distress." },
-        { "num": 15, "text": "You Philippians indeed know that in the early days of the gospel, when I left Macedonia, no church shared with me in the matter of giving and receiving, except you alone." },
-        { "num": 16, "text": "For even when I was in Thessalonica, you sent me help for my needs more than once." },
-        { "num": 17, "text": "Not that I seek the gift, but I seek the profit that accumulates to your account." },
-        { "num": 18, "text": "I have been paid in full and have more than enough; I am fully satisfied, now that I have received from Epaphroditus the gifts you sent, a fragrant offering, a sacrifice acceptable and pleasing to God." },
-        { "num": 19, "text": "And my God will fully satisfy every need of yours according to his riches in glory in Christ Jesus." },
-        { "num": 20, "text": "To our God and Father be glory forever and ever. Amen." },
-        { "num": 21, "text": "Greet every saint in Christ Jesus. The friends who are with me greet you." },
-        { "num": 22, "text": "All the saints greet you, especially those of the emperor’s household." },
-        { "num": 23, "text": "The grace of the Lord Jesus Christ be with your spirit." }
+        {
+          "num": 1,
+          "text": {
+            "NRSV": "Therefore, my brothers and sisters, whom I love and long for, my joy and crown, stand firm in the Lord in this way, my beloved.",
+            "Rotherham": "So then, my brethren, beloved and longed for, my joy and crown,—thus, stand fast in the Lord, beloved."
+          }
+        },
+        {
+          "num": 2,
+          "text": {
+            "NRSV": "I urge Euodia and I urge Syntyche to be of the same mind in the Lord.",
+            "Rotherham": "Euodia, I exhort, and, Syntche, I exhort,—on the same thing, to be resolved in the Lord:—"
+          }
+        },
+        {
+          "num": 3,
+          "text": {
+            "NRSV": "Yes, and I ask you also, my loyal companion, help these women, for they have struggled beside me in the work of the gospel, together with Clement and the rest of my co-workers, whose names are in the book of life.",
+            "Rotherham": "Yea! I request thee also, true yokefellow, be thou helping together with these women,—who, indeed, in the joyful message, have maintained the combat with me, along with Clement also, and the rest of my fellow-workers, whose names, are in the book of life."
+          }
+        },
+        {
+          "num": 4,
+          "text": {
+            "NRSV": "Rejoice in the Lord always; again I will say, Rejoice.",
+            "Rotherham": "Rejoice in the Lord always: again, I will say—rejoice!"
+          }
+        },
+        {
+          "num": 5,
+          "text": {
+            "NRSV": "Let your gentleness be known to everyone. The Lord is near.",
+            "Rotherham": "Let, your considerateness, be known unto all men. The Lord, is near:—"
+          }
+        },
+        {
+          "num": 6,
+          "text": {
+            "NRSV": "Do not worry about anything, but in everything by prayer and supplication with thanksgiving let your requests be made known to God.",
+            "Rotherham": "For nothing, be anxious, but, in everything, by your prayer and supplication with thanksgiving, let, your petitions, be made known unto God;"
+          }
+        },
+        {
+          "num": 7,
+          "text": {
+            "NRSV": "And the peace of God, which surpasses all understanding, will guard your hearts and your minds in Christ Jesus.",
+            "Rotherham": "And, the peace of God, which riseth above every mind, shall guard your hearts and your thoughts, in Christ Jesus."
+          }
+        },
+        {
+          "num": 8,
+          "text": {
+            "NRSV": "Finally, beloved, whatever is true, whatever is honorable, whatever is just, whatever is pure, whatever is pleasing, whatever is commendable, if there is any excellence and if there is anything worthy of praise, think about these things.",
+            "Rotherham": "For the rest, brethren, whatsoever things are true, whatsoever things are dignified, whatsoever things are righteous, whatsoever things are chaste, whatsoever things are lovely, whatsoever things are of good report,—if there be any virtue, and if any praise, the same, be taking into account;"
+          }
+        },
+        {
+          "num": 9,
+          "text": {
+            "NRSV": "Keep on doing the things that you have learned and received and heard and seen in me, and the God of peace will be with you.",
+            "Rotherham": "The things which ye have both learned, and accepted, and heard, and seen in me, the same, practise;—and, the God of peace, shall be with you. "
+          }
+        },
+        {
+          "num": 10,
+          "text": {
+            "NRSV": "I rejoice in the Lord greatly that now at last you have revived your concern for me; indeed, you were concerned for me, but had no opportunity to show it.",
+            "Rotherham": " Howbeit I have been made to rejoice in the Lord greatly—that, now, at length, ye have flourished in your care for me,—although, indeed, ye were caring, but lacked opportunity."
+          }
+        },
+        {
+          "num": 11,
+          "text": {
+            "NRSV": "Not that I am referring to being in need; for I have learned to be content with whatever I have.",
+            "Rotherham": "Not that, as to coming short, I am speaking, for, I, have learned, in whatsoever circumstances I am, to be, independent:"
+          }
+        },
+        {
+          "num": 12,
+          "text": {
+            "NRSV": "I know what it is to have little, and I know what it is to have plenty. In any and all circumstances I have learned the secret of being well-fed and of going hungry, of having plenty and of being in need.",
+            "Rotherham": "I know [what it is] even to be kept low, and I know [what it is] to have more than enough,—in every way, and in all things, have I been let into the secret—both to be well fed, and to be hungering, both to have more than enough, and to be coming short:"
+          }
+        },
+        {
+          "num": 13,
+          "text": {
+            "NRSV": "I can do all things through him who strengthens me.",
+            "Rotherham": "I have might, for all things, in him that empowereth me."
+          }
+        },
+        {
+          "num": 14,
+          "text": {
+            "NRSV": "In any case, it was kind of you to share my distress.",
+            "Rotherham": "Nevertheless, nobly, have ye done, in taking fellowship with me in my tribulation."
+          }
+        },
+        {
+          "num": 15,
+          "text": {
+            "NRSV": "You Philippians indeed know that in the early days of the gospel, when I left Macedonia, no church shared with me in the matter of giving and receiving, except you alone.",
+            "Rotherham": "Ye know, moreover, even ye, Philippians,—that, in the beginning of the glad-message, when I went forth from Macedonia, not, so much as one assembly, with me had fellowship—in the matter of giving and receiving—save, ye alone,—"
+          }
+        },
+        {
+          "num": 16,
+          "text": {
+            "NRSV": "For even when I was in Thessalonica, you sent me help for my needs more than once.",
+            "Rotherham": "That, even in Thessalonica, both once and again, unto my need, ye sent:—"
+          }
+        },
+        {
+          "num": 17,
+          "text": {
+            "NRSV": "Not that I seek the gift, but I seek the profit that accumulates to your account.",
+            "Rotherham": "Not that I seek after the gift, but I seek after the fruit that is to abound unto your account."
+          }
+        },
+        {
+          "num": 18,
+          "text": {
+            "NRSV": "I have been paid in full and have more than enough; I am fully satisfied, now that I have received from Epaphroditus the gifts you sent, a fragrant offering, a sacrifice acceptable and pleasing to God.",
+            "Rotherham": "But I have all things in full, and have more than enough, I am filled, having welcomed from Epaphroditus the things that came from you,—a fragrance of sweet smell, an acceptable sacrifice, well pleasing unto God."
+          }
+        },
+        {
+          "num": 19,
+          "text": {
+            "NRSV": "And my God will fully satisfy every need of yours according to his riches in glory in Christ Jesus.",
+            "Rotherham": "And, my God, will fill up your every need, according to his riches in glory in Christ Jesus. "
+          }
+        },
+        {
+          "num": 20,
+          "text": {
+            "NRSV": "To our God and Father be glory forever and ever. Amen.",
+            "Rotherham": " Now, unto our God and Father, be the glory—unto the ages of ages. Amen!"
+          }
+        },
+        {
+          "num": 21,
+          "text": {
+            "NRSV": "Greet every saint in Christ Jesus. The friends who are with me greet you.",
+            "Rotherham": "Salute ye every saint in Christ Jesus. The brethren who are with me, salute you."
+          }
+        },
+        {
+          "num": 22,
+          "text": {
+            "NRSV": "All the saints greet you, especially those of the emperor’s household.",
+            "Rotherham": "All the saints salute you, but especially they who are of Caesar’s household."
+          }
+        },
+        {
+          "num": 23,
+          "text": {
+            "NRSV": "The grace of the Lord Jesus Christ be with your spirit.",
+            "Rotherham": "The favour of our Lord Jesus Christ, be with your spirit.   "
+          }
+        }
       ]
     }
-  ]
+  ],
+  "schema": "bible_book_multiversion_v1"
 }
