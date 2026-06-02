@@ -2069,6 +2069,30 @@
         "Future psalter work should migrate consumers toward canonical resources/psalter/psalms.json before retiring the temporary lookup/index bridge.",
         "One-tranche diagnostic or quiet-audit scripts should be deleted before commit unless promoted into a reusable audit harness."
       ]
+    },
+    {
+      "id": "prayerappnew_roadmap_navigation_reconciliation_2026_06_02",
+      "date": "2026-06-02",
+      "mode": "current_map_position",
+      "prayerAppNewHead": "55968d5",
+      "prayerAppNewHeadMessage": "Update Bible psalms source data",
+      "lothHead": "18d296c",
+      "lothHeadMessage": "Retire generated Office of Readings artifacts",
+      "activePlan": "roman_loth_office_of_readings_completion_plan_2026_06_01",
+      "currentLocation": "OOR cleanup closed; real-context coverage spine and gap inventory audits pass; ordinary psalmody source-table intake reports C03 incomplete.",
+      "headingNext": "OOR-C03-ordinary-psalmody-appointment-map",
+      "remainingCorpusProducingLothTranches": 22,
+      "mapReadingRule": "At work resumption, read the roadmap as a current navigation instrument: identify current repo heads, active plan, current tranche, next tranche, and blockers first. Do not reconstruct long historical paths unless diagnosing drift, failure, or stale state.",
+      "nonProgressClarification": "LOTH 18d296c was cleanup/governance/architecture, not corpus progress. Do not count artifact retirement, standalone exports, books, indexes, or one-off audit cleanup as OOR completion progress.",
+      "summary": "Recorded current roadmap position after LOTH artifact retirement and PrayerAppNew Bible psalms source-data commit."
     }
-  ]
+  ],
+  "last_roadmap_navigation_review": {
+    "date": "2026-06-02",
+    "activePlan": "roman_loth_office_of_readings_completion_plan_2026_06_01",
+    "currentLocation": "OOR cleanup closed; real-context coverage spine and gap inventory audits pass; ordinary psalmody source-table intake reports C03 incomplete.",
+    "headingNext": "OOR-C03-ordinary-psalmody-appointment-map",
+    "lothHead": "18d296c",
+    "prayerAppNewHead": "55968d5"
+  }
 }

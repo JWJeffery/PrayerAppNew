@@ -1,24 +1,25 @@
 {
   "schema_version": "1.0.0",
   "roadmap_version": "0.1.37",
-  "last_updated": "2026-06-01",
+  "last_updated": "2026-06-02",
   "status": "active",
   "name": "Universal Office Beta Release Roadmap",
   "purpose": "Canonical machine-readable roadmap for Beta Release planning, phase sequencing, governance questions, tranche sizing, and Admin Dashboard visualization.",
   "current_repo_state": {
-    "latest_known_commit": "1803dbc",
-    "latest_known_commit_message": "Record Office of Readings source pipeline bundle",
+    "latest_known_commit": "55968d5",
+    "latest_known_commit_message": "Update Bible psalms source data",
     "structure_json_version": "3.8.148",
     "roadmap_source_of_truth": "project_roadmap.json",
     "structure_json_role": "Project manifest, implementation ledger, governance history, legacy admin todo source, and current state pointer.",
     "roadmap_role": "Canonical release architecture and phase/tranche planning source for Admin Dashboard roadmap visualization.",
-    "latest_known_loth_commit": "715ba19",
-    "latest_known_loth_commit_message": "Compile Office of Readings private full Grail cycle expansion fixture context slot text export book",
+    "latest_known_loth_commit": "18d296c",
+    "latest_known_loth_commit_message": "Retire generated Office of Readings artifacts",
     "roman_loth_control_corpus_repo": "JWJeffery/LOTH",
     "loth_recording_cadence": "every_six_corpus_producing_loth_tranches",
     "active_oor_completion_plan": "roman_loth_office_of_readings_completion_plan_2026_06_01",
-    "active_oor_completion_plan_remaining_loth_tranches": 24,
-    "active_oor_completion_plan_next_loth_tranche": "OOR-C01-real-context-coverage-spine"
+    "active_oor_completion_plan_remaining_loth_tranches": 22,
+    "active_oor_completion_plan_next_loth_tranche": "OOR-C03-ordinary-psalmody-appointment-map",
+    "current_navigation_summary": "Current position: PrayerAppNew is at 55968d5 and LOTH is at 18d296c. The Office of Readings artifact-retirement cleanup is closed and recorded. For active OOR completion navigation, treat C01 real-context coverage spine and C02 gap inventory as audit-passing/closed for route selection; resume at C03 ordinary psalmody appointment map, which remains incomplete."
   },
   "release_identity": {
     "beta_release_focus": "BCP-facing Anglican public beta",
@@ -1625,11 +1626,13 @@
       "date": "2026-06-01",
       "repository": "PrayerAppNew",
       "planId": "roman_loth_office_of_readings_completion_plan_2026_06_01",
-      "remainingCorpusProducingLothTranches": 24,
-      "nextRequiredLothTranche": "OOR-C01-real-context-coverage-spine",
+      "remainingCorpusProducingLothTranches": 22,
+      "nextRequiredLothTranche": "OOR-C03-ordinary-psalmody-appointment-map",
       "recordingCadence": "every_six_corpus_producing_loth_tranches",
       "standaloneGovernanceTranchesCountAsProgress": false,
-      "standaloneFixtureExportBookIndexWorkCountsAsProgress": false
+      "standaloneFixtureExportBookIndexWorkCountsAsProgress": false,
+      "lastNavigationReviewDate": "2026-06-02",
+      "navigationSummary": "Current position: PrayerAppNew is at 55968d5 and LOTH is at 18d296c. The Office of Readings artifact-retirement cleanup is closed and recorded. For active OOR completion navigation, treat C01 real-context coverage spine and C02 gap inventory as audit-passing/closed for route selection; resume at C03 ordinary psalmody appointment map, which remains incomplete."
     }
   ],
   "governance_questions": [
@@ -1916,8 +1919,9 @@
         ],
         "allowedSupportWork": "Support scripts/audits/exports may appear only inside a tranche whose primary deliverable adds new real coverage.",
         "recordingCadence": "Record in PrayerAppNew after every six corpus-producing LOTH tranches.",
-        "nextRequiredLothMove": "OOR-C01-real-context-coverage-spine",
-        "ifBlocked": "Return BLOCKED with exact missing source/data issue and propose a roadmap amendment; do not substitute governance or fixture packaging."
+        "nextRequiredLothMove": "OOR-C03-ordinary-psalmody-appointment-map",
+        "ifBlocked": "Return BLOCKED with exact missing source/data issue and propose a roadmap amendment; do not substitute governance or fixture packaging.",
+        "mapReadingRule": "At work resumption, read the roadmap as a current navigation instrument: identify current repo heads, active plan, current tranche, next tranche, and blockers first. Do not reconstruct long historical paths unless diagnosing drift, failure, or stale state."
       },
       "trancheMath": {
         "remainingCorpusProducingLothTranches": 24,
@@ -1948,13 +1952,15 @@
           "tranches": [
             {
               "trancheId": "OOR-C01-real-context-coverage-spine",
-              "status": "next",
-              "requiredCoverageDelta": "Create real non-fixture OOR context records/matrix for ordinary, temporal, sanctoral, and common coverage families."
+              "status": "closed_audit_passing_for_navigation",
+              "requiredCoverageDelta": "Create real non-fixture OOR context records/matrix for ordinary, temporal, sanctoral, and common coverage families.",
+              "navigationNote": "Retained real-context coverage spine audit passes after LOTH 18d296c."
             },
             {
               "trancheId": "OOR-C02-coverage-gap-inventory",
-              "status": "planned",
-              "requiredCoverageDelta": "Attach required slot/source/status inventory to the real context matrix so every missing slot is measurable by context family."
+              "status": "closed_audit_passing_for_navigation",
+              "requiredCoverageDelta": "Attach required slot/source/status inventory to the real context matrix so every missing slot is measurable by context family.",
+              "navigationNote": "Retained real-context coverage gap inventory audit passes after LOTH 18d296c."
             }
           ]
         },
@@ -1965,8 +1971,9 @@
           "tranches": [
             {
               "trancheId": "OOR-C03-ordinary-psalmody-appointment-map",
-              "status": "planned",
-              "requiredCoverageDelta": "Map ordinary OOR psalmody appointments to full-Grail psalmody text units."
+              "status": "next_incomplete",
+              "requiredCoverageDelta": "Map ordinary OOR psalmody appointments to full-Grail psalmody text units.",
+              "navigationNote": "Retained ordinary psalmody source-table intake audit reports C03 incomplete; resume here."
             },
             {
               "trancheId": "OOR-C04-seasonal-psalmody-appointment-map",
@@ -2111,7 +2118,11 @@
           ]
         }
       ],
-      "adherenceRule": "After each LOTH commit, choose the next incomplete trancheId in this plan. Do not substitute fixture/export/book/index work unless it is subordinate to that tranche's coverageDeltaRequired."
+      "adherenceRule": "After each LOTH commit, choose the next incomplete trancheId in this plan. Do not substitute fixture/export/book/index work unless it is subordinate to that tranche's coverageDeltaRequired.",
+      "remainingCorpusProducingLothTranches": 22,
+      "nextRequiredLothTranche": "OOR-C03-ordinary-psalmody-appointment-map",
+      "lastNavigationReviewDate": "2026-06-02",
+      "currentNavigationSummary": "Current position: PrayerAppNew is at 55968d5 and LOTH is at 18d296c. The Office of Readings artifact-retirement cleanup is closed and recorded. For active OOR completion navigation, treat C01 real-context coverage spine and C02 gap inventory as audit-passing/closed for route selection; resume at C03 ordinary psalmody appointment map, which remains incomplete."
     }
   },
   "external_repo_milestones": [
@@ -2153,6 +2164,21 @@
         "Future psalter work should migrate consumers toward canonical resources/psalter/psalms.json before retiring the temporary lookup/index bridge.",
         "One-tranche diagnostic or quiet-audit scripts should be deleted before commit unless promoted into a reusable audit harness."
       ]
+    },
+    {
+      "id": "universal_office_current_navigation_state_2026_06_02",
+      "date": "2026-06-02",
+      "mode": "current_map_position",
+      "prayerAppNewHead": "55968d5",
+      "prayerAppNewHeadMessage": "Update Bible psalms source data",
+      "lothHead": "18d296c",
+      "lothHeadMessage": "Retire generated Office of Readings artifacts",
+      "activePlan": "roman_loth_office_of_readings_completion_plan_2026_06_01",
+      "currentLocation": "OOR cleanup closed; real-context coverage spine and gap inventory audits pass; ordinary psalmody source-table intake reports C03 incomplete.",
+      "headingNext": "OOR-C03-ordinary-psalmody-appointment-map",
+      "remainingCorpusProducingLothTranches": 22,
+      "mapReadingRule": "At work resumption, read the roadmap as a current navigation instrument: identify current repo heads, active plan, current tranche, next tranche, and blockers first. Do not reconstruct long historical paths unless diagnosing drift, failure, or stale state.",
+      "nonProgressClarification": "LOTH 18d296c was cleanup/governance/architecture, not corpus progress. Do not count artifact retirement, standalone exports, books, indexes, or one-off audit cleanup as OOR completion progress."
     }
   ]
 }
