@@ -2198,7 +2198,7 @@
   "side_projects": {
     "rotherham_bible_translation": {
       "date": "2026-06-02",
-      "status": "ot_former_blocker_books_imported",
+      "status": "final_current_coverage_recorded",
       "notPushedAside": true,
       "sourceRecord": "structure.side_projects.rotherham_bible_translation",
       "summary": "Rotherham remains active as a downtime side project. Implementation waits for Bible corpus structural repair and multi-translation Bible-book schema decision.",
@@ -2209,7 +2209,7 @@
       "sourceWitnessRecord": "documentation/rotherham-source-witness-intake.json",
       "sourceUrl": "https://raw.githubusercontent.com/scrollmapper/bible_databases/2025/formats/json/Rotherham.json",
       "sourceSha256": "d63488b149aadf4430fea6ddbc7c07395a12321a1b58799ce2dcb384ebf97627",
-      "nextStep": "Handle Psalms separately, plan NT Rotherham edition/versification mapping, or return to paused C03.",
+      "nextStep": "Handle Psalms, plan NT Rotherham mapping, or return to paused C03.",
       "pilotBook": "Joshua",
       "pilotFile": "data/bible/OT/joshua.json",
       "importedVerseCount": 10460,
@@ -2231,11 +2231,11 @@
         "Jeremiah",
         "Ezekiel"
       ],
-      "yahwehCount": 3513,
+      "yahwehCount": 6136,
       "latestImportCommit": "744487d Import Rotherham Torah books",
       "verseSequenceBlockerReport": "documentation/rotherham-verse-sequence-blocker-report.json",
       "remainingWork": {
-        "psalms": "separate consolidated-psalter schema",
+        "psalms": "separate consolidated-psalter schema lane",
         "ntVerseSequenceBlockerCount": 10
       },
       "severeTargetCorpusReviewRequired": [
@@ -2244,7 +2244,10 @@
         "II Kings",
         "Jeremiah"
       ],
-      "bibleCompletenessAuditAndRepairPlan": "documentation/bible-corpus-completeness-audit-and-repair-plan.json"
+      "bibleCompletenessAuditAndRepairPlan": "documentation/bible-corpus-completeness-audit-and-repair-plan.json",
+      "finalCoverageAudit": "documentation/rotherham-final-coverage-audit.json",
+      "rotherhamCompleteBookCount": 55,
+      "rotherhamVerseCount": 22639
     }
   },
   "paused_tranches": {
@@ -2261,9 +2264,9 @@
   "current_navigation_state": {
     "date": "2026-06-02",
     "primaryImmediateWork": "Handle Psalms, plan NT Rotherham mapping, or return to paused C03",
-    "bibleCorpusState": "Structural audit passes; OT non-Psalms completeness audit passes; repaired OT former Rotherham blockers imported.",
+    "bibleCorpusState": "Structural audit passes; OT non-Psalms completeness audit passes; Rotherham final current coverage recorded.",
     "resolverState": "translation-compatible with scalar and translation-keyed verse text",
-    "activeSideProject": "Rotherham ordinary OT/non-Psalms import complete except Psalms consolidated-psalter lane; NT blockers remain edition/versification lane",
+    "activeSideProject": "Rotherham current coverage recorded: ordinary OT/non-Psalms imported except Psalms consolidated-psalter lane; NT blockers remain edition/versification lane.",
     "pausedTranche": "OOR-C03-ordinary-psalmody-appointment-map",
     "c03ReturnPoint": "Map the 10 source-backed ordinary psalmody appointments into the private Grail appointment map, then decide how to acquire the 18 missing appointments without fabrication."
   },
@@ -2278,14 +2281,15 @@
   },
   "bible_corpus_integrity": {
     "date": "2026-06-02",
-    "status": "ot_non_psalms_completeness_repaired_and_former_rotherham_ot_blockers_imported",
+    "status": "ot_non_psalms_completeness_repaired_rotherham_final_coverage_recorded",
     "plan": "documentation/bible-corpus-completeness-audit-and-repair-plan.json",
-    "nextStep": "Handle Psalms separately, plan NT Rotherham edition/versification mapping, or return to paused C03.",
+    "nextStep": "Handle Psalms, plan NT Rotherham mapping, or return to paused C03.",
     "standingCompletenessAudit": "npm run audit:bible-corpus-completeness",
     "currentCompletenessResult": "FAIL with 18 OT non-Psalms findings",
     "missingContentAudit": "documentation/bible-corpus-missing-content-audit.json",
     "affectedBookCount": 11,
     "chapterFindingCount": 18,
-    "remainingCompletenessFindings": 0
+    "remainingCompletenessFindings": 0,
+    "rotherhamFinalCoverageAudit": "documentation/rotherham-final-coverage-audit.json"
   }
 }

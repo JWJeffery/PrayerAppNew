@@ -1,0 +1,856 @@
+{
+  "schema": "prayerappnew_rotherham_final_coverage_audit_v1",
+  "date": "2026-06-02",
+  "status": "recorded_final_current_rotherham_coverage_after_repaired_ot_blocker_import",
+  "latestRotherhamImportCommit": "bbfd0b3 Import Rotherham repaired OT blocker books",
+  "sourceWitness": {
+    "translationKey": "Rotherham",
+    "sourceRecord": "documentation/rotherham-source-witness-intake.json",
+    "sourceSha256": "d63488b149aadf4430fea6ddbc7c07395a12321a1b58799ce2dcb384ebf97627"
+  },
+  "summary": {
+    "rotherhamCompleteBookCount": 55,
+    "allVerseCount": 32609,
+    "allRotherhamVerseCount": 22639,
+    "allNRSVVerseCount": 32609,
+    "allScalarVerseCount": 9970,
+    "allObjectVerseCount": 22639,
+    "yahwehCount": 6136,
+    "jehovahCount": 0,
+    "otRotherhamVerseCount": 20684,
+    "ntRotherhamVerseCount": 1955
+  },
+  "totals": {
+    "ALL_jehovah": 0,
+    "ALL_nrsv": 32609,
+    "ALL_object": 22639,
+    "ALL_rotherham": 22639,
+    "ALL_scalar": 9970,
+    "ALL_total": 32609,
+    "ALL_yahweh": 6136,
+    "NT_jehovah": 0,
+    "NT_nrsv": 8704,
+    "NT_object": 1955,
+    "NT_rotherham": 1955,
+    "NT_scalar": 6749,
+    "NT_total": 8704,
+    "NT_yahweh": 0,
+    "OT_jehovah": 0,
+    "OT_nrsv": 23905,
+    "OT_object": 20684,
+    "OT_rotherham": 20684,
+    "OT_scalar": 3221,
+    "OT_total": 23905,
+    "OT_yahweh": 6136
+  },
+  "booksWithoutRotherham": [
+    {
+      "canon": "OT",
+      "file": "data/bible/OT/1enoch.json",
+      "status": "rotherham_absent",
+      "totalVerses": 1048,
+      "objectTextVerses": 0,
+      "scalarTextVerses": 1048,
+      "nrsvVerses": 1048,
+      "rotherhamVerses": 0,
+      "yahweh": 0,
+      "jehovah": 0
+    },
+    {
+      "canon": "OT",
+      "file": "data/bible/OT/1esdras.json",
+      "status": "rotherham_absent",
+      "totalVerses": 40,
+      "objectTextVerses": 0,
+      "scalarTextVerses": 40,
+      "nrsvVerses": 40,
+      "rotherhamVerses": 0,
+      "yahweh": 0,
+      "jehovah": 0
+    },
+    {
+      "canon": "OT",
+      "file": "data/bible/OT/1maccabees.json",
+      "status": "rotherham_absent",
+      "totalVerses": 92,
+      "objectTextVerses": 0,
+      "scalarTextVerses": 92,
+      "nrsvVerses": 92,
+      "rotherhamVerses": 0,
+      "yahweh": 0,
+      "jehovah": 0
+    },
+    {
+      "canon": "OT",
+      "file": "data/bible/OT/2esdras.json",
+      "status": "rotherham_absent",
+      "totalVerses": 69,
+      "objectTextVerses": 0,
+      "scalarTextVerses": 69,
+      "nrsvVerses": 69,
+      "rotherhamVerses": 0,
+      "yahweh": 0,
+      "jehovah": 0
+    },
+    {
+      "canon": "OT",
+      "file": "data/bible/OT/2maccabees.json",
+      "status": "rotherham_absent",
+      "totalVerses": 56,
+      "objectTextVerses": 0,
+      "scalarTextVerses": 56,
+      "nrsvVerses": 56,
+      "rotherhamVerses": 0,
+      "yahweh": 0,
+      "jehovah": 0
+    },
+    {
+      "canon": "OT",
+      "file": "data/bible/OT/3maccabees.json",
+      "status": "rotherham_absent",
+      "totalVerses": 40,
+      "objectTextVerses": 0,
+      "scalarTextVerses": 40,
+      "nrsvVerses": 40,
+      "rotherhamVerses": 0,
+      "yahweh": 0,
+      "jehovah": 0
+    },
+    {
+      "canon": "OT",
+      "file": "data/bible/OT/4maccabees.json",
+      "status": "rotherham_absent",
+      "totalVerses": 46,
+      "objectTextVerses": 0,
+      "scalarTextVerses": 46,
+      "nrsvVerses": 46,
+      "rotherhamVerses": 0,
+      "yahweh": 0,
+      "jehovah": 0
+    },
+    {
+      "canon": "OT",
+      "file": "data/bible/OT/baruch.json",
+      "status": "rotherham_absent",
+      "totalVerses": 34,
+      "objectTextVerses": 0,
+      "scalarTextVerses": 34,
+      "nrsvVerses": 34,
+      "rotherhamVerses": 0,
+      "yahweh": 0,
+      "jehovah": 0
+    },
+    {
+      "canon": "OT",
+      "file": "data/bible/OT/danielGK.json",
+      "status": "rotherham_absent",
+      "totalVerses": 530,
+      "objectTextVerses": 0,
+      "scalarTextVerses": 530,
+      "nrsvVerses": 530,
+      "rotherhamVerses": 0,
+      "yahweh": 0,
+      "jehovah": 0
+    },
+    {
+      "canon": "OT",
+      "file": "data/bible/OT/estherGK.json",
+      "status": "rotherham_absent",
+      "totalVerses": 267,
+      "objectTextVerses": 0,
+      "scalarTextVerses": 267,
+      "nrsvVerses": 267,
+      "rotherhamVerses": 0,
+      "yahweh": 0,
+      "jehovah": 0
+    },
+    {
+      "canon": "OT",
+      "file": "data/bible/OT/judith.json",
+      "status": "rotherham_absent",
+      "totalVerses": 147,
+      "objectTextVerses": 0,
+      "scalarTextVerses": 147,
+      "nrsvVerses": 147,
+      "rotherhamVerses": 0,
+      "yahweh": 0,
+      "jehovah": 0
+    },
+    {
+      "canon": "OT",
+      "file": "data/bible/OT/letterofjeremiah.json",
+      "status": "rotherham_absent",
+      "totalVerses": 11,
+      "objectTextVerses": 0,
+      "scalarTextVerses": 11,
+      "nrsvVerses": 11,
+      "rotherhamVerses": 0,
+      "yahweh": 0,
+      "jehovah": 0
+    },
+    {
+      "canon": "OT",
+      "file": "data/bible/OT/prayerofmanasseh.json",
+      "status": "rotherham_absent",
+      "totalVerses": 15,
+      "objectTextVerses": 0,
+      "scalarTextVerses": 15,
+      "nrsvVerses": 15,
+      "rotherhamVerses": 0,
+      "yahweh": 0,
+      "jehovah": 0
+    },
+    {
+      "canon": "OT",
+      "file": "data/bible/OT/psalms.json",
+      "status": "consolidated_psalter_schema",
+      "totalVerses": null,
+      "rotherhamVerses": null
+    },
+    {
+      "canon": "OT",
+      "file": "data/bible/OT/sirach.json",
+      "status": "rotherham_absent",
+      "totalVerses": 473,
+      "objectTextVerses": 0,
+      "scalarTextVerses": 473,
+      "nrsvVerses": 473,
+      "rotherhamVerses": 0,
+      "yahweh": 0,
+      "jehovah": 0
+    },
+    {
+      "canon": "OT",
+      "file": "data/bible/OT/tobit.json",
+      "status": "rotherham_absent",
+      "totalVerses": 238,
+      "objectTextVerses": 0,
+      "scalarTextVerses": 238,
+      "nrsvVerses": 238,
+      "rotherhamVerses": 0,
+      "yahweh": 0,
+      "jehovah": 0
+    },
+    {
+      "canon": "OT",
+      "file": "data/bible/OT/wisdom.json",
+      "status": "rotherham_absent",
+      "totalVerses": 115,
+      "objectTextVerses": 0,
+      "scalarTextVerses": 115,
+      "nrsvVerses": 115,
+      "rotherhamVerses": 0,
+      "yahweh": 0,
+      "jehovah": 0
+    },
+    {
+      "canon": "NT",
+      "file": "data/bible/NT/2baruchCE.json",
+      "status": "rotherham_absent",
+      "totalVerses": 746,
+      "objectTextVerses": 0,
+      "scalarTextVerses": 746,
+      "nrsvVerses": 746,
+      "rotherhamVerses": 0,
+      "yahweh": 0,
+      "jehovah": 0
+    },
+    {
+      "canon": "NT",
+      "file": "data/bible/NT/2corinthians.json",
+      "status": "rotherham_absent",
+      "totalVerses": 256,
+      "objectTextVerses": 0,
+      "scalarTextVerses": 256,
+      "nrsvVerses": 256,
+      "rotherhamVerses": 0,
+      "yahweh": 0,
+      "jehovah": 0
+    },
+    {
+      "canon": "NT",
+      "file": "data/bible/NT/3john.json",
+      "status": "rotherham_absent",
+      "totalVerses": 15,
+      "objectTextVerses": 0,
+      "scalarTextVerses": 15,
+      "nrsvVerses": 15,
+      "rotherhamVerses": 0,
+      "yahweh": 0,
+      "jehovah": 0
+    },
+    {
+      "canon": "NT",
+      "file": "data/bible/NT/acts.json",
+      "status": "rotherham_absent",
+      "totalVerses": 1001,
+      "objectTextVerses": 0,
+      "scalarTextVerses": 1001,
+      "nrsvVerses": 1001,
+      "rotherhamVerses": 0,
+      "yahweh": 0,
+      "jehovah": 0
+    },
+    {
+      "canon": "NT",
+      "file": "data/bible/NT/epistleofthelaodiceans.json",
+      "status": "rotherham_absent",
+      "totalVerses": 16,
+      "objectTextVerses": 0,
+      "scalarTextVerses": 16,
+      "nrsvVerses": 16,
+      "rotherhamVerses": 0,
+      "yahweh": 0,
+      "jehovah": 0
+    },
+    {
+      "canon": "NT",
+      "file": "data/bible/NT/historyofzosimus.json",
+      "status": "rotherham_absent",
+      "totalVerses": 3,
+      "objectTextVerses": 0,
+      "scalarTextVerses": 3,
+      "nrsvVerses": 3,
+      "rotherhamVerses": 0,
+      "yahweh": 0,
+      "jehovah": 0
+    },
+    {
+      "canon": "NT",
+      "file": "data/bible/NT/james.json",
+      "status": "rotherham_absent",
+      "totalVerses": 107,
+      "objectTextVerses": 0,
+      "scalarTextVerses": 107,
+      "nrsvVerses": 107,
+      "rotherhamVerses": 0,
+      "yahweh": 0,
+      "jehovah": 0
+    },
+    {
+      "canon": "NT",
+      "file": "data/bible/NT/john.json",
+      "status": "rotherham_absent",
+      "totalVerses": 878,
+      "objectTextVerses": 0,
+      "scalarTextVerses": 878,
+      "nrsvVerses": 878,
+      "rotherhamVerses": 0,
+      "yahweh": 0,
+      "jehovah": 0
+    },
+    {
+      "canon": "NT",
+      "file": "data/bible/NT/luke.json",
+      "status": "rotherham_absent",
+      "totalVerses": 1149,
+      "objectTextVerses": 0,
+      "scalarTextVerses": 1149,
+      "nrsvVerses": 1149,
+      "rotherhamVerses": 0,
+      "yahweh": 0,
+      "jehovah": 0
+    },
+    {
+      "canon": "NT",
+      "file": "data/bible/NT/mark.json",
+      "status": "rotherham_absent",
+      "totalVerses": 673,
+      "objectTextVerses": 0,
+      "scalarTextVerses": 673,
+      "nrsvVerses": 673,
+      "rotherhamVerses": 0,
+      "yahweh": 0,
+      "jehovah": 0
+    },
+    {
+      "canon": "NT",
+      "file": "data/bible/NT/matthew.json",
+      "status": "rotherham_absent",
+      "totalVerses": 1068,
+      "objectTextVerses": 0,
+      "scalarTextVerses": 1068,
+      "nrsvVerses": 1068,
+      "rotherhamVerses": 0,
+      "yahweh": 0,
+      "jehovah": 0
+    },
+    {
+      "canon": "NT",
+      "file": "data/bible/NT/revelation.json",
+      "status": "rotherham_absent",
+      "totalVerses": 405,
+      "objectTextVerses": 0,
+      "scalarTextVerses": 405,
+      "nrsvVerses": 405,
+      "rotherhamVerses": 0,
+      "yahweh": 0,
+      "jehovah": 0
+    },
+    {
+      "canon": "NT",
+      "file": "data/bible/NT/romans.json",
+      "status": "rotherham_absent",
+      "totalVerses": 432,
+      "objectTextVerses": 0,
+      "scalarTextVerses": 432,
+      "nrsvVerses": 432,
+      "rotherhamVerses": 0,
+      "yahweh": 0,
+      "jehovah": 0
+    }
+  ],
+  "remainingLanes": {
+    "psalms": {
+      "target": "data/bible/OT/psalms.json",
+      "status": "separate_consolidated_psalter_schema_lane"
+    },
+    "ntVerseSequenceBlockers": [
+      {
+        "source": "Matthew",
+        "target": "data/bible/NT/matthew.json",
+        "mismatchChapters": [
+          17,
+          18,
+          23
+        ]
+      },
+      {
+        "source": "Mark",
+        "target": "data/bible/NT/mark.json",
+        "mismatchChapters": [
+          7,
+          9,
+          11,
+          15
+        ]
+      },
+      {
+        "source": "Luke",
+        "target": "data/bible/NT/luke.json",
+        "mismatchChapters": [
+          17,
+          23
+        ]
+      },
+      {
+        "source": "John",
+        "target": "data/bible/NT/john.json",
+        "mismatchChapters": [
+          5
+        ]
+      },
+      {
+        "source": "Acts",
+        "target": "data/bible/NT/acts.json",
+        "mismatchChapters": [
+          8,
+          15,
+          23,
+          24,
+          28
+        ]
+      },
+      {
+        "source": "Romans",
+        "target": "data/bible/NT/romans.json",
+        "mismatchChapters": [
+          16
+        ]
+      },
+      {
+        "source": "II Corinthians",
+        "target": "data/bible/NT/2corinthians.json",
+        "mismatchChapters": [
+          13
+        ]
+      },
+      {
+        "source": "James",
+        "target": "data/bible/NT/james.json",
+        "mismatchChapters": [
+          1
+        ]
+      },
+      {
+        "source": "III John",
+        "target": "data/bible/NT/3john.json",
+        "mismatchChapters": [
+          1
+        ]
+      },
+      {
+        "source": "Revelation of John",
+        "target": "data/bible/NT/revelation.json",
+        "mismatchChapters": [
+          12
+        ]
+      }
+    ],
+    "nonRotherhamSourceScopeFiles": [
+      {
+        "canon": "OT",
+        "file": "data/bible/OT/1enoch.json",
+        "status": "rotherham_absent",
+        "totalVerses": 1048,
+        "objectTextVerses": 0,
+        "scalarTextVerses": 1048,
+        "nrsvVerses": 1048,
+        "rotherhamVerses": 0,
+        "yahweh": 0,
+        "jehovah": 0
+      },
+      {
+        "canon": "OT",
+        "file": "data/bible/OT/1esdras.json",
+        "status": "rotherham_absent",
+        "totalVerses": 40,
+        "objectTextVerses": 0,
+        "scalarTextVerses": 40,
+        "nrsvVerses": 40,
+        "rotherhamVerses": 0,
+        "yahweh": 0,
+        "jehovah": 0
+      },
+      {
+        "canon": "OT",
+        "file": "data/bible/OT/1maccabees.json",
+        "status": "rotherham_absent",
+        "totalVerses": 92,
+        "objectTextVerses": 0,
+        "scalarTextVerses": 92,
+        "nrsvVerses": 92,
+        "rotherhamVerses": 0,
+        "yahweh": 0,
+        "jehovah": 0
+      },
+      {
+        "canon": "OT",
+        "file": "data/bible/OT/2esdras.json",
+        "status": "rotherham_absent",
+        "totalVerses": 69,
+        "objectTextVerses": 0,
+        "scalarTextVerses": 69,
+        "nrsvVerses": 69,
+        "rotherhamVerses": 0,
+        "yahweh": 0,
+        "jehovah": 0
+      },
+      {
+        "canon": "OT",
+        "file": "data/bible/OT/2maccabees.json",
+        "status": "rotherham_absent",
+        "totalVerses": 56,
+        "objectTextVerses": 0,
+        "scalarTextVerses": 56,
+        "nrsvVerses": 56,
+        "rotherhamVerses": 0,
+        "yahweh": 0,
+        "jehovah": 0
+      },
+      {
+        "canon": "OT",
+        "file": "data/bible/OT/3maccabees.json",
+        "status": "rotherham_absent",
+        "totalVerses": 40,
+        "objectTextVerses": 0,
+        "scalarTextVerses": 40,
+        "nrsvVerses": 40,
+        "rotherhamVerses": 0,
+        "yahweh": 0,
+        "jehovah": 0
+      },
+      {
+        "canon": "OT",
+        "file": "data/bible/OT/4maccabees.json",
+        "status": "rotherham_absent",
+        "totalVerses": 46,
+        "objectTextVerses": 0,
+        "scalarTextVerses": 46,
+        "nrsvVerses": 46,
+        "rotherhamVerses": 0,
+        "yahweh": 0,
+        "jehovah": 0
+      },
+      {
+        "canon": "OT",
+        "file": "data/bible/OT/baruch.json",
+        "status": "rotherham_absent",
+        "totalVerses": 34,
+        "objectTextVerses": 0,
+        "scalarTextVerses": 34,
+        "nrsvVerses": 34,
+        "rotherhamVerses": 0,
+        "yahweh": 0,
+        "jehovah": 0
+      },
+      {
+        "canon": "OT",
+        "file": "data/bible/OT/danielGK.json",
+        "status": "rotherham_absent",
+        "totalVerses": 530,
+        "objectTextVerses": 0,
+        "scalarTextVerses": 530,
+        "nrsvVerses": 530,
+        "rotherhamVerses": 0,
+        "yahweh": 0,
+        "jehovah": 0
+      },
+      {
+        "canon": "OT",
+        "file": "data/bible/OT/estherGK.json",
+        "status": "rotherham_absent",
+        "totalVerses": 267,
+        "objectTextVerses": 0,
+        "scalarTextVerses": 267,
+        "nrsvVerses": 267,
+        "rotherhamVerses": 0,
+        "yahweh": 0,
+        "jehovah": 0
+      },
+      {
+        "canon": "OT",
+        "file": "data/bible/OT/judith.json",
+        "status": "rotherham_absent",
+        "totalVerses": 147,
+        "objectTextVerses": 0,
+        "scalarTextVerses": 147,
+        "nrsvVerses": 147,
+        "rotherhamVerses": 0,
+        "yahweh": 0,
+        "jehovah": 0
+      },
+      {
+        "canon": "OT",
+        "file": "data/bible/OT/letterofjeremiah.json",
+        "status": "rotherham_absent",
+        "totalVerses": 11,
+        "objectTextVerses": 0,
+        "scalarTextVerses": 11,
+        "nrsvVerses": 11,
+        "rotherhamVerses": 0,
+        "yahweh": 0,
+        "jehovah": 0
+      },
+      {
+        "canon": "OT",
+        "file": "data/bible/OT/prayerofmanasseh.json",
+        "status": "rotherham_absent",
+        "totalVerses": 15,
+        "objectTextVerses": 0,
+        "scalarTextVerses": 15,
+        "nrsvVerses": 15,
+        "rotherhamVerses": 0,
+        "yahweh": 0,
+        "jehovah": 0
+      },
+      {
+        "canon": "OT",
+        "file": "data/bible/OT/sirach.json",
+        "status": "rotherham_absent",
+        "totalVerses": 473,
+        "objectTextVerses": 0,
+        "scalarTextVerses": 473,
+        "nrsvVerses": 473,
+        "rotherhamVerses": 0,
+        "yahweh": 0,
+        "jehovah": 0
+      },
+      {
+        "canon": "OT",
+        "file": "data/bible/OT/tobit.json",
+        "status": "rotherham_absent",
+        "totalVerses": 238,
+        "objectTextVerses": 0,
+        "scalarTextVerses": 238,
+        "nrsvVerses": 238,
+        "rotherhamVerses": 0,
+        "yahweh": 0,
+        "jehovah": 0
+      },
+      {
+        "canon": "OT",
+        "file": "data/bible/OT/wisdom.json",
+        "status": "rotherham_absent",
+        "totalVerses": 115,
+        "objectTextVerses": 0,
+        "scalarTextVerses": 115,
+        "nrsvVerses": 115,
+        "rotherhamVerses": 0,
+        "yahweh": 0,
+        "jehovah": 0
+      }
+    ],
+    "ntNonOrdinaryOrNonMappedFiles": [
+      {
+        "canon": "NT",
+        "file": "data/bible/NT/2baruchCE.json",
+        "status": "rotherham_absent",
+        "totalVerses": 746,
+        "objectTextVerses": 0,
+        "scalarTextVerses": 746,
+        "nrsvVerses": 746,
+        "rotherhamVerses": 0,
+        "yahweh": 0,
+        "jehovah": 0
+      },
+      {
+        "canon": "NT",
+        "file": "data/bible/NT/2corinthians.json",
+        "status": "rotherham_absent",
+        "totalVerses": 256,
+        "objectTextVerses": 0,
+        "scalarTextVerses": 256,
+        "nrsvVerses": 256,
+        "rotherhamVerses": 0,
+        "yahweh": 0,
+        "jehovah": 0
+      },
+      {
+        "canon": "NT",
+        "file": "data/bible/NT/3john.json",
+        "status": "rotherham_absent",
+        "totalVerses": 15,
+        "objectTextVerses": 0,
+        "scalarTextVerses": 15,
+        "nrsvVerses": 15,
+        "rotherhamVerses": 0,
+        "yahweh": 0,
+        "jehovah": 0
+      },
+      {
+        "canon": "NT",
+        "file": "data/bible/NT/acts.json",
+        "status": "rotherham_absent",
+        "totalVerses": 1001,
+        "objectTextVerses": 0,
+        "scalarTextVerses": 1001,
+        "nrsvVerses": 1001,
+        "rotherhamVerses": 0,
+        "yahweh": 0,
+        "jehovah": 0
+      },
+      {
+        "canon": "NT",
+        "file": "data/bible/NT/epistleofthelaodiceans.json",
+        "status": "rotherham_absent",
+        "totalVerses": 16,
+        "objectTextVerses": 0,
+        "scalarTextVerses": 16,
+        "nrsvVerses": 16,
+        "rotherhamVerses": 0,
+        "yahweh": 0,
+        "jehovah": 0
+      },
+      {
+        "canon": "NT",
+        "file": "data/bible/NT/historyofzosimus.json",
+        "status": "rotherham_absent",
+        "totalVerses": 3,
+        "objectTextVerses": 0,
+        "scalarTextVerses": 3,
+        "nrsvVerses": 3,
+        "rotherhamVerses": 0,
+        "yahweh": 0,
+        "jehovah": 0
+      },
+      {
+        "canon": "NT",
+        "file": "data/bible/NT/james.json",
+        "status": "rotherham_absent",
+        "totalVerses": 107,
+        "objectTextVerses": 0,
+        "scalarTextVerses": 107,
+        "nrsvVerses": 107,
+        "rotherhamVerses": 0,
+        "yahweh": 0,
+        "jehovah": 0
+      },
+      {
+        "canon": "NT",
+        "file": "data/bible/NT/john.json",
+        "status": "rotherham_absent",
+        "totalVerses": 878,
+        "objectTextVerses": 0,
+        "scalarTextVerses": 878,
+        "nrsvVerses": 878,
+        "rotherhamVerses": 0,
+        "yahweh": 0,
+        "jehovah": 0
+      },
+      {
+        "canon": "NT",
+        "file": "data/bible/NT/luke.json",
+        "status": "rotherham_absent",
+        "totalVerses": 1149,
+        "objectTextVerses": 0,
+        "scalarTextVerses": 1149,
+        "nrsvVerses": 1149,
+        "rotherhamVerses": 0,
+        "yahweh": 0,
+        "jehovah": 0
+      },
+      {
+        "canon": "NT",
+        "file": "data/bible/NT/mark.json",
+        "status": "rotherham_absent",
+        "totalVerses": 673,
+        "objectTextVerses": 0,
+        "scalarTextVerses": 673,
+        "nrsvVerses": 673,
+        "rotherhamVerses": 0,
+        "yahweh": 0,
+        "jehovah": 0
+      },
+      {
+        "canon": "NT",
+        "file": "data/bible/NT/matthew.json",
+        "status": "rotherham_absent",
+        "totalVerses": 1068,
+        "objectTextVerses": 0,
+        "scalarTextVerses": 1068,
+        "nrsvVerses": 1068,
+        "rotherhamVerses": 0,
+        "yahweh": 0,
+        "jehovah": 0
+      },
+      {
+        "canon": "NT",
+        "file": "data/bible/NT/revelation.json",
+        "status": "rotherham_absent",
+        "totalVerses": 405,
+        "objectTextVerses": 0,
+        "scalarTextVerses": 405,
+        "nrsvVerses": 405,
+        "rotherhamVerses": 0,
+        "yahweh": 0,
+        "jehovah": 0
+      },
+      {
+        "canon": "NT",
+        "file": "data/bible/NT/romans.json",
+        "status": "rotherham_absent",
+        "totalVerses": 432,
+        "objectTextVerses": 0,
+        "scalarTextVerses": 432,
+        "nrsvVerses": 432,
+        "rotherhamVerses": 0,
+        "yahweh": 0,
+        "jehovah": 0
+      }
+    ]
+  },
+  "auditCommands": {
+    "structure": "npm run audit:bible-corpus-structure",
+    "completeness": "npm run audit:bible-corpus-completeness"
+  },
+  "auditResults": {
+    "structure": "PASS",
+    "completeness": "PASS"
+  },
+  "nextOptions": [
+    "Handle Psalms as a separate consolidated-psalter lane.",
+    "Plan NT Rotherham edition/versification mapping.",
+    "Return to paused OOR-C03 ordinary psalmody appointment map."
+  ]
+}

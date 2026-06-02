@@ -1,7 +1,7 @@
 {
   "schema": "prayerappnew_rotherham_verse_sequence_blocker_report_v1",
   "date": "2026-06-02",
-  "status": "ot_former_blockers_imported_after_target_corpus_repair",
+  "status": "final_coverage_audit_recorded_after_ot_former_blocker_import",
   "sourceWitness": {
     "translationKey": "Rotherham",
     "url": "https://raw.githubusercontent.com/scrollmapper/bible_databases/2025/formats/json/Rotherham.json",
@@ -1204,5 +1204,18 @@
         }
       ]
     }
+  },
+  "finalCoverageAudit": "documentation/rotherham-final-coverage-audit.json",
+  "finalCoverageSummary": {
+    "rotherhamCompleteBookCount": 55,
+    "allVerseCount": 32609,
+    "allRotherhamVerseCount": 22639,
+    "allNRSVVerseCount": 32609,
+    "allScalarVerseCount": 9970,
+    "allObjectVerseCount": 22639,
+    "yahwehCount": 6136,
+    "jehovahCount": 0,
+    "otRotherhamVerseCount": 20684,
+    "ntRotherhamVerseCount": 1955
   }
 }

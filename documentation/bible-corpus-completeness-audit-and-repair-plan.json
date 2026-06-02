@@ -1,7 +1,7 @@
 {
   "schema": "prayerappnew_bible_corpus_completeness_audit_and_repair_plan_v1",
   "date": "2026-06-02",
-  "status": "ot_non_psalms_completeness_repaired_and_former_rotherham_ot_blockers_imported",
+  "status": "ot_non_psalms_completeness_repaired_rotherham_final_coverage_recorded",
   "currentRepoHead": "f1b061f Record severe Rotherham blocker inspection",
   "context": {
     "problemStatement": "The completed standing Bible corpus audit validates JSON/schema/chapter/verse structure, but it does not validate canonical expected verse counts for each book/chapter. Severe missing target verses were exposed by Rotherham source/target alignment checks.",
@@ -351,5 +351,18 @@
         }
       ]
     }
+  },
+  "finalRotherhamCoverageAudit": "documentation/rotherham-final-coverage-audit.json",
+  "finalRotherhamCoverageSummary": {
+    "rotherhamCompleteBookCount": 55,
+    "allVerseCount": 32609,
+    "allRotherhamVerseCount": 22639,
+    "allNRSVVerseCount": 32609,
+    "allScalarVerseCount": 9970,
+    "allObjectVerseCount": 22639,
+    "yahwehCount": 6136,
+    "jehovahCount": 0,
+    "otRotherhamVerseCount": 20684,
+    "ntRotherhamVerseCount": 1955
   }
 }
