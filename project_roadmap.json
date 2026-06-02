@@ -2253,10 +2253,10 @@
   },
   "current_navigation_state": {
     "date": "2026-06-02",
-    "primaryImmediateWork": "Inspect and adjudicate remaining Bible sequence/extra-verse cases, or return to paused C03",
-    "bibleCorpusState": "Structural audit passes; OT completeness audit reduced after true missing-content repairs; 3 sequence/extra-verse findings remain.",
+    "primaryImmediateWork": "Inspect and adjudicate Job 32 extra verse, or return to paused C03",
+    "bibleCorpusState": "Structural audit passes; OT completeness audit reduced to one Job 32 extra-verse finding.",
     "resolverState": "translation-compatible with scalar and translation-keyed verse text",
-    "activeSideProject": "Rotherham aligned ordinary-book import complete; blockers paused until target corpus repair/mapping",
+    "activeSideProject": "Rotherham aligned ordinary-book import complete; blocker imports paused until target corpus final audit passes",
     "pausedTranche": "OOR-C03-ordinary-psalmody-appointment-map",
     "c03ReturnPoint": "Map the 10 source-backed ordinary psalmody appointments into the private Grail appointment map, then decide how to acquire the 18 missing appointments without fabrication."
   },
@@ -2271,14 +2271,14 @@
   },
   "bible_corpus_integrity": {
     "date": "2026-06-02",
-    "status": "remaining_true_missing_content_repaired_sequence_adjudication_remains",
+    "status": "sequence_offset_chapters_repaired_job_extra_verse_remains",
     "plan": "documentation/bible-corpus-completeness-audit-and-repair-plan.json",
-    "nextStep": "Inspect and adjudicate 2 Chronicles 9, Job 32, and Isaiah 25 sequence/extra-verse findings.",
+    "nextStep": "Inspect Job 32 full chapter offset source before final correction.",
     "standingCompletenessAudit": "npm run audit:bible-corpus-completeness",
     "currentCompletenessResult": "FAIL with 18 OT non-Psalms findings",
     "missingContentAudit": "documentation/bible-corpus-missing-content-audit.json",
     "affectedBookCount": 11,
     "chapterFindingCount": 18,
-    "remainingCompletenessFindings": 3
+    "remainingCompletenessFindings": 1
   }
 }

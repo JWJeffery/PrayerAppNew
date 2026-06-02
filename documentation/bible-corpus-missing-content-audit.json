@@ -1,7 +1,7 @@
 {
   "schema": "prayerappnew_bible_corpus_missing_content_audit_v1",
   "date": "2026-06-02",
-  "status": "remaining_true_missing_content_repaired_sequence_adjudication_remains",
+  "status": "sequence_offset_chapters_repaired_job_extra_verse_remains",
   "scope": {
     "ordinaryOtNonPsalms": "enforced by npm run audit:bible-corpus-completeness",
     "psalms": "excluded consolidated psalter schema; separate audit required",
@@ -18,18 +18,16 @@
   "auditResult": {
     "status": "FAIL",
     "checkedChapterCount": 779,
-    "findingCount": 3
+    "findingCount": 1
   },
   "summary": {
-    "affectedBookCount": 3,
+    "affectedBookCount": 1,
     "affectedBooks": [
-      "2 Chronicles",
-      "Isaiah",
       "Job"
     ],
-    "chapterFindingCount": 3,
-    "totalMissingVerseNumbers": 2,
-    "totalExtraVerseNumbers": 3
+    "chapterFindingCount": 1,
+    "totalMissingVerseNumbers": 0,
+    "totalExtraVerseNumbers": 1
   },
   "missingReferences": [
     "Genesis 50:11-26",
@@ -61,35 +59,6 @@
   ],
   "findings": [
     {
-      "book": "2 Chronicles",
-      "path": "data/bible/OT/2chronicles.json",
-      "chapter": 9,
-      "kind": "VERSE_COUNT_OR_SEQUENCE_MISMATCH",
-      "expectedCount": 31,
-      "actualCount": 31,
-      "missingVerses": [
-        9
-      ],
-      "missingRanges": [
-        {
-          "start": 9,
-          "end": 9,
-          "label": "9"
-        }
-      ],
-      "extraVerseNumbers": [
-        32
-      ],
-      "extraRanges": [
-        {
-          "start": 32,
-          "end": 32,
-          "label": "32"
-        }
-      ],
-      "repairDisposition": "sequence_or_extra_verse_adjudication_required"
-    },
-    {
       "book": "Job",
       "path": "data/bible/OT/job.json",
       "chapter": 32,
@@ -108,81 +77,40 @@
           "label": "23"
         }
       ],
-      "repairDisposition": "sequence_or_extra_verse_adjudication_required"
-    },
-    {
-      "book": "Isaiah",
-      "path": "data/bible/OT/isaiah.json",
-      "chapter": 25,
-      "kind": "VERSE_COUNT_OR_SEQUENCE_MISMATCH",
-      "expectedCount": 12,
-      "actualCount": 12,
-      "missingVerses": [
-        9
-      ],
-      "missingRanges": [
-        {
-          "start": 9,
-          "end": 9,
-          "label": "9"
-        }
-      ],
-      "extraVerseNumbers": [
-        13
-      ],
-      "extraRanges": [
-        {
-          "start": 13,
-          "end": 13,
-          "label": "13"
-        }
-      ],
-      "repairDisposition": "sequence_or_extra_verse_adjudication_required"
+      "repairDisposition": "job_32_extra_verse_adjudication_required"
     }
   ],
   "recommendedNextWork": [
     {
       "step": 1,
-      "title": "Inspect same-count sequence mismatch chapters before modification",
-      "books": [
-        "2 Chronicles 9",
-        "Isaiah 25"
-      ],
-      "description": "User has provided verse 9 text, but each chapter also has an extra terminal verse number. Inspect current extra verse text before deleting or renumbering."
-    },
-    {
-      "step": 2,
-      "title": "Inspect target-extra-only chapter",
-      "books": [
-        "Job 32"
-      ],
-      "description": "Target has verse 23 where expected canonical count is 22; inspect before removal or governance exception."
+      "title": "Inspect Job 32 full chapter offset source",
+      "description": "Job 32 has one extra verse number. Do not delete verse 23 blindly until the offset source is identified."
     }
   ],
   "latestRepairTranche": {
     "date": "2026-06-02",
-    "source": "user_provided_text_in_chat",
-    "repairType": "direct missing target-content insertion",
-    "repairedReferences": [
-      "2 Kings 2:16-25",
-      "2 Kings 17:24-41",
-      "Jeremiah 11:12-23",
-      "Jeremiah 40:6-12",
-      "Ezekiel 11:6-9,11-12",
-      "Ezekiel 13:9,11-12,15-16",
-      "Ezekiel 43:9,12"
-    ],
-    "insertedOrUpdatedVerseCount": 60,
-    "providedButDeferredForSequenceAdjudication": [
+    "source": "mechanical_correction_from_current_repo_inspection_and_user_provided_verse_9_text",
+    "repairType": "renumber shifted verse ranges; no new text inserted",
+    "renumberActions": [
       {
-        "reference": "2 Chronicles 9:9",
-        "reason": "Current finding is missing verse 9 plus extra terminal verse 32. Requires sequence/extra-verse adjudication before modifying chapter."
+        "path": "data/bible/OT/2chronicles.json",
+        "book": "2 Chronicles",
+        "chapter": 9,
+        "rangeStart": 10,
+        "rangeEnd": 32,
+        "delta": -1,
+        "reason": "chapter has missing 9 and extra 32; inspected verse 10 contains the user-provided verse 9 text, so 10-32 are shifted +1"
       },
       {
-        "reference": "Isaiah 25:9",
-        "reason": "Current finding is missing verse 9 plus extra terminal verse 13. Requires sequence/extra-verse adjudication before modifying chapter."
+        "path": "data/bible/OT/isaiah.json",
+        "book": "Isaiah",
+        "chapter": 25,
+        "rangeStart": 10,
+        "rangeEnd": 13,
+        "delta": -1,
+        "reason": "chapter has missing 9 and extra 13; inspected verse 10 contains the user-provided verse 9 text, so 10-13 are shifted +1"
       }
     ],
-    "noRepairAttemptedForRemainingFindings": true
+    "remainingCompletenessFindings": 1
   }
 }

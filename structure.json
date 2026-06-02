@@ -2338,7 +2338,7 @@
   },
   "bible_corpus_integrity": {
     "date": "2026-06-02",
-    "status": "remaining_true_missing_content_repaired_sequence_adjudication_remains",
+    "status": "sequence_offset_chapters_repaired_job_extra_verse_remains",
     "plan": "documentation/bible-corpus-completeness-audit-and-repair-plan.json",
     "standingStructuralAudit": "passes but is insufficient for canonical completeness",
     "canonicalVerseCountAudit": "required next",
@@ -2350,7 +2350,7 @@
     ],
     "historyDiagnosticConclusion": "severe missing target verses were not recoverable from scanned git history and appear to date back to original import",
     "doNotRepairTargetTextFromRotherham": true,
-    "nextStep": "Inspect and adjudicate 2 Chronicles 9, Job 32, and Isaiah 25 sequence/extra-verse findings.",
+    "nextStep": "Inspect Job 32 full chapter offset source before final correction.",
     "standingCompletenessAudit": "npm run audit:bible-corpus-completeness",
     "scope": "ordinary OT non-Psalms canonical verse counts",
     "knownCurrentResult": "expected failure until target corpus repair",
@@ -2365,18 +2365,10 @@
     "totalMissingVerseNumbers": 146,
     "totalExtraVerseNumbers": 7,
     "sourceFrame": "source identification and corpus repair, not rights analysis",
-    "latestRepairTranche": [
-      "2 Kings 2:16-25",
-      "2 Kings 17:24-41",
-      "Jeremiah 11:12-23",
-      "Jeremiah 40:6-12",
-      "Ezekiel 11:6-9,11-12",
-      "Ezekiel 13:9,11-12,15-16",
-      "Ezekiel 43:9,12"
-    ],
+    "latestRepairTranche": "2 Chronicles 9 and Isaiah 25 shifted ranges renumbered",
     "insertedOrUpdatedVerseCount": 60,
     "exodusExpectedCountCorrected": true,
-    "remainingCompletenessFindings": 3,
+    "remainingCompletenessFindings": 1,
     "providedButDeferredForSequenceAdjudication": [
       {
         "reference": "2 Chronicles 9:9",
