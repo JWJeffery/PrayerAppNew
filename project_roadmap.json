@@ -2253,8 +2253,8 @@
   },
   "current_navigation_state": {
     "date": "2026-06-02",
-    "primaryImmediateWork": "Identify source for remaining Bible repair/adjudication, or return to paused C03",
-    "bibleCorpusState": "Structural audit passes; OT completeness audit reduced after user-provided repair tranche; 10 findings remain.",
+    "primaryImmediateWork": "Inspect and adjudicate remaining Bible sequence/extra-verse cases, or return to paused C03",
+    "bibleCorpusState": "Structural audit passes; OT completeness audit reduced after true missing-content repairs; 3 sequence/extra-verse findings remain.",
     "resolverState": "translation-compatible with scalar and translation-keyed verse text",
     "activeSideProject": "Rotherham aligned ordinary-book import complete; blockers paused until target corpus repair/mapping",
     "pausedTranche": "OOR-C03-ordinary-psalmody-appointment-map",
@@ -2271,14 +2271,14 @@
   },
   "bible_corpus_integrity": {
     "date": "2026-06-02",
-    "status": "user_provided_missing_content_tranche_repaired_remaining_defects_recorded",
+    "status": "remaining_true_missing_content_repaired_sequence_adjudication_remains",
     "plan": "documentation/bible-corpus-completeness-audit-and-repair-plan.json",
-    "nextStep": "Identify source for remaining repair/adjudication.",
+    "nextStep": "Inspect and adjudicate 2 Chronicles 9, Job 32, and Isaiah 25 sequence/extra-verse findings.",
     "standingCompletenessAudit": "npm run audit:bible-corpus-completeness",
     "currentCompletenessResult": "FAIL with 18 OT non-Psalms findings",
     "missingContentAudit": "documentation/bible-corpus-missing-content-audit.json",
     "affectedBookCount": 11,
     "chapterFindingCount": 18,
-    "remainingCompletenessFindings": 10
+    "remainingCompletenessFindings": 3
   }
 }

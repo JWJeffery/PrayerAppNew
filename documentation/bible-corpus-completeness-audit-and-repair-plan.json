@@ -1,7 +1,7 @@
 {
   "schema": "prayerappnew_bible_corpus_completeness_audit_and_repair_plan_v1",
   "date": "2026-06-02",
-  "status": "user_provided_missing_content_tranche_repaired_remaining_defects_recorded",
+  "status": "remaining_true_missing_content_repaired_sequence_adjudication_remains",
   "currentRepoHead": "f1b061f Record severe Rotherham blocker inspection",
   "context": {
     "problemStatement": "The completed standing Bible corpus audit validates JSON/schema/chapter/verse structure, but it does not validate canonical expected verse counts for each book/chapter. Severe missing target verses were exposed by Rotherham source/target alignment checks.",
@@ -116,16 +116,20 @@
   "requiredNextWork": [
     {
       "order": 1,
-      "title": "Identify source for remaining repair",
-      "description": "Remaining defects are in 2 Kings, 2 Chronicles, Job, Isaiah, Jeremiah, and Ezekiel."
+      "title": "Inspect and adjudicate sequence/extra-verse cases",
+      "books": [
+        "2 Chronicles 9",
+        "Job 32",
+        "Isaiah 25"
+      ]
     },
     {
       "order": 2,
-      "title": "Repair remaining true missing content from identified source"
+      "title": "Apply governed sequence correction or exception"
     },
     {
       "order": 3,
-      "title": "Adjudicate remaining same-count/extra-verse sequence cases"
+      "title": "Rerun structural and completeness audits"
     }
   ],
   "notAuthorized": [
@@ -247,15 +251,25 @@
     "date": "2026-06-02",
     "source": "user_provided_text_in_chat",
     "repairedReferences": [
-      "Genesis 50:11-26",
-      "Deuteronomy 32:15-52",
-      "Deuteronomy 33:8-29",
-      "Judges 17:13",
-      "Judges 18:31",
-      "1 Samuel 20:41-42"
+      "2 Kings 2:16-25",
+      "2 Kings 17:24-41",
+      "Jeremiah 11:12-23",
+      "Jeremiah 40:6-12",
+      "Ezekiel 11:6-9,11-12",
+      "Ezekiel 13:9,11-12,15-16",
+      "Ezekiel 43:9,12"
     ],
-    "insertedOrUpdatedVerseCount": 80,
-    "exodusExpectedCountCorrection": "Exodus 7 has 25 verses and Exodus 8 has 32; audit table corrected.",
-    "remainingCompletenessFindings": 10
+    "insertedOrUpdatedVerseCount": 60,
+    "providedButDeferredForSequenceAdjudication": [
+      {
+        "reference": "2 Chronicles 9:9",
+        "reason": "Current finding is missing verse 9 plus extra terminal verse 32. Requires sequence/extra-verse adjudication before modifying chapter."
+      },
+      {
+        "reference": "Isaiah 25:9",
+        "reason": "Current finding is missing verse 9 plus extra terminal verse 13. Requires sequence/extra-verse adjudication before modifying chapter."
+      }
+    ],
+    "remainingCompletenessFindings": 3
   }
 }
