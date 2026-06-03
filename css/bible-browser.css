@@ -1604,3 +1604,108 @@
         border-radius: 18px;
     }
 }
+
+
+/* Parchment typography Bible Browser pass */
+#bible-browser-section {
+    --bible-font-display: 'Cormorant Garamond', 'Georgia', serif;
+    --bible-font-body: 'Source Serif 4', 'Georgia', serif;
+    --bible-font-label: 'Cormorant Garamond', 'Cinzel', serif;
+    font-family: var(--bible-font-body);
+}
+
+.bible-design-hero h1,
+.bible-browser-header h1 {
+    font-family: var(--bible-font-display);
+    font-weight: 600;
+    letter-spacing: 0.018em;
+    text-transform: none;
+}
+
+.bible-design-hero p,
+.bible-secondary-intro p,
+.bible-reader-stage-head p,
+.bible-sidebar-note-help,
+.bible-advanced-help,
+.bible-plan-progress,
+.bible-note-excerpt,
+.bible-note-comment,
+.bible-context-note-label,
+.bible-context-selected-text,
+.bible-context-result-status,
+.bible-guide-card blockquote,
+.bible-guide-range,
+.bible-guide-source,
+.bible-passage-summary,
+.bible-empty,
+.bible-error,
+#bible-status {
+    font-family: var(--bible-font-body);
+}
+
+.bible-reading-canvas .bible-verse,
+.bible-verse {
+    font-family: var(--bible-font-body);
+    font-weight: 400;
+    letter-spacing: 0.004em;
+}
+
+.bible-reading-canvas .bible-chapter-block h3,
+.bible-chapter-block h3 {
+    font-family: var(--bible-font-display);
+    font-weight: 600;
+    letter-spacing: 0.035em;
+}
+
+.bible-design-kicker,
+.bible-control-section-label,
+.bible-secondary-intro span,
+.bible-reader-stage-head span,
+.bible-design-chip,
+.bible-control-field label,
+.bible-reader-controls label,
+.bible-browser-details label,
+.bible-sidebar-details label,
+.bible-browser-details summary,
+.bible-sidebar-details summary,
+.bible-tool-btn,
+#bible-selection-toolbar button,
+.bible-context-panel-title,
+.bible-context-color-label,
+.bible-note-ref,
+.bible-guide-card-head,
+.bible-plan-reading-title,
+.bible-research-source-label {
+    font-family: var(--bible-font-label);
+    font-weight: 600;
+    letter-spacing: 0.095em;
+}
+
+.bible-tool-btn,
+#bible-selection-toolbar button {
+    font-size: 0.72rem;
+}
+
+.bible-browser-details summary,
+.bible-sidebar-details summary {
+    font-size: 0.84rem;
+}
+
+.bible-control-field label,
+.bible-reader-controls label,
+.bible-browser-details label,
+.bible-sidebar-details label {
+    font-size: 0.78rem;
+}
+
+.bible-reader-controls input[type="text"],
+.bible-reader-controls input[type="date"],
+.bible-reader-controls select,
+.bible-research-controls input[type="text"],
+.bible-research-controls select,
+#bible-selection-toolbar select,
+.bible-context-highlight-color,
+.bible-context-note-comment,
+#bible-annotation-comment {
+    font-family: var(--bible-font-body);
+}
