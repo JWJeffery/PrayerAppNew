@@ -1,0 +1,3728 @@
+{
+  "schema": "rotherham_psalms_versification_inventory_v1",
+  "status": "inventory_only_no_import",
+  "generatedAtUtc": "2026-06-03T00:16:26.030763+00:00",
+  "sourceWitness": {
+    "translation": "Rotherham",
+    "url": "https://raw.githubusercontent.com/scrollmapper/bible_databases/2025/formats/json/Rotherham.json",
+    "sha256": "d63488b149aadf4430fea6ddbc7c07395a12321a1b58799ce2dcb384ebf97627",
+    "sourceBookIndex": 18,
+    "sourceBookName": "Psalms",
+    "sourcePsalmsChapterCount": 150,
+    "sourcePsalmsVerseRows": 2461,
+    "emptySourceRows": []
+  },
+  "localPsalter": {
+    "path": "data/bible/OT/psalms.json",
+    "topLevelShape": "list",
+    "recordCount": 155,
+    "psalmMin": 1,
+    "psalmMax": 155,
+    "translationPresence": {
+      "Coverdale": 150,
+      "Grail1963": 151,
+      "JPS1985": 150,
+      "KJV": 150,
+      "NRSV": 150,
+      "Orthodox": 5
+    },
+    "storageModel": "consolidated Psalm-level records with translation strings under record.text"
+  },
+  "alignmentSummary": {
+    "recordsEvaluated": 155,
+    "summaryByStatus": {
+      "local_record_without_rotherham_source": 5,
+      "matches_existing_translation_marker_count": 150
+    },
+    "rotherhamMatchesAtLeastOneExistingMarkerTranslationCount": 150,
+    "rotherhamMismatchAgainstAllExistingMarkerTranslationsCount": 0,
+    "localRecordsWithoutRotherhamSourceCount": 5,
+    "localRecordsWithoutRotherhamSource": [
+      151,
+      152,
+      153,
+      154,
+      155
+    ],
+    "localMissingForRotherhamSource": []
+  },
+  "policyFindings": [
+    "Rotherham Psalms source is ordinary MT/Hebrew Psalm scope, Psalms 1-150.",
+    "The app psalter is a consolidated 155-record psalter and includes extended Orthodox material in Psalms 151-155.",
+    "Existing local Psalm records already allow translation-specific verse marker counts within the same Psalm-level record.",
+    "NRSV/Coverdale mismatch alone is not a safe blocker because KJV/JPS1985 often use a different marker count in the same local record.",
+    "Rotherham should not be imported into Psalms 151-155 from this source.",
+    "A bounded importer may add text.Rotherham to Psalms 1-150 only, preserving the consolidated Psalm-level string schema."
+  ],
+  "recommendedImporterGuard": {
+    "doNotRunBlindGlobalImport": true,
+    "onlyImportPsalmNumbers": [
+      1,
+      150
+    ],
+    "skipLocalExtendedPsalmNumbers": [
+      151,
+      152,
+      153,
+      154,
+      155
+    ],
+    "sourceShaMustMatch": "d63488b149aadf4430fea6ddbc7c07395a12321a1b58799ce2dcb384ebf97627",
+    "doNotOverwriteExistingRotherhamText": true,
+    "format": "Assemble each Rotherham Psalm as newline-delimited 'Psalm:Verse text' strings under record.text.Rotherham.",
+    "postImportAudits": [
+      "npm run audit:bible-corpus-structure",
+      "npm run audit:bible-corpus-completeness"
+    ]
+  },
+  "records": [
+    {
+      "psalm": 1,
+      "status": "matches_existing_translation_marker_count",
+      "rotherhamVerseCount": 6,
+      "localMarkerCounts": {
+        "Coverdale": 6,
+        "JPS1985": 6,
+        "KJV": 6,
+        "NRSV": 6
+      },
+      "matchesExistingTranslationKeys": [
+        "Coverdale",
+        "JPS1985",
+        "KJV",
+        "NRSV"
+      ],
+      "localTranslations": [
+        "Coverdale",
+        "Grail1963",
+        "JPS1985",
+        "KJV",
+        "NRSV"
+      ]
+    },
+    {
+      "psalm": 2,
+      "status": "matches_existing_translation_marker_count",
+      "rotherhamVerseCount": 12,
+      "localMarkerCounts": {
+        "Coverdale": 13,
+        "JPS1985": 12,
+        "KJV": 12,
+        "NRSV": 13
+      },
+      "matchesExistingTranslationKeys": [
+        "JPS1985",
+        "KJV"
+      ],
+      "localTranslations": [
+        "Coverdale",
+        "Grail1963",
+        "JPS1985",
+        "KJV",
+        "NRSV"
+      ]
+    },
+    {
+      "psalm": 3,
+      "status": "matches_existing_translation_marker_count",
+      "rotherhamVerseCount": 8,
+      "localMarkerCounts": {
+        "Coverdale": 8,
+        "JPS1985": 9,
+        "KJV": 8,
+        "NRSV": 8
+      },
+      "matchesExistingTranslationKeys": [
+        "Coverdale",
+        "KJV",
+        "NRSV"
+      ],
+      "localTranslations": [
+        "Coverdale",
+        "Grail1963",
+        "JPS1985",
+        "KJV",
+        "NRSV"
+      ]
+    },
+    {
+      "psalm": 4,
+      "status": "matches_existing_translation_marker_count",
+      "rotherhamVerseCount": 8,
+      "localMarkerCounts": {
+        "Coverdale": 8,
+        "JPS1985": 9,
+        "KJV": 8,
+        "NRSV": 8
+      },
+      "matchesExistingTranslationKeys": [
+        "Coverdale",
+        "KJV",
+        "NRSV"
+      ],
+      "localTranslations": [
+        "Coverdale",
+        "Grail1963",
+        "JPS1985",
+        "KJV",
+        "NRSV"
+      ]
+    },
+    {
+      "psalm": 5,
+      "status": "matches_existing_translation_marker_count",
+      "rotherhamVerseCount": 12,
+      "localMarkerCounts": {
+        "Coverdale": 15,
+        "JPS1985": 13,
+        "KJV": 12,
+        "NRSV": 15
+      },
+      "matchesExistingTranslationKeys": [
+        "KJV"
+      ],
+      "localTranslations": [
+        "Coverdale",
+        "Grail1963",
+        "JPS1985",
+        "KJV",
+        "NRSV"
+      ]
+    },
+    {
+      "psalm": 6,
+      "status": "matches_existing_translation_marker_count",
+      "rotherhamVerseCount": 10,
+      "localMarkerCounts": {
+        "Coverdale": 10,
+        "JPS1985": 11,
+        "KJV": 10,
+        "NRSV": 10
+      },
+      "matchesExistingTranslationKeys": [
+        "Coverdale",
+        "KJV",
+        "NRSV"
+      ],
+      "localTranslations": [
+        "Coverdale",
+        "Grail1963",
+        "JPS1985",
+        "KJV",
+        "NRSV"
+      ]
+    },
+    {
+      "psalm": 7,
+      "status": "matches_existing_translation_marker_count",
+      "rotherhamVerseCount": 17,
+      "localMarkerCounts": {
+        "Coverdale": 18,
+        "JPS1985": 18,
+        "KJV": 17,
+        "NRSV": 17
+      },
+      "matchesExistingTranslationKeys": [
+        "KJV",
+        "NRSV"
+      ],
+      "localTranslations": [
+        "Coverdale",
+        "Grail1963",
+        "JPS1985",
+        "KJV",
+        "NRSV"
+      ]
+    },
+    {
+      "psalm": 8,
+      "status": "matches_existing_translation_marker_count",
+      "rotherhamVerseCount": 9,
+      "localMarkerCounts": {
+        "Coverdale": 10,
+        "JPS1985": 10,
+        "KJV": 9,
+        "NRSV": 9
+      },
+      "matchesExistingTranslationKeys": [
+        "KJV",
+        "NRSV"
+      ],
+      "localTranslations": [
+        "Coverdale",
+        "Grail1963",
+        "JPS1985",
+        "KJV",
+        "NRSV"
+      ]
+    },
+    {
+      "psalm": 9,
+      "status": "matches_existing_translation_marker_count",
+      "rotherhamVerseCount": 20,
+      "localMarkerCounts": {
+        "Coverdale": 20,
+        "JPS1985": 21,
+        "KJV": 20,
+        "NRSV": 20
+      },
+      "matchesExistingTranslationKeys": [
+        "Coverdale",
+        "KJV",
+        "NRSV"
+      ],
+      "localTranslations": [
+        "Coverdale",
+        "Grail1963",
+        "JPS1985",
+        "KJV",
+        "NRSV"
+      ]
+    },
+    {
+      "psalm": 10,
+      "status": "matches_existing_translation_marker_count",
+      "rotherhamVerseCount": 18,
+      "localMarkerCounts": {
+        "Coverdale": 19,
+        "JPS1985": 18,
+        "KJV": 18,
+        "NRSV": 19
+      },
+      "matchesExistingTranslationKeys": [
+        "JPS1985",
+        "KJV"
+      ],
+      "localTranslations": [
+        "Coverdale",
+        "Grail1963",
+        "JPS1985",
+        "KJV",
+        "NRSV"
+      ]
+    },
+    {
+      "psalm": 11,
+      "status": "matches_existing_translation_marker_count",
+      "rotherhamVerseCount": 7,
+      "localMarkerCounts": {
+        "Coverdale": 8,
+        "JPS1985": 7,
+        "KJV": 7,
+        "NRSV": 8
+      },
+      "matchesExistingTranslationKeys": [
+        "JPS1985",
+        "KJV"
+      ],
+      "localTranslations": [
+        "Coverdale",
+        "Grail1963",
+        "JPS1985",
+        "KJV",
+        "NRSV"
+      ]
+    },
+    {
+      "psalm": 12,
+      "status": "matches_existing_translation_marker_count",
+      "rotherhamVerseCount": 8,
+      "localMarkerCounts": {
+        "Coverdale": 8,
+        "JPS1985": 9,
+        "KJV": 8,
+        "NRSV": 8
+      },
+      "matchesExistingTranslationKeys": [
+        "Coverdale",
+        "KJV",
+        "NRSV"
+      ],
+      "localTranslations": [
+        "Coverdale",
+        "Grail1963",
+        "JPS1985",
+        "KJV",
+        "NRSV"
+      ]
+    },
+    {
+      "psalm": 13,
+      "status": "matches_existing_translation_marker_count",
+      "rotherhamVerseCount": 6,
+      "localMarkerCounts": {
+        "Coverdale": 6,
+        "JPS1985": 6,
+        "KJV": 6,
+        "NRSV": 6
+      },
+      "matchesExistingTranslationKeys": [
+        "Coverdale",
+        "JPS1985",
+        "KJV",
+        "NRSV"
+      ],
+      "localTranslations": [
+        "Coverdale",
+        "Grail1963",
+        "JPS1985",
+        "KJV",
+        "NRSV"
+      ]
+    },
+    {
+      "psalm": 14,
+      "status": "matches_existing_translation_marker_count",
+      "rotherhamVerseCount": 7,
+      "localMarkerCounts": {
+        "Coverdale": 7,
+        "JPS1985": 7,
+        "KJV": 7,
+        "NRSV": 7
+      },
+      "matchesExistingTranslationKeys": [
+        "Coverdale",
+        "JPS1985",
+        "KJV",
+        "NRSV"
+      ],
+      "localTranslations": [
+        "Coverdale",
+        "Grail1963",
+        "JPS1985",
+        "KJV",
+        "NRSV"
+      ]
+    },
+    {
+      "psalm": 15,
+      "status": "matches_existing_translation_marker_count",
+      "rotherhamVerseCount": 5,
+      "localMarkerCounts": {
+        "Coverdale": 7,
+        "JPS1985": 5,
+        "KJV": 5,
+        "NRSV": 7
+      },
+      "matchesExistingTranslationKeys": [
+        "JPS1985",
+        "KJV"
+      ],
+      "localTranslations": [
+        "Coverdale",
+        "Grail1963",
+        "JPS1985",
+        "KJV",
+        "NRSV"
+      ]
+    },
+    {
+      "psalm": 16,
+      "status": "matches_existing_translation_marker_count",
+      "rotherhamVerseCount": 11,
+      "localMarkerCounts": {
+        "Coverdale": 11,
+        "JPS1985": 11,
+        "KJV": 11,
+        "NRSV": 11
+      },
+      "matchesExistingTranslationKeys": [
+        "Coverdale",
+        "JPS1985",
+        "KJV",
+        "NRSV"
+      ],
+      "localTranslations": [
+        "Coverdale",
+        "Grail1963",
+        "JPS1985",
+        "KJV",
+        "NRSV"
+      ]
+    },
+    {
+      "psalm": 17,
+      "status": "matches_existing_translation_marker_count",
+      "rotherhamVerseCount": 15,
+      "localMarkerCounts": {
+        "Coverdale": 16,
+        "JPS1985": 15,
+        "KJV": 15,
+        "NRSV": 15
+      },
+      "matchesExistingTranslationKeys": [
+        "JPS1985",
+        "KJV",
+        "NRSV"
+      ],
+      "localTranslations": [
+        "Coverdale",
+        "Grail1963",
+        "JPS1985",
+        "KJV",
+        "NRSV"
+      ]
+    },
+    {
+      "psalm": 18,
+      "status": "matches_existing_translation_marker_count",
+      "rotherhamVerseCount": 50,
+      "localMarkerCounts": {
+        "Coverdale": 50,
+        "JPS1985": 51,
+        "KJV": 50,
+        "NRSV": 50
+      },
+      "matchesExistingTranslationKeys": [
+        "Coverdale",
+        "KJV",
+        "NRSV"
+      ],
+      "localTranslations": [
+        "Coverdale",
+        "Grail1963",
+        "JPS1985",
+        "KJV",
+        "NRSV"
+      ]
+    },
+    {
+      "psalm": 19,
+      "status": "matches_existing_translation_marker_count",
+      "rotherhamVerseCount": 14,
+      "localMarkerCounts": {
+        "Coverdale": 14,
+        "JPS1985": 15,
+        "KJV": 14,
+        "NRSV": 14
+      },
+      "matchesExistingTranslationKeys": [
+        "Coverdale",
+        "KJV",
+        "NRSV"
+      ],
+      "localTranslations": [
+        "Coverdale",
+        "Grail1963",
+        "JPS1985",
+        "KJV",
+        "NRSV"
+      ]
+    },
+    {
+      "psalm": 20,
+      "status": "matches_existing_translation_marker_count",
+      "rotherhamVerseCount": 9,
+      "localMarkerCounts": {
+        "Coverdale": 9,
+        "JPS1985": 10,
+        "KJV": 9,
+        "NRSV": 9
+      },
+      "matchesExistingTranslationKeys": [
+        "Coverdale",
+        "KJV",
+        "NRSV"
+      ],
+      "localTranslations": [
+        "Coverdale",
+        "Grail1963",
+        "JPS1985",
+        "KJV",
+        "NRSV"
+      ]
+    },
+    {
+      "psalm": 21,
+      "status": "matches_existing_translation_marker_count",
+      "rotherhamVerseCount": 13,
+      "localMarkerCounts": {
+        "Coverdale": 14,
+        "JPS1985": 14,
+        "KJV": 13,
+        "NRSV": 13
+      },
+      "matchesExistingTranslationKeys": [
+        "KJV",
+        "NRSV"
+      ],
+      "localTranslations": [
+        "Coverdale",
+        "Grail1963",
+        "JPS1985",
+        "KJV",
+        "NRSV"
+      ]
+    },
+    {
+      "psalm": 22,
+      "status": "matches_existing_translation_marker_count",
+      "rotherhamVerseCount": 31,
+      "localMarkerCounts": {
+        "Coverdale": 32,
+        "JPS1985": 32,
+        "KJV": 31,
+        "NRSV": 30
+      },
+      "matchesExistingTranslationKeys": [
+        "KJV"
+      ],
+      "localTranslations": [
+        "Coverdale",
+        "Grail1963",
+        "JPS1985",
+        "KJV",
+        "NRSV"
+      ]
+    },
+    {
+      "psalm": 23,
+      "status": "matches_existing_translation_marker_count",
+      "rotherhamVerseCount": 6,
+      "localMarkerCounts": {
+        "Coverdale": 6,
+        "JPS1985": 6,
+        "KJV": 6,
+        "NRSV": 6
+      },
+      "matchesExistingTranslationKeys": [
+        "Coverdale",
+        "JPS1985",
+        "KJV",
+        "NRSV"
+      ],
+      "localTranslations": [
+        "Coverdale",
+        "Grail1963",
+        "JPS1985",
+        "KJV",
+        "NRSV"
+      ]
+    },
+    {
+      "psalm": 24,
+      "status": "matches_existing_translation_marker_count",
+      "rotherhamVerseCount": 10,
+      "localMarkerCounts": {
+        "Coverdale": 10,
+        "JPS1985": 10,
+        "KJV": 10,
+        "NRSV": 10
+      },
+      "matchesExistingTranslationKeys": [
+        "Coverdale",
+        "JPS1985",
+        "KJV",
+        "NRSV"
+      ],
+      "localTranslations": [
+        "Coverdale",
+        "Grail1963",
+        "JPS1985",
+        "KJV",
+        "NRSV"
+      ]
+    },
+    {
+      "psalm": 25,
+      "status": "matches_existing_translation_marker_count",
+      "rotherhamVerseCount": 22,
+      "localMarkerCounts": {
+        "Coverdale": 21,
+        "JPS1985": 22,
+        "KJV": 22,
+        "NRSV": 21
+      },
+      "matchesExistingTranslationKeys": [
+        "JPS1985",
+        "KJV"
+      ],
+      "localTranslations": [
+        "Coverdale",
+        "Grail1963",
+        "JPS1985",
+        "KJV",
+        "NRSV"
+      ]
+    },
+    {
+      "psalm": 26,
+      "status": "matches_existing_translation_marker_count",
+      "rotherhamVerseCount": 12,
+      "localMarkerCounts": {
+        "Coverdale": 12,
+        "JPS1985": 12,
+        "KJV": 12,
+        "NRSV": 12
+      },
+      "matchesExistingTranslationKeys": [
+        "Coverdale",
+        "JPS1985",
+        "KJV",
+        "NRSV"
+      ],
+      "localTranslations": [
+        "Coverdale",
+        "Grail1963",
+        "JPS1985",
+        "KJV",
+        "NRSV"
+      ]
+    },
+    {
+      "psalm": 27,
+      "status": "matches_existing_translation_marker_count",
+      "rotherhamVerseCount": 14,
+      "localMarkerCounts": {
+        "Coverdale": 18,
+        "JPS1985": 14,
+        "KJV": 14,
+        "NRSV": 14
+      },
+      "matchesExistingTranslationKeys": [
+        "JPS1985",
+        "KJV",
+        "NRSV"
+      ],
+      "localTranslations": [
+        "Coverdale",
+        "Grail1963",
+        "JPS1985",
+        "KJV",
+        "NRSV"
+      ]
+    },
+    {
+      "psalm": 28,
+      "status": "matches_existing_translation_marker_count",
+      "rotherhamVerseCount": 9,
+      "localMarkerCounts": {
+        "Coverdale": 11,
+        "JPS1985": 9,
+        "KJV": 9,
+        "NRSV": 9
+      },
+      "matchesExistingTranslationKeys": [
+        "JPS1985",
+        "KJV",
+        "NRSV"
+      ],
+      "localTranslations": [
+        "Coverdale",
+        "Grail1963",
+        "JPS1985",
+        "KJV",
+        "NRSV"
+      ]
+    },
+    {
+      "psalm": 29,
+      "status": "matches_existing_translation_marker_count",
+      "rotherhamVerseCount": 11,
+      "localMarkerCounts": {
+        "Coverdale": 11,
+        "JPS1985": 11,
+        "KJV": 11,
+        "NRSV": 11
+      },
+      "matchesExistingTranslationKeys": [
+        "Coverdale",
+        "JPS1985",
+        "KJV",
+        "NRSV"
+      ],
+      "localTranslations": [
+        "Coverdale",
+        "Grail1963",
+        "JPS1985",
+        "KJV",
+        "NRSV"
+      ]
+    },
+    {
+      "psalm": 30,
+      "status": "matches_existing_translation_marker_count",
+      "rotherhamVerseCount": 12,
+      "localMarkerCounts": {
+        "Coverdale": 13,
+        "JPS1985": 13,
+        "KJV": 12,
+        "NRSV": 13
+      },
+      "matchesExistingTranslationKeys": [
+        "KJV"
+      ],
+      "localTranslations": [
+        "Coverdale",
+        "Grail1963",
+        "JPS1985",
+        "KJV",
+        "NRSV"
+      ]
+    },
+    {
+      "psalm": 31,
+      "status": "matches_existing_translation_marker_count",
+      "rotherhamVerseCount": 24,
+      "localMarkerCounts": {
+        "Coverdale": 24,
+        "JPS1985": 25,
+        "KJV": 24,
+        "NRSV": 25
+      },
+      "matchesExistingTranslationKeys": [
+        "Coverdale",
+        "KJV"
+      ],
+      "localTranslations": [
+        "Coverdale",
+        "Grail1963",
+        "JPS1985",
+        "KJV",
+        "NRSV"
+      ]
+    },
+    {
+      "psalm": 32,
+      "status": "matches_existing_translation_marker_count",
+      "rotherhamVerseCount": 11,
+      "localMarkerCounts": {
+        "Coverdale": 12,
+        "JPS1985": 11,
+        "KJV": 11,
+        "NRSV": 11
+      },
+      "matchesExistingTranslationKeys": [
+        "JPS1985",
+        "KJV",
+        "NRSV"
+      ],
+      "localTranslations": [
+        "Coverdale",
+        "Grail1963",
+        "JPS1985",
+        "KJV",
+        "NRSV"
+      ]
+    },
+    {
+      "psalm": 33,
+      "status": "matches_existing_translation_marker_count",
+      "rotherhamVerseCount": 22,
+      "localMarkerCounts": {
+        "Coverdale": 22,
+        "JPS1985": 22,
+        "KJV": 22,
+        "NRSV": 22
+      },
+      "matchesExistingTranslationKeys": [
+        "Coverdale",
+        "JPS1985",
+        "KJV",
+        "NRSV"
+      ],
+      "localTranslations": [
+        "Coverdale",
+        "Grail1963",
+        "JPS1985",
+        "KJV",
+        "NRSV"
+      ]
+    },
+    {
+      "psalm": 34,
+      "status": "matches_existing_translation_marker_count",
+      "rotherhamVerseCount": 22,
+      "localMarkerCounts": {
+        "Coverdale": 22,
+        "JPS1985": 23,
+        "KJV": 22,
+        "NRSV": 22
+      },
+      "matchesExistingTranslationKeys": [
+        "Coverdale",
+        "KJV",
+        "NRSV"
+      ],
+      "localTranslations": [
+        "Coverdale",
+        "Grail1963",
+        "JPS1985",
+        "KJV",
+        "NRSV"
+      ]
+    },
+    {
+      "psalm": 35,
+      "status": "matches_existing_translation_marker_count",
+      "rotherhamVerseCount": 28,
+      "localMarkerCounts": {
+        "Coverdale": 28,
+        "JPS1985": 28,
+        "KJV": 28,
+        "NRSV": 28
+      },
+      "matchesExistingTranslationKeys": [
+        "Coverdale",
+        "JPS1985",
+        "KJV",
+        "NRSV"
+      ],
+      "localTranslations": [
+        "Coverdale",
+        "Grail1963",
+        "JPS1985",
+        "KJV",
+        "NRSV"
+      ]
+    },
+    {
+      "psalm": 36,
+      "status": "matches_existing_translation_marker_count",
+      "rotherhamVerseCount": 12,
+      "localMarkerCounts": {
+        "Coverdale": 12,
+        "JPS1985": 13,
+        "KJV": 12,
+        "NRSV": 12
+      },
+      "matchesExistingTranslationKeys": [
+        "Coverdale",
+        "KJV",
+        "NRSV"
+      ],
+      "localTranslations": [
+        "Coverdale",
+        "Grail1963",
+        "JPS1985",
+        "KJV",
+        "NRSV"
+      ]
+    },
+    {
+      "psalm": 37,
+      "status": "matches_existing_translation_marker_count",
+      "rotherhamVerseCount": 40,
+      "localMarkerCounts": {
+        "Coverdale": 42,
+        "JPS1985": 40,
+        "KJV": 40,
+        "NRSV": 42
+      },
+      "matchesExistingTranslationKeys": [
+        "JPS1985",
+        "KJV"
+      ],
+      "localTranslations": [
+        "Coverdale",
+        "Grail1963",
+        "JPS1985",
+        "KJV",
+        "NRSV"
+      ]
+    },
+    {
+      "psalm": 38,
+      "status": "matches_existing_translation_marker_count",
+      "rotherhamVerseCount": 22,
+      "localMarkerCounts": {
+        "Coverdale": 22,
+        "JPS1985": 23,
+        "KJV": 22,
+        "NRSV": 22
+      },
+      "matchesExistingTranslationKeys": [
+        "Coverdale",
+        "KJV",
+        "NRSV"
+      ],
+      "localTranslations": [
+        "Coverdale",
+        "Grail1963",
+        "JPS1985",
+        "KJV",
+        "NRSV"
+      ]
+    },
+    {
+      "psalm": 39,
+      "status": "matches_existing_translation_marker_count",
+      "rotherhamVerseCount": 13,
+      "localMarkerCounts": {
+        "Coverdale": 15,
+        "JPS1985": 14,
+        "KJV": 13,
+        "NRSV": 15
+      },
+      "matchesExistingTranslationKeys": [
+        "KJV"
+      ],
+      "localTranslations": [
+        "Coverdale",
+        "Grail1963",
+        "JPS1985",
+        "KJV",
+        "NRSV"
+      ]
+    },
+    {
+      "psalm": 40,
+      "status": "matches_existing_translation_marker_count",
+      "rotherhamVerseCount": 17,
+      "localMarkerCounts": {
+        "Coverdale": 19,
+        "JPS1985": 18,
+        "KJV": 17,
+        "NRSV": 19
+      },
+      "matchesExistingTranslationKeys": [
+        "KJV"
+      ],
+      "localTranslations": [
+        "Coverdale",
+        "Grail1963",
+        "JPS1985",
+        "KJV",
+        "NRSV"
+      ]
+    },
+    {
+      "psalm": 41,
+      "status": "matches_existing_translation_marker_count",
+      "rotherhamVerseCount": 13,
+      "localMarkerCounts": {
+        "Coverdale": 13,
+        "JPS1985": 14,
+        "KJV": 13,
+        "NRSV": 13
+      },
+      "matchesExistingTranslationKeys": [
+        "Coverdale",
+        "KJV",
+        "NRSV"
+      ],
+      "localTranslations": [
+        "Coverdale",
+        "Grail1963",
+        "JPS1985",
+        "KJV",
+        "NRSV"
+      ]
+    },
+    {
+      "psalm": 42,
+      "status": "matches_existing_translation_marker_count",
+      "rotherhamVerseCount": 11,
+      "localMarkerCounts": {
+        "Coverdale": 15,
+        "JPS1985": 12,
+        "KJV": 11,
+        "NRSV": 15
+      },
+      "matchesExistingTranslationKeys": [
+        "KJV"
+      ],
+      "localTranslations": [
+        "Coverdale",
+        "Grail1963",
+        "JPS1985",
+        "KJV",
+        "NRSV"
+      ]
+    },
+    {
+      "psalm": 43,
+      "status": "matches_existing_translation_marker_count",
+      "rotherhamVerseCount": 5,
+      "localMarkerCounts": {
+        "Coverdale": 6,
+        "JPS1985": 5,
+        "KJV": 5,
+        "NRSV": 6
+      },
+      "matchesExistingTranslationKeys": [
+        "JPS1985",
+        "KJV"
+      ],
+      "localTranslations": [
+        "Coverdale",
+        "Grail1963",
+        "JPS1985",
+        "KJV",
+        "NRSV"
+      ]
+    },
+    {
+      "psalm": 44,
+      "status": "matches_existing_translation_marker_count",
+      "rotherhamVerseCount": 26,
+      "localMarkerCounts": {
+        "Coverdale": 26,
+        "JPS1985": 27,
+        "KJV": 26,
+        "NRSV": 26
+      },
+      "matchesExistingTranslationKeys": [
+        "Coverdale",
+        "KJV",
+        "NRSV"
+      ],
+      "localTranslations": [
+        "Coverdale",
+        "Grail1963",
+        "JPS1985",
+        "KJV",
+        "NRSV"
+      ]
+    },
+    {
+      "psalm": 45,
+      "status": "matches_existing_translation_marker_count",
+      "rotherhamVerseCount": 17,
+      "localMarkerCounts": {
+        "Coverdale": 18,
+        "JPS1985": 18,
+        "KJV": 17,
+        "NRSV": 17
+      },
+      "matchesExistingTranslationKeys": [
+        "KJV",
+        "NRSV"
+      ],
+      "localTranslations": [
+        "Coverdale",
+        "Grail1963",
+        "JPS1985",
+        "KJV",
+        "NRSV"
+      ]
+    },
+    {
+      "psalm": 46,
+      "status": "matches_existing_translation_marker_count",
+      "rotherhamVerseCount": 11,
+      "localMarkerCounts": {
+        "Coverdale": 12,
+        "JPS1985": 12,
+        "KJV": 11,
+        "NRSV": 11
+      },
+      "matchesExistingTranslationKeys": [
+        "KJV",
+        "NRSV"
+      ],
+      "localTranslations": [
+        "Coverdale",
+        "Grail1963",
+        "JPS1985",
+        "KJV",
+        "NRSV"
+      ]
+    },
+    {
+      "psalm": 47,
+      "status": "matches_existing_translation_marker_count",
+      "rotherhamVerseCount": 9,
+      "localMarkerCounts": {
+        "Coverdale": 10,
+        "JPS1985": 10,
+        "KJV": 9,
+        "NRSV": 10
+      },
+      "matchesExistingTranslationKeys": [
+        "KJV"
+      ],
+      "localTranslations": [
+        "Coverdale",
+        "Grail1963",
+        "JPS1985",
+        "KJV",
+        "NRSV"
+      ]
+    },
+    {
+      "psalm": 48,
+      "status": "matches_existing_translation_marker_count",
+      "rotherhamVerseCount": 14,
+      "localMarkerCounts": {
+        "Coverdale": 13,
+        "JPS1985": 15,
+        "KJV": 14,
+        "NRSV": 13
+      },
+      "matchesExistingTranslationKeys": [
+        "KJV"
+      ],
+      "localTranslations": [
+        "Coverdale",
+        "Grail1963",
+        "JPS1985",
+        "KJV",
+        "NRSV"
+      ]
+    },
+    {
+      "psalm": 49,
+      "status": "matches_existing_translation_marker_count",
+      "rotherhamVerseCount": 20,
+      "localMarkerCounts": {
+        "Coverdale": 20,
+        "JPS1985": 21,
+        "KJV": 20,
+        "NRSV": 21
+      },
+      "matchesExistingTranslationKeys": [
+        "Coverdale",
+        "KJV"
+      ],
+      "localTranslations": [
+        "Coverdale",
+        "Grail1963",
+        "JPS1985",
+        "KJV",
+        "NRSV"
+      ]
+    },
+    {
+      "psalm": 50,
+      "status": "matches_existing_translation_marker_count",
+      "rotherhamVerseCount": 23,
+      "localMarkerCounts": {
+        "Coverdale": 23,
+        "JPS1985": 23,
+        "KJV": 23,
+        "NRSV": 23
+      },
+      "matchesExistingTranslationKeys": [
+        "Coverdale",
+        "JPS1985",
+        "KJV",
+        "NRSV"
+      ],
+      "localTranslations": [
+        "Coverdale",
+        "Grail1963",
+        "JPS1985",
+        "KJV",
+        "NRSV"
+      ]
+    },
+    {
+      "psalm": 51,
+      "status": "matches_existing_translation_marker_count",
+      "rotherhamVerseCount": 19,
+      "localMarkerCounts": {
+        "Coverdale": 20,
+        "JPS1985": 21,
+        "KJV": 19,
+        "NRSV": 20
+      },
+      "matchesExistingTranslationKeys": [
+        "KJV"
+      ],
+      "localTranslations": [
+        "Coverdale",
+        "Grail1963",
+        "JPS1985",
+        "KJV",
+        "NRSV"
+      ]
+    },
+    {
+      "psalm": 52,
+      "status": "matches_existing_translation_marker_count",
+      "rotherhamVerseCount": 9,
+      "localMarkerCounts": {
+        "Coverdale": 9,
+        "JPS1985": 11,
+        "KJV": 9,
+        "NRSV": 9
+      },
+      "matchesExistingTranslationKeys": [
+        "Coverdale",
+        "KJV",
+        "NRSV"
+      ],
+      "localTranslations": [
+        "Coverdale",
+        "Grail1963",
+        "JPS1985",
+        "KJV",
+        "NRSV"
+      ]
+    },
+    {
+      "psalm": 53,
+      "status": "matches_existing_translation_marker_count",
+      "rotherhamVerseCount": 6,
+      "localMarkerCounts": {
+        "Coverdale": 6,
+        "JPS1985": 7,
+        "KJV": 6,
+        "NRSV": 6
+      },
+      "matchesExistingTranslationKeys": [
+        "Coverdale",
+        "KJV",
+        "NRSV"
+      ],
+      "localTranslations": [
+        "Coverdale",
+        "Grail1963",
+        "JPS1985",
+        "KJV",
+        "NRSV"
+      ]
+    },
+    {
+      "psalm": 54,
+      "status": "matches_existing_translation_marker_count",
+      "rotherhamVerseCount": 7,
+      "localMarkerCounts": {
+        "Coverdale": 7,
+        "JPS1985": 9,
+        "KJV": 7,
+        "NRSV": 7
+      },
+      "matchesExistingTranslationKeys": [
+        "Coverdale",
+        "KJV",
+        "NRSV"
+      ],
+      "localTranslations": [
+        "Coverdale",
+        "Grail1963",
+        "JPS1985",
+        "KJV",
+        "NRSV"
+      ]
+    },
+    {
+      "psalm": 55,
+      "status": "matches_existing_translation_marker_count",
+      "rotherhamVerseCount": 23,
+      "localMarkerCounts": {
+        "Coverdale": 26,
+        "JPS1985": 24,
+        "KJV": 23,
+        "NRSV": 15
+      },
+      "matchesExistingTranslationKeys": [
+        "KJV"
+      ],
+      "localTranslations": [
+        "Coverdale",
+        "Grail1963",
+        "JPS1985",
+        "KJV",
+        "NRSV"
+      ]
+    },
+    {
+      "psalm": 56,
+      "status": "matches_existing_translation_marker_count",
+      "rotherhamVerseCount": 13,
+      "localMarkerCounts": {
+        "Coverdale": 12,
+        "JPS1985": 14,
+        "KJV": 13,
+        "NRSV": 12
+      },
+      "matchesExistingTranslationKeys": [
+        "KJV"
+      ],
+      "localTranslations": [
+        "Coverdale",
+        "Grail1963",
+        "JPS1985",
+        "KJV",
+        "NRSV"
+      ]
+    },
+    {
+      "psalm": 57,
+      "status": "matches_existing_translation_marker_count",
+      "rotherhamVerseCount": 11,
+      "localMarkerCounts": {
+        "Coverdale": 11,
+        "JPS1985": 12,
+        "KJV": 11,
+        "NRSV": 11
+      },
+      "matchesExistingTranslationKeys": [
+        "Coverdale",
+        "KJV",
+        "NRSV"
+      ],
+      "localTranslations": [
+        "Coverdale",
+        "Grail1963",
+        "JPS1985",
+        "KJV",
+        "NRSV"
+      ]
+    },
+    {
+      "psalm": 58,
+      "status": "matches_existing_translation_marker_count",
+      "rotherhamVerseCount": 11,
+      "localMarkerCounts": {
+        "Coverdale": 11,
+        "JPS1985": 12,
+        "KJV": 11,
+        "NRSV": 11
+      },
+      "matchesExistingTranslationKeys": [
+        "Coverdale",
+        "KJV",
+        "NRSV"
+      ],
+      "localTranslations": [
+        "Coverdale",
+        "Grail1963",
+        "JPS1985",
+        "KJV",
+        "NRSV"
+      ]
+    },
+    {
+      "psalm": 59,
+      "status": "matches_existing_translation_marker_count",
+      "rotherhamVerseCount": 17,
+      "localMarkerCounts": {
+        "Coverdale": 18,
+        "JPS1985": 18,
+        "KJV": 17,
+        "NRSV": 17
+      },
+      "matchesExistingTranslationKeys": [
+        "KJV",
+        "NRSV"
+      ],
+      "localTranslations": [
+        "Coverdale",
+        "Grail1963",
+        "JPS1985",
+        "KJV",
+        "NRSV"
+      ]
+    },
+    {
+      "psalm": 60,
+      "status": "matches_existing_translation_marker_count",
+      "rotherhamVerseCount": 12,
+      "localMarkerCounts": {
+        "Coverdale": 12,
+        "JPS1985": 14,
+        "KJV": 12,
+        "NRSV": 12
+      },
+      "matchesExistingTranslationKeys": [
+        "Coverdale",
+        "KJV",
+        "NRSV"
+      ],
+      "localTranslations": [
+        "Coverdale",
+        "Grail1963",
+        "JPS1985",
+        "KJV",
+        "NRSV"
+      ]
+    },
+    {
+      "psalm": 61,
+      "status": "matches_existing_translation_marker_count",
+      "rotherhamVerseCount": 8,
+      "localMarkerCounts": {
+        "Coverdale": 8,
+        "JPS1985": 9,
+        "KJV": 8,
+        "NRSV": 8
+      },
+      "matchesExistingTranslationKeys": [
+        "Coverdale",
+        "KJV",
+        "NRSV"
+      ],
+      "localTranslations": [
+        "Coverdale",
+        "Grail1963",
+        "JPS1985",
+        "KJV",
+        "NRSV"
+      ]
+    },
+    {
+      "psalm": 62,
+      "status": "matches_existing_translation_marker_count",
+      "rotherhamVerseCount": 12,
+      "localMarkerCounts": {
+        "Coverdale": 14,
+        "JPS1985": 13,
+        "KJV": 12,
+        "NRSV": 13
+      },
+      "matchesExistingTranslationKeys": [
+        "KJV"
+      ],
+      "localTranslations": [
+        "Coverdale",
+        "Grail1963",
+        "JPS1985",
+        "KJV",
+        "NRSV"
+      ]
+    },
+    {
+      "psalm": 63,
+      "status": "matches_existing_translation_marker_count",
+      "rotherhamVerseCount": 11,
+      "localMarkerCounts": {
+        "Coverdale": 11,
+        "JPS1985": 12,
+        "KJV": 11,
+        "NRSV": 11
+      },
+      "matchesExistingTranslationKeys": [
+        "Coverdale",
+        "KJV",
+        "NRSV"
+      ],
+      "localTranslations": [
+        "Coverdale",
+        "Grail1963",
+        "JPS1985",
+        "KJV",
+        "NRSV"
+      ]
+    },
+    {
+      "psalm": 64,
+      "status": "matches_existing_translation_marker_count",
+      "rotherhamVerseCount": 10,
+      "localMarkerCounts": {
+        "Coverdale": 10,
+        "JPS1985": 11,
+        "KJV": 10,
+        "NRSV": 10
+      },
+      "matchesExistingTranslationKeys": [
+        "Coverdale",
+        "KJV",
+        "NRSV"
+      ],
+      "localTranslations": [
+        "Coverdale",
+        "Grail1963",
+        "JPS1985",
+        "KJV",
+        "NRSV"
+      ]
+    },
+    {
+      "psalm": 65,
+      "status": "matches_existing_translation_marker_count",
+      "rotherhamVerseCount": 13,
+      "localMarkerCounts": {
+        "Coverdale": 14,
+        "JPS1985": 14,
+        "KJV": 13,
+        "NRSV": 13
+      },
+      "matchesExistingTranslationKeys": [
+        "KJV",
+        "NRSV"
+      ],
+      "localTranslations": [
+        "Coverdale",
+        "Grail1963",
+        "JPS1985",
+        "KJV",
+        "NRSV"
+      ]
+    },
+    {
+      "psalm": 66,
+      "status": "matches_existing_translation_marker_count",
+      "rotherhamVerseCount": 20,
+      "localMarkerCounts": {
+        "Coverdale": 18,
+        "JPS1985": 20,
+        "KJV": 20,
+        "NRSV": 12
+      },
+      "matchesExistingTranslationKeys": [
+        "JPS1985",
+        "KJV"
+      ],
+      "localTranslations": [
+        "Coverdale",
+        "Grail1963",
+        "JPS1985",
+        "KJV",
+        "NRSV"
+      ]
+    },
+    {
+      "psalm": 67,
+      "status": "matches_existing_translation_marker_count",
+      "rotherhamVerseCount": 7,
+      "localMarkerCounts": {
+        "Coverdale": 7,
+        "JPS1985": 8,
+        "KJV": 7,
+        "NRSV": 7
+      },
+      "matchesExistingTranslationKeys": [
+        "Coverdale",
+        "KJV",
+        "NRSV"
+      ],
+      "localTranslations": [
+        "Coverdale",
+        "Grail1963",
+        "JPS1985",
+        "KJV",
+        "NRSV"
+      ]
+    },
+    {
+      "psalm": 68,
+      "status": "matches_existing_translation_marker_count",
+      "rotherhamVerseCount": 35,
+      "localMarkerCounts": {
+        "Coverdale": 36,
+        "JPS1985": 36,
+        "KJV": 35,
+        "NRSV": 36
+      },
+      "matchesExistingTranslationKeys": [
+        "KJV"
+      ],
+      "localTranslations": [
+        "Coverdale",
+        "Grail1963",
+        "JPS1985",
+        "KJV",
+        "NRSV"
+      ]
+    },
+    {
+      "psalm": 69,
+      "status": "matches_existing_translation_marker_count",
+      "rotherhamVerseCount": 36,
+      "localMarkerCounts": {
+        "Coverdale": 38,
+        "JPS1985": 37,
+        "KJV": 36,
+        "NRSV": 38
+      },
+      "matchesExistingTranslationKeys": [
+        "KJV"
+      ],
+      "localTranslations": [
+        "Coverdale",
+        "Grail1963",
+        "JPS1985",
+        "KJV",
+        "NRSV"
+      ]
+    },
+    {
+      "psalm": 70,
+      "status": "matches_existing_translation_marker_count",
+      "rotherhamVerseCount": 5,
+      "localMarkerCounts": {
+        "Coverdale": 6,
+        "JPS1985": 6,
+        "KJV": 5,
+        "NRSV": 6
+      },
+      "matchesExistingTranslationKeys": [
+        "KJV"
+      ],
+      "localTranslations": [
+        "Coverdale",
+        "Grail1963",
+        "JPS1985",
+        "KJV",
+        "NRSV"
+      ]
+    },
+    {
+      "psalm": 71,
+      "status": "matches_existing_translation_marker_count",
+      "rotherhamVerseCount": 24,
+      "localMarkerCounts": {
+        "Coverdale": 24,
+        "JPS1985": 24,
+        "KJV": 24,
+        "NRSV": 24
+      },
+      "matchesExistingTranslationKeys": [
+        "Coverdale",
+        "JPS1985",
+        "KJV",
+        "NRSV"
+      ],
+      "localTranslations": [
+        "Coverdale",
+        "Grail1963",
+        "JPS1985",
+        "KJV",
+        "NRSV"
+      ]
+    },
+    {
+      "psalm": 72,
+      "status": "matches_existing_translation_marker_count",
+      "rotherhamVerseCount": 20,
+      "localMarkerCounts": {
+        "Coverdale": 19,
+        "JPS1985": 20,
+        "KJV": 20,
+        "NRSV": 19
+      },
+      "matchesExistingTranslationKeys": [
+        "JPS1985",
+        "KJV"
+      ],
+      "localTranslations": [
+        "Coverdale",
+        "Grail1963",
+        "JPS1985",
+        "KJV",
+        "NRSV"
+      ]
+    },
+    {
+      "psalm": 73,
+      "status": "matches_existing_translation_marker_count",
+      "rotherhamVerseCount": 28,
+      "localMarkerCounts": {
+        "Coverdale": 27,
+        "JPS1985": 28,
+        "KJV": 28,
+        "NRSV": 28
+      },
+      "matchesExistingTranslationKeys": [
+        "JPS1985",
+        "KJV",
+        "NRSV"
+      ],
+      "localTranslations": [
+        "Coverdale",
+        "Grail1963",
+        "JPS1985",
+        "KJV",
+        "NRSV"
+      ]
+    },
+    {
+      "psalm": 74,
+      "status": "matches_existing_translation_marker_count",
+      "rotherhamVerseCount": 23,
+      "localMarkerCounts": {
+        "Coverdale": 23,
+        "JPS1985": 23,
+        "KJV": 23,
+        "NRSV": 23
+      },
+      "matchesExistingTranslationKeys": [
+        "Coverdale",
+        "JPS1985",
+        "KJV",
+        "NRSV"
+      ],
+      "localTranslations": [
+        "Coverdale",
+        "Grail1963",
+        "JPS1985",
+        "KJV",
+        "NRSV"
+      ]
+    },
+    {
+      "psalm": 75,
+      "status": "matches_existing_translation_marker_count",
+      "rotherhamVerseCount": 10,
+      "localMarkerCounts": {
+        "Coverdale": 12,
+        "JPS1985": 11,
+        "KJV": 10,
+        "NRSV": 10
+      },
+      "matchesExistingTranslationKeys": [
+        "KJV",
+        "NRSV"
+      ],
+      "localTranslations": [
+        "Coverdale",
+        "Grail1963",
+        "JPS1985",
+        "KJV",
+        "NRSV"
+      ]
+    },
+    {
+      "psalm": 76,
+      "status": "matches_existing_translation_marker_count",
+      "rotherhamVerseCount": 12,
+      "localMarkerCounts": {
+        "Coverdale": 12,
+        "JPS1985": 13,
+        "KJV": 12,
+        "NRSV": 12
+      },
+      "matchesExistingTranslationKeys": [
+        "Coverdale",
+        "KJV",
+        "NRSV"
+      ],
+      "localTranslations": [
+        "Coverdale",
+        "Grail1963",
+        "JPS1985",
+        "KJV",
+        "NRSV"
+      ]
+    },
+    {
+      "psalm": 77,
+      "status": "matches_existing_translation_marker_count",
+      "rotherhamVerseCount": 20,
+      "localMarkerCounts": {
+        "Coverdale": 20,
+        "JPS1985": 21,
+        "KJV": 20,
+        "NRSV": 20
+      },
+      "matchesExistingTranslationKeys": [
+        "Coverdale",
+        "KJV",
+        "NRSV"
+      ],
+      "localTranslations": [
+        "Coverdale",
+        "Grail1963",
+        "JPS1985",
+        "KJV",
+        "NRSV"
+      ]
+    },
+    {
+      "psalm": 78,
+      "status": "matches_existing_translation_marker_count",
+      "rotherhamVerseCount": 72,
+      "localMarkerCounts": {
+        "Coverdale": 73,
+        "JPS1985": 72,
+        "KJV": 72,
+        "NRSV": 72
+      },
+      "matchesExistingTranslationKeys": [
+        "JPS1985",
+        "KJV",
+        "NRSV"
+      ],
+      "localTranslations": [
+        "Coverdale",
+        "Grail1963",
+        "JPS1985",
+        "KJV",
+        "NRSV"
+      ]
+    },
+    {
+      "psalm": 79,
+      "status": "matches_existing_translation_marker_count",
+      "rotherhamVerseCount": 13,
+      "localMarkerCounts": {
+        "Coverdale": 14,
+        "JPS1985": 13,
+        "KJV": 13,
+        "NRSV": 13
+      },
+      "matchesExistingTranslationKeys": [
+        "JPS1985",
+        "KJV",
+        "NRSV"
+      ],
+      "localTranslations": [
+        "Coverdale",
+        "Grail1963",
+        "JPS1985",
+        "KJV",
+        "NRSV"
+      ]
+    },
+    {
+      "psalm": 80,
+      "status": "matches_existing_translation_marker_count",
+      "rotherhamVerseCount": 19,
+      "localMarkerCounts": {
+        "Coverdale": 19,
+        "JPS1985": 20,
+        "KJV": 19,
+        "NRSV": 19
+      },
+      "matchesExistingTranslationKeys": [
+        "Coverdale",
+        "KJV",
+        "NRSV"
+      ],
+      "localTranslations": [
+        "Coverdale",
+        "Grail1963",
+        "JPS1985",
+        "KJV",
+        "NRSV"
+      ]
+    },
+    {
+      "psalm": 81,
+      "status": "matches_existing_translation_marker_count",
+      "rotherhamVerseCount": 16,
+      "localMarkerCounts": {
+        "Coverdale": 17,
+        "JPS1985": 17,
+        "KJV": 16,
+        "NRSV": 16
+      },
+      "matchesExistingTranslationKeys": [
+        "KJV",
+        "NRSV"
+      ],
+      "localTranslations": [
+        "Coverdale",
+        "Grail1963",
+        "JPS1985",
+        "KJV",
+        "NRSV"
+      ]
+    },
+    {
+      "psalm": 82,
+      "status": "matches_existing_translation_marker_count",
+      "rotherhamVerseCount": 8,
+      "localMarkerCounts": {
+        "Coverdale": 8,
+        "JPS1985": 8,
+        "KJV": 8,
+        "NRSV": 8
+      },
+      "matchesExistingTranslationKeys": [
+        "Coverdale",
+        "JPS1985",
+        "KJV",
+        "NRSV"
+      ],
+      "localTranslations": [
+        "Coverdale",
+        "Grail1963",
+        "JPS1985",
+        "KJV",
+        "NRSV"
+      ]
+    },
+    {
+      "psalm": 83,
+      "status": "matches_existing_translation_marker_count",
+      "rotherhamVerseCount": 18,
+      "localMarkerCounts": {
+        "Coverdale": 18,
+        "JPS1985": 19,
+        "KJV": 18,
+        "NRSV": 18
+      },
+      "matchesExistingTranslationKeys": [
+        "Coverdale",
+        "KJV",
+        "NRSV"
+      ],
+      "localTranslations": [
+        "Coverdale",
+        "Grail1963",
+        "JPS1985",
+        "KJV",
+        "NRSV"
+      ]
+    },
+    {
+      "psalm": 84,
+      "status": "matches_existing_translation_marker_count",
+      "rotherhamVerseCount": 12,
+      "localMarkerCounts": {
+        "Coverdale": 13,
+        "JPS1985": 13,
+        "KJV": 12,
+        "NRSV": 12
+      },
+      "matchesExistingTranslationKeys": [
+        "KJV",
+        "NRSV"
+      ],
+      "localTranslations": [
+        "Coverdale",
+        "Grail1963",
+        "JPS1985",
+        "KJV",
+        "NRSV"
+      ]
+    },
+    {
+      "psalm": 85,
+      "status": "matches_existing_translation_marker_count",
+      "rotherhamVerseCount": 13,
+      "localMarkerCounts": {
+        "Coverdale": 13,
+        "JPS1985": 14,
+        "KJV": 13,
+        "NRSV": 13
+      },
+      "matchesExistingTranslationKeys": [
+        "Coverdale",
+        "KJV",
+        "NRSV"
+      ],
+      "localTranslations": [
+        "Coverdale",
+        "Grail1963",
+        "JPS1985",
+        "KJV",
+        "NRSV"
+      ]
+    },
+    {
+      "psalm": 86,
+      "status": "matches_existing_translation_marker_count",
+      "rotherhamVerseCount": 17,
+      "localMarkerCounts": {
+        "Coverdale": 17,
+        "JPS1985": 17,
+        "KJV": 17,
+        "NRSV": 17
+      },
+      "matchesExistingTranslationKeys": [
+        "Coverdale",
+        "JPS1985",
+        "KJV",
+        "NRSV"
+      ],
+      "localTranslations": [
+        "Coverdale",
+        "Grail1963",
+        "JPS1985",
+        "KJV",
+        "NRSV"
+      ]
+    },
+    {
+      "psalm": 87,
+      "status": "matches_existing_translation_marker_count",
+      "rotherhamVerseCount": 7,
+      "localMarkerCounts": {
+        "Coverdale": 7,
+        "JPS1985": 7,
+        "KJV": 7,
+        "NRSV": 7
+      },
+      "matchesExistingTranslationKeys": [
+        "Coverdale",
+        "JPS1985",
+        "KJV",
+        "NRSV"
+      ],
+      "localTranslations": [
+        "Coverdale",
+        "Grail1963",
+        "JPS1985",
+        "KJV",
+        "NRSV"
+      ]
+    },
+    {
+      "psalm": 88,
+      "status": "matches_existing_translation_marker_count",
+      "rotherhamVerseCount": 18,
+      "localMarkerCounts": {
+        "Coverdale": 18,
+        "JPS1985": 19,
+        "KJV": 18,
+        "NRSV": 18
+      },
+      "matchesExistingTranslationKeys": [
+        "Coverdale",
+        "KJV",
+        "NRSV"
+      ],
+      "localTranslations": [
+        "Coverdale",
+        "Grail1963",
+        "JPS1985",
+        "KJV",
+        "NRSV"
+      ]
+    },
+    {
+      "psalm": 89,
+      "status": "matches_existing_translation_marker_count",
+      "rotherhamVerseCount": 52,
+      "localMarkerCounts": {
+        "Coverdale": 50,
+        "JPS1985": 53,
+        "KJV": 52,
+        "NRSV": 52
+      },
+      "matchesExistingTranslationKeys": [
+        "KJV",
+        "NRSV"
+      ],
+      "localTranslations": [
+        "Coverdale",
+        "Grail1963",
+        "JPS1985",
+        "KJV",
+        "NRSV"
+      ]
+    },
+    {
+      "psalm": 90,
+      "status": "matches_existing_translation_marker_count",
+      "rotherhamVerseCount": 17,
+      "localMarkerCounts": {
+        "Coverdale": 17,
+        "JPS1985": 17,
+        "KJV": 17,
+        "NRSV": 17
+      },
+      "matchesExistingTranslationKeys": [
+        "Coverdale",
+        "JPS1985",
+        "KJV",
+        "NRSV"
+      ],
+      "localTranslations": [
+        "Coverdale",
+        "Grail1963",
+        "JPS1985",
+        "KJV",
+        "NRSV"
+      ]
+    },
+    {
+      "psalm": 91,
+      "status": "matches_existing_translation_marker_count",
+      "rotherhamVerseCount": 16,
+      "localMarkerCounts": {
+        "Coverdale": 16,
+        "JPS1985": 16,
+        "KJV": 16,
+        "NRSV": 16
+      },
+      "matchesExistingTranslationKeys": [
+        "Coverdale",
+        "JPS1985",
+        "KJV",
+        "NRSV"
+      ],
+      "localTranslations": [
+        "Coverdale",
+        "Grail1963",
+        "JPS1985",
+        "KJV",
+        "NRSV"
+      ]
+    },
+    {
+      "psalm": 92,
+      "status": "matches_existing_translation_marker_count",
+      "rotherhamVerseCount": 15,
+      "localMarkerCounts": {
+        "Coverdale": 14,
+        "JPS1985": 16,
+        "KJV": 15,
+        "NRSV": 15
+      },
+      "matchesExistingTranslationKeys": [
+        "KJV",
+        "NRSV"
+      ],
+      "localTranslations": [
+        "Coverdale",
+        "Grail1963",
+        "JPS1985",
+        "KJV",
+        "NRSV"
+      ]
+    },
+    {
+      "psalm": 93,
+      "status": "matches_existing_translation_marker_count",
+      "rotherhamVerseCount": 5,
+      "localMarkerCounts": {
+        "Coverdale": 6,
+        "JPS1985": 5,
+        "KJV": 5,
+        "NRSV": 5
+      },
+      "matchesExistingTranslationKeys": [
+        "JPS1985",
+        "KJV",
+        "NRSV"
+      ],
+      "localTranslations": [
+        "Coverdale",
+        "Grail1963",
+        "JPS1985",
+        "KJV",
+        "NRSV"
+      ]
+    },
+    {
+      "psalm": 94,
+      "status": "matches_existing_translation_marker_count",
+      "rotherhamVerseCount": 23,
+      "localMarkerCounts": {
+        "Coverdale": 23,
+        "JPS1985": 23,
+        "KJV": 23,
+        "NRSV": 23
+      },
+      "matchesExistingTranslationKeys": [
+        "Coverdale",
+        "JPS1985",
+        "KJV",
+        "NRSV"
+      ],
+      "localTranslations": [
+        "Coverdale",
+        "Grail1963",
+        "JPS1985",
+        "KJV",
+        "NRSV"
+      ]
+    },
+    {
+      "psalm": 95,
+      "status": "matches_existing_translation_marker_count",
+      "rotherhamVerseCount": 11,
+      "localMarkerCounts": {
+        "Coverdale": 11,
+        "JPS1985": 11,
+        "KJV": 11,
+        "NRSV": 11
+      },
+      "matchesExistingTranslationKeys": [
+        "Coverdale",
+        "JPS1985",
+        "KJV",
+        "NRSV"
+      ],
+      "localTranslations": [
+        "Coverdale",
+        "Grail1963",
+        "JPS1985",
+        "KJV",
+        "NRSV"
+      ]
+    },
+    {
+      "psalm": 96,
+      "status": "matches_existing_translation_marker_count",
+      "rotherhamVerseCount": 13,
+      "localMarkerCounts": {
+        "Coverdale": 13,
+        "JPS1985": 13,
+        "KJV": 13,
+        "NRSV": 13
+      },
+      "matchesExistingTranslationKeys": [
+        "Coverdale",
+        "JPS1985",
+        "KJV",
+        "NRSV"
+      ],
+      "localTranslations": [
+        "Coverdale",
+        "Grail1963",
+        "JPS1985",
+        "KJV",
+        "NRSV"
+      ]
+    },
+    {
+      "psalm": 97,
+      "status": "matches_existing_translation_marker_count",
+      "rotherhamVerseCount": 12,
+      "localMarkerCounts": {
+        "Coverdale": 12,
+        "JPS1985": 12,
+        "KJV": 12,
+        "NRSV": 12
+      },
+      "matchesExistingTranslationKeys": [
+        "Coverdale",
+        "JPS1985",
+        "KJV",
+        "NRSV"
+      ],
+      "localTranslations": [
+        "Coverdale",
+        "Grail1963",
+        "JPS1985",
+        "KJV",
+        "NRSV"
+      ]
+    },
+    {
+      "psalm": 98,
+      "status": "matches_existing_translation_marker_count",
+      "rotherhamVerseCount": 9,
+      "localMarkerCounts": {
+        "Coverdale": 10,
+        "JPS1985": 9,
+        "KJV": 9,
+        "NRSV": 9
+      },
+      "matchesExistingTranslationKeys": [
+        "JPS1985",
+        "KJV",
+        "NRSV"
+      ],
+      "localTranslations": [
+        "Coverdale",
+        "Grail1963",
+        "JPS1985",
+        "KJV",
+        "NRSV"
+      ]
+    },
+    {
+      "psalm": 99,
+      "status": "matches_existing_translation_marker_count",
+      "rotherhamVerseCount": 9,
+      "localMarkerCounts": {
+        "Coverdale": 9,
+        "JPS1985": 9,
+        "KJV": 9,
+        "NRSV": 9
+      },
+      "matchesExistingTranslationKeys": [
+        "Coverdale",
+        "JPS1985",
+        "KJV",
+        "NRSV"
+      ],
+      "localTranslations": [
+        "Coverdale",
+        "Grail1963",
+        "JPS1985",
+        "KJV",
+        "NRSV"
+      ]
+    },
+    {
+      "psalm": 100,
+      "status": "matches_existing_translation_marker_count",
+      "rotherhamVerseCount": 5,
+      "localMarkerCounts": {
+        "Coverdale": 4,
+        "JPS1985": 5,
+        "KJV": 5,
+        "NRSV": 5
+      },
+      "matchesExistingTranslationKeys": [
+        "JPS1985",
+        "KJV",
+        "NRSV"
+      ],
+      "localTranslations": [
+        "Coverdale",
+        "Grail1963",
+        "JPS1985",
+        "KJV",
+        "NRSV"
+      ]
+    },
+    {
+      "psalm": 101,
+      "status": "matches_existing_translation_marker_count",
+      "rotherhamVerseCount": 8,
+      "localMarkerCounts": {
+        "Coverdale": 11,
+        "JPS1985": 8,
+        "KJV": 8,
+        "NRSV": 8
+      },
+      "matchesExistingTranslationKeys": [
+        "JPS1985",
+        "KJV",
+        "NRSV"
+      ],
+      "localTranslations": [
+        "Coverdale",
+        "Grail1963",
+        "JPS1985",
+        "KJV",
+        "NRSV"
+      ]
+    },
+    {
+      "psalm": 102,
+      "status": "matches_existing_translation_marker_count",
+      "rotherhamVerseCount": 28,
+      "localMarkerCounts": {
+        "Coverdale": 28,
+        "JPS1985": 29,
+        "KJV": 28,
+        "NRSV": 28
+      },
+      "matchesExistingTranslationKeys": [
+        "Coverdale",
+        "KJV",
+        "NRSV"
+      ],
+      "localTranslations": [
+        "Coverdale",
+        "Grail1963",
+        "JPS1985",
+        "KJV",
+        "NRSV"
+      ]
+    },
+    {
+      "psalm": 103,
+      "status": "matches_existing_translation_marker_count",
+      "rotherhamVerseCount": 22,
+      "localMarkerCounts": {
+        "Coverdale": 22,
+        "JPS1985": 22,
+        "KJV": 22,
+        "NRSV": 22
+      },
+      "matchesExistingTranslationKeys": [
+        "Coverdale",
+        "JPS1985",
+        "KJV",
+        "NRSV"
+      ],
+      "localTranslations": [
+        "Coverdale",
+        "Grail1963",
+        "JPS1985",
+        "KJV",
+        "NRSV"
+      ]
+    },
+    {
+      "psalm": 104,
+      "status": "matches_existing_translation_marker_count",
+      "rotherhamVerseCount": 35,
+      "localMarkerCounts": {
+        "Coverdale": 35,
+        "JPS1985": 35,
+        "KJV": 35,
+        "NRSV": 35
+      },
+      "matchesExistingTranslationKeys": [
+        "Coverdale",
+        "JPS1985",
+        "KJV",
+        "NRSV"
+      ],
+      "localTranslations": [
+        "Coverdale",
+        "Grail1963",
+        "JPS1985",
+        "KJV",
+        "NRSV"
+      ]
+    },
+    {
+      "psalm": 105,
+      "status": "matches_existing_translation_marker_count",
+      "rotherhamVerseCount": 45,
+      "localMarkerCounts": {
+        "Coverdale": 44,
+        "JPS1985": 45,
+        "KJV": 45,
+        "NRSV": 45
+      },
+      "matchesExistingTranslationKeys": [
+        "JPS1985",
+        "KJV",
+        "NRSV"
+      ],
+      "localTranslations": [
+        "Coverdale",
+        "Grail1963",
+        "JPS1985",
+        "KJV",
+        "NRSV"
+      ]
+    },
+    {
+      "psalm": 106,
+      "status": "matches_existing_translation_marker_count",
+      "rotherhamVerseCount": 48,
+      "localMarkerCounts": {
+        "Coverdale": 46,
+        "JPS1985": 48,
+        "KJV": 48,
+        "NRSV": 48
+      },
+      "matchesExistingTranslationKeys": [
+        "JPS1985",
+        "KJV",
+        "NRSV"
+      ],
+      "localTranslations": [
+        "Coverdale",
+        "Grail1963",
+        "JPS1985",
+        "KJV",
+        "NRSV"
+      ]
+    },
+    {
+      "psalm": 107,
+      "status": "matches_existing_translation_marker_count",
+      "rotherhamVerseCount": 43,
+      "localMarkerCounts": {
+        "Coverdale": 43,
+        "JPS1985": 43,
+        "KJV": 43,
+        "NRSV": 43
+      },
+      "matchesExistingTranslationKeys": [
+        "Coverdale",
+        "JPS1985",
+        "KJV",
+        "NRSV"
+      ],
+      "localTranslations": [
+        "Coverdale",
+        "Grail1963",
+        "JPS1985",
+        "KJV",
+        "NRSV"
+      ]
+    },
+    {
+      "psalm": 108,
+      "status": "matches_existing_translation_marker_count",
+      "rotherhamVerseCount": 13,
+      "localMarkerCounts": {
+        "Coverdale": 13,
+        "JPS1985": 14,
+        "KJV": 13,
+        "NRSV": 13
+      },
+      "matchesExistingTranslationKeys": [
+        "Coverdale",
+        "KJV",
+        "NRSV"
+      ],
+      "localTranslations": [
+        "Coverdale",
+        "Grail1963",
+        "JPS1985",
+        "KJV",
+        "NRSV"
+      ]
+    },
+    {
+      "psalm": 109,
+      "status": "matches_existing_translation_marker_count",
+      "rotherhamVerseCount": 31,
+      "localMarkerCounts": {
+        "Coverdale": 30,
+        "JPS1985": 31,
+        "KJV": 31,
+        "NRSV": 31
+      },
+      "matchesExistingTranslationKeys": [
+        "JPS1985",
+        "KJV",
+        "NRSV"
+      ],
+      "localTranslations": [
+        "Coverdale",
+        "Grail1963",
+        "JPS1985",
+        "KJV",
+        "NRSV"
+      ]
+    },
+    {
+      "psalm": 110,
+      "status": "matches_existing_translation_marker_count",
+      "rotherhamVerseCount": 7,
+      "localMarkerCounts": {
+        "Coverdale": 7,
+        "JPS1985": 7,
+        "KJV": 7,
+        "NRSV": 7
+      },
+      "matchesExistingTranslationKeys": [
+        "Coverdale",
+        "JPS1985",
+        "KJV",
+        "NRSV"
+      ],
+      "localTranslations": [
+        "Coverdale",
+        "Grail1963",
+        "JPS1985",
+        "KJV",
+        "NRSV"
+      ]
+    },
+    {
+      "psalm": 111,
+      "status": "matches_existing_translation_marker_count",
+      "rotherhamVerseCount": 10,
+      "localMarkerCounts": {
+        "Coverdale": 10,
+        "JPS1985": 10,
+        "KJV": 10,
+        "NRSV": 10
+      },
+      "matchesExistingTranslationKeys": [
+        "Coverdale",
+        "JPS1985",
+        "KJV",
+        "NRSV"
+      ],
+      "localTranslations": [
+        "Coverdale",
+        "Grail1963",
+        "JPS1985",
+        "KJV",
+        "NRSV"
+      ]
+    },
+    {
+      "psalm": 112,
+      "status": "matches_existing_translation_marker_count",
+      "rotherhamVerseCount": 10,
+      "localMarkerCounts": {
+        "Coverdale": 10,
+        "JPS1985": 10,
+        "KJV": 10,
+        "NRSV": 10
+      },
+      "matchesExistingTranslationKeys": [
+        "Coverdale",
+        "JPS1985",
+        "KJV",
+        "NRSV"
+      ],
+      "localTranslations": [
+        "Coverdale",
+        "Grail1963",
+        "JPS1985",
+        "KJV",
+        "NRSV"
+      ]
+    },
+    {
+      "psalm": 113,
+      "status": "matches_existing_translation_marker_count",
+      "rotherhamVerseCount": 9,
+      "localMarkerCounts": {
+        "Coverdale": 8,
+        "JPS1985": 9,
+        "KJV": 9,
+        "NRSV": 9
+      },
+      "matchesExistingTranslationKeys": [
+        "JPS1985",
+        "KJV",
+        "NRSV"
+      ],
+      "localTranslations": [
+        "Coverdale",
+        "Grail1963",
+        "JPS1985",
+        "KJV",
+        "NRSV"
+      ]
+    },
+    {
+      "psalm": 114,
+      "status": "matches_existing_translation_marker_count",
+      "rotherhamVerseCount": 8,
+      "localMarkerCounts": {
+        "Coverdale": 8,
+        "JPS1985": 8,
+        "KJV": 8,
+        "NRSV": 8
+      },
+      "matchesExistingTranslationKeys": [
+        "Coverdale",
+        "JPS1985",
+        "KJV",
+        "NRSV"
+      ],
+      "localTranslations": [
+        "Coverdale",
+        "Grail1963",
+        "JPS1985",
+        "KJV",
+        "NRSV"
+      ]
+    },
+    {
+      "psalm": 115,
+      "status": "matches_existing_translation_marker_count",
+      "rotherhamVerseCount": 18,
+      "localMarkerCounts": {
+        "Coverdale": 18,
+        "JPS1985": 18,
+        "KJV": 18,
+        "NRSV": 18
+      },
+      "matchesExistingTranslationKeys": [
+        "Coverdale",
+        "JPS1985",
+        "KJV",
+        "NRSV"
+      ],
+      "localTranslations": [
+        "Coverdale",
+        "Grail1963",
+        "JPS1985",
+        "KJV",
+        "NRSV"
+      ]
+    },
+    {
+      "psalm": 116,
+      "status": "matches_existing_translation_marker_count",
+      "rotherhamVerseCount": 19,
+      "localMarkerCounts": {
+        "Coverdale": 16,
+        "JPS1985": 19,
+        "KJV": 19,
+        "NRSV": 19
+      },
+      "matchesExistingTranslationKeys": [
+        "JPS1985",
+        "KJV",
+        "NRSV"
+      ],
+      "localTranslations": [
+        "Coverdale",
+        "Grail1963",
+        "JPS1985",
+        "KJV",
+        "NRSV"
+      ]
+    },
+    {
+      "psalm": 117,
+      "status": "matches_existing_translation_marker_count",
+      "rotherhamVerseCount": 2,
+      "localMarkerCounts": {
+        "Coverdale": 2,
+        "JPS1985": 2,
+        "KJV": 2,
+        "NRSV": 2
+      },
+      "matchesExistingTranslationKeys": [
+        "Coverdale",
+        "JPS1985",
+        "KJV",
+        "NRSV"
+      ],
+      "localTranslations": [
+        "Coverdale",
+        "Grail1963",
+        "JPS1985",
+        "KJV",
+        "NRSV"
+      ]
+    },
+    {
+      "psalm": 118,
+      "status": "matches_existing_translation_marker_count",
+      "rotherhamVerseCount": 29,
+      "localMarkerCounts": {
+        "Coverdale": 29,
+        "JPS1985": 29,
+        "KJV": 29,
+        "NRSV": 29
+      },
+      "matchesExistingTranslationKeys": [
+        "Coverdale",
+        "JPS1985",
+        "KJV",
+        "NRSV"
+      ],
+      "localTranslations": [
+        "Coverdale",
+        "Grail1963",
+        "JPS1985",
+        "KJV",
+        "NRSV"
+      ]
+    },
+    {
+      "psalm": 119,
+      "status": "matches_existing_translation_marker_count",
+      "rotherhamVerseCount": 176,
+      "localMarkerCounts": {
+        "Coverdale": 176,
+        "JPS1985": 176,
+        "KJV": 176,
+        "NRSV": 176
+      },
+      "matchesExistingTranslationKeys": [
+        "Coverdale",
+        "JPS1985",
+        "KJV",
+        "NRSV"
+      ],
+      "localTranslations": [
+        "Coverdale",
+        "Grail1963",
+        "JPS1985",
+        "KJV",
+        "NRSV"
+      ]
+    },
+    {
+      "psalm": 120,
+      "status": "matches_existing_translation_marker_count",
+      "rotherhamVerseCount": 7,
+      "localMarkerCounts": {
+        "Coverdale": 6,
+        "JPS1985": 7,
+        "KJV": 7,
+        "NRSV": 7
+      },
+      "matchesExistingTranslationKeys": [
+        "JPS1985",
+        "KJV",
+        "NRSV"
+      ],
+      "localTranslations": [
+        "Coverdale",
+        "Grail1963",
+        "JPS1985",
+        "KJV",
+        "NRSV"
+      ]
+    },
+    {
+      "psalm": 121,
+      "status": "matches_existing_translation_marker_count",
+      "rotherhamVerseCount": 8,
+      "localMarkerCounts": {
+        "Coverdale": 8,
+        "JPS1985": 8,
+        "KJV": 8,
+        "NRSV": 8
+      },
+      "matchesExistingTranslationKeys": [
+        "Coverdale",
+        "JPS1985",
+        "KJV",
+        "NRSV"
+      ],
+      "localTranslations": [
+        "Coverdale",
+        "Grail1963",
+        "JPS1985",
+        "KJV",
+        "NRSV"
+      ]
+    },
+    {
+      "psalm": 122,
+      "status": "matches_existing_translation_marker_count",
+      "rotherhamVerseCount": 9,
+      "localMarkerCounts": {
+        "Coverdale": 9,
+        "JPS1985": 9,
+        "KJV": 9,
+        "NRSV": 9
+      },
+      "matchesExistingTranslationKeys": [
+        "Coverdale",
+        "JPS1985",
+        "KJV",
+        "NRSV"
+      ],
+      "localTranslations": [
+        "Coverdale",
+        "Grail1963",
+        "JPS1985",
+        "KJV",
+        "NRSV"
+      ]
+    },
+    {
+      "psalm": 123,
+      "status": "matches_existing_translation_marker_count",
+      "rotherhamVerseCount": 4,
+      "localMarkerCounts": {
+        "Coverdale": 4,
+        "JPS1985": 4,
+        "KJV": 4,
+        "NRSV": 4
+      },
+      "matchesExistingTranslationKeys": [
+        "Coverdale",
+        "JPS1985",
+        "KJV",
+        "NRSV"
+      ],
+      "localTranslations": [
+        "Coverdale",
+        "Grail1963",
+        "JPS1985",
+        "KJV",
+        "NRSV"
+      ]
+    },
+    {
+      "psalm": 124,
+      "status": "matches_existing_translation_marker_count",
+      "rotherhamVerseCount": 8,
+      "localMarkerCounts": {
+        "Coverdale": 7,
+        "JPS1985": 8,
+        "KJV": 8,
+        "NRSV": 8
+      },
+      "matchesExistingTranslationKeys": [
+        "JPS1985",
+        "KJV",
+        "NRSV"
+      ],
+      "localTranslations": [
+        "Coverdale",
+        "Grail1963",
+        "JPS1985",
+        "KJV",
+        "NRSV"
+      ]
+    },
+    {
+      "psalm": 125,
+      "status": "matches_existing_translation_marker_count",
+      "rotherhamVerseCount": 5,
+      "localMarkerCounts": {
+        "Coverdale": 5,
+        "JPS1985": 5,
+        "KJV": 5,
+        "NRSV": 5
+      },
+      "matchesExistingTranslationKeys": [
+        "Coverdale",
+        "JPS1985",
+        "KJV",
+        "NRSV"
+      ],
+      "localTranslations": [
+        "Coverdale",
+        "Grail1963",
+        "JPS1985",
+        "KJV",
+        "NRSV"
+      ]
+    },
+    {
+      "psalm": 126,
+      "status": "matches_existing_translation_marker_count",
+      "rotherhamVerseCount": 6,
+      "localMarkerCounts": {
+        "Coverdale": 7,
+        "JPS1985": 6,
+        "KJV": 6,
+        "NRSV": 6
+      },
+      "matchesExistingTranslationKeys": [
+        "JPS1985",
+        "KJV",
+        "NRSV"
+      ],
+      "localTranslations": [
+        "Coverdale",
+        "Grail1963",
+        "JPS1985",
+        "KJV",
+        "NRSV"
+      ]
+    },
+    {
+      "psalm": 127,
+      "status": "matches_existing_translation_marker_count",
+      "rotherhamVerseCount": 5,
+      "localMarkerCounts": {
+        "Coverdale": 6,
+        "JPS1985": 5,
+        "KJV": 5,
+        "NRSV": 6
+      },
+      "matchesExistingTranslationKeys": [
+        "JPS1985",
+        "KJV"
+      ],
+      "localTranslations": [
+        "Coverdale",
+        "Grail1963",
+        "JPS1985",
+        "KJV",
+        "NRSV"
+      ]
+    },
+    {
+      "psalm": 128,
+      "status": "matches_existing_translation_marker_count",
+      "rotherhamVerseCount": 6,
+      "localMarkerCounts": {
+        "Coverdale": 7,
+        "JPS1985": 6,
+        "KJV": 6,
+        "NRSV": 6
+      },
+      "matchesExistingTranslationKeys": [
+        "JPS1985",
+        "KJV",
+        "NRSV"
+      ],
+      "localTranslations": [
+        "Coverdale",
+        "Grail1963",
+        "JPS1985",
+        "KJV",
+        "NRSV"
+      ]
+    },
+    {
+      "psalm": 129,
+      "status": "matches_existing_translation_marker_count",
+      "rotherhamVerseCount": 8,
+      "localMarkerCounts": {
+        "Coverdale": 8,
+        "JPS1985": 8,
+        "KJV": 8,
+        "NRSV": 8
+      },
+      "matchesExistingTranslationKeys": [
+        "Coverdale",
+        "JPS1985",
+        "KJV",
+        "NRSV"
+      ],
+      "localTranslations": [
+        "Coverdale",
+        "Grail1963",
+        "JPS1985",
+        "KJV",
+        "NRSV"
+      ]
+    },
+    {
+      "psalm": 130,
+      "status": "matches_existing_translation_marker_count",
+      "rotherhamVerseCount": 8,
+      "localMarkerCounts": {
+        "Coverdale": 8,
+        "JPS1985": 8,
+        "KJV": 8,
+        "NRSV": 8
+      },
+      "matchesExistingTranslationKeys": [
+        "Coverdale",
+        "JPS1985",
+        "KJV",
+        "NRSV"
+      ],
+      "localTranslations": [
+        "Coverdale",
+        "Grail1963",
+        "JPS1985",
+        "KJV",
+        "NRSV"
+      ]
+    },
+    {
+      "psalm": 131,
+      "status": "matches_existing_translation_marker_count",
+      "rotherhamVerseCount": 3,
+      "localMarkerCounts": {
+        "Coverdale": 4,
+        "JPS1985": 3,
+        "KJV": 3,
+        "NRSV": 3
+      },
+      "matchesExistingTranslationKeys": [
+        "JPS1985",
+        "KJV",
+        "NRSV"
+      ],
+      "localTranslations": [
+        "Coverdale",
+        "Grail1963",
+        "JPS1985",
+        "KJV",
+        "NRSV"
+      ]
+    },
+    {
+      "psalm": 132,
+      "status": "matches_existing_translation_marker_count",
+      "rotherhamVerseCount": 18,
+      "localMarkerCounts": {
+        "Coverdale": 18,
+        "JPS1985": 18,
+        "KJV": 18,
+        "NRSV": 18
+      },
+      "matchesExistingTranslationKeys": [
+        "Coverdale",
+        "JPS1985",
+        "KJV",
+        "NRSV"
+      ],
+      "localTranslations": [
+        "Coverdale",
+        "Grail1963",
+        "JPS1985",
+        "KJV",
+        "NRSV"
+      ]
+    },
+    {
+      "psalm": 133,
+      "status": "matches_existing_translation_marker_count",
+      "rotherhamVerseCount": 3,
+      "localMarkerCounts": {
+        "Coverdale": 4,
+        "JPS1985": 3,
+        "KJV": 3,
+        "NRSV": 3
+      },
+      "matchesExistingTranslationKeys": [
+        "JPS1985",
+        "KJV",
+        "NRSV"
+      ],
+      "localTranslations": [
+        "Coverdale",
+        "Grail1963",
+        "JPS1985",
+        "KJV",
+        "NRSV"
+      ]
+    },
+    {
+      "psalm": 134,
+      "status": "matches_existing_translation_marker_count",
+      "rotherhamVerseCount": 3,
+      "localMarkerCounts": {
+        "Coverdale": 4,
+        "JPS1985": 3,
+        "KJV": 3,
+        "NRSV": 3
+      },
+      "matchesExistingTranslationKeys": [
+        "JPS1985",
+        "KJV",
+        "NRSV"
+      ],
+      "localTranslations": [
+        "Coverdale",
+        "Grail1963",
+        "JPS1985",
+        "KJV",
+        "NRSV"
+      ]
+    },
+    {
+      "psalm": 135,
+      "status": "matches_existing_translation_marker_count",
+      "rotherhamVerseCount": 21,
+      "localMarkerCounts": {
+        "Coverdale": 21,
+        "JPS1985": 21,
+        "KJV": 21,
+        "NRSV": 21
+      },
+      "matchesExistingTranslationKeys": [
+        "Coverdale",
+        "JPS1985",
+        "KJV",
+        "NRSV"
+      ],
+      "localTranslations": [
+        "Coverdale",
+        "Grail1963",
+        "JPS1985",
+        "KJV",
+        "NRSV"
+      ]
+    },
+    {
+      "psalm": 136,
+      "status": "matches_existing_translation_marker_count",
+      "rotherhamVerseCount": 26,
+      "localMarkerCounts": {
+        "Coverdale": 27,
+        "JPS1985": 26,
+        "KJV": 26,
+        "NRSV": 26
+      },
+      "matchesExistingTranslationKeys": [
+        "JPS1985",
+        "KJV",
+        "NRSV"
+      ],
+      "localTranslations": [
+        "Coverdale",
+        "Grail1963",
+        "JPS1985",
+        "KJV",
+        "NRSV"
+      ]
+    },
+    {
+      "psalm": 137,
+      "status": "matches_existing_translation_marker_count",
+      "rotherhamVerseCount": 9,
+      "localMarkerCounts": {
+        "Coverdale": 9,
+        "JPS1985": 9,
+        "KJV": 9,
+        "NRSV": 9
+      },
+      "matchesExistingTranslationKeys": [
+        "Coverdale",
+        "JPS1985",
+        "KJV",
+        "NRSV"
+      ],
+      "localTranslations": [
+        "Coverdale",
+        "Grail1963",
+        "JPS1985",
+        "KJV",
+        "NRSV"
+      ]
+    },
+    {
+      "psalm": 138,
+      "status": "matches_existing_translation_marker_count",
+      "rotherhamVerseCount": 8,
+      "localMarkerCounts": {
+        "Coverdale": 8,
+        "JPS1985": 8,
+        "KJV": 8,
+        "NRSV": 8
+      },
+      "matchesExistingTranslationKeys": [
+        "Coverdale",
+        "JPS1985",
+        "KJV",
+        "NRSV"
+      ],
+      "localTranslations": [
+        "Coverdale",
+        "Grail1963",
+        "JPS1985",
+        "KJV",
+        "NRSV"
+      ]
+    },
+    {
+      "psalm": 139,
+      "status": "matches_existing_translation_marker_count",
+      "rotherhamVerseCount": 24,
+      "localMarkerCounts": {
+        "Coverdale": 24,
+        "JPS1985": 24,
+        "KJV": 24,
+        "NRSV": 24
+      },
+      "matchesExistingTranslationKeys": [
+        "Coverdale",
+        "JPS1985",
+        "KJV",
+        "NRSV"
+      ],
+      "localTranslations": [
+        "Coverdale",
+        "Grail1963",
+        "JPS1985",
+        "KJV",
+        "NRSV"
+      ]
+    },
+    {
+      "psalm": 140,
+      "status": "matches_existing_translation_marker_count",
+      "rotherhamVerseCount": 13,
+      "localMarkerCounts": {
+        "Coverdale": 13,
+        "JPS1985": 14,
+        "KJV": 13,
+        "NRSV": 13
+      },
+      "matchesExistingTranslationKeys": [
+        "Coverdale",
+        "KJV",
+        "NRSV"
+      ],
+      "localTranslations": [
+        "Coverdale",
+        "Grail1963",
+        "JPS1985",
+        "KJV",
+        "NRSV"
+      ]
+    },
+    {
+      "psalm": 141,
+      "status": "matches_existing_translation_marker_count",
+      "rotherhamVerseCount": 10,
+      "localMarkerCounts": {
+        "Coverdale": 10,
+        "JPS1985": 10,
+        "KJV": 10,
+        "NRSV": 10
+      },
+      "matchesExistingTranslationKeys": [
+        "Coverdale",
+        "JPS1985",
+        "KJV",
+        "NRSV"
+      ],
+      "localTranslations": [
+        "Coverdale",
+        "Grail1963",
+        "JPS1985",
+        "KJV",
+        "NRSV"
+      ]
+    },
+    {
+      "psalm": 142,
+      "status": "matches_existing_translation_marker_count",
+      "rotherhamVerseCount": 7,
+      "localMarkerCounts": {
+        "Coverdale": 9,
+        "JPS1985": 8,
+        "KJV": 7,
+        "NRSV": 7
+      },
+      "matchesExistingTranslationKeys": [
+        "KJV",
+        "NRSV"
+      ],
+      "localTranslations": [
+        "Coverdale",
+        "Grail1963",
+        "JPS1985",
+        "KJV",
+        "NRSV"
+      ]
+    },
+    {
+      "psalm": 143,
+      "status": "matches_existing_translation_marker_count",
+      "rotherhamVerseCount": 12,
+      "localMarkerCounts": {
+        "Coverdale": 12,
+        "JPS1985": 12,
+        "KJV": 12,
+        "NRSV": 12
+      },
+      "matchesExistingTranslationKeys": [
+        "Coverdale",
+        "JPS1985",
+        "KJV",
+        "NRSV"
+      ],
+      "localTranslations": [
+        "Coverdale",
+        "Grail1963",
+        "JPS1985",
+        "KJV",
+        "NRSV"
+      ]
+    },
+    {
+      "psalm": 144,
+      "status": "matches_existing_translation_marker_count",
+      "rotherhamVerseCount": 15,
+      "localMarkerCounts": {
+        "Coverdale": 15,
+        "JPS1985": 15,
+        "KJV": 15,
+        "NRSV": 15
+      },
+      "matchesExistingTranslationKeys": [
+        "Coverdale",
+        "JPS1985",
+        "KJV",
+        "NRSV"
+      ],
+      "localTranslations": [
+        "Coverdale",
+        "Grail1963",
+        "JPS1985",
+        "KJV",
+        "NRSV"
+      ]
+    },
+    {
+      "psalm": 145,
+      "status": "matches_existing_translation_marker_count",
+      "rotherhamVerseCount": 21,
+      "localMarkerCounts": {
+        "Coverdale": 21,
+        "JPS1985": 21,
+        "KJV": 21,
+        "NRSV": 21
+      },
+      "matchesExistingTranslationKeys": [
+        "Coverdale",
+        "JPS1985",
+        "KJV",
+        "NRSV"
+      ],
+      "localTranslations": [
+        "Coverdale",
+        "Grail1963",
+        "JPS1985",
+        "KJV",
+        "NRSV"
+      ]
+    },
+    {
+      "psalm": 146,
+      "status": "matches_existing_translation_marker_count",
+      "rotherhamVerseCount": 10,
+      "localMarkerCounts": {
+        "Coverdale": 10,
+        "JPS1985": 10,
+        "KJV": 10,
+        "NRSV": 10
+      },
+      "matchesExistingTranslationKeys": [
+        "Coverdale",
+        "JPS1985",
+        "KJV",
+        "NRSV"
+      ],
+      "localTranslations": [
+        "Coverdale",
+        "Grail1963",
+        "JPS1985",
+        "KJV",
+        "NRSV"
+      ]
+    },
+    {
+      "psalm": 147,
+      "status": "matches_existing_translation_marker_count",
+      "rotherhamVerseCount": 20,
+      "localMarkerCounts": {
+        "Coverdale": 20,
+        "JPS1985": 20,
+        "KJV": 20,
+        "NRSV": 20
+      },
+      "matchesExistingTranslationKeys": [
+        "Coverdale",
+        "JPS1985",
+        "KJV",
+        "NRSV"
+      ],
+      "localTranslations": [
+        "Coverdale",
+        "Grail1963",
+        "JPS1985",
+        "KJV",
+        "NRSV"
+      ]
+    },
+    {
+      "psalm": 148,
+      "status": "matches_existing_translation_marker_count",
+      "rotherhamVerseCount": 14,
+      "localMarkerCounts": {
+        "Coverdale": 13,
+        "JPS1985": 14,
+        "KJV": 14,
+        "NRSV": 14
+      },
+      "matchesExistingTranslationKeys": [
+        "JPS1985",
+        "KJV",
+        "NRSV"
+      ],
+      "localTranslations": [
+        "Coverdale",
+        "Grail1963",
+        "JPS1985",
+        "KJV",
+        "NRSV"
+      ]
+    },
+    {
+      "psalm": 149,
+      "status": "matches_existing_translation_marker_count",
+      "rotherhamVerseCount": 9,
+      "localMarkerCounts": {
+        "Coverdale": 9,
+        "JPS1985": 9,
+        "KJV": 9,
+        "NRSV": 9
+      },
+      "matchesExistingTranslationKeys": [
+        "Coverdale",
+        "JPS1985",
+        "KJV",
+        "NRSV"
+      ],
+      "localTranslations": [
+        "Coverdale",
+        "Grail1963",
+        "JPS1985",
+        "KJV",
+        "NRSV"
+      ]
+    },
+    {
+      "psalm": 150,
+      "status": "matches_existing_translation_marker_count",
+      "rotherhamVerseCount": 6,
+      "localMarkerCounts": {
+        "Coverdale": 6,
+        "JPS1985": 6,
+        "KJV": 6,
+        "NRSV": 6
+      },
+      "matchesExistingTranslationKeys": [
+        "Coverdale",
+        "JPS1985",
+        "KJV",
+        "NRSV"
+      ],
+      "localTranslations": [
+        "Coverdale",
+        "Grail1963",
+        "JPS1985",
+        "KJV",
+        "NRSV"
+      ]
+    },
+    {
+      "psalm": 151,
+      "status": "local_record_without_rotherham_source",
+      "sourceScope": "outside_rotherham_mt_1_150_source",
+      "localTranslations": [
+        "Grail1963",
+        "Orthodox"
+      ],
+      "localMarkerCounts": {
+        "Orthodox": 7
+      },
+      "rotherhamVerseCount": null,
+      "matchesExistingTranslationKeys": []
+    },
+    {
+      "psalm": 152,
+      "status": "local_record_without_rotherham_source",
+      "sourceScope": "outside_rotherham_mt_1_150_source",
+      "localTranslations": [
+        "Orthodox"
+      ],
+      "localMarkerCounts": {
+        "Orthodox": 5
+      },
+      "rotherhamVerseCount": null,
+      "matchesExistingTranslationKeys": []
+    },
+    {
+      "psalm": 153,
+      "status": "local_record_without_rotherham_source",
+      "sourceScope": "outside_rotherham_mt_1_150_source",
+      "localTranslations": [
+        "Orthodox"
+      ],
+      "localMarkerCounts": {
+        "Orthodox": 4
+      },
+      "rotherhamVerseCount": null,
+      "matchesExistingTranslationKeys": []
+    },
+    {
+      "psalm": 154,
+      "status": "local_record_without_rotherham_source",
+      "sourceScope": "outside_rotherham_mt_1_150_source",
+      "localTranslations": [
+        "Orthodox"
+      ],
+      "localMarkerCounts": {
+        "Orthodox": 9
+      },
+      "rotherhamVerseCount": null,
+      "matchesExistingTranslationKeys": []
+    },
+    {
+      "psalm": 155,
+      "status": "local_record_without_rotherham_source",
+      "sourceScope": "outside_rotherham_mt_1_150_source",
+      "localTranslations": [
+        "Orthodox"
+      ],
+      "localMarkerCounts": {
+        "Orthodox": 7
+      },
+      "rotherhamVerseCount": null,
+      "matchesExistingTranslationKeys": []
+    }
+  ],
+  "samplesNoFullText": {
+    "1": [
+      {
+        "verse": 1,
+        "textChars": 157,
+        "preview": "How happy the man, who hath not walked in the counsel of the lawless,—and, in the way of sinners, ha..."
+      },
+      {
+        "verse": 2,
+        "textChars": 100,
+        "preview": "But, in the law of Yahweh, is his delight,—and, in his law, doth he talk with himself day and night."
+      },
+      {
+        "verse": 3,
+        "textChars": 173,
+        "preview": "So doth he become like a tree planted by streams of waters,—that yieldeth, its fruit, in its season,..."
+      },
+      {
+        "verse": 4,
+        "textChars": 69,
+        "preview": "Not so, the lawless,—but as chaff which is driven about by the wind:"
+      }
+    ],
+    "2": [
+      {
+        "verse": 1,
+        "textChars": 86,
+        "preview": "Wherefore have nations assembled in tumult? Or should, peoples, mutter an empty thing?"
+      },
+      {
+        "verse": 2,
+        "textChars": 144,
+        "preview": "The kings of earth take their station, and, grave men, have met by appointment together,—against Yah..."
+      },
+      {
+        "verse": 3,
+        "textChars": 63,
+        "preview": "Let us break asunder their bonds,—and cast from us their cords!"
+      },
+      {
+        "verse": 4,
+        "textChars": 71,
+        "preview": "He that sitteth in the heavens, will laugh,—My Lord, will mock at them:"
+      }
+    ],
+    "22": [
+      {
+        "verse": 1,
+        "textChars": 97,
+        "preview": "My GOD, my GOD, why hast thou forsaken me? Far from saving me, The words of my loud lamentation?"
+      },
+      {
+        "verse": 2,
+        "textChars": 99,
+        "preview": "My God! I keep crying—By day, and thou dost not answer, and, By night, and there is no rest for me."
+      },
+      {
+        "verse": 3,
+        "textChars": 58,
+        "preview": "But, thou, art holy, Who inhabitest the praises of Israel."
+      },
+      {
+        "verse": 4,
+        "textChars": 72,
+        "preview": "In thee, trusted our fathers, They trusted, and thou didst deliver them;"
+      }
+    ],
+    "55": [
+      {
+        "verse": 1,
+        "textChars": 77,
+        "preview": "Give ear, O God, to my prayer, And do not hide thyself from my supplication:"
+      },
+      {
+        "verse": 2,
+        "textChars": 88,
+        "preview": "Attend unto me, and answer me, I may ramble in my complaining, And be driven to and fro—"
+      },
+      {
+        "verse": 3,
+        "textChars": 160,
+        "preview": "Because of the noise of the enemy, By reason of the oppression of the lawless one, For they would le..."
+      },
+      {
+        "verse": 4,
+        "textChars": 81,
+        "preview": "My heart, would writhe within me, And, the terrors of Death, have fallen upon me:"
+      }
+    ],
+    "66": [
+      {
+        "verse": 1,
+        "textChars": 45,
+        "preview": "Make a joyful noise unto God, all the earth;"
+      },
+      {
+        "verse": 2,
+        "textChars": 75,
+        "preview": "Praise ye in song the glory of his Name, Celebrate the glory of his praise:"
+      },
+      {
+        "verse": 3,
+        "textChars": 115,
+        "preview": "Say unto God—How fearful in thy doings, Through the abounding of thy power, shall thy foes come crin..."
+      },
+      {
+        "verse": 4,
+        "textChars": 118,
+        "preview": "All the earth, shall bow themselves down to thee, And sing praises unto thee,. Shall praise in song ..."
+      }
+    ],
+    "150": [
+      {
+        "verse": 1,
+        "textChars": 81,
+        "preview": "Praise ye Yah, Praise ye GOD in his sanctuary, Praise him, in his strong expanse:"
+      },
+      {
+        "verse": 2,
+        "textChars": 83,
+        "preview": "Praise him, for his mighty deeds, Praise him, according to his exceeding greatness:"
+      },
+      {
+        "verse": 3,
+        "textChars": 73,
+        "preview": "Praise him, with the blast of a horn, Praise him, with the harp and lyre:"
+      },
+      {
+        "verse": 4,
+        "textChars": 83,
+        "preview": "Praise him, with timbrel and dance,—Praise him, with stringed instrument and flute,"
+      }
+    ]
+  }
+}
