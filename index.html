@@ -580,6 +580,21 @@
                     </label>
                 </div>
 
+                <label>Notes in Current View</label>
+                <div id="bible-current-notes" class="bible-current-notes">
+                    <div class="bible-notes-empty">No highlights or comments in this view.</div>
+                </div>
+
+                <div id="bible-annotation-editor" class="bible-annotation-editor" hidden>
+                    <div id="bible-annotation-editor-label" class="bible-annotation-editor-label">Selected note</div>
+                    <textarea id="bible-annotation-comment" rows="5" placeholder="Add or edit a comment for this highlight."></textarea>
+                    <div class="bible-button-row">
+                        <button class="bible-tool-btn" id="bible-save-annotation" type="button">Save Note</button>
+                        <button class="bible-tool-btn" id="bible-delete-annotation" type="button">Delete</button>
+                        <button class="bible-tool-btn" id="bible-close-annotation" type="button">Close</button>
+                    </div>
+                </div>
+
                 <div id="bible-status">Ready.</div>
             </aside>
 

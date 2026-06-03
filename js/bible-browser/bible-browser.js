@@ -10,6 +10,7 @@
     let currentResolved = [];
     let currentTranslation = "NRSV";
     let pendingSelection = null;
+    let activeAnnotationId = null;
 
     function $(id) {
         return document.getElementById(id);
@@ -294,12 +295,12 @@
             const end = Math.max(start, Math.min(Number(ann.endOffset), text.length));
             if (start < cursor || end <= start) continue;
 
-            html += escapeHtml(text.slice(cursor, start));
+            html += renderSearchHighlightedText(text.slice(cursor, start), searchTerm);
             const cls = ann.comment ? "bible-highlight has-comment" : "bible-highlight";
             html += `<mark class="${cls}" data-annotation-id="${escapeHtml(ann.id)}" title="${escapeHtml(ann.comment || "Highlight")}">${escapeHtml(text.slice(start, end))}</mark>`;
             cursor = end;
         }
-        html += escapeHtml(text.slice(cursor));
+        html += renderSearchHighlightedText(text.slice(cursor), searchTerm);
         return html;
     }
 
@@ -360,6 +361,7 @@
 
         if (!items.length) {
             output.innerHTML = `<div class="bible-empty">No verses to display.</div>`;
+            renderCurrentNotesList();
             return;
         }
 
@@ -428,6 +430,8 @@
                 editAnnotation(mark.dataset.annotationId);
             });
         });
+
+        renderCurrentNotesList();
 
         if (options.restoreScroll) {
             const state = loadLastState();
@@ -640,6 +644,132 @@
         return { start, end };
     }
 
+    function getAnnotationReferenceLabel(annotation) {
+        const book = getBook(annotation.bookKey);
+        const bookName = book?.name || annotation.bookKey || "Unknown";
+        return `${bookName} ${annotation.chapter}:${annotation.verse}`;
+    }
+
+    function annotationsInCurrentView() {
+        const visibleKeys = new Set((currentResolved || []).map(item => annotationKey(item)));
+        return loadAnnotations()
+            .filter(annotation => visibleKeys.has(annotation.anchorKey))
+            .sort((a, b) => {
+                const aLabel = getAnnotationReferenceLabel(a);
+                const bLabel = getAnnotationReferenceLabel(b);
+                if (aLabel !== bLabel) return aLabel.localeCompare(bLabel);
+                return Number(a.startOffset || 0) - Number(b.startOffset || 0);
+            });
+    }
+
+    function renderCurrentNotesList() {
+        const container = $("bible-current-notes");
+        if (!container) return;
+
+        const annotations = annotationsInCurrentView();
+        if (!annotations.length) {
+            container.innerHTML = `<div class="bible-notes-empty">No highlights or comments in this view.</div>`;
+            return;
+        }
+
+        container.innerHTML = annotations.map(annotation => {
+            const label = getAnnotationReferenceLabel(annotation);
+            const excerpt = annotation.selectedText || "Highlight";
+            const comment = annotation.comment?.trim()
+                ? `<div class="bible-note-comment">${escapeHtml(annotation.comment.trim())}</div>`
+                : `<div class="bible-note-comment bible-note-comment-empty">No comment.</div>`;
+
+            return `
+                <button class="bible-note-card" type="button" data-annotation-open="${escapeHtml(annotation.id)}">
+                    <span class="bible-note-ref">${escapeHtml(label)}</span>
+                    <span class="bible-note-excerpt">${escapeHtml(excerpt)}</span>
+                    ${comment}
+                </button>
+            `;
+        }).join("");
+
+        container.querySelectorAll("[data-annotation-open]").forEach(button => {
+            button.addEventListener("click", () => {
+                jumpToAnnotation(button.dataset.annotationOpen);
+                openAnnotationEditor(button.dataset.annotationOpen);
+            });
+        });
+    }
+
+    function jumpToAnnotation(annotationId) {
+        const annotation = loadAnnotations().find(item => item.id === annotationId);
+        if (!annotation) return;
+
+        const verse = Array.from(document.querySelectorAll(".bible-verse")).find(el =>
+            el.dataset.bookKey === annotation.bookKey &&
+            Number(el.dataset.chapter) === Number(annotation.chapter) &&
+            Number(el.dataset.verse) === Number(annotation.verse) &&
+            el.dataset.translation === annotation.translation
+        );
+
+        if (verse) {
+            verse.scrollIntoView({ behavior: "smooth", block: "center" });
+            verse.classList.add("bible-verse-focus");
+            window.setTimeout(() => verse.classList.remove("bible-verse-focus"), 1200);
+        }
+    }
+
+    function openAnnotationEditor(annotationId) {
+        const annotation = loadAnnotations().find(item => item.id === annotationId);
+        const editor = $("bible-annotation-editor");
+        const label = $("bible-annotation-editor-label");
+        const comment = $("bible-annotation-comment");
+
+        if (!annotation || !editor || !comment) return;
+
+        activeAnnotationId = annotationId;
+        if (label) {
+            label.textContent = `${getAnnotationReferenceLabel(annotation)} · ${annotation.selectedText || "Highlight"}`;
+        }
+        comment.value = annotation.comment || "";
+        editor.hidden = false;
+        comment.focus();
+    }
+
+    function closeAnnotationEditor() {
+        const editor = $("bible-annotation-editor");
+        if (editor) editor.hidden = true;
+        activeAnnotationId = null;
+    }
+
+    function saveAnnotationEditor() {
+        if (!activeAnnotationId) return;
+
+        const annotations = loadAnnotations();
+        const idx = annotations.findIndex(item => item.id === activeAnnotationId);
+        if (idx === -1) {
+            closeAnnotationEditor();
+            return;
+        }
+
+        annotations[idx] = {
+            ...annotations[idx],
+            comment: $("bible-annotation-comment")?.value || "",
+            updatedAt: new Date().toISOString()
+        };
+        saveAnnotations(annotations);
+        renderResults(currentResolved);
+        openAnnotationEditor(activeAnnotationId);
+    }
+
+    function deleteAnnotationEditor() {
+        if (!activeAnnotationId) return;
+
+        const annotation = loadAnnotations().find(item => item.id === activeAnnotationId);
+        const label = annotation ? getAnnotationReferenceLabel(annotation) : "this highlight";
+        if (!window.confirm(`Delete highlight/comment for ${label}?`)) return;
+
+        const annotations = loadAnnotations().filter(item => item.id !== activeAnnotationId);
+        saveAnnotations(annotations);
+        closeAnnotationEditor();
+        renderResults(currentResolved);
+    }
+
     function hideSelectionToolbar() {
         const toolbar = $("bible-selection-toolbar");
         if (toolbar) toolbar.style.display = "none";
@@ -698,14 +828,12 @@
     function addAnnotation(withComment) {
         if (!pendingSelection) return;
 
-        const comment = withComment ? window.prompt("Comment for this highlight:", "") : "";
-        if (withComment && comment === null) return;
-
+        const annotationId = `ann-${Date.now()}-${Math.random().toString(16).slice(2)}`;
         const annotations = loadAnnotations();
         annotations.push({
-            id: `ann-${Date.now()}-${Math.random().toString(16).slice(2)}`,
+            id: annotationId,
             ...pendingSelection,
-            comment: comment || "",
+            comment: "",
             createdAt: new Date().toISOString(),
             updatedAt: new Date().toISOString()
         });
@@ -714,29 +842,14 @@
         window.getSelection()?.removeAllRanges();
         renderResults(currentResolved);
         saveLastState();
+
+        if (withComment) {
+            openAnnotationEditor(annotationId);
+        }
     }
 
     function editAnnotation(annotationId) {
-        const annotations = loadAnnotations();
-        const idx = annotations.findIndex(ann => ann.id === annotationId);
-        if (idx === -1) return;
-
-        const ann = annotations[idx];
-        const next = window.prompt("Edit comment. Type DELETE to remove this highlight.", ann.comment || "");
-        if (next === null) return;
-
-        if (next.trim().toUpperCase() === "DELETE") {
-            annotations.splice(idx, 1);
-        } else {
-            annotations[idx] = {
-                ...ann,
-                comment: next,
-                updatedAt: new Date().toISOString()
-            };
-        }
-
-        saveAnnotations(annotations);
-        renderResults(currentResolved);
+        openAnnotationEditor(annotationId);
     }
 
     async function searchBible() {
@@ -832,9 +945,35 @@
             try {
                 const data = JSON.parse(String(reader.result || "[]"));
                 if (!Array.isArray(data)) throw new Error("Annotation import must be a JSON array.");
-                saveAnnotations(data);
+
+                const normalized = data.map((annotation, index) => {
+                    if (!annotation || typeof annotation !== "object") {
+                        throw new Error(`Annotation import item ${index + 1} is not an object.`);
+                    }
+                    if (!annotation.anchorKey || !annotation.bookKey || !annotation.chapter || !annotation.verse) {
+                        throw new Error(`Annotation import item ${index + 1} is missing required anchor fields.`);
+                    }
+                    return {
+                        id: annotation.id || `ann-import-${Date.now()}-${index}`,
+                        type: annotation.type || "highlight",
+                        anchorKey: String(annotation.anchorKey),
+                        bookKey: String(annotation.bookKey),
+                        chapter: Number(annotation.chapter),
+                        verse: Number(annotation.verse),
+                        translation: String(annotation.translation || currentTranslation),
+                        startOffset: Number(annotation.startOffset || 0),
+                        endOffset: Number(annotation.endOffset || 0),
+                        selectedText: String(annotation.selectedText || ""),
+                        comment: String(annotation.comment || ""),
+                        createdAt: annotation.createdAt || new Date().toISOString(),
+                        updatedAt: new Date().toISOString()
+                    };
+                });
+
+                saveAnnotations(normalized);
+                closeAnnotationEditor();
                 renderResults(currentResolved);
-                $("bible-status").textContent = `Imported ${data.length} annotation${data.length === 1 ? "" : "s"}.`;
+                $("bible-status").textContent = `Imported ${normalized.length} annotation${normalized.length === 1 ? "" : "s"}.`;
             } catch (error) {
                 $("bible-status").textContent = error.message;
             }
@@ -873,6 +1012,9 @@
         $("bible-comment-btn")?.addEventListener("click", () => addAnnotation(true));
         $("bible-export-annotations")?.addEventListener("click", exportAnnotations);
         $("bible-import-annotations")?.addEventListener("change", event => importAnnotationsFromFile(event.target.files?.[0]));
+        $("bible-save-annotation")?.addEventListener("click", saveAnnotationEditor);
+        $("bible-delete-annotation")?.addEventListener("click", deleteAnnotationEditor);
+        $("bible-close-annotation")?.addEventListener("click", closeAnnotationEditor);
 
         $("bible-results")?.addEventListener("scroll", () => saveLastState());
         document.addEventListener("mouseup", () => setTimeout(handleSelection, 0));
@@ -941,7 +1083,9 @@
         changeBibleChapter,
         searchBible,
         exportAnnotations,
-        loadAnnotations
+        loadAnnotations,
+        renderCurrentNotesList,
+        openAnnotationEditor
     };
 
     document.addEventListener("DOMContentLoaded", initializeBibleBrowser);

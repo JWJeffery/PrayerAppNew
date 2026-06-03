@@ -331,3 +331,100 @@
     border-radius: 2px;
     padding: 0 1px;
 }
+
+
+.bible-current-notes {
+    max-height: 220px;
+    overflow: auto;
+    border: 1px solid rgba(201, 168, 76, 0.18);
+    background: rgba(0, 0, 0, 0.16);
+    padding: 7px;
+    margin-bottom: 10px;
+}
+
+.bible-notes-empty {
+    color: #a89878;
+    font-family: 'IM Fell English', serif;
+    font-size: 0.92rem;
+    padding: 8px;
+}
+
+.bible-note-card {
+    display: block;
+    width: 100%;
+    text-align: left;
+    border: 1px solid rgba(201, 168, 76, 0.18);
+    background: rgba(201, 168, 76, 0.055);
+    color: #e8dfc8;
+    padding: 8px;
+    margin-bottom: 7px;
+    cursor: pointer;
+    border-radius: 2px;
+}
+
+.bible-note-card:hover {
+    border-color: rgba(201, 168, 76, 0.42);
+    background: rgba(201, 168, 76, 0.1);
+}
+
+.bible-note-ref {
+    display: block;
+    color: var(--gold);
+    font-family: 'Cinzel', serif;
+    font-size: 0.68rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.bible-note-excerpt {
+    display: block;
+    font-family: 'IM Fell English', serif;
+    font-size: 0.92rem;
+    margin-top: 3px;
+}
+
+.bible-note-comment {
+    color: #c8bfa8;
+    font-size: 0.84rem;
+    margin-top: 4px;
+}
+
+.bible-note-comment-empty {
+    color: #8f826d;
+    font-style: italic;
+}
+
+.bible-annotation-editor {
+    border: 1px solid rgba(201, 168, 76, 0.24);
+    background: rgba(0, 0, 0, 0.18);
+    padding: 10px;
+    margin-bottom: 12px;
+}
+
+.bible-annotation-editor-label {
+    color: var(--gold);
+    font-family: 'Cinzel', serif;
+    font-size: 0.68rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 7px;
+}
+
+#bible-annotation-comment {
+    width: 100%;
+    box-sizing: border-box;
+    resize: vertical;
+    margin-bottom: 9px;
+    padding: 8px;
+    border-radius: 2px;
+    border: 1px solid rgba(201, 168, 76, 0.35);
+    background: #1f1a14;
+    color: #f3ead3;
+    font-family: 'IM Fell English', serif;
+    font-size: 1rem;
+}
+
+.bible-verse-focus {
+    outline: 1px solid rgba(201, 168, 76, 0.65);
+    background: rgba(201, 168, 76, 0.07);
+}

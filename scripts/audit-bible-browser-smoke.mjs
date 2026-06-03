@@ -40,6 +40,14 @@ if (!index.includes('id="bible-prev-chapter"') || !index.includes('id="bible-nex
   fail("index.html is missing Bible previous/next chapter controls.");
 }
 
+if (!index.includes('id="bible-current-notes"')) {
+  fail("index.html is missing current-view notes panel.");
+}
+
+if (!index.includes('id="bible-annotation-editor"')) {
+  fail("index.html is missing annotation editor panel.");
+}
+
 if (!index.includes("js/bible-browser/reference-parser.js")) {
   fail("index.html is missing Bible reference parser script.");
 }
@@ -84,6 +92,22 @@ if (!browser.includes("bible-search-match")) {
   fail("Bible browser does not render search-match highlighting.");
 }
 
+if (!browser.includes("renderCurrentNotesList")) {
+  fail("Bible browser does not render current-view annotation notes.");
+}
+
+if (!browser.includes("openAnnotationEditor")) {
+  fail("Bible browser does not expose annotation editor.");
+}
+
+if (!browser.includes("saveAnnotationEditor")) {
+  fail("Bible browser does not save edited annotation comments.");
+}
+
+if (!browser.includes("deleteAnnotationEditor")) {
+  fail("Bible browser does not delete annotations through the editor.");
+}
+
 if (!browser.includes("resolved.warnings")) {
   fail("Bible browser does not preserve invalid-reference warnings on resolved passages.");
 }
@@ -106,6 +130,14 @@ if (!css.includes(".bible-search-match")) {
 
 if (!css.includes(".bible-segment-scope")) {
   fail("Bible browser CSS is missing search scope summary styling.");
+}
+
+if (!css.includes(".bible-current-notes")) {
+  fail("Bible browser CSS is missing current-view notes styling.");
+}
+
+if (!css.includes(".bible-annotation-editor")) {
+  fail("Bible browser CSS is missing annotation editor styling.");
 }
 
 const context = { window: {} };
