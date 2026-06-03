@@ -1406,6 +1406,9 @@
         changeBibleChapter,
         searchBible,
         parseSearchQuery,
+        getCurrentResolved() {
+            return currentResolved || [];
+        },
         setParallelReader(enabled, translation = parallelTranslation) {
             parallelEnabled = Boolean(enabled);
             parallelTranslation = translation || parallelTranslation;

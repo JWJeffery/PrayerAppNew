@@ -52,6 +52,14 @@ if (!index.includes('id="bible-current-notes"')) {
   fail("index.html is missing current-view notes panel.");
 }
 
+if (!index.includes('id="bible-passage-guide"')) {
+  fail("index.html is missing Passage Guide panel.");
+}
+
+if (!index.includes('js/bible-browser/passage-guide.js')) {
+  fail("index.html does not load the Passage Guide script.");
+}
+
 if (!index.includes('id="bible-annotation-editor"')) {
   fail("index.html is missing annotation editor panel.");
 }
@@ -118,6 +126,10 @@ if (!browser.includes("bible-parallel-columns")) {
 
 if (!browser.includes("setParallelReader")) {
   fail("Bible browser does not expose parallel reader test API.");
+}
+
+if (!browser.includes("getCurrentResolved")) {
+  fail("Bible browser does not expose current resolved passage for Passage Guide.");
 }
 
 if (!browser.includes("parseSearchQuery")) {

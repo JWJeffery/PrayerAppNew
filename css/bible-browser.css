@@ -516,3 +516,95 @@
     margin-top: 2px;
     line-height: 1.35;
 }
+
+
+.bible-passage-guide {
+    border: 1px solid rgba(201, 168, 76, 0.18);
+    background: rgba(0, 0, 0, 0.16);
+    padding: 8px;
+    margin-bottom: 12px;
+    max-height: 360px;
+    overflow: auto;
+}
+
+.bible-passage-guide-actions {
+    margin-bottom: 8px;
+}
+
+.bible-passage-guide-status {
+    color: #a89878;
+    font-family: 'IM Fell English', serif;
+    font-size: 0.92rem;
+    line-height: 1.35;
+    margin-bottom: 8px;
+}
+
+.bible-guide-empty,
+.bible-guide-error,
+.bible-guide-overflow {
+    color: #c8bfa8;
+    font-family: 'IM Fell English', serif;
+    font-size: 0.9rem;
+    padding: 8px;
+    border: 1px solid rgba(201, 168, 76, 0.14);
+    background: rgba(201, 168, 76, 0.045);
+    margin-bottom: 8px;
+}
+
+.bible-guide-card {
+    border: 1px solid rgba(201, 168, 76, 0.2);
+    background: rgba(201, 168, 76, 0.055);
+    padding: 9px;
+    margin-bottom: 9px;
+    border-radius: 2px;
+}
+
+.bible-guide-card-head {
+    color: var(--gold);
+    font-family: 'Cinzel', serif;
+    font-size: 0.68rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.bible-guide-date {
+    color: #a89878;
+    letter-spacing: 0.03em;
+    text-transform: none;
+}
+
+.bible-guide-range {
+    color: #d8cfb8;
+    font-size: 0.84rem;
+    margin-top: 3px;
+}
+
+.bible-guide-source {
+    color: #a89878;
+    font-size: 0.84rem;
+    margin-top: 3px;
+}
+
+.bible-guide-source-missing {
+    font-style: italic;
+}
+
+.bible-guide-card blockquote {
+    margin: 8px 0 6px;
+    padding-left: 10px;
+    border-left: 2px solid rgba(201, 168, 76, 0.28);
+    color: #eadfc4;
+    font-family: 'IM Fell English', serif;
+    font-size: 0.95rem;
+    line-height: 1.42;
+}
+
+.bible-guide-source-link {
+    color: var(--gold);
+    font-size: 0.84rem;
+    text-decoration: none;
+}
+
+.bible-guide-source-link:hover {
+    text-decoration: underline;
+}

@@ -1,0 +1,34 @@
+{
+  "schema": "universal_office_patristic_witness_runtime_manifest_v1",
+  "sourceRepository": "HistoricalChristianFaith/Commentaries-Database",
+  "sourceBranch": "master",
+  "sourceCommit": "762a37b16f34d1f06b3e5136bd2d6178ea70feb1",
+  "sourceIntakeSummary": "documentation/patristic-witness-intake-summary.json",
+  "sourceIntakeOutput": ".external/generated/patristic-witness",
+  "licenseNotice": {
+    "summary": "Source repository contains public-domain material and fair-use excerpts. Preserve attribution and source URLs where supplied.",
+    "downstreamUse": "Review before public redistribution beyond private/internal Bible Browser use."
+  },
+  "runtimePolicy": {
+    "status": "initial browser runtime slice",
+    "includedBooks": [
+      "hebrews"
+    ],
+    "fullSourceEntriesAvailableLocally": 81644,
+    "reason": "Do not ship the full 170MB+ patristic source-intake output into web-release until paging/indexing is designed."
+  },
+  "stats": {
+    "runtimeBookCount": 1,
+    "runtimeEntryCount": 2135,
+    "runtimeBytes": 3879139
+  },
+  "books": [
+    {
+      "book": "hebrews",
+      "bookName": "Hebrews",
+      "path": "data/commentary/patristic-witness-runtime/books/hebrews.json",
+      "entryCount": 2135,
+      "bytes": 3877878
+    }
+  ]
+}
