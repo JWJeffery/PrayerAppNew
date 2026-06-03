@@ -147,11 +147,31 @@
 }
 
 .bible-highlight {
-    background: rgba(201, 168, 76, 0.34);
+    background: rgba(255, 245, 157, 0.58);
     color: inherit;
     border-radius: 2px;
     padding: 0 1px;
     cursor: pointer;
+}
+
+.bible-highlight-yellow {
+    background: rgba(255, 245, 157, 0.62);
+}
+
+.bible-highlight-pink {
+    background: rgba(255, 193, 227, 0.60);
+}
+
+.bible-highlight-green {
+    background: rgba(200, 247, 197, 0.56);
+}
+
+.bible-highlight-blue {
+    background: rgba(189, 231, 255, 0.58);
+}
+
+.bible-highlight-purple {
+    background: rgba(220, 199, 255, 0.58);
 }
 
 .bible-highlight.has-comment {
@@ -1030,4 +1050,44 @@
     .bible-research-filter-grid {
         grid-template-columns: 1fr;
     }
+}
+
+
+#bible-selection-toolbar .bible-highlight-color-picker {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    color: var(--gold);
+    font-family: 'Cinzel', serif;
+    font-size: 0.62rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+#bible-selection-toolbar select,
+.bible-context-highlight-color {
+    border: 1px solid rgba(201, 168, 76, 0.38);
+    background: #1f1a14;
+    color: #f3ead3;
+    font-family: 'Cinzel', serif;
+    font-size: 0.65rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    padding: 5px 7px;
+    border-radius: 2px;
+}
+
+.bible-context-color-label {
+    display: block;
+    margin: 8px 0 4px;
+    color: var(--gold);
+    font-family: 'Cinzel', serif;
+    font-size: 0.66rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.bible-context-highlight-color {
+    width: 100%;
+    margin-bottom: 8px;
 }

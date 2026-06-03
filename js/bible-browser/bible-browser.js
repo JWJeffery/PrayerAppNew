@@ -16,6 +16,32 @@
     let pendingSelectionRect = null;
     let lastContextAnchorRect = null;
     let activeAnnotationId = null;
+    let currentHighlightColor = "yellow";
+
+    const HIGHLIGHT_COLORS = [
+        { key: "yellow", label: "Yellow" },
+        { key: "pink", label: "Pink" },
+        { key: "green", label: "Green" },
+        { key: "blue", label: "Blue" },
+        { key: "purple", label: "Purple" }
+    ];
+
+    function highlightColorKey(value) {
+        const key = String(value || "").toLowerCase();
+        return HIGHLIGHT_COLORS.some(color => color.key === key) ? key : "yellow";
+    }
+
+    function renderHighlightColorOptions(selected = currentHighlightColor) {
+        const active = highlightColorKey(selected);
+        return HIGHLIGHT_COLORS
+            .map(color => `<option value="${escapeHtml(color.key)}"${color.key === active ? " selected" : ""}>${escapeHtml(color.label)}</option>`)
+            .join("");
+    }
+
+    function syncHighlightColorControl() {
+        const select = $("bible-highlight-color");
+        if (select) select.value = currentHighlightColor;
+    }
 
     function $(id) {
         return document.getElementById(id);
@@ -304,6 +330,7 @@
             translation: currentTranslation,
             parallelEnabled,
             parallelTranslation,
+            highlightColor: currentHighlightColor,
             scope: $("bible-search-scope")?.value || "ALL",
             bookKey: $("bible-book-select")?.value || "",
             chapter: $("bible-chapter-select")?.value || "",
@@ -387,6 +414,7 @@
             endOffset: first.endOffset,
             selectedText,
             comment: String(annotation.comment || ""),
+            highlightColor: highlightColorKey(annotation.highlightColor || annotation.color),
             createdAt: annotation.createdAt || new Date().toISOString(),
             updatedAt: annotation.updatedAt || annotation.createdAt || new Date().toISOString(),
             segments
@@ -429,6 +457,7 @@
                     id: annotation.id,
                     parentAnnotationId: annotation.id,
                     comment: annotation.comment,
+                    highlightColor: annotation.highlightColor,
                     selectedText: segment.selectedText || annotation.selectedText || ""
                 }))
             )
@@ -483,7 +512,10 @@
             if (start < cursor || end <= start) continue;
 
             html += renderSearchHighlightedText(text.slice(cursor, start), searchTerm);
-            const cls = ann.comment ? "bible-highlight has-comment" : "bible-highlight";
+            const color = highlightColorKey(ann.highlightColor);
+            const cls = ann.comment
+                ? `bible-highlight has-comment bible-highlight-${color}`
+                : `bible-highlight bible-highlight-${color}`;
             html += `<mark class="${cls}" data-annotation-id="${escapeHtml(ann.id)}" title="${escapeHtml(ann.comment || "Highlight")}">${escapeHtml(text.slice(start, end))}</mark>`;
             cursor = end;
         }
@@ -1402,6 +1434,10 @@
             html: `
                 <div class="bible-context-note-label">${escapeHtml(getAnnotationReferenceLabel(annotation))}</div>
                 <div class="bible-context-selected-text">${escapeHtml(annotation.selectedText || "Highlighted text")}</div>
+                <label class="bible-context-color-label" for="bible-context-highlight-color">Highlight Color</label>
+                <select id="bible-context-highlight-color" class="bible-context-highlight-color">
+                    ${renderHighlightColorOptions(annotation.highlightColor)}
+                </select>
                 ${note}
                 <div class="bible-context-actions">
                     <button class="bible-tool-btn" id="bible-context-edit-note" type="button">Add / Edit Note</button>
@@ -1412,10 +1448,31 @@
             `
         });
 
+        body?.querySelector("#bible-context-highlight-color")?.addEventListener("change", event => {
+            setAnnotationHighlightColor(annotationId, event.target.value);
+        });
         body?.querySelector("#bible-context-edit-note")?.addEventListener("click", () => openAnnotationEditor(annotationId, { anchorRect }));
         body?.querySelector("#bible-context-fathers-highlight")?.addEventListener("click", () => loadFathersForAnnotation(annotationId));
         body?.querySelector("#bible-context-remove-highlight")?.addEventListener("click", () => deleteAnnotationById(annotationId));
         body?.querySelector("#bible-context-close-actions")?.addEventListener("click", closeContextPanel);
+    }
+
+    function setAnnotationHighlightColor(annotationId, color) {
+        const annotations = loadAnnotations();
+        const idx = annotations.findIndex(item => item.id === annotationId);
+        if (idx === -1) return;
+
+        const normalizedColor = highlightColorKey(color);
+        annotations[idx] = {
+            ...annotations[idx],
+            highlightColor: normalizedColor,
+            updatedAt: new Date().toISOString()
+        };
+
+        saveAnnotations(annotations);
+        renderResults(currentResolved);
+        renderCurrentNotesList();
+        openAnnotationActions(annotationId);
     }
 
     function openAnnotationEditor(annotationId, options = {}) {
@@ -1837,6 +1894,7 @@
             ...pendingSelection,
             type: "highlight",
             comment: "",
+            highlightColor: currentHighlightColor,
             createdAt: new Date().toISOString(),
             updatedAt: new Date().toISOString()
         });
@@ -2052,6 +2110,10 @@
         $("bible-highlight-btn")?.addEventListener("click", () => addAnnotation(false));
         $("bible-comment-btn")?.addEventListener("click", () => addAnnotation(true));
         $("bible-fathers-selection-btn")?.addEventListener("click", loadFathersForSelection);
+        $("bible-highlight-color")?.addEventListener("change", event => {
+            currentHighlightColor = highlightColorKey(event.target.value);
+            saveLastState();
+        });
         $("bible-export-annotations")?.addEventListener("click", exportAnnotations);
         $("bible-export-research-markdown")?.addEventListener("click", exportResearchMarkdown);
         $("bible-import-annotations")?.addEventListener("change", event => importAnnotationsFromFile(event.target.files?.[0]));
@@ -2070,7 +2132,9 @@
         if (state.translation) currentTranslation = state.translation;
         if (typeof state.parallelEnabled === "boolean") parallelEnabled = state.parallelEnabled;
         if (state.parallelTranslation) parallelTranslation = state.parallelTranslation;
+        if (state.highlightColor) currentHighlightColor = highlightColorKey(state.highlightColor);
         syncParallelControlsEnabled();
+        syncHighlightColorControl();
         if (state.citation && $("bible-reference-input")) $("bible-reference-input").value = state.citation;
         if (state.scope && $("bible-search-scope")) $("bible-search-scope").value = state.scope;
         if (state.bookKey && $("bible-book-select")) {

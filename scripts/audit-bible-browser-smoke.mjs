@@ -441,3 +441,24 @@ if (!index.includes('id="bible-export-research-markdown"')) {
   fail("Bible Browser is missing research notes Markdown export.");
 }
 
+
+if (!index.includes('id="bible-highlight-color"')) {
+  fail("Bible Browser is missing highlighter color selector.");
+}
+
+if (!browser.includes("const HIGHLIGHT_COLORS")) {
+  fail("Bible Browser is missing highlighter color registry.");
+}
+
+if (!browser.includes("highlightColor: currentHighlightColor")) {
+  fail("Bible Browser does not save selected highlighter color on new annotations.");
+}
+
+if (!browser.includes("function setAnnotationHighlightColor")) {
+  fail("Bible Browser cannot change color for existing highlights.");
+}
+
+if (!css.includes(".bible-highlight-yellow") || !css.includes(".bible-highlight-pink") || !css.includes(".bible-highlight-green") || !css.includes(".bible-highlight-blue") || !css.includes(".bible-highlight-purple")) {
+  fail("Bible Browser CSS is missing pastel highlighter color classes.");
+}
+
