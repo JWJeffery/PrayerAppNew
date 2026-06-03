@@ -1,0 +1,588 @@
+{
+  "schema": "universal_office_patristic_witness_intake_summary_v1",
+  "sourceRepository": "HistoricalChristianFaith/Commentaries-Database",
+  "sourceBranch": "master",
+  "sourceCommit": "762a37b16f34d1f06b3e5136bd2d6178ea70feb1",
+  "filterPolicy": {
+    "description": "Default Bible Browser patristic witness intake policy. The runtime witness set is patristic and pre-Reformation catholic/orthodox by default; post-Reformation Protestant material is excluded unless explicitly whitelisted later.",
+    "defaultIncludeMaxYearInclusive": 1517,
+    "unknownYearPolicy": "review_exclude",
+    "postReformationPolicy": "exclude_by_default",
+    "manualPolicyPrecedence": "authorOverrides > protestantAuthorNameKeywords > yearCutoff > review"
+  },
+  "licenseNotice": {
+    "summary": "Source repository contains public-domain material and fair-use excerpts. Preserve attribution and source URLs where supplied.",
+    "downstreamUse": "Review before public redistribution beyond private/internal Bible Browser use."
+  },
+  "stats": {
+    "commentaryFilesScanned": 68702,
+    "includedEntries": 81644,
+    "excludedEntries": 1959,
+    "reviewEntries": 71,
+    "fileErrors": 3,
+    "entryErrors": 0,
+    "authorStatusCounts": {
+      "include": 308,
+      "exclude": 11,
+      "review": 7
+    },
+    "excludedReasonCounts": {
+      "post-reformation": 1939,
+      "reformed": 7,
+      "post-reformation-protestant": 7,
+      "lutheran": 6
+    },
+    "bookShardCount": 78,
+    "generatedBytes": 170189271
+  },
+  "books": [
+    {
+      "book": "1chronicles",
+      "bookName": "1 Chronicles",
+      "path": ".external/generated/patristic-witness/books/1chronicles.json",
+      "entryCount": 40,
+      "bytes": 90373
+    },
+    {
+      "book": "1corinthians",
+      "bookName": "1 Corinthians",
+      "path": ".external/generated/patristic-witness/books/1corinthians.json",
+      "entryCount": 3164,
+      "bytes": 6051575
+    },
+    {
+      "book": "1john",
+      "bookName": "1 John",
+      "path": ".external/generated/patristic-witness/books/1john.json",
+      "entryCount": 871,
+      "bytes": 1566174
+    },
+    {
+      "book": "1kings",
+      "bookName": "1 Kings",
+      "path": ".external/generated/patristic-witness/books/1kings.json",
+      "entryCount": 286,
+      "bytes": 615876
+    },
+    {
+      "book": "1maccabees",
+      "bookName": "1 Maccabees",
+      "path": ".external/generated/patristic-witness/books/1maccabees.json",
+      "entryCount": 2,
+      "bytes": 8731
+    },
+    {
+      "book": "1pet",
+      "bookName": "1 Pet",
+      "path": ".external/generated/patristic-witness/books/1pet.json",
+      "entryCount": 1,
+      "bytes": 7930
+    },
+    {
+      "book": "1peter",
+      "bookName": "1 Peter",
+      "path": ".external/generated/patristic-witness/books/1peter.json",
+      "entryCount": 698,
+      "bytes": 1203152
+    },
+    {
+      "book": "1samuel",
+      "bookName": "1 Samuel",
+      "path": ".external/generated/patristic-witness/books/1samuel.json",
+      "entryCount": 1349,
+      "bytes": 3813647
+    },
+    {
+      "book": "1thessalonians",
+      "bookName": "1 Thessalonians",
+      "path": ".external/generated/patristic-witness/books/1thessalonians.json",
+      "entryCount": 468,
+      "bytes": 913464
+    },
+    {
+      "book": "1timothy",
+      "bookName": "1 Timothy",
+      "path": ".external/generated/patristic-witness/books/1timothy.json",
+      "entryCount": 1042,
+      "bytes": 2020851
+    },
+    {
+      "book": "2chronicles",
+      "bookName": "2 Chronicles",
+      "path": ".external/generated/patristic-witness/books/2chronicles.json",
+      "entryCount": 41,
+      "bytes": 78700
+    },
+    {
+      "book": "2corinthians",
+      "bookName": "2 Corinthians",
+      "path": ".external/generated/patristic-witness/books/2corinthians.json",
+      "entryCount": 1669,
+      "bytes": 3212456
+    },
+    {
+      "book": "2john",
+      "bookName": "2 John",
+      "path": ".external/generated/patristic-witness/books/2john.json",
+      "entryCount": 52,
+      "bytes": 95776
+    },
+    {
+      "book": "2kings",
+      "bookName": "2 Kings",
+      "path": ".external/generated/patristic-witness/books/2kings.json",
+      "entryCount": 173,
+      "bytes": 401550
+    },
+    {
+      "book": "2maccabees",
+      "bookName": "2 Maccabees",
+      "path": ".external/generated/patristic-witness/books/2maccabees.json",
+      "entryCount": 17,
+      "bytes": 31389
+    },
+    {
+      "book": "2pet",
+      "bookName": "2 Pet",
+      "path": ".external/generated/patristic-witness/books/2pet.json",
+      "entryCount": 1,
+      "bytes": 7924
+    },
+    {
+      "book": "2peter",
+      "bookName": "2 Peter",
+      "path": ".external/generated/patristic-witness/books/2peter.json",
+      "entryCount": 302,
+      "bytes": 523223
+    },
+    {
+      "book": "2samuel",
+      "bookName": "2 Samuel",
+      "path": ".external/generated/patristic-witness/books/2samuel.json",
+      "entryCount": 139,
+      "bytes": 289650
+    },
+    {
+      "book": "2thessalonians",
+      "bookName": "2 Thessalonians",
+      "path": ".external/generated/patristic-witness/books/2thessalonians.json",
+      "entryCount": 326,
+      "bytes": 653707
+    },
+    {
+      "book": "2timothy",
+      "bookName": "2 Timothy",
+      "path": ".external/generated/patristic-witness/books/2timothy.json",
+      "entryCount": 610,
+      "bytes": 1126282
+    },
+    {
+      "book": "3john",
+      "bookName": "3 John",
+      "path": ".external/generated/patristic-witness/books/3john.json",
+      "entryCount": 44,
+      "bytes": 63255
+    },
+    {
+      "book": "acts",
+      "bookName": "Acts",
+      "path": ".external/generated/patristic-witness/books/acts.json",
+      "entryCount": 3663,
+      "bytes": 6066495
+    },
+    {
+      "book": "amos",
+      "bookName": "Amos",
+      "path": ".external/generated/patristic-witness/books/amos.json",
+      "entryCount": 166,
+      "bytes": 570746
+    },
+    {
+      "book": "baruch",
+      "bookName": "Baruch",
+      "path": ".external/generated/patristic-witness/books/baruch.json",
+      "entryCount": 67,
+      "bytes": 110301
+    },
+    {
+      "book": "colossians",
+      "bookName": "Colossians",
+      "path": ".external/generated/patristic-witness/books/colossians.json",
+      "entryCount": 601,
+      "bytes": 1234151
+    },
+    {
+      "book": "daniel",
+      "bookName": "Daniel",
+      "path": ".external/generated/patristic-witness/books/daniel.json",
+      "entryCount": 809,
+      "bytes": 1497984
+    },
+    {
+      "book": "deuteronomy",
+      "bookName": "Deuteronomy",
+      "path": ".external/generated/patristic-witness/books/deuteronomy.json",
+      "entryCount": 252,
+      "bytes": 427023
+    },
+    {
+      "book": "ecclesiastes",
+      "bookName": "Ecclesiastes",
+      "path": ".external/generated/patristic-witness/books/ecclesiastes.json",
+      "entryCount": 564,
+      "bytes": 1181178
+    },
+    {
+      "book": "ecclesiasticus",
+      "bookName": "Ecclesiasticus",
+      "path": ".external/generated/patristic-witness/books/ecclesiasticus.json",
+      "entryCount": 1,
+      "bytes": 3572
+    },
+    {
+      "book": "ephesians",
+      "bookName": "Ephesians",
+      "path": ".external/generated/patristic-witness/books/ephesians.json",
+      "entryCount": 1280,
+      "bytes": 2614728
+    },
+    {
+      "book": "esther",
+      "bookName": "Esther",
+      "path": ".external/generated/patristic-witness/books/esther.json",
+      "entryCount": 109,
+      "bytes": 249548
+    },
+    {
+      "book": "exodus",
+      "bookName": "Exodus",
+      "path": ".external/generated/patristic-witness/books/exodus.json",
+      "entryCount": 605,
+      "bytes": 1088946
+    },
+    {
+      "book": "ezekiel",
+      "bookName": "Ezekiel",
+      "path": ".external/generated/patristic-witness/books/ezekiel.json",
+      "entryCount": 1277,
+      "bytes": 3763439
+    },
+    {
+      "book": "ezra",
+      "bookName": "Ezra",
+      "path": ".external/generated/patristic-witness/books/ezra.json",
+      "entryCount": 126,
+      "bytes": 379913
+    },
+    {
+      "book": "galatians",
+      "bookName": "Galatians",
+      "path": ".external/generated/patristic-witness/books/galatians.json",
+      "entryCount": 1365,
+      "bytes": 2894724
+    },
+    {
+      "book": "genesis",
+      "bookName": "Genesis",
+      "path": ".external/generated/patristic-witness/books/genesis.json",
+      "entryCount": 2344,
+      "bytes": 5389662
+    },
+    {
+      "book": "habakkuk",
+      "bookName": "Habakkuk",
+      "path": ".external/generated/patristic-witness/books/habakkuk.json",
+      "entryCount": 132,
+      "bytes": 416672
+    },
+    {
+      "book": "haggai",
+      "bookName": "Haggai",
+      "path": ".external/generated/patristic-witness/books/haggai.json",
+      "entryCount": 44,
+      "bytes": 141360
+    },
+    {
+      "book": "hebrews",
+      "bookName": "Hebrews",
+      "path": ".external/generated/patristic-witness/books/hebrews.json",
+      "entryCount": 2135,
+      "bytes": 4510159
+    },
+    {
+      "book": "hosea",
+      "bookName": "Hosea",
+      "path": ".external/generated/patristic-witness/books/hosea.json",
+      "entryCount": 298,
+      "bytes": 790432
+    },
+    {
+      "book": "isaiah",
+      "bookName": "Isaiah",
+      "path": ".external/generated/patristic-witness/books/isaiah.json",
+      "entryCount": 4112,
+      "bytes": 8480447
+    },
+    {
+      "book": "james",
+      "bookName": "James",
+      "path": ".external/generated/patristic-witness/books/james.json",
+      "entryCount": 507,
+      "bytes": 835025
+    },
+    {
+      "book": "jeremiah",
+      "bookName": "Jeremiah",
+      "path": ".external/generated/patristic-witness/books/jeremiah.json",
+      "entryCount": 1247,
+      "bytes": 2495639
+    },
+    {
+      "book": "job",
+      "bookName": "Job",
+      "path": ".external/generated/patristic-witness/books/job.json",
+      "entryCount": 2528,
+      "bytes": 7708111
+    },
+    {
+      "book": "joel",
+      "bookName": "Joel",
+      "path": ".external/generated/patristic-witness/books/joel.json",
+      "entryCount": 99,
+      "bytes": 281961
+    },
+    {
+      "book": "john",
+      "bookName": "John",
+      "path": ".external/generated/patristic-witness/books/john.json",
+      "entryCount": 8532,
+      "bytes": 19978810
+    },
+    {
+      "book": "jonah",
+      "bookName": "Jonah",
+      "path": ".external/generated/patristic-witness/books/jonah.json",
+      "entryCount": 156,
+      "bytes": 326189
+    },
+    {
+      "book": "joshua",
+      "bookName": "Joshua",
+      "path": ".external/generated/patristic-witness/books/joshua.json",
+      "entryCount": 241,
+      "bytes": 475189
+    },
+    {
+      "book": "jude",
+      "bookName": "Jude",
+      "path": ".external/generated/patristic-witness/books/jude.json",
+      "entryCount": 137,
+      "bytes": 242250
+    },
+    {
+      "book": "judges",
+      "bookName": "Judges",
+      "path": ".external/generated/patristic-witness/books/judges.json",
+      "entryCount": 210,
+      "bytes": 413685
+    },
+    {
+      "book": "lamentations",
+      "bookName": "Lamentations",
+      "path": ".external/generated/patristic-witness/books/lamentations.json",
+      "entryCount": 231,
+      "bytes": 534225
+    },
+    {
+      "book": "leviticus",
+      "bookName": "Leviticus",
+      "path": ".external/generated/patristic-witness/books/leviticus.json",
+      "entryCount": 126,
+      "bytes": 220971
+    },
+    {
+      "book": "luke",
+      "bookName": "Luke",
+      "path": ".external/generated/patristic-witness/books/luke.json",
+      "entryCount": 7669,
+      "bytes": 13752970
+    },
+    {
+      "book": "malachi",
+      "bookName": "Malachi",
+      "path": ".external/generated/patristic-witness/books/malachi.json",
+      "entryCount": 116,
+      "bytes": 313786
+    },
+    {
+      "book": "mark",
+      "bookName": "Mark",
+      "path": ".external/generated/patristic-witness/books/mark.json",
+      "entryCount": 3263,
+      "bytes": 5489539
+    },
+    {
+      "book": "matthew",
+      "bookName": "Matthew",
+      "path": ".external/generated/patristic-witness/books/matthew.json",
+      "entryCount": 8361,
+      "bytes": 16936558
+    },
+    {
+      "book": "micah",
+      "bookName": "Micah",
+      "path": ".external/generated/patristic-witness/books/micah.json",
+      "entryCount": 111,
+      "bytes": 408103
+    },
+    {
+      "book": "nahum",
+      "bookName": "Nahum",
+      "path": ".external/generated/patristic-witness/books/nahum.json",
+      "entryCount": 47,
+      "bytes": 190158
+    },
+    {
+      "book": "nehemiah",
+      "bookName": "Nehemiah",
+      "path": ".external/generated/patristic-witness/books/nehemiah.json",
+      "entryCount": 99,
+      "bytes": 233985
+    },
+    {
+      "book": "numbers",
+      "bookName": "Numbers",
+      "path": ".external/generated/patristic-witness/books/numbers.json",
+      "entryCount": 198,
+      "bytes": 354759
+    },
+    {
+      "book": "obadiah",
+      "bookName": "Obadiah",
+      "path": ".external/generated/patristic-witness/books/obadiah.json",
+      "entryCount": 45,
+      "bytes": 110325
+    },
+    {
+      "book": "philemon",
+      "bookName": "Philemon",
+      "path": ".external/generated/patristic-witness/books/philemon.json",
+      "entryCount": 179,
+      "bytes": 313686
+    },
+    {
+      "book": "philippians",
+      "bookName": "Philippians",
+      "path": ".external/generated/patristic-witness/books/philippians.json",
+      "entryCount": 724,
+      "bytes": 1399730
+    },
+    {
+      "book": "prayerofazariah",
+      "bookName": "Prayer of Azariah",
+      "path": ".external/generated/patristic-witness/books/prayerofazariah.json",
+      "entryCount": 40,
+      "bytes": 76425
+    },
+    {
+      "book": "proverbs",
+      "bookName": "Proverbs",
+      "path": ".external/generated/patristic-witness/books/proverbs.json",
+      "entryCount": 1387,
+      "bytes": 2208408
+    },
+    {
+      "book": "psalm",
+      "bookName": "Psalm",
+      "path": ".external/generated/patristic-witness/books/psalm.json",
+      "entryCount": 86,
+      "bytes": 160437
+    },
+    {
+      "book": "psalms",
+      "bookName": "Psalms",
+      "path": ".external/generated/patristic-witness/books/psalms.json",
+      "entryCount": 5766,
+      "bytes": 12424599
+    },
+    {
+      "book": "revelation",
+      "bookName": "Revelation",
+      "path": ".external/generated/patristic-witness/books/revelation.json",
+      "entryCount": 2474,
+      "bytes": 4493545
+    },
+    {
+      "book": "romans",
+      "bookName": "Romans",
+      "path": ".external/generated/patristic-witness/books/romans.json",
+      "entryCount": 3699,
+      "bytes": 6846808
+    },
+    {
+      "book": "ruth",
+      "bookName": "Ruth",
+      "path": ".external/generated/patristic-witness/books/ruth.json",
+      "entryCount": 23,
+      "bytes": 43334
+    },
+    {
+      "book": "sirach",
+      "bookName": "Sirach",
+      "path": ".external/generated/patristic-witness/books/sirach.json",
+      "entryCount": 288,
+      "bytes": 635792
+    },
+    {
+      "book": "songofsolomon",
+      "bookName": "Song of Solomon",
+      "path": ".external/generated/patristic-witness/books/songofsolomon.json",
+      "entryCount": 827,
+      "bytes": 3099642
+    },
+    {
+      "book": "titus",
+      "bookName": "Titus",
+      "path": ".external/generated/patristic-witness/books/titus.json",
+      "entryCount": 329,
+      "bytes": 753481
+    },
+    {
+      "book": "tobit",
+      "bookName": "Tobit",
+      "path": ".external/generated/patristic-witness/books/tobit.json",
+      "entryCount": 87,
+      "bytes": 155184
+    },
+    {
+      "book": "wisdom",
+      "bookName": "Wisdom",
+      "path": ".external/generated/patristic-witness/books/wisdom.json",
+      "entryCount": 302,
+      "bytes": 613878
+    },
+    {
+      "book": "wisdomofsolomon",
+      "bookName": "Wisdom of Solomon",
+      "path": ".external/generated/patristic-witness/books/wisdomofsolomon.json",
+      "entryCount": 1,
+      "bytes": 2699
+    },
+    {
+      "book": "zechariah",
+      "bookName": "Zechariah",
+      "path": ".external/generated/patristic-witness/books/zechariah.json",
+      "entryCount": 215,
+      "bytes": 713009
+    },
+    {
+      "book": "zephaniah",
+      "bookName": "Zephaniah",
+      "path": ".external/generated/patristic-witness/books/zephaniah.json",
+      "entryCount": 49,
+      "bytes": 217991
+    }
+  ],
+  "generatedOutput": ".external/generated/patristic-witness",
+  "runtimeStatus": "source-intake-only; not yet shipped in web-release"
+}

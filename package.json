@@ -17,7 +17,9 @@
     "release:web": "node scripts/prepare-web-release.mjs",
     "audit:bible-browser-smoke": "node scripts/audit-bible-browser-smoke.mjs",
     "start:spa": "node scripts/dev-spa-server.mjs",
-    "audit:admin-release-support": "node scripts/audit-admin-release-support.mjs"
+    "audit:admin-release-support": "node scripts/audit-admin-release-support.mjs",
+    "commentary:patristic:build": "python3 scripts/build-patristic-witness-index.py",
+    "audit:patristic-witness": "node scripts/audit-patristic-witness-index.mjs"
   },
   "repository": {
     "type": "git",

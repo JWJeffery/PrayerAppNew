@@ -1,0 +1,101 @@
+{
+  "schema": "universal_office_patristic_witness_author_policy_v1",
+  "sourceRepository": "HistoricalChristianFaith/Commentaries-Database",
+  "sourceBranch": "master",
+  "filterPolicy": {
+    "description": "Default Bible Browser patristic witness intake policy. The runtime witness set is patristic and pre-Reformation catholic/orthodox by default; post-Reformation Protestant material is excluded unless explicitly whitelisted later.",
+    "defaultIncludeMaxYearInclusive": 1517,
+    "unknownYearPolicy": "review_exclude",
+    "postReformationPolicy": "exclude_by_default",
+    "manualPolicyPrecedence": "authorOverrides > protestantAuthorNameKeywords > yearCutoff > review"
+  },
+  "protestantAuthorNameKeywords": [
+    "calvin",
+    "luther",
+    "melanchthon",
+    "zwingli",
+    "beza",
+    "bucer",
+    "cranmer",
+    "latimer",
+    "ridley",
+    "hooker",
+    "wesley",
+    "whitefield",
+    "spurgeon",
+    "matthew henry",
+    "john gill",
+    "adam clarke",
+    "albert barnes",
+    "john darby",
+    "john trapp",
+    "jamieson",
+    "fausset",
+    "brown",
+    "john wesley",
+    "martin luther",
+    "john calvin",
+    "jonathan edwards",
+    "charles hodge",
+    "bengel",
+    "poole",
+    "ellicott",
+    "meyer",
+    "schaff",
+    "robertson",
+    "maclaren",
+    "pulpit commentary"
+  ],
+  "authorOverrides": {
+    "Apostolic Constitutions": {
+      "include": true,
+      "classification": "apostolic-constitutions",
+      "reason": "pre-Reformation ecclesial witness"
+    },
+    "Augustine of Hippo": {
+      "include": true,
+      "classification": "latin-patristic",
+      "reason": "Western Father"
+    },
+    "Bede": {
+      "include": true,
+      "classification": "early-medieval-latin",
+      "reason": "pre-Reformation Western witness"
+    },
+    "Cyril of Alexandria": {
+      "include": true,
+      "classification": "greek-patristic",
+      "reason": "Eastern Father"
+    },
+    "John Chrysostom": {
+      "include": true,
+      "classification": "greek-patristic",
+      "reason": "Eastern Father"
+    },
+    "Jerome": {
+      "include": true,
+      "classification": "latin-patristic",
+      "reason": "Western Father"
+    },
+    "Thomas Aquinas": {
+      "include": true,
+      "classification": "medieval-catholic",
+      "reason": "pre-Reformation scholastic witness"
+    },
+    "John Calvin": {
+      "include": false,
+      "classification": "reformed",
+      "reason": "post-Reformation Protestant"
+    },
+    "Martin Luther": {
+      "include": false,
+      "classification": "lutheran",
+      "reason": "post-Reformation Protestant"
+    },
+    "Matthew Henry": {
+      "include": false,
+      "classification": "protestant",
+      "reason": "post-Reformation Protestant"
+    }
+  }
+}
