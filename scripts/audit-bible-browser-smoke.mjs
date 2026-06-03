@@ -380,3 +380,16 @@ if (!browser.includes("function getAnnotationSegments")) {
   fail("Bible browser is missing annotation segment accessor.");
 }
 
+
+if (!browser.includes("function selectionSegmentsFromRange")) {
+  fail("Bible browser does not build annotation segments from multi-verse selections.");
+}
+
+if (browser.includes("currently work with one selected verse at a time")) {
+  fail("Bible browser still blocks multi-verse highlight/note selection.");
+}
+
+if (!browser.includes("Highlight selected Bible text")) {
+  fail("Bible browser highlight toolbar text is not multi-verse ready.");
+}
+

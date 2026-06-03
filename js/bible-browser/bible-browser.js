@@ -1471,6 +1471,78 @@
         }));
     }
 
+    function textOffsetForBoundary(textEl, container, offset) {
+        const textLength = textEl.textContent.length;
+        const before = document.createRange();
+        before.selectNodeContents(textEl);
+
+        try {
+            before.setEnd(container, offset);
+            return Math.max(0, Math.min(before.toString().length, textLength));
+        } catch {
+            return 0;
+        }
+    }
+
+    function selectionSegmentsFromRange(range, verseEls) {
+        const segments = [];
+
+        for (const verseEl of verseEls) {
+            const textEl = verseEl.querySelector(".bible-verse-text");
+            if (!textEl) continue;
+
+            try {
+                if (!range.intersectsNode(textEl)) continue;
+            } catch {
+                continue;
+            }
+
+            const text = textEl.textContent || "";
+            const textLength = text.length;
+            if (!textLength) continue;
+
+            const textRange = document.createRange();
+            textRange.selectNodeContents(textEl);
+
+            let startOffset = 0;
+            let endOffset = textLength;
+
+            try {
+                const selectionStartsAfterTextStart = range.compareBoundaryPoints(Range.START_TO_START, textRange) > 0;
+                const selectionEndsBeforeTextEnd = range.compareBoundaryPoints(Range.END_TO_END, textRange) < 0;
+
+                startOffset = selectionStartsAfterTextStart
+                    ? textOffsetForBoundary(textEl, range.startContainer, range.startOffset)
+                    : 0;
+
+                endOffset = selectionEndsBeforeTextEnd
+                    ? textOffsetForBoundary(textEl, range.endContainer, range.endOffset)
+                    : textLength;
+            } catch {
+                startOffset = 0;
+                endOffset = textLength;
+            }
+
+            startOffset = Math.max(0, Math.min(startOffset, textLength));
+            endOffset = Math.max(startOffset, Math.min(endOffset, textLength));
+            if (endOffset <= startOffset) continue;
+
+            const segment = {
+                bookKey: verseEl.dataset.bookKey,
+                chapter: Number(verseEl.dataset.chapter),
+                verse: Number(verseEl.dataset.verse),
+                translation: verseEl.dataset.translation || currentTranslation,
+                startOffset,
+                endOffset,
+                selectedText: text.slice(startOffset, endOffset)
+            };
+            segment.anchorKey = segmentAnchorKey(segment);
+            segments.push(segment);
+        }
+
+        return segments;
+    }
+
     function setSelectionToolbarMode({ allowAnnotation }) {
         const highlight = $("bible-highlight-btn");
         const comment = $("bible-comment-btn");
@@ -1478,12 +1550,12 @@
 
         if (highlight) {
             highlight.disabled = !allowAnnotation;
-            highlight.title = allowAnnotation ? "Highlight selected verse text" : "Highlighting currently supports one verse at a time";
+            highlight.title = allowAnnotation ? "Highlight selected Bible text" : "Select Bible text first";
         }
 
         if (comment) {
             comment.disabled = !allowAnnotation;
-            comment.title = allowAnnotation ? "Add a note to selected verse text" : "Commenting currently supports one verse at a time";
+            comment.title = allowAnnotation ? "Add a note to selected Bible text" : "Select Bible text first";
         }
 
         if (fathers) {
@@ -1517,28 +1589,20 @@
         }
 
         pendingPassageRanges = rangesFromSelectedVerses(verseEls);
-        pendingSelection = null;
+        const segments = selectionSegmentsFromRange(range, verseEls);
 
-        const verseEl = verseEls.length === 1 ? verseEls[0] : null;
-        const textEl = verseEl?.querySelector(".bible-verse-text") || null;
-        let allowAnnotation = false;
-
-        if (verseEl && textEl && textEl.contains(range.commonAncestorContainer.nodeType === Node.ELEMENT_NODE ? range.commonAncestorContainer : range.commonAncestorContainer.parentElement)) {
-            const offsets = getSelectionOffsets(textEl, range);
-            if (offsets.end > offsets.start) {
-                pendingSelection = {
-                    anchorKey: `${verseEl.dataset.bookKey}.${verseEl.dataset.chapter}.${verseEl.dataset.verse}.${verseEl.dataset.translation}`,
-                    bookKey: verseEl.dataset.bookKey,
-                    chapter: Number(verseEl.dataset.chapter),
-                    verse: Number(verseEl.dataset.verse),
-                    translation: verseEl.dataset.translation,
-                    startOffset: offsets.start,
-                    endOffset: offsets.end,
-                    selectedText: selection.toString()
-                };
-                allowAnnotation = true;
-            }
-        }
+        const first = segments[0] || null;
+        pendingSelection = first ? {
+            anchorKey: first.anchorKey,
+            bookKey: first.bookKey,
+            chapter: first.chapter,
+            verse: first.verse,
+            translation: first.translation,
+            startOffset: first.startOffset,
+            endOffset: first.endOffset,
+            selectedText: segments.map(segment => segment.selectedText).filter(Boolean).join(" ").trim() || selection.toString().trim(),
+            segments
+        } : null;
 
         const rect = range.getBoundingClientRect();
         pendingSelectionRect = storedRectFromDomRect(rect);
@@ -1546,7 +1610,7 @@
 
         const toolbar = $("bible-selection-toolbar");
         if (toolbar) {
-            setSelectionToolbarMode({ allowAnnotation });
+            setSelectionToolbarMode({ allowAnnotation: !!pendingSelection?.segments?.length });
             toolbar.style.display = "flex";
             toolbar.style.left = `${Math.max(12, rect.left + window.scrollX)}px`;
             toolbar.style.top = `${Math.max(12, rect.top + window.scrollY - 42)}px`;
@@ -1554,9 +1618,9 @@
     }
 
     function addAnnotation(withComment) {
-        if (!pendingSelection) {
+        if (!pendingSelection?.segments?.length) {
             const status = $("bible-status");
-            if (status) status.textContent = "Highlighting and notes currently work with one selected verse at a time.";
+            if (status) status.textContent = "Select Bible text before highlighting or adding a note.";
             return;
         }
 
@@ -1566,6 +1630,7 @@
         annotations.push({
             id: annotationId,
             ...pendingSelection,
+            type: "highlight",
             comment: "",
             createdAt: new Date().toISOString(),
             updatedAt: new Date().toISOString()
