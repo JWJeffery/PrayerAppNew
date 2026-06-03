@@ -22,7 +22,8 @@
     "audit:patristic-witness": "node scripts/audit-patristic-witness-index.mjs",
     "commentary:patristic:runtime": "node scripts/build-patristic-witness-runtime.mjs",
     "audit:patristic-runtime": "node scripts/audit-patristic-witness-runtime.mjs",
-    "audit:bible-reading-plan": "node scripts/audit-bible-reading-plan.mjs"
+    "audit:bible-reading-plan": "node scripts/audit-bible-reading-plan.mjs",
+    "audit:bible-research-notes": "node scripts/audit-bible-research-notes.mjs"
   },
   "repository": {
     "type": "git",

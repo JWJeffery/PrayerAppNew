@@ -971,3 +971,63 @@
 .bible-plan-actions {
     margin: 10px;
 }
+
+
+.bible-research-controls {
+    border-top: 1px solid rgba(201, 168, 76, 0.14);
+    margin-top: 12px;
+    padding-top: 10px;
+}
+
+.bible-research-controls input[type="text"],
+.bible-research-controls select {
+    width: 100%;
+    box-sizing: border-box;
+    margin-bottom: 8px;
+    padding: 8px 9px;
+    border-radius: 2px;
+    border: 1px solid rgba(201, 168, 76, 0.35);
+    background: #1f1a14;
+    color: #f3ead3;
+    font-family: 'IM Fell English', serif;
+    font-size: 0.95rem;
+}
+
+.bible-research-filter-grid {
+    grid-template-columns: 1fr 1fr;
+}
+
+.bible-research-index {
+    display: grid;
+    gap: 8px;
+    max-height: 340px;
+    overflow: auto;
+    padding-right: 2px;
+}
+
+.bible-research-card {
+    width: 100%;
+    text-align: left;
+}
+
+.bible-research-meta {
+    display: block;
+    color: #a89878;
+    font-family: 'IM Fell English', serif;
+    font-size: 0.82rem;
+    line-height: 1.25;
+    margin-top: 4px;
+}
+
+.bible-research-summary {
+    color: #a89878;
+    font-family: 'IM Fell English', serif;
+    font-size: 0.88rem;
+    margin: 6px 0 8px;
+}
+
+@media (max-width: 760px) {
+    .bible-research-filter-grid {
+        grid-template-columns: 1fr;
+    }
+}

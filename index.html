@@ -644,9 +644,10 @@
                         <summary>Notes and Highlights</summary>
                         <div class="bible-sidebar-detail-body">
                             <div class="bible-button-row">
-                                <button class="bible-tool-btn" id="bible-export-annotations" type="button">Download Notes</button>
+                                <button class="bible-tool-btn" id="bible-export-annotations" type="button">Download Backup</button>
+                                <button class="bible-tool-btn" id="bible-export-research-markdown" type="button">Download Research Notes</button>
                                 <label class="bible-tool-btn bible-import-label" for="bible-import-annotations">
-                                    Upload Notes
+                                    Upload Backup
                                     <input id="bible-import-annotations" type="file" accept="application/json">
                                 </label>
                             </div>
@@ -658,6 +659,36 @@
                             <label>In This Passage</label>
                             <div id="bible-current-notes" class="bible-current-notes">
                                 <div class="bible-notes-empty">No highlights or notes in this passage.</div>
+                            </div>
+
+                            <div class="bible-research-controls" aria-label="Research notes controls">
+                                <div class="bible-control-field">
+                                    <label for="bible-research-search">Find in Notes</label>
+                                    <input id="bible-research-search" type="text" placeholder="Search references, highlighted text, or notes…" autocomplete="off">
+                                </div>
+
+                                <div class="bible-detail-grid bible-research-filter-grid">
+                                    <div class="bible-control-field">
+                                        <label for="bible-research-filter">Show</label>
+                                        <select id="bible-research-filter">
+                                            <option value="ALL">All notes and highlights</option>
+                                            <option value="WITH_NOTES">Notes only</option>
+                                            <option value="HIGHLIGHTS">Highlights without notes</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="bible-control-field">
+                                        <label for="bible-research-book">Book</label>
+                                        <select id="bible-research-book">
+                                            <option value="">All books</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <label>Research Index</label>
+                            <div id="bible-research-index" class="bible-research-index">
+                                <div class="bible-notes-empty">No saved notes or highlights yet.</div>
                             </div>
                         </div>
                     </details>

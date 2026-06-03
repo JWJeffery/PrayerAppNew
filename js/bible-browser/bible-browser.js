@@ -1107,6 +1107,7 @@
         const annotations = annotationsInCurrentView();
         if (!annotations.length) {
             container.innerHTML = `<div class="bible-notes-empty">No highlights or notes in this view.</div>`;
+            renderResearchIndex();
             return;
         }
 
@@ -1132,6 +1133,158 @@
                 openAnnotationActions(button.dataset.annotationOpen);
             });
         });
+
+        renderResearchIndex();
+    }
+
+    function annotationHasNote(annotation) {
+        return !!String(annotation?.comment || "").trim();
+    }
+
+    function annotationPrimaryBookKey(annotation) {
+        return annotation?.segments?.[0]?.bookKey || annotation?.bookKey || "";
+    }
+
+    function annotationResearchText(annotation) {
+        return [
+            getAnnotationReferenceLabel(annotation),
+            annotation.selectedText || "",
+            annotation.comment || "",
+            annotation.translation || "",
+            annotation.updatedAt || "",
+            annotation.createdAt || ""
+        ].join(" ").toLowerCase();
+    }
+
+    function filteredResearchAnnotations() {
+        const query = String($("bible-research-search")?.value || "").trim().toLowerCase();
+        const filter = $("bible-research-filter")?.value || "ALL";
+        const bookKey = $("bible-research-book")?.value || "";
+
+        return loadAnnotations()
+            .filter(annotation => {
+                if (bookKey && annotationPrimaryBookKey(annotation) !== bookKey) return false;
+                if (filter === "WITH_NOTES" && !annotationHasNote(annotation)) return false;
+                if (filter === "HIGHLIGHTS" && annotationHasNote(annotation)) return false;
+                if (query && !annotationResearchText(annotation).includes(query)) return false;
+                return true;
+            })
+            .sort((a, b) => {
+                const aFirst = a.segments?.[0];
+                const bFirst = b.segments?.[0];
+                if (!aFirst || !bFirst) return 0;
+                if (aFirst.bookKey !== bFirst.bookKey) return aFirst.bookKey.localeCompare(bFirst.bookKey);
+                const loc = encodeVerseLocation(aFirst.chapter, aFirst.verse) - encodeVerseLocation(bFirst.chapter, bFirst.verse);
+                if (loc) return loc;
+                return String(a.updatedAt || "").localeCompare(String(b.updatedAt || ""));
+            });
+    }
+
+    function renderResearchIndex() {
+        const container = $("bible-research-index");
+        if (!container) return;
+
+        const annotations = filteredResearchAnnotations();
+        if (!annotations.length) {
+            container.innerHTML = `<div class="bible-notes-empty">No saved notes or highlights match your filters.</div>`;
+            return;
+        }
+
+        container.innerHTML = `
+            <div class="bible-research-summary">${annotations.length} saved item${annotations.length === 1 ? "" : "s"} shown.</div>
+            ${annotations.map(annotation => {
+                const label = getAnnotationReferenceLabel(annotation);
+                const excerpt = annotation.selectedText || "Highlight";
+                const comment = annotationHasNote(annotation)
+                    ? `<span class="bible-note-comment">${escapeHtml(annotation.comment.trim())}</span>`
+                    : `<span class="bible-note-comment bible-note-comment-empty">Highlight only.</span>`;
+                const meta = annotation.updatedAt
+                    ? `Updated ${escapeHtml(String(annotation.updatedAt).slice(0, 10))}`
+                    : "Saved highlight";
+
+                return `
+                    <button class="bible-note-card bible-research-card" type="button" data-research-annotation-open="${escapeHtml(annotation.id)}">
+                        <span class="bible-note-ref">${escapeHtml(label)}</span>
+                        <span class="bible-note-excerpt">${escapeHtml(excerpt)}</span>
+                        ${comment}
+                        <span class="bible-research-meta">${meta}</span>
+                    </button>
+                `;
+            }).join("")}
+        `;
+
+        container.querySelectorAll("[data-research-annotation-open]").forEach(button => {
+            button.addEventListener("click", () => {
+                jumpToAnnotation(button.dataset.researchAnnotationOpen);
+                openAnnotationActions(button.dataset.researchAnnotationOpen);
+            });
+        });
+    }
+
+    function populateResearchBookFilter() {
+        const select = $("bible-research-book");
+        if (!select) return;
+
+        const current = select.value || "";
+        const seen = new Set();
+
+        const options = getBooks()
+            .filter(book => {
+                if (seen.has(book.key)) return false;
+                seen.add(book.key);
+                return true;
+            })
+            .map(book => `<option value="${escapeHtml(book.key)}">${escapeHtml(book.name)}</option>`)
+            .join("");
+
+        select.innerHTML = `<option value="">All books</option>${options}`;
+        if (current && seen.has(current)) select.value = current;
+    }
+
+    function buildResearchMarkdown(annotations = loadAnnotations()) {
+        const items = annotations.slice().sort((a, b) => getAnnotationReferenceLabel(a).localeCompare(getAnnotationReferenceLabel(b)));
+        const lines = [
+            "# Universal Office Bible Research Notes",
+            "",
+            `Exported: ${new Date().toISOString()}`,
+            "",
+            `Items: ${items.length}`,
+            ""
+        ];
+
+        for (const annotation of items) {
+            const label = getAnnotationReferenceLabel(annotation);
+            lines.push(`## ${label}`);
+            lines.push("");
+            if (annotation.selectedText) {
+                lines.push("> " + String(annotation.selectedText).replace(/\n+/g, " "));
+                lines.push("");
+            }
+            if (annotation.comment?.trim()) {
+                lines.push(annotation.comment.trim());
+                lines.push("");
+            } else {
+                lines.push("_Highlight only._");
+                lines.push("");
+            }
+            lines.push(`- Translation: ${annotation.translation || currentTranslation}`);
+            if (annotation.updatedAt) lines.push(`- Updated: ${annotation.updatedAt}`);
+            lines.push("");
+        }
+
+        return lines.join("\n");
+    }
+
+    function exportResearchMarkdown() {
+        const blob = new Blob([buildResearchMarkdown(loadAnnotations())], { type: "text/markdown" });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement("a");
+        a.href = url;
+        a.download = "universal-office-bible-research-notes.md";
+        document.body.appendChild(a);
+        a.click();
+        a.remove();
+        URL.revokeObjectURL(url);
     }
 
     function firstRenderedAnnotationMark(annotationId) {
@@ -1843,6 +1996,7 @@
                 closeAnnotationEditor();
                 renderResults(currentResolved);
                 renderCurrentNotesList();
+                renderResearchIndex();
                 $("bible-status").textContent = `Imported ${normalized.length} annotation${normalized.length === 1 ? "" : "s"}.`;
             } catch (error) {
                 $("bible-status").textContent = error.message;
@@ -1854,6 +2008,7 @@
     async function initializeBibleBrowser() {
         populateBookSelect();
         populateScopeSelect();
+        populateResearchBookFilter();
 
         $("bible-reference-go")?.addEventListener("click", () => displayCitation());
         $("bible-reference-input")?.addEventListener("keydown", event => {
@@ -1898,7 +2053,11 @@
         $("bible-comment-btn")?.addEventListener("click", () => addAnnotation(true));
         $("bible-fathers-selection-btn")?.addEventListener("click", loadFathersForSelection);
         $("bible-export-annotations")?.addEventListener("click", exportAnnotations);
+        $("bible-export-research-markdown")?.addEventListener("click", exportResearchMarkdown);
         $("bible-import-annotations")?.addEventListener("change", event => importAnnotationsFromFile(event.target.files?.[0]));
+        $("bible-research-search")?.addEventListener("input", renderResearchIndex);
+        $("bible-research-filter")?.addEventListener("change", renderResearchIndex);
+        $("bible-research-book")?.addEventListener("change", renderResearchIndex);
         $("bible-save-annotation")?.addEventListener("click", saveAnnotationEditor);
         $("bible-delete-annotation")?.addEventListener("click", deleteAnnotationEditor);
         $("bible-close-annotation")?.addEventListener("click", closeAnnotationEditor);

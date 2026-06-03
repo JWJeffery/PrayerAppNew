@@ -432,3 +432,12 @@ if (!index.includes('js/bible-browser/reading-plans.js')) {
   fail("Bible Browser does not load reading plan script.");
 }
 
+
+if (!index.includes('id="bible-research-index"')) {
+  fail("Bible Browser is missing research notes index.");
+}
+
+if (!index.includes('id="bible-export-research-markdown"')) {
+  fail("Bible Browser is missing research notes Markdown export.");
+}
+
