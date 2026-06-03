@@ -422,8 +422,17 @@
     function annotationsForVerse(item) {
         const key = annotationKey(item);
         return loadAnnotations()
-            .filter(ann => ann.anchorKey === key)
-            .sort((a, b) => a.startOffset - b.startOffset);
+            .flatMap(annotation => annotation.segments
+                .filter(segment => segment.anchorKey === key)
+                .map(segment => ({
+                    ...segment,
+                    id: annotation.id,
+                    parentAnnotationId: annotation.id,
+                    comment: annotation.comment,
+                    selectedText: segment.selectedText || annotation.selectedText || ""
+                }))
+            )
+            .sort((a, b) => Number(a.startOffset || 0) - Number(b.startOffset || 0));
     }
 
     function escapeRegExp(value) {
@@ -1052,20 +1061,42 @@
     }
 
     function getAnnotationReferenceLabel(annotation) {
-        const book = getBook(annotation.bookKey);
-        const bookName = book?.name || annotation.bookKey || "Unknown";
-        return `${bookName} ${annotation.chapter}:${annotation.verse}`;
+        const segments = getAnnotationSegments(annotation);
+        const first = segments[0];
+        const last = segments[segments.length - 1] || first;
+        if (!first) return "Unknown passage";
+
+        const book = getBook(first.bookKey);
+        const bookName = book?.name || first.bookKey || "Unknown";
+
+        if (first.bookKey === last.bookKey && first.chapter === last.chapter && first.verse === last.verse) {
+            return `${bookName} ${first.chapter}:${first.verse}`;
+        }
+
+        if (first.bookKey === last.bookKey && first.chapter === last.chapter) {
+            return `${bookName} ${first.chapter}:${first.verse}-${last.verse}`;
+        }
+
+        if (first.bookKey === last.bookKey) {
+            return `${bookName} ${first.chapter}:${first.verse}-${last.chapter}:${last.verse}`;
+        }
+
+        const lastBook = getBook(last.bookKey);
+        return `${bookName} ${first.chapter}:${first.verse} – ${(lastBook?.name || last.bookKey)} ${last.chapter}:${last.verse}`;
     }
 
     function annotationsInCurrentView() {
         const visibleKeys = new Set((currentResolved || []).map(item => annotationKey(item)));
         return loadAnnotations()
-            .filter(annotation => visibleKeys.has(annotation.anchorKey))
+            .filter(annotation => annotation.segments.some(segment => visibleKeys.has(segment.anchorKey)))
             .sort((a, b) => {
-                const aLabel = getAnnotationReferenceLabel(a);
-                const bLabel = getAnnotationReferenceLabel(b);
-                if (aLabel !== bLabel) return aLabel.localeCompare(bLabel);
-                return Number(a.startOffset || 0) - Number(b.startOffset || 0);
+                const aFirst = a.segments?.[0];
+                const bFirst = b.segments?.[0];
+                if (!aFirst || !bFirst) return 0;
+                if (aFirst.bookKey !== bFirst.bookKey) return aFirst.bookKey.localeCompare(bFirst.bookKey);
+                const loc = encodeVerseLocation(aFirst.chapter, aFirst.verse) - encodeVerseLocation(bFirst.chapter, bFirst.verse);
+                if (loc) return loc;
+                return Number(aFirst.startOffset || 0) - Number(bFirst.startOffset || 0);
             });
     }
 
@@ -1103,39 +1134,61 @@
         });
     }
 
+    function firstRenderedAnnotationMark(annotationId) {
+        return Array.from(document.querySelectorAll(".bible-highlight"))
+            .find(mark => mark.dataset.annotationId === annotationId) || null;
+    }
+
+    function firstRenderedAnnotationVerse(annotation) {
+        const first = annotation?.segments?.[0];
+        if (!first) return null;
+
+        return Array.from(document.querySelectorAll(".bible-verse")).find(el =>
+            el.dataset.bookKey === first.bookKey &&
+            Number(el.dataset.chapter) === Number(first.chapter) &&
+            Number(el.dataset.verse) === Number(first.verse) &&
+            el.dataset.translation === first.translation
+        ) || null;
+    }
+
     function jumpToAnnotation(annotationId) {
         const annotation = loadAnnotations().find(item => item.id === annotationId);
         if (!annotation) return;
 
-        const verse = Array.from(document.querySelectorAll(".bible-verse")).find(el =>
-            el.dataset.bookKey === annotation.bookKey &&
-            Number(el.dataset.chapter) === Number(annotation.chapter) &&
-            Number(el.dataset.verse) === Number(annotation.verse) &&
-            el.dataset.translation === annotation.translation
-        );
+        const target = firstRenderedAnnotationMark(annotationId) || firstRenderedAnnotationVerse(annotation);
 
-        if (verse) {
-            verse.scrollIntoView({ behavior: "smooth", block: "center" });
-            verse.classList.add("bible-verse-focus");
-            window.setTimeout(() => verse.classList.remove("bible-verse-focus"), 1200);
+        if (target) {
+            target.scrollIntoView({ behavior: "smooth", block: "center" });
+            target.classList.add("bible-verse-focus");
+            window.setTimeout(() => target.classList.remove("bible-verse-focus"), 1200);
         }
     }
 
     function annotationToPassageRange(annotation) {
-        const book = getBook(annotation.bookKey);
-        const location = encodeVerseLocation(annotation.chapter, annotation.verse);
-        const bookName = book?.name || annotation.bookKey || "Unknown";
-        return {
-            book: annotation.bookKey,
+        const segments = getAnnotationSegments(annotation);
+        const first = segments[0];
+        const last = segments[segments.length - 1] || first;
+        if (!first) return null;
+
+        const book = getBook(first.bookKey);
+        const bookName = book?.name || first.bookKey || "Unknown";
+        const startLocation = encodeVerseLocation(first.chapter, first.verse);
+        const endLocation = encodeVerseLocation(last.chapter, last.verse);
+        const range = {
+            book: first.bookKey,
             bookName,
-            startChapter: Number(annotation.chapter),
-            startVerse: Number(annotation.verse),
-            endChapter: Number(annotation.chapter),
-            endVerse: Number(annotation.verse),
-            startLocation: location,
-            endLocation: location,
-            verseCount: 1,
-            label: `${bookName} ${annotation.chapter}:${annotation.verse}`
+            startChapter: Number(first.chapter),
+            startVerse: Number(first.verse),
+            endChapter: Number(last.chapter),
+            endVerse: Number(last.verse),
+            startLocation,
+            endLocation,
+            verseCount: segments.length
+        };
+
+        return {
+            ...range,
+            label: formatSelectionRangeLabel(range)
         };
     }
 
@@ -1146,6 +1199,7 @@
 
         const anchorRect = getAnnotationAnchorRect(annotation) || lastContextAnchorRect;
         const range = annotationToPassageRange(annotation);
+        if (!range) return;
         const body = showContextPanel({
             title: "What the Fathers Say",
             anchorRect,
@@ -1371,12 +1425,10 @@
     }
 
     function getAnnotationAnchorRect(annotation) {
-        const verse = Array.from(document.querySelectorAll(".bible-verse")).find(el =>
-            el.dataset.bookKey === annotation.bookKey &&
-            Number(el.dataset.chapter) === Number(annotation.chapter) &&
-            Number(el.dataset.verse) === Number(annotation.verse) &&
-            el.dataset.translation === annotation.translation
-        );
+        const mark = firstRenderedAnnotationMark(annotation?.id);
+        if (mark) return storedRectFromDomRect(mark.getBoundingClientRect());
+
+        const verse = firstRenderedAnnotationVerse(annotation);
         return storedRectFromDomRect(verse?.getBoundingClientRect?.());
     }
 

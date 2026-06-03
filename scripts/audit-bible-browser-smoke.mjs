@@ -393,3 +393,16 @@ if (!browser.includes("Highlight selected Bible text")) {
   fail("Bible browser highlight toolbar text is not multi-verse ready.");
 }
 
+
+if (!browser.includes("flatMap(annotation => annotation.segments")) {
+  fail("Bible browser does not render multi-verse annotation segments per verse.");
+}
+
+if (!browser.includes("firstRenderedAnnotationMark")) {
+  fail("Bible browser does not anchor annotation actions to rendered highlight marks.");
+}
+
+if (!browser.includes("annotation.segments.some")) {
+  fail("Bible browser current-view notes do not detect multi-verse annotation segments.");
+}
+
