@@ -525,18 +525,23 @@
 
 <!-- ── Scripture Browser ──────────────────────────────────────────────────── -->
 <div id="bible-browser-section">
-    <div class="bible-browser-shell">
-        <div class="bible-browser-header">
-            <div>
-                <h1>Scripture Browser</h1>
-                <p>/tools/bible · find passages, save notes, and study with the Fathers</p>
+    <div class="bible-browser-shell bible-design-shell">
+        <div class="bible-browser-header bible-design-hero">
+            <div class="bible-design-title-block">
+                <div class="bible-design-kicker">Universal Office</div>
+                <h1>Bible Reader & Study</h1>
+                <p>Read, compare, annotate, and collect sources for serious study.</p>
             </div>
-            <button class="bible-tool-btn" onclick="closeBibleBrowser()">Back to Modes</button>
+            <div class="bible-design-header-actions">
+                <span class="bible-design-chip">Design Pilot</span>
+                <button class="bible-tool-btn" onclick="closeBibleBrowser()">Back to Modes</button>
+            </div>
         </div>
 
         <div class="bible-browser-workspace">
-            <section class="bible-reader-controls" aria-label="Bible navigation and search">
-                <div class="bible-primary-controls">
+            <section class="bible-reader-controls bible-design-command-surface" aria-label="Bible navigation and search">
+                <div class="bible-control-section-label">Open Scripture</div>
+                <div class="bible-primary-controls bible-command-bar">
                     <div class="bible-control-field bible-translation-field">
                         <label for="bible-translation-select">Translation</label>
                         <select id="bible-translation-select">
@@ -555,8 +560,13 @@
                     </div>
                 </div>
 
-                <div class="bible-secondary-controls">
-                    <div class="bible-parallel-control-box bible-control-card">
+                <div class="bible-secondary-intro">
+                    <span>Study Tools</span>
+                    <p>Keep the reading canvas primary. Open comparison, browsing, search, plan, and notes only when needed.</p>
+                </div>
+
+                <div class="bible-secondary-controls bible-tool-dock">
+                    <div class="bible-parallel-control-box bible-control-card bible-design-tool-card">
                         <label class="bible-checkline" for="bible-parallel-toggle">
                             <input id="bible-parallel-toggle" type="checkbox">
                             Compare two translations
@@ -568,7 +578,7 @@
                         </select>
                     </div>
 
-                    <details class="bible-browser-details">
+                    <details class="bible-browser-details bible-design-tool-card">
                         <summary>Browse by Book</summary>
                         <div class="bible-detail-grid">
                             <div class="bible-control-field">
@@ -591,7 +601,7 @@
                         </div>
                     </details>
 
-                    <details class="bible-browser-details bible-advanced-search">
+                    <details class="bible-browser-details bible-advanced-search bible-design-tool-card">
                         <summary>Advanced Search</summary>
                         <div class="bible-detail-grid">
                             <div class="bible-control-field">
@@ -614,7 +624,7 @@
                         </div>
                     </details>
 
-                    <details class="bible-browser-details bible-reading-plan-details">
+                    <details class="bible-browser-details bible-reading-plan-details bible-design-tool-card">
                         <summary>Reading Plan</summary>
                         <div class="bible-detail-grid">
                             <div class="bible-control-field">
@@ -640,7 +650,7 @@
                         </div>
                     </details>
 
-                    <details class="bible-sidebar-details bible-notes-details">
+                    <details class="bible-sidebar-details bible-notes-details bible-design-tool-card">
                         <summary>Notes and Highlights</summary>
                         <div class="bible-sidebar-detail-body">
                             <div class="bible-button-row">
@@ -708,9 +718,15 @@
                 </div>
             </section>
 
-            <section class="bible-reader-panel" aria-live="polite">
+            <section class="bible-reader-panel bible-reading-stage" aria-live="polite">
+                <div class="bible-reader-stage-head">
+                    <div>
+                        <span>Reading Canvas</span>
+                        <p>Scripture remains the center; study tools stay contextual.</p>
+                    </div>
+                </div>
                 <div id="bible-passage-summary" class="bible-passage-summary" style="display:none;"></div>
-                <main id="bible-results">
+                <main id="bible-results" class="bible-reading-canvas">
                     <div class="bible-empty">Enter a passage or search text.</div>
                 </main>
             </section>

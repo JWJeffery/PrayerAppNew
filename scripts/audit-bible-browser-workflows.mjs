@@ -47,7 +47,7 @@ function requireScript(name) {
 ].forEach(requireScript);
 
 requireIncludes("reader-first passage controls", files.index, [
-  'class="bible-reader-controls"',
+  'bible-reader-controls',
   'id="bible-translation-select"',
   'id="bible-reference-input"',
   'id="bible-reference-go"',

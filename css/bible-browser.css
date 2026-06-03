@@ -1129,3 +1129,206 @@
 .bible-context-panel-study .bible-context-panel-body {
     max-height: calc(var(--bible-context-max-height, 680px) - 46px);
 }
+
+
+/* Design-forward Bible Browser static layout pass */
+#bible-browser-section {
+    background:
+        radial-gradient(circle at 18% 8%, rgba(201, 168, 76, 0.12), transparent 32%),
+        radial-gradient(circle at 82% 18%, rgba(95, 50, 22, 0.18), transparent 34%),
+        linear-gradient(180deg, rgba(24, 15, 8, 0.94), rgba(13, 9, 6, 0.98));
+    padding: 34px 18px 88px;
+}
+
+.bible-design-shell {
+    width: min(1280px, 100%);
+    border: 1px solid rgba(201, 168, 76, 0.30);
+    background:
+        linear-gradient(180deg, rgba(31, 23, 15, 0.92), rgba(17, 12, 8, 0.92)),
+        radial-gradient(circle at top left, rgba(201, 168, 76, 0.10), transparent 42%);
+    box-shadow: 0 28px 90px rgba(0, 0, 0, 0.52);
+    padding: clamp(18px, 3vw, 34px);
+}
+
+.bible-design-hero {
+    align-items: center;
+    border-bottom: 1px solid rgba(201, 168, 76, 0.24);
+    padding-bottom: 22px;
+    margin-bottom: 22px;
+}
+
+.bible-design-title-block {
+    max-width: 760px;
+}
+
+.bible-design-kicker,
+.bible-control-section-label,
+.bible-secondary-intro span,
+.bible-reader-stage-head span,
+.bible-design-chip {
+    color: var(--gold);
+    font-family: 'Cinzel', serif;
+    font-size: 0.68rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+}
+
+.bible-design-hero h1 {
+    margin-top: 5px;
+    font-size: clamp(2.1rem, 5vw, 3.65rem);
+    line-height: 1.02;
+}
+
+.bible-design-hero p {
+    max-width: 680px;
+    font-size: 0.92rem;
+    letter-spacing: 0.06em;
+}
+
+.bible-design-header-actions {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+}
+
+.bible-design-chip {
+    border: 1px solid rgba(201, 168, 76, 0.30);
+    background: rgba(201, 168, 76, 0.075);
+    padding: 7px 10px;
+    border-radius: 999px;
+    white-space: nowrap;
+}
+
+.bible-design-command-surface {
+    border: 1px solid rgba(201, 168, 76, 0.22);
+    background:
+        linear-gradient(180deg, rgba(0, 0, 0, 0.18), rgba(201, 168, 76, 0.035));
+    padding: clamp(14px, 2vw, 20px);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.035);
+}
+
+.bible-command-bar {
+    grid-template-columns: minmax(150px, 210px) minmax(320px, 1fr) auto;
+    gap: 14px;
+    margin-top: 9px;
+    margin-bottom: 16px;
+}
+
+.bible-command-bar input,
+.bible-command-bar select,
+.bible-reader-controls input[type="text"],
+.bible-reader-controls select {
+    border-color: rgba(201, 168, 76, 0.36);
+    background: rgba(18, 13, 8, 0.92);
+    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.025);
+}
+
+.bible-secondary-intro {
+    display: flex;
+    justify-content: space-between;
+    gap: 14px;
+    align-items: baseline;
+    border-top: 1px solid rgba(201, 168, 76, 0.14);
+    padding-top: 14px;
+    margin-bottom: 10px;
+}
+
+.bible-secondary-intro p {
+    margin: 0;
+    color: #a89878;
+    font-family: 'IM Fell English', serif;
+    font-size: 0.95rem;
+    line-height: 1.3;
+}
+
+.bible-tool-dock {
+    grid-template-columns: repeat(4, minmax(190px, 1fr));
+}
+
+.bible-design-tool-card {
+    border-color: rgba(201, 168, 76, 0.20);
+    background:
+        linear-gradient(180deg, rgba(201, 168, 76, 0.055), rgba(0, 0, 0, 0.16));
+}
+
+.bible-design-tool-card summary {
+    padding: 11px 12px;
+}
+
+.bible-reading-stage {
+    position: relative;
+    border: 1px solid rgba(201, 168, 76, 0.20);
+    background:
+        linear-gradient(180deg, rgba(232, 220, 190, 0.055), rgba(0, 0, 0, 0.08));
+    padding: clamp(10px, 2vw, 18px);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.025);
+}
+
+.bible-reader-stage-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    border-bottom: 1px solid rgba(201, 168, 76, 0.14);
+    margin-bottom: 12px;
+    padding-bottom: 10px;
+}
+
+.bible-reader-stage-head p {
+    margin: 4px 0 0;
+    color: #a89878;
+    font-family: 'IM Fell English', serif;
+    font-size: 0.94rem;
+}
+
+.bible-reading-canvas {
+    border: 1px solid rgba(201, 168, 76, 0.12);
+    background:
+        linear-gradient(180deg, rgba(246, 234, 204, 0.060), rgba(246, 234, 204, 0.035)),
+        rgba(8, 6, 4, 0.30);
+    padding: clamp(18px, 3vw, 34px) clamp(18px, 4vw, 48px) 72px;
+}
+
+.bible-reading-canvas .bible-empty {
+    background: rgba(0, 0, 0, 0.14);
+}
+
+.bible-reading-canvas .bible-verse {
+    font-size: clamp(1.17rem, 1.6vw, 1.34rem);
+    line-height: 1.72;
+}
+
+.bible-reading-canvas .bible-chapter-block h3 {
+    font-size: 1rem;
+    letter-spacing: 0.08em;
+}
+
+.bible-passage-summary {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+@media (max-width: 1080px) {
+    .bible-tool-dock {
+        grid-template-columns: repeat(2, minmax(220px, 1fr));
+    }
+}
+
+@media (max-width: 760px) {
+    .bible-design-hero,
+    .bible-secondary-intro,
+    .bible-reader-stage-head {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .bible-command-bar,
+    .bible-tool-dock {
+        grid-template-columns: 1fr;
+    }
+
+    .bible-reading-canvas {
+        padding: 18px 16px 64px;
+    }
+}

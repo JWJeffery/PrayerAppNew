@@ -25,7 +25,8 @@
     "audit:bible-reading-plan": "node scripts/audit-bible-reading-plan.mjs",
     "audit:bible-research-notes": "node scripts/audit-bible-research-notes.mjs",
     "audit:bible-browser-workflows": "node scripts/audit-bible-browser-workflows.mjs",
-    "audit:visual-design-brief": "node scripts/audit-visual-design-brief.mjs"
+    "audit:visual-design-brief": "node scripts/audit-visual-design-brief.mjs",
+    "audit:bible-design-layout": "node scripts/audit-bible-design-layout.mjs"
   },
   "repository": {
     "type": "git",
