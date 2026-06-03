@@ -17,6 +17,12 @@ const includeEntries = [
   "js"
 ];
 
+const adminReleaseFiles = [
+  { source: "structure.json", target: "structure.json", required: true },
+  { source: "project_roadmap.json", target: "project_roadmap.json", required: true },
+  { source: "documentation/repo-hygiene-audit.json", target: "documentation/repo-hygiene-audit.json", required: false }
+];
+
 const denyNames = new Set([
   ".git",
   ".github",
@@ -114,6 +120,24 @@ for (const entry of includeEntries) {
   copyRecursive(path.join(root, entry), path.join(releaseDir, entry), entry);
 }
 
+function copyAdminReleaseFile(spec) {
+  const sourcePath = path.join(root, spec.source);
+  const targetPath = path.join(releaseDir, spec.target);
+
+  if (!fs.existsSync(sourcePath)) {
+    if (spec.required) fail(`required admin release support file missing: ${spec.source}`);
+    return false;
+  }
+
+  fs.mkdirSync(path.dirname(targetPath), { recursive: true });
+  fs.copyFileSync(sourcePath, targetPath);
+  return true;
+}
+
+const copiedAdminReleaseFiles = adminReleaseFiles
+  .filter(copyAdminReleaseFile)
+  .map((spec) => spec.target);
+
 const htaccess = `# Universal Office static-app routing.
 # Upload this before enabling hosting-level password protection.
 # If cPanel Directory Privacy later adds AuthType/AuthUserFile lines,
@@ -138,6 +162,7 @@ const manifest = {
   uploadInstruction: "Upload the contents of web-release/ to the domain web root, not the repository itself.",
   accessControlInstruction: "Use hosting-level password protection for the web root. Do not encode access state in route, file, or directory names.",
   includedRoots: includeEntries,
+  adminReleaseSupportFiles: copiedAdminReleaseFiles,
   excludedRoots: Array.from(denyNames).sort(),
   fileCount: files.length,
   files: files.map((file) => ({
