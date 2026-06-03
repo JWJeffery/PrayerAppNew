@@ -103,6 +103,17 @@
         return start === end ? `${bookName} ${start}` : `${bookName} ${start}-${end}`;
     }
 
+    function formatMissingVerseWarning(bookName, chapter, startVerse, endVerse) {
+        if (startVerse === endVerse) {
+            return `${bookName} ${chapter}:${startVerse} is not available in the loaded corpus.`;
+        }
+        return `${bookName} ${chapter}:${startVerse}-${endVerse} are not available in the loaded corpus.`;
+    }
+
+    function addUniqueWarning(target, warning) {
+        if (!target.includes(warning)) target.push(warning);
+    }
+
     async function resolveReference(parsed) {
         const resolved = [];
         const warnings = [];
@@ -124,6 +135,8 @@
                 bookKey: ref.bookKey,
                 status: "unresolved",
                 resolvedCount: 0,
+                requestedCount: 0,
+                missingCount: 0,
                 warnings: []
             };
             requestedSegments.push(segment);
@@ -132,14 +145,12 @@
                 throw new Error(`Reference ends before it starts: ${book.name} ${ref.raw}`);
             }
 
-            let segmentResolved = 0;
-
             for (let ch = ref.startChapter; ch <= ref.endChapter; ch++) {
                 const chapter = chapters.get(ch);
                 if (!chapter) {
                     const warning = `${bookName} ${ch} does not exist in the loaded corpus.`;
-                    warnings.push(warning);
-                    segment.warnings.push(warning);
+                    addUniqueWarning(warnings, warning);
+                    addUniqueWarning(segment.warnings, warning);
                     continue;
                 }
 
@@ -166,14 +177,30 @@
                     endVerse = verses.length ? Number(verses[verses.length - 1].num) : 1;
                 }
 
+                let missingStart = null;
+                let missingEnd = null;
+
+                const flushMissingRange = () => {
+                    if (missingStart === null) return;
+                    const warning = formatMissingVerseWarning(bookName, ch, missingStart, missingEnd);
+                    addUniqueWarning(warnings, warning);
+                    addUniqueWarning(segment.warnings, warning);
+                    missingStart = null;
+                    missingEnd = null;
+                };
+
                 for (let v = startVerse; v <= endVerse; v++) {
+                    segment.requestedCount += 1;
                     const verse = vmap.get(v);
+
                     if (!verse) {
-                        const warning = `${bookName} ${ch}:${v} does not exist in the loaded corpus.`;
-                        warnings.push(warning);
-                        segment.warnings.push(warning);
+                        segment.missingCount += 1;
+                        if (missingStart === null) missingStart = v;
+                        missingEnd = v;
                         continue;
                     }
+
+                    flushMissingRange();
 
                     resolved.push({
                         bookKey: ref.bookKey,
@@ -186,21 +213,27 @@
                         segmentIndex,
                         segmentLabel
                     });
-                    segmentResolved += 1;
+                    segment.resolvedCount += 1;
                 }
+
+                flushMissingRange();
             }
 
-            segment.resolvedCount = segmentResolved;
-            segment.status = segmentResolved === 0
+            segment.status = segment.resolvedCount === 0
                 ? "unresolved"
-                : segment.warnings.length
+                : segment.missingCount > 0 || segment.warnings.length
                     ? "partial"
                     : "resolved";
 
-            if (segmentResolved === 0) {
+            if (segment.resolvedCount === 0 && !segment.warnings.length) {
                 const warning = `${segmentLabel} resolved no verses.`;
-                warnings.push(warning);
-                segment.warnings.push(warning);
+                addUniqueWarning(warnings, warning);
+                addUniqueWarning(segment.warnings, warning);
+            }
+            if (segment.resolvedCount === 0 && segment.warnings.length && !segment.warnings.some(w => w.includes("resolved no verses"))) {
+                const warning = `${segmentLabel} resolved no verses.`;
+                addUniqueWarning(warnings, warning);
+                addUniqueWarning(segment.warnings, warning);
             }
 
             segmentIndex += 1;
@@ -332,10 +365,13 @@
             const scopeHtml = segment.scopeLabel
                 ? `<div class="bible-segment-scope">${escapeHtml(segment.scopeLabel)}</div>`
                 : "";
+            const countText = segment.requestedCount && segment.missingCount
+                ? `${segment.resolvedCount} of ${segment.requestedCount} requested verses shown · ${segment.missingCount} unavailable`
+                : `${segment.resolvedCount} verse${segment.resolvedCount === 1 ? "" : "s"} shown`;
             return `
                 <li class="bible-segment-summary bible-segment-${escapeHtml(segment.status)}">
                     <span class="bible-segment-summary-label">${escapeHtml(segment.label)}</span>
-                    <span class="bible-segment-summary-status">${escapeHtml(statusLabel)} · ${segment.resolvedCount} verse${segment.resolvedCount === 1 ? "" : "s"}</span>
+                    <span class="bible-segment-summary-status">${escapeHtml(statusLabel)} · ${escapeHtml(countText)}</span>
                     ${scopeHtml}
                     ${warningHtml}
                 </li>
@@ -579,6 +615,8 @@
             bookKey: selectedBookKey || "",
             status: results.length ? (capped ? "partial" : "resolved") : "unresolved",
             resolvedCount: results.length,
+            requestedCount: results.length,
+            missingCount: 0,
             warnings,
             scopeLabel
         }];

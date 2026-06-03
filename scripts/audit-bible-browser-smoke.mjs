@@ -112,6 +112,18 @@ if (!browser.includes("resolved.warnings")) {
   fail("Bible browser does not preserve invalid-reference warnings on resolved passages.");
 }
 
+if (!browser.includes("missingCount")) {
+  fail("Bible browser does not count missing verses in partially available references.");
+}
+
+if (!browser.includes("requestedCount")) {
+  fail("Bible browser does not count requested verses for partial-reference summaries.");
+}
+
+if (!browser.includes("formatMissingVerseWarning")) {
+  fail("Bible browser does not consolidate missing verse warnings.");
+}
+
 if (!css.includes("#bible-browser-section")) {
   fail("Bible browser CSS is missing #bible-browser-section styling.");
 }
