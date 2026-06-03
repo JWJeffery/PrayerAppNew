@@ -28,6 +28,38 @@ if (!index.includes('id="bible-browser-section"')) {
   fail("index.html is missing #bible-browser-section.");
 }
 
+if (!index.includes('class="bible-browser-workspace"')) {
+  fail("index.html is missing reader-first Bible Browser workspace.");
+}
+
+if (!index.includes('class="bible-reader-controls"')) {
+  fail("index.html is missing reader-first top controls.");
+}
+
+if (!index.includes('<label for="bible-reference-input">Passage</label>')) {
+  fail("Bible Browser still lacks plain-language Passage label.");
+}
+
+if (!index.includes('Open Passage')) {
+  fail("Bible Browser still lacks Open Passage button text.");
+}
+
+if (!index.includes('Compare two translations')) {
+  fail("Bible Browser still lacks Compare two translations label.");
+}
+
+if (!index.includes('<label for="bible-parallel-select">Second Translation</label>')) {
+  fail("Bible Browser still lacks Second Translation label.");
+}
+
+if (!index.includes('<summary>Advanced Search</summary>')) {
+  fail("Bible Browser does not hide advanced search behind a disclosure.");
+}
+
+if (index.includes('Open Citation') || index.includes('>Citation<') || index.includes('Show two translations') || index.includes('Compare with') || index.includes('class="bible-browser-panel"')) {
+  fail("Bible Browser still contains old sidebar/citation wording.");
+}
+
 if (!index.includes('id="bible-passage-summary"')) {
   fail("index.html is missing Bible passage summary panel.");
 }
@@ -52,8 +84,8 @@ if (!index.includes('id="bible-current-notes"')) {
   fail("index.html is missing current-view notes panel.");
 }
 
-if (!index.includes('class="bible-sidebar-details"')) {
-  fail("index.html is missing collapsed Notes and Highlights sidebar drawer.");
+if (!index.includes("bible-sidebar-details")) {
+  fail("index.html is missing collapsed Notes and Highlights drawer.");
 }
 
 if (index.includes('<label>Study Helps</label>') || index.includes('id="bible-passage-guide"') || index.includes('id="bible-guide-fathers-current"')) {
@@ -321,4 +353,17 @@ if (!css.includes("max-height: calc(var(--bible-context-max-height")) {
 
 if (!index.includes("find passages, save notes, and study with the Fathers")) {
   fail("Bible browser subtitle is not plain-language.");
+}
+
+
+if (!css.includes(".bible-browser-workspace")) {
+  fail("Bible browser CSS is missing reader-first workspace styling.");
+}
+
+if (!css.includes(".bible-primary-controls")) {
+  fail("Bible browser CSS is missing top control bar styling.");
+}
+
+if (!css.includes(".bible-secondary-controls")) {
+  fail("Bible browser CSS is missing secondary control row styling.");
 }

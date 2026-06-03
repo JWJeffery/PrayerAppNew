@@ -777,3 +777,142 @@
     line-height: 1.35;
     margin: 8px 0 10px;
 }
+
+
+/* Reader-first Bible Browser layout */
+.bible-browser-workspace {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.bible-reader-controls {
+    border: 1px solid rgba(201, 168, 76, 0.22);
+    background: rgba(0, 0, 0, 0.16);
+    padding: 14px;
+}
+
+.bible-primary-controls {
+    display: grid;
+    grid-template-columns: minmax(150px, 220px) minmax(260px, 1fr) auto;
+    gap: 12px;
+    align-items: end;
+    margin-bottom: 12px;
+}
+
+.bible-secondary-controls {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(180px, 1fr));
+    gap: 10px;
+    align-items: start;
+}
+
+.bible-control-field label,
+.bible-reader-controls label,
+.bible-browser-details label,
+.bible-sidebar-details label {
+    display: block;
+    margin: 0 0 6px;
+    color: var(--gold);
+    font-family: 'Cinzel', serif;
+    font-size: 0.72rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.bible-reader-controls input[type="text"],
+.bible-reader-controls select {
+    width: 100%;
+    box-sizing: border-box;
+    margin-bottom: 0;
+    padding: 8px 9px;
+    border-radius: 2px;
+    border: 1px solid rgba(201, 168, 76, 0.35);
+    background: #1f1a14;
+    color: #f3ead3;
+    font-family: 'IM Fell English', serif;
+    font-size: 1rem;
+}
+
+.bible-control-action {
+    display: flex;
+    align-items: end;
+}
+
+.bible-control-action .bible-tool-btn {
+    min-height: 38px;
+    white-space: nowrap;
+}
+
+.bible-control-card,
+.bible-browser-details,
+.bible-sidebar-details {
+    border: 1px solid rgba(201, 168, 76, 0.18);
+    background: rgba(201, 168, 76, 0.035);
+    padding: 10px;
+    min-height: 0;
+}
+
+.bible-browser-details {
+    padding: 0;
+}
+
+.bible-browser-details summary,
+.bible-sidebar-details summary {
+    cursor: pointer;
+    color: var(--gold);
+    font-family: 'Cinzel', serif;
+    font-size: 0.74rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 10px;
+    list-style-position: inside;
+}
+
+.bible-browser-details[open] summary,
+.bible-sidebar-details[open] summary {
+    border-bottom: 1px solid rgba(201, 168, 76, 0.16);
+}
+
+.bible-browser-details > .bible-detail-grid,
+.bible-browser-details > .bible-advanced-help,
+.bible-browser-details > .bible-button-row {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.bible-detail-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+    padding-top: 10px;
+}
+
+.bible-advanced-help,
+.bible-sidebar-note-help {
+    color: #a89878;
+    font-family: 'IM Fell English', serif;
+    font-size: 0.9rem;
+    line-height: 1.35;
+    margin: 8px 0 10px;
+}
+
+.bible-notes-details .bible-sidebar-detail-body {
+    padding: 10px;
+}
+
+.bible-browser-workspace .bible-reader-panel {
+    border: 1px solid rgba(201, 168, 76, 0.12);
+    background: rgba(0, 0, 0, 0.08);
+}
+
+@media (max-width: 980px) {
+    .bible-primary-controls,
+    .bible-secondary-controls {
+        grid-template-columns: 1fr;
+    }
+
+    .bible-control-action .bible-tool-btn {
+        width: 100%;
+    }
+}
