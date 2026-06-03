@@ -618,8 +618,10 @@
     box-shadow: 0 18px 48px rgba(0, 0, 0, 0.55);
     color: #eadfc4;
     padding: 0;
-    overflow: auto;
+    overflow: hidden;
     border-radius: 2px;
+    box-sizing: border-box;
+    max-width: calc(100vw - 24px);
 }
 
 .bible-context-panel[hidden] {
@@ -659,6 +661,9 @@
 
 .bible-context-panel-body {
     padding: 10px;
+    overflow: auto;
+    max-height: calc(var(--bible-context-max-height, 520px) - 46px);
+    box-sizing: border-box;
 }
 
 .bible-context-note-label {
@@ -700,4 +705,40 @@
 #bible-selection-toolbar button:disabled {
     opacity: 0.42;
     cursor: not-allowed;
+}
+
+
+.bible-context-selected-text {
+    border-left: 2px solid rgba(201, 168, 76, 0.32);
+    padding-left: 9px;
+    color: #f2e8cc;
+    font-family: 'IM Fell English', serif;
+    font-size: 1rem;
+    line-height: 1.35;
+    margin: 7px 0;
+}
+
+.bible-context-note-preview {
+    color: #c8bfa8;
+    font-family: 'IM Fell English', serif;
+    font-size: 0.92rem;
+    line-height: 1.35;
+    border: 1px solid rgba(201, 168, 76, 0.14);
+    background: rgba(201, 168, 76, 0.045);
+    padding: 8px;
+    margin: 7px 0;
+}
+
+.bible-context-panel .bible-guide-card {
+    background: rgba(201, 168, 76, 0.06);
+}
+
+.bible-context-panel .bible-guide-card blockquote {
+    max-height: none;
+}
+
+@media (max-height: 620px) {
+    .bible-context-note-comment {
+        min-height: 110px;
+    }
 }

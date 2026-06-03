@@ -176,8 +176,8 @@ if (!browser.includes("bible-segment-grammar")) {
   fail("Bible browser does not render search grammar summary.");
 }
 
-if (!browser.includes("implicit AND")) {
-  fail("Bible browser does not document implicit AND behavior.");
+if (!browser.includes("all words")) {
+  fail("Bible browser does not document plain-language all-words search behavior.");
 }
 
 if (!browser.includes("openAnnotationEditor")) {
@@ -297,3 +297,24 @@ if (failures.length) {
 }
 
 console.log("PASS bible-browser smoke audit: route=/tools/bible segmented citation display guarded");
+
+
+if (!browser.includes("openAnnotationActions")) {
+  fail("Bible browser does not show highlight action choices before reopening note editor.");
+}
+
+if (!browser.includes("available Bible text")) {
+  fail("Bible browser still uses loaded-corpus language for missing verses.");
+}
+
+if (browser.includes("requested segment")) {
+  fail("Bible browser still uses requested-segment language in user-visible summary.");
+}
+
+if (!css.includes("max-height: calc(var(--bible-context-max-height")) {
+  fail("Bible browser CSS does not constrain contextual panel body height.");
+}
+
+if (!index.includes("find passages, save notes, and study with the Fathers")) {
+  fail("Bible browser subtitle is not plain-language.");
+}

@@ -156,9 +156,9 @@
 
     function formatMissingVerseWarning(bookName, chapter, startVerse, endVerse) {
         if (startVerse === endVerse) {
-            return `${bookName} ${chapter}:${startVerse} is not available in the loaded corpus.`;
+            return `${bookName} ${chapter}:${startVerse} is not available in the available Bible text.`;
         }
-        return `${bookName} ${chapter}:${startVerse}-${endVerse} are not available in the loaded corpus.`;
+        return `${bookName} ${chapter}:${startVerse}-${endVerse} are not available in the available Bible text.`;
     }
 
     function addUniqueWarning(target, warning) {
@@ -199,7 +199,7 @@
             for (let ch = ref.startChapter; ch <= ref.endChapter; ch++) {
                 const chapter = chapters.get(ch);
                 if (!chapter) {
-                    const warning = `${bookName} ${ch} does not exist in the loaded corpus.`;
+                    const warning = `${bookName} ${ch} does not exist in the available Bible text.`;
                     addUniqueWarning(warnings, warning);
                     addUniqueWarning(segment.warnings, warning);
                     continue;
@@ -404,16 +404,19 @@
             return;
         }
 
-        const warningList = Array.from(new Set(items.warnings || []));
         const resolvedSegments = segments.filter(segment => segment.status === "resolved").length;
         const partialSegments = segments.filter(segment => segment.status === "partial").length;
         const unresolvedSegments = segments.filter(segment => segment.status === "unresolved").length;
 
+        function plural(count, singular, pluralForm = `${singular}s`) {
+            return `${count} ${count === 1 ? singular : pluralForm}`;
+        }
+
         const segmentRows = segments.map(segment => {
             const statusLabel = segment.status === "resolved"
-                ? "resolved"
+                ? "found"
                 : segment.status === "partial"
-                    ? "partially resolved"
+                    ? "partly found"
                     : "not found";
             const warningHtml = segment.warnings?.length
                 ? `<ul class="bible-segment-warnings">${segment.warnings.map(w => `<li>${escapeHtml(w)}</li>`).join("")}</ul>`
@@ -425,8 +428,8 @@
                 ? `<div class="bible-segment-grammar">${escapeHtml(segment.searchGrammar)}</div>`
                 : "";
             const countText = segment.requestedCount && segment.missingCount
-                ? `${segment.resolvedCount} of ${segment.requestedCount} requested verses shown · ${segment.missingCount} unavailable`
-                : `${segment.resolvedCount} verse${segment.resolvedCount === 1 ? "" : "s"} shown`;
+                ? `${plural(segment.resolvedCount, "verse")} shown · ${plural(segment.missingCount, "verse")} unavailable`
+                : `${plural(segment.resolvedCount, "verse")} shown`;
             return `
                 <li class="bible-segment-summary bible-segment-${escapeHtml(segment.status)}">
                     <span class="bible-segment-summary-label">${escapeHtml(segment.label)}</span>
@@ -438,11 +441,18 @@
             `;
         }).join("");
 
+        const totalLine = `${plural(items.length, "verse")} found in ${plural(segments.length, "passage")}.`;
+        const detailLine = [
+            resolvedSegments ? `${plural(resolvedSegments, "passage")} found` : "",
+            partialSegments ? `${plural(partialSegments, "passage")} partly found` : "",
+            unresolvedSegments ? `${plural(unresolvedSegments, "passage")} not found` : ""
+        ].filter(Boolean).join(" · ");
+
         summary.style.display = "block";
         summary.innerHTML = `
             <div class="bible-summary-line">
-                ${items.length} verse${items.length === 1 ? "" : "s"} resolved across ${segments.length} requested segment${segments.length === 1 ? "" : "s"}.
-                <span>${resolvedSegments} complete · ${partialSegments} partial · ${unresolvedSegments} not found</span>
+                ${escapeHtml(totalLine)}
+                <span>${escapeHtml(detailLine || "Ready.")}</span>
             </div>
             <ol class="bible-segment-summary-list">${segmentRows}</ol>
         `;
@@ -554,7 +564,8 @@
         output.querySelectorAll(".bible-highlight").forEach(mark => {
             mark.addEventListener("click", event => {
                 event.stopPropagation();
-                editAnnotation(mark.dataset.annotationId);
+                lastContextAnchorRect = storedRectFromDomRect(mark.getBoundingClientRect());
+                openAnnotationActions(mark.dataset.annotationId, { anchorRect: lastContextAnchorRect });
             });
         });
 
@@ -623,7 +634,7 @@
                 const warningText = resolved.warnings?.length
                     ? ` Warning: ${resolved.warnings.slice(0, 3).join(" ")}`
                     : "";
-                status.textContent = `${resolved.length} verse${resolved.length === 1 ? "" : "s"} resolved.${warningText}`;
+                status.textContent = `${resolved.length} verse${resolved.length === 1 ? "" : "s"} shown.${warningText}`;
             }
             history.replaceState(null, "", "/tools/bible");
         } catch (error) {
@@ -817,12 +828,12 @@
         const hasQuotedPhrase = tokens.some(token => token.quoted);
         const grammarLabelParts = [];
 
-        if (hasQuotedPhrase) grammarLabelParts.push("quoted phrase");
+        if (hasQuotedPhrase) grammarLabelParts.push("exact phrase");
         if (operators.includes("AND")) grammarLabelParts.push("AND");
         if (operators.includes("OR")) grammarLabelParts.push("OR");
         if (operators.includes("NOT")) grammarLabelParts.push("NOT");
-        if (!grammarLabelParts.length && positiveTerms.length > 1) grammarLabelParts.push("implicit AND");
-        if (!grammarLabelParts.length) grammarLabelParts.push("simple term");
+        if (!grammarLabelParts.length && positiveTerms.length > 1) grammarLabelParts.push("all words");
+        if (!grammarLabelParts.length) grammarLabelParts.push("word search");
 
         return {
             raw: String(query || ""),
@@ -849,10 +860,10 @@
 
     function describeSearchGrammar(grammar) {
         const included = grammar.positiveTerms.length
-            ? `include: ${grammar.positiveTerms.map(term => `“${term}”`).join(", ")}`
+            ? `must include: ${grammar.positiveTerms.map(term => `“${term}”`).join(", ")}`
             : "include: —";
         const excluded = grammar.excludedTerms.length
-            ? `exclude: ${grammar.excludedTerms.map(term => `“${term}”`).join(", ")}`
+            ? `leave out: ${grammar.excludedTerms.map(term => `“${term}”`).join(", ")}`
             : "";
         return [grammar.grammarLabel, included, excluded].filter(Boolean).join(" · ");
     }
@@ -975,7 +986,7 @@
 
         const annotations = annotationsInCurrentView();
         if (!annotations.length) {
-            container.innerHTML = `<div class="bible-notes-empty">No highlights or comments in this view.</div>`;
+            container.innerHTML = `<div class="bible-notes-empty">No highlights or notes in this view.</div>`;
             return;
         }
 
@@ -984,7 +995,7 @@
             const excerpt = annotation.selectedText || "Highlight";
             const comment = annotation.comment?.trim()
                 ? `<div class="bible-note-comment">${escapeHtml(annotation.comment.trim())}</div>`
-                : `<div class="bible-note-comment bible-note-comment-empty">No comment.</div>`;
+                : `<div class="bible-note-comment bible-note-comment-empty">No note.</div>`;
 
             return `
                 <button class="bible-note-card" type="button" data-annotation-open="${escapeHtml(annotation.id)}">
@@ -1021,23 +1032,113 @@
         }
     }
 
-    function openAnnotationEditor(annotationId) {
+    function annotationToPassageRange(annotation) {
+        const book = getBook(annotation.bookKey);
+        const location = encodeVerseLocation(annotation.chapter, annotation.verse);
+        const bookName = book?.name || annotation.bookKey || "Unknown";
+        return {
+            book: annotation.bookKey,
+            bookName,
+            startChapter: Number(annotation.chapter),
+            startVerse: Number(annotation.verse),
+            endChapter: Number(annotation.chapter),
+            endVerse: Number(annotation.verse),
+            startLocation: location,
+            endLocation: location,
+            verseCount: 1,
+            label: `${bookName} ${annotation.chapter}:${annotation.verse}`
+        };
+    }
+
+    async function loadFathersForAnnotation(annotationId) {
+        const annotation = loadAnnotations().find(item => item.id === annotationId);
+        const status = $("bible-status");
+        if (!annotation) return;
+
+        const anchorRect = getAnnotationAnchorRect(annotation) || lastContextAnchorRect;
+        const range = annotationToPassageRange(annotation);
+        const body = showContextPanel({
+            title: "What the Fathers Say",
+            anchorRect,
+            html: `<div class="bible-guide-empty">Looking up Church Fathers commentary for ${escapeHtml(range.label)}…</div>`
+        });
+
+        if (!window.UniversalOfficePassageGuide?.loadFathersForRanges) {
+            if (body) body.innerHTML = `<div class="bible-guide-error">Study Helps are not available yet.</div>`;
+            if (status) status.textContent = "Study Helps are not available yet.";
+            return;
+        }
+
+        await window.UniversalOfficePassageGuide.loadFathersForRanges([range], "highlighted verse", { targetElement: body });
+    }
+
+    function deleteAnnotationById(annotationId, options = {}) {
+        const { confirmDelete = true } = options;
+        const annotation = loadAnnotations().find(item => item.id === annotationId);
+        if (!annotation) return;
+
+        const label = getAnnotationReferenceLabel(annotation);
+        if (confirmDelete && !window.confirm(`Remove highlight or note for ${label}?`)) return;
+
+        const annotations = loadAnnotations().filter(item => item.id !== annotationId);
+        saveAnnotations(annotations);
+        activeAnnotationId = null;
+        closeContextPanel();
+        renderResults(currentResolved);
+        renderCurrentNotesList();
+    }
+
+    function openAnnotationActions(annotationId, options = {}) {
+        const annotation = loadAnnotations().find(item => item.id === annotationId);
+        if (!annotation) return;
+
+        activeAnnotationId = null;
+        const anchorRect = options.anchorRect || getAnnotationAnchorRect(annotation) || lastContextAnchorRect;
+        lastContextAnchorRect = anchorRect || lastContextAnchorRect;
+
+        const note = annotation.comment?.trim()
+            ? `<div class="bible-context-note-preview">${escapeHtml(annotation.comment.trim())}</div>`
+            : `<div class="bible-context-note-preview bible-note-comment-empty">No note has been saved for this highlight.</div>`;
+
+        const body = showContextPanel({
+            title: "Highlight Options",
+            anchorRect,
+            html: `
+                <div class="bible-context-note-label">${escapeHtml(getAnnotationReferenceLabel(annotation))}</div>
+                <div class="bible-context-selected-text">${escapeHtml(annotation.selectedText || "Highlighted text")}</div>
+                ${note}
+                <div class="bible-context-actions">
+                    <button class="bible-tool-btn" id="bible-context-edit-note" type="button">Add / Edit Note</button>
+                    <button class="bible-tool-btn" id="bible-context-fathers-highlight" type="button">What the Fathers Say</button>
+                    <button class="bible-tool-btn" id="bible-context-remove-highlight" type="button">Remove Highlight</button>
+                    <button class="bible-tool-btn" id="bible-context-close-actions" type="button">Close</button>
+                </div>
+            `
+        });
+
+        body?.querySelector("#bible-context-edit-note")?.addEventListener("click", () => openAnnotationEditor(annotationId, { anchorRect }));
+        body?.querySelector("#bible-context-fathers-highlight")?.addEventListener("click", () => loadFathersForAnnotation(annotationId));
+        body?.querySelector("#bible-context-remove-highlight")?.addEventListener("click", () => deleteAnnotationById(annotationId));
+        body?.querySelector("#bible-context-close-actions")?.addEventListener("click", closeContextPanel);
+    }
+
+    function openAnnotationEditor(annotationId, options = {}) {
         const annotation = loadAnnotations().find(item => item.id === annotationId);
         if (!annotation) return;
 
         activeAnnotationId = annotationId;
         const label = `${getAnnotationReferenceLabel(annotation)} · ${annotation.selectedText || "Highlight"}`;
-        const anchorRect = lastContextAnchorRect || getAnnotationAnchorRect(annotation);
+        const anchorRect = options.anchorRect || lastContextAnchorRect || getAnnotationAnchorRect(annotation);
 
         const body = showContextPanel({
-            title: "Add a note",
+            title: "Add a Note",
             anchorRect,
             html: `
                 <div class="bible-context-note-label">${escapeHtml(label)}</div>
                 <textarea id="bible-context-note-comment" class="bible-context-note-comment" rows="6" placeholder="Add or edit your note.">${escapeHtml(annotation.comment || "")}</textarea>
                 <div class="bible-context-actions">
                     <button class="bible-tool-btn" id="bible-context-save-note" type="button">Save Note</button>
-                    <button class="bible-tool-btn" id="bible-context-delete-note" type="button">Delete</button>
+                    <button class="bible-tool-btn" id="bible-context-delete-note" type="button">Remove Highlight</button>
                     <button class="bible-tool-btn" id="bible-context-close-note" type="button">Close</button>
                 </div>
             `
@@ -1066,6 +1167,7 @@
             return;
         }
 
+        const savedId = activeAnnotationId;
         annotations[idx] = {
             ...annotations[idx],
             comment: $("bible-context-note-comment")?.value ?? $("bible-annotation-comment")?.value ?? "",
@@ -1073,20 +1175,17 @@
         };
         saveAnnotations(annotations);
         renderResults(currentResolved);
-        openAnnotationEditor(activeAnnotationId);
+        renderCurrentNotesList();
+        closeAnnotationEditor();
+
+        const status = $("bible-status");
+        if (status) status.textContent = "Note saved.";
+        openAnnotationActions(savedId);
     }
 
     function deleteAnnotationEditor() {
         if (!activeAnnotationId) return;
-
-        const annotation = loadAnnotations().find(item => item.id === activeAnnotationId);
-        const label = annotation ? getAnnotationReferenceLabel(annotation) : "this highlight";
-        if (!window.confirm(`Delete highlight/comment for ${label}?`)) return;
-
-        const annotations = loadAnnotations().filter(item => item.id !== activeAnnotationId);
-        saveAnnotations(annotations);
-        closeAnnotationEditor();
-        renderResults(currentResolved);
+        deleteAnnotationById(activeAnnotationId);
     }
 
     function storedRectFromDomRect(rect) {
@@ -1101,21 +1200,27 @@
         };
     }
 
+    function clampNumber(value, min, max) {
+        return Math.min(Math.max(value, min), max);
+    }
+
     function positionContextPanel(anchorRect = lastContextAnchorRect) {
         const panel = $("bible-context-panel");
         if (!panel) return;
 
         const margin = 12;
-        const gap = 10;
+        const gap = 12;
         const viewportWidth = window.innerWidth || document.documentElement.clientWidth || 1024;
         const viewportHeight = window.innerHeight || document.documentElement.clientHeight || 768;
-        const panelWidth = Math.min(440, Math.max(280, viewportWidth - (margin * 2)));
+        const panelWidth = Math.min(440, Math.max(300, viewportWidth - (margin * 2)));
+        const maxPanelHeight = Math.min(520, viewportHeight - (margin * 2));
 
         panel.style.width = `${panelWidth}px`;
+        panel.style.maxHeight = `${maxPanelHeight}px`;
+        panel.style.setProperty("--bible-context-max-height", `${maxPanelHeight}px`);
         panel.hidden = false;
 
-        const panelRect = panel.getBoundingClientRect();
-        const panelHeight = Math.min(panelRect.height || 320, viewportHeight - (margin * 2));
+        const panelHeight = Math.min(panel.scrollHeight || panel.getBoundingClientRect().height || 320, maxPanelHeight);
         const anchor = anchorRect || {
             left: viewportWidth / 2 - 40,
             right: viewportWidth / 2 + 40,
@@ -1134,22 +1239,22 @@
 
         if (canPlaceRight) {
             left = anchor.right + gap;
-            top = Math.min(Math.max(margin, anchor.top), viewportHeight - panelHeight - margin);
+            top = clampNumber(anchor.top, margin, viewportHeight - panelHeight - margin);
         } else if (canPlaceLeft) {
             left = anchor.left - gap - panelWidth;
-            top = Math.min(Math.max(margin, anchor.top), viewportHeight - panelHeight - margin);
+            top = clampNumber(anchor.top, margin, viewportHeight - panelHeight - margin);
         } else {
-            left = Math.min(Math.max(margin, anchor.left), viewportWidth - panelWidth - margin);
+            left = clampNumber(anchor.left, margin, viewportWidth - panelWidth - margin);
             if (canPlaceBelow) {
                 top = anchor.bottom + gap;
             } else {
-                top = Math.max(margin, anchor.top - gap - panelHeight);
+                top = anchor.top - gap - panelHeight;
             }
+            top = clampNumber(top, margin, viewportHeight - panelHeight - margin);
         }
 
         panel.style.left = `${Math.round(left)}px`;
         panel.style.top = `${Math.round(top)}px`;
-        panel.style.maxHeight = `${Math.max(240, viewportHeight - (margin * 2))}px`;
     }
 
     function showContextPanel({ title, html, anchorRect = lastContextAnchorRect }) {
@@ -1289,13 +1394,13 @@
 
         if (comment) {
             comment.disabled = !allowAnnotation;
-            comment.title = allowAnnotation ? "Comment on selected verse text" : "Commenting currently supports one verse at a time";
+            comment.title = allowAnnotation ? "Add a note to selected verse text" : "Commenting currently supports one verse at a time";
         }
 
         if (fathers) {
             fathers.disabled = !pendingPassageRanges.length;
             fathers.title = pendingPassageRanges.length
-                ? "Search patristic witnesses for the selected passage"
+                ? "Ask what the Fathers say about the selected passage"
                 : "Select Bible text first";
         }
     }
@@ -1389,7 +1494,7 @@
     }
 
     function editAnnotation(annotationId) {
-        openAnnotationEditor(annotationId);
+        openAnnotationActions(annotationId);
     }
 
     async function loadFathersForSelection() {
@@ -1683,6 +1788,7 @@
         },
         openContextPanel: showContextPanel,
         closeContextPanel,
+        openAnnotationActions,
         loadFathersForSelection,
         setParallelReader(enabled, translation = parallelTranslation) {
             parallelEnabled = Boolean(enabled);
