@@ -1631,6 +1631,7 @@
         const body = showContextPanel({
             title: "Highlight Options",
             anchorRect,
+            mode: "study",
             html: `
                 <div class="bible-context-note-label">${escapeHtml(getAnnotationReferenceLabel(annotation))}</div>
                 <div class="bible-context-selected-text">${escapeHtml(annotation.selectedText || "Highlighted text")}</div>
@@ -1686,6 +1687,7 @@
         const body = showContextPanel({
             title: "Add a Note",
             anchorRect,
+            mode: "study",
             html: `
                 <div class="bible-context-note-label">${escapeHtml(label)}</div>
                 <textarea id="bible-context-note-comment" class="bible-context-note-comment" rows="6" placeholder="Add or edit your note.">${escapeHtml(annotation.comment || "")}</textarea>

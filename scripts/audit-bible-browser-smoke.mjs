@@ -506,3 +506,12 @@ if (!browser.includes("universal-office:fathers-add-to-note")) {
   fail("Bible Browser is missing Fathers-to-note event listener.");
 }
 
+
+if (!browser.includes('title: "Highlight Options",\n            anchorRect,\n            mode: "study"')) {
+  fail("Highlight Options panel is not using study drawer positioning.");
+}
+
+if (!browser.includes('title: "Add a Note",\n            anchorRect,\n            mode: "study"')) {
+  fail("Add a Note panel is not using study drawer positioning.");
+}
+
