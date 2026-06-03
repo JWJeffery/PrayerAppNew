@@ -1129,7 +1129,7 @@
         container.querySelectorAll("[data-annotation-open]").forEach(button => {
             button.addEventListener("click", () => {
                 jumpToAnnotation(button.dataset.annotationOpen);
-                openAnnotationEditor(button.dataset.annotationOpen);
+                openAnnotationActions(button.dataset.annotationOpen);
             });
         });
     }
@@ -1829,25 +1829,12 @@
                 if (!Array.isArray(data)) throw new Error("Annotation import must be a JSON array.");
 
                 const normalized = data.map((annotation, index) => {
-                    if (!annotation || typeof annotation !== "object") {
-                        throw new Error(`Annotation import item ${index + 1} is not an object.`);
-                    }
-                    if (!annotation.anchorKey || !annotation.bookKey || !annotation.chapter || !annotation.verse) {
-                        throw new Error(`Annotation import item ${index + 1} is missing required anchor fields.`);
+                    const item = normalizeAnnotation(annotation, index);
+                    if (!item) {
+                        throw new Error(`Annotation import item ${index + 1} is missing usable highlight information.`);
                     }
                     return {
-                        id: annotation.id || `ann-import-${Date.now()}-${index}`,
-                        type: annotation.type || "highlight",
-                        anchorKey: String(annotation.anchorKey),
-                        bookKey: String(annotation.bookKey),
-                        chapter: Number(annotation.chapter),
-                        verse: Number(annotation.verse),
-                        translation: String(annotation.translation || currentTranslation),
-                        startOffset: Number(annotation.startOffset || 0),
-                        endOffset: Number(annotation.endOffset || 0),
-                        selectedText: String(annotation.selectedText || ""),
-                        comment: String(annotation.comment || ""),
-                        createdAt: annotation.createdAt || new Date().toISOString(),
+                        ...item,
                         updatedAt: new Date().toISOString()
                     };
                 });
@@ -1855,6 +1842,7 @@
                 saveAnnotations(normalized);
                 closeAnnotationEditor();
                 renderResults(currentResolved);
+                renderCurrentNotesList();
                 $("bible-status").textContent = `Imported ${normalized.length} annotation${normalized.length === 1 ? "" : "s"}.`;
             } catch (error) {
                 $("bible-status").textContent = error.message;

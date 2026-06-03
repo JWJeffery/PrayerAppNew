@@ -406,3 +406,16 @@ if (!browser.includes("annotation.segments.some")) {
   fail("Bible browser current-view notes do not detect multi-verse annotation segments.");
 }
 
+
+if (!browser.includes("jumpToAnnotation(button.dataset.annotationOpen);\n                openAnnotationActions(button.dataset.annotationOpen);")) {
+  fail("Bible browser notes drawer does not open highlight options for annotations.");
+}
+
+if (!browser.includes("const item = normalizeAnnotation(annotation, index);")) {
+  fail("Bible browser annotation import does not use segment normalization.");
+}
+
+if (browser.includes("missing required anchor fields")) {
+  fail("Bible browser annotation import still rejects segment-array annotation exports.");
+}
+
