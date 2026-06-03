@@ -259,8 +259,33 @@
             .sort((a, b) => a.startOffset - b.startOffset);
     }
 
-    function renderAnnotatedText(text, annotations) {
-        if (!annotations.length) return escapeHtml(text);
+    function escapeRegExp(value) {
+        return String(value || "").replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+    }
+
+    function renderSearchHighlightedText(text, searchTerm) {
+        const source = String(text || "");
+        const needle = String(searchTerm || "").trim();
+        if (!needle) return escapeHtml(source);
+
+        const pattern = new RegExp(escapeRegExp(needle), "gi");
+        let cursor = 0;
+        let html = "";
+        let match;
+
+        while ((match = pattern.exec(source)) !== null) {
+            if (match.index === pattern.lastIndex) pattern.lastIndex += 1;
+            html += escapeHtml(source.slice(cursor, match.index));
+            html += `<mark class="bible-search-match">${escapeHtml(match[0])}</mark>`;
+            cursor = match.index + match[0].length;
+        }
+
+        html += escapeHtml(source.slice(cursor));
+        return html;
+    }
+
+    function renderAnnotatedText(text, annotations, searchTerm = "") {
+        if (!annotations.length) return renderSearchHighlightedText(text, searchTerm);
 
         let cursor = 0;
         let html = "";
@@ -303,10 +328,14 @@
             const warningHtml = segment.warnings?.length
                 ? `<ul class="bible-segment-warnings">${segment.warnings.map(w => `<li>${escapeHtml(w)}</li>`).join("")}</ul>`
                 : "";
+            const scopeHtml = segment.scopeLabel
+                ? `<div class="bible-segment-scope">${escapeHtml(segment.scopeLabel)}</div>`
+                : "";
             return `
                 <li class="bible-segment-summary bible-segment-${escapeHtml(segment.status)}">
                     <span class="bible-segment-summary-label">${escapeHtml(segment.label)}</span>
                     <span class="bible-segment-summary-status">${escapeHtml(statusLabel)} · ${segment.resolvedCount} verse${segment.resolvedCount === 1 ? "" : "s"}</span>
+                    ${scopeHtml}
                     ${warningHtml}
                 </li>
             `;
@@ -384,7 +413,7 @@
                                    data-verse="${item.verse}"
                                    data-translation="${escapeHtml(currentTranslation)}">
                                     <sup>${item.verse}</sup>
-                                    <span class="bible-verse-text">${renderAnnotatedText(text, annotations)}</span>
+                                    <span class="bible-verse-text">${renderAnnotatedText(text, annotations, items.searchTerm || "")}</span>
                                 </p>
                             `;
                         }).join("")}
@@ -521,6 +550,35 @@
             bookKey: first.bookKey,
             chapter: String(first.chapter)
         });
+    }
+
+    function describeSearchScope(scope, selectedBookKey = "") {
+        if (scope === "ALL") return "All corpora in browser registry";
+        if (scope === "BOOK") {
+            const book = getBook(selectedBookKey);
+            return book ? `Selected book: ${book.name}` : "Selected book";
+        }
+        return `Corpus: ${scope}`;
+    }
+
+    function attachSearchMetadata(results, query, scope, selectedBookKey, capped = false) {
+        const scopeLabel = describeSearchScope(scope, selectedBookKey);
+        const warnings = capped
+            ? [`Showing first 200 matches for “${query}”. Narrow the scope or search phrase for more specific results.`]
+            : [];
+        results.searchTerm = query;
+        results.warnings = warnings;
+        results.requestedSegments = [{
+            index: 0,
+            label: `Search: “${query}”`,
+            requestedRaw: query,
+            bookKey: selectedBookKey || "",
+            status: results.length ? (capped ? "partial" : "resolved") : "unresolved",
+            resolvedCount: results.length,
+            warnings,
+            scopeLabel
+        }];
+        return results;
     }
 
     async function openSelectedBook() {
@@ -699,11 +757,14 @@
 
         if (!books.length) {
             if (status) status.textContent = "No books match the selected search scope.";
+            const empty = attachSearchMetadata([], query, scope, selectedBook, false);
+            renderResults(empty);
             return;
         }
 
         const needle = query.toLowerCase();
         const results = [];
+        let capped = false;
         if (status) status.textContent = `Searching ${books.length} book${books.length === 1 ? "" : "s"}…`;
 
         for (const book of books) {
@@ -720,27 +781,36 @@
                                 chapter: Number(chapter.num),
                                 verse: Number(verse.num),
                                 verseData: verse,
-                                bookData: data
+                                bookData: data,
+                                segmentIndex: 0,
+                                segmentLabel: `Search: “${query}”`
                             });
-                            if (results.length >= 200) break;
+                            if (results.length >= 200) {
+                                capped = true;
+                                break;
+                            }
                         }
                     }
-                    if (results.length >= 200) break;
+                    if (capped) break;
                 }
             } catch (error) {
                 console.warn("[bible-search] skipping book:", book.key, error);
             }
-            if (results.length >= 200) break;
+            if (capped) break;
         }
 
+        attachSearchMetadata(results, query, scope, selectedBook, capped);
         await syncTranslationSelect(results);
         renderResults(results);
         if (status) {
-            status.textContent = results.length >= 200
-                ? "Showing first 200 matches."
-                : `${results.length} search result${results.length === 1 ? "" : "s"}.`;
+            status.textContent = capped
+                ? `Showing first 200 matches for “${query}”.`
+                : `${results.length} search result${results.length === 1 ? "" : "s"} for “${query}”.`;
         }
-        saveLastState();
+        saveLastState({
+            scope,
+            bookKey: selectedBook
+        });
     }
 
     function exportAnnotations() {

@@ -316,3 +316,18 @@
     flex: 1 1 auto;
     min-width: 96px;
 }
+
+
+.bible-segment-scope {
+    color: #a89878;
+    font-size: 0.9em;
+    margin-top: 2px;
+}
+
+.bible-search-match {
+    background: rgba(130, 160, 210, 0.32);
+    color: inherit;
+    border-bottom: 1px solid rgba(170, 195, 240, 0.7);
+    border-radius: 2px;
+    padding: 0 1px;
+}

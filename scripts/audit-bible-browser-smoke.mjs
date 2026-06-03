@@ -76,6 +76,14 @@ if (!browser.includes("changeBibleChapter")) {
   fail("Bible browser does not expose previous/next chapter navigation.");
 }
 
+if (!browser.includes("attachSearchMetadata")) {
+  fail("Bible browser does not attach search metadata for summary display.");
+}
+
+if (!browser.includes("bible-search-match")) {
+  fail("Bible browser does not render search-match highlighting.");
+}
+
 if (!browser.includes("resolved.warnings")) {
   fail("Bible browser does not preserve invalid-reference warnings on resolved passages.");
 }
@@ -90,6 +98,14 @@ if (!css.includes(".bible-passage-summary")) {
 
 if (!css.includes(".bible-chapter-nav")) {
   fail("Bible browser CSS is missing chapter navigation styling.");
+}
+
+if (!css.includes(".bible-search-match")) {
+  fail("Bible browser CSS is missing search match styling.");
+}
+
+if (!css.includes(".bible-segment-scope")) {
+  fail("Bible browser CSS is missing search scope summary styling.");
 }
 
 const context = { window: {} };
