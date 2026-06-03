@@ -92,9 +92,21 @@
         return Array.from(found).sort();
     }
 
+    function formatReferenceLabel(bookName, ref) {
+        const start = ref.startVerse === null
+            ? `${ref.startChapter}`
+            : `${ref.startChapter}:${ref.startVerse}`;
+        const end = ref.endVerse === null
+            ? `${ref.endChapter}`
+            : `${ref.endChapter}:${ref.endVerse}`;
+        return start === end ? `${bookName} ${start}` : `${bookName} ${start}-${end}`;
+    }
+
     async function resolveReference(parsed) {
         const resolved = [];
         const warnings = [];
+        const requestedSegments = [];
+        let segmentIndex = 0;
 
         for (const ref of parsed.references) {
             const book = getBook(ref.bookKey);
@@ -102,6 +114,18 @@
 
             const bookData = await loadBook(ref.bookKey);
             const chapters = chapterMap(bookData);
+            const bookName = bookData?.meta?.name || book.name;
+            const segmentLabel = formatReferenceLabel(bookName, ref);
+            const segment = {
+                index: segmentIndex,
+                label: segmentLabel,
+                requestedRaw: ref.raw,
+                bookKey: ref.bookKey,
+                status: "unresolved",
+                resolvedCount: 0,
+                warnings: []
+            };
+            requestedSegments.push(segment);
 
             if (ref.endChapter < ref.startChapter) {
                 throw new Error(`Reference ends before it starts: ${book.name} ${ref.raw}`);
@@ -112,7 +136,9 @@
             for (let ch = ref.startChapter; ch <= ref.endChapter; ch++) {
                 const chapter = chapters.get(ch);
                 if (!chapter) {
-                    warnings.push(`${book.name} ${ch} does not exist in the loaded corpus.`);
+                    const warning = `${bookName} ${ch} does not exist in the loaded corpus.`;
+                    warnings.push(warning);
+                    segment.warnings.push(warning);
                     continue;
                 }
 
@@ -142,26 +168,41 @@
                 for (let v = startVerse; v <= endVerse; v++) {
                     const verse = vmap.get(v);
                     if (!verse) {
-                        warnings.push(`${book.name} ${ch}:${v} does not exist in the loaded corpus.`);
+                        const warning = `${bookName} ${ch}:${v} does not exist in the loaded corpus.`;
+                        warnings.push(warning);
+                        segment.warnings.push(warning);
                         continue;
                     }
 
                     resolved.push({
                         bookKey: ref.bookKey,
-                        bookName: bookData?.meta?.name || book.name,
+                        bookName,
                         corpus: book.corpus,
                         chapter: ch,
                         verse: v,
                         verseData: verse,
-                        bookData
+                        bookData,
+                        segmentIndex,
+                        segmentLabel
                     });
                     segmentResolved += 1;
                 }
             }
 
+            segment.resolvedCount = segmentResolved;
+            segment.status = segmentResolved === 0
+                ? "unresolved"
+                : segment.warnings.length
+                    ? "partial"
+                    : "resolved";
+
             if (segmentResolved === 0) {
-                warnings.push(`${book.name} ${ref.raw} resolved no verses.`);
+                const warning = `${segmentLabel} resolved no verses.`;
+                warnings.push(warning);
+                segment.warnings.push(warning);
             }
+
+            segmentIndex += 1;
         }
 
         if (!resolved.length) {
@@ -169,6 +210,7 @@
         }
 
         resolved.warnings = Array.from(new Set(warnings));
+        resolved.requestedSegments = requestedSegments;
         return resolved;
     }
 
@@ -235,50 +277,118 @@
         return html;
     }
 
+    function renderPassageSummary(items) {
+        const summary = $("bible-passage-summary");
+        if (!summary) return;
+
+        const segments = items?.requestedSegments || [];
+        if (!segments.length) {
+            summary.innerHTML = "";
+            summary.style.display = "none";
+            return;
+        }
+
+        const warningList = Array.from(new Set(items.warnings || []));
+        const resolvedSegments = segments.filter(segment => segment.status === "resolved").length;
+        const partialSegments = segments.filter(segment => segment.status === "partial").length;
+        const unresolvedSegments = segments.filter(segment => segment.status === "unresolved").length;
+
+        const segmentRows = segments.map(segment => {
+            const statusLabel = segment.status === "resolved"
+                ? "resolved"
+                : segment.status === "partial"
+                    ? "partially resolved"
+                    : "not found";
+            const warningHtml = segment.warnings?.length
+                ? `<ul class="bible-segment-warnings">${segment.warnings.map(w => `<li>${escapeHtml(w)}</li>`).join("")}</ul>`
+                : "";
+            return `
+                <li class="bible-segment-summary bible-segment-${escapeHtml(segment.status)}">
+                    <span class="bible-segment-summary-label">${escapeHtml(segment.label)}</span>
+                    <span class="bible-segment-summary-status">${escapeHtml(statusLabel)} · ${segment.resolvedCount} verse${segment.resolvedCount === 1 ? "" : "s"}</span>
+                    ${warningHtml}
+                </li>
+            `;
+        }).join("");
+
+        summary.style.display = "block";
+        summary.innerHTML = `
+            <div class="bible-summary-line">
+                ${items.length} verse${items.length === 1 ? "" : "s"} resolved across ${segments.length} requested segment${segments.length === 1 ? "" : "s"}.
+                <span>${resolvedSegments} complete · ${partialSegments} partial · ${unresolvedSegments} not found</span>
+            </div>
+            <ol class="bible-segment-summary-list">${segmentRows}</ol>
+        `;
+    }
+
     function renderResults(items, options = {}) {
         currentResolved = items;
         const output = $("bible-results");
         if (!output) return;
+
+        renderPassageSummary(items);
 
         if (!items.length) {
             output.innerHTML = `<div class="bible-empty">No verses to display.</div>`;
             return;
         }
 
-        const grouped = [];
-        let currentGroup = null;
+        const segmentMetaByIndex = new Map((items.requestedSegments || []).map(segment => [segment.index, segment]));
+        const segmentGroups = [];
+        const segmentMap = new Map();
 
         for (const item of items) {
-            const groupKey = `${item.bookKey}.${item.chapter}`;
-            if (!currentGroup || currentGroup.key !== groupKey) {
-                currentGroup = {
-                    key: groupKey,
+            const segmentIndex = Number.isFinite(item.segmentIndex) ? item.segmentIndex : 0;
+            if (!segmentMap.has(segmentIndex)) {
+                const meta = segmentMetaByIndex.get(segmentIndex);
+                const segmentGroup = {
+                    index: segmentIndex,
+                    label: meta?.label || item.segmentLabel || "Search Results",
+                    chapters: [],
+                    chapterMap: new Map()
+                };
+                segmentMap.set(segmentIndex, segmentGroup);
+                segmentGroups.push(segmentGroup);
+            }
+
+            const segmentGroup = segmentMap.get(segmentIndex);
+            const chapterKey = `${item.bookKey}.${item.chapter}`;
+            if (!segmentGroup.chapterMap.has(chapterKey)) {
+                const chapterGroup = {
+                    key: chapterKey,
                     bookName: item.bookName,
                     chapter: item.chapter,
                     verses: []
                 };
-                grouped.push(currentGroup);
+                segmentGroup.chapterMap.set(chapterKey, chapterGroup);
+                segmentGroup.chapters.push(chapterGroup);
             }
-            currentGroup.verses.push(item);
+
+            segmentGroup.chapterMap.get(chapterKey).verses.push(item);
         }
 
-        output.innerHTML = grouped.map(group => `
-            <section class="bible-chapter-block">
-                <h3>${escapeHtml(group.bookName)} ${group.chapter}</h3>
-                ${group.verses.map(item => {
-                    const text = getVerseText(item.verseData, currentTranslation);
-                    const annotations = annotationsForVerse(item);
-                    return `
-                        <p class="bible-verse"
-                           data-book-key="${escapeHtml(item.bookKey)}"
-                           data-chapter="${item.chapter}"
-                           data-verse="${item.verse}"
-                           data-translation="${escapeHtml(currentTranslation)}">
-                            <sup>${item.verse}</sup>
-                            <span class="bible-verse-text">${renderAnnotatedText(text, annotations)}</span>
-                        </p>
-                    `;
-                }).join("")}
+        output.innerHTML = segmentGroups.map(segment => `
+            <section class="bible-segment-block" data-segment-index="${segment.index}">
+                <div class="bible-segment-label">${escapeHtml(segment.label)}</div>
+                ${segment.chapters.map(group => `
+                    <section class="bible-chapter-block">
+                        <h3>${escapeHtml(group.bookName)} ${group.chapter}</h3>
+                        ${group.verses.map(item => {
+                            const text = getVerseText(item.verseData, currentTranslation);
+                            const annotations = annotationsForVerse(item);
+                            return `
+                                <p class="bible-verse"
+                                   data-book-key="${escapeHtml(item.bookKey)}"
+                                   data-chapter="${item.chapter}"
+                                   data-verse="${item.verse}"
+                                   data-translation="${escapeHtml(currentTranslation)}">
+                                    <sup>${item.verse}</sup>
+                                    <span class="bible-verse-text">${renderAnnotatedText(text, annotations)}</span>
+                                </p>
+                            `;
+                        }).join("")}
+                    </section>
+                `).join("")}
             </section>
         `).join("");
 

@@ -15,7 +15,8 @@
     "audit:repo-hygiene": "node scripts/audit-repo-hygiene.mjs",
     "audit:repo-hygiene:write": "node scripts/audit-repo-hygiene.mjs --write",
     "release:web": "node scripts/prepare-web-release.mjs",
-    "audit:bible-browser-smoke": "node scripts/audit-bible-browser-smoke.mjs"
+    "audit:bible-browser-smoke": "node scripts/audit-bible-browser-smoke.mjs",
+    "start:spa": "node scripts/dev-spa-server.mjs"
   },
   "repository": {
     "type": "git",

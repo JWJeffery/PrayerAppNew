@@ -28,6 +28,10 @@ if (!index.includes('id="bible-browser-section"')) {
   fail("index.html is missing #bible-browser-section.");
 }
 
+if (!index.includes('id="bible-passage-summary"')) {
+  fail("index.html is missing Bible passage summary panel.");
+}
+
 if (!index.includes("js/bible-browser/reference-parser.js")) {
   fail("index.html is missing Bible reference parser script.");
 }
@@ -48,12 +52,24 @@ if (!browser.includes('const bookUrl = book.path.startsWith("/") ? book.path : `
   fail("Bible browser fetches Bible data without root-normalizing book.path.");
 }
 
+if (!browser.includes("requestedSegments")) {
+  fail("Bible browser does not preserve requested citation segment metadata.");
+}
+
+if (!browser.includes("bible-segment-block")) {
+  fail("Bible browser does not render visible segment blocks.");
+}
+
 if (!browser.includes("resolved.warnings")) {
   fail("Bible browser does not preserve invalid-reference warnings on resolved passages.");
 }
 
 if (!css.includes("#bible-browser-section")) {
   fail("Bible browser CSS is missing #bible-browser-section styling.");
+}
+
+if (!css.includes(".bible-passage-summary")) {
+  fail("Bible browser CSS is missing passage summary styling.");
 }
 
 const context = { window: {} };
@@ -100,4 +116,4 @@ if (failures.length) {
   process.exit(1);
 }
 
-console.log("PASS bible-browser smoke audit: route=/tools/bible reference=Hebrews 2:15-3:8; 4:16 guarded; invalid segment warnings guarded");
+console.log("PASS bible-browser smoke audit: route=/tools/bible segmented citation display guarded");
