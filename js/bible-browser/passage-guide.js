@@ -141,33 +141,38 @@
         return { results, unsupportedBooks };
     }
 
-    function renderWitnesses(results, ranges, unsupportedBooks = []) {
-        const output = $("bible-passage-guide-results");
-        const status = $("bible-passage-guide-status");
-        if (!output || !status) return;
-
+    function witnessStatusText(results, ranges, unsupportedBooks = []) {
         const rangeLabel = ranges.map(range => range.label).join("; ");
         const unsupported = unsupportedBooks.length
-            ? ` Runtime witness shard not yet built for: ${unsupportedBooks.join(", ")}.`
+            ? ` Commentary for ${unsupportedBooks.join(", ")} has not been added yet.`
             : "";
+        return `${results.length} Church Fathers commentar${results.length === 1 ? "y entry" : "y entries"} for ${rangeLabel}.${unsupported}`;
+    }
 
-        status.textContent = `${results.length} patristic witness${results.length === 1 ? "" : "es"} for ${rangeLabel}.${unsupported}`;
-
+    function buildWitnessesHtml(results) {
         if (!results.length) {
-            output.innerHTML = `<div class="bible-guide-empty">No patristic witnesses found in the current runtime slice.</div>`;
-            return;
+            return `<div class="bible-guide-empty">No Church Fathers commentary found in the current index.</div>`;
         }
 
         const limit = 50;
         const visible = results.slice(0, limit);
         const overflow = results.length > limit
-            ? `<div class="bible-guide-overflow">Showing first ${limit} of ${results.length}. Narrow the passage for a smaller witness set.</div>`
+            ? `<div class="bible-guide-overflow">Showing first ${limit} of ${results.length}. Select fewer verses for a shorter list.</div>`
             : "";
 
-        output.innerHTML = `
+        return `
             ${overflow}
             ${visible.map(entry => renderWitnessCard(entry)).join("")}
         `;
+    }
+
+    function renderWitnesses(results, ranges, unsupportedBooks = []) {
+        const output = $("bible-passage-guide-results");
+        const status = $("bible-passage-guide-status");
+        if (!output || !status) return;
+
+        status.textContent = witnessStatusText(results, ranges, unsupportedBooks);
+        output.innerHTML = buildWitnessesHtml(results);
     }
 
     function renderWitnessCard(entry) {
@@ -194,23 +199,46 @@
         `;
     }
 
-    async function loadFathersForRanges(ranges, sourceLabel = "selected passage") {
+    async function loadFathersForRanges(ranges, sourceLabel = "selected passage", options = {}) {
         const status = $("bible-passage-guide-status");
         const output = $("bible-passage-guide-results");
+        const targetElement = options.targetElement || null;
 
         if (!ranges?.length) {
-            if (status) status.textContent = "Open or select a passage before loading patristic witnesses.";
-            if (output) output.innerHTML = "";
-            return;
+            const message = "Open or select a passage before asking what the Fathers say.";
+            if (targetElement) targetElement.innerHTML = `<div class="bible-guide-empty">${escapeHtml(message)}</div>`;
+            if (status) status.textContent = message;
+            if (output && !targetElement) output.innerHTML = "";
+            return { results: [], unsupportedBooks: [] };
         }
 
         try {
-            if (status) status.textContent = `Loading patristic witnesses for ${sourceLabel}…`;
+            const loading = `Looking up Church Fathers commentary for ${sourceLabel}…`;
+            if (targetElement) targetElement.innerHTML = `<div class="bible-guide-empty">${escapeHtml(loading)}</div>`;
+            if (status) status.textContent = loading;
+
             const { results, unsupportedBooks } = await queryFathersForRanges(ranges);
-            renderWitnesses(results, ranges, unsupportedBooks);
+
+            if (targetElement) {
+                targetElement.innerHTML = `
+                    <div class="bible-context-result-status">${escapeHtml(witnessStatusText(results, ranges, unsupportedBooks))}</div>
+                    ${buildWitnessesHtml(results)}
+                `;
+            } else {
+                renderWitnesses(results, ranges, unsupportedBooks);
+            }
+
+            if (status) status.textContent = witnessStatusText(results, ranges, unsupportedBooks);
+            return { results, unsupportedBooks };
         } catch (error) {
-            if (status) status.textContent = error.message;
-            if (output) output.innerHTML = `<div class="bible-guide-error">${escapeHtml(error.message)}</div>`;
+            const message = error.message || "Unable to load Church Fathers commentary.";
+            if (status) status.textContent = message;
+            if (targetElement) {
+                targetElement.innerHTML = `<div class="bible-guide-error">${escapeHtml(message)}</div>`;
+            } else if (output) {
+                output.innerHTML = `<div class="bible-guide-error">${escapeHtml(message)}</div>`;
+            }
+            return { results: [], unsupportedBooks: [], error };
         }
     }
 

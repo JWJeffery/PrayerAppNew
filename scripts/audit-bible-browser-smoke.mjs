@@ -56,6 +56,18 @@ if (!index.includes('id="bible-fathers-selection-btn"')) {
   fail("index.html is missing selection-toolbar Fathers button.");
 }
 
+if (!index.includes('id="bible-context-panel"')) {
+  fail("index.html is missing contextual Bible panel.");
+}
+
+if (index.includes("Search Scope")) {
+  fail("index.html still uses scholar-facing Search Scope label.");
+}
+
+if (index.includes("Passage Guide")) {
+  fail("index.html still uses scholar-facing Passage Guide label.");
+}
+
 if (!index.includes('id="bible-passage-guide"')) {
   fail("index.html is missing Passage Guide panel.");
 }
@@ -142,6 +154,14 @@ if (!browser.includes("pendingPassageRanges")) {
 
 if (!browser.includes("loadFathersForSelection")) {
   fail("Bible browser does not support selected-passage Fathers lookup.");
+}
+
+if (!browser.includes("showContextPanel")) {
+  fail("Bible browser does not support contextual note/commentary panel.");
+}
+
+if (!browser.includes("All available Bible books")) {
+  fail("Bible browser still lacks lay-facing all-books search label.");
 }
 
 if (!browser.includes("parseSearchQuery")) {

@@ -130,6 +130,14 @@ if (!guide.includes("loadFathersForRanges")) {
   fail("Passage Guide script does not expose direct selected-range Fathers loading.");
 }
 
+if (!guide.includes("Church Fathers commentary")) {
+  fail("Passage Guide script still lacks lay-facing Church Fathers language.");
+}
+
+if (!guide.includes("targetElement")) {
+  fail("Passage Guide script does not support contextual rendering target.");
+}
+
 if (!guide.includes("locationStart <= range.endLocation")) {
   fail("Passage Guide script does not use overlap matching against selected range.");
 }

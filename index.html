@@ -551,9 +551,9 @@
                 <div class="bible-parallel-control-box">
                     <label class="bible-checkline" for="bible-parallel-toggle">
                         <input id="bible-parallel-toggle" type="checkbox">
-                        Parallel reader
+                        Show two translations
                     </label>
-                    <label for="bible-parallel-select">Compare With</label>
+                    <label for="bible-parallel-select">Compare with</label>
                     <select id="bible-parallel-select">
                         <option value="Rotherham">Rotherham</option>
                         <option value="NRSV">NRSV</option>
@@ -574,30 +574,30 @@
                     <button class="bible-tool-btn" id="bible-next-chapter" type="button">Next Chapter</button>
                 </div>
 
-                <label for="bible-search-input">Text Search</label>
+                <label for="bible-search-input">Search the Bible</label>
                 <input id="bible-search-input" type="text" placeholder="Search text…" autocomplete="off">
 
-                <label for="bible-search-scope">Search Scope</label>
+                <label for="bible-search-scope">Where to Search</label>
                 <select id="bible-search-scope"></select>
                 <div class="bible-button-row">
                     <button class="bible-tool-btn" id="bible-search-go" type="button">Search</button>
                 </div>
 
-                <label>Notes Backup</label>
+                <label>Save / Move Notes</label>
                 <div class="bible-button-row">
-                    <button class="bible-tool-btn" id="bible-export-annotations" type="button">Export Notes</button>
+                    <button class="bible-tool-btn" id="bible-export-annotations" type="button">Download Notes</button>
                     <label class="bible-tool-btn bible-import-label" for="bible-import-annotations">
-                        Import Notes
+                        Upload Notes
                         <input id="bible-import-annotations" type="file" accept="application/json">
                     </label>
                 </div>
 
-                <label>Passage Guide</label>
+                <label>Study Helps</label>
                 <div id="bible-passage-guide" class="bible-passage-guide">
                     <div class="bible-passage-guide-actions">
-                        <button class="bible-tool-btn" id="bible-guide-fathers-current" type="button">Fathers for Current Passage</button>
+                        <button class="bible-tool-btn" id="bible-guide-fathers-current" type="button">What the Fathers Say</button>
                     </div>
-                    <div id="bible-passage-guide-status" class="bible-passage-guide-status">Open a passage, then load patristic witnesses.</div>
+                    <div id="bible-passage-guide-status" class="bible-passage-guide-status">Open a passage, then ask what the Fathers say.</div>
                     <div id="bible-passage-guide-results" class="bible-passage-guide-results"></div>
                 </div>
 
@@ -630,8 +630,16 @@
 
     <div id="bible-selection-toolbar" aria-hidden="true">
         <button id="bible-highlight-btn" type="button">Highlight</button>
-        <button id="bible-comment-btn" type="button">Comment</button>
+        <button id="bible-comment-btn" type="button">Note</button>
         <button id="bible-fathers-selection-btn" type="button">Fathers</button>
+    </div>
+
+    <div id="bible-context-panel" class="bible-context-panel" hidden aria-live="polite">
+        <div class="bible-context-panel-head">
+            <div id="bible-context-panel-title" class="bible-context-panel-title">Study Help</div>
+            <button id="bible-context-panel-close" class="bible-context-panel-close" type="button" aria-label="Close">×</button>
+        </div>
+        <div id="bible-context-panel-body" class="bible-context-panel-body"></div>
     </div>
 </div>
 

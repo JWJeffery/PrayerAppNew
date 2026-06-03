@@ -13,6 +13,8 @@
     let parallelTranslation = "Rotherham";
     let pendingSelection = null;
     let pendingPassageRanges = [];
+    let pendingSelectionRect = null;
+    let lastContextAnchorRect = null;
     let activeAnnotationId = null;
 
     function $(id) {
@@ -657,7 +659,7 @@
 
         const corpora = Array.from(new Set(getBooks().map(book => book.corpus))).sort();
         select.innerHTML = [
-            `<option value="ALL">All corpora in browser registry</option>`,
+            `<option value="ALL">All available Bible books</option>`,
             ...corpora.map(corpus => `<option value="${escapeHtml(corpus)}">${escapeHtml(corpus)}</option>`),
             `<option value="BOOK">Selected book</option>`
         ].join("");
@@ -735,7 +737,7 @@
                 if (value) tokens.push({ type: "TERM", value, quoted: true });
 
                 if (!closed) {
-                    warnings.push("Search query has an unmatched quotation mark; treating the remaining text as a phrase.");
+                    warnings.push("Your search has an unmatched quotation mark; treating the rest as a phrase.");
                     cursor = source.length;
                 } else {
                     cursor = end + 1;
@@ -856,12 +858,12 @@
     }
 
     function describeSearchScope(scope, selectedBookKey = "") {
-        if (scope === "ALL") return "All corpora in browser registry";
+        if (scope === "ALL") return "All available Bible books";
         if (scope === "BOOK") {
             const book = getBook(selectedBookKey);
             return book ? `Selected book: ${book.name}` : "Selected book";
         }
-        return `Corpus: ${scope}`;
+        return `Section: ${scope}`;
     }
 
     function attachSearchMetadata(results, query, scope, selectedBookKey, capped = false, grammar = null) {
@@ -1021,24 +1023,36 @@
 
     function openAnnotationEditor(annotationId) {
         const annotation = loadAnnotations().find(item => item.id === annotationId);
-        const editor = $("bible-annotation-editor");
-        const label = $("bible-annotation-editor-label");
-        const comment = $("bible-annotation-comment");
-
-        if (!annotation || !editor || !comment) return;
+        if (!annotation) return;
 
         activeAnnotationId = annotationId;
-        if (label) {
-            label.textContent = `${getAnnotationReferenceLabel(annotation)} · ${annotation.selectedText || "Highlight"}`;
-        }
-        comment.value = annotation.comment || "";
-        editor.hidden = false;
-        comment.focus();
+        const label = `${getAnnotationReferenceLabel(annotation)} · ${annotation.selectedText || "Highlight"}`;
+        const anchorRect = lastContextAnchorRect || getAnnotationAnchorRect(annotation);
+
+        const body = showContextPanel({
+            title: "Add a note",
+            anchorRect,
+            html: `
+                <div class="bible-context-note-label">${escapeHtml(label)}</div>
+                <textarea id="bible-context-note-comment" class="bible-context-note-comment" rows="6" placeholder="Add or edit your note.">${escapeHtml(annotation.comment || "")}</textarea>
+                <div class="bible-context-actions">
+                    <button class="bible-tool-btn" id="bible-context-save-note" type="button">Save Note</button>
+                    <button class="bible-tool-btn" id="bible-context-delete-note" type="button">Delete</button>
+                    <button class="bible-tool-btn" id="bible-context-close-note" type="button">Close</button>
+                </div>
+            `
+        });
+
+        body?.querySelector("#bible-context-save-note")?.addEventListener("click", saveAnnotationEditor);
+        body?.querySelector("#bible-context-delete-note")?.addEventListener("click", deleteAnnotationEditor);
+        body?.querySelector("#bible-context-close-note")?.addEventListener("click", closeAnnotationEditor);
+        window.setTimeout(() => body?.querySelector("#bible-context-note-comment")?.focus(), 0);
     }
 
     function closeAnnotationEditor() {
         const editor = $("bible-annotation-editor");
         if (editor) editor.hidden = true;
+        closeContextPanel();
         activeAnnotationId = null;
     }
 
@@ -1054,7 +1068,7 @@
 
         annotations[idx] = {
             ...annotations[idx],
-            comment: $("bible-annotation-comment")?.value || "",
+            comment: $("bible-context-note-comment")?.value ?? $("bible-annotation-comment")?.value ?? "",
             updatedAt: new Date().toISOString()
         };
         saveAnnotations(annotations);
@@ -1075,11 +1089,109 @@
         renderResults(currentResolved);
     }
 
+    function storedRectFromDomRect(rect) {
+        if (!rect) return null;
+        return {
+            left: Number(rect.left),
+            right: Number(rect.right),
+            top: Number(rect.top),
+            bottom: Number(rect.bottom),
+            width: Number(rect.width),
+            height: Number(rect.height)
+        };
+    }
+
+    function positionContextPanel(anchorRect = lastContextAnchorRect) {
+        const panel = $("bible-context-panel");
+        if (!panel) return;
+
+        const margin = 12;
+        const gap = 10;
+        const viewportWidth = window.innerWidth || document.documentElement.clientWidth || 1024;
+        const viewportHeight = window.innerHeight || document.documentElement.clientHeight || 768;
+        const panelWidth = Math.min(440, Math.max(280, viewportWidth - (margin * 2)));
+
+        panel.style.width = `${panelWidth}px`;
+        panel.hidden = false;
+
+        const panelRect = panel.getBoundingClientRect();
+        const panelHeight = Math.min(panelRect.height || 320, viewportHeight - (margin * 2));
+        const anchor = anchorRect || {
+            left: viewportWidth / 2 - 40,
+            right: viewportWidth / 2 + 40,
+            top: viewportHeight / 2 - 20,
+            bottom: viewportHeight / 2 + 20,
+            width: 80,
+            height: 40
+        };
+
+        const canPlaceRight = anchor.right + gap + panelWidth <= viewportWidth - margin;
+        const canPlaceLeft = anchor.left - gap - panelWidth >= margin;
+        const canPlaceBelow = anchor.bottom + gap + panelHeight <= viewportHeight - margin;
+
+        let left;
+        let top;
+
+        if (canPlaceRight) {
+            left = anchor.right + gap;
+            top = Math.min(Math.max(margin, anchor.top), viewportHeight - panelHeight - margin);
+        } else if (canPlaceLeft) {
+            left = anchor.left - gap - panelWidth;
+            top = Math.min(Math.max(margin, anchor.top), viewportHeight - panelHeight - margin);
+        } else {
+            left = Math.min(Math.max(margin, anchor.left), viewportWidth - panelWidth - margin);
+            if (canPlaceBelow) {
+                top = anchor.bottom + gap;
+            } else {
+                top = Math.max(margin, anchor.top - gap - panelHeight);
+            }
+        }
+
+        panel.style.left = `${Math.round(left)}px`;
+        panel.style.top = `${Math.round(top)}px`;
+        panel.style.maxHeight = `${Math.max(240, viewportHeight - (margin * 2))}px`;
+    }
+
+    function showContextPanel({ title, html, anchorRect = lastContextAnchorRect }) {
+        const panel = $("bible-context-panel");
+        const titleEl = $("bible-context-panel-title");
+        const body = $("bible-context-panel-body");
+        if (!panel || !body) return null;
+
+        if (titleEl) titleEl.textContent = title || "Study Help";
+        body.innerHTML = html || "";
+        panel.hidden = false;
+        lastContextAnchorRect = anchorRect || lastContextAnchorRect;
+        window.requestAnimationFrame(() => positionContextPanel(lastContextAnchorRect));
+        return body;
+    }
+
+    function closeContextPanel() {
+        const panel = $("bible-context-panel");
+        const body = $("bible-context-panel-body");
+        if (body?.querySelector("#bible-context-note-comment")) {
+            activeAnnotationId = null;
+        }
+        if (body) body.innerHTML = "";
+        if (panel) panel.hidden = true;
+    }
+
+    function getAnnotationAnchorRect(annotation) {
+        const verse = Array.from(document.querySelectorAll(".bible-verse")).find(el =>
+            el.dataset.bookKey === annotation.bookKey &&
+            Number(el.dataset.chapter) === Number(annotation.chapter) &&
+            Number(el.dataset.verse) === Number(annotation.verse) &&
+            el.dataset.translation === annotation.translation
+        );
+        return storedRectFromDomRect(verse?.getBoundingClientRect?.());
+    }
+
     function hideSelectionToolbar() {
         const toolbar = $("bible-selection-toolbar");
         if (toolbar) toolbar.style.display = "none";
         pendingSelection = null;
         pendingPassageRanges = [];
+        pendingSelectionRect = null;
     }
 
     function encodeVerseLocation(chapter, verse) {
@@ -1235,6 +1347,9 @@
         }
 
         const rect = range.getBoundingClientRect();
+        pendingSelectionRect = storedRectFromDomRect(rect);
+        lastContextAnchorRect = pendingSelectionRect || lastContextAnchorRect;
+
         const toolbar = $("bible-selection-toolbar");
         if (toolbar) {
             setSelectionToolbarMode({ allowAnnotation });
@@ -1247,10 +1362,11 @@
     function addAnnotation(withComment) {
         if (!pendingSelection) {
             const status = $("bible-status");
-            if (status) status.textContent = "Highlight/comment currently supports one selected verse at a time.";
+            if (status) status.textContent = "Highlighting and notes currently work with one selected verse at a time.";
             return;
         }
 
+        const anchorRect = pendingSelectionRect || lastContextAnchorRect;
         const annotationId = `ann-${Date.now()}-${Math.random().toString(16).slice(2)}`;
         const annotations = loadAnnotations();
         annotations.push({
@@ -1261,6 +1377,7 @@
             updatedAt: new Date().toISOString()
         });
         saveAnnotations(annotations);
+        lastContextAnchorRect = anchorRect || lastContextAnchorRect;
         hideSelectionToolbar();
         window.getSelection()?.removeAllRanges();
         renderResults(currentResolved);
@@ -1278,29 +1395,39 @@
     async function loadFathersForSelection() {
         const status = $("bible-status");
         if (!pendingPassageRanges.length) {
-            if (status) status.textContent = "Select Bible text before searching the Fathers.";
+            if (status) status.textContent = "Select Bible text before asking what the Fathers say.";
             return;
         }
 
         const ranges = pendingPassageRanges.slice();
+        const anchorRect = pendingSelectionRect || lastContextAnchorRect;
+        lastContextAnchorRect = anchorRect || lastContextAnchorRect;
+
         hideSelectionToolbar();
         window.getSelection()?.removeAllRanges();
 
         if (!window.UniversalOfficePassageGuide?.loadFathersForRanges) {
-            if (status) status.textContent = "Passage Guide is not available yet.";
+            if (status) status.textContent = "Study Helps are not available yet.";
             return;
         }
 
-        if (status) status.textContent = `Searching Fathers for ${ranges.map(range => range.label).join("; ")}…`;
-        await window.UniversalOfficePassageGuide.loadFathersForRanges(ranges, "selected passage");
-        if (status) status.textContent = `Loaded Fathers for ${ranges.map(range => range.label).join("; ")}.`;
+        const label = ranges.map(range => range.label).join("; ");
+        const body = showContextPanel({
+            title: "What the Fathers Say",
+            anchorRect,
+            html: `<div class="bible-guide-empty">Looking up Church Fathers commentary for ${escapeHtml(label)}…</div>`
+        });
+
+        if (status) status.textContent = `Looking up Church Fathers commentary for ${label}…`;
+        await window.UniversalOfficePassageGuide.loadFathersForRanges(ranges, "selected passage", { targetElement: body });
+        if (status) status.textContent = `Loaded Church Fathers commentary for ${label}.`;
     }
 
     async function searchBible() {
         const query = $("bible-search-input")?.value?.trim() || "";
         const status = $("bible-status");
         if (!query) {
-            if (status) status.textContent = "Enter search text.";
+            if (status) status.textContent = "Enter words to search for."; 
             return;
         }
 
@@ -1313,7 +1440,7 @@
         });
 
         if (!books.length) {
-            if (status) status.textContent = "No books match the selected search scope.";
+            if (status) status.textContent = "No books match where you chose to search.";
             const empty = attachSearchMetadata([], query, scope, selectedBook, false);
             renderResults(empty);
             return;
@@ -1476,6 +1603,7 @@
         $("bible-save-annotation")?.addEventListener("click", saveAnnotationEditor);
         $("bible-delete-annotation")?.addEventListener("click", deleteAnnotationEditor);
         $("bible-close-annotation")?.addEventListener("click", closeAnnotationEditor);
+        $("bible-context-panel-close")?.addEventListener("click", closeContextPanel);
 
         $("bible-results")?.addEventListener("scroll", () => saveLastState());
         document.addEventListener("mouseup", () => setTimeout(handleSelection, 0));
@@ -1553,6 +1681,8 @@
         getPendingPassageRanges() {
             return pendingPassageRanges || [];
         },
+        openContextPanel: showContextPanel,
+        closeContextPanel,
         loadFathersForSelection,
         setParallelReader(enabled, translation = parallelTranslation) {
             parallelEnabled = Boolean(enabled);
