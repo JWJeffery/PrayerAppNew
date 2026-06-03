@@ -1,13 +1,13 @@
 {
   "schema": "repo-hygiene-audit-v1",
-  "generatedAt": "2026-06-03T01:15:04.024Z",
+  "generatedAt": "2026-06-03T01:16:29.591Z",
   "status": "PASS",
   "summary": {
-    "totalBytes": 32650338,
-    "totalMB": 31.14,
+    "totalBytes": 32624270,
+    "totalMB": 31.11,
     "fileCount": 342,
     "failCount": 0,
-    "warnCount": 1,
+    "warnCount": 0,
     "infoCount": 5
   },
   "sizeProfile": {
@@ -28,7 +28,7 @@
     {
       "dir": "data",
       "bytes": 18132144,
-      "pct": 55.5
+      "pct": 55.6
     },
     {
       "dir": "images",
@@ -42,7 +42,7 @@
     },
     {
       "dir": "documentation",
-      "bytes": 1195046,
+      "bytes": 1199265,
       "pct": 3.7
     },
     {
@@ -110,12 +110,6 @@
   ],
   "findings": [
     {
-      "severity": "WARN",
-      "code": "patch_script",
-      "file": "patch_repo_hygiene_dashboard.py",
-      "note": "patch_*.py script tracked. Review if still needed."
-    },
-    {
       "severity": "INFO",
       "code": "legacy_timestamp_archive_indexed",
       "file": "documentation/structure-archive 6.49.40 PM.json",
@@ -164,7 +158,7 @@
     },
     {
       "label": "Total Size",
-      "value": "31.14 MB"
+      "value": "31.11 MB"
     },
     {
       "label": "FAIL",
@@ -172,7 +166,7 @@
     },
     {
       "label": "WARN",
-      "value": "1"
+      "value": "0"
     },
     {
       "label": "INFO",
