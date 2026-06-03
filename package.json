@@ -14,7 +14,8 @@
     "audit:rotherham-psalms": "node scripts/audit-rotherham-psalms.mjs",
     "audit:repo-hygiene": "node scripts/audit-repo-hygiene.mjs",
     "audit:repo-hygiene:write": "node scripts/audit-repo-hygiene.mjs --write",
-    "release:web": "node scripts/prepare-web-release.mjs"
+    "release:web": "node scripts/prepare-web-release.mjs",
+    "audit:bible-browser-smoke": "node scripts/audit-bible-browser-smoke.mjs"
   },
   "repository": {
     "type": "git",

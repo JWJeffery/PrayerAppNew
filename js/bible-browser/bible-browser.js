@@ -94,6 +94,7 @@
 
     async function resolveReference(parsed) {
         const resolved = [];
+        const warnings = [];
 
         for (const ref of parsed.references) {
             const book = getBook(ref.bookKey);
@@ -106,9 +107,14 @@
                 throw new Error(`Reference ends before it starts: ${book.name} ${ref.raw}`);
             }
 
+            let segmentResolved = 0;
+
             for (let ch = ref.startChapter; ch <= ref.endChapter; ch++) {
                 const chapter = chapters.get(ch);
-                if (!chapter) throw new Error(`${book.name} ${ch} does not exist in the loaded corpus.`);
+                if (!chapter) {
+                    warnings.push(`${book.name} ${ch} does not exist in the loaded corpus.`);
+                    continue;
+                }
 
                 const verses = chapter.verses || [];
                 const vmap = verseMap(chapter);
@@ -135,7 +141,11 @@
 
                 for (let v = startVerse; v <= endVerse; v++) {
                     const verse = vmap.get(v);
-                    if (!verse) continue;
+                    if (!verse) {
+                        warnings.push(`${book.name} ${ch}:${v} does not exist in the loaded corpus.`);
+                        continue;
+                    }
+
                     resolved.push({
                         bookKey: ref.bookKey,
                         bookName: bookData?.meta?.name || book.name,
@@ -145,11 +155,20 @@
                         verseData: verse,
                         bookData
                     });
+                    segmentResolved += 1;
                 }
+            }
+
+            if (segmentResolved === 0) {
+                warnings.push(`${book.name} ${ref.raw} resolved no verses.`);
             }
         }
 
-        if (!resolved.length) throw new Error("Reference parsed, but no verses were resolved.");
+        if (!resolved.length) {
+            throw new Error(warnings[0] || "Reference parsed, but no verses were resolved.");
+        }
+
+        resolved.warnings = Array.from(new Set(warnings));
         return resolved;
     }
 
@@ -306,7 +325,12 @@
             await syncTranslationSelect(resolved);
             renderResults(resolved, options);
             saveLastState({ citation: input.value });
-            if (status) status.textContent = `${resolved.length} verse${resolved.length === 1 ? "" : "s"} resolved.`;
+            if (status) {
+                const warningText = resolved.warnings?.length
+                    ? ` Warning: ${resolved.warnings.slice(0, 3).join(" ")}`
+                    : "";
+                status.textContent = `${resolved.length} verse${resolved.length === 1 ? "" : "s"} resolved.${warningText}`;
+            }
             history.replaceState(null, "", "/tools/bible");
         } catch (error) {
             if (status) status.textContent = error.message;
