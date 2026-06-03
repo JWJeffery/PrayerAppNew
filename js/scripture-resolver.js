@@ -265,3 +265,144 @@ async function resolveScripturePericope(refOrSegments, options = {}) {
 }
 
 window.resolveScripturePericope = resolveScripturePericope;
+
+// BEGIN ROTHERHAM TRANSLATION OVERLAY SUPPORT
+(function installRotherhamTranslationOverlaySupport() {
+  if (typeof getScriptureText !== 'function') {
+    return;
+  }
+
+  const originalGetScriptureTextForRotherhamOverlay = getScriptureText;
+  const rotherhamOverlayBookCache = new Map();
+
+  const rotherhamOverlayBookFiles = {
+    'matthew': 'data/bible/NT/matthew.json',
+    'matt': 'data/bible/NT/matthew.json',
+    'mt': 'data/bible/NT/matthew.json',
+    'mark': 'data/bible/NT/mark.json',
+    'mk': 'data/bible/NT/mark.json',
+    'luke': 'data/bible/NT/luke.json',
+    'lk': 'data/bible/NT/luke.json',
+    'john': 'data/bible/NT/john.json',
+    'jn': 'data/bible/NT/john.json',
+    'acts': 'data/bible/NT/acts.json',
+    'romans': 'data/bible/NT/romans.json',
+    'rom': 'data/bible/NT/romans.json',
+    'ii corinthians': 'data/bible/NT/2corinthians.json',
+    '2 corinthians': 'data/bible/NT/2corinthians.json',
+    'second corinthians': 'data/bible/NT/2corinthians.json',
+    '2corinthians': 'data/bible/NT/2corinthians.json',
+    'james': 'data/bible/NT/james.json',
+    'jas': 'data/bible/NT/james.json',
+    'iii john': 'data/bible/NT/3john.json',
+    '3 john': 'data/bible/NT/3john.json',
+    'third john': 'data/bible/NT/3john.json',
+    '3john': 'data/bible/NT/3john.json',
+    'revelation': 'data/bible/NT/revelation.json',
+    'revelation of john': 'data/bible/NT/revelation.json',
+    'rev': 'data/bible/NT/revelation.json',
+    'apocalypse': 'data/bible/NT/revelation.json'
+  };
+
+  function normalizeRotherhamOverlayBookName(value) {
+    return String(value || '')
+      .trim()
+      .replace(/\./g, '')
+      .replace(/\s+/g, ' ')
+      .toLowerCase();
+  }
+
+  function parseRotherhamOverlayReference(reference) {
+    const match = String(reference || '').trim().match(/^(.+?)\s+(\d+):(\d+)(?:\s*[-–]\s*(\d+))?$/);
+    if (!match) {
+      return null;
+    }
+
+    const path = rotherhamOverlayBookFiles[normalizeRotherhamOverlayBookName(match[1])];
+    if (!path) {
+      return null;
+    }
+
+    const chapter = Number.parseInt(match[2], 10);
+    const startVerse = Number.parseInt(match[3], 10);
+    const endVerse = match[4] ? Number.parseInt(match[4], 10) : startVerse;
+
+    if (!Number.isInteger(chapter) || !Number.isInteger(startVerse) || !Number.isInteger(endVerse) || endVerse < startVerse) {
+      return null;
+    }
+
+    return { path, chapter, startVerse, endVerse };
+  }
+
+  async function loadRotherhamOverlayBook(path) {
+    if (!rotherhamOverlayBookCache.has(path)) {
+      rotherhamOverlayBookCache.set(path, fetch(path).then(response => {
+        if (response && response.ok === false) {
+          throw new Error(`Unable to load Bible book for Rotherham overlay: ${path}`);
+        }
+        return response.json();
+      }));
+    }
+    return rotherhamOverlayBookCache.get(path);
+  }
+
+  function getRotherhamOverlayText(book, chapterNum, verseNum) {
+    const chapter = Array.isArray(book.chapters)
+      ? book.chapters.find(candidate => candidate && candidate.num === chapterNum)
+      : null;
+
+    const overlay = book.translationOverlays
+      && book.translationOverlays.Rotherham
+      && book.translationOverlays.Rotherham[String(chapterNum)];
+
+    if (overlay && typeof overlay[String(verseNum)] === 'string' && overlay[String(verseNum)].trim()) {
+      return overlay[String(verseNum)];
+    }
+
+    if (chapter) {
+      const verse = Array.isArray(chapter.verses)
+        ? chapter.verses.find(candidate => candidate && candidate.num === verseNum)
+        : null;
+
+      if (verse && verse.text && typeof verse.text === 'object' && typeof verse.text.Rotherham === 'string' && verse.text.Rotherham.trim()) {
+        return verse.text.Rotherham;
+      }
+    }
+
+    return null;
+  }
+
+  async function resolveRotherhamOverlayReference(reference) {
+    const parsed = parseRotherhamOverlayReference(reference);
+    if (!parsed) {
+      return null;
+    }
+
+    const book = await loadRotherhamOverlayBook(parsed.path);
+    const pieces = [];
+
+    for (let verseNum = parsed.startVerse; verseNum <= parsed.endVerse; verseNum += 1) {
+      const text = getRotherhamOverlayText(book, parsed.chapter, verseNum);
+      if (!text) {
+        return null;
+      }
+
+      pieces.push(parsed.startVerse === parsed.endVerse ? text : `${verseNum} ${text}`);
+    }
+
+    return pieces.join('\n');
+  }
+
+  getScriptureText = async function getScriptureTextWithRotherhamOverlay(reference, options = {}) {
+    const requestedTranslation = options && options.translation;
+    if (requestedTranslation === 'Rotherham') {
+      const overlayResult = await resolveRotherhamOverlayReference(reference);
+      if (overlayResult) {
+        return overlayResult;
+      }
+    }
+
+    return originalGetScriptureTextForRotherhamOverlay.apply(this, arguments);
+  };
+})();
+// END ROTHERHAM TRANSLATION OVERLAY SUPPORT

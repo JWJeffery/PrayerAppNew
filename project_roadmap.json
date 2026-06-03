@@ -2198,7 +2198,7 @@
   "side_projects": {
     "rotherham_bible_translation": {
       "date": "2026-06-02",
-      "status": "nt_versification_map_recorded_import_pending",
+      "status": "nt_overlay_import_applied",
       "notPushedAside": true,
       "sourceRecord": "structure.side_projects.rotherham_bible_translation",
       "summary": "Rotherham remains active as a downtime side project. Implementation waits for Bible corpus structural repair and multi-translation Bible-book schema decision.",
@@ -2209,7 +2209,7 @@
       "sourceWitnessRecord": "documentation/rotherham-source-witness-intake.json",
       "sourceUrl": "https://raw.githubusercontent.com/scrollmapper/bible_databases/2025/formats/json/Rotherham.json",
       "sourceSha256": "d63488b149aadf4430fea6ddbc7c07395a12321a1b58799ce2dcb384ebf97627",
-      "nextStep": "Implement Rotherham NT overlay importer and resolver support.",
+      "nextStep": "Handle Psalms separately or return to paused C03.",
       "pilotBook": "Joshua",
       "pilotFile": "data/bible/OT/joshua.json",
       "importedVerseCount": 10460,
@@ -2261,7 +2261,25 @@
         "III John",
         "Revelation of John"
       ],
-      "ntMismatchChapterCount": 20
+      "ntMismatchChapterCount": 20,
+      "ntOverlayImport": {
+        "importedBooks": [
+          "Matthew",
+          "Mark",
+          "Luke",
+          "John",
+          "Acts",
+          "Romans",
+          "II Corinthians",
+          "James",
+          "III John",
+          "Revelation of John"
+        ],
+        "directVerseCount": 5321,
+        "overlayVerseCount": 665,
+        "totalRotherhamVerseCount": 5986,
+        "skippedEmptySourceRows": 16
+      }
     }
   },
   "paused_tranches": {
@@ -2277,10 +2295,10 @@
   },
   "current_navigation_state": {
     "date": "2026-06-02",
-    "primaryImmediateWork": "Implement Rotherham NT overlay importer and resolver support, handle Psalms, or return to paused C03",
-    "bibleCorpusState": "Structural audit passes; OT non-Psalms completeness audit passes; NT Rotherham versification map recorded.",
-    "resolverState": "translation-compatible for verse-object translations; overlay support still pending for NT mismatch chapters.",
-    "activeSideProject": "Rotherham current coverage recorded; NT versification map recorded; NT overlay import pending.",
+    "primaryImmediateWork": "Handle Psalms as consolidated-psalter lane or return to paused C03",
+    "bibleCorpusState": "Structural audit passes; OT non-Psalms completeness audit passes; Rotherham NT blocker books imported using direct verse objects plus translation overlays for mismatch chapters; empty Rotherham source rows governed as omissions.",
+    "resolverState": "translation-compatible with scalar/object verse text and Rotherham NT translation overlays",
+    "activeSideProject": "Rotherham imported for ordinary source-scope books except Psalms consolidated-psalter lane.",
     "pausedTranche": "OOR-C03-ordinary-psalmody-appointment-map",
     "c03ReturnPoint": "Map the 10 source-backed ordinary psalmody appointments into the private Grail appointment map, then decide how to acquire the 18 missing appointments without fabrication."
   },

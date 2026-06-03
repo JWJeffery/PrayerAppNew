@@ -1,7 +1,7 @@
 {
   "schema": "prayerappnew_rotherham_nt_versification_map_v1",
   "date": "2026-06-02",
-  "status": "recorded_nt_versification_map_import_not_yet_applied",
+  "status": "nt_overlay_import_applied",
   "sourceWitness": {
     "translationKey": "Rotherham",
     "sourceUrl": "https://raw.githubusercontent.com/scrollmapper/bible_databases/2025/formats/json/Rotherham.json",
@@ -2537,5 +2537,308 @@
       "order": 3,
       "title": "Add resolver smoke tests for omitted/source-only and target-only NT cases"
     }
-  ]
+  ],
+  "importResult": {
+    "date": "2026-06-02",
+    "status": "nt_overlay_import_applied",
+    "translationKey": "Rotherham",
+    "importedBooks": [
+      "Matthew",
+      "Mark",
+      "Luke",
+      "John",
+      "Acts",
+      "Romans",
+      "II Corinthians",
+      "James",
+      "III John",
+      "Revelation of John"
+    ],
+    "bookStats": {
+      "Matthew": {
+        "sourceBook": "Matthew",
+        "target": "data/bible/NT/matthew.json",
+        "directVerseCount": 970,
+        "overlayVerseCount": 98,
+        "totalRotherhamVerseCount": 1068,
+        "migratedScalarNRSVVerseCount": 970,
+        "addedToExistingObjectVerseCount": 0,
+        "skippedEmptySourceRows": 3,
+        "emptySourceReferences": [
+          "Matthew 17:21",
+          "Matthew 18:11",
+          "Matthew 23:13"
+        ],
+        "yahwehCount": 0,
+        "jehovahCount": 0,
+        "mismatchChapters": [
+          17,
+          18,
+          23
+        ],
+        "verification": {
+          "verified": 1068,
+          "direct": 970,
+          "overlay": 98,
+          "skippedEmptySourceRows": 3
+        }
+      },
+      "Mark": {
+        "sourceBook": "Mark",
+        "target": "data/bible/NT/mark.json",
+        "directVerseCount": 511,
+        "overlayVerseCount": 162,
+        "totalRotherhamVerseCount": 673,
+        "migratedScalarNRSVVerseCount": 511,
+        "addedToExistingObjectVerseCount": 0,
+        "skippedEmptySourceRows": 5,
+        "emptySourceReferences": [
+          "Mark 7:16",
+          "Mark 9:44",
+          "Mark 9:46",
+          "Mark 11:26",
+          "Mark 15:28"
+        ],
+        "yahwehCount": 0,
+        "jehovahCount": 0,
+        "mismatchChapters": [
+          7,
+          9,
+          11,
+          15
+        ],
+        "verification": {
+          "verified": 673,
+          "direct": 511,
+          "overlay": 162,
+          "skippedEmptySourceRows": 5
+        }
+      },
+      "Luke": {
+        "sourceBook": "Luke",
+        "target": "data/bible/NT/luke.json",
+        "directVerseCount": 1058,
+        "overlayVerseCount": 91,
+        "totalRotherhamVerseCount": 1149,
+        "migratedScalarNRSVVerseCount": 1058,
+        "addedToExistingObjectVerseCount": 0,
+        "skippedEmptySourceRows": 2,
+        "emptySourceReferences": [
+          "Luke 17:36",
+          "Luke 23:17"
+        ],
+        "yahwehCount": 0,
+        "jehovahCount": 0,
+        "mismatchChapters": [
+          17,
+          23
+        ],
+        "verification": {
+          "verified": 1149,
+          "direct": 1058,
+          "overlay": 91,
+          "skippedEmptySourceRows": 2
+        }
+      },
+      "John": {
+        "sourceBook": "John",
+        "target": "data/bible/NT/john.json",
+        "directVerseCount": 832,
+        "overlayVerseCount": 46,
+        "totalRotherhamVerseCount": 878,
+        "migratedScalarNRSVVerseCount": 832,
+        "addedToExistingObjectVerseCount": 0,
+        "skippedEmptySourceRows": 1,
+        "emptySourceReferences": [
+          "John 5:4"
+        ],
+        "yahwehCount": 0,
+        "jehovahCount": 0,
+        "mismatchChapters": [
+          5
+        ],
+        "verification": {
+          "verified": 878,
+          "direct": 832,
+          "overlay": 46,
+          "skippedEmptySourceRows": 1
+        }
+      },
+      "Acts": {
+        "sourceBook": "Acts",
+        "target": "data/bible/NT/acts.json",
+        "directVerseCount": 833,
+        "overlayVerseCount": 170,
+        "totalRotherhamVerseCount": 1003,
+        "migratedScalarNRSVVerseCount": 833,
+        "addedToExistingObjectVerseCount": 0,
+        "skippedEmptySourceRows": 4,
+        "emptySourceReferences": [
+          "Acts 8:37",
+          "Acts 15:34",
+          "Acts 24:7",
+          "Acts 28:29"
+        ],
+        "yahwehCount": 0,
+        "jehovahCount": 0,
+        "mismatchChapters": [
+          8,
+          15,
+          23,
+          24,
+          28
+        ],
+        "verification": {
+          "verified": 1003,
+          "direct": 833,
+          "overlay": 170,
+          "skippedEmptySourceRows": 4
+        }
+      },
+      "Romans": {
+        "sourceBook": "Romans",
+        "target": "data/bible/NT/romans.json",
+        "directVerseCount": 406,
+        "overlayVerseCount": 26,
+        "totalRotherhamVerseCount": 432,
+        "migratedScalarNRSVVerseCount": 406,
+        "addedToExistingObjectVerseCount": 0,
+        "skippedEmptySourceRows": 1,
+        "emptySourceReferences": [
+          "Romans 16:24"
+        ],
+        "yahwehCount": 0,
+        "jehovahCount": 0,
+        "mismatchChapters": [
+          16
+        ],
+        "verification": {
+          "verified": 432,
+          "direct": 406,
+          "overlay": 26,
+          "skippedEmptySourceRows": 1
+        }
+      },
+      "II Corinthians": {
+        "sourceBook": "II Corinthians",
+        "target": "data/bible/NT/2corinthians.json",
+        "directVerseCount": 243,
+        "overlayVerseCount": 14,
+        "totalRotherhamVerseCount": 257,
+        "migratedScalarNRSVVerseCount": 243,
+        "addedToExistingObjectVerseCount": 0,
+        "skippedEmptySourceRows": 0,
+        "emptySourceReferences": [],
+        "yahwehCount": 0,
+        "jehovahCount": 0,
+        "mismatchChapters": [
+          13
+        ],
+        "verification": {
+          "verified": 257,
+          "direct": 243,
+          "overlay": 14,
+          "skippedEmptySourceRows": 0
+        }
+      },
+      "James": {
+        "sourceBook": "James",
+        "target": "data/bible/NT/james.json",
+        "directVerseCount": 81,
+        "overlayVerseCount": 27,
+        "totalRotherhamVerseCount": 108,
+        "migratedScalarNRSVVerseCount": 81,
+        "addedToExistingObjectVerseCount": 0,
+        "skippedEmptySourceRows": 0,
+        "emptySourceReferences": [],
+        "yahwehCount": 0,
+        "jehovahCount": 0,
+        "mismatchChapters": [
+          1
+        ],
+        "verification": {
+          "verified": 108,
+          "direct": 81,
+          "overlay": 27,
+          "skippedEmptySourceRows": 0
+        }
+      },
+      "III John": {
+        "sourceBook": "III John",
+        "target": "data/bible/NT/3john.json",
+        "directVerseCount": 0,
+        "overlayVerseCount": 14,
+        "totalRotherhamVerseCount": 14,
+        "migratedScalarNRSVVerseCount": 0,
+        "addedToExistingObjectVerseCount": 0,
+        "skippedEmptySourceRows": 0,
+        "emptySourceReferences": [],
+        "yahwehCount": 0,
+        "jehovahCount": 0,
+        "mismatchChapters": [
+          1
+        ],
+        "verification": {
+          "verified": 14,
+          "direct": 0,
+          "overlay": 14,
+          "skippedEmptySourceRows": 0
+        }
+      },
+      "Revelation of John": {
+        "sourceBook": "Revelation of John",
+        "target": "data/bible/NT/revelation.json",
+        "directVerseCount": 387,
+        "overlayVerseCount": 17,
+        "totalRotherhamVerseCount": 404,
+        "migratedScalarNRSVVerseCount": 387,
+        "addedToExistingObjectVerseCount": 0,
+        "skippedEmptySourceRows": 0,
+        "emptySourceReferences": [],
+        "yahwehCount": 0,
+        "jehovahCount": 0,
+        "mismatchChapters": [
+          12
+        ],
+        "verification": {
+          "verified": 404,
+          "direct": 387,
+          "overlay": 17,
+          "skippedEmptySourceRows": 0
+        }
+      }
+    },
+    "directVerseCount": 5321,
+    "overlayVerseCount": 665,
+    "totalRotherhamVerseCount": 5986,
+    "migratedScalarNRSVVerseCount": 5321,
+    "yahwehCount": 0,
+    "jehovahCount": 0,
+    "skippedEmptySourceRows": 16,
+    "emptySourceReferences": [
+      "Matthew 17:21",
+      "Matthew 18:11",
+      "Matthew 23:13",
+      "Mark 7:16",
+      "Mark 9:44",
+      "Mark 9:46",
+      "Mark 11:26",
+      "Mark 15:28",
+      "Luke 17:36",
+      "Luke 23:17",
+      "John 5:4",
+      "Acts 8:37",
+      "Acts 15:34",
+      "Acts 24:7",
+      "Acts 28:29",
+      "Romans 16:24"
+    ],
+    "resolverOverlaySupportInstalled": true,
+    "resolverSmoke": {
+      "directCase": "Matthew 1:1",
+      "overlayCase": "Matthew 17:1"
+    },
+    "targetSequencePolicy": "NRSV target verse sequences unchanged; Rotherham mismatch chapters stored in translationOverlays.Rotherham",
+    "emptySourceRowsPolicy": "empty Rotherham source rows treated as governed omissions and not imported as blank text"
+  }
 }

@@ -3,140 +3,771 @@
     "name": "James",
     "id": "JAS",
     "version": "NRSV",
-    "copyright": "New Revised Standard Version Bible, copyright © 1989 National Council of the Churches of Christ in the United States of America. Used by permission. All rights reserved worldwide."
+    "copyright": "New Revised Standard Version Bible, copyright © 1989 National Council of the Churches of Christ in the United States of America. Used by permission. All rights reserved worldwide.",
+    "canon": "NT",
+    "defaultTranslation": "NRSV",
+    "versification": "target_existing_nt_sequence_with_rotherham_overlays_for_mismatch_chapters",
+    "translations": {
+      "NRSV": {
+        "label": "New Revised Standard Version",
+        "sourceType": "existing_corpus",
+        "sourceGovernance": "existing target corpus",
+        "copyright": "New Revised Standard Version Bible, copyright © 1989 National Council of the Churches of Christ in the United States of America. Used by permission. All rights reserved worldwide."
+      },
+      "Rotherham": {
+        "label": "The Emphasised Bible",
+        "sourceType": "scrollmapper_bible_databases_2025_formats_json_source_witness",
+        "sourceSha256": "d63488b149aadf4430fea6ddbc7c07395a12321a1b58799ce2dcb384ebf97627",
+        "ntVersificationMap": "documentation/rotherham-nt-versification-map.json",
+        "overlayPolicy": "mismatch chapters stored under translationOverlays.Rotherham without altering target verse sequence",
+        "emptySourceRowsPolicy": "empty Rotherham source rows are governed omissions and are not imported as blank text"
+      }
+    },
+    "rotherhamImportStatus": {
+      "date": "2026-06-02",
+      "sourceBook": "James",
+      "mode": "direct_aligned_chapters_plus_overlay_mismatch_chapters",
+      "directVerseCount": 81,
+      "overlayVerseCount": 27,
+      "migratedScalarNRSVVerseCount": 81,
+      "addedToExistingObjectVerseCount": 0,
+      "skippedEmptySourceRows": 0,
+      "emptySourceReferences": [],
+      "mismatchChapters": [
+        1
+      ]
+    }
   },
   "chapters": [
     {
       "num": 1,
       "verses": [
-        { "num": 1, "text": "James, a servant of God and of the Lord Jesus Christ, To the twelve tribes in the Dispersion: Greetings." },
-        { "num": 2, "text": "My brothers and sisters, whenever you face trials of any kind, consider it nothing but joy," },
-        { "num": 3, "text": "because you know that the testing of your faith produces endurance;" },
-        { "num": 4, "text": "and let endurance have its full effect, so that you may be mature and complete, lacking in nothing." },
-        { "num": 5, "text": "If any of you is lacking in wisdom, ask God, who gives to all generously and ungrudgingly, and it will be given you." },
-        { "num": 6, "text": "But ask in faith, never doubting, for the one who doubts is like a wave of the sea, driven and tossed by the wind;" },
-        { "num": 7, "text": "for the person, being double-minded and unstable in every way, must not expect to receive anything from the Lord." },
-        { "num": 9, "text": "Let the believer who is lowly boast in being raised up," },
-        { "num": 10, "text": "and the rich in being brought low, because the rich will disappear like a flower in the field." },
-        { "num": 11, "text": "For the sun rises with its scorching heat and withers the field; its flower falls, and its beauty perishes. It is the same way with the rich; in the midst of a busy life, they will wither away." },
-        { "num": 12, "text": "Blessed is anyone who endures temptation. Such a one has stood the test and will receive the crown of life that the Lord has promised to those who love him." },
-        { "num": 13, "text": "No one, when tempted, should say, “I am being tempted by God”; for God cannot be tempted by evil and he himself tempts no one." },
-        { "num": 14, "text": "But one is tempted by one’s own desire, being lured and enticed by it;" },
-        { "num": 15, "text": "then, when desire has conceived, it gives birth to sin, and that sin, when it is fully grown, gives birth to death." },
-        { "num": 16, "text": "Do not be deceived, my beloved brothers and sisters." },
-        { "num": 17, "text": "Every generous act of giving, with every perfect gift, is from above, coming down from the Father of lights, with whom there is no variation or shadow due to change." },
-        { "num": 18, "text": "In fulfillment of his own purpose he gave us birth by the word of truth, so that we would become a kind of first fruits of his creatures." },
-        { "num": 19, "text": "You must understand this, my beloved: let everyone be quick to listen, slow to speak, slow to anger;" },
-        { "num": 20, "text": "for your anger does not produce God’s righteousness." },
-        { "num": 21, "text": "Therefore rid yourselves of all sordidness and rank growth of wickedness, and welcome with meekness the implanted word that has the power to save your souls." },
-        { "num": 22, "text": "But be doers of the word, and not merely hearers who deceive themselves." },
-        { "num": 23, "text": "For if any are hearers of the word and not doers, they are like those who look at themselves in a mirror;" },
-        { "num": 24, "text": "for they look at themselves and, on going away, immediately forget what they were like." },
-        { "num": 25, "text": "But those who look into the perfect law, the law of liberty, and persevere, being not hearers who forget but doers who act—they will be blessed in their doing." },
-        { "num": 26, "text": "If any think they are religious, and do not bridle their tongues but deceive their hearts, their religion is worthless." },
-        { "num": 27, "text": "Religion that is pure and undefiled before God, the Father, is this: to care for orphans and widows in their distress, and to keep oneself unstained by the world." }
+        {
+          "num": 1,
+          "text": "James, a servant of God and of the Lord Jesus Christ, To the twelve tribes in the Dispersion: Greetings."
+        },
+        {
+          "num": 2,
+          "text": "My brothers and sisters, whenever you face trials of any kind, consider it nothing but joy,"
+        },
+        {
+          "num": 3,
+          "text": "because you know that the testing of your faith produces endurance;"
+        },
+        {
+          "num": 4,
+          "text": "and let endurance have its full effect, so that you may be mature and complete, lacking in nothing."
+        },
+        {
+          "num": 5,
+          "text": "If any of you is lacking in wisdom, ask God, who gives to all generously and ungrudgingly, and it will be given you."
+        },
+        {
+          "num": 6,
+          "text": "But ask in faith, never doubting, for the one who doubts is like a wave of the sea, driven and tossed by the wind;"
+        },
+        {
+          "num": 7,
+          "text": "for the person, being double-minded and unstable in every way, must not expect to receive anything from the Lord."
+        },
+        {
+          "num": 9,
+          "text": "Let the believer who is lowly boast in being raised up,"
+        },
+        {
+          "num": 10,
+          "text": "and the rich in being brought low, because the rich will disappear like a flower in the field."
+        },
+        {
+          "num": 11,
+          "text": "For the sun rises with its scorching heat and withers the field; its flower falls, and its beauty perishes. It is the same way with the rich; in the midst of a busy life, they will wither away."
+        },
+        {
+          "num": 12,
+          "text": "Blessed is anyone who endures temptation. Such a one has stood the test and will receive the crown of life that the Lord has promised to those who love him."
+        },
+        {
+          "num": 13,
+          "text": "No one, when tempted, should say, “I am being tempted by God”; for God cannot be tempted by evil and he himself tempts no one."
+        },
+        {
+          "num": 14,
+          "text": "But one is tempted by one’s own desire, being lured and enticed by it;"
+        },
+        {
+          "num": 15,
+          "text": "then, when desire has conceived, it gives birth to sin, and that sin, when it is fully grown, gives birth to death."
+        },
+        {
+          "num": 16,
+          "text": "Do not be deceived, my beloved brothers and sisters."
+        },
+        {
+          "num": 17,
+          "text": "Every generous act of giving, with every perfect gift, is from above, coming down from the Father of lights, with whom there is no variation or shadow due to change."
+        },
+        {
+          "num": 18,
+          "text": "In fulfillment of his own purpose he gave us birth by the word of truth, so that we would become a kind of first fruits of his creatures."
+        },
+        {
+          "num": 19,
+          "text": "You must understand this, my beloved: let everyone be quick to listen, slow to speak, slow to anger;"
+        },
+        {
+          "num": 20,
+          "text": "for your anger does not produce God’s righteousness."
+        },
+        {
+          "num": 21,
+          "text": "Therefore rid yourselves of all sordidness and rank growth of wickedness, and welcome with meekness the implanted word that has the power to save your souls."
+        },
+        {
+          "num": 22,
+          "text": "But be doers of the word, and not merely hearers who deceive themselves."
+        },
+        {
+          "num": 23,
+          "text": "For if any are hearers of the word and not doers, they are like those who look at themselves in a mirror;"
+        },
+        {
+          "num": 24,
+          "text": "for they look at themselves and, on going away, immediately forget what they were like."
+        },
+        {
+          "num": 25,
+          "text": "But those who look into the perfect law, the law of liberty, and persevere, being not hearers who forget but doers who act—they will be blessed in their doing."
+        },
+        {
+          "num": 26,
+          "text": "If any think they are religious, and do not bridle their tongues but deceive their hearts, their religion is worthless."
+        },
+        {
+          "num": 27,
+          "text": "Religion that is pure and undefiled before God, the Father, is this: to care for orphans and widows in their distress, and to keep oneself unstained by the world."
+        }
       ]
     },
     {
       "num": 2,
       "verses": [
-        { "num": 1, "text": "My brothers and sisters, do you with your acts of favoritism really believe in our glorious Lord Jesus Christ?" },
-        { "num": 2, "text": "For if a person with gold rings and in fine clothes comes into your assembly, and if a poor person in dirty clothes also comes in," },
-        { "num": 3, "text": "and if you take notice of the one wearing the fine clothes and say, “Have a seat here, please,” while to the one who is poor you say, “Stand there,” or, “Sit at my feet,”" },
-        { "num": 4, "text": "have you not made distinctions among yourselves, and become judges with evil thoughts?" },
-        { "num": 5, "text": "Listen, my beloved brothers and sisters. Has not God chosen the poor in the world to be rich in faith and to be heirs of the kingdom that he has promised to those who love him?" },
-        { "num": 6, "text": "But you have dishonored the poor. Is it not the rich who oppress you? Is it not they who drag you into court?" },
-        { "num": 7, "text": "Is it not they who blaspheme the excellent name that was invoked over you?" },
-        { "num": 8, "text": "You do well if you really fulfill the royal law according to the scripture, “You shall love your neighbor as yourself.”" },
-        { "num": 9, "text": "But if you show partiality, you commit sin and are convicted by the law as transgressors." },
-        { "num": 10, "text": "For whoever keeps the whole law but fails in one point has become accountable for all of it." },
-        { "num": 11, "text": "For the one who said, “You shall not commit adultery,” also said, “You shall not murder.” Now if you do not commit adultery but you do murder, you have become a transgressor of the law." },
-        { "num": 12, "text": "So speak and so act as those who are to be judged by the law of liberty." },
-        { "num": 13, "text": "For judgment will be without mercy to anyone who has shown no mercy; mercy triumphs over judgment." },
-        { "num": 14, "text": "What good is it, my brothers and sisters, if you say you have faith but do not have works? Can faith save you?" },
-        { "num": 15, "text": "If a brother or sister is naked and lacks daily food," },
-        { "num": 16, "text": "and one of you says to them, “Go in peace; keep warm and eat your fill,” and yet you do not supply their bodily needs, what is the good of that?" },
-        { "num": 17, "text": "So faith by itself, if it has no works, is dead." },
-        { "num": 18, "text": "But someone will say, “You have faith and I have works.” Show me your faith apart from your works, and I by my works will show you my faith." },
-        { "num": 19, "text": "You believe that God is one; you do well. Even the demons believe—and shudder." },
-        { "num": 20, "text": "Do you want to be shown, you senseless person, that faith apart from works is barren?" },
-        { "num": 21, "text": "Was not our ancestor Abraham justified by works when he offered his son Isaac on the altar?" },
-        { "num": 22, "text": "You see that faith was active along with his works, and faith was brought to completion by the works." },
-        { "num": 23, "text": "Thus the scripture was fulfilled that says, “Abraham believed God, and it was reckoned to him as righteousness,” and he was called the friend of God." },
-        { "num": 24, "text": "You see that a person is justified by works and not by faith alone." },
-        { "num": 25, "text": "Likewise, was not Rahab the prostitute also justified by works when she welcomed the messengers and sent them out by another road?" },
-        { "num": 26, "text": "For just as the body without the spirit is dead, so faith without works is also dead." }
+        {
+          "num": 1,
+          "text": {
+            "NRSV": "My brothers and sisters, do you with your acts of favoritism really believe in our glorious Lord Jesus Christ?",
+            "Rotherham": "My brethren, do not, with respect for persons, be holding the faith of our Lord Jesus Christ, [the Lord] of glory."
+          }
+        },
+        {
+          "num": 2,
+          "text": {
+            "NRSV": "For if a person with gold rings and in fine clothes comes into your assembly, and if a poor person in dirty clothes also comes in,",
+            "Rotherham": "For, if there enter into your synagogue a man wearing gold rings in gay clothing, and there enter a destitute man also, in soiled clothing,—"
+          }
+        },
+        {
+          "num": 3,
+          "text": {
+            "NRSV": "and if you take notice of the one wearing the fine clothes and say, “Have a seat here, please,” while to the one who is poor you say, “Stand there,” or, “Sit at my feet,”",
+            "Rotherham": "And ye eye him that hath on the gay clothing, and say, Thou, be sitting here, pleasantly,—and, unto the destitute man, say—Thou, stand, or sit there under my footstool,"
+          }
+        },
+        {
+          "num": 4,
+          "text": {
+            "NRSV": "have you not made distinctions among yourselves, and become judges with evil thoughts?",
+            "Rotherham": "Would ye not have been led to make distinctions among yourselves, and have become judges with wicked reasonings?"
+          }
+        },
+        {
+          "num": 5,
+          "text": {
+            "NRSV": "Listen, my beloved brothers and sisters. Has not God chosen the poor in the world to be rich in faith and to be heirs of the kingdom that he has promised to those who love him?",
+            "Rotherham": "Hearken! my brethren beloved:—Hath not, God, chosen the destitute in the world [to be] rich in faith and heirs of the kingdom which he hath promised to them that love him?"
+          }
+        },
+        {
+          "num": 6,
+          "text": {
+            "NRSV": "But you have dishonored the poor. Is it not the rich who oppress you? Is it not they who drag you into court?",
+            "Rotherham": "Whereas, ye, have dishonoured the destitute man! Do not, the rich, oppress you? and, themselves, drag you into courts of justice?"
+          }
+        },
+        {
+          "num": 7,
+          "text": {
+            "NRSV": "Is it not they who blaspheme the excellent name that was invoked over you?",
+            "Rotherham": "Do not, they, defame the noble name which hath been invoked upon you? "
+          }
+        },
+        {
+          "num": 8,
+          "text": {
+            "NRSV": "You do well if you really fulfill the royal law according to the scripture, “You shall love your neighbor as yourself.”",
+            "Rotherham": " If ye are, indeed, fulfilling, a royal law, according to the scripture—Thou shalt love thy neighbour as thyself, nobly, are ye doing;"
+          }
+        },
+        {
+          "num": 9,
+          "text": {
+            "NRSV": "But if you show partiality, you commit sin and are convicted by the law as transgressors.",
+            "Rotherham": "But, if ye are shewing respect of persons, sin, are ye working, being convicted by the law as transgressors!"
+          }
+        },
+        {
+          "num": 10,
+          "text": {
+            "NRSV": "For whoever keeps the whole law but fails in one point has become accountable for all of it.",
+            "Rotherham": "For, a man who shall keep, the whole law, but shall stumble in one thing, hath become, for all things, liable,—"
+          }
+        },
+        {
+          "num": 11,
+          "text": {
+            "NRSV": "For the one who said, “You shall not commit adultery,” also said, “You shall not murder.” Now if you do not commit adultery but you do murder, you have become a transgressor of the law.",
+            "Rotherham": "For, he that hath said—Do not commit adultery, hath also said—Do not commit murder,—now, if thou dost not commit adultery, but dost commit murder, thou hast become a transgressor of law."
+          }
+        },
+        {
+          "num": 12,
+          "text": {
+            "NRSV": "So speak and so act as those who are to be judged by the law of liberty.",
+            "Rotherham": "So, be speaking, and, so, doing, as they who, through means of a law of freedom, are about to be judged;"
+          }
+        },
+        {
+          "num": 13,
+          "text": {
+            "NRSV": "For judgment will be without mercy to anyone who has shown no mercy; mercy triumphs over judgment.",
+            "Rotherham": "For, the judgment, [will be] without mercy, unto him that hath shewed no mercy: Mercy, boasteth, over judgment. "
+          }
+        },
+        {
+          "num": 14,
+          "text": {
+            "NRSV": "What good is it, my brothers and sisters, if you say you have faith but do not have works? Can faith save you?",
+            "Rotherham": " What profit, my brethren,—if one should be saying he hath, faith, but hath not, works; can his faith save him?"
+          }
+        },
+        {
+          "num": 15,
+          "text": {
+            "NRSV": "If a brother or sister is naked and lacks daily food,",
+            "Rotherham": "If, a brother or sister, should be naked, and coming short of the daily food,"
+          }
+        },
+        {
+          "num": 16,
+          "text": {
+            "NRSV": "and one of you says to them, “Go in peace; keep warm and eat your fill,” and yet you do not supply their bodily needs, what is the good of that?",
+            "Rotherham": "And one from among you should say unto them—Withdraw in peace, be getting warmed and fed, but should not give them the things needful for the body, What the profit?"
+          }
+        },
+        {
+          "num": 17,
+          "text": {
+            "NRSV": "So faith by itself, if it has no works, is dead.",
+            "Rotherham": "So, also, faith, if it have not works, is dead, by itself."
+          }
+        },
+        {
+          "num": 18,
+          "text": {
+            "NRSV": "But someone will say, “You have faith and I have works.” Show me your faith apart from your works, and I by my works will show you my faith.",
+            "Rotherham": "But one will say,—Thou, hast faith, and, I, have works, show me thy faith apart from thy works, and, I, unto thee, will shew, by my works, my faith."
+          }
+        },
+        {
+          "num": 19,
+          "text": {
+            "NRSV": "You believe that God is one; you do well. Even the demons believe—and shudder.",
+            "Rotherham": "Thou believest that God is, one: thou doest, well—Even the demons believe, and shudder!"
+          }
+        },
+        {
+          "num": 20,
+          "text": {
+            "NRSV": "Do you want to be shown, you senseless person, that faith apart from works is barren?",
+            "Rotherham": "But art thou willing to learn, O empty man! that, faith, apart from works, is, idle?"
+          }
+        },
+        {
+          "num": 21,
+          "text": {
+            "NRSV": "Was not our ancestor Abraham justified by works when he offered his son Isaac on the altar?",
+            "Rotherham": "Abraham our father, was it not, by works, he was declared righteous—when he offered Isaac his son upon the altar?"
+          }
+        },
+        {
+          "num": 22,
+          "text": {
+            "NRSV": "You see that faith was active along with his works, and faith was brought to completion by the works.",
+            "Rotherham": "Thou seest that, his faith, had been working together with his works, and by his works did his faith become full-grown,—"
+          }
+        },
+        {
+          "num": 23,
+          "text": {
+            "NRSV": "Thus the scripture was fulfilled that says, “Abraham believed God, and it was reckoned to him as righteousness,” and he was called the friend of God.",
+            "Rotherham": "And the scripture was fulfilled which saith—And Abraham believed God, And it was reckoned to him as righteousness, and, God’s friend, was he called:"
+          }
+        },
+        {
+          "num": 24,
+          "text": {
+            "NRSV": "You see that a person is justified by works and not by faith alone.",
+            "Rotherham": "Ye see that—by works, a man is declared righteous, and not by faith alone."
+          }
+        },
+        {
+          "num": 25,
+          "text": {
+            "NRSV": "Likewise, was not Rahab the prostitute also justified by works when she welcomed the messengers and sent them out by another road?",
+            "Rotherham": "And, in like manner also, Rahab the harlot, Was it not, by works, she was declared righteous, when she gave welcome unto the messengers, and, by another way, urged them forth?"
+          }
+        },
+        {
+          "num": 26,
+          "text": {
+            "NRSV": "For just as the body without the spirit is dead, so faith without works is also dead.",
+            "Rotherham": "Just as, the body, apart from spirit, is dead, so, our faith also, apart from works, is dead.  "
+          }
+        }
       ]
     },
     {
       "num": 3,
       "verses": [
-        { "num": 1, "text": "Not many of you should become teachers, my brothers and sisters, for you know that we who teach will be judged with greater strictness." },
-        { "num": 2, "text": "For all of us make many mistakes. Anyone who makes no mistakes in speaking is perfect, able to keep the whole body in check with a bridle." },
-        { "num": 3, "text": "If we put bits into the mouths of horses to make them obey us, we guide their whole bodies." },
-        { "num": 4, "text": "Or look at ships: though they are so large that it takes strong winds to drive them, yet they are guided by a very small rudder wherever the will of the pilot directs." },
-        { "num": 5, "text": "So also the tongue is a small member, yet it boasts of great exploits. How great a forest is set ablaze by a small fire!" },
-        { "num": 6, "text": "And the tongue is a fire. The tongue is placed among our members as a world of iniquity; it stains the whole body, sets on fire the cycle of nature, and is itself set on fire by hell." },
-        { "num": 7, "text": "For every species of beast and bird, of reptile and sea creature, can be tamed and has been tamed by the human species," },
-        { "num": 8, "text": "but no one can tame the tongue—a restless evil, full of deadly poison." },
-        { "num": 9, "text": "With it we bless the Lord and Father, and with it we curse those who are made in the likeness of God." },
-        { "num": 10, "text": "From the same mouth come blessing and cursing. My brothers and sisters, this ought not to be so." },
-        { "num": 11, "text": "Does a spring pour forth from the same opening both fresh and brackish water?" },
-        { "num": 12, "text": "Can a fig tree, my brothers and sisters, yield olives, or a grapevine figs? No more can salt water yield fresh." },
-        { "num": 13, "text": "Who is wise and understanding among you? Show by your good life that your works are done with gentleness born of wisdom." },
-        { "num": 14, "text": "But if you have bitter envy and selfish ambition in your hearts, do not be boastful and false to the truth." },
-        { "num": 15, "text": "Such wisdom does not come down from above, but is earthly, unspiritual, devilish." },
-        { "num": 16, "text": "For where there is envy and selfish ambition, there will also be disorder and wickedness of every kind." },
-        { "num": 17, "text": "But the wisdom from above is first pure, then peaceable, gentle, willing to yield, full of mercy and good fruits, without a trace of partiality or hypocrisy." },
-        { "num": 18, "text": "And a harvest of righteousness is sown in peace for those who make peace." }
+        {
+          "num": 1,
+          "text": {
+            "NRSV": "Not many of you should become teachers, my brothers and sisters, for you know that we who teach will be judged with greater strictness.",
+            "Rotherham": "Not, many teachers, become ye, my brethren, knowing that, a severer sentence, shall ye receive;"
+          }
+        },
+        {
+          "num": 2,
+          "text": {
+            "NRSV": "For all of us make many mistakes. Anyone who makes no mistakes in speaking is perfect, able to keep the whole body in check with a bridle.",
+            "Rotherham": "For, oft, are we stumbling, one and all: If anyone, in word, doth not stumble, the same, is a mature man, able to curb even the whole body."
+          }
+        },
+        {
+          "num": 3,
+          "text": {
+            "NRSV": "If we put bits into the mouths of horses to make them obey us, we guide their whole bodies.",
+            "Rotherham": "Now, if, the horses bits, into their mouths, we thrust, to the end they may be yielding to us, their whole body also, do we turn about."
+          }
+        },
+        {
+          "num": 4,
+          "text": {
+            "NRSV": "Or look at ships: though they are so large that it takes strong winds to drive them, yet they are guided by a very small rudder wherever the will of the pilot directs.",
+            "Rotherham": "Lo! the ships also, large as they are, and, by rough winds, driven along, are turned about by a very small helm, whithersoever the impulse of the steersman inclineth."
+          }
+        },
+        {
+          "num": 5,
+          "text": {
+            "NRSV": "So also the tongue is a small member, yet it boasts of great exploits. How great a forest is set ablaze by a small fire!",
+            "Rotherham": "So, also, the tongue, is, a little member, and yet, of great things, maketh boast. Lo! how small a fire, kindleth, how great a forest;"
+          }
+        },
+        {
+          "num": 6,
+          "text": {
+            "NRSV": "And the tongue is a fire. The tongue is placed among our members as a world of iniquity; it stains the whole body, sets on fire the cycle of nature, and is itself set on fire by hell.",
+            "Rotherham": "And, the tongue, is a fire,—[as], the world of unrighteousness, the tongue, becometh fixed among our members, that which defileth the whole body and setteth on fire the wheel of our natural life, and is set on fire, by gehenna!"
+          }
+        },
+        {
+          "num": 7,
+          "text": {
+            "NRSV": "For every species of beast and bird, of reptile and sea creature, can be tamed and has been tamed by the human species,",
+            "Rotherham": "For, every nature—both of wild beasts and of birds, both of reptiles and of things in the sea, is to be tamed, and hath been tamed, by the human nature;"
+          }
+        },
+        {
+          "num": 8,
+          "text": {
+            "NRSV": "but no one can tame the tongue—a restless evil, full of deadly poison.",
+            "Rotherham": "But, the tongue, none of mankind can, tame,—A restless mischief! Full of deadly poison"
+          }
+        },
+        {
+          "num": 9,
+          "text": {
+            "NRSV": "With it we bless the Lord and Father, and with it we curse those who are made in the likeness of God.",
+            "Rotherham": "Therewith, are we blessing our Lord and Father, and, therewith, we are cursing the men who, after the likeness of God, have been brought into being!"
+          }
+        },
+        {
+          "num": 10,
+          "text": {
+            "NRSV": "From the same mouth come blessing and cursing. My brothers and sisters, this ought not to be so.",
+            "Rotherham": "Out of the same mouth, come forth blessing and cursing! Not meet, my brethren, for, these things, thus, to be coming to pass!"
+          }
+        },
+        {
+          "num": 11,
+          "text": {
+            "NRSV": "Does a spring pour forth from the same opening both fresh and brackish water?",
+            "Rotherham": "Doth, the fountain, out of the same opening, teem forth the sweet and the bitter?"
+          }
+        },
+        {
+          "num": 12,
+          "text": {
+            "NRSV": "Can a fig tree, my brothers and sisters, yield olives, or a grapevine figs? No more can salt water yield fresh.",
+            "Rotherham": "Is it possible, my brethren, for, a fig-tree, to produce, olives, or, a vine, figs? Neither can, salt, water yield, sweet. "
+          }
+        },
+        {
+          "num": 13,
+          "text": {
+            "NRSV": "Who is wise and understanding among you? Show by your good life that your works are done with gentleness born of wisdom.",
+            "Rotherham": " Who is wise and well-instructed among you? Let him show, out of his comely behaviour, his works, in meekness of wisdom."
+          }
+        },
+        {
+          "num": 14,
+          "text": {
+            "NRSV": "But if you have bitter envy and selfish ambition in your hearts, do not be boastful and false to the truth.",
+            "Rotherham": "But, if, bitter jealousy, ye have, and rivalry, in your hearts; be not boasting and showing yourselves false against the truth!"
+          }
+        },
+        {
+          "num": 15,
+          "text": {
+            "NRSV": "Such wisdom does not come down from above, but is earthly, unspiritual, devilish.",
+            "Rotherham": "This wisdom is not one, from above, coming down, but is earthly, born of the soul, demoniacal!"
+          }
+        },
+        {
+          "num": 16,
+          "text": {
+            "NRSV": "For where there is envy and selfish ambition, there will also be disorder and wickedness of every kind.",
+            "Rotherham": "For, where jealousy and rivalry are, there, are anarchy and every ignoble deed."
+          }
+        },
+        {
+          "num": 17,
+          "text": {
+            "NRSV": "But the wisdom from above is first pure, then peaceable, gentle, willing to yield, full of mercy and good fruits, without a trace of partiality or hypocrisy.",
+            "Rotherham": "But, the wisdom from above, is—first pure, then peaceable, reasonable, easy to be entreated, fraught with mercy and good fruits, without partiality, without hypocrisy."
+          }
+        },
+        {
+          "num": 18,
+          "text": {
+            "NRSV": "And a harvest of righteousness is sown in peace for those who make peace.",
+            "Rotherham": "And, in harvest of righteousness, with peace, is sown by them that make peace.  "
+          }
+        }
       ]
     },
     {
       "num": 4,
       "verses": [
-        { "num": 1, "text": "Those conflicts and disputes among you, where do they come from? Do they not come from your cravings that are at war within you?" },
-        { "num": 2, "text": "You want something and do not have it; so you commit murder. And you covet something and cannot obtain it; so you engage in disputes and conflicts. You do not have, because you do not ask." },
-        { "num": 3, "text": "You ask and do not receive, because you ask wrongly, in order to spend what you get on your pleasures." },
-        { "num": 4, "text": "Adulterers! Do you not know that friendship with the world is enmity with God? Therefore whoever wishes to be a friend of the world becomes an enemy of God." },
-        { "num": 5, "text": "Or do you suppose that it is for nothing that the scripture says, “God yearns jealously for the spirit that he has made to dwell in us”?" },
-        { "num": 6, "text": "But he gives all the more grace; therefore it says, “God opposes the proud, but gives grace to the humble.”" },
-        { "num": 7, "text": "Submit yourselves therefore to God. Resist the devil, and he will flee from you." },
-        { "num": 8, "text": "Draw near to God, and he will draw near to you. Cleanse your hands, you sinners, and purify your hearts, you double-minded." },
-        { "num": 9, "text": "Lament and mourn and weep. Let your laughter be turned into mourning and your joy into dejection." },
-        { "num": 10, "text": "Humble yourselves before the Lord, and he will exalt you." },
-        { "num": 11, "text": "Do not speak evil against one another, brothers and sisters. Whoever speaks evil against another or judges another, speaks evil against the law and judges the law; but if you judge the law, you are not a doer of the law but a judge." },
-        { "num": 12, "text": "There is one lawgiver and judge who is able to save and to destroy. So who, then, are you to judge your neighbor?" },
-        { "num": 13, "text": "Come now, you who say, “Today or tomorrow we will go to such and such a town and spend a year there, doing business and making money.”" },
-        { "num": 14, "text": "Yet you do not even know what tomorrow will bring. What is your life? For you are a mist that appears for a little while and then vanishes." },
-        { "num": 15, "text": "Instead you ought to say, “If the Lord wishes, we will live and do this or that.”" },
-        { "num": 16, "text": "As it is, you boast in your arrogance; all such boasting is evil." },
-        { "num": 17, "text": "Anyone, then, who knows the right thing to do and fails to do it, commits sin." }
+        {
+          "num": 1,
+          "text": {
+            "NRSV": "Those conflicts and disputes among you, where do they come from? Do they not come from your cravings that are at war within you?",
+            "Rotherham": "Whence wars and whence fightings among you? are they not from hence—due to your pleasures which are taking the field in your members?"
+          }
+        },
+        {
+          "num": 2,
+          "text": {
+            "NRSV": "You want something and do not have it; so you commit murder. And you covet something and cannot obtain it; so you engage in disputes and conflicts. You do not have, because you do not ask.",
+            "Rotherham": "Ye covet—and have not, ye commit murder, and are jealous—and cannot obtain,—ye fight and war. Ye have not—because ye do not really ask,"
+          }
+        },
+        {
+          "num": 3,
+          "text": {
+            "NRSV": "You ask and do not receive, because you ask wrongly, in order to spend what you get on your pleasures.",
+            "Rotherham": "Ye ask and receive not, because that, basely, ye ask, in order that, in your pleasures, ye may spend [it] ."
+          }
+        },
+        {
+          "num": 4,
+          "text": {
+            "NRSV": "Adulterers! Do you not know that friendship with the world is enmity with God? Therefore whoever wishes to be a friend of the world becomes an enemy of God.",
+            "Rotherham": "Adulteresses! Know ye not that, the friendship of the world, is, enmity to God? Whosoever, therefore, is minded to be, a friend, of the world, an enemy of God, doth constitute himself."
+          }
+        },
+        {
+          "num": 5,
+          "text": {
+            "NRSV": "Or do you suppose that it is for nothing that the scripture says, “God yearns jealously for the spirit that he has made to dwell in us”?",
+            "Rotherham": "Or think ye that, in vain, the scripture speaketh? Is it, for envying, that the spirit which hath taken an abode within us doth crave?"
+          }
+        },
+        {
+          "num": 6,
+          "text": {
+            "NRSV": "But he gives all the more grace; therefore it says, “God opposes the proud, but gives grace to the humble.”",
+            "Rotherham": "Howbeit he giveth, greater, favour. Wherefore it saith—God, against the haughty, arrayeth himself, Whereas, unto the lowly, he giveth favour."
+          }
+        },
+        {
+          "num": 7,
+          "text": {
+            "NRSV": "Submit yourselves therefore to God. Resist the devil, and he will flee from you.",
+            "Rotherham": "Range yourselves, therefore, under God, but withstand the adversary, and he will flee from you:"
+          }
+        },
+        {
+          "num": 8,
+          "text": {
+            "NRSV": "Draw near to God, and he will draw near to you. Cleanse your hands, you sinners, and purify your hearts, you double-minded.",
+            "Rotherham": "Draw near unto God, and he will draw near unto you. Cleanse hands, sinners! Chasten hearts, double souls!"
+          }
+        },
+        {
+          "num": 9,
+          "text": {
+            "NRSV": "Lament and mourn and weep. Let your laughter be turned into mourning and your joy into dejection.",
+            "Rotherham": "Be miserable and lament and weep, let, your laughter, into lamentation, be turned, and, your joy, into dejection;"
+          }
+        },
+        {
+          "num": 10,
+          "text": {
+            "NRSV": "Humble yourselves before the Lord, and he will exalt you.",
+            "Rotherham": "Be made low in presence of the Lord, and he will lift you up. "
+          }
+        },
+        {
+          "num": 11,
+          "text": {
+            "NRSV": "Do not speak evil against one another, brothers and sisters. Whoever speaks evil against another or judges another, speaks evil against the law and judges the law; but if you judge the law, you are not a doer of the law but a judge.",
+            "Rotherham": " Be not speaking one against another, brethren! He that speaketh against a brother, or judgeth his brother, speaketh against law, and judgeth law; Now, if, upon law, thou art passing judgment, thou art not a doer of law, but a judge!"
+          }
+        },
+        {
+          "num": 12,
+          "text": {
+            "NRSV": "There is one lawgiver and judge who is able to save and to destroy. So who, then, are you to judge your neighbor?",
+            "Rotherham": "One, is Lawgiver and Judge—He who hath power to save and to destroy; but who art, thou, that judgest thy neighbour?"
+          }
+        },
+        {
+          "num": 13,
+          "text": {
+            "NRSV": "Come now, you who say, “Today or tomorrow we will go to such and such a town and spend a year there, doing business and making money.”",
+            "Rotherham": "Come now! ye that say—Today or To-morrow, we will journey unto this city here, and will spend there a year, and will trade and get gain,—"
+          }
+        },
+        {
+          "num": 14,
+          "text": {
+            "NRSV": "Yet you do not even know what tomorrow will bring. What is your life? For you are a mist that appears for a little while and then vanishes.",
+            "Rotherham": "Men who are not versed in the morrow—of what sort your life [will be] ; for ye are, a vapour—for a little, appearing, then, just disappearing!"
+          }
+        },
+        {
+          "num": 15,
+          "text": {
+            "NRSV": "Instead you ought to say, “If the Lord wishes, we will live and do this or that.”",
+            "Rotherham": "Instead of your saying—If, the Lord, be pleased, we shall both, live and do this or that;"
+          }
+        },
+        {
+          "num": 16,
+          "text": {
+            "NRSV": "As it is, you boast in your arrogance; all such boasting is evil.",
+            "Rotherham": "Whereas, now, are ye boasting in your pretensions:—All boasting like this, is, wicked,"
+          }
+        },
+        {
+          "num": 17,
+          "text": {
+            "NRSV": "Anyone, then, who knows the right thing to do and fails to do it, commits sin.",
+            "Rotherham": "To him, therefore, who knoweth how to be doing, a right thing, and is not doing it, it is, sin, unto him.  "
+          }
+        }
       ]
     },
     {
       "num": 5,
       "verses": [
-        { "num": 1, "text": "Come now, you rich people, weep and wail for the miseries that are coming to you." },
-        { "num": 2, "text": "Your riches have rotted, and your clothes are moth-eaten." },
-        { "num": 3, "text": "Your gold and silver have rusted, and their rust will be evidence against you, and it will eat your flesh like fire. You have laid up treasure for the last days." },
-        { "num": 4, "text": "Listen! The wages of the laborers who mowed your fields, which you kept back by fraud, cry out, and the cries of the harvesters have reached the ears of the Lord of hosts." },
-        { "num": 5, "text": "You have lived on the earth in luxury and in pleasure; you have fattened your hearts in a day of slaughter." },
-        { "num": 6, "text": "You have condemned and murdered the righteous one, who does not resist you." },
-        { "num": 7, "text": "Be patient, therefore, beloved, until the coming of the Lord. The farmer waits for the precious crop from the earth, being patient with it until it receives the early and the late rains." },
-        { "num": 8, "text": "You also must be patient. Strengthen your hearts, for the coming of the Lord is near." },
-        { "num": 9, "text": "Beloved, do not grumble against one another, so that you may not be judged. See, the Judge is standing at the doors!" },
-        { "num": 10, "text": "As an example of suffering and patience, beloved, take the prophets who spoke in the name of the Lord." },
-        { "num": 11, "text": "Indeed we call blessed those who showed endurance. You have heard of the endurance of Job, and you have seen the purpose of the Lord, how the Lord is compassionate and merciful." },
-        { "num": 12, "text": "Above all, my beloved, do not swear, either by heaven or by earth or by any other oath, but let your “Yes” be yes and your “No” be no, so that you may not fall under condemnation." },
-        { "num": 13, "text": "Are any among you suffering? They should pray. Are any cheerful? They should sing songs of praise." },
-        { "num": 14, "text": "Are any among you sick? They should call for the elders of the church and have them pray over them, anointing them with oil in the name of the Lord." },
-        { "num": 15, "text": "The prayer of faith will save the sick, and the Lord will raise them up; and anyone who has committed sins will be forgiven." },
-        { "num": 16, "text": "Therefore confess your sins to one another, and pray for one another, so that you may be healed. The prayer of the righteous is powerful and effective." },
-        { "num": 17, "text": "Elijah was a human being like us, and he prayed fervently that it might not rain, and for three years and six months it did not rain on the earth." },
-        { "num": 18, "text": "Then he prayed again, and the heaven gave rain and the earth yielded its harvest." },
-        { "num": 19, "text": "My brothers and sisters, if anyone among you wanders from the truth and is brought back by another," },
-        { "num": 20, "text": "you should know that whoever brings back a sinner from wandering will save the sinner’s soul from death and will cover a multitude of sins." }
+        {
+          "num": 1,
+          "text": {
+            "NRSV": "Come now, you rich people, weep and wail for the miseries that are coming to you.",
+            "Rotherham": "Come now! ye wealthy! Weep ye, howling, for your hardships which are coming upon you:"
+          }
+        },
+        {
+          "num": 2,
+          "text": {
+            "NRSV": "Your riches have rotted, and your clothes are moth-eaten.",
+            "Rotherham": "Your wealth, hath rotted, and, your garments, have become, moth-eaten,—"
+          }
+        },
+        {
+          "num": 3,
+          "text": {
+            "NRSV": "Your gold and silver have rusted, and their rust will be evidence against you, and it will eat your flesh like fire. You have laid up treasure for the last days.",
+            "Rotherham": "Your gold and silver, have rusted away, and, their rust, shall be, witness against you, and shall eat your flesh, as fire! Ye have laid up treasure in days of extremity:—"
+          }
+        },
+        {
+          "num": 4,
+          "text": {
+            "NRSV": "Listen! The wages of the laborers who mowed your fields, which you kept back by fraud, cry out, and the cries of the harvesters have reached the ears of the Lord of hosts.",
+            "Rotherham": "Lo, the wage of the workers who have out down your fields—that which hath been kept back, by you, is crying out; and, the outcries of them who reaped, into the ears of the Lord of hosts, have entered:"
+          }
+        },
+        {
+          "num": 5,
+          "text": {
+            "NRSV": "You have lived on the earth in luxury and in pleasure; you have fattened your hearts in a day of slaughter.",
+            "Rotherham": "Ye have luxuriated upon the land, and run riot, ye have pampered your hearts in a day of slaughter;"
+          }
+        },
+        {
+          "num": 6,
+          "text": {
+            "NRSV": "You have condemned and murdered the righteous one, who does not resist you.",
+            "Rotherham": "Ye sentenced—ye murdered the Righteous one! Is he not arraying himself against you?"
+          }
+        },
+        {
+          "num": 7,
+          "text": {
+            "NRSV": "Be patient, therefore, beloved, until the coming of the Lord. The farmer waits for the precious crop from the earth, being patient with it until it receives the early and the late rains.",
+            "Rotherham": "Be patient, therefore, brethren, until the Presence of the Lord:—Lo! the husbandman, awaiteth the precious fruit of the earth, having patience for it, until it receive the early and the latter rain:"
+          }
+        },
+        {
+          "num": 8,
+          "text": {
+            "NRSV": "You also must be patient. Strengthen your hearts, for the coming of the Lord is near.",
+            "Rotherham": "Be, ye also, patient, Stablish your hearts, because, the Presence of the Lord, hath drawn near."
+          }
+        },
+        {
+          "num": 9,
+          "text": {
+            "NRSV": "Beloved, do not grumble against one another, so that you may not be judged. See, the Judge is standing at the doors!",
+            "Rotherham": "Be not sighing, brethren, one against another, lest ye be judged,—Lo! the Judge, before the doors, is standing."
+          }
+        },
+        {
+          "num": 10,
+          "text": {
+            "NRSV": "As an example of suffering and patience, beloved, take the prophets who spoke in the name of the Lord.",
+            "Rotherham": "An example, take ye, brethren, of distress and patience,—the prophets who have spoken in the name of the Lord."
+          }
+        },
+        {
+          "num": 11,
+          "text": {
+            "NRSV": "Indeed we call blessed those who showed endurance. You have heard of the endurance of Job, and you have seen the purpose of the Lord, how the Lord is compassionate and merciful.",
+            "Rotherham": "Lo! we pronounce them happy who have endured;—Of the endurance of Job, ye have heard, and, the end of the Lord, have ye seen,—that, of much tender affection, is the Lord, and full of compassion, "
+          }
+        },
+        {
+          "num": 12,
+          "text": {
+            "NRSV": "Above all, my beloved, do not swear, either by heaven or by earth or by any other oath, but let your “Yes” be yes and your “No” be no, so that you may not fall under condemnation.",
+            "Rotherham": " But, before all things, my brethren, do not swear,—either by heaven, or by the earth, or by any other oath; but let your Yea be yea, and your Nay nay,—lest, under judgment, ye fall."
+          }
+        },
+        {
+          "num": 13,
+          "text": {
+            "NRSV": "Are any among you suffering? They should pray. Are any cheerful? They should sing songs of praise.",
+            "Rotherham": "In distress, is any among you? Let him pray; Cheerful, is any? Let him strike the strings;"
+          }
+        },
+        {
+          "num": 14,
+          "text": {
+            "NRSV": "Are any among you sick? They should call for the elders of the church and have them pray over them, anointing them with oil in the name of the Lord.",
+            "Rotherham": "Sick, is any among you? Let him call unto him the elders of the assembly, and let them pray for him, anointing him with oil in the name [of the Lord];—"
+          }
+        },
+        {
+          "num": 15,
+          "text": {
+            "NRSV": "The prayer of faith will save the sick, and the Lord will raise them up; and anyone who has committed sins will be forgiven.",
+            "Rotherham": "And, the prayer of faith, shall save the exhausted one, and the Lord will raise him up, and, if he have committed, sins, it shall be forgiven him."
+          }
+        },
+        {
+          "num": 16,
+          "text": {
+            "NRSV": "Therefore confess your sins to one another, and pray for one another, so that you may be healed. The prayer of the righteous is powerful and effective.",
+            "Rotherham": "Be openly confessing, therefore, one to another, your sins, and be praying in each other’s behalf,—that ye may be healed. Much availeth, the supplication of a righteous man, when it is energised:"
+          }
+        },
+        {
+          "num": 17,
+          "text": {
+            "NRSV": "Elijah was a human being like us, and he prayed fervently that it might not rain, and for three years and six months it did not rain on the earth.",
+            "Rotherham": "Elijah, was, a man, affected like us; and he earnestly prayed that there might be no moisture, and there was no moisture on the land, for three years and six months,—"
+          }
+        },
+        {
+          "num": 18,
+          "text": {
+            "NRSV": "Then he prayed again, and the heaven gave rain and the earth yielded its harvest.",
+            "Rotherham": "And, again, he prayed, and, the heaven, gave, rain, and, the land, shot up her fruit."
+          }
+        },
+        {
+          "num": 19,
+          "text": {
+            "NRSV": "My brothers and sisters, if anyone among you wanders from the truth and is brought back by another,",
+            "Rotherham": "My brethren! If one among you be led to err from the truth, and one turn him back,"
+          }
+        },
+        {
+          "num": 20,
+          "text": {
+            "NRSV": "you should know that whoever brings back a sinner from wandering will save the sinner’s soul from death and will cover a multitude of sins.",
+            "Rotherham": "Be ye taking note—that, he that turneth back a sinner out of the error of his way—will save his soul out of death, and hide a multitude of sins.   "
+          }
+        }
       ]
     }
-  ]
+  ],
+  "schema": "bible_book_multiversion_v1",
+  "translationOverlays": {
+    "Rotherham": {
+      "1": {
+        "1": "James, a servant, of God and of the Lord Jesus Christ,—unto the twelve tribes that are in the dispersion, Wishes joy. ",
+        "2": " All Joy, account it, my brethren, whensoever ye fall in with, manifold, temptations,—",
+        "3": "Taking note, that, the proving of your faith, worketh out endurance;",
+        "4": "But let, your endurance, have, mature work, that ye may be mature and complete, in nothing, coming short.",
+        "5": "But, if any of you is sinning short of wisdom, let him be asking of God, Who giveth unto all freely and upbraideth not, and it shall be given him;",
+        "6": "But let him be asking in faith, nothing, doubting, for, he that doubteth, is like a wave of the sea, wind-driven and storm-tossed,—",
+        "7": "For let not that man think that he shall receive anything from the Lord—",
+        "8": "A two-souled man, unstable in all his ways.",
+        "9": "But boasting be the lowly brother in his uplifting;",
+        "10": "Whereas the rich, in his being brought low,—because, as a flower of grass, he will pass away;",
+        "11": "For the sun hath sprung up, with it scorching heat, and hath withered the grass, and, the flower thereof, hath fallen out, and, the beauty of the face thereof, hath perished,—so, also the rich, in his goings, shall languish.",
+        "12": "Happy the man who endureth temptation! Because, becoming approved, he shall receive the crown of life—which he hath promised unto them that love him. ",
+        "13": " Let, no one, while tempted, be saying—From God, am I tempted,—for, God, cannot be tempted by things evil, and, himself, tempteth no one;",
+        "14": "But, each one, is tempted, when, by his own coveting, he is drawn out and enticed,",
+        "15": "Then, the coveting, having conceived, giveth birth to sin, and, the sin, when full-grown, bringeth forth death.",
+        "16": "Be not deceived, my brethren beloved:—",
+        "17": "Every good giving, and every perfect gift, is, from above, coming down from the Father of lights—with whom is no alternation, nor shadow cast, by turning:",
+        "18": "Because he was so minded, he hath brought us forth with a word of truth, to the end we should be a sort of firstfruit of his creatures ",
+        "19": " Ye know, my brethren beloved,—but let every man be swift to hear, slow to speak, slow to anger,",
+        "20": "For, man’s anger, worketh not, God’s righteousness.",
+        "21": "Wherefore, putting away all filthiness and overflow of baseness, in meekness, welcome ye the word fitted for inward growth, which is able to save your souls:",
+        "22": "Become ye doers of the word, and not hearers only—reasoning yourselves astray;",
+        "23": "Because, if any is, a word-hearer, and not a doer, the same, is like unto a man observing his natural face in a mirror,—",
+        "24": "For he observed himself, and is gone away, and, straightway, it hath escaped him,—what manner of man, he was!",
+        "25": "But, he that hath obtained a nearer view into the perfect law of liberty, and hath taken up his abode by it, becoming—not a forgetful hearer, but a work doer, the same, happy in his doing, shall be.",
+        "26": "If any thinketh he is observant of religion, not curbing his own tongue, but deceiving his own heart, this one’s, religious observance is, vain:",
+        "27": "Religious observance, pure and undefiled with our God and Father, is, this—to be visiting orphans and widows in their affliction, unspotted, to keep, himself, from the world.  "
+      }
+    }
+  }
 }
