@@ -51,7 +51,12 @@ if (!packageJson.scripts?.["audit:bible-design-layout"]) {
   ".bible-design-command-surface",
   ".bible-tool-dock",
   ".bible-reading-stage",
-  ".bible-reading-canvas"
+  ".bible-reading-canvas",
+  "Parchment concept Bible Browser visual pass",
+  "illuminated parchment",
+  "#fbf5ea",
+  "#5a2f12",
+  ".bible-context-panel-study"
 ].forEach(marker => requireMarker("css design layout", css, marker));
 
 if (index.includes("<h1>Scripture Browser</h1>")) {

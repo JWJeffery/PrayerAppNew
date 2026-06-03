@@ -1332,3 +1332,275 @@
         padding: 18px 16px 64px;
     }
 }
+
+
+/* Parchment concept Bible Browser visual pass — illuminated parchment */
+#bible-browser-section {
+    color: #3f2618;
+    background:
+        radial-gradient(circle at 18% 8%, rgba(191, 137, 69, 0.22), transparent 31%),
+        radial-gradient(circle at 86% 14%, rgba(105, 58, 30, 0.12), transparent 34%),
+        linear-gradient(180deg, #fbf5ea 0%, #f3e7d5 48%, #ead8bf 100%);
+}
+
+.bible-design-shell {
+    color: #3f2618;
+    background:
+        linear-gradient(180deg, rgba(255, 250, 241, 0.94), rgba(244, 232, 213, 0.93)),
+        radial-gradient(circle at top, rgba(191, 137, 69, 0.14), transparent 42%);
+    border-color: rgba(103, 58, 31, 0.16);
+    border-radius: 26px;
+    box-shadow: 0 28px 80px rgba(74, 46, 26, 0.20);
+}
+
+.bible-design-hero {
+    border-bottom-color: rgba(103, 58, 31, 0.14);
+}
+
+.bible-design-hero h1 {
+    color: #3d2416;
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.45);
+}
+
+.bible-design-hero p,
+.bible-secondary-intro p,
+.bible-reader-stage-head p,
+#bible-status {
+    color: #80644f;
+}
+
+.bible-design-kicker,
+.bible-control-section-label,
+.bible-secondary-intro span,
+.bible-reader-stage-head span,
+.bible-design-chip,
+.bible-browser-header p,
+.bible-control-field label,
+.bible-reader-controls label,
+.bible-browser-details label,
+.bible-sidebar-details label,
+.bible-browser-details summary,
+.bible-sidebar-details summary,
+.bible-summary-line,
+.bible-chapter-block h3,
+.bible-segment-label,
+.bible-note-ref,
+.bible-guide-card-head,
+.bible-context-panel-title,
+.bible-context-color-label,
+.bible-parallel-label {
+    color: #7a4a24;
+}
+
+.bible-design-chip,
+.bible-tool-btn,
+#bible-selection-toolbar button {
+    border-color: rgba(103, 58, 31, 0.20);
+    color: #fff8ec;
+    background: linear-gradient(180deg, #764416, #5a2f12);
+    box-shadow: 0 8px 18px rgba(91, 52, 24, 0.16);
+}
+
+.bible-design-chip {
+    color: #6b3d19;
+    background: rgba(255, 248, 235, 0.72);
+}
+
+.bible-tool-btn:hover,
+#bible-selection-toolbar button:hover {
+    background: linear-gradient(180deg, #87511f, #673817);
+}
+
+.bible-design-command-surface,
+.bible-reading-stage,
+.bible-control-card,
+.bible-browser-details,
+.bible-sidebar-details,
+.bible-design-tool-card,
+.bible-passage-summary,
+.bible-current-notes,
+.bible-plan-reading,
+.bible-guide-card,
+.bible-note-card,
+.bible-guide-empty,
+.bible-guide-error,
+.bible-guide-overflow,
+.bible-context-note-preview {
+    background: rgba(255, 250, 241, 0.78);
+    border-color: rgba(103, 58, 31, 0.14);
+    box-shadow: 0 12px 30px rgba(74, 46, 26, 0.07);
+    border-radius: 18px;
+}
+
+.bible-browser-details,
+.bible-sidebar-details {
+    overflow: hidden;
+}
+
+.bible-browser-details[open] summary,
+.bible-sidebar-details[open] summary,
+.bible-reader-stage-head,
+.bible-secondary-intro {
+    border-color: rgba(103, 58, 31, 0.12);
+}
+
+.bible-reader-controls input[type="text"],
+.bible-reader-controls input[type="date"],
+.bible-reader-controls select,
+.bible-research-controls input[type="text"],
+.bible-research-controls select,
+#bible-selection-toolbar select,
+.bible-context-highlight-color,
+.bible-context-note-comment,
+#bible-annotation-comment {
+    color: #3f2618;
+    background: rgba(255, 252, 247, 0.92);
+    border-color: rgba(103, 58, 31, 0.18);
+    box-shadow: inset 0 1px 2px rgba(74, 46, 26, 0.06);
+}
+
+.bible-reading-stage {
+    background:
+        linear-gradient(180deg, rgba(255, 251, 244, 0.80), rgba(244, 232, 213, 0.70));
+}
+
+.bible-reading-canvas,
+#bible-results {
+    color: #2f2119;
+    background:
+        linear-gradient(180deg, rgba(255, 253, 248, 0.96), rgba(247, 237, 221, 0.94)),
+        radial-gradient(circle at 50% 0%, rgba(191, 137, 69, 0.09), transparent 42%);
+    border-color: rgba(103, 58, 31, 0.12);
+    border-radius: 24px;
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.72),
+        0 18px 52px rgba(74, 46, 26, 0.12);
+}
+
+.bible-reading-canvas .bible-verse,
+.bible-verse,
+.bible-note-excerpt,
+.bible-context-note-label,
+.bible-context-selected-text,
+.bible-context-result-status,
+.bible-guide-card blockquote {
+    color: #2f2119;
+}
+
+.bible-verse sup {
+    color: #8f5d2d;
+}
+
+.bible-parallel-primary {
+    border-right-color: rgba(103, 58, 31, 0.14);
+}
+
+.bible-parallel-secondary {
+    color: #4c3528;
+}
+
+.bible-empty,
+.bible-error {
+    color: #6f5744;
+    background: rgba(255, 250, 241, 0.82);
+    border-color: rgba(103, 58, 31, 0.14);
+    border-radius: 18px;
+}
+
+.bible-error,
+.bible-summary-warning,
+.bible-segment-warnings {
+    color: #8d352d;
+}
+
+.bible-highlight.has-comment {
+    border-bottom-color: rgba(121, 72, 29, 0.72);
+}
+
+.bible-note-comment,
+.bible-plan-progress,
+.bible-plan-reading-note,
+.bible-sidebar-note-help,
+.bible-advanced-help,
+.bible-guide-date,
+.bible-guide-source,
+.bible-research-meta,
+.bible-research-summary,
+.bible-research-source-label,
+.bible-notes-empty,
+.bible-segment-summary-status,
+.bible-segment-scope,
+.bible-summary-line span {
+    color: #80644f;
+}
+
+.bible-note-card:hover {
+    border-color: rgba(103, 58, 31, 0.24);
+    background: rgba(255, 252, 247, 0.96);
+}
+
+#bible-selection-toolbar {
+    background: rgba(255, 250, 241, 0.96);
+    border-color: rgba(103, 58, 31, 0.22);
+    border-radius: 999px;
+    box-shadow: 0 16px 40px rgba(74, 46, 26, 0.20);
+}
+
+#bible-selection-toolbar .bible-highlight-color-picker {
+    color: #6b3d19;
+}
+
+#bible-selection-toolbar select {
+    border-radius: 999px;
+}
+
+.bible-context-panel {
+    color: #3f2618;
+    background:
+        linear-gradient(180deg, rgba(255, 252, 247, 0.98), rgba(246, 236, 220, 0.98));
+    border-color: rgba(103, 58, 31, 0.20);
+    border-radius: 22px;
+    box-shadow: 0 24px 70px rgba(74, 46, 26, 0.24);
+}
+
+.bible-context-panel-head {
+    background: rgba(255, 250, 241, 0.98);
+    border-bottom-color: rgba(103, 58, 31, 0.12);
+}
+
+.bible-context-panel-close {
+    border-color: rgba(103, 58, 31, 0.20);
+    color: #6b3d19;
+    background: rgba(255, 248, 235, 0.72);
+    border-radius: 999px;
+}
+
+.bible-context-panel-study {
+    border-color: rgba(103, 58, 31, 0.24);
+    box-shadow: 0 28px 78px rgba(74, 46, 26, 0.26);
+}
+
+.bible-guide-source-link {
+    color: #6b3d19;
+    font-weight: 600;
+}
+
+.bible-search-match {
+    background: rgba(150, 188, 220, 0.34);
+    border-bottom-color: rgba(85, 126, 160, 0.55);
+}
+
+@media (max-width: 760px) {
+    .bible-design-shell {
+        border-radius: 18px;
+    }
+
+    .bible-reading-canvas,
+    #bible-results {
+        border-radius: 18px;
+    }
+
+    #bible-selection-toolbar {
+        border-radius: 18px;
+    }
+}
