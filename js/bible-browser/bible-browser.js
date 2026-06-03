@@ -313,17 +313,106 @@
         localStorage.setItem(STORE_KEYS.lastState, JSON.stringify(state));
     }
 
+    function segmentAnchorKey(segment) {
+        return `${segment.bookKey}.${segment.chapter}.${segment.verse}.${segment.translation || currentTranslation}`;
+    }
+
+    function normalizeAnnotation(annotation, index = 0) {
+        if (!annotation || typeof annotation !== "object") return null;
+
+        const sourceSegments = Array.isArray(annotation.segments) && annotation.segments.length
+            ? annotation.segments
+            : [{
+                anchorKey: annotation.anchorKey,
+                bookKey: annotation.bookKey,
+                chapter: annotation.chapter,
+                verse: annotation.verse,
+                translation: annotation.translation,
+                startOffset: annotation.startOffset,
+                endOffset: annotation.endOffset,
+                selectedText: annotation.selectedText
+            }];
+
+        const segments = sourceSegments.map(segment => {
+            const bookKey = String(segment.bookKey || annotation.bookKey || "");
+            const chapter = Number(segment.chapter || annotation.chapter || 0);
+            const verse = Number(segment.verse || annotation.verse || 0);
+            const translation = String(segment.translation || annotation.translation || currentTranslation);
+            const startOffset = Number(segment.startOffset ?? annotation.startOffset ?? 0);
+            const endOffset = Number(segment.endOffset ?? annotation.endOffset ?? startOffset);
+            const selectedText = String(segment.selectedText || "");
+
+            if (!bookKey || !chapter || !verse || endOffset <= startOffset) return null;
+
+            const normalized = {
+                anchorKey: String(segment.anchorKey || `${bookKey}.${chapter}.${verse}.${translation}`),
+                bookKey,
+                chapter,
+                verse,
+                translation,
+                startOffset,
+                endOffset,
+                selectedText
+            };
+
+            if (!normalized.anchorKey || normalized.anchorKey.includes("undefined")) {
+                normalized.anchorKey = segmentAnchorKey(normalized);
+            }
+
+            return normalized;
+        }).filter(Boolean);
+
+        if (!segments.length) return null;
+
+        segments.sort((a, b) => {
+            if (a.bookKey !== b.bookKey) return a.bookKey.localeCompare(b.bookKey);
+            const loc = encodeVerseLocation(a.chapter, a.verse) - encodeVerseLocation(b.chapter, b.verse);
+            if (loc) return loc;
+            return Number(a.startOffset || 0) - Number(b.startOffset || 0);
+        });
+
+        const first = segments[0];
+        const selectedText = String(annotation.selectedText || segments.map(segment => segment.selectedText).filter(Boolean).join(" ")).trim();
+
+        return {
+            ...annotation,
+            id: String(annotation.id || `ann-import-${Date.now()}-${index}`),
+            type: annotation.type || "highlight",
+            anchorKey: first.anchorKey,
+            bookKey: first.bookKey,
+            chapter: first.chapter,
+            verse: first.verse,
+            translation: first.translation,
+            startOffset: first.startOffset,
+            endOffset: first.endOffset,
+            selectedText,
+            comment: String(annotation.comment || ""),
+            createdAt: annotation.createdAt || new Date().toISOString(),
+            updatedAt: annotation.updatedAt || annotation.createdAt || new Date().toISOString(),
+            segments
+        };
+    }
+
+    function getAnnotationSegments(annotation) {
+        return normalizeAnnotation(annotation)?.segments || [];
+    }
+
     function loadAnnotations() {
         try {
             const data = JSON.parse(localStorage.getItem(STORE_KEYS.annotations) || "[]");
-            return Array.isArray(data) ? data : [];
+            return Array.isArray(data)
+                ? data.map((annotation, index) => normalizeAnnotation(annotation, index)).filter(Boolean)
+                : [];
         } catch {
             return [];
         }
     }
 
     function saveAnnotations(annotations) {
-        localStorage.setItem(STORE_KEYS.annotations, JSON.stringify(annotations));
+        const normalized = Array.isArray(annotations)
+            ? annotations.map((annotation, index) => normalizeAnnotation(annotation, index)).filter(Boolean)
+            : [];
+        localStorage.setItem(STORE_KEYS.annotations, JSON.stringify(normalized));
     }
 
     function annotationKey(item) {

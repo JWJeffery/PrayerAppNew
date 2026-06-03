@@ -367,3 +367,16 @@ if (!css.includes(".bible-primary-controls")) {
 if (!css.includes(".bible-secondary-controls")) {
   fail("Bible browser CSS is missing secondary control row styling.");
 }
+
+if (!browser.includes("function normalizeAnnotation")) {
+  fail("Bible browser is missing annotation normalization.");
+}
+
+if (!browser.includes("segments")) {
+  fail("Bible browser annotation model does not preserve segment arrays.");
+}
+
+if (!browser.includes("function getAnnotationSegments")) {
+  fail("Bible browser is missing annotation segment accessor.");
+}
+
