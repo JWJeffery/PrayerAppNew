@@ -228,6 +228,7 @@
             translation: currentTranslation,
             scope: $("bible-search-scope")?.value || "ALL",
             bookKey: $("bible-book-select")?.value || "",
+            chapter: $("bible-chapter-select")?.value || "",
             scrollTop: $("bible-results")?.scrollTop || 0,
             ...extra
         };
@@ -432,6 +433,7 @@
             if (status) status.textContent = "Resolving reference…";
             const parsed = window.UniversalOfficeBibleReferenceParser.parseReference(input.value);
             const resolved = await resolveReference(parsed);
+            await syncNavigationControlsFromItems(resolved);
             await syncTranslationSelect(resolved);
             renderResults(resolved, options);
             saveLastState({ citation: input.value });
@@ -481,13 +483,88 @@
         ].join("");
     }
 
+    async function populateChapterSelect(bookKey, selectedChapter = "") {
+        const select = $("bible-chapter-select");
+        if (!select) return;
+
+        select.innerHTML = `<option value="">— Chapter —</option>`;
+        if (!bookKey) return;
+
+        try {
+            const bookData = await loadBook(bookKey);
+            const chapters = (bookData.chapters || []).map(chapter => Number(chapter.num)).filter(Boolean);
+            select.innerHTML = chapters
+                .map(chapter => `<option value="${chapter}">${chapter}</option>`)
+                .join("");
+
+            const desired = selectedChapter ? Number(selectedChapter) : chapters[0];
+            if (chapters.includes(desired)) {
+                select.value = String(desired);
+            } else if (chapters.length) {
+                select.value = String(chapters[0]);
+            }
+        } catch (error) {
+            const status = $("bible-status");
+            if (status) status.textContent = error.message;
+        }
+    }
+
+    async function syncNavigationControlsFromItems(items) {
+        if (!items?.length) return;
+
+        const first = items[0];
+        const bookSelect = $("bible-book-select");
+        if (bookSelect) bookSelect.value = first.bookKey;
+
+        await populateChapterSelect(first.bookKey, first.chapter);
+        saveLastState({
+            bookKey: first.bookKey,
+            chapter: String(first.chapter)
+        });
+    }
+
     async function openSelectedBook() {
         const bookKey = $("bible-book-select")?.value;
-        if (!bookKey) return;
+        const status = $("bible-status");
+        if (!bookKey) {
+            if (status) status.textContent = "Choose a book first.";
+            return;
+        }
+
         const bookData = await loadBook(bookKey);
         const firstChapter = bookData?.chapters?.[0]?.num || 1;
+        const selectedChapter = Number($("bible-chapter-select")?.value || firstChapter);
         const book = getBook(bookKey);
-        $("bible-reference-input").value = `${book.name} ${firstChapter}`;
+
+        $("bible-reference-input").value = `${book.name} ${selectedChapter}`;
+        await displayCitation();
+    }
+
+    async function changeBibleChapter(delta) {
+        const bookKey = $("bible-book-select")?.value || currentResolved?.[0]?.bookKey;
+        const status = $("bible-status");
+        if (!bookKey) {
+            if (status) status.textContent = "Choose a book first.";
+            return;
+        }
+
+        const bookData = await loadBook(bookKey);
+        const chapters = (bookData.chapters || []).map(chapter => Number(chapter.num)).filter(Boolean);
+        if (!chapters.length) {
+            if (status) status.textContent = "No chapters available for selected book.";
+            return;
+        }
+
+        const chapterSelect = $("bible-chapter-select");
+        const activeChapter = Number(chapterSelect?.value || currentResolved?.[0]?.chapter || chapters[0]);
+        const activeIndex = Math.max(0, chapters.indexOf(activeChapter));
+        const nextIndex = Math.min(chapters.length - 1, Math.max(0, activeIndex + delta));
+        const nextChapter = chapters[nextIndex];
+
+        if (chapterSelect) chapterSelect.value = String(nextChapter);
+
+        const book = getBook(bookKey);
+        $("bible-reference-input").value = `${book.name} ${nextChapter}`;
         await displayCitation();
     }
 
@@ -695,7 +772,7 @@
         reader.readAsText(file);
     }
 
-    function initializeBibleBrowser() {
+    async function initializeBibleBrowser() {
         populateBookSelect();
         populateScopeSelect();
 
@@ -708,10 +785,16 @@
             renderResults(currentResolved);
             saveLastState();
         });
-        $("bible-book-select")?.addEventListener("change", () => {
+        $("bible-book-select")?.addEventListener("change", async event => {
+            await populateChapterSelect(event.target.value);
+            saveLastState();
+        });
+        $("bible-chapter-select")?.addEventListener("change", () => {
             saveLastState();
         });
         $("bible-book-open")?.addEventListener("click", openSelectedBook);
+        $("bible-prev-chapter")?.addEventListener("click", () => changeBibleChapter(-1));
+        $("bible-next-chapter")?.addEventListener("click", () => changeBibleChapter(1));
         $("bible-search-go")?.addEventListener("click", searchBible);
         $("bible-search-input")?.addEventListener("keydown", event => {
             if (event.key === "Enter") searchBible();
@@ -728,7 +811,10 @@
         if (state.translation) currentTranslation = state.translation;
         if (state.citation && $("bible-reference-input")) $("bible-reference-input").value = state.citation;
         if (state.scope && $("bible-search-scope")) $("bible-search-scope").value = state.scope;
-        if (state.bookKey && $("bible-book-select")) $("bible-book-select").value = state.bookKey;
+        if (state.bookKey && $("bible-book-select")) {
+            $("bible-book-select").value = state.bookKey;
+            await populateChapterSelect(state.bookKey, state.chapter || "");
+        }
 
         if (location.pathname === "/tools/bible") {
             openBibleBrowser({ restore: true });
@@ -781,6 +867,8 @@
         open: openBibleBrowser,
         close: closeBibleBrowser,
         displayCitation,
+        openSelectedBook,
+        changeBibleChapter,
         searchBible,
         exportAnnotations,
         loadAnnotations

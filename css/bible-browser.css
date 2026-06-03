@@ -306,3 +306,13 @@
     text-transform: uppercase;
     background: rgba(0, 0, 0, 0.2);
 }
+
+
+.bible-chapter-nav {
+    align-items: stretch;
+}
+
+.bible-chapter-nav .bible-tool-btn {
+    flex: 1 1 auto;
+    min-width: 96px;
+}

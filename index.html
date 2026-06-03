@@ -550,8 +550,16 @@
 
                 <label for="bible-book-select">Book</label>
                 <select id="bible-book-select"></select>
-                <div class="bible-button-row">
-                    <button class="bible-tool-btn" id="bible-book-open" type="button">Open Book</button>
+
+                <label for="bible-chapter-select">Chapter</label>
+                <select id="bible-chapter-select">
+                    <option value="">— Chapter —</option>
+                </select>
+
+                <div class="bible-button-row bible-chapter-nav">
+                    <button class="bible-tool-btn" id="bible-prev-chapter" type="button">Prev Chapter</button>
+                    <button class="bible-tool-btn" id="bible-book-open" type="button">Open Chapter</button>
+                    <button class="bible-tool-btn" id="bible-next-chapter" type="button">Next Chapter</button>
                 </div>
 
                 <label for="bible-search-input">Text Search</label>

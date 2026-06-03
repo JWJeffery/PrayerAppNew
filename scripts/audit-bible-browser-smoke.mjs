@@ -32,6 +32,14 @@ if (!index.includes('id="bible-passage-summary"')) {
   fail("index.html is missing Bible passage summary panel.");
 }
 
+if (!index.includes('id="bible-chapter-select"')) {
+  fail("index.html is missing Bible chapter selector.");
+}
+
+if (!index.includes('id="bible-prev-chapter"') || !index.includes('id="bible-next-chapter"')) {
+  fail("index.html is missing Bible previous/next chapter controls.");
+}
+
 if (!index.includes("js/bible-browser/reference-parser.js")) {
   fail("index.html is missing Bible reference parser script.");
 }
@@ -60,6 +68,14 @@ if (!browser.includes("bible-segment-block")) {
   fail("Bible browser does not render visible segment blocks.");
 }
 
+if (!browser.includes("populateChapterSelect")) {
+  fail("Bible browser does not populate chapter selector.");
+}
+
+if (!browser.includes("changeBibleChapter")) {
+  fail("Bible browser does not expose previous/next chapter navigation.");
+}
+
 if (!browser.includes("resolved.warnings")) {
   fail("Bible browser does not preserve invalid-reference warnings on resolved passages.");
 }
@@ -70,6 +86,10 @@ if (!css.includes("#bible-browser-section")) {
 
 if (!css.includes(".bible-passage-summary")) {
   fail("Bible browser CSS is missing passage summary styling.");
+}
+
+if (!css.includes(".bible-chapter-nav")) {
+  fail("Bible browser CSS is missing chapter navigation styling.");
 }
 
 const context = { window: {} };
