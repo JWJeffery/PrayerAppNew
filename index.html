@@ -614,6 +614,32 @@
                         </div>
                     </details>
 
+                    <details class="bible-browser-details bible-reading-plan-details">
+                        <summary>Reading Plan</summary>
+                        <div class="bible-detail-grid">
+                            <div class="bible-control-field">
+                                <label for="bible-plan-start-date">Start Date</label>
+                                <input id="bible-plan-start-date" type="date">
+                            </div>
+
+                            <div class="bible-control-field">
+                                <label for="bible-plan-active-date">Reading Date</label>
+                                <input id="bible-plan-active-date" type="date">
+                            </div>
+                        </div>
+
+                        <div id="bible-plan-status" class="bible-plan-status">Choose a start date to begin the chronological year plan.</div>
+                        <div id="bible-plan-progress" class="bible-plan-progress">0 of 365 days complete.</div>
+                        <div id="bible-plan-reading" class="bible-plan-reading"></div>
+
+                        <div class="bible-button-row bible-plan-actions">
+                            <button class="bible-tool-btn" id="bible-plan-prev-day" type="button">Previous Day</button>
+                            <button class="bible-tool-btn" id="bible-plan-open-reading" type="button">Open Reading</button>
+                            <button class="bible-tool-btn" id="bible-plan-toggle-complete" type="button">Mark Complete</button>
+                            <button class="bible-tool-btn" id="bible-plan-next-day" type="button">Next Day</button>
+                        </div>
+                    </details>
+
                     <details class="bible-sidebar-details bible-notes-details">
                         <summary>Notes and Highlights</summary>
                         <div class="bible-sidebar-detail-body">
@@ -705,6 +731,7 @@
 <script src="js/orthros-eothinon-engine.js" defer></script>
 <script src="js/horologion-engine.js" defer></script>
 <script src="js/bible-browser/reference-parser.js" defer></script>
+<script src="js/bible-browser/reading-plans.js" defer></script>
 <script src="js/bible-browser/bible-browser.js" defer></script>
 <script src="js/bible-browser/passage-guide.js" defer></script>
 <script src="js/office-ui.js" defer></script>

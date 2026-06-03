@@ -419,3 +419,16 @@ if (browser.includes("missing required anchor fields")) {
   fail("Bible browser annotation import still rejects segment-array annotation exports.");
 }
 
+
+if (!index.includes('id="bible-plan-start-date"')) {
+  fail("Bible Browser is missing reading-plan start-date control.");
+}
+
+if (!index.includes('id="bible-plan-toggle-complete"')) {
+  fail("Bible Browser is missing reading-plan completion toggle.");
+}
+
+if (!index.includes('js/bible-browser/reading-plans.js')) {
+  fail("Bible Browser does not load reading plan script.");
+}
+
