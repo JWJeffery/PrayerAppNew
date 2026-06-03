@@ -2401,5 +2401,41 @@
       "failed_source_lead_count": 21
     },
     "navigation_rule": "Use live LOTH gap inventory and roadmap before beginning C06."
-  }
+  },
+  "lothIntegrationMilestones": [
+    {
+      "milestoneId": "loth-oor-c06-ordinary-sentinel-source-intake-closure",
+      "date": "2026-06-03",
+      "sourceRepo": "LOTH",
+      "sourceRepoHead": "bb77a50",
+      "sourceCommitMessage": "Close ordinary source intake reconciliation",
+      "status": "complete",
+      "milestoneType": "cross_repo_record_exception",
+      "summary": "Recorded LOTH Office of Readings C06 closure: ordinary-time sentinel source intake is complete for first reading, first responsory, second reading, second responsory, and collect.",
+      "scope": {
+        "officeFamily": "roman_loth.office_of_readings",
+        "coverageFamily": "ordinary_time",
+        "sentinelContextCount": 2,
+        "sourceReadyOpenBindingGapCount": 10,
+        "slotCounts": {
+          "office_of_readings.first_reading": 2,
+          "office_of_readings.first_responsory": 2,
+          "office_of_readings.second_reading": 2,
+          "office_of_readings.second_responsory": 2,
+          "office_of_readings.collect": 2
+        }
+      },
+      "governancePosture": {
+        "missingRequiredMappingOrTextBindingReduction": 0,
+        "sourceIntakeDoesNotResolveBindingGap": true,
+        "containsText": false,
+        "publicFacing": false,
+        "publicRenderingPermitted": false,
+        "writesOfficeTextUnits": false,
+        "writesBroadDateBlocks": false
+      },
+      "nextLothLane": "OOR-C07-office-of-readings-text-unit-population-or-binding-continuation",
+      "note": "This is a milestone exception, not a routine sub-tranche record. C06 produced coherent source-ready ordinary sentinel posture but did not complete text-unit population or binding."
+    }
+  ]
 }
