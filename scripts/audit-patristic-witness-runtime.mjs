@@ -126,6 +126,10 @@ if (!guide.includes("queryFathersForRanges")) {
   fail("Passage Guide script does not include Fathers range query function.");
 }
 
+if (!guide.includes("loadFathersForRanges")) {
+  fail("Passage Guide script does not expose direct selected-range Fathers loading.");
+}
+
 if (!guide.includes("locationStart <= range.endLocation")) {
   fail("Passage Guide script does not use overlap matching against selected range.");
 }

@@ -12,6 +12,7 @@
     let parallelEnabled = false;
     let parallelTranslation = "Rotherham";
     let pendingSelection = null;
+    let pendingPassageRanges = [];
     let activeAnnotationId = null;
 
     function $(id) {
@@ -1078,6 +1079,113 @@
         const toolbar = $("bible-selection-toolbar");
         if (toolbar) toolbar.style.display = "none";
         pendingSelection = null;
+        pendingPassageRanges = [];
+    }
+
+    function encodeVerseLocation(chapter, verse) {
+        return Number(chapter) * 1000000 + Number(verse);
+    }
+
+    function formatSelectionRangeLabel(range) {
+        if (range.startChapter === range.endChapter && range.startVerse === range.endVerse) {
+            return `${range.bookName} ${range.startChapter}:${range.startVerse}`;
+        }
+        if (range.startChapter === range.endChapter) {
+            return `${range.bookName} ${range.startChapter}:${range.startVerse}-${range.endVerse}`;
+        }
+        return `${range.bookName} ${range.startChapter}:${range.startVerse}-${range.endChapter}:${range.endVerse}`;
+    }
+
+    function selectedVerseElements(range) {
+        const output = $("bible-results");
+        if (!output) return [];
+
+        return Array.from(output.querySelectorAll(".bible-verse"))
+            .filter(verseEl => {
+                try {
+                    return range.intersectsNode(verseEl);
+                } catch {
+                    return false;
+                }
+            })
+            .sort((a, b) => {
+                const aLoc = encodeVerseLocation(a.dataset.chapter, a.dataset.verse);
+                const bLoc = encodeVerseLocation(b.dataset.chapter, b.dataset.verse);
+                if (a.dataset.bookKey !== b.dataset.bookKey) {
+                    return String(a.dataset.bookKey).localeCompare(String(b.dataset.bookKey));
+                }
+                return aLoc - bLoc;
+            });
+    }
+
+    function rangesFromSelectedVerses(verseEls) {
+        const byBook = new Map();
+
+        for (const verseEl of verseEls) {
+            const bookKey = verseEl.dataset.bookKey;
+            const chapter = Number(verseEl.dataset.chapter);
+            const verse = Number(verseEl.dataset.verse);
+            const location = encodeVerseLocation(chapter, verse);
+            const book = getBook(bookKey);
+            const bookName = book?.name || bookKey;
+
+            if (!byBook.has(bookKey)) {
+                byBook.set(bookKey, {
+                    book: bookKey,
+                    bookName,
+                    startChapter: chapter,
+                    startVerse: verse,
+                    endChapter: chapter,
+                    endVerse: verse,
+                    startLocation: location,
+                    endLocation: location,
+                    verseCount: 0
+                });
+            }
+
+            const range = byBook.get(bookKey);
+            range.verseCount += 1;
+
+            if (location < range.startLocation) {
+                range.startLocation = location;
+                range.startChapter = chapter;
+                range.startVerse = verse;
+            }
+
+            if (location > range.endLocation) {
+                range.endLocation = location;
+                range.endChapter = chapter;
+                range.endVerse = verse;
+            }
+        }
+
+        return Array.from(byBook.values()).map(range => ({
+            ...range,
+            label: formatSelectionRangeLabel(range)
+        }));
+    }
+
+    function setSelectionToolbarMode({ allowAnnotation }) {
+        const highlight = $("bible-highlight-btn");
+        const comment = $("bible-comment-btn");
+        const fathers = $("bible-fathers-selection-btn");
+
+        if (highlight) {
+            highlight.disabled = !allowAnnotation;
+            highlight.title = allowAnnotation ? "Highlight selected verse text" : "Highlighting currently supports one verse at a time";
+        }
+
+        if (comment) {
+            comment.disabled = !allowAnnotation;
+            comment.title = allowAnnotation ? "Comment on selected verse text" : "Commenting currently supports one verse at a time";
+        }
+
+        if (fathers) {
+            fathers.disabled = !pendingPassageRanges.length;
+            fathers.title = pendingPassageRanges.length
+                ? "Search patristic witnesses for the selected passage"
+                : "Select Bible text first";
+        }
     }
 
     function handleSelection() {
@@ -1088,41 +1196,48 @@
         }
 
         const range = selection.getRangeAt(0);
-        const verseEl = range.commonAncestorContainer.nodeType === Node.ELEMENT_NODE
-            ? range.commonAncestorContainer.closest?.(".bible-verse")
-            : range.commonAncestorContainer.parentElement?.closest?.(".bible-verse");
+        const browser = $("bible-browser-section");
+        const output = $("bible-results");
 
-        if (!verseEl || !$("bible-browser-section")?.contains(verseEl)) {
+        if (!browser || !output || !browser.contains(range.commonAncestorContainer)) {
             hideSelectionToolbar();
             return;
         }
 
-        const textEl = verseEl.querySelector(".bible-verse-text");
-        if (!textEl) {
+        const verseEls = selectedVerseElements(range);
+        if (!verseEls.length) {
             hideSelectionToolbar();
             return;
         }
 
-        const offsets = getSelectionOffsets(textEl, range);
-        if (offsets.end <= offsets.start) {
-            hideSelectionToolbar();
-            return;
-        }
+        pendingPassageRanges = rangesFromSelectedVerses(verseEls);
+        pendingSelection = null;
 
-        pendingSelection = {
-            anchorKey: `${verseEl.dataset.bookKey}.${verseEl.dataset.chapter}.${verseEl.dataset.verse}.${verseEl.dataset.translation}`,
-            bookKey: verseEl.dataset.bookKey,
-            chapter: Number(verseEl.dataset.chapter),
-            verse: Number(verseEl.dataset.verse),
-            translation: verseEl.dataset.translation,
-            startOffset: offsets.start,
-            endOffset: offsets.end,
-            selectedText: selection.toString()
-        };
+        const verseEl = verseEls.length === 1 ? verseEls[0] : null;
+        const textEl = verseEl?.querySelector(".bible-verse-text") || null;
+        let allowAnnotation = false;
+
+        if (verseEl && textEl && textEl.contains(range.commonAncestorContainer.nodeType === Node.ELEMENT_NODE ? range.commonAncestorContainer : range.commonAncestorContainer.parentElement)) {
+            const offsets = getSelectionOffsets(textEl, range);
+            if (offsets.end > offsets.start) {
+                pendingSelection = {
+                    anchorKey: `${verseEl.dataset.bookKey}.${verseEl.dataset.chapter}.${verseEl.dataset.verse}.${verseEl.dataset.translation}`,
+                    bookKey: verseEl.dataset.bookKey,
+                    chapter: Number(verseEl.dataset.chapter),
+                    verse: Number(verseEl.dataset.verse),
+                    translation: verseEl.dataset.translation,
+                    startOffset: offsets.start,
+                    endOffset: offsets.end,
+                    selectedText: selection.toString()
+                };
+                allowAnnotation = true;
+            }
+        }
 
         const rect = range.getBoundingClientRect();
         const toolbar = $("bible-selection-toolbar");
         if (toolbar) {
+            setSelectionToolbarMode({ allowAnnotation });
             toolbar.style.display = "flex";
             toolbar.style.left = `${Math.max(12, rect.left + window.scrollX)}px`;
             toolbar.style.top = `${Math.max(12, rect.top + window.scrollY - 42)}px`;
@@ -1130,7 +1245,11 @@
     }
 
     function addAnnotation(withComment) {
-        if (!pendingSelection) return;
+        if (!pendingSelection) {
+            const status = $("bible-status");
+            if (status) status.textContent = "Highlight/comment currently supports one selected verse at a time.";
+            return;
+        }
 
         const annotationId = `ann-${Date.now()}-${Math.random().toString(16).slice(2)}`;
         const annotations = loadAnnotations();
@@ -1154,6 +1273,27 @@
 
     function editAnnotation(annotationId) {
         openAnnotationEditor(annotationId);
+    }
+
+    async function loadFathersForSelection() {
+        const status = $("bible-status");
+        if (!pendingPassageRanges.length) {
+            if (status) status.textContent = "Select Bible text before searching the Fathers.";
+            return;
+        }
+
+        const ranges = pendingPassageRanges.slice();
+        hideSelectionToolbar();
+        window.getSelection()?.removeAllRanges();
+
+        if (!window.UniversalOfficePassageGuide?.loadFathersForRanges) {
+            if (status) status.textContent = "Passage Guide is not available yet.";
+            return;
+        }
+
+        if (status) status.textContent = `Searching Fathers for ${ranges.map(range => range.label).join("; ")}…`;
+        await window.UniversalOfficePassageGuide.loadFathersForRanges(ranges, "selected passage");
+        if (status) status.textContent = `Loaded Fathers for ${ranges.map(range => range.label).join("; ")}.`;
     }
 
     async function searchBible() {
@@ -1330,6 +1470,7 @@
         });
         $("bible-highlight-btn")?.addEventListener("click", () => addAnnotation(false));
         $("bible-comment-btn")?.addEventListener("click", () => addAnnotation(true));
+        $("bible-fathers-selection-btn")?.addEventListener("click", loadFathersForSelection);
         $("bible-export-annotations")?.addEventListener("click", exportAnnotations);
         $("bible-import-annotations")?.addEventListener("change", event => importAnnotationsFromFile(event.target.files?.[0]));
         $("bible-save-annotation")?.addEventListener("click", saveAnnotationEditor);
@@ -1409,6 +1550,10 @@
         getCurrentResolved() {
             return currentResolved || [];
         },
+        getPendingPassageRanges() {
+            return pendingPassageRanges || [];
+        },
+        loadFathersForSelection,
         setParallelReader(enabled, translation = parallelTranslation) {
             parallelEnabled = Boolean(enabled);
             parallelTranslation = translation || parallelTranslation;

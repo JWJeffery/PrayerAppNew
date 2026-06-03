@@ -194,25 +194,28 @@
         `;
     }
 
-    async function loadFathersForCurrentPassage() {
+    async function loadFathersForRanges(ranges, sourceLabel = "selected passage") {
         const status = $("bible-passage-guide-status");
         const output = $("bible-passage-guide-results");
-        const ranges = currentPassageRanges();
 
-        if (!ranges.length) {
-            if (status) status.textContent = "Open a passage before loading patristic witnesses.";
+        if (!ranges?.length) {
+            if (status) status.textContent = "Open or select a passage before loading patristic witnesses.";
             if (output) output.innerHTML = "";
             return;
         }
 
         try {
-            if (status) status.textContent = "Loading patristic witnesses…";
+            if (status) status.textContent = `Loading patristic witnesses for ${sourceLabel}…`;
             const { results, unsupportedBooks } = await queryFathersForRanges(ranges);
             renderWitnesses(results, ranges, unsupportedBooks);
         } catch (error) {
             if (status) status.textContent = error.message;
             if (output) output.innerHTML = `<div class="bible-guide-error">${escapeHtml(error.message)}</div>`;
         }
+    }
+
+    async function loadFathersForCurrentPassage() {
+        await loadFathersForRanges(currentPassageRanges(), "current passage");
     }
 
     function initializePassageGuide() {
@@ -222,6 +225,7 @@
     window.UniversalOfficePassageGuide = {
         currentPassageRanges,
         queryFathersForRanges,
+        loadFathersForRanges,
         loadFathersForCurrentPassage,
     };
 
