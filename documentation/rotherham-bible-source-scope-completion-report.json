@@ -1,0 +1,57 @@
+{
+  "schema": "rotherham_bible_source_scope_completion_report_v1",
+  "status": "complete_source_scope_imported_and_resolver_verified",
+  "generatedAtUtc": "2026-06-03T00:22:30.560882+00:00",
+  "latestCommitExpected": "6d73441 Import Rotherham Psalms",
+  "sourceWitness": {
+    "translation": "Rotherham",
+    "source": "scrollmapper/bible_databases 2025 formats/json/Rotherham.json",
+    "sha256": "d63488b149aadf4430fea6ddbc7c07395a12321a1b58799ce2dcb384ebf97627"
+  },
+  "coverage": {
+    "ordinaryOtNonPsalms": "complete from prior aligned/blocker imports",
+    "nt": "complete from prior direct imports and translationOverlays for mismatch chapters",
+    "psalms": "complete for source-scope MT/Hebrew Psalms 1-150",
+    "extendedPsalms151To155": "not imported; outside Rotherham source scope"
+  },
+  "psalmsImport": {
+    "importReport": "documentation/rotherham-psalms-import-report.json",
+    "versificationInventory": "documentation/rotherham-psalms-versification-inventory.json",
+    "target": "data/bible/OT/psalms.json",
+    "importedTranslationKey": "Rotherham",
+    "importedPsalmScope": "Psalms 1-150 only",
+    "preservedExtendedPsalmRecords": [
+      151,
+      152,
+      153,
+      154,
+      155
+    ],
+    "sourceVerseRows": 2461,
+    "importedPsalmCount": 150
+  },
+  "resolverVerification": {
+    "resolver": "js/scripture-resolver.js",
+    "verifiedBehavior": [
+      "Psalm 1 resolves with requested translation Rotherham through getScriptureText.",
+      "Psalm 1:1-2 resolves with requested translation Rotherham through getScriptureText.",
+      "Psalms 1:1-2 resolves with requested translation Rotherham through getScriptureText.",
+      "Existing KJV Psalm selection still resolves.",
+      "Orthodox Psalm 151 still resolves.",
+      "Rotherham request for Psalm 151 falls back under existing translation fallback behavior because Rotherham has no Psalm 151 source."
+    ],
+    "note": "The resolver strips Psalm:verse labels from returned text; post-import smoke expectations must assert verse content, not prefixed labels."
+  },
+  "audits": {
+    "audit:bible-corpus-structure": "PASS",
+    "audit:bible-corpus-completeness": "PASS"
+  },
+  "nextRecommendedWork": {
+    "primary": "Return to paused C03 Office of Readings ordinary psalmody appointment map unless Josh wants a Psalm-specific audit/test script first.",
+    "c03State": {
+      "loth": "18d296c",
+      "prayerAppNewRoadmap": "fd9bcaa",
+      "pausedLeg": "OOR-C03-ordinary-psalmody-appointment-map"
+    }
+  }
+}

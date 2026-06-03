@@ -2323,5 +2323,8 @@
     "chapterFindingCount": 18,
     "remainingCompletenessFindings": 0,
     "rotherhamFinalCoverageAudit": "documentation/rotherham-final-coverage-audit.json"
+  },
+  "currentState": {
+    "rotherhamBibleSourceScope": "complete_through_6d73441_except_extended_psalms_outside_source_scope"
   }
 }

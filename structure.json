@@ -2,7 +2,7 @@
   "project_manifest": {
     "name": "Universal Office",
     "version": "3.8.148",
-    "last_updated": "2026-06-01",
+    "last_updated": "2026-06-02",
     "bcp_compliance": "100%",
     "operational_status": "Current operational status as of 2026-06-01: PrayerAppNew remains the universal app shell and governance manifest. Byzantine/Horologion public-beta ordinary baseline remains governed with deferred depth tracked separately. Roman LOTH remains a private control-corpus lane with public rendering controlled separately by permission/source decisions. Office of Readings private corpus construction has now extended the full-Grail pilot model into the refs-only cycle-expansion fixture layer as text-bearing private corpus artifacts. LOTH is recorded through commit 715ba19. The six corpus-producing tranches after PrayerAppNew 0f2e0e3 materialized the three refs-only cycle-expansion fixture contexts as private full-Grail text-bearing contexts, exported those fixture contexts as private text artifacts, compiled them into one fixture-context book, indexed fixture-context slots, exported each indexed text-bearing fixture slot as a private text file, and compiled the fixture-slot exports into one private slot-text export book. The current recorded OOR fixture-expansion layer includes three materialized full-Grail fixture contexts, three fixture-context text exports, one fixture-context book, one fixture-context slot text index, 31 fixture-context slot text exports, and one compiled fixture-context slot-text export book. This fixture layer remains explicitly non-claiming for new cycle coverage; public rendering remains controlled separately from private corpus construction; broad daily date-block snapshots remain out of scope. The LOTH-to-PrayerAppNew recording cadence remains every six corpus-producing LOTH tranches. The next LOTH work should continue corpus production by moving from fixture-shape materialization toward additional real Office of Readings cycle/proper context coverage.",
     "architectural_decisions_2026_05_25": [
@@ -1539,6 +1539,19 @@
   },
   "recent_logic_changes": [
     {
+      "date": "2026-06-02",
+      "commit": "6d73441",
+      "title": "Import Rotherham Psalms and complete Rotherham source-scope Bible import",
+      "status": "complete",
+      "details": [
+        "Rotherham text added to consolidated psalter records for Psalms 1-150 only.",
+        "Extended Psalms 151-155 preserved without Rotherham text because they are outside the governed Rotherham source scope.",
+        "Resolver debug verified requested Rotherham Psalm selection through js/scripture-resolver.js.",
+        "Bible corpus structural and completeness audits pass."
+      ],
+      "record": "documentation/rotherham-bible-source-scope-completion-report.json"
+    },
+    {
       "date": "2026-06-01",
       "phase": "Roman LOTH Office of Readings completion plan",
       "status": "active_controlling_plan_recorded",
@@ -2517,5 +2530,6 @@
       "yahwehCount": 3513
     },
     "rotherhamFinalCoverageAudit": "documentation/rotherham-final-coverage-audit.json"
-  }
+  },
+  "last_updated": "2026-06-02"
 }
