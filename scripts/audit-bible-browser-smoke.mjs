@@ -36,6 +36,14 @@ if (!index.includes('id="bible-chapter-select"')) {
   fail("index.html is missing Bible chapter selector.");
 }
 
+if (!index.includes('id="bible-parallel-toggle"')) {
+  fail("index.html is missing Bible parallel reader toggle.");
+}
+
+if (!index.includes('id="bible-parallel-select"')) {
+  fail("index.html is missing Bible parallel reader translation selector.");
+}
+
 if (!index.includes('id="bible-prev-chapter"') || !index.includes('id="bible-next-chapter"')) {
   fail("index.html is missing Bible previous/next chapter controls.");
 }
@@ -96,6 +104,22 @@ if (!browser.includes("renderCurrentNotesList")) {
   fail("Bible browser does not render current-view annotation notes.");
 }
 
+if (!browser.includes("parallelEnabled")) {
+  fail("Bible browser does not preserve parallel reader state.");
+}
+
+if (!browser.includes("getVerseTextExact")) {
+  fail("Bible browser does not detect per-translation verse availability.");
+}
+
+if (!browser.includes("bible-parallel-columns")) {
+  fail("Bible browser does not render parallel translation columns.");
+}
+
+if (!browser.includes("setParallelReader")) {
+  fail("Bible browser does not expose parallel reader test API.");
+}
+
 if (!browser.includes("openAnnotationEditor")) {
   fail("Bible browser does not expose annotation editor.");
 }
@@ -154,6 +178,14 @@ if (!css.includes(".bible-current-notes")) {
 
 if (!css.includes(".bible-annotation-editor")) {
   fail("Bible browser CSS is missing annotation editor styling.");
+}
+
+if (!css.includes(".bible-parallel-columns")) {
+  fail("Bible browser CSS is missing parallel reader column styling.");
+}
+
+if (!css.includes(".bible-translation-unavailable")) {
+  fail("Bible browser CSS is missing unavailable-translation styling.");
 }
 
 const context = { window: {} };

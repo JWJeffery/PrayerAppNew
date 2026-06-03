@@ -9,6 +9,8 @@
     const bookCache = new Map();
     let currentResolved = [];
     let currentTranslation = "NRSV";
+    let parallelEnabled = false;
+    let parallelTranslation = "Rotherham";
     let pendingSelection = null;
     let activeAnnotationId = null;
 
@@ -78,6 +80,23 @@
         return "";
     }
 
+    function getVerseTextExact(verse, translation) {
+        if (!verse) return { available: false, text: "" };
+
+        if (typeof verse.text === "string") {
+            return { available: true, text: verse.text };
+        }
+
+        if (verse.text && typeof verse.text === "object" && verse.text[translation]) {
+            return { available: true, text: verse.text[translation] };
+        }
+
+        return {
+            available: false,
+            text: `${translation} text is not available for this verse.`
+        };
+    }
+
     function getAvailableTranslations(bookData) {
         const fromMeta = Object.keys(bookData?.meta?.translations || {});
         if (fromMeta.length) return fromMeta;
@@ -92,6 +111,35 @@
         }
         return Array.from(found).sort();
     }
+
+    function getTranslationLabel(bookData, translation) {
+        return bookData?.meta?.translations?.[translation]?.label || translation;
+    }
+
+    function getParallelTranslationKeys(bookData) {
+        const available = getAvailableTranslations(bookData);
+        if (!available.length) return [currentTranslation];
+
+        if (!available.includes(currentTranslation)) {
+            currentTranslation = bookData?.meta?.defaultTranslation || available[0];
+        }
+
+        if (!parallelTranslation || !available.includes(parallelTranslation) || parallelTranslation === currentTranslation) {
+            parallelTranslation = available.find(value => value !== currentTranslation) || available[0];
+        }
+
+        if (!parallelEnabled || parallelTranslation === currentTranslation) return [currentTranslation];
+        return [currentTranslation, parallelTranslation];
+    }
+
+    function syncParallelControlsEnabled() {
+        const toggle = $("bible-parallel-toggle");
+        const select = $("bible-parallel-select");
+
+        if (toggle) toggle.checked = parallelEnabled;
+        if (select) select.disabled = !parallelEnabled;
+    }
+
 
     function formatReferenceLabel(bookName, ref) {
         const start = ref.startVerse === null
@@ -251,6 +299,8 @@
         const state = {
             citation: $("bible-reference-input")?.value || "",
             translation: currentTranslation,
+            parallelEnabled,
+            parallelTranslation,
             scope: $("bible-search-scope")?.value || "ALL",
             bookKey: $("bible-book-select")?.value || "",
             chapter: $("bible-chapter-select")?.value || "",
@@ -379,6 +429,50 @@
         `;
     }
 
+    function renderVerseDisplay(item, searchTerm = "") {
+        const translations = getParallelTranslationKeys(item.bookData);
+        const annotations = annotationsForVerse(item);
+
+        if (translations.length < 2) {
+            const text = getVerseText(item.verseData, currentTranslation);
+            return `
+                <p class="bible-verse"
+                   data-book-key="${escapeHtml(item.bookKey)}"
+                   data-chapter="${item.chapter}"
+                   data-verse="${item.verse}"
+                   data-translation="${escapeHtml(currentTranslation)}">
+                    <sup>${item.verse}</sup>
+                    <span class="bible-verse-text">${renderAnnotatedText(text, annotations, searchTerm)}</span>
+                </p>
+            `;
+        }
+
+        const primary = getVerseTextExact(item.verseData, currentTranslation);
+        const secondary = getVerseTextExact(item.verseData, parallelTranslation);
+        const primaryLabel = getTranslationLabel(item.bookData, currentTranslation);
+        const secondaryLabel = getTranslationLabel(item.bookData, parallelTranslation);
+
+        return `
+            <p class="bible-verse bible-verse-parallel"
+               data-book-key="${escapeHtml(item.bookKey)}"
+               data-chapter="${item.chapter}"
+               data-verse="${item.verse}"
+               data-translation="${escapeHtml(currentTranslation)}">
+                <sup>${item.verse}</sup>
+                <span class="bible-parallel-columns">
+                    <span class="bible-parallel-column bible-parallel-primary">
+                        <span class="bible-parallel-label">${escapeHtml(primaryLabel)}</span>
+                        <span class="bible-verse-text ${primary.available ? "" : "bible-translation-unavailable"}">${renderAnnotatedText(primary.text, annotations, searchTerm)}</span>
+                    </span>
+                    <span class="bible-parallel-column bible-parallel-secondary">
+                        <span class="bible-parallel-label">${escapeHtml(secondaryLabel)}</span>
+                        <span class="bible-parallel-text ${secondary.available ? "" : "bible-translation-unavailable"}">${renderSearchHighlightedText(secondary.text, searchTerm)}</span>
+                    </span>
+                </span>
+            </p>
+        `;
+    }
+
     function renderResults(items, options = {}) {
         currentResolved = items;
         const output = $("bible-results");
@@ -432,20 +526,7 @@
                 ${segment.chapters.map(group => `
                     <section class="bible-chapter-block">
                         <h3>${escapeHtml(group.bookName)} ${group.chapter}</h3>
-                        ${group.verses.map(item => {
-                            const text = getVerseText(item.verseData, currentTranslation);
-                            const annotations = annotationsForVerse(item);
-                            return `
-                                <p class="bible-verse"
-                                   data-book-key="${escapeHtml(item.bookKey)}"
-                                   data-chapter="${item.chapter}"
-                                   data-verse="${item.verse}"
-                                   data-translation="${escapeHtml(currentTranslation)}">
-                                    <sup>${item.verse}</sup>
-                                    <span class="bible-verse-text">${renderAnnotatedText(text, annotations, items.searchTerm || "")}</span>
-                                </p>
-                            `;
-                        }).join("")}
+                        ${group.verses.map(item => renderVerseDisplay(item, items.searchTerm || "")).join("")}
                     </section>
                 `).join("")}
             </section>
@@ -468,20 +549,42 @@
 
     async function syncTranslationSelect(items) {
         const select = $("bible-translation-select");
-        if (!select || !items.length) return;
+        const parallelSelect = $("bible-parallel-select");
+        if (!items.length) {
+            syncParallelControlsEnabled();
+            return;
+        }
 
         const bookData = items[0].bookData;
         const translations = getAvailableTranslations(bookData);
-        if (!translations.length) return;
+        if (!translations.length) {
+            syncParallelControlsEnabled();
+            return;
+        }
 
         if (!translations.includes(currentTranslation)) {
             currentTranslation = bookData?.meta?.defaultTranslation || translations[0];
         }
 
-        select.innerHTML = translations
+        if (!parallelTranslation || !translations.includes(parallelTranslation) || parallelTranslation === currentTranslation) {
+            parallelTranslation = translations.find(value => value !== currentTranslation) || translations[0];
+        }
+
+        const optionsHtml = translations
             .map(value => `<option value="${escapeHtml(value)}">${escapeHtml(value)}</option>`)
             .join("");
-        select.value = currentTranslation;
+
+        if (select) {
+            select.innerHTML = optionsHtml;
+            select.value = currentTranslation;
+        }
+
+        if (parallelSelect) {
+            parallelSelect.innerHTML = optionsHtml;
+            parallelSelect.value = parallelTranslation;
+        }
+
+        syncParallelControlsEnabled();
     }
 
     async function displayCitation(options = {}) {
@@ -1020,6 +1123,22 @@
         });
         $("bible-translation-select")?.addEventListener("change", event => {
             currentTranslation = event.target.value;
+            if (parallelTranslation === currentTranslation && currentResolved?.[0]?.bookData) {
+                const alternatives = getAvailableTranslations(currentResolved[0].bookData).filter(value => value !== currentTranslation);
+                parallelTranslation = alternatives[0] || parallelTranslation;
+            }
+            syncTranslationSelect(currentResolved);
+            renderResults(currentResolved);
+            saveLastState();
+        });
+        $("bible-parallel-toggle")?.addEventListener("change", event => {
+            parallelEnabled = event.target.checked;
+            syncTranslationSelect(currentResolved);
+            renderResults(currentResolved);
+            saveLastState();
+        });
+        $("bible-parallel-select")?.addEventListener("change", event => {
+            parallelTranslation = event.target.value;
             renderResults(currentResolved);
             saveLastState();
         });
@@ -1050,6 +1169,9 @@
 
         const state = loadLastState();
         if (state.translation) currentTranslation = state.translation;
+        if (typeof state.parallelEnabled === "boolean") parallelEnabled = state.parallelEnabled;
+        if (state.parallelTranslation) parallelTranslation = state.parallelTranslation;
+        syncParallelControlsEnabled();
         if (state.citation && $("bible-reference-input")) $("bible-reference-input").value = state.citation;
         if (state.scope && $("bible-search-scope")) $("bible-search-scope").value = state.scope;
         if (state.bookKey && $("bible-book-select")) {
@@ -1111,6 +1233,13 @@
         openSelectedBook,
         changeBibleChapter,
         searchBible,
+        setParallelReader(enabled, translation = parallelTranslation) {
+            parallelEnabled = Boolean(enabled);
+            parallelTranslation = translation || parallelTranslation;
+            syncTranslationSelect(currentResolved);
+            renderResults(currentResolved);
+            saveLastState();
+        },
         exportAnnotations,
         loadAnnotations,
         renderCurrentNotesList,

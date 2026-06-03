@@ -428,3 +428,83 @@
     outline: 1px solid rgba(201, 168, 76, 0.65);
     background: rgba(201, 168, 76, 0.07);
 }
+
+
+.bible-parallel-control-box {
+    border: 1px solid rgba(201, 168, 76, 0.18);
+    background: rgba(201, 168, 76, 0.045);
+    padding: 10px;
+    margin: 8px 0 12px;
+}
+
+.bible-checkline {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--gold);
+    font-family: 'Cinzel', serif;
+    font-size: 0.78rem;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+}
+
+.bible-checkline input {
+    width: auto;
+}
+
+.bible-parallel-columns {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: 18px;
+    align-items: start;
+    width: 100%;
+}
+
+.bible-parallel-column {
+    display: block;
+    min-width: 0;
+}
+
+.bible-parallel-primary {
+    border-right: 1px solid rgba(201, 168, 76, 0.18);
+    padding-right: 16px;
+}
+
+.bible-parallel-secondary {
+    color: #d8cfb8;
+}
+
+.bible-parallel-label {
+    display: block;
+    color: var(--gold);
+    font-family: 'Cinzel', serif;
+    font-size: 0.58rem;
+    letter-spacing: 0.11em;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+    opacity: 0.78;
+}
+
+.bible-parallel-text {
+    display: block;
+}
+
+.bible-translation-unavailable {
+    color: #d8a6a6;
+    font-style: italic;
+}
+
+@media (max-width: 860px) {
+    .bible-parallel-columns {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    .bible-parallel-primary {
+        border-right: 0;
+        border-bottom: 1px solid rgba(201, 168, 76, 0.18);
+        padding-right: 0;
+        padding-bottom: 10px;
+    }
+}
