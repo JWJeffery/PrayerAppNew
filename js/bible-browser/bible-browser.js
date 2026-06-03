@@ -230,11 +230,6 @@
                 addUniqueWarning(warnings, warning);
                 addUniqueWarning(segment.warnings, warning);
             }
-            if (segment.resolvedCount === 0 && segment.warnings.length && !segment.warnings.some(w => w.includes("resolved no verses"))) {
-                const warning = `${segmentLabel} resolved no verses.`;
-                addUniqueWarning(warnings, warning);
-                addUniqueWarning(segment.warnings, warning);
-            }
 
             segmentIndex += 1;
         }
