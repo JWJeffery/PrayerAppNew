@@ -1052,7 +1052,7 @@
         const state = loadLastState();
         const input = $("bible-reference-input");
         if (input && !input.value.trim()) {
-            input.value = state.citation || "Hebrews 2:15-3:8; 8:16";
+            input.value = state.citation || "Hebrews 2:15-3:8; 4:16";
         }
 
         history.replaceState(null, "", "/tools/bible");
