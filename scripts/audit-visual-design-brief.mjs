@@ -22,8 +22,11 @@ if (!packageJson.scripts?.["audit:visual-design-brief"]) {
   "Beauty serves structure. Structure governs beauty.",
   "Visual unity must not flatten canonical or liturgical distinctions.",
   "The ordinary user should see plain-English labels first.",
-  "The study drawer pattern is now preferred",
-  "Phase B: redesign the Bible Browser static layout",
+  "illuminated parchment interface",
+  "Dark mode may eventually exist as an optional secondary mode",
+  "The target reference is the mobile-app concept",
+  "cream / parchment study drawer",
+  "Phase B: redesign the Bible Browser static layout around the parchment/mobile-app concept",
   "location.href = \"/tools/bible?reload=\" + Date.now();"
 ].forEach(requireText);
 

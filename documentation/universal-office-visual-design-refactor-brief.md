@@ -41,35 +41,48 @@ Primary labels should avoid internal terms such as corpus, runtime, pipeline, an
 
 ## Visual Language
 
+The primary visual language should move toward an illuminated parchment interface.
+
+The current dark interface is not the main design north star. Dark mode may eventually exist as an optional secondary mode, but the primary design direction should be warm, light, devotional, and app-like.
+
 The design should move toward:
 
-- warm dark app surfaces
-- parchment or vellum-like reading fields
-- restrained gold or brass accents
-- strong typographic hierarchy
-- generous whitespace
-- intentional cards and drawers
+- warm ivory, parchment, and vellum surfaces
+- deep brown ink and action colors
+- restrained gold or brass line iconography
+- soft shadows and rounded cards
+- large calm reading surfaces
+- minimal visible chrome
+- tabbed sections and drawers instead of toolboxes
 - contextual tools instead of persistent clutter
 - study drawers for complex interactions
 - plain-language empty and warning states
+- a premium liturgical app feel rather than a web utility feel
+
+The target reference is the mobile-app concept: ivory backgrounds, brown/gold ecclesial accents, devotional iconography, calm cards, clear tabs, and generous whitespace.
 
 Avoid:
 
 - dense utility sidebars
 - generic dashboards
 - decorative clutter
+- dark-mode-first assumptions
 - controls competing with sacred text
 - design choices that imply traditions are interchangeable skins
 
 ## Bible Browser Pilot
 
-The Bible Browser should become the proving ground for:
+The Bible Browser should become the proving ground for translating the mobile-app visual language into the web app.
 
-- primary command bar
-- reading canvas
+The Bible Browser should prove:
+
+- warm parchment reader surface
+- soft app-like header
+- primary passage command bar
+- large reading canvas
+- tabbed or card-based secondary tools
 - contextual selection toolbar
-- study drawer
-- secondary tools area
+- cream / parchment study drawer
 - research notebook
 - reading plan
 - source-aware study features
@@ -109,7 +122,7 @@ The drawer should remain high, visible, scrollable, and stable.
 
 Phase A: record this brief and guard it with an audit.
 
-Phase B: redesign the Bible Browser static layout without removing existing behavior.
+Phase B: redesign the Bible Browser static layout around the parchment/mobile-app concept without removing existing behavior.
 
 Phase C: extract reusable design components from the Bible Browser.
 
