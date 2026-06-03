@@ -1091,3 +1091,31 @@
     width: 100%;
     margin-bottom: 8px;
 }
+
+
+.bible-guide-card-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    align-items: center;
+    margin-top: 8px;
+}
+
+.bible-guide-save-notebook[disabled] {
+    opacity: 0.72;
+    cursor: default;
+}
+
+.bible-research-source-label {
+    display: block;
+    color: #a89878;
+    font-family: 'Cinzel', serif;
+    font-size: 0.58rem;
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+    margin-top: 3px;
+}
+
+.bible-research-fathers-card {
+    border-color: rgba(201, 168, 76, 0.24);
+}

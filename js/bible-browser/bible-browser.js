@@ -3,7 +3,8 @@
 
     const STORE_KEYS = {
         lastState: "uo.bibleBrowser.lastState.v1",
-        annotations: "uo.bibleBrowser.annotations.v1"
+        annotations: "uo.bibleBrowser.annotations.v1",
+        fathersNotebook: "uo.bibleBrowser.fathersNotebook.v1"
     };
 
     const bookCache = new Map();
@@ -1117,6 +1118,80 @@
         return `${bookName} ${first.chapter}:${first.verse} – ${(lastBook?.name || last.bookKey)} ${last.chapter}:${last.verse}`;
     }
 
+    function loadFathersNotebook() {
+        try {
+            const data = JSON.parse(localStorage.getItem(STORE_KEYS.fathersNotebook) || "[]");
+            return Array.isArray(data) ? data : [];
+        } catch {
+            return [];
+        }
+    }
+
+    function saveFathersNotebook(items) {
+        localStorage.setItem(STORE_KEYS.fathersNotebook, JSON.stringify(Array.isArray(items) ? items : []));
+    }
+
+    function notebookItemResearchText(item) {
+        return [
+            item.passageLabel || "",
+            item.rangeLabel || "",
+            item.author || "",
+            item.fatherName || "",
+            item.sourceTitle || "",
+            item.quote || "",
+            item.createdAt || "",
+            item.updatedAt || ""
+        ].join(" ").toLowerCase();
+    }
+
+    function deleteNotebookItemById(itemId) {
+        const item = loadFathersNotebook().find(saved => saved.id === itemId);
+        if (!item) return;
+
+        if (!window.confirm(`Remove saved Fathers note from ${item.author || "this author"}?`)) return;
+
+        saveFathersNotebook(loadFathersNotebook().filter(saved => saved.id !== itemId));
+        closeContextPanel();
+        renderResearchIndex();
+
+        const status = $("bible-status");
+        if (status) status.textContent = "Saved Fathers note removed from notebook.";
+    }
+
+    function openNotebookItemActions(itemId) {
+        const item = loadFathersNotebook().find(saved => saved.id === itemId);
+        if (!item) return;
+
+        const source = item.sourceTitle
+            ? `<div class="bible-guide-source">${escapeHtml(item.sourceTitle)}</div>`
+            : `<div class="bible-guide-source bible-guide-source-missing">Source title not supplied.</div>`;
+        const link = item.sourceUrl
+            ? `<a class="bible-guide-source-link" href="${escapeHtml(item.sourceUrl)}" target="_blank" rel="noopener noreferrer">Open source</a>`
+            : "";
+
+        const body = showContextPanel({
+            title: "Saved from the Fathers",
+            anchorRect: lastContextAnchorRect,
+            html: `
+                <div class="bible-context-note-label">${escapeHtml(item.passageLabel || item.rangeLabel || "Saved commentary")}</div>
+                <div class="bible-guide-card-head">
+                    <span class="bible-guide-father">${escapeHtml(item.author || item.fatherName || "Church Father")}</span>
+                    <span class="bible-guide-date">${item.time ? escapeHtml(` · AD ${item.time}`) : ""}</span>
+                </div>
+                ${source}
+                <blockquote>${escapeHtml(item.quote || "")}</blockquote>
+                <div class="bible-context-actions">
+                    ${link}
+                    <button class="bible-tool-btn" id="bible-context-remove-notebook-item" type="button">Remove from Notebook</button>
+                    <button class="bible-tool-btn" id="bible-context-close-notebook-item" type="button">Close</button>
+                </div>
+            `
+        });
+
+        body?.querySelector("#bible-context-remove-notebook-item")?.addEventListener("click", () => deleteNotebookItemById(itemId));
+        body?.querySelector("#bible-context-close-notebook-item")?.addEventListener("click", closeContextPanel);
+    }
+
     function annotationsInCurrentView() {
         const visibleKeys = new Set((currentResolved || []).map(item => annotationKey(item)));
         return loadAnnotations()
@@ -1193,6 +1268,8 @@
         const filter = $("bible-research-filter")?.value || "ALL";
         const bookKey = $("bible-research-book")?.value || "";
 
+        if (filter === "FATHERS") return [];
+
         return loadAnnotations()
             .filter(annotation => {
                 if (bookKey && annotationPrimaryBookKey(annotation) !== bookKey) return false;
@@ -1212,18 +1289,37 @@
             });
     }
 
+    function filteredResearchNotebookItems() {
+        const query = String($("bible-research-search")?.value || "").trim().toLowerCase();
+        const filter = $("bible-research-filter")?.value || "ALL";
+        const bookKey = $("bible-research-book")?.value || "";
+
+        if (filter === "WITH_NOTES" || filter === "HIGHLIGHTS") return [];
+
+        return loadFathersNotebook()
+            .filter(item => {
+                if (bookKey && item.bookKey !== bookKey) return false;
+                if (query && !notebookItemResearchText(item).includes(query)) return false;
+                return true;
+            })
+            .sort((a, b) => String(a.createdAt || "").localeCompare(String(b.createdAt || "")));
+    }
+
     function renderResearchIndex() {
         const container = $("bible-research-index");
         if (!container) return;
 
         const annotations = filteredResearchAnnotations();
-        if (!annotations.length) {
-            container.innerHTML = `<div class="bible-notes-empty">No saved notes or highlights match your filters.</div>`;
+        const notebookItems = filteredResearchNotebookItems();
+        const total = annotations.length + notebookItems.length;
+
+        if (!total) {
+            container.innerHTML = `<div class="bible-notes-empty">No saved notes, highlights, or Fathers comments match your filters.</div>`;
             return;
         }
 
         container.innerHTML = `
-            <div class="bible-research-summary">${annotations.length} saved item${annotations.length === 1 ? "" : "s"} shown.</div>
+            <div class="bible-research-summary">${total} saved item${total === 1 ? "" : "s"} shown.</div>
             ${annotations.map(annotation => {
                 const label = getAnnotationReferenceLabel(annotation);
                 const excerpt = annotation.selectedText || "Highlight";
@@ -1237,8 +1333,27 @@
                 return `
                     <button class="bible-note-card bible-research-card" type="button" data-research-annotation-open="${escapeHtml(annotation.id)}">
                         <span class="bible-note-ref">${escapeHtml(label)}</span>
+                        <span class="bible-research-source-label">Your note or highlight</span>
                         <span class="bible-note-excerpt">${escapeHtml(excerpt)}</span>
                         ${comment}
+                        <span class="bible-research-meta">${meta}</span>
+                    </button>
+                `;
+            }).join("")}
+            ${notebookItems.map(item => {
+                const label = item.passageLabel || item.rangeLabel || "Saved commentary";
+                const author = item.author || item.fatherName || "Church Father";
+                const source = item.sourceTitle ? ` · ${item.sourceTitle}` : "";
+                const meta = item.createdAt
+                    ? `Saved ${escapeHtml(String(item.createdAt).slice(0, 10))}`
+                    : "Saved from the Fathers";
+
+                return `
+                    <button class="bible-note-card bible-research-card bible-research-fathers-card" type="button" data-research-notebook-open="${escapeHtml(item.id)}">
+                        <span class="bible-note-ref">${escapeHtml(label)}</span>
+                        <span class="bible-research-source-label">Saved from the Fathers</span>
+                        <span class="bible-note-excerpt">${escapeHtml(author)}${escapeHtml(source)}</span>
+                        <span class="bible-note-comment">${escapeHtml(item.quote || "")}</span>
                         <span class="bible-research-meta">${meta}</span>
                     </button>
                 `;
@@ -1250,6 +1365,10 @@
                 jumpToAnnotation(button.dataset.researchAnnotationOpen);
                 openAnnotationActions(button.dataset.researchAnnotationOpen);
             });
+        });
+
+        container.querySelectorAll("[data-research-notebook-open]").forEach(button => {
+            button.addEventListener("click", () => openNotebookItemActions(button.dataset.researchNotebookOpen));
         });
     }
 
@@ -1273,18 +1392,24 @@
         if (current && seen.has(current)) select.value = current;
     }
 
-    function buildResearchMarkdown(annotations = loadAnnotations()) {
-        const items = annotations.slice().sort((a, b) => getAnnotationReferenceLabel(a).localeCompare(getAnnotationReferenceLabel(b)));
+    function buildResearchMarkdown(annotations = loadAnnotations(), notebookItems = loadFathersNotebook()) {
+        const annotationItems = annotations.slice().sort((a, b) => getAnnotationReferenceLabel(a).localeCompare(getAnnotationReferenceLabel(b)));
+        const fathersItems = notebookItems.slice().sort((a, b) => String(a.passageLabel || "").localeCompare(String(b.passageLabel || "")));
         const lines = [
             "# Universal Office Bible Research Notes",
             "",
             `Exported: ${new Date().toISOString()}`,
             "",
-            `Items: ${items.length}`,
+            `Items: ${annotationItems.length + fathersItems.length}`,
             ""
         ];
 
-        for (const annotation of items) {
+        if (annotationItems.length) {
+            lines.push("# Your Notes and Highlights");
+            lines.push("");
+        }
+
+        for (const annotation of annotationItems) {
             const label = getAnnotationReferenceLabel(annotation);
             lines.push(`## ${label}`);
             lines.push("");
@@ -1304,11 +1429,32 @@
             lines.push("");
         }
 
+        if (fathersItems.length) {
+            lines.push("# Saved Commentary from the Fathers");
+            lines.push("");
+        }
+
+        for (const item of fathersItems) {
+            const label = item.passageLabel || item.rangeLabel || "Saved commentary";
+            const author = item.author || item.fatherName || "Church Father";
+            lines.push(`## ${label} — ${author}`);
+            lines.push("");
+            if (item.quote) {
+                lines.push("> " + String(item.quote).replace(/\n+/g, " "));
+                lines.push("");
+            }
+            if (item.sourceTitle) lines.push(`- Source: ${item.sourceTitle}`);
+            if (item.time) lines.push(`- Date: AD ${item.time}`);
+            if (item.sourceUrl) lines.push(`- URL: ${item.sourceUrl}`);
+            if (item.createdAt) lines.push(`- Saved: ${item.createdAt}`);
+            lines.push("");
+        }
+
         return lines.join("\n");
     }
 
     function exportResearchMarkdown() {
-        const blob = new Blob([buildResearchMarkdown(loadAnnotations())], { type: "text/markdown" });
+        const blob = new Blob([buildResearchMarkdown(loadAnnotations(), loadFathersNotebook())], { type: "text/markdown" });
         const url = URL.createObjectURL(blob);
         const a = document.createElement("a");
         a.href = url;
@@ -2120,6 +2266,7 @@
         $("bible-research-search")?.addEventListener("input", renderResearchIndex);
         $("bible-research-filter")?.addEventListener("change", renderResearchIndex);
         $("bible-research-book")?.addEventListener("change", renderResearchIndex);
+        window.addEventListener("universal-office:fathers-notebook-updated", renderResearchIndex);
         $("bible-save-annotation")?.addEventListener("click", saveAnnotationEditor);
         $("bible-delete-annotation")?.addEventListener("click", deleteAnnotationEditor);
         $("bible-close-annotation")?.addEventListener("click", closeAnnotationEditor);

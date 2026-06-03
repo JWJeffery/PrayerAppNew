@@ -52,6 +52,33 @@ if (!css.includes(".bible-research-controls")) {
   fail("CSS is missing research-controls styling.");
 }
 
+
+const guide = fs.readFileSync("js/bible-browser/passage-guide.js", "utf8");
+
+if (!index.includes('<option value="FATHERS">Saved from the Fathers</option>')) {
+  fail("Research filter is missing Saved from the Fathers option.");
+}
+
+if (!guide.includes("Save to Notebook")) {
+  fail("Passage guide Fathers cards do not include Save to Notebook.");
+}
+
+if (!guide.includes("uo.bibleBrowser.fathersNotebook.v1")) {
+  fail("Passage guide does not persist Fathers notebook entries.");
+}
+
+if (!browser.includes("function loadFathersNotebook")) {
+  fail("Bible browser cannot load Fathers notebook entries into research index.");
+}
+
+if (!browser.includes("data-research-notebook-open")) {
+  fail("Research index does not render saved Fathers notebook cards.");
+}
+
+if (!browser.includes("Saved Commentary from the Fathers")) {
+  fail("Markdown export does not include saved Fathers commentary section.");
+}
+
 if (failures.length) {
   console.error("FAIL Bible research notes audit");
   for (const failure of failures) console.error(` - ${failure}`);

@@ -2,8 +2,10 @@
     "use strict";
 
     const RUNTIME_MANIFEST_PATH = "/data/commentary/patristic-witness-runtime/manifest.json";
+    const FATHERS_NOTEBOOK_KEY = "uo.bibleBrowser.fathersNotebook.v1";
     const runtimeManifestCache = { value: null };
     const runtimeBookCache = new Map();
+    const lastWitnessResults = new Map();
 
     function $(id) {
         return document.getElementById(id);
@@ -28,6 +30,80 @@
             throw new Error(`Unable to load ${path} (HTTP ${response.status}).`);
         }
         return response.json();
+    }
+
+    function loadFathersNotebook() {
+        try {
+            const data = JSON.parse(localStorage.getItem(FATHERS_NOTEBOOK_KEY) || "[]");
+            return Array.isArray(data) ? data : [];
+        } catch {
+            return [];
+        }
+    }
+
+    function saveFathersNotebook(items) {
+        localStorage.setItem(FATHERS_NOTEBOOK_KEY, JSON.stringify(Array.isArray(items) ? items : []));
+    }
+
+    function notebookItemFromWitness(entry) {
+        const range = entry.matchedRange || {};
+        return {
+            id: `fathers-${entry.id || Date.now()}`,
+            sourceType: "church-fathers",
+            witnessId: String(entry.id || ""),
+            bookKey: range.book || entry.book || "",
+            passageLabel: range.label || entry.range?.label || "",
+            rangeLabel: entry.range?.label || range.label || "",
+            author: entry.authorDisplay || entry.fatherName || "Church Father",
+            fatherName: entry.fatherName || "",
+            time: entry.time || "",
+            sourceTitle: entry.sourceTitle || "",
+            sourceUrl: entry.sourceUrl || "",
+            quote: entry.quote || "",
+            createdAt: new Date().toISOString(),
+            updatedAt: new Date().toISOString()
+        };
+    }
+
+    function saveWitnessToNotebook(witnessId) {
+        const entry = lastWitnessResults.get(String(witnessId));
+        const status = $("bible-status");
+        if (!entry) {
+            if (status) status.textContent = "Could not find that Church Fathers commentary card.";
+            return null;
+        }
+
+        const item = notebookItemFromWitness(entry);
+        const notebook = loadFathersNotebook();
+        const existing = notebook.find(saved =>
+            saved.witnessId === item.witnessId &&
+            saved.passageLabel === item.passageLabel
+        );
+
+        if (existing) {
+            if (status) status.textContent = "That Church Fathers comment is already saved to your notebook.";
+            return existing;
+        }
+
+        notebook.push(item);
+        saveFathersNotebook(notebook);
+
+        if (status) status.textContent = `Saved ${item.author} to your notebook.`;
+        window.dispatchEvent(new CustomEvent("universal-office:fathers-notebook-updated", { detail: item }));
+
+        return item;
+    }
+
+    function wireWitnessNotebookButtons(root = document) {
+        root.querySelectorAll("[data-save-witness-notebook]").forEach(button => {
+            button.addEventListener("click", () => {
+                const item = saveWitnessToNotebook(button.dataset.saveWitnessNotebook);
+                if (item) {
+                    button.textContent = "Saved";
+                    button.disabled = true;
+                }
+            });
+        });
     }
 
     async function loadRuntimeManifest() {
@@ -122,10 +198,12 @@
 
             for (const entry of shard.entries || []) {
                 if (witnessOverlapsRange(entry, range)) {
-                    results.push({
+                    const result = {
                         ...entry,
                         matchedRange: range,
-                    });
+                    };
+                    results.push(result);
+                    lastWitnessResults.set(String(result.id), result);
                 }
             }
         }
@@ -173,6 +251,7 @@
 
         status.textContent = witnessStatusText(results, ranges, unsupportedBooks);
         output.innerHTML = buildWitnessesHtml(results);
+        wireWitnessNotebookButtons(output);
     }
 
     function renderWitnessCard(entry) {
@@ -194,7 +273,10 @@
                 <div class="bible-guide-range">${escapeHtml(entry.range?.label || "")}</div>
                 ${source}
                 <blockquote>${quote}</blockquote>
-                ${link}
+                <div class="bible-guide-card-actions">
+                    <button class="bible-tool-btn bible-guide-save-notebook" type="button" data-save-witness-notebook="${escapeHtml(entry.id)}">Save to Notebook</button>
+                    ${link}
+                </div>
             </article>
         `;
     }
@@ -224,6 +306,7 @@
                     <div class="bible-context-result-status">${escapeHtml(witnessStatusText(results, ranges, unsupportedBooks))}</div>
                     ${buildWitnessesHtml(results)}
                 `;
+                wireWitnessNotebookButtons(targetElement);
             } else {
                 renderWitnesses(results, ranges, unsupportedBooks);
             }
@@ -255,6 +338,8 @@
         queryFathersForRanges,
         loadFathersForRanges,
         loadFathersForCurrentPassage,
+        loadFathersNotebook,
+        saveWitnessToNotebook,
     };
 
     document.addEventListener("DOMContentLoaded", initializePassageGuide);

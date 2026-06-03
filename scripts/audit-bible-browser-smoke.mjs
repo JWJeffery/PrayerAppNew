@@ -462,3 +462,12 @@ if (!css.includes(".bible-highlight-yellow") || !css.includes(".bible-highlight-
   fail("Bible Browser CSS is missing pastel highlighter color classes.");
 }
 
+
+if (!index.includes('<option value="FATHERS">Saved from the Fathers</option>')) {
+  fail("Bible Browser is missing Saved from the Fathers research filter.");
+}
+
+if (!browser.includes("loadFathersNotebook")) {
+  fail("Bible Browser is missing Fathers notebook integration.");
+}
+
