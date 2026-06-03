@@ -497,3 +497,12 @@ if (!css.includes(".bible-context-panel-study")) {
   fail("Bible Browser CSS is missing study drawer panel styling.");
 }
 
+
+if (!browser.includes("appendFathersCommentToAnnotation")) {
+  fail("Bible Browser is missing Fathers-to-note append behavior.");
+}
+
+if (!browser.includes("universal-office:fathers-add-to-note")) {
+  fail("Bible Browser is missing Fathers-to-note event listener.");
+}
+

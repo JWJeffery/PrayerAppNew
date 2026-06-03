@@ -1192,6 +1192,55 @@
         body?.querySelector("#bible-context-close-notebook-item")?.addEventListener("click", closeContextPanel);
     }
 
+    function formatFathersNoteAppendix(item) {
+        const author = item.author || item.fatherName || "Church Father";
+        const date = item.time ? ` · AD ${item.time}` : "";
+        const passage = item.passageLabel || item.rangeLabel || "Selected passage";
+        const source = item.sourceTitle ? `\nSource: ${item.sourceTitle}` : "";
+        const quote = String(item.quote || "").trim();
+
+        return [
+            `From the Fathers — ${author}${date}`,
+            `${passage}${source}`,
+            quote ? `“${quote}”` : ""
+        ].filter(Boolean).join("\n");
+    }
+
+    function appendFathersCommentToAnnotation(annotationId, item) {
+        if (!annotationId || !item) return false;
+
+        const annotations = loadAnnotations();
+        const idx = annotations.findIndex(annotation => annotation.id === annotationId);
+        const status = $("bible-status");
+
+        if (idx === -1) {
+            if (status) status.textContent = "Could not find the note for that highlight.";
+            return false;
+        }
+
+        const appendix = formatFathersNoteAppendix(item);
+        const existing = String(annotations[idx].comment || "").trim();
+
+        if (existing && item.quote && existing.includes(String(item.quote).slice(0, 80))) {
+            if (status) status.textContent = "That Church Fathers comment already appears in this note.";
+            return false;
+        }
+
+        annotations[idx] = {
+            ...annotations[idx],
+            comment: existing ? `${existing}\n\n${appendix}` : appendix,
+            updatedAt: new Date().toISOString()
+        };
+
+        saveAnnotations(annotations);
+        renderResults(currentResolved);
+        renderCurrentNotesList();
+        renderResearchIndex();
+
+        if (status) status.textContent = `Added ${item.author || item.fatherName || "Church Father"} to the note.`;
+        return true;
+    }
+
     function annotationsInCurrentView() {
         const visibleKeys = new Set((currentResolved || []).map(item => annotationKey(item)));
         return loadAnnotations()
@@ -1544,7 +1593,10 @@
             return;
         }
 
-        await window.UniversalOfficePassageGuide.loadFathersForRanges([range], "highlighted verse", { targetElement: body });
+        await window.UniversalOfficePassageGuide.loadFathersForRanges([range], "highlighted verse", {
+            targetElement: body,
+            annotationId
+        });
         reflowContextPanel(anchorRect);
     }
 
@@ -2308,6 +2360,9 @@
         $("bible-research-filter")?.addEventListener("change", renderResearchIndex);
         $("bible-research-book")?.addEventListener("change", renderResearchIndex);
         window.addEventListener("universal-office:fathers-notebook-updated", renderResearchIndex);
+        window.addEventListener("universal-office:fathers-add-to-note", event => {
+            appendFathersCommentToAnnotation(event.detail?.annotationId, event.detail?.item);
+        });
         $("bible-save-annotation")?.addEventListener("click", saveAnnotationEditor);
         $("bible-delete-annotation")?.addEventListener("click", deleteAnnotationEditor);
         $("bible-close-annotation")?.addEventListener("click", closeAnnotationEditor);
@@ -2397,6 +2452,7 @@
         reflowContextPanel,
         closeContextPanel,
         openAnnotationActions,
+        appendFathersCommentToAnnotation,
         loadFathersForSelection,
         setParallelReader(enabled, translation = parallelTranslation) {
             parallelEnabled = Boolean(enabled);

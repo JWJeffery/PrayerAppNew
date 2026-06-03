@@ -94,12 +94,40 @@
         return item;
     }
 
+    function addWitnessToAnnotationNote(witnessId, annotationId) {
+        const entry = lastWitnessResults.get(String(witnessId));
+        const status = $("bible-status");
+        if (!entry || !annotationId) {
+            if (status) status.textContent = "Could not add that Church Fathers comment to the note.";
+            return null;
+        }
+
+        const item = notebookItemFromWitness(entry);
+        window.dispatchEvent(new CustomEvent("universal-office:fathers-add-to-note", {
+            detail: { annotationId, item }
+        }));
+        return item;
+    }
+
     function wireWitnessNotebookButtons(root = document) {
         root.querySelectorAll("[data-save-witness-notebook]").forEach(button => {
             button.addEventListener("click", () => {
                 const item = saveWitnessToNotebook(button.dataset.saveWitnessNotebook);
                 if (item) {
                     button.textContent = "Saved";
+                    button.disabled = true;
+                }
+            });
+        });
+
+        root.querySelectorAll("[data-add-witness-note]").forEach(button => {
+            button.addEventListener("click", () => {
+                const item = addWitnessToAnnotationNote(
+                    button.dataset.addWitnessNote,
+                    button.dataset.annotationId
+                );
+                if (item) {
+                    button.textContent = "Added to Note";
                     button.disabled = true;
                 }
             });
@@ -227,7 +255,7 @@
         return `${results.length} Church Fathers commentar${results.length === 1 ? "y entry" : "y entries"} for ${rangeLabel}.${unsupported}`;
     }
 
-    function buildWitnessesHtml(results) {
+    function buildWitnessesHtml(results, options = {}) {
         if (!results.length) {
             return `<div class="bible-guide-empty">No Church Fathers commentary found in the current index.</div>`;
         }
@@ -240,7 +268,7 @@
 
         return `
             ${overflow}
-            ${visible.map(entry => renderWitnessCard(entry)).join("")}
+            ${visible.map(entry => renderWitnessCard(entry, options)).join("")}
         `;
     }
 
@@ -254,7 +282,7 @@
         wireWitnessNotebookButtons(output);
     }
 
-    function renderWitnessCard(entry) {
+    function renderWitnessCard(entry, options = {}) {
         const date = Number.isFinite(Number(entry.time)) ? ` · AD ${entry.time}` : "";
         const source = entry.sourceTitle
             ? `<div class="bible-guide-source">${escapeHtml(entry.sourceTitle)}</div>`
@@ -263,6 +291,10 @@
             ? `<a class="bible-guide-source-link" href="${escapeHtml(entry.sourceUrl)}" target="_blank" rel="noopener noreferrer">Open source</a>`
             : "";
         const quote = escapeHtml(entry.quote);
+        const annotationId = options.annotationId ? String(options.annotationId) : "";
+        const addToNote = annotationId
+            ? `<button class="bible-tool-btn bible-guide-add-note" type="button" data-add-witness-note="${escapeHtml(entry.id)}" data-annotation-id="${escapeHtml(annotationId)}">Add to Note</button>`
+            : "";
 
         return `
             <article class="bible-guide-card" data-witness-id="${escapeHtml(entry.id)}">
@@ -274,6 +306,7 @@
                 ${source}
                 <blockquote>${quote}</blockquote>
                 <div class="bible-guide-card-actions">
+                    ${addToNote}
                     <button class="bible-tool-btn bible-guide-save-notebook" type="button" data-save-witness-notebook="${escapeHtml(entry.id)}">Save to Notebook</button>
                     ${link}
                 </div>
@@ -304,7 +337,7 @@
             if (targetElement) {
                 targetElement.innerHTML = `
                     <div class="bible-context-result-status">${escapeHtml(witnessStatusText(results, ranges, unsupportedBooks))}</div>
-                    ${buildWitnessesHtml(results)}
+                    ${buildWitnessesHtml(results, { annotationId: options.annotationId || "" })}
                 `;
                 wireWitnessNotebookButtons(targetElement);
             } else {
@@ -340,6 +373,7 @@
         loadFathersForCurrentPassage,
         loadFathersNotebook,
         saveWitnessToNotebook,
+        addWitnessToAnnotationNote,
     };
 
     document.addEventListener("DOMContentLoaded", initializePassageGuide);

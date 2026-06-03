@@ -79,6 +79,27 @@ if (!browser.includes("Saved Commentary from the Fathers")) {
   fail("Markdown export does not include saved Fathers commentary section.");
 }
 
+
+if (!guide.includes("Add to Note")) {
+  fail("Passage guide Fathers cards do not include Add to Note for annotation-linked panels.");
+}
+
+if (!guide.includes("data-add-witness-note")) {
+  fail("Passage guide Fathers cards do not expose add-to-note buttons.");
+}
+
+if (!guide.includes("universal-office:fathers-add-to-note")) {
+  fail("Passage guide does not dispatch Fathers add-to-note events.");
+}
+
+if (!browser.includes("function appendFathersCommentToAnnotation")) {
+  fail("Bible browser cannot append Fathers comments to an annotation note.");
+}
+
+if (!browser.includes("formatFathersNoteAppendix")) {
+  fail("Bible browser is missing Fathers note formatting helper.");
+}
+
 if (failures.length) {
   console.error("FAIL Bible research notes audit");
   for (const failure of failures) console.error(` - ${failure}`);
