@@ -1,25 +1,25 @@
 {
   "schema_version": "1.0.0",
-  "roadmap_version": "0.1.37",
+  "roadmap_version": "0.1.38",
   "last_updated": "2026-06-02",
   "status": "active",
   "name": "Universal Office Beta Release Roadmap",
   "purpose": "Canonical machine-readable roadmap for Beta Release planning, phase sequencing, governance questions, tranche sizing, and Admin Dashboard visualization.",
   "current_repo_state": {
-    "latest_known_commit": "55968d5",
-    "latest_known_commit_message": "Update Bible psalms source data",
-    "structure_json_version": "3.8.148",
+    "latest_known_commit": "9843f46",
+    "latest_known_commit_message": "Remove tracked repository garbage",
+    "structure_json_version": "3.8.149",
     "roadmap_source_of_truth": "project_roadmap.json",
     "structure_json_role": "Project manifest, implementation ledger, governance history, legacy admin todo source, and current state pointer.",
     "roadmap_role": "Canonical release architecture and phase/tranche planning source for Admin Dashboard roadmap visualization.",
-    "latest_known_loth_commit": "18d296c",
-    "latest_known_loth_commit_message": "Retire generated Office of Readings artifacts",
+    "latest_known_loth_commit": "b835653",
+    "latest_known_loth_commit_message": "Map Office of Readings Advent psalmody appointments",
     "roman_loth_control_corpus_repo": "JWJeffery/LOTH",
     "loth_recording_cadence": "every_six_corpus_producing_loth_tranches",
     "active_oor_completion_plan": "roman_loth_office_of_readings_completion_plan_2026_06_01",
-    "active_oor_completion_plan_remaining_loth_tranches": 22,
-    "active_oor_completion_plan_next_loth_tranche": "OOR-C03-ordinary-psalmody-appointment-map",
-    "current_navigation_summary": "Current position: PrayerAppNew is at 55968d5 and LOTH is at 18d296c. The Office of Readings artifact-retirement cleanup is closed and recorded. For active OOR completion navigation, treat C01 real-context coverage spine and C02 gap inventory as audit-passing/closed for route selection; resume at C03 ordinary psalmody appointment map, which remains incomplete."
+    "active_oor_completion_plan_remaining_loth_tranches": 20,
+    "active_oor_completion_plan_next_loth_tranche": "OOR-C05-temporale-psalmody-appointment-map-continuation",
+    "current_navigation_summary": "Current position: PrayerAppNew records LOTH through b835653. OOR-C03 is complete with 28 ordinary psalmody appointments entered and mapped. OOR-C04 is complete with 238 ordinary-time contexts bound to those appointment keys. OOR-C05 is partially advanced: 25 temporale psalmody contexts are source-backed and mapped, Easter Sunday is recorded as a rubric-governed exception, 8 Advent appointments remain source-blocked, and 112 temporale psalmody contexts remain. Continue at OOR-C05 temporale psalmody appointment-map continuation."
   },
   "release_identity": {
     "beta_release_focus": "BCP-facing Anglican public beta",
@@ -2326,5 +2326,92 @@
   },
   "currentState": {
     "rotherhamBibleSourceScope": "complete_through_6d73441_except_extended_psalms_outside_source_scope"
-  }
+  },
+  "roman_loth_current_state": {
+    "latest_known_loth_commit": "b835653",
+    "latest_known_loth_commit_message": "Map Office of Readings Advent psalmody appointments",
+    "roman_loth_control_corpus_repo": "JWJeffery/LOTH",
+    "active_oor_completion_plan": "roman_loth_office_of_readings_completion_plan_2026_06_01",
+    "active_oor_completion_plan_next_loth_tranche": "OOR-C05-temporale-psalmody-appointment-map-continuation",
+    "active_oor_completion_plan_remaining_loth_tranches": 20,
+    "oor_c03_status": "complete_28_ordinary_psalmody_appointments_0_missing",
+    "oor_c04_status": "complete_238_ordinary_time_contexts_bound",
+    "oor_c05_status": "partial_25_temporale_psalmody_contexts_mapped_1_easter_sunday_rubric_exception_112_remaining",
+    "loth_recording_cadence": "every_six_corpus_producing_loth_tranches",
+    "next_navigation_summary": "Current position: PrayerAppNew records LOTH through b835653. OOR-C03 is complete with 28 ordinary psalmody appointments entered and mapped. OOR-C04 is complete with 238 ordinary-time contexts bound to those appointment keys. OOR-C05 is partially advanced: 25 temporale psalmody contexts are source-backed and mapped, Easter Sunday is recorded as a rubric-governed exception, 8 Advent appointments remain source-blocked, and 112 temporale psalmody contexts remain. Continue at OOR-C05 temporale psalmody appointment-map continuation."
+  },
+  "roman_loth_progress_records": [
+    {
+      "id": "loth_oor_psalmody_coverage_bundle_2026_06_02_b835653",
+      "date": "2026-06-02",
+      "status": "recorded",
+      "recordType": "roman_loth_six_tranche_corpus_progress_record",
+      "recordedFromPrayerAppNewHead": "9843f46",
+      "recordedFromPrayerAppNewHeadMessage": "Remove tracked repository garbage",
+      "lothCommitBeforeBundle": "18d296c",
+      "lothCommitAfterBundle": "b835653",
+      "lothCommitAfterBundleMessage": "Map Office of Readings Advent psalmody appointments",
+      "trancheCount": 6,
+      "countsAsCadenceRecord": true,
+      "corpusProducing": true,
+      "prayerAppNewRecordReason": "Six substantial LOTH corpus-producing tranches reached the established recording cadence.",
+      "lothTranches": [
+        {
+          "commit": "fc1b442",
+          "message": "Map Office of Readings ordinary psalmody appointments",
+          "tranche": "OOR-C03-ordinary-psalmody-appointment-map",
+          "effect": "Mapped source-backed ordinary Office of Readings psalmody appointments into the private Grail appointment map."
+        },
+        {
+          "commit": "c2b7cbf",
+          "message": "Acquire Office of Readings week 2 Sunday psalmody",
+          "tranche": "OOR-C03-ordinary-psalmody-appointment-map",
+          "effect": "Added source-backed Week 2 Sunday ordinary psalmody coverage."
+        },
+        {
+          "commit": "095200c",
+          "message": "Complete Office of Readings ordinary psalmody appointments",
+          "tranche": "OOR-C03-ordinary-psalmody-appointment-map",
+          "effect": "Completed all 28 ordinary Office of Readings psalmody appointments with 0 missing."
+        },
+        {
+          "commit": "44c32f7",
+          "message": "Bind Office of Readings ordinary psalmody contexts",
+          "tranche": "OOR-C04-ordinary-psalmody-context-binding",
+          "effect": "Bound 238 ordinary-time Office of Readings contexts to the completed 28 ordinary psalmody appointment keys."
+        },
+        {
+          "commit": "747e240",
+          "message": "Map Office of Readings temporale psalmody sentinels",
+          "tranche": "OOR-C05-temporale-psalmody-appointment-map-sentinel-partial",
+          "effect": "Mapped 6 temporale sentinel psalmody contexts and recorded Easter Sunday as a rubric-governed exception."
+        },
+        {
+          "commit": "b835653",
+          "message": "Map Office of Readings Advent psalmody appointments",
+          "tranche": "OOR-C05-temporale-psalmody-appointment-map-advent-continuation-partial",
+          "effect": "Mapped 19 additional Advent psalmody appointments; 8 Advent appointments remain source-blocked."
+        }
+      ],
+      "resultingState": {
+        "latest_known_loth_commit": "b835653",
+        "latest_known_loth_commit_message": "Map Office of Readings Advent psalmody appointments",
+        "roman_loth_control_corpus_repo": "JWJeffery/LOTH",
+        "active_oor_completion_plan": "roman_loth_office_of_readings_completion_plan_2026_06_01",
+        "active_oor_completion_plan_next_loth_tranche": "OOR-C05-temporale-psalmody-appointment-map-continuation",
+        "active_oor_completion_plan_remaining_loth_tranches": 20,
+        "oor_c03_status": "complete_28_ordinary_psalmody_appointments_0_missing",
+        "oor_c04_status": "complete_238_ordinary_time_contexts_bound",
+        "oor_c05_status": "partial_25_temporale_psalmody_contexts_mapped_1_easter_sunday_rubric_exception_112_remaining",
+        "loth_recording_cadence": "every_six_corpus_producing_loth_tranches",
+        "next_navigation_summary": "Current position: PrayerAppNew records LOTH through b835653. OOR-C03 is complete with 28 ordinary psalmody appointments entered and mapped. OOR-C04 is complete with 238 ordinary-time contexts bound to those appointment keys. OOR-C05 is partially advanced: 25 temporale psalmody contexts are source-backed and mapped, Easter Sunday is recorded as a rubric-governed exception, 8 Advent appointments remain source-blocked, and 112 temporale psalmody contexts remain. Continue at OOR-C05 temporale psalmody appointment-map continuation."
+      },
+      "antiBloatConfirmation": {
+        "noGeneratedExportBooks": true,
+        "noBroadDailyDateBlocks": true,
+        "noFullContextDump": true,
+        "privateSourceGovernedCoverageOnly": true
+      }
+    }
+  ]
 }
