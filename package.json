@@ -13,7 +13,8 @@
     "audit:bible-corpus-completeness": "node scripts/audit-bible-corpus-completeness.mjs",
     "audit:rotherham-psalms": "node scripts/audit-rotherham-psalms.mjs",
     "audit:repo-hygiene": "node scripts/audit-repo-hygiene.mjs",
-    "audit:repo-hygiene:write": "node scripts/audit-repo-hygiene.mjs --write"
+    "audit:repo-hygiene:write": "node scripts/audit-repo-hygiene.mjs --write",
+    "release:web": "node scripts/prepare-web-release.mjs"
   },
   "repository": {
     "type": "git",
