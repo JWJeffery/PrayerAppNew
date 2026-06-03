@@ -3,11 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <base href="/">
     <title>The Universal Office</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=IM+Fell+English:ital@0;1&family=Cinzel+Decorative:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/office.css">
+    <link rel="stylesheet" href="css/bible-browser.css">
 </head>
 <body id="app-body" class="dark-mode">
 
@@ -21,6 +23,7 @@
     <button class="mode-btn ethiopian-btn" onclick="selectMode('ethiopian-saatat')">The Ethiopian Sa'atat (Book of Hours)</button>
     <button class="mode-btn" onclick="selectMode('east-syriac')">Church of the East — Hudra</button>
     <button class="mode-btn" onclick="selectMode('horologion')">The Horologion — Byzantine Offices</button>
+    <button class="mode-btn" onclick="openBibleBrowser()">Scripture Browser</button>
     <button class="mode-btn" onclick="window.location.href='admin/admin.html'">Admin Dashboard</button>
     <div style="margin-top:32px; border-top:1px solid rgba(201,168,76,0.25); padding-top:18px;">
         <a href="https://musingsancientandmodern.substack.com/" target="_blank" style="text-decoration:none; display:block; text-align:center;">
@@ -520,6 +523,70 @@
     </div>
 </div><!-- /individual-prayers-section -->
 
+<!-- ── Scripture Browser ──────────────────────────────────────────────────── -->
+<div id="bible-browser-section">
+    <div class="bible-browser-shell">
+        <div class="bible-browser-header">
+            <div>
+                <h1>Scripture Browser</h1>
+                <p>/tools/bible · citation lookup, notes, and corpus search</p>
+            </div>
+            <button class="bible-tool-btn" onclick="closeBibleBrowser()">Back to Modes</button>
+        </div>
+
+        <div class="bible-browser-grid">
+            <aside class="bible-browser-panel">
+                <label for="bible-reference-input">Citation</label>
+                <input id="bible-reference-input" type="text" value="Hebrews 2:15-3:8; 8:16" autocomplete="off">
+                <div class="bible-button-row">
+                    <button class="bible-tool-btn" id="bible-reference-go" type="button">Open Citation</button>
+                </div>
+
+                <label for="bible-translation-select">Translation</label>
+                <select id="bible-translation-select">
+                    <option value="NRSV">NRSV</option>
+                    <option value="Rotherham">Rotherham</option>
+                </select>
+
+                <label for="bible-book-select">Book</label>
+                <select id="bible-book-select"></select>
+                <div class="bible-button-row">
+                    <button class="bible-tool-btn" id="bible-book-open" type="button">Open Book</button>
+                </div>
+
+                <label for="bible-search-input">Text Search</label>
+                <input id="bible-search-input" type="text" placeholder="Search text…" autocomplete="off">
+
+                <label for="bible-search-scope">Search Scope</label>
+                <select id="bible-search-scope"></select>
+                <div class="bible-button-row">
+                    <button class="bible-tool-btn" id="bible-search-go" type="button">Search</button>
+                </div>
+
+                <label>Notes Backup</label>
+                <div class="bible-button-row">
+                    <button class="bible-tool-btn" id="bible-export-annotations" type="button">Export Notes</button>
+                    <label class="bible-tool-btn bible-import-label" for="bible-import-annotations">
+                        Import Notes
+                        <input id="bible-import-annotations" type="file" accept="application/json">
+                    </label>
+                </div>
+
+                <div id="bible-status">Ready.</div>
+            </aside>
+
+            <main id="bible-results" aria-live="polite">
+                <div class="bible-empty">Enter a citation or search text.</div>
+            </main>
+        </div>
+    </div>
+
+    <div id="bible-selection-toolbar" aria-hidden="true">
+        <button id="bible-highlight-btn" type="button">Highlight</button>
+        <button id="bible-comment-btn" type="button">Comment</button>
+    </div>
+</div>
+
 <!-- ── Tooltip ───────────────────────────────────────────────────────────── -->
 <div id="uo-tooltip"></div>
 
@@ -550,6 +617,8 @@
 <script src="js/byzantine-paschalion.js" defer></script>
 <script src="js/orthros-eothinon-engine.js" defer></script>
 <script src="js/horologion-engine.js" defer></script>
+<script src="js/bible-browser/reference-parser.js" defer></script>
+<script src="js/bible-browser/bible-browser.js" defer></script>
 <script src="js/office-ui.js" defer></script>
 <script src="js/prayers.js"></script>
 <script src="js/tooltip.js"></script>
