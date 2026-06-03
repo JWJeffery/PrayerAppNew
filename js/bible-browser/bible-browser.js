@@ -1544,6 +1544,7 @@
         }
 
         await window.UniversalOfficePassageGuide.loadFathersForRanges([range], "highlighted verse", { targetElement: body });
+        reflowContextPanel(anchorRect);
     }
 
     function deleteAnnotationById(annotationId, options = {}) {
@@ -1712,14 +1713,15 @@
         const viewportWidth = window.innerWidth || document.documentElement.clientWidth || 1024;
         const viewportHeight = window.innerHeight || document.documentElement.clientHeight || 768;
         const panelWidth = Math.min(440, Math.max(300, viewportWidth - (margin * 2)));
-        const maxPanelHeight = Math.min(520, viewportHeight - (margin * 2));
+        const maxPanelHeight = Math.max(240, Math.min(520, viewportHeight - (margin * 2)));
 
         panel.style.width = `${panelWidth}px`;
         panel.style.maxHeight = `${maxPanelHeight}px`;
         panel.style.setProperty("--bible-context-max-height", `${maxPanelHeight}px`);
         panel.hidden = false;
 
-        const panelHeight = Math.min(panel.scrollHeight || panel.getBoundingClientRect().height || 320, maxPanelHeight);
+        const measuredHeight = panel.getBoundingClientRect().height || panel.scrollHeight || 320;
+        const panelHeight = Math.min(measuredHeight, maxPanelHeight);
         const anchor = anchorRect || {
             left: viewportWidth / 2 - 40,
             right: viewportWidth / 2 + 40,
@@ -1729,31 +1731,48 @@
             height: 40
         };
 
-        const canPlaceRight = anchor.right + gap + panelWidth <= viewportWidth - margin;
-        const canPlaceLeft = anchor.left - gap - panelWidth >= margin;
-        const canPlaceBelow = anchor.bottom + gap + panelHeight <= viewportHeight - margin;
+        const horizontalSide = anchor.right + gap + panelWidth <= viewportWidth - margin
+            ? "right"
+            : anchor.left - gap - panelWidth >= margin
+                ? "left"
+                : "overlap";
 
         let left;
         let top;
 
-        if (canPlaceRight) {
+        if (horizontalSide === "right") {
             left = anchor.right + gap;
-            top = clampNumber(anchor.top, margin, viewportHeight - panelHeight - margin);
-        } else if (canPlaceLeft) {
+        } else if (horizontalSide === "left") {
             left = anchor.left - gap - panelWidth;
-            top = clampNumber(anchor.top, margin, viewportHeight - panelHeight - margin);
         } else {
             left = clampNumber(anchor.left, margin, viewportWidth - panelWidth - margin);
-            if (canPlaceBelow) {
-                top = anchor.bottom + gap;
-            } else {
-                top = anchor.top - gap - panelHeight;
-            }
-            top = clampNumber(top, margin, viewportHeight - panelHeight - margin);
         }
+
+        const roomBelow = viewportHeight - anchor.bottom - margin;
+        const roomAbove = anchor.top - margin;
+        const preferAbove = roomBelow < Math.min(panelHeight, 260) && roomAbove > roomBelow;
+
+        if (horizontalSide === "overlap") {
+            top = preferAbove
+                ? anchor.top - gap - panelHeight
+                : anchor.bottom + gap;
+        } else {
+            top = preferAbove
+                ? Math.min(anchor.top - gap - panelHeight, viewportHeight - panelHeight - margin)
+                : anchor.top;
+        }
+
+        top = clampNumber(top, margin, Math.max(margin, viewportHeight - panelHeight - margin));
 
         panel.style.left = `${Math.round(left)}px`;
         panel.style.top = `${Math.round(top)}px`;
+    }
+
+    function reflowContextPanel(anchorRect = lastContextAnchorRect) {
+        window.requestAnimationFrame(() => {
+            positionContextPanel(anchorRect);
+            window.requestAnimationFrame(() => positionContextPanel(anchorRect));
+        });
     }
 
     function showContextPanel({ title, html, anchorRect = lastContextAnchorRect }) {
@@ -1766,7 +1785,7 @@
         body.innerHTML = html || "";
         panel.hidden = false;
         lastContextAnchorRect = anchorRect || lastContextAnchorRect;
-        window.requestAnimationFrame(() => positionContextPanel(lastContextAnchorRect));
+        reflowContextPanel(lastContextAnchorRect);
         return body;
     }
 
@@ -2271,6 +2290,8 @@
         $("bible-delete-annotation")?.addEventListener("click", deleteAnnotationEditor);
         $("bible-close-annotation")?.addEventListener("click", closeAnnotationEditor);
         $("bible-context-panel-close")?.addEventListener("click", closeContextPanel);
+        window.addEventListener("resize", () => reflowContextPanel());
+        window.addEventListener("universal-office:context-panel-reflow", () => reflowContextPanel());
 
         $("bible-results")?.addEventListener("scroll", () => saveLastState());
         document.addEventListener("mouseup", () => setTimeout(handleSelection, 0));
@@ -2351,6 +2372,7 @@
             return pendingPassageRanges || [];
         },
         openContextPanel: showContextPanel,
+        reflowContextPanel,
         closeContextPanel,
         openAnnotationActions,
         loadFathersForSelection,

@@ -471,3 +471,16 @@ if (!browser.includes("loadFathersNotebook")) {
   fail("Bible Browser is missing Fathers notebook integration.");
 }
 
+
+if (!browser.includes("function reflowContextPanel")) {
+  fail("Bible Browser is missing context-panel reflow after async content loads.");
+}
+
+if (!browser.includes("universal-office:context-panel-reflow")) {
+  fail("Bible Browser is missing context-panel reflow event listener.");
+}
+
+if (!browser.includes("reflowContextPanel(anchorRect);")) {
+  fail("Bible Browser does not reflow Fathers panel after commentary loads.");
+}
+
