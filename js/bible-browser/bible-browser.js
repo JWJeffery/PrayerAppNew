@@ -1534,6 +1534,7 @@
         const body = showContextPanel({
             title: "What the Fathers Say",
             anchorRect,
+            mode: "study",
             html: `<div class="bible-guide-empty">Looking up Church Fathers commentary for ${escapeHtml(range.label)}…</div>`
         });
 
@@ -1720,6 +1721,23 @@
         panel.style.setProperty("--bible-context-max-height", `${maxPanelHeight}px`);
         panel.hidden = false;
 
+        if (panel.dataset.contextMode === "study") {
+            const studyTop = Math.max(16, Math.min(56, Math.floor(viewportHeight * 0.04)));
+            const studyWidth = Math.min(560, Math.max(320, viewportWidth - (margin * 2)));
+            const studyMaxHeight = Math.max(
+                260,
+                Math.min(680, Math.floor(viewportHeight * 0.72), viewportHeight - studyTop - margin)
+            );
+            const studyLeft = clampNumber(viewportWidth - studyWidth - margin, margin, viewportWidth - studyWidth - margin);
+
+            panel.style.width = `${studyWidth}px`;
+            panel.style.maxHeight = `${studyMaxHeight}px`;
+            panel.style.setProperty("--bible-context-max-height", `${studyMaxHeight}px`);
+            panel.style.left = `${Math.round(studyLeft)}px`;
+            panel.style.top = `${Math.round(studyTop)}px`;
+            return;
+        }
+
         const measuredHeight = panel.getBoundingClientRect().height || panel.scrollHeight || 320;
         const panelHeight = Math.min(measuredHeight, maxPanelHeight);
         const anchor = anchorRect || {
@@ -1775,11 +1793,14 @@
         });
     }
 
-    function showContextPanel({ title, html, anchorRect = lastContextAnchorRect }) {
+    function showContextPanel({ title, html, anchorRect = lastContextAnchorRect, mode = "default" }) {
         const panel = $("bible-context-panel");
         const titleEl = $("bible-context-panel-title");
         const body = $("bible-context-panel-body");
         if (!panel || !body) return null;
+
+        panel.dataset.contextMode = mode || "default";
+        panel.classList.toggle("bible-context-panel-study", panel.dataset.contextMode === "study");
 
         if (titleEl) titleEl.textContent = title || "Study Help";
         body.innerHTML = html || "";
@@ -2102,6 +2123,7 @@
         const body = showContextPanel({
             title: "What the Fathers Say",
             anchorRect,
+            mode: "study",
             html: `<div class="bible-guide-empty">Looking up Church Fathers commentary for ${escapeHtml(label)}…</div>`
         });
 

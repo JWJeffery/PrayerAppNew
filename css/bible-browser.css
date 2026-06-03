@@ -1119,3 +1119,13 @@
 .bible-research-fathers-card {
     border-color: rgba(201, 168, 76, 0.24);
 }
+
+
+.bible-context-panel-study {
+    border-color: rgba(201, 168, 76, 0.58);
+    box-shadow: 0 22px 62px rgba(0, 0, 0, 0.68);
+}
+
+.bible-context-panel-study .bible-context-panel-body {
+    max-height: calc(var(--bible-context-max-height, 680px) - 46px);
+}

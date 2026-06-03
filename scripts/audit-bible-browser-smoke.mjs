@@ -484,3 +484,16 @@ if (!browser.includes("reflowContextPanel(anchorRect);")) {
   fail("Bible Browser does not reflow Fathers panel after commentary loads.");
 }
 
+
+if (!browser.includes('mode: "study"')) {
+  fail("Fathers context panels are not using study drawer mode.");
+}
+
+if (!browser.includes('panel.dataset.contextMode === "study"')) {
+  fail("Bible Browser context panel does not branch into study drawer positioning.");
+}
+
+if (!css.includes(".bible-context-panel-study")) {
+  fail("Bible Browser CSS is missing study drawer panel styling.");
+}
+
