@@ -1634,6 +1634,40 @@
       "standaloneFixtureExportBookIndexWorkCountsAsProgress": false,
       "lastNavigationReviewDate": "2026-06-02",
       "navigationSummary": "Current position: PrayerAppNew is at 55968d5 and LOTH is at 18d296c. The Office of Readings artifact-retirement cleanup is closed and recorded. For active OOR completion navigation, treat C01 real-context coverage spine and C02 gap inventory as audit-passing/closed for route selection; resume at C03 ordinary psalmody appointment map, which remains incomplete."
+    },
+    {
+      "id": "roman_loth_oor_c05_temporale_psalmody_closure_2026_06_02",
+      "date": "2026-06-02",
+      "phase": "Roman LOTH Office of Readings C05 temporale psalmody appointment map closure",
+      "title": "Record Office of Readings C05 temporale psalmody closure",
+      "status": "closed",
+      "repository": "JWJeffery/LOTH",
+      "loth_commit": "8a241bd",
+      "summary": "Recorded LOTH C05 closure after commit 8a241bd. The current LOTH gap/spine model names no remaining Office of Readings temporale psalmody key to map. C05 closed with 121 source-backed temporale psalmody mappings, one Easter Sunday rubric exception, and 21 Advent/Christmas/Epiphany failed source leads retained as evidence only.",
+      "corpus_result": {
+        "coverage_family": "temporale",
+        "slot_id": "office_of_readings.psalmody",
+        "source_backed_temporale_psalmody_mappings": 121,
+        "easter_sunday_rubric_exceptions": 1,
+        "named_remaining_psalmody_keys_in_gap_and_spine": 0,
+        "failed_source_leads_retained_as_evidence": 21,
+        "failed_source_lead_family_counts": {
+          "advent": 8,
+          "christmas": 13
+        },
+        "former_gap_remaining_temporale_psalmody_contexts": 16,
+        "remaining_temporale_psalmody_contexts_after_reconciliation": 0,
+        "public_rendering_permitted": false,
+        "broad_daily_date_blocks_written": false
+      },
+      "source_honesty": [
+        "The 21 Advent/Christmas/Epiphany leftovers are failed source leads, not mappings and not sourced text.",
+        "If later calendar or resolver work proves one of those leads is a real app day requiring separate psalmody, it must be sourced and mapped in a later tranche.",
+        "C05 should not be reopened unless a current repo model check shows an actual named psalmody key is missing."
+      ],
+      "next_work": "Begin OOR-C06-office-of-readings-next-real-context-slot-family from the live LOTH gap inventory. Do not substitute standalone governance, fixture, export, book, or index work for real corpus-producing coverage.",
+      "next_planned_loth_tranche": "OOR-C06-office-of-readings-next-real-context-slot-family",
+      "recorded_in": "project_roadmap.json"
     }
   ],
   "governance_questions": [
@@ -2180,6 +2214,16 @@
       "remainingCorpusProducingLothTranches": 22,
       "mapReadingRule": "At work resumption, read the roadmap as a current navigation instrument: identify current repo heads, active plan, current tranche, next tranche, and blockers first. Do not reconstruct long historical paths unless diagnosing drift, failure, or stale state.",
       "nonProgressClarification": "LOTH 18d296c was cleanup/governance/architecture, not corpus progress. Do not count artifact retirement, standalone exports, books, indexes, or one-off audit cleanup as OOR completion progress."
+    },
+    {
+      "id": "roman_loth_oor_c05_temporale_psalmody_closure_2026_06_02",
+      "date": "2026-06-02",
+      "repository": "JWJeffery/LOTH",
+      "commit": "8a241bd",
+      "title": "Office of Readings C05 temporale psalmody map closure",
+      "status": "closed",
+      "summary": "Recorded LOTH C05 closure after commit 8a241bd. The current LOTH gap/spine model names no remaining Office of Readings temporale psalmody key to map. C05 closed with 121 source-backed temporale psalmody mappings, one Easter Sunday rubric exception, and 21 Advent/Christmas/Epiphany failed source leads retained as evidence only.",
+      "next_planned_loth_tranche": "OOR-C06-office-of-readings-next-real-context-slot-family"
     }
   ],
   "active_blockers": {
@@ -2301,7 +2345,13 @@
     "resolverState": "translation-compatible with scalar/object verse text and Rotherham NT translation overlays",
     "activeSideProject": "Rotherham imported for ordinary source-scope books except Psalms consolidated-psalter lane.",
     "pausedTranche": "OOR-C03-ordinary-psalmody-appointment-map",
-    "c03ReturnPoint": "Map the 10 source-backed ordinary psalmody appointments into the private Grail appointment map, then decide how to acquire the 18 missing appointments without fabrication."
+    "c03ReturnPoint": "Map the 10 source-backed ordinary psalmody appointments into the private Grail appointment map, then decide how to acquire the 18 missing appointments without fabrication.",
+    "roman_loth_office_of_readings": {
+      "current_position": "C05 temporale psalmody appointment map closed",
+      "last_recorded_loth_commit": "8a241bd",
+      "next_destination": "OOR-C06-office-of-readings-next-real-context-slot-family",
+      "decision": "C05 closure recorded as milestone exception before C06."
+    }
   },
   "governance": {
     "bible_book_multiversion_v1": {
@@ -2339,6 +2389,17 @@
     "oor_c04_status": "complete_238_ordinary_time_contexts_bound",
     "oor_c05_status": "partial_25_temporale_psalmody_contexts_mapped_1_easter_sunday_rubric_exception_112_remaining",
     "loth_recording_cadence": "every_six_corpus_producing_loth_tranches",
-    "next_navigation_summary": "Current position: PrayerAppNew records LOTH through b835653. OOR-C03 is complete with 28 ordinary psalmody appointments entered and mapped. OOR-C04 is complete with 238 ordinary-time contexts bound to those appointment keys. OOR-C05 is partially advanced: 25 temporale psalmody contexts are source-backed and mapped, Easter Sunday is recorded as a rubric-governed exception, 8 Advent appointments remain source-blocked, and 112 temporale psalmody contexts remain. Continue at OOR-C05 temporale psalmody appointment-map continuation."
+    "next_navigation_summary": "Current position: PrayerAppNew records LOTH through b835653. OOR-C03 is complete with 28 ordinary psalmody appointments entered and mapped. OOR-C04 is complete with 238 ordinary-time contexts bound to those appointment keys. OOR-C05 is partially advanced: 25 temporale psalmody contexts are source-backed and mapped, Easter Sunday is recorded as a rubric-governed exception, 8 Advent appointments remain source-blocked, and 112 temporale psalmody contexts remain. Continue at OOR-C05 temporale psalmody appointment-map continuation.",
+    "last_recorded_loth_commit": "8a241bd",
+    "last_recorded_loth_tranche": "OOR-C05-temporale-psalmody-appointment-map-closure-reconciliation",
+    "next_planned_loth_tranche": "OOR-C06-office-of-readings-next-real-context-slot-family",
+    "office_of_readings_temporale_psalmody_c05_status": {
+      "status": "closed",
+      "source_backed_mapping_count": 121,
+      "rubric_exception_count": 1,
+      "named_remaining_key_count": 0,
+      "failed_source_lead_count": 21
+    },
+    "navigation_rule": "Use live LOTH gap inventory and roadmap before beginning C06."
   }
 }
