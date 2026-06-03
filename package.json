@@ -10,7 +10,8 @@
     "saints:regen": "npm run saints:validate && npm run saints:build",
     "saints:rank": "node tools/rank_identity_frequency.js",
     "audit:bible-corpus-structure": "node scripts/audit-bible-corpus-structure.mjs",
-    "audit:bible-corpus-completeness": "node scripts/audit-bible-corpus-completeness.mjs"
+    "audit:bible-corpus-completeness": "node scripts/audit-bible-corpus-completeness.mjs",
+    "audit:rotherham-psalms": "node scripts/audit-rotherham-psalms.mjs"
   },
   "repository": {
     "type": "git",
