@@ -1,4 +1,256 @@
 {
+  "schema": "universal-office-structure-history-v1",
+  "description": "Archive and history file for Universal Office PrayerAppNew. Contains retired structure.json content, completed admin todos, backward-looking phase history, progress records, and pointers to archive files. Live current state remains in structure.json and project_roadmap.json.",
+  "last_updated": "2026-06-02",
+  "archive_index": {
+    "description": "Index of structure archive files in this repository. Pointers are preferred to duplicating archive file contents.",
+    "files": [
+      {
+        "path": "documentation/structure-archive 6.49.40 PM.json",
+        "created": "unknown",
+        "description": "Legacy ad hoc timestamp-named archive. Preserved as read-only reference; not active documentation.",
+        "status": "legacy_archive_not_active_documentation"
+      },
+      {
+        "path": "documentation/structure-archive-2026-05-17-ordinary-baseline.json",
+        "created": "2026-05-17",
+        "description": "Dated structure.json archive snapshot.",
+        "status": "active_archive"
+      },
+      {
+        "path": "documentation/structure-archive-2026-05-30-roman-loth-oor-composition.json",
+        "created": "2026-05-30",
+        "description": "Dated structure.json archive snapshot.",
+        "status": "active_archive"
+      }
+    ]
+  },
+  "archived_completed_todos": {
+    "description": "Completed admin.todos moved from live structure.json admin.todos array. Archived 2026-06-02.",
+    "archivedAt": "2026-06-02",
+    "todos": [
+      {
+        "id": "coe-calendar-rebuild",
+        "title": "COE-II: Three-layer COE calendar rebuild",
+        "description": "COMPLETE — v2.8.9. Three-layer model fully implemented. Layer 1 (season engine): operational. Layer 2 (fixed feasts: Sawma Rabba Friday martyrs, Faithful Departed): implemented via getDayClass(). Layer 3 (sparse individual saints): CoeEligibility.filter() gate active; display re-enabled. COE-IIB audit complete: saint-grid model eliminated. External holdout: mar-augustine / mar-augustine-commemoration excluded from Layer 3 pending external Syriac manuscript research. No further internal action.",
+        "severity": "HIGH",
+        "status": "done",
+        "area": "js/calendar-east-syriac.js + js/office-ui.js",
+        "phase": "COE-II"
+      },
+      {
+        "id": "eo-calendar-modes",
+        "title": "EO old/new calendar mode: main-app integration",
+        "description": "COMPLETE — 2026-05-16. Main-app Horologion production bridge implemented. js/calendar-eastern-orthodox.js is now loaded on the production path before js/byzantine-paschalion.js. #generic-settings contains an EO calendar mode selector (#hor-eo-calendar-select, values new_calendar / old_calendar). js/office-ui.js exposes selectEoMode(), persists selectedEoMode in universalOfficeSettings, syncs the selector on Horologion entry, updates #generic-calendar-info with the active mode label, and passes { eoMode: selectedEoMode } into HorologionEngine.resolveOffice(). js/horologion-engine.js normalizes context.eoMode as _currentEoMode, and _getFixedCalendarMmdd() is wired into all fixed-date lookup sites: Little Hours troparion, Vespers troparion, Orthros kontakion queryDate, Great Compline weekday troparia probe, Great Compline canon probe, Great Compline feast-eve detection, and feastLectionaryOverlayKeys fixed-cycle mmdd routing including Nativity/Theophany relative Sunday/Saturday window checks. Movable-cycle behavior (Pascha, Bright Week, Great Lent, Holy Week, after-Pentecost ordinale) is unchanged. Diagnostic payload surfaces eoMode and fixedCalendarMode. Annual Typikon collision policy for fixed vs movable cycle overlaps remains a separate deferred item.",
+        "severity": "MEDIUM",
+        "status": "done",
+        "area": "index.html + js/office-ui.js + js/calendar-engine.js + js/calendar-eastern-orthodox.js + admin/admin.html",
+        "phase": "EO app integration"
+      },
+      {
+        "id": "eo-admin-diagnostics",
+        "title": "EO admin diagnostics: old/new calendar snapshot support",
+        "description": "COMPLETE — 2026-03-06. Admin/devtool coverage exists for EO old_calendar vs new_calendar diagnostics. CalendarEngine.getEOSeasonRanges(year, eoMode) computes fixed-feast civil placement (Nativity/Theophany) while EasternOrthodoxCalendar continues to own the Julian Paschalion/movable-feast cycle. admin/admin.html Year Snapshot consumes eoMode and renders the differing anchor dates. This does not expose EO mode in the main application.",
+        "severity": "MEDIUM",
+        "status": "done",
+        "area": "js/calendar-engine.js + admin/admin.html",
+        "phase": "EO admin diagnostics"
+      },
+      {
+        "id": "horologion-v1-architecture",
+        "title": "Horologion v1: architecture boundary",
+        "description": "COMPLETE — 2026-03-07. js/horologion-engine.js (HorologionEngine) established as engine layer (non-throwing resolveOffice(), skeleton cache, validateOfficePayload()). data/horologion/vespers.json: 7-section skeleton with fixed content complete (Usual Beginning, Psalm 103 LXX, Great Litany, O Gladsome Light, Nunc Dimittis, rubrics). data/horologion/schema.json: payload contract documented. Thin UI adapter (renderHorologionOffice, _renderHorologionItem) added to office-ui.js. selectMode('horologion-vespers') branch active. index.html: splash button and script loads confirmed present in live app.",
+        "severity": "HIGH",
+        "status": "done",
+        "area": "js/horologion-engine.js + data/horologion/ + js/office-ui.js + index.html",
+        "phase": "Horologion v1"
+      },
+      {
+        "id": "horologion-vespers-variable-slots",
+        "title": "Horologion: v5.x seasonal tranche — complete through v5.4",
+        "description": "COMPLETE through v5.4 (2026-03-15). Seasonal overlay stack fully implemented and verified: v5.0 Triodion Great Lent weekday (Weeks 1–6, data/triodion/triodion-lenten-weekday.json); v5.1 Holy Week troparion all 7 days (data/triodion/holy-week/holy-week.json); v5.2 Pentecostarion Bright Week stichera/aposticha (data/pentecostarion/pentecostarion-bright-week.json). Menaion corpus 369/370 resolved; 05-18 intentional holdout. Diagnostics toggle active in Horologion sidebar (v5.4). Kathisma full-text expansion complete (v5.5). Orthros structural baseline complete (v5.6–v5.8). See horologion-orthros-v1 for current active Orthros work.",
+        "severity": "LOW",
+        "status": "done",
+        "area": "js/menaion-resolver.js + data/menaion/ + js/horologion-engine.js",
+        "phase": "Horologion v5.8"
+      },
+      {
+        "id": "horologion-compline-v1",
+        "title": "Horologion: Small Compline (Mikron Apodeipnon) v1",
+        "description": "COMPLETE — v3.0 (2026-03-08). data/horologion/small-compline.json skeleton added. data/horologion/compline-fixed.json fixed-text corpus added (usual-beginning, psalm-50, psalm-69, psalm-142, doxology, creed, trisagion-prayers, compline-theotokion, prayer-of-basil, into-thy-hands). HorologionEngine v3.0: _loadComplineFixedData() + _resolveComplineSlots() added. SUPPORTED_OFFICES expanded to ['vespers','small-compline']. Unified Horologion navigation: selectMode('horologion') with sidebar office selector buttons; old mode strings eliminated. troparion-of-the-day resolved via existing _resolveTroparionSlot() infrastructure. Holy Week and Great Lent overrides for Compline deferred.",
+        "severity": "LOW",
+        "status": "done",
+        "area": "data/horologion/ + js/horologion-engine.js + js/office-ui.js + index.html",
+        "phase": "Horologion v3.0"
+      },
+      {
+        "id": "horologion-orthros-v1",
+        "title": "Horologion: Orthros baseline implementation",
+        "description": "Completed baseline Orthros office implementation including structural discipline for weekday, Sunday, and feast appointment resolution. Covers v5.6 structural baseline (fixed content, god-is-the-lord/Alleluia path, troparion delegation), v5.7 kathisma and Praises stichera rubric differentiation (18 implemented / 2 placeholders), and v5.8 sessional hymns and canon season-aware rubric logic (20 implemented / 0 placeholder slots). This milestone established the stable resolver architecture used by subsequent phases including v6.0 stabilization and the current v6.1 text-depth expansion.",
+        "severity": "LOW",
+        "status": "done",
+        "area": "js/horologion-engine.js + data/horologion/orthros.json",
+        "phase": "Horologion v5.6–v5.8"
+      },
+      {
+        "id": "horologion-orthros-sunday-discipline",
+        "title": "Horologion: Orthros v5.9 — Sunday resurrectional / Polyeleos discipline",
+        "description": "Completed Sunday-specific Orthros structural discipline, including explicit resurrectional and Polyeleos-aware Sunday branching. This milestone deepened Sunday Orthros beyond generic weekday structure and prepared the stable Sunday framework used by v6.0 festal discipline and the current v6.1 text-depth phase.",
+        "severity": "MEDIUM",
+        "status": "done",
+        "area": "js/horologion-engine.js + data/horologion/orthros.json",
+        "phase": "Horologion v5.9"
+      },
+      {
+        "id": "horologion-orthros-festal-discipline",
+        "title": "Horologion: Orthros v6.0 — festal / major-feast discipline",
+        "description": "Completed Orthros festal / major-feast structural discipline. This milestone strengthened feast-aware handling for canon, Praises, sessional hymns, and related Matins divergence, establishing the stable festal framework on which the current v6.1 hymnographic text-depth expansion now builds.",
+        "severity": "MEDIUM",
+        "status": "done",
+        "area": "js/horologion-engine.js + data/horologion/orthros.json",
+        "phase": "Horologion v6.0"
+      },
+      {
+        "id": "horologion-orthros-text-depth",
+        "title": "Horologion: Orthros text-depth expansion",
+        "description": "COMPLETE — v6.7. All existing Octoechos corpora activated and verified live end-to-end: Sunday resurrectional Praises (tones 1–8), Sunday Eothinon Exapostilarion (gospels 1–11), Sunday Sessional Hymns (tones 1–8), Sunday Resurrectional Canon (tones 1–8), weekday troparion (Menaion stack + rank-qualified routing verified). Weekday corpus transcription progress: Theotokion COMPLETE (v6.5, 48 slots); Sessional Hymns COMPLETE (v6.5, 48 slots); Canon COMPLETE (v6.6, 48 slots); Aposticha COMPLETE (v6.7, 48 slots); Praises SOURCE-COMPLETE (v6.7 adjudication — Tone 1 Monday–Saturday populated; Tones 2–8 Saturday populated; Tones 2–8 Monday–Friday null by source-witness determination, no Praises block present in reviewed source; nulls are not pending transcription). No weekday null-sentinel corpus families remain. No engine work required.",
+        "severity": "LOW",
+        "status": "done",
+        "area": "js/horologion-engine.js + data/horologion/ + js/octoechos/",
+        "phase": "Horologion v6.1"
+      },
+      {
+        "id": "horologion-midnight-office",
+        "title": "Horologion: Midnight Office (Mesoniktikon) — v6.2/v6.3",
+        "description": "COMPLETE — v6.4. Midnight Office fully operational. Fixed text corpus live (data/horologion/midnight-office-fixed.json): Usual Beginning, Psalm 50, Psalm 117, Psalm 118, Trisagion, Prayer of the Midnight Office. troparion-of-the-day wired to shared _resolveLittleHourSeasonalTroparionSlot stack. midnight-office-theotokion fully transcribed and live (v6.4): fixed-backed positional slot, flat slots schema, slots[\"midnight-office-theotokion\"] populated. No tone dependency, no day-of-week dependency, no feast override, no Stavrotheotokion branching. All variable Midnight Office slots resolve to type:'text' or explicit rubric; no deferred stubs. UI button live.",
+        "severity": "LOW",
+        "status": "done",
+        "area": "js/horologion-engine.js + data/horologion/ + js/office-ui.js + index.html",
+        "phase": "Horologion v6.2–v6.3"
+      },
+      {
+        "id": "horologion-midnight-office-theotokion-corpus",
+        "title": "Horologion: Midnight Office Theotokion corpus transcription",
+        "description": "COMPLETE — v6.4. midnight-office-theotokion fully transcribed and live. data/horologion/midnight-office-theotokion.json: flat slots schema, slots[\"midnight-office-theotokion\"] populated with full Theotokion text (Jordanville 2008 / Hapgood tradition). Engine resolves type:'text' resolvedAs:'midnight-office-theotokion-text'. No tone dependency, no day-of-week dependency, no feast override, no Stavrotheotokion branching. Fallback path (midnight-office-theotokion-not-transcribed) no longer active in baseline state.",
+        "severity": "LOW",
+        "status": "done",
+        "area": "data/horologion/midnight-office-theotokion.json",
+        "phase": "Horologion v6.4"
+      },
+      {
+        "id": "great-compline-architecture",
+        "title": "Horologion: Great Compline (Mega Apodeipnon) — baseline architecture",
+        "description": "COMPLETE — baseline architecture and all core corpus layers are live and runtime-verified. Great Compline is wired as a supported Horologion office with skeleton + fixed-text baseline, routable engine support, and UI selector integration. The repo contains data/horologion/great-compline.json, data/horologion/great-compline-fixed.json, engine support in js/horologion-engine.js, and the #hor-btn-great-compline selector in index.html. Great Compline includes full Octoechos Theotokos canon corpus (Tones 1–8) under window.GC_CANON_OCTOECHOS. Great Canon of Saint Andrew corpus is populated and runtime-verified. Menaion canon corpus has bounded Great Compline feast-eve coverage populated and runtime-verified for 04-23, 08-15, 09-08, 09-14, and 11-21; no currently-open bounded Great Feast eve Menaion canon from the v6.9 gate remains deferred. Friday kontakion substitution (invariable Kontakion of the Departed in place of 'O Lord of Hosts') is implemented and verified. Weekday troparia ordinary branches are healthy. Reopener defect fixed. Actual-file census (2026-04-26): great-compline-fixed.json parses; 49 fixed slots; major fixed text corpus populated; sequence slots are structural sequences with no direct text by design, not missing data; remaining placeholder-like fixed entries are known rubrics for deferred corpus (weekday-troparia-menaion and canon rubrics). great-compline.json skeleton has placeholder items but runtime replaces them correctly; no rendered placeholder leakage confirmed. Runtime QC (2026-04-26): Lent Monday 2026-03-02 — 45 implemented / 0 placeholders, status complete; ordinary Monday 2026-06-08 (not appointed) — 1 implemented / 0 placeholders, status complete, not-appointed behavior correct; 2 PASS / 0 FAIL. Great Compline baseline/fixed runtime path is healthy. No currently-open bounded Great Compline Great Feast eve Menaion canon from the v6.9 gate remains deferred; broader Menaion corpus expansion is future data work, not baseline repair.",
+        "severity": "LOW",
+        "status": "done",
+        "area": "js/horologion-engine.js + data/horologion/ + js/office-ui.js + index.html",
+        "phase": "Byzantine release baseline"
+      },
+      {
+        "id": "interhours-architecture",
+        "title": "Horologion: Interhours (First, Third, Sixth, Ninth) — baseline architecture",
+        "description": "COMPLETE — baseline architecture is live and runtime-verified. All four Interhours are wired as supported Horologion offices with skeleton + fixed-text baselines, shared resolver support, and UI selector integration. Runtime baseline remains complete: each Interhour resolves 7 implemented / 0 placeholder slots. Text-depth tranche 1 complete (v3.8.2): trisagion-prayers populated in all four interhour fixed files (type:sequence, 8 items, Jordanville 2008 / OCA-Antiochian, verbatim from first-hour-fixed.json). Psalms 60, 61, 62 populated in interhour-sixth-fixed.json (type:psalm, Hapgood tradition, from kathisma-full-text.json Kathisma 8). Psalms 86, 87, 88 populated in interhour-ninth-fixed.json (type:psalm, Hapgood tradition, from kathisma-full-text.json Kathisma 12). Interhour Theotokia are complete and text-backed. Text-depth tranche 2 complete (2026-04-27): Psalms 20–22 populated in interhour-first-fixed.json from liturgy.io Kathisma 3 (Psalter According to the Seventy, HTM 1974); Psalms 34–36 populated in interhour-third-fixed.json from liturgy.io Kathisma 5 (same source). St. Sergius corroborated Psalms 21, 22, and 34. No engine change. No skeleton change. Interhour fixed text is now fully text-backed for the current fixed-file scope.",
+        "severity": "LOW",
+        "status": "done",
+        "area": "js/horologion-engine.js + data/horologion/ + js/office-ui.js + index.html",
+        "phase": "Byzantine release baseline"
+      },
+      {
+        "id": "admin-release-governance",
+        "title": "Admin Dashboard: release-governance cockpit",
+        "description": "COMPLETE — committed 2026-04-26. Admin dashboard upgraded from diagnostics-only to release-governance cockpit: release-roadmap cockpit, critical-path office panel, readiness/deferred items, roadmap summary visibility, and release-critical todo marker sourced from structure.json.",
+        "severity": "HIGH",
+        "status": "done",
+        "area": "admin/admin.html + admin/readme.md + structure.json",
+        "phase": "Post-Pentecost stabilization"
+      }
+    ]
+  },
+  "archived_loth_phase3_governance_history": {
+    "description": "Full backward-looking LOTH phase 3 governance note retired from project_roadmap.json on 2026-06-02 so the roadmap remains current/future-facing.",
+    "archivedAt": "2026-06-02",
+    "source": "project_roadmap.json phase_plan[id=phase_3].governance_note",
+    "full_governance_note": "Private-current-LOTH-first/public-LOTH-second strategy accepted 2026-05-27. JWJeffery/LOTH is the active Roman LOTH control-corpus repository. Night Prayer weekly-cycle population is closed for the current build scope. Grail 1963 psalter corpus lives under resources/psalter/grail-1963/psalms.json; psalm-numbering registry resolves Hebrew/Masoretic and Septuagint/Vulgate numbering; source supplement policy governs Universalis divergence by content class. Universalis remains useful for structure/calendar/source discovery but is not approved for automatic population. Office of Readings source-unit/materialization planning closed in LOTH commit c73bc1d. Next private office target: bounded Office of Readings pilot ingestion, chosen for the user's devotional priority and for its strong pressure-test value across psalmody, biblical readings, patristic/hagiographic second readings, responsories, Te Deum, and collects. Office of Readings pilot-ingestion audit closed in LOTH commits 3734157 and 592cce7 after anchor repair; next private Roman LOTH target is ordinary-week Office of Readings expansion. Office of Readings ordinary-week expansion planning closed in LOTH commit c02c74b; next LOTH work is population of the selected ordinary-week set. Office of Readings ordinary-week population closed in LOTH commit e80f945; next work moves to the next Roman LOTH core-office expansion target. Morning Prayer source-unit/materialization planning closed in LOTH commit a4ee4ce; next LOTH work is the planned 2026-06-16 Morning Prayer pilot population. Roadmap correction 2026-05-27: Morning Prayer source planning remains future-ready, but active build work returns to Office of Readings continuation before moving deeper into other core offices. Office of Readings 2026-06-22 week expansion planning closed in LOTH commit 0dadd12; next LOTH work is URL preflight followed by population of that selected week. Office of Readings four-week block population closed in LOTH commit 3a0135e, covering 2026-06-22 through 2026-07-18 Monday-Saturday with 264 slot files. Office of Readings population now defaults to four-week blocks unless concrete QC risk requires a smaller tranche. Office of Readings second four-week block population closed in LOTH commit 2dab35d, covering 2026-07-20 through 2026-08-15 Monday-Saturday with 264 slot files. After two clean four-week blocks, Office of Readings population now defaults to eight-week blocks unless concrete QC risk requires a smaller tranche. Office of Readings first eight-week block population closed in LOTH commit b88e8b0, covering 2026-08-17 through 2026-10-10 Monday-Saturday with 528 slot files. Eight-week Office of Readings batching is now confirmed after a successful 48-date block. Office of Readings second eight-week block population closed in LOTH commit 936cc7d, covering 2026-10-12 through 2026-12-05 Monday-Saturday with 528 slot files. Eight-week Office of Readings batching remains the default after a second successful 48-date block. Office of Readings third eight-week block population closed in LOTH commit acacbd0, covering 2026-12-07 through 2027-01-30 Monday-Saturday with 528 slot files. Office of Readings fourth eight-week block population closed in LOTH commit c794db7, covering 2027-02-01 through 2027-03-27 Monday-Saturday with 528 slot files. PrayerAppNew recording cadence is now every two successful LOTH population tranches unless a concrete failure or architecture change requires an immediate record. Office of Readings forward completion model corrected in LOTH commits 8fa1e12 and d5ea617: Universalis now governs appointment/structure discovery and the local Grail psalter governs psalm-body materialization. The earlier DivineOffice-derived date-block path was later identified as a failed architecture: resolved daily snapshots are not the forward corpus model. The pipeline audit is offline governance; live future-date source availability belongs in separate preflight checks. Office of Readings Universalis appointment parser audit closed in LOTH commit cf1bfd5: current Universalis source shape is now source-tested for psalm appointment extraction, alternate psalm-number normalization, reading/responsory markers, and local Grail lookup probes without writing text units. Next source-pipeline target is Grail-backed psalmody materialization planning/audit. Office of Readings Grail psalmody materialization plan and mapping dry-run closed in LOTH commits c9cdf52 and 86e8fb3: Universalis psalm appointments now have a governed non-writing path toward local Grail psalter body references. The tranche writes no Office of Readings text units; next source-pipeline target is a bounded Grail psalmody materialization pilot. Office of Readings source-pipeline four-tranche bundle closed in LOTH commits f6fe1ee, 4773b75, 16c2e37, and 17dd352. The bundle added Grail psalmody materialization and unit pilots, reusable Universalis/Grail helper code, committed source-pipeline QC, an offline fixture audit, and a separate live-source preflight. Governance update: ordinary LOTH progress is recorded in PrayerAppNew every four tranches by default; architecture/source-model/failed-course corrections remain immediate-record exceptions; stable source-pipeline work should prefer reusable helper modules and committed QC scripts; live source checks are explicit preflights rather than core offline governance audits. Failed-course correction closed in LOTH commits 9409041, be68b90, and 10d93fa: the controlled Office of Readings source-shape fixture was deepened, conclusion-slot spillover contamination was repaired, and the legacy daily date-block population was retired from active corpus with a guard audit. Forward Office of Readings work must now use reusable cycle/proper/resolver architecture with unitRefs and source-class separation; broad daily date-block population is prohibited unless a future explicit governance decision reverses this. Office of Readings cycle/proper/resolver architecture plan closed in LOTH commit d9fdea1: the plan defines 11 resolver layers and 11 slot contracts, requires composition-map output with unitRefs only, keeps source-class separation, and explicitly forbids text-unit writes and broad resolved date snapshots. Next OOR work should be a metadata-only composition pilot or psalmody-cycle-map skeleton, not population. Office of Readings post-architecture metadata/cycle-map bundle closed in LOTH commits fa10584, f530cd5, 8ae8a49, and e7171d3: the non-materializing composition pilot, psalmody cycle-map skeleton, psalmody binding, and biblical first-reading cycle-map skeleton now extend the OOR cycle/proper/resolver architecture. The active OOR path remains composition-map/unitRefs/citationRefs-only. No text-unit writes or broad date-block snapshots are authorized. Office of Readings composition-resolver bundle closed in LOTH commits a4a9761, 503ebdc, dff67ea, and 0367a90: first reading, first responsory, and second reading are now bound into the metadata composition pilot, and the metadata composition resolver emits complete ordered 11-slot composition maps. The active OOR path remains non-materializing: unitRefs/citationRefs only, no text-unit writes, and no broad date-block snapshots. Office of Readings full metadata slot-binding bundle closed in LOTH commits e0bab4a, 7c8bbd8, f237a42, and 2ba1bb2: second responsory, Te Deum, collect, hymn, and verse are now bound into the metadata composition pilot. The OOR resolver now assembles all 11 pilot slots by unitRefs/citationRefs/rule refs or not_applicable_by_rule. This remains non-materializing and does not authorize text-unit writes or broad daily date-block snapshots. Office of Readings governed text-unit hydration bundle closed in LOTH commits e2b51ca, 293f33a, 91c3039, and d46268b. This bundle confirms the complete metadata pilot, populates stable ordinary text units, hydrates populated reusable units into resolver output, and adds the reusable Te Deum unit. This is the controlled pivot into text-unit population: reusable root units only, public rendering blocked, and no daily date-block snapshots. Office of Readings hymn/verse candidate text-unit bundle closed in LOTH commits 003478d, b448eb3, and 066d49f. The bundle added the text-population eligibility gate and populated candidate reusable hymn and verse units behind existing refs. Hydration now reports 4 hydrated slots for ordinary/Lenten pilot contexts and 5 for solemnity. Candidate hymn/verse units remain private/blocked and are not asserted as official current LOTH appointments. Office of Readings collect/responsory candidate text-unit bundle closed in LOTH commits 7b96f24, 0a98778, 9b54a97, and 3ca5dbd. The bundle populated candidate collect, first-responsory, and second-responsory reusable units, and refreshed the remaining-source-gated refs report. Hydration now reports 7 hydrated slots for ordinary/Lenten pilot contexts and 8 for solemnity. The only remaining source-gated slots are psalmody, first reading, and second reading. Office of Readings metadata pilot population completed in LOTH commits 96253d7, 794f624, and a4849c8. The bundle populated candidate first-reading, second-reading, and psalmody reusable units, bringing the metadata pilot to 11 populated slots and 0 source-gated slots. Hydration now reports 10 hydrated slots for ordinary/Lenten pilot contexts and 11 for the solemnity context. This is a metadata-pilot milestone only, with public rendering, current official text assertions, and broad daily date-block snapshots still prohibited."
+  },
+  "archived_roman_loth_progress_records": {
+    "description": "Backward-looking Roman LOTH progress records retired from project_roadmap.json on 2026-06-02. These preserve recording-cadence history without making the roadmap an append-only ledger.",
+    "archivedAt": "2026-06-02",
+    "source": "project_roadmap.json roman_loth_progress_records",
+    "records": [
+      {
+        "id": "loth_oor_psalmody_coverage_bundle_2026_06_02_b835653",
+        "date": "2026-06-02",
+        "status": "recorded",
+        "recordType": "roman_loth_six_tranche_corpus_progress_record",
+        "recordedFromPrayerAppNewHead": "9843f46",
+        "recordedFromPrayerAppNewHeadMessage": "Remove tracked repository garbage",
+        "lothCommitBeforeBundle": "18d296c",
+        "lothCommitAfterBundle": "b835653",
+        "lothCommitAfterBundleMessage": "Map Office of Readings Advent psalmody appointments",
+        "trancheCount": 6,
+        "countsAsCadenceRecord": true,
+        "corpusProducing": true,
+        "prayerAppNewRecordReason": "Six substantial LOTH corpus-producing tranches reached the established recording cadence.",
+        "lothTranches": [
+          {
+            "commit": "fc1b442",
+            "message": "Map Office of Readings ordinary psalmody appointments",
+            "tranche": "OOR-C03-ordinary-psalmody-appointment-map",
+            "effect": "Mapped source-backed ordinary Office of Readings psalmody appointments into the private Grail appointment map."
+          },
+          {
+            "commit": "c2b7cbf",
+            "message": "Acquire Office of Readings week 2 Sunday psalmody",
+            "tranche": "OOR-C03-ordinary-psalmody-appointment-map",
+            "effect": "Added source-backed Week 2 Sunday ordinary psalmody coverage."
+          },
+          {
+            "commit": "095200c",
+            "message": "Complete Office of Readings ordinary psalmody appointments",
+            "tranche": "OOR-C03-ordinary-psalmody-appointment-map",
+            "effect": "Completed all 28 ordinary Office of Readings psalmody appointments with 0 missing."
+          },
+          {
+            "commit": "44c32f7",
+            "message": "Bind Office of Readings ordinary psalmody contexts",
+            "tranche": "OOR-C04-ordinary-psalmody-context-binding",
+            "effect": "Bound 238 ordinary-time Office of Readings contexts to the completed 28 ordinary psalmody appointment keys."
+          },
+          {
+            "commit": "747e240",
+            "message": "Map Office of Readings temporale psalmody sentinels",
+            "tranche": "OOR-C05-temporale-psalmody-appointment-map-sentinel-partial",
+            "effect": "Mapped 6 temporale sentinel psalmody contexts and recorded Easter Sunday as a rubric-governed exception."
+          },
+          {
+            "commit": "b835653",
+            "message": "Map Office of Readings Advent psalmody appointments",
+            "tranche": "OOR-C05-temporale-psalmody-appointment-map-advent-continuation-partial",
+            "effect": "Mapped 19 additional Advent psalmody appointments; 8 Advent appointments remain source-blocked."
+          }
+        ],
+        "resultingState": {
+          "latest_known_loth_commit": "b835653",
+          "latest_known_loth_commit_message": "Map Office of Readings Advent psalmody appointments",
+          "roman_loth_control_corpus_repo": "JWJeffery/LOTH",
+          "active_oor_completion_plan": "roman_loth_office_of_readings_completion_plan_2026_06_01",
+          "active_oor_completion_plan_next_loth_tranche": "OOR-C05-temporale-psalmody-appointment-map-continuation",
+          "active_oor_completion_plan_remaining_loth_tranches": 20,
+          "oor_c03_status": "complete_28_ordinary_psalmody_appointments_0_missing",
+          "oor_c04_status": "complete_238_ordinary_time_contexts_bound",
+          "oor_c05_status": "partial_25_temporale_psalmody_contexts_mapped_1_easter_sunday_rubric_exception_112_remaining",
+          "loth_recording_cadence": "every_six_corpus_producing_loth_tranches",
+          "next_navigation_summary": "Current position: PrayerAppNew records LOTH through b835653. OOR-C03 is complete with 28 ordinary psalmody appointments entered and mapped. OOR-C04 is complete with 238 ordinary-time contexts bound to those appointment keys. OOR-C05 is partially advanced: 25 temporale psalmody contexts are source-backed and mapped, Easter Sunday is recorded as a rubric-governed exception, 8 Advent appointments remain source-blocked, and 112 temporale psalmody contexts remain. Continue at OOR-C05 temporale psalmody appointment-map continuation."
+        },
+        "antiBloatConfirmation": {
+          "noGeneratedExportBooks": true,
+          "noBroadDailyDateBlocks": true,
+          "noFullContextDump": true,
+          "privateSourceGovernedCoverageOnly": true
+        }
+      }
+    ]
+  },
   "project_manifest": {
     "name": "Universal Office (Prayer App New)",
     "version": "2.4.0",
@@ -879,6 +1131,5 @@
     "bcp_compliance_percentage": "100%",
     "code_reduction_from_modularization": "75 lines net (was 1240, now 1165 markup + 1616 modules)",
     "phase_65_fixes_applied": 9
-  },
-  "last_updated": "2026-02-22"
+  }
 }

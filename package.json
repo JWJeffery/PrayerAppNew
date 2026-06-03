@@ -11,7 +11,9 @@
     "saints:rank": "node tools/rank_identity_frequency.js",
     "audit:bible-corpus-structure": "node scripts/audit-bible-corpus-structure.mjs",
     "audit:bible-corpus-completeness": "node scripts/audit-bible-corpus-completeness.mjs",
-    "audit:rotherham-psalms": "node scripts/audit-rotherham-psalms.mjs"
+    "audit:rotherham-psalms": "node scripts/audit-rotherham-psalms.mjs",
+    "audit:repo-hygiene": "node scripts/audit-repo-hygiene.mjs",
+    "audit:repo-hygiene:write": "node scripts/audit-repo-hygiene.mjs --write"
   },
   "repository": {
     "type": "git",

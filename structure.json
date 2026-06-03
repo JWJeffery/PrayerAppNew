@@ -870,7 +870,7 @@
       "oor_c04_status": "complete_238_ordinary_time_contexts_bound",
       "oor_c05_status": "partial_25_temporale_psalmody_contexts_mapped_1_easter_sunday_rubric_exception_112_remaining",
       "loth_recording_cadence": "every_six_corpus_producing_loth_tranches",
-      "next_navigation_summary": "Current position: PrayerAppNew records LOTH through b835653. OOR-C03 is complete with 28 ordinary psalmody appointments entered and mapped. OOR-C04 is complete with 238 ordinary-time contexts bound to those appointment keys. OOR-C05 is partially advanced: 25 temporale psalmody contexts are source-backed and mapped, Easter Sunday is recorded as a rubric-governed exception, 8 Advent appointments remain source-blocked, and 112 temporale psalmody contexts remain. Continue at OOR-C05 temporale psalmody appointment-map continuation."
+      "next_navigation_summary": "LOTH through b835653. OOR-C03 complete (28 ordinary psalmody appointments). OOR-C04 complete (238 ordinary-time contexts bound). OOR-C05 partial (25 temporale contexts mapped, 8 Advent source-blocked, 112 remaining). Next: OOR-C05 continuation. See project_roadmap.json current_repo_state.current_navigation_summary for full prose."
     },
     "roman_loth_progress_records": [
       {
@@ -954,18 +954,9 @@
     "future": "Phase 6.7 — Performance polish (timezone warning, LRU seasonal cache, prefetch, service worker); Phase 7.5 — Coptic Agpeya as standalone tradition entry; Phase 9.0 — Mobile app; Phase 9.1 — Cross-Tradition Search (Comparative scripture view across AR, ET, and SY canons); COE-IIC — Optional Layer 2 expansion: major Hudra fixed feasts (Denha/Epiphany, Sleeba/Exaltation, Annunciation, All Saints)"
   },
   "admin": {
-    "_note": "Admin dashboard configuration. todos are the authoritative task list consumed by the /admin UI. Completed items remain in the array as ledger history; do not delete them when reclassifying work.",
-    "_how_to_add_todo": "Add an object to the todos array with: id (kebab-case unique), title (short), description (full), severity (HIGH|MEDIUM|LOW), status (open|in-progress|done), area (code-area or file), and optionally phase.",
+    "_note": "Admin dashboard configuration. todos are the authoritative task list for active/in-progress work. Completed todos are archived in documentation/structure.hist1.json under archived_completed_todos.",
+    "_how_to_add_todo": "Add an object to the todos array with: id (kebab-case unique), title (short), description (full), severity (HIGH|MEDIUM|LOW), status (open|in-progress), area (code-area or file), and optionally phase. When a todo reaches status done, move it to the archive.",
     "todos": [
-      {
-        "id": "coe-calendar-rebuild",
-        "title": "COE-II: Three-layer COE calendar rebuild",
-        "description": "COMPLETE — v2.8.9. Three-layer model fully implemented. Layer 1 (season engine): operational. Layer 2 (fixed feasts: Sawma Rabba Friday martyrs, Faithful Departed): implemented via getDayClass(). Layer 3 (sparse individual saints): CoeEligibility.filter() gate active; display re-enabled. COE-IIB audit complete: saint-grid model eliminated. External holdout: mar-augustine / mar-augustine-commemoration excluded from Layer 3 pending external Syriac manuscript research. No further internal action.",
-        "severity": "HIGH",
-        "status": "done",
-        "area": "js/calendar-east-syriac.js + js/office-ui.js",
-        "phase": "COE-II"
-      },
       {
         "id": "saints-schema-refactor",
         "title": "Saints resolver: normalized-source runtime adapter",
@@ -1000,123 +991,6 @@
         "area": "js/office-ui.js"
       },
       {
-        "id": "eo-calendar-modes",
-        "title": "EO old/new calendar mode: main-app integration",
-        "description": "COMPLETE — 2026-05-16. Main-app Horologion production bridge implemented. js/calendar-eastern-orthodox.js is now loaded on the production path before js/byzantine-paschalion.js. #generic-settings contains an EO calendar mode selector (#hor-eo-calendar-select, values new_calendar / old_calendar). js/office-ui.js exposes selectEoMode(), persists selectedEoMode in universalOfficeSettings, syncs the selector on Horologion entry, updates #generic-calendar-info with the active mode label, and passes { eoMode: selectedEoMode } into HorologionEngine.resolveOffice(). js/horologion-engine.js normalizes context.eoMode as _currentEoMode, and _getFixedCalendarMmdd() is wired into all fixed-date lookup sites: Little Hours troparion, Vespers troparion, Orthros kontakion queryDate, Great Compline weekday troparia probe, Great Compline canon probe, Great Compline feast-eve detection, and feastLectionaryOverlayKeys fixed-cycle mmdd routing including Nativity/Theophany relative Sunday/Saturday window checks. Movable-cycle behavior (Pascha, Bright Week, Great Lent, Holy Week, after-Pentecost ordinale) is unchanged. Diagnostic payload surfaces eoMode and fixedCalendarMode. Annual Typikon collision policy for fixed vs movable cycle overlaps remains a separate deferred item.",
-        "severity": "MEDIUM",
-        "status": "done",
-        "area": "index.html + js/office-ui.js + js/calendar-engine.js + js/calendar-eastern-orthodox.js + admin/admin.html",
-        "phase": "EO app integration"
-      },
-      {
-        "id": "eo-admin-diagnostics",
-        "title": "EO admin diagnostics: old/new calendar snapshot support",
-        "description": "COMPLETE — 2026-03-06. Admin/devtool coverage exists for EO old_calendar vs new_calendar diagnostics. CalendarEngine.getEOSeasonRanges(year, eoMode) computes fixed-feast civil placement (Nativity/Theophany) while EasternOrthodoxCalendar continues to own the Julian Paschalion/movable-feast cycle. admin/admin.html Year Snapshot consumes eoMode and renders the differing anchor dates. This does not expose EO mode in the main application.",
-        "severity": "MEDIUM",
-        "status": "done",
-        "area": "js/calendar-engine.js + admin/admin.html",
-        "phase": "EO admin diagnostics"
-      },
-      {
-        "id": "horologion-v1-architecture",
-        "title": "Horologion v1: architecture boundary",
-        "description": "COMPLETE — 2026-03-07. js/horologion-engine.js (HorologionEngine) established as engine layer (non-throwing resolveOffice(), skeleton cache, validateOfficePayload()). data/horologion/vespers.json: 7-section skeleton with fixed content complete (Usual Beginning, Psalm 103 LXX, Great Litany, O Gladsome Light, Nunc Dimittis, rubrics). data/horologion/schema.json: payload contract documented. Thin UI adapter (renderHorologionOffice, _renderHorologionItem) added to office-ui.js. selectMode('horologion-vespers') branch active. index.html: splash button and script loads confirmed present in live app.",
-        "severity": "HIGH",
-        "status": "done",
-        "area": "js/horologion-engine.js + data/horologion/ + js/office-ui.js + index.html",
-        "phase": "Horologion v1"
-      },
-      {
-        "id": "horologion-vespers-variable-slots",
-        "title": "Horologion: v5.x seasonal tranche — complete through v5.4",
-        "description": "COMPLETE through v5.4 (2026-03-15). Seasonal overlay stack fully implemented and verified: v5.0 Triodion Great Lent weekday (Weeks 1–6, data/triodion/triodion-lenten-weekday.json); v5.1 Holy Week troparion all 7 days (data/triodion/holy-week/holy-week.json); v5.2 Pentecostarion Bright Week stichera/aposticha (data/pentecostarion/pentecostarion-bright-week.json). Menaion corpus 369/370 resolved; 05-18 intentional holdout. Diagnostics toggle active in Horologion sidebar (v5.4). Kathisma full-text expansion complete (v5.5). Orthros structural baseline complete (v5.6–v5.8). See horologion-orthros-v1 for current active Orthros work.",
-        "severity": "LOW",
-        "status": "done",
-        "area": "js/menaion-resolver.js + data/menaion/ + js/horologion-engine.js",
-        "phase": "Horologion v5.8"
-      },
-      {
-        "id": "horologion-compline-v1",
-        "title": "Horologion: Small Compline (Mikron Apodeipnon) v1",
-        "description": "COMPLETE — v3.0 (2026-03-08). data/horologion/small-compline.json skeleton added. data/horologion/compline-fixed.json fixed-text corpus added (usual-beginning, psalm-50, psalm-69, psalm-142, doxology, creed, trisagion-prayers, compline-theotokion, prayer-of-basil, into-thy-hands). HorologionEngine v3.0: _loadComplineFixedData() + _resolveComplineSlots() added. SUPPORTED_OFFICES expanded to ['vespers','small-compline']. Unified Horologion navigation: selectMode('horologion') with sidebar office selector buttons; old mode strings eliminated. troparion-of-the-day resolved via existing _resolveTroparionSlot() infrastructure. Holy Week and Great Lent overrides for Compline deferred.",
-        "severity": "LOW",
-        "status": "done",
-        "area": "data/horologion/ + js/horologion-engine.js + js/office-ui.js + index.html",
-        "phase": "Horologion v3.0"
-      },
-      {
-        "id": "horologion-orthros-v1",
-        "title": "Horologion: Orthros baseline implementation",
-        "description": "Completed baseline Orthros office implementation including structural discipline for weekday, Sunday, and feast appointment resolution. Covers v5.6 structural baseline (fixed content, god-is-the-lord/Alleluia path, troparion delegation), v5.7 kathisma and Praises stichera rubric differentiation (18 implemented / 2 placeholders), and v5.8 sessional hymns and canon season-aware rubric logic (20 implemented / 0 placeholder slots). This milestone established the stable resolver architecture used by subsequent phases including v6.0 stabilization and the current v6.1 text-depth expansion.",
-        "severity": "LOW",
-        "status": "done",
-        "area": "js/horologion-engine.js + data/horologion/orthros.json",
-        "phase": "Horologion v5.6–v5.8"
-      },
-      {
-        "id": "horologion-orthros-sunday-discipline",
-        "title": "Horologion: Orthros v5.9 — Sunday resurrectional / Polyeleos discipline",
-        "description": "Completed Sunday-specific Orthros structural discipline, including explicit resurrectional and Polyeleos-aware Sunday branching. This milestone deepened Sunday Orthros beyond generic weekday structure and prepared the stable Sunday framework used by v6.0 festal discipline and the current v6.1 text-depth phase.",
-        "severity": "MEDIUM",
-        "status": "done",
-        "area": "js/horologion-engine.js + data/horologion/orthros.json",
-        "phase": "Horologion v5.9"
-      },
-      {
-        "id": "horologion-orthros-festal-discipline",
-        "title": "Horologion: Orthros v6.0 — festal / major-feast discipline",
-        "description": "Completed Orthros festal / major-feast structural discipline. This milestone strengthened feast-aware handling for canon, Praises, sessional hymns, and related Matins divergence, establishing the stable festal framework on which the current v6.1 hymnographic text-depth expansion now builds.",
-        "severity": "MEDIUM",
-        "status": "done",
-        "area": "js/horologion-engine.js + data/horologion/orthros.json",
-        "phase": "Horologion v6.0"
-      },
-      {
-        "id": "horologion-orthros-text-depth",
-        "title": "Horologion: Orthros text-depth expansion",
-        "description": "COMPLETE — v6.7. All existing Octoechos corpora activated and verified live end-to-end: Sunday resurrectional Praises (tones 1–8), Sunday Eothinon Exapostilarion (gospels 1–11), Sunday Sessional Hymns (tones 1–8), Sunday Resurrectional Canon (tones 1–8), weekday troparion (Menaion stack + rank-qualified routing verified). Weekday corpus transcription progress: Theotokion COMPLETE (v6.5, 48 slots); Sessional Hymns COMPLETE (v6.5, 48 slots); Canon COMPLETE (v6.6, 48 slots); Aposticha COMPLETE (v6.7, 48 slots); Praises SOURCE-COMPLETE (v6.7 adjudication — Tone 1 Monday–Saturday populated; Tones 2–8 Saturday populated; Tones 2–8 Monday–Friday null by source-witness determination, no Praises block present in reviewed source; nulls are not pending transcription). No weekday null-sentinel corpus families remain. No engine work required.",
-        "severity": "LOW",
-        "status": "done",
-        "area": "js/horologion-engine.js + data/horologion/ + js/octoechos/",
-        "phase": "Horologion v6.1"
-      },
-      {
-        "id": "horologion-midnight-office",
-        "title": "Horologion: Midnight Office (Mesoniktikon) — v6.2/v6.3",
-        "description": "COMPLETE — v6.4. Midnight Office fully operational. Fixed text corpus live (data/horologion/midnight-office-fixed.json): Usual Beginning, Psalm 50, Psalm 117, Psalm 118, Trisagion, Prayer of the Midnight Office. troparion-of-the-day wired to shared _resolveLittleHourSeasonalTroparionSlot stack. midnight-office-theotokion fully transcribed and live (v6.4): fixed-backed positional slot, flat slots schema, slots[\"midnight-office-theotokion\"] populated. No tone dependency, no day-of-week dependency, no feast override, no Stavrotheotokion branching. All variable Midnight Office slots resolve to type:'text' or explicit rubric; no deferred stubs. UI button live.",
-        "severity": "LOW",
-        "status": "done",
-        "area": "js/horologion-engine.js + data/horologion/ + js/office-ui.js + index.html",
-        "phase": "Horologion v6.2–v6.3"
-      },
-      {
-        "id": "horologion-midnight-office-theotokion-corpus",
-        "title": "Horologion: Midnight Office Theotokion corpus transcription",
-        "description": "COMPLETE — v6.4. midnight-office-theotokion fully transcribed and live. data/horologion/midnight-office-theotokion.json: flat slots schema, slots[\"midnight-office-theotokion\"] populated with full Theotokion text (Jordanville 2008 / Hapgood tradition). Engine resolves type:'text' resolvedAs:'midnight-office-theotokion-text'. No tone dependency, no day-of-week dependency, no feast override, no Stavrotheotokion branching. Fallback path (midnight-office-theotokion-not-transcribed) no longer active in baseline state.",
-        "severity": "LOW",
-        "status": "done",
-        "area": "data/horologion/midnight-office-theotokion.json",
-        "phase": "Horologion v6.4"
-      },
-      {
-        "id": "great-compline-architecture",
-        "title": "Horologion: Great Compline (Mega Apodeipnon) — baseline architecture",
-        "description": "COMPLETE — baseline architecture and all core corpus layers are live and runtime-verified. Great Compline is wired as a supported Horologion office with skeleton + fixed-text baseline, routable engine support, and UI selector integration. The repo contains data/horologion/great-compline.json, data/horologion/great-compline-fixed.json, engine support in js/horologion-engine.js, and the #hor-btn-great-compline selector in index.html. Great Compline includes full Octoechos Theotokos canon corpus (Tones 1–8) under window.GC_CANON_OCTOECHOS. Great Canon of Saint Andrew corpus is populated and runtime-verified. Menaion canon corpus has bounded Great Compline feast-eve coverage populated and runtime-verified for 04-23, 08-15, 09-08, 09-14, and 11-21; no currently-open bounded Great Feast eve Menaion canon from the v6.9 gate remains deferred. Friday kontakion substitution (invariable Kontakion of the Departed in place of 'O Lord of Hosts') is implemented and verified. Weekday troparia ordinary branches are healthy. Reopener defect fixed. Actual-file census (2026-04-26): great-compline-fixed.json parses; 49 fixed slots; major fixed text corpus populated; sequence slots are structural sequences with no direct text by design, not missing data; remaining placeholder-like fixed entries are known rubrics for deferred corpus (weekday-troparia-menaion and canon rubrics). great-compline.json skeleton has placeholder items but runtime replaces them correctly; no rendered placeholder leakage confirmed. Runtime QC (2026-04-26): Lent Monday 2026-03-02 — 45 implemented / 0 placeholders, status complete; ordinary Monday 2026-06-08 (not appointed) — 1 implemented / 0 placeholders, status complete, not-appointed behavior correct; 2 PASS / 0 FAIL. Great Compline baseline/fixed runtime path is healthy. No currently-open bounded Great Compline Great Feast eve Menaion canon from the v6.9 gate remains deferred; broader Menaion corpus expansion is future data work, not baseline repair.",
-        "severity": "LOW",
-        "status": "done",
-        "area": "js/horologion-engine.js + data/horologion/ + js/office-ui.js + index.html",
-        "phase": "Byzantine release baseline"
-      },
-      {
-        "id": "interhours-architecture",
-        "title": "Horologion: Interhours (First, Third, Sixth, Ninth) — baseline architecture",
-        "description": "COMPLETE — baseline architecture is live and runtime-verified. All four Interhours are wired as supported Horologion offices with skeleton + fixed-text baselines, shared resolver support, and UI selector integration. Runtime baseline remains complete: each Interhour resolves 7 implemented / 0 placeholder slots. Text-depth tranche 1 complete (v3.8.2): trisagion-prayers populated in all four interhour fixed files (type:sequence, 8 items, Jordanville 2008 / OCA-Antiochian, verbatim from first-hour-fixed.json). Psalms 60, 61, 62 populated in interhour-sixth-fixed.json (type:psalm, Hapgood tradition, from kathisma-full-text.json Kathisma 8). Psalms 86, 87, 88 populated in interhour-ninth-fixed.json (type:psalm, Hapgood tradition, from kathisma-full-text.json Kathisma 12). Interhour Theotokia are complete and text-backed. Text-depth tranche 2 complete (2026-04-27): Psalms 20–22 populated in interhour-first-fixed.json from liturgy.io Kathisma 3 (Psalter According to the Seventy, HTM 1974); Psalms 34–36 populated in interhour-third-fixed.json from liturgy.io Kathisma 5 (same source). St. Sergius corroborated Psalms 21, 22, and 34. No engine change. No skeleton change. Interhour fixed text is now fully text-backed for the current fixed-file scope.",
-        "severity": "LOW",
-        "status": "done",
-        "area": "js/horologion-engine.js + data/horologion/ + js/office-ui.js + index.html",
-        "phase": "Byzantine release baseline"
-      },
-      {
         "id": "horologion-monastic-audit",
         "title": "Horologion: post-blocker polish and Menaion branch planning",
         "description": "Monastic-discipline audit triage complete (2026-05-16): no current public-beta release blockers identified in the governed daily-cycle scope. The Horologion is release-honest for the governed scope. \n\nCOMPLETED / CLOSED audit targets (not active investigation items):\n- Typika lectionary expansion: RELEASE-GRADE as of 2026-05-10 for ordinary post-Pentecost Sundays, Pentecostarion Sundays, pre-Lenten and Great Lent Sundays, Palm Sunday, Bright Week, ordinary weekday readings Weeks 1-33, Lukan weekday Gospel Weeks 1-12, interruption gates, pre-Lenten weekdays, feast_lectionary_overlays winter-cycle and fixed-cycle, guarded Annunciation overlay, and final Typika release regression. Deferred (non-release-blocking): Annunciation Sunday/Holy Week/Pascha/Bright collision policy, broader Menaion/fixed-feast overlay expansion, forefeast/afterfeast coverage, Royal Hours/office-reading handling.\n- Great Lent / Holy Week kathisma seasonal full-text whitelist: COMPLETE 2026-05-07. K1, K2, K4-K17, K19-K20 whitelisted. All QC passes recorded. Ordinary non-seasonal Saturday policy unchanged.\n- Great Compline Great Canon and bounded feast-eve Menaion canon (04-23, 08-15, 09-08, 09-14, 11-21): runtime-verified complete. No current bounded Great Compline gate remains open. Broader Great Compline Menaion corpus expansion is deferred data work, not an active audit target.\n- Orthros core Octoechos/Triodion routing: pre-Menaion-ready as of 2026-04-24. No further weekday corpus transcription on the release-critical path.\n\nACTIVE NEXT TARGET:\nOrthros Menaion hymn-family branch-planning audit. Classify the following branches as honest-rubric, wrong-fallback, or data-depth deferred before any corpus transcription: sessional hymns, praises, canon, exapostilarion, feast Theotokion. Menaion kontakion layer is live (27 resolved targeted kontakia per 2026-04-25 census); further kontakion expansion and remaining branch families are the next scoped work. Rank 3 non-Sunday visibility guards for sessional hymns, praises, and exapostilarion now implemented 2026-05-16; canon already covered; feast Theotokion deferred (rank 1–2 only for now).\n\nHIGH-PRIORITY PUBLIC-BETA POLISH:\n- Reduction settings / public-beta explanation layer\n- Deferred-rubric UX normalization\n- Vespers Menaion-tone Theotokion conflict resolution (Theotokion arbitration)\n\nDEFERRED GOVERNANCE:\n- Annual Typikon collision policy (fixed vs movable cycle overlaps)\n- Royal Hours / office-reading handling\n- Forefeast / afterfeast / special-cycle coverage\n\nDEFERRED CORPUS DEPTH:\n- Broader Menaion hymn-family corpus expansion (Orthros)\n- Broader Great Compline Menaion corpus expansion\n- Paschal Hours / Paschal Office full text where current displacement rubrics are honest",
@@ -1124,17 +998,9 @@
         "status": "in-progress",
         "area": "js/horologion-engine.js + data/horologion/ + structure.json",
         "phase": "Post-Pentecost stabilization"
-      },
-      {
-        "id": "admin-release-governance",
-        "title": "Admin Dashboard: release-governance cockpit",
-        "description": "COMPLETE — committed 2026-04-26. Admin dashboard upgraded from diagnostics-only to release-governance cockpit: release-roadmap cockpit, critical-path office panel, readiness/deferred items, roadmap summary visibility, and release-critical todo marker sourced from structure.json.",
-        "severity": "HIGH",
-        "status": "done",
-        "area": "admin/admin.html + admin/readme.md + structure.json",
-        "phase": "Post-Pentecost stabilization"
       }
-    ]
+    ],
+    "_completed_todos_archive": "documentation/structure.hist1.json → archived_completed_todos"
   },
   "governance": {
     "byzantine_public_beta_corpus_recovery_plan": {

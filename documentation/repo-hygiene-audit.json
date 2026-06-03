@@ -1,0 +1,185 @@
+{
+  "schema": "repo-hygiene-audit-v1",
+  "generatedAt": "2026-06-03T01:15:04.024Z",
+  "status": "PASS",
+  "summary": {
+    "totalBytes": 32650338,
+    "totalMB": 31.14,
+    "fileCount": 342,
+    "failCount": 0,
+    "warnCount": 1,
+    "infoCount": 5
+  },
+  "sizeProfile": {
+    "structure.json": {
+      "bytes": 194519,
+      "kb": 190
+    },
+    "project_roadmap.json": {
+      "bytes": 153442,
+      "kb": 150
+    },
+    "documentation/structure.hist1.json": {
+      "bytes": 82532,
+      "kb": 81
+    }
+  },
+  "topDirectories": [
+    {
+      "dir": "data",
+      "bytes": 18132144,
+      "pct": 55.5
+    },
+    {
+      "dir": "images",
+      "bytes": 10452178,
+      "pct": 32
+    },
+    {
+      "dir": "js",
+      "bytes": 1952123,
+      "pct": 6
+    },
+    {
+      "dir": "documentation",
+      "bytes": 1195046,
+      "pct": 3.7
+    },
+    {
+      "dir": "components",
+      "bytes": 252994,
+      "pct": 0.8
+    },
+    {
+      "dir": "structure.json",
+      "bytes": 194519,
+      "pct": 0.6
+    },
+    {
+      "dir": "project_roadmap.json",
+      "bytes": 153442,
+      "pct": 0.5
+    },
+    {
+      "dir": "admin",
+      "bytes": 112598,
+      "pct": 0.3
+    }
+  ],
+  "largestFiles": [
+    {
+      "file": "images/canterbury.png",
+      "bytes": 5225689
+    },
+    {
+      "file": "images/chartres-rose.png",
+      "bytes": 1806484
+    },
+    {
+      "file": "images/york-lancets.png",
+      "bytes": 1759133
+    },
+    {
+      "file": "data/bible/OT/psalms.json",
+      "bytes": 1453548
+    },
+    {
+      "file": "images/chartres-narrative.png",
+      "bytes": 642948
+    },
+    {
+      "file": "js/octoechos/orthros-canon-weekday.js",
+      "bytes": 638238
+    },
+    {
+      "file": "data/bible/OT/jeremiah.json",
+      "bytes": 619926
+    },
+    {
+      "file": "data/bible/OT/genesis.json",
+      "bytes": 593177
+    },
+    {
+      "file": "data/bible/OT/ezekiel.json",
+      "bytes": 569474
+    },
+    {
+      "file": "data/bible/OT/isaiah.json",
+      "bytes": 550731
+    }
+  ],
+  "findings": [
+    {
+      "severity": "WARN",
+      "code": "patch_script",
+      "file": "patch_repo_hygiene_dashboard.py",
+      "note": "patch_*.py script tracked. Review if still needed."
+    },
+    {
+      "severity": "INFO",
+      "code": "legacy_timestamp_archive_indexed",
+      "file": "documentation/structure-archive 6.49.40 PM.json",
+      "note": "Timestamp-style legacy archive is indexed in structure.hist1.json and preserved as read-only history. Not active documentation."
+    },
+    {
+      "severity": "INFO",
+      "code": "large_js_corpus_module",
+      "file": "js/horologion-engine.js",
+      "bytes": 475406,
+      "longStringCount": 229,
+      "note": "Large JS file with high string-literal payload. Candidate for future data-module extraction (Phase 5 / database migration). Not a deletion candidate."
+    },
+    {
+      "severity": "INFO",
+      "code": "large_js_corpus_module",
+      "file": "js/octoechos/orthros-canon-weekday.js",
+      "bytes": 638238,
+      "longStringCount": 867,
+      "note": "Large JS file with high string-literal payload. Candidate for future data-module extraction (Phase 5 / database migration). Not a deletion candidate."
+    },
+    {
+      "severity": "INFO",
+      "code": "large_js_corpus_module",
+      "file": "js/office-ui.js",
+      "bytes": 158152,
+      "longStringCount": 273,
+      "note": "Large JS file with high string-literal payload. Candidate for future data-module extraction (Phase 5 / database migration). Not a deletion candidate."
+    },
+    {
+      "severity": "INFO",
+      "code": "bible_corpus_size",
+      "bytes": 14288015,
+      "kb": 13953,
+      "note": "Bible corpus is 13953 KB. Expected growth as translations are added. Not a hygiene defect."
+    }
+  ],
+  "dashboardCards": [
+    {
+      "label": "Status",
+      "value": "PASS"
+    },
+    {
+      "label": "Files",
+      "value": "342"
+    },
+    {
+      "label": "Total Size",
+      "value": "31.14 MB"
+    },
+    {
+      "label": "FAIL",
+      "value": "0"
+    },
+    {
+      "label": "WARN",
+      "value": "1"
+    },
+    {
+      "label": "INFO",
+      "value": "5"
+    }
+  ],
+  "recommendedNextActions": [
+    "No critical hygiene actions required at this time."
+  ]
+}
