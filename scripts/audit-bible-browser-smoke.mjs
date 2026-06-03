@@ -124,6 +124,10 @@ if (!browser.includes("formatMissingVerseWarning")) {
   fail("Bible browser does not consolidate missing verse warnings.");
 }
 
+if (browser.includes("Reference parsed, but no verses were resolved")) {
+  fail("Bible browser still throws away fully unresolved reference summaries instead of rendering them.");
+}
+
 if (!css.includes("#bible-browser-section")) {
   fail("Bible browser CSS is missing #bible-browser-section styling.");
 }

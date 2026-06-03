@@ -234,10 +234,6 @@
             segmentIndex += 1;
         }
 
-        if (!resolved.length) {
-            throw new Error(warnings[0] || "Reference parsed, but no verses were resolved.");
-        }
-
         resolved.warnings = Array.from(new Set(warnings));
         resolved.requestedSegments = requestedSegments;
         return resolved;
