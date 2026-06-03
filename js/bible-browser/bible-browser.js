@@ -338,12 +338,24 @@
         return String(value || "").replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
     }
 
-    function renderSearchHighlightedText(text, searchTerm) {
-        const source = String(text || "");
-        const needle = String(searchTerm || "").trim();
-        if (!needle) return escapeHtml(source);
+    function normalizeSearchNeedles(searchNeedles) {
+        if (!searchNeedles) return [];
+        if (Array.isArray(searchNeedles)) {
+            return searchNeedles
+                .map(value => String(value || "").trim())
+                .filter(Boolean)
+                .sort((a, b) => b.length - a.length);
+        }
+        const single = String(searchNeedles || "").trim();
+        return single ? [single] : [];
+    }
 
-        const pattern = new RegExp(escapeRegExp(needle), "gi");
+    function renderSearchHighlightedText(text, searchNeedles) {
+        const source = String(text || "");
+        const needles = normalizeSearchNeedles(searchNeedles);
+        if (!needles.length) return escapeHtml(source);
+
+        const pattern = new RegExp(needles.map(escapeRegExp).join("|"), "gi");
         let cursor = 0;
         let html = "";
         let match;
@@ -406,6 +418,9 @@
             const scopeHtml = segment.scopeLabel
                 ? `<div class="bible-segment-scope">${escapeHtml(segment.scopeLabel)}</div>`
                 : "";
+            const grammarHtml = segment.searchGrammar
+                ? `<div class="bible-segment-grammar">${escapeHtml(segment.searchGrammar)}</div>`
+                : "";
             const countText = segment.requestedCount && segment.missingCount
                 ? `${segment.resolvedCount} of ${segment.requestedCount} requested verses shown · ${segment.missingCount} unavailable`
                 : `${segment.resolvedCount} verse${segment.resolvedCount === 1 ? "" : "s"} shown`;
@@ -414,6 +429,7 @@
                     <span class="bible-segment-summary-label">${escapeHtml(segment.label)}</span>
                     <span class="bible-segment-summary-status">${escapeHtml(statusLabel)} · ${escapeHtml(countText)}</span>
                     ${scopeHtml}
+                    ${grammarHtml}
                     ${warningHtml}
                 </li>
             `;
@@ -526,7 +542,7 @@
                 ${segment.chapters.map(group => `
                     <section class="bible-chapter-block">
                         <h3>${escapeHtml(group.bookName)} ${group.chapter}</h3>
-                        ${group.verses.map(item => renderVerseDisplay(item, items.searchTerm || "")).join("")}
+                        ${group.verses.map(item => renderVerseDisplay(item, items.searchTerms || items.searchTerm || "")).join("")}
                     </section>
                 `).join("")}
             </section>
@@ -686,6 +702,158 @@
         });
     }
 
+    function tokenizeSearchQuery(query) {
+        const source = String(query || "");
+        const tokens = [];
+        const warnings = [];
+        let cursor = 0;
+
+        while (cursor < source.length) {
+            const char = source[cursor];
+
+            if (/\s/.test(char)) {
+                cursor += 1;
+                continue;
+            }
+
+            if (char === '"') {
+                let end = cursor + 1;
+                let phrase = "";
+                let closed = false;
+
+                while (end < source.length) {
+                    if (source[end] === '"') {
+                        closed = true;
+                        break;
+                    }
+                    phrase += source[end];
+                    end += 1;
+                }
+
+                const value = phrase.trim();
+                if (value) tokens.push({ type: "TERM", value, quoted: true });
+
+                if (!closed) {
+                    warnings.push("Search query has an unmatched quotation mark; treating the remaining text as a phrase.");
+                    cursor = source.length;
+                } else {
+                    cursor = end + 1;
+                }
+                continue;
+            }
+
+            let end = cursor;
+            while (end < source.length && !/\s/.test(source[end])) end += 1;
+            const raw = source.slice(cursor, end);
+            const upper = raw.toUpperCase();
+
+            if (upper === "AND" || upper === "OR" || upper === "NOT") {
+                tokens.push({ type: upper, value: upper });
+            } else {
+                tokens.push({ type: "TERM", value: raw, quoted: false });
+            }
+
+            cursor = end;
+        }
+
+        return { tokens, warnings };
+    }
+
+    function parseSearchQuery(query) {
+        const { tokens, warnings } = tokenizeSearchQuery(query);
+        const groups = [];
+        let currentGroup = { required: [], excluded: [] };
+        let pending = "AND";
+
+        function pushGroupIfUsed() {
+            if (currentGroup.required.length || currentGroup.excluded.length) {
+                groups.push(currentGroup);
+            }
+            currentGroup = { required: [], excluded: [] };
+        }
+
+        for (const token of tokens) {
+            if (token.type === "OR") {
+                pushGroupIfUsed();
+                pending = "AND";
+                continue;
+            }
+
+            if (token.type === "AND") {
+                pending = "AND";
+                continue;
+            }
+
+            if (token.type === "NOT") {
+                pending = "NOT";
+                continue;
+            }
+
+            if (token.type === "TERM") {
+                if (pending === "NOT") {
+                    currentGroup.excluded.push(token.value);
+                } else {
+                    currentGroup.required.push(token.value);
+                }
+                pending = "AND";
+            }
+        }
+
+        pushGroupIfUsed();
+
+        if (!groups.length) {
+            const fallback = String(query || "").trim();
+            if (fallback) groups.push({ required: [fallback], excluded: [] });
+        }
+
+        const positiveTerms = Array.from(new Set(groups.flatMap(group => group.required)));
+        const excludedTerms = Array.from(new Set(groups.flatMap(group => group.excluded)));
+        const highlightTerms = positiveTerms.slice();
+
+        const operators = Array.from(new Set(tokens.filter(token => token.type !== "TERM").map(token => token.type)));
+        const hasQuotedPhrase = tokens.some(token => token.quoted);
+        const grammarLabelParts = [];
+
+        if (hasQuotedPhrase) grammarLabelParts.push("quoted phrase");
+        if (operators.includes("AND")) grammarLabelParts.push("AND");
+        if (operators.includes("OR")) grammarLabelParts.push("OR");
+        if (operators.includes("NOT")) grammarLabelParts.push("NOT");
+        if (!grammarLabelParts.length && positiveTerms.length > 1) grammarLabelParts.push("implicit AND");
+        if (!grammarLabelParts.length) grammarLabelParts.push("simple term");
+
+        return {
+            raw: String(query || ""),
+            groups,
+            positiveTerms,
+            excludedTerms,
+            highlightTerms,
+            warnings,
+            grammarLabel: grammarLabelParts.join(" · ")
+        };
+    }
+
+    function textMatchesSearchGrammar(text, grammar) {
+        const haystack = String(text || "").toLowerCase();
+
+        return grammar.groups.some(group => {
+            const requiredOk = group.required.every(term => haystack.includes(String(term).toLowerCase()));
+            if (!requiredOk) return false;
+
+            const excludedHit = group.excluded.some(term => haystack.includes(String(term).toLowerCase()));
+            return !excludedHit;
+        });
+    }
+
+    function describeSearchGrammar(grammar) {
+        const included = grammar.positiveTerms.length
+            ? `include: ${grammar.positiveTerms.map(term => `“${term}”`).join(", ")}`
+            : "include: —";
+        const excluded = grammar.excludedTerms.length
+            ? `exclude: ${grammar.excludedTerms.map(term => `“${term}”`).join(", ")}`
+            : "";
+        return [grammar.grammarLabel, included, excluded].filter(Boolean).join(" · ");
+    }
+
     function describeSearchScope(scope, selectedBookKey = "") {
         if (scope === "ALL") return "All corpora in browser registry";
         if (scope === "BOOK") {
@@ -695,12 +863,15 @@
         return `Corpus: ${scope}`;
     }
 
-    function attachSearchMetadata(results, query, scope, selectedBookKey, capped = false) {
+    function attachSearchMetadata(results, query, scope, selectedBookKey, capped = false, grammar = null) {
         const scopeLabel = describeSearchScope(scope, selectedBookKey);
-        const warnings = capped
-            ? [`Showing first 200 matches for “${query}”. Narrow the scope or search phrase for more specific results.`]
-            : [];
+        const warnings = [
+            ...(grammar?.warnings || []),
+            ...(capped ? [`Showing first 200 matches for “${query}”. Narrow the scope or search phrase for more specific results.`] : [])
+        ];
         results.searchTerm = query;
+        results.searchTerms = grammar?.highlightTerms || [query];
+        results.searchGrammar = grammar ? describeSearchGrammar(grammar) : "simple term";
         results.warnings = warnings;
         results.requestedSegments = [{
             index: 0,
@@ -712,7 +883,8 @@
             requestedCount: results.length,
             missingCount: 0,
             warnings,
-            scopeLabel
+            scopeLabel,
+            searchGrammar: results.searchGrammar
         }];
         return results;
     }
@@ -1007,7 +1179,7 @@
             return;
         }
 
-        const needle = query.toLowerCase();
+        const grammar = parseSearchQuery(query);
         const results = [];
         let capped = false;
         if (status) status.textContent = `Searching ${books.length} book${books.length === 1 ? "" : "s"}…`;
@@ -1018,7 +1190,7 @@
                 for (const chapter of data.chapters || []) {
                     for (const verse of chapter.verses || []) {
                         const text = getVerseText(verse, currentTranslation);
-                        if (String(text).toLowerCase().includes(needle)) {
+                        if (textMatchesSearchGrammar(text, grammar)) {
                             results.push({
                                 bookKey: book.key,
                                 bookName: data?.meta?.name || book.name,
@@ -1044,7 +1216,7 @@
             if (capped) break;
         }
 
-        attachSearchMetadata(results, query, scope, selectedBook, capped);
+        attachSearchMetadata(results, query, scope, selectedBook, capped, grammar);
         await syncTranslationSelect(results);
         renderResults(results);
         if (status) {
@@ -1233,6 +1405,7 @@
         openSelectedBook,
         changeBibleChapter,
         searchBible,
+        parseSearchQuery,
         setParallelReader(enabled, translation = parallelTranslation) {
             parallelEnabled = Boolean(enabled);
             parallelTranslation = translation || parallelTranslation;

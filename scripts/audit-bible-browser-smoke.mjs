@@ -120,6 +120,22 @@ if (!browser.includes("setParallelReader")) {
   fail("Bible browser does not expose parallel reader test API.");
 }
 
+if (!browser.includes("parseSearchQuery")) {
+  fail("Bible browser does not parse search grammar.");
+}
+
+if (!browser.includes("textMatchesSearchGrammar")) {
+  fail("Bible browser does not evaluate search grammar.");
+}
+
+if (!browser.includes("bible-segment-grammar")) {
+  fail("Bible browser does not render search grammar summary.");
+}
+
+if (!browser.includes("implicit AND")) {
+  fail("Bible browser does not document implicit AND behavior.");
+}
+
 if (!browser.includes("openAnnotationEditor")) {
   fail("Bible browser does not expose annotation editor.");
 }
@@ -186,6 +202,10 @@ if (!css.includes(".bible-parallel-columns")) {
 
 if (!css.includes(".bible-translation-unavailable")) {
   fail("Bible browser CSS is missing unavailable-translation styling.");
+}
+
+if (!css.includes(".bible-segment-grammar")) {
+  fail("Bible browser CSS is missing search grammar summary styling.");
 }
 
 const context = { window: {} };

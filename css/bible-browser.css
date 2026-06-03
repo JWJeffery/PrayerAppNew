@@ -508,3 +508,11 @@
         padding-bottom: 10px;
     }
 }
+
+
+.bible-segment-grammar {
+    color: #bfae8b;
+    font-size: 0.88em;
+    margin-top: 2px;
+    line-height: 1.35;
+}
