@@ -52,6 +52,14 @@ if (!index.includes('id="bible-current-notes"')) {
   fail("index.html is missing current-view notes panel.");
 }
 
+if (!index.includes('class="bible-sidebar-details"')) {
+  fail("index.html is missing collapsed Notes and Highlights sidebar drawer.");
+}
+
+if (index.includes('<label>Study Helps</label>') || index.includes('id="bible-passage-guide"') || index.includes('id="bible-guide-fathers-current"')) {
+  fail("index.html still exposes Fathers/Study Helps in the sidebar instead of contextual panel only.");
+}
+
 if (!index.includes('id="bible-fathers-selection-btn"')) {
   fail("index.html is missing selection-toolbar Fathers button.");
 }
@@ -66,10 +74,6 @@ if (index.includes("Search Scope")) {
 
 if (index.includes("Passage Guide")) {
   fail("index.html still uses scholar-facing Passage Guide label.");
-}
-
-if (!index.includes('id="bible-passage-guide"')) {
-  fail("index.html is missing Passage Guide panel.");
 }
 
 if (!index.includes('js/bible-browser/passage-guide.js')) {

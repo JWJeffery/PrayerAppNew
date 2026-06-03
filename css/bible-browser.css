@@ -742,3 +742,38 @@
         min-height: 110px;
     }
 }
+
+
+.bible-sidebar-details {
+    border: 1px solid rgba(201, 168, 76, 0.18);
+    background: rgba(0, 0, 0, 0.14);
+    margin: 12px 0;
+    padding: 0;
+}
+
+.bible-sidebar-details summary {
+    cursor: pointer;
+    color: var(--gold);
+    font-family: 'Cinzel', serif;
+    font-size: 0.78rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 9px 10px;
+    list-style-position: inside;
+}
+
+.bible-sidebar-details[open] summary {
+    border-bottom: 1px solid rgba(201, 168, 76, 0.18);
+}
+
+.bible-sidebar-detail-body {
+    padding: 9px;
+}
+
+.bible-sidebar-note-help {
+    color: #a89878;
+    font-family: 'IM Fell English', serif;
+    font-size: 0.9rem;
+    line-height: 1.35;
+    margin: 8px 0 10px;
+}

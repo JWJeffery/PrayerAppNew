@@ -592,19 +592,27 @@
                     </label>
                 </div>
 
-                <label>Study Helps</label>
-                <div id="bible-passage-guide" class="bible-passage-guide">
-                    <div class="bible-passage-guide-actions">
-                        <button class="bible-tool-btn" id="bible-guide-fathers-current" type="button">What the Fathers Say</button>
-                    </div>
-                    <div id="bible-passage-guide-status" class="bible-passage-guide-status">Open a passage, then ask what the Fathers say.</div>
-                    <div id="bible-passage-guide-results" class="bible-passage-guide-results"></div>
-                </div>
+                <details class="bible-sidebar-details">
+                    <summary>Notes and Highlights</summary>
+                    <div class="bible-sidebar-detail-body">
+                        <div class="bible-button-row">
+                            <button class="bible-tool-btn" id="bible-export-annotations" type="button">Download Notes</button>
+                            <label class="bible-tool-btn bible-import-label" for="bible-import-annotations">
+                                Upload Notes
+                                <input id="bible-import-annotations" type="file" accept="application/json">
+                            </label>
+                        </div>
 
-                <label>Notes in Current View</label>
-                <div id="bible-current-notes" class="bible-current-notes">
-                    <div class="bible-notes-empty">No highlights or notes in this view.</div>
-                </div>
+                        <div class="bible-sidebar-note-help">
+                            Select Bible text to highlight it or add a note. Click a highlight to edit it, remove it, or ask what the Fathers say.
+                        </div>
+
+                        <label>In This Passage</label>
+                        <div id="bible-current-notes" class="bible-current-notes">
+                            <div class="bible-notes-empty">No highlights or notes in this passage.</div>
+                        </div>
+                    </div>
+                </details>
 
                 <div id="bible-annotation-editor" class="bible-annotation-editor" hidden>
                     <div id="bible-annotation-editor-label" class="bible-annotation-editor-label">Selected note</div>
