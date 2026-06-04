@@ -1744,3 +1744,105 @@
         border-radius: 18px;
     }
 }
+
+
+/* Bible Reader tool hierarchy pass */
+.bible-tool-dock {
+    grid-template-columns: minmax(190px, 0.78fr) repeat(4, minmax(130px, 1fr));
+    gap: 8px;
+}
+
+.bible-secondary-intro {
+    align-items: center;
+}
+
+.bible-secondary-intro p {
+    max-width: 520px;
+    text-align: right;
+}
+
+.bible-parallel-control-box.bible-design-tool-card {
+    padding: 9px 12px;
+}
+
+.bible-parallel-control-box:not(:has(#bible-parallel-toggle:checked)) {
+    display: flex;
+    align-items: center;
+    min-height: 39px;
+    border-radius: 999px;
+    box-shadow: none;
+}
+
+.bible-parallel-control-box:not(:has(#bible-parallel-toggle:checked)) label[for="bible-parallel-select"],
+.bible-parallel-control-box:not(:has(#bible-parallel-toggle:checked)) #bible-parallel-select {
+    display: none;
+}
+
+.bible-parallel-control-box:has(#bible-parallel-toggle:checked) {
+    border-radius: 18px;
+}
+
+.bible-parallel-control-box:has(#bible-parallel-toggle:checked) label[for="bible-parallel-select"],
+.bible-parallel-control-box:has(#bible-parallel-toggle:checked) #bible-parallel-select {
+    display: block;
+}
+
+.bible-browser-details.bible-design-tool-card,
+.bible-sidebar-details.bible-design-tool-card {
+    min-height: 39px;
+    display: flex;
+    align-items: center;
+}
+
+.bible-browser-details.bible-design-tool-card[open],
+.bible-sidebar-details.bible-design-tool-card[open] {
+    display: block;
+    border-radius: 18px;
+}
+
+.bible-browser-details summary,
+.bible-sidebar-details summary {
+    width: 100%;
+}
+
+.bible-notes-details.bible-design-tool-card:not([open]) {
+    border-radius: 999px;
+    box-shadow: none;
+}
+
+.bible-passage-summary {
+    padding: 10px 12px;
+    border-radius: 16px;
+}
+
+.bible-summary-line {
+    font-size: 0.76rem;
+    margin-bottom: 2px;
+}
+
+.bible-segment-summary {
+    margin-top: 4px;
+}
+
+.bible-segment-summary-title {
+    font-size: 0.95rem;
+}
+
+.bible-reading-stage {
+    margin-top: 8px;
+}
+
+@media (max-width: 900px) {
+    .bible-secondary-intro p {
+        text-align: left;
+    }
+
+    .bible-tool-dock {
+        grid-template-columns: 1fr;
+    }
+
+    .bible-parallel-control-box:not(:has(#bible-parallel-toggle:checked)),
+    .bible-notes-details.bible-design-tool-card:not([open]) {
+        border-radius: 18px;
+    }
+}

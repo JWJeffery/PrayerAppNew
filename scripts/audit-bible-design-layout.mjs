@@ -82,6 +82,19 @@ if (!browser.includes("viewportHeight * 0.16")) {
   fail("Study drawer should be positioned below the top command area.");
 }
 
+
+if (!css.includes("Bible Reader tool hierarchy pass")) {
+  fail("Bible Reader tool hierarchy CSS marker is missing.");
+}
+
+if (!css.includes(':has(#bible-parallel-toggle:checked)')) {
+  fail("Second translation selector should be visually gated behind compare toggle.");
+}
+
+if (!css.includes(".bible-passage-summary")) {
+  fail("Bible Reader tool hierarchy pass should include compact passage-summary styling.");
+}
+
 if (failures.length) {
   console.error("FAIL Bible design layout audit");
   for (const failure of failures) console.error(` - ${failure}`);
