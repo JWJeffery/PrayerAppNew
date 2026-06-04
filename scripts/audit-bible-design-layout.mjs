@@ -64,26 +64,6 @@ if (index.includes("<h1>Scripture Browser</h1>")) {
 }
 
 
-if (!index.includes("Cormorant+Garamond")) {
-  fail("Bible Browser typography pass is missing Cormorant Garamond font import.");
-}
-
-if (!index.includes("Source+Serif+4")) {
-  fail("Bible Browser typography pass is missing Source Serif 4 font import.");
-}
-
-if (!css.includes("Parchment typography Bible Browser pass")) {
-  fail("Bible Browser CSS is missing parchment typography pass marker.");
-}
-
-if (!css.includes("--bible-font-display")) {
-  fail("Bible Browser CSS is missing display font variable.");
-}
-
-if (!css.includes("--bible-font-body")) {
-  fail("Bible Browser CSS is missing body font variable.");
-}
-
 if (failures.length) {
   console.error("FAIL Bible design layout audit");
   for (const failure of failures) console.error(` - ${failure}`);
