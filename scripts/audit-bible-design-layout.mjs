@@ -95,6 +95,23 @@ if (!css.includes(".bible-passage-summary")) {
   fail("Bible Reader tool hierarchy pass should include compact passage-summary styling.");
 }
 
+
+if (!css.includes("Bible Reader canvas polish pass")) {
+  fail("Bible Reader canvas polish CSS marker is missing.");
+}
+
+if (!css.includes("max-width: 860px")) {
+  fail("Bible Reader canvas should have a book-like reading measure.");
+}
+
+if (!css.includes(".bible-highlight-yellow")) {
+  fail("Bible Reader canvas polish should preserve softened highlight styling.");
+}
+
+if (!css.includes(".bible-segment-label")) {
+  fail("Bible Reader canvas polish should refine passage/chapter chip treatment.");
+}
+
 if (failures.length) {
   console.error("FAIL Bible design layout audit");
   for (const failure of failures) console.error(` - ${failure}`);
