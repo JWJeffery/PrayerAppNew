@@ -112,6 +112,23 @@ if (!css.includes(".bible-segment-label")) {
   fail("Bible Reader canvas polish should refine passage/chapter chip treatment.");
 }
 
+
+if (!css.includes("Bible Reader command and summary refinement pass")) {
+  fail("Bible Reader command/summary refinement CSS marker is missing.");
+}
+
+if (!css.includes("grid-template-columns: repeat(5, minmax(120px, 1fr))")) {
+  fail("Bible Reader tools should be compressed into a compact tool row.");
+}
+
+if (!css.includes(".bible-secondary-intro p")) {
+  fail("Bible Reader helper text should be visually reduced.");
+}
+
+if (!css.includes("opacity: 0.74")) {
+  fail("Bible Reader passage summary should be visually quiet.");
+}
+
 if (failures.length) {
   console.error("FAIL Bible design layout audit");
   for (const failure of failures) console.error(` - ${failure}`);
