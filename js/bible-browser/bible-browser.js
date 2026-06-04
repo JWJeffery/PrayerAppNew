@@ -1776,7 +1776,7 @@
         panel.hidden = false;
 
         if (panel.dataset.contextMode === "study") {
-            const studyTop = Math.max(16, Math.min(56, Math.floor(viewportHeight * 0.04)));
+            const studyTop = Math.max(112, Math.min(190, Math.floor(viewportHeight * 0.16)));
             const studyWidth = Math.min(560, Math.max(320, viewportWidth - (margin * 2)));
             const studyMaxHeight = Math.max(
                 260,

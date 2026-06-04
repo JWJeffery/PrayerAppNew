@@ -1604,3 +1604,143 @@
         border-radius: 18px;
     }
 }
+
+
+/* Bible Reader app composition pass */
+#bible-browser-section {
+    padding-top: 18px;
+}
+
+.bible-design-shell {
+    width: min(1180px, 100%);
+    padding: clamp(14px, 2.2vw, 24px);
+}
+
+.bible-design-hero {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 18px;
+    align-items: start;
+    padding-bottom: 14px;
+    margin-bottom: 16px;
+}
+
+.bible-design-kicker {
+    font-size: 0.62rem;
+    letter-spacing: 0.16em;
+}
+
+.bible-design-hero h1 {
+    font-size: clamp(2rem, 3.7vw, 3.1rem);
+    line-height: 0.98;
+    margin: 4px 0 4px;
+    max-width: 520px;
+}
+
+.bible-design-hero p {
+    font-size: 0.86rem;
+    letter-spacing: 0.055em;
+    max-width: 520px;
+}
+
+.bible-design-header-actions {
+    padding-top: 4px;
+}
+
+.bible-design-chip {
+    display: none;
+}
+
+.bible-design-command-surface {
+    padding: 14px;
+}
+
+.bible-control-section-label {
+    margin-bottom: 6px;
+}
+
+.bible-command-bar {
+    grid-template-columns: minmax(120px, 180px) minmax(260px, 1fr) auto;
+    gap: 10px;
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.bible-reader-controls input[type="text"],
+.bible-reader-controls input[type="date"],
+.bible-reader-controls select {
+    min-height: 38px;
+    padding: 7px 9px;
+}
+
+.bible-control-action .bible-tool-btn {
+    min-height: 38px;
+}
+
+.bible-secondary-intro {
+    padding-top: 10px;
+    margin-bottom: 8px;
+}
+
+.bible-secondary-intro p {
+    font-size: 0.86rem;
+}
+
+.bible-tool-dock {
+    grid-template-columns: minmax(220px, 0.9fr) repeat(3, minmax(160px, 1fr));
+    gap: 8px;
+    align-items: start;
+}
+
+.bible-design-tool-card {
+    border-radius: 999px;
+    box-shadow: none;
+}
+
+.bible-parallel-control-box.bible-design-tool-card,
+.bible-notes-details.bible-design-tool-card {
+    border-radius: 18px;
+    box-shadow: 0 8px 22px rgba(74, 46, 26, 0.06);
+}
+
+.bible-browser-details summary,
+.bible-sidebar-details summary {
+    padding: 9px 12px;
+}
+
+.bible-reader-stage-head {
+    display: none;
+}
+
+.bible-reading-stage {
+    margin-top: -2px;
+    padding: 10px;
+}
+
+.bible-reading-canvas,
+#bible-results {
+    padding-top: clamp(16px, 2.2vw, 28px);
+}
+
+.bible-passage-summary {
+    margin-bottom: 10px;
+}
+
+@media (max-width: 900px) {
+    .bible-design-hero {
+        grid-template-columns: 1fr;
+    }
+
+    .bible-design-header-actions {
+        justify-content: flex-start;
+    }
+
+    .bible-command-bar,
+    .bible-tool-dock {
+        grid-template-columns: 1fr;
+    }
+
+    .bible-design-tool-card {
+        border-radius: 18px;
+    }
+}

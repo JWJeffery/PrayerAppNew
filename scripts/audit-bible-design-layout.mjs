@@ -2,6 +2,7 @@ import fs from "node:fs";
 
 const index = fs.readFileSync("index.html", "utf8");
 const css = fs.readFileSync("css/bible-browser.css", "utf8");
+const browser = fs.readFileSync("js/bible-browser/bible-browser.js", "utf8");
 const packageJson = JSON.parse(fs.readFileSync("package.json", "utf8"));
 
 const failures = [];
@@ -22,7 +23,7 @@ if (!packageJson.scripts?.["audit:bible-design-layout"]) {
 
 [
   "bible-design-shell",
-  "Bible Reader & Study",
+  "Bible Reader",
   "bible-design-hero",
   "bible-design-command-surface",
   "bible-command-bar",
@@ -63,6 +64,23 @@ if (index.includes("<h1>Scripture Browser</h1>")) {
   fail("Bible Browser visible h1 should use the new design-forward title.");
 }
 
+
+
+if (!index.includes("<h1>Bible Reader</h1>")) {
+  fail("Bible Reader composition pass should use compact Bible Reader title.");
+}
+
+if (!index.includes("Open tools only when needed.")) {
+  fail("Bible Reader composition pass should use compact study-tools helper text.");
+}
+
+if (!css.includes("Bible Reader app composition pass")) {
+  fail("Bible Reader composition CSS marker is missing.");
+}
+
+if (!browser.includes("viewportHeight * 0.16")) {
+  fail("Study drawer should be positioned below the top command area.");
+}
 
 if (failures.length) {
   console.error("FAIL Bible design layout audit");
