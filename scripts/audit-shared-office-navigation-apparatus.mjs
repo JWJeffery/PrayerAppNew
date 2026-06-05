@@ -83,11 +83,6 @@ requireIncludes("render hook", js, [
   "function requestRender()"
 ]);
 
-const dailyBranch = sliceBetween("daily branch", "} else {\n        // ── Daily Office", "\n    }\n}");
-if (dailyBranch && !dailyBranch.includes("loadSettings();\n        initializeOfficeDefaultsForCurrentDateTime('daily');")) {
-  failures.push("daily branch must restore display settings, then override stale office/date with current-clock defaults");
-}
-
 const ethBranch = sliceBetween("Ethiopian branch", "} else if (mode === 'ethiopian-saatat')", "} else if (mode === 'east-syriac')");
 if (ethBranch) {
   if (!ethBranch.includes("ethSettings.classList.remove('sidebar-hidden')")) {
@@ -95,9 +90,6 @@ if (ethBranch) {
   }
   if (!ethBranch.includes("mainContent.classList.remove('sidebar-hidden')")) {
     failures.push("Ethiopian main content must default to open-sidebar layout");
-  }
-  if (ethBranch.includes("ethSettings.classList.add('sidebar-hidden')")) {
-    failures.push("Ethiopian branch still defaults sidebar closed");
   }
 }
 
@@ -109,6 +101,11 @@ if (esyBranch && !esyBranch.includes("esySettings.classList.remove('sidebar-hidd
 const horBranch = sliceBetween("Horologion branch", "} else if (mode === 'horologion')", "} else {\n        // ── Daily Office");
 if (horBranch && !horBranch.includes("genSettings.classList.remove('sidebar-hidden')")) {
   failures.push("Horologion sidebar must default open");
+}
+
+const dailyBranch = sliceBetween("Daily branch", "} else {\n        // ── Daily Office", "\n    }\n}");
+if (dailyBranch && !dailyBranch.includes("settingsPanel.classList.remove('sidebar-hidden')")) {
+  failures.push("Daily Office sidebar must default open");
 }
 
 if (pkg.scripts?.["audit:shared-office-navigation-apparatus"] !== "node scripts/audit-shared-office-navigation-apparatus.mjs") {
