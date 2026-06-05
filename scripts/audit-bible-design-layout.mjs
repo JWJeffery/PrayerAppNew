@@ -150,6 +150,23 @@ if (!css.includes(".bible-highlight-swatch-blue")) {
   fail("Visual highlighter swatches should include blue.");
 }
 
+
+if (!css.includes("Bible Reader reduce pre-Scripture whitespace pass")) {
+  fail("Bible Reader pre-Scripture whitespace reduction CSS marker is missing.");
+}
+
+if (!css.includes(".bible-passage-summary")) {
+  fail("Bible Reader whitespace pass should address the passage summary area.");
+}
+
+if (!css.includes("display: none !important")) {
+  fail("Bible Reader passage summary should not occupy visual space before Scripture.");
+}
+
+if (!css.includes(".bible-reading-stage")) {
+  fail("Bible Reader whitespace pass should tighten the reading stage.");
+}
+
 if (failures.length) {
   console.error("FAIL Bible design layout audit");
   for (const failure of failures) console.error(` - ${failure}`);
