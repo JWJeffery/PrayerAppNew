@@ -38,7 +38,8 @@
     "audit:mode-chrome-normalization": "node scripts/audit-mode-chrome-normalization.mjs",
     "audit:office-content-typography": "node scripts/audit-office-content-typography.mjs",
     "audit:shared-office-sidebars": "node scripts/audit-shared-office-sidebars.mjs",
-    "audit:shared-office-navigation-apparatus": "node scripts/audit-shared-office-navigation-apparatus.mjs"
+    "audit:shared-office-navigation-apparatus": "node scripts/audit-shared-office-navigation-apparatus.mjs",
+    "audit:office-navigation-feature-sweep-runner": "node scripts/audit-office-navigation-feature-sweep-runner.mjs"
   },
   "repository": {
     "type": "git",
