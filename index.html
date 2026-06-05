@@ -476,10 +476,11 @@
 </div><!-- /daily-office-section -->
 
 <!-- ── Book of Needs ─────────────────────────────────────────────────────── -->
-<div id="individual-prayers-section">
-    <div id="prayer-selection">
-        <h1 style="font-family:'Cinzel Decorative','Cinzel',serif; color:var(--gold); font-size:1.9em; letter-spacing:0.06em; margin-bottom:0.3em;">The Book of Needs</h1>
-        <p style="font-family:'Cinzel',serif; font-size:0.78em; letter-spacing:0.15em; text-transform:uppercase; color:#a89878; margin-bottom:28px;">Select a Prayer</p>
+<div id="individual-prayers-section" class="app-book-needs-shell">
+    <div id="prayer-selection" class="app-book-needs-selection app-mode-command-surface">
+        <div class="app-mode-kicker">Universal Office</div>
+        <h1 class="app-book-needs-title">The Book of Needs</h1>
+        <p class="app-book-needs-subtitle">Select a prayer, devotion, or occasional office.</p>
 
         <div class="prayer-select-wrapper" id="prayer-select-wrapper">
             <div class="prayer-select-trigger" id="prayer-select-trigger" onclick="togglePrayerDropdown()">
@@ -560,17 +561,18 @@
         </div>
 
         <input type="hidden" id="prayer-dropdown" value="">
-        <br>
-        <button class="mode-btn" onclick="showSinglePrayer()" style="margin-top:20px;">Display Prayer</button>
-        <button class="mode-btn" onclick="backToSplash()"     style="margin-top:12px;">Back to Modes</button>
+        <div class="app-book-needs-actions">
+            <button class="mode-btn app-primary-action" onclick="showSinglePrayer()">Display Prayer</button>
+            <button class="mode-btn app-secondary-action" onclick="backToSplash()">Back to Modes</button>
+        </div>
     </div><!-- /prayer-selection -->
 
-    <div id="prayer-display" style="display:none; margin-top:40px; background:transparent; width:100%; max-width:800px; padding-bottom:100px; box-sizing:border-box;">
+    <div id="prayer-display" class="app-book-needs-display" style="display:none;">
         <div id="single-prayer-content"></div>
     </div>
 
-    <div id="prayer-back-bar" style="display:none; position:fixed; bottom:0; left:0; right:0; text-align:center; padding:16px 0 20px; background:linear-gradient(transparent, rgba(30,18,8,0.97) 40%); z-index:300;">
-        <button class="mode-btn" onclick="backToPrayerDropdown()">Back to Selection</button>
+    <div id="prayer-back-bar" class="app-book-needs-back-bar" style="display:none;">
+        <button class="mode-btn app-secondary-action" onclick="backToPrayerDropdown()">Back to Selection</button>
     </div>
 </div><!-- /individual-prayers-section -->
 
