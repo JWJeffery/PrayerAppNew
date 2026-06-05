@@ -32,7 +32,8 @@
     "audit:app-design-propagation": "node scripts/audit-app-design-propagation.mjs",
     "audit:daily-office-design-shell": "node scripts/audit-daily-office-design-shell.mjs",
     "audit:app-navigation-architecture": "node scripts/audit-app-navigation-architecture.mjs",
-    "audit:book-of-needs-design-shell": "node scripts/audit-book-of-needs-design-shell.mjs"
+    "audit:book-of-needs-design-shell": "node scripts/audit-book-of-needs-design-shell.mjs",
+    "audit:admin-design-shell": "node scripts/audit-admin-design-shell.mjs"
   },
   "repository": {
     "type": "git",

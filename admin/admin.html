@@ -769,9 +769,287 @@ header {
 .rh-dir-pct    { color:var(--accent); font-size:0.85em; min-width:42px; text-align:right; }
 .rh-dir-bytes  { color:var(--text-dim); font-size:0.78em; min-width:72px; text-align:right; }
 /* REPO-HYGIENE-CSS-END */
+
+
+/* Admin Dashboard parchment app shell propagation pass */
+.admin-app-shell {
+  --admin-bg-warm: #efe2cf;
+  --admin-bg-cream: #fbf6ee;
+  --admin-surface: rgba(255, 251, 244, 0.94);
+  --admin-surface-strong: rgba(255, 253, 248, 0.98);
+  --admin-surface-soft: rgba(246, 235, 218, 0.72);
+  --admin-border: rgba(103, 58, 31, 0.14);
+  --admin-border-strong: rgba(103, 58, 31, 0.24);
+  --admin-ink: #3f2618;
+  --admin-ink-soft: rgba(63, 38, 24, 0.70);
+  --admin-rubric: #8f3b30;
+  --admin-bronze: #7a3f17;
+  --admin-gold: #c9a84c;
+  --admin-shadow-soft: 0 18px 52px rgba(74, 46, 26, 0.12);
+  --admin-shadow-card: 0 10px 30px rgba(74, 46, 26, 0.08);
+
+  --bg: var(--admin-bg-warm);
+  --surface: var(--admin-surface);
+  --surface-2: var(--admin-surface-soft);
+  --border: var(--admin-border);
+  --border-bright: var(--admin-border-strong);
+  --text: var(--admin-ink);
+  --text-dim: var(--admin-ink-soft);
+  --text-muted: rgba(63, 38, 24, 0.44);
+  --accent: var(--admin-bronze);
+  --radius: 14px;
+  --serif: Georgia, 'Times New Roman', serif;
+  --mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+
+  background:
+    radial-gradient(circle at 50% 8%, rgba(255, 253, 248, 0.94), rgba(239, 226, 207, 0.88) 48%, rgba(202, 180, 149, 0.78) 100%),
+    linear-gradient(90deg, rgba(102, 58, 25, 0.10), transparent 24%, transparent 76%, rgba(102, 58, 25, 0.10)) !important;
+  color: var(--admin-ink) !important;
+  font-family: var(--mono);
+}
+
+.admin-app-shell #back-to-modes {
+  top: 18px !important;
+  right: 22px !important;
+  background: linear-gradient(180deg, #7a3f17, #5d2f11) !important;
+  color: #fff8ec !important;
+  border: 1px solid rgba(90, 47, 18, 0.48) !important;
+  border-radius: 10px !important;
+  padding: 8px 16px !important;
+  font-family: Georgia, 'Times New Roman', serif !important;
+  font-size: 0.82rem !important;
+  letter-spacing: 0.035em !important;
+  text-transform: none !important;
+  opacity: 1 !important;
+  box-shadow: 0 8px 22px rgba(74, 46, 26, 0.16) !important;
+}
+
+.admin-app-shell #shell {
+  width: min(1240px, calc(100vw - 42px));
+  margin: 28px auto 46px;
+  min-height: calc(100vh - 74px);
+  display: grid;
+  grid-template-rows: auto 1fr;
+  gap: 14px;
+}
+
+.admin-app-shell header {
+  border: 1px solid var(--admin-border);
+  border-radius: 24px;
+  padding: 24px 30px;
+  background:
+    linear-gradient(180deg, rgba(255, 253, 248, 0.96), rgba(249, 241, 228, 0.94)),
+    radial-gradient(circle at 18% 0%, rgba(255, 255, 255, 0.75), transparent 38%);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.78),
+    var(--admin-shadow-soft);
+}
+
+.admin-app-shell .header-title:first-child {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 0.76rem;
+  letter-spacing: 0.16em;
+  color: #8c552d;
+  text-transform: uppercase;
+}
+
+.admin-app-shell .header-title[style] {
+  color: var(--admin-ink) !important;
+  font-family: Georgia, 'Times New Roman', serif !important;
+  font-size: clamp(1.75rem, 3vw, 2.8rem) !important;
+  line-height: 1 !important;
+  letter-spacing: 0.01em !important;
+  text-transform: none !important;
+}
+
+.admin-app-shell .header-badge {
+  margin-left: auto;
+  background: rgba(255, 253, 248, 0.72);
+  border: 1px solid rgba(103, 58, 31, 0.18);
+  color: var(--admin-rubric);
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 0.68rem;
+  letter-spacing: 0.11em;
+  border-radius: 999px;
+}
+
+.admin-app-shell #workspace {
+  display: grid;
+  grid-template-columns: minmax(260px, 310px) minmax(0, 1fr);
+  gap: 14px;
+  height: auto;
+  min-height: 0;
+}
+
+.admin-app-shell #sidebar {
+  border: 1px solid var(--admin-border);
+  border-radius: 22px;
+  padding: 22px 20px;
+  background:
+    linear-gradient(180deg, rgba(255, 251, 244, 0.98), rgba(241, 229, 210, 0.96));
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.68),
+    var(--admin-shadow-card);
+  color: var(--admin-ink);
+}
+
+.admin-app-shell #main {
+  padding: 0;
+  gap: 14px;
+  overflow: visible;
+}
+
+.admin-app-shell .ctrl-label,
+.admin-app-shell .panel-title,
+.admin-app-shell .release-section-label {
+  color: #8c552d;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  border-bottom-color: rgba(103, 58, 31, 0.12);
+}
+
+.admin-app-shell .ctrl-select,
+.admin-app-shell .ctrl-input,
+.admin-app-shell .day-date-input {
+  background: rgba(255, 253, 248, 0.86);
+  border: 1px solid rgba(103, 58, 31, 0.18);
+  color: var(--admin-ink);
+  border-radius: 10px;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.58);
+}
+
+.admin-app-shell .ctrl-select:focus,
+.admin-app-shell .ctrl-input:focus,
+.admin-app-shell .day-date-input:focus {
+  border-color: rgba(122, 63, 23, 0.62);
+  box-shadow: 0 0 0 3px rgba(122, 63, 23, 0.10);
+}
+
+.admin-app-shell .run-btn,
+.admin-app-shell .snap-btn {
+  background: linear-gradient(180deg, #7a3f17, #5d2f11);
+  border: 1px solid rgba(90, 47, 18, 0.48);
+  color: #fff8ec;
+  border-radius: 11px;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 0.86rem;
+  letter-spacing: 0.035em;
+  text-transform: none;
+  box-shadow: 0 8px 22px rgba(74, 46, 26, 0.14);
+}
+
+.admin-app-shell .run-btn:hover,
+.admin-app-shell .snap-btn:hover {
+  background: linear-gradient(180deg, #88491e, #633414);
+  border-color: rgba(90, 47, 18, 0.68);
+  color: #fff8ec;
+}
+
+.admin-app-shell .panel {
+  background:
+    linear-gradient(180deg, rgba(255, 253, 248, 0.96), rgba(249, 241, 228, 0.94));
+  border: 1px solid var(--admin-border);
+  border-radius: 20px;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.68),
+    var(--admin-shadow-card);
+  color: var(--admin-ink);
+}
+
+.admin-app-shell .panel-head {
+  background: rgba(246, 235, 218, 0.58);
+  border-bottom: 1px solid rgba(103, 58, 31, 0.12);
+  padding: 13px 16px;
+}
+
+.admin-app-shell .panel-body {
+  padding: 16px 18px;
+}
+
+.admin-app-shell .anchor-chip,
+.admin-app-shell .comm-row,
+.admin-app-shell .todo-row,
+.admin-app-shell .milestone-row,
+.admin-app-shell .ubr-chip,
+.admin-app-shell .ubr-phase-row,
+.admin-app-shell .ubr-board-phase,
+.admin-app-shell .ugb-category,
+.admin-app-shell .focus-row,
+.admin-app-shell .rh-action-row,
+.admin-app-shell .rh-dir-row {
+  background: rgba(255, 253, 248, 0.58);
+  border-color: rgba(103, 58, 31, 0.12);
+  color: var(--admin-ink);
+}
+
+.admin-app-shell .season-bar-wrap {
+  background: rgba(103, 58, 31, 0.10);
+}
+
+.admin-app-shell .anchor-val,
+.admin-app-shell .ubr-chip-val,
+.admin-app-shell .ubr-phase-id,
+.admin-app-shell .milestone-phase,
+.admin-app-shell .rh-empty-cmd,
+.admin-app-shell .countdown-days {
+  color: var(--admin-bronze);
+}
+
+.admin-app-shell .empty-state {
+  color: rgba(63, 38, 24, 0.46);
+}
+
+.admin-app-shell .not-impl-banner,
+.admin-app-shell .eo-notice.visible,
+.admin-app-shell .ubr-warning {
+  background: rgba(212, 146, 74, 0.08);
+  border-color: rgba(212, 146, 74, 0.25);
+  color: #8f4f25;
+}
+
+.admin-app-shell .blocker-row,
+.admin-app-shell .ubr-blocker-row,
+.admin-app-shell .ugb-q-row-blocker {
+  background: rgba(143, 59, 48, 0.06);
+  border-color: rgba(143, 59, 48, 0.22);
+}
+
+.admin-app-shell .debt-row,
+.admin-app-shell .focus-row {
+  background: rgba(212, 146, 74, 0.07);
+  border-color: rgba(212, 146, 74, 0.24);
+}
+
+.admin-app-shell ::-webkit-scrollbar-thumb {
+  background: rgba(122, 63, 23, 0.34);
+}
+
+.admin-app-shell ::-webkit-scrollbar-thumb:hover {
+  background: rgba(122, 63, 23, 0.52);
+}
+
+@media (max-width: 900px) {
+  .admin-app-shell #shell {
+    width: min(100vw - 24px, 720px);
+    margin-top: 58px;
+  }
+
+  .admin-app-shell #workspace {
+    grid-template-columns: 1fr;
+  }
+
+  .admin-app-shell #back-to-modes {
+    top: 12px !important;
+    right: 12px !important;
+  }
+}
+
 </style>
 </head>
-<body>
+<body class="admin-app-shell">
     <button
   id="back-to-modes"
   onclick="window.location.href='../index.html'"
