@@ -42,7 +42,8 @@
     "audit:office-navigation-feature-sweep-runner": "node scripts/audit-office-navigation-feature-sweep-runner.mjs",
     "audit:ethiopian-canonical-scripture-resolver": "node scripts/audit-ethiopian-canonical-scripture-resolver.mjs",
     "audit:douay-rheims-sirach-jude-intake": "node scripts/audit-douay-rheims-sirach-jude-intake.mjs",
-    "audit:shared-office-navigation-polish": "node scripts/audit-shared-office-navigation-polish.mjs"
+    "audit:shared-office-navigation-polish": "node scripts/audit-shared-office-navigation-polish.mjs",
+    "audit:app-entry-routing": "node scripts/audit-app-entry-routing.mjs"
   },
   "repository": {
     "type": "git",

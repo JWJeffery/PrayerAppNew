@@ -15,10 +15,90 @@
 
 <!-- ── Splash Screen ─────────────────────────────────────────────────────── -->
 <div id="splash-bg"></div>
-<div id="mode-selection" class="app-mode-shell">
-    <div class="app-mode-kicker">Universal Office</div>
+
+<section id="tradition-entry" class="app-tradition-entry" aria-labelledby="tradition-entry-title">
+    <div class="app-entry-kicker">The Universal Office</div>
+    <h1 id="tradition-entry-title">Begin with your tradition</h1>
+    <p class="app-entry-lede">Choose the Christian family you normally pray within. The app will remember this and open there by default.</p>
+
+    <div class="app-entry-family-grid" aria-label="Choose Western, Eastern, or unknown">
+        <button class="app-entry-family-card" type="button" onclick="selectTraditionFamily('western')">
+            <span class="app-entry-family-icon">☩</span>
+            <span>
+                <strong>Western Christian</strong>
+                <small>Anglican and Latin Catholic offices.</small>
+            </span>
+        </button>
+
+        <button class="app-entry-family-card" type="button" onclick="selectTraditionFamily('eastern')">
+            <span class="app-entry-family-icon">✠</span>
+            <span>
+                <strong>Eastern Christian</strong>
+                <small>Byzantine, East Syriac, and Oriental Orthodox offices.</small>
+            </span>
+        </button>
+
+        <button class="app-entry-family-card" type="button" onclick="setUserTraditionDefault('unknown')">
+            <span class="app-entry-family-icon">?</span>
+            <span>
+                <strong>I’m not sure</strong>
+                <small>Start with the Anglican Daily Office.</small>
+            </span>
+        </button>
+    </div>
+
+    <div id="entry-western-options" class="app-entry-tradition-panel" hidden>
+        <div class="app-entry-panel-title">Western Christian</div>
+        <button class="app-entry-tradition-card" type="button" onclick="setUserTraditionDefault('anglican')">
+            <span class="app-entry-tradition-code">ANG</span>
+            <span>
+                <strong>Anglican</strong>
+                <small>TEC 1979 Book of Common Prayer Daily Office.</small>
+            </span>
+        </button>
+        <button class="app-entry-tradition-card is-disabled" type="button" disabled aria-disabled="true">
+            <span class="app-entry-tradition-code">LC</span>
+            <span>
+                <strong>Catholic</strong>
+                <small>Liturgy of the Hours is not implemented yet.</small>
+            </span>
+        </button>
+    </div>
+
+    <div id="entry-eastern-options" class="app-entry-tradition-panel" hidden>
+        <div class="app-entry-panel-title">Eastern Christian</div>
+        <button class="app-entry-tradition-card" type="button" onclick="setUserTraditionDefault('church-of-the-east')">
+            <span class="app-entry-tradition-code">COE</span>
+            <span>
+                <strong>Church of the East</strong>
+                <small>East Syriac Hudra office stream.</small>
+            </span>
+        </button>
+        <button class="app-entry-tradition-card" type="button" onclick="setUserTraditionDefault('eastern-orthodox')">
+            <span class="app-entry-tradition-code">EO</span>
+            <span>
+                <strong>Eastern Orthodoxy</strong>
+                <small>Byzantine Horologion offices.</small>
+            </span>
+        </button>
+        <button class="app-entry-tradition-card" type="button" onclick="setUserTraditionDefault('oriental-orthodox')">
+            <span class="app-entry-tradition-code">OO</span>
+            <span>
+                <strong>Oriental Orthodoxy</strong>
+                <small>Ethiopian Sa’atat Book of Hours.</small>
+            </span>
+        </button>
+    </div>
+
+    <button class="app-entry-universal-link" type="button" onclick="setUserTraditionDefault('universal')">
+        Open the Universal Office selector instead
+    </button>
+</section>
+
+<div id="mode-selection" class="app-mode-shell" style="display:none;">
+    <div class="app-mode-kicker">Universal Office Selector</div>
     <h1>The Universal Office</h1>
-    <p>Pray the Church. Unite your day to Christ.</p>
+    <p>All traditions and tools remain available here.</p>
 
     <div class="app-mode-grid" aria-label="Choose a mode">
         <button class="mode-btn app-mode-card" onclick="selectMode('daily')">

@@ -582,8 +582,7 @@ function backToSplash() {
     document.getElementById('individual-prayers-section').style.display = 'none';
 
     // Restore the splash screen
-    document.getElementById('splash-bg').style.display      = '';
-    document.getElementById('mode-selection').style.display = '';
+    showUniversalModeSelection();
 
     // Remove office-active so body returns to its splash flex-centering state
     document.body.classList.remove('office-active');
@@ -625,11 +624,144 @@ function backToSplash() {
         mainContent.classList.remove('sidebar-hidden');
     }
 }
+
+// ── Entry Routing / Tradition Default ────────────────────────────────────────
+// New public users begin with a Christian-family choice rather than the all-mode
+// Universal Office selector. The selector remains available for advanced/project
+// use and can be persisted as the default until a full user profile exists.
+const UNIVERSAL_OFFICE_ENTRY_DEFAULT_KEY = 'universalOffice.entry.default.v1';
+
+const UNIVERSAL_OFFICE_TRADITION_MODE_MAP = {
+    'anglican': 'daily',
+    'unknown': 'daily',
+    'church-of-the-east': 'east-syriac',
+    'eastern-orthodox': 'horologion',
+    'oriental-orthodox': 'ethiopian-saatat',
+    'universal': 'universal'
+};
+
+function getUserEntryDefault() {
+    try {
+        return localStorage.getItem(UNIVERSAL_OFFICE_ENTRY_DEFAULT_KEY);
+    } catch (_error) {
+        return null;
+    }
+}
+
+function persistUserEntryDefault(value) {
+    try {
+        localStorage.setItem(UNIVERSAL_OFFICE_ENTRY_DEFAULT_KEY, value);
+    } catch (_error) {
+        console.warn('[entry-routing] Could not persist entry default.');
+    }
+}
+
+function clearUserEntryDefault() {
+    try {
+        localStorage.removeItem(UNIVERSAL_OFFICE_ENTRY_DEFAULT_KEY);
+    } catch (_error) {
+        console.warn('[entry-routing] Could not clear entry default.');
+    }
+}
+
+function selectTraditionFamily(family) {
+    const western = document.getElementById('entry-western-options');
+    const eastern = document.getElementById('entry-eastern-options');
+
+    if (western) western.hidden = family !== 'western';
+    if (eastern) eastern.hidden = family !== 'eastern';
+}
+
+function showTraditionEntry() {
+    const splashBg = document.getElementById('splash-bg');
+    const traditionEntry = document.getElementById('tradition-entry');
+    const modeSelection = document.getElementById('mode-selection');
+
+    if (splashBg) splashBg.style.display = '';
+    if (traditionEntry) traditionEntry.style.display = '';
+    if (modeSelection) modeSelection.style.display = 'none';
+
+    document.body.classList.remove('office-active');
+    document.body.classList.remove('ethiopian-theme');
+
+    selectTraditionFamily(null);
+}
+
+function showUniversalModeSelection(persistDefault = false) {
+    if (persistDefault) persistUserEntryDefault('universal');
+
+    const splashBg = document.getElementById('splash-bg');
+    const traditionEntry = document.getElementById('tradition-entry');
+    const modeSelection = document.getElementById('mode-selection');
+
+    if (splashBg) splashBg.style.display = '';
+    if (traditionEntry) traditionEntry.style.display = 'none';
+    if (modeSelection) modeSelection.style.display = '';
+
+    document.body.classList.remove('office-active');
+    document.body.classList.remove('ethiopian-theme');
+}
+
+function setUserTraditionDefault(tradition) {
+    const normalized = tradition === 'unknown' ? 'anglican' : tradition;
+    const mode = UNIVERSAL_OFFICE_TRADITION_MODE_MAP[normalized];
+
+    if (!mode) {
+        console.warn('[entry-routing] Unknown tradition default:', tradition);
+        showTraditionEntry();
+        return;
+    }
+
+    persistUserEntryDefault(normalized);
+
+    if (mode === 'universal') {
+        showUniversalModeSelection(false);
+        return;
+    }
+
+    selectMode(mode);
+}
+
+function resetUserTraditionDefault() {
+    clearUserEntryDefault();
+    showTraditionEntry();
+}
+
+function initializeEntryRouting() {
+    const storedDefault = getUserEntryDefault();
+    const mode = UNIVERSAL_OFFICE_TRADITION_MODE_MAP[storedDefault];
+
+    if (mode === 'universal') {
+        showUniversalModeSelection(false);
+        return;
+    }
+
+    if (mode) {
+        selectMode(mode);
+        return;
+    }
+
+    showTraditionEntry();
+}
+
+window.selectTraditionFamily = selectTraditionFamily;
+window.setUserTraditionDefault = setUserTraditionDefault;
+window.resetUserTraditionDefault = resetUserTraditionDefault;
+window.showTraditionEntry = showTraditionEntry;
+window.showUniversalModeSelection = showUniversalModeSelection;
+
+document.addEventListener('DOMContentLoaded', initializeEntryRouting);
+
 async function selectMode(mode) {
     selectedMode = mode;
 
-    document.getElementById('splash-bg').style.display      = 'none';
-    document.getElementById('mode-selection').style.display = 'none';
+    const splashBg = document.getElementById('splash-bg');
+    const modeSelection = document.getElementById('mode-selection');
+    const traditionEntry = document.getElementById('tradition-entry');
+
+    if (splashBg) splashBg.style.display = 'none';
+    if (modeSelection) modeSelection.style.display = 'none';
+    if (traditionEntry) traditionEntry.style.display = 'none';
 
     document.body.style.display        = '';
     document.body.style.alignItems     = '';

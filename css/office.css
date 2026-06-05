@@ -1298,6 +1298,216 @@ body:not(.office-active) {
 }
 
 
+/* Tradition entry routing pass */
+#tradition-entry.app-tradition-entry {
+    width: min(980px, calc(100vw - 40px));
+    max-width: 980px;
+    max-height: calc(100vh - 40px);
+    overflow-y: auto;
+    padding: clamp(28px, 4.5vw, 58px);
+    box-sizing: border-box;
+    background:
+        linear-gradient(180deg, rgba(255, 253, 248, 0.97), rgba(249, 241, 228, 0.94)),
+        radial-gradient(circle at 18% 0%, rgba(255, 255, 255, 0.78), transparent 38%);
+    border: 1px solid var(--app-border);
+    border-radius: var(--app-radius-xl);
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.78),
+        var(--app-shadow-soft);
+    color: var(--app-ink);
+    text-align: left;
+    position: relative;
+    z-index: 2;
+}
+
+.app-entry-kicker {
+    color: #8c552d;
+    font-family: var(--app-label);
+    font-size: 0.76rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+}
+
+#tradition-entry h1 {
+    color: var(--app-ink);
+    font-family: var(--app-serif);
+    font-size: clamp(2.35rem, 6vw, 5rem);
+    font-weight: 400;
+    line-height: 0.98;
+    letter-spacing: 0.008em;
+    text-shadow: none;
+    margin: 0 0 10px;
+}
+
+.app-entry-lede {
+    color: #8c552d;
+    font-family: var(--app-serif);
+    font-size: clamp(1rem, 1.6vw, 1.24rem);
+    line-height: 1.35;
+    letter-spacing: 0.025em;
+    margin: 0 0 28px;
+    max-width: 640px;
+}
+
+.app-entry-family-grid,
+.app-entry-tradition-panel {
+    display: grid;
+    gap: 12px;
+    padding-top: 22px;
+    border-top: 1px solid rgba(103, 58, 31, 0.12);
+}
+
+.app-entry-family-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.app-entry-tradition-panel {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    margin-top: 18px;
+}
+
+.app-entry-panel-title {
+    grid-column: 1 / -1;
+    color: #8c552d;
+    font-family: var(--app-label);
+    font-size: 0.76rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+}
+
+.app-entry-family-card,
+.app-entry-tradition-card,
+.app-entry-universal-link {
+    border: 1px solid var(--app-border);
+    background: rgba(255, 252, 247, 0.66);
+    color: var(--app-ink);
+    box-shadow: var(--app-shadow-card);
+    cursor: pointer;
+    font-family: var(--app-serif);
+    text-align: left;
+}
+
+.app-entry-family-card,
+.app-entry-tradition-card {
+    display: grid;
+    align-items: center;
+    gap: 13px;
+    width: 100%;
+    margin: 0;
+    border-radius: 18px;
+}
+
+.app-entry-family-card {
+    grid-template-columns: 46px minmax(0, 1fr);
+    min-height: 112px;
+    padding: 18px;
+}
+
+.app-entry-tradition-card {
+    grid-template-columns: 54px minmax(0, 1fr);
+    min-height: 96px;
+    padding: 16px 18px;
+}
+
+.app-entry-family-card:hover,
+.app-entry-family-card:focus-visible,
+.app-entry-tradition-card:hover,
+.app-entry-tradition-card:focus-visible,
+.app-entry-universal-link:hover,
+.app-entry-universal-link:focus-visible {
+    background: rgba(255, 253, 249, 0.94);
+    border-color: var(--app-border-strong);
+    box-shadow:
+        0 14px 36px rgba(74, 46, 26, 0.13),
+        0 0 0 3px rgba(122, 63, 23, 0.08);
+    outline: none;
+}
+
+.app-entry-family-icon,
+.app-entry-tradition-code {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 999px;
+    background:
+        linear-gradient(180deg, rgba(248, 230, 184, 0.92), rgba(223, 194, 128, 0.78));
+    color: #7a3f17;
+    font-family: Georgia, serif;
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.60),
+        0 8px 18px rgba(74, 46, 26, 0.10);
+}
+
+.app-entry-family-icon {
+    width: 44px;
+    height: 44px;
+    font-size: 1.25rem;
+}
+
+.app-entry-tradition-code {
+    width: 50px;
+    height: 50px;
+    font-size: 0.82rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+}
+
+.app-entry-family-card strong,
+.app-entry-tradition-card strong {
+    display: block;
+    color: var(--app-ink);
+    font-family: var(--app-serif);
+    font-size: 1.14rem;
+    line-height: 1.15;
+    font-weight: 600;
+}
+
+.app-entry-family-card small,
+.app-entry-tradition-card small {
+    display: block;
+    margin-top: 4px;
+    color: var(--app-ink-soft);
+    font-family: var(--app-serif);
+    font-size: 0.9rem;
+    line-height: 1.25;
+}
+
+.app-entry-tradition-card.is-disabled,
+.app-entry-tradition-card:disabled {
+    cursor: not-allowed;
+    opacity: 0.56;
+    filter: grayscale(0.25);
+}
+
+.app-entry-universal-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 24px;
+    padding: 10px 15px;
+    border-radius: 999px;
+    color: var(--app-bronze);
+    font-size: 0.88rem;
+}
+
+@media (max-width: 860px) {
+    .app-entry-family-grid,
+    .app-entry-tradition-panel {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 760px) {
+    #tradition-entry.app-tradition-entry {
+        width: min(100vw - 24px, 560px);
+        max-height: calc(100vh - 24px);
+        padding: 28px 22px;
+        border-radius: 22px;
+    }
+}
+
+
 /* Daily Office parchment app shell propagation pass */
 body.office-active #daily-office-section {
     background:
