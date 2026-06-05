@@ -28,7 +28,8 @@
     "audit:visual-design-brief": "node scripts/audit-visual-design-brief.mjs",
     "audit:bible-design-layout": "node scripts/audit-bible-design-layout.mjs",
     "start:static": "http-server -p 3000",
-    "audit:bible-browser-feature-sweep-runner": "node scripts/audit-bible-browser-feature-sweep-runner.mjs"
+    "audit:bible-browser-feature-sweep-runner": "node scripts/audit-bible-browser-feature-sweep-runner.mjs",
+    "audit:app-design-propagation": "node scripts/audit-app-design-propagation.mjs"
   },
   "repository": {
     "type": "git",

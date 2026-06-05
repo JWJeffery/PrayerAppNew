@@ -15,22 +15,73 @@
 
 <!-- ── Splash Screen ─────────────────────────────────────────────────────── -->
 <div id="splash-bg"></div>
-<div id="mode-selection">
-    <h1>Welcome to The Universal Office</h1>
-    <p>Select your mode:</p>
-    <button class="mode-btn" onclick="selectMode('daily')">Daily Office</button>
-    <button class="mode-btn" onclick="selectMode('prayers')">The Book of Needs</button>
-    <button class="mode-btn ethiopian-btn" onclick="selectMode('ethiopian-saatat')">The Ethiopian Sa'atat (Book of Hours)</button>
-    <button class="mode-btn" onclick="selectMode('east-syriac')">Church of the East — Hudra</button>
-    <button class="mode-btn" onclick="selectMode('horologion')">The Horologion — Byzantine Offices</button>
-    <button class="mode-btn" onclick="openBibleBrowser()">Scripture Browser</button>
-    <button class="mode-btn" onclick="window.location.href='admin/admin.html'">Admin Dashboard</button>
-    <div style="margin-top:32px; border-top:1px solid rgba(201,168,76,0.25); padding-top:18px;">
-        <a href="https://musingsancientandmodern.substack.com/" target="_blank" style="text-decoration:none; display:block; text-align:center;">
-            <span style="font-family:'Cinzel',serif; font-size:0.68em; letter-spacing:0.18em; text-transform:uppercase; color:#a89878; display:block; margin-bottom:5px;">Sponsored by</span>
-            <span style="font-family:'Cinzel Decorative','Cinzel',serif; font-size:0.95em; letter-spacing:0.08em; color:#c0392b; text-shadow:0 0 8px rgba(201,168,76,0.35), 0 1px 3px rgba(0,0,0,0.8); display:block;">Musings, Ancient and Modern</span>
-        </a>
+<div id="mode-selection" class="app-mode-shell">
+    <div class="app-mode-kicker">Universal Office</div>
+    <h1>The Universal Office</h1>
+    <p>Pray the Church. Unite your day to Christ.</p>
+
+    <div class="app-mode-grid" aria-label="Choose a mode">
+        <button class="mode-btn app-mode-card" onclick="selectMode('daily')">
+            <span class="app-mode-icon">☩</span>
+            <span class="app-mode-copy">
+                <span class="app-mode-title">Daily Office</span>
+                <span class="app-mode-subtitle">Morning, noon, evening, and night prayer.</span>
+            </span>
+        </button>
+
+        <button class="mode-btn app-mode-card" onclick="selectMode('prayers')">
+            <span class="app-mode-icon">✠</span>
+            <span class="app-mode-copy">
+                <span class="app-mode-title">The Book of Needs</span>
+                <span class="app-mode-subtitle">Prayers, devotions, and occasional offices.</span>
+            </span>
+        </button>
+
+        <button class="mode-btn app-mode-card ethiopian-btn" onclick="selectMode('ethiopian-saatat')">
+            <span class="app-mode-icon">Ⲩ</span>
+            <span class="app-mode-copy">
+                <span class="app-mode-title">Ethiopian Sa’atat</span>
+                <span class="app-mode-subtitle">The Ethiopian Book of Hours.</span>
+            </span>
+        </button>
+
+        <button class="mode-btn app-mode-card" onclick="selectMode('east-syriac')">
+            <span class="app-mode-icon">ܨ</span>
+            <span class="app-mode-copy">
+                <span class="app-mode-title">Church of the East</span>
+                <span class="app-mode-subtitle">Hudra prayer and East Syriac offices.</span>
+            </span>
+        </button>
+
+        <button class="mode-btn app-mode-card" onclick="selectMode('horologion')">
+            <span class="app-mode-icon">☀</span>
+            <span class="app-mode-copy">
+                <span class="app-mode-title">Horologion</span>
+                <span class="app-mode-subtitle">Byzantine hours and daily offices.</span>
+            </span>
+        </button>
+
+        <button class="mode-btn app-mode-card" onclick="openBibleBrowser()">
+            <span class="app-mode-icon">✦</span>
+            <span class="app-mode-copy">
+                <span class="app-mode-title">Bible Reader</span>
+                <span class="app-mode-subtitle">Read, compare, annotate, and study.</span>
+            </span>
+        </button>
+
+        <button class="mode-btn app-mode-card app-mode-card-admin" onclick="window.location.href='admin/admin.html'">
+            <span class="app-mode-icon">⚙</span>
+            <span class="app-mode-copy">
+                <span class="app-mode-title">Admin Dashboard</span>
+                <span class="app-mode-subtitle">Corpus tools and project administration.</span>
+            </span>
+        </button>
     </div>
+
+    <a class="app-sponsor-link" href="https://musingsancientandmodern.substack.com/" target="_blank" rel="noopener noreferrer">
+        <span>Sponsored by</span>
+        <strong>Musings, Ancient and Modern</strong>
+    </a>
 </div>
 
 <!-- ── Daily Office ──────────────────────────────────────────────────────── -->
