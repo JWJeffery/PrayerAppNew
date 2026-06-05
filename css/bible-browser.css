@@ -2163,3 +2163,100 @@
         border-radius: 16px;
     }
 }
+
+
+/* Bible Reader visual highlight color picker */
+.bible-visually-hidden {
+    position: absolute !important;
+    width: 1px !important;
+    height: 1px !important;
+    padding: 0 !important;
+    margin: -1px !important;
+    overflow: hidden !important;
+    clip: rect(0 0 0 0) !important;
+    white-space: nowrap !important;
+    border: 0 !important;
+}
+
+.bible-highlight-color-picker {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+}
+
+.bible-highlight-color-label {
+    color: #7a4a24;
+    font-family: 'Cinzel', serif;
+    font-size: 0.64rem;
+    letter-spacing: 0.10em;
+    text-transform: uppercase;
+}
+
+.bible-highlight-swatch-row,
+.bible-context-highlight-swatches {
+    display: inline-flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+.bible-context-highlight-swatches {
+    margin: 4px 0 10px;
+}
+
+.bible-highlight-swatch {
+    width: 26px;
+    height: 26px;
+    border-radius: 999px;
+    border: 1px solid rgba(103, 58, 31, 0.22);
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.58),
+        0 4px 10px rgba(74, 46, 26, 0.10);
+    cursor: pointer;
+    padding: 0;
+}
+
+.bible-highlight-swatch:hover,
+.bible-highlight-swatch:focus-visible {
+    transform: translateY(-1px);
+    outline: 2px solid rgba(103, 58, 31, 0.30);
+    outline-offset: 2px;
+}
+
+.bible-highlight-swatch.is-active {
+    border-color: rgba(90, 47, 18, 0.72);
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.60),
+        0 0 0 3px rgba(90, 47, 18, 0.12),
+        0 5px 14px rgba(74, 46, 26, 0.14);
+}
+
+.bible-highlight-swatch-yellow {
+    background: linear-gradient(180deg, rgba(255, 242, 142, 0.92), rgba(237, 219, 106, 0.82));
+}
+
+.bible-highlight-swatch-pink {
+    background: linear-gradient(180deg, rgba(255, 203, 216, 0.92), rgba(241, 168, 184, 0.82));
+}
+
+.bible-highlight-swatch-green {
+    background: linear-gradient(180deg, rgba(210, 232, 191, 0.92), rgba(171, 204, 151, 0.82));
+}
+
+.bible-highlight-swatch-blue {
+    background: linear-gradient(180deg, rgba(196, 225, 242, 0.92), rgba(155, 197, 224, 0.82));
+}
+
+.bible-highlight-swatch-purple {
+    background: linear-gradient(180deg, rgba(223, 207, 239, 0.92), rgba(196, 174, 221, 0.82));
+}
+
+#bible-selection-toolbar .bible-highlight-swatch {
+    width: 22px;
+    height: 22px;
+}
+
+.bible-context-panel .bible-highlight-swatch {
+    width: 30px;
+    height: 30px;
+}

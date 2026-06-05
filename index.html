@@ -734,16 +734,23 @@
     </div>
 
     <div id="bible-selection-toolbar" aria-hidden="true">
-        <label class="bible-highlight-color-picker" for="bible-highlight-color">
-            Color
-            <select id="bible-highlight-color" aria-label="Highlight color">
+        <div class="bible-highlight-color-picker" role="group" aria-label="Highlight color">
+            <span class="bible-highlight-color-label">Color</span>
+            <select id="bible-highlight-color" class="bible-visually-hidden" aria-label="Highlight color">
                 <option value="yellow">Yellow</option>
                 <option value="pink">Pink</option>
                 <option value="green">Green</option>
                 <option value="blue">Blue</option>
                 <option value="purple">Purple</option>
             </select>
-        </label>
+            <div class="bible-highlight-swatch-row" aria-hidden="false">
+                <button class="bible-highlight-swatch bible-highlight-swatch-yellow" type="button" data-highlight-color="yellow" aria-label="Yellow highlight"></button>
+                <button class="bible-highlight-swatch bible-highlight-swatch-pink" type="button" data-highlight-color="pink" aria-label="Pink highlight"></button>
+                <button class="bible-highlight-swatch bible-highlight-swatch-green" type="button" data-highlight-color="green" aria-label="Green highlight"></button>
+                <button class="bible-highlight-swatch bible-highlight-swatch-blue" type="button" data-highlight-color="blue" aria-label="Blue highlight"></button>
+                <button class="bible-highlight-swatch bible-highlight-swatch-purple" type="button" data-highlight-color="purple" aria-label="Purple highlight"></button>
+            </div>
+        </div>
         <button id="bible-highlight-btn" type="button">Highlight</button>
         <button id="bible-comment-btn" type="button">Note</button>
         <button id="bible-fathers-selection-btn" type="button">Fathers</button>

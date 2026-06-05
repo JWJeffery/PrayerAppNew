@@ -129,6 +129,27 @@ if (!css.includes("opacity: 0.74")) {
   fail("Bible Reader passage summary should be visually quiet.");
 }
 
+
+if (!index.includes("data-highlight-color=\"yellow\"")) {
+  fail("Selection toolbar should expose visual highlight color swatches.");
+}
+
+if (!browser.includes("renderHighlightColorSwatches")) {
+  fail("Bible Browser JS should render visual highlight color swatches.");
+}
+
+if (!browser.includes("data-context-highlight-color")) {
+  fail("Context panel should expose visual highlight color swatches.");
+}
+
+if (!css.includes("Bible Reader visual highlight color picker")) {
+  fail("Bible Reader visual highlight color picker CSS marker is missing.");
+}
+
+if (!css.includes(".bible-highlight-swatch-blue")) {
+  fail("Visual highlighter swatches should include blue.");
+}
+
 if (failures.length) {
   console.error("FAIL Bible design layout audit");
   for (const failure of failures) console.error(` - ${failure}`);

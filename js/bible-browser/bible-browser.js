@@ -20,11 +20,11 @@
     let currentHighlightColor = "yellow";
 
     const HIGHLIGHT_COLORS = [
-        { key: "yellow", label: "Yellow" },
-        { key: "pink", label: "Pink" },
-        { key: "green", label: "Green" },
-        { key: "blue", label: "Blue" },
-        { key: "purple", label: "Purple" }
+        { key: "yellow", label: "Yellow", cssClass: "bible-highlight-swatch-yellow" },
+        { key: "pink", label: "Pink", cssClass: "bible-highlight-swatch-pink" },
+        { key: "green", label: "Green", cssClass: "bible-highlight-swatch-green" },
+        { key: "blue", label: "Blue", cssClass: "bible-highlight-swatch-blue" },
+        { key: "purple", label: "Purple", cssClass: "bible-highlight-swatch-purple" }
     ];
 
     function highlightColorKey(value) {
@@ -39,9 +39,31 @@
             .join("");
     }
 
+    function renderHighlightColorSwatches(selected = currentHighlightColor, dataAttribute = "data-highlight-color") {
+        const active = highlightColorKey(selected);
+        return HIGHLIGHT_COLORS
+            .map(color => `
+                <button
+                    class="bible-highlight-swatch ${escapeHtml(color.cssClass)}${color.key === active ? " is-active" : ""}"
+                    type="button"
+                    ${dataAttribute}="${escapeHtml(color.key)}"
+                    aria-label="${escapeHtml(color.label)} highlight"
+                    aria-pressed="${color.key === active ? "true" : "false"}"
+                    title="${escapeHtml(color.label)}">
+                </button>
+            `)
+            .join("");
+    }
+
     function syncHighlightColorControl() {
         const select = $("bible-highlight-color");
         if (select) select.value = currentHighlightColor;
+
+        document.querySelectorAll("[data-highlight-color]").forEach(button => {
+            const isActive = highlightColorKey(button.dataset.highlightColor) === currentHighlightColor;
+            button.classList.toggle("is-active", isActive);
+            button.setAttribute("aria-pressed", isActive ? "true" : "false");
+        });
     }
 
     function $(id) {
@@ -1636,9 +1658,12 @@
                 <div class="bible-context-note-label">${escapeHtml(getAnnotationReferenceLabel(annotation))}</div>
                 <div class="bible-context-selected-text">${escapeHtml(annotation.selectedText || "Highlighted text")}</div>
                 <label class="bible-context-color-label" for="bible-context-highlight-color">Highlight Color</label>
-                <select id="bible-context-highlight-color" class="bible-context-highlight-color">
+                <select id="bible-context-highlight-color" class="bible-context-highlight-color bible-visually-hidden" aria-label="Highlight color">
                     ${renderHighlightColorOptions(annotation.highlightColor)}
                 </select>
+                <div class="bible-context-highlight-swatches" role="group" aria-label="Highlight color">
+                    ${renderHighlightColorSwatches(annotation.highlightColor, "data-context-highlight-color")}
+                </div>
                 ${note}
                 <div class="bible-context-actions">
                     <button class="bible-tool-btn" id="bible-context-edit-note" type="button">Add / Edit Note</button>
@@ -1651,6 +1676,9 @@
 
         body?.querySelector("#bible-context-highlight-color")?.addEventListener("change", event => {
             setAnnotationHighlightColor(annotationId, event.target.value);
+        });
+        body?.querySelectorAll("[data-context-highlight-color]").forEach(button => {
+            button.addEventListener("click", () => setAnnotationHighlightColor(annotationId, button.dataset.contextHighlightColor));
         });
         body?.querySelector("#bible-context-edit-note")?.addEventListener("click", () => openAnnotationEditor(annotationId, { anchorRect }));
         body?.querySelector("#bible-context-fathers-highlight")?.addEventListener("click", () => loadFathersForAnnotation(annotationId));
@@ -2353,7 +2381,15 @@
         $("bible-fathers-selection-btn")?.addEventListener("click", loadFathersForSelection);
         $("bible-highlight-color")?.addEventListener("change", event => {
             currentHighlightColor = highlightColorKey(event.target.value);
+            syncHighlightColorControl();
             saveLastState();
+        });
+        document.querySelectorAll("[data-highlight-color]").forEach(button => {
+            button.addEventListener("click", () => {
+                currentHighlightColor = highlightColorKey(button.dataset.highlightColor);
+                syncHighlightColorControl();
+                saveLastState();
+            });
         });
         $("bible-export-annotations")?.addEventListener("click", exportAnnotations);
         $("bible-export-research-markdown")?.addEventListener("click", exportResearchMarkdown);
