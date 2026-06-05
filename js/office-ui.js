@@ -1184,6 +1184,14 @@ function setSharedOfficeNavHour(modeKey, value) {
     }
 }
 
+
+function _sharedOfficeNavigatorDateFromIso(dateValue) {
+    const parts = String(dateValue || "").split("-").map(Number);
+    if (parts.length !== 3 || parts.some(n => !Number.isFinite(n))) return null;
+    const [year, month, day] = parts;
+    return new Date(year, month - 1, day);
+}
+
 function setSharedOfficeNavDate(modeKey, dateValue) {
     if (!dateValue) return;
 
@@ -1194,16 +1202,42 @@ function setSharedOfficeNavDate(modeKey, dateValue) {
     }
 
     if (modeKey === "ethiopian") {
+        const targetDate = _sharedOfficeNavigatorDateFromIso(dateValue);
+        if (!targetDate) return;
+
+        const hourId = _sharedOfficeNavigatorActiveValue("ethiopian") || getEthiopianHourInfo().hourId;
+        currentDate = targetDate;
+        updateDatePicker();
+
         const picker = document.getElementById("eth-override-date");
         if (picker) picker.value = dateValue;
-        applyEthOverride();
+
+        const radio = document.querySelector(`input[name="eth-watch-override"][value="${CSS.escape(hourId)}"]`);
+        if (radio) radio.checked = true;
+
+        window._temporalOverride = { active: true, date: targetDate, hourId };
+        requestRender();
+        renderSharedOfficeNavigation();
         return;
     }
 
     if (modeKey === "eastSyriac") {
+        const targetDate = _sharedOfficeNavigatorDateFromIso(dateValue);
+        if (!targetDate) return;
+
+        const hourId = _sharedOfficeNavigatorActiveValue("eastSyriac") || getEastSyriacHourInfo().value;
+        currentDate = targetDate;
+        updateDatePicker();
+
         const picker = document.getElementById("esy-override-date");
         if (picker) picker.value = dateValue;
-        applyEsyOverride();
+
+        const radio = document.querySelector(`input[name="esy-hour-override"][value="${CSS.escape(hourId)}"]`);
+        if (radio) radio.checked = true;
+
+        window._esyTemporalOverride = { active: true, date: targetDate, hourId };
+        requestRender();
+        renderSharedOfficeNavigation();
     }
 }
 
@@ -1222,15 +1256,37 @@ function changeSharedOfficeNavDate(modeKey, days) {
 }
 
 function todaySharedOfficeNavDate(modeKey) {
-    const todayIso = _sharedOfficeNavigatorIsoDate(new Date());
     if (modeKey === "ethiopian") {
+        currentDate = new Date();
+        updateDatePicker();
+
+        const picker = document.getElementById("eth-override-date");
+        if (picker) picker.value = _sharedOfficeNavigatorIsoDate(currentDate);
+
         window._temporalOverride = { active: false, date: null, hourId: null };
         document.querySelectorAll('input[name="eth-watch-override"]').forEach(r => r.checked = false);
+
+        requestRender();
+        renderSharedOfficeNavigation();
+        return;
     }
+
     if (modeKey === "eastSyriac") {
+        currentDate = new Date();
+        updateDatePicker();
+
+        const picker = document.getElementById("esy-override-date");
+        if (picker) picker.value = _sharedOfficeNavigatorIsoDate(currentDate);
+
         window._esyTemporalOverride = { active: false, date: null, hourId: null };
         document.querySelectorAll('input[name="esy-hour-override"]').forEach(r => r.checked = false);
+
+        requestRender();
+        renderSharedOfficeNavigation();
+        return;
     }
+
+    const todayIso = _sharedOfficeNavigatorIsoDate(new Date());
     setSharedOfficeNavDate(modeKey, todayIso);
     renderSharedOfficeNavigation();
 }

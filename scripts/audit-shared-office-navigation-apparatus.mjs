@@ -35,7 +35,10 @@ requireIncludes("shared office navigation apparatus JS", js, [
   "todaySharedOfficeNavDate",
   "function _sharedOfficeNavigatorAddDaysIso",
   "const targetIso = _sharedOfficeNavigatorAddDaysIso(days)",
-  "const todayIso = _sharedOfficeNavigatorIsoDate(new Date())"
+  "const todayIso = _sharedOfficeNavigatorIsoDate(new Date())",
+  "function _sharedOfficeNavigatorDateFromIso",
+  "window._temporalOverride = { active: true, date: targetDate, hourId }",
+  "window._esyTemporalOverride = { active: true, date: targetDate, hourId }"
 ]);
 
 requireIncludes("shared office navigation modes", js, [
