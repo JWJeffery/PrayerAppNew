@@ -1207,37 +1207,31 @@ function setSharedOfficeNavDate(modeKey, dateValue) {
     }
 }
 
+
+function _sharedOfficeNavigatorAddDaysIso(days) {
+    const base = currentDate instanceof Date && !Number.isNaN(currentDate.getTime()) ? currentDate : new Date();
+    const next = new Date(base.getFullYear(), base.getMonth(), base.getDate());
+    next.setDate(next.getDate() + Number(days || 0));
+    return _sharedOfficeNavigatorIsoDate(next);
+}
+
 function changeSharedOfficeNavDate(modeKey, days) {
-    if (modeKey === "ethiopian" && typeof ethChangeDate === "function") {
-        ethChangeDate(days);
-        renderSharedOfficeNavigation();
-        return;
-    }
-
-    if (modeKey === "eastSyriac" && typeof esyChangeDate === "function") {
-        esyChangeDate(days);
-        renderSharedOfficeNavigation();
-        return;
-    }
-
-    changeDate(days);
+    const targetIso = _sharedOfficeNavigatorAddDaysIso(days);
+    setSharedOfficeNavDate(modeKey, targetIso);
     renderSharedOfficeNavigation();
 }
 
 function todaySharedOfficeNavDate(modeKey) {
-    if (modeKey === "ethiopian" && typeof ethToday === "function") {
-        ethToday();
-        renderSharedOfficeNavigation();
-        return;
+    const todayIso = _sharedOfficeNavigatorIsoDate(new Date());
+    if (modeKey === "ethiopian") {
+        window._temporalOverride = { active: false, date: null, hourId: null };
+        document.querySelectorAll('input[name="eth-watch-override"]').forEach(r => r.checked = false);
     }
-
-    if (modeKey === "eastSyriac" && typeof esyToday === "function") {
-        esyToday();
-        renderSharedOfficeNavigation();
-        return;
+    if (modeKey === "eastSyriac") {
+        window._esyTemporalOverride = { active: false, date: null, hourId: null };
+        document.querySelectorAll('input[name="esy-hour-override"]').forEach(r => r.checked = false);
     }
-
-    resetDate();
+    setSharedOfficeNavDate(modeKey, todayIso);
     renderSharedOfficeNavigation();
 }
 

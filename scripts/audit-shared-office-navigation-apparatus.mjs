@@ -32,7 +32,10 @@ requireIncludes("shared office navigation apparatus JS", js, [
   "setSharedOfficeNavHour",
   "setSharedOfficeNavDate",
   "changeSharedOfficeNavDate",
-  "todaySharedOfficeNavDate"
+  "todaySharedOfficeNavDate",
+  "function _sharedOfficeNavigatorAddDaysIso",
+  "const targetIso = _sharedOfficeNavigatorAddDaysIso(days)",
+  "const todayIso = _sharedOfficeNavigatorIsoDate(new Date())"
 ]);
 
 requireIncludes("shared office navigation modes", js, [

@@ -50,6 +50,7 @@ requireIncludes("office navigation feature sweep default assertions", qc, [
 
 requireIncludes("office navigation feature sweep behavior assertions", qc, [
   "Prev/Next/manual date/Today controls passed",
+  "waitForDateAndOfficeContent",
   "changed ${beforeActive} -> ${alternate} and rendered different content",
   "window.__lastOfficeNavigationFeatureSweep",
   "universalOfficeSettings"

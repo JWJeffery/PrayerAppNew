@@ -250,6 +250,14 @@
         return `${test.label}: today=${dateInput.value}, active=${active}, sidebar=open`;
     }
 
+    async function waitForDateAndOfficeContent(test, expectedIso) {
+        await waitFor(() => navDateInput(test)?.value === expectedIso, 7000);
+        await waitFor(() => {
+            const text = officeText();
+            return text.length > 60 && !/loading|preparing/i.test(text);
+        }, 10000);
+    }
+
     async function verifyDateControls(test) {
         await enterMode(test);
 
@@ -259,18 +267,17 @@
         assert(prev && today && next, `${test.label}: missing Prev/Today/Next buttons.`);
 
         prev.click();
-        await waitFor(() => navDateInput(test)?.value === isoDate(-1), 5000);
+        await waitForDateAndOfficeContent(test, isoDate(-1));
 
         next.click();
-        await waitFor(() => navDateInput(test)?.value === isoDate(0), 5000);
+        await waitForDateAndOfficeContent(test, isoDate(0));
 
         setInputValue(navDateInput(test), isoDate(-2));
-        await waitFor(() => navDateInput(test)?.value === isoDate(-2), 5000);
+        await waitForDateAndOfficeContent(test, isoDate(-2));
 
         today.click();
-        await waitFor(() => navDateInput(test)?.value === isoDate(0), 5000);
+        await waitForDateAndOfficeContent(test, isoDate(0));
 
-        assert(officeText().length > 60, `${test.label}: office content missing after date navigation.`);
         return `${test.label}: Prev/Next/manual date/Today controls passed`;
     }
 
