@@ -34,7 +34,8 @@
     "audit:app-navigation-architecture": "node scripts/audit-app-navigation-architecture.mjs",
     "audit:book-of-needs-design-shell": "node scripts/audit-book-of-needs-design-shell.mjs",
     "audit:admin-design-shell": "node scripts/audit-admin-design-shell.mjs",
-    "audit:shared-mode-navigation-grammar": "node scripts/audit-shared-mode-navigation-grammar.mjs"
+    "audit:shared-mode-navigation-grammar": "node scripts/audit-shared-mode-navigation-grammar.mjs",
+    "audit:mode-chrome-normalization": "node scripts/audit-mode-chrome-normalization.mjs"
   },
   "repository": {
     "type": "git",

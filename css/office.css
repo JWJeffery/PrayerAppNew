@@ -1808,3 +1808,153 @@ body.office-active .app-mode-return,
         max-width: var(--app-drawer-width);
     }
 }
+
+
+/* Shared mode chrome normalization pass */
+body.office-active #back-to-modes,
+body.office-active .app-mode-return,
+#individual-prayers-section .app-mode-return,
+.admin-app-shell .app-mode-return {
+    background: linear-gradient(180deg, #7a3f17, #5d2f11) !important;
+    color: #fff8ec !important;
+    border: 1px solid rgba(90, 47, 18, 0.48) !important;
+    border-radius: 10px !important;
+    box-shadow: 0 8px 22px rgba(74, 46, 26, 0.16) !important;
+    font-family: var(--app-label, Georgia, 'Times New Roman', serif) !important;
+    font-size: 0.84rem !important;
+    line-height: 1.1 !important;
+    letter-spacing: 0.035em !important;
+    text-transform: none !important;
+    opacity: 1 !important;
+}
+
+body.office-active #back-to-modes:hover,
+body.office-active .app-mode-return:hover,
+#individual-prayers-section .app-mode-return:hover,
+.admin-app-shell .app-mode-return:hover {
+    background: linear-gradient(180deg, #88491e, #633414) !important;
+    color: #fff8ec !important;
+    border-color: rgba(90, 47, 18, 0.68) !important;
+}
+
+body.office-active #back-to-modes {
+    top: 16px !important;
+    right: 18px !important;
+    padding: 9px 15px !important;
+    z-index: 420 !important;
+}
+
+body.office-active #main-content.app-primary-canvas > h1,
+body.office-active #main-content > h1 {
+    max-width: 920px;
+    margin: 0 auto clamp(20px, 3vw, 34px);
+    color: var(--app-ink, #3f2618);
+    font-family: var(--app-serif, Georgia, 'Times New Roman', serif);
+    font-size: clamp(1.85rem, 3.4vw, 3.05rem);
+    font-weight: 600;
+    line-height: 1.05;
+    letter-spacing: 0.035em;
+    text-align: center;
+    text-shadow: none;
+}
+
+body.office-active .office-container {
+    width: min(100%, 860px);
+    margin-left: auto;
+    margin-right: auto;
+}
+
+body.office-active #main-content.app-primary-canvas {
+    display: block;
+}
+
+body.office-active #main-content.app-primary-canvas .office-container h1:first-child,
+body.office-active #main-content.app-primary-canvas .office-container h2:first-child {
+    margin-top: 0;
+}
+
+body.office-active .office-container h1 {
+    font-size: clamp(2rem, 4.6vw, 4rem);
+    line-height: 1.02;
+}
+
+body.office-active .office-container h2 {
+    font-size: clamp(1.35rem, 3vw, 2.45rem);
+    line-height: 1.12;
+}
+
+body.office-active .office-container .liturgical-title,
+body.office-active .office-container .office-subtitle {
+    max-width: 100%;
+}
+
+body.office-active .app-mode-drawer {
+    overflow-x: hidden;
+}
+
+body.office-active .app-mode-drawer .setting-group,
+body.office-active .app-mode-drawer .ordo-control,
+body.office-active .app-mode-drawer .nested-group {
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+body.office-active .app-mode-drawer select,
+body.office-active .app-mode-drawer input[type="date"],
+body.office-active .app-mode-drawer input[type="text"] {
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+body.office-active #settings-panel.app-mode-drawer,
+body.office-active #ethiopian-settings.app-mode-drawer,
+body.office-active #east-syriac-settings.app-mode-drawer,
+body.office-active #generic-settings.app-mode-drawer {
+    padding-top: clamp(30px, 4vw, 58px);
+}
+
+body.office-active #settings-panel.app-mode-drawer h3,
+body.office-active #ethiopian-settings.app-mode-drawer h3,
+body.office-active #east-syriac-settings.app-mode-drawer h3,
+body.office-active #generic-settings.app-mode-drawer h3 {
+    margin-top: 0;
+    margin-bottom: 22px;
+    font-size: clamp(1rem, 1.65vw, 1.28rem) !important;
+    line-height: 1.15;
+}
+
+body.office-active #settings-panel.app-mode-drawer .setting-group > strong,
+body.office-active #ethiopian-settings.app-mode-drawer .setting-group > strong,
+body.office-active #east-syriac-settings.app-mode-drawer .setting-group > strong,
+body.office-active #generic-settings.app-mode-drawer .setting-group > strong {
+    display: block;
+    margin-bottom: 8px;
+}
+
+body.office-active .app-nav-rail-toggle {
+    z-index: 430;
+}
+
+@media (min-width: 1100px) {
+    body.office-active .office-container {
+        width: min(100%, 900px);
+    }
+}
+
+@media (max-width: 900px) {
+    body.office-active #back-to-modes {
+        top: 10px !important;
+        right: 10px !important;
+        padding: 8px 12px !important;
+    }
+
+    body.office-active #main-content.app-primary-canvas > h1,
+    body.office-active #main-content > h1 {
+        margin-top: 34px;
+        font-size: clamp(1.55rem, 7vw, 2.25rem);
+    }
+
+    body.office-active .office-container {
+        width: 100%;
+    }
+}
