@@ -2302,3 +2302,146 @@
 .bible-error {
     margin-top: 0;
 }
+
+
+/* Bible Reader typography correction pass */
+#bible-browser-section {
+    --bible-display-font: 'IM Fell English', Georgia, 'Times New Roman', serif;
+    --bible-reader-font: Georgia, 'Times New Roman', serif;
+    --bible-label-font: Georgia, 'Times New Roman', serif;
+}
+
+.bible-design-hero h1,
+.bible-browser-header h1 {
+    font-family: var(--bible-display-font);
+    font-weight: 400;
+    text-transform: none;
+    letter-spacing: 0.005em;
+    font-size: clamp(2.25rem, 4.6vw, 4.55rem);
+    line-height: 0.96;
+}
+
+.bible-design-kicker,
+.bible-control-section-label,
+.bible-secondary-intro span {
+    font-family: var(--bible-label-font);
+    font-size: 0.62rem;
+    font-weight: 400;
+    letter-spacing: 0.13em;
+    text-transform: uppercase;
+}
+
+.bible-design-hero p,
+.bible-browser-header p {
+    font-family: var(--bible-reader-font);
+    font-size: clamp(0.95rem, 1.25vw, 1.12rem);
+    letter-spacing: 0.035em;
+    text-transform: none;
+}
+
+.bible-reader-controls label,
+.bible-browser-details label,
+.bible-sidebar-details label,
+.bible-context-color-label,
+.bible-highlight-color-label {
+    font-family: var(--bible-label-font);
+    font-size: 0.72rem;
+    font-weight: 400;
+    letter-spacing: 0.075em;
+    text-transform: uppercase;
+}
+
+.bible-tool-btn,
+.bible-browser-details summary,
+.bible-sidebar-details summary,
+#bible-selection-toolbar button {
+    font-family: var(--bible-label-font);
+    font-weight: 400;
+    text-transform: none;
+    letter-spacing: 0.045em;
+}
+
+.bible-tool-btn {
+    font-size: 0.78rem;
+}
+
+.bible-browser-details summary,
+.bible-sidebar-details summary {
+    font-size: 0.86rem;
+}
+
+.bible-reader-controls input[type="text"],
+.bible-reader-controls input[type="date"],
+.bible-reader-controls select,
+.bible-research-controls input[type="text"],
+.bible-research-controls select,
+#bible-selection-toolbar select,
+.bible-context-highlight-color,
+.bible-context-note-comment,
+#bible-annotation-comment {
+    font-family: var(--bible-reader-font);
+    font-size: 0.95rem;
+    letter-spacing: 0.005em;
+}
+
+.bible-reading-canvas,
+#bible-results,
+.bible-reading-canvas .bible-verse,
+.bible-verse,
+.bible-note-excerpt,
+.bible-context-selected-text,
+.bible-guide-card blockquote {
+    font-family: var(--bible-reader-font);
+}
+
+.bible-reading-canvas .bible-verse,
+.bible-verse {
+    font-size: clamp(1.02rem, 1.16vw, 1.16rem);
+    line-height: 1.74;
+    letter-spacing: 0;
+    font-weight: 400;
+}
+
+.bible-reading-canvas .bible-chapter-block h2,
+.bible-chapter-block h2 {
+    font-family: var(--bible-display-font);
+    font-weight: 400;
+    text-transform: none;
+    letter-spacing: 0.01em;
+}
+
+.bible-reading-canvas .bible-chapter-block h3,
+.bible-chapter-block h3 {
+    font-family: var(--bible-label-font);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.105em;
+    font-size: 0.76rem;
+}
+
+.bible-segment-label {
+    font-family: var(--bible-label-font);
+    text-transform: none;
+    letter-spacing: 0.055em;
+    font-size: 0.74rem;
+}
+
+.bible-empty,
+.bible-error {
+    font-family: var(--bible-reader-font);
+    font-size: clamp(1rem, 1.35vw, 1.22rem);
+    line-height: 1.45;
+    text-transform: none;
+    letter-spacing: 0.01em;
+}
+
+.bible-error {
+    color: #9a4038;
+}
+
+.bible-context-panel-title {
+    font-family: var(--bible-label-font);
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 0.095em;
+}

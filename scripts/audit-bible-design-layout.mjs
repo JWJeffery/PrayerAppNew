@@ -167,6 +167,23 @@ if (!css.includes(".bible-reading-stage")) {
   fail("Bible Reader whitespace pass should tighten the reading stage.");
 }
 
+
+if (!css.includes("Bible Reader typography correction pass")) {
+  fail("Bible Reader typography correction CSS marker is missing.");
+}
+
+if (!css.includes("--bible-display-font")) {
+  fail("Bible Reader typography correction should define a display font token.");
+}
+
+if (!css.includes("text-transform: none")) {
+  fail("Bible Reader typography correction should remove forced ceremonial uppercase where needed.");
+}
+
+if (!css.includes("--bible-reader-font")) {
+  fail("Bible Reader typography correction should define a reader font token.");
+}
+
 if (failures.length) {
   console.error("FAIL Bible design layout audit");
   for (const failure of failures) console.error(` - ${failure}`);
