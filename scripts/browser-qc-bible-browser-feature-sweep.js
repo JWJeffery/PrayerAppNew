@@ -111,18 +111,26 @@
         element.dispatchEvent(new Event("change", { bubbles: true }));
     }
 
-    async function openPassage(reference, expectedText) {
+    function passageLooksResolved(bookKey, chapters = []) {
+        const resolved = window.UniversalOfficeBibleBrowser?.getCurrentResolved?.() || [];
+        if (!resolved.length) return false;
+        if (bookKey && !resolved.some(item => item.bookKey === bookKey)) return false;
+        if (chapters.length && !chapters.every(chapter => resolved.some(item => Number(item.chapter) === Number(chapter)))) return false;
+        return true;
+    }
+
+    async function openPassage(reference, expectedText, expected = {}) {
         const input = $("#bible-reference-input");
-        const button = $("#bible-reference-go");
-        assert(input && button, "Missing passage input or open button.");
+        const api = window.UniversalOfficeBibleBrowser;
+        assert(input && api?.displayCitation, "Missing passage input or Bible Browser display API.");
+
         setInputValue(input, reference);
-        button.click();
+        await api.displayCitation({ restoreScroll: false });
 
         await waitFor(() => {
-            const api = window.UniversalOfficeBibleBrowser;
-            const resolved = api?.getCurrentResolved?.() || [];
-            return resolved.length > 0 &&
-                textContent("#bible-results").toLowerCase().includes(String(expectedText).toLowerCase());
+            const hasText = textContent("#bible-results").toLowerCase().includes(String(expectedText).toLowerCase());
+            const hasResolvedIdentity = passageLooksResolved(expected.bookKey || "", expected.chapters || []);
+            return hasText && hasResolvedIdentity;
         }, 7000);
 
         return `${reference} opened.`;
@@ -291,15 +299,15 @@
             });
 
             await runStep(results, "open passage: Hebrews 1", async () => {
-                return openPassage("Hebrews 1", "Hebrews 1");
+                return openPassage("Hebrews 1", "Hebrews 1", { bookKey: "hebrews", chapters: [1] });
             });
 
             await runStep(results, "open passage: Jubilees 1", async () => {
-                return openPassage("Jubilees 1", "Book of Jubilees");
+                return openPassage("Jubilees 1", "Book of Jubilees", { bookKey: "jubilees", chapters: [1] });
             });
 
             await runStep(results, "open passage: Hebrews working range", async () => {
-                return openPassage("Hebrews 2:15-3:8; 4:16", "Hebrews 2");
+                return openPassage("Hebrews 2:15-3:8; 4:16", "Hebrews 2", { bookKey: "hebrews", chapters: [2, 3, 4] });
             });
 
             await runStep(results, "compare translations toggle", async () => {
@@ -330,8 +338,11 @@
                 await waitFor(() => chapter.options.length > 1, 3000);
                 setInputValue(chapter, "1");
 
-                $("#bible-book-open")?.click();
-                await waitFor(() => textContent("#bible-results").includes("Hebrews 1"), 5000);
+                await window.UniversalOfficeBibleBrowser.openSelectedBook();
+                await waitFor(() =>
+                    textContent("#bible-results").includes("Hebrews 1") &&
+                    passageLooksResolved("hebrews", [1])
+                , 5000);
             });
 
             await runStep(results, "advanced search returns results", async () => {
@@ -348,7 +359,8 @@
             });
 
             await runStep(results, "highlight colors render and save", async () => {
-                await openPassage("Hebrews 2:15-3:8; 4:16", "Hebrews 2");
+                await openPassage("Hebrews 2:15-3:8; 4:16", "Hebrews 2", { bookKey: "hebrews", chapters: [2, 3, 4] });
+                await waitFor(() => !!document.querySelector('.bible-verse[data-book-key="hebrews"][data-chapter="2"][data-verse="15"] .bible-verse-text'), 3000);
 
                 const targets = [
                     [2, 15, "yellow"],
@@ -373,7 +385,7 @@
             let multiAnnotationId = null;
 
             await runStep(results, "multi-verse highlight stores segments", async () => {
-                await openPassage("Hebrews 2:15-3:8; 4:16", "Hebrews 2");
+                await openPassage("Hebrews 2:15-3:8; 4:16", "Hebrews 2", { bookKey: "hebrews", chapters: [2, 3, 4] });
                 const annotation = await makeMultiVerseHighlight("green");
                 multiAnnotationId = annotation.id;
                 return `${annotation.segments.length} segments.`;

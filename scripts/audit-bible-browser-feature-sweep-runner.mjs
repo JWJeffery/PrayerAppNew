@@ -45,6 +45,14 @@ requireIncludes("browser feature sweep selectors", qc, [
   "bible-export-research-markdown"
 ]);
 
+
+requireIncludes("browser feature sweep direct passage resolution", qc, [
+  "await api.displayCitation({ restoreScroll: false });",
+  "passageLooksResolved",
+  "bookKey: \"hebrews\", chapters: [2, 3, 4]",
+  "await window.UniversalOfficeBibleBrowser.openSelectedBook();"
+]);
+
 if (pkg.scripts?.["audit:bible-browser-feature-sweep-runner"] !== "node scripts/audit-bible-browser-feature-sweep-runner.mjs") {
   failures.push("package.json missing audit:bible-browser-feature-sweep-runner script");
 }
