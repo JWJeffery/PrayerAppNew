@@ -2107,3 +2107,254 @@ body.office-active .ethiopian-theme .rubric-text {
         font-size: clamp(0.86rem, 3.2vw, 0.98rem);
     }
 }
+
+
+/* Shared office sidebar normalization pass */
+body.office-active {
+    --app-sidebar-width: 342px;
+    --app-sidebar-pad-x: 24px;
+    --app-sidebar-card-bg: rgba(255, 253, 248, 0.58);
+    --app-sidebar-card-border: rgba(103, 58, 31, 0.13);
+    --app-sidebar-muted-box: rgba(120, 104, 82, 0.24);
+    --app-sidebar-disabled-ink: rgba(122, 63, 23, 0.52);
+}
+
+body.office-active #settings-panel.app-mode-drawer,
+body.office-active #ethiopian-settings.app-mode-drawer,
+body.office-active #east-syriac-settings.app-mode-drawer,
+body.office-active #generic-settings.app-mode-drawer {
+    width: var(--app-sidebar-width) !important;
+    flex: 0 0 var(--app-sidebar-width) !important;
+    padding: 34px var(--app-sidebar-pad-x) 46px !important;
+    background:
+        linear-gradient(180deg, rgba(255, 251, 244, 0.98), rgba(241, 229, 210, 0.96)) !important;
+    color: var(--app-ink, #3f2618) !important;
+    font-family: var(--app-serif, Georgia, 'Times New Roman', serif) !important;
+    font-size: 1rem !important;
+    line-height: 1.35 !important;
+    border-right: 1px solid rgba(103, 58, 31, 0.18) !important;
+    box-shadow:
+        inset -1px 0 0 rgba(255, 255, 255, 0.54),
+        8px 0 30px rgba(74, 46, 26, 0.12) !important;
+    overflow-x: hidden !important;
+    overflow-y: auto !important;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(122, 63, 23, 0.34) transparent;
+}
+
+body.office-active #settings-panel.app-mode-drawer::-webkit-scrollbar,
+body.office-active #ethiopian-settings.app-mode-drawer::-webkit-scrollbar,
+body.office-active #east-syriac-settings.app-mode-drawer::-webkit-scrollbar,
+body.office-active #generic-settings.app-mode-drawer::-webkit-scrollbar {
+    width: 8px;
+}
+
+body.office-active #settings-panel.app-mode-drawer::-webkit-scrollbar-thumb,
+body.office-active #ethiopian-settings.app-mode-drawer::-webkit-scrollbar-thumb,
+body.office-active #east-syriac-settings.app-mode-drawer::-webkit-scrollbar-thumb,
+body.office-active #generic-settings.app-mode-drawer::-webkit-scrollbar-thumb {
+    background: rgba(122, 63, 23, 0.34);
+    border-radius: 999px;
+}
+
+body.office-active .app-mode-drawer h3 {
+    margin: 0 0 24px !important;
+    color: var(--app-bronze, #7a3f17) !important;
+    font-family: var(--app-serif, Georgia, 'Times New Roman', serif) !important;
+    font-size: clamp(1.12rem, 1.65vw, 1.38rem) !important;
+    font-weight: 700 !important;
+    line-height: 1.12 !important;
+    letter-spacing: 0.055em !important;
+    text-transform: none !important;
+    text-shadow: none !important;
+}
+
+body.office-active .app-mode-drawer .ordo-control,
+body.office-active .app-mode-drawer .setting-group,
+body.office-active .app-mode-drawer .nested-group {
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    margin: 0 0 14px !important;
+    padding: 16px 17px !important;
+    border: 1px solid var(--app-sidebar-card-border) !important;
+    border-radius: 16px !important;
+    background: var(--app-sidebar-card-bg) !important;
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.56),
+        0 8px 22px rgba(74, 46, 26, 0.045) !important;
+}
+
+body.office-active .app-mode-drawer .setting-group:last-child,
+body.office-active .app-mode-drawer .nested-group:last-child {
+    margin-bottom: 0 !important;
+}
+
+body.office-active .app-mode-drawer strong,
+body.office-active .app-mode-drawer label,
+body.office-active .app-mode-drawer .ordo-control label,
+body.office-active .app-mode-drawer .setting-group > div:first-child,
+body.office-active .app-mode-drawer .setting-group > strong,
+body.office-active .app-mode-drawer .nested-group > strong {
+    color: rgba(122, 63, 23, 0.98) !important;
+}
+
+body.office-active .app-mode-drawer .setting-group > strong,
+body.office-active .app-mode-drawer .nested-group > strong,
+body.office-active .app-mode-drawer h4,
+body.office-active .app-mode-drawer .sidebar-section-title {
+    display: block;
+    margin: 0 0 9px !important;
+    color: var(--app-bronze, #7a3f17) !important;
+    font-family: var(--app-serif, Georgia, 'Times New Roman', serif) !important;
+    font-size: 0.92rem !important;
+    font-weight: 700 !important;
+    line-height: 1.12 !important;
+    letter-spacing: 0.095em !important;
+    text-transform: uppercase !important;
+}
+
+body.office-active .app-mode-drawer .ordo-date,
+body.office-active .app-mode-drawer .active-hour,
+body.office-active .app-mode-drawer .sidebar-readout,
+body.office-active .app-mode-drawer .cycle-display,
+body.office-active .app-mode-drawer .fasting-display,
+body.office-active .app-mode-drawer .anaphora-display {
+    color: var(--app-rubric, #8f3b30) !important;
+    font-family: var(--app-serif, Georgia, 'Times New Roman', serif) !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.02em !important;
+}
+
+body.office-active .app-mode-drawer .ordo-buttons,
+body.office-active .app-mode-drawer .date-buttons,
+body.office-active .app-mode-drawer .button-row {
+    display: flex;
+    gap: 7px;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+body.office-active .app-mode-drawer .ordo-btn,
+body.office-active .app-mode-drawer button:not(.app-mode-return) {
+    border: 1px solid rgba(103, 58, 31, 0.16) !important;
+    border-radius: 10px !important;
+    background: rgba(255, 253, 248, 0.78) !important;
+    color: var(--app-bronze, #7a3f17) !important;
+    font-family: var(--app-serif, Georgia, 'Times New Roman', serif) !important;
+    font-size: 0.9rem !important;
+    font-weight: 600 !important;
+    letter-spacing: 0.02em !important;
+    text-transform: none !important;
+    padding: 7px 13px !important;
+    box-shadow: 0 4px 12px rgba(74, 46, 26, 0.045) !important;
+}
+
+body.office-active .app-mode-drawer .ordo-btn:hover,
+body.office-active .app-mode-drawer button:not(.app-mode-return):hover {
+    background: rgba(255, 253, 248, 0.96) !important;
+    border-color: rgba(122, 63, 23, 0.32) !important;
+}
+
+body.office-active .app-mode-drawer input[type="date"],
+body.office-active .app-mode-drawer input[type="text"],
+body.office-active .app-mode-drawer select {
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    min-height: 36px !important;
+    padding: 8px 11px !important;
+    border: 1px solid rgba(103, 58, 31, 0.15) !important;
+    border-radius: 10px !important;
+    background: rgba(255, 253, 248, 0.82) !important;
+    color: var(--app-ink, #3f2618) !important;
+    font-family: var(--app-serif, Georgia, 'Times New Roman', serif) !important;
+    font-size: 0.88rem !important;
+    line-height: 1.2 !important;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.56) !important;
+}
+
+body.office-active .app-mode-drawer input[type="radio"],
+body.office-active .app-mode-drawer input[type="checkbox"] {
+    accent-color: var(--app-bronze, #7a3f17);
+    margin-right: 7px;
+    transform: translateY(1px);
+}
+
+body.office-active .app-mode-drawer label {
+    display: block;
+    margin: 7px 0 !important;
+    color: rgba(63, 38, 24, 0.78) !important;
+    font-family: var(--app-serif, Georgia, 'Times New Roman', serif) !important;
+    font-size: 0.98rem !important;
+    line-height: 1.28 !important;
+    letter-spacing: 0.005em !important;
+}
+
+body.office-active .app-mode-drawer input[type="radio"]:checked + span,
+body.office-active .app-mode-drawer input[type="checkbox"]:checked + span,
+body.office-active .app-mode-drawer label:has(input[type="radio"]:checked),
+body.office-active .app-mode-drawer label:has(input[type="checkbox"]:checked) {
+    color: var(--app-rubric, #8f3b30) !important;
+    font-weight: 700 !important;
+}
+
+body.office-active .app-mode-drawer .disabled,
+body.office-active .app-mode-drawer .muted,
+body.office-active .app-mode-drawer .mode-note,
+body.office-active .app-mode-drawer small {
+    color: rgba(122, 63, 23, 0.56) !important;
+}
+
+body.office-active .app-mode-drawer .cycle-display,
+body.office-active .app-mode-drawer .fasting-display,
+body.office-active .app-mode-drawer .anaphora-display,
+body.office-active .app-mode-drawer .readonly-field,
+body.office-active .app-mode-drawer .summary-box {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    margin: 7px 0 0;
+    padding: 9px 11px;
+    border: 1px solid rgba(103, 58, 31, 0.10);
+    border-radius: 8px;
+    background: var(--app-sidebar-muted-box);
+    color: var(--app-sidebar-disabled-ink) !important;
+    font-size: 0.84rem !important;
+    line-height: 1.25 !important;
+}
+
+body.office-active .app-mode-drawer hr {
+    border: none !important;
+    border-top: 1px solid rgba(103, 58, 31, 0.10) !important;
+    margin: 16px 0 !important;
+}
+
+body.office-active #main-content.app-primary-canvas {
+    margin-left: 0 !important;
+}
+
+body.office-active #daily-office-section:has(#settings-panel:not(.mode-hidden)) #main-content.app-primary-canvas,
+body.office-active #daily-office-section:has(#ethiopian-settings:not(.mode-hidden)) #main-content.app-primary-canvas,
+body.office-active #daily-office-section:has(#east-syriac-settings:not(.mode-hidden)) #main-content.app-primary-canvas,
+body.office-active #daily-office-section:has(#generic-settings:not(.mode-hidden)) #main-content.app-primary-canvas {
+    width: calc(100vw - var(--app-nav-rail-width, 42px) - var(--app-sidebar-width)) !important;
+    flex: 1 1 auto !important;
+}
+
+@media (max-width: 900px) {
+    body.office-active {
+        --app-sidebar-width: min(342px, calc(100vw - 54px));
+    }
+
+    body.office-active #settings-panel.app-mode-drawer,
+    body.office-active #ethiopian-settings.app-mode-drawer,
+    body.office-active #east-syriac-settings.app-mode-drawer,
+    body.office-active #generic-settings.app-mode-drawer {
+        width: var(--app-sidebar-width) !important;
+        flex-basis: var(--app-sidebar-width) !important;
+        padding-left: 20px !important;
+        padding-right: 20px !important;
+    }
+}

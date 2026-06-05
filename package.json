@@ -36,7 +36,8 @@
     "audit:admin-design-shell": "node scripts/audit-admin-design-shell.mjs",
     "audit:shared-mode-navigation-grammar": "node scripts/audit-shared-mode-navigation-grammar.mjs",
     "audit:mode-chrome-normalization": "node scripts/audit-mode-chrome-normalization.mjs",
-    "audit:office-content-typography": "node scripts/audit-office-content-typography.mjs"
+    "audit:office-content-typography": "node scripts/audit-office-content-typography.mjs",
+    "audit:shared-office-sidebars": "node scripts/audit-shared-office-sidebars.mjs"
   },
   "repository": {
     "type": "git",
