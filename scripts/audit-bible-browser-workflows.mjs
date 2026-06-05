@@ -247,6 +247,17 @@ if (files.index.includes("Study Helps") || files.index.includes("bible-guide-fat
   fail("Fathers controls should not return to the sidebar Study Helps block.");
 }
 
+
+requireIncludes("context panel empty reflow guard", files.browser, [
+  "Reflow must never open an empty Study Help shell.",
+  "if (panel.hidden || !body.innerHTML.trim()) return;",
+  "showContextPanel() is the only function allowed to unhide the panel."
+]);
+
+if (files.browser.includes("panel.hidden = false;\n\n        if (panel.dataset.contextMode === \"study\")")) {
+  fail("context panel reflow must not unhide the panel before content is present");
+}
+
 if (failures.length) {
   console.error("FAIL Bible browser workflow audit");
   for (const failure of failures) console.error(` - ${failure}`);
