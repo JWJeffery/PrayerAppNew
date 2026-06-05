@@ -6,6 +6,87 @@ const DEFAULT_BIBLE_TRANSLATION = 'NRSV';
 const NT_BOOKS = ['1corinthians', '1john', '1peter', '1thessalonians', '1timothy', '2corinthians', '2john', '2peter', '2thessalonians', '2timothy', '3john', 'acts', 'colossians', 'ephesians', 'galatians', 'hebrews', 'james', 'john', 'jude', 'luke', 'mark', 'matthew', 'philemon', 'philippians', 'revelation', 'romans', 'titus'];
 const BOOK_ALIASES = { 'ecclesiasticus': 'sirach', 'wisdomofsolomon': 'wisdom', 'songofthreeyoungmen': 'daniel', 'songofthreeholychildren': 'daniel', 'belandthedragon': 'daniel', 'bel': 'daniel', 'susanna': 'daniel', 'prayerofazariah': 'daniel', 'therestofesther': 'estherGK', 'additionstoesther': 'estherGK', 'therestofdaniel': 'danielGK', 'additionstodaniel': 'danielGK', 'songsofsolomon': 'songofsolomon', 'canticles': 'songofsolomon', 'canticleofcanticles': 'songofsolomon' };
 
+const ETHIOPIAN_CANON_BOOKS = {
+    // Ethiopian canonical scripture resources. These are routed through the
+    // ET scripture corpus rather than the general OT/NT corpus.
+    '1clemet': {
+        canonicalId: '1CLEM_ET',
+        path: 'data/bible/ET/1clementET.json'
+    },
+    '1clementet': {
+        canonicalId: '1CLEM_ET',
+        path: 'data/bible/ET/1clementET.json'
+    },
+    'firstclementet': {
+        canonicalId: '1CLEM_ET',
+        path: 'data/bible/ET/1clementET.json'
+    },
+    'qalementos': {
+        canonicalId: '1CLEM_ET',
+        path: 'data/bible/ET/1clementET.json'
+    },
+    'qalementos1': {
+        canonicalId: '1CLEM_ET',
+        path: 'data/bible/ET/1clementET.json'
+    },
+    'hermet': {
+        canonicalId: 'HERM_ET',
+        path: 'data/bible/ET/hermastheshepherdET.json'
+    },
+    'hermaset': {
+        canonicalId: 'HERM_ET',
+        path: 'data/bible/ET/hermastheshepherdET.json'
+    },
+    'shepherdofhermaset': {
+        canonicalId: 'HERM_ET',
+        path: 'data/bible/ET/hermastheshepherdET.json'
+    },
+    'hermastheshepherdet': {
+        canonicalId: 'HERM_ET',
+        path: 'data/bible/ET/hermastheshepherdET.json'
+    }
+};
+
+function _normalizeBibleBookKey(value) {
+    return String(value || '')
+        .trim()
+        .toLowerCase()
+        .replace(/[’']/g, '')
+        .replace(/[^a-z0-9]/g, '');
+}
+
+function _resolveBibleBookSource(book, isPsalm = false) {
+    let bookName = String(book || '').toLowerCase().replace(/\s/g, '');
+    if (BOOK_ALIASES[bookName]) bookName = BOOK_ALIASES[bookName];
+
+    const etSource = ETHIOPIAN_CANON_BOOKS[_normalizeBibleBookKey(bookName)]
+        || ETHIOPIAN_CANON_BOOKS[_normalizeBibleBookKey(book)];
+
+    if (etSource) {
+        return {
+            bookName,
+            canonicalId: etSource.canonicalId,
+            path: etSource.path,
+            filename: etSource.path.split('/').pop(),
+            folder: 'ET',
+            cacheKey: etSource.path
+        };
+    }
+
+    const filename = isPsalm ? 'psalms.json' : bookName + '.json';
+    const folder = NT_BOOKS.includes(filename.replace('.json', '')) ? 'NT' : 'OT';
+
+    return {
+        bookName,
+        canonicalId: null,
+        path: `data/bible/${folder}/${filename}`,
+        filename,
+        folder,
+        cacheKey: `${folder}/${filename}`
+    };
+}
+
+
 function _normalizeBibleTranslation(value) {
     return (typeof value === 'string' && value.trim()) ? value.trim() : DEFAULT_BIBLE_TRANSLATION;
 }
@@ -61,23 +142,24 @@ async function getScriptureText(citation, options = {}) {
 async function extractFromBook(book, ranges, options = {}) {
     const translation = _normalizeBibleTranslation(options && options.translation);
     const isPsalm = book.toLowerCase().startsWith('psalm');
-    let bookName = book.toLowerCase().replace(/\s/g, '');
-    if (BOOK_ALIASES[bookName]) bookName = BOOK_ALIASES[bookName];
-    let filename = isPsalm ? 'psalms.json' : bookName + '.json';
-    let folder = NT_BOOKS.includes(filename.replace('.json', '')) ? 'NT' : 'OT';
+    const source = _resolveBibleBookSource(book, isPsalm);
+    const bookName = source.bookName;
     
-    if (!bibleCache.books[filename]) {
+    if (!bibleCache.books[source.cacheKey]) {
         try {
-            const res = await fetch(`data/bible/${folder}/${filename}`);
-            bibleCache.books[filename] = await res.json();
-            bibleCache.accessOrder.push(filename);
+            const res = await fetch(source.path);
+            if (res && res.ok === false) {
+                throw new Error(`Unable to load scripture source: ${source.path}`);
+            }
+            bibleCache.books[source.cacheKey] = await res.json();
+            bibleCache.accessOrder.push(source.cacheKey);
             if (bibleCache.accessOrder.length > bibleCache.MAX_CACHED_BOOKS) {
                 delete bibleCache.books[bibleCache.accessOrder.shift()];
             }
         } catch (err) { return `[Scripture unavailable: ${book}]`; }
     }
     
-    const bookData = (!isPsalm && Array.isArray(bibleCache.books[filename])) ? bibleCache.books[filename][0] : bibleCache.books[filename];
+    const bookData = (!isPsalm && Array.isArray(bibleCache.books[source.cacheKey])) ? bibleCache.books[source.cacheKey][0] : bibleCache.books[source.cacheKey];
     let extractedText = '';
     // lastChapter is scoped to this call chain — tracks chapter across sub-ranges
     // within a single book fetch, with no shared global state between concurrent calls.
@@ -181,22 +263,22 @@ function _parseSubrange(s, inheritedChapter) {
 }
 
 async function _getLastVerse(book, chapter) {
-    let bookName = book.toLowerCase().replace(/\s/g, '');
-    if (BOOK_ALIASES[bookName]) bookName = BOOK_ALIASES[bookName];
-    const filename = bookName + '.json';
-    const folder = NT_BOOKS.includes(bookName) ? 'NT' : 'OT';
-    if (!bibleCache.books[filename]) {
+    const source = _resolveBibleBookSource(book, false);
+    if (!bibleCache.books[source.cacheKey]) {
         try {
-            const res = await fetch(`data/bible/${folder}/${filename}`);
-            bibleCache.books[filename] = await res.json();
-            bibleCache.accessOrder.push(filename);
+            const res = await fetch(source.path);
+            if (res && res.ok === false) {
+                throw new Error(`Unable to load scripture source: ${source.path}`);
+            }
+            bibleCache.books[source.cacheKey] = await res.json();
+            bibleCache.accessOrder.push(source.cacheKey);
             if (bibleCache.accessOrder.length > bibleCache.MAX_CACHED_BOOKS) {
                 delete bibleCache.books[bibleCache.accessOrder.shift()];
             }
         } catch (err) { throw new Error('Cannot load book data for ' + book); }
     }
-    const bookData = Array.isArray(bibleCache.books[filename])
-        ? bibleCache.books[filename][0] : bibleCache.books[filename];
+    const bookData = Array.isArray(bibleCache.books[source.cacheKey])
+        ? bibleCache.books[source.cacheKey][0] : bibleCache.books[source.cacheKey];
     const ch = bookData.chapters.find(c => c.num === chapter);
     if (!ch || !ch.verses || ch.verses.length === 0) throw new Error('Chapter ' + chapter + ' not found in ' + book);
     return Math.max(...ch.verses.map(v => v.num));
@@ -207,7 +289,7 @@ async function _normalizeCitationToSegments(citation) {
     const semiParts = citation.split(';').map(s => s.trim()).filter(Boolean);
     let inheritedBook = null;
     for (const semiPart of semiParts) {
-        const bookMatch = semiPart.match(/^((?:[1-3]\s+)?[A-Za-z]+(?:\s+[A-Za-z]+)*)\s+(\d.*)$/);
+        const bookMatch = semiPart.match(/^((?:[1-3]\s+)?[A-Za-z0-9_]+(?:\s+[A-Za-z0-9_]+)*)\s+(\d.*)$/);
         let book, rangeBlock;
         if (bookMatch) {
             book = bookMatch[1].trim();
