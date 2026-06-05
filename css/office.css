@@ -2358,3 +2358,151 @@ body.office-active #daily-office-section:has(#generic-settings:not(.mode-hidden)
         padding-right: 20px !important;
     }
 }
+
+
+/* Shared office navigation apparatus pass */
+.shared-office-nav {
+    display: grid;
+    gap: 14px;
+    margin: 0 0 18px;
+}
+
+.shared-office-nav-card {
+    border: 1px solid rgba(103, 58, 31, 0.13);
+    border-radius: 16px;
+    background: rgba(255, 253, 248, 0.62);
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.58),
+        0 8px 22px rgba(74, 46, 26, 0.045);
+    padding: 16px 17px;
+}
+
+.shared-office-nav-section-title {
+    margin: 0 0 9px;
+    color: var(--app-bronze, #7a3f17);
+    font-family: var(--app-serif, Georgia, 'Times New Roman', serif);
+    font-size: 0.92rem;
+    font-weight: 700;
+    line-height: 1.12;
+    letter-spacing: 0.095em;
+    text-transform: uppercase;
+}
+
+.shared-office-nav-current {
+    margin: 0 0 12px;
+    color: var(--app-rubric, #8f3b30);
+    font-family: var(--app-serif, Georgia, 'Times New Roman', serif);
+    font-size: 0.94rem;
+    font-weight: 700;
+    line-height: 1.28;
+}
+
+.shared-office-nav-actions {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 7px;
+    margin: 0 0 11px;
+}
+
+.shared-office-nav-actions button {
+    border: 1px solid rgba(103, 58, 31, 0.16) !important;
+    border-radius: 10px !important;
+    background: rgba(255, 253, 248, 0.78) !important;
+    color: var(--app-bronze, #7a3f17) !important;
+    font-family: var(--app-serif, Georgia, 'Times New Roman', serif) !important;
+    font-size: 0.9rem !important;
+    font-weight: 600 !important;
+    letter-spacing: 0.02em !important;
+    text-transform: none !important;
+    padding: 7px 8px !important;
+    box-shadow: 0 4px 12px rgba(74, 46, 26, 0.045) !important;
+}
+
+.shared-office-nav-date-picker {
+    display: grid !important;
+    gap: 5px;
+    margin: 0 !important;
+    color: rgba(122, 63, 23, 0.76) !important;
+    font-size: 0.84rem !important;
+}
+
+.shared-office-nav-date-picker span {
+    color: rgba(122, 63, 23, 0.76);
+    font-size: 0.82rem;
+}
+
+.shared-office-nav-date-picker input[type="date"] {
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    min-height: 36px !important;
+    padding: 8px 11px !important;
+    border: 1px solid rgba(103, 58, 31, 0.15) !important;
+    border-radius: 10px !important;
+    background: rgba(255, 253, 248, 0.82) !important;
+    color: var(--app-ink, #3f2618) !important;
+    font-family: var(--app-serif, Georgia, 'Times New Roman', serif) !important;
+    font-size: 0.88rem !important;
+}
+
+.shared-office-nav-options {
+    display: grid;
+    gap: 7px;
+}
+
+.shared-office-nav-option {
+    display: grid !important;
+    grid-template-columns: 18px minmax(0, 1fr);
+    align-items: start;
+    gap: 8px;
+    margin: 0 !important;
+    padding: 8px 9px;
+    border: 1px solid rgba(103, 58, 31, 0.09);
+    border-radius: 10px;
+    background: rgba(255, 253, 248, 0.38);
+    color: rgba(63, 38, 24, 0.82) !important;
+    cursor: pointer;
+}
+
+.shared-office-nav-option:hover {
+    border-color: rgba(122, 63, 23, 0.24);
+    background: rgba(255, 253, 248, 0.62);
+}
+
+.shared-office-nav-option input[type="radio"] {
+    margin: 2px 0 0 !important;
+    accent-color: var(--app-bronze, #7a3f17);
+}
+
+.shared-office-nav-option:has(input[type="radio"]:checked) {
+    border-color: rgba(143, 59, 48, 0.24);
+    background: rgba(143, 59, 48, 0.055);
+}
+
+.shared-office-nav-option-copy {
+    display: grid;
+    gap: 1px;
+}
+
+.shared-office-nav-option-label {
+    color: var(--app-ink, #3f2618);
+    font-family: var(--app-serif, Georgia, 'Times New Roman', serif);
+    font-size: 0.96rem;
+    font-weight: 700;
+    line-height: 1.18;
+}
+
+.shared-office-nav-option-detail {
+    color: rgba(63, 38, 24, 0.58);
+    font-family: var(--app-serif, Georgia, 'Times New Roman', serif);
+    font-size: 0.78rem;
+    line-height: 1.18;
+}
+
+.shared-office-nav-option:has(input[type="radio"]:checked) .shared-office-nav-option-label {
+    color: var(--app-rubric, #8f3b30);
+}
+
+.shared-office-nav-legacy-hidden {
+    display: none !important;
+}

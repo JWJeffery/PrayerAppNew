@@ -882,6 +882,361 @@ function setCustomDate(dateStr) {
     requestRender();
 }
 
+
+
+// ── Shared Office Navigation Apparatus ───────────────────────────────────────
+// One control grammar for all office traditions:
+// date navigation + date picker + hour/office selection.
+// Tradition-specific words are allowed; interaction structure is not.
+const SHARED_OFFICE_NAVIGATOR_CONFIGS = {
+    daily: {
+        panelId: "settings-panel",
+        heading: "Office Navigation",
+        dateTitle: "Date",
+        datePickerLabel: "Select Date",
+        officeTitle: "Time of Day",
+        hideSelectors: [".ordo-control"],
+        hideHeadings: ["Time of Day"],
+        options: [
+            { value: "morning-office", label: "Morning Prayer", detail: "Morning" },
+            { value: "noonday-office", label: "Noonday Prayer", detail: "Midday" },
+            { value: "evening-office", label: "Evening Prayer", detail: "Evening" },
+            { value: "compline-office", label: "Compline", detail: "Night" },
+        ],
+    },
+    ethiopian: {
+        panelId: "ethiopian-settings",
+        heading: "Sa'atat Navigation",
+        dateTitle: "Date",
+        datePickerLabel: "Select Date",
+        officeTitle: "Canonical Watch",
+        hideSelectors: ["#eth-override-panel"],
+        hideHeadings: ["Active Watch"],
+        hideButtonRowsAfterHeadings: ["Active Watch"],
+        options: [
+            { value: "eth-nigatu-hour-text", label: "Nigatu — ንጋቱ", detail: "Matins · 06:00–09:00" },
+            { value: "eth-meserk-hour-text", label: "Mese'rk — መሠርቅ", detail: "Third Hour · 09:00–12:00" },
+            { value: "eth-lika-hour-text", label: "Lika — ሊካ", detail: "Sixth Hour · 12:00–15:00" },
+            { value: "eth-terk-hour-text", label: "Tese'at — ተሰዓት", detail: "Ninth Hour · 15:00–17:00" },
+            { value: "eth-serkh-hour-text", label: "Serkh — ሠርክ", detail: "Vespers · 17:00–18:00" },
+            { value: "eth-nome-hour-text", label: "Nime — ኖሜ", detail: "Compline · 18:00–21:00" },
+            { value: "eth-hour-7", label: "Le'lit", detail: "First Night Watch · 21:00–00:00" },
+            { value: "eth-lelit-hour-text", label: "Le'lit — ሌሊት", detail: "Midnight · 00:00–03:00" },
+            { value: "eth-mahlet-hour-text", label: "Mahlet — ማህሌት", detail: "Pre-dawn Vigil · 03:00–06:00" },
+        ],
+    },
+    eastSyriac: {
+        panelId: "east-syriac-settings",
+        heading: "Hudra Navigation",
+        dateTitle: "Date",
+        datePickerLabel: "Select Date",
+        officeTitle: "Canonical Hour",
+        hideSelectors: ["#esy-override-panel"],
+        hideHeadings: ["Active Hour"],
+        hideButtonRowsAfterHeadings: ["Active Hour"],
+        options: [
+            { value: "sapra", label: "Sapra", detail: "Morning Prayer · 06:00–09:00" },
+            { value: "qutaa", label: "Quta'a", detail: "Third Hour · 09:00–12:00" },
+            { value: "endana", label: "Endana", detail: "Sixth Hour · 12:00–15:00" },
+            { value: "dtsha-sain", label: "D-tsha' Sa'in", detail: "Ninth Hour · 15:00–18:00" },
+            { value: "ramsha", label: "Ramsha", detail: "Evening Prayer · 18:00–21:00" },
+            { value: "lelya", label: "Lelya", detail: "Night Office · 21:00–03:00" },
+            { value: "subaa", label: "Suba'a", detail: "Pre-dawn · 03:00–06:00" },
+        ],
+    },
+    horologion: {
+        panelId: "generic-settings",
+        heading: "Horologion Navigation",
+        dateTitle: "Date",
+        datePickerLabel: "Select Date",
+        officeTitle: "Office",
+        hideSelectors: [".ordo-control"],
+        hideNestedHeadings: ["Office"],
+        options: [
+            { value: "vespers", label: "Vespers", detail: "Evening" },
+            { value: "small-compline", label: "Small Compline", detail: "Night" },
+            { value: "great-compline", label: "Great Compline", detail: "Night" },
+            { value: "midnight-office", label: "Midnight Office", detail: "Midnight" },
+            { value: "orthros", label: "Orthros", detail: "Matins" },
+            { value: "first-hour", label: "First Hour", detail: "Early morning" },
+            { value: "third-hour", label: "Third Hour", detail: "Mid-morning" },
+            { value: "sixth-hour", label: "Sixth Hour", detail: "Midday" },
+            { value: "ninth-hour", label: "Ninth Hour", detail: "Afternoon" },
+            { value: "typika", label: "Typika", detail: "Reader service" },
+            { value: "interhour-first", label: "Interhour of the First Hour", detail: "Interhour" },
+            { value: "interhour-third", label: "Interhour of the Third Hour", detail: "Interhour" },
+            { value: "interhour-sixth", label: "Interhour of the Sixth Hour", detail: "Interhour" },
+            { value: "interhour-ninth", label: "Interhour of the Ninth Hour", detail: "Interhour" },
+        ],
+    },
+};
+
+function _sharedOfficeNavigatorModeKey() {
+    if (selectedMode === "ethiopian-saatat") return "ethiopian";
+    if (selectedMode === "east-syriac") return "eastSyriac";
+    if (selectedMode === "horologion") return "horologion";
+    if (selectedMode === "daily" || !selectedMode) return "daily";
+    return null;
+}
+
+function _sharedOfficeNavigatorIsoDate(date) {
+    const d = date instanceof Date && !Number.isNaN(date.getTime()) ? date : new Date();
+    const year = d.getFullYear();
+    const month = String(d.getMonth() + 1).padStart(2, "0");
+    const day = String(d.getDate()).padStart(2, "0");
+    return `${year}-${month}-${day}`;
+}
+
+function _sharedOfficeNavigatorReadableDate() {
+    const d = currentDate instanceof Date && !Number.isNaN(currentDate.getTime()) ? currentDate : new Date();
+    return d.toLocaleDateString("en-US", {
+        weekday: "long",
+        year: "numeric",
+        month: "long",
+        day: "numeric",
+    });
+}
+
+function _sharedOfficeNavigatorEscape(value) {
+    return String(value ?? "")
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;");
+}
+
+function _sharedOfficeNavigatorActiveValue(modeKey) {
+    if (modeKey === "daily") {
+        return document.querySelector('input[name="office-time"]:checked')?.value || "morning-office";
+    }
+    if (modeKey === "ethiopian") {
+        return window._temporalOverride?.hourId || getEthiopianHourInfo().hourId;
+    }
+    if (modeKey === "eastSyriac") {
+        return window._esyTemporalOverride?.hourId || getEastSyriacHourInfo().value;
+    }
+    if (modeKey === "horologion") {
+        return selectedHorologionOffice || "vespers";
+    }
+    return "";
+}
+
+function _sharedOfficeNavigatorCurrentLine(modeKey) {
+    if (modeKey === "ethiopian") {
+        const watch = document.getElementById("eth-active-watch-label")?.textContent?.trim();
+        const date = document.getElementById("eth-active-date-label")?.textContent?.trim();
+        return [watch, date].filter(Boolean).join(" · ") || _sharedOfficeNavigatorReadableDate();
+    }
+    if (modeKey === "eastSyriac") {
+        const hour = document.getElementById("esy-active-hour-label")?.textContent?.trim();
+        const date = document.getElementById("esy-active-date-label")?.textContent?.trim();
+        return [hour, date].filter(Boolean).join(" · ") || _sharedOfficeNavigatorReadableDate();
+    }
+    if (modeKey === "horologion") {
+        return document.getElementById("generic-display-date")?.textContent?.trim() || _sharedOfficeNavigatorReadableDate();
+    }
+    return document.getElementById("display-date")?.textContent?.trim() || _sharedOfficeNavigatorReadableDate();
+}
+
+function _sharedOfficeNavigatorHideLegacy(panel, config) {
+    panel.querySelectorAll(".shared-office-nav-legacy-hidden").forEach(el => el.classList.remove("shared-office-nav-legacy-hidden"));
+
+    for (const selector of config.hideSelectors || []) {
+        panel.querySelectorAll(selector).forEach(el => el.classList.add("shared-office-nav-legacy-hidden"));
+    }
+
+    for (const heading of config.hideHeadings || []) {
+        Array.from(panel.children).forEach(el => {
+            if (el.classList?.contains("setting-group") && el.textContent.trim().toLowerCase().includes(heading.toLowerCase())) {
+                el.classList.add("shared-office-nav-legacy-hidden");
+            }
+        });
+    }
+
+    for (const heading of config.hideButtonRowsAfterHeadings || []) {
+        const groups = Array.from(panel.children);
+        for (let i = 0; i < groups.length; i++) {
+            const el = groups[i];
+            if (el.classList?.contains("setting-group") && el.textContent.trim().toLowerCase().includes(heading.toLowerCase())) {
+                const next = groups[i + 1];
+                if (next?.classList?.contains("ordo-buttons")) next.classList.add("shared-office-nav-legacy-hidden");
+            }
+        }
+    }
+
+    for (const heading of config.hideNestedHeadings || []) {
+        panel.querySelectorAll(".nested-group").forEach(el => {
+            const strong = el.querySelector("strong");
+            if (strong && strong.textContent.trim().toLowerCase() === heading.toLowerCase()) {
+                el.classList.add("shared-office-nav-legacy-hidden");
+            }
+        });
+    }
+}
+
+function renderSharedOfficeNavigation() {
+    const modeKey = _sharedOfficeNavigatorModeKey();
+    if (!modeKey) return;
+
+    const config = SHARED_OFFICE_NAVIGATOR_CONFIGS[modeKey];
+    const panel = document.getElementById(config.panelId);
+    if (!panel || panel.classList.contains("mode-hidden")) return;
+
+    _sharedOfficeNavigatorHideLegacy(panel, config);
+
+    let nav = panel.querySelector(".shared-office-nav");
+    if (!nav) {
+        nav = document.createElement("div");
+        nav.className = "shared-office-nav";
+        const heading = panel.querySelector("h3");
+        if (heading?.parentNode) {
+            heading.insertAdjacentElement("afterend", nav);
+        } else {
+            panel.prepend(nav);
+        }
+    }
+
+    const activeValue = _sharedOfficeNavigatorActiveValue(modeKey);
+    const currentLine = _sharedOfficeNavigatorCurrentLine(modeKey);
+    const isoDate = _sharedOfficeNavigatorIsoDate(currentDate);
+
+    const optionHtml = config.options.map(option => {
+        const checked = option.value === activeValue ? "checked" : "";
+        return `
+            <label class="shared-office-nav-option">
+                <input type="radio"
+                    name="shared-office-nav-${modeKey}"
+                    value="${_sharedOfficeNavigatorEscape(option.value)}"
+                    ${checked}
+                    onchange="setSharedOfficeNavHour('${modeKey}', this.value)">
+                <span class="shared-office-nav-option-copy">
+                    <span class="shared-office-nav-option-label">${_sharedOfficeNavigatorEscape(option.label)}</span>
+                    <span class="shared-office-nav-option-detail">${_sharedOfficeNavigatorEscape(option.detail || "")}</span>
+                </span>
+            </label>`;
+    }).join("");
+
+    nav.dataset.sharedOfficeNav = modeKey;
+    nav.innerHTML = `
+        <section class="shared-office-nav-card shared-office-nav-date-card">
+            <div class="shared-office-nav-section-title">${_sharedOfficeNavigatorEscape(config.dateTitle)}</div>
+            <div class="shared-office-nav-current">${_sharedOfficeNavigatorEscape(currentLine)}</div>
+            <div class="shared-office-nav-actions" aria-label="${_sharedOfficeNavigatorEscape(config.dateTitle)} navigation">
+                <button type="button" onclick="changeSharedOfficeNavDate('${modeKey}', -1)">Prev</button>
+                <button type="button" onclick="todaySharedOfficeNavDate('${modeKey}')">Today</button>
+                <button type="button" onclick="changeSharedOfficeNavDate('${modeKey}', 1)">Next</button>
+            </div>
+            <label class="shared-office-nav-date-picker">
+                <span>${_sharedOfficeNavigatorEscape(config.datePickerLabel)}</span>
+                <input type="date"
+                    value="${isoDate}"
+                    onchange="setSharedOfficeNavDate('${modeKey}', this.value)">
+            </label>
+        </section>
+        <section class="shared-office-nav-card shared-office-nav-hour-card">
+            <div class="shared-office-nav-section-title">${_sharedOfficeNavigatorEscape(config.officeTitle)}</div>
+            <div class="shared-office-nav-options" role="radiogroup" aria-label="${_sharedOfficeNavigatorEscape(config.officeTitle)}">
+                ${optionHtml}
+            </div>
+        </section>`;
+}
+
+function setSharedOfficeNavHour(modeKey, value) {
+    if (modeKey === "daily") {
+        const radio = document.querySelector(`input[name="office-time"][value="${CSS.escape(value)}"]`);
+        if (radio) radio.checked = true;
+        updateSidebarForOffice();
+        saveSettings();
+        requestRender();
+        return;
+    }
+
+    if (modeKey === "ethiopian") {
+        const picker = document.getElementById("eth-override-date");
+        if (picker && !picker.value) picker.value = _sharedOfficeNavigatorIsoDate(currentDate);
+        const radio = document.querySelector(`input[name="eth-watch-override"][value="${CSS.escape(value)}"]`);
+        if (radio) radio.checked = true;
+        applyEthOverride();
+        return;
+    }
+
+    if (modeKey === "eastSyriac") {
+        const picker = document.getElementById("esy-override-date");
+        if (picker && !picker.value) picker.value = _sharedOfficeNavigatorIsoDate(currentDate);
+        const radio = document.querySelector(`input[name="esy-hour-override"][value="${CSS.escape(value)}"]`);
+        if (radio) radio.checked = true;
+        applyEsyOverride();
+        return;
+    }
+
+    if (modeKey === "horologion") {
+        selectHorologionOffice(value);
+    }
+}
+
+function setSharedOfficeNavDate(modeKey, dateValue) {
+    if (!dateValue) return;
+
+    if (modeKey === "daily" || modeKey === "horologion") {
+        setCustomDate(dateValue);
+        renderSharedOfficeNavigation();
+        return;
+    }
+
+    if (modeKey === "ethiopian") {
+        const picker = document.getElementById("eth-override-date");
+        if (picker) picker.value = dateValue;
+        applyEthOverride();
+        return;
+    }
+
+    if (modeKey === "eastSyriac") {
+        const picker = document.getElementById("esy-override-date");
+        if (picker) picker.value = dateValue;
+        applyEsyOverride();
+    }
+}
+
+function changeSharedOfficeNavDate(modeKey, days) {
+    if (modeKey === "ethiopian" && typeof ethChangeDate === "function") {
+        ethChangeDate(days);
+        renderSharedOfficeNavigation();
+        return;
+    }
+
+    if (modeKey === "eastSyriac" && typeof esyChangeDate === "function") {
+        esyChangeDate(days);
+        renderSharedOfficeNavigation();
+        return;
+    }
+
+    changeDate(days);
+    renderSharedOfficeNavigation();
+}
+
+function todaySharedOfficeNavDate(modeKey) {
+    if (modeKey === "ethiopian" && typeof ethToday === "function") {
+        ethToday();
+        renderSharedOfficeNavigation();
+        return;
+    }
+
+    if (modeKey === "eastSyriac" && typeof esyToday === "function") {
+        esyToday();
+        renderSharedOfficeNavigation();
+        return;
+    }
+
+    resetDate();
+    renderSharedOfficeNavigation();
+}
+
+window.renderSharedOfficeNavigation = renderSharedOfficeNavigation;
+window.setSharedOfficeNavHour = setSharedOfficeNavHour;
+window.setSharedOfficeNavDate = setSharedOfficeNavDate;
+window.changeSharedOfficeNavDate = changeSharedOfficeNavDate;
+window.todaySharedOfficeNavDate = todaySharedOfficeNavDate;
+
 // ── Horologion office selector ────────────────────────────────────────────
 
 function selectHorologionOffice(officeKey) {
@@ -1296,6 +1651,9 @@ async function resolveCommemorations(date, tradition, opts) {
 }
 
 function requestRender() {
+  if (typeof renderSharedOfficeNavigation === 'function') {
+    renderSharedOfficeNavigation();
+  }
   pendingRender = true;
 
   if (!renderScheduled) {
