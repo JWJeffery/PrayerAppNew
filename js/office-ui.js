@@ -667,14 +667,15 @@ async function selectMode(mode) {
         }
         if (ethSettings) {
             ethSettings.classList.remove('mode-hidden');
-            ethSettings.classList.add('sidebar-hidden');
+            ethSettings.classList.remove('sidebar-hidden');
         }
-        mainContent.classList.add('sidebar-hidden');
+        mainContent.classList.remove('sidebar-hidden');
 
         document.getElementById('office-display').innerHTML =
             `<div class="office-container"><h3>Preparing the Sa'atat...</h3><p>Loading the Ethiopian Book of Hours.</p></div>`;
 
         await hydrateForEthiopianSaatat();
+        initializeOfficeDefaultsForCurrentDateTime('ethiopian');
         isHydrationComplete = true;
         requestRender();
 
@@ -703,6 +704,7 @@ async function selectMode(mode) {
             `<div class="office-container"><h3>Preparing Ramsha...</h3><p>Loading the Church of the East Evening Prayer.</p></div>`;
 
         await hydrateForEastSyriac();
+        initializeOfficeDefaultsForCurrentDateTime('eastSyriac');
         isHydrationComplete = true;
         requestRender();
 
@@ -748,6 +750,7 @@ async function selectMode(mode) {
             `<div class="office-container"><h3>Preparing ${_horologionOfficeLabel(selectedHorologionOffice)}…</h3><p>Loading the Byzantine Office.</p></div>`;
 
         await loadKernel();
+        initializeOfficeDefaultsForCurrentDateTime('horologion');
         isHydrationComplete = true;
         requestRender();
 
@@ -771,6 +774,7 @@ async function selectMode(mode) {
 
         await hydrateForDailyOffice();
         loadSettings();
+        initializeOfficeDefaultsForCurrentDateTime('daily');
         updateSidebarForOffice();
         isHydrationComplete = true;
         requestRender();
@@ -1021,21 +1025,27 @@ function _sharedOfficeNavigatorActiveValue(modeKey) {
     return "";
 }
 
+function _sharedOfficeNavigatorCleanLine(value) {
+    const text = String(value || "").trim();
+    if (!text || text === "—" || /^loading/i.test(text)) return "";
+    return text;
+}
+
 function _sharedOfficeNavigatorCurrentLine(modeKey) {
     if (modeKey === "ethiopian") {
-        const watch = document.getElementById("eth-active-watch-label")?.textContent?.trim();
-        const date = document.getElementById("eth-active-date-label")?.textContent?.trim();
+        const watch = _sharedOfficeNavigatorCleanLine(document.getElementById("eth-active-watch-label")?.textContent);
+        const date = _sharedOfficeNavigatorCleanLine(document.getElementById("eth-active-date-label")?.textContent);
         return [watch, date].filter(Boolean).join(" · ") || _sharedOfficeNavigatorReadableDate();
     }
     if (modeKey === "eastSyriac") {
-        const hour = document.getElementById("esy-active-hour-label")?.textContent?.trim();
-        const date = document.getElementById("esy-active-date-label")?.textContent?.trim();
+        const hour = _sharedOfficeNavigatorCleanLine(document.getElementById("esy-active-hour-label")?.textContent);
+        const date = _sharedOfficeNavigatorCleanLine(document.getElementById("esy-active-date-label")?.textContent);
         return [hour, date].filter(Boolean).join(" · ") || _sharedOfficeNavigatorReadableDate();
     }
     if (modeKey === "horologion") {
-        return document.getElementById("generic-display-date")?.textContent?.trim() || _sharedOfficeNavigatorReadableDate();
+        return _sharedOfficeNavigatorCleanLine(document.getElementById("generic-display-date")?.textContent) || _sharedOfficeNavigatorReadableDate();
     }
-    return document.getElementById("display-date")?.textContent?.trim() || _sharedOfficeNavigatorReadableDate();
+    return _sharedOfficeNavigatorCleanLine(document.getElementById("display-date")?.textContent) || _sharedOfficeNavigatorReadableDate();
 }
 
 function _sharedOfficeNavigatorHideLegacy(panel, config) {
@@ -1236,6 +1246,80 @@ window.setSharedOfficeNavHour = setSharedOfficeNavHour;
 window.setSharedOfficeNavDate = setSharedOfficeNavDate;
 window.changeSharedOfficeNavDate = changeSharedOfficeNavDate;
 window.todaySharedOfficeNavDate = todaySharedOfficeNavDate;
+
+
+// ── Current Date / Current Hour Defaults ─────────────────────────────────────
+// On first entry into an office mode, the app should begin at today's civil date
+// and the prayer/watch/hour appropriate to the browser's current local time.
+// Persisted preference settings may affect rite/display options, but must not
+// make yesterday's date or a stale office-time selection the app default.
+function _defaultDailyOfficeForCurrentTime(now = new Date()) {
+    const hour = now.getHours();
+    if (hour >= 5 && hour < 11) return "morning-office";
+    if (hour >= 11 && hour < 15) return "noonday-office";
+    if (hour >= 15 && hour < 21) return "evening-office";
+    return "compline-office";
+}
+
+function _defaultHorologionOfficeForCurrentTime(now = new Date()) {
+    const hour = now.getHours();
+    if (hour >= 0 && hour < 3) return "midnight-office";
+    if (hour >= 3 && hour < 5) return "orthros";
+    if (hour >= 5 && hour < 7) return "first-hour";
+    if (hour >= 7 && hour < 11) return "third-hour";
+    if (hour >= 11 && hour < 15) return "sixth-hour";
+    if (hour >= 15 && hour < 17) return "ninth-hour";
+    if (hour >= 17 && hour < 21) return "vespers";
+    return "small-compline";
+}
+
+function initializeOfficeDefaultsForCurrentDateTime(modeKey) {
+    const now = new Date();
+    currentDate = now;
+
+    updateDatePicker();
+
+    const isoToday = _sharedOfficeNavigatorIsoDate(now);
+
+    const ethPicker = document.getElementById("eth-override-date");
+    if (ethPicker) ethPicker.value = isoToday;
+
+    const esyPicker = document.getElementById("esy-override-date");
+    if (esyPicker) esyPicker.value = isoToday;
+
+    const genericPicker = document.getElementById("generic-date-picker");
+    if (genericPicker) genericPicker.value = isoToday;
+
+    if (modeKey === "daily") {
+        const office = _defaultDailyOfficeForCurrentTime(now);
+        const radio = document.querySelector(`input[name="office-time"][value="${CSS.escape(office)}"]`);
+        if (radio) radio.checked = true;
+        updateSidebarForOffice();
+    }
+
+    if (modeKey === "ethiopian") {
+        window._temporalOverride = { active: false, date: null, hourId: null };
+        document.querySelectorAll('input[name="eth-watch-override"]').forEach(r => r.checked = false);
+    }
+
+    if (modeKey === "eastSyriac") {
+        window._esyTemporalOverride = { active: false, date: null, hourId: null };
+        document.querySelectorAll('input[name="esy-hour-override"]').forEach(r => r.checked = false);
+        const autoHour = getEastSyriacHourInfo();
+        const mainRadio = document.querySelector(`input[name="esy-time"][value="${CSS.escape(autoHour.value)}"]`);
+        if (mainRadio) mainRadio.checked = true;
+    }
+
+    if (modeKey === "horologion") {
+        selectedHorologionOffice = _defaultHorologionOfficeForCurrentTime(now);
+        updateGenericDateDisplay();
+        _updateHorologionOfficeButtons();
+    }
+
+    renderSharedOfficeNavigation();
+}
+
+window.initializeOfficeDefaultsForCurrentDateTime = initializeOfficeDefaultsForCurrentDateTime;
 
 // ── Horologion office selector ────────────────────────────────────────────
 
