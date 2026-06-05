@@ -1072,7 +1072,7 @@ header {
   "
   onmouseover="this.style.opacity='1'"
   onmouseout="this.style.opacity='0.7'"
->
+ class="app-mode-return">
   Back to Modes
 </button>
 <div id="shell">
@@ -1085,10 +1085,10 @@ header {
   <span class="header-badge">DEV ONLY</span>
 </header>
 
-<div id="workspace">
+<div id="workspace" class="app-mode-workspace">
 
   <!-- ── Sidebar ───────────────────────────────────────────────────────── -->
-  <aside id="sidebar">
+  <aside id="sidebar" class="app-mode-drawer app-mode-drawer-admin">
     <div class="ctrl-group">
       <div class="ctrl-label">Year</div>
       <input type="number" id="ctrl-year" class="ctrl-input" value="2026" min="1900" max="2100">
@@ -1129,7 +1129,7 @@ header {
   </aside>
 
   <!-- ── Main panels ────────────────────────────────────────────────────── -->
-  <main id="main">
+  <main id="main" class="app-primary-canvas app-primary-canvas-admin">
 
     <!-- Year Snapshot -->
     <div class="panel" id="panel-year">

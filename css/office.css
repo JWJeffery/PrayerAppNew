@@ -1722,3 +1722,89 @@ body.office-active #main-content::-webkit-scrollbar-track {
         width: 100%;
     }
 }
+
+
+/* Shared mode navigation grammar propagation pass */
+.app-mode-return {
+    font-family: var(--app-label, Georgia, 'Times New Roman', serif);
+    letter-spacing: 0.04em;
+}
+
+body.office-active .app-office-mode-shell {
+    --app-nav-rail-width: 42px;
+    --app-drawer-width: 340px;
+}
+
+body.office-active .app-nav-rail-toggle {
+    width: var(--app-nav-rail-width, 42px);
+    background:
+        linear-gradient(180deg, rgba(255, 251, 244, 0.96), rgba(228, 209, 178, 0.92));
+    border-right: 1px solid rgba(103, 58, 31, 0.18);
+    box-shadow: 5px 0 22px rgba(74, 46, 26, 0.10);
+}
+
+body.office-active .app-mode-drawer {
+    width: var(--app-drawer-width, 340px);
+    box-sizing: border-box;
+    background:
+        linear-gradient(180deg, rgba(255, 251, 244, 0.98), rgba(241, 229, 210, 0.96));
+    color: var(--app-ink, #3f2618);
+    border-right: 1px solid rgba(103, 58, 31, 0.18);
+    box-shadow:
+        inset -1px 0 0 rgba(255, 255, 255, 0.54),
+        8px 0 30px rgba(74, 46, 26, 0.12);
+}
+
+body.office-active .app-mode-drawer h3 {
+    color: var(--app-bronze, #7a3f17) !important;
+    font-family: var(--app-label, Georgia, 'Times New Roman', serif) !important;
+    letter-spacing: 0.08em !important;
+    text-shadow: none !important;
+}
+
+body.office-active .app-mode-drawer .setting-group,
+body.office-active .app-mode-drawer .ordo-control,
+body.office-active .app-mode-drawer .nested-group {
+    border-color: rgba(103, 58, 31, 0.12);
+}
+
+body.office-active .app-primary-canvas {
+    min-height: 100vh;
+    box-sizing: border-box;
+}
+
+body.office-active .app-primary-canvas .office-container {
+    scroll-margin-top: 24px;
+}
+
+body.office-active .app-mode-return,
+#individual-prayers-section .app-mode-return {
+    border-radius: 11px;
+}
+
+.admin-app-shell .app-mode-workspace {
+    align-items: start;
+}
+
+.admin-app-shell .app-mode-drawer-admin {
+    align-self: stretch;
+}
+
+.admin-app-shell .app-primary-canvas-admin {
+    min-width: 0;
+}
+
+.admin-app-shell .app-mode-return {
+    font-family: Georgia, 'Times New Roman', serif !important;
+    letter-spacing: 0.035em !important;
+}
+
+@media (max-width: 900px) {
+    body.office-active .app-office-mode-shell {
+        --app-drawer-width: min(340px, calc(100vw - 54px));
+    }
+
+    body.office-active .app-mode-drawer {
+        max-width: var(--app-drawer-width);
+    }
+}

@@ -85,17 +85,17 @@
 </div>
 
 <!-- ── Daily Office ──────────────────────────────────────────────────────── -->
-<div id="daily-office-section">
+<div id="daily-office-section" class="app-office-mode-shell">
 
     <!-- Sidebar toggle tab -->
-    <div id="sidebar-toggle" onclick="toggleSidebar()" title="Toggle Settings">
+    <div id="sidebar-toggle" onclick="toggleSidebar()" title="Toggle Settings" class="app-nav-rail-toggle">
         <span class="toggle-cross">☩</span>
         <div class="toggle-dots"><span></span><span></span><span></span></div>
         <span class="toggle-cross">☩</span>
     </div>
 
     <!-- Settings panel -->
-    <div id="settings-panel">
+    <div id="settings-panel" class="app-mode-drawer app-mode-drawer-daily">
         <h3 style="color:var(--gold); font-family:'Cinzel',serif; font-size:1.15em; letter-spacing:0.08em;">Office Settings</h3>
 
         <!-- Date navigator -->
@@ -203,7 +203,7 @@
     </div><!-- /settings-panel -->
 
     <!-- Ethiopian Sa'atat Liturgical Console -->
-    <div id="ethiopian-settings" class="mode-hidden sidebar-hidden">
+    <div id="ethiopian-settings" class="mode-hidden sidebar-hidden app-mode-drawer app-mode-drawer-ethiopian">
         <h3 style="color:var(--gold); font-family:'Cinzel',serif; font-size:1.15em; letter-spacing:0.08em;">Sa'atat Options</h3>
 
         <!-- Active Watch display -->
@@ -258,7 +258,7 @@
     </div><!-- /ethiopian-settings -->
 
     <!-- Church of the East Liturgical Console -->
-    <div id="east-syriac-settings" class="mode-hidden sidebar-hidden">
+    <div id="east-syriac-settings" class="mode-hidden sidebar-hidden app-mode-drawer app-mode-drawer-east-syriac">
         <h3 style="color:var(--gold); font-family:'Cinzel',serif; font-size:1.15em; letter-spacing:0.08em;">Church of the East</h3>
 
         <!-- Active Hour display -->
@@ -338,7 +338,7 @@
     <!-- Generic Sidebar Shell — Horologion and future traditions -->
     <!-- Do not add BCP-specific controls here. This is the reusable neutral   -->
     <!-- path for any tradition without its own dedicated settings panel.       -->
-    <div id="generic-settings" class="mode-hidden sidebar-hidden">
+    <div id="generic-settings" class="mode-hidden sidebar-hidden app-mode-drawer app-mode-drawer-horologion">
         <h3 style="color:var(--gold); font-family:'Cinzel',serif; font-size:1.15em; letter-spacing:0.08em;" id="generic-tradition-label">The Horologion</h3>
 
         <!-- Liturgical Ordo (date navigator) -->
@@ -462,8 +462,8 @@
     </div>
 
     <!-- Main content area -->
-    <div id="main-content">
-        <button onclick="backToSplash()" style="position:fixed; top:12px; right:16px; background:transparent; color:var(--gold); border:1px solid rgba(201,168,76,0.4); padding:4px 14px; font-family:'Cinzel',serif; font-size:0.7em; letter-spacing:0.12em; text-transform:uppercase; border-radius:2px; cursor:pointer; opacity:0.6; z-index:200; transition:opacity 0.2s;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.6'">Back to Modes</button>
+    <div id="main-content" class="app-primary-canvas">
+        <button onclick="backToSplash()" style="position:fixed; top:12px; right:16px; background:transparent; color:var(--gold); border:1px solid rgba(201,168,76,0.4); padding:4px 14px; font-family:'Cinzel',serif; font-size:0.7em; letter-spacing:0.12em; text-transform:uppercase; border-radius:2px; cursor:pointer; opacity:0.6; z-index:200; transition:opacity 0.2s;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.6'" class="app-mode-return">Back to Modes</button>
         <h1>The Universal Office</h1>
         <div id="office-display"></div>
         <div class="saint-section">
@@ -563,7 +563,7 @@
         <input type="hidden" id="prayer-dropdown" value="">
         <div class="app-book-needs-actions">
             <button class="mode-btn app-primary-action" onclick="showSinglePrayer()">Display Prayer</button>
-            <button class="mode-btn app-secondary-action" onclick="backToSplash()">Back to Modes</button>
+            <button class="mode-btn app-secondary-action app-mode-return" onclick="backToSplash()">Back to Modes</button>
         </div>
     </div><!-- /prayer-selection -->
 
