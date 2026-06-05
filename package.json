@@ -30,7 +30,8 @@
     "start:static": "http-server -p 3000",
     "audit:bible-browser-feature-sweep-runner": "node scripts/audit-bible-browser-feature-sweep-runner.mjs",
     "audit:app-design-propagation": "node scripts/audit-app-design-propagation.mjs",
-    "audit:daily-office-design-shell": "node scripts/audit-daily-office-design-shell.mjs"
+    "audit:daily-office-design-shell": "node scripts/audit-daily-office-design-shell.mjs",
+    "audit:app-navigation-architecture": "node scripts/audit-app-navigation-architecture.mjs"
   },
   "repository": {
     "type": "git",
