@@ -184,6 +184,19 @@ if (!css.includes("--bible-reader-font")) {
   fail("Bible Reader typography correction should define a reader font token.");
 }
 
+
+if (!css.includes("Bible Reader sober typography correction pass")) {
+  fail("Bible Reader sober typography correction CSS marker is missing.");
+}
+
+if (!css.includes("--bible-display-font: Georgia")) {
+  fail("Bible Reader display typography should use a sober book serif, not the decorative face.");
+}
+
+if (!css.includes("font-size: clamp(2.15rem, 4.2vw, 4.05rem)")) {
+  fail("Bible Reader title scale should be restrained after typography correction.");
+}
+
 if (failures.length) {
   console.error("FAIL Bible design layout audit");
   for (const failure of failures) console.error(` - ${failure}`);

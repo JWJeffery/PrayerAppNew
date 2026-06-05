@@ -2445,3 +2445,101 @@
     text-transform: uppercase;
     letter-spacing: 0.095em;
 }
+
+
+/* Bible Reader sober typography correction pass */
+#bible-browser-section {
+    --bible-display-font: Georgia, 'Times New Roman', serif;
+    --bible-reader-font: Georgia, 'Times New Roman', serif;
+    --bible-label-font: Georgia, 'Times New Roman', serif;
+}
+
+.bible-design-hero h1,
+.bible-browser-header h1 {
+    font-family: var(--bible-display-font);
+    font-weight: 400;
+    font-size: clamp(2.15rem, 4.2vw, 4.05rem);
+    line-height: 0.98;
+    letter-spacing: 0.012em;
+    text-transform: none;
+}
+
+.bible-design-hero p,
+.bible-browser-header p {
+    font-family: var(--bible-reader-font);
+    font-size: clamp(0.92rem, 1.12vw, 1.05rem);
+    line-height: 1.35;
+    letter-spacing: 0.025em;
+    text-transform: none;
+}
+
+.bible-design-kicker,
+.bible-control-section-label,
+.bible-secondary-intro span {
+    font-family: var(--bible-label-font);
+    font-size: 0.58rem;
+    font-weight: 400;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+}
+
+.bible-tool-btn,
+.bible-browser-details summary,
+.bible-sidebar-details summary,
+#bible-selection-toolbar button {
+    font-family: var(--bible-label-font);
+    font-weight: 400;
+    letter-spacing: 0.035em;
+    text-transform: none;
+}
+
+.bible-reader-controls label,
+.bible-browser-details label,
+.bible-sidebar-details label,
+.bible-context-color-label,
+.bible-highlight-color-label {
+    font-family: var(--bible-label-font);
+    font-size: 0.68rem;
+    font-weight: 400;
+    letter-spacing: 0.075em;
+    text-transform: uppercase;
+}
+
+.bible-reading-canvas .bible-chapter-block h2,
+.bible-chapter-block h2 {
+    font-family: var(--bible-display-font);
+    font-weight: 400;
+    letter-spacing: 0.005em;
+    text-transform: none;
+}
+
+.bible-reading-canvas .bible-chapter-block h3,
+.bible-chapter-block h3 {
+    font-family: var(--bible-label-font);
+    font-weight: 600;
+    font-size: 0.72rem;
+    letter-spacing: 0.10em;
+    text-transform: uppercase;
+}
+
+.bible-reading-canvas .bible-verse,
+.bible-verse {
+    font-family: var(--bible-reader-font);
+    font-size: clamp(1.03rem, 1.14vw, 1.15rem);
+    line-height: 1.72;
+    letter-spacing: 0;
+}
+
+.bible-segment-label {
+    font-family: var(--bible-label-font);
+    font-size: 0.70rem;
+    letter-spacing: 0.05em;
+    text-transform: none;
+}
+
+.bible-context-panel-title {
+    font-family: var(--bible-label-font);
+    font-weight: 400;
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+}
