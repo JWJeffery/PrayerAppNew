@@ -1958,3 +1958,152 @@ body.office-active .app-nav-rail-toggle {
         width: 100%;
     }
 }
+
+
+/* Shared office content typography sobriety pass */
+body.office-active .office-container {
+    font-family: var(--app-serif, Georgia, 'Times New Roman', serif);
+}
+
+body.office-active .office-container .component-text,
+body.office-active .office-container .reading-text,
+body.office-active .office-container .psalm-stanza,
+body.office-active .office-container .psalm-verse {
+    font-family: var(--app-serif, Georgia, 'Times New Roman', serif);
+    font-size: clamp(1.02rem, 1.12vw, 1.18rem);
+    line-height: 1.72;
+    letter-spacing: 0.002em;
+    color: var(--app-ink, #3f2618);
+    margin-bottom: 1.1em;
+    text-align: left;
+}
+
+body.office-active .office-container .component-text {
+    white-space: pre-wrap;
+}
+
+body.office-active .office-container .reading-text {
+    text-align: left;
+    hyphens: manual;
+}
+
+body.office-active .office-container .reading-text p {
+    margin: 0 0 1em;
+    text-indent: 0;
+}
+
+body.office-active .office-container .psalm-block {
+    margin-bottom: 1.25em;
+}
+
+body.office-active .office-container .psalm-stanza .psalm-half-verse {
+    padding-left: 1.35em;
+}
+
+body.office-active .office-container .psalm-stanza .psalm-half-verse:first-child {
+    padding-left: 0;
+}
+
+/* Disable the old global automatic drop cap.
+   Intentional decorated initials should be added later with explicit markup,
+   not by forcing every prayer-text block to float its first letter. */
+body.office-active .office-container .component-text::first-letter {
+    float: none;
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+    line-height: inherit;
+    margin: 0;
+    color: inherit;
+    text-shadow: none;
+}
+
+body.office-active .office-container .rubric-text {
+    font-family: var(--app-serif, Georgia, 'Times New Roman', serif);
+    font-size: clamp(0.88rem, 0.95vw, 1rem);
+    line-height: 1.42;
+    letter-spacing: 0.035em;
+    font-variant: small-caps;
+    font-style: italic;
+    font-weight: 600;
+    color: var(--app-rubric, #8f3b30);
+    margin-top: 1.35em;
+    margin-bottom: 0.45em;
+    padding-bottom: 0.25em;
+    border-bottom: 1px dotted rgba(143, 59, 48, 0.14);
+    opacity: 0.92;
+}
+
+body.office-active .office-container .passage-reference {
+    font-family: var(--app-serif, Georgia, 'Times New Roman', serif);
+    font-size: clamp(0.98rem, 1vw, 1.08rem);
+    line-height: 1.35;
+    color: rgba(122, 63, 23, 0.86);
+    margin: 0.65em 0 0.75em;
+}
+
+body.office-active .office-container .liturgical-title {
+    font-family: var(--app-serif, Georgia, 'Times New Roman', serif);
+    font-size: clamp(1.25rem, 2vw, 1.85rem);
+    line-height: 1.18;
+    letter-spacing: 0.045em;
+    margin: 0 0 1.25em;
+    color: rgba(122, 63, 23, 0.92);
+}
+
+body.office-active .office-container .liturgical-title::before {
+    font-size: 0.58em;
+    letter-spacing: 0.28em;
+    margin-bottom: 0.9em;
+    opacity: 0.52;
+}
+
+body.office-active .office-container h1 {
+    font-size: clamp(1.9rem, 3.8vw, 3.45rem);
+    line-height: 1.03;
+    letter-spacing: 0.01em;
+}
+
+body.office-active .office-container h2 {
+    font-size: clamp(1.45rem, 2.6vw, 2.25rem);
+    line-height: 1.08;
+    letter-spacing: 0.012em;
+}
+
+body.office-active .office-container h3,
+body.office-active .office-container h4 {
+    font-family: var(--app-serif, Georgia, 'Times New Roman', serif);
+    letter-spacing: 0.035em;
+}
+
+body.office-active .office-container .verse-num {
+    font-size: 0.68em;
+    color: rgba(122, 63, 23, 0.58);
+    margin-right: 0.45em;
+}
+
+/* Tradition-specific text should retain its identity without breaking the shared reading rhythm. */
+body.office-active .ethiopian-theme .component-text,
+body.office-active .east-syriac-theme .component-text,
+body.office-active .horologion-theme .component-text {
+    font-weight: 400;
+}
+
+body.office-active .ethiopian-theme .rubric-text {
+    border-left: 2px solid rgba(143, 59, 48, 0.38);
+    padding-left: 0.85em;
+}
+
+@media (max-width: 900px) {
+    body.office-active .office-container .component-text,
+    body.office-active .office-container .reading-text,
+    body.office-active .office-container .psalm-stanza,
+    body.office-active .office-container .psalm-verse {
+        font-size: clamp(1rem, 3.8vw, 1.12rem);
+        line-height: 1.66;
+    }
+
+    body.office-active .office-container .rubric-text {
+        font-size: clamp(0.86rem, 3.2vw, 0.98rem);
+    }
+}

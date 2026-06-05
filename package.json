@@ -35,7 +35,8 @@
     "audit:book-of-needs-design-shell": "node scripts/audit-book-of-needs-design-shell.mjs",
     "audit:admin-design-shell": "node scripts/audit-admin-design-shell.mjs",
     "audit:shared-mode-navigation-grammar": "node scripts/audit-shared-mode-navigation-grammar.mjs",
-    "audit:mode-chrome-normalization": "node scripts/audit-mode-chrome-normalization.mjs"
+    "audit:mode-chrome-normalization": "node scripts/audit-mode-chrome-normalization.mjs",
+    "audit:office-content-typography": "node scripts/audit-office-content-typography.mjs"
   },
   "repository": {
     "type": "git",
