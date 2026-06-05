@@ -20,29 +20,99 @@ function check(label, condition) {
 
 const officeUi = read('js/office-ui.js');
 const officeCss = read('css/office.css');
-const packageJson = JSON.parse(read('package.json') || '{}');
+const packageText = read('package.json');
 
-check('legacy hider remains panel/config based', /function _sharedOfficeNavigatorHideLegacy\\(panel, config\\)/.test(officeUi));
-check('legacy restorer helper exists', /function _sharedOfficeNavigatorRestoreLegacyElement/.test(officeUi));
-check('legacy retirement helper exists', /function _sharedOfficeNavigatorRetireLegacyElement/.test(officeUi));
-check('legacy controls receive retired class', officeUi.includes('shared-office-nav-legacy-hidden'));
-check('legacy controls receive aria-hidden', officeUi.includes('setAttribute("aria-hidden", "true")'));
-check('legacy controls receive retirement data attribute', officeUi.includes('setAttribute("data-shared-office-nav-retired", "true")'));
-check('legacy controls receive dataset retirement marker', officeUi.includes('sharedOfficeNavRetired'));
-check('legacy controls use inert where supported', /\\.inert\\s*=\\s*true/.test(officeUi));
-check('legacy controls are removed from tab order', /tabIndex\\s*=\\s*-1/.test(officeUi));
-check('legacy controls are disabled where applicable', /disabled\\s*=\\s*true/.test(officeUi));
-check('legacy display state is restorable', officeUi.includes('sharedOfficeLegacyDisplay') && officeUi.includes('style.removeProperty("display")'));
-check('legacy tab state is restorable', officeUi.includes('sharedOfficeLegacyTabIndex'));
-check('shared nav css polish marker exists', officeCss.includes('Shared office navigation polish retirement tranche'));
-check('shared nav card density is tightened', /\\.shared-office-nav-card\\s*\\{[\\s\\S]*?padding:\\s*12px 13px/.test(officeCss));
-check('shared nav current line is smaller', /\\.shared-office-nav-current\\s*\\{[\\s\\S]*?font-size:\\s*0\\.82rem/.test(officeCss));
-check('shared nav buttons are compact', /\\.shared-office-nav-actions button\\s*\\{[\\s\\S]*?min-height:\\s*30px/.test(officeCss));
-check('shared nav date picker is compact', /\\.shared-office-nav-date-picker input\\[type="date"\\]\\s*\\{[\\s\\S]*?min-height:\\s*30px/.test(officeCss));
-check('shared nav option list is scroll constrained', /\\.shared-office-nav-options\\s*\\{[\\s\\S]*?max-height:/.test(officeCss));
-check('shared nav option label is smaller', /\\.shared-office-nav-option-label\\s*\\{[\\s\\S]*?font-size:\\s*0\\.84rem/.test(officeCss));
-check('retired controls are hidden and non-interactive in css', /shared-office-nav-legacy-hidden[\\s\\S]*?pointer-events:\\s*none\\s*!important/.test(officeCss));
-check('package exposes polish audit', packageJson.scripts?.['audit:shared-office-navigation-polish'] === 'node scripts/audit-shared-office-navigation-polish.mjs');
+let packageJson = {};
+try {
+    packageJson = JSON.parse(packageText);
+} catch (_error) {
+    failures.push('package.json parses');
+}
+
+check(
+    'legacy hider remains panel/config based',
+    officeUi.includes('function _sharedOfficeNavigatorHideLegacy(panel, config) {')
+);
+check(
+    'legacy restorer helper exists',
+    officeUi.includes('function _sharedOfficeNavigatorRestoreLegacyElement(el) {')
+);
+check(
+    'legacy retirement helper exists',
+    officeUi.includes('function _sharedOfficeNavigatorRetireLegacyElement(el) {')
+);
+check(
+    'legacy controls receive retired class',
+    officeUi.includes('el.classList.add("shared-office-nav-legacy-hidden")')
+);
+check(
+    'legacy controls receive aria-hidden',
+    officeUi.includes('el.setAttribute("aria-hidden", "true")')
+);
+check(
+    'legacy controls receive retirement data attribute',
+    officeUi.includes('el.setAttribute("data-shared-office-nav-retired", "true")')
+);
+check(
+    'legacy controls receive dataset retirement marker',
+    officeUi.includes('el.dataset.sharedOfficeNavRetired = "true"')
+);
+check(
+    'legacy controls use inert where supported',
+    officeUi.includes('el.inert = true')
+);
+check(
+    'legacy controls are removed from tab order',
+    officeUi.includes('el.tabIndex = -1') && officeUi.includes('child.tabIndex = -1')
+);
+check(
+    'legacy controls are disabled where applicable',
+    officeUi.includes('el.disabled = true') && officeUi.includes('child.disabled = true')
+);
+check(
+    'legacy display state is restorable',
+    officeUi.includes('sharedOfficeLegacyDisplay') && officeUi.includes('el.style.removeProperty("display")')
+);
+check(
+    'legacy tab state is restorable',
+    officeUi.includes('sharedOfficeLegacyTabIndex')
+);
+check(
+    'shared nav css polish marker exists',
+    officeCss.includes('Shared office navigation polish retirement tranche')
+);
+check(
+    'shared nav card density is tightened',
+    officeCss.includes('.shared-office-nav-card {\n    padding: 12px 13px;')
+);
+check(
+    'shared nav current line is smaller',
+    officeCss.includes('.shared-office-nav-current {\n    margin-bottom: 9px;\n    font-size: 0.82rem;')
+);
+check(
+    'shared nav buttons are compact',
+    officeCss.includes('.shared-office-nav-actions button {\n    min-height: 30px;')
+);
+check(
+    'shared nav date picker is compact',
+    officeCss.includes('.shared-office-nav-date-picker input[type="date"] {\n    min-height: 30px !important;')
+);
+check(
+    'shared nav option list is scroll constrained',
+    officeCss.includes('.shared-office-nav-options {\n    max-height: min(42vh, 22rem);')
+);
+check(
+    'shared nav option label is smaller',
+    officeCss.includes('.shared-office-nav-option-label {\n    font-size: 0.84rem;')
+);
+check(
+    'retired controls are hidden and non-interactive in css',
+    officeCss.includes('[data-shared-office-nav-retired="true"] * {\n    display: none !important;\n    visibility: hidden !important;\n    pointer-events: none !important;')
+);
+check(
+    'package exposes polish audit',
+    packageJson.scripts?.['audit:shared-office-navigation-polish'] === 'node scripts/audit-shared-office-navigation-polish.mjs'
+);
 
 if (failures.length) {
     console.error(`FAIL shared office navigation polish audit: ${failures.length} failure(s)`);
