@@ -1048,17 +1048,131 @@ function _sharedOfficeNavigatorCurrentLine(modeKey) {
     return _sharedOfficeNavigatorCleanLine(document.getElementById("display-date")?.textContent) || _sharedOfficeNavigatorReadableDate();
 }
 
+function _sharedOfficeNavigatorRestoreLegacyElement(el) {
+    if (!(el instanceof HTMLElement)) return;
+
+    el.classList.remove("shared-office-nav-legacy-hidden");
+    el.removeAttribute("aria-hidden");
+    el.removeAttribute("data-shared-office-nav-retired");
+    delete el.dataset.sharedOfficeNavRetired;
+
+    if (el.dataset.sharedOfficeLegacyDisplay !== undefined) {
+        el.style.display = el.dataset.sharedOfficeLegacyDisplay;
+        delete el.dataset.sharedOfficeLegacyDisplay;
+    } else {
+        el.style.removeProperty("display");
+    }
+
+    if (el.dataset.sharedOfficeLegacyVisibility !== undefined) {
+        el.style.visibility = el.dataset.sharedOfficeLegacyVisibility;
+        delete el.dataset.sharedOfficeLegacyVisibility;
+    } else {
+        el.style.removeProperty("visibility");
+    }
+
+    if (el.dataset.sharedOfficeLegacyPointerEvents !== undefined) {
+        el.style.pointerEvents = el.dataset.sharedOfficeLegacyPointerEvents;
+        delete el.dataset.sharedOfficeLegacyPointerEvents;
+    } else {
+        el.style.removeProperty("pointer-events");
+    }
+
+    if (el.dataset.sharedOfficeLegacyTabIndex !== undefined) {
+        if (el.dataset.sharedOfficeLegacyTabIndex === "") {
+            el.removeAttribute("tabindex");
+        } else {
+            el.setAttribute("tabindex", el.dataset.sharedOfficeLegacyTabIndex);
+        }
+        delete el.dataset.sharedOfficeLegacyTabIndex;
+    } else {
+        el.removeAttribute("tabindex");
+    }
+
+    if (el.dataset.sharedOfficeLegacyDisabled !== "true" && "disabled" in el) {
+        el.disabled = false;
+    }
+    delete el.dataset.sharedOfficeLegacyDisabled;
+
+    try {
+        el.inert = false;
+    } catch (_error) {
+        el.removeAttribute("inert");
+    }
+}
+
+function _sharedOfficeNavigatorRetireLegacyElement(el) {
+    if (!(el instanceof HTMLElement)) return;
+
+    if (el.closest(".shared-office-nav")) return;
+
+    if (el.style.display && el.dataset.sharedOfficeLegacyDisplay === undefined) {
+        el.dataset.sharedOfficeLegacyDisplay = el.style.display;
+    }
+    if (el.style.visibility && el.dataset.sharedOfficeLegacyVisibility === undefined) {
+        el.dataset.sharedOfficeLegacyVisibility = el.style.visibility;
+    }
+    if (el.style.pointerEvents && el.dataset.sharedOfficeLegacyPointerEvents === undefined) {
+        el.dataset.sharedOfficeLegacyPointerEvents = el.style.pointerEvents;
+    }
+    if (el.hasAttribute("tabindex") && el.dataset.sharedOfficeLegacyTabIndex === undefined) {
+        el.dataset.sharedOfficeLegacyTabIndex = el.getAttribute("tabindex") || "";
+    }
+    if (el.hasAttribute("disabled") && el.dataset.sharedOfficeLegacyDisabled === undefined) {
+        el.dataset.sharedOfficeLegacyDisabled = "true";
+    }
+
+    el.classList.add("shared-office-nav-legacy-hidden");
+    el.setAttribute("aria-hidden", "true");
+    el.setAttribute("data-shared-office-nav-retired", "true");
+    el.dataset.sharedOfficeNavRetired = "true";
+    el.tabIndex = -1;
+    el.style.display = "none";
+    el.style.visibility = "hidden";
+    el.style.pointerEvents = "none";
+
+    try {
+        el.inert = true;
+    } catch (_error) {
+        el.setAttribute("inert", "");
+    }
+
+    if ("disabled" in el) {
+        el.disabled = true;
+    }
+
+    el.querySelectorAll("a, button, input, select, textarea, summary, [tabindex]").forEach(child => {
+        if (!(child instanceof HTMLElement)) return;
+
+        if (child.hasAttribute("tabindex") && child.dataset.sharedOfficeLegacyTabIndex === undefined) {
+            child.dataset.sharedOfficeLegacyTabIndex = child.getAttribute("tabindex") || "";
+        }
+        if (child.hasAttribute("disabled") && child.dataset.sharedOfficeLegacyDisabled === undefined) {
+            child.dataset.sharedOfficeLegacyDisabled = "true";
+        }
+
+        child.setAttribute("aria-hidden", "true");
+        child.setAttribute("data-shared-office-nav-retired", "true");
+        child.tabIndex = -1;
+
+        if ("disabled" in child) {
+            child.disabled = true;
+        }
+    });
+}
+
 function _sharedOfficeNavigatorHideLegacy(panel, config) {
-    panel.querySelectorAll(".shared-office-nav-legacy-hidden").forEach(el => el.classList.remove("shared-office-nav-legacy-hidden"));
+    panel.querySelectorAll(".shared-office-nav-legacy-hidden[data-shared-office-nav-retired='true']").forEach(_sharedOfficeNavigatorRestoreLegacyElement);
+
+    const legacyElements = new Set();
 
     for (const selector of config.hideSelectors || []) {
-        panel.querySelectorAll(selector).forEach(el => el.classList.add("shared-office-nav-legacy-hidden"));
+        panel.querySelectorAll(selector).forEach(el => legacyElements.add(el));
     }
 
     for (const heading of config.hideHeadings || []) {
         Array.from(panel.children).forEach(el => {
             if (el.classList?.contains("setting-group") && el.textContent.trim().toLowerCase().includes(heading.toLowerCase())) {
-                el.classList.add("shared-office-nav-legacy-hidden");
+                legacyElements.add(el);
             }
         });
     }
@@ -1069,7 +1183,7 @@ function _sharedOfficeNavigatorHideLegacy(panel, config) {
             const el = groups[i];
             if (el.classList?.contains("setting-group") && el.textContent.trim().toLowerCase().includes(heading.toLowerCase())) {
                 const next = groups[i + 1];
-                if (next?.classList?.contains("ordo-buttons")) next.classList.add("shared-office-nav-legacy-hidden");
+                if (next?.classList?.contains("ordo-buttons")) legacyElements.add(next);
             }
         }
     }
@@ -1078,10 +1192,12 @@ function _sharedOfficeNavigatorHideLegacy(panel, config) {
         panel.querySelectorAll(".nested-group").forEach(el => {
             const strong = el.querySelector("strong");
             if (strong && strong.textContent.trim().toLowerCase() === heading.toLowerCase()) {
-                el.classList.add("shared-office-nav-legacy-hidden");
+                legacyElements.add(el);
             }
         });
     }
+
+    legacyElements.forEach(_sharedOfficeNavigatorRetireLegacyElement);
 }
 
 function renderSharedOfficeNavigation() {
