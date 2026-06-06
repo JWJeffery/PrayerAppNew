@@ -1,44 +1,34 @@
 #!/usr/bin/env node
 import fs from 'node:fs';
 
+const index = fs.readFileSync('index.html', 'utf8');
+const ui = fs.readFileSync('js/office-ui.js', 'utf8');
+const pkg = JSON.parse(fs.readFileSync('package.json', 'utf8'));
+
 const failures = [];
 let checks = 0;
-
-function read(path) {
-    try {
-        return fs.readFileSync(path, 'utf8');
-    } catch (_error) {
-        failures.push(`missing file: ${path}`);
-        return '';
-    }
-}
-
 function check(label, condition) {
-    checks += 1;
-    if (!condition) failures.push(label);
+  checks++;
+  if (!condition) failures.push(label);
 }
 
-const index = read('index.html');
-const officeUi = read('js/office-ui.js');
-const css = read('css/office.css');
-const pkg = JSON.parse(read('package.json') || '{}');
-
-check('main office shell title has stable id', index.includes('<h1 id="office-mode-title">The Universal Office</h1>'));
-check('office mode header label map exists', officeUi.includes('const OFFICE_MODE_HEADER_LABELS = {'));
-check('daily office shell names Episcopal Church daily office', officeUi.includes("daily: 'The Daily Office of the Episcopal Church'"));
-check('ethiopian shell title is mapped', officeUi.includes("'ethiopian-saatat': \"The Ethiopian Sa'atat\""));
-check('church of the east shell title is mapped', officeUi.includes("'east-syriac': 'Church of the East'"));
-check('horologion shell title is mapped', officeUi.includes("horologion: 'The Horologion'"));
-check('selectMode updates office shell header', officeUi.includes('updateOfficeModeHeader(mode);'));
-check('BCP rendered office body names the Daily Office of the Episcopal Church', officeUi.includes('<p class="office-family-title">The Daily Office of the Episcopal Church</p>'));
-check('Horologion rendered office body names the Horologion', officeUi.includes('<p class="office-family-title">The Horologion</p>'));
-check('office family title CSS exists', css.includes('Office mode header normalization pass') && css.includes('.office-family-title'));
-check('package exposes office mode header audit', pkg.scripts?.['audit:office-mode-headers'] === 'node scripts/audit-office-mode-headers.mjs');
+check('office-mode-title appears exactly once', (index.match(/id="office-mode-title"/g) || []).length === 1);
+check('office-mode-title is on main-content h1', /<div id="main-content" class="app-primary-canvas">[\s\S]*?<h1 id="office-mode-title">The Universal Office<\/h1>/.test(index));
+check('header map exists', ui.includes('const OFFICE_MODE_HEADER_LABELS = {'));
+check('daily shell title names Episcopal Daily Office', ui.includes("daily: 'The Daily Office of the Episcopal Church'"));
+check('ethiopian shell title exists', ui.includes("'ethiopian-saatat': \"The Ethiopian Sa'atat\""));
+check('coe shell title exists', ui.includes("'east-syriac': 'Church of the East'"));
+check('horologion shell title exists', ui.includes("horologion: 'The Horologion'"));
+check('selectMode updates shell title', ui.includes('updateOfficeModeHeader(mode);'));
+check('no duplicate daily body family title', !ui.includes('<p class="office-family-title">The Daily Office of the Episcopal Church</p>'));
+check('no duplicate horologion body family title', !ui.includes('<p class="office-family-title">The Horologion</p>'));
+check('ethiopian body h2 is active hour', ui.includes('ethHourInfo?.hourName || "The Ethiopian Sa\'atat"'));
+check('coe body h2 is active hour', ui.includes('<h2>${officeTitle}</h2>') && ui.includes('<p class="liturgical-title">Church of the East</p>'));
+check('package exposes audit', pkg.scripts?.['audit:office-mode-headers'] === 'node scripts/audit-office-mode-headers.mjs');
 
 if (failures.length) {
-    console.error(`FAIL office mode headers audit: ${failures.length} failure(s)`);
-    for (const failure of failures) console.error(`- ${failure}`);
-    process.exit(1);
+  console.error(`FAIL office mode headers audit: ${failures.length} failure(s)`);
+  for (const failure of failures) console.error(`- ${failure}`);
+  process.exit(1);
 }
-
 console.log(`PASS office mode headers audit: ${checks} check(s) passed.`);
