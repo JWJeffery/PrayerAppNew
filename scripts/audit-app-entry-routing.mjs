@@ -39,7 +39,7 @@ check('entry initialization runs on DOMContentLoaded', officeUi.includes("docume
 check('selecting a family hides the first-screen family grid', officeUi.includes("const familyGrid = document.getElementById('entry-family-grid');") && officeUi.includes('familyGrid.hidden = isFamilyStep') && officeUi.includes("traditionEntry.dataset.entryStep"));
 check('family reset restores neutral first screen', officeUi.includes("title.textContent = isWestern ? 'Western Christian' : isEastern ? 'Eastern Christian' : 'Where do you pray?'") && officeUi.includes("selectTraditionFamily(null)"));
 check('entry click handler routes by data attributes', officeUi.includes('function handleTraditionEntryClick(event)') && officeUi.includes('button.dataset.entryFamily') && officeUi.includes('button.dataset.entryTradition') && officeUi.includes('bindTraditionEntryControls()'));
-check('selectMode hides tradition entry', officeUi.includes("const traditionEntry = document.getElementById('tradition-entry');") && officeUi.includes("traditionEntry.style.display = 'none'"));
+check('selectMode hides entry panels through focus-safe helper', officeUi.includes("const traditionEntry = document.getElementById('tradition-entry');") && officeUi.includes('hideEntrySurface(modeSelection);') && officeUi.includes('hideEntrySurface(traditionEntry);'));
 check('backToSplash returns to universal selector', officeUi.includes('function showUniversalModeSelection') && officeUi.includes('showUniversalModeSelection();'));
 check('entry CSS exists', css.includes('Tradition entry routing pass') && css.includes('#tradition-entry.app-tradition-entry'));
 check('entry family grid CSS exists', css.includes('.app-entry-family-grid'));
@@ -96,6 +96,36 @@ check('universal selector card titles are uniform and tradition-forward', (() =>
 
     return requiredTitles.every(title => selector.includes(title)) &&
         retiredTitles.every(title => !selector.includes(title));
+})());
+
+check('entry panels are hidden with focus-safe helper', (() => {
+    const helperStart = officeUi.indexOf('function hideEntrySurface(container)');
+    if (helperStart < 0) return false;
+
+    const helperEnd = officeUi.indexOf('function showEntrySurface(container)', helperStart);
+    if (helperEnd < 0) return false;
+
+    const helper = officeUi.slice(helperStart, helperEnd);
+    return officeUi.includes('function safelyBlurFocusedDescendant(container)') &&
+        helper.includes('safelyBlurFocusedDescendant(container);') &&
+        helper.indexOf('safelyBlurFocusedDescendant(container);') < helper.indexOf("setAttribute('aria-hidden', 'true')") &&
+        helper.includes("container.inert = true");
+})());
+
+check('entry routing uses shared show/hide helpers for entry panels', (() => {
+    const entryRoutingStart = officeUi.indexOf('function showTraditionEntry()');
+    const selectModeStart = officeUi.indexOf('async function selectMode(mode)');
+    if (entryRoutingStart < 0 || selectModeStart < 0) return false;
+
+    const entryRouting = officeUi.slice(entryRoutingStart, selectModeStart);
+    const selectModeHeader = officeUi.slice(selectModeStart, officeUi.indexOf("document.body.style.display", selectModeStart));
+
+    return entryRouting.includes('hideEntrySurface(modeSelection);') &&
+        entryRouting.includes('hideEntrySurface(traditionEntry);') &&
+        entryRouting.includes('showEntrySurface(modeSelection);') &&
+        entryRouting.includes('showEntrySurface(traditionEntry);') &&
+        selectModeHeader.includes('hideEntrySurface(modeSelection);') &&
+        selectModeHeader.includes('hideEntrySurface(traditionEntry);');
 })());
 
 if (failures.length) {

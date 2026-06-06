@@ -705,22 +705,53 @@ function selectTraditionFamily(family) {
     }
 }
 
+// ── Entry panel focus-safe visibility helpers ───────────────────────────────
+// Before an entry panel is hidden with aria-hidden, blur any focused descendant.
+// Otherwise Chrome correctly warns that a focused control is being hidden from
+// assistive technology. inert is also applied where supported.
+function safelyBlurFocusedDescendant(container) {
+    if (!container) return;
+
+    const active = document.activeElement;
+    if (active && container.contains(active) && typeof active.blur === 'function') {
+        active.blur();
+    }
+}
+
+function hideEntrySurface(container) {
+    if (!container) return;
+
+    safelyBlurFocusedDescendant(container);
+
+    if ('inert' in container) {
+        container.inert = true;
+    }
+
+    container.hidden = true;
+    container.setAttribute('aria-hidden', 'true');
+    container.style.display = 'none';
+}
+
+function showEntrySurface(container) {
+    if (!container) return;
+
+    if ('inert' in container) {
+        container.inert = false;
+    }
+
+    container.hidden = false;
+    container.removeAttribute('aria-hidden');
+    container.style.display = '';
+}
+
 function showTraditionEntry() {
     const splashBg = document.getElementById('splash-bg');
     const traditionEntry = document.getElementById('tradition-entry');
     const modeSelection = document.getElementById('mode-selection');
 
     if (splashBg) splashBg.style.display = '';
-    if (traditionEntry) {
-        traditionEntry.hidden = false;
-        traditionEntry.removeAttribute('aria-hidden');
-        traditionEntry.style.display = '';
-    }
-    if (modeSelection) {
-        modeSelection.hidden = true;
-        modeSelection.setAttribute('aria-hidden', 'true');
-        modeSelection.style.display = 'none';
-    }
+    showEntrySurface(traditionEntry);
+    hideEntrySurface(modeSelection);
 
     document.body.classList.remove('office-active');
     document.body.classList.remove('ethiopian-theme');
@@ -736,16 +767,8 @@ function showUniversalModeSelection(persistDefault = false) {
     const modeSelection = document.getElementById('mode-selection');
 
     if (splashBg) splashBg.style.display = '';
-    if (traditionEntry) {
-        traditionEntry.hidden = true;
-        traditionEntry.setAttribute('aria-hidden', 'true');
-        traditionEntry.style.display = 'none';
-    }
-    if (modeSelection) {
-        modeSelection.hidden = false;
-        modeSelection.removeAttribute('aria-hidden');
-        modeSelection.style.display = '';
-    }
+    hideEntrySurface(traditionEntry);
+    showEntrySurface(modeSelection);
 
     document.body.classList.remove('office-active');
     document.body.classList.remove('ethiopian-theme');
@@ -1019,16 +1042,8 @@ async function selectMode(mode) {
     const traditionEntry = document.getElementById('tradition-entry');
 
     if (splashBg) splashBg.style.display = 'none';
-    if (modeSelection) {
-        modeSelection.hidden = true;
-        modeSelection.setAttribute('aria-hidden', 'true');
-        modeSelection.style.display = 'none';
-    }
-    if (traditionEntry) {
-        traditionEntry.hidden = true;
-        traditionEntry.setAttribute('aria-hidden', 'true');
-        traditionEntry.style.display = 'none';
-    }
+    hideEntrySurface(modeSelection);
+    hideEntrySurface(traditionEntry);
 
     document.body.style.display        = '';
     document.body.style.alignItems     = '';
