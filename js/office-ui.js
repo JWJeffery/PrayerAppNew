@@ -2261,6 +2261,7 @@ async function renderHorologionOffice(officeKey) {
     });
 
     let html = `<div class="office-container">`;
+    html += `<p class="office-book-title">The Horologion</p>`;
     html += `<h2>${payload.title}</h2>`;
     html += `<p class="liturgical-title">${dateLabel}</p>`;
 
@@ -2646,6 +2647,7 @@ async function renderBcpOffice() {
     const officeSubtitle = dailyData.title || 'Day Title';
 
     let officeHtml = `<div class="office-container">`;
+    officeHtml += `<p class="office-book-title">The Daily Office</p>`;
     officeHtml += `<h2>${officeTitle}</h2>`;
     officeHtml += `<p class="liturgical-title">${officeSubtitle}</p>`;
 
@@ -3279,7 +3281,9 @@ async function renderEthiopianSaatat() {
     // Warms SaintsResolver monthly cache before sequence loop.
     await resolveCommemorations(currentDate, 'OOR');
 
-    let officeHtml = `<div class="office-container"><h2>${ethHourInfo?.hourName || "The Ethiopian Sa'atat"}</h2>`;
+    let officeHtml = `<div class="office-container">`;
+    officeHtml += `<p class="office-book-title">The Ethiopian Sa'atat</p>`;
+    officeHtml += `<h2>${ethHourInfo?.hourName || "The Ethiopian Sa'atat"}</h2>`;
     officeHtml += `<p class="liturgical-title">${ethSidebarDate}</p>`;
 
     for (let item of activeRubric?.sequence || []) {
@@ -3666,7 +3670,9 @@ async function renderEastSyriac() {
     // data without triggering an async fetch inside the saint-display block.
     await resolveCommemorations(currentDate, 'COE');
 
-    let officeHtml = `<div class="office-container"><h2>${officeTitle}</h2>`;
+    let officeHtml = `<div class="office-container">`;
+    officeHtml += `<p class="office-book-title">The Hudra</p>`;
+    officeHtml += `<h2>${officeTitle}</h2>`;
     officeHtml += `<p class="liturgical-title">${currentDate.toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' })}</p>`;
 
     // ── COE-IIA: Commemoration area ──────────────────────────────────────────

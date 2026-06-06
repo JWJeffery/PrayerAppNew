@@ -38,7 +38,7 @@ check(
 );
 
 check(
-  'top shell labels do not mix office names with tradition names',
+  'top shell labels do not mix office-corpus names with tradition names',
   !ui.includes("daily: 'The Daily Office of the Episcopal Church'") &&
   !ui.includes("'ethiopian-saatat': \"The Ethiopian Sa'atat\"") &&
   !ui.includes("horologion: 'The Horologion'")
@@ -50,46 +50,58 @@ check(
 );
 
 check(
-  'daily body header remains active office with liturgical day subtitle',
+  'all office bodies name the office corpus in the same position',
+  ui.includes('<p class="office-book-title">The Daily Office</p>') &&
+  ui.includes('<p class="office-book-title">The Ethiopian Sa\'atat</p>') &&
+  ui.includes('<p class="office-book-title">The Hudra</p>') &&
+  ui.includes('<p class="office-book-title">The Horologion</p>')
+);
+
+check(
+  'daily body hierarchy is corpus then active office then liturgical day',
+  ui.includes('officeHtml += `<p class="office-book-title">The Daily Office</p>`;') &&
   ui.includes('officeHtml += `<h2>${officeTitle}</h2>`;') &&
   ui.includes('officeHtml += `<p class="liturgical-title">${officeSubtitle}</p>`;')
 );
 
 check(
-  'ethiopian body header is active watch with date subtitle',
-  ui.includes('ethHourInfo?.hourName || "The Ethiopian Sa\'atat"') &&
-  ui.includes('officeHtml += `<p class="liturgical-title">${ethSidebarDate}</p>`;') &&
-  !ui.includes('<p class="liturgical-title">The Ethiopian Book of Hours</p>')
+  'ethiopian body hierarchy is corpus then active watch then date',
+  ui.includes('officeHtml += `<p class="office-book-title">The Ethiopian Sa\'atat</p>`;') &&
+  ui.includes('officeHtml += `<h2>${ethHourInfo?.hourName || "The Ethiopian Sa\'atat"}</h2>`;') &&
+  ui.includes('officeHtml += `<p class="liturgical-title">${ethSidebarDate}</p>`;')
 );
 
 check(
-  'church of the east body header is active hour with date subtitle',
-  ui.includes('officeHtml += `<p class="liturgical-title">${currentDate.toLocaleDateString') &&
-  !ui.includes('<p class="liturgical-title">Church of the East</p>')
+  'church of the east body hierarchy is corpus then active hour then date',
+  ui.includes('officeHtml += `<p class="office-book-title">The Hudra</p>`;') &&
+  ui.includes('officeHtml += `<h2>${officeTitle}</h2>`;') &&
+  ui.includes('officeHtml += `<p class="liturgical-title">${currentDate.toLocaleDateString')
 );
 
 check(
-  'horologion body header remains active office with date subtitle',
+  'horologion body hierarchy is corpus then active office then date',
+  ui.includes('html += `<p class="office-book-title">The Horologion</p>`;') &&
   ui.includes('html += `<h2>${payload.title}</h2>`;') &&
   ui.includes('html += `<p class="liturgical-title">${dateLabel}</p>`;')
 );
 
 check(
-  'duplicate office-family body titles are absent',
-  !ui.includes('<p class="office-family-title">The Daily Office of the Episcopal Church</p>') &&
-  !ui.includes('<p class="office-family-title">The Horologion</p>')
-);
-
-check(
-  'unused office-family-title CSS is absent',
+  'old duplicate body family title class remains retired',
+  !ui.includes('office-family-title') &&
   !css.includes('.office-family-title')
 );
 
 check(
-  'top shell header size is bounded',
+  'top shell header size is bounded for long TEC label',
   css.includes('Uniform office shell header hierarchy pass') &&
   css.includes('#main-content > #office-mode-title') &&
-  css.includes('font-size: clamp(2.15rem, 4.1vw, 4.2rem)')
+  css.includes('font-size: clamp(2rem, 3.7vw, 3.55rem)')
+);
+
+check(
+  'office corpus title CSS exists',
+  css.includes('.office-book-title') &&
+  css.includes('font-variant: small-caps')
 );
 
 check(
