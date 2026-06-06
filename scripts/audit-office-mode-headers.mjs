@@ -32,7 +32,7 @@ check(
 check(
   'top shell labels are tradition-family headers only',
   ui.includes("daily: 'The Episcopal Church'") &&
-  ui.includes("'ethiopian-saatat': 'Ethiopian Orthodoxy'") &&
+  ui.includes("'ethiopian-saatat': 'Oriental Orthodoxy'") &&
   ui.includes("'east-syriac': 'Church of the East'") &&
   ui.includes("horologion: 'Eastern Orthodoxy'")
 );

@@ -874,7 +874,7 @@ document.addEventListener('DOMContentLoaded', initializeEntryRouting);
 // the selector/project shell, not the title of every tradition page.
 const OFFICE_MODE_HEADER_LABELS = {
     daily: 'The Episcopal Church',
-    'ethiopian-saatat': 'Ethiopian Orthodoxy',
+    'ethiopian-saatat': 'Oriental Orthodoxy',
     'east-syriac': 'Church of the East',
     horologion: 'Eastern Orthodoxy',
     prayers: 'The Book of Needs'
