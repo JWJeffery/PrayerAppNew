@@ -728,6 +728,14 @@ function resetUserTraditionDefault() {
 }
 
 function initializeEntryRouting() {
+    const entryOverride = new URLSearchParams(window.location.search).get('entry');
+
+    if (entryOverride === 'universal') {
+        persistUserEntryDefault('universal');
+        showUniversalModeSelection(false);
+        return;
+    }
+
     const storedDefault = getUserEntryDefault();
     const mode = UNIVERSAL_OFFICE_TRADITION_MODE_MAP[storedDefault];
 
