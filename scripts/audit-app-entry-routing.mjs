@@ -49,6 +49,26 @@ check('hidden secondary selectors are explicitly suppressed', css.includes('Entr
 check('family step separation CSS exists', css.includes('Entry family-step separation repair') && css.includes('#entry-family-grid[hidden]') && css.includes('#tradition-entry[data-entry-step="western"] .app-entry-family-grid'));
 check('package exposes audit script', pkg.scripts?.['audit:app-entry-routing'] === 'node scripts/audit-app-entry-routing.mjs');
 
+check('universal selector card order is traditions then book of needs then bible then admin', (() => {
+    const selectorStart = index.indexOf('<div id="mode-selection"');
+    const selectorEnd = index.indexOf('<a class="app-sponsor-link"', selectorStart);
+    if (selectorStart < 0 || selectorEnd < 0) return false;
+
+    const selector = index.slice(selectorStart, selectorEnd);
+    const orderedNeedles = [
+        "selectMode('daily')",
+        "selectMode('ethiopian-saatat')",
+        "selectMode('east-syriac')",
+        "selectMode('horologion')",
+        "selectMode('prayers')",
+        "openBibleBrowser()",
+        "admin/admin.html"
+    ];
+
+    const positions = orderedNeedles.map(needle => selector.indexOf(needle));
+    return positions.every(pos => pos >= 0) && positions.every((pos, i) => i === 0 || pos > positions[i - 1]);
+})());
+
 if (failures.length) {
     console.error(`FAIL app entry routing audit: ${failures.length} failure(s)`);
     for (const failure of failures) console.error(`- ${failure}`);
