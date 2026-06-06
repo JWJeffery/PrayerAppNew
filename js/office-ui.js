@@ -868,8 +868,28 @@ window.showUniversalModeSelection = showUniversalModeSelection;
 
 document.addEventListener('DOMContentLoaded', initializeEntryRouting);
 
+
+// ── Office mode headers ──────────────────────────────────────────────────────
+// The app shell must name the active office family. "The Universal Office" is
+// the selector/project shell, not the title of every tradition page.
+const OFFICE_MODE_HEADER_LABELS = {
+    daily: 'The Daily Office of the Episcopal Church',
+    'ethiopian-saatat': "The Ethiopian Sa'atat",
+    'east-syriac': 'Church of the East',
+    horologion: 'The Horologion',
+    prayers: 'The Book of Needs'
+};
+
+function updateOfficeModeHeader(mode) {
+    const title = document.getElementById('office-mode-title');
+    if (!title) return;
+
+    title.textContent = OFFICE_MODE_HEADER_LABELS[mode] || 'The Universal Office';
+}
+
 async function selectMode(mode) {
     selectedMode = mode;
+    updateOfficeModeHeader(mode);
 
     const splashBg = document.getElementById('splash-bg');
     const modeSelection = document.getElementById('mode-selection');
@@ -2241,6 +2261,7 @@ async function renderHorologionOffice(officeKey) {
     });
 
     let html = `<div class="office-container">`;
+    html += `<p class="office-family-title">The Horologion</p>`;
     html += `<h2>${payload.title}</h2>`;
     html += `<p class="liturgical-title">${dateLabel}</p>`;
 
@@ -2625,7 +2646,9 @@ async function renderBcpOffice() {
     const officeTitle    = activeRubric?.officeName || 'Office';
     const officeSubtitle = dailyData.title || 'Day Title';
 
-    let officeHtml = `<div class="office-container"><h2>${officeTitle}</h2>`;
+    let officeHtml = `<div class="office-container">`;
+    officeHtml += `<p class="office-family-title">The Daily Office of the Episcopal Church</p>`;
+    officeHtml += `<h2>${officeTitle}</h2>`;
     officeHtml += `<p class="liturgical-title">${officeSubtitle}</p>`;
 
     // Pre-sequence ecumenical devotions (BCP offices only)

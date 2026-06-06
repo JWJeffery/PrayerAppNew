@@ -2830,3 +2830,14 @@ body.office-active #daily-office-section:has(#generic-settings:not(.mode-hidden)
 #tradition-entry[data-entry-step="eastern"] .app-entry-family-grid {
     display: none !important;
 }
+
+/* Office mode header normalization pass */
+.office-family-title {
+    margin: 0 0 0.35rem;
+    color: var(--app-bronze, #7a3f17);
+    font-family: var(--app-label, Georgia, 'Times New Roman', serif);
+    font-size: clamp(0.78rem, 1.05vw, 0.92rem);
+    font-variant: small-caps;
+    letter-spacing: 0.115em;
+    line-height: 1.15;
+}
