@@ -22,7 +22,7 @@
     <p class="app-entry-lede">Choose the Christian family you pray within. The app will remember your path and open there by default.</p>
 
     <div id="entry-family-grid" class="app-entry-family-grid" aria-label="Choose Western, Eastern, or unknown">
-        <button class="app-entry-family-card" type="button" onclick="selectTraditionFamily('western')">
+        <button class="app-entry-family-card" type="button" data-entry-family="western">
             <span class="app-entry-family-icon">☩</span>
             <span>
                 <strong>Western Christian</strong>
@@ -30,7 +30,7 @@
             </span>
         </button>
 
-        <button class="app-entry-family-card" type="button" onclick="selectTraditionFamily('eastern')">
+        <button class="app-entry-family-card" type="button" data-entry-family="eastern">
             <span class="app-entry-family-icon">✠</span>
             <span>
                 <strong>Eastern Christian</strong>
@@ -38,7 +38,7 @@
             </span>
         </button>
 
-        <button class="app-entry-family-card" type="button" onclick="setUserTraditionDefault('unknown')">
+        <button class="app-entry-family-card" type="button" data-entry-tradition="unknown">
             <span class="app-entry-family-icon">?</span>
             <span>
                 <strong>I’m not sure</strong>
@@ -48,9 +48,9 @@
     </div>
 
     <div id="entry-western-options" class="app-entry-tradition-panel app-entry-secondary-selector" hidden aria-hidden="true">
-        <button class="app-entry-back" type="button" onclick="selectTraditionFamily(null)">Back</button>
+        <button class="app-entry-back" type="button" data-entry-back="true">Back</button>
         <div class="app-entry-panel-title">Western Christian</div>
-        <button class="app-entry-tradition-card" type="button" onclick="setUserTraditionDefault('anglican')">
+        <button class="app-entry-tradition-card" type="button" data-entry-tradition="anglican">
             <span class="app-entry-tradition-code">ANG</span>
             <span>
                 <strong>Anglican</strong>
@@ -67,23 +67,23 @@
     </div>
 
     <div id="entry-eastern-options" class="app-entry-tradition-panel app-entry-secondary-selector" hidden aria-hidden="true">
-        <button class="app-entry-back" type="button" onclick="selectTraditionFamily(null)">Back</button>
+        <button class="app-entry-back" type="button" data-entry-back="true">Back</button>
         <div class="app-entry-panel-title">Eastern Christian</div>
-        <button class="app-entry-tradition-card" type="button" onclick="setUserTraditionDefault('church-of-the-east')">
+        <button class="app-entry-tradition-card" type="button" data-entry-tradition="church-of-the-east">
             <span class="app-entry-tradition-code">COE</span>
             <span>
                 <strong>Church of the East</strong>
                 <small>East Syriac Hudra office stream.</small>
             </span>
         </button>
-        <button class="app-entry-tradition-card" type="button" onclick="setUserTraditionDefault('eastern-orthodox')">
+        <button class="app-entry-tradition-card" type="button" data-entry-tradition="eastern-orthodox">
             <span class="app-entry-tradition-code">EO</span>
             <span>
                 <strong>Eastern Orthodoxy</strong>
                 <small>Byzantine Horologion offices.</small>
             </span>
         </button>
-        <button class="app-entry-tradition-card" type="button" onclick="setUserTraditionDefault('oriental-orthodox')">
+        <button class="app-entry-tradition-card" type="button" data-entry-tradition="oriental-orthodox">
             <span class="app-entry-tradition-code">OO</span>
             <span>
                 <strong>Oriental Orthodoxy</strong>

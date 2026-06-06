@@ -711,8 +711,16 @@ function showTraditionEntry() {
     const modeSelection = document.getElementById('mode-selection');
 
     if (splashBg) splashBg.style.display = '';
-    if (traditionEntry) traditionEntry.style.display = '';
-    if (modeSelection) modeSelection.style.display = 'none';
+    if (traditionEntry) {
+        traditionEntry.hidden = false;
+        traditionEntry.removeAttribute('aria-hidden');
+        traditionEntry.style.display = '';
+    }
+    if (modeSelection) {
+        modeSelection.hidden = true;
+        modeSelection.setAttribute('aria-hidden', 'true');
+        modeSelection.style.display = 'none';
+    }
 
     document.body.classList.remove('office-active');
     document.body.classList.remove('ethiopian-theme');
@@ -728,31 +736,96 @@ function showUniversalModeSelection(persistDefault = false) {
     const modeSelection = document.getElementById('mode-selection');
 
     if (splashBg) splashBg.style.display = '';
-    if (traditionEntry) traditionEntry.style.display = 'none';
-    if (modeSelection) modeSelection.style.display = '';
+    if (traditionEntry) {
+        traditionEntry.hidden = true;
+        traditionEntry.setAttribute('aria-hidden', 'true');
+        traditionEntry.style.display = 'none';
+    }
+    if (modeSelection) {
+        modeSelection.hidden = false;
+        modeSelection.removeAttribute('aria-hidden');
+        modeSelection.style.display = '';
+    }
 
     document.body.classList.remove('office-active');
     document.body.classList.remove('ethiopian-theme');
 }
 
-function setUserTraditionDefault(tradition) {
-    const normalized = tradition === 'unknown' ? 'anglican' : tradition;
-    const mode = UNIVERSAL_OFFICE_TRADITION_MODE_MAP[normalized];
+function resolveEntryTraditionRoute(tradition) {
+    switch (tradition) {
+        case 'unknown':
+            return { storedDefault: 'anglican', mode: 'daily' };
+        case 'anglican':
+            return { storedDefault: 'anglican', mode: 'daily' };
+        case 'church-of-the-east':
+            return { storedDefault: 'church-of-the-east', mode: 'east-syriac' };
+        case 'eastern-orthodox':
+            return { storedDefault: 'eastern-orthodox', mode: 'horologion' };
+        case 'oriental-orthodox':
+            return { storedDefault: 'oriental-orthodox', mode: 'ethiopian-saatat' };
+        case 'universal':
+            return { storedDefault: 'universal', mode: 'universal' };
+        default:
+            return null;
+    }
+}
 
-    if (!mode) {
+function setUserTraditionDefault(tradition) {
+    const route = resolveEntryTraditionRoute(tradition);
+
+    if (!route) {
         console.warn('[entry-routing] Unknown tradition default:', tradition);
         showTraditionEntry();
         return;
     }
 
-    persistUserEntryDefault(normalized);
+    persistUserEntryDefault(route.storedDefault);
 
-    if (mode === 'universal') {
+    if (route.mode === 'universal') {
         showUniversalModeSelection(false);
         return;
     }
 
-    selectMode(mode);
+    console.info('[entry-routing] Opening tradition route:', route.storedDefault, '→', route.mode);
+    selectMode(route.mode);
+}
+
+function handleTraditionEntryClick(event) {
+    const button = event.target.closest('button');
+    const entry = document.getElementById('tradition-entry');
+
+    if (!button || !entry || !entry.contains(button)) return;
+
+    const family = button.dataset.entryFamily;
+    const tradition = button.dataset.entryTradition;
+    const isBack = button.dataset.entryBack === 'true';
+
+    if (!family && !tradition && !isBack) return;
+
+    event.preventDefault();
+    event.stopPropagation();
+
+    if (isBack) {
+        selectTraditionFamily(null);
+        return;
+    }
+
+    if (family) {
+        selectTraditionFamily(family);
+        return;
+    }
+
+    if (tradition) {
+        setUserTraditionDefault(tradition);
+    }
+}
+
+function bindTraditionEntryControls() {
+    const entry = document.getElementById('tradition-entry');
+    if (!entry || entry.dataset.entryControlsBound === 'true') return;
+
+    entry.addEventListener('click', handleTraditionEntryClick);
+    entry.dataset.entryControlsBound = 'true';
 }
 
 function resetUserTraditionDefault() {
@@ -761,6 +834,8 @@ function resetUserTraditionDefault() {
 }
 
 function initializeEntryRouting() {
+    bindTraditionEntryControls();
+
     const entryOverride = new URLSearchParams(window.location.search).get('entry');
 
     if (entryOverride === 'universal') {
@@ -801,8 +876,16 @@ async function selectMode(mode) {
     const traditionEntry = document.getElementById('tradition-entry');
 
     if (splashBg) splashBg.style.display = 'none';
-    if (modeSelection) modeSelection.style.display = 'none';
-    if (traditionEntry) traditionEntry.style.display = 'none';
+    if (modeSelection) {
+        modeSelection.hidden = true;
+        modeSelection.setAttribute('aria-hidden', 'true');
+        modeSelection.style.display = 'none';
+    }
+    if (traditionEntry) {
+        traditionEntry.hidden = true;
+        traditionEntry.setAttribute('aria-hidden', 'true');
+        traditionEntry.style.display = 'none';
+    }
 
     document.body.style.display        = '';
     document.body.style.alignItems     = '';
