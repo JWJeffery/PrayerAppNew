@@ -2857,3 +2857,36 @@ body.office-active #daily-office-section:has(#generic-settings:not(.mode-hidden)
         font-size: clamp(1.85rem, 7.4vw, 3rem);
     }
 }
+
+/* Book of Needs tradition-context access pass */
+.office-context-actions {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: -0.35rem auto 1.4rem;
+}
+
+.office-context-action {
+    border: 1px solid rgba(122, 63, 23, 0.22);
+    border-radius: 999px;
+    background: rgba(255, 253, 248, 0.76);
+    color: var(--app-bronze, #7a3f17);
+    font-family: var(--app-label, Georgia, 'Times New Roman', serif);
+    font-size: 0.78rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 8px 14px;
+    cursor: pointer;
+}
+
+.office-context-action:hover,
+.office-context-action:focus-visible {
+    background: rgba(255, 253, 248, 0.96);
+    border-color: var(--app-border-strong);
+    outline: none;
+}
+
+.prayer-option[hidden],
+.prayer-optgroup-label[hidden] {
+    display: none !important;
+}

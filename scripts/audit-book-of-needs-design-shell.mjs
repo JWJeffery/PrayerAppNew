@@ -36,9 +36,12 @@ requireIncludes("Book of Needs shell CSS", css, [
 
 requireIncludes("Book of Needs preserved actions", index, [
   "onclick=\"showSinglePrayer()\"",
-  "onclick=\"backToSplash()\"",
+  "onclick=\"backFromBookOfNeeds()\"",
   "onclick=\"backToPrayerDropdown()\"",
-  "id=\"prayer-dropdown\""
+  "id=\"prayer-dropdown\"",
+  "id=\"book-needs-context-label\"",
+  "id=\"book-needs-scope-note\"",
+  "id=\"book-needs-return-button\""
 ]);
 
 if (pkg.scripts?.["audit:book-of-needs-design-shell"] !== "node scripts/audit-book-of-needs-design-shell.mjs") {

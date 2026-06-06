@@ -60,7 +60,7 @@ check('universal selector card order is traditions then book of needs then bible
         "selectMode('ethiopian-saatat')",
         "selectMode('east-syriac')",
         "selectMode('horologion')",
-        "selectMode('prayers')",
+        "openUniversalBookOfNeeds()",
         "openBibleBrowser()",
         "admin/admin.html"
     ];

@@ -44,7 +44,8 @@
     "audit:douay-rheims-sirach-jude-intake": "node scripts/audit-douay-rheims-sirach-jude-intake.mjs",
     "audit:shared-office-navigation-polish": "node scripts/audit-shared-office-navigation-polish.mjs",
     "audit:app-entry-routing": "node scripts/audit-app-entry-routing.mjs",
-    "audit:office-mode-headers": "node scripts/audit-office-mode-headers.mjs"
+    "audit:office-mode-headers": "node scripts/audit-office-mode-headers.mjs",
+    "audit:book-of-needs-tradition-context": "node scripts/audit-book-of-needs-tradition-context.mjs"
   },
   "repository": {
     "type": "git",

@@ -130,7 +130,7 @@
             </span>
         </button>
 
-        <button class="mode-btn app-mode-card" onclick="selectMode('prayers')">
+        <button class="mode-btn app-mode-card" onclick="openUniversalBookOfNeeds()">
             <span class="app-mode-icon">✠</span>
             <span class="app-mode-copy">
                 <span class="app-mode-title">Book of Needs</span>
@@ -543,6 +543,9 @@
     <div id="main-content" class="app-primary-canvas">
         <button onclick="backToSplash()" style="position:fixed; top:12px; right:16px; background:transparent; color:var(--gold); border:1px solid rgba(201,168,76,0.4); padding:4px 14px; font-family:'Cinzel',serif; font-size:0.7em; letter-spacing:0.12em; text-transform:uppercase; border-radius:2px; cursor:pointer; opacity:0.6; z-index:200; transition:opacity 0.2s;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.6'" class="app-mode-return">Back to Modes</button>
         <h1 id="office-mode-title">The Universal Office</h1>
+        <div id="office-context-actions" class="office-context-actions" aria-label="Office tools">
+            <button class="office-context-action" type="button" onclick="openBookOfNeedsForActiveOffice()">Book of Needs</button>
+        </div>
         <div id="office-display"></div>
         <div class="saint-section">
             <div class="saint-section-divider"><div class="sdiv-left"></div><span>Commemorations</span><div class="sdiv-right"></div></div>
@@ -556,9 +559,9 @@
 <!-- ── Book of Needs ─────────────────────────────────────────────────────── -->
 <div id="individual-prayers-section" class="app-book-needs-shell">
     <div id="prayer-selection" class="app-book-needs-selection app-mode-command-surface">
-        <div class="app-mode-kicker">Universal Office</div>
+        <div class="app-mode-kicker" id="book-needs-context-label">Book of Needs</div>
         <h1 class="app-book-needs-title">The Book of Needs</h1>
-        <p class="app-book-needs-subtitle">Select a prayer, devotion, or occasional office.</p>
+        <p class="app-book-needs-subtitle" id="book-needs-scope-note">Select a prayer, devotion, or occasional office.</p>
 
         <div class="prayer-select-wrapper" id="prayer-select-wrapper">
             <div class="prayer-select-trigger" id="prayer-select-trigger" onclick="togglePrayerDropdown()">
@@ -641,7 +644,7 @@
         <input type="hidden" id="prayer-dropdown" value="">
         <div class="app-book-needs-actions">
             <button class="mode-btn app-primary-action" onclick="showSinglePrayer()">Display Prayer</button>
-            <button class="mode-btn app-secondary-action app-mode-return" onclick="backToSplash()">Back to Modes</button>
+            <button id="book-needs-return-button" class="mode-btn app-secondary-action app-mode-return" onclick="backFromBookOfNeeds()">Back</button>
         </div>
     </div><!-- /prayer-selection -->
 

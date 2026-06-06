@@ -887,6 +887,62 @@ function updateOfficeModeHeader(mode) {
     title.textContent = OFFICE_MODE_HEADER_LABELS[mode] || 'The Universal Office';
 }
 
+// ── Book of Needs tradition-context routing ──────────────────────────────────
+const BOOK_OF_NEEDS_MODE_CONTEXTS = {
+    daily: 'ANG',
+    'ethiopian-saatat': 'OO',
+    'east-syriac': 'COE',
+    horologion: 'EO'
+};
+
+function getBookOfNeedsContextForMode(mode) {
+    return BOOK_OF_NEEDS_MODE_CONTEXTS[mode] || 'UNIVERSAL';
+}
+
+function getActiveOfficeModeForBookOfNeeds() {
+    if (selectedMode && selectedMode !== 'prayers') return selectedMode;
+
+    const storedDefault = getUserEntryDefault();
+    const storedMode = UNIVERSAL_OFFICE_TRADITION_MODE_MAP[storedDefault];
+
+    if (storedMode && storedMode !== 'universal' && storedMode !== 'prayers') {
+        return storedMode;
+    }
+
+    return 'daily';
+}
+
+function openBookOfNeedsForActiveOffice() {
+    const returnMode = getActiveOfficeModeForBookOfNeeds();
+    window._bookOfNeedsReturnMode = returnMode;
+    window._bookOfNeedsContextTradition = getBookOfNeedsContextForMode(returnMode);
+    selectMode('prayers');
+}
+
+function openUniversalBookOfNeeds() {
+    window._bookOfNeedsReturnMode = 'universal';
+    window._bookOfNeedsContextTradition = 'UNIVERSAL';
+    selectMode('prayers');
+}
+
+function backFromBookOfNeeds() {
+    const returnMode = window._bookOfNeedsReturnMode;
+
+    if (returnMode && returnMode !== 'universal' && returnMode !== 'prayers') {
+        window._bookOfNeedsReturnMode = null;
+        selectMode(returnMode);
+        return;
+    }
+
+    window._bookOfNeedsReturnMode = null;
+    window._bookOfNeedsContextTradition = 'UNIVERSAL';
+    showUniversalModeSelection(false);
+}
+
+window.openBookOfNeedsForActiveOffice = openBookOfNeedsForActiveOffice;
+window.openUniversalBookOfNeeds = openUniversalBookOfNeeds;
+window.backFromBookOfNeeds = backFromBookOfNeeds;
+
 async function selectMode(mode) {
     selectedMode = mode;
     updateOfficeModeHeader(mode);
@@ -923,11 +979,22 @@ async function selectMode(mode) {
 
     if (mode === 'prayers') {
         // ── Book of Needs ─────────────────────────────────────────────────────
-        // Data loading is handled entirely within prayers.js. showSinglePrayer()
-        // fetches data/prayers.json on first use and caches it in that module's
-        // own prayersData variable. No action needed here.
+        // Prayer text is still loaded by prayers.js. The selector is now scoped
+        // by the originating tradition unless opened from the Universal selector.
         document.getElementById('daily-office-section').style.display       = 'none';
         document.getElementById('individual-prayers-section').style.display = 'flex';
+
+        if (!window._bookOfNeedsContextTradition) {
+            window._bookOfNeedsContextTradition = 'UNIVERSAL';
+        }
+
+        if (typeof window.resetBookOfNeedsView === 'function') {
+            window.resetBookOfNeedsView();
+        }
+
+        if (typeof window.applyBookOfNeedsContext === 'function') {
+            window.applyBookOfNeedsContext(window._bookOfNeedsContextTradition);
+        }
 
     } else if (mode === 'ethiopian-saatat') {
         // ── Ethiopian Sa'atat ─────────────────────────────────────────────────
