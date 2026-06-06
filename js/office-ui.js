@@ -873,10 +873,10 @@ document.addEventListener('DOMContentLoaded', initializeEntryRouting);
 // The app shell must name the active office family. "The Universal Office" is
 // the selector/project shell, not the title of every tradition page.
 const OFFICE_MODE_HEADER_LABELS = {
-    daily: 'The Daily Office of the Episcopal Church',
-    'ethiopian-saatat': "The Ethiopian Sa'atat",
+    daily: 'The Episcopal Church',
+    'ethiopian-saatat': 'Ethiopian Orthodoxy',
     'east-syriac': 'Church of the East',
-    horologion: 'The Horologion',
+    horologion: 'Eastern Orthodoxy',
     prayers: 'The Book of Needs'
 };
 
@@ -3280,7 +3280,7 @@ async function renderEthiopianSaatat() {
     await resolveCommemorations(currentDate, 'OOR');
 
     let officeHtml = `<div class="office-container"><h2>${ethHourInfo?.hourName || "The Ethiopian Sa'atat"}</h2>`;
-    officeHtml += `<p class="liturgical-title">The Ethiopian Book of Hours</p>`;
+    officeHtml += `<p class="liturgical-title">${ethSidebarDate}</p>`;
 
     for (let item of activeRubric?.sequence || []) {
         item = item.trim();
@@ -3667,7 +3667,7 @@ async function renderEastSyriac() {
     await resolveCommemorations(currentDate, 'COE');
 
     let officeHtml = `<div class="office-container"><h2>${officeTitle}</h2>`;
-    officeHtml += `<p class="liturgical-title">Church of the East</p>`;
+    officeHtml += `<p class="liturgical-title">${currentDate.toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' })}</p>`;
 
     // ── COE-IIA: Commemoration area ──────────────────────────────────────────
     // Render Layer 2 fixed / corporate commemorations before the prayer sequence.
