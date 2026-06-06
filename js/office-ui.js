@@ -967,6 +967,48 @@ function updateCommemorationVisibilityForMode(mode) {
 
 window.updateCommemorationVisibilityForMode = updateCommemorationVisibilityForMode;
 
+// ── Daily Office commemoration card readability ──────────────────────────────
+// The current Daily Office commemoration card renderer can emit legacy dark-card
+// markup and fused labels such as "ANGSaint". The parchment shell expects the
+// commemoration to read as an integrated Daily Office card.
+function normalizeCommemorationCardReadability() {
+    const display = document.getElementById('saint-display');
+    if (!display) return;
+
+    for (const card of display.children) {
+        card.classList.add('app-commemoration-card');
+
+        const walker = document.createTreeWalker(
+            card,
+            window.NodeFilter ? NodeFilter.SHOW_TEXT : 4
+        );
+
+        const textNodes = [];
+        while (walker.nextNode()) textNodes.push(walker.currentNode);
+
+        for (const text of textNodes) {
+            text.nodeValue = text.nodeValue.replace(
+                /(^|\s)(ANG|EO|OO|COE|LC)(?=(Saint|Blessed|Holy|St\.|The)\b)/g,
+                '$1$2 '
+            );
+        }
+    }
+}
+
+function bindCommemorationCardReadabilityObserver() {
+    const display = document.getElementById('saint-display');
+    if (!display || display.dataset.readabilityObserverBound === 'true') return;
+
+    const observer = new MutationObserver(() => normalizeCommemorationCardReadability());
+    observer.observe(display, { childList: true, subtree: true, characterData: true });
+
+    display.dataset.readabilityObserverBound = 'true';
+    normalizeCommemorationCardReadability();
+}
+
+document.addEventListener('DOMContentLoaded', bindCommemorationCardReadabilityObserver);
+window.normalizeCommemorationCardReadability = normalizeCommemorationCardReadability;
+
 async function selectMode(mode) {
     selectedMode = mode;
     updateOfficeModeHeader(mode);
