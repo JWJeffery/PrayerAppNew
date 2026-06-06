@@ -2325,6 +2325,55 @@ async function resolveCommemorations(date, tradition, opts) {
     return SaintsResolver.resolveCommemorations(date, tradition, opts);
 }
 
+const DAILY_OFFICE_RESOURCE_TIMEOUT_MS = 6500;
+const DAILY_OFFICE_COMMENORATION_TIMEOUT_MS = 2500;
+
+async function withDailyOfficeTimeout(promise, label, timeoutMs = DAILY_OFFICE_RESOURCE_TIMEOUT_MS, fallback = null) {
+    let timeoutId = null;
+
+    const timeout = new Promise(resolve => {
+        timeoutId = setTimeout(() => {
+            console.warn(`[daily-office] ${label} timed out after ${timeoutMs}ms.`);
+            resolve(fallback);
+        }, timeoutMs);
+    });
+
+    try {
+        return await Promise.race([promise, timeout]);
+    } catch (error) {
+        console.warn(`[daily-office] ${label} failed:`, error);
+        return fallback;
+    } finally {
+        if (timeoutId) clearTimeout(timeoutId);
+    }
+}
+
+async function fetchDailyOfficeResource(url, timeoutMs = DAILY_OFFICE_RESOURCE_TIMEOUT_MS) {
+    const controller = (typeof AbortController !== 'undefined') ? new AbortController() : null;
+    const timeoutId = controller
+        ? setTimeout(() => controller.abort(), timeoutMs)
+        : null;
+
+    try {
+        const options = controller ? { signal: controller.signal } : undefined;
+        return await fetch(url, options);
+    } finally {
+        if (timeoutId) clearTimeout(timeoutId);
+    }
+}
+
+async function preloadDailyOfficeCommemorations(date, tradition) {
+    const commemorations = await withDailyOfficeTimeout(
+        resolveCommemorations(date, tradition),
+        'Daily Office commemoration preload',
+        DAILY_OFFICE_COMMENORATION_TIMEOUT_MS,
+        []
+    );
+
+    return Array.isArray(commemorations) ? commemorations : [];
+}
+
+
 function requestRender() {
   if (typeof renderSharedOfficeNavigation === 'function') {
     renderSharedOfficeNavigation();
@@ -2726,11 +2775,29 @@ async function renderBcpOffice() {
     const use30Day           = document.getElementById('toggle-30day-psalter')?.checked || false;
 
     // ── Calendar ─────────────────────────────────────────────────────────────
-    const { season, liturgicalColor, litYear } = await CalendarEngine.getSeasonAndFile(currentDate);
+    const seasonInfo = await withDailyOfficeTimeout(
+        CalendarEngine.getSeasonAndFile(currentDate),
+        'Daily Office season lookup',
+        DAILY_OFFICE_RESOURCE_TIMEOUT_MS,
+        { season: 'ordinary', liturgicalColor: 'green', litYear: 'year1' }
+    );
+    const { season, liturgicalColor, litYear } = seasonInfo || { season: 'ordinary', liturgicalColor: 'green', litYear: 'year1' };
     updateSeasonalTheme(liturgicalColor || 'green');
 
-    const dailyData         = await CalendarEngine.fetchLectionaryData(currentDate);
+    const dailyData = await withDailyOfficeTimeout(
+        CalendarEngine.fetchLectionaryData(currentDate),
+        'Daily Office lectionary lookup',
+        DAILY_OFFICE_RESOURCE_TIMEOUT_MS,
+        null
+    );
     const activeRubric = appData.rubrics.find(r => r.id === resolvedOfficeId);
+
+    if (!dailyData) {
+        document.getElementById('office-display').innerHTML =
+            `<div class="office-container"><h3 style="color:var(--rubric)">Daily Office Render Timeout</h3>` +
+            `<p class="component-text">The lectionary data did not finish loading. Please reload or choose another date.</p></div>`;
+        return;
+    }
 
     // If the calendar engine returned a fallback sentinel (no entry found for this date),
     // render a visible notice rather than silently producing a broken or blank office.
@@ -2852,7 +2919,7 @@ async function renderBcpOffice() {
             await Promise.allSettled([...toPrefetch].map(async (filename) => {
                 const folder = NT_BOOKS.includes(filename.replace('.json', '')) ? 'NT' : 'OT';
                 try {
-                    const res = await fetch(`data/bible/${folder}/${filename}`);
+                    const res = await fetchDailyOfficeResource(`data/bible/${folder}/${filename}`);
                     if (res.ok) {
                         bibleCache.books[filename] = await res.json();
                         bibleCache.accessOrder.push(filename);
@@ -2867,7 +2934,7 @@ async function renderBcpOffice() {
     // ── End pre-fetch ─────────────────────────────────────────────────────────
     // ── Saints preload (must precede sequence loop for eth-saints-commemoration) ─
     // Warms SaintsResolver monthly cache before sequence loop.
-    await resolveCommemorations(currentDate, 'ANG');
+    await preloadDailyOfficeCommemorations(currentDate, 'ANG');
 
     // ── Main Rubric Sequence Loop ─────────────────────────────────────────────
     for (let item of (activeRubric?.sequence || [])) {

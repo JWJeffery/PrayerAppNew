@@ -6,6 +6,28 @@ const DEFAULT_BIBLE_TRANSLATION = 'NRSV';
 const NT_BOOKS = ['1corinthians', '1john', '1peter', '1thessalonians', '1timothy', '2corinthians', '2john', '2peter', '2thessalonians', '2timothy', '3john', 'acts', 'colossians', 'ephesians', 'galatians', 'hebrews', 'james', 'john', 'jude', 'luke', 'mark', 'matthew', 'philemon', 'philippians', 'revelation', 'romans', 'titus'];
 const BOOK_ALIASES = { 'ecclesiasticus': 'sirach', 'wisdomofsolomon': 'wisdom', 'songofthreeyoungmen': 'daniel', 'songofthreeholychildren': 'daniel', 'belandthedragon': 'daniel', 'bel': 'daniel', 'susanna': 'daniel', 'prayerofazariah': 'daniel', 'therestofesther': 'estherGK', 'additionstoesther': 'estherGK', 'therestofdaniel': 'danielGK', 'additionstodaniel': 'danielGK', 'songsofsolomon': 'songofsolomon', 'canticles': 'songofsolomon', 'canticleofcanticles': 'songofsolomon' };
 
+const SCRIPTURE_FETCH_TIMEOUT_MS = 6500;
+
+async function _fetchJsonWithTimeout(url, timeoutMs = SCRIPTURE_FETCH_TIMEOUT_MS) {
+    const controller = (typeof AbortController !== 'undefined') ? new AbortController() : null;
+    const timeoutId = controller
+        ? setTimeout(() => controller.abort(), timeoutMs)
+        : null;
+
+    try {
+        const options = controller ? { signal: controller.signal } : undefined;
+        const res = await fetch(url, options);
+
+        if (res && res.ok === false) {
+            throw new Error(`Unable to load scripture source: ${url}`);
+        }
+
+        return await res.json();
+    } finally {
+        if (timeoutId) clearTimeout(timeoutId);
+    }
+}
+
 const ETHIOPIAN_CANON_BOOKS = {
     // Ethiopian canonical scripture resources. These are routed through the
     // ET scripture corpus rather than the general OT/NT corpus.
@@ -147,11 +169,7 @@ async function extractFromBook(book, ranges, options = {}) {
     
     if (!bibleCache.books[source.cacheKey]) {
         try {
-            const res = await fetch(source.path);
-            if (res && res.ok === false) {
-                throw new Error(`Unable to load scripture source: ${source.path}`);
-            }
-            bibleCache.books[source.cacheKey] = await res.json();
+            bibleCache.books[source.cacheKey] = await _fetchJsonWithTimeout(source.path);
             bibleCache.accessOrder.push(source.cacheKey);
             if (bibleCache.accessOrder.length > bibleCache.MAX_CACHED_BOOKS) {
                 delete bibleCache.books[bibleCache.accessOrder.shift()];
