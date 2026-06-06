@@ -15,16 +15,16 @@ function check(label, condition) {
 }
 
 check('tradition entry screen exists', index.includes('id="tradition-entry"') && index.includes('app-tradition-entry'));
-check('universal selector is preserved', index.includes('id="mode-selection"') && index.includes('Universal Office Selector'));
-check('universal selector is not default visible in markup', index.includes('<div id="mode-selection" class="app-mode-shell" style="display:none;">'));
+check('universal selector is preserved outside public first screen', index.includes('id="mode-selection"') && index.includes('app-universal-selector') && index.includes('Universal Office Selector'));
+check('universal selector is not default visible in markup', index.includes('<div id="mode-selection" class="app-mode-shell app-universal-selector" style="display:none;" hidden aria-hidden="true">'));
 check('western family choice exists', index.includes("selectTraditionFamily('western')"));
 check('eastern family choice exists', index.includes("selectTraditionFamily('eastern')"));
 check('unknown routes through default setter', index.includes("setUserTraditionDefault('unknown')"));
-check('unknown entry copy does not advertise Anglican default', index.includes('Start with a stable default. You can change this later.') && !index.includes('Start with the Anglican Daily Office.'));
+check('unknown entry copy is terse and non-Anglican-forward', index.includes('<small>Continue.</small>') && !index.includes('Start with the Anglican Daily Office.') && !index.includes('Start with a stable default. You can change this later.'));
 check('anglican option is enabled', index.includes("setUserTraditionDefault('anglican')") && index.includes('TEC 1979 Book of Common Prayer'));
 check('catholic option is disabled until LOTH exists', index.includes('Catholic') && index.includes('disabled aria-disabled="true"') && index.includes('Liturgy of the Hours is not implemented yet'));
-check('eastern options route to implemented offices', index.includes("setUserTraditionDefault('church-of-the-east')") && index.includes("setUserTraditionDefault('eastern-orthodox')") && index.includes("setUserTraditionDefault('oriental-orthodox')"));
-check('public first screen does not expose universal selector', !index.includes('Open the Universal Office selector instead') && !index.includes("setUserTraditionDefault('universal')"));
+check('eastern options route to implemented offices only after family choice', index.includes('app-entry-secondary-selector" hidden aria-hidden="true"') && index.includes("setUserTraditionDefault('church-of-the-east')") && index.includes("setUserTraditionDefault('eastern-orthodox')") && index.includes("setUserTraditionDefault('oriental-orthodox')"));
+check('public first screen does not expose universal selector control', !index.includes('Open the Universal Office selector instead') && !index.includes('<button class="app-entry-universal-link"') && !index.includes("onclick=\"setUserTraditionDefault('universal')\""));
 check('entry preference key exists', officeUi.includes("UNIVERSAL_OFFICE_ENTRY_DEFAULT_KEY = 'universalOffice.entry.default.v1'"));
 check('tradition map sends anglican to daily', officeUi.includes("'anglican': 'daily'"));
 check('tradition map sends unknown quietly to daily', officeUi.includes("'unknown': 'daily'"));
@@ -40,6 +40,7 @@ check('entry CSS exists', css.includes('Tradition entry routing pass') && css.in
 check('entry family grid CSS exists', css.includes('.app-entry-family-grid'));
 check('disabled Catholic state CSS exists', css.includes('.app-entry-tradition-card.is-disabled'));
 check('public first screen has no universal selector link CSS', !css.includes('.app-entry-universal-link'));
+check('hidden secondary selectors are explicitly suppressed', css.includes('Entry first-screen scope repair') && css.includes('#tradition-entry .app-entry-secondary-selector[hidden]') && css.includes('#mode-selection.app-universal-selector[hidden]'));
 check('package exposes audit script', pkg.scripts?.['audit:app-entry-routing'] === 'node scripts/audit-app-entry-routing.mjs');
 
 if (failures.length) {

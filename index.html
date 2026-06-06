@@ -42,12 +42,12 @@
             <span class="app-entry-family-icon">?</span>
             <span>
                 <strong>I’m not sure</strong>
-                <small>Start with a stable default. You can change this later.</small>
+                <small>Continue.</small>
             </span>
         </button>
     </div>
 
-    <div id="entry-western-options" class="app-entry-tradition-panel" hidden>
+    <div id="entry-western-options" class="app-entry-tradition-panel app-entry-secondary-selector" hidden aria-hidden="true">
         <div class="app-entry-panel-title">Western Christian</div>
         <button class="app-entry-tradition-card" type="button" onclick="setUserTraditionDefault('anglican')">
             <span class="app-entry-tradition-code">ANG</span>
@@ -65,7 +65,7 @@
         </button>
     </div>
 
-    <div id="entry-eastern-options" class="app-entry-tradition-panel" hidden>
+    <div id="entry-eastern-options" class="app-entry-tradition-panel app-entry-secondary-selector" hidden aria-hidden="true">
         <div class="app-entry-panel-title">Eastern Christian</div>
         <button class="app-entry-tradition-card" type="button" onclick="setUserTraditionDefault('church-of-the-east')">
             <span class="app-entry-tradition-code">COE</span>
@@ -92,7 +92,7 @@
 
     </section>
 
-<div id="mode-selection" class="app-mode-shell" style="display:none;">
+<div id="mode-selection" class="app-mode-shell app-universal-selector" style="display:none;" hidden aria-hidden="true">
     <div class="app-mode-kicker">Universal Office Selector</div>
     <h1>The Universal Office</h1>
     <p>All traditions and tools remain available here.</p>

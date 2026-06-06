@@ -2793,3 +2793,9 @@ body.office-active #daily-office-section:has(#generic-settings:not(.mode-hidden)
         max-height: 18rem;
     }
 }
+
+/* Entry first-screen scope repair */
+#tradition-entry .app-entry-secondary-selector[hidden],
+#mode-selection.app-universal-selector[hidden] {
+    display: none !important;
+}
