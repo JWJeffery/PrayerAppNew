@@ -16,6 +16,7 @@ function check(label, condition) {
 
 check('tradition entry screen exists', index.includes('id="tradition-entry"') && index.includes('app-tradition-entry'));
 check('universal selector is preserved outside public first screen', index.includes('id="mode-selection"') && index.includes('app-universal-selector') && index.includes('Universal Office Selector'));
+check('universal selector does not claim all traditions/tools remain available on splash', !index.includes('All traditions and tools remain available here.'));
 check('universal selector is not default visible in markup', index.includes('<div id="mode-selection" class="app-mode-shell app-universal-selector" style="display:none;" hidden aria-hidden="true">'));
 check('western family choice exists', index.includes('data-entry-family="western"'));
 check('family grid has stable id for first-screen hiding', index.includes('id="entry-family-grid"') && index.includes('aria-label="Choose Western, Eastern, or unknown"'));
