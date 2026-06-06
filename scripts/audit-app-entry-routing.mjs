@@ -69,6 +69,35 @@ check('universal selector card order is traditions then book of needs then bible
     return positions.every(pos => pos >= 0) && positions.every((pos, i) => i === 0 || pos > positions[i - 1]);
 })());
 
+check('universal selector card titles are uniform and tradition-forward', (() => {
+    const selectorStart = index.indexOf('<div id="mode-selection"');
+    const selectorEnd = index.indexOf('<a class="app-sponsor-link"', selectorStart);
+    if (selectorStart < 0 || selectorEnd < 0) return false;
+
+    const selector = index.slice(selectorStart, selectorEnd);
+    const requiredTitles = [
+        '<span class="app-mode-title">The Episcopal Church</span>',
+        '<span class="app-mode-title">Oriental Orthodoxy</span>',
+        '<span class="app-mode-title">Church of the East</span>',
+        '<span class="app-mode-title">Eastern Orthodoxy</span>',
+        '<span class="app-mode-title">Book of Needs</span>',
+        '<span class="app-mode-title">Bible Browser</span>',
+        '<span class="app-mode-title">Admin Console</span>'
+    ];
+
+    const retiredTitles = [
+        '<span class="app-mode-title">Daily Office</span>',
+        '<span class="app-mode-title">Ethiopian Sa’atat</span>',
+        '<span class="app-mode-title">Horologion</span>',
+        '<span class="app-mode-title">The Book of Needs</span>',
+        '<span class="app-mode-title">Bible Reader</span>',
+        '<span class="app-mode-title">Admin Dashboard</span>'
+    ];
+
+    return requiredTitles.every(title => selector.includes(title)) &&
+        retiredTitles.every(title => !selector.includes(title));
+})());
+
 if (failures.length) {
     console.error(`FAIL app entry routing audit: ${failures.length} failure(s)`);
     for (const failure of failures) console.error(`- ${failure}`);
