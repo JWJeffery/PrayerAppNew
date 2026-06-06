@@ -45,7 +45,8 @@
     "audit:shared-office-navigation-polish": "node scripts/audit-shared-office-navigation-polish.mjs",
     "audit:app-entry-routing": "node scripts/audit-app-entry-routing.mjs",
     "audit:office-mode-headers": "node scripts/audit-office-mode-headers.mjs",
-    "audit:book-of-needs-tradition-context": "node scripts/audit-book-of-needs-tradition-context.mjs"
+    "audit:book-of-needs-tradition-context": "node scripts/audit-book-of-needs-tradition-context.mjs",
+    "audit:commemoration-tradition-scope": "node scripts/audit-commemoration-tradition-scope.mjs"
   },
   "repository": {
     "type": "git",

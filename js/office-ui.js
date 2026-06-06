@@ -943,9 +943,34 @@ window.openBookOfNeedsForActiveOffice = openBookOfNeedsForActiveOffice;
 window.openUniversalBookOfNeeds = openUniversalBookOfNeeds;
 window.backFromBookOfNeeds = backFromBookOfNeeds;
 
+// ── Commemoration tradition scoping ──────────────────────────────────────────
+// The current commemoration resolver is Anglican/Daily-Office scoped. Until
+// Eastern, Oriental, and Church of the East commemoration calendars are routed
+// separately, do not show Anglican saint cards inside those offices.
+function updateCommemorationVisibilityForMode(mode) {
+    const saintSection = document.querySelector('.saint-section');
+    const dateHeader = document.getElementById('date-header');
+    const saintDisplay = document.getElementById('saint-display');
+    const shouldShow = mode === 'daily';
+
+    if (saintSection) {
+        saintSection.hidden = !shouldShow;
+        saintSection.setAttribute('aria-hidden', shouldShow ? 'false' : 'true');
+        saintSection.classList.toggle('tradition-commemorations-hidden', !shouldShow);
+    }
+
+    if (!shouldShow) {
+        if (dateHeader) dateHeader.textContent = '';
+        if (saintDisplay) saintDisplay.innerHTML = '';
+    }
+}
+
+window.updateCommemorationVisibilityForMode = updateCommemorationVisibilityForMode;
+
 async function selectMode(mode) {
     selectedMode = mode;
     updateOfficeModeHeader(mode);
+    updateCommemorationVisibilityForMode(mode);
 
     const splashBg = document.getElementById('splash-bg');
     const modeSelection = document.getElementById('mode-selection');

@@ -14,22 +14,26 @@ const BOOK_OF_NEEDS_CONTEXTS = {
     },
     ANG: {
         label: 'The Episcopal Church',
-        note: 'Showing Anglican/Episcopal prayers and common intercessions.',
+        note: 'Showing prayers explicitly tagged for Anglican/Episcopal use.',
+        empty: 'No Anglican/Episcopal prayers are available in this section yet.',
         returnText: 'Back to Office'
     },
     OO: {
         label: 'Oriental Orthodoxy',
-        note: 'Showing Oriental Orthodox material currently available and common intercessions.',
+        note: 'Showing prayers explicitly tagged for Oriental Orthodox use.',
+        empty: 'No Oriental Orthodox prayers are available in this section yet.',
         returnText: 'Back to Office'
     },
     COE: {
         label: 'Church of the East',
-        note: 'Showing Church of the East material currently available and common intercessions.',
+        note: 'Showing prayers explicitly tagged for Church of the East use.',
+        empty: 'No Church of the East prayers are available in this section yet.',
         returnText: 'Back to Office'
     },
     EO: {
         label: 'Eastern Orthodoxy',
-        note: 'Showing Eastern Orthodox prayers and common intercessions.',
+        note: 'Showing prayers explicitly tagged for Eastern Orthodox use.',
+        empty: 'No Eastern Orthodox prayers are available in this section yet.',
         returnText: 'Back to Office'
     }
 };
@@ -37,31 +41,31 @@ const BOOK_OF_NEEDS_CONTEXTS = {
 const BOOK_OF_NEEDS_OPTION_TRADITIONS = {
     'prayer-humble-access': ['ANG'],
     'spiritual-communion': ['ANG'],
-    'thanksgiving-aquinas': ['ANG'],
+    'thanksgiving-aquinas': ['LC'],
     'thanksgiving-hooker': ['ANG'],
     'thanksgiving-andrewes': ['ANG'],
     'thanksgiving-basil': ['EO', 'OO'],
-    'o-salutaris': ['ANG'],
-    'tantum-ergo': ['ANG'],
-    'divine-praises': ['ANG'],
-    'anima-christi': ['ANG'],
-    'to-blessed-virgin': ['ANG'],
-    'to-saint-joseph': ['ANG'],
-    'in-sorrow-or-trouble': ['ANG'],
-    'ave-regina': ['ANG'],
-    'act-of-contrition': ['ANG'],
-    'after-neglect': ['ANG'],
+    'o-salutaris': ['LC'],
+    'tantum-ergo': ['LC'],
+    'divine-praises': ['LC'],
+    'anima-christi': ['LC'],
+    'to-blessed-virgin': ['LC'],
+    'to-saint-joseph': ['LC'],
+    'in-sorrow-or-trouble': ['LC'],
+    'ave-regina': ['LC'],
+    'act-of-contrition': ['LC'],
+    'after-neglect': ['LC'],
     'andrewes-commendation': ['ANG'],
     'andrewes-thanksgiving': ['ANG'],
     'andrewes-penitence': ['ANG'],
     'andrewes-petition': ['ANG'],
-    'prayer-for-the-sick': ['ECU'],
-    'prayer-for-peace': ['ECU'],
-    'prayer-for-unity': ['ECU'],
-    'prayer-for-mission': ['ECU'],
-    'prayer-for-guidance': ['ECU'],
-    'prayer-for-the-church': ['ECU'],
-    'prayer-for-the-world': ['ECU'],
+    'prayer-for-the-sick': [],
+    'prayer-for-peace': [],
+    'prayer-for-unity': [],
+    'prayer-for-mission': [],
+    'prayer-for-guidance': [],
+    'prayer-for-the-church': [],
+    'prayer-for-the-world': [],
     'minister-journey-bcp': ['ANG'],
     'minister-journey-orthodox': ['EO'],
     'minister-entering-bcp': ['ANG'],
@@ -90,10 +94,10 @@ function prayerOptionAppliesToContext(option, context) {
     if (context === 'UNIVERSAL') return true;
 
     const prayerId = option.dataset.value;
-    const traditions = BOOK_OF_NEEDS_OPTION_TRADITIONS[prayerId] || ['ECU'];
+    const traditions = BOOK_OF_NEEDS_OPTION_TRADITIONS[prayerId] || [];
     option.dataset.traditions = traditions.join(' ');
 
-    return traditions.includes(context) || traditions.includes('ECU');
+    return traditions.includes(context);
 }
 
 function updatePrayerGroupVisibility() {
@@ -142,7 +146,7 @@ function applyBookOfNeedsContext(context = 'UNIVERSAL') {
 
     for (const option of document.querySelectorAll('.prayer-option')) {
         const prayerId = option.dataset.value;
-        const traditions = BOOK_OF_NEEDS_OPTION_TRADITIONS[prayerId] || ['ECU'];
+        const traditions = BOOK_OF_NEEDS_OPTION_TRADITIONS[prayerId] || [];
         option.dataset.traditions = traditions.join(' ');
 
         const visible = prayerOptionAppliesToContext(option, normalizedContext);
@@ -159,6 +163,27 @@ function applyBookOfNeedsContext(context = 'UNIVERSAL') {
     const list = document.getElementById('prayer-select-list');
     if (list) list.dataset.activeTradition = normalizedContext;
     if (list) list.dataset.visiblePrayerCount = String(visibleCount);
+
+    const emptyState = document.getElementById('book-needs-empty-state');
+    if (emptyState) {
+        emptyState.textContent = visibleCount === 0
+            ? (config.empty || 'No prayers have been tagged for this tradition yet.')
+            : '';
+        emptyState.hidden = visibleCount !== 0;
+        emptyState.setAttribute('aria-hidden', visibleCount === 0 ? 'false' : 'true');
+    }
+
+    const wrapper = document.getElementById('prayer-select-wrapper');
+    if (wrapper) {
+        wrapper.hidden = visibleCount === 0;
+        wrapper.setAttribute('aria-hidden', visibleCount === 0 ? 'true' : 'false');
+    }
+
+    const displayButton = document.getElementById('book-needs-display-button');
+    if (displayButton) {
+        displayButton.disabled = visibleCount === 0;
+        displayButton.setAttribute('aria-disabled', visibleCount === 0 ? 'true' : 'false');
+    }
 }
 
 function resetBookOfNeedsView() {

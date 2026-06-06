@@ -641,9 +641,13 @@
             </div>
         </div>
 
+        <div id="book-needs-empty-state" class="book-needs-empty-state" hidden>
+            No prayers have been tagged for this tradition yet.
+        </div>
+
         <input type="hidden" id="prayer-dropdown" value="">
         <div class="app-book-needs-actions">
-            <button class="mode-btn app-primary-action" onclick="showSinglePrayer()">Display Prayer</button>
+            <button id="book-needs-display-button" class="mode-btn app-primary-action" onclick="showSinglePrayer()">Display Prayer</button>
             <button id="book-needs-return-button" class="mode-btn app-secondary-action app-mode-return" onclick="backFromBookOfNeeds()">Back</button>
         </div>
     </div><!-- /prayer-selection -->

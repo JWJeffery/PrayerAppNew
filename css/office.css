@@ -2890,3 +2890,31 @@ body.office-active #daily-office-section:has(#generic-settings:not(.mode-hidden)
 .prayer-optgroup-label[hidden] {
     display: none !important;
 }
+
+
+.book-needs-empty-state {
+    max-width: 640px;
+    margin: 1.1rem auto 0;
+    padding: 18px 20px;
+    border: 1px solid rgba(122, 63, 23, 0.16);
+    border-radius: 18px;
+    background: rgba(255, 253, 248, 0.74);
+    color: rgba(58, 38, 24, 0.82);
+    font-family: var(--app-serif, Georgia, 'Times New Roman', serif);
+    font-size: 1rem;
+    line-height: 1.5;
+    text-align: center;
+}
+
+#book-needs-display-button:disabled,
+#book-needs-display-button[aria-disabled="true"] {
+    opacity: 0.48;
+    cursor: not-allowed;
+}
+
+
+/* Commemoration tradition scoping pass */
+.saint-section.tradition-commemorations-hidden,
+.saint-section[hidden] {
+    display: none !important;
+}
