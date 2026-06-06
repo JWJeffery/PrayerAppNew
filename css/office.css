@@ -2799,3 +2799,34 @@ body.office-active #daily-office-section:has(#generic-settings:not(.mode-hidden)
 #mode-selection.app-universal-selector[hidden] {
     display: none !important;
 }
+
+/* Entry family-step separation repair */
+#entry-family-grid[hidden],
+#tradition-entry .app-entry-secondary-selector[hidden] {
+    display: none !important;
+}
+
+.app-entry-back {
+    grid-column: 1 / -1;
+    justify-self: start;
+    border: 1px solid rgba(103, 58, 31, 0.16);
+    border-radius: 999px;
+    background: rgba(255, 253, 248, 0.72);
+    color: var(--app-bronze, #7a3f17);
+    font-family: var(--app-serif);
+    font-size: 0.84rem;
+    padding: 7px 13px;
+    cursor: pointer;
+}
+
+.app-entry-back:hover,
+.app-entry-back:focus-visible {
+    background: rgba(255, 253, 248, 0.96);
+    border-color: var(--app-border-strong);
+    outline: none;
+}
+
+#tradition-entry[data-entry-step="western"] .app-entry-family-grid,
+#tradition-entry[data-entry-step="eastern"] .app-entry-family-grid {
+    display: none !important;
+}

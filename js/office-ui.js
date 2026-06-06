@@ -665,11 +665,44 @@ function clearUserEntryDefault() {
 }
 
 function selectTraditionFamily(family) {
+    const traditionEntry = document.getElementById('tradition-entry');
+    const title = document.getElementById('tradition-entry-title');
+    const lede = document.querySelector('#tradition-entry .app-entry-lede');
+    const familyGrid = document.getElementById('entry-family-grid');
     const western = document.getElementById('entry-western-options');
     const eastern = document.getElementById('entry-eastern-options');
+    const isWestern = family === 'western';
+    const isEastern = family === 'eastern';
+    const isFamilyStep = isWestern || isEastern;
 
-    if (western) western.hidden = family !== 'western';
-    if (eastern) eastern.hidden = family !== 'eastern';
+    if (traditionEntry) {
+        traditionEntry.dataset.entryStep = isWestern ? 'western' : isEastern ? 'eastern' : 'family';
+    }
+
+    if (title) {
+        title.textContent = isWestern ? 'Western Christian' : isEastern ? 'Eastern Christian' : 'Where do you pray?';
+    }
+
+    if (lede) {
+        lede.textContent = isFamilyStep
+            ? 'Choose the tradition you want to pray with.'
+            : 'Choose the Christian family you pray within. The app will remember your path and open there by default.';
+    }
+
+    if (familyGrid) {
+        familyGrid.hidden = isFamilyStep;
+        familyGrid.setAttribute('aria-hidden', isFamilyStep ? 'true' : 'false');
+    }
+
+    if (western) {
+        western.hidden = !isWestern;
+        western.setAttribute('aria-hidden', isWestern ? 'false' : 'true');
+    }
+
+    if (eastern) {
+        eastern.hidden = !isEastern;
+        eastern.setAttribute('aria-hidden', isEastern ? 'false' : 'true');
+    }
 }
 
 function showTraditionEntry() {

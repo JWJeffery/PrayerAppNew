@@ -18,12 +18,13 @@ check('tradition entry screen exists', index.includes('id="tradition-entry"') &&
 check('universal selector is preserved outside public first screen', index.includes('id="mode-selection"') && index.includes('app-universal-selector') && index.includes('Universal Office Selector'));
 check('universal selector is not default visible in markup', index.includes('<div id="mode-selection" class="app-mode-shell app-universal-selector" style="display:none;" hidden aria-hidden="true">'));
 check('western family choice exists', index.includes("selectTraditionFamily('western')"));
+check('family grid has stable id for first-screen hiding', index.includes('id="entry-family-grid"') && index.includes('aria-label="Choose Western, Eastern, or unknown"'));
 check('eastern family choice exists', index.includes("selectTraditionFamily('eastern')"));
 check('unknown routes through default setter', index.includes("setUserTraditionDefault('unknown')"));
-check('unknown entry copy is terse and non-Anglican-forward', index.includes('<small>Continue.</small>') && !index.includes('Start with the Anglican Daily Office.') && !index.includes('Start with a stable default. You can change this later.'));
-check('anglican option is enabled', index.includes("setUserTraditionDefault('anglican')") && index.includes('TEC 1979 Book of Common Prayer'));
+check('unknown entry copy is non-Anglican-forward', index.includes('<small>Help me begin.</small>') && !index.includes('Start with the Anglican Daily Office.') && !index.includes('Start with a stable default. You can change this later.'));
+check('anglican option is enabled only in second-step western selector', index.includes('id="entry-western-options"') && index.includes("selectTraditionFamily(null)") && index.includes("setUserTraditionDefault('anglican')") && index.includes('TEC 1979 Book of Common Prayer'));
 check('catholic option is disabled until LOTH exists', index.includes('Catholic') && index.includes('disabled aria-disabled="true"') && index.includes('Liturgy of the Hours is not implemented yet'));
-check('eastern options route to implemented offices only after family choice', index.includes('app-entry-secondary-selector" hidden aria-hidden="true"') && index.includes("setUserTraditionDefault('church-of-the-east')") && index.includes("setUserTraditionDefault('eastern-orthodox')") && index.includes("setUserTraditionDefault('oriental-orthodox')"));
+check('eastern options route to implemented offices only after family choice', index.includes('id="entry-eastern-options"') && index.includes('app-entry-secondary-selector" hidden aria-hidden="true"') && index.includes("selectTraditionFamily(null)") && index.includes("setUserTraditionDefault('church-of-the-east')") && index.includes("setUserTraditionDefault('eastern-orthodox')") && index.includes("setUserTraditionDefault('oriental-orthodox')"));
 check('public first screen does not expose universal selector control', !index.includes('Open the Universal Office selector instead') && !index.includes('<button class="app-entry-universal-link"') && !index.includes("onclick=\"setUserTraditionDefault('universal')\""));
 check('entry preference key exists', officeUi.includes("UNIVERSAL_OFFICE_ENTRY_DEFAULT_KEY = 'universalOffice.entry.default.v1'"));
 check('tradition map sends anglican to daily', officeUi.includes("'anglican': 'daily'"));
@@ -34,6 +35,8 @@ check('tradition map sends oriental orthodox to ethiopian sa atat', officeUi.inc
 check('localStorage persistence is used', officeUi.includes('localStorage.setItem(UNIVERSAL_OFFICE_ENTRY_DEFAULT_KEY') && officeUi.includes('localStorage.getItem(UNIVERSAL_OFFICE_ENTRY_DEFAULT_KEY'));
 check('universal selector remains available by stored default or explicit query override', officeUi.includes("'universal': 'universal'") && officeUi.includes("entryOverride === 'universal'"));
 check('entry initialization runs on DOMContentLoaded', officeUi.includes("document.addEventListener('DOMContentLoaded', initializeEntryRouting);"));
+check('selecting a family hides the first-screen family grid', officeUi.includes("const familyGrid = document.getElementById('entry-family-grid');") && officeUi.includes('familyGrid.hidden = isFamilyStep') && officeUi.includes("traditionEntry.dataset.entryStep"));
+check('family reset restores neutral first screen', officeUi.includes("title.textContent = isWestern ? 'Western Christian' : isEastern ? 'Eastern Christian' : 'Where do you pray?'") && officeUi.includes("selectTraditionFamily(null)"));
 check('selectMode hides tradition entry', officeUi.includes("const traditionEntry = document.getElementById('tradition-entry');") && officeUi.includes("traditionEntry.style.display = 'none'"));
 check('backToSplash returns to universal selector', officeUi.includes('function showUniversalModeSelection') && officeUi.includes('showUniversalModeSelection();'));
 check('entry CSS exists', css.includes('Tradition entry routing pass') && css.includes('#tradition-entry.app-tradition-entry'));
@@ -41,6 +44,7 @@ check('entry family grid CSS exists', css.includes('.app-entry-family-grid'));
 check('disabled Catholic state CSS exists', css.includes('.app-entry-tradition-card.is-disabled'));
 check('public first screen has no universal selector link CSS', !css.includes('.app-entry-universal-link'));
 check('hidden secondary selectors are explicitly suppressed', css.includes('Entry first-screen scope repair') && css.includes('#tradition-entry .app-entry-secondary-selector[hidden]') && css.includes('#mode-selection.app-universal-selector[hidden]'));
+check('family step separation CSS exists', css.includes('Entry family-step separation repair') && css.includes('#entry-family-grid[hidden]') && css.includes('#tradition-entry[data-entry-step="western"] .app-entry-family-grid'));
 check('package exposes audit script', pkg.scripts?.['audit:app-entry-routing'] === 'node scripts/audit-app-entry-routing.mjs');
 
 if (failures.length) {
