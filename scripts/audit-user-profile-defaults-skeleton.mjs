@@ -111,6 +111,15 @@ check(
   !index.includes('app-entry-universal-link')
 );
 
+
+check(
+  'focus helper retries profile entry focus',
+  officeUi.includes('const focusProfileTarget = () => {') &&
+  officeUi.includes('focusTarget.focus({ preventScroll: true });') &&
+  officeUi.includes('requestAnimationFrame(focusProfileTarget);') &&
+  officeUi.includes('setTimeout(focusProfileTarget, 80);')
+);
+
 check(
   'profile entry routing supports ask tradition and universal defaults',
   officeUi.includes('function getUserEntryDefault()') &&

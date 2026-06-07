@@ -173,7 +173,8 @@
         }, 12000);
 
         assert(text("#user-profile-defaults-title").includes("Defaults for this browser"), "Office Defaults action did not reveal the local defaults panel.");
-        assert(document.activeElement === $("#profile-entry-default"), "Office Defaults action should focus the profile entry default control.");
+
+        await waitFor(() => document.activeElement === $("#profile-entry-default"), 3000, 50);
 
         return "Office Defaults action opens and focuses the local browser defaults panel";
     }

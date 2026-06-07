@@ -44,6 +44,8 @@ requireIncludes("user profile browser QC guards office-page access", qc, [
   "openLocalProfileDefaultsFromOffice",
   "#user-profile-defaults",
   "#profile-entry-default",
+  "await waitFor(() => document.activeElement === $(\"#profile-entry-default\")",
+  "3000, 50",
   "Defaults for this browser"
 ]);
 

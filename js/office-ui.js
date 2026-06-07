@@ -883,15 +883,16 @@ function focusLocalProfileDefaultsPanel() {
     const focusTarget = document.getElementById('profile-entry-default') ||
         panel.querySelector('select, button, input, [tabindex]:not([tabindex="-1"])');
 
-    requestAnimationFrame(() => {
-        panel.scrollIntoView({ block: 'center', behavior: 'smooth' });
+    const focusProfileTarget = () => {
+        if (focusTarget && typeof focusTarget.focus === 'function') {
+            focusTarget.focus({ preventScroll: true });
+        }
+    };
 
-        requestAnimationFrame(() => {
-            if (focusTarget && typeof focusTarget.focus === 'function') {
-                focusTarget.focus({ preventScroll: true });
-            }
-        });
-    });
+    panel.scrollIntoView({ block: 'center', behavior: 'smooth' });
+    focusProfileTarget();
+    requestAnimationFrame(focusProfileTarget);
+    setTimeout(focusProfileTarget, 80);
 }
 
 function openLocalProfileDefaultsFromOffice() {
