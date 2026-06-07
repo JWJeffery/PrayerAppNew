@@ -197,8 +197,8 @@ check(
 );
 
 check(
-  'future additions must distinguish received adapted translated permission-cleared or original material',
-  governance.futureAdditionRequirements.some(item => item.includes('received/traditional, adapted, translated, permission-cleared, or original')) &&
+  'future additions must distinguish received adapted translated source-reviewed or original material',
+  governance.futureAdditionRequirements.some(item => item.includes('received/traditional, adapted, translated, source-reviewed, or original')) &&
   governance.futureAdditionRequirements.some(item => item.includes('separate Universal Office original category'))
 );
 
