@@ -52,7 +52,8 @@
     "audit:book-of-needs-browser-qc-runner": "node scripts/audit-book-of-needs-browser-qc-runner.mjs",
     "audit:app-shell-browser-qc-runner": "node scripts/audit-app-shell-browser-qc-runner.mjs",
     "audit:user-profile-defaults-skeleton": "node scripts/audit-user-profile-defaults-skeleton.mjs",
-    "audit:user-profile-browser-qc-runner": "node scripts/audit-user-profile-browser-qc-runner.mjs"
+    "audit:user-profile-browser-qc-runner": "node scripts/audit-user-profile-browser-qc-runner.mjs",
+    "audit:book-of-needs-taxonomy": "node scripts/audit-book-of-needs-taxonomy.mjs"
   },
   "repository": {
     "type": "git",

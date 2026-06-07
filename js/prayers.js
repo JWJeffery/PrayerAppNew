@@ -6,6 +6,18 @@
 
 let prayersData = null; // cache
 
+const BOOK_OF_NEEDS_TAXONOMY_VERSION = 1;
+
+const BOOK_OF_NEEDS_TRADITION_CODES = Object.freeze({
+    ANG: 'The Episcopal Church',
+    LC: 'Latin Catholic',
+    EO: 'Eastern Orthodoxy',
+    OO: 'Oriental Orthodoxy',
+    COE: 'Church of the East'
+});
+
+const BOOK_OF_NEEDS_ALLOWED_TRADITIONS = new Set(Object.keys(BOOK_OF_NEEDS_TRADITION_CODES));
+
 const BOOK_OF_NEEDS_CONTEXTS = {
     UNIVERSAL: {
         label: 'Universal Office Selector',
@@ -16,6 +28,12 @@ const BOOK_OF_NEEDS_CONTEXTS = {
         label: 'The Episcopal Church',
         note: 'Showing prayers explicitly tagged for Anglican/Episcopal use.',
         empty: 'No Anglican/Episcopal prayers are available in this section yet.',
+        returnText: 'Back to Office'
+    },
+    LC: {
+        label: 'Latin Catholic',
+        note: 'Showing prayers explicitly tagged for Latin Catholic use.',
+        empty: 'No Latin Catholic prayers are available in this section yet.',
         returnText: 'Back to Office'
     },
     OO: {
@@ -59,13 +77,13 @@ const BOOK_OF_NEEDS_OPTION_TRADITIONS = {
     'andrewes-thanksgiving': ['ANG'],
     'andrewes-penitence': ['ANG'],
     'andrewes-petition': ['ANG'],
-    'prayer-for-the-sick': [],
-    'prayer-for-peace': [],
-    'prayer-for-unity': [],
-    'prayer-for-mission': [],
-    'prayer-for-guidance': [],
-    'prayer-for-the-church': [],
-    'prayer-for-the-world': [],
+    'prayer-for-the-sick': ['ANG'],
+    'prayer-for-peace': ['ANG'],
+    'prayer-for-unity': ['ANG'],
+    'prayer-for-mission': ['ANG'],
+    'prayer-for-guidance': ['ANG'],
+    'prayer-for-the-church': ['ANG'],
+    'prayer-for-the-world': ['ANG'],
     'minister-journey-bcp': ['ANG'],
     'minister-journey-orthodox': ['EO'],
     'minister-entering-bcp': ['ANG'],
@@ -90,11 +108,30 @@ function normalizeBookOfNeedsContext(context) {
     return BOOK_OF_NEEDS_CONTEXTS[context] ? context : 'UNIVERSAL';
 }
 
+function getBookOfNeedsTraditionsForPrayer(prayerId) {
+    const traditions = BOOK_OF_NEEDS_OPTION_TRADITIONS[prayerId];
+
+    if (!Array.isArray(traditions)) {
+        console.warn(`[Book of Needs taxonomy] Missing tradition assignment for ${prayerId}.`);
+        return [];
+    }
+
+    return traditions.filter(code => {
+        const known = BOOK_OF_NEEDS_ALLOWED_TRADITIONS.has(code);
+
+        if (!known) {
+            console.warn(`[Book of Needs taxonomy] Unknown tradition code "${code}" for ${prayerId}.`);
+        }
+
+        return known;
+    });
+}
+
 function prayerOptionAppliesToContext(option, context) {
     if (context === 'UNIVERSAL') return true;
 
     const prayerId = option.dataset.value;
-    const traditions = BOOK_OF_NEEDS_OPTION_TRADITIONS[prayerId] || [];
+    const traditions = getBookOfNeedsTraditionsForPrayer(prayerId);
     option.dataset.traditions = traditions.join(' ');
 
     return traditions.includes(context);
@@ -150,7 +187,7 @@ function applyBookOfNeedsContext(context = 'UNIVERSAL') {
 
     for (const option of document.querySelectorAll('.prayer-option')) {
         const prayerId = option.dataset.value;
-        const traditions = BOOK_OF_NEEDS_OPTION_TRADITIONS[prayerId] || [];
+        const traditions = getBookOfNeedsTraditionsForPrayer(prayerId);
         option.dataset.traditions = traditions.join(' ');
 
         const visible = prayerOptionAppliesToContext(option, normalizedContext);
@@ -201,6 +238,13 @@ function resetBookOfNeedsView() {
 
 window.applyBookOfNeedsContext = applyBookOfNeedsContext;
 window.resetBookOfNeedsView = resetBookOfNeedsView;
+window.getBookOfNeedsTaxonomy = function getBookOfNeedsTaxonomy() {
+    return {
+        version: BOOK_OF_NEEDS_TAXONOMY_VERSION,
+        traditionCodes: { ...BOOK_OF_NEEDS_TRADITION_CODES },
+        assignments: JSON.parse(JSON.stringify(BOOK_OF_NEEDS_OPTION_TRADITIONS))
+    };
+};
 
 
 // ── Dropdown Interaction ─────────────────────────────────────────────────────

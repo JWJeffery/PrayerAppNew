@@ -94,6 +94,15 @@ check(
 
 
 check(
+  'Book of Needs taxonomy registry and helper are present',
+  prayersJs.includes('BOOK_OF_NEEDS_TAXONOMY_VERSION') &&
+  prayersJs.includes('BOOK_OF_NEEDS_TRADITION_CODES') &&
+  prayersJs.includes('BOOK_OF_NEEDS_ALLOWED_TRADITIONS') &&
+  prayersJs.includes('function getBookOfNeedsTraditionsForPrayer(prayerId)') &&
+  prayersJs.includes('window.getBookOfNeedsTaxonomy')
+);
+
+check(
   'prayers.js defines option tradition map',
   prayersJs.includes('const BOOK_OF_NEEDS_OPTION_TRADITIONS = {')
 );
@@ -116,16 +125,24 @@ check(
 );
 
 check(
-  'Latin Catholic prayers are not silently treated as Anglican',
+  'Latin Catholic context is explicit but not treated as Anglican',
+  prayersJs.includes("LC: {") &&
+  prayersJs.includes("label: 'Latin Catholic'") &&
   prayersJs.includes("'thanksgiving-aquinas': ['LC']") &&
   prayersJs.includes("'o-salutaris': ['LC']") &&
   prayersJs.includes("'tantum-ergo': ['LC']")
 );
 
+
 check(
-  'general intercessions have no tradition assignment',
-  prayersJs.includes("'prayer-for-the-sick': []") &&
-  prayersJs.includes("'prayer-for-the-world': []")
+  'general intercessions are explicitly tagged Anglican/Episcopal',
+  prayersJs.includes("'prayer-for-the-sick': ['ANG']") &&
+  prayersJs.includes("'prayer-for-peace': ['ANG']") &&
+  prayersJs.includes("'prayer-for-unity': ['ANG']") &&
+  prayersJs.includes("'prayer-for-mission': ['ANG']") &&
+  prayersJs.includes("'prayer-for-guidance': ['ANG']") &&
+  prayersJs.includes("'prayer-for-the-church': ['ANG']") &&
+  prayersJs.includes("'prayer-for-the-world': ['ANG']")
 );
 
 check(
