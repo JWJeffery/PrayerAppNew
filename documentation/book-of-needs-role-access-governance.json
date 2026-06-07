@@ -2,4 +2,87 @@
   "governanceVersion": "book_of_needs_role_access_governance_v1",
   "dateRecorded": "2026-06-07",
   "scope": "Book of Needs and related liturgical-resource access. This governs display/access classification before further Book of Needs or liturgical-service material is added.",
-  "coreDecision": "Book of Needs and liturgical-resource access is role-aware, not merely role-restrictive. The default Book of Needs experience remains lay-devotional and pastorally accessible, while role-aware access also provides
+  "coreDecision": "Book of Needs and liturgical-resource access is role-aware, not merely role-restrictive. Default Book of Needs access remains lay-devotional and pastorally accessible, while role-aware access also provides appropriate and useful resources for those who serve in ordained or appointed liturgical roles.",
+  "firstPublicIntakeSplash": {
+    "roleQuestionAllowed": false,
+    "reason": "Role discernment must not appear on the first public intake splash. The first entry flow remains tradition/family orientation and ordinary app entry.",
+    "forbiddenOptionLabels": [
+      "Just show ordinary devotional prayers"
+    ],
+    "notes": "Default lay-accessible Book of Needs is the normal experience, not a diminished mode. Do not frame lay devotional use as 'just' anything."
+  },
+  "roleDiscernment": {
+    "allowedWhen": [
+      "after tradition/family selection",
+      "inside Book of Needs settings where access tier matters",
+      "inside profile/defaults where the user chooses liturgical role access",
+      "when a user attempts to open a role-restricted liturgical-resource area"
+    ],
+    "notAllowedWhen": [
+      "initial public intake splash",
+      "general app entry before tradition/family selection"
+    ],
+    "easternChristianRolePrompt": "For Eastern Christian use, are you ordained or appointed to a liturgical order?",
+    "easternChristianRoles": [
+      "layperson",
+      "reader",
+      "subdeacon",
+      "deacon",
+      "priest",
+      "bishop",
+      "monastic",
+      "research-reference"
+    ]
+  },
+  "roleAccessPrinciples": [
+    "Role access is order-specific. Reader, subdeacon, deacon, priest, and bishop access are not interchangeable.",
+    "Subdeacon access must not unlock deaconal, priestly, or episcopal material merely because the user is not a layperson.",
+    "Deacon access must not unlock priestly absolutions, priestly blessings, priestly silent prayers, episcopal material, or other texts proper to a higher order except where explicitly marked for reference use.",
+    "Priestly material must not be presented as ordinary lay prayer.",
+    "Episcopal material must not be presented as priestly or general clergy material.",
+    "Research/reference access may expose material for study without implying permission or appropriateness for liturgical performance."
+  ],
+  "purpose": {
+    "protective": "Prevent clergy-proper, sacramental, absolutional, exorcistic, ordination-related, blessing-specific, or otherwise order-proper texts from being presented as ordinary lay prayers.",
+    "usefulness": "Provide actually appropriate and useful resources for users who serve in liturgical orders, including silent or secret prayers, preparatory prayers, vesting prayers, deaconal/subdeaconal/reader material, and service-related texts where source-governed."
+  },
+  "defaultBookOfNeeds": {
+    "accessTier": "lay-devotional",
+    "description": "The default public Book of Needs experience is for ordinary Christian devotional needs: repentance, thanksgiving, sickness, travel, work, family, fear, grief, preparation, and asking God's help.",
+    "visibleByDefault": true
+  },
+  "accessTiers": [
+    "lay-devotional",
+    "lay-with-rubric",
+    "reader",
+    "subdeacon",
+    "deacon",
+    "priest",
+    "bishop",
+    "monastic",
+    "clergy-reference",
+    "research-hidden"
+  ],
+  "displayCategories": [
+    "devotional-need",
+    "preparation-for-service",
+    "vesting",
+    "silent-prayer",
+    "secret-prayer",
+    "blessing",
+    "sacramental-rite",
+    "absolution",
+    "exorcistic",
+    "ordination-related",
+    "funeral-memorial",
+    "reference"
+  ],
+  "futureIngestionRequirements": [
+    "Before importing from the Big Book of Needs or similar Eastern service books, classify candidate texts by title, source, tradition, need category, access tier, default lay visibility, reference-only posture, and reason.",
+    "Do not dump priestly, episcopal, sacramental, exorcistic, absolutional, or blessing-specific material into the default Book of Needs dropdown.",
+    "Lay-visible batches should prioritize devotional needs before service-only material.",
+    "Role-specific batches should provide useful resources proper to that order rather than merely hiding material from lay users.",
+    "Silent or secret prayers may be included when source-governed and role-appropriate, but must not be surfaced as general lay devotional prayers."
+  ],
+  "relatedDecision": "Some Eastern Book of Needs/Euchologion material is not appropriate for lay self-use. The app may include such material in the corpus, but display must be role-aware and tradition-honest."
+}
