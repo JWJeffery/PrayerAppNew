@@ -156,6 +156,50 @@
 
     </div>
 
+    <section id="user-profile-defaults" class="app-profile-defaults" aria-labelledby="user-profile-defaults-title">
+        <div class="app-profile-defaults-copy">
+            <p class="app-profile-kicker">Local Profile Defaults</p>
+            <h2 id="user-profile-defaults-title">How should this browser open?</h2>
+            <p>These settings are stored locally in this browser until the account profile system exists.</p>
+        </div>
+
+        <div class="app-profile-defaults-grid">
+            <label class="app-profile-default-field" for="profile-entry-default">
+                <span>Default opening</span>
+                <select id="profile-entry-default" onchange="setUserProfileEntryPageDefault(this.value)">
+                    <option value="ask">Ask on entry</option>
+                    <option value="tradition">My tradition office</option>
+                    <option value="universal">Universal Office selector</option>
+                </select>
+            </label>
+
+            <label class="app-profile-default-field" for="profile-tradition-default">
+                <span>Tradition default</span>
+                <select id="profile-tradition-default" onchange="setUserProfileTraditionDefault(this.value)">
+                    <option value="">No tradition selected</option>
+                    <option value="anglican">The Episcopal Church</option>
+                    <option value="oriental-orthodox">Oriental Orthodoxy</option>
+                    <option value="church-of-the-east">Church of the East</option>
+                    <option value="eastern-orthodox">Eastern Orthodoxy</option>
+                    <option value="latin-catholic" disabled>Latin Catholic — Liturgy of the Hours pending</option>
+                </select>
+            </label>
+
+            <label class="app-profile-default-field" for="profile-book-needs-scope">
+                <span>Book of Needs</span>
+                <select id="profile-book-needs-scope" onchange="setUserProfileBookOfNeedsScope(this.value)">
+                    <option value="tradition">Use tradition-filtered prayers from office pages</option>
+                    <option value="universal">Show all prayers from office pages</option>
+                </select>
+            </label>
+        </div>
+
+        <div class="app-profile-defaults-actions">
+            <button type="button" class="mode-btn app-profile-reset" onclick="resetUniversalOfficeUserProfile()">Reset local profile</button>
+            <p id="profile-defaults-summary" class="app-profile-defaults-summary" aria-live="polite"></p>
+        </div>
+    </section>
+
     <a class="app-sponsor-link" href="https://musingsancientandmodern.substack.com/" target="_blank" rel="noopener noreferrer">
         <span>Sponsored by</span>
         <strong>Musings, Ancient and Modern</strong>

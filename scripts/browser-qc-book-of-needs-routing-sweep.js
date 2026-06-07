@@ -3,7 +3,8 @@
 
     const STORE_KEYS = [
         "universalOfficeSettings",
-        "universalOffice.entry.default.v1"
+        "universalOffice.entry.default.v1",
+        "universalOffice.userProfile.v1"
     ];
 
     const wait = (ms = 50) => new Promise(resolve => setTimeout(resolve, ms));

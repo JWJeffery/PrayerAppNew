@@ -628,8 +628,16 @@ function backToSplash() {
 // ── Entry Routing / Tradition Default ────────────────────────────────────────
 // New public users begin with a Christian-family choice rather than the all-mode
 // Universal Office selector. The selector remains available for advanced/project
-// use and can be persisted as the default until a full user profile exists.
+// use and can be persisted as the default through the local profile skeleton.
 const UNIVERSAL_OFFICE_ENTRY_DEFAULT_KEY = 'universalOffice.entry.default.v1';
+const UNIVERSAL_OFFICE_USER_PROFILE_KEY = 'universalOffice.userProfile.v1';
+
+const UNIVERSAL_OFFICE_USER_PROFILE_DEFAULTS = Object.freeze({
+    version: 1,
+    entryPageDefault: 'ask',
+    traditionDefault: null,
+    bookOfNeedsScope: 'tradition'
+});
 
 const UNIVERSAL_OFFICE_TRADITION_MODE_MAP = {
     'anglican': 'daily',
@@ -640,7 +648,18 @@ const UNIVERSAL_OFFICE_TRADITION_MODE_MAP = {
     'universal': 'universal'
 };
 
-function getUserEntryDefault() {
+const UNIVERSAL_OFFICE_TRADITION_LABELS = {
+    anglican: 'The Episcopal Church',
+    'church-of-the-east': 'Church of the East',
+    'eastern-orthodox': 'Eastern Orthodoxy',
+    'oriental-orthodox': 'Oriental Orthodoxy',
+    universal: 'Universal Office selector'
+};
+
+const UNIVERSAL_OFFICE_ENTRY_PAGE_VALUES = new Set(['ask', 'tradition', 'universal']);
+const UNIVERSAL_OFFICE_BOOK_OF_NEEDS_SCOPE_VALUES = new Set(['tradition', 'universal']);
+
+function readLegacyEntryDefault() {
     try {
         return localStorage.getItem(UNIVERSAL_OFFICE_ENTRY_DEFAULT_KEY);
     } catch (_error) {
@@ -648,19 +667,246 @@ function getUserEntryDefault() {
     }
 }
 
-function persistUserEntryDefault(value) {
+function writeLegacyEntryDefault(value) {
     try {
-        localStorage.setItem(UNIVERSAL_OFFICE_ENTRY_DEFAULT_KEY, value);
+        if (value) {
+            localStorage.setItem(UNIVERSAL_OFFICE_ENTRY_DEFAULT_KEY, value);
+        } else {
+            localStorage.removeItem(UNIVERSAL_OFFICE_ENTRY_DEFAULT_KEY);
+        }
     } catch (_error) {
-        console.warn('[entry-routing] Could not persist entry default.');
+        console.warn('[entry-routing] Could not write legacy entry default.');
     }
+}
+
+function normalizeUserProfileDefaults(raw) {
+    const profile = {
+        ...UNIVERSAL_OFFICE_USER_PROFILE_DEFAULTS,
+        ...(raw && typeof raw === 'object' ? raw : {})
+    };
+
+    profile.version = 1;
+
+    if (!UNIVERSAL_OFFICE_ENTRY_PAGE_VALUES.has(profile.entryPageDefault)) {
+        profile.entryPageDefault = 'ask';
+    }
+
+    if (!UNIVERSAL_OFFICE_BOOK_OF_NEEDS_SCOPE_VALUES.has(profile.bookOfNeedsScope)) {
+        profile.bookOfNeedsScope = 'tradition';
+    }
+
+    if (profile.traditionDefault && !UNIVERSAL_OFFICE_TRADITION_MODE_MAP[profile.traditionDefault]) {
+        profile.traditionDefault = null;
+    }
+
+    if (profile.traditionDefault === 'unknown') {
+        profile.traditionDefault = 'anglican';
+    }
+
+    return profile;
+}
+
+function applyEntryDefaultToProfile(profile, value) {
+    const next = normalizeUserProfileDefaults(profile);
+
+    if (!value) {
+        next.entryPageDefault = 'ask';
+        next.traditionDefault = null;
+        return next;
+    }
+
+    const route = resolveEntryTraditionRoute(value);
+
+    if (!route) {
+        next.entryPageDefault = 'ask';
+        return next;
+    }
+
+    if (route.mode === 'universal') {
+        next.entryPageDefault = 'universal';
+        return next;
+    }
+
+    next.entryPageDefault = 'tradition';
+    next.traditionDefault = route.storedDefault;
+    return next;
+}
+
+function deriveProfileFromLegacyEntryDefault(profile) {
+    const legacyDefault = readLegacyEntryDefault();
+
+    if (!legacyDefault) return profile;
+
+    const route = resolveEntryTraditionRoute(legacyDefault);
+    if (!route) return profile;
+
+    if (route.mode === 'universal') {
+        return {
+            ...profile,
+            entryPageDefault: 'universal'
+        };
+    }
+
+    return {
+        ...profile,
+        entryPageDefault: 'tradition',
+        traditionDefault: route.storedDefault
+    };
+}
+
+function getUserProfileDefaults() {
+    let parsed = null;
+    let hadStoredProfile = false;
+
+    try {
+        const stored = localStorage.getItem(UNIVERSAL_OFFICE_USER_PROFILE_KEY);
+        hadStoredProfile = Boolean(stored);
+        parsed = stored ? JSON.parse(stored) : null;
+    } catch (_error) {
+        console.warn('[entry-routing] Could not read local profile defaults.');
+    }
+
+    let profile = normalizeUserProfileDefaults(parsed);
+
+    if (!hadStoredProfile) {
+        profile = normalizeUserProfileDefaults(deriveProfileFromLegacyEntryDefault(profile));
+    }
+
+    return profile;
+}
+
+function persistUserProfileDefaults(profile) {
+    const normalized = normalizeUserProfileDefaults(profile);
+
+    try {
+        localStorage.setItem(UNIVERSAL_OFFICE_USER_PROFILE_KEY, JSON.stringify(normalized));
+    } catch (_error) {
+        console.warn('[entry-routing] Could not persist local profile defaults.');
+    }
+
+    const legacyValue = normalized.entryPageDefault === 'universal'
+        ? 'universal'
+        : normalized.entryPageDefault === 'tradition'
+            ? normalized.traditionDefault
+            : null;
+
+    writeLegacyEntryDefault(legacyValue);
+    syncUserProfileControls(normalized);
+    return normalized;
+}
+
+function getUserEntryDefault() {
+    const profile = getUserProfileDefaults();
+
+    if (profile.entryPageDefault === 'universal') return 'universal';
+    if (profile.entryPageDefault === 'tradition') return profile.traditionDefault || null;
+
+    return null;
+}
+
+function persistUserEntryDefault(value) {
+    persistUserProfileDefaults(
+        applyEntryDefaultToProfile(getUserProfileDefaults(), value)
+    );
 }
 
 function clearUserEntryDefault() {
     try {
+        localStorage.removeItem(UNIVERSAL_OFFICE_USER_PROFILE_KEY);
         localStorage.removeItem(UNIVERSAL_OFFICE_ENTRY_DEFAULT_KEY);
     } catch (_error) {
-        console.warn('[entry-routing] Could not clear entry default.');
+        console.warn('[entry-routing] Could not clear local profile defaults.');
+    }
+
+    syncUserProfileControls(normalizeUserProfileDefaults(null));
+}
+
+function setUserProfileEntryPageDefault(value) {
+    const profile = getUserProfileDefaults();
+
+    if (value === 'universal') {
+        profile.entryPageDefault = 'universal';
+    } else if (value === 'tradition') {
+        profile.entryPageDefault = profile.traditionDefault ? 'tradition' : 'ask';
+    } else {
+        profile.entryPageDefault = 'ask';
+    }
+
+    persistUserProfileDefaults(profile);
+}
+
+function setUserProfileTraditionDefault(value) {
+    const profile = getUserProfileDefaults();
+
+    if (!value) {
+        profile.traditionDefault = null;
+        if (profile.entryPageDefault === 'tradition') profile.entryPageDefault = 'ask';
+        persistUserProfileDefaults(profile);
+        return;
+    }
+
+    const route = resolveEntryTraditionRoute(value);
+
+    if (!route || route.mode === 'universal') {
+        console.warn('[entry-routing] Unsupported profile tradition default:', value);
+        syncUserProfileControls(profile);
+        return;
+    }
+
+    profile.traditionDefault = route.storedDefault;
+
+    if (profile.entryPageDefault === 'ask') {
+        profile.entryPageDefault = 'tradition';
+    }
+
+    persistUserProfileDefaults(profile);
+}
+
+function setUserProfileBookOfNeedsScope(value) {
+    const profile = getUserProfileDefaults();
+    profile.bookOfNeedsScope = UNIVERSAL_OFFICE_BOOK_OF_NEEDS_SCOPE_VALUES.has(value)
+        ? value
+        : 'tradition';
+
+    persistUserProfileDefaults(profile);
+}
+
+function resetUniversalOfficeUserProfile() {
+    clearUserEntryDefault();
+    showTraditionEntry();
+}
+
+function syncUserProfileControls(profile = getUserProfileDefaults()) {
+    const normalized = normalizeUserProfileDefaults(profile);
+    const entrySelect = document.getElementById('profile-entry-default');
+    const traditionSelect = document.getElementById('profile-tradition-default');
+    const bookNeedsSelect = document.getElementById('profile-book-needs-scope');
+    const summary = document.getElementById('profile-defaults-summary');
+
+    if (entrySelect) {
+        entrySelect.value = normalized.entryPageDefault;
+    }
+
+    if (traditionSelect) {
+        traditionSelect.value = normalized.traditionDefault || '';
+    }
+
+    if (bookNeedsSelect) {
+        bookNeedsSelect.value = normalized.bookOfNeedsScope;
+    }
+
+    if (summary) {
+        const entryLabel = normalized.entryPageDefault === 'universal'
+            ? 'opens to the Universal Office selector'
+            : normalized.entryPageDefault === 'tradition' && normalized.traditionDefault
+                ? `opens to ${UNIVERSAL_OFFICE_TRADITION_LABELS[normalized.traditionDefault] || 'the selected tradition'}`
+                : 'asks for a tradition on entry';
+
+        const bookNeedsLabel = normalized.bookOfNeedsScope === 'universal'
+            ? 'Book of Needs office access shows all prayers'
+            : 'Book of Needs office access stays tradition-filtered';
+
+        summary.textContent = `This browser ${entryLabel}; ${bookNeedsLabel}.`;
     }
 }
 
@@ -858,6 +1104,7 @@ function resetUserTraditionDefault() {
 
 function initializeEntryRouting() {
     bindTraditionEntryControls();
+    syncUserProfileControls();
 
     const entryOverride = new URLSearchParams(window.location.search).get('entry');
 
@@ -888,6 +1135,11 @@ window.setUserTraditionDefault = setUserTraditionDefault;
 window.resetUserTraditionDefault = resetUserTraditionDefault;
 window.showTraditionEntry = showTraditionEntry;
 window.showUniversalModeSelection = showUniversalModeSelection;
+window.getUniversalOfficeUserProfile = getUserProfileDefaults;
+window.setUserProfileEntryPageDefault = setUserProfileEntryPageDefault;
+window.setUserProfileTraditionDefault = setUserProfileTraditionDefault;
+window.setUserProfileBookOfNeedsScope = setUserProfileBookOfNeedsScope;
+window.resetUniversalOfficeUserProfile = resetUniversalOfficeUserProfile;
 
 document.addEventListener('DOMContentLoaded', initializeEntryRouting);
 
@@ -919,6 +1171,12 @@ const BOOK_OF_NEEDS_MODE_CONTEXTS = {
 };
 
 function getBookOfNeedsContextForMode(mode) {
+    const profile = getUserProfileDefaults();
+
+    if (profile.bookOfNeedsScope === 'universal') {
+        return 'UNIVERSAL';
+    }
+
     return BOOK_OF_NEEDS_MODE_CONTEXTS[mode] || 'UNIVERSAL';
 }
 
