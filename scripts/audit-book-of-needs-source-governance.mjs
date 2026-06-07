@@ -160,8 +160,8 @@ check(
 );
 
 check(
-  'Oriental Orthodox and Church of the East gaps are explicitly recorded',
-  governance.traditionStatus?.OO?.status === 'thin-gap' &&
+  'Oriental Orthodox is seeded and Church of the East gap is explicitly recorded',
+  governance.traditionStatus?.OO?.status === 'seeded' &&
   governance.traditionStatus?.COE?.status === 'empty-gap'
 );
 
@@ -180,10 +180,14 @@ check(
 );
 
 check(
-  'OO remains explicitly thin and does not pretend to be populated',
-  counts.OO === 1 &&
-  assignedByTradition.OO.length === 1 &&
-  assignedByTradition.OO[0] === 'thanksgiving-basil'
+  'OO has real sourced prayers including the four Armenian Apostolic entries',
+  counts.OO === 5 &&
+  assignedByTradition.OO.length === 5 &&
+  assignedByTradition.OO.includes('thanksgiving-basil') &&
+  assignedByTradition.OO.includes('armenian-for-the-sick') &&
+  assignedByTradition.OO.includes('armenian-prayer-against-troubles') &&
+  assignedByTradition.OO.includes('armenian-for-travellers') &&
+  assignedByTradition.OO.includes('armenian-prayer-before-work')
 );
 
 check(

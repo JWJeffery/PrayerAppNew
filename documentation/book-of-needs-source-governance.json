@@ -1,12 +1,12 @@
 {
   "schemaVersion": 1,
   "purpose": "Book of Needs source governance and tradition-coverage gap inventory.",
-  "principle": "Do not manufacture tradition-specific prayers to fill taxonomy counts. Tradition-specific Book of Needs entries must be received, sourced, permission-safe, and tradition-honest.",
+  "principle": "Do not manufacture tradition-specific prayers to fill taxonomy counts. Tradition-specific Book of Needs entries must be received, sourced, source-reviewed, and tradition-honest.",
   "coverageCountsAtCreation": {
     "ANG": 25,
     "LC": 11,
     "EO": 9,
-    "OO": 1,
+    "OO": 5,
     "COE": 0
   },
   "traditionStatus": {
@@ -27,8 +27,8 @@
     },
     "OO": {
       "label": "Oriental Orthodoxy",
-      "status": "thin-gap",
-      "notes": "Only explicitly shared patristic/received material is currently OO-tagged. Do not add invented Oriental Orthodox prayers."
+      "status": "seeded",
+      "notes": "Four Armenian Apostolic prayers added from St. Gregory Armenian Church, Common Prayers of the Armenian Church (stgregorywp.com/prayers/), sourced from the Book of Hourly Prayers of the Armenian Apostolic Church and St. Nerses the Graceful. Do not add invented Oriental Orthodox prayers."
     },
     "COE": {
       "label": "Church of the East",
@@ -46,6 +46,26 @@
         "id": "thanksgiving-basil",
         "basis": "Shared patristic/received Christian thanksgiving prayer attributed to St. Basil; currently allowed to overlap EO and OO.",
         "status": "received-shared-patristic"
+      },
+      {
+        "id": "armenian-for-the-sick",
+        "basis": "Book of Hourly Prayers of the Armenian Apostolic Church — Sixth Hour Service; via St. Gregory Armenian Church, Common Prayers of the Armenian Church (stgregorywp.com/prayers/).",
+        "status": "received-traditional"
+      },
+      {
+        "id": "armenian-prayer-against-troubles",
+        "basis": "St. Nerses the Graceful, \"I Confess with Faith\"; via St. Gregory Armenian Church, Common Prayers of the Armenian Church (stgregorywp.com/prayers/).",
+        "status": "received-traditional"
+      },
+      {
+        "id": "armenian-for-travellers",
+        "basis": "Book of Hourly Prayers of the Armenian Apostolic Church — Sunrise Service; via St. Gregory Armenian Church, Common Prayers of the Armenian Church (stgregorywp.com/prayers/).",
+        "status": "received-traditional"
+      },
+      {
+        "id": "armenian-prayer-before-work",
+        "basis": "St. Nerses the Graceful, \"I Confess with Faith\"; via St. Gregory Armenian Church, Common Prayers of the Armenian Church (stgregorywp.com/prayers/).",
+        "status": "received-traditional"
       }
     ],
     "COE": []

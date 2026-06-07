@@ -101,7 +101,11 @@ const BOOK_OF_NEEDS_OPTION_TRADITIONS = {
     'minister-before-serving-orthodox': ['EO'],
     'minister-before-serving-deacon': ['EO'],
     'minister-after-serving-bcp': ['ANG'],
-    'minister-after-serving-orthodox': ['EO']
+    'minister-after-serving-orthodox': ['EO'],
+    'armenian-for-the-sick': ['OO'],
+    'armenian-prayer-against-troubles': ['OO'],
+    'armenian-for-travellers': ['OO'],
+    'armenian-prayer-before-work': ['OO']
 };
 
 function normalizeBookOfNeedsContext(context) {
