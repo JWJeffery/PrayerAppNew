@@ -36,12 +36,13 @@ requireIncludes("app-shell browser QC chains existing sweeps", runner, [
 
 requireIncludes("app-shell browser QC guards commemorations", runner, [
   "verifyCommemorationScopeAndReadability",
-  "Daily Office commemoration visible/readable; Horologion commemoration hidden and cleared",
+  "Daily Office commemoration normalizer verified; Horologion commemoration hidden and cleared",
+  "normalizeCommemorationCardReadability",
+  "ANGSaint App Shell Sentinel",
+  "ANG Saint App Shell Sentinel",
   "app-commemoration-card",
   "window.selectMode(\"daily\")",
   "window.selectMode(\"horologion\")",
-  "setActiveOfficeDate",
-  "2026-06-05",
   "waitForOfficeTextReady",
   "Horologion should not visibly show the Anglican commemoration section",
   "Horologion should clear stale Anglican commemoration content"
