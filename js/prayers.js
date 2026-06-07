@@ -105,7 +105,11 @@ const BOOK_OF_NEEDS_OPTION_TRADITIONS = {
     'armenian-for-the-sick': ['OO'],
     'armenian-prayer-against-troubles': ['OO'],
     'armenian-for-travellers': ['OO'],
-    'armenian-prayer-before-work': ['OO']
+    'armenian-prayer-before-work': ['OO'],
+    'coe-prayer-for-a-journey': ['COE'],
+    'coe-prayer-while-travelling': ['COE'],
+    'coe-prayer-of-repentance': ['COE'],
+    'coe-prayer-for-students': ['COE']
 };
 
 function normalizeBookOfNeedsContext(context) {

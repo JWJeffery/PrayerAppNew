@@ -160,9 +160,9 @@ check(
 );
 
 check(
-  'Oriental Orthodox is seeded and Church of the East gap is explicitly recorded',
+  'Oriental Orthodox and Church of the East are both seeded',
   governance.traditionStatus?.OO?.status === 'seeded' &&
-  governance.traditionStatus?.COE?.status === 'empty-gap'
+  governance.traditionStatus?.COE?.status === 'seeded'
 );
 
 check(
@@ -172,11 +172,11 @@ check(
 );
 
 check(
-  'COE remains honestly empty until sourced prayers exist',
-  counts.COE === 0 &&
+  'COE is seeded with real sourced prayers',
+  counts.COE === 4 &&
   Array.isArray(governance.traditionSpecificPrayerIds?.COE) &&
-  governance.traditionSpecificPrayerIds.COE.length === 0 &&
-  contexts.COE?.empty === 'No Church of the East prayers are available in this section yet.'
+  governance.traditionSpecificPrayerIds.COE.length === 4 &&
+  governance.traditionStatus?.COE?.status === 'seeded'
 );
 
 check(

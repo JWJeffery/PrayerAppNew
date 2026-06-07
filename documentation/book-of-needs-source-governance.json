@@ -7,7 +7,7 @@
     "LC": 11,
     "EO": 9,
     "OO": 5,
-    "COE": 0
+    "COE": 4
   },
   "traditionStatus": {
     "ANG": {
@@ -32,8 +32,8 @@
     },
     "COE": {
       "label": "Church of the East",
-      "status": "empty-gap",
-      "notes": "No Church of the East Book of Needs prayers are currently available. The UI must keep the empty state honest until sourced prayers are added."
+      "status": "seeded",
+      "notes": "Four prayers added from The Beginner's Prayerbook, Assyrian Church of the East Diocese of California, Second Revised Edition, 2019, 'Prayers for Various Occasions.' Do not add invented Church of the East prayers."
     }
   },
   "provenanceRequiredForTraditions": [
@@ -68,7 +68,28 @@
         "status": "received-traditional"
       }
     ],
-    "COE": []
+    "COE": [
+      {
+        "id": "coe-prayer-for-a-journey",
+        "basis": "The Beginner's Prayerbook, Assyrian Church of the East Diocese of California, Second Revised Edition, 2019, 'Prayers for Various Occasions.' https://acoecalifornia.org/files/The-Beginners-Prayer-Book-Text---version-3-1.pdf",
+        "status": "received-traditional"
+      },
+      {
+        "id": "coe-prayer-while-travelling",
+        "basis": "The Beginner's Prayerbook, Assyrian Church of the East Diocese of California, Second Revised Edition, 2019, 'Prayers for Various Occasions.' https://acoecalifornia.org/files/The-Beginners-Prayer-Book-Text---version-3-1.pdf",
+        "status": "received-traditional"
+      },
+      {
+        "id": "coe-prayer-of-repentance",
+        "basis": "The Beginner's Prayerbook, Assyrian Church of the East Diocese of California, Second Revised Edition, 2019, 'Prayers for Various Occasions.' https://acoecalifornia.org/files/The-Beginners-Prayer-Book-Text---version-3-1.pdf",
+        "status": "received-traditional"
+      },
+      {
+        "id": "coe-prayer-for-students",
+        "basis": "The Beginner's Prayerbook, Assyrian Church of the East Diocese of California, Second Revised Edition, 2019, 'Prayers for Various Occasions.' https://acoecalifornia.org/files/The-Beginners-Prayer-Book-Text---version-3-1.pdf",
+        "status": "received-traditional"
+      }
+    ]
   },
   "forbiddenSourcePhrasesForTraditionSpecificUse": [
     "Universal Office original pastoral text for Oriental Orthodox use",
