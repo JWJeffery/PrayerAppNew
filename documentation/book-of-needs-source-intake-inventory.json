@@ -1,0 +1,372 @@
+{
+  "inventoryVersion": "book_of_needs_source_intake_inventory_v1",
+  "dateRecorded": "2026-06-06",
+  "scope": "OO and COE candidate source leads only. This inventory contains no prayer text and creates no tradition-specific prayer entries.",
+  "activeTaxonomyCountsAtIntake": {
+    "ANG": 25,
+    "LC": 11,
+    "EO": 9,
+    "OO": 1,
+    "COE": 0
+  },
+  "governancePosture": {
+    "universalIsAccessContextOnly": true,
+    "validBookOfNeedsTraditionCodes": [
+      "ANG",
+      "LC",
+      "EO",
+      "OO",
+      "COE"
+    ],
+    "candidateTraditionsInThisInventory": [
+      "OO",
+      "COE"
+    ],
+    "forbiddenAssignmentBuckets": [
+      "UNIVERSAL",
+      "ECU",
+      "COMMON",
+      "COMMON_PRAYER",
+      "ALL"
+    ],
+    "noPrayerTextImported": true,
+    "sourceLeadDoesNotAuthorizeImport": true,
+    "coeRemainsEmptyUntilRealSourcedPrayerEntriesExist": true,
+    "ooRemainsThinUntilRealSourcedPrayerEntriesExist": true
+  },
+  "candidateSourceLeads": [
+    {
+      "id": "oo-coptic-agpeya-copticchurch-net",
+      "tradition": "OO",
+      "sourceFamily": "Coptic Orthodox",
+      "sourceTitle": "The Agpeya / Prayers of the Hours",
+      "sourceType": "book-of-hours-online-witness",
+      "sourceLocation": "CopticChurch.net Agpeya index",
+      "sourceLocationUrl": "https://www.copticchurch.net/liturgy/agpeya/index.html",
+      "sourceLanguage": [
+        "English"
+      ],
+      "sourceUseCase": [
+        "thanksgiving",
+        "daily-prayer",
+        "general-litany-review"
+      ],
+      "classification": "received-traditional",
+      "translationPosture": "translated",
+      "rightsPosture": "needs-permission-review",
+      "publicDomainPermissionStatus": "online-access-is-not-redistribution-permission",
+      "confidence": "high",
+      "integrationDisposition": "source-lead-only",
+      "needsBeforePrayerText": [
+        "identify exact prayer unit locators",
+        "verify translation and redistribution rights",
+        "create provenance record before any OO prayer entry is added"
+      ],
+      "notes": "Strong Coptic Orthodox source lead. This record imports no prayer text."
+    },
+    {
+      "id": "oo-coptic-holy-euchologion-unction",
+      "tradition": "OO",
+      "sourceFamily": "Coptic Orthodox",
+      "sourceTitle": "The Holy Euchologion, contemporary English witness",
+      "sourceType": "euchologion-pdf-witness",
+      "sourceLocation": "UK Midlands Copts PDF witness",
+      "sourceLocationUrl": "https://ukmidcopts.org/kotob/The%20Holy%20Euchologion%20%28Contemporary%20English%20Version%29.pdf",
+      "sourceLanguage": [
+        "English",
+        "Coptic",
+        "Arabic"
+      ],
+      "sourceUseCase": [
+        "sick",
+        "sacramental-service-review",
+        "pastoral-need-review"
+      ],
+      "classification": "received-traditional",
+      "translationPosture": "translated",
+      "rightsPosture": "needs-permission-review",
+      "publicDomainPermissionStatus": "contemporary-translation-rights-not-cleared",
+      "confidence": "medium",
+      "integrationDisposition": "source-lead-only",
+      "needsBeforePrayerText": [
+        "verify ecclesial/source authority",
+        "verify translation and redistribution rights",
+        "separate sacramental office material from lay Book of Needs devotional material"
+      ],
+      "notes": "Potential Coptic source lead for pastoral-need categories, not an import-cleared text source."
+    },
+    {
+      "id": "oo-syriac-shehimo-lrd",
+      "tradition": "OO",
+      "sourceFamily": "Syriac Orthodox / Malankara Orthodox West Syriac",
+      "sourceTitle": "Shehimo, Book of Common Prayer",
+      "sourceType": "book-of-hours-published-source-lead",
+      "sourceLocation": "Malankara Orthodox Diocese of South-West America Liturgical Resource Development page",
+      "sourceLocationUrl": "https://ds-wa.org/liturgical-resource-development/",
+      "sourceLanguage": [
+        "English",
+        "Malayalam",
+        "Syriac"
+      ],
+      "sourceUseCase": [
+        "daily-prayer",
+        "repentance",
+        "departed",
+        "theotokos",
+        "saints"
+      ],
+      "classification": "received-traditional",
+      "translationPosture": "translated",
+      "rightsPosture": "needs-permission-review",
+      "publicDomainPermissionStatus": "published-modern-translation-not-cleared",
+      "confidence": "high",
+      "integrationDisposition": "source-lead-only",
+      "needsBeforePrayerText": [
+        "obtain or identify usable permission posture",
+        "identify exact office/prayer unit locators",
+        "confirm whether any candidate prayer belongs in Book of Needs rather than office corpus"
+      ],
+      "notes": "Strong West Syriac Oriental Orthodox source lead. This record imports no prayer text."
+    },
+    {
+      "id": "oo-armenian-zhamakirk-common-hours",
+      "tradition": "OO",
+      "sourceFamily": "Armenian Apostolic",
+      "sourceTitle": "Zhamakirk / Common Hours of Prayer",
+      "sourceType": "book-of-hours-source-lead",
+      "sourceLocation": "Armenian common-hours witnesses and Armenian Church liturgy-of-hours descriptions",
+      "sourceLocationUrl": "https://www.armenianchurch.org/en/The%20Liturgy%20of%20the%20Hours/",
+      "sourceLanguage": [
+        "English",
+        "Armenian"
+      ],
+      "sourceUseCase": [
+        "daily-prayer",
+        "hourly-prayer",
+        "general-devotion-review"
+      ],
+      "classification": "received-traditional",
+      "translationPosture": "translated",
+      "rightsPosture": "needs-permission-review",
+      "publicDomainPermissionStatus": "translation-rights-not-cleared",
+      "confidence": "medium",
+      "integrationDisposition": "source-lead-only",
+      "needsBeforePrayerText": [
+        "identify edition and exact prayer locators",
+        "verify translation rights",
+        "confirm Book of Needs category fit before import"
+      ],
+      "notes": "Armenian Apostolic source lead. Do not treat source existence as permission."
+    },
+    {
+      "id": "oo-armenian-st-nersess-prayer-resources",
+      "tradition": "OO",
+      "sourceFamily": "Armenian Apostolic",
+      "sourceTitle": "St. Nersess Armenian prayer resources",
+      "sourceType": "published-prayer-resource-source-lead",
+      "sourceLocation": "St. Nersess Seminary prayers resource page",
+      "sourceLocationUrl": "https://stnersess.edu/resources/prayers/",
+      "sourceLanguage": [
+        "English"
+      ],
+      "sourceUseCase": [
+        "daily-prayer",
+        "saints",
+        "penitential-prayer-review"
+      ],
+      "classification": "received-traditional",
+      "translationPosture": "translated",
+      "rightsPosture": "needs-permission-review",
+      "publicDomainPermissionStatus": "underlying-authors-may-be-historical-but-modern-publication-and-translation-rights-need-review",
+      "confidence": "medium",
+      "integrationDisposition": "source-lead-only",
+      "needsBeforePrayerText": [
+        "verify publication and translation rights",
+        "distinguish historical underlying prayer from modern translation",
+        "create provenance record for any selected prayer"
+      ],
+      "notes": "Useful Armenian source lead for future review; no text imported."
+    },
+    {
+      "id": "oo-ethiopian-tewahedo-prayer-witness",
+      "tradition": "OO",
+      "sourceFamily": "Ethiopian Orthodox Tewahedo",
+      "sourceTitle": "Ethiopian Orthodox Tewahedo prayer witnesses",
+      "sourceType": "prayer-resource-source-lead",
+      "sourceLocation": "Ethiopian Orthodox online prayer witnesses for later review",
+      "sourceLocationUrl": "https://www.ethiopianorthodox.org/english/weekly/eotcholyweek.pdf",
+      "sourceLanguage": [
+        "English",
+        "Ge'ez",
+        "Amharic"
+      ],
+      "sourceUseCase": [
+        "daily-prayer",
+        "faith",
+        "hourly-prayer-review"
+      ],
+      "classification": "received-traditional",
+      "translationPosture": "translated",
+      "rightsPosture": "needs-permission-review",
+      "publicDomainPermissionStatus": "translation-and-publication-rights-not-cleared",
+      "confidence": "low",
+      "integrationDisposition": "source-lead-only",
+      "needsBeforePrayerText": [
+        "identify stronger edition/source witness",
+        "verify translation and publication rights",
+        "confirm whether candidate belongs in Book of Needs or office corpus"
+      ],
+      "notes": "Retained as a low-confidence lead only because Ethiopian office material already exists elsewhere in the project; no text imported."
+    },
+    {
+      "id": "coe-acote-library-daily-offices",
+      "tradition": "COE",
+      "sourceFamily": "Assyrian Church of the East",
+      "sourceTitle": "The Daily Offices / pocket-sized prayer book in English",
+      "sourceType": "official-library-source-lead",
+      "sourceLocation": "Assyrian Church of the East library page",
+      "sourceLocationUrl": "https://acote.church/library",
+      "sourceLanguage": [
+        "English",
+        "Classical Syriac",
+        "Vernacular Assyrian"
+      ],
+      "sourceUseCase": [
+        "daily-prayer",
+        "general-prayer-review",
+        "office-source-context"
+      ],
+      "classification": "received-traditional",
+      "translationPosture": "translated",
+      "rightsPosture": "needs-permission-review",
+      "publicDomainPermissionStatus": "official-library-access-is-not-redistribution-permission",
+      "confidence": "high",
+      "integrationDisposition": "source-lead-only",
+      "needsBeforePrayerText": [
+        "obtain edition details",
+        "verify translation and redistribution rights",
+        "create provenance record before any COE prayer entry is added"
+      ],
+      "notes": "Strong Church of the East source lead. COE Book of Needs remains empty until actual permission-safe prayer entries exist."
+    },
+    {
+      "id": "coe-acote-library-khudra-volumes",
+      "tradition": "COE",
+      "sourceFamily": "Assyrian Church of the East",
+      "sourceTitle": "Khudra volumes and companion materials",
+      "sourceType": "official-liturgical-book-source-lead",
+      "sourceLocation": "Assyrian Church of the East library page",
+      "sourceLocationUrl": "https://acote.church/library",
+      "sourceLanguage": [
+        "Classical Syriac",
+        "Vernacular Assyrian",
+        "English metadata"
+      ],
+      "sourceUseCase": [
+        "source-context",
+        "office-source-context",
+        "seasonal-prayer-review"
+      ],
+      "classification": "received-traditional",
+      "translationPosture": "needs-review",
+      "rightsPosture": "needs-permission-review",
+      "publicDomainPermissionStatus": "official-library-access-is-not-redistribution-permission",
+      "confidence": "high",
+      "integrationDisposition": "source-lead-only",
+      "needsBeforePrayerText": [
+        "identify exact volume and locator",
+        "verify whether English text is available and usable",
+        "confirm Book of Needs category fit rather than office corpus placement"
+      ],
+      "notes": "Strong COE source lead for provenance, not a ready import source."
+    },
+    {
+      "id": "coe-hudra-day-digital-preservation",
+      "tradition": "COE",
+      "sourceFamily": "Church of the East / East Syriac",
+      "sourceTitle": "Hudra.day digital preservation project",
+      "sourceType": "digital-liturgical-text-source-lead",
+      "sourceLocation": "Hudra.day",
+      "sourceLocationUrl": "https://hudra.day/about",
+      "sourceLanguage": [
+        "Syriac",
+        "English interface"
+      ],
+      "sourceUseCase": [
+        "source-context",
+        "office-source-context",
+        "locator-review"
+      ],
+      "classification": "received-traditional",
+      "translationPosture": "needs-review",
+      "rightsPosture": "restricted-transitory-viewing-only",
+      "publicDomainPermissionStatus": "terms-grant-personal-non-commercial-transitory-viewing-only-not-import-permission",
+      "confidence": "medium",
+      "integrationDisposition": "source-lead-only",
+      "needsBeforePrayerText": [
+        "do not import text under current terms",
+        "use only as locator/context unless permission changes",
+        "seek permission or independent public-domain witness before any COE prayer entry"
+      ],
+      "notes": "Useful locator/context lead. Current terms block treating it as an import-cleared source."
+    },
+    {
+      "id": "coe-openn-haverford-rendel-harris-53-hudra",
+      "tradition": "COE",
+      "sourceFamily": "Church of the East / East Syriac",
+      "sourceTitle": "Hūdrā manuscript, Rendel Harris 53",
+      "sourceType": "manuscript-witness-source-lead",
+      "sourceLocation": "Haverford College Quaker and Special Collections / OPenn / Internet Archive witness",
+      "sourceLocationUrl": "https://archive.org/details/harris_053",
+      "sourceLanguage": [
+        "Classical Syriac"
+      ],
+      "sourceUseCase": [
+        "public-domain-underlying-text-review",
+        "source-context",
+        "possible-transcription-project"
+      ],
+      "classification": "received-traditional",
+      "translationPosture": "needs-translation",
+      "rightsPosture": "public-domain-underlying-text-needs-transcription-review",
+      "publicDomainPermissionStatus": "underlying-text-likely-public-domain-by-age-but-image-transcription-and-use-rights-need-review",
+      "confidence": "medium",
+      "integrationDisposition": "source-lead-only",
+      "needsBeforePrayerText": [
+        "verify manuscript rights and image-use posture",
+        "transcribe and translate independently or locate usable translation",
+        "confirm exact prayer category and living tradition fit"
+      ],
+      "notes": "Potential public-domain witness path, but not usable as English prayer text without transcription, translation, and review."
+    },
+    {
+      "id": "coe-badger-nestorians-rituals-1852",
+      "tradition": "COE",
+      "sourceFamily": "Church of the East / external Anglican missionary witness",
+      "sourceTitle": "The Nestorians and their Rituals, George Percy Badger, 1852",
+      "sourceType": "nineteenth-century-public-domain-secondary-witness",
+      "sourceLocation": "Internet Archive / Wikisource witnesses",
+      "sourceLocationUrl": "https://archive.org/details/nestorianstheirr01badg",
+      "sourceLanguage": [
+        "English"
+      ],
+      "sourceUseCase": [
+        "source-context",
+        "historical-liturgical-book-identification",
+        "possible-public-domain-reference"
+      ],
+      "classification": "public-domain",
+      "translationPosture": "secondary-witness",
+      "rightsPosture": "public-domain-source-witness-needs-liturgical-verification",
+      "publicDomainPermissionStatus": "1852-publication-likely-public-domain-but-liturgical-accuracy-and-current-tradition-fit-require-review",
+      "confidence": "medium",
+      "integrationDisposition": "source-lead-only",
+      "needsBeforePrayerText": [
+        "verify exact cited material against East Syriac liturgical source",
+        "avoid treating missionary description as received COE prayer without corroboration",
+        "create provenance and accuracy notes before any use"
+      ],
+      "notes": "Useful public-domain historical witness, not by itself a sufficient received-text source."
+    }
+  ]
+}
