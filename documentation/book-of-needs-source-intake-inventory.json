@@ -1,7 +1,7 @@
 {
   "inventoryVersion": "book_of_needs_source_intake_inventory_v1",
   "dateRecorded": "2026-06-06",
-  "scope": "OO and COE candidate source leads only. This inventory contains no prayer text and creates no tradition-specific prayer entries.",
+  "scope": "OO and COE candidate source leads only. This inventory contains no prayer text and creates no tradition-specific prayer entries. It supports later internal corpus construction from real source text; public rendering is reviewed separately.",
   "activeTaxonomyCountsAtIntake": {
     "ANG": 25,
     "LC": 11,
@@ -30,9 +30,13 @@
       "ALL"
     ],
     "noPrayerTextImported": true,
-    "sourceLeadDoesNotAuthorizeImport": true,
     "coeRemainsEmptyUntilRealSourcedPrayerEntriesExist": true,
-    "ooRemainsThinUntilRealSourcedPrayerEntriesExist": true
+    "ooRemainsThinUntilRealSourcedPrayerEntriesExist": true,
+    "sourceInventoryDoesNotBlockInternalCorpusConstruction": true,
+    "publicRenderingIsSeparateFromInternalCorpusConstruction": true,
+    "noHeavyPerPrayerRightsSchema": true,
+    "prayersAreForDevotionalUse": true,
+    "sourceLeadDoesNotCreatePrayerEntry": true
   },
   "candidateSourceLeads": [
     {
@@ -53,16 +57,17 @@
       ],
       "classification": "received-traditional",
       "translationPosture": "translated",
-      "rightsPosture": "needs-permission-review",
-      "publicDomainPermissionStatus": "online-access-is-not-redistribution-permission",
       "confidence": "high",
       "integrationDisposition": "source-lead-only",
-      "needsBeforePrayerText": [
+      "notes": "Strong Coptic Orthodox source lead. The inventory imports no prayer text; selected prayers can be built later from real source text under the internal corpus model.",
+      "sourcePosture": "online-source-witness",
+      "corpusUsePosture": "eligible-for-internal-corpus-review",
+      "publicRenderingPosture": "review-public-rendering-after-corpus-selection",
+      "neededBeforeCorpusEntry": [
         "identify exact prayer unit locators",
-        "verify translation and redistribution rights",
-        "create provenance record before any OO prayer entry is added"
-      ],
-      "notes": "Strong Coptic Orthodox source lead. This record imports no prayer text."
+        "select edition or translation witness",
+        "attach compact sourceId before any OO prayer entry is added"
+      ]
     },
     {
       "id": "oo-coptic-holy-euchologion-unction",
@@ -84,16 +89,17 @@
       ],
       "classification": "received-traditional",
       "translationPosture": "translated",
-      "rightsPosture": "needs-permission-review",
-      "publicDomainPermissionStatus": "contemporary-translation-rights-not-cleared",
       "confidence": "medium",
       "integrationDisposition": "source-lead-only",
-      "needsBeforePrayerText": [
-        "verify ecclesial/source authority",
-        "verify translation and redistribution rights",
+      "notes": "Potential Coptic pastoral-need source lead. Use it to identify received material without turning the inventory into a permissions database.",
+      "sourcePosture": "euchologion-source-witness",
+      "corpusUsePosture": "eligible-for-internal-corpus-review",
+      "publicRenderingPosture": "review-public-rendering-after-corpus-selection",
+      "neededBeforeCorpusEntry": [
+        "verify ecclesial/source edition",
+        "identify exact prayer unit locators",
         "separate sacramental office material from lay Book of Needs devotional material"
-      ],
-      "notes": "Potential Coptic source lead for pastoral-need categories, not an import-cleared text source."
+      ]
     },
     {
       "id": "oo-syriac-shehimo-lrd",
@@ -117,16 +123,17 @@
       ],
       "classification": "received-traditional",
       "translationPosture": "translated",
-      "rightsPosture": "needs-permission-review",
-      "publicDomainPermissionStatus": "published-modern-translation-not-cleared",
       "confidence": "high",
       "integrationDisposition": "source-lead-only",
-      "needsBeforePrayerText": [
-        "obtain or identify usable permission posture",
-        "identify exact office/prayer unit locators",
-        "confirm whether any candidate prayer belongs in Book of Needs rather than office corpus"
-      ],
-      "notes": "Strong West Syriac Oriental Orthodox source lead. This record imports no prayer text."
+      "notes": "Strong West Syriac Oriental Orthodox source lead. The guardrail is source honesty, not blocking internal corpus construction.",
+      "sourcePosture": "published-source-witness",
+      "corpusUsePosture": "eligible-for-internal-corpus-review",
+      "publicRenderingPosture": "review-public-rendering-after-corpus-selection",
+      "neededBeforeCorpusEntry": [
+        "identify exact office or prayer unit locators",
+        "select edition or translation witness",
+        "confirm whether a candidate prayer belongs in Book of Needs rather than office corpus"
+      ]
     },
     {
       "id": "oo-armenian-zhamakirk-common-hours",
@@ -147,16 +154,17 @@
       ],
       "classification": "received-traditional",
       "translationPosture": "translated",
-      "rightsPosture": "needs-permission-review",
-      "publicDomainPermissionStatus": "translation-rights-not-cleared",
       "confidence": "medium",
       "integrationDisposition": "source-lead-only",
-      "needsBeforePrayerText": [
+      "notes": "Armenian Apostolic source lead. Source existence supports review; it does not itself create a tradition-specific prayer entry.",
+      "sourcePosture": "book-of-hours-source-witness",
+      "corpusUsePosture": "eligible-for-internal-corpus-review",
+      "publicRenderingPosture": "review-public-rendering-after-corpus-selection",
+      "neededBeforeCorpusEntry": [
         "identify edition and exact prayer locators",
-        "verify translation rights",
-        "confirm Book of Needs category fit before import"
-      ],
-      "notes": "Armenian Apostolic source lead. Do not treat source existence as permission."
+        "select edition or translation witness",
+        "confirm Book of Needs category fit before adding an entry"
+      ]
     },
     {
       "id": "oo-armenian-st-nersess-prayer-resources",
@@ -176,16 +184,17 @@
       ],
       "classification": "received-traditional",
       "translationPosture": "translated",
-      "rightsPosture": "needs-permission-review",
-      "publicDomainPermissionStatus": "underlying-authors-may-be-historical-but-modern-publication-and-translation-rights-need-review",
       "confidence": "medium",
       "integrationDisposition": "source-lead-only",
-      "needsBeforePrayerText": [
-        "verify publication and translation rights",
-        "distinguish historical underlying prayer from modern translation",
-        "create provenance record for any selected prayer"
-      ],
-      "notes": "Useful Armenian source lead for future review; no text imported."
+      "notes": "Useful Armenian source lead for future review. Keep the metadata lean and source-focused.",
+      "sourcePosture": "published-prayer-resource-witness",
+      "corpusUsePosture": "eligible-for-internal-corpus-review",
+      "publicRenderingPosture": "review-public-rendering-after-corpus-selection",
+      "neededBeforeCorpusEntry": [
+        "identify exact prayer source and authorial lineage",
+        "distinguish historical underlying prayer from modern presentation",
+        "attach compact sourceId before any OO prayer entry is added"
+      ]
     },
     {
       "id": "oo-ethiopian-tewahedo-prayer-witness",
@@ -207,16 +216,17 @@
       ],
       "classification": "received-traditional",
       "translationPosture": "translated",
-      "rightsPosture": "needs-permission-review",
-      "publicDomainPermissionStatus": "translation-and-publication-rights-not-cleared",
       "confidence": "low",
       "integrationDisposition": "source-lead-only",
-      "needsBeforePrayerText": [
-        "identify stronger edition/source witness",
-        "verify translation and publication rights",
+      "notes": "Low-confidence Ethiopian Tewahedo lead. Keep it as a lead while preferring stronger edition evidence before corpus use.",
+      "sourcePosture": "low-confidence-online-source-witness",
+      "corpusUsePosture": "eligible-for-internal-corpus-review-after-stronger-witness",
+      "publicRenderingPosture": "review-public-rendering-after-corpus-selection",
+      "neededBeforeCorpusEntry": [
+        "identify stronger edition or source witness",
+        "select edition or translation witness",
         "confirm whether candidate belongs in Book of Needs or office corpus"
-      ],
-      "notes": "Retained as a low-confidence lead only because Ethiopian office material already exists elsewhere in the project; no text imported."
+      ]
     },
     {
       "id": "coe-acote-library-daily-offices",
@@ -238,16 +248,17 @@
       ],
       "classification": "received-traditional",
       "translationPosture": "translated",
-      "rightsPosture": "needs-permission-review",
-      "publicDomainPermissionStatus": "official-library-access-is-not-redistribution-permission",
       "confidence": "high",
       "integrationDisposition": "source-lead-only",
-      "needsBeforePrayerText": [
+      "notes": "Strong Church of the East source lead. COE Book of Needs remains empty only because no prayer entry has been added yet, not because internal corpus work is blocked.",
+      "sourcePosture": "official-library-source-witness",
+      "corpusUsePosture": "eligible-for-internal-corpus-review",
+      "publicRenderingPosture": "review-public-rendering-after-corpus-selection",
+      "neededBeforeCorpusEntry": [
         "obtain edition details",
-        "verify translation and redistribution rights",
-        "create provenance record before any COE prayer entry is added"
-      ],
-      "notes": "Strong Church of the East source lead. COE Book of Needs remains empty until actual permission-safe prayer entries exist."
+        "identify exact prayer unit locators",
+        "attach compact sourceId before any COE prayer entry is added"
+      ]
     },
     {
       "id": "coe-acote-library-khudra-volumes",
@@ -269,16 +280,17 @@
       ],
       "classification": "received-traditional",
       "translationPosture": "needs-review",
-      "rightsPosture": "needs-permission-review",
-      "publicDomainPermissionStatus": "official-library-access-is-not-redistribution-permission",
       "confidence": "high",
       "integrationDisposition": "source-lead-only",
-      "needsBeforePrayerText": [
+      "notes": "Strong COE source lead for provenance and locator work. It supports source-governed corpus construction.",
+      "sourcePosture": "official-liturgical-book-source-witness",
+      "corpusUsePosture": "eligible-for-internal-corpus-review",
+      "publicRenderingPosture": "review-public-rendering-after-corpus-selection",
+      "neededBeforeCorpusEntry": [
         "identify exact volume and locator",
-        "verify whether English text is available and usable",
+        "identify usable English text or translation path",
         "confirm Book of Needs category fit rather than office corpus placement"
-      ],
-      "notes": "Strong COE source lead for provenance, not a ready import source."
+      ]
     },
     {
       "id": "coe-hudra-day-digital-preservation",
@@ -299,16 +311,17 @@
       ],
       "classification": "received-traditional",
       "translationPosture": "needs-review",
-      "rightsPosture": "restricted-transitory-viewing-only",
-      "publicDomainPermissionStatus": "terms-grant-personal-non-commercial-transitory-viewing-only-not-import-permission",
       "confidence": "medium",
       "integrationDisposition": "source-lead-only",
-      "needsBeforePrayerText": [
-        "do not import text under current terms",
-        "use only as locator/context unless permission changes",
-        "seek permission or independent public-domain witness before any COE prayer entry"
-      ],
-      "notes": "Useful locator/context lead. Current terms block treating it as an import-cleared source."
+      "notes": "Useful East Syriac locator/context lead. Do not let one website's posture become a general blocker on COE corpus construction.",
+      "sourcePosture": "digital-locator-witness",
+      "corpusUsePosture": "use-as-locator-or-comparison-witness-while-selecting-source-text",
+      "publicRenderingPosture": "review-public-rendering-after-corpus-selection",
+      "neededBeforeCorpusEntry": [
+        "use as locator or comparison witness",
+        "select source text or edition for actual corpus entry",
+        "seek an independent text witness when needed"
+      ]
     },
     {
       "id": "coe-openn-haverford-rendel-harris-53-hudra",
@@ -328,16 +341,17 @@
       ],
       "classification": "received-traditional",
       "translationPosture": "needs-translation",
-      "rightsPosture": "public-domain-underlying-text-needs-transcription-review",
-      "publicDomainPermissionStatus": "underlying-text-likely-public-domain-by-age-but-image-transcription-and-use-rights-need-review",
       "confidence": "medium",
       "integrationDisposition": "source-lead-only",
-      "needsBeforePrayerText": [
-        "verify manuscript rights and image-use posture",
-        "transcribe and translate independently or locate usable translation",
+      "notes": "Potential manuscript witness path. Useful for source depth, but not an immediate English Book of Needs entry without transcription or translation work.",
+      "sourcePosture": "manuscript-source-witness",
+      "corpusUsePosture": "eligible-for-internal-corpus-review-after-transcription-or-translation",
+      "publicRenderingPosture": "review-public-rendering-after-corpus-selection",
+      "neededBeforeCorpusEntry": [
+        "verify manuscript locator and textual scope",
+        "transcribe and translate or locate usable translation",
         "confirm exact prayer category and living tradition fit"
-      ],
-      "notes": "Potential public-domain witness path, but not usable as English prayer text without transcription, translation, and review."
+      ]
     },
     {
       "id": "coe-badger-nestorians-rituals-1852",
@@ -357,16 +371,17 @@
       ],
       "classification": "public-domain",
       "translationPosture": "secondary-witness",
-      "rightsPosture": "public-domain-source-witness-needs-liturgical-verification",
-      "publicDomainPermissionStatus": "1852-publication-likely-public-domain-but-liturgical-accuracy-and-current-tradition-fit-require-review",
       "confidence": "medium",
       "integrationDisposition": "source-lead-only",
-      "needsBeforePrayerText": [
+      "notes": "Useful historical witness. It may help identify source material, but received COE prayer entries should be corroborated.",
+      "sourcePosture": "historical-public-domain-witness",
+      "corpusUsePosture": "eligible-for-internal-corpus-review-after-liturgical-corroboration",
+      "publicRenderingPosture": "review-public-rendering-after-corpus-selection",
+      "neededBeforeCorpusEntry": [
         "verify exact cited material against East Syriac liturgical source",
-        "avoid treating missionary description as received COE prayer without corroboration",
-        "create provenance and accuracy notes before any use"
-      ],
-      "notes": "Useful public-domain historical witness, not by itself a sufficient received-text source."
+        "avoid treating missionary description alone as received COE prayer",
+        "attach corroborating sourceId before any COE prayer entry is added"
+      ]
     }
   ]
 }

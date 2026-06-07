@@ -10,14 +10,11 @@ const allowedClassifications = new Set([
   "received-traditional",
   "translated",
   "adapted",
-  "permission-cleared",
   "public-domain",
-  "original",
   "needs-review"
 ]);
 const allowedIntegrationDispositions = new Set([
-  "source-lead-only",
-  "not-tradition-specific"
+  "source-lead-only"
 ]);
 const rejectedSyntheticIds = new Set([
   "oo-before-liturgy",
@@ -45,6 +42,23 @@ const forbiddenTextKeys = new Set([
   "geezText",
   "amharicText"
 ]);
+const forbiddenGovernanceKeys = new Set([
+  "rightsPosture",
+  "publicDomainPermissionStatus",
+  "permissionRecordId",
+  "licensingStatus",
+  "redistributionStatus"
+]);
+const importBlockingPatterns = [
+  /needs[- ]permission[- ]review/i,
+  /do not import/i,
+  /not import permission/i,
+  /not redistribution permission/i,
+  /redistribution permission/i,
+  /source lead does not authorize import/i,
+  /current terms block/i,
+  /permission anxiety/i
+];
 
 const requiredCandidateFields = [
   "id",
@@ -58,11 +72,12 @@ const requiredCandidateFields = [
   "sourceUseCase",
   "classification",
   "translationPosture",
-  "rightsPosture",
-  "publicDomainPermissionStatus",
+  "sourcePosture",
+  "corpusUsePosture",
+  "publicRenderingPosture",
   "confidence",
   "integrationDisposition",
-  "needsBeforePrayerText",
+  "neededBeforeCorpusEntry",
   "notes"
 ];
 
@@ -101,8 +116,8 @@ if (inventory) {
     fail("inventoryVersion must be book_of_needs_source_intake_inventory_v1.");
   }
 
-  if (inventory.scope !== "OO and COE candidate source leads only. This inventory contains no prayer text and creates no tradition-specific prayer entries.") {
-    fail("scope must explicitly say this is source-lead-only and contains no prayer text.");
+  if (!String(inventory.scope || "").includes("supports later internal corpus construction")) {
+    fail("scope must explicitly say the inventory supports later internal corpus construction.");
   }
 
   const posture = inventory.governancePosture || {};
@@ -110,13 +125,22 @@ if (inventory) {
     fail("governancePosture.universalIsAccessContextOnly must be true.");
   }
   if (posture.noPrayerTextImported !== true) {
-    fail("governancePosture.noPrayerTextImported must be true.");
+    fail("governancePosture.noPrayerTextImported must be true for the source-lead inventory itself.");
   }
-  if (posture.sourceLeadDoesNotAuthorizeImport !== true) {
-    fail("governancePosture.sourceLeadDoesNotAuthorizeImport must be true.");
+  if (posture.sourceInventoryDoesNotBlockInternalCorpusConstruction !== true) {
+    fail("Inventory must not block internal corpus construction.");
   }
-  if (posture.coeRemainsEmptyUntilRealSourcedPrayerEntriesExist !== true) {
-    fail("COE empty-state governance must remain explicit.");
+  if (posture.publicRenderingIsSeparateFromInternalCorpusConstruction !== true) {
+    fail("Public rendering must be separate from internal corpus construction.");
+  }
+  if (posture.noHeavyPerPrayerRightsSchema !== true) {
+    fail("Inventory must preserve the no-heavy-per-prayer-rights-schema decision.");
+  }
+  if (posture.prayersAreForDevotionalUse !== true) {
+    fail("Inventory must preserve the prayer/devotional-use posture.");
+  }
+  if ("sourceLeadDoesNotAuthorizeImport" in posture) {
+    fail("Remove sourceLeadDoesNotAuthorizeImport; it is import-blocking governance language.");
   }
 
   const declaredTraditions = new Set(posture.validBookOfNeedsTraditionCodes || []);
@@ -151,6 +175,12 @@ if (inventory) {
       for (const field of requiredCandidateFields) {
         if (!(field in candidate)) {
           fail(`Candidate ${candidate.id || "(missing id)"} is missing required field ${field}.`);
+        }
+      }
+
+      for (const forbiddenField of forbiddenGovernanceKeys) {
+        if (forbiddenField in candidate) {
+          fail(`Candidate ${candidate.id || "(missing id)"} has removed governance field ${forbiddenField}.`);
         }
       }
 
@@ -190,15 +220,11 @@ if (inventory) {
       }
 
       if (candidate.integrationDisposition !== "source-lead-only") {
-        fail(`Candidate ${candidate.id} must remain source-lead-only in this tranche.`);
+        fail(`Candidate ${candidate.id} must remain source-lead-only in this inventory.`);
       }
 
-      if (candidate.classification === "original" && candidate.integrationDisposition !== "not-tradition-specific") {
-        fail(`Original material may not be represented as tradition-specific: ${candidate.id}`);
-      }
-
-      if (candidate.classification === "permission-cleared" && !candidate.permissionRecordId) {
-        fail(`Permission-cleared candidate ${candidate.id} must include permissionRecordId.`);
+      if (candidate.classification === "original") {
+        fail(`Original material may not be represented as an OO/COE tradition-specific source lead: ${candidate.id}`);
       }
 
       if (typeof candidate.sourceLocationUrl !== "string" || !/^https?:\/\//.test(candidate.sourceLocationUrl)) {
@@ -213,8 +239,12 @@ if (inventory) {
         fail(`Candidate ${candidate.id} must list sourceUseCase.`);
       }
 
-      if (!Array.isArray(candidate.needsBeforePrayerText) || candidate.needsBeforePrayerText.length === 0) {
-        fail(`Candidate ${candidate.id} must list needsBeforePrayerText.`);
+      if (!Array.isArray(candidate.neededBeforeCorpusEntry) || candidate.neededBeforeCorpusEntry.length === 0) {
+        fail(`Candidate ${candidate.id} must list neededBeforeCorpusEntry.`);
+      }
+
+      if (/blocked|do-not-import|not-import/i.test(String(candidate.corpusUsePosture || ""))) {
+        fail(`Candidate ${candidate.id} has import-blocking corpusUsePosture: ${candidate.corpusUsePosture}`);
       }
     }
 
@@ -239,9 +269,19 @@ if (inventory) {
       fail(`Forbidden prayer-text field appears at ${path.join(".")}.`);
     }
 
+    if (forbiddenGovernanceKeys.has(key)) {
+      fail(`Removed rights/permission schema field appears at ${path.join(".")}.`);
+    }
+
     if (typeof value === "string") {
       if (forbiddenAssignmentBuckets.has(value)) {
         fail(`Forbidden assignment bucket value appears at ${path.join(".")}: ${value}`);
+      }
+
+      for (const pattern of importBlockingPatterns) {
+        if (pattern.test(value)) {
+          fail(`Import-blocking or permission-anxiety phrase appears at ${path.join(".")}: ${value}`);
+        }
       }
 
       for (const rejectedId of rejectedSyntheticIds) {
@@ -269,4 +309,4 @@ const candidates = inventory.candidateSourceLeads;
 const ooCount = candidates.filter((candidate) => candidate.tradition === "OO").length;
 const coeCount = candidates.filter((candidate) => candidate.tradition === "COE").length;
 
-console.log(`PASS book-of-needs source intake inventory audit: candidates=${candidates.length} OO=${ooCount} COE=${coeCount} checks=15`);
+console.log(`PASS book-of-needs source intake inventory audit: candidates=${candidates.length} OO=${ooCount} COE=${coeCount} checks=14`);
