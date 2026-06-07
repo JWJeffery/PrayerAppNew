@@ -94,7 +94,21 @@ check(
   officeUi.includes('window.setUserProfileEntryPageDefault = setUserProfileEntryPageDefault') &&
   officeUi.includes('window.setUserProfileTraditionDefault = setUserProfileTraditionDefault') &&
   officeUi.includes('window.setUserProfileBookOfNeedsScope = setUserProfileBookOfNeedsScope') &&
-  officeUi.includes('window.resetUniversalOfficeUserProfile = resetUniversalOfficeUserProfile')
+  officeUi.includes('window.resetUniversalOfficeUserProfile = resetUniversalOfficeUserProfile') &&
+  officeUi.includes('window.openLocalProfileDefaultsFromOffice = openLocalProfileDefaultsFromOffice') &&
+  officeUi.includes('window.focusLocalProfileDefaultsPanel = focusLocalProfileDefaultsPanel')
+);
+
+
+check(
+  'office pages expose local defaults without changing public first screen',
+  index.includes('id="office-profile-defaults-button"') &&
+  index.includes('openLocalProfileDefaultsFromOffice()') &&
+  index.includes('Defaults</button>') &&
+  officeUi.includes('function openLocalProfileDefaultsFromOffice()') &&
+  officeUi.includes('focusLocalProfileDefaultsPanel()') &&
+  officeUi.includes('window.openLocalProfileDefaultsFromOffice = openLocalProfileDefaultsFromOffice') &&
+  !index.includes('app-entry-universal-link')
 );
 
 check(

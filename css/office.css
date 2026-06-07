@@ -3089,3 +3089,17 @@ body.office-active #daily-office-section:has(#generic-settings:not(.mode-hidden)
         flex-direction: column;
     }
 }
+
+
+/* Office-page local profile defaults access pass */
+.office-profile-defaults-action {
+    background: rgba(255, 253, 248, 0.58);
+    border-color: rgba(103, 58, 31, 0.15);
+    color: rgba(122, 63, 23, 0.86);
+}
+
+.office-profile-defaults-action:hover,
+.office-profile-defaults-action:focus-visible {
+    background: rgba(255, 253, 248, 0.82);
+    color: var(--app-bronze, #7a3f17);
+}

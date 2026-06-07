@@ -37,6 +37,16 @@ requireIncludes("user profile browser QC guards controls and API", qc, [
   "#profile-book-needs-scope"
 ]);
 
+requireIncludes("user profile browser QC guards office-page access", qc, [
+  "Office Defaults action opens local defaults panel",
+  "verifyOfficeDefaultsActionOpensPanel",
+  "#office-profile-defaults-button",
+  "openLocalProfileDefaultsFromOffice",
+  "#user-profile-defaults",
+  "#profile-entry-default",
+  "Defaults for this browser"
+]);
+
 requireIncludes("user profile browser QC guards defaults", qc, [
   "Universal selector default persists",
   "Tradition office default persists",

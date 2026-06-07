@@ -876,6 +876,34 @@ function resetUniversalOfficeUserProfile() {
     showTraditionEntry();
 }
 
+function focusLocalProfileDefaultsPanel() {
+    const panel = document.getElementById('user-profile-defaults');
+    if (!panel) return;
+
+    const focusTarget = document.getElementById('profile-entry-default') ||
+        panel.querySelector('select, button, input, [tabindex]:not([tabindex="-1"])');
+
+    requestAnimationFrame(() => {
+        panel.scrollIntoView({ block: 'center', behavior: 'smooth' });
+
+        requestAnimationFrame(() => {
+            if (focusTarget && typeof focusTarget.focus === 'function') {
+                focusTarget.focus({ preventScroll: true });
+            }
+        });
+    });
+}
+
+function openLocalProfileDefaultsFromOffice() {
+    window._profileDefaultsReturnMode = selectedMode && selectedMode !== 'prayers'
+        ? selectedMode
+        : getActiveOfficeModeForBookOfNeeds();
+
+    backToSplash();
+    syncUserProfileControls();
+    focusLocalProfileDefaultsPanel();
+}
+
 function syncUserProfileControls(profile = getUserProfileDefaults()) {
     const normalized = normalizeUserProfileDefaults(profile);
     const entrySelect = document.getElementById('profile-entry-default');
@@ -1140,6 +1168,8 @@ window.setUserProfileEntryPageDefault = setUserProfileEntryPageDefault;
 window.setUserProfileTraditionDefault = setUserProfileTraditionDefault;
 window.setUserProfileBookOfNeedsScope = setUserProfileBookOfNeedsScope;
 window.resetUniversalOfficeUserProfile = resetUniversalOfficeUserProfile;
+window.openLocalProfileDefaultsFromOffice = openLocalProfileDefaultsFromOffice;
+window.focusLocalProfileDefaultsPanel = focusLocalProfileDefaultsPanel;
 
 document.addEventListener('DOMContentLoaded', initializeEntryRouting);
 

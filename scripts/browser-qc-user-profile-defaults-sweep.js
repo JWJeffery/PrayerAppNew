@@ -157,6 +157,27 @@
         return "Profile API and controls are present";
     }
 
+    async function verifyOfficeDefaultsActionOpensPanel() {
+        await enterOfficeMode("daily", "The Episcopal Church");
+
+        const button = $("#office-profile-defaults-button");
+        assert(button, "Missing office-page Defaults action.");
+        assert(typeof window.openLocalProfileDefaultsFromOffice === "function", "Missing openLocalProfileDefaultsFromOffice().");
+
+        button.click();
+
+        await waitFor(() => {
+            return isVisible($("#mode-selection")) &&
+                isVisible($("#user-profile-defaults")) &&
+                !document.body.classList.contains("office-active");
+        }, 12000);
+
+        assert(text("#user-profile-defaults-title").includes("Defaults for this browser"), "Office Defaults action did not reveal the local defaults panel.");
+        assert(document.activeElement === $("#profile-entry-default"), "Office Defaults action should focus the profile entry default control.");
+
+        return "Office Defaults action opens and focuses the local browser defaults panel";
+    }
+
     async function verifyUniversalDefaultPersists() {
         window.resetUniversalOfficeUserProfile();
         await wait(50);
@@ -297,6 +318,7 @@
 
         try {
             await runCheck("Profile API and controls exist", verifyProfileApiAndControls);
+            await runCheck("Office Defaults action opens local defaults panel", verifyOfficeDefaultsActionOpensPanel);
             await runCheck("Universal selector default persists", verifyUniversalDefaultPersists);
             await runCheck("Tradition office default persists", verifyTraditionDefaultPersists);
             await runCheck("Book of Needs all-prayers profile override works", verifyBookOfNeedsUniversalScopeOverride);
