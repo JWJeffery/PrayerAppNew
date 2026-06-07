@@ -142,7 +142,11 @@ function applyBookOfNeedsContext(context = 'UNIVERSAL') {
     document.getElementById('book-needs-scope-note').textContent = config.note;
 
     const returnButton = document.getElementById('book-needs-return-button');
-    if (returnButton) returnButton.textContent = config.returnText;
+    if (returnButton) {
+        const returnMode = window._bookOfNeedsReturnMode;
+        const isOfficeOrigin = returnMode && returnMode !== 'universal' && returnMode !== 'prayers';
+        returnButton.textContent = isOfficeOrigin ? 'Back to Office' : config.returnText;
+    }
 
     for (const option of document.querySelectorAll('.prayer-option')) {
         const prayerId = option.dataset.value;

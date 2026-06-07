@@ -86,6 +86,14 @@ check(
 );
 
 check(
+  'Book of Needs return label follows origin, not only filter context',
+  prayersJs.includes('const returnMode = window._bookOfNeedsReturnMode;') &&
+  prayersJs.includes("const isOfficeOrigin = returnMode && returnMode !== 'universal' && returnMode !== 'prayers';") &&
+  prayersJs.includes("returnButton.textContent = isOfficeOrigin ? 'Back to Office' : config.returnText;")
+);
+
+
+check(
   'prayers.js defines option tradition map',
   prayersJs.includes('const BOOK_OF_NEEDS_OPTION_TRADITIONS = {')
 );
