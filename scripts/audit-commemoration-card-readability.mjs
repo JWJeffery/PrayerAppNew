@@ -53,7 +53,7 @@ check(
   officeUi.includes('function normalizeCommemorationCardReadability()') &&
   officeUi.includes('app-commemoration-card') &&
   officeUi.includes('MutationObserver') &&
-  officeUi.includes("ANG|EO|OO|COE|LC")
+  officeUi.includes("ANG|LAT|EOR|OOR|EO|OO|COE|LC")
 );
 
 check(

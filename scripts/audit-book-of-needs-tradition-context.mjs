@@ -52,6 +52,13 @@ check(
 );
 
 check(
+  'Universal Book of Needs Back performs full splash teardown',
+  officeUi.includes('function backFromBookOfNeeds()') &&
+  officeUi.includes('backToSplash();') &&
+  officeUi.includes("document.getElementById('individual-prayers-section').style.display = 'none';")
+);
+
+check(
   'office-ui defines Book of Needs mode contexts',
   officeUi.includes('const BOOK_OF_NEEDS_MODE_CONTEXTS = {') &&
   officeUi.includes("daily: 'ANG'") &&

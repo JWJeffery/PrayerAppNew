@@ -959,7 +959,7 @@ function backFromBookOfNeeds() {
 
     window._bookOfNeedsReturnMode = null;
     window._bookOfNeedsContextTradition = 'UNIVERSAL';
-    showUniversalModeSelection(false);
+    backToSplash();
 }
 
 window.openBookOfNeedsForActiveOffice = openBookOfNeedsForActiveOffice;
@@ -1011,7 +1011,7 @@ function normalizeCommemorationCardReadability() {
 
         for (const text of textNodes) {
             const normalized = text.nodeValue.replace(
-                /(^|\s)(ANG|EO|OO|COE|LC)(?=(Saint|Blessed|Holy|St\.|The)\b)/g,
+                /(^|\s)(ANG|LAT|EOR|OOR|EO|OO|COE|LC)(?=\S)/g,
                 '$1$2 '
             );
 
