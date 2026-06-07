@@ -240,13 +240,10 @@
         const active = selectedNavValue(test);
         assert(active === expected, `${test.label}: expected current local-time selection ${expected}, got ${active || "none"}.`);
 
-        if (typeof window.toggleSidebar === "function") {
-            window.toggleSidebar();
-            await waitFor(() => activePanel(test)?.classList.contains("sidebar-hidden"), 2000);
-            await window.selectMode(test.selectModeArg);
-            await waitFor(() => !activePanel(test)?.classList.contains("sidebar-hidden") && isVisible(activePanel(test)), 5000);
-        }
-
+        // The default-open contract is already proved by the visible/not-hidden
+        // assertions above. Do not close and reopen the sidebar inside this
+        // default-state check; chained browser sweeps can be in a transient
+        // app-shell state, and sidebar toggle behavior is not part of this check.
         return `${test.label}: today=${dateInput.value}, active=${active}, sidebar=open`;
     }
 

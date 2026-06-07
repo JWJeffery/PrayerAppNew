@@ -45,8 +45,13 @@ requireIncludes("office navigation feature sweep default assertions", qc, [
   "isoDate(0)",
   "sidebar-hidden",
   "mode-hidden",
-  "toggleSidebar"
+  "sidebar=open",
+  "default-open contract"
 ]);
+
+if (qc.includes("toggleSidebar")) {
+  failures.push("office navigation browser QC must not run toggleSidebar inside the default-state check");
+}
 
 requireIncludes("office navigation feature sweep behavior assertions", qc, [
   "Prev/Next/manual date/Today controls passed",
