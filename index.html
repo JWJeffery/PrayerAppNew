@@ -158,23 +158,23 @@
 
     <section id="user-profile-defaults" class="app-profile-defaults" aria-labelledby="user-profile-defaults-title">
         <div class="app-profile-defaults-copy">
-            <p class="app-profile-kicker">Local Profile Defaults</p>
-            <h2 id="user-profile-defaults-title">How should this browser open?</h2>
-            <p>These settings are stored locally in this browser until the account profile system exists.</p>
+            <p class="app-profile-kicker">Local Browser Defaults</p>
+            <h2 id="user-profile-defaults-title">Defaults for this browser</h2>
+            <p>Advanced local settings for this browser. They are not part of the first-user tradition flow and can later migrate into the full profile system.</p>
         </div>
 
         <div class="app-profile-defaults-grid">
             <label class="app-profile-default-field" for="profile-entry-default">
-                <span>Default opening</span>
+                <span>Opening behavior</span>
                 <select id="profile-entry-default" onchange="setUserProfileEntryPageDefault(this.value)">
-                    <option value="ask">Ask on entry</option>
-                    <option value="tradition">My tradition office</option>
-                    <option value="universal">Universal Office selector</option>
+                    <option value="ask">Ask me to choose a tradition</option>
+                    <option value="tradition">Open my tradition office</option>
+                    <option value="universal">Open the Universal Office selector</option>
                 </select>
             </label>
 
             <label class="app-profile-default-field" for="profile-tradition-default">
-                <span>Tradition default</span>
+                <span>Default tradition</span>
                 <select id="profile-tradition-default" onchange="setUserProfileTraditionDefault(this.value)">
                     <option value="">No tradition selected</option>
                     <option value="anglican">The Episcopal Church</option>
@@ -186,16 +186,16 @@
             </label>
 
             <label class="app-profile-default-field" for="profile-book-needs-scope">
-                <span>Book of Needs</span>
+                <span>Book of Needs from office pages</span>
                 <select id="profile-book-needs-scope" onchange="setUserProfileBookOfNeedsScope(this.value)">
-                    <option value="tradition">Use tradition-filtered prayers from office pages</option>
-                    <option value="universal">Show all prayers from office pages</option>
+                    <option value="tradition">Show only prayers for the active tradition</option>
+                    <option value="universal">Show all prayers</option>
                 </select>
             </label>
         </div>
 
         <div class="app-profile-defaults-actions">
-            <button type="button" class="mode-btn app-profile-reset" onclick="resetUniversalOfficeUserProfile()">Reset local profile</button>
+            <button type="button" class="mode-btn app-profile-reset" onclick="resetUniversalOfficeUserProfile()">Reset local defaults</button>
             <p id="profile-defaults-summary" class="app-profile-defaults-summary" aria-live="polite"></p>
         </div>
     </section>

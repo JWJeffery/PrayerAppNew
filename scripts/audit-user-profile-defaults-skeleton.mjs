@@ -27,7 +27,7 @@ const pkg = JSON.parse(read('package.json') || '{}');
 check(
   'local profile defaults panel exists in internal selector',
   index.includes('id="user-profile-defaults"') &&
-  index.includes('Local Profile Defaults') &&
+  index.includes('Local Browser Defaults') &&
   index.includes('profile-entry-default') &&
   index.includes('profile-tradition-default') &&
   index.includes('profile-book-needs-scope')
@@ -42,16 +42,26 @@ check(
 
 check(
   'profile controls expose required defaults',
-  index.includes('<option value="ask">Ask on entry</option>') &&
-  index.includes('<option value="tradition">My tradition office</option>') &&
-  index.includes('<option value="universal">Universal Office selector</option>') &&
-  index.includes('<option value="universal">Show all prayers from office pages</option>')
+  index.includes('<option value="ask">Ask me to choose a tradition</option>') &&
+  index.includes('<option value="tradition">Open my tradition office</option>') &&
+  index.includes('<option value="universal">Open the Universal Office selector</option>') &&
+  index.includes('<option value="universal">Show all prayers</option>')
 );
 
 check(
   'Catholic profile default is visibly pending',
   index.includes('value="latin-catholic" disabled') &&
   index.includes('Latin Catholic — Liturgy of the Hours pending')
+);
+
+check(
+  'profile panel copy is local advanced settings, not public first-user copy',
+  index.includes('Defaults for this browser') &&
+  index.includes('Advanced local settings for this browser.') &&
+  index.includes('not part of the first-user tradition flow') &&
+  index.includes('Reset local defaults') &&
+  !index.includes('How should this browser open?') &&
+  !index.includes('Local Profile Defaults')
 );
 
 check(
