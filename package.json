@@ -57,7 +57,8 @@
     "audit:book-of-needs-source-governance": "node scripts/audit-book-of-needs-source-governance.mjs",
     "audit:book-of-needs-source-intake-inventory": "node scripts/audit-book-of-needs-source-intake-inventory.mjs",
     "audit:book-of-needs-source-posture-drift": "node scripts/audit-book-of-needs-source-posture-drift.mjs",
-    "audit:book-of-needs-role-access-governance": "node scripts/audit-book-of-needs-role-access-governance.mjs"
+    "audit:book-of-needs-role-access-governance": "node scripts/audit-book-of-needs-role-access-governance.mjs",
+    "audit:douay-rheims-loth-c08-books": "node scripts/audit-douay-rheims-loth-c08-books-intake.mjs"
   },
   "repository": {
     "type": "git",
