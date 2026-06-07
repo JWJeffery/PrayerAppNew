@@ -1,0 +1,76 @@
+{
+  "schemaVersion": 1,
+  "purpose": "Book of Needs source governance and tradition-coverage gap inventory.",
+  "principle": "Do not manufacture tradition-specific prayers to fill taxonomy counts. Tradition-specific Book of Needs entries must be received, sourced, permission-safe, and tradition-honest.",
+  "coverageCountsAtCreation": {
+    "ANG": 25,
+    "LC": 11,
+    "EO": 9,
+    "OO": 1,
+    "COE": 0
+  },
+  "traditionStatus": {
+    "ANG": {
+      "label": "The Episcopal Church",
+      "status": "seeded",
+      "notes": "BCP-derived and Anglican/Episcopal-tagged prayers are present."
+    },
+    "LC": {
+      "label": "Latin Catholic",
+      "status": "seeded-devotional-only",
+      "notes": "Latin Catholic devotional prayers are present; Liturgy of the Hours remains pending and is not public-facing."
+    },
+    "EO": {
+      "label": "Eastern Orthodoxy",
+      "status": "seeded",
+      "notes": "Orthodox minister/devotional prayers are present."
+    },
+    "OO": {
+      "label": "Oriental Orthodoxy",
+      "status": "thin-gap",
+      "notes": "Only explicitly shared patristic/received material is currently OO-tagged. Do not add invented Oriental Orthodox prayers."
+    },
+    "COE": {
+      "label": "Church of the East",
+      "status": "empty-gap",
+      "notes": "No Church of the East Book of Needs prayers are currently available. The UI must keep the empty state honest until sourced prayers are added."
+    }
+  },
+  "provenanceRequiredForTraditions": [
+    "OO",
+    "COE"
+  ],
+  "traditionSpecificPrayerIds": {
+    "OO": [
+      {
+        "id": "thanksgiving-basil",
+        "basis": "Shared patristic/received Christian thanksgiving prayer attributed to St. Basil; currently allowed to overlap EO and OO.",
+        "status": "received-shared-patristic"
+      }
+    ],
+    "COE": []
+  },
+  "forbiddenSourcePhrasesForTraditionSpecificUse": [
+    "Universal Office original pastoral text for Oriental Orthodox use",
+    "Universal Office original pastoral text for Church of the East use",
+    "Universal Office original pastoral text for OO use",
+    "Universal Office original pastoral text for COE use"
+  ],
+  "rejectedSyntheticPrayerIds": [
+    "oo-before-liturgy",
+    "oo-for-the-sick",
+    "oo-for-peace",
+    "oo-thanksgiving-after-communion",
+    "coe-before-qurbana",
+    "coe-for-the-sick",
+    "coe-for-peace",
+    "coe-thanksgiving-after-communion"
+  ],
+  "futureAdditionRequirements": [
+    "Add the prayer text to data/prayers.json only with source/provenance recorded.",
+    "Add the UI option only after source/provenance has been reviewed.",
+    "Add the tradition assignment only after determining whether the prayer is received/traditional, adapted, translated, permission-cleared, or original.",
+    "If original pastoral material is intentionally added, keep it in a separate Universal Office original category rather than silently treating it as tradition-specific OO or COE material.",
+    "Update this governance inventory when real OO or COE prayers are added."
+  ]
+}
