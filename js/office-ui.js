@@ -1010,10 +1010,14 @@ function normalizeCommemorationCardReadability() {
         while (walker.nextNode()) textNodes.push(walker.currentNode);
 
         for (const text of textNodes) {
-            text.nodeValue = text.nodeValue.replace(
+            const normalized = text.nodeValue.replace(
                 /(^|\s)(ANG|EO|OO|COE|LC)(?=(Saint|Blessed|Holy|St\.|The)\b)/g,
                 '$1$2 '
             );
+
+            if (normalized !== text.nodeValue) {
+                text.nodeValue = normalized;
+            }
         }
     }
 }
@@ -1023,7 +1027,7 @@ function bindCommemorationCardReadabilityObserver() {
     if (!display || display.dataset.readabilityObserverBound === 'true') return;
 
     const observer = new MutationObserver(() => normalizeCommemorationCardReadability());
-    observer.observe(display, { childList: true, subtree: true, characterData: true });
+    observer.observe(display, { childList: true, subtree: true });
 
     display.dataset.readabilityObserverBound = 'true';
     normalizeCommemorationCardReadability();

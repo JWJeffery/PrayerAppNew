@@ -57,6 +57,13 @@ check(
 );
 
 check(
+  'commemoration normalizer cannot self-trigger a characterData mutation loop',
+  officeUi.includes('if (normalized !== text.nodeValue)') &&
+  officeUi.includes('observer.observe(display, { childList: true, subtree: true });') &&
+  !officeUi.includes('characterData: true')
+);
+
+check(
   'package exposes commemoration readability audit',
   pkg.scripts?.['audit:commemoration-card-readability'] === 'node scripts/audit-commemoration-card-readability.mjs'
 );
