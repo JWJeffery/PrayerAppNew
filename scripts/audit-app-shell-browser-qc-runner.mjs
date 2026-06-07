@@ -31,7 +31,10 @@ requireIncludes("app-shell browser QC chains existing sweeps", runner, [
   "Office navigation browser sweep",
   "/scripts/browser-qc-book-of-needs-routing-sweep.js",
   "__lastBookOfNeedsRoutingSweep",
-  "Book of Needs browser routing sweep"
+  "Book of Needs browser routing sweep",
+  "/scripts/browser-qc-user-profile-defaults-sweep.js",
+  "__lastUserProfileDefaultsSweep",
+  "User profile defaults browser sweep"
 ]);
 
 requireIncludes("app-shell browser QC guards commemorations", runner, [

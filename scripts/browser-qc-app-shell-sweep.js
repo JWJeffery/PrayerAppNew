@@ -213,6 +213,15 @@
         );
 
         await runCheck(
+            "User profile defaults browser sweep",
+            () => runExternalSweep(
+                "User profile defaults",
+                "/scripts/browser-qc-user-profile-defaults-sweep.js",
+                "__lastUserProfileDefaultsSweep"
+            )
+        );
+
+        await runCheck(
             "Commemoration scope and readability browser check",
             verifyCommemorationScopeAndReadability
         );
