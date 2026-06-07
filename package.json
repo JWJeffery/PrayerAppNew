@@ -48,7 +48,8 @@
     "audit:book-of-needs-tradition-context": "node scripts/audit-book-of-needs-tradition-context.mjs",
     "audit:commemoration-tradition-scope": "node scripts/audit-commemoration-tradition-scope.mjs",
     "audit:commemoration-card-readability": "node scripts/audit-commemoration-card-readability.mjs",
-    "audit:daily-office-render-timeouts": "node scripts/audit-daily-office-render-timeouts.mjs"
+    "audit:daily-office-render-timeouts": "node scripts/audit-daily-office-render-timeouts.mjs",
+    "audit:book-of-needs-browser-qc-runner": "node scripts/audit-book-of-needs-browser-qc-runner.mjs"
   },
   "repository": {
     "type": "git",
