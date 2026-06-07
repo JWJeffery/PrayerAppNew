@@ -55,7 +55,8 @@
     "audit:user-profile-browser-qc-runner": "node scripts/audit-user-profile-browser-qc-runner.mjs",
     "audit:book-of-needs-taxonomy": "node scripts/audit-book-of-needs-taxonomy.mjs",
     "audit:book-of-needs-source-governance": "node scripts/audit-book-of-needs-source-governance.mjs",
-    "audit:book-of-needs-source-intake-inventory": "node scripts/audit-book-of-needs-source-intake-inventory.mjs"
+    "audit:book-of-needs-source-intake-inventory": "node scripts/audit-book-of-needs-source-intake-inventory.mjs",
+    "audit:book-of-needs-source-posture-drift": "node scripts/audit-book-of-needs-source-posture-drift.mjs"
   },
   "repository": {
     "type": "git",

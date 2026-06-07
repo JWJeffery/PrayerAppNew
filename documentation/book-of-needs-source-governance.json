@@ -69,7 +69,7 @@
   "futureAdditionRequirements": [
     "Add the prayer text to data/prayers.json only with source/provenance recorded.",
     "Add the UI option only after source/provenance has been reviewed.",
-    "Add the tradition assignment only after determining whether the prayer is received/traditional, adapted, translated, permission-cleared, or original.",
+    "Add the tradition assignment only after determining whether the prayer is received/traditional, adapted, translated, source-reviewed, or original.",
     "If original pastoral material is intentionally added, keep it in a separate Universal Office original category rather than silently treating it as tradition-specific OO or COE material.",
     "Update this governance inventory when real OO or COE prayers are added."
   ]
