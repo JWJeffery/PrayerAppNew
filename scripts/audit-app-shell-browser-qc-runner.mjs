@@ -40,6 +40,9 @@ requireIncludes("app-shell browser QC guards commemorations", runner, [
   "app-commemoration-card",
   "window.selectMode(\"daily\")",
   "window.selectMode(\"horologion\")",
+  "setActiveOfficeDate",
+  "2026-06-05",
+  "waitForOfficeTextReady",
   "Horologion should not visibly show the Anglican commemoration section",
   "Horologion should clear stale Anglican commemoration content"
 ]);

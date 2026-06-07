@@ -25,6 +25,42 @@
         return ($(selector)?.textContent || "").replace(/\s+/g, " ").trim();
     }
 
+    function setInputValue(input, value) {
+        assert(input, "Missing input while setting app-shell QC value.");
+
+        const setter = Object.getOwnPropertyDescriptor(window.HTMLInputElement.prototype, "value")?.set;
+        if (setter) {
+            setter.call(input, value);
+        } else {
+            input.value = value;
+        }
+
+        input.dispatchEvent(new Event("input", { bubbles: true }));
+        input.dispatchEvent(new Event("change", { bubbles: true }));
+    }
+
+    function activeSharedDateInput() {
+        const visibleInputs = Array.from(document.querySelectorAll(".shared-office-nav-date-picker input, input[type=\"date\"]"))
+            .filter(input => isVisible(input));
+
+        return visibleInputs[0] || document.getElementById("shared-office-date-input") || document.getElementById("date-picker");
+    }
+
+    async function waitForOfficeTextReady(timeoutMs = 20000) {
+        await waitFor(() => {
+            const officeText = document.getElementById("office-display")?.textContent || "";
+            return officeText.trim().length > 80 && !/Loading Office|Fetching readings|Data still loading/i.test(officeText);
+        }, timeoutMs);
+    }
+
+    async function setActiveOfficeDate(isoDate) {
+        const input = activeSharedDateInput();
+        setInputValue(input, isoDate);
+
+        await waitFor(() => activeSharedDateInput()?.value === isoDate, 8000);
+        await waitForOfficeTextReady();
+    }
+
     async function waitFor(predicate, timeoutMs = 12000, intervalMs = 80) {
         const start = Date.now();
 
@@ -91,6 +127,11 @@
         assert(typeof window.selectMode === "function", "Missing global selectMode(). Run this from the Universal Office root page.");
 
         await window.selectMode("daily");
+        await waitForOfficeTextReady();
+
+        // Use a known Anglican commemoration date. The app-shell QC should test
+        // commemoration display/scoping, not assume every civil date has a saint card.
+        await setActiveOfficeDate("2026-06-05");
 
         await waitFor(() => {
             const section = $(".saint-section");
@@ -114,6 +155,7 @@
         assert(dailyCards.some(card => card.classList.contains("app-commemoration-card")), "Daily Office commemoration card readability class was not applied.");
 
         await window.selectMode("horologion");
+        await waitForOfficeTextReady();
 
         await waitFor(() => {
             return text("#office-mode-title").includes("Eastern Orthodoxy") &&
