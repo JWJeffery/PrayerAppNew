@@ -170,18 +170,20 @@
     },
     {
       "id": "afpb-before-reading-scripture",
-      "title": "Before Reading the Scriptures or Other Spiritual Texts",
+      "title": "Before Reading Scripture",
       "sourceSection": "Prayers for Various Needs and Occasions / Spiritual Life",
       "tradition": "EO",
-      "sourceCriticalClassification": "needs-independent-corroboration",
+      "sourceCriticalClassification": "common-orthodox-scripture-prayer",
       "accessTier": "lay-devotional",
       "displayCategory": "devotional-need",
-      "firstPassDisposition": "review-before-use",
-      "preferredSourcePath": "Use only if matched to a common Orthodox prayer outside this compilation.",
-      "reason": "Useful category, but this source alone should not control runtime prayer text.",
+      "firstPassDisposition": "implemented-runtime",
+      "preferredSourcePath": "Implemented using common received Orthodox wording with Ancient Faith Prayer Book as a source witness.",
+      "reason": "A common Orthodox prayer before reading the Gospel or Scripture; implemented as lay-devotional preparation for Scripture reading.",
       "ancientFaithUse": "source-witness",
-      "commonReceptionStatus": "needs-research",
-      "runtimeTextPosture": "eligible-after-wording-review"
+      "commonReceptionStatus": "widely-received",
+      "runtimeTextPosture": "implemented-common-received-form",
+      "runtimePrayerId": "orthodox-before-reading-scripture",
+      "runtimeImplementedDate": "2026-06-07"
     },
     {
       "id": "afpb-before-a-journey",
@@ -289,6 +291,57 @@
       "runtimeTextPosture": "implemented-common-received-form",
       "runtimePrayerId": "prayer-of-st-ephrem",
       "runtimeImplementedDate": "2026-06-07"
+    },
+    {
+      "id": "afpb-prayer-for-every-hour",
+      "title": "A Prayer for Every Hour",
+      "sourceSection": "Afternoon Prayers; Early Evening Prayers; Late Evening Prayers",
+      "tradition": "EO",
+      "sourceCriticalClassification": "ancient-common-liturgical",
+      "accessTier": "lay-devotional",
+      "displayCategory": "devotional-need",
+      "firstPassDisposition": "implemented-runtime",
+      "preferredSourcePath": "Implemented using common received Orthodox wording with Ancient Faith Prayer Book as a source witness.",
+      "reason": "A broadly received Orthodox prayer used in the Hours; implemented as lay-devotional daily-use material.",
+      "ancientFaithUse": "source-witness",
+      "commonReceptionStatus": "widely-received",
+      "runtimeTextPosture": "implemented-common-received-form",
+      "runtimePrayerId": "prayer-for-every-hour",
+      "runtimeImplementedDate": "2026-06-07"
+    },
+    {
+      "id": "afpb-before-work",
+      "title": "Before Work",
+      "sourceSection": "Prayers for Various Needs and Occasions / Work, Study, and Recreation",
+      "tradition": "EO",
+      "sourceCriticalClassification": "common-orthodox-daily-use",
+      "accessTier": "lay-devotional",
+      "displayCategory": "devotional-need",
+      "firstPassDisposition": "implemented-runtime",
+      "preferredSourcePath": "Implemented using common received Orthodox wording with Ancient Faith Prayer Book as a source witness.",
+      "reason": "A common Orthodox prayer before beginning work; implemented as lay-devotional daily-use material.",
+      "ancientFaithUse": "source-witness",
+      "commonReceptionStatus": "widely-received",
+      "runtimeTextPosture": "implemented-common-received-form",
+      "runtimePrayerId": "orthodox-before-work",
+      "runtimeImplementedDate": "2026-06-07"
+    },
+    {
+      "id": "afpb-before-study",
+      "title": "Before Study",
+      "sourceSection": "Prayers for Various Needs and Occasions / Work, Study, and Recreation",
+      "tradition": "EO",
+      "sourceCriticalClassification": "common-orthodox-daily-use",
+      "accessTier": "lay-devotional",
+      "displayCategory": "devotional-need",
+      "firstPassDisposition": "implemented-runtime",
+      "preferredSourcePath": "Implemented using common received Orthodox wording with Ancient Faith Prayer Book as a source witness.",
+      "reason": "A common Orthodox prayer before study; implemented as lay-devotional daily-use material.",
+      "ancientFaithUse": "source-witness",
+      "commonReceptionStatus": "widely-received",
+      "runtimeTextPosture": "implemented-common-received-form",
+      "runtimePrayerId": "orthodox-before-study",
+      "runtimeImplementedDate": "2026-06-07"
     }
   ],
   "researchPrinciples": {
@@ -346,6 +399,42 @@
       "displayCategory": "devotional-need",
       "sourcePosture": "Common Orthodox received form; Ancient Faith Prayer Book source witness.",
       "notes": "Added as part of the EO common devotional prayer batch from the Ancient Faith source inventory."
+    },
+    {
+      "id": "prayer-for-every-hour",
+      "sourceCandidateId": "afpb-prayer-for-every-hour",
+      "tradition": "EO",
+      "accessTier": "lay-devotional",
+      "displayCategory": "devotional-need",
+      "sourcePosture": "Common Orthodox received form; Ancient Faith Prayer Book source witness.",
+      "notes": "Added as part of the EO daily devotional prayer batch from the Ancient Faith source inventory."
+    },
+    {
+      "id": "orthodox-before-reading-scripture",
+      "sourceCandidateId": "afpb-before-reading-scripture",
+      "tradition": "EO",
+      "accessTier": "lay-devotional",
+      "displayCategory": "devotional-need",
+      "sourcePosture": "Common Orthodox received form; Ancient Faith Prayer Book source witness.",
+      "notes": "Added as part of the EO daily devotional prayer batch from the Ancient Faith source inventory."
+    },
+    {
+      "id": "orthodox-before-work",
+      "sourceCandidateId": "afpb-before-work",
+      "tradition": "EO",
+      "accessTier": "lay-devotional",
+      "displayCategory": "devotional-need",
+      "sourcePosture": "Common Orthodox received form; Ancient Faith Prayer Book source witness.",
+      "notes": "Added as part of the EO daily devotional prayer batch from the Ancient Faith source inventory."
+    },
+    {
+      "id": "orthodox-before-study",
+      "sourceCandidateId": "afpb-before-study",
+      "tradition": "EO",
+      "accessTier": "lay-devotional",
+      "displayCategory": "devotional-need",
+      "sourcePosture": "Common Orthodox received form; Ancient Faith Prayer Book source witness.",
+      "notes": "Added as part of the EO daily devotional prayer batch from the Ancient Faith source inventory."
     }
   ]
 }

@@ -249,4 +249,17 @@ check(
   prayersJson['prayer-of-st-ephrem']?.source?.includes('Common Orthodox received Lenten prayer')
 );
 
+check(
+  'EO includes daily devotional prayer batch',
+  counts.EO >= 18 &&
+  prayersJs.includes("'prayer-for-every-hour': ['EO']") &&
+  prayersJs.includes("'orthodox-before-reading-scripture': ['EO']") &&
+  prayersJs.includes("'orthodox-before-work': ['EO']") &&
+  prayersJs.includes("'orthodox-before-study': ['EO']") &&
+  prayersJson['prayer-for-every-hour']?.source?.includes('Common Orthodox received form') &&
+  prayersJson['orthodox-before-reading-scripture']?.source?.includes('Common Orthodox prayer before reading') &&
+  prayersJson['orthodox-before-work']?.source?.includes('Common Orthodox received form') &&
+  prayersJson['orthodox-before-study']?.source?.includes('Common Orthodox student prayer')
+);
+
 console.log(`PASS Book of Needs source governance audit: ${checks} check(s) passed; counts=${JSON.stringify(counts)}`);
