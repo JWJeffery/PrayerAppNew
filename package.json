@@ -59,7 +59,8 @@
     "audit:book-of-needs-source-posture-drift": "node scripts/audit-book-of-needs-source-posture-drift.mjs",
     "audit:book-of-needs-role-access-governance": "node scripts/audit-book-of-needs-role-access-governance.mjs",
     "audit:douay-rheims-loth-c08-books": "node scripts/audit-douay-rheims-loth-c08-books-intake.mjs",
-    "audit:book-of-needs-anglican-taxonomy-review": "node scripts/audit-book-of-needs-anglican-taxonomy-review.mjs"
+    "audit:book-of-needs-anglican-taxonomy-review": "node scripts/audit-book-of-needs-anglican-taxonomy-review.mjs",
+    "audit:book-of-needs-eo-ancient-faith-source-inventory": "node scripts/audit-book-of-needs-eo-ancient-faith-source-inventory.mjs"
   },
   "repository": {
     "type": "git",
