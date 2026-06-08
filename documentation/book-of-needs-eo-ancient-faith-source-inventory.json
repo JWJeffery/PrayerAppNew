@@ -342,6 +342,74 @@
       "runtimeTextPosture": "implemented-common-received-form",
       "runtimePrayerId": "orthodox-before-study",
       "runtimeImplementedDate": "2026-06-07"
+    },
+    {
+      "id": "afpb-prayer-of-st-john-chrysostom",
+      "title": "Prayer of St. John Chrysostom",
+      "sourceSection": "Late Evening Prayers",
+      "tradition": "EO",
+      "sourceCriticalClassification": "ancient-common-evening-prayer",
+      "accessTier": "lay-devotional",
+      "displayCategory": "devotional-need",
+      "firstPassDisposition": "implemented-runtime",
+      "preferredSourcePath": "Implemented using common received Orthodox wording with Ancient Faith Prayer Book as a source witness.",
+      "reason": "A common Orthodox evening prayer; implemented as lay-devotional daily/evening material.",
+      "ancientFaithUse": "source-witness",
+      "commonReceptionStatus": "widely-received",
+      "runtimeTextPosture": "implemented-common-received-form",
+      "runtimePrayerId": "prayer-of-st-john-chrysostom",
+      "runtimeImplementedDate": "2026-06-07"
+    },
+    {
+      "id": "afpb-prayer-of-st-macarius",
+      "title": "Prayer of St. Macarius the Great",
+      "sourceSection": "Morning Prayers",
+      "tradition": "EO",
+      "sourceCriticalClassification": "ancient-common-morning-prayer",
+      "accessTier": "lay-devotional",
+      "displayCategory": "devotional-need",
+      "firstPassDisposition": "implemented-runtime",
+      "preferredSourcePath": "Implemented using common received Orthodox wording with Ancient Faith Prayer Book as a source witness.",
+      "reason": "A common Orthodox morning prayer; implemented as lay-devotional daily-use material.",
+      "ancientFaithUse": "source-witness",
+      "commonReceptionStatus": "widely-received",
+      "runtimeTextPosture": "implemented-common-received-form",
+      "runtimePrayerId": "prayer-of-st-macarius",
+      "runtimeImplementedDate": "2026-06-07"
+    },
+    {
+      "id": "afpb-prayer-of-st-basil",
+      "title": "Prayer of St. Basil the Great",
+      "sourceSection": "Early Evening Prayers",
+      "tradition": "EO",
+      "sourceCriticalClassification": "ancient-common-evening-prayer",
+      "accessTier": "lay-devotional",
+      "displayCategory": "devotional-need",
+      "firstPassDisposition": "implemented-runtime",
+      "preferredSourcePath": "Implemented using common received Orthodox wording with Ancient Faith Prayer Book as a source witness.",
+      "reason": "A common Orthodox evening prayer; implemented as lay-devotional evening material.",
+      "ancientFaithUse": "source-witness",
+      "commonReceptionStatus": "widely-received",
+      "runtimeTextPosture": "implemented-common-received-form",
+      "runtimePrayerId": "prayer-of-st-basil",
+      "runtimeImplementedDate": "2026-06-07"
+    },
+    {
+      "id": "afpb-prayer-to-guardian-angel",
+      "title": "Prayer to the Guardian Angel",
+      "sourceSection": "Late Evening Prayers",
+      "tradition": "EO",
+      "sourceCriticalClassification": "common-orthodox-devotional-prayer",
+      "accessTier": "lay-devotional",
+      "displayCategory": "devotional-need",
+      "firstPassDisposition": "implemented-runtime",
+      "preferredSourcePath": "Implemented using common received Orthodox wording with Ancient Faith Prayer Book as a source witness.",
+      "reason": "A common Orthodox devotional prayer; implemented as lay-devotional evening material.",
+      "ancientFaithUse": "source-witness",
+      "commonReceptionStatus": "widely-received",
+      "runtimeTextPosture": "implemented-common-received-form",
+      "runtimePrayerId": "prayer-to-guardian-angel",
+      "runtimeImplementedDate": "2026-06-07"
     }
   ],
   "researchPrinciples": {
@@ -435,6 +503,42 @@
       "displayCategory": "devotional-need",
       "sourcePosture": "Common Orthodox received form; Ancient Faith Prayer Book source witness.",
       "notes": "Added as part of the EO daily devotional prayer batch from the Ancient Faith source inventory."
+    },
+    {
+      "id": "prayer-of-st-john-chrysostom",
+      "sourceCandidateId": "afpb-prayer-of-st-john-chrysostom",
+      "tradition": "EO",
+      "accessTier": "lay-devotional",
+      "displayCategory": "devotional-need",
+      "sourcePosture": "Common Orthodox received form; Ancient Faith Prayer Book source witness.",
+      "notes": "Added as part of the EO evening/devotional prayer batch from the Ancient Faith source inventory."
+    },
+    {
+      "id": "prayer-of-st-macarius",
+      "sourceCandidateId": "afpb-prayer-of-st-macarius",
+      "tradition": "EO",
+      "accessTier": "lay-devotional",
+      "displayCategory": "devotional-need",
+      "sourcePosture": "Common Orthodox received form; Ancient Faith Prayer Book source witness.",
+      "notes": "Added as part of the EO evening/devotional prayer batch from the Ancient Faith source inventory."
+    },
+    {
+      "id": "prayer-of-st-basil",
+      "sourceCandidateId": "afpb-prayer-of-st-basil",
+      "tradition": "EO",
+      "accessTier": "lay-devotional",
+      "displayCategory": "devotional-need",
+      "sourcePosture": "Common Orthodox received form; Ancient Faith Prayer Book source witness.",
+      "notes": "Added as part of the EO evening/devotional prayer batch from the Ancient Faith source inventory."
+    },
+    {
+      "id": "prayer-to-guardian-angel",
+      "sourceCandidateId": "afpb-prayer-to-guardian-angel",
+      "tradition": "EO",
+      "accessTier": "lay-devotional",
+      "displayCategory": "devotional-need",
+      "sourcePosture": "Common Orthodox received form; Ancient Faith Prayer Book source witness.",
+      "notes": "Added as part of the EO evening/devotional prayer batch from the Ancient Faith source inventory."
     }
   ]
 }

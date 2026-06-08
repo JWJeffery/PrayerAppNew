@@ -262,4 +262,17 @@ check(
   prayersJson['orthodox-before-study']?.source?.includes('Common Orthodox student prayer')
 );
 
+check(
+  'EO includes evening devotional prayer batch',
+  counts.EO >= 22 &&
+  prayersJs.includes("'prayer-of-st-john-chrysostom': ['EO']") &&
+  prayersJs.includes("'prayer-of-st-macarius': ['EO']") &&
+  prayersJs.includes("'prayer-of-st-basil': ['EO']") &&
+  prayersJs.includes("'prayer-to-guardian-angel': ['EO']") &&
+  prayersJson['prayer-of-st-john-chrysostom']?.source?.includes('Common Orthodox received form') &&
+  prayersJson['prayer-of-st-macarius']?.source?.includes('Common Orthodox received form') &&
+  prayersJson['prayer-of-st-basil']?.source?.includes('Common Orthodox received form') &&
+  prayersJson['prayer-to-guardian-angel']?.source?.includes('Common Orthodox received form')
+);
+
 console.log(`PASS Book of Needs source governance audit: ${checks} check(s) passed; counts=${JSON.stringify(counts)}`);
