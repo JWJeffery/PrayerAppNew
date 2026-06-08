@@ -1,0 +1,324 @@
+{
+  "reviewVersion": "book_of_needs_anglican_taxonomy_review_v1",
+  "dateRecorded": "2026-06-07",
+  "scope": "Diagnostic review of prayers currently assigned to ANG in the Book of Needs tradition taxonomy. This records source-basis classification only; it does not retag prayers or change runtime behavior.",
+  "currentLiveCount": 25,
+  "conclusion": "The ANG bucket contains explicitly Anglican material, Anglican divines, Anglican-tradition service prayers, and several broader Western devotional/vesting prayers that are not intrinsically Anglican-exclusive. The count should not be treated as twenty-five equally Anglican-specific prayer sources.",
+  "governancePosture": {
+    "universalIsAccessContextOnly": true,
+    "noRuntimeRetaggingInThisTranche": true,
+    "noNewTraditionCodeCreated": true,
+    "broadWesternIsNotAValidRuntimeTraditionCodeYet": true,
+    "diagnosticOnly": true
+  },
+  "classificationBuckets": {
+    "explicit-bcp": {
+      "count": 8,
+      "meaning": "Source is explicitly The Book of Common Prayer."
+    },
+    "anglican-divine": {
+      "count": 6,
+      "meaning": "Source is Richard Hooker or Lancelot Andrewes / Andrewes tradition."
+    },
+    "anglican-tradition": {
+      "count": 4,
+      "meaning": "Source is labeled Anglican Tradition and should remain provisionally ANG pending deeper source review."
+    },
+    "western-shared-devotional": {
+      "count": 1,
+      "meaning": "Source is traditional/broad Western devotional material and is not Anglican-exclusive."
+    },
+    "western-shared-vesting": {
+      "count": 6,
+      "meaning": "Source is traditional Western vesting material. It may be used in Anglican/Anglo-Catholic contexts but is not intrinsically Anglican-exclusive and is role-sensitive."
+    }
+  },
+  "summaryCounts": {
+    "strongAnglicanBasis": 18,
+    "notAnglicanExclusive": 7,
+    "needsFutureTaxonomyOrRoleReview": 7
+  },
+  "entries": [
+    {
+      "id": "prayer-humble-access",
+      "title": "Prayer of Humble Access",
+      "currentTraditions": [
+        "ANG"
+      ],
+      "sourceBasis": "The Book of Common Prayer, p. 337",
+      "classification": "explicit-bcp",
+      "reviewDisposition": "confirmed-anglican",
+      "notes": "Explicit BCP source; ANG assignment is source-honest."
+    },
+    {
+      "id": "spiritual-communion",
+      "title": "Act of Spiritual Communion",
+      "currentTraditions": [
+        "ANG"
+      ],
+      "sourceBasis": "Traditional",
+      "classification": "western-shared-devotional",
+      "reviewDisposition": "not-anglican-exclusive",
+      "notes": "Traditional spiritual communion prayer is broadly Western/devotional rather than intrinsically Anglican. Keep current assignment until broader Western/common handling exists."
+    },
+    {
+      "id": "thanksgiving-hooker",
+      "title": "Thanksgiving After Communion",
+      "currentTraditions": [
+        "ANG"
+      ],
+      "sourceBasis": "Adapted from Richard Hooker, Of the Laws of Ecclesiastical Polity, 1593",
+      "classification": "anglican-divine",
+      "reviewDisposition": "confirmed-anglican",
+      "notes": "Hooker is a major Anglican divine; ANG assignment is source-honest."
+    },
+    {
+      "id": "thanksgiving-andrewes",
+      "title": "Self-Oblation",
+      "currentTraditions": [
+        "ANG"
+      ],
+      "sourceBasis": "Attributed to Lancelot Andrewes",
+      "classification": "anglican-divine",
+      "reviewDisposition": "confirmed-anglican",
+      "notes": "Andrewes is a major Anglican divine; ANG assignment is source-honest."
+    },
+    {
+      "id": "andrewes-commendation",
+      "title": "Commendation",
+      "currentTraditions": [
+        "ANG"
+      ],
+      "sourceBasis": "Prayers of Lancelot Andrewes",
+      "classification": "anglican-divine",
+      "reviewDisposition": "confirmed-anglican",
+      "notes": "Andrewes source; ANG assignment is source-honest."
+    },
+    {
+      "id": "andrewes-thanksgiving",
+      "title": "Thanksgiving",
+      "currentTraditions": [
+        "ANG"
+      ],
+      "sourceBasis": "Prayers of Lancelot Andrewes",
+      "classification": "anglican-divine",
+      "reviewDisposition": "confirmed-anglican",
+      "notes": "Andrewes source; ANG assignment is source-honest."
+    },
+    {
+      "id": "andrewes-penitence",
+      "title": "Penitence",
+      "currentTraditions": [
+        "ANG"
+      ],
+      "sourceBasis": "Prayers of Lancelot Andrewes",
+      "classification": "anglican-divine",
+      "reviewDisposition": "confirmed-anglican",
+      "notes": "Andrewes source; ANG assignment is source-honest."
+    },
+    {
+      "id": "andrewes-petition",
+      "title": "Petition",
+      "currentTraditions": [
+        "ANG"
+      ],
+      "sourceBasis": "Prayers of Lancelot Andrewes",
+      "classification": "anglican-divine",
+      "reviewDisposition": "confirmed-anglican",
+      "notes": "Andrewes source; ANG assignment is source-honest."
+    },
+    {
+      "id": "prayer-for-the-sick",
+      "title": "Prayer for the Sick",
+      "currentTraditions": [
+        "ANG"
+      ],
+      "sourceBasis": "The Book of Common Prayer",
+      "classification": "explicit-bcp",
+      "reviewDisposition": "confirmed-anglican",
+      "notes": "Explicit BCP source; ANG assignment is source-honest."
+    },
+    {
+      "id": "prayer-for-peace",
+      "title": "Prayer for Peace",
+      "currentTraditions": [
+        "ANG"
+      ],
+      "sourceBasis": "The Book of Common Prayer",
+      "classification": "explicit-bcp",
+      "reviewDisposition": "confirmed-anglican",
+      "notes": "Explicit BCP source; ANG assignment is source-honest."
+    },
+    {
+      "id": "prayer-for-unity",
+      "title": "Prayer for Unity",
+      "currentTraditions": [
+        "ANG"
+      ],
+      "sourceBasis": "The Book of Common Prayer",
+      "classification": "explicit-bcp",
+      "reviewDisposition": "confirmed-anglican",
+      "notes": "Explicit BCP source; ANG assignment is source-honest."
+    },
+    {
+      "id": "prayer-for-mission",
+      "title": "Prayer for Mission",
+      "currentTraditions": [
+        "ANG"
+      ],
+      "sourceBasis": "The Book of Common Prayer",
+      "classification": "explicit-bcp",
+      "reviewDisposition": "confirmed-anglican",
+      "notes": "Explicit BCP source; ANG assignment is source-honest."
+    },
+    {
+      "id": "prayer-for-guidance",
+      "title": "Prayer for Guidance",
+      "currentTraditions": [
+        "ANG"
+      ],
+      "sourceBasis": "The Book of Common Prayer",
+      "classification": "explicit-bcp",
+      "reviewDisposition": "confirmed-anglican",
+      "notes": "Explicit BCP source; ANG assignment is source-honest."
+    },
+    {
+      "id": "prayer-for-the-church",
+      "title": "Prayer for the Church",
+      "currentTraditions": [
+        "ANG"
+      ],
+      "sourceBasis": "The Book of Common Prayer",
+      "classification": "explicit-bcp",
+      "reviewDisposition": "confirmed-anglican",
+      "notes": "Explicit BCP source; ANG assignment is source-honest."
+    },
+    {
+      "id": "prayer-for-the-world",
+      "title": "Prayer for the World",
+      "currentTraditions": [
+        "ANG"
+      ],
+      "sourceBasis": "The Book of Common Prayer",
+      "classification": "explicit-bcp",
+      "reviewDisposition": "confirmed-anglican",
+      "notes": "Explicit BCP source; ANG assignment is source-honest."
+    },
+    {
+      "id": "minister-journey-bcp",
+      "title": "On the Way to Church",
+      "currentTraditions": [
+        "ANG"
+      ],
+      "sourceBasis": "Anglican Tradition",
+      "classification": "anglican-tradition",
+      "reviewDisposition": "provisionally-confirmed-anglican",
+      "notes": "Source is labeled Anglican Tradition; retain ANG but future source lineage review would be useful."
+    },
+    {
+      "id": "minister-entering-bcp",
+      "title": "Before Entering Church",
+      "currentTraditions": [
+        "ANG"
+      ],
+      "sourceBasis": "Anglican Tradition",
+      "classification": "anglican-tradition",
+      "reviewDisposition": "provisionally-confirmed-anglican",
+      "notes": "Source is labeled Anglican Tradition; retain ANG but future source lineage review would be useful."
+    },
+    {
+      "id": "vesting-amice",
+      "title": "Vesting: The Amice",
+      "currentTraditions": [
+        "ANG"
+      ],
+      "sourceBasis": "Traditional (Western)",
+      "classification": "western-shared-vesting",
+      "reviewDisposition": "not-anglican-exclusive",
+      "notes": "Western vesting prayer used in Anglo-Catholic contexts, but not intrinsically Anglican-exclusive. Also role-sensitive."
+    },
+    {
+      "id": "vesting-alb",
+      "title": "Vesting: The Alb",
+      "currentTraditions": [
+        "ANG"
+      ],
+      "sourceBasis": "Traditional (Western)",
+      "classification": "western-shared-vesting",
+      "reviewDisposition": "not-anglican-exclusive",
+      "notes": "Western vesting prayer used in Anglo-Catholic contexts, but not intrinsically Anglican-exclusive. Also role-sensitive."
+    },
+    {
+      "id": "vesting-cincture",
+      "title": "Vesting: The Cincture",
+      "currentTraditions": [
+        "ANG"
+      ],
+      "sourceBasis": "Traditional (Western)",
+      "classification": "western-shared-vesting",
+      "reviewDisposition": "not-anglican-exclusive",
+      "notes": "Western vesting prayer used in Anglo-Catholic contexts, but not intrinsically Anglican-exclusive. Also role-sensitive."
+    },
+    {
+      "id": "vesting-stole-deacon",
+      "title": "Vesting: The Stole (Deacon)",
+      "currentTraditions": [
+        "ANG"
+      ],
+      "sourceBasis": "Traditional (Western)",
+      "classification": "western-shared-vesting",
+      "reviewDisposition": "not-anglican-exclusive",
+      "notes": "Western deaconal vesting prayer used in Anglo-Catholic contexts, but not intrinsically Anglican-exclusive. Role-specific."
+    },
+    {
+      "id": "vesting-stole-priest",
+      "title": "Vesting: The Stole (Priest)",
+      "currentTraditions": [
+        "ANG"
+      ],
+      "sourceBasis": "Traditional (Western)",
+      "classification": "western-shared-vesting",
+      "reviewDisposition": "not-anglican-exclusive",
+      "notes": "Western priestly vesting prayer used in Anglo-Catholic contexts, but not intrinsically Anglican-exclusive. Role-specific."
+    },
+    {
+      "id": "vesting-chasuble",
+      "title": "Vesting: The Chasuble",
+      "currentTraditions": [
+        "ANG"
+      ],
+      "sourceBasis": "Traditional (Western)",
+      "classification": "western-shared-vesting",
+      "reviewDisposition": "not-anglican-exclusive",
+      "notes": "Western priestly vesting prayer used in Anglo-Catholic contexts, but not intrinsically Anglican-exclusive. Role-specific."
+    },
+    {
+      "id": "minister-before-serving-bcp",
+      "title": "Before Serving",
+      "currentTraditions": [
+        "ANG"
+      ],
+      "sourceBasis": "Anglican Tradition",
+      "classification": "anglican-tradition",
+      "reviewDisposition": "provisionally-confirmed-anglican",
+      "notes": "Source is labeled Anglican Tradition; retain ANG but future source lineage and role-access review would be useful."
+    },
+    {
+      "id": "minister-after-serving-bcp",
+      "title": "Thanksgiving After Serving",
+      "currentTraditions": [
+        "ANG"
+      ],
+      "sourceBasis": "Anglican Tradition",
+      "classification": "anglican-tradition",
+      "reviewDisposition": "provisionally-confirmed-anglican",
+      "notes": "Source is labeled Anglican Tradition; retain ANG but future source lineage and role-access review would be useful."
+    }
+  ],
+  "futureRecommendations": [
+    "Do not treat the ANG count as twenty-five equally Anglican-specific source units.",
+    "Retain runtime assignments for now because no broad-Western or Anglo-Catholic source bucket exists in the current valid taxonomy.",
+    "Before expanding role-aware Book of Needs material, classify Western vesting prayers by access tier rather than leaving them as ordinary default devotional prayers.",
+    "If a future Western/shared taxonomy is added, review spiritual-communion and the six Traditional (Western) vesting prayers for possible reassignment or multi-tagging."
+  ]
+}
