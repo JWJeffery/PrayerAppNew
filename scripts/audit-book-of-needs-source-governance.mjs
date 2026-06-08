@@ -224,4 +224,11 @@ if (failures.length) {
   process.exit(1);
 }
 
+check(
+  'EO includes Jesus Prayer as a received lay-devotional prayer',
+  counts.EO === 10 &&
+  prayersJs.includes("'jesus-prayer': ['EO']") &&
+  prayersJson['jesus-prayer']?.source?.includes('Common Orthodox received form')
+);
+
 console.log(`PASS Book of Needs source governance audit: ${checks} check(s) passed; counts=${JSON.stringify(counts)}`);

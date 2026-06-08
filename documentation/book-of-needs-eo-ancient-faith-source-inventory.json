@@ -63,12 +63,14 @@
       "sourceCriticalClassification": "ancient-common-devotional",
       "accessTier": "lay-devotional",
       "displayCategory": "devotional-need",
-      "firstPassDisposition": "strong-candidate",
+      "firstPassDisposition": "implemented-runtime",
       "preferredSourcePath": "Use independently received wording rather than treating this compilation as the controlling source.",
-      "reason": "The Jesus Prayer is a central and widely received Orthodox devotional prayer, not unique to this source.",
+      "reason": "The Jesus Prayer is a central and widely received Orthodox devotional prayer, not unique to this source; it has been implemented using the common received short form while treating the Ancient Faith Prayer Book as a source witness.",
       "ancientFaithUse": "source-witness",
       "commonReceptionStatus": "widely-received",
-      "runtimeTextPosture": "eligible-after-wording-review"
+      "runtimeTextPosture": "implemented-common-received-short-form",
+      "runtimePrayerId": "jesus-prayer",
+      "runtimeImplementedDate": "2026-06-07"
     },
     {
       "id": "afpb-prayer-of-manasseh",
@@ -275,5 +277,16 @@
     "internet-specific or contemporary-context prayers",
     "modern occupational or technology-related prayers",
     "prayers whose need-category is plausible but whose independent Orthodox reception has not yet been checked"
+  ],
+  "implementedRuntimePrayers": [
+    {
+      "id": "jesus-prayer",
+      "sourceCandidateId": "afpb-jesus-prayer",
+      "tradition": "EO",
+      "accessTier": "lay-devotional",
+      "displayCategory": "devotional-need",
+      "sourcePosture": "Common Orthodox received form; Ancient Faith Prayer Book source witness.",
+      "notes": "Added as the first runtime prayer from the Ancient Faith EO source inventory."
+    }
   ]
 }
