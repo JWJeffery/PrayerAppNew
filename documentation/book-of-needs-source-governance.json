@@ -5,7 +5,7 @@
   "coverageCountsAtCreation": {
     "ANG": 25,
     "LC": 11,
-    "EO": 11,
+    "EO": 14,
     "OO": 5,
     "COE": 4
   },
@@ -23,7 +23,7 @@
     "EO": {
       "label": "Eastern Orthodoxy",
       "status": "seeded",
-      "notes": "Orthodox minister/devotional prayers are present. The Jesus Prayer and the Trisagion Prayers are included as widely received Eastern Orthodox lay-devotional prayers, with the Ancient Faith Prayer Book used as a source witness rather than a bulk-ingestion source."
+      "notes": "Orthodox minister/devotional prayers are present. The Jesus Prayer, the Trisagion Prayers, the Prayer of St. Mardarios, the Prayer of St. Philaret of Moscow, and the Prayer of St. Ephrem the Syrian are included as widely received Eastern Orthodox lay-devotional prayers, with the Ancient Faith Prayer Book used as a source witness rather than a bulk-ingestion source."
     },
     "OO": {
       "label": "Oriental Orthodoxy",

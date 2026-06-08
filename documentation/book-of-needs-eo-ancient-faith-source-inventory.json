@@ -112,12 +112,14 @@
       "sourceCriticalClassification": "ancient-common-prayer",
       "accessTier": "lay-devotional",
       "displayCategory": "devotional-need",
-      "firstPassDisposition": "candidate-after-independent-witness",
-      "preferredSourcePath": "Compare against Horologion/Orthodox prayer-book witnesses before importing.",
-      "reason": "A common Orthodox evening prayer with ancient attribution; suitable candidate after source comparison.",
+      "firstPassDisposition": "implemented-runtime",
+      "preferredSourcePath": "Implemented using common received Orthodox wording with Ancient Faith Prayer Book as a source witness.",
+      "reason": "A common Orthodox evening prayer with ancient attribution; implemented using common received wording while treating the Ancient Faith Prayer Book as a source witness.",
       "ancientFaithUse": "source-witness",
-      "commonReceptionStatus": "likely-common",
-      "runtimeTextPosture": "eligible-after-wording-review"
+      "commonReceptionStatus": "widely-received",
+      "runtimeTextPosture": "implemented-common-received-form",
+      "runtimePrayerId": "prayer-of-st-mardarios",
+      "runtimeImplementedDate": "2026-06-07"
     },
     {
       "id": "afpb-prayer-of-st-philaret",
@@ -127,12 +129,14 @@
       "sourceCriticalClassification": "widely-received-modern-orthodox",
       "accessTier": "lay-devotional",
       "displayCategory": "devotional-need",
-      "firstPassDisposition": "candidate-after-independent-witness",
-      "preferredSourcePath": "Use only after independent Orthodox source witness review.",
-      "reason": "Widely used in Orthodox morning prayer, but modern rather than ancient; not the first ancient/common batch.",
+      "firstPassDisposition": "implemented-runtime",
+      "preferredSourcePath": "Implemented using common received Orthodox wording with Ancient Faith Prayer Book as a source witness.",
+      "reason": "A widely used Orthodox morning prayer; implemented using common received wording while treating the Ancient Faith Prayer Book as a source witness.",
       "ancientFaithUse": "source-witness",
-      "commonReceptionStatus": "likely-common",
-      "runtimeTextPosture": "eligible-after-wording-review"
+      "commonReceptionStatus": "widely-received",
+      "runtimeTextPosture": "implemented-common-received-form",
+      "runtimePrayerId": "prayer-of-st-philaret",
+      "runtimeImplementedDate": "2026-06-07"
     },
     {
       "id": "afpb-prayers-before-holy-communion",
@@ -268,6 +272,23 @@
       "ancientFaithUse": "source-witness",
       "commonReceptionStatus": "needs-research",
       "runtimeTextPosture": "eligible-after-wording-review"
+    },
+    {
+      "id": "afpb-prayer-of-st-ephrem",
+      "title": "Prayer of St. Ephrem the Syrian",
+      "sourceSection": "Morning Prayers; Afternoon Prayers; Evening Prayers; Late Evening Prayers",
+      "tradition": "EO",
+      "sourceCriticalClassification": "ancient-common-lenten-prayer",
+      "accessTier": "lay-devotional",
+      "displayCategory": "devotional-need",
+      "firstPassDisposition": "implemented-runtime",
+      "preferredSourcePath": "Implemented using common received Orthodox wording with Ancient Faith Prayer Book as a source witness.",
+      "reason": "A widely received Orthodox Lenten prayer; implemented using common received wording while treating the Ancient Faith Prayer Book as a source witness.",
+      "ancientFaithUse": "source-witness",
+      "commonReceptionStatus": "widely-received",
+      "runtimeTextPosture": "implemented-common-received-form",
+      "runtimePrayerId": "prayer-of-st-ephrem",
+      "runtimeImplementedDate": "2026-06-07"
     }
   ],
   "researchPrinciples": {
@@ -298,6 +319,33 @@
       "displayCategory": "devotional-need",
       "sourcePosture": "Common Orthodox received form; Ancient Faith Prayer Book source witness.",
       "notes": "Added as a runtime prayer from the Ancient Faith EO source inventory."
+    },
+    {
+      "id": "prayer-of-st-mardarios",
+      "sourceCandidateId": "afpb-prayer-of-st-mardarios",
+      "tradition": "EO",
+      "accessTier": "lay-devotional",
+      "displayCategory": "devotional-need",
+      "sourcePosture": "Common Orthodox received form; Ancient Faith Prayer Book source witness.",
+      "notes": "Added as part of the EO common devotional prayer batch from the Ancient Faith source inventory."
+    },
+    {
+      "id": "prayer-of-st-philaret",
+      "sourceCandidateId": "afpb-prayer-of-st-philaret",
+      "tradition": "EO",
+      "accessTier": "lay-devotional",
+      "displayCategory": "devotional-need",
+      "sourcePosture": "Common Orthodox received form; Ancient Faith Prayer Book source witness.",
+      "notes": "Added as part of the EO common devotional prayer batch from the Ancient Faith source inventory."
+    },
+    {
+      "id": "prayer-of-st-ephrem",
+      "sourceCandidateId": "afpb-prayer-of-st-ephrem",
+      "tradition": "EO",
+      "accessTier": "lay-devotional",
+      "displayCategory": "devotional-need",
+      "sourcePosture": "Common Orthodox received form; Ancient Faith Prayer Book source witness.",
+      "notes": "Added as part of the EO common devotional prayer batch from the Ancient Faith source inventory."
     }
   ]
 }

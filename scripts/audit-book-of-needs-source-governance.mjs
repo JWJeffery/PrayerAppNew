@@ -233,9 +233,20 @@ check(
 
 check(
   'EO includes Trisagion Prayers as a received lay-devotional prayer',
-  counts.EO === 11 &&
+  counts.EO >= 11 &&
   prayersJs.includes("'trisagion-prayers': ['EO']") &&
   prayersJson['trisagion-prayers']?.source?.includes('Common Orthodox received form')
+);
+
+check(
+  'EO includes common devotional prayer batch',
+  counts.EO >= 14 &&
+  prayersJs.includes("'prayer-of-st-mardarios': ['EO']") &&
+  prayersJs.includes("'prayer-of-st-philaret': ['EO']") &&
+  prayersJs.includes("'prayer-of-st-ephrem': ['EO']") &&
+  prayersJson['prayer-of-st-mardarios']?.source?.includes('Common Orthodox received form') &&
+  prayersJson['prayer-of-st-philaret']?.source?.includes('Common Orthodox received form') &&
+  prayersJson['prayer-of-st-ephrem']?.source?.includes('Common Orthodox received Lenten prayer')
 );
 
 console.log(`PASS Book of Needs source governance audit: ${checks} check(s) passed; counts=${JSON.stringify(counts)}`);
