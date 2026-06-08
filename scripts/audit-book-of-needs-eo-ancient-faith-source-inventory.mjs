@@ -100,9 +100,17 @@ if (inventory) {
     }
   }
 
-  const strongCandidates = (inventory.candidates || []).filter((candidate) => candidate.firstPassDisposition === "strong-candidate");
-  if (strongCandidates.length < 4) {
-    fail(`Expected at least 4 strong candidates, found ${strongCandidates.length}.`);
+  const firstPassOrImplementedCandidates = (inventory.candidates || []).filter((candidate) =>
+    candidate.firstPassDisposition === "strong-candidate" ||
+    candidate.firstPassDisposition === "implemented-runtime"
+  );
+  if (firstPassOrImplementedCandidates.length < 4) {
+    fail(`Expected at least 4 strong or implemented first-pass candidates, found ${firstPassOrImplementedCandidates.length}.`);
+  }
+
+  const implementedJesusPrayer = candidatesById.get("afpb-jesus-prayer");
+  if (!implementedJesusPrayer || implementedJesusPrayer.firstPassDisposition !== "implemented-runtime") {
+    fail("Jesus Prayer candidate must remain marked implemented-runtime after runtime import.");
   }
 
   const internet = candidatesById.get("afpb-before-using-the-internet");
