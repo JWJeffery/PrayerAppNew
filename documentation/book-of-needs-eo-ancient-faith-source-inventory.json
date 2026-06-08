@@ -1,5 +1,5 @@
 {
-  "inventoryVersion": "book_of_needs_eo_afpb_source_inventory_v1",
+  "inventoryVersion": "book_of_needs_eo_afpb_source_inventory_v2",
   "dateRecorded": "2026-06-07",
   "source": {
     "title": "The Ancient Faith Prayer Book",
@@ -7,14 +7,16 @@
     "sourceFormatReviewed": "user-provided EPUB",
     "compilationCopyrightYear": 2014,
     "ebookModificationDate": "2015-05-07",
-    "sourceUse": "source-critical inventory only; no prayer text imported in this tranche"
+    "sourceUse": "source-critical inventory and source witness; no prayer text imported in this tranche"
   },
-  "scope": "Eastern Orthodox Book of Needs / devotional-prayer source selection. This inventory identifies candidate prayers from the Ancient Faith Prayer Book structure while rejecting blanket ingestion of the book.",
+  "scope": "Eastern Orthodox Book of Needs / devotional-prayer source selection. This inventory identifies candidate prayers from the Ancient Faith Prayer Book structure while rejecting blanket ingestion of the book and rejecting assumptions that modern-context prayers are unique merely because they address modern needs.",
   "governingDecisions": [
     "Do not ingest all prayers from this source.",
-    "Do not use prayers that appear to be fully unique to this compilation as first-pass Universal Office Book of Needs entries.",
-    "Prefer ancient, biblical, liturgical, or commonly received Orthodox prayers with independent witness value.",
-    "Use this source as a locator or comparison witness when the prayer is widely received elsewhere.",
+    "Ancient Faith Prayer Book may be used as a source witness for widely received Orthodox prayers.",
+    "Do not treat Ancient Faith's compilation as a blank-check source for unique, modern, or publisher-created prayers.",
+    "If a prayer is ancient, biblical, liturgical, patristic, or commonly used across Orthodox prayer books, it may be selected for Universal Office intake after ordinary source review.",
+    "If the wording appears to be a distinctive modern translation, editorial adaptation, or publisher-created prayer, do not treat that wording as default runtime text without further review.",
+    "Do not assume a prayer is uncommon or unique merely because its need-category is modern. Determine independent Orthodox reception before excluding it.",
     "Do not change runtime UI or tradition counts in this tranche."
   ],
   "currentBookOfNeedsCountsAtIntake": {
@@ -33,10 +35,9 @@
     "selected-common-prayers-before-or-after-communion-after-independent-source-review"
   ],
   "notFirstPass": [
-    "modern/pastoral need-prayers from Prayers for Various Needs and Occasions unless independently attested",
-    "internet-specific or contemporary-context prayers",
-    "marriage/fertility/pregnancy/miscarriage prayers unless independently attested and pastorally reviewed",
-    "publisher-unique compiled devotional prayers without independent Orthodox reception"
+    "publisher-unique compiled devotional prayers without independent Orthodox reception",
+    "distinctive modern translations or adaptations until wording review is complete",
+    "marriage/fertility/pregnancy/miscarriage prayers unless independently attested and pastorally reviewed"
   ],
   "candidates": [
     {
@@ -48,9 +49,11 @@
       "accessTier": "lay-devotional",
       "displayCategory": "devotional-need",
       "firstPassDisposition": "strong-candidate",
-      "useAncientFaithTextDirectly": false,
       "preferredSourcePath": "Use an independent received Orthodox prayer-book or liturgical source witness before adding runtime text.",
-      "reason": "The Trisagion prayers are broadly received in Orthodox daily prayer and already function as common Orthodox prayer structure."
+      "reason": "The Trisagion prayers are broadly received in Orthodox daily prayer and already function as common Orthodox prayer structure.",
+      "ancientFaithUse": "source-witness",
+      "commonReceptionStatus": "widely-received",
+      "runtimeTextPosture": "eligible-after-wording-review"
     },
     {
       "id": "afpb-jesus-prayer",
@@ -61,9 +64,11 @@
       "accessTier": "lay-devotional",
       "displayCategory": "devotional-need",
       "firstPassDisposition": "strong-candidate",
-      "useAncientFaithTextDirectly": false,
       "preferredSourcePath": "Use independently received wording rather than treating this compilation as the controlling source.",
-      "reason": "The Jesus Prayer is a central and widely received Orthodox devotional prayer, not unique to this source."
+      "reason": "The Jesus Prayer is a central and widely received Orthodox devotional prayer, not unique to this source.",
+      "ancientFaithUse": "source-witness",
+      "commonReceptionStatus": "widely-received",
+      "runtimeTextPosture": "eligible-after-wording-review"
     },
     {
       "id": "afpb-prayer-of-manasseh",
@@ -74,9 +79,11 @@
       "accessTier": "lay-devotional",
       "displayCategory": "devotional-need",
       "firstPassDisposition": "strong-candidate",
-      "useAncientFaithTextDirectly": false,
       "preferredSourcePath": "Prefer the app's Bible/source corpus or another public-domain scripture witness for runtime text.",
-      "reason": "This is a scriptural penitential prayer and a strong repentance candidate, but the runtime text should come from a scripture source witness rather than the compilation."
+      "reason": "This is a scriptural penitential prayer and a strong repentance candidate, but the runtime text should come from a scripture source witness rather than the compilation.",
+      "ancientFaithUse": "source-witness",
+      "commonReceptionStatus": "widely-received",
+      "runtimeTextPosture": "eligible-after-wording-review"
     },
     {
       "id": "afpb-psalm-50",
@@ -87,9 +94,11 @@
       "accessTier": "lay-devotional",
       "displayCategory": "devotional-need",
       "firstPassDisposition": "strong-candidate",
-      "useAncientFaithTextDirectly": false,
       "preferredSourcePath": "Use the app's psalter/scripture corpus rather than the compilation text.",
-      "reason": "Psalm 50 is the standard Orthodox penitential psalm and belongs naturally in repentance contexts."
+      "reason": "Psalm 50 is the standard Orthodox penitential psalm and belongs naturally in repentance contexts.",
+      "ancientFaithUse": "source-witness",
+      "commonReceptionStatus": "widely-received",
+      "runtimeTextPosture": "eligible-after-wording-review"
     },
     {
       "id": "afpb-prayer-of-st-mardarios",
@@ -100,9 +109,11 @@
       "accessTier": "lay-devotional",
       "displayCategory": "devotional-need",
       "firstPassDisposition": "candidate-after-independent-witness",
-      "useAncientFaithTextDirectly": false,
       "preferredSourcePath": "Compare against Horologion/Orthodox prayer-book witnesses before importing.",
-      "reason": "A common Orthodox evening prayer with ancient attribution; suitable candidate after source comparison."
+      "reason": "A common Orthodox evening prayer with ancient attribution; suitable candidate after source comparison.",
+      "ancientFaithUse": "source-witness",
+      "commonReceptionStatus": "likely-common",
+      "runtimeTextPosture": "eligible-after-wording-review"
     },
     {
       "id": "afpb-prayer-of-st-philaret",
@@ -113,9 +124,11 @@
       "accessTier": "lay-devotional",
       "displayCategory": "devotional-need",
       "firstPassDisposition": "candidate-after-independent-witness",
-      "useAncientFaithTextDirectly": false,
       "preferredSourcePath": "Use only after independent Orthodox source witness review.",
-      "reason": "Widely used in Orthodox morning prayer, but modern rather than ancient; not the first ancient/common batch."
+      "reason": "Widely used in Orthodox morning prayer, but modern rather than ancient; not the first ancient/common batch.",
+      "ancientFaithUse": "source-witness",
+      "commonReceptionStatus": "likely-common",
+      "runtimeTextPosture": "eligible-after-wording-review"
     },
     {
       "id": "afpb-prayers-before-holy-communion",
@@ -126,9 +139,11 @@
       "accessTier": "lay-with-rubric",
       "displayCategory": "preparation-for-service",
       "firstPassDisposition": "inventory-only-for-now",
-      "useAncientFaithTextDirectly": false,
       "preferredSourcePath": "Treat as communion-preparation material, not ordinary Book of Needs default content.",
-      "reason": "Common and important Orthodox devotional material, but belongs in a communion-preparation lane rather than the first Book of Needs needs-prayer batch."
+      "reason": "Common and important Orthodox devotional material, but belongs in a communion-preparation lane rather than the first Book of Needs needs-prayer batch.",
+      "ancientFaithUse": "source-witness",
+      "commonReceptionStatus": "needs-research",
+      "runtimeTextPosture": "eligible-after-wording-review"
     },
     {
       "id": "afpb-thanksgiving-after-holy-communion",
@@ -139,9 +154,11 @@
       "accessTier": "lay-with-rubric",
       "displayCategory": "preparation-for-service",
       "firstPassDisposition": "inventory-only-for-now",
-      "useAncientFaithTextDirectly": false,
       "preferredSourcePath": "Treat as communion-thanksgiving material, not ordinary Book of Needs default content.",
-      "reason": "Common Orthodox prayer material, but feature placement should be communion-specific."
+      "reason": "Common Orthodox prayer material, but feature placement should be communion-specific.",
+      "ancientFaithUse": "source-witness",
+      "commonReceptionStatus": "needs-research",
+      "runtimeTextPosture": "eligible-after-wording-review"
     },
     {
       "id": "afpb-before-reading-scripture",
@@ -152,9 +169,11 @@
       "accessTier": "lay-devotional",
       "displayCategory": "devotional-need",
       "firstPassDisposition": "review-before-use",
-      "useAncientFaithTextDirectly": false,
       "preferredSourcePath": "Use only if matched to a common Orthodox prayer outside this compilation.",
-      "reason": "Useful category, but this source alone should not control runtime prayer text."
+      "reason": "Useful category, but this source alone should not control runtime prayer text.",
+      "ancientFaithUse": "source-witness",
+      "commonReceptionStatus": "needs-research",
+      "runtimeTextPosture": "eligible-after-wording-review"
     },
     {
       "id": "afpb-before-a-journey",
@@ -165,9 +184,11 @@
       "accessTier": "lay-devotional",
       "displayCategory": "devotional-need",
       "firstPassDisposition": "review-before-use",
-      "useAncientFaithTextDirectly": false,
       "preferredSourcePath": "Prefer Big Book of Needs or another Orthodox service/prayer-book source for journey prayers.",
-      "reason": "The need category is appropriate, but the text should be corroborated outside this modern compilation."
+      "reason": "The need category is appropriate, but the text should be corroborated outside this modern compilation.",
+      "ancientFaithUse": "source-witness",
+      "commonReceptionStatus": "needs-research",
+      "runtimeTextPosture": "eligible-after-wording-review"
     },
     {
       "id": "afpb-prayer-of-a-sick-person",
@@ -178,9 +199,11 @@
       "accessTier": "lay-devotional",
       "displayCategory": "devotional-need",
       "firstPassDisposition": "review-before-use",
-      "useAncientFaithTextDirectly": false,
       "preferredSourcePath": "Prefer Big Book of Needs or independently received Orthodox sources for sickness prayers.",
-      "reason": "The need category is central to Book of Needs, but this compilation should not be the sole source for runtime wording."
+      "reason": "The need category is central to Book of Needs, but this compilation should not be the sole source for runtime wording.",
+      "ancientFaithUse": "source-witness",
+      "commonReceptionStatus": "needs-research",
+      "runtimeTextPosture": "eligible-after-wording-review"
     },
     {
       "id": "afpb-prayer-for-a-sick-person",
@@ -191,22 +214,26 @@
       "accessTier": "lay-devotional",
       "displayCategory": "devotional-need",
       "firstPassDisposition": "review-before-use",
-      "useAncientFaithTextDirectly": false,
       "preferredSourcePath": "Prefer Big Book of Needs or independently received Orthodox sources for sickness prayers.",
-      "reason": "Potentially useful lay-devotional content, but requires independent source comparison."
+      "reason": "Potentially useful lay-devotional content, but requires independent source comparison.",
+      "ancientFaithUse": "source-witness",
+      "commonReceptionStatus": "needs-research",
+      "runtimeTextPosture": "eligible-after-wording-review"
     },
     {
       "id": "afpb-before-using-the-internet",
       "title": "Before Using the Internet",
       "sourceSection": "Prayers for Various Needs and Occasions / Work, Study, and Recreation",
       "tradition": "EO",
-      "sourceCriticalClassification": "modern-context-compiled",
+      "sourceCriticalClassification": "modern-context-needs-research",
       "accessTier": "lay-devotional",
       "displayCategory": "devotional-need",
-      "firstPassDisposition": "exclude-from-first-pass",
-      "useAncientFaithTextDirectly": false,
-      "preferredSourcePath": "Do not use as an EO source-prayer candidate in the first pass.",
-      "reason": "Contemporary-context prayer is useful pastorally but not the ancient/common Orthodox material sought for this tranche."
+      "firstPassDisposition": "research-before-use",
+      "preferredSourcePath": "Research independent Orthodox reception before excluding or using this prayer. Do not assume uniqueness merely because the need-category is modern.",
+      "reason": "Modern-context prayer; research is required to determine whether it has independent Orthodox reception, parish/prayer-book circulation, clergy use, or repeated appearance across Orthodox sources.",
+      "ancientFaithUse": "source-witness",
+      "commonReceptionStatus": "needs-research",
+      "runtimeTextPosture": "eligible-only-after-independent-reception-and-wording-review"
     },
     {
       "id": "afpb-family-and-pregnancy-prayers",
@@ -217,9 +244,11 @@
       "accessTier": "lay-devotional",
       "displayCategory": "devotional-need",
       "firstPassDisposition": "inventory-only-for-now",
-      "useAncientFaithTextDirectly": false,
       "preferredSourcePath": "Handle through dedicated pastoral review and comparison with Big Book of Needs/source witnesses.",
-      "reason": "Pastorally important but sensitive; not appropriate for casual bulk ingestion from a modern compilation."
+      "reason": "Pastorally important but sensitive; not appropriate for casual bulk ingestion from a modern compilation.",
+      "ancientFaithUse": "source-witness",
+      "commonReceptionStatus": "needs-research",
+      "runtimeTextPosture": "eligible-after-wording-review"
     },
     {
       "id": "afpb-prayers-of-saints",
@@ -230,9 +259,21 @@
       "accessTier": "lay-devotional",
       "displayCategory": "devotional-need",
       "firstPassDisposition": "selective-review-only",
-      "useAncientFaithTextDirectly": false,
       "preferredSourcePath": "Use individual saint/source witnesses rather than this anthology as controlling source.",
-      "reason": "The section mixes ancient, Western, Orthodox, and modern saint material; selection must be source-specific."
+      "reason": "The section mixes ancient, Western, Orthodox, and modern saint material; selection must be source-specific.",
+      "ancientFaithUse": "source-witness",
+      "commonReceptionStatus": "needs-research",
+      "runtimeTextPosture": "eligible-after-wording-review"
     }
+  ],
+  "researchPrinciples": {
+    "prayerUnitVsExactWording": "The prayer unit and the exact English wording are distinct review questions. A common Orthodox prayer may be appropriate for intake even when its exact wording needs comparison across witnesses.",
+    "ancientFaithUse": "Ancient Faith may serve as a source witness, comparison witness, and in some cases a runtime-text witness after review. It is not a blanket authorization for bulk ingestion.",
+    "modernContextRule": "Modern-context need categories require research. They are not automatically excluded and not automatically accepted."
+  },
+  "needsResearchBeforeDisposition": [
+    "internet-specific or contemporary-context prayers",
+    "modern occupational or technology-related prayers",
+    "prayers whose need-category is plausible but whose independent Orthodox reception has not yet been checked"
   ]
 }

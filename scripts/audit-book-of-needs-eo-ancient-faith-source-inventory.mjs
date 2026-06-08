@@ -34,20 +34,37 @@ function walk(value, visitor, path = []) {
 const inventory = readJson(INVENTORY_PATH);
 
 if (inventory) {
-  if (inventory.inventoryVersion !== "book_of_needs_eo_afpb_source_inventory_v1") {
-    fail("inventoryVersion must be book_of_needs_eo_afpb_source_inventory_v1.");
+  if (inventory.inventoryVersion !== "book_of_needs_eo_afpb_source_inventory_v2") {
+    fail("inventoryVersion must be book_of_needs_eo_afpb_source_inventory_v2.");
   }
 
   if (inventory.source?.title !== "The Ancient Faith Prayer Book") {
     fail("Inventory must identify The Ancient Faith Prayer Book as the source reviewed.");
   }
 
+  if (!String(inventory.source?.sourceUse || "").includes("source witness")) {
+    fail("Inventory must allow Ancient Faith as a source witness.");
+  }
+
   if (!String(inventory.source?.sourceUse || "").includes("no prayer text imported")) {
     fail("Inventory must say no prayer text is imported in this tranche.");
   }
 
-  if (!inventory.governingDecisions?.includes("Do not ingest all prayers from this source.")) {
+  const decisions = inventory.governingDecisions || [];
+  if (!decisions.includes("Do not ingest all prayers from this source.")) {
     fail("Inventory must preserve the no-bulk-ingestion decision.");
+  }
+
+  if (!decisions.some((decision) => decision.includes("may be used as a source witness"))) {
+    fail("Inventory must allow Ancient Faith as a source witness for widely received Orthodox prayers.");
+  }
+
+  if (!decisions.some((decision) => decision.includes("Do not assume a prayer is uncommon or unique merely because its need-category is modern"))) {
+    fail("Inventory must block modern-context exclusion by assumption.");
+  }
+
+  if (inventory.researchPrinciples?.modernContextRule !== "Modern-context need categories require research. They are not automatically excluded and not automatically accepted.") {
+    fail("Modern-context research rule is missing or altered.");
   }
 
   if (!Array.isArray(inventory.candidates) || inventory.candidates.length < 12) {
@@ -66,11 +83,11 @@ if (inventory) {
       fail(`Candidate ${candidate.id} must be EO.`);
     }
 
-    if (candidate.useAncientFaithTextDirectly !== false) {
-      fail(`Candidate ${candidate.id} must not use Ancient Faith text directly in this inventory.`);
+    if ("useAncientFaithTextDirectly" in candidate) {
+      fail(`Candidate ${candidate.id} must not preserve the old blanket useAncientFaithTextDirectly field.`);
     }
 
-    for (const required of ["title", "sourceSection", "sourceCriticalClassification", "accessTier", "displayCategory", "firstPassDisposition", "preferredSourcePath", "reason"]) {
+    for (const required of ["title", "sourceSection", "sourceCriticalClassification", "accessTier", "displayCategory", "firstPassDisposition", "preferredSourcePath", "reason", "ancientFaithUse", "commonReceptionStatus", "runtimeTextPosture"]) {
       if (!(required in candidate)) {
         fail(`Candidate ${candidate.id} missing required field ${required}.`);
       }
@@ -88,13 +105,26 @@ if (inventory) {
     fail(`Expected at least 4 strong candidates, found ${strongCandidates.length}.`);
   }
 
-  const excluded = (inventory.candidates || []).filter((candidate) => candidate.firstPassDisposition === "exclude-from-first-pass");
-  if (!excluded.some((candidate) => candidate.id === "afpb-before-using-the-internet")) {
-    fail("Modern context prayer must be explicitly excluded from first pass.");
+  const internet = candidatesById.get("afpb-before-using-the-internet");
+  if (!internet) {
+    fail("Missing modern-context internet prayer candidate.");
+  } else {
+    if (internet.firstPassDisposition !== "research-before-use") {
+      fail("Internet prayer must be research-before-use, not automatically excluded.");
+    }
+    if (internet.sourceCriticalClassification !== "modern-context-needs-research") {
+      fail("Internet prayer must be classified as modern-context-needs-research.");
+    }
+    if (internet.commonReceptionStatus !== "needs-research") {
+      fail("Internet prayer must have needs-research commonReceptionStatus.");
+    }
+    if (String(internet.reason || "").toLowerCase().includes("not the ancient/common")) {
+      fail("Internet prayer reason must not exclude merely because it is modern-context.");
+    }
   }
 
   const serialized = JSON.stringify(inventory);
-  for (const phrase of ["permission anxiety", "needs permission review", "do not import"]) {
+  for (const phrase of ["permission anxiety", "needs permission review"]) {
     if (serialized.toLowerCase().includes(phrase)) {
       fail(`Inventory must not include blocked posture phrase: ${phrase}`);
     }
@@ -117,4 +147,4 @@ if (failures.length) {
   process.exit(1);
 }
 
-console.log("PASS Book of Needs EO Ancient Faith source inventory audit: candidates=15 strongCandidates>=4");
+console.log("PASS Book of Needs EO Ancient Faith source inventory audit: candidates=15 posture=source-witness modernContext=research-required");
