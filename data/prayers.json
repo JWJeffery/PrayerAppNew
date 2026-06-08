@@ -348,5 +348,45 @@
     "title": "Thanksgiving After a Meal",
     "source": "Common Orthodox mealtime prayer; Ancient Faith Prayer Book source witness.",
     "text": "Glory to thee, O Lord. Glory to thee, O Holy One. Glory to thee, O King. For thou hast given us food for joy. Fill us also with thy Holy Spirit, that we may be found well-pleasing before thee and not be ashamed when thou comest to reward each according to his works. <em>Amen.</em>"
+  },
+  "orthodox-before-journey": {
+    "title": "Before a Journey",
+    "source": "Ancient Faith Prayer Book source witness; Orthodox prayer for travel.",
+    "text": "O Lord Jesus Christ my God, be my companion, guide, and protector on my journey. Keep me from all danger, misfortune, and temptation. By thy divine power, grant me a peaceful journey and safe arrival. For in thee I place my hope, and to thee I give glory, to the Father, and to the Son, and to the Holy Spirit, now and ever, and unto ages of ages. <em>Amen.</em>"
+  },
+  "orthodox-prayer-of-sick-person": {
+    "title": "Prayer of a Sick Person",
+    "source": "Ancient Faith Prayer Book source witness; Orthodox prayer for sickness and health.",
+    "text": "O Jesus Christ, my Lord and Savior, thou didst become man and die upon the cross for our salvation. Thou didst heal people of sickness and affliction through thy love and compassion. Visit me, O Lord, and grant me strength to bear this sickness with patience, submission to thy will, and trust in thy loving care. Bless the means used for my recovery and those who administer them. Let my sickness be for the benefit of my soul, and grant that I may live the rest of my life according to thy will. For thou art the source of life and healing, and to thee I give praise and glory, now and ever. <em>Amen.</em>"
+  },
+  "orthodox-prayer-for-sick-person": {
+    "title": "Prayer for a Sick Person",
+    "source": "Ancient Faith Prayer Book source witness; Orthodox prayer for sickness and health.",
+    "text": "O heavenly Father, physician of our souls and bodies, who didst send thine Only-begotten Son and our Lord Jesus Christ to heal every sickness and infirmity, visit and heal thy servant from all sickness of soul and body through the grace of thy Christ. Grant patience in sickness, strength of body and spirit, and recovery of health. For thou art the source of healing, and to thee we give glory, Father, Son, and Holy Spirit. <em>Amen.</em>"
+  },
+  "orthodox-after-work": {
+    "title": "After Work",
+    "source": "Ancient Faith Prayer Book source witness; Orthodox prayer after work.",
+    "text": "Thank thee, O Lord, for thy strength and guidance in my work. Thou art the fulfillment of all good things. Fill also my soul with joy and gladness, that I may praise thee, Father, Son, and Holy Spirit, always, now and ever, and unto ages of ages. <em>Amen.</em>"
+  },
+  "orthodox-thanksgiving-after-recovery": {
+    "title": "Thanksgiving After Recovery",
+    "source": "Ancient Faith Prayer Book source witness; Orthodox thanksgiving after recovery.",
+    "text": "Almighty God and heavenly Father, thou art the fountain of life and healing. I bless thy holy name and offer thee thanks for delivering me from sickness and restoring me to health. Grant me thine eternal grace, I pray, that I may live a new life in true obedience to thee. Guide me to do thy will in all things, devoting my life to thy service. Thus living for thee, let me be found worthy of thy kingdom, where thou dwellest in glory with thy Son and thy Holy Spirit forever. <em>Amen.</em>"
+  },
+  "orthodox-for-times-of-need": {
+    "title": "For Times of Need",
+    "source": "Ancient Faith Prayer Book source witness; Orthodox prayer for times of need.",
+    "text": "Almighty God, Father of mercy and God of all consolation, come to my aid and deliver me from all adversity. I believe, O Lord, that all trials of this life are under thy care, and that all things work for the good of those who love thee. Take away from me fear, anxiety, and distress. Help me to face and endure my difficulties with faith, courage, and wisdom. Grant that this trial may bring me closer to thee, for thou art my rock and my refuge, my comfort and my hope, my delight and my joy. In thy love and compassion do I place my trust. For blessed is thy name, of the Father, and of the Son, and of the Holy Spirit, now and forevermore. <em>Amen.</em>"
+  },
+  "orthodox-for-times-of-trouble": {
+    "title": "For Times of Trouble",
+    "source": "Ancient Faith Prayer Book source witness; Orthodox prayer for times of trouble.",
+    "text": "O Lord of hosts, be with us. For in times of distress we have no other help but thee. O Lord of hosts, have mercy on us."
+  },
+  "orthodox-for-times-of-temptation": {
+    "title": "For Times of Temptation",
+    "source": "Ancient Faith Prayer Book source witness; Orthodox prayer for times of temptation.",
+    "text": "O Jesus Christ, Sovereign Master, help me and do not let me sin against thee. Incline not my heart to words or thoughts of evil, but deliver me from all temptation. <em>Amen.</em>"
   }
 }

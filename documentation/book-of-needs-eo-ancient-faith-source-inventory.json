@@ -190,45 +190,51 @@
       "title": "Before a Journey",
       "sourceSection": "Prayers for Various Needs and Occasions / Work, Study, and Recreation",
       "tradition": "EO",
-      "sourceCriticalClassification": "needs-independent-corroboration",
+      "sourceCriticalClassification": "orthodox-needs-and-occasions-prayer",
       "accessTier": "lay-devotional",
       "displayCategory": "devotional-need",
-      "firstPassDisposition": "review-before-use",
-      "preferredSourcePath": "Prefer Big Book of Needs or another Orthodox service/prayer-book source for journey prayers.",
-      "reason": "The need category is appropriate, but the text should be corroborated outside this modern compilation.",
+      "firstPassDisposition": "implemented-runtime",
+      "preferredSourcePath": "Implemented from the Ancient Faith needs-and-occasions lane with Ancient Faith Prayer Book as a source witness.",
+      "reason": "Implemented as a lay-devotional Orthodox prayer before travel from the Ancient Faith needs-and-occasions lane.",
       "ancientFaithUse": "source-witness",
-      "commonReceptionStatus": "needs-research",
-      "runtimeTextPosture": "eligible-after-wording-review"
+      "commonReceptionStatus": "source-witnessed-received-prayerbook-use",
+      "runtimeTextPosture": "implemented-source-witnessed-form",
+      "runtimePrayerId": "orthodox-before-journey",
+      "runtimeImplementedDate": "2026-06-07"
     },
     {
       "id": "afpb-prayer-of-a-sick-person",
       "title": "Prayer of a Sick Person",
       "sourceSection": "Prayers for Various Needs and Occasions / Sickness and Health",
       "tradition": "EO",
-      "sourceCriticalClassification": "needs-independent-corroboration",
+      "sourceCriticalClassification": "orthodox-sickness-and-health-prayer",
       "accessTier": "lay-devotional",
       "displayCategory": "devotional-need",
-      "firstPassDisposition": "review-before-use",
-      "preferredSourcePath": "Prefer Big Book of Needs or independently received Orthodox sources for sickness prayers.",
-      "reason": "The need category is central to Book of Needs, but this compilation should not be the sole source for runtime wording.",
+      "firstPassDisposition": "implemented-runtime",
+      "preferredSourcePath": "Implemented from the Ancient Faith needs-and-occasions lane with Ancient Faith Prayer Book as a source witness.",
+      "reason": "Implemented as a lay-devotional prayer for a sick person praying during illness.",
       "ancientFaithUse": "source-witness",
-      "commonReceptionStatus": "needs-research",
-      "runtimeTextPosture": "eligible-after-wording-review"
+      "commonReceptionStatus": "source-witnessed-received-prayerbook-use",
+      "runtimeTextPosture": "implemented-source-witnessed-form",
+      "runtimePrayerId": "orthodox-prayer-of-sick-person",
+      "runtimeImplementedDate": "2026-06-07"
     },
     {
       "id": "afpb-prayer-for-a-sick-person",
       "title": "Prayer for a Sick Person",
       "sourceSection": "Prayers for Various Needs and Occasions / Sickness and Health",
       "tradition": "EO",
-      "sourceCriticalClassification": "needs-independent-corroboration",
+      "sourceCriticalClassification": "orthodox-sickness-and-health-prayer",
       "accessTier": "lay-devotional",
       "displayCategory": "devotional-need",
-      "firstPassDisposition": "review-before-use",
-      "preferredSourcePath": "Prefer Big Book of Needs or independently received Orthodox sources for sickness prayers.",
-      "reason": "Potentially useful lay-devotional content, but requires independent source comparison.",
+      "firstPassDisposition": "implemented-runtime",
+      "preferredSourcePath": "Implemented from the Ancient Faith needs-and-occasions lane with Ancient Faith Prayer Book as a source witness.",
+      "reason": "Implemented as a lay-devotional intercessory prayer for a sick person.",
       "ancientFaithUse": "source-witness",
-      "commonReceptionStatus": "needs-research",
-      "runtimeTextPosture": "eligible-after-wording-review"
+      "commonReceptionStatus": "source-witnessed-received-prayerbook-use",
+      "runtimeTextPosture": "implemented-source-witnessed-form",
+      "runtimePrayerId": "orthodox-prayer-for-sick-person",
+      "runtimeImplementedDate": "2026-06-07"
     },
     {
       "id": "afpb-before-using-the-internet",
@@ -478,6 +484,91 @@
       "runtimeTextPosture": "implemented-common-received-form",
       "runtimePrayerId": "orthodox-thanksgiving-after-meal",
       "runtimeImplementedDate": "2026-06-07"
+    },
+    {
+      "id": "afpb-after-work",
+      "title": "After Work",
+      "sourceSection": "Prayers for Various Needs and Occasions / Work, Study, and Recreation",
+      "tradition": "EO",
+      "sourceCriticalClassification": "orthodox-daily-use-prayer",
+      "accessTier": "lay-devotional",
+      "displayCategory": "devotional-need",
+      "firstPassDisposition": "implemented-runtime",
+      "preferredSourcePath": "Implemented from the Ancient Faith needs-and-occasions lane with Ancient Faith Prayer Book as a source witness.",
+      "reason": "Implemented as a lay-devotional thanksgiving after work.",
+      "ancientFaithUse": "source-witness",
+      "commonReceptionStatus": "source-witnessed-received-prayerbook-use",
+      "runtimeTextPosture": "implemented-source-witnessed-form",
+      "runtimePrayerId": "orthodox-after-work",
+      "runtimeImplementedDate": "2026-06-07"
+    },
+    {
+      "id": "afpb-thanksgiving-after-recovery",
+      "title": "Thanksgiving After Recovery",
+      "sourceSection": "Prayers for Various Needs and Occasions / Sickness and Health",
+      "tradition": "EO",
+      "sourceCriticalClassification": "orthodox-sickness-and-health-prayer",
+      "accessTier": "lay-devotional",
+      "displayCategory": "devotional-need",
+      "firstPassDisposition": "implemented-runtime",
+      "preferredSourcePath": "Implemented from the Ancient Faith needs-and-occasions lane with Ancient Faith Prayer Book as a source witness.",
+      "reason": "Implemented as a lay-devotional thanksgiving after recovery from illness.",
+      "ancientFaithUse": "source-witness",
+      "commonReceptionStatus": "source-witnessed-received-prayerbook-use",
+      "runtimeTextPosture": "implemented-source-witnessed-form",
+      "runtimePrayerId": "orthodox-thanksgiving-after-recovery",
+      "runtimeImplementedDate": "2026-06-07"
+    },
+    {
+      "id": "afpb-for-times-of-need",
+      "title": "For Times of Need",
+      "sourceSection": "Prayers for Various Needs and Occasions / Trials and Temptations",
+      "tradition": "EO",
+      "sourceCriticalClassification": "orthodox-needs-and-occasions-prayer",
+      "accessTier": "lay-devotional",
+      "displayCategory": "devotional-need",
+      "firstPassDisposition": "implemented-runtime",
+      "preferredSourcePath": "Implemented from the Ancient Faith needs-and-occasions lane with Ancient Faith Prayer Book as a source witness.",
+      "reason": "Implemented as a lay-devotional prayer for adversity, fear, anxiety, and distress.",
+      "ancientFaithUse": "source-witness",
+      "commonReceptionStatus": "source-witnessed-received-prayerbook-use",
+      "runtimeTextPosture": "implemented-source-witnessed-form",
+      "runtimePrayerId": "orthodox-for-times-of-need",
+      "runtimeImplementedDate": "2026-06-07"
+    },
+    {
+      "id": "afpb-for-times-of-trouble",
+      "title": "For Times of Trouble",
+      "sourceSection": "Prayers for Various Needs and Occasions / Trials and Temptations",
+      "tradition": "EO",
+      "sourceCriticalClassification": "orthodox-needs-and-occasions-prayer",
+      "accessTier": "lay-devotional",
+      "displayCategory": "devotional-need",
+      "firstPassDisposition": "implemented-runtime",
+      "preferredSourcePath": "Implemented from the Ancient Faith needs-and-occasions lane with Ancient Faith Prayer Book as a source witness.",
+      "reason": "Implemented as a short lay-devotional prayer for distress.",
+      "ancientFaithUse": "source-witness",
+      "commonReceptionStatus": "source-witnessed-received-prayerbook-use",
+      "runtimeTextPosture": "implemented-source-witnessed-form",
+      "runtimePrayerId": "orthodox-for-times-of-trouble",
+      "runtimeImplementedDate": "2026-06-07"
+    },
+    {
+      "id": "afpb-for-times-of-temptation",
+      "title": "For Times of Temptation",
+      "sourceSection": "Prayers for Various Needs and Occasions / Trials and Temptations",
+      "tradition": "EO",
+      "sourceCriticalClassification": "orthodox-needs-and-occasions-prayer",
+      "accessTier": "lay-devotional",
+      "displayCategory": "devotional-need",
+      "firstPassDisposition": "implemented-runtime",
+      "preferredSourcePath": "Implemented from the Ancient Faith needs-and-occasions lane with Ancient Faith Prayer Book as a source witness.",
+      "reason": "Implemented as a lay-devotional prayer in temptation.",
+      "ancientFaithUse": "source-witness",
+      "commonReceptionStatus": "source-witnessed-received-prayerbook-use",
+      "runtimeTextPosture": "implemented-source-witnessed-form",
+      "runtimePrayerId": "orthodox-for-times-of-temptation",
+      "runtimeImplementedDate": "2026-06-07"
     }
   ],
   "researchPrinciples": {
@@ -643,6 +734,114 @@
       "displayCategory": "devotional-need",
       "sourcePosture": "Common Orthodox mealtime prayer; Ancient Faith Prayer Book source witness.",
       "notes": "Added as part of the EO mealtime prayer batch from the Ancient Faith source inventory."
+    },
+    {
+      "id": "orthodox-before-journey",
+      "sourceCandidateId": "afpb-before-a-journey",
+      "tradition": "EO",
+      "accessTier": "lay-devotional",
+      "displayCategory": "devotional-need",
+      "sourcePosture": "Ancient Faith Prayer Book source witness.",
+      "notes": "Added as part of the Ancient Faith remaining needs-and-occasions completion batch."
+    },
+    {
+      "id": "orthodox-prayer-of-sick-person",
+      "sourceCandidateId": "afpb-prayer-of-a-sick-person",
+      "tradition": "EO",
+      "accessTier": "lay-devotional",
+      "displayCategory": "devotional-need",
+      "sourcePosture": "Ancient Faith Prayer Book source witness.",
+      "notes": "Added as part of the Ancient Faith remaining needs-and-occasions completion batch."
+    },
+    {
+      "id": "orthodox-prayer-for-sick-person",
+      "sourceCandidateId": "afpb-prayer-for-a-sick-person",
+      "tradition": "EO",
+      "accessTier": "lay-devotional",
+      "displayCategory": "devotional-need",
+      "sourcePosture": "Ancient Faith Prayer Book source witness.",
+      "notes": "Added as part of the Ancient Faith remaining needs-and-occasions completion batch."
+    },
+    {
+      "id": "orthodox-after-work",
+      "sourceCandidateId": "afpb-after-work",
+      "tradition": "EO",
+      "accessTier": "lay-devotional",
+      "displayCategory": "devotional-need",
+      "sourcePosture": "Ancient Faith Prayer Book source witness.",
+      "notes": "Added as part of the Ancient Faith remaining needs-and-occasions completion batch."
+    },
+    {
+      "id": "orthodox-thanksgiving-after-recovery",
+      "sourceCandidateId": "afpb-thanksgiving-after-recovery",
+      "tradition": "EO",
+      "accessTier": "lay-devotional",
+      "displayCategory": "devotional-need",
+      "sourcePosture": "Ancient Faith Prayer Book source witness.",
+      "notes": "Added as part of the Ancient Faith remaining needs-and-occasions completion batch."
+    },
+    {
+      "id": "orthodox-for-times-of-need",
+      "sourceCandidateId": "afpb-for-times-of-need",
+      "tradition": "EO",
+      "accessTier": "lay-devotional",
+      "displayCategory": "devotional-need",
+      "sourcePosture": "Ancient Faith Prayer Book source witness.",
+      "notes": "Added as part of the Ancient Faith remaining needs-and-occasions completion batch."
+    },
+    {
+      "id": "orthodox-for-times-of-trouble",
+      "sourceCandidateId": "afpb-for-times-of-trouble",
+      "tradition": "EO",
+      "accessTier": "lay-devotional",
+      "displayCategory": "devotional-need",
+      "sourcePosture": "Ancient Faith Prayer Book source witness.",
+      "notes": "Added as part of the Ancient Faith remaining needs-and-occasions completion batch."
+    },
+    {
+      "id": "orthodox-for-times-of-temptation",
+      "sourceCandidateId": "afpb-for-times-of-temptation",
+      "tradition": "EO",
+      "accessTier": "lay-devotional",
+      "displayCategory": "devotional-need",
+      "sourcePosture": "Ancient Faith Prayer Book source witness.",
+      "notes": "Added as part of the Ancient Faith remaining needs-and-occasions completion batch."
     }
-  ]
+  ],
+  "remainingAncientFaithDisposition": {
+    "status": "source-lane-reviewed",
+    "runtimeImplementedFromAncientFaithLane": true,
+    "remainingNonRuntimeLanes": [
+      {
+        "lane": "Prayers Before Holy Communion",
+        "disposition": "defer-to-communion-preparation-feature",
+        "reason": "Common Orthodox communion-preparation material, but not generic default Book of Needs content."
+      },
+      {
+        "lane": "Thanksgiving After Holy Communion",
+        "disposition": "defer-to-communion-preparation-feature",
+        "reason": "Common Orthodox communion-thanksgiving material, but should live in a communion-specific lane."
+      },
+      {
+        "lane": "Psalm 50 and Prayer of Manasseh",
+        "disposition": "defer-to-scripture-source-policy",
+        "reason": "Scriptural penitential texts should be handled through the app's scripture/psalter source policy rather than as ordinary copied prayerbook text."
+      },
+      {
+        "lane": "Before Using the Internet",
+        "disposition": "research-before-runtime-use",
+        "reason": "Modern-context prayer remains neither accepted nor rejected without checking independent Orthodox reception."
+      },
+      {
+        "lane": "Marriage, family, pregnancy, miscarriage, and infant-death prayers",
+        "disposition": "pastoral-review-before-runtime-use",
+        "reason": "Pastorally important and potentially useful, but sensitive enough to require dedicated pastoral review and source comparison."
+      },
+      {
+        "lane": "Prayers of the Saints anthology",
+        "disposition": "selective-review-complete-for-current-pass",
+        "reason": "Several saint prayers have been selected and implemented; future additions should be individual source-specific choices, not anthology bulk ingestion."
+      }
+    ]
+  }
 }

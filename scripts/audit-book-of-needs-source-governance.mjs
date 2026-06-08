@@ -288,4 +288,25 @@ check(
   prayersJson['orthodox-thanksgiving-after-meal']?.source?.includes('Common Orthodox mealtime prayer')
 );
 
+check(
+  'EO includes Ancient Faith needs and occasions completion batch',
+  counts.EO >= 34 &&
+  prayersJs.includes("'orthodox-before-journey': ['EO']") &&
+  prayersJs.includes("'orthodox-prayer-of-sick-person': ['EO']") &&
+  prayersJs.includes("'orthodox-prayer-for-sick-person': ['EO']") &&
+  prayersJs.includes("'orthodox-after-work': ['EO']") &&
+  prayersJs.includes("'orthodox-thanksgiving-after-recovery': ['EO']") &&
+  prayersJs.includes("'orthodox-for-times-of-need': ['EO']") &&
+  prayersJs.includes("'orthodox-for-times-of-trouble': ['EO']") &&
+  prayersJs.includes("'orthodox-for-times-of-temptation': ['EO']") &&
+  prayersJson['orthodox-before-journey']?.source?.includes('Ancient Faith Prayer Book source witness') &&
+  prayersJson['orthodox-prayer-of-sick-person']?.source?.includes('Ancient Faith Prayer Book source witness') &&
+  prayersJson['orthodox-prayer-for-sick-person']?.source?.includes('Ancient Faith Prayer Book source witness') &&
+  prayersJson['orthodox-after-work']?.source?.includes('Ancient Faith Prayer Book source witness') &&
+  prayersJson['orthodox-thanksgiving-after-recovery']?.source?.includes('Ancient Faith Prayer Book source witness') &&
+  prayersJson['orthodox-for-times-of-need']?.source?.includes('Ancient Faith Prayer Book source witness') &&
+  prayersJson['orthodox-for-times-of-trouble']?.source?.includes('Ancient Faith Prayer Book source witness') &&
+  prayersJson['orthodox-for-times-of-temptation']?.source?.includes('Ancient Faith Prayer Book source witness')
+);
+
 console.log(`PASS Book of Needs source governance audit: ${checks} check(s) passed; counts=${JSON.stringify(counts)}`);

@@ -5,7 +5,7 @@
   "coverageCountsAtCreation": {
     "ANG": 25,
     "LC": 11,
-    "EO": 26,
+    "EO": 34,
     "OO": 5,
     "COE": 4
   },
@@ -23,7 +23,7 @@
     "EO": {
       "label": "Eastern Orthodoxy",
       "status": "seeded",
-      "notes": "Orthodox minister/devotional prayers are present. Eastern Orthodox lay-devotional coverage now includes the Jesus Prayer, Trisagion Prayers, selected prayers of saints, common daily-use prayers, common evening/devotional prayers, and common mealtime prayers, with the Ancient Faith Prayer Book used as a source witness rather than a bulk-ingestion source."
+      "notes": "Orthodox minister/devotional prayers are present. Eastern Orthodox lay-devotional coverage now includes common daily prayers, evening prayers, mealtime prayers, and practical needs-and-occasions prayers from the Ancient Faith source lane, with the Ancient Faith Prayer Book used as a source witness rather than a bulk-ingestion source."
     },
     "OO": {
       "label": "Oriental Orthodoxy",
