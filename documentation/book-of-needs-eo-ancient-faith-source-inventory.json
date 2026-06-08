@@ -48,12 +48,14 @@
       "sourceCriticalClassification": "ancient-common-liturgical",
       "accessTier": "lay-devotional",
       "displayCategory": "devotional-need",
-      "firstPassDisposition": "strong-candidate",
+      "firstPassDisposition": "implemented-runtime",
       "preferredSourcePath": "Use an independent received Orthodox prayer-book or liturgical source witness before adding runtime text.",
-      "reason": "The Trisagion prayers are broadly received in Orthodox daily prayer and already function as common Orthodox prayer structure.",
+      "reason": "The Trisagion Prayers are broadly received in Orthodox daily prayer and have been implemented using common received Orthodox wording while treating the Ancient Faith Prayer Book as a source witness.",
       "ancientFaithUse": "source-witness",
       "commonReceptionStatus": "widely-received",
-      "runtimeTextPosture": "eligible-after-wording-review"
+      "runtimeTextPosture": "implemented-common-received-form",
+      "runtimePrayerId": "trisagion-prayers",
+      "runtimeImplementedDate": "2026-06-07"
     },
     {
       "id": "afpb-jesus-prayer",
@@ -287,6 +289,15 @@
       "displayCategory": "devotional-need",
       "sourcePosture": "Common Orthodox received form; Ancient Faith Prayer Book source witness.",
       "notes": "Added as the first runtime prayer from the Ancient Faith EO source inventory."
+    },
+    {
+      "id": "trisagion-prayers",
+      "sourceCandidateId": "afpb-trisagion-prayers",
+      "tradition": "EO",
+      "accessTier": "lay-devotional",
+      "displayCategory": "devotional-need",
+      "sourcePosture": "Common Orthodox received form; Ancient Faith Prayer Book source witness.",
+      "notes": "Added as a runtime prayer from the Ancient Faith EO source inventory."
     }
   ]
 }

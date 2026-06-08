@@ -103,6 +103,7 @@ const BOOK_OF_NEEDS_OPTION_TRADITIONS = {
     'minister-after-serving-bcp': ['ANG'],
     'minister-after-serving-orthodox': ['EO'],
     'jesus-prayer': ['EO'],
+    'trisagion-prayers': ['EO'],
     'armenian-for-the-sick': ['OO'],
     'armenian-prayer-against-troubles': ['OO'],
     'armenian-for-travellers': ['OO'],
