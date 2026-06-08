@@ -11,6 +11,11 @@ function read(path) {
   return fs.readFileSync(path, "utf-8");
 }
 
+function hasClassToken(markup, className) {
+  const escapedClass = className.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+  return new RegExp(`class=["'][^"']*\\b${escapedClass}\\b[^"']*["']`).test(markup);
+}
+
 const index = read("index.html");
 const browser = read("js/bible-browser/bible-browser.js");
 const parser = read("js/bible-browser/reference-parser.js");
@@ -28,11 +33,11 @@ if (!index.includes('id="bible-browser-section"')) {
   fail("index.html is missing #bible-browser-section.");
 }
 
-if (!index.includes('class="bible-browser-workspace"')) {
+if (!hasClassToken(index, "bible-browser-workspace")) {
   fail("index.html is missing reader-first Bible Browser workspace.");
 }
 
-if (!index.includes('class="bible-reader-controls"')) {
+if (!hasClassToken(index, "bible-reader-controls")) {
   fail("index.html is missing reader-first top controls.");
 }
 

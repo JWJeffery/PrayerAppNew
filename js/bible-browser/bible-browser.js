@@ -104,11 +104,94 @@
         return data;
     }
 
+    function getPsalterRecords(bookData) {
+        if (Array.isArray(bookData)) return bookData;
+        if (Array.isArray(bookData?.psalms)) return bookData.psalms;
+        return [];
+    }
+
+    function psalterRecordNumber(record) {
+        const match = String(record?.id || "").match(/^PSALMS?\s+(\d+)$/i);
+        return match ? Number(match[1]) : null;
+    }
+
+    function splitPsalmVerseText(value, psalmNumber) {
+        const verses = new Map();
+        const lines = String(value || "")
+            .split(/\n+/)
+            .map(line => line.trim())
+            .filter(Boolean);
+
+        const markerPattern = new RegExp(`^(?:${psalmNumber}:)?(\\d+)\\s+(.+)$`);
+        let currentVerseNum = null;
+
+        for (const line of lines) {
+            const match = line.match(markerPattern);
+
+            if (match) {
+                const verseNum = Number(match[1]);
+                const verseText = String(match[2] || "").trim();
+
+                if (Number.isFinite(verseNum) && verseText) {
+                    verses.set(verseNum, verseText);
+                    currentVerseNum = verseNum;
+                }
+
+                continue;
+            }
+
+            if (currentVerseNum !== null && verses.has(currentVerseNum)) {
+                verses.set(currentVerseNum, `${verses.get(currentVerseNum)} ${line}`.trim());
+            }
+        }
+
+        return verses;
+    }
+
+    function normalizePsalterRecord(record) {
+        const psalmNumber = psalterRecordNumber(record);
+        if (!psalmNumber) return null;
+
+        const byVerse = new Map();
+        const texts = record?.text && typeof record.text === "object"
+            ? record.text
+            : { NRSV: record?.text || "" };
+
+        for (const [translation, value] of Object.entries(texts)) {
+            for (const [verseNum, verseText] of splitPsalmVerseText(value, psalmNumber)) {
+                if (!byVerse.has(verseNum)) {
+                    byVerse.set(verseNum, { num: verseNum, text: {} });
+                }
+
+                byVerse.get(verseNum).text[translation] = verseText;
+            }
+        }
+
+        return {
+            id: record.id,
+            num: psalmNumber,
+            verses: Array.from(byVerse.values())
+                .sort((a, b) => Number(a.num) - Number(b.num))
+        };
+    }
+
     function chapterMap(bookData) {
         const map = new Map();
-        for (const chapter of bookData.chapters || []) {
+        const psalterRecords = getPsalterRecords(bookData);
+
+        if (psalterRecords.length) {
+            for (const record of psalterRecords) {
+                const chapter = normalizePsalterRecord(record);
+                if (chapter) map.set(Number(chapter.num), chapter);
+            }
+
+            return map;
+        }
+
+        for (const chapter of bookData?.chapters || []) {
             map.set(Number(chapter.num), chapter);
         }
+
         return map;
     }
 
@@ -154,6 +237,13 @@
         if (fromMeta.length) return fromMeta;
 
         const found = new Set();
+
+        for (const record of getPsalterRecords(bookData)) {
+            if (record?.text && typeof record.text === "object") {
+                Object.keys(record.text).forEach(key => found.add(key));
+            }
+        }
+
         for (const chapter of bookData?.chapters || []) {
             for (const verse of chapter.verses || []) {
                 if (verse.text && typeof verse.text === "object") {
@@ -161,6 +251,7 @@
                 }
             }
         }
+
         return Array.from(found).sort();
     }
 
