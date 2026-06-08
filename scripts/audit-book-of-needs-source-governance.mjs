@@ -275,4 +275,17 @@ check(
   prayersJson['prayer-to-guardian-angel']?.source?.includes('Common Orthodox received form')
 );
 
+check(
+  'EO includes mealtime prayer batch',
+  counts.EO >= 26 &&
+  prayersJs.includes("'orthodox-before-meals': ['EO']") &&
+  prayersJs.includes("'orthodox-after-meals': ['EO']") &&
+  prayersJs.includes("'orthodox-blessing-before-meal': ['EO']") &&
+  prayersJs.includes("'orthodox-thanksgiving-after-meal': ['EO']") &&
+  prayersJson['orthodox-before-meals']?.source?.includes('Common Orthodox mealtime prayer') &&
+  prayersJson['orthodox-after-meals']?.source?.includes('Common Orthodox mealtime prayer') &&
+  prayersJson['orthodox-blessing-before-meal']?.source?.includes('Common Orthodox mealtime prayer') &&
+  prayersJson['orthodox-thanksgiving-after-meal']?.source?.includes('Common Orthodox mealtime prayer')
+);
+
 console.log(`PASS Book of Needs source governance audit: ${checks} check(s) passed; counts=${JSON.stringify(counts)}`);

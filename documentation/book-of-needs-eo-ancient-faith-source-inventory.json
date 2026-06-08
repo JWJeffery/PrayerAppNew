@@ -410,6 +410,74 @@
       "runtimeTextPosture": "implemented-common-received-form",
       "runtimePrayerId": "prayer-to-guardian-angel",
       "runtimeImplementedDate": "2026-06-07"
+    },
+    {
+      "id": "afpb-before-meals",
+      "title": "Before Meals",
+      "sourceSection": "Prayers for Mealtimes",
+      "tradition": "EO",
+      "sourceCriticalClassification": "common-orthodox-mealtime-prayer",
+      "accessTier": "lay-devotional",
+      "displayCategory": "devotional-need",
+      "firstPassDisposition": "implemented-runtime",
+      "preferredSourcePath": "Implemented using common received Orthodox wording with Ancient Faith Prayer Book as a source witness.",
+      "reason": "A common Orthodox blessing before meals; implemented as lay-devotional daily-use material.",
+      "ancientFaithUse": "source-witness",
+      "commonReceptionStatus": "widely-received",
+      "runtimeTextPosture": "implemented-common-received-form",
+      "runtimePrayerId": "orthodox-before-meals",
+      "runtimeImplementedDate": "2026-06-07"
+    },
+    {
+      "id": "afpb-after-meals",
+      "title": "After Meals",
+      "sourceSection": "Prayers for Mealtimes",
+      "tradition": "EO",
+      "sourceCriticalClassification": "common-orthodox-mealtime-prayer",
+      "accessTier": "lay-devotional",
+      "displayCategory": "devotional-need",
+      "firstPassDisposition": "implemented-runtime",
+      "preferredSourcePath": "Implemented using common received Orthodox wording with Ancient Faith Prayer Book as a source witness.",
+      "reason": "A common Orthodox thanksgiving after meals; implemented as lay-devotional daily-use material.",
+      "ancientFaithUse": "source-witness",
+      "commonReceptionStatus": "widely-received",
+      "runtimeTextPosture": "implemented-common-received-form",
+      "runtimePrayerId": "orthodox-after-meals",
+      "runtimeImplementedDate": "2026-06-07"
+    },
+    {
+      "id": "afpb-blessing-before-meal",
+      "title": "Blessing Before a Meal",
+      "sourceSection": "Prayers for Mealtimes",
+      "tradition": "EO",
+      "sourceCriticalClassification": "common-orthodox-mealtime-prayer",
+      "accessTier": "lay-devotional",
+      "displayCategory": "devotional-need",
+      "firstPassDisposition": "implemented-runtime",
+      "preferredSourcePath": "Implemented using common received Orthodox wording with Ancient Faith Prayer Book as a source witness.",
+      "reason": "A common Orthodox meal blessing invoking Christ's blessing of the loaves; implemented as lay-devotional daily-use material.",
+      "ancientFaithUse": "source-witness",
+      "commonReceptionStatus": "widely-received",
+      "runtimeTextPosture": "implemented-common-received-form",
+      "runtimePrayerId": "orthodox-blessing-before-meal",
+      "runtimeImplementedDate": "2026-06-07"
+    },
+    {
+      "id": "afpb-thanksgiving-after-meal",
+      "title": "Thanksgiving After a Meal",
+      "sourceSection": "Prayers for Mealtimes",
+      "tradition": "EO",
+      "sourceCriticalClassification": "common-orthodox-mealtime-prayer",
+      "accessTier": "lay-devotional",
+      "displayCategory": "devotional-need",
+      "firstPassDisposition": "implemented-runtime",
+      "preferredSourcePath": "Implemented using common received Orthodox wording with Ancient Faith Prayer Book as a source witness.",
+      "reason": "A common Orthodox thanksgiving after a meal; implemented as lay-devotional daily-use material.",
+      "ancientFaithUse": "source-witness",
+      "commonReceptionStatus": "widely-received",
+      "runtimeTextPosture": "implemented-common-received-form",
+      "runtimePrayerId": "orthodox-thanksgiving-after-meal",
+      "runtimeImplementedDate": "2026-06-07"
     }
   ],
   "researchPrinciples": {
@@ -539,6 +607,42 @@
       "displayCategory": "devotional-need",
       "sourcePosture": "Common Orthodox received form; Ancient Faith Prayer Book source witness.",
       "notes": "Added as part of the EO evening/devotional prayer batch from the Ancient Faith source inventory."
+    },
+    {
+      "id": "orthodox-before-meals",
+      "sourceCandidateId": "afpb-before-meals",
+      "tradition": "EO",
+      "accessTier": "lay-devotional",
+      "displayCategory": "devotional-need",
+      "sourcePosture": "Common Orthodox mealtime prayer; Ancient Faith Prayer Book source witness.",
+      "notes": "Added as part of the EO mealtime prayer batch from the Ancient Faith source inventory."
+    },
+    {
+      "id": "orthodox-after-meals",
+      "sourceCandidateId": "afpb-after-meals",
+      "tradition": "EO",
+      "accessTier": "lay-devotional",
+      "displayCategory": "devotional-need",
+      "sourcePosture": "Common Orthodox mealtime prayer; Ancient Faith Prayer Book source witness.",
+      "notes": "Added as part of the EO mealtime prayer batch from the Ancient Faith source inventory."
+    },
+    {
+      "id": "orthodox-blessing-before-meal",
+      "sourceCandidateId": "afpb-blessing-before-meal",
+      "tradition": "EO",
+      "accessTier": "lay-devotional",
+      "displayCategory": "devotional-need",
+      "sourcePosture": "Common Orthodox mealtime prayer; Ancient Faith Prayer Book source witness.",
+      "notes": "Added as part of the EO mealtime prayer batch from the Ancient Faith source inventory."
+    },
+    {
+      "id": "orthodox-thanksgiving-after-meal",
+      "sourceCandidateId": "afpb-thanksgiving-after-meal",
+      "tradition": "EO",
+      "accessTier": "lay-devotional",
+      "displayCategory": "devotional-need",
+      "sourcePosture": "Common Orthodox mealtime prayer; Ancient Faith Prayer Book source witness.",
+      "notes": "Added as part of the EO mealtime prayer batch from the Ancient Faith source inventory."
     }
   ]
 }
