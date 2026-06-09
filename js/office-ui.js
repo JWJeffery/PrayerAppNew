@@ -1049,6 +1049,35 @@ function showUniversalModeSelection(persistDefault = false) {
     document.body.classList.remove('ethiopian-theme');
 }
 
+
+function isEntrySurfaceVisible(container) {
+    if (!container || container.hidden) return false;
+
+    const style = window.getComputedStyle(container);
+    return style.display !== 'none' &&
+        style.visibility !== 'hidden' &&
+        style.opacity !== '0';
+}
+
+function ensureSplashForegroundVisible() {
+    const splashBg = document.getElementById('splash-bg');
+    if (!splashBg || splashBg.style.display === 'none') return;
+    if (document.body.classList.contains('office-active')) return;
+
+    const traditionEntry = document.getElementById('tradition-entry');
+    const modeSelection = document.getElementById('mode-selection');
+
+    if (!isEntrySurfaceVisible(traditionEntry) && !isEntrySurfaceVisible(modeSelection)) {
+        console.warn('[entry-routing] Splash background was visible without a foreground panel; restoring tradition entry.');
+        showTraditionEntry();
+    }
+}
+
+function scheduleSplashForegroundGuard() {
+    window.setTimeout(ensureSplashForegroundVisible, 160);
+    window.setTimeout(ensureSplashForegroundVisible, 850);
+}
+
 function resolveEntryTraditionRoute(tradition) {
     switch (tradition) {
         case 'unknown':
@@ -1134,6 +1163,7 @@ function resetUserTraditionDefault() {
 function initializeEntryRouting() {
     bindTraditionEntryControls();
     syncUserProfileControls();
+    scheduleSplashForegroundGuard();
 
     const entryOverride = new URLSearchParams(window.location.search).get('entry');
 

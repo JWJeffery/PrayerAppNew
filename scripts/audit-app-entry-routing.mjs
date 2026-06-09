@@ -47,6 +47,9 @@ check('disabled Catholic state CSS exists', css.includes('.app-entry-tradition-c
 check('public first screen has no universal selector link CSS', !css.includes('.app-entry-universal-link'));
 check('hidden secondary selectors are explicitly suppressed', css.includes('Entry first-screen scope repair') && css.includes('#tradition-entry .app-entry-secondary-selector[hidden]') && css.includes('#mode-selection.app-universal-selector[hidden]'));
 check('family step separation CSS exists', css.includes('Entry family-step separation repair') && css.includes('#entry-family-grid[hidden]') && css.includes('#tradition-entry[data-entry-step="western"] .app-entry-family-grid'));
+check('entry splash stained glass viewport stability CSS exists', css.includes('Entry splash stained-glass viewport stabilization pass') && css.includes('min-height: 100svh') && css.includes('min-height: 100dvh') && css.includes('overflow-y: auto !important') && css.includes('#splash-bg::before') && css.includes("url('/images/canterbury.png')"));
+check('entry card no longer covers the stained glass composition by default', css.includes('width: min(860px, calc(100vw - 48px))') && css.includes('margin: clamp(82px, 13vh, 172px) auto') && css.includes('-webkit-backdrop-filter: blur(5px)'));
+check('entry splash foreground safety guard exists', officeUi.includes('function ensureSplashForegroundVisible()') && officeUi.includes('Splash background was visible without a foreground panel') && officeUi.includes('scheduleSplashForegroundGuard();'));
 check('package exposes audit script', pkg.scripts?.['audit:app-entry-routing'] === 'node scripts/audit-app-entry-routing.mjs');
 
 check('universal selector card order is traditions then book of needs then bible then admin', (() => {

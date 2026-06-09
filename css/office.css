@@ -3103,3 +3103,115 @@ body.office-active #daily-office-section:has(#generic-settings:not(.mode-hidden)
     background: rgba(255, 253, 248, 0.82);
     color: var(--app-bronze, #7a3f17);
 }
+
+/* Entry splash stained-glass viewport stabilization pass */
+body:not(.office-active) {
+    min-height: 100vh !important;
+    min-height: 100svh !important;
+    min-height: 100dvh !important;
+    height: auto !important;
+    overflow-x: hidden !important;
+    overflow-y: auto !important;
+    display: flex !important;
+    align-items: flex-start !important;
+    justify-content: center !important;
+    padding: 18px 16px 26px !important;
+    padding-top: calc(18px + env(safe-area-inset-top)) !important;
+    padding-right: calc(16px + env(safe-area-inset-right)) !important;
+    padding-bottom: calc(26px + env(safe-area-inset-bottom)) !important;
+    padding-left: calc(16px + env(safe-area-inset-left)) !important;
+    box-sizing: border-box !important;
+}
+
+#splash-bg {
+    overflow: hidden;
+    filter: none !important;
+    opacity: 1 !important;
+    background:
+        radial-gradient(circle at 50% 12%, rgba(255, 252, 246, 0.54), rgba(239, 226, 207, 0.42) 42%, rgba(178, 145, 103, 0.50) 100%),
+        linear-gradient(90deg, rgba(102, 58, 25, 0.16), transparent 24%, transparent 76%, rgba(102, 58, 25, 0.16)) !important;
+}
+
+#splash-bg::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: url('/images/canterbury.png');
+    background-size: min(82vw, 1120px) auto;
+    background-position: center clamp(28px, 5.5vh, 72px);
+    background-repeat: no-repeat;
+    opacity: 0.72;
+    filter: blur(2px) saturate(0.98) contrast(1.04);
+    transform: scale(1.012);
+    transform-origin: center top;
+}
+
+#splash-bg::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(circle at 50% 22%, rgba(255, 252, 246, 0.10), rgba(255, 252, 246, 0.40) 46%, rgba(239, 226, 207, 0.58) 100%),
+        linear-gradient(180deg, rgba(255, 249, 238, 0.16), rgba(207, 185, 155, 0.28));
+}
+
+#tradition-entry.app-tradition-entry {
+    width: min(860px, calc(100vw - 48px));
+    max-width: 860px;
+    max-height: calc(100vh - 48px);
+    max-height: calc(100svh - 48px);
+    max-height: calc(100dvh - 48px);
+    margin: clamp(82px, 13vh, 172px) auto clamp(28px, 6vh, 72px);
+    overflow-y: auto;
+    background:
+        linear-gradient(180deg, rgba(255, 253, 248, 0.91), rgba(249, 241, 228, 0.87)),
+        radial-gradient(circle at 18% 0%, rgba(255, 255, 255, 0.72), transparent 38%);
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
+}
+
+#mode-selection.app-mode-shell {
+    margin: clamp(82px, 13vh, 172px) auto clamp(28px, 6vh, 72px);
+}
+
+@media (min-width: 1100px) and (min-height: 760px) {
+    #tradition-entry.app-tradition-entry {
+        width: min(900px, calc(100vw - 72px));
+        max-width: 900px;
+    }
+}
+
+@media (max-width: 860px) {
+    #splash-bg::before {
+        background-size: min(118vw, 920px) auto;
+        background-position: center clamp(18px, 4vh, 46px);
+        opacity: 0.68;
+    }
+
+    #tradition-entry.app-tradition-entry,
+    #mode-selection.app-mode-shell {
+        margin-top: clamp(72px, 11vh, 128px);
+    }
+}
+
+@media (max-width: 760px) {
+    #tradition-entry.app-tradition-entry {
+        width: min(100vw - 28px, 560px);
+        max-height: none;
+        padding: 28px 22px;
+        border-radius: 22px;
+    }
+
+    #splash-bg::before {
+        background-size: 138vw auto;
+        background-position: center clamp(14px, 3vh, 34px);
+        opacity: 0.64;
+    }
+}
+
+@media (max-height: 760px) {
+    #tradition-entry.app-tradition-entry,
+    #mode-selection.app-mode-shell {
+        margin-top: 38px;
+    }
+}
