@@ -1,14 +1,14 @@
 {
   "schema_version": "1.0.0",
-  "roadmap_version": "0.1.38",
-  "last_updated": "2026-06-02",
+  "roadmap_version": "0.1.39",
+  "last_updated": "2026-06-09",
   "status": "active",
   "name": "Universal Office Beta Release Roadmap",
   "purpose": "Canonical machine-readable roadmap for Beta Release planning, phase sequencing, governance questions, tranche sizing, and Admin Dashboard visualization.",
   "current_repo_state": {
-    "latest_known_commit": "9843f46",
-    "latest_known_commit_message": "Remove tracked repository garbage",
-    "structure_json_version": "3.8.149",
+    "latest_known_commit": "1cd7c04",
+    "latest_known_commit_message": "Add entry mobile stabilization audit",
+    "structure_json_version": "3.8.150",
     "roadmap_source_of_truth": "project_roadmap.json",
     "structure_json_role": "Project manifest, current-state pointer, live admin work source, and archive index pointer.",
     "roadmap_role": "Canonical release architecture and phase/tranche planning source for Admin Dashboard roadmap visualization.",
@@ -20,7 +20,9 @@
     "active_oor_completion_plan_remaining_loth_tranches": 20,
     "active_oor_completion_plan_next_loth_tranche": "OOR-C05-temporale-psalmody-appointment-map-continuation",
     "current_navigation_summary": "Current position: PrayerAppNew records LOTH through b835653. OOR-C03 is complete with 28 ordinary psalmody appointments entered and mapped. OOR-C04 is complete with 238 ordinary-time contexts bound to those appointment keys. OOR-C05 is partially advanced: 25 temporale psalmody contexts are source-backed and mapped, Easter Sunday is recorded as a rubric-governed exception, 8 Advent appointments remain source-blocked, and 112 temporale psalmody contexts remain. Continue at OOR-C05 temporale psalmody appointment-map continuation.",
-    "progress_history_archive": "documentation/structure.hist1.json → archived_roman_loth_progress_records"
+    "progress_history_archive": "documentation/structure.hist1.json → archived_roman_loth_progress_records",
+    "latest_public_app_hardening_record": "entry_mobile_stabilization_2026_06_09",
+    "current_public_app_summary": "Entry/mobile stabilization is closed through 1cd7c04. The public entry splash, Universal selector advanced-tools gate, shared office selector overflow, mobile tooltip and close rail behavior, and mode-drawer exclusivity are implemented and audited. LOTH cadence fields are unchanged because this was public app hardening, not corpus-producing LOTH work."
   },
   "release_identity": {
     "beta_release_focus": "BCP-facing Anglican public beta",
@@ -144,6 +146,12 @@
         "primary_label": "Notify me when this tradition expands",
         "rule": "The signup must be opt-in, visually secondary, scoped to the selected tradition-family, and framed as service rather than marketing."
       }
+    },
+    "browser_qc_doctrine": {
+      "entry_mobile_stabilization_sweep": "scripts/browser-qc-entry-mobile-stabilization-sweep.js",
+      "release_allowlist_rule": "scripts/ remains excluded from release packaging by default; browser-runtime QC scripts may be explicitly allowlisted when they must run from deployed pages.",
+      "codespaces_auth_rule": "Codespaces tunnel/auth/CORS failures are deployment/test-target failures, not app runtime failures, unless the requested QC JavaScript is actually returned and executed.",
+      "latest_passing_browser_qc": "Entry/Mobile QC PASS: 11 check(s) passed."
     }
   },
   "major_tradition_families": [
@@ -2436,6 +2444,89 @@
       },
       "nextLothLane": "OOR-C07-office-of-readings-text-unit-population-or-binding-continuation",
       "note": "This is a milestone exception, not a routine sub-tranche record. C06 produced coherent source-ready ordinary sentinel posture but did not complete text-unit population or binding."
+    }
+  ],
+  "public_app_hardening_records": [
+    {
+      "id": "entry_mobile_stabilization_2026_06_09",
+      "date": "2026-06-09",
+      "type": "public_app_hardening",
+      "status": "closed",
+      "summary": "Entry/mobile stabilization closed and audited.",
+      "commits": [
+        {
+          "commit": "0aaea7e",
+          "message": "Stabilize entry splash stained glass viewport",
+          "scope": "entry splash / public first-use viewport"
+        },
+        {
+          "commit": "79ad874",
+          "message": "Gate Universal selector advanced tools",
+          "scope": "Universal selector / advanced local tools"
+        },
+        {
+          "commit": "d915641",
+          "message": "Remove shared office hour selector internal scroll",
+          "scope": "shared office navigation / hour selector mobile behavior"
+        },
+        {
+          "commit": "3a5859d",
+          "message": "Fix mobile sidebar tooltip and close rail",
+          "scope": "mobile sidebar / tooltip engine / close rail"
+        },
+        {
+          "commit": "1cd7c04",
+          "message": "Add entry mobile stabilization audit",
+          "scope": "entry/mobile QC harness / drawer exclusivity / release allowlist"
+        }
+      ],
+      "validation": {
+        "terminal_audits": [
+          {
+            "command": "npm run audit:entry-mobile-stabilization",
+            "result": "PASS entry/mobile stabilization audit: 38 check(s) passed."
+          },
+          {
+            "command": "npm run audit:app-entry-routing",
+            "result": "PASS app entry routing audit: 48 check(s) passed."
+          },
+          {
+            "command": "npm run release:web",
+            "result": "PASS release:web: files=289 output=web-release/ zip=web-release.zip"
+          }
+        ],
+        "browser_qc": {
+          "script": "scripts/browser-qc-entry-mobile-stabilization-sweep.js",
+          "result": "PASS: 11 check(s) passed.",
+          "covered": [
+            "Universal selector and advanced-tools gate",
+            "BCP tooltip containment and dismissal",
+            "BCP mobile label bounds",
+            "BCP Daily Office sidebar close/restore",
+            "BCP Daily Office shared selector overflow",
+            "Oriental Orthodoxy / Ethiopian Sa'atat sidebar close/restore",
+            "Oriental Orthodoxy / Ethiopian Sa'atat shared selector overflow",
+            "Church of the East sidebar close/restore",
+            "Church of the East shared selector overflow",
+            "Eastern Orthodoxy / Horologion sidebar close/restore",
+            "Eastern Orthodoxy / Horologion shared selector overflow"
+          ]
+        },
+        "live_smoke_test": {
+          "performed": true,
+          "result": "User reported live smoke tests looked much better after corrected web-release upload."
+        }
+      },
+      "workflow_decisions": [
+        "Use Codespace preview/public port or local browser QC for rapid iteration; do not require repeated cPanel uploads for every test iteration.",
+        "When testing the live site, the rebuilt web-release contents must still be uploaded before live behavior can reflect source changes.",
+        "Keep scripts/ excluded from normal release output, but explicitly allowlist browser-runtime QC scripts that are meant to be executed from deployed pages.",
+        "Do not treat GitHub/Codespaces auth redirects or CORS failures as app UI failures; verify whether the target is returning JavaScript or HTML before diagnosing runtime behavior.",
+        "Do not repeat broad drawer layout surgery. Mobile sidebar fixes should preserve the drawer layout and enforce mode-drawer exclusivity instead."
+      ],
+      "release_note": "The deployed browser-runtime release now includes the entry/mobile browser QC sweep as an allowlisted script while scripts/ remains generally excluded from release packaging.",
+      "does_not_advance_loth_cadence": true,
+      "loth_cadence_note": "This was public app hardening, not a corpus-producing LOTH tranche."
     }
   ]
 }

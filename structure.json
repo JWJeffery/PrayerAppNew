@@ -1,10 +1,10 @@
 {
   "project_manifest": {
     "name": "Universal Office",
-    "version": "3.8.149",
-    "last_updated": "2026-06-02",
+    "version": "3.8.150",
+    "last_updated": "2026-06-09",
     "bcp_compliance": "100%",
-    "operational_status": "Current operational status as of 2026-06-02: PrayerAppNew remains the universal app shell and governance manifest. The LOTH private control-corpus lane is now recorded through b835653. Office of Readings C03 is complete with all 28 ordinary psalmody appointments entered and mapped. C04 is complete with 238 ordinary-time contexts bound to the completed ordinary psalmody appointment map. C05 is partially advanced: 25 temporale psalmody contexts are source-backed and mapped, Easter Sunday is recorded as a rubric-governed exception pending Easter Vigil resolver support, and 112 temporale psalmody contexts remain. Continue LOTH at OOR-C05 temporale psalmody appointment-map continuation. The LOTH-to-PrayerAppNew recording cadence remains every six corpus-producing LOTH tranches.",
+    "operational_status": "Current operational status as of 2026-06-09: PrayerAppNew public entry/mobile stabilization is closed through 1cd7c04. The entry splash viewport, Universal selector advanced-tools gate, shared office hour-selector overflow, mobile tooltip/close rail behavior, and cross-mode drawer exclusivity are implemented and guarded by audit:entry-mobile-stabilization, audit:app-entry-routing, release:web, and a browser QC sweep that passed 11 checks. LOTH progress pointers remain unchanged; return to OOR-C05 temporale psalmody appointment-map continuation when resuming corpus work.",
     "architectural_decisions_2026_05_25": [
       {
         "id": "roman_loth_composition_map_source_navigation",
@@ -327,7 +327,8 @@
         "7. Duplicate private helper definition in js/horologion-engine.js: _loadTheotokionData() appears twice. Runtime is currently safe because the later definition wins, but the duplicate is architectural debris and should be removed to prevent misleading future edits."
       ],
       "resolved_in_this_version": [
-        "1. COE saint section silenced: renderEastSyriac() saint display locked to empty pending architectural rebuild. Previous behaviour was historically inaccurate — string-matching tradition fields was surfacing wrong saints. Silence is liturgically correct for COE weekdays with no fixed saint."
+        "1. COE saint section silenced: renderEastSyriac() saint display locked to empty pending architectural rebuild. Previous behaviour was historically inaccurate — string-matching tradition fields was surfacing wrong saints. Silence is liturgically correct for COE weekdays with no fixed saint.",
+        "Public entry/mobile stabilization stack closed in 1cd7c04: entry splash viewport, Universal selector advanced-tools gate, shared office selector overflow, mobile tooltip/close rail behavior, and mode-drawer exclusivity are implemented and guarded by terminal/browser QC."
       ]
     },
     "resolved_audit_items": [
@@ -370,6 +371,10 @@
       {
         "item": "CalendarEngine SEASON_RANGES hardcoded through December 2030. Any date after that fell through to ordinary1.json fallback with a console warning.",
         "resolution": "Resolved in v2.8.1 — SEASON_RANGES replaced with algorithmic generator using Anonymous Gregorian Easter algorithm. getLiturgicalYear() also made fully algorithmic. Valid for any year. Tested against 2026 through 2099."
+      },
+      {
+        "item": "Public entry/mobile stabilization stack: entry splash viewport, Universal selector advanced-tools gate, shared office selector internal scroll, mobile sidebar tooltip/close rail, and cross-mode drawer exclusivity.",
+        "resolution": "Closed through commits 0aaea7e, 79ad874, d915641, 3a5859d, and 1cd7c04. Terminal audits passed: audit:entry-mobile-stabilization, audit:app-entry-routing, and release:web. Browser QC passed 11 entry/mobile checks across Universal selector, BCP, Ethiopian Sa'atat, Church of the East, and Horologion."
       }
     ],
     "resolved_in_this_version": [
@@ -434,7 +439,7 @@
       },
       "js/office-ui.js": {
         "role": "All Daily Office UI logic",
-        "status": "Current — v5.8 (2026-03-14)",
+        "status": "Current — entry/mobile drawer exclusivity hardened through 1cd7c04",
         "primary_functions": [
           "init()",
           "renderOffice()",
@@ -654,7 +659,17 @@
         "coe_calendar_model": {
           "severity": "CLOSED",
           "description": "Three-layer model complete v2.8.9. Detail in structure-reference.json coe_calendar_model."
-        }
+        },
+        "latest_entry_mobile_note": "selectMode() now enforces one active office drawer so toggleSidebar() cannot target stale drawers after cross-mode navigation."
+      },
+      "scripts/browser-qc-entry-mobile-stabilization-sweep.js": {
+        "role": "Browser-runtime QC sweep for public entry/mobile stabilization",
+        "status": "Current — passing 11 checks as of 2026-06-09",
+        "release_policy": "Explicitly allowlisted into web-release/scripts/ by scripts/prepare-web-release.mjs while scripts/ remains generally excluded."
+      },
+      "scripts/audit-entry-mobile-stabilization-runner.mjs": {
+        "role": "Static guard for entry/mobile browser QC, release allowlist, and source markers",
+        "status": "Current — PASS 38 checks as of 2026-06-09"
       }
     },
     "roadmap_source": {
@@ -944,6 +959,79 @@
           "noFullContextDump": true,
           "privateSourceGovernedCoverageOnly": true
         }
+      }
+    ],
+    "architectural_decisions_2026_06_09": [
+      {
+        "id": "entry_mobile_stabilization_2026_06_09",
+        "status": "accepted",
+        "date": "2026-06-09",
+        "scope": [
+          "public entry flow",
+          "mobile shell",
+          "Universal selector",
+          "BCP sidebar",
+          "shared office navigation",
+          "browser QC",
+          "release packaging"
+        ],
+        "decision": "The public entry/mobile stabilization tranche is closed. The first-use entry/splash, Universal selector advanced-tools gate, shared office selector overflow, mobile sidebar tooltip positioning, mobile close rail visibility, and cross-mode drawer exclusivity are implemented and guarded by terminal and browser QC.",
+        "commit_sequence": [
+          "0aaea7e Stabilize entry splash stained glass viewport",
+          "79ad874 Gate Universal selector advanced tools",
+          "d915641 Remove shared office hour selector internal scroll",
+          "3a5859d Fix mobile sidebar tooltip and close rail",
+          "1cd7c04 Add entry mobile stabilization audit"
+        ],
+        "validation": {
+          "terminal_audits": [
+            {
+              "command": "npm run audit:entry-mobile-stabilization",
+              "result": "PASS entry/mobile stabilization audit: 38 check(s) passed."
+            },
+            {
+              "command": "npm run audit:app-entry-routing",
+              "result": "PASS app entry routing audit: 48 check(s) passed."
+            },
+            {
+              "command": "npm run release:web",
+              "result": "PASS release:web: files=289 output=web-release/ zip=web-release.zip"
+            }
+          ],
+          "browser_qc": {
+            "script": "scripts/browser-qc-entry-mobile-stabilization-sweep.js",
+            "result": "PASS: 11 check(s) passed.",
+            "covered": [
+              "Universal selector and advanced-tools gate",
+              "BCP tooltip containment and dismissal",
+              "BCP mobile label bounds",
+              "BCP Daily Office sidebar close/restore",
+              "BCP Daily Office shared selector overflow",
+              "Oriental Orthodoxy / Ethiopian Sa'atat sidebar close/restore",
+              "Oriental Orthodoxy / Ethiopian Sa'atat shared selector overflow",
+              "Church of the East sidebar close/restore",
+              "Church of the East shared selector overflow",
+              "Eastern Orthodoxy / Horologion sidebar close/restore",
+              "Eastern Orthodoxy / Horologion shared selector overflow"
+            ]
+          },
+          "live_smoke_test": {
+            "performed": true,
+            "result": "User reported live smoke tests looked much better after corrected web-release upload."
+          }
+        },
+        "workflow_decisions": [
+          "Use Codespace preview/public port or local browser QC for rapid iteration; do not require repeated cPanel uploads for every test iteration.",
+          "When testing the live site, the rebuilt web-release contents must still be uploaded before live behavior can reflect source changes.",
+          "Keep scripts/ excluded from normal release output, but explicitly allowlist browser-runtime QC scripts that are meant to be executed from deployed pages.",
+          "Do not treat GitHub/Codespaces auth redirects or CORS failures as app UI failures; verify whether the target is returning JavaScript or HTML before diagnosing runtime behavior.",
+          "Do not repeat broad drawer layout surgery. Mobile sidebar fixes should preserve the drawer layout and enforce mode-drawer exclusivity instead."
+        ],
+        "next_steps": [
+          "Do not reopen entry refactor unless pursuing deeper module extraction.",
+          "Continue public app work only from failing smoke tests or explicit product decisions.",
+          "Return to the active LOTH/OOR corpus lane when ready."
+        ]
       }
     ]
   },
