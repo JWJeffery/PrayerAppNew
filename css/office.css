@@ -3221,3 +3221,22 @@ body:not(.office-active) {
 #mode-selection.app-universal-selector:not(.app-entry-advanced-tools-visible) .app-advanced-only {
     display: none !important;
 }
+
+/* Shared office hour selector internal-scroll removal */
+body.office-active .app-mode-drawer .shared-office-nav,
+body.office-active .app-mode-drawer .shared-office-nav-card,
+body.office-active .app-mode-drawer .shared-office-nav-hour-card,
+body.office-active .app-mode-drawer .shared-office-nav-options {
+    max-height: none !important;
+    overflow: visible !important;
+    overflow-x: visible !important;
+    overflow-y: visible !important;
+    scrollbar-width: none !important;
+}
+
+body.office-active .app-mode-drawer .shared-office-nav::-webkit-scrollbar,
+body.office-active .app-mode-drawer .shared-office-nav-card::-webkit-scrollbar,
+body.office-active .app-mode-drawer .shared-office-nav-hour-card::-webkit-scrollbar,
+body.office-active .app-mode-drawer .shared-office-nav-options::-webkit-scrollbar {
+    display: none !important;
+}

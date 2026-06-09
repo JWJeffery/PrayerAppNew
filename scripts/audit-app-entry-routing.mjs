@@ -55,6 +55,7 @@ check('package exposes audit script', pkg.scripts?.['audit:app-entry-routing'] =
 check('universal selector advanced tools are hidden by default', index.includes('data-advanced-only="true" hidden aria-hidden="true" onclick="window.location.href=\'admin/admin.html\'"') && index.includes('id="user-profile-defaults" class="app-profile-defaults app-advanced-only" data-advanced-only="true" hidden aria-hidden="true"'));
 check('universal selector advanced tools can be explicitly revealed without persistence', officeUi.includes("params.get('advanced')") && officeUi.includes("explicitAdvanced === '1' || explicitAdvanced === 'true'") && !officeUi.includes('UNIVERSAL_OFFICE_ADVANCED_TOOLS_KEY') && !officeUi.includes('localStorage.setItem(UNIVERSAL_OFFICE_ADVANCED_TOOLS_KEY') && officeUi.includes('syncUniversalOfficeAdvancedToolsVisibility();'));
 check('universal selector advanced tools gate CSS exists', css.includes('Universal selector advanced-tools gate') && css.includes('#mode-selection.app-universal-selector:not(.app-entry-advanced-tools-visible) .app-advanced-only'));
+check('shared office hour selector does not use internal scroll', css.includes('Shared office hour selector internal-scroll removal') && css.includes('.shared-office-nav-options') && css.includes('max-height: none !important') && css.includes('overflow-y: visible !important'));
 
 check('universal selector card order is traditions then book of needs then bible then admin', (() => {
     const selectorStart = index.indexOf('<div id="mode-selection"');
