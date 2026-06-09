@@ -3,6 +3,7 @@ import fs from 'node:fs';
 
 const index = fs.readFileSync('index.html', 'utf8');
 const officeUi = fs.readFileSync('js/office-ui.js', 'utf8');
+const tooltipJs = fs.readFileSync('js/tooltip.js', 'utf8');
 const css = fs.readFileSync('css/office.css', 'utf8');
 const pkg = JSON.parse(fs.readFileSync('package.json', 'utf8'));
 
@@ -56,6 +57,10 @@ check('universal selector advanced tools are hidden by default', index.includes(
 check('universal selector advanced tools can be explicitly revealed without persistence', officeUi.includes("params.get('advanced')") && officeUi.includes("explicitAdvanced === '1' || explicitAdvanced === 'true'") && !officeUi.includes('UNIVERSAL_OFFICE_ADVANCED_TOOLS_KEY') && !officeUi.includes('localStorage.setItem(UNIVERSAL_OFFICE_ADVANCED_TOOLS_KEY') && officeUi.includes('syncUniversalOfficeAdvancedToolsVisibility();'));
 check('universal selector advanced tools gate CSS exists', css.includes('Universal selector advanced-tools gate') && css.includes('#mode-selection.app-universal-selector:not(.app-entry-advanced-tools-visible) .app-advanced-only'));
 check('shared office hour selector does not use internal scroll', css.includes('Shared office hour selector internal-scroll removal') && css.includes('.shared-office-nav-options') && css.includes('max-height: none !important') && css.includes('overflow-y: visible !important'));
+check('tooltip engine clamps mobile viewport and supports tap dismissal', tooltipJs.includes('function positionTooltipFromPoint(clientX, clientY)') && tooltipJs.includes('viewportWidth() - 24') && tooltipJs.includes('clamp(left, margin') && tooltipJs.includes("document.addEventListener('click'") && tooltipJs.includes("document.addEventListener('scroll', hideTooltip, true)"));
+check('mobile sidebar close rail remains visible above drawer', css.includes('Mobile sidebar close rail visibility') && css.includes('body.office-active #sidebar-toggle') && css.includes('position: fixed !important') && css.includes('z-index: 900 !important') && css.includes('left: 42px !important'));
+
+check('mobile sidebar labels wrap inside nested cards', css.includes('Mobile sidebar label wrapping containment') && css.includes('body.office-active .app-mode-drawer label') && css.includes('display: flex !important') && css.includes('overflow-wrap: anywhere !important') && css.includes('white-space: normal !important'));
 
 check('universal selector card order is traditions then book of needs then bible then admin', (() => {
     const selectorStart = index.indexOf('<div id="mode-selection"');

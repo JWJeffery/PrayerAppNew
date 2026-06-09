@@ -3240,3 +3240,78 @@ body.office-active .app-mode-drawer .shared-office-nav-hour-card::-webkit-scroll
 body.office-active .app-mode-drawer .shared-office-nav-options::-webkit-scrollbar {
     display: none !important;
 }
+
+/* Mobile sidebar close rail visibility */
+@media (max-width: 760px) {
+    body.office-active #sidebar-toggle {
+        position: fixed !important;
+        top: 0 !important;
+        left: 0 !important;
+        bottom: 0 !important;
+        width: 42px !important;
+        height: 100vh !important;
+        height: 100svh !important;
+        height: 100dvh !important;
+        min-height: 100vh !important;
+        min-height: 100svh !important;
+        min-height: 100dvh !important;
+        display: flex !important;
+        visibility: visible !important;
+        opacity: 0.92 !important;
+        pointer-events: auto !important;
+        z-index: 900 !important;
+        background: linear-gradient(180deg, #0d0801 0%, #1a0f04 50%, #0d0801 100%) !important;
+        border-right: 1px solid rgba(201, 168, 76, 0.42) !important;
+        box-shadow: 4px 0 16px rgba(0, 0, 0, 0.36) !important;
+    }
+
+    body.office-active #sidebar-toggle:hover,
+    body.office-active #sidebar-toggle:focus,
+    body.office-active #sidebar-toggle:active {
+        opacity: 1 !important;
+    }
+
+    body.office-active #settings-panel.app-mode-drawer,
+    body.office-active #ethiopian-settings.app-mode-drawer,
+    body.office-active #east-syriac-settings.app-mode-drawer,
+    body.office-active #generic-settings.app-mode-drawer {
+        left: 42px !important;
+    }
+}
+
+/* Mobile sidebar label wrapping containment */
+@media (max-width: 760px) {
+    body.office-active .app-mode-drawer .setting-group,
+    body.office-active .app-mode-drawer .nested-group,
+    body.office-active .app-mode-drawer .ordo-control {
+        max-width: 100% !important;
+        min-width: 0 !important;
+        box-sizing: border-box !important;
+        overflow-wrap: anywhere !important;
+    }
+
+    body.office-active .app-mode-drawer label {
+        display: flex !important;
+        align-items: flex-start !important;
+        gap: 10px !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        min-width: 0 !important;
+        box-sizing: border-box !important;
+        white-space: normal !important;
+        overflow-wrap: anywhere !important;
+        word-break: normal !important;
+        line-height: 1.18 !important;
+    }
+
+    body.office-active .app-mode-drawer label input[type="radio"],
+    body.office-active .app-mode-drawer label input[type="checkbox"] {
+        flex: 0 0 auto !important;
+        margin-top: 0.16em !important;
+    }
+
+    body.office-active .app-mode-drawer label .info-btn {
+        flex: 0 0 auto !important;
+        margin-left: 0.12em !important;
+    }
+}
