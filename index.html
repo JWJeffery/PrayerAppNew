@@ -146,7 +146,7 @@
             </span>
         </button>
 
-        <button class="mode-btn app-mode-card app-mode-card-admin" onclick="window.location.href='admin/admin.html'">
+        <button class="mode-btn app-mode-card app-mode-card-admin app-advanced-only" type="button" data-advanced-only="true" hidden aria-hidden="true" onclick="window.location.href='admin/admin.html'">
             <span class="app-mode-icon">⚙</span>
             <span class="app-mode-copy">
                 <span class="app-mode-title">Admin Console</span>
@@ -156,7 +156,7 @@
 
     </div>
 
-    <section id="user-profile-defaults" class="app-profile-defaults" aria-labelledby="user-profile-defaults-title">
+    <section id="user-profile-defaults" class="app-profile-defaults app-advanced-only" data-advanced-only="true" hidden aria-hidden="true" aria-labelledby="user-profile-defaults-title">
         <div class="app-profile-defaults-copy">
             <p class="app-profile-kicker">Local Browser Defaults</p>
             <h2 id="user-profile-defaults-title">Defaults for this browser</h2>

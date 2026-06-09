@@ -659,6 +659,28 @@ const UNIVERSAL_OFFICE_TRADITION_LABELS = {
 const UNIVERSAL_OFFICE_ENTRY_PAGE_VALUES = new Set(['ask', 'tradition', 'universal']);
 const UNIVERSAL_OFFICE_BOOK_OF_NEEDS_SCOPE_VALUES = new Set(['tradition', 'universal']);
 
+
+function isUniversalOfficeAdvancedToolsEnabled() {
+    const params = new URLSearchParams(window.location.search);
+    const explicitAdvanced = params.get('advanced');
+
+    return explicitAdvanced === '1' || explicitAdvanced === 'true';
+}
+
+function syncUniversalOfficeAdvancedToolsVisibility(enabled = isUniversalOfficeAdvancedToolsEnabled()) {
+    const advancedTools = document.querySelectorAll('[data-advanced-only="true"]');
+    const modeSelection = document.getElementById('mode-selection');
+
+    if (modeSelection) {
+        modeSelection.classList.toggle('app-entry-advanced-tools-visible', enabled);
+    }
+
+    for (const tool of advancedTools) {
+        tool.hidden = !enabled;
+        tool.setAttribute('aria-hidden', enabled ? 'false' : 'true');
+    }
+}
+
 function readLegacyEntryDefault() {
     try {
         return localStorage.getItem(UNIVERSAL_OFFICE_ENTRY_DEFAULT_KEY);
@@ -1036,6 +1058,7 @@ function showTraditionEntry() {
 
 function showUniversalModeSelection(persistDefault = false) {
     if (persistDefault) persistUserEntryDefault('universal');
+    syncUniversalOfficeAdvancedToolsVisibility();
 
     const splashBg = document.getElementById('splash-bg');
     const traditionEntry = document.getElementById('tradition-entry');
@@ -1163,6 +1186,7 @@ function resetUserTraditionDefault() {
 function initializeEntryRouting() {
     bindTraditionEntryControls();
     syncUserProfileControls();
+    syncUniversalOfficeAdvancedToolsVisibility();
     scheduleSplashForegroundGuard();
 
     const entryOverride = new URLSearchParams(window.location.search).get('entry');
@@ -1201,6 +1225,7 @@ window.setUserProfileBookOfNeedsScope = setUserProfileBookOfNeedsScope;
 window.resetUniversalOfficeUserProfile = resetUniversalOfficeUserProfile;
 window.openLocalProfileDefaultsFromOffice = openLocalProfileDefaultsFromOffice;
 window.focusLocalProfileDefaultsPanel = focusLocalProfileDefaultsPanel;
+window.syncUniversalOfficeAdvancedToolsVisibility = syncUniversalOfficeAdvancedToolsVisibility;
 
 document.addEventListener('DOMContentLoaded', initializeEntryRouting);
 

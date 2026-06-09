@@ -3215,3 +3215,9 @@ body:not(.office-active) {
         margin-top: 38px;
     }
 }
+
+/* Universal selector advanced-tools gate */
+.app-advanced-only[hidden],
+#mode-selection.app-universal-selector:not(.app-entry-advanced-tools-visible) .app-advanced-only {
+    display: none !important;
+}

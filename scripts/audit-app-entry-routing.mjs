@@ -52,6 +52,10 @@ check('entry card no longer covers the stained glass composition by default', cs
 check('entry splash foreground safety guard exists', officeUi.includes('function ensureSplashForegroundVisible()') && officeUi.includes('Splash background was visible without a foreground panel') && officeUi.includes('scheduleSplashForegroundGuard();'));
 check('package exposes audit script', pkg.scripts?.['audit:app-entry-routing'] === 'node scripts/audit-app-entry-routing.mjs');
 
+check('universal selector advanced tools are hidden by default', index.includes('data-advanced-only="true" hidden aria-hidden="true" onclick="window.location.href=\'admin/admin.html\'"') && index.includes('id="user-profile-defaults" class="app-profile-defaults app-advanced-only" data-advanced-only="true" hidden aria-hidden="true"'));
+check('universal selector advanced tools can be explicitly revealed without persistence', officeUi.includes("params.get('advanced')") && officeUi.includes("explicitAdvanced === '1' || explicitAdvanced === 'true'") && !officeUi.includes('UNIVERSAL_OFFICE_ADVANCED_TOOLS_KEY') && !officeUi.includes('localStorage.setItem(UNIVERSAL_OFFICE_ADVANCED_TOOLS_KEY') && officeUi.includes('syncUniversalOfficeAdvancedToolsVisibility();'));
+check('universal selector advanced tools gate CSS exists', css.includes('Universal selector advanced-tools gate') && css.includes('#mode-selection.app-universal-selector:not(.app-entry-advanced-tools-visible) .app-advanced-only'));
+
 check('universal selector card order is traditions then book of needs then bible then admin', (() => {
     const selectorStart = index.indexOf('<div id="mode-selection"');
     const selectorEnd = index.indexOf('<a class="app-sponsor-link"', selectorStart);
