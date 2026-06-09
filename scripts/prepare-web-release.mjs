@@ -23,6 +23,14 @@ const adminReleaseFiles = [
   { source: "documentation/repo-hygiene-audit.json", target: "documentation/repo-hygiene-audit.json", required: false }
 ];
 
+const browserQcReleaseFiles = [
+  {
+    source: "scripts/browser-qc-entry-mobile-stabilization-sweep.js",
+    target: "scripts/browser-qc-entry-mobile-stabilization-sweep.js",
+    required: true
+  }
+];
+
 const denyNames = new Set([
   ".git",
   ".github",
@@ -138,6 +146,10 @@ const copiedAdminReleaseFiles = adminReleaseFiles
   .filter(copyAdminReleaseFile)
   .map((spec) => spec.target);
 
+const copiedBrowserQcReleaseFiles = browserQcReleaseFiles
+  .filter(copyAdminReleaseFile)
+  .map((spec) => spec.target);
+
 const htaccess = `# Universal Office static-app routing.
 # Upload this before enabling hosting-level password protection.
 # If cPanel Directory Privacy later adds AuthType/AuthUserFile lines,
@@ -163,6 +175,7 @@ const manifest = {
   accessControlInstruction: "Use hosting-level password protection for the web root. Do not encode access state in route, file, or directory names.",
   includedRoots: includeEntries,
   adminReleaseSupportFiles: copiedAdminReleaseFiles,
+  browserQcReleaseFiles: copiedBrowserQcReleaseFiles,
   excludedRoots: Array.from(denyNames).sort(),
   fileCount: files.length,
   files: files.map((file) => ({

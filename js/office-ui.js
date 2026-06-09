@@ -1403,8 +1403,13 @@ async function selectMode(mode) {
     document.body.classList.remove('ethiopian-theme');
     window._forcedOfficeId = undefined;
 
+    // Mode transition invariant: exactly one office drawer is active for the selected mode.
+    // All non-active drawers must be both mode-hidden and sidebar-hidden so toggleSidebar()
+    // cannot target a stale drawer after cross-tradition navigation.
     const settingsPanel = document.getElementById('settings-panel');
     const ethSettings   = document.getElementById('ethiopian-settings');
+    const esySettings   = document.getElementById('east-syriac-settings');
+    const genSettings   = document.getElementById('generic-settings');
     const mainContent   = document.getElementById('main-content');
 
     if (mode === 'prayers') {
@@ -1438,6 +1443,14 @@ async function selectMode(mode) {
             settingsPanel.classList.add('sidebar-hidden');
             settingsPanel.classList.add('mode-hidden');
         }
+        if (esySettings) {
+            esySettings.classList.add('sidebar-hidden');
+            esySettings.classList.add('mode-hidden');
+        }
+        if (genSettings) {
+            genSettings.classList.add('sidebar-hidden');
+            genSettings.classList.add('mode-hidden');
+        }
         if (ethSettings) {
             ethSettings.classList.remove('mode-hidden');
             ethSettings.classList.remove('sidebar-hidden');
@@ -1457,8 +1470,6 @@ async function selectMode(mode) {
         document.getElementById('individual-prayers-section').style.display = 'none';
         document.getElementById('daily-office-section').style.display       = 'flex';
 
-        const esySettings = document.getElementById('east-syriac-settings');
-
         if (settingsPanel) {
             settingsPanel.classList.add('sidebar-hidden');
             settingsPanel.classList.add('mode-hidden');
@@ -1466,6 +1477,10 @@ async function selectMode(mode) {
         if (ethSettings) {
             ethSettings.classList.add('sidebar-hidden');
             ethSettings.classList.add('mode-hidden');
+        }
+        if (genSettings) {
+            genSettings.classList.add('sidebar-hidden');
+            genSettings.classList.add('mode-hidden');
         }
         if (esySettings) {
             esySettings.classList.remove('sidebar-hidden');
@@ -1488,9 +1503,6 @@ async function selectMode(mode) {
         // entry, selectedHorologionOffice defaults to 'vespers'.
         document.getElementById('individual-prayers-section').style.display = 'none';
         document.getElementById('daily-office-section').style.display       = 'flex';
-
-        const esySettings = document.getElementById('east-syriac-settings');
-        const genSettings = document.getElementById('generic-settings');
 
         if (settingsPanel) {
             settingsPanel.classList.add('sidebar-hidden');
@@ -1535,6 +1547,14 @@ async function selectMode(mode) {
         if (ethSettings) {
             ethSettings.classList.add('sidebar-hidden');
             ethSettings.classList.add('mode-hidden');
+        }
+        if (esySettings) {
+            esySettings.classList.add('sidebar-hidden');
+            esySettings.classList.add('mode-hidden');
+        }
+        if (genSettings) {
+            genSettings.classList.add('sidebar-hidden');
+            genSettings.classList.add('mode-hidden');
         }
         if (settingsPanel) {
             settingsPanel.classList.remove('mode-hidden');
