@@ -4516,3 +4516,120 @@ async function renderEastSyriac() {
         if (saintDisplay) saintDisplay.innerHTML      = '';
     }
 }
+
+// === UO MOBILE DRAWER REPAIR START ===
+// This end-of-file override avoids brittle edits inside the legacy drawer code.
+(function () {
+    function getActiveOfficeDrawer() {
+        var panels = [
+            document.getElementById('east-syriac-settings'),
+            document.getElementById('ethiopian-settings'),
+            document.getElementById('generic-settings'),
+            document.getElementById('settings-panel')
+        ];
+
+        for (var i = 0; i < panels.length; i += 1) {
+            if (panels[i] && !panels[i].classList.contains('mode-hidden')) {
+                return panels[i];
+            }
+        }
+
+        return document.getElementById('settings-panel');
+    }
+
+    function isMobileOfficeShell() {
+        return Boolean(window.matchMedia && window.matchMedia('(max-width: 768px)').matches);
+    }
+
+    var originalSelectMode = window.selectMode;
+
+    if (typeof originalSelectMode === 'function' && !originalSelectMode.__uoMobileDrawerWrapped) {
+        window.selectMode = async function repairedSelectMode(mode) {
+            document.body.classList.remove('mobile-sidebar-open');
+            var toggle = document.getElementById('sidebar-toggle');
+            if (toggle) toggle.setAttribute('aria-expanded', 'false');
+
+            var result = await originalSelectMode.apply(this, arguments);
+
+            if (isMobileOfficeShell()) {
+                document.body.classList.remove('mobile-sidebar-open');
+
+                var activePanel = getActiveOfficeDrawer();
+                var main = document.getElementById('main-content');
+
+                if (activePanel) activePanel.classList.add('sidebar-hidden');
+                if (main) main.classList.add('sidebar-hidden');
+                if (toggle) {
+                    toggle.style.opacity = '0.86';
+                    toggle.setAttribute('aria-expanded', 'false');
+                }
+            }
+
+            return result;
+        };
+
+        window.selectMode.__uoMobileDrawerWrapped = true;
+    }
+
+    window.toggleSidebar = function repairedToggleSidebar() {
+        var activePanel = getActiveOfficeDrawer();
+        var main = document.getElementById('main-content');
+        var toggle = document.getElementById('sidebar-toggle');
+
+        if (!activePanel || !main) return;
+
+        if (isMobileOfficeShell()) {
+            var willOpen = !document.body.classList.contains('mobile-sidebar-open');
+
+            document.body.classList.toggle('mobile-sidebar-open', willOpen);
+            activePanel.classList.toggle('sidebar-hidden', !willOpen);
+            main.classList.toggle('sidebar-hidden', !willOpen);
+
+            if (toggle) {
+                toggle.style.opacity = willOpen ? '1' : '0.86';
+                toggle.setAttribute('aria-expanded', willOpen ? 'true' : 'false');
+            }
+
+            return;
+        }
+
+        document.body.classList.remove('mobile-sidebar-open');
+
+        var isHidden = activePanel.classList.toggle('sidebar-hidden');
+        main.classList.toggle('sidebar-hidden', isHidden);
+
+        if (toggle) {
+            toggle.style.opacity = isHidden ? '0.65' : '0.5';
+            toggle.setAttribute('aria-expanded', isHidden ? 'false' : 'true');
+        }
+    };
+
+    document.addEventListener('click', function closeMobileDrawerFromOverlay(event) {
+        if (!isMobileOfficeShell()) return;
+        if (!document.body.classList.contains('mobile-sidebar-open')) return;
+
+        var activePanel = getActiveOfficeDrawer();
+        var toggle = document.getElementById('sidebar-toggle');
+
+        if (activePanel && activePanel.contains(event.target)) return;
+        if (toggle && toggle.contains(event.target)) return;
+
+        document.body.classList.remove('mobile-sidebar-open');
+        if (activePanel) activePanel.classList.add('sidebar-hidden');
+
+        var main = document.getElementById('main-content');
+        if (main) main.classList.add('sidebar-hidden');
+
+        if (toggle) {
+            toggle.style.opacity = '0.86';
+            toggle.setAttribute('aria-expanded', 'false');
+        }
+    }, true);
+
+    window.addEventListener('resize', function normalizeMobileDrawerOnResize() {
+        if (!isMobileOfficeShell()) {
+            document.body.classList.remove('mobile-sidebar-open');
+        }
+    });
+}());
+// === UO MOBILE DRAWER REPAIR END ===
