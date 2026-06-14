@@ -3480,3 +3480,81 @@ body.office-active .app-mode-drawer .shared-office-nav-options::-webkit-scrollba
     }
 }
 /* === UO MOBILE DRAWER REPAIR END === */
+
+/* === UO HOROLOGION MOBILE SPECIFICITY FIX START === */
+/*
+   The earlier Horologion mobile stack rule uses:
+   #daily-office-section:has(#generic-settings:not(.mode-hidden)) #generic-settings
+
+   That selector is more specific than the generic mobile drawer repair block.
+   These rules intentionally match/exceed that specificity and restore the
+   Horologion settings panel to the same off-canvas drawer model as the other
+   office families.
+*/
+@media (max-width: 768px) {
+    body.office-active #daily-office-section:has(#generic-settings:not(.mode-hidden)) {
+        flex-direction: row !important;
+        overflow: hidden !important;
+        height: 100dvh !important;
+        width: 100vw !important;
+        max-width: 100vw !important;
+    }
+
+    body.office-active #daily-office-section:has(#generic-settings:not(.mode-hidden)) #generic-settings {
+        position: fixed !important;
+        top: 0 !important;
+        left: 44px !important;
+        width: min(86vw, 320px) !important;
+        max-width: calc(100vw - 44px) !important;
+        height: 100dvh !important;
+        max-height: 100dvh !important;
+        flex: none !important;
+        margin: 0 !important;
+        padding: 22px 16px 36px !important;
+        overflow-y: auto !important;
+        overflow-x: hidden !important;
+        border-right: 1px solid rgba(201,168,76,0.3) !important;
+        border-bottom: none !important;
+        box-sizing: border-box !important;
+        z-index: 510 !important;
+        pointer-events: none !important;
+        transform: translateX(calc(-100% - 48px)) !important;
+    }
+
+    body.office-active.mobile-sidebar-open #daily-office-section:has(#generic-settings:not(.mode-hidden)) #generic-settings {
+        transform: translateX(0) !important;
+        pointer-events: auto !important;
+    }
+
+    body.office-active #daily-office-section:has(#generic-settings:not(.mode-hidden)) #main-content,
+    body.office-active #daily-office-section:has(#generic-settings:not(.mode-hidden)) #main-content.sidebar-hidden {
+        flex: 1 1 auto !important;
+        width: 100vw !important;
+        max-width: 100vw !important;
+        min-width: 0 !important;
+        height: 100dvh !important;
+        min-height: 0 !important;
+        margin: 0 !important;
+        padding: 22px 14px 44px 58px !important;
+        overflow-y: auto !important;
+        overflow-x: hidden !important;
+        box-sizing: border-box !important;
+    }
+
+    body.office-active #daily-office-section:has(#generic-settings:not(.mode-hidden)) #office-display {
+        display: block !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        min-width: 0 !important;
+        box-sizing: border-box !important;
+    }
+
+    body.office-active #daily-office-section:has(#generic-settings:not(.mode-hidden)) .office-container {
+        width: 100% !important;
+        max-width: 100% !important;
+        min-width: 0 !important;
+        padding: 42px 18px 52px !important;
+        box-sizing: border-box !important;
+    }
+}
+/* === UO HOROLOGION MOBILE SPECIFICITY FIX END === */
