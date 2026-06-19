@@ -43,7 +43,7 @@ After the current internal LOTH architecture is stabilized, the project should c
 
 ## Architectural Guardrail
 
-Do not hardwire the Roman office engine to the current licensed LOTH text.
+Do not hardwire the Roman office engine to the current current LOTH text.
 
 The engine must distinguish:
 
@@ -53,7 +53,7 @@ The engine must distinguish:
 - Textual corpus
 - Navigation affordances
 - Source status
-- Public/restricted release status
+- Public/runtime delivery status
 
 The current LOTH text is a source constraint. The Roman office engine is reusable infrastructure.
 
@@ -63,6 +63,6 @@ The current LOTH text is a source constraint. The Roman office engine is reusabl
 - Define a semantic ribbon-layer vocabulary for Roman-family sources.
 - Add composition-map output for LOTH-resolved offices.
 - Ensure LOTH diagnostics can identify which layer supplied each rendered element.
-- Mark current LOTH corpus work as an internal / restricted architecture-prototype track.
+- Mark current LOTH corpus work as an internal / external architecture-prototype track.
 - Add future public-domain Roman Office corpus track after internal LOTH stabilization.
 - Confirm that Roman office engine logic is source-edition-aware and not hardwired to the current LOTH text.

@@ -12,7 +12,7 @@
     "audit:bible-corpus-structure": "node scripts/audit-bible-corpus-structure.mjs",
     "audit:bible-corpus-completeness": "node scripts/audit-bible-corpus-completeness.mjs",
     "audit:rotherham-psalms": "node scripts/audit-rotherham-psalms.mjs",
-    "audit:repo-hygiene": "node scripts/audit-repo-hygiene.mjs",
+    "audit:repo-hygiene": "node scripts/audit-repo-hygiene.mjs && npm run audit:loth-metastasis",
     "audit:repo-hygiene:write": "node scripts/audit-repo-hygiene.mjs --write",
     "release:web": "node scripts/prepare-web-release.mjs",
     "audit:bible-browser-smoke": "node scripts/audit-bible-browser-smoke.mjs",
@@ -61,7 +61,8 @@
     "audit:douay-rheims-loth-c08-books": "node scripts/audit-douay-rheims-loth-c08-books-intake.mjs",
     "audit:book-of-needs-anglican-taxonomy-review": "node scripts/audit-book-of-needs-anglican-taxonomy-review.mjs",
     "audit:book-of-needs-eo-ancient-faith-source-inventory": "node scripts/audit-book-of-needs-eo-ancient-faith-source-inventory.mjs",
-    "audit:entry-mobile-stabilization": "node scripts/audit-entry-mobile-stabilization-runner.mjs"
+    "audit:entry-mobile-stabilization": "node scripts/audit-entry-mobile-stabilization-runner.mjs",
+    "audit:loth-metastasis": "node scripts/audit-loth-metastasis.mjs"
   },
   "repository": {
     "type": "git",

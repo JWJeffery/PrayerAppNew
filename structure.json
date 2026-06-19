@@ -197,7 +197,7 @@
           "broadDailyDateBlocksPermitted": false,
           "officialCurrentLothAssertionPermitted": false,
           "universalisUse": "appointment_structure_discovery_not_automatic_text_population",
-          "grail1963Use": "local_psalm_body_source_blocked_until_authorized",
+          "grail1963Use": "local_psalm_body_source_runtime_delivery_disabled",
           "divineOfficeUse": "comparison_regression_not_forward_completion_path"
         },
         "audit": "audit:office-of-readings-source-alignment-status"
@@ -210,15 +210,15 @@
           "Roman LOTH",
           "Office of Readings",
           "source verification",
-          "rights posture",
+          "source posture",
           "PrayerAppNew governance"
         ],
-        "decision": "The Office of Readings metadata pilot now carries explicit source-verification and rights/permission posture reports. Source verification is internal and governance-grade for the private control corpus; it does not authorize public rendering or official-current text assertions. Each slot remains governed by its own source class, with public rendering blocked until source, rights, and permission decisions are recorded.",
+        "decision": "The Office of Readings metadata pilot now carries explicit source-verification and rights/source-status posture reports. Source verification is internal and governance-grade for the private control corpus; it does not authorize runtime delivery or official-current text assertions. Each slot remains governed by its own source class, with runtime delivery blocked until source, rights, and source-status decisions are recorded.",
         "lothCommitSequence": [
           "497033d Add Office of Readings source verification matrix",
           "493f959 Verify Office of Readings psalmody appointment matrix",
           "5e72050 Verify Office of Readings reading source refs",
-          "925e7f6 Record Office of Readings source class rights posture"
+          "925e7f6 Record Office of Readings source class source posture"
         ],
         "governance": {
           "publicRenderingPermitted": false,
@@ -228,7 +228,7 @@
           "officialCurrentIcelAssertionPermitted": false,
           "officialCurrentGrailAssertionPermitted": false,
           "universalisUse": "appointment_structure_discovery_not_automatic_text_population",
-          "grail1963Use": "local_psalm_body_source_blocked_until_authorized",
+          "grail1963Use": "local_psalm_body_source_runtime_delivery_disabled",
           "divineOfficeUse": "comparison_regression_not_forward_completion_path",
           "allSlotsClearedForPrivateGovernance": true,
           "allSlotsClearedForPublicRendering": false
@@ -237,7 +237,7 @@
           "audit:office-of-readings-source-verification-matrix",
           "audit:office-of-readings-psalmody-appointment-verification",
           "audit:office-of-readings-reading-source-ref-verification",
-          "audit:office-of-readings-source-class-rights-permission-posture"
+          "audit:office-of-readings-source-class-rights-source-status-posture"
         ]
       },
       {
@@ -251,7 +251,7 @@
           "non-materializing resolver architecture",
           "PrayerAppNew governance"
         ],
-        "decision": "Office of Readings expansion beyond the three-context metadata pilot may proceed only as metadata-only, non-materializing cycle/proper map work. Allowed artifacts are refs-only cycle/proper map skeletons, appointment-key registries, source-locator registries, and non-materializing resolver fixtures. Text-unit population, broad daily date-block snapshots, resolved daily office payloads, public rendering payloads, automatic source-page text population, and responsory reconstruction remain prohibited.",
+        "decision": "Office of Readings expansion beyond the three-context metadata pilot may proceed only as metadata-only, non-materializing cycle/proper map work. Allowed artifacts are refs-only cycle/proper map skeletons, appointment-key registries, source-locator registries, and non-materializing resolver fixtures. Text-unit population, broad daily date-block snapshots, resolved daily office payloads, runtime delivery payloads, automatic source-page text population, and responsory reconstruction remain prohibited.",
         "lothCommitSequence": [
           "ed6eeda Verify Office of Readings responsory source refs",
           "44a9bd9 Add Office of Readings source governance QC chain",
@@ -266,7 +266,7 @@
           "officeTextUnitPopulationPermitted": false,
           "officialCurrentLothAssertionPermitted": false,
           "universalisUse": "appointment_structure_discovery_not_automatic_text_population",
-          "grail1963Use": "local_psalm_body_source_blocked_until_authorized",
+          "grail1963Use": "local_psalm_body_source_runtime_delivery_disabled",
           "divineOfficeUse": "comparison_regression_not_forward_completion_path"
         },
         "audits": [
@@ -278,21 +278,21 @@
         ]
       },
       {
-        "id": "roman_loth_office_of_readings_private_corpus_construction_separate_from_public_rendering",
+        "id": "roman_loth_office_of_readings_source_governed_corpus_construction_separate_from_public_rendering",
         "status": "accepted",
         "date": "2026-06-01",
         "scope": [
           "Roman LOTH",
           "Office of Readings",
-          "private corpus",
+          "source-governed corpus",
           "PrayerAppNew governance"
         ],
-        "decision": "Office of Readings private corpus construction proceeds with actual text/source data where available. Permission and source-clearance decisions control public rendering, not whether the private control corpus may be built. Future progress should normally be measured by increased corpus coverage: contexts, slot coverage, psalmody mappings, reading/responsory refs, and private text units.",
+        "decision": "Office of Readings source-governed corpus construction proceeds with actual text/source data where available. source-status and source-clearance decisions control runtime delivery, not whether the private control corpus may be built. Future progress should normally be measured by increased corpus coverage: contexts, slot coverage, psalmody mappings, reading/responsory refs, and source-governed text units.",
         "lothCommitSequence": [
           "b48c1d4 Record Office of Readings new context intake contract",
-          "5c1682f Populate Office of Readings private psalmody corpus units",
-          "af11acf Hydrate Office of Readings private psalmody section",
-          "bc0a69b Assemble Office of Readings private pilot context corpus"
+          "5c1682f Populate Office of Readings source-governed psalmody corpus units",
+          "af11acf Hydrate Office of Readings source-governed psalmody section",
+          "bc0a69b Assemble Office of Readings source-governed pilot context corpus"
         ],
         "corpusMetrics": {
           "privatePsalmodyTextUnits": 3,
@@ -695,18 +695,18 @@
         "scope": [
           "Roman LOTH",
           "Office of Readings",
-          "private corpus",
+          "source-governed corpus",
           "psalmody corpus",
           "pilot context corpus"
         ],
-        "description": "Office of Readings private corpus production advanced through six LOTH tranches: three pilot context text exports, one compiled private pilot corpus book, one slot-level private text index, three additional controlled-fixture Grail psalmody text units, one controlled-fixture psalmody section, and one compiled private psalmody corpus book.",
+        "description": "Office of Readings source-governed corpus production advanced through six LOTH tranches: three pilot context text exports, one compiled source-governed pilot corpus book, one slot-level private text index, three additional controlled-fixture Grail psalmody text units, one controlled-fixture psalmody section, and one compiled source-governed psalmody corpus book.",
         "lothCommitSequence": [
-          "871c966 Export Office of Readings private pilot context texts",
-          "8289c4b Compile Office of Readings private pilot corpus book",
+          "871c966 Export Office of Readings source-governed pilot context texts",
+          "8289c4b Compile Office of Readings source-governed pilot corpus book",
           "21fc9e0 Index Office of Readings private pilot slot texts",
           "7131d35 Populate Office of Readings private psalmody controlled fixture units",
           "dee4836 Hydrate Office of Readings private controlled fixture psalmody section",
-          "38bddeb Compile Office of Readings private psalmody corpus book"
+          "38bddeb Compile Office of Readings source-governed psalmody corpus book"
         ],
         "corpusMetrics": {
           "privatePilotContextTextExports": 3,
@@ -740,21 +740,21 @@
         "scope": [
           "Roman LOTH",
           "Office of Readings",
-          "private corpus",
+          "source-governed corpus",
           "full Grail psalmody corpus",
           "appointment psalmody sections"
         ],
-        "description": "Office of Readings private psalmody corpus production advanced through six corpus-producing LOTH tranches: full 152-unit Grail psalmody materialization, full-Grail book compilation, resolver lookup indexing, line-level indexing, appointment-fixture mapping, and hydrated appointment psalmody sections. A corrective audit commit bed7f3a is recorded with the bundle but does not count as an additional corpus tranche.",
+        "description": "Office of Readings source-governed psalmody corpus production advanced through six corpus-producing LOTH tranches: full 152-unit Grail psalmody materialization, full-Grail book compilation, resolver lookup indexing, line-level indexing, appointment-fixture mapping, and hydrated appointment psalmody sections. A corrective audit commit bed7f3a is recorded with the bundle but does not count as an additional corpus tranche.",
         "corpusCommitSequence": [
-          "147d2f3 Populate Office of Readings private full Grail psalmody corpus",
-          "6243e28 Compile Office of Readings private full Grail psalmody book",
-          "ca1ce56 Index Office of Readings private full Grail psalmody lookup",
-          "e6bfb6f Index Office of Readings private full Grail psalmody lines",
-          "d41d641 Map Office of Readings private Grail psalmody appointments",
-          "ba47630 Hydrate Office of Readings private Grail appointment psalmody sections"
+          "147d2f3 Populate Office of Readings source-governed full Grail psalmody corpus",
+          "6243e28 Compile Office of Readings source-governed full Grail psalmody book",
+          "ca1ce56 Index Office of Readings source-governed full Grail psalmody lookup",
+          "e6bfb6f Index Office of Readings source-governed full Grail psalmody lines",
+          "d41d641 Map Office of Readings source-governed Grail psalmody appointments",
+          "ba47630 Hydrate Office of Readings source-governed Grail appointment psalmody sections"
         ],
         "repairCommitSequence": [
-          "bed7f3a Fix Office of Readings private Grail appointment psalmody audit"
+          "bed7f3a Fix Office of Readings source-governed Grail appointment psalmody audit"
         ],
         "corpusMetrics": {
           "fullGrailPrivatePsalmodyTextUnits": 152,
@@ -789,18 +789,18 @@
         "scope": [
           "Roman LOTH",
           "Office of Readings",
-          "private corpus",
+          "source-governed corpus",
           "full-Grail pilot contexts",
-          "slot-level private corpus exports"
+          "slot-level source-governed corpus exports"
         ],
-        "description": "Office of Readings private corpus production advanced through six corpus-producing LOTH tranches: integration of full-Grail psalmody into the three private pilot contexts, private text exports for those contexts, compilation of a private pilot context book, context/slot text indexing, slot-level private text exports, and compilation of a private slot-text export book.",
+        "description": "Office of Readings source-governed corpus production advanced through six corpus-producing LOTH tranches: integration of full-Grail psalmody into the three source-governed pilot contexts, source-governed text exports for those contexts, compilation of a source-governed pilot context book, context/slot text indexing, slot-level source-governed text exports, and compilation of a private slot-text export book.",
         "corpusCommitSequence": [
-          "38a694e Integrate Office of Readings private full Grail psalmody into pilot contexts",
-          "6f2c56d Export Office of Readings private full Grail pilot context texts",
-          "7effb3e Compile Office of Readings private full Grail pilot context book",
-          "f509a76 Index Office of Readings private full Grail pilot context slots",
-          "6c9fa31 Export Office of Readings private full Grail pilot context slot texts",
-          "f03ee32 Compile Office of Readings private full Grail slot text export book"
+          "38a694e Integrate Office of Readings source-governed full Grail psalmody into pilot contexts",
+          "6f2c56d Export Office of Readings source-governed full Grail pilot context texts",
+          "7effb3e Compile Office of Readings source-governed full Grail pilot context book",
+          "f509a76 Index Office of Readings source-governed full Grail pilot context slots",
+          "6c9fa31 Export Office of Readings source-governed full Grail pilot context slot texts",
+          "f03ee32 Compile Office of Readings source-governed full Grail slot text export book"
         ],
         "corpusMetrics": {
           "fullGrailIntegratedPilotContexts": 3,
@@ -834,18 +834,18 @@
         "scope": [
           "Roman LOTH",
           "Office of Readings",
-          "private corpus",
+          "source-governed corpus",
           "full-Grail cycle-expansion fixture contexts",
-          "fixture-context slot-level private corpus exports"
+          "fixture-context slot-level source-governed corpus exports"
         ],
-        "description": "Office of Readings private corpus production advanced through six corpus-producing LOTH tranches: materialized three refs-only cycle-expansion fixture contexts as private full-Grail text-bearing contexts, exported those contexts, compiled a fixture-context book, indexed fixture-context slots, exported every indexed text-bearing fixture slot, and compiled the fixture-slot exports into one private slot-level corpus book. This remains fixture-shape materialization and does not claim new cycle coverage.",
+        "description": "Office of Readings source-governed corpus production advanced through six corpus-producing LOTH tranches: materialized three refs-only cycle-expansion fixture contexts as private full-Grail text-bearing contexts, exported those contexts, compiled a fixture-context book, indexed fixture-context slots, exported every indexed text-bearing fixture slot, and compiled the fixture-slot exports into one private slot-level corpus book. This remains fixture-shape materialization and does not claim new cycle coverage.",
         "corpusCommitSequence": [
-          "9a5d654 Materialize Office of Readings private full Grail cycle expansion fixture contexts",
-          "4d02d4d Export Office of Readings private full Grail cycle expansion fixture texts",
-          "58f8360 Compile Office of Readings private full Grail cycle expansion fixture context book",
-          "b74b4e5 Index Office of Readings private full Grail cycle expansion fixture context slots",
-          "912746b Export Office of Readings private full Grail cycle expansion fixture context slot texts",
-          "715ba19 Compile Office of Readings private full Grail cycle expansion fixture context slot text export book"
+          "9a5d654 Materialize Office of Readings source-governed full Grail cycle expansion fixture contexts",
+          "4d02d4d Export Office of Readings source-governed full Grail cycle expansion fixture texts",
+          "58f8360 Compile Office of Readings source-governed full Grail cycle expansion fixture context book",
+          "b74b4e5 Index Office of Readings source-governed full Grail cycle expansion fixture context slots",
+          "912746b Export Office of Readings source-governed full Grail cycle expansion fixture context slot texts",
+          "715ba19 Compile Office of Readings source-governed full Grail cycle expansion fixture context slot text export book"
         ],
         "corpusMetrics": {
           "materializedFullGrailCycleExpansionFixtureContexts": 3,
@@ -907,7 +907,7 @@
             "commit": "fc1b442",
             "message": "Map Office of Readings ordinary psalmody appointments",
             "tranche": "OOR-C03-ordinary-psalmody-appointment-map",
-            "effect": "Mapped source-backed ordinary Office of Readings psalmody appointments into the private Grail appointment map."
+            "effect": "Mapped source-backed ordinary Office of Readings psalmody appointments into the source-governed Grail appointment map."
           },
           {
             "commit": "c2b7cbf",
@@ -1036,7 +1036,7 @@
     ]
   },
   "roadmap_summary": {
-    "completed": "Phases 6-8 (BCP, Ethiopian Sa'atat, Senkessar). v2.8.x: COE three-layer model, saints resolver boundary, hydration-race gating, tags[] schema migration, EO admin diagnostics. Horologion v1–v3.0: vespers skeleton through full slot resolution, Menaion annual corpus complete (all 12 months, 369/370 resolved), Small Compline baseline. v2.9.7: generic sidebar shell. Little Hours baseline live: First Hour (v3.1), Third Hour (v3.2), Sixth Hour (v3.3), Ninth Hour (v3.4). Engine layers v3.5–v4.4: feast-rank arbitration, Little Hours festal troparion override, Vespers festal stichera/aposticha override, Great Lent seasonal troparion layer for all Little Hours and Small Compline, office-specific fallback normalization, Little Hours Theotokion normalization/festal arbitration, Small Compline festal Theotokion arbitration. Season-aware feast qualification rule verified: ranks 1–4 outside Great Lent weekdays; ranks 1–2 only during Great Lent weekdays. Resolver integration audit complete and verified. Pascha boundary and tone suppression verified. Menaion integration verified at runtime across all offices. v5.0 — Triodion Great Lent weekday overlay: Triodion text resolution for Great Lent weekdays Weeks 1–6; overlay runs after feast arbitration; feast precedence preserved. v5.1 — Holy Week text overlay: troparion text for all 7 Holy Week days from data/triodion/holy-week/holy-week.json; structurally separate from Great Lent layer; stichera/aposticha/paremiae/theotokion remain as informed rubrics. v5.2 — Pentecostarion / Paschal-cycle overlay: Bright Week stichera and aposticha from data/pentecostarion/pentecostarion-bright-week.json; troparion already resolved; Thomas Sunday returns to ordinary resurrectional path. v5.3 — Menaion text-unavailable audit: corpus confirmed at 369/370; one intentional holdout (05-18 Venerable Peter of Caesarea in Cappadocia) remains; no broad unresolved batch remains. v5.4 — Horologion diagnostics and UI polish: diagnostics toggle in Horologion sidebar; _renderHorologionDiagnostics() wired into rubric, stichera, and text branches; off by default; surfaces resolvedAs, type, tone, and inferred layer for variable slots. v5.5 — Vespers kathisma full-text integration: ordinary weekday kathisma slots resolve to full Psalter text for kathismata 1,4,6,8,10,12; Great Lent guard returns great-lent-ordinary-cycle-inapplicable; Bright Week and Sunday Small Vespers return explicit omission rubrics. v5.6 — Orthros structural baseline: Orthros added as selectable office; fixed content live; god-is-the-lord / Alleluia path resolved across ordinary, Great Lent weekday, Holy Week, Bright Week; troparion delegates to existing seasonal/feast stack. v5.7 — Orthros kathisma and praises expansion: kathisma appointments and Praises stichera upgraded to explicit season-aware rubrics; Orthros 18 implemented / 2 placeholders. v5.8 — Orthros sessional hymn / canon discipline: sessional hymns and canon upgraded to season-aware structural rubric logic distinguishing ordinary weekday, Sunday, Great Lent weekday, Holy Week, and Bright Week; feast inheritance intact; Orthros 20 implemented / 0 placeholder slots. Orthros is structurally complete at the rubrical level as of v5.8. v5.9 — Orthros Sunday resurrectional / Polyeleos discipline: completed Sunday-specific structural layer; deepened resurrectional and Polyeleos-aware branching beyond generic weekday structure. v6.0 — Orthros festal / major-feast discipline: completed feast-aware handling for canon, Praises, sessional hymns, and Matins divergence; established stable festal framework. v6.1 — Orthros text-depth expansion (ACTIVE): bounded entry point through Orthros Sunday resurrectional Praises implemented; ongoing corpus-build phase for hymnographic text families. v6.1 — Orthros text-depth expansion: all existing Octoechos corpora activated and verified live end-to-end (Sunday Praises tones 1–8, Eothinon Exapostilarion gospels 1–11, Sunday Sessional Hymns tones 1–8, Sunday Resurrectional Canon tones 1–8, weekday troparion via Menaion stack, Orthros Theotokion null-sentinel corpus resolver, Aposticha null-sentinel corpus resolver). v6.2 — Midnight Office structural baseline: fixed text corpus complete, troparion wired to shared seasonal stack. v6.3 — Midnight Office Theotokion: dedicated null-sentinel corpus and explicit corpus-aware resolver live; no hard-coded deferred stubs remain in any Midnight Office variable slot. v6.4 — midnight-office-theotokion positional migration: tone × day schema retired; fixed-backed positional slot live; source confirmed (Jordanville 2008 / Hapgood). Great Compline baseline live: office files present, engine-routable, fixed corpus loading, appointment gate verified, weekday troparia resolved, and canon routing differentiated across Great Canon / Octoechos rubric / Menaion rubric states. v6.5 — Orthros weekday sessional hymns corpus complete: all eight tones, Monday–Saturday, both kathisma slots (afterKathisma1 and afterKathisma2) transcribed for every tone; source: Lambertsen Octoechos Vols. I–IV (St. John of Kronstadt Press); null-sentinel placeholders retired across the full corpus family. v6.6 — Orthros weekday canon corpus complete: all eight tones, Monday–Saturday, all six day slots fully transcribed; corpus contract tones[tone][day]; source: Lambertsen Octoechos Vols. I–IV (St. John of Kronstadt Press); null-sentinel scaffold retired across the full corpus family. v6.7 — Orthros weekday aposticha corpus complete: all eight tones, Monday–Saturday fully populated under window.OCTOECHOS.orthros.aposticha.weekday.tones[tone][dayOfWeek]; null-sentinel scaffold retired; integration live. Weekday praises adjudicated as source-complete: Tone 1 Monday–Saturday and Tones 2–8 Saturday populated; Tones 2–8 Monday–Friday null by source-witness determination (no Praises block present in reviewed source; nulls are not pending transcription). All weekday Octoechos corpus families now closed. Menaion schema v1.1.0 adds kontakion and kontakion_status fields. MenaionResolver.queryDate(mmdd) API is live and verified while queryTroparion(mmdd) remains unchanged. Orthros kontakion slot is live in data/horologion/orthros.json. horologion-engine.js resolves type:'text' when kontakion.text is present, an honest rubric when kontakion is absent, and a text-unavailable rubric when kontakion_status === 'text-unavailable'. Orthros Menaion kontakion tranche (2026-04-24): 8/8 targeted fixed major feast kontakia QC-verified (8 PASS / 0 FAIL) — 02-02 Presentation Tone 1, 03-25 Annunciation Tone 8, 08-06 Transfiguration Tone 7, 08-15 Dormition Tone 2, 09-08 Nativity of the Theotokos Tone 4, 09-14 Exaltation of the Cross Tone 4, 11-21 Entry of the Theotokos Tone 4, 12-25 Nativity of Christ Tone 3. Source family: Hapgood/OCA/Antiochian tradition. Orthros Menaion kontakion expansion (2026-04-25): 10-01 Protection of the Theotokos Tone 3 verified; rank-2 kontakion tranche 1 verified (12-06 Nicholas of Myra Tone 3, 01-17 Anthony the Great Tone 2, 11-13 John Chrysostom Tone 6, 04-23 Great Martyr George Tone 8); deferred rank-2 tranche resolved and verified (01-30 Three Hierarchs Tone 2, 08-29 Beheading of John the Baptist Tone 5, 12-27 Protomartyr Stephen Tone 3). Orthros Menaion kontakion expansion — actual-file census (2026-04-25): direct Node census of data/menaion/*.json confirms TOTAL RESOLVED KONTAKIA: 27. Tranche 2 safe-nine QC: 9 PASS / 0 FAIL; held-back cleanup QC: 2 PASS / 0 FAIL. All 27 resolved targeted Menaion kontakia PASS runtime QC. JSON parse PASS for all touched month files. Typika Sunday lectionary infrastructure (v6.10) complete: SAP-keyed lectionary data file added, engine resolver wired, Weeks 2–31 ordinary Sunday epistle/gospel readings live, Week 1 All Saints Gospel segmented composite rendering complete; Week 1 All Saints Epistle full-text rendering complete as of 2026-05-07 via epistle_segments [Hebrews 11:32-40, Hebrews 12:1-2]; Week 19 segmented epistle verified; runtime QC previously 5 PASS / 0 FAIL, with Week 1 Epistle payload QC now PASS on 2026-06-07 (All Saints Sunday / SAP Week 1): Epistle resolvedAs typika-sunday-lectionary-epistle-sap-1, Gospel resolvedAs typika-sunday-lectionary-gospel-sap-1, Epistle textLength 1759, Gospel textLength 1293, no undefined leakage. Typika Pentecostarion Sunday readings live as of 2026-05-09: seven Pentecostarion Sunday entries added to typika-lectionary.json; engine dispatch added in _resolveTypikaSlots() before SAP fallback; Sunday-only Pascha-offset lookup +7 through +49; segment-backed readings used for Myrrhbearers Gospel, Holy Fathers Epistle, and Pentecost Gospel; resolvedAs tokens typika-pentecostarion-epistle-<key> and typika-pentecostarion-gospel-<key>; SAP Weeks 1–31 stable; All Saints / SAP Week 1 regression on 2026-06-07 confirmed stable; weekday fallback confirmed stable; browser QC 91 PASS / 0 FAIL. Typika pre-Lenten Sunday readings live as of 2026-05-09: four active pre-Lenten Sunday entries added to typika-lectionary.json; engine dispatch added in _resolveTypikaSlots() before SAP fallback; Sunday-only upcoming-Pascha lookup by days_before_pascha 70/63/56/49; segment-backed readings used for Meatfare Epistle and Cheesefare Epistle; Zacchaeus present as deferred data only and not routed; resolvedAs tokens typika-pre-lenten-epistle-<key> and typika-pre-lenten-gospel-<key>; Pentecostarion, All Saints / SAP Week 1, weekday, Clean Monday, and mid-Lent boundary controls stable; browser QC 87 PASS / 0 FAIL. Typika Great Lent Sunday readings live as of 2026-05-09: five Great Lent Sunday entries added to typika-lectionary.json; engine dispatch added in _resolveTypikaSlots() before SAP fallback; Sunday-only upcoming-Pascha lookup by days_before_pascha 42/35/28/21/14; segment-backed readings used for Sunday of Orthodoxy Epistle, Gregory Palamas Epistle, Holy Cross Epistle, and Holy Cross Gospel; Palm Sunday intentionally not mapped; resolvedAs tokens typika-great-lent-epistle-<key> and typika-great-lent-gospel-<key>; Cheesefare, Clean Monday, Palm Sunday, Thomas Sunday, and All Saints / SAP Week 1 boundary controls stable; browser QC 113 PASS / 0 FAIL. Typika scripture resolver hardening complete as of 2026-05-10: resolveScripturePericope(refOrSegments) added to scripture-resolver.js without changing getScriptureText; SAP Week 5/14/17 cross-chapter data hotfix applied; Holy Cross Mark 9:1 clarified as Mark 9:1-1; all Typika Epistle/Gospel branches migrated to the helper while preserving resolvedAs values and fallback behavior; helper direct QC 133 PASS / 0 FAIL; data hotfix corrected check 7 PASS / 0 FAIL; Pentecostarion pilot corrected QC 9 PASS / 0 FAIL; Triodion migration corrected QC 15 PASS / 0 FAIL; final SAP migration QC 112 PASS / 0 FAIL. Roman LOTH OOR source-alignment/source-pipeline bundle recorded through e0b8cc1: source-alignment report, reading citation/source refs, quiet audit, and Universalis/Grail/source-plan binding complete for the private blocked metadata pilot. Roman LOTH OOR source-verification and rights-posture bundle recorded through 925e7f6: source-verification matrix, psalmody appointment verification, reading source-ref verification, and source-class rights posture complete for the private blocked metadata pilot. Roman LOTH OOR non-materializing cycle-expansion planning bundle recorded through 0f8d909: responsory source-ref verification, dedicated source-governance QC chain, cycle-expansion boundaries, and non-materializing expansion plan complete for the private blocked metadata pilot. Roman LOTH OOR private corpus assembly bundle recorded through bc0a69b: three private psalmody text units, one hydrated private psalmody section, and three assembled private pilot-context corpus payloads covering 33 OOR slots. Roman LOTH OOR private psalmody corpus bundle recorded through 38bddeb: three private context text exports, one private pilot corpus book, one slot-level text index, three additional controlled-fixture psalmody units, one controlled-fixture psalmody section, and one compiled private psalmody corpus book. Roman LOTH OOR full Grail psalmody corpus bundle recorded through bed7f3a: 152 reusable private Grail psalmody units, full-Grail private psalmody book, lookup index, line index, six appointment mappings, two hydrated appointment psalmody sections, and audit repair attached to the sixth tranche. Roman LOTH OOR full-Grail pilot context corpus bundle recorded through f03ee32: three full-Grail integrated pilot contexts, three full-context text exports, one full-context book, context-slot text index, slot-level private exports, and one compiled slot-text export book. Roman LOTH OOR full-Grail cycle expansion fixture corpus bundle recorded through 715ba19: three materialized full-Grail fixture contexts, three fixture-context text exports, one fixture-context book, fixture-context slot text index, 31 fixture-slot private exports, and one compiled fixture-slot export book.",
+    "completed": "Phases 6-8 (BCP, Ethiopian Sa'atat, Senkessar). v2.8.x: COE three-layer model, saints resolver boundary, hydration-race gating, tags[] schema migration, EO admin diagnostics. Horologion v1–v3.0: vespers skeleton through full slot resolution, Menaion annual corpus complete (all 12 months, 369/370 resolved), Small Compline baseline. v2.9.7: generic sidebar shell. Little Hours baseline live: First Hour (v3.1), Third Hour (v3.2), Sixth Hour (v3.3), Ninth Hour (v3.4). Engine layers v3.5–v4.4: feast-rank arbitration, Little Hours festal troparion override, Vespers festal stichera/aposticha override, Great Lent seasonal troparion layer for all Little Hours and Small Compline, office-specific fallback normalization, Little Hours Theotokion normalization/festal arbitration, Small Compline festal Theotokion arbitration. Season-aware feast qualification rule verified: ranks 1–4 outside Great Lent weekdays; ranks 1–2 only during Great Lent weekdays. Resolver integration audit complete and verified. Pascha boundary and tone suppression verified. Menaion integration verified at runtime across all offices. v5.0 — Triodion Great Lent weekday overlay: Triodion text resolution for Great Lent weekdays Weeks 1–6; overlay runs after feast arbitration; feast precedence preserved. v5.1 — Holy Week text overlay: troparion text for all 7 Holy Week days from data/triodion/holy-week/holy-week.json; structurally separate from Great Lent layer; stichera/aposticha/paremiae/theotokion remain as informed rubrics. v5.2 — Pentecostarion / Paschal-cycle overlay: Bright Week stichera and aposticha from data/pentecostarion/pentecostarion-bright-week.json; troparion already resolved; Thomas Sunday returns to ordinary resurrectional path. v5.3 — Menaion text-unavailable audit: corpus confirmed at 369/370; one intentional holdout (05-18 Venerable Peter of Caesarea in Cappadocia) remains; no broad unresolved batch remains. v5.4 — Horologion diagnostics and UI polish: diagnostics toggle in Horologion sidebar; _renderHorologionDiagnostics() wired into rubric, stichera, and text branches; off by default; surfaces resolvedAs, type, tone, and inferred layer for variable slots. v5.5 — Vespers kathisma full-text integration: ordinary weekday kathisma slots resolve to full Psalter text for kathismata 1,4,6,8,10,12; Great Lent guard returns great-lent-ordinary-cycle-inapplicable; Bright Week and Sunday Small Vespers return explicit omission rubrics. v5.6 — Orthros structural baseline: Orthros added as selectable office; fixed content live; god-is-the-lord / Alleluia path resolved across ordinary, Great Lent weekday, Holy Week, Bright Week; troparion delegates to existing seasonal/feast stack. v5.7 — Orthros kathisma and praises expansion: kathisma appointments and Praises stichera upgraded to explicit season-aware rubrics; Orthros 18 implemented / 2 placeholders. v5.8 — Orthros sessional hymn / canon discipline: sessional hymns and canon upgraded to season-aware structural rubric logic distinguishing ordinary weekday, Sunday, Great Lent weekday, Holy Week, and Bright Week; feast inheritance intact; Orthros 20 implemented / 0 placeholder slots. Orthros is structurally complete at the rubrical level as of v5.8. v5.9 — Orthros Sunday resurrectional / Polyeleos discipline: completed Sunday-specific structural layer; deepened resurrectional and Polyeleos-aware branching beyond generic weekday structure. v6.0 — Orthros festal / major-feast discipline: completed feast-aware handling for canon, Praises, sessional hymns, and Matins divergence; established stable festal framework. v6.1 — Orthros text-depth expansion (ACTIVE): bounded entry point through Orthros Sunday resurrectional Praises implemented; ongoing corpus-build phase for hymnographic text families. v6.1 — Orthros text-depth expansion: all existing Octoechos corpora activated and verified live end-to-end (Sunday Praises tones 1–8, Eothinon Exapostilarion gospels 1–11, Sunday Sessional Hymns tones 1–8, Sunday Resurrectional Canon tones 1–8, weekday troparion via Menaion stack, Orthros Theotokion null-sentinel corpus resolver, Aposticha null-sentinel corpus resolver). v6.2 — Midnight Office structural baseline: fixed text corpus complete, troparion wired to shared seasonal stack. v6.3 — Midnight Office Theotokion: dedicated null-sentinel corpus and explicit corpus-aware resolver live; no hard-coded deferred stubs remain in any Midnight Office variable slot. v6.4 — midnight-office-theotokion positional migration: tone × day schema retired; fixed-backed positional slot live; source confirmed (Jordanville 2008 / Hapgood). Great Compline baseline live: office files present, engine-routable, fixed corpus loading, appointment gate verified, weekday troparia resolved, and canon routing differentiated across Great Canon / Octoechos rubric / Menaion rubric states. v6.5 — Orthros weekday sessional hymns corpus complete: all eight tones, Monday–Saturday, both kathisma slots (afterKathisma1 and afterKathisma2) transcribed for every tone; source: Lambertsen Octoechos Vols. I–IV (St. John of Kronstadt Press); null-sentinel placeholders retired across the full corpus family. v6.6 — Orthros weekday canon corpus complete: all eight tones, Monday–Saturday, all six day slots fully transcribed; corpus contract tones[tone][day]; source: Lambertsen Octoechos Vols. I–IV (St. John of Kronstadt Press); null-sentinel scaffold retired across the full corpus family. v6.7 — Orthros weekday aposticha corpus complete: all eight tones, Monday–Saturday fully populated under window.OCTOECHOS.orthros.aposticha.weekday.tones[tone][dayOfWeek]; null-sentinel scaffold retired; integration live. Weekday praises adjudicated as source-complete: Tone 1 Monday–Saturday and Tones 2–8 Saturday populated; Tones 2–8 Monday–Friday null by source-witness determination (no Praises block present in reviewed source; nulls are not pending transcription). All weekday Octoechos corpus families now closed. Menaion schema v1.1.0 adds kontakion and kontakion_status fields. MenaionResolver.queryDate(mmdd) API is live and verified while queryTroparion(mmdd) remains unchanged. Orthros kontakion slot is live in data/horologion/orthros.json. horologion-engine.js resolves type:'text' when kontakion.text is present, an honest rubric when kontakion is absent, and a text-unavailable rubric when kontakion_status === 'text-unavailable'. Orthros Menaion kontakion tranche (2026-04-24): 8/8 targeted fixed major feast kontakia QC-verified (8 PASS / 0 FAIL) — 02-02 Presentation Tone 1, 03-25 Annunciation Tone 8, 08-06 Transfiguration Tone 7, 08-15 Dormition Tone 2, 09-08 Nativity of the Theotokos Tone 4, 09-14 Exaltation of the Cross Tone 4, 11-21 Entry of the Theotokos Tone 4, 12-25 Nativity of Christ Tone 3. Source family: Hapgood/OCA/Antiochian tradition. Orthros Menaion kontakion expansion (2026-04-25): 10-01 Protection of the Theotokos Tone 3 verified; rank-2 kontakion tranche 1 verified (12-06 Nicholas of Myra Tone 3, 01-17 Anthony the Great Tone 2, 11-13 John Chrysostom Tone 6, 04-23 Great Martyr George Tone 8); deferred rank-2 tranche resolved and verified (01-30 Three Hierarchs Tone 2, 08-29 Beheading of John the Baptist Tone 5, 12-27 Protomartyr Stephen Tone 3). Orthros Menaion kontakion expansion — actual-file census (2026-04-25): direct Node census of data/menaion/*.json confirms TOTAL RESOLVED KONTAKIA: 27. Tranche 2 safe-nine QC: 9 PASS / 0 FAIL; held-back cleanup QC: 2 PASS / 0 FAIL. All 27 resolved targeted Menaion kontakia PASS runtime QC. JSON parse PASS for all touched month files. Typika Sunday lectionary infrastructure (v6.10) complete: SAP-keyed lectionary data file added, engine resolver wired, Weeks 2–31 ordinary Sunday epistle/gospel readings live, Week 1 All Saints Gospel segmented composite rendering complete; Week 1 All Saints Epistle full-text rendering complete as of 2026-05-07 via epistle_segments [Hebrews 11:32-40, Hebrews 12:1-2]; Week 19 segmented epistle verified; runtime QC previously 5 PASS / 0 FAIL, with Week 1 Epistle payload QC now PASS on 2026-06-07 (All Saints Sunday / SAP Week 1): Epistle resolvedAs typika-sunday-lectionary-epistle-sap-1, Gospel resolvedAs typika-sunday-lectionary-gospel-sap-1, Epistle textLength 1759, Gospel textLength 1293, no undefined leakage. Typika Pentecostarion Sunday readings live as of 2026-05-09: seven Pentecostarion Sunday entries added to typika-lectionary.json; engine dispatch added in _resolveTypikaSlots() before SAP fallback; Sunday-only Pascha-offset lookup +7 through +49; segment-backed readings used for Myrrhbearers Gospel, Holy Fathers Epistle, and Pentecost Gospel; resolvedAs tokens typika-pentecostarion-epistle-<key> and typika-pentecostarion-gospel-<key>; SAP Weeks 1–31 stable; All Saints / SAP Week 1 regression on 2026-06-07 confirmed stable; weekday fallback confirmed stable; browser QC 91 PASS / 0 FAIL. Typika pre-Lenten Sunday readings live as of 2026-05-09: four active pre-Lenten Sunday entries added to typika-lectionary.json; engine dispatch added in _resolveTypikaSlots() before SAP fallback; Sunday-only upcoming-Pascha lookup by days_before_pascha 70/63/56/49; segment-backed readings used for Meatfare Epistle and Cheesefare Epistle; Zacchaeus present as deferred data only and not routed; resolvedAs tokens typika-pre-lenten-epistle-<key> and typika-pre-lenten-gospel-<key>; Pentecostarion, All Saints / SAP Week 1, weekday, Clean Monday, and mid-Lent boundary controls stable; browser QC 87 PASS / 0 FAIL. Typika Great Lent Sunday readings live as of 2026-05-09: five Great Lent Sunday entries added to typika-lectionary.json; engine dispatch added in _resolveTypikaSlots() before SAP fallback; Sunday-only upcoming-Pascha lookup by days_before_pascha 42/35/28/21/14; segment-backed readings used for Sunday of Orthodoxy Epistle, Gregory Palamas Epistle, Holy Cross Epistle, and Holy Cross Gospel; Palm Sunday intentionally not mapped; resolvedAs tokens typika-great-lent-epistle-<key> and typika-great-lent-gospel-<key>; Cheesefare, Clean Monday, Palm Sunday, Thomas Sunday, and All Saints / SAP Week 1 boundary controls stable; browser QC 113 PASS / 0 FAIL. Typika scripture resolver hardening complete as of 2026-05-10: resolveScripturePericope(refOrSegments) added to scripture-resolver.js without changing getScriptureText; SAP Week 5/14/17 cross-chapter data hotfix applied; Holy Cross Mark 9:1 clarified as Mark 9:1-1; all Typika Epistle/Gospel branches migrated to the helper while preserving resolvedAs values and fallback behavior; helper direct QC 133 PASS / 0 FAIL; data hotfix corrected check 7 PASS / 0 FAIL; Pentecostarion pilot corrected QC 9 PASS / 0 FAIL; Triodion migration corrected QC 15 PASS / 0 FAIL; final SAP migration QC 112 PASS / 0 FAIL. Roman LOTH OOR source-alignment/source-pipeline bundle recorded through e0b8cc1: source-alignment report, reading citation/source refs, quiet audit, and Universalis/Grail/source-plan binding complete for the runtime-disabled metadata pilot. Roman LOTH OOR source-verification and source-posture bundle recorded through 925e7f6: source-verification matrix, psalmody appointment verification, reading source-ref verification, and source-class provenance posture complete for the runtime-disabled metadata pilot. Roman LOTH OOR non-materializing cycle-expansion planning bundle recorded through 0f8d909: responsory source-ref verification, dedicated source-governance QC chain, cycle-expansion boundaries, and non-materializing expansion plan complete for the runtime-disabled metadata pilot. Roman LOTH OOR source-governed corpus assembly bundle recorded through bc0a69b: three private psalmody text units, one hydrated source-governed psalmody section, and three assembled private pilot-context corpus payloads covering 33 OOR slots. Roman LOTH OOR source-governed psalmody corpus bundle recorded through 38bddeb: three source-governed context text exports, one source-governed pilot corpus book, one slot-level text index, three additional controlled-fixture psalmody units, one controlled-fixture psalmody section, and one compiled source-governed psalmody corpus book. Roman LOTH OOR full Grail psalmody corpus bundle recorded through bed7f3a: 152 reusable source-governed Grail psalmody units, full-Grail private psalmody book, lookup index, line index, six appointment mappings, two hydrated appointment psalmody sections, and audit repair attached to the sixth tranche. Roman LOTH OOR full-Grail pilot context corpus bundle recorded through f03ee32: three full-Grail integrated pilot contexts, three full-context text exports, one full-context book, context-slot text index, slot-level private exports, and one compiled slot-text export book. Roman LOTH OOR full-Grail cycle expansion fixture corpus bundle recorded through 715ba19: three materialized full-Grail fixture contexts, three fixture-context text exports, one fixture-context book, fixture-context slot text index, 31 fixture-slot private exports, and one compiled fixture-slot export book.",
     "next_required": "Pentecost release track — monastic-first Byzantine roadmap. Governance rule: Byzantine implementation targets monastery-grade liturgical discipline by default; reductions and parish abbreviations are settings layered afterward, not baseline architecture. Immediate required items: (1) Typika lectionary infrastructure — post-Pentecost Sunday epistle/gospel layer is live for SAP Weeks 1–31; Week 1 All Saints epistle and gospel both render full text as of 2026-05-07 (epistle via epistle_segments Hebrews 11:32–40 + 12:1–2; gospel via segmented references Matthew 10:32-33, 10:37-38, 19:27-30); lookup is keyed by Sunday After Pentecost, not tone; Slavic/OCA/ROCOR/Antiochian sequence governs Weeks 22–30; Pentecostarion Sunday readings are live as of 2026-05-09; pre-Lenten Sunday readings are live as of 2026-05-09 for Publican and Pharisee, Prodigal Son, Meatfare, and Cheesefare, with Zacchaeus deferred pending a tradition-variant gate; Great Lent Sunday readings are live as of 2026-05-09 for Sunday of Orthodoxy, Gregory Palamas, Holy Cross, John Climacus, and Mary of Egypt; Typika Epistle/Gospel scripture resolution is helper-normalized as of 2026-05-10; Palm Sunday and Bright Week readings are live as of 2026-05-10; ordinary weekday readings after Pentecost Weeks 1-33 are live as split-key weekday support as of 2026-05-10: Weeks 1-17 provide pre-Lukan ordinary Epistle/Gospel fallback, Weeks 18-33 provide post-Lukan Epistle support, and post-Lukan Gospel Weeks 30-33 are live in post_lukan_weekday_gospels; Lukan weekday Gospel Weeks 1-12 are live as of 2026-05-10; Typika weekday interruption gates are live for Nativity/Theophany and Triodion/pre-Lenten stop conditions; post-Theophany weekday realignment is live using countdown keying toward Publican and Pharisee Sunday; pre-Lenten weekday readings are live through Cheesefare Saturday in pre_lenten_weekdays, including no-Liturgy Cheesefare Wednesday/Friday and special Saturday reading sets; feast_lectionary_overlays.winter_cycle is live for core Nativity/Theophany fixed days, relative Sundays, and relative Saturdays; feast_lectionary_overlays.fixed_cycle is live for low/moderate-risk major fixed feasts and guarded Annunciation weekday/Saturday support before Lazarus Saturday; final Typika release regression is closed; remaining Typika gaps are explicitly deferred and non-release-blocking: Annunciation Sunday/Holy Week/Pascha/Bright collision policy, broader Menaion/fixed-feast overlay expansion, fuller forefeast/afterfeast coverage if later required, Royal Hours/office-reading handling, and other special-cycle coverage; dismissal is rubric-only by present design and is not a remaining depth item; Sunday resurrectional kontakion layer (tones 1–8) is complete; (2) Orthros Menaion exapostilarion / broader Menaion branch planning; Great Canon and Friday substitution are runtime-verified and complete; (3) Interhour psalm remaining depth (Trisagion x4 + Psalms 60–62 + 86–88 complete as of v3.8.2 by in-repo reuse; 6 psalm slots COMPLETE 2026-04-27 — Psalms 20–22 populated in interhour-first-fixed.json from liturgy.io Kathisma 3 (HTM Psalter); Psalms 34–36 populated in interhour-third-fixed.json from liturgy.io Kathisma 5 (HTM Psalter); interhour fixed text fully text-backed for current scope); (4) monastic audit of existing Horologion offices for monastery-grade discipline, especially festal/seasonal replacement logic, kathisma depth, and remaining rubric-only pressure points; (5) EO production-path integration — COMPLETE as of 2026-05-16 (js/calendar-eastern-orthodox.js on production path, EO mode selector live in Horologion sidebar, HorologionEngine.resolveOffice() consumes eoMode for all fixed-date lookups). Public-beta main-app/admin blocker census passed on 2026-05-16: no immediate shell, dashboard, or EO production-path blocker found. Monastic audit triage complete 2026-05-16: no current public-beta release blockers found in the governed daily-cycle scope. Current next work: Orthros Menaion hymn-family branch-planning audit, reduction-settings planning. Annual Typikon collision policy is deferred governance. Great Compline, Typika, and Interhours baselines are already live. Weekday Octoechos corpus tranche (Orthros) is closed for the current governed scope. Orthros core Octoechos/Triodion routing is pre-Menaion-ready as of 2026-04-24; no further weekday corpus transcription is on the release-critical path. Admin Dashboard release-governance cockpit committed 2026-04-26: closed. Ordinary weekday Exapostilarion firstEndings guard resolved 2026-04-26: closed. Sunday rank 1–2 feast Typikon policy confirmation resolved 2026-04-26: canon branch patched to orthros-sunday-feast-canon-rubric; QC 3 PASS / 0 FAIL; closed. Remaining Menaion canon and exapostilarion corpus expansion is deferred data work and is not listed as a required item.",
     "next_planned": "Post-Pentecost stabilization / EO production-readiness roadmap (Western Pentecost 2026 retired as active release target): v6.8 governance + dashboard tranche (monastic-first Byzantine rule; release board; daily-goal tracking) — COMPLETE, committed 2026-04-26; v6.9 monastic audit + depth tranche — triage COMPLETE 2026-05-16 (no blockers found); active: Orthros Menaion branch-planning audit; v7.0 roadmap/admin reset; v7.1 EO production-path integration — COMPLETE 2026-05-16; v7.2 reduction-settings tranche. Public-beta main-app/admin blocker census passed on 2026-05-16 with no immediate shell, dashboard, or EO production-path blocker found. Great Compline, Typika, and Interhours baselines are already live; remaining Byzantine release work is monastery-pressure depth and audit work rather than office-presence architecture. Great Compline Great Canon and bounded Menaion feast-eve canon coverage (04-23, 08-15, 09-08, 09-14, 11-21) are runtime-verified and complete; Typika Sunday kontakion layer (tones 1–8) is complete; Typika dismissal is rubric-only by present design. Priority remaining depth items: Typika lectionary expansion beyond ordinary post-Pentecost Sundays (Week 1 All Saints Epistle full-text rendering COMPLETE 2026-05-07; Pentecostarion Sundays COMPLETE 2026-05-09; pre-Lenten Sundays COMPLETE 2026-05-09 for Publican and Pharisee, Prodigal Son, Meatfare, and Cheesefare, with Zacchaeus deferred; Great Lent Sundays COMPLETE 2026-05-09; scripture resolver hardening and full Typika Epistle/Gospel caller migration COMPLETE 2026-05-10; Palm Sunday and Bright Week COMPLETE 2026-05-10; ordinary weekdays after Pentecost Weeks 1-33 COMPLETE 2026-05-10 for split-key weekday support (Weeks 1-17 pre-Lukan Epistle/Gospel; Weeks 18-33 post-Lukan Epistle support); Lukan weekday Gospel Weeks 1-12 COMPLETE 2026-05-10; Typika weekday interruption gates COMPLETE 2026-05-10; post-Theophany countdown keying COMPLETE 2026-05-10; post-Lukan Gospel Weeks 30-33 COMPLETE 2026-05-10; pre-Lenten weekday readings through Cheesefare Saturday COMPLETE 2026-05-10; feast_lectionary_overlays winter-cycle core including relative Saturdays COMPLETE 2026-05-10; feast_lectionary_overlays fixed-cycle core COMPLETE 2026-05-10; guarded Annunciation overlay COMPLETE 2026-05-10 for non-Sunday March 25 dates before Lazarus Saturday; final Typika release regression COMPLETE 2026-05-10; deferred non-release-blocking gaps: Annunciation Sunday/Holy Week/Pascha/Bright collision policy, broader Menaion/fixed-feast overlay expansion, fuller forefeast/afterfeast coverage if later required, Royal Hours/office-reading handling, and other special-cycle coverage), Orthros Menaion exapostilarion / broader Menaion branch planning, Interhour fixed-text depth COMPLETE for current scope, Menaion integration for Orthros (kontakion layer live as of 2026-04-24, 8/8 targeted fixed major feast kontakia verified; next tranches: continued targeted Menaion kontakion expansion (27 resolved targeted kontakia per actual-file census 2026-04-25; further feast date expansion remains deferred), sessional hymn policy/data shape, praises policy/data shape, canon policy/data shape, exapostilarion branch planning), and kathisma depth across seasonal/festal paths (Great Lent / Holy Week seasonal full-text whitelist tranche COMPLETE 2026-05-07: K1, K2, K4–K17, K19–K20 whitelisted; 75 PASS / 0 FAIL (initial tranche), 13 PASS / 0 FAIL (K14 activation 2026-05-07), 17 PASS / 0 FAIL (K15/K16 activation 2026-05-07), 20 PASS / 0 FAIL (K17 activation 2026-05-07), 17 PASS / 0 FAIL (K19/K20 activation 2026-05-07), 17 PASS / 0 FAIL (K2 activation 2026-05-07); ordinary non-seasonal Saturday policy remains unchanged). Menaion-tone Theotokion conflict resolution for Vespers dismissal Theotokion remains a scoped refinement item unless the monastic audit elevates it to release-critical. COE-IIC — optional Layer 2 expansion: major Hudra fixed feasts. Future Byzantine tradition profiles (Slavic, Greek, Antiochian) remain overlay-first follow-on work after release.",
     "future": "Phase 6.7 — Performance polish (timezone warning, LRU seasonal cache, prefetch, service worker); Phase 7.5 — Coptic Agpeya as standalone tradition entry; Phase 9.0 — Mobile app; Phase 9.1 — Cross-Tradition Search (Comparative scripture view across AR, ET, and SY canons); COE-IIC — Optional Layer 2 expansion: major Hudra fixed feasts (Denha/Epiphany, Sleeba/Exaltation, Annunciation, All Saints)",
@@ -1553,18 +1553,18 @@
       "purpose": "Canonical Universal Office Beta Release roadmap and phase/tranche planning source."
     }
   },
-  "restricted_external_corpora": {
-    "_note": "Internal governance registry for external private restricted corpus repositories consumed by or planned for PrayerAppNew. Entries do not authorize rendering; render policy is controlled by the referenced repository's permission registry.",
+  "external_corpus_integrations": {
+    "_note": "Internal governance registry for external external source-governed corpus repositories consumed by or planned for PrayerAppNew. Entries do not authorize rendering; delivery policy is controlled by the referenced repository's source-status registry.",
     "corpora": [
       {
         "corpusId": "roman_loth",
         "repo": "JWJeffery/LOTH",
         "visibility": "private",
         "description": "Roman Rite Liturgy of the Hours corpus and governance repository.",
-        "permissionStatus": "permission_application_pending",
-        "permissionContact": "DivineOffice.org / Surgeworks",
-        "permissionInquiryDate": "2026-05-23",
-        "renderPolicy": "blocked_until_authorized",
+        "source-statusStatus": "source-status_application_pending",
+        "source-statusContact": "DivineOffice.org / Surgeworks",
+        "source-statusInquiryDate": "2026-05-23",
+        "deliveryPolicy": "runtime_delivery_disabled",
         "publicFacing": false,
         "appSideFetchEnabled": false,
         "scaffoldDate": "2026-05-23",
@@ -1578,9 +1578,9 @@
           "smokeTest": "roman_loth_synthetic_all_offices_v1",
           "emitsOfficialText": false,
           "syntheticOnly": true,
-          "renderPolicy": "blocked_until_authorized"
+          "deliveryPolicy": "runtime_delivery_disabled"
         },
-        "notes": "Private restricted corpus architecture is operational. Synthetic resolver verification emits placeholders only. Private restricted official-text build-out may continue in JWJeffery/LOTH while permission is pending. PrayerAppNew must not fetch, expose, or publicly render official LOTH text until permission authorization is recorded. Office of Readings source-model correction closed in LOTH commits 9409041, be68b90, and 10d93fa: legacy daily date-block population retired from active corpus; forward model is cycle/proper/resolver with controlled source-pipeline fixtures. Office of Readings cycle/proper/resolver plan closed in LOTH commit d9fdea1: composition-map/unitRefs-only resolver architecture is now the forward OOR model after retirement of daily date-block population. Office of Readings metadata/cycle-map bundle closed in LOTH commits fa10584, f530cd5, 8ae8a49, and e7171d3: metadata composition pilot, psalmody cycle-map skeleton, psalmody binding, and biblical first-reading cycle-map skeleton are active and non-materializing. Office of Readings composition-resolver bundle closed in LOTH commits a4a9761, 503ebdc, dff67ea, and 0367a90: first-reading, first-responsory, and second-reading refs are bound into the metadata composition resolver, which now emits complete ordered 11-slot OOR composition maps. Office of Readings full metadata slot-binding bundle closed in LOTH commits e0bab4a, 7c8bbd8, f237a42, and 2ba1bb2: second-responsory, Te Deum, collect, hymn, and verse refs/rules are bound into the metadata composition resolver. All 11 pilot slots are now represented as refs/rules or rule-not-applicable. Office of Readings text-unit hydration bundle closed in LOTH commits e2b51ca, 293f33a, 91c3039, and d46268b: complete metadata pilot audit is active; opening versicle, conclusion, and Te Deum are populated as reusable root text units; hydration now injects those populated units into blocked/private resolver output where applicable. Daily date-block snapshots remain prohibited. Office of Readings hymn/verse candidate population bundle closed in LOTH commits 003478d, b448eb3, and 066d49f: eligibility gate active; candidate hymn and verse units populated behind existing refs; hydration now includes hymn and verse across pilot contexts. Candidate texts remain private/blocked and are not asserted as current official LOTH appointments. Office of Readings collect/responsory candidate population bundle closed in LOTH commits 7b96f24, 0a98778, 9b54a97, and 3ca5dbd: candidate collect, first-responsory, and second-responsory units populated behind existing refs; remaining source-gated refs report now shows only psalmody, first reading, and second reading. Candidate texts remain private/blocked and are not asserted as current official LOTH appointments. Office of Readings metadata pilot population completed in LOTH commits 96253d7, 794f624, and a4849c8: candidate first-reading, second-reading, and psalmody units populated behind existing refs; eligibility now reports 11 populated slots and 0 source-gated slots. Candidate texts remain private/blocked and are not asserted as current official LOTH appointments; no broad daily date-block snapshots are authorized."
+        "notes": "external source-governed corpus architecture is operational. Synthetic resolver verification emits placeholders only. external Roman LOTH corpus work may continue in JWJeffery/LOTH while deployable-source selection remains unresolved. PrayerAppNew must not fetch or display current LOTH text through app runtime until a deployable Roman corpus lane is selected. Office of Readings source-model correction closed in LOTH commits 9409041, be68b90, and 10d93fa: legacy daily date-block population retired from active corpus; forward model is cycle/proper/resolver with controlled source-pipeline fixtures. Office of Readings cycle/proper/resolver plan closed in LOTH commit d9fdea1: composition-map/unitRefs-only resolver architecture is now the forward OOR model after retirement of daily date-block population. Office of Readings metadata/cycle-map bundle closed in LOTH commits fa10584, f530cd5, 8ae8a49, and e7171d3: metadata composition pilot, psalmody cycle-map skeleton, psalmody binding, and biblical first-reading cycle-map skeleton are active and non-materializing. Office of Readings composition-resolver bundle closed in LOTH commits a4a9761, 503ebdc, dff67ea, and 0367a90: first-reading, first-responsory, and second-reading refs are bound into the metadata composition resolver, which now emits complete ordered 11-slot OOR composition maps. Office of Readings full metadata slot-binding bundle closed in LOTH commits e0bab4a, 7c8bbd8, f237a42, and 2ba1bb2: second-responsory, Te Deum, collect, hymn, and verse refs/rules are bound into the metadata composition resolver. All 11 pilot slots are now represented as refs/rules or rule-not-applicable. Office of Readings text-unit hydration bundle closed in LOTH commits e2b51ca, 293f33a, 91c3039, and d46268b: complete metadata pilot audit is active; opening versicle, conclusion, and Te Deum are populated as reusable root text units; hydration now injects those populated units into blocked/private resolver output where applicable. Daily date-block snapshots remain prohibited. Office of Readings hymn/verse candidate population bundle closed in LOTH commits 003478d, b448eb3, and 066d49f: eligibility gate active; candidate hymn and verse units populated behind existing refs; hydration now includes hymn and verse across pilot contexts. Candidate texts remain runtime-disabled and are not asserted as current official LOTH appointments. Office of Readings collect/responsory candidate population bundle closed in LOTH commits 7b96f24, 0a98778, 9b54a97, and 3ca5dbd: candidate collect, first-responsory, and second-responsory units populated behind existing refs; remaining source-gated refs report now shows only psalmody, first reading, and second reading. Candidate texts remain runtime-disabled and are not asserted as current official LOTH appointments. Office of Readings metadata pilot population completed in LOTH commits 96253d7, 794f624, and a4849c8: candidate first-reading, second-reading, and psalmody units populated behind existing refs; eligibility now reports 11 populated slots and 0 source-gated slots. Candidate texts remain runtime-disabled and are not asserted as current official LOTH appointments; no broad daily date-block snapshots are authorized."
       }
     ]
   },
@@ -1637,7 +1637,7 @@
       "phase": "Roman LOTH Office of Readings completion plan",
       "status": "active_controlling_plan_recorded",
       "repository": "PrayerAppNew",
-      "summary": "Recorded the controlling A-to-Z OOR private corpus completion plan: 24 remaining corpus-producing LOTH tranches, record points after 6/12/18/24, and hard rule that build means real coverage.",
+      "summary": "Recorded the controlling A-to-Z OOR source-governed corpus completion plan: 24 remaining corpus-producing LOTH tranches, record points after 6/12/18/24, and hard rule that build means real coverage.",
       "planId": "roman_loth_office_of_readings_completion_plan_2026_06_01",
       "nextRequiredLothTranche": "OOR-C01-real-context-coverage-spine",
       "remainingCorpusProducingLothTranches": 24,
@@ -1653,31 +1653,31 @@
       "status": "closed",
       "repository": "JWJeffery/LOTH",
       "corpus_commit_sequence": [
-        "9a5d654 Materialize Office of Readings private full Grail cycle expansion fixture contexts",
-        "4d02d4d Export Office of Readings private full Grail cycle expansion fixture texts",
-        "58f8360 Compile Office of Readings private full Grail cycle expansion fixture context book",
-        "b74b4e5 Index Office of Readings private full Grail cycle expansion fixture context slots",
-        "912746b Export Office of Readings private full Grail cycle expansion fixture context slot texts",
-        "715ba19 Compile Office of Readings private full Grail cycle expansion fixture context slot text export book"
+        "9a5d654 Materialize Office of Readings source-governed full Grail cycle expansion fixture contexts",
+        "4d02d4d Export Office of Readings source-governed full Grail cycle expansion fixture texts",
+        "58f8360 Compile Office of Readings source-governed full Grail cycle expansion fixture context book",
+        "b74b4e5 Index Office of Readings source-governed full Grail cycle expansion fixture context slots",
+        "912746b Export Office of Readings source-governed full Grail cycle expansion fixture context slot texts",
+        "715ba19 Compile Office of Readings source-governed full Grail cycle expansion fixture context slot text export book"
       ],
       "summary": "Recorded the six-tranche Office of Readings full-Grail cycle-expansion fixture bundle after PrayerAppNew 0f2e0e3. The bundle materialized the three refs-only cycle-expansion fixture contexts as private full-Grail text-bearing contexts, exported them, compiled a fixture-context book, indexed fixture-context slot text, exported every indexed fixture-context slot, and compiled those slot exports into one private slot-level corpus book.",
       "artifacts": [
         "registry/roman-loth-office-of-readings-private-full-grail-cycle-expansion-fixture-contexts.json",
-        "resources/office-of-readings/private-corpus/full-grail-cycle-expansion-fixture-contexts/",
+        "resources/office-of-readings/source-governed-corpus/full-grail-cycle-expansion-fixture-contexts/",
         "scripts/audit-office-of-readings-private-full-grail-cycle-expansion-fixture-contexts.mjs",
         "registry/roman-loth-office-of-readings-private-full-grail-cycle-expansion-fixture-context-text-exports.json",
-        "resources/office-of-readings/private-corpus/full-grail-cycle-expansion-fixture-context-texts/",
+        "resources/office-of-readings/source-governed-corpus/full-grail-cycle-expansion-fixture-context-texts/",
         "scripts/audit-office-of-readings-private-full-grail-cycle-expansion-fixture-context-text-exports.mjs",
         "registry/roman-loth-office-of-readings-private-full-grail-cycle-expansion-fixture-context-book.json",
-        "resources/office-of-readings/private-corpus/full-grail-cycle-expansion-fixture-context-book/private-office-of-readings-full-grail-cycle-expansion-fixture-contexts.txt",
+        "resources/office-of-readings/source-governed-corpus/full-grail-cycle-expansion-fixture-context-book/source-governed-office-of-readings-full-grail-cycle-expansion-fixture-contexts.txt",
         "scripts/audit-office-of-readings-private-full-grail-cycle-expansion-fixture-context-book.mjs",
         "registry/roman-loth-office-of-readings-private-full-grail-cycle-expansion-fixture-context-slot-text-index.json",
         "scripts/audit-office-of-readings-private-full-grail-cycle-expansion-fixture-context-slot-text-index.mjs",
         "registry/roman-loth-office-of-readings-private-full-grail-cycle-expansion-fixture-context-slot-text-exports.json",
-        "resources/office-of-readings/private-corpus/full-grail-cycle-expansion-fixture-context-slot-texts/",
+        "resources/office-of-readings/source-governed-corpus/full-grail-cycle-expansion-fixture-context-slot-texts/",
         "scripts/audit-office-of-readings-private-full-grail-cycle-expansion-fixture-context-slot-text-exports.mjs",
         "registry/roman-loth-office-of-readings-private-full-grail-cycle-expansion-fixture-context-slot-text-export-book.json",
-        "resources/office-of-readings/private-corpus/full-grail-cycle-expansion-fixture-context-slot-text-export-book/private-office-of-readings-full-grail-cycle-expansion-fixture-slot-text-exports.txt",
+        "resources/office-of-readings/source-governed-corpus/full-grail-cycle-expansion-fixture-context-slot-text-export-book/source-governed-office-of-readings-full-grail-cycle-expansion-fixture-slot-text-exports.txt",
         "scripts/audit-office-of-readings-private-full-grail-cycle-expansion-fixture-context-slot-text-export-book.mjs",
         "package.json"
       ],
@@ -1708,31 +1708,31 @@
       "status": "closed",
       "repository": "JWJeffery/LOTH",
       "corpus_commit_sequence": [
-        "38a694e Integrate Office of Readings private full Grail psalmody into pilot contexts",
-        "6f2c56d Export Office of Readings private full Grail pilot context texts",
-        "7effb3e Compile Office of Readings private full Grail pilot context book",
-        "f509a76 Index Office of Readings private full Grail pilot context slots",
-        "6c9fa31 Export Office of Readings private full Grail pilot context slot texts",
-        "f03ee32 Compile Office of Readings private full Grail slot text export book"
+        "38a694e Integrate Office of Readings source-governed full Grail psalmody into pilot contexts",
+        "6f2c56d Export Office of Readings source-governed full Grail pilot context texts",
+        "7effb3e Compile Office of Readings source-governed full Grail pilot context book",
+        "f509a76 Index Office of Readings source-governed full Grail pilot context slots",
+        "6c9fa31 Export Office of Readings source-governed full Grail pilot context slot texts",
+        "f03ee32 Compile Office of Readings source-governed full Grail slot text export book"
       ],
-      "summary": "Recorded the six-tranche Office of Readings full-Grail pilot context bundle after PrayerAppNew 007a3b2. The bundle integrated the full-Grail psalmody layer into the three private pilot contexts, exported those contexts, compiled a private full-Grail pilot context book, indexed context-slot text, exported every indexed text-bearing slot, and compiled those slot exports into one private slot-level corpus book.",
+      "summary": "Recorded the six-tranche Office of Readings full-Grail pilot context bundle after PrayerAppNew 007a3b2. The bundle integrated the full-Grail psalmody layer into the three source-governed pilot contexts, exported those contexts, compiled a private full-Grail pilot context book, indexed context-slot text, exported every indexed text-bearing slot, and compiled those slot exports into one private slot-level corpus book.",
       "artifacts": [
         "registry/roman-loth-office-of-readings-private-pilot-context-full-grail-psalmody-integration.json",
-        "resources/office-of-readings/private-corpus/full-grail-pilot-contexts/",
+        "resources/office-of-readings/source-governed-corpus/full-grail-pilot-contexts/",
         "scripts/audit-office-of-readings-private-pilot-context-full-grail-psalmody-integration.mjs",
         "registry/roman-loth-office-of-readings-private-full-grail-pilot-context-text-exports.json",
-        "resources/office-of-readings/private-corpus/full-grail-pilot-context-texts/",
+        "resources/office-of-readings/source-governed-corpus/full-grail-pilot-context-texts/",
         "scripts/audit-office-of-readings-private-full-grail-pilot-context-text-exports.mjs",
         "registry/roman-loth-office-of-readings-private-full-grail-pilot-context-book.json",
-        "resources/office-of-readings/private-corpus/full-grail-pilot-context-book/private-office-of-readings-full-grail-pilot-contexts.txt",
+        "resources/office-of-readings/source-governed-corpus/full-grail-pilot-context-book/source-governed-office-of-readings-full-grail-pilot-contexts.txt",
         "scripts/audit-office-of-readings-private-full-grail-pilot-context-book.mjs",
         "registry/roman-loth-office-of-readings-private-full-grail-pilot-context-slot-text-index.json",
         "scripts/audit-office-of-readings-private-full-grail-pilot-context-slot-text-index.mjs",
         "registry/roman-loth-office-of-readings-private-full-grail-pilot-context-slot-text-exports.json",
-        "resources/office-of-readings/private-corpus/full-grail-pilot-context-slot-texts/",
+        "resources/office-of-readings/source-governed-corpus/full-grail-pilot-context-slot-texts/",
         "scripts/audit-office-of-readings-private-full-grail-pilot-context-slot-text-exports.mjs",
         "registry/roman-loth-office-of-readings-private-full-grail-pilot-context-slot-text-export-book.json",
-        "resources/office-of-readings/private-corpus/full-grail-pilot-context-slot-text-export-book/private-office-of-readings-full-grail-slot-text-exports.txt",
+        "resources/office-of-readings/source-governed-corpus/full-grail-pilot-context-slot-text-export-book/source-governed-office-of-readings-full-grail-slot-text-exports.txt",
         "scripts/audit-office-of-readings-private-full-grail-pilot-context-slot-text-export-book.mjs",
         "package.json"
       ],
@@ -1762,23 +1762,23 @@
       "status": "closed",
       "repository": "JWJeffery/LOTH",
       "corpus_commit_sequence": [
-        "147d2f3 Populate Office of Readings private full Grail psalmody corpus",
-        "6243e28 Compile Office of Readings private full Grail psalmody book",
-        "ca1ce56 Index Office of Readings private full Grail psalmody lookup",
-        "e6bfb6f Index Office of Readings private full Grail psalmody lines",
-        "d41d641 Map Office of Readings private Grail psalmody appointments",
-        "ba47630 Hydrate Office of Readings private Grail appointment psalmody sections"
+        "147d2f3 Populate Office of Readings source-governed full Grail psalmody corpus",
+        "6243e28 Compile Office of Readings source-governed full Grail psalmody book",
+        "ca1ce56 Index Office of Readings source-governed full Grail psalmody lookup",
+        "e6bfb6f Index Office of Readings source-governed full Grail psalmody lines",
+        "d41d641 Map Office of Readings source-governed Grail psalmody appointments",
+        "ba47630 Hydrate Office of Readings source-governed Grail appointment psalmody sections"
       ],
       "repair_commit_sequence": [
-        "bed7f3a Fix Office of Readings private Grail appointment psalmody audit"
+        "bed7f3a Fix Office of Readings source-governed Grail appointment psalmody audit"
       ],
-      "summary": "Recorded the six-tranche Office of Readings full Grail psalmody corpus bundle after PrayerAppNew be00809. The bundle materialized the full local Grail 1963 psalter as 152 reusable private OOR psalmody text units, compiled a full-Grail private psalmody book, created resolver lookup and line-level indexes, mapped existing psalmody appointment fixtures into the full-Grail corpus, and hydrated those appointment mappings into text-bearing private psalmody sections. The follow-up repair commit bed7f3a fixed the appointment-section audit without counting as a new corpus tranche.",
+      "summary": "Recorded the six-tranche Office of Readings full Grail psalmody corpus bundle after PrayerAppNew be00809. The bundle materialized the full local Grail 1963 psalter as 152 reusable source-governed OOR psalmody text units, compiled a full-Grail private psalmody book, created resolver lookup and line-level indexes, mapped existing psalmody appointment fixtures into the full-Grail corpus, and hydrated those appointment mappings into text-bearing source-governed psalmody sections. The follow-up repair commit bed7f3a fixed the appointment-section audit without counting as a new corpus tranche.",
       "artifacts": [
         "registry/roman-loth-office-of-readings-private-full-grail-psalmody-corpus.json",
         "texts/en-us/office-of-readings/psalmody/grail-1963/",
         "scripts/audit-office-of-readings-private-full-grail-psalmody-corpus.mjs",
         "registry/roman-loth-office-of-readings-private-full-grail-psalmody-book.json",
-        "resources/office-of-readings/private-corpus/full-grail-psalmody-book/private-office-of-readings-full-grail-psalmody-corpus.txt",
+        "resources/office-of-readings/source-governed-corpus/full-grail-psalmody-book/source-governed-office-of-readings-full-grail-psalmody-corpus.txt",
         "scripts/audit-office-of-readings-private-full-grail-psalmody-book.mjs",
         "registry/roman-loth-office-of-readings-private-full-grail-psalmody-lookup-index.json",
         "scripts/audit-office-of-readings-private-full-grail-psalmody-lookup-index.mjs",
@@ -1786,7 +1786,7 @@
         "scripts/audit-office-of-readings-private-full-grail-psalmody-line-index.mjs",
         "registry/roman-loth-office-of-readings-private-grail-psalmody-appointment-map.json",
         "scripts/audit-office-of-readings-private-grail-psalmody-appointment-map.mjs",
-        "resources/office-of-readings/private-corpus/grail-appointment-psalmody-sections.json",
+        "resources/office-of-readings/source-governed-corpus/grail-appointment-psalmody-sections.json",
         "scripts/audit-office-of-readings-private-grail-appointment-psalmody-sections.mjs",
         "package.json"
       ],
@@ -1810,30 +1810,30 @@
         "broad_daily_date_blocks_written": false,
         "audit_repair_attached_to_sixth_tranche": "bed7f3a"
       },
-      "next_work": "Continue corpus-producing LOTH tranches: expand real Office of Readings cycle/proper contexts, attach more OOR appointments to the full private Grail psalmody corpus, and expand first/second reading and responsory private corpus coverage where source data exists."
+      "next_work": "Continue corpus-producing LOTH tranches: expand real Office of Readings cycle/proper contexts, attach more OOR appointments to the full source-governed Grail psalmody corpus, and expand first/second reading and responsory source-governed corpus coverage where source data exists."
     },
     {
       "date": "2026-06-01",
-      "phase": "Roman LOTH Office of Readings private psalmody corpus bundle",
+      "phase": "Roman LOTH Office of Readings source-governed psalmody corpus bundle",
       "status": "closed",
       "repository": "JWJeffery/LOTH",
       "commit_sequence": [
-        "871c966 Export Office of Readings private pilot context texts",
-        "8289c4b Compile Office of Readings private pilot corpus book",
+        "871c966 Export Office of Readings source-governed pilot context texts",
+        "8289c4b Compile Office of Readings source-governed pilot corpus book",
         "21fc9e0 Index Office of Readings private pilot slot texts",
         "7131d35 Populate Office of Readings private psalmody controlled fixture units",
         "dee4836 Hydrate Office of Readings private controlled fixture psalmody section",
-        "38bddeb Compile Office of Readings private psalmody corpus book"
+        "38bddeb Compile Office of Readings source-governed psalmody corpus book"
       ],
-      "summary": "Recorded the six-tranche Office of Readings private corpus bundle after PrayerAppNew 365341b. The bundle exported the assembled private pilot contexts as text, compiled a private pilot corpus book, indexed slot-level private texts, populated three controlled-fixture private psalmody text units, hydrated those units into a private psalmody section, and compiled a private psalmody corpus book.",
+      "summary": "Recorded the six-tranche Office of Readings source-governed corpus bundle after PrayerAppNew 365341b. The bundle exported the assembled source-governed pilot contexts as text, compiled a source-governed pilot corpus book, indexed slot-level private texts, populated three controlled-fixture private psalmody text units, hydrated those units into a source-governed psalmody section, and compiled a source-governed psalmody corpus book.",
       "artifacts": [
         "registry/roman-loth-office-of-readings-private-pilot-context-text-exports.json",
-        "resources/office-of-readings/private-corpus/pilot-context-texts/ordinary-weekday-private-office-of-readings.txt",
-        "resources/office-of-readings/private-corpus/pilot-context-texts/christmas-dec-25-private-office-of-readings.txt",
-        "resources/office-of-readings/private-corpus/pilot-context-texts/lent-weekday-private-office-of-readings.txt",
+        "resources/office-of-readings/source-governed-corpus/pilot-context-texts/ordinary-weekday-source-governed-office-of-readings.txt",
+        "resources/office-of-readings/source-governed-corpus/pilot-context-texts/christmas-dec-25-source-governed-office-of-readings.txt",
+        "resources/office-of-readings/source-governed-corpus/pilot-context-texts/lent-weekday-source-governed-office-of-readings.txt",
         "scripts/audit-office-of-readings-private-pilot-context-text-exports.mjs",
         "registry/roman-loth-office-of-readings-private-pilot-corpus-book.json",
-        "resources/office-of-readings/private-corpus/pilot-context-book/private-office-of-readings-pilot-corpus.txt",
+        "resources/office-of-readings/source-governed-corpus/pilot-context-book/source-governed-office-of-readings-pilot-corpus.txt",
         "scripts/audit-office-of-readings-private-pilot-corpus-book.mjs",
         "registry/roman-loth-office-of-readings-private-pilot-slot-text-index.json",
         "scripts/audit-office-of-readings-private-pilot-slot-text-index.mjs",
@@ -1842,10 +1842,10 @@
         "texts/en-us/office-of-readings/psalmody/controlled-fixture-mixed_parenthetical_single_and_decimal_numbering-sequence-2.json",
         "texts/en-us/office-of-readings/psalmody/controlled-fixture-mixed_parenthetical_single_and_decimal_numbering-sequence-3.json",
         "scripts/audit-office-of-readings-private-psalmody-controlled-fixture-corpus.mjs",
-        "resources/office-of-readings/private-corpus/controlled-fixture-psalmody-section.json",
+        "resources/office-of-readings/source-governed-corpus/controlled-fixture-psalmody-section.json",
         "scripts/audit-office-of-readings-private-controlled-fixture-psalmody-section.mjs",
         "registry/roman-loth-office-of-readings-private-psalmody-corpus-book.json",
-        "resources/office-of-readings/private-corpus/psalmody-book/private-office-of-readings-psalmody-corpus.txt",
+        "resources/office-of-readings/source-governed-corpus/psalmody-book/source-governed-office-of-readings-psalmody-corpus.txt",
         "scripts/audit-office-of-readings-private-psalmody-corpus-book.mjs",
         "package.json"
       ],
@@ -1868,20 +1868,20 @@
         "actual_private_text_payloads_present": true,
         "broad_daily_date_blocks_written": false
       },
-      "next_work": "Continue corpus-producing LOTH tranches: expand real OOR context coverage beyond the three pilot contexts, extend psalmody appointment/body mappings, expand first/second reading and responsory refs, and materialize private text units where source data exists."
+      "next_work": "Continue corpus-producing LOTH tranches: expand real OOR context coverage beyond the three pilot contexts, extend psalmody appointment/body mappings, expand first/second reading and responsory refs, and materialize source-governed text units where source data exists."
     },
     {
       "date": "2026-06-01",
-      "phase": "Roman LOTH Office of Readings private corpus assembly bundle",
+      "phase": "Roman LOTH Office of Readings source-governed corpus assembly bundle",
       "status": "closed",
       "repository": "JWJeffery/LOTH",
       "commit_sequence": [
         "b48c1d4 Record Office of Readings new context intake contract",
-        "5c1682f Populate Office of Readings private psalmody corpus units",
-        "af11acf Hydrate Office of Readings private psalmody section",
-        "bc0a69b Assemble Office of Readings private pilot context corpus"
+        "5c1682f Populate Office of Readings source-governed psalmody corpus units",
+        "af11acf Hydrate Office of Readings source-governed psalmody section",
+        "bc0a69b Assemble Office of Readings source-governed pilot context corpus"
       ],
-      "summary": "Recorded the first private corpus assembly bundle after the non-materializing expansion plan. The bundle added a new-context intake contract as a support artifact, then produced actual corpus material: three private Grail psalmody text units, a hydrated private psalmody section, and three assembled private pilot-context corpus payloads covering 33 OOR slots.",
+      "summary": "Recorded the first source-governed corpus assembly bundle after the non-materializing expansion plan. The bundle added a new-context intake contract as a support artifact, then produced actual corpus material: three source-governed Grail psalmody text units, a hydrated source-governed psalmody section, and three assembled private pilot-context corpus payloads covering 33 OOR slots.",
       "artifacts": [
         "registry/roman-loth-office-of-readings-new-context-intake-contract.json",
         "scripts/audit-office-of-readings-new-context-intake-contract.mjs",
@@ -1890,12 +1890,12 @@
         "texts/en-us/office-of-readings/psalmody/current-universalis-sequence-2.json",
         "texts/en-us/office-of-readings/psalmody/current-universalis-sequence-3.json",
         "scripts/audit-office-of-readings-private-psalmody-corpus.mjs",
-        "resources/office-of-readings/private-corpus/current-universalis-psalmody-section.json",
+        "resources/office-of-readings/source-governed-corpus/current-universalis-psalmody-section.json",
         "scripts/audit-office-of-readings-private-psalmody-section.mjs",
         "registry/roman-loth-office-of-readings-private-pilot-context-corpus.json",
-        "resources/office-of-readings/private-corpus/pilot-contexts/ordinary-weekday.json",
-        "resources/office-of-readings/private-corpus/pilot-contexts/christmas-dec-25.json",
-        "resources/office-of-readings/private-corpus/pilot-contexts/lent-weekday.json",
+        "resources/office-of-readings/source-governed-corpus/pilot-contexts/ordinary-weekday.json",
+        "resources/office-of-readings/source-governed-corpus/pilot-contexts/christmas-dec-25.json",
+        "resources/office-of-readings/source-governed-corpus/pilot-contexts/lent-weekday.json",
         "scripts/audit-office-of-readings-private-pilot-context-corpus.mjs",
         "package.json"
       ],
@@ -1914,7 +1914,7 @@
         "actual_private_text_payloads_present": true,
         "broad_daily_date_blocks_written": false
       },
-      "next_work": "Continue corpus-producing LOTH tranches: add more real Office of Readings contexts, extend psalmody appointment/body mappings, expand first/second reading and responsory refs, and materialize private text units where source data exists."
+      "next_work": "Continue corpus-producing LOTH tranches: add more real Office of Readings contexts, extend psalmody appointment/body mappings, expand first/second reading and responsory refs, and materialize source-governed text units where source data exists."
     },
     {
       "date": "2026-05-30",
@@ -1947,26 +1947,26 @@
         "npm run audit:office-of-readings-cycle-expansion-boundaries",
         "npm run audit:office-of-readings-non-materializing-cycle-expansion-plan"
       ],
-      "governance_result": "The OOR metadata pilot remains private and blocked. Expansion is now governed as metadata-only: cycle/proper maps, appointment keys, source locator refs, and non-materializing resolver fixtures may be planned, but Office text-unit writes, broad daily snapshots, resolved daily office payloads, public rendering payloads, automatic Universalis text population, DivineOffice forward completion, and responsory reconstruction remain prohibited.",
+      "governance_result": "The OOR metadata pilot remains private and blocked. Expansion is now governed as metadata-only: cycle/proper maps, appointment keys, source locator refs, and non-materializing resolver fixtures may be planned, but Office text-unit writes, broad daily snapshots, resolved daily office payloads, runtime delivery payloads, automatic Universalis text population, DivineOffice forward completion, and responsory reconstruction remain prohibited.",
       "source_model_result": {
         "universalis": "appointment_structure_discovery_not_automatic_text_population",
-        "grail_1963": "local_psalm_body_corpus_blocked_until_authorized",
+        "grail_1963": "local_psalm_body_corpus_runtime_delivery_disabled",
         "divineoffice": "legacy_comparison_regression_not_forward_completion_path",
         "non_materializing_expansion": "metadata_only_refs_and_fixtures_allowed_text_date_block_rendering_payloads_blocked"
       }
     },
     {
       "date": "2026-05-30",
-      "phase": "Roman LOTH Office of Readings source-verification and rights-posture four-tranche bundle",
+      "phase": "Roman LOTH Office of Readings source-verification and source-posture four-tranche bundle",
       "status": "closed",
       "repository": "JWJeffery/LOTH",
       "commit_sequence": [
         "497033d Add Office of Readings source verification matrix",
         "493f959 Verify Office of Readings psalmody appointment matrix",
         "5e72050 Verify Office of Readings reading source refs",
-        "925e7f6 Record Office of Readings source class rights posture"
+        "925e7f6 Record Office of Readings source class source posture"
       ],
-      "summary": "Closed the four-tranche Office of Readings source-verification and rights-posture bundle. The bundle added a source-verification matrix for all 11 slots, verified the psalmody appointment-to-local-Grail unit-pilot mappings, verified first-reading and second-reading source refs internally across the metadata pilot and candidate units, and recorded source-class rights/permission posture while preserving blocked rendering and private-governance-only status.",
+      "summary": "Closed the four-tranche Office of Readings source-verification and source-posture bundle. The bundle added a source-verification matrix for all 11 slots, verified the psalmody appointment-to-local-Grail unit-pilot mappings, verified first-reading and second-reading source refs internally across the metadata pilot and candidate units, and recorded source-class rights/source-status posture while preserving blocked rendering and private-governance-only status.",
       "artifacts": [
         "registry/roman-loth-office-of-readings-source-verification-matrix.json",
         "scripts/audit-office-of-readings-source-verification-matrix.mjs",
@@ -1974,24 +1974,24 @@
         "scripts/audit-office-of-readings-psalmody-appointment-verification.mjs",
         "registry/roman-loth-office-of-readings-reading-source-ref-verification.json",
         "scripts/audit-office-of-readings-reading-source-ref-verification.mjs",
-        "registry/roman-loth-office-of-readings-source-class-rights-permission-posture.json",
-        "scripts/audit-office-of-readings-source-class-rights-permission-posture.mjs",
+        "registry/roman-loth-office-of-readings-source-class-rights-source-status-posture.json",
+        "scripts/audit-office-of-readings-source-class-rights-source-status-posture.mjs",
         "package.json"
       ],
       "verification": [
         "npm run audit:office-of-readings-source-verification-matrix",
         "npm run audit:office-of-readings-psalmody-appointment-verification",
         "npm run audit:office-of-readings-reading-source-ref-verification",
-        "npm run audit:office-of-readings-source-class-rights-permission-posture",
+        "npm run audit:office-of-readings-source-class-rights-source-status-posture",
         "npm run audit:office-of-readings-source-alignment-status",
         "node scripts/audit-office-of-readings-complete-metadata-pilot.mjs",
         "node scripts/audit-office-of-readings-text-population-eligibility.mjs",
         "node scripts/audit-office-of-readings-populated-text-unit-hydration.mjs"
       ],
-      "governance_result": "The OOR metadata pilot remains private and blocked. Source verification is now classified by slot/source class, psalmody unit-pilot mappings are internally verified against local Grail refs, reading source refs are internally coherent but still not official-current assertions, and all 11 slots remain not cleared for public rendering. No Office text-unit public rendering, broad daily snapshots, or official-current LOTH/NAB/ICEL/Grail assertions are authorized.",
+      "governance_result": "The OOR metadata pilot remains private and blocked. Source verification is now classified by slot/source class, psalmody unit-pilot mappings are internally verified against local Grail refs, reading source refs are internally coherent but still not official-current assertions, and all 11 slots remain not cleared for runtime delivery. No Office text-unit runtime delivery, broad daily snapshots, or official-current LOTH/NAB/ICEL/Grail assertions are authorized.",
       "source_model_result": {
         "universalis": "appointment_structure_discovery_not_automatic_text_population",
-        "grail_1963": "local_psalm_body_corpus_blocked_until_authorized",
+        "grail_1963": "local_psalm_body_corpus_runtime_delivery_disabled",
         "divineoffice": "legacy_comparison_regression_not_forward_completion_path",
         "non_psalm_material": "source_class_separated_not_merged_into_grail_psalm_body_pipeline",
         "rights_posture": "all_11_slots_private_governance_cleared_public_rendering_blocked"
@@ -2032,10 +2032,10 @@
         "node scripts/audit-office-of-readings-populated-text-unit-hydration.mjs",
         "node scripts/audit-office-of-readings-remaining-source-gated-refs.mjs"
       ],
-      "governance_result": "The OOR metadata pilot remains private and blocked. Source alignment is now explicitly bound to the existing source model: Universalis for appointment/structure discovery, local Grail 1963 psalter for psalm bodies when authorized, DivineOffice only for comparison/regression, and separate verification lanes for readings, responsories, hymns, collects, verses, and antiphons. No Office text-unit public rendering, broad daily snapshots, or official-current LOTH assertions are authorized.",
+      "governance_result": "The OOR metadata pilot remains private and blocked. Source alignment is now explicitly bound to the existing source model: Universalis for appointment/structure discovery, local Grail 1963 psalter for psalm bodies when authorized, DivineOffice only for comparison/regression, and separate verification lanes for readings, responsories, hymns, collects, verses, and antiphons. No Office text-unit runtime delivery, broad daily snapshots, or official-current LOTH assertions are authorized.",
       "source_model_result": {
         "universalis": "appointment_structure_discovery_not_automatic_text_population",
-        "grail_1963": "local_psalm_body_corpus_blocked_until_authorized",
+        "grail_1963": "local_psalm_body_corpus_runtime_delivery_disabled",
         "divineoffice": "legacy_comparison_regression_not_forward_completion_path",
         "non_psalm_material": "source_class_separated_not_merged_into_grail_psalm_body_pipeline"
       }
@@ -2082,7 +2082,7 @@
         "PASS office-of-readings-text-population-eligibility (11 populated, 0 source-gated)",
         "PASS office-of-readings-remaining-source-gated-refs (0 slots across 3 contexts)"
       ],
-      "governance_result": "OOR metadata pilot population is complete under private/blocked candidate reusable-unit governance. This does not authorize public rendering, current official text assertions, full cycle completion, or broad daily date-block snapshots."
+      "governance_result": "OOR metadata pilot population is complete under runtime-disabled candidate reusable-unit governance. This does not authorize runtime delivery, current official text assertions, full cycle completion, or broad daily date-block snapshots."
     },
     {
       "date": "2026-05-30",
@@ -2126,7 +2126,7 @@
         "PASS office-of-readings-text-population-eligibility (8 populated, 3 source-gated)",
         "PASS office-of-readings-remaining-source-gated-refs (3 slots across 3 contexts)"
       ],
-      "governance_result": "OOR collect and responsory population is source-lane governed and private/blocked. Candidate texts are reusable-unit hydration candidates, not current official LOTH appointment assertions. Remaining source-gated slots are psalmody, first reading, and second reading."
+      "governance_result": "OOR collect and responsory population is source-lane governed and runtime-disabled. Candidate texts are reusable-unit hydration candidates, not current official LOTH appointment assertions. Remaining source-gated slots are psalmody, first reading, and second reading."
     },
     {
       "date": "2026-05-30",
@@ -2161,7 +2161,7 @@
         "PASS office-of-readings-populated-text-unit-hydration (9 populated text units; verse hydrated across pilot contexts)",
         "PASS office-of-readings-text-population-eligibility (5 populated, 6 source-gated)"
       ],
-      "governance_result": "OOR hymn and verse text population is now source-lane governed and private/blocked. Candidate texts are reusable-unit hydration candidates, not current official LOTH appointment assertions."
+      "governance_result": "OOR hymn and verse text population is now source-lane governed and runtime-disabled. Candidate texts are reusable-unit hydration candidates, not current official LOTH appointment assertions."
     }
   ],
   "roadmap_source": {
@@ -2183,7 +2183,7 @@
         "Retained the old Grail-only source witness temporarily at resources/psalter/grail-1963/psalms.json.",
         "Created registry/roman-loth-office-of-readings-retired-generated-artifacts.json as the retirement ledger.",
         "Removed generated Office of Readings private full-Grail books, slot-text exports, context text exports, and retired generated-artifact audit scripts.",
-        "Normalized Office of Readings text-unit metadata required by validation: language en, permissionStatus permission_application_pending, rubrics arrays, and roman_loth.en_us textUnitId namespace.",
+        "Normalized Office of Readings text-unit metadata required by validation: language en, source-statusStatus source-status_application_pending, rubrics arrays, and roman_loth.en_us textUnitId namespace.",
         "Normalized retained registry/resource/script references from roman_loth.office_of_readings to roman_loth.en_us.office_of_readings.",
         "Preserved retained audit chain: private full-Grail psalmody corpus, line index, appointment map, appointment psalmody sections, ordinary psalmody source-table intake, real context coverage spine, and real context coverage gap inventory.",
         "Closed with LOTH validation and retained audits passing before commit and push."
@@ -2555,9 +2555,9 @@
         "ordinaryPsalmodyAppointmentsEntered": 10,
         "ordinaryPsalmodyAppointmentsMissing": 18,
         "sourceTableStatus": "C03 incomplete",
-        "privateGrailAppointmentMapState": "Current private Grail appointment map has no ordinary keys from the source table; existing audit still passes for the older 6 appointment mappings."
+        "privateGrailAppointmentMapState": "Current source-governed Grail appointment map has no ordinary keys from the source table; existing audit still passes for the older 6 appointment mappings."
       },
-      "returnPoint": "We are paused at C03. Next we map the 10 source-backed ordinary psalmody appointments into the private Grail appointment map, and separately decide how to acquire the 18 missing ordinary appointments without fabrication.",
+      "returnPoint": "We are paused at C03. Next we map the 10 source-backed ordinary psalmody appointments into the source-governed Grail appointment map, and separately decide how to acquire the 18 missing ordinary appointments without fabrication.",
       "notLostThreadQuestion": "We are paused at C03; how do we map the 10 source-backed appointments and source the 18 missing appointments?"
     }
   },
