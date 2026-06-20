@@ -51,7 +51,45 @@ function requireSection(sections, key) {
   return value;
 }
 
+const MATINS_READING_SECTIONS = [
+  ['Lectio4', 'Cap. 2 et 3'],
+  ['Lectio5', 'Cap. 4'],
+  ['Lectio6', 'Cap. 18'],
+  ['Lectio7', '1 Cor 15:12-22'],
+  ['Lectio8', '1 Cor 15:35-44'],
+  ['Lectio9', '1 Cor 15:51-58']
+];
+
+function unitSource(sourcePin, section) {
+  return {
+    repo: sourcePin.repo,
+    commit: sourcePin.commit,
+    path: SOURCE_REL,
+    section
+  };
+}
+
+function buildReadingUnit(sourcePin, sections, section, citation) {
+  const slug = section.toLowerCase();
+  return [
+    `rb1960.la.sancti.11-02.${slug}`,
+    {
+      key: `rb1960.la.sancti.11-02.${slug}`,
+      kind: 'reading',
+      citation,
+      text: requireSection(sections, section),
+      source: unitSource(sourcePin, section)
+    }
+  ];
+}
+
 function buildUnits({ sourcePin, sections }) {
+  const readingUnits = Object.fromEntries(
+    MATINS_READING_SECTIONS.map(([section, citation]) =>
+      buildReadingUnit(sourcePin, sections, section, citation)
+    )
+  );
+
   return {
     schema_version: 'roman_breviary_1960_1962_source_units_v0_dev_slice',
     source_pin: sourcePin,
@@ -60,29 +98,13 @@ function buildUnits({ sourcePin, sections }) {
     edition_or_recension: 'rubrics_1960_1962',
     language: 'la',
     units: {
-      'rb1960.la.sancti.11-02.lectio7': {
-        key: 'rb1960.la.sancti.11-02.lectio7',
-        kind: 'reading',
-        citation: '1 Cor 15:12-22',
-        text: requireSection(sections, 'Lectio7'),
-        source: {
-          repo: sourcePin.repo,
-          commit: sourcePin.commit,
-          path: SOURCE_REL,
-          section: 'Lectio7'
-        }
-      },
+      ...readingUnits,
       'rb1960.la.sancti.11-02.conclusio': {
         key: 'rb1960.la.sancti.11-02.conclusio',
         kind: 'dismissal',
         citation: 'Conclusio specialis',
         text: requireSection(sections, 'Conclusio'),
-        source: {
-          repo: sourcePin.repo,
-          commit: sourcePin.commit,
-          path: SOURCE_REL,
-          section: 'Conclusio'
-        }
+        source: unitSource(sourcePin, 'Conclusio')
       }
     }
   };
@@ -112,8 +134,33 @@ function buildManifest({ sourcePin }) {
             blocks: [
               {
                 role: 'reading',
+                label: 'Lectio IV',
+                unit_refs: ['rb1960.la.sancti.11-02.lectio4']
+              },
+              {
+                role: 'reading',
+                label: 'Lectio V',
+                unit_refs: ['rb1960.la.sancti.11-02.lectio5']
+              },
+              {
+                role: 'reading',
+                label: 'Lectio VI',
+                unit_refs: ['rb1960.la.sancti.11-02.lectio6']
+              },
+              {
+                role: 'reading',
                 label: 'Lectio VII',
                 unit_refs: ['rb1960.la.sancti.11-02.lectio7']
+              },
+              {
+                role: 'reading',
+                label: 'Lectio VIII',
+                unit_refs: ['rb1960.la.sancti.11-02.lectio8']
+              },
+              {
+                role: 'reading',
+                label: 'Lectio IX',
+                unit_refs: ['rb1960.la.sancti.11-02.lectio9']
               },
               {
                 role: 'dismissal',

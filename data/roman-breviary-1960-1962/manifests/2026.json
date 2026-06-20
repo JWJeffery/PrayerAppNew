@@ -31,9 +31,44 @@
           "blocks": [
             {
               "role": "reading",
+              "label": "Lectio IV",
+              "unit_refs": [
+                "rb1960.la.sancti.11-02.lectio4"
+              ]
+            },
+            {
+              "role": "reading",
+              "label": "Lectio V",
+              "unit_refs": [
+                "rb1960.la.sancti.11-02.lectio5"
+              ]
+            },
+            {
+              "role": "reading",
+              "label": "Lectio VI",
+              "unit_refs": [
+                "rb1960.la.sancti.11-02.lectio6"
+              ]
+            },
+            {
+              "role": "reading",
               "label": "Lectio VII",
               "unit_refs": [
                 "rb1960.la.sancti.11-02.lectio7"
+              ]
+            },
+            {
+              "role": "reading",
+              "label": "Lectio VIII",
+              "unit_refs": [
+                "rb1960.la.sancti.11-02.lectio8"
+              ]
+            },
+            {
+              "role": "reading",
+              "label": "Lectio IX",
+              "unit_refs": [
+                "rb1960.la.sancti.11-02.lectio9"
               ]
             },
             {
