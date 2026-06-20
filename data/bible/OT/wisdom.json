@@ -9,211 +9,901 @@
     {
       "num": 1,
       "verses": [
-        { "num": 1, "text": "Love righteousness, you rulers of the earth, think of the Lord in goodness and seek him with sincerity of heart;" },
-        { "num": 2, "text": "because he is found by those who do not put him to the test, and manifests himself to those who do not distrust him." },
-        { "num": 3, "text": "For perverse thoughts separate people from God, and when his power is tested, it exposes the foolish;" },
-        { "num": 4, "text": "because wisdom will not enter a deceitful soul, or dwell in a body enslaved to sin." },
-        { "num": 5, "text": "For a holy and disciplined spirit will flee from deceit, and will leave foolish thoughts behind, and will be ashamed at the approach of unrighteousness." },
-        { "num": 6, "text": "For wisdom is a kindly spirit, but will not free blasphemers from the guilt of their words; because God is witness of their inmost feelings, and a true observer of their hearts, and a hearer of their tongues." },
-        { "num": 7, "text": "Because the spirit of the Lord has filled the world, and that which holds all things together knows what is said," },
-        { "num": 8, "text": "therefore those who utter unrighteous things will not escape notice, and justice, when it punishes, will not pass them by." },
-        { "num": 12, "text": "Do not invite death by the error of your life, or bring on destruction by the works of your hands;" },
-        { "num": 13, "text": "because God did not make death, and he does not delight in the death of the living." },
-        { "num": 14, "text": "For he created all things so that they might exist; the generative forces of the world are wholesome, and there is no destructive poison in them, and the dominion of Hades is not on earth." },
-        { "num": 15, "text": "For righteousness is immortal." },
-        { "num": 16, "text": "But the ungodly by their words and deeds summoned death; considering him a friend, they pined away and made a covenant with him, because they are fit to belong to his company." }
+        {
+          "num": 1,
+          "text": {
+            "Base": "Love righteousness, you rulers of the earth, think of the Lord in goodness and seek him with sincerity of heart;",
+            "KJV": "1:1 Loue righteousnesse, yee that be iudges of the earth: thinke of the Lord with a good (heart) and in simplicitie of heart seeke him."
+          }
+        },
+        {
+          "num": 2,
+          "text": {
+            "Base": "because he is found by those who do not put him to the test, and manifests himself to those who do not distrust him.",
+            "KJV": "1:2 For hee will bee found of them that tempt him not: and sheweth himselfe vnto such as doe not distrust him."
+          }
+        },
+        {
+          "num": 3,
+          "text": {
+            "Base": "For perverse thoughts separate people from God, and when his power is tested, it exposes the foolish;",
+            "KJV": "1:3 For froward thoughts separate from God: and his power when it is tryed, reprooueth the vnwise."
+          }
+        },
+        {
+          "num": 4,
+          "text": {
+            "Base": "because wisdom will not enter a deceitful soul, or dwell in a body enslaved to sin.",
+            "KJV": "1:4 For into a malitious soule wisedome shall not enter: nor dwell in the body that is subiect vnto sinne."
+          }
+        },
+        {
+          "num": 5,
+          "text": {
+            "Base": "For a holy and disciplined spirit will flee from deceit, and will leave foolish thoughts behind, and will be ashamed at the approach of unrighteousness.",
+            "KJV": "1:5 For the holy spirit of discipline will flie deceit, & remoue from thoughts that are without vnderstanding: and will not abide when vnrighteousnesse commeth in."
+          }
+        },
+        {
+          "num": 6,
+          "text": {
+            "Base": "For wisdom is a kindly spirit, but will not free blasphemers from the guilt of their words; because God is witness of their inmost feelings, and a true observer of their hearts, and a hearer of their tongues.",
+            "KJV": "1:6 For wisedome is a louing spirit: and will not acquite a blasphemour of his words: for God is witnesse of his reines, and a true beholder of his heart, and a hearer of his tongue."
+          }
+        },
+        {
+          "num": 7,
+          "text": {
+            "Base": "Because the spirit of the Lord has filled the world, and that which holds all things together knows what is said,",
+            "KJV": "1:7 For the spirit of the Lord filleth the world: and that which containeth all things hath knowledge of the voice."
+          }
+        },
+        {
+          "num": 8,
+          "text": {
+            "Base": "therefore those who utter unrighteous things will not escape notice, and justice, when it punishes, will not pass them by.",
+            "KJV": "1:8 Therefore he that speaketh vnrighteous things, cannot be hid: neither shal vengeance, when it punisheth. passe by him."
+          }
+        },
+        {
+          "num": 12,
+          "text": {
+            "Base": "Do not invite death by the error of your life, or bring on destruction by the works of your hands;",
+            "KJV": "1:12 Seeke not death in the errour of your life: and pull not vpon your selues destruction, with the workes of your hands."
+          }
+        },
+        {
+          "num": 13,
+          "text": {
+            "Base": "because God did not make death, and he does not delight in the death of the living.",
+            "KJV": "1:13 For God made not death: neither hath he pleasure in the destruction of the liuing."
+          }
+        },
+        {
+          "num": 14,
+          "text": {
+            "Base": "For he created all things so that they might exist; the generative forces of the world are wholesome, and there is no destructive poison in them, and the dominion of Hades is not on earth.",
+            "KJV": "1:14 For he created all things, that they might haue their being: and the generations of the world were healthfull: and there is no poyson of destruction in them: nor the kingdome of death vpon the earth."
+          }
+        },
+        {
+          "num": 15,
+          "text": {
+            "Base": "For righteousness is immortal.",
+            "KJV": "1:15 For righteousnesse is immortall."
+          }
+        },
+        {
+          "num": 16,
+          "text": {
+            "Base": "But the ungodly by their words and deeds summoned death; considering him a friend, they pined away and made a covenant with him, because they are fit to belong to his company.",
+            "KJV": "1:16 But vngodly men with their workes, and words called it to them: for when they thought to haue it their friend, they consumed to nought, and made a couenant with it, because they are worthy to take part with it."
+          }
+        }
       ]
     },
     {
       "num": 2,
       "verses": [
-        { "num": 1, "text": "For they reasoned unsoundly, saying to themselves, “Short and sorrowful is our life, and there is no remedy when a life comes to its end, and no one has been known to return from Hades.”" },
-        { "num": 2, "text": "“For we were born by mere chance, and hereafter we shall be as though we had never been, for the breath in our nostrils is smoke, and reason is a spark kindled by the beating of our hearts;”" },
-        { "num": 6, "text": "“Come, therefore, let us enjoy the good things that exist, and make use of the creation to the full as in youth.”" },
-        { "num": 12, "text": "“Let us lie in wait for the righteous man, because he is inconvenient to us and opposes our actions; he reproaches us for sins against the law, and accuses us of sins against our training.”" },
-        { "num": 13, "text": "“He professes to have knowledge of God, and calls himself a child of the Lord.”" },
-        { "num": 21, "text": "Thus they reasoned, but they were led astray, for their wickedness blinded them," },
-        { "num": 22, "text": "and they did not know the secret purposes of God, nor hoped for the wages of holiness, nor discerned the prize for blameless souls." },
-        { "num": 23, "text": "for God created us for incorruption, and made us in the image of his own eternity." },
-        { "num": 24, "text": "but through the devil’s envy death entered the world, and those who belong to his company experience it." }
+        {
+          "num": 1,
+          "text": {
+            "Base": "For they reasoned unsoundly, saying to themselves, “Short and sorrowful is our life, and there is no remedy when a life comes to its end, and no one has been known to return from Hades.”",
+            "KJV": "2:1 For the vngodly said, reasoning with themselues, but not aright: Our life is short and tedious, and in the death of a man there is no remedie: neither was there any man knowen to haue returned from the graue."
+          }
+        },
+        {
+          "num": 2,
+          "text": {
+            "Base": "“For we were born by mere chance, and hereafter we shall be as though we had never been, for the breath in our nostrils is smoke, and reason is a spark kindled by the beating of our hearts;”",
+            "KJV": "2:2 For wee are borne at all aduenture: & we shalbe heereafter as though we had neuer bene: for the breath in our nostrils is as smoke, and a litle sparke in the mouing of our heart."
+          }
+        },
+        {
+          "num": 6,
+          "text": {
+            "Base": "“Come, therefore, let us enjoy the good things that exist, and make use of the creation to the full as in youth.”",
+            "KJV": "2:6 Come on therefore, let vs enioy the good things that are present: and let vs speedily vse the creatures like as in youth."
+          }
+        },
+        {
+          "num": 12,
+          "text": {
+            "Base": "“Let us lie in wait for the righteous man, because he is inconvenient to us and opposes our actions; he reproaches us for sins against the law, and accuses us of sins against our training.”",
+            "KJV": "2:12 Therefore let vs lye in wait for the righteous: because he is not for our turne, and he is cleane contrary to our doings: he vpbraideth vs with our offending the Law, and obiecteth to our infamy the transgressings of our education."
+          }
+        },
+        {
+          "num": 13,
+          "text": {
+            "Base": "“He professes to have knowledge of God, and calls himself a child of the Lord.”",
+            "KJV": "2:13 Hee professeth to haue the knowledge of God: and hee calleth himselfe the childe of the Lord."
+          }
+        },
+        {
+          "num": 21,
+          "text": {
+            "Base": "Thus they reasoned, but they were led astray, for their wickedness blinded them,",
+            "KJV": "2:21 Such things they did imagine, and were deceiued: for their owne wickednesse hath blinded them."
+          }
+        },
+        {
+          "num": 22,
+          "text": {
+            "Base": "and they did not know the secret purposes of God, nor hoped for the wages of holiness, nor discerned the prize for blameless souls.",
+            "KJV": "2:22 As for the mysteries of God, they knew them not: neither hoped they for the wages of righteousnesse: nor discerned a reward for blamelesse soules."
+          }
+        },
+        {
+          "num": 23,
+          "text": {
+            "Base": "for God created us for incorruption, and made us in the image of his own eternity.",
+            "KJV": "2:23 For God created man to bee immortall, and made him to be an image of his owne eternitie."
+          }
+        },
+        {
+          "num": 24,
+          "text": {
+            "Base": "but through the devil’s envy death entered the world, and those who belong to his company experience it.",
+            "KJV": "2:24 Neuerthelesse through enuie of the deuill came death into the world: and they that doe holde of his side doe finde it."
+          }
+        }
       ]
     },
     {
       "num": 3,
       "verses": [
-        { "num": 1, "text": "But the souls of the righteous are in the hand of God, and no torment will ever touch them." },
-        { "num": 2, "text": "In the eyes of the foolish they seemed to have died, and their departure was thought to be a disaster," },
-        { "num": 3, "text": "and their going from us to be their destruction; but they are at peace." },
-        { "num": 4, "text": "For though in the sight of others they were punished, their hope is full of immortality." },
-        { "num": 5, "text": "Having been disciplined a little, they will receive great good, because God tested them and found them worthy of himself." },
-        { "num": 6, "text": "Like gold in the furnace he tried them, and like a sacrificial burnt offering he accepted them." },
-        { "num": 7, "text": "In the time of their visitation they will shine forth, and will run like sparks through the stubble." },
-        { "num": 8, "text": "They will govern nations and rule over peoples, and the Lord will reign over them forever." },
-        { "num": 9, "text": "Those who trust in him will understand truth, and the faithful will abide with him in love, because grace and mercy are upon his holy ones, and he watches over his elect." }
+        {
+          "num": 1,
+          "text": {
+            "Base": "But the souls of the righteous are in the hand of God, and no torment will ever touch them.",
+            "KJV": "3:1 But the soules of the righteous are in the hand of God, and there shall no torment touch them."
+          }
+        },
+        {
+          "num": 2,
+          "text": {
+            "Base": "In the eyes of the foolish they seemed to have died, and their departure was thought to be a disaster,",
+            "KJV": "3:2 In the sight of the vnwise they seemed to die: and their departure is taken for misery,"
+          }
+        },
+        {
+          "num": 3,
+          "text": {
+            "Base": "and their going from us to be their destruction; but they are at peace.",
+            "KJV": "3:3 And their going from vs to be vtter destruction: but they are in peace."
+          }
+        },
+        {
+          "num": 4,
+          "text": {
+            "Base": "For though in the sight of others they were punished, their hope is full of immortality.",
+            "KJV": "3:4 For though they bee punished in the sight of men: yet is their hope full of immortalitie."
+          }
+        },
+        {
+          "num": 5,
+          "text": {
+            "Base": "Having been disciplined a little, they will receive great good, because God tested them and found them worthy of himself.",
+            "KJV": "3:5 And hauing bene a little chastised, they shalbe greatly rewarded: for God proued them, and found them worthy for himselfe."
+          }
+        },
+        {
+          "num": 6,
+          "text": {
+            "Base": "Like gold in the furnace he tried them, and like a sacrificial burnt offering he accepted them.",
+            "KJV": "3:6 As gold in the furnace hath hee tried them, and receiued them as a burnt offering."
+          }
+        },
+        {
+          "num": 7,
+          "text": {
+            "Base": "In the time of their visitation they will shine forth, and will run like sparks through the stubble.",
+            "KJV": "3:7 And in the time of their visitation, they shall shine and runne to and fro, like sparkes among the stubble."
+          }
+        },
+        {
+          "num": 8,
+          "text": {
+            "Base": "They will govern nations and rule over peoples, and the Lord will reign over them forever.",
+            "KJV": "3:8 They shall iudge the nations, and haue dominion ouer the people, and their Lord shall raigne for euer."
+          }
+        },
+        {
+          "num": 9,
+          "text": {
+            "Base": "Those who trust in him will understand truth, and the faithful will abide with him in love, because grace and mercy are upon his holy ones, and he watches over his elect.",
+            "KJV": "3:9 They that put their trust in him, shall vnderstand the trueth: and such as be faithfull in loue, shall abide with him: for grace & mercy is to his saints, and he hath care for his elect."
+          }
+        }
       ]
     },
     {
       "num": 4,
       "verses": [
-        { "num": 1, "text": "Better is childlessness with virtue, for in the memory of virtue is immortality, because it is known both by God and by mortals." },
-        { "num": 7, "text": "But the righteous, though they die early, will be at rest." },
-        { "num": 8, "text": "For old age is not honored for length of time, or measured by number of years;" },
-        { "num": 9, "text": "but understanding is gray hair for anyone, and a blameless life is ripe old age." },
-        { "num": 10, "text": "There were some who pleased God and were loved by him, and while living among sinners were taken up." },
-        { "num": 11, "text": "They were caught up so that evil might not change their understanding or guile deceive their souls." }
+        {
+          "num": 1,
+          "text": {
+            "Base": "Better is childlessness with virtue, for in the memory of virtue is immortality, because it is known both by God and by mortals.",
+            "KJV": "4:1 Better it is to haue no children, and to haue vertue: for the memoriall thereof is immortal: because it is knowen with God and with men."
+          }
+        },
+        {
+          "num": 7,
+          "text": {
+            "Base": "But the righteous, though they die early, will be at rest.",
+            "KJV": "4:7 But though the righteous be preuented with death: yet shal he be in rest."
+          }
+        },
+        {
+          "num": 8,
+          "text": {
+            "Base": "For old age is not honored for length of time, or measured by number of years;",
+            "KJV": "4:8 For honourable age is not that which standeth in length of time, nor that is measured by number of yeeres."
+          }
+        },
+        {
+          "num": 9,
+          "text": {
+            "Base": "but understanding is gray hair for anyone, and a blameless life is ripe old age.",
+            "KJV": "4:9 But wisedome is the gray haire vnto men, & an vnspotted life is old age."
+          }
+        },
+        {
+          "num": 10,
+          "text": {
+            "Base": "There were some who pleased God and were loved by him, and while living among sinners were taken up.",
+            "KJV": "4:10 He pleased God, and was beloued of him: so that liuing amongst sinners, he was translated."
+          }
+        },
+        {
+          "num": 11,
+          "text": {
+            "Base": "They were caught up so that evil might not change their understanding or guile deceive their souls.",
+            "KJV": "4:11 Yea, speedily was he taken away, lest that wickednes should alter his vnderstanding, or deceit beguile his soule."
+          }
+        }
       ]
     },
     {
       "num": 5,
       "verses": [
-        { "num": 1, "text": "Then the righteous will stand with great confidence in the presence of those who have oppressed them and those who make light of their labors." },
-        { "num": 2, "text": "When the unrighteous see them, they will be shaken with dreadful fear, and they will be amazed at the unexpected salvation of the righteous." },
-        { "num": 4, "text": "“We fools thought their life a madness and their end to be without honor.”" },
-        { "num": 5, "text": "“How have they been numbered among the children of God? And their lot is among the saints.”" },
-        { "num": 15, "text": "But the righteous live forever, and their reward is with the Lord; the Most High takes care of them." },
-        { "num": 16, "text": "Therefore they will receive a glorious crown and a beautiful diadem from the hand of the Lord, because with his right hand he will cover them, and with his arm he will shield them." }
+        {
+          "num": 1,
+          "text": {
+            "Base": "Then the righteous will stand with great confidence in the presence of those who have oppressed them and those who make light of their labors.",
+            "KJV": "5:1 Then shal the righteous man stand in great boldnesse, before the face of such as haue afflicted him, and made no account of his labours."
+          }
+        },
+        {
+          "num": 2,
+          "text": {
+            "Base": "When the unrighteous see them, they will be shaken with dreadful fear, and they will be amazed at the unexpected salvation of the righteous.",
+            "KJV": "5:2 When they see it, they shalbe troubled with terrible feare, & shall be amazed at the strangenesse of his saluation, so farre beyond all that they looked for."
+          }
+        },
+        {
+          "num": 4,
+          "text": {
+            "Base": "“We fools thought their life a madness and their end to be without honor.”",
+            "KJV": "5:4 We fooles accounted his life madnes, and his end to be without honour."
+          }
+        },
+        {
+          "num": 5,
+          "text": {
+            "Base": "“How have they been numbered among the children of God? And their lot is among the saints.”",
+            "KJV": "5:5 How is hee numbred among the children of God, and his lot is among the Saints?"
+          }
+        },
+        {
+          "num": 15,
+          "text": {
+            "Base": "But the righteous live forever, and their reward is with the Lord; the Most High takes care of them.",
+            "KJV": "5:15 But &thorn; righteous liue for euermore, their reward also is with the Lord, and the care of them is with the most High."
+          }
+        },
+        {
+          "num": 16,
+          "text": {
+            "Base": "Therefore they will receive a glorious crown and a beautiful diadem from the hand of the Lord, because with his right hand he will cover them, and with his arm he will shield them.",
+            "KJV": "5:16 Therfore shall they receiue a glorious kingdome, & a beautiful crowne from the Lords hande: for with his right hand shall he couer them, and with his arme shall he protect them."
+          }
+        }
       ]
     },
     {
       "num": 6,
       "verses": [
-        { "num": 1, "text": "Listen therefore, O kings, and understand; learn, O judges of the ends of the earth." },
-        { "num": 3, "text": "For your dominion was given you from the Lord, and your sovereignty from the Most High; he will search out your works and inquire into your plans." },
-        { "num": 12, "text": "Wisdom is radiant and unfading, and she is easily discerned by those who love her, and is found by those who seek her." },
-        { "num": 17, "text": "The beginning of wisdom is the most sincere desire for instruction, and concern for instruction is love of her," },
-        { "num": 18, "text": "and love of her is the keeping of her laws, and giving heed to her laws is assurance of incorruption," },
-        { "num": 19, "text": "and incorruption brings one near to God;" },
-        { "num": 20, "text": "so the desire for wisdom leads to a kingdom." },
-        { "num": 24, "text": "The multitude of the wise is the salvation of the world, and a sensible king is the stability of any people." }
+        {
+          "num": 1,
+          "text": {
+            "Base": "Listen therefore, O kings, and understand; learn, O judges of the ends of the earth.",
+            "KJV": "6:1 Heare therefore, O yee kings, and vnderstand, learne yee that be iudges of the ends of the earth."
+          }
+        },
+        {
+          "num": 3,
+          "text": {
+            "Base": "For your dominion was given you from the Lord, and your sovereignty from the Most High; he will search out your works and inquire into your plans.",
+            "KJV": "6:3 For power is giuen you of the Lord, & soueraigntie from the Highest, who shall try your workes; and search out your counsels."
+          }
+        },
+        {
+          "num": 12,
+          "text": {
+            "Base": "Wisdom is radiant and unfading, and she is easily discerned by those who love her, and is found by those who seek her.",
+            "KJV": "6:12 Wisedome is glorious and neuer fadeth away: yea she is easily seene of them that loue her, and found of such as seeke her."
+          }
+        },
+        {
+          "num": 17,
+          "text": {
+            "Base": "The beginning of wisdom is the most sincere desire for instruction, and concern for instruction is love of her,",
+            "KJV": "6:17 For the very true beginning of her, is the desire of discipline, and the care of discipline is loue:"
+          }
+        },
+        {
+          "num": 18,
+          "text": {
+            "Base": "and love of her is the keeping of her laws, and giving heed to her laws is assurance of incorruption,",
+            "KJV": "6:18 And loue is the keeping of her lawes; and the giuing heed vnto her lawes, is the assurance of incorruption."
+          }
+        },
+        {
+          "num": 19,
+          "text": {
+            "Base": "and incorruption brings one near to God;",
+            "KJV": "6:19 And incorruption maketh vs neere vnto God."
+          }
+        },
+        {
+          "num": 20,
+          "text": {
+            "Base": "so the desire for wisdom leads to a kingdom.",
+            "KJV": "6:20 Therefore the desire of wisedome bringeth to a kingdome."
+          }
+        },
+        {
+          "num": 24,
+          "text": {
+            "Base": "The multitude of the wise is the salvation of the world, and a sensible king is the stability of any people.",
+            "KJV": "6:24 But the multitude of the wise is the welfare of the world: and a wise king is the vpholding of the people."
+          }
+        }
       ]
     },
     {
       "num": 7,
       "verses": [
-        { "num": 1, "text": "I also am mortal, like everyone else, a descendant of the first-formed child of earth; and in the womb of a mother I was molded into flesh," },
-        { "num": 7, "text": "Therefore I prayed, and understanding was given me; I called on God, and the spirit of wisdom came to me." },
-        { "num": 8, "text": "I preferred her to scepters and thrones, and I accounted wealth as nothing in comparison with her." },
-        { "num": 22, "text": "For wisdom, the fashioner of all things, taught me. There is in her a spirit that is intelligent, holy, unique, manifold, subtle, mobile, clear, unpolluted, distinct, invulnerable, loving the good, keen, irresistible," },
-        { "num": 24, "text": "For wisdom is more mobile than any motion; because of her pureness she pervades and penetrates all things." },
-        { "num": 25, "text": "For she is a breath of the power of God, and a pure emanation of the glory of the Almighty; therefore nothing defiled gains entrance into her." },
-        { "num": 26, "text": "For she is a reflection of eternal light, a spotless mirror of the working of God, and an image of his goodness." },
-        { "num": 27, "text": "Although she is but one, she can do all things, and while remaining in herself, she renews all things; in every generation she passes into holy souls and makes them friends of God, and prophets;" },
-        { "num": 28, "text": "for God loves nothing so much as the person who lives with wisdom." },
-        { "num": 29, "text": "She is more beautiful than the sun, and excels every constellation of the stars. Compared with the light she is found to be superior," },
-        { "num": 30, "text": "for it is succeeded by the night, but against wisdom evil does not prevail." }
+        {
+          "num": 1,
+          "text": {
+            "Base": "I also am mortal, like everyone else, a descendant of the first-formed child of earth; and in the womb of a mother I was molded into flesh,",
+            "KJV": "7:1 I my selfe also am a mortall man, like to all, and the ofspring of him that was first made of the earth,"
+          }
+        },
+        {
+          "num": 7,
+          "text": {
+            "Base": "Therefore I prayed, and understanding was given me; I called on God, and the spirit of wisdom came to me.",
+            "KJV": "7:7 Wherefore I prayed, and vnderstanding was giuen mee: I called vpon God, and the spirit of wisedome came to me."
+          }
+        },
+        {
+          "num": 8,
+          "text": {
+            "Base": "I preferred her to scepters and thrones, and I accounted wealth as nothing in comparison with her.",
+            "KJV": "7:8 I preferred her before scepters, and thrones, and esteemed riches nothing in comparison of her."
+          }
+        },
+        {
+          "num": 22,
+          "text": {
+            "Base": "For wisdom, the fashioner of all things, taught me. There is in her a spirit that is intelligent, holy, unique, manifold, subtle, mobile, clear, unpolluted, distinct, invulnerable, loving the good, keen, irresistible,",
+            "KJV": "7:22 For wisedome which is the worker of all things, taught mee: for in her is an vnderstanding spirit holy, one onely, manifold, subtile, liuely, cleare, vndefiled, plaine, not subiect to hurt, louing the thing that is good, quicke, which c&#257;not be letted, ready to do good:"
+          }
+        },
+        {
+          "num": 24,
+          "text": {
+            "Base": "For wisdom is more mobile than any motion; because of her pureness she pervades and penetrates all things.",
+            "KJV": "7:24 For wisedome is more moouing then any motion: she passeth and goeth through all things by reason of her purenesse."
+          }
+        },
+        {
+          "num": 25,
+          "text": {
+            "Base": "For she is a breath of the power of God, and a pure emanation of the glory of the Almighty; therefore nothing defiled gains entrance into her.",
+            "KJV": "7:25 For she is the breath of the power of God, and a pure influence flowing from the glory of the Almighty: therefore can no vndefiled thing fall into her."
+          }
+        },
+        {
+          "num": 26,
+          "text": {
+            "Base": "For she is a reflection of eternal light, a spotless mirror of the working of God, and an image of his goodness.",
+            "KJV": "7:26 For shee is the brightnesse of the euerlasting light: the vnspotted mirrour of the power of God, and the Image of his goodnesse."
+          }
+        },
+        {
+          "num": 27,
+          "text": {
+            "Base": "Although she is but one, she can do all things, and while remaining in herself, she renews all things; in every generation she passes into holy souls and makes them friends of God, and prophets;",
+            "KJV": "7:27 And being but one she can doe all things: and remayning in her selfe, she maketh all things new: and in all ages entring into holy soules, she maketh them friends of God, & Prophets."
+          }
+        },
+        {
+          "num": 28,
+          "text": {
+            "Base": "for God loves nothing so much as the person who lives with wisdom.",
+            "KJV": "7:28 For God loueth none but him, that dwelleth with wisedome."
+          }
+        },
+        {
+          "num": 29,
+          "text": {
+            "Base": "She is more beautiful than the sun, and excels every constellation of the stars. Compared with the light she is found to be superior,",
+            "KJV": "7:29 For she is more beautiful then the Sunne, and aboue all the order of starres, being compared with the light, she is found before it."
+          }
+        },
+        {
+          "num": 30,
+          "text": {
+            "Base": "for it is succeeded by the night, but against wisdom evil does not prevail.",
+            "KJV": "7:30 For after this commeth night: but vice shall not preuaile against wisdome."
+          }
+        }
       ]
     },
     {
       "num": 8,
       "verses": [
-        { "num": 1, "text": "She reaches mightily from one end of the earth to the other, and she orders all things well." },
-        { "num": 2, "text": "I loved her and sought her from my youth; I desired to take her for my bride, and became enamored of her beauty." },
-        { "num": 7, "text": "And if anyone loves righteousness, her labors are virtues; for she teaches self-control and prudence, justice and courage; nothing in life is more profitable for mortals than these." }
+        {
+          "num": 1,
+          "text": {
+            "Base": "She reaches mightily from one end of the earth to the other, and she orders all things well.",
+            "KJV": "8:1 Wisdome reacheth from one ende to another mightily: and sweetly doeth she order all things."
+          }
+        },
+        {
+          "num": 2,
+          "text": {
+            "Base": "I loved her and sought her from my youth; I desired to take her for my bride, and became enamored of her beauty.",
+            "KJV": "8:2 I loued her and sought her out, from my youth I dedesired to make her my spouse, and I was a louer of her beautie."
+          }
+        },
+        {
+          "num": 7,
+          "text": {
+            "Base": "And if anyone loves righteousness, her labors are virtues; for she teaches self-control and prudence, justice and courage; nothing in life is more profitable for mortals than these.",
+            "KJV": "8:7 And if a man loue righteousnesse, her labours are vertues: for she teacheth temperance and prudence: iustice and fortitude, which are such things as men can haue nothing more profitable in their life."
+          }
+        }
       ]
     },
     {
       "num": 9,
       "verses": [
-        { "num": 1, "text": "“O God of my ancestors and Lord of mercy, who have made all things by your word,”" },
-        { "num": 2, "text": "“and by your wisdom have formed humankind to have dominion over the creatures you have made,”" },
-        { "num": 4, "text": "“give me the wisdom that sits by your throne, and do not reject me from among your servants.”" },
-        { "num": 9, "text": "“With you is wisdom, she who knows your works and was present when you made the world; she understands what is pleasing in your sight and what is right according to your commandments.”" },
-        { "num": 10, "text": "“Send her forth from the holy heavens, and from the throne of your glory send her, that she may labor at my side, and that I may learn what is pleasing to you.”" },
-        { "num": 13, "text": "“For who can learn the counsel of God? Or who can discern what the Lord wills?”" },
-        { "num": 15, "text": "“for a perishable body weighs down the soul, and this earthy tent burdens the thoughtful mind.”" }
+        {
+          "num": 1,
+          "text": {
+            "Base": "“O God of my ancestors and Lord of mercy, who have made all things by your word,”",
+            "KJV": "9:1 O God of my fathers, and Lord of mercy, who hast made all things with thy word,"
+          }
+        },
+        {
+          "num": 2,
+          "text": {
+            "Base": "“and by your wisdom have formed humankind to have dominion over the creatures you have made,”",
+            "KJV": "9:2 And ordained man through thy wisedome, that he should haue dominion ouer the creatures, which thou hast made,"
+          }
+        },
+        {
+          "num": 4,
+          "text": {
+            "Base": "“give me the wisdom that sits by your throne, and do not reject me from among your servants.”",
+            "KJV": "9:4 Giue me wisedome that sitteth by thy Throne, and reiect me not from among thy children:"
+          }
+        },
+        {
+          "num": 9,
+          "text": {
+            "Base": "“With you is wisdom, she who knows your works and was present when you made the world; she understands what is pleasing in your sight and what is right according to your commandments.”",
+            "KJV": "9:9 And wisedome was with thee: which knoweth thy workes, and was present when thou madest the world, and knew what was acceptable in thy sight, and right in thy Commaundements."
+          }
+        },
+        {
+          "num": 10,
+          "text": {
+            "Base": "“Send her forth from the holy heavens, and from the throne of your glory send her, that she may labor at my side, and that I may learn what is pleasing to you.”",
+            "KJV": "9:10 O send her out of thy holy heauens, and from the Throne of thy glory, that being present shee may labour with mee, that I may know what is pleasing vnto thee."
+          }
+        },
+        {
+          "num": 13,
+          "text": {
+            "Base": "“For who can learn the counsel of God? Or who can discern what the Lord wills?”",
+            "KJV": "9:13 For what man is hee that can know the counsell of God? or who can thinke what the will of the Lord is?"
+          }
+        },
+        {
+          "num": 15,
+          "text": {
+            "Base": "“for a perishable body weighs down the soul, and this earthy tent burdens the thoughtful mind.”",
+            "KJV": "9:15 For the corruptible body presseth downe the soule, and the earthy tabernacle weigheth downe the minde that museth vpon many things."
+          }
+        }
       ]
     },
     {
       "num": 10,
       "verses": [
-        { "num": 1, "text": "Wisdom protected the first-formed father of the world, when he alone had been created; she delivered him from his transgression," },
-        { "num": 2, "text": "and gave him strength to rule all things." },
-        { "num": 4, "text": "When the earth was flooded because of him, wisdom again saved it, steering the righteous man by a paltry piece of wood." },
-        { "num": 5, "text": "Wisdom also, when the nations in wicked agreement had been confounded, recognized the righteous man and kept him blameless before God, and held him strong in the face of his compassion for his child." },
-        { "num": 6, "text": "Wisdom rescued a righteous man when the ungodly were perishing; he escaped the fire that descended on the Five Cities." },
-        { "num": 10, "text": "When a righteous man fled from his brother’s wrath, she guided him on straight paths; she showed him the kingdom of God, and gave him knowledge of holy things." }
+        {
+          "num": 1,
+          "text": {
+            "Base": "Wisdom protected the first-formed father of the world, when he alone had been created; she delivered him from his transgression,",
+            "KJV": "10:1 She preserued the first formed father of the world that was created alone, and brought him out of his fall,"
+          }
+        },
+        {
+          "num": 2,
+          "text": {
+            "Base": "and gave him strength to rule all things.",
+            "KJV": "10:2 And gaue him power to rule all things."
+          }
+        },
+        {
+          "num": 4,
+          "text": {
+            "Base": "When the earth was flooded because of him, wisdom again saved it, steering the righteous man by a paltry piece of wood.",
+            "KJV": "10:4 For whose cause the earth being drowned with the flood, Wisedome againe preserued it, & directed the course of the righteous, in a piece of wood, of small value."
+          }
+        },
+        {
+          "num": 5,
+          "text": {
+            "Base": "Wisdom also, when the nations in wicked agreement had been confounded, recognized the righteous man and kept him blameless before God, and held him strong in the face of his compassion for his child.",
+            "KJV": "10:5 Moreouer, the nations in their wicked conspiracie being confounded, she found out the righteous, and preserued him blamelesse vnto God, and kept him strong against his tender compassion towards his sonne."
+          }
+        },
+        {
+          "num": 6,
+          "text": {
+            "Base": "Wisdom rescued a righteous man when the ungodly were perishing; he escaped the fire that descended on the Five Cities.",
+            "KJV": "10:6 When the vngodly perished, shee deliuered the righteous man, who fled from the fire which fell downe vpon the fiue cities."
+          }
+        },
+        {
+          "num": 10,
+          "text": {
+            "Base": "When a righteous man fled from his brother’s wrath, she guided him on straight paths; she showed him the kingdom of God, and gave him knowledge of holy things.",
+            "KJV": "10:10 When the righteous fled from his brothers wrath, she guided him in right paths: shewed him the kingdome of God: and gaue him knowledge of holy things, made him rich in his trauailes, and multiplied the fruit of his labours."
+          }
+        }
       ]
     },
     {
       "num": 11,
       "verses": [
-        { "num": 1, "text": "Wisdom prospered their works by the hand of a holy prophet." },
-        { "num": 2, "text": "They journeyed through an uninhabited wilderness, and pitched their tents in untrodden places." },
-        { "num": 21, "text": "For it is always in your power to show great strength, and who can withstand the might of your arm?" },
-        { "num": 22, "text": "Because the whole world before you is like a speck that tips the scales, and like a drop of morning dew that falls on the ground." },
-        { "num": 23, "text": "But you are merciful to all, for you can do all things, and you overlook people’s sins, so that they may repent." },
-        { "num": 24, "text": "For you love all things that exist, and detest none of the things that you have made, for you would not have made anything if you had hated it." },
-        { "num": 26, "text": "You spare all things, for they are yours, O Lord, you who love the living." }
+        {
+          "num": 1,
+          "text": {
+            "Base": "Wisdom prospered their works by the hand of a holy prophet.",
+            "KJV": "11:1 She prospered their works in the hand of the holy Prophet."
+          }
+        },
+        {
+          "num": 2,
+          "text": {
+            "Base": "They journeyed through an uninhabited wilderness, and pitched their tents in untrodden places.",
+            "KJV": "11:2 They went thorough the wildernesse that was not inhabited, and pitched tents in places where there lay no way."
+          }
+        },
+        {
+          "num": 21,
+          "text": {
+            "Base": "For it is always in your power to show great strength, and who can withstand the might of your arm?",
+            "KJV": "11:21 For thou canst shew thy great strength at all times when thou wilt, and who may withstand the power of thine arme?"
+          }
+        },
+        {
+          "num": 22,
+          "text": {
+            "Base": "Because the whole world before you is like a speck that tips the scales, and like a drop of morning dew that falls on the ground.",
+            "KJV": "11:22 For the whole world before thee is as a litle graine of the ballance, yea as a drop of the morning dew that falleth downe vpon the earth."
+          }
+        },
+        {
+          "num": 23,
+          "text": {
+            "Base": "But you are merciful to all, for you can do all things, and you overlook people’s sins, so that they may repent.",
+            "KJV": "11:23 But thou hast mercy vpon all: for thou canst doe all things, and winkest at the sinnes of men: because they should amend."
+          }
+        },
+        {
+          "num": 24,
+          "text": {
+            "Base": "For you love all things that exist, and detest none of the things that you have made, for you would not have made anything if you had hated it.",
+            "KJV": "11:24 For thou louest all the things that are, and abhorrest nothing which thou hast made: for neuer wouldest thou haue made any thing, if thou hadst hated it."
+          }
+        },
+        {
+          "num": 26,
+          "text": {
+            "Base": "You spare all things, for they are yours, O Lord, you who love the living.",
+            "KJV": "11:26 But thou sparest all: for they are thine, O Lord, thou louer of soules."
+          }
+        }
       ]
     },
     {
       "num": 12,
       "verses": [
-        { "num": 1, "text": "For your immortal spirit is in all things." },
-        { "num": 2, "text": "Therefore you correct little by little those who trespass, and you remind and warn them of the things through which they sin, so that they may be freed from wickedness and put their trust in you, O Lord." },
-        { "num": 10, "text": "But judging them little by little you gave them an opportunity to repent, though you were not unaware that their origin was evil and their wickedness inborn." },
-        { "num": 13, "text": "For neither is there any god besides you, whose care is for all people, to whom you should prove that you have not judged unjustly." },
-        { "num": 15, "text": "But being righteous, you rule all things righteously, deeming it alien to your power to condemn anyone who does not deserve to be punished." },
-        { "num": 16, "text": "For your strength is the source of righteousness, and your sovereignty over all causes you to spare all." }
+        {
+          "num": 1,
+          "text": {
+            "Base": "For your immortal spirit is in all things.",
+            "KJV": "12:1 For thine vncorruptible spirit is in all things."
+          }
+        },
+        {
+          "num": 2,
+          "text": {
+            "Base": "Therefore you correct little by little those who trespass, and you remind and warn them of the things through which they sin, so that they may be freed from wickedness and put their trust in you, O Lord.",
+            "KJV": "12:2 Therefore chastnest thou them by little, and little, that offend, and warnest them by putting them in remembrance, wherin they haue offended, that leauing their wickednesse they may beleeue on thee O Lord."
+          }
+        },
+        {
+          "num": 10,
+          "text": {
+            "Base": "But judging them little by little you gave them an opportunity to repent, though you were not unaware that their origin was evil and their wickedness inborn.",
+            "KJV": "12:10 But executing thy iudgements vpon them by little and little, thou gauest them place of repentance, not being ignorant that they were a naughtie generation, and that their malice, was bred in them, and that their cogitation would neuer be changed."
+          }
+        },
+        {
+          "num": 13,
+          "text": {
+            "Base": "For neither is there any god besides you, whose care is for all people, to whom you should prove that you have not judged unjustly.",
+            "KJV": "12:13 For neither is there any God but thou, that careth for all, to whom thou mightest shew that thy iudgement is not vnright."
+          }
+        },
+        {
+          "num": 15,
+          "text": {
+            "Base": "But being righteous, you rule all things righteously, deeming it alien to your power to condemn anyone who does not deserve to be punished.",
+            "KJV": "12:15 For so much then as thou art righteous thy selfe, thou orderest all things righteously: thinking it not agreeable with thy power to condemne him &thorn; hath not deserued to be punished."
+          }
+        },
+        {
+          "num": 16,
+          "text": {
+            "Base": "For your strength is the source of righteousness, and your sovereignty over all causes you to spare all.",
+            "KJV": "12:16 For thy power is the beginning of righteousnesse, and because thou art the Lord of all, it maketh thee to be gracious vnto all."
+          }
+        }
       ]
     },
     {
       "num": 13,
       "verses": [
-        { "num": 1, "text": "For all people who were ignorant of God were foolish by nature; and they were unable from the good things that are seen to know the one who exists, nor did they recognize the artisan while paying heed to his works;" },
-        { "num": 2, "text": "but they supposed that either fire or wind or swift air, or the circle of the stars, or turbulent water, or the luminaries of heaven were the gods that rule the world." },
-        { "num": 3, "text": "If through delight in the beauty of these things people assumed them to be gods, let them know how much better than these is their Lord, for the author of beauty created them." },
-        { "num": 5, "text": "For from the greatness and beauty of created things comes a corresponding perception of their Creator." },
-        { "num": 10, "text": "But miserable, with their hopes set on dead things, are those who give the name “gods” to the works of human hands, gold and silver fashioned with skill." }
+        {
+          "num": 1,
+          "text": {
+            "Base": "For all people who were ignorant of God were foolish by nature; and they were unable from the good things that are seen to know the one who exists, nor did they recognize the artisan while paying heed to his works;",
+            "KJV": "13:1 Surely vaine are all men by nature, who are ignorant of God, and could not out of the good things that are seene, know him that is: neither by considering the workes, did they acknowledge the worke-master;"
+          }
+        },
+        {
+          "num": 2,
+          "text": {
+            "Base": "but they supposed that either fire or wind or swift air, or the circle of the stars, or turbulent water, or the luminaries of heaven were the gods that rule the world.",
+            "KJV": "13:2 But deemed either fire, or wind, or the swift aire, or the circle of the stars, or the violent water, or the lights of heauen to be the gods which gouerne the world:"
+          }
+        },
+        {
+          "num": 3,
+          "text": {
+            "Base": "If through delight in the beauty of these things people assumed them to be gods, let them know how much better than these is their Lord, for the author of beauty created them.",
+            "KJV": "13:3 With whose beautie, if they being delighted, tooke them to be gods: let them know how much better the Lord of them is; for the first Author of beautie hath created them."
+          }
+        },
+        {
+          "num": 5,
+          "text": {
+            "Base": "For from the greatness and beauty of created things comes a corresponding perception of their Creator.",
+            "KJV": "13:5 For by the greatnesse and beautie of the creatures, proportionably the Maker of them is seene."
+          }
+        },
+        {
+          "num": 10,
+          "text": {
+            "Base": "But miserable, with their hopes set on dead things, are those who give the name “gods” to the works of human hands, gold and silver fashioned with skill.",
+            "KJV": "13:10 But miserable are they, and in dead things is their hope, who called them gods which are the workes of mens hands, golde and siluer, to shewe arte in, and resemblances of beasts, or a stone good for nothing, the worke of an ancient hand."
+          }
+        }
       ]
     },
     {
       "num": 14,
       "verses": [
-        { "num": 12, "text": "For the idea of making idols was the beginning of fornication, and the invention of them was the corruption of life." },
-        { "num": 13, "text": "for they did not exist from the beginning, nor will they last forever." },
-        { "num": 27, "text": "For the worship of idols not to be named is the beginning and cause and end of every evil." }
+        {
+          "num": 12,
+          "text": {
+            "Base": "For the idea of making idols was the beginning of fornication, and the invention of them was the corruption of life.",
+            "KJV": "14:12 For the deuising of idoles was the beginning of spiritual fornication, and the inuention of them the corruption of life."
+          }
+        },
+        {
+          "num": 13,
+          "text": {
+            "Base": "for they did not exist from the beginning, nor will they last forever.",
+            "KJV": "14:13 For neither were they from the beginning, neither shall they be for euer."
+          }
+        },
+        {
+          "num": 27,
+          "text": {
+            "Base": "For the worship of idols not to be named is the beginning and cause and end of every evil.",
+            "KJV": "14:27 For the worshipping of idoles not to be named, is the beginning, the cause, and the end of all euill."
+          }
+        }
       ]
     },
     {
       "num": 15,
       "verses": [
-        { "num": 1, "text": "But you, our God, are kind and true, patient, and ruling all things in mercy." },
-        { "num": 2, "text": "For even if we sin we are yours, knowing your power; but we will not sin, because we know that you acknowledge us as yours." },
-        { "num": 3, "text": "For to know you is complete righteousness, and to know your power is the root of immortality." }
+        {
+          "num": 1,
+          "text": {
+            "Base": "But you, our God, are kind and true, patient, and ruling all things in mercy.",
+            "KJV": "15:1 But thou O God, art gracious and true: long suffering, and in mercy ordering all things."
+          }
+        },
+        {
+          "num": 2,
+          "text": {
+            "Base": "For even if we sin we are yours, knowing your power; but we will not sin, because we know that you acknowledge us as yours.",
+            "KJV": "15:2 For if we sinne we are thine, knowing thy power: but we will not sinne, knowing that we are counted thine."
+          }
+        },
+        {
+          "num": 3,
+          "text": {
+            "Base": "For to know you is complete righteousness, and to know your power is the root of immortality.",
+            "KJV": "15:3 For to know thee is perfect righteousnesse: yea to know thy power is the roote of immortality."
+          }
+        }
       ]
     },
     {
       "num": 16,
       "verses": [
-        { "num": 7, "text": "For the one who turned toward it was saved, not by the thing that was beheld, but by you, the Savior of all." },
-        { "num": 12, "text": "For neither herb nor poultice cured them, but it was your word, O Lord, that heals all people." },
-        { "num": 13, "text": "For you have power over life and death; you lead mortals down to the gates of Hades and back again." },
-        { "num": 20, "text": "Instead of these things you gave your people food of angels, and without their toil you supplied them from heaven with bread ready to eat, providing every pleasure and suited to every taste." }
+        {
+          "num": 7,
+          "text": {
+            "Base": "For the one who turned toward it was saved, not by the thing that was beheld, but by you, the Savior of all.",
+            "KJV": "16:7 For hee that turned himselfe towards it, was not saued by the thing that he saw: but by thee that art the sauiour of all."
+          }
+        },
+        {
+          "num": 12,
+          "text": {
+            "Base": "For neither herb nor poultice cured them, but it was your word, O Lord, that heals all people.",
+            "KJV": "16:12 For it was neither herbe, nor mollifying plaister that restored them to health: but thy word, O Lord, which healeth all things."
+          }
+        },
+        {
+          "num": 13,
+          "text": {
+            "Base": "For you have power over life and death; you lead mortals down to the gates of Hades and back again.",
+            "KJV": "16:13 For thou hast power of life and death: thou leadest to the gates of hell, and bringest vp againe."
+          }
+        },
+        {
+          "num": 20,
+          "text": {
+            "Base": "Instead of these things you gave your people food of angels, and without their toil you supplied them from heaven with bread ready to eat, providing every pleasure and suited to every taste.",
+            "KJV": "16:20 In stead whereof thou feddest thine owne people, with Angels food, and didst send them from heauen bread prepared without their labour, able to content euery mans delight, and agreeing to euery taste."
+          }
+        }
       ]
     },
     {
       "num": 17,
       "verses": [
-        { "num": 1, "text": "Great are your judgments and hard to describe; therefore uninstructed souls have gone astray." },
-        { "num": 11, "text": "For wickedness is a cowardly thing, condemned by its own testimony; distressed by conscience, it has always exaggerated the difficulties." },
-        { "num": 12, "text": "For fear is nothing but a surrender of the helps that come from reason." }
+        {
+          "num": 1,
+          "text": {
+            "Base": "Great are your judgments and hard to describe; therefore uninstructed souls have gone astray.",
+            "KJV": "17:1 For great are thy Iudgements, and cannot be expressed: therefore vnnourtured soules haue erred."
+          }
+        },
+        {
+          "num": 11,
+          "text": {
+            "Base": "For wickedness is a cowardly thing, condemned by its own testimony; distressed by conscience, it has always exaggerated the difficulties.",
+            "KJV": "17:11 For wickednesse condemned by her owne witnesse, is very timorous, and being pressed with conscience, alwayes forecasteth grieuous things."
+          }
+        },
+        {
+          "num": 12,
+          "text": {
+            "Base": "For fear is nothing but a surrender of the helps that come from reason.",
+            "KJV": "17:12 For feare is nothing else, but a betraying of the succours which reason offereth."
+          }
+        }
       ]
     },
     {
       "num": 18,
       "verses": [
-        { "num": 14, "text": "For while gentle silence enveloped all things, and night in its swift course was now half gone," },
-        { "num": 15, "text": "your all-powerful word leaped from heaven, from the royal throne, into the midst of the land that was doomed, a stern warrior" },
-        { "num": 16, "text": "carrying the sharp sword of your authentic command, and stood and filled all things with death, and touched heaven while standing on the earth." }
+        {
+          "num": 14,
+          "text": {
+            "Base": "For while gentle silence enveloped all things, and night in its swift course was now half gone,",
+            "KJV": "18:14 For while all things were in quiet silence, and that night was in the midst of her swift course,"
+          }
+        },
+        {
+          "num": 15,
+          "text": {
+            "Base": "your all-powerful word leaped from heaven, from the royal throne, into the midst of the land that was doomed, a stern warrior",
+            "KJV": "18:15 Thine almighty word leapt downe from heauen, out of thy royall throne, as a fierce man of warre into the midst of a land of destruction,"
+          }
+        },
+        {
+          "num": 16,
+          "text": {
+            "Base": "carrying the sharp sword of your authentic command, and stood and filled all things with death, and touched heaven while standing on the earth.",
+            "KJV": "18:16 And brought thine vnfained commandement as a sharpe sword, and standing vp filled all things with death, and it touched the heauen, but it stood vpon the earth."
+          }
+        }
       ]
     },
     {
       "num": 19,
       "verses": [
-        { "num": 9, "text": "For they ranged like horses, and leaped like lambs, praising you, O Lord, who delivered them." },
-        { "num": 18, "text": "For the elements changed places with one another, as on a harp the notes vary the nature of the rhythm, while each note remains the same." },
-        { "num": 22, "text": "For in everything, O Lord, you have exalted and glorified your people, and you have not neglected to help them at all times and in all places." }
+        {
+          "num": 9,
+          "text": {
+            "Base": "For they ranged like horses, and leaped like lambs, praising you, O Lord, who delivered them.",
+            "KJV": "19:9 For they went at large like horses, and leaped like lambes, praising thee O Lord, who hadst deliuered them."
+          }
+        },
+        {
+          "num": 18,
+          "text": {
+            "Base": "For the elements changed places with one another, as on a harp the notes vary the nature of the rhythm, while each note remains the same.",
+            "KJV": "19:18 For the elements were changed in themselues by a kind of harmonie, like as in a Psaltery notes change the name of the tune, and yet are alwayes sounds, which may well be perceiued by the sight of the things that haue beene done."
+          }
+        },
+        {
+          "num": 22,
+          "text": {
+            "Base": "For in everything, O Lord, you have exalted and glorified your people, and you have not neglected to help them at all times and in all places.",
+            "KJV": "19:22 For in all things, O Lord, thou didst magnifie thy people, and glorifie them, neither didst thou lightly regard them: but didst assist them in euery time and place."
+          }
+        }
       ]
     }
   ]

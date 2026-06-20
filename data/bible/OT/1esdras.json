@@ -9,86 +9,326 @@
     {
       "num": 1,
       "verses": [
-        { "num": 1, "text": "Josiah kept the passover to his Lord in Jerusalem; he slaughtered the passover lamb on the fourteenth day of the first month," },
-        { "num": 23, "text": "The events of Josiah’s reign had been right in the sight of his Lord, for his heart was full of godliness." },
-        { "num": 32, "text": "Josiah died, and was buried in the tomb of his ancestors in Jerusalem." },
-        { "num": 53, "text": "The Chaldeans killed their young men with the sword around their holy temple; they did not spare young man or young woman, old man or child, for he gave them all into their hands." },
-        { "num": 55, "text": "They burned the house of the Lord and broke down the walls of Jerusalem; they burned their towers with fire." }
+        {
+          "num": 1,
+          "text": {
+            "Base": "Josiah kept the passover to his Lord in Jerusalem; he slaughtered the passover lamb on the fourteenth day of the first month,",
+            "KJV": "1:1 And Iosias helde the Feast of the Passeouer in Ierusalem vnto his Lord, and offered the Passeouer the fourteenth day of the first moneth:"
+          }
+        },
+        {
+          "num": 23,
+          "text": {
+            "Base": "The events of Josiah’s reign had been right in the sight of his Lord, for his heart was full of godliness.",
+            "KJV": "1:23 And the workes of Iosias were vpright before his Lord with an heart full of godlinesse."
+          }
+        },
+        {
+          "num": 32,
+          "text": {
+            "Base": "Josiah died, and was buried in the tomb of his ancestors in Jerusalem.",
+            "KJV": "1:32 And in all Iury they mourned for Iosias, yea Ieremie the Prophet lamented for Iosias, and the cheefe men with the women made lamentation for him vnto this day: and this was giuen out for an ordinance to be done continually in all the nation of Israel."
+          }
+        },
+        {
+          "num": 53,
+          "text": {
+            "Base": "The Chaldeans killed their young men with the sword around their holy temple; they did not spare young man or young woman, old man or child, for he gave them all into their hands.",
+            "KJV": "1:53 Who flew their yong men with the sword, yea euen within the compasse of their holy Temple, & spared neither yong man nor maid, old man nor child among them, for hee deliuered all into their hands."
+          }
+        },
+        {
+          "num": 55,
+          "text": {
+            "Base": "They burned the house of the Lord and broke down the walls of Jerusalem; they burned their towers with fire.",
+            "KJV": "1:55 As for the house of the Lord they burnt it, brake downe the walles of Ierusalem, set fire vpon her towres."
+          }
+        }
       ]
     },
     {
       "num": 2,
       "verses": [
-        { "num": 1, "text": "In the first year of Cyrus king of the Persians, so that the word of the Lord by the mouth of Jeremiah might be accomplished," },
-        { "num": 2, "text": "the Lord stirred up the spirit of Cyrus king of the Persians, and he made a proclamation throughout all his kingdom and also put it in writing:" },
-        { "num": 3, "text": "“Thus says Cyrus king of the Persians: The Lord of Israel, the Lord Most High, has made me king of the world,”" },
-        { "num": 4, "text": "“and he has commanded me to build him a house at Jerusalem, which is in Judea.”" },
-        { "num": 30, "text": "Then the building of the temple in Jerusalem stopped, and was discontinued until the second year of the reign of Darius king of the Persians." }
+        {
+          "num": 1,
+          "text": {
+            "Base": "In the first year of Cyrus king of the Persians, so that the word of the Lord by the mouth of Jeremiah might be accomplished,",
+            "KJV": "2:1 In the first yeere of Cyrus king of the Persians, that the worde of the Lorde might bee accomplished, that hee had promised by the mouth of Ieremie:"
+          }
+        },
+        {
+          "num": 2,
+          "text": {
+            "Base": "the Lord stirred up the spirit of Cyrus king of the Persians, and he made a proclamation throughout all his kingdom and also put it in writing:",
+            "KJV": "2:2 The Lord raised vp the spirit of Cyrus the king of the Persians, and he made proclamation thorow al his kingdome, and also by writing,"
+          }
+        },
+        {
+          "num": 3,
+          "text": {
+            "Base": "“Thus says Cyrus king of the Persians: The Lord of Israel, the Lord Most High, has made me king of the world,”",
+            "KJV": "2:3 Saying, Thus saith Cyrus king of the Persians, The Lord of Israel the most high Lord, hath made me king of the whole world,"
+          }
+        },
+        {
+          "num": 4,
+          "text": {
+            "Base": "“and he has commanded me to build him a house at Jerusalem, which is in Judea.”",
+            "KJV": "2:4 And commanded me to build him an house at Ierusalem in Iurie."
+          }
+        },
+        {
+          "num": 30,
+          "text": {
+            "Base": "Then the building of the temple in Jerusalem stopped, and was discontinued until the second year of the reign of Darius king of the Persians.",
+            "KJV": "2:30 Then king Artaxerxes his letters being read, Rathumus and Semellius the scribe, and the rest that were in commission with them, remoouing in hast towards Ierusalem with a troupe of horsemen, and a multitude of people in battell aray, began to hinder the builders, and the building of the Temple in Ierusalem ceased vntill the second yeere of the reigne of Darius King of the Persians."
+          }
+        }
       ]
     },
     {
       "num": 3,
       "verses": [
-        { "num": 1, "text": "Now King Darius gave a great banquet for all that were under him and all that were born in his house and all the nobles of Media and Persia." },
-        { "num": 4, "text": "Then the three young men of the bodyguard, who kept guard over the person of the king, said to one another," },
-        { "num": 5, "text": "“Let each of us state what one thing is strongest; and to the one whose statement seems wisest, King Darius will give rich gifts and great honors of victory.”" },
-        { "num": 10, "text": "The first wrote, “Wine is strongest.”" },
-        { "num": 11, "text": "The second wrote, “The king is strongest.”" },
-        { "num": 12, "text": "The third wrote, “Women are strongest, but above all things truth is victor.”" }
+        {
+          "num": 1,
+          "text": {
+            "Base": "Now King Darius gave a great banquet for all that were under him and all that were born in his house and all the nobles of Media and Persia.",
+            "KJV": "3:1 Now when Darius reigned, hee made a great feast vnto all his Subiects and vnto all his houshold, and vnto all the princes of Media and Persia,"
+          }
+        },
+        {
+          "num": 4,
+          "text": {
+            "Base": "Then the three young men of the bodyguard, who kept guard over the person of the king, said to one another,",
+            "KJV": "3:4 Then three yong men that were of the guard, that kept the kings body, spake one to another:"
+          }
+        },
+        {
+          "num": 5,
+          "text": {
+            "Base": "“Let each of us state what one thing is strongest; and to the one whose statement seems wisest, King Darius will give rich gifts and great honors of victory.”",
+            "KJV": "3:5 Let euery one of vs speake a sentence: hee that shall ouercome, & whose sentence shall seeme wiser then the others, vnto him shall the king Darius giue great gifts, and great things in token of victory:"
+          }
+        },
+        {
+          "num": 10,
+          "text": {
+            "Base": "The first wrote, “Wine is strongest.”",
+            "KJV": "3:10 The first wrote: Wine is the strongest."
+          }
+        },
+        {
+          "num": 11,
+          "text": {
+            "Base": "The second wrote, “The king is strongest.”",
+            "KJV": "3:11 The second wrote: The King is strongest."
+          }
+        },
+        {
+          "num": 12,
+          "text": {
+            "Base": "The third wrote, “Women are strongest, but above all things truth is victor.”",
+            "KJV": "3:12 The third wrote; Women are strongest, but aboue all things trueth beareth away the victory."
+          }
+        }
       ]
     },
     {
       "num": 4,
       "verses": [
-        { "num": 13, "text": "The third young man, who had spoken about women and truth (and this was Zerubbabel), began to speak:" },
-        { "num": 33, "text": "“Gentlemen, is not the king great, and are not men many, and is not wine strong? Who is it, then, that rules them, or has the mastery over them? Is it not women?”" },
-        { "num": 38, "text": "“But truth is great, and stronger than all things.”" },
-        { "num": 41, "text": "When he stopped speaking, all the people then shouted and said, “Great is truth, and strongest of all!”" },
-        { "num": 42, "text": "Then the king said to him, “Ask what you wish, even beyond what is written, and we will give it to you.”" },
-        { "num": 43, "text": "Then he said to the king, “Remember the vow that you made on the day when you took your kingdom, to build Jerusalem.”" }
+        {
+          "num": 13,
+          "text": {
+            "Base": "The third young man, who had spoken about women and truth (and this was Zerubbabel), began to speak:",
+            "KJV": "4:13 ¶ Then the third, who had spoken of women, and of the truth (this was Zorobabel) beganne to speake."
+          }
+        },
+        {
+          "num": 33,
+          "text": {
+            "Base": "“Gentlemen, is not the king great, and are not men many, and is not wine strong? Who is it, then, that rules them, or has the mastery over them? Is it not women?”",
+            "KJV": "4:33 Then the king & the princes looked one vpon another: so he began to speake of the trueth."
+          }
+        },
+        {
+          "num": 38,
+          "text": {
+            "Base": "“But truth is great, and stronger than all things.”",
+            "KJV": "4:38 As for the trueth it endureth, and is alwayes strong, it liueth and conquereth for euermore."
+          }
+        },
+        {
+          "num": 41,
+          "text": {
+            "Base": "When he stopped speaking, all the people then shouted and said, “Great is truth, and strongest of all!”",
+            "KJV": "4:41 And with that he held his peace, and al the people then shouted and said, Great is trueth, and mightie aboue all things."
+          }
+        },
+        {
+          "num": 42,
+          "text": {
+            "Base": "Then the king said to him, “Ask what you wish, even beyond what is written, and we will give it to you.”",
+            "KJV": "4:42 Then saide the king vnto him, Aske what thou wilt, more then is appointed in the writing, and we wil giue it thee, because thou art found wisest, and thou shalt sit next me, and shalt bee called my cousin."
+          }
+        },
+        {
+          "num": 43,
+          "text": {
+            "Base": "Then he said to the king, “Remember the vow that you made on the day when you took your kingdom, to build Jerusalem.”",
+            "KJV": "4:43 Then said hee vnto the king, Remember thy vow which thou hast vowed to build Ierusalem in the day when thou camest to the kingdome,"
+          }
+        }
       ]
     },
     {
       "num": 5,
       "verses": [
-        { "num": 1, "text": "After this the heads of ancestral houses were chosen to go up, according to their tribes, with their wives and sons and daughters, with their male and female servants, and their livestock." },
-        { "num": 46, "text": "Then the priests and the Levites and some of the people settled in Jerusalem and the country; the temple singers also and the gatekeepers and all Israel settled in their villages." },
-        { "num": 71, "text": "But the builders said to them, “It is not for you and us to build the house to the Lord our God.”" }
+        {
+          "num": 1,
+          "text": {
+            "Base": "After this the heads of ancestral houses were chosen to go up, according to their tribes, with their wives and sons and daughters, with their male and female servants, and their livestock.",
+            "KJV": "5:1 After this were the principall men of the families chosen according to their tribes, to go vp with their wiues, and sonnes, and daughters, with their men-seruants and maid-seruants, and their cattel."
+          }
+        },
+        {
+          "num": 46,
+          "text": {
+            "Base": "Then the priests and the Levites and some of the people settled in Jerusalem and the country; the temple singers also and the gatekeepers and all Israel settled in their villages.",
+            "KJV": "5:46 And so dwelt the Priests, and the Leuites, and the people in Ierusalem, and in the countrey: the Singers also, and the Porters, and all Israel in their villages."
+          }
+        },
+        {
+          "num": 71,
+          "text": {
+            "Base": "But the builders said to them, “It is not for you and us to build the house to the Lord our God.”",
+            "KJV": "5:71 We our selues alone will build vnto the Lord of Israel, according as Cyrus the King of the Persians hath commanded vs."
+          }
+        }
       ]
     },
     {
       "num": 6,
       "verses": [
-        { "num": 1, "text": "Now in the second year of the reign of Darius, the prophets Haggai and Zechariah son of Iddo prophesied to the Jews who were in Judea and Jerusalem." },
-        { "num": 2, "text": "Then Zerubbabel son of Shealtiel and Jeshua son of Jozadak began to build the house of the Lord that is in Jerusalem." },
-        { "num": 33, "text": "The king also gave orders that the temple should be finished, and that they should be careful to offer sacrifices there." }
+        {
+          "num": 1,
+          "text": {
+            "Base": "Now in the second year of the reign of Darius, the prophets Haggai and Zechariah son of Iddo prophesied to the Jews who were in Judea and Jerusalem.",
+            "KJV": "6:1 Now in the second yeere of the reigne of Darius, Aggeus, and Zacharias the sonne of Addo, the prophets prophesied vnto the Iewes, in Iurie and Ierusalem in the Name of the Lord God of Israel which was vpon them."
+          }
+        },
+        {
+          "num": 2,
+          "text": {
+            "Base": "Then Zerubbabel son of Shealtiel and Jeshua son of Jozadak began to build the house of the Lord that is in Jerusalem.",
+            "KJV": "6:2 Then stood vp Zorobabel the sonne of Salathiel, and Iesus the son of Iosedec, and beganne to build the house of the Lord at Ierusalem, the prophets of the Lord being with them,and helping them."
+          }
+        },
+        {
+          "num": 33,
+          "text": {
+            "Base": "The king also gave orders that the temple should be finished, and that they should be careful to offer sacrifices there.",
+            "KJV": "6:33 The Lord therfore whose Name is there called vpon, vtterly destroy euery king and nation, that stretcheth out his hand to hinder or endammage that house of the Lord in Ierusalem."
+          }
+        }
       ]
     },
     {
       "num": 7,
       "verses": [
-        { "num": 1, "text": "Then Sisinnes the governor of Greater Syria and Phoenicia and Sathrabuzanes and their associates, following the orders of King Darius," },
-        { "num": 2, "text": "supervised the holy work with very great care, assisting the elders of the Jews and the chief officers of the temple." },
-        { "num": 5, "text": "The holy house was finished by the twenty-third day of the month of Adar, in the sixth year of King Darius." }
+        {
+          "num": 1,
+          "text": {
+            "Base": "Then Sisinnes the governor of Greater Syria and Phoenicia and Sathrabuzanes and their associates, following the orders of King Darius,",
+            "KJV": "7:1 Then Sisinnes the gouernour of Coelosyria, and Phenice, and Sathrabuzanes, with their companions, following the commandements of king Darius,"
+          }
+        },
+        {
+          "num": 2,
+          "text": {
+            "Base": "supervised the holy work with very great care, assisting the elders of the Jews and the chief officers of the temple.",
+            "KJV": "7:2 Did very carefully ouersee the holy workes, assisting the ancients of the Iewes, & gouernours of the Temple."
+          }
+        },
+        {
+          "num": 5,
+          "text": {
+            "Base": "The holy house was finished by the twenty-third day of the month of Adar, in the sixth year of King Darius.",
+            "KJV": "7:5 And thus was the holy house finished, in the three and twentieth day of the moneth Adar, in the sixt yeere of Darius king of the Persians."
+          }
+        }
       ]
     },
     {
       "num": 8,
       "verses": [
-        { "num": 1, "text": "After these things, when Artaxerxes the king of the Persians was reigning, Ezra came... a scribe skilled in the law of Moses." },
-        { "num": 7, "text": "For Ezra had great knowledge, so that he omitted nothing from the law of the Lord or the commandments, but taught all Israel all the ordinances and judgments." },
-        { "num": 25, "text": "“And you, Ezra, according to the wisdom of God, appoint judges and justices to judge all those who know the law of your God throughout all Syria and Phoenicia.”" },
-        { "num": 91, "text": "While Ezra was praying and making his confession, weeping and lying face down on the ground before the temple, a very great multitude of men, women, and children gathered around him from Jerusalem; for there was great weeping among the people." }
+        {
+          "num": 1,
+          "text": {
+            "Base": "After these things, when Artaxerxes the king of the Persians was reigning, Ezra came... a scribe skilled in the law of Moses.",
+            "KJV": "8:1 And after these things, when Artaxerxes the king of the Persians reigned, came Esdras the sonne of Saraias, the sonne of Ezerias, the sonne of Helchiah, the sonne of Salum,"
+          }
+        },
+        {
+          "num": 7,
+          "text": {
+            "Base": "For Ezra had great knowledge, so that he omitted nothing from the law of the Lord or the commandments, but taught all Israel all the ordinances and judgments.",
+            "KJV": "8:7 For Esdras had very great skill, so that he omitted nothing of the Law and Commaundements of the Lord, but taught all Israel the Ordinances and Iudgements."
+          }
+        },
+        {
+          "num": 25,
+          "text": {
+            "Base": "“And you, Ezra, according to the wisdom of God, appoint judges and justices to judge all those who know the law of your God throughout all Syria and Phoenicia.”",
+            "KJV": "8:25 ¶ Then said Esdras the Scribe, Blessed be the onely Lord God of my fathers, who hath put these things into the heart of the king, to glorifie his house that is in Ierusalem;"
+          }
+        },
+        {
+          "num": 91,
+          "text": {
+            "Base": "While Ezra was praying and making his confession, weeping and lying face down on the ground before the temple, a very great multitude of men, women, and children gathered around him from Jerusalem; for there was great weeping among the people.",
+            "KJV": "8:91 And as Esdras in his praier made his confession, weeping, and lying flat vpon the ground before the Temple, there gathered vnto him from Ierusalem, a very great multitude of men, and women, & children: for there was great weeping among the multitude."
+          }
+        }
       ]
     },
     {
       "num": 9,
       "verses": [
-        { "num": 1, "text": "Then Ezra rose and went from the court of the temple to the chamber of Jehohanan son of Eliashib." },
-        { "num": 37, "text": "The priests and the Levites and the Israelites settled in Jerusalem and in the country. On the new moon of the seventh month the Israelites were in their settlements." },
-        { "num": 39, "text": "They told Ezra the chief priest and reader to bring the law of Moses that had been given by the Lord God of Israel." },
-        { "num": 46, "text": "Ezra blessed the Lord God Most High, the God of hosts, the Almighty." },
-        { "num": 47, "text": "And all the people answered, “Amen!” And they lifted up their hands and fell to the ground and worshiped the Lord." }
+        {
+          "num": 1,
+          "text": {
+            "Base": "Then Ezra rose and went from the court of the temple to the chamber of Jehohanan son of Eliashib.",
+            "KJV": "9:1 Then Esdras rising from the court of the Temple, went to the chamber of Ioanan the sonne of Eliasib,"
+          }
+        },
+        {
+          "num": 37,
+          "text": {
+            "Base": "The priests and the Levites and the Israelites settled in Jerusalem and in the country. On the new moon of the seventh month the Israelites were in their settlements.",
+            "KJV": "9:37 And the priests, and Leuites, and they that were of Israel dwelt in Ierusalem, and in the countrey, in the first day of &thorn; seuenth month: so the children of Israel were in their habitations."
+          }
+        },
+        {
+          "num": 39,
+          "text": {
+            "Base": "They told Ezra the chief priest and reader to bring the law of Moses that had been given by the Lord God of Israel.",
+            "KJV": "9:39 And they spake vnto Esdras the priest and reader, that he would bring the law of Moses, that was giuen of the Lord God of Israel."
+          }
+        },
+        {
+          "num": 46,
+          "text": {
+            "Base": "Ezra blessed the Lord God Most High, the God of hosts, the Almighty.",
+            "KJV": "9:46 And when hee opened the law, they stood all streight vp. So Esdras blessed the Lord God most high, the God of hostes Almighty."
+          }
+        },
+        {
+          "num": 47,
+          "text": {
+            "Base": "And all the people answered, “Amen!” And they lifted up their hands and fell to the ground and worshiped the Lord.",
+            "KJV": "9:47 And all the people answered Amen, and lifting vp their hands they fell to the ground, & worshipped the Lord."
+          }
+        }
       ]
     }
   ]

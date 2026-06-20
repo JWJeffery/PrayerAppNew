@@ -9,132 +9,468 @@
     {
       "num": 1,
       "verses": [
-        { "num": 1, "text": "The Jews in Jerusalem and those in the land of Judea, to their Jewish kindred in Egypt, greetings and true peace." },
-        { "num": 10, "text": "In the one hundred eighty-eighth year, the people of Jerusalem and Judea and the council of the elders and Judas, to Aristobulus, who is of the family of the anointed priests, teacher of King Ptolemy, and to the Jews in Egypt, greetings and good health." },
-        { "num": 18, "text": "Since on the twenty-fifth day of Chislev we shall celebrate the purification of the temple, we thought it necessary to notify you, in order that you also may celebrate the festival of booths and the festival of the fire given when Nehemiah, who built the temple and the altar, offered sacrifices." }
+        {
+          "num": 1,
+          "text": {
+            "Base": "The Jews in Jerusalem and those in the land of Judea, to their Jewish kindred in Egypt, greetings and true peace.",
+            "KJV": "1:1 The brethren the Iewes that bee at Ierusalem, and in the lande of Iudea, wish vnto the brethren the Iewes that are throughout Egypt, health and peace."
+          }
+        },
+        {
+          "num": 10,
+          "text": {
+            "Base": "In the one hundred eighty-eighth year, the people of Jerusalem and Judea and the council of the elders and Judas, to Aristobulus, who is of the family of the anointed priests, teacher of King Ptolemy, and to the Jews in Egypt, greetings and good health.",
+            "KJV": "1:10 In the hundreth, fourescore, and eight yeere, the people that were at Ierusalem, and in Iudea, and the counsel, and Iudas, sent greeting and health vnto Aristobulus, king Ptolomeus master, who was of the stock of the anointed priests, and to the Iewes that were in Egypt."
+          }
+        },
+        {
+          "num": 18,
+          "text": {
+            "Base": "Since on the twenty-fifth day of Chislev we shall celebrate the purification of the temple, we thought it necessary to notify you, in order that you also may celebrate the festival of booths and the festival of the fire given when Nehemiah, who built the temple and the altar, offered sacrifices.",
+            "KJV": "1:18 Therefore whereas we are nowe purposed to keep the purification of the Temple vpon the fiue & twentieth day of the moneth Casleu, we thought it necessary to certifie you thereof, that ye also might keepe it, as the of the tabernacles, and of the fire when Neemias offered sacrifice, after that he had builded the Temple, and the Altar."
+          }
+        }
       ]
     },
     {
       "num": 2,
       "verses": [
-        { "num": 1, "text": "One finds in the records that the prophet Jeremiah ordered those who were being deported to take some of the fire, as has been mentioned," },
-        { "num": 4, "text": "The document also described how the prophet, when he had received an oracle, ordered that the tent and the ark should accompany him, and how he went forth to the mountain where Moses had gone up and had seen the inheritance of God." },
-        { "num": 19, "text": "The story of Judas Maccabeus and his brothers, and the purification of the great temple, and the dedication of the altar," },
-        { "num": 23, "text": "all this, which has been set forth by Jason of Cyrene in five volumes, we shall attempt to condense into a single book." }
+        {
+          "num": 1,
+          "text": {
+            "Base": "One finds in the records that the prophet Jeremiah ordered those who were being deported to take some of the fire, as has been mentioned,",
+            "KJV": "2:1 It is also found in the records, that Ieremie the Prophet, commaunded them that were caried away, to take of the fire as it hath beene signified,"
+          }
+        },
+        {
+          "num": 4,
+          "text": {
+            "Base": "The document also described how the prophet, when he had received an oracle, ordered that the tent and the ark should accompany him, and how he went forth to the mountain where Moses had gone up and had seen the inheritance of God.",
+            "KJV": "2:4 It was also contained in the same writing, that the Prophet being warned of God, commanded the Tabernacle, and the Arke to goe with him, as he went forth into the mountaine, where Moises climed vp, and sawe the heritage of God."
+          }
+        },
+        {
+          "num": 19,
+          "text": {
+            "Base": "The story of Judas Maccabeus and his brothers, and the purification of the great temple, and the dedication of the altar,",
+            "KJV": "2:19 Now as concerning Iudas Maccabeus, and his brethren, and the purification of the great Temple, and the dedication of the altar,"
+          }
+        },
+        {
+          "num": 23,
+          "text": {
+            "Base": "all this, which has been set forth by Jason of Cyrene in five volumes, we shall attempt to condense into a single book.",
+            "KJV": "2:23 All these things (I say) being declared by Iason of Cyrene in fiue books, we will assay to abridge in one volume."
+          }
+        }
       ]
     },
     {
       "num": 3,
       "verses": [
-        { "num": 1, "text": "While the holy city was inhabited in unbroken peace and the laws were very well observed because of the piety of the high priest Onias and his hatred of wickedness," },
-        { "num": 7, "text": "But a certain Simon... informed the king about the treasury in Jerusalem, that it was full of untold sums of money." },
-        { "num": 24, "text": "But when Heliodorus arrived at the treasury with his bodyguard... the Sovereign of spirits and of all authority caused so great a manifestation that all who had been so bold as to accompany him were astounded by the power of God, and became faint with terror." },
-        { "num": 25, "text": "For there appeared to them a magnificently caparisoned horse, with a rider of frightening mien; it rushed furiously at Heliodorus and struck at him with its front hoofs. Its rider was seen to have armor and weapons of gold." }
+        {
+          "num": 1,
+          "text": {
+            "Base": "While the holy city was inhabited in unbroken peace and the laws were very well observed because of the piety of the high priest Onias and his hatred of wickedness,",
+            "KJV": "3:1 Now when the holy Citie was inhabited with all peace, and the Lawes were kept very well, because of the godlinesse of Onias the high Priest, and his hatred of wickednesse,"
+          }
+        },
+        {
+          "num": 7,
+          "text": {
+            "Base": "But a certain Simon... informed the king about the treasury in Jerusalem, that it was full of untold sums of money.",
+            "KJV": "3:7 Now when Apollonius came to the king, and had shewed him of the money, whereof he was told, the king chose out Heliodorus his treasurer, and sent him with a commaundement, to bring him the foresaid money."
+          }
+        },
+        {
+          "num": 24,
+          "text": {
+            "Base": "But when Heliodorus arrived at the treasury with his bodyguard... the Sovereign of spirits and of all authority caused so great a manifestation that all who had been so bold as to accompany him were astounded by the power of God, and became faint with terror.",
+            "KJV": "3:24 Now as hee was there present himselfe with his guard about the treasurie, the Lord of spirits, & the Prince of all power caused a great apparition, so that all that presumed to come in with him, were astonished at the power of God, and fainted, and were sore afraid."
+          }
+        },
+        {
+          "num": 25,
+          "text": {
+            "Base": "For there appeared to them a magnificently caparisoned horse, with a rider of frightening mien; it rushed furiously at Heliodorus and struck at him with its front hoofs. Its rider was seen to have armor and weapons of gold.",
+            "KJV": "3:25 For there appeared vnto them a horse, with a terrible rider vpon him, and adorned with a very faire couering, and he ranne fiercely, and smote at Heliodorus with his forefeet, and it seemed that hee that sate vpon the horse, had complete harnesse of golde."
+          }
+        }
       ]
     },
     {
       "num": 4,
       "verses": [
-        { "num": 7, "text": "But when Seleucus died and Antiochus, who was called Epiphanes, succeeded to the kingdom, Jason the brother of Onias obtained the high priesthood by corruption," },
-        { "num": 10, "text": "When the king had assented and Jason had come to office, he at once shifted his compatriots over to the Greek way of life." },
-        { "num": 23, "text": "After a period of three years, Jason sent Menelaus... to carry the money to the king." },
-        { "num": 24, "text": "But Menelaus, when introduced to the king, flattered him... and outbid Jason by three hundred talents of silver, and so had the high priesthood confirmed to himself." }
+        {
+          "num": 7,
+          "text": {
+            "Base": "But when Seleucus died and Antiochus, who was called Epiphanes, succeeded to the kingdom, Jason the brother of Onias obtained the high priesthood by corruption,",
+            "KJV": "4:7 But after the death of Seleucus, when Antiochus called Epiphanes, tooke the kingdom, Iason the brother of Onias, laboured vnder hand to bee hie Priest,"
+          }
+        },
+        {
+          "num": 10,
+          "text": {
+            "Base": "When the king had assented and Jason had come to office, he at once shifted his compatriots over to the Greek way of life.",
+            "KJV": "4:10 Which when the king had granted, and hee had gotten into his hand the rule, he foorthwith brought his owne nation to the Greekish fashion."
+          }
+        },
+        {
+          "num": 23,
+          "text": {
+            "Base": "After a period of three years, Jason sent Menelaus... to carry the money to the king.",
+            "KJV": "4:23 Three yeere afterward, Iason sent Menelaus the foresaid Simons brother, to beare the money vnto the king, and to put him in minde of certaine necessary matters."
+          }
+        },
+        {
+          "num": 24,
+          "text": {
+            "Base": "But Menelaus, when introduced to the king, flattered him... and outbid Jason by three hundred talents of silver, and so had the high priesthood confirmed to himself.",
+            "KJV": "4:24 But he being brought to the presence of the king, when he had magnified him, for the glorious appearance of his power, got the priesthood to himselfe, offering more then Iason by three hundred talents of siluer."
+          }
+        }
       ]
     },
     {
       "num": 5,
       "verses": [
-        { "num": 1, "text": "About this time Antiochus made his second invasion of Egypt." },
-        { "num": 2, "text": "And it happened that, for almost forty days, there appeared over all the city golden-clad cavalry charging through the air, in companies fully armed with lances and drawn swords." },
-        { "num": 11, "text": "When news of what had happened reached the king, he chosen to think that Judea was in revolt. So, raging like a wild animal, he set out from Egypt and took Jerusalem by storm." },
-        { "num": 14, "text": "Within the total of three days eighty thousand were destroyed, forty thousand in hand-to-hand fighting, and as many were sold into slavery as were killed." }
+        {
+          "num": 1,
+          "text": {
+            "Base": "About this time Antiochus made his second invasion of Egypt.",
+            "KJV": "5:1 About the same time Antiochus prepared his second voyage into Egypt:"
+          }
+        },
+        {
+          "num": 2,
+          "text": {
+            "Base": "And it happened that, for almost forty days, there appeared over all the city golden-clad cavalry charging through the air, in companies fully armed with lances and drawn swords.",
+            "KJV": "5:2 And then it happened, that through all the citie, for the space almost of fourtie dayes, there were seene horsemen running in the aire, in cloth of golde, and armed with lances, like a band of souldiers,"
+          }
+        },
+        {
+          "num": 11,
+          "text": {
+            "Base": "When news of what had happened reached the king, he chosen to think that Judea was in revolt. So, raging like a wild animal, he set out from Egypt and took Jerusalem by storm.",
+            "KJV": "5:11 Now when this that was done came to the kings eare, he thought that Iudea had reuolted, whereupon remouing out of Egypt in a furious minde, he tooke the citie by force of armes,"
+          }
+        },
+        {
+          "num": 14,
+          "text": {
+            "Base": "Within the total of three days eighty thousand were destroyed, forty thousand in hand-to-hand fighting, and as many were sold into slavery as were killed.",
+            "KJV": "5:14 And there were destroyed within the space of three whole daies, fourescore thousand, whereof fourty thousand were slaine in the conflict; and no fewer sold, then slaine."
+          }
+        }
       ]
     },
     {
       "num": 6,
       "verses": [
-        { "num": 1, "text": "Not long after this, the king sent an Athenian senator to compel the Jews to forsake the laws of their ancestors and no longer to live by the laws of God;" },
-        { "num": 2, "text": "also to pollute the temple in Jerusalem and to call it the temple of Olympian Zeus." },
-        { "num": 18, "text": "Eleazar, one of the foremost scribes, a man of advanced age and fine appearance, was being forced to open his mouth to eat swine’s flesh." },
-        { "num": 19, "text": "But he, welcoming death with honor rather than life with pollution, went up to the rack of his own accord." }
+        {
+          "num": 1,
+          "text": {
+            "Base": "Not long after this, the king sent an Athenian senator to compel the Jews to forsake the laws of their ancestors and no longer to live by the laws of God;",
+            "KJV": "6:1 Not long after this, the king sent an olde man of Athens, to compell the Iewes to depart from the lawes of their fathers, and not to liue after the Lawes of God:"
+          }
+        },
+        {
+          "num": 2,
+          "text": {
+            "Base": "also to pollute the temple in Jerusalem and to call it the temple of Olympian Zeus.",
+            "KJV": "6:2 And to pollute also the Temple in Ierusalem, and to call it the Temple of Iupiter Olympius: and that in Garizim, of Iupiter the defender of strangers, as they did desire that dwelt in the place."
+          }
+        },
+        {
+          "num": 18,
+          "text": {
+            "Base": "Eleazar, one of the foremost scribes, a man of advanced age and fine appearance, was being forced to open his mouth to eat swine’s flesh.",
+            "KJV": "6:18 Eleazar one of the principall Scribes, an aged man, and of a well fauoured countenance, was constrained to open his mouth, and to eate swines flesh."
+          }
+        },
+        {
+          "num": 19,
+          "text": {
+            "Base": "But he, welcoming death with honor rather than life with pollution, went up to the rack of his own accord.",
+            "KJV": "6:19 But he chusing rather to die gloriously, then to liue stained with such an abomination, spit it forth, and came of his owne accord to the torment,"
+          }
+        }
       ]
     },
     {
       "num": 7,
       "verses": [
-        { "num": 1, "text": "It also happened that seven brothers with their mother were arrested and were being compelled by the king, under torture with whips and thongs, to partake of unlawful swine’s flesh." },
-        { "num": 9, "text": "And when the second was at his last breath, he said, “You accursed wretch, you dismiss us from this present life, but the King of the universe will raise us up to an everlasting renewal of life, because we have died for his laws.”" },
-        { "num": 27, "text": "The mother leaning over her son, fooling the cruel tyrant, she said in her native language: “My son, have pity on me... do not fear this butcher, but prove worthy of your brothers. Accept death, so that in God’s mercy I may get you back again along with your brothers.”" }
+        {
+          "num": 1,
+          "text": {
+            "Base": "It also happened that seven brothers with their mother were arrested and were being compelled by the king, under torture with whips and thongs, to partake of unlawful swine’s flesh.",
+            "KJV": "7:1 It came to passe also that seuen brethren with their mother were taken, and compelled by the king against the lawe to taste swines flesh, and were tormented with scourges, and whips:"
+          }
+        },
+        {
+          "num": 9,
+          "text": {
+            "Base": "And when the second was at his last breath, he said, “You accursed wretch, you dismiss us from this present life, but the King of the universe will raise us up to an everlasting renewal of life, because we have died for his laws.”",
+            "KJV": "7:9 And when hee was at the last gaspe, hee said, Thou like a fury takest vs out of this present life, but the king of the world shall raise vs vp, who haue died for his lawes, vnto euerlasting life."
+          }
+        },
+        {
+          "num": 27,
+          "text": {
+            "Base": "The mother leaning over her son, fooling the cruel tyrant, she said in her native language: “My son, have pity on me... do not fear this butcher, but prove worthy of your brothers. Accept death, so that in God’s mercy I may get you back again along with your brothers.”",
+            "KJV": "7:27 But shee bowing her selfe towards him, laughing the cruell tyrant to scorne, spake in her countrey language on this maner; O my sonne, haue pitie vpon mee that bare thee nine moneths in my wombe, and gaue thee sucke three yeeres, and nourished thee, and brought thee vp vnto this age, and endured the troubles of education."
+          }
+        }
       ]
     },
     {
       "num": 8,
       "verses": [
-        { "num": 1, "text": "But Judas, who was also called Maccabeus, and his companions secretly entered the villages and summoned their kindred... and they mustered about six thousand at most." },
-        { "num": 24, "text": "With the Almighty as their ally, they killed more than nine thousand of the enemy, and wounded and disabled the greater part of Nicanor’s army, and forced them all to flee." }
+        {
+          "num": 1,
+          "text": {
+            "Base": "But Judas, who was also called Maccabeus, and his companions secretly entered the villages and summoned their kindred... and they mustered about six thousand at most.",
+            "KJV": "8:1 Then Iudas Maccabeus and they that were with him, went priuily into the townes, and called their kinsefolkes together, and tooke vnto them all such as continued in the Iewes religion, and assembled about sixe thousand men."
+          }
+        },
+        {
+          "num": 24,
+          "text": {
+            "Base": "With the Almighty as their ally, they killed more than nine thousand of the enemy, and wounded and disabled the greater part of Nicanor’s army, and forced them all to flee.",
+            "KJV": "8:24 And by the helpe of the Almightie, they slew aboue nine thousand of their enemies, and wounded and maimed the most part of Nicanors hoste, and so put all to flight:"
+          }
+        }
       ]
     },
     {
       "num": 9,
       "verses": [
-        { "num": 1, "text": "About that time it happened that Antiochus had retreated in disorder from the region of Persia." },
-        { "num": 5, "text": "But the all-seeing Lord, the God of Israel, struck him with an incurable and invisible blow. As soon as he stopped speaking he was seized with a pain in his bowels, for which there was no relief, and with sharp internal tortures." },
-        { "num": 28, "text": "So the murderer and blasphemer, having endured the most intense suffering, such as he had imposed on others, ended his life most miserably among the mountains in a foreign land." }
+        {
+          "num": 1,
+          "text": {
+            "Base": "About that time it happened that Antiochus had retreated in disorder from the region of Persia.",
+            "KJV": "9:1 About that time came Antiochus with dishonor out of the countrey of Persia."
+          }
+        },
+        {
+          "num": 5,
+          "text": {
+            "Base": "But the all-seeing Lord, the God of Israel, struck him with an incurable and invisible blow. As soon as he stopped speaking he was seized with a pain in his bowels, for which there was no relief, and with sharp internal tortures.",
+            "KJV": "9:5 But the Lord almightie, the God of Israel smote him with an incurable and inuisible plague: for assoone as hee had spoken these words, a paine of the bowels that was remediles, came vpon him, & sore torments of the inner parts."
+          }
+        },
+        {
+          "num": 28,
+          "text": {
+            "Base": "So the murderer and blasphemer, having endured the most intense suffering, such as he had imposed on others, ended his life most miserably among the mountains in a foreign land.",
+            "KJV": "9:28 Thus the murtherer, and blasphemer hauing suffered most grieuously, as he entreated other men, so died he a miserable death in a strange countrey in the mountaines."
+          }
+        }
       ]
     },
     {
       "num": 10,
       "verses": [
-        { "num": 1, "text": "Now Maccabeus and his companions, the Lord leading them on, recovered the temple and the city;" },
-        { "num": 2, "text": "they tore down the altars that had been built in the public square by the foreigners." },
-        { "num": 5, "text": "It happened that on the very same day on which the sanctuary had been profaned by the foreigners, the purification of the sanctuary took place, that is, on the twenty-fifth day of the same month, which was Chislev." },
-        { "num": 8, "text": "They decreed by public edict, ratified by vote, that the whole nation of the Jews should observe these days every year." }
+        {
+          "num": 1,
+          "text": {
+            "Base": "Now Maccabeus and his companions, the Lord leading them on, recovered the temple and the city;",
+            "KJV": "10:1 Now Maccabeus, and his company, the Lord guiding them, recouered the Temple, and the citie."
+          }
+        },
+        {
+          "num": 2,
+          "text": {
+            "Base": "they tore down the altars that had been built in the public square by the foreigners.",
+            "KJV": "10:2 But the altars, which the heathen had built in the open street, & also the Chappels they pulled downe."
+          }
+        },
+        {
+          "num": 5,
+          "text": {
+            "Base": "It happened that on the very same day on which the sanctuary had been profaned by the foreigners, the purification of the sanctuary took place, that is, on the twenty-fifth day of the same month, which was Chislev.",
+            "KJV": "10:5 Now vpon the same day that the strangers prophaned the Temple, on the very same day it was cleansed againe, euen the fiue and twentieth day of the same moneth, which is Casleu."
+          }
+        },
+        {
+          "num": 8,
+          "text": {
+            "Base": "They decreed by public edict, ratified by vote, that the whole nation of the Jews should observe these days every year.",
+            "KJV": "10:8 They ordeined also by a common statute, and decree, That euery yeere those dayes should be kept of the whole nation of the Iewes."
+          }
+        }
       ]
     },
     {
       "num": 11,
       "verses": [
-        { "num": 1, "text": "Very soon after this, Lysias, the king’s guardian and kinsman... gathered about eighty thousand infantry and all his cavalry and came against the Jews." },
-        { "num": 8, "text": "And while they were still near Jerusalem, a horseman appeared at their head, clothed in white and brandishing weapons of gold." },
-        { "num": 11, "text": "They hurled themselves like lions against the enemy, and laid low eleven thousand of them and sixteen hundred cavalry, and forced all the rest to flee." }
+        {
+          "num": 1,
+          "text": {
+            "Base": "Very soon after this, Lysias, the king’s guardian and kinsman... gathered about eighty thousand infantry and all his cavalry and came against the Jews.",
+            "KJV": "11:1 Not long after this, Lysias the kings protectour & cousin, who also managed the affaires, tooke sore displeasure for the things that were done."
+          }
+        },
+        {
+          "num": 8,
+          "text": {
+            "Base": "And while they were still near Jerusalem, a horseman appeared at their head, clothed in white and brandishing weapons of gold.",
+            "KJV": "11:8 And as they were at Ierusalem, there appeared before them on horsebacke, one in white clothing, shaking his armour of gold."
+          }
+        },
+        {
+          "num": 11,
+          "text": {
+            "Base": "They hurled themselves like lions against the enemy, and laid low eleven thousand of them and sixteen hundred cavalry, and forced all the rest to flee.",
+            "KJV": "11:11 And giuing a charge vp&#333; their enemies like lions, they slew eleuen thousand footmen, & sixteene hundred horsemen, and put all the other to flight."
+          }
+        }
       ]
     },
     {
       "num": 12,
       "verses": [
-        { "num": 1, "text": "When these agreements had been made, Lysias returned to the king, and the Jews went about their farming." },
-        { "num": 32, "text": "After the festival called Pentecost, they hurried against Gorgias, the governor of Idumea." },
-        { "num": 43, "text": "Judas also took up a collection, man by man, to the amount of two thousand drachmas of silver, and sent it to Jerusalem to provide for a sin offering. In doing this he acted very well and honorably, taking account of the resurrection." },
-        { "num": 44, "text": "For if he were not expecting that those who had fallen would rise again, it would have been superfluous and foolish to pray for the dead." }
+        {
+          "num": 1,
+          "text": {
+            "Base": "When these agreements had been made, Lysias returned to the king, and the Jews went about their farming.",
+            "KJV": "12:1 When these Couenants were made, Lysias went vnto the king, and the Iewes were about their husbandrie."
+          }
+        },
+        {
+          "num": 32,
+          "text": {
+            "Base": "After the festival called Pentecost, they hurried against Gorgias, the governor of Idumea.",
+            "KJV": "12:32 And after the feast called Pentecost, they went foorth against Gorgias the gouernour of Idumea,"
+          }
+        },
+        {
+          "num": 43,
+          "text": {
+            "Base": "Judas also took up a collection, man by man, to the amount of two thousand drachmas of silver, and sent it to Jerusalem to provide for a sin offering. In doing this he acted very well and honorably, taking account of the resurrection.",
+            "KJV": "12:43 And when he had made a gathering throughout the company, to the sum of two thousand drachmes of siluer, hee sent it to Ierusalem to offer a sinne offering, doing therein very well, and honestly, in that he was mindfull of the resurrection."
+          }
+        },
+        {
+          "num": 44,
+          "text": {
+            "Base": "For if he were not expecting that those who had fallen would rise again, it would have been superfluous and foolish to pray for the dead.",
+            "KJV": "12:44 (For if he had not hoped that they that were slaine should haue risen againe, it had bin superfluous and vaine, to pray for the dead.)"
+          }
+        }
       ]
     },
     {
       "num": 13,
       "verses": [
-        { "num": 1, "text": "In the one hundred forty-ninth year word came to Judas and his companions that Antiochus Eupator was coming with a great army against Judea," },
-        { "num": 4, "text": "But the King of kings aroused the anger of Antiochus against the villain Menelaus... and the king ordered that he be taken to Beroea and put to death." }
+        {
+          "num": 1,
+          "text": {
+            "Base": "In the one hundred forty-ninth year word came to Judas and his companions that Antiochus Eupator was coming with a great army against Judea,",
+            "KJV": "13:1 In the hundreth forty and ninth yere it was told Iudas that Antiochus Eupator was c&#333;ming with a great power into Iudea;"
+          }
+        },
+        {
+          "num": 4,
+          "text": {
+            "Base": "But the King of kings aroused the anger of Antiochus against the villain Menelaus... and the king ordered that he be taken to Beroea and put to death.",
+            "KJV": "13:4 But the King of kings mooued Antiochus minde against this wicked wretch, and Lysias enformed the king, that this man was the cause of all mischiefe, so that the king commanded to bring him vnto Berea, and to put him to death, as the maner is in that place."
+          }
+        }
       ]
     },
     {
       "num": 14,
       "verses": [
-        { "num": 1, "text": "Three years later, word came to Judas and his companions that Demetrius son of Seleucus had sailed into the harbor of Tripolis with a strong army and a fleet." },
-        { "num": 3, "text": "Now a certain Alcimus, who had formerly been high priest but had willfully polluted himself... went to King Demetrius." },
-        { "num": 12, "text": "The king at once selected Nicanor, who had been master of the elephants, and appointed him governor of Judea and sent him off," },
-        { "num": 13, "text": "with orders to kill Judas and scatter his companions, and to install Alcimus as high priest of the great temple." }
+        {
+          "num": 1,
+          "text": {
+            "Base": "Three years later, word came to Judas and his companions that Demetrius son of Seleucus had sailed into the harbor of Tripolis with a strong army and a fleet.",
+            "KJV": "14:1 After three yeres was Iudas enformed that Demetrius the sonne of Seleucus hauing entred by the hauen of Tripolis with a great power and nauie,"
+          }
+        },
+        {
+          "num": 3,
+          "text": {
+            "Base": "Now a certain Alcimus, who had formerly been high priest but had willfully polluted himself... went to King Demetrius.",
+            "KJV": "14:3 Now one Alcimus who had beene hie Priest, and had defiled himselfe wilfully in the times of their mingling (with the Gentiles) seeing that by no meanes hee could saue himselfe, nor haue any more accesse to the holy Altar,"
+          }
+        },
+        {
+          "num": 12,
+          "text": {
+            "Base": "The king at once selected Nicanor, who had been master of the elephants, and appointed him governor of Judea and sent him off,",
+            "KJV": "14:12 And foorthwith calling Nicanor, who had bene master of the Elephants, and making him gouernour ouer Iudea, he sent him forth,"
+          }
+        },
+        {
+          "num": 13,
+          "text": {
+            "Base": "with orders to kill Judas and scatter his companions, and to install Alcimus as high priest of the great temple.",
+            "KJV": "14:13 C&#333;manding him to slay Iudas, & to scatter them that were him, & to make Alcimus high priest of the great Temple."
+          }
+        }
       ]
     },
     {
       "num": 15,
       "verses": [
-        { "num": 1, "text": "When Nicanor heard that Judas and his companions were in the region of Samaria, he made plans to attack them with complete safety on the day of rest." },
-        { "num": 12, "text": "What Judas saw was this: Onias, who had been high priest... was praying with outstretched hands for the whole body of the Jews." },
-        { "num": 13, "text": "Then in the same fashion another man appeared... distinguished by his gray hair and dignity." },
-        { "num": 14, "text": "And Onias spoke, saying, “This is a man who loves the family of Israel and prays much for the people and the holy city—Jeremiah, the prophet of God.”" },
-        { "num": 15, "text": "Jeremiah stretched out his right hand and gave to Judas a golden sword." },
-        { "num": 28, "text": "When the battle was over and they were returning with joy, they recognized Nicanor, lying dead, in his full armor." },
-        { "num": 37, "text": "Since this is the way the silver matters turned out with Nicanor... I will here come to an end." },
-        { "num": 38, "text": "If it is well told and to the point, that is what I myself desired; if it is poorly done and mediocre, that was the best I could do." }
+        {
+          "num": 1,
+          "text": {
+            "Base": "When Nicanor heard that Judas and his companions were in the region of Samaria, he made plans to attack them with complete safety on the day of rest.",
+            "KJV": "15:1 But Nicanor hearing that Iudas and his company were in the strong places about Samaria, resolued without any danger to set vpon them on &thorn; sabbath day."
+          }
+        },
+        {
+          "num": 12,
+          "text": {
+            "Base": "What Judas saw was this: Onias, who had been high priest... was praying with outstretched hands for the whole body of the Jews.",
+            "KJV": "15:12 And this was his vision: that Onias, who had bin high Priest, a vertuous, and a good man, reuerend in conuersation, gentle in condition, well spoken also, and exercised from a child in all points of vertue, holding vp his hands, prayed for the whole bodie of the Iewes."
+          }
+        },
+        {
+          "num": 13,
+          "text": {
+            "Base": "Then in the same fashion another man appeared... distinguished by his gray hair and dignity.",
+            "KJV": "15:13 This done, in like maner there appeared a man with gray haires, & exceeding glorious, who was of a wonderfull and excellent maiestie."
+          }
+        },
+        {
+          "num": 14,
+          "text": {
+            "Base": "And Onias spoke, saying, “This is a man who loves the family of Israel and prays much for the people and the holy city—Jeremiah, the prophet of God.”",
+            "KJV": "15:14 Then Onias answered, saying, This is a louer of the brethren, who prayeth much for the people, and for the holy citie, (to wit) Ieremias &thorn; prophet of God."
+          }
+        },
+        {
+          "num": 15,
+          "text": {
+            "Base": "Jeremiah stretched out his right hand and gave to Judas a golden sword.",
+            "KJV": "15:15 Whereupon Ieremias, holding forth his right hand, gaue to Iudas a sword of gold, and in giuing it spake thus:"
+          }
+        },
+        {
+          "num": 28,
+          "text": {
+            "Base": "When the battle was over and they were returning with joy, they recognized Nicanor, lying dead, in his full armor.",
+            "KJV": "15:28 Now when the battell was done, returning againe with ioy, they knew that Nicanor lay dead in his harnesse."
+          }
+        },
+        {
+          "num": 37,
+          "text": {
+            "Base": "Since this is the way the silver matters turned out with Nicanor... I will here come to an end.",
+            "KJV": "15:37 Thus went it with Nicanor, and from that time forth, the Hebrewes had the citie in their power: and heere will I make an end."
+          }
+        },
+        {
+          "num": 38,
+          "text": {
+            "Base": "If it is well told and to the point, that is what I myself desired; if it is poorly done and mediocre, that was the best I could do.",
+            "KJV": "15:38 And if I haue done well, and as is fitting the story, it is that which I desired: but if slenderly, and meanly, it is that which I could attaine vnto."
+          }
+        }
       ]
     }
   ]

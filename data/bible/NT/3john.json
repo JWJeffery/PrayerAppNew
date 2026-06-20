@@ -68,59 +68,101 @@
       "verses": [
         {
           "num": 1,
-          "text": "The elder to the beloved Gaius, whom I love in truth."
+          "text": {
+            "Base": "The elder to the beloved Gaius, whom I love in truth.",
+            "KJV": "1:1 The Elder vnto the welbeloued Gaius, whom I loue in the trueth:"
+          }
         },
         {
           "num": 2,
-          "text": "Beloved, I pray that all may go well with you and that you may be in good health, just as it is well with your soul."
+          "text": {
+            "Base": "Beloved, I pray that all may go well with you and that you may be in good health, just as it is well with your soul.",
+            "KJV": "1:2 Beloued, I wish aboue all things that thou mayest prosper and be in health, euen as thy soule prospereth."
+          }
         },
         {
           "num": 3,
-          "text": "I was recently overjoyed when some of the friends arrived and testified to your faithfulness to the truth, namely how you walk in the truth."
+          "text": {
+            "Base": "I was recently overjoyed when some of the friends arrived and testified to your faithfulness to the truth, namely how you walk in the truth.",
+            "KJV": "1:3 For I reioyced greatly when the brethren came and testified of the truth that is in thee, euen as thou walkest in the trueth."
+          }
         },
         {
           "num": 4,
-          "text": "I have no greater joy than this, to hear that my children are walking in the truth."
+          "text": {
+            "Base": "I have no greater joy than this, to hear that my children are walking in the truth.",
+            "KJV": "1:4 I haue no greater ioy, then to heare that my children walke in truth."
+          }
         },
         {
           "num": 5,
-          "text": "Beloved, you do faithfully whatever you do for the friends, even though they are strangers to you;"
+          "text": {
+            "Base": "Beloved, you do faithfully whatever you do for the friends, even though they are strangers to you;",
+            "KJV": "1:5 Beloued, thou doest faithfully whatsoeuer thou doest to the Brethren, and to strangers:"
+          }
         },
         {
           "num": 6,
-          "text": "they have testified to your love before the church. You will do well to send them on in a manner worthy of God;"
+          "text": {
+            "Base": "they have testified to your love before the church. You will do well to send them on in a manner worthy of God;",
+            "KJV": "1:6 Which haue borne witnesse of thy charitie before the Church: whome if thou bring forward on their iourney after a godly sort, thou shalt doe well:"
+          }
         },
         {
           "num": 7,
-          "text": "for they began their journey for the sake of Christ, accepting no support from non-believers."
+          "text": {
+            "Base": "for they began their journey for the sake of Christ, accepting no support from non-believers.",
+            "KJV": "1:7 Because that for his Names sake they went foorth, taking nothing of the Gentiles."
+          }
         },
         {
           "num": 8,
-          "text": "Therefore we ought to support such people, so that we may become co-workers with the truth."
+          "text": {
+            "Base": "Therefore we ought to support such people, so that we may become co-workers with the truth.",
+            "KJV": "1:8 We therefore ought to receiue such, that we might be fellow helpers to the trueth."
+          }
         },
         {
           "num": 9,
-          "text": "I have written something to the church; but Diotrephes, who likes to put himself first, does not acknowledge our authority."
+          "text": {
+            "Base": "I have written something to the church; but Diotrephes, who likes to put himself first, does not acknowledge our authority.",
+            "KJV": "1:9 I wrote vnto the Church, but Diotrephes, who loueth to haue the preeminence among them, receiueth vs not."
+          }
         },
         {
           "num": 10,
-          "text": "So if I come, I will call attention to what he is doing in spreading false charges against us. And not content with those charges, he refuses to welcome the friends, and even prevents those who want to do so and expels them from the church."
+          "text": {
+            "Base": "So if I come, I will call attention to what he is doing in spreading false charges against us. And not content with those charges, he refuses to welcome the friends, and even prevents those who want to do so and expels them from the church.",
+            "KJV": "1:10 Wherefore if I come, I will remember his deeds which he doeth, prating against vs with malicious words: and not content therewith, neither doth hee himselfe receiue the brethren, and forbiddeth them that would, and casteth them out of the Church."
+          }
         },
         {
           "num": 11,
-          "text": "Beloved, do not imitate what is evil but imitate what is good. Whoever does good is from God; whoever does evil has not seen God."
+          "text": {
+            "Base": "Beloved, do not imitate what is evil but imitate what is good. Whoever does good is from God; whoever does evil has not seen God.",
+            "KJV": "1:11 Beloued, follow not that which is euill, but that which is good. He that doth good, is of God: but hee that doth euill, hath not seene God."
+          }
         },
         {
           "num": 12,
-          "text": "Everyone has testified favorably about Demetrius, and so has the truth itself. We also testify for him, and you know that our testimony is true."
+          "text": {
+            "Base": "Everyone has testified favorably about Demetrius, and so has the truth itself. We also testify for him, and you know that our testimony is true.",
+            "KJV": "1:12 Demetrius hath good report of all men, and of the trueth it selfe: yea, and we also beare record, and ye know that our record is true."
+          }
         },
         {
           "num": 13,
-          "text": "I have much to write to you, but I would rather not write with pen and ink;"
+          "text": {
+            "Base": "I have much to write to you, but I would rather not write with pen and ink;",
+            "KJV": "1:13 I had many things to write, but I will not with inke and pen write vnto thee."
+          }
         },
         {
           "num": 14,
-          "text": "instead I hope to see you soon, and we will talk together face to face."
+          "text": {
+            "Base": "instead I hope to see you soon, and we will talk together face to face.",
+            "KJV": "1:14 But I trust I shall shortly see thee, and wee shall speake face to face. Peace bee to thee. Our friends salute thee. Greet the friends by name."
+          }
         },
         {
           "num": 15,

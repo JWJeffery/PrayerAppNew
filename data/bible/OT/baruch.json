@@ -9,60 +9,264 @@
     {
       "num": 1,
       "verses": [
-        { "num": 1, "text": "These are the words of the book that Baruch son of Neriah son of Mahseiah son of Zedekiah son of Hasadiah son of Hilkiah wrote in Babylon," },
-        { "num": 2, "text": "in the fifth year, on the seventh day of the month, at the time when the Chaldeans took Jerusalem and burned it with fire." },
-        { "num": 3, "text": "Baruch read the words of this book in the hearing of Jeconiah son of Jehoiakim, king of Judah, and in the hearing of all the people who came to hear the book," },
-        { "num": 4, "text": "the nobles and the princes, and in the hearing of the elders, and in the hearing of all the people, small and great, all who lived in Babylon by the river Sud." },
-        { "num": 5, "text": "Then they wept, and fasted, and prayed before the Lord;" },
-        { "num": 10, "text": "And they said: “Here we are sending you money; so buy burnt offerings and sin offerings and incense, and prepare a grain offering, and offer them on the altar of the Lord our God;”" },
-        { "num": 14, "text": "“And you shall read this book that we are sending you, to make your confession in the house of the Lord on the days of the festivals and at appointed seasons.”" },
-        { "num": 15, "text": "And you shall say: “The Lord our God is in the right, but there is open shame on us and our ancestors, as at this day.”" },
-        { "num": 17, "text": "“because we have sinned before the Lord.”" }
+        {
+          "num": 1,
+          "text": {
+            "Base": "These are the words of the book that Baruch son of Neriah son of Mahseiah son of Zedekiah son of Hasadiah son of Hilkiah wrote in Babylon,",
+            "KJV": "1:1 And these are the wordes of the booke, which Baruch the sonne of Nerias, the sonne of Maasias, the sonne of Sedecias, the sonne of Asadias, the son of Chelcias, wrote in Babylon,"
+          }
+        },
+        {
+          "num": 2,
+          "text": {
+            "Base": "in the fifth year, on the seventh day of the month, at the time when the Chaldeans took Jerusalem and burned it with fire.",
+            "KJV": "1:2 In the fift yere, and in the seuenth day of the moneth, what time as the Caldeans tooke Ierusalem, and burnt it with fire."
+          }
+        },
+        {
+          "num": 3,
+          "text": {
+            "Base": "Baruch read the words of this book in the hearing of Jeconiah son of Jehoiakim, king of Judah, and in the hearing of all the people who came to hear the book,",
+            "KJV": "1:3 And Baruch did reade the words of this booke, in the hearing of Iechonias, the sonne of Ioachim king of Iuda, and in the eares of all the people, that came to the booke."
+          }
+        },
+        {
+          "num": 4,
+          "text": {
+            "Base": "the nobles and the princes, and in the hearing of the elders, and in the hearing of all the people, small and great, all who lived in Babylon by the river Sud.",
+            "KJV": "1:4 And in the hearing of the nobles, and of the kings sonnes, and in the hearing of the Elders, and of all the people from the lowest vnto the highest, euen of all them that dwelt at Babylon, by the riuer Sud."
+          }
+        },
+        {
+          "num": 5,
+          "text": {
+            "Base": "Then they wept, and fasted, and prayed before the Lord;",
+            "KJV": "1:5 Whereupon they wept, fasted, and prayed before the Lord."
+          }
+        },
+        {
+          "num": 10,
+          "text": {
+            "Base": "And they said: “Here we are sending you money; so buy burnt offerings and sin offerings and incense, and prepare a grain offering, and offer them on the altar of the Lord our God;”",
+            "KJV": "1:10 And they said, Behold, we haue sent you money, to buy you burnt offerings, and sinne offerings, and incense, and prepare yee Manna, and offer vpon the Altar of the Lord our God,"
+          }
+        },
+        {
+          "num": 14,
+          "text": {
+            "Base": "“And you shall read this book that we are sending you, to make your confession in the house of the Lord on the days of the festivals and at appointed seasons.”",
+            "KJV": "1:14 And yee shall reade this booke, which we haue sent vnto you, to make confession in the house of the Lord, vpon the feasts and solemne dayes."
+          }
+        },
+        {
+          "num": 15,
+          "text": {
+            "Base": "And you shall say: “The Lord our God is in the right, but there is open shame on us and our ancestors, as at this day.”",
+            "KJV": "1:15 And yee shall say, To the Lord our God belongeth righteousnesse, but vnto vs the confusion of faces, as it is come to passe this day vnto them of Iuda, & to the inhabitants of Ierusalem,"
+          }
+        },
+        {
+          "num": 17,
+          "text": {
+            "Base": "“because we have sinned before the Lord.”",
+            "KJV": "1:17 For wee haue sinned before the Lord,"
+          }
+        }
       ]
     },
     {
       "num": 2,
       "verses": [
-        { "num": 1, "text": "“So the Lord carried out the threat he spoke against us: against our judges who ruled Israel, and against our kings and our officials and against the people of Israel and Judah.”" },
-        { "num": 11, "text": "“And now, O Lord God of Israel, who brought your people out of the land of Egypt with a mighty hand and with signs and wonders and with great power and outstretched arm, and made yourself a name that continues to this day,”" },
-        { "num": 12, "text": "“we have sinned, we have been ungodly, we have done wrong, O Lord our God, against all your ordinances.”" },
-        { "num": 18, "text": "“but the person who is deeply grieved, who walks bent and feeble, with failing eyes and a hungry soul, will declare your glory and righteousness, O Lord.”" },
-        { "num": 30, "text": "“For I know that they will not obey me, for they are a stiff-necked people. But in the land of their exile they will come to themselves”" }
+        {
+          "num": 1,
+          "text": {
+            "Base": "“So the Lord carried out the threat he spoke against us: against our judges who ruled Israel, and against our kings and our officials and against the people of Israel and Judah.”",
+            "KJV": "2:1 Therefore the Lord hath made good his worde, which hee pronounced against vs, and against our Iudges that iudged Israel, and against our kings, and against our princes, and against the men of Israel and Iuda,"
+          }
+        },
+        {
+          "num": 11,
+          "text": {
+            "Base": "“And now, O Lord God of Israel, who brought your people out of the land of Egypt with a mighty hand and with signs and wonders and with great power and outstretched arm, and made yourself a name that continues to this day,”",
+            "KJV": "2:11 And now O Lord God of Israel, that hast brought thy people out of the land of Egypt with a mighty hand, and high arme, and with signes & with wonders, & with great power, and hast gotten thy selfe a name, as appeareth this day:"
+          }
+        },
+        {
+          "num": 12,
+          "text": {
+            "Base": "“we have sinned, we have been ungodly, we have done wrong, O Lord our God, against all your ordinances.”",
+            "KJV": "2:12 O Lord our God, we haue sinned, we haue done vngodly, wee haue dealt vnrighteously in all thine ordinances."
+          }
+        },
+        {
+          "num": 18,
+          "text": {
+            "Base": "“but the person who is deeply grieved, who walks bent and feeble, with failing eyes and a hungry soul, will declare your glory and righteousness, O Lord.”",
+            "KJV": "2:18 But &thorn; soule that is greatly vexed, which goeth stouping & feeble, and the eyes that faile, and the hungry soule wil giue thee praise & righteousnes O Lord."
+          }
+        },
+        {
+          "num": 30,
+          "text": {
+            "Base": "“For I know that they will not obey me, for they are a stiff-necked people. But in the land of their exile they will come to themselves”",
+            "KJV": "2:30 For I knew that they would not heare me: because it is a stiffenecked people: but in the land of their captiuities, they shall remember themselues,"
+          }
+        }
       ]
     },
     {
       "num": 3,
       "verses": [
-        { "num": 1, "text": "“O Lord Almighty, God of Israel, the soul in anguish and the wearied spirit cry out to you.”" },
-        { "num": 9, "text": "Hear the commandments of life, O Israel; give ear, and learn wisdom!" },
-        { "num": 12, "text": "You have forsaken the fountain of wisdom." },
-        { "num": 14, "text": "Learn where there is wisdom, where there is strength, where there is understanding, so that you may at the same time discern where there is length of days and life, where there is light for the eyes, and peace." },
-        { "num": 24, "text": "O Israel, how great is the house of God, how vast the territory that he possesses!" },
-        { "num": 32, "text": "But the one who knows all things knows her, he found her by his understanding. He who prepared the earth for all time filled it with four-footed creatures;" },
-        { "num": 35, "text": "This is our God; no other can be compared to him." },
-        { "num": 37, "text": "Afterward she appeared on earth and lived with humankind." }
+        {
+          "num": 1,
+          "text": {
+            "Base": "“O Lord Almighty, God of Israel, the soul in anguish and the wearied spirit cry out to you.”",
+            "KJV": "3:1 O Lord almighty, God of Israel, the soule in anguish, the troubled spirit crieth vnto thee."
+          }
+        },
+        {
+          "num": 9,
+          "text": {
+            "Base": "Hear the commandments of life, O Israel; give ear, and learn wisdom!",
+            "KJV": "3:9 Heare, Israel, the commandements of life, giue eare to vnderstand wisedome."
+          }
+        },
+        {
+          "num": 12,
+          "text": {
+            "Base": "You have forsaken the fountain of wisdom.",
+            "KJV": "3:12 Thou hast forsaken the fountaine of wisedome."
+          }
+        },
+        {
+          "num": 14,
+          "text": {
+            "Base": "Learn where there is wisdom, where there is strength, where there is understanding, so that you may at the same time discern where there is length of days and life, where there is light for the eyes, and peace.",
+            "KJV": "3:14 Learne where is wisedome, where is strength, where is vnderstanding, that thou mayest know also where is length of daies, and life, where is the light of the eyes and peace."
+          }
+        },
+        {
+          "num": 24,
+          "text": {
+            "Base": "O Israel, how great is the house of God, how vast the territory that he possesses!",
+            "KJV": "3:24 O Israel, how great is the house of God? and how large is the place of his possession?"
+          }
+        },
+        {
+          "num": 32,
+          "text": {
+            "Base": "But the one who knows all things knows her, he found her by his understanding. He who prepared the earth for all time filled it with four-footed creatures;",
+            "KJV": "3:32 But he that knoweth all things, knoweth her, and hath found her out with his vnderstanding: he that prepared the earth for euermore, hath filled it with fourefooted beasts."
+          }
+        },
+        {
+          "num": 35,
+          "text": {
+            "Base": "This is our God; no other can be compared to him.",
+            "KJV": "3:35 This is our God, and there shall none other be accounted of in comparison of him."
+          }
+        },
+        {
+          "num": 37,
+          "text": {
+            "Base": "Afterward she appeared on earth and lived with humankind.",
+            "KJV": "3:37 Afterward did he shew himselfe vpon earth, and conuersed with men."
+          }
+        }
       ]
     },
     {
       "num": 4,
       "verses": [
-        { "num": 1, "text": "She is the book of the commandments of God, the law that endures forever. All who hold her fast will live, and those who forsake her will die." },
-        { "num": 2, "text": "Turn, O Jacob, and take her; walk toward the shining of her light." },
-        { "num": 4, "text": "Happy are we, O Israel, for we know what is pleasing to God." },
-        { "num": 21, "text": "“Take courage, my children, cry to God, and he will deliver you from the power and hand of the enemy.”" },
-        { "num": 23, "text": "“For I sent you out with sorrow and weeping, but God will give you back to me with joy and gladness forever.”" },
-        { "num": 30, "text": "Take courage, O Jerusalem, for the one who named you will comfort you." }
+        {
+          "num": 1,
+          "text": {
+            "Base": "She is the book of the commandments of God, the law that endures forever. All who hold her fast will live, and those who forsake her will die.",
+            "KJV": "4:1 This is the Booke of the commandements of God: and the Law that endureth for euer: all they that keepe it shall come to life: but such as leaue it, shall die."
+          }
+        },
+        {
+          "num": 2,
+          "text": {
+            "Base": "Turn, O Jacob, and take her; walk toward the shining of her light.",
+            "KJV": "4:2 Turne thee, O Iacob, & take heed of it: walke in the presence of the light therof, that thou mayest be illuminated."
+          }
+        },
+        {
+          "num": 4,
+          "text": {
+            "Base": "Happy are we, O Israel, for we know what is pleasing to God.",
+            "KJV": "4:4 O Israel, happie are wee: for things that are pleasing to God, are made knowen vnto vs."
+          }
+        },
+        {
+          "num": 21,
+          "text": {
+            "Base": "“Take courage, my children, cry to God, and he will deliver you from the power and hand of the enemy.”",
+            "KJV": "4:21 Be of good cheare, O my children, cry vnto the Lord: & he shal deliuer you from the power & hand of the enemies."
+          }
+        },
+        {
+          "num": 23,
+          "text": {
+            "Base": "“For I sent you out with sorrow and weeping, but God will give you back to me with joy and gladness forever.”",
+            "KJV": "4:23 For I sent you out with mourning and weeping: but God will giue you to mee againe, with ioy and gladnesse for euer."
+          }
+        },
+        {
+          "num": 30,
+          "text": {
+            "Base": "Take courage, O Jerusalem, for the one who named you will comfort you.",
+            "KJV": "4:30 Take a good heart, O Ierusalem: for hee that gaue thee that name, will comfort thee."
+          }
+        }
       ]
     },
     {
       "num": 5,
       "verses": [
-        { "num": 1, "text": "Take off the garment of your sorrow and affliction, O Jerusalem, and put on forever the beauty of the glory from God." },
-        { "num": 2, "text": "Put on the robe of the righteousness that comes from God; put on your head the diadem of the glory of the Everlasting;" },
-        { "num": 3, "text": "for God will show your splendor to everywhere under heaven." },
-        { "num": 4, "text": "For God will give you evermore the name, ‘Righteous Peace, Godly Glory.’" },
-        { "num": 5, "text": "Arise, O Jerusalem, stand upon the height; look toward the east, and see your children gathered from west to east at the word of the Holy One, rejoicing that God has remembered them." },
-        { "num": 9, "text": "For God will lead Israel with joy, in the light of his glory, with the mercy and righteousness that come from him." }
+        {
+          "num": 1,
+          "text": {
+            "Base": "Take off the garment of your sorrow and affliction, O Jerusalem, and put on forever the beauty of the glory from God.",
+            "KJV": "5:1 Put off, O Ierusalem, the garment of thy mourning and affliction, and put on the comelinesse of the glory that commeth from God for euer."
+          }
+        },
+        {
+          "num": 2,
+          "text": {
+            "Base": "Put on the robe of the righteousness that comes from God; put on your head the diadem of the glory of the Everlasting;",
+            "KJV": "5:2 Cast about thee a double garment of the righteousnesse which commeth from God, and set a diademe on thine head of the glory of the euerlasting."
+          }
+        },
+        {
+          "num": 3,
+          "text": {
+            "Base": "for God will show your splendor to everywhere under heaven.",
+            "KJV": "5:3 For God wil shew thy brightnesse vnto euery countrey vnder heauen."
+          }
+        },
+        {
+          "num": 4,
+          "text": {
+            "Base": "For God will give you evermore the name, ‘Righteous Peace, Godly Glory.’",
+            "KJV": "5:4 For thy name shall bee called of God for euer, The peace of righteousnesse, and the glory of Gods worship."
+          }
+        },
+        {
+          "num": 5,
+          "text": {
+            "Base": "Arise, O Jerusalem, stand upon the height; look toward the east, and see your children gathered from west to east at the word of the Holy One, rejoicing that God has remembered them.",
+            "KJV": "5:5 Arise, O Ierusalem, and stand on high, and looke about toward the East, and behold thy children gathered from the West vnto the East by the word of the holy One, reioycing in the remembrance of God."
+          }
+        },
+        {
+          "num": 9,
+          "text": {
+            "Base": "For God will lead Israel with joy, in the light of his glory, with the mercy and righteousness that come from him.",
+            "KJV": "5:9 For God shall leade Israel with ioy, in the light of his glory, with the mercy and righteousnes that commeth from him."
+          }
+        }
       ]
     }
   ]
