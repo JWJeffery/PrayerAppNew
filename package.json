@@ -69,7 +69,9 @@
     "audit:bible-registry-draft": "node scripts/audit-bible-registry-draft.mjs",
     "bible:registry:adjudication-plan": "node scripts/generate-bible-registry-adjudication-plan.mjs",
     "audit:bible-registry-adjudication-plan": "node scripts/audit-bible-registry-adjudication-plan.mjs",
-    "audit:bible-registry-identity-adjudications": "node scripts/audit-bible-registry-identity-adjudications.mjs"
+    "audit:bible-registry-identity-adjudications": "node scripts/audit-bible-registry-identity-adjudications.mjs",
+    "bible:registry:canon-profile-scaffolds": "node scripts/generate-bible-registry-canon-profile-scaffolds.mjs",
+    "audit:bible-registry-canon-profile-scaffolds": "node scripts/audit-bible-registry-canon-profile-scaffolds.mjs"
   },
   "repository": {
     "type": "git",
