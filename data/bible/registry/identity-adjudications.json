@@ -1,0 +1,277 @@
+{
+  "schema": "universal_office_bible_registry_identity_adjudications_v1",
+  "status": "draft_human_adjudicated_tranche_1",
+  "rule": "These entries override mechanical path-based guesses. They do not move files and do not change resolver runtime behavior.",
+  "adjudications": [
+    {
+      "source_path": "data/bible/ET/bookofjubileesET.json",
+      "identity_id": "JUBILEES",
+      "preferred_title": "Jubilees",
+      "work_type": "biblical_broader_canon_book",
+      "text_form_id": "JUBILEES_ETHIOPIC_WITNESS",
+      "ordinary_chapter_verse_resolver_candidate": true,
+      "storage_note": "Stored under ET because the current source/witness lane is Ethiopian; folder placement is not canonical authority.",
+      "profile_hints": [
+        {
+          "profile_family": "ethiopian_orthodox",
+          "canonical_status": "broader_canon",
+          "use_class": "read_in_church"
+        },
+        {
+          "profile_family": "default_non_ethiopian",
+          "canonical_status": "witness_only",
+          "use_class": "study_only"
+        }
+      ],
+      "notes": [
+        "Do not treat as merely an extra book.",
+        "Do not move into OT during registry migration."
+      ]
+    },
+    {
+      "source_path": "data/bible/NT/2baruchCE.json",
+      "identity_id": "SECOND_BARUCH",
+      "preferred_title": "2 Baruch",
+      "work_type": "apocalyptic_broader_canon_or_witness_text",
+      "text_form_id": "SECOND_BARUCH_CURRENT_ENGLISH_WITNESS",
+      "ordinary_chapter_verse_resolver_candidate": true,
+      "storage_note": "Currently stored under NT, but registry identity is not New Testament.",
+      "profile_hints": [
+        {
+          "profile_family": "default",
+          "canonical_status": "witness_only",
+          "use_class": "study_only"
+        }
+      ],
+      "notes": [
+        "Known storage/classification review target.",
+        "Do not move during resolver work."
+      ]
+    },
+    {
+      "source_path": "data/bible/NT/historyofzosimus.json",
+      "identity_id": "HISTORY_OF_ZOSIMUS",
+      "preferred_title": "The History of Zosimus / The Rechabites",
+      "work_type": "apocryphal_or_broader_tradition_witness_text",
+      "text_form_id": "HISTORY_OF_ZOSIMUS_CURRENT_ENGLISH_WITNESS",
+      "ordinary_chapter_verse_resolver_candidate": true,
+      "storage_note": "Currently stored under NT, but registry identity is not New Testament.",
+      "profile_hints": [
+        {
+          "profile_family": "default",
+          "canonical_status": "witness_only",
+          "use_class": "study_only"
+        }
+      ],
+      "notes": [
+        "Known storage/classification review target.",
+        "Do not move during resolver work."
+      ]
+    },
+    {
+      "source_path": "data/bible/OT/1enoch.json",
+      "identity_id": "FIRST_ENOCH",
+      "preferred_title": "1 Enoch",
+      "work_type": "biblical_broader_canon_book",
+      "text_form_id": "FIRST_ENOCH_CURRENT_ENGLISH_WITNESS",
+      "ordinary_chapter_verse_resolver_candidate": true,
+      "storage_note": "Currently stored under OT; profile membership must be governed by canon profile, not folder.",
+      "profile_hints": [
+        {
+          "profile_family": "ethiopian_orthodox",
+          "canonical_status": "broader_canon",
+          "use_class": "read_in_church"
+        },
+        {
+          "profile_family": "default_non_ethiopian",
+          "canonical_status": "witness_only",
+          "use_class": "study_only"
+        }
+      ],
+      "notes": [
+        "Do not treat as merely an extra book.",
+        "Retain current path until registry routing is in place."
+      ]
+    },
+    {
+      "source_path": "data/bible/OT/danielGK.json",
+      "identity_id": "DANIEL",
+      "preferred_title": "Daniel, Greek / Extended Form",
+      "work_type": "biblical_book_text_form",
+      "base_work_id": "DANIEL",
+      "text_form_id": "DANIEL_GREEK_EXTENDED",
+      "ordinary_chapter_verse_resolver_candidate": true,
+      "storage_note": "This is a text-form / recension candidate, not a separate accidental book identity.",
+      "profile_hints": [
+        {
+          "profile_family": "catholic",
+          "canonical_status": "deuterocanonical",
+          "use_class": "read_in_church"
+        },
+        {
+          "profile_family": "eastern_orthodox",
+          "canonical_status": "anagignoskomena",
+          "use_class": "read_in_church"
+        },
+        {
+          "profile_family": "default_short_daniel_profiles",
+          "canonical_status": "witness_only",
+          "use_class": "study_only"
+        }
+      ],
+      "notes": [
+        "Must be handled as Daniel text form / additions-aware identity."
+      ]
+    },
+    {
+      "source_path": "data/bible/OT/estherGK.json",
+      "identity_id": "ESTHER",
+      "preferred_title": "Esther, Greek / With Additions",
+      "work_type": "biblical_book_text_form",
+      "base_work_id": "ESTHER",
+      "text_form_id": "ESTHER_GREEK_WITH_ADDITIONS",
+      "ordinary_chapter_verse_resolver_candidate": true,
+      "storage_note": "This is a text-form / recension candidate, not a separate accidental book identity.",
+      "profile_hints": [
+        {
+          "profile_family": "catholic",
+          "canonical_status": "deuterocanonical",
+          "use_class": "read_in_church"
+        },
+        {
+          "profile_family": "eastern_orthodox",
+          "canonical_status": "anagignoskomena",
+          "use_class": "read_in_church"
+        },
+        {
+          "profile_family": "default_hebrew_esther_profiles",
+          "canonical_status": "witness_only",
+          "use_class": "study_only"
+        }
+      ],
+      "notes": [
+        "Must be handled as Esther text form / additions-aware identity."
+      ]
+    },
+    {
+      "source_path": "data/bible/ET/josipponET.json",
+      "identity_id": "JOSIPPON",
+      "preferred_title": "Josippon",
+      "work_type": "ethiopian_collection_or_historical_witness",
+      "text_form_id": "JOSIPPON_ETHIOPIC_WITNESS",
+      "ordinary_chapter_verse_resolver_candidate": false,
+      "adapter_required": "collection_or_longform_text_adapter",
+      "storage_note": "Non-ordinary shape; do not route through ordinary chapter/verse scripture resolver.",
+      "profile_hints": [
+        {
+          "profile_family": "ethiopian_orthodox",
+          "canonical_status": "broader_canon",
+          "use_class": "study_only"
+        }
+      ],
+      "notes": [
+        "Requires collection-specific presentation."
+      ]
+    },
+    {
+      "source_path": "data/bible/ET/malke’aguba’eET.json",
+      "identity_id": "MALKEA_GUBAE",
+      "preferred_title": "Malke’a Guba’e",
+      "work_type": "ethiopian_liturgical_hymn_collection",
+      "text_form_id": "MALKEA_GUBAE_ETHIOPIC_WITNESS",
+      "ordinary_chapter_verse_resolver_candidate": false,
+      "adapter_required": "hymn_or_liturgical_collection_adapter",
+      "storage_note": "Non-ordinary shape; not a Bible-book resolver candidate.",
+      "profile_hints": [
+        {
+          "profile_family": "ethiopian_orthodox",
+          "canonical_status": "liturgical_reading",
+          "use_class": "read_devotionally"
+        }
+      ],
+      "notes": [
+        "Retain as liturgical/devotional collection witness unless later adjudication says otherwise."
+      ]
+    },
+    {
+      "source_path": "data/bible/ET/malke’aiyasusET.json",
+      "identity_id": "MALKEA_IYASUS",
+      "preferred_title": "Malke’a Iyasus",
+      "work_type": "ethiopian_liturgical_hymn_collection",
+      "text_form_id": "MALKEA_IYASUS_ETHIOPIC_WITNESS",
+      "ordinary_chapter_verse_resolver_candidate": false,
+      "adapter_required": "hymn_or_liturgical_collection_adapter",
+      "storage_note": "Non-ordinary shape; not a Bible-book resolver candidate.",
+      "profile_hints": [
+        {
+          "profile_family": "ethiopian_orthodox",
+          "canonical_status": "liturgical_reading",
+          "use_class": "read_devotionally"
+        }
+      ],
+      "notes": [
+        "Retain as liturgical/devotional collection witness unless later adjudication says otherwise."
+      ]
+    },
+    {
+      "source_path": "data/bible/ET/malke’avirginmaryET.json",
+      "identity_id": "MALKEA_MARIAM",
+      "preferred_title": "Malke’a Mariam",
+      "work_type": "ethiopian_liturgical_hymn_collection",
+      "text_form_id": "MALKEA_MARIAM_ETHIOPIC_WITNESS",
+      "ordinary_chapter_verse_resolver_candidate": false,
+      "adapter_required": "hymn_or_liturgical_collection_adapter",
+      "storage_note": "Non-ordinary shape; not a Bible-book resolver candidate.",
+      "profile_hints": [
+        {
+          "profile_family": "ethiopian_orthodox",
+          "canonical_status": "liturgical_reading",
+          "use_class": "read_devotionally"
+        }
+      ],
+      "notes": [
+        "Retain as liturgical/devotional collection witness unless later adjudication says otherwise."
+      ]
+    },
+    {
+      "source_path": "data/bible/ET/mazahetaET.json",
+      "identity_id": "MAZAHETA",
+      "preferred_title": "Mazaheta",
+      "work_type": "ethiopian_hymn_or_prayer_collection",
+      "text_form_id": "MAZAHETA_ETHIOPIC_WITNESS",
+      "ordinary_chapter_verse_resolver_candidate": false,
+      "adapter_required": "hymn_or_prayer_collection_adapter",
+      "storage_note": "Non-ordinary shape; not a Bible-book resolver candidate.",
+      "profile_hints": [
+        {
+          "profile_family": "ethiopian_orthodox",
+          "canonical_status": "liturgical_reading",
+          "use_class": "read_devotionally"
+        }
+      ],
+      "notes": [
+        "Requires collection-specific presentation."
+      ]
+    },
+    {
+      "source_path": "data/bible/ET/miraclesofmaryET.json",
+      "identity_id": "MIRACLES_OF_MARY",
+      "preferred_title": "Tä’amrä Maryam / Miracles of Mary",
+      "work_type": "ethiopian_devotional_or_hagiographical_collection",
+      "text_form_id": "MIRACLES_OF_MARY_ETHIOPIC_WITNESS",
+      "ordinary_chapter_verse_resolver_candidate": false,
+      "adapter_required": "devotional_or_hagiographical_collection_adapter",
+      "storage_note": "Non-ordinary shape; not a Bible-book resolver candidate.",
+      "profile_hints": [
+        {
+          "profile_family": "ethiopian_orthodox",
+          "canonical_status": "liturgical_reading",
+          "use_class": "read_devotionally"
+        }
+      ],
+      "notes": [
+        "Requires collection-specific presentation."
+      ]
+    }
+  ]
+}

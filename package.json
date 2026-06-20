@@ -68,7 +68,8 @@
     "bible:registry:draft": "node scripts/generate-bible-registry-draft.mjs",
     "audit:bible-registry-draft": "node scripts/audit-bible-registry-draft.mjs",
     "bible:registry:adjudication-plan": "node scripts/generate-bible-registry-adjudication-plan.mjs",
-    "audit:bible-registry-adjudication-plan": "node scripts/audit-bible-registry-adjudication-plan.mjs"
+    "audit:bible-registry-adjudication-plan": "node scripts/audit-bible-registry-adjudication-plan.mjs",
+    "audit:bible-registry-identity-adjudications": "node scripts/audit-bible-registry-identity-adjudications.mjs"
   },
   "repository": {
     "type": "git",

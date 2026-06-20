@@ -1,0 +1,45 @@
+# Bible Registry First Identity Adjudications
+
+## Status
+
+Draft human-adjudicated registry overlay.
+
+This record does not move Bible files and does not change resolver runtime behavior.
+
+## Purpose
+
+The generated registry draft is intentionally mechanical. It classifies files by current path, shape, and legacy resolver reachability.
+
+This first adjudication layer records governing identity judgments for the first set of files that should not be governed by folder placement.
+
+## Rules
+
+- Physical storage is not canonical authority.
+- Do not rename or move files during resolver rewiring.
+- Do not treat `ET`, `SY`, `AR`, or `ODES` as canon profiles by themselves.
+- Do not treat Greek Daniel or Greek Esther as accidental independent books.
+- Do not route non-ordinary collection/hymn/devotional shapes through the ordinary chapter/verse resolver.
+- Do not use “extra books” as a governing registry category.
+
+## First Tranche
+
+This first tranche adjudicates:
+
+- Jubilees
+- 1 Enoch
+- 2 Baruch
+- History of Zosimus
+- Greek / extended Daniel
+- Greek / additions Esther
+- Josippon
+- Malke’a Guba’e
+- Malke’a Iyasus
+- Malke’a Mariam
+- Mazaheta
+- Tä’amrä Maryam / Miracles of Mary
+
+## Next Work
+
+1. Audit the adjudication overlay against the manifest.
+2. Build canon-profile drafts using adjudicated identities.
+3. Build resolver registry lookup only after identities and profile membership are stable.
