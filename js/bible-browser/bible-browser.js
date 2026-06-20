@@ -233,26 +233,59 @@
     }
 
     function getAvailableTranslations(bookData) {
-        const fromMeta = Object.keys(bookData?.meta?.translations || {});
-        if (fromMeta.length) return fromMeta;
+        const preferredOrder = [
+            "NRSV",
+            "Rotherham",
+            "KJV",
+            "DRV",
+            "DRB",
+            "NABRE",
+            "Coverdale",
+            "Grail1963",
+            "JPS1985",
+            "Orthodox"
+        ];
 
         const found = new Set();
 
-        for (const record of getPsalterRecords(bookData)) {
-            if (record?.text && typeof record.text === "object") {
-                Object.keys(record.text).forEach(key => found.add(key));
+        Object.keys(bookData?.meta?.translations || {}).forEach(key => {
+            if (key) found.add(key);
+        });
+
+        function collect(value) {
+            if (!value) return;
+
+            if (Array.isArray(value)) {
+                value.forEach(collect);
+                return;
             }
+
+            if (typeof value !== "object") return;
+
+            if (value.text && typeof value.text === "object" && !Array.isArray(value.text)) {
+                Object.keys(value.text).forEach(key => {
+                    if (key) found.add(key);
+                });
+            }
+
+            Object.values(value).forEach(collect);
         }
 
-        for (const chapter of bookData?.chapters || []) {
-            for (const verse of chapter.verses || []) {
-                if (verse.text && typeof verse.text === "object") {
-                    Object.keys(verse.text).forEach(key => found.add(key));
-                }
-            }
+        collect(bookData?.chapters);
+        collect(bookData?.verses);
+
+        if (bookData?.text && typeof bookData.text === "object" && !Array.isArray(bookData.text)) {
+            Object.keys(bookData.text).forEach(key => {
+                if (key) found.add(key);
+            });
         }
 
-        return Array.from(found).sort();
+        const ordered = preferredOrder.filter(key => found.has(key));
+        const remaining = Array.from(found)
+            .filter(key => !preferredOrder.includes(key))
+            .sort((a, b) => a.localeCompare(b));
+
+        return [...ordered, ...remaining];
     }
 
     function getTranslationLabel(bookData, translation) {
@@ -260,19 +293,7 @@
     }
 
     function getParallelTranslationKeys(bookData) {
-        const available = getAvailableTranslations(bookData);
-        if (!available.length) return [currentTranslation];
-
-        if (!available.includes(currentTranslation)) {
-            currentTranslation = bookData?.meta?.defaultTranslation || available[0];
-        }
-
-        if (!parallelTranslation || !available.includes(parallelTranslation) || parallelTranslation === currentTranslation) {
-            parallelTranslation = available.find(value => value !== currentTranslation) || available[0];
-        }
-
-        if (!parallelEnabled || parallelTranslation === currentTranslation) return [currentTranslation];
-        return [currentTranslation, parallelTranslation];
+        return getAvailableTranslations(bookData);
     }
 
     function syncParallelControlsEnabled() {
