@@ -28,13 +28,14 @@
   }
 
   function ensureNabreOption(select) {
-    const existing = Array.from(select.options || []).find((option) => normalize(option.value) === NABRE_VALUE || normalize(option.dataset?.sourceLaneId) === NABRE_SOURCE_LANE_ID);
+    const existing = Array.from(select.options || []).find((option) => normalize(option.value) === NABRE_VALUE || normalize(option.dataset?.sourceLaneId) === NABRE_SOURCE_LANE_ID || normalize(option.dataset?.sourceLaneId) === NABRE_SOURCE_LANE_ID);
     if (existing) return false;
 
     const option = document.createElement("option");
     option.value = NABRE_VALUE;
     option.textContent = NABRE_LABEL;
     option.dataset.sourceLane = "true";
+    option.dataset.sourceLaneId = NABRE_SOURCE_LANE_ID;
     option.dataset.sourceLaneId = NABRE_SOURCE_LANE_ID;
     option.dataset.translationKey = "NABRE";
     select.appendChild(option);

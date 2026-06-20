@@ -71,7 +71,9 @@
       return;
     }
 
-    const laneId = panel.querySelector("[name='sourceLaneId']")?.value;
+    const laneSelect = panel.querySelector("[name='sourceLaneId']");
+    const selectedOption = laneSelect?.selectedOptions?.[0];
+    const laneId = selectedOption?.dataset?.sourceLaneId || laneSelect?.value;
     const bookId = panel.querySelector("[name='sourceLaneBook']")?.value;
     const chapter = Number(panel.querySelector("[name='sourceLaneChapter']")?.value);
     const verseStart = Number(panel.querySelector("[name='sourceLaneVerseStart']")?.value);
@@ -126,7 +128,11 @@
 
     const laneSelect = createElement("select", { name: "sourceLaneId", "aria-label": "Source lane" });
     lanes.forEach((lane) => {
-      const option = createElement("option", { value: lane.id }, lane.label || lane.translationKey);
+      const optionValue = lane.id === "NABRE_INTERNAL" ? "NABRE" : lane.id;
+      const option = createElement("option", {
+        value: optionValue,
+        dataset: { sourceLaneId: lane.id }
+      }, lane.label || lane.translationKey);
       laneSelect.appendChild(option);
     });
 
