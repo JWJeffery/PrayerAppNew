@@ -3630,3 +3630,42 @@ body.office-active .app-mode-drawer .shared-office-nav-options::-webkit-scrollba
     }
 }
 
+/* Roman Breviary 1960/1962 office-like render polish */
+.rb1960-dev-slice .rb1960-context {
+    margin-top: 1.2rem;
+    margin-bottom: 1.8rem;
+    font-size: clamp(1rem, 2.1vw, 1.25rem);
+}
+
+.rb1960-dev-slice .rb1960-block {
+    margin-top: 2rem;
+}
+
+.rb1960-dev-slice .rb1960-block h3 {
+    margin-bottom: 0.6rem;
+}
+
+.rb1960-dev-slice .rb1960-unit-citation {
+    margin-bottom: 0.7rem;
+    font-size: 0.95em;
+    letter-spacing: 0.02em;
+    color: var(--accent);
+}
+
+.rb1960-dev-slice .rb1960-unit-body {
+    max-width: 100%;
+}
+
+.rb1960-dev-slice .rb1960-unit-body p {
+    margin: 0 0 0.72rem 0;
+    overflow-wrap: anywhere;
+    hyphens: auto;
+    line-height: 1.52;
+}
+
+.rb1960-dev-slice .rb1960-diagnostics {
+    margin-top: 2rem;
+    font-size: 0.9em;
+    opacity: 0.86;
+}
+
