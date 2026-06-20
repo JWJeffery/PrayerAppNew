@@ -62,7 +62,8 @@
     "audit:book-of-needs-anglican-taxonomy-review": "node scripts/audit-book-of-needs-anglican-taxonomy-review.mjs",
     "audit:book-of-needs-eo-ancient-faith-source-inventory": "node scripts/audit-book-of-needs-eo-ancient-faith-source-inventory.mjs",
     "audit:entry-mobile-stabilization": "node scripts/audit-entry-mobile-stabilization-runner.mjs",
-    "audit:loth-metastasis": "node scripts/audit-loth-metastasis.mjs"
+    "audit:loth-metastasis": "node scripts/audit-loth-metastasis.mjs",
+    "audit:douay-rheims-psalms": "node scripts/audit-douay-rheims-psalms.mjs"
   },
   "repository": {
     "type": "git",
