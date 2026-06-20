@@ -2,7 +2,7 @@
   const LANES = {
     DRB_ORIGINAL: {
       id: "DRB_ORIGINAL",
-      label: "Original Douay-Rheims",
+      label: "Douay-Rheims",
       translationKey: "DRB",
       use: "internal_bible_browser",
       manifestPath: "data/bible/translations/drb-original-douay-rheims/manifest.json",
@@ -86,7 +86,7 @@
     },
     NABRE_INTERNAL: {
       id: "NABRE_INTERNAL",
-      label: "NABRE Internal Source Lane",
+      label: "NABRE",
       translationKey: "NABRE",
       use: "internal_bible_browser",
       manifestPath: "data/bible/translations/nabre-internal-source-lane/manifest.json",

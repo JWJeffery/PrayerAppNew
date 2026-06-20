@@ -83,7 +83,7 @@
       return;
     }
 
-    setResult("Loading source-lane passage…");
+    setResult("Loading passage…");
 
     try {
       const resolved = await api.resolveInternalSourceLanePassage({
@@ -95,7 +95,7 @@
       });
 
       if (!resolved.verses.length) {
-        setResult("No source-lane text found for that reference.", "error");
+        setResult("No text found for that reference.", "error");
         return;
       }
 
@@ -120,13 +120,13 @@
       "data-internal-bible-source-lanes": "true"
     });
 
-    const title = createElement("h2", { className: "source-lane-title" }, "Internal Source Lanes");
+    const title = createElement("h2", { className: "source-lane-title" }, "Bible Translation");
 
     const controls = createElement("div", { className: "source-lane-controls" });
 
     const laneSelect = createElement("select", { name: "sourceLaneId", "aria-label": "Source lane" });
     lanes.forEach((lane) => {
-      const option = createElement("option", { value: lane.id }, `${lane.translationKey} — ${lane.label}`);
+      const option = createElement("option", { value: lane.id }, lane.label || lane.translationKey);
       laneSelect.appendChild(option);
     });
 
@@ -161,7 +161,7 @@
       "aria-label": "End verse"
     });
 
-    const button = createElement("button", { type: "button" }, "Load Source Lane");
+    const button = createElement("button", { type: "button" }, "Load Passage");
     button.addEventListener("click", resolveFromPanel);
 
     controls.append(laneSelect, bookInput, chapterInput, verseStartInput, verseEndInput, button);
@@ -170,7 +170,7 @@
       id: RESULT_ID,
       className: "bible-source-lane-result",
       "aria-live": "polite"
-    }, "Select an internal source lane and load a passage.");
+    }, "Select a Bible translation and load a passage.");
 
     panel.append(title, controls, result);
 

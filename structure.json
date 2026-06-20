@@ -2848,7 +2848,7 @@
       "updated_at": "2026-06-20T04:35:32.007Z"
     }
   },
-  "last_updated": "2026-06-20T06:15:46.075Z",
+  "last_updated": "2026-06-20T06:19:08.559Z",
   "lothIntegrationMilestones": [
     {
       "milestoneId": "loth-oor-c06-ordinary-sentinel-source-intake-closure",
@@ -2966,5 +2966,13 @@
     "scope": "internal_bible_browser",
     "defect": "NABRE missing from Bible browser selector surface",
     "updated_at": "2026-06-20T06:15:46.075Z"
+  },
+  "bible_nabre_label_eradication": {
+    "status": "fixed",
+    "selector_value": "NABRE",
+    "selector_text": "NABRE",
+    "resolver_data_id": "NABRE_INTERNAL",
+    "audit": "scripts/audit-bible-nabre-label-eradication.mjs",
+    "updated_at": "2026-06-20T06:19:08.559Z"
   }
 }

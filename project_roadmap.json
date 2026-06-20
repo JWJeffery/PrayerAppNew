@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0.0",
   "roadmap_version": "0.1.39",
-  "last_updated": "2026-06-20T06:15:46.075Z",
+  "last_updated": "2026-06-20T06:19:08.559Z",
   "status": "active",
   "name": "Universal Office Beta Release Roadmap",
   "purpose": "Canonical machine-readable roadmap for Beta Release planning, phase sequencing, governance questions, tranche sizing, and Admin Dashboard visualization.",
@@ -2837,5 +2837,13 @@
     "scope": "internal_bible_browser",
     "defect": "NABRE missing from Bible browser selector surface",
     "updated_at": "2026-06-20T06:15:46.075Z"
+  },
+  "bible_nabre_label_eradication": {
+    "status": "fixed",
+    "selector_value": "NABRE",
+    "selector_text": "NABRE",
+    "resolver_data_id": "NABRE_INTERNAL",
+    "audit": "scripts/audit-bible-nabre-label-eradication.mjs",
+    "updated_at": "2026-06-20T06:19:08.559Z"
   }
 }

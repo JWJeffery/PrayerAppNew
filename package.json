@@ -85,7 +85,8 @@
     "audit:bible-source-lane-browser-wire": "node scripts/audit-bible-source-lane-browser-wire.mjs",
     "audit:bible-source-lane-ui": "node scripts/audit-bible-source-lane-ui.mjs",
     "smoke:bible-source-lane-ui": "node scripts/smoke-bible-source-lane-ui-runtime.mjs",
-    "audit:bible-nabre-selector-bridge": "node scripts/audit-bible-nabre-selector-bridge.mjs"
+    "audit:bible-nabre-selector-bridge": "node scripts/audit-bible-nabre-selector-bridge.mjs",
+    "audit:bible-nabre-label-eradication": "node scripts/audit-bible-nabre-label-eradication.mjs"
   },
   "repository": {
     "type": "git",

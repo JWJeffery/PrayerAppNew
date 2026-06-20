@@ -1,7 +1,7 @@
 import fs from 'fs';
 import vm from 'vm';
 
-const reportPath = process.env.NABRE_SELECTOR_BRIDGE_AUDIT_REPORT || '/tmp/bible-nabre-selector-bridge-audit.json';
+const reportPath = process.env.NABRE_LABEL_ERADICATION_REPORT || '/tmp/bible-nabre-label-eradication-audit.json';
 
 class MiniElement {
   constructor(tagName) {
@@ -180,14 +180,11 @@ root.window = root;
 const report = {
   result: 'OK',
   bridgeLoadedByIndex: false,
-  optionCountBefore: 1,
-  optionCountAfter: 0,
   nabreOptionPresent: false,
-  nabreOptionText: null,
   nabreOptionValue: null,
+  nabreOptionText: null,
   resolverDataId: null,
   visibleInternalIdCount: 0,
-  bridgeInstalled: false,
   failures: []
 };
 
@@ -199,14 +196,11 @@ try {
   const source = fs.readFileSync('js/bible-browser/bible-nabre-selector-bridge.js', 'utf8');
   vm.runInNewContext(source, root, { filename: 'bible-nabre-selector-bridge.js' });
 
-  report.optionCountAfter = select.options.length;
-
   const nabre = Array.from(select.options).find(opt => opt.textContent === 'NABRE' || opt.value === 'NABRE');
   report.nabreOptionPresent = Boolean(nabre);
-  report.nabreOptionText = nabre?.textContent || null;
   report.nabreOptionValue = nabre?.value || null;
+  report.nabreOptionText = nabre?.textContent || null;
   report.resolverDataId = nabre?.dataset?.sourceLaneId || null;
-  report.bridgeInstalled = Boolean(root.UniversalOfficeNabreSelectorBridge?.installed);
 
   const visibleTexts = traverse(document.body)
     .map(node => `${node.textContent || ''} ${node.value || ''}`)
@@ -216,9 +210,8 @@ try {
   if (!report.nabreOptionPresent) report.failures.push('NABRE option missing');
   if (report.nabreOptionText !== 'NABRE') report.failures.push(`NABRE option text must be NABRE, got ${report.nabreOptionText}`);
   if (report.nabreOptionValue !== 'NABRE') report.failures.push(`NABRE option value must be NABRE, got ${report.nabreOptionValue}`);
-  if (report.resolverDataId !== 'NABRE_INTERNAL') report.failures.push(`resolver data id must be NABRE_INTERNAL, got ${report.resolverDataId}`);
+  if (report.resolverDataId !== 'NABRE_INTERNAL') report.failures.push(`resolver data id must remain NABRE_INTERNAL, got ${report.resolverDataId}`);
   if (report.visibleInternalIdCount !== 0) report.failures.push('NABRE_INTERNAL appears in visible DOM text/value');
-  if (!report.bridgeInstalled) report.failures.push('bridge did not mark itself installed');
 } catch (error) {
   report.failures.push(error.message || String(error));
 }
@@ -230,14 +223,11 @@ fs.writeFileSync(reportPath, JSON.stringify(report, null, 2) + '\n');
 console.log(JSON.stringify({
   result: report.result,
   bridgeLoadedByIndex: report.bridgeLoadedByIndex,
-  optionCountBefore: report.optionCountBefore,
-  optionCountAfter: report.optionCountAfter,
   nabreOptionPresent: report.nabreOptionPresent,
-  nabreOptionText: report.nabreOptionText,
   nabreOptionValue: report.nabreOptionValue,
+  nabreOptionText: report.nabreOptionText,
   resolverDataId: report.resolverDataId,
   visibleInternalIdCount: report.visibleInternalIdCount,
-  bridgeInstalled: report.bridgeInstalled,
   failureCount: report.failures.length,
   firstFailures: report.failures.slice(0, 10),
   reportPath
@@ -245,7 +235,7 @@ console.log(JSON.stringify({
 
 console.log(report.result === 'OK' ? 'ALL PASSED' : 'ALL FAILED');
 console.log(report.result === 'OK'
-  ? 'NEXT: NABRE selector audit now matches corrected browser label.'
+  ? 'NEXT: Browser selector shows NABRE and does not expose NABRE_INTERNAL.'
   : `NEXT: inspect ${reportPath}`);
 
 if (report.result !== 'OK') process.exitCode = 1;

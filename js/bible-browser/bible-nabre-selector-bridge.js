@@ -1,5 +1,6 @@
 (function bibleNabreSelectorBridgeFactory(root) {
-  const NABRE_VALUE = "NABRE_INTERNAL";
+  const NABRE_VALUE = "NABRE";
+  const NABRE_SOURCE_LANE_ID = "NABRE_INTERNAL";
   const NABRE_LABEL = "NABRE";
 
   function sourceLaneBrowser() {
@@ -27,13 +28,14 @@
   }
 
   function ensureNabreOption(select) {
-    const existing = Array.from(select.options || []).find((option) => normalize(option.value) === NABRE_VALUE);
+    const existing = Array.from(select.options || []).find((option) => normalize(option.value) === NABRE_VALUE || normalize(option.dataset?.sourceLaneId) === NABRE_SOURCE_LANE_ID);
     if (existing) return false;
 
     const option = document.createElement("option");
     option.value = NABRE_VALUE;
     option.textContent = NABRE_LABEL;
     option.dataset.sourceLane = "true";
+    option.dataset.sourceLaneId = NABRE_SOURCE_LANE_ID;
     option.dataset.translationKey = "NABRE";
     select.appendChild(option);
     return true;
@@ -102,7 +104,7 @@
   }
 
   async function resolveCurrentNabreSelection(select) {
-    if (normalize(select.value) !== NABRE_VALUE) return false;
+    if (normalize(select.value) !== NABRE_VALUE && normalize(select.selectedOptions?.[0]?.dataset?.sourceLaneId) !== NABRE_SOURCE_LANE_ID) return false;
 
     const api = sourceLaneBrowser();
     if (!api) throw new Error("UniversalOfficeBibleSourceLaneBrowser is not loaded");
@@ -112,7 +114,7 @@
     if (!parsed) return false;
 
     const resolved = await api.resolveInternalSourceLanePassage({
-      laneId: NABRE_VALUE,
+      laneId: NABRE_SOURCE_LANE_ID,
       ...parsed
     });
 
