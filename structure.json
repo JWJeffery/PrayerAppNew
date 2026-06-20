@@ -2848,7 +2848,7 @@
       "updated_at": "2026-06-20T04:35:32.007Z"
     }
   },
-  "last_updated": "2026-06-20T05:55:11.518Z",
+  "last_updated": "2026-06-20T06:04:52.734Z",
   "lothIntegrationMilestones": [
     {
       "milestoneId": "loth-oor-c06-ordinary-sentinel-source-intake-closure",
@@ -2946,5 +2946,17 @@
     ],
     "note": "Bible browser UI exposes preserved source lanes without shared verse-grid mutation.",
     "updated_at": "2026-06-20T05:55:11.518Z"
+  },
+  "bible_source_lane_ui_runtime_smoke": {
+    "status": "added",
+    "smoke": "scripts/smoke-bible-source-lane-ui-runtime.mjs",
+    "scope": "internal_bible_browser",
+    "verifies": [
+      "source-lane panel creation",
+      "two lane options",
+      "DRB resolution through browser API",
+      "NABRE resolution through browser API"
+    ],
+    "updated_at": "2026-06-20T06:04:52.734Z"
   }
 }
