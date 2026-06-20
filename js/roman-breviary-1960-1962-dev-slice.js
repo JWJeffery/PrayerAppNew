@@ -25,10 +25,7 @@ function renderUnitTextHtml(text){
 }
 function renderResolvedOfficeHtml(e){
   const blocksHtml=(e.blocks||[]).map(b=>`<section class="rb1960-block" data-role="${esc(b.role)}"><h3>${esc(b.native_label||b.label||b.role)}</h3>${(b.units||[]).map(u=>`<article class="rb1960-unit" data-unit-key="${esc(u.key)}">${u.citation?`<div class="rb1960-unit-citation">${esc(u.citation)}</div>`:''}${renderUnitTextHtml(u.text)}</article>`).join('')}</section>`).join('');
-  const visibleDiagnostics=(e.diagnostics||[]).filter(d=>d.type!=='divinum-display-marker');
-  const diagnosticsHtml=visibleDiagnostics.map(d=>`<li><strong>${esc(d.type)}</strong>: ${esc(d.message)}</li>`).join('');
-  const diagnosticsBlock=visibleDiagnostics.length?`<details class="rb1960-diagnostics"><summary>Diagnostics (${visibleDiagnostics.length})</summary><ul>${diagnosticsHtml}</ul></details>`:'';
-  return `<div class="office-container rb1960-dev-slice"><h2>Roman Breviary 1960/1962 — ${esc(e.context.hour_label)}</h2><p class="rb1960-context"><strong>${esc(e.context.native_label||'')}</strong></p>${blocksHtml}${diagnosticsBlock}</div>`;
+  return `<div class="office-container rb1960-dev-slice"><h2>Roman Breviary 1960/1962 — ${esc(e.context.hour_label)}</h2><p class="rb1960-context"><strong>${esc(e.context.native_label||'')}</strong></p>${blocksHtml}</div>`;
 }
 async function fetchJson(p){const r=await fetch(p,{cache:'no-store'});if(!r.ok)throw new Error('Failed to fetch '+p);return r.json();}
 async function resolveDevSliceOffice(o={}){const y=o.year||2026;const [u,m]=await Promise.all([fetchJson(`${DATA_ROOT}/units/dev-vertical-slice.json`),fetchJson(`${DATA_ROOT}/manifests/${y}.json`)]);return composeResolvedOffice({unitsData:u,manifestData:m,date:o.date||'2026-11-02',hour:o.hour||'matins'});}
