@@ -160,16 +160,28 @@ for (const file of files) {
   });
 }
 
-const generatedAt = new Date().toISOString();
+function stableGeneratedAt(outPath) {
+  try {
+    const existing = JSON.parse(fs.readFileSync(outPath, 'utf8'));
+    if (typeof existing.generated_at === 'string' && existing.generated_at) return existing.generated_at;
+  } catch {}
+  return new Date().toISOString();
+}
+
+const manifestOutPath = path.join(REGISTRY, 'file-manifest.json');
+const identitiesOutPath = path.join(REGISTRY, 'book-identities.draft.json');
+const manifestGeneratedAt = stableGeneratedAt(manifestOutPath);
+const identitiesGeneratedAt = stableGeneratedAt(identitiesOutPath);
+const generatedAt = manifestGeneratedAt;
 
 fs.mkdirSync(REGISTRY, { recursive: true });
 
 fs.writeFileSync(
-  path.join(REGISTRY, 'file-manifest.json'),
+  manifestOutPath,
   JSON.stringify({
     schema: 'universal_office_bible_file_manifest_v1',
     status: 'draft_generated_from_current_filesystem',
-    generated_at: generatedAt,
+    generated_at: manifestGeneratedAt,
     rule: 'Physical storage is not canonical authority. This manifest records current files so later registry layers can govern them.',
     file_count: manifestFiles.length,
     files: manifestFiles
@@ -177,11 +189,11 @@ fs.writeFileSync(
 );
 
 fs.writeFileSync(
-  path.join(REGISTRY, 'book-identities.draft.json'),
+  identitiesOutPath,
   JSON.stringify({
     schema: 'universal_office_bible_book_identities_draft_v1',
     status: 'draft_requires_human_adjudication',
-    generated_at: generatedAt,
+    generated_at: identitiesGeneratedAt,
     rule: 'These draft identities are mechanically generated from current files. Do not treat them as final canonical identities.',
     identity_count: identities.length,
     identities

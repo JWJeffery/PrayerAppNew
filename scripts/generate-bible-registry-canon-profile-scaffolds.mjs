@@ -17,6 +17,14 @@ function ensureDir(dir) {
   fs.mkdirSync(dir, { recursive: true });
 }
 
+function stableGeneratedAt(outPath) {
+  try {
+    const existing = JSON.parse(fs.readFileSync(outPath, 'utf8'));
+    if (typeof existing.generated_at === 'string' && existing.generated_at) return existing.generated_at;
+  } catch {}
+  return new Date().toISOString();
+}
+
 function profileForHint(profileFamily) {
   if (profileFamily === 'ethiopian_orthodox') {
     return {
@@ -86,7 +94,7 @@ for (const row of rows) {
         schema: 'universal_office_bible_canon_profile_draft_v1',
         status: 'draft_incomplete_scaffold',
         completeness: 'incomplete_tranche_1_identity_adjudications_only',
-        generated_at: new Date().toISOString(),
+        generated_at: null,
         profile_key: meta.key,
         display_name: meta.display_name,
         tradition_family: meta.tradition_family,
@@ -119,6 +127,7 @@ for (const [key, profile] of profiles.entries()) {
   );
 
   const outPath = path.join(outDir, meta.filename).replaceAll(path.sep, '/');
+  profile.generated_at = stableGeneratedAt(outPath);
   fs.writeFileSync(outPath, JSON.stringify(profile, null, 2) + '\n');
 
   writtenProfiles.push({
@@ -134,7 +143,7 @@ for (const [key, profile] of profiles.entries()) {
 const index = {
   schema: 'universal_office_bible_canon_profile_index_draft_v1',
   status: 'draft',
-  generated_at: new Date().toISOString(),
+  generated_at: stableGeneratedAt(path.join(outDir, 'index.draft.json')),
   rule: 'Profile files listed here are incomplete scaffolds unless explicitly promoted later.',
   profiles: writtenProfiles.sort((a, b) => a.profile_key.localeCompare(b.profile_key))
 };

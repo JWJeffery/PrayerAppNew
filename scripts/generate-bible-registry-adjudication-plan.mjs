@@ -29,6 +29,14 @@ function compactRow(row) {
   };
 }
 
+function stableGeneratedAt(outPath) {
+  try {
+    const existing = JSON.parse(fs.readFileSync(outPath, 'utf8'));
+    if (typeof existing.generated_at === 'string' && existing.generated_at) return existing.generated_at;
+  } catch {}
+  return new Date().toISOString();
+}
+
 const manifest = readJson(manifestPath);
 const files = Array.isArray(manifest.files) ? manifest.files : [];
 
@@ -105,7 +113,7 @@ const summary = Object.fromEntries(
 const result = {
   schema: 'universal_office_bible_registry_adjudication_buckets_v1',
   status: 'draft',
-  generated_at: new Date().toISOString(),
+  generated_at: stableGeneratedAt(outPath),
   rule: 'This plan classifies registry adjudication work. It does not move files and does not change resolver behavior.',
   source_manifest: manifestPath,
   summary,
