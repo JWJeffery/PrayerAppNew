@@ -1,0 +1,1645 @@
+{
+  "schema": "universal_office_bible_book_identities_draft_v1",
+  "status": "draft_requires_human_adjudication",
+  "generated_at": "2026-06-20T02:00:40.705Z",
+  "rule": "These draft identities are mechanically generated from current files. Do not treat them as final canonical identities.",
+  "identity_count": 125,
+  "identities": [
+    {
+      "draft_identity_id": "AR_3CORINTHIANSAR",
+      "title": "3 Corinthians",
+      "source_path": "data/bible/AR/3corinthiansAR.json",
+      "legacy_folder": "AR",
+      "current_shape": "book_object",
+      "candidate_role": "armenian_collection_witness",
+      "canonical_identity_status": "draft_needs_human_adjudication",
+      "text_form_status": "unadjudicated",
+      "canon_profile_status": "unassigned",
+      "notes": [
+        "Requires adjudication: outside_legacy_ot_nt_resolver_route",
+        "Requires adjudication: mixed_case_filename"
+      ]
+    },
+    {
+      "draft_identity_id": "AR_PRAYEROFAPOLLONIUSAR",
+      "title": "The Prayer of Apollonius",
+      "source_path": "data/bible/AR/prayerofapolloniusAR.json",
+      "legacy_folder": "AR",
+      "current_shape": "book_object",
+      "candidate_role": "armenian_collection_witness",
+      "canonical_identity_status": "draft_needs_human_adjudication",
+      "text_form_status": "unadjudicated",
+      "canon_profile_status": "unassigned",
+      "notes": [
+        "Requires adjudication: outside_legacy_ot_nt_resolver_route",
+        "Requires adjudication: mixed_case_filename"
+      ]
+    },
+    {
+      "draft_identity_id": "ET_1CLEMENTET",
+      "title": "The Epistles of Clement (Qalëmentos) - Book 1",
+      "source_path": "data/bible/ET/1clementET.json",
+      "legacy_folder": "ET",
+      "current_shape": "book_object",
+      "candidate_role": "ethiopian_or_oriental_orthodox_collection_witness",
+      "canonical_identity_status": "draft_needs_human_adjudication",
+      "text_form_status": "unadjudicated",
+      "canon_profile_status": "unassigned",
+      "notes": [
+        "Requires adjudication: outside_legacy_ot_nt_resolver_route",
+        "Requires adjudication: mixed_case_filename"
+      ]
+    },
+    {
+      "draft_identity_id": "ET_1MEQAABYANET",
+      "title": "1 Meqa'abyan",
+      "source_path": "data/bible/ET/1meqa’abyanET.json",
+      "legacy_folder": "ET",
+      "current_shape": "book_object",
+      "candidate_role": "ethiopian_or_oriental_orthodox_collection_witness",
+      "canonical_identity_status": "draft_needs_human_adjudication",
+      "text_form_status": "unadjudicated",
+      "canon_profile_status": "unassigned",
+      "notes": [
+        "Requires adjudication: outside_legacy_ot_nt_resolver_route",
+        "Requires adjudication: curly_apostrophe_in_path",
+        "Requires adjudication: mixed_case_filename"
+      ]
+    },
+    {
+      "draft_identity_id": "ET_2CLEMENTET",
+      "title": "The Epistles of Clement (Qalëmentos) - Book 2",
+      "source_path": "data/bible/ET/2clementET.json",
+      "legacy_folder": "ET",
+      "current_shape": "book_object",
+      "candidate_role": "ethiopian_or_oriental_orthodox_collection_witness",
+      "canonical_identity_status": "draft_needs_human_adjudication",
+      "text_form_status": "unadjudicated",
+      "canon_profile_status": "unassigned",
+      "notes": [
+        "Requires adjudication: outside_legacy_ot_nt_resolver_route",
+        "Requires adjudication: mixed_case_filename"
+      ]
+    },
+    {
+      "draft_identity_id": "ET_2MEQAABYANET",
+      "title": "2 Meqa'abyan",
+      "source_path": "data/bible/ET/2meqa'abyanET.json",
+      "legacy_folder": "ET",
+      "current_shape": "book_object",
+      "candidate_role": "ethiopian_or_oriental_orthodox_collection_witness",
+      "canonical_identity_status": "draft_needs_human_adjudication",
+      "text_form_status": "unadjudicated",
+      "canon_profile_status": "unassigned",
+      "notes": [
+        "Requires adjudication: outside_legacy_ot_nt_resolver_route",
+        "Requires adjudication: mixed_case_filename"
+      ]
+    },
+    {
+      "draft_identity_id": "ET_3CLEMENTET",
+      "title": "The Epistles of Clement (Qalëmentos) - Book 3",
+      "source_path": "data/bible/ET/3clementET.json",
+      "legacy_folder": "ET",
+      "current_shape": "book_object",
+      "candidate_role": "ethiopian_or_oriental_orthodox_collection_witness",
+      "canonical_identity_status": "draft_needs_human_adjudication",
+      "text_form_status": "unadjudicated",
+      "canon_profile_status": "unassigned",
+      "notes": [
+        "Requires adjudication: outside_legacy_ot_nt_resolver_route",
+        "Requires adjudication: mixed_case_filename"
+      ]
+    },
+    {
+      "draft_identity_id": "ET_3MEQAABYANET",
+      "title": "3 Meqa'abyan",
+      "source_path": "data/bible/ET/3meqa’abyanET.json",
+      "legacy_folder": "ET",
+      "current_shape": "book_object",
+      "candidate_role": "ethiopian_or_oriental_orthodox_collection_witness",
+      "canonical_identity_status": "draft_needs_human_adjudication",
+      "text_form_status": "unadjudicated",
+      "canon_profile_status": "unassigned",
+      "notes": [
+        "Requires adjudication: outside_legacy_ot_nt_resolver_route",
+        "Requires adjudication: curly_apostrophe_in_path",
+        "Requires adjudication: mixed_case_filename"
+      ]
+    },
+    {
+      "draft_identity_id": "ET_4CLEMENTET",
+      "title": "The Epistles of Clement (Qalëmentos) - Book 4",
+      "source_path": "data/bible/ET/4clementET.json",
+      "legacy_folder": "ET",
+      "current_shape": "book_object",
+      "candidate_role": "ethiopian_or_oriental_orthodox_collection_witness",
+      "canonical_identity_status": "draft_needs_human_adjudication",
+      "text_form_status": "unadjudicated",
+      "canon_profile_status": "unassigned",
+      "notes": [
+        "Requires adjudication: outside_legacy_ot_nt_resolver_route",
+        "Requires adjudication: mixed_case_filename"
+      ]
+    },
+    {
+      "draft_identity_id": "ET_5CLEMENTET",
+      "title": "The Epistles of Clement (Qalëmentos) - Book 5",
+      "source_path": "data/bible/ET/5ClementET.json",
+      "legacy_folder": "ET",
+      "current_shape": "book_object",
+      "candidate_role": "ethiopian_or_oriental_orthodox_collection_witness",
+      "canonical_identity_status": "draft_needs_human_adjudication",
+      "text_form_status": "unadjudicated",
+      "canon_profile_status": "unassigned",
+      "notes": [
+        "Requires adjudication: outside_legacy_ot_nt_resolver_route",
+        "Requires adjudication: mixed_case_filename"
+      ]
+    },
+    {
+      "draft_identity_id": "ET_7CLEMENTET",
+      "title": "The Epistles of Clement (Qalëmentos) - Book 7",
+      "source_path": "data/bible/ET/7clementET.json",
+      "legacy_folder": "ET",
+      "current_shape": "book_object",
+      "candidate_role": "ethiopian_or_oriental_orthodox_collection_witness",
+      "canonical_identity_status": "draft_needs_human_adjudication",
+      "text_form_status": "unadjudicated",
+      "canon_profile_status": "unassigned",
+      "notes": [
+        "Requires adjudication: outside_legacy_ot_nt_resolver_route",
+        "Requires adjudication: mixed_case_filename"
+      ]
+    },
+    {
+      "draft_identity_id": "ET_8CLEMENTET",
+      "title": "The Epistles of Clement (Qalëmentos) - Book 8",
+      "source_path": "data/bible/ET/8ClementET.json",
+      "legacy_folder": "ET",
+      "current_shape": "book_object",
+      "candidate_role": "ethiopian_or_oriental_orthodox_collection_witness",
+      "canonical_identity_status": "draft_needs_human_adjudication",
+      "text_form_status": "unadjudicated",
+      "canon_profile_status": "unassigned",
+      "notes": [
+        "Requires adjudication: outside_legacy_ot_nt_resolver_route",
+        "Requires adjudication: mixed_case_filename"
+      ]
+    },
+    {
+      "draft_identity_id": "ET_CLEMENTBOOKOFROLLSET",
+      "title": "Qalëmentos - The Book of the Rolls",
+      "source_path": "data/bible/ET/ClementBookofRollsET.json",
+      "legacy_folder": "ET",
+      "current_shape": "book_object",
+      "candidate_role": "ethiopian_or_oriental_orthodox_collection_witness",
+      "canonical_identity_status": "draft_needs_human_adjudication",
+      "text_form_status": "unadjudicated",
+      "canon_profile_status": "unassigned",
+      "notes": [
+        "Requires adjudication: outside_legacy_ot_nt_resolver_route",
+        "Requires adjudication: mixed_case_filename"
+      ]
+    },
+    {
+      "draft_identity_id": "ET_CLEMENTVISIONARYET",
+      "title": "Qalëmentos (The Visionary Revelation)",
+      "source_path": "data/bible/ET/ClementVisionaryET.json",
+      "legacy_folder": "ET",
+      "current_shape": "book_object",
+      "candidate_role": "ethiopian_or_oriental_orthodox_collection_witness",
+      "canonical_identity_status": "draft_needs_human_adjudication",
+      "text_form_status": "unadjudicated",
+      "canon_profile_status": "unassigned",
+      "notes": [
+        "Requires adjudication: outside_legacy_ot_nt_resolver_route",
+        "Requires adjudication: mixed_case_filename"
+      ]
+    },
+    {
+      "draft_identity_id": "ET_ABTILISET",
+      "title": "Abtilis (The Sentences of the Apostles)",
+      "source_path": "data/bible/ET/abtilisET.json",
+      "legacy_folder": "ET",
+      "current_shape": "book_object",
+      "candidate_role": "ethiopian_or_oriental_orthodox_collection_witness",
+      "canonical_identity_status": "draft_needs_human_adjudication",
+      "text_form_status": "unadjudicated",
+      "canon_profile_status": "unassigned",
+      "notes": [
+        "Requires adjudication: outside_legacy_ot_nt_resolver_route",
+        "Requires adjudication: mixed_case_filename"
+      ]
+    },
+    {
+      "draft_identity_id": "ET_ADMONITIONSET",
+      "title": "Gitsiw (The Admonitions)",
+      "source_path": "data/bible/ET/admonitionsET.json",
+      "legacy_folder": "ET",
+      "current_shape": "book_object",
+      "candidate_role": "ethiopian_or_oriental_orthodox_collection_witness",
+      "canonical_identity_status": "draft_needs_human_adjudication",
+      "text_form_status": "unadjudicated",
+      "canon_profile_status": "unassigned",
+      "notes": [
+        "Requires adjudication: outside_legacy_ot_nt_resolver_route",
+        "Requires adjudication: mixed_case_filename"
+      ]
+    },
+    {
+      "draft_identity_id": "ET_ASCENSIONOFISAIAHET",
+      "title": "The Ascension of Isaiah",
+      "source_path": "data/bible/ET/ascensionofisaiahET.json",
+      "legacy_folder": "ET",
+      "current_shape": "book_object",
+      "candidate_role": "ethiopian_or_oriental_orthodox_collection_witness",
+      "canonical_identity_status": "draft_needs_human_adjudication",
+      "text_form_status": "unadjudicated",
+      "canon_profile_status": "unassigned",
+      "notes": [
+        "Requires adjudication: outside_legacy_ot_nt_resolver_route",
+        "Requires adjudication: mixed_case_filename"
+      ]
+    },
+    {
+      "draft_identity_id": "ET_BOOKOFJUBILEESET",
+      "title": "The Book of Jubilees",
+      "source_path": "data/bible/ET/bookofjubileesET.json",
+      "legacy_folder": "ET",
+      "current_shape": "book_object",
+      "candidate_role": "ethiopian_or_oriental_orthodox_collection_witness",
+      "canonical_identity_status": "draft_needs_human_adjudication",
+      "text_form_status": "unadjudicated",
+      "canon_profile_status": "unassigned",
+      "notes": [
+        "Requires adjudication: outside_legacy_ot_nt_resolver_route",
+        "Requires adjudication: mixed_case_filename"
+      ]
+    },
+    {
+      "draft_identity_id": "ET_CLEMENT6ET",
+      "title": "The Epistles of Clement (Qalëmentos) - Book 6",
+      "source_path": "data/bible/ET/clement6ET.json",
+      "legacy_folder": "ET",
+      "current_shape": "book_object",
+      "candidate_role": "ethiopian_or_oriental_orthodox_collection_witness",
+      "canonical_identity_status": "draft_needs_human_adjudication",
+      "text_form_status": "unadjudicated",
+      "canon_profile_status": "unassigned",
+      "notes": [
+        "Requires adjudication: outside_legacy_ot_nt_resolver_route",
+        "Requires adjudication: mixed_case_filename"
+      ]
+    },
+    {
+      "draft_identity_id": "ET_CLEMENTSTATUTESET",
+      "title": "Qalëmentos - The Statutes",
+      "source_path": "data/bible/ET/clementstatutesET.json",
+      "legacy_folder": "ET",
+      "current_shape": "book_object",
+      "candidate_role": "ethiopian_or_oriental_orthodox_collection_witness",
+      "canonical_identity_status": "draft_needs_human_adjudication",
+      "text_form_status": "unadjudicated",
+      "canon_profile_status": "unassigned",
+      "notes": [
+        "Requires adjudication: outside_legacy_ot_nt_resolver_route",
+        "Requires adjudication: mixed_case_filename"
+      ]
+    },
+    {
+      "draft_identity_id": "ET_DIDASKALIAET",
+      "title": "The Ethiopic Didaskalia",
+      "source_path": "data/bible/ET/didaskaliaET.json",
+      "legacy_folder": "ET",
+      "current_shape": "book_object",
+      "candidate_role": "ethiopian_or_oriental_orthodox_collection_witness",
+      "canonical_identity_status": "draft_needs_human_adjudication",
+      "text_form_status": "unadjudicated",
+      "canon_profile_status": "unassigned",
+      "notes": [
+        "Requires adjudication: outside_legacy_ot_nt_resolver_route",
+        "Requires adjudication: mixed_case_filename"
+      ]
+    },
+    {
+      "draft_identity_id": "ET_FETHANAGASTET",
+      "title": "The Fetha Nagast (Law of the Kings)",
+      "source_path": "data/bible/ET/fethanagastET.json",
+      "legacy_folder": "ET",
+      "current_shape": "book_object",
+      "candidate_role": "ethiopian_or_oriental_orthodox_collection_witness",
+      "canonical_identity_status": "draft_needs_human_adjudication",
+      "text_form_status": "unadjudicated",
+      "canon_profile_status": "unassigned",
+      "notes": [
+        "Requires adjudication: outside_legacy_ot_nt_resolver_route",
+        "Requires adjudication: mixed_case_filename"
+      ]
+    },
+    {
+      "draft_identity_id": "ET_GUBAEKANAET",
+      "title": "Guba’e Kana (The Council of Nicaea)",
+      "source_path": "data/bible/ET/guba’ekanaET.json",
+      "legacy_folder": "ET",
+      "current_shape": "book_object",
+      "candidate_role": "ethiopian_or_oriental_orthodox_collection_witness",
+      "canonical_identity_status": "draft_needs_human_adjudication",
+      "text_form_status": "unadjudicated",
+      "canon_profile_status": "unassigned",
+      "notes": [
+        "Requires adjudication: outside_legacy_ot_nt_resolver_route",
+        "Requires adjudication: curly_apostrophe_in_path",
+        "Requires adjudication: mixed_case_filename"
+      ]
+    },
+    {
+      "draft_identity_id": "ET_HERMASTHESHEPHERDET",
+      "title": "The Shepherd of Hermas",
+      "source_path": "data/bible/ET/hermastheshepherdET.json",
+      "legacy_folder": "ET",
+      "current_shape": "book_object",
+      "candidate_role": "ethiopian_or_oriental_orthodox_collection_witness",
+      "canonical_identity_status": "draft_needs_human_adjudication",
+      "text_form_status": "unadjudicated",
+      "canon_profile_status": "unassigned",
+      "notes": [
+        "Requires adjudication: outside_legacy_ot_nt_resolver_route",
+        "Requires adjudication: mixed_case_filename"
+      ]
+    },
+    {
+      "draft_identity_id": "ET_JOSIPPONET",
+      "title": "The Book of Joseph ben Gurion (Josippon) - Full Version",
+      "source_path": "data/bible/ET/josipponET.json",
+      "legacy_folder": "ET",
+      "current_shape": "object_other",
+      "candidate_role": "ethiopian_or_oriental_orthodox_collection_witness",
+      "canonical_identity_status": "draft_needs_human_adjudication",
+      "text_form_status": "unadjudicated",
+      "canon_profile_status": "unassigned",
+      "notes": [
+        "Requires adjudication: outside_legacy_ot_nt_resolver_route",
+        "Requires adjudication: non_ordinary_book_shape",
+        "Requires adjudication: mixed_case_filename"
+      ]
+    },
+    {
+      "draft_identity_id": "ET_MALKEAGUBAEET",
+      "title": "Malke’a Guba’e (Hymn of Likeness to the Assembly of Saints)",
+      "source_path": "data/bible/ET/malke’aguba’eET.json",
+      "legacy_folder": "ET",
+      "current_shape": "object_other",
+      "candidate_role": "ethiopian_or_oriental_orthodox_collection_witness",
+      "canonical_identity_status": "draft_needs_human_adjudication",
+      "text_form_status": "unadjudicated",
+      "canon_profile_status": "unassigned",
+      "notes": [
+        "Requires adjudication: outside_legacy_ot_nt_resolver_route",
+        "Requires adjudication: non_ordinary_book_shape",
+        "Requires adjudication: curly_apostrophe_in_path",
+        "Requires adjudication: mixed_case_filename"
+      ]
+    },
+    {
+      "draft_identity_id": "ET_MALKEAIYASUSET",
+      "title": "Malke’a Iyasus (Hymn of Likeness to Jesus)",
+      "source_path": "data/bible/ET/malke’aiyasusET.json",
+      "legacy_folder": "ET",
+      "current_shape": "object_other",
+      "candidate_role": "ethiopian_or_oriental_orthodox_collection_witness",
+      "canonical_identity_status": "draft_needs_human_adjudication",
+      "text_form_status": "unadjudicated",
+      "canon_profile_status": "unassigned",
+      "notes": [
+        "Requires adjudication: outside_legacy_ot_nt_resolver_route",
+        "Requires adjudication: non_ordinary_book_shape",
+        "Requires adjudication: curly_apostrophe_in_path",
+        "Requires adjudication: mixed_case_filename"
+      ]
+    },
+    {
+      "draft_identity_id": "ET_MALKEAVIRGINMARYET",
+      "title": "Malke’a Mariam (Hymn of Likeness to the Virgin)",
+      "source_path": "data/bible/ET/malke’avirginmaryET.json",
+      "legacy_folder": "ET",
+      "current_shape": "object_other",
+      "candidate_role": "ethiopian_or_oriental_orthodox_collection_witness",
+      "canonical_identity_status": "draft_needs_human_adjudication",
+      "text_form_status": "unadjudicated",
+      "canon_profile_status": "unassigned",
+      "notes": [
+        "Requires adjudication: outside_legacy_ot_nt_resolver_route",
+        "Requires adjudication: non_ordinary_book_shape",
+        "Requires adjudication: curly_apostrophe_in_path",
+        "Requires adjudication: mixed_case_filename"
+      ]
+    },
+    {
+      "draft_identity_id": "ET_MAZAHETAET",
+      "title": "Mazaheta (The Book of Hymns and Prayers)",
+      "source_path": "data/bible/ET/mazahetaET.json",
+      "legacy_folder": "ET",
+      "current_shape": "object_other",
+      "candidate_role": "ethiopian_or_oriental_orthodox_collection_witness",
+      "canonical_identity_status": "draft_needs_human_adjudication",
+      "text_form_status": "unadjudicated",
+      "canon_profile_status": "unassigned",
+      "notes": [
+        "Requires adjudication: outside_legacy_ot_nt_resolver_route",
+        "Requires adjudication: non_ordinary_book_shape",
+        "Requires adjudication: mixed_case_filename"
+      ]
+    },
+    {
+      "draft_identity_id": "ET_MIRACLESOFMARYET",
+      "title": "Tä’amrä Maryam (The Miracles of Mary) - Complete Volume I & II",
+      "source_path": "data/bible/ET/miraclesofmaryET.json",
+      "legacy_folder": "ET",
+      "current_shape": "object_other",
+      "candidate_role": "ethiopian_or_oriental_orthodox_collection_witness",
+      "canonical_identity_status": "draft_needs_human_adjudication",
+      "text_form_status": "unadjudicated",
+      "canon_profile_status": "unassigned",
+      "notes": [
+        "Requires adjudication: outside_legacy_ot_nt_resolver_route",
+        "Requires adjudication: non_ordinary_book_shape",
+        "Requires adjudication: mixed_case_filename"
+      ]
+    },
+    {
+      "draft_identity_id": "ET_RESTOFBARUCHET",
+      "title": "The Rest of the Words of Baruch",
+      "source_path": "data/bible/ET/restofbaruchET.json",
+      "legacy_folder": "ET",
+      "current_shape": "book_object",
+      "candidate_role": "ethiopian_or_oriental_orthodox_collection_witness",
+      "canonical_identity_status": "draft_needs_human_adjudication",
+      "text_form_status": "unadjudicated",
+      "canon_profile_status": "unassigned",
+      "notes": [
+        "Requires adjudication: outside_legacy_ot_nt_resolver_route",
+        "Requires adjudication: mixed_case_filename"
+      ]
+    },
+    {
+      "draft_identity_id": "ET_RESTOFJEREMIAHET",
+      "title": "The Rest of the Words of Jeremiah",
+      "source_path": "data/bible/ET/restofjeremiahET.json",
+      "legacy_folder": "ET",
+      "current_shape": "book_object",
+      "candidate_role": "ethiopian_or_oriental_orthodox_collection_witness",
+      "canonical_identity_status": "draft_needs_human_adjudication",
+      "text_form_status": "unadjudicated",
+      "canon_profile_status": "unassigned",
+      "notes": [
+        "Requires adjudication: outside_legacy_ot_nt_resolver_route",
+        "Requires adjudication: mixed_case_filename"
+      ]
+    },
+    {
+      "draft_identity_id": "ET_SIRATETSIONET",
+      "title": "Sirate Tsion (The Order of Zion)",
+      "source_path": "data/bible/ET/siratetsionET.json",
+      "legacy_folder": "ET",
+      "current_shape": "book_object",
+      "candidate_role": "ethiopian_or_oriental_orthodox_collection_witness",
+      "canonical_identity_status": "draft_needs_human_adjudication",
+      "text_form_status": "unadjudicated",
+      "canon_profile_status": "unassigned",
+      "notes": [
+        "Requires adjudication: outside_legacy_ot_nt_resolver_route",
+        "Requires adjudication: mixed_case_filename"
+      ]
+    },
+    {
+      "draft_identity_id": "ET_TIZAZET",
+      "title": "Tizaz (The Commandments)",
+      "source_path": "data/bible/ET/tizazET.json",
+      "legacy_folder": "ET",
+      "current_shape": "book_object",
+      "candidate_role": "ethiopian_or_oriental_orthodox_collection_witness",
+      "canonical_identity_status": "draft_needs_human_adjudication",
+      "text_form_status": "unadjudicated",
+      "canon_profile_status": "unassigned",
+      "notes": [
+        "Requires adjudication: outside_legacy_ot_nt_resolver_route",
+        "Requires adjudication: mixed_case_filename"
+      ]
+    },
+    {
+      "draft_identity_id": "NT_1CORINTHIANS",
+      "title": "1 Corinthians",
+      "source_path": "data/bible/NT/1corinthians.json",
+      "legacy_folder": "NT",
+      "current_shape": "book_object",
+      "candidate_role": "ordinary_bible_book_or_related_text",
+      "canonical_identity_status": "draft_needs_human_adjudication",
+      "text_form_status": "unadjudicated",
+      "canon_profile_status": "unassigned",
+      "notes": []
+    },
+    {
+      "draft_identity_id": "NT_1JOHN",
+      "title": "1 John",
+      "source_path": "data/bible/NT/1john.json",
+      "legacy_folder": "NT",
+      "current_shape": "book_object",
+      "candidate_role": "ordinary_bible_book_or_related_text",
+      "canonical_identity_status": "draft_needs_human_adjudication",
+      "text_form_status": "unadjudicated",
+      "canon_profile_status": "unassigned",
+      "notes": []
+    },
+    {
+      "draft_identity_id": "NT_1PETER",
+      "title": "1 Peter",
+      "source_path": "data/bible/NT/1peter.json",
+      "legacy_folder": "NT",
+      "current_shape": "book_object",
+      "candidate_role": "ordinary_bible_book_or_related_text",
+      "canonical_identity_status": "draft_needs_human_adjudication",
+      "text_form_status": "unadjudicated",
+      "canon_profile_status": "unassigned",
+      "notes": []
+    },
+    {
+      "draft_identity_id": "NT_1THESSALONIANS",
+      "title": "1 Thessalonians",
+      "source_path": "data/bible/NT/1thessalonians.json",
+      "legacy_folder": "NT",
+      "current_shape": "book_object",
+      "candidate_role": "ordinary_bible_book_or_related_text",
+      "canonical_identity_status": "draft_needs_human_adjudication",
+      "text_form_status": "unadjudicated",
+      "canon_profile_status": "unassigned",
+      "notes": []
+    },
+    {
+      "draft_identity_id": "NT_1TIMOTHY",
+      "title": "1 Timothy",
+      "source_path": "data/bible/NT/1timothy.json",
+      "legacy_folder": "NT",
+      "current_shape": "book_object",
+      "candidate_role": "ordinary_bible_book_or_related_text",
+      "canonical_identity_status": "draft_needs_human_adjudication",
+      "text_form_status": "unadjudicated",
+      "canon_profile_status": "unassigned",
+      "notes": []
+    },
+    {
+      "draft_identity_id": "NT_2BARUCHCE",
+      "title": "2 Baruch",
+      "source_path": "data/bible/NT/2baruchCE.json",
+      "legacy_folder": "NT",
+      "current_shape": "book_object",
+      "candidate_role": "ordinary_bible_book_or_related_text",
+      "canonical_identity_status": "draft_needs_human_adjudication",
+      "text_form_status": "unadjudicated",
+      "canon_profile_status": "unassigned",
+      "notes": [
+        "Requires adjudication: mixed_case_filename"
+      ]
+    },
+    {
+      "draft_identity_id": "NT_2CORINTHIANS",
+      "title": "2 Corinthians",
+      "source_path": "data/bible/NT/2corinthians.json",
+      "legacy_folder": "NT",
+      "current_shape": "book_object",
+      "candidate_role": "ordinary_bible_book_or_related_text",
+      "canonical_identity_status": "draft_needs_human_adjudication",
+      "text_form_status": "unadjudicated",
+      "canon_profile_status": "unassigned",
+      "notes": []
+    },
+    {
+      "draft_identity_id": "NT_2JOHN",
+      "title": "2 John",
+      "source_path": "data/bible/NT/2john.json",
+      "legacy_folder": "NT",
+      "current_shape": "book_object",
+      "candidate_role": "ordinary_bible_book_or_related_text",
+      "canonical_identity_status": "draft_needs_human_adjudication",
+      "text_form_status": "unadjudicated",
+      "canon_profile_status": "unassigned",
+      "notes": []
+    },
+    {
+      "draft_identity_id": "NT_2PETER",
+      "title": "2 Peter",
+      "source_path": "data/bible/NT/2peter.json",
+      "legacy_folder": "NT",
+      "current_shape": "book_object",
+      "candidate_role": "ordinary_bible_book_or_related_text",
+      "canonical_identity_status": "draft_needs_human_adjudication",
+      "text_form_status": "unadjudicated",
+      "canon_profile_status": "unassigned",
+      "notes": []
+    },
+    {
+      "draft_identity_id": "NT_2THESSALONIANS",
+      "title": "2 Thessalonians",
+      "source_path": "data/bible/NT/2thessalonians.json",
+      "legacy_folder": "NT",
+      "current_shape": "book_object",
+      "candidate_role": "ordinary_bible_book_or_related_text",
+      "canonical_identity_status": "draft_needs_human_adjudication",
+      "text_form_status": "unadjudicated",
+      "canon_profile_status": "unassigned",
+      "notes": []
+    },
+    {
+      "draft_identity_id": "NT_2TIMOTHY",
+      "title": "2 Timothy",
+      "source_path": "data/bible/NT/2timothy.json",
+      "legacy_folder": "NT",
+      "current_shape": "book_object",
+      "candidate_role": "ordinary_bible_book_or_related_text",
+      "canonical_identity_status": "draft_needs_human_adjudication",
+      "text_form_status": "unadjudicated",
+      "canon_profile_status": "unassigned",
+      "notes": []
+    },
+    {
+      "draft_identity_id": "NT_3JOHN",
+      "title": "3 John",
+      "source_path": "data/bible/NT/3john.json",
+      "legacy_folder": "NT",
+      "current_shape": "book_object",
+      "candidate_role": "ordinary_bible_book_or_related_text",
+      "canonical_identity_status": "draft_needs_human_adjudication",
+      "text_form_status": "unadjudicated",
+      "canon_profile_status": "unassigned",
+      "notes": []
+    },
+    {
+      "draft_identity_id": "NT_ACTS",
+      "title": "Acts",
+      "source_path": "data/bible/NT/acts.json",
+      "legacy_folder": "NT",
+      "current_shape": "book_object",
+      "candidate_role": "ordinary_bible_book_or_related_text",
+      "canonical_identity_status": "draft_needs_human_adjudication",
+      "text_form_status": "unadjudicated",
+      "canon_profile_status": "unassigned",
+      "notes": []
+    },
+    {
+      "draft_identity_id": "NT_COLOSSIANS",
+      "title": "Colossians",
+      "source_path": "data/bible/NT/colossians.json",
+      "legacy_folder": "NT",
+      "current_shape": "book_object",
+      "candidate_role": "ordinary_bible_book_or_related_text",
+      "canonical_identity_status": "draft_needs_human_adjudication",
+      "text_form_status": "unadjudicated",
+      "canon_profile_status": "unassigned",
+      "notes": []
+    },
+    {
+      "draft_identity_id": "NT_EPHESIANS",
+      "title": "Ephesians",
+      "source_path": "data/bible/NT/ephesians.json",
+      "legacy_folder": "NT",
+      "current_shape": "book_object",
+      "candidate_role": "ordinary_bible_book_or_related_text",
+      "canonical_identity_status": "draft_needs_human_adjudication",
+      "text_form_status": "unadjudicated",
+      "canon_profile_status": "unassigned",
+      "notes": []
+    },
+    {
+      "draft_identity_id": "NT_EPISTLEOFTHELAODICEANS",
+      "title": "Epistle to the Laodiceans",
+      "source_path": "data/bible/NT/epistleofthelaodiceans.json",
+      "legacy_folder": "NT",
+      "current_shape": "book_object",
+      "candidate_role": "ordinary_bible_book_or_related_text",
+      "canonical_identity_status": "draft_needs_human_adjudication",
+      "text_form_status": "unadjudicated",
+      "canon_profile_status": "unassigned",
+      "notes": []
+    },
+    {
+      "draft_identity_id": "NT_GALATIANS",
+      "title": "Galatians",
+      "source_path": "data/bible/NT/galatians.json",
+      "legacy_folder": "NT",
+      "current_shape": "book_object",
+      "candidate_role": "ordinary_bible_book_or_related_text",
+      "canonical_identity_status": "draft_needs_human_adjudication",
+      "text_form_status": "unadjudicated",
+      "canon_profile_status": "unassigned",
+      "notes": []
+    },
+    {
+      "draft_identity_id": "NT_HEBREWS",
+      "title": "Hebrews",
+      "source_path": "data/bible/NT/hebrews.json",
+      "legacy_folder": "NT",
+      "current_shape": "book_object",
+      "candidate_role": "ordinary_bible_book_or_related_text",
+      "canonical_identity_status": "draft_needs_human_adjudication",
+      "text_form_status": "unadjudicated",
+      "canon_profile_status": "unassigned",
+      "notes": []
+    },
+    {
+      "draft_identity_id": "NT_HISTORYOFZOSIMUS",
+      "title": "The History of Zosimus (The Rechabites)",
+      "source_path": "data/bible/NT/historyofzosimus.json",
+      "legacy_folder": "NT",
+      "current_shape": "book_object",
+      "candidate_role": "ordinary_bible_book_or_related_text",
+      "canonical_identity_status": "draft_needs_human_adjudication",
+      "text_form_status": "unadjudicated",
+      "canon_profile_status": "unassigned",
+      "notes": []
+    },
+    {
+      "draft_identity_id": "NT_JAMES",
+      "title": "James",
+      "source_path": "data/bible/NT/james.json",
+      "legacy_folder": "NT",
+      "current_shape": "book_object",
+      "candidate_role": "ordinary_bible_book_or_related_text",
+      "canonical_identity_status": "draft_needs_human_adjudication",
+      "text_form_status": "unadjudicated",
+      "canon_profile_status": "unassigned",
+      "notes": []
+    },
+    {
+      "draft_identity_id": "NT_JOHN",
+      "title": "John",
+      "source_path": "data/bible/NT/john.json",
+      "legacy_folder": "NT",
+      "current_shape": "book_object",
+      "candidate_role": "ordinary_bible_book_or_related_text",
+      "canonical_identity_status": "draft_needs_human_adjudication",
+      "text_form_status": "unadjudicated",
+      "canon_profile_status": "unassigned",
+      "notes": []
+    },
+    {
+      "draft_identity_id": "NT_JUDE",
+      "title": "Jude",
+      "source_path": "data/bible/NT/jude.json",
+      "legacy_folder": "NT",
+      "current_shape": "book_object",
+      "candidate_role": "ordinary_bible_book_or_related_text",
+      "canonical_identity_status": "draft_needs_human_adjudication",
+      "text_form_status": "unadjudicated",
+      "canon_profile_status": "unassigned",
+      "notes": []
+    },
+    {
+      "draft_identity_id": "NT_LUKE",
+      "title": "Luke",
+      "source_path": "data/bible/NT/luke.json",
+      "legacy_folder": "NT",
+      "current_shape": "book_object",
+      "candidate_role": "ordinary_bible_book_or_related_text",
+      "canonical_identity_status": "draft_needs_human_adjudication",
+      "text_form_status": "unadjudicated",
+      "canon_profile_status": "unassigned",
+      "notes": []
+    },
+    {
+      "draft_identity_id": "NT_MARK",
+      "title": "Mark",
+      "source_path": "data/bible/NT/mark.json",
+      "legacy_folder": "NT",
+      "current_shape": "book_object",
+      "candidate_role": "ordinary_bible_book_or_related_text",
+      "canonical_identity_status": "draft_needs_human_adjudication",
+      "text_form_status": "unadjudicated",
+      "canon_profile_status": "unassigned",
+      "notes": []
+    },
+    {
+      "draft_identity_id": "NT_MATTHEW",
+      "title": "Matthew",
+      "source_path": "data/bible/NT/matthew.json",
+      "legacy_folder": "NT",
+      "current_shape": "book_object",
+      "candidate_role": "ordinary_bible_book_or_related_text",
+      "canonical_identity_status": "draft_needs_human_adjudication",
+      "text_form_status": "unadjudicated",
+      "canon_profile_status": "unassigned",
+      "notes": []
+    },
+    {
+      "draft_identity_id": "NT_PHILEMON",
+      "title": "Philemon",
+      "source_path": "data/bible/NT/philemon.json",
+      "legacy_folder": "NT",
+      "current_shape": "book_object",
+      "candidate_role": "ordinary_bible_book_or_related_text",
+      "canonical_identity_status": "draft_needs_human_adjudication",
+      "text_form_status": "unadjudicated",
+      "canon_profile_status": "unassigned",
+      "notes": []
+    },
+    {
+      "draft_identity_id": "NT_PHILIPPIANS",
+      "title": "Philippians",
+      "source_path": "data/bible/NT/philippians.json",
+      "legacy_folder": "NT",
+      "current_shape": "book_object",
+      "candidate_role": "ordinary_bible_book_or_related_text",
+      "canonical_identity_status": "draft_needs_human_adjudication",
+      "text_form_status": "unadjudicated",
+      "canon_profile_status": "unassigned",
+      "notes": []
+    },
+    {
+      "draft_identity_id": "NT_REVELATION",
+      "title": "Revelation",
+      "source_path": "data/bible/NT/revelation.json",
+      "legacy_folder": "NT",
+      "current_shape": "book_object",
+      "candidate_role": "ordinary_bible_book_or_related_text",
+      "canonical_identity_status": "draft_needs_human_adjudication",
+      "text_form_status": "unadjudicated",
+      "canon_profile_status": "unassigned",
+      "notes": []
+    },
+    {
+      "draft_identity_id": "NT_ROMANS",
+      "title": "Romans",
+      "source_path": "data/bible/NT/romans.json",
+      "legacy_folder": "NT",
+      "current_shape": "book_object",
+      "candidate_role": "ordinary_bible_book_or_related_text",
+      "canonical_identity_status": "draft_needs_human_adjudication",
+      "text_form_status": "unadjudicated",
+      "canon_profile_status": "unassigned",
+      "notes": []
+    },
+    {
+      "draft_identity_id": "NT_TITUS",
+      "title": "Titus",
+      "source_path": "data/bible/NT/titus.json",
+      "legacy_folder": "NT",
+      "current_shape": "book_object",
+      "candidate_role": "ordinary_bible_book_or_related_text",
+      "canonical_identity_status": "draft_needs_human_adjudication",
+      "text_form_status": "unadjudicated",
+      "canon_profile_status": "unassigned",
+      "notes": []
+    },
+    {
+      "draft_identity_id": "ODES_ARMENIANCANTICLESAR",
+      "title": "Armenian Canticles (Odes)",
+      "source_path": "data/bible/ODES/armeniancanticlesAR.json",
+      "legacy_folder": "ODES",
+      "current_shape": "book_object",
+      "candidate_role": "odes_or_canticle_collection_witness",
+      "canonical_identity_status": "draft_needs_human_adjudication",
+      "text_form_status": "unadjudicated",
+      "canon_profile_status": "unassigned",
+      "notes": [
+        "Requires adjudication: outside_legacy_ot_nt_resolver_route",
+        "Requires adjudication: mixed_case_filename"
+      ]
+    },
+    {
+      "draft_identity_id": "ODES_COPTICODESCO",
+      "title": "The Four Hoos (Coptic Odes)",
+      "source_path": "data/bible/ODES/copticodesCO.json",
+      "legacy_folder": "ODES",
+      "current_shape": "book_object",
+      "candidate_role": "odes_or_canticle_collection_witness",
+      "canonical_identity_status": "draft_needs_human_adjudication",
+      "text_form_status": "unadjudicated",
+      "canon_profile_status": "unassigned",
+      "notes": [
+        "Requires adjudication: outside_legacy_ot_nt_resolver_route",
+        "Requires adjudication: mixed_case_filename"
+      ]
+    },
+    {
+      "draft_identity_id": "ODES_EOODES",
+      "title": "The Nine Odes (Eastern Orthodox)",
+      "source_path": "data/bible/ODES/eoodes.json",
+      "legacy_folder": "ODES",
+      "current_shape": "book_object",
+      "candidate_role": "odes_or_canticle_collection_witness",
+      "canonical_identity_status": "draft_needs_human_adjudication",
+      "text_form_status": "unadjudicated",
+      "canon_profile_status": "unassigned",
+      "notes": [
+        "Requires adjudication: outside_legacy_ot_nt_resolver_route"
+      ]
+    },
+    {
+      "draft_identity_id": "ODES_ETHIOPIANODES",
+      "title": "Ethiopian Odes (Mequtariya)",
+      "source_path": "data/bible/ODES/ethiopianodes.json",
+      "legacy_folder": "ODES",
+      "current_shape": "book_object",
+      "candidate_role": "odes_or_canticle_collection_witness",
+      "canonical_identity_status": "draft_needs_human_adjudication",
+      "text_form_status": "unadjudicated",
+      "canon_profile_status": "unassigned",
+      "notes": [
+        "Requires adjudication: outside_legacy_ot_nt_resolver_route"
+      ]
+    },
+    {
+      "draft_identity_id": "ODES_ODESOFSOLOMONSY",
+      "title": "The Odes of Solomon",
+      "source_path": "data/bible/ODES/odesofsolomonSY.json",
+      "legacy_folder": "ODES",
+      "current_shape": "book_object",
+      "candidate_role": "odes_or_canticle_collection_witness",
+      "canonical_identity_status": "draft_needs_human_adjudication",
+      "text_form_status": "unadjudicated",
+      "canon_profile_status": "unassigned",
+      "notes": [
+        "Requires adjudication: outside_legacy_ot_nt_resolver_route",
+        "Requires adjudication: mixed_case_filename"
+      ]
+    },
+    {
+      "draft_identity_id": "OT_1CHRONICLES",
+      "title": "1 Chronicles",
+      "source_path": "data/bible/OT/1chronicles.json",
+      "legacy_folder": "OT",
+      "current_shape": "book_object",
+      "candidate_role": "ordinary_bible_book_or_related_text",
+      "canonical_identity_status": "draft_needs_human_adjudication",
+      "text_form_status": "unadjudicated",
+      "canon_profile_status": "unassigned",
+      "notes": []
+    },
+    {
+      "draft_identity_id": "OT_1ENOCH",
+      "title": "1 Enoch",
+      "source_path": "data/bible/OT/1enoch.json",
+      "legacy_folder": "OT",
+      "current_shape": "book_object",
+      "candidate_role": "ordinary_bible_book_or_related_text",
+      "canonical_identity_status": "draft_needs_human_adjudication",
+      "text_form_status": "unadjudicated",
+      "canon_profile_status": "unassigned",
+      "notes": []
+    },
+    {
+      "draft_identity_id": "OT_1ESDRAS",
+      "title": "1 Esdras",
+      "source_path": "data/bible/OT/1esdras.json",
+      "legacy_folder": "OT",
+      "current_shape": "book_object",
+      "candidate_role": "ordinary_bible_book_or_related_text",
+      "canonical_identity_status": "draft_needs_human_adjudication",
+      "text_form_status": "unadjudicated",
+      "canon_profile_status": "unassigned",
+      "notes": []
+    },
+    {
+      "draft_identity_id": "OT_1KINGS",
+      "title": "1 Kings",
+      "source_path": "data/bible/OT/1kings.json",
+      "legacy_folder": "OT",
+      "current_shape": "book_object",
+      "candidate_role": "ordinary_bible_book_or_related_text",
+      "canonical_identity_status": "draft_needs_human_adjudication",
+      "text_form_status": "unadjudicated",
+      "canon_profile_status": "unassigned",
+      "notes": []
+    },
+    {
+      "draft_identity_id": "OT_1MACCABEES",
+      "title": "1 Maccabees",
+      "source_path": "data/bible/OT/1maccabees.json",
+      "legacy_folder": "OT",
+      "current_shape": "book_object",
+      "candidate_role": "ordinary_bible_book_or_related_text",
+      "canonical_identity_status": "draft_needs_human_adjudication",
+      "text_form_status": "unadjudicated",
+      "canon_profile_status": "unassigned",
+      "notes": []
+    },
+    {
+      "draft_identity_id": "OT_1SAMUEL",
+      "title": "1 Samuel",
+      "source_path": "data/bible/OT/1samuel.json",
+      "legacy_folder": "OT",
+      "current_shape": "book_object",
+      "candidate_role": "ordinary_bible_book_or_related_text",
+      "canonical_identity_status": "draft_needs_human_adjudication",
+      "text_form_status": "unadjudicated",
+      "canon_profile_status": "unassigned",
+      "notes": []
+    },
+    {
+      "draft_identity_id": "OT_2CHRONICLES",
+      "title": "2 Chronicles",
+      "source_path": "data/bible/OT/2chronicles.json",
+      "legacy_folder": "OT",
+      "current_shape": "book_object",
+      "candidate_role": "ordinary_bible_book_or_related_text",
+      "canonical_identity_status": "draft_needs_human_adjudication",
+      "text_form_status": "unadjudicated",
+      "canon_profile_status": "unassigned",
+      "notes": []
+    },
+    {
+      "draft_identity_id": "OT_2ESDRAS",
+      "title": "2 Esdras",
+      "source_path": "data/bible/OT/2esdras.json",
+      "legacy_folder": "OT",
+      "current_shape": "book_object",
+      "candidate_role": "ordinary_bible_book_or_related_text",
+      "canonical_identity_status": "draft_needs_human_adjudication",
+      "text_form_status": "unadjudicated",
+      "canon_profile_status": "unassigned",
+      "notes": []
+    },
+    {
+      "draft_identity_id": "OT_2KINGS",
+      "title": "2 Kings",
+      "source_path": "data/bible/OT/2kings.json",
+      "legacy_folder": "OT",
+      "current_shape": "book_object",
+      "candidate_role": "ordinary_bible_book_or_related_text",
+      "canonical_identity_status": "draft_needs_human_adjudication",
+      "text_form_status": "unadjudicated",
+      "canon_profile_status": "unassigned",
+      "notes": []
+    },
+    {
+      "draft_identity_id": "OT_2MACCABEES",
+      "title": "2 Maccabees",
+      "source_path": "data/bible/OT/2maccabees.json",
+      "legacy_folder": "OT",
+      "current_shape": "book_object",
+      "candidate_role": "ordinary_bible_book_or_related_text",
+      "canonical_identity_status": "draft_needs_human_adjudication",
+      "text_form_status": "unadjudicated",
+      "canon_profile_status": "unassigned",
+      "notes": []
+    },
+    {
+      "draft_identity_id": "OT_2SAMUEL",
+      "title": "2 Samuel",
+      "source_path": "data/bible/OT/2samuel.json",
+      "legacy_folder": "OT",
+      "current_shape": "book_object",
+      "candidate_role": "ordinary_bible_book_or_related_text",
+      "canonical_identity_status": "draft_needs_human_adjudication",
+      "text_form_status": "unadjudicated",
+      "canon_profile_status": "unassigned",
+      "notes": []
+    },
+    {
+      "draft_identity_id": "OT_3MACCABEES",
+      "title": "3 Maccabees",
+      "source_path": "data/bible/OT/3maccabees.json",
+      "legacy_folder": "OT",
+      "current_shape": "book_object",
+      "candidate_role": "ordinary_bible_book_or_related_text",
+      "canonical_identity_status": "draft_needs_human_adjudication",
+      "text_form_status": "unadjudicated",
+      "canon_profile_status": "unassigned",
+      "notes": []
+    },
+    {
+      "draft_identity_id": "OT_4MACCABEES",
+      "title": "4 Maccabees",
+      "source_path": "data/bible/OT/4maccabees.json",
+      "legacy_folder": "OT",
+      "current_shape": "book_object",
+      "candidate_role": "ordinary_bible_book_or_related_text",
+      "canonical_identity_status": "draft_needs_human_adjudication",
+      "text_form_status": "unadjudicated",
+      "canon_profile_status": "unassigned",
+      "notes": []
+    },
+    {
+      "draft_identity_id": "OT_AMOS",
+      "title": "Amos",
+      "source_path": "data/bible/OT/amos.json",
+      "legacy_folder": "OT",
+      "current_shape": "book_object",
+      "candidate_role": "ordinary_bible_book_or_related_text",
+      "canonical_identity_status": "draft_needs_human_adjudication",
+      "text_form_status": "unadjudicated",
+      "canon_profile_status": "unassigned",
+      "notes": []
+    },
+    {
+      "draft_identity_id": "OT_BARUCH",
+      "title": "Baruch",
+      "source_path": "data/bible/OT/baruch.json",
+      "legacy_folder": "OT",
+      "current_shape": "book_object",
+      "candidate_role": "ordinary_bible_book_or_related_text",
+      "canonical_identity_status": "draft_needs_human_adjudication",
+      "text_form_status": "unadjudicated",
+      "canon_profile_status": "unassigned",
+      "notes": []
+    },
+    {
+      "draft_identity_id": "OT_DANIEL",
+      "title": "Daniel",
+      "source_path": "data/bible/OT/daniel.json",
+      "legacy_folder": "OT",
+      "current_shape": "book_object",
+      "candidate_role": "ordinary_bible_book_or_related_text",
+      "canonical_identity_status": "draft_needs_human_adjudication",
+      "text_form_status": "unadjudicated",
+      "canon_profile_status": "unassigned",
+      "notes": []
+    },
+    {
+      "draft_identity_id": "OT_DANIELGK",
+      "title": "Daniel (Extended/Catholic Canon)",
+      "source_path": "data/bible/OT/danielGK.json",
+      "legacy_folder": "OT",
+      "current_shape": "book_object",
+      "candidate_role": "ordinary_book_text_form_variant",
+      "canonical_identity_status": "draft_needs_human_adjudication",
+      "text_form_status": "text_form_variant_candidate",
+      "canon_profile_status": "unassigned",
+      "notes": [
+        "Requires adjudication: mixed_case_filename"
+      ]
+    },
+    {
+      "draft_identity_id": "OT_DEUTERONOMY",
+      "title": "Deuteronomy",
+      "source_path": "data/bible/OT/deuteronomy.json",
+      "legacy_folder": "OT",
+      "current_shape": "book_object",
+      "candidate_role": "ordinary_bible_book_or_related_text",
+      "canonical_identity_status": "draft_needs_human_adjudication",
+      "text_form_status": "unadjudicated",
+      "canon_profile_status": "unassigned",
+      "notes": []
+    },
+    {
+      "draft_identity_id": "OT_ECCLESIASTES",
+      "title": "Ecclesiastes",
+      "source_path": "data/bible/OT/ecclesiastes.json",
+      "legacy_folder": "OT",
+      "current_shape": "book_object",
+      "candidate_role": "ordinary_bible_book_or_related_text",
+      "canonical_identity_status": "draft_needs_human_adjudication",
+      "text_form_status": "unadjudicated",
+      "canon_profile_status": "unassigned",
+      "notes": []
+    },
+    {
+      "draft_identity_id": "OT_ESTHER",
+      "title": "Esther",
+      "source_path": "data/bible/OT/esther.json",
+      "legacy_folder": "OT",
+      "current_shape": "book_object",
+      "candidate_role": "ordinary_bible_book_or_related_text",
+      "canonical_identity_status": "draft_needs_human_adjudication",
+      "text_form_status": "unadjudicated",
+      "canon_profile_status": "unassigned",
+      "notes": []
+    },
+    {
+      "draft_identity_id": "OT_ESTHERGK",
+      "title": "Esther (with Additions)",
+      "source_path": "data/bible/OT/estherGK.json",
+      "legacy_folder": "OT",
+      "current_shape": "book_object",
+      "candidate_role": "ordinary_book_text_form_variant",
+      "canonical_identity_status": "draft_needs_human_adjudication",
+      "text_form_status": "text_form_variant_candidate",
+      "canon_profile_status": "unassigned",
+      "notes": [
+        "Requires adjudication: mixed_case_filename"
+      ]
+    },
+    {
+      "draft_identity_id": "OT_EXODUS",
+      "title": "Exodus",
+      "source_path": "data/bible/OT/exodus.json",
+      "legacy_folder": "OT",
+      "current_shape": "book_object",
+      "candidate_role": "ordinary_bible_book_or_related_text",
+      "canonical_identity_status": "draft_needs_human_adjudication",
+      "text_form_status": "unadjudicated",
+      "canon_profile_status": "unassigned",
+      "notes": []
+    },
+    {
+      "draft_identity_id": "OT_EZEKIEL",
+      "title": "Ezekiel",
+      "source_path": "data/bible/OT/ezekiel.json",
+      "legacy_folder": "OT",
+      "current_shape": "book_object",
+      "candidate_role": "ordinary_bible_book_or_related_text",
+      "canonical_identity_status": "draft_needs_human_adjudication",
+      "text_form_status": "unadjudicated",
+      "canon_profile_status": "unassigned",
+      "notes": []
+    },
+    {
+      "draft_identity_id": "OT_EZRA",
+      "title": "Ezra",
+      "source_path": "data/bible/OT/ezra.json",
+      "legacy_folder": "OT",
+      "current_shape": "book_object",
+      "candidate_role": "ordinary_bible_book_or_related_text",
+      "canonical_identity_status": "draft_needs_human_adjudication",
+      "text_form_status": "unadjudicated",
+      "canon_profile_status": "unassigned",
+      "notes": []
+    },
+    {
+      "draft_identity_id": "OT_GENESIS",
+      "title": "Genesis",
+      "source_path": "data/bible/OT/genesis.json",
+      "legacy_folder": "OT",
+      "current_shape": "book_object",
+      "candidate_role": "ordinary_bible_book_or_related_text",
+      "canonical_identity_status": "draft_needs_human_adjudication",
+      "text_form_status": "unadjudicated",
+      "canon_profile_status": "unassigned",
+      "notes": []
+    },
+    {
+      "draft_identity_id": "OT_HABAKKUK",
+      "title": "Habakkuk",
+      "source_path": "data/bible/OT/habakkuk.json",
+      "legacy_folder": "OT",
+      "current_shape": "book_object",
+      "candidate_role": "ordinary_bible_book_or_related_text",
+      "canonical_identity_status": "draft_needs_human_adjudication",
+      "text_form_status": "unadjudicated",
+      "canon_profile_status": "unassigned",
+      "notes": []
+    },
+    {
+      "draft_identity_id": "OT_HAGGAI",
+      "title": "Haggai",
+      "source_path": "data/bible/OT/haggai.json",
+      "legacy_folder": "OT",
+      "current_shape": "book_object",
+      "candidate_role": "ordinary_bible_book_or_related_text",
+      "canonical_identity_status": "draft_needs_human_adjudication",
+      "text_form_status": "unadjudicated",
+      "canon_profile_status": "unassigned",
+      "notes": []
+    },
+    {
+      "draft_identity_id": "OT_HOSEA",
+      "title": "Hosea",
+      "source_path": "data/bible/OT/hosea.json",
+      "legacy_folder": "OT",
+      "current_shape": "book_object",
+      "candidate_role": "ordinary_bible_book_or_related_text",
+      "canonical_identity_status": "draft_needs_human_adjudication",
+      "text_form_status": "unadjudicated",
+      "canon_profile_status": "unassigned",
+      "notes": []
+    },
+    {
+      "draft_identity_id": "OT_ISAIAH",
+      "title": "Isaiah",
+      "source_path": "data/bible/OT/isaiah.json",
+      "legacy_folder": "OT",
+      "current_shape": "book_object",
+      "candidate_role": "ordinary_bible_book_or_related_text",
+      "canonical_identity_status": "draft_needs_human_adjudication",
+      "text_form_status": "unadjudicated",
+      "canon_profile_status": "unassigned",
+      "notes": []
+    },
+    {
+      "draft_identity_id": "OT_JEREMIAH",
+      "title": "Jeremiah",
+      "source_path": "data/bible/OT/jeremiah.json",
+      "legacy_folder": "OT",
+      "current_shape": "book_object",
+      "candidate_role": "ordinary_bible_book_or_related_text",
+      "canonical_identity_status": "draft_needs_human_adjudication",
+      "text_form_status": "unadjudicated",
+      "canon_profile_status": "unassigned",
+      "notes": []
+    },
+    {
+      "draft_identity_id": "OT_JOB",
+      "title": "Job",
+      "source_path": "data/bible/OT/job.json",
+      "legacy_folder": "OT",
+      "current_shape": "book_object",
+      "candidate_role": "ordinary_bible_book_or_related_text",
+      "canonical_identity_status": "draft_needs_human_adjudication",
+      "text_form_status": "unadjudicated",
+      "canon_profile_status": "unassigned",
+      "notes": []
+    },
+    {
+      "draft_identity_id": "OT_JOEL",
+      "title": "Joel",
+      "source_path": "data/bible/OT/joel.json",
+      "legacy_folder": "OT",
+      "current_shape": "book_object",
+      "candidate_role": "ordinary_bible_book_or_related_text",
+      "canonical_identity_status": "draft_needs_human_adjudication",
+      "text_form_status": "unadjudicated",
+      "canon_profile_status": "unassigned",
+      "notes": []
+    },
+    {
+      "draft_identity_id": "OT_JONAH",
+      "title": "Jonah",
+      "source_path": "data/bible/OT/jonah.json",
+      "legacy_folder": "OT",
+      "current_shape": "book_object",
+      "candidate_role": "ordinary_bible_book_or_related_text",
+      "canonical_identity_status": "draft_needs_human_adjudication",
+      "text_form_status": "unadjudicated",
+      "canon_profile_status": "unassigned",
+      "notes": []
+    },
+    {
+      "draft_identity_id": "OT_JOSHUA",
+      "title": "Joshua",
+      "source_path": "data/bible/OT/joshua.json",
+      "legacy_folder": "OT",
+      "current_shape": "book_object",
+      "candidate_role": "ordinary_bible_book_or_related_text",
+      "canonical_identity_status": "draft_needs_human_adjudication",
+      "text_form_status": "unadjudicated",
+      "canon_profile_status": "unassigned",
+      "notes": []
+    },
+    {
+      "draft_identity_id": "OT_JUDGES",
+      "title": "Judges",
+      "source_path": "data/bible/OT/judges.json",
+      "legacy_folder": "OT",
+      "current_shape": "book_object",
+      "candidate_role": "ordinary_bible_book_or_related_text",
+      "canonical_identity_status": "draft_needs_human_adjudication",
+      "text_form_status": "unadjudicated",
+      "canon_profile_status": "unassigned",
+      "notes": []
+    },
+    {
+      "draft_identity_id": "OT_JUDITH",
+      "title": "Judith",
+      "source_path": "data/bible/OT/judith.json",
+      "legacy_folder": "OT",
+      "current_shape": "book_object",
+      "candidate_role": "ordinary_bible_book_or_related_text",
+      "canonical_identity_status": "draft_needs_human_adjudication",
+      "text_form_status": "unadjudicated",
+      "canon_profile_status": "unassigned",
+      "notes": []
+    },
+    {
+      "draft_identity_id": "OT_LAMENTATIONS",
+      "title": "Lamentations",
+      "source_path": "data/bible/OT/lamentations.json",
+      "legacy_folder": "OT",
+      "current_shape": "book_object",
+      "candidate_role": "ordinary_bible_book_or_related_text",
+      "canonical_identity_status": "draft_needs_human_adjudication",
+      "text_form_status": "unadjudicated",
+      "canon_profile_status": "unassigned",
+      "notes": []
+    },
+    {
+      "draft_identity_id": "OT_LETTEROFJEREMIAH",
+      "title": "The Letter of Jeremiah",
+      "source_path": "data/bible/OT/letterofjeremiah.json",
+      "legacy_folder": "OT",
+      "current_shape": "book_object",
+      "candidate_role": "ordinary_bible_book_or_related_text",
+      "canonical_identity_status": "draft_needs_human_adjudication",
+      "text_form_status": "unadjudicated",
+      "canon_profile_status": "unassigned",
+      "notes": []
+    },
+    {
+      "draft_identity_id": "OT_LEVITICUS",
+      "title": "Leviticus",
+      "source_path": "data/bible/OT/leviticus.json",
+      "legacy_folder": "OT",
+      "current_shape": "book_object",
+      "candidate_role": "ordinary_bible_book_or_related_text",
+      "canonical_identity_status": "draft_needs_human_adjudication",
+      "text_form_status": "unadjudicated",
+      "canon_profile_status": "unassigned",
+      "notes": []
+    },
+    {
+      "draft_identity_id": "OT_MALACHI",
+      "title": "Malachi",
+      "source_path": "data/bible/OT/malachi.json",
+      "legacy_folder": "OT",
+      "current_shape": "book_object",
+      "candidate_role": "ordinary_bible_book_or_related_text",
+      "canonical_identity_status": "draft_needs_human_adjudication",
+      "text_form_status": "unadjudicated",
+      "canon_profile_status": "unassigned",
+      "notes": []
+    },
+    {
+      "draft_identity_id": "OT_MICAH",
+      "title": "Micah",
+      "source_path": "data/bible/OT/micah.json",
+      "legacy_folder": "OT",
+      "current_shape": "book_object",
+      "candidate_role": "ordinary_bible_book_or_related_text",
+      "canonical_identity_status": "draft_needs_human_adjudication",
+      "text_form_status": "unadjudicated",
+      "canon_profile_status": "unassigned",
+      "notes": []
+    },
+    {
+      "draft_identity_id": "OT_NAHUM",
+      "title": "Nahum",
+      "source_path": "data/bible/OT/nahum.json",
+      "legacy_folder": "OT",
+      "current_shape": "book_object",
+      "candidate_role": "ordinary_bible_book_or_related_text",
+      "canonical_identity_status": "draft_needs_human_adjudication",
+      "text_form_status": "unadjudicated",
+      "canon_profile_status": "unassigned",
+      "notes": []
+    },
+    {
+      "draft_identity_id": "OT_NEHEMIAH",
+      "title": "Nehemiah",
+      "source_path": "data/bible/OT/nehemiah.json",
+      "legacy_folder": "OT",
+      "current_shape": "book_object",
+      "candidate_role": "ordinary_bible_book_or_related_text",
+      "canonical_identity_status": "draft_needs_human_adjudication",
+      "text_form_status": "unadjudicated",
+      "canon_profile_status": "unassigned",
+      "notes": []
+    },
+    {
+      "draft_identity_id": "OT_NUMBERS",
+      "title": "Numbers",
+      "source_path": "data/bible/OT/numbers.json",
+      "legacy_folder": "OT",
+      "current_shape": "book_object",
+      "candidate_role": "ordinary_bible_book_or_related_text",
+      "canonical_identity_status": "draft_needs_human_adjudication",
+      "text_form_status": "unadjudicated",
+      "canon_profile_status": "unassigned",
+      "notes": []
+    },
+    {
+      "draft_identity_id": "OT_OBADIAH",
+      "title": "Obadiah",
+      "source_path": "data/bible/OT/obadiah.json",
+      "legacy_folder": "OT",
+      "current_shape": "book_object",
+      "candidate_role": "ordinary_bible_book_or_related_text",
+      "canonical_identity_status": "draft_needs_human_adjudication",
+      "text_form_status": "unadjudicated",
+      "canon_profile_status": "unassigned",
+      "notes": []
+    },
+    {
+      "draft_identity_id": "OT_PRAYEROFMANASSEH",
+      "title": "The Prayer of Manasseh",
+      "source_path": "data/bible/OT/prayerofmanasseh.json",
+      "legacy_folder": "OT",
+      "current_shape": "book_object",
+      "candidate_role": "ordinary_bible_book_or_related_text",
+      "canonical_identity_status": "draft_needs_human_adjudication",
+      "text_form_status": "unadjudicated",
+      "canon_profile_status": "unassigned",
+      "notes": []
+    },
+    {
+      "draft_identity_id": "OT_PROVERBS",
+      "title": "Proverbs",
+      "source_path": "data/bible/OT/proverbs.json",
+      "legacy_folder": "OT",
+      "current_shape": "book_object",
+      "candidate_role": "ordinary_bible_book_or_related_text",
+      "canonical_identity_status": "draft_needs_human_adjudication",
+      "text_form_status": "unadjudicated",
+      "canon_profile_status": "unassigned",
+      "notes": []
+    },
+    {
+      "draft_identity_id": "OT_PSALMS",
+      "title": "PSALM 1",
+      "source_path": "data/bible/OT/psalms.json",
+      "legacy_folder": "OT",
+      "current_shape": "array_psalter_like",
+      "candidate_role": "ordinary_bible_book_or_related_text",
+      "canonical_identity_status": "draft_needs_human_adjudication",
+      "text_form_status": "unadjudicated",
+      "canon_profile_status": "unassigned",
+      "notes": []
+    },
+    {
+      "draft_identity_id": "OT_RUTH",
+      "title": "Ruth",
+      "source_path": "data/bible/OT/ruth.json",
+      "legacy_folder": "OT",
+      "current_shape": "book_object",
+      "candidate_role": "ordinary_bible_book_or_related_text",
+      "canonical_identity_status": "draft_needs_human_adjudication",
+      "text_form_status": "unadjudicated",
+      "canon_profile_status": "unassigned",
+      "notes": []
+    },
+    {
+      "draft_identity_id": "OT_SIRACH",
+      "title": "Sirach (Ecclesiasticus)",
+      "source_path": "data/bible/OT/sirach.json",
+      "legacy_folder": "OT",
+      "current_shape": "book_object",
+      "candidate_role": "ordinary_bible_book_or_related_text",
+      "canonical_identity_status": "draft_needs_human_adjudication",
+      "text_form_status": "unadjudicated",
+      "canon_profile_status": "unassigned",
+      "notes": []
+    },
+    {
+      "draft_identity_id": "OT_SONGOFSOLOMON",
+      "title": "Song of Solomon",
+      "source_path": "data/bible/OT/songofsolomon.json",
+      "legacy_folder": "OT",
+      "current_shape": "book_object",
+      "candidate_role": "ordinary_bible_book_or_related_text",
+      "canonical_identity_status": "draft_needs_human_adjudication",
+      "text_form_status": "unadjudicated",
+      "canon_profile_status": "unassigned",
+      "notes": []
+    },
+    {
+      "draft_identity_id": "OT_TOBIT",
+      "title": "Tobit",
+      "source_path": "data/bible/OT/tobit.json",
+      "legacy_folder": "OT",
+      "current_shape": "book_object",
+      "candidate_role": "ordinary_bible_book_or_related_text",
+      "canonical_identity_status": "draft_needs_human_adjudication",
+      "text_form_status": "unadjudicated",
+      "canon_profile_status": "unassigned",
+      "notes": []
+    },
+    {
+      "draft_identity_id": "OT_WISDOM",
+      "title": "Wisdom of Solomon",
+      "source_path": "data/bible/OT/wisdom.json",
+      "legacy_folder": "OT",
+      "current_shape": "book_object",
+      "candidate_role": "ordinary_bible_book_or_related_text",
+      "canonical_identity_status": "draft_needs_human_adjudication",
+      "text_form_status": "unadjudicated",
+      "canon_profile_status": "unassigned",
+      "notes": []
+    },
+    {
+      "draft_identity_id": "OT_ZECHARIAH",
+      "title": "Zechariah",
+      "source_path": "data/bible/OT/zechariah.json",
+      "legacy_folder": "OT",
+      "current_shape": "book_object",
+      "candidate_role": "ordinary_bible_book_or_related_text",
+      "canonical_identity_status": "draft_needs_human_adjudication",
+      "text_form_status": "unadjudicated",
+      "canon_profile_status": "unassigned",
+      "notes": []
+    },
+    {
+      "draft_identity_id": "OT_ZEPHANIAH",
+      "title": "Zephaniah",
+      "source_path": "data/bible/OT/zephaniah.json",
+      "legacy_folder": "OT",
+      "current_shape": "book_object",
+      "candidate_role": "ordinary_bible_book_or_related_text",
+      "canonical_identity_status": "draft_needs_human_adjudication",
+      "text_form_status": "unadjudicated",
+      "canon_profile_status": "unassigned",
+      "notes": []
+    },
+    {
+      "draft_identity_id": "SY_LETTEROFBARUCHSY",
+      "title": "The Letter of Baruch",
+      "source_path": "data/bible/SY/letterofbaruchSY.json",
+      "legacy_folder": "SY",
+      "current_shape": "book_object",
+      "candidate_role": "syriac_collection_witness",
+      "canonical_identity_status": "draft_needs_human_adjudication",
+      "text_form_status": "unadjudicated",
+      "canon_profile_status": "unassigned",
+      "notes": [
+        "Requires adjudication: outside_legacy_ot_nt_resolver_route",
+        "Requires adjudication: mixed_case_filename"
+      ]
+    }
+  ]
+}

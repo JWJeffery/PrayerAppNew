@@ -64,7 +64,9 @@
     "audit:entry-mobile-stabilization": "node scripts/audit-entry-mobile-stabilization-runner.mjs",
     "audit:loth-metastasis": "node scripts/audit-loth-metastasis.mjs",
     "audit:douay-rheims-psalms": "node scripts/audit-douay-rheims-psalms.mjs",
-    "audit:douay-rheims-overlay-completeness": "node scripts/audit-douay-rheims-overlay-completeness.mjs"
+    "audit:douay-rheims-overlay-completeness": "node scripts/audit-douay-rheims-overlay-completeness.mjs",
+    "bible:registry:draft": "node scripts/generate-bible-registry-draft.mjs",
+    "audit:bible-registry-draft": "node scripts/audit-bible-registry-draft.mjs"
   },
   "repository": {
     "type": "git",

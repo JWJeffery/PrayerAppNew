@@ -1,0 +1,25 @@
+{
+  "schema": "universal_office_bible_canon_status_vocabulary_v1",
+  "status": "draft",
+  "rule": "Statuses are profile-relative. They are not global theological judgments.",
+  "forbidden_governing_terms": [
+    "extra_books"
+  ],
+  "canonical_statuses": {
+    "protocanonical": "Central ordinary canon in the selected canon profile.",
+    "deuterocanonical": "Catholic deuterocanonical status in a Catholic or Catholic-aware profile.",
+    "anagignoskomena": "Orthodox readable/read-in-church status in an Orthodox profile.",
+    "antilegomena": "Disputed, later-received, or historically contested status.",
+    "broader_canon": "Broader-canon status, especially for Ethiopian or other expansive profiles.",
+    "appendix": "Included as an appendix or secondary section in the selected profile.",
+    "liturgical_reading": "Carried because it is read liturgically.",
+    "witness_only": "Present for study/source comparison but not included in the selected canon profile.",
+    "excluded": "Deliberately not included in the selected profile."
+  },
+  "use_classes": {
+    "read_in_church": "Read liturgically in the selected tradition/profile.",
+    "read_devotionally": "Appropriate for devotional or home reading in the selected tradition/profile.",
+    "study_only": "Available for study or source comparison, not presented as read in church.",
+    "not_in_profile": "Not included in the selected profile."
+  }
+}
