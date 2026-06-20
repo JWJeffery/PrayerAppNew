@@ -141,6 +141,193 @@
     },
     {
       "order": null,
+      "identity_id": "QALEMENTOS_BOOK_OF_ROLLS",
+      "base_work_id": "QALEMENTOS_BOOK_OF_ROLLS",
+      "text_form_id": "QALEMENTOS_BOOK_OF_ROLLS_ETHIOPIC_WITNESS",
+      "source_path": "data/bible/ET/ClementBookofRollsET.json",
+      "preferred_title": "Qalementos / Book of the Rolls",
+      "work_type": "ethiopian_qalementos_collection_text",
+      "canonical_status": "broader_canon",
+      "use_class": "study_only",
+      "ordinary_chapter_verse_resolver_candidate": true,
+      "adapter_required": null,
+      "notes": [
+        "Part of the Ethiopian Qalementos / Clement collection cluster.",
+        "Do not move during resolver work."
+      ]
+    },
+    {
+      "order": null,
+      "identity_id": "QALEMENTOS_BOOK_1",
+      "base_work_id": "QALEMENTOS_BOOK_1",
+      "text_form_id": "QALEMENTOS_BOOK_1_ETHIOPIC_WITNESS",
+      "source_path": "data/bible/ET/1clementET.json",
+      "preferred_title": "Qalementos / Epistles of Clement, Book 1",
+      "work_type": "ethiopian_qalementos_collection_text",
+      "canonical_status": "broader_canon",
+      "use_class": "study_only",
+      "ordinary_chapter_verse_resolver_candidate": true,
+      "adapter_required": null,
+      "notes": [
+        "Part of the Ethiopian Qalementos / Clement collection cluster.",
+        "Do not move during resolver work."
+      ]
+    },
+    {
+      "order": null,
+      "identity_id": "QALEMENTOS_BOOK_2",
+      "base_work_id": "QALEMENTOS_BOOK_2",
+      "text_form_id": "QALEMENTOS_BOOK_2_ETHIOPIC_WITNESS",
+      "source_path": "data/bible/ET/2clementET.json",
+      "preferred_title": "Qalementos / Epistles of Clement, Book 2",
+      "work_type": "ethiopian_qalementos_collection_text",
+      "canonical_status": "broader_canon",
+      "use_class": "study_only",
+      "ordinary_chapter_verse_resolver_candidate": true,
+      "adapter_required": null,
+      "notes": [
+        "Part of the Ethiopian Qalementos / Clement collection cluster.",
+        "Do not move during resolver work."
+      ]
+    },
+    {
+      "order": null,
+      "identity_id": "QALEMENTOS_BOOK_3",
+      "base_work_id": "QALEMENTOS_BOOK_3",
+      "text_form_id": "QALEMENTOS_BOOK_3_ETHIOPIC_WITNESS",
+      "source_path": "data/bible/ET/3clementET.json",
+      "preferred_title": "Qalementos / Epistles of Clement, Book 3",
+      "work_type": "ethiopian_qalementos_collection_text",
+      "canonical_status": "broader_canon",
+      "use_class": "study_only",
+      "ordinary_chapter_verse_resolver_candidate": true,
+      "adapter_required": null,
+      "notes": [
+        "Part of the Ethiopian Qalementos / Clement collection cluster.",
+        "Do not move during resolver work."
+      ]
+    },
+    {
+      "order": null,
+      "identity_id": "QALEMENTOS_BOOK_4",
+      "base_work_id": "QALEMENTOS_BOOK_4",
+      "text_form_id": "QALEMENTOS_BOOK_4_ETHIOPIC_WITNESS",
+      "source_path": "data/bible/ET/4clementET.json",
+      "preferred_title": "Qalementos / Epistles of Clement, Book 4",
+      "work_type": "ethiopian_qalementos_collection_text",
+      "canonical_status": "broader_canon",
+      "use_class": "study_only",
+      "ordinary_chapter_verse_resolver_candidate": true,
+      "adapter_required": null,
+      "notes": [
+        "Part of the Ethiopian Qalementos / Clement collection cluster.",
+        "Do not move during resolver work."
+      ]
+    },
+    {
+      "order": null,
+      "identity_id": "QALEMENTOS_BOOK_5",
+      "base_work_id": "QALEMENTOS_BOOK_5",
+      "text_form_id": "QALEMENTOS_BOOK_5_ETHIOPIC_WITNESS",
+      "source_path": "data/bible/ET/5ClementET.json",
+      "preferred_title": "Qalementos / Epistles of Clement, Book 5",
+      "work_type": "ethiopian_qalementos_collection_text",
+      "canonical_status": "broader_canon",
+      "use_class": "study_only",
+      "ordinary_chapter_verse_resolver_candidate": true,
+      "adapter_required": null,
+      "notes": [
+        "Part of the Ethiopian Qalementos / Clement collection cluster.",
+        "Do not move during resolver work."
+      ]
+    },
+    {
+      "order": null,
+      "identity_id": "QALEMENTOS_BOOK_6",
+      "base_work_id": "QALEMENTOS_BOOK_6",
+      "text_form_id": "QALEMENTOS_BOOK_6_ETHIOPIC_WITNESS",
+      "source_path": "data/bible/ET/clement6ET.json",
+      "preferred_title": "Qalementos / Epistles of Clement, Book 6",
+      "work_type": "ethiopian_qalementos_collection_text",
+      "canonical_status": "broader_canon",
+      "use_class": "study_only",
+      "ordinary_chapter_verse_resolver_candidate": true,
+      "adapter_required": null,
+      "notes": [
+        "Part of the Ethiopian Qalementos / Clement collection cluster.",
+        "Do not move during resolver work."
+      ]
+    },
+    {
+      "order": null,
+      "identity_id": "QALEMENTOS_BOOK_7",
+      "base_work_id": "QALEMENTOS_BOOK_7",
+      "text_form_id": "QALEMENTOS_BOOK_7_ETHIOPIC_WITNESS",
+      "source_path": "data/bible/ET/7clementET.json",
+      "preferred_title": "Qalementos / Epistles of Clement, Book 7",
+      "work_type": "ethiopian_qalementos_collection_text",
+      "canonical_status": "broader_canon",
+      "use_class": "study_only",
+      "ordinary_chapter_verse_resolver_candidate": true,
+      "adapter_required": null,
+      "notes": [
+        "Part of the Ethiopian Qalementos / Clement collection cluster.",
+        "Do not move during resolver work."
+      ]
+    },
+    {
+      "order": null,
+      "identity_id": "QALEMENTOS_BOOK_8",
+      "base_work_id": "QALEMENTOS_BOOK_8",
+      "text_form_id": "QALEMENTOS_BOOK_8_ETHIOPIC_WITNESS",
+      "source_path": "data/bible/ET/8ClementET.json",
+      "preferred_title": "Qalementos / Epistles of Clement, Book 8",
+      "work_type": "ethiopian_qalementos_collection_text",
+      "canonical_status": "broader_canon",
+      "use_class": "study_only",
+      "ordinary_chapter_verse_resolver_candidate": true,
+      "adapter_required": null,
+      "notes": [
+        "Part of the Ethiopian Qalementos / Clement collection cluster.",
+        "Do not move during resolver work."
+      ]
+    },
+    {
+      "order": null,
+      "identity_id": "QALEMENTOS_STATUTES",
+      "base_work_id": "QALEMENTOS_STATUTES",
+      "text_form_id": "QALEMENTOS_STATUTES_ETHIOPIC_WITNESS",
+      "source_path": "data/bible/ET/clementstatutesET.json",
+      "preferred_title": "Qalementos / The Statutes",
+      "work_type": "ethiopian_qalementos_collection_text",
+      "canonical_status": "broader_canon",
+      "use_class": "study_only",
+      "ordinary_chapter_verse_resolver_candidate": true,
+      "adapter_required": null,
+      "notes": [
+        "Part of the Ethiopian Qalementos / Clement collection cluster.",
+        "Do not move during resolver work."
+      ]
+    },
+    {
+      "order": null,
+      "identity_id": "QALEMENTOS_VISIONARY_REVELATION",
+      "base_work_id": "QALEMENTOS_VISIONARY_REVELATION",
+      "text_form_id": "QALEMENTOS_VISIONARY_REVELATION_ETHIOPIC_WITNESS",
+      "source_path": "data/bible/ET/ClementVisionaryET.json",
+      "preferred_title": "Qalementos / Visionary Revelation",
+      "work_type": "ethiopian_qalementos_collection_text",
+      "canonical_status": "broader_canon",
+      "use_class": "study_only",
+      "ordinary_chapter_verse_resolver_candidate": true,
+      "adapter_required": null,
+      "notes": [
+        "Part of the Ethiopian Qalementos / Clement collection cluster.",
+        "Do not move during resolver work."
+      ]
+    },
+    {
+      "order": null,
       "identity_id": "MIRACLES_OF_MARY",
       "base_work_id": "MIRACLES_OF_MARY",
       "text_form_id": "MIRACLES_OF_MARY_ETHIOPIC_WITNESS",

@@ -59,3 +59,15 @@ The second tranche adjudicates the remaining small outside-route witness familie
 - Syriac Letter of Baruch
 
 These are still draft adjudications. They do not move files and do not change resolver runtime behavior.
+
+
+## Third Tranche
+
+The third tranche adjudicates the Ethiopian Qalementos / Clement cluster:
+
+- Qalementos / Clement Books 1–8
+- Qalementos / Book of the Rolls
+- Qalementos / The Statutes
+- Qalementos / Visionary Revelation
+
+These are treated as Ethiopian broader-canon / witness texts in the registry. They remain in their current paths. This tranche does not move files and does not change resolver runtime behavior.

@@ -1,6 +1,6 @@
 {
   "schema": "universal_office_bible_registry_identity_adjudications_v1",
-  "status": "draft_human_adjudicated_tranches_1_2",
+  "status": "draft_human_adjudicated_tranches_1_2_3",
   "rule": "These entries override mechanical path-based guesses. They do not move files and do not change resolver runtime behavior.",
   "adjudications": [
     {
@@ -54,6 +54,181 @@
       ]
     },
     {
+      "source_path": "data/bible/ET/1clementET.json",
+      "identity_id": "QALEMENTOS_BOOK_1",
+      "preferred_title": "Qalementos / Epistles of Clement, Book 1",
+      "work_type": "ethiopian_qalementos_collection_text",
+      "text_form_id": "QALEMENTOS_BOOK_1_ETHIOPIC_WITNESS",
+      "ordinary_chapter_verse_resolver_candidate": true,
+      "storage_note": "Stored under ET because the current witness lane is Ethiopian; folder placement is not canonical authority.",
+      "profile_hints": [
+        {
+          "profile_family": "ethiopian_orthodox",
+          "canonical_status": "broader_canon",
+          "use_class": "study_only"
+        },
+        {
+          "profile_family": "default",
+          "canonical_status": "witness_only",
+          "use_class": "study_only"
+        }
+      ],
+      "notes": [
+        "Part of the Ethiopian Qalementos / Clement collection cluster.",
+        "Do not move during resolver work."
+      ]
+    },
+    {
+      "source_path": "data/bible/ET/2clementET.json",
+      "identity_id": "QALEMENTOS_BOOK_2",
+      "preferred_title": "Qalementos / Epistles of Clement, Book 2",
+      "work_type": "ethiopian_qalementos_collection_text",
+      "text_form_id": "QALEMENTOS_BOOK_2_ETHIOPIC_WITNESS",
+      "ordinary_chapter_verse_resolver_candidate": true,
+      "storage_note": "Stored under ET because the current witness lane is Ethiopian; folder placement is not canonical authority.",
+      "profile_hints": [
+        {
+          "profile_family": "ethiopian_orthodox",
+          "canonical_status": "broader_canon",
+          "use_class": "study_only"
+        },
+        {
+          "profile_family": "default",
+          "canonical_status": "witness_only",
+          "use_class": "study_only"
+        }
+      ],
+      "notes": [
+        "Part of the Ethiopian Qalementos / Clement collection cluster.",
+        "Do not move during resolver work."
+      ]
+    },
+    {
+      "source_path": "data/bible/ET/3clementET.json",
+      "identity_id": "QALEMENTOS_BOOK_3",
+      "preferred_title": "Qalementos / Epistles of Clement, Book 3",
+      "work_type": "ethiopian_qalementos_collection_text",
+      "text_form_id": "QALEMENTOS_BOOK_3_ETHIOPIC_WITNESS",
+      "ordinary_chapter_verse_resolver_candidate": true,
+      "storage_note": "Stored under ET because the current witness lane is Ethiopian; folder placement is not canonical authority.",
+      "profile_hints": [
+        {
+          "profile_family": "ethiopian_orthodox",
+          "canonical_status": "broader_canon",
+          "use_class": "study_only"
+        },
+        {
+          "profile_family": "default",
+          "canonical_status": "witness_only",
+          "use_class": "study_only"
+        }
+      ],
+      "notes": [
+        "Part of the Ethiopian Qalementos / Clement collection cluster.",
+        "Do not move during resolver work."
+      ]
+    },
+    {
+      "source_path": "data/bible/ET/4clementET.json",
+      "identity_id": "QALEMENTOS_BOOK_4",
+      "preferred_title": "Qalementos / Epistles of Clement, Book 4",
+      "work_type": "ethiopian_qalementos_collection_text",
+      "text_form_id": "QALEMENTOS_BOOK_4_ETHIOPIC_WITNESS",
+      "ordinary_chapter_verse_resolver_candidate": true,
+      "storage_note": "Stored under ET because the current witness lane is Ethiopian; folder placement is not canonical authority.",
+      "profile_hints": [
+        {
+          "profile_family": "ethiopian_orthodox",
+          "canonical_status": "broader_canon",
+          "use_class": "study_only"
+        },
+        {
+          "profile_family": "default",
+          "canonical_status": "witness_only",
+          "use_class": "study_only"
+        }
+      ],
+      "notes": [
+        "Part of the Ethiopian Qalementos / Clement collection cluster.",
+        "Do not move during resolver work."
+      ]
+    },
+    {
+      "source_path": "data/bible/ET/5ClementET.json",
+      "identity_id": "QALEMENTOS_BOOK_5",
+      "preferred_title": "Qalementos / Epistles of Clement, Book 5",
+      "work_type": "ethiopian_qalementos_collection_text",
+      "text_form_id": "QALEMENTOS_BOOK_5_ETHIOPIC_WITNESS",
+      "ordinary_chapter_verse_resolver_candidate": true,
+      "storage_note": "Stored under ET because the current witness lane is Ethiopian; folder placement is not canonical authority.",
+      "profile_hints": [
+        {
+          "profile_family": "ethiopian_orthodox",
+          "canonical_status": "broader_canon",
+          "use_class": "study_only"
+        },
+        {
+          "profile_family": "default",
+          "canonical_status": "witness_only",
+          "use_class": "study_only"
+        }
+      ],
+      "notes": [
+        "Part of the Ethiopian Qalementos / Clement collection cluster.",
+        "Do not move during resolver work."
+      ]
+    },
+    {
+      "source_path": "data/bible/ET/7clementET.json",
+      "identity_id": "QALEMENTOS_BOOK_7",
+      "preferred_title": "Qalementos / Epistles of Clement, Book 7",
+      "work_type": "ethiopian_qalementos_collection_text",
+      "text_form_id": "QALEMENTOS_BOOK_7_ETHIOPIC_WITNESS",
+      "ordinary_chapter_verse_resolver_candidate": true,
+      "storage_note": "Stored under ET because the current witness lane is Ethiopian; folder placement is not canonical authority.",
+      "profile_hints": [
+        {
+          "profile_family": "ethiopian_orthodox",
+          "canonical_status": "broader_canon",
+          "use_class": "study_only"
+        },
+        {
+          "profile_family": "default",
+          "canonical_status": "witness_only",
+          "use_class": "study_only"
+        }
+      ],
+      "notes": [
+        "Part of the Ethiopian Qalementos / Clement collection cluster.",
+        "Do not move during resolver work."
+      ]
+    },
+    {
+      "source_path": "data/bible/ET/8ClementET.json",
+      "identity_id": "QALEMENTOS_BOOK_8",
+      "preferred_title": "Qalementos / Epistles of Clement, Book 8",
+      "work_type": "ethiopian_qalementos_collection_text",
+      "text_form_id": "QALEMENTOS_BOOK_8_ETHIOPIC_WITNESS",
+      "ordinary_chapter_verse_resolver_candidate": true,
+      "storage_note": "Stored under ET because the current witness lane is Ethiopian; folder placement is not canonical authority.",
+      "profile_hints": [
+        {
+          "profile_family": "ethiopian_orthodox",
+          "canonical_status": "broader_canon",
+          "use_class": "study_only"
+        },
+        {
+          "profile_family": "default",
+          "canonical_status": "witness_only",
+          "use_class": "study_only"
+        }
+      ],
+      "notes": [
+        "Part of the Ethiopian Qalementos / Clement collection cluster.",
+        "Do not move during resolver work."
+      ]
+    },
+    {
       "source_path": "data/bible/ET/bookofjubileesET.json",
       "identity_id": "JUBILEES",
       "preferred_title": "Jubilees",
@@ -76,6 +251,106 @@
       "notes": [
         "Do not treat as merely an extra book.",
         "Do not move into OT during registry migration."
+      ]
+    },
+    {
+      "source_path": "data/bible/ET/clement6ET.json",
+      "identity_id": "QALEMENTOS_BOOK_6",
+      "preferred_title": "Qalementos / Epistles of Clement, Book 6",
+      "work_type": "ethiopian_qalementos_collection_text",
+      "text_form_id": "QALEMENTOS_BOOK_6_ETHIOPIC_WITNESS",
+      "ordinary_chapter_verse_resolver_candidate": true,
+      "storage_note": "Stored under ET because the current witness lane is Ethiopian; folder placement is not canonical authority.",
+      "profile_hints": [
+        {
+          "profile_family": "ethiopian_orthodox",
+          "canonical_status": "broader_canon",
+          "use_class": "study_only"
+        },
+        {
+          "profile_family": "default",
+          "canonical_status": "witness_only",
+          "use_class": "study_only"
+        }
+      ],
+      "notes": [
+        "Part of the Ethiopian Qalementos / Clement collection cluster.",
+        "Do not move during resolver work."
+      ]
+    },
+    {
+      "source_path": "data/bible/ET/ClementBookofRollsET.json",
+      "identity_id": "QALEMENTOS_BOOK_OF_ROLLS",
+      "preferred_title": "Qalementos / Book of the Rolls",
+      "work_type": "ethiopian_qalementos_collection_text",
+      "text_form_id": "QALEMENTOS_BOOK_OF_ROLLS_ETHIOPIC_WITNESS",
+      "ordinary_chapter_verse_resolver_candidate": true,
+      "storage_note": "Stored under ET because the current witness lane is Ethiopian; folder placement is not canonical authority.",
+      "profile_hints": [
+        {
+          "profile_family": "ethiopian_orthodox",
+          "canonical_status": "broader_canon",
+          "use_class": "study_only"
+        },
+        {
+          "profile_family": "default",
+          "canonical_status": "witness_only",
+          "use_class": "study_only"
+        }
+      ],
+      "notes": [
+        "Part of the Ethiopian Qalementos / Clement collection cluster.",
+        "Do not move during resolver work."
+      ]
+    },
+    {
+      "source_path": "data/bible/ET/clementstatutesET.json",
+      "identity_id": "QALEMENTOS_STATUTES",
+      "preferred_title": "Qalementos / The Statutes",
+      "work_type": "ethiopian_qalementos_collection_text",
+      "text_form_id": "QALEMENTOS_STATUTES_ETHIOPIC_WITNESS",
+      "ordinary_chapter_verse_resolver_candidate": true,
+      "storage_note": "Stored under ET because the current witness lane is Ethiopian; folder placement is not canonical authority.",
+      "profile_hints": [
+        {
+          "profile_family": "ethiopian_orthodox",
+          "canonical_status": "broader_canon",
+          "use_class": "study_only"
+        },
+        {
+          "profile_family": "default",
+          "canonical_status": "witness_only",
+          "use_class": "study_only"
+        }
+      ],
+      "notes": [
+        "Part of the Ethiopian Qalementos / Clement collection cluster.",
+        "Do not move during resolver work."
+      ]
+    },
+    {
+      "source_path": "data/bible/ET/ClementVisionaryET.json",
+      "identity_id": "QALEMENTOS_VISIONARY_REVELATION",
+      "preferred_title": "Qalementos / Visionary Revelation",
+      "work_type": "ethiopian_qalementos_collection_text",
+      "text_form_id": "QALEMENTOS_VISIONARY_REVELATION_ETHIOPIC_WITNESS",
+      "ordinary_chapter_verse_resolver_candidate": true,
+      "storage_note": "Stored under ET because the current witness lane is Ethiopian; folder placement is not canonical authority.",
+      "profile_hints": [
+        {
+          "profile_family": "ethiopian_orthodox",
+          "canonical_status": "broader_canon",
+          "use_class": "study_only"
+        },
+        {
+          "profile_family": "default",
+          "canonical_status": "witness_only",
+          "use_class": "study_only"
+        }
+      ],
+      "notes": [
+        "Part of the Ethiopian Qalementos / Clement collection cluster.",
+        "Do not move during resolver work."
       ]
     },
     {
