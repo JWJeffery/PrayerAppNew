@@ -2767,9 +2767,56 @@
         "npm run audit:bible-registry-adapter",
         "npm run audit:bible-browser-smoke"
       ]
+    },
+    "non_roman_bible_tradition_profiles": {
+      "status": "closed",
+      "date": "2026-06-20",
+      "repo_head_at_build": "87faf32",
+      "profile_count": 6,
+      "profiles": [
+        {
+          "profile_key": "armenian_apostolic_witness",
+          "entry_count": 3,
+          "completeness": "complete_armenian_apostolic_witness_profile_entries_3"
+        },
+        {
+          "profile_key": "coptic_orthodox_liturgical",
+          "entry_count": 1,
+          "completeness": "complete_coptic_orthodox_liturgical_profile_entries_1"
+        },
+        {
+          "profile_key": "eastern_orthodox",
+          "entry_count": 3,
+          "completeness": "complete_eastern_orthodox_profile_entries_3"
+        },
+        {
+          "profile_key": "ethiopian_orthodox_broader",
+          "entry_count": 34,
+          "completeness": "complete_ethiopian_orthodox_broader_profile_entries_34"
+        },
+        {
+          "profile_key": "study_witness",
+          "entry_count": 35,
+          "completeness": "complete_study_witness_profile_entries_35"
+        },
+        {
+          "profile_key": "syriac_christian_witness",
+          "entry_count": 2,
+          "completeness": "complete_syriac_christian_witness_profile_entries_2"
+        }
+      ],
+      "audit": "scripts/audit-bible-registry-non-roman-profiles.mjs",
+      "governing_decision": "Finish non-Roman Bible tradition profile closure before LOTH biblical-reading integration. Profiles are profile-relative and must resolve through the governed Bible corpus / registry rather than by folder authority or duplicated downstream text.",
+      "validation": [
+        "npm run audit:bible-registry-non-roman-profiles",
+        "npm run audit:bible-registry-canon-profile-scaffolds",
+        "npm run audit:bible-registry-catholic-runtime-regression",
+        "npm run audit:bible-registry-adapter",
+        "npm run audit:bible-browser-smoke"
+      ]
     }
   },
-  "last_updated": "2026-06-20T04:13:19.208Z",
+  "last_updated": "2026-06-20T04:23:10.815Z",
   "lothIntegrationMilestones": [
     {
       "milestoneId": "loth-oor-c06-ordinary-sentinel-source-intake-closure",
