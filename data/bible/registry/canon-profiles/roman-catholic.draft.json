@@ -1,32 +1,304 @@
 {
   "schema": "universal_office_bible_canon_profile_draft_v1",
-  "status": "draft_incomplete_scaffold",
-  "completeness": "incomplete_tranche_1_identity_adjudications_only",
-  "generated_at": "2026-06-20T02:23:01.736Z",
+  "status": "draft_complete_profile",
+  "completeness": "complete_roman_catholic_canon_profile_entries_73",
+  "generated_at": "2026-06-20T04:11:32.243Z",
   "profile_key": "roman_catholic",
   "display_name": "Roman Catholic Canon Draft",
   "tradition_family": "western_catholic",
-  "profile_kind": "canon_profile_scaffold",
-  "rule": "This is a canon/witness profile scaffold. It is not a final full canon and does not change resolver runtime behavior.",
+  "profile_kind": "canon_profile",
+  "rule": "Roman Catholic biblical readings should resolve through the governed Bible corpus / registry profile rather than broad reproduction of biblical text inside LOTH payloads.",
   "entries": [
     {
-      "order": null,
-      "identity_id": "DANIEL",
-      "base_work_id": "DANIEL",
-      "text_form_id": "DANIEL_GREEK_EXTENDED",
-      "source_path": "data/bible/OT/danielGK.json",
-      "preferred_title": "Daniel, Greek / Extended Form",
+      "order": 1,
+      "identity_id": "GENESIS",
+      "base_work_id": "GENESIS",
+      "text_form_id": "GENESIS",
+      "source_path": "data/bible/OT/genesis.json",
+      "preferred_title": "Genesis",
+      "work_type": "biblical_book_text_form",
+      "canonical_status": "protocanonical",
+      "use_class": "read_in_church",
+      "ordinary_chapter_verse_resolver_candidate": true,
+      "adapter_required": null,
+      "notes": [
+        "Roman Catholic canon profile entry; biblical text should be pulled from the Bible corpus rather than duplicated into LOTH payloads."
+      ]
+    },
+    {
+      "order": 2,
+      "identity_id": "EXODUS",
+      "base_work_id": "EXODUS",
+      "text_form_id": "EXODUS",
+      "source_path": "data/bible/OT/exodus.json",
+      "preferred_title": "Exodus",
+      "work_type": "biblical_book_text_form",
+      "canonical_status": "protocanonical",
+      "use_class": "read_in_church",
+      "ordinary_chapter_verse_resolver_candidate": true,
+      "adapter_required": null,
+      "notes": [
+        "Roman Catholic canon profile entry; biblical text should be pulled from the Bible corpus rather than duplicated into LOTH payloads."
+      ]
+    },
+    {
+      "order": 3,
+      "identity_id": "LEVITICUS",
+      "base_work_id": "LEVITICUS",
+      "text_form_id": "LEVITICUS",
+      "source_path": "data/bible/OT/leviticus.json",
+      "preferred_title": "Leviticus",
+      "work_type": "biblical_book_text_form",
+      "canonical_status": "protocanonical",
+      "use_class": "read_in_church",
+      "ordinary_chapter_verse_resolver_candidate": true,
+      "adapter_required": null,
+      "notes": [
+        "Roman Catholic canon profile entry; biblical text should be pulled from the Bible corpus rather than duplicated into LOTH payloads."
+      ]
+    },
+    {
+      "order": 4,
+      "identity_id": "NUMBERS",
+      "base_work_id": "NUMBERS",
+      "text_form_id": "NUMBERS",
+      "source_path": "data/bible/OT/numbers.json",
+      "preferred_title": "Numbers",
+      "work_type": "biblical_book_text_form",
+      "canonical_status": "protocanonical",
+      "use_class": "read_in_church",
+      "ordinary_chapter_verse_resolver_candidate": true,
+      "adapter_required": null,
+      "notes": [
+        "Roman Catholic canon profile entry; biblical text should be pulled from the Bible corpus rather than duplicated into LOTH payloads."
+      ]
+    },
+    {
+      "order": 5,
+      "identity_id": "DEUTERONOMY",
+      "base_work_id": "DEUTERONOMY",
+      "text_form_id": "DEUTERONOMY",
+      "source_path": "data/bible/OT/deuteronomy.json",
+      "preferred_title": "Deuteronomy",
+      "work_type": "biblical_book_text_form",
+      "canonical_status": "protocanonical",
+      "use_class": "read_in_church",
+      "ordinary_chapter_verse_resolver_candidate": true,
+      "adapter_required": null,
+      "notes": [
+        "Roman Catholic canon profile entry; biblical text should be pulled from the Bible corpus rather than duplicated into LOTH payloads."
+      ]
+    },
+    {
+      "order": 6,
+      "identity_id": "JOSHUA",
+      "base_work_id": "JOSHUA",
+      "text_form_id": "JOSHUA",
+      "source_path": "data/bible/OT/joshua.json",
+      "preferred_title": "Joshua",
+      "work_type": "biblical_book_text_form",
+      "canonical_status": "protocanonical",
+      "use_class": "read_in_church",
+      "ordinary_chapter_verse_resolver_candidate": true,
+      "adapter_required": null,
+      "notes": [
+        "Roman Catholic canon profile entry; biblical text should be pulled from the Bible corpus rather than duplicated into LOTH payloads."
+      ]
+    },
+    {
+      "order": 7,
+      "identity_id": "JUDGES",
+      "base_work_id": "JUDGES",
+      "text_form_id": "JUDGES",
+      "source_path": "data/bible/OT/judges.json",
+      "preferred_title": "Judges",
+      "work_type": "biblical_book_text_form",
+      "canonical_status": "protocanonical",
+      "use_class": "read_in_church",
+      "ordinary_chapter_verse_resolver_candidate": true,
+      "adapter_required": null,
+      "notes": [
+        "Roman Catholic canon profile entry; biblical text should be pulled from the Bible corpus rather than duplicated into LOTH payloads."
+      ]
+    },
+    {
+      "order": 8,
+      "identity_id": "RUTH",
+      "base_work_id": "RUTH",
+      "text_form_id": "RUTH",
+      "source_path": "data/bible/OT/ruth.json",
+      "preferred_title": "Ruth",
+      "work_type": "biblical_book_text_form",
+      "canonical_status": "protocanonical",
+      "use_class": "read_in_church",
+      "ordinary_chapter_verse_resolver_candidate": true,
+      "adapter_required": null,
+      "notes": [
+        "Roman Catholic canon profile entry; biblical text should be pulled from the Bible corpus rather than duplicated into LOTH payloads."
+      ]
+    },
+    {
+      "order": 9,
+      "identity_id": "1_SAMUEL",
+      "base_work_id": "1_SAMUEL",
+      "text_form_id": "1_SAMUEL",
+      "source_path": "data/bible/OT/1samuel.json",
+      "preferred_title": "1 Samuel",
+      "work_type": "biblical_book_text_form",
+      "canonical_status": "protocanonical",
+      "use_class": "read_in_church",
+      "ordinary_chapter_verse_resolver_candidate": true,
+      "adapter_required": null,
+      "notes": [
+        "Roman Catholic canon profile entry; biblical text should be pulled from the Bible corpus rather than duplicated into LOTH payloads."
+      ]
+    },
+    {
+      "order": 10,
+      "identity_id": "2_SAMUEL",
+      "base_work_id": "2_SAMUEL",
+      "text_form_id": "2_SAMUEL",
+      "source_path": "data/bible/OT/2samuel.json",
+      "preferred_title": "2 Samuel",
+      "work_type": "biblical_book_text_form",
+      "canonical_status": "protocanonical",
+      "use_class": "read_in_church",
+      "ordinary_chapter_verse_resolver_candidate": true,
+      "adapter_required": null,
+      "notes": [
+        "Roman Catholic canon profile entry; biblical text should be pulled from the Bible corpus rather than duplicated into LOTH payloads."
+      ]
+    },
+    {
+      "order": 11,
+      "identity_id": "1_KINGS",
+      "base_work_id": "1_KINGS",
+      "text_form_id": "1_KINGS",
+      "source_path": "data/bible/OT/1kings.json",
+      "preferred_title": "1 Kings",
+      "work_type": "biblical_book_text_form",
+      "canonical_status": "protocanonical",
+      "use_class": "read_in_church",
+      "ordinary_chapter_verse_resolver_candidate": true,
+      "adapter_required": null,
+      "notes": [
+        "Roman Catholic canon profile entry; biblical text should be pulled from the Bible corpus rather than duplicated into LOTH payloads."
+      ]
+    },
+    {
+      "order": 12,
+      "identity_id": "2_KINGS",
+      "base_work_id": "2_KINGS",
+      "text_form_id": "2_KINGS",
+      "source_path": "data/bible/OT/2kings.json",
+      "preferred_title": "2 Kings",
+      "work_type": "biblical_book_text_form",
+      "canonical_status": "protocanonical",
+      "use_class": "read_in_church",
+      "ordinary_chapter_verse_resolver_candidate": true,
+      "adapter_required": null,
+      "notes": [
+        "Roman Catholic canon profile entry; biblical text should be pulled from the Bible corpus rather than duplicated into LOTH payloads."
+      ]
+    },
+    {
+      "order": 13,
+      "identity_id": "1_CHRONICLES",
+      "base_work_id": "1_CHRONICLES",
+      "text_form_id": "1_CHRONICLES",
+      "source_path": "data/bible/OT/1chronicles.json",
+      "preferred_title": "1 Chronicles",
+      "work_type": "biblical_book_text_form",
+      "canonical_status": "protocanonical",
+      "use_class": "read_in_church",
+      "ordinary_chapter_verse_resolver_candidate": true,
+      "adapter_required": null,
+      "notes": [
+        "Roman Catholic canon profile entry; biblical text should be pulled from the Bible corpus rather than duplicated into LOTH payloads."
+      ]
+    },
+    {
+      "order": 14,
+      "identity_id": "2_CHRONICLES",
+      "base_work_id": "2_CHRONICLES",
+      "text_form_id": "2_CHRONICLES",
+      "source_path": "data/bible/OT/2chronicles.json",
+      "preferred_title": "2 Chronicles",
+      "work_type": "biblical_book_text_form",
+      "canonical_status": "protocanonical",
+      "use_class": "read_in_church",
+      "ordinary_chapter_verse_resolver_candidate": true,
+      "adapter_required": null,
+      "notes": [
+        "Roman Catholic canon profile entry; biblical text should be pulled from the Bible corpus rather than duplicated into LOTH payloads."
+      ]
+    },
+    {
+      "order": 15,
+      "identity_id": "EZRA",
+      "base_work_id": "EZRA",
+      "text_form_id": "EZRA",
+      "source_path": "data/bible/OT/ezra.json",
+      "preferred_title": "Ezra",
+      "work_type": "biblical_book_text_form",
+      "canonical_status": "protocanonical",
+      "use_class": "read_in_church",
+      "ordinary_chapter_verse_resolver_candidate": true,
+      "adapter_required": null,
+      "notes": [
+        "Roman Catholic canon profile entry; biblical text should be pulled from the Bible corpus rather than duplicated into LOTH payloads."
+      ]
+    },
+    {
+      "order": 16,
+      "identity_id": "NEHEMIAH",
+      "base_work_id": "NEHEMIAH",
+      "text_form_id": "NEHEMIAH",
+      "source_path": "data/bible/OT/nehemiah.json",
+      "preferred_title": "Nehemiah",
+      "work_type": "biblical_book_text_form",
+      "canonical_status": "protocanonical",
+      "use_class": "read_in_church",
+      "ordinary_chapter_verse_resolver_candidate": true,
+      "adapter_required": null,
+      "notes": [
+        "Roman Catholic canon profile entry; biblical text should be pulled from the Bible corpus rather than duplicated into LOTH payloads."
+      ]
+    },
+    {
+      "order": 17,
+      "identity_id": "TOBIT",
+      "base_work_id": "TOBIT",
+      "text_form_id": "TOBIT",
+      "source_path": "data/bible/OT/tobit.json",
+      "preferred_title": "Tobit",
       "work_type": "biblical_book_text_form",
       "canonical_status": "deuterocanonical",
       "use_class": "read_in_church",
       "ordinary_chapter_verse_resolver_candidate": true,
       "adapter_required": null,
       "notes": [
-        "Must be handled as Daniel text form / additions-aware identity."
+        "Roman Catholic canon profile entry; preserve profile-relative deuterocanonical status."
       ]
     },
     {
-      "order": null,
+      "order": 18,
+      "identity_id": "JUDITH",
+      "base_work_id": "JUDITH",
+      "text_form_id": "JUDITH",
+      "source_path": "data/bible/OT/judith.json",
+      "preferred_title": "Judith",
+      "work_type": "biblical_book_text_form",
+      "canonical_status": "deuterocanonical",
+      "use_class": "read_in_church",
+      "ordinary_chapter_verse_resolver_candidate": true,
+      "adapter_required": null,
+      "notes": [
+        "Roman Catholic canon profile entry; preserve profile-relative deuterocanonical status."
+      ]
+    },
+    {
+      "order": 19,
       "identity_id": "ESTHER",
       "base_work_id": "ESTHER",
       "text_form_id": "ESTHER_GREEK_WITH_ADDITIONS",
@@ -38,7 +310,871 @@
       "ordinary_chapter_verse_resolver_candidate": true,
       "adapter_required": null,
       "notes": [
-        "Must be handled as Esther text form / additions-aware identity."
+        "Roman Catholic canon profile entry; preserve profile-relative deuterocanonical status."
+      ]
+    },
+    {
+      "order": 20,
+      "identity_id": "1_MACCABEES",
+      "base_work_id": "1_MACCABEES",
+      "text_form_id": "1_MACCABEES",
+      "source_path": "data/bible/OT/1maccabees.json",
+      "preferred_title": "1 Maccabees",
+      "work_type": "biblical_book_text_form",
+      "canonical_status": "deuterocanonical",
+      "use_class": "read_in_church",
+      "ordinary_chapter_verse_resolver_candidate": true,
+      "adapter_required": null,
+      "notes": [
+        "Roman Catholic canon profile entry; preserve profile-relative deuterocanonical status."
+      ]
+    },
+    {
+      "order": 21,
+      "identity_id": "2_MACCABEES",
+      "base_work_id": "2_MACCABEES",
+      "text_form_id": "2_MACCABEES",
+      "source_path": "data/bible/OT/2maccabees.json",
+      "preferred_title": "2 Maccabees",
+      "work_type": "biblical_book_text_form",
+      "canonical_status": "deuterocanonical",
+      "use_class": "read_in_church",
+      "ordinary_chapter_verse_resolver_candidate": true,
+      "adapter_required": null,
+      "notes": [
+        "Roman Catholic canon profile entry; preserve profile-relative deuterocanonical status."
+      ]
+    },
+    {
+      "order": 22,
+      "identity_id": "JOB",
+      "base_work_id": "JOB",
+      "text_form_id": "JOB",
+      "source_path": "data/bible/OT/job.json",
+      "preferred_title": "Job",
+      "work_type": "biblical_book_text_form",
+      "canonical_status": "protocanonical",
+      "use_class": "read_in_church",
+      "ordinary_chapter_verse_resolver_candidate": true,
+      "adapter_required": null,
+      "notes": [
+        "Roman Catholic canon profile entry; biblical text should be pulled from the Bible corpus rather than duplicated into LOTH payloads."
+      ]
+    },
+    {
+      "order": 23,
+      "identity_id": "PSALMS",
+      "base_work_id": "PSALMS",
+      "text_form_id": "PSALMS",
+      "source_path": "data/bible/OT/psalms.json",
+      "preferred_title": "Psalms",
+      "work_type": "biblical_book_text_form",
+      "canonical_status": "protocanonical",
+      "use_class": "read_in_church",
+      "ordinary_chapter_verse_resolver_candidate": true,
+      "adapter_required": null,
+      "notes": [
+        "Roman Catholic canon profile entry; biblical text should be pulled from the Bible corpus rather than duplicated into LOTH payloads."
+      ]
+    },
+    {
+      "order": 24,
+      "identity_id": "PROVERBS",
+      "base_work_id": "PROVERBS",
+      "text_form_id": "PROVERBS",
+      "source_path": "data/bible/OT/proverbs.json",
+      "preferred_title": "Proverbs",
+      "work_type": "biblical_book_text_form",
+      "canonical_status": "protocanonical",
+      "use_class": "read_in_church",
+      "ordinary_chapter_verse_resolver_candidate": true,
+      "adapter_required": null,
+      "notes": [
+        "Roman Catholic canon profile entry; biblical text should be pulled from the Bible corpus rather than duplicated into LOTH payloads."
+      ]
+    },
+    {
+      "order": 25,
+      "identity_id": "ECCLESIASTES",
+      "base_work_id": "ECCLESIASTES",
+      "text_form_id": "ECCLESIASTES",
+      "source_path": "data/bible/OT/ecclesiastes.json",
+      "preferred_title": "Ecclesiastes",
+      "work_type": "biblical_book_text_form",
+      "canonical_status": "protocanonical",
+      "use_class": "read_in_church",
+      "ordinary_chapter_verse_resolver_candidate": true,
+      "adapter_required": null,
+      "notes": [
+        "Roman Catholic canon profile entry; biblical text should be pulled from the Bible corpus rather than duplicated into LOTH payloads."
+      ]
+    },
+    {
+      "order": 26,
+      "identity_id": "SONG_OF_SOLOMON",
+      "base_work_id": "SONG_OF_SOLOMON",
+      "text_form_id": "SONG_OF_SOLOMON",
+      "source_path": "data/bible/OT/songofsolomon.json",
+      "preferred_title": "Song of Solomon / Song of Songs",
+      "work_type": "biblical_book_text_form",
+      "canonical_status": "protocanonical",
+      "use_class": "read_in_church",
+      "ordinary_chapter_verse_resolver_candidate": true,
+      "adapter_required": null,
+      "notes": [
+        "Roman Catholic canon profile entry; biblical text should be pulled from the Bible corpus rather than duplicated into LOTH payloads."
+      ]
+    },
+    {
+      "order": 27,
+      "identity_id": "WISDOM",
+      "base_work_id": "WISDOM",
+      "text_form_id": "WISDOM",
+      "source_path": "data/bible/OT/wisdom.json",
+      "preferred_title": "Wisdom of Solomon",
+      "work_type": "biblical_book_text_form",
+      "canonical_status": "deuterocanonical",
+      "use_class": "read_in_church",
+      "ordinary_chapter_verse_resolver_candidate": true,
+      "adapter_required": null,
+      "notes": [
+        "Roman Catholic canon profile entry; preserve profile-relative deuterocanonical status."
+      ]
+    },
+    {
+      "order": 28,
+      "identity_id": "SIRACH",
+      "base_work_id": "SIRACH",
+      "text_form_id": "SIRACH",
+      "source_path": "data/bible/OT/sirach.json",
+      "preferred_title": "Sirach / Ecclesiasticus",
+      "work_type": "biblical_book_text_form",
+      "canonical_status": "deuterocanonical",
+      "use_class": "read_in_church",
+      "ordinary_chapter_verse_resolver_candidate": true,
+      "adapter_required": null,
+      "notes": [
+        "Roman Catholic canon profile entry; preserve profile-relative deuterocanonical status."
+      ]
+    },
+    {
+      "order": 29,
+      "identity_id": "ISAIAH",
+      "base_work_id": "ISAIAH",
+      "text_form_id": "ISAIAH",
+      "source_path": "data/bible/OT/isaiah.json",
+      "preferred_title": "Isaiah",
+      "work_type": "biblical_book_text_form",
+      "canonical_status": "protocanonical",
+      "use_class": "read_in_church",
+      "ordinary_chapter_verse_resolver_candidate": true,
+      "adapter_required": null,
+      "notes": [
+        "Roman Catholic canon profile entry; biblical text should be pulled from the Bible corpus rather than duplicated into LOTH payloads."
+      ]
+    },
+    {
+      "order": 30,
+      "identity_id": "JEREMIAH",
+      "base_work_id": "JEREMIAH",
+      "text_form_id": "JEREMIAH",
+      "source_path": "data/bible/OT/jeremiah.json",
+      "preferred_title": "Jeremiah",
+      "work_type": "biblical_book_text_form",
+      "canonical_status": "protocanonical",
+      "use_class": "read_in_church",
+      "ordinary_chapter_verse_resolver_candidate": true,
+      "adapter_required": null,
+      "notes": [
+        "Roman Catholic canon profile entry; biblical text should be pulled from the Bible corpus rather than duplicated into LOTH payloads."
+      ]
+    },
+    {
+      "order": 31,
+      "identity_id": "LAMENTATIONS",
+      "base_work_id": "LAMENTATIONS",
+      "text_form_id": "LAMENTATIONS",
+      "source_path": "data/bible/OT/lamentations.json",
+      "preferred_title": "Lamentations",
+      "work_type": "biblical_book_text_form",
+      "canonical_status": "protocanonical",
+      "use_class": "read_in_church",
+      "ordinary_chapter_verse_resolver_candidate": true,
+      "adapter_required": null,
+      "notes": [
+        "Roman Catholic canon profile entry; biblical text should be pulled from the Bible corpus rather than duplicated into LOTH payloads."
+      ]
+    },
+    {
+      "order": 32,
+      "identity_id": "BARUCH",
+      "base_work_id": "BARUCH",
+      "text_form_id": "BARUCH",
+      "source_path": "data/bible/OT/baruch.json",
+      "preferred_title": "Baruch",
+      "work_type": "biblical_book_text_form",
+      "canonical_status": "deuterocanonical",
+      "use_class": "read_in_church",
+      "ordinary_chapter_verse_resolver_candidate": true,
+      "adapter_required": null,
+      "notes": [
+        "Roman Catholic canon profile entry; preserve profile-relative deuterocanonical status."
+      ]
+    },
+    {
+      "order": 33,
+      "identity_id": "EZEKIEL",
+      "base_work_id": "EZEKIEL",
+      "text_form_id": "EZEKIEL",
+      "source_path": "data/bible/OT/ezekiel.json",
+      "preferred_title": "Ezekiel",
+      "work_type": "biblical_book_text_form",
+      "canonical_status": "protocanonical",
+      "use_class": "read_in_church",
+      "ordinary_chapter_verse_resolver_candidate": true,
+      "adapter_required": null,
+      "notes": [
+        "Roman Catholic canon profile entry; biblical text should be pulled from the Bible corpus rather than duplicated into LOTH payloads."
+      ]
+    },
+    {
+      "order": 34,
+      "identity_id": "DANIEL",
+      "base_work_id": "DANIEL",
+      "text_form_id": "DANIEL_GREEK_EXTENDED",
+      "source_path": "data/bible/OT/danielGK.json",
+      "preferred_title": "Daniel, Greek / Extended Form",
+      "work_type": "biblical_book_text_form",
+      "canonical_status": "deuterocanonical",
+      "use_class": "read_in_church",
+      "ordinary_chapter_verse_resolver_candidate": true,
+      "adapter_required": null,
+      "notes": [
+        "Roman Catholic canon profile entry; preserve profile-relative deuterocanonical status."
+      ]
+    },
+    {
+      "order": 35,
+      "identity_id": "HOSEA",
+      "base_work_id": "HOSEA",
+      "text_form_id": "HOSEA",
+      "source_path": "data/bible/OT/hosea.json",
+      "preferred_title": "Hosea",
+      "work_type": "biblical_book_text_form",
+      "canonical_status": "protocanonical",
+      "use_class": "read_in_church",
+      "ordinary_chapter_verse_resolver_candidate": true,
+      "adapter_required": null,
+      "notes": [
+        "Roman Catholic canon profile entry; biblical text should be pulled from the Bible corpus rather than duplicated into LOTH payloads."
+      ]
+    },
+    {
+      "order": 36,
+      "identity_id": "JOEL",
+      "base_work_id": "JOEL",
+      "text_form_id": "JOEL",
+      "source_path": "data/bible/OT/joel.json",
+      "preferred_title": "Joel",
+      "work_type": "biblical_book_text_form",
+      "canonical_status": "protocanonical",
+      "use_class": "read_in_church",
+      "ordinary_chapter_verse_resolver_candidate": true,
+      "adapter_required": null,
+      "notes": [
+        "Roman Catholic canon profile entry; biblical text should be pulled from the Bible corpus rather than duplicated into LOTH payloads."
+      ]
+    },
+    {
+      "order": 37,
+      "identity_id": "AMOS",
+      "base_work_id": "AMOS",
+      "text_form_id": "AMOS",
+      "source_path": "data/bible/OT/amos.json",
+      "preferred_title": "Amos",
+      "work_type": "biblical_book_text_form",
+      "canonical_status": "protocanonical",
+      "use_class": "read_in_church",
+      "ordinary_chapter_verse_resolver_candidate": true,
+      "adapter_required": null,
+      "notes": [
+        "Roman Catholic canon profile entry; biblical text should be pulled from the Bible corpus rather than duplicated into LOTH payloads."
+      ]
+    },
+    {
+      "order": 38,
+      "identity_id": "OBADIAH",
+      "base_work_id": "OBADIAH",
+      "text_form_id": "OBADIAH",
+      "source_path": "data/bible/OT/obadiah.json",
+      "preferred_title": "Obadiah",
+      "work_type": "biblical_book_text_form",
+      "canonical_status": "protocanonical",
+      "use_class": "read_in_church",
+      "ordinary_chapter_verse_resolver_candidate": true,
+      "adapter_required": null,
+      "notes": [
+        "Roman Catholic canon profile entry; biblical text should be pulled from the Bible corpus rather than duplicated into LOTH payloads."
+      ]
+    },
+    {
+      "order": 39,
+      "identity_id": "JONAH",
+      "base_work_id": "JONAH",
+      "text_form_id": "JONAH",
+      "source_path": "data/bible/OT/jonah.json",
+      "preferred_title": "Jonah",
+      "work_type": "biblical_book_text_form",
+      "canonical_status": "protocanonical",
+      "use_class": "read_in_church",
+      "ordinary_chapter_verse_resolver_candidate": true,
+      "adapter_required": null,
+      "notes": [
+        "Roman Catholic canon profile entry; biblical text should be pulled from the Bible corpus rather than duplicated into LOTH payloads."
+      ]
+    },
+    {
+      "order": 40,
+      "identity_id": "MICAH",
+      "base_work_id": "MICAH",
+      "text_form_id": "MICAH",
+      "source_path": "data/bible/OT/micah.json",
+      "preferred_title": "Micah",
+      "work_type": "biblical_book_text_form",
+      "canonical_status": "protocanonical",
+      "use_class": "read_in_church",
+      "ordinary_chapter_verse_resolver_candidate": true,
+      "adapter_required": null,
+      "notes": [
+        "Roman Catholic canon profile entry; biblical text should be pulled from the Bible corpus rather than duplicated into LOTH payloads."
+      ]
+    },
+    {
+      "order": 41,
+      "identity_id": "NAHUM",
+      "base_work_id": "NAHUM",
+      "text_form_id": "NAHUM",
+      "source_path": "data/bible/OT/nahum.json",
+      "preferred_title": "Nahum",
+      "work_type": "biblical_book_text_form",
+      "canonical_status": "protocanonical",
+      "use_class": "read_in_church",
+      "ordinary_chapter_verse_resolver_candidate": true,
+      "adapter_required": null,
+      "notes": [
+        "Roman Catholic canon profile entry; biblical text should be pulled from the Bible corpus rather than duplicated into LOTH payloads."
+      ]
+    },
+    {
+      "order": 42,
+      "identity_id": "HABAKKUK",
+      "base_work_id": "HABAKKUK",
+      "text_form_id": "HABAKKUK",
+      "source_path": "data/bible/OT/habakkuk.json",
+      "preferred_title": "Habakkuk",
+      "work_type": "biblical_book_text_form",
+      "canonical_status": "protocanonical",
+      "use_class": "read_in_church",
+      "ordinary_chapter_verse_resolver_candidate": true,
+      "adapter_required": null,
+      "notes": [
+        "Roman Catholic canon profile entry; biblical text should be pulled from the Bible corpus rather than duplicated into LOTH payloads."
+      ]
+    },
+    {
+      "order": 43,
+      "identity_id": "ZEPHANIAH",
+      "base_work_id": "ZEPHANIAH",
+      "text_form_id": "ZEPHANIAH",
+      "source_path": "data/bible/OT/zephaniah.json",
+      "preferred_title": "Zephaniah",
+      "work_type": "biblical_book_text_form",
+      "canonical_status": "protocanonical",
+      "use_class": "read_in_church",
+      "ordinary_chapter_verse_resolver_candidate": true,
+      "adapter_required": null,
+      "notes": [
+        "Roman Catholic canon profile entry; biblical text should be pulled from the Bible corpus rather than duplicated into LOTH payloads."
+      ]
+    },
+    {
+      "order": 44,
+      "identity_id": "HAGGAI",
+      "base_work_id": "HAGGAI",
+      "text_form_id": "HAGGAI",
+      "source_path": "data/bible/OT/haggai.json",
+      "preferred_title": "Haggai",
+      "work_type": "biblical_book_text_form",
+      "canonical_status": "protocanonical",
+      "use_class": "read_in_church",
+      "ordinary_chapter_verse_resolver_candidate": true,
+      "adapter_required": null,
+      "notes": [
+        "Roman Catholic canon profile entry; biblical text should be pulled from the Bible corpus rather than duplicated into LOTH payloads."
+      ]
+    },
+    {
+      "order": 45,
+      "identity_id": "ZECHARIAH",
+      "base_work_id": "ZECHARIAH",
+      "text_form_id": "ZECHARIAH",
+      "source_path": "data/bible/OT/zechariah.json",
+      "preferred_title": "Zechariah",
+      "work_type": "biblical_book_text_form",
+      "canonical_status": "protocanonical",
+      "use_class": "read_in_church",
+      "ordinary_chapter_verse_resolver_candidate": true,
+      "adapter_required": null,
+      "notes": [
+        "Roman Catholic canon profile entry; biblical text should be pulled from the Bible corpus rather than duplicated into LOTH payloads."
+      ]
+    },
+    {
+      "order": 46,
+      "identity_id": "MALACHI",
+      "base_work_id": "MALACHI",
+      "text_form_id": "MALACHI",
+      "source_path": "data/bible/OT/malachi.json",
+      "preferred_title": "Malachi",
+      "work_type": "biblical_book_text_form",
+      "canonical_status": "protocanonical",
+      "use_class": "read_in_church",
+      "ordinary_chapter_verse_resolver_candidate": true,
+      "adapter_required": null,
+      "notes": [
+        "Roman Catholic canon profile entry; biblical text should be pulled from the Bible corpus rather than duplicated into LOTH payloads."
+      ]
+    },
+    {
+      "order": 47,
+      "identity_id": "MATTHEW",
+      "base_work_id": "MATTHEW",
+      "text_form_id": "MATTHEW",
+      "source_path": "data/bible/NT/matthew.json",
+      "preferred_title": "Matthew",
+      "work_type": "biblical_book_text_form",
+      "canonical_status": "protocanonical",
+      "use_class": "read_in_church",
+      "ordinary_chapter_verse_resolver_candidate": true,
+      "adapter_required": null,
+      "notes": [
+        "Roman Catholic canon profile entry; biblical text should be pulled from the Bible corpus rather than duplicated into LOTH payloads."
+      ]
+    },
+    {
+      "order": 48,
+      "identity_id": "MARK",
+      "base_work_id": "MARK",
+      "text_form_id": "MARK",
+      "source_path": "data/bible/NT/mark.json",
+      "preferred_title": "Mark",
+      "work_type": "biblical_book_text_form",
+      "canonical_status": "protocanonical",
+      "use_class": "read_in_church",
+      "ordinary_chapter_verse_resolver_candidate": true,
+      "adapter_required": null,
+      "notes": [
+        "Roman Catholic canon profile entry; biblical text should be pulled from the Bible corpus rather than duplicated into LOTH payloads."
+      ]
+    },
+    {
+      "order": 49,
+      "identity_id": "LUKE",
+      "base_work_id": "LUKE",
+      "text_form_id": "LUKE",
+      "source_path": "data/bible/NT/luke.json",
+      "preferred_title": "Luke",
+      "work_type": "biblical_book_text_form",
+      "canonical_status": "protocanonical",
+      "use_class": "read_in_church",
+      "ordinary_chapter_verse_resolver_candidate": true,
+      "adapter_required": null,
+      "notes": [
+        "Roman Catholic canon profile entry; biblical text should be pulled from the Bible corpus rather than duplicated into LOTH payloads."
+      ]
+    },
+    {
+      "order": 50,
+      "identity_id": "JOHN",
+      "base_work_id": "JOHN",
+      "text_form_id": "JOHN",
+      "source_path": "data/bible/NT/john.json",
+      "preferred_title": "John",
+      "work_type": "biblical_book_text_form",
+      "canonical_status": "protocanonical",
+      "use_class": "read_in_church",
+      "ordinary_chapter_verse_resolver_candidate": true,
+      "adapter_required": null,
+      "notes": [
+        "Roman Catholic canon profile entry; biblical text should be pulled from the Bible corpus rather than duplicated into LOTH payloads."
+      ]
+    },
+    {
+      "order": 51,
+      "identity_id": "ACTS",
+      "base_work_id": "ACTS",
+      "text_form_id": "ACTS",
+      "source_path": "data/bible/NT/acts.json",
+      "preferred_title": "Acts",
+      "work_type": "biblical_book_text_form",
+      "canonical_status": "protocanonical",
+      "use_class": "read_in_church",
+      "ordinary_chapter_verse_resolver_candidate": true,
+      "adapter_required": null,
+      "notes": [
+        "Roman Catholic canon profile entry; biblical text should be pulled from the Bible corpus rather than duplicated into LOTH payloads."
+      ]
+    },
+    {
+      "order": 52,
+      "identity_id": "ROMANS",
+      "base_work_id": "ROMANS",
+      "text_form_id": "ROMANS",
+      "source_path": "data/bible/NT/romans.json",
+      "preferred_title": "Romans",
+      "work_type": "biblical_book_text_form",
+      "canonical_status": "protocanonical",
+      "use_class": "read_in_church",
+      "ordinary_chapter_verse_resolver_candidate": true,
+      "adapter_required": null,
+      "notes": [
+        "Roman Catholic canon profile entry; biblical text should be pulled from the Bible corpus rather than duplicated into LOTH payloads."
+      ]
+    },
+    {
+      "order": 53,
+      "identity_id": "1_CORINTHIANS",
+      "base_work_id": "1_CORINTHIANS",
+      "text_form_id": "1_CORINTHIANS",
+      "source_path": "data/bible/NT/1corinthians.json",
+      "preferred_title": "1 Corinthians",
+      "work_type": "biblical_book_text_form",
+      "canonical_status": "protocanonical",
+      "use_class": "read_in_church",
+      "ordinary_chapter_verse_resolver_candidate": true,
+      "adapter_required": null,
+      "notes": [
+        "Roman Catholic canon profile entry; biblical text should be pulled from the Bible corpus rather than duplicated into LOTH payloads."
+      ]
+    },
+    {
+      "order": 54,
+      "identity_id": "2_CORINTHIANS",
+      "base_work_id": "2_CORINTHIANS",
+      "text_form_id": "2_CORINTHIANS",
+      "source_path": "data/bible/NT/2corinthians.json",
+      "preferred_title": "2 Corinthians",
+      "work_type": "biblical_book_text_form",
+      "canonical_status": "protocanonical",
+      "use_class": "read_in_church",
+      "ordinary_chapter_verse_resolver_candidate": true,
+      "adapter_required": null,
+      "notes": [
+        "Roman Catholic canon profile entry; biblical text should be pulled from the Bible corpus rather than duplicated into LOTH payloads."
+      ]
+    },
+    {
+      "order": 55,
+      "identity_id": "GALATIANS",
+      "base_work_id": "GALATIANS",
+      "text_form_id": "GALATIANS",
+      "source_path": "data/bible/NT/galatians.json",
+      "preferred_title": "Galatians",
+      "work_type": "biblical_book_text_form",
+      "canonical_status": "protocanonical",
+      "use_class": "read_in_church",
+      "ordinary_chapter_verse_resolver_candidate": true,
+      "adapter_required": null,
+      "notes": [
+        "Roman Catholic canon profile entry; biblical text should be pulled from the Bible corpus rather than duplicated into LOTH payloads."
+      ]
+    },
+    {
+      "order": 56,
+      "identity_id": "EPHESIANS",
+      "base_work_id": "EPHESIANS",
+      "text_form_id": "EPHESIANS",
+      "source_path": "data/bible/NT/ephesians.json",
+      "preferred_title": "Ephesians",
+      "work_type": "biblical_book_text_form",
+      "canonical_status": "protocanonical",
+      "use_class": "read_in_church",
+      "ordinary_chapter_verse_resolver_candidate": true,
+      "adapter_required": null,
+      "notes": [
+        "Roman Catholic canon profile entry; biblical text should be pulled from the Bible corpus rather than duplicated into LOTH payloads."
+      ]
+    },
+    {
+      "order": 57,
+      "identity_id": "PHILIPPIANS",
+      "base_work_id": "PHILIPPIANS",
+      "text_form_id": "PHILIPPIANS",
+      "source_path": "data/bible/NT/philippians.json",
+      "preferred_title": "Philippians",
+      "work_type": "biblical_book_text_form",
+      "canonical_status": "protocanonical",
+      "use_class": "read_in_church",
+      "ordinary_chapter_verse_resolver_candidate": true,
+      "adapter_required": null,
+      "notes": [
+        "Roman Catholic canon profile entry; biblical text should be pulled from the Bible corpus rather than duplicated into LOTH payloads."
+      ]
+    },
+    {
+      "order": 58,
+      "identity_id": "COLOSSIANS",
+      "base_work_id": "COLOSSIANS",
+      "text_form_id": "COLOSSIANS",
+      "source_path": "data/bible/NT/colossians.json",
+      "preferred_title": "Colossians",
+      "work_type": "biblical_book_text_form",
+      "canonical_status": "protocanonical",
+      "use_class": "read_in_church",
+      "ordinary_chapter_verse_resolver_candidate": true,
+      "adapter_required": null,
+      "notes": [
+        "Roman Catholic canon profile entry; biblical text should be pulled from the Bible corpus rather than duplicated into LOTH payloads."
+      ]
+    },
+    {
+      "order": 59,
+      "identity_id": "1_THESSALONIANS",
+      "base_work_id": "1_THESSALONIANS",
+      "text_form_id": "1_THESSALONIANS",
+      "source_path": "data/bible/NT/1thessalonians.json",
+      "preferred_title": "1 Thessalonians",
+      "work_type": "biblical_book_text_form",
+      "canonical_status": "protocanonical",
+      "use_class": "read_in_church",
+      "ordinary_chapter_verse_resolver_candidate": true,
+      "adapter_required": null,
+      "notes": [
+        "Roman Catholic canon profile entry; biblical text should be pulled from the Bible corpus rather than duplicated into LOTH payloads."
+      ]
+    },
+    {
+      "order": 60,
+      "identity_id": "2_THESSALONIANS",
+      "base_work_id": "2_THESSALONIANS",
+      "text_form_id": "2_THESSALONIANS",
+      "source_path": "data/bible/NT/2thessalonians.json",
+      "preferred_title": "2 Thessalonians",
+      "work_type": "biblical_book_text_form",
+      "canonical_status": "protocanonical",
+      "use_class": "read_in_church",
+      "ordinary_chapter_verse_resolver_candidate": true,
+      "adapter_required": null,
+      "notes": [
+        "Roman Catholic canon profile entry; biblical text should be pulled from the Bible corpus rather than duplicated into LOTH payloads."
+      ]
+    },
+    {
+      "order": 61,
+      "identity_id": "1_TIMOTHY",
+      "base_work_id": "1_TIMOTHY",
+      "text_form_id": "1_TIMOTHY",
+      "source_path": "data/bible/NT/1timothy.json",
+      "preferred_title": "1 Timothy",
+      "work_type": "biblical_book_text_form",
+      "canonical_status": "protocanonical",
+      "use_class": "read_in_church",
+      "ordinary_chapter_verse_resolver_candidate": true,
+      "adapter_required": null,
+      "notes": [
+        "Roman Catholic canon profile entry; biblical text should be pulled from the Bible corpus rather than duplicated into LOTH payloads."
+      ]
+    },
+    {
+      "order": 62,
+      "identity_id": "2_TIMOTHY",
+      "base_work_id": "2_TIMOTHY",
+      "text_form_id": "2_TIMOTHY",
+      "source_path": "data/bible/NT/2timothy.json",
+      "preferred_title": "2 Timothy",
+      "work_type": "biblical_book_text_form",
+      "canonical_status": "protocanonical",
+      "use_class": "read_in_church",
+      "ordinary_chapter_verse_resolver_candidate": true,
+      "adapter_required": null,
+      "notes": [
+        "Roman Catholic canon profile entry; biblical text should be pulled from the Bible corpus rather than duplicated into LOTH payloads."
+      ]
+    },
+    {
+      "order": 63,
+      "identity_id": "TITUS",
+      "base_work_id": "TITUS",
+      "text_form_id": "TITUS",
+      "source_path": "data/bible/NT/titus.json",
+      "preferred_title": "Titus",
+      "work_type": "biblical_book_text_form",
+      "canonical_status": "protocanonical",
+      "use_class": "read_in_church",
+      "ordinary_chapter_verse_resolver_candidate": true,
+      "adapter_required": null,
+      "notes": [
+        "Roman Catholic canon profile entry; biblical text should be pulled from the Bible corpus rather than duplicated into LOTH payloads."
+      ]
+    },
+    {
+      "order": 64,
+      "identity_id": "PHILEMON",
+      "base_work_id": "PHILEMON",
+      "text_form_id": "PHILEMON",
+      "source_path": "data/bible/NT/philemon.json",
+      "preferred_title": "Philemon",
+      "work_type": "biblical_book_text_form",
+      "canonical_status": "protocanonical",
+      "use_class": "read_in_church",
+      "ordinary_chapter_verse_resolver_candidate": true,
+      "adapter_required": null,
+      "notes": [
+        "Roman Catholic canon profile entry; biblical text should be pulled from the Bible corpus rather than duplicated into LOTH payloads."
+      ]
+    },
+    {
+      "order": 65,
+      "identity_id": "HEBREWS",
+      "base_work_id": "HEBREWS",
+      "text_form_id": "HEBREWS",
+      "source_path": "data/bible/NT/hebrews.json",
+      "preferred_title": "Hebrews",
+      "work_type": "biblical_book_text_form",
+      "canonical_status": "protocanonical",
+      "use_class": "read_in_church",
+      "ordinary_chapter_verse_resolver_candidate": true,
+      "adapter_required": null,
+      "notes": [
+        "Roman Catholic canon profile entry; biblical text should be pulled from the Bible corpus rather than duplicated into LOTH payloads."
+      ]
+    },
+    {
+      "order": 66,
+      "identity_id": "JAMES",
+      "base_work_id": "JAMES",
+      "text_form_id": "JAMES",
+      "source_path": "data/bible/NT/james.json",
+      "preferred_title": "James",
+      "work_type": "biblical_book_text_form",
+      "canonical_status": "protocanonical",
+      "use_class": "read_in_church",
+      "ordinary_chapter_verse_resolver_candidate": true,
+      "adapter_required": null,
+      "notes": [
+        "Roman Catholic canon profile entry; biblical text should be pulled from the Bible corpus rather than duplicated into LOTH payloads."
+      ]
+    },
+    {
+      "order": 67,
+      "identity_id": "1_PETER",
+      "base_work_id": "1_PETER",
+      "text_form_id": "1_PETER",
+      "source_path": "data/bible/NT/1peter.json",
+      "preferred_title": "1 Peter",
+      "work_type": "biblical_book_text_form",
+      "canonical_status": "protocanonical",
+      "use_class": "read_in_church",
+      "ordinary_chapter_verse_resolver_candidate": true,
+      "adapter_required": null,
+      "notes": [
+        "Roman Catholic canon profile entry; biblical text should be pulled from the Bible corpus rather than duplicated into LOTH payloads."
+      ]
+    },
+    {
+      "order": 68,
+      "identity_id": "2_PETER",
+      "base_work_id": "2_PETER",
+      "text_form_id": "2_PETER",
+      "source_path": "data/bible/NT/2peter.json",
+      "preferred_title": "2 Peter",
+      "work_type": "biblical_book_text_form",
+      "canonical_status": "protocanonical",
+      "use_class": "read_in_church",
+      "ordinary_chapter_verse_resolver_candidate": true,
+      "adapter_required": null,
+      "notes": [
+        "Roman Catholic canon profile entry; biblical text should be pulled from the Bible corpus rather than duplicated into LOTH payloads."
+      ]
+    },
+    {
+      "order": 69,
+      "identity_id": "1_JOHN",
+      "base_work_id": "1_JOHN",
+      "text_form_id": "1_JOHN",
+      "source_path": "data/bible/NT/1john.json",
+      "preferred_title": "1 John",
+      "work_type": "biblical_book_text_form",
+      "canonical_status": "protocanonical",
+      "use_class": "read_in_church",
+      "ordinary_chapter_verse_resolver_candidate": true,
+      "adapter_required": null,
+      "notes": [
+        "Roman Catholic canon profile entry; biblical text should be pulled from the Bible corpus rather than duplicated into LOTH payloads."
+      ]
+    },
+    {
+      "order": 70,
+      "identity_id": "2_JOHN",
+      "base_work_id": "2_JOHN",
+      "text_form_id": "2_JOHN",
+      "source_path": "data/bible/NT/2john.json",
+      "preferred_title": "2 John",
+      "work_type": "biblical_book_text_form",
+      "canonical_status": "protocanonical",
+      "use_class": "read_in_church",
+      "ordinary_chapter_verse_resolver_candidate": true,
+      "adapter_required": null,
+      "notes": [
+        "Roman Catholic canon profile entry; biblical text should be pulled from the Bible corpus rather than duplicated into LOTH payloads."
+      ]
+    },
+    {
+      "order": 71,
+      "identity_id": "3_JOHN",
+      "base_work_id": "3_JOHN",
+      "text_form_id": "3_JOHN",
+      "source_path": "data/bible/NT/3john.json",
+      "preferred_title": "3 John",
+      "work_type": "biblical_book_text_form",
+      "canonical_status": "protocanonical",
+      "use_class": "read_in_church",
+      "ordinary_chapter_verse_resolver_candidate": true,
+      "adapter_required": null,
+      "notes": [
+        "Roman Catholic canon profile entry; biblical text should be pulled from the Bible corpus rather than duplicated into LOTH payloads."
+      ]
+    },
+    {
+      "order": 72,
+      "identity_id": "JUDE",
+      "base_work_id": "JUDE",
+      "text_form_id": "JUDE",
+      "source_path": "data/bible/NT/jude.json",
+      "preferred_title": "Jude",
+      "work_type": "biblical_book_text_form",
+      "canonical_status": "protocanonical",
+      "use_class": "read_in_church",
+      "ordinary_chapter_verse_resolver_candidate": true,
+      "adapter_required": null,
+      "notes": [
+        "Roman Catholic canon profile entry; biblical text should be pulled from the Bible corpus rather than duplicated into LOTH payloads."
+      ]
+    },
+    {
+      "order": 73,
+      "identity_id": "REVELATION",
+      "base_work_id": "REVELATION",
+      "text_form_id": "REVELATION",
+      "source_path": "data/bible/NT/revelation.json",
+      "preferred_title": "Revelation",
+      "work_type": "biblical_book_text_form",
+      "canonical_status": "protocanonical",
+      "use_class": "read_in_church",
+      "ordinary_chapter_verse_resolver_candidate": true,
+      "adapter_required": null,
+      "notes": [
+        "Roman Catholic canon profile entry; biblical text should be pulled from the Bible corpus rather than duplicated into LOTH payloads."
       ]
     }
   ]

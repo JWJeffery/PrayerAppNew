@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0.0",
   "roadmap_version": "0.1.39",
-  "last_updated": "2026-06-20T03:59:01.314Z",
+  "last_updated": "2026-06-20T04:11:32.243Z",
   "status": "active",
   "name": "Universal Office Beta Release Roadmap",
   "purpose": "Canonical machine-readable roadmap for Beta Release planning, phase sequencing, governance questions, tranche sizing, and Admin Dashboard visualization.",
@@ -2485,6 +2485,22 @@
         "Add browser/runtime regression checks for specific registry-routed books.",
         "Decide whether ODES/canticles and witness-only materials should enter search UI, reading UI, both, or neither.",
         "Only after regression checks, consider reducing hardcoded scripture resolver aliases."
+      ]
+    },
+    "roman_catholic_bible_profile": {
+      "status": "closed",
+      "date": "2026-06-20",
+      "repo_head_at_build": "738a5a7",
+      "entry_count": 73,
+      "protocanonical_count": 64,
+      "deuterocanonical_count": 9,
+      "profile": "data/bible/registry/canon-profiles/roman-catholic.draft.json",
+      "audit": "scripts/audit-bible-registry-roman-catholic-profile.mjs",
+      "governing_decision": "Build Roman Catholic biblical canon profile so LOTH and Catholic office work can resolve biblical readings through the Bible corpus / registry instead of broadly reproducing biblical text inside LOTH payloads.",
+      "validation": [
+        "npm run audit:bible-registry-roman-catholic-profile",
+        "npm run audit:bible-registry-adapter",
+        "npm run audit:bible-browser-smoke"
       ]
     }
   },
