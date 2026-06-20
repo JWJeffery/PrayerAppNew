@@ -1552,7 +1552,7 @@
       "roadmap_version": "0.1.0",
       "purpose": "Canonical Universal Office Beta Release roadmap and phase/tranche planning source."
     },
-   "universal_office_core_contract": {
+    "universal_office_core_contract": {
       "path": "documentation/UNIVERSAL_OFFICE_CORE_CONTRACT.md",
       "status": "active",
       "created": "2026-06-20",
@@ -1563,6 +1563,12 @@
       "status": "active",
       "created": "2026-06-20",
       "purpose": "Roman Breviary 1960/1962 lane architecture record: internal identity, source triage, and the selected hybrid Divinum-oracle resolver strategy for a Traditional Roman Breviary (Rubrics 1960/1962) lane. Documentation-only; imports no corpus and defines no rendering or permission policy."
+    },
+    "roman_breviary_1960_1962_preimport_gates": {
+      "path": "documentation/ROMAN_BREVIARY_1960_1962_PREIMPORT_GATES.md",
+      "status": "active",
+      "created": "2026-06-20",
+      "purpose": "Roman Breviary 1960/1962 pre-import governance gate record: pins the Divinum source snapshot and records mirror path, assembly manifest format, unit ID convention, and supported-year range before any corpus import or resolver work."
     }
   },
   "external_corpus_integrations": {
