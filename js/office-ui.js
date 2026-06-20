@@ -663,8 +663,11 @@ const UNIVERSAL_OFFICE_BOOK_OF_NEEDS_SCOPE_VALUES = new Set(['tradition', 'unive
 function isUniversalOfficeAdvancedToolsEnabled() {
     const params = new URLSearchParams(window.location.search);
     const explicitAdvanced = params.get('advanced');
+    const entryOverride = params.get('entry');
 
-    return explicitAdvanced === '1' || explicitAdvanced === 'true';
+    return explicitAdvanced === '1' ||
+        explicitAdvanced === 'true' ||
+        entryOverride === 'roman-breviary-dev';
 }
 
 function syncUniversalOfficeAdvancedToolsVisibility(enabled = isUniversalOfficeAdvancedToolsEnabled()) {
@@ -1190,6 +1193,12 @@ function initializeEntryRouting() {
     scheduleSplashForegroundGuard();
 
     const entryOverride = new URLSearchParams(window.location.search).get('entry');
+
+    if (entryOverride === 'roman-breviary-dev') {
+        showUniversalModeSelection(false);
+        selectMode('roman-breviary-dev');
+        return;
+    }
 
     if (entryOverride === 'universal') {
         persistUserEntryDefault('universal');
