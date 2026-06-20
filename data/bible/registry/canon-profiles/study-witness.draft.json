@@ -28,6 +28,23 @@
     },
     {
       "order": null,
+      "identity_id": "FIRST_MEQABYAN",
+      "base_work_id": "FIRST_MEQABYAN",
+      "text_form_id": "FIRST_MEQABYAN_ETHIOPIC_WITNESS",
+      "source_path": "data/bible/ET/1meqa’abyanET.json",
+      "preferred_title": "1 Meqabyan",
+      "work_type": "ethiopian_meqabyan_broader_canon_book",
+      "canonical_status": "witness_only",
+      "use_class": "study_only",
+      "ordinary_chapter_verse_resolver_candidate": true,
+      "adapter_required": null,
+      "notes": [
+        "Ethiopian Meqabyan is not Maccabees under another spelling; treat as its own Ethiopian broader-canon identity.",
+        "Do not move during resolver work."
+      ]
+    },
+    {
+      "order": null,
       "identity_id": "SECOND_BARUCH",
       "base_work_id": "SECOND_BARUCH",
       "text_form_id": "SECOND_BARUCH_CURRENT_ENGLISH_WITNESS",
@@ -45,6 +62,23 @@
     },
     {
       "order": null,
+      "identity_id": "SECOND_MEQABYAN",
+      "base_work_id": "SECOND_MEQABYAN",
+      "text_form_id": "SECOND_MEQABYAN_ETHIOPIC_WITNESS",
+      "source_path": "data/bible/ET/2meqa'abyanET.json",
+      "preferred_title": "2 Meqabyan",
+      "work_type": "ethiopian_meqabyan_broader_canon_book",
+      "canonical_status": "witness_only",
+      "use_class": "study_only",
+      "ordinary_chapter_verse_resolver_candidate": true,
+      "adapter_required": null,
+      "notes": [
+        "Ethiopian Meqabyan is not Maccabees under another spelling; treat as its own Ethiopian broader-canon identity.",
+        "Do not move during resolver work."
+      ]
+    },
+    {
+      "order": null,
       "identity_id": "THIRD_CORINTHIANS",
       "base_work_id": "THIRD_CORINTHIANS",
       "text_form_id": "THIRD_CORINTHIANS_ARMENIAN_WITNESS",
@@ -57,6 +91,23 @@
       "adapter_required": null,
       "notes": [
         "Treat as Armenian broader witness / appendix candidate, not ordinary New Testament by default.",
+        "Do not move during resolver work."
+      ]
+    },
+    {
+      "order": null,
+      "identity_id": "THIRD_MEQABYAN",
+      "base_work_id": "THIRD_MEQABYAN",
+      "text_form_id": "THIRD_MEQABYAN_ETHIOPIC_WITNESS",
+      "source_path": "data/bible/ET/3meqa’abyanET.json",
+      "preferred_title": "3 Meqabyan",
+      "work_type": "ethiopian_meqabyan_broader_canon_book",
+      "canonical_status": "witness_only",
+      "use_class": "study_only",
+      "ordinary_chapter_verse_resolver_candidate": true,
+      "adapter_required": null,
+      "notes": [
+        "Ethiopian Meqabyan is not Maccabees under another spelling; treat as its own Ethiopian broader-canon identity.",
         "Do not move during resolver work."
       ]
     },

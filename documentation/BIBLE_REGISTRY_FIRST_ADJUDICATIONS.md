@@ -71,3 +71,14 @@ The third tranche adjudicates the Ethiopian Qalementos / Clement cluster:
 - Qalementos / Visionary Revelation
 
 These are treated as Ethiopian broader-canon / witness texts in the registry. They remain in their current paths. This tranche does not move files and does not change resolver runtime behavior.
+
+
+## Fourth Tranche
+
+The fourth tranche adjudicates the Ethiopian Meqabyan cluster:
+
+- 1 Meqabyan
+- 2 Meqabyan
+- 3 Meqabyan
+
+These are treated as Ethiopian broader-canon books in the registry. They are not treated as ordinary Maccabees aliases. They remain in their current paths. This tranche does not move files and does not change resolver runtime behavior.
