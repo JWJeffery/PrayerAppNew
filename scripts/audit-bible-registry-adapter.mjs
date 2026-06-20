@@ -87,6 +87,24 @@ if (!Array.isArray(profileIndex.profiles) || profileIndex.profiles.length < 7) {
   fail('Canon profile index should expose at least seven draft profiles.');
 }
 
+
+const parserPath = 'js/bible-browser/reference-parser.js';
+const browserPath = 'js/bible-browser/bible-browser.js';
+const parser = fs.existsSync(parserPath) ? read(parserPath) : '';
+const browser = fs.existsSync(browserPath) ? read(browserPath) : '';
+
+if (!parser.includes('registerBookRecords')) {
+  fail('Reference parser should expose registerBookRecords.');
+}
+
+if (!browser.includes('loadRegistryBookRecordsForParser')) {
+  fail('Bible Browser should load registry records into the parser before populating controls.');
+}
+
+if (!index.includes('bible-registry-adapter.js')) {
+  fail('index.html should load bible-registry-adapter.js.');
+}
+
 const report = {
   result: failures.length ? 'FAIL' : 'OK',
   failureCount: failures.length,

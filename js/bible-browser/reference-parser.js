@@ -182,7 +182,183 @@
         throw new Error(`Could not parse reference segment: ${raw}`);
     }
 
-    function parseReference(input) {
+    
+function normalizeRegistryString(value) {
+  return String(value || "").trim();
+}
+
+function normalizeRegistryKey(value) {
+  return normalizeRegistryString(value)
+    .toLowerCase()
+    .replace(/[\u2018\u2019]/g, "'")
+    .replace(/[\u201c\u201d]/g, '"')
+    .replace(/&/g, " and ")
+    .replace(/[^a-z0-9]+/g, "_")
+    .replace(/^_+|_+$/g, "");
+}
+
+function normalizeRegistryAlias(value) {
+  return normalizeRegistryString(value)
+    .toLowerCase()
+    .replace(/[\u2018\u2019]/g, "'")
+    .replace(/[\u201c\u201d]/g, '"')
+    .replace(/&/g, " and ")
+    .replace(/[^a-z0-9]+/g, " ")
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
+function registryInteger(value) {
+  const number = Number(value);
+  if (!Number.isInteger(number) || number < 1) return null;
+  return number;
+}
+
+function registryExistingBookKeys() {
+  const keys = new Set();
+  for (const book of BIBLE_BOOKS) {
+    if (!book || typeof book !== "object") continue;
+    const keyCandidates = [
+      book.key,
+      book.id,
+      book.name,
+      book.path,
+      book.file,
+      book.filename,
+      book.sourcePath
+    ];
+    for (const candidate of keyCandidates) {
+      const normalized = normalizeRegistryKey(candidate);
+      if (normalized) keys.add(normalized);
+    }
+  }
+  return keys;
+}
+
+function registryRecordToBook(record, source) {
+  if (!record || typeof record !== "object") return null;
+
+  const identity = record.identity || record.bookIdentity || record.book || {};
+  const witness = record.translationWitness || record.witness || record.text || {};
+  const title = record.title || record.name || record.label || identity.title || identity.name || identity.label || identity.canonicalName;
+  const path = record.path || record.sourcePath || record.file || record.filename || witness.path || witness.sourcePath || witness.file || witness.filename;
+  const key = record.key || record.id || record.bookKey || identity.key || identity.id || normalizeRegistryKey(title || path);
+
+  if (!title || !path || !key) return null;
+
+  const aliases = []
+    .concat(record.aliases || [])
+    .concat(record.names || [])
+    .concat(identity.aliases || [])
+    .concat(identity.names || [])
+    .concat([title, key])
+    .filter(Boolean)
+    .map((value) => String(value));
+
+  const chapters =
+    registryInteger(record.chapters) ||
+    registryInteger(record.chapterCount) ||
+    registryInteger(record.maxChapter) ||
+    registryInteger(witness.chapters) ||
+    registryInteger(witness.chapterCount) ||
+    registryInteger(witness.maxChapter);
+
+  const testament =
+    record.testament ||
+    record.collection ||
+    record.storageCollection ||
+    identity.testament ||
+    identity.collection ||
+    identity.storageCollection ||
+    "registry";
+
+  return {
+    key: String(key),
+    name: String(title),
+    aliases: Array.from(new Set(aliases)),
+    path: String(path),
+    testament: String(testament),
+    chapters: chapters || undefined,
+    registrySource: source || record.registrySource || "registry",
+    registryDerived: true
+  };
+}
+
+function sortBibleBooksForParser() {
+  BIBLE_BOOKS.sort((a, b) => {
+    const left = String(a && (a.name || a.key) || "");
+    const right = String(b && (b.name || b.key) || "");
+    return left.localeCompare(right, undefined, { sensitivity: "base", numeric: true });
+  });
+}
+
+function registerBookRecords(records, options = {}) {
+  if (!Array.isArray(records) || records.length === 0) {
+    rebuildAliasEntries();
+    return 0;
+  }
+
+  const source = options.source || "registry";
+  const existing = registryExistingBookKeys();
+  let added = 0;
+
+  for (const record of records) {
+    const book = registryRecordToBook(record, source);
+    if (!book) continue;
+
+    const duplicateKeys = [
+      book.key,
+      book.name,
+      book.path
+    ].map(normalizeRegistryKey).filter(Boolean);
+
+    if (duplicateKeys.some((key) => existing.has(key))) continue;
+
+    BIBLE_BOOKS.push(book);
+    for (const key of duplicateKeys) existing.add(key);
+    added += 1;
+  }
+
+  if (added > 0) {
+    sortBibleBooksForParser();
+  }
+
+  rebuildAliasEntries();
+  return added;
+}
+
+
+let BIBLE_BOOK_ALIAS_ENTRIES = [];
+
+function rebuildAliasEntries() {
+  BIBLE_BOOK_ALIAS_ENTRIES = [];
+
+  for (const book of BIBLE_BOOKS) {
+    if (!book || typeof book !== "object") continue;
+
+    const aliases = []
+      .concat(book.aliases || [])
+      .concat(book.names || [])
+      .concat([book.name, book.key])
+      .filter(Boolean);
+
+    for (const alias of aliases) {
+      const normalized = normalizeRegistryAlias(alias);
+      if (!normalized) continue;
+      BIBLE_BOOK_ALIAS_ENTRIES.push({
+        alias: normalized,
+        book,
+        length: normalized.length
+      });
+    }
+  }
+
+  BIBLE_BOOK_ALIAS_ENTRIES.sort((a, b) => b.length - a.length);
+}
+
+rebuildAliasEntries();
+
+function parseReference(input) {
         const source = String(input || "").trim();
         if (!source) throw new Error("Enter a Bible reference.");
 
@@ -228,6 +404,6 @@
         BIBLE_BOOKS,
         parseReference,
         getBook,
-        matchBookAtStart
-    };
+        matchBookAtStart,
+  registerBookRecords};
 })();

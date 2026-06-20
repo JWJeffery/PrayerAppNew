@@ -2425,8 +2425,31 @@
         };
         reader.readAsText(file);
     }
+    async function loadRegistryBookRecordsForParser() {
+  const parser = window.UniversalOfficeBibleReferenceParser;
+  const adapter = window.UniversalOfficeBibleRegistryAdapter;
 
-    async function initializeBibleBrowser() {
+  if (!parser || typeof parser.registerBookRecords !== "function") {
+    console.warn("Bible registry adapter skipped: reference parser registerBookRecords() is unavailable.");
+    return 0;
+  }
+
+  if (!adapter || typeof adapter.getOrdinaryChapterVerseRecords !== "function") {
+    console.warn("Bible registry adapter skipped: UniversalOfficeBibleRegistryAdapter.getOrdinaryChapterVerseRecords() is unavailable.");
+    return 0;
+  }
+
+  try {
+    const records = await adapter.getOrdinaryChapterVerseRecords();
+    return parser.registerBookRecords(records, { source: "bible-registry-adapter" });
+  } catch (error) {
+    console.warn("Bible registry adapter load failed; continuing with static parser book list.", error);
+    return 0;
+  }
+}
+
+async function initializeBibleBrowser() {
+        await loadRegistryBookRecordsForParser();
         populateBookSelect();
         populateScopeSelect();
         populateResearchBookFilter();
