@@ -1238,6 +1238,7 @@ const OFFICE_MODE_HEADER_LABELS = {
     'ethiopian-saatat': 'Oriental Orthodoxy',
     'east-syriac': 'Church of the East',
     horologion: 'Eastern Orthodoxy',
+    'roman-breviary-dev': 'Roman Breviary 1960/1962',
     prayers: 'The Book of Needs'
 };
 
@@ -1538,6 +1539,56 @@ async function selectMode(mode) {
         initializeOfficeDefaultsForCurrentDateTime('horologion');
         isHydrationComplete = true;
         requestRender();
+
+    } else if (mode === 'roman-breviary-dev') {
+        // ── Roman Breviary 1960/1962 — dev vertical slice ─────────────────────
+        // Hidden behind ?advanced=1 in the Universal selector. This route proves
+        // the lane pipeline without claiming full Roman Breviary coverage.
+        document.getElementById('individual-prayers-section').style.display = 'none';
+        document.getElementById('daily-office-section').style.display       = 'flex';
+
+        for (const panel of [settingsPanel, ethSettings, esySettings, genSettings]) {
+            if (panel) {
+                panel.classList.add('sidebar-hidden');
+                panel.classList.add('mode-hidden');
+            }
+        }
+
+        if (mainContent) {
+            mainContent.classList.remove('sidebar-hidden');
+        }
+
+        const officeDisplay = document.getElementById('office-display');
+        if (officeDisplay) {
+            officeDisplay.innerHTML =
+                `<div class="office-container"><h3>Preparing Roman Breviary 1960/1962...</h3><p>Loading the pinned Divinum vertical slice.</p></div>`;
+        }
+
+        await loadKernel();
+
+        if (!window.RomanBreviary1960DevSlice || typeof window.RomanBreviary1960DevSlice.mountDevSlice !== 'function') {
+            if (officeDisplay) {
+                officeDisplay.innerHTML =
+                    `<div class="office-container"><h3>Roman Breviary dev slice unavailable</h3><p>The Roman Breviary dev module did not load.</p></div>`;
+            }
+            console.warn('[roman-breviary-dev] RomanBreviary1960DevSlice module unavailable.');
+            return;
+        }
+
+        try {
+            await window.RomanBreviary1960DevSlice.mountDevSlice('office-display', {
+                year: 2026,
+                date: '2026-11-02',
+                hour: 'matins'
+            });
+            isHydrationComplete = true;
+        } catch (err) {
+            if (officeDisplay) {
+                officeDisplay.innerHTML =
+                    `<div class="office-container"><h3>Roman Breviary dev slice failed</h3><p>${err.message}</p></div>`;
+            }
+            console.error('[roman-breviary-dev] Failed to mount dev slice:', err);
+        }
 
     } else {
         // ── Daily Office (default) ────────────────────────────────────────────
