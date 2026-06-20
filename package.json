@@ -72,7 +72,8 @@
     "audit:bible-registry-identity-adjudications": "node scripts/audit-bible-registry-identity-adjudications.mjs",
     "bible:registry:canon-profile-scaffolds": "node scripts/generate-bible-registry-canon-profile-scaffolds.mjs",
     "audit:bible-registry-canon-profile-scaffolds": "node scripts/audit-bible-registry-canon-profile-scaffolds.mjs",
-    "audit:bible-registry-generator-idempotence": "node scripts/audit-bible-registry-generator-idempotence.mjs"
+    "audit:bible-registry-generator-idempotence": "node scripts/audit-bible-registry-generator-idempotence.mjs",
+    "audit:bible-registry-adapter": "node scripts/audit-bible-registry-adapter.mjs"
   },
   "repository": {
     "type": "git",
