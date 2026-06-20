@@ -2830,9 +2830,25 @@
         "npm run audit:bible-registry-catholic-runtime-regression"
       ],
       "updated_at": "2026-06-20T04:31:27.801Z"
+    },
+    "roman_catholic_corpus_addressability": {
+      "status": "closed",
+      "date": "2026-06-20",
+      "audit": "scripts/audit-bible-catholic-corpus-addressability.mjs",
+      "package_script": "audit:bible-catholic-corpus-addressability",
+      "sample_count": 15,
+      "scope": "Compact Roman Catholic corpus reference-addressability check over representative protocanonical and deuterocanonical/Catholic-form books.",
+      "boundary": "Corpus completion remains upstream of LOTH biblical-reading integration.",
+      "validation": [
+        "npm run audit:bible-catholic-corpus-addressability",
+        "npm run audit:bible-catholic-corpus-text-integrity",
+        "npm run audit:bible-registry-roman-catholic-profile",
+        "npm run audit:bible-registry-catholic-runtime-regression"
+      ],
+      "updated_at": "2026-06-20T04:35:32.007Z"
     }
   },
-  "last_updated": "2026-06-20T04:31:27.801Z",
+  "last_updated": "2026-06-20T04:35:32.007Z",
   "lothIntegrationMilestones": [
     {
       "milestoneId": "loth-oor-c06-ordinary-sentinel-source-intake-closure",
