@@ -5,6 +5,8 @@ const ROOT = process.cwd();
 const BASE = path.join(ROOT, 'data', 'roman-breviary-1960-1962');
 const SOURCE_REL = 'web/www/horas/Latin/Sancti/11-02.txt';
 const SOURCE_PATH = path.join(BASE, 'source', 'divinum-officium', SOURCE_REL);
+const C9_SOURCE_REL = 'web/www/horas/Latin/Commune/C9.txt';
+const C9_SOURCE_PATH = path.join(BASE, 'source', 'divinum-officium', C9_SOURCE_REL);
 const PIN_PATH = path.join(BASE, 'source', 'divinum-officium', 'source-pin.json');
 const UNITS_PATH = path.join(BASE, 'units', 'dev-vertical-slice.json');
 const MANIFEST_PATH = path.join(BASE, 'manifests', '2026.json');
@@ -91,7 +93,19 @@ function normalizeDivinumDisplayText(rawText) {
   };
 }
 
+function inferCitation(rawText, fallback) {
+  const marker = rawText
+    .split(/\r?\n/)
+    .map(line => line.trim())
+    .find(line => line.startsWith('!'));
+
+  return marker ? marker.slice(1).trim() : fallback;
+}
+
 const MATINS_READING_SECTIONS = [
+  ['Lectio1', 'Job 7:16-21'],
+  ['Lectio2', 'Job 14:1-6'],
+  ['Lectio3', 'Job 19:20-27'],
   ['Lectio4', 'Cap. 2 et 3'],
   ['Lectio5', 'Cap. 4'],
   ['Lectio6', 'Cap. 18'],
@@ -100,38 +114,78 @@ const MATINS_READING_SECTIONS = [
   ['Lectio9', '1 Cor 15:51-58']
 ];
 
-function unitSource(sourcePin, section) {
+const MATINS_READING_LABELS = {
+  Lectio1: 'Lectio I',
+  Lectio2: 'Lectio II',
+  Lectio3: 'Lectio III',
+  Lectio4: 'Lectio IV',
+  Lectio5: 'Lectio V',
+  Lectio6: 'Lectio VI',
+  Lectio7: 'Lectio VII',
+  Lectio8: 'Lectio VIII',
+  Lectio9: 'Lectio IX'
+};
+
+function unitSource(sourcePin, section, sourceRel = SOURCE_REL) {
   return {
     repo: sourcePin.repo,
     commit: sourcePin.commit,
-    path: SOURCE_REL,
+    path: sourceRel,
     section
   };
 }
 
-function buildReadingUnit(sourcePin, sections, section, citation) {
-  const slug = section.toLowerCase();
-  const rawText = requireSection(sections, section);
-  const normalized = normalizeDivinumDisplayText(rawText);
+function resolveAppointedSection(sections, c9Sections, section) {
+  const appointedText = requireSection(sections, section);
+  const directive = appointedText.trim();
+  const c9Match = directive.match(/^@Commune\/C9(?::([A-Za-z0-9 _-]+))?$/);
 
-  return [
-    `rb1960.la.sancti.11-02.${slug}`,
-    {
-      key: `rb1960.la.sancti.11-02.${slug}`,
-      kind: 'reading',
-      citation,
-      text: normalized.text,
-      raw_text: rawText,
-      display_diagnostics: normalized.diagnostics,
-      source: unitSource(sourcePin, section)
+  if (!c9Match) {
+    return {
+      rawText: appointedText,
+      sourceRel: SOURCE_REL,
+      sourceSection: section
+    };
+  }
+
+  const sourceSection = c9Match[1] || section;
+
+  return {
+    rawText: requireSection(c9Sections, sourceSection),
+    sourceRel: C9_SOURCE_REL,
+    sourceSection,
+    appointment: {
+      path: SOURCE_REL,
+      section,
+      directive
     }
-  ];
+  };
 }
 
-function buildUnits({ sourcePin, sections }) {
+function buildReadingUnit(sourcePin, sections, c9Sections, section, citation) {
+  const slug = section.toLowerCase();
+  const resolved = resolveAppointedSection(sections, c9Sections, section);
+  const normalized = normalizeDivinumDisplayText(resolved.rawText);
+
+  const unit = {
+    key: `rb1960.la.sancti.11-02.${slug}`,
+    kind: 'reading',
+    citation: inferCitation(resolved.rawText, citation),
+    text: normalized.text,
+    raw_text: resolved.rawText,
+    display_diagnostics: normalized.diagnostics,
+    source: unitSource(sourcePin, resolved.sourceSection, resolved.sourceRel)
+  };
+
+  if (resolved.appointment) unit.appointment = resolved.appointment;
+
+  return [unit.key, unit];
+}
+
+function buildUnits({ sourcePin, sections, c9Sections }) {
   const readingUnits = Object.fromEntries(
     MATINS_READING_SECTIONS.map(([section, citation]) =>
-      buildReadingUnit(sourcePin, sections, section, citation)
+      buildReadingUnit(sourcePin, sections, c9Sections, section, citation)
     )
   );
 
@@ -184,36 +238,11 @@ function buildManifest({ sourcePin }) {
           matins: {
             label: 'Matutinum',
             blocks: [
-              {
+              ...MATINS_READING_SECTIONS.map(([section]) => ({
                 role: 'reading',
-                label: 'Lectio IV',
-                unit_refs: ['rb1960.la.sancti.11-02.lectio4']
-              },
-              {
-                role: 'reading',
-                label: 'Lectio V',
-                unit_refs: ['rb1960.la.sancti.11-02.lectio5']
-              },
-              {
-                role: 'reading',
-                label: 'Lectio VI',
-                unit_refs: ['rb1960.la.sancti.11-02.lectio6']
-              },
-              {
-                role: 'reading',
-                label: 'Lectio VII',
-                unit_refs: ['rb1960.la.sancti.11-02.lectio7']
-              },
-              {
-                role: 'reading',
-                label: 'Lectio VIII',
-                unit_refs: ['rb1960.la.sancti.11-02.lectio8']
-              },
-              {
-                role: 'reading',
-                label: 'Lectio IX',
-                unit_refs: ['rb1960.la.sancti.11-02.lectio9']
-              },
+                label: MATINS_READING_LABELS[section],
+                unit_refs: [`rb1960.la.sancti.11-02.${section.toLowerCase()}`]
+              })),
               {
                 role: 'dismissal',
                 label: 'Conclusio',
@@ -235,16 +264,19 @@ function buildManifest({ sourcePin }) {
 
 const sourcePin = readJson(PIN_PATH);
 const sourceText = readUtf8(SOURCE_PATH);
+const c9SourceText = readUtf8(C9_SOURCE_PATH);
 const sections = parseSections(sourceText);
+const c9Sections = parseSections(c9SourceText);
 
 if (sourcePin.commit !== '0ce8747d7dba3276fc05937635e02360b49a60a6') {
   throw new Error(`Unexpected Roman Breviary source pin: ${sourcePin.commit}`);
 }
 
-writeJson(UNITS_PATH, buildUnits({ sourcePin, sections }));
+writeJson(UNITS_PATH, buildUnits({ sourcePin, sections, c9Sections }));
 writeJson(MANIFEST_PATH, buildManifest({ sourcePin }));
 
 console.log('Roman Breviary 1960/1962 dev slice generated');
 console.log(`source: ${SOURCE_REL}`);
+console.log(`resolved source: ${C9_SOURCE_REL}`);
 console.log(`units: ${path.relative(ROOT, UNITS_PATH)}`);
 console.log(`manifest: ${path.relative(ROOT, MANIFEST_PATH)}`);

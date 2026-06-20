@@ -31,6 +31,27 @@
           "blocks": [
             {
               "role": "reading",
+              "label": "Lectio I",
+              "unit_refs": [
+                "rb1960.la.sancti.11-02.lectio1"
+              ]
+            },
+            {
+              "role": "reading",
+              "label": "Lectio II",
+              "unit_refs": [
+                "rb1960.la.sancti.11-02.lectio2"
+              ]
+            },
+            {
+              "role": "reading",
+              "label": "Lectio III",
+              "unit_refs": [
+                "rb1960.la.sancti.11-02.lectio3"
+              ]
+            },
+            {
+              "role": "reading",
               "label": "Lectio IV",
               "unit_refs": [
                 "rb1960.la.sancti.11-02.lectio4"
