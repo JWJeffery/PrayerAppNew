@@ -78,7 +78,8 @@
     "audit:bible-registry-catholic-runtime-regression": "node scripts/audit-bible-registry-catholic-runtime-regression.mjs",
     "audit:bible-registry-non-roman-profiles": "node scripts/audit-bible-registry-non-roman-profiles.mjs",
     "audit:bible-catholic-corpus-text-integrity": "node scripts/audit-bible-catholic-corpus-text-integrity.mjs",
-    "audit:bible-catholic-corpus-addressability": "node scripts/audit-bible-catholic-corpus-addressability.mjs"
+    "audit:bible-catholic-corpus-addressability": "node scripts/audit-bible-catholic-corpus-addressability.mjs",
+    "audit:bible-drb-original-source-lane": "node scripts/audit-bible-drb-original-source-lane.mjs"
   },
   "repository": {
     "type": "git",

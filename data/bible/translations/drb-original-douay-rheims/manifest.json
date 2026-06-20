@@ -1,0 +1,477 @@
+{
+  "translation_key": "DRB",
+  "source_name": "Original Douay-Rheims Bible",
+  "source_repo": "https://github.com/janvier-s/original-douay-rheims",
+  "source_path": "bible/raw",
+  "target_path": "data/bible/translations/drb-original-douay-rheims",
+  "status": "ported_preserved_source_lane",
+  "note": "Preserves the source versification instead of forcing it into the existing shared verse grid.",
+  "imported_at": "2026-06-20T05:23:49.718Z",
+  "book_count": 77,
+  "total_chapter_count": 1362,
+  "total_verse_count": 37147,
+  "books": [
+    {
+      "file": "raw/1-corinthians.json",
+      "source_file": "bible/raw/1-corinthians.json",
+      "chapter_count": 16,
+      "verse_count": 437
+    },
+    {
+      "file": "raw/1-esdras.json",
+      "source_file": "bible/raw/1-esdras.json",
+      "chapter_count": 10,
+      "verse_count": 280
+    },
+    {
+      "file": "raw/1-john.json",
+      "source_file": "bible/raw/1-john.json",
+      "chapter_count": 5,
+      "verse_count": 105
+    },
+    {
+      "file": "raw/1-kings.json",
+      "source_file": "bible/raw/1-kings.json",
+      "chapter_count": 31,
+      "verse_count": 811
+    },
+    {
+      "file": "raw/1-machabees.json",
+      "source_file": "bible/raw/1-machabees.json",
+      "chapter_count": 16,
+      "verse_count": 929
+    },
+    {
+      "file": "raw/1-paralipomenon.json",
+      "source_file": "bible/raw/1-paralipomenon.json",
+      "chapter_count": 29,
+      "verse_count": 940
+    },
+    {
+      "file": "raw/1-peter.json",
+      "source_file": "bible/raw/1-peter.json",
+      "chapter_count": 5,
+      "verse_count": 105
+    },
+    {
+      "file": "raw/1-thessalonians.json",
+      "source_file": "bible/raw/1-thessalonians.json",
+      "chapter_count": 5,
+      "verse_count": 89
+    },
+    {
+      "file": "raw/1-timothy.json",
+      "source_file": "bible/raw/1-timothy.json",
+      "chapter_count": 6,
+      "verse_count": 113
+    },
+    {
+      "file": "raw/2-corinthians.json",
+      "source_file": "bible/raw/2-corinthians.json",
+      "chapter_count": 13,
+      "verse_count": 255
+    },
+    {
+      "file": "raw/2-esdras.json",
+      "source_file": "bible/raw/2-esdras.json",
+      "chapter_count": 13,
+      "verse_count": 404
+    },
+    {
+      "file": "raw/2-john.json",
+      "source_file": "bible/raw/2-john.json",
+      "chapter_count": 1,
+      "verse_count": 13
+    },
+    {
+      "file": "raw/2-kings.json",
+      "source_file": "bible/raw/2-kings.json",
+      "chapter_count": 24,
+      "verse_count": 695
+    },
+    {
+      "file": "raw/2-machabees.json",
+      "source_file": "bible/raw/2-machabees.json",
+      "chapter_count": 15,
+      "verse_count": 558
+    },
+    {
+      "file": "raw/2-paralipomenon.json",
+      "source_file": "bible/raw/2-paralipomenon.json",
+      "chapter_count": 36,
+      "verse_count": 822
+    },
+    {
+      "file": "raw/2-peter.json",
+      "source_file": "bible/raw/2-peter.json",
+      "chapter_count": 3,
+      "verse_count": 61
+    },
+    {
+      "file": "raw/2-thessalonians.json",
+      "source_file": "bible/raw/2-thessalonians.json",
+      "chapter_count": 3,
+      "verse_count": 47
+    },
+    {
+      "file": "raw/2-timothy.json",
+      "source_file": "bible/raw/2-timothy.json",
+      "chapter_count": 4,
+      "verse_count": 83
+    },
+    {
+      "file": "raw/3-esdras.json",
+      "source_file": "bible/raw/3-esdras.json",
+      "chapter_count": 9,
+      "verse_count": 451
+    },
+    {
+      "file": "raw/3-john.json",
+      "source_file": "bible/raw/3-john.json",
+      "chapter_count": 1,
+      "verse_count": 14
+    },
+    {
+      "file": "raw/3-kings.json",
+      "source_file": "bible/raw/3-kings.json",
+      "chapter_count": 22,
+      "verse_count": 817
+    },
+    {
+      "file": "raw/4-esdras.json",
+      "source_file": "bible/raw/4-esdras.json",
+      "chapter_count": 16,
+      "verse_count": 856
+    },
+    {
+      "file": "raw/4-kings.json",
+      "source_file": "bible/raw/4-kings.json",
+      "chapter_count": 25,
+      "verse_count": 719
+    },
+    {
+      "file": "raw/abdias.json",
+      "source_file": "bible/raw/abdias.json",
+      "chapter_count": 1,
+      "verse_count": 21
+    },
+    {
+      "file": "raw/acts.json",
+      "source_file": "bible/raw/acts.json",
+      "chapter_count": 28,
+      "verse_count": 1004
+    },
+    {
+      "file": "raw/aggeus.json",
+      "source_file": "bible/raw/aggeus.json",
+      "chapter_count": 2,
+      "verse_count": 38
+    },
+    {
+      "file": "raw/amos.json",
+      "source_file": "bible/raw/amos.json",
+      "chapter_count": 9,
+      "verse_count": 147
+    },
+    {
+      "file": "raw/apocalypse.json",
+      "source_file": "bible/raw/apocalypse.json",
+      "chapter_count": 22,
+      "verse_count": 405
+    },
+    {
+      "file": "raw/baruch.json",
+      "source_file": "bible/raw/baruch.json",
+      "chapter_count": 6,
+      "verse_count": 213
+    },
+    {
+      "file": "raw/canticle-of-canticles.json",
+      "source_file": "bible/raw/canticle-of-canticles.json",
+      "chapter_count": 8,
+      "verse_count": 116
+    },
+    {
+      "file": "raw/colossians.json",
+      "source_file": "bible/raw/colossians.json",
+      "chapter_count": 4,
+      "verse_count": 95
+    },
+    {
+      "file": "raw/daniel.json",
+      "source_file": "bible/raw/daniel.json",
+      "chapter_count": 14,
+      "verse_count": 531
+    },
+    {
+      "file": "raw/deuteronomy.json",
+      "source_file": "bible/raw/deuteronomy.json",
+      "chapter_count": 34,
+      "verse_count": 959
+    },
+    {
+      "file": "raw/ecclesiastes.json",
+      "source_file": "bible/raw/ecclesiastes.json",
+      "chapter_count": 12,
+      "verse_count": 222
+    },
+    {
+      "file": "raw/ecclesiasticus.json",
+      "source_file": "bible/raw/ecclesiasticus.json",
+      "chapter_count": 51,
+      "verse_count": 1592
+    },
+    {
+      "file": "raw/ephesians.json",
+      "source_file": "bible/raw/ephesians.json",
+      "chapter_count": 6,
+      "verse_count": 155
+    },
+    {
+      "file": "raw/esther.json",
+      "source_file": "bible/raw/esther.json",
+      "chapter_count": 16,
+      "verse_count": 275
+    },
+    {
+      "file": "raw/exodus.json",
+      "source_file": "bible/raw/exodus.json",
+      "chapter_count": 40,
+      "verse_count": 1211
+    },
+    {
+      "file": "raw/ezechiel.json",
+      "source_file": "bible/raw/ezechiel.json",
+      "chapter_count": 48,
+      "verse_count": 1272
+    },
+    {
+      "file": "raw/galatians.json",
+      "source_file": "bible/raw/galatians.json",
+      "chapter_count": 6,
+      "verse_count": 149
+    },
+    {
+      "file": "raw/genesis.json",
+      "source_file": "bible/raw/genesis.json",
+      "chapter_count": 50,
+      "verse_count": 1530
+    },
+    {
+      "file": "raw/habacuc.json",
+      "source_file": "bible/raw/habacuc.json",
+      "chapter_count": 3,
+      "verse_count": 56
+    },
+    {
+      "file": "raw/hebrews.json",
+      "source_file": "bible/raw/hebrews.json",
+      "chapter_count": 13,
+      "verse_count": 303
+    },
+    {
+      "file": "raw/isaie.json",
+      "source_file": "bible/raw/isaie.json",
+      "chapter_count": 66,
+      "verse_count": 1292
+    },
+    {
+      "file": "raw/james.json",
+      "source_file": "bible/raw/james.json",
+      "chapter_count": 5,
+      "verse_count": 108
+    },
+    {
+      "file": "raw/jeremie.json",
+      "source_file": "bible/raw/jeremie.json",
+      "chapter_count": 52,
+      "verse_count": 1363
+    },
+    {
+      "file": "raw/job.json",
+      "source_file": "bible/raw/job.json",
+      "chapter_count": 42,
+      "verse_count": 1070
+    },
+    {
+      "file": "raw/joel.json",
+      "source_file": "bible/raw/joel.json",
+      "chapter_count": 3,
+      "verse_count": 73
+    },
+    {
+      "file": "raw/john.json",
+      "source_file": "bible/raw/john.json",
+      "chapter_count": 21,
+      "verse_count": 879
+    },
+    {
+      "file": "raw/jonas.json",
+      "source_file": "bible/raw/jonas.json",
+      "chapter_count": 4,
+      "verse_count": 48
+    },
+    {
+      "file": "raw/josue.json",
+      "source_file": "bible/raw/josue.json",
+      "chapter_count": 24,
+      "verse_count": 658
+    },
+    {
+      "file": "raw/jude.json",
+      "source_file": "bible/raw/jude.json",
+      "chapter_count": 1,
+      "verse_count": 25
+    },
+    {
+      "file": "raw/judges.json",
+      "source_file": "bible/raw/judges.json",
+      "chapter_count": 21,
+      "verse_count": 618
+    },
+    {
+      "file": "raw/judith.json",
+      "source_file": "bible/raw/judith.json",
+      "chapter_count": 16,
+      "verse_count": 346
+    },
+    {
+      "file": "raw/lamentations.json",
+      "source_file": "bible/raw/lamentations.json",
+      "chapter_count": 5,
+      "verse_count": 154
+    },
+    {
+      "file": "raw/leviticus.json",
+      "source_file": "bible/raw/leviticus.json",
+      "chapter_count": 27,
+      "verse_count": 858
+    },
+    {
+      "file": "raw/luke.json",
+      "source_file": "bible/raw/luke.json",
+      "chapter_count": 24,
+      "verse_count": 1151
+    },
+    {
+      "file": "raw/malachie.json",
+      "source_file": "bible/raw/malachie.json",
+      "chapter_count": 4,
+      "verse_count": 55
+    },
+    {
+      "file": "raw/mark.json",
+      "source_file": "bible/raw/mark.json",
+      "chapter_count": 16,
+      "verse_count": 677
+    },
+    {
+      "file": "raw/matthew.json",
+      "source_file": "bible/raw/matthew.json",
+      "chapter_count": 28,
+      "verse_count": 1070
+    },
+    {
+      "file": "raw/micheas.json",
+      "source_file": "bible/raw/micheas.json",
+      "chapter_count": 7,
+      "verse_count": 104
+    },
+    {
+      "file": "raw/nahum.json",
+      "source_file": "bible/raw/nahum.json",
+      "chapter_count": 3,
+      "verse_count": 47
+    },
+    {
+      "file": "raw/numbers.json",
+      "source_file": "bible/raw/numbers.json",
+      "chapter_count": 36,
+      "verse_count": 1288
+    },
+    {
+      "file": "raw/osee.json",
+      "source_file": "bible/raw/osee.json",
+      "chapter_count": 14,
+      "verse_count": 198
+    },
+    {
+      "file": "raw/philemon.json",
+      "source_file": "bible/raw/philemon.json",
+      "chapter_count": 1,
+      "verse_count": 25
+    },
+    {
+      "file": "raw/philippians.json",
+      "source_file": "bible/raw/philippians.json",
+      "chapter_count": 4,
+      "verse_count": 104
+    },
+    {
+      "file": "raw/prayer-of-manasseh.json",
+      "source_file": "bible/raw/prayer-of-manasseh.json",
+      "chapter_count": 1,
+      "verse_count": 15
+    },
+    {
+      "file": "raw/prayer-of-manasses.json",
+      "source_file": "bible/raw/prayer-of-manasses.json",
+      "chapter_count": 1,
+      "verse_count": 15
+    },
+    {
+      "file": "raw/proverbs.json",
+      "source_file": "bible/raw/proverbs.json",
+      "chapter_count": 31,
+      "verse_count": 915
+    },
+    {
+      "file": "raw/psalms.json",
+      "source_file": "bible/raw/psalms.json",
+      "chapter_count": 150,
+      "verse_count": 2527
+    },
+    {
+      "file": "raw/romans.json",
+      "source_file": "bible/raw/romans.json",
+      "chapter_count": 16,
+      "verse_count": 433
+    },
+    {
+      "file": "raw/ruth.json",
+      "source_file": "bible/raw/ruth.json",
+      "chapter_count": 4,
+      "verse_count": 85
+    },
+    {
+      "file": "raw/sophonias.json",
+      "source_file": "bible/raw/sophonias.json",
+      "chapter_count": 3,
+      "verse_count": 53
+    },
+    {
+      "file": "raw/titus.json",
+      "source_file": "bible/raw/titus.json",
+      "chapter_count": 3,
+      "verse_count": 46
+    },
+    {
+      "file": "raw/tobias.json",
+      "source_file": "bible/raw/tobias.json",
+      "chapter_count": 15,
+      "verse_count": 299
+    },
+    {
+      "file": "raw/wisdom.json",
+      "source_file": "bible/raw/wisdom.json",
+      "chapter_count": 19,
+      "verse_count": 439
+    },
+    {
+      "file": "raw/zacharias.json",
+      "source_file": "bible/raw/zacharias.json",
+      "chapter_count": 14,
+      "verse_count": 211
+    }
+  ]
+}

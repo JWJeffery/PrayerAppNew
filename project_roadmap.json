@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0.0",
   "roadmap_version": "0.1.39",
-  "last_updated": "2026-06-20T04:35:32.007Z",
+  "last_updated": "2026-06-20T05:23:50.054Z",
   "status": "active",
   "name": "Universal Office Beta Release Roadmap",
   "purpose": "Canonical machine-readable roadmap for Beta Release planning, phase sequencing, governance questions, tranche sizing, and Admin Dashboard visualization.",
@@ -2755,5 +2755,18 @@
       "does_not_advance_loth_cadence": true,
       "loth_cadence_note": "This was public app hardening, not a corpus-producing LOTH tranche."
     }
-  ]
+  ],
+  "bible_translation_coverage": {
+    "original_douay_rheims_source_lane": {
+      "status": "complete_preserved_source_lane",
+      "translation_key": "DRB",
+      "source_name": "Original Douay-Rheims Bible",
+      "source_repo": "https://github.com/janvier-s/original-douay-rheims",
+      "target_path": "data/bible/translations/drb-original-douay-rheims",
+      "audit": "scripts/audit-bible-drb-original-source-lane.mjs",
+      "policy": "Do not force Original Douay-Rheims into shared NRSV-style verse grid without a governed versification adapter.",
+      "boundary": "DRB source lane is complete before New American Bible source discovery.",
+      "updated_at": "2026-06-20T05:23:50.054Z"
+    }
+  }
 }
