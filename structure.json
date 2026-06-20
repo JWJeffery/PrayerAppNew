@@ -2848,7 +2848,7 @@
       "updated_at": "2026-06-20T04:35:32.007Z"
     }
   },
-  "last_updated": "2026-06-20T05:45:57.203Z",
+  "last_updated": "2026-06-20T05:53:21.165Z",
   "lothIntegrationMilestones": [
     {
       "milestoneId": "loth-oor-c06-ordinary-sentinel-source-intake-closure",
@@ -2922,5 +2922,17 @@
     "scope": "internal_bible_browser",
     "note": "Adapter resolves preserved source lanes for internal Bible browser/corpus work without rewriting shared verse-grid files.",
     "updated_at": "2026-06-20T05:45:57.203Z"
+  },
+  "bible_source_lane_browser_wire": {
+    "status": "internal_browser_hook_added",
+    "adapter": "js/bible-browser/bible-source-lane-adapter.js",
+    "hook": "js/bible-browser/bible-source-lane-browser-hook.js",
+    "audit": "scripts/audit-bible-source-lane-browser-wire.mjs",
+    "scope": "internal_bible_browser",
+    "lanes": [
+      "DRB_ORIGINAL",
+      "NABRE_INTERNAL"
+    ],
+    "updated_at": "2026-06-20T05:53:21.165Z"
   }
 }

@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0.0",
   "roadmap_version": "0.1.39",
-  "last_updated": "2026-06-20T05:45:57.203Z",
+  "last_updated": "2026-06-20T05:53:21.165Z",
   "status": "active",
   "name": "Universal Office Beta Release Roadmap",
   "purpose": "Canonical machine-readable roadmap for Beta Release planning, phase sequencing, governance questions, tranche sizing, and Admin Dashboard visualization.",
@@ -2793,5 +2793,17 @@
     "scope": "internal_bible_browser",
     "note": "Adapter resolves preserved source lanes for internal Bible browser/corpus work without rewriting shared verse-grid files.",
     "updated_at": "2026-06-20T05:45:57.203Z"
+  },
+  "bible_source_lane_browser_wire": {
+    "status": "internal_browser_hook_added",
+    "adapter": "js/bible-browser/bible-source-lane-adapter.js",
+    "hook": "js/bible-browser/bible-source-lane-browser-hook.js",
+    "audit": "scripts/audit-bible-source-lane-browser-wire.mjs",
+    "scope": "internal_bible_browser",
+    "lanes": [
+      "DRB_ORIGINAL",
+      "NABRE_INTERNAL"
+    ],
+    "updated_at": "2026-06-20T05:53:21.165Z"
   }
 }
