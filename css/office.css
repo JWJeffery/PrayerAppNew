@@ -3558,3 +3558,75 @@ body.office-active .app-mode-drawer .shared-office-nav-options::-webkit-scrollba
     }
 }
 /* === UO HOROLOGION MOBILE SPECIFICITY FIX END === */
+
+/* Roman Breviary 1960/1962 dev slice layout */
+.rb1960-dev-slice {
+    width: min(980px, calc(100vw - 2rem));
+    max-width: 100%;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.rb1960-dev-slice h2 {
+    max-width: 100%;
+    font-size: clamp(1.9rem, 5vw, 3.4rem);
+    line-height: 1.05;
+    overflow-wrap: anywhere;
+}
+
+.rb1960-dev-slice h3,
+.rb1960-dev-slice p,
+.rb1960-dev-slice div,
+.rb1960-dev-slice article,
+.rb1960-dev-slice section {
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+.rb1960-dev-slice .rb1960-block {
+    min-width: 0;
+    overflow: hidden;
+}
+
+.rb1960-dev-slice .rb1960-unit {
+    min-width: 0;
+    overflow: hidden;
+}
+
+.rb1960-dev-slice pre {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+    word-break: normal;
+    overflow-x: hidden;
+    font-size: clamp(0.82rem, 1.8vw, 1rem);
+    line-height: 1.45;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
+}
+
+.rb1960-dev-slice details {
+    max-width: 100%;
+}
+
+.rb1960-dev-slice ul {
+    padding-left: 1.2rem;
+}
+
+@media (max-width: 720px) {
+    .rb1960-dev-slice {
+        width: calc(100vw - 1rem);
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+    .rb1960-dev-slice h2 {
+        font-size: clamp(1.5rem, 8vw, 2.4rem);
+    }
+
+    .rb1960-dev-slice pre {
+        font-size: 0.78rem;
+    }
+}
+
