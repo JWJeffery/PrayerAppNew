@@ -2,7 +2,7 @@
   "translation_key": "NABRE",
   "source_name": "New American Bible, Revised Edition",
   "source_repo": "https://github.com/nirmalben/bible-nabre-json-dataset",
-  "source_repo_path_policy": "Prefer generated_data if present; otherwise preserve JSON corpus files discovered in source repo.",
+  "source_repo_path_policy": "Preserve generated_data/books/*.json only. Do not copy generated_data/nabre.json because it duplicates the same corpus as an aggregate.",
   "source_status": "permission_application_pending",
   "internal_corpus_work": "authorized",
   "public_rendering": "not_cleared",
@@ -10,10 +10,10 @@
   "target_path": "data/bible/translations/nabre-internal-source-lane",
   "status": "ported_internal_preserved_source_lane",
   "imported_at": "2026-06-20T05:31:02.966Z",
-  "json_file_count": 74,
-  "estimated_book_count": 146,
-  "estimated_chapter_count": 2656,
-  "estimated_verse_count": 70182,
+  "json_file_count": 73,
+  "estimated_book_count": 73,
+  "estimated_chapter_count": 1328,
+  "estimated_verse_count": 35091,
   "files": [
     {
       "file": "source/generated_data/books/1Chronicles.json",
@@ -525,13 +525,7 @@
       "estimated_book_count": 1,
       "estimated_chapter_count": 3,
       "estimated_verse_count": 53
-    },
-    {
-      "file": "source/generated_data/nabre.json",
-      "source_file": "generated_data/nabre.json",
-      "estimated_book_count": 73,
-      "estimated_chapter_count": 1328,
-      "estimated_verse_count": 35091
     }
-  ]
+  ],
+  "deduped_at": "2026-06-20T05:36:45.570Z"
 }
