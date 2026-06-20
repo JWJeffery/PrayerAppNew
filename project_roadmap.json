@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0.0",
   "roadmap_version": "0.1.39",
-  "last_updated": "2026-06-09",
+  "last_updated": "2026-06-20T03:15:50.683Z",
   "status": "active",
   "name": "Universal Office Beta Release Roadmap",
   "purpose": "Canonical machine-readable roadmap for Beta Release planning, phase sequencing, governance questions, tranche sizing, and Admin Dashboard visualization.",
@@ -2381,7 +2381,72 @@
     "affectedBookCount": 11,
     "chapterFindingCount": 18,
     "remainingCompletenessFindings": 0,
-    "rotherhamFinalCoverageAudit": "documentation/rotherham-final-coverage-audit.json"
+    "rotherhamFinalCoverageAudit": "documentation/rotherham-final-coverage-audit.json",
+    "bible_registry_outside_route_adjudication": {
+      "status": "outside_legacy_resolver_identity_adjudication_complete",
+      "last_updated": "2026-06-20T03:15:50.683Z",
+      "repo_head": "9a7cda6",
+      "latest_commit_subject": "Add Ethiopian order and law registry adjudications",
+      "summary": "Bible registry now has draft identity adjudications for every file outside the legacy OT/NT resolver route. This records classification and profile hints only; it does not move Bible files and does not change resolver runtime behavior.",
+      "counts": {
+        "manifest_file_count": 125,
+        "identity_adjudication_count": 45,
+        "outside_legacy_resolver_count": 40,
+        "unadjudicated_outside_legacy_resolver_count": 0,
+        "outside_by_folder": {
+          "AR": {
+            "total": 2,
+            "adjudicated": 2,
+            "unadjudicated": 0
+          },
+          "ET": {
+            "total": 32,
+            "adjudicated": 32,
+            "unadjudicated": 0
+          },
+          "ODES": {
+            "total": 5,
+            "adjudicated": 5,
+            "unadjudicated": 0
+          },
+          "SY": {
+            "total": 1,
+            "adjudicated": 1,
+            "unadjudicated": 0
+          }
+        },
+        "canon_profile_entry_counts": {
+          "armenian_apostolic_witness": 3,
+          "coptic_orthodox_liturgical": 1,
+          "eastern_orthodox": 3,
+          "ethiopian_orthodox_broader": 34,
+          "roman_catholic": 2,
+          "study_witness": 35,
+          "syriac_christian_witness": 2
+        }
+      },
+      "governing_artifacts": [
+        "documentation/BIBLE_REGISTRY_ARCHITECTURE.md",
+        "data/bible/registry/file-manifest.json",
+        "data/bible/registry/book-identities.draft.json",
+        "data/bible/registry/identity-adjudications.json",
+        "data/bible/registry/canon-status-vocabulary.json",
+        "data/bible/registry/canon-profiles/index.draft.json",
+        "documentation/BIBLE_REGISTRY_FIRST_ADJUDICATIONS.md",
+        "documentation/BIBLE_REGISTRY_ADJUDICATION_PLAN.md"
+      ],
+      "validation": [
+        "npm run audit:bible-registry-identity-adjudications",
+        "npm run audit:bible-registry-canon-profile-scaffolds",
+        "npm run audit:bible-registry-generator-idempotence"
+      ],
+      "next_work": [
+        "Plan resolver lookup integration so runtime can consult registry identity/profile metadata without treating folders as canon authority.",
+        "Keep file movement out of scope until resolver contracts and compatibility tests are explicit.",
+        "Decide how ordinary chapter/verse candidates, canticle/odes collections, and witness-only materials enter browser/search UI."
+      ]
+    },
+    "current_bible_registry_next_step": "resolver_lookup_integration_planning"
   },
   "currentState": {
     "rotherhamBibleSourceScope": "complete_through_6d73441_except_extended_psalms_outside_source_scope"
