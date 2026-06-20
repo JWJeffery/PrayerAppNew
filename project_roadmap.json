@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0.0",
   "roadmap_version": "0.1.39",
-  "last_updated": "2026-06-20T05:23:50.054Z",
+  "last_updated": "2026-06-20T05:31:03.339Z",
   "status": "active",
   "name": "Universal Office Beta Release Roadmap",
   "purpose": "Canonical machine-readable roadmap for Beta Release planning, phase sequencing, governance questions, tranche sizing, and Admin Dashboard visualization.",
@@ -2767,6 +2767,19 @@
       "policy": "Do not force Original Douay-Rheims into shared NRSV-style verse grid without a governed versification adapter.",
       "boundary": "DRB source lane is complete before New American Bible source discovery.",
       "updated_at": "2026-06-20T05:23:50.054Z"
+    },
+    "nabre_internal_source_lane": {
+      "status": "ported_internal_preserved_source_lane",
+      "translation_key": "NABRE",
+      "source_name": "New American Bible, Revised Edition",
+      "source_repo": "https://github.com/nirmalben/bible-nabre-json-dataset",
+      "source_status": "permission_application_pending",
+      "internal_corpus_work": "authorized",
+      "public_rendering": "not_cleared",
+      "target_path": "data/bible/translations/nabre-internal-source-lane",
+      "audit": "scripts/audit-bible-nabre-internal-source-lane.mjs",
+      "policy": "Internal corpus work may proceed. Do not mark public rendering/export as cleared until permission outcome is recorded.",
+      "updated_at": "2026-06-20T05:31:03.339Z"
     }
   }
 }

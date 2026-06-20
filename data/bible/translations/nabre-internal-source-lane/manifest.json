@@ -1,0 +1,537 @@
+{
+  "translation_key": "NABRE",
+  "source_name": "New American Bible, Revised Edition",
+  "source_repo": "https://github.com/nirmalben/bible-nabre-json-dataset",
+  "source_repo_path_policy": "Prefer generated_data if present; otherwise preserve JSON corpus files discovered in source repo.",
+  "source_status": "permission_application_pending",
+  "internal_corpus_work": "authorized",
+  "public_rendering": "not_cleared",
+  "public_rendering_note": "Not cleared until permissions outcome is recorded. This lane is internal corpus intake/provenance.",
+  "target_path": "data/bible/translations/nabre-internal-source-lane",
+  "status": "ported_internal_preserved_source_lane",
+  "imported_at": "2026-06-20T05:31:02.966Z",
+  "json_file_count": 74,
+  "estimated_book_count": 146,
+  "estimated_chapter_count": 2656,
+  "estimated_verse_count": 70182,
+  "files": [
+    {
+      "file": "source/generated_data/books/1Chronicles.json",
+      "source_file": "generated_data/books/1Chronicles.json",
+      "estimated_book_count": 1,
+      "estimated_chapter_count": 29,
+      "estimated_verse_count": 943
+    },
+    {
+      "file": "source/generated_data/books/1Corinthians.json",
+      "source_file": "generated_data/books/1Corinthians.json",
+      "estimated_book_count": 1,
+      "estimated_chapter_count": 16,
+      "estimated_verse_count": 437
+    },
+    {
+      "file": "source/generated_data/books/1John.json",
+      "source_file": "generated_data/books/1John.json",
+      "estimated_book_count": 1,
+      "estimated_chapter_count": 5,
+      "estimated_verse_count": 105
+    },
+    {
+      "file": "source/generated_data/books/1Kings.json",
+      "source_file": "generated_data/books/1Kings.json",
+      "estimated_book_count": 1,
+      "estimated_chapter_count": 22,
+      "estimated_verse_count": 817
+    },
+    {
+      "file": "source/generated_data/books/1Maccabees.json",
+      "source_file": "generated_data/books/1Maccabees.json",
+      "estimated_book_count": 1,
+      "estimated_chapter_count": 16,
+      "estimated_verse_count": 924
+    },
+    {
+      "file": "source/generated_data/books/1Peter.json",
+      "source_file": "generated_data/books/1Peter.json",
+      "estimated_book_count": 1,
+      "estimated_chapter_count": 5,
+      "estimated_verse_count": 105
+    },
+    {
+      "file": "source/generated_data/books/1Samuel.json",
+      "source_file": "generated_data/books/1Samuel.json",
+      "estimated_book_count": 1,
+      "estimated_chapter_count": 31,
+      "estimated_verse_count": 811
+    },
+    {
+      "file": "source/generated_data/books/1Thessalonians.json",
+      "source_file": "generated_data/books/1Thessalonians.json",
+      "estimated_book_count": 1,
+      "estimated_chapter_count": 5,
+      "estimated_verse_count": 89
+    },
+    {
+      "file": "source/generated_data/books/1Timothy.json",
+      "source_file": "generated_data/books/1Timothy.json",
+      "estimated_book_count": 1,
+      "estimated_chapter_count": 6,
+      "estimated_verse_count": 113
+    },
+    {
+      "file": "source/generated_data/books/2Chronicles.json",
+      "source_file": "generated_data/books/2Chronicles.json",
+      "estimated_book_count": 1,
+      "estimated_chapter_count": 36,
+      "estimated_verse_count": 822
+    },
+    {
+      "file": "source/generated_data/books/2Corinthians.json",
+      "source_file": "generated_data/books/2Corinthians.json",
+      "estimated_book_count": 1,
+      "estimated_chapter_count": 13,
+      "estimated_verse_count": 256
+    },
+    {
+      "file": "source/generated_data/books/2John.json",
+      "source_file": "generated_data/books/2John.json",
+      "estimated_book_count": 1,
+      "estimated_chapter_count": 1,
+      "estimated_verse_count": 13
+    },
+    {
+      "file": "source/generated_data/books/2Kings.json",
+      "source_file": "generated_data/books/2Kings.json",
+      "estimated_book_count": 1,
+      "estimated_chapter_count": 25,
+      "estimated_verse_count": 719
+    },
+    {
+      "file": "source/generated_data/books/2Maccabees.json",
+      "source_file": "generated_data/books/2Maccabees.json",
+      "estimated_book_count": 1,
+      "estimated_chapter_count": 15,
+      "estimated_verse_count": 556
+    },
+    {
+      "file": "source/generated_data/books/2Peter.json",
+      "source_file": "generated_data/books/2Peter.json",
+      "estimated_book_count": 1,
+      "estimated_chapter_count": 3,
+      "estimated_verse_count": 61
+    },
+    {
+      "file": "source/generated_data/books/2Samuel.json",
+      "source_file": "generated_data/books/2Samuel.json",
+      "estimated_book_count": 1,
+      "estimated_chapter_count": 24,
+      "estimated_verse_count": 695
+    },
+    {
+      "file": "source/generated_data/books/2Thessalonians.json",
+      "source_file": "generated_data/books/2Thessalonians.json",
+      "estimated_book_count": 1,
+      "estimated_chapter_count": 3,
+      "estimated_verse_count": 47
+    },
+    {
+      "file": "source/generated_data/books/2Timothy.json",
+      "source_file": "generated_data/books/2Timothy.json",
+      "estimated_book_count": 1,
+      "estimated_chapter_count": 4,
+      "estimated_verse_count": 83
+    },
+    {
+      "file": "source/generated_data/books/3John.json",
+      "source_file": "generated_data/books/3John.json",
+      "estimated_book_count": 1,
+      "estimated_chapter_count": 1,
+      "estimated_verse_count": 15
+    },
+    {
+      "file": "source/generated_data/books/Acts.json",
+      "source_file": "generated_data/books/Acts.json",
+      "estimated_book_count": 1,
+      "estimated_chapter_count": 28,
+      "estimated_verse_count": 1007
+    },
+    {
+      "file": "source/generated_data/books/Amos.json",
+      "source_file": "generated_data/books/Amos.json",
+      "estimated_book_count": 1,
+      "estimated_chapter_count": 9,
+      "estimated_verse_count": 146
+    },
+    {
+      "file": "source/generated_data/books/Baruch.json",
+      "source_file": "generated_data/books/Baruch.json",
+      "estimated_book_count": 1,
+      "estimated_chapter_count": 6,
+      "estimated_verse_count": 213
+    },
+    {
+      "file": "source/generated_data/books/Colossians.json",
+      "source_file": "generated_data/books/Colossians.json",
+      "estimated_book_count": 1,
+      "estimated_chapter_count": 4,
+      "estimated_verse_count": 95
+    },
+    {
+      "file": "source/generated_data/books/Daniel.json",
+      "source_file": "generated_data/books/Daniel.json",
+      "estimated_book_count": 1,
+      "estimated_chapter_count": 14,
+      "estimated_verse_count": 485
+    },
+    {
+      "file": "source/generated_data/books/Deuteronomy.json",
+      "source_file": "generated_data/books/Deuteronomy.json",
+      "estimated_book_count": 1,
+      "estimated_chapter_count": 34,
+      "estimated_verse_count": 959
+    },
+    {
+      "file": "source/generated_data/books/Ecclesiastes.json",
+      "source_file": "generated_data/books/Ecclesiastes.json",
+      "estimated_book_count": 1,
+      "estimated_chapter_count": 12,
+      "estimated_verse_count": 222
+    },
+    {
+      "file": "source/generated_data/books/Ephesians.json",
+      "source_file": "generated_data/books/Ephesians.json",
+      "estimated_book_count": 1,
+      "estimated_chapter_count": 6,
+      "estimated_verse_count": 155
+    },
+    {
+      "file": "source/generated_data/books/Esther.json",
+      "source_file": "generated_data/books/Esther.json",
+      "estimated_book_count": 1,
+      "estimated_chapter_count": 10,
+      "estimated_verse_count": 167
+    },
+    {
+      "file": "source/generated_data/books/Exodus.json",
+      "source_file": "generated_data/books/Exodus.json",
+      "estimated_book_count": 1,
+      "estimated_chapter_count": 40,
+      "estimated_verse_count": 1213
+    },
+    {
+      "file": "source/generated_data/books/Ezekiel.json",
+      "source_file": "generated_data/books/Ezekiel.json",
+      "estimated_book_count": 1,
+      "estimated_chapter_count": 48,
+      "estimated_verse_count": 1273
+    },
+    {
+      "file": "source/generated_data/books/Ezra.json",
+      "source_file": "generated_data/books/Ezra.json",
+      "estimated_book_count": 1,
+      "estimated_chapter_count": 10,
+      "estimated_verse_count": 280
+    },
+    {
+      "file": "source/generated_data/books/Galatians.json",
+      "source_file": "generated_data/books/Galatians.json",
+      "estimated_book_count": 1,
+      "estimated_chapter_count": 6,
+      "estimated_verse_count": 149
+    },
+    {
+      "file": "source/generated_data/books/Genesis.json",
+      "source_file": "generated_data/books/Genesis.json",
+      "estimated_book_count": 1,
+      "estimated_chapter_count": 50,
+      "estimated_verse_count": 1533
+    },
+    {
+      "file": "source/generated_data/books/Habakkuk.json",
+      "source_file": "generated_data/books/Habakkuk.json",
+      "estimated_book_count": 1,
+      "estimated_chapter_count": 3,
+      "estimated_verse_count": 56
+    },
+    {
+      "file": "source/generated_data/books/Haggai.json",
+      "source_file": "generated_data/books/Haggai.json",
+      "estimated_book_count": 1,
+      "estimated_chapter_count": 2,
+      "estimated_verse_count": 38
+    },
+    {
+      "file": "source/generated_data/books/Hebrews.json",
+      "source_file": "generated_data/books/Hebrews.json",
+      "estimated_book_count": 1,
+      "estimated_chapter_count": 13,
+      "estimated_verse_count": 303
+    },
+    {
+      "file": "source/generated_data/books/Hosea.json",
+      "source_file": "generated_data/books/Hosea.json",
+      "estimated_book_count": 1,
+      "estimated_chapter_count": 14,
+      "estimated_verse_count": 197
+    },
+    {
+      "file": "source/generated_data/books/Isaiah.json",
+      "source_file": "generated_data/books/Isaiah.json",
+      "estimated_book_count": 1,
+      "estimated_chapter_count": 66,
+      "estimated_verse_count": 1291
+    },
+    {
+      "file": "source/generated_data/books/James.json",
+      "source_file": "generated_data/books/James.json",
+      "estimated_book_count": 1,
+      "estimated_chapter_count": 5,
+      "estimated_verse_count": 108
+    },
+    {
+      "file": "source/generated_data/books/Jeremiah.json",
+      "source_file": "generated_data/books/Jeremiah.json",
+      "estimated_book_count": 1,
+      "estimated_chapter_count": 52,
+      "estimated_verse_count": 1364
+    },
+    {
+      "file": "source/generated_data/books/Job.json",
+      "source_file": "generated_data/books/Job.json",
+      "estimated_book_count": 1,
+      "estimated_chapter_count": 42,
+      "estimated_verse_count": 1070
+    },
+    {
+      "file": "source/generated_data/books/Joel.json",
+      "source_file": "generated_data/books/Joel.json",
+      "estimated_book_count": 1,
+      "estimated_chapter_count": 4,
+      "estimated_verse_count": 73
+    },
+    {
+      "file": "source/generated_data/books/John.json",
+      "source_file": "generated_data/books/John.json",
+      "estimated_book_count": 1,
+      "estimated_chapter_count": 21,
+      "estimated_verse_count": 879
+    },
+    {
+      "file": "source/generated_data/books/Jonah.json",
+      "source_file": "generated_data/books/Jonah.json",
+      "estimated_book_count": 1,
+      "estimated_chapter_count": 4,
+      "estimated_verse_count": 48
+    },
+    {
+      "file": "source/generated_data/books/Joshua.json",
+      "source_file": "generated_data/books/Joshua.json",
+      "estimated_book_count": 1,
+      "estimated_chapter_count": 24,
+      "estimated_verse_count": 658
+    },
+    {
+      "file": "source/generated_data/books/Jude.json",
+      "source_file": "generated_data/books/Jude.json",
+      "estimated_book_count": 1,
+      "estimated_chapter_count": 1,
+      "estimated_verse_count": 25
+    },
+    {
+      "file": "source/generated_data/books/Judges.json",
+      "source_file": "generated_data/books/Judges.json",
+      "estimated_book_count": 1,
+      "estimated_chapter_count": 21,
+      "estimated_verse_count": 618
+    },
+    {
+      "file": "source/generated_data/books/Judith.json",
+      "source_file": "generated_data/books/Judith.json",
+      "estimated_book_count": 1,
+      "estimated_chapter_count": 16,
+      "estimated_verse_count": 340
+    },
+    {
+      "file": "source/generated_data/books/Lamentations.json",
+      "source_file": "generated_data/books/Lamentations.json",
+      "estimated_book_count": 1,
+      "estimated_chapter_count": 5,
+      "estimated_verse_count": 154
+    },
+    {
+      "file": "source/generated_data/books/Leviticus.json",
+      "source_file": "generated_data/books/Leviticus.json",
+      "estimated_book_count": 1,
+      "estimated_chapter_count": 27,
+      "estimated_verse_count": 859
+    },
+    {
+      "file": "source/generated_data/books/Luke.json",
+      "source_file": "generated_data/books/Luke.json",
+      "estimated_book_count": 1,
+      "estimated_chapter_count": 24,
+      "estimated_verse_count": 1151
+    },
+    {
+      "file": "source/generated_data/books/Malachi.json",
+      "source_file": "generated_data/books/Malachi.json",
+      "estimated_book_count": 1,
+      "estimated_chapter_count": 3,
+      "estimated_verse_count": 55
+    },
+    {
+      "file": "source/generated_data/books/Mark.json",
+      "source_file": "generated_data/books/Mark.json",
+      "estimated_book_count": 1,
+      "estimated_chapter_count": 16,
+      "estimated_verse_count": 678
+    },
+    {
+      "file": "source/generated_data/books/Matthew.json",
+      "source_file": "generated_data/books/Matthew.json",
+      "estimated_book_count": 1,
+      "estimated_chapter_count": 28,
+      "estimated_verse_count": 1071
+    },
+    {
+      "file": "source/generated_data/books/Micah.json",
+      "source_file": "generated_data/books/Micah.json",
+      "estimated_book_count": 1,
+      "estimated_chapter_count": 7,
+      "estimated_verse_count": 105
+    },
+    {
+      "file": "source/generated_data/books/Nahum.json",
+      "source_file": "generated_data/books/Nahum.json",
+      "estimated_book_count": 1,
+      "estimated_chapter_count": 3,
+      "estimated_verse_count": 47
+    },
+    {
+      "file": "source/generated_data/books/Nehemiah.json",
+      "source_file": "generated_data/books/Nehemiah.json",
+      "estimated_book_count": 1,
+      "estimated_chapter_count": 13,
+      "estimated_verse_count": 405
+    },
+    {
+      "file": "source/generated_data/books/Numbers.json",
+      "source_file": "generated_data/books/Numbers.json",
+      "estimated_book_count": 1,
+      "estimated_chapter_count": 36,
+      "estimated_verse_count": 1289
+    },
+    {
+      "file": "source/generated_data/books/Obadiah.json",
+      "source_file": "generated_data/books/Obadiah.json",
+      "estimated_book_count": 1,
+      "estimated_chapter_count": 1,
+      "estimated_verse_count": 21
+    },
+    {
+      "file": "source/generated_data/books/Philemon.json",
+      "source_file": "generated_data/books/Philemon.json",
+      "estimated_book_count": 1,
+      "estimated_chapter_count": 1,
+      "estimated_verse_count": 25
+    },
+    {
+      "file": "source/generated_data/books/Philippians.json",
+      "source_file": "generated_data/books/Philippians.json",
+      "estimated_book_count": 1,
+      "estimated_chapter_count": 4,
+      "estimated_verse_count": 104
+    },
+    {
+      "file": "source/generated_data/books/Proverbs.json",
+      "source_file": "generated_data/books/Proverbs.json",
+      "estimated_book_count": 1,
+      "estimated_chapter_count": 31,
+      "estimated_verse_count": 915
+    },
+    {
+      "file": "source/generated_data/books/Psalms.json",
+      "source_file": "generated_data/books/Psalms.json",
+      "estimated_book_count": 1,
+      "estimated_chapter_count": 150,
+      "estimated_verse_count": 2526
+    },
+    {
+      "file": "source/generated_data/books/Revelation.json",
+      "source_file": "generated_data/books/Revelation.json",
+      "estimated_book_count": 1,
+      "estimated_chapter_count": 22,
+      "estimated_verse_count": 405
+    },
+    {
+      "file": "source/generated_data/books/Romans.json",
+      "source_file": "generated_data/books/Romans.json",
+      "estimated_book_count": 1,
+      "estimated_chapter_count": 16,
+      "estimated_verse_count": 433
+    },
+    {
+      "file": "source/generated_data/books/Ruth.json",
+      "source_file": "generated_data/books/Ruth.json",
+      "estimated_book_count": 1,
+      "estimated_chapter_count": 4,
+      "estimated_verse_count": 85
+    },
+    {
+      "file": "source/generated_data/books/Sirach.json",
+      "source_file": "generated_data/books/Sirach.json",
+      "estimated_book_count": 1,
+      "estimated_chapter_count": 51,
+      "estimated_verse_count": 1131
+    },
+    {
+      "file": "source/generated_data/books/SongofSongs.json",
+      "source_file": "generated_data/books/SongofSongs.json",
+      "estimated_book_count": 1,
+      "estimated_chapter_count": 8,
+      "estimated_verse_count": 117
+    },
+    {
+      "file": "source/generated_data/books/Titus.json",
+      "source_file": "generated_data/books/Titus.json",
+      "estimated_book_count": 1,
+      "estimated_chapter_count": 3,
+      "estimated_verse_count": 46
+    },
+    {
+      "file": "source/generated_data/books/Tobit.json",
+      "source_file": "generated_data/books/Tobit.json",
+      "estimated_book_count": 1,
+      "estimated_chapter_count": 14,
+      "estimated_verse_count": 226
+    },
+    {
+      "file": "source/generated_data/books/Wisdom.json",
+      "source_file": "generated_data/books/Wisdom.json",
+      "estimated_book_count": 1,
+      "estimated_chapter_count": 19,
+      "estimated_verse_count": 403
+    },
+    {
+      "file": "source/generated_data/books/Zechariah.json",
+      "source_file": "generated_data/books/Zechariah.json",
+      "estimated_book_count": 1,
+      "estimated_chapter_count": 14,
+      "estimated_verse_count": 211
+    },
+    {
+      "file": "source/generated_data/books/Zephaniah.json",
+      "source_file": "generated_data/books/Zephaniah.json",
+      "estimated_book_count": 1,
+      "estimated_chapter_count": 3,
+      "estimated_verse_count": 53
+    },
+    {
+      "file": "source/generated_data/nabre.json",
+      "source_file": "generated_data/nabre.json",
+      "estimated_book_count": 73,
+      "estimated_chapter_count": 1328,
+      "estimated_verse_count": 35091
+    }
+  ]
+}
