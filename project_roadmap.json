@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0.0",
   "roadmap_version": "0.1.39",
-  "last_updated": "2026-06-20T03:15:50.683Z",
+  "last_updated": "2026-06-20T03:59:01.314Z",
   "status": "active",
   "name": "Universal Office Beta Release Roadmap",
   "purpose": "Canonical machine-readable roadmap for Beta Release planning, phase sequencing, governance questions, tranche sizing, and Admin Dashboard visualization.",
@@ -2444,9 +2444,49 @@
         "Plan resolver lookup integration so runtime can consult registry identity/profile metadata without treating folders as canon authority.",
         "Keep file movement out of scope until resolver contracts and compatibility tests are explicit.",
         "Decide how ordinary chapter/verse candidates, canticle/odes collections, and witness-only materials enter browser/search UI."
-      ]
+      ],
+      "runtime_integration_status": "closed_by_bible_registry_runtime_resolver_integration",
+      "runtime_integration_head": "5b9045e",
+      "runtime_integration_commit_subject": "Wire scripture resolver to Bible registry adapter"
     },
-    "current_bible_registry_next_step": "resolver_lookup_integration_planning"
+    "current_bible_registry_next_step": "resolver_lookup_integration_planning",
+    "bible_registry_runtime_resolver_integration": {
+      "status": "closed",
+      "date": "2026-06-20",
+      "repo_head": "5b9045e",
+      "latest_commit_subject": "Wire scripture resolver to Bible registry adapter",
+      "summary": "Bible Browser parser and scripture resolver now consult the Bible registry adapter at runtime while preserving existing ET routing and legacy OT/NT fallback behavior.",
+      "commits": [
+        {
+          "commit": "8491e00",
+          "subject": "Wire Bible parser to registry adapter",
+          "result": "Bible Browser parser can register ordinary chapter/verse records from the registry adapter before populating browser controls."
+        },
+        {
+          "commit": "5b9045e",
+          "subject": "Wire scripture resolver to Bible registry adapter",
+          "result": "scripture-resolver.js consults UniversalOfficeBibleRegistryAdapter.findBookRecord() before the legacy OT/NT fallback route."
+        }
+      ],
+      "validation": [
+        "node --check js/scripture-resolver.js",
+        "npm run audit:bible-registry-adapter",
+        "npm run audit:bible-browser-smoke"
+      ],
+      "governance": {
+        "fileMovement": false,
+        "foldersAreCanonAuthority": false,
+        "etRoutePreserved": true,
+        "legacyOtNtFallbackPreserved": true,
+        "registryAdapterChangesResolverBehavior": true,
+        "publicRenderingDecisionChanged": false
+      },
+      "next_work": [
+        "Add browser/runtime regression checks for specific registry-routed books.",
+        "Decide whether ODES/canticles and witness-only materials should enter search UI, reading UI, both, or neither.",
+        "Only after regression checks, consider reducing hardcoded scripture resolver aliases."
+      ]
+    }
   },
   "currentState": {
     "rotherhamBibleSourceScope": "complete_through_6d73441_except_extended_psalms_outside_source_scope"
