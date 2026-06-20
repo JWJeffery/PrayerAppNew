@@ -7,7 +7,15 @@ function composeResolvedOffice({unitsData,manifestData,date='2026-11-02',hour='m
   const h=day&&day.hours&&day.hours[hour];
   if(!unitsIndex||!day||!h) throw new Error('Roman Breviary dev slice fixture missing required data.');
   const diagnostics=[...(h.diagnostics||[]),{type:'coverage-gap',message:'Full Roman Breviary 2026/2027 manifests are not generated yet.'}];
-  const blocks=(h.blocks||[]).map(b=>({role:b.role||'other',label:b.label||b.role,native_label:b.label||b.role,unit_refs:b.unit_refs||[],units:(b.unit_refs||[]).map(k=>{if(!unitsIndex[k])throw new Error('Missing unit '+k);return unitsIndex[k];})}));
+  const blocks=(h.blocks||[]).map(b=>{
+    const units=(b.unit_refs||[]).map(k=>{
+      if(!unitsIndex[k])throw new Error('Missing unit '+k);
+      const unit=unitsIndex[k];
+      if(Array.isArray(unit.display_diagnostics)) diagnostics.push(...unit.display_diagnostics);
+      return unit;
+    });
+    return {role:b.role||'other',label:b.label||b.role,native_label:b.label||b.role,unit_refs:b.unit_refs||[],units};
+  });
   return {schema_version:'universal_office_resolved_envelope_v0_dev',tradition:manifestData.tradition,office_family:manifestData.office_family,edition_or_recension:manifestData.edition_or_recension,language:manifestData.language,source_pin:manifestData.source_pin,context:{date,hour,calendar_scope:manifestData.calendar_scope,native_label:day.liturgical_context&&day.liturgical_context.native_label,rank:day.liturgical_context&&day.liturgical_context.rank,hour_label:h.label||hour},blocks,overlays:[],diagnostics};
 }
 function renderResolvedOfficeHtml(e){return `<div class="office-container rb1960-dev-slice"><h2>Roman Breviary 1960/1962 — ${esc(e.context.hour_label)}</h2><p><strong>${esc(e.context.native_label)}</strong></p>${e.blocks.map(b=>`<section class="rb1960-block"><h3>${esc(b.native_label)}</h3>${b.units.map(u=>`<article class="rb1960-unit"><div>${esc(u.citation)}</div><pre>${esc(u.text)}</pre></article>`).join('')}</section>`).join('')}<details open><summary>Diagnostics</summary><ul>${e.diagnostics.map(d=>`<li><strong>${esc(d.type)}</strong>: ${esc(d.message)}</li>`).join('')}</ul></details></div>`;}

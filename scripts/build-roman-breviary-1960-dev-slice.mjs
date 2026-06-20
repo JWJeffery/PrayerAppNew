@@ -51,6 +51,46 @@ function requireSection(sections, key) {
   return value;
 }
 
+function normalizeDivinumDisplayText(rawText) {
+  const diagnostics = [];
+  const displayLines = [];
+
+  for (const line of rawText.split(/\r?\n/)) {
+    const trimmed = line.trim();
+
+    if (!trimmed) {
+      displayLines.push('');
+      continue;
+    }
+
+    if (trimmed.startsWith('!')) {
+      const rubricLabel = trimmed.slice(1).trim();
+      if (rubricLabel) {
+        diagnostics.push({
+          type: 'divinum-display-marker',
+          message: `Display marker stripped from user-facing text: ${rubricLabel}`
+        });
+      }
+      continue;
+    }
+
+    if (trimmed.startsWith('&')) {
+      diagnostics.push({
+        type: 'unresolved-divinum-macro',
+        message: `Divinum macro not expanded in dev slice: ${trimmed}`
+      });
+      continue;
+    }
+
+    displayLines.push(line);
+  }
+
+  return {
+    text: displayLines.join('\n').replace(/^\s+|\s+$/g, ''),
+    diagnostics
+  };
+}
+
 const MATINS_READING_SECTIONS = [
   ['Lectio4', 'Cap. 2 et 3'],
   ['Lectio5', 'Cap. 4'],
@@ -71,13 +111,18 @@ function unitSource(sourcePin, section) {
 
 function buildReadingUnit(sourcePin, sections, section, citation) {
   const slug = section.toLowerCase();
+  const rawText = requireSection(sections, section);
+  const normalized = normalizeDivinumDisplayText(rawText);
+
   return [
     `rb1960.la.sancti.11-02.${slug}`,
     {
       key: `rb1960.la.sancti.11-02.${slug}`,
       kind: 'reading',
       citation,
-      text: requireSection(sections, section),
+      text: normalized.text,
+      raw_text: rawText,
+      display_diagnostics: normalized.diagnostics,
       source: unitSource(sourcePin, section)
     }
   ];
@@ -99,13 +144,20 @@ function buildUnits({ sourcePin, sections }) {
     language: 'la',
     units: {
       ...readingUnits,
-      'rb1960.la.sancti.11-02.conclusio': {
-        key: 'rb1960.la.sancti.11-02.conclusio',
-        kind: 'dismissal',
-        citation: 'Conclusio specialis',
-        text: requireSection(sections, 'Conclusio'),
-        source: unitSource(sourcePin, 'Conclusio')
-      }
+      'rb1960.la.sancti.11-02.conclusio': (() => {
+        const rawText = requireSection(sections, 'Conclusio');
+        const normalized = normalizeDivinumDisplayText(rawText);
+
+        return {
+          key: 'rb1960.la.sancti.11-02.conclusio',
+          kind: 'dismissal',
+          citation: 'Conclusio specialis',
+          text: normalized.text,
+          raw_text: rawText,
+          display_diagnostics: normalized.diagnostics,
+          source: unitSource(sourcePin, 'Conclusio')
+        };
+      })()
     }
   };
 }
