@@ -66,7 +66,9 @@
     "audit:douay-rheims-psalms": "node scripts/audit-douay-rheims-psalms.mjs",
     "audit:douay-rheims-overlay-completeness": "node scripts/audit-douay-rheims-overlay-completeness.mjs",
     "bible:registry:draft": "node scripts/generate-bible-registry-draft.mjs",
-    "audit:bible-registry-draft": "node scripts/audit-bible-registry-draft.mjs"
+    "audit:bible-registry-draft": "node scripts/audit-bible-registry-draft.mjs",
+    "bible:registry:adjudication-plan": "node scripts/generate-bible-registry-adjudication-plan.mjs",
+    "audit:bible-registry-adjudication-plan": "node scripts/audit-bible-registry-adjudication-plan.mjs"
   },
   "repository": {
     "type": "git",
