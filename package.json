@@ -74,7 +74,8 @@
     "audit:bible-registry-canon-profile-scaffolds": "node scripts/audit-bible-registry-canon-profile-scaffolds.mjs",
     "audit:bible-registry-generator-idempotence": "node scripts/audit-bible-registry-generator-idempotence.mjs",
     "audit:bible-registry-adapter": "node scripts/audit-bible-registry-adapter.mjs",
-    "audit:bible-registry-roman-catholic-profile": "node scripts/audit-bible-registry-roman-catholic-profile.mjs"
+    "audit:bible-registry-roman-catholic-profile": "node scripts/audit-bible-registry-roman-catholic-profile.mjs",
+    "audit:bible-registry-catholic-runtime-regression": "node scripts/audit-bible-registry-catholic-runtime-regression.mjs"
   },
   "repository": {
     "type": "git",

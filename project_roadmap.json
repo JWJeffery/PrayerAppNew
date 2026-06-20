@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0.0",
   "roadmap_version": "0.1.39",
-  "last_updated": "2026-06-20T04:11:32.243Z",
+  "last_updated": "2026-06-20T04:13:19.208Z",
   "status": "active",
   "name": "Universal Office Beta Release Roadmap",
   "purpose": "Canonical machine-readable roadmap for Beta Release planning, phase sequencing, governance questions, tranche sizing, and Admin Dashboard visualization.",
@@ -2498,6 +2498,33 @@
       "audit": "scripts/audit-bible-registry-roman-catholic-profile.mjs",
       "governing_decision": "Build Roman Catholic biblical canon profile so LOTH and Catholic office work can resolve biblical readings through the Bible corpus / registry instead of broadly reproducing biblical text inside LOTH payloads.",
       "validation": [
+        "npm run audit:bible-registry-roman-catholic-profile",
+        "npm run audit:bible-registry-adapter",
+        "npm run audit:bible-browser-smoke"
+      ]
+    },
+    "roman_catholic_bible_runtime_regression": {
+      "status": "closed",
+      "date": "2026-06-20",
+      "repo_head_at_build": "1864669",
+      "audit": "scripts/audit-bible-registry-catholic-runtime-regression.mjs",
+      "sample_count": 11,
+      "sample_identities": [
+        "TOBIT",
+        "ESTHER",
+        "DANIEL",
+        "SONG_OF_SOLOMON",
+        "WISDOM",
+        "SIRACH",
+        "1_MACCABEES",
+        "2_MACCABEES",
+        "BARUCH",
+        "LUKE",
+        "REVELATION"
+      ],
+      "governing_decision": "Roman Catholic LOTH biblical readings should resolve through the Bible corpus and Roman Catholic canon profile rather than duplicating biblical text inside LOTH payloads.",
+      "validation": [
+        "npm run audit:bible-registry-catholic-runtime-regression",
         "npm run audit:bible-registry-roman-catholic-profile",
         "npm run audit:bible-registry-adapter",
         "npm run audit:bible-browser-smoke"
