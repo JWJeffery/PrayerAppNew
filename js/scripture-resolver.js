@@ -77,7 +77,7 @@ function _normalizeBibleBookKey(value) {
         .replace(/[^a-z0-9]/g, '');
 }
 
-function _resolveBibleBookSource(book, isPsalm = false) {
+async function _resolveBibleBookSource(book, isPsalm = false) {
     let bookName = String(book || '').toLowerCase().replace(/\s/g, '');
     if (BOOK_ALIASES[bookName]) bookName = BOOK_ALIASES[bookName];
 
@@ -91,8 +91,31 @@ function _resolveBibleBookSource(book, isPsalm = false) {
             path: etSource.path,
             filename: etSource.path.split('/').pop(),
             folder: 'ET',
-            cacheKey: etSource.path
+            cacheKey: etSource.path,
+            registryMatched: false
         };
+    }
+
+    const registryAdapter = window.UniversalOfficeBibleRegistryAdapter;
+    if (registryAdapter && typeof registryAdapter.findBookRecord === 'function') {
+        try {
+            const registryRecord = await registryAdapter.findBookRecord(book);
+            if (registryRecord && registryRecord.path) {
+                return {
+                    bookName: registryRecord.key || bookName,
+                    canonicalId: registryRecord.registry && registryRecord.registry.identityId
+                        ? registryRecord.registry.identityId
+                        : null,
+                    path: registryRecord.path,
+                    filename: registryRecord.path.split('/').pop(),
+                    folder: registryRecord.corpus || (registryRecord.path.split('/').slice(-2, -1)[0]) || null,
+                    cacheKey: registryRecord.path,
+                    registryMatched: true
+                };
+            }
+        } catch (error) {
+            console.warn('Bible registry source lookup failed; using legacy scripture resolver route.', error);
+        }
     }
 
     const filename = isPsalm ? 'psalms.json' : bookName + '.json';
@@ -104,7 +127,8 @@ function _resolveBibleBookSource(book, isPsalm = false) {
         path: `data/bible/${folder}/${filename}`,
         filename,
         folder,
-        cacheKey: `${folder}/${filename}`
+        cacheKey: `${folder}/${filename}`,
+        registryMatched: false
     };
 }
 
@@ -164,7 +188,7 @@ async function getScriptureText(citation, options = {}) {
 async function extractFromBook(book, ranges, options = {}) {
     const translation = _normalizeBibleTranslation(options && options.translation);
     const isPsalm = book.toLowerCase().startsWith('psalm');
-    const source = _resolveBibleBookSource(book, isPsalm);
+    const source = await _resolveBibleBookSource(book, isPsalm);
     const bookName = source.bookName;
     
     if (!bibleCache.books[source.cacheKey]) {
@@ -281,7 +305,7 @@ function _parseSubrange(s, inheritedChapter) {
 }
 
 async function _getLastVerse(book, chapter) {
-    const source = _resolveBibleBookSource(book, false);
+    const source = await _resolveBibleBookSource(book, false);
     if (!bibleCache.books[source.cacheKey]) {
         try {
             const res = await fetch(source.path);

@@ -92,6 +92,8 @@ const parserPath = 'js/bible-browser/reference-parser.js';
 const browserPath = 'js/bible-browser/bible-browser.js';
 const parser = fs.existsSync(parserPath) ? read(parserPath) : '';
 const browser = fs.existsSync(browserPath) ? read(browserPath) : '';
+const scriptureResolverPath = 'js/scripture-resolver.js';
+const scriptureResolver = fs.existsSync(scriptureResolverPath) ? read(scriptureResolverPath) : '';
 
 if (!parser.includes('registerBookRecords')) {
   fail('Reference parser should expose registerBookRecords.');
@@ -103,6 +105,12 @@ if (!browser.includes('loadRegistryBookRecordsForParser')) {
 
 if (!index.includes('bible-registry-adapter.js')) {
   fail('index.html should load bible-registry-adapter.js.');
+}
+
+if (!scriptureResolver.includes('UniversalOfficeBibleRegistryAdapter')
+    || !scriptureResolver.includes('findBookRecord')
+    || !scriptureResolver.includes('await _resolveBibleBookSource')) {
+  fail('Scripture resolver should consult the Bible registry adapter.');
 }
 
 const report = {
