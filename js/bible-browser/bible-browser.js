@@ -304,6 +304,12 @@
         if (select) select.disabled = !parallelEnabled;
     }
 
+    function isParallelActive() {
+        const toggle = $("bible-parallel-toggle");
+        if (toggle && !toggle.checked) return false;
+        return Boolean(parallelEnabled);
+    }
+
 
     function formatReferenceLabel(bookName, ref) {
         const start = ref.startVerse === null
@@ -727,7 +733,7 @@
         const translations = getParallelTranslationKeys(item.bookData);
         const annotations = annotationsForVerse(item);
 
-        if (translations.length < 2) {
+        if (!isParallelActive() || translations.length < 2) {
             const text = getVerseText(item.verseData, currentTranslation);
             return `
                 <p class="bible-verse"
