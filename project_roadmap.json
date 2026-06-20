@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0.0",
   "roadmap_version": "0.1.39",
-  "last_updated": "2026-06-20T04:23:10.815Z",
+  "last_updated": "2026-06-20T04:31:27.801Z",
   "status": "active",
   "name": "Universal Office Beta Release Roadmap",
   "purpose": "Canonical machine-readable roadmap for Beta Release planning, phase sequencing, governance questions, tranche sizing, and Admin Dashboard visualization.",
@@ -2576,6 +2576,22 @@
         "npm run audit:bible-registry-adapter",
         "npm run audit:bible-browser-smoke"
       ]
+    },
+    "roman_catholic_corpus_text_integrity": {
+      "status": "closed",
+      "date": "2026-06-20",
+      "audit": "scripts/audit-bible-catholic-corpus-text-integrity.mjs",
+      "package_script": "audit:bible-catholic-corpus-text-integrity",
+      "profile_key": "roman_catholic",
+      "entry_count": 73,
+      "scope": "Catholic biblical corpus text-integrity audit over all Roman Catholic profile entries. Full details are written to /tmp JSON; terminal output remains compact.",
+      "boundary": "Corpus completion remains upstream of LOTH biblical-reading integration.",
+      "validation": [
+        "npm run audit:bible-catholic-corpus-text-integrity",
+        "npm run audit:bible-registry-roman-catholic-profile",
+        "npm run audit:bible-registry-catholic-runtime-regression"
+      ],
+      "updated_at": "2026-06-20T04:31:27.801Z"
     }
   },
   "currentState": {
