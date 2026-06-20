@@ -349,6 +349,23 @@
     },
     {
       "order": null,
+      "identity_id": "ASCENSION_OF_ISAIAH",
+      "base_work_id": "ASCENSION_OF_ISAIAH",
+      "text_form_id": "ASCENSION_OF_ISAIAH_ETHIOPIC_WITNESS",
+      "source_path": "data/bible/ET/ascensionofisaiahET.json",
+      "preferred_title": "The Ascension of Isaiah",
+      "work_type": "ethiopian_broader_textual_witness",
+      "canonical_status": "witness_only",
+      "use_class": "study_only",
+      "ordinary_chapter_verse_resolver_candidate": true,
+      "adapter_required": null,
+      "notes": [
+        "Treat as Ethiopian broader textual witness until a final canon-profile decision assigns a stronger liturgical or canonical status.",
+        "Do not move during resolver work."
+      ]
+    },
+    {
+      "order": null,
       "identity_id": "HISTORY_OF_ZOSIMUS",
       "base_work_id": "HISTORY_OF_ZOSIMUS",
       "text_form_id": "HISTORY_OF_ZOSIMUS_CURRENT_ENGLISH_WITNESS",
@@ -410,6 +427,57 @@
       "adapter_required": null,
       "notes": [
         "Treat as Armenian witness material unless later profile adjudication assigns a stronger status.",
+        "Do not move during resolver work."
+      ]
+    },
+    {
+      "order": null,
+      "identity_id": "REST_OF_BARUCH",
+      "base_work_id": "REST_OF_BARUCH",
+      "text_form_id": "REST_OF_BARUCH_ETHIOPIC_WITNESS",
+      "source_path": "data/bible/ET/restofbaruchET.json",
+      "preferred_title": "The Rest of the Words of Baruch",
+      "work_type": "ethiopian_broader_textual_witness",
+      "canonical_status": "witness_only",
+      "use_class": "study_only",
+      "ordinary_chapter_verse_resolver_candidate": true,
+      "adapter_required": null,
+      "notes": [
+        "Treat as Ethiopian broader textual witness until a final canon-profile decision assigns a stronger liturgical or canonical status.",
+        "Do not move during resolver work."
+      ]
+    },
+    {
+      "order": null,
+      "identity_id": "REST_OF_JEREMIAH",
+      "base_work_id": "REST_OF_JEREMIAH",
+      "text_form_id": "REST_OF_JEREMIAH_ETHIOPIC_WITNESS",
+      "source_path": "data/bible/ET/restofjeremiahET.json",
+      "preferred_title": "The Rest of the Words of Jeremiah",
+      "work_type": "ethiopian_broader_textual_witness",
+      "canonical_status": "witness_only",
+      "use_class": "study_only",
+      "ordinary_chapter_verse_resolver_candidate": true,
+      "adapter_required": null,
+      "notes": [
+        "Treat as Ethiopian broader textual witness until a final canon-profile decision assigns a stronger liturgical or canonical status.",
+        "Do not move during resolver work."
+      ]
+    },
+    {
+      "order": null,
+      "identity_id": "SHEPHERD_OF_HERMAS",
+      "base_work_id": "SHEPHERD_OF_HERMAS",
+      "text_form_id": "SHEPHERD_OF_HERMAS_ETHIOPIC_WITNESS",
+      "source_path": "data/bible/ET/hermastheshepherdET.json",
+      "preferred_title": "The Shepherd of Hermas",
+      "work_type": "ethiopian_broader_textual_witness",
+      "canonical_status": "witness_only",
+      "use_class": "study_only",
+      "ordinary_chapter_verse_resolver_candidate": true,
+      "adapter_required": null,
+      "notes": [
+        "Treat as Ethiopian broader textual witness until a final canon-profile decision assigns a stronger liturgical or canonical status.",
         "Do not move during resolver work."
       ]
     }

@@ -32,7 +32,7 @@
       "profile_key": "ethiopian_orthodox_broader",
       "display_name": "Ethiopian Orthodox Broader Canon / Liturgical Witness Draft",
       "path": "data/bible/registry/canon-profiles/ethiopian-orthodox-broader.draft.json",
-      "entry_count": 23,
+      "entry_count": 27,
       "status": "draft_incomplete_scaffold",
       "completeness": "incomplete_tranche_1_identity_adjudications_only"
     },
@@ -48,7 +48,7 @@
       "profile_key": "study_witness",
       "display_name": "Study Witness / Non-Profile Witness Draft",
       "path": "data/bible/registry/canon-profiles/study-witness.draft.json",
-      "entry_count": 24,
+      "entry_count": 28,
       "status": "draft_incomplete_scaffold",
       "completeness": "incomplete_tranche_1_identity_adjudications_only"
     },

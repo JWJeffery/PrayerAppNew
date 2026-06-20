@@ -1,6 +1,6 @@
 {
   "schema": "universal_office_bible_registry_identity_adjudications_v1",
-  "status": "draft_human_adjudicated_tranches_1_2_3_4",
+  "status": "draft_human_adjudicated_tranches_1_2_3_4_5",
   "rule": "These entries override mechanical path-based guesses. They do not move files and do not change resolver runtime behavior.",
   "adjudications": [
     {
@@ -304,6 +304,31 @@
       ]
     },
     {
+      "source_path": "data/bible/ET/ascensionofisaiahET.json",
+      "identity_id": "ASCENSION_OF_ISAIAH",
+      "preferred_title": "The Ascension of Isaiah",
+      "work_type": "ethiopian_broader_textual_witness",
+      "text_form_id": "ASCENSION_OF_ISAIAH_ETHIOPIC_WITNESS",
+      "ordinary_chapter_verse_resolver_candidate": true,
+      "storage_note": "Stored under ET because the current witness lane is Ethiopian; folder placement is not canonical authority.",
+      "profile_hints": [
+        {
+          "profile_family": "ethiopian_orthodox",
+          "canonical_status": "broader_canon",
+          "use_class": "study_only"
+        },
+        {
+          "profile_family": "default",
+          "canonical_status": "witness_only",
+          "use_class": "study_only"
+        }
+      ],
+      "notes": [
+        "Treat as Ethiopian broader textual witness until a final canon-profile decision assigns a stronger liturgical or canonical status.",
+        "Do not move during resolver work."
+      ]
+    },
+    {
       "source_path": "data/bible/ET/bookofjubileesET.json",
       "identity_id": "JUBILEES",
       "preferred_title": "Jubilees",
@@ -429,6 +454,31 @@
       ]
     },
     {
+      "source_path": "data/bible/ET/hermastheshepherdET.json",
+      "identity_id": "SHEPHERD_OF_HERMAS",
+      "preferred_title": "The Shepherd of Hermas",
+      "work_type": "ethiopian_broader_textual_witness",
+      "text_form_id": "SHEPHERD_OF_HERMAS_ETHIOPIC_WITNESS",
+      "ordinary_chapter_verse_resolver_candidate": true,
+      "storage_note": "Stored under ET because the current witness lane is Ethiopian; folder placement is not canonical authority.",
+      "profile_hints": [
+        {
+          "profile_family": "ethiopian_orthodox",
+          "canonical_status": "broader_canon",
+          "use_class": "study_only"
+        },
+        {
+          "profile_family": "default",
+          "canonical_status": "witness_only",
+          "use_class": "study_only"
+        }
+      ],
+      "notes": [
+        "Treat as Ethiopian broader textual witness until a final canon-profile decision assigns a stronger liturgical or canonical status.",
+        "Do not move during resolver work."
+      ]
+    },
+    {
       "source_path": "data/bible/ET/josipponET.json",
       "identity_id": "JOSIPPON",
       "preferred_title": "Josippon",
@@ -546,6 +596,56 @@
       ],
       "notes": [
         "Requires collection-specific presentation."
+      ]
+    },
+    {
+      "source_path": "data/bible/ET/restofbaruchET.json",
+      "identity_id": "REST_OF_BARUCH",
+      "preferred_title": "The Rest of the Words of Baruch",
+      "work_type": "ethiopian_broader_textual_witness",
+      "text_form_id": "REST_OF_BARUCH_ETHIOPIC_WITNESS",
+      "ordinary_chapter_verse_resolver_candidate": true,
+      "storage_note": "Stored under ET because the current witness lane is Ethiopian; folder placement is not canonical authority.",
+      "profile_hints": [
+        {
+          "profile_family": "ethiopian_orthodox",
+          "canonical_status": "broader_canon",
+          "use_class": "study_only"
+        },
+        {
+          "profile_family": "default",
+          "canonical_status": "witness_only",
+          "use_class": "study_only"
+        }
+      ],
+      "notes": [
+        "Treat as Ethiopian broader textual witness until a final canon-profile decision assigns a stronger liturgical or canonical status.",
+        "Do not move during resolver work."
+      ]
+    },
+    {
+      "source_path": "data/bible/ET/restofjeremiahET.json",
+      "identity_id": "REST_OF_JEREMIAH",
+      "preferred_title": "The Rest of the Words of Jeremiah",
+      "work_type": "ethiopian_broader_textual_witness",
+      "text_form_id": "REST_OF_JEREMIAH_ETHIOPIC_WITNESS",
+      "ordinary_chapter_verse_resolver_candidate": true,
+      "storage_note": "Stored under ET because the current witness lane is Ethiopian; folder placement is not canonical authority.",
+      "profile_hints": [
+        {
+          "profile_family": "ethiopian_orthodox",
+          "canonical_status": "broader_canon",
+          "use_class": "study_only"
+        },
+        {
+          "profile_family": "default",
+          "canonical_status": "witness_only",
+          "use_class": "study_only"
+        }
+      ],
+      "notes": [
+        "Treat as Ethiopian broader textual witness until a final canon-profile decision assigns a stronger liturgical or canonical status.",
+        "Do not move during resolver work."
       ]
     },
     {

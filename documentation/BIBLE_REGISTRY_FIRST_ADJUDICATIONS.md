@@ -82,3 +82,15 @@ The fourth tranche adjudicates the Ethiopian Meqabyan cluster:
 - 3 Meqabyan
 
 These are treated as Ethiopian broader-canon books in the registry. They are not treated as ordinary Maccabees aliases. They remain in their current paths. This tranche does not move files and does not change resolver runtime behavior.
+
+
+## Fifth Tranche
+
+The fifth tranche adjudicates the Ethiopian textual-witness cluster:
+
+- Ascension of Isaiah
+- Shepherd of Hermas
+- Rest of the Words of Baruch
+- Rest of the Words of Jeremiah
+
+These are treated as Ethiopian broader textual witnesses in the registry pending later final canon-profile decisions. They remain in their current paths. This tranche does not move files and does not change resolver runtime behavior.
