@@ -237,7 +237,6 @@
             "NRSV",
             "Rotherham",
             "KJV",
-            "DRV",
             "DRB",
             "NABRE",
             "Coverdale",
