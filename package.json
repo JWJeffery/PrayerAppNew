@@ -82,7 +82,8 @@
     "audit:bible-drb-original-source-lane": "node scripts/audit-bible-drb-original-source-lane.mjs",
     "audit:bible-nabre-internal-source-lane": "node scripts/audit-bible-nabre-internal-source-lane.mjs",
     "audit:bible-source-lane-adapter": "node scripts/audit-bible-source-lane-adapter.mjs",
-    "audit:bible-source-lane-browser-wire": "node scripts/audit-bible-source-lane-browser-wire.mjs"
+    "audit:bible-source-lane-browser-wire": "node scripts/audit-bible-source-lane-browser-wire.mjs",
+    "audit:bible-source-lane-ui": "node scripts/audit-bible-source-lane-ui.mjs"
   },
   "repository": {
     "type": "git",
