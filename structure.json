@@ -1552,11 +1552,17 @@
       "roadmap_version": "0.1.0",
       "purpose": "Canonical Universal Office Beta Release roadmap and phase/tranche planning source."
     },
-    "universal_office_core_contract": {
+   "universal_office_core_contract": {
       "path": "documentation/UNIVERSAL_OFFICE_CORE_CONTRACT.md",
       "status": "active",
       "created": "2026-06-20",
       "purpose": "Phase -1 architecture contract above all office-family lanes: no universal resolver; each lane keeps its own resolver, calendar, rank logic, vocabulary, and structure and emits a shared resolved-office output contract."
+    },
+    "roman_breviary_1960_1962_architecture": {
+      "path": "documentation/ROMAN_BREVIARY_1960_1962_ARCHITECTURE.md",
+      "status": "active",
+      "created": "2026-06-20",
+      "purpose": "Roman Breviary 1960/1962 lane architecture record: internal identity, source triage, and the selected hybrid Divinum-oracle resolver strategy for a Traditional Roman Breviary (Rubrics 1960/1962) lane. Documentation-only; imports no corpus and defines no rendering or permission policy."
     }
   },
   "external_corpus_integrations": {
