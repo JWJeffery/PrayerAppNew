@@ -1,0 +1,44 @@
+{
+  "schema_version": "roman_breviary_1960_1962_source_units_v0_dev_slice",
+  "source_pin": {
+    "schema_version": "roman_breviary_1960_1962_source_pin_v1",
+    "repo": "DivinumOfficium/divinum-officium",
+    "branch": "master",
+    "commit": "0ce8747d7dba3276fc05937635e02360b49a60a6",
+    "mirror_date": "2026-06-20",
+    "file_subset_policy": "dev vertical slice only; not a full mirror",
+    "mirrored_files": [
+      "web/www/horas/Latin/Sancti/11-02.txt"
+    ]
+  },
+  "tradition": "roman_catholic",
+  "office_family": "roman_breviary",
+  "edition_or_recension": "rubrics_1960_1962",
+  "language": "la",
+  "units": {
+    "rb1960.la.sancti.11-02.lectio7": {
+      "key": "rb1960.la.sancti.11-02.lectio7",
+      "kind": "reading",
+      "citation": "1 Cor 15:12-22",
+      "text": "De Epístola prima beáti Pauli Apóstoli ad Corínthios\n!1 Cor 15:12-22\n12 Si Christus prædicátur quod resurréxit a mórtuis, quómodo quidam dicunt in vobis, quóniam resurréctio mortuórum non est?\n13 Si autem resurréctio mortuórum non est: neque Christus resurréxit.\n14 Si autem Christus non resurréxit, inánis est ergo prædicátio nostra, inánis est et fides vestra:\n15 invenímur autem et falsi testes Dei: quóniam testimónium díximus advérsus Deum quod suscitáverit Christum, quem non suscitávit, si mórtui non resúrgunt.\n16 Nam si mórtui non resúrgunt, neque Christus resurréxit.\n17 Quod si Christus non resurréxit, vana est fides vestra: adhuc enim estis in peccátis vestris.\n18 Ergo et qui dormiérunt in Christo, periérunt.\n19 Si in hac vita tantum in Christo sperántes sumus, miserabilióres sumus ómnibus homínibus.\n20 Nunc autem Christus resurréxit a mórtuis primítiæ dormiéntium,\n21 quóniam quidem per hóminem mors, et per hóminem resurréctio mortuórum.\n22 Et sicut in Adam omnes moriúntur, ita et in Christo omnes vivificabúntur.",
+      "source": {
+        "repo": "DivinumOfficium/divinum-officium",
+        "commit": "0ce8747d7dba3276fc05937635e02360b49a60a6",
+        "path": "web/www/horas/Latin/Sancti/11-02.txt",
+        "section": "Lectio7"
+      }
+    },
+    "rb1960.la.sancti.11-02.conclusio": {
+      "key": "rb1960.la.sancti.11-02.conclusio",
+      "kind": "dismissal",
+      "citation": "Conclusio specialis",
+      "text": "!Conclusio specialis\n&Gloria\nV. Requiéscant in pace.\nR. Amen.",
+      "source": {
+        "repo": "DivinumOfficium/divinum-officium",
+        "commit": "0ce8747d7dba3276fc05937635e02360b49a60a6",
+        "path": "web/www/horas/Latin/Sancti/11-02.txt",
+        "section": "Conclusio"
+      }
+    }
+  }
+}

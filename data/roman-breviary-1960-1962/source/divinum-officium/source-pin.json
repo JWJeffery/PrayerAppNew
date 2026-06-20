@@ -1,0 +1,11 @@
+{
+  "schema_version": "roman_breviary_1960_1962_source_pin_v1",
+  "repo": "DivinumOfficium/divinum-officium",
+  "branch": "master",
+  "commit": "0ce8747d7dba3276fc05937635e02360b49a60a6",
+  "mirror_date": "2026-06-20",
+  "file_subset_policy": "dev vertical slice only; not a full mirror",
+  "mirrored_files": [
+    "web/www/horas/Latin/Sancti/11-02.txt"
+  ]
+}
