@@ -1544,13 +1544,19 @@
   },
   "documentation_manifest": {
     "status": "internal",
-    "last_realigned": "2026-04-21",
+    "last_realigned": "2026-06-20",
     "project_roadmap": {
       "path": "project_roadmap.json",
       "status": "active",
       "created": "2026-05-20",
       "roadmap_version": "0.1.0",
       "purpose": "Canonical Universal Office Beta Release roadmap and phase/tranche planning source."
+    },
+    "universal_office_core_contract": {
+      "path": "documentation/UNIVERSAL_OFFICE_CORE_CONTRACT.md",
+      "status": "active",
+      "created": "2026-06-20",
+      "purpose": "Phase -1 architecture contract above all office-family lanes: no universal resolver; each lane keeps its own resolver, calendar, rank logic, vocabulary, and structure and emits a shared resolved-office output contract."
     }
   },
   "external_corpus_integrations": {
