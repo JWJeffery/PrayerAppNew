@@ -43,3 +43,19 @@ This first tranche adjudicates:
 1. Audit the adjudication overlay against the manifest.
 2. Build canon-profile drafts using adjudicated identities.
 3. Build resolver registry lookup only after identities and profile membership are stable.
+
+
+## Second Tranche
+
+The second tranche adjudicates the remaining small outside-route witness families before returning to the larger Ethiopian collection:
+
+- 3 Corinthians
+- The Prayer of Apollonius
+- Armenian Canticles / Odes
+- Coptic Odes / Four Hoos
+- Eastern Orthodox Nine Odes
+- Ethiopian Odes / Mequtariya
+- Odes of Solomon
+- Syriac Letter of Baruch
+
+These are still draft adjudications. They do not move files and do not change resolver runtime behavior.

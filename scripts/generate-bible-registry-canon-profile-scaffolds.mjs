@@ -26,6 +26,18 @@ function stableGeneratedAt(outPath) {
 }
 
 function profileForHint(profileFamily) {
+  if (profileFamily === 'armenian_apostolic') {
+    return { key: 'armenian_apostolic_witness', filename: 'armenian-apostolic-witness.draft.json', display_name: 'Armenian Apostolic Broader Witness / Liturgical Draft', tradition_family: 'oriental_orthodox', profile_kind: 'witness_profile_scaffold' };
+  }
+
+  if (profileFamily === 'coptic_orthodox') {
+    return { key: 'coptic_orthodox_liturgical', filename: 'coptic-orthodox-liturgical.draft.json', display_name: 'Coptic Orthodox Liturgical Witness Draft', tradition_family: 'oriental_orthodox', profile_kind: 'witness_profile_scaffold' };
+  }
+
+  if (profileFamily === 'syriac_christian') {
+    return { key: 'syriac_christian_witness', filename: 'syriac-christian-witness.draft.json', display_name: 'Syriac Christian Witness Draft', tradition_family: 'syriac_christian', profile_kind: 'witness_profile_scaffold' };
+  }
+
   if (profileFamily === 'ethiopian_orthodox') {
     return {
       key: 'ethiopian_orthodox_broader',
@@ -123,6 +135,9 @@ for (const [key, profile] of profiles.entries()) {
     key === 'ethiopian_orthodox_broader' ? 'ethiopian_orthodox' :
     key === 'roman_catholic' ? 'catholic' :
     key === 'eastern_orthodox' ? 'eastern_orthodox' :
+    key === 'armenian_apostolic_witness' ? 'armenian_apostolic' :
+    key === 'coptic_orthodox_liturgical' ? 'coptic_orthodox' :
+    key === 'syriac_christian_witness' ? 'syriac_christian' :
     'default'
   );
 

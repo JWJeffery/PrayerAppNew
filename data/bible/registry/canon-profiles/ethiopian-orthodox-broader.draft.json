@@ -28,6 +28,22 @@
     },
     {
       "order": null,
+      "identity_id": "ETHIOPIAN_ODES",
+      "base_work_id": "ETHIOPIAN_ODES",
+      "text_form_id": "ETHIOPIAN_ODES_CURRENT_WITNESS",
+      "source_path": "data/bible/ODES/ethiopianodes.json",
+      "preferred_title": "Ethiopian Odes / Mequtariya",
+      "work_type": "ethiopian_liturgical_canticle_collection",
+      "canonical_status": "liturgical_reading",
+      "use_class": "read_in_church",
+      "ordinary_chapter_verse_resolver_candidate": false,
+      "adapter_required": "canticle_or_odes_collection_adapter",
+      "notes": [
+        "Liturgical/canticle collection witness."
+      ]
+    },
+    {
+      "order": null,
       "identity_id": "JOSIPPON",
       "base_work_id": "JOSIPPON",
       "text_form_id": "JOSIPPON_ETHIOPIC_WITNESS",

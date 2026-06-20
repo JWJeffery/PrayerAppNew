@@ -5,10 +5,26 @@
   "rule": "Profile files listed here are incomplete scaffolds unless explicitly promoted later.",
   "profiles": [
     {
+      "profile_key": "armenian_apostolic_witness",
+      "display_name": "Armenian Apostolic Broader Witness / Liturgical Draft",
+      "path": "data/bible/registry/canon-profiles/armenian-apostolic-witness.draft.json",
+      "entry_count": 3,
+      "status": "draft_incomplete_scaffold",
+      "completeness": "incomplete_tranche_1_identity_adjudications_only"
+    },
+    {
+      "profile_key": "coptic_orthodox_liturgical",
+      "display_name": "Coptic Orthodox Liturgical Witness Draft",
+      "path": "data/bible/registry/canon-profiles/coptic-orthodox-liturgical.draft.json",
+      "entry_count": 1,
+      "status": "draft_incomplete_scaffold",
+      "completeness": "incomplete_tranche_1_identity_adjudications_only"
+    },
+    {
       "profile_key": "eastern_orthodox",
       "display_name": "Eastern Orthodox Canon / Anagignoskomena Draft",
       "path": "data/bible/registry/canon-profiles/eastern-orthodox.draft.json",
-      "entry_count": 2,
+      "entry_count": 3,
       "status": "draft_incomplete_scaffold",
       "completeness": "incomplete_tranche_1_identity_adjudications_only"
     },
@@ -16,7 +32,7 @@
       "profile_key": "ethiopian_orthodox_broader",
       "display_name": "Ethiopian Orthodox Broader Canon / Liturgical Witness Draft",
       "path": "data/bible/registry/canon-profiles/ethiopian-orthodox-broader.draft.json",
-      "entry_count": 8,
+      "entry_count": 9,
       "status": "draft_incomplete_scaffold",
       "completeness": "incomplete_tranche_1_identity_adjudications_only"
     },
@@ -32,7 +48,15 @@
       "profile_key": "study_witness",
       "display_name": "Study Witness / Non-Profile Witness Draft",
       "path": "data/bible/registry/canon-profiles/study-witness.draft.json",
-      "entry_count": 6,
+      "entry_count": 10,
+      "status": "draft_incomplete_scaffold",
+      "completeness": "incomplete_tranche_1_identity_adjudications_only"
+    },
+    {
+      "profile_key": "syriac_christian_witness",
+      "display_name": "Syriac Christian Witness Draft",
+      "path": "data/bible/registry/canon-profiles/syriac-christian-witness.draft.json",
+      "entry_count": 2,
       "status": "draft_incomplete_scaffold",
       "completeness": "incomplete_tranche_1_identity_adjudications_only"
     }

@@ -1,0 +1,29 @@
+{
+  "schema": "universal_office_bible_canon_profile_draft_v1",
+  "status": "draft_incomplete_scaffold",
+  "completeness": "incomplete_tranche_1_identity_adjudications_only",
+  "generated_at": "2026-06-20T02:39:27.348Z",
+  "profile_key": "coptic_orthodox_liturgical",
+  "display_name": "Coptic Orthodox Liturgical Witness Draft",
+  "tradition_family": "oriental_orthodox",
+  "profile_kind": "witness_profile_scaffold",
+  "rule": "This is a canon/witness profile scaffold. It is not a final full canon and does not change resolver runtime behavior.",
+  "entries": [
+    {
+      "order": null,
+      "identity_id": "COPTIC_ODES",
+      "base_work_id": "COPTIC_ODES",
+      "text_form_id": "COPTIC_ODES_CURRENT_WITNESS",
+      "source_path": "data/bible/ODES/copticodesCO.json",
+      "preferred_title": "The Four Hoos / Coptic Odes",
+      "work_type": "coptic_liturgical_canticle_collection",
+      "canonical_status": "liturgical_reading",
+      "use_class": "read_in_church",
+      "ordinary_chapter_verse_resolver_candidate": false,
+      "adapter_required": "canticle_or_odes_collection_adapter",
+      "notes": [
+        "Liturgical/canticle collection witness."
+      ]
+    }
+  ]
+}

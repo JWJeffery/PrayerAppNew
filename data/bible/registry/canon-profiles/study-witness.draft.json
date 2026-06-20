@@ -45,6 +45,23 @@
     },
     {
       "order": null,
+      "identity_id": "THIRD_CORINTHIANS",
+      "base_work_id": "THIRD_CORINTHIANS",
+      "text_form_id": "THIRD_CORINTHIANS_ARMENIAN_WITNESS",
+      "source_path": "data/bible/AR/3corinthiansAR.json",
+      "preferred_title": "3 Corinthians",
+      "work_type": "armenian_apostolic_broader_witness_text",
+      "canonical_status": "witness_only",
+      "use_class": "study_only",
+      "ordinary_chapter_verse_resolver_candidate": true,
+      "adapter_required": null,
+      "notes": [
+        "Treat as Armenian broader witness / appendix candidate, not ordinary New Testament by default.",
+        "Do not move during resolver work."
+      ]
+    },
+    {
+      "order": null,
       "identity_id": "DANIEL",
       "base_work_id": "DANIEL",
       "text_form_id": "DANIEL_GREEK_EXTENDED",
@@ -106,6 +123,55 @@
       "adapter_required": null,
       "notes": [
         "Known storage/classification review target.",
+        "Do not move during resolver work."
+      ]
+    },
+    {
+      "order": null,
+      "identity_id": "LETTER_OF_BARUCH_SYRIAC",
+      "base_work_id": "LETTER_OF_BARUCH_SYRIAC",
+      "text_form_id": "LETTER_OF_BARUCH_SYRIAC_WITNESS",
+      "source_path": "data/bible/SY/letterofbaruchSY.json",
+      "preferred_title": "The Letter of Baruch",
+      "work_type": "syriac_broader_witness_text",
+      "canonical_status": "witness_only",
+      "use_class": "study_only",
+      "ordinary_chapter_verse_resolver_candidate": true,
+      "adapter_required": null,
+      "notes": [
+        "Treat conservatively as Syriac witness material until Church of the East / Syriac canon-profile adjudication is explicit."
+      ]
+    },
+    {
+      "order": null,
+      "identity_id": "ODES_OF_SOLOMON",
+      "base_work_id": "ODES_OF_SOLOMON",
+      "text_form_id": "ODES_OF_SOLOMON_SYRIAC_WITNESS",
+      "source_path": "data/bible/ODES/odesofsolomonSY.json",
+      "preferred_title": "The Odes of Solomon",
+      "work_type": "syriac_or_early_christian_ode_collection_witness",
+      "canonical_status": "witness_only",
+      "use_class": "study_only",
+      "ordinary_chapter_verse_resolver_candidate": false,
+      "adapter_required": "canticle_or_odes_collection_adapter",
+      "notes": [
+        "Treat conservatively as Syriac/early Christian witness material unless later profile adjudication assigns stronger liturgical status."
+      ]
+    },
+    {
+      "order": null,
+      "identity_id": "PRAYER_OF_APOLLONIUS",
+      "base_work_id": "PRAYER_OF_APOLLONIUS",
+      "text_form_id": "PRAYER_OF_APOLLONIUS_ARMENIAN_WITNESS",
+      "source_path": "data/bible/AR/prayerofapolloniusAR.json",
+      "preferred_title": "The Prayer of Apollonius",
+      "work_type": "armenian_prayer_or_apocryphal_witness_text",
+      "canonical_status": "witness_only",
+      "use_class": "study_only",
+      "ordinary_chapter_verse_resolver_candidate": true,
+      "adapter_required": null,
+      "notes": [
+        "Treat as Armenian witness material unless later profile adjudication assigns a stronger status.",
         "Do not move during resolver work."
       ]
     }

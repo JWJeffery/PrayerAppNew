@@ -30,8 +30,8 @@ if (adjudications) {
     failures.push('identity-adjudications: bad schema');
   }
 
-  if (rows.length !== 12) {
-    failures.push(`identity-adjudications: expected 12 tranche-one adjudications, got ${rows.length}`);
+  if (rows.length < 20) {
+    failures.push(`identity-adjudications: expected at least 20 adjudications after tranche two, got ${rows.length}`);
   }
 
   const requiredFields = [

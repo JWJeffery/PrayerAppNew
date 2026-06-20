@@ -40,6 +40,22 @@
       "notes": [
         "Must be handled as Esther text form / additions-aware identity."
       ]
+    },
+    {
+      "order": null,
+      "identity_id": "EASTERN_ORTHODOX_NINE_ODES",
+      "base_work_id": "EASTERN_ORTHODOX_NINE_ODES",
+      "text_form_id": "EASTERN_ORTHODOX_NINE_ODES_CURRENT_WITNESS",
+      "source_path": "data/bible/ODES/eoodes.json",
+      "preferred_title": "The Nine Odes",
+      "work_type": "eastern_orthodox_liturgical_canticle_collection",
+      "canonical_status": "liturgical_reading",
+      "use_class": "read_in_church",
+      "ordinary_chapter_verse_resolver_candidate": false,
+      "adapter_required": "canticle_or_odes_collection_adapter",
+      "notes": [
+        "Liturgical/canticle collection witness."
+      ]
     }
   ]
 }

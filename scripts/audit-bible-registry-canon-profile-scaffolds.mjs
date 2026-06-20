@@ -26,10 +26,13 @@ const validStatuses = new Set(Object.keys(vocabulary?.canonical_statuses || {}))
 const validUseClasses = new Set(Object.keys(vocabulary?.use_classes || {}));
 
 const requiredProfileKeys = [
+  'armenian_apostolic_witness',
+  'coptic_orthodox_liturgical',
   'eastern_orthodox',
   'ethiopian_orthodox_broader',
   'roman_catholic',
-  'study_witness'
+  'study_witness',
+  'syriac_christian_witness'
 ];
 
 if (index) {

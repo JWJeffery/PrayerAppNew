@@ -10,10 +10,13 @@ const artifactPaths = [
   'data/bible/registry/book-identities.draft.json',
   'data/bible/registry/adjudication-buckets.json',
   'data/bible/registry/canon-profiles/index.draft.json',
+  'data/bible/registry/canon-profiles/armenian-apostolic-witness.draft.json',
+  'data/bible/registry/canon-profiles/coptic-orthodox-liturgical.draft.json',
   'data/bible/registry/canon-profiles/eastern-orthodox.draft.json',
   'data/bible/registry/canon-profiles/ethiopian-orthodox-broader.draft.json',
   'data/bible/registry/canon-profiles/roman-catholic.draft.json',
   'data/bible/registry/canon-profiles/study-witness.draft.json',
+  'data/bible/registry/canon-profiles/syriac-christian-witness.draft.json',
   'documentation/BIBLE_REGISTRY_ADJUDICATION_PLAN.md'
 ];
 

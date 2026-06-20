@@ -1,0 +1,63 @@
+{
+  "schema": "universal_office_bible_canon_profile_draft_v1",
+  "status": "draft_incomplete_scaffold",
+  "completeness": "incomplete_tranche_1_identity_adjudications_only",
+  "generated_at": "2026-06-20T02:39:27.340Z",
+  "profile_key": "armenian_apostolic_witness",
+  "display_name": "Armenian Apostolic Broader Witness / Liturgical Draft",
+  "tradition_family": "oriental_orthodox",
+  "profile_kind": "witness_profile_scaffold",
+  "rule": "This is a canon/witness profile scaffold. It is not a final full canon and does not change resolver runtime behavior.",
+  "entries": [
+    {
+      "order": null,
+      "identity_id": "THIRD_CORINTHIANS",
+      "base_work_id": "THIRD_CORINTHIANS",
+      "text_form_id": "THIRD_CORINTHIANS_ARMENIAN_WITNESS",
+      "source_path": "data/bible/AR/3corinthiansAR.json",
+      "preferred_title": "3 Corinthians",
+      "work_type": "armenian_apostolic_broader_witness_text",
+      "canonical_status": "appendix",
+      "use_class": "study_only",
+      "ordinary_chapter_verse_resolver_candidate": true,
+      "adapter_required": null,
+      "notes": [
+        "Treat as Armenian broader witness / appendix candidate, not ordinary New Testament by default.",
+        "Do not move during resolver work."
+      ]
+    },
+    {
+      "order": null,
+      "identity_id": "ARMENIAN_CANTICLES",
+      "base_work_id": "ARMENIAN_CANTICLES",
+      "text_form_id": "ARMENIAN_CANTICLES_CURRENT_WITNESS",
+      "source_path": "data/bible/ODES/armeniancanticlesAR.json",
+      "preferred_title": "Armenian Canticles / Odes",
+      "work_type": "armenian_liturgical_canticle_collection",
+      "canonical_status": "liturgical_reading",
+      "use_class": "read_in_church",
+      "ordinary_chapter_verse_resolver_candidate": false,
+      "adapter_required": "canticle_or_odes_collection_adapter",
+      "notes": [
+        "Liturgical/canticle collection witness."
+      ]
+    },
+    {
+      "order": null,
+      "identity_id": "PRAYER_OF_APOLLONIUS",
+      "base_work_id": "PRAYER_OF_APOLLONIUS",
+      "text_form_id": "PRAYER_OF_APOLLONIUS_ARMENIAN_WITNESS",
+      "source_path": "data/bible/AR/prayerofapolloniusAR.json",
+      "preferred_title": "The Prayer of Apollonius",
+      "work_type": "armenian_prayer_or_apocryphal_witness_text",
+      "canonical_status": "witness_only",
+      "use_class": "study_only",
+      "ordinary_chapter_verse_resolver_candidate": true,
+      "adapter_required": null,
+      "notes": [
+        "Treat as Armenian witness material unless later profile adjudication assigns a stronger status.",
+        "Do not move during resolver work."
+      ]
+    }
+  ]
+}
