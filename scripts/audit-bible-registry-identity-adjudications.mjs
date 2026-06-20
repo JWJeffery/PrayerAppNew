@@ -30,8 +30,8 @@ if (adjudications) {
     failures.push('identity-adjudications: bad schema');
   }
 
-  if (rows.length < 38) {
-    failures.push(`identity-adjudications: expected at least 38 adjudications after Ethiopian textual-witness tranche, got ${rows.length}`);
+  if (rows.length < 45) {
+    failures.push(`identity-adjudications: expected at least 45 adjudications after Ethiopian order/law tranche, got ${rows.length}`);
   }
 
   const requiredFields = [

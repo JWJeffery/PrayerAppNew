@@ -94,3 +94,18 @@ The fifth tranche adjudicates the Ethiopian textual-witness cluster:
 - Rest of the Words of Jeremiah
 
 These are treated as Ethiopian broader textual witnesses in the registry pending later final canon-profile decisions. They remain in their current paths. This tranche does not move files and does not change resolver runtime behavior.
+
+
+## Sixth Tranche
+
+The sixth tranche adjudicates the Ethiopian apostolic order / law / liturgical witness cluster:
+
+- Abtilis / Sentences of the Apostles
+- Gitsiw / The Admonitions
+- Ethiopic Didaskalia
+- Fetha Nagast / Law of the Kings
+- Guba’e Kana / Council of Nicaea
+- Sirate Tsion / Order of Zion
+- Tizaz / The Commandments
+
+These are treated as Ethiopian ecclesial witness materials in the registry. Some receive broader-canon or liturgical-reading hints, but none should be exposed as ordinary Bible-book canon merely because they use book_object shape. They remain in their current paths. This tranche does not move files and does not change resolver runtime behavior.

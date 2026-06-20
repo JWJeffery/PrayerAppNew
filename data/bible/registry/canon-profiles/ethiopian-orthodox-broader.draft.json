@@ -79,6 +79,24 @@
     },
     {
       "order": null,
+      "identity_id": "ABTILIS",
+      "base_work_id": "ABTILIS",
+      "text_form_id": "ABTILIS_ETHIOPIC_WITNESS",
+      "source_path": "data/bible/ET/abtilisET.json",
+      "preferred_title": "Abtilis / Sentences of the Apostles",
+      "work_type": "ethiopian_apostolic_order_witness_text",
+      "canonical_status": "broader_canon",
+      "use_class": "study_only",
+      "ordinary_chapter_verse_resolver_candidate": true,
+      "adapter_required": null,
+      "notes": [
+        "Treat as Ethiopian apostolic-order, law, liturgical, or ecclesial witness material pending final canon-profile adjudication.",
+        "Do not move during resolver work.",
+        "Do not expose as ordinary Bible-book canon merely because it uses book_object shape."
+      ]
+    },
+    {
+      "order": null,
       "identity_id": "ETHIOPIAN_ODES",
       "base_work_id": "ETHIOPIAN_ODES",
       "text_form_id": "ETHIOPIAN_ODES_CURRENT_WITNESS",
@@ -91,6 +109,60 @@
       "adapter_required": "canticle_or_odes_collection_adapter",
       "notes": [
         "Liturgical/canticle collection witness."
+      ]
+    },
+    {
+      "order": null,
+      "identity_id": "FETHA_NAGAST",
+      "base_work_id": "FETHA_NAGAST",
+      "text_form_id": "FETHA_NAGAST_ETHIOPIC_WITNESS",
+      "source_path": "data/bible/ET/fethanagastET.json",
+      "preferred_title": "Fetha Nagast / Law of the Kings",
+      "work_type": "ethiopian_canonical_law_witness_text",
+      "canonical_status": "witness_only",
+      "use_class": "study_only",
+      "ordinary_chapter_verse_resolver_candidate": true,
+      "adapter_required": null,
+      "notes": [
+        "Treat as Ethiopian apostolic-order, law, liturgical, or ecclesial witness material pending final canon-profile adjudication.",
+        "Do not move during resolver work.",
+        "Do not expose as ordinary Bible-book canon merely because it uses book_object shape."
+      ]
+    },
+    {
+      "order": null,
+      "identity_id": "GITSIW_ADMONITIONS",
+      "base_work_id": "GITSIW_ADMONITIONS",
+      "text_form_id": "GITSIW_ADMONITIONS_ETHIOPIC_WITNESS",
+      "source_path": "data/bible/ET/admonitionsET.json",
+      "preferred_title": "Gitsiw / The Admonitions",
+      "work_type": "ethiopian_apostolic_admonition_witness_text",
+      "canonical_status": "broader_canon",
+      "use_class": "study_only",
+      "ordinary_chapter_verse_resolver_candidate": true,
+      "adapter_required": null,
+      "notes": [
+        "Treat as Ethiopian apostolic-order, law, liturgical, or ecclesial witness material pending final canon-profile adjudication.",
+        "Do not move during resolver work.",
+        "Do not expose as ordinary Bible-book canon merely because it uses book_object shape."
+      ]
+    },
+    {
+      "order": null,
+      "identity_id": "GUBAE_KANA",
+      "base_work_id": "GUBAE_KANA",
+      "text_form_id": "GUBAE_KANA_ETHIOPIC_WITNESS",
+      "source_path": "data/bible/ET/guba’ekanaET.json",
+      "preferred_title": "Guba’e Kana / Council of Nicaea",
+      "work_type": "ethiopian_conciliar_witness_text",
+      "canonical_status": "witness_only",
+      "use_class": "study_only",
+      "ordinary_chapter_verse_resolver_candidate": true,
+      "adapter_required": null,
+      "notes": [
+        "Treat as Ethiopian apostolic-order, law, liturgical, or ecclesial witness material pending final canon-profile adjudication.",
+        "Do not move during resolver work.",
+        "Do not expose as ordinary Bible-book canon merely because it uses book_object shape."
       ]
     },
     {
@@ -379,6 +451,24 @@
     },
     {
       "order": null,
+      "identity_id": "SIRATE_TSION",
+      "base_work_id": "SIRATE_TSION",
+      "text_form_id": "SIRATE_TSION_ETHIOPIC_WITNESS",
+      "source_path": "data/bible/ET/siratetsionET.json",
+      "preferred_title": "Sirate Tsion / Order of Zion",
+      "work_type": "ethiopian_liturgical_order_witness_text",
+      "canonical_status": "liturgical_reading",
+      "use_class": "study_only",
+      "ordinary_chapter_verse_resolver_candidate": true,
+      "adapter_required": null,
+      "notes": [
+        "Treat as Ethiopian apostolic-order, law, liturgical, or ecclesial witness material pending final canon-profile adjudication.",
+        "Do not move during resolver work.",
+        "Do not expose as ordinary Bible-book canon merely because it uses book_object shape."
+      ]
+    },
+    {
+      "order": null,
       "identity_id": "MIRACLES_OF_MARY",
       "base_work_id": "MIRACLES_OF_MARY",
       "text_form_id": "MIRACLES_OF_MARY_ETHIOPIC_WITNESS",
@@ -408,6 +498,24 @@
       "notes": [
         "Treat as Ethiopian broader textual witness until a final canon-profile decision assigns a stronger liturgical or canonical status.",
         "Do not move during resolver work."
+      ]
+    },
+    {
+      "order": null,
+      "identity_id": "ETHIOPIC_DIDASKALIA",
+      "base_work_id": "ETHIOPIC_DIDASKALIA",
+      "text_form_id": "ETHIOPIC_DIDASKALIA_WITNESS",
+      "source_path": "data/bible/ET/didaskaliaET.json",
+      "preferred_title": "The Ethiopic Didaskalia",
+      "work_type": "ethiopian_apostolic_order_witness_text",
+      "canonical_status": "broader_canon",
+      "use_class": "study_only",
+      "ordinary_chapter_verse_resolver_candidate": true,
+      "adapter_required": null,
+      "notes": [
+        "Treat as Ethiopian apostolic-order, law, liturgical, or ecclesial witness material pending final canon-profile adjudication.",
+        "Do not move during resolver work.",
+        "Do not expose as ordinary Bible-book canon merely because it uses book_object shape."
       ]
     },
     {
@@ -459,6 +567,24 @@
       "notes": [
         "Treat as Ethiopian broader textual witness until a final canon-profile decision assigns a stronger liturgical or canonical status.",
         "Do not move during resolver work."
+      ]
+    },
+    {
+      "order": null,
+      "identity_id": "TIZAZ",
+      "base_work_id": "TIZAZ",
+      "text_form_id": "TIZAZ_ETHIOPIC_WITNESS",
+      "source_path": "data/bible/ET/tizazET.json",
+      "preferred_title": "Tizaz / The Commandments",
+      "work_type": "ethiopian_apostolic_commandment_witness_text",
+      "canonical_status": "broader_canon",
+      "use_class": "study_only",
+      "ordinary_chapter_verse_resolver_candidate": true,
+      "adapter_required": null,
+      "notes": [
+        "Treat as Ethiopian apostolic-order, law, liturgical, or ecclesial witness material pending final canon-profile adjudication.",
+        "Do not move during resolver work.",
+        "Do not expose as ordinary Bible-book canon merely because it uses book_object shape."
       ]
     }
   ]
