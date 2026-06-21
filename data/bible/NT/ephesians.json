@@ -18,6 +18,14 @@
         "sourceType": "scrollmapper_bible_databases_2025_formats_json_source_witness",
         "rights": "Public Domain",
         "sourceWitness": "documentation/rotherham-source-witness-intake.json"
+      },
+      "KJV": {
+        "status": "present",
+        "note": "Declared during NT systemic contamination cleanup."
+      },
+      "NABRE": {
+        "status": "present",
+        "note": "Declared during NT systemic contamination cleanup."
       }
     }
   },
@@ -30,8 +38,8 @@
           "text": {
             "NRSV": "Paul, an apostle of Christ Jesus by the will of God, To the saints who are in Ephesus and are faithful in Christ Jesus:",
             "Rotherham": "Paul, an apostle of Christ Jesus, through God’s will, unto the saints who are [in Ephesus] and faithful in Christ Jesus,—",
-            "KJV": "1:1 Paul an Apostle of Iesus Christ by the will of God, to the Saincts which are at Ephesus, and to the faithfull in Christ Iesus.",
-            "NABRE": "1:1 I. Address Chapter 1 Greeting. Paul, an apostle of Christ Jesus by the will of God, to the holy ones who are [in Ephesus] faithful in Christ Jesus:"
+            "KJV": "Paul an Apostle of Iesus Christ by the will of God, to the Saincts which are at Ephesus, and to the faithfull in Christ Iesus.",
+            "NABRE": "I. Address Chapter 1 Greeting. Paul, an apostle of Christ Jesus by the will of God, to the holy ones who are [in Ephesus] faithful in Christ Jesus:"
           }
         },
         {
@@ -39,8 +47,8 @@
           "text": {
             "NRSV": "Grace to you and peace from God our Father and the Lord Jesus Christ.",
             "Rotherham": "Favour unto you, and peace, from God our Father, and Lord Jesus Christ. ",
-            "KJV": "1:2 Grace be to you, and peace from God our Father, and from the Lord Iesus Christ.",
-            "NABRE": "1:2 grace to you and peace from God our Father and the Lord Jesus Christ."
+            "KJV": "Grace be to you, and peace from God our Father, and from the Lord Iesus Christ.",
+            "NABRE": "grace to you and peace from God our Father and the Lord Jesus Christ."
           }
         },
         {
@@ -48,8 +56,8 @@
           "text": {
             "NRSV": "Blessed be the God and Father of our Lord Jesus Christ, who has blessed us in Christ with every spiritual blessing in the heavenly places,",
             "Rotherham": " Blessed, be the God and Father of our Lord Jesus Christ, who hath blessed us with every spiritual blessing, in the heavenlies, in Christ,",
-            "KJV": "1:3 Blessed be the God and Father of our Lord Iesus Christ, who hath blessed vs with all spirituall blessings in heauenly places in Christ:",
-            "NABRE": "1:3 The Father’s Plan of Salvation. Blessed be the God and Father of our Lord Jesus Christ, who has blessed us in Christ with every spiritual blessing in the heavens,"
+            "KJV": "Blessed be the God and Father of our Lord Iesus Christ, who hath blessed vs with all spirituall blessings in heauenly places in Christ:",
+            "NABRE": "The Father’s Plan of Salvation. Blessed be the God and Father of our Lord Jesus Christ, who has blessed us in Christ with every spiritual blessing in the heavens,"
           }
         },
         {
@@ -57,8 +65,8 @@
           "text": {
             "NRSV": "just as he chose us in Christ before the foundation of the world to be holy and blameless before him in love.",
             "Rotherham": "According as he made choice of us, in him, before the founding of a world, that we might be holy and blameless in his presence; in love,",
-            "KJV": "1:4 According as he hath chosen vs in him, before the foundation of the world, that wee should bee holy, and without blame before him in loue:",
-            "NABRE": "1:4 as he chose us in him, before the foundation of the world, to be holy and without blemish before him. In love"
+            "KJV": "According as he hath chosen vs in him, before the foundation of the world, that wee should bee holy, and without blame before him in loue:",
+            "NABRE": "as he chose us in him, before the foundation of the world, to be holy and without blemish before him. In love"
           }
         },
         {
@@ -66,8 +74,8 @@
           "text": {
             "NRSV": "He destined us for adoption as his children through Jesus Christ, according to the good pleasure of his will,",
             "Rotherham": "marking us out beforehand unto sonship, through Jesus Christ, for himself, according to the good pleasure of his will,",
-            "KJV": "1:5 Hauing predestinated vs vnto the adoption of children by Iesus Christ to himselfe, according to the good pleasure of his will:",
-            "NABRE": "1:5 he destined us for adoption to himself through Jesus Christ, in accord with the favor of his will,"
+            "KJV": "Hauing predestinated vs vnto the adoption of children by Iesus Christ to himselfe, according to the good pleasure of his will:",
+            "NABRE": "he destined us for adoption to himself through Jesus Christ, in accord with the favor of his will,"
           }
         },
         {
@@ -75,8 +83,8 @@
           "text": {
             "NRSV": "to the praise of his glorious grace that he freely bestowed on us in the Beloved.",
             "Rotherham": "Unto the praise of the glory of his favour wherewith he favoured us in the Beloved One,—",
-            "KJV": "1:6 To the praise of the glorie of his grace, wherein he hath made vs accepted in the beloued:",
-            "NABRE": "1:6 for the praise of the glory of his grace that he granted us in the beloved."
+            "KJV": "To the praise of the glorie of his grace, wherein he hath made vs accepted in the beloued:",
+            "NABRE": "for the praise of the glory of his grace that he granted us in the beloved."
           }
         },
         {
@@ -84,8 +92,8 @@
           "text": {
             "NRSV": "In him we have redemption through his blood, the forgiveness of our trespasses, according to the riches of his grace",
             "Rotherham": "In whom we have the redemption through his blood, the remission of our offences, according to the riches of his favour,",
-            "KJV": "1:7 In whom wee haue redemption through his blood, the forgiuenesse of sinnes, according to the riches of his grace,",
-            "NABRE": "1:7 Fulfillment Through Christ. In him we have redemption by his blood, the forgiveness of transgressions, in accord with the riches of his grace"
+            "KJV": "In whom wee haue redemption through his blood, the forgiuenesse of sinnes, according to the riches of his grace,",
+            "NABRE": "Fulfillment Through Christ. In him we have redemption by his blood, the forgiveness of transgressions, in accord with the riches of his grace"
           }
         },
         {
@@ -93,8 +101,8 @@
           "text": {
             "NRSV": "that he lavished on us. With all wisdom and insight",
             "Rotherham": "which he made to superabound towards us; in all wisdom and prudence,",
-            "KJV": "1:8 Wherein hee hath abounded toward vs in all wisedome and prudence:",
-            "NABRE": "1:8 that he lavished upon us. In all wisdom and insight,"
+            "KJV": "Wherein hee hath abounded toward vs in all wisedome and prudence:",
+            "NABRE": "that he lavished upon us. In all wisdom and insight,"
           }
         },
         {
@@ -102,8 +110,8 @@
           "text": {
             "NRSV": "he has made known to us the mystery of his will, according to his good pleasure that he set forth in Christ,",
             "Rotherham": "making known to us the sacred secret of his will, according to his good pleasure which he purposed in him,—",
-            "KJV": "1:9 Hauing made knowen vnto vs the mysterie of his will, according to his good pleasure, which he had purposed in himselfe,",
-            "NABRE": "1:9 he has made known to us the mystery of his will in accord with his favor that he set forth in him"
+            "KJV": "Hauing made knowen vnto vs the mysterie of his will, according to his good pleasure, which he had purposed in himselfe,",
+            "NABRE": "he has made known to us the mystery of his will in accord with his favor that he set forth in him"
           }
         },
         {
@@ -111,8 +119,8 @@
           "text": {
             "NRSV": "as a plan for the fullness of time, to gather up all things in him, things in heaven and things on earth.",
             "Rotherham": "For an administration of the fulness of the seasons, to reunite for himself (under one head) the all things in the Christ, the things upon the heavens, and the things upon the earth, in him:",
-            "KJV": "1:10 That in the dispensation of the fulnesse of times, he might gather together in one all things in Christ, both which are in heauen, and which are on earth, euen in him:",
-            "NABRE": "1:10 as a plan for the fullness of times, to sum up all things in Christ, in heaven and on earth."
+            "KJV": "That in the dispensation of the fulnesse of times, he might gather together in one all things in Christ, both which are in heauen, and which are on earth, euen in him:",
+            "NABRE": "as a plan for the fullness of times, to sum up all things in Christ, in heaven and on earth."
           }
         },
         {
@@ -120,8 +128,8 @@
           "text": {
             "NRSV": "In Christ we have also obtained an inheritance, having been destined according to the purpose of him who accomplishes all things according to his counsel and will,",
             "Rotherham": "In whom also we were taken as an inheritance, according to the purpose of him who energiseth all things according to the counsel of his will,",
-            "KJV": "1:11 In whom also we haue obteined an inheritance, being predestinated according to the purpose of him who worketh all things after the counsell of his owne will:",
-            "NABRE": "1:11 Inheritance Through the Spirit. In him we were also chosen, destined in accord with the purpose of the One who accomplishes all things according to the intention of his will,"
+            "KJV": "In whom also we haue obteined an inheritance, being predestinated according to the purpose of him who worketh all things after the counsell of his owne will:",
+            "NABRE": "Inheritance Through the Spirit. In him we were also chosen, destined in accord with the purpose of the One who accomplishes all things according to the intention of his will,"
           }
         },
         {
@@ -129,8 +137,8 @@
           "text": {
             "NRSV": "so that we, who were the first to set our hope on Christ, might live for the praise of his glory.",
             "Rotherham": "That we should be for the praise of his glory—we who had hoped beforehand in the Christ,—",
-            "KJV": "1:12 That we should be to the praise of his glorie, who first trusted in Christ.",
-            "NABRE": "1:12 so that we might exist for the praise of his glory, we who first hoped in Christ."
+            "KJV": "That we should be to the praise of his glorie, who first trusted in Christ.",
+            "NABRE": "so that we might exist for the praise of his glory, we who first hoped in Christ."
           }
         },
         {
@@ -138,8 +146,8 @@
           "text": {
             "NRSV": "In him you also, when you had heard the word of truth, the gospel of your salvation, and had believed in him, were marked with the seal of the promised Holy Spirit;",
             "Rotherham": "In whom, ye also—hearing the word of the truth, the glad-message of your salvation,—in whom also believing,—were sealed with the Spirit of the promise, the Holy [Spirit],",
-            "KJV": "1:13 In whom ye also trusted, after that ye heard the word of trueth, the Gospel of your saluation: in whom also after that yee beleeued, yee were sealed with that holy Spirit of promise,",
-            "NABRE": "1:13 In him you also, who have heard the word of truth, the gospel of your salvation, and have believed in him, were sealed with the promised holy Spirit,"
+            "KJV": "In whom ye also trusted, after that ye heard the word of trueth, the Gospel of your saluation: in whom also after that yee beleeued, yee were sealed with that holy Spirit of promise,",
+            "NABRE": "In him you also, who have heard the word of truth, the gospel of your salvation, and have believed in him, were sealed with the promised holy Spirit,"
           }
         },
         {
@@ -147,8 +155,8 @@
           "text": {
             "NRSV": "this is the pledge of our inheritance toward redemption as God’s own people, to the praise of his glory.",
             "Rotherham": "Which is an earnest of our inheritance, unto the redemption of the acquisition;—unto his glorious praise. ",
-            "KJV": "1:14 Which is the earnest of our inheritance, vntill the redemption of the purchased possession, vnto the praise of his glorie.",
-            "NABRE": "1:14 which is the first installment of our inheritance toward redemption as God’s possession, to the praise of his glory. II. Unity of the Church in Christ The Church as Christ’s Body."
+            "KJV": "Which is the earnest of our inheritance, vntill the redemption of the purchased possession, vnto the praise of his glorie.",
+            "NABRE": "which is the first installment of our inheritance toward redemption as God’s possession, to the praise of his glory. II. Unity of the Church in Christ The Church as Christ’s Body."
           }
         },
         {
@@ -156,8 +164,8 @@
           "text": {
             "NRSV": "I have heard of your faith in the Lord Jesus and your love toward all the saints, and for this reason",
             "Rotherham": " For this cause, I also,—having heard of the faith on your part in the Lord Jesus, and that towards all the saints,",
-            "KJV": "1:15 Wherefore I also, after I heard of your faith in the Lord Iesus, and loue vnto all the Saints,",
-            "NABRE": "1:15 Therefore, I, too, hearing of your faith in the Lord Jesus and of your love for all the holy ones,"
+            "KJV": "Wherefore I also, after I heard of your faith in the Lord Iesus, and loue vnto all the Saints,",
+            "NABRE": "Therefore, I, too, hearing of your faith in the Lord Jesus and of your love for all the holy ones,"
           }
         },
         {
@@ -165,8 +173,8 @@
           "text": {
             "NRSV": "I do not cease to give thanks for you as I remember you in my prayers.",
             "Rotherham": "Cease not giving thanks in your behalf, making mention in my prayers,",
-            "KJV": "1:16 Cease not to giue thankes for you, making mention of you in my prayers,",
-            "NABRE": "1:16 do not cease giving thanks for you, remembering you in my prayers,"
+            "KJV": "Cease not to giue thankes for you, making mention of you in my prayers,",
+            "NABRE": "do not cease giving thanks for you, remembering you in my prayers,"
           }
         },
         {
@@ -174,8 +182,8 @@
           "text": {
             "NRSV": "I pray that the God of our Lord Jesus Christ, the Father of glory, may give you a spirit of wisdom and revelation as you come to know him,",
             "Rotherham": "That, the God of our Lord Jesus Christ, the Father of glory, would give you a Spirit of wisdom and understanding in gaining a personal knowledge of him,—",
-            "KJV": "1:17 That the God of our Lord Iesus Christ the Father of glorie, may giue vnto you the Spirit of wisedome and reuelation in the knowledge of him:",
-            "NABRE": "1:17 that the God of our Lord Jesus Christ, the Father of glory, may give you a spirit of wisdom and revelation resulting in knowledge of him."
+            "KJV": "That the God of our Lord Iesus Christ the Father of glorie, may giue vnto you the Spirit of wisedome and reuelation in the knowledge of him:",
+            "NABRE": "that the God of our Lord Jesus Christ, the Father of glory, may give you a spirit of wisdom and revelation resulting in knowledge of him."
           }
         },
         {
@@ -183,8 +191,8 @@
           "text": {
             "NRSV": "so that, with the eyes of your heart enlightened, you may know what is the hope to which he has called you, what are the riches of his glorious inheritance among the saints,",
             "Rotherham": "The eyes of your heart having been enlightened, that ye may know—what is the hope of his calling, what the riches of the glory of his inheritance in the saints,",
-            "KJV": "1:18 The eyes of your vnderstanding being inlightned: that yee may know what is the hope of his calling, and what the riches of the glorie of his inheritance in the Saints:",
-            "NABRE": "1:18 May the eyes of [your] hearts be enlightened, that you may know what is the hope that belongs to his call, what are the riches of glory in his inheritance among the holy ones,"
+            "KJV": "The eyes of your vnderstanding being inlightned: that yee may know what is the hope of his calling, and what the riches of the glorie of his inheritance in the Saints:",
+            "NABRE": "May the eyes of [your] hearts be enlightened, that you may know what is the hope that belongs to his call, what are the riches of glory in his inheritance among the holy ones,"
           }
         },
         {
@@ -192,8 +200,8 @@
           "text": {
             "NRSV": "and what is the immeasurable greatness of his power for us who believe, according to the working of his great power.",
             "Rotherham": "And what the surpassing greatness of his power unto us who believe,—according to the energy of the grasp of his might",
-            "KJV": "1:19 And what is the exceeding greatnesse of his power to vs-ward who beleeue, according to the working of his mightie power:",
-            "NABRE": "1:19 and what is the surpassing greatness of his power for us who believe, in accord with the exercise of his great might,"
+            "KJV": "And what is the exceeding greatnesse of his power to vs-ward who beleeue, according to the working of his mightie power:",
+            "NABRE": "and what is the surpassing greatness of his power for us who believe, in accord with the exercise of his great might,"
           }
         },
         {
@@ -201,8 +209,8 @@
           "text": {
             "NRSV": "God put this power to work in Christ when he raised him from the dead and seated him at his right hand in the heavenly places,",
             "Rotherham": "which he energised in the Christ, when he raised him from among the dead, and seated him at his right hand in the heavenlies,",
-            "KJV": "1:20 Which he wrought in Christ when he raised him from the dead, and set him at his owne right hand in the heauenly places,",
-            "NABRE": "1:20 which he worked in Christ, raising him from the dead and seating him at his right hand in the heavens,"
+            "KJV": "Which he wrought in Christ when he raised him from the dead, and set him at his owne right hand in the heauenly places,",
+            "NABRE": "which he worked in Christ, raising him from the dead and seating him at his right hand in the heavens,"
           }
         },
         {
@@ -210,8 +218,8 @@
           "text": {
             "NRSV": "far above all rule and authority and power and dominion, and above every name that is named, not only in this age but also in the age to come.",
             "Rotherham": "Over-above all principality, authority, and power, and lordship, and every name that is named, not only in this age, but also in the coming one,",
-            "KJV": "1:21 Farre aboue all principalitie, and power, and might, and dominion, and euery name that is named, not onely in this world, but also in that which is to come:",
-            "NABRE": "1:21 far above every principality, authority, power, and dominion, and every name that is named not only in this age but also in the one to come."
+            "KJV": "Farre aboue all principalitie, and power, and might, and dominion, and euery name that is named, not onely in this world, but also in that which is to come:",
+            "NABRE": "far above every principality, authority, power, and dominion, and every name that is named not only in this age but also in the one to come."
           }
         },
         {
@@ -219,8 +227,8 @@
           "text": {
             "NRSV": "And he has put all things under his feet and has made him the head over all things for the church,",
             "Rotherham": "And did put, all things, in subjection beneath his feet. And gave him to be head over all things unto the assembly,",
-            "KJV": "1:22 And hath put all things vnder his feete, and gaue him to be the head ouer all things to the Church,",
-            "NABRE": "1:22 And he put all things beneath his feet and gave him as head over all things to the church,"
+            "KJV": "And hath put all things vnder his feete, and gaue him to be the head ouer all things to the Church,",
+            "NABRE": "And he put all things beneath his feet and gave him as head over all things to the church,"
           }
         },
         {
@@ -228,8 +236,8 @@
           "text": {
             "NRSV": "which is his body, the fullness of him who fills all in all.",
             "Rotherham": "Which, indeed, is his body, the fulness of him who, the all things in all, is for himself filling up.  ",
-            "KJV": "1:23 Which is his body, the fulnesse of him that filleth all in all.",
-            "NABRE": "1:23 which is his body, the fullness of the one who fills all things in every way."
+            "KJV": "Which is his body, the fulnesse of him that filleth all in all.",
+            "NABRE": "which is his body, the fullness of the one who fills all things in every way."
           }
         }
       ]
@@ -242,8 +250,8 @@
           "text": {
             "NRSV": "You were dead through the trespasses and sins",
             "Rotherham": "[Unto] you also—being dead by your offences and sins,",
-            "KJV": "2:1 And you hath hee quickned who were dead in trespasses, and sinnes,",
-            "NABRE": "2:1 Chapter 2 Generosity of God’s Plan. You were dead in your transgressions and sins"
+            "KJV": "And you hath hee quickned who were dead in trespasses, and sinnes,",
+            "NABRE": "Chapter 2 Generosity of God’s Plan. You were dead in your transgressions and sins"
           }
         },
         {
@@ -251,8 +259,8 @@
           "text": {
             "NRSV": "in which you once lived, following the course of this world, following the ruler of the power of the air, the spirit that is now at work among those who are disobedient.",
             "Rotherham": "In which at one time ye walked, according to the age of the world, according to the prince of the authority of the air, of the spirit that now energiseth in the sons of disobedience,",
-            "KJV": "2:2 Wherein in time past ye walked according to the course of this world, according to the prince of the power of the aire, the spirit that now worketh in the children of disobedience,",
-            "NABRE": "2:2 in which you once lived following the age of this world, following the ruler of the power of the air, the spirit that is now at work in the disobedient."
+            "KJV": "Wherein in time past ye walked according to the course of this world, according to the prince of the power of the aire, the spirit that now worketh in the children of disobedience,",
+            "NABRE": "in which you once lived following the age of this world, following the ruler of the power of the air, the spirit that is now at work in the disobedient."
           }
         },
         {
@@ -260,8 +268,8 @@
           "text": {
             "NRSV": "All of us once lived among them in the passions of our flesh, following the desires of flesh and senses, and we were by nature children of wrath, like everyone else.",
             "Rotherham": "Among whom also, we all, had our behaviour, at one time, in the covetings of our flesh, doing the things desired by the flesh and the mind, and were children, by nature, of anger—even as the rest,— ",
-            "KJV": "2:3 Among whom also we all had our conuersation in times past, in the lusts of our flesh, fulfilling the desires of the flesh, and of the minde, and were by nature the children of wrath, euen as others:",
-            "NABRE": "2:3 All of us once lived among them in the desires of our flesh, following the wishes of the flesh and the impulses, and we were by nature children of wrath, like the rest."
+            "KJV": "Among whom also we all had our conuersation in times past, in the lusts of our flesh, fulfilling the desires of the flesh, and of the minde, and were by nature the children of wrath, euen as others:",
+            "NABRE": "All of us once lived among them in the desires of our flesh, following the wishes of the flesh and the impulses, and we were by nature children of wrath, like the rest."
           }
         },
         {
@@ -269,8 +277,8 @@
           "text": {
             "NRSV": "But God, who is rich in mercy, out of the great love with which he loved us",
             "Rotherham": " But, God, being rich in mercy, by reason of the great love wherewith he loved us,",
-            "KJV": "2:4 But God who is rich in mercie, for his great loue wherewith hee loued vs,",
-            "NABRE": "2:4 But God, who is rich in mercy, because of the great love he had for us,"
+            "KJV": "But God who is rich in mercie, for his great loue wherewith hee loued vs,",
+            "NABRE": "But God, who is rich in mercy, because of the great love he had for us,"
           }
         },
         {
@@ -278,8 +286,8 @@
           "text": {
             "NRSV": "even when we were dead through our trespasses, made us alive together with Christ—by grace you have been saved—",
             "Rotherham": "Although we were dead by our offences, gave us life together with the Christ,—by favour, ye have been saved,—",
-            "KJV": "2:5 Euen when wee were dead in sinnes, hath quickned vs together with Christ, (by grace ye are saued)",
-            "NABRE": "2:5 even when we were dead in our transgressions, brought us to life with Christ (by grace you have been saved),"
+            "KJV": "Euen when wee were dead in sinnes, hath quickned vs together with Christ, (by grace ye are saued)",
+            "NABRE": "even when we were dead in our transgressions, brought us to life with Christ (by grace you have been saved),"
           }
         },
         {
@@ -287,8 +295,8 @@
           "text": {
             "NRSV": "and raised us up with him and seated us with him in the heavenly places in Christ Jesus,",
             "Rotherham": "And raised us up together, and seated us together in the heavenlies, in Christ:",
-            "KJV": "2:6 And hath raised vs vp together, and made vs sit together in heauenly places in Christ Iesus:",
-            "NABRE": "2:6 raised us up with him, and seated us with him in the heavens in Christ Jesus,"
+            "KJV": "And hath raised vs vp together, and made vs sit together in heauenly places in Christ Iesus:",
+            "NABRE": "raised us up with him, and seated us with him in the heavens in Christ Jesus,"
           }
         },
         {
@@ -296,8 +304,8 @@
           "text": {
             "NRSV": "so that in the ages to come he might show the immeasurable riches of his grace in kindness toward us in Christ Jesus.",
             "Rotherham": "That he might point out, in the oncoming ages, the surpassing riches of his favour in graciousness upon us, in Christ Jesus;",
-            "KJV": "2:7 That in the ages to come, hee might shew the exceeding riches of his grace, in his kindenesse towards vs, through Christ Iesus.",
-            "NABRE": "2:7 that in the ages to come he might show the immeasurable riches of his grace in his kindness to us in Christ Jesus."
+            "KJV": "That in the ages to come, hee might shew the exceeding riches of his grace, in his kindenesse towards vs, through Christ Iesus.",
+            "NABRE": "that in the ages to come he might show the immeasurable riches of his grace in his kindness to us in Christ Jesus."
           }
         },
         {
@@ -305,8 +313,8 @@
           "text": {
             "NRSV": "For by grace you have been saved through faith, and this is not your own doing; it is the gift of God—",
             "Rotherham": "For, by his favour, have ye been saved, through means of faith, and this [hath come to pass] —not from you, of God, the free-gift!",
-            "KJV": "2:8 For by grace are ye saued, through faith, and that not of your selues: it is the gift of God:",
-            "NABRE": "2:8 For by grace you have been saved through faith, and this is not from you; it is the gift of God;"
+            "KJV": "For by grace are ye saued, through faith, and that not of your selues: it is the gift of God:",
+            "NABRE": "For by grace you have been saved through faith, and this is not from you; it is the gift of God;"
           }
         },
         {
@@ -314,8 +322,8 @@
           "text": {
             "NRSV": "not the result of works, so that no one may boast.",
             "Rotherham": "Not from works, lest anyone should boast.",
-            "KJV": "2:9 Not of workes, lest any man should boast.",
-            "NABRE": "2:9 it is not from works, so no one may boast."
+            "KJV": "Not of workes, lest any man should boast.",
+            "NABRE": "it is not from works, so no one may boast."
           }
         },
         {
@@ -323,8 +331,8 @@
           "text": {
             "NRSV": "For we are what he has made us, created in Christ Jesus for good works, which God prepared beforehand to be our way of life.",
             "Rotherham": "His, in fact we are—his workmanship, created in Christ Jesus upon a footing of good works, which God prepared beforehand, that, therein, we might walk. ",
-            "KJV": "2:10 For wee are his workemanship, created in Christ Iesus vnto good workes, which God hath before ordeined, that we should walke in them.",
-            "NABRE": "2:10 For we are his handiwork, created in Christ Jesus for the good works that God has prepared in advance, that we should live in them. One in Christ."
+            "KJV": "For wee are his workemanship, created in Christ Iesus vnto good workes, which God hath before ordeined, that we should walke in them.",
+            "NABRE": "For we are his handiwork, created in Christ Jesus for the good works that God has prepared in advance, that we should live in them. One in Christ."
           }
         },
         {
@@ -332,8 +340,8 @@
           "text": {
             "NRSV": "So then, remember that at one time you Gentiles by birth, called “the uncircumcision” by those who are called “the circumcision”—a physical circumcision made in the flesh by human hands—",
             "Rotherham": " Wherefore, keep in remembrance—that, at one time, ye, the nations in flesh, who are called Uncircumcision by the so-called Circumcision in flesh, made by hand,",
-            "KJV": "2:11 Wherefore remember that ye being in time passed Gentiles in the flesh, who are called vncircumcision by that which is called the Circumcision in the flesh made by hands,",
-            "NABRE": "2:11 Therefore, remember that at one time you, Gentiles in the flesh, called the uncircumcision by those called the circumcision, which is done in the flesh by human hands,"
+            "KJV": "Wherefore remember that ye being in time passed Gentiles in the flesh, who are called vncircumcision by that which is called the Circumcision in the flesh made by hands,",
+            "NABRE": "Therefore, remember that at one time you, Gentiles in the flesh, called the uncircumcision by those called the circumcision, which is done in the flesh by human hands,"
           }
         },
         {
@@ -341,8 +349,8 @@
           "text": {
             "NRSV": "remember that you were at that time without Christ, being aliens from the commonwealth of Israel, and strangers to the covenants of promise, having no hope and without God in the world.",
             "Rotherham": "That ye were, in that season, separate from Christ, alienated from the citizenship of Israel, and strangers from the covenants of promise, having no hope, and godless in the world;",
-            "KJV": "2:12 That at that time yee were without Christ, being aliens from the common wealth of Israel, and strangers from the couenants of promise, hauing no hope, & without God in the world.",
-            "NABRE": "2:12 were at that time without Christ, alienated from the community of Israel and strangers to the covenants of promise, without hope and without God in the world."
+            "KJV": "That at that time yee were without Christ, being aliens from the common wealth of Israel, and strangers from the couenants of promise, hauing no hope, & without God in the world.",
+            "NABRE": "were at that time without Christ, alienated from the community of Israel and strangers to the covenants of promise, without hope and without God in the world."
           }
         },
         {
@@ -350,8 +358,8 @@
           "text": {
             "NRSV": "But now in Christ Jesus you who once were far off have been brought near by the blood of Christ.",
             "Rotherham": "But, just now, in Christ Jesus, ye, who at one time were afar off, were made nigh in the blood of the Christ; ",
-            "KJV": "2:13 But now in Christ Iesus, ye who sometimes were far off, are made nigh by the blood of Christ.",
-            "NABRE": "2:13 But now in Christ Jesus you who once were far off have become near by the blood of Christ."
+            "KJV": "But now in Christ Iesus, ye who sometimes were far off, are made nigh by the blood of Christ.",
+            "NABRE": "But now in Christ Jesus you who once were far off have become near by the blood of Christ."
           }
         },
         {
@@ -359,8 +367,8 @@
           "text": {
             "NRSV": "For he is our peace; in his flesh he has made both groups into one and has broken down the dividing wall, that is, the hostility between us.",
             "Rotherham": " He, in fact, is our peace—who made both one, and, the enclosing middle-wall, took down,",
-            "KJV": "2:14 For hee is our peace, who hath made both one, and hath broken downe the middle wall of partition betweene vs:",
-            "NABRE": "2:14 For he is our peace, he who made both one and broke down the dividing wall of enmity, through his flesh,"
+            "KJV": "For hee is our peace, who hath made both one, and hath broken downe the middle wall of partition betweene vs:",
+            "NABRE": "For he is our peace, he who made both one and broke down the dividing wall of enmity, through his flesh,"
           }
         },
         {
@@ -368,8 +376,8 @@
           "text": {
             "NRSV": "He has abolished the law with its commandments and ordinances, that he might create in himself one new humanity in place of the two, thus making peace,",
             "Rotherham": "The enmity, in his flesh—the law of commandments in decrees—bringing to nought,—that, the two, he might create in himself, into one man of new mould, making peace.",
-            "KJV": "2:15 Hauing abolished in his flesh the enmitie, euen the Lawe of Commandements conteined in Ordinances, for to make in himselfe, of twaine, one newe man, so making peace.",
-            "NABRE": "2:15 abolishing the law with its commandments and legal claims, that he might create in himself one new person in place of the two, thus establishing peace,"
+            "KJV": "Hauing abolished in his flesh the enmitie, euen the Lawe of Commandements conteined in Ordinances, for to make in himselfe, of twaine, one newe man, so making peace.",
+            "NABRE": "abolishing the law with its commandments and legal claims, that he might create in himself one new person in place of the two, thus establishing peace,"
           }
         },
         {
@@ -377,8 +385,8 @@
           "text": {
             "NRSV": "and might reconcile both groups to God in one body through the cross, thus putting to death that hostility through it.",
             "Rotherham": "And might fully reconcile them both, in one body, through means of the cross,—slaying the enmity thereby;—",
-            "KJV": "2:16 And that he might reconcile both vnto God in one body by the crosse, hauing slaine the enmitie thereby,",
-            "NABRE": "2:16 and might reconcile both with God, in one body, through the cross, putting that enmity to death by it."
+            "KJV": "And that he might reconcile both vnto God in one body by the crosse, hauing slaine the enmitie thereby,",
+            "NABRE": "and might reconcile both with God, in one body, through the cross, putting that enmity to death by it."
           }
         },
         {
@@ -386,8 +394,8 @@
           "text": {
             "NRSV": "So he came and proclaimed peace to you who were far off and peace to those who were near;",
             "Rotherham": "And, coming, he announced the glad-message—of peace, unto you, the far off, and peace, unto them that were nigh;",
-            "KJV": "2:17 And came, and preached peace to you, which were afarre off, and to them that were nigh.",
-            "NABRE": "2:17 He came and preached peace to you who were far off and peace to those who were near,"
+            "KJV": "And came, and preached peace to you, which were afarre off, and to them that were nigh.",
+            "NABRE": "He came and preached peace to you who were far off and peace to those who were near,"
           }
         },
         {
@@ -395,8 +403,8 @@
           "text": {
             "NRSV": "for through him both of us have access in one Spirit to the Father.",
             "Rotherham": "Because, through him, we have our introduction—we both—in one Spirit, unto the Father.",
-            "KJV": "2:18 For through him wee both haue an accesse by one Spirit vnto the Father.",
-            "NABRE": "2:18 for through him we both have access in one Spirit to the Father."
+            "KJV": "For through him wee both haue an accesse by one Spirit vnto the Father.",
+            "NABRE": "for through him we both have access in one Spirit to the Father."
           }
         },
         {
@@ -404,8 +412,8 @@
           "text": {
             "NRSV": "So then you are no longer strangers and aliens, but you are citizens with the saints and also members of the household of God,",
             "Rotherham": "Hence, then—no longer, are ye strangers and sojourners, but ye are fellow-citizens of the saints, and members of the household of God,—",
-            "KJV": "2:19 Now therefore yee are no more strangers and forreiners; but fellow citizens with the Saints, and of the houshold of God,",
-            "NABRE": "2:19 So then you are no longer strangers and sojourners, but you are fellow citizens with the holy ones and members of the household of God,"
+            "KJV": "Now therefore yee are no more strangers and forreiners; but fellow citizens with the Saints, and of the houshold of God,",
+            "NABRE": "So then you are no longer strangers and sojourners, but you are fellow citizens with the holy ones and members of the household of God,"
           }
         },
         {
@@ -413,8 +421,8 @@
           "text": {
             "NRSV": "built upon the foundation of the apostles and prophets, with Christ Jesus himself as the cornerstone.",
             "Rotherham": "Having been built up on the foundation of the apostles and prophets, there being, for chief corner stone, Jesus Christ himself,—",
-            "KJV": "2:20 And are built vpon the foundation of the Apostles and Prophets, Iesus Christ himselfe being the chiefe corner stone,",
-            "NABRE": "2:20 built upon the foundation of the apostles and prophets, with Christ Jesus himself as the capstone."
+            "KJV": "And are built vpon the foundation of the Apostles and Prophets, Iesus Christ himselfe being the chiefe corner stone,",
+            "NABRE": "built upon the foundation of the apostles and prophets, with Christ Jesus himself as the capstone."
           }
         },
         {
@@ -422,8 +430,8 @@
           "text": {
             "NRSV": "In him the whole structure is joined together and grows into a holy temple in the Lord;",
             "Rotherham": "In whom, an entire building, in process of being fitly joined together, is growing into a holy shrine in [the] Lord;",
-            "KJV": "2:21 In whom all the building fitly framed together, groweth vnto an holy Temple in the Lord:",
-            "NABRE": "2:21 Through him the whole structure is held together and grows into a temple sacred in the Lord;"
+            "KJV": "In whom all the building fitly framed together, groweth vnto an holy Temple in the Lord:",
+            "NABRE": "Through him the whole structure is held together and grows into a temple sacred in the Lord;"
           }
         },
         {
@@ -431,8 +439,8 @@
           "text": {
             "NRSV": "in whom you also are built together spiritually into a dwelling place for God.",
             "Rotherham": "In whom, ye also, are being builded together, into a habitation of God in Spirit.  ",
-            "KJV": "2:22 In whom you also are builded together for an habitation of God thorow the Spirit.",
-            "NABRE": "2:22 in him you also are being built together into a dwelling place of God in the Spirit."
+            "KJV": "In whom you also are builded together for an habitation of God thorow the Spirit.",
+            "NABRE": "in him you also are being built together into a dwelling place of God in the Spirit."
           }
         }
       ]
@@ -445,8 +453,8 @@
           "text": {
             "NRSV": "This is the reason that I, Paul, am a prisoner for Christ Jesus for the sake of you Gentiles—",
             "Rotherham": "For this cause, I, Paul, the prisoner of Christ Jesus in behalf of you the nations:—",
-            "KJV": "3:1 For this cause I Paul, the prisoner of Iesus Christ for you Gentiles,",
-            "NABRE": "3:1 III. World Mission of the Church Chapter 3 Commission to Preach God’s Plan. Because of this, I, Paul, a prisoner of Christ [Jesus] for you Gentiles—"
+            "KJV": "For this cause I Paul, the prisoner of Iesus Christ for you Gentiles,",
+            "NABRE": "III. World Mission of the Church Chapter 3 Commission to Preach God’s Plan. Because of this, I, Paul, a prisoner of Christ [Jesus] for you Gentiles—"
           }
         },
         {
@@ -454,8 +462,8 @@
           "text": {
             "NRSV": "for surely you have already heard of the commission of God’s grace that was given me for you,",
             "Rotherham": "If at least ye have heard of the administration of the favour of God which hath been given unto me for you,",
-            "KJV": "3:2 If ye haue heard of the dispensation of the grace of God, which is giuen me to youward:",
-            "NABRE": "3:2 if, as I suppose, you have heard of the stewardship of God’s grace that was given to me for your benefit,"
+            "KJV": "If ye haue heard of the dispensation of the grace of God, which is giuen me to youward:",
+            "NABRE": "if, as I suppose, you have heard of the stewardship of God’s grace that was given to me for your benefit,"
           }
         },
         {
@@ -463,8 +471,8 @@
           "text": {
             "NRSV": "and how the mystery was made known to me by revelation, as I wrote above in a few words,",
             "Rotherham": "[How that], by way of revelation, was made known unto me the sacred secret,—even as I before wrote in brief,—",
-            "KJV": "3:3 How that by reuelation hee made knowen vnto me the mysterie, (as I wrote afore in few words,",
-            "NABRE": "3:3 [namely, that] the mystery was made known to me by revelation, as I have written briefly earlier."
+            "KJV": "How that by reuelation hee made knowen vnto me the mysterie, (as I wrote afore in few words,",
+            "NABRE": "[namely, that] the mystery was made known to me by revelation, as I have written briefly earlier."
           }
         },
         {
@@ -472,8 +480,8 @@
           "text": {
             "NRSV": "a reading of which will enable you to perceive my understanding of the mystery of Christ.",
             "Rotherham": "Respecting which ye can, by reading, perceive my discernment in the sacred secret of the Christ,—",
-            "KJV": "3:4 Whereby when ye reade, ye may vnderstand my knowledge in the mysterie of Christ.)",
-            "NABRE": "3:4 When you read this you can understand my insight into the mystery of Christ,"
+            "KJV": "Whereby when ye reade, ye may vnderstand my knowledge in the mysterie of Christ.)",
+            "NABRE": "When you read this you can understand my insight into the mystery of Christ,"
           }
         },
         {
@@ -481,8 +489,8 @@
           "text": {
             "NRSV": "In former generations this mystery was not made known to humankind, as it has now been revealed to his holy apostles and prophets by the Spirit:",
             "Rotherham": "Which, in other generations, had not been made known unto the sons of men, as it hath, now, been revealed by his holy apostles and prophets, in Spirit;—",
-            "KJV": "3:5 Which in other ages was not made knowen vnto the sonnes of men, as it is now reueiled vnto his holy Apostles and Prophets by the Spirit,",
-            "NABRE": "3:5 which was not made known to human beings in other generations as it has now been revealed to his holy apostles and prophets by the Spirit,"
+            "KJV": "Which in other ages was not made knowen vnto the sonnes of men, as it is now reueiled vnto his holy Apostles and Prophets by the Spirit,",
+            "NABRE": "which was not made known to human beings in other generations as it has now been revealed to his holy apostles and prophets by the Spirit,"
           }
         },
         {
@@ -490,8 +498,8 @@
           "text": {
             "NRSV": "that is, the Gentiles have become fellow heirs, members of the same body, and sharers in the promise in Christ Jesus through the gospel.",
             "Rotherham": "That they who are of the nations should be joint heirs, and a joint body, and joint partakers of the promise in Christ Jesus through means of the glad-message,—",
-            "KJV": "3:6 That the Gentiles should be fellow heires, and of the same body, and partakers of his promise in Christ, by the Gospel:",
-            "NABRE": "3:6 that the Gentiles are coheirs, members of the same body, and copartners in the promise in Christ Jesus through the gospel."
+            "KJV": "That the Gentiles should be fellow heires, and of the same body, and partakers of his promise in Christ, by the Gospel:",
+            "NABRE": "that the Gentiles are coheirs, members of the same body, and copartners in the promise in Christ Jesus through the gospel."
           }
         },
         {
@@ -499,8 +507,8 @@
           "text": {
             "NRSV": "Of this gospel I have become a servant according to the gift of God’s grace that was given me by the working of his power.",
             "Rotherham": "Of which I was made a minister, according to the free-gift of the favour of God which was given unto me, according to the energy of his power:",
-            "KJV": "3:7 Whereof I was made a Minister, according to the gift of the grace of God giuen vnto mee, by the effectuall working of his power.",
-            "NABRE": "3:7 Of this I became a minister by the gift of God’s grace that was granted me in accord with the exercise of his power."
+            "KJV": "Whereof I was made a Minister, according to the gift of the grace of God giuen vnto mee, by the effectuall working of his power.",
+            "NABRE": "Of this I became a minister by the gift of God’s grace that was granted me in accord with the exercise of his power."
           }
         },
         {
@@ -508,8 +516,8 @@
           "text": {
             "NRSV": "Although I am the very least of all the saints, this grace was given to me to bring to the Gentiles the news of the boundless riches of Christ,",
             "Rotherham": "Unto me—the less than least of all saints, was given this favour, unto the nations, to announce the glad-message of the untraceable riches of the Christ,",
-            "KJV": "3:8 Unto mee, who am lesse then the least of all Saints, is this grace giuen, that I should preach among the Gentiles the vnsearchable riches of Christ,",
-            "NABRE": "3:8 To me, the very least of all the holy ones, this grace was given, to preach to the Gentiles the inscrutable riches of Christ,"
+            "KJV": "Unto mee, who am lesse then the least of all Saints, is this grace giuen, that I should preach among the Gentiles the vnsearchable riches of Christ,",
+            "NABRE": "To me, the very least of all the holy ones, this grace was given, to preach to the Gentiles the inscrutable riches of Christ,"
           }
         },
         {
@@ -517,8 +525,8 @@
           "text": {
             "NRSV": "and to make everyone see what is the plan of the mystery hidden for ages in God who created all things;",
             "Rotherham": "And to bring to light—what is the administration of the sacred secret which had been hidden away from the ages in God, who did all things create:",
-            "KJV": "3:9 And to make all men see, what is the fellowship of the mysterie, which from the beginning of the world, hath bene hid in God, who created all things by Iesus Christ:",
-            "NABRE": "3:9 and to bring to light [for all] what is the plan of the mystery hidden from ages past in God who created all things,"
+            "KJV": "And to make all men see, what is the fellowship of the mysterie, which from the beginning of the world, hath bene hid in God, who created all things by Iesus Christ:",
+            "NABRE": "and to bring to light [for all] what is the plan of the mystery hidden from ages past in God who created all things,"
           }
         },
         {
@@ -526,8 +534,8 @@
           "text": {
             "NRSV": "so that through the church the wisdom of God in its rich variety might now be made known to the rulers and authorities in the heavenly places.",
             "Rotherham": "In order that now, unto the principalities and the authorities in the heavenlies, might be made known, through means of the assembly, the manifold wisdom of God,—",
-            "KJV": "3:10 To the intent that now vnto the principalities and powers in heauenly places, might be knowen by the church, the manifold wisedome of God,",
-            "NABRE": "3:10 so that the manifold wisdom of God might now be made known through the church to the principalities and authorities in the heavens."
+            "KJV": "To the intent that now vnto the principalities and powers in heauenly places, might be knowen by the church, the manifold wisedome of God,",
+            "NABRE": "so that the manifold wisdom of God might now be made known through the church to the principalities and authorities in the heavens."
           }
         },
         {
@@ -535,8 +543,8 @@
           "text": {
             "NRSV": "This was according to the eternal purpose that he has carried out in Christ Jesus our Lord,",
             "Rotherham": "According to a plan of the ages which he made in the anointed Jesus our Lord,—",
-            "KJV": "3:11 According to the eternall purpose which he purposed in Christ Iesus our Lord:",
-            "NABRE": "3:11 This was according to the eternal purpose that he accomplished in Christ Jesus our Lord,"
+            "KJV": "According to the eternall purpose which he purposed in Christ Iesus our Lord:",
+            "NABRE": "This was according to the eternal purpose that he accomplished in Christ Jesus our Lord,"
           }
         },
         {
@@ -544,8 +552,8 @@
           "text": {
             "NRSV": "in whom we have access to God in boldness and confidence through faith in him.",
             "Rotherham": "In whom we have our freedom of speech and introduction with assurance, through the faith of him;—",
-            "KJV": "3:12 In whom we haue boldnesse and accesse, with confidence, by the faith of him.",
-            "NABRE": "3:12 in whom we have boldness of speech and confidence of access through faith in him."
+            "KJV": "In whom we haue boldnesse and accesse, with confidence, by the faith of him.",
+            "NABRE": "in whom we have boldness of speech and confidence of access through faith in him."
           }
         },
         {
@@ -553,8 +561,8 @@
           "text": {
             "NRSV": "I pray therefore that you may not lose heart over my sufferings for you; they are your glory.",
             "Rotherham": "Wherefore I request, that there be no fainting in my tribulations in your behalf, the which is your glory;— ",
-            "KJV": "3:13 Wherefore I desire that yee faint not at my tribulations for you, which is your glory.",
-            "NABRE": "3:13 So I ask you not to lose heart over my afflictions for you; this is your glory. Prayer for the Readers."
+            "KJV": "Wherefore I desire that yee faint not at my tribulations for you, which is your glory.",
+            "NABRE": "So I ask you not to lose heart over my afflictions for you; this is your glory. Prayer for the Readers."
           }
         },
         {
@@ -562,8 +570,8 @@
           "text": {
             "NRSV": "For this reason I bow my knees before the Father,",
             "Rotherham": " For this cause, I bow my knees unto the Father,—",
-            "KJV": "3:14 For this cause I bow my knees vnto the Father of our Lord Iesus Christ,",
-            "NABRE": "3:14 For this reason I kneel before the Father,"
+            "KJV": "For this cause I bow my knees vnto the Father of our Lord Iesus Christ,",
+            "NABRE": "For this reason I kneel before the Father,"
           }
         },
         {
@@ -571,8 +579,8 @@
           "text": {
             "NRSV": "from whom every family in heaven and on earth takes its name.",
             "Rotherham": "From whom every fatherhood in [the] heavens and upon the earth is named,—",
-            "KJV": "3:15 Of whom the whole family in heauen and earth is named,",
-            "NABRE": "3:15 from whom every family in heaven and on earth is named,"
+            "KJV": "Of whom the whole family in heauen and earth is named,",
+            "NABRE": "from whom every family in heaven and on earth is named,"
           }
         },
         {
@@ -580,8 +588,8 @@
           "text": {
             "NRSV": "I pray that, according to the riches of his glory, he may grant that you may be strengthened in your inner being with power through his Spirit,",
             "Rotherham": "In order that he may give unto you—according to his glorious riches, with power, to be strengthened, through his Spirit, in the inner man,",
-            "KJV": "3:16 That he would grant you according to the riches of his glory, to bee strengthened with might, by his Spirit in the inner man,",
-            "NABRE": "3:16 that he may grant you in accord with the riches of his glory to be strengthened with power through his Spirit in the inner self,"
+            "KJV": "That he would grant you according to the riches of his glory, to bee strengthened with might, by his Spirit in the inner man,",
+            "NABRE": "that he may grant you in accord with the riches of his glory to be strengthened with power through his Spirit in the inner self,"
           }
         },
         {
@@ -589,8 +597,8 @@
           "text": {
             "NRSV": "and that Christ may dwell in your hearts through faith, as you are being rooted and grounded in love.",
             "Rotherham": "That the Christ may dwell, through means of your faith, in your hearts, in love, having become rooted and founded,",
-            "KJV": "3:17 That Christ may dwell in your hearts by faith, that yee being rooted and grounded in loue,",
-            "NABRE": "3:17 and that Christ may dwell in your hearts through faith; that you, rooted and grounded in love,"
+            "KJV": "That Christ may dwell in your hearts by faith, that yee being rooted and grounded in loue,",
+            "NABRE": "and that Christ may dwell in your hearts through faith; that you, rooted and grounded in love,"
           }
         },
         {
@@ -598,8 +606,8 @@
           "text": {
             "NRSV": "I pray that you may have the power to comprehend, with all the saints, what is the breadth and length and height and depth,",
             "Rotherham": "In order that ye may be mighty enough to grasp firmly, with all the saints,—what is the breadth and length and depth and height,",
-            "KJV": "3:18 May be able to comprehend with all Saints, what is the breadth, and length, and depth, and height:",
-            "NABRE": "3:18 may have strength to comprehend with all the holy ones what is the breadth and length and height and depth,"
+            "KJV": "May be able to comprehend with all Saints, what is the breadth, and length, and depth, and height:",
+            "NABRE": "may have strength to comprehend with all the holy ones what is the breadth and length and height and depth,"
           }
         },
         {
@@ -607,8 +615,8 @@
           "text": {
             "NRSV": "and to know the love of Christ that surpasses knowledge, so that you may be filled with all the fullness of God.",
             "Rotherham": "To get to know, also, the knowledge-surpassing, love of the Christ,—in order that ye may be filled unto all the fulness of God:",
-            "KJV": "3:19 And to know the loue of Christ, which passeth knowledge, that yee might bee filled with all the fulnesse of God.",
-            "NABRE": "3:19 and to know the love of Christ that surpasses knowledge, so that you may be filled with all the fullness of God."
+            "KJV": "And to know the loue of Christ, which passeth knowledge, that yee might bee filled with all the fulnesse of God.",
+            "NABRE": "and to know the love of Christ that surpasses knowledge, so that you may be filled with all the fullness of God."
           }
         },
         {
@@ -616,8 +624,8 @@
           "text": {
             "NRSV": "Now to him who by the power at work within us is able to accomplish abundantly far more than all we can ask or imagine,",
             "Rotherham": "Now, unto him who is able to do, above all things, exceeding abundantly above the things which we ask or conceive,—according to the power which doth energise itself within us,—",
-            "KJV": "3:20 Now vnto him that is able to do exceeding abundantly aboue all that wee aske or thinke, according to the power that worketh in vs,",
-            "NABRE": "3:20 Now to him who is able to accomplish far more than all we ask or imagine, by the power at work within us,"
+            "KJV": "Now vnto him that is able to do exceeding abundantly aboue all that wee aske or thinke, according to the power that worketh in vs,",
+            "NABRE": "Now to him who is able to accomplish far more than all we ask or imagine, by the power at work within us,"
           }
         },
         {
@@ -625,8 +633,8 @@
           "text": {
             "NRSV": "to him be glory in the church and in Christ Jesus to all generations, forever and ever. Amen.",
             "Rotherham": "Unto him, be the glory, in the assembly, and in Christ Jesus—unto all the generations of the age of ages; Amen:—  ",
-            "KJV": "3:21 Unto him be glory in the Church by Christ Iesus, throughout all ages, world without end. Amen.",
-            "NABRE": "3:21 to him be glory in the church and in Christ Jesus to all generations, forever and ever. Amen."
+            "KJV": "Unto him be glory in the Church by Christ Iesus, throughout all ages, world without end. Amen.",
+            "NABRE": "to him be glory in the church and in Christ Jesus to all generations, forever and ever. Amen."
           }
         }
       ]
@@ -639,8 +647,8 @@
           "text": {
             "NRSV": "I therefore, the prisoner in the Lord, beg you to lead a life worthy of the calling to which you have been called,",
             "Rotherham": "I exhort you, therefore, I, the prisoner in the Lord, to walk in a manner worthy of the calling wherewith ye were called:— ",
-            "KJV": "4:1 I therefore the prisoner of the Lord, beseech you that yee walke worthy of the vocation wherewith ye are called,",
-            "NABRE": "4:1 Chapter 4 Unity in the Body. I, then, a prisoner for the Lord, urge you to live in a manner worthy of the call you have received,"
+            "KJV": "I therefore the prisoner of the Lord, beseech you that yee walke worthy of the vocation wherewith ye are called,",
+            "NABRE": "Chapter 4 Unity in the Body. I, then, a prisoner for the Lord, urge you to live in a manner worthy of the call you have received,"
           }
         },
         {
@@ -648,8 +656,8 @@
           "text": {
             "NRSV": "with all humility and gentleness, with patience, bearing with one another in love,",
             "Rotherham": " With all lowliness and meekness, with long suffering, bearing one with another in love,",
-            "KJV": "4:2 With all lowlinesse and meekenesse, with long suffering, forbearing one another in loue.",
-            "NABRE": "4:2 with all humility and gentleness, with patience, bearing with one another through love,"
+            "KJV": "With all lowlinesse and meekenesse, with long suffering, forbearing one another in loue.",
+            "NABRE": "with all humility and gentleness, with patience, bearing with one another through love,"
           }
         },
         {
@@ -657,8 +665,8 @@
           "text": {
             "NRSV": "making every effort to maintain the unity of the Spirit in the bond of peace.",
             "Rotherham": "Giving diligence to keep—the oneness of the Spirit in the uniting-bond of peace,—",
-            "KJV": "4:3 Endeuouring to keepe the vnitie of the Spirit in the bond of peace.",
-            "NABRE": "4:3 striving to preserve the unity of the spirit through the bond of peace:"
+            "KJV": "Endeuouring to keepe the vnitie of the Spirit in the bond of peace.",
+            "NABRE": "striving to preserve the unity of the spirit through the bond of peace:"
           }
         },
         {
@@ -666,8 +674,8 @@
           "text": {
             "NRSV": "There is one body and one Spirit, just as you were called to the one hope of your calling,",
             "Rotherham": "One body, and one spirit, even as ye were also called in one hope of your calling,",
-            "KJV": "4:4 There is one body, and one spirit, euen as yee are called in one hope of your calling.",
-            "NABRE": "4:4 one body and one Spirit, as you were also called to the one hope of your call;"
+            "KJV": "There is one body, and one spirit, euen as yee are called in one hope of your calling.",
+            "NABRE": "one body and one Spirit, as you were also called to the one hope of your call;"
           }
         },
         {
@@ -675,8 +683,8 @@
           "text": {
             "NRSV": "one Lord, one faith, one baptism,",
             "Rotherham": "One Lord, one faith, one immersion,",
-            "KJV": "4:5 One Lord, one Faith, one Baptisme,",
-            "NABRE": "4:5 one Lord, one faith, one baptism;"
+            "KJV": "One Lord, one Faith, one Baptisme,",
+            "NABRE": "one Lord, one faith, one baptism;"
           }
         },
         {
@@ -684,8 +692,8 @@
           "text": {
             "NRSV": "one God and Father of all, who is above all and through all and in all.",
             "Rotherham": "One God and Father of all—who is over all, and through all, and in all.",
-            "KJV": "4:6 One God and Father of all, who is aboue all, & through all, & in you all.",
-            "NABRE": "4:6 one God and Father of all, who is over all and through all and in all."
+            "KJV": "One God and Father of all, who is aboue all, & through all, & in you all.",
+            "NABRE": "one God and Father of all, who is over all and through all and in all."
           }
         },
         {
@@ -693,8 +701,8 @@
           "text": {
             "NRSV": "But each of us was given grace according to the measure of Christ’s gift.",
             "Rotherham": "To each one of you, however, hath favour been given, according to the measure of the free-gift of the Christ;",
-            "KJV": "4:7 But vnto euery one of vs is giuen grace, according to the measure of the gift of Christ.",
-            "NABRE": "4:7 Diversity of Gifts. But grace was given to each of us according to the measure of Christ’s gift."
+            "KJV": "But vnto euery one of vs is giuen grace, according to the measure of the gift of Christ.",
+            "NABRE": "Diversity of Gifts. But grace was given to each of us according to the measure of Christ’s gift."
           }
         },
         {
@@ -702,8 +710,8 @@
           "text": {
             "NRSV": "Therefore it is said, “When he ascended on high he made captivity itself a captive; he gave gifts to his people.”",
             "Rotherham": "Wherefore he saith—Ascending on high, he took captivity captive, [and] gave gifts unto men.",
-            "KJV": "4:8 Wherefore he saith: When he ascended vp on high, he led captiuitie captiue, and gaue gifts vnto men.",
-            "NABRE": "4:8 Therefore, it says: “He ascended on high and took prisoners captive; he gave gifts to men.”"
+            "KJV": "Wherefore he saith: When he ascended vp on high, he led captiuitie captiue, and gaue gifts vnto men.",
+            "NABRE": "Therefore, it says: “He ascended on high and took prisoners captive; he gave gifts to men.”"
           }
         },
         {
@@ -711,8 +719,8 @@
           "text": {
             "NRSV": "(When it says, “He ascended,” what does it mean but that he had also descended into the lower parts of the earth?",
             "Rotherham": "Now this, He ascended; what is it,—save—that he also descended into the under parts of the earth?",
-            "KJV": "4:9 (Now that he ascended, what is it but that hee also descended first into the lower parts of the earth?",
-            "NABRE": "4:9 What does “he ascended” mean except that he also descended into the lower [regions] of the earth?"
+            "KJV": "(Now that he ascended, what is it but that hee also descended first into the lower parts of the earth?",
+            "NABRE": "What does “he ascended” mean except that he also descended into the lower [regions] of the earth?"
           }
         },
         {
@@ -720,8 +728,8 @@
           "text": {
             "NRSV": "He who descended is the same one who ascended far above all the heavens, so that he might fill all things.)",
             "Rotherham": "He that descended, he, it is who also ascended over-above all the heavens, that he might fill all things;",
-            "KJV": "4:10 He that descended, is the same also that ascended vp far aboue all heauens, that he might fill all things.)",
-            "NABRE": "4:10 The one who descended is also the one who ascended far above all the heavens, that he might fill all things."
+            "KJV": "He that descended, is the same also that ascended vp far aboue all heauens, that he might fill all things.)",
+            "NABRE": "The one who descended is also the one who ascended far above all the heavens, that he might fill all things."
           }
         },
         {
@@ -729,8 +737,8 @@
           "text": {
             "NRSV": "The gifts he gave were that some would be apostles, some prophets, some evangelists, some pastors and teachers,",
             "Rotherham": "And, he, gave—some, indeed, to be apostles, and some, prophets, and some, evangelists, and some, shepherds and teachers,—",
-            "KJV": "4:11 And he gaue some, Apostles: and some, Prophets: and some, Euangelists: and some, Pastors, and teachers:",
-            "NABRE": "4:11 And he gave some as apostles, others as prophets, others as evangelists, others as pastors and teachers,"
+            "KJV": "And he gaue some, Apostles: and some, Prophets: and some, Euangelists: and some, Pastors, and teachers:",
+            "NABRE": "And he gave some as apostles, others as prophets, others as evangelists, others as pastors and teachers,"
           }
         },
         {
@@ -738,8 +746,8 @@
           "text": {
             "NRSV": "to equip the saints for the work of ministry, for building up the body of Christ,",
             "Rotherham": "With a view to the fitting of the saints for the work of ministering, for an upbuilding of the body of the Christ;",
-            "KJV": "4:12 For the perfecting of the Saints, for the worke of the ministerie, for the edifying of the body of Christ:",
-            "NABRE": "4:12 to equip the holy ones for the work of ministry, for building up the body of Christ,"
+            "KJV": "For the perfecting of the Saints, for the worke of the ministerie, for the edifying of the body of Christ:",
+            "NABRE": "to equip the holy ones for the work of ministry, for building up the body of Christ,"
           }
         },
         {
@@ -747,8 +755,8 @@
           "text": {
             "NRSV": "until all of us come to the unity of the faith and of the knowledge of the Son of God, to maturity, to the measure of the full stature of Christ.",
             "Rotherham": "Until we all advance—into the oneness of the faith, and the personal knowledge of the Son of God, into a man of full-growth, into the measure of the stature of the fulness of the Christ;",
-            "KJV": "4:13 Till we all come in the vnitie of the faith, and of the knowledge of the Sonne of God, vnto a perfect man, vnto the measure of the stature of the fulnesse of Christ:",
-            "NABRE": "4:13 until we all attain to the unity of faith and knowledge of the Son of God, to mature manhood, to the extent of the full stature of Christ,"
+            "KJV": "Till we all come in the vnitie of the faith, and of the knowledge of the Sonne of God, vnto a perfect man, vnto the measure of the stature of the fulnesse of Christ:",
+            "NABRE": "until we all attain to the unity of faith and knowledge of the Son of God, to mature manhood, to the extent of the full stature of Christ,"
           }
         },
         {
@@ -756,8 +764,8 @@
           "text": {
             "NRSV": "We must no longer be children, tossed to and fro and blown about by every wind of doctrine, by people’s trickery, by their craftiness in deceitful scheming.",
             "Rotherham": "That we may, no longer, be infants—billow-tossed and shifted round with every wind of teaching,—in the craft of men, in knavery suited to the artifice of error;",
-            "KJV": "4:14 That we hencefoorth be no more children, tossed to and fro, and caried about with euery winde of doctrine, by the sleight of men, and cunning craftinesse, whereby they lye in waite to deceiue:",
-            "NABRE": "4:14 so that we may no longer be infants, tossed by waves and swept along by every wind of teaching arising from human trickery, from their cunning in the interests of deceitful scheming."
+            "KJV": "That we hencefoorth be no more children, tossed to and fro, and caried about with euery winde of doctrine, by the sleight of men, and cunning craftinesse, whereby they lye in waite to deceiue:",
+            "NABRE": "so that we may no longer be infants, tossed by waves and swept along by every wind of teaching arising from human trickery, from their cunning in the interests of deceitful scheming."
           }
         },
         {
@@ -765,8 +773,8 @@
           "text": {
             "NRSV": "But speaking the truth in love, we must grow up in every way into him who is the head, into Christ,",
             "Rotherham": "But, pursuing truth—may, in love, grow into him in all things,—who is the head, Christ,—",
-            "KJV": "4:15 But speaking the trueth in loue, may grow vp into him in all things which is the head, euen Christ:",
-            "NABRE": "4:15 Rather, living the truth in love, we should grow in every way into him who is the head, Christ,"
+            "KJV": "But speaking the trueth in loue, may grow vp into him in all things which is the head, euen Christ:",
+            "NABRE": "Rather, living the truth in love, we should grow in every way into him who is the head, Christ,"
           }
         },
         {
@@ -774,8 +782,8 @@
           "text": {
             "NRSV": "from whom the whole body, joined and knit together by every ligament with which it is equipped, as each part is working properly, promotes the body’s growth in building itself up in love.",
             "Rotherham": "Out of whom all the body—fitly framing itself together, and connecting itself, through means of every joint of supply, by way of energising in the measure of each single part—secureth the growing of the body, unto an upbuilding of itself in love. ",
-            "KJV": "4:16 From whom the whole body fitly ioyned together, and compacted by that which euery ioynt supplyeth, according to the effectuall working in the measure of euery part, maketh increase of the body, vnto the edifying of it selfe in loue.",
-            "NABRE": "4:16 from whom the whole body, joined and held together by every supporting ligament, with the proper functioning of each part, brings about the body’s growth and builds itself up in love. Renewal in Christ."
+            "KJV": "From whom the whole body fitly ioyned together, and compacted by that which euery ioynt supplyeth, according to the effectuall working in the measure of euery part, maketh increase of the body, vnto the edifying of it selfe in loue.",
+            "NABRE": "from whom the whole body, joined and held together by every supporting ligament, with the proper functioning of each part, brings about the body’s growth and builds itself up in love. Renewal in Christ."
           }
         },
         {
@@ -783,8 +791,8 @@
           "text": {
             "NRSV": "Now this I affirm and insist on in the Lord: you must no longer live as the Gentiles live, in the futility of their minds.",
             "Rotherham": " This, therefore, am I saying and protesting in the Lord:—that, no longer, ye walk even as, the nations, walk—in the vanity of their minds,",
-            "KJV": "4:17 This I say therefore and testifie in the Lord, that yee henceforth walke not as other Gentiles walke in the vanitie of their minde,",
-            "NABRE": "4:17 So I declare and testify in the Lord that you must no longer live as the Gentiles do, in the futility of their minds;"
+            "KJV": "This I say therefore and testifie in the Lord, that yee henceforth walke not as other Gentiles walke in the vanitie of their minde,",
+            "NABRE": "So I declare and testify in the Lord that you must no longer live as the Gentiles do, in the futility of their minds;"
           }
         },
         {
@@ -792,8 +800,8 @@
           "text": {
             "NRSV": "They are darkened in their understanding, alienated from the life of God because of the ignorance that is in them, due to their hardness of heart.",
             "Rotherham": "Being darkened in their understanding, alienated from the life of God—by reason of the ignorance that existeth within them, by reason of their hearts being turned into stone,",
-            "KJV": "4:18 Hauing the vnderstanding darkened, being alienated from the life of God, through the ignorance that is in them, because of the blindnesse of their heart:",
-            "NABRE": "4:18 darkened in understanding, alienated from the life of God because of their ignorance, because of their hardness of heart,"
+            "KJV": "Hauing the vnderstanding darkened, being alienated from the life of God, through the ignorance that is in them, because of the blindnesse of their heart:",
+            "NABRE": "darkened in understanding, alienated from the life of God because of their ignorance, because of their hardness of heart,"
           }
         },
         {
@@ -801,8 +809,8 @@
           "text": {
             "NRSV": "They have lost all sensitivity and have abandoned themselves to licentiousness, greedy to practice every kind of impurity.",
             "Rotherham": "Who, indeed, having become past feeling, have delivered, themselves, up, with wantonness, unto making a trade of all impurity with greed.",
-            "KJV": "4:19 Who being past feeling, haue giuen themselues ouer vnto lasciuiousnesse, to worke all vncleannesse with greedinesse.",
-            "NABRE": "4:19 they have become callous and have handed themselves over to licentiousness for the practice of every kind of impurity to excess."
+            "KJV": "Who being past feeling, haue giuen themselues ouer vnto lasciuiousnesse, to worke all vncleannesse with greedinesse.",
+            "NABRE": "they have become callous and have handed themselves over to licentiousness for the practice of every kind of impurity to excess."
           }
         },
         {
@@ -810,8 +818,8 @@
           "text": {
             "NRSV": "That is not the way you learned Christ!",
             "Rotherham": "Ye, however, have, not thus, learned the Christ:—",
-            "KJV": "4:20 But ye haue not so learned Christ:",
-            "NABRE": "4:20 That is not how you learned Christ,"
+            "KJV": "But ye haue not so learned Christ:",
+            "NABRE": "That is not how you learned Christ,"
           }
         },
         {
@@ -819,8 +827,8 @@
           "text": {
             "NRSV": "For surely you have heard about him and were taught in him, as the truth is in Jesus.",
             "Rotherham": "If, at least, it is, him, ye have heard, and, in him, ye have been taught—even as truth is in Jesus,—",
-            "KJV": "4:21 If so be that ye haue heard him, and haue bene taught by him, as the trueth is in Iesus,",
-            "NABRE": "4:21 assuming that you have heard of him and were taught in him, as truth is in Jesus,"
+            "KJV": "If so be that ye haue heard him, and haue bene taught by him, as the trueth is in Iesus,",
+            "NABRE": "assuming that you have heard of him and were taught in him, as truth is in Jesus,"
           }
         },
         {
@@ -828,8 +836,8 @@
           "text": {
             "NRSV": "You were taught to put away your former way of life, your old self, corrupt and deluded by its lusts,",
             "Rotherham": "That ye were to strip off—as regardeth the former behaviour—the old man, who corrupteth himself according to his deceitful covetings,",
-            "KJV": "4:22 That yee put off concerning the former conuersation, the olde man, which is corrupt according to the deceitfull lusts:",
-            "NABRE": "4:22 that you should put away the old self of your former way of life, corrupted through deceitful desires,"
+            "KJV": "That yee put off concerning the former conuersation, the olde man, which is corrupt according to the deceitfull lusts:",
+            "NABRE": "that you should put away the old self of your former way of life, corrupted through deceitful desires,"
           }
         },
         {
@@ -837,8 +845,8 @@
           "text": {
             "NRSV": "and to be renewed in the spirit of your minds,",
             "Rotherham": "And were to be getting young again in the spirit of your mind,",
-            "KJV": "4:23 And bee renewed in the spirit of your minde:",
-            "NABRE": "4:23 and be renewed in the spirit of your minds,"
+            "KJV": "And bee renewed in the spirit of your minde:",
+            "NABRE": "and be renewed in the spirit of your minds,"
           }
         },
         {
@@ -846,8 +854,8 @@
           "text": {
             "NRSV": "and to clothe yourselves with the new self, created according to the likeness of God in true righteousness and holiness.",
             "Rotherham": "And were to put on the man of new mould, who, after God, hath been created in his truthful righteousness and loving kindness.",
-            "KJV": "4:24 And that yee put on that new man, which after God is created in righteousnesse, and true holinesse.",
-            "NABRE": "4:24 and put on the new self, created in God’s way in righteousness and holiness of truth."
+            "KJV": "And that yee put on that new man, which after God is created in righteousnesse, and true holinesse.",
+            "NABRE": "and put on the new self, created in God’s way in righteousness and holiness of truth."
           }
         },
         {
@@ -855,8 +863,8 @@
           "text": {
             "NRSV": "So then, putting away falsehood, let all of us speak the truth to our neighbors, for we are members one of another.",
             "Rotherham": "Wherefore, stripping off what is false, be speaking truth each one with his neighbour, because we are members one of another;",
-            "KJV": "4:25 Wherefore putting away lying, speake euery man truth with his neighbour: for we are members one of another.",
-            "NABRE": "4:25 IV. Daily Conduct, an Expression of Unity Rules for the New Life. Therefore, putting away falsehood, speak the truth, each one to his neighbor, for we are members one of another."
+            "KJV": "Wherefore putting away lying, speake euery man truth with his neighbour: for we are members one of another.",
+            "NABRE": "IV. Daily Conduct, an Expression of Unity Rules for the New Life. Therefore, putting away falsehood, speak the truth, each one to his neighbor, for we are members one of another."
           }
         },
         {
@@ -864,8 +872,8 @@
           "text": {
             "NRSV": "Be angry but do not sin; do not let the sun go down on your anger,",
             "Rotherham": "Be ye angry, and not committing sin, let not the sun be going down upon your angry mood,",
-            "KJV": "4:26 Be ye angry and sinne not, let not the Sunne go down vpon your wrath:",
-            "NABRE": "4:26 Be angry but do not sin; do not let the sun set on your anger,"
+            "KJV": "Be ye angry and sinne not, let not the Sunne go down vpon your wrath:",
+            "NABRE": "Be angry but do not sin; do not let the sun set on your anger,"
           }
         },
         {
@@ -873,8 +881,8 @@
           "text": {
             "NRSV": "and do not make room for the devil.",
             "Rotherham": "Neither be giving place unto the adversary;",
-            "KJV": "4:27 Neither giue place to the deuill.",
-            "NABRE": "4:27 and do not leave room for the devil."
+            "KJV": "Neither giue place to the deuill.",
+            "NABRE": "and do not leave room for the devil."
           }
         },
         {
@@ -882,8 +890,8 @@
           "text": {
             "NRSV": "Thieves must give up stealing; rather let them labor and work honestly with their own hands, so as to have something to share with the needy.",
             "Rotherham": "Let, the stealer, no more, steal, but rather let him be toiling,—working with his hands the thing that is good, that he may have [wherewith] to be giving away to him that hath need;",
-            "KJV": "4:28 Let him that stole, steale no more: but rather let him labour, working with his handes the thing which is good, that he may haue to giue to him that needeth.",
-            "NABRE": "4:28 The thief must no longer steal, but rather labor, doing honest work with his [own] hands, so that he may have something to share with one in need."
+            "KJV": "Let him that stole, steale no more: but rather let him labour, working with his handes the thing which is good, that he may haue to giue to him that needeth.",
+            "NABRE": "The thief must no longer steal, but rather labor, doing honest work with his [own] hands, so that he may have something to share with one in need."
           }
         },
         {
@@ -891,8 +899,8 @@
           "text": {
             "NRSV": "Let no evil talk come out of your mouths, but only what is useful for building up, as there is need, so that your words may give grace to those who hear.",
             "Rotherham": "Let, no putrid discourse, out of your mouth, be going forth, but if anything is good—suited to the needful upbuilding,—that it may give benefit unto them that hear;",
-            "KJV": "4:29 Let no corrupt communication proceede out of your mouth, but that which is good to the vse of edifying, that it may minister grace vnto the hearers.",
-            "NABRE": "4:29 No foul language should come out of your mouths, but only such as is good for needed edification, that it may impart grace to those who hear."
+            "KJV": "Let no corrupt communication proceede out of your mouth, but that which is good to the vse of edifying, that it may minister grace vnto the hearers.",
+            "NABRE": "No foul language should come out of your mouths, but only such as is good for needed edification, that it may impart grace to those who hear."
           }
         },
         {
@@ -900,8 +908,8 @@
           "text": {
             "NRSV": "And do not grieve the Holy Spirit of God, with which you were marked with a seal for the day of redemption.",
             "Rotherham": "And be not grieving the Holy Spirit of God, wherewith ye have been sealed unto a day of redemption;",
-            "KJV": "4:30 And grieue not the holy Sririt of God, whereby yee are sealed vnto the day of redemption.",
-            "NABRE": "4:30 And do not grieve the holy Spirit of God, with which you were sealed for the day of redemption."
+            "KJV": "And grieue not the holy Sririt of God, whereby yee are sealed vnto the day of redemption.",
+            "NABRE": "And do not grieve the holy Spirit of God, with which you were sealed for the day of redemption."
           }
         },
         {
@@ -909,8 +917,8 @@
           "text": {
             "NRSV": "Put away from you all bitterness and wrath and anger and wrangling and slander, together with all malice,",
             "Rotherham": "All bitterness, and wrath, and anger, and outcry, and profane speaking, let it be taken away from you, with all baseness;",
-            "KJV": "4:31 Let all bitternes, and wrath, and anger, and clamour, and euill speaking, be put away from you, with all malice,",
-            "NABRE": "4:31 All bitterness, fury, anger, shouting, and reviling must be removed from you, along with all malice."
+            "KJV": "Let all bitternes, and wrath, and anger, and clamour, and euill speaking, be put away from you, with all malice,",
+            "NABRE": "All bitterness, fury, anger, shouting, and reviling must be removed from you, along with all malice."
           }
         },
         {
@@ -918,8 +926,8 @@
           "text": {
             "NRSV": "and be kind to one another, tenderhearted, forgiving one another, as God in Christ has forgiven you.",
             "Rotherham": "And be ye gracious one to another, tenderly affectionate, in favour forgiving one another—even as, God also, in Christ, hath in favour forgiven you;  ",
-            "KJV": "4:32 And bee ye kinde one to another. tender hearted, forgiuing one another, euen as God for Christs sake hath forgiuen you.",
-            "NABRE": "4:32 [And] be kind to one another, compassionate, forgiving one another as God has forgiven you in Christ."
+            "KJV": "And bee ye kinde one to another. tender hearted, forgiuing one another, euen as God for Christs sake hath forgiuen you.",
+            "NABRE": "[And] be kind to one another, compassionate, forgiving one another as God has forgiven you in Christ."
           }
         }
       ]
@@ -932,8 +940,8 @@
           "text": {
             "NRSV": "Therefore be imitators of God, as beloved children,",
             "Rotherham": "Become ye, therefore, imitators of God, as children beloved,",
-            "KJV": "5:1 Be ye therefore followers of God, as deare children.",
-            "NABRE": "5:1 Chapter 5 So be imitators of God, as beloved children,"
+            "KJV": "Be ye therefore followers of God, as deare children.",
+            "NABRE": "Chapter 5 So be imitators of God, as beloved children,"
           }
         },
         {
@@ -941,8 +949,8 @@
           "text": {
             "NRSV": "and walk in love, as Christ loved us and gave himself up for us, a fragrant offering and sacrifice to God.",
             "Rotherham": "And walk in love—even as, the Christ also, loved you, and delivered himself up in your behalf, an offering and sacrifice unto God, for a fragrance of sweet smell. ",
-            "KJV": "5:2 And walke in loue, as Christ also hath loued vs, and hath giuen himselfe for vs, an offering and a sacrifice to God for a sweet smelling sauour;",
-            "NABRE": "5:2 and live in love, as Christ loved us and handed himself over for us as a sacrificial offering to God for a fragrant aroma."
+            "KJV": "And walke in loue, as Christ also hath loued vs, and hath giuen himselfe for vs, an offering and a sacrifice to God for a sweet smelling sauour;",
+            "NABRE": "and live in love, as Christ loved us and handed himself over for us as a sacrificial offering to God for a fragrant aroma."
           }
         },
         {
@@ -950,8 +958,8 @@
           "text": {
             "NRSV": "But fornication and impurity of any kind, or greed, must not even be mentioned among you, as is proper among saints.",
             "Rotherham": " But, fornication, and all impurity, or covetousness, let it not be named among you—even as becometh saints;",
-            "KJV": "5:3 But fornication and all vncleannesse, or couetousnesse, let it not be once named amongst you, as becommeth Saints:",
-            "NABRE": "5:3 Immorality or any impurity or greed must not even be mentioned among you, as is fitting among holy ones,"
+            "KJV": "But fornication and all vncleannesse, or couetousnesse, let it not be once named amongst you, as becommeth Saints:",
+            "NABRE": "Immorality or any impurity or greed must not even be mentioned among you, as is fitting among holy ones,"
           }
         },
         {
@@ -959,8 +967,8 @@
           "text": {
             "NRSV": "Entirely out of place is obscene, silly, or vulgar talk; but instead, let there be thanksgiving.",
             "Rotherham": "And shamelessness and foolish talking, or jesting,—which things are beneath you,—but, rather, giving of thanks;",
-            "KJV": "5:4 Neither filthinesse, nor foolish talking, nor iesting, which are not conuenient: but rather giuing of thankes.",
-            "NABRE": "5:4 no obscenity or silly or suggestive talk, which is out of place, but instead, thanksgiving."
+            "KJV": "Neither filthinesse, nor foolish talking, nor iesting, which are not conuenient: but rather giuing of thankes.",
+            "NABRE": "no obscenity or silly or suggestive talk, which is out of place, but instead, thanksgiving."
           }
         },
         {
@@ -968,8 +976,8 @@
           "text": {
             "NRSV": "Be sure of this, that no fornicator or impure person, or one who is greedy (that is, an idolater), has any inheritance in the kingdom of Christ and of God.",
             "Rotherham": "For, this, ye know, if ye take note—that no fornicator, or impure or greedy person, who is an idolater, hath any inheritance in the kingdom of the Christ and God.",
-            "KJV": "5:5 For this ye know, that no whoremonger, nor vncleane person, nor couetous man who is an idolater, hath any inheritance in the kingdome of Christ, and of God.",
-            "NABRE": "5:5 Be sure of this, that no immoral or impure or greedy person, that is, an idolater, has any inheritance in the kingdom of Christ and of God."
+            "KJV": "For this ye know, that no whoremonger, nor vncleane person, nor couetous man who is an idolater, hath any inheritance in the kingdome of Christ, and of God.",
+            "NABRE": "Be sure of this, that no immoral or impure or greedy person, that is, an idolater, has any inheritance in the kingdom of Christ and of God."
           }
         },
         {
@@ -977,8 +985,8 @@
           "text": {
             "NRSV": "Let no one deceive you with empty words, for because of these things the wrath of God comes on those who are disobedient.",
             "Rotherham": "Let no one be deceiving you with empty words; for, because of these things, is coming the anger of God upon the sons of obstinacy:",
-            "KJV": "5:6 Let no man deceiue you with vaine words: for because of these things commeth the wrath of God vpon the children of disobedience.",
-            "NABRE": "5:6 Duty to Live in the Light. Let no one deceive you with empty arguments, for because of these things the wrath of God is coming upon the disobedient."
+            "KJV": "Let no man deceiue you with vaine words: for because of these things commeth the wrath of God vpon the children of disobedience.",
+            "NABRE": "Duty to Live in the Light. Let no one deceive you with empty arguments, for because of these things the wrath of God is coming upon the disobedient."
           }
         },
         {
@@ -986,8 +994,8 @@
           "text": {
             "NRSV": "Therefore do not be associated with them.",
             "Rotherham": "Do not, then, become co-partners with them;",
-            "KJV": "5:7 Bee not yee therefore partakers with them.",
-            "NABRE": "5:7 So do not be associated with them."
+            "KJV": "Bee not yee therefore partakers with them.",
+            "NABRE": "So do not be associated with them."
           }
         },
         {
@@ -995,8 +1003,8 @@
           "text": {
             "NRSV": "For once you were darkness, but now in the Lord you are light. Live as children of light,",
             "Rotherham": "For ye were, at one time, darkness, but, now, are ye light in the Lord,—as children of light, be walking,",
-            "KJV": "5:8 For yee were sometimes darkenesse, but now are yee light in the Lord: walke as children of light,",
-            "NABRE": "5:8 For you were once darkness, but now you are light in the Lord. Live as children of light,"
+            "KJV": "For yee were sometimes darkenesse, but now are yee light in the Lord: walke as children of light,",
+            "NABRE": "For you were once darkness, but now you are light in the Lord. Live as children of light,"
           }
         },
         {
@@ -1004,8 +1012,8 @@
           "text": {
             "NRSV": "for the fruit of the light is found in all that is good and right and true.",
             "Rotherham": "For, the fruit of the light, is in all goodness, and righteousness, and truth,—",
-            "KJV": "5:9 (For the fruite of the spirit is in all goodnesse and righteousnesse & trueth.)",
-            "NABRE": "5:9 for light produces every kind of goodness and righteousness and truth."
+            "KJV": "(For the fruite of the spirit is in all goodnesse and righteousnesse & trueth.)",
+            "NABRE": "for light produces every kind of goodness and righteousness and truth."
           }
         },
         {
@@ -1013,8 +1021,8 @@
           "text": {
             "NRSV": "Try to find out what is pleasing to the Lord.",
             "Rotherham": "Putting to the test what is well-pleasing unto the Lord;",
-            "KJV": "5:10 Proouing what is acceptable vnto the Lord:",
-            "NABRE": "5:10 Try to learn what is pleasing to the Lord."
+            "KJV": "Proouing what is acceptable vnto the Lord:",
+            "NABRE": "Try to learn what is pleasing to the Lord."
           }
         },
         {
@@ -1022,8 +1030,8 @@
           "text": {
             "NRSV": "Take no part in the unfruitful works of darkness, but instead expose them.",
             "Rotherham": "And be not joining in fellowship in the unfruitful works of darkness, but, rather, be even administering reproof;",
-            "KJV": "5:11 And haue no fellowship with the vnfruitfull workes of darkenesse, but rather reproue them.",
-            "NABRE": "5:11 Take no part in the fruitless works of darkness; rather expose them,"
+            "KJV": "And haue no fellowship with the vnfruitfull workes of darkenesse, but rather reproue them.",
+            "NABRE": "Take no part in the fruitless works of darkness; rather expose them,"
           }
         },
         {
@@ -1031,8 +1039,8 @@
           "text": {
             "NRSV": "For it is shameful even to mention what such people do secretly;",
             "Rotherham": "For, of the secret things which are brought to pass by them, it is, shameful, even to speak!",
-            "KJV": "5:12 For it is a shame euen to speake of those things which are done of them in secret.",
-            "NABRE": "5:12 for it is shameful even to mention the things done by them in secret;"
+            "KJV": "For it is a shame euen to speake of those things which are done of them in secret.",
+            "NABRE": "for it is shameful even to mention the things done by them in secret;"
           }
         },
         {
@@ -1040,8 +1048,8 @@
           "text": {
             "NRSV": "but everything exposed by the light becomes visible,",
             "Rotherham": "All things, however, when reproved by the light, become manifest, for, all that of itself maketh manifest, is, light;",
-            "KJV": "5:13 But all things that are reprooued, are made manifest by the light: for whatsoeuer doth make manifest, is light.",
-            "NABRE": "5:13 but everything exposed by the light becomes visible,"
+            "KJV": "But all things that are reprooued, are made manifest by the light: for whatsoeuer doth make manifest, is light.",
+            "NABRE": "but everything exposed by the light becomes visible,"
           }
         },
         {
@@ -1049,8 +1057,8 @@
           "text": {
             "NRSV": "for everything that becomes visible is light. Therefore it says, “Sleeper, awake! Rise from the dead, and Christ will shine on you.”",
             "Rotherham": "Wherefore it saith—Up! thou sleeper, and arise from among the dead, and the Christ will shine upon thee.",
-            "KJV": "5:14 Wherfore hee saith: Awake thou that sleepest, and arise from the dead, and Christ shall giue thee light.",
-            "NABRE": "5:14 for everything that becomes visible is light. Therefore, it says: “Awake, O sleeper, and arise from the dead, and Christ will give you light.”"
+            "KJV": "Wherfore hee saith: Awake thou that sleepest, and arise from the dead, and Christ shall giue thee light.",
+            "NABRE": "for everything that becomes visible is light. Therefore, it says: “Awake, O sleeper, and arise from the dead, and Christ will give you light.”"
           }
         },
         {
@@ -1058,8 +1066,8 @@
           "text": {
             "NRSV": "Be careful then how you live, not as unwise people but as wise,",
             "Rotherham": "Be taking heed, therefore, exactly how ye are walking,—not as unwise, but as wise,—",
-            "KJV": "5:15 See then that yee walke circumspectly, not as fooles, but as wise,",
-            "NABRE": "5:15 Watch carefully then how you live, not as foolish persons but as wise,"
+            "KJV": "See then that yee walke circumspectly, not as fooles, but as wise,",
+            "NABRE": "Watch carefully then how you live, not as foolish persons but as wise,"
           }
         },
         {
@@ -1067,8 +1075,8 @@
           "text": {
             "NRSV": "making the most of the time, because the days are evil.",
             "Rotherham": "Buying out for yourselves the opportunity, because, the days, are evil;",
-            "KJV": "5:16 Redeming the time, because the dayes are euill.",
-            "NABRE": "5:16 making the most of the opportunity, because the days are evil."
+            "KJV": "Redeming the time, because the dayes are euill.",
+            "NABRE": "making the most of the opportunity, because the days are evil."
           }
         },
         {
@@ -1076,8 +1084,8 @@
           "text": {
             "NRSV": "So do not be foolish, but understand what the will of the Lord is.",
             "Rotherham": "For this cause, do not become foolish, but have discernment as to what is the will of the Lord;",
-            "KJV": "5:17 Wherefore be ye not vnwise, but vnderstanding what the will of the Lord is.",
-            "NABRE": "5:17 Therefore, do not continue in ignorance, but try to understand what is the will of the Lord."
+            "KJV": "Wherefore be ye not vnwise, but vnderstanding what the will of the Lord is.",
+            "NABRE": "Therefore, do not continue in ignorance, but try to understand what is the will of the Lord."
           }
         },
         {
@@ -1085,8 +1093,8 @@
           "text": {
             "NRSV": "Do not get drunk with wine, for that is debauchery; but be filled with the Spirit,",
             "Rotherham": "And be not getting drunk with wine, in which is dissoluteness, but be getting filled in Spirit;—",
-            "KJV": "5:18 And bee not drunke with wine, wherein is excesse: but bee filled with the Spirit:",
-            "NABRE": "5:18 And do not get drunk on wine, in which lies debauchery, but be filled with the Spirit,"
+            "KJV": "And bee not drunke with wine, wherein is excesse: but bee filled with the Spirit:",
+            "NABRE": "And do not get drunk on wine, in which lies debauchery, but be filled with the Spirit,"
           }
         },
         {
@@ -1094,8 +1102,8 @@
           "text": {
             "NRSV": "as you sing psalms and hymns and spiritual songs among yourselves, singing and making melody to the Lord in your hearts,",
             "Rotherham": "Speaking to yourselves, with psalms and hymns and spiritual songs; singing, and striking the strings, with your heart unto the Lord;",
-            "KJV": "5:19 Speaking to your selues, in Psalmes, and Hymnes, and Spirituall songs, singing and making melodie in your heart to the Lord,",
-            "NABRE": "5:19 addressing one another [in] psalms and hymns and spiritual songs, singing and playing to the Lord in your hearts,"
+            "KJV": "Speaking to your selues, in Psalmes, and Hymnes, and Spirituall songs, singing and making melodie in your heart to the Lord,",
+            "NABRE": "addressing one another [in] psalms and hymns and spiritual songs, singing and playing to the Lord in your hearts,"
           }
         },
         {
@@ -1103,8 +1111,8 @@
           "text": {
             "NRSV": "giving thanks to God the Father at all times and for everything in the name of our Lord Jesus Christ.",
             "Rotherham": "Giving thanks, always, for all things, in the name of our Lord Jesus Christ, unto your God and Father; ",
-            "KJV": "5:20 Giuing thankes alwayes for all things vnto God, and the Father, in the Name of our Lord Iesus Christ,",
-            "NABRE": "5:20 giving thanks always and for everything in the name of our Lord Jesus Christ to God the Father."
+            "KJV": "Giuing thankes alwayes for all things vnto God, and the Father, in the Name of our Lord Iesus Christ,",
+            "NABRE": "giving thanks always and for everything in the name of our Lord Jesus Christ to God the Father."
           }
         },
         {
@@ -1112,8 +1120,8 @@
           "text": {
             "NRSV": "Be subject to one another out of reverence for Christ.",
             "Rotherham": " Submitting yourselves one to another in reverence of Christ,—",
-            "KJV": "5:21 Submitting your selues one to another in the feare of God.",
-            "NABRE": "5:21 Wives and Husbands. Be subordinate to one another out of reverence for Christ."
+            "KJV": "Submitting your selues one to another in the feare of God.",
+            "NABRE": "Wives and Husbands. Be subordinate to one another out of reverence for Christ."
           }
         },
         {
@@ -1121,8 +1129,8 @@
           "text": {
             "NRSV": "Wives, be subject to your husbands as you are to the Lord.",
             "Rotherham": "Ye wives, unto your own husbands, as unto the Lord,",
-            "KJV": "5:22 Wiues, submit your selues vnto your own husbands, as vnto the Lord.",
-            "NABRE": "5:22 Wives should be subordinate to their husbands as to the Lord."
+            "KJV": "Wiues, submit your selues vnto your own husbands, as vnto the Lord.",
+            "NABRE": "Wives should be subordinate to their husbands as to the Lord."
           }
         },
         {
@@ -1130,8 +1138,8 @@
           "text": {
             "NRSV": "For the husband is the head of the wife just as Christ is the head of the church, the body of which he is the Savior.",
             "Rotherham": "Because, a husband, is the head of his wife, as, the Christ also, is the head of the assembly, he, being the saviour of the body,—",
-            "KJV": "5:23 For the husband is the head of the wife, euen as Christ is the head of the Church: and he is the sauiour of the body.",
-            "NABRE": "5:23 For the husband is head of his wife just as Christ is head of the church, he himself the savior of the body."
+            "KJV": "For the husband is the head of the wife, euen as Christ is the head of the Church: and he is the sauiour of the body.",
+            "NABRE": "For the husband is head of his wife just as Christ is head of the church, he himself the savior of the body."
           }
         },
         {
@@ -1139,8 +1147,8 @@
           "text": {
             "NRSV": "Just as the church is subject to Christ, so also wives ought to be, in everything, to their husbands.",
             "Rotherham": "Nevertheless, as, the assembly, submitteth herself unto the Christ, so, the wives, unto their husbands, in everything:",
-            "KJV": "5:24 Therefore as the Church is subiect vnto Christ, so let the wiues bee to their owne husbands in euery thing.",
-            "NABRE": "5:24 As the church is subordinate to Christ, so wives should be subordinate to their husbands in everything."
+            "KJV": "Therefore as the Church is subiect vnto Christ, so let the wiues bee to their owne husbands in euery thing.",
+            "NABRE": "As the church is subordinate to Christ, so wives should be subordinate to their husbands in everything."
           }
         },
         {
@@ -1148,8 +1156,8 @@
           "text": {
             "NRSV": "Husbands, love your wives, just as Christ loved the church and gave himself up for her,",
             "Rotherham": "Ye husbands, be loving your wives, even as, the Christ also, loved the assembly, and delivered, himself, up in her behalf,",
-            "KJV": "5:25 Husbands, loue your wiues, euen as Christ also loued the Church, and gaue himselfe for it:",
-            "NABRE": "5:25 Husbands, love your wives, even as Christ loved the church and handed himself over for her"
+            "KJV": "Husbands, loue your wiues, euen as Christ also loued the Church, and gaue himselfe for it:",
+            "NABRE": "Husbands, love your wives, even as Christ loved the church and handed himself over for her"
           }
         },
         {
@@ -1157,8 +1165,8 @@
           "text": {
             "NRSV": "in order to make her holy by cleansing her with the washing of water by the word,",
             "Rotherham": "That, her, he might sanctify, having purified [her] with the bath of water, in declaration,",
-            "KJV": "5:26 That he might sanctifie & cleanse it with the washing of water, by the word,",
-            "NABRE": "5:26 to sanctify her, cleansing her by the bath of water with the word,"
+            "KJV": "That he might sanctifie & cleanse it with the washing of water, by the word,",
+            "NABRE": "to sanctify her, cleansing her by the bath of water with the word,"
           }
         },
         {
@@ -1166,8 +1174,8 @@
           "text": {
             "NRSV": "so as to present the church to himself in splendor, without a spot or wrinkle or anything of the kind—yes, so that she may be holy and without blemish.",
             "Rotherham": "That, he, might present, unto himself, the assembly, all glorious, not having spot or wrinkle or any of such things, but that she should be holy and blameless;",
-            "KJV": "5:27 That hee might present it to himselfe a glorious Church, not hauing spot or wrinckle, or any such thing: but that it should bee holy and without blemish.",
-            "NABRE": "5:27 that he might present to himself the church in splendor, without spot or wrinkle or any such thing, that she might be holy and without blemish."
+            "KJV": "That hee might present it to himselfe a glorious Church, not hauing spot or wrinckle, or any such thing: but that it should bee holy and without blemish.",
+            "NABRE": "that he might present to himself the church in splendor, without spot or wrinkle or any such thing, that she might be holy and without blemish."
           }
         },
         {
@@ -1175,8 +1183,8 @@
           "text": {
             "NRSV": "In the same way, husbands should love their wives as they do their own bodies. He who loves his wife loves himself.",
             "Rotherham": "So, ought the husbands [also] to be loving their own wives, as their own bodies,—he that loveth his own wife, loveth himself,",
-            "KJV": "5:28 So ought men to loue their wiues, as their owne bodies: hee that loueth his wife, loueth himselfe.",
-            "NABRE": "5:28 So [also] husbands should love their wives as their own bodies. He who loves his wife loves himself."
+            "KJV": "So ought men to loue their wiues, as their owne bodies: hee that loueth his wife, loueth himselfe.",
+            "NABRE": "So [also] husbands should love their wives as their own bodies. He who loves his wife loves himself."
           }
         },
         {
@@ -1184,8 +1192,8 @@
           "text": {
             "NRSV": "For no one ever hates his own body, but he nourishes and tenderly cares for it, just as Christ does for the church,",
             "Rotherham": "No one, in fact, ever yet hated, his own flesh, but nourisheth and cherisheth it,—even as, the Christ, the assembly,",
-            "KJV": "5:29 For no man euer yet hated his owne flesh: but nourisheth and cherisheth it, euen as the Lord the Church:",
-            "NABRE": "5:29 For no one hates his own flesh but rather nourishes and cherishes it, even as Christ does the church,"
+            "KJV": "For no man euer yet hated his owne flesh: but nourisheth and cherisheth it, euen as the Lord the Church:",
+            "NABRE": "For no one hates his own flesh but rather nourishes and cherishes it, even as Christ does the church,"
           }
         },
         {
@@ -1193,8 +1201,8 @@
           "text": {
             "NRSV": "because we are members of his body.",
             "Rotherham": "Because, members, are we of his body;—",
-            "KJV": "5:30 For we are members of his body, of his flesh, and of his bones.",
-            "NABRE": "5:30 because we are members of his body."
+            "KJV": "For we are members of his body, of his flesh, and of his bones.",
+            "NABRE": "because we are members of his body."
           }
         },
         {
@@ -1202,8 +1210,8 @@
           "text": {
             "NRSV": "“For this reason a man will leave his father and mother and be joined to his wife, and the two will become one flesh.”",
             "Rotherham": "For this cause, will a man leave his father and his mother, and will cleave unto his wife, and, they two, shall become, one flesh.",
-            "KJV": "5:31 For this cause shall a man leaue his father and mother, and shall be ioyned vnto his wife, and they two shalbe one flesh.",
-            "NABRE": "5:31 “For this reason a man shall leave [his] father and [his] mother and be joined to his wife, and the two shall become one flesh.”"
+            "KJV": "For this cause shall a man leaue his father and mother, and shall be ioyned vnto his wife, and they two shalbe one flesh.",
+            "NABRE": "“For this reason a man shall leave [his] father and [his] mother and be joined to his wife, and the two shall become one flesh.”"
           }
         },
         {
@@ -1211,8 +1219,8 @@
           "text": {
             "NRSV": "This is a great mystery, and I am applying it to Christ and the church.",
             "Rotherham": "This sacred secret, is, great,—I, however, am speaking as to Christ and [as to] the assembly;—",
-            "KJV": "5:32 This is a great mysterie: but I speake concerning Christ and the Church.",
-            "NABRE": "5:32 This is a great mystery, but I speak in reference to Christ and the church."
+            "KJV": "This is a great mysterie: but I speake concerning Christ and the Church.",
+            "NABRE": "This is a great mystery, but I speak in reference to Christ and the church."
           }
         },
         {
@@ -1220,8 +1228,8 @@
           "text": {
             "NRSV": "Each of you, however, should love his wife as himself, and a wife should respect her husband.",
             "Rotherham": "Nevertheless, ye also, do ye, individually, each man be so loving, his own wife, as himself, and, the wife, [see] that she reverence her husband.  ",
-            "KJV": "5:33 Neuerthelesse, let euery one of you in particular, so loue his wife euen as himselfe, and the wife see that she reuerence her husband.",
-            "NABRE": "5:33 In any case, each one of you should love his wife as himself, and the wife should respect her husband."
+            "KJV": "Neuerthelesse, let euery one of you in particular, so loue his wife euen as himselfe, and the wife see that she reuerence her husband.",
+            "NABRE": "In any case, each one of you should love his wife as himself, and the wife should respect her husband."
           }
         }
       ]
@@ -1234,8 +1242,8 @@
           "text": {
             "NRSV": "Children, obey your parents in the Lord, for this is right.",
             "Rotherham": "Ye children, be obedient unto your parents [in the Lord], for this is right:",
-            "KJV": "6:1 Children, obey your parents in the Lord: for this is right.",
-            "NABRE": "6:1 Chapter 6 Children and Parents. Children, obey your parents [in the Lord], for this is right."
+            "KJV": "Children, obey your parents in the Lord: for this is right.",
+            "NABRE": "Chapter 6 Children and Parents. Children, obey your parents [in the Lord], for this is right."
           }
         },
         {
@@ -1243,8 +1251,8 @@
           "text": {
             "NRSV": "“Honor your father and mother”—this is the first commandment with a promise:",
             "Rotherham": "Honour thy father and thy mother,—which indeed is the first commandment with promise,",
-            "KJV": "6:2 Honour thy father and mother, (which is the first commandement with promise,)",
-            "NABRE": "6:2 “Honor your father and mother.” This is the first commandment with a promise,"
+            "KJV": "Honour thy father and mother, (which is the first commandement with promise,)",
+            "NABRE": "“Honor your father and mother.” This is the first commandment with a promise,"
           }
         },
         {
@@ -1252,8 +1260,8 @@
           "text": {
             "NRSV": "“so that it may be well with you and you may live long on the earth.”",
             "Rotherham": "That it may come to be, well with thee, and thou shalt be long-lived upon the land.",
-            "KJV": "6:3 That it may bee well with thee, and thou maiest liue long on the earth.",
-            "NABRE": "6:3 “that it may go well with you and that you may have a long life on earth.”"
+            "KJV": "That it may bee well with thee, and thou maiest liue long on the earth.",
+            "NABRE": "“that it may go well with you and that you may have a long life on earth.”"
           }
         },
         {
@@ -1261,8 +1269,8 @@
           "text": {
             "NRSV": "And, fathers, do not provoke your children to anger, but bring them up in the discipline and instruction of the Lord.",
             "Rotherham": "And ye fathers, be not provoking your children to anger, but be nourishing them up in the discipline and admonition of the Lord.",
-            "KJV": "6:4 And yee fathers, prouoke not your children to wrath: but bring them vp in the nourture and admonition of the Lord.",
-            "NABRE": "6:4 Fathers, do not provoke your children to anger, but bring them up with the training and instruction of the Lord."
+            "KJV": "And yee fathers, prouoke not your children to wrath: but bring them vp in the nourture and admonition of the Lord.",
+            "NABRE": "Fathers, do not provoke your children to anger, but bring them up with the training and instruction of the Lord."
           }
         },
         {
@@ -1270,8 +1278,8 @@
           "text": {
             "NRSV": "Slaves, obey your earthly masters with fear and trembling, in singleness of heart, as you obey Christ;",
             "Rotherham": "Ye servants, be obedient unto them who, after the flesh, are your masters, with fear and trembling, in singleness of your heart, as unto the Christ;",
-            "KJV": "6:5 Seruants, bee obedient to them that are your masters according to the flesh, with feare and trembling, in singlenesse of your heart, as vnto Christ:",
-            "NABRE": "6:5 Slaves and Masters. Slaves, be obedient to your human masters with fear and trembling, in sincerity of heart, as to Christ,"
+            "KJV": "Seruants, bee obedient to them that are your masters according to the flesh, with feare and trembling, in singlenesse of your heart, as vnto Christ:",
+            "NABRE": "Slaves and Masters. Slaves, be obedient to your human masters with fear and trembling, in sincerity of heart, as to Christ,"
           }
         },
         {
@@ -1279,8 +1287,8 @@
           "text": {
             "NRSV": "not only while being watched, and in order to please them, but as slaves of Christ, doing the will of God from the heart.",
             "Rotherham": "Not by way of eye-service as man-pleasers, but as servants of Christ, doing the will of God, from the soul,",
-            "KJV": "6:6 Not with eye seruice as men pleasers, but as the seruants of Christ, doing the will of God from the heart:",
-            "NABRE": "6:6 not only when being watched, as currying favor, but as slaves of Christ, doing the will of God from the heart,"
+            "KJV": "Not with eye seruice as men pleasers, but as the seruants of Christ, doing the will of God from the heart:",
+            "NABRE": "not only when being watched, as currying favor, but as slaves of Christ, doing the will of God from the heart,"
           }
         },
         {
@@ -1288,8 +1296,8 @@
           "text": {
             "NRSV": "Render service with enthusiasm, as to the Lord and not to men and women,",
             "Rotherham": "with good will, rendering service—as unto the Lord, and not unto men;",
-            "KJV": "6:7 With good will doing seruice, as to the Lord, and not to men,",
-            "NABRE": "6:7 willingly serving the Lord and not human beings,"
+            "KJV": "With good will doing seruice, as to the Lord, and not to men,",
+            "NABRE": "willingly serving the Lord and not human beings,"
           }
         },
         {
@@ -1297,8 +1305,8 @@
           "text": {
             "NRSV": "knowing that whatever good we do, we will receive the same again from the Lord, whether we are slaves or free.",
             "Rotherham": "Knowing that, each one, whatsoever he may do that is good, the same, shall he receive back from the Lord, whether bond or free.",
-            "KJV": "6:8 Knowing that whatsoeuer good thing any man doeth, the same shall he receiue of the Lord, whether he be bond or free.",
-            "NABRE": "6:8 knowing that each will be requited from the Lord for whatever good he does, whether he is slave or free."
+            "KJV": "Knowing that whatsoeuer good thing any man doeth, the same shall he receiue of the Lord, whether he be bond or free.",
+            "NABRE": "knowing that each will be requited from the Lord for whatever good he does, whether he is slave or free."
           }
         },
         {
@@ -1306,8 +1314,8 @@
           "text": {
             "NRSV": "And, masters, do the same to them. Stop threatening them, for you know that both of you have the same Master in heaven, and with him there is no partiality.",
             "Rotherham": "And ye masters, the same things, be doing towards them, forbearing your threat—knowing that, both their and your Master, is in the heavens, and, respect of persons, there is none, with him. ",
-            "KJV": "6:9 And ye masters, do the same things vnto them, forbearing threatning: knowing that your master also is in heauen, neither is there respect of persons with him.",
-            "NABRE": "6:9 Masters, act in the same way toward them, and stop bullying, knowing that both they and you have a Master in heaven and that with him there is no partiality."
+            "KJV": "And ye masters, do the same things vnto them, forbearing threatning: knowing that your master also is in heauen, neither is there respect of persons with him.",
+            "NABRE": "Masters, act in the same way toward them, and stop bullying, knowing that both they and you have a Master in heaven and that with him there is no partiality."
           }
         },
         {
@@ -1315,8 +1323,8 @@
           "text": {
             "NRSV": "Finally, be strong in the Lord and in the strength of his power.",
             "Rotherham": " For the rest, be empowering yourselves in the Lord, and in the grasp of his might:",
-            "KJV": "6:10 Finally, my brethren, be strong in the Lord, & in the power of his might.",
-            "NABRE": "6:10 Battle Against Evil. Finally, draw your strength from the Lord and from his mighty power."
+            "KJV": "Finally, my brethren, be strong in the Lord, & in the power of his might.",
+            "NABRE": "Battle Against Evil. Finally, draw your strength from the Lord and from his mighty power."
           }
         },
         {
@@ -1324,8 +1332,8 @@
           "text": {
             "NRSV": "Put on the whole armor of God, so that you may be able to stand against the wiles of the devil.",
             "Rotherham": "Put on the complete armour of God, with a view to your having power to stand against the strategies of the adversary;",
-            "KJV": "6:11 Put on the whole armour of God, that ye may be able to stand against the wiles of the deuill.",
-            "NABRE": "6:11 Put on the armor of God so that you may be able to stand firm against the tactics of the devil."
+            "KJV": "Put on the whole armour of God, that ye may be able to stand against the wiles of the deuill.",
+            "NABRE": "Put on the armor of God so that you may be able to stand firm against the tactics of the devil."
           }
         },
         {
@@ -1333,8 +1341,8 @@
           "text": {
             "NRSV": "For our struggle is not against enemies of blood and flesh, but against the rulers, against the authorities, against the cosmic powers of this present darkness, against the spiritual forces of evil in the heavenly places.",
             "Rotherham": "Because our struggle is not against blood and flesh, but, against the principalities, against the authorities, against the world-holders, of this darkness, against the spiritual forces of wickedness in the heavenlies.",
-            "KJV": "6:12 For wee wrestle not against flesh and blood, but against principalities, against powers, against the rulers of the darknes of this world, against spirituall wickednes in high places.",
-            "NABRE": "6:12 For our struggle is not with flesh and blood but with the principalities, with the powers, with the world rulers of this present darkness, with the evil spirits in the heavens."
+            "KJV": "For wee wrestle not against flesh and blood, but against principalities, against powers, against the rulers of the darknes of this world, against spirituall wickednes in high places.",
+            "NABRE": "For our struggle is not with flesh and blood but with the principalities, with the powers, with the world rulers of this present darkness, with the evil spirits in the heavens."
           }
         },
         {
@@ -1342,8 +1350,8 @@
           "text": {
             "NRSV": "Therefore take up the whole armor of God, so that you may be able to withstand on that evil day, and having done everything, to stand firm.",
             "Rotherham": "For this cause, take up the complete armour of God, in order that ye may receive power to withstand in the evil day, and, all things, having accomplished, to stand!",
-            "KJV": "6:13 Wherfore take vnto you the whole armour of God, that yee may be able to withstand in the euill day, and hauing done all, to stand.",
-            "NABRE": "6:13 Therefore, put on the armor of God, that you may be able to resist on the evil day and, having done everything, to hold your ground."
+            "KJV": "Wherfore take vnto you the whole armour of God, that yee may be able to withstand in the euill day, and hauing done all, to stand.",
+            "NABRE": "Therefore, put on the armor of God, that you may be able to resist on the evil day and, having done everything, to hold your ground."
           }
         },
         {
@@ -1351,8 +1359,8 @@
           "text": {
             "NRSV": "Stand therefore, and fasten the belt of truth around your waist, and put on the breastplate of righteousness.",
             "Rotherham": "Stand therefore,—having girded your loins with truth, and put on the breastplate of righteousness,",
-            "KJV": "6:14 Stand therefore, hauing your loynes girt about with trueth, and hauing on the breast-plate of righteousnesse:",
-            "NABRE": "6:14 So stand fast with your loins girded in truth, clothed with righteousness as a breastplate,"
+            "KJV": "Stand therefore, hauing your loynes girt about with trueth, and hauing on the breast-plate of righteousnesse:",
+            "NABRE": "So stand fast with your loins girded in truth, clothed with righteousness as a breastplate,"
           }
         },
         {
@@ -1360,8 +1368,8 @@
           "text": {
             "NRSV": "As shoes for your feet put on whatever will make you ready to proclaim the gospel of peace.",
             "Rotherham": "And shod your feet with the readiness of the glad-message of peace;",
-            "KJV": "6:15 And your feete shod with the preparation of the Gospel of peace.",
-            "NABRE": "6:15 and your feet shod in readiness for the gospel of peace."
+            "KJV": "And your feete shod with the preparation of the Gospel of peace.",
+            "NABRE": "and your feet shod in readiness for the gospel of peace."
           }
         },
         {
@@ -1369,8 +1377,8 @@
           "text": {
             "NRSV": "With all of these, take the shield of faith, with which you will be able to quench all the flaming arrows of the evil one.",
             "Rotherham": "With all, having taken up the shield of faith, wherewith ye shall have power, all the ignited darts of the wicked one, to quench;",
-            "KJV": "6:16 Aboue all, taking the shielde of Faith, wherewith yee shall bee able to quench all the fierie dartes of the wicked.",
-            "NABRE": "6:16 In all circumstances, hold faith as a shield, to quench all [the] flaming arrows of the evil one."
+            "KJV": "Aboue all, taking the shielde of Faith, wherewith yee shall bee able to quench all the fierie dartes of the wicked.",
+            "NABRE": "In all circumstances, hold faith as a shield, to quench all [the] flaming arrows of the evil one."
           }
         },
         {
@@ -1378,8 +1386,8 @@
           "text": {
             "NRSV": "Take the helmet of salvation, and the sword of the Spirit, which is the word of God.",
             "Rotherham": "And, the helmet of salvation, welcome ye, and the sword of the spirit, which is what God hath spoken,",
-            "KJV": "6:17 And take the helmet of saluation, and the sword of the Spirit, which is the word of God:",
-            "NABRE": "6:17 And take the helmet of salvation and the sword of the Spirit, which is the word of God."
+            "KJV": "And take the helmet of saluation, and the sword of the Spirit, which is the word of God:",
+            "NABRE": "And take the helmet of salvation and the sword of the Spirit, which is the word of God."
           }
         },
         {
@@ -1387,8 +1395,8 @@
           "text": {
             "NRSV": "Pray at all times in the Spirit, with all prayer and supplication. To that end keep alert and always persevere in supplication for all the saints.",
             "Rotherham": "With all prayer and supplication, praying in every season, in spirit, and, thereunto, watching, with all perseverance and supplication, for all the saints,— ",
-            "KJV": "6:18 Praying alwayes with all prayer and supplication in the spirit, and watching thereunto with all perseuerance, and supplication for all Saints,",
-            "NABRE": "6:18 Constant Prayer. With all prayer and supplication, pray at every opportunity in the Spirit. To that end, be watchful with all perseverance and supplication for all the holy ones"
+            "KJV": "Praying alwayes with all prayer and supplication in the spirit, and watching thereunto with all perseuerance, and supplication for all Saints,",
+            "NABRE": "Constant Prayer. With all prayer and supplication, pray at every opportunity in the Spirit. To that end, be watchful with all perseverance and supplication for all the holy ones"
           }
         },
         {
@@ -1396,8 +1404,8 @@
           "text": {
             "NRSV": "Pray also for me, so that when I speak, a message may be given to me to make known with boldness the mystery of the gospel,",
             "Rotherham": " And on behalf of me;—that, unto me, may be given discourse in the opening of my mouth, with freedom of utterance, to make known the sacred secret [of the glad-message]",
-            "KJV": "6:19 And for mee, that vtterance may be giuen vnto me, that I may open my mouth boldly, to make knowen the mysterie of the Gospel:",
-            "NABRE": "6:19 and also for me, that speech may be given me to open my mouth, to make known with boldness the mystery of the gospel"
+            "KJV": "And for mee, that vtterance may be giuen vnto me, that I may open my mouth boldly, to make knowen the mysterie of the Gospel:",
+            "NABRE": "and also for me, that speech may be given me to open my mouth, to make known with boldness the mystery of the gospel"
           }
         },
         {
@@ -1405,8 +1413,8 @@
           "text": {
             "NRSV": "for which I am an ambassador in chains. Pray that I may declare it boldly, as I must speak.",
             "Rotherham": "In behalf of which I am conducting an embassy in chains, that, therein, I may use freedom of utterance as it is needful for me to speak.",
-            "KJV": "6:20 For which I am an ambassador in bonds, that therein I may speake boldly, as I ought to speake.",
-            "NABRE": "6:20 for which I am an ambassador in chains, so that I may have the courage to speak as I must. V. Conclusion A Final Message."
+            "KJV": "For which I am an ambassador in bonds, that therein I may speake boldly, as I ought to speake.",
+            "NABRE": "for which I am an ambassador in chains, so that I may have the courage to speak as I must. V. Conclusion A Final Message."
           }
         },
         {
@@ -1414,8 +1422,8 @@
           "text": {
             "NRSV": "So that you also may know how I am and what I am doing, Tychicus will tell you everything. He is a dear brother and a faithful minister in the Lord.",
             "Rotherham": "In order, however, that, ye also, may know the things which relate to me—what I am accomplishing,—all things, shall Tychicus make known unto you, [he] the beloved brother and faithful minister in the Lord,",
-            "KJV": "6:21 But that yee also may know my affaires, and how I doe, Tychicus a beloued brother, and faithfull minister in the Lord, shall make knowen to you all things.",
-            "NABRE": "6:21 So that you also may have news of me and of what I am doing, Tychicus, my beloved brother and trustworthy minister in the Lord, will tell you everything."
+            "KJV": "But that yee also may know my affaires, and how I doe, Tychicus a beloued brother, and faithfull minister in the Lord, shall make knowen to you all things.",
+            "NABRE": "So that you also may have news of me and of what I am doing, Tychicus, my beloved brother and trustworthy minister in the Lord, will tell you everything."
           }
         },
         {
@@ -1423,8 +1431,8 @@
           "text": {
             "NRSV": "I am sending him to you for this very purpose, to let you know how we are, and to encourage your hearts.",
             "Rotherham": "Whom I have sent unto you for this very purpose, that ye may get to know the things concerning us, and he may encourage your hearts.",
-            "KJV": "6:22 Whom I haue sent vnto you for the same purpose, that yee might know our affaires, and that he might comfort your hearts.",
-            "NABRE": "6:22 I am sending him to you for this very purpose, so that you may know about us and that he may encourage your hearts."
+            "KJV": "Whom I haue sent vnto you for the same purpose, that yee might know our affaires, and that he might comfort your hearts.",
+            "NABRE": "I am sending him to you for this very purpose, so that you may know about us and that he may encourage your hearts."
           }
         },
         {
@@ -1432,8 +1440,8 @@
           "text": {
             "NRSV": "Peace be to the whole community, and love with faith, from God the Father and the Lord Jesus Christ.",
             "Rotherham": "Peace unto the brethren, and love with faith,—from God our Father, and Lord Jesus Christ.",
-            "KJV": "6:23 Peace be to the brethren, and loue, with faith from God the Father, and the Lord Iesus Christ.",
-            "NABRE": "6:23 Peace be to the brothers, and love with faith, from God the Father and the Lord Jesus Christ."
+            "KJV": "Peace be to the brethren, and loue, with faith from God the Father, and the Lord Iesus Christ.",
+            "NABRE": "Peace be to the brothers, and love with faith, from God the Father and the Lord Jesus Christ."
           }
         },
         {
@@ -1441,8 +1449,8 @@
           "text": {
             "NRSV": "Grace be with all who have an undying love for our Lord Jesus Christ.",
             "Rotherham": "Favour be with all them that love our Lord Jesus Christ with incorruptness.   ",
-            "KJV": "6:24 Grace be with all them that loue our Lord Iesus Christ in sinceritie. Written from Rome vnto the Ephesians by Tychicus.",
-            "NABRE": "6:24 Grace be with all who love our Lord Jesus Christ in immortality."
+            "KJV": "Grace be with all them that loue our Lord Iesus Christ in sinceritie. Written from Rome vnto the Ephesians by Tychicus.",
+            "NABRE": "Grace be with all who love our Lord Jesus Christ in immortality."
           }
         }
       ]

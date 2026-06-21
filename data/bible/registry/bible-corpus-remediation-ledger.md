@@ -174,3 +174,23 @@ Known exception: `JUD` is duplicated by Jude and Judith pending deliberate ident
 Translation `raw/**` and `source/**` lanes are excluded from the active schema/container guard. They are source or staging material, not normalized Bible-browser corpus containers.
 
 This exclusion does not trust those files as complete or correct. It only prevents raw translation lanes, such as `data/bible/translations/drb-original-douay-rheims/raw/**`, from being misclassified as malformed active corpus.
+
+
+## Phase 3A: canonical NT systemic contamination cleanup
+
+Status: applied as bounded remediation.
+
+Scope:
+
+- canonical NT files only;
+- KJV/NABRE leading verse-reference prefixes stripped where the prefix matched the current chapter and verse;
+- KJV HTML `&thorn;` artifacts normalized to `þ`;
+- actual NT translation columns declared in file metadata.
+
+Not in scope:
+
+- missing canonical NT verses;
+- DRB missing-content defects;
+- Rotherham overlay or ledger-label repair;
+- NABRE heading extraction;
+- broader OT, deuterocanon, Psalms, Odes, or Vulgate work.

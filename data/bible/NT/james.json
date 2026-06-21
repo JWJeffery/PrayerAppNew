@@ -21,6 +21,14 @@
         "ntVersificationMap": "documentation/rotherham-nt-versification-map.json",
         "overlayPolicy": "mismatch chapters stored under translationOverlays.Rotherham without altering target verse sequence",
         "emptySourceRowsPolicy": "empty Rotherham source rows are governed omissions and are not imported as blank text"
+      },
+      "KJV": {
+        "status": "present",
+        "note": "Declared during NT systemic contamination cleanup."
+      },
+      "NABRE": {
+        "status": "present",
+        "note": "Declared during NT systemic contamination cleanup."
       }
     },
     "rotherhamImportStatus": {
@@ -45,208 +53,208 @@
         {
           "num": 1,
           "text": {
-            "KJV": "1:1 Iames a seruant of God, and of the Lord Iesus Christ, to the twelue Tribes which are scattered abroad, greeting.",
-            "NABRE": "1:1 I. Address Chapter 1 James, a slave of God and of the Lord Jesus Christ, to the twelve tribes in the dispersion, greetings.",
+            "KJV": "Iames a seruant of God, and of the Lord Iesus Christ, to the twelue Tribes which are scattered abroad, greeting.",
+            "NABRE": "I. Address Chapter 1 James, a slave of God and of the Lord Jesus Christ, to the twelve tribes in the dispersion, greetings.",
             "NRSV": "James, a servant of God and of the Lord Jesus Christ, To the twelve tribes in the Dispersion: Greetings."
           }
         },
         {
           "num": 2,
           "text": {
-            "KJV": "1:2 My brethren, count it all ioy when ye fall into diuers temptations,",
-            "NABRE": "1:2 II. The Value of Trials and Temptation Perseverance in Trial. Consider it all joy, my brothers, when you encounter various trials,",
+            "KJV": "My brethren, count it all ioy when ye fall into diuers temptations,",
+            "NABRE": "II. The Value of Trials and Temptation Perseverance in Trial. Consider it all joy, my brothers, when you encounter various trials,",
             "NRSV": "My brothers and sisters, whenever you face trials of any kind, consider it nothing but joy,"
           }
         },
         {
           "num": 3,
           "text": {
-            "KJV": "1:3 Knowing this, that the trying of your faith worketh patience,",
-            "NABRE": "1:3 for you know that the testing of your faith produces perseverance.",
+            "KJV": "Knowing this, that the trying of your faith worketh patience,",
+            "NABRE": "for you know that the testing of your faith produces perseverance.",
             "NRSV": "because you know that the testing of your faith produces endurance;"
           }
         },
         {
           "num": 4,
           "text": {
-            "KJV": "1:4 But let patience haue her perfect worke, that ye may be perfect, and entier, wanting nothing.",
-            "NABRE": "1:4 And let perseverance be perfect, so that you may be perfect and complete, lacking in nothing.",
+            "KJV": "But let patience haue her perfect worke, that ye may be perfect, and entier, wanting nothing.",
+            "NABRE": "And let perseverance be perfect, so that you may be perfect and complete, lacking in nothing.",
             "NRSV": "and let endurance have its full effect, so that you may be mature and complete, lacking in nothing."
           }
         },
         {
           "num": 5,
           "text": {
-            "KJV": "1:5 If any of you lacke wisedome, let him aske of God, that giueth to all men liberally, and vpbraideth not: and it shalbe giuen him.",
-            "NABRE": "1:5 But if any of you lacks wisdom, he should ask God who gives to all generously and ungrudgingly, and he will be given it.",
+            "KJV": "If any of you lacke wisedome, let him aske of God, that giueth to all men liberally, and vpbraideth not: and it shalbe giuen him.",
+            "NABRE": "But if any of you lacks wisdom, he should ask God who gives to all generously and ungrudgingly, and he will be given it.",
             "NRSV": "If any of you is lacking in wisdom, ask God, who gives to all generously and ungrudgingly, and it will be given you."
           }
         },
         {
           "num": 6,
           "text": {
-            "KJV": "1:6 But let him aske in faith, nothing wauering: for he that wauereth is like a waue of the sea, driuen with the wind, and tossed.",
-            "NABRE": "1:6 But he should ask in faith, not doubting, for the one who doubts is like a wave of the sea that is driven and tossed about by the wind.",
+            "KJV": "But let him aske in faith, nothing wauering: for he that wauereth is like a waue of the sea, driuen with the wind, and tossed.",
+            "NABRE": "But he should ask in faith, not doubting, for the one who doubts is like a wave of the sea that is driven and tossed about by the wind.",
             "NRSV": "But ask in faith, never doubting, for the one who doubts is like a wave of the sea, driven and tossed by the wind;"
           }
         },
         {
           "num": 7,
           "text": {
-            "KJV": "1:7 For let not that man thinke that he shall receiue any thing of the Lord.",
-            "NABRE": "1:7 For that person must not suppose that he will receive anything from the Lord,",
+            "KJV": "For let not that man thinke that he shall receiue any thing of the Lord.",
+            "NABRE": "For that person must not suppose that he will receive anything from the Lord,",
             "NRSV": "for the person, being double-minded and unstable in every way, must not expect to receive anything from the Lord."
           }
         },
         {
           "num": 9,
           "text": {
-            "KJV": "1:9 Let the brother of low degree, reioyce in that he is exalted:",
-            "NABRE": "1:9 The brother in lowly circumstances should take pride in his high standing,",
+            "KJV": "Let the brother of low degree, reioyce in that he is exalted:",
+            "NABRE": "The brother in lowly circumstances should take pride in his high standing,",
             "NRSV": "Let the believer who is lowly boast in being raised up,"
           }
         },
         {
           "num": 10,
           "text": {
-            "KJV": "1:10 But the rich, in that hee is made low: because as the floure of the grasse he shall passe away.",
-            "NABRE": "1:10 and the rich one in his lowliness, for he will pass away “like the flower of the field.”",
+            "KJV": "But the rich, in that hee is made low: because as the floure of the grasse he shall passe away.",
+            "NABRE": "and the rich one in his lowliness, for he will pass away “like the flower of the field.”",
             "NRSV": "and the rich in being brought low, because the rich will disappear like a flower in the field."
           }
         },
         {
           "num": 11,
           "text": {
-            "KJV": "1:11 For the Sunne is no sooner risen with a burning heate, but it withereth the grasse; and the flowre thereof falleth, and the grace of the fashion of it perisheth: so also shall the rich man fade away in his wayes.",
-            "NABRE": "1:11 For the sun comes up with its scorching heat and dries up the grass, its flower droops, and the beauty of its appearance vanishes. So will the rich person fade away in the midst of his pursuits.",
+            "KJV": "For the Sunne is no sooner risen with a burning heate, but it withereth the grasse; and the flowre thereof falleth, and the grace of the fashion of it perisheth: so also shall the rich man fade away in his wayes.",
+            "NABRE": "For the sun comes up with its scorching heat and dries up the grass, its flower droops, and the beauty of its appearance vanishes. So will the rich person fade away in the midst of his pursuits.",
             "NRSV": "For the sun rises with its scorching heat and withers the field; its flower falls, and its beauty perishes. It is the same way with the rich; in the midst of a busy life, they will wither away."
           }
         },
         {
           "num": 12,
           "text": {
-            "KJV": "1:12 Blessed is the man that endureth temptation: for when hee is tried, hee shall receiue the crowne of life, which the Lord hath promised to them that loue him.",
-            "NABRE": "1:12 Temptation. Blessed is the man who perseveres in temptation, for when he has been proved he will receive the crown of life that he promised to those who love him.",
+            "KJV": "Blessed is the man that endureth temptation: for when hee is tried, hee shall receiue the crowne of life, which the Lord hath promised to them that loue him.",
+            "NABRE": "Temptation. Blessed is the man who perseveres in temptation, for when he has been proved he will receive the crown of life that he promised to those who love him.",
             "NRSV": "Blessed is anyone who endures temptation. Such a one has stood the test and will receive the crown of life that the Lord has promised to those who love him."
           }
         },
         {
           "num": 13,
           "text": {
-            "KJV": "1:13 Let no man say when he is tempted, I am tempted of God: for God cannot be tempted with euill, neither tempteth he any man.",
-            "NABRE": "1:13 No one experiencing temptation should say, “I am being tempted by God”; for God is not subject to temptation to evil, and he himself tempts no one.",
+            "KJV": "Let no man say when he is tempted, I am tempted of God: for God cannot be tempted with euill, neither tempteth he any man.",
+            "NABRE": "No one experiencing temptation should say, “I am being tempted by God”; for God is not subject to temptation to evil, and he himself tempts no one.",
             "NRSV": "No one, when tempted, should say, “I am being tempted by God”; for God cannot be tempted by evil and he himself tempts no one."
           }
         },
         {
           "num": 14,
           "text": {
-            "KJV": "1:14 But euery man is tempted, when hee is drawen away of his owne lust, and entised.",
-            "NABRE": "1:14 Rather, each person is tempted when he is lured and enticed by his own desire.",
+            "KJV": "But euery man is tempted, when hee is drawen away of his owne lust, and entised.",
+            "NABRE": "Rather, each person is tempted when he is lured and enticed by his own desire.",
             "NRSV": "But one is tempted by one’s own desire, being lured and enticed by it;"
           }
         },
         {
           "num": 15,
           "text": {
-            "KJV": "1:15 Then when lust hath conceiued, it bringeth forth sinne: and sinne, when it is finished, bringeth forth death.",
-            "NABRE": "1:15 Then desire conceives and brings forth sin, and when sin reaches maturity it gives birth to death.",
+            "KJV": "Then when lust hath conceiued, it bringeth forth sinne: and sinne, when it is finished, bringeth forth death.",
+            "NABRE": "Then desire conceives and brings forth sin, and when sin reaches maturity it gives birth to death.",
             "NRSV": "then, when desire has conceived, it gives birth to sin, and that sin, when it is fully grown, gives birth to death."
           }
         },
         {
           "num": 16,
           "text": {
-            "KJV": "1:16 Doe not erre, my beloued brethren.",
-            "NABRE": "1:16 Do not be deceived, my beloved brothers:",
+            "KJV": "Doe not erre, my beloued brethren.",
+            "NABRE": "Do not be deceived, my beloved brothers:",
             "NRSV": "Do not be deceived, my beloved brothers and sisters."
           }
         },
         {
           "num": 17,
           "text": {
-            "KJV": "1:17 Euery good gift, and euery perfect gift is from aboue, & commeth downe from the Father of lights, with whom is no variablenesse, neither shadow of turning.",
-            "NABRE": "1:17 all good giving and every perfect gift is from above, coming down from the Father of lights, with whom there is no alteration or shadow caused by change.",
+            "KJV": "Euery good gift, and euery perfect gift is from aboue, & commeth downe from the Father of lights, with whom is no variablenesse, neither shadow of turning.",
+            "NABRE": "all good giving and every perfect gift is from above, coming down from the Father of lights, with whom there is no alteration or shadow caused by change.",
             "NRSV": "Every generous act of giving, with every perfect gift, is from above, coming down from the Father of lights, with whom there is no variation or shadow due to change."
           }
         },
         {
           "num": 18,
           "text": {
-            "KJV": "1:18 Of his owne will begate hee vs, with the word of Trueth, that wee should bee a kinde of first fruites of his creatures.",
-            "NABRE": "1:18 He willed to give us birth by the word of truth that we may be a kind of firstfruits of his creatures.",
+            "KJV": "Of his owne will begate hee vs, with the word of Trueth, that wee should bee a kinde of first fruites of his creatures.",
+            "NABRE": "He willed to give us birth by the word of truth that we may be a kind of firstfruits of his creatures.",
             "NRSV": "In fulfillment of his own purpose he gave us birth by the word of truth, so that we would become a kind of first fruits of his creatures."
           }
         },
         {
           "num": 19,
           "text": {
-            "KJV": "1:19 Wherefore my beloued brethren, let euery man bee swift to heare, slow to speake, slow to wrath.",
-            "NABRE": "1:19 III. Exhortations and Warnings Doers of the Word. Know this, my dear brothers: everyone should be quick to hear, slow to speak, slow to wrath,",
+            "KJV": "Wherefore my beloued brethren, let euery man bee swift to heare, slow to speake, slow to wrath.",
+            "NABRE": "III. Exhortations and Warnings Doers of the Word. Know this, my dear brothers: everyone should be quick to hear, slow to speak, slow to wrath,",
             "NRSV": "You must understand this, my beloved: let everyone be quick to listen, slow to speak, slow to anger;"
           }
         },
         {
           "num": 20,
           "text": {
-            "KJV": "1:20 For the wrath of man worketh not the righteousnesse of God.",
-            "NABRE": "1:20 for the wrath of a man does not accomplish the righteousness of God.",
+            "KJV": "For the wrath of man worketh not the righteousnesse of God.",
+            "NABRE": "for the wrath of a man does not accomplish the righteousness of God.",
             "NRSV": "for your anger does not produce God’s righteousness."
           }
         },
         {
           "num": 21,
           "text": {
-            "KJV": "1:21 Wherefore lay apart all filthinesse, and superfluitie of naughtinesse, & receiue with meeknesse the engrafted word, which is able to saue your soules.",
-            "NABRE": "1:21 Therefore, put away all filth and evil excess and humbly welcome the word that has been planted in you and is able to save your souls.",
+            "KJV": "Wherefore lay apart all filthinesse, and superfluitie of naughtinesse, & receiue with meeknesse the engrafted word, which is able to saue your soules.",
+            "NABRE": "Therefore, put away all filth and evil excess and humbly welcome the word that has been planted in you and is able to save your souls.",
             "NRSV": "Therefore rid yourselves of all sordidness and rank growth of wickedness, and welcome with meekness the implanted word that has the power to save your souls."
           }
         },
         {
           "num": 22,
           "text": {
-            "KJV": "1:22 But be ye doers of the word, and not hearers onely, receiuing your owne selues.",
-            "NABRE": "1:22 Be doers of the word and not hearers only, deluding yourselves.",
+            "KJV": "But be ye doers of the word, and not hearers onely, receiuing your owne selues.",
+            "NABRE": "Be doers of the word and not hearers only, deluding yourselves.",
             "NRSV": "But be doers of the word, and not merely hearers who deceive themselves."
           }
         },
         {
           "num": 23,
           "text": {
-            "KJV": "1:23 For if any be a hearer of the word and not a doer, he is like vnto a man beholding his naturall face in a glasse:",
-            "NABRE": "1:23 For if anyone is a hearer of the word and not a doer, he is like a man who looks at his own face in a mirror.",
+            "KJV": "For if any be a hearer of the word and not a doer, he is like vnto a man beholding his naturall face in a glasse:",
+            "NABRE": "For if anyone is a hearer of the word and not a doer, he is like a man who looks at his own face in a mirror.",
             "NRSV": "For if any are hearers of the word and not doers, they are like those who look at themselves in a mirror;"
           }
         },
         {
           "num": 24,
           "text": {
-            "KJV": "1:24 For hee beholdeth himselfe, and goeth his way, and straightway forgetteth what maner of man he was.",
-            "NABRE": "1:24 He sees himself, then goes off and promptly forgets what he looked like.",
+            "KJV": "For hee beholdeth himselfe, and goeth his way, and straightway forgetteth what maner of man he was.",
+            "NABRE": "He sees himself, then goes off and promptly forgets what he looked like.",
             "NRSV": "for they look at themselves and, on going away, immediately forget what they were like."
           }
         },
         {
           "num": 25,
           "text": {
-            "KJV": "1:25 But who so looketh into the perfect Law of libertie, and continueth therein, he being not a forgetfull hearer, but a doer of the worke, this man shall be blessed in his deed.",
-            "NABRE": "1:25 But the one who peers into the perfect law of freedom and perseveres, and is not a hearer who forgets but a doer who acts, such a one shall be blessed in what he does.",
+            "KJV": "But who so looketh into the perfect Law of libertie, and continueth therein, he being not a forgetfull hearer, but a doer of the worke, this man shall be blessed in his deed.",
+            "NABRE": "But the one who peers into the perfect law of freedom and perseveres, and is not a hearer who forgets but a doer who acts, such a one shall be blessed in what he does.",
             "NRSV": "But those who look into the perfect law, the law of liberty, and persevere, being not hearers who forget but doers who act—they will be blessed in their doing."
           }
         },
         {
           "num": 26,
           "text": {
-            "KJV": "1:26 If any man among you seeme to be religious, & bridleth not his tongue, but deceiueth his owne heart, this mans religion is vaine.",
-            "NABRE": "1:26 If anyone thinks he is religious and does not bridle his tongue but deceives his heart, his religion is vain.",
+            "KJV": "If any man among you seeme to be religious, & bridleth not his tongue, but deceiueth his owne heart, this mans religion is vaine.",
+            "NABRE": "If anyone thinks he is religious and does not bridle his tongue but deceives his heart, his religion is vain.",
             "NRSV": "If any think they are religious, and do not bridle their tongues but deceive their hearts, their religion is worthless."
           }
         },
         {
           "num": 27,
           "text": {
-            "KJV": "1:27 Pure religion and vndefiled before God and the Facher, is this, to visit the fatherlesse and widowes in their affliction, and to keepe himselfe vnspotted from the world.",
-            "NABRE": "1:27 Religion that is pure and undefiled before God and the Father is this: to care for orphans and widows in their affliction and to keep oneself unstained by the world.",
+            "KJV": "Pure religion and vndefiled before God and the Facher, is this, to visit the fatherlesse and widowes in their affliction, and to keepe himselfe vnspotted from the world.",
+            "NABRE": "Religion that is pure and undefiled before God and the Father is this: to care for orphans and widows in their affliction and to keep oneself unstained by the world.",
             "NRSV": "Religion that is pure and undefiled before God, the Father, is this: to care for orphans and widows in their distress, and to keep oneself unstained by the world."
           }
         }
@@ -260,8 +268,8 @@
           "text": {
             "NRSV": "My brothers and sisters, do you with your acts of favoritism really believe in our glorious Lord Jesus Christ?",
             "Rotherham": "My brethren, do not, with respect for persons, be holding the faith of our Lord Jesus Christ, [the Lord] of glory.",
-            "KJV": "2:1 My brethren, haue not the faith of our Lord Iesus Christ the Lord of glorie, with respect of persons.",
-            "NABRE": "2:1 Chapter 2 Sin of Partiality. My brothers, show no partiality as you adhere to the faith in our glorious Lord Jesus Christ."
+            "KJV": "My brethren, haue not the faith of our Lord Iesus Christ the Lord of glorie, with respect of persons.",
+            "NABRE": "Chapter 2 Sin of Partiality. My brothers, show no partiality as you adhere to the faith in our glorious Lord Jesus Christ."
           }
         },
         {
@@ -269,8 +277,8 @@
           "text": {
             "NRSV": "For if a person with gold rings and in fine clothes comes into your assembly, and if a poor person in dirty clothes also comes in,",
             "Rotherham": "For, if there enter into your synagogue a man wearing gold rings in gay clothing, and there enter a destitute man also, in soiled clothing,—",
-            "KJV": "2:2 For if there come vnto your assembly a man with a gold ring, in goodly apparel, and there come in also a poore man, in vile raiment:",
-            "NABRE": "2:2 For if a man with gold rings on his fingers and in fine clothes comes into your assembly, and a poor person in shabby clothes also comes in,"
+            "KJV": "For if there come vnto your assembly a man with a gold ring, in goodly apparel, and there come in also a poore man, in vile raiment:",
+            "NABRE": "For if a man with gold rings on his fingers and in fine clothes comes into your assembly, and a poor person in shabby clothes also comes in,"
           }
         },
         {
@@ -278,8 +286,8 @@
           "text": {
             "NRSV": "and if you take notice of the one wearing the fine clothes and say, “Have a seat here, please,” while to the one who is poor you say, “Stand there,” or, “Sit at my feet,”",
             "Rotherham": "And ye eye him that hath on the gay clothing, and say, Thou, be sitting here, pleasantly,—and, unto the destitute man, say—Thou, stand, or sit there under my footstool,",
-            "KJV": "2:3 And yee haue respect to him that weareth the gay clothing, and say vnto him, Sit thou here in a good place: and say to the poore, Stand thou there, or sit here vnder my footstoole:",
-            "NABRE": "2:3 and you pay attention to the one wearing the fine clothes and say, “Sit here, please,” while you say to the poor one, “Stand there,” or “Sit at my feet,”"
+            "KJV": "And yee haue respect to him that weareth the gay clothing, and say vnto him, Sit thou here in a good place: and say to the poore, Stand thou there, or sit here vnder my footstoole:",
+            "NABRE": "and you pay attention to the one wearing the fine clothes and say, “Sit here, please,” while you say to the poor one, “Stand there,” or “Sit at my feet,”"
           }
         },
         {
@@ -287,8 +295,8 @@
           "text": {
             "NRSV": "have you not made distinctions among yourselves, and become judges with evil thoughts?",
             "Rotherham": "Would ye not have been led to make distinctions among yourselves, and have become judges with wicked reasonings?",
-            "KJV": "2:4 Are yee not then partiall in your selues, and are become iudges of euill thoughts?",
-            "NABRE": "2:4 have you not made distinctions among yourselves and become judges with evil designs?"
+            "KJV": "Are yee not then partiall in your selues, and are become iudges of euill thoughts?",
+            "NABRE": "have you not made distinctions among yourselves and become judges with evil designs?"
           }
         },
         {
@@ -296,8 +304,8 @@
           "text": {
             "NRSV": "Listen, my beloved brothers and sisters. Has not God chosen the poor in the world to be rich in faith and to be heirs of the kingdom that he has promised to those who love him?",
             "Rotherham": "Hearken! my brethren beloved:—Hath not, God, chosen the destitute in the world [to be] rich in faith and heirs of the kingdom which he hath promised to them that love him?",
-            "KJV": "2:5 Hearken, my beloued brethren, Hath not God chosen the poore of this world, rich in faith, and heires of the kingdome, which hee hath promised to them that loue him?",
-            "NABRE": "2:5 Listen, my beloved brothers. Did not God choose those who are poor in the world to be rich in faith and heirs of the kingdom that he promised to those who love him?"
+            "KJV": "Hearken, my beloued brethren, Hath not God chosen the poore of this world, rich in faith, and heires of the kingdome, which hee hath promised to them that loue him?",
+            "NABRE": "Listen, my beloved brothers. Did not God choose those who are poor in the world to be rich in faith and heirs of the kingdom that he promised to those who love him?"
           }
         },
         {
@@ -305,8 +313,8 @@
           "text": {
             "NRSV": "But you have dishonored the poor. Is it not the rich who oppress you? Is it not they who drag you into court?",
             "Rotherham": "Whereas, ye, have dishonoured the destitute man! Do not, the rich, oppress you? and, themselves, drag you into courts of justice?",
-            "KJV": "2:6 But yee haue despised the poore. Doe not rich men oppresse you, and draw you before the Iudgement seats?",
-            "NABRE": "2:6 But you dishonored the poor person. Are not the rich oppressing you? And do they themselves not haul you off to court?"
+            "KJV": "But yee haue despised the poore. Doe not rich men oppresse you, and draw you before the Iudgement seats?",
+            "NABRE": "But you dishonored the poor person. Are not the rich oppressing you? And do they themselves not haul you off to court?"
           }
         },
         {
@@ -314,8 +322,8 @@
           "text": {
             "NRSV": "Is it not they who blaspheme the excellent name that was invoked over you?",
             "Rotherham": "Do not, they, defame the noble name which hath been invoked upon you? ",
-            "KJV": "2:7 Doe not they blaspheme that worthy Name, by the which ye are called?",
-            "NABRE": "2:7 Is it not they who blaspheme the noble name that was invoked over you?"
+            "KJV": "Doe not they blaspheme that worthy Name, by the which ye are called?",
+            "NABRE": "Is it not they who blaspheme the noble name that was invoked over you?"
           }
         },
         {
@@ -323,8 +331,8 @@
           "text": {
             "NRSV": "You do well if you really fulfill the royal law according to the scripture, “You shall love your neighbor as yourself.”",
             "Rotherham": " If ye are, indeed, fulfilling, a royal law, according to the scripture—Thou shalt love thy neighbour as thyself, nobly, are ye doing;",
-            "KJV": "2:8 If ye fulfil the royall Law, according to the Scripture, Thou shalt loue thy neighbour as thy selfe, ye doe well.",
-            "NABRE": "2:8 However, if you fulfill the royal law according to the scripture, “You shall love your neighbor as yourself,” you are doing well."
+            "KJV": "If ye fulfil the royall Law, according to the Scripture, Thou shalt loue thy neighbour as thy selfe, ye doe well.",
+            "NABRE": "However, if you fulfill the royal law according to the scripture, “You shall love your neighbor as yourself,” you are doing well."
           }
         },
         {
@@ -332,8 +340,8 @@
           "text": {
             "NRSV": "But if you show partiality, you commit sin and are convicted by the law as transgressors.",
             "Rotherham": "But, if ye are shewing respect of persons, sin, are ye working, being convicted by the law as transgressors!",
-            "KJV": "2:9 But if ye haue respect to persons, ye commit sinne, and are conuinced of the Law, as transgressours.",
-            "NABRE": "2:9 But if you show partiality, you commit sin, and are convicted by the law as transgressors."
+            "KJV": "But if ye haue respect to persons, ye commit sinne, and are conuinced of the Law, as transgressours.",
+            "NABRE": "But if you show partiality, you commit sin, and are convicted by the law as transgressors."
           }
         },
         {
@@ -341,8 +349,8 @@
           "text": {
             "NRSV": "For whoever keeps the whole law but fails in one point has become accountable for all of it.",
             "Rotherham": "For, a man who shall keep, the whole law, but shall stumble in one thing, hath become, for all things, liable,—",
-            "KJV": "2:10 For whosoeuer shall keepe the whole Law, & yet offend in one point, he is guilty of all.",
-            "NABRE": "2:10 For whoever keeps the whole law, but falls short in one particular, has become guilty in respect to all of it."
+            "KJV": "For whosoeuer shall keepe the whole Law, & yet offend in one point, he is guilty of all.",
+            "NABRE": "For whoever keeps the whole law, but falls short in one particular, has become guilty in respect to all of it."
           }
         },
         {
@@ -350,8 +358,8 @@
           "text": {
             "NRSV": "For the one who said, “You shall not commit adultery,” also said, “You shall not murder.” Now if you do not commit adultery but you do murder, you have become a transgressor of the law.",
             "Rotherham": "For, he that hath said—Do not commit adultery, hath also said—Do not commit murder,—now, if thou dost not commit adultery, but dost commit murder, thou hast become a transgressor of law.",
-            "KJV": "2:11 For he that said, Doe not commit adultery; sayd also, Do not kill. Now if thou commit no adultery, yet if thou kill, thou art become a transgressour of the Law.",
-            "NABRE": "2:11 For he who said, “You shall not commit adultery,” also said, “You shall not kill.” Even if you do not commit adultery but kill, you have become a transgressor of the law."
+            "KJV": "For he that said, Doe not commit adultery; sayd also, Do not kill. Now if thou commit no adultery, yet if thou kill, thou art become a transgressour of the Law.",
+            "NABRE": "For he who said, “You shall not commit adultery,” also said, “You shall not kill.” Even if you do not commit adultery but kill, you have become a transgressor of the law."
           }
         },
         {
@@ -359,8 +367,8 @@
           "text": {
             "NRSV": "So speak and so act as those who are to be judged by the law of liberty.",
             "Rotherham": "So, be speaking, and, so, doing, as they who, through means of a law of freedom, are about to be judged;",
-            "KJV": "2:12 So speake ye, and so doe, as they that shall bee iudged by the Law of libertie.",
-            "NABRE": "2:12 So speak and so act as people who will be judged by the law of freedom."
+            "KJV": "So speake ye, and so doe, as they that shall bee iudged by the Law of libertie.",
+            "NABRE": "So speak and so act as people who will be judged by the law of freedom."
           }
         },
         {
@@ -368,8 +376,8 @@
           "text": {
             "NRSV": "For judgment will be without mercy to anyone who has shown no mercy; mercy triumphs over judgment.",
             "Rotherham": "For, the judgment, [will be] without mercy, unto him that hath shewed no mercy: Mercy, boasteth, over judgment. ",
-            "KJV": "2:13 For he shall haue iudgement without mercie, that hath shewed no mercy, & mercie reioyceth against iudgement.",
-            "NABRE": "2:13 For the judgment is merciless to one who has not shown mercy; mercy triumphs over judgment. Faith and Works."
+            "KJV": "For he shall haue iudgement without mercie, that hath shewed no mercy, & mercie reioyceth against iudgement.",
+            "NABRE": "For the judgment is merciless to one who has not shown mercy; mercy triumphs over judgment. Faith and Works."
           }
         },
         {
@@ -377,8 +385,8 @@
           "text": {
             "NRSV": "What good is it, my brothers and sisters, if you say you have faith but do not have works? Can faith save you?",
             "Rotherham": " What profit, my brethren,—if one should be saying he hath, faith, but hath not, works; can his faith save him?",
-            "KJV": "2:14 What doth it profit, my brethren, though a man say hee hath faith, and haue not workes? can faith saue him?",
-            "NABRE": "2:14 What good is it, my brothers, if someone says he has faith but does not have works? Can that faith save him?"
+            "KJV": "What doth it profit, my brethren, though a man say hee hath faith, and haue not workes? can faith saue him?",
+            "NABRE": "What good is it, my brothers, if someone says he has faith but does not have works? Can that faith save him?"
           }
         },
         {
@@ -386,8 +394,8 @@
           "text": {
             "NRSV": "If a brother or sister is naked and lacks daily food,",
             "Rotherham": "If, a brother or sister, should be naked, and coming short of the daily food,",
-            "KJV": "2:15 If a brother or sister be naked, and destitute of dayly foode,",
-            "NABRE": "2:15 If a brother or sister has nothing to wear and has no food for the day,"
+            "KJV": "If a brother or sister be naked, and destitute of dayly foode,",
+            "NABRE": "If a brother or sister has nothing to wear and has no food for the day,"
           }
         },
         {
@@ -395,8 +403,8 @@
           "text": {
             "NRSV": "and one of you says to them, “Go in peace; keep warm and eat your fill,” and yet you do not supply their bodily needs, what is the good of that?",
             "Rotherham": "And one from among you should say unto them—Withdraw in peace, be getting warmed and fed, but should not give them the things needful for the body, What the profit?",
-            "KJV": "2:16 And one of you say vnto them, Depart in peace, be you warmed & filled: notwithstanding ye giue them not those things which are needfull to the body: what doth it profit?",
-            "NABRE": "2:16 and one of you says to them, “Go in peace, keep warm, and eat well,” but you do not give them the necessities of the body, what good is it?"
+            "KJV": "And one of you say vnto them, Depart in peace, be you warmed & filled: notwithstanding ye giue them not those things which are needfull to the body: what doth it profit?",
+            "NABRE": "and one of you says to them, “Go in peace, keep warm, and eat well,” but you do not give them the necessities of the body, what good is it?"
           }
         },
         {
@@ -404,8 +412,8 @@
           "text": {
             "NRSV": "So faith by itself, if it has no works, is dead.",
             "Rotherham": "So, also, faith, if it have not works, is dead, by itself.",
-            "KJV": "2:17 Euen so faith, if it hath not works, is dead being alone.",
-            "NABRE": "2:17 So also faith of itself, if it does not have works, is dead."
+            "KJV": "Euen so faith, if it hath not works, is dead being alone.",
+            "NABRE": "So also faith of itself, if it does not have works, is dead."
           }
         },
         {
@@ -413,8 +421,8 @@
           "text": {
             "NRSV": "But someone will say, “You have faith and I have works.” Show me your faith apart from your works, and I by my works will show you my faith.",
             "Rotherham": "But one will say,—Thou, hast faith, and, I, have works, show me thy faith apart from thy works, and, I, unto thee, will shew, by my works, my faith.",
-            "KJV": "2:18 Yea, a man may say, Thou hast faith, and I haue workes: shew mee thy faith without thy workes, and I will shew thee my faith by my workes.",
-            "NABRE": "2:18 Indeed someone may say, “You have faith and I have works.” Demonstrate your faith to me without works, and I will demonstrate my faith to you from my works."
+            "KJV": "Yea, a man may say, Thou hast faith, and I haue workes: shew mee thy faith without thy workes, and I will shew thee my faith by my workes.",
+            "NABRE": "Indeed someone may say, “You have faith and I have works.” Demonstrate your faith to me without works, and I will demonstrate my faith to you from my works."
           }
         },
         {
@@ -422,8 +430,8 @@
           "text": {
             "NRSV": "You believe that God is one; you do well. Even the demons believe—and shudder.",
             "Rotherham": "Thou believest that God is, one: thou doest, well—Even the demons believe, and shudder!",
-            "KJV": "2:19 Thou beleeuest that there is one God, thou doest well: the deuils also beleeue, and tremble.",
-            "NABRE": "2:19 You believe that God is one. You do well. Even the demons believe that and tremble."
+            "KJV": "Thou beleeuest that there is one God, thou doest well: the deuils also beleeue, and tremble.",
+            "NABRE": "You believe that God is one. You do well. Even the demons believe that and tremble."
           }
         },
         {
@@ -431,8 +439,8 @@
           "text": {
             "NRSV": "Do you want to be shown, you senseless person, that faith apart from works is barren?",
             "Rotherham": "But art thou willing to learn, O empty man! that, faith, apart from works, is, idle?",
-            "KJV": "2:20 But wilt thou knowe, O vaine man, that faith without workes is dead?",
-            "NABRE": "2:20 Do you want proof, you ignoramus, that faith without works is useless?"
+            "KJV": "But wilt thou knowe, O vaine man, that faith without workes is dead?",
+            "NABRE": "Do you want proof, you ignoramus, that faith without works is useless?"
           }
         },
         {
@@ -440,8 +448,8 @@
           "text": {
             "NRSV": "Was not our ancestor Abraham justified by works when he offered his son Isaac on the altar?",
             "Rotherham": "Abraham our father, was it not, by works, he was declared righteous—when he offered Isaac his son upon the altar?",
-            "KJV": "2:21 Was not Abraham our father iustified by works, when hee had offered Isaac his sonne vpon the altar?",
-            "NABRE": "2:21 Was not Abraham our father justified by works when he offered his son Isaac upon the altar?"
+            "KJV": "Was not Abraham our father iustified by works, when hee had offered Isaac his sonne vpon the altar?",
+            "NABRE": "Was not Abraham our father justified by works when he offered his son Isaac upon the altar?"
           }
         },
         {
@@ -449,8 +457,8 @@
           "text": {
             "NRSV": "You see that faith was active along with his works, and faith was brought to completion by the works.",
             "Rotherham": "Thou seest that, his faith, had been working together with his works, and by his works did his faith become full-grown,—",
-            "KJV": "2:22 Seest thou how faith wrought with his works, and by works was faith made perfect?",
-            "NABRE": "2:22 You see that faith was active along with his works, and faith was completed by the works."
+            "KJV": "Seest thou how faith wrought with his works, and by works was faith made perfect?",
+            "NABRE": "You see that faith was active along with his works, and faith was completed by the works."
           }
         },
         {
@@ -458,8 +466,8 @@
           "text": {
             "NRSV": "Thus the scripture was fulfilled that says, “Abraham believed God, and it was reckoned to him as righteousness,” and he was called the friend of God.",
             "Rotherham": "And the scripture was fulfilled which saith—And Abraham believed God, And it was reckoned to him as righteousness, and, God’s friend, was he called:",
-            "KJV": "2:23 And the Scripture was fullfiled which saith, Abraham beleeued God, and it was imputed vnto him for righteousnes: and he was called the friend of God.",
-            "NABRE": "2:23 Thus the scripture was fulfilled that says, “Abraham believed God, and it was credited to him as righteousness,” and he was called “the friend of God.”"
+            "KJV": "And the Scripture was fullfiled which saith, Abraham beleeued God, and it was imputed vnto him for righteousnes: and he was called the friend of God.",
+            "NABRE": "Thus the scripture was fulfilled that says, “Abraham believed God, and it was credited to him as righteousness,” and he was called “the friend of God.”"
           }
         },
         {
@@ -467,8 +475,8 @@
           "text": {
             "NRSV": "You see that a person is justified by works and not by faith alone.",
             "Rotherham": "Ye see that—by works, a man is declared righteous, and not by faith alone.",
-            "KJV": "2:24 Ye see then, how that by workes a man is iustified, and not by faith only.",
-            "NABRE": "2:24 See how a person is justified by works and not by faith alone."
+            "KJV": "Ye see then, how that by workes a man is iustified, and not by faith only.",
+            "NABRE": "See how a person is justified by works and not by faith alone."
           }
         },
         {
@@ -476,8 +484,8 @@
           "text": {
             "NRSV": "Likewise, was not Rahab the prostitute also justified by works when she welcomed the messengers and sent them out by another road?",
             "Rotherham": "And, in like manner also, Rahab the harlot, Was it not, by works, she was declared righteous, when she gave welcome unto the messengers, and, by another way, urged them forth?",
-            "KJV": "2:25 Likewise also, was not Rahab the harlot iustified by works, when she had receiued the messengers, and had sent them out another way?",
-            "NABRE": "2:25 And in the same way, was not Rahab the harlot also justified by works when she welcomed the messengers and sent them out by a different route?"
+            "KJV": "Likewise also, was not Rahab the harlot iustified by works, when she had receiued the messengers, and had sent them out another way?",
+            "NABRE": "And in the same way, was not Rahab the harlot also justified by works when she welcomed the messengers and sent them out by a different route?"
           }
         },
         {
@@ -485,8 +493,8 @@
           "text": {
             "NRSV": "For just as the body without the spirit is dead, so faith without works is also dead.",
             "Rotherham": "Just as, the body, apart from spirit, is dead, so, our faith also, apart from works, is dead.  ",
-            "KJV": "2:26 For as the body without the spirit is dead, so faith without workes is dead also.",
-            "NABRE": "2:26 For just as a body without a spirit is dead, so also faith without works is dead."
+            "KJV": "For as the body without the spirit is dead, so faith without workes is dead also.",
+            "NABRE": "For just as a body without a spirit is dead, so also faith without works is dead."
           }
         }
       ]
@@ -499,8 +507,8 @@
           "text": {
             "NRSV": "Not many of you should become teachers, my brothers and sisters, for you know that we who teach will be judged with greater strictness.",
             "Rotherham": "Not, many teachers, become ye, my brethren, knowing that, a severer sentence, shall ye receive;",
-            "KJV": "3:1 My brethren, bee not many masters, knowing that we shall receiue the greater condemnation.",
-            "NABRE": "3:1 Chapter 3 Power of the Tongue. Not many of you should become teachers, my brothers, for you realize that we will be judged more strictly,"
+            "KJV": "My brethren, bee not many masters, knowing that we shall receiue the greater condemnation.",
+            "NABRE": "Chapter 3 Power of the Tongue. Not many of you should become teachers, my brothers, for you realize that we will be judged more strictly,"
           }
         },
         {
@@ -508,8 +516,8 @@
           "text": {
             "NRSV": "For all of us make many mistakes. Anyone who makes no mistakes in speaking is perfect, able to keep the whole body in check with a bridle.",
             "Rotherham": "For, oft, are we stumbling, one and all: If anyone, in word, doth not stumble, the same, is a mature man, able to curb even the whole body.",
-            "KJV": "3:2 For in many things we offend all. If any man offend not in word, the same is a perfect man, and able also to bridle the whole body.",
-            "NABRE": "3:2 for we all fall short in many respects. If anyone does not fall short in speech, he is a perfect man, able to bridle his whole body also."
+            "KJV": "For in many things we offend all. If any man offend not in word, the same is a perfect man, and able also to bridle the whole body.",
+            "NABRE": "for we all fall short in many respects. If anyone does not fall short in speech, he is a perfect man, able to bridle his whole body also."
           }
         },
         {
@@ -517,8 +525,8 @@
           "text": {
             "NRSV": "If we put bits into the mouths of horses to make them obey us, we guide their whole bodies.",
             "Rotherham": "Now, if, the horses bits, into their mouths, we thrust, to the end they may be yielding to us, their whole body also, do we turn about.",
-            "KJV": "3:3 Behold, we put bittes in the horses mouthes, that they may obey vs, and we turne about their whole body.",
-            "NABRE": "3:3 If we put bits into the mouths of horses to make them obey us, we also guide their whole bodies."
+            "KJV": "Behold, we put bittes in the horses mouthes, that they may obey vs, and we turne about their whole body.",
+            "NABRE": "If we put bits into the mouths of horses to make them obey us, we also guide their whole bodies."
           }
         },
         {
@@ -526,8 +534,8 @@
           "text": {
             "NRSV": "Or look at ships: though they are so large that it takes strong winds to drive them, yet they are guided by a very small rudder wherever the will of the pilot directs.",
             "Rotherham": "Lo! the ships also, large as they are, and, by rough winds, driven along, are turned about by a very small helm, whithersoever the impulse of the steersman inclineth.",
-            "KJV": "3:4 Behold also the ships, which though they be so great, and are driuen of fierce windes, yet are they turned about with a very small helme, whithersoeuer the gouernour listeth.",
-            "NABRE": "3:4 It is the same with ships: even though they are so large and driven by fierce winds, they are steered by a very small rudder wherever the pilot’s inclination wishes."
+            "KJV": "Behold also the ships, which though they be so great, and are driuen of fierce windes, yet are they turned about with a very small helme, whithersoeuer the gouernour listeth.",
+            "NABRE": "It is the same with ships: even though they are so large and driven by fierce winds, they are steered by a very small rudder wherever the pilot’s inclination wishes."
           }
         },
         {
@@ -535,8 +543,8 @@
           "text": {
             "NRSV": "So also the tongue is a small member, yet it boasts of great exploits. How great a forest is set ablaze by a small fire!",
             "Rotherham": "So, also, the tongue, is, a little member, and yet, of great things, maketh boast. Lo! how small a fire, kindleth, how great a forest;",
-            "KJV": "3:5 Euen so the tongue is a little member, and boasteth great things: behold, how great a matter a litle fire kindleth.",
-            "NABRE": "3:5 In the same way the tongue is a small member and yet has great pretensions. Consider how small a fire can set a huge forest ablaze."
+            "KJV": "Euen so the tongue is a little member, and boasteth great things: behold, how great a matter a litle fire kindleth.",
+            "NABRE": "In the same way the tongue is a small member and yet has great pretensions. Consider how small a fire can set a huge forest ablaze."
           }
         },
         {
@@ -544,8 +552,8 @@
           "text": {
             "NRSV": "And the tongue is a fire. The tongue is placed among our members as a world of iniquity; it stains the whole body, sets on fire the cycle of nature, and is itself set on fire by hell.",
             "Rotherham": "And, the tongue, is a fire,—[as], the world of unrighteousness, the tongue, becometh fixed among our members, that which defileth the whole body and setteth on fire the wheel of our natural life, and is set on fire, by gehenna!",
-            "KJV": "3:6 And the tongue is a fire, a world of iniquitie: so is the tongue amongst our members, that it defileth the whole body, and setteth on fire the course of nature, and it is set on fire of hell.",
-            "NABRE": "3:6 The tongue is also a fire. It exists among our members as a world of malice, defiling the whole body and setting the entire course of our lives on fire, itself set on fire by Gehenna."
+            "KJV": "And the tongue is a fire, a world of iniquitie: so is the tongue amongst our members, that it defileth the whole body, and setteth on fire the course of nature, and it is set on fire of hell.",
+            "NABRE": "The tongue is also a fire. It exists among our members as a world of malice, defiling the whole body and setting the entire course of our lives on fire, itself set on fire by Gehenna."
           }
         },
         {
@@ -553,8 +561,8 @@
           "text": {
             "NRSV": "For every species of beast and bird, of reptile and sea creature, can be tamed and has been tamed by the human species,",
             "Rotherham": "For, every nature—both of wild beasts and of birds, both of reptiles and of things in the sea, is to be tamed, and hath been tamed, by the human nature;",
-            "KJV": "3:7 For euery kind of beasts, and of birds, and of serpents, and things in the sea, is tamed, and hath been tamed of mankind.",
-            "NABRE": "3:7 For every kind of beast and bird, of reptile and sea creature, can be tamed and has been tamed by the human species,"
+            "KJV": "For euery kind of beasts, and of birds, and of serpents, and things in the sea, is tamed, and hath been tamed of mankind.",
+            "NABRE": "For every kind of beast and bird, of reptile and sea creature, can be tamed and has been tamed by the human species,"
           }
         },
         {
@@ -562,8 +570,8 @@
           "text": {
             "NRSV": "but no one can tame the tongue—a restless evil, full of deadly poison.",
             "Rotherham": "But, the tongue, none of mankind can, tame,—A restless mischief! Full of deadly poison",
-            "KJV": "3:8 But the tongue can no man tame, it is an vnruly euill, ful of deadly poyson.",
-            "NABRE": "3:8 but no human being can tame the tongue. It is a restless evil, full of deadly poison."
+            "KJV": "But the tongue can no man tame, it is an vnruly euill, ful of deadly poyson.",
+            "NABRE": "but no human being can tame the tongue. It is a restless evil, full of deadly poison."
           }
         },
         {
@@ -571,8 +579,8 @@
           "text": {
             "NRSV": "With it we bless the Lord and Father, and with it we curse those who are made in the likeness of God.",
             "Rotherham": "Therewith, are we blessing our Lord and Father, and, therewith, we are cursing the men who, after the likeness of God, have been brought into being!",
-            "KJV": "3:9 Therewith blesse wee God, euen the Father: and therewith curse wee men, which are made after the similitude of God.",
-            "NABRE": "3:9 With it we bless the Lord and Father, and with it we curse human beings who are made in the likeness of God."
+            "KJV": "Therewith blesse wee God, euen the Father: and therewith curse wee men, which are made after the similitude of God.",
+            "NABRE": "With it we bless the Lord and Father, and with it we curse human beings who are made in the likeness of God."
           }
         },
         {
@@ -580,8 +588,8 @@
           "text": {
             "NRSV": "From the same mouth come blessing and cursing. My brothers and sisters, this ought not to be so.",
             "Rotherham": "Out of the same mouth, come forth blessing and cursing! Not meet, my brethren, for, these things, thus, to be coming to pass!",
-            "KJV": "3:10 Out of the same mouth proceedeth blessing and cursing: my brethren, these things ought not so to be.",
-            "NABRE": "3:10 From the same mouth come blessing and cursing. This need not be so, my brothers."
+            "KJV": "Out of the same mouth proceedeth blessing and cursing: my brethren, these things ought not so to be.",
+            "NABRE": "From the same mouth come blessing and cursing. This need not be so, my brothers."
           }
         },
         {
@@ -589,8 +597,8 @@
           "text": {
             "NRSV": "Does a spring pour forth from the same opening both fresh and brackish water?",
             "Rotherham": "Doth, the fountain, out of the same opening, teem forth the sweet and the bitter?",
-            "KJV": "3:11 Doeth a fountaine send foorth at the same place sweet water and bitter?",
-            "NABRE": "3:11 Does a spring gush forth from the same opening both pure and brackish water?"
+            "KJV": "Doeth a fountaine send foorth at the same place sweet water and bitter?",
+            "NABRE": "Does a spring gush forth from the same opening both pure and brackish water?"
           }
         },
         {
@@ -598,8 +606,8 @@
           "text": {
             "NRSV": "Can a fig tree, my brothers and sisters, yield olives, or a grapevine figs? No more can salt water yield fresh.",
             "Rotherham": "Is it possible, my brethren, for, a fig-tree, to produce, olives, or, a vine, figs? Neither can, salt, water yield, sweet. ",
-            "KJV": "3:12 Can &thorn; figtree, my brethren, beare oliue berries? either a vine, figs? so can no fountaine both yeeld salt water & fresh.",
-            "NABRE": "3:12 Can a fig tree, my brothers, produce olives, or a grapevine figs? Neither can salt water yield fresh. True Wisdom."
+            "KJV": "Can þ figtree, my brethren, beare oliue berries? either a vine, figs? so can no fountaine both yeeld salt water & fresh.",
+            "NABRE": "Can a fig tree, my brothers, produce olives, or a grapevine figs? Neither can salt water yield fresh. True Wisdom."
           }
         },
         {
@@ -607,8 +615,8 @@
           "text": {
             "NRSV": "Who is wise and understanding among you? Show by your good life that your works are done with gentleness born of wisdom.",
             "Rotherham": " Who is wise and well-instructed among you? Let him show, out of his comely behaviour, his works, in meekness of wisdom.",
-            "KJV": "3:13 Who is a wise man and indued with knowledge amongst you? let him shew out of a good conuersation his workes with meekenes of wisedome.",
-            "NABRE": "3:13 Who among you is wise and understanding? Let him show his works by a good life in the humility that comes from wisdom."
+            "KJV": "Who is a wise man and indued with knowledge amongst you? let him shew out of a good conuersation his workes with meekenes of wisedome.",
+            "NABRE": "Who among you is wise and understanding? Let him show his works by a good life in the humility that comes from wisdom."
           }
         },
         {
@@ -616,8 +624,8 @@
           "text": {
             "NRSV": "But if you have bitter envy and selfish ambition in your hearts, do not be boastful and false to the truth.",
             "Rotherham": "But, if, bitter jealousy, ye have, and rivalry, in your hearts; be not boasting and showing yourselves false against the truth!",
-            "KJV": "3:14 But if ye haue bitter enuying and strife in your hearts glory not, and lie not against the trueth.",
-            "NABRE": "3:14 But if you have bitter jealousy and selfish ambition in your hearts, do not boast and be false to the truth."
+            "KJV": "But if ye haue bitter enuying and strife in your hearts glory not, and lie not against the trueth.",
+            "NABRE": "But if you have bitter jealousy and selfish ambition in your hearts, do not boast and be false to the truth."
           }
         },
         {
@@ -625,8 +633,8 @@
           "text": {
             "NRSV": "Such wisdom does not come down from above, but is earthly, unspiritual, devilish.",
             "Rotherham": "This wisdom is not one, from above, coming down, but is earthly, born of the soul, demoniacal!",
-            "KJV": "3:15 This wisedome descendeth not from aboue, but is earthly, sensuall, deuilish.",
-            "NABRE": "3:15 Wisdom of this kind does not come down from above but is earthly, unspiritual, demonic."
+            "KJV": "This wisedome descendeth not from aboue, but is earthly, sensuall, deuilish.",
+            "NABRE": "Wisdom of this kind does not come down from above but is earthly, unspiritual, demonic."
           }
         },
         {
@@ -634,8 +642,8 @@
           "text": {
             "NRSV": "For where there is envy and selfish ambition, there will also be disorder and wickedness of every kind.",
             "Rotherham": "For, where jealousy and rivalry are, there, are anarchy and every ignoble deed.",
-            "KJV": "3:16 For where enuying and strife is, there is confusion, and euery euill worke.",
-            "NABRE": "3:16 For where jealousy and selfish ambition exist, there is disorder and every foul practice."
+            "KJV": "For where enuying and strife is, there is confusion, and euery euill worke.",
+            "NABRE": "For where jealousy and selfish ambition exist, there is disorder and every foul practice."
           }
         },
         {
@@ -643,8 +651,8 @@
           "text": {
             "NRSV": "But the wisdom from above is first pure, then peaceable, gentle, willing to yield, full of mercy and good fruits, without a trace of partiality or hypocrisy.",
             "Rotherham": "But, the wisdom from above, is—first pure, then peaceable, reasonable, easy to be entreated, fraught with mercy and good fruits, without partiality, without hypocrisy.",
-            "KJV": "3:17 But the wisedome that is from aboue, is first pure, then peaceable, gentle, and easie to be intreated, full of mercy, and good fruits, without partialitie, and without hypocrisie.",
-            "NABRE": "3:17 But the wisdom from above is first of all pure, then peaceable, gentle, compliant, full of mercy and good fruits, without inconstancy or insincerity."
+            "KJV": "But the wisedome that is from aboue, is first pure, then peaceable, gentle, and easie to be intreated, full of mercy, and good fruits, without partialitie, and without hypocrisie.",
+            "NABRE": "But the wisdom from above is first of all pure, then peaceable, gentle, compliant, full of mercy and good fruits, without inconstancy or insincerity."
           }
         },
         {
@@ -652,8 +660,8 @@
           "text": {
             "NRSV": "And a harvest of righteousness is sown in peace for those who make peace.",
             "Rotherham": "And, in harvest of righteousness, with peace, is sown by them that make peace.  ",
-            "KJV": "3:18 And the fruit of righteousnesse is sowen in peace, of them that make peace.",
-            "NABRE": "3:18 And the fruit of righteousness is sown in peace for those who cultivate peace."
+            "KJV": "And the fruit of righteousnesse is sowen in peace, of them that make peace.",
+            "NABRE": "And the fruit of righteousness is sown in peace for those who cultivate peace."
           }
         }
       ]
@@ -666,8 +674,8 @@
           "text": {
             "NRSV": "Those conflicts and disputes among you, where do they come from? Do they not come from your cravings that are at war within you?",
             "Rotherham": "Whence wars and whence fightings among you? are they not from hence—due to your pleasures which are taking the field in your members?",
-            "KJV": "4:1 From whence come warres and fightings among you? come they not hence, euen of your lusts, that warre in your members?",
-            "NABRE": "4:1 Chapter 4 Causes of Division. Where do the wars and where do the conflicts among you come from? Is it not from your passions that make war within your members?"
+            "KJV": "From whence come warres and fightings among you? come they not hence, euen of your lusts, that warre in your members?",
+            "NABRE": "Chapter 4 Causes of Division. Where do the wars and where do the conflicts among you come from? Is it not from your passions that make war within your members?"
           }
         },
         {
@@ -675,8 +683,8 @@
           "text": {
             "NRSV": "You want something and do not have it; so you commit murder. And you covet something and cannot obtain it; so you engage in disputes and conflicts. You do not have, because you do not ask.",
             "Rotherham": "Ye covet—and have not, ye commit murder, and are jealous—and cannot obtain,—ye fight and war. Ye have not—because ye do not really ask,",
-            "KJV": "4:2 Ye lust, and haue not: yee kill, and desire to haue, and cannot obtaine: yee fight and warre, yet yee haue not, because ye aske not.",
-            "NABRE": "4:2 You covet but do not possess. You kill and envy but you cannot obtain; you fight and wage war. You do not possess because you do not ask."
+            "KJV": "Ye lust, and haue not: yee kill, and desire to haue, and cannot obtaine: yee fight and warre, yet yee haue not, because ye aske not.",
+            "NABRE": "You covet but do not possess. You kill and envy but you cannot obtain; you fight and wage war. You do not possess because you do not ask."
           }
         },
         {
@@ -684,8 +692,8 @@
           "text": {
             "NRSV": "You ask and do not receive, because you ask wrongly, in order to spend what you get on your pleasures.",
             "Rotherham": "Ye ask and receive not, because that, basely, ye ask, in order that, in your pleasures, ye may spend [it] .",
-            "KJV": "4:3 Ye aske and receiue not, because ye aske amisse, that yee may consume it vpon your lusts.",
-            "NABRE": "4:3 You ask but do not receive, because you ask wrongly, to spend it on your passions."
+            "KJV": "Ye aske and receiue not, because ye aske amisse, that yee may consume it vpon your lusts.",
+            "NABRE": "You ask but do not receive, because you ask wrongly, to spend it on your passions."
           }
         },
         {
@@ -693,8 +701,8 @@
           "text": {
             "NRSV": "Adulterers! Do you not know that friendship with the world is enmity with God? Therefore whoever wishes to be a friend of the world becomes an enemy of God.",
             "Rotherham": "Adulteresses! Know ye not that, the friendship of the world, is, enmity to God? Whosoever, therefore, is minded to be, a friend, of the world, an enemy of God, doth constitute himself.",
-            "KJV": "4:4 Ye adulterers, and adulteresses, know yee not that the friendship of the world is enmity with God? whosoeuer therefore will be a friend of the world, is the enemy of God.",
-            "NABRE": "4:4 Adulterers! Do you not know that to be a lover of the world means enmity with God? Therefore, whoever wants to be a lover of the world makes himself an enemy of God."
+            "KJV": "Ye adulterers, and adulteresses, know yee not that the friendship of the world is enmity with God? whosoeuer therefore will be a friend of the world, is the enemy of God.",
+            "NABRE": "Adulterers! Do you not know that to be a lover of the world means enmity with God? Therefore, whoever wants to be a lover of the world makes himself an enemy of God."
           }
         },
         {
@@ -702,8 +710,8 @@
           "text": {
             "NRSV": "Or do you suppose that it is for nothing that the scripture says, “God yearns jealously for the spirit that he has made to dwell in us”?",
             "Rotherham": "Or think ye that, in vain, the scripture speaketh? Is it, for envying, that the spirit which hath taken an abode within us doth crave?",
-            "KJV": "4:5 Doe ye thinke that the Scripture saith in vaine, the spirit that dwelleth in vs lusteth to enuy?",
-            "NABRE": "4:5 Or do you suppose that the scripture speaks without meaning when it says, “The spirit that he has made to dwell in us tends toward jealousy”?"
+            "KJV": "Doe ye thinke that the Scripture saith in vaine, the spirit that dwelleth in vs lusteth to enuy?",
+            "NABRE": "Or do you suppose that the scripture speaks without meaning when it says, “The spirit that he has made to dwell in us tends toward jealousy”?"
           }
         },
         {
@@ -711,8 +719,8 @@
           "text": {
             "NRSV": "But he gives all the more grace; therefore it says, “God opposes the proud, but gives grace to the humble.”",
             "Rotherham": "Howbeit he giveth, greater, favour. Wherefore it saith—God, against the haughty, arrayeth himself, Whereas, unto the lowly, he giveth favour.",
-            "KJV": "4:6 But he giueth more grace, wherefore he saith, God resisteth the proude, but giueth grace vnto the humble.",
-            "NABRE": "4:6 But he bestows a greater grace; therefore, it says: “God resists the proud, but gives grace to the humble.”"
+            "KJV": "But he giueth more grace, wherefore he saith, God resisteth the proude, but giueth grace vnto the humble.",
+            "NABRE": "But he bestows a greater grace; therefore, it says: “God resists the proud, but gives grace to the humble.”"
           }
         },
         {
@@ -720,8 +728,8 @@
           "text": {
             "NRSV": "Submit yourselves therefore to God. Resist the devil, and he will flee from you.",
             "Rotherham": "Range yourselves, therefore, under God, but withstand the adversary, and he will flee from you:",
-            "KJV": "4:7 Submit your selues therefore to God: resist the deuill, and hee will flee from you.",
-            "NABRE": "4:7 So submit yourselves to God. Resist the devil, and he will flee from you."
+            "KJV": "Submit your selues therefore to God: resist the deuill, and hee will flee from you.",
+            "NABRE": "So submit yourselves to God. Resist the devil, and he will flee from you."
           }
         },
         {
@@ -729,8 +737,8 @@
           "text": {
             "NRSV": "Draw near to God, and he will draw near to you. Cleanse your hands, you sinners, and purify your hearts, you double-minded.",
             "Rotherham": "Draw near unto God, and he will draw near unto you. Cleanse hands, sinners! Chasten hearts, double souls!",
-            "KJV": "4:8 Draw nigh to God, and hee will draw nigh to you: cleanse your hands ye sinners, and purifie your hearts yee double minded.",
-            "NABRE": "4:8 Draw near to God, and he will draw near to you. Cleanse your hands, you sinners, and purify your hearts, you of two minds."
+            "KJV": "Draw nigh to God, and hee will draw nigh to you: cleanse your hands ye sinners, and purifie your hearts yee double minded.",
+            "NABRE": "Draw near to God, and he will draw near to you. Cleanse your hands, you sinners, and purify your hearts, you of two minds."
           }
         },
         {
@@ -738,8 +746,8 @@
           "text": {
             "NRSV": "Lament and mourn and weep. Let your laughter be turned into mourning and your joy into dejection.",
             "Rotherham": "Be miserable and lament and weep, let, your laughter, into lamentation, be turned, and, your joy, into dejection;",
-            "KJV": "4:9 Bee afflicted, and mourne, and weepe: let your laughter be turned to mourning, and your ioy to heauinesse.",
-            "NABRE": "4:9 Begin to lament, to mourn, to weep. Let your laughter be turned into mourning and your joy into dejection."
+            "KJV": "Bee afflicted, and mourne, and weepe: let your laughter be turned to mourning, and your ioy to heauinesse.",
+            "NABRE": "Begin to lament, to mourn, to weep. Let your laughter be turned into mourning and your joy into dejection."
           }
         },
         {
@@ -747,8 +755,8 @@
           "text": {
             "NRSV": "Humble yourselves before the Lord, and he will exalt you.",
             "Rotherham": "Be made low in presence of the Lord, and he will lift you up. ",
-            "KJV": "4:10 Humble your selues in the sight of the Lord, and he shall lift you vp.",
-            "NABRE": "4:10 Humble yourselves before the Lord and he will exalt you."
+            "KJV": "Humble your selues in the sight of the Lord, and he shall lift you vp.",
+            "NABRE": "Humble yourselves before the Lord and he will exalt you."
           }
         },
         {
@@ -756,8 +764,8 @@
           "text": {
             "NRSV": "Do not speak evil against one another, brothers and sisters. Whoever speaks evil against another or judges another, speaks evil against the law and judges the law; but if you judge the law, you are not a doer of the law but a judge.",
             "Rotherham": " Be not speaking one against another, brethren! He that speaketh against a brother, or judgeth his brother, speaketh against law, and judgeth law; Now, if, upon law, thou art passing judgment, thou art not a doer of law, but a judge!",
-            "KJV": "4:11 Speake not euill one of another (brethren:) he that speaketh euill of his brother, and iudgeth his brother, speaketh euill of the Law, and iudgeth the Law: but if thou iudge the Law, thou art not a doer of the Law, but a iudge.",
-            "NABRE": "4:11 Do not speak evil of one another, brothers. Whoever speaks evil of a brother or judges his brother speaks evil of the law and judges the law. If you judge the law, you are not a doer of the law but a judge."
+            "KJV": "Speake not euill one of another (brethren:) he that speaketh euill of his brother, and iudgeth his brother, speaketh euill of the Law, and iudgeth the Law: but if thou iudge the Law, thou art not a doer of the Law, but a iudge.",
+            "NABRE": "Do not speak evil of one another, brothers. Whoever speaks evil of a brother or judges his brother speaks evil of the law and judges the law. If you judge the law, you are not a doer of the law but a judge."
           }
         },
         {
@@ -765,8 +773,8 @@
           "text": {
             "NRSV": "There is one lawgiver and judge who is able to save and to destroy. So who, then, are you to judge your neighbor?",
             "Rotherham": "One, is Lawgiver and Judge—He who hath power to save and to destroy; but who art, thou, that judgest thy neighbour?",
-            "KJV": "4:12 There is one Lawgiuer, who is able to saue, and to destroy: who art thou that iudgest another?",
-            "NABRE": "4:12 There is one lawgiver and judge who is able to save or to destroy. Who then are you to judge your neighbor? Warning Against Presumption."
+            "KJV": "There is one Lawgiuer, who is able to saue, and to destroy: who art thou that iudgest another?",
+            "NABRE": "There is one lawgiver and judge who is able to save or to destroy. Who then are you to judge your neighbor? Warning Against Presumption."
           }
         },
         {
@@ -774,8 +782,8 @@
           "text": {
             "NRSV": "Come now, you who say, “Today or tomorrow we will go to such and such a town and spend a year there, doing business and making money.”",
             "Rotherham": "Come now! ye that say—Today or To-morrow, we will journey unto this city here, and will spend there a year, and will trade and get gain,—",
-            "KJV": "4:13 Goe to now ye that say, To day or to morrow wee will goe into such a city and continue there a yere, and buy, and sell, and get gaine:",
-            "NABRE": "4:13 Come now, you who say, “Today or tomorrow we shall go into such and such a town, spend a year there doing business, and make a profit”—"
+            "KJV": "Goe to now ye that say, To day or to morrow wee will goe into such a city and continue there a yere, and buy, and sell, and get gaine:",
+            "NABRE": "Come now, you who say, “Today or tomorrow we shall go into such and such a town, spend a year there doing business, and make a profit”—"
           }
         },
         {
@@ -783,8 +791,8 @@
           "text": {
             "NRSV": "Yet you do not even know what tomorrow will bring. What is your life? For you are a mist that appears for a little while and then vanishes.",
             "Rotherham": "Men who are not versed in the morrow—of what sort your life [will be] ; for ye are, a vapour—for a little, appearing, then, just disappearing!",
-            "KJV": "4:14 Whereas yee know not what shalbe on the morow: for what is your life? It is euen a vapour that appeareth for a litle time, and then vanisheth away.",
-            "NABRE": "4:14 you have no idea what your life will be like tomorrow. You are a puff of smoke that appears briefly and then disappears."
+            "KJV": "Whereas yee know not what shalbe on the morow: for what is your life? It is euen a vapour that appeareth for a litle time, and then vanisheth away.",
+            "NABRE": "you have no idea what your life will be like tomorrow. You are a puff of smoke that appears briefly and then disappears."
           }
         },
         {
@@ -792,8 +800,8 @@
           "text": {
             "NRSV": "Instead you ought to say, “If the Lord wishes, we will live and do this or that.”",
             "Rotherham": "Instead of your saying—If, the Lord, be pleased, we shall both, live and do this or that;",
-            "KJV": "4:15 For that yee ought to say, if the Lord will, we shall liue, and doe this, or that.",
-            "NABRE": "4:15 Instead you should say, “If the Lord wills it, we shall live to do this or that.”"
+            "KJV": "For that yee ought to say, if the Lord will, we shall liue, and doe this, or that.",
+            "NABRE": "Instead you should say, “If the Lord wills it, we shall live to do this or that.”"
           }
         },
         {
@@ -801,8 +809,8 @@
           "text": {
             "NRSV": "As it is, you boast in your arrogance; all such boasting is evil.",
             "Rotherham": "Whereas, now, are ye boasting in your pretensions:—All boasting like this, is, wicked,",
-            "KJV": "4:16 But now yee reioyce in your boastings: all such reioycing is euill.",
-            "NABRE": "4:16 But now you are boasting in your arrogance. All such boasting is evil."
+            "KJV": "But now yee reioyce in your boastings: all such reioycing is euill.",
+            "NABRE": "But now you are boasting in your arrogance. All such boasting is evil."
           }
         },
         {
@@ -810,8 +818,8 @@
           "text": {
             "NRSV": "Anyone, then, who knows the right thing to do and fails to do it, commits sin.",
             "Rotherham": "To him, therefore, who knoweth how to be doing, a right thing, and is not doing it, it is, sin, unto him.  ",
-            "KJV": "4:17 Therefore to him that knoweth to doe good, and doth it not, to him it is sinne.",
-            "NABRE": "4:17 So for one who knows the right thing to do and does not do it, it is a sin."
+            "KJV": "Therefore to him that knoweth to doe good, and doth it not, to him it is sinne.",
+            "NABRE": "So for one who knows the right thing to do and does not do it, it is a sin."
           }
         }
       ]
@@ -824,8 +832,8 @@
           "text": {
             "NRSV": "Come now, you rich people, weep and wail for the miseries that are coming to you.",
             "Rotherham": "Come now! ye wealthy! Weep ye, howling, for your hardships which are coming upon you:",
-            "KJV": "5:1 Goe to now, yee rich men, weepe and howle for your miseries that shall come vpon you.",
-            "NABRE": "5:1 Chapter 5 Warning to the Rich. Come now, you rich, weep and wail over your impending miseries."
+            "KJV": "Goe to now, yee rich men, weepe and howle for your miseries that shall come vpon you.",
+            "NABRE": "Chapter 5 Warning to the Rich. Come now, you rich, weep and wail over your impending miseries."
           }
         },
         {
@@ -833,8 +841,8 @@
           "text": {
             "NRSV": "Your riches have rotted, and your clothes are moth-eaten.",
             "Rotherham": "Your wealth, hath rotted, and, your garments, have become, moth-eaten,—",
-            "KJV": "5:2 Your riches are corrupted, and your garments motheaten:",
-            "NABRE": "5:2 Your wealth has rotted away, your clothes have become moth-eaten,"
+            "KJV": "Your riches are corrupted, and your garments motheaten:",
+            "NABRE": "Your wealth has rotted away, your clothes have become moth-eaten,"
           }
         },
         {
@@ -842,8 +850,8 @@
           "text": {
             "NRSV": "Your gold and silver have rusted, and their rust will be evidence against you, and it will eat your flesh like fire. You have laid up treasure for the last days.",
             "Rotherham": "Your gold and silver, have rusted away, and, their rust, shall be, witness against you, and shall eat your flesh, as fire! Ye have laid up treasure in days of extremity:—",
-            "KJV": "5:3 Your gold and siluer is cankered, and the rust of them shall bee a witnesse against you, and shall eate your flesh as it were fire: ye haue heaped treasure together for the last dayes.",
-            "NABRE": "5:3 your gold and silver have corroded, and that corrosion will be a testimony against you; it will devour your flesh like a fire. You have stored up treasure for the last days."
+            "KJV": "Your gold and siluer is cankered, and the rust of them shall bee a witnesse against you, and shall eate your flesh as it were fire: ye haue heaped treasure together for the last dayes.",
+            "NABRE": "your gold and silver have corroded, and that corrosion will be a testimony against you; it will devour your flesh like a fire. You have stored up treasure for the last days."
           }
         },
         {
@@ -851,8 +859,8 @@
           "text": {
             "NRSV": "Listen! The wages of the laborers who mowed your fields, which you kept back by fraud, cry out, and the cries of the harvesters have reached the ears of the Lord of hosts.",
             "Rotherham": "Lo, the wage of the workers who have out down your fields—that which hath been kept back, by you, is crying out; and, the outcries of them who reaped, into the ears of the Lord of hosts, have entered:",
-            "KJV": "5:4 Beholde, the hire of the labourers which haue reaped downe your fieldes, which is of you kept backe by fraud, cryeth: and the cryes of them which haue reaped, are entred into the eares of the Lord of Sabaoth.",
-            "NABRE": "5:4 Behold, the wages you withheld from the workers who harvested your fields are crying aloud, and the cries of the harvesters have reached the ears of the Lord of hosts."
+            "KJV": "Beholde, the hire of the labourers which haue reaped downe your fieldes, which is of you kept backe by fraud, cryeth: and the cryes of them which haue reaped, are entred into the eares of the Lord of Sabaoth.",
+            "NABRE": "Behold, the wages you withheld from the workers who harvested your fields are crying aloud, and the cries of the harvesters have reached the ears of the Lord of hosts."
           }
         },
         {
@@ -860,8 +868,8 @@
           "text": {
             "NRSV": "You have lived on the earth in luxury and in pleasure; you have fattened your hearts in a day of slaughter.",
             "Rotherham": "Ye have luxuriated upon the land, and run riot, ye have pampered your hearts in a day of slaughter;",
-            "KJV": "5:5 Yee haue liued in pleasure on the earth, and bene wanton: ye haue nourished your hearts, as in a day of slaughter:",
-            "NABRE": "5:5 You have lived on earth in luxury and pleasure; you have fattened your hearts for the day of slaughter."
+            "KJV": "Yee haue liued in pleasure on the earth, and bene wanton: ye haue nourished your hearts, as in a day of slaughter:",
+            "NABRE": "You have lived on earth in luxury and pleasure; you have fattened your hearts for the day of slaughter."
           }
         },
         {
@@ -869,8 +877,8 @@
           "text": {
             "NRSV": "You have condemned and murdered the righteous one, who does not resist you.",
             "Rotherham": "Ye sentenced—ye murdered the Righteous one! Is he not arraying himself against you?",
-            "KJV": "5:6 Yee haue condemned, and killed the iust, and he doth not resist you.",
-            "NABRE": "5:6 You have condemned; you have murdered the righteous one; he offers you no resistance."
+            "KJV": "Yee haue condemned, and killed the iust, and he doth not resist you.",
+            "NABRE": "You have condemned; you have murdered the righteous one; he offers you no resistance."
           }
         },
         {
@@ -878,8 +886,8 @@
           "text": {
             "NRSV": "Be patient, therefore, beloved, until the coming of the Lord. The farmer waits for the precious crop from the earth, being patient with it until it receives the early and the late rains.",
             "Rotherham": "Be patient, therefore, brethren, until the Presence of the Lord:—Lo! the husbandman, awaiteth the precious fruit of the earth, having patience for it, until it receive the early and the latter rain:",
-            "KJV": "5:7 Be patient therefore, brethren, vnto the comming of the Lord: behold, the husbandman waiteth for the precious fruit of the earth, and hath long patience for it, vntill hee receiue the early and latter raine.",
-            "NABRE": "5:7 Patience and Oaths. Be patient, therefore, brothers, until the coming of the Lord. See how the farmer waits for the precious fruit of the earth, being patient with it until it receives the early and the late rains."
+            "KJV": "Be patient therefore, brethren, vnto the comming of the Lord: behold, the husbandman waiteth for the precious fruit of the earth, and hath long patience for it, vntill hee receiue the early and latter raine.",
+            "NABRE": "Patience and Oaths. Be patient, therefore, brothers, until the coming of the Lord. See how the farmer waits for the precious fruit of the earth, being patient with it until it receives the early and the late rains."
           }
         },
         {
@@ -887,8 +895,8 @@
           "text": {
             "NRSV": "You also must be patient. Strengthen your hearts, for the coming of the Lord is near.",
             "Rotherham": "Be, ye also, patient, Stablish your hearts, because, the Presence of the Lord, hath drawn near.",
-            "KJV": "5:8 Be yee also patient; stablish your hearts: for the comming of the Lorde draweth nigh.",
-            "NABRE": "5:8 You too must be patient. Make your hearts firm, because the coming of the Lord is at hand."
+            "KJV": "Be yee also patient; stablish your hearts: for the comming of the Lorde draweth nigh.",
+            "NABRE": "You too must be patient. Make your hearts firm, because the coming of the Lord is at hand."
           }
         },
         {
@@ -896,8 +904,8 @@
           "text": {
             "NRSV": "Beloved, do not grumble against one another, so that you may not be judged. See, the Judge is standing at the doors!",
             "Rotherham": "Be not sighing, brethren, one against another, lest ye be judged,—Lo! the Judge, before the doors, is standing.",
-            "KJV": "5:9 Grudge not one against another, brethren, lest ye be condemned: behold, the Iudge standeth before the doore.",
-            "NABRE": "5:9 Do not complain, brothers, about one another, that you may not be judged. Behold, the Judge is standing before the gates."
+            "KJV": "Grudge not one against another, brethren, lest ye be condemned: behold, the Iudge standeth before the doore.",
+            "NABRE": "Do not complain, brothers, about one another, that you may not be judged. Behold, the Judge is standing before the gates."
           }
         },
         {
@@ -905,8 +913,8 @@
           "text": {
             "NRSV": "As an example of suffering and patience, beloved, take the prophets who spoke in the name of the Lord.",
             "Rotherham": "An example, take ye, brethren, of distress and patience,—the prophets who have spoken in the name of the Lord.",
-            "KJV": "5:10 Take, my brethren, the Prophets, who haue spoken in the Name of the Lord, for an example of suffering affliction, and of patience.",
-            "NABRE": "5:10 Take as an example of hardship and patience, brothers, the prophets who spoke in the name of the Lord."
+            "KJV": "Take, my brethren, the Prophets, who haue spoken in the Name of the Lord, for an example of suffering affliction, and of patience.",
+            "NABRE": "Take as an example of hardship and patience, brothers, the prophets who spoke in the name of the Lord."
           }
         },
         {
@@ -914,8 +922,8 @@
           "text": {
             "NRSV": "Indeed we call blessed those who showed endurance. You have heard of the endurance of Job, and you have seen the purpose of the Lord, how the Lord is compassionate and merciful.",
             "Rotherham": "Lo! we pronounce them happy who have endured;—Of the endurance of Job, ye have heard, and, the end of the Lord, have ye seen,—that, of much tender affection, is the Lord, and full of compassion, ",
-            "KJV": "5:11 Beholde, wee count them happie which endure. Ye haue heard of the patience of Iob, and haue seene the end of the Lord: that the Lord is very pitifull and of tender mercie.",
-            "NABRE": "5:11 Indeed we call blessed those who have persevered. You have heard of the perseverance of Job, and you have seen the purpose of the Lord, because “the Lord is compassionate and merciful.”"
+            "KJV": "Beholde, wee count them happie which endure. Ye haue heard of the patience of Iob, and haue seene the end of the Lord: that the Lord is very pitifull and of tender mercie.",
+            "NABRE": "Indeed we call blessed those who have persevered. You have heard of the perseverance of Job, and you have seen the purpose of the Lord, because “the Lord is compassionate and merciful.”"
           }
         },
         {
@@ -923,8 +931,8 @@
           "text": {
             "NRSV": "Above all, my beloved, do not swear, either by heaven or by earth or by any other oath, but let your “Yes” be yes and your “No” be no, so that you may not fall under condemnation.",
             "Rotherham": " But, before all things, my brethren, do not swear,—either by heaven, or by the earth, or by any other oath; but let your Yea be yea, and your Nay nay,—lest, under judgment, ye fall.",
-            "KJV": "5:12 But aboue all things, my brethren, sweare not, neither by heauen, neither by the earth, neither by any other othe: but let your yea, be yea, and your nay, nay: lest yee fall into condemnation.",
-            "NABRE": "5:12 But above all, my brothers, do not swear, either by heaven or by earth or with any other oath, but let your “Yes” mean “Yes” and your “No” mean “No,” that you may not incur condemnation."
+            "KJV": "But aboue all things, my brethren, sweare not, neither by heauen, neither by the earth, neither by any other othe: but let your yea, be yea, and your nay, nay: lest yee fall into condemnation.",
+            "NABRE": "But above all, my brothers, do not swear, either by heaven or by earth or with any other oath, but let your “Yes” mean “Yes” and your “No” mean “No,” that you may not incur condemnation."
           }
         },
         {
@@ -932,8 +940,8 @@
           "text": {
             "NRSV": "Are any among you suffering? They should pray. Are any cheerful? They should sing songs of praise.",
             "Rotherham": "In distress, is any among you? Let him pray; Cheerful, is any? Let him strike the strings;",
-            "KJV": "5:13 Is any among you afflicted? let him pray. Is any merry? let him sing Psalmes.",
-            "NABRE": "5:13 IV. The Power of Prayer Anointing of the Sick. Is anyone among you suffering? He should pray. Is anyone in good spirits? He should sing praise."
+            "KJV": "Is any among you afflicted? let him pray. Is any merry? let him sing Psalmes.",
+            "NABRE": "IV. The Power of Prayer Anointing of the Sick. Is anyone among you suffering? He should pray. Is anyone in good spirits? He should sing praise."
           }
         },
         {
@@ -941,8 +949,8 @@
           "text": {
             "NRSV": "Are any among you sick? They should call for the elders of the church and have them pray over them, anointing them with oil in the name of the Lord.",
             "Rotherham": "Sick, is any among you? Let him call unto him the elders of the assembly, and let them pray for him, anointing him with oil in the name [of the Lord];—",
-            "KJV": "5:14 Is any sicke among you? let him call for the Elders of the Church, and let them pray ouer him, anointing him with oyle in the Name of the Lord:",
-            "NABRE": "5:14 Is anyone among you sick? He should summon the presbyters of the church, and they should pray over him and anoint [him] with oil in the name of the Lord,"
+            "KJV": "Is any sicke among you? let him call for the Elders of the Church, and let them pray ouer him, anointing him with oyle in the Name of the Lord:",
+            "NABRE": "Is anyone among you sick? He should summon the presbyters of the church, and they should pray over him and anoint [him] with oil in the name of the Lord,"
           }
         },
         {
@@ -950,8 +958,8 @@
           "text": {
             "NRSV": "The prayer of faith will save the sick, and the Lord will raise them up; and anyone who has committed sins will be forgiven.",
             "Rotherham": "And, the prayer of faith, shall save the exhausted one, and the Lord will raise him up, and, if he have committed, sins, it shall be forgiven him.",
-            "KJV": "5:15 And the prayer of Faith shall saue the sicke, and the Lord shall raise him vp: and if hee haue committed sinnes, they shall be forgiuen him.",
-            "NABRE": "5:15 and the prayer of faith will save the sick person, and the Lord will raise him up. If he has committed any sins, he will be forgiven."
+            "KJV": "And the prayer of Faith shall saue the sicke, and the Lord shall raise him vp: and if hee haue committed sinnes, they shall be forgiuen him.",
+            "NABRE": "and the prayer of faith will save the sick person, and the Lord will raise him up. If he has committed any sins, he will be forgiven."
           }
         },
         {
@@ -959,8 +967,8 @@
           "text": {
             "NRSV": "Therefore confess your sins to one another, and pray for one another, so that you may be healed. The prayer of the righteous is powerful and effective.",
             "Rotherham": "Be openly confessing, therefore, one to another, your sins, and be praying in each other’s behalf,—that ye may be healed. Much availeth, the supplication of a righteous man, when it is energised:",
-            "KJV": "5:16 Confesse your faults one to another, and pray one for another, that yee may bee healed: the effectuall feruent prayer of a righteous man auaileth much.",
-            "NABRE": "5:16 Confession and Intercession. Therefore, confess your sins to one another and pray for one another, that you may be healed. The fervent prayer of a righteous person is very powerful."
+            "KJV": "Confesse your faults one to another, and pray one for another, that yee may bee healed: the effectuall feruent prayer of a righteous man auaileth much.",
+            "NABRE": "Confession and Intercession. Therefore, confess your sins to one another and pray for one another, that you may be healed. The fervent prayer of a righteous person is very powerful."
           }
         },
         {
@@ -968,8 +976,8 @@
           "text": {
             "NRSV": "Elijah was a human being like us, and he prayed fervently that it might not rain, and for three years and six months it did not rain on the earth.",
             "Rotherham": "Elijah, was, a man, affected like us; and he earnestly prayed that there might be no moisture, and there was no moisture on the land, for three years and six months,—",
-            "KJV": "5:17 Elias was a man subiect to like passions as we are, and he prayed earnestly that it might not raine: and it rained not on the earth by the space of three yeeres and sixe monethes.",
-            "NABRE": "5:17 Elijah was a human being like us; yet he prayed earnestly that it might not rain, and for three years and six months it did not rain upon the land."
+            "KJV": "Elias was a man subiect to like passions as we are, and he prayed earnestly that it might not raine: and it rained not on the earth by the space of three yeeres and sixe monethes.",
+            "NABRE": "Elijah was a human being like us; yet he prayed earnestly that it might not rain, and for three years and six months it did not rain upon the land."
           }
         },
         {
@@ -977,8 +985,8 @@
           "text": {
             "NRSV": "Then he prayed again, and the heaven gave rain and the earth yielded its harvest.",
             "Rotherham": "And, again, he prayed, and, the heaven, gave, rain, and, the land, shot up her fruit.",
-            "KJV": "5:18 And hee prayed againe, and the heauen gaue raine, and the earth brought foorth her fruit.",
-            "NABRE": "5:18 Then he prayed again, and the sky gave rain and the earth produced its fruit."
+            "KJV": "And hee prayed againe, and the heauen gaue raine, and the earth brought foorth her fruit.",
+            "NABRE": "Then he prayed again, and the sky gave rain and the earth produced its fruit."
           }
         },
         {
@@ -986,8 +994,8 @@
           "text": {
             "NRSV": "My brothers and sisters, if anyone among you wanders from the truth and is brought back by another,",
             "Rotherham": "My brethren! If one among you be led to err from the truth, and one turn him back,",
-            "KJV": "5:19 Brethren, if any of you doe erre from the trueth, and one conuert him,",
-            "NABRE": "5:19 Conversion of Sinners. My brothers, if anyone among you should stray from the truth and someone bring him back,"
+            "KJV": "Brethren, if any of you doe erre from the trueth, and one conuert him,",
+            "NABRE": "Conversion of Sinners. My brothers, if anyone among you should stray from the truth and someone bring him back,"
           }
         },
         {
@@ -995,8 +1003,8 @@
           "text": {
             "NRSV": "you should know that whoever brings back a sinner from wandering will save the sinner’s soul from death and will cover a multitude of sins.",
             "Rotherham": "Be ye taking note—that, he that turneth back a sinner out of the error of his way—will save his soul out of death, and hide a multitude of sins.   ",
-            "KJV": "5:20 Let him know, that hee which conuerteth the sinner from the errour of his way, shall saue a soule from death, and shall hide a multitude of sinnes.",
-            "NABRE": "5:20 he should know that whoever brings back a sinner from the error of his way will save his soul from death and will cover a multitude of sins."
+            "KJV": "Let him know, that hee which conuerteth the sinner from the errour of his way, shall saue a soule from death, and shall hide a multitude of sinnes.",
+            "NABRE": "he should know that whoever brings back a sinner from the error of his way will save his soul from death and will cover a multitude of sins."
           }
         }
       ]

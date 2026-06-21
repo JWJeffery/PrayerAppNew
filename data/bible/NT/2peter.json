@@ -18,6 +18,14 @@
         "sourceType": "scrollmapper_bible_databases_2025_formats_json_source_witness",
         "rights": "Public Domain",
         "sourceWitness": "documentation/rotherham-source-witness-intake.json"
+      },
+      "KJV": {
+        "status": "present",
+        "note": "Declared during NT systemic contamination cleanup."
+      },
+      "NABRE": {
+        "status": "present",
+        "note": "Declared during NT systemic contamination cleanup."
       }
     }
   },
@@ -30,8 +38,8 @@
           "text": {
             "NRSV": "Simeon Peter, a servant and apostle of Jesus Christ, To those who have received a faith as precious as ours through the righteousness of our God and Savior Jesus Christ:",
             "Rotherham": "Simon Peter, servant and apostle of Jesus Christ, unto them who have obtained, equally precious, faith, with us, in the righteousness of our God, and Saviour Jesus Christ,",
-            "KJV": "1:1 Simon Peter, a seruant & an Apostle of Iesus Christ, to them that haue obtained like precious Faith with vs, through the righteousnes of God, and our Sauiour Iesus Christ.",
-            "NABRE": "1:1 I. Address Chapter 1 Greeting. Symeon Peter, a slave and apostle of Jesus Christ, to those who have received a faith of equal value to ours through the righteousness of our God and savior Jesus Christ:"
+            "KJV": "Simon Peter, a seruant & an Apostle of Iesus Christ, to them that haue obtained like precious Faith with vs, through the righteousnes of God, and our Sauiour Iesus Christ.",
+            "NABRE": "I. Address Chapter 1 Greeting. Symeon Peter, a slave and apostle of Jesus Christ, to those who have received a faith of equal value to ours through the righteousness of our God and savior Jesus Christ:"
           }
         },
         {
@@ -39,8 +47,8 @@
           "text": {
             "NRSV": "May grace and peace be yours in abundance in the knowledge of God and of Jesus our Lord.",
             "Rotherham": "Favour unto you, and peace, be multiplied, in the personal knowledge of God and of Jesus our Lord;—",
-            "KJV": "1:2 Grace and peace be multiplied vnto you through the knowledge of God, and of Iesus our Lord,",
-            "NABRE": "1:2 may grace and peace be yours in abundance through knowledge of God and of Jesus our Lord. II. Exhortation to Christian Virtue The Power of God’s Promise."
+            "KJV": "Grace and peace be multiplied vnto you through the knowledge of God, and of Iesus our Lord,",
+            "NABRE": "may grace and peace be yours in abundance through knowledge of God and of Jesus our Lord. II. Exhortation to Christian Virtue The Power of God’s Promise."
           }
         },
         {
@@ -48,8 +56,8 @@
           "text": {
             "NRSV": "His divine power has given us everything needed for life and godliness, through the knowledge of him who called us by his own glory and goodness.",
             "Rotherham": "As, all things, suited for life and godliness his divine power, unto us, hath given, through the personal knowledge of him that hath called us through glory and excellence,—",
-            "KJV": "1:3 According as his diuine power hath giuen vnto vs all things that pertain vnto life and godlines, through the knowledge of him that hath called vs to glory and vertue.",
-            "NABRE": "1:3 His divine power has bestowed on us everything that makes for life and devotion, through the knowledge of him who called us by his own glory and power."
+            "KJV": "According as his diuine power hath giuen vnto vs all things that pertain vnto life and godlines, through the knowledge of him that hath called vs to glory and vertue.",
+            "NABRE": "His divine power has bestowed on us everything that makes for life and devotion, through the knowledge of him who called us by his own glory and power."
           }
         },
         {
@@ -57,8 +65,8 @@
           "text": {
             "NRSV": "Thus he has given us, through these things, his precious and very great promises, so that through them you may escape from the corruption that is in the world because of lust, and may become participants of the divine nature.",
             "Rotherham": "Through which, his precious, and very great, promises, have, unto us, been given, in order that, through these, ye might become sharers in a divine nature—escaping the corruption that is in the world by coveting. ",
-            "KJV": "1:4 Whereby are giuen vnto vs exceeding great and precious promises, that by these you might bee partakers of the diuine nature, hauing escaped the corruption that is in the world through lust.",
-            "NABRE": "1:4 Through these, he has bestowed on us the precious and very great promises, so that through them you may come to share in the divine nature, after escaping from the corruption that is in the world because of evil desire."
+            "KJV": "Whereby are giuen vnto vs exceeding great and precious promises, that by these you might bee partakers of the diuine nature, hauing escaped the corruption that is in the world through lust.",
+            "NABRE": "Through these, he has bestowed on us the precious and very great promises, so that through them you may come to share in the divine nature, after escaping from the corruption that is in the world because of evil desire."
           }
         },
         {
@@ -66,8 +74,8 @@
           "text": {
             "NRSV": "For this very reason, you must make every effort to support your faith with goodness, and goodness with knowledge,",
             "Rotherham": " And, for this very reason also—adding, on your part, all diligence, supply, in your faith, excellence, and, in your excellence, knowledge,",
-            "KJV": "1:5 And besides this, giuing all diligence, adde to your faith, vertue; and to vertue knowledge;",
-            "NABRE": "1:5 For this very reason, make every effort to supplement your faith with virtue, virtue with knowledge,"
+            "KJV": "And besides this, giuing all diligence, adde to your faith, vertue; and to vertue knowledge;",
+            "NABRE": "For this very reason, make every effort to supplement your faith with virtue, virtue with knowledge,"
           }
         },
         {
@@ -75,8 +83,8 @@
           "text": {
             "NRSV": "and knowledge with self-control, and self-control with endurance, and endurance with godliness,",
             "Rotherham": "And, in your knowledge, self-control, and, in your self-control, endurance, and, in your endurance, godliness,",
-            "KJV": "1:6 And to knowledge, temperance; and to temperance, patience; and to patience, godlinesse;",
-            "NABRE": "1:6 knowledge with self-control, self-control with endurance, endurance with devotion,"
+            "KJV": "And to knowledge, temperance; and to temperance, patience; and to patience, godlinesse;",
+            "NABRE": "knowledge with self-control, self-control with endurance, endurance with devotion,"
           }
         },
         {
@@ -84,8 +92,8 @@
           "text": {
             "NRSV": "and godliness with mutual affection, and mutual affection with love.",
             "Rotherham": "And, in your godliness, brotherly affection, and, in your brotherly affection, love.",
-            "KJV": "1:7 And to godlinesse, brotherly kindnesse; and to brotherly kindnesse, charitie.",
-            "NABRE": "1:7 devotion with mutual affection, mutual affection with love."
+            "KJV": "And to godlinesse, brotherly kindnesse; and to brotherly kindnesse, charitie.",
+            "NABRE": "devotion with mutual affection, mutual affection with love."
           }
         },
         {
@@ -93,8 +101,8 @@
           "text": {
             "NRSV": "For if these things are yours and are increasing among you, they keep you from being ineffective and unfruitful in the knowledge of our Lord Jesus Christ.",
             "Rotherham": "These things, unto you, belonging and abounding, neither idle nor unfruitful, constitute you, regarding the personal knowledge of our Lord Jesus Christ;",
-            "KJV": "1:8 For if these things be in you, and abound, they make you that yee shall neither be barren, nor vnfruitfull in the knowledge of our Lord Iesus Christ.",
-            "NABRE": "1:8 If these are yours and increase in abundance, they will keep you from being idle or unfruitful in the knowledge of our Lord Jesus Christ."
+            "KJV": "For if these things be in you, and abound, they make you that yee shall neither be barren, nor vnfruitfull in the knowledge of our Lord Iesus Christ.",
+            "NABRE": "If these are yours and increase in abundance, they will keep you from being idle or unfruitful in the knowledge of our Lord Jesus Christ."
           }
         },
         {
@@ -102,8 +110,8 @@
           "text": {
             "NRSV": "For anyone who lacks these things is nearsighted and blind, and is forgetful of the cleansing of past sins.",
             "Rotherham": "For, he to whom these things are not present, is, blind, seeing only what is near, having come, to forget, his purification from his old sins.",
-            "KJV": "1:9 But hee that lacketh these things, is blind, and cannot see farre off, and hath forgotten that hee was purged from his old sinnes.",
-            "NABRE": "1:9 Anyone who lacks them is blind and shortsighted, forgetful of the cleansing of his past sins."
+            "KJV": "But hee that lacketh these things, is blind, and cannot see farre off, and hath forgotten that hee was purged from his old sinnes.",
+            "NABRE": "Anyone who lacks them is blind and shortsighted, forgetful of the cleansing of his past sins."
           }
         },
         {
@@ -111,8 +119,8 @@
           "text": {
             "NRSV": "Therefore, brothers and sisters, be all the more eager to confirm your call and election, for if you do this, you will never fall.",
             "Rotherham": "Wherefore, all the more, brethren, give diligence to be making, firm, your calling and election; for, these things, doing, in nowise shall ye stumble at any time,",
-            "KJV": "1:10 Wherefore, the rather, brethren, giue diligence to make your calling and election sure: for if ye doe these things, ye shall neuer fall.",
-            "NABRE": "1:10 Therefore, brothers, be all the more eager to make your call and election firm, for, in doing so, you will never stumble."
+            "KJV": "Wherefore, the rather, brethren, giue diligence to make your calling and election sure: for if ye doe these things, ye shall neuer fall.",
+            "NABRE": "Therefore, brothers, be all the more eager to make your call and election firm, for, in doing so, you will never stumble."
           }
         },
         {
@@ -120,8 +128,8 @@
           "text": {
             "NRSV": "For in this way, entry into the eternal kingdom of our Lord and Savior Jesus Christ will be richly provided for you.",
             "Rotherham": "For, thus, shall richly be further supplied unto you—the entrance into the age-abiding kingdom of our Lord and Saviour Jesus Christ. ",
-            "KJV": "1:11 For so an entrance shall be ministred vnto you abundantly, into the euerlasting kingdome of our Lord and Sauiour Iesus Christ.",
-            "NABRE": "1:11 For, in this way, entry into the eternal kingdom of our Lord and savior Jesus Christ will be richly provided for you."
+            "KJV": "For so an entrance shall be ministred vnto you abundantly, into the euerlasting kingdome of our Lord and Sauiour Iesus Christ.",
+            "NABRE": "For, in this way, entry into the eternal kingdom of our Lord and savior Jesus Christ will be richly provided for you."
           }
         },
         {
@@ -129,8 +137,8 @@
           "text": {
             "NRSV": "Therefore I intend to keep on reminding you of these things, though you know them and are established in the truth that has come to you.",
             "Rotherham": " Wherefore, I shall be certain to be, always, putting you in remembrance concerning these things,—although, indeed, ye know them, and have become confirmed in the present truth;",
-            "KJV": "1:12 Wherefore I wil not be negligent to put you alwayes in remembrance of these things, though yee know them, and be stablished in the present trueth.",
-            "NABRE": "1:12 Apostolic Witness. Therefore, I will always remind you of these things, even though you already know them and are established in the truth you have."
+            "KJV": "Wherefore I wil not be negligent to put you alwayes in remembrance of these things, though yee know them, and be stablished in the present trueth.",
+            "NABRE": "Apostolic Witness. Therefore, I will always remind you of these things, even though you already know them and are established in the truth you have."
           }
         },
         {
@@ -138,8 +146,8 @@
           "text": {
             "NRSV": "I think it right, as long as I am in this body, to refresh your memory,",
             "Rotherham": "Right, nevertheless, I account it—as long as I am in this tent, to be stirring you up by putting you in remembrance,",
-            "KJV": "1:13 Yea, I thinke it meete, as long as I am in this tabernacle, to stirre you vp, by putting you in remembrance:",
-            "NABRE": "1:13 I think it right, as long as I am in this “tent,” to stir you up by a reminder,"
+            "KJV": "Yea, I thinke it meete, as long as I am in this tabernacle, to stirre you vp, by putting you in remembrance:",
+            "NABRE": "I think it right, as long as I am in this “tent,” to stir you up by a reminder,"
           }
         },
         {
@@ -147,8 +155,8 @@
           "text": {
             "NRSV": "since I know that my death will come soon, as indeed our Lord Jesus Christ has made clear to me.",
             "Rotherham": "Knowing that, speedy, is the putting off of my tent—even as, our Lord Jesus Christ also, made clear to me:",
-            "KJV": "1:14 Knowing that shortly I must put off this my Tabernacle, euen as our Lord Iesus Christ hath shewed mee.",
-            "NABRE": "1:14 since I know that I will soon have to put it aside, as indeed our Lord Jesus Christ has shown me."
+            "KJV": "Knowing that shortly I must put off this my Tabernacle, euen as our Lord Iesus Christ hath shewed mee.",
+            "NABRE": "since I know that I will soon have to put it aside, as indeed our Lord Jesus Christ has shown me."
           }
         },
         {
@@ -156,8 +164,8 @@
           "text": {
             "NRSV": "And I will make every effort so that after my departure you may be able at any time to recall these things.",
             "Rotherham": "Yea, I will give diligence also, that, at every time, ye may be able, after my own departure, to be keeping up the remembrance of, these very things. ",
-            "KJV": "1:15 Moreouer, I will endeuour, that you may bee able after my decease, to haue these things alwayes in remembrance.",
-            "NABRE": "1:15 I shall also make every effort to enable you always to remember these things after my departure."
+            "KJV": "Moreouer, I will endeuour, that you may bee able after my decease, to haue these things alwayes in remembrance.",
+            "NABRE": "I shall also make every effort to enable you always to remember these things after my departure."
           }
         },
         {
@@ -165,8 +173,8 @@
           "text": {
             "NRSV": "For we did not follow cleverly devised myths when we made known to you the power and coming of our Lord Jesus Christ, but we had been eyewitnesses of his majesty.",
             "Rotherham": " For, not as having followed, cleverly devised stories, made we known unto you the power and presence of our Lord Jesus Christ, but as having been made, spectators, of his majesty.",
-            "KJV": "1:16 For wee haue not followed cunningly deuised fables, when wee made knowen vnto you the power and comming of our Lord Iesus Christ, but were eye witnesses of his Maiestie.",
-            "NABRE": "1:16 We did not follow cleverly devised myths when we made known to you the power and coming of our Lord Jesus Christ, but we had been eyewitnesses of his majesty."
+            "KJV": "For wee haue not followed cunningly deuised fables, when wee made knowen vnto you the power and comming of our Lord Iesus Christ, but were eye witnesses of his Maiestie.",
+            "NABRE": "We did not follow cleverly devised myths when we made known to you the power and coming of our Lord Jesus Christ, but we had been eyewitnesses of his majesty."
           }
         },
         {
@@ -174,8 +182,8 @@
           "text": {
             "NRSV": "For he received honor and glory from God the Father when that voice was conveyed to him by the Majestic Glory, saying, “This is my Son, my Beloved, with whom I am well pleased.”",
             "Rotherham": "For, when he received from God the Father honour and glory, a voice, being borne to him such as this, by the magnificent glory—My Son, the beloved, is, this, in whom, I, delight,",
-            "KJV": "1:17 For hee receiued from God the Father, honour and glory, when there came such a voice to him from the excellent glory, This is my beloued Sonne in whom I am well pleased.",
-            "NABRE": "1:17 For he received honor and glory from God the Father when that unique declaration came to him from the majestic glory, “This is my Son, my beloved, with whom I am well pleased.”"
+            "KJV": "For hee receiued from God the Father, honour and glory, when there came such a voice to him from the excellent glory, This is my beloued Sonne in whom I am well pleased.",
+            "NABRE": "For he received honor and glory from God the Father when that unique declaration came to him from the majestic glory, “This is my Son, my beloved, with whom I am well pleased.”"
           }
         },
         {
@@ -183,8 +191,8 @@
           "text": {
             "NRSV": "We ourselves heard this voice come from heaven, while we were with him on the holy mountain.",
             "Rotherham": "Even this voice, we, heard, when, out of heaven, it was borne, we being, with him, in the holy mount. ",
-            "KJV": "1:18 And this voice which came from heauen wee heard, when we were with him in the holy mount.",
-            "NABRE": "1:18 We ourselves heard this voice come from heaven while we were with him on the holy mountain."
+            "KJV": "And this voice which came from heauen wee heard, when we were with him in the holy mount.",
+            "NABRE": "We ourselves heard this voice come from heaven while we were with him on the holy mountain."
           }
         },
         {
@@ -192,8 +200,8 @@
           "text": {
             "NRSV": "So we have the prophetic message more fully confirmed. You will do well to be attentive to this as to a lamp shining in a dark place, until the day dawns and the morning star rises in your hearts.",
             "Rotherham": " And we have, more firm, the prophetic word;—whereunto ye are doing, well, to take heed,—as unto a lamp shining in a dusky place,—until, day, shall dawn, and, a day-star, shall arise in your hearts:—",
-            "KJV": "1:19 We haue also a more sure word of prophecie, whereunto yee doe well that ye take heede, as vnto a light that shineth in a darke place, vntill the day dawne, and the day starre arise in your hearts:",
-            "NABRE": "1:19 Moreover, we possess the prophetic message that is altogether reliable. You will do well to be attentive to it, as to a lamp shining in a dark place, until day dawns and the morning star rises in your hearts."
+            "KJV": "We haue also a more sure word of prophecie, whereunto yee doe well that ye take heede, as vnto a light that shineth in a darke place, vntill the day dawne, and the day starre arise in your hearts:",
+            "NABRE": "Moreover, we possess the prophetic message that is altogether reliable. You will do well to be attentive to it, as to a lamp shining in a dark place, until day dawns and the morning star rises in your hearts."
           }
         },
         {
@@ -201,8 +209,8 @@
           "text": {
             "NRSV": "First of all you must understand this, that no prophecy of scripture is a matter of one’s own interpretation,",
             "Rotherham": "Of this, first, taking note—that, no prophecy of scripture, becometh, self-solving;",
-            "KJV": "1:20 Knowing this first, that no prophecy of the Scripture is of any priuate Interpretation:",
-            "NABRE": "1:20 Know this first of all, that there is no prophecy of scripture that is a matter of personal interpretation,"
+            "KJV": "Knowing this first, that no prophecy of the Scripture is of any priuate Interpretation:",
+            "NABRE": "Know this first of all, that there is no prophecy of scripture that is a matter of personal interpretation,"
           }
         },
         {
@@ -210,8 +218,8 @@
           "text": {
             "NRSV": "because no prophecy ever came by human will, but men and women moved by the Holy Spirit spoke from God.",
             "Rotherham": "For not, by will of man, was prophecy brought in, at any time, but, as, by Holy Spirit, they were borne along, spake, men, from God.  ",
-            "KJV": "1:21 For the prophecie came not in olde time by the will of man: but holy men of God spake as they were moued by the holy Ghost.",
-            "NABRE": "1:21 for no prophecy ever came through human will; but rather human beings moved by the holy Spirit spoke under the influence of God."
+            "KJV": "For the prophecie came not in olde time by the will of man: but holy men of God spake as they were moued by the holy Ghost.",
+            "NABRE": "for no prophecy ever came through human will; but rather human beings moved by the holy Spirit spoke under the influence of God."
           }
         }
       ]
@@ -224,8 +232,8 @@
           "text": {
             "NRSV": "But false prophets also arose among the people, just as there will be false teachers among you, who will secretly bring in destructive opinions. They will even deny the Master who bought them—bringing swift destruction on themselves.",
             "Rotherham": "But there arose false-prophets also among the people, as, among you also, there shall be, false-teachers,—men who will stealthily bring in destructive parties, even the Master that bought them, denying, bringing upon themselves speedy destruction;",
-            "KJV": "2:1 But there were false prophets also among the people, euen as there shall bee false teachers among you, who priuily shall bring in damnable heresies, euen denying the Lord that bought them, and bring vpon themselues swift destruction.",
-            "NABRE": "2:1 III. Condemnation of the False Teachers Chapter 2 False Teachers. There were also false prophets among the people, just as there will be false teachers among you, who will introduce destructive heresies and even deny the Master who ransomed them, bringing swift destruction on themselves."
+            "KJV": "But there were false prophets also among the people, euen as there shall bee false teachers among you, who priuily shall bring in damnable heresies, euen denying the Lord that bought them, and bring vpon themselues swift destruction.",
+            "NABRE": "III. Condemnation of the False Teachers Chapter 2 False Teachers. There were also false prophets among the people, just as there will be false teachers among you, who will introduce destructive heresies and even deny the Master who ransomed them, bringing swift destruction on themselves."
           }
         },
         {
@@ -233,8 +241,8 @@
           "text": {
             "NRSV": "Even so, many will follow their licentiousness, and because of them the way of truth will be maligned.",
             "Rotherham": "And, many, will follow out their wanton ways,—by reason of whom, the way of truth, will be defamed, ",
-            "KJV": "2:2 And many shall follow their pernicious wayes, by reason of whom the way of trueth shall be euill spoken of:",
-            "NABRE": "2:2 Many will follow their licentious ways, and because of them the way of truth will be reviled."
+            "KJV": "And many shall follow their pernicious wayes, by reason of whom the way of trueth shall be euill spoken of:",
+            "NABRE": "Many will follow their licentious ways, and because of them the way of truth will be reviled."
           }
         },
         {
@@ -242,8 +250,8 @@
           "text": {
             "NRSV": "And in their greed they will exploit you with deceptive words. Their condemnation, pronounced against them long ago, has not been idle, and their destruction is not asleep.",
             "Rotherham": " And, in greed, with forged words, will they, of you, make merchandise: for whom, the sentence from of old, is not idle, and, their destruction, doth not slumber.",
-            "KJV": "2:3 And through couetousnesse shall they with fained words, make marchandise of you, whose iudgement now of a long time lingereth not, and their damnation slumbreth not.",
-            "NABRE": "2:3 In their greed they will exploit you with fabrications, but from of old their condemnation has not been idle and their destruction does not sleep."
+            "KJV": "And through couetousnesse shall they with fained words, make marchandise of you, whose iudgement now of a long time lingereth not, and their damnation slumbreth not.",
+            "NABRE": "In their greed they will exploit you with fabrications, but from of old their condemnation has not been idle and their destruction does not sleep."
           }
         },
         {
@@ -251,8 +259,8 @@
           "text": {
             "NRSV": "For if God did not spare the angels when they sinned, but cast them into hell and committed them to chains of deepest darkness to be kept until the judgment;",
             "Rotherham": "For—if, God, spared not, messengers, when they sinned, but, to pits of gloom, consigning them, in the lowest hades, delivered them up to be kept, unto judgment,—",
-            "KJV": "2:4 For if God spared not the Angels that sinned, but cast them downe to hell, and deliuered them into chaines of darkenesse, to be reserued vnto iudgment:",
-            "NABRE": "2:4 Lessons from the Past. For if God did not spare the angels when they sinned, but condemned them to the chains of Tartarus and handed them over to be kept for judgment;"
+            "KJV": "For if God spared not the Angels that sinned, but cast them downe to hell, and deliuered them into chaines of darkenesse, to be reserued vnto iudgment:",
+            "NABRE": "Lessons from the Past. For if God did not spare the angels when they sinned, but condemned them to the chains of Tartarus and handed them over to be kept for judgment;"
           }
         },
         {
@@ -260,8 +268,8 @@
           "text": {
             "NRSV": "and if he did not spare the ancient world, even though he saved Noah, a herald of righteousness, with seven others, when he brought a flood on a world of the ungodly;",
             "Rotherham": "And, an ancient world, spared not, but, with seven others, preserved, Noah, a proclaimer, of righteousness, a flood, upon a world of ungodly persons, letting loose,—",
-            "KJV": "2:5 And spared not the old world, but saued Noah the eight person a preacher of righteousnesse, bringing in the flood vpon the world of the vngodly:",
-            "NABRE": "2:5 and if he did not spare the ancient world, even though he preserved Noah, a herald of righteousness, together with seven others, when he brought a flood upon the godless world;"
+            "KJV": "And spared not the old world, but saued Noah the eight person a preacher of righteousnesse, bringing in the flood vpon the world of the vngodly:",
+            "NABRE": "and if he did not spare the ancient world, even though he preserved Noah, a herald of righteousness, together with seven others, when he brought a flood upon the godless world;"
           }
         },
         {
@@ -269,8 +277,8 @@
           "text": {
             "NRSV": "and if by turning the cities of Sodom and Gomorrah to ashes he condemned them to extinction and made them an example of what is coming to the ungodly;",
             "Rotherham": "And, the cities of Sodom and Gomorrah, reducing to ashes, he condemned, an example of such as should be ungodly, having set forth,— ",
-            "KJV": "2:6 And turning the cities of Sodom and Gomorrha into ashes, condemned them with an ouerthrowe, making them an ensample vnto those that after should liue vngodly:",
-            "NABRE": "2:6 and if he condemned the cities of Sodom and Gomorrah [to destruction], reducing them to ashes, making them an example for the godless [people] of what is coming;"
+            "KJV": "And turning the cities of Sodom and Gomorrha into ashes, condemned them with an ouerthrowe, making them an ensample vnto those that after should liue vngodly:",
+            "NABRE": "and if he condemned the cities of Sodom and Gomorrah [to destruction], reducing them to ashes, making them an example for the godless [people] of what is coming;"
           }
         },
         {
@@ -278,8 +286,8 @@
           "text": {
             "NRSV": "and if he rescued Lot, a righteous man greatly distressed by the licentiveness of the lawless",
             "Rotherham": " And, righteous Lot, when getting worn out by the behaviour of them who were impious in wantonness, he rescued—",
-            "KJV": "2:7 And deliuered iust Lot, vexed with the filthy conuersation of the wicked:",
-            "NABRE": "2:7 and if he rescued Lot, a righteous man oppressed by the licentious conduct of unprincipled people"
+            "KJV": "And deliuered iust Lot, vexed with the filthy conuersation of the wicked:",
+            "NABRE": "and if he rescued Lot, a righteous man oppressed by the licentious conduct of unprincipled people"
           }
         },
         {
@@ -287,8 +295,8 @@
           "text": {
             "NRSV": "(for that righteous man, living among them day after day, was tormented in his righteous soul by their lawless deeds that he saw and heard),",
             "Rotherham": "For, in seeing and hearing, since he dwelt right among them, as a righteous man, he used to torment his soul, day by day, with their lawless deeds—",
-            "KJV": "2:8 (For that righteous man dwelling among them, in seeing & hearing, vexed his righteous soule from day to day, with their vnlawfull deeds.)",
-            "NABRE": "2:8 (for day after day that righteous man living among them was tormented in his righteous soul at the lawless deeds that he saw and heard),"
+            "KJV": "(For that righteous man dwelling among them, in seeing & hearing, vexed his righteous soule from day to day, with their vnlawfull deeds.)",
+            "NABRE": "(for day after day that righteous man living among them was tormented in his righteous soul at the lawless deeds that he saw and heard),"
           }
         },
         {
@@ -296,8 +304,8 @@
           "text": {
             "NRSV": "then the Lord knows how to rescue the godly from trial, and to keep the unrighteous under punishment until the day of judgment",
             "Rotherham": "[Then] the Lord knoweth how to rescue, the godly out of trial; but to keep, the unrighteous unto a day of judgment to be punished;— ",
-            "KJV": "2:9 The Lord knoweth how to deliuer the godly out of temptations, and to reserue the vniust vnto the day of iudgement to be punished:",
-            "NABRE": "2:9 then the Lord knows how to rescue the devout from trial and to keep the unrighteous under punishment for the day of judgment,"
+            "KJV": "The Lord knoweth how to deliuer the godly out of temptations, and to reserue the vniust vnto the day of iudgement to be punished:",
+            "NABRE": "then the Lord knows how to rescue the devout from trial and to keep the unrighteous under punishment for the day of judgment,"
           }
         },
         {
@@ -305,8 +313,8 @@
           "text": {
             "NRSV": "—especially those who indulge their flesh in unclean lust and who despise authority. Bold and willful, they are not afraid to slander the glorious ones,",
             "Rotherham": " Most of all, however, them who go their way, after the flesh, with a coveting of defilement, and who despise, lordship,—daring! willful! before dignitaries, they tremble not, defaming,",
-            "KJV": "2:10 But chiefly them that walke after the flesh in the lust of vncleannesse, and despise gouernment. Presumptuous are they; selfe willed: they are not afraid to speake euill of dignities:",
-            "NABRE": "2:10 and especially those who follow the flesh with its depraved desire and show contempt for lordship. False Teachers Denounced. Bold and arrogant, they are not afraid to revile glorious beings,"
+            "KJV": "But chiefly them that walke after the flesh in the lust of vncleannesse, and despise gouernment. Presumptuous are they; selfe willed: they are not afraid to speake euill of dignities:",
+            "NABRE": "and especially those who follow the flesh with its depraved desire and show contempt for lordship. False Teachers Denounced. Bold and arrogant, they are not afraid to revile glorious beings,"
           }
         },
         {
@@ -314,8 +322,8 @@
           "text": {
             "NRSV": "whereas angels, though greater in might and power, do not bring against them a slanderous judgment from the Lord.",
             "Rotherham": "where, messengers, though, greater in might and power, are not bringing against them [before the Lord] a defamatory accusation,—",
-            "KJV": "2:11 Whereas Angels which are greater in power and might, bring not railing accusation against them before the Lord.",
-            "NABRE": "2:11 whereas angels, despite their superior strength and power, do not bring a reviling judgment against them from the Lord."
+            "KJV": "Whereas Angels which are greater in power and might, bring not railing accusation against them before the Lord.",
+            "NABRE": "whereas angels, despite their superior strength and power, do not bring a reviling judgment against them from the Lord."
           }
         },
         {
@@ -323,8 +331,8 @@
           "text": {
             "NRSV": "These people, however, are like irrational animals, mere creatures of instinct, born to be caught and killed; they slander what they do not understand, and when those creatures are destroyed, they also will be destroyed,",
             "Rotherham": "These, however, as unreasoning creatures that have been bred as being, by nature, for capture and destruction, in the things they are ignorant of, uttering defamation, in their spoiling, shall also be made a spoil,—",
-            "KJV": "2:12 But these, as natural bruit beasts made to bee taken and destroyed speake euill of the things that they vnderstand not, and shall vtterly perish in their owne corruption,",
-            "NABRE": "2:12 But these people, like irrational animals born by nature for capture and destruction, revile things that they do not understand, and in their destruction they will also be destroyed,"
+            "KJV": "But these, as natural bruit beasts made to bee taken and destroyed speake euill of the things that they vnderstand not, and shall vtterly perish in their owne corruption,",
+            "NABRE": "But these people, like irrational animals born by nature for capture and destruction, revile things that they do not understand, and in their destruction they will also be destroyed,"
           }
         },
         {
@@ -332,8 +340,8 @@
           "text": {
             "NRSV": "suffering the penalty for doing wrong. They count it a pleasure to revel in the daytime. They are blots and blemishes, reveling in their dissipation while they feast with you.",
             "Rotherham": "Doing wrong themselves, for a reward of wrong, accounting, a delight, their day-time delicacy, spots and blemishes, indulging in delicacies with their stratagems, as they carouse together with you,",
-            "KJV": "2:13 And shall receiue the reward of vnrighteousnesse, as they that count it pleasure to riot in the day time: Spots they are and blemishes, sporting themselues with their owne deceiuings, while they feast with you:",
-            "NABRE": "2:13 suffering wrong as payment for wrongdoing. Thinking daytime revelry a delight, they are stains and defilements as they revel in their deceits while carousing with you."
+            "KJV": "And shall receiue the reward of vnrighteousnesse, as they that count it pleasure to riot in the day time: Spots they are and blemishes, sporting themselues with their owne deceiuings, while they feast with you:",
+            "NABRE": "suffering wrong as payment for wrongdoing. Thinking daytime revelry a delight, they are stains and defilements as they revel in their deceits while carousing with you."
           }
         },
         {
@@ -341,8 +349,8 @@
           "text": {
             "NRSV": "They have eyes full of adultery, insatiable for sin. They entice unsteady souls. They have hearts trained in greed. Accursed children!",
             "Rotherham": "Having, eyes, full of an adulteress, and that cannot rest from sin, enticing unstable souls, having, a heart trained in greed,—children of a curse,—",
-            "KJV": "2:14 Hauing eyes ful of adulterie and that cannot cease from sinne, beguiling vnstable soules: an heart they haue exercised with couetous practises: cursed children:",
-            "NABRE": "2:14 Their eyes are full of adultery and insatiable for sin. They seduce unstable people, and their hearts are trained in greed. Accursed children!"
+            "KJV": "Hauing eyes ful of adulterie and that cannot cease from sinne, beguiling vnstable soules: an heart they haue exercised with couetous practises: cursed children:",
+            "NABRE": "Their eyes are full of adultery and insatiable for sin. They seduce unstable people, and their hearts are trained in greed. Accursed children!"
           }
         },
         {
@@ -350,8 +358,8 @@
           "text": {
             "NRSV": "They have left the straight road and have gone astray. They have followed the road of Balaam son of Bosor, who loved the wages of doing wrong,",
             "Rotherham": "Forsaking a straight path, they have gone astray, following out the way of Balaam [son] of Beor, who loved, a reward of wrong,",
-            "KJV": "2:15 Which haue forsaken the right way, and are gone astray, following the way of Balaam the sonne of Bosor, who loued the wages of vnrighteousnesse,",
-            "NABRE": "2:15 Abandoning the straight road, they have gone astray, following the road of Balaam, the son of Bosor, who loved payment for wrongdoing,"
+            "KJV": "Which haue forsaken the right way, and are gone astray, following the way of Balaam the sonne of Bosor, who loued the wages of vnrighteousnesse,",
+            "NABRE": "Abandoning the straight road, they have gone astray, following the road of Balaam, the son of Bosor, who loved payment for wrongdoing,"
           }
         },
         {
@@ -359,8 +367,8 @@
           "text": {
             "NRSV": "but was rebuked for his own transgression; a speechless donkey spoke with a human voice and restrained the prophet’s madness.",
             "Rotherham": "But had, a reproof, of his own transgression, a dumb beast of burden, in man’s voice, finding utterance, forbade the prophet’s madness.",
-            "KJV": "2:16 But was rebuked for his iniquity: the dumbe asse speaking with mais voice, forbade the madnesse of the Prophet.",
-            "NABRE": "2:16 but he received a rebuke for his own crime: a mute beast spoke with a human voice and restrained the prophet’s madness."
+            "KJV": "But was rebuked for his iniquity: the dumbe asse speaking with mais voice, forbade the madnesse of the Prophet.",
+            "NABRE": "but he received a rebuke for his own crime: a mute beast spoke with a human voice and restrained the prophet’s madness."
           }
         },
         {
@@ -368,8 +376,8 @@
           "text": {
             "NRSV": "These are waterless springs and mists driven by a storm; for them the deepest darkness has been reserved.",
             "Rotherham": "These, are fountains without water, and mists, by a tempest, driven along,—for whom, the gloom of darkness, hath been reserved;",
-            "KJV": "2:17 These are welles without water, cloudes that are caried with a tempest, to whom the mist of darkenesse is reserued for euer.",
-            "NABRE": "2:17 These people are waterless springs and mists driven by a gale; for them the gloom of darkness has been reserved."
+            "KJV": "These are welles without water, cloudes that are caried with a tempest, to whom the mist of darkenesse is reserued for euer.",
+            "NABRE": "These people are waterless springs and mists driven by a gale; for them the gloom of darkness has been reserved."
           }
         },
         {
@@ -377,8 +385,8 @@
           "text": {
             "NRSV": "For, speaking bombastic nonsense, they entice with licentious desires of the flesh those who have just escaped from those who live in error.",
             "Rotherham": "For, great swelling words of vanity, uttering, they entice with carnal covetings—in wanton ways—them who are, well-nigh, escaping from the men who, in error, have their behaviour;",
-            "KJV": "2:18 For when they speake great svelling words of vanitie, they alure through the lusts of the flesh, through much wantonnesse, those that were cleane escaped from them who liue in errour.",
-            "NABRE": "2:18 For, talking empty bombast, they seduce with licentious desires of the flesh those who have barely escaped from people who live in error."
+            "KJV": "For when they speake great svelling words of vanitie, they alure through the lusts of the flesh, through much wantonnesse, those that were cleane escaped from them who liue in errour.",
+            "NABRE": "For, talking empty bombast, they seduce with licentious desires of the flesh those who have barely escaped from people who live in error."
           }
         },
         {
@@ -386,8 +394,8 @@
           "text": {
             "NRSV": "They promise them freedom, but they themselves are slaves of corruption; for people are slaves to whatever masters them.",
             "Rotherham": "Promising, freedom to them, they themselves, being all the while, slaves of corruption,—for, by whom one hath been defeated, by the same, hath he become enslaved,—",
-            "KJV": "2:19 While they promise them libertie, they themselues are the seruants of corruption: for of whom a man is ouercome, of the same is he brought in bondage.",
-            "NABRE": "2:19 They promise them freedom, though they themselves are slaves of corruption, for a person is a slave of whatever overcomes him."
+            "KJV": "While they promise them libertie, they themselues are the seruants of corruption: for of whom a man is ouercome, of the same is he brought in bondage.",
+            "NABRE": "They promise them freedom, though they themselves are slaves of corruption, for a person is a slave of whatever overcomes him."
           }
         },
         {
@@ -395,8 +403,8 @@
           "text": {
             "NRSV": "For if, after they have escaped the defilements of the world through the knowledge of our Lord and Savior Jesus Christ, they are again entangled in them and overpowered, the last state has become worse for them than the first.",
             "Rotherham": "For, if, having escaped from the defilements of the world by a personal knowledge of the Lord and Saviour Jesus Christ, but, by the same having again become entangled, they are defeated, the, last, state hath become, for them, worse than, the first;",
-            "KJV": "2:20 For if after they haue escaped the pollutions of the world through the knowledge of the Lord and Sauiour Iesus Christ, they are againe intangled therein, and ouercome, the latter end is worse with them then the beginning.",
-            "NABRE": "2:20 For if they, having escaped the defilements of the world through the knowledge of [our] Lord and savior Jesus Christ, again become entangled and overcome by them, their last condition is worse than their first."
+            "KJV": "For if after they haue escaped the pollutions of the world through the knowledge of the Lord and Sauiour Iesus Christ, they are againe intangled therein, and ouercome, the latter end is worse with them then the beginning.",
+            "NABRE": "For if they, having escaped the defilements of the world through the knowledge of [our] Lord and savior Jesus Christ, again become entangled and overcome by them, their last condition is worse than their first."
           }
         },
         {
@@ -404,8 +412,8 @@
           "text": {
             "NRSV": "For it would have been better for them never to have known the way of righteousness than, after knowing it, to turn back from the holy commandment that was passed on to them.",
             "Rotherham": "For, better, had it been for them—not to have obtained a personal knowledge of the way of righteousness, than, having obtained such knowledge, to turn back out of the holy commandment delivered unto them.",
-            "KJV": "2:21 For it had bin better for them not to haue knowen the way of righteousnesse, then after they haue knowen it, to turne from the holy commandement deliuered vnto them.",
-            "NABRE": "2:21 For it would have been better for them not to have known the way of righteousness than after knowing it to turn back from the holy commandment handed down to them."
+            "KJV": "For it had bin better for them not to haue knowen the way of righteousnesse, then after they haue knowen it, to turne from the holy commandement deliuered vnto them.",
+            "NABRE": "For it would have been better for them not to have known the way of righteousness than after knowing it to turn back from the holy commandment handed down to them."
           }
         },
         {
@@ -413,8 +421,8 @@
           "text": {
             "NRSV": "It has happened to them according to the true proverb, “The dog turns back to its own vomit,” and, “The sow is washed only to wallow in the mud.”",
             "Rotherham": "There hath befallen them the thing [spoken of] in the true proverb—A dog, turning back unto his own vomit, and—A sow, as soon as washed, unto wallowing in mire.  ",
-            "KJV": "2:22 But it is happened vnto them according to the true prouerbe: The dog is turned to his own vomit againe, and the sowe that was washed, to her wallowing in the mire.",
-            "NABRE": "2:22 What is expressed in the true proverb has happened to them, “The dog returns to its own vomit,” and “A bathed sow returns to wallowing in the mire.”"
+            "KJV": "But it is happened vnto them according to the true prouerbe: The dog is turned to his own vomit againe, and the sowe that was washed, to her wallowing in the mire.",
+            "NABRE": "What is expressed in the true proverb has happened to them, “The dog returns to its own vomit,” and “A bathed sow returns to wallowing in the mire.”"
           }
         }
       ]
@@ -427,8 +435,8 @@
           "text": {
             "NRSV": "This is now, beloved, the second letter I am writing to you; in them I am trying to arouse your sincere intention by reminding you",
             "Rotherham": "This, already, beloved, is the second letter I am writing unto you; and, in these letters, I am stirring up—by way of calling to remembrance—your uncorrupted mind,",
-            "KJV": "3:1 This second Epistle (beloued) I now write vnto you, in both which I stir vp your pure mindes by way of remembrance:",
-            "NABRE": "3:1 IV. The Delay of the Second Coming Chapter 3 Denial of the Parousia. This is now, beloved, the second letter I am writing to you; through them by way of reminder I am trying to stir up your sincere disposition,"
+            "KJV": "This second Epistle (beloued) I now write vnto you, in both which I stir vp your pure mindes by way of remembrance:",
+            "NABRE": "IV. The Delay of the Second Coming Chapter 3 Denial of the Parousia. This is now, beloved, the second letter I am writing to you; through them by way of reminder I am trying to stir up your sincere disposition,"
           }
         },
         {
@@ -436,8 +444,8 @@
           "text": {
             "NRSV": "that you should remember the words spoken in the past by the holy prophets, and the commandment of the Lord and Savior spoken through your apostles.",
             "Rotherham": "To remember the fore-spoken declarations made by the holy prophets, and the commandment of the Lord and Saviour, by your apostles. ",
-            "KJV": "3:2 That yee may be mindfull of the wordes which were spoken before by the holy Prophets, and of the Commandement of vs the Apostles of the Lord and Sauiour:",
-            "NABRE": "3:2 to recall the words previously spoken by the holy prophets and the commandment of the Lord and savior through your apostles."
+            "KJV": "That yee may be mindfull of the wordes which were spoken before by the holy Prophets, and of the Commandement of vs the Apostles of the Lord and Sauiour:",
+            "NABRE": "to recall the words previously spoken by the holy prophets and the commandment of the Lord and savior through your apostles."
           }
         },
         {
@@ -445,8 +453,8 @@
           "text": {
             "NRSV": "First of all you must understand this, that in the last days scoffers will come, scoffing and indulging their own lusts",
             "Rotherham": " Of this, first, taking note—that there will come, in the last of the days, with scoffing, scoffers, after their own covetings, going on,",
-            "KJV": "3:3 Knowing this first, that there shall come in the last dayes scoffers, walking after their owne lusts,",
-            "NABRE": "3:3 Know this first of all, that in the last days scoffers will come [to] scoff, living according to their own desires"
+            "KJV": "Knowing this first, that there shall come in the last dayes scoffers, walking after their owne lusts,",
+            "NABRE": "Know this first of all, that in the last days scoffers will come [to] scoff, living according to their own desires"
           }
         },
         {
@@ -454,8 +462,8 @@
           "text": {
             "NRSV": "and saying, “Where is the promise of his coming? For ever since our ancestors died, all things continue as they were from the beginning of creation!”",
             "Rotherham": "and saying—Where is the promise of his presence? For, since the fathers fell asleep, all things, thus remain, from the beginning of creation.",
-            "KJV": "3:4 And saying, Where is the promise of his comming? For since the fathers fell asleepe, all things continue as they were fr&#333; the beginning of the creation.",
-            "NABRE": "3:4 and saying, “Where is the promise of his coming? From the time when our ancestors fell asleep, everything has remained as it was from the beginning of creation.”"
+            "KJV": "And saying, Where is the promise of his comming? For since the fathers fell asleepe, all things continue as they were fr&#333; the beginning of the creation.",
+            "NABRE": "and saying, “Where is the promise of his coming? From the time when our ancestors fell asleep, everything has remained as it was from the beginning of creation.”"
           }
         },
         {
@@ -463,8 +471,8 @@
           "text": {
             "NRSV": "They deliberately ignore this fact, that by the word of God heavens existed long ago and an earth was formed out of water and by means of water,",
             "Rotherham": "For this they, willfully, forget—that there were, heavens, from of old, and, an earth, on account of water and by means of water, compacted, by God’s word,—",
-            "KJV": "3:5 For this they willingly are ignorant of, that by the word of God the heauens were of olde, and the earth standing out of the water, and in the water,",
-            "NABRE": "3:5 They deliberately ignore the fact that the heavens existed of old and earth was formed out of water and through water by the word of God;"
+            "KJV": "For this they willingly are ignorant of, that by the word of God the heauens were of olde, and the earth standing out of the water, and in the water,",
+            "NABRE": "They deliberately ignore the fact that the heavens existed of old and earth was formed out of water and through water by the word of God;"
           }
         },
         {
@@ -472,8 +480,8 @@
           "text": {
             "NRSV": "through which the world of that time was deluged with water and perished.",
             "Rotherham": "By which means, the world that then was, with water being flooded, perished;",
-            "KJV": "3:6 Whereby the world that then was, being ouerflowed with water, perished.",
-            "NABRE": "3:6 through these the world that then existed was destroyed, deluged with water."
+            "KJV": "Whereby the world that then was, being ouerflowed with water, perished.",
+            "NABRE": "through these the world that then existed was destroyed, deluged with water."
           }
         },
         {
@@ -481,8 +489,8 @@
           "text": {
             "NRSV": "But by the same word the present heavens and earth have been reserved for fire, being kept until the day of judgment and destruction of the godless.",
             "Rotherham": "While, the heavens and the earth that now are, by the same word, have been stored with fire, being kept unto the day of judgment and destruction of the ungodly men. ",
-            "KJV": "3:7 But the heauens and the earth which are now, by the same word are kept in store, reserued vnto fire against the day of Iudgement, and perdition of vngodly men.",
-            "NABRE": "3:7 The present heavens and earth have been reserved by the same word for fire, kept for the day of judgment and of destruction of the godless."
+            "KJV": "But the heauens and the earth which are now, by the same word are kept in store, reserued vnto fire against the day of Iudgement, and perdition of vngodly men.",
+            "NABRE": "The present heavens and earth have been reserved by the same word for fire, kept for the day of judgment and of destruction of the godless."
           }
         },
         {
@@ -490,8 +498,8 @@
           "text": {
             "NRSV": "But do not ignore this one fact, beloved, that with the Lord one day is like a thousand years, and a thousand years are like one day.",
             "Rotherham": " But, this one thing, forget not, beloved,—that, one day, with the Lord, is as a thousand years, and, a thousand years, as one day. ",
-            "KJV": "3:8 But (beloued) bee not ignorant of this one thing, that one day is with the Lord as a thousand yeeres, and a thousand yeeres as one day.",
-            "NABRE": "3:8 But do not ignore this one fact, beloved, that with the Lord one day is like a thousand years and a thousand years like one day."
+            "KJV": "But (beloued) bee not ignorant of this one thing, that one day is with the Lord as a thousand yeeres, and a thousand yeeres as one day.",
+            "NABRE": "But do not ignore this one fact, beloved, that with the Lord one day is like a thousand years and a thousand years like one day."
           }
         },
         {
@@ -499,8 +507,8 @@
           "text": {
             "NRSV": "The Lord is not slow about his promise, as some think of slowness, but is patient with you, not wanting any to perish, but all to come to repentance.",
             "Rotherham": " The Lord is, not slack, concerning his promise, as some count, slackness; but is long-suffering with regard to you, not being minded that any should perish, but that, all, unto repentance, should come.",
-            "KJV": "3:9 The Lord is not slacke c&#333;cerning his promise (as some men count slacknesse) but is long-suffring to vs-ward, not willing that any should perish, but that all should come to repentance.",
-            "NABRE": "3:9 The Lord does not delay his promise, as some regard “delay,” but he is patient with you, not wishing that any should perish but that all should come to repentance."
+            "KJV": "The Lord is not slacke c&#333;cerning his promise (as some men count slacknesse) but is long-suffring to vs-ward, not willing that any should perish, but that all should come to repentance.",
+            "NABRE": "The Lord does not delay his promise, as some regard “delay,” but he is patient with you, not wishing that any should perish but that all should come to repentance."
           }
         },
         {
@@ -508,8 +516,8 @@
           "text": {
             "NRSV": "But the day of the Lord will come like a thief, and then the heavens will pass away with a loud noise, and the elements will be dissolved with fire, and the earth and everything that is done on it will be disclosed.",
             "Rotherham": "Howbeit the day of the Lord will be here, as a thief,—in which, the heavens, with a rushing noise, will pass away, while, elements, becoming intensely hot, will be dissolved, and, earth, and the works therein, will be discovered. ",
-            "KJV": "3:10 But the day of the Lord wil come as a thiefe in the night, in the which the heauens shall passe away with a great noise, and the Elements shall melt with feruent heate, the earth also and the works that are therin shalbe burnt vp.",
-            "NABRE": "3:10 But the day of the Lord will come like a thief, and then the heavens will pass away with a mighty roar and the elements will be dissolved by fire, and the earth and everything done on it will be found out. Exhortation to Preparedness."
+            "KJV": "But the day of the Lord wil come as a thiefe in the night, in the which the heauens shall passe away with a great noise, and the Elements shall melt with feruent heate, the earth also and the works that are therin shalbe burnt vp.",
+            "NABRE": "But the day of the Lord will come like a thief, and then the heavens will pass away with a mighty roar and the elements will be dissolved by fire, and the earth and everything done on it will be found out. Exhortation to Preparedness."
           }
         },
         {
@@ -517,8 +525,8 @@
           "text": {
             "NRSV": "Since all these things are to be dissolved in this way, what sort of persons ought you to be in leading lives of holiness and godliness,",
             "Rotherham": " Seeing that all these things are thus to be dissolved, what manner of persons, ought [ye] all the while to be, in holy ways of behaviour and acts of godliness,—",
-            "KJV": "3:11 Seeing then that all these things shall be dissolued, What maner of persons ought ye to be in all holy conuersation, and godlinesse,",
-            "NABRE": "3:11 Since everything is to be dissolved in this way, what sort of persons ought [you] to be, conducting yourselves in holiness and devotion,"
+            "KJV": "Seeing then that all these things shall be dissolued, What maner of persons ought ye to be in all holy conuersation, and godlinesse,",
+            "NABRE": "Since everything is to be dissolved in this way, what sort of persons ought [you] to be, conducting yourselves in holiness and devotion,"
           }
         },
         {
@@ -526,8 +534,8 @@
           "text": {
             "NRSV": "waiting for and hastening the coming of the day of God, because of which the heavens will be set ablaze and dissolved, and the elements will melt with fire?",
             "Rotherham": "Expecting and hastening the presence of the day of God, by reason of which, heavens, being on fire, will be dissolved, and, elements, becoming intensely hot, are to be melted;",
-            "KJV": "3:12 Looking for and hasting vnto the comming of the day of God, wherein the heauens being on fire shalbe dissolued, and the Elements shall melt with feruent heat.",
-            "NABRE": "3:12 waiting for and hastening the coming of the day of God, because of which the heavens will be dissolved in flames and the elements melted by fire."
+            "KJV": "Looking for and hasting vnto the comming of the day of God, wherein the heauens being on fire shalbe dissolued, and the Elements shall melt with feruent heat.",
+            "NABRE": "waiting for and hastening the coming of the day of God, because of which the heavens will be dissolved in flames and the elements melted by fire."
           }
         },
         {
@@ -535,8 +543,8 @@
           "text": {
             "NRSV": "But, in accordance with his promise, we wait for new heavens and a new earth, where righteousness is at home.",
             "Rotherham": "But, new heavens, and a new earth, according to his promise, are we expecting, wherein, righteousness, is to dwell.",
-            "KJV": "3:13 Neuerthelesse wee, according to his promise, looke for new heauens, and a new earth, wherein dwelleth righteousnesse.",
-            "NABRE": "3:13 But according to his promise we await new heavens and a new earth in which righteousness dwells."
+            "KJV": "Neuerthelesse wee, according to his promise, looke for new heauens, and a new earth, wherein dwelleth righteousnesse.",
+            "NABRE": "But according to his promise we await new heavens and a new earth in which righteousness dwells."
           }
         },
         {
@@ -544,8 +552,8 @@
           "text": {
             "NRSV": "Therefore, beloved, while you are waiting for these things, strive to be found by him at peace, without spot or blemish;",
             "Rotherham": "Wherefore, beloved, these things, expecting—give diligence, unspotted and unblemished, by him, to be found, in peace;",
-            "KJV": "3:14 Wherefore (beloued) seeing that ye looke for such things, be diligent that ye may be found of him in peace, without spot, and blamelesse.",
-            "NABRE": "3:14 Therefore, beloved, since you await these things, be eager to be found without spot or blemish before him, at peace."
+            "KJV": "Wherefore (beloued) seeing that ye looke for such things, be diligent that ye may be found of him in peace, without spot, and blamelesse.",
+            "NABRE": "Therefore, beloved, since you await these things, be eager to be found without spot or blemish before him, at peace."
           }
         },
         {
@@ -553,8 +561,8 @@
           "text": {
             "NRSV": "and regard the patience of our Lord as salvation. So also our beloved brother Paul wrote to you according to the wisdom given him,",
             "Rotherham": "And account, our Lord’s long suffering, [to be] salvation:—even as, our beloved brother Paul also, according to the wisdom given unto him, hath written unto you;",
-            "KJV": "3:15 And account that the long suffering of the Lord is saluation, euen as our beloued brother Paul also, according to the wisedome giuen vnto him, hath written vnto you.",
-            "NABRE": "3:15 And consider the patience of our Lord as salvation, as our beloved brother Paul, according to the wisdom given to him, also wrote to you,"
+            "KJV": "And account that the long suffering of the Lord is saluation, euen as our beloued brother Paul also, according to the wisedome giuen vnto him, hath written vnto you.",
+            "NABRE": "And consider the patience of our Lord as salvation, as our beloved brother Paul, according to the wisdom given to him, also wrote to you,"
           }
         },
         {
@@ -562,8 +570,8 @@
           "text": {
             "NRSV": "speaking of this as he does in all his letters. There are some things in them hard to understand, which the ignorant and unstable twist to their own destruction, as they do the other scriptures.",
             "Rotherham": "As also, in all letters, speaking in them concerning these things,—in which [letters] are some things, hard to be understood, which, the uninstructed and unstable, wrest,—as also the other scriptures,—unto their own destruction.",
-            "KJV": "3:16 As also in all his Epistles, speaking in them of these things, in which are some things hard to be vnderstood, which they that are vnlearned and vnstable wrest, as they doe also the other Scriptures, vnto their owne destruction.",
-            "NABRE": "3:16 speaking of these things as he does in all his letters. In them there are some things hard to understand that the ignorant and unstable distort to their own destruction, just as they do the other scriptures."
+            "KJV": "As also in all his Epistles, speaking in them of these things, in which are some things hard to be vnderstood, which they that are vnlearned and vnstable wrest, as they doe also the other Scriptures, vnto their owne destruction.",
+            "NABRE": "speaking of these things as he does in all his letters. In them there are some things hard to understand that the ignorant and unstable distort to their own destruction, just as they do the other scriptures."
           }
         },
         {
@@ -571,8 +579,8 @@
           "text": {
             "NRSV": "You therefore, beloved, since you are forewarned, beware that you are not carried away with the error of the lawless and lose your own stability.",
             "Rotherham": "Ye, therefore, beloved, taking note beforehand, be on your guard, lest, with the error of the impious being led away, ye fall from your own steadfastness;",
-            "KJV": "3:17 Ye therefore, beloued, seeing yee know these things before, beware lest yee also being led away with the errour of the wicked, fall from your owne stedfastnesse.",
-            "NABRE": "3:17 V. Final Exhortation and Doxology Therefore, beloved, since you are forewarned, be on your guard not to be led into the error of the unprincipled and to fall from your own stability."
+            "KJV": "Ye therefore, beloued, seeing yee know these things before, beware lest yee also being led away with the errour of the wicked, fall from your owne stedfastnesse.",
+            "NABRE": "V. Final Exhortation and Doxology Therefore, beloved, since you are forewarned, be on your guard not to be led into the error of the unprincipled and to fall from your own stability."
           }
         },
         {
@@ -580,8 +588,8 @@
           "text": {
             "NRSV": "But grow in the grace and knowledge of our Lord and Savior Jesus Christ. To him be the glory both now and to the day of eternity. Amen.",
             "Rotherham": "But be growing in the favour and knowledge of our Lord and Saviour Jesus Christ:—unto whom be the glory, both now and unto a day that abideth.   ",
-            "KJV": "3:18 But growe in grace, and in the knowledge of our Lord and Sauiour Iesus Christ: to him be glory both now and for euer. Amen.",
-            "NABRE": "3:18 But grow in grace and in the knowledge of our Lord and savior Jesus Christ. To him be glory now and to the day of eternity. [Amen.]"
+            "KJV": "But growe in grace, and in the knowledge of our Lord and Sauiour Iesus Christ: to him be glory both now and for euer. Amen.",
+            "NABRE": "But grow in grace and in the knowledge of our Lord and savior Jesus Christ. To him be glory now and to the day of eternity. [Amen.]"
           }
         }
       ]
