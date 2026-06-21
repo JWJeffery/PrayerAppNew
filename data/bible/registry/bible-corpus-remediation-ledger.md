@@ -149,3 +149,28 @@ Repair class:
 Phase 0/1: ledger plus active-corpus boundary guard.
 
 No Bible text repair is authorized in this phase.
+
+
+## Phase 2: schema/container contract guard
+
+Status: active guard added.
+
+The Bible corpus currently recognizes these active container families outside registry/config files and protected Vulgate work:
+
+- `chapters`
+- `books`
+- `sections`
+- `liturgical_prologue_plus_miracles`
+- `hymnal_stanzas`
+- legacy root-array Psalms at `data/bible/OT/psalms.json`
+
+Registry/config JSON and translation manifests are not Bible text containers and are excluded from this guard.
+
+Known exception: `JUD` is duplicated by Jude and Judith pending deliberate identity correction. The guard records this as a warning, not a pass-by-forgetting.
+
+
+### Phase 2 repair note
+
+Translation `raw/**` and `source/**` lanes are excluded from the active schema/container guard. They are source or staging material, not normalized Bible-browser corpus containers.
+
+This exclusion does not trust those files as complete or correct. It only prevents raw translation lanes, such as `data/bible/translations/drb-original-douay-rheims/raw/**`, from being misclassified as malformed active corpus.
