@@ -647,3 +647,26 @@ Classification summary:
 Trust status:
 
 Canonical OT remains not trusted pending explicit governance over classified residuals, Daniel 11, and Greek-addition handling.
+
+
+## Phase 4L: Daniel / Greek governance boundary
+
+Status: governed, not textually resolved.
+
+Decision:
+
+Daniel standard-text repair and Greek/deuterocanonical Daniel material are separated by explicit governance.
+
+Rules:
+
+- Standard Daniel remains `data/bible/OT/daniel.json`.
+- Greek Daniel remains `data/bible/OT/danielGK.json`.
+- Do not import Greek-addition rows from the historical NABRE source into standard Daniel as a NABRE repair.
+- Daniel 13 and 14 are not added to standard Daniel.
+- Daniel 11:1-45 remains classified because the historical NABRE source file has no Daniel 11 rows.
+- Daniel 5:31 remains classified pending separate review.
+- DRB raw Daniel is not a source for NABRE overlays.
+
+Trust status:
+
+Canonical OT remains not trusted pending remaining unresolved-row policy, Psalms subsystem work, deuterocanon, and broader canon governance.
