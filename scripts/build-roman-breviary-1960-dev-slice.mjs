@@ -156,6 +156,27 @@ const MATINS_RESPONSORY_LABELS = {
   Responsory9: 'Responsorium IX'
 };
 
+const MATINS_NOCTURNS = [
+  {
+    label: 'Nocturnus I',
+    sections: ['Lectio1', 'Lectio2', 'Lectio3'],
+    antiphonRange: [0, 3],
+    versum: 'Nocturn 1 Versum'
+  },
+  {
+    label: 'Nocturnus II',
+    sections: ['Lectio4', 'Lectio5', 'Lectio6'],
+    antiphonRange: [3, 6],
+    versum: 'Nocturn 2 Versum'
+  },
+  {
+    label: 'Nocturnus III',
+    sections: ['Lectio7', 'Lectio8', 'Lectio9'],
+    antiphonRange: [6, 9],
+    versum: 'Nocturn 3 Versum'
+  }
+];
+
 function unitSource(sourcePin, section, sourceRel = SOURCE_REL) {
   return {
     repo: sourcePin.repo,
@@ -231,6 +252,87 @@ function buildResponsoryUnit(sourcePin, c9Sections, section) {
   ];
 }
 
+function parseMatinsAntiphonAppointments(rawText) {
+  return rawText
+    .split(/\r?\n/)
+    .map(line => line.trim())
+    .filter(Boolean)
+    .map(line => {
+      const [antiphon, psalm] = line.split(';;');
+      return {
+        antiphon: antiphon.trim(),
+        psalm: (psalm || '').trim()
+      };
+    });
+}
+
+function formatMatinsPsalmody(appointments) {
+  const lines = [];
+  for (const item of appointments) {
+    lines.push(`Ant. ${item.antiphon}`);
+    lines.push(`Ps. ${item.psalm}`);
+  }
+  return lines.join('\n');
+}
+
+function buildInvitatoryUnit(sourcePin, c9Sections) {
+  const section = 'Invit';
+  const rawText = requireSection(c9Sections, section, C9_SOURCE_REL);
+  const normalized = normalizeDivinumDisplayText(rawText);
+
+  return [
+    'rb1960.la.sancti.11-02.invitatorium',
+    {
+      key: 'rb1960.la.sancti.11-02.invitatorium',
+      kind: 'invitatory',
+      citation: '',
+      text: normalized.text,
+      raw_text: rawText,
+      display_diagnostics: normalized.diagnostics,
+      source: unitSource(sourcePin, section, C9_SOURCE_REL)
+    }
+  ];
+}
+
+function buildNocturnPsalmodyUnit(sourcePin, c9Sections, nocturnIndex, appointments) {
+  const section = 'Ant Matutinum';
+  const rawText = appointments
+    .map(item => `${item.antiphon};;${item.psalm}`)
+    .join('\n');
+  const normalized = normalizeDivinumDisplayText(formatMatinsPsalmody(appointments));
+
+  return [
+    `rb1960.la.sancti.11-02.nocturnus${nocturnIndex}.psalmi-antiphonae`,
+    {
+      key: `rb1960.la.sancti.11-02.nocturnus${nocturnIndex}.psalmi-antiphonae`,
+      kind: 'psalmody_appointment',
+      citation: 'Antiphonae cum psalmis',
+      text: normalized.text,
+      raw_text: rawText,
+      display_diagnostics: normalized.diagnostics,
+      source: unitSource(sourcePin, section, C9_SOURCE_REL)
+    }
+  ];
+}
+
+function buildNocturnVersicleUnit(sourcePin, c9Sections, nocturnIndex, section) {
+  const rawText = requireSection(c9Sections, section, C9_SOURCE_REL);
+  const normalized = normalizeDivinumDisplayText(rawText);
+
+  return [
+    `rb1960.la.sancti.11-02.nocturnus${nocturnIndex}.versiculum`,
+    {
+      key: `rb1960.la.sancti.11-02.nocturnus${nocturnIndex}.versiculum`,
+      kind: 'versicle',
+      citation: '',
+      text: normalized.text,
+      raw_text: rawText,
+      display_diagnostics: normalized.diagnostics,
+      source: unitSource(sourcePin, section, C9_SOURCE_REL)
+    }
+  ];
+}
+
 function buildConclusioUnit(sourcePin, sections) {
   const rawText = requireSection(sections, 'Conclusio', SOURCE_REL);
   const normalized = normalizeDivinumDisplayText(rawText);
@@ -262,6 +364,27 @@ function buildUnits({ sourcePin, sections, c9Sections }) {
     )
   );
 
+  const matinsAntiphons = parseMatinsAntiphonAppointments(
+    requireSection(c9Sections, 'Ant Matutinum', C9_SOURCE_REL)
+  );
+
+  if (matinsAntiphons.length !== 9) {
+    throw new Error(`Expected 9 Matins antiphon appointments, found ${matinsAntiphons.length}`);
+  }
+
+  const frameworkUnits = Object.fromEntries([
+    buildInvitatoryUnit(sourcePin, c9Sections),
+    ...MATINS_NOCTURNS.flatMap((nocturn, index) => [
+      buildNocturnPsalmodyUnit(
+        sourcePin,
+        c9Sections,
+        index + 1,
+        matinsAntiphons.slice(nocturn.antiphonRange[0], nocturn.antiphonRange[1])
+      ),
+      buildNocturnVersicleUnit(sourcePin, c9Sections, index + 1, nocturn.versum)
+    ])
+  ]);
+
   const conclusioUnit = buildConclusioUnit(sourcePin, sections);
 
   return {
@@ -272,6 +395,7 @@ function buildUnits({ sourcePin, sections, c9Sections }) {
     edition_or_recension: 'rubrics_1960_1962',
     language: 'la',
     units: {
+      ...frameworkUnits,
       ...readingUnits,
       ...responsoryUnits,
       [conclusioUnit[0]]: conclusioUnit[1]
@@ -296,19 +420,34 @@ function buildReadingResponsoryPair(section) {
   ];
 }
 
-function buildNocturnBlock(label, sections) {
+function buildNocturnBlock(nocturn, nocturnIndex) {
   return {
     role: 'nocturn',
-    label,
-    blocks: sections.flatMap(section => buildReadingResponsoryPair(section))
+    label: nocturn.label,
+    blocks: [
+      {
+        role: 'psalmody',
+        label: 'Psalmi et antiphonae',
+        unit_refs: [`rb1960.la.sancti.11-02.nocturnus${nocturnIndex}.psalmi-antiphonae`]
+      },
+      {
+        role: 'versicle',
+        label: 'Versiculum',
+        unit_refs: [`rb1960.la.sancti.11-02.nocturnus${nocturnIndex}.versiculum`]
+      },
+      ...nocturn.sections.flatMap(section => buildReadingResponsoryPair(section))
+    ]
   };
 }
 
 function buildMatinsBlocks() {
   return [
-    buildNocturnBlock('Nocturnus I', ['Lectio1', 'Lectio2', 'Lectio3']),
-    buildNocturnBlock('Nocturnus II', ['Lectio4', 'Lectio5', 'Lectio6']),
-    buildNocturnBlock('Nocturnus III', ['Lectio7', 'Lectio8', 'Lectio9']),
+    {
+      role: 'invitatory',
+      label: 'Invitatorium',
+      unit_refs: ['rb1960.la.sancti.11-02.invitatorium']
+    },
+    ...MATINS_NOCTURNS.map((nocturn, index) => buildNocturnBlock(nocturn, index + 1)),
     {
       role: 'dismissal',
       label: 'Conclusio',

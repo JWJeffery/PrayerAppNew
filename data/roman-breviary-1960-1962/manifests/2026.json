@@ -30,9 +30,30 @@
           "label": "Matutinum",
           "blocks": [
             {
+              "role": "invitatory",
+              "label": "Invitatorium",
+              "unit_refs": [
+                "rb1960.la.sancti.11-02.invitatorium"
+              ]
+            },
+            {
               "role": "nocturn",
               "label": "Nocturnus I",
               "blocks": [
+                {
+                  "role": "psalmody",
+                  "label": "Psalmi et antiphonae",
+                  "unit_refs": [
+                    "rb1960.la.sancti.11-02.nocturnus1.psalmi-antiphonae"
+                  ]
+                },
+                {
+                  "role": "versicle",
+                  "label": "Versiculum",
+                  "unit_refs": [
+                    "rb1960.la.sancti.11-02.nocturnus1.versiculum"
+                  ]
+                },
                 {
                   "role": "reading",
                   "label": "Lectio I",
@@ -82,6 +103,20 @@
               "label": "Nocturnus II",
               "blocks": [
                 {
+                  "role": "psalmody",
+                  "label": "Psalmi et antiphonae",
+                  "unit_refs": [
+                    "rb1960.la.sancti.11-02.nocturnus2.psalmi-antiphonae"
+                  ]
+                },
+                {
+                  "role": "versicle",
+                  "label": "Versiculum",
+                  "unit_refs": [
+                    "rb1960.la.sancti.11-02.nocturnus2.versiculum"
+                  ]
+                },
+                {
                   "role": "reading",
                   "label": "Lectio IV",
                   "unit_refs": [
@@ -129,6 +164,20 @@
               "role": "nocturn",
               "label": "Nocturnus III",
               "blocks": [
+                {
+                  "role": "psalmody",
+                  "label": "Psalmi et antiphonae",
+                  "unit_refs": [
+                    "rb1960.la.sancti.11-02.nocturnus3.psalmi-antiphonae"
+                  ]
+                },
+                {
+                  "role": "versicle",
+                  "label": "Versiculum",
+                  "unit_refs": [
+                    "rb1960.la.sancti.11-02.nocturnus3.versiculum"
+                  ]
+                },
                 {
                   "role": "reading",
                   "label": "Lectio VII",

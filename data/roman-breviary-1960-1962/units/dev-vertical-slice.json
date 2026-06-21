@@ -16,6 +16,104 @@
   "edition_or_recension": "rubrics_1960_1962",
   "language": "la",
   "units": {
+    "rb1960.la.sancti.11-02.invitatorium": {
+      "key": "rb1960.la.sancti.11-02.invitatorium",
+      "kind": "invitatory",
+      "citation": "",
+      "text": "Regem, cui ómnia vivunt, * Veníte adorémus.",
+      "raw_text": "Regem, cui ómnia vivunt, * Veníte adorémus.",
+      "display_diagnostics": [],
+      "source": {
+        "repo": "DivinumOfficium/divinum-officium",
+        "commit": "0ce8747d7dba3276fc05937635e02360b49a60a6",
+        "path": "web/www/horas/Latin/Commune/C9.txt",
+        "section": "Invit"
+      }
+    },
+    "rb1960.la.sancti.11-02.nocturnus1.psalmi-antiphonae": {
+      "key": "rb1960.la.sancti.11-02.nocturnus1.psalmi-antiphonae",
+      "kind": "psalmody_appointment",
+      "citation": "Antiphonae cum psalmis",
+      "text": "Ant. Dírige, * Dómine, Deus meus, in conspéctu tuo viam meam.\nPs. 5\nAnt. Convértere, * Dómine, et éripe ánimam meam: quóniam non est in morte, qui memor sit tui.\nPs. 6\nAnt. Nequándo rápiat * ut leo ánimam meam, dum non est qui rédimat, neque qui salvum fáciat.\nPs. 7",
+      "raw_text": "Dírige, * Dómine, Deus meus, in conspéctu tuo viam meam.;;5\nConvértere, * Dómine, et éripe ánimam meam: quóniam non est in morte, qui memor sit tui.;;6\nNequándo rápiat * ut leo ánimam meam, dum non est qui rédimat, neque qui salvum fáciat.;;7",
+      "display_diagnostics": [],
+      "source": {
+        "repo": "DivinumOfficium/divinum-officium",
+        "commit": "0ce8747d7dba3276fc05937635e02360b49a60a6",
+        "path": "web/www/horas/Latin/Commune/C9.txt",
+        "section": "Ant Matutinum"
+      }
+    },
+    "rb1960.la.sancti.11-02.nocturnus1.versiculum": {
+      "key": "rb1960.la.sancti.11-02.nocturnus1.versiculum",
+      "kind": "versicle",
+      "citation": "",
+      "text": "V. A porta ínferi.\nR. Erue, Dómine, ánimas eórum.",
+      "raw_text": "V. A porta ínferi.\nR. Erue, Dómine, ánimas eórum.",
+      "display_diagnostics": [],
+      "source": {
+        "repo": "DivinumOfficium/divinum-officium",
+        "commit": "0ce8747d7dba3276fc05937635e02360b49a60a6",
+        "path": "web/www/horas/Latin/Commune/C9.txt",
+        "section": "Nocturn 1 Versum"
+      }
+    },
+    "rb1960.la.sancti.11-02.nocturnus2.psalmi-antiphonae": {
+      "key": "rb1960.la.sancti.11-02.nocturnus2.psalmi-antiphonae",
+      "kind": "psalmody_appointment",
+      "citation": "Antiphonae cum psalmis",
+      "text": "Ant. In loco páscuæ * ibi me collocávit.\nPs. 22\nAnt. Delícta * juventútis meæ, et ignorántias meas ne memíneris, Dómine.\nPs. 24\nAnt. Credo vidére * bona Dómini in terra vivéntium.\nPs. 26",
+      "raw_text": "In loco páscuæ * ibi me collocávit.;;22\nDelícta * juventútis meæ, et ignorántias meas ne memíneris, Dómine.;;24\nCredo vidére * bona Dómini in terra vivéntium.;;26",
+      "display_diagnostics": [],
+      "source": {
+        "repo": "DivinumOfficium/divinum-officium",
+        "commit": "0ce8747d7dba3276fc05937635e02360b49a60a6",
+        "path": "web/www/horas/Latin/Commune/C9.txt",
+        "section": "Ant Matutinum"
+      }
+    },
+    "rb1960.la.sancti.11-02.nocturnus2.versiculum": {
+      "key": "rb1960.la.sancti.11-02.nocturnus2.versiculum",
+      "kind": "versicle",
+      "citation": "",
+      "text": "V. Cóllocet eos Dóminus cum princípibus.\nR. Cum princípibus pópuli sui.",
+      "raw_text": "V. Cóllocet eos Dóminus cum princípibus.\nR. Cum princípibus pópuli sui.",
+      "display_diagnostics": [],
+      "source": {
+        "repo": "DivinumOfficium/divinum-officium",
+        "commit": "0ce8747d7dba3276fc05937635e02360b49a60a6",
+        "path": "web/www/horas/Latin/Commune/C9.txt",
+        "section": "Nocturn 2 Versum"
+      }
+    },
+    "rb1960.la.sancti.11-02.nocturnus3.psalmi-antiphonae": {
+      "key": "rb1960.la.sancti.11-02.nocturnus3.psalmi-antiphonae",
+      "kind": "psalmody_appointment",
+      "citation": "Antiphonae cum psalmis",
+      "text": "Ant. Compláceat * tibi, Dómine, ut erípias me: Dómine, ad adjuvándum me réspice.\nPs. 39\nAnt. Sana, Dómine, * ánimam meam, quia peccávi tibi.\nPs. 40\nAnt. Sitívit * ánima mea ad Deum vivum: quando véniam, et apparébo ante fáciem Dómini?\nPs. 41",
+      "raw_text": "Compláceat * tibi, Dómine, ut erípias me: Dómine, ad adjuvándum me réspice.;;39\nSana, Dómine, * ánimam meam, quia peccávi tibi.;;40\nSitívit * ánima mea ad Deum vivum: quando véniam, et apparébo ante fáciem Dómini?;;41",
+      "display_diagnostics": [],
+      "source": {
+        "repo": "DivinumOfficium/divinum-officium",
+        "commit": "0ce8747d7dba3276fc05937635e02360b49a60a6",
+        "path": "web/www/horas/Latin/Commune/C9.txt",
+        "section": "Ant Matutinum"
+      }
+    },
+    "rb1960.la.sancti.11-02.nocturnus3.versiculum": {
+      "key": "rb1960.la.sancti.11-02.nocturnus3.versiculum",
+      "kind": "versicle",
+      "citation": "",
+      "text": "V. Ne tradas béstiis ánimas confiténtes tibi.\nR. Et ánimas páuperum tuórum ne obliviscáris in finem.",
+      "raw_text": "V. Ne tradas béstiis ánimas confiténtes tibi.\nR. Et ánimas páuperum tuórum ne obliviscáris in finem.",
+      "display_diagnostics": [],
+      "source": {
+        "repo": "DivinumOfficium/divinum-officium",
+        "commit": "0ce8747d7dba3276fc05937635e02360b49a60a6",
+        "path": "web/www/horas/Latin/Commune/C9.txt",
+        "section": "Nocturn 3 Versum"
+      }
+    },
     "rb1960.la.sancti.11-02.lectio1": {
       "key": "rb1960.la.sancti.11-02.lectio1",
       "kind": "reading",
