@@ -797,3 +797,30 @@ Blocked patches:
 Trust status:
 
 Deuterocanon remains not trusted/underbuilt pending separate Greek-book adjudication and 3/4 Maccabees source acquisition or explicit exclusion governance.
+
+
+## Phase 4Q: Broader canon governance
+
+Status: governed, not textually trusted.
+
+Decision:
+
+Broader-canon files are now classified as a separate governed raw-text corpus lane. This is not a text repair and not a trust claim.
+
+Observed scope:
+
+- Candidate count: 38.
+- Zero-row governed artifacts: 2.
+- Raw-text-only governed artifacts: 36.
+
+Rules:
+
+- Do not promote broader-canon files into canonical OT, NT, Psalms, or deuterocanon completion.
+- Do not mark broader-canon raw-text files as source-verified.
+- Do not mark zero-row broader-canon artifacts as complete.
+- Do not normalize broader-canon file shape in this tranche.
+- Keep broader-canon status explicitly `not_trusted_governance_pending`.
+
+Trust status:
+
+Broader canon remains not trusted pending source/provenance adjudication and separate inclusion governance.

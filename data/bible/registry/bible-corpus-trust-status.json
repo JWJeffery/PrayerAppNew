@@ -63,6 +63,10 @@
         "Broader-canon files include non-standard schemas.",
         "Odes and related canticle files are structurally identified but underpopulated.",
         "Some metadata overstates completeness or liturgical status."
+      ],
+      "reason": "Broader-canon raw-text corpus is governed but not source-adjudicated or textually trusted.",
+      "completedRemediations": [
+        "broader_canon_governance_1"
       ]
     },
     "vulgate": {
