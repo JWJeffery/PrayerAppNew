@@ -279,30 +279,42 @@ function buildUnits({ sourcePin, sections, c9Sections }) {
   };
 }
 
-function buildMatinsBlocks() {
-  const blocks = [];
+function buildReadingResponsoryPair(section) {
+  const number = section.replace('Lectio', '');
 
-  for (const [section] of MATINS_READING_SECTIONS) {
-    const number = section.replace('Lectio', '');
-    blocks.push({
+  return [
+    {
       role: 'reading',
       label: MATINS_READING_LABELS[section],
       unit_refs: [`rb1960.la.sancti.11-02.${section.toLowerCase()}`]
-    });
-    blocks.push({
+    },
+    {
       role: 'responsory',
       label: MATINS_RESPONSORY_LABELS[`Responsory${number}`],
       unit_refs: [`rb1960.la.sancti.11-02.responsorium${number}`]
-    });
-  }
+    }
+  ];
+}
 
-  blocks.push({
-    role: 'dismissal',
-    label: 'Conclusio',
-    unit_refs: ['rb1960.la.sancti.11-02.conclusio']
-  });
+function buildNocturnBlock(label, sections) {
+  return {
+    role: 'nocturn',
+    label,
+    blocks: sections.flatMap(section => buildReadingResponsoryPair(section))
+  };
+}
 
-  return blocks;
+function buildMatinsBlocks() {
+  return [
+    buildNocturnBlock('Nocturnus I', ['Lectio1', 'Lectio2', 'Lectio3']),
+    buildNocturnBlock('Nocturnus II', ['Lectio4', 'Lectio5', 'Lectio6']),
+    buildNocturnBlock('Nocturnus III', ['Lectio7', 'Lectio8', 'Lectio9']),
+    {
+      role: 'dismissal',
+      label: 'Conclusio',
+      unit_refs: ['rb1960.la.sancti.11-02.conclusio']
+    }
+  ];
 }
 
 function buildManifest({ sourcePin }) {
