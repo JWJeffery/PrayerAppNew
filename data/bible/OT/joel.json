@@ -674,5 +674,34 @@
       ]
     }
   ],
-  "schema": "bible_book_multiversion_v1"
+  "schema": "bible_book_multiversion_v1",
+  "translationOverlays": {
+    "NABRE": {
+      "2": {
+        "28": "III. The Lord’s Final Judgment Chapter 3 The Day of the Lord It shall come to pass I will pour out my spirit upon all flesh. Your sons and daughters will prophesy, your old men will dream dreams, your young men will see visions.",
+        "29": "Even upon your male and female servants, in those days, I will pour out my spirit.",
+        "30": "I will set signs in the heavens and on the earth, blood, fire, and columns of smoke;",
+        "31": "The sun will darken, the moon turn blood-red, Before the day of the Lord arrives, that great and terrible day.",
+        "32": "Then everyone who calls upon the name of the Lord will escape harm. For on Mount Zion there will be a remnant, as the Lord has said, And in Jerusalem survivors whom the Lord will summon."
+      },
+      "3": {
+        "6": "You sold the people of Judah and Jerusalem to the Greeks, taking them far from their own country!",
+        "7": "Look! I am rousing them from the place to which you sold them, and I will turn your deeds back upon your own head.",
+        "8": "I will sell your sons and daughters to the Judahites who will sell them to the Sabeans, a distant nation. The Lord has spoken!",
+        "9": "The Nations Destroyed Announce this to the nations: Proclaim a holy war! Alert the warriors! Let all the soldiers report and march!",
+        "10": "Beat your plowshares into swords, and your pruning knives into spears; let the weakling boast, “I am a warrior!”",
+        "11": "Hurry and come, all you neighboring peoples, assemble there! Bring down, Lord, your warriors!",
+        "12": "Let the nations rouse themselves and come up to the Valley of Jehoshaphat; For there I will sit in judgment upon all the neighboring nations.",
+        "13": "Wield the sickle, for the harvest is ripe; Come and tread, for the wine press is full; The vats overflow, for their crimes are numerous.",
+        "14": "Crowds upon crowds in the Valley of Decision; For near is the day of the Lord in the Valley of Decision.",
+        "15": "Sun and moon are darkened, and the stars withhold their brightness,",
+        "16": "The Lord roars from Zion, and from Jerusalem raises his voice, The heavens and the earth quake, but the Lord will be a shelter for his people, a fortress for the people of Israel.",
+        "17": "A Secure Future for Judah Then you will know that I the Lord am your God, dwelling on Zion, my holy mountain; Jerusalem will be holy, and strangers will never again travel through her.",
+        "18": "On that day the mountains will drip new wine, and the hills flow with milk, All the streams of Judah will flow with water. A spring will rise from the house of the Lord, watering the Valley of Shittim.",
+        "19": "Egypt will be a waste, Edom a desolate wilderness, Because of violence done to the Judahites, because they shed innocent blood in their land.",
+        "20": "But Judah will be inhabited forever, and Jerusalem for all generations.",
+        "21": "I will avenge their blood, and I will not acquit the guilt. The Lord dwells in Zion."
+      }
+    }
+  }
 }

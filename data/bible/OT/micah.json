@@ -1002,5 +1002,12 @@
       ]
     }
   ],
-  "schema": "bible_book_multiversion_v1"
+  "schema": "bible_book_multiversion_v1",
+  "translationOverlays": {
+    "NABRE": {
+      "5": {
+        "15": "I will wreak vengeance in anger and wrath upon the nations that have not listened."
+      }
+    }
+  }
 }

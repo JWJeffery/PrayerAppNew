@@ -394,3 +394,44 @@ Scope:
 Trust status:
 
 Canonical OT remains not trusted pending broader missing-row and versification remediation.
+
+
+## Phase 4D: minor prophet NABRE overlay batch 1
+
+Status: applied as bounded remediation.
+
+Decision:
+
+A source-backed minor-prophet NABRE overlay batch was applied for only the inspected mappings where:
+
+- the historical NABRE source row exists;
+- the active target row exists;
+- the active target row lacks main NABRE text.
+
+Source evidence:
+
+- source commit: `d0eed049f47e5eda8abcc4f4b1bb0d77efc51bd6`
+- source lane: `data/bible/translations/nabre-internal-source-lane/source/generated_data/books/*.json`
+
+Applied overlay scope:
+
+- Hosea 2:1 -> active 1:10
+- Hosea 2:2 -> active 1:11
+- Hosea 12:1 -> active 11:12
+- Joel 3:1-5 -> active 2:28-32
+- Joel 4:6-21 -> active 3:6-21
+- Jonah 2:1 -> active 1:17
+- Micah 5:14 -> active 5:15
+- Nahum 2:1 -> active 1:15
+- Zechariah 2:1-4 -> active 1:18-21
+
+Explicitly not applied:
+
+- Joel 4:1-5 -> active 3:1-5 because active main NABRE is already present.
+- Hosea 14:10 because active Hosea 14:10 is not present.
+- Micah 5:15 direct mapping because no source text was found.
+- Hosea 13:16 because it was not source-mapped by this inspection.
+
+Trust status:
+
+Canonical OT remains not trusted pending remaining missing-row and versification remediation.

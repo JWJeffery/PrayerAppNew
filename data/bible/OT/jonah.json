@@ -474,5 +474,12 @@
       ]
     }
   ],
-  "schema": "bible_book_multiversion_v1"
+  "schema": "bible_book_multiversion_v1",
+  "translationOverlays": {
+    "NABRE": {
+      "1": {
+        "17": "Chapter 2 Jonah’s Prayer. But the Lord sent a great fish to swallow Jonah, and he remained in the belly of the fish three days and three nights."
+      }
+    }
+  }
 }

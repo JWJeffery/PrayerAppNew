@@ -460,5 +460,12 @@
       ]
     }
   ],
-  "schema": "bible_book_multiversion_v1"
+  "schema": "bible_book_multiversion_v1",
+  "translationOverlays": {
+    "NABRE": {
+      "1": {
+        "15": "Chapter 2 At this moment on the mountains the footsteps of one bearing good news, of one announcing peace! Celebrate your feasts, Judah, fulfill your vows! For never again will destroyers invade you; they are completely cut off."
+      }
+    }
+  }
 }

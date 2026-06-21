@@ -1862,5 +1862,16 @@
       ]
     }
   ],
-  "schema": "bible_book_multiversion_v1"
+  "schema": "bible_book_multiversion_v1",
+  "translationOverlays": {
+    "NABRE": {
+      "1": {
+        "10": "Chapter 2 The number of the Israelites will be like the sand of the sea, which can be neither measured nor counted. Instead of being told, “You are Not-My-People,” They will be called, “Children of the living God.”",
+        "11": "Then the people of Judah and of Israel will gather together; They will appoint for themselves one head and rise up from the land; great indeed shall be the day of Jezreel!"
+      },
+      "11": {
+        "12": "Chapter 12 Infidelity of Israel Ephraim has surrounded me with lies, the house of Israel, with deceit; Judah still wanders about with gods, and is faithful to holy ones."
+      }
+    }
+  }
 }

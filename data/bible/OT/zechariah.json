@@ -1988,5 +1988,15 @@
       ]
     }
   ],
-  "schema": "bible_book_multiversion_v1"
+  "schema": "bible_book_multiversion_v1",
+  "translationOverlays": {
+    "NABRE": {
+      "1": {
+        "18": "Chapter 2 Second Vision: The Four Horns and the Four Smiths. I raised my eyes and looked and there were four horns.",
+        "19": "Then I asked the angel who spoke with me, “What are those?” He answered, “Those are the horns that scattered Judah, Israel, and Jerusalem.”",
+        "20": "Then the Lord showed me four workmen.",
+        "21": "And I said, “What are these coming to do?” And the Lord said, “Those are the horns that scattered Judah, so that none could raise their heads any more; and these have come to terrify them—to cut down the horns of the nations that raised their horns to scatter the land of Judah.”"
+      }
+    }
+  }
 }
