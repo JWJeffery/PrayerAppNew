@@ -3014,9 +3014,49 @@
         }
       ],
       "next_step": "Repair only from controlled source evidence or governed versification adapter evidence; otherwise leave residuals governed and continue reducing remaining untrusted Bible corpus lanes."
+    },
+    "psalms": {
+      "status": "not_trusted_psalms_legacy_subsystem_governed",
+      "certification": "not_certified_trusted",
+      "lane": "psalms",
+      "recorded_at": "2026-06-21T08:32:55Z",
+      "head_at_recording": "fb505f9",
+      "governance_registry": "data/bible/registry/psalms-legacy-subsystem-governance.json",
+      "governance_guard": "scripts/audit-bible-psalms-legacy-subsystem-governance.mjs",
+      "psalms_path": "data/bible/OT/psalms.json",
+      "shape": {
+        "root": "array",
+        "record_count": 155,
+        "ordinary_psalms": "1-150",
+        "orthodox_extended_psalms": "151-155"
+      },
+      "translation_counts": {
+        "NRSV": 150,
+        "Coverdale": 150,
+        "KJV": 150,
+        "JPS1985": 150,
+        "Grail1963": 151,
+        "Rotherham": 150,
+        "NABRE": 150,
+        "Orthodox": 5
+      },
+      "orthodox_ids": [
+        "PSALM 151",
+        "PSALM 152",
+        "PSALM 153",
+        "PSALM 154",
+        "PSALM 155"
+      ],
+      "policy": {
+        "do_not_reshape_casually": true,
+        "do_not_run_stale_douay_psalms_audit_until_repaired": true,
+        "guarded_not_textually_trusted": true,
+        "future_work": "Repair only through a governed Psalms subsystem plan; do not treat current governed shape as textual certification."
+      },
+      "next_step": "Continue reducing remaining untrusted Bible corpus lanes. Do not touch Vulgate unless explicitly returning to Vulgate."
     }
   },
-  "last_updated": "2026-06-21T08:25:24Z",
+  "last_updated": "2026-06-21T08:32:55Z",
   "lothIntegrationMilestones": [
     {
       "milestoneId": "loth-oor-c06-ordinary-sentinel-source-intake-closure",
