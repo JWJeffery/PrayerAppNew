@@ -202,6 +202,147 @@
         "section": "Lectio9"
       }
     },
+    "rb1960.la.sancti.11-02.responsorium1": {
+      "key": "rb1960.la.sancti.11-02.responsorium1",
+      "kind": "responsory",
+      "citation": "",
+      "text": "R. Credo quod Redémptor meus vivit, et in novíssimo die de terra surrectúrus sum, \n* Et in carne mea vidébo Deum Salvatórem meum.\nV. Quem visúrus sum ego ipse, et non álius; et óculi mei conspectúri sunt.\nR. Et in carne mea vidébo Deum Salvatórem meum.",
+      "raw_text": "R. Credo quod Redémptor meus vivit, et in novíssimo die de terra surrectúrus sum, \n* Et in carne mea vidébo Deum Salvatórem meum.\nV. Quem visúrus sum ego ipse, et non álius; et óculi mei conspectúri sunt.\nR. Et in carne mea vidébo Deum Salvatórem meum.",
+      "display_diagnostics": [],
+      "source": {
+        "repo": "DivinumOfficium/divinum-officium",
+        "commit": "0ce8747d7dba3276fc05937635e02360b49a60a6",
+        "path": "web/www/horas/Latin/Commune/C9.txt",
+        "section": "Responsory1"
+      }
+    },
+    "rb1960.la.sancti.11-02.responsorium2": {
+      "key": "rb1960.la.sancti.11-02.responsorium2",
+      "kind": "responsory",
+      "citation": "",
+      "text": "R. Qui Lázarum resuscitásti a monuménto fœ́tidum, \n* Tu eis, Dómine, dona réquiem, et locum indulgéntiæ.\nV. Qui ventúrus es judicáre vivos et mórtuos, et sǽculum per ignem.\nR. Tu eis, Dómine, dona réquiem, et locum indulgéntiæ.",
+      "raw_text": "R. Qui Lázarum resuscitásti a monuménto fœ́tidum, \n* Tu eis, Dómine, dona réquiem, et locum indulgéntiæ.\nV. Qui ventúrus es judicáre vivos et mórtuos, et sǽculum per ignem.\nR. Tu eis, Dómine, dona réquiem, et locum indulgéntiæ.",
+      "display_diagnostics": [],
+      "source": {
+        "repo": "DivinumOfficium/divinum-officium",
+        "commit": "0ce8747d7dba3276fc05937635e02360b49a60a6",
+        "path": "web/www/horas/Latin/Commune/C9.txt",
+        "section": "Responsory2"
+      }
+    },
+    "rb1960.la.sancti.11-02.responsorium3": {
+      "key": "rb1960.la.sancti.11-02.responsorium3",
+      "kind": "responsory",
+      "citation": "",
+      "text": "R. Dómine, quando véneris judicáre terram, ubi me abscóndam a vultu iræ tuæ? \n* Quia peccávi nimis in vita mea.\nV. Commíssa mea pavésco, et ante te erubésco: dum véneris judicáre, noli me condemnáre.\nR. Quia peccávi nimis in vita mea.\nR. Quia peccávi nimis in vita mea.",
+      "raw_text": "R. Dómine, quando véneris judicáre terram, ubi me abscóndam a vultu iræ tuæ? \n* Quia peccávi nimis in vita mea.\nV. Commíssa mea pavésco, et ante te erubésco: dum véneris judicáre, noli me condemnáre.\nR. Quia peccávi nimis in vita mea.\n$Requiem\nR. Quia peccávi nimis in vita mea.",
+      "display_diagnostics": [
+        {
+          "type": "unresolved-divinum-macro",
+          "message": "Divinum macro not expanded in dev slice: $Requiem"
+        }
+      ],
+      "source": {
+        "repo": "DivinumOfficium/divinum-officium",
+        "commit": "0ce8747d7dba3276fc05937635e02360b49a60a6",
+        "path": "web/www/horas/Latin/Commune/C9.txt",
+        "section": "Responsory3"
+      }
+    },
+    "rb1960.la.sancti.11-02.responsorium4": {
+      "key": "rb1960.la.sancti.11-02.responsorium4",
+      "kind": "responsory",
+      "citation": "",
+      "text": "R. Meménto mei, Deus, quia ventus est vita mea, \n* Nec aspíciat me visus hóminis.\nV. De profúndis clamávi ad te, Dómine: Dómine, exáudi vocem meam.\nR. Nec aspíciat me visus hóminis.",
+      "raw_text": "R. Meménto mei, Deus, quia ventus est vita mea, \n* Nec aspíciat me visus hóminis.\nV. De profúndis clamávi ad te, Dómine: Dómine, exáudi vocem meam.\nR. Nec aspíciat me visus hóminis.",
+      "display_diagnostics": [],
+      "source": {
+        "repo": "DivinumOfficium/divinum-officium",
+        "commit": "0ce8747d7dba3276fc05937635e02360b49a60a6",
+        "path": "web/www/horas/Latin/Commune/C9.txt",
+        "section": "Responsory4"
+      }
+    },
+    "rb1960.la.sancti.11-02.responsorium5": {
+      "key": "rb1960.la.sancti.11-02.responsorium5",
+      "kind": "responsory",
+      "citation": "",
+      "text": "R. Hei mihi, Dómine, quia peccávi nimis in vita mea: Quid fáciam, miser? ubi fúgiam, nisi ad te, Deus meus? \n* Miserére mei, dum véneris in novíssimo die.\nV. Anima mea turbáta est valde, sed tu, Dómine, succúrre ei.\nR. Miserére mei, dum véneris in novíssimo die.",
+      "raw_text": "R. Hei mihi, Dómine, quia peccávi nimis in vita mea: Quid fáciam, miser? ubi fúgiam, nisi ad te, Deus meus? \n* Miserére mei, dum véneris in novíssimo die.\nV. Anima mea turbáta est valde, sed tu, Dómine, succúrre ei.\nR. Miserére mei, dum véneris in novíssimo die.",
+      "display_diagnostics": [],
+      "source": {
+        "repo": "DivinumOfficium/divinum-officium",
+        "commit": "0ce8747d7dba3276fc05937635e02360b49a60a6",
+        "path": "web/www/horas/Latin/Commune/C9.txt",
+        "section": "Responsory5"
+      }
+    },
+    "rb1960.la.sancti.11-02.responsorium6": {
+      "key": "rb1960.la.sancti.11-02.responsorium6",
+      "kind": "responsory",
+      "citation": "",
+      "text": "R. Ne recordéris peccáta mea, Dómine, \n* Dum véneris judicáre sǽculum per ignem.\nV. Dírige, Dómine, Deus meus, in conspéctu tuo viam meam.\nR. Dum véneris judicáre sǽculum per ignem.\nR. Dum véneris judicáre sǽculum per ignem.",
+      "raw_text": "R. Ne recordéris peccáta mea, Dómine, \n* Dum véneris judicáre sǽculum per ignem.\nV. Dírige, Dómine, Deus meus, in conspéctu tuo viam meam.\nR. Dum véneris judicáre sǽculum per ignem.\n$Requiem\nR. Dum véneris judicáre sǽculum per ignem.",
+      "display_diagnostics": [
+        {
+          "type": "unresolved-divinum-macro",
+          "message": "Divinum macro not expanded in dev slice: $Requiem"
+        }
+      ],
+      "source": {
+        "repo": "DivinumOfficium/divinum-officium",
+        "commit": "0ce8747d7dba3276fc05937635e02360b49a60a6",
+        "path": "web/www/horas/Latin/Commune/C9.txt",
+        "section": "Responsory6"
+      }
+    },
+    "rb1960.la.sancti.11-02.responsorium7": {
+      "key": "rb1960.la.sancti.11-02.responsorium7",
+      "kind": "responsory",
+      "citation": "",
+      "text": "R. Peccántem me cotídie, et non me pœniténtem, timor mortis contúrbat me: \n* Quia in inférno nulla est redémptio, miserére mei, Deus, et salva me.\nV. Deus, in nómine tuo salvum me fac, et in virtúte tua líbera me.\nR. Quia in inférno nulla est redémptio, miserére mei, Deus, et salva me.",
+      "raw_text": "R. Peccántem me cotídie, et non me pœniténtem, timor mortis contúrbat me: \n* Quia in inférno nulla est redémptio, miserére mei, Deus, et salva me.\nV. Deus, in nómine tuo salvum me fac, et in virtúte tua líbera me.\nR. Quia in inférno nulla est redémptio, miserére mei, Deus, et salva me.",
+      "display_diagnostics": [],
+      "source": {
+        "repo": "DivinumOfficium/divinum-officium",
+        "commit": "0ce8747d7dba3276fc05937635e02360b49a60a6",
+        "path": "web/www/horas/Latin/Commune/C9.txt",
+        "section": "Responsory7"
+      }
+    },
+    "rb1960.la.sancti.11-02.responsorium8": {
+      "key": "rb1960.la.sancti.11-02.responsorium8",
+      "kind": "responsory",
+      "citation": "",
+      "text": "R. Dómine, secúndum actum meum noli me judicáre: nihil dignum in conspéctu tuo egi; ídeo déprecor majestátem tuam,\n* Ut tu, Deus, déleas iniquitátem meam.\nV. Amplius lava me, Dómine, ab injustítia mea, et a delícto meo munda me.\nR. Ut tu, Deus, déleas iniquitátem meam.",
+      "raw_text": "R. Dómine, secúndum actum meum noli me judicáre: nihil dignum in conspéctu tuo egi; ídeo déprecor majestátem tuam,\n* Ut tu, Deus, déleas iniquitátem meam.\nV. Amplius lava me, Dómine, ab injustítia mea, et a delícto meo munda me.\nR. Ut tu, Deus, déleas iniquitátem meam.",
+      "display_diagnostics": [],
+      "source": {
+        "repo": "DivinumOfficium/divinum-officium",
+        "commit": "0ce8747d7dba3276fc05937635e02360b49a60a6",
+        "path": "web/www/horas/Latin/Commune/C9.txt",
+        "section": "Responsory8"
+      }
+    },
+    "rb1960.la.sancti.11-02.responsorium9": {
+      "key": "rb1960.la.sancti.11-02.responsorium9",
+      "kind": "responsory",
+      "citation": "",
+      "text": "R. Líbera me, Dómine, de morte ætérna in die illa treménda,\n* Quando cæli movéndi sunt et terra, * Dum véneris judicáre sǽculum per ignem.\nV. Tremens factus sum ego et tímeo, dum discússio vénerit atque ventúra ira.\nR. Quando cæli movéndi sunt et terra.\nV. Dies illa, dies iræ, calamitátis et misériæ, dies magna et amára valde.\nR. Dum véneris judicáre sǽculum per ignem.\nR. Líbera me, Dómine, de morte ætérna in die illa treménda, * Quando cæli movéndi sunt et terra, * Dum véneris judicáre sǽculum per ignem.",
+      "raw_text": "R. Líbera me, Dómine, de morte ætérna in die illa treménda,\n* Quando cæli movéndi sunt et terra, * Dum véneris judicáre sǽculum per ignem.\nV. Tremens factus sum ego et tímeo, dum discússio vénerit atque ventúra ira.\nR. Quando cæli movéndi sunt et terra.\nV. Dies illa, dies iræ, calamitátis et misériæ, dies magna et amára valde.\nR. Dum véneris judicáre sǽculum per ignem.\n$Requiem\nR. Líbera me, Dómine, de morte ætérna in die illa treménda, * Quando cæli movéndi sunt et terra, * Dum véneris judicáre sǽculum per ignem.",
+      "display_diagnostics": [
+        {
+          "type": "unresolved-divinum-macro",
+          "message": "Divinum macro not expanded in dev slice: $Requiem"
+        }
+      ],
+      "source": {
+        "repo": "DivinumOfficium/divinum-officium",
+        "commit": "0ce8747d7dba3276fc05937635e02360b49a60a6",
+        "path": "web/www/horas/Latin/Commune/C9.txt",
+        "section": "Responsory9"
+      }
+    },
     "rb1960.la.sancti.11-02.conclusio": {
       "key": "rb1960.la.sancti.11-02.conclusio",
       "kind": "dismissal",

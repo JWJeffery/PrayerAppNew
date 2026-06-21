@@ -4,8 +4,8 @@ import path from 'node:path';
 const ROOT = process.cwd();
 const BASE = path.join(ROOT, 'data', 'roman-breviary-1960-1962');
 const SOURCE_REL = 'web/www/horas/Latin/Sancti/11-02.txt';
-const SOURCE_PATH = path.join(BASE, 'source', 'divinum-officium', SOURCE_REL);
 const C9_SOURCE_REL = 'web/www/horas/Latin/Commune/C9.txt';
+const SOURCE_PATH = path.join(BASE, 'source', 'divinum-officium', SOURCE_REL);
 const C9_SOURCE_PATH = path.join(BASE, 'source', 'divinum-officium', C9_SOURCE_REL);
 const PIN_PATH = path.join(BASE, 'source', 'divinum-officium', 'source-pin.json');
 const UNITS_PATH = path.join(BASE, 'units', 'dev-vertical-slice.json');
@@ -47,9 +47,9 @@ function parseSections(sourceText) {
   );
 }
 
-function requireSection(sections, key) {
+function requireSection(sections, key, sourceRel) {
   const value = sections[key];
-  if (!value) throw new Error(`Missing required Divinum section [${key}] in ${SOURCE_REL}`);
+  if (!value) throw new Error(`Missing required Divinum section [${key}] in ${sourceRel}`);
   return value;
 }
 
@@ -65,21 +65,33 @@ function normalizeDivinumDisplayText(rawText) {
       continue;
     }
 
+    if (trimmed === '_') {
+      continue;
+    }
+
     if (trimmed.startsWith('!')) {
-      const rubricLabel = trimmed.slice(1).trim();
-      if (rubricLabel) {
+      const markerLabel = trimmed.slice(1).trim();
+      if (markerLabel) {
         diagnostics.push({
           type: 'divinum-display-marker',
-          message: `Display marker stripped from user-facing text: ${rubricLabel}`
+          message: `Display marker stripped from user-facing text: ${markerLabel}`
         });
       }
       continue;
     }
 
-    if (trimmed.startsWith('&')) {
+    if (/^[@#$&]/.test(trimmed)) {
       diagnostics.push({
         type: 'unresolved-divinum-macro',
         message: `Divinum macro not expanded in dev slice: ${trimmed}`
+      });
+      continue;
+    }
+
+    if (/^\(.+\)$/.test(trimmed)) {
+      diagnostics.push({
+        type: 'divinum-rubric-line',
+        message: `Rubric/control line stripped from user-facing text: ${trimmed}`
       });
       continue;
     }
@@ -126,6 +138,18 @@ const MATINS_READING_LABELS = {
   Lectio9: 'Lectio IX'
 };
 
+const MATINS_RESPONSORY_LABELS = {
+  Responsory1: 'Responsorium I',
+  Responsory2: 'Responsorium II',
+  Responsory3: 'Responsorium III',
+  Responsory4: 'Responsorium IV',
+  Responsory5: 'Responsorium V',
+  Responsory6: 'Responsorium VI',
+  Responsory7: 'Responsorium VII',
+  Responsory8: 'Responsorium VIII',
+  Responsory9: 'Responsorium IX'
+};
+
 function unitSource(sourcePin, section, sourceRel = SOURCE_REL) {
   return {
     repo: sourcePin.repo,
@@ -136,7 +160,7 @@ function unitSource(sourcePin, section, sourceRel = SOURCE_REL) {
 }
 
 function resolveAppointedSection(sections, c9Sections, section) {
-  const appointedText = requireSection(sections, section);
+  const appointedText = requireSection(sections, section, SOURCE_REL);
   const directive = appointedText.trim();
   const c9Match = directive.match(/^@Commune\/C9(?::([A-Za-z0-9 _-]+))?$/);
 
@@ -151,7 +175,7 @@ function resolveAppointedSection(sections, c9Sections, section) {
   const sourceSection = c9Match[1] || section;
 
   return {
-    rawText: requireSection(c9Sections, sourceSection),
+    rawText: requireSection(c9Sections, sourceSection, C9_SOURCE_REL),
     sourceRel: C9_SOURCE_REL,
     sourceSection,
     appointment: {
@@ -182,12 +206,57 @@ function buildReadingUnit(sourcePin, sections, c9Sections, section, citation) {
   return [unit.key, unit];
 }
 
+function buildResponsoryUnit(sourcePin, c9Sections, section) {
+  const slug = section.toLowerCase().replace('responsory', 'responsorium');
+  const rawText = requireSection(c9Sections, section, C9_SOURCE_REL);
+  const normalized = normalizeDivinumDisplayText(rawText);
+
+  return [
+    `rb1960.la.sancti.11-02.${slug}`,
+    {
+      key: `rb1960.la.sancti.11-02.${slug}`,
+      kind: 'responsory',
+      citation: '',
+      text: normalized.text,
+      raw_text: rawText,
+      display_diagnostics: normalized.diagnostics,
+      source: unitSource(sourcePin, section, C9_SOURCE_REL)
+    }
+  ];
+}
+
+function buildConclusioUnit(sourcePin, sections) {
+  const rawText = requireSection(sections, 'Conclusio', SOURCE_REL);
+  const normalized = normalizeDivinumDisplayText(rawText);
+
+  return [
+    'rb1960.la.sancti.11-02.conclusio',
+    {
+      key: 'rb1960.la.sancti.11-02.conclusio',
+      kind: 'dismissal',
+      citation: 'Conclusio specialis',
+      text: normalized.text,
+      raw_text: rawText,
+      display_diagnostics: normalized.diagnostics,
+      source: unitSource(sourcePin, 'Conclusio')
+    }
+  ];
+}
+
 function buildUnits({ sourcePin, sections, c9Sections }) {
   const readingUnits = Object.fromEntries(
     MATINS_READING_SECTIONS.map(([section, citation]) =>
       buildReadingUnit(sourcePin, sections, c9Sections, section, citation)
     )
   );
+
+  const responsoryUnits = Object.fromEntries(
+    Array.from({ length: 9 }, (_, index) =>
+      buildResponsoryUnit(sourcePin, c9Sections, `Responsory${index + 1}`)
+    )
+  );
+
+  const conclusioUnit = buildConclusioUnit(sourcePin, sections);
 
   return {
     schema_version: 'roman_breviary_1960_1962_source_units_v0_dev_slice',
@@ -198,22 +267,36 @@ function buildUnits({ sourcePin, sections, c9Sections }) {
     language: 'la',
     units: {
       ...readingUnits,
-      'rb1960.la.sancti.11-02.conclusio': (() => {
-        const rawText = requireSection(sections, 'Conclusio');
-        const normalized = normalizeDivinumDisplayText(rawText);
-
-        return {
-          key: 'rb1960.la.sancti.11-02.conclusio',
-          kind: 'dismissal',
-          citation: 'Conclusio specialis',
-          text: normalized.text,
-          raw_text: rawText,
-          display_diagnostics: normalized.diagnostics,
-          source: unitSource(sourcePin, 'Conclusio')
-        };
-      })()
+      ...responsoryUnits,
+      [conclusioUnit[0]]: conclusioUnit[1]
     }
   };
+}
+
+function buildMatinsBlocks() {
+  const blocks = [];
+
+  for (const [section] of MATINS_READING_SECTIONS) {
+    const number = section.replace('Lectio', '');
+    blocks.push({
+      role: 'reading',
+      label: MATINS_READING_LABELS[section],
+      unit_refs: [`rb1960.la.sancti.11-02.${section.toLowerCase()}`]
+    });
+    blocks.push({
+      role: 'responsory',
+      label: MATINS_RESPONSORY_LABELS[`Responsory${number}`],
+      unit_refs: [`rb1960.la.sancti.11-02.responsorium${number}`]
+    });
+  }
+
+  blocks.push({
+    role: 'dismissal',
+    label: 'Conclusio',
+    unit_refs: ['rb1960.la.sancti.11-02.conclusio']
+  });
+
+  return blocks;
 }
 
 function buildManifest({ sourcePin }) {
@@ -237,22 +320,11 @@ function buildManifest({ sourcePin }) {
         hours: {
           matins: {
             label: 'Matutinum',
-            blocks: [
-              ...MATINS_READING_SECTIONS.map(([section]) => ({
-                role: 'reading',
-                label: MATINS_READING_LABELS[section],
-                unit_refs: [`rb1960.la.sancti.11-02.${section.toLowerCase()}`]
-              })),
-              {
-                role: 'dismissal',
-                label: 'Conclusio',
-                unit_refs: ['rb1960.la.sancti.11-02.conclusio']
-              }
-            ],
+            blocks: buildMatinsBlocks(),
             diagnostics: [
               {
                 type: 'coverage-gap',
-                message: 'Dev vertical slice only; not a complete Matins office.'
+                message: 'Dev vertical slice only; Matins psalms, antiphons, and nocturn structure are not complete.'
               }
             ]
           }
