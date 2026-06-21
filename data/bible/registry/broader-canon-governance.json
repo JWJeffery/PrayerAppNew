@@ -89,7 +89,8 @@
     "textPolicy": "No broader-canon text is repaired or normalized in this governance tranche.",
     "sourcePolicy": "Raw-text candidates require separate source/provenance adjudication before trust claims.",
     "emptyFilePolicy": "Zero-row broader-canon files are allowed only as governed unresolved artifacts, not as complete corpus entries.",
-    "trustPolicy": "The broader canon lane remains not trusted/governance pending."
+    "trustPolicy": "The broader canon lane remains not trusted/governance pending.",
+    "maccabeesPolicy": "3 Maccabees and 4 Maccabees were repaired from WEBBE USFM source; broader canon remains not globally trusted until remaining raw/zero-row lanes are repaired or excluded."
   },
   "blockedClaims": [
     "broader_canon_complete",
@@ -97,5 +98,29 @@
     "broader_canon_normalized",
     "zero_row_files_complete",
     "raw_text_files_source_verified"
-  ]
+  ],
+  "sourceBackedRepairs": {
+    "3maccabees": {
+      "path": "data/bible/OT/3maccabees.json",
+      "translation_key": "WEBBE",
+      "source": "World English Bible British Edition with Deuterocanon",
+      "source_url": "https://ebible.org/Scriptures/eng-webbe_usfm.zip",
+      "source_details_url": "https://ebible.org/find/details.php?id=eng-webbe",
+      "row_count": 228,
+      "chapter_count": 7,
+      "completed_at": "2026-06-21T08:38:30Z",
+      "decision": "source_backed_repair_applied"
+    },
+    "4maccabees": {
+      "path": "data/bible/OT/4maccabees.json",
+      "translation_key": "WEBBE",
+      "source": "World English Bible British Edition with Deuterocanon",
+      "source_url": "https://ebible.org/Scriptures/eng-webbe_usfm.zip",
+      "source_details_url": "https://ebible.org/find/details.php?id=eng-webbe",
+      "row_count": 484,
+      "chapter_count": 18,
+      "completed_at": "2026-06-21T08:38:30Z",
+      "decision": "source_backed_repair_applied"
+    }
+  }
 }

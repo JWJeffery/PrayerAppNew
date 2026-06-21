@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0.0",
   "roadmap_version": "0.1.39",
-  "last_updated": "2026-06-21T08:32:55Z",
+  "last_updated": "2026-06-21T08:38:30Z",
   "status": "active",
   "name": "Universal Office Beta Release Roadmap",
   "purpose": "Canonical machine-readable roadmap for Beta Release planning, phase sequencing, governance questions, tranche sizing, and Admin Dashboard visualization.",
@@ -2798,6 +2798,64 @@
         "future_work": "Repair only through a governed Psalms subsystem plan; do not treat current governed shape as textual certification."
       },
       "next_step": "Continue reducing remaining untrusted Bible corpus lanes. Do not touch Vulgate unless explicitly returning to Vulgate."
+    },
+    "broader_canon": {
+      "status": "not_trusted_governance_pending",
+      "certification": "not_certified_trusted",
+      "lane": "broader_canon",
+      "recorded_at": "2026-06-21T08:38:30Z",
+      "head_at_recording": "1880adb",
+      "source_backed_repairs": {
+        "3maccabees": {
+          "path": "data/bible/OT/3maccabees.json",
+          "source_file": "57-3MAeng-webbe.usfm",
+          "chapter_count": 7,
+          "verse_row_count": 228,
+          "chapter_lengths": [
+            29,
+            33,
+            30,
+            21,
+            51,
+            41,
+            23
+          ]
+        },
+        "4maccabees": {
+          "path": "data/bible/OT/4maccabees.json",
+          "source_file": "59-4MAeng-webbe.usfm",
+          "chapter_count": 18,
+          "verse_row_count": 484,
+          "chapter_lengths": [
+            35,
+            24,
+            21,
+            26,
+            38,
+            35,
+            25,
+            28,
+            32,
+            21,
+            27,
+            20,
+            27,
+            20,
+            32,
+            25,
+            24,
+            24
+          ]
+        }
+      },
+      "source": {
+        "translation": "World English Bible British Edition with Deuterocanon",
+        "translation_key": "WEBBE",
+        "download_url": "https://ebible.org/Scriptures/eng-webbe_usfm.zip",
+        "details_url": "https://ebible.org/find/details.php?id=eng-webbe",
+        "license_posture": "public_domain_copy_freely"
+      },
+      "remaining_policy": "Continue repairing remaining raw or zero-row broader-canon files from controlled sources. Do not treat this as whole-lane textual certification."
     }
   },
   "currentState": {
