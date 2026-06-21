@@ -49,6 +49,10 @@
       "reasons": [
         "Several files are structural stubs or materially incomplete.",
         "Some deuterocanonical files require rebuild, quarantine, or explicit scope declaration."
+      ],
+      "reason": "DRB completion tranche applied to direct-source deuterocanonical books; remaining books and translation lanes still require rebuild/governance.",
+      "completedRemediations": [
+        "deuterocanon_drb_completion_tranche_1"
       ]
     },
     "broader_canon": {

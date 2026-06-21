@@ -7,524 +7,3592 @@
   },
   "chapters": [
     {
-      "num": 1,
+      "number": 1,
       "verses": [
         {
-          "num": 1,
+          "number": 1,
           "text": {
             "KJV": "1:1 The brethren the Iewes that bee at Ierusalem, and in the lande of Iudea, wish vnto the brethren the Iewes that are throughout Egypt, health and peace.",
             "NABRE": "1:1 I. Letters to the Jews in Egypt Chapter 1 Letter 1: 124 B.C. The Jews in Jerusalem and in the land of Judea send greetings to their kindred, the Jews in Egypt, and wish them true peace!",
-            "NRSV": "The Jews in Jerusalem and those in the land of Judea, to their Jewish kindred in Egypt, greetings and true peace."
+            "NRSV": "The Jews in Jerusalem and those in the land of Judea, to their Jewish kindred in Egypt, greetings and true peace.",
+            "DRB": "To the brethren, the Jews that are throughout Ægypt, the brethren, the Jews that are in Jerusalem, and that are in the country of Jurie, send health, & good peace."
           }
         },
         {
-          "num": 10,
+          "number": 2,
+          "text": {
+            "DRB": "God do good to you, and remember his testament, that he spake to Abraham, and Isaac, and Jacob, his faithful servants:"
+          }
+        },
+        {
+          "number": 3,
+          "text": {
+            "DRB": "and give he unto you all an heart to worship him, and to do his will with a great heart, and a willing mind."
+          }
+        },
+        {
+          "number": 4,
+          "text": {
+            "DRB": "Open he your heart in his law, and in his precepts, and make peace."
+          }
+        },
+        {
+          "number": 5,
+          "text": {
+            "DRB": "Hear he your prayers, and be he reconciled unto you, neither forsake he you in the evil time."
+          }
+        },
+        {
+          "number": 6,
+          "text": {
+            "DRB": "And now here we are praying for you."
+          }
+        },
+        {
+          "number": 7,
+          "text": {
+            "DRB": "When Demetrius reigned, in the year one hundreth sixty nine, we Jews wrote unto you in the tribulation, and violence, that came upon us in these years, since Jason revolted from the holy land, and from the kingdom."
+          }
+        },
+        {
+          "number": 8,
+          "text": {
+            "DRB": "They burnt the gate and shed innocent blood: and we prayed to our Lord, & were heard, & we offered sacrifice, and fine flour, and lighted the lamps, and set forth there breads."
+          }
+        },
+        {
+          "number": 9,
+          "text": {
+            "DRB": "And now celebrate ye the days of Scenopegia of the month Casleu."
+          }
+        },
+        {
+          "number": 10,
           "text": {
             "KJV": "1:10 In the hundreth, fourescore, and eight yeere, the people that were at Ierusalem, and in Iudea, and the counsel, and Iudas, sent greeting and health vnto Aristobulus, king Ptolomeus master, who was of the stock of the anointed priests, and to the Iewes that were in Egypt.",
             "NABRE": "1:10 Dated in the one hundred and eighty-eighth year. Letter 2: 164 B.C. The people of Jerusalem and Judea, the senate, and Judas send greetings and good wishes to Aristobulus, teacher of King Ptolemy and member of the family of the anointed priests, and to the Jews in Egypt.",
-            "NRSV": "In the one hundred eighty-eighth year, the people of Jerusalem and Judea and the council of the elders and Judas, to Aristobulus, who is of the family of the anointed priests, teacher of King Ptolemy, and to the Jews in Egypt, greetings and good health."
+            "NRSV": "In the one hundred eighty-eighth year, the people of Jerusalem and Judea and the council of the elders and Judas, to Aristobulus, who is of the family of the anointed priests, teacher of King Ptolemy, and to the Jews in Egypt, greetings and good health.",
+            "DRB": "In the year one hundreth eighty eight, the people that is at Jerusalem, and in Jurie, and the senate, and Judas, to Aristobolus the master of Ptolomee the king, who is of the stock of the anointed Priests, and to those Jews that are in Ægypt, health and welfare."
           }
         },
         {
-          "num": 18,
+          "number": 11,
+          "text": {
+            "DRB": "Being delivered by God out of great dangers, we give him thanks magnifically, as who have fought against such a king."
+          }
+        },
+        {
+          "number": 12,
+          "text": {
+            "DRB": "For he made them swarm out of Persis, that have fought against us, & the holy city."
+          }
+        },
+        {
+          "number": 13,
+          "text": {
+            "DRB": "For when he was captain in Persis, & with him a very great army, he fell in the temple of Nania, being deceived by the counsel of Naneæ's priests."
+          }
+        },
+        {
+          "number": 14,
+          "text": {
+            "DRB": "For Antiochus, and his friends came to the place as to dwell with her, & that he might receive much money under the title of a dowry."
+          }
+        },
+        {
+          "number": 15,
+          "text": {
+            "DRB": "And when Naneæ's priests had laid it forth, and he with a few was entered within the compass of the temple, they shut the temple,"
+          }
+        },
+        {
+          "number": 16,
+          "text": {
+            "DRB": "when Antiochus was entered in: & a secret entrance of the temple being opened, casting stones they struck the duke, and them that were with him, and divided them in pieces, and cutting off their heads they threw them forth."
+          }
+        },
+        {
+          "number": 17,
+          "text": {
+            "DRB": "Blessed be the God in all things, who hath delivered up the impious."
+          }
+        },
+        {
+          "number": 18,
           "text": {
             "KJV": "1:18 Therefore whereas we are nowe purposed to keep the purification of the Temple vpon the fiue & twentieth day of the moneth Casleu, we thought it necessary to certifie you thereof, that ye also might keepe it, as the of the tabernacles, and of the fire when Neemias offered sacrifice, after that he had builded the Temple, and the Altar.",
             "NABRE": "1:18 Since we shall be celebrating the purification of the temple on the twenty-fifth day of the month Kislev, we thought it right to inform you, that you too may celebrate the feast of Booths and of the fire that appeared when Nehemiah, the rebuilder of the temple and the altar, offered sacrifices.",
-            "NRSV": "Since on the twenty-fifth day of Chislev we shall celebrate the purification of the temple, we thought it necessary to notify you, in order that you also may celebrate the festival of booths and the festival of the fire given when Nehemiah, who built the temple and the altar, offered sacrifices."
+            "NRSV": "Since on the twenty-fifth day of Chislev we shall celebrate the purification of the temple, we thought it necessary to notify you, in order that you also may celebrate the festival of booths and the festival of the fire given when Nehemiah, who built the temple and the altar, offered sacrifices.",
+            "DRB": "We therefore meaning to keep the purification of the temple the five and twentieth day of the month Casleu, thought it necessary to signify unto you: that you also may keep the day of Scenopegia, and the day of the fire that was given, when Nehemias, after the temple was built & the altar, offered sacrifice."
+          }
+        },
+        {
+          "number": 19,
+          "text": {
+            "DRB": "For when our fathers were carried into Persis, the Priests that then were the worshippers of God, taking the fire from the altar, hid it secretly in a valley where there was a pit deep, & dry, & therein they saved it, so that the place was unknown to all men."
+          }
+        },
+        {
+          "number": 20,
+          "text": {
+            "DRB": "But when many years had passed, and it pleased God that Nehemias should be sent of the king of Persis: he sent the nephews of those Priests, that had hid it, to seek out the fire: and as they told us, they found not fire, but thick water."
+          }
+        },
+        {
+          "number": 21,
+          "text": {
+            "DRB": "And he bade them draw, and bring unto him: and the sacrifices, that were laid on, the Priest Nehemias commanded to be sprinkled with the same water, and the wood, and the things that were laid thereupon."
+          }
+        },
+        {
+          "number": 22,
+          "text": {
+            "DRB": "And as this was done, and the time was come that the sun shone forth, which before was in a cloud, there was kindled a great fire, so that all marveled."
+          }
+        },
+        {
+          "number": 23,
+          "text": {
+            "DRB": "And all the Priests made prayer, whilst the sacrifice was consuming, Jonathas beginning, and the rest answering."
+          }
+        },
+        {
+          "number": 24,
+          "text": {
+            "DRB": "And the prayer of Nehemias was in this manner: O Lord God creator of all, dreadful, & strong, just, & merciful, which only art the good King,"
+          }
+        },
+        {
+          "number": 25,
+          "text": {
+            "DRB": "only giver, only just, and omnipotent, and eternal: which deliverest Israel from all evil, which madest the fathers elect, and didst sanctify them."
+          }
+        },
+        {
+          "number": 26,
+          "text": {
+            "DRB": "Receive the sacrifice for all thy people Israel, & keep thy part, and sanctify it."
+          }
+        },
+        {
+          "number": 27,
+          "text": {
+            "DRB": "Gather together our dispersion, deliver them, that serve the Gentiles, and regard the contemned & abhorred: that the Gentiles may know that thou art our God."
+          }
+        },
+        {
+          "number": 28,
+          "text": {
+            "DRB": "Afflict them that oppress us, and that do contumely in pride."
+          }
+        },
+        {
+          "number": 29,
+          "text": {
+            "DRB": "Place thy people in thy holy place, as Moyses said."
+          }
+        },
+        {
+          "number": 30,
+          "text": {
+            "DRB": "And the Priests sang hymns, till the sacrifice was consumed."
+          }
+        },
+        {
+          "number": 31,
+          "text": {
+            "DRB": "And when the sacrifice was consumed, of the rest of the water Nehemias commanded the greater stones to be throughly washed."
+          }
+        },
+        {
+          "number": 32,
+          "text": {
+            "DRB": "Which thing as it was done, out of them was kindled a flame: but by light also, that shined from the altar, it was consumed."
+          }
+        },
+        {
+          "number": 33,
+          "text": {
+            "DRB": "And as the thing was made manifest, it was told the king of the Persians, that in the place, wherein those Priests that were transported, had hid fire, there appeared water, with the which Nehemias, and they that were with him, purified the sacrifices."
+          }
+        },
+        {
+          "number": 34,
+          "text": {
+            "DRB": "And the king considering, and diligently examining the matter, made a temple for it, that he might approve that which was done."
+          }
+        },
+        {
+          "number": 35,
+          "text": {
+            "DRB": "And when he had approved it, he gave to the Priests many good things, and diverse gifts, and taking them with his own hand, he gave to them."
+          }
+        },
+        {
+          "number": 36,
+          "text": {
+            "DRB": "And Nehemias called this place Nephthar, which is interpreted purification. But it is called with many Nephi."
           }
         }
       ]
     },
     {
-      "num": 2,
+      "number": 2,
       "verses": [
         {
-          "num": 1,
+          "number": 1,
           "text": {
             "KJV": "2:1 It is also found in the records, that Ieremie the Prophet, commaunded them that were caried away, to take of the fire as it hath beene signified,",
             "NABRE": "2:1 Chapter 2 In the records it will be found that Jeremiah the prophet ordered the deportees to take some of the fire with them as indicated,",
-            "NRSV": "One finds in the records that the prophet Jeremiah ordered those who were being deported to take some of the fire, as has been mentioned,"
+            "NRSV": "One finds in the records that the prophet Jeremiah ordered those who were being deported to take some of the fire, as has been mentioned,",
+            "DRB": "And it is found in the descriptions of Jeremie the Prophet, that he commanded them that went in transmigration, to take the fire, as it was signified, and as he commanded them that were carried away in transmigration."
           }
         },
         {
-          "num": 4,
+          "number": 2,
+          "text": {
+            "DRB": "And he gave them a law that they should not forget the precepts of our Lord, and that they should not err in their minds, seeing the idols of gold, & silver, & the ornaments of them."
+          }
+        },
+        {
+          "number": 3,
+          "text": {
+            "DRB": "And saying other like things, he exhorted them that they would not remove the law from their heart."
+          }
+        },
+        {
+          "number": 4,
           "text": {
             "KJV": "2:4 It was also contained in the same writing, that the Prophet being warned of God, commanded the Tabernacle, and the Arke to goe with him, as he went forth into the mountaine, where Moises climed vp, and sawe the heritage of God.",
             "NABRE": "2:4 The same document also tells how the prophet, in virtue of an oracle, ordered that the tent and the ark should accompany him, and how he went to the very mountain that Moses climbed to behold God’s inheritance.",
-            "NRSV": "The document also described how the prophet, when he had received an oracle, ordered that the tent and the ark should accompany him, and how he went forth to the mountain where Moses had gone up and had seen the inheritance of God."
+            "NRSV": "The document also described how the prophet, when he had received an oracle, ordered that the tent and the ark should accompany him, and how he went forth to the mountain where Moses had gone up and had seen the inheritance of God.",
+            "DRB": "And it was in the same writing, how the Prophet commanded by the divine answer made to him, that the tabernacle, and the ark should follow in company with him, till he came forth into the mount in which Moyses ascended, and saw the inheritance of God."
           }
         },
         {
-          "num": 19,
+          "number": 5,
+          "text": {
+            "DRB": "And Jeremie coming thither found a place of a cave: and he brought the tabernacle, and the ark, & the altar of incense in thither and stopped the door."
+          }
+        },
+        {
+          "number": 6,
+          "text": {
+            "DRB": "And there came certain withal, that followed, to mark the place for themselves: and they could not find it."
+          }
+        },
+        {
+          "number": 7,
+          "text": {
+            "DRB": "And as Jeremy understood it, blaming them he said: that the place shall be unknown, till God gather together the congregation of the people, and become propitious:"
+          }
+        },
+        {
+          "number": 8,
+          "text": {
+            "DRB": "and then our Lord will shew these things, and the majesty of our Lord shall appear, and there shall be a cloud as it was also made manifest to Moyses, and as when Salomon prayed that the place might be sanctified to the great God, he did manifest these things."
+          }
+        },
+        {
+          "number": 9,
+          "text": {
+            "DRB": "For he handled wisdom magnifically: as having wisdom, did he offer the sacrifice of the dedication, and of the consummation of the temple."
+          }
+        },
+        {
+          "number": 10,
+          "text": {
+            "DRB": "As Moyses also prayed to our Lord, and as Salomon prayed, and fire came down from heaven, and consumed the holocaust."
+          }
+        },
+        {
+          "number": 11,
+          "text": {
+            "DRB": "And Moyses said: Because that which was for sin, was not eaten, it was consumed."
+          }
+        },
+        {
+          "number": 12,
+          "text": {
+            "DRB": "In like manner Salomon also eight days celebrated the dedication."
+          }
+        },
+        {
+          "number": 13,
+          "text": {
+            "DRB": "And these self same things were put in the descriptions and commentaries of Nehemias: & after what sort he making a library gathered together Books of the Prophets, and of David, and the epistles of the kings, and concerning the donaries."
+          }
+        },
+        {
+          "number": 14,
+          "text": {
+            "DRB": "And in like manner Judas also such things as were fallen away by the war that happened to us, gathered them all together, and they are with us."
+          }
+        },
+        {
+          "number": 15,
+          "text": {
+            "DRB": "If therefore you desire these things, send some that may fetch them unto you."
+          }
+        },
+        {
+          "number": 16,
+          "text": {
+            "DRB": "We therefore meaning to keep the purification have written unto you: You shall do well then, if you keep these days."
+          }
+        },
+        {
+          "number": 17,
+          "text": {
+            "DRB": "And God that hath delivered his people, and rendered the inheritance to all, the kingdom, and the priesthood, and the sanctification,"
+          }
+        },
+        {
+          "number": 18,
+          "text": {
+            "DRB": "as he promised in the law, we hope that he will quickly have mercy upon us, and will gather us together from under heaven into the holy place."
+          }
+        },
+        {
+          "number": 19,
           "text": {
             "KJV": "2:19 Now as concerning Iudas Maccabeus, and his brethren, and the purification of the great Temple, and the dedication of the altar,",
             "NABRE": "2:19 II. Compiler’s Preface This is the story of Judas Maccabeus and his brothers, of the purification of the great temple, the dedication of the altar,",
-            "NRSV": "The story of Judas Maccabeus and his brothers, and the purification of the great temple, and the dedication of the altar,"
+            "NRSV": "The story of Judas Maccabeus and his brothers, and the purification of the great temple, and the dedication of the altar,",
+            "DRB": "For he hath delivered us out of great perils, and hath purged the place."
           }
         },
         {
-          "num": 23,
+          "number": 20,
+          "text": {
+            "DRB": "Concerning Judas Machabeus, and his brethren, and of the purification of the great temple, and of the dedication of the altar,"
+          }
+        },
+        {
+          "number": 21,
+          "text": {
+            "DRB": "Yea and of the battles that pertain to Antiochus the Noble, and his son Eupator:"
+          }
+        },
+        {
+          "number": 22,
+          "text": {
+            "DRB": "and of the apparitions, that were made from heaven to them, that did manfully for the Jews, so that being few they revenged the whole country, and put to flight the barbarous multitude:"
+          }
+        },
+        {
+          "number": 23,
           "text": {
             "KJV": "2:23 All these things (I say) being declared by Iason of Cyrene in fiue books, we will assay to abridge in one volume.",
             "NABRE": "2:23 All this, detailed by Jason of Cyrene in five volumes, we will try to condense into a single book.",
-            "NRSV": "all this, which has been set forth by Jason of Cyrene in five volumes, we shall attempt to condense into a single book."
+            "NRSV": "all this, which has been set forth by Jason of Cyrene in five volumes, we shall attempt to condense into a single book.",
+            "DRB": "and repaired the most famous temple in all the world, and delivered the city, and the laws that were abolished, were restored, our Lord with all clemency being made propitious unto them."
+          }
+        },
+        {
+          "number": 24,
+          "text": {
+            "DRB": "Also the things which by Jason the Cyrenean are comprised in five Books, we have attempted to abridge in one volume."
+          }
+        },
+        {
+          "number": 25,
+          "text": {
+            "DRB": "For considering the multitude of Books, & the difficulty to them, that will attempt the narrations of histories, because of the multitude of matters:"
+          }
+        },
+        {
+          "number": 26,
+          "text": {
+            "DRB": "We have been careful for them that are willing to read, that there might be delectation of the mind: and for the studious, that they may more easily commit it to memory: and that profit might ensue to all that read it."
+          }
+        },
+        {
+          "number": 27,
+          "text": {
+            "DRB": "And to our own selves indeed, which have taken upon us this work, to make an abridgment, we have taken in hand no easy labour, yea rather a business full of watching and sweat."
+          }
+        },
+        {
+          "number": 28,
+          "text": {
+            "DRB": "As they that prepare a feast, & seek to condescend to other men's will: for many men's sakes we do willingly sustain the labour."
+          }
+        },
+        {
+          "number": 29,
+          "text": {
+            "DRB": "The verity certes concerning every particular leaving to the authors, & ourselves according to the form that is given, studying to be brief."
+          }
+        },
+        {
+          "number": 30,
+          "text": {
+            "DRB": "For as the builder of a new house must have care of the whole building: but he that hath the care to paint must seek out the things that are apt for garnishing: so must it be esteemed also in us."
+          }
+        },
+        {
+          "number": 31,
+          "text": {
+            "DRB": "For to gather together the understanding, to order the speech, and curiously to discuss every particular part, agreeth to the author of an history:"
+          }
+        },
+        {
+          "number": 32,
+          "text": {
+            "DRB": "but to pursue the brevity of speech, and to avoid the exact declarations of things, is to be granted to him that abridgeth."
+          }
+        },
+        {
+          "number": 33,
+          "text": {
+            "DRB": "From hence then will we begin the narration: of the preface let it be sufficient to have said thus much: for it is a foolish thing before the history to flow over, and in the history to be short."
           }
         }
       ]
     },
     {
-      "num": 3,
+      "number": 3,
       "verses": [
         {
-          "num": 1,
+          "number": 1,
           "text": {
             "KJV": "3:1 Now when the holy Citie was inhabited with all peace, and the Lawes were kept very well, because of the godlinesse of Onias the high Priest, and his hatred of wickednesse,",
             "NABRE": "3:1 III. Heliodorus’ Attempt to Profane the Temple Chapter 3 Heliodorus’ Arrival in Jerusalem. While the holy city lived in perfect peace and the laws were strictly observed because of the piety of the high priest Onias and his hatred of evil,",
-            "NRSV": "While the holy city was inhabited in unbroken peace and the laws were very well observed because of the piety of the high priest Onias and his hatred of wickedness,"
+            "NRSV": "While the holy city was inhabited in unbroken peace and the laws were very well observed because of the piety of the high priest Onias and his hatred of wickedness,",
+            "DRB": "Therefore when the holy city was inhabited in all peace, the laws also as yet were very well kept, because of Onias the high Priest his piety, and mind that hated evils,"
           }
         },
         {
-          "num": 7,
+          "number": 2,
+          "text": {
+            "DRB": "it came to pass that kings also themselves, and princes esteemed the place worthy of high honour, & glorified the temple with very great gifts:"
+          }
+        },
+        {
+          "number": 3,
+          "text": {
+            "DRB": "so that Seleucus the king of Asia of his revenues allowed all the charges pertaining to the ministry of the sacrifices."
+          }
+        },
+        {
+          "number": 4,
+          "text": {
+            "DRB": "But Simon of the tribe of Benjamin, being appointed overseer of the temple, contended, the Prince of the Priests resisting him, to work some wicked thing in the city."
+          }
+        },
+        {
+          "number": 5,
+          "text": {
+            "DRB": "And when he could not overcome Onias, he came to Apollonius the son of Tharsæas, who at that time was governor of Cælesyria, and Phænicia:"
+          }
+        },
+        {
+          "number": 6,
+          "text": {
+            "DRB": "and told him, that the treasury at Jerusalem was full of innumerable deal of money, and the common store to be infinite, which pertain not to the account of the sacrifices: and that it is possible, all might fall into the king's power."
+          }
+        },
+        {
+          "number": 7,
           "text": {
             "KJV": "3:7 Now when Apollonius came to the king, and had shewed him of the money, whereof he was told, the king chose out Heliodorus his treasurer, and sent him with a commaundement, to bring him the foresaid money.",
             "NABRE": "3:7 When Apollonius had an audience with the king, he informed him about the riches that had been reported to him. The king chose his chief minister Heliodorus and sent him with instructions to seize those riches.",
-            "NRSV": "But a certain Simon... informed the king about the treasury in Jerusalem, that it was full of untold sums of money."
+            "NRSV": "But a certain Simon... informed the king about the treasury in Jerusalem, that it was full of untold sums of money.",
+            "DRB": "And when Apollonius had made relation to the king, concerning the money that he was told of, he calling for Heliodorus, who was over his affairs, sent him with commission to transport the foresaid money."
           }
         },
         {
-          "num": 24,
+          "number": 8,
+          "text": {
+            "DRB": "And forthwith Heliodorus began to take his journey, in shew indeed as if he would go visit the cities throughout Cælesyria and Phænicia, but in very deed to accomplish the king's purpose."
+          }
+        },
+        {
+          "number": 9,
+          "text": {
+            "DRB": "But when he was come to Jerusalem, and was courteously received in the city by the high Priest, he told of the advertisement given of the money: and opened for what cause he was come: and asked if these things were so in very deed."
+          }
+        },
+        {
+          "number": 10,
+          "text": {
+            "DRB": "Then the high-Priest shewed that these were deposita, and the livelihoods of widows & pupils:"
+          }
+        },
+        {
+          "number": 11,
+          "text": {
+            "DRB": "but certain of them to belong unto Hircanus of Tobie a very noble man, among these things, which impious Simon had promoted, and the whole to be of silver four hundred talents, and of gold two hundred."
+          }
+        },
+        {
+          "number": 12,
+          "text": {
+            "DRB": "And that they should be deceived which had committed it to the place, and the temple, that is honoured throughout the whole world, to be a thing, for the reverence and holiness thereof altogether unpossible."
+          }
+        },
+        {
+          "number": 13,
+          "text": {
+            "DRB": "But he by reason of those things, which he had in commission of the king, said in any wise that they must be carried to the king."
+          }
+        },
+        {
+          "number": 14,
+          "text": {
+            "DRB": "And on a day appointed, Heliodorus entered in to take order concerning these things. But there was no small trembling throughout the whole city."
+          }
+        },
+        {
+          "number": 15,
+          "text": {
+            "DRB": "And the Priests cast themselves before the altar with their Priests' stoles, and invocated him from heaven, which made the law of deposita, that he would keep the things safe, from them that had deposed them."
+          }
+        },
+        {
+          "number": 16,
+          "text": {
+            "DRB": "But now he that saw the countenance of the high-Priest, was wounded in mind: for his face and colour being changed declared the inner sorrow of the mind."
+          }
+        },
+        {
+          "number": 17,
+          "text": {
+            "DRB": "For there was a certain pensiveness poured about the man, and horror of the body, whereby the sorrow of his heart was made manifest to them that beheld him."
+          }
+        },
+        {
+          "number": 18,
+          "text": {
+            "DRB": "Others also came flocking together out of their houses: praying with public supplication, for that the place was to come into contempt."
+          }
+        },
+        {
+          "number": 19,
+          "text": {
+            "DRB": "And the women having their breast girded with hair-cloths came together through the streets. Yea and the virgins that were shut up, came forth to Onias, and some to the walls, but some looked through the windows:"
+          }
+        },
+        {
+          "number": 20,
+          "text": {
+            "DRB": "and all stretching forth their hands unto heaven, prayed."
+          }
+        },
+        {
+          "number": 21,
+          "text": {
+            "DRB": "For the expectation of the confuse multitude, and of the grand Priest being in an agony, was miserable."
+          }
+        },
+        {
+          "number": 22,
+          "text": {
+            "DRB": "And these certes invocated almighty God, that the things committed to them, might be performed with all integrity for them that had committed the same of trust."
+          }
+        },
+        {
+          "number": 23,
+          "text": {
+            "DRB": "But Heliodorus exercised that which he had decreed in the same place himself present with his guard about the treasury."
+          }
+        },
+        {
+          "number": 24,
           "text": {
             "KJV": "3:24 Now as hee was there present himselfe with his guard about the treasurie, the Lord of spirits, & the Prince of all power caused a great apparition, so that all that presumed to come in with him, were astonished at the power of God, and fainted, and were sore afraid.",
             "NABRE": "3:24 God Protects the Temple. But just as Heliodorus was arriving at the treasury with his bodyguards, the Lord of spirits and all authority produced an apparition so great that those who had been bold enough to accompany Heliodorus were panic-stricken at God’s power and fainted away in terror.",
-            "NRSV": "But when Heliodorus arrived at the treasury with his bodyguard... the Sovereign of spirits and of all authority caused so great a manifestation that all who had been so bold as to accompany him were astounded by the power of God, and became faint with terror."
+            "NRSV": "But when Heliodorus arrived at the treasury with his bodyguard... the Sovereign of spirits and of all authority caused so great a manifestation that all who had been so bold as to accompany him were astounded by the power of God, and became faint with terror.",
+            "DRB": "But the spirit of almighty God made great evidence of his appearing, so that all which had presumed to obey him, falling by the virtue of God, were turned into dissolution and fear."
           }
         },
         {
-          "num": 25,
+          "number": 25,
           "text": {
             "KJV": "3:25 For there appeared vnto them a horse, with a terrible rider vpon him, and adorned with a very faire couering, and he ranne fiercely, and smote at Heliodorus with his forefeet, and it seemed that hee that sate vpon the horse, had complete harnesse of golde.",
             "NABRE": "3:25 There appeared to them a richly caparisoned horse, mounted by a fearsome rider. Charging furiously, the horse attacked Heliodorus with its front hooves. The rider was seen wearing golden armor.",
-            "NRSV": "For there appeared to them a magnificently caparisoned horse, with a rider of frightening mien; it rushed furiously at Heliodorus and struck at him with its front hoofs. Its rider was seen to have armor and weapons of gold."
+            "NRSV": "For there appeared to them a magnificently caparisoned horse, with a rider of frightening mien; it rushed furiously at Heliodorus and struck at him with its front hoofs. Its rider was seen to have armor and weapons of gold.",
+            "DRB": "For there appeared to them a certain horse having a terrible rider, adorned with very rich harness: and he with fierceness struck Heliodorus with his forefoot, and he that sat upon him, seemed to have armour of gold."
+          }
+        },
+        {
+          "number": 26,
+          "text": {
+            "DRB": "There appeared also two other young men comely for strength, excellent of glory, and beautiful in attire: which stood about him, and on both sides whipped him, beating him with many stripes without intermission."
+          }
+        },
+        {
+          "number": 27,
+          "text": {
+            "DRB": "And Heliodorus suddenly fell on the ground, and they took him being covered round about with much darkness, and being set in a seat portative, they thrust him forth."
+          }
+        },
+        {
+          "number": 28,
+          "text": {
+            "DRB": "And he that with many couriers, and men of his guard entered into the foresaid treasury, was carried no man giving him succourse, the manifest power of God being known."
+          }
+        },
+        {
+          "number": 29,
+          "text": {
+            "DRB": "And he indeed by the power of God lay dumb, and deprived of all hope, and health."
+          }
+        },
+        {
+          "number": 30,
+          "text": {
+            "DRB": "But they blessed our Lord, because he magnified his place: and the temple, that a little before was full of fear and tumult, almighty God appearing, was filled with joy and gladness."
+          }
+        },
+        {
+          "number": 31,
+          "text": {
+            "DRB": "And then certain of the friends of Heliodorus forthwith desired Onias, that he would invocate the highest to give him life, who was at the very last gasp."
+          }
+        },
+        {
+          "number": 32,
+          "text": {
+            "DRB": "And the high-Priest considering lest perhaps the king might suspect some malice on the Jews' part done about Heliodorus, offered for the health of the man an healthful host."
+          }
+        },
+        {
+          "number": 33,
+          "text": {
+            "DRB": "And when the high-Priest by prayer obtained, the self same young men, clothed with the same garments, standing by Heliodorus, said: Give thanks to Onias the Priest: for him hath our Lord given thee life."
+          }
+        },
+        {
+          "number": 34,
+          "text": {
+            "DRB": "But thou being scourged of God, declare unto all men the great works and the power of God. And these things being said, they appeared no more."
+          }
+        },
+        {
+          "number": 35,
+          "text": {
+            "DRB": "And Heliodorus having offered an host to God, and having promised great vows to him, that granted him to live, and giving thanks to Onias, taking his army again returned to the king."
+          }
+        },
+        {
+          "number": 36,
+          "text": {
+            "DRB": "And he testified to all men those works of the great God, which he had seen before his own eyes."
+          }
+        },
+        {
+          "number": 37,
+          "text": {
+            "DRB": "And when the king had asked Heliodorus; who was meet to be sent yet once more to Jerusalem, he said:"
+          }
+        },
+        {
+          "number": 38,
+          "text": {
+            "DRB": "If thou have any enemy, or traitor to thy kingdom, send him thither, and thou shalt receive him again scourged, if yet he escape: because there is undoubtedly in the place a certain power of God."
+          }
+        },
+        {
+          "number": 39,
+          "text": {
+            "DRB": "For he that hath his dwelling in the heavens, is the visiter, and helper of that place, and them that come to do evil, he striketh, and destroyeth."
+          }
+        },
+        {
+          "number": 40,
+          "text": {
+            "DRB": "Therefore concerning Heliodorus, and the keeping of the treasury so the matter standeth."
           }
         }
       ]
     },
     {
-      "num": 4,
+      "number": 4,
       "verses": [
         {
-          "num": 7,
+          "number": 1,
+          "text": {
+            "DRB": "But Simon the foresaid betrayer of the money, and of his country, spake ill of Onias, as though he had stirred up Heliodorus to these things, and had been the mover of the evils:"
+          }
+        },
+        {
+          "number": 2,
+          "text": {
+            "DRB": "and the provider for the city, and defender of his nation, and the emulator of the law of God, he presumed to call a secret betrayer of the kingdom:"
+          }
+        },
+        {
+          "number": 3,
+          "text": {
+            "DRB": "But when the enmities proceeded so far, that murders also were committed by certain of Simon's familiars:"
+          }
+        },
+        {
+          "number": 4,
+          "text": {
+            "DRB": "Onias considering the peril of the contention, and that Apollonius being governor of Cælesyria, & Phænicia, was outrageous, which increased the malice of Simon, went to the king."
+          }
+        },
+        {
+          "number": 5,
+          "text": {
+            "DRB": "not as an accuser of the citizens, but considering with himself the common profit of the whole multitude."
+          }
+        },
+        {
+          "number": 6,
+          "text": {
+            "DRB": "For he saw that without the king's providence it was unpossible that peace should be made in those matters, and that Simon would not cease from his folly."
+          }
+        },
+        {
+          "number": 7,
           "text": {
             "KJV": "4:7 But after the death of Seleucus, when Antiochus called Epiphanes, tooke the kingdom, Iason the brother of Onias, laboured vnder hand to bee hie Priest,",
             "NABRE": "4:7 Jason as High Priest. But Seleucus died, and when Antiochus surnamed Epiphanes succeeded him on the throne, Onias’ brother Jason obtained the high priesthood by corrupt means:",
-            "NRSV": "But when Seleucus died and Antiochus, who was called Epiphanes, succeeded to the kingdom, Jason the brother of Onias obtained the high priesthood by corruption,"
+            "NRSV": "But when Seleucus died and Antiochus, who was called Epiphanes, succeeded to the kingdom, Jason the brother of Onias obtained the high priesthood by corruption,",
+            "DRB": "But after Seleucus' departure out of life, when Antiochus that was called the Noble, had taken the kingdom upon him, Jason the brother of Onias ambitiously sought the high-priesthood:"
           }
         },
         {
-          "num": 10,
+          "number": 8,
+          "text": {
+            "DRB": "going to the king, promising him three hundred three score talents of silver, & of other revenues four score talents,"
+          }
+        },
+        {
+          "number": 9,
+          "text": {
+            "DRB": "above this he promised also an hundred fifty more, if leave might be granted him to make a school, and a place for youth, and to entitle them, that were at Jerusalem, Antiochians."
+          }
+        },
+        {
+          "number": 10,
           "text": {
             "KJV": "4:10 Which when the king had granted, and hee had gotten into his hand the rule, he foorthwith brought his owne nation to the Greekish fashion.",
             "NABRE": "4:10 When Jason received the king’s approval and came into office, he immediately initiated his compatriots into the Greek way of life.",
-            "NRSV": "When the king had assented and Jason had come to office, he at once shifted his compatriots over to the Greek way of life."
+            "NRSV": "When the king had assented and Jason had come to office, he at once shifted his compatriots over to the Greek way of life.",
+            "DRB": "Which when the king had granted, and he had obtained the princedom, forthwith he began to transport his country men to the heathen rite."
           }
         },
         {
-          "num": 23,
+          "number": 11,
+          "text": {
+            "DRB": "And these things being taken away, which of favour had been decreed by kings unto the Jews, and through John the father of the Eupolemus, who was ambassador with the Romans concerning amity and society, he disannulling the lawful rites of the citizens, made wicked ordinances."
+          }
+        },
+        {
+          "number": 12,
+          "text": {
+            "DRB": "For he presumed under the very castle to set up a school, and to put all the goodliest youths in brothel houses."
+          }
+        },
+        {
+          "number": 13,
+          "text": {
+            "DRB": "And this was not the beginning, but a certain increase, and going forward of the heathen and strange conversation, through the abominable never heard before, of Jason the impious and not a priest."
+          }
+        },
+        {
+          "number": 14,
+          "text": {
+            "DRB": "So that the Priests were not now occupied about the offices of the altar, but the temple being contemned, & the sacrifices neglected, they hastened to be partakers of the game of wrestling, & of the unjust maintenance thereof, & in the exercise of the coyte."
+          }
+        },
+        {
+          "number": 15,
+          "text": {
+            "DRB": "And setting nought by the honours of their fathers, they esteemed the Greek glories for the best:"
+          }
+        },
+        {
+          "number": 16,
+          "text": {
+            "DRB": "by reason whereof they had dangerous contention, & they had emulation toward their ordinances, and in all things they coveted to be like to them, whom they had enemies & murderers."
+          }
+        },
+        {
+          "number": 17,
+          "text": {
+            "DRB": "For to do impiously against the laws of God escapeth not unpunished, but this the time following will declare."
+          }
+        },
+        {
+          "number": 18,
+          "text": {
+            "DRB": "And when the game used every fifth year was kept at Tyre, & the king was present,"
+          }
+        },
+        {
+          "number": 19,
+          "text": {
+            "DRB": "the wicked Jason sent from Jerusalem sinful men, carrying three hundred didrachmæs of silver for the sacrifice of Hercules, which they that carried it, requested that it might not be bestowed on the sacrifices, because it ought not, but that it might be deputed for other charges."
+          }
+        },
+        {
+          "number": 20,
+          "text": {
+            "DRB": "And these were offered indeed by him that sent them, unto the sacrifice of Hercules: but because of them that were present they were given to the making of gallies."
+          }
+        },
+        {
+          "number": 21,
+          "text": {
+            "DRB": "And Apollonius the son of Mnestheus being sent into Ægypt because of the nobles of Ptolomee Philometor the king, when Antiochus understood that himself was made an alien from the affairs of the kingdom, providing for his own commodities, departing thence he came to Joppe, and from thence to Jerusalem."
+          }
+        },
+        {
+          "number": 22,
+          "text": {
+            "DRB": "And being magnifically received of Jason, and the city, entered in with torch lights, and with praises: and from thence he turned his army into Phænicia."
+          }
+        },
+        {
+          "number": 23,
           "text": {
             "KJV": "4:23 Three yeere afterward, Iason sent Menelaus the foresaid Simons brother, to beare the money vnto the king, and to put him in minde of certaine necessary matters.",
             "NABRE": "4:23 Menelaus as High Priest. Three years later Jason sent Menelaus, brother of the aforementioned Simon, to deliver the money to the king, and to complete negotiations on urgent matters.",
-            "NRSV": "After a period of three years, Jason sent Menelaus... to carry the money to the king."
+            "NRSV": "After a period of three years, Jason sent Menelaus... to carry the money to the king.",
+            "DRB": "And after the time of three years Jason sent Menelaus brother of the foresaid Simon, carrying money to the king, and to bring answers of necessary affairs."
           }
         },
         {
-          "num": 24,
+          "number": 24,
           "text": {
             "KJV": "4:24 But he being brought to the presence of the king, when he had magnified him, for the glorious appearance of his power, got the priesthood to himselfe, offering more then Iason by three hundred talents of siluer.",
             "NABRE": "4:24 But after his introduction to the king, he flattered him with such an air of authority that he secured the high priesthood for himself, outbidding Jason by three hundred talents of silver.",
-            "NRSV": "But Menelaus, when introduced to the king, flattered him... and outbid Jason by three hundred talents of silver, and so had the high priesthood confirmed to himself."
+            "NRSV": "But Menelaus, when introduced to the king, flattered him... and outbid Jason by three hundred talents of silver, and so had the high priesthood confirmed to himself.",
+            "DRB": "But he being commended to the king, when he had magnified the presence of his power, wrested the high-Priesthood upon himself, over bidding Jason three hundred talents of silver."
+          }
+        },
+        {
+          "number": 25,
+          "text": {
+            "DRB": "And having received commission from the king, he came, having indeed nothing worthy of the priesthood: but bearing the mind of a cruel tyrant, and the wrath of a wild beast."
+          }
+        },
+        {
+          "number": 26,
+          "text": {
+            "DRB": "And Jason indeed, who had circumvented his own brother, being himself deceived was driven out a fugitive into the country of the Ammanites."
+          }
+        },
+        {
+          "number": 27,
+          "text": {
+            "DRB": "And Menelaus obtained the princedom: but concerning the money promised to the king he did nothing, whereas Sostratus that was governor of the castle exacted it."
+          }
+        },
+        {
+          "number": 28,
+          "text": {
+            "DRB": "For to him pertained the exacting of the tributes: for which cause they were both called out to the king."
+          }
+        },
+        {
+          "number": 29,
+          "text": {
+            "DRB": "And Menelaus was removed from the Priest-hood, Lysimachus his brother succeeding: and Sostratus was made governor of the Cyprians."
+          }
+        },
+        {
+          "number": 30,
+          "text": {
+            "DRB": "And when these things were a doing, it chanced the Tharsians, and the Mallotians to move sedition, because they were given for a gift to king Antiochus' concubine."
+          }
+        },
+        {
+          "number": 31,
+          "text": {
+            "DRB": "The king therefore came in haste to pacify them, one of his companions Andronicus being left substitute."
+          }
+        },
+        {
+          "number": 32,
+          "text": {
+            "DRB": "But Menelaus supposing that he had taken a convenient time, stealing certain vessels of gold out of the temple, gave them to Andronicus, and others he had sold at Tyre, and in their near cities:"
+          }
+        },
+        {
+          "number": 33,
+          "text": {
+            "DRB": "Which thing when Onias understood most certainly, he rebuked him, keeping himself in a safe place at Antioch beside Daphne."
+          }
+        },
+        {
+          "number": 34,
+          "text": {
+            "DRB": "Whereupon Menelaus coming to Andronicus, desired him to kill Onias. Who when he was come to Onias, and right hands being given with an oath (although he was suspected of him) had persuaded him to come out of the sanctuary, immediately he slew him, not reverencing justice."
+          }
+        },
+        {
+          "number": 35,
+          "text": {
+            "DRB": "For which cause not only the Jews, but also other nations likewise were offended, & took it grievously for the unjust murder of so great a man."
+          }
+        },
+        {
+          "number": 36,
+          "text": {
+            "DRB": "But when the king was returned out of the places of Cilicia, the Jews went unto him at Antioch, and also the Greeks: complaining of the unjust murder of Onias."
+          }
+        },
+        {
+          "number": 37,
+          "text": {
+            "DRB": "Antiochus therefore was sorry in his mind for Onias, & being inclined to pity, he shed tears, remembering the sobriety and modesty of the deceased."
+          }
+        },
+        {
+          "number": 38,
+          "text": {
+            "DRB": "And his heart being incensed, he commanded Andronicus being spoiled of the purple, to be led about all the city: and that in the same place, wherein he had committed the impiety upon Onias, the sacrilegious person should be deprived of his life, our Lord repaying him worthy punishment."
+          }
+        },
+        {
+          "number": 39,
+          "text": {
+            "DRB": "And many sacrileges being committed of Lysimachus in the temple by the counsel of Menelaus, and the rumour being bruited abroad, the multitude gathered together against Lysimachus, much gold being now carried out."
+          }
+        },
+        {
+          "number": 40,
+          "text": {
+            "DRB": "But the multitudes making insurrection, & their minds replenished with anger, Lysimachus arming almost three thousand began to use unjust hands, a certain tyrant being captain far grown in age, and also in madness."
+          }
+        },
+        {
+          "number": 41,
+          "text": {
+            "DRB": "But as they understood the endeavour of Lysimachus, some took stones, some strong clubs, & certain threw ashes."
+          }
+        },
+        {
+          "number": 42,
+          "text": {
+            "DRB": "And many indeed were wounded, and certain also thrown to the ground, but all were put to flight: the sacrilegious person also himself they slew beside the treasury."
+          }
+        },
+        {
+          "number": 43,
+          "text": {
+            "DRB": "Concerning these things therefore judgement began to be commenced against Menelaus."
+          }
+        },
+        {
+          "number": 44,
+          "text": {
+            "DRB": "And when the king was come to Tyre, three men sent from the ancients, put up the matter unto him."
+          }
+        },
+        {
+          "number": 45,
+          "text": {
+            "DRB": "And when Menelaus was overcome, he promised Ptolomee to give much money to persuade the king."
+          }
+        },
+        {
+          "number": 46,
+          "text": {
+            "DRB": "Ptolomee therefore went to the king being in a certain court, as it were to cool himself, and brought him from his purpose:"
+          }
+        },
+        {
+          "number": 47,
+          "text": {
+            "DRB": "and Menelaus certes being guilty of all the evil was quitted of the crimes: and the poor wretches, who if they had pleaded the cause even before Scythians should be judged innocent, them he commanded to death."
+          }
+        },
+        {
+          "number": 48,
+          "text": {
+            "DRB": "Quickly then did they unjustly suffer, which prosecuted the cause for the city, and the people, and the sacred vessels."
+          }
+        },
+        {
+          "number": 49,
+          "text": {
+            "DRB": "For the which thing the Tyrians also being offended, were very liberal towards the burial of them."
+          }
+        },
+        {
+          "number": 50,
+          "text": {
+            "DRB": "But Menelaus because of their avarice that were in power, continued in authority, increasing in malice to the betraying of the citizens."
           }
         }
       ]
     },
     {
-      "num": 5,
+      "number": 5,
       "verses": [
         {
-          "num": 1,
+          "number": 1,
           "text": {
             "KJV": "5:1 About the same time Antiochus prepared his second voyage into Egypt:",
             "NABRE": "5:1 Chapter 5 Jason’s Revolt. About this time Antiochus sent his second expedition into Egypt.",
-            "NRSV": "About this time Antiochus made his second invasion of Egypt."
+            "NRSV": "About this time Antiochus made his second invasion of Egypt.",
+            "DRB": "At the same time Antiochus prepared a second journey into Ægypt."
           }
         },
         {
-          "num": 2,
+          "number": 2,
           "text": {
             "KJV": "5:2 And then it happened, that through all the citie, for the space almost of fourtie dayes, there were seene horsemen running in the aire, in cloth of golde, and armed with lances, like a band of souldiers,",
             "NABRE": "5:2 It then happened that all over the city, for nearly forty days, there appeared horsemen, clothed in garments of a golden weave, charging in midair—companies fully armed with lances and drawn swords;",
-            "NRSV": "And it happened that, for almost forty days, there appeared over all the city golden-clad cavalry charging through the air, in companies fully armed with lances and drawn swords."
+            "NRSV": "And it happened that, for almost forty days, there appeared over all the city golden-clad cavalry charging through the air, in companies fully armed with lances and drawn swords.",
+            "DRB": "And it came to pass: that throughout the whole city of Jerusalem were seen for forty days in the air horsemen running hither and thither, having golden stoles, and spears, as it were companies armed,"
           }
         },
         {
-          "num": 11,
+          "number": 3,
+          "text": {
+            "DRB": "and coursing of horses set in orders by ranks, & that there were encounterings together near hand, and shakings of shields, and a multitude of men in helmets with swords drawn, & throwing of darts, & the glittering of golden armour, and of all kind of harness."
+          }
+        },
+        {
+          "number": 4,
+          "text": {
+            "DRB": "Wherefore all prayed that the wonders might be turned to good."
+          }
+        },
+        {
+          "number": 5,
+          "text": {
+            "DRB": "But when there was a false rumour gone forth, as though Antiochus had been parted this life, Jason taking unto him no less than a thousand men, suddenly set upon the city: and the citizens flying together to the wall, at the last the city being taken, Menelaus fled into the castle."
+          }
+        },
+        {
+          "number": 6,
+          "text": {
+            "DRB": "But Jason spared not his citizens in murder, nor considered, that prosperity against kinsmen is a very great evil, supposing that he should take the victorious spoils of the enemies, and not of his citizens."
+          }
+        },
+        {
+          "number": 7,
+          "text": {
+            "DRB": "And the princedom verily he obtained not, but received confusion, the end of his treachery, and went again a fugitive into the country of the Ammanites."
+          }
+        },
+        {
+          "number": 8,
+          "text": {
+            "DRB": "At last to his own destruction being inclosed of Aretas the tyrant of the Arabians, flying from city to city, odious to all men, as an apostata from the laws, and execrable, as an enemy of his country and citizens, he was thrust out into Ægypt:"
+          }
+        },
+        {
+          "number": 9,
+          "text": {
+            "DRB": "and he that had expelled many out of their country, perished in a strange place, going to the Lacedemonians, as being like for kindred sake to have refuge there:"
+          }
+        },
+        {
+          "number": 10,
+          "text": {
+            "DRB": "but he that cast away many unburied, himself both unlamented, and unburied is cast forth, neither enjoying foreign burial, nor partaker of the sepulchre of his father's."
+          }
+        },
+        {
+          "number": 11,
           "text": {
             "KJV": "5:11 Now when this that was done came to the kings eare, he thought that Iudea had reuolted, whereupon remouing out of Egypt in a furious minde, he tooke the citie by force of armes,",
             "NABRE": "5:11 Revenge by Antiochus. When these happenings were reported to the king, he thought that Judea was in revolt. Raging like a wild animal, he set out from Egypt and took Jerusalem by storm.",
-            "NRSV": "When news of what had happened reached the king, he chosen to think that Judea was in revolt. So, raging like a wild animal, he set out from Egypt and took Jerusalem by storm."
+            "NRSV": "When news of what had happened reached the king, he chosen to think that Judea was in revolt. So, raging like a wild animal, he set out from Egypt and took Jerusalem by storm.",
+            "DRB": "These things therefore being done, the king suspected that the Jews would forsake the society: & for this departing out of Ægypt with a furious mind, he took the city by arms."
           }
         },
         {
-          "num": 14,
+          "number": 12,
+          "text": {
+            "DRB": "And he bade the soldiers kill, and not spare them that came in their way, to murder them that went up into the houses."
+          }
+        },
+        {
+          "number": 13,
+          "text": {
+            "DRB": "Slaughters therefore were made of young men & old, and destructions of women and children, & murders of virgins and little ones."
+          }
+        },
+        {
+          "number": 14,
           "text": {
             "KJV": "5:14 And there were destroyed within the space of three whole daies, fourescore thousand, whereof fourty thousand were slaine in the conflict; and no fewer sold, then slaine.",
             "NABRE": "5:14 In the space of three days, eighty thousand were lost, forty thousand meeting a violent death, and the same number being sold into slavery.",
-            "NRSV": "Within the total of three days eighty thousand were destroyed, forty thousand in hand-to-hand fighting, and as many were sold into slavery as were killed."
+            "NRSV": "Within the total of three days eighty thousand were destroyed, forty thousand in hand-to-hand fighting, and as many were sold into slavery as were killed.",
+            "DRB": "And there were in the whole three days four score thousand slain, forty thousand prisoners, and no less sold."
+          }
+        },
+        {
+          "number": 15,
+          "text": {
+            "DRB": "But neither do these things suffice, he presumed also to enter into the temple, in all the earth the most holy, Menelaus being his leader, who was betrayer of the laws, and his country."
+          }
+        },
+        {
+          "number": 16,
+          "text": {
+            "DRB": "And with wicked hands taking the holy vessels, which by other kings & cities were set for the ornament and the glory of the place, he unworthily handled and contaminated them."
+          }
+        },
+        {
+          "number": 17,
+          "text": {
+            "DRB": "So Antiochus being alienated in mind, considered not, that for the sins of them that inhabit the city, God had been angry a little: for the which also happened the contempt about the place:"
+          }
+        },
+        {
+          "number": 18,
+          "text": {
+            "DRB": "otherwise unless it had chanced them to have been wrapped in many sins, as Heliodorus, who was sent of Seleucus the king to spoil the treasury, this man also immediately as he came had been scourged, and repelled verily from his boldness."
+          }
+        },
+        {
+          "number": 19,
+          "text": {
+            "DRB": "But not the nation for the place, but the place for the nation hath God chosen."
+          }
+        },
+        {
+          "number": 20,
+          "text": {
+            "DRB": "And therefore the place also itself is made partaker of the people's evils: but afterward it shall be partaker of the good things, and it that was forsaken in the wrath of almighty God, shall be exalted again with great glory in the reconciliation of the great Lord."
+          }
+        },
+        {
+          "number": 21,
+          "text": {
+            "DRB": "Therefore Antiochus having taken away out of the temple a thousand & eight hundred talents, speedily went back to Antioch, thinking through pride, that he might bring the land to sail upon, & the sea to go upon, through haughtiness of mind."
+          }
+        },
+        {
+          "number": 22,
+          "text": {
+            "DRB": "And he left also rulers to afflict the nation: at Jerusalem, Philip a Phrygian born, more cruel of manners than he himself by whom he was appointed:"
+          }
+        },
+        {
+          "number": 23,
+          "text": {
+            "DRB": "and in Garizim Andronicus & Menelaus, who lay more grievously upon the citizens than the rest."
+          }
+        },
+        {
+          "number": 24,
+          "text": {
+            "DRB": "And whereas he was set against the Jews, he sent the odious prince Apollonius with an army of two and twenty thousand, commanding him to kill all of perfect age, to sell the women and the young ones."
+          }
+        },
+        {
+          "number": 25,
+          "text": {
+            "DRB": "Who when he was come to Jerusalem, feigning peace, rested until the holy day of the Sabbath: and then the Jews keeping holy day, he commanded his men to take weapons."
+          }
+        },
+        {
+          "number": 26,
+          "text": {
+            "DRB": "And he murdered all that were gone forth to behold the games: and running through the city with armed men, he slew a very great multitude."
+          }
+        },
+        {
+          "number": 27,
+          "text": {
+            "DRB": "But Judas Machabeus, who was the tenth, was retired into a desert place, and there amongst wild beasts he led his life in the mountains with his company: and they abode eating meat of grass, that they might not be partakers of the contamination."
           }
         }
       ]
     },
     {
-      "num": 6,
+      "number": 6,
       "verses": [
         {
-          "num": 1,
+          "number": 1,
           "text": {
             "KJV": "6:1 Not long after this, the king sent an olde man of Athens, to compell the Iewes to depart from the lawes of their fathers, and not to liue after the Lawes of God:",
             "NABRE": "6:1 Chapter 6 Abolition of Judaism. Not long after this the king sent an Athenian senator to force the Jews to abandon the laws of their ancestors and live no longer by the laws of God,",
-            "NRSV": "Not long after this, the king sent an Athenian senator to compel the Jews to forsake the laws of their ancestors and no longer to live by the laws of God;"
+            "NRSV": "Not long after this, the king sent an Athenian senator to compel the Jews to forsake the laws of their ancestors and no longer to live by the laws of God;",
+            "DRB": "But not long after the king sent a certain ancient man of Antioch, that should compel the Jews to remove themselves from the laws of their fathers and of God:"
           }
         },
         {
-          "num": 2,
+          "number": 2,
           "text": {
             "KJV": "6:2 And to pollute also the Temple in Ierusalem, and to call it the Temple of Iupiter Olympius: and that in Garizim, of Iupiter the defender of strangers, as they did desire that dwelt in the place.",
             "NABRE": "6:2 also to profane the temple in Jerusalem and dedicate it to Olympian Zeus, and the one on Mount Gerizim to Zeus the Host to Strangers, as the local inhabitants were wont to be.",
-            "NRSV": "also to pollute the temple in Jerusalem and to call it the temple of Olympian Zeus."
+            "NRSV": "also to pollute the temple in Jerusalem and to call it the temple of Olympian Zeus.",
+            "DRB": "to contaminate also the temple that was in Jerusalem, & to call it by the name of Jupiter Olympius: and in Garizim, according as they were that inhabited the place, of Jupiter Hospitalis."
           }
         },
         {
-          "num": 18,
+          "number": 3,
+          "text": {
+            "DRB": "And the invasion of the evils was sore & grievous to all:"
+          }
+        },
+        {
+          "number": 4,
+          "text": {
+            "DRB": "for the temple was full of the lechery & gluttony of the Gentiles: & of them that played the harlots with whores. And women thrusting themselves of their own accord into the sacred houses, bringing in those things which were not lawful."
+          }
+        },
+        {
+          "number": 5,
+          "text": {
+            "DRB": "The altar also was full of unlawful things which were forbidden by the laws."
+          }
+        },
+        {
+          "number": 6,
+          "text": {
+            "DRB": "And neither were the Sabbaths kept, nor the solemn days of the fathers observed, neither plainly did any man confess himself to be a Jew."
+          }
+        },
+        {
+          "number": 7,
+          "text": {
+            "DRB": "But they were led with bitter necessity in the king's birth day to sacrifices: & when the feast of Bacchus was kept, they were compelled to go about crowned with Ivy unto Bacchus."
+          }
+        },
+        {
+          "number": 8,
+          "text": {
+            "DRB": "And there went forth a decree into the next cities of the Gentiles, the Ptolomeans giving the advise, that they also in like manner should do against the Jews, that they might sacrifice:"
+          }
+        },
+        {
+          "number": 9,
+          "text": {
+            "DRB": "and them that would not pass to the ordinances of the heathen, they should kill. A man then might see the misery."
+          }
+        },
+        {
+          "number": 10,
+          "text": {
+            "DRB": "For two women were accused to have circumcided their children: whom, the infants hanging at their breasts, when they had openly led them about through the city, they threw down headlong by the walls."
+          }
+        },
+        {
+          "number": 11,
+          "text": {
+            "DRB": "And others coming together to the next caves, and secretly keeping the day of the Sabbath, when they were discovered to Philip, were burnt with fire, because they feared for religion and observance, to help themselves with their hand."
+          }
+        },
+        {
+          "number": 12,
+          "text": {
+            "DRB": "But I beseech them that shall read this book, that they abhor not for the adversities, but that they account those things, which have happened, not to be for the destruction, but for the chastening of our stock."
+          }
+        },
+        {
+          "number": 13,
+          "text": {
+            "DRB": "For not to suffer sinners a long time to do as they will, but forthwith to punish, is a token of a great benefit."
+          }
+        },
+        {
+          "number": 14,
+          "text": {
+            "DRB": "For, not as in other nations our Lord patiently expecteth, that when the day of judgement shall come, he may punish them in the fullness of sins:"
+          }
+        },
+        {
+          "number": 15,
+          "text": {
+            "DRB": "so also doth he determine in us, that our sins being come to the end, so at length he may punish us."
+          }
+        },
+        {
+          "number": 16,
+          "text": {
+            "DRB": "For which cause he never certes removeth away his mercy from us: but chastening his people by adversity, he forsaketh them not."
+          }
+        },
+        {
+          "number": 17,
+          "text": {
+            "DRB": "But let these things be said of us in few words for an admonition of the readers. And now we must come to the story."
+          }
+        },
+        {
+          "number": 18,
           "text": {
             "KJV": "6:18 Eleazar one of the principall Scribes, an aged man, and of a well fauoured countenance, was constrained to open his mouth, and to eate swines flesh.",
             "NABRE": "6:18 Martyrdom of Eleazar. Eleazar, one of the foremost scribes, a man advanced in age and of noble appearance, was being forced to open his mouth to eat pork.",
-            "NRSV": "Eleazar, one of the foremost scribes, a man of advanced age and fine appearance, was being forced to open his mouth to eat swine’s flesh."
+            "NRSV": "Eleazar, one of the foremost scribes, a man of advanced age and fine appearance, was being forced to open his mouth to eat swine’s flesh.",
+            "DRB": "Therefore, Eleazarus one of the chief of the Scribes, a man striken in age, and comely of countenance, with open mouth gaping was compelled to eat swine's flesh."
           }
         },
         {
-          "num": 19,
+          "number": 19,
           "text": {
             "KJV": "6:19 But he chusing rather to die gloriously, then to liue stained with such an abomination, spit it forth, and came of his owne accord to the torment,",
             "NABRE": "6:19 But preferring a glorious death to a life of defilement, he went forward of his own accord to the instrument of torture,",
-            "NRSV": "But he, welcoming death with honor rather than life with pollution, went up to the rack of his own accord."
+            "NRSV": "But he, welcoming death with honor rather than life with pollution, went up to the rack of his own accord.",
+            "DRB": "But he embracing rather a most glorious death than an hateful life, went before voluntarily to the punishment."
+          }
+        },
+        {
+          "number": 20,
+          "text": {
+            "DRB": "And considering how he ought to come patiently sustaining, he determined not to commit unlawful things for love of life."
+          }
+        },
+        {
+          "number": 21,
+          "text": {
+            "DRB": "But they that stood by, moved with unlawful pity, for the old friendship of the man, taking him in secret, desired that flesh might be brought, which it was lawful for him to eat, that he might feign to have eaten, as the king had commanded, of the flesh of the sacrifice:"
+          }
+        },
+        {
+          "number": 22,
+          "text": {
+            "DRB": "that by this fact he might be delivered from death: and for the old friendship of the man, they did him this courtesy."
+          }
+        },
+        {
+          "number": 23,
+          "text": {
+            "DRB": "But he began to think upon the worthy preeminence of his age and ancientness, and the hoar hairs of natural nobility, and his doings from a child of very good conversation, and according to the ordinances, and the holy law made of God, he answered quickly, saying: that he would rather be sent unto hell."
+          }
+        },
+        {
+          "number": 24,
+          "text": {
+            "DRB": "For it is not meet, quoth he, for our age to feign: that many young men thinking, that Eleazarus of four score year and ten is passed to the life of Aliens:"
+          }
+        },
+        {
+          "number": 25,
+          "text": {
+            "DRB": "they also through my dissimulation, and for a little time of corruptible life, may be deceived, and hereby I may purchase a stain, and a curse to mine old age."
+          }
+        },
+        {
+          "number": 26,
+          "text": {
+            "DRB": "For although at this present time I be delivered from the punishments of men, yet neither alive nor dead shall I escape the hand of the Almighty."
+          }
+        },
+        {
+          "number": 27,
+          "text": {
+            "DRB": "Wherefore in departing manfully out of this life, I shall appear worthy of mine old age:"
+          }
+        },
+        {
+          "number": 28,
+          "text": {
+            "DRB": "& to young men I shall leave a constant example, if with ready mind and stoutly I suffer an honest death, for the most grave and most holy laws. These things being spoken, forthwith he was drawn to execution."
+          }
+        },
+        {
+          "number": 29,
+          "text": {
+            "DRB": "And they that led him, and had been a little before more mild, were turned into wrath for the words spoken of him, which they thought were uttered through arrogancy."
+          }
+        },
+        {
+          "number": 30,
+          "text": {
+            "DRB": "But when he was now in killing with the strokes, he groaned, and said: O Lord, which hast the holy knowledge, thou knowest manifestly that whereas I might be delivered from death, I do sustain sore pains of the body: but according to the soul, for thy fear I do willingly suffer these things."
+          }
+        },
+        {
+          "number": 31,
+          "text": {
+            "DRB": "And this man certes in this manner departed this life, leaving not only to young men, but also to the whole nation the memory of his death for an example of virtue and fortitude."
           }
         }
       ]
     },
     {
-      "num": 7,
+      "number": 7,
       "verses": [
         {
-          "num": 1,
+          "number": 1,
           "text": {
             "KJV": "7:1 It came to passe also that seuen brethren with their mother were taken, and compelled by the king against the lawe to taste swines flesh, and were tormented with scourges, and whips:",
             "NABRE": "7:1 Chapter 7 Martyrdom of a Mother and Her Seven Sons. It also happened that seven brothers with their mother were arrested and tortured with whips and scourges by the king to force them to eat pork in violation of God’s law.",
-            "NRSV": "It also happened that seven brothers with their mother were arrested and were being compelled by the king, under torture with whips and thongs, to partake of unlawful swine’s flesh."
+            "NRSV": "It also happened that seven brothers with their mother were arrested and were being compelled by the king, under torture with whips and thongs, to partake of unlawful swine’s flesh.",
+            "DRB": "And it came to pass, that seven brethren together with their mother being apprehended, to be compelled by the king to eat against the law swine's flesh, were tormented with whips and scourges."
           }
         },
         {
-          "num": 9,
+          "number": 2,
+          "text": {
+            "DRB": "But one of them which was the first, said thus: What seekest thou, and what wilt thou learn of us? We are ready to die rather than to transgress the laws of God, coming from our fathers."
+          }
+        },
+        {
+          "number": 3,
+          "text": {
+            "DRB": "The king therefore being wrath commanded frying pans, and brazen pots to be heated:"
+          }
+        },
+        {
+          "number": 4,
+          "text": {
+            "DRB": "the which forthwith being heated, he commanded his tongue, that had spoken first, to be cut out: and the skin of his head being drawn off, the ends also of his hands and feet to be chopped off, the rest of his brethren, and his mother looking on."
+          }
+        },
+        {
+          "number": 5,
+          "text": {
+            "DRB": "And when he was now made in all parts unprofitable, he commanded fire to be put unto him, and that breathing as yet he should be fried in the frying pan: wherein when he was long tormented, the rest together with the mother exhorted one another to die manfully,"
+          }
+        },
+        {
+          "number": 6,
+          "text": {
+            "DRB": "saying: Our Lord God will behold the truth, and will take pleasure in us, as Moyses declared in the profession of the Canticle: And in his servants he will take pleasure."
+          }
+        },
+        {
+          "number": 7,
+          "text": {
+            "DRB": "The first therefore being dead in this manner, they brought the next to make him a mocking stock: & the skin of his head with the hairs being drawn off, they asked if he would eat, before that he were punished throughout the whole body in every member."
+          }
+        },
+        {
+          "number": 8,
+          "text": {
+            "DRB": "But he answering in his country speech, said: I will not do it. Wherefore this also in the next place, received the torments of the first:"
+          }
+        },
+        {
+          "number": 9,
           "text": {
             "KJV": "7:9 And when hee was at the last gaspe, hee said, Thou like a fury takest vs out of this present life, but the king of the world shall raise vs vp, who haue died for his lawes, vnto euerlasting life.",
             "NABRE": "7:9 With his last breath he said: “You accursed fiend, you are depriving us of this present life, but the King of the universe will raise us up to live again forever, because we are dying for his laws.”",
-            "NRSV": "And when the second was at his last breath, he said, “You accursed wretch, you dismiss us from this present life, but the King of the universe will raise us up to an everlasting renewal of life, because we have died for his laws.”"
+            "NRSV": "And when the second was at his last breath, he said, “You accursed wretch, you dismiss us from this present life, but the King of the universe will raise us up to an everlasting renewal of life, because we have died for his laws.”",
+            "DRB": "and being at the very last gasp, thus he said: Thou indeed, o most wicked man, in this present life destroyest us: but the King of the world will raise us up which die for his laws, in the resurrection of eternal life."
           }
         },
         {
-          "num": 27,
+          "number": 10,
+          "text": {
+            "DRB": "After him the third is had in derision, and being demanded his tongue, he quickly put it forth, and constantly stretched out his hands:"
+          }
+        },
+        {
+          "number": 11,
+          "text": {
+            "DRB": "& with confidence he said: From heaven do I possess these, but for the laws of God now do I contemn these self same, because I hope that I shall receive them again of him."
+          }
+        },
+        {
+          "number": 12,
+          "text": {
+            "DRB": "So that the king, and they that were with him marveled at the young man's courage, because he esteemed the torments as nothing."
+          }
+        },
+        {
+          "number": 13,
+          "text": {
+            "DRB": "And this being thus dead, the fourth they vexed in like manner tormenting him."
+          }
+        },
+        {
+          "number": 14,
+          "text": {
+            "DRB": "And when he was now even to die, thus he said: It is better for them that are put to death by men to expect hope of God, that they shall be raised up again by him. For to thee there shall not be resurrection unto life."
+          }
+        },
+        {
+          "number": 15,
+          "text": {
+            "DRB": "And when they had brought the fifth, they tormented him. But he looking upon him,"
+          }
+        },
+        {
+          "number": 16,
+          "text": {
+            "DRB": "said: Thou having power among men, whereas thou art corruptible doest what thou wilt: but think not that our stock is forsaken of God."
+          }
+        },
+        {
+          "number": 17,
+          "text": {
+            "DRB": "And do thou patiently abide, and thou shalt see his great power, in what sort he will torment thee, and thy seed."
+          }
+        },
+        {
+          "number": 18,
+          "text": {
+            "DRB": "After him they brought the sixth, and he beginning to die, said thus: Be not deceived vainly: for we suffer this for our own sakes, sinning against our God, and things worthy of admiration are done in us:"
+          }
+        },
+        {
+          "number": 19,
+          "text": {
+            "DRB": "but do not think that thou shalt escape unpunished, for that thou hast attempted to fight against God."
+          }
+        },
+        {
+          "number": 20,
+          "text": {
+            "DRB": "But the mother above measure marvelous, & worthy of good men's memory, which beholding her seven sons perishing in one day's space, bare it with a good heart, for the hope that she had in God:"
+          }
+        },
+        {
+          "number": 21,
+          "text": {
+            "DRB": "exhorted every one of them in their country language manfully, being replenished with wisdom: and joining a man's heart to a woman's cogitation,"
+          }
+        },
+        {
+          "number": 22,
+          "text": {
+            "DRB": "she said to them: I know not how you appeared in my womb: for neither did I give you spirit and soul and life, and the members of every one I myself framed not."
+          }
+        },
+        {
+          "number": 23,
+          "text": {
+            "DRB": "But indeed the Creator of the world, that hath formed the nativity of man, and that invented the origin of all, and he will restore again with mercy unto you spirit and life, as now you despise yourselves for his laws."
+          }
+        },
+        {
+          "number": 24,
+          "text": {
+            "DRB": "But Antiochus thinking himself contemned, and withal despising the voice of the upbraider, when the younger was yet alive, he did not only exhort with words, but also with oath he affirmed that he would make him rich and happy, & being turned from the laws of his fathers, he would account him a friend, & give him things necessary."
+          }
+        },
+        {
+          "number": 25,
+          "text": {
+            "DRB": "But when the young man was not inclined to these things, the king called the mother, and counselled her to deal with the young man to save his life."
+          }
+        },
+        {
+          "number": 26,
+          "text": {
+            "DRB": "And when he had exhorted her in many words, she promised that she would counsel her son."
+          }
+        },
+        {
+          "number": 27,
           "text": {
             "KJV": "7:27 But shee bowing her selfe towards him, laughing the cruell tyrant to scorne, spake in her countrey language on this maner; O my sonne, haue pitie vpon mee that bare thee nine moneths in my wombe, and gaue thee sucke three yeeres, and nourished thee, and brought thee vp vnto this age, and endured the troubles of education.",
             "NABRE": "7:27 She leaned over close to him and, in derision of the cruel tyrant, said in their native language: “Son, have pity on me, who carried you in my womb for nine months, nursed you for three years, brought you up, educated and supported you to your present age.",
-            "NRSV": "The mother leaning over her son, fooling the cruel tyrant, she said in her native language: “My son, have pity on me... do not fear this butcher, but prove worthy of your brothers. Accept death, so that in God’s mercy I may get you back again along with your brothers.”"
+            "NRSV": "The mother leaning over her son, fooling the cruel tyrant, she said in her native language: “My son, have pity on me... do not fear this butcher, but prove worthy of your brothers. Accept death, so that in God’s mercy I may get you back again along with your brothers.”",
+            "DRB": "Therefore bending towards him, mocking the cruel tyrant, she said in her country language: My son have pity on me which have borne thee in my womb nine months, and gave thee milk for three years, and nourished thee, and brought thee unto this age."
+          }
+        },
+        {
+          "number": 28,
+          "text": {
+            "DRB": "I beseech thee my son, that thou look to heaven and earth, and to all things that are in them: and understand that God of nothing made them & mankind:"
+          }
+        },
+        {
+          "number": 29,
+          "text": {
+            "DRB": "so shall it come to pass, that thou wilt not fear this tormenter, but being made a worthy partaker with thy brethren, take thou death, that in that mercy I may receive thee again with thy brethren."
+          }
+        },
+        {
+          "number": 30,
+          "text": {
+            "DRB": "When she as yet was saying these things the young man said: For whom stay you? I obey not the commandment of the king, but the commandment of the law, which was given us by Moyses."
+          }
+        },
+        {
+          "number": 31,
+          "text": {
+            "DRB": "But thou that art become the inventer of all malice against the Hebrews, shall not escape the hand of God."
+          }
+        },
+        {
+          "number": 32,
+          "text": {
+            "DRB": "For we for our sins do suffer these things."
+          }
+        },
+        {
+          "number": 33,
+          "text": {
+            "DRB": "And if the Lord our God hath been angry with us a little for rebuke & correction: yet he will be reconciled again to his servants."
+          }
+        },
+        {
+          "number": 34,
+          "text": {
+            "DRB": "But thou o wicked, and of all men most flagitious, be not in vain extolled with vain hopes, inflamed against his servants."
+          }
+        },
+        {
+          "number": 35,
+          "text": {
+            "DRB": "For thou hast not yet escaped the judgement of the almighty God, and him that beholdeth all things."
+          }
+        },
+        {
+          "number": 36,
+          "text": {
+            "DRB": "For my brethren having now sustained short pain, are become under the testament of eternal life: but thou by the judgement of God shalt receive just punishment for thy pride."
+          }
+        },
+        {
+          "number": 37,
+          "text": {
+            "DRB": "And I as also my brethren do yield my life and my body for the laws of our fathers: invocating God to be propitious to our nation quickly, and that thou with torments and stripes mayst confess that he only is God."
+          }
+        },
+        {
+          "number": 38,
+          "text": {
+            "DRB": "But in me and in my brethren shall the wrath of the Almighty cease, which hath justly been brought upon all our stock."
+          }
+        },
+        {
+          "number": 39,
+          "text": {
+            "DRB": "Then the king incensed with anger, raged against him more cruelly above all the rest, taking it grievously that he was mocked."
+          }
+        },
+        {
+          "number": 40,
+          "text": {
+            "DRB": "And this same therefore died unspotted, wholly trusting in our Lord."
+          }
+        },
+        {
+          "number": 41,
+          "text": {
+            "DRB": "And last of all after the sons the mother also was consumed."
+          }
+        },
+        {
+          "number": 42,
+          "text": {
+            "DRB": "Therefore of the sacrifices, and of the exceeding cruelties there is enough said."
           }
         }
       ]
     },
     {
-      "num": 8,
+      "number": 8,
       "verses": [
         {
-          "num": 1,
+          "number": 1,
           "text": {
             "KJV": "8:1 Then Iudas Maccabeus and they that were with him, went priuily into the townes, and called their kinsefolkes together, and tooke vnto them all such as continued in the Iewes religion, and assembled about sixe thousand men.",
             "NABRE": "8:1 V. Victories of Judas and Purification of the Temple Chapter 8 Resistance from Judas Maccabeus. Judas Maccabeus and his companions entered the villages secretly, summoned their kindred, and enlisted others who had remained faithful to Judaism. Thus they assembled about six thousand men.",
-            "NRSV": "But Judas, who was also called Maccabeus, and his companions secretly entered the villages and summoned their kindred... and they mustered about six thousand at most."
+            "NRSV": "But Judas, who was also called Maccabeus, and his companions secretly entered the villages and summoned their kindred... and they mustered about six thousand at most.",
+            "DRB": "But Judas Machabeus and they that were with him, went in secretly into the towns: and calling together their kinsmen and taking unto them those that continued in Judaism, they brought out to them six thousand men."
           }
         },
         {
-          "num": 24,
+          "number": 2,
+          "text": {
+            "DRB": "And they invocated our Lord, that he would have respect unto his people that was trodden of all, and would have mercy on the temple, that was contaminated of the impious:"
+          }
+        },
+        {
+          "number": 3,
+          "text": {
+            "DRB": "he would have pity also upon the destruction of the city, which was forthwith to be made flat with the ground, and would hear the voice of the blood crying to him:"
+          }
+        },
+        {
+          "number": 4,
+          "text": {
+            "DRB": "he would remember also the most unjust deaths of innocent children, & the blasphemies done to his name, and would take indignation for them."
+          }
+        },
+        {
+          "number": 5,
+          "text": {
+            "DRB": "But Machabeus having gathered a multitude, became intolerable to the heathen: for the wrath of our Lord was turned into mercy."
+          }
+        },
+        {
+          "number": 6,
+          "text": {
+            "DRB": "And coming upon the castles and cities unlooked for, he burnt them: and taking commodious places, he made not few slaughters of the enemies:"
+          }
+        },
+        {
+          "number": 7,
+          "text": {
+            "DRB": "and especially in the nights he was carried to such excursions, and the fame of his manliness was spread abroad every-where."
+          }
+        },
+        {
+          "number": 8,
+          "text": {
+            "DRB": "But Philip seeing the man to come forward by little & little, & that things for the more part succeeded with him prosperously, wrote to Ptolomee the governor of Coelesyria & Phoenicia, to give aid to the king's affairs."
+          }
+        },
+        {
+          "number": 9,
+          "text": {
+            "DRB": "And he with speed sent Nicanor the son of Patroclus, of the principals of his friends, giving him of the nations mingled together, no less than twenty thousand armed men, to destroy utterly all the stock of the Jews, adjoining also unto him Gorgias a man of war, and in martial affairs of very great experience."
+          }
+        },
+        {
+          "number": 10,
+          "text": {
+            "DRB": "And Nicanor appointed, that he would supply unto the king the tribute that was to be given to the Romans, two thousand talents out of the captivity of the Jews:"
+          }
+        },
+        {
+          "number": 11,
+          "text": {
+            "DRB": "and forthwith he sent to the cities by the sea side, calling men together to the buying of the Jewish slaves, promising that he would sell ninety slaves for a talent, not looking to the vengeance, which was to follow him from the Almighty."
+          }
+        },
+        {
+          "number": 12,
+          "text": {
+            "DRB": "But Judas when he understood it, shewed to those Jews that were with him, the coming of Nicanor."
+          }
+        },
+        {
+          "number": 13,
+          "text": {
+            "DRB": "Of whom certain fearing, and not crediting the justice of God, fled away:"
+          }
+        },
+        {
+          "number": 14,
+          "text": {
+            "DRB": "and others if they had any thing left sold it, & withal besought our Lord, that he would deliver them from the impious Nicanor who had sold them before he came near them:"
+          }
+        },
+        {
+          "number": 15,
+          "text": {
+            "DRB": "and if not for them, yet for the testament that was with their fathers, & for the invocation of his holy & magnifical name upon them."
+          }
+        },
+        {
+          "number": 16,
+          "text": {
+            "DRB": "But Machabeus calling together seven thousand, that were with him, desired that they would not be reconciled to the enemies, nor fear the multitude of the enemies coming against them unjustly, but would fight manfully:"
+          }
+        },
+        {
+          "number": 17,
+          "text": {
+            "DRB": "having before their eyes the contumely, that was unjustly done by them to the holy place, & moreover the injury also of the city being made a laughing stock, besides also the ordinances of the ancesters broken."
+          }
+        },
+        {
+          "number": 18,
+          "text": {
+            "DRB": "For they indeed trust to their weapons, said he, and to their boldness also: but we trust in the Almighty Lord, who can utterly destroy both them coming against us, and the whole world with one beck."
+          }
+        },
+        {
+          "number": 19,
+          "text": {
+            "DRB": "And he admonished them also of the aids of God, that were given to their fathers: & that under Sennacherib an hundred four score five thousand perished."
+          }
+        },
+        {
+          "number": 20,
+          "text": {
+            "DRB": "And of the battle, that they had against the Galatians in Babylonia, how all they, when it came to the point, the Macedonians their fellows staggering, being only six thousand slew an hundred twenty thousand, by reason of the aid given them from heaven, and for these things obtained very many benefits."
+          }
+        },
+        {
+          "number": 21,
+          "text": {
+            "DRB": "With these words they were made constant, & ready to die for the laws, and their country."
+          }
+        },
+        {
+          "number": 22,
+          "text": {
+            "DRB": "He appointed therefore his brethren captains over both orders, Simon, and Joseph, and Jonathas, under every one putting a thousand and five hundreth."
+          }
+        },
+        {
+          "number": 23,
+          "text": {
+            "DRB": "Beside this also the holy Book being read unto them by Esdras,"
+          }
+        },
+        {
+          "number": 24,
           "text": {
             "KJV": "8:24 And by the helpe of the Almightie, they slew aboue nine thousand of their enemies, and wounded and maimed the most part of Nicanors hoste, and so put all to flight:",
             "NABRE": "8:24 With the Almighty as their ally, they killed more than nine thousand of the enemy, wounded and disabled the greater part of Nicanor’s army, and put all of them to flight.",
-            "NRSV": "With the Almighty as their ally, they killed more than nine thousand of the enemy, and wounded and disabled the greater part of Nicanor’s army, and forced them all to flee."
+            "NRSV": "With the Almighty as their ally, they killed more than nine thousand of the enemy, and wounded and disabled the greater part of Nicanor’s army, and forced them all to flee.",
+            "DRB": "and a sign of God's help being given, in the forward the duke himself joined battle with Nicanor. And the Almighty being made their helper, they slew above nine thousand men: and the greater part of Nicanor's army being made weak with wounds, they forced to fly."
+          }
+        },
+        {
+          "number": 25,
+          "text": {
+            "DRB": "And taking away their money that came to buy them, they pursued them on every hand,"
+          }
+        },
+        {
+          "number": 26,
+          "text": {
+            "DRB": "but they returned being taken short with the time: for it was the day before the Sabbath: for the which cause they continued not pursuing them."
+          }
+        },
+        {
+          "number": 27,
+          "text": {
+            "DRB": "But gathering together the armour and spoils of them, they kept the Sabbath: blessing our Lord that delivered them this day, distilling the beginning of mercy upon them."
+          }
+        },
+        {
+          "number": 28,
+          "text": {
+            "DRB": "But after the Sabbath they divided the spoils to the feeble and to orphans, & to widows: and the rest themselves had with their fellows."
+          }
+        },
+        {
+          "number": 29,
+          "text": {
+            "DRB": "These things therefore being done, and obsecration being made in common of all, they desired our merciful Lord, that he would be reconciled to his servants unto the end."
+          }
+        },
+        {
+          "number": 30,
+          "text": {
+            "DRB": "And of them that were with Timothee and Bacchides fighting against them, they slew above twenty thousand, and won the high holds: and they divided many preys, making equal portion to the feeble, pupils, and widows, yea and to the elder men."
+          }
+        },
+        {
+          "number": 31,
+          "text": {
+            "DRB": "And when they had diligently gathered together their armour, they laid all together in convenient places, and the residue of the spoils they carried to Jerusalem:"
+          }
+        },
+        {
+          "number": 32,
+          "text": {
+            "DRB": "and Philarches that was with Timothee, they slew, a wicked man, which in many things had afflicted the Jews."
+          }
+        },
+        {
+          "number": 33,
+          "text": {
+            "DRB": "And when they kept the feast of victory in Jerusalem, him that had burnt the holy gates, that is, Callisthenes, when he was fled into a certain house, they burnt, a worthy reward being repayed him for his impieties:"
+          }
+        },
+        {
+          "number": 34,
+          "text": {
+            "DRB": "But the most impious Nicanor, who had brought a thousand merchants to the sale of the Jews,"
+          }
+        },
+        {
+          "number": 35,
+          "text": {
+            "DRB": "being humbled through the help of our Lord by them, whom he esteemed nobody, laying aside his garment of glory, flying by the midland, came alone to Antioch, having gotten great infelicity by the destruction of his army."
+          }
+        },
+        {
+          "number": 36,
+          "text": {
+            "DRB": "And he that had promised that he would render tribute to the Romans of the captivity of Jerusalem, now professed that the Jews had God their protector, and that for him they could not be wounded, because they followed the laws appointed by him."
           }
         }
       ]
     },
     {
-      "num": 9,
+      "number": 9,
       "verses": [
         {
-          "num": 1,
+          "number": 1,
           "text": {
             "KJV": "9:1 About that time came Antiochus with dishonor out of the countrey of Persia.",
             "NABRE": "9:1 Chapter 9 Punishment and Death of Antiochus IV. About that time Antiochus retreated in disgrace from the region of Persia.",
-            "NRSV": "About that time it happened that Antiochus had retreated in disorder from the region of Persia."
+            "NRSV": "About that time it happened that Antiochus had retreated in disorder from the region of Persia.",
+            "DRB": "At that time Antiochus returned out of Persis dishonourably."
           }
         },
         {
-          "num": 5,
+          "number": 2,
+          "text": {
+            "DRB": "For he had entered into the city which is called Persepolis, and he attempted to spoil the temple, and to oppress the city: but the multitude running together to arms, they were put to flight: and so it chanced that Antiochus after his flight returned with dishonour."
+          }
+        },
+        {
+          "number": 3,
+          "text": {
+            "DRB": "And when he was come about Ecbatana, he understood the things that were done to Nicanor and Timothee."
+          }
+        },
+        {
+          "number": 4,
+          "text": {
+            "DRB": "And swelling in anger, he thought that he might wreak the injury of them, that had put him to flight, upon the Jews. And therefore he commanded his chariot to be driven, journeying without intermission, the heavenly judgement urging him forward, because he spoke so proudly, that he would come to Jerusalem, & make it an heap of the sepulchre of the Jews."
+          }
+        },
+        {
+          "number": 5,
           "text": {
             "KJV": "9:5 But the Lord almightie, the God of Israel smote him with an incurable and inuisible plague: for assoone as hee had spoken these words, a paine of the bowels that was remediles, came vpon him, & sore torments of the inner parts.",
             "NABRE": "9:5 So the all-seeing Lord, the God of Israel, struck him down with an incurable and invisible blow; for scarcely had he uttered those words when he was seized with excruciating pains in his bowels and sharp internal torment,",
-            "NRSV": "But the all-seeing Lord, the God of Israel, struck him with an incurable and invisible blow. As soon as he stopped speaking he was seized with a pain in his bowels, for which there was no relief, and with sharp internal tortures."
+            "NRSV": "But the all-seeing Lord, the God of Israel, struck him with an incurable and invisible blow. As soon as he stopped speaking he was seized with a pain in his bowels, for which there was no relief, and with sharp internal tortures.",
+            "DRB": "But he that seeth all things our Lord the God of Israel, struck him with an uncurable and invisible plague. For as he ended this very speech, a cruel plague of the bowels took him, and bitter torments of the inner parts:"
           }
         },
         {
-          "num": 28,
+          "number": 6,
+          "text": {
+            "DRB": "and indeed very justly, as who had tormented the bowels of others with many & new torments, albeit he by no means ceased from his malice."
+          }
+        },
+        {
+          "number": 7,
+          "text": {
+            "DRB": "And beside this replenished with pride, breathing fire in his mind against the Jews, & commanding the matter to be hastened, it chanced him going with violence to fall from the chariot, & his limbs to be vexed with a grievous bruising of the body."
+          }
+        },
+        {
+          "number": 8,
+          "text": {
+            "DRB": "And he that seemed to himself to rule even over the waves of the sea, replenished with pride above the measure of man, & to weigh the heights of mountains in a balance, now being humbled to the ground was carried in a portative seat, testifying the manifest power of God in himself:"
+          }
+        },
+        {
+          "number": 9,
+          "text": {
+            "DRB": "so that out of the body of the impious man, worms crawled abundantly, and his live flesh fell off for pains, with his smell also & stink the army was annoyed."
+          }
+        },
+        {
+          "number": 10,
+          "text": {
+            "DRB": "And he that a little before thought to touch the stars of heaven, him no man could carry for the intolerable stink."
+          }
+        },
+        {
+          "number": 11,
+          "text": {
+            "DRB": "Hereby therefore he began, being brought from his great pride, to come to the knowledge of himself, admonished by the plague of God, his pains increasing every moment."
+          }
+        },
+        {
+          "number": 12,
+          "text": {
+            "DRB": "And when neither himself now could abide his own stink, thus he said: It is reason to be subject to God, and a mortal man not to think of himself equally with God."
+          }
+        },
+        {
+          "number": 13,
+          "text": {
+            "DRB": "And this wicked man prayed to our Lord, of whom he was not to obtain mercy."
+          }
+        },
+        {
+          "number": 14,
+          "text": {
+            "DRB": "And the city to the which he came in haste to have brought it to the ground, and to have made it a sepulchre of bodies heaped together, now wisheth to make it free:"
+          }
+        },
+        {
+          "number": 15,
+          "text": {
+            "DRB": "And the Jews whom he said he would not vouchsafe worthy, no not of burial, but would give them to birds and wild beasts to be spoiled, and destroy them with the little ones, now he promiseth to make them equal with the Athenians."
+          }
+        },
+        {
+          "number": 16,
+          "text": {
+            "DRB": "The holy temple also, which before he had spoiled, he would adorn with goodly donaries, & would multiply the holy vessels, and of his revenues would allow the charges pertaining to the sacrifices."
+          }
+        },
+        {
+          "number": 17,
+          "text": {
+            "DRB": "Besides these things, that he would be a Jew also, and would walk through every place of the earth, & would declare the power of God."
+          }
+        },
+        {
+          "number": 18,
+          "text": {
+            "DRB": "But the pains ceasing not (for the just judgement of God was come upon him) despairing he wrote to the Jews by the manner of a supplication an epistle containing these words:"
+          }
+        },
+        {
+          "number": 19,
+          "text": {
+            "DRB": "TO His Very Good Subjects the Jews the king and prince Antiochus, much health, and welfare, and to be happy."
+          }
+        },
+        {
+          "number": 20,
+          "text": {
+            "DRB": "If you and your children farewell, and if things be with you to your mind, we give very great thanks."
+          }
+        },
+        {
+          "number": 21,
+          "text": {
+            "DRB": "And I being in infirmity, & mindful of you benignly, being returned out of the places of Persis, & taken with a grievous infirmity, have thought it necessary to have a care for the common profit:"
+          }
+        },
+        {
+          "number": 22,
+          "text": {
+            "DRB": "not despairing of myself, but having great hope to escape the sickness."
+          }
+        },
+        {
+          "number": 23,
+          "text": {
+            "DRB": "But considering that my father also, at what times he led his army in the higher places, he shewed who should take the princedom after him:"
+          }
+        },
+        {
+          "number": 24,
+          "text": {
+            "DRB": "that if any mishap should chance, or hard tidings be told, they that were in the countries, knowing to whom the whole government was committed, might not be troubled."
+          }
+        },
+        {
+          "number": 25,
+          "text": {
+            "DRB": "Besides this, considering that all the potestates, and bordering neighbours wait for times, and expect the event, I have appointed my son Antiochus king, whom, I having recourse oftentimes to the higher kingdoms did commend to many of you: and I have written to him that which is set down here beneath."
+          }
+        },
+        {
+          "number": 26,
+          "text": {
+            "DRB": "I pray you therefore, and desire you mindful of the benefits both public and private, that every one keep his fidelity to me, and to my son."
+          }
+        },
+        {
+          "number": 27,
+          "text": {
+            "DRB": "For I trust that he will deal modestly and gently, and following my purpose, and that he will be common unto you."
+          }
+        },
+        {
+          "number": 28,
           "text": {
             "KJV": "9:28 Thus the murtherer, and blasphemer hauing suffered most grieuously, as he entreated other men, so died he a miserable death in a strange countrey in the mountaines.",
             "NABRE": "9:28 So this murderer and blasphemer, after extreme sufferings, such as he had inflicted on others, died a miserable death in the mountains of a foreign land.",
-            "NRSV": "So the murderer and blasphemer, having endured the most intense suffering, such as he had imposed on others, ended his life most miserably among the mountains in a foreign land."
+            "NRSV": "So the murderer and blasphemer, having endured the most intense suffering, such as he had imposed on others, ended his life most miserably among the mountains in a foreign land.",
+            "DRB": "Therefore the murderer and blasphemer being very sore strucken, & as himself had handled others, in a strange country among the mountains, with a miserable death departed this life."
+          }
+        },
+        {
+          "number": 29,
+          "text": {
+            "DRB": "But Philip his foster brother removed his body: who fearing the son of Antiochus, went to Ptolomee Philometor into Ægypt."
           }
         }
       ]
     },
     {
-      "num": 10,
+      "number": 10,
       "verses": [
         {
-          "num": 1,
+          "number": 1,
           "text": {
             "KJV": "10:1 Now Maccabeus, and his company, the Lord guiding them, recouered the Temple, and the citie.",
             "NABRE": "10:1 Chapter 10 Purification of the Temple. When Maccabeus and his companions, under the Lord’s leadership, had recovered the temple and the city,",
-            "NRSV": "Now Maccabeus and his companions, the Lord leading them on, recovered the temple and the city;"
+            "NRSV": "Now Maccabeus and his companions, the Lord leading them on, recovered the temple and the city;",
+            "DRB": "But Machabeus, & they that were with him, our Lord protecting them, recovered the temple and the city again:"
           }
         },
         {
-          "num": 2,
+          "number": 2,
           "text": {
             "KJV": "10:2 But the altars, which the heathen had built in the open street, & also the Chappels they pulled downe.",
             "NABRE": "10:2 they destroyed the altars erected by the foreigners in the marketplace and the sacred shrines.",
-            "NRSV": "they tore down the altars that had been built in the public square by the foreigners."
+            "NRSV": "they tore down the altars that had been built in the public square by the foreigners.",
+            "DRB": "but the altars, which the aliens had set up through the streets, and also the temples he threw down."
           }
         },
         {
-          "num": 5,
+          "number": 3,
+          "text": {
+            "DRB": "And having purged the temple, they made another altar: and out of fired stones taking fire they offered sacrifices after two years, and set incense, and lamps, & the breads of proposition."
+          }
+        },
+        {
+          "number": 4,
+          "text": {
+            "DRB": "Which things being done, they besought our Lord prostrate on the ground, that they might no more fall into such evils: but and if they had sometime sinned, that they might be chastened of him more mildly, & not be delivered to barbarous, & blasphemous men."
+          }
+        },
+        {
+          "number": 5,
           "text": {
             "KJV": "10:5 Now vpon the same day that the strangers prophaned the Temple, on the very same day it was cleansed againe, euen the fiue and twentieth day of the same moneth, which is Casleu.",
             "NABRE": "10:5 On the anniversary of the day on which the temple had been profaned by the foreigners, that is, the twenty-fifth of the same month Kislev, the purification of the temple took place.",
-            "NRSV": "It happened that on the very same day on which the sanctuary had been profaned by the foreigners, the purification of the sanctuary took place, that is, on the twenty-fifth day of the same month, which was Chislev."
+            "NRSV": "It happened that on the very same day on which the sanctuary had been profaned by the foreigners, the purification of the sanctuary took place, that is, on the twenty-fifth day of the same month, which was Chislev.",
+            "DRB": "And what day the temple had been polluted of the aliens, it happened that on the same day was made the purification, the five & twentieth of the month, which was Casleu."
           }
         },
         {
-          "num": 8,
+          "number": 6,
+          "text": {
+            "DRB": "And with joy eight days they kept in manner of tabernacles, remembering that a little before they had kept the solemn day of Tabernacles in the mountains, & in dens after the manner of beasts."
+          }
+        },
+        {
+          "number": 7,
+          "text": {
+            "DRB": "For the which cause they bare before them stalks of herbs, & green boughs, and palms to him, that gave success to clean his place."
+          }
+        },
+        {
+          "number": 8,
           "text": {
             "KJV": "10:8 They ordeined also by a common statute, and decree, That euery yeere those dayes should be kept of the whole nation of the Iewes.",
             "NABRE": "10:8 By public decree and vote they prescribed that the whole Jewish nation should celebrate these days every year.",
-            "NRSV": "They decreed by public edict, ratified by vote, that the whole nation of the Jews should observe these days every year."
+            "NRSV": "They decreed by public edict, ratified by vote, that the whole nation of the Jews should observe these days every year.",
+            "DRB": "And they decreed by common precept & decree to all the nation of the Jews every year to keep these days."
+          }
+        },
+        {
+          "number": 9,
+          "text": {
+            "DRB": "And Antiochus that was called the Noble, his departure out of life was after this sort."
+          }
+        },
+        {
+          "number": 10,
+          "text": {
+            "DRB": "But now of Eupator the son of Antiochus the impious, we will tell the things that have been done, abridging the evils that were done in the wars."
+          }
+        },
+        {
+          "number": 11,
+          "text": {
+            "DRB": "For he having taken upon him the kingdom, appointed over the affairs of the king one Lysias general of the host of Phænicia and Syria."
+          }
+        },
+        {
+          "number": 12,
+          "text": {
+            "DRB": "For Ptolomee who was called Macer, determined to be a keeper of justice towards the Jews, & especially for the iniquity, that was done against them, and to deal peaceably with them."
+          }
+        },
+        {
+          "number": 13,
+          "text": {
+            "DRB": "But being accused for this of his friends to Eupator, when he was called oftentimes traitor, because he had left Cypres committed unto him by Philometor, and removing to Antiochus the Noble, had revolted also from him, he made an end of his life with poison."
+          }
+        },
+        {
+          "number": 14,
+          "text": {
+            "DRB": "But Gorgias being captain of the places, taking unto him strangers often warred against the Jews."
+          }
+        },
+        {
+          "number": 15,
+          "text": {
+            "DRB": "And the Idumeans that kept the commodious holds, received them that were chased from Jerusalem, and attempted to make battle."
+          }
+        },
+        {
+          "number": 16,
+          "text": {
+            "DRB": "And they that were with Machabeus, beseeching our Lord by prayers that he would be their helper, made an assault upon the holds of the Idumeans:"
+          }
+        },
+        {
+          "number": 17,
+          "text": {
+            "DRB": "and sticking to it with great force, they won the places, killed them that came in the way, & slew together no less than twenty thousand."
+          }
+        },
+        {
+          "number": 18,
+          "text": {
+            "DRB": "And whereas certain were fled into two towers very strong, having all provision to make resistance,"
+          }
+        },
+        {
+          "number": 19,
+          "text": {
+            "DRB": "Machabeus for the expugning of them, leaving Simon and Joseph, & also Zachæus, and such as were with them very many, himself turned to those battles which forced more."
+          }
+        },
+        {
+          "number": 20,
+          "text": {
+            "DRB": "But they that were with Simon, being led with covetousness, were persuaded with money by certain that were in the towers: and taking seventy thousand didrachmæs, they let certain escape."
+          }
+        },
+        {
+          "number": 21,
+          "text": {
+            "DRB": "But when it was told Machabeus what was done, assembling the princes of the people he accused them, that they had sold their brethren for money, their adversaries being let go."
+          }
+        },
+        {
+          "number": 22,
+          "text": {
+            "DRB": "These therefore being become traitors he slew, and forthwith he took the two towers."
+          }
+        },
+        {
+          "number": 23,
+          "text": {
+            "DRB": "And with weapons and hands doing all things prosperously, in the two holds he slew more than twenty thousand."
+          }
+        },
+        {
+          "number": 24,
+          "text": {
+            "DRB": "And Timothee, who before had been overcome of the Jews, having called together an army of foreign multitude, and gathering horsemen of Asia, came as to take Jury by arms."
+          }
+        },
+        {
+          "number": 25,
+          "text": {
+            "DRB": "But Machabeus and they that were with him, when he approached, besought our Lord, sprinkling their head with earth, and being girded about the loins with haircloths,"
+          }
+        },
+        {
+          "number": 26,
+          "text": {
+            "DRB": "lying flat at the brim of the altar, that he would be propitious to them, and an enemy to their enemies, and an adversary to their adversaries, as the law saith."
+          }
+        },
+        {
+          "number": 27,
+          "text": {
+            "DRB": "And so after prayer taking weapons, going forth somewhat far out of the city, & being come very near the enemies they pitched."
+          }
+        },
+        {
+          "number": 28,
+          "text": {
+            "DRB": "And at the very first rising of the sun both joined battle: these indeed having our Lord the surety of victory, & prosperity with virtue: but they had courage for the captain of the battle."
+          }
+        },
+        {
+          "number": 29,
+          "text": {
+            "DRB": "But when there was a sore fight, there appeared to the adversaries from heaven five men upon horses, comely with golden bridles, conducting the Jews:"
+          }
+        },
+        {
+          "number": 30,
+          "text": {
+            "DRB": "of whom two having Machabeus between them, compassing him round about with their armour, kept him safe: and against the adversaries they threw darts, and fire balls, whereby both confounded with blindness, and filled with perturbation they fell."
+          }
+        },
+        {
+          "number": 31,
+          "text": {
+            "DRB": "And there were slain twenty thousand five hundred, and horsemen six hundred."
+          }
+        },
+        {
+          "number": 32,
+          "text": {
+            "DRB": "But Timothee fled into Gazara a strong hold, whereof Chæreas was the captain."
+          }
+        },
+        {
+          "number": 33,
+          "text": {
+            "DRB": "And Machabeus, and they that were with him joyfully besieged the hold four days."
+          }
+        },
+        {
+          "number": 34,
+          "text": {
+            "DRB": "But they that were within, trusting to the place, blasphemed above measure, & cast forth abominable words."
+          }
+        },
+        {
+          "number": 35,
+          "text": {
+            "DRB": "But when the fifth day appeared, twenty young men of them that were with Machabeus, incensed in their minds because of the blasphemy, went manfully to the wall, and with fierce courage going on, they scaled to the top:"
+          }
+        },
+        {
+          "number": 36,
+          "text": {
+            "DRB": "Yea and the others also mounting up, attempted to set the towers and the gates on fire, and to burn the blasphemers themselves alive."
+          }
+        },
+        {
+          "number": 37,
+          "text": {
+            "DRB": "And the hold being sacked for two days together, they slew Timothee that was found hiding himself in a certain place: and his brother Chæreas, and Apollophanes they killed."
+          }
+        },
+        {
+          "number": 38,
+          "text": {
+            "DRB": "Which things being done, they blessed our Lord in hymns and confessions, who did great things in Israel, and gave them the victory."
           }
         }
       ]
     },
     {
-      "num": 11,
+      "number": 11,
       "verses": [
         {
-          "num": 1,
+          "number": 1,
           "text": {
             "KJV": "11:1 Not long after this, Lysias the kings protectour & cousin, who also managed the affaires, tooke sore displeasure for the things that were done.",
             "NABRE": "11:1 Chapter 11 Defeat of Lysias. Very soon afterward, Lysias, guardian and kinsman of the king and head of the government, being greatly displeased at what had happened,",
-            "NRSV": "Very soon after this, Lysias, the king’s guardian and kinsman... gathered about eighty thousand infantry and all his cavalry and came against the Jews."
+            "NRSV": "Very soon after this, Lysias, the king’s guardian and kinsman... gathered about eighty thousand infantry and all his cavalry and came against the Jews.",
+            "DRB": "But a little after Lysias the king's procurator, and cousin, and chief over the affairs, being greatly offended with these things, that had happened,"
           }
         },
         {
-          "num": 8,
+          "number": 2,
+          "text": {
+            "DRB": "having gathered four score thousand, & all the horsemen, came against the Jews, thinking that taking the city, he should make it an habitation for the Gentiles:"
+          }
+        },
+        {
+          "number": 3,
+          "text": {
+            "DRB": "and he should have the temple to make gain of money, as the rest of the temples of the Gentiles, & every year the priesthood to be sold:"
+          }
+        },
+        {
+          "number": 4,
+          "text": {
+            "DRB": "never recounting the power of God, but furious in mind, he trusted in the multitude of foot men, and thousands of horsemen, & in four score elephants."
+          }
+        },
+        {
+          "number": 5,
+          "text": {
+            "DRB": "And he entered into Jury, and approaching to Bethsura, which was in a narrow place from Jerusalem the space of five furlongs, he expugned that hold."
+          }
+        },
+        {
+          "number": 6,
+          "text": {
+            "DRB": "But as Machabeus, and they that were with him, understood that the holds were expugned, they besought our Lord with weeping and tears, and all the multitude together, that he would send a good Angel to the saving of Israel."
+          }
+        },
+        {
+          "number": 7,
+          "text": {
+            "DRB": "And Machabeus himself first taking weapons, exhorted the rest together with him, to adventure, and to give aid to their brethren."
+          }
+        },
+        {
+          "number": 8,
           "text": {
             "KJV": "11:8 And as they were at Ierusalem, there appeared before them on horsebacke, one in white clothing, shaking his armour of gold.",
             "NABRE": "11:8 Suddenly, while they were still near Jerusalem, a horseman appeared at their head, clothed in white garments and brandishing gold weapons.",
-            "NRSV": "And while they were still near Jerusalem, a horseman appeared at their head, clothed in white and brandishing weapons of gold."
+            "NRSV": "And while they were still near Jerusalem, a horseman appeared at their head, clothed in white and brandishing weapons of gold.",
+            "DRB": "And when they went forth together with prompt courage, at Jerusalem there appeared going before them an horseman in white clothing, with armour of gold, shaking a spear."
           }
         },
         {
-          "num": 11,
+          "number": 9,
+          "text": {
+            "DRB": "Then all they together blessed our merciful Lord, and took great courage: being ready to penetrate not only men, but also most fierce beasts, and walls of iron."
+          }
+        },
+        {
+          "number": 10,
+          "text": {
+            "DRB": "They went therefore promptly having an helper from heaven, and our Lord having pity upon them."
+          }
+        },
+        {
+          "number": 11,
           "text": {
             "KJV": "11:11 And giuing a charge vp&#333; their enemies like lions, they slew eleuen thousand footmen, & sixteene hundred horsemen, and put all the other to flight.",
             "NABRE": "11:11 Hurling themselves upon the enemy like lions, they laid low eleven thousand foot soldiers and sixteen hundred cavalry, and put all the rest to flight.",
-            "NRSV": "They hurled themselves like lions against the enemy, and laid low eleven thousand of them and sixteen hundred cavalry, and forced all the rest to flee."
+            "NRSV": "They hurled themselves like lions against the enemy, and laid low eleven thousand of them and sixteen hundred cavalry, and forced all the rest to flee.",
+            "DRB": "And like lions running violently upon the enemies, they overthrew of them eleven thousand footmen, and of horsemen a thousand six hundred:"
+          }
+        },
+        {
+          "number": 12,
+          "text": {
+            "DRB": "and they put to flight all, & very many of them being wounded scaped away naked. Yea and Lysias himself shamefully flying escaped."
+          }
+        },
+        {
+          "number": 13,
+          "text": {
+            "DRB": "And because he was not senseless recounting with himself, the diminution made on his side, & understanding the Hebrews to be invincible, because they rested upon the help of the almighty God, he sent unto them:"
+          }
+        },
+        {
+          "number": 14,
+          "text": {
+            "DRB": "& promised that he would consent to all things, that are just, and that he would force the king to be their friend."
+          }
+        },
+        {
+          "number": 15,
+          "text": {
+            "DRB": "And Machabeus granted to Lysias' requests, in all things having respect to the commonwealth and whatsoever Machabeus wrote to Lysias, concerning the Jews, the king granted it."
+          }
+        },
+        {
+          "number": 16,
+          "text": {
+            "DRB": "For there were epistles written to the Jews from Lysias, containing this tenure: Lysias to the people of the Jews health."
+          }
+        },
+        {
+          "number": 17,
+          "text": {
+            "DRB": "John and Absalom that were sent from you, delivering the writings, requested that I would accomplish those things which by them were signified."
+          }
+        },
+        {
+          "number": 18,
+          "text": {
+            "DRB": "Therefore whatsoever might be brought to the king I declared unto him: & that which the matters permitted I granted."
+          }
+        },
+        {
+          "number": 19,
+          "text": {
+            "DRB": "If therefore you keep fidelity in the affairs & henceforward, also will endeavour to be a cause of doing you good."
+          }
+        },
+        {
+          "number": 20,
+          "text": {
+            "DRB": "And concerning the rest, word for word I have given commandment both to these, and to them that are sent of me, to commune with you."
+          }
+        },
+        {
+          "number": 21,
+          "text": {
+            "DRB": "Fare ye well. In the year an hundred forty eight, of the month Dioscorus the four and twentieth day."
+          }
+        },
+        {
+          "number": 22,
+          "text": {
+            "DRB": "But the king's epistle contained these things: King Antiochus to Lysias his brother, health."
+          }
+        },
+        {
+          "number": 23,
+          "text": {
+            "DRB": "Our father being translated amongst the gods, we being willing that they that are in our kingdom should live without trouble, and employ diligence to their own matters,"
+          }
+        },
+        {
+          "number": 24,
+          "text": {
+            "DRB": "we have heard that the Jews consented not to my father to turn to the rite of the Greeks, but that they would keep their own institution, and therefore that they request us their rites to be granted them."
+          }
+        },
+        {
+          "number": 25,
+          "text": {
+            "DRB": "Being therefore desirous that this nation also be quiet, ordaining we have decreed, that the temple be restored unto them, that they might do according to the custom of their ancestors."
+          }
+        },
+        {
+          "number": 26,
+          "text": {
+            "DRB": "Thou shalt do well therefore if thou send to them, & give the right hand, that our pleasure being known they may be of good cheer, & look to their own commodities."
+          }
+        },
+        {
+          "number": 27,
+          "text": {
+            "DRB": "But to the Jews the king's epistle was in this manner: King Antiochus to the senate of the Jews, and to the rest of the Jews health."
+          }
+        },
+        {
+          "number": 28,
+          "text": {
+            "DRB": "If you fare well, you are so as we would: yea ourselves also fare well."
+          }
+        },
+        {
+          "number": 29,
+          "text": {
+            "DRB": "Menelaus came to us, saying that you would come down to your country men, that are with us."
+          }
+        },
+        {
+          "number": 30,
+          "text": {
+            "DRB": "To them therefore that come & go, until the thirtieth day of the month Xanthicus, we give the right hands of security,"
+          }
+        },
+        {
+          "number": 31,
+          "text": {
+            "DRB": "that the Jews may use their own meats, & their own laws, as also before: & that none of them by any means suffer molestation for these things, which have been done by ignorance."
+          }
+        },
+        {
+          "number": 32,
+          "text": {
+            "DRB": "And we have sent also Menelaus to speak to you."
+          }
+        },
+        {
+          "number": 33,
+          "text": {
+            "DRB": "Fare ye well. In the year an hundred forty eight, of the month Xanthicus the fifteenth day."
+          }
+        },
+        {
+          "number": 34,
+          "text": {
+            "DRB": "And the Romans also sent an epistle, which is thus: Quintus Memmius, and Titus Manilius legates of the Romans, to the people of the Jews health."
+          }
+        },
+        {
+          "number": 35,
+          "text": {
+            "DRB": "Concerning these things which Lysias the king's cousin hath granted you, we also have granted."
+          }
+        },
+        {
+          "number": 36,
+          "text": {
+            "DRB": "But touching the things which he thought good to be referred to the king, send ye forthwith somebody, conferring diligently among yourselves, that we may decree as is convenient for you: for we go to Antioch."
+          }
+        },
+        {
+          "number": 37,
+          "text": {
+            "DRB": "And therefore make haste to write again, that we also may know of what mind you are."
+          }
+        },
+        {
+          "number": 38,
+          "text": {
+            "DRB": "Fare ye well. In the year an hundred forty eight the fifteenth day of the month Xanthicus."
           }
         }
       ]
     },
     {
-      "num": 12,
+      "number": 12,
       "verses": [
         {
-          "num": 1,
+          "number": 1,
           "text": {
             "KJV": "12:1 When these Couenants were made, Lysias went vnto the king, and the Iewes were about their husbandrie.",
             "NABRE": "12:1 Chapter 12 Incidents at Joppa and Jamnia. After these agreements were made, Lysias returned to the king, and the Jews went about their farming.",
-            "NRSV": "When these agreements had been made, Lysias returned to the king, and the Jews went about their farming."
+            "NRSV": "When these agreements had been made, Lysias returned to the king, and the Jews went about their farming.",
+            "DRB": "These covenants being made, Lysias went forward to the king, and the Jews gave themselves to husbandry."
           }
         },
         {
-          "num": 32,
+          "number": 2,
+          "text": {
+            "DRB": "But they that stayed there, Timothie and Apollonius the son of Gennaius, & also Jerom, & Demophon, besides these also Nicanor the governor of Cyprus, did not suffer them to live in rest and quietness."
+          }
+        },
+        {
+          "number": 3,
+          "text": {
+            "DRB": "And the Joppites committed a certain flagitious fact, which was this: They desired the Jews with whom they dwelt, to go into the boats, which they had prepared, with their wives & children, as though no secret enmities were between them."
+          }
+        },
+        {
+          "number": 4,
+          "text": {
+            "DRB": "Therefore according to the common decree of the city, & they agreeing thereto, & because of the peace suspecting nothing: when they were gone forward into the depth, they drowned no less than two hundred."
+          }
+        },
+        {
+          "number": 5,
+          "text": {
+            "DRB": "Which cruelty Judas as he understood to be done upon the men of his nation, commanded the men that were with him: and invocating God the just judge,"
+          }
+        },
+        {
+          "number": 6,
+          "text": {
+            "DRB": "he came against the murderers of his brethren, & the haven he set on fire in the night, the boats he burnt, & them that were fled from the fire he slew with the sword."
+          }
+        },
+        {
+          "number": 7,
+          "text": {
+            "DRB": "And when he had thus done these things, he departed as to return again, & to root out all the Joppites."
+          }
+        },
+        {
+          "number": 8,
+          "text": {
+            "DRB": "But when he understood that they also, which were at Jamnia, would do in like manner to the Jews dwelling with them,"
+          }
+        },
+        {
+          "number": 9,
+          "text": {
+            "DRB": "he came upon the Jamnites also by night, & set the haven on fire with the ships, so that the light of the fire appeared at Jerusalem two hundred forty furlongs off."
+          }
+        },
+        {
+          "number": 10,
+          "text": {
+            "DRB": "When they were now departed thence nine furlongs, and made their journey towards Timothee, the Arabians five thousand men, & five hundred horsemen joined battle with them."
+          }
+        },
+        {
+          "number": 11,
+          "text": {
+            "DRB": "And when there was a mighty battle, and by the help of God it had succeeded prosperously, the rest of the Arabians that were overcome, besought Judas that the right hand might be given them, promising that they would give pastures, and profit them in other things."
+          }
+        },
+        {
+          "number": 12,
+          "text": {
+            "DRB": "And Judas thinking in very deed that they might be profitable in many things, promised peace: and right hands being taken, they departed to their tabernacles."
+          }
+        },
+        {
+          "number": 13,
+          "text": {
+            "DRB": "And he set also upon a certain city strong with bridges, & environed with walls, which was inhabited with multitudes of heathen of all sorts, the name whereof is Caspin."
+          }
+        },
+        {
+          "number": 14,
+          "text": {
+            "DRB": "But they that were within, trusting in the firmness of the walls, and the provision of victuals, dealt the more slackly, with reviling words provoking Judas, & blaspheming, & speaking such things as is not lawful to speak."
+          }
+        },
+        {
+          "number": 15,
+          "text": {
+            "DRB": "But Machabeus invocating the great Prince of the world, who without rams & engines in Jesus' time threw down Jericho, fiercely assaulted the walls."
+          }
+        },
+        {
+          "number": 16,
+          "text": {
+            "DRB": "And the city being taken by the will of our Lord he made innumerable slaughters, so that the pool adjoining of two furlongs in breadth, seemed to run died with blood."
+          }
+        },
+        {
+          "number": 17,
+          "text": {
+            "DRB": "From thence they departed seven hundred fifty furlongs, & they came to Characa to those Jews, that are called Tubianeians:"
+          }
+        },
+        {
+          "number": 18,
+          "text": {
+            "DRB": "and in those places they took not Timothee, & nothing being done he went back, having left in a certain place a very strong garrison."
+          }
+        },
+        {
+          "number": 19,
+          "text": {
+            "DRB": "But Dositheus and Sosipater, who were captains with Machabeus, slew them that were left of Timothee in the hold, ten thousand men."
+          }
+        },
+        {
+          "number": 20,
+          "text": {
+            "DRB": "And Machabeus ordaining about him six thousand, & placing them by bands, went forth against Timothee, who had with him an hundred twenty thousand footmen, and of horsemen two thousand five hundred."
+          }
+        },
+        {
+          "number": 21,
+          "text": {
+            "DRB": "And the coming of Judas being known, Timothee sent the women and children, and the other baggage before into the fortress, that is called Carnion: for it was invincible, and hard to come by, by reason of the straits of the places."
+          }
+        },
+        {
+          "number": 22,
+          "text": {
+            "DRB": "And when the first band of Judas had appeared, fear was strucken into the enemies, by the presence of God, who seeth all things, and they were put to flight one of another, so that they were rather overthrown of their own company, and were weakened with the strokes of their own swords."
+          }
+        },
+        {
+          "number": 23,
+          "text": {
+            "DRB": "But Judas was exceeding earnest punishing the profane men, and he overthrew of them thirty thousand men."
+          }
+        },
+        {
+          "number": 24,
+          "text": {
+            "DRB": "And Timothee himself fell into the hands of Dositheus' & Sosipater's parts, & with many prayers he besought that he might be let go alive, because he had parents & brethren of many of the Jews, whom it might happen by his death to be deceived."
+          }
+        },
+        {
+          "number": 25,
+          "text": {
+            "DRB": "And when he had given his faith that he would restore them according to the appointment they let him go without harm, for the safety of their brethren."
+          }
+        },
+        {
+          "number": 26,
+          "text": {
+            "DRB": "And Judas came back from Carnion, having slain twenty five thousand."
+          }
+        },
+        {
+          "number": 27,
+          "text": {
+            "DRB": "After the flight & slaughter of these, he moved his army to Ephron a strong city, wherein a multitude dwelt of diverse nations: and strong young men standing before the walls resisted manfully, & in this were many engines, and provision of darts."
+          }
+        },
+        {
+          "number": 28,
+          "text": {
+            "DRB": "But when they had invocated the Almighty, who with his power breaketh the forces of the enemies, they took the city: and of them that were within they overthrew twenty five thousand."
+          }
+        },
+        {
+          "number": 29,
+          "text": {
+            "DRB": "From thence they departed to a city of the Scythians, which was distant from Jerusalem six hundred furlongs."
+          }
+        },
+        {
+          "number": 30,
+          "text": {
+            "DRB": "But those Jews that were with the Scythopolitans testifying that they were used courteously of them, even in the times of misery that they dealt modestly with them:"
+          }
+        },
+        {
+          "number": 31,
+          "text": {
+            "DRB": "giving them thanks, and exhorting them also thence forward to be favourable toward their stock, they came to Jerusalem the solemn day of the weeks approaching."
+          }
+        },
+        {
+          "number": 32,
           "text": {
             "KJV": "12:32 And after the feast called Pentecost, they went foorth against Gorgias the gouernour of Idumea,",
             "NABRE": "12:32 After this feast, also called Pentecost, they lost no time in marching against Gorgias, governor of Idumea,",
-            "NRSV": "After the festival called Pentecost, they hurried against Gorgias, the governor of Idumea."
+            "NRSV": "After the festival called Pentecost, they hurried against Gorgias, the governor of Idumea.",
+            "DRB": "And after Pentecost they went against Gorgias the governor of Idumea."
           }
         },
         {
-          "num": 43,
+          "number": 33,
+          "text": {
+            "DRB": "And he went forth with footmen three thousand, and horsemen four hundred."
+          }
+        },
+        {
+          "number": 34,
+          "text": {
+            "DRB": "Who buckling together, it chanced few of the Jews to be slain."
+          }
+        },
+        {
+          "number": 35,
+          "text": {
+            "DRB": "But Dositheus one of the Bacenors an horseman, a valiant man, held Gorgias: and whereas he would have taken him alive, a certain horseman of the Thracians came upon him, and cut off his shoulder: and so Gorgias escaped into Maresa."
+          }
+        },
+        {
+          "number": 36,
+          "text": {
+            "DRB": "But they that were with Esdrin, fighting long, and being wearied, Judas invocated our Lord to be their helper and captain of the battle:"
+          }
+        },
+        {
+          "number": 37,
+          "text": {
+            "DRB": "beginning in his country language, and with hymns raising a cry, drave Gorgias' soldiers into flight."
+          }
+        },
+        {
+          "number": 38,
+          "text": {
+            "DRB": "And Judas having gathered an army came into the city Odollam: and when the seventh day came on, being purified according to the custom, they kept the Sabbath in the same place."
+          }
+        },
+        {
+          "number": 39,
+          "text": {
+            "DRB": "And the day following Judas came with his company, to take away the bodies of them that were overthrown, and with their kinsmen to lay them in the sepulchres of their fathers."
+          }
+        },
+        {
+          "number": 40,
+          "text": {
+            "DRB": "And they found under the coats of the slain some of the donaries of the idols, that were in Jamnia, from which the law forbiddeth the Jews: therefore it was made plain to all, that for that cause they were slain."
+          }
+        },
+        {
+          "number": 41,
+          "text": {
+            "DRB": "All therefore blessed the just judgement of our Lord, who had made manifest the hidden things."
+          }
+        },
+        {
+          "number": 42,
+          "text": {
+            "DRB": "And so turning to prayers, they besought him, that the same offence, which was committed, might be forgotten. But the most valiant Judas exhorted the people to keep themselves without sin, seeing before their eyes what was done, because of the sins of them that were overthrown."
+          }
+        },
+        {
+          "number": 43,
           "text": {
             "KJV": "12:43 And when he had made a gathering throughout the company, to the sum of two thousand drachmes of siluer, hee sent it to Ierusalem to offer a sinne offering, doing therein very well, and honestly, in that he was mindfull of the resurrection.",
             "NABRE": "12:43 He then took up a collection among all his soldiers, amounting to two thousand silver drachmas, which he sent to Jerusalem to provide for an expiatory sacrifice. In doing this he acted in a very excellent and noble way, inasmuch as he had the resurrection in mind;",
-            "NRSV": "Judas also took up a collection, man by man, to the amount of two thousand drachmas of silver, and sent it to Jerusalem to provide for a sin offering. In doing this he acted very well and honorably, taking account of the resurrection."
+            "NRSV": "Judas also took up a collection, man by man, to the amount of two thousand drachmas of silver, and sent it to Jerusalem to provide for a sin offering. In doing this he acted very well and honorably, taking account of the resurrection.",
+            "DRB": "And making a gathering, he sent twelve thousand drachmes of silver to Jerusalem for sacrifice to be offered for sin, well and religiously thinking of the resurrection."
           }
         },
         {
-          "num": 44,
+          "number": 44,
           "text": {
             "KJV": "12:44 (For if he had not hoped that they that were slaine should haue risen againe, it had bin superfluous and vaine, to pray for the dead.)",
             "NABRE": "12:44 for if he were not expecting the fallen to rise again, it would have been superfluous and foolish to pray for the dead.",
-            "NRSV": "For if he were not expecting that those who had fallen would rise again, it would have been superfluous and foolish to pray for the dead."
+            "NRSV": "For if he were not expecting that those who had fallen would rise again, it would have been superfluous and foolish to pray for the dead.",
+            "DRB": "(For unless he hoped that they that were slain should rise again, it should seem superfluous and vain to pray for the dead.)"
+          }
+        },
+        {
+          "number": 45,
+          "text": {
+            "DRB": "And because he considered that they, which had taken their sleep with godliness, had very good grace laid up for them."
+          }
+        },
+        {
+          "number": 46,
+          "text": {
+            "DRB": "It is therefore a holy, and healthful cogitation to pray for the dead, that they may be loosed from sins."
           }
         }
       ]
     },
     {
-      "num": 13,
+      "number": 13,
       "verses": [
         {
-          "num": 1,
+          "number": 1,
           "text": {
             "KJV": "13:1 In the hundreth forty and ninth yere it was told Iudas that Antiochus Eupator was c&#333;ming with a great power into Iudea;",
             "NABRE": "13:1 Chapter 13 Death of Menelaus. In the one hundred and forty-ninth year, Judas and his men learned that Antiochus Eupator was invading Judea with a large force,",
-            "NRSV": "In the one hundred forty-ninth year word came to Judas and his companions that Antiochus Eupator was coming with a great army against Judea,"
+            "NRSV": "In the one hundred forty-ninth year word came to Judas and his companions that Antiochus Eupator was coming with a great army against Judea,",
+            "DRB": "In the year an hundred forty nine Judas understood, that Antiochus Eupator came with a multitude against Jurie."
           }
         },
         {
-          "num": 4,
+          "number": 2,
+          "text": {
+            "DRB": "and with him Lysias the procurator, and chief over the affairs having with him of footmen an hundred ten thousand, and of horsemen five thousand, and elephants twenty two, chariots with hooks three hundred."
+          }
+        },
+        {
+          "number": 3,
+          "text": {
+            "DRB": "And Menelaus also joined himself with them: & with much deceit besought Antiochus, not for the weal of his country, but hoping that he should be appointed to the principality."
+          }
+        },
+        {
+          "number": 4,
           "text": {
             "KJV": "13:4 But the King of kings mooued Antiochus minde against this wicked wretch, and Lysias enformed the king, that this man was the cause of all mischiefe, so that the king commanded to bring him vnto Berea, and to put him to death, as the maner is in that place.",
             "NABRE": "13:4 But the King of kings aroused the anger of Antiochus against the scoundrel. When the king was shown by Lysias that Menelaus was to blame for all the trouble, he ordered him to be taken to Beroea and executed there in the customary local method.",
-            "NRSV": "But the King of kings aroused the anger of Antiochus against the villain Menelaus... and the king ordered that he be taken to Beroea and put to death."
+            "NRSV": "But the King of kings aroused the anger of Antiochus against the villain Menelaus... and the king ordered that he be taken to Beroea and put to death.",
+            "DRB": "But the King of kings stirred up Antiochus' mind against the sinner, and Lysias suggesting that he was the cause of all the evils, he commanded (as the custom is with them) that being apprehended he should be killed in the same place."
+          }
+        },
+        {
+          "number": 5,
+          "text": {
+            "DRB": "And there was in the same place a tower of fifty cubits, having an heap of ashes on every side: this had a prospect steep down."
+          }
+        },
+        {
+          "number": 6,
+          "text": {
+            "DRB": "From thence he commanded the sacrilegious person to be thrown down into the ashes, all thrusting him forward to death."
+          }
+        },
+        {
+          "number": 7,
+          "text": {
+            "DRB": "And by such law it chanced the transgressor of the law to die: and Menelaus not to be put into the earth."
+          }
+        },
+        {
+          "number": 8,
+          "text": {
+            "DRB": "And indeed very justly, because he committed many offences toward the altar of God, the fire and ashes whereof was holy: himself was condemned into the death of ashes."
+          }
+        },
+        {
+          "number": 9,
+          "text": {
+            "DRB": "But the king furious in mind, came to shew himself worse to the Jews than his father."
+          }
+        },
+        {
+          "number": 10,
+          "text": {
+            "DRB": "Which things when Judas understood, he commanded the people that day and night they should invocate our Lord, that as always now also he would help them:"
+          }
+        },
+        {
+          "number": 11,
+          "text": {
+            "DRB": "as who were afraid to be deprived of the law, and their country, and the holy temple: and that he would not suffer the people that had of late taken breath a little while, to be again subdued to the blasphemous nations."
+          }
+        },
+        {
+          "number": 12,
+          "text": {
+            "DRB": "All therefore doing it together, and craving mercy of our Lord with weeping and fastings, being prostrate for three days continually, Judas exhorted them to prepare themselves."
+          }
+        },
+        {
+          "number": 13,
+          "text": {
+            "DRB": "But he with the ancients consulted, before the king should bring his army to Jury, and win the city, to go out, and to commit the event of the thing to the judgement of our Lord."
+          }
+        },
+        {
+          "number": 14,
+          "text": {
+            "DRB": "Committing therefore the power and charge of all to God, the creator of the world, and having exhorted his company to fight manfully, and to stand even to death for the laws, the temple, the city, their country, and citizens: he placed his army about Modin."
+          }
+        },
+        {
+          "number": 15,
+          "text": {
+            "DRB": "And having given a sign to his company of the victory of God, with most valiant young men picked out, by night setting upon the king's court, in the camp he slew four thousand men, and the greatest of the elephants, with them that had been placed thereupon,"
+          }
+        },
+        {
+          "number": 16,
+          "text": {
+            "DRB": "& he filled the camp of the enemies with exceeding fear & perturbation, & the things being prosperously achieved, they departed."
+          }
+        },
+        {
+          "number": 17,
+          "text": {
+            "DRB": "And this was done when the day appeared, the protection of our Lord helping him."
+          }
+        },
+        {
+          "number": 18,
+          "text": {
+            "DRB": "But the king having taken a taste of the hardiness of the Jews, attempted the difficulty of the places by policy:"
+          }
+        },
+        {
+          "number": 19,
+          "text": {
+            "DRB": "& he moved his camp to Bethsura, which was a strong hold of the Jews: but he was put to flight, he fell, he was diminished."
+          }
+        },
+        {
+          "number": 20,
+          "text": {
+            "DRB": "And to them that were within Judas sent necessaries."
+          }
+        },
+        {
+          "number": 21,
+          "text": {
+            "DRB": "But one Rhodocus of the Jews' army uttered the secrets to the enemies, who being sought for was apprehended, and shut up."
+          }
+        },
+        {
+          "number": 22,
+          "text": {
+            "DRB": "Again the king had talk with them that were in Bethsura: he gave the right hand: he took it: he went away."
+          }
+        },
+        {
+          "number": 23,
+          "text": {
+            "DRB": "He joined battle with Judas, he was overcome. And as he understood that Philippe rebelled at Antioch, who was left over the affairs, dismayed in mind entreating the Jews, and yielding unto them, he sweareth concerning all things that seemed reason, and being reconciled he offered sacrifice, honoured the temple, and gave hosts."
+          }
+        },
+        {
+          "number": 24,
+          "text": {
+            "DRB": "He embraced Machabeus, and made him governor and prince from Ptolemais even to the Gerrenians."
+          }
+        },
+        {
+          "number": 25,
+          "text": {
+            "DRB": "But after, as he came to Ptolemais the Ptolemaians took grievously the covenant of amity, being offended lest perhaps they would break their league."
+          }
+        },
+        {
+          "number": 26,
+          "text": {
+            "DRB": "Then Lysias went up to the judgement seat, and declared the reason, and appeased the people, and returned to Antioch: and in this manner the king's journey and return proceeded."
           }
         }
       ]
     },
     {
-      "num": 14,
+      "number": 14,
       "verses": [
         {
-          "num": 1,
+          "number": 1,
           "text": {
             "KJV": "14:1 After three yeres was Iudas enformed that Demetrius the sonne of Seleucus hauing entred by the hauen of Tripolis with a great power and nauie,",
             "NABRE": "14:1 Chapter 14 Three years later, Judas and his companions learned that Demetrius, son of Seleucus, had sailed into the port of Tripolis with a powerful army and a fleet,",
-            "NRSV": "Three years later, word came to Judas and his companions that Demetrius son of Seleucus had sailed into the harbor of Tripolis with a strong army and a fleet."
+            "NRSV": "Three years later, word came to Judas and his companions that Demetrius son of Seleucus had sailed into the harbor of Tripolis with a strong army and a fleet.",
+            "DRB": "But after the space of three years Judas understood, and they that were with him, that Demetrius the son of Seleucus with a strong multitude, & with ships was come up by the port of Tripolis to commodious places,"
           }
         },
         {
-          "num": 3,
+          "number": 2,
+          "text": {
+            "DRB": "and held the countries against Antiochus, and his governor Lysias."
+          }
+        },
+        {
+          "number": 3,
           "text": {
             "KJV": "14:3 Now one Alcimus who had beene hie Priest, and had defiled himselfe wilfully in the times of their mingling (with the Gentiles) seeing that by no meanes hee could saue himselfe, nor haue any more accesse to the holy Altar,",
             "NABRE": "14:3 A certain Alcimus, a former high priest, who had willfully incurred defilement before the time of the revolt, realized that there was no way for him to be safe and regain access to the holy altar.",
-            "NRSV": "Now a certain Alcimus, who had formerly been high priest but had willfully polluted himself... went to King Demetrius."
+            "NRSV": "Now a certain Alcimus, who had formerly been high priest but had willfully polluted himself... went to King Demetrius.",
+            "DRB": "And one Alcimus that had been highpriest, but voluntarily was contaminated in the time of the confusion, considering that there was safety for him by no means, nor access to the altar,"
           }
         },
         {
-          "num": 12,
+          "number": 4,
+          "text": {
+            "DRB": "came to king Demetrius in the year an hundred fifty, offering him a crown of gold, & a palm, & besides these, Talloes, which seemed to be of the temple. And that same day indeed he held his peace."
+          }
+        },
+        {
+          "number": 5,
+          "text": {
+            "DRB": "But having gotten a commodious time for his madness, being called of Demetrius to counsel, and asked on what thing and counsels the Jews rested, he answered:"
+          }
+        },
+        {
+          "number": 6,
+          "text": {
+            "DRB": "They of the Jews that are called Assidians, of whom Judas Machabeus is captain, nourish battles, and move seditions, neither do they suffer the realm to be quiet."
+          }
+        },
+        {
+          "number": 7,
+          "text": {
+            "DRB": "For I also being defrauded of my ancestors' glory (I mean of the high priesthood) am come hither:"
+          }
+        },
+        {
+          "number": 8,
+          "text": {
+            "DRB": "principally indeed keeping fidelity to the king's commodities, but secondly also providing for my citizens, for by their naughtiness all our stock is not a little vexed."
+          }
+        },
+        {
+          "number": 9,
+          "text": {
+            "DRB": "But all these things being known, o king, provide I pray thee, both for the country, and for our stock according to thy humanity published to all men."
+          }
+        },
+        {
+          "number": 10,
+          "text": {
+            "DRB": "For as long as Judas is alive, it is unpossible that there be peace to the affairs."
+          }
+        },
+        {
+          "number": 11,
+          "text": {
+            "DRB": "And such things being said of him, the other friends also behaving themselves as enemies against Judas, incensed Demetrius."
+          }
+        },
+        {
+          "number": 12,
           "text": {
             "KJV": "14:12 And foorthwith calling Nicanor, who had bene master of the Elephants, and making him gouernour ouer Iudea, he sent him forth,",
             "NABRE": "14:12 Dealings with Nicanor. The king immediately chose Nicanor, who had been in command of the elephants, and appointed him governor of Judea. He sent him off",
-            "NRSV": "The king at once selected Nicanor, who had been master of the elephants, and appointed him governor of Judea and sent him off,"
+            "NRSV": "The king at once selected Nicanor, who had been master of the elephants, and appointed him governor of Judea and sent him off,",
+            "DRB": "Who forthwith sent Nicanor, chief over the elephants captain into Jurie:"
           }
         },
         {
-          "num": 13,
+          "number": 13,
           "text": {
             "KJV": "14:13 C&#333;manding him to slay Iudas, & to scatter them that were him, & to make Alcimus high priest of the great Temple.",
             "NABRE": "14:13 with orders to put Judas to death, to disperse his followers, and to set up Alcimus as high priest of the great temple.",
-            "NRSV": "with orders to kill Judas and scatter his companions, and to install Alcimus as high priest of the great temple."
+            "NRSV": "with orders to kill Judas and scatter his companions, and to install Alcimus as high priest of the great temple.",
+            "DRB": "giving him commission, that he should take Judas himself: but them that were with him, he should disperse, & make Alcimus the high priest of the greatest temple."
+          }
+        },
+        {
+          "number": 14,
+          "text": {
+            "DRB": "Then the nations, which had fled from Judas out of Jurie, joined themselves by troops with Nicanor, esteeming the miseries and calamities of the Jews the prosperities of their own affairs."
+          }
+        },
+        {
+          "number": 15,
+          "text": {
+            "DRB": "The Jews therefore having heard of Nicanor's coming, and the assembly of the nations, being sprinkled with earth besought him, that ordained his people to keep them for ever, & that protecteth his portion by evident signs."
+          }
+        },
+        {
+          "number": 16,
+          "text": {
+            "DRB": "And the captain commanding forthwith they removed from thence, and they came together to the castle of Dessau."
+          }
+        },
+        {
+          "number": 17,
+          "text": {
+            "DRB": "And Simon the brother of Judas had joined battle with Nicanor: but he was made afraid with the sudden coming of the adversaries."
+          }
+        },
+        {
+          "number": 18,
+          "text": {
+            "DRB": "Nevertheless Nicanor hearing the manliness of Judas' companions, & greatness of courage, that they had for the conflicts of their country, was afraid to make trial by blood."
+          }
+        },
+        {
+          "number": 19,
+          "text": {
+            "DRB": "Wherefore he sent Posidonius, and Theodotius, and Matthias before to give and take the right hands."
+          }
+        },
+        {
+          "number": 20,
+          "text": {
+            "DRB": "And when there was long consultation of these things, and the captain himself had moved it to the multitude, there was one sentence of them all to accord unto amity."
+          }
+        },
+        {
+          "number": 21,
+          "text": {
+            "DRB": "Therefore they appointed a day, wherein they might secretly deal among themselves, and seats were brought forth & set for every one."
+          }
+        },
+        {
+          "number": 22,
+          "text": {
+            "DRB": "But Judas commanded armed men to be in places convenient, lest perhaps some mischief might suddenly arise from the enemies: and they made agreeable communication."
+          }
+        },
+        {
+          "number": 23,
+          "text": {
+            "DRB": "Nicanor abode at Jerusalem, and did nothing unjustly, and the flocks of the multitudes, that had been gathered together he diminished."
+          }
+        },
+        {
+          "number": 24,
+          "text": {
+            "DRB": "And he esteemed Judas always dear from the heart, and he was inclined to the man."
+          }
+        },
+        {
+          "number": 25,
+          "text": {
+            "DRB": "And he desired him to marry a wife, and to beget children. He made a marriage, he lived quietly, and they lived in common."
+          }
+        },
+        {
+          "number": 26,
+          "text": {
+            "DRB": "But Alcimus seeing their charity one towards another, and the covenants, came to Demetrius, and said that Nicanor assented to foreign matters, and that he meant to make Judas being a traitor to the kingdom, his successor."
+          }
+        },
+        {
+          "number": 27,
+          "text": {
+            "DRB": "Therefore the king being exasperated with this man's most wicked criminations, wrote to Nicanor, saying, that he indeed was greatly displeased for the covenant of their amity: nevertheless that he commanded him to send Machabeus quickly prisoner to Antioch."
+          }
+        },
+        {
+          "number": 28,
+          "text": {
+            "DRB": "Which things being known Nicanor was amazed, and took it grievously, if he should undo those things which they had covenanted, being nothing hurt of the man."
+          }
+        },
+        {
+          "number": 29,
+          "text": {
+            "DRB": "But because he could not resist the king, he observed opportunity whereby to accomplish the commandment."
+          }
+        },
+        {
+          "number": 30,
+          "text": {
+            "DRB": "But Machabeus seeing that Nicanor dealt with him more austerely, and that he exhibited his accustomed meeting more sternly, understanding this austerity not to be of good, a few of his company gathered together, he hid himself from Nicanor."
+          }
+        },
+        {
+          "number": 31,
+          "text": {
+            "DRB": "Which when he understood that he was stoutly prevented of the man, he came to the most great and most holy temple: and the Priests offering the accustomed hosts, he commanded the man to be delivered unto him."
+          }
+        },
+        {
+          "number": 32,
+          "text": {
+            "DRB": "Who saying with an oath, that they knew not where he was, that was demanded, stretching out his hand to the temple,"
+          }
+        },
+        {
+          "number": 33,
+          "text": {
+            "DRB": "he sware, saying: Unless you will deliver Judas prisoner unto me, I will beat down this temple of God to the flat ground, and will dig down the altar, and this temple I will consecrate to Liber pater."
+          }
+        },
+        {
+          "number": 34,
+          "text": {
+            "DRB": "And when he had said these things, he departed. But the Priests stretching forth their hands unto heaven, invocated him that was always the defender of their nation, saying thus:"
+          }
+        },
+        {
+          "number": 35,
+          "text": {
+            "DRB": "Thou o Lord of all, which lackest nothing, wouldest a temple of thy habitation to be made among us."
+          }
+        },
+        {
+          "number": 36,
+          "text": {
+            "DRB": "And now o Lord holy of all holies, preserve for ever this house impolluted, which of late hath been cleansed."
+          }
+        },
+        {
+          "number": 37,
+          "text": {
+            "DRB": "And Razias one of the ancients of Jerusalem, was accused to Nicanor, a man that was a lover of the city, and well reported of, who for his affection was called father of the Jews."
+          }
+        },
+        {
+          "number": 38,
+          "text": {
+            "DRB": "This man long time kept the purpose of continency in Judaism, and content to give his body and life for perseverance."
+          }
+        },
+        {
+          "number": 39,
+          "text": {
+            "DRB": "But Nicanor willing to manifest the hatred that he had against the Jews, sent five hundred soldiers to take him."
+          }
+        },
+        {
+          "number": 40,
+          "text": {
+            "DRB": "For he thought if he had entrapped him, that he should do the Jews very great hurt."
+          }
+        },
+        {
+          "number": 41,
+          "text": {
+            "DRB": "But the multitudes coveting to rush into his house, and to break open the gate, and to set fire thereto, when he was in taking, he struck himself with a sword:"
+          }
+        },
+        {
+          "number": 42,
+          "text": {
+            "DRB": "choosing to die nobly rather than to be made subject to sinners, and against his noble birth to suffer unworthy injuries."
+          }
+        },
+        {
+          "number": 43,
+          "text": {
+            "DRB": "But whereas for haste he had not made the wound with a sure struck, and the multitudes brake in within the doors, running back boldly to the wall, he threw down himself manfully headlong unto the multitudes:"
+          }
+        },
+        {
+          "number": 44,
+          "text": {
+            "DRB": "who quickly giving place to his fall he fell upon his neck."
+          }
+        },
+        {
+          "number": 45,
+          "text": {
+            "DRB": "And when he had breathed, incensed in mind he arose: and when his blood ran with a great stream, and he was wounded with most grievous wounds, running he passed through the multitude:"
+          }
+        },
+        {
+          "number": 46,
+          "text": {
+            "DRB": "and standing upon a certain steep rock, and now being become without blood, griping his bowels, with both hands he cast them upon multitudes, invocating the dominatour of life and spirit, that he would restore these to him again: and so he departed this life."
           }
         }
       ]
     },
     {
-      "num": 15,
+      "number": 15,
       "verses": [
         {
-          "num": 1,
+          "number": 1,
           "text": {
             "KJV": "15:1 But Nicanor hearing that Iudas and his company were in the strong places about Samaria, resolued without any danger to set vpon them on &thorn; sabbath day.",
             "NABRE": "15:1 Chapter 15 Nicanor’s Arrogance. When Nicanor learned that Judas and his companions were in the territory of Samaria, he decided he could attack them in complete safety on the day of rest.",
-            "NRSV": "When Nicanor heard that Judas and his companions were in the region of Samaria, he made plans to attack them with complete safety on the day of rest."
+            "NRSV": "When Nicanor heard that Judas and his companions were in the region of Samaria, he made plans to attack them with complete safety on the day of rest.",
+            "DRB": "But Nicanor as he understood that Judas was in the places of Samaria, he purposed with all violence to join battle the day of the Sabbath."
           }
         },
         {
-          "num": 12,
+          "number": 2,
+          "text": {
+            "DRB": "But the Jews that of necessity followed him, saying do not so fiercely and barbarously, but give honour to the day of the sanctification, and honour him that beholdeth all things:"
+          }
+        },
+        {
+          "number": 3,
+          "text": {
+            "DRB": "that unhappy man asked, if there were a power in heaven, that commanded the Sabbath day to be kept."
+          }
+        },
+        {
+          "number": 4,
+          "text": {
+            "DRB": "And they answering: There is the living Lord himself in heaven, the potent, that commanded the seventh day to be kept."
+          }
+        },
+        {
+          "number": 5,
+          "text": {
+            "DRB": "But he said. And I am potent upon the earth, that commanded arms to be taken, and the king's affairs to be accomplished. Nevertheless he obtained not to accomplish his counsel."
+          }
+        },
+        {
+          "number": 6,
+          "text": {
+            "DRB": "And Nicanor indeed puffed up with exceeding pride, had thought to have set up a common victorious memory of Judas."
+          }
+        },
+        {
+          "number": 7,
+          "text": {
+            "DRB": "But Machabeus always trusted with all hope that there would come aid from God to them."
+          }
+        },
+        {
+          "number": 8,
+          "text": {
+            "DRB": "And exhorted his company, that they should not fear at the coming of the nations, but should have in mind the aids given unto them from heaven, and now should hope that they should have the victory from the Almighty."
+          }
+        },
+        {
+          "number": 9,
+          "text": {
+            "DRB": "And speaking unto them out of the law, and the Prophets, admonishing them also of the conflicts, that they had made before, he made them the more prompt:"
+          }
+        },
+        {
+          "number": 10,
+          "text": {
+            "DRB": "and so their hearts being encouraged, withal he shewed the fraud of the Gentiles, and their breaking of oaths."
+          }
+        },
+        {
+          "number": 11,
+          "text": {
+            "DRB": "And he armed every one of them not with fence of buckler and spear, but with very good words, and exhortations, declaring a dream worthy to be credited, whereby he rejoiced them all."
+          }
+        },
+        {
+          "number": 12,
           "text": {
             "KJV": "15:12 And this was his vision: that Onias, who had bin high Priest, a vertuous, and a good man, reuerend in conuersation, gentle in condition, well spoken also, and exercised from a child in all points of vertue, holding vp his hands, prayed for the whole bodie of the Iewes.",
             "NABRE": "15:12 What he saw was this: Onias, the former high priest, a noble and good man, modest in bearing, gentle in manner, distinguished in speech, and trained from childhood in all that belongs to excellence, was praying with outstretched arms for the whole Jewish community.",
-            "NRSV": "What Judas saw was this: Onias, who had been high priest... was praying with outstretched hands for the whole body of the Jews."
+            "NRSV": "What Judas saw was this: Onias, who had been high priest... was praying with outstretched hands for the whole body of the Jews.",
+            "DRB": "And the vision was in this manner: Onias who had been the high-Priest, a good and benign man, reverent to behold, modest of manners, and comely of speech, and who from a child was exercised in virtues, that he stretching forth the hands prayed for all the people of the Jews."
           }
         },
         {
-          "num": 13,
+          "number": 13,
           "text": {
             "KJV": "15:13 This done, in like maner there appeared a man with gray haires, & exceeding glorious, who was of a wonderfull and excellent maiestie.",
             "NABRE": "15:13 Then in the same way another man appeared, distinguished by his white hair and dignity, and with an air of wondrous and majestic authority.",
-            "NRSV": "Then in the same fashion another man appeared... distinguished by his gray hair and dignity."
+            "NRSV": "Then in the same fashion another man appeared... distinguished by his gray hair and dignity.",
+            "DRB": "After this that there appeared also another man marvelous for age, and glory, and for the port of great dignity about him."
           }
         },
         {
-          "num": 14,
+          "number": 14,
           "text": {
             "KJV": "15:14 Then Onias answered, saying, This is a louer of the brethren, who prayeth much for the people, and for the holy citie, (to wit) Ieremias &thorn; prophet of God.",
             "NABRE": "15:14 Onias then said of him, “This is a man who loves his fellow Jews and fervently prays for the people and the holy city—the prophet of God, Jeremiah.”",
-            "NRSV": "And Onias spoke, saying, “This is a man who loves the family of Israel and prays much for the people and the holy city—Jeremiah, the prophet of God.”"
+            "NRSV": "And Onias spoke, saying, “This is a man who loves the family of Israel and prays much for the people and the holy city—Jeremiah, the prophet of God.”",
+            "DRB": "And that Onias answering said: This is a lover of his brethren, and of the people of Israel: this is he that prayeth much for the people, and for the whole city, Jeremy the Prophet of God."
           }
         },
         {
-          "num": 15,
+          "number": 15,
           "text": {
             "KJV": "15:15 Whereupon Ieremias, holding forth his right hand, gaue to Iudas a sword of gold, and in giuing it spake thus:",
             "NABRE": "15:15 Stretching out his right hand, Jeremiah presented a gold sword to Judas. As he gave it to him he said,",
-            "NRSV": "Jeremiah stretched out his right hand and gave to Judas a golden sword."
+            "NRSV": "Jeremiah stretched out his right hand and gave to Judas a golden sword.",
+            "DRB": "And that Jeremy put forth his right hand, and gave unto Judas a sword of gold, saying:"
           }
         },
         {
-          "num": 28,
+          "number": 16,
+          "text": {
+            "DRB": "Take the holy sword a gift from God, wherewith thou shalt overthrow the adversaries of my people Israel."
+          }
+        },
+        {
+          "number": 17,
+          "text": {
+            "DRB": "Being exhorted therefore with the words of Judas exceeding good, by which the courages might be stirred up, & the hearts of the young men strengthened, they resolved to fight, and to encounter manfully: that manhood might decide the matter, because the holy city, and the temple were in danger."
+          }
+        },
+        {
+          "number": 18,
+          "text": {
+            "DRB": "For there was less care for their wives, and children, and also for their brethren, and kinsmen: but the greatest and principal fear was for the holiness of the temple."
+          }
+        },
+        {
+          "number": 19,
+          "text": {
+            "DRB": "And they also that were in the city, took no little care for them that were to join battle."
+          }
+        },
+        {
+          "number": 20,
+          "text": {
+            "DRB": "And when they did all hope that judgement would be given, and the enemies were present, and the army was set in array, the beasts & horsemen disposed in convenient place,"
+          }
+        },
+        {
+          "number": 21,
+          "text": {
+            "DRB": "Machabeus considering the coming of the multitude, and the variety of the provision of armour, and the fierceness of the beasts, stretching forth his hands unto heaven, he invocated our Lord, that worketh wonders, who not according to the might of arms, but according as it pleaseth him, giveth victory to the worthy."
+          }
+        },
+        {
+          "number": 22,
+          "text": {
+            "DRB": "And he said invocating in this manner: Thou Lord which didst send thy Angel in the time of Ezechias king of Juda, and didst kill an hundred eighty five thousand of the camp of Sennacherib:"
+          }
+        },
+        {
+          "number": 23,
+          "text": {
+            "DRB": "and now o Dominatour of the heavens send thy good Angel before us, in fear and trembling of the greatness of thine arm,"
+          }
+        },
+        {
+          "number": 24,
+          "text": {
+            "DRB": "that they may be afraid, which with blasphemy come against thine holy people. And he indeed ended his prayer thus."
+          }
+        },
+        {
+          "number": 25,
+          "text": {
+            "DRB": "But Nicanor, and they that were with him, with trumpets & songs came near."
+          }
+        },
+        {
+          "number": 26,
+          "text": {
+            "DRB": "But Judas, & they that were with him, invocating God by prayers joined battle:"
+          }
+        },
+        {
+          "number": 27,
+          "text": {
+            "DRB": "with the hand indeed fighting, but in their hearts praying to our Lord, they overthrew no less than five and thirty thousand, being greatly delighted with the presence of God."
+          }
+        },
+        {
+          "number": 28,
           "text": {
             "KJV": "15:28 Now when the battell was done, returning againe with ioy, they knew that Nicanor lay dead in his harnesse.",
             "NABRE": "15:28 When the battle was over and they were joyfully departing, they discovered Nicanor fallen there in all his armor;",
-            "NRSV": "When the battle was over and they were returning with joy, they recognized Nicanor, lying dead, in his full armor."
+            "NRSV": "When the battle was over and they were returning with joy, they recognized Nicanor, lying dead, in his full armor.",
+            "DRB": "And when they had ceased, and returned with joy, they understood that Nicanor was slain, for all his armour."
           }
         },
         {
-          "num": 37,
+          "number": 29,
+          "text": {
+            "DRB": "Ashout therefore being made, and a great cry, they blessed the Almighty Lord in their country language."
+          }
+        },
+        {
+          "number": 30,
+          "text": {
+            "DRB": "And Judas, who by all means was in body and mind ready to die for his citizens, commanded that Nicanor's head, & hand with the shoulder being cut off, should be carried to Jerusalem."
+          }
+        },
+        {
+          "number": 31,
+          "text": {
+            "DRB": "Whither when he was come, having called his countrymen, and the Priests to the altar, he sent also for them that were in the castle."
+          }
+        },
+        {
+          "number": 32,
+          "text": {
+            "DRB": "And shewing them the head of Nicanor, and the wicked hand, which he stretching forth against the holy house of Almighty God, had mightily bragged."
+          }
+        },
+        {
+          "number": 33,
+          "text": {
+            "DRB": "The tongue also of impious Nicanor being cut out, he commanded to be given piecemeal to the birds: and the hand of the furious man to be hanged up against the temple."
+          }
+        },
+        {
+          "number": 34,
+          "text": {
+            "DRB": "All therefore blessed the Lord of heaven, saying: Blessed be he, that hath kept his place undefiled."
+          }
+        },
+        {
+          "number": 35,
+          "text": {
+            "DRB": "And he hung up Nicanor's head in the top of the castle, that it might be an evident, and manifest sign of the help of God."
+          }
+        },
+        {
+          "number": 36,
+          "text": {
+            "DRB": "Therefore all by common counsel decreed, by no means to let pass this day without solemnity:"
+          }
+        },
+        {
+          "number": 37,
           "text": {
             "KJV": "15:37 Thus went it with Nicanor, and from that time forth, the Hebrewes had the citie in their power: and heere will I make an end.",
             "NABRE": "15:37 VII. Epilogue Compiler’s Apology. Since Nicanor’s doings ended in this way, with the city remaining in the possession of the Hebrews from that time on, I will bring my story to an end here too.",
-            "NRSV": "Since this is the way the silver matters turned out with Nicanor... I will here come to an end."
+            "NRSV": "Since this is the way the silver matters turned out with Nicanor... I will here come to an end.",
+            "DRB": "but to keep the solemnity the thirteenth day of the month Adar, which is called in the Syrian language, the day before Mardocheus' day."
           }
         },
         {
-          "num": 38,
+          "number": 38,
           "text": {
             "KJV": "15:38 And if I haue done well, and as is fitting the story, it is that which I desired: but if slenderly, and meanly, it is that which I could attaine vnto.",
             "NABRE": "15:38 If it is well written and to the point, that is what I wanted; if it is poorly done and mediocre, that is the best I could do.",
-            "NRSV": "If it is well told and to the point, that is what I myself desired; if it is poorly done and mediocre, that was the best I could do."
+            "NRSV": "If it is well told and to the point, that is what I myself desired; if it is poorly done and mediocre, that was the best I could do.",
+            "DRB": "These things therefore being done concerning Nicanor, and from that time the city being possessed of the Hebrews, I also in these will make an end of speaking."
+          }
+        },
+        {
+          "number": 39,
+          "text": {
+            "DRB": "And if well, and as is competent for a story, that myself also would: but if not so worthily it resteth to be pardoned me."
+          }
+        },
+        {
+          "number": 40,
+          "text": {
+            "DRB": "For as to drink always wine, or always water is hurtful, but to use now one now another is delectable: so to the readers, if the speech be always exact, it will not be grateful. Here therefore it shall be ended."
           }
         }
       ]

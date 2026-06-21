@@ -699,3 +699,40 @@ Rules:
 Trust status:
 
 Psalms are governed but remain not textually trusted pending provenance and translation-label adjudication. Trust-boundary status remains explicitly `not_trusted_*`; governance is not a trust claim.
+
+
+## Phase 4N: Deuterocanon DRB completion tranche 1
+
+Status: applied as bounded text remediation.
+
+Decision:
+
+Direct DRB source rows were used to complete DRB lanes for deuterocanonical books where the source identity is unambiguous and the target book can be expanded without resolving Greek/Daniel, Tobit/Tobias, Sirach, Letter of Jeremiah, or 3/4 Maccabees governance.
+
+Applied scope:
+
+- Judith from DRB raw Judith.
+- Wisdom from DRB raw Wisdom.
+- Baruch chapters 1-5 from DRB raw Baruch.
+- 1 Maccabees from DRB raw 1 Machabees.
+- 2 Maccabees from DRB raw 2 Machabees.
+- Prayer of Manasseh from DRB raw Prayer of Manasseh.
+- 1 Esdras from DRB raw 3 Esdras.
+- 2 Esdras from DRB raw 4 Esdras.
+
+Preservation rule:
+
+Existing active translation lanes were preserved by reference where present. DRB was added from source rows; this tranche does not claim NABRE/KJV/NRSV completion.
+
+Explicitly not applied:
+
+- Tobit / Tobias, pending chapter-zero and source-shape handling.
+- Sirach / Ecclesiasticus, pending versification/source-shape handling.
+- Letter of Jeremiah, pending Baruch chapter 6 split handling.
+- Daniel Greek and Esther Greek, pending Greek-book governance handling.
+- 3 Maccabees and 4 Maccabees, because no direct source was identified in the local inventory.
+- Vulgate active work.
+
+Trust status:
+
+Deuterocanon remains not trusted/underbuilt pending remaining books and translation-lane adjudication.
