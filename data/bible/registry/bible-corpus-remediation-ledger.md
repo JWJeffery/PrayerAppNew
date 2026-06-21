@@ -220,3 +220,25 @@ Not in scope:
 The DRB raw lane for 3 John supplies verses 1-14. Active `data/bible/NT/3john.json` contains an active verse 15 for other translations, but no raw DRB verse 15 exists in `data/bible/translations/drb-original-douay-rheims/raw/3-john.json`.
 
 Therefore this tranche intentionally populates DRB for 3 John 1:1-14 only. 3 John 1:15 remains a versification/overlay decision, not a missing raw-text patch.
+
+
+## Phase 3C: canonical NT named-defect guard
+
+Status: active guard added.
+
+This guard prevents a false “canonical NT clean” claim.
+
+Resolved and guarded:
+
+- Hebrews 5:9-14 DRB populated from the DRB raw lane.
+- 3 John 1:1-14 DRB populated from the DRB raw lane.
+
+Intentionally unresolved:
+
+- Acts 15:18 active row missing.
+- Acts 23:26 active row missing.
+- James 1:8 active row missing.
+- 2 Corinthians 13:14 active row missing.
+- 3 John 1:15 DRB remains unpopulated because the DRB raw lane has no verse 15.
+
+These unresolved items require a source/versification/overlay decision before any data patch.
