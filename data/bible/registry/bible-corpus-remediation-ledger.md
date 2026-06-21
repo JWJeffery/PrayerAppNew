@@ -670,3 +670,32 @@ Rules:
 Trust status:
 
 Canonical OT remains not trusted pending remaining unresolved-row policy, Psalms subsystem work, deuterocanon, and broader canon governance.
+
+
+## Phase 4M: Psalms legacy subsystem governance
+
+Status: governed, not textually trusted.
+
+Decision:
+
+Psalms are not a normal canonical OT chapter file. `data/bible/OT/psalms.json` remains a governed 155-record root-array psalter subsystem.
+
+Observed shape:
+
+- 155 records.
+- Psalm IDs: `PSALM 1` through `PSALM 155`.
+- Psalms 1-150 contain the main psalm translation lanes.
+- Grail1963 has 151 records.
+- Orthodox has Psalms 151-155.
+- Existing repo consumers and audits expect the 155-record psalter array.
+
+Rules:
+
+- Do not convert Psalms to the standard canonical OT chapter schema in this tranche.
+- Do not mark the NRSV Psalms lane trusted as Bible NRSV from this governance pass.
+- Do not remove Psalms 151-155 as a side effect of canonical OT repair.
+- Treat Grail1963 and Orthodox as psalter / appendix lanes requiring their own source adjudication.
+
+Trust status:
+
+Psalms are governed but remain not textually trusted pending provenance and translation-label adjudication. Trust-boundary status remains explicitly `not_trusted_*`; governance is not a trust claim.

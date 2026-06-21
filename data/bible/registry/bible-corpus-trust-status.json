@@ -33,11 +33,16 @@
       ]
     },
     "psalms": {
-      "status": "not_trusted_legacy_subsystem",
+      "status": "not_trusted_psalms_legacy_subsystem_governed",
       "reasons": [
         "Psalms use a legacy root-array subsystem.",
-        "Psalms require separate architecture before normalization or trust claims."
-      ]
+        "Psalms require separate architecture before normalization or trust claims.",
+        "Psalms are governed but remain not textually trusted."
+      ],
+      "completedRemediations": [
+        "psalms_legacy_subsystem_governance_1"
+      ],
+      "reason": "Governed 155-record legacy psalter array; text/provenance/label adjudication still pending."
     },
     "deuterocanon": {
       "status": "not_trusted_underbuilt",

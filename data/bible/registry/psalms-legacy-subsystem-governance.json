@@ -1,0 +1,45 @@
+{
+  "schema": "psalms-legacy-subsystem-governance-v1",
+  "status": "governed_not_textually_trusted",
+  "psalmsPath": "data/bible/OT/psalms.json",
+  "decisions": {
+    "containerPolicy": "Psalms remains a governed 155-record root array. Do not force it into the standard canonical OT chapter schema without a separate migration.",
+    "canonicalPsalmPolicy": "Psalms 1-150 carry main psalm translation lanes.",
+    "orthodoxAppendixPolicy": "Psalms 151-155 are present as Orthodox appendix material and are not normal canonical OT chapter rows.",
+    "grailPolicy": "Grail1963 is a liturgical psalter lane and uses its own formatting/numbering conventions.",
+    "nrsvPolicy": "The NRSV key in data/bible/OT/psalms.json is not promoted as a trusted Bible NRSV lane by this governance pass.",
+    "sourcePolicy": "This pass does not adjudicate Psalm text provenance. It freezes current shape and prevents accidental normalization or false trust.",
+    "consumerPolicy": "Existing consumers and audits expecting the 155-record psalter array remain supported."
+  },
+  "expectedShape": {
+    "topType": "array",
+    "recordCount": 155,
+    "idPattern": "^PSALM [0-9]+$",
+    "requiredRecordKeys": [
+      "id",
+      "text"
+    ]
+  },
+  "expectedTranslationCounts": {
+    "Coverdale": 150,
+    "Grail1963": 151,
+    "JPS1985": 150,
+    "KJV": 150,
+    "NABRE": 150,
+    "NRSV": 150,
+    "Orthodox": 5,
+    "Rotherham": 150
+  },
+  "expectedAppendix": {
+    "orthodoxIds": [
+      "PSALM 151",
+      "PSALM 152",
+      "PSALM 153",
+      "PSALM 154",
+      "PSALM 155"
+    ],
+    "grailExtraIds": [
+      "PSALM 151"
+    ]
+  }
+}
