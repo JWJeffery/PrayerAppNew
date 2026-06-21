@@ -8822,5 +8822,15 @@
       ]
     }
   ],
-  "schema": "bible_book_multiversion_v1"
+  "schema": "bible_book_multiversion_v1",
+  "translationOverlays": {
+    "NABRE": {
+      "12": {
+        "32": "Chapter 13 Penalties for Enticing to Idolatry. Every word that I command you, you shall be careful to observe, neither adding to it nor subtracting from it."
+      },
+      "22": {
+        "30": "Chapter 23 A man shall not marry his father’s wife, nor shall he dishonor his father’s bed."
+      }
+    }
+  }
 }

@@ -11779,5 +11779,26 @@
       ]
     }
   ],
-  "schema": "bible_book_multiversion_v1"
+  "schema": "bible_book_multiversion_v1",
+  "translationOverlays": {
+    "NABRE": {
+      "16": {
+        "36": "Chapter 17 The Lord said to Moses:",
+        "37": "Tell Eleazar, son of Aaron the priest, to remove the censers from the embers; and scatter the fire some distance away, for they have become holy—",
+        "38": "the censers of those who sinned at the cost of their lives. Have them hammered into plates to cover the altar, because in being presented before the Lord they have become holy. In this way they shall serve as a sign to the Israelites.",
+        "39": "So taking the bronze censers which had been presented by those who were burned, Eleazar the priest had them hammered into a covering for the altar,",
+        "40": "just as the Lord had directed him through Moses. This was to be a reminder to the Israelites that no unauthorized person, no one who was not a descendant of Aaron, should draw near to offer incense before the Lord, lest he meet the fate of Korah and his faction.",
+        "41": "The next day the whole Israelite community grumbled against Moses and Aaron, saying, “You have killed the people of the Lord.”",
+        "42": "But while the community was assembling against them, Moses and Aaron turned toward the tent of meeting, and the cloud now covered it and the glory of the Lord appeared.",
+        "43": "Then Moses and Aaron came to the front of the tent of meeting,",
+        "44": "and the Lord said to Moses:",
+        "45": "Remove yourselves from this community, that I may consume them at once. But they fell prostrate.",
+        "46": "Then Moses said to Aaron, “Take your censer, put fire from the altar in it, lay incense on it, and bring it quickly to the community to make atonement for them; for wrath has come forth from the Lord and the plague has begun.”",
+        "47": "Aaron took his censer just as Moses directed and ran in among the assembly, where the plague had already begun among the people. Then he offered the incense and made atonement for the people,",
+        "48": "while standing there between the living and the dead. And so the scourge was checked.",
+        "49": "There were fourteen thousand seven hundred dead from the scourge, in addition to those who died because of Korah.",
+        "50": "When the scourge had been checked, Aaron returned to Moses at the entrance of the tent of meeting."
+      }
+    }
+  }
 }

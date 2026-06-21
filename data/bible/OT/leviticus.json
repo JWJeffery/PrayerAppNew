@@ -7882,5 +7882,18 @@
       ]
     }
   ],
-  "schema": "bible_book_multiversion_v1"
+  "schema": "bible_book_multiversion_v1",
+  "translationOverlays": {
+    "NABRE": {
+      "6": {
+        "24": "The Lord said to Moses:",
+        "25": "Tell Aaron and his sons: This is the ritual for the purification offering. At the place where the burnt offering is slaughtered, there also, before the Lord, shall the purification offering be slaughtered. It is most holy.",
+        "26": "The priest who offers the purification offering shall eat of it; it shall be eaten in a sacred place, in the court of the tent of meeting.",
+        "27": "Whatever touches its flesh becomes holy. If any of its blood spatters on a garment, the stained part must be washed in a sacred place.",
+        "28": "A clay vessel in which it has been boiled shall be broken; if it is boiled in a copper vessel, this shall be scoured afterward and rinsed with water.",
+        "29": "Every male of the priestly line may eat it. It is most holy.",
+        "30": "But no purification offering of which some blood has been brought into the tent of meeting to make atonement in the sanctuary shall be eaten; it must be burned with fire."
+      }
+    }
+  }
 }

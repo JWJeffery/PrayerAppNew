@@ -435,3 +435,37 @@ Explicitly not applied:
 Trust status:
 
 Canonical OT remains not trusted pending remaining missing-row and versification remediation.
+
+
+## Phase 4E: Pentateuch NABRE overlay batch 1
+
+Status: applied as bounded remediation.
+
+Decision:
+
+A source-backed Pentateuch NABRE overlay batch was applied only for inspected mappings where the historical NABRE source row exists, the active target row exists, and the active target lacks main NABRE text.
+
+Source evidence:
+
+- source commit: `d0eed049f47e5eda8abcc4f4b1bb0d77efc51bd6`
+- source lane: `data/bible/translations/nabre-internal-source-lane/source/generated_data/books/*.json`
+
+Applied overlay scope:
+
+- Genesis 32:1 -> active 31:55
+- Exodus 8:25-28 -> active 8:29-32
+- Exodus 22:30 -> active 22:31
+- Leviticus 6:17-23 -> active 6:24-30
+- Numbers 17:1-15 -> active 16:36-50
+- Deuteronomy 13:1 -> active 12:32
+- Deuteronomy 23:1 -> active 22:30
+
+Explicitly not applied:
+
+- Numbers 30:16 because the inspection did not produce a clean usable mapping.
+- Deuteronomy 29:29 because the source candidate evidence was weak.
+- Any Daniel, Esther, Psalms, deuterocanon, broader canon, or Vulgate material.
+
+Trust status:
+
+Canonical OT remains not trusted pending remaining missing-row and versification remediation.

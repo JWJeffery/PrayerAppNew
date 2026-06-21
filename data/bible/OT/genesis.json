@@ -14070,5 +14070,12 @@
       ]
     }
   ],
-  "schema": "bible_book_multiversion_v1"
+  "schema": "bible_book_multiversion_v1",
+  "translationOverlays": {
+    "NABRE": {
+      "31": {
+        "55": "Chapter 32 Early the next morning, Laban kissed his grandchildren and his daughters and blessed them; then he set out on his journey back home."
+      }
+    }
+  }
 }
