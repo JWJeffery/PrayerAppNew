@@ -736,3 +736,32 @@ Explicitly not applied:
 Trust status:
 
 Deuterocanon remains not trusted/underbuilt pending remaining books and translation-lane adjudication.
+
+
+## Phase 4O: Deuterocanon DRB/NABRE completion tranche 2
+
+Status: applied as bounded text remediation.
+
+Decision:
+
+Tobit, Sirach, and Letter of Jeremiah were expanded from reviewed direct source shapes.
+
+Applied scope:
+
+- Tobit: DRB from raw Tobias, excluding the chapter-zero title row; NABRE from historical Tobit source.
+- Sirach: DRB from raw Ecclesiasticus; NABRE from historical Sirach source.
+- Letter of Jeremiah: DRB and NABRE from Baruch chapter 6, split into active Letter of Jeremiah chapter 1.
+
+Preservation rule:
+
+Existing active translation lanes were preserved by reference where present. DRB and NABRE were added from source rows. This tranche does not claim KJV/NRSV completion.
+
+Explicitly not applied:
+
+- Daniel Greek and Esther Greek, pending Greek-book governance handling.
+- 3 Maccabees and 4 Maccabees, because no direct source was identified in the local inventory.
+- Vulgate active work.
+
+Trust status:
+
+Deuterocanon remains not trusted/underbuilt pending remaining books and translation-lane adjudication.
