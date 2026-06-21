@@ -1,0 +1,33 @@
+{
+  "translation_key": "VulgatePsalter",
+  "source_name": "Vulgate Psalter",
+  "source_status": "source_not_selected",
+  "source_repo": null,
+  "source_path": null,
+  "target_path": "data/bible/translations/vulgate-psalter",
+  "status": "planned_empty_source_lane_no_text_imported",
+  "note": "Scaffold only. Psalm bodies must be imported into this Bible/Psalter source lane before Roman Breviary psalm appointments may resolve Latin psalm text from it.",
+  "imported_at": null,
+  "book_count": 0,
+  "total_chapter_count": 0,
+  "total_verse_count": 0,
+  "planned_books": [
+    {
+      "book_id": "PSALMS",
+      "file": "raw/psalms.json",
+      "pilot_psalms": [
+        5,
+        6,
+        7,
+        22,
+        24,
+        26,
+        39,
+        40,
+        41
+      ],
+      "numbering_status": "roman_breviary_source_appointment_numbering_not_yet_normalized"
+    }
+  ],
+  "books": []
+}

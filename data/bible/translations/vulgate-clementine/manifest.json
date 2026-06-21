@@ -1,0 +1,35 @@
+{
+  "translation_key": "Vulgate",
+  "source_name": "Vulgate Clementine",
+  "source_status": "source_not_selected",
+  "source_repo": null,
+  "source_path": null,
+  "target_path": "data/bible/translations/vulgate-clementine",
+  "status": "planned_empty_source_lane_no_text_imported",
+  "note": "Scaffold only. Biblical bodies must be imported into this Bible source lane before Roman Breviary scripture readings may resolve Latin body text from it.",
+  "imported_at": null,
+  "book_count": 0,
+  "total_chapter_count": 0,
+  "total_verse_count": 0,
+  "planned_books": [
+    {
+      "book_id": "JOB",
+      "file": "raw/job.json",
+      "pilot_passages": [
+        "Job 7:16-21",
+        "Job 14:1-6",
+        "Job 19:20-27"
+      ]
+    },
+    {
+      "book_id": "1_CORINTHIANS",
+      "file": "raw/1-corinthians.json",
+      "pilot_passages": [
+        "1 Cor 15:12-22",
+        "1 Cor 15:35-44",
+        "1 Cor 15:51-58"
+      ]
+    }
+  ],
+  "books": []
+}

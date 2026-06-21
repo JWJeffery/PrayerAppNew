@@ -84,6 +84,31 @@
         REVELATION: "apocalypse.json"
       }
     },
+    VULGATE_CLEMENTINE: {
+      id: "VULGATE_CLEMENTINE",
+      label: "Vulgate Clementine",
+      translationKey: "Vulgate",
+      use: "internal_bible_browser_and_roman_breviary_binding",
+      manifestPath: "data/bible/translations/vulgate-clementine/manifest.json",
+      basePath: "data/bible/translations/vulgate-clementine",
+      filePrefix: "raw/",
+      bookMap: {
+        JOB: "job.json",
+        "1_CORINTHIANS": "1-corinthians.json"
+      }
+    },
+    VULGATE_PSALTER: {
+      id: "VULGATE_PSALTER",
+      label: "Vulgate Psalter",
+      translationKey: "VulgatePsalter",
+      use: "roman_breviary_psalter_binding",
+      manifestPath: "data/bible/translations/vulgate-psalter/manifest.json",
+      basePath: "data/bible/translations/vulgate-psalter",
+      filePrefix: "raw/",
+      bookMap: {
+        PSALMS: "psalms.json"
+      }
+    },
     NABRE_INTERNAL: {
       id: "NABRE_INTERNAL",
       label: "NABRE",
