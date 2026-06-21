@@ -824,3 +824,28 @@ Rules:
 Trust status:
 
 Broader canon remains not trusted pending source/provenance adjudication and separate inclusion governance.
+
+
+## Phase 4R: Bible corpus recovery consolidation
+
+Status: consolidated, not globally trusted.
+
+Decision:
+
+This consolidation records the actual post-remediation state and prevents overclaiming.
+
+Lane state:
+
+- Canonical NT: named-defect tranche complete and guarded.
+- Canonical OT: source-backed remediation and residual classification present, still not globally trusted.
+- Psalms: governed legacy psalter subsystem, still not textually trusted.
+- Deuterocanon: direct DRB/NABRE tranches applied where controlled; Greek books and 3/4 Maccabees remain governed unresolved work.
+- Broader canon: governed raw-text corpus lane, not source-adjudicated.
+- Vulgate: excluded active work.
+
+Blocked claims:
+
+- Do not claim the entire biblical corpus is trusted.
+- Do not claim canonical OT, Psalms, Deuterocanon, Broader Canon, or Vulgate are complete beyond their explicit lane statuses.
+
+Next work may return to Vulgate active-work recovery with protected dirty status preserved.

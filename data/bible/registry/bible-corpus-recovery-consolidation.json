@@ -1,0 +1,59 @@
+{
+  "schema": "bible-corpus-recovery-consolidation-v1",
+  "status": "consolidated_not_globally_trusted",
+  "date": "2026-06-21",
+  "lanes": {
+    "canonical_nt": {
+      "expectedStatus": "named_defect_tranche_complete",
+      "summary": "Named NT defect tranche is complete and guarded."
+    },
+    "canonical_ot": {
+      "expectedStatus": "not_trusted_pending_versification_remediation",
+      "summary": "Canonical OT has source-backed NABRE overlay remediation and classified residuals, but remains not globally trusted."
+    },
+    "psalms": {
+      "expectedStatus": "not_trusted_psalms_legacy_subsystem_governed",
+      "summary": "Psalms are a governed 155-record legacy psalter subsystem and remain not textually trusted."
+    },
+    "deuterocanon": {
+      "expectedStatus": "not_trusted_underbuilt",
+      "summary": "DRB/NABRE source tranches are applied where controlled; Greek books and 3/4 Maccabees remain unresolved/governed."
+    },
+    "broader_canon": {
+      "expectedStatus": "not_trusted_governance_pending",
+      "summary": "Broader canon raw-text corpus is governed but not source-adjudicated or textually trusted."
+    },
+    "vulgate": {
+      "expectedStatus": "excluded_active_work",
+      "summary": "Vulgate lane remains excluded active work with protected dirty files."
+    }
+  },
+  "requiredMarkers": {
+    "psalms": [
+      "psalms_legacy_subsystem_governance_1"
+    ],
+    "deuterocanon": [
+      "deuterocanon_drb_completion_tranche_1",
+      "deuterocanon_drb_nabre_completion_tranche_2",
+      "deuterocanon_remaining_governance_1"
+    ],
+    "broader_canon": [
+      "broader_canon_governance_1"
+    ]
+  },
+  "blockedClaims": [
+    "entire_biblical_corpus_trusted",
+    "canonical_ot_fully_trusted",
+    "psalms_textually_trusted",
+    "deuterocanon_complete",
+    "broader_canon_complete",
+    "vulgate_remediation_complete"
+  ],
+  "nextAllowedTargets": [
+    "vulgate_active_work_recovery",
+    "separate_greek_esther_review",
+    "separate_greek_daniel_review",
+    "3_4_maccabees_source_acquisition",
+    "canonical_ot_residual_policy_review"
+  ]
+}
