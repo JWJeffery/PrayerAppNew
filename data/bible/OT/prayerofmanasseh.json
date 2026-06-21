@@ -1,96 +1,118 @@
 {
   "meta": {
     "name": "The Prayer of Manasseh",
-    "id": "prayerofmanasseh",
+    "id": "MAN",
     "version": "NRSV",
-    "copyright": "New Revised Standard Version Bible, copyright © 1989 National Council of the Churches of Christ in the United States of America. Used by permission. All rights reserved worldwide.",
-    "title": "Prayer of Manasseh",
-    "source_status": "source_backed_repaired",
-    "translation_key": "WEBBE",
-    "source_translation": "World English Bible British Edition with Deuterocanon",
-    "source_file": "55-MANeng-webbe.usfm",
-    "source_url": "https://ebible.org/Scriptures/eng-webbe_usfm.zip",
-    "source_details_url": "https://ebible.org/find/details.php?id=eng-webbe",
-    "license_posture": "public_domain_copy_freely",
-    "repair_recorded_at": "2026-06-21T08:40:31Z",
-    "repair_head": "1e714a3"
+    "copyright": "New Revised Standard Version Bible, copyright © 1989 National Council of the Churches of Christ in the United States of America. Used by permission. All rights reserved worldwide."
   },
   "chapters": [
     {
+      "number": 1,
       "verses": [
         {
+          "number": 1,
           "text": {
-            "WEBBE": "O LORD Almighty in heaven, God of our fathers Abraham, Isaac, and Jacob, and of their righteous offspring,"
+            "KJV": "1:1 O Lord, Almightie God of our Fathers, Abraham, Isaac, and Iacob, and of their righteous seed: who hast made heauen and earth, with all the ornament thereof: who hast bound the Sea by the word of thy Commandement: who hast shut vp the deepe, and sealed it by thy terrible and glorious Name, whome all men feare, and tremble before thy power: for the Maiestie of thy glory cannot bee borne, and thine angry threatning towards sinners is importable: but thy mercifull promise is vnmeasurable and vnsearchable: for thou art the most High Lord, of great compassion, long suffering, very mercifull, and repentest of the euils of men. Thou, O Lord, according to thy great goodnesse hast promised repentance, and forgiuenesse to them that haue sinned against thee: and of thine infinite mercies hast appointed repentance vnto sinners that they may be saued. Thou therefore, O Lord, that art the God of the iust, hast not appointed repentance to the iust, as to Abraham, and Isaac, and Iacob, which haue not sinned against thee: but thou hast appointed repentance vnto me that am a sinner: for I haue sinned aboue the number of the sands of the Sea. My transgressions, O Lord, are multiplied: my transgressions are multiplied, and I am not worthy to behold and see the height of heauen, for the multitude of mine iniquitie. I am bowed downe with many yron bands, that I cannot lift vp mine head, neither haue any release: For I haue prouoked thy wrath, and done euill before thee, I did not thy will, neither kept I thy Commandements: I haue set vp abominations, and haue multiplied offences. Now therefore I bow the knee of mine heart, beseeching thee of grace: I haue sinned, O Lord, I haue sinned and I acknowledge mine iniquities: wherefore I humbly beseech thee, forgiue me, O Lord, forgiue me, and destroy me not with mine iniquities. Be not angry with me for euer, by reseruing euill for me, neither condemne mee into the lower parts of the earth. For thou art the God, euen the God of them that repent: and in me thou wilt shew all thy goodnesse: for thou wilt saue me that am vnworthy, according to thy great mercie. Therefore I will praise thee for euer all the dayes of my life: for all the powers of the heauens doe praise thee, and thine is the glory for euer and euer, Amen.",
+            "NRSV": "O Lord Almighty, God of our ancestors, of Abraham and Isaac and Jacob and of their righteous offspring;",
+            "DRB": "Lord omnipotent God of our fathers, Abraham, and Isaac, and Jacob, and of their just seed,"
           }
         },
         {
+          "number": 2,
           "text": {
-            "WEBBE": "you who have made heaven and earth, with all their order,"
+            "rawText": "you who made heaven and earth with all their order;",
+            "DRB": "which didst make heaven and earth: with all the ornaments of them,"
           }
         },
         {
+          "number": 3,
           "text": {
-            "WEBBE": "who have bound the sea by the word of your commandment, who have shut up the deep, and sealed it by your terrible and glorious name,"
+            "rawText": "who shackled the sea by your word of command, who confined the deep and sealed it with your terrible and glorious name;",
+            "DRB": "which hast bound the sea with the word of thy precept, which hast shut up the depth, and sealed it with thy terrible and laudable name:"
           }
         },
         {
+          "number": 4,
           "text": {
-            "WEBBE": "whom all things fear, yes, tremble before your power,"
+            "rawText": "at whom all things shudder, and tremble before your power,",
+            "DRB": "whom all things dread, and tremble at the countenance of thy power,"
           }
         },
         {
+          "number": 5,
           "text": {
-            "WEBBE": "for the majesty of your glory can’t be borne, and the anger of your threatening towards sinners is unbearable."
+            "rawText": "for your glorious splendor cannot be borne, and the face of your threat against sinners is irresistible;",
+            "DRB": "because the magnificence of thy glory is importable, and the wrath of thy threatening upon sinners is intolerable:"
           }
         },
         {
+          "number": 6,
           "text": {
-            "WEBBE": "Your merciful promise is unmeasurable and unsearchable,"
+            "rawText": "yet immeasurable and unsearchable is your promised mercy,",
+            "DRB": "but the mercy of thy promise is infinite and unsearchable:"
           }
         },
         {
+          "number": 7,
           "text": {
-            "WEBBE": "for you are the Lord Most High, of great compassion, patient and abundant in mercy, and relent at human suffering."
+            "rawText": "for you are the Lord Most High, of great compassion, long-suffering, and very merciful, and you relent at human suffering. O Lord, according to your great goodness you have promised repentance and forgiveness to those who have sinned against you, and in the multitude of your mercies you have appointed repentance for sinners, so that they may be saved.",
+            "DRB": "because thou art our Lord, most high, benign, long suffering, and very merciful, and penitent upon the wickedness of men. Thou Lord according to the multitude of thy goodness hast promised penance and remission to them that have sinned to thee, and by the multitude of thy mercies thou hast decreed penance to sinners, unto salvation."
           }
         },
         {
+          "number": 8,
           "text": {
-            "WEBBE": "You, O Lord, according to your great goodness have promised repentance and forgiveness to those who have sinned against you. Of your infinite mercies, you have appointed repentance to sinners, that they may be saved. You therefore, O Lord, who are the God of the just, have not appointed repentance to the just, to Abraham, Isaac, and Jacob, which have not sinned against you, but you have appointed repentance to me, a sinner."
+            "rawText": "Therefore you, O Lord, God of the righteous, have not appointed repentance for the righteous, for Abraham and Isaac and Jacob, who did not sin against you, but you have appointed repentance for me, who am a sinner.",
+            "DRB": "Thou therefore Lord God of the just, hast not appointed penance to the just, Abraham, and Isaac, and Jacob, them that have not sinned to thee, but hast appointed penance for me a sinner:"
           }
         },
         {
+          "number": 9,
           "text": {
-            "WEBBE": "For I have sinned more than the number of the sands of the sea. My transgressions are multiplied, O Lord, my transgressions are multiplied, and I am not worthy to behold and see the height of heaven for the multitude of my iniquities."
+            "rawText": "For the sins I have committed are more in number than the sands of the sea; my transgressions are multiplied, O Lord, they are multiplied! I am not worthy to look up and see the height of heaven because of the multitude of my iniquities.",
+            "DRB": "because I have sinned above the number of the sand of the sea. Mine iniquities Lord be multiplied, mine iniquities be multiplied, and I am not worthy to behold and look upon the height of heaven, for the multitude of mine iniquities."
           }
         },
         {
+          "number": 10,
           "text": {
-            "WEBBE": "I am bowed down with many iron bands, so that I can’t lift up my head by reason of my sins, neither have I any relief; for I have provoked your wrath, and done that which is evil before you: I didn’t do your will, neither did I keep your commandments. I have set up abominations, and have multiplied detestable things."
+            "rawText": "I am weighted down with many an iron fetter, so that I am rejected because of my sins, and I have no relief; for I have provoked your spirit and have done what is evil in your sight, setting up abominations and multiplying offenses.",
+            "DRB": "I am made crooked with many a band of iron, that I cannot lift up my head, and I have not respiration: because I have stirred up thy wrath, and have done evil before thee: I have not done thy will, and thy commandments I have not kept: I have set up abominations, and multiplied offences."
           }
         },
         {
+          "number": 11,
           "text": {
-            "WEBBE": "Now therefore I bow the knee of my heart, asking you for grace."
+            "rawText": "And now I bend the knee of my heart, imploring you for your kindness.",
+            "DRB": "And now I bow the knee of my heart, beseeching goodness of thee."
           }
         },
         {
+          "number": 12,
           "text": {
-            "WEBBE": "I have sinned, O Lord, I have sinned, and I acknowledge my iniquities;"
+            "rawText": "I have sinned, O Lord, I have sinned, and I acknowledge my transgressions.",
+            "DRB": "I have sinned Lord, I have sinned, and I acknowledge mine iniquities."
           }
         },
         {
+          "number": 13,
           "text": {
-            "WEBBE": "but, I humbly ask you, forgive me, O Lord, forgive me, and please don’t destroy me with my iniquities. Don’t be angry with me forever, by reserving evil for me. Don’t condemn me into the lower parts of the earth. For you, O Lord, are the God of those who repent."
+            "rawText": "I earnestly implore you: forgive me, O Lord, forgive me! Do not destroy me with my transgressions; do not be angry with me forever or store up evil for me; do not condemn me to the depths of the earth. For you, O Lord, are the God of those who repent,",
+            "DRB": "Wherefore I beseech desiring thee, forgive me Lord, forgive me: and destroy me not together with mine iniquities, neither reserve thou for ever, being angry, evils for me, neither damn me into the lowest places of the earth: because thou art God, I say, of the penitent:"
           }
         },
         {
+          "number": 14,
           "text": {
-            "WEBBE": "In me you will show all your goodness, for you will save me, even though I am unworthy, according to your great mercy."
+            "rawText": "and in me you will show forth your goodness; for unworthy as I am, you will save me according to your great mercy,",
+            "DRB": "in me thou shalt shew all thy goodness, because thou shalt save me unworthy according to thy great mercy,"
           }
         },
         {
+          "number": 15,
           "text": {
-            "WEBBE": "Then I will praise you forever all the days of my life; for all the army of heaven sings your praise, and yours is the glory forever and ever. Amen."
+            "rawText": "and I will praise you continually all the days of my life. For all the host of heaven sings your praise, and yours is the glory forever. Amen.",
+            "DRB": "and I will praise thee always all the days of my life: because all the power of the heavens praiseth thee, and to thee is glory for ever and ever. Amen."
           }
         }
       ]
