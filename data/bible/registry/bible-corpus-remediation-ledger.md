@@ -620,3 +620,30 @@ Explicitly not applied:
 Trust status:
 
 Canonical OT remains not trusted pending remaining unresolved rows and separate governance for Daniel / Greek-addition material.
+
+
+## Phase 4K: Canonical OT NABRE residual classification
+
+Status: classified, not resolved.
+
+Decision:
+
+The remaining canonical OT NABRE gaps were classified after the bounded overlay remediation batches. This does not insert Bible text and does not mark canonical OT trusted.
+
+Classified residual count:
+
+- Total: 59
+- Non-Daniel: 13
+- Daniel: 46
+
+Classification summary:
+
+- Source row has heading / section-heading / speaker-marker residue.
+- Candidate rejected as context mismatch.
+- Candidate requires split/partial-row review.
+- Daniel 5:31 requires separate review.
+- Daniel 11:1-45 has no source rows in the historical NABRE source file and must not be synthesized.
+
+Trust status:
+
+Canonical OT remains not trusted pending explicit governance over classified residuals, Daniel 11, and Greek-addition handling.

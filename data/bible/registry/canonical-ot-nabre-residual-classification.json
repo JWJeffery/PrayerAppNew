@@ -1,0 +1,364 @@
+{
+  "schema": "canonical-ot-nabre-residual-classification-v1",
+  "status": "classified_not_resolved",
+  "generatedFrom": {
+    "lastResidualCommit": "be4c71a",
+    "note": "Classification after reviewed NABRE overlay batches. Remaining rows lack main NABRE and lack NABRE overlay by design."
+  },
+  "entries": [
+    {
+      "book": "1samuel",
+      "ref": "23:29",
+      "category": "source_row_has_section_heading_residue",
+      "note": "Source candidate 24:1 includes section heading; not safe as direct overlay."
+    },
+    {
+      "book": "1kings",
+      "ref": "4:21",
+      "category": "source_row_has_section_heading_residue",
+      "note": "Source candidate 5:1 includes section heading; not safe as direct overlay."
+    },
+    {
+      "book": "1kings",
+      "ref": "4:26",
+      "category": "source_row_has_section_heading_residue",
+      "note": "Source candidate 5:6 includes section heading; not safe as direct overlay."
+    },
+    {
+      "book": "1kings",
+      "ref": "4:29",
+      "category": "source_row_has_section_heading_residue",
+      "note": "Source candidate 5:9 includes section heading; not safe as direct overlay."
+    },
+    {
+      "book": "1kings",
+      "ref": "4:34",
+      "category": "source_row_has_section_heading_residue",
+      "note": "Source candidate 5:14 includes next-section heading; not safe as direct overlay."
+    },
+    {
+      "book": "2kings",
+      "ref": "11:21",
+      "category": "source_row_has_section_heading_residue",
+      "note": "Source candidate 12:1 includes section heading; not safe as direct overlay."
+    },
+    {
+      "book": "nehemiah",
+      "ref": "4:18",
+      "category": "candidate_rejected_context_mismatch",
+      "note": "Best candidate was below threshold and not contextually safe."
+    },
+    {
+      "book": "nehemiah",
+      "ref": "7:73",
+      "category": "source_split_or_partial_row_review_required",
+      "note": "Candidate appears partial against active text; not safe as direct overlay."
+    },
+    {
+      "book": "nehemiah",
+      "ref": "9:38",
+      "category": "source_row_has_section_heading_residue",
+      "note": "Source candidate 10:1 includes section heading; not safe as direct overlay."
+    },
+    {
+      "book": "job",
+      "ref": "41:28",
+      "category": "candidate_rejected_context_mismatch",
+      "note": "Best candidate was below threshold and not contextually safe."
+    },
+    {
+      "book": "job",
+      "ref": "41:33",
+      "category": "candidate_rejected_context_mismatch",
+      "note": "Best candidate was below threshold and not contextually safe."
+    },
+    {
+      "book": "songofsolomon",
+      "ref": "6:13",
+      "category": "source_row_has_heading_or_speaker_marker_residue",
+      "note": "Source candidate 7:1 includes heading/speaker-marker residue; not safe as direct overlay."
+    },
+    {
+      "book": "ezekiel",
+      "ref": "20:45",
+      "category": "formulaic_candidate_contextually_wrong",
+      "note": "Candidate text is formulaic but source context is wrong."
+    },
+    {
+      "book": "daniel",
+      "ref": "5:31",
+      "category": "daniel_review_required",
+      "note": "Daniel 5:31 was not safely mapped by source inspection."
+    },
+    {
+      "book": "daniel",
+      "ref": "11:1",
+      "category": "daniel_source_chapter_absent",
+      "note": "Daniel source file has no Daniel 11 rows; do not synthesize overlay."
+    },
+    {
+      "book": "daniel",
+      "ref": "11:2",
+      "category": "daniel_source_chapter_absent",
+      "note": "Daniel source file has no Daniel 11 rows; do not synthesize overlay."
+    },
+    {
+      "book": "daniel",
+      "ref": "11:3",
+      "category": "daniel_source_chapter_absent",
+      "note": "Daniel source file has no Daniel 11 rows; do not synthesize overlay."
+    },
+    {
+      "book": "daniel",
+      "ref": "11:4",
+      "category": "daniel_source_chapter_absent",
+      "note": "Daniel source file has no Daniel 11 rows; do not synthesize overlay."
+    },
+    {
+      "book": "daniel",
+      "ref": "11:5",
+      "category": "daniel_source_chapter_absent",
+      "note": "Daniel source file has no Daniel 11 rows; do not synthesize overlay."
+    },
+    {
+      "book": "daniel",
+      "ref": "11:6",
+      "category": "daniel_source_chapter_absent",
+      "note": "Daniel source file has no Daniel 11 rows; do not synthesize overlay."
+    },
+    {
+      "book": "daniel",
+      "ref": "11:7",
+      "category": "daniel_source_chapter_absent",
+      "note": "Daniel source file has no Daniel 11 rows; do not synthesize overlay."
+    },
+    {
+      "book": "daniel",
+      "ref": "11:8",
+      "category": "daniel_source_chapter_absent",
+      "note": "Daniel source file has no Daniel 11 rows; do not synthesize overlay."
+    },
+    {
+      "book": "daniel",
+      "ref": "11:9",
+      "category": "daniel_source_chapter_absent",
+      "note": "Daniel source file has no Daniel 11 rows; do not synthesize overlay."
+    },
+    {
+      "book": "daniel",
+      "ref": "11:10",
+      "category": "daniel_source_chapter_absent",
+      "note": "Daniel source file has no Daniel 11 rows; do not synthesize overlay."
+    },
+    {
+      "book": "daniel",
+      "ref": "11:11",
+      "category": "daniel_source_chapter_absent",
+      "note": "Daniel source file has no Daniel 11 rows; do not synthesize overlay."
+    },
+    {
+      "book": "daniel",
+      "ref": "11:12",
+      "category": "daniel_source_chapter_absent",
+      "note": "Daniel source file has no Daniel 11 rows; do not synthesize overlay."
+    },
+    {
+      "book": "daniel",
+      "ref": "11:13",
+      "category": "daniel_source_chapter_absent",
+      "note": "Daniel source file has no Daniel 11 rows; do not synthesize overlay."
+    },
+    {
+      "book": "daniel",
+      "ref": "11:14",
+      "category": "daniel_source_chapter_absent",
+      "note": "Daniel source file has no Daniel 11 rows; do not synthesize overlay."
+    },
+    {
+      "book": "daniel",
+      "ref": "11:15",
+      "category": "daniel_source_chapter_absent",
+      "note": "Daniel source file has no Daniel 11 rows; do not synthesize overlay."
+    },
+    {
+      "book": "daniel",
+      "ref": "11:16",
+      "category": "daniel_source_chapter_absent",
+      "note": "Daniel source file has no Daniel 11 rows; do not synthesize overlay."
+    },
+    {
+      "book": "daniel",
+      "ref": "11:17",
+      "category": "daniel_source_chapter_absent",
+      "note": "Daniel source file has no Daniel 11 rows; do not synthesize overlay."
+    },
+    {
+      "book": "daniel",
+      "ref": "11:18",
+      "category": "daniel_source_chapter_absent",
+      "note": "Daniel source file has no Daniel 11 rows; do not synthesize overlay."
+    },
+    {
+      "book": "daniel",
+      "ref": "11:19",
+      "category": "daniel_source_chapter_absent",
+      "note": "Daniel source file has no Daniel 11 rows; do not synthesize overlay."
+    },
+    {
+      "book": "daniel",
+      "ref": "11:20",
+      "category": "daniel_source_chapter_absent",
+      "note": "Daniel source file has no Daniel 11 rows; do not synthesize overlay."
+    },
+    {
+      "book": "daniel",
+      "ref": "11:21",
+      "category": "daniel_source_chapter_absent",
+      "note": "Daniel source file has no Daniel 11 rows; do not synthesize overlay."
+    },
+    {
+      "book": "daniel",
+      "ref": "11:22",
+      "category": "daniel_source_chapter_absent",
+      "note": "Daniel source file has no Daniel 11 rows; do not synthesize overlay."
+    },
+    {
+      "book": "daniel",
+      "ref": "11:23",
+      "category": "daniel_source_chapter_absent",
+      "note": "Daniel source file has no Daniel 11 rows; do not synthesize overlay."
+    },
+    {
+      "book": "daniel",
+      "ref": "11:24",
+      "category": "daniel_source_chapter_absent",
+      "note": "Daniel source file has no Daniel 11 rows; do not synthesize overlay."
+    },
+    {
+      "book": "daniel",
+      "ref": "11:25",
+      "category": "daniel_source_chapter_absent",
+      "note": "Daniel source file has no Daniel 11 rows; do not synthesize overlay."
+    },
+    {
+      "book": "daniel",
+      "ref": "11:26",
+      "category": "daniel_source_chapter_absent",
+      "note": "Daniel source file has no Daniel 11 rows; do not synthesize overlay."
+    },
+    {
+      "book": "daniel",
+      "ref": "11:27",
+      "category": "daniel_source_chapter_absent",
+      "note": "Daniel source file has no Daniel 11 rows; do not synthesize overlay."
+    },
+    {
+      "book": "daniel",
+      "ref": "11:28",
+      "category": "daniel_source_chapter_absent",
+      "note": "Daniel source file has no Daniel 11 rows; do not synthesize overlay."
+    },
+    {
+      "book": "daniel",
+      "ref": "11:29",
+      "category": "daniel_source_chapter_absent",
+      "note": "Daniel source file has no Daniel 11 rows; do not synthesize overlay."
+    },
+    {
+      "book": "daniel",
+      "ref": "11:30",
+      "category": "daniel_source_chapter_absent",
+      "note": "Daniel source file has no Daniel 11 rows; do not synthesize overlay."
+    },
+    {
+      "book": "daniel",
+      "ref": "11:31",
+      "category": "daniel_source_chapter_absent",
+      "note": "Daniel source file has no Daniel 11 rows; do not synthesize overlay."
+    },
+    {
+      "book": "daniel",
+      "ref": "11:32",
+      "category": "daniel_source_chapter_absent",
+      "note": "Daniel source file has no Daniel 11 rows; do not synthesize overlay."
+    },
+    {
+      "book": "daniel",
+      "ref": "11:33",
+      "category": "daniel_source_chapter_absent",
+      "note": "Daniel source file has no Daniel 11 rows; do not synthesize overlay."
+    },
+    {
+      "book": "daniel",
+      "ref": "11:34",
+      "category": "daniel_source_chapter_absent",
+      "note": "Daniel source file has no Daniel 11 rows; do not synthesize overlay."
+    },
+    {
+      "book": "daniel",
+      "ref": "11:35",
+      "category": "daniel_source_chapter_absent",
+      "note": "Daniel source file has no Daniel 11 rows; do not synthesize overlay."
+    },
+    {
+      "book": "daniel",
+      "ref": "11:36",
+      "category": "daniel_source_chapter_absent",
+      "note": "Daniel source file has no Daniel 11 rows; do not synthesize overlay."
+    },
+    {
+      "book": "daniel",
+      "ref": "11:37",
+      "category": "daniel_source_chapter_absent",
+      "note": "Daniel source file has no Daniel 11 rows; do not synthesize overlay."
+    },
+    {
+      "book": "daniel",
+      "ref": "11:38",
+      "category": "daniel_source_chapter_absent",
+      "note": "Daniel source file has no Daniel 11 rows; do not synthesize overlay."
+    },
+    {
+      "book": "daniel",
+      "ref": "11:39",
+      "category": "daniel_source_chapter_absent",
+      "note": "Daniel source file has no Daniel 11 rows; do not synthesize overlay."
+    },
+    {
+      "book": "daniel",
+      "ref": "11:40",
+      "category": "daniel_source_chapter_absent",
+      "note": "Daniel source file has no Daniel 11 rows; do not synthesize overlay."
+    },
+    {
+      "book": "daniel",
+      "ref": "11:41",
+      "category": "daniel_source_chapter_absent",
+      "note": "Daniel source file has no Daniel 11 rows; do not synthesize overlay."
+    },
+    {
+      "book": "daniel",
+      "ref": "11:42",
+      "category": "daniel_source_chapter_absent",
+      "note": "Daniel source file has no Daniel 11 rows; do not synthesize overlay."
+    },
+    {
+      "book": "daniel",
+      "ref": "11:43",
+      "category": "daniel_source_chapter_absent",
+      "note": "Daniel source file has no Daniel 11 rows; do not synthesize overlay."
+    },
+    {
+      "book": "daniel",
+      "ref": "11:44",
+      "category": "daniel_source_chapter_absent",
+      "note": "Daniel source file has no Daniel 11 rows; do not synthesize overlay."
+    },
+    {
+      "book": "daniel",
+      "ref": "11:45",
+      "category": "daniel_source_chapter_absent",
+      "note": "Daniel source file has no Daniel 11 rows; do not synthesize overlay."
+    }
+  ]
+}
