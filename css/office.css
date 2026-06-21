@@ -3669,3 +3669,20 @@ body.office-active .app-mode-drawer .shared-office-nav-options::-webkit-scrollba
     opacity: 0.86;
 }
 
+/* Roman Breviary 1960/1962 sidebarless dev route */
+body.roman-breviary-dev-mode #sidebar-toggle {
+    display: none;
+}
+
+body.roman-breviary-dev-mode #main-content,
+body.roman-breviary-dev-mode #main-content.sidebar-hidden {
+    padding-left: 40px;
+}
+
+@media (max-width: 720px) {
+    body.roman-breviary-dev-mode #main-content,
+    body.roman-breviary-dev-mode #main-content.sidebar-hidden {
+        padding-left: 20px;
+    }
+}
+

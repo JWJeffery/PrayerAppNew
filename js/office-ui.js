@@ -1055,6 +1055,7 @@ function showTraditionEntry() {
 
     document.body.classList.remove('office-active');
     document.body.classList.remove('ethiopian-theme');
+    document.body.classList.remove('roman-breviary-dev-mode');
 
     selectTraditionFamily(null);
 }
@@ -1073,6 +1074,7 @@ function showUniversalModeSelection(persistDefault = false) {
 
     document.body.classList.remove('office-active');
     document.body.classList.remove('ethiopian-theme');
+    document.body.classList.remove('roman-breviary-dev-mode');
 }
 
 
@@ -1411,6 +1413,7 @@ async function selectMode(mode) {
     document.body.classList.add('office-active');
 
     document.body.classList.remove('ethiopian-theme');
+    document.body.classList.toggle('roman-breviary-dev-mode', mode === 'roman-breviary-dev');
     window._forcedOfficeId = undefined;
 
     // Mode transition invariant: exactly one office drawer is active for the selected mode.
