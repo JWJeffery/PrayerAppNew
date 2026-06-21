@@ -1,0 +1,71 @@
+#!/usr/bin/env node
+import fs from 'node:fs';
+
+const governancePath = "data/bible/registry/deuterocanon-remaining-governance.json";
+const statusPath = "data/bible/registry/bible-corpus-trust-status.json";
+
+const failures = [];
+const governance = JSON.parse(fs.readFileSync(governancePath, 'utf8'));
+const status = JSON.parse(fs.readFileSync(statusPath, 'utf8'));
+
+if (governance.schema !== 'deuterocanon-remaining-governance-v1') {
+  failures.push({ type: 'schema-mismatch' });
+}
+
+if (governance.status !== 'not_trusted_remaining_deuterocanon_governed') {
+  failures.push({ type: 'status-mismatch', actual: governance.status });
+}
+
+for (const key of ['estherGK', 'danielGK']) {
+  const book = governance.inspectedGreekBooks?.[key];
+  if (!book) failures.push({ type: 'missing-greek-book-governance', key });
+  if (book && !String(book.decision || '').startsWith('governance_only')) {
+    failures.push({ type: 'unsafe-greek-book-decision', key, decision: book.decision });
+  }
+}
+
+for (const key of ['3maccabees', '4maccabees']) {
+  const book = governance.inspectedMaccabees?.[key];
+  if (!book) failures.push({ type: 'missing-maccabees-governance', key });
+  if (book && book.decision !== 'source_gap_do_not_patch') {
+    failures.push({ type: 'unsafe-maccabees-decision', key, decision: book.decision });
+  }
+}
+
+for (const blocked of [
+  'greek_esther_simple_overlay',
+  'greek_daniel_simple_overlay',
+  '3maccabees_active_sparse_promotion',
+  '4maccabees_active_sparse_promotion'
+]) {
+  if (!Array.isArray(governance.blockedPatches) || !governance.blockedPatches.includes(blocked)) {
+    failures.push({ type: 'missing-blocked-patch', blocked });
+  }
+}
+
+const lane = status.lanes?.deuterocanon;
+if (!lane || lane.status !== 'not_trusted_underbuilt') {
+  failures.push({ type: 'deuterocanon-trust-status-mismatch', actual: lane?.status || null });
+}
+
+if (!Array.isArray(lane?.completedRemediations) || !lane.completedRemediations.includes('deuterocanon_remaining_governance_1')) {
+  failures.push({ type: 'missing-completed-remediation-marker' });
+}
+
+const report = {
+  audit: 'deuterocanon-remaining-governance',
+  status: failures.length ? 'failed' : 'passed',
+  greekBooks: governance.inspectedGreekBooks,
+  maccabees: governance.inspectedMaccabees,
+  failures
+};
+
+console.log(JSON.stringify(report, null, 2));
+
+if (failures.length) {
+  console.log('ALL FAILED');
+  console.log('NEXT: Review deuterocanon remaining governance failures.');
+} else {
+  console.log('ALL PASSED');
+  console.log('NEXT: Deuterocanon remaining unresolved lanes are governed.');
+}

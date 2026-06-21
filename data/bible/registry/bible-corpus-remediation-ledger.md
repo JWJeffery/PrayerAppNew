@@ -765,3 +765,35 @@ Explicitly not applied:
 Trust status:
 
 Deuterocanon remains not trusted/underbuilt pending remaining books and translation-lane adjudication.
+
+
+## Phase 4P: Deuterocanon remaining governance
+
+Status: governed, not textually trusted.
+
+Decision:
+
+The remaining deuterocanonical problem set is now explicitly classified rather than silently patched.
+
+Greek books:
+
+- Greek Esther is not safe for simple full-source overlay. Active, DRB, and NABRE shapes differ materially.
+- Greek Daniel is not safe for simple full-source overlay. Active, DRB, and NABRE shapes differ materially and must remain under Greek Daniel governance.
+
+3/4 Maccabees:
+
+- Active 3 Maccabees has 40 sparse raw-text rows.
+- Active 4 Maccabees has 46 sparse raw-text rows.
+- Repo-history candidates inspected so far do not provide a controlled full local source. The parseable historical active-path copies are identical to the current sparse files; other inspected candidates were not parseable in the current JSON inspection.
+- Do not promote these sparse files as complete.
+
+Blocked patches:
+
+- No simple Greek Esther overlay.
+- No simple Greek Daniel overlay.
+- No 3 Maccabees sparse-file promotion.
+- No 4 Maccabees sparse-file promotion.
+
+Trust status:
+
+Deuterocanon remains not trusted/underbuilt pending separate Greek-book adjudication and 3/4 Maccabees source acquisition or explicit exclusion governance.

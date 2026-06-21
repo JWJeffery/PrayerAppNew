@@ -1,0 +1,56 @@
+{
+  "schema": "deuterocanon-remaining-governance-v1",
+  "status": "not_trusted_remaining_deuterocanon_governed",
+  "decisions": {
+    "greekBookPolicy": "Do not patch Greek Daniel or Greek Esther by simple full-source overlay. Their DRB/NABRE source deltas include nontrivial versification and book-shape differences.",
+    "maccabeesPolicy": "Do not treat active 3 Maccabees or 4 Maccabees as complete. Repo-history candidates inspected so far are either unparseable in current JSON inspection or identical to the active sparse files.",
+    "sourcePolicy": "No direct full local source for 3 Maccabees or 4 Maccabees has been identified in this tranche.",
+    "trustPolicy": "Deuterocanon remains not trusted/underbuilt even after DRB/NABRE completion tranches."
+  },
+  "inspectedGreekBooks": {
+    "estherGK": {
+      "activePath": "data/bible/OT/estherGK.json",
+      "activeRows": 267,
+      "drbRows": 275,
+      "nabreRows": 167,
+      "drbMissingFromActive": 80,
+      "drbActiveOnly": 26,
+      "nabreMissingFromActive": 1,
+      "nabreActiveOnly": 55,
+      "decision": "governance_only_pending_separate_greek_esther_review"
+    },
+    "danielGK": {
+      "activePath": "data/bible/OT/danielGK.json",
+      "activeRows": 530,
+      "drbRows": 531,
+      "nabreRows": 485,
+      "drbMissingFromActive": 4,
+      "drbActiveOnly": 3,
+      "nabreMissingFromActive": 4,
+      "nabreActiveOnly": 49,
+      "decision": "governance_only_pending_separate_greek_daniel_review"
+    }
+  },
+  "inspectedMaccabees": {
+    "3maccabees": {
+      "activePath": "data/bible/OT/3maccabees.json",
+      "activeRows": 40,
+      "activeTranslationShape": "rawText",
+      "historyFinding": "parseable historical active-path copy is identical to active sparse file; other inspected historical candidates were not parseable in current JSON inspection",
+      "decision": "source_gap_do_not_patch"
+    },
+    "4maccabees": {
+      "activePath": "data/bible/OT/4maccabees.json",
+      "activeRows": 46,
+      "activeTranslationShape": "rawText",
+      "historyFinding": "parseable historical active-path copy is identical to active sparse file; other inspected historical candidates were not parseable in current JSON inspection",
+      "decision": "source_gap_do_not_patch"
+    }
+  },
+  "blockedPatches": [
+    "greek_esther_simple_overlay",
+    "greek_daniel_simple_overlay",
+    "3maccabees_active_sparse_promotion",
+    "4maccabees_active_sparse_promotion"
+  ]
+}

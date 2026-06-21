@@ -50,10 +50,11 @@
         "Several files are structural stubs or materially incomplete.",
         "Some deuterocanonical files require rebuild, quarantine, or explicit scope declaration."
       ],
-      "reason": "DRB/NABRE completion tranches applied to direct-source deuterocanonical books; remaining books and translation lanes still require governance.",
+      "reason": "DRB/NABRE completion tranches applied where source identity was controlled; Greek books and 3/4 Maccabees remain governed unresolved work.",
       "completedRemediations": [
         "deuterocanon_drb_completion_tranche_1",
-        "deuterocanon_drb_nabre_completion_tranche_2"
+        "deuterocanon_drb_nabre_completion_tranche_2",
+        "deuterocanon_remaining_governance_1"
       ]
     },
     "broader_canon": {
