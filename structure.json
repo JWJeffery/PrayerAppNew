@@ -3059,8 +3059,8 @@
       "status": "not_trusted_governance_pending",
       "certification": "not_certified_trusted",
       "lane": "broader_canon",
-      "recorded_at": "2026-06-21T08:38:30Z",
-      "head_at_recording": "1880adb",
+      "recorded_at": "2026-06-21T08:40:31Z",
+      "head_at_recording": "1e714a3",
       "source_backed_repairs": {
         "3maccabees": {
           "path": "data/bible/OT/3maccabees.json",
@@ -3102,6 +3102,62 @@
             24,
             24
           ]
+        },
+        "1esdras": {
+          "path": "data/bible/OT/1esdras.json",
+          "source_file": "54-1ESeng-webbe.usfm",
+          "source_id": "1ES",
+          "previous_row_count": 450,
+          "chapter_count": 9,
+          "verse_row_count": 448,
+          "chapter_lengths": [
+            58,
+            30,
+            24,
+            63,
+            73,
+            34,
+            15,
+            96,
+            55
+          ]
+        },
+        "2esdras": {
+          "path": "data/bible/OT/2esdras.json",
+          "source_file": "58-2ESeng-webbe.usfm",
+          "source_id": "2ES",
+          "previous_row_count": 869,
+          "chapter_count": 16,
+          "verse_row_count": 944,
+          "chapter_lengths": [
+            40,
+            48,
+            36,
+            52,
+            56,
+            59,
+            140,
+            63,
+            47,
+            59,
+            46,
+            51,
+            58,
+            48,
+            63,
+            78
+          ]
+        },
+        "prayerofmanasseh": {
+          "path": "data/bible/OT/prayerofmanasseh.json",
+          "source_file": "55-MANeng-webbe.usfm",
+          "source_id": "MAN",
+          "previous_row_count": 15,
+          "chapter_count": 1,
+          "verse_row_count": 15,
+          "chapter_lengths": [
+            15
+          ]
         }
       },
       "source": {
@@ -3114,7 +3170,7 @@
       "remaining_policy": "Continue repairing remaining raw or zero-row broader-canon files from controlled sources. Do not treat this as whole-lane textual certification."
     }
   },
-  "last_updated": "2026-06-21T08:38:30Z",
+  "last_updated": "2026-06-21T08:40:31Z",
   "lothIntegrationMilestones": [
     {
       "milestoneId": "loth-oor-c06-ordinary-sentinel-source-intake-closure",

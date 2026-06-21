@@ -90,7 +90,8 @@
     "sourcePolicy": "Raw-text candidates require separate source/provenance adjudication before trust claims.",
     "emptyFilePolicy": "Zero-row broader-canon files are allowed only as governed unresolved artifacts, not as complete corpus entries.",
     "trustPolicy": "The broader canon lane remains not trusted/governance pending.",
-    "maccabeesPolicy": "3 Maccabees and 4 Maccabees were repaired from WEBBE USFM source; broader canon remains not globally trusted until remaining raw/zero-row lanes are repaired or excluded."
+    "maccabeesPolicy": "3 Maccabees and 4 Maccabees were repaired from WEBBE USFM source; broader canon remains not globally trusted until remaining raw/zero-row lanes are repaired or excluded.",
+    "esdrasManassehPolicy": "1 Esdras, 2 Esdras, and Prayer of Manasseh were repaired from WEBBE USFM source; broader canon remains not globally trusted until remaining raw/zero-row lanes are repaired or excluded."
   },
   "blockedClaims": [
     "broader_canon_complete",
@@ -120,6 +121,39 @@
       "row_count": 484,
       "chapter_count": 18,
       "completed_at": "2026-06-21T08:38:30Z",
+      "decision": "source_backed_repair_applied"
+    },
+    "1esdras": {
+      "path": "data/bible/OT/1esdras.json",
+      "translation_key": "WEBBE",
+      "source": "World English Bible British Edition with Deuterocanon",
+      "source_url": "https://ebible.org/Scriptures/eng-webbe_usfm.zip",
+      "source_details_url": "https://ebible.org/find/details.php?id=eng-webbe",
+      "row_count": 448,
+      "chapter_count": 9,
+      "completed_at": "2026-06-21T08:40:31Z",
+      "decision": "source_backed_repair_applied"
+    },
+    "2esdras": {
+      "path": "data/bible/OT/2esdras.json",
+      "translation_key": "WEBBE",
+      "source": "World English Bible British Edition with Deuterocanon",
+      "source_url": "https://ebible.org/Scriptures/eng-webbe_usfm.zip",
+      "source_details_url": "https://ebible.org/find/details.php?id=eng-webbe",
+      "row_count": 944,
+      "chapter_count": 16,
+      "completed_at": "2026-06-21T08:40:31Z",
+      "decision": "source_backed_repair_applied"
+    },
+    "prayerofmanasseh": {
+      "path": "data/bible/OT/prayerofmanasseh.json",
+      "translation_key": "WEBBE",
+      "source": "World English Bible British Edition with Deuterocanon",
+      "source_url": "https://ebible.org/Scriptures/eng-webbe_usfm.zip",
+      "source_details_url": "https://ebible.org/find/details.php?id=eng-webbe",
+      "row_count": 15,
+      "chapter_count": 1,
+      "completed_at": "2026-06-21T08:40:31Z",
       "decision": "source_backed_repair_applied"
     }
   }

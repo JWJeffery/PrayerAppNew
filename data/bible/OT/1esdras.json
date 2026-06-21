@@ -1,2832 +1,2293 @@
 {
   "meta": {
     "name": "1 Esdras",
-    "id": "1ESD",
+    "id": "1esdras",
     "version": "NRSV",
-    "copyright": "New Revised Standard Version Bible, copyright © 1989 National Council of the Churches of Christ in the United States of America. Used by permission. All rights reserved worldwide."
+    "copyright": "New Revised Standard Version Bible, copyright © 1989 National Council of the Churches of Christ in the United States of America. Used by permission. All rights reserved worldwide.",
+    "title": "1 Esdras",
+    "source_status": "source_backed_repaired",
+    "translation_key": "WEBBE",
+    "source_translation": "World English Bible British Edition with Deuterocanon",
+    "source_file": "54-1ESeng-webbe.usfm",
+    "source_url": "https://ebible.org/Scriptures/eng-webbe_usfm.zip",
+    "source_details_url": "https://ebible.org/find/details.php?id=eng-webbe",
+    "license_posture": "public_domain_copy_freely",
+    "repair_recorded_at": "2026-06-21T08:40:31Z",
+    "repair_head": "1e714a3"
   },
   "chapters": [
     {
-      "number": 1,
       "verses": [
         {
-          "number": 1,
           "text": {
-            "KJV": "1:1 And Iosias helde the Feast of the Passeouer in Ierusalem vnto his Lord, and offered the Passeouer the fourteenth day of the first moneth:",
-            "NRSV": "Josiah kept the passover to his Lord in Jerusalem; he slaughtered the passover lamb on the fourteenth day of the first month,",
-            "DRB": "And Iosias made a Pasch in Jerusalem to our Lord & immolated the Phase the fourteenth moon of the month:"
+            "WEBBE": "Josias held the Passover in Jerusalem to his Lord, and offered the Passover the fourteenth day of the first month,"
           }
         },
         {
-          "number": 2,
           "text": {
-            "DRB": "appointing the Priests by courses of days clothed with stoles in the temple of our Lord. 4."
+            "WEBBE": "having set the priests according to their daily courses, being arrayed in their vestments, in the Lord’s temple."
           }
         },
         {
-          "number": 3,
           "text": {
-            "DRB": "And he spake to the Levites the sacred servants of Israel, that they should sanctify themselves to our Lord in the placing of the holy ark of our Lord in the house, which King Salomon son of David built."
+            "WEBBE": "He spoke to the Levites, the temple servants of Israel, that they should make themselves holy to the Lord, to set the holy ark of the Lord in the house that King Solomon the son of David had built."
           }
         },
         {
-          "number": 4,
           "text": {
-            "DRB": "It shall not be for you to take it upon your shoulders. And now serve your Lord, and take the care of that nation Israel, in part according to your villages & tribes,"
+            "WEBBE": "He said, “You no longer need to carry it on your shoulders. Now therefore serve the Lord your God, and minister to his people Israel, and prepare yourselves by your fathers’ houses and kindred,"
           }
         },
         {
-          "number": 5,
           "text": {
-            "DRB": "according to the writing of David king of Israel, and according to the magnificence of Salomon his son, all in the temple, and according to your father's portion of principality, among them that stand in the sight of your brethren the children of Israel."
+            "WEBBE": "according to the writing of King David of Israel, and according to the magnificence of Solomon his son. Stand in the holy place according to the divisions of your Levite families who minister in the presence of your kindred the descendants of Israel."
           }
         },
         {
-          "number": 6,
           "text": {
-            "DRB": "Immolate the Pasch, and prepare the sacrifices for your brethren, and do according to the precept of our Lord which was given to Moyses."
+            "WEBBE": "Offer the Passover in order, prepare the sacrifices for your kindred, and keep the Passover according to the Lord’s commandment, which was given to Moses."
           }
         },
         {
-          "number": 7,
           "text": {
-            "DRB": "And Iosias gave unto the people that was found of sheep, lambs, and kids, & goats thirty thousand, calves three thousand. . . ."
+            "WEBBE": "To the people which were present, Josias gave thirty thousand lambs and kids, and three thousand calves. These things were given from the king’s possessions, as he promised, to the people and to the priests and Levites."
           }
         },
         {
-          "number": 8,
           "text": {
-            "DRB": "These things were given to the people^ of the kings' goods according to promise: and to the Priests for the Phase, sheep in number two thousand, and calves an hundred."
+            "WEBBE": "Helkias, Zacharias, and Esyelus, the rulers of the temple, gave to the priests for the Passover two thousand and six hundred sheep, and three hundred calves."
           }
         },
         {
-          "number": 9,
           "text": {
-            "DRB": "And Jechonias, and Semeias, and Nathanael brethren, and Hasabias, and Oziel, & Coraba, for the Phase sheep five thousand, calves five hundred."
+            "WEBBE": "Jeconias, Samaias, Nathanael his brother, Sabias, Ochielus, and Joram, captains over thousands, gave to the Levites for the Passover five thousand sheep and seven hundred calves."
           }
         },
         {
-          "number": 10,
           "text": {
-            "DRB": "And when these things were done in good order, the Priests and the Levites stood having azymes by tribes."
+            "WEBBE": "When these things were done, the priests and Levites, having the unleavened bread, stood in proper order according to the kindred,"
           }
         },
         {
-          "number": 11,
           "text": {
-            "DRB": "And according to the portions of their fathers' principality, in the sight of the people they did offer to our Lord according to those things, which were written in the book of Moyses:"
+            "WEBBE": "and according to the several divisions by fathers’ houses, before the people, to offer to the Lord as it is written in the book of Moses. They did this in the morning."
           }
         },
         {
-          "number": 12,
           "text": {
-            "DRB": "and roasted the Phase with fire as it ought: and the hosts they boiled in cauldrons, and in pots with benevolence:"
+            "WEBBE": "They roasted the Passover lamb with fire, as required. They boiled the sacrifices in the brazen vessels and cauldrons with a pleasing smell,"
           }
         },
         {
-          "number": 13,
           "text": {
-            "DRB": "and they brought to all that were of the people: and afterward they prepared for themselves and the"
+            "WEBBE": "and set them before all the people. Afterward they prepared for themselves and for their kindred the priests, the sons of Aaron."
           }
         },
         {
-          "number": 14,
           "text": {
-            "DRB": "For the Priests offered the fat, until the hour was ended: & the Levites prepared for themselves, and their brethren, the children of Aaron."
+            "WEBBE": "For the priests offered the fat until night. The Levites prepared for themselves and for their kindred the priests, the sons of Aaron."
           }
         },
         {
-          "number": 15,
           "text": {
-            "DRB": "And the sacred singing men, the children of Asaph were by order according to the precept of David, & Asaph, & Zacharias, & Ieddimus, which was from the king."
+            "WEBBE": "The holy singers also, the sons of Asaph, were in their order, according to the appointment of David: Asaph, Zacharias, and Eddinus, who represented the king."
           }
         },
         {
-          "number": 16,
           "text": {
-            "DRB": "And the porters at every gate, so that none transgressed his own: for their brethren prepared for them."
+            "WEBBE": "Moreover the gatekeepers were at every gate. No one needed to depart from his daily duties, for their kindred the Levites prepared for them."
           }
         },
         {
-          "number": 17,
           "text": {
-            "DRB": "And the things were consummate that pertained to the sacrifice of our Lord."
+            "WEBBE": "So the things that belonged to the Lord’s sacrifices were accomplished in that day, in holding the Passover,"
           }
         },
         {
-          "number": 18,
           "text": {
-            "DRB": "In that day they celebrated the Phase, and offered hosts upon the sacrifice of our Lord, according to the precept of king Iosias."
+            "WEBBE": "and offering sacrifices on the altar of the Lord, according to the commandment of King Josias."
           }
         },
         {
-          "number": 19,
           "text": {
-            "DRB": "And the children of Israel, that were found at that time, celebrated the Phase: and the festival day of Azymes for seven days:"
+            "WEBBE": "So the children of Israel which were present at that time held the Passover and the feast of unleavened bread seven days."
           }
         },
         {
-          "number": 20,
           "text": {
-            "DRB": "and there was not celebrated such a Phase in Israel, from the times of Samuel the Prophet:"
+            "WEBBE": "Such a Passover had not been held in Israel since the time of the prophet Samuel."
           }
         },
         {
-          "number": 21,
           "text": {
-            "DRB": "and all the kings of Israel did not celebrate such a Phase as Iosias did, and the Priests, and the Levites, and the Jews, and all Israel, that were found in their abode at Jerusalem."
+            "WEBBE": "Indeed, none of the kings of Israel held such a Passover as Josias with the priests, the Levites, and the Jews, held with all Israel that were present in their dwelling place at Jerusalem."
           }
         },
         {
-          "number": 22,
           "text": {
-            "DRB": "In the eighteenth year, Iosias reigning, was the Phase celebrated."
+            "WEBBE": "This Passover was held in the eighteenth year of the reign of Josias."
           }
         },
         {
-          "number": 23,
           "text": {
-            "KJV": "1:23 And the workes of Iosias were vpright before his Lord with an heart full of godlinesse.",
-            "NRSV": "The events of Josiah’s reign had been right in the sight of his Lord, for his heart was full of godliness.",
-            "DRB": "And the works of Iosias were directed in the sight of his Lord in a heart full of fear:"
+            "WEBBE": "The works of Josias were upright before his Lord with a heart full of godliness."
           }
         },
         {
-          "number": 24,
           "text": {
-            "DRB": "and the things concerning him are written in the ancient times, touching them that sinned, and were irreligious against our Lord above all nations, and that sought not the words of our Lord upon Israel."
+            "WEBBE": "Moreover the things that came to pass in his days have been written in times past, concerning those who sinned and did wickedly against the Lord more than any other people or kingdom, and how they grieved him exceedingly, so that the Lord’s words were confirmed against Israel."
           }
         },
         {
-          "number": 25,
           "text": {
-            "DRB": "And after all this fact of Iosias, came up Pharao the king of Ægypt coming in Charcamis from the way upon Euphrates, and Iosias went forth to meet him. 4."
+            "WEBBE": "Now after all these acts of Josias, it came to pass that Pharaoh the king of Egypt came to make war at Carchemish on the Euphrates; and Josias went out against him."
           }
         },
         {
-          "number": 26,
           "text": {
-            "DRB": "And the king of Ægypt sent to Iosias saying: What is there between me & thee king of Juda?"
+            "WEBBE": "But the king of Egypt sent to him, saying, “What do I have to do with you, O king of Judea?"
           }
         },
         {
-          "number": 27,
           "text": {
-            "DRB": "I was not sent of the Lord to fight against thee: for my battle is upon Euphrates, go down in haste."
+            "WEBBE": "I wasn’t sent out from the Lord God against you, for my war is against the Euphrates. Now the Lord is with me, yes, the Lord is with me hastening me forward. Depart from me, and don’t be against the Lord.”"
           }
         },
         {
-          "number": 28,
           "text": {
-            "DRB": "And Iosias did not return upon his chariot: but endeavoured to overthrow him, not attending the word of the Prophet from the mouth of our Lord:"
+            "WEBBE": "However, Josias didn’t turn back to his chariot, but tried to fight with him, not regarding the words of the prophet Jeremy from the Lord’s mouth,"
           }
         },
         {
-          "number": 29,
           "text": {
-            "DRB": "but he made battle against him in the field of Mageddo. And Princes went down to king Iosias."
+            "WEBBE": "but joined battle with him in the plain of Megiddo, and the commanders came down against King Josias."
           }
         },
         {
-          "number": 30,
           "text": {
-            "DRB": "And the king said to his servants: Remove me from the battle, for I am weakened exceedingly. And forthwith his servants removed him out of the battle."
+            "WEBBE": "Then the king said to his servants, “Carry me away out of the battle, for I am very weak!” Immediately his servants carried him away out of the army."
           }
         },
         {
-          "number": 31,
           "text": {
-            "DRB": "And he went up into his second chariot: & coming to Jerusalem, died, and was buried in his father's sepulchre."
+            "WEBBE": "Then he got into his second chariot. After he was brought back to Jerusalem he died, and was buried in the tomb of his ancestors."
           }
         },
         {
-          "number": 32,
           "text": {
-            "KJV": "1:32 And in all Iury they mourned for Iosias, yea Ieremie the Prophet lamented for Iosias, and the cheefe men with the women made lamentation for him vnto this day: and this was giuen out for an ordinance to be done continually in all the nation of Israel.",
-            "NRSV": "Josiah died, and was buried in the tomb of his ancestors in Jerusalem.",
-            "DRB": "And in all Jury they mourned for Iosias, & the rulers with their wives lamented him until this day. And this was given out to be done always unto all the stock of Israel."
+            "WEBBE": "All Judea mourned for Josias. Jeremy the prophet lamented for Josias, and the chief men with the women made lamentation for him to this day. This was given out for an ordinance to be done continually in all the nation of Israel."
           }
         },
         {
-          "number": 33,
           "text": {
-            "DRB": "But these things were written before in the book of the histories of the kings of Juda: and all the acts of the doing of Iosias, and his glory and his understanding in the law of our Lord: and the things that were done by him, and that are not written in the book of the kings of Israel and Juda."
+            "WEBBE": "These things are written in the book of the histories of the kings of Judea, and every one of the acts that Josias did, and his glory, and his understanding in the law of the Lord, and the things that he had done before, and the things now told, are reported in the book of the kings of Israel and Judah."
           }
         },
         {
-          "number": 34,
           "text": {
-            "DRB": "And they that were of the nation, taking Jechonias the son of Iosias, made him king for Iosias his father, when he was three and twenty years old. 4. . v. 30. 2. Par. 36. v. 1."
+            "WEBBE": "The people took Joachaz the son of Josias, and made him king instead of Josias his father, when he was twenty-three years old."
           }
         },
         {
-          "number": 35,
           "text": {
-            "DRB": "And he reigned over Israel three months. And the king of Ægypt removed him, that he should not reign in Jerusalem:"
+            "WEBBE": "He reigned in Judah and Jerusalem for three months. Then the king of Egypt deposed him from reigning in Jerusalem."
           }
         },
         {
-          "number": 36,
           "text": {
-            "DRB": "& he put a tax upon the nation^ of silver an hundred talents, and of gold one talent."
+            "WEBBE": "He set a tax upon the people of one hundred talents of silver and one talent of gold."
           }
         },
         {
-          "number": 37,
           "text": {
-            "DRB": "And the king of Ægypt made Ioacim his brother king of Juda & Jerusalem:"
+            "WEBBE": "The king of Egypt also made King Joakim his brother king of Judea and Jerusalem."
           }
         },
         {
-          "number": 38,
           "text": {
-            "DRB": "& he bound the magistrates of Ioacim, and Zaracel his brother, and taking them brought them back into Ægypt."
+            "WEBBE": "And Joakim imprisoned the nobles and apprehended his brother Zarakes, and brought him up out of Egypt."
           }
         },
         {
-          "number": 39,
           "text": {
-            "DRB": "Ioacim was five and twenty years old when he began to reign in the land of Juda and Jerusalem: & he did evil in the sight of our Lord."
+            "WEBBE": "Joakim was twenty-five years old when he began to reign in Judea and Jerusalem. He did that which was evil in the sight of the Lord."
           }
         },
         {
-          "number": 40,
           "text": {
-            "DRB": "And after this man came up Nabuchodonosor the king of Babylon, and binding him with a band of brass, brought him into Babylon."
+            "WEBBE": "King Nabuchodonosor of Babylon came up against him, bound him with a chain of brass, and carried him to Babylon."
           }
         },
         {
-          "number": 41,
           "text": {
-            "DRB": "And Nabuchodonosor took the sacred vessels of our Lord, and carried away, and consecrated them in his temple in Babylon."
+            "WEBBE": "Nabuchodonosor also took some of the Lord’s holy vessels, carried them away, and stored them in his own temple at Babylon."
           }
         },
         {
-          "number": 42,
           "text": {
-            "DRB": "For his uncleanness, & lack of religion is written in the book of the times of the kings."
+            "WEBBE": "But those things that are reported of him, and of his uncleanness and impiety, are written in the chronicles of the kings."
           }
         },
         {
-          "number": 43,
           "text": {
-            "DRB": "And Ioachin his son reigned for him. And when he was made king, he was eighteen years old."
+            "WEBBE": "Then Joakim his son reigned in his place. When he was made king, he was eighteen years old."
           }
         },
         {
-          "number": 44,
           "text": {
-            "DRB": "And reigned three months and ten days in Jerusalem, and did evil in the sight of our Lord:"
+            "WEBBE": "He reigned three months and ten days in Jerusalem. He did that which was evil before the Lord."
           }
         },
         {
-          "number": 45,
           "text": {
-            "DRB": "and after a year Nabuchodonosor sending, transported him into Babylon together with the sacred vessels of our Lord."
+            "WEBBE": "So after a year Nabuchodonosor sent and caused him to be brought to Babylon with the holy vessels of the Lord,"
           }
         },
         {
-          "number": 46,
           "text": {
-            "DRB": "And he made Sedecias king of Juda and"
+            "WEBBE": "and made Sedekias king of Judea and Jerusalem when he was twenty-one years old. He reigned eleven years."
           }
         },
         {
-          "number": 47,
           "text": {
-            "DRB": "And he did evil in the sight of our Lord, and was not afraid of the words which were spoken by Jeremy the Prophet from the mouth of our Lord:"
+            "WEBBE": "He also did that which was evil in the sight of the Lord, and didn’t heed the words that were spoken by Jeremy the prophet from the Lord’s mouth."
           }
         },
         {
-          "number": 48,
           "text": {
-            "DRB": "and being sworn of king Nabuchodonosor, forsworn he did revolt: & his neck being hardened, & his heart, he transgressed the ordinances of our Lord the God of Israel."
+            "WEBBE": "After King Nabuchodonosor had made him to swear by the name of the Lord, he broke his oath and rebelled. Hardening his neck and his heart, he transgressed the laws of the Lord, the God of Israel."
           }
         },
         {
-          "number": 49,
           "text": {
-            "DRB": "And the Princes of the people of our Lord did many things wickedly, and they did impiously above all the uncleanness of the nations: & they polluted the temple of our Lord that was holy in Jerusalem."
+            "WEBBE": "Moreover the governors of the people and of the priests did many things wickedly, exceeding all the defilements of all nations, and defiled the temple of the Lord, which was sanctified in Jerusalem."
           }
         },
         {
-          "number": 50,
           "text": {
-            "DRB": "And the God of their fathers sent by his messenger to reclaim them, for that he would spare them, and his tabernacle."
+            "WEBBE": "The God of their ancestors sent by his messenger to call them back, because he had compassion on them and on his dwelling place."
           }
         },
         {
-          "number": 51,
           "text": {
-            "DRB": "But they scorned at his messengers: and in the day that our Lord spake to them they were mocking his Prophets."
+            "WEBBE": "But they mocked his messengers. In the day when the Lord spoke, they scoffed at his prophets"
           }
         },
         {
-          "number": 52,
           "text": {
-            "DRB": "Who was moved even unto wrath upon his nation for their impiety, and commanded the kings of the Chaldees to come up."
+            "WEBBE": "until he, being angry with his people for their great ungodliness, commanded to bring up the kings of the Chaldeans against them."
           }
         },
         {
-          "number": 53,
           "text": {
-            "KJV": "1:53 Who flew their yong men with the sword, yea euen within the compasse of their holy Temple, & spared neither yong man nor maid, old man nor child among them, for hee deliuered all into their hands.",
-            "NRSV": "The Chaldeans killed their young men with the sword around their holy temple; they did not spare young man or young woman, old man or child, for he gave them all into their hands.",
-            "DRB": "These slew their young men with the sword, round about their holy temple, and spared not young man, and old man, and Virgin, and youth:"
+            "WEBBE": "They killed their young men with the sword around their holy temple, and spared neither young man or young woman, old man or child; but he delivered all of them into their hands."
           }
         },
         {
-          "number": 54,
           "text": {
-            "DRB": "but all were delivered into their hands: & taking all the sacred vessels of our Lord, and the kings' treasures, they carried them into Babylon,"
+            "WEBBE": "They took all the holy vessels of the Lord, both great and small, with the treasure chests of the Lord’s ark and the king’s treasures, and carried them away to Babylon."
           }
         },
         {
-          "number": 55,
           "text": {
-            "KJV": "1:55 As for the house of the Lord they burnt it, brake downe the walles of Ierusalem, set fire vpon her towres.",
-            "NRSV": "They burned the house of the Lord and broke down the walls of Jerusalem; they burned their towers with fire.",
-            "DRB": "and burnt the house of our Lord, and threw down the walls of Jerusalem: and the towers thereof they burnt with fire,"
+            "WEBBE": "They burnt the Lord’s house, broke down Jerusalem’s walls, and burnt its towers with fire."
           }
         },
         {
-          "number": 56,
           "text": {
-            "DRB": "and consumed all their honourable things, and brought them to naught, and those that were left of the sword, they led into Babylon."
+            "WEBBE": "As for her glorious things, they didn’t stop until they had brought them all to nothing. He carried the people who weren’t slain with the sword to Babylon."
           }
         },
         {
-          "number": 57,
           "text": {
-            "DRB": "And they were his servants until the Persians reigned in the fulfilling of the word of our Lord by the mouth of Jeremy: . v. 12. & 29. v."
+            "WEBBE": "They were servants to him and to his children until the Persians reigned, to fulfil the word of the Lord by the mouth of Jeremy:"
           }
         },
         {
-          "number": 58,
           "text": {
-            "DRB": "as long as the land quietly kept her sabbaths, all the time of her desolation she sabbathized in the application of seventy years."
+            "WEBBE": "“Until the land has enjoyed its Sabbaths, the whole time of her desolation shall she keep Sabbath, to fulfil seventy years."
           }
         }
       ]
     },
     {
-      "number": 2,
       "verses": [
         {
-          "number": 1,
           "text": {
-            "KJV": "2:1 In the first yeere of Cyrus king of the Persians, that the worde of the Lorde might bee accomplished, that hee had promised by the mouth of Ieremie:",
-            "NRSV": "In the first year of Cyrus king of the Persians, so that the word of the Lord by the mouth of Jeremiah might be accomplished,",
-            "DRB": "Cyrus king of the Persians reigning for the accomplishment of the word of our Lord by the mouth of Jeremy, 2. . v. 22. 2. . v. 1. & 6. v. 3. . v. 12. & 29. v."
+            "WEBBE": "In the first year of King Cyrus of the Persians, that the word of the Lord by the mouth of Jeremy might be accomplished,"
           }
         },
         {
-          "number": 2,
           "text": {
-            "KJV": "2:2 The Lord raised vp the spirit of Cyrus the king of the Persians, and he made proclamation thorow al his kingdome, and also by writing,",
-            "NRSV": "the Lord stirred up the spirit of Cyrus king of the Persians, and he made a proclamation throughout all his kingdom and also put it in writing:",
-            "DRB": "our Lord raised up the spirit of Cyrus King of the Persians, and he proclaimed in all his Kingdoms, and that by writing,"
+            "WEBBE": "the Lord stirred up the spirit of King Cyrus of the Persians, and he made a proclamation throughout all his kingdom, and also by writing,"
           }
         },
         {
-          "number": 3,
           "text": {
-            "KJV": "2:3 Saying, Thus saith Cyrus king of the Persians, The Lord of Israel the most high Lord, hath made me king of the whole world,",
-            "NRSV": "“Thus says Cyrus king of the Persians: The Lord of Israel, the Lord Most High, has made me king of the world,”",
-            "DRB": "saying: Thus saith Cyrus king of the Persians: The Lord of Israel, the high Lord, hath made me king over the whole earth,"
+            "WEBBE": "saying, “Cyrus king of the Persians says: The Lord of Israel, the Most High Lord, has made me king of the whole world,"
           }
         },
         {
-          "number": 4,
           "text": {
-            "KJV": "2:4 And commanded me to build him an house at Ierusalem in Iurie.",
-            "NRSV": "“and he has commanded me to build him a house at Jerusalem, which is in Judea.”",
-            "DRB": "& hath signified to me to build him a house in Jerusalem which is in Jury."
+            "WEBBE": "and commanded me to build him a house at Jerusalem that is in Judea."
           }
         },
         {
-          "number": 5,
           "text": {
-            "DRB": "If there be any of your kindred, his Lord go up with him into Jerusalem."
+            "WEBBE": "If therefore there are any of you that are of his people, let the Lord, even his Lord, be with him, and let him go up to Jerusalem that is in Judea, and build the house of the Lord of Israel. He is the Lord who dwells in Jerusalem."
           }
         },
         {
-          "number": 6,
           "text": {
-            "DRB": "Whosoever therefore dwell about the places, let them help them that are in the same place, in gold & silver,"
+            "WEBBE": "Therefore, of those who dwell in various places, let those who are in his own place each help with gold, with silver,"
           }
         },
         {
-          "number": 7,
           "text": {
-            "DRB": "in gifts, with horses, and beasts, and with other things which by vows are added into the temple of our Lord which is in Jerusalem."
+            "WEBBE": "with gifts, with horses, and cattle, beside the other things which have been added by vow for the temple of the Lord which is in Jerusalem."
           }
         },
         {
-          "number": 8,
           "text": {
-            "DRB": "And the Princes of the tribes, of the villages, and of Jury, of the tribe of Benjamin, & the Priests, and the Levites standing up, whom our Lord moved to go up, and to build the house of our Lord which is in Jerusalem, and they that were round about them,"
+            "WEBBE": "Then the chief of the families of Judah and of the tribe of Benjamin stood up, with the priests, the Levites, and all whose spirit the Lord had stirred to go up, to build the house for the Lord which is in Jerusalem."
           }
         },
         {
-          "number": 9,
           "text": {
-            "DRB": "did help them with all their gold and silver, and beasts, and many whose mind was stirred up, with many vows."
+            "WEBBE": "Those who lived around them helped them in all things with silver and gold, with horses and cattle, and with very many gifts that were vowed by a great number whose minds were so moved."
           }
         },
         {
-          "number": 10,
           "text": {
-            "DRB": "And Cyrus the king brought forth the sacred vessels of our Lord, which Nabuchodonosor the king of Babylon transported out of Jerusalem, & consecrated them to his Idol."
+            "WEBBE": "King Cyrus also brought out the holy vessels of the Lord, which Nabuchodonosor had carried away from Jerusalem and had stored in his temple of idols."
           }
         },
         {
-          "number": 11,
           "text": {
-            "DRB": "And Cyrus the king of Persians bringing them forth, delivered them to Mithridatus, who was over his treasures."
+            "WEBBE": "Now when King Cyrus of the Persians had brought them out, he delivered them to Mithradates his treasurer,"
           }
         },
         {
-          "number": 12,
           "text": {
-            "DRB": "And by him they were delivered to Salmanasar president of Jury."
+            "WEBBE": "and by him they were delivered to Sanabassar the governor of Judea."
           }
         },
         {
-          "number": 13,
           "text": {
-            "DRB": "And of these this was the number: Cups for"
+            "WEBBE": "This was the number of them: one thousand gold cups, one thousand silver cups, twenty-nine silver censers, thirty gold bowls, two thousand and four hundred and ten silver bowls, and one thousand other vessels."
           }
         },
         {
-          "number": 14,
           "text": {
-            "DRB": "& all the vessels of gold & silver, were five thousand eight hundred sixty."
+            "WEBBE": "So all the vessels of gold and of silver were brought up, even five thousand and four hundred and seventy-nine,"
           }
         },
         {
-          "number": 15,
           "text": {
-            "DRB": "And they were numbered to Salmanasar together with them that came out of the captivity of Babylon into Jerusalem."
+            "WEBBE": "and were carried back by Sanabassar, together with the returning exiles, from Babylon to Jerusalem."
           }
         },
         {
-          "number": 16,
           "text": {
-            "DRB": "But in the times of Artaxerxes king of the Persians, there wrote to him of them that dwelt in Jury and Jerusalem, Balsamus, and Mithridatus, and Sabellius, and Rathimus, Balthemus, Sabellius scribe, and the rest dwelling in Samaria, and other places, the epistle following to king Artaxerxes."
+            "WEBBE": "In the time of King Artaxerxes of the Persians, Belemus, Mithradates, Tabellius, Rathumus, Beeltethmus, and Samellius the scribe, with their other associates, dwelling in Samaria and other places, wrote to him against those who lived in Judea and Jerusalem the following letter:"
           }
         },
         {
-          "number": 17,
           "text": {
-            "DRB": "SIR, thy servants Rathimus over occurrents, and Sabellius the scribe, and the other judges of thy court in Cælesyria, and Phenice."
+            "WEBBE": "“To King Artaxerxes our Lord, from your servants, Rathumus the recorder, Samellius the scribe, and the rest of their council, and the judges who are in Coelesyria and Phoenicia:"
           }
         },
         {
-          "number": 18,
           "text": {
-            "DRB": "And now be it known to our lord the king, that Jews came up from you to us, coming into Jerusalem a rebellious, & very naughty city, do build the furnaces thereof, and set up the walls, and raise the temple."
+            "WEBBE": "Let it now be known to our lord the king, that the Jews that have come up from you to us, having come to Jerusalem, are building that rebellious and wicked city, and are repairing its marketplaces and walls, and are laying the foundation of a temple."
           }
         },
         {
-          "number": 19,
           "text": {
-            "DRB": "And if this city, and the walls shall be finished, they will not only not abide to pay tributes, but also will resist the kings."
+            "WEBBE": "Now if this city is built and its walls are finished, they will not only refuse to give tribute, but will even stand up against kings."
           }
         },
         {
-          "number": 20,
           "text": {
-            "DRB": "And because that is in doing about the temple, we thought it should do well not to neglect this same thing:"
+            "WEBBE": "Since the things pertaining to the temple are now in hand, we think it appropriate not to neglect such a matter,"
           }
         },
         {
-          "number": 21,
           "text": {
-            "DRB": "but to make it known to our lord the king, that if it shall seem good, o king, it may be sought in the books of thy fathers,"
+            "WEBBE": "but to speak to our lord the king, to the intent that, if it is your pleasure, search may be made in the books of your ancestors."
           }
         },
         {
-          "number": 22,
           "text": {
-            "DRB": "& thou shalt find in the records, things written of these, and thou shalt know that this city hath been rebellious, & troubling kings, & cities,"
+            "WEBBE": "You will find in the chronicles what is written concerning these things, and will understand that that city was rebellious, troubling both kings and cities,"
           }
         },
         {
-          "number": 23,
           "text": {
-            "DRB": "and the Jews rebels, & making battles in it from time out of mind, for the which cause this city was made desolate."
+            "WEBBE": "and that the Jews were rebellious, and kept starting wars there in the past. For this cause, this city was laid waste."
           }
         },
         {
-          "number": 24,
           "text": {
-            "DRB": "Now therefore we do thee to understand, lord king, that if this city shall be built, & the walls thereof shall be erected, there will be no coming down for thee into Cælesyria & Phenice."
+            "WEBBE": "Therefore now we do declare to you, O lord the king, that if this city is built again, and its walls set up again, you will from then on have no passage into Coelesyria and Phoenicia.”"
           }
         },
         {
-          "number": 25,
           "text": {
-            "DRB": "Then wrote the king to Rathimus, the writer of the occurrents, and to Balthemus, and to Sabellius the scribe, and to the rest joined with them, and to the dwellers in Syria and Phenice, as followeth:"
+            "WEBBE": "Then the king wrote back again to Rathumus the recorder, Beeltethmus, Samellius the scribe, and to the rest of their associates who lived in Samaria, Syria, and Phoenicia, as follows:"
           }
         },
         {
-          "number": 26,
           "text": {
-            "DRB": "I have read the epistle that you sent me. I commanded therefore search to be made, & it was found that the same city is from the beginning rebellious to kings,"
+            "WEBBE": "“I have read the letter which you have sent to me. Therefore I commanded to make search, and it has been found that that city of old time has fought against kings,"
           }
         },
         {
-          "number": 27,
           "text": {
-            "DRB": "and the men rebels, and making battles in it, & there were most valiant kings ruling in Jerusalem, and exacting tributes in Cælesyria & Phenice."
+            "WEBBE": "and the men were given to rebellion and war in it, and that mighty and fierce kings were in Jerusalem, who reigned and exacted tribute in Coelesyria and Phoenicia."
           }
         },
         {
-          "number": 28,
           "text": {
-            "DRB": "Now therefore I have given commandment to forbid those men to build the city, and to stay them that nothing be done more than is:"
+            "WEBBE": "Now therefore I have commanded to prevent those men from building the city, and heed to be taken that there be nothing done contrary to this order,"
           }
         },
         {
-          "number": 29,
           "text": {
-            "DRB": "and that they proceed not farther, whereof are evils, so that there may be trouble brought upon the kings."
+            "WEBBE": "and that those wicked doings proceed no further to the annoyance of kings.”"
           }
         },
         {
-          "number": 30,
           "text": {
-            "KJV": "2:30 Then king Artaxerxes his letters being read, Rathumus and Semellius the scribe, and the rest that were in commission with them, remoouing in hast towards Ierusalem with a troupe of horsemen, and a multitude of people in battell aray, began to hinder the builders, and the building of the Temple in Ierusalem ceased vntill the second yeere of the reigne of Darius King of the Persians.",
-            "NRSV": "Then the building of the temple in Jerusalem stopped, and was discontinued until the second year of the reign of Darius king of the Persians.",
-            "DRB": "Then these things being read which were written of king Artaxerxes, Rathimus, and Sabellius the scribe, and they that were appointed with them joining together in haste came to Jerusalem with a troop of horsemen, and multitude, & company:"
-          }
-        },
-        {
-          "number": 31,
-          "text": {
-            "DRB": "and they began to forbid the builders, and they ceased from building of the temple in Jerusalem, till in the second year of the reign of Darius king of the Persians."
+            "WEBBE": "Then King Artaxerxes, his letters being read, Rathumus, and Samellius the scribe, and the rest of their associates, went in haste to Jerusalem with cavalry and a multitude of people in battle array, and began to hinder the builders. So the building of the temple in Jerusalem ceased until the second year of the reign of King Darius of the Persians."
           }
         }
       ]
     },
     {
-      "number": 3,
       "verses": [
         {
-          "number": 1,
           "text": {
-            "KJV": "3:1 Now when Darius reigned, hee made a great feast vnto all his Subiects and vnto all his houshold, and vnto all the princes of Media and Persia,",
-            "NRSV": "Now King Darius gave a great banquet for all that were under him and all that were born in his house and all the nobles of Media and Persia.",
-            "DRB": "King Darius made a great supper to all his domestical servants, and to all the magistrates of Media and Persia,"
+            "WEBBE": "Now King Darius made a great feast for all his subjects, for all who were born in his house, for all the princes of Media and of Persia,"
           }
         },
         {
-          "number": 2,
           "text": {
-            "DRB": "and to all that wear purple, and to the Prætors, and Consuls, and Lieutenants under him from India unto Æthiopia, an hundred twenty seven provinces."
+            "WEBBE": "and for all the local governors and captains and governors who were under him, from India to Ethiopia, in the one hundred and twenty seven provinces."
           }
         },
         {
-          "number": 3,
           "text": {
-            "DRB": "And when they had eaten and drunken, and returned full, then Darius went up into his chamber, and slept, and awaked."
+            "WEBBE": "They ate and drank, and when they were satisfied went home. Then King Darius went into his bedchamber and slept, but awakened out of his sleep."
           }
         },
         {
-          "number": 4,
           "text": {
-            "KJV": "3:4 Then three yong men that were of the guard, that kept the kings body, spake one to another:",
-            "NRSV": "Then the three young men of the bodyguard, who kept guard over the person of the king, said to one another,",
-            "DRB": "Then those three young men keepers of his body, which guarded the king's body, said one to another:"
+            "WEBBE": "Then the three young men of the bodyguard, who guarded the king, spoke one to another:"
           }
         },
         {
-          "number": 5,
           "text": {
-            "KJV": "3:5 Let euery one of vs speake a sentence: hee that shall ouercome, & whose sentence shall seeme wiser then the others, vnto him shall the king Darius giue great gifts, and great things in token of victory:",
-            "NRSV": "“Let each of us state what one thing is strongest; and to the one whose statement seems wisest, King Darius will give rich gifts and great honors of victory.”",
-            "DRB": "Let every one of us say a word that may excel: & whose word soever shall appear wiser than the others, to him will king Darius give great gifts,"
+            "WEBBE": "“Let every one of us state what one thing is strongest. King Darius will give him whose statement seems wiser than the others great gifts and great honours in token of victory."
           }
         },
         {
-          "number": 6,
           "text": {
-            "DRB": "to be covered with purple, & to drink in gold, and to sleep upon gold, & a chariot with a bridle of gold, & a bonnet of silk, and a chain about his neck:"
+            "WEBBE": "He shall be clothed in purple, drink from gold cups, sleep on a gold bed, and have a chariot with bridles of gold, a fine linen turban, and a chain around his neck."
           }
         },
         {
-          "number": 7,
           "text": {
-            "DRB": "and he"
+            "WEBBE": "He shall sit next to Darius because of his wisdom, and shall be called cousin of Darius.”"
           }
         },
         {
-          "number": 8,
           "text": {
-            "DRB": "Then every one writing his word signed it, and they put it under the pillow of Darius the king,"
+            "WEBBE": "Then they each wrote his sentence, sealed them, and laid them under King Darius’ pillow,"
           }
         },
         {
-          "number": 9,
           "text": {
-            "DRB": "and they said: When the king shall rise, we will give him our writings: and which soever of the three the king shall judge, and the magistrates of Persia, that his word is the wiser, to him shall the victory be given as is written."
+            "WEBBE": "and said, “When the king wakes up, someone will give him the writing. Whoever the king and the three princes of Persia judge that his sentence is the wisest, to him shall the victory be given, as it is written.”"
           }
         },
         {
-          "number": 10,
           "text": {
-            "KJV": "3:10 The first wrote: Wine is the strongest.",
-            "NRSV": "The first wrote, “Wine is strongest.”",
-            "DRB": "One wrote: Wine is strong."
+            "WEBBE": "The first wrote, “Wine is the strongest.”"
           }
         },
         {
-          "number": 11,
           "text": {
-            "KJV": "3:11 The second wrote: The King is strongest.",
-            "NRSV": "The second wrote, “The king is strongest.”",
-            "DRB": "Another wrote, A king is stronger."
+            "WEBBE": "The second wrote, “The king is strongest.”"
           }
         },
         {
-          "number": 12,
           "text": {
-            "KJV": "3:12 The third wrote; Women are strongest, but aboue all things trueth beareth away the victory.",
-            "NRSV": "The third wrote, “Women are strongest, but above all things truth is victor.”",
-            "DRB": "The third wrote, Women are more strong: but above all things truth overcometh."
+            "WEBBE": "The third wrote, “Women are strongest, but above all things Truth is the victor.”"
           }
         },
         {
-          "number": 13,
           "text": {
-            "DRB": "And when the king was risen, they took their writings, and gave him, and he read."
+            "WEBBE": "Now when the king woke up, they took the writing and gave it to him, so he read it."
           }
         },
         {
-          "number": 14,
           "text": {
-            "DRB": "And sending he called all the Magistrates of the Persians, and the Medes, and them that wear purple, and the Prætors, and the Overseers;"
+            "WEBBE": "Sending out, he called all the princes of Persia and of Media, the local governors, the captains, the governors, and the chief officers"
           }
         },
         {
-          "number": 15,
           "text": {
-            "DRB": "and they sat in the Councel: and the writings were read before them."
+            "WEBBE": "and sat himself down in the royal seat of judgement; and the writing was read before them."
           }
         },
         {
-          "number": 16,
           "text": {
-            "DRB": "And he said: Call the young men, & they shall declare their own words. And they were called, and went in."
+            "WEBBE": "He said, “Call the young men, and they shall explain their own sentences. So they were called and came in."
           }
         },
         {
-          "number": 17,
           "text": {
-            "DRB": "And he said to them: Declare unto us concerning these things which are written. And the first began, he that had spoken of the strength of wine,"
+            "WEBBE": "They said to them, “Explain what you have written.” Then the first, who had spoken of the strength of wine, began"
           }
         },
         {
-          "number": 18,
           "text": {
-            "DRB": "and said: O ye men, how doth wine prevail over all men that drink! It seduceth the mind."
+            "WEBBE": "and said this: “O sirs, how exceedingly strong wine is! It causes all men who drink it to go astray."
           }
         },
         {
-          "number": 19,
           "text": {
-            "DRB": "And also the mind of king and orphan it maketh vain. Also of the bondman and the free, of the rich man and the poor,"
+            "WEBBE": "It makes the mind of the king and of the fatherless child to be the same, likewise of the bondman and of the freeman, of the poor man and of the rich."
           }
         },
         {
-          "number": 20,
           "text": {
-            "DRB": "and every mind it turneth into security and pleasantness, and it remembereth not any sorrow and duty,"
+            "WEBBE": "It also turns every thought into cheer and mirth, so that a man remembers neither sorrow nor debt."
           }
         },
         {
-          "number": 21,
           "text": {
-            "DRB": "and all hearts it maketh honest, and it remembereth not king, nor magistrate, and it maketh a man speak all things by talents."
+            "WEBBE": "It makes every heart rich, so that a man remembers neither king nor local governor. It makes people say things in large amounts."
           }
         },
         {
-          "number": 22,
           "text": {
-            "DRB": "And when they have drunk, they remember not friendship, nor brotherhood: yea and not long after they take swords."
+            "WEBBE": "When they are in their cups, they forget their love both to friends and kindred, and before long draw their swords."
           }
         },
         {
-          "number": 23,
           "text": {
-            "DRB": "And when they are recovered and risen from the wine, they remember not what they have done."
+            "WEBBE": "But when they awake from their wine, they don’t remember what they have done."
           }
         },
         {
-          "number": 24,
           "text": {
-            "DRB": "O ye men, doth not wine excel? Who thinketh to do so? And having said this, he held his peace."
+            "WEBBE": "O sirs, isn’t wine the strongest, seeing that it forces people to do this?” And when he had said this, he stopped speaking."
           }
         }
       ]
     },
     {
-      "number": 4,
       "verses": [
         {
-          "number": 1,
           "text": {
-            "DRB": "And the next began to speak, he that spake of the strength of a king."
+            "WEBBE": "Then the second, who had spoken of the strength of the king, began to say,"
           }
         },
         {
-          "number": 2,
           "text": {
-            "DRB": "O ye men do not the men excel, which obtain land, & sea, and all things that are in them?"
+            "WEBBE": "“O sirs, don’t men excel in strength who rule over the sea and land, and all things in them?"
           }
         },
         {
-          "number": 3,
           "text": {
-            "DRB": "But a king excelleth above all things, and hath dominion over them: and every thing whatsoever he shall say to them, they do."
+            "WEBBE": "But yet the king is stronger. He is their lord and has dominion over them. In whatever he commands them, they obey him."
           }
         },
         {
-          "number": 4,
           "text": {
-            "DRB": "And if he send them to warriors, they go, and throw down mountains, and the walls, and towers."
+            "WEBBE": "If he tells them to make war against each other, they do it. If he sends them out against the enemies, they go, and conquer mountains, walls, and towers."
           }
         },
         {
-          "number": 5,
           "text": {
-            "DRB": "They kill, and are killed: and the king's word they transgress not. For if they shall overcome, they bring to the king all things whatsoever they have taken for a prey."
+            "WEBBE": "They kill and are killed, and don’t disobey the king’s commandment. If they win the victory, they bring everything to the king—all the plunder and everything else."
           }
         },
         {
-          "number": 6,
           "text": {
-            "DRB": "In like manner also all others, for so many as are not soldiers, nor fight, but till the ground: when they shall reap, again they bring tributes to the king."
+            "WEBBE": "Likewise for those who are not soldiers, and don’t have anything to do with wars, but farm, when they have reaped again that which they had sown, they bring some to the king and compel one another to pay tribute to the king."
           }
         },
         {
-          "number": 7,
           "text": {
-            "DRB": "And he being one only, if he say: Kill ye, they kill; say he: forgive, they forgive; say he: strike, they strike; say he, destroy, they destroy;"
+            "WEBBE": "He is just one man! If he commands people to kill, they kill. If he commands them to spare, they spare."
           }
         },
         {
-          "number": 8,
           "text": {
-            "DRB": "say he build, they build;"
+            "WEBBE": "If he commands them to strike, they strike. If he commands them to make desolate, they make desolate. If he commands to build, they build."
           }
         },
         {
-          "number": 9,
           "text": {
-            "DRB": "say he, cut down, they cut down; say he plant, they plant:"
+            "WEBBE": "If he commands them to cut down, they cut down. If he commands them to plant, they plant."
           }
         },
         {
-          "number": 10,
           "text": {
-            "DRB": "and all the people, & potestates hear him, and beside this he sitteth down, and drinketh, and sleepeth."
+            "WEBBE": "So all his people and his armies obey him. Furthermore, he lies down, he eats and drinks, and takes his rest;"
           }
         },
         {
-          "number": 11,
           "text": {
-            "DRB": "And others guard him round about, and cannot go every one, and do their own works, but at a word are obedient to him."
+            "WEBBE": "and these keep watch around him. None of them may depart and do his own business. They don’t disobey him in anything."
           }
         },
         {
-          "number": 12,
           "text": {
-            "DRB": "O ye men, how doth not a king excel that is so renowned? And he held his peace."
+            "WEBBE": "O sirs, how could the king not be the strongest, seeing that he is obeyed like this?” Then he stopped talking."
           }
         },
         {
-          "number": 13,
           "text": {
-            "KJV": "4:13 ¶ Then the third, who had spoken of women, and of the truth (this was Zorobabel) beganne to speake.",
-            "NRSV": "The third young man, who had spoken about women and truth (and this was Zerubbabel), began to speak:",
-            "DRB": "The third that spake of women and truth, this is Zorobabel, began to speak."
+            "WEBBE": "Then the third, who had spoken of women, and of truth, (this was Zorobabel) began to speak:"
           }
         },
         {
-          "number": 14,
           "text": {
-            "DRB": "O ye men, not the great king, & many men, neither is it wine that doth excel. Who is it then that hath the dominion of them?"
+            "WEBBE": "“O sirs, isn’t the king great, and men are many, and isn’t wine strong? Who is it then who rules them, or has the lordship over them? Aren’t they women?"
           }
         },
         {
-          "number": 15,
           "text": {
-            "DRB": "Have not women brought forth the king, & all the people, that ruleth over land & sea:"
+            "WEBBE": "Women have given birth to the king and all the people who rule over sea and land."
           }
         },
         {
-          "number": 16,
           "text": {
-            "DRB": "and were they not born of them, and did not they bring up them which planted the vineyards, whereof wine is made?"
+            "WEBBE": "They came from women. Women nourished up those who planted the vineyards, from where the wine comes."
           }
         },
         {
-          "number": 17,
           "text": {
-            "DRB": "And they make the garments of all men, & they do honour to all men, and men cannot be separated from women."
+            "WEBBE": "Women also make garments for men. These bring glory to men. Without women, men can’t exist."
           }
         },
         {
-          "number": 18,
           "text": {
-            "DRB": "If they have gathered gold and silver, and"
+            "WEBBE": "Yes, and if men have gathered together gold and silver and any other beautiful thing, and see a woman who is lovely in appearance and beauty,"
           }
         },
         {
-          "number": 19,
           "text": {
-            "DRB": "leaving all these things they fix their look upon her, & with open mouth behold her, and allure her more than gold & silver, and every precious thing."
+            "WEBBE": "they let all those things go and gape at her, and with open mouth stare at her. They all have more desire for her than for gold, or silver, or any other beautiful thing."
           }
         },
         {
-          "number": 20,
           "text": {
-            "DRB": "Man forsaketh his father that brought him up, and his country, and joineth himself to a woman."
+            "WEBBE": "A man leaves his own father who brought him up, leaves his own country, and joins with his wife."
           }
         },
         {
-          "number": 21,
           "text": {
-            "DRB": "And with a woman he refresheth his soul: and neither doth he remember father, nor mother, nor country."
+            "WEBBE": "With his wife he ends his days, with no thought for his father, mother, or country."
           }
         },
         {
-          "number": 22,
           "text": {
-            "DRB": "And hereby you must know that women rule over you. Are you not sorry?"
+            "WEBBE": "By this also you must know that women have dominion over you. Don’t you labour and toil, and bring it all to give to women?"
           }
         },
         {
-          "number": 23,
           "text": {
-            "DRB": "And a man taketh his sword, & goeth into the way to commit thefts and murders, & to sail seas & rivers,"
+            "WEBBE": "Yes, a man takes his sword and goes out to travel, to rob, to steal, and to sail on the sea and on rivers."
           }
         },
         {
-          "number": 24,
           "text": {
-            "DRB": "and seeth a lion; and goeth in darkness: and when he hath committed theft, and fraud, and spoils, he bringeth it to his beloved."
+            "WEBBE": "He sees a lion and walks in the darkness. When he has stolen, plundered, and robbed, he brings it to the woman he loves."
           }
         },
         {
-          "number": 25,
           "text": {
-            "DRB": "And again, man loveth his wife more than father or mother."
+            "WEBBE": "Therefore a man loves his wife better than father or mother."
           }
         },
         {
-          "number": 26,
           "text": {
-            "DRB": "And many have become mad for their wives: & have been made bondmen for them:"
+            "WEBBE": "Yes, there are many who have lost their minds for women, and become slaves for their sakes."
           }
         },
         {
-          "number": 27,
           "text": {
-            "DRB": "and many have perished and been slain, and have sinned for women."
+            "WEBBE": "Many also have perished, have stumbled, and sinned, for women."
           }
         },
         {
-          "number": 28,
           "text": {
-            "DRB": "And now believe me, that the king is great in his power: because all countries are afraid to touch him."
+            "WEBBE": "Now don’t you believe me? Isn’t the king great in his power? Don’t all regions fear to touch him?"
           }
         },
         {
-          "number": 29,
           "text": {
-            "DRB": "Nevertheless I saw Apemes the daughter of Bezaces the concubine of a marvelous king, sitting by the king at his right hand,"
+            "WEBBE": "Yet I saw him and Apame the king’s concubine, the daughter of the illustrious Barticus, sitting at the right hand of the king,"
           }
         },
         {
-          "number": 30,
           "text": {
-            "DRB": "and taking off the crown from his head, and putting it upon herself, and with the palm of her left hand she struck the king."
+            "WEBBE": "and taking the crown from the king’s head, and setting it upon her own head. Yes, she struck the king with her left hand."
           }
         },
         {
-          "number": 31,
           "text": {
-            "DRB": "And beside these things he with open mouth beheld her: and if she smile he laugheth, and if she be angry with him, he flattereth, till he be reconciled to her favour."
+            "WEBBE": "At this, the king gaped and gazed at her with open mouth. If she smiles at him, he laughs. But if she takes any displeasure at him, he flatters her, that she might be reconciled to him again."
           }
         },
         {
-          "number": 32,
           "text": {
-            "DRB": "O ye men, why are not women stronger? Great is the earth, and high is the heaven: who doeth these things?"
+            "WEBBE": "O sirs, how can it not be that women are strong, seeing they do this?”"
           }
         },
         {
-          "number": 33,
           "text": {
-            "KJV": "4:33 Then the king & the princes looked one vpon another: so he began to speake of the trueth.",
-            "NRSV": "“Gentlemen, is not the king great, and are not men many, and is not wine strong? Who is it, then, that rules them, or has the mastery over them? Is it not women?”",
-            "DRB": "And then the king and they that wear purple looked one upon another. And he began to speak of truth."
+            "WEBBE": "Then the king and the nobles looked at one another. So he began to speak concerning truth."
           }
         },
         {
-          "number": 34,
           "text": {
-            "DRB": "O ye men, are not women strong? The earth is great and heaven is high: & the swift course of the sun turneth the heaven round into his place in one day."
+            "WEBBE": "“O sirs, aren’t women strong? The earth is great. The sky is high. The sun is swift in its course, for it circles around the sky, and returns on its course again in one day."
           }
         },
         {
-          "number": 35,
           "text": {
-            "DRB": "Is not he magnifical that doth these things, and the truth great, and stronger above all things?"
+            "WEBBE": "Isn’t he who makes these things great? Therefore the truth is great, and stronger than all things."
           }
         },
         {
-          "number": 36,
           "text": {
-            "DRB": "All the earth calleth upon the truth, heaven also blesseth it, and all works are moved, and tremble at it, and there is not any thing with it unjust."
+            "WEBBE": "All the earth calls upon truth, and the sky blesses truth. All works shake and tremble, but with truth there is no unrighteous thing."
           }
         },
         {
-          "number": 37,
           "text": {
-            "DRB": "Wine is unjust, the king is unjust, women are unjust, all the sons of men are unjust, and all their works are unjust, and in them is not truth, and they shall perish in their iniquity,"
+            "WEBBE": "Wine is unrighteous. The king is unrighteous. Women are unrighteous. All the children of men are unrighteous, and all their works are unrighteous. There is no truth in them. They shall also perish in their unrighteousness."
           }
         },
         {
-          "number": 38,
           "text": {
-            "KJV": "4:38 As for the trueth it endureth, and is alwayes strong, it liueth and conquereth for euermore.",
-            "NRSV": "“But truth is great, and stronger than all things.”",
-            "DRB": "and truth abideth, and groweth strong for ever, and liveth, and prevaileth for ever and ever."
+            "WEBBE": "But truth remains, and is strong forever. Truth lives and conquers forevermore."
           }
         },
         {
-          "number": 39,
           "text": {
-            "DRB": "Neither is there with it acception of persons, nor differences: but the things that are just it doth to all men, to the unjust and malignant, and all men are well pleased in the works thereof."
+            "WEBBE": "With truth there is no partiality towards persons or rewards, but truth does the things that are just, instead of any unrighteous or wicked things. All men approve truth’s works."
           }
         },
         {
-          "number": 40,
           "text": {
-            "DRB": "And there is no unjust thing in the judgement thereof, but strength, and reign, and power, and majesty of worlds. Blessed be the God of truth."
+            "WEBBE": "In truth’s judgement is not any unrighteousness. Truth is the strength, the kingdom, the power, and the majesty of all ages. Blessed be the God of truth!”"
           }
         },
         {
-          "number": 41,
           "text": {
-            "KJV": "4:41 And with that he held his peace, and al the people then shouted and said, Great is trueth, and mightie aboue all things.",
-            "NRSV": "When he stopped speaking, all the people then shouted and said, “Great is truth, and strongest of all!”",
-            "DRB": "And he left speaking. And all the people cried, and said: Great is truth and it prevaileth."
+            "WEBBE": "With that, he stopped speaking. Then all the people shouted and said, “Great is truth, and strong above all things!”"
           }
         },
         {
-          "number": 42,
           "text": {
-            "KJV": "4:42 Then saide the king vnto him, Aske what thou wilt, more then is appointed in the writing, and we wil giue it thee, because thou art found wisest, and thou shalt sit next me, and shalt bee called my cousin.",
-            "NRSV": "Then the king said to him, “Ask what you wish, even beyond what is written, and we will give it to you.”",
-            "DRB": "Then the king said to him: Ask, if thou wilt any more, than the things that are written, and I will give it thee, according as thou art found wiser than thy neighbours, and thou shalt sit next to me, and shalt be called my cousin."
+            "WEBBE": "Then the king said to him, “Ask what you wish, even more than is appointed in writing, and we will give it to you, because you are found wisest. You shall sit next to me, and shall be called my cousin.”"
           }
         },
         {
-          "number": 43,
           "text": {
-            "KJV": "4:43 Then said hee vnto the king, Remember thy vow which thou hast vowed to build Ierusalem in the day when thou camest to the kingdome,",
-            "NRSV": "Then he said to the king, “Remember the vow that you made on the day when you took your kingdom, to build Jerusalem.”",
-            "DRB": "Then said he to the king: Be mindful of thy vow, which thou hast vowed, to build Jerusalem in the day that thou didst receive the kingdom:"
+            "WEBBE": "Then he said to the king, “Remember your vow, which you vowed to build Jerusalem, in the day when you came to your kingdom,"
           }
         },
         {
-          "number": 44,
           "text": {
-            "DRB": "and to send back all the vessels that were taken out of Jerusalem, which Cyrus separated, when he sacked Babylon, and would have sent them back thither."
+            "WEBBE": "and to send back all the vessels that were taken out of Jerusalem, which Cyrus set apart when he vowed to destroy Babylon, and vowed to send them back there."
           }
         },
         {
-          "number": 45,
           "text": {
-            "DRB": "And thou hast vowed to build the temple, which the Idumeians burnt, when Jury was destroyed of the Chaldees."
+            "WEBBE": "You also vowed to build the temple which the Edomites burnt when Judea was made desolate by the Chaldeans."
           }
         },
         {
-          "number": 46,
           "text": {
-            "DRB": "And now this is that which I ask lord, & which I desire, this is the majesty which I desire of thee, that thou perform the vow which thou hast vowed to the king of heaven by thy mouth."
+            "WEBBE": "Now, O lord the king, this is what I request, and what I desire of you, and this is the princely generosity that may proceed from you: I ask therefore that you make good the vow, the performance of which you have vowed to the King of Heaven with your own mouth.”"
           }
         },
         {
-          "number": 47,
           "text": {
-            "DRB": "Then Darius the king rising up, kissed him: and wrote letters to all the officers, and overseers, and them that wear purple, that they should conduct him, and them that were with him, all going up to build Jerusalem."
+            "WEBBE": "Then King Darius stood up, kissed him, and wrote letters for him to all the treasurers and governors and captains and local governors, that they should safely bring on their way both him, and all those who would go up with him to build Jerusalem."
           }
         },
         {
-          "number": 48,
           "text": {
-            "DRB": "And to all the overseers that were in Syria, and Phoenice, and Libanus he wrote letters, that they should draw Cedar trees from Libanus into Jerusalem, to build the city with them."
+            "WEBBE": "He wrote letters also to all the governors who were in Coelesyria and Phoenicia, and to them in Libanus, that they should bring cedar wood from Libanus to Jerusalem, and that they should help him build the city."
           }
         },
         {
-          "number": 49,
           "text": {
-            "DRB": "And he wrote to all the Jews which went up from the Kingdom into Jury for liberty, every mighty man, & magistrate, & overseer not to come upon them to their gates,"
+            "WEBBE": "Moreover he wrote for all the Jews who would go out of his realm up into Judea concerning their freedom, that no officer, no governor, no local governor, nor treasurer, should forcibly enter into their doors,"
           }
         },
         {
-          "number": 50,
           "text": {
-            "DRB": "and all the country which they had obtained to be free unto them, & that the Idumeians leave the castles which they possess of the Jews,"
+            "WEBBE": "and that all the country which they occupied should be free to them without tribute, and that the Edomites should give up the villages of the Jews which they held at that time,"
           }
         },
         {
-          "number": 51,
           "text": {
-            "DRB": "and to the building of the temple to give every year twenty talents until it were throughly built:"
+            "WEBBE": "and that there should be given twenty talents yearly towards the building of the temple, until the time that it was built,"
           }
         },
         {
-          "number": 52,
           "text": {
-            "DRB": "& upon the altars to burn holocausts daily, as they have commandment: to offer"
+            "WEBBE": "and another ten talents yearly for burnt offerings to be presented upon the altar every day, as they had a commandment to make seventeen offerings,"
           }
         },
         {
-          "number": 53,
           "text": {
-            "DRB": "& to all that go forth from Babylon to build the city, that there should be liberty as well to them as to their children, and to all the Priests that go before."
+            "WEBBE": "and that all those who would come from Babylonia to build the city should have their freedom—they and their descendants, and all the priests that came."
           }
         },
         {
-          "number": 54,
           "text": {
-            "DRB": "And he wrote a quantity also, and commanded the sacred stole to be given, wherein they should serve;"
+            "WEBBE": "He wrote also to give them their support and the priests’ vestments in which they minister."
           }
         },
         {
-          "number": 55,
           "text": {
-            "DRB": "and to the Levites he wrote to give precepts, until the day wherein the house shall be finished, and Jerusalem builded."
+            "WEBBE": "For the Levites he wrote that their support should be given them until the day that the house was finished and Jerusalem built up."
           }
         },
         {
-          "number": 56,
           "text": {
-            "DRB": "And to all that keep the city, he wrote portions and wages to be given to them."
+            "WEBBE": "He commanded that land and wages should be given to all who guarded the city."
           }
         },
         {
-          "number": 57,
           "text": {
-            "DRB": "And he sent away all the vessels whatsoever Cyrus had separated from Babylon, and all things whatsoever Cyrus said, he also commanded to be done, & to be sent to Jerusalem."
+            "WEBBE": "He also sent away all the vessels from Babylon that Cyrus had set apart, and all that Cyrus had given in commandment, he commanded also to be done and to be sent to Jerusalem."
           }
         },
         {
-          "number": 58,
           "text": {
-            "DRB": "And when that young man was gone forth, lifting up his face toward Jerusalem, he blessed the King of heaven,"
+            "WEBBE": "Now when this young man had gone out, he lifted up his face to heaven towards Jerusalem, and praised the King of heaven,"
           }
         },
         {
-          "number": 59,
           "text": {
-            "DRB": "and said: Of thee is victory, and of thee is wisdom, and glory. And I am thy servant."
+            "WEBBE": "and said, “From you comes victory. From you comes wisdom. Yours is the glory, and I am your servant."
           }
         },
         {
-          "number": 60,
           "text": {
-            "DRB": "Blessed art thou which hast given me wisdom, and I will confess to thee Lord God of our fathers."
+            "WEBBE": "Blessed are you, who have given me wisdom. I give thanks to you, O Lord of our fathers."
           }
         },
         {
-          "number": 61,
           "text": {
-            "DRB": "And he took the letters, and went into Babylon. And he came, and told all his brethren that were in Babylon:"
+            "WEBBE": "So he took the letters, went out, came to Babylon, and told it to all his kindred."
           }
         },
         {
-          "number": 62,
           "text": {
-            "DRB": "and they blessed the God of their fathers, because he gave them remission and refreshing,"
+            "WEBBE": "They praised the God of their ancestors, because he had given them freedom and liberty"
           }
         },
         {
-          "number": 63,
           "text": {
-            "DRB": "that they should go up and build Jerusalem, and the temple wherein his name was renowned, and they rejoiced with music & joy seven days."
+            "WEBBE": "to go up and to build Jerusalem and the temple which is called by his name. They feasted with instruments of music and gladness for seven days."
           }
         }
       ]
     },
     {
-      "number": 5,
       "verses": [
         {
-          "number": 1,
           "text": {
-            "KJV": "5:1 After this were the principall men of the families chosen according to their tribes, to go vp with their wiues, and sonnes, and daughters, with their men-seruants and maid-seruants, and their cattel.",
-            "NRSV": "After this the heads of ancestral houses were chosen to go up, according to their tribes, with their wives and sons and daughters, with their male and female servants, and their livestock.",
-            "DRB": "After these things were chosen to go up the Princes of towns by their houses, and tribes, and their wives, and their sons and daughters, & their men servants and women servants, and their cattle."
+            "WEBBE": "After this, the chiefs of fathers’ houses were chosen to go up according to their tribes, with their wives, sons, and daughters, with their menservants and maidservants, and their livestock."
           }
         },
         {
-          "number": 2,
           "text": {
-            "DRB": "And Darius the king sent together with them a thousand horsemen, till they conducted them to Jerusalem with peace, & with music, & with timbrels, and shalms:"
+            "WEBBE": "Darius sent with them one thousand cavalry to bring them back to Jerusalem with peace, with musical instruments, drums, and flutes."
           }
         },
         {
-          "number": 3,
           "text": {
-            "DRB": "and all the brethren were playing, and he made them go up together with them."
+            "WEBBE": "All their kindred were making merry, and he made them go up together with them."
           }
         },
         {
-          "number": 4,
           "text": {
-            "DRB": "And these are the names of the men that went up by their towns according to tribes, & according to the portion of their principality."
+            "WEBBE": "These are the names of the men who went up, according to their families amongst their tribes, after their several divisions."
           }
         },
         {
-          "number": 5,
           "text": {
-            "DRB": "Priests: The children of Phinees, the son of Aaron, Iesus the son of Iosedec, Ioacim the son of Zorobabel, the son of Salathiel of the house of David, of the progeny of Phares, of the tribe of Juda."
+            "WEBBE": "The priests, the sons of Phinees, the sons of Aaron: Jesus the son of Josedek, the son of Saraias, and Joakim the son of Zorobabel, the son of Salathiel, of the house of David, of the lineage of Phares, of the tribe of Judah,"
           }
         },
         {
-          "number": 6,
           "text": {
-            "DRB": "Who spake under Darius king of the Persians the marvelous words in the second year of his reign the first month Nisan."
+            "WEBBE": "who spoke wise words before Darius the king of Persia in the second year of his reign, in the month Nisan, which is the first month."
           }
         },
         {
-          "number": 7,
           "text": {
-            "DRB": "And they are these, that of Jury came up from the captivity of the transmigration, whom Nabuchodonosor the king of Babylon transported into Babylon, and returned into Jerusalem. 1."
+            "WEBBE": "These are the of Judeans who came up from the captivity, where they lived as foreigners, whom Nabuchodonosor the king of Babylon had carried away to Babylon."
           }
         },
         {
-          "number": 8,
           "text": {
-            "DRB": "And every one sought a part of Jury according to his own city, they that came with Zorobabel, and Iesus, Nehemias, Areores, Elimeo, Emmanio, Mardocheo, Beelsuro, Mechpsatochor, Olioro, Emonia one of their Princes."
+            "WEBBE": "They returned to Jerusalem and to the other parts of Judea, every man to his own city, who came with Zorobabel, with Jesus, Nehemias, Zaraias, Resaias, Eneneus, Mardocheus, Beelsarus, Aspharsus, Reelias, Roimus, and Baana, their leaders."
           }
         },
         {
-          "number": 9,
           "text": {
-            "DRB": "And the number of them of the same nation, of their rulers the children of Phares, two thousand an hundred seventy two:"
+            "WEBBE": "The number of them of the nation and their leaders: the sons of Phoros, two thousand and one hundred and seventy two; the sons of Saphat, four hundred and seventy two;"
           }
         },
         {
-          "number": 10,
           "text": {
-            "DRB": "The children of Ares, three thousand an hundred fifty seven:"
+            "WEBBE": "the sons of Ares, seven hundred and fifty six;"
           }
         },
         {
-          "number": 11,
           "text": {
-            "DRB": "The children of Phoemo, and hundred forty two: in the children of Iesus & Ioabes, a thousand three hundred two:"
+            "WEBBE": "the sons of Phaath Moab, of the sons of Jesus and Joab, two thousand and eight hundred and twelve;"
           }
         },
         {
-          "number": 12,
           "text": {
-            "DRB": "the children of Demu, two thousand four hundred seventy: the children of Choraba, two hundred five: the children of Banica, an hundred sixty eight,"
+            "WEBBE": "the sons of Elam, one thousand and two hundred and fifty four; the sons of Zathui, nine hundred and forty five; the sons of Chorbe, seven hundred and five; the sons of Bani, six hundred and forty eight;"
           }
         },
         {
-          "number": 13,
           "text": {
-            "DRB": "the children of Bebech, four hundred three: the children of Archad, four hundred twenty seven:"
+            "WEBBE": "the sons of Bebai, six hundred and twenty three; the sons of Astad, one thousand and three hundred and twenty two;"
           }
         },
         {
-          "number": 14,
           "text": {
-            "DRB": "the children of Cham, thirty seven: the children of Zoroar, two thousand sixty seven: the children of Adin, four hundred sixty one:"
+            "WEBBE": "the sons of Adonikam, six hundred and sixty seven; the sons of Bagoi, two thousand and sixty six; the sons of Adinu, four hundred and fifty four;"
           }
         },
         {
-          "number": 15,
           "text": {
-            "DRB": "the children of Aderectes, an hundred eight: the children of Ciaso and Zelas an hundred seven: the children of Azoroc, four hundred thirty nine:"
+            "WEBBE": "the sons of Ater, of Ezekias, ninety two; the sons of Kilan and Azetas, sixty seven; the sons of Azaru, four hundred and thirty two;"
           }
         },
         {
-          "number": 16,
           "text": {
-            "DRB": "the children of Iedarbone, an hundred, thirty two: the children of Ananias, an hundred thirty: the children of Asoni, ninety:"
+            "WEBBE": "the sons of Annis, one hundred and one; the sons of Arom, the sons of Bassai, three hundred and twenty three; the sons of Arsiphurith, one hundred and twelve;"
           }
         },
         {
-          "number": 17,
           "text": {
-            "DRB": "the children of Marsar, four hundred twenty two: the children of Zabarus, ninety five: the children of"
+            "WEBBE": "the sons of Baiterus, three thousand and five; the sons of Bethlomon, one hundred and twenty three;"
           }
         },
         {
-          "number": 18,
           "text": {
-            "DRB": "the children of Nepopas, fifty five: the children of Hechanatus, an hundred fifty eight: the children of Cebethamus, an hundred thirty two:"
+            "WEBBE": "those from Netophas, fifty five; those from Anathoth, one hundred and fifty eight; those from Bethasmoth, forty two;"
           }
         },
         {
-          "number": 19,
           "text": {
-            "DRB": "the children of Crearpatros, which are of Enocadie and Modia, four hundred twenty three: they of Gramas and Gabea, an hundred twenty one."
+            "WEBBE": "those from Kariathiarius, twenty five: those from Caphira and Beroth, seven hundred and forty three;"
           }
         },
         {
-          "number": 20,
           "text": {
-            "DRB": "They of Besselon, and Ceagge, sixty five: they of Bastaro, an hundred twenty two:"
+            "WEBBE": "the Chadiasai and Ammidioi, four hundred and twenty two; those from Kirama and Gabbe, six hundred and twenty one;"
           }
         },
         {
-          "number": 21,
           "text": {
-            "DRB": "they of Bechenobes, fifty five: the children of Liptis, an hundred fifty five: the children of Labonni, three hundred fifty seven:"
+            "WEBBE": "those from Macalon, one hundred and twenty two; those from Betolion, fifty two; the sons of Niphis, one hundred and fifty six;"
           }
         },
         {
-          "number": 22,
           "text": {
-            "DRB": "the children of Sichem, three hundred seventy: the children of Suadon, & Cliomus, three hundred seventy eight:"
+            "WEBBE": "the sons of Calamolalus and Onus, seven hundred and twenty five; the sons of Jerechu, three hundred and forty five;"
           }
         },
         {
-          "number": 23,
           "text": {
-            "DRB": "the children of Ericus, two thousand an hundred forty five: the children of Anaas, three hundred seventy. The Priests:"
+            "WEBBE": "and the sons of Sanaas, three thousand and three hundred and thirty."
           }
         },
         {
-          "number": 24,
           "text": {
-            "DRB": "the children of Ieddus the son of Euther, the son of Eliasib, three hundred seventy two: the children of Emerus, two hundred fifty two:"
+            "WEBBE": "The priests: the sons of Jeddu, the son of Jesus, amongst the sons of Sanasib, nine hundred and seventy two; the sons of Emmeruth, one thousand and fifty two;"
           }
         },
         {
-          "number": 25,
           "text": {
-            "DRB": "the children of Phasurius, three hundred fifty seven: the children of Caree, two hundred twenty seven."
+            "WEBBE": "the sons of Phassurus, one thousand and two hundred and forty seven; and the sons of Charme, one thousand and seventeen."
           }
         },
         {
-          "number": 26,
           "text": {
-            "DRB": "The Levites: The children of Iesus in Caduhel, & Bamis, and Serebias, & Edias, seventy four, the whole number from the twelfth year, thirty thousand four hundred sixty two:"
+            "WEBBE": "The Levites: the sons of Jesus, Kadmiel, Bannas, and Sudias, seventy four."
           }
         },
         {
-          "number": 27,
           "text": {
-            "DRB": "The sons, & daughters, & wives, the whole number, forty thousand two hundred forty two."
+            "WEBBE": "The holy singers: the sons of Asaph, one hundred and twenty eight."
           }
         },
         {
-          "number": 28,
           "text": {
-            "DRB": "The children of the Priests, that sang in the temple: the children of Asaph, an hundred twenty eight."
+            "WEBBE": "The gatekeepers: the sons of Salum, the sons of Atar, the sons of Tolman, the sons of Dacubi, the sons of Ateta, the sons of Sabi, in all one hundred and thirty nine."
           }
         },
         {
-          "number": 29,
           "text": {
-            "DRB": "And the porters: the children of Esmeni, the children of Azer, the children of Amon, the children of Accuba, of Topa, the children of Tobi, all an hundred thirty nine."
+            "WEBBE": "The temple servants: the sons of Esau, the sons of Asipha, the sons of Tabaoth, the sons of Keras, the sons of Sua, the sons of Phaleas, the sons of Labana, the sons of Aggaba."
           }
         },
         {
-          "number": 30,
           "text": {
-            "DRB": "Priests that served in the temple: the children of Sel, the children of Gaspha, the children of Tobloch, the children of Caria, the children of Su, the children of Hellu, the children of Lobana, the children of Armacha, the children of Accub, the children of Utha, the children of Cetha, the children of Aggab, the children of Obai, the children of Anani, the children of Canna, the children of Geddu,"
+            "WEBBE": "the sons of Acud, the sons of Uta, the sons of Ketab, the sons of Accaba, the sons of Subai, the sons of Anan, the sons of Cathua, the sons of Geddur,"
           }
         },
         {
-          "number": 31,
           "text": {
-            "DRB": "the children of An, the children of Radin, the children of Desanon, the children of Nachoba, the children of Caseba, the children of Gaze, the children of Ozui, the children of Sinone, the children of Attre, the children of Hasten, the children of Asiana, the children of Manei, the children of Nasissim, the children of Acusu, the children of Agista, the children of Azui, the children of Favon, the children of Phasalon,"
+            "WEBBE": "the sons of Jairus, the sons of Daisan, the sons of Noeba, the sons of Chaseba, the sons of Gazera, the sons of Ozias, the sons of Phinoe, the sons of Asara, the sons of Basthai, the sons of Asana, the sons of Maani, the sons of Naphisi, the sons of Acub, the sons of Achipha, the sons of Asur, the sons of Pharakim, the sons of Basaloth,"
           }
         },
         {
-          "number": 32,
           "text": {
-            "DRB": "the children of Meedda, the children of Phusa, the children of Caree, the children of Burcus, the children of Saree, the children of Coesi, the children of Nasith, the children of Agisti, the children of Pedon."
+            "WEBBE": "the sons of Meedda, the sons of Cutha, the sons of Charea, the sons of Barchus, the sons of Serar, the sons of Thomei, the sons of Nasi, the sons of Atipha."
           }
         },
         {
-          "number": 33,
           "text": {
-            "DRB": "Salomon his children, the children of Asophot, the children of Phasida, the children of Celi, the children of Dedon, the children of Gaddahel, the children of Sephegi,"
+            "WEBBE": "The sons of the servants of Solomon: the sons of Assaphioth, the sons of Pharida, the sons of Jeeli, the sons of Lozon, the sons of Isdael, the sons of Saphuthi,"
           }
         },
         {
-          "number": 34,
           "text": {
-            "DRB": "the children of Aggia, the children of Sachareth, the children of Sabathen, the children of Caroneth, the children of Malsith, the children of Ama, the children of Sasus, the children of Addus, the children of Suba, the children of Eura, the children of Rahotis, the children of Phasphat, the children of Malmon."
+            "WEBBE": "the sons of Agia, the sons of Phacareth, the sons of Sabie, the sons of Sarothie, the sons of Masias, the sons of Gas, the sons of Addus, the sons of Subas, the sons of Apherra, the sons of Barodis, the sons of Saphat, the sons of Allon."
           }
         },
         {
-          "number": 35,
           "text": {
-            "DRB": "All that served the sanctuary, and the servants of Salomon, four hundred eighty two."
+            "WEBBE": "All the temple-servants and the sons of the servants of Solomon were three hundred and seventy two."
           }
         },
         {
-          "number": 36,
           "text": {
-            "DRB": "These are the children that came up from Thelmela, Thelharsa: the Princes of them, Carmelam, and Careth:"
+            "WEBBE": "These came up from Thermeleth, and Thelersas, Charaathalan leading them, and Allar;"
           }
         },
         {
-          "number": 37,
           "text": {
-            "DRB": "and they could not declare their cities, and their progenies, how they are of Israel. The children of Dalari, the children of Tubal, the children of Nechodaici,"
+            "WEBBE": "and they could not show their families, nor their stock, how they were of Israel: the sons of Dalan the son of Ban, the sons of Nekodan, six hundred and fifty two."
           }
         },
         {
-          "number": 38,
           "text": {
-            "DRB": "of the Priests, that did the function of Priesthood: & there were not found the children of Obia, the children of Achisos, the children of Addin, who took a wife of the daughters of Pargeleu:"
+            "WEBBE": "Of the priests, those who usurped the office of the priesthood and were not found: the sons of Obdia, the sons of Akkos, the sons of Jaddus, who married Augia one of the daughters of Zorzelleus, and was called after his name."
           }
         },
         {
-          "number": 39,
           "text": {
-            "DRB": "and they were called by his name, and the writing of the kindred of these was sought in the register, and it was not found, and they were forbid to do the function of Priesthood."
+            "WEBBE": "When the description of the kindred of these men was sought in the register and was not found, they were removed from executing the office of the priesthood;"
           }
         },
         {
-          "number": 40,
           "text": {
-            "DRB": "And Nehemias and Astharus said to them: Let not the holy things be participated, till there arise a high Priest learned for declaration and truth."
+            "WEBBE": "for Nehemias and Attharias told them that they should not be partakers of the holy things until a high priest wearing Urim and Thummim should arise."
           }
         },
         {
-          "number": 41,
           "text": {
-            "DRB": "And all Israel was beside men servants, & women servants, forty two thousand three hundred forty."
+            "WEBBE": "So all those of Israel, from twelve years old and upward, beside menservants and women servants, were in number forty two thousand and three hundred and sixty."
           }
         },
         {
-          "number": 42,
           "text": {
-            "DRB": "Their men servants and women servants, seven thousand three hundred thirty seven. Singing men and singing women two hundred three score five."
+            "WEBBE": "Their menservants and handmaids were seven thousand and three hundred and thirty and seven; the minstrels and singers, two hundred and forty five;"
           }
         },
         {
-          "number": 43,
           "text": {
-            "DRB": "Camels, four hundred thirty five. Horses, seven thousand thirty six. Mules, two hundred thousand forty five. Beasts under yoke, five thousand twenty five."
+            "WEBBE": "four hundred and thirty and five camels, seven thousand and thirty six horses, two hundred and forty five mules, and five thousand and five hundred and twenty five beasts of burden."
           }
         },
         {
-          "number": 44,
           "text": {
-            "DRB": "And of the rulers themselves by their villages, when they came into the temple of God, which was in Jerusalem, to renew and raise up the"
+            "WEBBE": "And some of the chief men of their families, when they came to the temple of God that is in Jerusalem, vowed to set up the house again in its own place according to their ability,"
           }
         },
         {
-          "number": 45,
           "text": {
-            "DRB": "and to be given into the temple to the sacred treasure of the works, of gold twelve thousand mnas, and five thousand mnas of silver, and stoles for Priests an hundred."
+            "WEBBE": "and to give into the holy treasury of the works one thousand minas of gold, five thousand minas of silver, and one hundred priestly vestments."
           }
         },
         {
-          "number": 46,
           "text": {
-            "KJV": "5:46 And so dwelt the Priests, and the Leuites, and the people in Ierusalem, and in the countrey: the Singers also, and the Porters, and all Israel in their villages.",
-            "NRSV": "Then the priests and the Levites and some of the people settled in Jerusalem and the country; the temple singers also and the gatekeepers and all Israel settled in their villages.",
-            "DRB": "And the Priests and Levites, and they that came out of the people, dwelt in Jerusalem, and in the country, and the sacred singingmen, and porters, and all Israel in their countries."
+            "WEBBE": "The priests and the Levites and some of the people lived in Jerusalem and the country. The holy singers also and the gatekeepers and all Israel lived in their villages."
           }
         },
         {
-          "number": 47,
           "text": {
-            "DRB": "And the seventh month being at hand, and when the children of Israel were every man in his own affairs, they came together with one mind into the court, that was before the east gate."
+            "WEBBE": "But when the seventh month was at hand, and when the children of Israel were each in their own place, they all came together with one purpose into the broad place before the first porch which is towards the east."
           }
         },
         {
-          "number": 48,
           "text": {
-            "DRB": "And Iesus the son of Iosedec, and his brethren the Priests: Zorobabel the son of Salathiel, and his brethren standing up, prepared an altar,"
+            "WEBBE": "Then Jesus the son of Josedek, his kindred the priests, Zorobabel the son of Salathiel, and his kindred stood up and made the altar of the God of Israel ready"
           }
         },
         {
-          "number": 49,
           "text": {
-            "DRB": "that they might offer upon it holocausts, according to the things that are written in the book of Moyses the man of God."
+            "WEBBE": "to offer burnt sacrifices upon it, in accordance with the express commands in the book of Moses the man of God."
           }
         },
         {
-          "number": 50,
           "text": {
-            "DRB": "And there assembled there of other nations of the land, and all the nations of the land erected the altar in his place, and they offered hosts, and morning holocausts to our Lord."
+            "WEBBE": "Some people joined them out of the other nations of the land, and they erected the altar upon its own place, because all the nations of the land were hostile to them and oppressed them; and they offered sacrifices at the proper times and burnt offerings to the Lord both morning and evening."
           }
         },
         {
-          "number": 51,
           "text": {
-            "DRB": "And they celebrated the feast of Tabernacles, and the solemn day, as it is commanded in the law: and sacrifices daily, as it behoved:"
+            "WEBBE": "They also held the feast of tabernacles, as it is commanded in the law, and offered sacrifices daily, as appropriate."
           }
         },
         {
-          "number": 52,
           "text": {
-            "DRB": "& after these they appointed oblations, and the hosts of the sabbaths, and of the new moons, and of all the solemn sanctified days."
+            "WEBBE": "After that, they offered the continual oblations and the sacrifices of the Sabbaths, of the new moons, and of all the consecrated feasts."
           }
         },
         {
-          "number": 53,
           "text": {
-            "DRB": "And as many as vowed to our Lord from the new moon of the seventh month, began to offer the hosts to God, and the temple of our Lord was not yet built."
+            "WEBBE": "All those who had made any vow to God began to offer sacrifices to God from the new moon of the seventh month, although the temple of God was not yet built."
           }
         },
         {
-          "number": 54,
           "text": {
-            "DRB": "And they gave money to the masons and workmen, and drink and victuals with joy."
+            "WEBBE": "They gave money, food, and drink to the masons and carpenters."
           }
         },
         {
-          "number": 55,
           "text": {
-            "DRB": "And they gave carts to the Sidonians, & Tyrianes, that with them they should carry cedar beams from Libanus, & should make boats in the haven Ioppe, according to the decree that was written for them by Cyrus king of the Persians."
+            "WEBBE": "They also gave carts to the people of Sidon and Tyre, that they should bring cedar trees from Libanus, and convey them in rafts to the harbour of Joppa, according to the commandment which was written for them by Cyrus king of the Persians."
           }
         },
         {
-          "number": 56,
           "text": {
-            "DRB": "And in the second year coming into the temple of God in Jerusalem, in the second month began Zorobabel the son of Salathiel, and Iosue the son of Iosedec, and their brethren, and the Priests and Levites, and all that were come from the captivity into Jerusalem."
+            "WEBBE": "In the second year after his coming to the temple of God at Jerusalem, in the second month, Zorobabel the son of Salathiel, Jesus the son of Josedek, their kindred, the Levitical priests, and all those who had come to Jerusalem out of the captivity began work."
           }
         },
         {
-          "number": 57,
           "text": {
-            "DRB": "and they founded the temple of God in the new moon of the second month of the second year, after that they came into Jury & Jerusalem."
+            "WEBBE": "They laid the foundation of God’s temple on the new moon of the second month, in the second year after they had come to Judea and Jerusalem."
           }
         },
         {
-          "number": 58,
           "text": {
-            "DRB": "And they appointed the Levites from twenty years, over the works of our Lord: and Iesus stood and his son, and the brethren, all Levites joining together, & executors of the law, doing the works in the house of our Lord."
+            "WEBBE": "They appointed the Levites who were at least twenty years old over the Lord’s works. Then Jesus, with his sons and kindred, Kadmiel his brother, the sons of Jesus, Emadabun, and the sons of Joda the son of Iliadun, and their sons and kindred, all the Levites, with one accord stood up and started the business, labouring to advance the works in the house of God. So the builders built the Lord’s temple."
           }
         },
         {
-          "number": 59,
           "text": {
-            "DRB": "And all the Priests stood, having stoles with trumpets:"
+            "WEBBE": "The priests stood arrayed in their vestments with musical instruments and trumpets, and the Levites the sons of Asaph with their cymbals,"
           }
         },
         {
-          "number": 60,
           "text": {
-            "DRB": "and Levites the children of Asaph, having cymbals together praising our Lord, and blessing him according to David king of Israel."
+            "WEBBE": "singing songs of thanksgiving and praising the Lord, according to the directions of King David of Israel."
           }
         },
         {
-          "number": 61,
           "text": {
-            "DRB": "And they sung a song to our Lord, because his sweetness and honour is for ever upon Israel."
+            "WEBBE": "They sang aloud, praising the Lord in songs of thanksgiving, because his goodness and his glory are forever in all Israel."
           }
         },
         {
-          "number": 62,
           "text": {
-            "DRB": "And all the people sounded with trumpet, and cried out with a loud voice, praising our Lord in the raising up of the house of our Lord."
+            "WEBBE": "All the people sounded trumpets and shouted with a loud voice, singing songs of thanksgiving to the Lord for the raising up of the Lord’s house."
           }
         },
         {
-          "number": 63,
           "text": {
-            "DRB": "And there came of the Priests, & Levites, and presidents by their villages the more ancients, which had seen the old house:"
+            "WEBBE": "Some of the Levitical priests and of the heads of their families, the elderly who had seen the former house came to the building of this one with lamentation and great weeping."
           }
         },
         {
-          "number": 64,
           "text": {
-            "DRB": "and to the building of this with cry and great lamentation, and many with trumpets and great joy:"
+            "WEBBE": "But many with trumpets and joy shouted with a loud voice,"
           }
         },
         {
-          "number": 65,
           "text": {
-            "DRB": "in so much that the people heard not the trumpets for the lamentation of the people. For the multitude was sounding with trumpets magnifically, so that it was heard far off."
+            "WEBBE": "so that the people couldn’t hear the trumpets for the weeping of the people, for the multitude sounded loudly, so that it was heard far away."
           }
         },
         {
-          "number": 66,
           "text": {
-            "DRB": "And the enemies of the tribe of Juda, and Benjamin heard it, & they came to know what the voice of the trumpets was:"
+            "WEBBE": "Therefore when the enemies of the tribe of Judah and Benjamin heard it, they came to know what that noise of trumpets meant."
           }
         },
         {
-          "number": 67,
           "text": {
-            "DRB": "And they knew that they which were of the captivity do build a temple to our Lord the God of Israel."
+            "WEBBE": "They learnt that those who returned from captivity built the temple for the Lord, the God of Israel."
           }
         },
         {
-          "number": 68,
           "text": {
-            "DRB": "And coming to Zorobabel & Iesus, the overseers of the villages, they said to them: We will build together with you."
+            "WEBBE": "So they went to Zorobabel and Jesus, and to the chief men of the families, and said to them, “We will build together with you."
           }
         },
         {
-          "number": 69,
           "text": {
-            "DRB": "For we have in like manner heard your Lord, & we walk like from the days of Asbazareth king of the Assyrians, who transported us hither."
+            "WEBBE": "For we, just like you, obey your Lord, and sacrifice to him from the days of King Asbasareth of the Assyrians, who brought us here.”"
           }
         },
         {
-          "number": 70,
           "text": {
-            "DRB": "And Zorobabel, & Iesus, & the Princes of the villages of Israel, said to them:"
+            "WEBBE": "Then Zorobabel, Jesus and the chief men of the families of Israel said to them, “It is not for you to build the house for the Lord our God."
           }
         },
         {
-          "number": 71,
           "text": {
-            "KJV": "5:71 We our selues alone will build vnto the Lord of Israel, according as Cyrus the King of the Persians hath commanded vs.",
-            "NRSV": "But the builders said to them, “It is not for you and us to build the house to the Lord our God.”",
-            "DRB": "It is not for us and you to build the house of our God. For we alone will build to our Lord of Israel according as Cyrus the king of the Persians hath commanded."
+            "WEBBE": "We ourselves alone will build for the Lord of Israel, as King Cyrus of the Persians has commanded us.”"
           }
         },
         {
-          "number": 72,
           "text": {
-            "DRB": "And the nations of the land lying upon them that are in Jury, and lifting up the work of the building, and bringing ambushments, and peoples, prohibited them to build:"
+            "WEBBE": "But the heathen of the land pressed hard upon the inhabitants of Judea, cut off their supplies, and hindered their building."
           }
         },
         {
-          "number": 73,
           "text": {
-            "DRB": "& practising assaults hindered them, that the building might not be finished all the time of the life of king Cyrus, and they deferred the building for two years until the reign of"
+            "WEBBE": "By their secret plots, and popular persuasions and commotions, they hindered the finishing of the building all the time that King Cyrus lived. So they were hindered from building for two years, until the reign of Darius."
           }
         }
       ]
     },
     {
-      "number": 6,
       "verses": [
         {
-          "number": 1,
           "text": {
-            "KJV": "6:1 Now in the second yeere of the reigne of Darius, Aggeus, and Zacharias the sonne of Addo, the prophets prophesied vnto the Iewes, in Iurie and Ierusalem in the Name of the Lord God of Israel which was vpon them.",
-            "NRSV": "Now in the second year of the reign of Darius, the prophets Haggai and Zechariah son of Iddo prophesied to the Jews who were in Judea and Jerusalem.",
-            "DRB": "And in the second year of the reign of Darius prophesied Aggeus, & Zacharias the son of Addo the Prophet to Jury & Jerusalem in the name of God of Israel upon them."
+            "WEBBE": "Now in the second year of the reign of Darius, Aggaeus and Zacharius the son of Addo, the prophets, prophesied to the Jews in Judea and Jerusalem in the name of the Lord, the God of Israel."
           }
         },
         {
-          "number": 2,
           "text": {
-            "KJV": "6:2 Then stood vp Zorobabel the sonne of Salathiel, and Iesus the son of Iosedec, and beganne to build the house of the Lord at Ierusalem, the prophets of the Lord being with them,and helping them.",
-            "NRSV": "Then Zerubbabel son of Shealtiel and Jeshua son of Jozadak began to build the house of the Lord that is in Jerusalem.",
-            "DRB": "Then Zorobabel the son of Salathiel standing up, and Iesus the son of Iosedec, began to build the house of our Lord, which is in Jerusalem."
+            "WEBBE": "Then Zorobabel the son of Salathiel and Jesus the son of Josedek stood up and began to build the house of the Lord at Jerusalem, the prophets of the Lord being with them and helping them."
           }
         },
         {
-          "number": 3,
           "text": {
-            "DRB": "When the Prophets of our Lord were present with them, and did help them. At the same time came Sisennes to them, the deputy of Syria, and of Phenice, and Satrabuzanes, and his fellows:"
+            "WEBBE": "At the same time Sisinnes the governor of Syria and Phoenicia came to them, with Sathrabuzanes and his companions, and said to them,"
           }
         },
         {
-          "number": 4,
           "text": {
-            "DRB": "and they said to them: By whose commandment build ye this house, and this roof, and perfit all other things? And who are the workmen that build these things?"
+            "WEBBE": "“By whose authority do you build this house and this roof, and perform all the other things? Who are the builders who do these things?”"
           }
         },
         {
-          "number": 5,
           "text": {
-            "DRB": "And the ancients of the Jews, which were left of the captivity by our Lord, had favour when the visitation was made upon them."
+            "WEBBE": "Nevertheless, the elders of the Jews obtained favour, because the Lord had visited the captives;"
           }
         },
         {
-          "number": 6,
           "text": {
-            "DRB": "And they were not hindered from building, till it was signified to Darius of all these things, and answer was received."
+            "WEBBE": "and they were not hindered from building until such time as communication was made to Darius concerning them, and his answer received."
           }
         },
         {
-          "number": 7,
           "text": {
-            "DRB": "A copy of the letter, which they sent to Darius. SISENNES deputy of Syria & Phenice, and Satrabuzanes, and his fellows in Syria and Phenice Presidents, to king Darius greeting."
+            "WEBBE": "A copy of the letter which Sisinnes, governor of Syria and Phoenicia, and Sathrabuzanes, with their companions, the rulers in Syria and Phoenicia, wrote and sent to Darius:"
           }
         },
         {
-          "number": 8,
           "text": {
-            "DRB": "Be all things known to our lord the king, that when we came into the country of Jury, and had entered into Jerusalem, we found them building the great house of God."
+            "WEBBE": "“To King Darius, greetings. Let it be fully known to our lord the king, that having come into the country of Judea, and entered into the city of Jerusalem, we found in the city of Jerusalem the elders of the Jews that were of the captivity"
           }
         },
         {
-          "number": 9,
           "text": {
-            "DRB": "And the temple of polished stones, and of great & precious matter in the walls."
+            "WEBBE": "building a great new house for the Lord of hewn and costly stones, with timber laid in the walls."
           }
         },
         {
-          "number": 10,
           "text": {
-            "DRB": "And the works to be a doing earnestly, and to succeed, and prosper in their hands, and in all glory to be perfited most diligently."
+            "WEBBE": "Those works are being done with great speed. The work goes on prosperously in their hands, and it is being accomplished with all glory and diligence."
           }
         },
         {
-          "number": 11,
           "text": {
-            "DRB": "Then we asked the ancients saying, by whose permission build ye this house, and found these works?"
+            "WEBBE": "Then we asked these elders, saying, ‘By whose authority are you building this house and laying the foundations of these works?’"
           }
         },
         {
-          "number": 12,
           "text": {
-            "DRB": "And therefore we asked them, that we might do thee to know the men & the overseers, and we required of them a roll of the names of the overseers."
+            "WEBBE": "Therefore, to the intent that we might give knowledge to you by writing who the leaders were, we questioned them, and we required of them the names in writing of their principal men."
           }
         },
         {
-          "number": 13,
           "text": {
-            "DRB": "But they answered us saying: We are the servants of the Lord, which made heaven and earth."
+            "WEBBE": "So they gave us this answer, ‘We are the servants of the Lord who made heaven and earth."
           }
         },
         {
-          "number": 14,
           "text": {
-            "DRB": "And this house was built these many years past by a king of Israel, that was great and most valiant, & was finished."
+            "WEBBE": "As for this house, it was built many years ago by a great and strong king of Israel, and was finished."
           }
         },
         {
-          "number": 15,
           "text": {
-            "DRB": "And because our fathers were provoking to wrath, and sinned against God of Israel, he delivered them into the hands of Nabuchodonosor the king of Babylon, king of the Chaldees."
+            "WEBBE": "But when our fathers sinned against the Lord of Israel who is in heaven, and provoked him to wrath, he gave them over into the hands of King Nabuchodonosor of Babylon, king of the Chaldeans."
           }
         },
         {
-          "number": 16,
           "text": {
-            "DRB": "And throwing down this house they burnt it, and they led the people captive into Babylon."
+            "WEBBE": "They pulled down the house, burnt it, and carried away the people captive to Babylon."
           }
         },
         {
-          "number": 17,
           "text": {
-            "DRB": "In the first year when Cyrus reigned the king of Babylon, Cyrus the king wrote to build this house."
+            "WEBBE": "But in the first year that Cyrus reigned over the country of Babylon, King Cyrus wrote that this house should be rebuilt."
           }
         },
         {
-          "number": 18,
           "text": {
-            "DRB": "And these sacred vessels of gold and silver which Nabuchodonosor had taken out of the house which is in Jerusalem, and had consecrated them in his own temple, Cyrus brought them forth again out of the temple which was in Babylon, and they were delivered to Zorobabel, & to Salmanasar, the deputy."
+            "WEBBE": "The holy vessels of gold and of silver that Nabuchodonosor had carried away out of the house at Jerusalem and had set up in his own temple, those King Cyrus brought out of the temple in Babylonia, and they were delivered to Zorobabel and to Sanabassarus the governor,"
           }
         },
         {
-          "number": 19,
           "text": {
-            "DRB": "And it was commanded them that they should offer these vessels, & lay them up in the temple, which was in Jerusalem, & build the temple of God itself in his place."
+            "WEBBE": "with commandment that he should carry away all these vessels, and put them in the temple at Jerusalem, and that the Lord’s temple should be built on its site."
           }
         },
         {
-          "number": 20,
           "text": {
-            "DRB": "Then did Salmanasar lay the foundations of the house of our Lord, which is in Jerusalem: & from that time until now it is a building, & is not accomplished."
+            "WEBBE": "Then Sanabassarus, having come here, laid the foundations of the Lord’s house which is in Jerusalem. From that time to this we are still building. It is not yet fully completed.’"
           }
         },
         {
-          "number": 21,
           "text": {
-            "DRB": "Now therefore if thou think it good o king, let it be sought in the kings' libraries of Cyrus the king, which are in Babylon."
+            "WEBBE": "Now therefore, if it seems good, O king, let a search be made amongst the royal archives of our lord the king that are in Babylon."
           }
         },
         {
-          "number": 22,
           "text": {
-            "DRB": "and if it shall be found, that the building of the house of the Lord, which is in Jerusalem, began by the counsel of Cyrus the king, and it be thought good of our Lord the king, let him write to us of these things."
+            "WEBBE": "If it is found that the building of the house of the Lord which is in Jerusalem has been done with the consent of King Cyrus, and it seems good to our lord the king, let him send us directions concerning these things.”"
           }
         },
         {
-          "number": 23,
           "text": {
-            "DRB": "Then Darius the king commanded search to be made in the libraries: and there was found in Ecbatana a town that is in the country of Media, one place wherein were written these words."
+            "WEBBE": "Then King Darius commanded that a search be made amongst the archives that were laid up at Babylon. So at Ekbatana the palace, which is in the country of Media, a scroll was found where these things were recorded:"
           }
         },
         {
-          "number": 24,
           "text": {
-            "DRB": "IN THE FIRST YEAR of the reign of Cyrus, king Cyrus commanded to build the house of the Lord which is in Jerusalem, where they did burn incense with daily fire,"
+            "WEBBE": "“In the first year of the reign of Cyrus, King Cyrus commanded to build up the house of the Lord which is in Jerusalem, where they sacrifice with continual fire."
           }
         },
         {
-          "number": 25,
           "text": {
-            "DRB": "the height whereof shall be of ten cubits, & the breadth three score cubits, four square"
+            "WEBBE": "Its height shall be sixty cubits, and the breadth sixty cubits, with three rows of hewn stones, and one row of new wood from that country. Its expenses are to be given out of the house of King Cyrus."
           }
         },
         {
-          "number": 26,
           "text": {
-            "DRB": "And the sacred vessels of the house of the Lord, as well of gold as of silver, which Nabuchodonosor took from the house of our Lord, which is in Jerusalem where they were laid, that they be put there:"
+            "WEBBE": "The holy vessels of the house of the Lord, both gold and silver, that Nabuchodonosor took out of the house at Jerusalem and carried away to Babylon, should be restored to the house at Jerusalem, and be set in the place where they were before.”"
           }
         },
         {
-          "number": 27,
           "text": {
-            "DRB": "And he commanded Sisennes the deputy of Syria & Phoenice, and Satrabuzanes, and his fellows, & them that were ordained presidents in Syria & Phoenice, that they should refrain themselves from that place."
+            "WEBBE": "Also he commanded that Sisinnes the governor of Syria and Phoenicia, and Sathrabuzanes, and their companions, and those who were appointed rulers in Syria and Phoenicia, should be careful not to meddle with the place, but allow Zorobabel, the servant of the Lord, and governor of Judea, and the elders of the Jews, to build that house of the Lord in its place."
           }
         },
         {
-          "number": 28,
           "text": {
-            "DRB": "And I also have given commandment to build it wholly: & have provided, that they help them, which are of the captivity of the Jews, till the temple of the house of the Lord be accomplished."
+            "WEBBE": "“I also command to have it built up whole again; and that they look diligently to help those who are of the captivity of Judea, until the house of the Lord is finished,"
           }
         },
         {
-          "number": 29,
           "text": {
-            "DRB": "And from the vexation of the tributes of Coelesyria & Phoenice, a quantity to be given diligently to these men for the sacrifice of the Lord, to Zorobabel the governor, for oxen, and rams, and lambs."
+            "WEBBE": "and that out of the tribute of Coelesyria and Phoenicia a portion shall be carefully given to these men for the sacrifices of the Lord, that is, to Zorobabel the governor for bulls, rams, and lambs,"
           }
         },
         {
-          "number": 30,
           "text": {
-            "DRB": "And in like manner corn also, and salt, and wine, and oil continually year by year, according as the Priests which are in Jerusalem, have prescribed to be spent daily:"
+            "WEBBE": "and also corn, salt, wine and oil, and that continually every year without further question, according as the priests who are in Jerusalem may direct to be daily spent,"
           }
         },
         {
-          "number": 31,
           "text": {
-            "DRB": "that libaments may be offered to the most high God for the king & his children, & that they may pray for their life."
+            "WEBBE": "that drink offerings may be made to the Most High God for the king and for his children, and that they may pray for their lives.”"
           }
         },
         {
-          "number": 32,
           "text": {
-            "DRB": "And that it be denounced, that whosoever shall transgress any thing of these which are written, or shall despise it, a beam be taken of their own, & they be hanged, & their goods be confiscate to the king."
+            "WEBBE": "He commanded that whoever should transgress, yes, or neglect anything written here, a beam shall be taken out of his own house, and he shall be hanged on it, and all his goods seized for the king."
           }
         },
         {
-          "number": 33,
           "text": {
-            "KJV": "6:33 The Lord therfore whose Name is there called vpon, vtterly destroy euery king and nation, that stretcheth out his hand to hinder or endammage that house of the Lord in Ierusalem.",
-            "NRSV": "The king also gave orders that the temple should be finished, and that they should be careful to offer sacrifices there.",
-            "DRB": "Therefore the Lord also, whose name is invocated there, destroy every king & nation, that shall extend their hand to hinder or to handle ill the house of the Lord which is in Jerusalem."
+            "WEBBE": "“Therefore may the Lord, whose name is called upon there, utterly destroy every king and nation that stretches out his hand to hinder or damage that house of the Lord in Jerusalem."
           }
         },
         {
-          "number": 34,
           "text": {
-            "DRB": "I Darius the king have decreed that it be most diligently done according to these things."
+            "WEBBE": "I, King Darius have ordained that these things be done with diligence.”"
           }
         }
       ]
     },
     {
-      "number": 7,
       "verses": [
         {
-          "number": 1,
           "text": {
-            "KJV": "7:1 Then Sisinnes the gouernour of Coelosyria, and Phenice, and Sathrabuzanes, with their companions, following the commandements of king Darius,",
-            "NRSV": "Then Sisinnes the governor of Greater Syria and Phoenicia and Sathrabuzanes and their associates, following the orders of King Darius,",
-            "DRB": "Then Sisennes the deputy of Coelesyria, and Phenice, and Satrabuzanes, and their fellows, obeying those things which were decreed of Darius the king"
+            "WEBBE": "Then Sisinnes the governor of Coelesyria and Phoenicia, and Sathrabuzanes, with their companions, following the commandments of King Darius,"
           }
         },
         {
-          "number": 2,
           "text": {
-            "KJV": "7:2 Did very carefully ouersee the holy workes, assisting the ancients of the Iewes, & gouernours of the Temple.",
-            "NRSV": "supervised the holy work with very great care, assisting the elders of the Jews and the chief officers of the temple.",
-            "DRB": "applied the sacred works most diligently, working together with the ancients of the Jews, the Princes of Syria."
+            "WEBBE": "very carefully supervised the holy work, assisting the elders of the Jews and rulers of the temple."
           }
         },
         {
-          "number": 3,
           "text": {
-            "DRB": "And the sacred works prospered, Aggeus & Zacharias the Prophets prophesying."
+            "WEBBE": "So the holy work prospered, while Aggaeus and Zacharias the prophets prophesied."
           }
         },
         {
-          "number": 4,
           "text": {
-            "DRB": "And they accomplished all things by the precept of our Lord the God of Israel, and by the counsel of Cyrus, & Darius, and Artaxerxes the king of the Persians."
+            "WEBBE": "They finished these things by the commandment of the Lord, the God of Israel, and with the consent of Cyrus, Darius, and Artaxerxes, kings of the Persians."
           }
         },
         {
-          "number": 5,
           "text": {
-            "KJV": "7:5 And thus was the holy house finished, in the three and twentieth day of the moneth Adar, in the sixt yeere of Darius king of the Persians.",
-            "NRSV": "The holy house was finished by the twenty-third day of the month of Adar, in the sixth year of King Darius.",
-            "DRB": "And our house was a finishing until the three and twentieth day of the month of Adar, the sixth year of Darius the king."
+            "WEBBE": "So the holy house was finished by the twenty-third day of the month Adar, in the sixth year of King Darius."
           }
         },
         {
-          "number": 6,
           "text": {
-            "DRB": "And the children of Israel, and the Priests and Levites, and the rest that were of the captivity, which were added, did according to those things that are written in the book of Moyses."
+            "WEBBE": "The children of Israel, the priests, the Levites, and the others who returned from captivity who joined them did what was written in the book of Moses."
           }
         },
         {
-          "number": 7,
           "text": {
-            "DRB": "And they offered for the dedication of the temple of our Lord, oxen an hundred, rams two hundred, lambs four hundred."
+            "WEBBE": "For the dedication of the Lord’s temple, they offered one hundred bulls, two hundred rams, four hundred lambs,"
           }
         },
         {
-          "number": 8,
           "text": {
-            "DRB": "And kids for the sins of all Israel, twelve, according to the number of the tribes of Israel."
+            "WEBBE": "and twelve male goats for the sin of all Israel, according to the number of the twelve princes of the tribes of Israel."
           }
         },
         {
-          "number": 9,
           "text": {
-            "DRB": "And the Priests & Levites stood clothed with stoles by tribes, over all the works of our Lord the God of Israel, according to the book of Moyses, & the porters at every gate."
+            "WEBBE": "The priests and the Levites stood arrayed in their vestments, according to their kindred, for the services of the Lord, the God of Israel, according to the book of Moses. The gatekeepers were at every gate."
           }
         },
         {
-          "number": 10,
           "text": {
-            "DRB": "And the children of Israel, with them that were of the captivity, celebrated the phase the fourteenth moon of the first month, when the Priests & Levites were sanctified."
+            "WEBBE": "The children of Israel who came out of captivity held the Passover the fourteenth day of the first month, when the priests and the Levites were sanctified together,"
           }
         },
         {
-          "number": 11,
           "text": {
-            "DRB": "All the children of the captivity were not sanctified together, because all the Levites were sanctified together."
+            "WEBBE": "with all those who returned from captivity; for they were sanctified. For the Levites were all sanctified together,"
           }
         },
         {
-          "number": 12,
           "text": {
-            "DRB": "And all the children of the captivity immolated the phase, both for their brethren the Priests, & for themselves."
+            "WEBBE": "and they offered the Passover for all who returned from captivity, for their kindred the priests, and for themselves."
           }
         },
         {
-          "number": 13,
           "text": {
-            "DRB": "And the children of Israel did eat, they that were of the captivity, all that remained apart from all the abominations of the nations of the land seeking our Lord."
+            "WEBBE": "The children of Israel who came out of the captivity ate, even all those who had separated themselves from the abominations of the heathen of the land, and sought the Lord."
           }
         },
         {
-          "number": 14,
           "text": {
-            "DRB": "And they celebrated the festival day of Azymes seven days feasting in the sight of our Lord."
+            "WEBBE": "They kept the feast of unleavened bread seven days, rejoicing before the Lord,"
           }
         },
         {
-          "number": 15,
           "text": {
-            "DRB": "Because he turned the counsel of the king of the Assirians toward them, to strengthen their hands to the works of our Lord the God of Israel."
+            "WEBBE": "because he had turned the counsel of the king of Assyria towards them, to strengthen their hands in the works of the Lord, the God of Israel."
           }
         }
       ]
     },
     {
-      "number": 8,
       "verses": [
         {
-          "number": 1,
           "text": {
-            "KJV": "8:1 And after these things, when Artaxerxes the king of the Persians reigned, came Esdras the sonne of Saraias, the sonne of Ezerias, the sonne of Helchiah, the sonne of Salum,",
-            "NRSV": "After these things, when Artaxerxes the king of the Persians was reigning, Ezra came... a scribe skilled in the law of Moses.",
-            "DRB": "And after him when Artaxerxes king of the Persians reigned, came Esdras the son of Azarias, the son of Helcias the son of Salome"
+            "WEBBE": "After these things, when Artaxerxes the king of the Persians reigned, Esdras came, who was the son of Azaraias, the son of Zechrias, the son of Helkias, the son of Salem,"
           }
         },
         {
-          "number": 2,
           "text": {
-            "DRB": "the son of Sadoc, the son of Achitob, the son of Ameri, the son of Azahel, the son of Bocci, the son of Abisue, the son of Phinees the son of Eleazar, the son of Aaron the first priest."
+            "WEBBE": "the son of Sadduk, the son of Ahitob, the son of Amarias, the son of Ozias, the son of Memeroth, the son of Zaraias, the son of Savias, the son of Boccas, the son of Abisne, the son of Phinees, the son of Eleazar, the son of Aaron, the chief priest."
           }
         },
         {
-          "number": 3,
           "text": {
-            "DRB": "This Esdras came up from Babylon being scribe & wise in the law of Moyses, which was given of our Lord the God of Israel to teach and to do."
+            "WEBBE": "This Esdras went up from Babylon as a skilled scribe in the law of Moses, which was given by the God of Israel."
           }
         },
         {
-          "number": 4,
           "text": {
-            "DRB": "And the king gave him glory, because he had found grace in all dignity and desire in his sight."
+            "WEBBE": "The king honoured him, for he found favour in his sight in all his requests."
           }
         },
         {
-          "number": 5,
           "text": {
-            "DRB": "And there went up with him of the children of Israel, and the Priests, and the Levites, and the sacred singers of the temple, and the porters, and the servants of the temple into Jerusalem."
+            "WEBBE": "There went up with him also some of the children of Israel, and of the priests, Levites, holy singers, gatekeepers, and temple servants to Jerusalem"
           }
         },
         {
-          "number": 6,
           "text": {
-            "DRB": "In the seventh year when Artaxerxes reigned in the fifth month, this is the seventh year of his reign, going forth of Babylon in the new moon of the fifth month,"
+            "WEBBE": "in the seventh year of the reign of Artaxerxes, in the fifth month (this was the king’s seventh year); for they left Babylon on the new moon of the first month and came to Jerusalem, by the prosperous journey which the Lord gave them for his sake."
           }
         },
         {
-          "number": 7,
           "text": {
-            "KJV": "8:7 For Esdras had very great skill, so that he omitted nothing of the Law and Commaundements of the Lord, but taught all Israel the Ordinances and Iudgements.",
-            "NRSV": "For Ezra had great knowledge, so that he omitted nothing from the law of the Lord or the commandments, but taught all Israel all the ordinances and judgments.",
-            "DRB": "they came to Jerusalem according to his commandment, according to the prosperity of their journey, which their Lord gave them."
+            "WEBBE": "For Esdras had very great skill, so that he omitted nothing of the law and commandments of the Lord, but taught all Israel the ordinances and judgements."
           }
         },
         {
-          "number": 8,
           "text": {
-            "DRB": "For in these Esdras had great knowledge, that he would not pretermit any of those things, which were according to the law, and the precepts of our Lord, and in teaching all Israel all justice and judgement."
+            "WEBBE": "Now the commission, which was written from King Artaxerxes, came to Esdras the priest and reader of the law of the Lord, was as follows:"
           }
         },
         {
-          "number": 9,
           "text": {
-            "DRB": "And they that wrote the writings of Artaxerxes the king, coming delivered the writing which was granted of Artaxerxes the king to Esdras the Priest, & the reader of the law of our Lord, the copy whereof here followeth."
+            "WEBBE": "“King Artaxerxes to Esdras the priest and reader of the law of the Lord, greetings."
           }
         },
         {
-          "number": 10,
           "text": {
-            "DRB": "KING Artaxerxes to Esdras the Priest, and reader of the law of the Lord, greeting."
+            "WEBBE": "Having determined to deal graciously, I have given orders that those of the nation of the Jews, and of the priests and Levites, and of those within our realm who are willing and freely choose to, should go with you to Jerusalem."
           }
         },
         {
-          "number": 11,
           "text": {
-            "DRB": "I of courtesy esteeming it among benefits, have commanded them that of their own accord are desirous of the nation of the Jews, and of the Priests & Levites, which are in my kingdom, to go with thee into Jerusalem."
+            "WEBBE": "As many therefore as are so disposed, let them depart with you, as it has seemed good both to me and my seven friends the counsellors,"
           }
         },
         {
-          "number": 12,
           "text": {
-            "DRB": "If any therefore desire to go with thee, let them come together, and set forward as it hath pleased me, & my seven friends my counsellers:"
+            "WEBBE": "that they may look to the affairs of Judea and Jerusalem, in accordance with what is in the Lord’s law,"
           }
         },
         {
-          "number": 13,
           "text": {
-            "DRB": "that they may visit those things which are done touching Jury & Jerusalem, observing as thou hast in the law of the Lord."
+            "WEBBE": "and carry the gifts to the Lord of Israel to Jerusalem, which I and my friends have vowed, and that all the gold and silver that can be found in the country of Babylonia for the Lord in Jerusalem,"
           }
         },
         {
-          "number": 14,
           "text": {
-            "DRB": "And let them carry the gifts to the Lord the God of Israel, which I have vowed and my friends to Jerusalem, and all the gold and silver, that shall be found in the country of Babylon to the Lord in Jerusalem, with that,"
+            "WEBBE": "with that also which is given of the people for the temple of the Lord their God that is at Jerusalem, be collected: even the gold and silver for bulls, rams, and lambs, and what goes with them,"
           }
         },
         {
-          "number": 15,
           "text": {
-            "DRB": "which is given for the nation itself unto the temple of their Lord which is in Jerusalem: that this gold and silver be gathered for oxen, and rams, and lambs, & kids, & for the things that are agreeable to these,"
+            "WEBBE": "to the end that they may offer sacrifices to the Lord upon the altar of the Lord their God, which is in Jerusalem."
           }
         },
         {
-          "number": 16,
           "text": {
-            "DRB": "that they may offer hosts to the Lord upon the altar of their Lord, which is in Jerusalem."
+            "WEBBE": "Whatever you and your kindred decide to do with gold and silver, do that according to the will of your God."
           }
         },
         {
-          "number": 17,
           "text": {
-            "DRB": "And all things whatsoever thou with thy brethren wilt do with gold, & silver, do it at thy pleasure, according to the precept of the Lord thy God."
+            "WEBBE": "The holy vessels of the Lord, which are given you for the use of the temple of your God, which is in Jerusalem,"
           }
         },
         {
-          "number": 18,
           "text": {
-            "DRB": "And the sacred vessels, which are given thee to the works of the house of the Lord thy God, which is in Jerusalem."
+            "WEBBE": "and whatever else you shall remember for the use of the temple of your God, you shall give it out of the king’s treasury."
           }
         },
         {
-          "number": 19,
           "text": {
-            "DRB": "And other things whatsoever shall help thee to the works of the temple of thy God, thou shalt give it out of the king's treasure."
+            "WEBBE": "I, King Artaxerxes, have also commanded the keepers of the treasures in Syria and Phoenicia, that whatever Esdras the priest and reader of the law of the Most High God shall send for, they should give it to him with all diligence,"
           }
         },
         {
-          "number": 20,
           "text": {
-            "DRB": "When thou with thy brethren wilt do ought with gold and silver, do according to the will of the Lord."
+            "WEBBE": "to the sum of one hundred talents of silver, likewise also of wheat even to one hundred cors , and one hundred firkins of wine, and salt in abundance."
           }
         },
         {
-          "number": 21,
           "text": {
-            "DRB": "And I king Artaxerxes have given commandment to the keepers of the treasure of Syria and Phenice, that what things soever Esdras the Priest and reader of the law of the Lord shall write for, they give him unto an hundred talents of silver, likewise also of gold."
+            "WEBBE": "Let all things be performed after God’s law diligently to the most high God, that wrath come not upon the kingdom of the king and his sons."
           }
         },
         {
-          "number": 22,
           "text": {
-            "DRB": "And unto an hundred measures of corn, & an hundred vessels of wine, and other things whatsoever abound without taxing."
+            "WEBBE": "I command you also that no tax, nor any other imposition, be laid upon any of the priests, or Levites, or holy singers, or gatekeepers, or temple servants, or any that have employment in this temple, and that no man has authority to impose any tax on them."
           }
         },
         {
-          "number": 23,
           "text": {
-            "DRB": "Let all things be done to the most high God according to the law of God, lest perhaps there arise wrath in the reign of the king, & of his son, & his sons."
+            "WEBBE": "You, Esdras, according to the wisdom of God, ordain judges and justices that they may judge in all Syria and Phoenicia all those who know the law of your God; and those who don’t know it, you shall teach."
           }
         },
         {
-          "number": 24,
           "text": {
-            "DRB": "And to you it is said, that upon all the Priests, & Levites, & sacred singers, & servants of the temple, and scribes of this temple"
+            "WEBBE": "Whoever transgresses the law of your God and of the king shall be punished diligently, whether it be by death, or other punishment, by penalty of money, or by imprisonment.”"
           }
         },
         {
-          "number": 25,
           "text": {
-            "KJV": "8:25 ¶ Then said Esdras the Scribe, Blessed be the onely Lord God of my fathers, who hath put these things into the heart of the king, to glorifie his house that is in Ierusalem;",
-            "NRSV": "“And you, Ezra, according to the wisdom of God, appoint judges and justices to judge all those who know the law of your God throughout all Syria and Phoenicia.”",
-            "DRB": "no tribute, nor any other tax be set, & that no man have authority to object any"
+            "WEBBE": "Then Esdras the scribe said, “Blessed be the only Lord, the God of my fathers, who has put these things into the heart of the king, to glorify his house that is in Jerusalem,"
           }
         },
         {
-          "number": 26,
           "text": {
-            "DRB": "But thou Esdras according to the wisdom of God appoint judges, and arbiters in all Syria and Phenice: and teach all them that know not the law of thy God:"
+            "WEBBE": "and has honoured me in the sight of the king, his counsellors, and all his friends and nobles."
           }
         },
         {
-          "number": 27,
           "text": {
-            "DRB": "that whosoever shall transgress the law, they be diligently punished either with death, or with torment, or else with a forfeit of money, or with banishment."
+            "WEBBE": "Therefore I was encouraged by the help of the Lord my God, and gathered together out of Israel men to go up with me."
           }
         },
         {
-          "number": 28,
           "text": {
-            "DRB": "And Esdras the scribe said: Blessed be the God of our fathers, which hath given this will into the king's heart, to glorify his house, which is in Jerusalem."
+            "WEBBE": "These are the chiefs according to their families and their several divisions, who went up with me from Babylon in the reign of King Artaxerxes:"
           }
         },
         {
-          "number": 29,
           "text": {
-            "DRB": "And hath honoured me in the sight of the king, and of his counsellers, and friends, and them that wear purple."
+            "WEBBE": "of the sons of Phinees, Gerson; of the sons of Ithamar, Gamael; of the sons of David, Attus the son of Sechenias;"
           }
         },
         {
-          "number": 30,
           "text": {
-            "DRB": "And I was made constant in mind according to the aid of our Lord my God, and gathered together of Israel men, that should go up together with me."
+            "WEBBE": "of the sons of Phoros, Zacharais; and with him were counted one hundred and fifty men;"
           }
         },
         {
-          "number": 31,
           "text": {
-            "DRB": "And these are the Princes according to their kindreds, and several principalities of them that came up from Babylon the Kingdom of Artaxerxes."
+            "WEBBE": "of the sons of Phaath Moab, Eliaonias the son of Zaraias, and with him two hundred men;"
           }
         },
         {
-          "number": 32,
           "text": {
-            "DRB": "Of the children of Phares, Gersomus: and of the children of Siemarith, Amenus: of the children of David, Acchus the son of Scecilia:"
+            "WEBBE": "of the sons of Zathoes, Sechenias the son of Jezelus, and with him three hundred men; of the sons of Adin, Obeth the son of Jonathan, and with him two hundred and fifty men;"
           }
         },
         {
-          "number": 33,
           "text": {
-            "DRB": "Of the children of Phares, Zacharias, and with him returned an hundred fifty men."
+            "WEBBE": "of the sons of Elam, Jesias son of Gotholias, and with him seventy men;"
           }
         },
         {
-          "number": 34,
           "text": {
-            "DRB": "Of the children of leader Moabilion, Zaraei, and with him two hundred fifty men."
+            "WEBBE": "of the sons of Saphatias, Zaraias son of Michael, and with him seventy men;"
           }
         },
         {
-          "number": 35,
           "text": {
-            "DRB": "Of the children of Zachues, Iechonias of Zechoel, and with him two hundred fifty men:"
+            "WEBBE": "of the sons of Joab, Abadias son of Jehiel. Jezelus, and with him two hundred and twelve men;"
           }
         },
         {
-          "number": 36,
           "text": {
-            "DRB": "of the children of Sala, Maasias of Gotholia, & with him seventy men:"
+            "WEBBE": "of the sons of Banias, Salimoth son of Josaphias, and with him one hundred and sixty men;"
           }
         },
         {
-          "number": 37,
           "text": {
-            "DRB": "of the children of Saphatia, Zarias of Michel, and with him eighty men:"
+            "WEBBE": "of the sons of Babi, Zacharias son of Bebai, and with him twenty-eight men;"
           }
         },
         {
-          "number": 38,
           "text": {
-            "DRB": "of the children of Iob, Abdias of Iehel, and with him two hundred twelve men:"
+            "WEBBE": "of the sons of Azgad: Astath, Joannes son of Hakkatan Akatan, and with him one hundred and ten men;"
           }
         },
         {
-          "number": 39,
           "text": {
-            "DRB": "of the children of Bania, Salimoth, the son of Iosaphia, and with him an hundred sixty men:"
+            "WEBBE": "of the sons of Adonikam, the last, and these are the names of them, Eliphalat, Jeuel, and Samaias, and with them seventy men;"
           }
         },
         {
-          "number": 40,
           "text": {
-            "DRB": "of the children of Beer, Zacharias Bebei, and with him two hundred eight men:"
+            "WEBBE": "of the sons of Bago, Uthi the son of Istalcurus, and with him seventy men."
           }
         },
         {
-          "number": 41,
           "text": {
-            "DRB": "of the children of Ezead, Ioannes of Eccetan, and with him an hundred ten men:"
+            "WEBBE": "I gathered them together to the river called Theras. There we pitched our tents three days, and I inspected them."
           }
         },
         {
-          "number": 42,
           "text": {
-            "DRB": "of the children of Adonicam, which were last, and these are their names, Eliphalam the son of Gebel, and Semeias, and with him seventy men."
+            "WEBBE": "When I had found there none of the priests and Levites,"
           }
         },
         {
-          "number": 43,
           "text": {
-            "DRB": "And I gathered them together to the river that is called Thia, and we camped there three days, and viewed them again."
+            "WEBBE": "then sent I to Eleazar, Iduel, Maasmas,"
           }
         },
         {
-          "number": 44,
           "text": {
-            "DRB": "And of the children of the Priests and Levites I found not there."
+            "WEBBE": "Elnathan, Samaias, Joribus, Nathan, Ennatan, Zacharias, and Mosollamus, principal men and men of understanding."
           }
         },
         {
-          "number": 45,
           "text": {
-            "DRB": "And I sent to Eleazarus, and Eccelon, and Masman, and Maloban, and Enaathan, and Samea, and Ioribum, Nathan, Enuagam, Zacharias, and Mosolam the leaders themselves, and that were skillful."
+            "WEBBE": "I asked them to go to Loddeus the captain, who was in the place of the treasury,"
           }
         },
         {
-          "number": 46,
           "text": {
-            "DRB": "And I said to them that they should come to Loddeus, who was at the place of the treasury."
+            "WEBBE": "and commanded them that they should speak to Loddeus, to his kindred, and to the treasurers in that place, to send us such men as might execute the priests’ office in our Lord’s house."
           }
         },
         {
-          "number": 47,
           "text": {
-            "DRB": "And I commanded them to say to Loddeus, and his brethren, and to them that were in the treasury, that they should send us them that might do the function of priesthood in the house of the Lord our God."
+            "WEBBE": "By the mighty hand of our Lord, they brought to us men of understanding of the sons of Mooli the son of Levi, the son of Israel, Asebebias, and his sons, and his kindred, who were eighteen,"
           }
         },
         {
-          "number": 48,
           "text": {
-            "DRB": "And they brought unto us according to the mighty hand of the Lord our God cunning men: of the children of Moholi, the son of Levi, the son of Israel, Sebebia, & his sons and brethren, which were eighteen:"
+            "WEBBE": "and Asebias, Annuus, and Osaias his brother, of the sons of Chanuneus, and their sons were twenty men;"
           }
         },
         {
-          "number": 49,
           "text": {
-            "DRB": "Asbia, and Amin of the sons of the children of Chananeus, and their children twenty men."
+            "WEBBE": "and of the temple servants whom David and the principal men had appointed for the servants of the Levites, two hundred and twenty temple servants. The list of all their names was reported."
           }
         },
         {
-          "number": 50,
           "text": {
-            "DRB": "And of them that served the temple, whom David gave, and the princes themselves to the ministry of the Levites of them that served the temple, two hundred twenty. All their names were signified in writings."
+            "WEBBE": "There I vowed a fast for the young men before our Lord, to seek from him a prosperous journey both for us and for our children and livestock that were with us;"
           }
         },
         {
-          "number": 51,
           "text": {
-            "DRB": "And I vowed there a fast to the young men in the sight of God, that I might ask of him a good journey for us, and them that were with us, and for the children, and the cattle because of ambushments."
+            "WEBBE": "for I was ashamed to ask of the king infantry, cavalry, and an escort for protection against our adversaries."
           }
         },
         {
-          "number": 52,
           "text": {
-            "DRB": "For I was ashamed to ask of the king footmen and horsemen in my company, to guard us, against our adversaries."
+            "WEBBE": "For we had said to the king that the power of our Lord would be with those who seek him, to support them in all ways."
           }
         },
         {
-          "number": 53,
           "text": {
-            "DRB": "For we said to the king that the power of our Lord will be with them that seek him with all affection."
+            "WEBBE": "Again we prayed to our lord about these things, and found him to be merciful."
           }
         },
         {
-          "number": 54,
           "text": {
-            "DRB": "And again we besought the Lord our God according to these things: whom also we had propitious, and we obtained of our God."
+            "WEBBE": "Then I set apart twelve men of the chiefs of the priests, Eserebias, Assamias, and ten men of their kindred with them."
           }
         },
         {
-          "number": 55,
           "text": {
-            "DRB": "And I separated of the rulers of the people, and of the Priests of the temple, twelve men, and Sedebia, and Asanna, and with them of their brethren ten men."
+            "WEBBE": "I weighed out to them the silver, the gold, and the holy vessels of the house of our Lord, which the king, his counsellors, the nobles, and all Israel had given."
           }
         },
         {
-          "number": 56,
           "text": {
-            "DRB": "And I weighed to them the gold and silver, and the vessels of the house of our God pertaining to the Priests, which the king had given, and his counsellers, and the princes, and all Israel."
+            "WEBBE": "When I had weighed it, I delivered to them six hundred and fifty talents of silver, silver vessels weighing one hundred talents, one hundred talents of gold,"
           }
         },
         {
-          "number": 57,
           "text": {
-            "DRB": "And when I had weighed it, I delivered of silver an hundred fifty talents, and silver vessels of an hundred talents, and of gold an hundred talents."
+            "WEBBE": "twenty golden vessels, and twelve vessels of brass, even of fine brass, glittering like gold."
           }
         },
         {
-          "number": 58,
           "text": {
-            "DRB": "And of vessels of gold seven score and twelve brazen vessels good of shining brass, resembling the form of gold."
+            "WEBBE": "I said to them, “You are holy to the Lord, the vessels are holy, and the gold and the silver are a vow to the Lord, the Lord of our fathers."
           }
         },
         {
-          "number": 59,
           "text": {
-            "DRB": "And I said to them: You are also sanctified to our Lord, and the vessels be holy, and the gold and silver is vowed to our Lord the God of our fathers."
+            "WEBBE": "Watch and keep them until you deliver them to the chiefs of the priests and Levites, and to the principal men of the families of Israel in Jerusalem, in the chambers of our Lord’s house."
           }
         },
         {
-          "number": 61,
           "text": {
-            "DRB": "And those Priests and Levites that received the gold and silver and vessels, brought it to Jerusalem into the temple of our Lord."
+            "WEBBE": "So the priests and the Levites who received the silver, the gold, and the vessels which were in Jerusalem, brought them into the temple of the Lord."
           }
         },
         {
-          "number": 62,
           "text": {
-            "DRB": "And we went forward from the river Thia, the twelfth day of the first month, till we entered into Jerusalem."
+            "WEBBE": "We left the river Theras on the twelfth day of the first month. We came to Jerusalem by the mighty hand of our Lord which was upon us. The Lord delivered us from every enemy on the way, and so we came to Jerusalem."
           }
         },
         {
-          "number": 63,
           "text": {
-            "DRB": "And when the third day was come, in the fourth day the gold being weighed, and the silver, was delivered in the house of the Lord our God, to Marimoth Priest the son of Iori."
+            "WEBBE": "When we had been there three days, the silver and gold was weighed and delivered in our Lord’s house on the fourth day to Marmoth the priest the son of Urias."
           }
         },
         {
-          "number": 64,
           "text": {
-            "DRB": "And with him was Eleazar the son of Phinees: and with them were Iosadus the son of Iesus, and Medias, and Banni the son of a Levite, by number and weight all things."
+            "WEBBE": "With him was Eleazar the son of Phinees, and with them were Josabdus the son of Jesus and Moeth the son of Sabannus, the Levites. All was delivered to them by number and weight."
           }
         },
         {
-          "number": 65,
           "text": {
-            "DRB": "And the weight of them was written the same hour."
+            "WEBBE": "All the weight of them was recorded at the same hour."
           }
         },
         {
-          "number": 66,
           "text": {
-            "DRB": "And they that came out of the captivity, offered sacrifice to our Lord the God of Israel, oxen twelve, for all Israel, rams eighty six,"
+            "WEBBE": "Moreover those who had come out of captivity offered sacrifices to the Lord, the God of Israel, even twelve bulls for all Israel, ninety-six rams,"
           }
         },
         {
-          "number": 67,
           "text": {
-            "DRB": "lambs seventy two, buck goats for sin twelve, and for health twelve kine, all for the sacrifice of our Lord."
+            "WEBBE": "seventy-two lambs, and twelve goats for a peace offering—all of them a sacrifice to the Lord."
           }
         },
         {
-          "number": 68,
           "text": {
-            "DRB": "And they read again the precepts of the king to the kings' officers, and to the deputies of Coelesyria, and Phoenice: and they honored the nation, and the temple of our Lord."
+            "WEBBE": "They delivered the king’s commandments to the king’s stewards and to the governors of Coelesyria and Phoenicia; and they honoured the people and the temple of the Lord."
           }
         },
         {
-          "number": 69,
           "text": {
-            "DRB": "And these things being finished, the rulers came to me, saying: The stock of Israel, and the princes, and the Priests, and the Levites"
+            "WEBBE": "Now when these things were done, the principal men came to me and said,"
           }
         },
         {
-          "number": 70,
           "text": {
-            "DRB": "and the strange people, and nations of the land have not separated their uncleanness from the Chananeites, and Hetheites, and Pherezeites, and Iebuseites, and Moobites, & Ægyptians, and Idumeians."
+            "WEBBE": "“The nation of Israel, the princes, the priests, and the Levites haven’t put away from themselves the foreign people of the land nor the uncleannesses of the Gentiles—the Canaanites, Hittites, Pherezites, Jebusites, Moabites, Egyptians, and Edomites."
           }
         },
         {
-          "number": 71,
           "text": {
-            "DRB": "For they are joined to their daughters both themselves, and their sons: and the holy seed is mingled with the strange nations of the earth, and the rulers and magistrates were partakers of that iniquity from the beginning of the reign itself."
+            "WEBBE": "For both they and their sons have married with their daughters, and the holy seed is mixed with the foreign people of the land. From the beginning of this matter the rulers and the nobles have been partakers of this iniquity.”"
           }
         },
         {
-          "number": 72,
           "text": {
-            "DRB": "And forthwith as I heard these things, I rent my garments and the sacred tunic: and tearing the hairs of my head, and my beard, I sat sorrowful and heavy."
+            "WEBBE": "And as soon as I had heard these things, I tore my clothes and my holy garment, and plucked the hair from off my head and beard, and sat down sad and full of heaviness."
           }
         },
         {
-          "number": 73,
           "text": {
-            "DRB": "And there assembled to me mourning upon this iniquity, as many as were then moved by the word of our Lord the God of Israel, and I sat sad until the evening sacrifice."
+            "WEBBE": "So all those who were moved at the word of the Lord, the God of Israel, assembled to me while I mourned for the iniquity, but I sat still full of heaviness until the evening sacrifice."
           }
         },
         {
-          "number": 74,
           "text": {
-            "DRB": "And I rising up from fasting, having my garments rent and the sacred tunic, kneeling, and stretching forth my hands to our Lord,"
+            "WEBBE": "Then rising up from the fast with my clothes and my holy garment torn, and bowing my knees and stretching out my hands to the Lord,"
           }
         },
         {
-          "number": 75,
           "text": {
-            "DRB": "I said: Lord I am confounded, and ashamed before thy face,"
+            "WEBBE": "I said, “O Lord, I am ashamed and confounded before your face,"
           }
         },
         {
-          "number": 76,
           "text": {
-            "DRB": "for our sins are multiplied over our heads, and our iniquities are exalted even to heaven."
+            "WEBBE": "for our sins are multiplied above our heads, and our errors have reached up to heaven"
           }
         },
         {
-          "number": 77,
           "text": {
-            "DRB": "Because from the times of our fathers we are in great sin unto this day."
+            "WEBBE": "ever since the time of our fathers. We are in great sin, even to this day."
           }
         },
         {
-          "number": 78,
           "text": {
-            "DRB": "And for the sins of us, and of our fathers we have been delivered with our brethren, and with our Priests to the kings of the earth, into sword and captivity, and spoil with confusion unto this present day."
+            "WEBBE": "For our sins and our fathers’ sins we with our kindred, our kings, and our priests were given up to the kings of the earth, to the sword, and to captivity, and for a prey with shame, to this day."
           }
         },
         {
-          "number": 79,
           "text": {
-            "DRB": "And now what a great thing is this that mercy hath happened to us from thee, o Lord God, & leave thou unto us a root, and a name in the place of thy sanctification,"
+            "WEBBE": "Now in some measure mercy has been shown to us from you, O Lord, that there should be left us a root and a name in the place of your sanctuary,"
           }
         },
         {
-          "number": 80,
           "text": {
-            "DRB": "to discover our light in the house of the Lord our God, to give us meat in all the time of our bondage."
+            "WEBBE": "and to uncover a light in the house of the Lord our God, and to give us food in the time of our servitude."
           }
         },
         {
-          "number": 81,
           "text": {
-            "DRB": "And when we served, we were not forsaken of the Lord our God: but he set us in favour, appointing the kings of the Persians to give us meat,"
+            "WEBBE": "Yes, when we were in bondage, we were not forsaken by our Lord, but he gave us favour before the kings of Persia, so that they gave us food,"
           }
         },
         {
-          "number": 82,
           "text": {
-            "DRB": "and to glorify the temple of the Lord our God, and to build the desolations of Sion, to give us stability in Jury, and Jerusalem."
+            "WEBBE": "glorified the temple of our Lord, and raised up the desolate Zion, to give us a sure dwelling in Judea and Jerusalem."
           }
         },
         {
-          "number": 83,
           "text": {
-            "DRB": "And now what say we Lord, having these things? For we have transgressed thy precepts, which thou gavest into the hands of thy servants the prophets,"
+            "WEBBE": "“Now, O Lord, what shall we say, having these things? For we have transgressed your commandments which you gave by the hand of your servants the prophets, saying,"
           }
         },
         {
-          "number": 84,
           "text": {
-            "DRB": "saying: That the land into which ye entered to possess the inheritance thereof, is a land polluted with the coinquinations of the strangers of the land, and their uncleanness hath filled it wholly with their filthiness."
+            "WEBBE": "‘The land, which you enter into to possess as an inheritance, is a land polluted with the pollutions of the foreigners of the land, and they have filled it with their uncleanness."
           }
         },
         {
-          "number": 85,
           "text": {
-            "DRB": "And now your daughters you shall not match with their sons, and their daughters you shall not take for your sons."
+            "WEBBE": "Therefore now you shall not join your daughters to their sons, neither shall you take their daughters for your sons."
           }
         },
         {
-          "number": 86,
           "text": {
-            "DRB": "And you shall not seek to have peace with them for ever, that growing strong you may eat the best things of the land, and may distribute the inheritance to your children for ever."
+            "WEBBE": "You shall never seek to have peace with them, that you may be strong, and eat the good things of the land, and that you may leave it for an inheritance to your children for evermore.’"
           }
         },
         {
-          "number": 87,
           "text": {
-            "DRB": "And the things that happen to us, all are done for our naughty works, and our great sins."
+            "WEBBE": "All that has happened is done to us for our wicked works and great sins, for you, O Lord, made our sins light,"
           }
         },
         {
-          "number": 88,
           "text": {
-            "DRB": "And thou gavest us such a root, and we are returned again to transgress thy ordinances, that we would be mingled with the uncleanness of the nations of this land."
+            "WEBBE": "and gave to us such a root; but we have turned back again to transgress your law in mingling ourselves with the uncleanness of the heathen of the land."
           }
         },
         {
-          "number": 89,
           "text": {
-            "DRB": "Wilt not thou be wrath with us to destroy us, till there be no root left nor our name?"
+            "WEBBE": "You weren’t angry with us to destroy us until you had left us neither root, seed, nor name."
           }
         },
         {
-          "number": 90,
           "text": {
-            "DRB": "Lord God of Israel thou art true. For there is a root left until this present day."
+            "WEBBE": "O Lord of Israel, you are true, for we are left a root this day."
           }
         },
         {
-          "number": 91,
           "text": {
-            "KJV": "8:91 And as Esdras in his praier made his confession, weeping, and lying flat vpon the ground before the Temple, there gathered vnto him from Ierusalem, a very great multitude of men, and women, & children: for there was great weeping among the multitude.",
-            "NRSV": "While Ezra was praying and making his confession, weeping and lying face down on the ground before the temple, a very great multitude of men, women, and children gathered around him from Jerusalem; for there was great weeping among the people.",
-            "DRB": "Behold, now we are in"
+            "WEBBE": "Behold, now we are before you in our iniquities, for we can’t stand any longer before you because of these things.”"
           }
         },
         {
-          "number": 92,
           "text": {
-            "DRB": "And when Esdras with adoration confessed weeping, lying flat on the ground before the temple, there were gathered before him out of Jerusalem a very great multitude, men and women, and young men and young women. For there was great weeping in the multitude itself."
+            "WEBBE": "As Esdras in his prayer made his confession, weeping, and lying flat on the ground before the temple, a very great throng of men, women, and children gathered to him from Jerusalem; for there was great weeping amongst the multitude."
           }
         },
         {
-          "number": 93,
           "text": {
-            "DRB": "And when he had cried, Iechonias of Ieheli of the children of Israel, said to Esdras: We have sinned against our Lord, for that we have taken unto us in marriage strange women of the nations of the land."
+            "WEBBE": "Then Jechonias the son of Jeelus, one of the sons of Israel, called out, and said, “O Esdras, we have sinned against the Lord God, we have married foreign women of the heathen of the land, but there is still hope for Israel."
           }
         },
         {
-          "number": 94,
           "text": {
-            "DRB": "And now thou art over all Israel, in these therefore let there be an oath from our Lord to expel all our wives that are of strangers with their children."
+            "WEBBE": "Let’s make an oath to the Lord about this, that we will put away all our foreign wives with their children,"
           }
         },
         {
-          "number": 95,
           "text": {
-            "DRB": "As it was decreed to thee of the ancesters according to the law of our Lord, rising up declare it."
+            "WEBBE": "as seems good to you, and to as many as obey the Lord’s Law."
           }
         },
         {
-          "number": 96,
           "text": {
-            "DRB": "For to thee the business pertaineth, and we are with thee: do manfully."
+            "WEBBE": "Arise, and take action, for this is your task, and we will be with you to do valiantly.”"
           }
         },
         {
-          "number": 97,
           "text": {
-            "DRB": "And Esdras rising up adjured the princes of the Priests and Levites, and all Israel to do according to these things and they sware."
+            "WEBBE": "So Esdras arose, and took an oath from the chief of the priests and Levites of all Israel to do these things; and they swore to it."
           }
         }
       ]
     },
     {
-      "number": 9,
       "verses": [
         {
-          "number": 1,
           "text": {
-            "KJV": "9:1 Then Esdras rising from the court of the Temple, went to the chamber of Ioanan the sonne of Eliasib,",
-            "NRSV": "Then Ezra rose and went from the court of the temple to the chamber of Jehohanan son of Eliashib.",
-            "DRB": "And Esdras rising up from before the court of the temple, went into the chamber of Ionathas the son of Nasabi."
+            "WEBBE": "Then Esdras rose up from the court of the temple and went to the chamber of Jonas the son of Eliasib,"
           }
         },
         {
-          "number": 2,
           "text": {
-            "DRB": "And lodging there he tasted no bread, nor drank water for the iniquity of the multitude."
+            "WEBBE": "and lodged there, and ate no bread and drank no water, mourning for the great iniquities of the multitude."
           }
         },
         {
-          "number": 3,
           "text": {
-            "DRB": "And there was proclamation made in all Jury, & in Jerusalem to all that were of the captivity gathered in Jerusalem,"
+            "WEBBE": "A proclamation was made in all Judea and Jerusalem to all those who returned from captivity, that they should be gathered together at Jerusalem,"
           }
         },
         {
-          "number": 4,
           "text": {
-            "DRB": "that whosoever shall not appear with in two or three days, according to the judgement of the ancients sitting upon it, their goods should be taken away, and himself should be judged an alien from the multitude of the captivity."
+            "WEBBE": "and that whoever didn’t meet there within two or three days, in accordance with the ruling of the elders, that their livestock would be seized for the use of the temple, and they would be expelled from the multitude of those who returned from captivity."
           }
         },
         {
-          "number": 5,
           "text": {
-            "DRB": "And all were gathered that were of the tribe of Juda, and of Benjamin within three days in Jerusalem: this is the ninth month, the twentieth day of the month."
+            "WEBBE": "Within three days, all those of the tribe of Judah and Benjamin gathered together at Jerusalem. This was the ninth month, on the twentieth day of the month."
           }
         },
         {
-          "number": 6,
           "text": {
-            "DRB": "And all the multitude sat in the court of the temple trembling, for the present winter."
+            "WEBBE": "All the multitude sat together shivering in the broad place before the temple because of the present foul weather."
           }
         },
         {
-          "number": 7,
           "text": {
-            "DRB": "And Esdras rising up said to them: You have done unlawfully taking to you in marriage strange wives, that you might add to the sins of Israel."
+            "WEBBE": "So Esdras arose up and said to them, “You have transgressed the law and married foreign wives, increasing the sins of Israel."
           }
         },
         {
-          "number": 8,
           "text": {
-            "DRB": "And now give confession, & magnificence to our Lord the God of our fathers:"
+            "WEBBE": "Now make confession and give glory to the Lord, the God of our fathers,"
           }
         },
         {
-          "number": 9,
           "text": {
-            "DRB": "and accomplish his will, and depart from the nations of the land, and from your wives the strangers."
+            "WEBBE": "and do his will, and separate yourselves from the heathen of the land, and from the foreign women.”"
           }
         },
         {
-          "number": 10,
           "text": {
-            "DRB": "And all the multitude cried, and they said with a loud voice: As thou hast said, we will do."
+            "WEBBE": "Then the whole multitude cried out, and said with a loud voice, “Just as you have spoken, so we will do."
           }
         },
         {
-          "number": 11,
           "text": {
-            "DRB": "But because the multitude is great, and winter time, and we cannot stand in the air without succour: and this is a work for us not of one day, nor of two, for we have sinned much in these things:"
+            "WEBBE": "But because the multitude is great, and it is foul weather, so that we can’t stand outside, and this is not a work of one day or two, seeing our sin in these things has spread far,"
           }
         },
         {
-          "number": 12,
           "text": {
-            "DRB": "Let the rulers of the multitude stand, and that dwell with us, and as many as have with them foreign wives,"
+            "WEBBE": "therefore let the rulers of the multitude stay, and let all those of our settlements that have foreign wives come at the time appointed,"
           }
         },
         {
-          "number": 13,
           "text": {
-            "DRB": "and at a time appointed let the priests out of every place, and the judges assist, until they appease the wrath of our Lord concerning this business."
+            "WEBBE": "and with them the rulers and judges of every place, until we turn away the wrath of the Lord from us for this matter.”"
           }
         },
         {
-          "number": 14,
           "text": {
-            "DRB": "And Ionathas the son of Ezeli, and Ozias of Thecam took upon them according to these words: and Bosoramus, and Levis, and Sabbathæus, wrought together with them."
+            "WEBBE": "So Jonathan the son of Azael and Ezekias the son of Thocanus took the matter on themselves. Mosollamus and Levis and Sabbateus were judges with them."
           }
         },
         {
-          "number": 15,
           "text": {
-            "DRB": "And all that were of the captivity stood according to all these things."
+            "WEBBE": "Those who returned from captivity did according to all these things."
           }
         },
         {
-          "number": 16,
           "text": {
-            "DRB": "And Esdras the priest chose unto him men the great princes of their fathers according to their names: & they sat together in the newmoon of the tenth month to examine this business."
+            "WEBBE": "Esdras the priest chose for himself principal men of their families, all by name. On the new moon of the tenth month they met together to examine the matter."
           }
         },
         {
-          "number": 17,
           "text": {
-            "DRB": "And they determined of the men that had outlandish wives, until the newmoon of the first month."
+            "WEBBE": "So their cases of men who had foreign wives was brought to an end by the new moon of the first month."
           }
         },
         {
-          "number": 18,
           "text": {
-            "DRB": "And there were found of the priests intermingled that had outlandish wives."
+            "WEBBE": "Of the priests who had come together and had foreign wives, there were found"
           }
         },
         {
-          "number": 19,
           "text": {
-            "DRB": "Of the sons of Iesus the son of Iosedec, and his brethren: Maseas, and Eleazarus, and Ioribus, and Ioadeus,"
+            "WEBBE": "of the sons of Jesus the son of Josedek, and his kindred, Mathelas, Eleazar, and Joribus, and Joadanus."
           }
         },
         {
-          "number": 20,
           "text": {
-            "DRB": "and they put to their hands to expel their wives: and to offer a ram to obtain pardon for their ignorance."
+            "WEBBE": "They gave their hands to put away their wives, and to offer rams to make reconciliation for their error."
           }
         },
         {
-          "number": 21,
           "text": {
-            "DRB": "And the sons of Semmeri: Maseas and Esses, Ieelech, and Azarias."
+            "WEBBE": "Of the sons of Emmer: Ananias, Zabdeus, Manes, Sameus, Hiereel, and Azarias."
           }
         },
         {
-          "number": 22,
           "text": {
-            "DRB": "And of the children of"
+            "WEBBE": "Of the sons of Phaisur: Elionas, Massias, Ishmael, Nathanael, Ocidelus, and Saloas."
           }
         },
         {
-          "number": 23,
           "text": {
-            "DRB": "And of the Levites: Iorabdus, and Semeis, and Colnis, and Calitas, and Facteas, and Coluas, and Eliomas,"
+            "WEBBE": "Of the Levites: Jozabdus, Semeis, Colius who was called Calitas, Patheus, Judas, and Jonas."
           }
         },
         {
-          "number": 24,
           "text": {
-            "DRB": "and of the sacred singing men, Eliasib, Zaccarus."
+            "WEBBE": "Of the holy singers: Eliasibus and Bacchurus."
           }
         },
         {
-          "number": 25,
           "text": {
-            "DRB": "And of the porters, Salumus, and Tolbanes."
+            "WEBBE": "Of the gatekeepers: Sallumus and Tolbanes."
           }
         },
         {
-          "number": 26,
           "text": {
-            "DRB": "And of Israel: of the sons of Foro, Ozi, and Remias, and Geddias, & Melchias, and Michelus, Eleazarus, and Iammebias, and Bannas."
+            "WEBBE": "Of Israel, of the sons of Phoros: Hiermas, Ieddias, Melchias, Maelus, Eleazar, Asibas, and Banneas."
           }
         },
         {
-          "number": 27,
           "text": {
-            "DRB": "And of the sons of Iolaman: Chamas, and Zacharias, and Iezuelus, and Ioddius, and Erimoth, and Helias."
+            "WEBBE": "Of the sons of Ela: Matthanias, Zacharias, Jezrielus, Oabdius, Hieremoth, and Aedias."
           }
         },
         {
-          "number": 28,
           "text": {
-            "DRB": "And of the sons of Zathoim: Eliadas, and Liasumus, Zochias, and Larimoth, & Zabdis, and Thebedias."
+            "WEBBE": "Of the sons of Zamoth: Eliadas, Eliasimus, Othonias, Jarimoth, Sabathus, and Zardeus."
           }
         },
         {
-          "number": 29,
           "text": {
-            "DRB": "And of the sons of Zebes: Ioannes, and Amanias, and Zabdias, and Emeus."
+            "WEBBE": "Of the sons of Bebai: Joannes, Ananias, Jozabdus, and Ematheis."
           }
         },
         {
-          "number": 30,
           "text": {
-            "DRB": "And of the sons of Banni: Olamus, & Maluchus, and Ieddeus, and Iasub, and Azabus, & Ierimoth."
+            "WEBBE": "Of the sons of Mani: Olamus, Mamuchus, Jedeus, Jasubas, Jasaelus, and Hieremoth."
           }
         },
         {
-          "number": 31,
           "text": {
-            "DRB": "And of the sons of Addin: Nathus, and Moosias, & Caleus, and Raanas, Maaseas, Mathathias, and Beseel, and Bonnus, and Manasses."
+            "WEBBE": "Of the sons of Addi: Naathus, Moossias, Laccunus, Naidus, Matthanias, Sesthel, Balnuus, and Manasseas."
           }
         },
         {
-          "number": 32,
           "text": {
-            "DRB": "And of the sons of Nuæ: Noneas, and Aseas, and Melchias, and Sameas, and Simon, Benjamin, and Malchus, and Marras."
+            "WEBBE": "Of the sons of Annas: Elionas, Aseas, Melchias, Sabbeus, and Simon Chosameus."
           }
         },
         {
-          "number": 33,
           "text": {
-            "DRB": "And of the sons of Asom: Carianeus, Mathathias, & Bannus, & Eliphalach, and Manasses, and Semei."
+            "WEBBE": "Of the sons of Asom: Maltanneus, Mattathias, Sabanneus, Eliphalat, Manasses, and Semei."
           }
         },
         {
-          "number": 34,
           "text": {
-            "DRB": "And of the sons of Banni: Ieremias, and Moadias, and Abramus, & Iohel, and Baneas, & Pelias, and Ionas, and Marimoth, & Eliasib, and Matheneus, and Eliasis, and Orizas, and Dielus, and Semedius, & Zambris, and Iosephus."
+            "WEBBE": "Of the sons of Baani: Jeremias, Momdis, Ismaerus, Juel, Mamdai, Pedias, Anos, Carabasion, Enasibus, Mamnitamenus, Eliasis, Bannus, Eliali, Someis, Selemias, and Nathanias. Of the sons of Ezora: Sesis, Ezril, Azaelus, Samatus, Zambri, and Josephus."
           }
         },
         {
-          "number": 35,
           "text": {
-            "DRB": "And of the sons of Nobei: Idelus, and Mathathias, and Sabadus, and Zecheda, Zedmi, and Iessei, Baneas."
+            "WEBBE": "Of the sons of Nooma: Mazitias, Zabadeas, Edos, Juel, and Banaias."
           }
         },
         {
-          "number": 36,
           "text": {
-            "DRB": "All these married outlandish wives, and did put them away with their children."
+            "WEBBE": "All these had taken foreign wives, and they put them away with their children."
           }
         },
         {
-          "number": 37,
           "text": {
-            "KJV": "9:37 And the priests, and Leuites, and they that were of Israel dwelt in Ierusalem, and in the countrey, in the first day of &thorn; seuenth month: so the children of Israel were in their habitations.",
-            "NRSV": "The priests and the Levites and the Israelites settled in Jerusalem and in the country. On the new moon of the seventh month the Israelites were in their settlements.",
-            "DRB": "And the Priests and the Levites, and they that were of Israel, dwelt in Jerusalem, and in the whole country in the newmoon of the seventh month. And the children of Israel were in their habitations."
+            "WEBBE": "The priests and Levites, and those who were of Israel, lived in Jerusalem and in the country, on the new moon of the seventh month, and the children of Israel in their settlements."
           }
         },
         {
-          "number": 38,
           "text": {
-            "DRB": "And all the multitude was gathered together into the court, which is on the east of the sacred gate:"
+            "WEBBE": "The whole multitude gathered together with one accord into the broad place before the porch of the temple towards the east."
           }
         },
         {
-          "number": 39,
           "text": {
-            "KJV": "9:39 And they spake vnto Esdras the priest and reader, that he would bring the law of Moses, that was giuen of the Lord God of Israel.",
-            "NRSV": "They told Ezra the chief priest and reader to bring the law of Moses that had been given by the Lord God of Israel.",
-            "DRB": "and they said to Esdras the high priest, and reader, that he should bring the law of Moyses, which was delivered of our Lord the God of Israel."
+            "WEBBE": "They said to Esdras the priest and reader, “Bring the law of Moses that was given by the Lord, the God of Israel.”"
           }
         },
         {
-          "number": 40,
           "text": {
-            "DRB": "And Esdras the high priest brought the law to all the multitude of them from man unto woman, and to all the priests to hear the law in the newmoon of the seventh month."
+            "WEBBE": "So Esdras the chief priest brought the law to the whole multitude both of men and women, and to all the priests, to hear the law on the new moon of the seventh month."
           }
         },
         {
-          "number": 41,
           "text": {
-            "DRB": "And he read in the court, which is before the sacred gate of the temple, from break of day until evening before men and women. And they all gave their mind to the law."
+            "WEBBE": "He read in the broad place before the porch of the temple from morning until midday, before both men and women; and all the multitude gave attention to the law."
           }
         },
         {
-          "number": 42,
           "text": {
-            "DRB": "And Esdras the priest, and reader of the law stood upon a tribunal of wood, which was made."
+            "WEBBE": "Esdras the priest and reader of the law stood up upon the pulpit of wood which had been prepared."
           }
         },
         {
-          "number": 43,
           "text": {
-            "DRB": "And by him stood Mathathias, and Samus, and Ananias, Azarias, Urias, Ezechias, and Balsamus on the right hand,"
+            "WEBBE": "Beside him stood Mattathias, Sammus, Ananias, Azarias, Urias, Ezekias, and Baalsamus on the right hand,"
           }
         },
         {
-          "number": 44,
           "text": {
-            "DRB": "and on the left Faldeus, Misael, Malachias, Ambusthas, Sabus, Nabadias, and Zacharias."
+            "WEBBE": "and on his left hand, Phaldeus, Misael, Melchias, Lothasubus, Nabarias, and Zacharias."
           }
         },
         {
-          "number": 45,
           "text": {
-            "DRB": "And Esdras took the book before all the multitude: for he was chief in glory in the sight of all."
+            "WEBBE": "Then Esdras took the book of the law before the multitude, and sat honourably in the first place before all."
           }
         },
         {
-          "number": 46,
           "text": {
-            "KJV": "9:46 And when hee opened the law, they stood all streight vp. So Esdras blessed the Lord God most high, the God of hostes Almighty.",
-            "NRSV": "Ezra blessed the Lord God Most High, the God of hosts, the Almighty.",
-            "DRB": "And when he had ended the law, they stood all upright: and Esdras blessed our Lord the most high God, the God of Sabaoth omnipotent."
+            "WEBBE": "When he opened the law, they all stood straight up. So Esdras blessed the Lord God Most High, the God of armies, the Almighty."
           }
         },
         {
-          "number": 47,
           "text": {
-            "KJV": "9:47 And all the people answered Amen, and lifting vp their hands they fell to the ground, & worshipped the Lord.",
-            "NRSV": "And all the people answered, “Amen!” And they lifted up their hands and fell to the ground and worshiped the Lord.",
-            "DRB": "And all the people answered: Amen. And lifting up their hands falling on the ground, they adored our Lord."
+            "WEBBE": "All the people answered, “Amen.” Lifting up their hands, they fell to the ground and worshipped the Lord."
           }
         },
         {
-          "number": 48,
           "text": {
-            "DRB": "Iesus and Banæus, and Sarebias, and Iaddimus, and Accubus, and Sabbathæus, and Calithes, & Azarias, and Ioradus, and Ananias, and Philias Levites,"
+            "WEBBE": "Also Jesus, Annus, Sarabias, Iadinus, Jacubus, Sabateus, Auteas, Maiannas, Calitas, Azarias, Jozabdus, Ananias, and Phalias, the Levites, taught the law of the Lord, and read to the multitude the law of the Lord, explaining what was read."
           }
         },
         {
-          "number": 49,
           "text": {
-            "DRB": "who taught the law of our Lord, and read the same in the multitude, & every one preferred them that understood the lesson."
+            "WEBBE": "Then Attharates said to Esdras the chief priest and reader, and to the Levites who taught the multitude, even to all,"
           }
         },
         {
-          "number": 50,
           "text": {
-            "DRB": "And Atharathes said to Esdras the high priest and the reader, and to the Levites, that taught the multitude,"
+            "WEBBE": "“This day is holy to the Lord—now they all wept when they heard the law—"
           }
         },
         {
-          "number": 51,
           "text": {
-            "DRB": "saying: This day is sanctified to our Lord. And they all wept, when they had heard the law."
+            "WEBBE": "go then, eat the fat, drink the sweet, and send portions to those who have nothing;"
           }
         },
         {
-          "number": 52,
           "text": {
-            "DRB": "And Esdras said, departing therefore eat ye all the fattest things, & drink all most sweet things, and send gifts to them that have not."
+            "WEBBE": "for the day is holy to the Lord. Don’t be sorrowful, for the Lord will bring you to honour.”"
           }
         },
         {
-          "number": 53,
           "text": {
-            "DRB": "For this is the holy day of our Lord, & be not sad. For our Lord will glorify you."
+            "WEBBE": "So the Levites commanded all things to the people, saying, “This day is holy. Don’t be sorrowful.”"
           }
         },
         {
-          "number": 54,
           "text": {
-            "DRB": "And the Levites denounced openly to all, saying: This day is holy, be not sad."
+            "WEBBE": "Then they went their way, every one to eat, drink, enjoy themselves, to give portions to those who had nothing, and to rejoice greatly,"
           }
         },
         {
-          "number": 55,
           "text": {
-            "DRB": "And they went all to eat, and drink, and make merry, and to give gifts to them that had not, that they might make merry, for they were exceedingly exalted with the words that they were taught."
-          }
-        },
-        {
-          "number": 56,
-          "text": {
-            "DRB": "And they were all gathered in Jerusalem to celebrate the joy, according to the testament of our Lord the God of Israel."
+            "WEBBE": "because they understood the words they were instructed with, and for which they had been assembled."
           }
         }
       ]
