@@ -194,3 +194,29 @@ Not in scope:
 - Rotherham overlay or ledger-label repair;
 - NABRE heading extraction;
 - broader OT, deuterocanon, Psalms, Odes, or Vulgate work.
+
+
+## Phase 3B: canonical NT DRB bounded repair
+
+Status: applied as bounded remediation.
+
+Scope:
+
+- `data/bible/NT/hebrews.json` DRB populated for Hebrews 5:9-14 from `data/bible/translations/drb-original-douay-rheims/raw/hebrews.json`.
+- `data/bible/NT/3john.json` DRB populated where matching active verse rows and raw DRB source text exist from `data/bible/translations/drb-original-douay-rheims/raw/3-john.json`.
+
+Not in scope:
+
+- Acts 15:18;
+- Acts 23:26;
+- James 1:8;
+- 2 Corinthians 13:14;
+- Matthew Rotherham overlay label;
+- any Vulgate work.
+
+
+### Phase 3B correction: 3 John DRB versification
+
+The DRB raw lane for 3 John supplies verses 1-14. Active `data/bible/NT/3john.json` contains an active verse 15 for other translations, but no raw DRB verse 15 exists in `data/bible/translations/drb-original-douay-rheims/raw/3-john.json`.
+
+Therefore this tranche intentionally populates DRB for 3 John 1:1-14 only. 3 John 1:15 remains a versification/overlay decision, not a missing raw-text patch.
