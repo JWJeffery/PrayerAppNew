@@ -1,0 +1,461 @@
+{
+  "schema_version": "roman_breviary_1960_1962_bible_binding_report_v1",
+  "generated_for": {
+    "date": "2026-11-02",
+    "hour": "matins",
+    "source_slice": "dev-vertical-slice"
+  },
+  "policy": {
+    "no_new_roman_side_biblical_body_materialization": true,
+    "scripture_bodies_must_resolve_from_bible_corpus": true,
+    "psalm_bodies_must_resolve_from_bible_corpus": true,
+    "required_latin_scripture_lane": "VULGATE_CLEMENTINE",
+    "required_latin_psalter_lane": "VULGATE_PSALTER",
+    "interim_catholic_english_lane_available_for_binding_tests": "DRB_ORIGINAL"
+  },
+  "lane_status": {
+    "vulgate_clementine": "missing",
+    "vulgate_psalter": "missing",
+    "drb_original": "available"
+  },
+  "scripture_readings": [
+    {
+      "unit_key": "rb1960.la.sancti.11-02.lectio1",
+      "block_label": "Lectio I",
+      "bible_ref": {
+        "book_id": "JOB",
+        "book_label": "Job",
+        "chapter": 7,
+        "verse_start": 16,
+        "verse_end": 21,
+        "citation": "Job 7:16-21"
+      },
+      "required_latin_lane": "VULGATE_CLEMENTINE",
+      "latin_lane_status": "missing_required_bible_corpus_lane",
+      "current_display_body_status": "dev_source_witness_body_only_not_forward_corpus_model",
+      "canonical_shared_corpus": {
+        "path": "data/bible/OT/job.json",
+        "exists": true,
+        "verses_present": 6,
+        "verse_count": 6,
+        "translation_keys": [
+          "KJV",
+          "NABRE",
+          "NRSV",
+          "Rotherham"
+        ]
+      },
+      "interim_catholic_english_lane": {
+        "lane_id": "DRB_ORIGINAL",
+        "path": "data/bible/translations/drb-original-douay-rheims/raw/job.json",
+        "exists": true,
+        "verses_present": 6,
+        "verse_count": 6,
+        "translation_key": "DRB"
+      }
+    },
+    {
+      "unit_key": "rb1960.la.sancti.11-02.lectio2",
+      "block_label": "Lectio II",
+      "bible_ref": {
+        "book_id": "JOB",
+        "book_label": "Job",
+        "chapter": 14,
+        "verse_start": 1,
+        "verse_end": 6,
+        "citation": "Job 14:1-6"
+      },
+      "required_latin_lane": "VULGATE_CLEMENTINE",
+      "latin_lane_status": "missing_required_bible_corpus_lane",
+      "current_display_body_status": "dev_source_witness_body_only_not_forward_corpus_model",
+      "canonical_shared_corpus": {
+        "path": "data/bible/OT/job.json",
+        "exists": true,
+        "verses_present": 6,
+        "verse_count": 6,
+        "translation_keys": [
+          "KJV",
+          "NABRE",
+          "NRSV",
+          "Rotherham"
+        ]
+      },
+      "interim_catholic_english_lane": {
+        "lane_id": "DRB_ORIGINAL",
+        "path": "data/bible/translations/drb-original-douay-rheims/raw/job.json",
+        "exists": true,
+        "verses_present": 6,
+        "verse_count": 6,
+        "translation_key": "DRB"
+      }
+    },
+    {
+      "unit_key": "rb1960.la.sancti.11-02.lectio3",
+      "block_label": "Lectio III",
+      "bible_ref": {
+        "book_id": "JOB",
+        "book_label": "Job",
+        "chapter": 19,
+        "verse_start": 20,
+        "verse_end": 27,
+        "citation": "Job 19:20-27"
+      },
+      "required_latin_lane": "VULGATE_CLEMENTINE",
+      "latin_lane_status": "missing_required_bible_corpus_lane",
+      "current_display_body_status": "dev_source_witness_body_only_not_forward_corpus_model",
+      "canonical_shared_corpus": {
+        "path": "data/bible/OT/job.json",
+        "exists": true,
+        "verses_present": 8,
+        "verse_count": 8,
+        "translation_keys": [
+          "KJV",
+          "NABRE",
+          "NRSV",
+          "Rotherham"
+        ]
+      },
+      "interim_catholic_english_lane": {
+        "lane_id": "DRB_ORIGINAL",
+        "path": "data/bible/translations/drb-original-douay-rheims/raw/job.json",
+        "exists": true,
+        "verses_present": 8,
+        "verse_count": 8,
+        "translation_key": "DRB"
+      }
+    },
+    {
+      "unit_key": "rb1960.la.sancti.11-02.lectio7",
+      "block_label": "Lectio VII",
+      "bible_ref": {
+        "book_id": "1_CORINTHIANS",
+        "book_label": "1 Corinthians",
+        "chapter": 15,
+        "verse_start": 12,
+        "verse_end": 22,
+        "citation": "1 Cor 15:12-22"
+      },
+      "required_latin_lane": "VULGATE_CLEMENTINE",
+      "latin_lane_status": "missing_required_bible_corpus_lane",
+      "current_display_body_status": "dev_source_witness_body_only_not_forward_corpus_model",
+      "canonical_shared_corpus": {
+        "path": "data/bible/NT/1corinthians.json",
+        "exists": true,
+        "verses_present": 11,
+        "verse_count": 11,
+        "translation_keys": [
+          "KJV",
+          "NABRE",
+          "NRSV",
+          "Rotherham"
+        ]
+      },
+      "interim_catholic_english_lane": {
+        "lane_id": "DRB_ORIGINAL",
+        "path": "data/bible/translations/drb-original-douay-rheims/raw/1-corinthians.json",
+        "exists": true,
+        "verses_present": 11,
+        "verse_count": 11,
+        "translation_key": "DRB"
+      }
+    },
+    {
+      "unit_key": "rb1960.la.sancti.11-02.lectio8",
+      "block_label": "Lectio VIII",
+      "bible_ref": {
+        "book_id": "1_CORINTHIANS",
+        "book_label": "1 Corinthians",
+        "chapter": 15,
+        "verse_start": 35,
+        "verse_end": 44,
+        "citation": "1 Cor 15:35-44"
+      },
+      "required_latin_lane": "VULGATE_CLEMENTINE",
+      "latin_lane_status": "missing_required_bible_corpus_lane",
+      "current_display_body_status": "dev_source_witness_body_only_not_forward_corpus_model",
+      "canonical_shared_corpus": {
+        "path": "data/bible/NT/1corinthians.json",
+        "exists": true,
+        "verses_present": 10,
+        "verse_count": 10,
+        "translation_keys": [
+          "KJV",
+          "NABRE",
+          "NRSV",
+          "Rotherham"
+        ]
+      },
+      "interim_catholic_english_lane": {
+        "lane_id": "DRB_ORIGINAL",
+        "path": "data/bible/translations/drb-original-douay-rheims/raw/1-corinthians.json",
+        "exists": true,
+        "verses_present": 10,
+        "verse_count": 10,
+        "translation_key": "DRB"
+      }
+    },
+    {
+      "unit_key": "rb1960.la.sancti.11-02.lectio9",
+      "block_label": "Lectio IX",
+      "bible_ref": {
+        "book_id": "1_CORINTHIANS",
+        "book_label": "1 Corinthians",
+        "chapter": 15,
+        "verse_start": 51,
+        "verse_end": 58,
+        "citation": "1 Cor 15:51-58"
+      },
+      "required_latin_lane": "VULGATE_CLEMENTINE",
+      "latin_lane_status": "missing_required_bible_corpus_lane",
+      "current_display_body_status": "dev_source_witness_body_only_not_forward_corpus_model",
+      "canonical_shared_corpus": {
+        "path": "data/bible/NT/1corinthians.json",
+        "exists": true,
+        "verses_present": 8,
+        "verse_count": 8,
+        "translation_keys": [
+          "KJV",
+          "NABRE",
+          "NRSV",
+          "Rotherham"
+        ]
+      },
+      "interim_catholic_english_lane": {
+        "lane_id": "DRB_ORIGINAL",
+        "path": "data/bible/translations/drb-original-douay-rheims/raw/1-corinthians.json",
+        "exists": true,
+        "verses_present": 8,
+        "verse_count": 8,
+        "translation_key": "DRB"
+      }
+    }
+  ],
+  "psalm_appointments": [
+    {
+      "unit_key": "rb1960.la.sancti.11-02.nocturnus1.psalmi-antiphonae",
+      "nocturn": 1,
+      "antiphon": "Dírige, * Dómine, Deus meus, in conspéctu tuo viam meam.",
+      "bible_ref": {
+        "book_id": "PSALMS",
+        "chapter": 5,
+        "verse_start": null,
+        "verse_end": null,
+        "numbering_status": "roman_breviary_source_appointment_numbering_not_yet_normalized"
+      },
+      "required_latin_psalter_lane": "VULGATE_PSALTER",
+      "body_status": "appointment_only_no_psalm_body_materialization",
+      "canonical_corpus": {
+        "path": "data/bible/OT/psalms.json",
+        "exists": true,
+        "translation_keys": []
+      },
+      "interim_catholic_english_lane": {
+        "lane_id": "DRB_ORIGINAL",
+        "path": "data/bible/translations/drb-original-douay-rheims/raw/psalms.json",
+        "exists": true
+      }
+    },
+    {
+      "unit_key": "rb1960.la.sancti.11-02.nocturnus1.psalmi-antiphonae",
+      "nocturn": 1,
+      "antiphon": "Convértere, * Dómine, et éripe ánimam meam: quóniam non est in morte, qui memor sit tui.",
+      "bible_ref": {
+        "book_id": "PSALMS",
+        "chapter": 6,
+        "verse_start": null,
+        "verse_end": null,
+        "numbering_status": "roman_breviary_source_appointment_numbering_not_yet_normalized"
+      },
+      "required_latin_psalter_lane": "VULGATE_PSALTER",
+      "body_status": "appointment_only_no_psalm_body_materialization",
+      "canonical_corpus": {
+        "path": "data/bible/OT/psalms.json",
+        "exists": true,
+        "translation_keys": []
+      },
+      "interim_catholic_english_lane": {
+        "lane_id": "DRB_ORIGINAL",
+        "path": "data/bible/translations/drb-original-douay-rheims/raw/psalms.json",
+        "exists": true
+      }
+    },
+    {
+      "unit_key": "rb1960.la.sancti.11-02.nocturnus1.psalmi-antiphonae",
+      "nocturn": 1,
+      "antiphon": "Nequándo rápiat * ut leo ánimam meam, dum non est qui rédimat, neque qui salvum fáciat.",
+      "bible_ref": {
+        "book_id": "PSALMS",
+        "chapter": 7,
+        "verse_start": null,
+        "verse_end": null,
+        "numbering_status": "roman_breviary_source_appointment_numbering_not_yet_normalized"
+      },
+      "required_latin_psalter_lane": "VULGATE_PSALTER",
+      "body_status": "appointment_only_no_psalm_body_materialization",
+      "canonical_corpus": {
+        "path": "data/bible/OT/psalms.json",
+        "exists": true,
+        "translation_keys": []
+      },
+      "interim_catholic_english_lane": {
+        "lane_id": "DRB_ORIGINAL",
+        "path": "data/bible/translations/drb-original-douay-rheims/raw/psalms.json",
+        "exists": true
+      }
+    },
+    {
+      "unit_key": "rb1960.la.sancti.11-02.nocturnus2.psalmi-antiphonae",
+      "nocturn": 2,
+      "antiphon": "In loco páscuæ * ibi me collocávit.",
+      "bible_ref": {
+        "book_id": "PSALMS",
+        "chapter": 22,
+        "verse_start": null,
+        "verse_end": null,
+        "numbering_status": "roman_breviary_source_appointment_numbering_not_yet_normalized"
+      },
+      "required_latin_psalter_lane": "VULGATE_PSALTER",
+      "body_status": "appointment_only_no_psalm_body_materialization",
+      "canonical_corpus": {
+        "path": "data/bible/OT/psalms.json",
+        "exists": true,
+        "translation_keys": []
+      },
+      "interim_catholic_english_lane": {
+        "lane_id": "DRB_ORIGINAL",
+        "path": "data/bible/translations/drb-original-douay-rheims/raw/psalms.json",
+        "exists": true
+      }
+    },
+    {
+      "unit_key": "rb1960.la.sancti.11-02.nocturnus2.psalmi-antiphonae",
+      "nocturn": 2,
+      "antiphon": "Delícta * juventútis meæ, et ignorántias meas ne memíneris, Dómine.",
+      "bible_ref": {
+        "book_id": "PSALMS",
+        "chapter": 24,
+        "verse_start": null,
+        "verse_end": null,
+        "numbering_status": "roman_breviary_source_appointment_numbering_not_yet_normalized"
+      },
+      "required_latin_psalter_lane": "VULGATE_PSALTER",
+      "body_status": "appointment_only_no_psalm_body_materialization",
+      "canonical_corpus": {
+        "path": "data/bible/OT/psalms.json",
+        "exists": true,
+        "translation_keys": []
+      },
+      "interim_catholic_english_lane": {
+        "lane_id": "DRB_ORIGINAL",
+        "path": "data/bible/translations/drb-original-douay-rheims/raw/psalms.json",
+        "exists": true
+      }
+    },
+    {
+      "unit_key": "rb1960.la.sancti.11-02.nocturnus2.psalmi-antiphonae",
+      "nocturn": 2,
+      "antiphon": "Credo vidére * bona Dómini in terra vivéntium.",
+      "bible_ref": {
+        "book_id": "PSALMS",
+        "chapter": 26,
+        "verse_start": null,
+        "verse_end": null,
+        "numbering_status": "roman_breviary_source_appointment_numbering_not_yet_normalized"
+      },
+      "required_latin_psalter_lane": "VULGATE_PSALTER",
+      "body_status": "appointment_only_no_psalm_body_materialization",
+      "canonical_corpus": {
+        "path": "data/bible/OT/psalms.json",
+        "exists": true,
+        "translation_keys": []
+      },
+      "interim_catholic_english_lane": {
+        "lane_id": "DRB_ORIGINAL",
+        "path": "data/bible/translations/drb-original-douay-rheims/raw/psalms.json",
+        "exists": true
+      }
+    },
+    {
+      "unit_key": "rb1960.la.sancti.11-02.nocturnus3.psalmi-antiphonae",
+      "nocturn": 3,
+      "antiphon": "Compláceat * tibi, Dómine, ut erípias me: Dómine, ad adjuvándum me réspice.",
+      "bible_ref": {
+        "book_id": "PSALMS",
+        "chapter": 39,
+        "verse_start": null,
+        "verse_end": null,
+        "numbering_status": "roman_breviary_source_appointment_numbering_not_yet_normalized"
+      },
+      "required_latin_psalter_lane": "VULGATE_PSALTER",
+      "body_status": "appointment_only_no_psalm_body_materialization",
+      "canonical_corpus": {
+        "path": "data/bible/OT/psalms.json",
+        "exists": true,
+        "translation_keys": []
+      },
+      "interim_catholic_english_lane": {
+        "lane_id": "DRB_ORIGINAL",
+        "path": "data/bible/translations/drb-original-douay-rheims/raw/psalms.json",
+        "exists": true
+      }
+    },
+    {
+      "unit_key": "rb1960.la.sancti.11-02.nocturnus3.psalmi-antiphonae",
+      "nocturn": 3,
+      "antiphon": "Sana, Dómine, * ánimam meam, quia peccávi tibi.",
+      "bible_ref": {
+        "book_id": "PSALMS",
+        "chapter": 40,
+        "verse_start": null,
+        "verse_end": null,
+        "numbering_status": "roman_breviary_source_appointment_numbering_not_yet_normalized"
+      },
+      "required_latin_psalter_lane": "VULGATE_PSALTER",
+      "body_status": "appointment_only_no_psalm_body_materialization",
+      "canonical_corpus": {
+        "path": "data/bible/OT/psalms.json",
+        "exists": true,
+        "translation_keys": []
+      },
+      "interim_catholic_english_lane": {
+        "lane_id": "DRB_ORIGINAL",
+        "path": "data/bible/translations/drb-original-douay-rheims/raw/psalms.json",
+        "exists": true
+      }
+    },
+    {
+      "unit_key": "rb1960.la.sancti.11-02.nocturnus3.psalmi-antiphonae",
+      "nocturn": 3,
+      "antiphon": "Sitívit * ánima mea ad Deum vivum: quando véniam, et apparébo ante fáciem Dómini?",
+      "bible_ref": {
+        "book_id": "PSALMS",
+        "chapter": 41,
+        "verse_start": null,
+        "verse_end": null,
+        "numbering_status": "roman_breviary_source_appointment_numbering_not_yet_normalized"
+      },
+      "required_latin_psalter_lane": "VULGATE_PSALTER",
+      "body_status": "appointment_only_no_psalm_body_materialization",
+      "canonical_corpus": {
+        "path": "data/bible/OT/psalms.json",
+        "exists": true,
+        "translation_keys": []
+      },
+      "interim_catholic_english_lane": {
+        "lane_id": "DRB_ORIGINAL",
+        "path": "data/bible/translations/drb-original-douay-rheims/raw/psalms.json",
+        "exists": true
+      }
+    }
+  ],
+  "summary": {
+    "scripture_reading_count": 6,
+    "psalm_appointment_count": 9,
+    "scripture_readings_with_shared_corpus_coverage": 6,
+    "scripture_readings_with_drb_lane_coverage": 6,
+    "required_missing_lanes": [
+      "VULGATE_CLEMENTINE",
+      "VULGATE_PSALTER"
+    ]
+  }
+}
