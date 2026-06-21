@@ -358,3 +358,39 @@ Not in scope:
 Trust status:
 
 Canonical OT remains not trusted pending versification remediation.
+
+
+## Phase 4C: Malachi NABRE versification overlay
+
+Status: applied as bounded remediation.
+
+Decision:
+
+Malachi is repaired with a translation overlay, not by inserting active main rows.
+
+Source evidence:
+
+- NABRE historical source path: `data/bible/translations/nabre-internal-source-lane/source/generated_data/books/Malachi.json`
+- NABRE historical source commit: `d0eed049f47e5eda8abcc4f4b1bb0d77efc51bd6`
+- Source rows: Malachi 3:19-24
+- Active rows: Malachi 4:1-6
+
+Mapping:
+
+- NABRE 3:19 -> active Malachi 4:1
+- NABRE 3:20 -> active Malachi 4:2
+- NABRE 3:21 -> active Malachi 4:3
+- NABRE 3:22 -> active Malachi 4:4
+- NABRE 3:23 -> active Malachi 4:5
+- NABRE 3:24 -> active Malachi 4:6
+
+Scope:
+
+- `data/bible/OT/malachi.json`
+- `translationOverlays.NABRE.4.1-6`
+- no active main-row insertion for 3:19-24;
+- no changes to KJV, NRSV, Rotherham, Psalms, deuterocanon, broader canon, or Vulgate.
+
+Trust status:
+
+Canonical OT remains not trusted pending broader missing-row and versification remediation.
