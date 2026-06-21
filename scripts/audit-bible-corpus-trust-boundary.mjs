@@ -34,72 +34,38 @@ try {
 }
 
 if (status) {
-  checks.topLevelStatus = status.status;
-
-  const requiredLanes = [
-    'canonical_nt',
-    'canonical_ot',
-    'psalms',
-    'deuterocanon',
-    'broader_canon',
-    'vulgate',
-  ];
+  const requiredLanes = ['canonical_nt', 'canonical_ot', 'psalms', 'deuterocanon', 'broader_canon', 'vulgate'];
 
   for (const lane of requiredLanes) {
-    if (!status.lanes || !status.lanes[lane]) {
-      failures.push({ type: 'missing-lane', lane });
-    }
-  }
-
-  const mustNotBeTrusted = [
-    'canonical_ot',
-    'psalms',
-    'deuterocanon',
-    'broader_canon',
-  ];
-
-  for (const lane of mustNotBeTrusted) {
-    const laneStatus = status.lanes?.[lane]?.status || '';
+    const laneStatus = status.lanes?.[lane]?.status || null;
     checks[`${lane}_status`] = laneStatus;
-    if (/trusted|complete|clean|ok/i.test(laneStatus) && !/^not_trusted/i.test(laneStatus)) {
-      failures.push({
-        type: 'unsafe-trust-claim',
-        lane,
-        status: laneStatus,
-      });
+    if (!laneStatus) failures.push({ type: 'missing-lane', lane });
+  }
+
+  for (const lane of ['canonical_ot', 'psalms', 'deuterocanon', 'broader_canon']) {
+    const laneStatus = status.lanes?.[lane]?.status || '';
+    if (!laneStatus.startsWith('not_trusted')) {
+      failures.push({ type: 'unsafe-trust-claim', lane, status: laneStatus });
     }
   }
 
-  const ntStatus = status.lanes?.canonical_nt?.status || '';
-  checks.canonical_nt_status = ntStatus;
-  if (ntStatus !== 'named_defect_tranche_complete') {
-    failures.push({
-      type: 'unexpected-nt-status',
-      expected: 'named_defect_tranche_complete',
-      actual: ntStatus,
-    });
+  if (status.lanes?.canonical_nt?.status !== 'named_defect_tranche_complete') {
+    failures.push({ type: 'unexpected-nt-status', actual: status.lanes?.canonical_nt?.status || null });
   }
 
-  const vulgateStatus = status.lanes?.vulgate?.status || '';
-  checks.vulgate_status = vulgateStatus;
-  if (vulgateStatus !== 'excluded_active_work') {
-    failures.push({
-      type: 'unexpected-vulgate-status',
-      expected: 'excluded_active_work',
-      actual: vulgateStatus,
-    });
+  if (status.lanes?.vulgate?.status !== 'excluded_active_work') {
+    failures.push({ type: 'unexpected-vulgate-status', actual: status.lanes?.vulgate?.status || null });
   }
 
-  const forbidden = status.forbiddenClaims || [];
   for (const claim of [
     'whole_bible_corpus_clean',
     'entire_biblical_corpus_trusted',
     'ot_textually_ok',
     'deuterocanon_complete',
     'psalms_normalized',
-    'broader_canon_complete',
+    'broader_canon_complete'
   ]) {
-    if (!forbidden.includes(claim)) {
+    if (!status.forbiddenClaims?.includes(claim)) {
       failures.push({ type: 'missing-forbidden-claim', claim });
     }
   }
@@ -109,18 +75,16 @@ const activeBoundary = runNode('scripts/audit-bible-active-corpus-boundary.mjs')
 const schemaContainer = runNode('scripts/audit-bible-schema-container-contract.mjs');
 const namedDefects = runNode('scripts/audit-bible-canonical-nt-named-defects.mjs');
 
-checks.activeBoundary = activeBoundary;
-checks.schemaContainer = schemaContainer;
-checks.namedDefects = namedDefects;
+checks.activeBoundaryPassed = activeBoundary.returncode === 0 && activeBoundary.stdout.includes('ALL PASSED');
+checks.schemaContainerPassed = schemaContainer.returncode === 0 && schemaContainer.stdout.includes('ALL PASSED');
+checks.namedDefectsPassed = namedDefects.returncode === 0 && namedDefects.stdout.includes('ALL PASSED');
 
-for (const [name, result] of Object.entries({
-  activeBoundary,
-  schemaContainer,
-  namedDefects,
+for (const [name, passed] of Object.entries({
+  activeBoundary: checks.activeBoundaryPassed,
+  schemaContainer: checks.schemaContainerPassed,
+  namedDefects: checks.namedDefectsPassed
 })) {
-  if (result.returncode !== 0 || !result.stdout.includes('ALL PASSED')) {
-    failures.push({ type: 'required-audit-failed', audit: name });
-  }
+  if (!passed) failures.push({ type: 'required-audit-failed', audit: name });
 }
 
 const protectedStatus = run([
@@ -131,7 +95,7 @@ const protectedStatus = run([
   '--',
   'data/bible/translations/vulgate-clementine',
   'data/bible/translations/vulgate-psalter',
-  'scripts/import-roman-breviary-1960-catholicbible-vulgate-pilot.mjs',
+  'scripts/import-roman-breviary-1960-catholicbible-vulgate-pilot.mjs'
 ]);
 
 const report = {
@@ -140,7 +104,7 @@ const report = {
   note: 'Passing means the repo has an explicit trust boundary. It does not mean the whole biblical corpus is textually clean.',
   checks,
   failures,
-  protectedVulgateStatusLineCount: protectedStatus.stdout.length,
+  protectedVulgateStatusLineCount: protectedStatus.stdout.length
 };
 
 console.log(JSON.stringify(report, null, 2));
