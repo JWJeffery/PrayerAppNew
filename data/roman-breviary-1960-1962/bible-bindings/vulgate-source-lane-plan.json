@@ -1,0 +1,370 @@
+{
+  "schema_version": "roman_breviary_1960_1962_vulgate_source_lane_plan_v1",
+  "generated_for": {
+    "date": "2026-11-02",
+    "hour": "matins",
+    "source_binding_report": "data/roman-breviary-1960-1962/bible-bindings/dev-vertical-slice.json"
+  },
+  "policy": {
+    "no_roman_side_biblical_body_materialization": true,
+    "no_import_performed_by_this_script": true,
+    "bible_bodies_must_resolve_from_bible_lanes": true,
+    "no_liturgical_body_text_in_this_plan": true
+  },
+  "current_repo_state": {
+    "adapter_path": "js/bible-browser/bible-source-lane-adapter.js",
+    "binding_report_path": "data/roman-breviary-1960-1962/bible-bindings/dev-vertical-slice.json",
+    "existing_lane_ids": [
+      "DRB_ORIGINAL",
+      "NABRE_INTERNAL"
+    ],
+    "drb_original_available": true,
+    "nabre_internal_available": true,
+    "vulgate_clementine_available": false,
+    "vulgate_psalter_available": false
+  },
+  "required_lanes": {
+    "scripture": "VULGATE_CLEMENTINE",
+    "psalter": "VULGATE_PSALTER"
+  },
+  "planned_manifest_shape": {
+    "scripture_lane_manifest": {
+      "planned_path": "data/bible/translations/vulgate-clementine/manifest.json",
+      "lane_id": "VULGATE_CLEMENTINE",
+      "label": "Vulgate Clementine",
+      "translation_key": "Vulgate",
+      "use": "internal_bible_browser_and_roman_breviary_binding",
+      "base_path": "data/bible/translations/vulgate-clementine",
+      "file_prefix": "raw/",
+      "status": "planned_not_imported"
+    },
+    "psalter_lane_manifest": {
+      "planned_path": "data/bible/translations/vulgate-psalter/manifest.json",
+      "lane_id": "VULGATE_PSALTER",
+      "label": "Vulgate Psalter",
+      "translation_key": "VulgatePsalter",
+      "use": "roman_breviary_psalter_binding",
+      "base_path": "data/bible/translations/vulgate-psalter",
+      "file_prefix": "raw/",
+      "status": "planned_not_imported"
+    }
+  },
+  "adapter_insertion_plan": {
+    "adapter_path": "js/bible-browser/bible-source-lane-adapter.js",
+    "existing_lane_ids": [
+      "DRB_ORIGINAL",
+      "NABRE_INTERNAL"
+    ],
+    "required_missing_lane_ids": [
+      "VULGATE_CLEMENTINE",
+      "VULGATE_PSALTER"
+    ],
+    "insertion_anchor": "after DRB_ORIGINAL lane or before NABRE_INTERNAL lane",
+    "book_map_keys_available_from_drb": [
+      "1_CHRONICLES",
+      "1_CORINTHIANS",
+      "1_JOHN",
+      "1_KINGS",
+      "1_MACCABEES",
+      "1_PETER",
+      "1_SAMUEL",
+      "1_THESSALONIANS",
+      "1_TIMOTHY",
+      "2_CHRONICLES",
+      "2_CORINTHIANS",
+      "2_JOHN",
+      "2_KINGS",
+      "2_MACCABEES",
+      "2_PETER",
+      "2_SAMUEL",
+      "2_THESSALONIANS",
+      "2_TIMOTHY",
+      "3_JOHN",
+      "ACTS",
+      "AMOS",
+      "BARUCH",
+      "COLOSSIANS",
+      "DANIEL",
+      "DEUTERONOMY",
+      "ECCLESIASTES",
+      "EPHESIANS",
+      "ESTHER",
+      "EXODUS",
+      "EZEKIEL",
+      "EZRA",
+      "GALATIANS",
+      "GENESIS",
+      "HABAKKUK",
+      "HAGGAI",
+      "HEBREWS",
+      "HOSEA",
+      "ISAIAH",
+      "JAMES",
+      "JEREMIAH",
+      "JOB",
+      "JOEL",
+      "JOHN",
+      "JONAH",
+      "JOSHUA",
+      "JUDE",
+      "JUDGES",
+      "JUDITH",
+      "LAMENTATIONS",
+      "LEVITICUS",
+      "LUKE",
+      "MALACHI",
+      "MARK",
+      "MATTHEW",
+      "MICAH",
+      "NAHUM",
+      "NEHEMIAH",
+      "NUMBERS",
+      "OBADIAH",
+      "PHILEMON",
+      "PHILIPPIANS",
+      "PROVERBS",
+      "PSALMS",
+      "REVELATION",
+      "ROMANS",
+      "RUTH",
+      "SIRACH",
+      "SONG_OF_SOLOMON",
+      "TITUS",
+      "TOBIT",
+      "WISDOM",
+      "ZECHARIAH",
+      "ZEPHANIAH"
+    ],
+    "book_map_keys_needed_for_pilot": [
+      "JOB",
+      "PSALMS",
+      "1_CORINTHIANS"
+    ]
+  },
+  "pilot_scope": {
+    "scripture_books": [
+      {
+        "book_id": "JOB",
+        "label": "Job"
+      },
+      {
+        "book_id": "1_CORINTHIANS",
+        "label": "1 Corinthians"
+      }
+    ],
+    "scripture_passages": [
+      {
+        "source_unit_key": "rb1960.la.sancti.11-02.lectio1",
+        "block_label": "Lectio I",
+        "citation": "Job 7:16-21",
+        "book_id": "JOB",
+        "chapter": 7,
+        "verse_start": 16,
+        "verse_end": 21,
+        "required_lane_id": "VULGATE_CLEMENTINE",
+        "required_translation_key": "Vulgate"
+      },
+      {
+        "source_unit_key": "rb1960.la.sancti.11-02.lectio2",
+        "block_label": "Lectio II",
+        "citation": "Job 14:1-6",
+        "book_id": "JOB",
+        "chapter": 14,
+        "verse_start": 1,
+        "verse_end": 6,
+        "required_lane_id": "VULGATE_CLEMENTINE",
+        "required_translation_key": "Vulgate"
+      },
+      {
+        "source_unit_key": "rb1960.la.sancti.11-02.lectio3",
+        "block_label": "Lectio III",
+        "citation": "Job 19:20-27",
+        "book_id": "JOB",
+        "chapter": 19,
+        "verse_start": 20,
+        "verse_end": 27,
+        "required_lane_id": "VULGATE_CLEMENTINE",
+        "required_translation_key": "Vulgate"
+      },
+      {
+        "source_unit_key": "rb1960.la.sancti.11-02.lectio7",
+        "block_label": "Lectio VII",
+        "citation": "1 Cor 15:12-22",
+        "book_id": "1_CORINTHIANS",
+        "chapter": 15,
+        "verse_start": 12,
+        "verse_end": 22,
+        "required_lane_id": "VULGATE_CLEMENTINE",
+        "required_translation_key": "Vulgate"
+      },
+      {
+        "source_unit_key": "rb1960.la.sancti.11-02.lectio8",
+        "block_label": "Lectio VIII",
+        "citation": "1 Cor 15:35-44",
+        "book_id": "1_CORINTHIANS",
+        "chapter": 15,
+        "verse_start": 35,
+        "verse_end": 44,
+        "required_lane_id": "VULGATE_CLEMENTINE",
+        "required_translation_key": "Vulgate"
+      },
+      {
+        "source_unit_key": "rb1960.la.sancti.11-02.lectio9",
+        "block_label": "Lectio IX",
+        "citation": "1 Cor 15:51-58",
+        "book_id": "1_CORINTHIANS",
+        "chapter": 15,
+        "verse_start": 51,
+        "verse_end": 58,
+        "required_lane_id": "VULGATE_CLEMENTINE",
+        "required_translation_key": "Vulgate"
+      }
+    ],
+    "psalm_books": [
+      {
+        "book_id": "PSALMS",
+        "label": "Psalms"
+      }
+    ],
+    "psalm_appointments": [
+      {
+        "source_unit_key": "rb1960.la.sancti.11-02.nocturnus1.psalmi-antiphonae",
+        "nocturn": 1,
+        "book_id": "PSALMS",
+        "psalm": 5,
+        "numbering_status": "roman_breviary_source_appointment_numbering_not_yet_normalized",
+        "required_lane_id": "VULGATE_PSALTER",
+        "required_translation_key": "VulgatePsalter"
+      },
+      {
+        "source_unit_key": "rb1960.la.sancti.11-02.nocturnus1.psalmi-antiphonae",
+        "nocturn": 1,
+        "book_id": "PSALMS",
+        "psalm": 6,
+        "numbering_status": "roman_breviary_source_appointment_numbering_not_yet_normalized",
+        "required_lane_id": "VULGATE_PSALTER",
+        "required_translation_key": "VulgatePsalter"
+      },
+      {
+        "source_unit_key": "rb1960.la.sancti.11-02.nocturnus1.psalmi-antiphonae",
+        "nocturn": 1,
+        "book_id": "PSALMS",
+        "psalm": 7,
+        "numbering_status": "roman_breviary_source_appointment_numbering_not_yet_normalized",
+        "required_lane_id": "VULGATE_PSALTER",
+        "required_translation_key": "VulgatePsalter"
+      },
+      {
+        "source_unit_key": "rb1960.la.sancti.11-02.nocturnus2.psalmi-antiphonae",
+        "nocturn": 2,
+        "book_id": "PSALMS",
+        "psalm": 22,
+        "numbering_status": "roman_breviary_source_appointment_numbering_not_yet_normalized",
+        "required_lane_id": "VULGATE_PSALTER",
+        "required_translation_key": "VulgatePsalter"
+      },
+      {
+        "source_unit_key": "rb1960.la.sancti.11-02.nocturnus2.psalmi-antiphonae",
+        "nocturn": 2,
+        "book_id": "PSALMS",
+        "psalm": 24,
+        "numbering_status": "roman_breviary_source_appointment_numbering_not_yet_normalized",
+        "required_lane_id": "VULGATE_PSALTER",
+        "required_translation_key": "VulgatePsalter"
+      },
+      {
+        "source_unit_key": "rb1960.la.sancti.11-02.nocturnus2.psalmi-antiphonae",
+        "nocturn": 2,
+        "book_id": "PSALMS",
+        "psalm": 26,
+        "numbering_status": "roman_breviary_source_appointment_numbering_not_yet_normalized",
+        "required_lane_id": "VULGATE_PSALTER",
+        "required_translation_key": "VulgatePsalter"
+      },
+      {
+        "source_unit_key": "rb1960.la.sancti.11-02.nocturnus3.psalmi-antiphonae",
+        "nocturn": 3,
+        "book_id": "PSALMS",
+        "psalm": 39,
+        "numbering_status": "roman_breviary_source_appointment_numbering_not_yet_normalized",
+        "required_lane_id": "VULGATE_PSALTER",
+        "required_translation_key": "VulgatePsalter"
+      },
+      {
+        "source_unit_key": "rb1960.la.sancti.11-02.nocturnus3.psalmi-antiphonae",
+        "nocturn": 3,
+        "book_id": "PSALMS",
+        "psalm": 40,
+        "numbering_status": "roman_breviary_source_appointment_numbering_not_yet_normalized",
+        "required_lane_id": "VULGATE_PSALTER",
+        "required_translation_key": "VulgatePsalter"
+      },
+      {
+        "source_unit_key": "rb1960.la.sancti.11-02.nocturnus3.psalmi-antiphonae",
+        "nocturn": 3,
+        "book_id": "PSALMS",
+        "psalm": 41,
+        "numbering_status": "roman_breviary_source_appointment_numbering_not_yet_normalized",
+        "required_lane_id": "VULGATE_PSALTER",
+        "required_translation_key": "VulgatePsalter"
+      }
+    ]
+  },
+  "file_plan": {
+    "scripture_lane_files": [
+      {
+        "book_id": "JOB",
+        "label": "Job",
+        "canonical_probe_path": "data/bible/OT/job.json",
+        "canonical_probe_exists": true,
+        "target_lane_id": "VULGATE_CLEMENTINE",
+        "target_lane_file": "raw/job.json",
+        "target_full_path": "data/bible/translations/vulgate-clementine/raw/job.json",
+        "target_exists_now": false
+      },
+      {
+        "book_id": "1_CORINTHIANS",
+        "label": "1 Corinthians",
+        "canonical_probe_path": "data/bible/NT/1corinthians.json",
+        "canonical_probe_exists": true,
+        "target_lane_id": "VULGATE_CLEMENTINE",
+        "target_lane_file": "raw/1-corinthians.json",
+        "target_full_path": "data/bible/translations/vulgate-clementine/raw/1-corinthians.json",
+        "target_exists_now": false
+      }
+    ],
+    "psalter_lane_files": [
+      {
+        "book_id": "PSALMS",
+        "label": "Psalms",
+        "canonical_probe_path": "data/bible/OT/psalms.json",
+        "canonical_probe_exists": true,
+        "target_lane_id": "VULGATE_PSALTER",
+        "target_lane_file": "raw/psalms.json",
+        "target_full_path": "data/bible/translations/vulgate-psalter/raw/psalms.json",
+        "target_exists_now": false
+      }
+    ]
+  },
+  "next_allowed_write_tranche": {
+    "description": "Create empty governed Vulgate source-lane scaffold and adapter registration only; do not import biblical text.",
+    "may_create": [
+      "data/bible/translations/vulgate-clementine/manifest.json",
+      "data/bible/translations/vulgate-clementine/raw/",
+      "data/bible/translations/vulgate-psalter/manifest.json",
+      "data/bible/translations/vulgate-psalter/raw/"
+    ],
+    "may_modify": [
+      "js/bible-browser/bible-source-lane-adapter.js"
+    ],
+    "must_not_create": [
+      "Roman-side copies of Job, 1 Corinthians, or Psalm body text",
+      "Resolved Roman Breviary daily snapshots"
+    ],
+    "import_after_scaffold": [
+      "JOB",
+      "1_CORINTHIANS",
+      "PSALMS"
+    ]
+  }
+}
