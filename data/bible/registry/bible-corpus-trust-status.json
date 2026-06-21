@@ -1,0 +1,86 @@
+{
+  "id": "bible-corpus-trust-status",
+  "status": "partial_trust_boundary_active",
+  "lastUpdated": "2026-06-21",
+  "principle": "Do not equate valid JSON, recognized containers, source-lane presence, or UI availability with trusted biblical text.",
+  "lanes": {
+    "canonical_nt": {
+      "status": "named_defect_tranche_complete",
+      "trustedFor": [
+        "canonical NT named-defect remediation",
+        "KJV/NABRE prefix cleanup",
+        "bounded DRB repairs",
+        "guarded split-verse overlays"
+      ],
+      "requires": [
+        "Keep scripts/audit-bible-canonical-nt-named-defects.mjs passing",
+        "Keep active boundary and schema/container guards passing"
+      ],
+      "notes": [
+        "This does not assert a fresh scholarly full collation of every NT verse.",
+        "It asserts the currently named canonical NT corpus defects are repaired or overlay-represented without main-row insertion."
+      ]
+    },
+    "canonical_ot": {
+      "status": "not_trusted_pending_versification_remediation",
+      "reasons": [
+        "NABRE OT alignment/versification defects remain unresolved.",
+        "Daniel and related Greek-extension handling require source/versification decisions.",
+        "Minor-prophet and chapter-boundary issues require bounded inspection before patching."
+      ],
+      "nextDecision": "Design OT versification/remap strategy using translation overlays rather than ad hoc row insertion."
+    },
+    "psalms": {
+      "status": "not_trusted_legacy_subsystem",
+      "reasons": [
+        "Psalms use a legacy root-array subsystem.",
+        "Psalms require separate architecture before normalization or trust claims.",
+        "Psalms include non-standard extended range material that must be governed deliberately."
+      ],
+      "nextDecision": "Treat Psalms as its own corpus architecture track."
+    },
+    "deuterocanon": {
+      "status": "not_trusted_underbuilt",
+      "reasons": [
+        "Several files are structural stubs or materially incomplete.",
+        "3 and 4 Maccabees are known severe completeness risks.",
+        "Some deuterocanonical files require rebuild, quarantine, or explicit scope declaration."
+      ],
+      "nextDecision": "Decide rebuild versus quarantine lane before text repair."
+    },
+    "broader_canon": {
+      "status": "not_trusted_governance_pending",
+      "reasons": [
+        "Broader-canon files include non-standard schemas.",
+        "Odes and related canticle files are structurally identified but underpopulated.",
+        "Some metadata overstates completeness or liturgical status."
+      ],
+      "nextDecision": "Classify each broader-canon file as trusted, scaffold, excerpt, devotional/liturgical, or quarantine."
+    },
+    "vulgate": {
+      "status": "excluded_active_work",
+      "reasons": [
+        "Vulgate work is protected active work and intentionally excluded from this remediation thread."
+      ],
+      "protectedPaths": [
+        "data/bible/translations/vulgate-clementine/**",
+        "data/bible/translations/vulgate-psalter/**",
+        "scripts/import-roman-breviary-1960-catholicbible-vulgate-pilot.mjs"
+      ]
+    }
+  },
+  "forbiddenClaims": [
+    "whole_bible_corpus_clean",
+    "entire_biblical_corpus_trusted",
+    "ot_textually_ok",
+    "deuterocanon_complete",
+    "psalms_normalized",
+    "broader_canon_complete"
+  ],
+  "allowedClaims": [
+    "canonical_nt_named_defect_tranche_complete",
+    "active_boundary_guard_present",
+    "schema_container_guard_present",
+    "whole_corpus_trust_boundary_active"
+  ]
+}

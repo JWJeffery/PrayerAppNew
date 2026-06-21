@@ -294,3 +294,37 @@ Not in scope:
 
 - main-row insertion for 2 Corinthians 13:14;
 - any Vulgate work.
+
+
+## Phase 4A: whole-corpus trust boundary
+
+Status: active.
+
+Decision:
+
+The canonical NT named-defect tranche is complete, but the whole biblical corpus is not textually trusted.
+
+This phase records the difference between:
+
+- structurally recognized corpus files;
+- active boundary/schema guard success;
+- canonical NT named-defect remediation;
+- actual whole-corpus textual trust.
+
+Current trust status:
+
+- Canonical NT: named-defect tranche complete.
+- Canonical OT: not trusted pending NABRE/versification remediation.
+- Psalms: not trusted; legacy subsystem requiring separate architecture.
+- Deuterocanon: not trusted; underbuilt files require rebuild, quarantine, or explicit scope declaration.
+- Broader canon: not trusted; governance and completeness decisions pending.
+- Vulgate: excluded active work in protected paths.
+
+Forbidden claims until later remediation:
+
+- whole Bible corpus clean;
+- entire biblical corpus trusted;
+- OT textually okay;
+- deuterocanon complete;
+- Psalms normalized;
+- broader canon complete.
