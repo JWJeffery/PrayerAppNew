@@ -35,7 +35,8 @@ const unresolvedMissingRows = [
     file: 'data/bible/NT/2corinthians.json',
     chapter: 13,
     verse: 14,
-    status: 'unresolved_kjv_versification_decision',
+    status: 'main_row_unresolved_kjv_overlay_present',
+    expectedOverlay: { translation: 'KJV', chapter: 13, verse: 14 },
   },
 ];
 
@@ -297,7 +298,7 @@ const protectedStatus = runGit([
 const report = {
   audit: 'canonical-nt-named-defects',
   status: failures.length ? 'failed' : 'passed',
-  note: 'This audit tracks resolved and intentionally unresolved named NT defects. Passing does not mean the remaining source/versification defects are repaired.',
+  note: 'This audit tracks named NT defects. Passing means all currently named NT defects are either repaired or represented by guarded translation overlays; it does not imply full NT corpus trust beyond this named-defect set.',
   findings,
   failures,
   protectedVulgateStatusLineCount: protectedStatus.stdout.length,
@@ -310,5 +311,5 @@ if (failures.length) {
   console.log('NEXT: Review named NT defect state; update data, audit, and ledger deliberately.');
 } else {
   console.log('ALL PASSED');
-  console.log('NEXT: Named NT defect state is guarded; only 2 Corinthians 13:14 remains a KJV source/versification decision.');
+  console.log('NEXT: Named NT defect state is guarded; all currently named NT defects are represented without main-row insertion.');
 }

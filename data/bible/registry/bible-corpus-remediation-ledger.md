@@ -266,3 +266,31 @@ Not in scope:
 - KJV overlay for 2 Corinthians 13:14;
 - main-row insertion for Acts 15:18, Acts 23:26, or James 1:8;
 - any Vulgate work.
+
+
+## Phase 3E: KJV overlay for 2 Corinthians 13:14
+
+Status: applied as bounded remediation.
+
+Decision:
+
+- 2 Corinthians 13:14 is not inserted as an active main row.
+- Active NRSV/NABRE place the final blessing at 13:13.
+- DRB raw also ends at 13:13.
+- KJV 1611 preserves a translation-specific 13:14 numbering.
+- KJV 2 Corinthians 13:14 was recovered from the historical deleted KJV source mirror in repo history and added as a KJV translation overlay.
+
+Source evidence:
+
+- commit: `88f0b9811a83d55b976d08bbec5024b47a4b282e`
+- path: `data/bible/translations/kjv-1611/source/aruljohn-bible-kjv-1611/2 Corinthians.json`
+
+Scope:
+
+- `data/bible/NT/2corinthians.json` translation overlay for KJV 13:14.
+- `scripts/audit-bible-canonical-nt-named-defects.mjs` updated to guard the overlay state.
+
+Not in scope:
+
+- main-row insertion for 2 Corinthians 13:14;
+- any Vulgate work.
