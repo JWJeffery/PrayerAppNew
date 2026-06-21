@@ -7600,5 +7600,15 @@
       ]
     }
   ],
-  "schema": "bible_book_multiversion_v1"
+  "schema": "bible_book_multiversion_v1",
+  "translationOverlays": {
+    "NABRE": {
+      "2": {
+        "18": "Of these he made seventy thousand carriers and eighty thousand cutters in the mountains, and three thousand six hundred overseers to keep the people working."
+      },
+      "14": {
+        "15": "They also attacked the tents of the cattle-herders and carried off a great number of sheep and camels. Then they returned to Jerusalem."
+      }
+    }
+  }
 }

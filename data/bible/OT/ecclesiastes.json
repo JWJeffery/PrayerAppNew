@@ -2080,5 +2080,12 @@
       ]
     }
   ],
-  "schema": "bible_book_multiversion_v1"
+  "schema": "bible_book_multiversion_v1",
+  "translationOverlays": {
+    "NABRE": {
+      "5": {
+        "20": "For they will hardly dwell on the shortness of life, because God lets them busy themselves with the joy of their heart."
+      }
+    }
+  }
 }

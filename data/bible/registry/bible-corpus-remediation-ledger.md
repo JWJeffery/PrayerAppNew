@@ -552,3 +552,35 @@ Explicitly not applied:
 Trust status:
 
 Canonical OT remains not trusted pending remaining unresolved rows and separate governance for Daniel / Greek-addition material.
+
+
+## Phase 4I: Singleton NABRE medium overlay batch 1
+
+Status: applied as bounded remediation.
+
+Decision:
+
+Eight manually reviewed medium-confidence singleton mappings were applied after source and active text comparison.
+
+Applied overlay scope:
+
+- 2 Chronicles 2:17 -> active 2:18
+- 2 Chronicles 14:14 -> active 14:15
+- Job 41:21 -> active 41:29
+- Job 41:23 -> active 41:31
+- Job 41:24 -> active 41:32
+- Job 41:26 -> active 41:34
+- Ecclesiastes 5:19 -> active 5:20
+- Isaiah 64:11 -> active 64:12
+
+Explicitly not applied:
+
+- Song of Solomon 7:1 -> active 6:13 because the NABRE source row includes heading/speaker-marker residue.
+- Weak singleton candidates.
+- Daniel 11.
+- Greek-addition material.
+- Psalms, deuterocanon, broader canon, or Vulgate material.
+
+Trust status:
+
+Canonical OT remains not trusted pending remaining unresolved rows and separate governance for Daniel / Greek-addition material.
