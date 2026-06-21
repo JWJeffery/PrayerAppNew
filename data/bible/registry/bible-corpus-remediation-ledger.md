@@ -499,3 +499,28 @@ Explicitly not applied:
 Trust status:
 
 Canonical OT remains not trusted pending remaining missing-row and versification remediation.
+
+
+## Phase 4G: Daniel NABRE safe overlay batch 1
+
+Status: applied as bounded remediation.
+
+Decision:
+
+Only the safe Daniel mappings identified by source inspection were applied.
+
+Applied overlay scope:
+
+- Daniel 4:32 -> active 4:35
+- Daniel 4:33 -> active 4:36
+- Daniel 4:34 -> active 4:37
+
+Explicitly not applied:
+
+- Daniel 5:31 because the best source candidate was weak.
+- Daniel 11 because no Daniel 11 source rows were present in the NABRE source file.
+- Daniel 3 Greek-addition material because that requires separate governance against DanielGK / Greek-addition handling.
+
+Trust status:
+
+Canonical OT remains not trusted pending remaining Daniel, historical, wisdom, prophetic, and singleton remediation.

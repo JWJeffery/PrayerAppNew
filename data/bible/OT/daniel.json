@@ -3247,5 +3247,14 @@
       ]
     }
   ],
-  "schema": "bible_book_multiversion_v1"
+  "schema": "bible_book_multiversion_v1",
+  "translationOverlays": {
+    "NABRE": {
+      "4": {
+        "35": "All who live on the earth are counted as nothing; he does as he wills with the powers of heaven and with those who live on the earth. There is no one who can stay his hand or say to him, “What have you done?”",
+        "36": "At the same time my reason returned to me, and for the glory of my kingdom, my majesty and my splendor returned to me. My counselors and nobles sought me out; I was restored to my kingdom and became much greater than before.",
+        "37": "Now, I, Nebuchadnezzar, praise and exalt and glorify the King of heaven, all of whose works are right and ways just; and who is able to humble those who walk in pride."
+      }
+    }
+  }
 }
