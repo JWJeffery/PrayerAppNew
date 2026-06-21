@@ -234,14 +234,9 @@
       "key": "rb1960.la.sancti.11-02.responsorium3",
       "kind": "responsory",
       "citation": "",
-      "text": "R. Dómine, quando véneris judicáre terram, ubi me abscóndam a vultu iræ tuæ? \n* Quia peccávi nimis in vita mea.\nV. Commíssa mea pavésco, et ante te erubésco: dum véneris judicáre, noli me condemnáre.\nR. Quia peccávi nimis in vita mea.\nR. Quia peccávi nimis in vita mea.",
+      "text": "R. Dómine, quando véneris judicáre terram, ubi me abscóndam a vultu iræ tuæ? \n* Quia peccávi nimis in vita mea.\nV. Commíssa mea pavésco, et ante te erubésco: dum véneris judicáre, noli me condemnáre.\nR. Quia peccávi nimis in vita mea.\nV. Réquiem ætérnam dona eis, Dómine.\nR. Et lux perpétua lúceat eis.\nR. Quia peccávi nimis in vita mea.",
       "raw_text": "R. Dómine, quando véneris judicáre terram, ubi me abscóndam a vultu iræ tuæ? \n* Quia peccávi nimis in vita mea.\nV. Commíssa mea pavésco, et ante te erubésco: dum véneris judicáre, noli me condemnáre.\nR. Quia peccávi nimis in vita mea.\n$Requiem\nR. Quia peccávi nimis in vita mea.",
-      "display_diagnostics": [
-        {
-          "type": "unresolved-divinum-macro",
-          "message": "Divinum macro not expanded in dev slice: $Requiem"
-        }
-      ],
+      "display_diagnostics": [],
       "source": {
         "repo": "DivinumOfficium/divinum-officium",
         "commit": "0ce8747d7dba3276fc05937635e02360b49a60a6",
@@ -281,14 +276,9 @@
       "key": "rb1960.la.sancti.11-02.responsorium6",
       "kind": "responsory",
       "citation": "",
-      "text": "R. Ne recordéris peccáta mea, Dómine, \n* Dum véneris judicáre sǽculum per ignem.\nV. Dírige, Dómine, Deus meus, in conspéctu tuo viam meam.\nR. Dum véneris judicáre sǽculum per ignem.\nR. Dum véneris judicáre sǽculum per ignem.",
+      "text": "R. Ne recordéris peccáta mea, Dómine, \n* Dum véneris judicáre sǽculum per ignem.\nV. Dírige, Dómine, Deus meus, in conspéctu tuo viam meam.\nR. Dum véneris judicáre sǽculum per ignem.\nV. Réquiem ætérnam dona eis, Dómine.\nR. Et lux perpétua lúceat eis.\nR. Dum véneris judicáre sǽculum per ignem.",
       "raw_text": "R. Ne recordéris peccáta mea, Dómine, \n* Dum véneris judicáre sǽculum per ignem.\nV. Dírige, Dómine, Deus meus, in conspéctu tuo viam meam.\nR. Dum véneris judicáre sǽculum per ignem.\n$Requiem\nR. Dum véneris judicáre sǽculum per ignem.",
-      "display_diagnostics": [
-        {
-          "type": "unresolved-divinum-macro",
-          "message": "Divinum macro not expanded in dev slice: $Requiem"
-        }
-      ],
+      "display_diagnostics": [],
       "source": {
         "repo": "DivinumOfficium/divinum-officium",
         "commit": "0ce8747d7dba3276fc05937635e02360b49a60a6",
@@ -328,14 +318,9 @@
       "key": "rb1960.la.sancti.11-02.responsorium9",
       "kind": "responsory",
       "citation": "",
-      "text": "R. Líbera me, Dómine, de morte ætérna in die illa treménda,\n* Quando cæli movéndi sunt et terra, * Dum véneris judicáre sǽculum per ignem.\nV. Tremens factus sum ego et tímeo, dum discússio vénerit atque ventúra ira.\nR. Quando cæli movéndi sunt et terra.\nV. Dies illa, dies iræ, calamitátis et misériæ, dies magna et amára valde.\nR. Dum véneris judicáre sǽculum per ignem.\nR. Líbera me, Dómine, de morte ætérna in die illa treménda, * Quando cæli movéndi sunt et terra, * Dum véneris judicáre sǽculum per ignem.",
+      "text": "R. Líbera me, Dómine, de morte ætérna in die illa treménda,\n* Quando cæli movéndi sunt et terra, * Dum véneris judicáre sǽculum per ignem.\nV. Tremens factus sum ego et tímeo, dum discússio vénerit atque ventúra ira.\nR. Quando cæli movéndi sunt et terra.\nV. Dies illa, dies iræ, calamitátis et misériæ, dies magna et amára valde.\nR. Dum véneris judicáre sǽculum per ignem.\nV. Réquiem ætérnam dona eis, Dómine.\nR. Et lux perpétua lúceat eis.\nR. Líbera me, Dómine, de morte ætérna in die illa treménda, * Quando cæli movéndi sunt et terra, * Dum véneris judicáre sǽculum per ignem.",
       "raw_text": "R. Líbera me, Dómine, de morte ætérna in die illa treménda,\n* Quando cæli movéndi sunt et terra, * Dum véneris judicáre sǽculum per ignem.\nV. Tremens factus sum ego et tímeo, dum discússio vénerit atque ventúra ira.\nR. Quando cæli movéndi sunt et terra.\nV. Dies illa, dies iræ, calamitátis et misériæ, dies magna et amára valde.\nR. Dum véneris judicáre sǽculum per ignem.\n$Requiem\nR. Líbera me, Dómine, de morte ætérna in die illa treménda, * Quando cæli movéndi sunt et terra, * Dum véneris judicáre sǽculum per ignem.",
-      "display_diagnostics": [
-        {
-          "type": "unresolved-divinum-macro",
-          "message": "Divinum macro not expanded in dev slice: $Requiem"
-        }
-      ],
+      "display_diagnostics": [],
       "source": {
         "repo": "DivinumOfficium/divinum-officium",
         "commit": "0ce8747d7dba3276fc05937635e02360b49a60a6",

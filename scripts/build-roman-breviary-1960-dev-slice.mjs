@@ -80,6 +80,12 @@ function normalizeDivinumDisplayText(rawText) {
       continue;
     }
 
+    if (trimmed === '$Requiem') {
+      displayLines.push('V. Réquiem ætérnam dona eis, Dómine.');
+      displayLines.push('R. Et lux perpétua lúceat eis.');
+      continue;
+    }
+
     if (/^[@#$&]/.test(trimmed)) {
       diagnostics.push({
         type: 'unresolved-divinum-macro',
