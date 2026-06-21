@@ -328,3 +328,33 @@ Forbidden claims until later remediation:
 - deuterocanon complete;
 - Psalms normalized;
 - broader canon complete.
+
+
+## Phase 4B: canonical OT NABRE prefix cleanup
+
+Status: applied as bounded remediation.
+
+Decision:
+
+The canonical OT active files contained mechanical NABRE `chapter:verse` prefixes across all 38 books. This phase removes only those mechanical leading references from active NABRE text.
+
+Scope:
+
+- Canonical OT active files only.
+- NABRE text only.
+- Leading `chapter:verse` prefixes only when the prefix matches the active row coordinate.
+
+Not in scope:
+
+- missing NABRE rows;
+- Daniel 11 NABRE absence;
+- Malachi 4 NABRE absence;
+- Esther Greek-extension row-grid decisions;
+- OT versification/remap architecture;
+- Psalms;
+- deuterocanon and broader canon;
+- any Vulgate work.
+
+Trust status:
+
+Canonical OT remains not trusted pending versification remediation.

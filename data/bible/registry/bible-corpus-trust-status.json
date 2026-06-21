@@ -17,6 +17,9 @@
         "NABRE OT alignment and versification defects remain unresolved.",
         "Daniel and related Greek-extension handling require source/versification decisions.",
         "Minor-prophet and chapter-boundary issues require bounded inspection before patching."
+      ],
+      "completedRemediations": [
+        "mechanical_nabre_chapter_verse_prefix_cleanup"
       ]
     },
     "psalms": {
