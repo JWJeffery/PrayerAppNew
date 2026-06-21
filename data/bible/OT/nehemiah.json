@@ -3734,5 +3734,13 @@
       ]
     }
   ],
-  "schema": "bible_book_multiversion_v1"
+  "schema": "bible_book_multiversion_v1",
+  "translationOverlays": {
+    "NABRE": {
+      "4": {
+        "19": "for I had said to the nobles, the magistrates, and the rest of the people: “Our work is scattered and extensive, and we are widely separated from one another along the wall;",
+        "20": "wherever you hear the trumpet sound, join us there; our God will fight with us.”"
+      }
+    }
+  }
 }

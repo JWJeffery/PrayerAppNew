@@ -469,3 +469,33 @@ Explicitly not applied:
 Trust status:
 
 Canonical OT remains not trusted pending remaining missing-row and versification remediation.
+
+
+## Phase 4F: Historical NABRE strong overlay batch 1
+
+Status: applied as bounded remediation.
+
+Decision:
+
+A source-backed historical-book NABRE overlay batch was applied only for the four strong mappings from the corrected historical inspection.
+
+Source evidence:
+
+- source commit: `d0eed049f47e5eda8abcc4f4b1bb0d77efc51bd6`
+- source lane: `data/bible/translations/nabre-internal-source-lane/source/generated_data/books/*.json`
+
+Applied overlay scope:
+
+- 1 Chronicles 6:64 -> active 6:73
+- 1 Chronicles 6:66 -> active 6:75
+- Nehemiah 4:13 -> active 4:19
+- Nehemiah 4:14 -> active 4:20
+
+Explicitly not applied:
+
+- Medium and weak historical candidates.
+- Any Daniel, Esther, Job, prophets outside existing bounded batches, Psalms, deuterocanon, broader canon, or Vulgate material.
+
+Trust status:
+
+Canonical OT remains not trusted pending remaining missing-row and versification remediation.

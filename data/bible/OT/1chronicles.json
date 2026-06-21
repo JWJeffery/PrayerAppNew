@@ -8631,5 +8631,13 @@
       ]
     }
   ],
-  "schema": "bible_book_multiversion_v1"
+  "schema": "bible_book_multiversion_v1",
+  "translationOverlays": {
+    "NABRE": {
+      "6": {
+        "73": "Kedemoth with its pasture lands, and Mephaath with its pasture lands.",
+        "75": "Heshbon with its pasture lands, and Jazer with its pasture lands."
+      }
+    }
+  }
 }
