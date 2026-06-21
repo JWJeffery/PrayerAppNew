@@ -242,3 +242,27 @@ Intentionally unresolved:
 - 3 John 1:15 DRB remains unpopulated because the DRB raw lane has no verse 15.
 
 These unresolved items require a source/versification/overlay decision before any data patch.
+
+
+## Phase 3D: DRB split-verse overlays for canonical NT
+
+Status: applied as bounded remediation.
+
+Decision:
+
+- Acts 15:18, Acts 23:26, and James 1:8 remain unresolved as active main rows.
+- DRB text for those references is present in the DRB raw lane and has been added as DRB translation overlays.
+- Main-row insertion is not authorized because the surrounding NRSV, KJV, and NABRE rows reflect split/merge versification rather than a uniform missing-row defect.
+- 2 Corinthians 13:14 remains unresolved. Active NRSV/NABRE place the final blessing at 13:13, DRB raw also ends at 13:13, and KJV needs a source-backed translation-specific overlay decision.
+
+Scope:
+
+- `data/bible/NT/acts.json` translation overlay for DRB Acts 15:18 and Acts 23:26.
+- `data/bible/NT/james.json` translation overlay for DRB James 1:8.
+- `scripts/audit-bible-canonical-nt-named-defects.mjs` updated to guard the overlay state.
+
+Not in scope:
+
+- KJV overlay for 2 Corinthians 13:14;
+- main-row insertion for Acts 15:18, Acts 23:26, or James 1:8;
+- any Vulgate work.

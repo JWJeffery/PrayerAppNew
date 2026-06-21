@@ -11,28 +11,31 @@ const unresolvedMissingRows = [
     file: 'data/bible/NT/acts.json',
     chapter: 15,
     verse: 18,
-    status: 'unresolved_source_or_versification_decision',
+    status: 'main_row_unresolved_drb_overlay_present',
+    expectedOverlay: { translation: 'DRB', chapter: 15, verse: 18 },
   },
   {
     id: 'acts_23_26',
     file: 'data/bible/NT/acts.json',
     chapter: 23,
     verse: 26,
-    status: 'unresolved_source_or_versification_decision',
+    status: 'main_row_unresolved_drb_overlay_present',
+    expectedOverlay: { translation: 'DRB', chapter: 23, verse: 26 },
   },
   {
     id: 'james_1_8',
     file: 'data/bible/NT/james.json',
     chapter: 1,
     verse: 8,
-    status: 'unresolved_source_or_versification_decision',
+    status: 'main_row_unresolved_drb_overlay_present',
+    expectedOverlay: { translation: 'DRB', chapter: 1, verse: 8 },
   },
   {
     id: '2corinthians_13_14',
     file: 'data/bible/NT/2corinthians.json',
     chapter: 13,
     verse: 14,
-    status: 'unresolved_source_or_versification_decision',
+    status: 'unresolved_kjv_versification_decision',
   },
 ];
 
@@ -135,6 +138,18 @@ function getTranslationText(verse, translation) {
   return typeof value === 'string' ? value : null;
 }
 
+function getOverlayText(data, translation, chapter, verse) {
+  if (!data || typeof data !== 'object') return null;
+  const overlays = data.translationOverlays;
+  if (!overlays || typeof overlays !== 'object') return null;
+  const translationOverlay = overlays[translation];
+  if (!translationOverlay || typeof translationOverlay !== 'object') return null;
+  const chapterOverlay = translationOverlay[String(chapter)];
+  if (!chapterOverlay || typeof chapterOverlay !== 'object') return null;
+  const value = chapterOverlay[String(verse)];
+  return typeof value === 'string' ? value : null;
+}
+
 const failures = [];
 const findings = {
   unresolvedMissingRows: [],
@@ -143,10 +158,15 @@ const findings = {
 };
 
 for (const target of unresolvedMissingRows) {
+  let data;
   let verse = null;
+  let overlayText = null;
   try {
-    const data = loadJson(target.file);
+    data = loadJson(target.file);
     verse = activeVerseMap(data).get(`${target.chapter}:${target.verse}`) || null;
+    if (target.expectedOverlay) {
+      overlayText = getOverlayText(data, target.expectedOverlay.translation, target.expectedOverlay.chapter, target.expectedOverlay.verse);
+    }
   } catch (error) {
     failures.push({ type: 'parse-or-load-error', target: target.id, file: target.file, error: String(error.message || error) });
     continue;
@@ -156,16 +176,29 @@ for (const target of unresolvedMissingRows) {
   findings.unresolvedMissingRows.push({
     ...target,
     active_row_present: found,
+    expected_overlay_present: target.expectedOverlay ? Boolean(overlayText && overlayText.trim()) : null,
+    expected_overlay_sample: overlayText ? overlayText.slice(0, 120) : '',
   });
 
   if (found) {
     failures.push({
-      type: 'unexpectedly-resolved-without-ledger-update',
+      type: 'unexpectedly-resolved-main-row-without-ledger-update',
       target: target.id,
       file: target.file,
       chapter: target.chapter,
       verse: target.verse,
-      message: 'This named defect now has an active row; update this audit and remediation ledger deliberately.',
+      message: 'This named defect now has an active main row; update this audit and remediation ledger deliberately.',
+    });
+  }
+
+  if (target.expectedOverlay && !(overlayText && overlayText.trim())) {
+    failures.push({
+      type: 'missing-expected-translation-overlay',
+      target: target.id,
+      file: target.file,
+      translation: target.expectedOverlay.translation,
+      chapter: target.expectedOverlay.chapter,
+      verse: target.expectedOverlay.verse,
     });
   }
 }
@@ -277,5 +310,5 @@ if (failures.length) {
   console.log('NEXT: Review named NT defect state; update data, audit, and ledger deliberately.');
 } else {
   console.log('ALL PASSED');
-  console.log('NEXT: Named NT defect state is guarded; unresolved rows require source/versification decision before repair.');
+  console.log('NEXT: Named NT defect state is guarded; only 2 Corinthians 13:14 remains a KJV source/versification decision.');
 }
