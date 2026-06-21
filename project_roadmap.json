@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0.0",
   "roadmap_version": "0.1.39",
-  "last_updated": "2026-06-20T06:19:08.559Z",
+  "last_updated": "2026-06-21T08:25:24Z",
   "status": "active",
   "name": "Universal Office Beta Release Roadmap",
   "purpose": "Canonical machine-readable roadmap for Beta Release planning, phase sequencing, governance questions, tranche sizing, and Admin Dashboard visualization.",
@@ -2608,6 +2608,156 @@
         "npm run audit:bible-registry-catholic-runtime-regression"
       ],
       "updated_at": "2026-06-20T04:35:32.007Z"
+    },
+    "canonical_ot_residual_governance": {
+      "status": "not_trusted_residuals_governed_pending_source_evidence",
+      "certification": "not_certified_trusted",
+      "lane": "canonical_ot",
+      "recorded_at": "2026-06-21T08:25:24Z",
+      "head_at_recording": "fe4715e",
+      "scope": "NABRE canonical OT residual classification after corpus recovery consolidation",
+      "contamination_guard": {
+        "script": "scripts/audit-bible-nabre-corpus-contamination.mjs",
+        "expected_result": "OK with zero contaminated verses"
+      },
+      "source_boundary_policy": {
+        "standard_daniel": "data/bible/OT/daniel.json",
+        "greek_daniel": "data/bible/OT/danielGK.json",
+        "policy": "Do not import Greek Daniel additions into standard Daniel as a NABRE repair. Do not synthesize Daniel 11 overlay when the controlled source chapter is absent."
+      },
+      "psalms_policy": {
+        "status": "separate_governed_legacy_subsystem",
+        "guard": "scripts/audit-bible-psalms-legacy-subsystem-governance.mjs",
+        "policy": "Do not use canonical OT residual work to reshape the legacy psalms subsystem."
+      },
+      "protected_exclusion": {
+        "lane": "vulgate",
+        "policy": "excluded_active_work_do_not_touch_in_canonical_ot_residual_patch"
+      },
+      "residual_count": 15,
+      "residuals": [
+        {
+          "ref": "1 Samuel 23:29",
+          "book": "1samuel",
+          "chapter": 23,
+          "verse": 29,
+          "classification": "source_heading_residue",
+          "disposition": "governed_pending_controlled_source_evidence"
+        },
+        {
+          "ref": "1 Kings 4:21",
+          "book": "1kings",
+          "chapter": 4,
+          "verse": 21,
+          "classification": "source_heading_residue",
+          "disposition": "governed_pending_controlled_source_evidence"
+        },
+        {
+          "ref": "1 Kings 4:26",
+          "book": "1kings",
+          "chapter": 4,
+          "verse": 26,
+          "classification": "source_heading_residue",
+          "disposition": "governed_pending_controlled_source_evidence"
+        },
+        {
+          "ref": "1 Kings 4:29",
+          "book": "1kings",
+          "chapter": 4,
+          "verse": 29,
+          "classification": "source_heading_residue",
+          "disposition": "governed_pending_controlled_source_evidence"
+        },
+        {
+          "ref": "1 Kings 4:34",
+          "book": "1kings",
+          "chapter": 4,
+          "verse": 34,
+          "classification": "source_heading_residue",
+          "disposition": "governed_pending_controlled_source_evidence"
+        },
+        {
+          "ref": "2 Kings 11:21",
+          "book": "2kings",
+          "chapter": 11,
+          "verse": 21,
+          "classification": "source_heading_residue",
+          "disposition": "governed_pending_controlled_source_evidence"
+        },
+        {
+          "ref": "Nehemiah 4:18",
+          "book": "nehemiah",
+          "chapter": 4,
+          "verse": 18,
+          "classification": "rejected_mismatch",
+          "disposition": "rejected_until_controlled_source_evidence"
+        },
+        {
+          "ref": "Nehemiah 7:73",
+          "book": "nehemiah",
+          "chapter": 7,
+          "verse": 73,
+          "classification": "split_partial_review_required",
+          "disposition": "governed_pending_versification_adapter_review"
+        },
+        {
+          "ref": "Nehemiah 9:38",
+          "book": "nehemiah",
+          "chapter": 9,
+          "verse": 38,
+          "classification": "source_heading_residue",
+          "disposition": "governed_pending_controlled_source_evidence"
+        },
+        {
+          "ref": "Job 41:28",
+          "book": "job",
+          "chapter": 41,
+          "verse": 28,
+          "classification": "rejected_mismatch",
+          "disposition": "rejected_until_controlled_source_evidence"
+        },
+        {
+          "ref": "Job 41:33",
+          "book": "job",
+          "chapter": 41,
+          "verse": 33,
+          "classification": "rejected_mismatch",
+          "disposition": "rejected_until_controlled_source_evidence"
+        },
+        {
+          "ref": "Song of Solomon 6:13",
+          "book": "songofsolomon",
+          "chapter": 6,
+          "verse": 13,
+          "classification": "heading_speaker_residue",
+          "disposition": "governed_pending_heading_speaker_policy"
+        },
+        {
+          "ref": "Ezekiel 20:45",
+          "book": "ezekiel",
+          "chapter": 20,
+          "verse": 45,
+          "classification": "formulaic_candidate_context_wrong",
+          "disposition": "do_not_repair_from_formulaic_match"
+        },
+        {
+          "ref": "Daniel 5:31",
+          "book": "daniel",
+          "chapter": 5,
+          "verse": 31,
+          "classification": "review_required",
+          "disposition": "governed_pending_controlled_source_evidence"
+        },
+        {
+          "ref": "Daniel 11:1-45",
+          "book": "daniel",
+          "chapter": 11,
+          "verse": "1-45",
+          "classification": "source_chapter_absent_do_not_synthesize_overlay",
+          "disposition": "governed_absent_source_chapter_no_synthetic_overlay"
+        }
+      ],
+      "next_step": "Repair only from controlled source evidence or governed versification adapter evidence; otherwise leave residuals governed and continue reducing remaining untrusted Bible corpus lanes."
     }
   },
   "currentState": {
