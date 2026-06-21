@@ -11716,5 +11716,15 @@
       ]
     }
   ],
-  "schema": "bible_book_multiversion_v1"
+  "schema": "bible_book_multiversion_v1",
+  "translationOverlays": {
+    "NABRE": {
+      "20": {
+        "46": "Son of man, turn your face to the south: preach against the south, prophesy against the forest land in the south.",
+        "47": "Say to the forest in the south: Hear the word of the Lord! Thus says the Lord God: See! I am kindling a fire in you that shall devour every green tree as well as every dry tree. The blazing flame shall not be quenched so that from south to north every face shall be scorched by it.",
+        "48": "All flesh shall see that I, the Lord, have kindled it; it shall not be quenched.",
+        "49": "But I said, “Ah! Lord God, they are saying about me, ‘Is not this the one who is forever spinning parables?’”"
+      }
+    }
+  }
 }

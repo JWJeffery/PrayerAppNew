@@ -7463,5 +7463,21 @@
       ]
     }
   ],
-  "schema": "bible_book_multiversion_v1"
+  "schema": "bible_book_multiversion_v1",
+  "translationOverlays": {
+    "NABRE": {
+      "4": {
+        "22": "Solomon’s provisions for each day were thirty kors of fine flour, sixty kors of meal,",
+        "23": "ten fatted oxen, twenty pasture-fed oxen, and a hundred sheep, not counting harts, gazelles, roebucks, and fatted fowl.",
+        "24": "He had dominion over all the land west of the River, from Tiphsah to Gaza, and all its kings, and he had peace on all his borders round about.",
+        "25": "Thus Judah and Israel lived in security, everyone under their own vine and fig tree from Dan to Beer-sheba, as long as Solomon lived.",
+        "27": "The governors, one for each month, provided food for King Solomon and for all the guests at King Solomon’s table. They left nothing unprovided.",
+        "28": "For the chariot horses and draft animals also, each brought his quota of barley and straw to the required place.",
+        "30": "Solomon’s wisdom surpassed that of all the peoples of the East and all the wisdom of Egypt.",
+        "31": "He was wiser than anyone else—wiser than Ethan the Ezrahite, or Heman, Chalcol, and Darda, the musicians—and his fame spread throughout the neighboring peoples.",
+        "32": "Solomon also uttered three thousand proverbs, and his songs numbered a thousand and five.",
+        "33": "He spoke of plants, from the cedar on Lebanon to the hyssop growing out of the wall, and he spoke about beasts, birds, reptiles, and fishes."
+      }
+    }
+  }
 }

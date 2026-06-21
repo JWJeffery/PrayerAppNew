@@ -584,3 +584,39 @@ Explicitly not applied:
 Trust status:
 
 Canonical OT remains not trusted pending remaining unresolved rows and separate governance for Daniel / Greek-addition material.
+
+
+## Phase 4J: Non-Daniel special-case NABRE overlay batch 1
+
+Status: applied as bounded remediation.
+
+Decision:
+
+Reviewed non-Daniel special-case mappings were applied where source and active text aligned and the source row did not carry obvious heading-only residue.
+
+Applied overlay scope:
+
+- Numbers 30:1 -> active 29:40
+- 2 Samuel 19:1 -> active 18:33
+- 1 Kings 5:2-5, 5:7-8, 5:10-13 -> active 4:22-25, 4:27-28, 4:30-33
+- 1 Chronicles 6:52-57, 6:59, 6:61-66 -> active 6:67-72, 6:74, 6:76-81
+- Nehemiah 4:15-17 -> active 4:21-23
+- Job 41:22 -> active 41:30
+- Ezekiel 21:2-5 -> active 20:46-49
+
+Explicitly not applied:
+
+- 1 Samuel 24:1 -> active 23:29 because the source row carries section-heading residue.
+- 1 Kings 5:1, 5:6, 5:9, and 5:14 because the source rows carry section-heading residue.
+- 2 Kings 12:1 -> active 11:21 because the source row carries heading residue.
+- Nehemiah 10:1 -> active 9:38 because the source row carries heading residue.
+- Song of Solomon 7:1 -> active 6:13 because the source row carries heading/speaker-marker residue.
+- Ezekiel 22:17 -> active 20:45 because the candidate is formulaic and contextually wrong.
+- Remaining weak/reject rows.
+- Daniel 11.
+- Greek-addition material.
+- Psalms, deuterocanon, broader canon, or Vulgate material.
+
+Trust status:
+
+Canonical OT remains not trusted pending remaining unresolved rows and separate governance for Daniel / Greek-addition material.

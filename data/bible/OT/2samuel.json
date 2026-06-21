@@ -6397,5 +6397,12 @@
       ]
     }
   ],
-  "schema": "bible_book_multiversion_v1"
+  "schema": "bible_book_multiversion_v1",
+  "translationOverlays": {
+    "NABRE": {
+      "18": {
+        "33": "Chapter 19 The king was shaken, and went up to the room over the city gate and wept. He said as he wept, “My son Absalom! My son, my son Absalom! If only I had died instead of you, Absalom, my son, my son!”"
+      }
+    }
+  }
 }
