@@ -9856,5 +9856,12 @@
       ]
     }
   ],
-  "schema": "bible_book_multiversion_v1"
+  "schema": "bible_book_multiversion_v1",
+  "translationOverlays": {
+    "NABRE": {
+      "41": {
+        "27": "He regards iron as chaff, and bronze as rotten wood."
+      }
+    }
+  }
 }

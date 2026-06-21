@@ -524,3 +524,31 @@ Explicitly not applied:
 Trust status:
 
 Canonical OT remains not trusted pending remaining Daniel, historical, wisdom, prophetic, and singleton remediation.
+
+
+## Phase 4H: Singleton NABRE strong overlay batch 1
+
+Status: applied as bounded remediation.
+
+Decision:
+
+Only the strong singleton mappings identified by source inspection were applied.
+
+Applied overlay scope:
+
+- Deuteronomy 29:28 -> active 29:29
+- Job 41:19 -> active 41:27
+- Isaiah 9:20 -> active 9:21
+- Jeremiah 9:25 -> active 9:26
+- Hosea 14:1 -> active 13:16
+
+Explicitly not applied:
+
+- Medium and weak singleton candidates.
+- Daniel 11.
+- Greek-addition material.
+- Psalms, deuterocanon, broader canon, or Vulgate material.
+
+Trust status:
+
+Canonical OT remains not trusted pending remaining unresolved rows and separate governance for Daniel / Greek-addition material.

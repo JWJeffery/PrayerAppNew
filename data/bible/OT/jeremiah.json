@@ -12559,5 +12559,12 @@
       ]
     }
   ],
-  "schema": "bible_book_multiversion_v1"
+  "schema": "bible_book_multiversion_v1",
+  "translationOverlays": {
+    "NABRE": {
+      "9": {
+        "26": "Egypt and Judah, Edom and the Ammonites, Moab, and those who live in the wilderness and shave their temples. For all the nations are uncircumcised, even the whole house of Israel is uncircumcised at heart."
+      }
+    }
+  }
 }
