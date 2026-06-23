@@ -849,3 +849,62 @@ Blocked claims:
 - Do not claim canonical OT, Psalms, Deuterocanon, Broader Canon, or Vulgate are complete beyond their explicit lane statuses.
 
 Next work may return to Vulgate active-work recovery with protected dirty status preserved.
+## Phase 4S: canonical OT residual checkpoint and range realignment
+
+Status: consolidated checkpoint passed; canonical OT still not globally trusted.
+
+Decision:
+
+The canonical OT residual checkpoint after source-backed residual repair passed with:
+
+- Ledger targets: 13 of 15 closed.
+- Governed remaining: 2 of 15.
+- Remaining governed blockers:
+  - Nehemiah 7:73, split/partial-row review required.
+  - Daniel 11:1-45, historical NABRE source chapter absent; no synthetic overlay authorized.
+
+Closed residual ledger targets in this pass:
+
+- 1 Samuel 23:29.
+- 1 Kings 4:21.
+- 1 Kings 4:26.
+- 1 Kings 4:29.
+- 1 Kings 4:34.
+- 2 Kings 11:21.
+- Nehemiah 9:38.
+- Song of Solomon 6:13.
+- Daniel 5:31.
+- Nehemiah 4:18, closed through the broader Nehemiah 4:15-23 range realignment.
+- Job 41:28, closed through the broader Job 41:24-34 range realignment.
+- Job 41:33, closed through the broader Job 41:24-34 range realignment.
+- Ezekiel 20:45, closed through the broader Ezekiel 20:45-49 range realignment.
+
+Range realignments applied:
+
+- Nehemiah 4:15-23 mapped to controlled NABRE source Nehemiah 4:9-17.
+- Job 41:24-34 mapped to controlled NABRE source Job 41:16-26.
+- Ezekiel 20:45-49 mapped to controlled NABRE source Ezekiel 21:1-5.
+
+Important correction to earlier phases:
+
+Earlier “not applied,” “weak,” “heading residue,” or “formulaic mismatch” classifications for the rows now listed as closed are superseded by the explicit source-backed repair commits in this pass. Those earlier classifications remain useful forensic history, but they are no longer the current state for the closed targets.
+
+Trust status:
+
+Canonical OT residual target remediation is checkpointed, but canonical OT is still not globally trusted. The remaining governed blockers, Psalms subsystem, deuterocanon, broader canon, and protected Vulgate work remain outside this closure claim.
+
+Do not claim:
+
+- whole Bible corpus trusted;
+- canonical OT globally trusted;
+- Psalms normalized;
+- deuterocanon complete;
+- broader canon complete;
+- Vulgate recovered.
+
+Next allowed work:
+
+- Preserve protected active Vulgate dirty state unless Josh explicitly resumes Vulgate recovery.
+- Treat Nehemiah 7:73 and Daniel 11:1-45 as governed blockers, not simple missing-row defects.
+- If global Bible trust is pursued, run a new comprehensive corpus trust audit rather than relying on this residual checkpoint.
+
