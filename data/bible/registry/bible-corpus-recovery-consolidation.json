@@ -17,7 +17,7 @@
     },
     "deuterocanon": {
       "expectedStatus": "not_trusted_underbuilt",
-      "summary": "DRB/NABRE source tranches are applied where controlled. Greek Esther/Daniel source-shape review is complete as governance-only; 3/4 Maccabees remain source-gap work."
+      "summary": "Greek Esther/Daniel remain governed form-policy work. 3/4 Maccabees source acquisition is closed for active NRSV lane and recorded as source-backed repair state."
     },
     "broader_canon": {
       "expectedStatus": "not_trusted_governance_pending",
@@ -36,7 +36,8 @@
       "deuterocanon_drb_completion_tranche_1",
       "deuterocanon_drb_nabre_completion_tranche_2",
       "deuterocanon_remaining_governance_1",
-      "greek_esther_daniel_source_shape_review_1"
+      "greek_esther_daniel_source_shape_review_1",
+      "maccabees_3_4_source_backed_repair_recognized_1"
     ],
     "broader_canon": [
       "broader_canon_governance_1"
@@ -57,107 +58,14 @@
     "vulgate_remediation_complete"
   ],
   "nextAllowedTargets": [
-    "3_4_maccabees_source_acquisition",
     "vulgate_full_source_adjudication",
     "vulgate_pilot_lane_integration_policy",
     "nehemiah_7_73_adapter_versification_policy",
     "daniel_11_controlled_source_acquisition_or_governed_exclusion",
     "manual_greek_esther_form_policy",
-    "manual_greek_daniel_form_policy"
+    "manual_greek_daniel_form_policy",
+    "maccabees_4_known_source_gap_policy"
   ],
-  "latestVulgateCheckpoint": {
-    "id": "vulgate_pilot_lanes_imported_2026_06_23",
-    "commit": "16246b4",
-    "commitMessage": "Add Roman Breviary Vulgate pilot lanes",
-    "status": "not_trusted_vulgate_pilot_lanes_imported_pending_full_adjudication",
-    "boundedClaim": "Roman Breviary Vulgate pilot source lanes are committed and parseable; this is not a full Vulgate corpus trust claim.",
-    "clementine": {
-      "translation_key": "Vulgate",
-      "source_name": "CatholicBible.online Vulgate",
-      "source_status": "pilot_source_selected_pending_full_clementine_adjudication",
-      "status": "pilot_imported_bounded_source_lane",
-      "book_count": 2,
-      "total_chapter_count": 4,
-      "total_verse_count": 130,
-      "books": [
-        {
-          "file": "raw/job.json",
-          "chapter_count": 3,
-          "verse_count": 72
-        },
-        {
-          "file": "raw/1-corinthians.json",
-          "chapter_count": 1,
-          "verse_count": 58
-        }
-      ]
-    },
-    "psalter": {
-      "translation_key": "VulgatePsalter",
-      "source_name": "CatholicBible.online Vulgate Psalter",
-      "source_status": "pilot_source_selected_pending_full_psalter_adjudication",
-      "status": "pilot_imported_bounded_source_lane",
-      "book_count": 1,
-      "total_chapter_count": 9,
-      "total_verse_count": 128,
-      "books": [
-        {
-          "file": "raw/psalms.json",
-          "chapter_count": 9,
-          "verse_count": 128
-        }
-      ]
-    },
-    "filesCommitted": [
-      "data/bible/translations/vulgate-clementine/manifest.json",
-      "data/bible/translations/vulgate-clementine/raw/1-corinthians.json",
-      "data/bible/translations/vulgate-clementine/raw/job.json",
-      "data/bible/translations/vulgate-psalter/manifest.json",
-      "data/bible/translations/vulgate-psalter/raw/psalms.json",
-      "scripts/import-roman-breviary-1960-catholicbible-vulgate-pilot.mjs"
-    ],
-    "removedPlaceholders": [
-      "data/bible/translations/vulgate-clementine/raw/.gitkeep",
-      "data/bible/translations/vulgate-psalter/raw/.gitkeep"
-    ],
-    "blockedClaims": [
-      "vulgate_complete",
-      "vulgate_textually_trusted",
-      "clementine_vulgate_fully_adjudicated",
-      "vulgate_psalter_fully_adjudicated"
-    ]
-  },
-  "latestCanonicalOtPolicyCheckpoint": {
-    "id": "canonical_ot_residual_policy_review_2026_06_23",
-    "status": "policy_review_recorded_no_text_mutation",
-    "commitContext": "post-final-guard-suite-after-vulgate",
-    "governedTargets": [
-      {
-        "id": "nehemiah_7_73",
-        "activePath": "data/bible/OT/nehemiah.json",
-        "classification": "governed_split_partial_review",
-        "policyDecision": "No synthetic repair. Requires adapter/versification policy for split transition material spanning Nehemiah 7:72/7:73/8:1."
-      },
-      {
-        "id": "daniel_11_1_45",
-        "activePath": "data/bible/OT/daniel.json",
-        "classification": "governed_source_absent_no_synthetic_overlay",
-        "policyDecision": "No synthetic overlay. Requires controlled NABRE source acquisition or explicit governed exclusion policy."
-      }
-    ],
-    "boundedClaim": "Canonical OT residual policy review is recorded; canonical OT remains not textually trusted.",
-    "blockedClaims": [
-      "canonical_ot_fully_trusted",
-      "nehemiah_7_73_repaired",
-      "daniel_11_repaired",
-      "daniel_11_source_present",
-      "synthetic_nabre_overlay_allowed"
-    ],
-    "nextAllowedTargets": [
-      "nehemiah_7_73_adapter_versification_policy",
-      "daniel_11_controlled_source_acquisition_or_governed_exclusion"
-    ]
-  },
   "latestDeuterocanonSourceShapeReview": {
     "id": "greek_esther_daniel_source_shape_review_2026_06_23",
     "status": "review_completed_governance_only_no_text_mutation",
@@ -171,8 +79,17 @@
     ],
     "nextAllowedTargets": [
       "manual_greek_esther_form_policy",
-      "manual_greek_daniel_form_policy",
-      "3_4_maccabees_source_acquisition"
+      "manual_greek_daniel_form_policy"
+    ]
+  },
+  "latestMaccabees34SourceState": {
+    "id": "maccabees_3_4_source_backed_repair_recognized_2026_06_23",
+    "status": "source_backed_repair_state_recognized_no_text_mutation",
+    "summary": "Current active 3 and 4 Maccabees files already carry NRSV source-backed repair metadata from BibleGateway NRSVA and the historical repair commit 8177b52. Raw source acquisition is no longer the next blocker for these files; further work is bounded source/form review and known-gap policy, especially 4 Maccabees 10:4 and 11:7-8.",
+    "blockedClaims": [
+      "deuterocanon_complete",
+      "3maccabees_unscoped_complete_claim",
+      "4maccabees_unscoped_complete_claim"
     ]
   }
 }
