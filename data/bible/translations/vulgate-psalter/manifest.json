@@ -1,16 +1,16 @@
 {
   "translation_key": "VulgatePsalter",
-  "source_name": "Vulgate Psalter",
-  "source_status": "source_not_selected",
+  "source_name": "CatholicBible.online Vulgate Psalter",
+  "source_status": "pilot_source_selected_pending_full_psalter_adjudication",
   "source_repo": null,
-  "source_path": null,
+  "source_path": "https://catholicbible.online/vulgate",
   "target_path": "data/bible/translations/vulgate-psalter",
-  "status": "planned_empty_source_lane_no_text_imported",
-  "note": "Scaffold only. Psalm bodies must be imported into this Bible/Psalter source lane before Roman Breviary psalm appointments may resolve Latin psalm text from it.",
-  "imported_at": null,
-  "book_count": 0,
-  "total_chapter_count": 0,
-  "total_verse_count": 0,
+  "status": "pilot_imported_bounded_source_lane",
+  "note": "Bounded pilot import for Roman Breviary psalm appointment binding only. This lane is not yet a complete Vulgate Psalter corpus.",
+  "imported_at": "2026-06-21T03:23:31.474Z",
+  "book_count": 1,
+  "total_chapter_count": 9,
+  "total_verse_count": 128,
   "planned_books": [
     {
       "book_id": "PSALMS",
@@ -29,5 +29,23 @@
       "numbering_status": "roman_breviary_source_appointment_numbering_not_yet_normalized"
     }
   ],
-  "books": []
+  "books": [
+    {
+      "file": "raw/psalms.json",
+      "source_path": "https://catholicbible.online/vulgate",
+      "chapter_count": 9,
+      "verse_count": 128,
+      "imported_chapters": [
+        5,
+        6,
+        7,
+        22,
+        24,
+        26,
+        39,
+        40,
+        41
+      ]
+    }
+  ]
 }

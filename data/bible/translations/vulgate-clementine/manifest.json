@@ -1,16 +1,16 @@
 {
   "translation_key": "Vulgate",
-  "source_name": "Vulgate Clementine",
-  "source_status": "source_not_selected",
+  "source_name": "CatholicBible.online Vulgate",
+  "source_status": "pilot_source_selected_pending_full_clementine_adjudication",
   "source_repo": null,
-  "source_path": null,
+  "source_path": "https://catholicbible.online/vulgate",
   "target_path": "data/bible/translations/vulgate-clementine",
-  "status": "planned_empty_source_lane_no_text_imported",
-  "note": "Scaffold only. Biblical bodies must be imported into this Bible source lane before Roman Breviary scripture readings may resolve Latin body text from it.",
-  "imported_at": null,
-  "book_count": 0,
-  "total_chapter_count": 0,
-  "total_verse_count": 0,
+  "status": "pilot_imported_bounded_source_lane",
+  "note": "Bounded pilot import for Roman Breviary scripture binding only. This lane is not yet a complete Vulgate Bible corpus.",
+  "imported_at": "2026-06-21T03:23:31.473Z",
+  "book_count": 2,
+  "total_chapter_count": 4,
+  "total_verse_count": 130,
   "planned_books": [
     {
       "book_id": "JOB",
@@ -31,5 +31,26 @@
       ]
     }
   ],
-  "books": []
+  "books": [
+    {
+      "file": "raw/job.json",
+      "source_path": "https://catholicbible.online/vulgate",
+      "chapter_count": 3,
+      "verse_count": 72,
+      "imported_chapters": [
+        7,
+        14,
+        19
+      ]
+    },
+    {
+      "file": "raw/1-corinthians.json",
+      "source_path": "https://catholicbible.online/vulgate",
+      "chapter_count": 1,
+      "verse_count": 58,
+      "imported_chapters": [
+        15
+      ]
+    }
+  ]
 }

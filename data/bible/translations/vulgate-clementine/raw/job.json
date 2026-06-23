@@ -1,0 +1,368 @@
+{
+  "book": "job",
+  "book_id": "JOB",
+  "book_title": "Liber Job",
+  "short_title": "Job",
+  "source": {
+    "name": "CatholicBible.online Vulgate",
+    "base_url": "https://catholicbible.online/vulgate",
+    "status": "pilot_machine_text_import",
+    "pages": [
+      {
+        "chapter": 7,
+        "url": "https://catholicbible.online/vulgate?bible_part_no=1&book_no=20&chapter_no=7",
+        "status": 200,
+        "verse_count": 21,
+        "required_verses": [
+          16,
+          17,
+          18,
+          19,
+          20,
+          21
+        ],
+        "required_coverage_ok": true
+      },
+      {
+        "chapter": 14,
+        "url": "https://catholicbible.online/vulgate?bible_part_no=1&book_no=20&chapter_no=14",
+        "status": 200,
+        "verse_count": 22,
+        "required_verses": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        "required_coverage_ok": true
+      },
+      {
+        "chapter": 19,
+        "url": "https://catholicbible.online/vulgate?bible_part_no=1&book_no=20&chapter_no=19",
+        "status": 200,
+        "verse_count": 29,
+        "required_verses": [
+          20,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26,
+          27
+        ],
+        "required_coverage_ok": true
+      }
+    ]
+  },
+  "chapters": [
+    {
+      "chapter": 7,
+      "source_url": "https://catholicbible.online/vulgate?bible_part_no=1&book_no=20&chapter_no=7",
+      "verses": [
+        {
+          "verse": 1,
+          "text": "Militia est vita hominis super terram, et sicut dies mercenarii dies ejus."
+        },
+        {
+          "verse": 2,
+          "text": "Sicut servus desiderat umbram, et sicut mercenarius præstolatur finem operis sui,"
+        },
+        {
+          "verse": 3,
+          "text": "sic et ego habui menses vacuos, et noctes laboriosas enumeravi mihi."
+        },
+        {
+          "verse": 4,
+          "text": "Si dormiero, dicam: Quando consurgam? et rursum expectabo vesperam, et replebor doloribus usque ad tenebras."
+        },
+        {
+          "verse": 5,
+          "text": "Induta est caro mea putredine, et sordibus pulveris cutis mea aruit et contracta est."
+        },
+        {
+          "verse": 6,
+          "text": "Dies mei velocius transierunt quam a texente tela succiditur, et consumpti sunt absque ulla spe."
+        },
+        {
+          "verse": 7,
+          "text": "Memento quia ventus est vita mea, et non revertetur oculus meus ut videat bona."
+        },
+        {
+          "verse": 8,
+          "text": "Nec aspiciet me visus hominis; oculi tui in me, et non subsistam."
+        },
+        {
+          "verse": 9,
+          "text": "Sicut consumitur nubes, et pertransit, sic qui descenderit ad inferos, non ascendet."
+        },
+        {
+          "verse": 10,
+          "text": "Nec revertetur ultra in domum suam, neque cognoscet eum amplius locus ejus."
+        },
+        {
+          "verse": 11,
+          "text": "Quapropter et ego non parcam ori meo: loquar in tribulatione spiritus mei; confabulabor cum amaritudine animæ meæ."
+        },
+        {
+          "verse": 12,
+          "text": "Numquid mare ego sum, aut cetus, quia circumdedisti me carcere?"
+        },
+        {
+          "verse": 13,
+          "text": "Si dixero: Consolabitur me lectulus meus, et relevabor loquens mecum in strato meo:"
+        },
+        {
+          "verse": 14,
+          "text": "terrebis me per somnia, et per visiones horrore concuties."
+        },
+        {
+          "verse": 15,
+          "text": "Quam ob rem elegit suspendium anima mea, et mortem ossa mea."
+        },
+        {
+          "verse": 16,
+          "text": "Desperavi: nequaquam ultra jam vivam: parce mihi, nihil enim sunt dies mei."
+        },
+        {
+          "verse": 17,
+          "text": "Quid est homo, quia magnificas eum? aut quid apponis erga eum cor tuum?"
+        },
+        {
+          "verse": 18,
+          "text": "Visitas eum diluculo, et subito probas illum."
+        },
+        {
+          "verse": 19,
+          "text": "Usquequo non parcis mihi, nec dimittis me ut glutiam salivam meam?"
+        },
+        {
+          "verse": 20,
+          "text": "Peccavi; quid faciam tibi, o custos hominum? quare posuisti me contrarium tibi, et factus sum mihimetipsi gravis?"
+        },
+        {
+          "verse": 21,
+          "text": "Cur non tollis peccatum meum, et quare non aufers iniquitatem meam? ecce nunc in pulvere dormiam, et si mane me quæsieris, non subsistam."
+        }
+      ]
+    },
+    {
+      "chapter": 14,
+      "source_url": "https://catholicbible.online/vulgate?bible_part_no=1&book_no=20&chapter_no=14",
+      "verses": [
+        {
+          "verse": 1,
+          "text": "Homo natus de muliere, brevi vivens tempore, repletur multis miseriis."
+        },
+        {
+          "verse": 2,
+          "text": "Qui quasi flos egreditur et conteritur, et fugit velut umbra, et numquam in eodem statu permanet."
+        },
+        {
+          "verse": 3,
+          "text": "Et dignum ducis super hujuscemodi aperire oculos tuos, et adducere eum tecum in judicium?"
+        },
+        {
+          "verse": 4,
+          "text": "Quis potest facere mundum de immundo conceptum semine? nonne tu qui solus es?"
+        },
+        {
+          "verse": 5,
+          "text": "Breves dies hominis sunt: numerus mensium ejus apud te est: constituisti terminos ejus, qui præteriri non poterunt."
+        },
+        {
+          "verse": 6,
+          "text": "Recede paululum ab eo, ut quiescat, donec optata veniat, sicut mercenarii, dies ejus."
+        },
+        {
+          "verse": 7,
+          "text": "Lignum habet spem: si præcisum fuerit, rursum virescit, et rami ejus pullulant."
+        },
+        {
+          "verse": 8,
+          "text": "Si senuerit in terra radix ejus, et in pulvere emortuus fuerit truncus illius,"
+        },
+        {
+          "verse": 9,
+          "text": "ad odorem aquæ germinabit, et faciet comam, quasi cum primum plantatum est."
+        },
+        {
+          "verse": 10,
+          "text": "Homo vero cum mortuus fuerit, et nudatus, atque consumptus, ubi, quæso, est?"
+        },
+        {
+          "verse": 11,
+          "text": "Quomodo si recedant aquæ de mari, et fluvius vacuefactus arescat:"
+        },
+        {
+          "verse": 12,
+          "text": "sic homo, cum dormierit, non resurget: donec atteratur cælum, non evigilabit, nec consurget de somno suo."
+        },
+        {
+          "verse": 13,
+          "text": "Quis mihi hoc tribuat, ut in inferno protegas me, et abscondas me donec pertranseat furor tuus, et constituas mihi tempus in quo recorderis mei?"
+        },
+        {
+          "verse": 14,
+          "text": "Putasne mortuus homo rursum vivat? cunctis diebus quibus nunc milito, expecto donec veniat immutatio mea."
+        },
+        {
+          "verse": 15,
+          "text": "Vocabis me, et ego respondebo tibi: operi manuum tuarum porriges dexteram."
+        },
+        {
+          "verse": 16,
+          "text": "Tu quidem gressus meos dinumerasti: sed parce peccatis meis."
+        },
+        {
+          "verse": 17,
+          "text": "Signasti quasi in sacculo delicta mea, sed curasti iniquitatem meam."
+        },
+        {
+          "verse": 18,
+          "text": "Mons cadens defluit, et saxum transfertur de loco suo:"
+        },
+        {
+          "verse": 19,
+          "text": "lapides excavant aquæ, et alluvione paulatim terra consumitur: et hominem ergo similiter perdes."
+        },
+        {
+          "verse": 20,
+          "text": "Roborasti eum paululum, ut in perpetuum transiret: immutabis faciem ejus, et emittes eum."
+        },
+        {
+          "verse": 21,
+          "text": "Sive nobiles fuerint filii ejus, sive ignobiles, non intelliget."
+        },
+        {
+          "verse": 22,
+          "text": "Attamen caro ejus, dum vivet, dolebit, et anima illius super semetipso lugebit."
+        }
+      ]
+    },
+    {
+      "chapter": 19,
+      "source_url": "https://catholicbible.online/vulgate?bible_part_no=1&book_no=20&chapter_no=19",
+      "verses": [
+        {
+          "verse": 1,
+          "text": "Respondens autem Job, dixit:"
+        },
+        {
+          "verse": 2,
+          "text": "Usquequo affligitis animam meam, et atteritis me sermonibus?"
+        },
+        {
+          "verse": 3,
+          "text": "En decies confunditis me, et non erubescitis opprimentes me."
+        },
+        {
+          "verse": 4,
+          "text": "Nempe etsi ignoravi, mecum erit ignorantia mea."
+        },
+        {
+          "verse": 5,
+          "text": "At vos contra me erigimini, et arguitis me opprobriis meis."
+        },
+        {
+          "verse": 6,
+          "text": "Saltem nunc intelligite quia Deus non æquo judicio afflixerit me, et flagellis suis me cinxerit."
+        },
+        {
+          "verse": 7,
+          "text": "Ecce clamabo, vim patiens, et nemo audiet; vociferabor, et non est qui judicet."
+        },
+        {
+          "verse": 8,
+          "text": "Semitam meam circumsepsit, et transire non possum: et in calle meo tenebras posuit."
+        },
+        {
+          "verse": 9,
+          "text": "Spoliavit me gloria mea, et abstulit coronam de capite meo."
+        },
+        {
+          "verse": 10,
+          "text": "Destruxit me undique, et pereo: et quasi evulsæ arbori abstulit spem meam."
+        },
+        {
+          "verse": 11,
+          "text": "Iratus est contra me furor ejus, et sic me habuit quasi hostem suum."
+        },
+        {
+          "verse": 12,
+          "text": "Simul venerunt latrones ejus, et fecerunt sibi viam per me, et obsederunt in gyro tabernaculum meum."
+        },
+        {
+          "verse": 13,
+          "text": "Fratres meos longe fecit a me, et noti mei quasi alieni recesserunt a me."
+        },
+        {
+          "verse": 14,
+          "text": "Dereliquerunt me propinqui mei, et qui me noverant obliti sunt mei."
+        },
+        {
+          "verse": 15,
+          "text": "Inquilini domus meæ et ancillæ meæ sicut alienum habuerunt me, et quasi peregrinus fui in oculis eorum."
+        },
+        {
+          "verse": 16,
+          "text": "Servum meum vocavi, et non respondit: ore proprio deprecabar illum."
+        },
+        {
+          "verse": 17,
+          "text": "Halitum meum exhorruit uxor mea, et orabam filios uteri mei."
+        },
+        {
+          "verse": 18,
+          "text": "Stulti quoque despiciebant me: et cum ab eis recessissem, detrahebant mihi."
+        },
+        {
+          "verse": 19,
+          "text": "Abominati sunt me quondam consiliarii mei, et quem maxime diligebam, aversatus est me."
+        },
+        {
+          "verse": 20,
+          "text": "Pelli meæ, consumptis carnibus, adhæsit os meum, et derelicta sunt tantummodo labia circa dentes meos."
+        },
+        {
+          "verse": 21,
+          "text": "Miseremini mei, miseremini mei saltem vos, amici mei, quia manus Domini tetigit me."
+        },
+        {
+          "verse": 22,
+          "text": "Quare persequimini me sicut Deus, et carnibus meis saturamini?"
+        },
+        {
+          "verse": 23,
+          "text": "Quis mihi tribuat ut scribantur sermones mei? quis mihi det ut exarentur in libro"
+        },
+        {
+          "verse": 24,
+          "text": "stylo ferreo et plumbi lamina, vel celte sculpantur in silice?"
+        },
+        {
+          "verse": 25,
+          "text": "Scio enim quod redemptor meus vivit, et in novissimo die de terra surrecturus sum:"
+        },
+        {
+          "verse": 26,
+          "text": "et rursum circumdabor pelle mea, et in carne mea videbo Deum meum:"
+        },
+        {
+          "verse": 27,
+          "text": "quem visurus sum ego ipse, et oculi mei conspecturi sunt, et non alius: reposita est hæc spes mea in sinu meo."
+        },
+        {
+          "verse": 28,
+          "text": "Quare ergo nunc dicitis: Persequamur eum, et radicem verbi inveniamus contra eum?"
+        },
+        {
+          "verse": 29,
+          "text": "Fugite ergo a facie gladii, quoniam ultor iniquitatum gladius est: et scitote esse judicium."
+        }
+      ]
+    }
+  ]
+}

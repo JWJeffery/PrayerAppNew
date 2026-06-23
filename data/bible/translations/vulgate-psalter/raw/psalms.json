@@ -1,0 +1,653 @@
+{
+  "book": "psalms",
+  "book_id": "PSALMS",
+  "book_title": "Liber Psalmorum",
+  "short_title": "Psalms",
+  "source": {
+    "name": "CatholicBible.online Vulgate",
+    "base_url": "https://catholicbible.online/vulgate",
+    "status": "pilot_machine_text_import",
+    "pages": [
+      {
+        "chapter": 5,
+        "url": "https://catholicbible.online/vulgate?bible_part_no=1&book_no=21&chapter_no=5",
+        "status": 200,
+        "verse_count": 13,
+        "required_verses": [],
+        "required_coverage_ok": true
+      },
+      {
+        "chapter": 6,
+        "url": "https://catholicbible.online/vulgate?bible_part_no=1&book_no=21&chapter_no=6",
+        "status": 200,
+        "verse_count": 11,
+        "required_verses": [],
+        "required_coverage_ok": true
+      },
+      {
+        "chapter": 7,
+        "url": "https://catholicbible.online/vulgate?bible_part_no=1&book_no=21&chapter_no=7",
+        "status": 200,
+        "verse_count": 18,
+        "required_verses": [],
+        "required_coverage_ok": true
+      },
+      {
+        "chapter": 22,
+        "url": "https://catholicbible.online/vulgate?bible_part_no=1&book_no=21&chapter_no=22",
+        "status": 200,
+        "verse_count": 6,
+        "required_verses": [],
+        "required_coverage_ok": true
+      },
+      {
+        "chapter": 24,
+        "url": "https://catholicbible.online/vulgate?bible_part_no=1&book_no=21&chapter_no=24",
+        "status": 200,
+        "verse_count": 22,
+        "required_verses": [],
+        "required_coverage_ok": true
+      },
+      {
+        "chapter": 26,
+        "url": "https://catholicbible.online/vulgate?bible_part_no=1&book_no=21&chapter_no=26",
+        "status": 200,
+        "verse_count": 14,
+        "required_verses": [],
+        "required_coverage_ok": true
+      },
+      {
+        "chapter": 39,
+        "url": "https://catholicbible.online/vulgate?bible_part_no=1&book_no=21&chapter_no=39",
+        "status": 200,
+        "verse_count": 18,
+        "required_verses": [],
+        "required_coverage_ok": true
+      },
+      {
+        "chapter": 40,
+        "url": "https://catholicbible.online/vulgate?bible_part_no=1&book_no=21&chapter_no=40",
+        "status": 200,
+        "verse_count": 14,
+        "required_verses": [],
+        "required_coverage_ok": true
+      },
+      {
+        "chapter": 41,
+        "url": "https://catholicbible.online/vulgate?bible_part_no=1&book_no=21&chapter_no=41",
+        "status": 200,
+        "verse_count": 12,
+        "required_verses": [],
+        "required_coverage_ok": true
+      }
+    ]
+  },
+  "chapters": [
+    {
+      "chapter": 5,
+      "source_url": "https://catholicbible.online/vulgate?bible_part_no=1&book_no=21&chapter_no=5",
+      "verses": [
+        {
+          "verse": 1,
+          "text": "In finem, pro ea quæ hæreditatem consequitur. Psalmus David."
+        },
+        {
+          "verse": 2,
+          "text": "Verba mea auribus percipe, Domine; intellige clamorem meum."
+        },
+        {
+          "verse": 3,
+          "text": "Intende voci orationis meæ, rex meus et Deus meus."
+        },
+        {
+          "verse": 4,
+          "text": "Quoniam ad te orabo, Domine: mane exaudies vocem meam."
+        },
+        {
+          "verse": 5,
+          "text": "Mane astabo tibi, et videbo quoniam non Deus volens iniquitatem tu es."
+        },
+        {
+          "verse": 6,
+          "text": "Neque habitabit juxta te malignus, neque permanebunt injusti ante oculos tuos."
+        },
+        {
+          "verse": 7,
+          "text": "Odisti omnes qui operantur iniquitatem; perdes omnes qui loquuntur mendacium. Virum sanguinum et dolosum abominabitur Dominus."
+        },
+        {
+          "verse": 8,
+          "text": "Ego autem in multitudine misericordiæ tuæ introibo in domum tuam; adorabo ad templum sanctum tuum in timore tuo."
+        },
+        {
+          "verse": 9,
+          "text": "Domine, deduc me in justitia tua: propter inimicos meos dirige in conspectu tuo viam meam."
+        },
+        {
+          "verse": 10,
+          "text": "Quoniam non est in ore eorum veritas; cor eorum vanum est."
+        },
+        {
+          "verse": 11,
+          "text": "Sepulchrum patens est guttur eorum; linguis suis dolose agebant: judica illos, Deus. Decidant a cogitationibus suis; secundum multitudinem impietatum eorum expelle eos, quoniam irritaverunt te, Domine."
+        },
+        {
+          "verse": 12,
+          "text": "Et lætentur omnes qui sperant in te; in æternum exsultabunt, et habitabis in eis. Et gloriabuntur in te omnes qui diligunt nomen tuum,"
+        },
+        {
+          "verse": 13,
+          "text": "quoniam tu benedices justo. Domine, ut scuto bonæ voluntatis tuæ coronasti nos."
+        }
+      ]
+    },
+    {
+      "chapter": 6,
+      "source_url": "https://catholicbible.online/vulgate?bible_part_no=1&book_no=21&chapter_no=6",
+      "verses": [
+        {
+          "verse": 1,
+          "text": "In finem, in carminibus. Psalmus David. Pro octava."
+        },
+        {
+          "verse": 2,
+          "text": "Domine, ne in furore tuo arguas me, neque in ira tua corripias me."
+        },
+        {
+          "verse": 3,
+          "text": "Miserere mei, Domine, quoniam infirmus sum; sana me, Domine, quoniam conturbata sunt ossa mea."
+        },
+        {
+          "verse": 4,
+          "text": "Et anima mea turbata est valde; sed tu, Domine, usquequo?"
+        },
+        {
+          "verse": 5,
+          "text": "Convertere, Domine, et eripe animam meam; salvum me fac propter misericordiam tuam."
+        },
+        {
+          "verse": 6,
+          "text": "Quoniam non est in morte qui memor sit tui; in inferno autem quis confitebitur tibi?"
+        },
+        {
+          "verse": 7,
+          "text": "Laboravi in gemitu meo; lavabo per singulas noctes lectum meum: lacrimis meis stratum meum rigabo."
+        },
+        {
+          "verse": 8,
+          "text": "Turbatus est a furore oculus meus; inveteravi inter omnes inimicos meos."
+        },
+        {
+          "verse": 9,
+          "text": "Discedite a me omnes qui operamini iniquitatem, quoniam exaudivit Dominus vocem fletus mei."
+        },
+        {
+          "verse": 10,
+          "text": "Exaudivit Dominus deprecationem meam; Dominus orationem meam suscepit."
+        },
+        {
+          "verse": 11,
+          "text": "Erubescant, et conturbentur vehementer, omnes inimici mei; convertantur, et erubescant valde velociter."
+        }
+      ]
+    },
+    {
+      "chapter": 7,
+      "source_url": "https://catholicbible.online/vulgate?bible_part_no=1&book_no=21&chapter_no=7",
+      "verses": [
+        {
+          "verse": 1,
+          "text": "Psalmus David, quem cantavit Domino pro verbis Chusi, filii Jemini."
+        },
+        {
+          "verse": 2,
+          "text": "Domine Deus meus, in te speravi; salvum me fac ex omnibus persequentibus me, et libera me:"
+        },
+        {
+          "verse": 3,
+          "text": "nequando rapiat ut leo animam meam, dum non est qui redimat, neque qui salvum faciat."
+        },
+        {
+          "verse": 4,
+          "text": "Domine Deus meus, si feci istud, si est iniquitas in manibus meis,"
+        },
+        {
+          "verse": 5,
+          "text": "si reddidi retribuentibus mihi mala, decidam merito ab inimicis meis inanis."
+        },
+        {
+          "verse": 6,
+          "text": "Persequatur inimicus animam meam, et comprehendat; et conculcet in terra vitam meam, et gloriam meam in pulverem deducat."
+        },
+        {
+          "verse": 7,
+          "text": "Exsurge, Domine, in ira tua, et exaltare in finibus inimicorum meorum: et exsurge, Domine Deus meus, in præcepto quod mandasti,"
+        },
+        {
+          "verse": 8,
+          "text": "et synagoga populorum circumdabit te: et propter hanc in altum regredere:"
+        },
+        {
+          "verse": 9,
+          "text": "Dominus judicat populos. Judica me, Domine, secundum justitiam meam, et secundum innocentiam meam super me."
+        },
+        {
+          "verse": 10,
+          "text": "Consumetur nequitia peccatorum, et diriges justum, scrutans corda et renes, Deus."
+        },
+        {
+          "verse": 11,
+          "text": "Justum adjutorium meum a Domino, qui salvos facit rectos corde."
+        },
+        {
+          "verse": 12,
+          "text": "Deus judex justus, fortis, et patiens; numquid irascitur per singulos dies?"
+        },
+        {
+          "verse": 13,
+          "text": "Nisi conversi fueritis, gladium suum vibrabit; arcum suum tetendit, et paravit illum."
+        },
+        {
+          "verse": 14,
+          "text": "Et in eo paravit vasa mortis, sagittas suas ardentibus effecit."
+        },
+        {
+          "verse": 15,
+          "text": "Ecce parturiit injustitiam; concepit dolorem, et peperit iniquitatem."
+        },
+        {
+          "verse": 16,
+          "text": "Lacum aperuit, et effodit eum; et incidit in foveam quam fecit."
+        },
+        {
+          "verse": 17,
+          "text": "Convertetur dolor ejus in caput ejus, et in verticem ipsius iniquitas ejus descendet."
+        },
+        {
+          "verse": 18,
+          "text": "Confitebor Domino secundum justitiam ejus, et psallam nomini Domini altissimi."
+        }
+      ]
+    },
+    {
+      "chapter": 22,
+      "source_url": "https://catholicbible.online/vulgate?bible_part_no=1&book_no=21&chapter_no=22",
+      "verses": [
+        {
+          "verse": 1,
+          "text": "Psalmus David. Dominus regit me, et nihil mihi deerit:"
+        },
+        {
+          "verse": 2,
+          "text": "in loco pascuæ, ibi me collocavit. Super aquam refectionis educavit me;"
+        },
+        {
+          "verse": 3,
+          "text": "animam meam convertit. Deduxit me super semitas justitiæ propter nomen suum."
+        },
+        {
+          "verse": 4,
+          "text": "Nam etsi ambulavero in medio umbræ mortis, non timebo mala, quoniam tu mecum es. Virga tua, et baculus tuus, ipsa me consolata sunt."
+        },
+        {
+          "verse": 5,
+          "text": "Parasti in conspectu meo mensam adversus eos qui tribulant me; impinguasti in oleo caput meum: et calix meus inebrians, quam præclarus est!"
+        },
+        {
+          "verse": 6,
+          "text": "Et misericordia tua subsequetur me omnibus diebus vitæ meæ; et ut inhabitem in domo Domini in longitudinem dierum."
+        }
+      ]
+    },
+    {
+      "chapter": 24,
+      "source_url": "https://catholicbible.online/vulgate?bible_part_no=1&book_no=21&chapter_no=24",
+      "verses": [
+        {
+          "verse": 1,
+          "text": "In finem. Psalmus David. Ad te, Domine, levavi animam meam:"
+        },
+        {
+          "verse": 2,
+          "text": "Deus meus, in te confido; non erubescam."
+        },
+        {
+          "verse": 3,
+          "text": "Neque irrideant me inimici mei: etenim universi qui sustinent te, non confundentur."
+        },
+        {
+          "verse": 4,
+          "text": "Confundantur omnes iniqua agentes supervacue. Vias tuas, Domine, demonstra mihi, et semitas tuas edoce me."
+        },
+        {
+          "verse": 5,
+          "text": "Dirige me in veritate tua, et doce me, quia tu es Deus salvator meus, et te sustinui tota die."
+        },
+        {
+          "verse": 6,
+          "text": "Reminiscere miserationum tuarum, Domine, et misericordiarum tuarum quæ a sæculo sunt."
+        },
+        {
+          "verse": 7,
+          "text": "Delicta juventutis meæ, et ignorantias meas, ne memineris. Secundum misericordiam tuam memento mei tu, propter bonitatem tuam, Domine."
+        },
+        {
+          "verse": 8,
+          "text": "Dulcis et rectus Dominus; propter hoc legem dabit delinquentibus in via."
+        },
+        {
+          "verse": 9,
+          "text": "Diriget mansuetos in judicio; docebit mites vias suas."
+        },
+        {
+          "verse": 10,
+          "text": "Universæ viæ Domini, misericordia et veritas, requirentibus testamentum ejus et testimonia ejus."
+        },
+        {
+          "verse": 11,
+          "text": "Propter nomen tuum, Domine, propitiaberis peccato meo; multum est enim."
+        },
+        {
+          "verse": 12,
+          "text": "Quis est homo qui timet Dominum? legem statuit ei in via quam elegit."
+        },
+        {
+          "verse": 13,
+          "text": "Anima ejus in bonis demorabitur, et semen ejus hæreditabit terram."
+        },
+        {
+          "verse": 14,
+          "text": "Firmamentum est Dominus timentibus eum; et testamentum ipsius ut manifestetur illis."
+        },
+        {
+          "verse": 15,
+          "text": "Oculi mei semper ad Dominum, quoniam ipse evellet de laqueo pedes meos."
+        },
+        {
+          "verse": 16,
+          "text": "Respice in me, et miserere mei, quia unicus et pauper sum ego."
+        },
+        {
+          "verse": 17,
+          "text": "Tribulationes cordis mei multiplicatæ sunt: de necessitatibus meis erue me."
+        },
+        {
+          "verse": 18,
+          "text": "Vide humilitatem meam et laborem meum, et dimitte universa delicta mea."
+        },
+        {
+          "verse": 19,
+          "text": "Respice inimicos meos, quoniam multiplicati sunt, et odio iniquo oderunt me."
+        },
+        {
+          "verse": 20,
+          "text": "Custodi animam meam, et erue me: non erubescam, quoniam speravi in te."
+        },
+        {
+          "verse": 21,
+          "text": "Innocentes et recti adhæserunt mihi, quia sustinui te."
+        },
+        {
+          "verse": 22,
+          "text": "Libera, Deus, Israël ex omnibus tribulationibus suis."
+        }
+      ]
+    },
+    {
+      "chapter": 26,
+      "source_url": "https://catholicbible.online/vulgate?bible_part_no=1&book_no=21&chapter_no=26",
+      "verses": [
+        {
+          "verse": 1,
+          "text": "Psalmus David, priusquam liniretur. Dominus illuminatio mea et salus mea: quem timebo? Dominus protector vitæ meæ: a quo trepidabo?"
+        },
+        {
+          "verse": 2,
+          "text": "Dum appropiant super me nocentes ut edant carnes meas, qui tribulant me inimici mei, ipsi infirmati sunt et ceciderunt."
+        },
+        {
+          "verse": 3,
+          "text": "Si consistant adversum me castra, non timebit cor meum; si exsurgat adversum me prælium, in hoc ego sperabo."
+        },
+        {
+          "verse": 4,
+          "text": "Unam petii a Domino, hanc requiram, ut inhabitem in domo Domini omnibus diebus vitæ meæ; ut videam voluptatem Domini, et visitem templum ejus."
+        },
+        {
+          "verse": 5,
+          "text": "Quoniam abscondit me in tabernaculo suo; in die malorum protexit me in abscondito tabernaculi sui."
+        },
+        {
+          "verse": 6,
+          "text": "In petra exaltavit me, et nunc exaltavit caput meum super inimicos meos. Circuivi, et immolavi in tabernaculo ejus hostiam vociferationis; cantabo, et psalmum dicam Domino."
+        },
+        {
+          "verse": 7,
+          "text": "Exaudi, Domine, vocem meam, qua clamavi ad te; miserere mei, et exaudi me."
+        },
+        {
+          "verse": 8,
+          "text": "Tibi dixit cor meum: Exquisivit te facies mea; faciem tuam, Domine, requiram."
+        },
+        {
+          "verse": 9,
+          "text": "Ne avertas faciem tuam a me; ne declines in ira a servo tuo. Adjutor meus esto; ne derelinquas me, neque despicias me, Deus salutaris meus."
+        },
+        {
+          "verse": 10,
+          "text": "Quoniam pater meus et mater mea dereliquerunt me; Dominus autem assumpsit me."
+        },
+        {
+          "verse": 11,
+          "text": "Legem pone mihi, Domine, in via tua, et dirige me in semitam rectam, propter inimicos meos."
+        },
+        {
+          "verse": 12,
+          "text": "Ne tradideris me in animas tribulantium me, quoniam insurrexerunt in me testes iniqui, et mentita est iniquitas sibi."
+        },
+        {
+          "verse": 13,
+          "text": "Credo videre bona Domini in terra viventium."
+        },
+        {
+          "verse": 14,
+          "text": "Expecta Dominum, viriliter age: et confortetur cor tuum, et sustine Dominum."
+        }
+      ]
+    },
+    {
+      "chapter": 39,
+      "source_url": "https://catholicbible.online/vulgate?bible_part_no=1&book_no=21&chapter_no=39",
+      "verses": [
+        {
+          "verse": 1,
+          "text": "In finem. Psalmus ipsi David."
+        },
+        {
+          "verse": 2,
+          "text": "Exspectans exspectavi Dominum, et intendit mihi."
+        },
+        {
+          "verse": 3,
+          "text": "Et exaudivit preces meas, et eduxit me de lacu miseriæ et de luto fæcis. Et statuit super petram pedes meos, et direxit gressus meos."
+        },
+        {
+          "verse": 4,
+          "text": "Et immisit in os meum canticum novum, carmen Deo nostro. Videbunt multi, et timebunt, et sperabunt in Domino."
+        },
+        {
+          "verse": 5,
+          "text": "Beatus vir cujus est nomen Domini spes ejus, et non respexit in vanitates et insanias falsas."
+        },
+        {
+          "verse": 6,
+          "text": "Multa fecisti tu, Domine Deus meus, mirabilia tua; et cogitationibus tuis non est qui similis sit tibi. Annuntiavi et locutus sum: multiplicati sunt super numerum."
+        },
+        {
+          "verse": 7,
+          "text": "Sacrificium et oblationem noluisti; aures autem perfecisti mihi. Holocaustum et pro peccato non postulasti;"
+        },
+        {
+          "verse": 8,
+          "text": "tunc dixi: Ecce venio. In capite libri scriptum est de me,"
+        },
+        {
+          "verse": 9,
+          "text": "ut facerem voluntatem tuam. Deus meus, volui, et legem tuam in medio cordis mei."
+        },
+        {
+          "verse": 10,
+          "text": "Annuntiavi justitiam tuam in ecclesia magna; ecce labia mea non prohibebo: Domine, tu scisti."
+        },
+        {
+          "verse": 11,
+          "text": "Justitiam tuam non abscondi in corde meo; veritatem tuam et salutare tuum dixi; non abscondi misericordiam tuam et veritatem tuam a concilio multo."
+        },
+        {
+          "verse": 12,
+          "text": "Tu autem, Domine, ne longe facias miserationes tuas a me; misericordia tua et veritas tua semper susceperunt me."
+        },
+        {
+          "verse": 13,
+          "text": "Quoniam circumdederunt me mala quorum non est numerus; comprehenderunt me iniquitates meæ, et non potui ut viderem. Multiplicatæ sunt super capillos capitis mei, et cor meum dereliquit me."
+        },
+        {
+          "verse": 14,
+          "text": "Complaceat tibi, Domine, ut eruas me; Domine, ad adjuvandum me respice."
+        },
+        {
+          "verse": 15,
+          "text": "Confundantur et revereantur simul, qui quærunt animam meam ut auferant eam; convertantur retrorsum et revereantur, qui volunt mihi mala."
+        },
+        {
+          "verse": 16,
+          "text": "Ferant confestim confusionem suam, qui dicunt mihi: Euge, euge!"
+        },
+        {
+          "verse": 17,
+          "text": "Exsultent et lætentur super te omnes quærentes te; et dicant semper: Magnificetur Dominus, qui diligunt salutare tuum."
+        },
+        {
+          "verse": 18,
+          "text": "Ego autem mendicus sum et pauper; Dominus sollicitus est mei. Adjutor meus et protector meus tu es; Deus meus, ne tardaveris."
+        }
+      ]
+    },
+    {
+      "chapter": 40,
+      "source_url": "https://catholicbible.online/vulgate?bible_part_no=1&book_no=21&chapter_no=40",
+      "verses": [
+        {
+          "verse": 1,
+          "text": "In finem. Psalmus ipsi David."
+        },
+        {
+          "verse": 2,
+          "text": "Beatus qui intelligit super egenum et pauperem: in die mala liberabit eum Dominus."
+        },
+        {
+          "verse": 3,
+          "text": "Dominus conservet eum, et vivificet eum, et beatum faciat eum in terra, et non tradat eum in animam inimicorum ejus."
+        },
+        {
+          "verse": 4,
+          "text": "Dominus opem ferat illi super lectum doloris ejus; universum stratum ejus versasti in infirmitate ejus."
+        },
+        {
+          "verse": 5,
+          "text": "Ego dixi: Domine, miserere mei; sana animam meam, quia peccavi tibi."
+        },
+        {
+          "verse": 6,
+          "text": "Inimici mei dixerunt mala mihi: Quando morietur, et peribit nomen ejus?"
+        },
+        {
+          "verse": 7,
+          "text": "Et si ingrediebatur ut videret, vana loquebatur; cor ejus congregavit iniquitatem sibi. Egrediebatur foras et loquebatur."
+        },
+        {
+          "verse": 8,
+          "text": "In idipsum adversum me susurrabant omnes inimici mei; adversum me cogitabant mala mihi."
+        },
+        {
+          "verse": 9,
+          "text": "Verbum iniquum constituerunt adversum me: Numquid qui dormit non adjiciet ut resurgat?"
+        },
+        {
+          "verse": 10,
+          "text": "Etenim homo pacis meæ in quo speravi, qui edebat panes meos, magnificavit super me supplantationem."
+        },
+        {
+          "verse": 11,
+          "text": "Tu autem, Domine, miserere mei, et resuscita me; et retribuam eis."
+        },
+        {
+          "verse": 12,
+          "text": "In hoc cognovi quoniam voluisti me, quoniam non gaudebit inimicus meus super me."
+        },
+        {
+          "verse": 13,
+          "text": "Me autem propter innocentiam suscepisti; et confirmasti me in conspectu tuo in æternum."
+        },
+        {
+          "verse": 14,
+          "text": "Benedictus Dominus Deus Israël a sæculo et usque in sæculum. Fiat, fiat."
+        }
+      ]
+    },
+    {
+      "chapter": 41,
+      "source_url": "https://catholicbible.online/vulgate?bible_part_no=1&book_no=21&chapter_no=41",
+      "verses": [
+        {
+          "verse": 1,
+          "text": "In finem. Intellectus filiis Core."
+        },
+        {
+          "verse": 2,
+          "text": "Quemadmodum desiderat cervus ad fontes aquarum, ita desiderat anima mea ad te, Deus."
+        },
+        {
+          "verse": 3,
+          "text": "Sitivit anima mea ad Deum fortem, vivum; quando veniam, et apparebo ante faciem Dei?"
+        },
+        {
+          "verse": 4,
+          "text": "Fuerunt mihi lacrimæ meæ panes die ac nocte, dum dicitur mihi quotidie: Ubi est Deus tuus?"
+        },
+        {
+          "verse": 5,
+          "text": "Hæc recordatus sum, et effudi in me animam meam, quoniam transibo in locum tabernaculi admirabilis, usque ad domum Dei, in voce exsultationis et confessionis, sonus epulantis."
+        },
+        {
+          "verse": 6,
+          "text": "Quare tristis es, anima mea? et quare conturbas me? Spera in Deo, quoniam adhuc confitebor illi, salutare vultus mei,"
+        },
+        {
+          "verse": 7,
+          "text": "et Deus meus. Ad meipsum anima mea conturbata est: propterea memor ero tui de terra Jordanis et Hermoniim a monte modico."
+        },
+        {
+          "verse": 8,
+          "text": "Abyssus abyssum invocat, in voce cataractarum tuarum; omnia excelsa tua, et fluctus tui super me transierunt."
+        },
+        {
+          "verse": 9,
+          "text": "In die mandavit Dominus misericordiam suam, et nocte canticum ejus; apud me oratio Deo vitæ meæ."
+        },
+        {
+          "verse": 10,
+          "text": "Dicam Deo: Susceptor meus es; quare oblitus es mei? et quare contristatus incedo, dum affligit me inimicus?"
+        },
+        {
+          "verse": 11,
+          "text": "Dum confringuntur ossa mea, exprobraverunt mihi qui tribulant me inimici mei, dum dicunt mihi per singulos dies: Ubi est Deus tuus?"
+        },
+        {
+          "verse": 12,
+          "text": "Quare tristis es, anima mea? et quare conturbas me? Spera in Deo, quoniam adhuc confitebor illi, salutare vultus mei, et Deus meus."
+        }
+      ]
+    }
+  ]
+}
