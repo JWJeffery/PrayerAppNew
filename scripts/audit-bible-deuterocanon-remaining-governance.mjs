@@ -39,9 +39,21 @@ for (const key of ['estherGK', 'danielGK']) {
 
 for (const key of ['3maccabees', '4maccabees']) {
   const book = governance.inspectedMaccabees?.[key];
-  if (!book) failures.push({ type: 'missing-maccabees-governance', key });
-  if (book && book.decision !== 'source_gap_do_not_patch') {
+  if (!book) {
+    failures.push({ type: 'missing-maccabees-governance', key });
+    continue;
+  }
+
+  if (!String(book.decision || '').startsWith('source_backed_repaired')) {
     failures.push({ type: 'unsafe-maccabees-decision', key, decision: book.decision });
+  }
+
+  if (book.sourceWitness !== 'BibleGateway NRSVA') {
+    failures.push({ type: 'maccabees-source-witness-mismatch', key, actual: book.sourceWitness || null });
+  }
+
+  if (book.repairStatus !== 'source_backed_repaired') {
+    failures.push({ type: 'maccabees-repair-status-mismatch', key, actual: book.repairStatus || null });
   }
 }
 
@@ -53,7 +65,9 @@ for (const blocked of [
   'greek_esther_drb_full_overlay_without_form_policy',
   'greek_daniel_drb_full_overlay_without_form_policy',
   'ordinary_esther_promotion_to_greek_esther',
-  'ordinary_daniel_promotion_to_greek_daniel'
+  'ordinary_daniel_promotion_to_greek_daniel',
+  '3maccabees_claim_complete_without_source_witness',
+  '4maccabees_claim_complete_without_source_gap_policy'
 ]) {
   if (!Array.isArray(governance.blockedPatches) || !governance.blockedPatches.includes(blocked)) {
     failures.push({ type: 'missing-blocked-patch', blocked });
