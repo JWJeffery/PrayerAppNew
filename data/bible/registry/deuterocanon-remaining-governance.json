@@ -3,9 +3,9 @@
   "status": "not_trusted_remaining_deuterocanon_governed",
   "decisions": {
     "greekBookPolicy": "Do not patch Greek Daniel or Greek Esther by simple full-source overlay. Their DRB/NABRE source deltas include nontrivial versification and book-shape differences.",
-    "maccabeesPolicy": "Do not treat active 3 Maccabees or 4 Maccabees as complete. Repo-history candidates inspected so far are either unparseable in current JSON inspection or identical to the active sparse files.",
-    "sourcePolicy": "No direct full local source for 3 Maccabees or 4 Maccabees has been identified in this tranche.",
-    "trustPolicy": "Deuterocanon remains not trusted/underbuilt after DRB/NABRE completion tranches and Greek Esther/Daniel source-shape review.",
+    "maccabeesPolicy": "Do not treat 3 Maccabees or 4 Maccabees as source gaps. Current active files are source-backed NRSV repairs from BibleGateway NRSVA; they remain bounded repairs, not a deuterocanon-complete claim.",
+    "sourcePolicy": "3 and 4 Maccabees source acquisition is closed for the active NRSV lane by commit 8177b52 / active metadata sourceWitness BibleGateway NRSVA. Further work, if any, is form/provenance review rather than raw source acquisition.",
+    "trustPolicy": "Deuterocanon remains not trusted/underbuilt after DRB/NABRE completion tranches, Greek Esther/Daniel source-shape review, and recognition of 3/4 Maccabees source-backed repair state.",
     "sourceShapeReviewPolicy": "Greek Esther and Greek Daniel source-shape review is complete as governance only. Row-count overlap is not enough to authorize overlay or repair in Greek-addition territory. Further work requires manual form/versification policy before text mutation."
   },
   "inspectedGreekBooks": {
@@ -62,17 +62,26 @@
   "inspectedMaccabees": {
     "3maccabees": {
       "activePath": "data/bible/OT/3maccabees.json",
-      "activeRows": 40,
-      "activeTranslationShape": "rawText",
-      "historyFinding": "parseable historical active-path copy is identical to active sparse file; other inspected historical candidates were not parseable in current JSON inspection",
-      "decision": "source_gap_do_not_patch"
+      "activeRows": 228,
+      "activeTranslationShape": "chapters_verses_nrsv",
+      "sourceWitness": "BibleGateway NRSVA",
+      "repairStatus": "source_backed_repaired",
+      "repairCommit": "8177b52",
+      "decision": "source_backed_repaired_no_acquisition_needed"
     },
     "4maccabees": {
       "activePath": "data/bible/OT/4maccabees.json",
-      "activeRows": 46,
-      "activeTranslationShape": "rawText",
-      "historyFinding": "parseable historical active-path copy is identical to active sparse file; other inspected historical candidates were not parseable in current JSON inspection",
-      "decision": "source_gap_do_not_patch"
+      "activeRows": 479,
+      "activeTranslationShape": "chapters_verses_nrsv",
+      "sourceWitness": "BibleGateway NRSVA",
+      "repairStatus": "source_backed_repaired",
+      "repairCommit": "8177b52",
+      "knownSourceGaps": [
+        "10:4",
+        "11:7",
+        "11:8"
+      ],
+      "decision": "source_backed_repaired_with_known_source_gaps_no_acquisition_needed"
     }
   },
   "blockedPatches": [
@@ -83,6 +92,8 @@
     "greek_esther_drb_full_overlay_without_form_policy",
     "greek_daniel_drb_full_overlay_without_form_policy",
     "ordinary_esther_promotion_to_greek_esther",
-    "ordinary_daniel_promotion_to_greek_daniel"
+    "ordinary_daniel_promotion_to_greek_daniel",
+    "3maccabees_claim_complete_without_source_witness",
+    "4maccabees_claim_complete_without_source_gap_policy"
   ]
 }
