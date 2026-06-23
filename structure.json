@@ -1,10 +1,10 @@
 {
   "project_manifest": {
     "name": "Universal Office",
-    "version": "3.8.151",
+    "version": "3.8.152",
     "last_updated": "2026-06-23",
     "bcp_compliance": "100%",
-    "operational_status": "Current operational status as of 2026-06-23: PrayerAppNew records the canonical OT residual checkpoint through ce82db6. Canonical OT residual ledger targets are 13/15 closed, with Nehemiah 7:73 governed as split/partial-row review and Daniel 11:1-45 governed as historical NABRE source-chapter absent/no synthetic overlay. This is not a whole-Bible trust claim; Psalms, deuterocanon, broader canon, and protected Vulgate remain outside this checkpoint. Public entry/mobile stabilization remains closed through 1cd7c04, and LOTH progress pointers remain unchanged.",
+    "operational_status": "Current operational status as of 2026-06-23: PrayerAppNew records the Bible corpus checkpoint through 21bd48f. Canonical OT non-Psalms completeness guard passes for 38 ordinary OT books / 779 chapters. Psalms remain a governed 155-record legacy psalter subsystem, with Rotherham and DRB lanes populated and guarded for Psalms 1-150 and Psalms 151-155 outside those source scopes. This is not a whole-Bible trust claim; deuterocanon, broader canon, protected Vulgate, and remaining governed blockers remain outside this checkpoint.",
     "architectural_decisions_2026_05_25": [
       {
         "id": "roman_loth_composition_map_source_navigation",
@@ -1066,6 +1066,28 @@
         "broader canon complete",
         "Vulgate recovered"
       ]
+    },
+    "latest_bible_psalms_checkpoint": {
+      "id": "drb_psalms_active_psalter_lane_2026_06_23",
+      "commit": "21bd48f",
+      "commitMessage": "Populate DRB Psalms active psalter lane",
+      "activePsalterPath": "data/bible/OT/psalms.json",
+      "sourcePath": "data/bible/translations/drb-original-douay-rheims/raw/psalms.json",
+      "status": "bounded_lane_populated_and_guarded_not_global_psalms_trust",
+      "importedPsalmCount": 150,
+      "importedVerseRows": 2527,
+      "skippedExtendedPsalms": [
+        151,
+        152,
+        153,
+        154,
+        155
+      ],
+      "guardsPassed": [
+        "scripts/audit-rotherham-psalms.mjs",
+        "scripts/audit-douay-rheims-psalms.mjs"
+      ],
+      "trustLimit": "Psalms remain governed legacy psalter subsystem; Rotherham and DRB lanes are source-scoped for Psalms 1-150 only, while Psalms 151-155 remain outside those source scopes."
     }
   },
   "roadmap_summary": {

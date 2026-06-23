@@ -908,3 +908,33 @@ Next allowed work:
 - Treat Nehemiah 7:73 and Daniel 11:1-45 as governed blockers, not simple missing-row defects.
 - If global Bible trust is pursued, run a new comprehensive corpus trust audit rather than relying on this residual checkpoint.
 
+## Phase 4T: DRB Psalms active psalter lane
+
+Status: applied as bounded psalter-lane remediation.
+
+Decision:
+
+The governed 155-record active psalter remains in place. DRB Psalm text was populated only for Psalms 1-150 from the preserved DRB raw source lane.
+
+Source evidence:
+
+- Source path: `data/bible/translations/drb-original-douay-rheims/raw/psalms.json`.
+- Source manifest records 150 chapters and 2,527 verse rows.
+- Active target: `data/bible/OT/psalms.json`.
+
+Applied scope:
+
+- DRB added to active Psalms 1-150.
+- 2,527 DRB Psalm verse rows imported.
+- Existing Rotherham Psalms 1-150 lane preserved.
+- Psalms 151-155 remain outside DRB and Rotherham source scope.
+
+Guard status:
+
+- `scripts/audit-rotherham-psalms.mjs` passed.
+- `scripts/audit-douay-rheims-psalms.mjs` passed after module-syntax repair.
+
+Trust status:
+
+This is not a global Psalms trust claim. Psalms remain a governed legacy psalter subsystem. The bounded claim is only that Rotherham and DRB Psalm lanes are populated and guarded for Psalms 1-150, while Psalms 151-155 remain extended/Orthodox-scope material requiring separate source adjudication.
+

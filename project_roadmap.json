@@ -1,13 +1,13 @@
 {
   "schema_version": "1.0.0",
-  "roadmap_version": "0.1.40",
-  "last_updated": "2026-06-23T03:08:14.768Z",
+  "roadmap_version": "0.1.41",
+  "last_updated": "2026-06-23T03:18:00.561Z",
   "status": "active",
   "name": "Universal Office Beta Release Roadmap",
   "purpose": "Canonical machine-readable roadmap for Beta Release planning, phase sequencing, governance questions, tranche sizing, and Admin Dashboard visualization.",
   "current_repo_state": {
-    "latest_known_commit": "ce82db6",
-    "latest_known_commit_message": "Record canonical OT residual checkpoint",
+    "latest_known_commit": "21bd48f",
+    "latest_known_commit_message": "Populate DRB Psalms active psalter lane",
     "structure_json_version": "3.8.150",
     "roadmap_source_of_truth": "project_roadmap.json",
     "structure_json_role": "Project manifest, current-state pointer, live admin work source, and archive index pointer.",
@@ -25,7 +25,7 @@
     "current_public_app_summary": "Entry/mobile stabilization is closed through 1cd7c04. The public entry splash, Universal selector advanced-tools gate, shared office selector overflow, mobile tooltip and close rail behavior, and mode-drawer exclusivity are implemented and audited. LOTH cadence fields are unchanged because this was public app hardening, not corpus-producing LOTH work.",
     "latest_bible_corpus_checkpoint": "canonical_ot_residual_checkpoint_2026_06_23",
     "latest_bible_corpus_checkpoint_commit": "ce82db6",
-    "current_bible_corpus_summary": "Canonical OT residual ledger checkpoint recorded: 13/15 ledger targets closed, 2/15 intentionally governed remaining. Canonical OT is not globally trusted; Psalms, deuterocanon, broader canon, and protected Vulgate remain outside this closure claim.",
+    "current_bible_corpus_summary": "Canonical OT non-Psalms completeness guard passes for 38 books / 779 chapters. Psalms remain a governed legacy psalter subsystem; Rotherham and DRB lanes are now populated and guarded for Psalms 1-150, with Psalms 151-155 outside those source scopes. Whole Bible corpus is still not globally trusted.",
     "canonical_ot_residual_checkpoint": {
       "id": "canonical_ot_residual_checkpoint_2026_06_23",
       "commit": "ce82db6",
@@ -58,6 +58,30 @@
         "broader canon complete",
         "Vulgate recovered"
       ]
+    },
+    "latest_bible_psalms_checkpoint": "drb_psalms_active_psalter_lane_2026_06_23",
+    "latest_bible_psalms_checkpoint_commit": "21bd48f",
+    "psalms_checkpoint": {
+      "id": "drb_psalms_active_psalter_lane_2026_06_23",
+      "commit": "21bd48f",
+      "commitMessage": "Populate DRB Psalms active psalter lane",
+      "activePsalterPath": "data/bible/OT/psalms.json",
+      "sourcePath": "data/bible/translations/drb-original-douay-rheims/raw/psalms.json",
+      "status": "bounded_lane_populated_and_guarded_not_global_psalms_trust",
+      "importedPsalmCount": 150,
+      "importedVerseRows": 2527,
+      "skippedExtendedPsalms": [
+        151,
+        152,
+        153,
+        154,
+        155
+      ],
+      "guardsPassed": [
+        "scripts/audit-rotherham-psalms.mjs",
+        "scripts/audit-douay-rheims-psalms.mjs"
+      ],
+      "trustLimit": "Psalms remain governed legacy psalter subsystem; Rotherham and DRB lanes are source-scoped for Psalms 1-150 only, while Psalms 151-155 remain outside those source scopes."
     }
   },
   "release_identity": {

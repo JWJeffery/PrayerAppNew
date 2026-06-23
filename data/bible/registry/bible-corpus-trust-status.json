@@ -91,5 +91,28 @@
     "active_boundary_guard_present",
     "schema_container_guard_present",
     "whole_corpus_trust_boundary_active"
-  ]
+  ],
+  "psalms_status": "governed_legacy_psalter_rotherham_and_drb_1_150_guarded_not_global_trust",
+  "latest_psalms_checkpoint": {
+    "id": "drb_psalms_active_psalter_lane_2026_06_23",
+    "commit": "21bd48f",
+    "commitMessage": "Populate DRB Psalms active psalter lane",
+    "activePsalterPath": "data/bible/OT/psalms.json",
+    "sourcePath": "data/bible/translations/drb-original-douay-rheims/raw/psalms.json",
+    "status": "bounded_lane_populated_and_guarded_not_global_psalms_trust",
+    "importedPsalmCount": 150,
+    "importedVerseRows": 2527,
+    "skippedExtendedPsalms": [
+      151,
+      152,
+      153,
+      154,
+      155
+    ],
+    "guardsPassed": [
+      "scripts/audit-rotherham-psalms.mjs",
+      "scripts/audit-douay-rheims-psalms.mjs"
+    ],
+    "trustLimit": "Psalms remain governed legacy psalter subsystem; Rotherham and DRB lanes are source-scoped for Psalms 1-150 only, while Psalms 151-155 remain outside those source scopes."
+  }
 }
