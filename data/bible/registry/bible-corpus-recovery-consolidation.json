@@ -1,7 +1,7 @@
 {
   "schema": "bible-corpus-recovery-consolidation-v1",
   "status": "consolidated_not_globally_trusted",
-  "date": "2026-06-21",
+  "date": "2026-06-23",
   "lanes": {
     "canonical_nt": {
       "expectedStatus": "named_defect_tranche_complete",
@@ -17,7 +17,7 @@
     },
     "deuterocanon": {
       "expectedStatus": "not_trusted_underbuilt",
-      "summary": "DRB/NABRE source tranches are applied where controlled; Greek books and 3/4 Maccabees remain unresolved/governed."
+      "summary": "DRB/NABRE source tranches are applied where controlled. Greek Esther/Daniel source-shape review is complete as governance-only; 3/4 Maccabees remain source-gap work."
     },
     "broader_canon": {
       "expectedStatus": "not_trusted_governance_pending",
@@ -25,7 +25,7 @@
     },
     "vulgate": {
       "expectedStatus": "not_trusted_vulgate_pilot_lanes_imported_pending_full_adjudication",
-      "summary": "Vulgate lane remains excluded active work with protected dirty files."
+      "summary": "Vulgate pilot lanes are committed as bounded source-lane data but remain pending full adjudication."
     }
   },
   "requiredMarkers": {
@@ -35,7 +35,8 @@
     "deuterocanon": [
       "deuterocanon_drb_completion_tranche_1",
       "deuterocanon_drb_nabre_completion_tranche_2",
-      "deuterocanon_remaining_governance_1"
+      "deuterocanon_remaining_governance_1",
+      "greek_esther_daniel_source_shape_review_1"
     ],
     "broader_canon": [
       "broader_canon_governance_1"
@@ -56,13 +57,13 @@
     "vulgate_remediation_complete"
   ],
   "nextAllowedTargets": [
-    "separate_greek_esther_review",
-    "separate_greek_daniel_review",
     "3_4_maccabees_source_acquisition",
     "vulgate_full_source_adjudication",
     "vulgate_pilot_lane_integration_policy",
     "nehemiah_7_73_adapter_versification_policy",
-    "daniel_11_controlled_source_acquisition_or_governed_exclusion"
+    "daniel_11_controlled_source_acquisition_or_governed_exclusion",
+    "manual_greek_esther_form_policy",
+    "manual_greek_daniel_form_policy"
   ],
   "latestVulgateCheckpoint": {
     "id": "vulgate_pilot_lanes_imported_2026_06_23",
@@ -155,6 +156,23 @@
     "nextAllowedTargets": [
       "nehemiah_7_73_adapter_versification_policy",
       "daniel_11_controlled_source_acquisition_or_governed_exclusion"
+    ]
+  },
+  "latestDeuterocanonSourceShapeReview": {
+    "id": "greek_esther_daniel_source_shape_review_2026_06_23",
+    "status": "review_completed_governance_only_no_text_mutation",
+    "summary": "Greek Esther and Greek Daniel source-shape review found no safe simple overlay. Greek Esther has substantial active/DRB/ordinary Esther form divergence. Greek Daniel is closer to DRB but remaining mismatches fall in Greek-addition territory. No Bible text was changed.",
+    "blockedClaims": [
+      "greek_esther_repaired",
+      "greek_daniel_repaired",
+      "greek_esther_simple_overlay_allowed",
+      "greek_daniel_simple_overlay_allowed",
+      "deuterocanon_complete"
+    ],
+    "nextAllowedTargets": [
+      "manual_greek_esther_form_policy",
+      "manual_greek_daniel_form_policy",
+      "3_4_maccabees_source_acquisition"
     ]
   }
 }
