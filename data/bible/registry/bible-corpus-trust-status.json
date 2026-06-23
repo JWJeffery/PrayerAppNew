@@ -29,7 +29,8 @@
         "singleton_nabre_medium_overlay_batch_1",
         "nondaniel_special_overlay_batch_1",
         "canonical_ot_nabre_residual_classification_1",
-        "daniel_greek_governance_boundary_1"
+        "daniel_greek_governance_boundary_1",
+        "canonical_ot_residual_policy_review_1"
       ]
     },
     "psalms": {
@@ -179,6 +180,37 @@
       "vulgate_textually_trusted",
       "clementine_vulgate_fully_adjudicated",
       "vulgate_psalter_fully_adjudicated"
+    ]
+  },
+  "latest_canonical_ot_policy_checkpoint": {
+    "id": "canonical_ot_residual_policy_review_2026_06_23",
+    "status": "policy_review_recorded_no_text_mutation",
+    "commitContext": "post-final-guard-suite-after-vulgate",
+    "governedTargets": [
+      {
+        "id": "nehemiah_7_73",
+        "activePath": "data/bible/OT/nehemiah.json",
+        "classification": "governed_split_partial_review",
+        "policyDecision": "No synthetic repair. Requires adapter/versification policy for split transition material spanning Nehemiah 7:72/7:73/8:1."
+      },
+      {
+        "id": "daniel_11_1_45",
+        "activePath": "data/bible/OT/daniel.json",
+        "classification": "governed_source_absent_no_synthetic_overlay",
+        "policyDecision": "No synthetic overlay. Requires controlled NABRE source acquisition or explicit governed exclusion policy."
+      }
+    ],
+    "boundedClaim": "Canonical OT residual policy review is recorded; canonical OT remains not textually trusted.",
+    "blockedClaims": [
+      "canonical_ot_fully_trusted",
+      "nehemiah_7_73_repaired",
+      "daniel_11_repaired",
+      "daniel_11_source_present",
+      "synthetic_nabre_overlay_allowed"
+    ],
+    "nextAllowedTargets": [
+      "nehemiah_7_73_adapter_versification_policy",
+      "daniel_11_controlled_source_acquisition_or_governed_exclusion"
     ]
   }
 }

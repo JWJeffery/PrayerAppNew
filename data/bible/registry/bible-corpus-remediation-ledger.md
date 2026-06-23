@@ -965,3 +965,27 @@ Trust status:
 
 This is not a full Vulgate corpus completion claim. The Vulgate lane remains not textually trusted pending full source adjudication, full corpus coverage decisions, and integration policy.
 
+## Phase 4W: Canonical OT residual policy review
+
+Status: governed policy review recorded; no Bible text mutated.
+
+Decision:
+
+The remaining canonical OT residual blockers are not safe single-row repairs. They remain governed policy items and do not justify synthetic NABRE text construction.
+
+Remaining governed targets:
+
+- Nehemiah 7:73:
+  - Classification: governed split/partial review.
+  - Active row contains transition material that overlaps the settlement close and the Nehemiah 8 opening transition.
+  - Policy: do not synthesize a replacement without adapter/versification policy for split transition material.
+
+- Daniel 11:1-45:
+  - Classification: governed source absent / no synthetic overlay.
+  - Historical controlled NABRE source lane does not supply Daniel 11 rows.
+  - Policy: do not synthesize a NABRE overlay. Requires controlled source acquisition or explicit governed exclusion.
+
+Trust status:
+
+Canonical OT remains not trusted pending versification remediation. This phase records policy posture only and does not close canonical OT trust.
+

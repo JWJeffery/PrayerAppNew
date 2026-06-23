@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0.0",
-  "roadmap_version": "0.1.42",
-  "last_updated": "2026-06-23T03:27:36.681Z",
+  "roadmap_version": "0.1.43",
+  "last_updated": "2026-06-23T03:33:32.854Z",
   "status": "active",
   "name": "Universal Office Beta Release Roadmap",
   "purpose": "Canonical machine-readable roadmap for Beta Release planning, phase sequencing, governance questions, tranche sizing, and Admin Dashboard visualization.",
@@ -25,7 +25,7 @@
     "current_public_app_summary": "Entry/mobile stabilization is closed through 1cd7c04. The public entry splash, Universal selector advanced-tools gate, shared office selector overflow, mobile tooltip and close rail behavior, and mode-drawer exclusivity are implemented and audited. LOTH cadence fields are unchanged because this was public app hardening, not corpus-producing LOTH work.",
     "latest_bible_corpus_checkpoint": "canonical_ot_residual_checkpoint_2026_06_23",
     "latest_bible_corpus_checkpoint_commit": "ce82db6",
-    "current_bible_corpus_summary": "Vulgate pilot lanes are now committed as bounded source-lane data through 16246b4. This does not establish full Vulgate trust. Whole Bible corpus remains not globally trusted; canonical OT blockers, Psalms governance, deuterocanon form-risk review, broader canon governance, and full Vulgate adjudication remain governed.",
+    "current_bible_corpus_summary": "Canonical OT residual policy review recorded: Nehemiah 7:73 remains governed split/partial material requiring adapter policy, and Daniel 11:1-45 remains governed source-absent material requiring controlled source acquisition or explicit governed exclusion. Canonical OT remains not trusted.",
     "canonical_ot_residual_checkpoint": {
       "id": "canonical_ot_residual_checkpoint_2026_06_23",
       "commit": "ce82db6",
@@ -145,6 +145,38 @@
         "vulgate_textually_trusted",
         "clementine_vulgate_fully_adjudicated",
         "vulgate_psalter_fully_adjudicated"
+      ]
+    },
+    "latest_canonical_ot_policy_checkpoint": "canonical_ot_residual_policy_review_2026_06_23",
+    "canonical_ot_residual_policy_checkpoint": {
+      "id": "canonical_ot_residual_policy_review_2026_06_23",
+      "status": "policy_review_recorded_no_text_mutation",
+      "commitContext": "post-final-guard-suite-after-vulgate",
+      "governedTargets": [
+        {
+          "id": "nehemiah_7_73",
+          "activePath": "data/bible/OT/nehemiah.json",
+          "classification": "governed_split_partial_review",
+          "policyDecision": "No synthetic repair. Requires adapter/versification policy for split transition material spanning Nehemiah 7:72/7:73/8:1."
+        },
+        {
+          "id": "daniel_11_1_45",
+          "activePath": "data/bible/OT/daniel.json",
+          "classification": "governed_source_absent_no_synthetic_overlay",
+          "policyDecision": "No synthetic overlay. Requires controlled NABRE source acquisition or explicit governed exclusion policy."
+        }
+      ],
+      "boundedClaim": "Canonical OT residual policy review is recorded; canonical OT remains not textually trusted.",
+      "blockedClaims": [
+        "canonical_ot_fully_trusted",
+        "nehemiah_7_73_repaired",
+        "daniel_11_repaired",
+        "daniel_11_source_present",
+        "synthetic_nabre_overlay_allowed"
+      ],
+      "nextAllowedTargets": [
+        "nehemiah_7_73_adapter_versification_policy",
+        "daniel_11_controlled_source_acquisition_or_governed_exclusion"
       ]
     }
   },
