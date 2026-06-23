@@ -1,7 +1,7 @@
 {
   "id": "bible-corpus-trust-status",
   "status": "partial_trust_boundary_active",
-  "lastUpdated": "2026-06-21",
+  "lastUpdated": "2026-06-23",
   "principle": "Do not equate valid JSON, recognized containers, source-lane presence, or UI availability with trusted biblical text.",
   "lanes": {
     "canonical_nt": {
@@ -49,13 +49,15 @@
       "status": "not_trusted_underbuilt",
       "reasons": [
         "Several files are structural stubs or materially incomplete.",
-        "Some deuterocanonical files require rebuild, quarantine, or explicit scope declaration."
+        "Some deuterocanonical files require rebuild, quarantine, or explicit scope declaration.",
+        "Greek Esther and Greek Daniel require manual form/versification policy before any overlay or repair."
       ],
-      "reason": "DRB/NABRE completion tranches applied where source identity was controlled; Greek books and 3/4 Maccabees remain governed unresolved work.",
+      "reason": "DRB/NABRE completion tranches applied where source identity was controlled; Greek books and 3/4 Maccabees remain governed unresolved work. Greek Esther/Daniel source-shape review is complete as governance-only and does not authorize text mutation.",
       "completedRemediations": [
         "deuterocanon_drb_completion_tranche_1",
         "deuterocanon_drb_nabre_completion_tranche_2",
-        "deuterocanon_remaining_governance_1"
+        "deuterocanon_remaining_governance_1",
+        "greek_esther_daniel_source_shape_review_1"
       ]
     },
     "broader_canon": {
@@ -211,6 +213,23 @@
     "nextAllowedTargets": [
       "nehemiah_7_73_adapter_versification_policy",
       "daniel_11_controlled_source_acquisition_or_governed_exclusion"
+    ]
+  },
+  "latest_deuterocanon_source_shape_review": {
+    "id": "greek_esther_daniel_source_shape_review_2026_06_23",
+    "status": "review_completed_governance_only_no_text_mutation",
+    "summary": "Greek Esther and Greek Daniel source-shape review found no safe simple overlay. Greek Esther has substantial active/DRB/ordinary Esther form divergence. Greek Daniel is closer to DRB but remaining mismatches fall in Greek-addition territory. No Bible text was changed.",
+    "blockedClaims": [
+      "greek_esther_repaired",
+      "greek_daniel_repaired",
+      "greek_esther_simple_overlay_allowed",
+      "greek_daniel_simple_overlay_allowed",
+      "deuterocanon_complete"
+    ],
+    "nextAllowedTargets": [
+      "manual_greek_esther_form_policy",
+      "manual_greek_daniel_form_policy",
+      "3_4_maccabees_source_acquisition"
     ]
   }
 }
