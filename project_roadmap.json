@@ -1,13 +1,13 @@
 {
   "schema_version": "1.0.0",
-  "roadmap_version": "0.1.41",
-  "last_updated": "2026-06-23T03:18:00.561Z",
+  "roadmap_version": "0.1.42",
+  "last_updated": "2026-06-23T03:27:36.681Z",
   "status": "active",
   "name": "Universal Office Beta Release Roadmap",
   "purpose": "Canonical machine-readable roadmap for Beta Release planning, phase sequencing, governance questions, tranche sizing, and Admin Dashboard visualization.",
   "current_repo_state": {
-    "latest_known_commit": "21bd48f",
-    "latest_known_commit_message": "Populate DRB Psalms active psalter lane",
+    "latest_known_commit": "16246b4",
+    "latest_known_commit_message": "Add Roman Breviary Vulgate pilot lanes",
     "structure_json_version": "3.8.150",
     "roadmap_source_of_truth": "project_roadmap.json",
     "structure_json_role": "Project manifest, current-state pointer, live admin work source, and archive index pointer.",
@@ -25,7 +25,7 @@
     "current_public_app_summary": "Entry/mobile stabilization is closed through 1cd7c04. The public entry splash, Universal selector advanced-tools gate, shared office selector overflow, mobile tooltip and close rail behavior, and mode-drawer exclusivity are implemented and audited. LOTH cadence fields are unchanged because this was public app hardening, not corpus-producing LOTH work.",
     "latest_bible_corpus_checkpoint": "canonical_ot_residual_checkpoint_2026_06_23",
     "latest_bible_corpus_checkpoint_commit": "ce82db6",
-    "current_bible_corpus_summary": "Canonical OT non-Psalms completeness guard passes for 38 books / 779 chapters. Psalms remain a governed legacy psalter subsystem; Rotherham and DRB lanes are now populated and guarded for Psalms 1-150, with Psalms 151-155 outside those source scopes. Whole Bible corpus is still not globally trusted.",
+    "current_bible_corpus_summary": "Vulgate pilot lanes are now committed as bounded source-lane data through 16246b4. This does not establish full Vulgate trust. Whole Bible corpus remains not globally trusted; canonical OT blockers, Psalms governance, deuterocanon form-risk review, broader canon governance, and full Vulgate adjudication remain governed.",
     "canonical_ot_residual_checkpoint": {
       "id": "canonical_ot_residual_checkpoint_2026_06_23",
       "commit": "ce82db6",
@@ -82,6 +82,70 @@
         "scripts/audit-douay-rheims-psalms.mjs"
       ],
       "trustLimit": "Psalms remain governed legacy psalter subsystem; Rotherham and DRB lanes are source-scoped for Psalms 1-150 only, while Psalms 151-155 remain outside those source scopes."
+    },
+    "latest_vulgate_checkpoint": "vulgate_pilot_lanes_imported_2026_06_23",
+    "latest_vulgate_checkpoint_commit": "16246b4",
+    "vulgate_checkpoint": {
+      "id": "vulgate_pilot_lanes_imported_2026_06_23",
+      "commit": "16246b4",
+      "commitMessage": "Add Roman Breviary Vulgate pilot lanes",
+      "status": "not_trusted_vulgate_pilot_lanes_imported_pending_full_adjudication",
+      "boundedClaim": "Roman Breviary Vulgate pilot source lanes are committed and parseable; this is not a full Vulgate corpus trust claim.",
+      "clementine": {
+        "translation_key": "Vulgate",
+        "source_name": "CatholicBible.online Vulgate",
+        "source_status": "pilot_source_selected_pending_full_clementine_adjudication",
+        "status": "pilot_imported_bounded_source_lane",
+        "book_count": 2,
+        "total_chapter_count": 4,
+        "total_verse_count": 130,
+        "books": [
+          {
+            "file": "raw/job.json",
+            "chapter_count": 3,
+            "verse_count": 72
+          },
+          {
+            "file": "raw/1-corinthians.json",
+            "chapter_count": 1,
+            "verse_count": 58
+          }
+        ]
+      },
+      "psalter": {
+        "translation_key": "VulgatePsalter",
+        "source_name": "CatholicBible.online Vulgate Psalter",
+        "source_status": "pilot_source_selected_pending_full_psalter_adjudication",
+        "status": "pilot_imported_bounded_source_lane",
+        "book_count": 1,
+        "total_chapter_count": 9,
+        "total_verse_count": 128,
+        "books": [
+          {
+            "file": "raw/psalms.json",
+            "chapter_count": 9,
+            "verse_count": 128
+          }
+        ]
+      },
+      "filesCommitted": [
+        "data/bible/translations/vulgate-clementine/manifest.json",
+        "data/bible/translations/vulgate-clementine/raw/1-corinthians.json",
+        "data/bible/translations/vulgate-clementine/raw/job.json",
+        "data/bible/translations/vulgate-psalter/manifest.json",
+        "data/bible/translations/vulgate-psalter/raw/psalms.json",
+        "scripts/import-roman-breviary-1960-catholicbible-vulgate-pilot.mjs"
+      ],
+      "removedPlaceholders": [
+        "data/bible/translations/vulgate-clementine/raw/.gitkeep",
+        "data/bible/translations/vulgate-psalter/raw/.gitkeep"
+      ],
+      "blockedClaims": [
+        "vulgate_complete",
+        "vulgate_textually_trusted",
+        "clementine_vulgate_fully_adjudicated",
+        "vulgate_psalter_fully_adjudicated"
+      ]
     }
   },
   "release_identity": {

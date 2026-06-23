@@ -53,8 +53,10 @@ if (status) {
     failures.push({ type: 'unexpected-nt-status', actual: status.lanes?.canonical_nt?.status || null });
   }
 
-  if (status.lanes?.vulgate?.status !== 'excluded_active_work') {
-    failures.push({ type: 'unexpected-vulgate-status', actual: status.lanes?.vulgate?.status || null });
+  const vulgateStatus = status.lanes?.vulgate?.status || '';
+  checks.vulgate_status = vulgateStatus;
+  if (vulgateStatus !== 'excluded_active_work' && !vulgateStatus.startsWith('not_trusted')) {
+    failures.push({ type: 'unsafe-vulgate-status', actual: status.lanes?.vulgate?.status || null });
   }
 
   for (const claim of [

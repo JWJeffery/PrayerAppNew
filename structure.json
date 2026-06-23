@@ -1,10 +1,10 @@
 {
   "project_manifest": {
     "name": "Universal Office",
-    "version": "3.8.152",
+    "version": "3.8.153",
     "last_updated": "2026-06-23",
     "bcp_compliance": "100%",
-    "operational_status": "Current operational status as of 2026-06-23: PrayerAppNew records the Bible corpus checkpoint through 21bd48f. Canonical OT non-Psalms completeness guard passes for 38 ordinary OT books / 779 chapters. Psalms remain a governed 155-record legacy psalter subsystem, with Rotherham and DRB lanes populated and guarded for Psalms 1-150 and Psalms 151-155 outside those source scopes. This is not a whole-Bible trust claim; deuterocanon, broader canon, protected Vulgate, and remaining governed blockers remain outside this checkpoint.",
+    "operational_status": "Current operational status as of 2026-06-23: PrayerAppNew records Bible corpus recovery through 16246b4. Vulgate pilot lanes are committed for bounded Roman Breviary source-lane use: Clementine Job/1 Corinthians and Vulgate Psalter selected Psalm chapters. This is not a full Vulgate trust claim or whole-Bible trust claim.",
     "architectural_decisions_2026_05_25": [
       {
         "id": "roman_loth_composition_map_source_navigation",
@@ -1088,6 +1088,68 @@
         "scripts/audit-douay-rheims-psalms.mjs"
       ],
       "trustLimit": "Psalms remain governed legacy psalter subsystem; Rotherham and DRB lanes are source-scoped for Psalms 1-150 only, while Psalms 151-155 remain outside those source scopes."
+    },
+    "latest_vulgate_checkpoint": {
+      "id": "vulgate_pilot_lanes_imported_2026_06_23",
+      "commit": "16246b4",
+      "commitMessage": "Add Roman Breviary Vulgate pilot lanes",
+      "status": "not_trusted_vulgate_pilot_lanes_imported_pending_full_adjudication",
+      "boundedClaim": "Roman Breviary Vulgate pilot source lanes are committed and parseable; this is not a full Vulgate corpus trust claim.",
+      "clementine": {
+        "translation_key": "Vulgate",
+        "source_name": "CatholicBible.online Vulgate",
+        "source_status": "pilot_source_selected_pending_full_clementine_adjudication",
+        "status": "pilot_imported_bounded_source_lane",
+        "book_count": 2,
+        "total_chapter_count": 4,
+        "total_verse_count": 130,
+        "books": [
+          {
+            "file": "raw/job.json",
+            "chapter_count": 3,
+            "verse_count": 72
+          },
+          {
+            "file": "raw/1-corinthians.json",
+            "chapter_count": 1,
+            "verse_count": 58
+          }
+        ]
+      },
+      "psalter": {
+        "translation_key": "VulgatePsalter",
+        "source_name": "CatholicBible.online Vulgate Psalter",
+        "source_status": "pilot_source_selected_pending_full_psalter_adjudication",
+        "status": "pilot_imported_bounded_source_lane",
+        "book_count": 1,
+        "total_chapter_count": 9,
+        "total_verse_count": 128,
+        "books": [
+          {
+            "file": "raw/psalms.json",
+            "chapter_count": 9,
+            "verse_count": 128
+          }
+        ]
+      },
+      "filesCommitted": [
+        "data/bible/translations/vulgate-clementine/manifest.json",
+        "data/bible/translations/vulgate-clementine/raw/1-corinthians.json",
+        "data/bible/translations/vulgate-clementine/raw/job.json",
+        "data/bible/translations/vulgate-psalter/manifest.json",
+        "data/bible/translations/vulgate-psalter/raw/psalms.json",
+        "scripts/import-roman-breviary-1960-catholicbible-vulgate-pilot.mjs"
+      ],
+      "removedPlaceholders": [
+        "data/bible/translations/vulgate-clementine/raw/.gitkeep",
+        "data/bible/translations/vulgate-psalter/raw/.gitkeep"
+      ],
+      "blockedClaims": [
+        "vulgate_complete",
+        "vulgate_textually_trusted",
+        "clementine_vulgate_fully_adjudicated",
+        "vulgate_psalter_fully_adjudicated"
+      ]
     }
   },
   "roadmap_summary": {

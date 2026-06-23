@@ -938,3 +938,30 @@ Trust status:
 
 This is not a global Psalms trust claim. Psalms remain a governed legacy psalter subsystem. The bounded claim is only that Rotherham and DRB Psalm lanes are populated and guarded for Psalms 1-150, while Psalms 151-155 remain extended/Orthodox-scope material requiring separate source adjudication.
 
+## Phase 4U: Roman Breviary Vulgate pilot lanes
+
+Status: applied as bounded source-lane pilot.
+
+Decision:
+
+The previously protected Vulgate active-work set has been validated, committed, and pushed as a bounded Roman Breviary Vulgate pilot lane. This converts the local dirty Vulgate tranche into committed source-lane data, but it does not make a full Vulgate trust claim.
+
+Applied scope:
+
+- Clementine Vulgate pilot source lane:
+  - Job: 3 chapters, 72 verse rows.
+  - 1 Corinthians: 1 chapter, 58 verse rows.
+- Vulgate Psalter pilot source lane:
+  - Psalms: 9 chapters, 128 verse rows.
+- Importer committed: `scripts/import-roman-breviary-1960-catholicbible-vulgate-pilot.mjs`.
+
+Source posture:
+
+- Source witness: CatholicBible.online Vulgate.
+- Clementine status: pilot source selected, pending full Clementine adjudication.
+- Psalter status: pilot source selected, pending full Psalter adjudication.
+
+Trust status:
+
+This is not a full Vulgate corpus completion claim. The Vulgate lane remains not textually trusted pending full source adjudication, full corpus coverage decisions, and integration policy.
+
