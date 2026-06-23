@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-const fs = require('fs');
+import fs from 'node:fs';
 
 const psalms = JSON.parse(fs.readFileSync('data/bible/OT/psalms.json', 'utf8'));
 const failures = [];
