@@ -5,7 +5,8 @@
     "greekBookPolicy": "Do not patch Greek Daniel or Greek Esther by simple full-source overlay. Their DRB/NABRE source deltas include nontrivial versification and book-shape differences.",
     "maccabeesPolicy": "Do not treat active 3 Maccabees or 4 Maccabees as complete. Repo-history candidates inspected so far are either unparseable in current JSON inspection or identical to the active sparse files.",
     "sourcePolicy": "No direct full local source for 3 Maccabees or 4 Maccabees has been identified in this tranche.",
-    "trustPolicy": "Deuterocanon remains not trusted/underbuilt even after DRB/NABRE completion tranches."
+    "trustPolicy": "Deuterocanon remains not trusted/underbuilt after DRB/NABRE completion tranches and Greek Esther/Daniel source-shape review.",
+    "sourceShapeReviewPolicy": "Greek Esther and Greek Daniel source-shape review is complete as governance only. Row-count overlap is not enough to authorize overlay or repair in Greek-addition territory. Further work requires manual form/versification policy before text mutation."
   },
   "inspectedGreekBooks": {
     "estherGK": {
@@ -17,7 +18,21 @@
       "drbActiveOnly": 26,
       "nabreMissingFromActive": 1,
       "nabreActiveOnly": 55,
-      "decision": "governance_only_pending_separate_greek_esther_review"
+      "sourceShapeReview": {
+        "status": "review_completed_governance_only_no_text_mutation",
+        "scannerActiveRows": 222,
+        "scannerActiveNonEmptyRows": 221,
+        "ordinaryEstherCandidateRows": 168,
+        "ordinaryEstherSharedRows": 167,
+        "ordinaryEstherMissingFromActiveCount": 1,
+        "ordinaryEstherActiveOnlyCount": 55,
+        "drbCandidateRows": 275,
+        "drbSharedRows": 196,
+        "drbCandidateMissingFromActiveCount": 79,
+        "drbActiveOnlyCount": 26,
+        "decision": "No simple overlay. Greek Esther requires manual Catholic/Greek Esther form and versification review before any repair."
+      },
+      "decision": "governance_only_review_completed_pending_manual_greek_esther_form_policy"
     },
     "danielGK": {
       "activePath": "data/bible/OT/danielGK.json",
@@ -28,7 +43,20 @@
       "drbActiveOnly": 3,
       "nabreMissingFromActive": 4,
       "nabreActiveOnly": 49,
-      "decision": "governance_only_pending_separate_greek_daniel_review"
+      "sourceShapeReview": {
+        "status": "review_completed_governance_only_no_text_mutation",
+        "scannerActiveRows": 530,
+        "scannerActiveNonEmptyRows": 530,
+        "ordinaryDanielCandidateRows": 357,
+        "ordinaryDanielSharedRows": 357,
+        "ordinaryDanielActiveOnlyCount": 173,
+        "drbCandidateRows": 531,
+        "drbSharedRows": 527,
+        "drbCandidateMissingFromActiveCount": 4,
+        "drbActiveOnlyCount": 3,
+        "decision": "No simple overlay. Greek Daniel is close to DRB, but mismatches occur in addition/Greek-form territory and require manual form and versification policy before repair."
+      },
+      "decision": "governance_only_review_completed_pending_manual_greek_daniel_form_policy"
     }
   },
   "inspectedMaccabees": {
@@ -51,6 +79,10 @@
     "greek_esther_simple_overlay",
     "greek_daniel_simple_overlay",
     "3maccabees_active_sparse_promotion",
-    "4maccabees_active_sparse_promotion"
+    "4maccabees_active_sparse_promotion",
+    "greek_esther_drb_full_overlay_without_form_policy",
+    "greek_daniel_drb_full_overlay_without_form_policy",
+    "ordinary_esther_promotion_to_greek_esther",
+    "ordinary_daniel_promotion_to_greek_daniel"
   ]
 }
