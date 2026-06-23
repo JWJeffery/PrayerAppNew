@@ -18,9 +18,22 @@ if (governance.status !== 'not_trusted_remaining_deuterocanon_governed') {
 
 for (const key of ['estherGK', 'danielGK']) {
   const book = governance.inspectedGreekBooks?.[key];
-  if (!book) failures.push({ type: 'missing-greek-book-governance', key });
-  if (book && !String(book.decision || '').startsWith('governance_only')) {
+
+  if (!book) {
+    failures.push({ type: 'missing-greek-book-governance', key });
+    continue;
+  }
+
+  if (!String(book.decision || '').startsWith('governance_only')) {
     failures.push({ type: 'unsafe-greek-book-decision', key, decision: book.decision });
+  }
+
+  if (book.sourceShapeReview?.status !== 'review_completed_governance_only_no_text_mutation') {
+    failures.push({
+      type: 'missing-source-shape-review',
+      key,
+      actual: book.sourceShapeReview?.status || null
+    });
   }
 }
 
@@ -36,7 +49,11 @@ for (const blocked of [
   'greek_esther_simple_overlay',
   'greek_daniel_simple_overlay',
   '3maccabees_active_sparse_promotion',
-  '4maccabees_active_sparse_promotion'
+  '4maccabees_active_sparse_promotion',
+  'greek_esther_drb_full_overlay_without_form_policy',
+  'greek_daniel_drb_full_overlay_without_form_policy',
+  'ordinary_esther_promotion_to_greek_esther',
+  'ordinary_daniel_promotion_to_greek_daniel'
 ]) {
   if (!Array.isArray(governance.blockedPatches) || !governance.blockedPatches.includes(blocked)) {
     failures.push({ type: 'missing-blocked-patch', blocked });
@@ -48,8 +65,13 @@ if (!lane || lane.status !== 'not_trusted_underbuilt') {
   failures.push({ type: 'deuterocanon-trust-status-mismatch', actual: lane?.status || null });
 }
 
-if (!Array.isArray(lane?.completedRemediations) || !lane.completedRemediations.includes('deuterocanon_remaining_governance_1')) {
-  failures.push({ type: 'missing-completed-remediation-marker' });
+for (const marker of [
+  'deuterocanon_remaining_governance_1',
+  'greek_esther_daniel_source_shape_review_1'
+]) {
+  if (!Array.isArray(lane?.completedRemediations) || !lane.completedRemediations.includes(marker)) {
+    failures.push({ type: 'missing-completed-remediation-marker', marker });
+  }
 }
 
 const report = {
