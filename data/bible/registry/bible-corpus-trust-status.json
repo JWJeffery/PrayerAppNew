@@ -50,14 +50,16 @@
       "reasons": [
         "Several files are structural stubs or materially incomplete.",
         "Some deuterocanonical files require rebuild, quarantine, or explicit scope declaration.",
-        "Greek Esther and Greek Daniel require manual form/versification policy before any overlay or repair."
+        "Greek Esther and Greek Daniel require manual form/versification policy before any overlay or repair.",
+        "3 and 4 Maccabees are source-backed NRSV repairs, but that does not close deuterocanon trust."
       ],
-      "reason": "DRB/NABRE completion tranches applied where source identity was controlled; Greek books and 3/4 Maccabees remain governed unresolved work. Greek Esther/Daniel source-shape review is complete as governance-only and does not authorize text mutation.",
+      "reason": "DRB/NABRE completion tranches applied where source identity was controlled; Greek books remain governed unresolved work. 3/4 Maccabees source acquisition is closed for the active NRSV lane and recorded as source-backed repair state.",
       "completedRemediations": [
         "deuterocanon_drb_completion_tranche_1",
         "deuterocanon_drb_nabre_completion_tranche_2",
         "deuterocanon_remaining_governance_1",
-        "greek_esther_daniel_source_shape_review_1"
+        "greek_esther_daniel_source_shape_review_1",
+        "maccabees_3_4_source_backed_repair_recognized_1"
       ]
     },
     "broader_canon": {
@@ -99,122 +101,6 @@
     "whole_corpus_trust_boundary_active"
   ],
   "psalms_status": "governed_legacy_psalter_rotherham_and_drb_1_150_guarded_not_global_trust",
-  "latest_psalms_checkpoint": {
-    "id": "drb_psalms_active_psalter_lane_2026_06_23",
-    "commit": "21bd48f",
-    "commitMessage": "Populate DRB Psalms active psalter lane",
-    "activePsalterPath": "data/bible/OT/psalms.json",
-    "sourcePath": "data/bible/translations/drb-original-douay-rheims/raw/psalms.json",
-    "status": "bounded_lane_populated_and_guarded_not_global_psalms_trust",
-    "importedPsalmCount": 150,
-    "importedVerseRows": 2527,
-    "skippedExtendedPsalms": [
-      151,
-      152,
-      153,
-      154,
-      155
-    ],
-    "guardsPassed": [
-      "scripts/audit-rotherham-psalms.mjs",
-      "scripts/audit-douay-rheims-psalms.mjs"
-    ],
-    "trustLimit": "Psalms remain governed legacy psalter subsystem; Rotherham and DRB lanes are source-scoped for Psalms 1-150 only, while Psalms 151-155 remain outside those source scopes."
-  },
-  "vulgate_status": "not_trusted_vulgate_pilot_lanes_imported_pending_full_adjudication",
-  "latest_vulgate_checkpoint": {
-    "id": "vulgate_pilot_lanes_imported_2026_06_23",
-    "commit": "16246b4",
-    "commitMessage": "Add Roman Breviary Vulgate pilot lanes",
-    "status": "not_trusted_vulgate_pilot_lanes_imported_pending_full_adjudication",
-    "boundedClaim": "Roman Breviary Vulgate pilot source lanes are committed and parseable; this is not a full Vulgate corpus trust claim.",
-    "clementine": {
-      "translation_key": "Vulgate",
-      "source_name": "CatholicBible.online Vulgate",
-      "source_status": "pilot_source_selected_pending_full_clementine_adjudication",
-      "status": "pilot_imported_bounded_source_lane",
-      "book_count": 2,
-      "total_chapter_count": 4,
-      "total_verse_count": 130,
-      "books": [
-        {
-          "file": "raw/job.json",
-          "chapter_count": 3,
-          "verse_count": 72
-        },
-        {
-          "file": "raw/1-corinthians.json",
-          "chapter_count": 1,
-          "verse_count": 58
-        }
-      ]
-    },
-    "psalter": {
-      "translation_key": "VulgatePsalter",
-      "source_name": "CatholicBible.online Vulgate Psalter",
-      "source_status": "pilot_source_selected_pending_full_psalter_adjudication",
-      "status": "pilot_imported_bounded_source_lane",
-      "book_count": 1,
-      "total_chapter_count": 9,
-      "total_verse_count": 128,
-      "books": [
-        {
-          "file": "raw/psalms.json",
-          "chapter_count": 9,
-          "verse_count": 128
-        }
-      ]
-    },
-    "filesCommitted": [
-      "data/bible/translations/vulgate-clementine/manifest.json",
-      "data/bible/translations/vulgate-clementine/raw/1-corinthians.json",
-      "data/bible/translations/vulgate-clementine/raw/job.json",
-      "data/bible/translations/vulgate-psalter/manifest.json",
-      "data/bible/translations/vulgate-psalter/raw/psalms.json",
-      "scripts/import-roman-breviary-1960-catholicbible-vulgate-pilot.mjs"
-    ],
-    "removedPlaceholders": [
-      "data/bible/translations/vulgate-clementine/raw/.gitkeep",
-      "data/bible/translations/vulgate-psalter/raw/.gitkeep"
-    ],
-    "blockedClaims": [
-      "vulgate_complete",
-      "vulgate_textually_trusted",
-      "clementine_vulgate_fully_adjudicated",
-      "vulgate_psalter_fully_adjudicated"
-    ]
-  },
-  "latest_canonical_ot_policy_checkpoint": {
-    "id": "canonical_ot_residual_policy_review_2026_06_23",
-    "status": "policy_review_recorded_no_text_mutation",
-    "commitContext": "post-final-guard-suite-after-vulgate",
-    "governedTargets": [
-      {
-        "id": "nehemiah_7_73",
-        "activePath": "data/bible/OT/nehemiah.json",
-        "classification": "governed_split_partial_review",
-        "policyDecision": "No synthetic repair. Requires adapter/versification policy for split transition material spanning Nehemiah 7:72/7:73/8:1."
-      },
-      {
-        "id": "daniel_11_1_45",
-        "activePath": "data/bible/OT/daniel.json",
-        "classification": "governed_source_absent_no_synthetic_overlay",
-        "policyDecision": "No synthetic overlay. Requires controlled NABRE source acquisition or explicit governed exclusion policy."
-      }
-    ],
-    "boundedClaim": "Canonical OT residual policy review is recorded; canonical OT remains not textually trusted.",
-    "blockedClaims": [
-      "canonical_ot_fully_trusted",
-      "nehemiah_7_73_repaired",
-      "daniel_11_repaired",
-      "daniel_11_source_present",
-      "synthetic_nabre_overlay_allowed"
-    ],
-    "nextAllowedTargets": [
-      "nehemiah_7_73_adapter_versification_policy",
-      "daniel_11_controlled_source_acquisition_or_governed_exclusion"
-    ]
-  },
   "latest_deuterocanon_source_shape_review": {
     "id": "greek_esther_daniel_source_shape_review_2026_06_23",
     "status": "review_completed_governance_only_no_text_mutation",
@@ -228,8 +114,17 @@
     ],
     "nextAllowedTargets": [
       "manual_greek_esther_form_policy",
-      "manual_greek_daniel_form_policy",
-      "3_4_maccabees_source_acquisition"
+      "manual_greek_daniel_form_policy"
+    ]
+  },
+  "latest_maccabees_3_4_source_state": {
+    "id": "maccabees_3_4_source_backed_repair_recognized_2026_06_23",
+    "status": "source_backed_repair_state_recognized_no_text_mutation",
+    "summary": "Current active 3 and 4 Maccabees files already carry NRSV source-backed repair metadata from BibleGateway NRSVA and the historical repair commit 8177b52. Raw source acquisition is no longer the next blocker for these files; further work is bounded source/form review and known-gap policy, especially 4 Maccabees 10:4 and 11:7-8.",
+    "blockedClaims": [
+      "deuterocanon_complete",
+      "3maccabees_unscoped_complete_claim",
+      "4maccabees_unscoped_complete_claim"
     ]
   }
 }
