@@ -37,6 +37,24 @@ for (const key of ['estherGK', 'danielGK']) {
   }
 }
 
+const esther = governance.inspectedGreekBooks?.estherGK;
+if (esther?.formPolicy?.status !== 'active_nrsv_addition_form_governed_no_text_mutation') {
+  failures.push({ type: 'missing-greek-esther-form-policy', actual: esther?.formPolicy?.status || null });
+}
+if (esther?.activeForm !== 'nrsv_named_additions_plus_ordinary_esther_chapters') {
+  failures.push({ type: 'greek-esther-active-form-mismatch', actual: esther?.activeForm || null });
+}
+for (const blocked of [
+  'drb_numbered_extension_chapter_overlay',
+  'ordinary_esther_chapter_only_promotion',
+  'nabre_row_grid_overlay',
+  'addition_letter_to_numbered_chapter_rewrite_without_migration_policy'
+]) {
+  if (!Array.isArray(esther?.formPolicy?.blockedTransforms) || !esther.formPolicy.blockedTransforms.includes(blocked)) {
+    failures.push({ type: 'missing-greek-esther-blocked-transform', blocked });
+  }
+}
+
 for (const key of ['3maccabees', '4maccabees']) {
   const book = governance.inspectedMaccabees?.[key];
   if (!book) {
@@ -74,6 +92,9 @@ for (const ref of ['10:4', '11:7', '11:8']) {
 for (const blocked of [
   'greek_esther_simple_overlay',
   'greek_daniel_simple_overlay',
+  'greek_esther_drb_numbered_extension_overlay',
+  'greek_esther_nabre_row_grid_overlay',
+  'greek_esther_addition_form_rewrite_without_migration_policy',
   '3maccabees_active_sparse_promotion',
   '4maccabees_active_sparse_promotion',
   'greek_esther_drb_full_overlay_without_form_policy',
@@ -98,6 +119,7 @@ if (!lane || lane.status !== 'not_trusted_underbuilt') {
 for (const marker of [
   'deuterocanon_remaining_governance_1',
   'greek_esther_daniel_source_shape_review_1',
+  'greek_esther_form_policy_1',
   'maccabees_3_4_source_backed_repair_recognized_1',
   'maccabees_4_variant_footnote_gap_policy_1'
 ]) {
