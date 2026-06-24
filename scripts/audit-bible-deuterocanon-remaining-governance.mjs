@@ -57,6 +57,20 @@ for (const key of ['3maccabees', '4maccabees']) {
   }
 }
 
+const fourMacc = governance.inspectedMaccabees?.['4maccabees'];
+if (fourMacc?.knownSourceGapPolicy?.status !== 'variant_footnote_governed_no_active_row_insert') {
+  failures.push({
+    type: 'missing-4maccabees-known-source-gap-policy',
+    actual: fourMacc?.knownSourceGapPolicy?.status || null
+  });
+}
+
+for (const ref of ['10:4', '11:7', '11:8']) {
+  if (!Array.isArray(fourMacc?.knownSourceGapPolicy?.refs) || !fourMacc.knownSourceGapPolicy.refs.includes(ref)) {
+    failures.push({ type: 'missing-4maccabees-known-source-gap-ref', ref });
+  }
+}
+
 for (const blocked of [
   'greek_esther_simple_overlay',
   'greek_daniel_simple_overlay',
@@ -67,7 +81,9 @@ for (const blocked of [
   'ordinary_esther_promotion_to_greek_esther',
   'ordinary_daniel_promotion_to_greek_daniel',
   '3maccabees_claim_complete_without_source_witness',
-  '4maccabees_claim_complete_without_source_gap_policy'
+  '4maccabees_claim_complete_without_source_gap_policy',
+  '4maccabees_10_4_active_insert_without_variant_policy',
+  '4maccabees_11_7_8_active_insert_without_variant_policy'
 ]) {
   if (!Array.isArray(governance.blockedPatches) || !governance.blockedPatches.includes(blocked)) {
     failures.push({ type: 'missing-blocked-patch', blocked });
@@ -81,7 +97,9 @@ if (!lane || lane.status !== 'not_trusted_underbuilt') {
 
 for (const marker of [
   'deuterocanon_remaining_governance_1',
-  'greek_esther_daniel_source_shape_review_1'
+  'greek_esther_daniel_source_shape_review_1',
+  'maccabees_3_4_source_backed_repair_recognized_1',
+  'maccabees_4_variant_footnote_gap_policy_1'
 ]) {
   if (!Array.isArray(lane?.completedRemediations) || !lane.completedRemediations.includes(marker)) {
     failures.push({ type: 'missing-completed-remediation-marker', marker });
