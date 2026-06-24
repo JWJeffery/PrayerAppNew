@@ -51,15 +51,17 @@
         "Several files are structural stubs or materially incomplete.",
         "Some deuterocanonical files require rebuild, quarantine, or explicit scope declaration.",
         "Greek Esther and Greek Daniel require manual form/versification policy before any overlay or repair.",
-        "3 and 4 Maccabees are source-backed NRSV repairs, but that does not close deuterocanon trust."
+        "3 and 4 Maccabees are source-backed NRSV repairs, but that does not close deuterocanon trust.",
+        "4 Maccabees 10:4 and 11:7-8 are governed as variant-footnote material, not active primary rows."
       ],
-      "reason": "DRB/NABRE completion tranches applied where source identity was controlled; Greek books remain governed unresolved work. 3/4 Maccabees source acquisition is closed for the active NRSV lane and recorded as source-backed repair state.",
+      "reason": "DRB/NABRE completion tranches applied where source identity was controlled; Greek books remain governed unresolved work. 3/4 Maccabees source acquisition is closed for the active NRSV lane and recorded as source-backed repair state. 4 Maccabees 10:4 and 11:7-8 are governed as NRSVA variant-footnote additions without active row insertion.",
       "completedRemediations": [
         "deuterocanon_drb_completion_tranche_1",
         "deuterocanon_drb_nabre_completion_tranche_2",
         "deuterocanon_remaining_governance_1",
         "greek_esther_daniel_source_shape_review_1",
-        "maccabees_3_4_source_backed_repair_recognized_1"
+        "maccabees_3_4_source_backed_repair_recognized_1",
+        "maccabees_4_variant_footnote_gap_policy_1"
       ]
     },
     "broader_canon": {
@@ -120,11 +122,21 @@
   "latest_maccabees_3_4_source_state": {
     "id": "maccabees_3_4_source_backed_repair_recognized_2026_06_23",
     "status": "source_backed_repair_state_recognized_no_text_mutation",
-    "summary": "Current active 3 and 4 Maccabees files already carry NRSV source-backed repair metadata from BibleGateway NRSVA and the historical repair commit 8177b52. Raw source acquisition is no longer the next blocker for these files; further work is bounded source/form review and known-gap policy, especially 4 Maccabees 10:4 and 11:7-8.",
+    "summary": "Current active 3 and 4 Maccabees files already carry NRSV source-backed repair metadata from BibleGateway NRSVA and the historical repair commit 8177b52. Raw source acquisition is no longer the next blocker for these files; further work is bounded source/form review and known-gap policy.",
     "blockedClaims": [
       "deuterocanon_complete",
       "3maccabees_unscoped_complete_claim",
       "4maccabees_unscoped_complete_claim"
+    ]
+  },
+  "latest_maccabees_4_variant_footnote_policy": {
+    "id": "maccabees_4_variant_footnote_gap_policy_2026_06_23",
+    "status": "variant_footnote_governed_no_active_row_insert",
+    "summary": "BibleGateway NRSVA presents 4 Maccabees 10:4 and 11:7-8 as other-authority footnote additions, not primary body-text rows. They remain governed variant material and must not be inserted into active rows without a separate variant apparatus policy.",
+    "blockedClaims": [
+      "4maccabees_10_4_repaired_as_primary_row",
+      "4maccabees_11_7_8_repaired_as_primary_rows",
+      "deuterocanon_complete"
     ]
   }
 }
