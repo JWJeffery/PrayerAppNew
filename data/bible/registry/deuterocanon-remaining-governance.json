@@ -3,9 +3,10 @@
   "status": "not_trusted_remaining_deuterocanon_governed",
   "decisions": {
     "greekBookPolicy": "Do not patch Greek Daniel or Greek Esther by simple full-source overlay. Their DRB/NABRE source deltas include nontrivial versification and book-shape differences.",
+    "greekEstherFormPolicy": "Greek Esther active NRSV form is governed as named Addition sections plus ordinary Esther chapters. Do not collapse this file into DRB-style numbered extension chapters or ordinary Esther chapter-only form without a separate canonical-form migration policy.",
     "maccabeesPolicy": "Do not treat 3 Maccabees or 4 Maccabees as source gaps. Current active files are source-backed NRSV repairs from BibleGateway NRSVA; they remain bounded repairs, not a deuterocanon-complete claim.",
     "sourcePolicy": "3 and 4 Maccabees source acquisition is closed for the active NRSV lane by commit 8177b52 / active metadata sourceWitness BibleGateway NRSVA. Further work, if any, is form/provenance review rather than raw source acquisition.",
-    "trustPolicy": "Deuterocanon remains not trusted/underbuilt after DRB/NABRE completion tranches, Greek Esther/Daniel source-shape review, recognition of 3/4 Maccabees source-backed repair state, and 4 Maccabees variant-footnote gap policy.",
+    "trustPolicy": "Deuterocanon remains not trusted/underbuilt after DRB/NABRE completion tranches, Greek Esther/Daniel source-shape review, Greek Esther form policy, recognition of 3/4 Maccabees source-backed repair state, and 4 Maccabees variant-footnote gap policy.",
     "sourceShapeReviewPolicy": "Greek Esther and Greek Daniel source-shape review is complete as governance only. Row-count overlap is not enough to authorize overlay or repair in Greek-addition territory. Further work requires manual form/versification policy before text mutation.",
     "maccabees4GapPolicy": "4 Maccabees 10:4 and 11:7-8 are governed as NRSVA variant-footnote material, not missing primary body-text rows. Do not insert them into active chapter/verse rows without a separate variant apparatus policy."
   },
@@ -13,6 +14,9 @@
     "estherGK": {
       "activePath": "data/bible/OT/estherGK.json",
       "activeRows": 267,
+      "activeForm": "nrsv_named_additions_plus_ordinary_esther_chapters",
+      "activeMetaName": "Esther (with Additions)",
+      "activeMetaId": "ESTH_GRK",
       "drbRows": 275,
       "nabreRows": 167,
       "drbMissingFromActive": 80,
@@ -33,7 +37,18 @@
         "drbActiveOnlyCount": 26,
         "decision": "No simple overlay. Greek Esther requires manual Catholic/Greek Esther form and versification review before any repair."
       },
-      "decision": "governance_only_review_completed_pending_manual_greek_esther_form_policy"
+      "formPolicy": {
+        "status": "active_nrsv_addition_form_governed_no_text_mutation",
+        "preserveActiveForm": true,
+        "blockedTransforms": [
+          "drb_numbered_extension_chapter_overlay",
+          "ordinary_esther_chapter_only_promotion",
+          "nabre_row_grid_overlay",
+          "addition_letter_to_numbered_chapter_rewrite_without_migration_policy"
+        ],
+        "decision": "Keep active Greek Esther in its NRSV named-Addition form. DRB/NABRE count deltas are source-form evidence, not repair instructions."
+      },
+      "decision": "governance_only_form_policy_recorded_preserve_nrsv_addition_form"
     },
     "danielGK": {
       "activePath": "data/bible/OT/danielGK.json",
@@ -98,6 +113,9 @@
   "blockedPatches": [
     "greek_esther_simple_overlay",
     "greek_daniel_simple_overlay",
+    "greek_esther_drb_numbered_extension_overlay",
+    "greek_esther_nabre_row_grid_overlay",
+    "greek_esther_addition_form_rewrite_without_migration_policy",
     "3maccabees_active_sparse_promotion",
     "4maccabees_active_sparse_promotion",
     "greek_esther_drb_full_overlay_without_form_policy",
