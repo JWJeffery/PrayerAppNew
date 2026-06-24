@@ -50,16 +50,17 @@
       "reasons": [
         "Several files are structural stubs or materially incomplete.",
         "Some deuterocanonical files require rebuild, quarantine, or explicit scope declaration.",
-        "Greek Esther and Greek Daniel require manual form/versification policy before any overlay or repair.",
+        "Greek Esther is governed in active NRSV named-Addition form; Greek Daniel still requires manual form policy.",
         "3 and 4 Maccabees are source-backed NRSV repairs, but that does not close deuterocanon trust.",
         "4 Maccabees 10:4 and 11:7-8 are governed as variant-footnote material, not active primary rows."
       ],
-      "reason": "DRB/NABRE completion tranches applied where source identity was controlled; Greek books remain governed unresolved work. 3/4 Maccabees source acquisition is closed for the active NRSV lane and recorded as source-backed repair state. 4 Maccabees 10:4 and 11:7-8 are governed as NRSVA variant-footnote additions without active row insertion.",
+      "reason": "DRB/NABRE completion tranches applied where source identity was controlled; Greek Esther form policy is recorded, Greek Daniel remains governed unresolved work. 3/4 Maccabees source acquisition is closed for the active NRSV lane and recorded as source-backed repair state. 4 Maccabees 10:4 and 11:7-8 are governed as NRSVA variant-footnote additions without active row insertion.",
       "completedRemediations": [
         "deuterocanon_drb_completion_tranche_1",
         "deuterocanon_drb_nabre_completion_tranche_2",
         "deuterocanon_remaining_governance_1",
         "greek_esther_daniel_source_shape_review_1",
+        "greek_esther_form_policy_1",
         "maccabees_3_4_source_backed_repair_recognized_1",
         "maccabees_4_variant_footnote_gap_policy_1"
       ]
@@ -103,6 +104,17 @@
     "whole_corpus_trust_boundary_active"
   ],
   "psalms_status": "governed_legacy_psalter_rotherham_and_drb_1_150_guarded_not_global_trust",
+  "latest_greek_esther_form_policy": {
+    "id": "greek_esther_form_policy_2026_06_23",
+    "status": "active_nrsv_addition_form_governed_no_text_mutation",
+    "summary": "Active Greek Esther is governed as NRSV named-Addition form plus ordinary Esther chapters. DRB/NABRE row-grid deltas are not repair instructions. Do not rewrite to DRB numbered extension chapters, NABRE row grid, or ordinary Esther-only form without a separate canonical-form migration policy.",
+    "blockedClaims": [
+      "greek_esther_repaired_by_drb_overlay",
+      "greek_esther_repaired_by_nabre_overlay",
+      "greek_esther_ordinary_esther_only",
+      "deuterocanon_complete"
+    ]
+  },
   "latest_deuterocanon_source_shape_review": {
     "id": "greek_esther_daniel_source_shape_review_2026_06_23",
     "status": "review_completed_governance_only_no_text_mutation",
@@ -115,7 +127,6 @@
       "deuterocanon_complete"
     ],
     "nextAllowedTargets": [
-      "manual_greek_esther_form_policy",
       "manual_greek_daniel_form_policy"
     ]
   },
