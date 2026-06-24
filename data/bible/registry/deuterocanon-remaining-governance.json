@@ -5,8 +5,9 @@
     "greekBookPolicy": "Do not patch Greek Daniel or Greek Esther by simple full-source overlay. Their DRB/NABRE source deltas include nontrivial versification and book-shape differences.",
     "maccabeesPolicy": "Do not treat 3 Maccabees or 4 Maccabees as source gaps. Current active files are source-backed NRSV repairs from BibleGateway NRSVA; they remain bounded repairs, not a deuterocanon-complete claim.",
     "sourcePolicy": "3 and 4 Maccabees source acquisition is closed for the active NRSV lane by commit 8177b52 / active metadata sourceWitness BibleGateway NRSVA. Further work, if any, is form/provenance review rather than raw source acquisition.",
-    "trustPolicy": "Deuterocanon remains not trusted/underbuilt after DRB/NABRE completion tranches, Greek Esther/Daniel source-shape review, and recognition of 3/4 Maccabees source-backed repair state.",
-    "sourceShapeReviewPolicy": "Greek Esther and Greek Daniel source-shape review is complete as governance only. Row-count overlap is not enough to authorize overlay or repair in Greek-addition territory. Further work requires manual form/versification policy before text mutation."
+    "trustPolicy": "Deuterocanon remains not trusted/underbuilt after DRB/NABRE completion tranches, Greek Esther/Daniel source-shape review, recognition of 3/4 Maccabees source-backed repair state, and 4 Maccabees variant-footnote gap policy.",
+    "sourceShapeReviewPolicy": "Greek Esther and Greek Daniel source-shape review is complete as governance only. Row-count overlap is not enough to authorize overlay or repair in Greek-addition territory. Further work requires manual form/versification policy before text mutation.",
+    "maccabees4GapPolicy": "4 Maccabees 10:4 and 11:7-8 are governed as NRSVA variant-footnote material, not missing primary body-text rows. Do not insert them into active chapter/verse rows without a separate variant apparatus policy."
   },
   "inspectedGreekBooks": {
     "estherGK": {
@@ -81,7 +82,17 @@
         "11:7",
         "11:8"
       ],
-      "decision": "source_backed_repaired_with_known_source_gaps_no_acquisition_needed"
+      "knownSourceGapPolicy": {
+        "status": "variant_footnote_governed_no_active_row_insert",
+        "refs": [
+          "10:4",
+          "11:7",
+          "11:8"
+        ],
+        "sourceWitness": "BibleGateway NRSVA",
+        "decision": "The source witness presents these as other-authority additions in footnotes, not as primary NRSVA body rows. Do not insert active rows without a separate variant apparatus policy."
+      },
+      "decision": "source_backed_repaired_with_variant_footnote_gaps_governed"
     }
   },
   "blockedPatches": [
@@ -94,6 +105,8 @@
     "ordinary_esther_promotion_to_greek_esther",
     "ordinary_daniel_promotion_to_greek_daniel",
     "3maccabees_claim_complete_without_source_witness",
-    "4maccabees_claim_complete_without_source_gap_policy"
+    "4maccabees_claim_complete_without_source_gap_policy",
+    "4maccabees_10_4_active_insert_without_variant_policy",
+    "4maccabees_11_7_8_active_insert_without_variant_policy"
   ]
 }
