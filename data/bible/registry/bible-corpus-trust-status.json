@@ -489,5 +489,26 @@
       "broader_canon_policy_closed_not_trust_ready",
       "broader_canon_raw_corpus_governed"
     ]
+  },
+  "latest_final_active_non_vulgate_boundary": {
+    "id": "final_active_non_vulgate_boundary_2026_06_25",
+    "status": "active_non_vulgate_fully_classified_not_globally_trusted",
+    "trustReady": false,
+    "recordedAt": "2026-06-25T18:38:38.958852+00:00",
+    "textMutation": false,
+    "bibleTextMutation": false,
+    "summary": "Active non-Vulgate corpus is fully classified. Canonical NT and canonical OT non-Psalms have bounded trust status; Psalms, deuterocanon, and broader canon are policy-closed but remain not textually trusted. Whole-corpus trust remains blocked. Vulgate remains deferred and audit-only.",
+    "nextAllowedTargets": [],
+    "blockedClaims": [
+      "entire_biblical_corpus_trusted",
+      "whole_ot_including_psalms_textually_trusted",
+      "psalms_textually_trusted",
+      "deuterocanon_complete",
+      "broader_canon_complete",
+      "vulgate_remediation_complete",
+      "vulgate_recovered",
+      "vulgate_complete"
+    ],
+    "vulgatePolicy": "deferred_audit_only_until_active_non_vulgate_trust"
   }
 }
