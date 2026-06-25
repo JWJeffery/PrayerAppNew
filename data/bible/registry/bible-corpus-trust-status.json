@@ -12,12 +12,11 @@
       ]
     },
     "canonical_ot": {
-      "status": "not_trusted_pending_versification_remediation",
+      "status": "not_trusted_pending_final_canonical_ot_trust_audit",
       "reasons": [
-        "NABRE OT alignment and versification defects remain unresolved.",
-        "Daniel 11 remains governed pending controlled source acquisition or exclusion policy.",
+        "Daniel 11 NABRE source text is absent from the preserved controlled source lane and is governed as an exclusion, not repaired by synthesis.",
         "Nehemiah 7:73 is governed as an adapter/versification display policy, not a synthetic text repair.",
-        "Minor-prophet and chapter-boundary issues require bounded inspection before patching."
+        "Canonical OT still requires a comprehensive final trust audit before any canonical OT trust claim."
       ],
       "completedRemediations": [
         "mechanical_nabre_chapter_verse_prefix_cleanup",
@@ -32,7 +31,8 @@
         "canonical_ot_nabre_residual_classification_1",
         "daniel_greek_governance_boundary_1",
         "canonical_ot_residual_policy_review_1",
-        "nehemiah_7_73_adapter_policy_1"
+        "nehemiah_7_73_adapter_policy_1",
+        "daniel_11_source_absent_governed_exclusion_1"
       ],
       "latest_nehemiah_7_73_adapter_policy": {
         "id": "nehemiah_7_73_adapter_policy_2026_06_23",
@@ -40,6 +40,17 @@
         "summary": "Nehemiah 7:73 is not a missing-row defect. NRSV/Rotherham/KJV active row 7:73 contains both the settlement close and the seventh-month transition. NABRE places the settlement close at 7:72 and the seventh-month transition at 8:1. Preserve source text by source address; any harmonized display requires adapter/view policy rather than synthetic row construction.",
         "blockedClaims": [
           "nehemiah_7_73_repaired_by_synthetic_nabre_text",
+          "canonical_ot_fully_trusted",
+          "entire_biblical_corpus_trusted"
+        ]
+      },
+      "latest_daniel_11_source_absent_policy": {
+        "id": "daniel_11_source_absent_governed_exclusion_2026_06_23",
+        "status": "controlled_source_absent_governed_exclusion_no_text_mutation",
+        "summary": "The preserved controlled NABRE source lane at commit d0eed049 contains Daniel chapter 11 with an empty verses array. Daniel 11:1-45 remains without NABRE active text by governed exclusion. Do not synthesize NABRE, scrape substitute text, or overlay from another translation. Canonical OT may proceed only to final trust audit with this exclusion recorded.",
+        "blockedClaims": [
+          "daniel_11_nabre_repaired",
+          "daniel_11_nabre_synthesized",
           "canonical_ot_fully_trusted",
           "entire_biblical_corpus_trusted"
         ]
