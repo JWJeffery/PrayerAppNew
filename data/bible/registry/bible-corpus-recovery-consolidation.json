@@ -70,7 +70,9 @@
     "vulgate_complete"
   ],
   "nextAllowedTargets": [
-    "active_non_vulgate_trust_boundary_review"
+    "psalms_provenance_and_lane_adjudication",
+    "deuterocanon_form_versification_variant_policy_adjudication",
+    "broader_canon_source_family_translation_lane_and_textual_collation_adjudication"
   ],
   "latestPsalmsTrustReadinessClassification": {
     "id": "psalms_trust_readiness_classification_2026_06_23",
@@ -272,5 +274,61 @@
       "broader_canon_final_trust_readiness_classified_not_trust_ready",
       "broader_canon_text_trust_remains_blocked_pending_source_adjudication"
     ]
+  },
+  "latestActiveNonVulgateTrustBoundaryReview": {
+    "id": "active_non_vulgate_trust_boundary_review_2026_06_25",
+    "status": "classified_mixed_not_globally_trusted",
+    "trustReady": false,
+    "recordedAt": "2026-06-25T17:27:56.737206+00:00",
+    "remediationMarker": "active_non_vulgate_trust_boundary_review_1",
+    "scope": "active_non_vulgate_trust_boundary_review",
+    "textMutation": false,
+    "bibleTextMutation": false,
+    "activeNonVulgateLanes": [
+      "canonical_nt",
+      "canonical_ot",
+      "psalms",
+      "deuterocanon",
+      "broader_canon"
+    ],
+    "trustedLanes": [
+      "canonical_nt",
+      "canonical_ot"
+    ],
+    "notTrustReadyLanes": [
+      "psalms",
+      "deuterocanon",
+      "broader_canon"
+    ],
+    "laneStatuses": {
+      "canonical_nt": "named_defect_tranche_complete",
+      "canonical_ot": "trusted_canonical_ot_non_psalms_final_audit_passed_with_governed_exclusions",
+      "psalms": "not_trusted_psalms_provenance_and_lane_adjudication_required",
+      "deuterocanon": "not_trusted_deuterocanon_form_versification_variant_policy_required",
+      "broader_canon": "not_trusted_broader_canon_raw_text_and_zero_row_source_adjudication_required"
+    },
+    "vulgateStatus": "not_trusted_vulgate_pilot_lanes_imported_pending_full_adjudication",
+    "vulgatePolicy": "deferred_audit_only_until_active_non_vulgate_trust",
+    "summary": "Active non-Vulgate Bible corpus lanes are now explicitly classified, but the active non-Vulgate corpus is not globally trusted. Canonical NT named-defect tranche is complete and canonical OT non-Psalms is trusted with governed exclusions. Psalms, deuterocanon, and broader canon remain not trust-ready under recorded blockers. Vulgate remains deferred and audit-only.",
+    "blockedClaims": [
+      "entire_biblical_corpus_trusted",
+      "whole_ot_including_psalms_textually_trusted",
+      "psalms_textually_trusted",
+      "deuterocanon_complete",
+      "broader_canon_complete",
+      "vulgate_remediation_complete",
+      "vulgate_recovered",
+      "vulgate_complete"
+    ],
+    "allowedClaims": [
+      "active_non_vulgate_lanes_explicitly_classified",
+      "canonical_nt_named_defect_tranche_complete",
+      "canonical_ot_non_psalms_trusted_with_governed_exclusions",
+      "psalms_not_trust_ready",
+      "deuterocanon_not_trust_ready",
+      "broader_canon_not_trust_ready",
+      "vulgate_deferred_audit_only"
+    ],
+    "recommendedNextAction": "choose_and_remediate_one_recorded_non_vulgate_blocker_before_any_global_or_vulgate_trust_claim"
   }
 }
