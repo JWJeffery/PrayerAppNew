@@ -125,7 +125,7 @@
       "reason": "Psalms provenance and lane-adjudication inspection is recorded. The legacy Psalms bundle is shape-governed, but existing records contain only id and text keys and lack row-level source/provenance metadata. No Psalms textual trust claim is allowed without external provenance acquisition or a governed Psalms rebuild. No Bible text mutation was performed."
     },
     "deuterocanon": {
-      "status": "not_trusted_deuterocanon_form_versification_variant_policy_required",
+      "status": "not_trusted_deuterocanon_policy_closed_text_trust_blocked",
       "reasons": [
         "Several files are structural stubs or materially incomplete.",
         "Some deuterocanonical files require rebuild, quarantine, or explicit scope declaration.",
@@ -140,7 +140,7 @@
         "Greek Daniel simple overlay remains blocked.",
         "4 Maccabees variant-footnote insertion remains blocked without a variant apparatus policy."
       ],
-      "reason": "Deuterocanon final trust-readiness classification is recorded as not trust-ready. Greek Esther and Greek Daniel require manual form and versification adjudication before repair. 4 Maccabees 10:4 and 11:7-8 remain governed variant-footnote material, not active primary rows. No Bible text mutation was performed.",
+      "reason": "Deuterocanon remaining lanes are governed and policy-closed for the current active corpus, but the lane remains not textually trusted. Greek Esther and Greek Daniel preserve active NRSV addition forms; 3/4 Maccabees source-backed repair state is governed; 4 Maccabees variant-footnote gaps remain governed non-primary rows.",
       "completedRemediations": [
         "deuterocanon_drb_completion_tranche_1",
         "deuterocanon_drb_nabre_completion_tranche_2",
@@ -150,7 +150,8 @@
         "maccabees_3_4_source_backed_repair_recognized_1",
         "maccabees_4_variant_footnote_gap_policy_1",
         "greek_daniel_form_policy_1",
-        "deuterocanon_trust_readiness_classification_1"
+        "deuterocanon_trust_readiness_classification_1",
+        "deuterocanon_policy_closed_not_trust_ready_1"
       ]
     },
     "broader_canon": {
@@ -444,6 +445,27 @@
       "psalms_legacy_subsystem_shape_governed",
       "psalms_provenance_absent_policy_recorded",
       "psalms_text_trust_remains_blocked"
+    ]
+  },
+  "latest_deuterocanon_policy_closed_not_trust_ready": {
+    "id": "deuterocanon_policy_closed_not_trust_ready_2026_06_25",
+    "status": "policy_closed_not_trust_ready",
+    "trustReady": false,
+    "laneStatus": "not_trusted_deuterocanon_policy_closed_text_trust_blocked",
+    "recordedAt": "2026-06-25T17:38:09.708293+00:00",
+    "remediationMarker": "deuterocanon_policy_closed_not_trust_ready_1",
+    "textMutation": false,
+    "bibleTextMutation": false,
+    "summary": "Deuterocanon remaining lanes are governed and policy-closed for the current active corpus, but the lane remains not textually trusted. Greek Esther and Greek Daniel preserve active NRSV addition forms; 3/4 Maccabees source-backed repair state is governed; 4 Maccabees variant-footnote gaps remain governed non-primary rows.",
+    "blockedClaims": [
+      "deuterocanon_complete",
+      "entire_biblical_corpus_trusted",
+      "vulgate_recovered",
+      "vulgate_complete"
+    ],
+    "allowedClaims": [
+      "deuterocanon_policy_closed_not_trust_ready",
+      "deuterocanon_remaining_unresolved_lanes_governed"
     ]
   }
 }

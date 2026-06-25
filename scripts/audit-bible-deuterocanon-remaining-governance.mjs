@@ -135,7 +135,7 @@ for (const blocked of [
 }
 
 const lane = status.lanes?.deuterocanon;
-if (!lane || lane.status !== 'not_trusted_deuterocanon_form_versification_variant_policy_required') {
+if (!lane || lane.status !== 'not_trusted_deuterocanon_policy_closed_text_trust_blocked') {
   failures.push({ type: 'deuterocanon-trust-status-mismatch', actual: lane?.status || null });
 }
 
