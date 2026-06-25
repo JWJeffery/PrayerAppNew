@@ -94,7 +94,7 @@ for (const blocked of [
 }
 
 const lane = status.lanes?.broader_canon;
-if (!lane || lane.status !== 'not_trusted_governance_pending') {
+if (!lane || lane.status !== 'not_trusted_broader_canon_raw_text_and_zero_row_source_adjudication_required') {
   failures.push({ type: 'broader-canon-status-mismatch', actual: lane?.status || null });
 }
 
