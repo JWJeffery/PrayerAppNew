@@ -12,11 +12,12 @@
       ]
     },
     "canonical_ot": {
-      "status": "not_trusted_pending_final_canonical_ot_trust_audit",
+      "status": "trusted_canonical_ot_non_psalms_final_audit_passed_with_governed_exclusions",
       "reasons": [
+        "Ordinary canonical OT non-Psalms chapter/verse completeness audit passed for 38 books and 779 chapters with zero findings.",
         "Daniel 11 NABRE source text is absent from the preserved controlled source lane and is governed as an exclusion, not repaired by synthesis.",
         "Nehemiah 7:73 is governed as an adapter/versification display policy, not a synthetic text repair.",
-        "Canonical OT still requires a comprehensive final trust audit before any canonical OT trust claim."
+        "This lane-level trust result excludes Psalms, which remain a separate not-trusted legacy psalter subsystem."
       ],
       "completedRemediations": [
         "mechanical_nabre_chapter_verse_prefix_cleanup",
@@ -32,15 +33,36 @@
         "daniel_greek_governance_boundary_1",
         "canonical_ot_residual_policy_review_1",
         "nehemiah_7_73_adapter_policy_1",
-        "daniel_11_source_absent_governed_exclusion_1"
+        "daniel_11_source_absent_governed_exclusion_1",
+        "canonical_ot_final_trust_audit_1"
       ],
+      "latest_canonical_ot_final_trust_audit": {
+        "id": "canonical_ot_final_trust_audit_2026_06_23",
+        "status": "passed_with_governed_exclusions",
+        "scope": "ordinary_canonical_ot_non_psalms",
+        "ordinaryOtNonPsalmsBookCount": 38,
+        "checkedChapterCount": 779,
+        "findingCount": 0,
+        "governedExclusions": [
+          "daniel_11_nabre_source_absent_no_synthetic_overlay",
+          "nehemiah_7_73_adapter_versification_no_synthetic_row"
+        ],
+        "excludedFromThisTrustClaim": [
+          "psalms_legacy_psalter_subsystem",
+          "deuterocanon",
+          "broader_canon",
+          "vulgate",
+          "nt_full_recollation_beyond_named_defects"
+        ],
+        "summary": "Canonical OT non-Psalms final trust readiness passed after ordinary OT completeness, recovery consolidation, trust boundary, Daniel 11 governed source-absent exclusion, and Nehemiah 7:73 adapter policy checks. This is not a whole-Bible or whole-OT-with-Psalms trust claim."
+      },
       "latest_nehemiah_7_73_adapter_policy": {
         "id": "nehemiah_7_73_adapter_policy_2026_06_23",
         "status": "adapter_policy_recorded_no_text_mutation",
         "summary": "Nehemiah 7:73 is not a missing-row defect. NRSV/Rotherham/KJV active row 7:73 contains both the settlement close and the seventh-month transition. NABRE places the settlement close at 7:72 and the seventh-month transition at 8:1. Preserve source text by source address; any harmonized display requires adapter/view policy rather than synthetic row construction.",
         "blockedClaims": [
           "nehemiah_7_73_repaired_by_synthetic_nabre_text",
-          "canonical_ot_fully_trusted",
+          "whole_ot_including_psalms_textually_trusted",
           "entire_biblical_corpus_trusted"
         ]
       },
@@ -51,7 +73,7 @@
         "blockedClaims": [
           "daniel_11_nabre_repaired",
           "daniel_11_nabre_synthesized",
-          "canonical_ot_fully_trusted",
+          "whole_ot_including_psalms_textually_trusted",
           "entire_biblical_corpus_trusted"
         ]
       }
@@ -134,6 +156,7 @@
     "whole_bible_corpus_clean",
     "entire_biblical_corpus_trusted",
     "ot_textually_ok",
+    "whole_ot_including_psalms_textually_trusted",
     "deuterocanon_complete",
     "psalms_normalized",
     "broader_canon_complete",
@@ -142,6 +165,7 @@
   ],
   "allowedClaims": [
     "canonical_nt_named_defect_tranche_complete",
+    "canonical_ot_non_psalms_final_trust_audit_passed_with_governed_exclusions",
     "active_boundary_guard_present",
     "schema_container_guard_present",
     "whole_corpus_trust_boundary_active"
