@@ -79,17 +79,24 @@
       }
     },
     "psalms": {
-      "status": "not_trusted_psalms_provenance_and_lane_adjudication_required",
+      "status": "not_trusted_psalms_legacy_bundle_provenance_absent_policy_recorded",
       "reasons": [
         "Psalms legacy subsystem governance and shape checks passed for 155 root-array records.",
         "Psalm text provenance is not adjudicated.",
         "The NRSV Psalms key is not promoted as a trusted Bible NRSV lane.",
         "Grail1963 is a liturgical psalter lane with separate formatting and numbering conventions.",
-        "Psalms 151-155 are Orthodox appendix material, not normal canonical OT chapter rows."
+        "Psalms 151-155 are Orthodox appendix material, not normal canonical OT chapter rows.",
+        "Psalms legacy subsystem is shape-governed but remains textually not trusted.",
+        "Psalm records contain only id and text keys, with no row-level source or provenance fields.",
+        "Psalm records contain no explicit translation-lane metadata outside text-object keys.",
+        "Existing Psalm audits prove count and shape integrity, not source provenance.",
+        "Grail1963 remains a liturgical psalter lane with separate conventions.",
+        "Psalms 151-155 remain Orthodox appendix material, not normal canonical OT chapter rows."
       ],
       "completedRemediations": [
         "psalms_legacy_subsystem_governance_1",
-        "psalms_trust_readiness_classification_1"
+        "psalms_trust_readiness_classification_1",
+        "psalms_provenance_absent_lane_policy_1"
       ],
       "latest_psalms_trust_readiness_classification": {
         "id": "psalms_trust_readiness_classification_2026_06_23",
@@ -114,7 +121,8 @@
         ],
         "recommendedNextAction": "psalms_provenance_and_lane_adjudication_required_before_trust",
         "summary": "Psalms are shape-governed and internally counted, but not trust-ready. Record count and translation-count checks passed, but provenance and lane identity must be adjudicated before any Psalms textual trust claim."
-      }
+      },
+      "reason": "Psalms provenance and lane-adjudication inspection is recorded. The legacy Psalms bundle is shape-governed, but existing records contain only id and text keys and lack row-level source/provenance metadata. No Psalms textual trust claim is allowed without external provenance acquisition or a governed Psalms rebuild. No Bible text mutation was performed."
     },
     "deuterocanon": {
       "status": "not_trusted_deuterocanon_form_versification_variant_policy_required",
@@ -394,5 +402,48 @@
       "vulgate_deferred_audit_only"
     ],
     "recommendedNextAction": "choose_and_remediate_one_recorded_non_vulgate_blocker_before_any_global_or_vulgate_trust_claim"
+  },
+  "latest_psalms_provenance_absent_lane_policy": {
+    "id": "psalms_provenance_absent_lane_policy_2026_06_25",
+    "status": "classified_not_trust_ready_provenance_absent",
+    "trustReady": false,
+    "laneStatus": "not_trusted_psalms_legacy_bundle_provenance_absent_policy_recorded",
+    "recordedAt": "2026-06-25T17:33:12.529445+00:00",
+    "remediationMarker": "psalms_provenance_absent_lane_policy_1",
+    "scope": "psalms_provenance_and_lane_adjudication",
+    "textMutation": false,
+    "bibleTextMutation": false,
+    "inspectionEvidence": {
+      "recordCount": 155,
+      "recordKeyCounts": {
+        "id": 155,
+        "text": 155
+      },
+      "sourceLikeFieldCount": 0,
+      "translationLikeFieldCount": 0,
+      "conclusion": "existing_psalms_bundle_lacks_source_provenance_fields"
+    },
+    "blockers": [
+      "Psalms legacy subsystem is shape-governed but remains textually not trusted.",
+      "Psalm records contain only id and text keys, with no row-level source or provenance fields.",
+      "Psalm records contain no explicit translation-lane metadata outside text-object keys.",
+      "Existing Psalm audits prove count and shape integrity, not source provenance.",
+      "The NRSV Psalms key is not promoted as a trusted Bible NRSV lane.",
+      "Grail1963 remains a liturgical psalter lane with separate conventions.",
+      "Psalms 151-155 remain Orthodox appendix material, not normal canonical OT chapter rows."
+    ],
+    "recommendedNextAction": "external_source_provenance_acquisition_or_psalms_rebuild_required_before_any_psalms_textual_trust_claim",
+    "blockedClaims": [
+      "psalms_textually_trusted",
+      "whole_ot_including_psalms_textually_trusted",
+      "entire_biblical_corpus_trusted",
+      "vulgate_recovered",
+      "vulgate_complete"
+    ],
+    "allowedClaims": [
+      "psalms_legacy_subsystem_shape_governed",
+      "psalms_provenance_absent_policy_recorded",
+      "psalms_text_trust_remains_blocked"
+    ]
   }
 }
