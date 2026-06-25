@@ -20,8 +20,8 @@
       "summary": "Deuterocanon final trust-readiness classification is recorded as not trust-ready. Greek Esther and Greek Daniel require manual form and versification adjudication before repair. 4 Maccabees 10:4 and 11:7-8 remain governed variant-footnote material, not active primary rows. No Bible text mutation was performed."
     },
     "broader_canon": {
-      "expectedStatus": "not_trusted_governance_pending",
-      "summary": "Broader canon raw-text corpus is governed but not source-adjudicated or textually trusted."
+      "expectedStatus": "not_trusted_broader_canon_raw_text_and_zero_row_source_adjudication_required",
+      "summary": "Broader canon final trust-readiness classification is recorded as not trust-ready. The raw corpus is governed, but the lane still contains raw-text-only and zero-row records and has not received source-family, translation-lane, or textual-collation adjudication. No Bible text mutation was performed."
     },
     "vulgate": {
       "expectedStatus": "not_trusted_vulgate_pilot_lanes_imported_pending_full_adjudication",
@@ -45,7 +45,8 @@
       "deuterocanon_trust_readiness_classification_1"
     ],
     "broader_canon": [
-      "broader_canon_governance_1"
+      "broader_canon_governance_1",
+      "broader_canon_trust_readiness_classification_1"
     ],
     "vulgate": [
       "vulgate_pilot_lanes_imported_1",
@@ -69,7 +70,7 @@
     "vulgate_complete"
   ],
   "nextAllowedTargets": [
-    "broader_canon_final_trust_readiness_audit"
+    "active_non_vulgate_trust_boundary_review"
   ],
   "latestPsalmsTrustReadinessClassification": {
     "id": "psalms_trust_readiness_classification_2026_06_23",
@@ -233,6 +234,43 @@
     "allowedClaims": [
       "deuterocanon_final_trust_readiness_classified_not_trust_ready",
       "deuterocanon_text_trust_remains_blocked_pending_form_versification_variant_policy"
+    ]
+  },
+  "latestBroaderCanonFinalTrustReadinessClassification": {
+    "id": "broader_canon_final_trust_readiness_classification_2026_06_25",
+    "status": "classified_not_trust_ready",
+    "trustReady": false,
+    "laneStatus": "not_trusted_broader_canon_raw_text_and_zero_row_source_adjudication_required",
+    "recordedAt": "2026-06-25T17:24:13.138658+00:00",
+    "remediationMarker": "broader_canon_trust_readiness_classification_1",
+    "scope": "broader_canon_final_trust_readiness_classification",
+    "textMutation": false,
+    "bibleTextMutation": false,
+    "auditEvidence": {
+      "audit": "broader-canon-governance",
+      "candidateCount": 38,
+      "zeroRowCount": 2,
+      "rawTextOnlyCount": 36
+    },
+    "blockers": [
+      "Broader canon raw corpus is governed but remains not trusted.",
+      "Broader canon governance audit found 38 candidate records.",
+      "Broader canon governance audit found 36 raw-text-only records.",
+      "Broader canon governance audit found 2 zero-row records.",
+      "Broader canon material has not received source-family and translation-lane adjudication.",
+      "Broader canon material has not received final textual collation sufficient for a trust claim."
+    ],
+    "recommendedNextAction": "do_not_claim_broader_canon_trusted_until_source_family_translation_lane_and_textual_collation_are_adjudicated",
+    "blockedClaims": [
+      "broader_canon_complete",
+      "entire_biblical_corpus_trusted",
+      "vulgate_recovered",
+      "vulgate_complete"
+    ],
+    "allowedClaims": [
+      "broader_canon_raw_corpus_governed",
+      "broader_canon_final_trust_readiness_classified_not_trust_ready",
+      "broader_canon_text_trust_remains_blocked_pending_source_adjudication"
     ]
   }
 }
