@@ -12,8 +12,8 @@
       "summary": "Canonical OT non-Psalms passed final trust readiness after ordinary OT completeness, recovery consolidation, trust-boundary checks, Nehemiah 7:73 adapter policy, and Daniel 11 source-absent governed exclusion. This does not trust Psalms or the whole corpus."
     },
     "psalms": {
-      "expectedStatus": "not_trusted_psalms_legacy_subsystem_governed",
-      "summary": "Psalms are a governed 155-record legacy psalter subsystem and remain not textually trusted."
+      "expectedStatus": "not_trusted_psalms_provenance_and_lane_adjudication_required",
+      "summary": "Psalms are shape-governed as a 155-record legacy psalter subsystem, but trust-readiness classification failed because provenance and lane identity remain unadjudicated."
     },
     "deuterocanon": {
       "expectedStatus": "not_trusted_underbuilt",
@@ -30,7 +30,8 @@
   },
   "requiredMarkers": {
     "psalms": [
-      "psalms_legacy_subsystem_governance_1"
+      "psalms_legacy_subsystem_governance_1",
+      "psalms_trust_readiness_classification_1"
     ],
     "deuterocanon": [
       "deuterocanon_drb_completion_tranche_1",
@@ -67,8 +68,32 @@
     "vulgate_complete"
   ],
   "nextAllowedTargets": [
-    "psalms_legacy_subsystem_trust_audit"
+    "deuterocanon_final_trust_readiness_audit"
   ],
+  "latestPsalmsTrustReadinessClassification": {
+    "id": "psalms_trust_readiness_classification_2026_06_23",
+    "status": "classified_not_trust_ready",
+    "recordCount": 155,
+    "translationCounts": {
+      "NRSV": 150,
+      "Coverdale": 150,
+      "KJV": 150,
+      "JPS1985": 150,
+      "Grail1963": 151,
+      "Rotherham": 150,
+      "NABRE": 150,
+      "DRB": 150,
+      "Orthodox": 5
+    },
+    "blockers": [
+      "Psalm text provenance is not adjudicated.",
+      "NRSV Psalms key is not promoted as a trusted Bible NRSV lane.",
+      "Grail1963 is a liturgical psalter lane with separate conventions.",
+      "Psalms 151-155 are Orthodox appendix material, not normal canonical OT chapter rows."
+    ],
+    "recommendedNextAction": "psalms_provenance_and_lane_adjudication_required_before_trust",
+    "summary": "Psalms are shape-governed and internally counted, but not trust-ready. Record count and translation-count checks passed, but provenance and lane identity must be adjudicated before any Psalms textual trust claim."
+  },
   "latestCanonicalOTFinalTrustAudit": {
     "id": "canonical_ot_final_trust_audit_2026_06_23",
     "status": "passed_with_governed_exclusions",
