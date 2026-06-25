@@ -117,15 +117,22 @@
       }
     },
     "deuterocanon": {
-      "status": "not_trusted_underbuilt",
+      "status": "not_trusted_deuterocanon_form_versification_variant_policy_required",
       "reasons": [
         "Several files are structural stubs or materially incomplete.",
         "Some deuterocanonical files require rebuild, quarantine, or explicit scope declaration.",
         "Greek Esther and Greek Daniel form policies are governed without text mutation.",
         "3 and 4 Maccabees are source-backed NRSV repairs, but that does not close deuterocanon trust.",
-        "4 Maccabees 10:4 and 11:7-8 are governed as variant-footnote material, not active primary rows."
+        "4 Maccabees 10:4 and 11:7-8 are governed as variant-footnote material, not active primary rows.",
+        "Deuterocanon governance explicitly remains not trusted/underbuilt after prior tranches.",
+        "Greek Esther requires manual Catholic/Greek Esther form and versification review before any repair.",
+        "Greek Daniel requires manual form and versification policy before any repair.",
+        "4 Maccabees 10:4 and 11:7-8 are governed variant-footnote material, not active primary rows.",
+        "Greek Esther simple overlay remains blocked.",
+        "Greek Daniel simple overlay remains blocked.",
+        "4 Maccabees variant-footnote insertion remains blocked without a variant apparatus policy."
       ],
-      "reason": "DRB/NABRE completion tranches applied where source identity was controlled; Greek Esther and Greek Daniel form policies are recorded. 3/4 Maccabees source acquisition is closed for the active NRSV lane and recorded as source-backed repair state. 4 Maccabees 10:4 and 11:7-8 are governed as NRSVA variant-footnote additions without active row insertion.",
+      "reason": "Deuterocanon final trust-readiness classification is recorded as not trust-ready. Greek Esther and Greek Daniel require manual form and versification adjudication before repair. 4 Maccabees 10:4 and 11:7-8 remain governed variant-footnote material, not active primary rows. No Bible text mutation was performed.",
       "completedRemediations": [
         "deuterocanon_drb_completion_tranche_1",
         "deuterocanon_drb_nabre_completion_tranche_2",
@@ -134,7 +141,8 @@
         "greek_esther_form_policy_1",
         "maccabees_3_4_source_backed_repair_recognized_1",
         "maccabees_4_variant_footnote_gap_policy_1",
-        "greek_daniel_form_policy_1"
+        "greek_daniel_form_policy_1",
+        "deuterocanon_trust_readiness_classification_1"
       ]
     },
     "broader_canon": {
@@ -252,6 +260,39 @@
       "greek_daniel_repaired_by_nabre_overlay",
       "greek_daniel_additions_split_without_policy",
       "deuterocanon_complete"
+    ]
+  },
+  "latest_deuterocanon_final_trust_readiness_classification": {
+    "id": "deuterocanon_final_trust_readiness_classification_2026_06_25",
+    "status": "classified_not_trust_ready",
+    "trustReady": false,
+    "laneStatus": "not_trusted_deuterocanon_form_versification_variant_policy_required",
+    "recordedAt": "2026-06-25T17:19:09.075655+00:00",
+    "remediationMarker": "deuterocanon_trust_readiness_classification_1",
+    "scope": "deuterocanon_final_trust_readiness_classification",
+    "textMutation": false,
+    "bibleTextMutation": false,
+    "blockers": [
+      "Deuterocanon governance explicitly remains not trusted/underbuilt after prior tranches.",
+      "Greek Esther requires manual Catholic/Greek Esther form and versification review before any repair.",
+      "Greek Daniel requires manual form and versification policy before any repair.",
+      "4 Maccabees 10:4 and 11:7-8 are governed variant-footnote material, not active primary rows.",
+      "Greek Esther simple overlay remains blocked.",
+      "Greek Daniel simple overlay remains blocked.",
+      "4 Maccabees variant-footnote insertion remains blocked without a variant apparatus policy."
+    ],
+    "recommendedNextAction": "manual_form_versification_variant_policy_adjudication_before_any_deuterocanon_trust_claim",
+    "blockedClaims": [
+      "deuterocanon_complete",
+      "entire_biblical_corpus_trusted",
+      "whole_ot_including_psalms_textually_trusted",
+      "broader_canon_complete",
+      "vulgate_recovered",
+      "vulgate_complete"
+    ],
+    "allowedClaims": [
+      "deuterocanon_final_trust_readiness_classified_not_trust_ready",
+      "deuterocanon_text_trust_remains_blocked_pending_form_versification_variant_policy"
     ]
   }
 }
