@@ -15,7 +15,8 @@
       "status": "not_trusted_pending_versification_remediation",
       "reasons": [
         "NABRE OT alignment and versification defects remain unresolved.",
-        "Daniel and related Greek-extension handling require source/versification decisions.",
+        "Daniel 11 remains governed pending controlled source acquisition or exclusion policy.",
+        "Nehemiah 7:73 is governed as an adapter/versification display policy, not a synthetic text repair.",
         "Minor-prophet and chapter-boundary issues require bounded inspection before patching."
       ],
       "completedRemediations": [
@@ -30,8 +31,19 @@
         "nondaniel_special_overlay_batch_1",
         "canonical_ot_nabre_residual_classification_1",
         "daniel_greek_governance_boundary_1",
-        "canonical_ot_residual_policy_review_1"
-      ]
+        "canonical_ot_residual_policy_review_1",
+        "nehemiah_7_73_adapter_policy_1"
+      ],
+      "latest_nehemiah_7_73_adapter_policy": {
+        "id": "nehemiah_7_73_adapter_policy_2026_06_23",
+        "status": "adapter_policy_recorded_no_text_mutation",
+        "summary": "Nehemiah 7:73 is not a missing-row defect. NRSV/Rotherham/KJV active row 7:73 contains both the settlement close and the seventh-month transition. NABRE places the settlement close at 7:72 and the seventh-month transition at 8:1. Preserve source text by source address; any harmonized display requires adapter/view policy rather than synthetic row construction.",
+        "blockedClaims": [
+          "nehemiah_7_73_repaired_by_synthetic_nabre_text",
+          "canonical_ot_fully_trusted",
+          "entire_biblical_corpus_trusted"
+        ]
+      }
     },
     "psalms": {
       "status": "not_trusted_psalms_legacy_subsystem_governed",
