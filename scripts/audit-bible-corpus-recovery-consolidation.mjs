@@ -39,7 +39,9 @@ for (const blocked of [
   'psalms_textually_trusted',
   'deuterocanon_complete',
   'broader_canon_complete',
-  'vulgate_remediation_complete'
+  'vulgate_remediation_complete',
+  'vulgate_recovered',
+  'vulgate_complete'
 ]) {
   if (!Array.isArray(consolidation.blockedClaims) || !consolidation.blockedClaims.includes(blocked)) {
     failures.push({ type: 'missing-blocked-claim', blocked });
@@ -52,7 +54,35 @@ const unsafeTrusted = Object.entries(status.lanes || {}).filter(([lane, info]) =
 });
 
 if (unsafeTrusted.length) {
-  failures.push({ type: 'unsafe-non-nt-trust-status', lanes: unsafeTrusted.map(([lane, info]) => ({ lane, status: info.status })) });
+  failures.push({
+    type: 'unsafe-non-nt-trust-status',
+    lanes: unsafeTrusted.map(([lane, info]) => ({ lane, status: info.status }))
+  });
+}
+
+const vulgatePolicy = consolidation.vulgateDeferralPolicy;
+if (vulgatePolicy?.status !== 'deferred_audit_only_until_active_non_vulgate_trust') {
+  failures.push({
+    type: 'missing-vulgate-deferral-policy',
+    actual: vulgatePolicy?.status || null
+  });
+}
+
+for (const blockedTarget of [
+  'vulgate_full_source_adjudication',
+  'vulgate_pilot_lane_integration_policy',
+  'vulgate_buildout',
+  'vulgate_source_acquisition'
+]) {
+  if (Array.isArray(consolidation.nextAllowedTargets) && consolidation.nextAllowedTargets.includes(blockedTarget)) {
+    failures.push({ type: 'vulgate-active-work-target-present', blockedTarget });
+  }
+}
+
+for (const blockedTarget of vulgatePolicy?.blockedNextAllowedTargets || []) {
+  if (Array.isArray(consolidation.nextAllowedTargets) && consolidation.nextAllowedTargets.includes(blockedTarget)) {
+    failures.push({ type: 'vulgate-deferral-policy-violated', blockedTarget });
+  }
 }
 
 const report = {
@@ -61,6 +91,7 @@ const report = {
   laneStatuses: Object.fromEntries(Object.entries(status.lanes || {}).map(([lane, info]) => [lane, info.status])),
   blockedClaims: consolidation.blockedClaims,
   nextAllowedTargets: consolidation.nextAllowedTargets,
+  vulgateDeferralPolicy: vulgatePolicy?.status || null,
   failures
 };
 
@@ -71,5 +102,5 @@ if (failures.length) {
   console.log('NEXT: Review Bible corpus recovery consolidation failures.');
 } else {
   console.log('ALL PASSED');
-  console.log('NEXT: Bible corpus recovery state is consolidated; Vulgate active work may resume with protected status checks.');
+  console.log('NEXT: Bible corpus recovery state is consolidated; proceed only to listed non-Vulgate targets unless active non-Vulgate trust is established.');
 }
