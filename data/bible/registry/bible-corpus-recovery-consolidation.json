@@ -25,7 +25,7 @@
     },
     "vulgate": {
       "expectedStatus": "not_trusted_vulgate_pilot_lanes_imported_pending_full_adjudication",
-      "summary": "Vulgate pilot lanes are committed as bounded source-lane data but remain pending full adjudication."
+      "summary": "Vulgate pilot lanes are committed as bounded source-lane data. Vulgate build, expansion, source acquisition, and integration are deferred until the active non-Vulgate corpus is trusted; existing Vulgate pilot work may be audited later."
     }
   },
   "requiredMarkers": {
@@ -46,7 +46,8 @@
       "broader_canon_governance_1"
     ],
     "vulgate": [
-      "vulgate_pilot_lanes_imported_1"
+      "vulgate_pilot_lanes_imported_1",
+      "vulgate_deferred_until_non_vulgate_trust_1"
     ],
     "canonical_ot": [
       "canonical_ot_residual_policy_review_1",
@@ -59,13 +60,24 @@
     "psalms_textually_trusted",
     "deuterocanon_complete",
     "broader_canon_complete",
-    "vulgate_remediation_complete"
+    "vulgate_remediation_complete",
+    "vulgate_recovered",
+    "vulgate_complete"
   ],
   "nextAllowedTargets": [
-    "vulgate_full_source_adjudication",
-    "vulgate_pilot_lane_integration_policy",
     "daniel_11_controlled_source_acquisition_or_governed_exclusion"
   ],
+  "vulgateDeferralPolicy": {
+    "id": "vulgate_deferred_until_non_vulgate_trust_2026_06_23",
+    "status": "deferred_audit_only_until_active_non_vulgate_trust",
+    "summary": "Do not build, expand, source-acquire, or integrate Vulgate until the active non-Vulgate corpus is trusted. After active non-Vulgate trust is established, audit the existing Vulgate pilot state before deciding whether any further Vulgate buildout is authorized.",
+    "blockedNextAllowedTargets": [
+      "vulgate_full_source_adjudication",
+      "vulgate_pilot_lane_integration_policy",
+      "vulgate_buildout",
+      "vulgate_source_acquisition"
+    ]
+  },
   "latestCanonicalOTNehemiah773AdapterPolicy": {
     "id": "nehemiah_7_73_adapter_policy_2026_06_23",
     "status": "adapter_policy_recorded_no_text_mutation",
