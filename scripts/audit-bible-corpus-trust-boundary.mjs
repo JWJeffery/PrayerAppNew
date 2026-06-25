@@ -5,6 +5,7 @@ import { spawnSync } from 'node:child_process';
 
 const root = process.cwd();
 const statusPath = path.join(root, 'data/bible/registry/bible-corpus-trust-status.json');
+const canonicalOtTrustedStatus = 'trusted_canonical_ot_non_psalms_final_audit_passed_with_governed_exclusions';
 
 function run(args) {
   const p = spawnSync(args[0], args.slice(1), { cwd: root, encoding: 'utf8' });
@@ -42,7 +43,24 @@ if (status) {
     if (!laneStatus) failures.push({ type: 'missing-lane', lane });
   }
 
-  for (const lane of ['canonical_ot', 'psalms', 'deuterocanon', 'broader_canon']) {
+  const canonicalOtStatus = status.lanes?.canonical_ot?.status || '';
+  if (canonicalOtStatus !== canonicalOtTrustedStatus) {
+    failures.push({ type: 'unexpected-canonical-ot-status', actual: canonicalOtStatus });
+  }
+
+  const canonicalOtMarkers = status.lanes?.canonical_ot?.completedRemediations || [];
+  if (!Array.isArray(canonicalOtMarkers) || !canonicalOtMarkers.includes('canonical_ot_final_trust_audit_1')) {
+    failures.push({ type: 'missing-canonical-ot-final-trust-marker' });
+  }
+
+  if (status.lanes?.canonical_ot?.latest_canonical_ot_final_trust_audit?.status !== 'passed_with_governed_exclusions') {
+    failures.push({
+      type: 'missing-canonical-ot-final-trust-record',
+      actual: status.lanes?.canonical_ot?.latest_canonical_ot_final_trust_audit?.status || null
+    });
+  }
+
+  for (const lane of ['psalms', 'deuterocanon', 'broader_canon']) {
     const laneStatus = status.lanes?.[lane]?.status || '';
     if (!laneStatus.startsWith('not_trusted')) {
       failures.push({ type: 'unsafe-trust-claim', lane, status: laneStatus });
@@ -59,13 +77,23 @@ if (status) {
     failures.push({ type: 'unsafe-vulgate-status', actual: status.lanes?.vulgate?.status || null });
   }
 
+  if (status.lanes?.vulgate?.latest_vulgate_deferral_policy?.status !== 'deferred_audit_only_until_active_non_vulgate_trust') {
+    failures.push({
+      type: 'missing-vulgate-deferral-status',
+      actual: status.lanes?.vulgate?.latest_vulgate_deferral_policy?.status || null
+    });
+  }
+
   for (const claim of [
     'whole_bible_corpus_clean',
     'entire_biblical_corpus_trusted',
     'ot_textually_ok',
+    'whole_ot_including_psalms_textually_trusted',
     'deuterocanon_complete',
     'psalms_normalized',
-    'broader_canon_complete'
+    'broader_canon_complete',
+    'vulgate_recovered',
+    'vulgate_complete'
   ]) {
     if (!status.forbiddenClaims?.includes(claim)) {
       failures.push({ type: 'missing-forbidden-claim', claim });
@@ -116,5 +144,5 @@ if (failures.length) {
   console.log('NEXT: Review trust-boundary failures. Do not claim whole-corpus trust.');
 } else {
   console.log('ALL PASSED');
-  console.log('NEXT: Whole-corpus trust boundary is active; proceed to OT/deuterocanon/Psalms remediation planning.');
+  console.log('NEXT: Canonical OT non-Psalms trust is guarded; whole-corpus trust remains blocked.');
 }
