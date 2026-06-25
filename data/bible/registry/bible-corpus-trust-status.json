@@ -79,16 +79,42 @@
       }
     },
     "psalms": {
-      "status": "not_trusted_psalms_legacy_subsystem_governed",
+      "status": "not_trusted_psalms_provenance_and_lane_adjudication_required",
       "reasons": [
-        "Psalms use a legacy root-array subsystem.",
-        "Psalms require separate architecture before normalization or trust claims.",
-        "Psalms are governed but remain not textually trusted."
+        "Psalms legacy subsystem governance and shape checks passed for 155 root-array records.",
+        "Psalm text provenance is not adjudicated.",
+        "The NRSV Psalms key is not promoted as a trusted Bible NRSV lane.",
+        "Grail1963 is a liturgical psalter lane with separate formatting and numbering conventions.",
+        "Psalms 151-155 are Orthodox appendix material, not normal canonical OT chapter rows."
       ],
       "completedRemediations": [
-        "psalms_legacy_subsystem_governance_1"
+        "psalms_legacy_subsystem_governance_1",
+        "psalms_trust_readiness_classification_1"
       ],
-      "reason": "Governed 155-record legacy psalter array; text/provenance/label adjudication still pending."
+      "latest_psalms_trust_readiness_classification": {
+        "id": "psalms_trust_readiness_classification_2026_06_23",
+        "status": "classified_not_trust_ready",
+        "recordCount": 155,
+        "translationCounts": {
+          "NRSV": 150,
+          "Coverdale": 150,
+          "KJV": 150,
+          "JPS1985": 150,
+          "Grail1963": 151,
+          "Rotherham": 150,
+          "NABRE": 150,
+          "DRB": 150,
+          "Orthodox": 5
+        },
+        "blockers": [
+          "Psalm text provenance is not adjudicated.",
+          "NRSV Psalms key is not promoted as a trusted Bible NRSV lane.",
+          "Grail1963 is a liturgical psalter lane with separate conventions.",
+          "Psalms 151-155 are Orthodox appendix material, not normal canonical OT chapter rows."
+        ],
+        "recommendedNextAction": "psalms_provenance_and_lane_adjudication_required_before_trust",
+        "summary": "Psalms are shape-governed and internally counted, but not trust-ready. Record count and translation-count checks passed, but provenance and lane identity must be adjudicated before any Psalms textual trust claim."
+      }
     },
     "deuterocanon": {
       "status": "not_trusted_underbuilt",
@@ -157,6 +183,7 @@
     "entire_biblical_corpus_trusted",
     "ot_textually_ok",
     "whole_ot_including_psalms_textually_trusted",
+    "psalms_textually_trusted",
     "deuterocanon_complete",
     "psalms_normalized",
     "broader_canon_complete",
@@ -166,11 +193,12 @@
   "allowedClaims": [
     "canonical_nt_named_defect_tranche_complete",
     "canonical_ot_non_psalms_final_trust_audit_passed_with_governed_exclusions",
+    "psalms_legacy_subsystem_shape_governed_not_trust_ready",
     "active_boundary_guard_present",
     "schema_container_guard_present",
     "whole_corpus_trust_boundary_active"
   ],
-  "psalms_status": "governed_legacy_psalter_rotherham_and_drb_1_150_guarded_not_global_trust",
+  "psalms_status": "shape_governed_not_trust_ready_pending_provenance_and_lane_adjudication",
   "latest_greek_esther_form_policy": {
     "id": "greek_esther_form_policy_2026_06_23",
     "status": "active_nrsv_addition_form_governed_no_text_mutation",
