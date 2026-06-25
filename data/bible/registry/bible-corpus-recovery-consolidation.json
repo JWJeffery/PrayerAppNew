@@ -8,8 +8,8 @@
       "summary": "Named NT defect tranche is complete and guarded."
     },
     "canonical_ot": {
-      "expectedStatus": "not_trusted_pending_versification_remediation",
-      "summary": "Canonical OT has source-backed NABRE overlay remediation, residual classification, and Nehemiah 7:73 adapter policy recorded, but remains not globally trusted. Daniel 11 remains governed."
+      "expectedStatus": "not_trusted_pending_final_canonical_ot_trust_audit",
+      "summary": "Canonical OT has source-backed NABRE overlay remediation, residual classification, Nehemiah 7:73 adapter policy, and Daniel 11 source-absent governed exclusion recorded. It remains pending final canonical OT trust audit."
     },
     "psalms": {
       "expectedStatus": "not_trusted_psalms_legacy_subsystem_governed",
@@ -51,7 +51,8 @@
     ],
     "canonical_ot": [
       "canonical_ot_residual_policy_review_1",
-      "nehemiah_7_73_adapter_policy_1"
+      "nehemiah_7_73_adapter_policy_1",
+      "daniel_11_source_absent_governed_exclusion_1"
     ]
   },
   "blockedClaims": [
@@ -65,8 +66,19 @@
     "vulgate_complete"
   ],
   "nextAllowedTargets": [
-    "daniel_11_controlled_source_acquisition_or_governed_exclusion"
+    "canonical_ot_final_trust_audit"
   ],
+  "latestCanonicalOTDaniel11Policy": {
+    "id": "daniel_11_source_absent_governed_exclusion_2026_06_23",
+    "status": "controlled_source_absent_governed_exclusion_no_text_mutation",
+    "summary": "The preserved controlled NABRE source lane at commit d0eed049 contains Daniel chapter 11 with an empty verses array. Daniel 11:1-45 remains without NABRE active text by governed exclusion. Do not synthesize NABRE, scrape substitute text, or overlay from another translation. Canonical OT may proceed only to final trust audit with this exclusion recorded.",
+    "blockedClaims": [
+      "daniel_11_nabre_repaired",
+      "daniel_11_nabre_synthesized",
+      "canonical_ot_fully_trusted",
+      "entire_biblical_corpus_trusted"
+    ]
+  },
   "vulgateDeferralPolicy": {
     "id": "vulgate_deferred_until_non_vulgate_trust_2026_06_23",
     "status": "deferred_audit_only_until_active_non_vulgate_trust",
