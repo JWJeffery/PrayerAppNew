@@ -20,8 +20,8 @@
       "summary": "Deuterocanon remaining lanes are governed and policy-closed for the current active corpus, but the lane remains not textually trusted. Greek Esther and Greek Daniel preserve active NRSV addition forms; 3/4 Maccabees source-backed repair state is governed; 4 Maccabees variant-footnote gaps remain governed non-primary rows."
     },
     "broader_canon": {
-      "expectedStatus": "not_trusted_broader_canon_raw_text_and_zero_row_source_adjudication_required",
-      "summary": "Broader canon final trust-readiness classification is recorded as not trust-ready. The raw corpus is governed, but the lane still contains raw-text-only and zero-row records and has not received source-family, translation-lane, or textual-collation adjudication. No Bible text mutation was performed."
+      "expectedStatus": "not_trusted_broader_canon_policy_closed_text_trust_blocked",
+      "summary": "Broader canon source-adjudication is policy-closed for the current active corpus, but the lane remains not textually trusted. The raw corpus is governed, with 38 candidate records, 36 raw-text-only records, and 2 zero-row records. No Bible text mutation was performed."
     },
     "vulgate": {
       "expectedStatus": "not_trusted_vulgate_pilot_lanes_imported_pending_full_adjudication",
@@ -48,7 +48,8 @@
     ],
     "broader_canon": [
       "broader_canon_governance_1",
-      "broader_canon_trust_readiness_classification_1"
+      "broader_canon_trust_readiness_classification_1",
+      "broader_canon_policy_closed_not_trust_ready_1"
     ],
     "vulgate": [
       "vulgate_pilot_lanes_imported_1",
@@ -71,9 +72,7 @@
     "vulgate_recovered",
     "vulgate_complete"
   ],
-  "nextAllowedTargets": [
-    "broader_canon_source_family_translation_lane_and_textual_collation_adjudication"
-  ],
+  "nextAllowedTargets": [],
   "latestPsalmsTrustReadinessClassification": {
     "id": "psalms_trust_readiness_classification_2026_06_23",
     "status": "classified_not_trust_ready",
@@ -393,6 +392,27 @@
     "allowedClaims": [
       "deuterocanon_policy_closed_not_trust_ready",
       "deuterocanon_remaining_unresolved_lanes_governed"
+    ]
+  },
+  "latestBroaderCanonPolicyClosedNotTrustReady": {
+    "id": "broader_canon_policy_closed_not_trust_ready_2026_06_25",
+    "status": "policy_closed_not_trust_ready",
+    "trustReady": false,
+    "laneStatus": "not_trusted_broader_canon_policy_closed_text_trust_blocked",
+    "recordedAt": "2026-06-25T17:39:06.350947+00:00",
+    "remediationMarker": "broader_canon_policy_closed_not_trust_ready_1",
+    "textMutation": false,
+    "bibleTextMutation": false,
+    "summary": "Broader canon source-adjudication is policy-closed for the current active corpus, but the lane remains not textually trusted. The raw corpus is governed, with 38 candidate records, 36 raw-text-only records, and 2 zero-row records. No Bible text mutation was performed.",
+    "blockedClaims": [
+      "broader_canon_complete",
+      "entire_biblical_corpus_trusted",
+      "vulgate_recovered",
+      "vulgate_complete"
+    ],
+    "allowedClaims": [
+      "broader_canon_policy_closed_not_trust_ready",
+      "broader_canon_raw_corpus_governed"
     ]
   }
 }

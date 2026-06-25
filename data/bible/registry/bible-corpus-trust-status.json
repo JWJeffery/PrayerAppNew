@@ -155,7 +155,7 @@
       ]
     },
     "broader_canon": {
-      "status": "not_trusted_broader_canon_raw_text_and_zero_row_source_adjudication_required",
+      "status": "not_trusted_broader_canon_policy_closed_text_trust_blocked",
       "reasons": [
         "Broader-canon files include non-standard schemas.",
         "Odes and related canticle files are structurally identified but underpopulated.",
@@ -167,10 +167,11 @@
         "Broader canon material has not received source-family and translation-lane adjudication.",
         "Broader canon material has not received final textual collation sufficient for a trust claim."
       ],
-      "reason": "Broader canon final trust-readiness classification is recorded as not trust-ready. The raw corpus is governed, but the lane still contains raw-text-only and zero-row records and has not received source-family, translation-lane, or textual-collation adjudication. No Bible text mutation was performed.",
+      "reason": "Broader canon source-adjudication is policy-closed for the current active corpus, but the lane remains not textually trusted. The raw corpus is governed, with 38 candidate records, 36 raw-text-only records, and 2 zero-row records. No Bible text mutation was performed.",
       "completedRemediations": [
         "broader_canon_governance_1",
-        "broader_canon_trust_readiness_classification_1"
+        "broader_canon_trust_readiness_classification_1",
+        "broader_canon_policy_closed_not_trust_ready_1"
       ]
     },
     "vulgate": {
@@ -466,6 +467,27 @@
     "allowedClaims": [
       "deuterocanon_policy_closed_not_trust_ready",
       "deuterocanon_remaining_unresolved_lanes_governed"
+    ]
+  },
+  "latest_broader_canon_policy_closed_not_trust_ready": {
+    "id": "broader_canon_policy_closed_not_trust_ready_2026_06_25",
+    "status": "policy_closed_not_trust_ready",
+    "trustReady": false,
+    "laneStatus": "not_trusted_broader_canon_policy_closed_text_trust_blocked",
+    "recordedAt": "2026-06-25T17:39:06.350947+00:00",
+    "remediationMarker": "broader_canon_policy_closed_not_trust_ready_1",
+    "textMutation": false,
+    "bibleTextMutation": false,
+    "summary": "Broader canon source-adjudication is policy-closed for the current active corpus, but the lane remains not textually trusted. The raw corpus is governed, with 38 candidate records, 36 raw-text-only records, and 2 zero-row records. No Bible text mutation was performed.",
+    "blockedClaims": [
+      "broader_canon_complete",
+      "entire_biblical_corpus_trusted",
+      "vulgate_recovered",
+      "vulgate_complete"
+    ],
+    "allowedClaims": [
+      "broader_canon_policy_closed_not_trust_ready",
+      "broader_canon_raw_corpus_governed"
     ]
   }
 }
