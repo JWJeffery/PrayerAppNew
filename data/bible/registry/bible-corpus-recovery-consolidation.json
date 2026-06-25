@@ -9,7 +9,7 @@
     },
     "canonical_ot": {
       "expectedStatus": "not_trusted_pending_versification_remediation",
-      "summary": "Canonical OT has source-backed NABRE overlay remediation and classified residuals, but remains not globally trusted."
+      "summary": "Canonical OT has source-backed NABRE overlay remediation, residual classification, and Nehemiah 7:73 adapter policy recorded, but remains not globally trusted. Daniel 11 remains governed."
     },
     "psalms": {
       "expectedStatus": "not_trusted_psalms_legacy_subsystem_governed",
@@ -49,7 +49,8 @@
       "vulgate_pilot_lanes_imported_1"
     ],
     "canonical_ot": [
-      "canonical_ot_residual_policy_review_1"
+      "canonical_ot_residual_policy_review_1",
+      "nehemiah_7_73_adapter_policy_1"
     ]
   },
   "blockedClaims": [
@@ -63,9 +64,18 @@
   "nextAllowedTargets": [
     "vulgate_full_source_adjudication",
     "vulgate_pilot_lane_integration_policy",
-    "nehemiah_7_73_adapter_versification_policy",
     "daniel_11_controlled_source_acquisition_or_governed_exclusion"
   ],
+  "latestCanonicalOTNehemiah773AdapterPolicy": {
+    "id": "nehemiah_7_73_adapter_policy_2026_06_23",
+    "status": "adapter_policy_recorded_no_text_mutation",
+    "summary": "Nehemiah 7:73 is not a missing-row defect. NRSV/Rotherham/KJV active row 7:73 contains both the settlement close and the seventh-month transition. NABRE places the settlement close at 7:72 and the seventh-month transition at 8:1. Preserve source text by source address; any harmonized display requires adapter/view policy rather than synthetic row construction.",
+    "blockedClaims": [
+      "nehemiah_7_73_repaired_by_synthetic_nabre_text",
+      "canonical_ot_fully_trusted",
+      "entire_biblical_corpus_trusted"
+    ]
+  },
   "latestGreekEstherFormPolicy": {
     "id": "greek_esther_form_policy_2026_06_23",
     "status": "active_nrsv_addition_form_governed_no_text_mutation",
