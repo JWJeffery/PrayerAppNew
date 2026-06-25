@@ -6,9 +6,10 @@
     "greekEstherFormPolicy": "Greek Esther active NRSV form is governed as named Addition sections plus ordinary Esther chapters. Do not collapse this file into DRB-style numbered extension chapters or ordinary Esther chapter-only form without a separate canonical-form migration policy.",
     "maccabeesPolicy": "Do not treat 3 Maccabees or 4 Maccabees as source gaps. Current active files are source-backed NRSV repairs from BibleGateway NRSVA; they remain bounded repairs, not a deuterocanon-complete claim.",
     "sourcePolicy": "3 and 4 Maccabees source acquisition is closed for the active NRSV lane by commit 8177b52 / active metadata sourceWitness BibleGateway NRSVA. Further work, if any, is form/provenance review rather than raw source acquisition.",
-    "trustPolicy": "Deuterocanon remains not trusted/underbuilt after DRB/NABRE completion tranches, Greek Esther/Daniel source-shape review, Greek Esther form policy, recognition of 3/4 Maccabees source-backed repair state, and 4 Maccabees variant-footnote gap policy.",
+    "trustPolicy": "Deuterocanon remains not trusted/underbuilt after DRB/NABRE completion tranches, Greek Esther/Daniel source-shape review, Greek Esther form policy, Greek Daniel form policy, recognition of 3/4 Maccabees source-backed repair state, and 4 Maccabees variant-footnote gap policy.",
     "sourceShapeReviewPolicy": "Greek Esther and Greek Daniel source-shape review is complete as governance only. Row-count overlap is not enough to authorize overlay or repair in Greek-addition territory. Further work requires manual form/versification policy before text mutation.",
-    "maccabees4GapPolicy": "4 Maccabees 10:4 and 11:7-8 are governed as NRSVA variant-footnote material, not missing primary body-text rows. Do not insert them into active chapter/verse rows without a separate variant apparatus policy."
+    "maccabees4GapPolicy": "4 Maccabees 10:4 and 11:7-8 are governed as NRSVA variant-footnote material, not missing primary body-text rows. Do not insert them into active chapter/verse rows without a separate variant apparatus policy.",
+    "greekDanielFormPolicy": "Greek Daniel active NRSV form is governed as one extended Daniel book: ordinary Daniel 1-12, Prayer of Azariah/Song embedded in chapter 3, Susanna as chapter 13, and Bel and the Dragon as chapter 14. Do not split additions into separate books, overlay DRB/NABRE row grids, or rewrite chapter form without a separate canonical-form migration policy."
   },
   "inspectedGreekBooks": {
     "estherGK": {
@@ -72,7 +73,27 @@
         "drbActiveOnlyCount": 3,
         "decision": "No simple overlay. Greek Daniel is close to DRB, but mismatches occur in addition/Greek-form territory and require manual form and versification policy before repair."
       },
-      "decision": "governance_only_review_completed_pending_manual_greek_daniel_form_policy"
+      "decision": "governance_only_form_policy_recorded_preserve_nrsv_extended_daniel_form",
+      "activeForm": "nrsv_extended_daniel_single_book_chapters_1_14",
+      "activeMetaName": "Daniel (Extended/Catholic Canon)",
+      "activeMetaId": "DAN_EXT",
+      "embeddedAdditions": {
+        "prayerOfAzariahAndSongOfThree": "chapter_3_embedded_verses_24_90",
+        "susanna": "chapter_13_named_susanna",
+        "belAndDragon": "chapter_14_named_bel_and_the_dragon"
+      },
+      "formPolicy": {
+        "status": "active_nrsv_extended_daniel_form_governed_no_text_mutation",
+        "preserveActiveForm": true,
+        "blockedTransforms": [
+          "drb_numbered_extension_chapter_overlay",
+          "nabre_row_grid_overlay",
+          "split_additions_into_separate_books_without_migration_policy",
+          "chapter_3_addition_extraction_without_variant_policy",
+          "susanna_bel_dragon_chapter_rewrite_without_migration_policy"
+        ],
+        "decision": "Keep active Greek Daniel in its NRSV extended-Daniel single-book form. DRB/NABRE count deltas are source-form evidence, not repair instructions."
+      }
     }
   },
   "inspectedMaccabees": {
@@ -125,6 +146,10 @@
     "3maccabees_claim_complete_without_source_witness",
     "4maccabees_claim_complete_without_source_gap_policy",
     "4maccabees_10_4_active_insert_without_variant_policy",
-    "4maccabees_11_7_8_active_insert_without_variant_policy"
+    "4maccabees_11_7_8_active_insert_without_variant_policy",
+    "greek_daniel_drb_numbered_extension_overlay",
+    "greek_daniel_nabre_row_grid_overlay",
+    "greek_daniel_addition_split_without_migration_policy",
+    "greek_daniel_chapter_3_addition_extraction_without_variant_policy"
   ]
 }
