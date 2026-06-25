@@ -8,6 +8,7 @@ const consolidation = JSON.parse(fs.readFileSync(consolidationPath, 'utf8'));
 const status = JSON.parse(fs.readFileSync(statusPath, 'utf8'));
 
 const failures = [];
+const canonicalOtTrustedStatus = 'trusted_canonical_ot_non_psalms_final_audit_passed_with_governed_exclusions';
 
 if (consolidation.schema !== 'bible-corpus-recovery-consolidation-v1') {
   failures.push({ type: 'schema-mismatch' });
@@ -35,7 +36,7 @@ for (const [lane, markers] of Object.entries(consolidation.requiredMarkers || {}
 
 for (const blocked of [
   'entire_biblical_corpus_trusted',
-  'canonical_ot_fully_trusted',
+  'whole_ot_including_psalms_textually_trusted',
   'psalms_textually_trusted',
   'deuterocanon_complete',
   'broader_canon_complete',
@@ -48,14 +49,28 @@ for (const blocked of [
   }
 }
 
+const canonicalOt = status.lanes?.canonical_ot;
+if (canonicalOt?.status === canonicalOtTrustedStatus) {
+  if (!Array.isArray(canonicalOt.completedRemediations) || !canonicalOt.completedRemediations.includes('canonical_ot_final_trust_audit_1')) {
+    failures.push({ type: 'canonical-ot-trusted-without-final-audit-marker' });
+  }
+  if (canonicalOt.latest_canonical_ot_final_trust_audit?.status !== 'passed_with_governed_exclusions') {
+    failures.push({
+      type: 'canonical-ot-trusted-without-final-audit-record',
+      actual: canonicalOt.latest_canonical_ot_final_trust_audit?.status || null
+    });
+  }
+}
+
 const unsafeTrusted = Object.entries(status.lanes || {}).filter(([lane, info]) => {
   if (lane === 'canonical_nt') return false;
+  if (lane === 'canonical_ot' && info?.status === canonicalOtTrustedStatus) return false;
   return typeof info?.status === 'string' && !info.status.startsWith('not_trusted') && info.status !== 'excluded_active_work';
 });
 
 if (unsafeTrusted.length) {
   failures.push({
-    type: 'unsafe-non-nt-trust-status',
+    type: 'unsafe-non-nt-non-canonical-ot-trust-status',
     lanes: unsafeTrusted.map(([lane, info]) => ({ lane, status: info.status }))
   });
 }
