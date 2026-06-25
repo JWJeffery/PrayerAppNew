@@ -92,14 +92,31 @@
     },
     "vulgate": {
       "status": "not_trusted_vulgate_pilot_lanes_imported_pending_full_adjudication",
+      "reasons": [
+        "Only bounded Vulgate pilot lanes exist; the full Vulgate corpus is not built.",
+        "No Vulgate buildout, integration, source acquisition, or expansion is authorized until the active non-Vulgate corpus is trusted.",
+        "Existing Vulgate pilot work may be audited later, after active non-Vulgate corpus trust is established."
+      ],
       "protectedPaths": [
         "data/bible/translations/vulgate-clementine/**",
         "data/bible/translations/vulgate-psalter/**",
         "scripts/import-roman-breviary-1960-catholicbible-vulgate-pilot.mjs"
       ],
       "completedRemediations": [
-        "vulgate_pilot_lanes_imported_1"
-      ]
+        "vulgate_pilot_lanes_imported_1",
+        "vulgate_deferred_until_non_vulgate_trust_1"
+      ],
+      "latest_vulgate_deferral_policy": {
+        "id": "vulgate_deferred_until_non_vulgate_trust_2026_06_23",
+        "status": "deferred_audit_only_until_active_non_vulgate_trust",
+        "summary": "The Vulgate pilot remains protected and not trusted. Do not build, expand, source-acquire, or integrate Vulgate until the active non-Vulgate corpus is trusted. After that, audit the existing Vulgate pilot state before any future Vulgate build decision.",
+        "blockedActions": [
+          "vulgate_full_source_adjudication_before_non_vulgate_trust",
+          "vulgate_pilot_lane_integration_before_non_vulgate_trust",
+          "vulgate_buildout_before_non_vulgate_trust",
+          "vulgate_source_acquisition_before_non_vulgate_trust"
+        ]
+      }
     }
   },
   "forbiddenClaims": [
@@ -108,7 +125,9 @@
     "ot_textually_ok",
     "deuterocanon_complete",
     "psalms_normalized",
-    "broader_canon_complete"
+    "broader_canon_complete",
+    "vulgate_recovered",
+    "vulgate_complete"
   ],
   "allowedClaims": [
     "canonical_nt_named_defect_tranche_complete",
