@@ -709,7 +709,10 @@
         "Sirach active chapter 19 proceeds from 19:28 to 20:1, matching the local DRB source boundary while the historical KJV source includes 19:29 and 19:30.",
         "2 Esdras KJV is source-backed and exact-verified for every historical KJV source row present in the active DRB-shaped grid.",
         "2 Esdras KJV source refs absent from the active DRB-shaped grid were not inserted as synthetic rows.",
-        "2 Esdras remains part of the deuterocanon repair queue; this bounded KJV source-scope repair does not by itself promote deuterocanon to textual trust."
+        "2 Esdras remains part of the deuterocanon repair queue; this bounded KJV source-scope repair does not by itself promote deuterocanon to textual trust.",
+        "2 Esdras KJV source refs 4:14, 10:1, 11:30, 12:16, 14:48, and 15:56 are absent from the active DRB-shaped grid; no synthetic active rows were inserted.",
+        "2 Esdras active 10:60 is a DRB-shaped row without a separate KJV source row; the historical KJV source carries that ending within 10:59 rather than as 10:60.",
+        "2 Esdras KJV source-scope repair remains exact for historical KJV source rows present in the active grid; this policy only governs source refs outside the active grid and the 10:59/10:60 boundary."
       ],
       "reason": "Deuterocanon remaining lanes are governed and policy-closed for the current active corpus, but the lane remains not textually trusted. Greek Esther and Greek Daniel preserve active NRSV addition forms; 3/4 Maccabees source-backed repair state is governed; 4 Maccabees variant-footnote gaps remain governed non-primary rows.",
       "completedRemediations": [
@@ -734,7 +737,8 @@
         "esdras_1_kjv_8_60_versification_policy_1",
         "wisdom_kjv_17_21_19_21_versification_policy_1",
         "sirach_kjv_17_32_19_29_19_30_versification_policy_1",
-        "esdras_2_kjv_source_scope_repair_1"
+        "esdras_2_kjv_source_scope_repair_1",
+        "esdras_2_kjv_4_14_10_1_11_30_12_16_14_48_15_56_versification_policy_1"
       ],
       "latest_1maccabees_kjv_source_scope_repair": {
         "id": "maccabees_1_kjv_source_scope_repair_2026_06_26",
@@ -1292,6 +1296,96 @@
           "active rows without KJV source refs do not retain unsourced KJV text"
         ],
         "summary": "2 Esdras KJV was repaired to exact source-scope match from the historical KJV source mirror for all source refs present in the active DRB-shaped grid; source refs absent from the active grid remain governed absences."
+      },
+      "latest_2esdras_kjv_4_14_10_1_11_30_12_16_14_48_15_56_versification_policy": {
+        "id": "esdras_2_kjv_versification_policy_2026_06_26",
+        "status": "governed_kjv_source_refs_absent_from_active_drb_grid_no_text_mutation",
+        "activePath": "data/bible/OT/2esdras.json",
+        "activeGridBasis": "DRB active grid with preserved existing non-DRB lanes where already present",
+        "kjvSourceRef": "d3d1d4967f15c8b45758151e47e7d762b7194dd7^",
+        "kjvSourcePath": "data/bible/translations/kjv-1611/source/aruljohn-bible-kjv-1611/2 Esdras.json",
+        "refs": [
+          "4:14",
+          "10:1",
+          "11:30",
+          "12:16",
+          "14:48",
+          "15:56"
+        ],
+        "boundaryRefs": [
+          "10:59",
+          "10:60"
+        ],
+        "evidence": {
+          "missingSourceRefs": {
+            "4:14": {
+              "kjvSource": true,
+              "activeRow": false,
+              "activeKJV": false,
+              "activeDRB": false
+            },
+            "10:1": {
+              "kjvSource": true,
+              "activeRow": false,
+              "activeKJV": false,
+              "activeDRB": false
+            },
+            "11:30": {
+              "kjvSource": true,
+              "activeRow": false,
+              "activeKJV": false,
+              "activeDRB": false
+            },
+            "12:16": {
+              "kjvSource": true,
+              "activeRow": false,
+              "activeKJV": false,
+              "activeDRB": false
+            },
+            "14:48": {
+              "kjvSource": true,
+              "activeRow": false,
+              "activeKJV": false,
+              "activeDRB": false
+            },
+            "15:56": {
+              "kjvSource": true,
+              "activeRow": false,
+              "activeKJV": false,
+              "activeDRB": false
+            }
+          },
+          "boundaryRefs": {
+            "10:59": {
+              "kjvSource": true,
+              "activeRow": true,
+              "activeKJV": true,
+              "activeDRB": true
+            },
+            "10:60": {
+              "kjvSource": false,
+              "activeRow": true,
+              "activeKJV": false,
+              "activeDRB": true
+            }
+          }
+        },
+        "policyDecision": "Do not insert active 2 Esdras rows 4:14, 10:1, 11:30, 12:16, 14:48, or 15:56 from KJV-only source refs. Do not split active 10:59 or synthesize KJV text for active 10:60; the historical KJV source carries the 10:60-equivalent ending inside 10:59 while the active DRB-shaped grid has a separate DRB 10:60 row. Any source-address display, split-row variant apparatus, or canonical-form migration requires a separate policy.",
+        "blockedActions": [
+          "insert_active_2esdras_4_14_from_kjv_only",
+          "insert_active_2esdras_10_1_from_kjv_only",
+          "insert_active_2esdras_11_30_from_kjv_only",
+          "insert_active_2esdras_12_16_from_kjv_only",
+          "insert_active_2esdras_14_48_from_kjv_only",
+          "insert_active_2esdras_15_56_from_kjv_only",
+          "split_2esdras_10_59_kjv_without_variant_policy",
+          "synthesize_2esdras_10_60_kjv_without_source_row"
+        ],
+        "allowedFutureActions": [
+          "create variant apparatus or source-address display policy",
+          "create explicit migration policy if active 2 Esdras grid is later changed away from DRB shape"
+        ],
+        "boundedClaim": "2 Esdras KJV source refs 4:14, 10:1, 11:30, 12:16, 14:48, and 15:56, plus the 10:59/10:60 boundary, are governed without Bible text mutation."
       }
     },
     "broader_canon": {
