@@ -703,7 +703,10 @@
         "1 Esdras remains part of the deuterocanon repair queue; this policy record does not by itself promote deuterocanon to textual trust.",
         "Wisdom KJV has source refs 17:21 and 19:21 absent from the active DRB-shaped grid; no synthetic active rows were inserted.",
         "Wisdom active rows 17:20 and 19:20 exist as DRB-grid rows without active KJV lane text in current main; they are not blindly filled from same-numbered KJV source refs because Wisdom source-form alignment requires explicit versification/source-address policy.",
-        "Wisdom active 19:22 is preserved with existing KJV/NABRE/NRSV text while the local DRB source lacks 19:22."
+        "Wisdom active 19:22 is preserved with existing KJV/NABRE/NRSV text while the local DRB source lacks 19:22.",
+        "Sirach KJV has source refs 17:32, 19:29, and 19:30 absent from the active DRB-shaped grid; no synthetic active rows were inserted.",
+        "Sirach active chapter 17 proceeds from 17:31 to 18:1, matching the local DRB source boundary while the historical KJV source includes 17:32.",
+        "Sirach active chapter 19 proceeds from 19:28 to 20:1, matching the local DRB source boundary while the historical KJV source includes 19:29 and 19:30."
       ],
       "reason": "Deuterocanon remaining lanes are governed and policy-closed for the current active corpus, but the lane remains not textually trusted. Greek Esther and Greek Daniel preserve active NRSV addition forms; 3/4 Maccabees source-backed repair state is governed; 4 Maccabees variant-footnote gaps remain governed non-primary rows.",
       "completedRemediations": [
@@ -726,7 +729,8 @@
         "maccabees_1_nabre_source_scope_repair_1",
         "maccabees_2_nabre_source_scope_repair_1",
         "esdras_1_kjv_8_60_versification_policy_1",
-        "wisdom_kjv_17_21_19_21_versification_policy_1"
+        "wisdom_kjv_17_21_19_21_versification_policy_1",
+        "sirach_kjv_17_32_19_29_19_30_versification_policy_1"
       ],
       "latest_1maccabees_kjv_source_scope_repair": {
         "id": "maccabees_1_kjv_source_scope_repair_2026_06_26",
@@ -1072,6 +1076,75 @@
           "create explicit migration policy if active Wisdom grid is later changed away from DRB shape"
         ],
         "boundedClaim": "Wisdom KJV 17:21 and 19:21 are adjudicated as governed KJV-only source refs absent from the active DRB-shaped grid; no Bible text mutation was performed."
+      },
+      "latest_sirach_kjv_17_32_19_29_19_30_versification_policy": {
+        "id": "sirach_kjv_17_32_19_29_19_30_versification_policy_2026_06_26",
+        "status": "governed_kjv_source_refs_absent_from_active_drb_grid_no_text_mutation",
+        "activePath": "data/bible/OT/sirach.json",
+        "activeGridBasis": "DRB active grid with preserved existing non-DRB lanes where already present",
+        "drbPath": "data/bible/translations/drb-original-douay-rheims/raw/ecclesiasticus.json",
+        "kjvSourceRef": "d3d1d4967f15c8b45758151e47e7d762b7194dd7^",
+        "kjvSourcePath": "data/bible/translations/kjv-1611/source/aruljohn-bible-kjv-1611/Ecclesiasticus.json",
+        "refs": [
+          "17:32",
+          "19:29",
+          "19:30"
+        ],
+        "evidence": {
+          "activeRows": {
+            "17:31": true,
+            "17:32": false,
+            "18:1": true,
+            "19:28": true,
+            "19:29": false,
+            "19:30": false,
+            "20:1": true
+          },
+          "activeDRB": {
+            "17:31": true,
+            "17:32": false,
+            "19:28": true,
+            "19:29": false,
+            "19:30": false
+          },
+          "activeKJV": {
+            "17:32": false,
+            "19:29": false,
+            "19:30": false
+          },
+          "drbSource": {
+            "17:31": true,
+            "17:32": false,
+            "18:1": true,
+            "19:28": true,
+            "19:29": false,
+            "19:30": false,
+            "20:1": true
+          },
+          "kjvSource": {
+            "17:31": true,
+            "17:32": true,
+            "18:1": true,
+            "19:28": true,
+            "19:29": true,
+            "19:30": true,
+            "20:1": true
+          }
+        },
+        "policyDecision": "Do not insert active Sirach 17:32, 19:29, or 19:30 as synthetic DRB-grid rows. Do not shift Sirach chapter 17, chapter 19, or chapter 20 numbering to match the historical KJV source. Preserve the active DRB-shaped grid and defer any source-address display, variant apparatus, or canonical-form migration to a separate policy.",
+        "blockedActions": [
+          "insert_active_sirach_17_32_from_kjv_only",
+          "insert_active_sirach_19_29_from_kjv_only",
+          "insert_active_sirach_19_30_from_kjv_only",
+          "shift_active_sirach_17_numbering_to_match_kjv",
+          "shift_active_sirach_19_20_boundary_to_match_kjv",
+          "synthesize_drb_or_nabre_text_for_sirach_kjv_only_refs"
+        ],
+        "allowedFutureActions": [
+          "create_variant_apparatus_or_source-address_display_policy",
+          "create explicit migration policy if active Sirach grid is later changed away from DRB shape"
+        ],
+        "boundedClaim": "Sirach KJV 17:32, 19:29, and 19:30 are adjudicated as governed KJV-only source refs absent from the active DRB-shaped grid; no Bible text mutation was performed."
       }
     },
     "broader_canon": {
