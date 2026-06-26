@@ -1,5 +1,5 @@
 {
-  "schema": "psalms-legacy-subsystem-governance-v4",
+  "schema": "psalms-legacy-subsystem-governance-v5",
   "status": "governed_partial_lane_source_trust",
   "psalmsPath": "data/bible/OT/psalms.json",
   "decisions": {
@@ -11,7 +11,8 @@
     "sourcePolicy": "Lane-level source trust may be recorded separately. This governance record does not promote the whole Psalter to global textual trust.",
     "consumerPolicy": "Existing consumers and audits expecting the 155-record psalter array remain supported.",
     "coverdalePolicy": "Coverdale Psalms 1-150 are source-backed by the local 1979 Book of Common Prayer Psalter source snapshot and exact active/source verification.",
-    "rotherhamPolicy": "Rotherham Psalms 1-150 are source-backed and source-scope import-audit verified from the recorded scrollmapper Rotherham source witness. Psalms 151-155 remain outside Rotherham source scope."
+    "rotherhamPolicy": "Rotherham Psalms 1-150 are source-backed and source-scope import-audit verified from the recorded scrollmapper Rotherham source witness. Psalms 151-155 remain outside Rotherham source scope.",
+    "drbPolicy": "DRB Psalms 1-150 are source-backed and exact-raw-source verified against data/bible/translations/drb-original-douay-rheims/raw/psalms.json. Psalms 151-155 remain outside DRB source scope."
   },
   "expectedShape": {
     "topType": "array",
@@ -119,6 +120,20 @@
       "activeRotherhamVerseRows": 2461,
       "activeRowsWithRotherhamAfter150": [],
       "auditScript": "audit:rotherham-psalms"
+    },
+    "DRB": {
+      "status": "source_backed_exact_raw_source_verified",
+      "scope": "Psalms 1-150",
+      "rawSourcePath": "data/bible/translations/drb-original-douay-rheims/raw/psalms.json",
+      "sourceBook": "psalms",
+      "sourceBookTitle": "The Book of Psalms.",
+      "sourceChapterCount": 150,
+      "sourceVerseRows": 2527,
+      "activeDrbCount": 150,
+      "activeDrbVerseRows": 2527,
+      "activeRowsWithDrbAfter150": [],
+      "exactRawSourceMismatchCount": 0,
+      "auditScript": "audit:douay-rheims-psalms"
     }
   },
   "blockedClaims": [
@@ -133,6 +148,8 @@
     "coverdale_psalms_1979_bcp_source_backed_exact_snapshot_verified",
     "grail1963_psalms_source_governed_exact_checksum_verified",
     "rotherham_psalms_1_150_source_backed",
-    "rotherham_psalms_source_scope_import_audit_verified"
+    "rotherham_psalms_source_scope_import_audit_verified",
+    "drb_psalms_1_150_source_backed",
+    "drb_psalms_exact_raw_source_verified"
   ]
 }
