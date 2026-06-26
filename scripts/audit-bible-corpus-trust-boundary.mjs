@@ -60,7 +60,27 @@ if (status) {
     });
   }
 
-  for (const lane of ['psalms', 'deuterocanon', 'broader_canon']) {
+  const psalmsStatus = status.lanes?.psalms?.status || '';
+  checks.psalms_source_governance_complete = psalmsStatus === 'source_governed_all_expected_psalter_lanes_complete';
+
+  if (psalmsStatus !== 'source_governed_all_expected_psalter_lanes_complete' && !psalmsStatus.startsWith('not_trusted')) {
+    failures.push({ type: 'unsafe-trust-claim', lane: 'psalms', status: psalmsStatus });
+  }
+
+  if (psalmsStatus === 'source_governed_all_expected_psalter_lanes_complete') {
+    const psalmsMarkers = status.lanes?.psalms?.completedRemediations || [];
+    const allowedClaims = status.allowedClaims || [];
+
+    if (!Array.isArray(psalmsMarkers) || !psalmsMarkers.includes('orthodox_psalms_151_155_wright_source_repair_1')) {
+      failures.push({ type: 'missing-orthodox-psalms-source-repair-marker' });
+    }
+
+    if (!Array.isArray(allowedClaims) || !allowedClaims.includes('psalter_all_expected_lanes_source_governed')) {
+      failures.push({ type: 'missing-psalter-source-governed-allowed-claim' });
+    }
+  }
+
+  for (const lane of ['deuterocanon', 'broader_canon']) {
     const laneStatus = status.lanes?.[lane]?.status || '';
     if (!laneStatus.startsWith('not_trusted')) {
       failures.push({ type: 'unsafe-trust-claim', lane, status: laneStatus });
@@ -144,5 +164,5 @@ if (failures.length) {
   console.log('NEXT: Review trust-boundary failures. Do not claim whole-corpus trust.');
 } else {
   console.log('ALL PASSED');
-  console.log('NEXT: Canonical OT non-Psalms trust is guarded; whole-corpus trust remains blocked.');
+  console.log('NEXT: Active non-Vulgate trust boundary is explicit; whole-corpus trust remains blocked by governed non-trusted lanes and Vulgate deferral.');
 }

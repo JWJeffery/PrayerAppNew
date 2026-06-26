@@ -912,60 +912,38 @@
     ]
   },
   "latest_active_non_vulgate_trust_boundary_review": {
-    "id": "active_non_vulgate_trust_boundary_review_2026_06_25",
-    "status": "classified_mixed_not_globally_trusted",
-    "trustReady": false,
-    "recordedAt": "2026-06-25T17:27:56.737206+00:00",
-    "remediationMarker": "active_non_vulgate_trust_boundary_review_1",
-    "scope": "active_non_vulgate_trust_boundary_review",
+    "id": "post_psalter_active_non_vulgate_trust_boundary_review_2026_06_26",
+    "status": "passed_with_explicit_non_global_trust_boundary",
+    "recordedAt": "2026-06-26T04:31:46.179Z",
     "textMutation": false,
     "bibleTextMutation": false,
-    "activeNonVulgateLanes": [
-      "canonical_nt",
-      "canonical_ot",
-      "psalms",
-      "deuterocanon",
-      "broader_canon"
-    ],
-    "trustedLanes": [
-      "canonical_nt",
-      "canonical_ot"
-    ],
-    "notTrustReadyLanes": [
-      "psalms",
-      "deuterocanon",
-      "broader_canon"
-    ],
     "laneStatuses": {
       "canonical_nt": "named_defect_tranche_complete",
       "canonical_ot": "trusted_canonical_ot_non_psalms_final_audit_passed_with_governed_exclusions",
       "psalms": "source_governed_all_expected_psalter_lanes_complete",
-      "deuterocanon": "not_trusted_deuterocanon_form_versification_variant_policy_required",
-      "broader_canon": "not_trusted_broader_canon_raw_text_and_zero_row_source_adjudication_required"
+      "deuterocanon": "not_trusted_deuterocanon_policy_closed_text_trust_blocked",
+      "broader_canon": "not_trusted_broader_canon_policy_closed_text_trust_blocked",
+      "vulgate": "not_trusted_vulgate_pilot_lanes_imported_pending_full_adjudication"
     },
-    "vulgateStatus": "not_trusted_vulgate_pilot_lanes_imported_pending_full_adjudication",
-    "vulgatePolicy": "deferred_audit_only_until_active_non_vulgate_trust",
-    "summary": "Active non-Vulgate Bible corpus lanes are explicitly classified, but the active non-Vulgate corpus is not globally trusted. Psalms now have complete expected-lane source governance. Vulgate remains deferred and audit-only.",
+    "psalmsSourceGovernance": "complete_all_expected_psalter_lanes",
+    "trustedScopes": [
+      "canonical_nt_named_defect_tranche_complete",
+      "canonical_ot_non_psalms_trusted_with_governed_exclusions",
+      "psalms_all_expected_lanes_source_governed"
+    ],
+    "nonTrustedScopes": [
+      "deuterocanon",
+      "broader_canon",
+      "vulgate"
+    ],
     "blockedClaims": [
       "entire_biblical_corpus_trusted",
       "whole_ot_including_psalms_textually_trusted",
-      "psalms_textually_trusted",
       "deuterocanon_complete",
       "broader_canon_complete",
-      "vulgate_remediation_complete",
-      "vulgate_recovered",
       "vulgate_complete"
     ],
-    "allowedClaims": [
-      "active_non_vulgate_lanes_explicitly_classified",
-      "canonical_nt_named_defect_tranche_complete",
-      "canonical_ot_non_psalms_trusted_with_governed_exclusions",
-      "psalms_not_trust_ready",
-      "deuterocanon_not_trust_ready",
-      "broader_canon_not_trust_ready",
-      "vulgate_deferred_audit_only"
-    ],
-    "recommendedNextAction": "choose_and_remediate_one_recorded_non_vulgate_blocker_before_any_global_or_vulgate_trust_claim"
+    "summary": "Active non-Vulgate trust boundary is explicit after Psalter source-governance completion. Canonical NT, canonical OT non-Psalms, and Psalms have bounded trust/source-governance status. Deuterocanon, broader canon, and Vulgate remain non-trusted or deferred. Whole-corpus and whole-OT trust remain blocked."
   },
   "latest_psalms_provenance_absent_lane_policy": {
     "id": "psalms_provenance_absent_lane_policy_2026_06_25",
@@ -1053,22 +1031,22 @@
     ]
   },
   "latest_final_active_non_vulgate_boundary": {
-    "id": "final_active_non_vulgate_boundary_2026_06_25",
-    "status": "active_non_vulgate_fully_classified_not_globally_trusted",
-    "trustReady": false,
-    "recordedAt": "2026-06-25T18:38:38.958852+00:00",
+    "id": "post_psalter_final_active_non_vulgate_boundary_2026_06_26",
+    "status": "active_non_vulgate_boundary_reviewed_after_psalter_completion",
+    "recordedAt": "2026-06-26T04:31:46.180Z",
     "textMutation": false,
     "bibleTextMutation": false,
-    "summary": "Active non-Vulgate corpus is fully classified. Psalms now have complete expected-lane source governance. Whole-corpus trust remains blocked by separately governed corpus lanes. Vulgate remains deferred and audit-only.",
-    "nextAllowedTargets": [],
+    "summary": "Psalter expected-lane source governance is complete. Active non-Vulgate corpus remains bounded, not globally trusted. Whole-corpus trust remains blocked by deuterocanon, broader canon, and Vulgate deferral.",
+    "nextAllowedTargets": [
+      "deuterocanon_source_and_versification_adjudication",
+      "broader_canon_source_and_zero_row_adjudication",
+      "vulgate_full_adjudication_after_active_non_vulgate_boundary"
+    ],
     "blockedClaims": [
       "entire_biblical_corpus_trusted",
       "whole_ot_including_psalms_textually_trusted",
-      "psalms_textually_trusted",
       "deuterocanon_complete",
       "broader_canon_complete",
-      "vulgate_remediation_complete",
-      "vulgate_recovered",
       "vulgate_complete"
     ],
     "vulgatePolicy": "deferred_audit_only_until_active_non_vulgate_trust"
