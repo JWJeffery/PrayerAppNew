@@ -698,7 +698,9 @@
         "1 Maccabees remains part of the deuterocanon repair queue; this bounded NABRE source-scope repair does not by itself promote deuterocanon to textual trust.",
         "2 Maccabees NABRE is source-backed and exact-verified for the 556 rows present in the historical NABRE source mirror.",
         "2 Maccabees NABRE has 2 active rows without NABRE source witness; those rows were not synthesized.",
-        "2 Maccabees remains part of the deuterocanon repair queue; this bounded NABRE source-scope repair does not by itself promote deuterocanon to textual trust."
+        "2 Maccabees remains part of the deuterocanon repair queue; this bounded NABRE source-scope repair does not by itself promote deuterocanon to textual trust.",
+        "1 Esdras KJV 8:60 is governed as a KJV-only source ref absent from the active DRB-shaped grid; no synthetic active row was inserted.",
+        "1 Esdras remains part of the deuterocanon repair queue; this policy record does not by itself promote deuterocanon to textual trust."
       ],
       "reason": "Deuterocanon remaining lanes are governed and policy-closed for the current active corpus, but the lane remains not textually trusted. Greek Esther and Greek Daniel preserve active NRSV addition forms; 3/4 Maccabees source-backed repair state is governed; 4 Maccabees variant-footnote gaps remain governed non-primary rows.",
       "completedRemediations": [
@@ -719,7 +721,8 @@
         "letterofjeremiah_kjv_source_scope_repair_1",
         "baruch_nabre_source_scope_repair_1",
         "maccabees_1_nabre_source_scope_repair_1",
-        "maccabees_2_nabre_source_scope_repair_1"
+        "maccabees_2_nabre_source_scope_repair_1",
+        "esdras_1_kjv_8_60_versification_policy_1"
       ],
       "latest_1maccabees_kjv_source_scope_repair": {
         "id": "maccabees_1_kjv_source_scope_repair_2026_06_26",
@@ -962,6 +965,45 @@
           "any active rows without NABRE are recorded as source-scope absences, not synthesized"
         ],
         "summary": "2 Maccabees NABRE was repaired to exact source-scope match from the historical NABRE source mirror."
+      },
+      "latest_1esdras_kjv_8_60_versification_policy": {
+        "id": "esdras_1_kjv_8_60_versification_policy_2026_06_26",
+        "status": "governed_kjv_source_ref_absent_from_active_drb_grid_no_text_mutation",
+        "activePath": "data/bible/OT/1esdras.json",
+        "activeGridBasis": "DRB active grid",
+        "drbPath": "data/bible/translations/drb-original-douay-rheims/raw/3-esdras.json",
+        "kjvSourceRef": "d3d1d4967f15c8b45758151e47e7d762b7194dd7^",
+        "kjvSourcePath": "data/bible/translations/kjv-1611/source/aruljohn-bible-kjv-1611/1 Esdras.json",
+        "ref": "8:60",
+        "evidence": {
+          "activeGrid": {
+            "has8_59": true,
+            "has8_60": false,
+            "has8_61": true
+          },
+          "drbSource": {
+            "has8_59": true,
+            "has8_60": false,
+            "has8_61": true
+          },
+          "kjvSource": {
+            "has8_59": true,
+            "has8_60": true,
+            "has8_61": true
+          }
+        },
+        "policyDecision": "Do not insert active 1 Esdras 8:60 as a synthetic DRB-grid row. Historical KJV has 8:60, but the active DRB grid and local DRB source both skip 8:60. Preserve this as a governed source-form/versification difference until a migration or variant-apparatus policy exists.",
+        "blockedActions": [
+          "insert_active_1esdras_8_60_from_kjv_only",
+          "shift_active_1esdras_chapter_8_numbering_to_match_kjv",
+          "synthesize_drb_or_nabre_text_for_1esdras_8_60",
+          "claim_1esdras_kjv_complete_without_8_60_policy_boundary"
+        ],
+        "allowedFutureActions": [
+          "create_variant_apparatus_or_source-address_display_policy",
+          "create explicit migration policy if active grid is later changed away from DRB shape"
+        ],
+        "boundedClaim": "1 Esdras KJV 8:60 is adjudicated as a governed KJV-only source ref absent from the active DRB-shaped grid; no Bible text mutation was performed."
       }
     },
     "broader_canon": {
