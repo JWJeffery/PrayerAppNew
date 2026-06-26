@@ -1,6 +1,6 @@
 {
-  "schema": "psalms-legacy-subsystem-governance-v7",
-  "status": "governed_partial_lane_source_trust",
+  "schema": "psalms-legacy-subsystem-governance-v8",
+  "status": "governed_partial_lane_source_trust_with_nabre_blocker",
   "psalmsPath": "data/bible/OT/psalms.json",
   "decisions": {
     "containerPolicy": "Psalms remains a governed 155-record root array. Do not force it into the standard canonical OT chapter schema without a separate migration.",
@@ -8,13 +8,14 @@
     "orthodoxAppendixPolicy": "Psalms 151-155 are present as Orthodox appendix material and are not normal canonical OT chapter rows.",
     "grailPolicy": "Grail1963 Psalms 1-151 are exact-checksum verified against the source-governed external LOTH Grail1963 Psalter corpus. The source corpus has 152 psalm entries because Psalms 116 and 147 are split, plus one Psalm 151 appendix witness.",
     "nrsvPolicy": "NRSV Psalms 1-150 are source-backed by the local Oremus NRSV Psalms source snapshot and exact active/source verification.",
-    "sourcePolicy": "Lane-level source trust may be recorded separately. This governance record does not promote the whole Psalter to global textual trust.",
+    "sourcePolicy": "Lane-level source trust may be recorded separately. Blocked lane claims must be recorded explicitly and do not promote the whole Psalter to global textual trust.",
     "consumerPolicy": "Existing consumers and audits expecting the 155-record psalter array remain supported.",
     "coverdalePolicy": "Coverdale Psalms 1-150 are source-backed by the local 1979 Book of Common Prayer Psalter source snapshot and exact active/source verification.",
     "rotherhamPolicy": "Rotherham Psalms 1-150 are source-backed and source-scope import-audit verified from the recorded scrollmapper Rotherham source witness. Psalms 151-155 remain outside Rotherham source scope.",
     "drbPolicy": "DRB Psalms 1-150 are source-backed and exact-raw-source verified against data/bible/translations/drb-original-douay-rheims/raw/psalms.json. Psalms 151-155 remain outside DRB source scope.",
     "jps1985Policy": "JPS1985 Psalms 1-150 are source-identified and history-stable from the Sefaria source-consistent import chain using Tanakh: The Holy Scriptures, published by JPS. Psalms 151-155 remain outside JPS1985 source scope. This is not a fresh exact-checksum source claim.",
-    "kjvPolicy": "KJV Psalms 1-150 are source-backed and exact-historical-source verified against data/bible/translations/kjv-1611/source/aruljohn-bible-kjv-1611/Psalms.json at d3d1d4967f15c8b45758151e47e7d762b7194dd7^. Psalms 151-155 remain outside KJV source scope. The historical source mirror remains removed from active runtime paths."
+    "kjvPolicy": "KJV Psalms 1-150 are source-backed and exact-historical-source verified against data/bible/translations/kjv-1611/source/aruljohn-bible-kjv-1611/Psalms.json at d3d1d4967f15c8b45758151e47e7d762b7194dd7^. Psalms 151-155 remain outside KJV source scope. The historical source mirror remains removed from active runtime paths.",
+    "nabrePolicy": "NABRE Psalms 1-150 are not source-trusted in this tranche. Active NABRE includes editorial Psalm headings and section markers in verse 1 that are not verified from the historical NABRE source mirror. Raw exact source trust and heading-aware source trust are both blocked pending a source witness or repair."
   },
   "expectedShape": {
     "topType": "array",
@@ -171,9 +172,41 @@
       "activeKjvVerseRows": 2461,
       "activeRowsWithKjvAfter150": [],
       "exactHistoricalSourceMismatchCount": 0
+    },
+    "NABRE": {
+      "status": "blocked_active_heading_text_source_unverified",
+      "scope": "Psalms 1-150",
+      "historicalSourcePath": "data/bible/translations/nabre-internal-source-lane/source/generated_data/books/Psalms.json",
+      "historicalSourceRef": "d3d1d4967f15c8b45758151e47e7d762b7194dd7^",
+      "sourceMirrorRemovalCommit": "d3d1d4967f15c8b45758151e47e7d762b7194dd7",
+      "activeNabreCount": 150,
+      "activeNabreVerseRows": 2526,
+      "historicalSourceVerseRows": 2526,
+      "activeRowsWithNabreAfter150": [],
+      "rawExactMismatchCount": 150,
+      "headingAwareCanonicalMismatchCount": 136,
+      "blockedClaims": [
+        "nabre_psalms_source_trusted",
+        "nabre_psalms_exact_raw_source_verified",
+        "nabre_psalms_heading_text_source_verified",
+        "nabre_psalms_heading_aware_canonical_source_verified",
+        "whole_psalter_textually_trusted",
+        "psalms_textually_trusted",
+        "whole_ot_including_psalms_textually_trusted",
+        "entire_biblical_corpus_trusted"
+      ],
+      "requiredResolution": [
+        "identify a source witness for the active NABRE Psalm headings and section markers",
+        "or remove/rebuild the active NABRE heading material from a verified source",
+        "or keep NABRE Psalms classified as not source-trusted"
+      ]
     }
   },
   "blockedClaims": [
+    "nabre_psalms_source_trusted",
+    "nabre_psalms_exact_raw_source_verified",
+    "nabre_psalms_heading_text_source_verified",
+    "nabre_psalms_heading_aware_canonical_source_verified",
     "whole_psalter_textually_trusted",
     "psalms_textually_trusted",
     "whole_ot_including_psalms_textually_trusted",
@@ -191,6 +224,9 @@
     "jps1985_psalms_1_150_source_identified",
     "jps1985_psalms_history_stable_source_consistent_import_chain_verified",
     "kjv_psalms_1_150_source_backed",
-    "kjv_psalms_exact_historical_source_verified"
+    "kjv_psalms_exact_historical_source_verified",
+    "nabre_psalms_1_150_active_shape_present",
+    "nabre_psalms_historical_source_candidate_identified",
+    "nabre_psalms_source_blocker_recorded"
   ]
 }

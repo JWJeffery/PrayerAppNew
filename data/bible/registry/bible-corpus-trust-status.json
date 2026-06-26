@@ -79,7 +79,7 @@
       }
     },
     "psalms": {
-      "status": "not_globally_trusted_psalms_nrsv_coverdale_grail_rotherham_drb_jps_kjv_source_repaired_remaining_lanes_pending",
+      "status": "not_globally_trusted_psalms_nabre_heading_source_blocked_orthodox_pending",
       "reasons": [
         "Psalms subsystem governance and shape checks passed for 155 root-array records.",
         "NRSV Psalms 1-150 were repaired as a single source-backed lane from the Oremus Bible Browser NRSV Psalms source snapshot.",
@@ -121,7 +121,11 @@
         "KJV Psalms 1-150 are source-backed by historical source mirror data/bible/translations/kjv-1611/source/aruljohn-bible-kjv-1611/Psalms.json at d3d1d4967f15c8b45758151e47e7d762b7194dd7^.",
         "The historical KJV source mirror contains 150 Psalm chapters and 2461 verse rows.",
         "Active data/bible/OT/psalms.json text.KJV Psalms 1-150 exactly matches the historical KJV source mirror by normalized chapter/verse text.",
-        "The whole Psalter is not globally promoted as textually trusted by this KJV lane verification; remaining lane-specific source/trust decisions must be recorded separately."
+        "The whole Psalter is not globally promoted as textually trusted by this KJV lane verification; remaining lane-specific source/trust decisions must be recorded separately.",
+        "NABRE Psalms 1-150 have 150 active rows and no NABRE text in Psalms 151-155, but source trust is blocked.",
+        "The historical NABRE source mirror candidate is data/bible/translations/nabre-internal-source-lane/source/generated_data/books/Psalms.json at d3d1d4967f15c8b45758151e47e7d762b7194dd7^.",
+        "NABRE source trust is blocked because active NABRE includes Psalm headings and section markers not verified from the historical source mirror.",
+        "The whole Psalter is not globally promoted as textually trusted because NABRE is blocked and Orthodox Psalms 151-155 remain pending."
       ],
       "completedRemediations": [
         "psalms_legacy_subsystem_governance_1",
@@ -133,11 +137,12 @@
         "rotherham_psalms_source_scope_verification_1",
         "drb_psalms_raw_source_exact_verification_1",
         "jps1985_psalms_source_history_verification_1",
-        "kjv_psalms_historical_source_exact_verification_1"
+        "kjv_psalms_historical_source_exact_verification_1",
+        "nabre_psalms_source_blocker_record_1"
       ],
       "latest_psalms_trust_readiness_classification": {
         "id": "psalms_trust_readiness_classification_2026_06_23",
-        "status": "classified_not_globally_trust_ready_after_nrsv_coverdale_grail_rotherham_drb_jps_kjv_source_verifications",
+        "status": "classified_not_globally_trust_ready_nabre_blocked_orthodox_pending",
         "recordCount": 155,
         "translationCounts": {
           "NRSV": 150,
@@ -155,10 +160,10 @@
           "Grail1963 is a liturgical psalter lane with separate conventions.",
           "Psalms 151-155 are Orthodox appendix material, not normal canonical OT chapter rows."
         ],
-        "recommendedNextAction": "continue_remaining_psalter_lane_source_verification",
-        "summary": "Psalms are shape-governed. NRSV Psalms 1-150, Coverdale Psalms 1-150, Grail1963 Psalms 1-151, Rotherham Psalms 1-150, DRB Psalms 1-150, JPS1985 Psalms 1-150, and KJV Psalms 1-150 now have recorded source or source-history verification. Whole-Psalter trust still depends on remaining lane-specific source decisions."
+        "recommendedNextAction": "verify_orthodox_psalms_151_155_source_trust_after_recording_nabre_blocker",
+        "summary": "Psalms are shape-governed. NRSV, Coverdale, Grail1963, Rotherham, DRB, JPS1985, and KJV have recorded source or source-history verification. NABRE is blocked by unverified active heading text. Orthodox Psalms 151-155 remain pending."
       },
-      "reason": "NRSV Psalms 1-150, Coverdale Psalms 1-150, Grail1963 Psalms 1-151, Rotherham Psalms 1-150, DRB Psalms 1-150, JPS1985 Psalms 1-150, and KJV Psalms 1-150 now have recorded source or source-history verification. Whole-Psalter textual trust is not asserted because remaining Psalter lane source/trust decisions are still not globally closed.",
+      "reason": "NRSV, Coverdale, Grail1963, Rotherham, DRB, JPS1985, and KJV have recorded source or source-history verification. NABRE Psalms 1-150 are blocked because active editorial heading text is not verified from the historical NABRE source mirror. Orthodox Psalms 151-155 remain pending.",
       "latest_nrsv_psalms_oremus_source_repair": {
         "id": "nrsv_psalms_oremus_source_repair_2026_06_25",
         "status": "source_backed_single_source_lane_repair_verified",
@@ -524,6 +529,44 @@
           "entire_biblical_corpus_trusted"
         ],
         "summary": "KJV Psalms 1-150 are source-backed and exact-historical-source verified against the removed KJV source mirror available in Git history before d3d1d49. This is a lane-specific trust claim only and does not promote the whole Psalter to global textual trust."
+      },
+      "latest_nabre_psalms_source_blocker": {
+        "id": "nabre_psalms_active_heading_source_blocker_2026_06_26",
+        "status": "blocked_active_heading_text_source_unverified",
+        "activePath": "data/bible/OT/psalms.json",
+        "activeLane": "text.NABRE Psalms 1-150",
+        "historicalSourcePath": "data/bible/translations/nabre-internal-source-lane/source/generated_data/books/Psalms.json",
+        "historicalSourceRef": "d3d1d4967f15c8b45758151e47e7d762b7194dd7^",
+        "sourceMirrorRemovalCommit": "d3d1d4967f15c8b45758151e47e7d762b7194dd7",
+        "sourceRoot": "data/bible/translations/nabre-internal-source-lane/source",
+        "activeNabreCount": 150,
+        "activeNabreVerseRows": 2526,
+        "historicalSourceVerseRows": 2526,
+        "activeRowsWithNabreAfter150": [],
+        "rawExactMismatchCount": 150,
+        "headingAwareCanonicalMismatchCount": 136,
+        "finding": "Active NABRE Psalms 1-150 include editorial Psalm headings and section markers in verse 1 that are not verified from the historical NABRE source mirror.",
+        "allowedNabreClaims": [
+          "nabre_psalms_1_150_active_shape_present",
+          "nabre_psalms_historical_source_candidate_identified",
+          "nabre_psalms_source_blocker_recorded"
+        ],
+        "blockedClaims": [
+          "nabre_psalms_source_trusted",
+          "nabre_psalms_exact_raw_source_verified",
+          "nabre_psalms_heading_text_source_verified",
+          "nabre_psalms_heading_aware_canonical_source_verified",
+          "whole_psalter_textually_trusted",
+          "psalms_textually_trusted",
+          "whole_ot_including_psalms_textually_trusted",
+          "entire_biblical_corpus_trusted"
+        ],
+        "requiredResolution": [
+          "identify a source witness for the active NABRE Psalm headings and section markers",
+          "or remove/rebuild the active NABRE heading material from a verified source",
+          "or keep NABRE Psalms classified as not source-trusted"
+        ],
+        "summary": "NABRE Psalms 1-150 cannot be recorded as source-trusted in this tranche. The historical NABRE source mirror supplies Psalms 1-150 with matching row count, but active NABRE includes unverified editorial headings/section markers. This blocker is recorded without Bible text mutation."
       }
     },
     "deuterocanon": {
@@ -637,9 +680,12 @@
     "jps1985_psalms_1_150_source_identified",
     "jps1985_psalms_history_stable_source_consistent_import_chain_verified",
     "kjv_psalms_1_150_source_backed",
-    "kjv_psalms_exact_historical_source_verified"
+    "kjv_psalms_exact_historical_source_verified",
+    "nabre_psalms_1_150_active_shape_present",
+    "nabre_psalms_historical_source_candidate_identified",
+    "nabre_psalms_source_blocker_recorded"
   ],
-  "psalms_status": "not_globally_trusted_psalms_nrsv_coverdale_grail_rotherham_drb_jps_kjv_source_repaired_remaining_lanes_pending",
+  "psalms_status": "not_globally_trusted_psalms_nabre_heading_source_blocked_orthodox_pending",
   "latest_greek_esther_form_policy": {
     "id": "greek_esther_form_policy_2026_06_23",
     "status": "active_nrsv_addition_form_governed_no_text_mutation",
@@ -793,13 +839,13 @@
     "laneStatuses": {
       "canonical_nt": "named_defect_tranche_complete",
       "canonical_ot": "trusted_canonical_ot_non_psalms_final_audit_passed_with_governed_exclusions",
-      "psalms": "not_globally_trusted_psalms_nrsv_coverdale_grail_rotherham_drb_jps_kjv_source_repaired_remaining_lanes_pending",
+      "psalms": "not_globally_trusted_psalms_nabre_heading_source_blocked_orthodox_pending",
       "deuterocanon": "not_trusted_deuterocanon_form_versification_variant_policy_required",
       "broader_canon": "not_trusted_broader_canon_raw_text_and_zero_row_source_adjudication_required"
     },
     "vulgateStatus": "not_trusted_vulgate_pilot_lanes_imported_pending_full_adjudication",
     "vulgatePolicy": "deferred_audit_only_until_active_non_vulgate_trust",
-    "summary": "Active non-Vulgate Bible corpus lanes are explicitly classified, but the active non-Vulgate corpus is not globally trusted. Canonical NT named-defect tranche is complete and canonical OT non-Psalms is trusted with governed exclusions. Psalms remain not globally trusted even though NRSV, Coverdale, Grail1963, Rotherham, DRB, JPS1985, and KJV now have recorded source or source-history verification; deuterocanon and broader canon remain not trust-ready under recorded blockers. Vulgate remains deferred and audit-only.",
+    "summary": "Active non-Vulgate Bible corpus lanes are explicitly classified, but the active non-Vulgate corpus is not globally trusted. Psalms remain not globally trusted because NABRE active heading text is source-unverified and Orthodox Psalms 151-155 remain pending. Vulgate remains deferred and audit-only.",
     "blockedClaims": [
       "entire_biblical_corpus_trusted",
       "whole_ot_including_psalms_textually_trusted",
@@ -913,7 +959,7 @@
     "recordedAt": "2026-06-25T18:38:38.958852+00:00",
     "textMutation": false,
     "bibleTextMutation": false,
-    "summary": "Active non-Vulgate corpus is fully classified. Canonical NT and canonical OT non-Psalms have bounded trust status. Psalms remain not globally trusted even though NRSV, Coverdale, Grail1963, Rotherham, DRB, JPS1985, and KJV now have recorded source or source-history verification; deuterocanon and broader canon are policy-closed but remain not textually trusted. Whole-corpus trust remains blocked. Vulgate remains deferred and audit-only.",
+    "summary": "Active non-Vulgate corpus is fully classified. Psalms remain not globally trusted because NABRE active heading text is source-unverified and Orthodox Psalms 151-155 remain pending. Whole-corpus trust remains blocked. Vulgate remains deferred and audit-only.",
     "nextAllowedTargets": [],
     "blockedClaims": [
       "entire_biblical_corpus_trusted",
