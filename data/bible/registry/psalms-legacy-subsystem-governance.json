@@ -1,5 +1,5 @@
 {
-  "schema": "psalms-legacy-subsystem-governance-v3",
+  "schema": "psalms-legacy-subsystem-governance-v4",
   "status": "governed_partial_lane_source_trust",
   "psalmsPath": "data/bible/OT/psalms.json",
   "decisions": {
@@ -10,7 +10,8 @@
     "nrsvPolicy": "NRSV Psalms 1-150 are source-backed by the local Oremus NRSV Psalms source snapshot and exact active/source verification.",
     "sourcePolicy": "Lane-level source trust may be recorded separately. This governance record does not promote the whole Psalter to global textual trust.",
     "consumerPolicy": "Existing consumers and audits expecting the 155-record psalter array remain supported.",
-    "coverdalePolicy": "Coverdale Psalms 1-150 are source-backed by the local 1979 Book of Common Prayer Psalter source snapshot and exact active/source verification."
+    "coverdalePolicy": "Coverdale Psalms 1-150 are source-backed by the local 1979 Book of Common Prayer Psalter source snapshot and exact active/source verification.",
+    "rotherhamPolicy": "Rotherham Psalms 1-150 are source-backed and source-scope import-audit verified from the recorded scrollmapper Rotherham source witness. Psalms 151-155 remain outside Rotherham source scope."
   },
   "expectedShape": {
     "topType": "array",
@@ -93,6 +94,31 @@
           "psalm_151_lxx_appendix"
         ]
       }
+    },
+    "Rotherham": {
+      "status": "source_backed_source_scope_import_audit_verified",
+      "scope": "Psalms 1-150",
+      "sourceWitness": {
+        "translation": "Rotherham",
+        "url": "https://raw.githubusercontent.com/scrollmapper/bible_databases/2025/formats/json/Rotherham.json",
+        "sha256": "d63488b149aadf4430fea6ddbc7c07395a12321a1b58799ce2dcb384ebf97627",
+        "sourceBookIndex": 18,
+        "sourceBookName": "Psalms",
+        "sourcePsalmScope": "MT/Hebrew Psalms 1-150",
+        "sourcePsalmsChapterCount": 150,
+        "sourceVerseRows": 2461,
+        "emptySourceRows": []
+      },
+      "evidencePaths": [
+        "documentation/rotherham-psalms-versification-inventory.json",
+        "documentation/rotherham-psalms-import-report.json",
+        "documentation/rotherham-bible-source-scope-completion-report.json",
+        "scripts/audit-rotherham-psalms.mjs"
+      ],
+      "activeRotherhamCount": 150,
+      "activeRotherhamVerseRows": 2461,
+      "activeRowsWithRotherhamAfter150": [],
+      "auditScript": "audit:rotherham-psalms"
     }
   },
   "blockedClaims": [
@@ -105,6 +131,8 @@
     "psalms_shape_governed",
     "nrsv_psalms_source_backed_exact_snapshot_verified",
     "coverdale_psalms_1979_bcp_source_backed_exact_snapshot_verified",
-    "grail1963_psalms_source_governed_exact_checksum_verified"
+    "grail1963_psalms_source_governed_exact_checksum_verified",
+    "rotherham_psalms_1_150_source_backed",
+    "rotherham_psalms_source_scope_import_audit_verified"
   ]
 }
