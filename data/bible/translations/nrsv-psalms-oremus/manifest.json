@@ -1,0 +1,18 @@
+{
+  "schema": "translation-source-manifest-v1",
+  "translationKey": "NRSV",
+  "sourceName": "Oremus Bible Browser NRSV Psalms",
+  "sourceUrlTemplate": "https://bible.oremus.org/?passage=Psalm%20{psalm}&version=nrsv",
+  "acquiredAt": "2026-06-26T02:09:35.131Z",
+  "activeTarget": "data/bible/OT/psalms.json text.NRSV Psalms 1-150",
+  "rawSourcePath": "data/bible/translations/nrsv-psalms-oremus/raw/psalms.json",
+  "scope": "Psalms 1-150",
+  "sourcePsalmCount": 150,
+  "sourceVerseRows": 2461,
+  "repairClass": "single_source_lane_replacement",
+  "preservedScope": [
+    "all non-NRSV Psalter lanes",
+    "Psalms 151-155",
+    "155-record Psalter root-array container"
+  ]
+}

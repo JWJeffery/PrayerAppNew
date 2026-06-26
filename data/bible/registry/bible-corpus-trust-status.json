@@ -79,28 +79,33 @@
       }
     },
     "psalms": {
-      "status": "not_trusted_psalms_legacy_bundle_provenance_absent_policy_recorded",
+      "status": "not_globally_trusted_psalms_nrsv_source_repaired_remaining_lanes_pending",
       "reasons": [
+        "Psalms subsystem governance and shape checks passed for 155 root-array records.",
+        "NRSV Psalms 1-150 were repaired as a single source-backed lane from the Oremus Bible Browser NRSV Psalms source snapshot.",
+        "The local NRSV Psalms source snapshot contains 150 Psalms and 2461 verse rows.",
+        "Active data/bible/OT/psalms.json text.NRSV Psalms 1-150 exactly matches data/bible/translations/nrsv-psalms-oremus/raw/psalms.json.",
+        "No NRSV lane exists for Psalms 151-155.",
+        "Rotherham and DRB Psalms audits continue to pass after the NRSV repair.",
+        "No non-NRSV Psalter lane was intentionally modified by this repair.",
+        "The whole Psalter is not globally promoted as textually trusted by this NRSV-only repair; remaining lane-specific source/trust decisions must be recorded separately.",
         "Psalms legacy subsystem governance and shape checks passed for 155 root-array records.",
-        "Psalm text provenance is not adjudicated.",
-        "The NRSV Psalms key is not promoted as a trusted Bible NRSV lane.",
         "Grail1963 is a liturgical psalter lane with separate formatting and numbering conventions.",
         "Psalms 151-155 are Orthodox appendix material, not normal canonical OT chapter rows.",
         "Psalms legacy subsystem is shape-governed but remains textually not trusted.",
         "Psalm records contain only id and text keys, with no row-level source or provenance fields.",
-        "Psalm records contain no explicit translation-lane metadata outside text-object keys.",
-        "Existing Psalm audits prove count and shape integrity, not source provenance.",
         "Grail1963 remains a liturgical psalter lane with separate conventions.",
         "Psalms 151-155 remain Orthodox appendix material, not normal canonical OT chapter rows."
       ],
       "completedRemediations": [
         "psalms_legacy_subsystem_governance_1",
         "psalms_trust_readiness_classification_1",
-        "psalms_provenance_absent_lane_policy_1"
+        "psalms_provenance_absent_lane_policy_1",
+        "nrsv_psalms_oremus_source_repair_1"
       ],
       "latest_psalms_trust_readiness_classification": {
         "id": "psalms_trust_readiness_classification_2026_06_23",
-        "status": "classified_not_trust_ready",
+        "status": "classified_not_globally_trust_ready_after_nrsv_source_repair",
         "recordCount": 155,
         "translationCounts": {
           "NRSV": 150,
@@ -115,14 +120,40 @@
         },
         "blockers": [
           "Psalm text provenance is not adjudicated.",
-          "NRSV Psalms key is not promoted as a trusted Bible NRSV lane.",
           "Grail1963 is a liturgical psalter lane with separate conventions.",
           "Psalms 151-155 are Orthodox appendix material, not normal canonical OT chapter rows."
         ],
-        "recommendedNextAction": "psalms_provenance_and_lane_adjudication_required_before_trust",
-        "summary": "Psalms are shape-governed and internally counted, but not trust-ready. Record count and translation-count checks passed, but provenance and lane identity must be adjudicated before any Psalms textual trust claim."
+        "recommendedNextAction": "continue_remaining_psalter_lane_source_verification",
+        "summary": "Psalms are shape-governed. NRSV Psalms 1-150 are now source-backed by the local Oremus NRSV source snapshot and exact active/source verification. Whole-Psalter trust still depends on remaining lane-specific source decisions."
       },
-      "reason": "Psalms provenance and lane-adjudication inspection is recorded. The legacy Psalms bundle is shape-governed, but existing records contain only id and text keys and lack row-level source/provenance metadata. No Psalms textual trust claim is allowed without external provenance acquisition or a governed Psalms rebuild. No Bible text mutation was performed."
+      "reason": "NRSV Psalms 1-150 are source-backed and exactly verified against the local Oremus NRSV Psalms snapshot. Whole-Psalter textual trust is not asserted by this NRSV-only repair.",
+      "latest_nrsv_psalms_oremus_source_repair": {
+        "id": "nrsv_psalms_oremus_source_repair_2026_06_25",
+        "status": "source_backed_single_source_lane_repair_verified",
+        "activePath": "data/bible/OT/psalms.json",
+        "activeLane": "text.NRSV Psalms 1-150",
+        "sourceManifestPath": "data/bible/translations/nrsv-psalms-oremus/manifest.json",
+        "rawSourcePath": "data/bible/translations/nrsv-psalms-oremus/raw/psalms.json",
+        "sourceName": "Oremus Bible Browser NRSV Psalms",
+        "sourceUrlTemplate": "https://bible.oremus.org/?passage=Psalm%20{psalm}&version=nrsv",
+        "sourcePsalmCount": 150,
+        "sourceVerseRows": 2461,
+        "activeNRSVCount": 150,
+        "activeRowsWithNRSVAfter150": [],
+        "exactSourceSnapshotMismatchCount": 0,
+        "preservedScope": [
+          "all non-NRSV Psalter lanes",
+          "Psalms 151-155",
+          "155-record Psalter root-array container"
+        ],
+        "verification": [
+          "active NRSV Psalms exactly match local Oremus source snapshot",
+          "psalms subsystem governance audit passed",
+          "Rotherham Psalms audit passed",
+          "Douay-Rheims Psalms audit passed"
+        ],
+        "summary": "NRSV Psalms were replaced as one source-backed lane from the Oremus NRSV Psalms source snapshot. This repairs the prior mixed-source-family NRSV Psalms condition without changing other Psalter lanes."
+      }
     },
     "deuterocanon": {
       "status": "not_trusted_deuterocanon_policy_closed_text_trust_blocked",
@@ -221,7 +252,9 @@
     "psalms_legacy_subsystem_shape_governed_not_trust_ready",
     "active_boundary_guard_present",
     "schema_container_guard_present",
-    "whole_corpus_trust_boundary_active"
+    "whole_corpus_trust_boundary_active",
+    "nrsv_psalms_source_backed",
+    "nrsv_psalms_single_source_lane_repaired"
   ],
   "psalms_status": "shape_governed_not_trust_ready_pending_provenance_and_lane_adjudication",
   "latest_greek_esther_form_policy": {
