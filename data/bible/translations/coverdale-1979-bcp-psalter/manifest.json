@@ -1,0 +1,10 @@
+{
+  "translation_key": "Coverdale",
+  "source_name": "The Psalter, Book of Common Prayer 1979",
+  "source_url": "https://bcponline.org/Psalter/the_psalter.html",
+  "source_note": "Psalms 1-17 and 19-150 parsed from BCPOnline 1979 Psalter HTML; Psalm 18 supplied from direct BCP text in workflow after HTML header extraction failed.",
+  "target_file": "data/bible/OT/psalms.json",
+  "target_lane": "Coverdale",
+  "psalm_count": 150,
+  "verse_rows": 2507
+}
