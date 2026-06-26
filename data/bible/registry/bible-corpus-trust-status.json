@@ -716,7 +716,10 @@
         "Judith KJV is source-backed and exact-verified for every historical KJV source row present in the active grid.",
         "Judith KJV source refs absent from the active DRB-shaped grid were not inserted as synthetic rows.",
         "Judith active rows without KJV source refs do not retain unsourced KJV text.",
-        "Judith remains part of the deuterocanon repair queue; this bounded KJV source-scope repair and versification policy do not by themselves promote deuterocanon to textual trust."
+        "Judith remains part of the deuterocanon repair queue; this bounded KJV source-scope repair and versification policy do not by themselves promote deuterocanon to textual trust.",
+        "Prayer of Manasseh KJV source is a single historical KJV source row at 1:1 while the active DRB-shaped grid has 15 rows.",
+        "Prayer of Manasseh active KJV 1:1 exactly matches the historical KJV source row; active rows 1:2-1:15 remain without KJV rather than splitting the source row.",
+        "Prayer of Manasseh remains part of the deuterocanon repair queue; this bounded KJV policy does not by itself promote deuterocanon to textual trust."
       ],
       "reason": "Deuterocanon remaining lanes are governed and policy-closed for the current active corpus, but the lane remains not textually trusted. Greek Esther and Greek Daniel preserve active NRSV addition forms; 3/4 Maccabees source-backed repair state is governed; 4 Maccabees variant-footnote gaps remain governed non-primary rows.",
       "completedRemediations": [
@@ -744,7 +747,8 @@
         "esdras_2_kjv_source_scope_repair_1",
         "esdras_2_kjv_4_14_10_1_11_30_12_16_14_48_15_56_versification_policy_1",
         "judith_kjv_source_scope_repair_1",
-        "judith_kjv_versification_policy_1"
+        "judith_kjv_versification_policy_1",
+        "prayerofmanasseh_kjv_single_source_row_policy_1"
       ],
       "latest_1maccabees_kjv_source_scope_repair": {
         "id": "maccabees_1_kjv_source_scope_repair_2026_06_26",
@@ -1741,6 +1745,87 @@
           "create explicit migration policy if active Judith grid is later changed away from current shape"
         ],
         "boundedClaim": "Judith KJV source refs absent from the active grid are governed without synthetic row insertion; Judith KJV source-scope rows present in the active grid are exact-verified."
+      },
+      "latest_prayerofmanasseh_kjv_single_source_row_policy": {
+        "id": "prayerofmanasseh_kjv_single_source_row_policy_2026_06_26",
+        "status": "governed_single_kjv_source_row_no_split_no_text_mutation",
+        "activePath": "data/bible/OT/prayerofmanasseh.json",
+        "activeGridBasis": "DRB active grid with preserved existing KJV 1:1 source row",
+        "kjvSourceRef": "d3d1d4967f15c8b45758151e47e7d762b7194dd7^",
+        "kjvSourcePath": "data/bible/translations/kjv-1611/source/aruljohn-bible-kjv-1611/Prayer of Manasseh.json",
+        "sourceRows": 1,
+        "activeRows": 15,
+        "activeKjvRefs": [
+          "1:1"
+        ],
+        "activeRowsWithoutKjv": [
+          "1:10",
+          "1:11",
+          "1:12",
+          "1:13",
+          "1:14",
+          "1:15",
+          "1:2",
+          "1:3",
+          "1:4",
+          "1:5",
+          "1:6",
+          "1:7",
+          "1:8",
+          "1:9"
+        ],
+        "evidence": {
+          "sourceHasOnly1_1": true,
+          "activeRows": 15,
+          "activeKjvRefs": [
+            "1:1"
+          ],
+          "activeDrbRefs": [
+            "1:1",
+            "1:10",
+            "1:11",
+            "1:12",
+            "1:13",
+            "1:14",
+            "1:15",
+            "1:2",
+            "1:3",
+            "1:4",
+            "1:5",
+            "1:6",
+            "1:7",
+            "1:8",
+            "1:9"
+          ],
+          "activeRowsWithoutKjv": [
+            "1:10",
+            "1:11",
+            "1:12",
+            "1:13",
+            "1:14",
+            "1:15",
+            "1:2",
+            "1:3",
+            "1:4",
+            "1:5",
+            "1:6",
+            "1:7",
+            "1:8",
+            "1:9"
+          ],
+          "activeKjv1_1MatchesSource": true
+        },
+        "policyDecision": "Do not split the single historical KJV Prayer of Manasseh 1:1 source row across active rows 1:2-1:15. Do not synthesize per-row KJV text for active DRB-shaped rows. Any source-address display, split-row apparatus, or canonical-form migration requires a separate policy.",
+        "blockedActions": [
+          "split_prayerofmanasseh_kjv_1_1_across_active_rows_without_policy",
+          "synthesize_prayerofmanasseh_kjv_1_2_through_1_15",
+          "rewrite_active_prayerofmanasseh_grid_to_single_kjv_row_without_migration_policy"
+        ],
+        "allowedFutureActions": [
+          "create variant apparatus or source-address display policy",
+          "create explicit migration policy if active Prayer of Manasseh grid is later changed away from DRB shape"
+        ],
+        "boundedClaim": "Prayer of Manasseh KJV is governed as a single historical KJV source row preserved at active 1:1; active 1:2-1:15 KJV is not synthesized."
       }
     },
     "broader_canon": {
